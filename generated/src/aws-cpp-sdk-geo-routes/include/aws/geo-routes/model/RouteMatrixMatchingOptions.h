@@ -32,7 +32,7 @@ namespace Model
   class RouteMatrixMatchingOptions
   {
   public:
-    AWS_GEOROUTES_API RouteMatrixMatchingOptions();
+    AWS_GEOROUTES_API RouteMatrixMatchingOptions() = default;
     AWS_GEOROUTES_API RouteMatrixMatchingOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteMatrixMatchingOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>Attempts to match the provided position to a road similar to the provided
      * name.</p>
      */
-    inline const Aws::String& GetNameHint() const{ return m_nameHint; }
+    inline const Aws::String& GetNameHint() const { return m_nameHint; }
     inline bool NameHintHasBeenSet() const { return m_nameHintHasBeenSet; }
-    inline void SetNameHint(const Aws::String& value) { m_nameHintHasBeenSet = true; m_nameHint = value; }
-    inline void SetNameHint(Aws::String&& value) { m_nameHintHasBeenSet = true; m_nameHint = std::move(value); }
-    inline void SetNameHint(const char* value) { m_nameHintHasBeenSet = true; m_nameHint.assign(value); }
-    inline RouteMatrixMatchingOptions& WithNameHint(const Aws::String& value) { SetNameHint(value); return *this;}
-    inline RouteMatrixMatchingOptions& WithNameHint(Aws::String&& value) { SetNameHint(std::move(value)); return *this;}
-    inline RouteMatrixMatchingOptions& WithNameHint(const char* value) { SetNameHint(value); return *this;}
+    template<typename NameHintT = Aws::String>
+    void SetNameHint(NameHintT&& value) { m_nameHintHasBeenSet = true; m_nameHint = std::forward<NameHintT>(value); }
+    template<typename NameHintT = Aws::String>
+    RouteMatrixMatchingOptions& WithNameHint(NameHintT&& value) { SetNameHint(std::forward<NameHintT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * waypoint will be snapped to the highway/bridge/tunnel/sliproad.</p> <p>
      * <b>Unit</b>: <code>meters</code> </p>
      */
-    inline long long GetOnRoadThreshold() const{ return m_onRoadThreshold; }
+    inline long long GetOnRoadThreshold() const { return m_onRoadThreshold; }
     inline bool OnRoadThresholdHasBeenSet() const { return m_onRoadThresholdHasBeenSet; }
     inline void SetOnRoadThreshold(long long value) { m_onRoadThresholdHasBeenSet = true; m_onRoadThreshold = value; }
     inline RouteMatrixMatchingOptions& WithOnRoadThreshold(long long value) { SetOnRoadThreshold(value); return *this;}
@@ -71,7 +69,7 @@ namespace Model
      * destination to. The roads that are considered are determined by the provided
      * Strategy.</p> <p> <b>Unit</b>: <code>Meters</code> </p>
      */
-    inline long long GetRadius() const{ return m_radius; }
+    inline long long GetRadius() const { return m_radius; }
     inline bool RadiusHasBeenSet() const { return m_radiusHasBeenSet; }
     inline void SetRadius(long long value) { m_radiusHasBeenSet = true; m_radius = value; }
     inline RouteMatrixMatchingOptions& WithRadius(long long value) { SetRadius(value); return *this;}
@@ -83,25 +81,23 @@ namespace Model
      * MatchAny considers all roads possible, whereas MatchMostSignificantRoad matches
      * to the most significant road.</p>
      */
-    inline const MatchingStrategy& GetStrategy() const{ return m_strategy; }
+    inline MatchingStrategy GetStrategy() const { return m_strategy; }
     inline bool StrategyHasBeenSet() const { return m_strategyHasBeenSet; }
-    inline void SetStrategy(const MatchingStrategy& value) { m_strategyHasBeenSet = true; m_strategy = value; }
-    inline void SetStrategy(MatchingStrategy&& value) { m_strategyHasBeenSet = true; m_strategy = std::move(value); }
-    inline RouteMatrixMatchingOptions& WithStrategy(const MatchingStrategy& value) { SetStrategy(value); return *this;}
-    inline RouteMatrixMatchingOptions& WithStrategy(MatchingStrategy&& value) { SetStrategy(std::move(value)); return *this;}
+    inline void SetStrategy(MatchingStrategy value) { m_strategyHasBeenSet = true; m_strategy = value; }
+    inline RouteMatrixMatchingOptions& WithStrategy(MatchingStrategy value) { SetStrategy(value); return *this;}
     ///@}
   private:
 
     Aws::String m_nameHint;
     bool m_nameHintHasBeenSet = false;
 
-    long long m_onRoadThreshold;
+    long long m_onRoadThreshold{0};
     bool m_onRoadThresholdHasBeenSet = false;
 
-    long long m_radius;
+    long long m_radius{0};
     bool m_radiusHasBeenSet = false;
 
-    MatchingStrategy m_strategy;
+    MatchingStrategy m_strategy{MatchingStrategy::NOT_SET};
     bool m_strategyHasBeenSet = false;
   };
 

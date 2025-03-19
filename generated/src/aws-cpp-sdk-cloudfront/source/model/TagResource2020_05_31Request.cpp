@@ -17,11 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-TagResource2020_05_31Request::TagResource2020_05_31Request() : 
-    m_resourceHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
 
 Aws::String TagResource2020_05_31Request::SerializePayload() const
 {

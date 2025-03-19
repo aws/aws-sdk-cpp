@@ -18,15 +18,7 @@ namespace Route53RecoveryCluster
 namespace Model
 {
 
-UpdateRoutingControlStateEntry::UpdateRoutingControlStateEntry() : 
-    m_routingControlArnHasBeenSet(false),
-    m_routingControlState(RoutingControlState::NOT_SET),
-    m_routingControlStateHasBeenSet(false)
-{
-}
-
 UpdateRoutingControlStateEntry::UpdateRoutingControlStateEntry(JsonView jsonValue)
-  : UpdateRoutingControlStateEntry()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ UpdateRoutingControlStateEntry& UpdateRoutingControlStateEntry::operator =(JsonV
   if(jsonValue.ValueExists("RoutingControlArn"))
   {
     m_routingControlArn = jsonValue.GetString("RoutingControlArn");
-
     m_routingControlArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoutingControlState"))
   {
     m_routingControlState = RoutingControlStateMapper::GetRoutingControlStateForName(jsonValue.GetString("RoutingControlState"));
-
     m_routingControlStateHasBeenSet = true;
   }
-
   return *this;
 }
 

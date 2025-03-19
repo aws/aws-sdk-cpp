@@ -18,15 +18,7 @@ namespace EMRContainers
 namespace Model
 {
 
-ContainerLogRotationConfiguration::ContainerLogRotationConfiguration() : 
-    m_rotationSizeHasBeenSet(false),
-    m_maxFilesToKeep(0),
-    m_maxFilesToKeepHasBeenSet(false)
-{
-}
-
 ContainerLogRotationConfiguration::ContainerLogRotationConfiguration(JsonView jsonValue)
-  : ContainerLogRotationConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ContainerLogRotationConfiguration& ContainerLogRotationConfiguration::operator =
   if(jsonValue.ValueExists("rotationSize"))
   {
     m_rotationSize = jsonValue.GetString("rotationSize");
-
     m_rotationSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxFilesToKeep"))
   {
     m_maxFilesToKeep = jsonValue.GetInteger("maxFilesToKeep");
-
     m_maxFilesToKeepHasBeenSet = true;
   }
-
   return *this;
 }
 

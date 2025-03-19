@@ -43,7 +43,7 @@ namespace Model
   class SqlInjectionMatchSetUpdate
   {
   public:
-    AWS_WAF_API SqlInjectionMatchSetUpdate();
+    AWS_WAF_API SqlInjectionMatchSetUpdate() = default;
     AWS_WAF_API SqlInjectionMatchSetUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API SqlInjectionMatchSetUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,12 +56,10 @@ namespace Model
      * <code>SqlInjectionMatchSetUpdate</code> from a
      * <code>SqlInjectionMatchSet</code>.</p>
      */
-    inline const ChangeAction& GetAction() const{ return m_action; }
+    inline ChangeAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline SqlInjectionMatchSetUpdate& WithAction(const ChangeAction& value) { SetAction(value); return *this;}
-    inline SqlInjectionMatchSetUpdate& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(ChangeAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline SqlInjectionMatchSetUpdate& WithAction(ChangeAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -70,16 +68,16 @@ namespace Model
      * snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the
      * name of the header.</p>
      */
-    inline const SqlInjectionMatchTuple& GetSqlInjectionMatchTuple() const{ return m_sqlInjectionMatchTuple; }
+    inline const SqlInjectionMatchTuple& GetSqlInjectionMatchTuple() const { return m_sqlInjectionMatchTuple; }
     inline bool SqlInjectionMatchTupleHasBeenSet() const { return m_sqlInjectionMatchTupleHasBeenSet; }
-    inline void SetSqlInjectionMatchTuple(const SqlInjectionMatchTuple& value) { m_sqlInjectionMatchTupleHasBeenSet = true; m_sqlInjectionMatchTuple = value; }
-    inline void SetSqlInjectionMatchTuple(SqlInjectionMatchTuple&& value) { m_sqlInjectionMatchTupleHasBeenSet = true; m_sqlInjectionMatchTuple = std::move(value); }
-    inline SqlInjectionMatchSetUpdate& WithSqlInjectionMatchTuple(const SqlInjectionMatchTuple& value) { SetSqlInjectionMatchTuple(value); return *this;}
-    inline SqlInjectionMatchSetUpdate& WithSqlInjectionMatchTuple(SqlInjectionMatchTuple&& value) { SetSqlInjectionMatchTuple(std::move(value)); return *this;}
+    template<typename SqlInjectionMatchTupleT = SqlInjectionMatchTuple>
+    void SetSqlInjectionMatchTuple(SqlInjectionMatchTupleT&& value) { m_sqlInjectionMatchTupleHasBeenSet = true; m_sqlInjectionMatchTuple = std::forward<SqlInjectionMatchTupleT>(value); }
+    template<typename SqlInjectionMatchTupleT = SqlInjectionMatchTuple>
+    SqlInjectionMatchSetUpdate& WithSqlInjectionMatchTuple(SqlInjectionMatchTupleT&& value) { SetSqlInjectionMatchTuple(std::forward<SqlInjectionMatchTupleT>(value)); return *this;}
     ///@}
   private:
 
-    ChangeAction m_action;
+    ChangeAction m_action{ChangeAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
     SqlInjectionMatchTuple m_sqlInjectionMatchTuple;

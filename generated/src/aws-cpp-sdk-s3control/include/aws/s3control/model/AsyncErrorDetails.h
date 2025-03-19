@@ -31,7 +31,7 @@ namespace Model
   class AsyncErrorDetails
   {
   public:
-    AWS_S3CONTROL_API AsyncErrorDetails();
+    AWS_S3CONTROL_API AsyncErrorDetails() = default;
     AWS_S3CONTROL_API AsyncErrorDetails(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API AsyncErrorDetails& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,56 +42,48 @@ namespace Model
     /**
      * <p>A string that uniquely identifies the error condition.</p>
      */
-    inline const Aws::String& GetCode() const{ return m_code; }
+    inline const Aws::String& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-    inline AsyncErrorDetails& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-    inline AsyncErrorDetails& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-    inline AsyncErrorDetails& WithCode(const char* value) { SetCode(value); return *this;}
+    template<typename CodeT = Aws::String>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = Aws::String>
+    AsyncErrorDetails& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A generic description of the error condition in English.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline AsyncErrorDetails& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline AsyncErrorDetails& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline AsyncErrorDetails& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    AsyncErrorDetails& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the resource associated with the error.</p>
      */
-    inline const Aws::String& GetResource() const{ return m_resource; }
+    inline const Aws::String& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-    inline AsyncErrorDetails& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-    inline AsyncErrorDetails& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-    inline AsyncErrorDetails& WithResource(const char* value) { SetResource(value); return *this;}
+    template<typename ResourceT = Aws::String>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Aws::String>
+    AsyncErrorDetails& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the request associated with the error.</p>
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline AsyncErrorDetails& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AsyncErrorDetails& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AsyncErrorDetails& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AsyncErrorDetails& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 

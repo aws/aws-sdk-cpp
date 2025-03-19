@@ -32,7 +32,7 @@ namespace Model
   class BatchDataCaptureConfig
   {
   public:
-    AWS_SAGEMAKER_API BatchDataCaptureConfig();
+    AWS_SAGEMAKER_API BatchDataCaptureConfig() = default;
     AWS_SAGEMAKER_API BatchDataCaptureConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API BatchDataCaptureConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon S3 location being used to capture the data.</p>
      */
-    inline const Aws::String& GetDestinationS3Uri() const{ return m_destinationS3Uri; }
+    inline const Aws::String& GetDestinationS3Uri() const { return m_destinationS3Uri; }
     inline bool DestinationS3UriHasBeenSet() const { return m_destinationS3UriHasBeenSet; }
-    inline void SetDestinationS3Uri(const Aws::String& value) { m_destinationS3UriHasBeenSet = true; m_destinationS3Uri = value; }
-    inline void SetDestinationS3Uri(Aws::String&& value) { m_destinationS3UriHasBeenSet = true; m_destinationS3Uri = std::move(value); }
-    inline void SetDestinationS3Uri(const char* value) { m_destinationS3UriHasBeenSet = true; m_destinationS3Uri.assign(value); }
-    inline BatchDataCaptureConfig& WithDestinationS3Uri(const Aws::String& value) { SetDestinationS3Uri(value); return *this;}
-    inline BatchDataCaptureConfig& WithDestinationS3Uri(Aws::String&& value) { SetDestinationS3Uri(std::move(value)); return *this;}
-    inline BatchDataCaptureConfig& WithDestinationS3Uri(const char* value) { SetDestinationS3Uri(value); return *this;}
+    template<typename DestinationS3UriT = Aws::String>
+    void SetDestinationS3Uri(DestinationS3UriT&& value) { m_destinationS3UriHasBeenSet = true; m_destinationS3Uri = std::forward<DestinationS3UriT>(value); }
+    template<typename DestinationS3UriT = Aws::String>
+    BatchDataCaptureConfig& WithDestinationS3Uri(DestinationS3UriT&& value) { SetDestinationS3Uri(std::forward<DestinationS3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,21 +63,19 @@ namespace Model
      * <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
      * </ul>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline BatchDataCaptureConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline BatchDataCaptureConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline BatchDataCaptureConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    BatchDataCaptureConfig& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Flag that indicates whether to append inference id to the output.</p>
      */
-    inline bool GetGenerateInferenceId() const{ return m_generateInferenceId; }
+    inline bool GetGenerateInferenceId() const { return m_generateInferenceId; }
     inline bool GenerateInferenceIdHasBeenSet() const { return m_generateInferenceIdHasBeenSet; }
     inline void SetGenerateInferenceId(bool value) { m_generateInferenceIdHasBeenSet = true; m_generateInferenceId = value; }
     inline BatchDataCaptureConfig& WithGenerateInferenceId(bool value) { SetGenerateInferenceId(value); return *this;}
@@ -92,7 +88,7 @@ namespace Model
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet = false;
 
-    bool m_generateInferenceId;
+    bool m_generateInferenceId{false};
     bool m_generateInferenceIdHasBeenSet = false;
   };
 

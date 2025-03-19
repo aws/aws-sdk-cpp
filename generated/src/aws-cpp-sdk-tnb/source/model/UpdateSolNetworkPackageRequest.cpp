@@ -12,13 +12,6 @@ using namespace Aws::tnb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSolNetworkPackageRequest::UpdateSolNetworkPackageRequest() : 
-    m_nsdInfoIdHasBeenSet(false),
-    m_nsdOperationalState(NsdOperationalState::NOT_SET),
-    m_nsdOperationalStateHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSolNetworkPackageRequest::SerializePayload() const
 {
   JsonValue payload;

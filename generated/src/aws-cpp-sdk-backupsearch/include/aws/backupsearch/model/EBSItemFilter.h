@@ -36,7 +36,7 @@ namespace Model
   class EBSItemFilter
   {
   public:
-    AWS_BACKUPSEARCH_API EBSItemFilter();
+    AWS_BACKUPSEARCH_API EBSItemFilter() = default;
     AWS_BACKUPSEARCH_API EBSItemFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUPSEARCH_API EBSItemFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUPSEARCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,14 @@ namespace Model
      * file path is included, the results will return all items that match any of the
      * file paths.</p>
      */
-    inline const Aws::Vector<StringCondition>& GetFilePaths() const{ return m_filePaths; }
+    inline const Aws::Vector<StringCondition>& GetFilePaths() const { return m_filePaths; }
     inline bool FilePathsHasBeenSet() const { return m_filePathsHasBeenSet; }
-    inline void SetFilePaths(const Aws::Vector<StringCondition>& value) { m_filePathsHasBeenSet = true; m_filePaths = value; }
-    inline void SetFilePaths(Aws::Vector<StringCondition>&& value) { m_filePathsHasBeenSet = true; m_filePaths = std::move(value); }
-    inline EBSItemFilter& WithFilePaths(const Aws::Vector<StringCondition>& value) { SetFilePaths(value); return *this;}
-    inline EBSItemFilter& WithFilePaths(Aws::Vector<StringCondition>&& value) { SetFilePaths(std::move(value)); return *this;}
-    inline EBSItemFilter& AddFilePaths(const StringCondition& value) { m_filePathsHasBeenSet = true; m_filePaths.push_back(value); return *this; }
-    inline EBSItemFilter& AddFilePaths(StringCondition&& value) { m_filePathsHasBeenSet = true; m_filePaths.push_back(std::move(value)); return *this; }
+    template<typename FilePathsT = Aws::Vector<StringCondition>>
+    void SetFilePaths(FilePathsT&& value) { m_filePathsHasBeenSet = true; m_filePaths = std::forward<FilePathsT>(value); }
+    template<typename FilePathsT = Aws::Vector<StringCondition>>
+    EBSItemFilter& WithFilePaths(FilePathsT&& value) { SetFilePaths(std::forward<FilePathsT>(value)); return *this;}
+    template<typename FilePathsT = StringCondition>
+    EBSItemFilter& AddFilePaths(FilePathsT&& value) { m_filePathsHasBeenSet = true; m_filePaths.emplace_back(std::forward<FilePathsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -65,14 +65,14 @@ namespace Model
      * return only items that match.</p> <p>If more than one is included, the results
      * will return all items that match any of the included values.</p>
      */
-    inline const Aws::Vector<LongCondition>& GetSizes() const{ return m_sizes; }
+    inline const Aws::Vector<LongCondition>& GetSizes() const { return m_sizes; }
     inline bool SizesHasBeenSet() const { return m_sizesHasBeenSet; }
-    inline void SetSizes(const Aws::Vector<LongCondition>& value) { m_sizesHasBeenSet = true; m_sizes = value; }
-    inline void SetSizes(Aws::Vector<LongCondition>&& value) { m_sizesHasBeenSet = true; m_sizes = std::move(value); }
-    inline EBSItemFilter& WithSizes(const Aws::Vector<LongCondition>& value) { SetSizes(value); return *this;}
-    inline EBSItemFilter& WithSizes(Aws::Vector<LongCondition>&& value) { SetSizes(std::move(value)); return *this;}
-    inline EBSItemFilter& AddSizes(const LongCondition& value) { m_sizesHasBeenSet = true; m_sizes.push_back(value); return *this; }
-    inline EBSItemFilter& AddSizes(LongCondition&& value) { m_sizesHasBeenSet = true; m_sizes.push_back(std::move(value)); return *this; }
+    template<typename SizesT = Aws::Vector<LongCondition>>
+    void SetSizes(SizesT&& value) { m_sizesHasBeenSet = true; m_sizes = std::forward<SizesT>(value); }
+    template<typename SizesT = Aws::Vector<LongCondition>>
+    EBSItemFilter& WithSizes(SizesT&& value) { SetSizes(std::forward<SizesT>(value)); return *this;}
+    template<typename SizesT = LongCondition>
+    EBSItemFilter& AddSizes(SizesT&& value) { m_sizesHasBeenSet = true; m_sizes.emplace_back(std::forward<SizesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -81,14 +81,14 @@ namespace Model
      * return only items that match.</p> <p>If more than one is included, the results
      * will return all items that match any of the included values.</p>
      */
-    inline const Aws::Vector<TimeCondition>& GetCreationTimes() const{ return m_creationTimes; }
+    inline const Aws::Vector<TimeCondition>& GetCreationTimes() const { return m_creationTimes; }
     inline bool CreationTimesHasBeenSet() const { return m_creationTimesHasBeenSet; }
-    inline void SetCreationTimes(const Aws::Vector<TimeCondition>& value) { m_creationTimesHasBeenSet = true; m_creationTimes = value; }
-    inline void SetCreationTimes(Aws::Vector<TimeCondition>&& value) { m_creationTimesHasBeenSet = true; m_creationTimes = std::move(value); }
-    inline EBSItemFilter& WithCreationTimes(const Aws::Vector<TimeCondition>& value) { SetCreationTimes(value); return *this;}
-    inline EBSItemFilter& WithCreationTimes(Aws::Vector<TimeCondition>&& value) { SetCreationTimes(std::move(value)); return *this;}
-    inline EBSItemFilter& AddCreationTimes(const TimeCondition& value) { m_creationTimesHasBeenSet = true; m_creationTimes.push_back(value); return *this; }
-    inline EBSItemFilter& AddCreationTimes(TimeCondition&& value) { m_creationTimesHasBeenSet = true; m_creationTimes.push_back(std::move(value)); return *this; }
+    template<typename CreationTimesT = Aws::Vector<TimeCondition>>
+    void SetCreationTimes(CreationTimesT&& value) { m_creationTimesHasBeenSet = true; m_creationTimes = std::forward<CreationTimesT>(value); }
+    template<typename CreationTimesT = Aws::Vector<TimeCondition>>
+    EBSItemFilter& WithCreationTimes(CreationTimesT&& value) { SetCreationTimes(std::forward<CreationTimesT>(value)); return *this;}
+    template<typename CreationTimesT = TimeCondition>
+    EBSItemFilter& AddCreationTimes(CreationTimesT&& value) { m_creationTimesHasBeenSet = true; m_creationTimes.emplace_back(std::forward<CreationTimesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -97,14 +97,14 @@ namespace Model
      * return only items that match.</p> <p>If more than one is included, the results
      * will return all items that match any of the included values.</p>
      */
-    inline const Aws::Vector<TimeCondition>& GetLastModificationTimes() const{ return m_lastModificationTimes; }
+    inline const Aws::Vector<TimeCondition>& GetLastModificationTimes() const { return m_lastModificationTimes; }
     inline bool LastModificationTimesHasBeenSet() const { return m_lastModificationTimesHasBeenSet; }
-    inline void SetLastModificationTimes(const Aws::Vector<TimeCondition>& value) { m_lastModificationTimesHasBeenSet = true; m_lastModificationTimes = value; }
-    inline void SetLastModificationTimes(Aws::Vector<TimeCondition>&& value) { m_lastModificationTimesHasBeenSet = true; m_lastModificationTimes = std::move(value); }
-    inline EBSItemFilter& WithLastModificationTimes(const Aws::Vector<TimeCondition>& value) { SetLastModificationTimes(value); return *this;}
-    inline EBSItemFilter& WithLastModificationTimes(Aws::Vector<TimeCondition>&& value) { SetLastModificationTimes(std::move(value)); return *this;}
-    inline EBSItemFilter& AddLastModificationTimes(const TimeCondition& value) { m_lastModificationTimesHasBeenSet = true; m_lastModificationTimes.push_back(value); return *this; }
-    inline EBSItemFilter& AddLastModificationTimes(TimeCondition&& value) { m_lastModificationTimesHasBeenSet = true; m_lastModificationTimes.push_back(std::move(value)); return *this; }
+    template<typename LastModificationTimesT = Aws::Vector<TimeCondition>>
+    void SetLastModificationTimes(LastModificationTimesT&& value) { m_lastModificationTimesHasBeenSet = true; m_lastModificationTimes = std::forward<LastModificationTimesT>(value); }
+    template<typename LastModificationTimesT = Aws::Vector<TimeCondition>>
+    EBSItemFilter& WithLastModificationTimes(LastModificationTimesT&& value) { SetLastModificationTimes(std::forward<LastModificationTimesT>(value)); return *this;}
+    template<typename LastModificationTimesT = TimeCondition>
+    EBSItemFilter& AddLastModificationTimes(LastModificationTimesT&& value) { m_lastModificationTimesHasBeenSet = true; m_lastModificationTimes.emplace_back(std::forward<LastModificationTimesT>(value)); return *this; }
     ///@}
   private:
 

@@ -12,13 +12,6 @@ using namespace Aws::AppRegistry::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SyncResourceRequest::SyncResourceRequest() : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceHasBeenSet(false)
-{
-}
-
 Aws::String SyncResourceRequest::SerializePayload() const
 {
   return {};

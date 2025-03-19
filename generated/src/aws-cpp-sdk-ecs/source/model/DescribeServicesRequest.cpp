@@ -12,13 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeServicesRequest::DescribeServicesRequest() : 
-    m_clusterHasBeenSet(false),
-    m_servicesHasBeenSet(false),
-    m_includeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeServicesRequest::SerializePayload() const
 {
   JsonValue payload;

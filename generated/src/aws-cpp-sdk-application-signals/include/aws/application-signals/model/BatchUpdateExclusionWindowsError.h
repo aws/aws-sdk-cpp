@@ -33,7 +33,7 @@ namespace Model
   class BatchUpdateExclusionWindowsError
   {
   public:
-    AWS_APPLICATIONSIGNALS_API BatchUpdateExclusionWindowsError();
+    AWS_APPLICATIONSIGNALS_API BatchUpdateExclusionWindowsError() = default;
     AWS_APPLICATIONSIGNALS_API BatchUpdateExclusionWindowsError(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API BatchUpdateExclusionWindowsError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,42 +43,36 @@ namespace Model
     /**
      * <p>The SLO ID in the error.</p>
      */
-    inline const Aws::String& GetSloId() const{ return m_sloId; }
+    inline const Aws::String& GetSloId() const { return m_sloId; }
     inline bool SloIdHasBeenSet() const { return m_sloIdHasBeenSet; }
-    inline void SetSloId(const Aws::String& value) { m_sloIdHasBeenSet = true; m_sloId = value; }
-    inline void SetSloId(Aws::String&& value) { m_sloIdHasBeenSet = true; m_sloId = std::move(value); }
-    inline void SetSloId(const char* value) { m_sloIdHasBeenSet = true; m_sloId.assign(value); }
-    inline BatchUpdateExclusionWindowsError& WithSloId(const Aws::String& value) { SetSloId(value); return *this;}
-    inline BatchUpdateExclusionWindowsError& WithSloId(Aws::String&& value) { SetSloId(std::move(value)); return *this;}
-    inline BatchUpdateExclusionWindowsError& WithSloId(const char* value) { SetSloId(value); return *this;}
+    template<typename SloIdT = Aws::String>
+    void SetSloId(SloIdT&& value) { m_sloIdHasBeenSet = true; m_sloId = std::forward<SloIdT>(value); }
+    template<typename SloIdT = Aws::String>
+    BatchUpdateExclusionWindowsError& WithSloId(SloIdT&& value) { SetSloId(std::forward<SloIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error code.</p>
      */
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-    inline BatchUpdateExclusionWindowsError& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-    inline BatchUpdateExclusionWindowsError& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-    inline BatchUpdateExclusionWindowsError& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    template<typename ErrorCodeT = Aws::String>
+    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
+    template<typename ErrorCodeT = Aws::String>
+    BatchUpdateExclusionWindowsError& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error message.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline BatchUpdateExclusionWindowsError& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline BatchUpdateExclusionWindowsError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline BatchUpdateExclusionWindowsError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    BatchUpdateExclusionWindowsError& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
   private:
 

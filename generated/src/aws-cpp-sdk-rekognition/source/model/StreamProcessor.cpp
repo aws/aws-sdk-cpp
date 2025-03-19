@@ -18,15 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-StreamProcessor::StreamProcessor() : 
-    m_nameHasBeenSet(false),
-    m_status(StreamProcessorStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 StreamProcessor::StreamProcessor(JsonView jsonValue)
-  : StreamProcessor()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ StreamProcessor& StreamProcessor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StreamProcessorStatusMapper::GetStreamProcessorStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

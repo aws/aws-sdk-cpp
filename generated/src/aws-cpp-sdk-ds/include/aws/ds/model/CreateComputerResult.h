@@ -34,7 +34,7 @@ namespace Model
   class CreateComputerResult
   {
   public:
-    AWS_DIRECTORYSERVICE_API CreateComputerResult();
+    AWS_DIRECTORYSERVICE_API CreateComputerResult() = default;
     AWS_DIRECTORYSERVICE_API CreateComputerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTORYSERVICE_API CreateComputerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>A <a>Computer</a> object that represents the computer account.</p>
      */
-    inline const Computer& GetComputer() const{ return m_computer; }
-    inline void SetComputer(const Computer& value) { m_computer = value; }
-    inline void SetComputer(Computer&& value) { m_computer = std::move(value); }
-    inline CreateComputerResult& WithComputer(const Computer& value) { SetComputer(value); return *this;}
-    inline CreateComputerResult& WithComputer(Computer&& value) { SetComputer(std::move(value)); return *this;}
+    inline const Computer& GetComputer() const { return m_computer; }
+    template<typename ComputerT = Computer>
+    void SetComputer(ComputerT&& value) { m_computerHasBeenSet = true; m_computer = std::forward<ComputerT>(value); }
+    template<typename ComputerT = Computer>
+    CreateComputerResult& WithComputer(ComputerT&& value) { SetComputer(std::forward<ComputerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateComputerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateComputerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateComputerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateComputerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Computer m_computer;
+    bool m_computerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

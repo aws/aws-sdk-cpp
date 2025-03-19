@@ -18,17 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-ListJobsFilterTerm::ListJobsFilterTerm() : 
-    m_comparator(JobComparator::NOT_SET),
-    m_comparatorHasBeenSet(false),
-    m_key(ListJobsFilterKey::NOT_SET),
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 ListJobsFilterTerm::ListJobsFilterTerm(JsonView jsonValue)
-  : ListJobsFilterTerm()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ ListJobsFilterTerm& ListJobsFilterTerm::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("comparator"))
   {
     m_comparator = JobComparatorMapper::GetJobComparatorForName(jsonValue.GetString("comparator"));
-
     m_comparatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = ListJobsFilterKeyMapper::GetListJobsFilterKeyForName(jsonValue.GetString("key"));
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -58,7 +44,6 @@ ListJobsFilterTerm& ListJobsFilterTerm::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

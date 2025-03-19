@@ -32,7 +32,7 @@ namespace Model
   class AuthenticationMethod
   {
   public:
-    AWS_SSOADMIN_API AuthenticationMethod();
+    AWS_SSOADMIN_API AuthenticationMethod() = default;
     AWS_SSOADMIN_API AuthenticationMethod(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API AuthenticationMethod& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>A structure that describes details for IAM authentication.</p>
      */
-    inline const IamAuthenticationMethod& GetIam() const{ return m_iam; }
+    inline const IamAuthenticationMethod& GetIam() const { return m_iam; }
     inline bool IamHasBeenSet() const { return m_iamHasBeenSet; }
-    inline void SetIam(const IamAuthenticationMethod& value) { m_iamHasBeenSet = true; m_iam = value; }
-    inline void SetIam(IamAuthenticationMethod&& value) { m_iamHasBeenSet = true; m_iam = std::move(value); }
-    inline AuthenticationMethod& WithIam(const IamAuthenticationMethod& value) { SetIam(value); return *this;}
-    inline AuthenticationMethod& WithIam(IamAuthenticationMethod&& value) { SetIam(std::move(value)); return *this;}
+    template<typename IamT = IamAuthenticationMethod>
+    void SetIam(IamT&& value) { m_iamHasBeenSet = true; m_iam = std::forward<IamT>(value); }
+    template<typename IamT = IamAuthenticationMethod>
+    AuthenticationMethod& WithIam(IamT&& value) { SetIam(std::forward<IamT>(value)); return *this;}
     ///@}
   private:
 

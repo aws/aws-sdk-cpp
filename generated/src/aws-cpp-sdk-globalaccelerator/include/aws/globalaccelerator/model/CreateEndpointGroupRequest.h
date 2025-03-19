@@ -26,7 +26,7 @@ namespace Model
   class CreateEndpointGroupRequest : public GlobalAcceleratorRequest
   {
   public:
-    AWS_GLOBALACCELERATOR_API CreateEndpointGroupRequest();
+    AWS_GLOBALACCELERATOR_API CreateEndpointGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
      */
-    inline const Aws::String& GetListenerArn() const{ return m_listenerArn; }
+    inline const Aws::String& GetListenerArn() const { return m_listenerArn; }
     inline bool ListenerArnHasBeenSet() const { return m_listenerArnHasBeenSet; }
-    inline void SetListenerArn(const Aws::String& value) { m_listenerArnHasBeenSet = true; m_listenerArn = value; }
-    inline void SetListenerArn(Aws::String&& value) { m_listenerArnHasBeenSet = true; m_listenerArn = std::move(value); }
-    inline void SetListenerArn(const char* value) { m_listenerArnHasBeenSet = true; m_listenerArn.assign(value); }
-    inline CreateEndpointGroupRequest& WithListenerArn(const Aws::String& value) { SetListenerArn(value); return *this;}
-    inline CreateEndpointGroupRequest& WithListenerArn(Aws::String&& value) { SetListenerArn(std::move(value)); return *this;}
-    inline CreateEndpointGroupRequest& WithListenerArn(const char* value) { SetListenerArn(value); return *this;}
+    template<typename ListenerArnT = Aws::String>
+    void SetListenerArn(ListenerArnT&& value) { m_listenerArnHasBeenSet = true; m_listenerArn = std::forward<ListenerArnT>(value); }
+    template<typename ListenerArnT = Aws::String>
+    CreateEndpointGroupRequest& WithListenerArn(ListenerArnT&& value) { SetListenerArn(std::forward<ListenerArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,28 +56,26 @@ namespace Model
      * <p>The Amazon Web Services Region where the endpoint group is located. A
      * listener can have only one endpoint group in a specific Region.</p>
      */
-    inline const Aws::String& GetEndpointGroupRegion() const{ return m_endpointGroupRegion; }
+    inline const Aws::String& GetEndpointGroupRegion() const { return m_endpointGroupRegion; }
     inline bool EndpointGroupRegionHasBeenSet() const { return m_endpointGroupRegionHasBeenSet; }
-    inline void SetEndpointGroupRegion(const Aws::String& value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion = value; }
-    inline void SetEndpointGroupRegion(Aws::String&& value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion = std::move(value); }
-    inline void SetEndpointGroupRegion(const char* value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion.assign(value); }
-    inline CreateEndpointGroupRequest& WithEndpointGroupRegion(const Aws::String& value) { SetEndpointGroupRegion(value); return *this;}
-    inline CreateEndpointGroupRequest& WithEndpointGroupRegion(Aws::String&& value) { SetEndpointGroupRegion(std::move(value)); return *this;}
-    inline CreateEndpointGroupRequest& WithEndpointGroupRegion(const char* value) { SetEndpointGroupRegion(value); return *this;}
+    template<typename EndpointGroupRegionT = Aws::String>
+    void SetEndpointGroupRegion(EndpointGroupRegionT&& value) { m_endpointGroupRegionHasBeenSet = true; m_endpointGroupRegion = std::forward<EndpointGroupRegionT>(value); }
+    template<typename EndpointGroupRegionT = Aws::String>
+    CreateEndpointGroupRequest& WithEndpointGroupRegion(EndpointGroupRegionT&& value) { SetEndpointGroupRegion(std::forward<EndpointGroupRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of endpoint objects.</p>
      */
-    inline const Aws::Vector<EndpointConfiguration>& GetEndpointConfigurations() const{ return m_endpointConfigurations; }
+    inline const Aws::Vector<EndpointConfiguration>& GetEndpointConfigurations() const { return m_endpointConfigurations; }
     inline bool EndpointConfigurationsHasBeenSet() const { return m_endpointConfigurationsHasBeenSet; }
-    inline void SetEndpointConfigurations(const Aws::Vector<EndpointConfiguration>& value) { m_endpointConfigurationsHasBeenSet = true; m_endpointConfigurations = value; }
-    inline void SetEndpointConfigurations(Aws::Vector<EndpointConfiguration>&& value) { m_endpointConfigurationsHasBeenSet = true; m_endpointConfigurations = std::move(value); }
-    inline CreateEndpointGroupRequest& WithEndpointConfigurations(const Aws::Vector<EndpointConfiguration>& value) { SetEndpointConfigurations(value); return *this;}
-    inline CreateEndpointGroupRequest& WithEndpointConfigurations(Aws::Vector<EndpointConfiguration>&& value) { SetEndpointConfigurations(std::move(value)); return *this;}
-    inline CreateEndpointGroupRequest& AddEndpointConfigurations(const EndpointConfiguration& value) { m_endpointConfigurationsHasBeenSet = true; m_endpointConfigurations.push_back(value); return *this; }
-    inline CreateEndpointGroupRequest& AddEndpointConfigurations(EndpointConfiguration&& value) { m_endpointConfigurationsHasBeenSet = true; m_endpointConfigurations.push_back(std::move(value)); return *this; }
+    template<typename EndpointConfigurationsT = Aws::Vector<EndpointConfiguration>>
+    void SetEndpointConfigurations(EndpointConfigurationsT&& value) { m_endpointConfigurationsHasBeenSet = true; m_endpointConfigurations = std::forward<EndpointConfigurationsT>(value); }
+    template<typename EndpointConfigurationsT = Aws::Vector<EndpointConfiguration>>
+    CreateEndpointGroupRequest& WithEndpointConfigurations(EndpointConfigurationsT&& value) { SetEndpointConfigurations(std::forward<EndpointConfigurationsT>(value)); return *this;}
+    template<typename EndpointConfigurationsT = EndpointConfiguration>
+    CreateEndpointGroupRequest& AddEndpointConfigurations(EndpointConfigurationsT&& value) { m_endpointConfigurationsHasBeenSet = true; m_endpointConfigurations.emplace_back(std::forward<EndpointConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -91,7 +87,7 @@ namespace Model
      * have been routed to the Region based on optimal routing.</p> <p>The default
      * value is 100.</p>
      */
-    inline double GetTrafficDialPercentage() const{ return m_trafficDialPercentage; }
+    inline double GetTrafficDialPercentage() const { return m_trafficDialPercentage; }
     inline bool TrafficDialPercentageHasBeenSet() const { return m_trafficDialPercentageHasBeenSet; }
     inline void SetTrafficDialPercentage(double value) { m_trafficDialPercentageHasBeenSet = true; m_trafficDialPercentage = value; }
     inline CreateEndpointGroupRequest& WithTrafficDialPercentage(double value) { SetTrafficDialPercentage(value); return *this;}
@@ -104,7 +100,7 @@ namespace Model
      * endpoint group is associated with. If listener port is a list of ports, Global
      * Accelerator uses the first port in the list.</p>
      */
-    inline int GetHealthCheckPort() const{ return m_healthCheckPort; }
+    inline int GetHealthCheckPort() const { return m_healthCheckPort; }
     inline bool HealthCheckPortHasBeenSet() const { return m_healthCheckPortHasBeenSet; }
     inline void SetHealthCheckPort(int value) { m_healthCheckPortHasBeenSet = true; m_healthCheckPort = value; }
     inline CreateEndpointGroupRequest& WithHealthCheckPort(int value) { SetHealthCheckPort(value); return *this;}
@@ -115,12 +111,10 @@ namespace Model
      * <p>The protocol that Global Accelerator uses to check the health of endpoints
      * that are part of this endpoint group. The default value is TCP.</p>
      */
-    inline const HealthCheckProtocol& GetHealthCheckProtocol() const{ return m_healthCheckProtocol; }
+    inline HealthCheckProtocol GetHealthCheckProtocol() const { return m_healthCheckProtocol; }
     inline bool HealthCheckProtocolHasBeenSet() const { return m_healthCheckProtocolHasBeenSet; }
-    inline void SetHealthCheckProtocol(const HealthCheckProtocol& value) { m_healthCheckProtocolHasBeenSet = true; m_healthCheckProtocol = value; }
-    inline void SetHealthCheckProtocol(HealthCheckProtocol&& value) { m_healthCheckProtocolHasBeenSet = true; m_healthCheckProtocol = std::move(value); }
-    inline CreateEndpointGroupRequest& WithHealthCheckProtocol(const HealthCheckProtocol& value) { SetHealthCheckProtocol(value); return *this;}
-    inline CreateEndpointGroupRequest& WithHealthCheckProtocol(HealthCheckProtocol&& value) { SetHealthCheckProtocol(std::move(value)); return *this;}
+    inline void SetHealthCheckProtocol(HealthCheckProtocol value) { m_healthCheckProtocolHasBeenSet = true; m_healthCheckProtocol = value; }
+    inline CreateEndpointGroupRequest& WithHealthCheckProtocol(HealthCheckProtocol value) { SetHealthCheckProtocol(value); return *this;}
     ///@}
 
     ///@{
@@ -128,14 +122,12 @@ namespace Model
      * <p>If the protocol is HTTP/S, then this specifies the path that is the
      * destination for health check targets. The default value is slash (/).</p>
      */
-    inline const Aws::String& GetHealthCheckPath() const{ return m_healthCheckPath; }
+    inline const Aws::String& GetHealthCheckPath() const { return m_healthCheckPath; }
     inline bool HealthCheckPathHasBeenSet() const { return m_healthCheckPathHasBeenSet; }
-    inline void SetHealthCheckPath(const Aws::String& value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath = value; }
-    inline void SetHealthCheckPath(Aws::String&& value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath = std::move(value); }
-    inline void SetHealthCheckPath(const char* value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath.assign(value); }
-    inline CreateEndpointGroupRequest& WithHealthCheckPath(const Aws::String& value) { SetHealthCheckPath(value); return *this;}
-    inline CreateEndpointGroupRequest& WithHealthCheckPath(Aws::String&& value) { SetHealthCheckPath(std::move(value)); return *this;}
-    inline CreateEndpointGroupRequest& WithHealthCheckPath(const char* value) { SetHealthCheckPath(value); return *this;}
+    template<typename HealthCheckPathT = Aws::String>
+    void SetHealthCheckPath(HealthCheckPathT&& value) { m_healthCheckPathHasBeenSet = true; m_healthCheckPath = std::forward<HealthCheckPathT>(value); }
+    template<typename HealthCheckPathT = Aws::String>
+    CreateEndpointGroupRequest& WithHealthCheckPath(HealthCheckPathT&& value) { SetHealthCheckPath(std::forward<HealthCheckPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,7 +135,7 @@ namespace Model
      * <p>The time—10 seconds or 30 seconds—between each health check for an endpoint.
      * The default value is 30.</p>
      */
-    inline int GetHealthCheckIntervalSeconds() const{ return m_healthCheckIntervalSeconds; }
+    inline int GetHealthCheckIntervalSeconds() const { return m_healthCheckIntervalSeconds; }
     inline bool HealthCheckIntervalSecondsHasBeenSet() const { return m_healthCheckIntervalSecondsHasBeenSet; }
     inline void SetHealthCheckIntervalSeconds(int value) { m_healthCheckIntervalSecondsHasBeenSet = true; m_healthCheckIntervalSeconds = value; }
     inline CreateEndpointGroupRequest& WithHealthCheckIntervalSeconds(int value) { SetHealthCheckIntervalSeconds(value); return *this;}
@@ -155,7 +147,7 @@ namespace Model
      * healthy endpoint to unhealthy, or to set an unhealthy endpoint to healthy. The
      * default value is 3.</p>
      */
-    inline int GetThresholdCount() const{ return m_thresholdCount; }
+    inline int GetThresholdCount() const { return m_thresholdCount; }
     inline bool ThresholdCountHasBeenSet() const { return m_thresholdCountHasBeenSet; }
     inline void SetThresholdCount(int value) { m_thresholdCountHasBeenSet = true; m_thresholdCount = value; }
     inline CreateEndpointGroupRequest& WithThresholdCount(int value) { SetThresholdCount(value); return *this;}
@@ -166,14 +158,12 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency—that is, the uniqueness—of the request.</p>
      */
-    inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
+    inline const Aws::String& GetIdempotencyToken() const { return m_idempotencyToken; }
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
-    inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
-    inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
-    inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
-    inline CreateEndpointGroupRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
-    inline CreateEndpointGroupRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
-    inline CreateEndpointGroupRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
+    template<typename IdempotencyTokenT = Aws::String>
+    void SetIdempotencyToken(IdempotencyTokenT&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::forward<IdempotencyTokenT>(value); }
+    template<typename IdempotencyTokenT = Aws::String>
+    CreateEndpointGroupRequest& WithIdempotencyToken(IdempotencyTokenT&& value) { SetIdempotencyToken(std::forward<IdempotencyTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -187,14 +177,14 @@ namespace Model
      * Overriding listener ports</a> in the <i>Global Accelerator Developer
      * Guide</i>.</p>
      */
-    inline const Aws::Vector<PortOverride>& GetPortOverrides() const{ return m_portOverrides; }
+    inline const Aws::Vector<PortOverride>& GetPortOverrides() const { return m_portOverrides; }
     inline bool PortOverridesHasBeenSet() const { return m_portOverridesHasBeenSet; }
-    inline void SetPortOverrides(const Aws::Vector<PortOverride>& value) { m_portOverridesHasBeenSet = true; m_portOverrides = value; }
-    inline void SetPortOverrides(Aws::Vector<PortOverride>&& value) { m_portOverridesHasBeenSet = true; m_portOverrides = std::move(value); }
-    inline CreateEndpointGroupRequest& WithPortOverrides(const Aws::Vector<PortOverride>& value) { SetPortOverrides(value); return *this;}
-    inline CreateEndpointGroupRequest& WithPortOverrides(Aws::Vector<PortOverride>&& value) { SetPortOverrides(std::move(value)); return *this;}
-    inline CreateEndpointGroupRequest& AddPortOverrides(const PortOverride& value) { m_portOverridesHasBeenSet = true; m_portOverrides.push_back(value); return *this; }
-    inline CreateEndpointGroupRequest& AddPortOverrides(PortOverride&& value) { m_portOverridesHasBeenSet = true; m_portOverrides.push_back(std::move(value)); return *this; }
+    template<typename PortOverridesT = Aws::Vector<PortOverride>>
+    void SetPortOverrides(PortOverridesT&& value) { m_portOverridesHasBeenSet = true; m_portOverrides = std::forward<PortOverridesT>(value); }
+    template<typename PortOverridesT = Aws::Vector<PortOverride>>
+    CreateEndpointGroupRequest& WithPortOverrides(PortOverridesT&& value) { SetPortOverrides(std::forward<PortOverridesT>(value)); return *this;}
+    template<typename PortOverridesT = PortOverride>
+    CreateEndpointGroupRequest& AddPortOverrides(PortOverridesT&& value) { m_portOverridesHasBeenSet = true; m_portOverrides.emplace_back(std::forward<PortOverridesT>(value)); return *this; }
     ///@}
   private:
 
@@ -207,22 +197,22 @@ namespace Model
     Aws::Vector<EndpointConfiguration> m_endpointConfigurations;
     bool m_endpointConfigurationsHasBeenSet = false;
 
-    double m_trafficDialPercentage;
+    double m_trafficDialPercentage{0.0};
     bool m_trafficDialPercentageHasBeenSet = false;
 
-    int m_healthCheckPort;
+    int m_healthCheckPort{0};
     bool m_healthCheckPortHasBeenSet = false;
 
-    HealthCheckProtocol m_healthCheckProtocol;
+    HealthCheckProtocol m_healthCheckProtocol{HealthCheckProtocol::NOT_SET};
     bool m_healthCheckProtocolHasBeenSet = false;
 
     Aws::String m_healthCheckPath;
     bool m_healthCheckPathHasBeenSet = false;
 
-    int m_healthCheckIntervalSeconds;
+    int m_healthCheckIntervalSeconds{0};
     bool m_healthCheckIntervalSecondsHasBeenSet = false;
 
-    int m_thresholdCount;
+    int m_thresholdCount{0};
     bool m_thresholdCountHasBeenSet = false;
 
     Aws::String m_idempotencyToken;

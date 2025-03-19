@@ -12,11 +12,6 @@ using namespace Aws::ApplicationDiscoveryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeConfigurationsRequest::DescribeConfigurationsRequest() : 
-    m_configurationIdsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeConfigurationsRequest::SerializePayload() const
 {
   JsonValue payload;

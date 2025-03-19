@@ -28,7 +28,7 @@ namespace Model
   class CreateLogPatternResult
   {
   public:
-    AWS_APPLICATIONINSIGHTS_API CreateLogPatternResult();
+    AWS_APPLICATIONINSIGHTS_API CreateLogPatternResult() = default;
     AWS_APPLICATIONINSIGHTS_API CreateLogPatternResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONINSIGHTS_API CreateLogPatternResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,42 @@ namespace Model
     /**
      * <p>The successfully created log pattern.</p>
      */
-    inline const LogPattern& GetLogPattern() const{ return m_logPattern; }
-    inline void SetLogPattern(const LogPattern& value) { m_logPattern = value; }
-    inline void SetLogPattern(LogPattern&& value) { m_logPattern = std::move(value); }
-    inline CreateLogPatternResult& WithLogPattern(const LogPattern& value) { SetLogPattern(value); return *this;}
-    inline CreateLogPatternResult& WithLogPattern(LogPattern&& value) { SetLogPattern(std::move(value)); return *this;}
+    inline const LogPattern& GetLogPattern() const { return m_logPattern; }
+    template<typename LogPatternT = LogPattern>
+    void SetLogPattern(LogPatternT&& value) { m_logPatternHasBeenSet = true; m_logPattern = std::forward<LogPatternT>(value); }
+    template<typename LogPatternT = LogPattern>
+    CreateLogPatternResult& WithLogPattern(LogPatternT&& value) { SetLogPattern(std::forward<LogPatternT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the resource group.</p>
      */
-    inline const Aws::String& GetResourceGroupName() const{ return m_resourceGroupName; }
-    inline void SetResourceGroupName(const Aws::String& value) { m_resourceGroupName = value; }
-    inline void SetResourceGroupName(Aws::String&& value) { m_resourceGroupName = std::move(value); }
-    inline void SetResourceGroupName(const char* value) { m_resourceGroupName.assign(value); }
-    inline CreateLogPatternResult& WithResourceGroupName(const Aws::String& value) { SetResourceGroupName(value); return *this;}
-    inline CreateLogPatternResult& WithResourceGroupName(Aws::String&& value) { SetResourceGroupName(std::move(value)); return *this;}
-    inline CreateLogPatternResult& WithResourceGroupName(const char* value) { SetResourceGroupName(value); return *this;}
+    inline const Aws::String& GetResourceGroupName() const { return m_resourceGroupName; }
+    template<typename ResourceGroupNameT = Aws::String>
+    void SetResourceGroupName(ResourceGroupNameT&& value) { m_resourceGroupNameHasBeenSet = true; m_resourceGroupName = std::forward<ResourceGroupNameT>(value); }
+    template<typename ResourceGroupNameT = Aws::String>
+    CreateLogPatternResult& WithResourceGroupName(ResourceGroupNameT&& value) { SetResourceGroupName(std::forward<ResourceGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateLogPatternResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateLogPatternResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateLogPatternResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateLogPatternResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     LogPattern m_logPattern;
+    bool m_logPatternHasBeenSet = false;
 
     Aws::String m_resourceGroupName;
+    bool m_resourceGroupNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

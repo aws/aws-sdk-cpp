@@ -28,7 +28,7 @@ namespace Model
   class CreateAppBlockResult
   {
   public:
-    AWS_APPSTREAM_API CreateAppBlockResult();
+    AWS_APPSTREAM_API CreateAppBlockResult() = default;
     AWS_APPSTREAM_API CreateAppBlockResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSTREAM_API CreateAppBlockResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The app block.</p>
      */
-    inline const AppBlock& GetAppBlock() const{ return m_appBlock; }
-    inline void SetAppBlock(const AppBlock& value) { m_appBlock = value; }
-    inline void SetAppBlock(AppBlock&& value) { m_appBlock = std::move(value); }
-    inline CreateAppBlockResult& WithAppBlock(const AppBlock& value) { SetAppBlock(value); return *this;}
-    inline CreateAppBlockResult& WithAppBlock(AppBlock&& value) { SetAppBlock(std::move(value)); return *this;}
+    inline const AppBlock& GetAppBlock() const { return m_appBlock; }
+    template<typename AppBlockT = AppBlock>
+    void SetAppBlock(AppBlockT&& value) { m_appBlockHasBeenSet = true; m_appBlock = std::forward<AppBlockT>(value); }
+    template<typename AppBlockT = AppBlock>
+    CreateAppBlockResult& WithAppBlock(AppBlockT&& value) { SetAppBlock(std::forward<AppBlockT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAppBlockResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAppBlockResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAppBlockResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAppBlockResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AppBlock m_appBlock;
+    bool m_appBlockHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -31,7 +31,7 @@ namespace Model
   class ProtectConfigurationCountryRuleSetInformation
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API ProtectConfigurationCountryRuleSetInformation();
+    AWS_PINPOINTSMSVOICEV2_API ProtectConfigurationCountryRuleSetInformation() = default;
     AWS_PINPOINTSMSVOICEV2_API ProtectConfigurationCountryRuleSetInformation(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API ProtectConfigurationCountryRuleSetInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>The types of protection that can be used.</p>
      */
-    inline const ProtectStatus& GetProtectStatus() const{ return m_protectStatus; }
+    inline ProtectStatus GetProtectStatus() const { return m_protectStatus; }
     inline bool ProtectStatusHasBeenSet() const { return m_protectStatusHasBeenSet; }
-    inline void SetProtectStatus(const ProtectStatus& value) { m_protectStatusHasBeenSet = true; m_protectStatus = value; }
-    inline void SetProtectStatus(ProtectStatus&& value) { m_protectStatusHasBeenSet = true; m_protectStatus = std::move(value); }
-    inline ProtectConfigurationCountryRuleSetInformation& WithProtectStatus(const ProtectStatus& value) { SetProtectStatus(value); return *this;}
-    inline ProtectConfigurationCountryRuleSetInformation& WithProtectStatus(ProtectStatus&& value) { SetProtectStatus(std::move(value)); return *this;}
+    inline void SetProtectStatus(ProtectStatus value) { m_protectStatusHasBeenSet = true; m_protectStatus = value; }
+    inline ProtectConfigurationCountryRuleSetInformation& WithProtectStatus(ProtectStatus value) { SetProtectStatus(value); return *this;}
     ///@}
   private:
 
-    ProtectStatus m_protectStatus;
+    ProtectStatus m_protectStatus{ProtectStatus::NOT_SET};
     bool m_protectStatusHasBeenSet = false;
   };
 

@@ -18,16 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-DeliveryChannelStatus::DeliveryChannelStatus() : 
-    m_nameHasBeenSet(false),
-    m_configSnapshotDeliveryInfoHasBeenSet(false),
-    m_configHistoryDeliveryInfoHasBeenSet(false),
-    m_configStreamDeliveryInfoHasBeenSet(false)
-{
-}
-
 DeliveryChannelStatus::DeliveryChannelStatus(JsonView jsonValue)
-  : DeliveryChannelStatus()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ DeliveryChannelStatus& DeliveryChannelStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configSnapshotDeliveryInfo"))
   {
     m_configSnapshotDeliveryInfo = jsonValue.GetObject("configSnapshotDeliveryInfo");
-
     m_configSnapshotDeliveryInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configHistoryDeliveryInfo"))
   {
     m_configHistoryDeliveryInfo = jsonValue.GetObject("configHistoryDeliveryInfo");
-
     m_configHistoryDeliveryInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configStreamDeliveryInfo"))
   {
     m_configStreamDeliveryInfo = jsonValue.GetObject("configStreamDeliveryInfo");
-
     m_configStreamDeliveryInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

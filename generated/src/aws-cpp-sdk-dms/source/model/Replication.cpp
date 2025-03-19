@@ -18,33 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-Replication::Replication() : 
-    m_replicationConfigIdentifierHasBeenSet(false),
-    m_replicationConfigArnHasBeenSet(false),
-    m_sourceEndpointArnHasBeenSet(false),
-    m_targetEndpointArnHasBeenSet(false),
-    m_replicationType(MigrationTypeValue::NOT_SET),
-    m_replicationTypeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_provisionDataHasBeenSet(false),
-    m_premigrationAssessmentStatusesHasBeenSet(false),
-    m_stopReasonHasBeenSet(false),
-    m_failureMessagesHasBeenSet(false),
-    m_replicationStatsHasBeenSet(false),
-    m_startReplicationTypeHasBeenSet(false),
-    m_cdcStartTimeHasBeenSet(false),
-    m_cdcStartPositionHasBeenSet(false),
-    m_cdcStopPositionHasBeenSet(false),
-    m_recoveryCheckpointHasBeenSet(false),
-    m_replicationCreateTimeHasBeenSet(false),
-    m_replicationUpdateTimeHasBeenSet(false),
-    m_replicationLastStopTimeHasBeenSet(false),
-    m_replicationDeprovisionTimeHasBeenSet(false)
-{
-}
-
 Replication::Replication(JsonView jsonValue)
-  : Replication()
 {
   *this = jsonValue;
 }
@@ -54,52 +28,38 @@ Replication& Replication::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReplicationConfigIdentifier"))
   {
     m_replicationConfigIdentifier = jsonValue.GetString("ReplicationConfigIdentifier");
-
     m_replicationConfigIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationConfigArn"))
   {
     m_replicationConfigArn = jsonValue.GetString("ReplicationConfigArn");
-
     m_replicationConfigArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceEndpointArn"))
   {
     m_sourceEndpointArn = jsonValue.GetString("SourceEndpointArn");
-
     m_sourceEndpointArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetEndpointArn"))
   {
     m_targetEndpointArn = jsonValue.GetString("TargetEndpointArn");
-
     m_targetEndpointArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationType"))
   {
     m_replicationType = MigrationTypeValueMapper::GetMigrationTypeValueForName(jsonValue.GetString("ReplicationType"));
-
     m_replicationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionData"))
   {
     m_provisionData = jsonValue.GetObject("ProvisionData");
-
     m_provisionDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PremigrationAssessmentStatuses"))
   {
     Aws::Utils::Array<JsonView> premigrationAssessmentStatusesJsonList = jsonValue.GetArray("PremigrationAssessmentStatuses");
@@ -109,14 +69,11 @@ Replication& Replication::operator =(JsonView jsonValue)
     }
     m_premigrationAssessmentStatusesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StopReason"))
   {
     m_stopReason = jsonValue.GetString("StopReason");
-
     m_stopReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureMessages"))
   {
     Aws::Utils::Array<JsonView> failureMessagesJsonList = jsonValue.GetArray("FailureMessages");
@@ -126,77 +83,56 @@ Replication& Replication::operator =(JsonView jsonValue)
     }
     m_failureMessagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationStats"))
   {
     m_replicationStats = jsonValue.GetObject("ReplicationStats");
-
     m_replicationStatsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartReplicationType"))
   {
     m_startReplicationType = jsonValue.GetString("StartReplicationType");
-
     m_startReplicationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CdcStartTime"))
   {
     m_cdcStartTime = jsonValue.GetDouble("CdcStartTime");
-
     m_cdcStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CdcStartPosition"))
   {
     m_cdcStartPosition = jsonValue.GetString("CdcStartPosition");
-
     m_cdcStartPositionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CdcStopPosition"))
   {
     m_cdcStopPosition = jsonValue.GetString("CdcStopPosition");
-
     m_cdcStopPositionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecoveryCheckpoint"))
   {
     m_recoveryCheckpoint = jsonValue.GetString("RecoveryCheckpoint");
-
     m_recoveryCheckpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationCreateTime"))
   {
     m_replicationCreateTime = jsonValue.GetDouble("ReplicationCreateTime");
-
     m_replicationCreateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationUpdateTime"))
   {
     m_replicationUpdateTime = jsonValue.GetDouble("ReplicationUpdateTime");
-
     m_replicationUpdateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationLastStopTime"))
   {
     m_replicationLastStopTime = jsonValue.GetDouble("ReplicationLastStopTime");
-
     m_replicationLastStopTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationDeprovisionTime"))
   {
     m_replicationDeprovisionTime = jsonValue.GetDouble("ReplicationDeprovisionTime");
-
     m_replicationDeprovisionTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

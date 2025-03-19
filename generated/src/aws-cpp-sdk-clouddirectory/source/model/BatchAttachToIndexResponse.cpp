@@ -18,13 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchAttachToIndexResponse::BatchAttachToIndexResponse() : 
-    m_attachedObjectIdentifierHasBeenSet(false)
-{
-}
-
 BatchAttachToIndexResponse::BatchAttachToIndexResponse(JsonView jsonValue)
-  : BatchAttachToIndexResponse()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BatchAttachToIndexResponse& BatchAttachToIndexResponse::operator =(JsonView json
   if(jsonValue.ValueExists("AttachedObjectIdentifier"))
   {
     m_attachedObjectIdentifier = jsonValue.GetString("AttachedObjectIdentifier");
-
     m_attachedObjectIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

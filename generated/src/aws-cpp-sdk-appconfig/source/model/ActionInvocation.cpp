@@ -18,19 +18,7 @@ namespace AppConfig
 namespace Model
 {
 
-ActionInvocation::ActionInvocation() : 
-    m_extensionIdentifierHasBeenSet(false),
-    m_actionNameHasBeenSet(false),
-    m_uriHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_invocationIdHasBeenSet(false)
-{
-}
-
 ActionInvocation::ActionInvocation(JsonView jsonValue)
-  : ActionInvocation()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ ActionInvocation& ActionInvocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExtensionIdentifier"))
   {
     m_extensionIdentifier = jsonValue.GetString("ExtensionIdentifier");
-
     m_extensionIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActionName"))
   {
     m_actionName = jsonValue.GetString("ActionName");
-
     m_actionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Uri"))
   {
     m_uri = jsonValue.GetString("Uri");
-
     m_uriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvocationId"))
   {
     m_invocationId = jsonValue.GetString("InvocationId");
-
     m_invocationIdHasBeenSet = true;
   }
-
   return *this;
 }
 

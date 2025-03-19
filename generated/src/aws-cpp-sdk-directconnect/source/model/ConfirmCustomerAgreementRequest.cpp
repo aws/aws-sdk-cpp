@@ -12,11 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ConfirmCustomerAgreementRequest::ConfirmCustomerAgreementRequest() : 
-    m_agreementNameHasBeenSet(false)
-{
-}
-
 Aws::String ConfirmCustomerAgreementRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class AdminAccount
   {
   public:
-    AWS_GUARDDUTY_API AdminAccount();
+    AWS_GUARDDUTY_API AdminAccount() = default;
     AWS_GUARDDUTY_API AdminAccount(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API AdminAccount& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p>The Amazon Web Services account ID for the account.</p>
      */
-    inline const Aws::String& GetAdminAccountId() const{ return m_adminAccountId; }
+    inline const Aws::String& GetAdminAccountId() const { return m_adminAccountId; }
     inline bool AdminAccountIdHasBeenSet() const { return m_adminAccountIdHasBeenSet; }
-    inline void SetAdminAccountId(const Aws::String& value) { m_adminAccountIdHasBeenSet = true; m_adminAccountId = value; }
-    inline void SetAdminAccountId(Aws::String&& value) { m_adminAccountIdHasBeenSet = true; m_adminAccountId = std::move(value); }
-    inline void SetAdminAccountId(const char* value) { m_adminAccountIdHasBeenSet = true; m_adminAccountId.assign(value); }
-    inline AdminAccount& WithAdminAccountId(const Aws::String& value) { SetAdminAccountId(value); return *this;}
-    inline AdminAccount& WithAdminAccountId(Aws::String&& value) { SetAdminAccountId(std::move(value)); return *this;}
-    inline AdminAccount& WithAdminAccountId(const char* value) { SetAdminAccountId(value); return *this;}
+    template<typename AdminAccountIdT = Aws::String>
+    void SetAdminAccountId(AdminAccountIdT&& value) { m_adminAccountIdHasBeenSet = true; m_adminAccountId = std::forward<AdminAccountIdT>(value); }
+    template<typename AdminAccountIdT = Aws::String>
+    AdminAccount& WithAdminAccountId(AdminAccountIdT&& value) { SetAdminAccountId(std::forward<AdminAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the account is enabled as the delegated administrator.</p>
      */
-    inline const AdminStatus& GetAdminStatus() const{ return m_adminStatus; }
+    inline AdminStatus GetAdminStatus() const { return m_adminStatus; }
     inline bool AdminStatusHasBeenSet() const { return m_adminStatusHasBeenSet; }
-    inline void SetAdminStatus(const AdminStatus& value) { m_adminStatusHasBeenSet = true; m_adminStatus = value; }
-    inline void SetAdminStatus(AdminStatus&& value) { m_adminStatusHasBeenSet = true; m_adminStatus = std::move(value); }
-    inline AdminAccount& WithAdminStatus(const AdminStatus& value) { SetAdminStatus(value); return *this;}
-    inline AdminAccount& WithAdminStatus(AdminStatus&& value) { SetAdminStatus(std::move(value)); return *this;}
+    inline void SetAdminStatus(AdminStatus value) { m_adminStatusHasBeenSet = true; m_adminStatus = value; }
+    inline AdminAccount& WithAdminStatus(AdminStatus value) { SetAdminStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_adminAccountId;
     bool m_adminAccountIdHasBeenSet = false;
 
-    AdminStatus m_adminStatus;
+    AdminStatus m_adminStatus{AdminStatus::NOT_SET};
     bool m_adminStatusHasBeenSet = false;
   };
 

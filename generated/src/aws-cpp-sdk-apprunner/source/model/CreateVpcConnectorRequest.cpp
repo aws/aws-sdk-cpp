@@ -12,14 +12,6 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateVpcConnectorRequest::CreateVpcConnectorRequest() : 
-    m_vpcConnectorNameHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateVpcConnectorRequest::SerializePayload() const
 {
   JsonValue payload;

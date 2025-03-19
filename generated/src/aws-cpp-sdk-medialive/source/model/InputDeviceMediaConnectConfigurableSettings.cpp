@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-InputDeviceMediaConnectConfigurableSettings::InputDeviceMediaConnectConfigurableSettings() : 
-    m_flowArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_sourceNameHasBeenSet(false)
-{
-}
-
 InputDeviceMediaConnectConfigurableSettings::InputDeviceMediaConnectConfigurableSettings(JsonView jsonValue)
-  : InputDeviceMediaConnectConfigurableSettings()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ InputDeviceMediaConnectConfigurableSettings& InputDeviceMediaConnectConfigurable
   if(jsonValue.ValueExists("flowArn"))
   {
     m_flowArn = jsonValue.GetString("flowArn");
-
     m_flowArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secretArn"))
   {
     m_secretArn = jsonValue.GetString("secretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceName"))
   {
     m_sourceName = jsonValue.GetString("sourceName");
-
     m_sourceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

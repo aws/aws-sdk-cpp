@@ -34,7 +34,7 @@ namespace Model
   class NetworkConfig
   {
   public:
-    AWS_SAGEMAKER_API NetworkConfig();
+    AWS_SAGEMAKER_API NetworkConfig() = default;
     AWS_SAGEMAKER_API NetworkConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API NetworkConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,7 +47,7 @@ namespace Model
      * security for distributed processing jobs, but the processing might take
      * longer.</p>
      */
-    inline bool GetEnableInterContainerTrafficEncryption() const{ return m_enableInterContainerTrafficEncryption; }
+    inline bool GetEnableInterContainerTrafficEncryption() const { return m_enableInterContainerTrafficEncryption; }
     inline bool EnableInterContainerTrafficEncryptionHasBeenSet() const { return m_enableInterContainerTrafficEncryptionHasBeenSet; }
     inline void SetEnableInterContainerTrafficEncryption(bool value) { m_enableInterContainerTrafficEncryptionHasBeenSet = true; m_enableInterContainerTrafficEncryption = value; }
     inline NetworkConfig& WithEnableInterContainerTrafficEncryption(bool value) { SetEnableInterContainerTrafficEncryption(value); return *this;}
@@ -58,7 +58,7 @@ namespace Model
      * <p>Whether to allow inbound and outbound network calls to and from the
      * containers used for the processing job.</p>
      */
-    inline bool GetEnableNetworkIsolation() const{ return m_enableNetworkIsolation; }
+    inline bool GetEnableNetworkIsolation() const { return m_enableNetworkIsolation; }
     inline bool EnableNetworkIsolationHasBeenSet() const { return m_enableNetworkIsolationHasBeenSet; }
     inline void SetEnableNetworkIsolation(bool value) { m_enableNetworkIsolationHasBeenSet = true; m_enableNetworkIsolation = value; }
     inline NetworkConfig& WithEnableNetworkIsolation(bool value) { SetEnableNetworkIsolation(value); return *this;}
@@ -66,19 +66,19 @@ namespace Model
 
     ///@{
     
-    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+    inline const VpcConfig& GetVpcConfig() const { return m_vpcConfig; }
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
-    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
-    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
-    inline NetworkConfig& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
-    inline NetworkConfig& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+    template<typename VpcConfigT = VpcConfig>
+    void SetVpcConfig(VpcConfigT&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::forward<VpcConfigT>(value); }
+    template<typename VpcConfigT = VpcConfig>
+    NetworkConfig& WithVpcConfig(VpcConfigT&& value) { SetVpcConfig(std::forward<VpcConfigT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enableInterContainerTrafficEncryption;
+    bool m_enableInterContainerTrafficEncryption{false};
     bool m_enableInterContainerTrafficEncryptionHasBeenSet = false;
 
-    bool m_enableNetworkIsolation;
+    bool m_enableNetworkIsolation{false};
     bool m_enableNetworkIsolationHasBeenSet = false;
 
     VpcConfig m_vpcConfig;

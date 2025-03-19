@@ -12,14 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCrawlerMetricsRequest::GetCrawlerMetricsRequest() : 
-    m_crawlerNameListHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetCrawlerMetricsRequest::SerializePayload() const
 {
   JsonValue payload;

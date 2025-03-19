@@ -33,7 +33,7 @@ namespace Model
   class DescribeAlgorithmResult
   {
   public:
-    AWS_SAGEMAKER_API DescribeAlgorithmResult();
+    AWS_SAGEMAKER_API DescribeAlgorithmResult() = default;
     AWS_SAGEMAKER_API DescribeAlgorithmResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API DescribeAlgorithmResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,72 +42,66 @@ namespace Model
     /**
      * <p>The name of the algorithm being described.</p>
      */
-    inline const Aws::String& GetAlgorithmName() const{ return m_algorithmName; }
-    inline void SetAlgorithmName(const Aws::String& value) { m_algorithmName = value; }
-    inline void SetAlgorithmName(Aws::String&& value) { m_algorithmName = std::move(value); }
-    inline void SetAlgorithmName(const char* value) { m_algorithmName.assign(value); }
-    inline DescribeAlgorithmResult& WithAlgorithmName(const Aws::String& value) { SetAlgorithmName(value); return *this;}
-    inline DescribeAlgorithmResult& WithAlgorithmName(Aws::String&& value) { SetAlgorithmName(std::move(value)); return *this;}
-    inline DescribeAlgorithmResult& WithAlgorithmName(const char* value) { SetAlgorithmName(value); return *this;}
+    inline const Aws::String& GetAlgorithmName() const { return m_algorithmName; }
+    template<typename AlgorithmNameT = Aws::String>
+    void SetAlgorithmName(AlgorithmNameT&& value) { m_algorithmNameHasBeenSet = true; m_algorithmName = std::forward<AlgorithmNameT>(value); }
+    template<typename AlgorithmNameT = Aws::String>
+    DescribeAlgorithmResult& WithAlgorithmName(AlgorithmNameT&& value) { SetAlgorithmName(std::forward<AlgorithmNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the algorithm.</p>
      */
-    inline const Aws::String& GetAlgorithmArn() const{ return m_algorithmArn; }
-    inline void SetAlgorithmArn(const Aws::String& value) { m_algorithmArn = value; }
-    inline void SetAlgorithmArn(Aws::String&& value) { m_algorithmArn = std::move(value); }
-    inline void SetAlgorithmArn(const char* value) { m_algorithmArn.assign(value); }
-    inline DescribeAlgorithmResult& WithAlgorithmArn(const Aws::String& value) { SetAlgorithmArn(value); return *this;}
-    inline DescribeAlgorithmResult& WithAlgorithmArn(Aws::String&& value) { SetAlgorithmArn(std::move(value)); return *this;}
-    inline DescribeAlgorithmResult& WithAlgorithmArn(const char* value) { SetAlgorithmArn(value); return *this;}
+    inline const Aws::String& GetAlgorithmArn() const { return m_algorithmArn; }
+    template<typename AlgorithmArnT = Aws::String>
+    void SetAlgorithmArn(AlgorithmArnT&& value) { m_algorithmArnHasBeenSet = true; m_algorithmArn = std::forward<AlgorithmArnT>(value); }
+    template<typename AlgorithmArnT = Aws::String>
+    DescribeAlgorithmResult& WithAlgorithmArn(AlgorithmArnT&& value) { SetAlgorithmArn(std::forward<AlgorithmArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A brief summary about the algorithm.</p>
      */
-    inline const Aws::String& GetAlgorithmDescription() const{ return m_algorithmDescription; }
-    inline void SetAlgorithmDescription(const Aws::String& value) { m_algorithmDescription = value; }
-    inline void SetAlgorithmDescription(Aws::String&& value) { m_algorithmDescription = std::move(value); }
-    inline void SetAlgorithmDescription(const char* value) { m_algorithmDescription.assign(value); }
-    inline DescribeAlgorithmResult& WithAlgorithmDescription(const Aws::String& value) { SetAlgorithmDescription(value); return *this;}
-    inline DescribeAlgorithmResult& WithAlgorithmDescription(Aws::String&& value) { SetAlgorithmDescription(std::move(value)); return *this;}
-    inline DescribeAlgorithmResult& WithAlgorithmDescription(const char* value) { SetAlgorithmDescription(value); return *this;}
+    inline const Aws::String& GetAlgorithmDescription() const { return m_algorithmDescription; }
+    template<typename AlgorithmDescriptionT = Aws::String>
+    void SetAlgorithmDescription(AlgorithmDescriptionT&& value) { m_algorithmDescriptionHasBeenSet = true; m_algorithmDescription = std::forward<AlgorithmDescriptionT>(value); }
+    template<typename AlgorithmDescriptionT = Aws::String>
+    DescribeAlgorithmResult& WithAlgorithmDescription(AlgorithmDescriptionT&& value) { SetAlgorithmDescription(std::forward<AlgorithmDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp specifying when the algorithm was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeAlgorithmResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeAlgorithmResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeAlgorithmResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about training jobs run by this algorithm.</p>
      */
-    inline const TrainingSpecification& GetTrainingSpecification() const{ return m_trainingSpecification; }
-    inline void SetTrainingSpecification(const TrainingSpecification& value) { m_trainingSpecification = value; }
-    inline void SetTrainingSpecification(TrainingSpecification&& value) { m_trainingSpecification = std::move(value); }
-    inline DescribeAlgorithmResult& WithTrainingSpecification(const TrainingSpecification& value) { SetTrainingSpecification(value); return *this;}
-    inline DescribeAlgorithmResult& WithTrainingSpecification(TrainingSpecification&& value) { SetTrainingSpecification(std::move(value)); return *this;}
+    inline const TrainingSpecification& GetTrainingSpecification() const { return m_trainingSpecification; }
+    template<typename TrainingSpecificationT = TrainingSpecification>
+    void SetTrainingSpecification(TrainingSpecificationT&& value) { m_trainingSpecificationHasBeenSet = true; m_trainingSpecification = std::forward<TrainingSpecificationT>(value); }
+    template<typename TrainingSpecificationT = TrainingSpecification>
+    DescribeAlgorithmResult& WithTrainingSpecification(TrainingSpecificationT&& value) { SetTrainingSpecification(std::forward<TrainingSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about inference jobs that the algorithm runs.</p>
      */
-    inline const InferenceSpecification& GetInferenceSpecification() const{ return m_inferenceSpecification; }
-    inline void SetInferenceSpecification(const InferenceSpecification& value) { m_inferenceSpecification = value; }
-    inline void SetInferenceSpecification(InferenceSpecification&& value) { m_inferenceSpecification = std::move(value); }
-    inline DescribeAlgorithmResult& WithInferenceSpecification(const InferenceSpecification& value) { SetInferenceSpecification(value); return *this;}
-    inline DescribeAlgorithmResult& WithInferenceSpecification(InferenceSpecification&& value) { SetInferenceSpecification(std::move(value)); return *this;}
+    inline const InferenceSpecification& GetInferenceSpecification() const { return m_inferenceSpecification; }
+    template<typename InferenceSpecificationT = InferenceSpecification>
+    void SetInferenceSpecification(InferenceSpecificationT&& value) { m_inferenceSpecificationHasBeenSet = true; m_inferenceSpecification = std::forward<InferenceSpecificationT>(value); }
+    template<typename InferenceSpecificationT = InferenceSpecification>
+    DescribeAlgorithmResult& WithInferenceSpecification(InferenceSpecificationT&& value) { SetInferenceSpecification(std::forward<InferenceSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,46 +109,42 @@ namespace Model
      * <p>Details about configurations for one or more training jobs that SageMaker
      * runs to test the algorithm.</p>
      */
-    inline const AlgorithmValidationSpecification& GetValidationSpecification() const{ return m_validationSpecification; }
-    inline void SetValidationSpecification(const AlgorithmValidationSpecification& value) { m_validationSpecification = value; }
-    inline void SetValidationSpecification(AlgorithmValidationSpecification&& value) { m_validationSpecification = std::move(value); }
-    inline DescribeAlgorithmResult& WithValidationSpecification(const AlgorithmValidationSpecification& value) { SetValidationSpecification(value); return *this;}
-    inline DescribeAlgorithmResult& WithValidationSpecification(AlgorithmValidationSpecification&& value) { SetValidationSpecification(std::move(value)); return *this;}
+    inline const AlgorithmValidationSpecification& GetValidationSpecification() const { return m_validationSpecification; }
+    template<typename ValidationSpecificationT = AlgorithmValidationSpecification>
+    void SetValidationSpecification(ValidationSpecificationT&& value) { m_validationSpecificationHasBeenSet = true; m_validationSpecification = std::forward<ValidationSpecificationT>(value); }
+    template<typename ValidationSpecificationT = AlgorithmValidationSpecification>
+    DescribeAlgorithmResult& WithValidationSpecification(ValidationSpecificationT&& value) { SetValidationSpecification(std::forward<ValidationSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the algorithm.</p>
      */
-    inline const AlgorithmStatus& GetAlgorithmStatus() const{ return m_algorithmStatus; }
-    inline void SetAlgorithmStatus(const AlgorithmStatus& value) { m_algorithmStatus = value; }
-    inline void SetAlgorithmStatus(AlgorithmStatus&& value) { m_algorithmStatus = std::move(value); }
-    inline DescribeAlgorithmResult& WithAlgorithmStatus(const AlgorithmStatus& value) { SetAlgorithmStatus(value); return *this;}
-    inline DescribeAlgorithmResult& WithAlgorithmStatus(AlgorithmStatus&& value) { SetAlgorithmStatus(std::move(value)); return *this;}
+    inline AlgorithmStatus GetAlgorithmStatus() const { return m_algorithmStatus; }
+    inline void SetAlgorithmStatus(AlgorithmStatus value) { m_algorithmStatusHasBeenSet = true; m_algorithmStatus = value; }
+    inline DescribeAlgorithmResult& WithAlgorithmStatus(AlgorithmStatus value) { SetAlgorithmStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about the current status of the algorithm.</p>
      */
-    inline const AlgorithmStatusDetails& GetAlgorithmStatusDetails() const{ return m_algorithmStatusDetails; }
-    inline void SetAlgorithmStatusDetails(const AlgorithmStatusDetails& value) { m_algorithmStatusDetails = value; }
-    inline void SetAlgorithmStatusDetails(AlgorithmStatusDetails&& value) { m_algorithmStatusDetails = std::move(value); }
-    inline DescribeAlgorithmResult& WithAlgorithmStatusDetails(const AlgorithmStatusDetails& value) { SetAlgorithmStatusDetails(value); return *this;}
-    inline DescribeAlgorithmResult& WithAlgorithmStatusDetails(AlgorithmStatusDetails&& value) { SetAlgorithmStatusDetails(std::move(value)); return *this;}
+    inline const AlgorithmStatusDetails& GetAlgorithmStatusDetails() const { return m_algorithmStatusDetails; }
+    template<typename AlgorithmStatusDetailsT = AlgorithmStatusDetails>
+    void SetAlgorithmStatusDetails(AlgorithmStatusDetailsT&& value) { m_algorithmStatusDetailsHasBeenSet = true; m_algorithmStatusDetails = std::forward<AlgorithmStatusDetailsT>(value); }
+    template<typename AlgorithmStatusDetailsT = AlgorithmStatusDetails>
+    DescribeAlgorithmResult& WithAlgorithmStatusDetails(AlgorithmStatusDetailsT&& value) { SetAlgorithmStatusDetails(std::forward<AlgorithmStatusDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The product identifier of the algorithm.</p>
      */
-    inline const Aws::String& GetProductId() const{ return m_productId; }
-    inline void SetProductId(const Aws::String& value) { m_productId = value; }
-    inline void SetProductId(Aws::String&& value) { m_productId = std::move(value); }
-    inline void SetProductId(const char* value) { m_productId.assign(value); }
-    inline DescribeAlgorithmResult& WithProductId(const Aws::String& value) { SetProductId(value); return *this;}
-    inline DescribeAlgorithmResult& WithProductId(Aws::String&& value) { SetProductId(std::move(value)); return *this;}
-    inline DescribeAlgorithmResult& WithProductId(const char* value) { SetProductId(value); return *this;}
+    inline const Aws::String& GetProductId() const { return m_productId; }
+    template<typename ProductIdT = Aws::String>
+    void SetProductId(ProductIdT&& value) { m_productIdHasBeenSet = true; m_productId = std::forward<ProductIdT>(value); }
+    template<typename ProductIdT = Aws::String>
+    DescribeAlgorithmResult& WithProductId(ProductIdT&& value) { SetProductId(std::forward<ProductIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,46 +152,56 @@ namespace Model
      * <p>Whether the algorithm is certified to be listed in Amazon Web Services
      * Marketplace.</p>
      */
-    inline bool GetCertifyForMarketplace() const{ return m_certifyForMarketplace; }
-    inline void SetCertifyForMarketplace(bool value) { m_certifyForMarketplace = value; }
+    inline bool GetCertifyForMarketplace() const { return m_certifyForMarketplace; }
+    inline void SetCertifyForMarketplace(bool value) { m_certifyForMarketplaceHasBeenSet = true; m_certifyForMarketplace = value; }
     inline DescribeAlgorithmResult& WithCertifyForMarketplace(bool value) { SetCertifyForMarketplace(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAlgorithmResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAlgorithmResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAlgorithmResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAlgorithmResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_algorithmName;
+    bool m_algorithmNameHasBeenSet = false;
 
     Aws::String m_algorithmArn;
+    bool m_algorithmArnHasBeenSet = false;
 
     Aws::String m_algorithmDescription;
+    bool m_algorithmDescriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
     TrainingSpecification m_trainingSpecification;
+    bool m_trainingSpecificationHasBeenSet = false;
 
     InferenceSpecification m_inferenceSpecification;
+    bool m_inferenceSpecificationHasBeenSet = false;
 
     AlgorithmValidationSpecification m_validationSpecification;
+    bool m_validationSpecificationHasBeenSet = false;
 
-    AlgorithmStatus m_algorithmStatus;
+    AlgorithmStatus m_algorithmStatus{AlgorithmStatus::NOT_SET};
+    bool m_algorithmStatusHasBeenSet = false;
 
     AlgorithmStatusDetails m_algorithmStatusDetails;
+    bool m_algorithmStatusDetailsHasBeenSet = false;
 
     Aws::String m_productId;
+    bool m_productIdHasBeenSet = false;
 
-    bool m_certifyForMarketplace;
+    bool m_certifyForMarketplace{false};
+    bool m_certifyForMarketplaceHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

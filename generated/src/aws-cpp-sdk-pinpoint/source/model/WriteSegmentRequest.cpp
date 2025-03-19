@@ -18,16 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-WriteSegmentRequest::WriteSegmentRequest() : 
-    m_dimensionsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_segmentGroupsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 WriteSegmentRequest::WriteSegmentRequest(JsonView jsonValue)
-  : WriteSegmentRequest()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ WriteSegmentRequest& WriteSegmentRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Dimensions"))
   {
     m_dimensions = jsonValue.GetObject("Dimensions");
-
     m_dimensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SegmentGroups"))
   {
     m_segmentGroups = jsonValue.GetObject("SegmentGroups");
-
     m_segmentGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -64,7 +49,6 @@ WriteSegmentRequest& WriteSegmentRequest::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

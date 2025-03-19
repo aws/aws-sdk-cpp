@@ -18,14 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-S3Logs::S3Logs() : 
-    m_s3BucketNameHasBeenSet(false),
-    m_s3KeyPrefixHasBeenSet(false)
-{
-}
-
 S3Logs::S3Logs(JsonView jsonValue)
-  : S3Logs()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3Logs& S3Logs::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3BucketName"))
   {
     m_s3BucketName = jsonValue.GetString("s3BucketName");
-
     m_s3BucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3KeyPrefix"))
   {
     m_s3KeyPrefix = jsonValue.GetString("s3KeyPrefix");
-
     m_s3KeyPrefixHasBeenSet = true;
   }
-
   return *this;
 }
 

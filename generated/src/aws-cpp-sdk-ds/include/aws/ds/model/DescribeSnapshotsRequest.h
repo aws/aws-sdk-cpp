@@ -26,7 +26,7 @@ namespace Model
   class DescribeSnapshotsRequest : public DirectoryServiceRequest
   {
   public:
-    AWS_DIRECTORYSERVICE_API DescribeSnapshotsRequest();
+    AWS_DIRECTORYSERVICE_API DescribeSnapshotsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * <p>The identifier of the directory for which to retrieve snapshot
      * information.</p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-    inline DescribeSnapshotsRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline DescribeSnapshotsRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline DescribeSnapshotsRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    DescribeSnapshotsRequest& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,15 +58,14 @@ namespace Model
      * member is null or empty, all snapshots are returned using the <i>Limit</i> and
      * <i>NextToken</i> members.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSnapshotIds() const{ return m_snapshotIds; }
+    inline const Aws::Vector<Aws::String>& GetSnapshotIds() const { return m_snapshotIds; }
     inline bool SnapshotIdsHasBeenSet() const { return m_snapshotIdsHasBeenSet; }
-    inline void SetSnapshotIds(const Aws::Vector<Aws::String>& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds = value; }
-    inline void SetSnapshotIds(Aws::Vector<Aws::String>&& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds = std::move(value); }
-    inline DescribeSnapshotsRequest& WithSnapshotIds(const Aws::Vector<Aws::String>& value) { SetSnapshotIds(value); return *this;}
-    inline DescribeSnapshotsRequest& WithSnapshotIds(Aws::Vector<Aws::String>&& value) { SetSnapshotIds(std::move(value)); return *this;}
-    inline DescribeSnapshotsRequest& AddSnapshotIds(const Aws::String& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds.push_back(value); return *this; }
-    inline DescribeSnapshotsRequest& AddSnapshotIds(Aws::String&& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds.push_back(std::move(value)); return *this; }
-    inline DescribeSnapshotsRequest& AddSnapshotIds(const char* value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds.push_back(value); return *this; }
+    template<typename SnapshotIdsT = Aws::Vector<Aws::String>>
+    void SetSnapshotIds(SnapshotIdsT&& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds = std::forward<SnapshotIdsT>(value); }
+    template<typename SnapshotIdsT = Aws::Vector<Aws::String>>
+    DescribeSnapshotsRequest& WithSnapshotIds(SnapshotIdsT&& value) { SetSnapshotIds(std::forward<SnapshotIdsT>(value)); return *this;}
+    template<typename SnapshotIdsT = Aws::String>
+    DescribeSnapshotsRequest& AddSnapshotIds(SnapshotIdsT&& value) { m_snapshotIdsHasBeenSet = true; m_snapshotIds.emplace_back(std::forward<SnapshotIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -76,21 +73,19 @@ namespace Model
      * <p>The <i>DescribeSnapshotsResult.NextToken</i> value from a previous call to
      * <a>DescribeSnapshots</a>. Pass null if this is the first call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeSnapshotsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeSnapshotsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeSnapshotsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeSnapshotsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of objects to return.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline DescribeSnapshotsRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -106,7 +101,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
   };
 

@@ -18,14 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-S3Tag::S3Tag() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 S3Tag::S3Tag(JsonView jsonValue)
-  : S3Tag()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3Tag& S3Tag::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

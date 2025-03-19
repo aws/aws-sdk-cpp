@@ -12,23 +12,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RestoreTableToPointInTimeRequest::RestoreTableToPointInTimeRequest() : 
-    m_sourceTableArnHasBeenSet(false),
-    m_sourceTableNameHasBeenSet(false),
-    m_targetTableNameHasBeenSet(false),
-    m_useLatestRestorableTime(false),
-    m_useLatestRestorableTimeHasBeenSet(false),
-    m_restoreDateTimeHasBeenSet(false),
-    m_billingModeOverride(BillingMode::NOT_SET),
-    m_billingModeOverrideHasBeenSet(false),
-    m_globalSecondaryIndexOverrideHasBeenSet(false),
-    m_localSecondaryIndexOverrideHasBeenSet(false),
-    m_provisionedThroughputOverrideHasBeenSet(false),
-    m_onDemandThroughputOverrideHasBeenSet(false),
-    m_sSESpecificationOverrideHasBeenSet(false)
-{
-}
-
 Aws::String RestoreTableToPointInTimeRequest::SerializePayload() const
 {
   JsonValue payload;

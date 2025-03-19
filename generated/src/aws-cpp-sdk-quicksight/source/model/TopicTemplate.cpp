@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TopicTemplate::TopicTemplate() : 
-    m_templateTypeHasBeenSet(false),
-    m_slotsHasBeenSet(false)
-{
-}
-
 TopicTemplate::TopicTemplate(JsonView jsonValue)
-  : TopicTemplate()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TopicTemplate& TopicTemplate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TemplateType"))
   {
     m_templateType = jsonValue.GetString("TemplateType");
-
     m_templateTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Slots"))
   {
     Aws::Utils::Array<JsonView> slotsJsonList = jsonValue.GetArray("Slots");
@@ -48,7 +39,6 @@ TopicTemplate& TopicTemplate::operator =(JsonView jsonValue)
     }
     m_slotsHasBeenSet = true;
   }
-
   return *this;
 }
 

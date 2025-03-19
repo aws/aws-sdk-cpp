@@ -18,15 +18,7 @@ namespace deadline
 namespace Model
 {
 
-AcquiredLimit::AcquiredLimit() : 
-    m_limitIdHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
-{
-}
-
 AcquiredLimit::AcquiredLimit(JsonView jsonValue)
-  : AcquiredLimit()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AcquiredLimit& AcquiredLimit::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("limitId"))
   {
     m_limitId = jsonValue.GetString("limitId");
-
     m_limitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetInteger("count");
-
     m_countHasBeenSet = true;
   }
-
   return *this;
 }
 

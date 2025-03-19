@@ -35,7 +35,7 @@ namespace Model
   class InstanceConfiguration
   {
   public:
-    AWS_IMAGEBUILDER_API InstanceConfiguration();
+    AWS_IMAGEBUILDER_API InstanceConfiguration() = default;
     AWS_IMAGEBUILDER_API InstanceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API InstanceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * If not specified, Image Builder will use the appropriate ECS-optimized AMI as a
      * base image.</p>
      */
-    inline const Aws::String& GetImage() const{ return m_image; }
+    inline const Aws::String& GetImage() const { return m_image; }
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
-    inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-    inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
-    inline InstanceConfiguration& WithImage(const Aws::String& value) { SetImage(value); return *this;}
-    inline InstanceConfiguration& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
-    inline InstanceConfiguration& WithImage(const char* value) { SetImage(value); return *this;}
+    template<typename ImageT = Aws::String>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = Aws::String>
+    InstanceConfiguration& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,14 @@ namespace Model
      * <p>Defines the block devices to attach for building an instance from this Image
      * Builder AMI.</p>
      */
-    inline const Aws::Vector<InstanceBlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
+    inline const Aws::Vector<InstanceBlockDeviceMapping>& GetBlockDeviceMappings() const { return m_blockDeviceMappings; }
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
-    inline void SetBlockDeviceMappings(const Aws::Vector<InstanceBlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
-    inline void SetBlockDeviceMappings(Aws::Vector<InstanceBlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
-    inline InstanceConfiguration& WithBlockDeviceMappings(const Aws::Vector<InstanceBlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
-    inline InstanceConfiguration& WithBlockDeviceMappings(Aws::Vector<InstanceBlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
-    inline InstanceConfiguration& AddBlockDeviceMappings(const InstanceBlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
-    inline InstanceConfiguration& AddBlockDeviceMappings(InstanceBlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
+    template<typename BlockDeviceMappingsT = Aws::Vector<InstanceBlockDeviceMapping>>
+    void SetBlockDeviceMappings(BlockDeviceMappingsT&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::forward<BlockDeviceMappingsT>(value); }
+    template<typename BlockDeviceMappingsT = Aws::Vector<InstanceBlockDeviceMapping>>
+    InstanceConfiguration& WithBlockDeviceMappings(BlockDeviceMappingsT&& value) { SetBlockDeviceMappings(std::forward<BlockDeviceMappingsT>(value)); return *this;}
+    template<typename BlockDeviceMappingsT = InstanceBlockDeviceMapping>
+    InstanceConfiguration& AddBlockDeviceMappings(BlockDeviceMappingsT&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.emplace_back(std::forward<BlockDeviceMappingsT>(value)); return *this; }
     ///@}
   private:
 

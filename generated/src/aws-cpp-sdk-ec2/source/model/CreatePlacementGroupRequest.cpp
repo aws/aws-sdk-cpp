@@ -10,20 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreatePlacementGroupRequest::CreatePlacementGroupRequest() : 
-    m_partitionCount(0),
-    m_partitionCountHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_spreadLevel(SpreadLevel::NOT_SET),
-    m_spreadLevelHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_strategy(PlacementStrategy::NOT_SET),
-    m_strategyHasBeenSet(false)
-{
-}
-
 Aws::String CreatePlacementGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -39,7 +39,7 @@ namespace Model
   class AwsAppSyncGraphQlApiDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsAppSyncGraphQlApiDetails();
+    AWS_SECURITYHUB_API AwsAppSyncGraphQlApiDetails() = default;
     AWS_SECURITYHUB_API AwsAppSyncGraphQlApiDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsAppSyncGraphQlApiDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,28 +49,24 @@ namespace Model
     /**
      * <p> The unique identifier for the API. </p>
      */
-    inline const Aws::String& GetApiId() const{ return m_apiId; }
+    inline const Aws::String& GetApiId() const { return m_apiId; }
     inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
-    inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
-    inline void SetApiId(Aws::String&& value) { m_apiIdHasBeenSet = true; m_apiId = std::move(value); }
-    inline void SetApiId(const char* value) { m_apiIdHasBeenSet = true; m_apiId.assign(value); }
-    inline AwsAppSyncGraphQlApiDetails& WithApiId(const Aws::String& value) { SetApiId(value); return *this;}
-    inline AwsAppSyncGraphQlApiDetails& WithApiId(Aws::String&& value) { SetApiId(std::move(value)); return *this;}
-    inline AwsAppSyncGraphQlApiDetails& WithApiId(const char* value) { SetApiId(value); return *this;}
+    template<typename ApiIdT = Aws::String>
+    void SetApiId(ApiIdT&& value) { m_apiIdHasBeenSet = true; m_apiId = std::forward<ApiIdT>(value); }
+    template<typename ApiIdT = Aws::String>
+    AwsAppSyncGraphQlApiDetails& WithApiId(ApiIdT&& value) { SetApiId(std::forward<ApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the API.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline AwsAppSyncGraphQlApiDetails& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline AwsAppSyncGraphQlApiDetails& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline AwsAppSyncGraphQlApiDetails& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    AwsAppSyncGraphQlApiDetails& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,45 +74,43 @@ namespace Model
      * <p> Specifies the authorization configuration for using an OpenID Connect
      * compliant service with an AppSync GraphQL API endpoint. </p>
      */
-    inline const AwsAppSyncGraphQlApiOpenIdConnectConfigDetails& GetOpenIdConnectConfig() const{ return m_openIdConnectConfig; }
+    inline const AwsAppSyncGraphQlApiOpenIdConnectConfigDetails& GetOpenIdConnectConfig() const { return m_openIdConnectConfig; }
     inline bool OpenIdConnectConfigHasBeenSet() const { return m_openIdConnectConfigHasBeenSet; }
-    inline void SetOpenIdConnectConfig(const AwsAppSyncGraphQlApiOpenIdConnectConfigDetails& value) { m_openIdConnectConfigHasBeenSet = true; m_openIdConnectConfig = value; }
-    inline void SetOpenIdConnectConfig(AwsAppSyncGraphQlApiOpenIdConnectConfigDetails&& value) { m_openIdConnectConfigHasBeenSet = true; m_openIdConnectConfig = std::move(value); }
-    inline AwsAppSyncGraphQlApiDetails& WithOpenIdConnectConfig(const AwsAppSyncGraphQlApiOpenIdConnectConfigDetails& value) { SetOpenIdConnectConfig(value); return *this;}
-    inline AwsAppSyncGraphQlApiDetails& WithOpenIdConnectConfig(AwsAppSyncGraphQlApiOpenIdConnectConfigDetails&& value) { SetOpenIdConnectConfig(std::move(value)); return *this;}
+    template<typename OpenIdConnectConfigT = AwsAppSyncGraphQlApiOpenIdConnectConfigDetails>
+    void SetOpenIdConnectConfig(OpenIdConnectConfigT&& value) { m_openIdConnectConfigHasBeenSet = true; m_openIdConnectConfig = std::forward<OpenIdConnectConfigT>(value); }
+    template<typename OpenIdConnectConfigT = AwsAppSyncGraphQlApiOpenIdConnectConfigDetails>
+    AwsAppSyncGraphQlApiDetails& WithOpenIdConnectConfig(OpenIdConnectConfigT&& value) { SetOpenIdConnectConfig(std::forward<OpenIdConnectConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The API name. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AwsAppSyncGraphQlApiDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AwsAppSyncGraphQlApiDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AwsAppSyncGraphQlApiDetails& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AwsAppSyncGraphQlApiDetails& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Specifies the configuration for Lambda function authorization. </p>
      */
-    inline const AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails& GetLambdaAuthorizerConfig() const{ return m_lambdaAuthorizerConfig; }
+    inline const AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails& GetLambdaAuthorizerConfig() const { return m_lambdaAuthorizerConfig; }
     inline bool LambdaAuthorizerConfigHasBeenSet() const { return m_lambdaAuthorizerConfigHasBeenSet; }
-    inline void SetLambdaAuthorizerConfig(const AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails& value) { m_lambdaAuthorizerConfigHasBeenSet = true; m_lambdaAuthorizerConfig = value; }
-    inline void SetLambdaAuthorizerConfig(AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails&& value) { m_lambdaAuthorizerConfigHasBeenSet = true; m_lambdaAuthorizerConfig = std::move(value); }
-    inline AwsAppSyncGraphQlApiDetails& WithLambdaAuthorizerConfig(const AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails& value) { SetLambdaAuthorizerConfig(value); return *this;}
-    inline AwsAppSyncGraphQlApiDetails& WithLambdaAuthorizerConfig(AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails&& value) { SetLambdaAuthorizerConfig(std::move(value)); return *this;}
+    template<typename LambdaAuthorizerConfigT = AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails>
+    void SetLambdaAuthorizerConfig(LambdaAuthorizerConfigT&& value) { m_lambdaAuthorizerConfigHasBeenSet = true; m_lambdaAuthorizerConfig = std::forward<LambdaAuthorizerConfigT>(value); }
+    template<typename LambdaAuthorizerConfigT = AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails>
+    AwsAppSyncGraphQlApiDetails& WithLambdaAuthorizerConfig(LambdaAuthorizerConfigT&& value) { SetLambdaAuthorizerConfig(std::forward<LambdaAuthorizerConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Indicates whether to use X-Ray tracing for the GraphQL API. </p>
      */
-    inline bool GetXrayEnabled() const{ return m_xrayEnabled; }
+    inline bool GetXrayEnabled() const { return m_xrayEnabled; }
     inline bool XrayEnabledHasBeenSet() const { return m_xrayEnabledHasBeenSet; }
     inline void SetXrayEnabled(bool value) { m_xrayEnabledHasBeenSet = true; m_xrayEnabled = value; }
     inline AwsAppSyncGraphQlApiDetails& WithXrayEnabled(bool value) { SetXrayEnabled(value); return *this;}
@@ -126,26 +120,24 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (ARN) of the API. </p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline AwsAppSyncGraphQlApiDetails& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline AwsAppSyncGraphQlApiDetails& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline AwsAppSyncGraphQlApiDetails& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    AwsAppSyncGraphQlApiDetails& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Amazon Cognito user pools configuration. </p>
      */
-    inline const AwsAppSyncGraphQlApiUserPoolConfigDetails& GetUserPoolConfig() const{ return m_userPoolConfig; }
+    inline const AwsAppSyncGraphQlApiUserPoolConfigDetails& GetUserPoolConfig() const { return m_userPoolConfig; }
     inline bool UserPoolConfigHasBeenSet() const { return m_userPoolConfigHasBeenSet; }
-    inline void SetUserPoolConfig(const AwsAppSyncGraphQlApiUserPoolConfigDetails& value) { m_userPoolConfigHasBeenSet = true; m_userPoolConfig = value; }
-    inline void SetUserPoolConfig(AwsAppSyncGraphQlApiUserPoolConfigDetails&& value) { m_userPoolConfigHasBeenSet = true; m_userPoolConfig = std::move(value); }
-    inline AwsAppSyncGraphQlApiDetails& WithUserPoolConfig(const AwsAppSyncGraphQlApiUserPoolConfigDetails& value) { SetUserPoolConfig(value); return *this;}
-    inline AwsAppSyncGraphQlApiDetails& WithUserPoolConfig(AwsAppSyncGraphQlApiUserPoolConfigDetails&& value) { SetUserPoolConfig(std::move(value)); return *this;}
+    template<typename UserPoolConfigT = AwsAppSyncGraphQlApiUserPoolConfigDetails>
+    void SetUserPoolConfig(UserPoolConfigT&& value) { m_userPoolConfigHasBeenSet = true; m_userPoolConfig = std::forward<UserPoolConfigT>(value); }
+    template<typename UserPoolConfigT = AwsAppSyncGraphQlApiUserPoolConfigDetails>
+    AwsAppSyncGraphQlApiDetails& WithUserPoolConfig(UserPoolConfigT&& value) { SetUserPoolConfig(std::forward<UserPoolConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -154,40 +146,38 @@ namespace Model
      * and Access Management (IAM), OpenID Connect (OIDC), Amazon Cognito user pools,
      * or Lambda. </p>
      */
-    inline const Aws::String& GetAuthenticationType() const{ return m_authenticationType; }
+    inline const Aws::String& GetAuthenticationType() const { return m_authenticationType; }
     inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
-    inline void SetAuthenticationType(const Aws::String& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
-    inline void SetAuthenticationType(Aws::String&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
-    inline void SetAuthenticationType(const char* value) { m_authenticationTypeHasBeenSet = true; m_authenticationType.assign(value); }
-    inline AwsAppSyncGraphQlApiDetails& WithAuthenticationType(const Aws::String& value) { SetAuthenticationType(value); return *this;}
-    inline AwsAppSyncGraphQlApiDetails& WithAuthenticationType(Aws::String&& value) { SetAuthenticationType(std::move(value)); return *this;}
-    inline AwsAppSyncGraphQlApiDetails& WithAuthenticationType(const char* value) { SetAuthenticationType(value); return *this;}
+    template<typename AuthenticationTypeT = Aws::String>
+    void SetAuthenticationType(AuthenticationTypeT&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::forward<AuthenticationTypeT>(value); }
+    template<typename AuthenticationTypeT = Aws::String>
+    AwsAppSyncGraphQlApiDetails& WithAuthenticationType(AuthenticationTypeT&& value) { SetAuthenticationType(std::forward<AuthenticationTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Amazon CloudWatch Logs configuration. </p>
      */
-    inline const AwsAppSyncGraphQlApiLogConfigDetails& GetLogConfig() const{ return m_logConfig; }
+    inline const AwsAppSyncGraphQlApiLogConfigDetails& GetLogConfig() const { return m_logConfig; }
     inline bool LogConfigHasBeenSet() const { return m_logConfigHasBeenSet; }
-    inline void SetLogConfig(const AwsAppSyncGraphQlApiLogConfigDetails& value) { m_logConfigHasBeenSet = true; m_logConfig = value; }
-    inline void SetLogConfig(AwsAppSyncGraphQlApiLogConfigDetails&& value) { m_logConfigHasBeenSet = true; m_logConfig = std::move(value); }
-    inline AwsAppSyncGraphQlApiDetails& WithLogConfig(const AwsAppSyncGraphQlApiLogConfigDetails& value) { SetLogConfig(value); return *this;}
-    inline AwsAppSyncGraphQlApiDetails& WithLogConfig(AwsAppSyncGraphQlApiLogConfigDetails&& value) { SetLogConfig(std::move(value)); return *this;}
+    template<typename LogConfigT = AwsAppSyncGraphQlApiLogConfigDetails>
+    void SetLogConfig(LogConfigT&& value) { m_logConfigHasBeenSet = true; m_logConfig = std::forward<LogConfigT>(value); }
+    template<typename LogConfigT = AwsAppSyncGraphQlApiLogConfigDetails>
+    AwsAppSyncGraphQlApiDetails& WithLogConfig(LogConfigT&& value) { SetLogConfig(std::forward<LogConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A list of additional authentication providers for the GraphQL API. </p>
      */
-    inline const Aws::Vector<AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails>& GetAdditionalAuthenticationProviders() const{ return m_additionalAuthenticationProviders; }
+    inline const Aws::Vector<AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails>& GetAdditionalAuthenticationProviders() const { return m_additionalAuthenticationProviders; }
     inline bool AdditionalAuthenticationProvidersHasBeenSet() const { return m_additionalAuthenticationProvidersHasBeenSet; }
-    inline void SetAdditionalAuthenticationProviders(const Aws::Vector<AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails>& value) { m_additionalAuthenticationProvidersHasBeenSet = true; m_additionalAuthenticationProviders = value; }
-    inline void SetAdditionalAuthenticationProviders(Aws::Vector<AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails>&& value) { m_additionalAuthenticationProvidersHasBeenSet = true; m_additionalAuthenticationProviders = std::move(value); }
-    inline AwsAppSyncGraphQlApiDetails& WithAdditionalAuthenticationProviders(const Aws::Vector<AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails>& value) { SetAdditionalAuthenticationProviders(value); return *this;}
-    inline AwsAppSyncGraphQlApiDetails& WithAdditionalAuthenticationProviders(Aws::Vector<AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails>&& value) { SetAdditionalAuthenticationProviders(std::move(value)); return *this;}
-    inline AwsAppSyncGraphQlApiDetails& AddAdditionalAuthenticationProviders(const AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails& value) { m_additionalAuthenticationProvidersHasBeenSet = true; m_additionalAuthenticationProviders.push_back(value); return *this; }
-    inline AwsAppSyncGraphQlApiDetails& AddAdditionalAuthenticationProviders(AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails&& value) { m_additionalAuthenticationProvidersHasBeenSet = true; m_additionalAuthenticationProviders.push_back(std::move(value)); return *this; }
+    template<typename AdditionalAuthenticationProvidersT = Aws::Vector<AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails>>
+    void SetAdditionalAuthenticationProviders(AdditionalAuthenticationProvidersT&& value) { m_additionalAuthenticationProvidersHasBeenSet = true; m_additionalAuthenticationProviders = std::forward<AdditionalAuthenticationProvidersT>(value); }
+    template<typename AdditionalAuthenticationProvidersT = Aws::Vector<AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails>>
+    AwsAppSyncGraphQlApiDetails& WithAdditionalAuthenticationProviders(AdditionalAuthenticationProvidersT&& value) { SetAdditionalAuthenticationProviders(std::forward<AdditionalAuthenticationProvidersT>(value)); return *this;}
+    template<typename AdditionalAuthenticationProvidersT = AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails>
+    AwsAppSyncGraphQlApiDetails& AddAdditionalAuthenticationProviders(AdditionalAuthenticationProvidersT&& value) { m_additionalAuthenticationProvidersHasBeenSet = true; m_additionalAuthenticationProviders.emplace_back(std::forward<AdditionalAuthenticationProvidersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -195,14 +185,12 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the WAF web access control list (web ACL)
      * associated with this GraphQL API, if one exists. </p>
      */
-    inline const Aws::String& GetWafWebAclArn() const{ return m_wafWebAclArn; }
+    inline const Aws::String& GetWafWebAclArn() const { return m_wafWebAclArn; }
     inline bool WafWebAclArnHasBeenSet() const { return m_wafWebAclArnHasBeenSet; }
-    inline void SetWafWebAclArn(const Aws::String& value) { m_wafWebAclArnHasBeenSet = true; m_wafWebAclArn = value; }
-    inline void SetWafWebAclArn(Aws::String&& value) { m_wafWebAclArnHasBeenSet = true; m_wafWebAclArn = std::move(value); }
-    inline void SetWafWebAclArn(const char* value) { m_wafWebAclArnHasBeenSet = true; m_wafWebAclArn.assign(value); }
-    inline AwsAppSyncGraphQlApiDetails& WithWafWebAclArn(const Aws::String& value) { SetWafWebAclArn(value); return *this;}
-    inline AwsAppSyncGraphQlApiDetails& WithWafWebAclArn(Aws::String&& value) { SetWafWebAclArn(std::move(value)); return *this;}
-    inline AwsAppSyncGraphQlApiDetails& WithWafWebAclArn(const char* value) { SetWafWebAclArn(value); return *this;}
+    template<typename WafWebAclArnT = Aws::String>
+    void SetWafWebAclArn(WafWebAclArnT&& value) { m_wafWebAclArnHasBeenSet = true; m_wafWebAclArn = std::forward<WafWebAclArnT>(value); }
+    template<typename WafWebAclArnT = Aws::String>
+    AwsAppSyncGraphQlApiDetails& WithWafWebAclArn(WafWebAclArnT&& value) { SetWafWebAclArn(std::forward<WafWebAclArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -221,7 +209,7 @@ namespace Model
     AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails m_lambdaAuthorizerConfig;
     bool m_lambdaAuthorizerConfigHasBeenSet = false;
 
-    bool m_xrayEnabled;
+    bool m_xrayEnabled{false};
     bool m_xrayEnabledHasBeenSet = false;
 
     Aws::String m_arn;

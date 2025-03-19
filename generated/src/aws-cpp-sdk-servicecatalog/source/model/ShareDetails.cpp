@@ -18,14 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-ShareDetails::ShareDetails() : 
-    m_successfulSharesHasBeenSet(false),
-    m_shareErrorsHasBeenSet(false)
-{
-}
-
 ShareDetails::ShareDetails(JsonView jsonValue)
-  : ShareDetails()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ ShareDetails& ShareDetails::operator =(JsonView jsonValue)
     }
     m_successfulSharesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShareErrors"))
   {
     Aws::Utils::Array<JsonView> shareErrorsJsonList = jsonValue.GetArray("ShareErrors");
@@ -51,7 +43,6 @@ ShareDetails& ShareDetails::operator =(JsonView jsonValue)
     }
     m_shareErrorsHasBeenSet = true;
   }
-
   return *this;
 }
 

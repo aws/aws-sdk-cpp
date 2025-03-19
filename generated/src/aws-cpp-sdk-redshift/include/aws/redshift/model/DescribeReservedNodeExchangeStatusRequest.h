@@ -21,7 +21,7 @@ namespace Model
   class DescribeReservedNodeExchangeStatusRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API DescribeReservedNodeExchangeStatusRequest();
+    AWS_REDSHIFT_API DescribeReservedNodeExchangeStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,28 +41,24 @@ namespace Model
      * <p>The identifier of the source reserved node in a reserved-node exchange
      * request.</p>
      */
-    inline const Aws::String& GetReservedNodeId() const{ return m_reservedNodeId; }
+    inline const Aws::String& GetReservedNodeId() const { return m_reservedNodeId; }
     inline bool ReservedNodeIdHasBeenSet() const { return m_reservedNodeIdHasBeenSet; }
-    inline void SetReservedNodeId(const Aws::String& value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId = value; }
-    inline void SetReservedNodeId(Aws::String&& value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId = std::move(value); }
-    inline void SetReservedNodeId(const char* value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId.assign(value); }
-    inline DescribeReservedNodeExchangeStatusRequest& WithReservedNodeId(const Aws::String& value) { SetReservedNodeId(value); return *this;}
-    inline DescribeReservedNodeExchangeStatusRequest& WithReservedNodeId(Aws::String&& value) { SetReservedNodeId(std::move(value)); return *this;}
-    inline DescribeReservedNodeExchangeStatusRequest& WithReservedNodeId(const char* value) { SetReservedNodeId(value); return *this;}
+    template<typename ReservedNodeIdT = Aws::String>
+    void SetReservedNodeId(ReservedNodeIdT&& value) { m_reservedNodeIdHasBeenSet = true; m_reservedNodeId = std::forward<ReservedNodeIdT>(value); }
+    template<typename ReservedNodeIdT = Aws::String>
+    DescribeReservedNodeExchangeStatusRequest& WithReservedNodeId(ReservedNodeIdT&& value) { SetReservedNodeId(std::forward<ReservedNodeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the reserved-node exchange request.</p>
      */
-    inline const Aws::String& GetReservedNodeExchangeRequestId() const{ return m_reservedNodeExchangeRequestId; }
+    inline const Aws::String& GetReservedNodeExchangeRequestId() const { return m_reservedNodeExchangeRequestId; }
     inline bool ReservedNodeExchangeRequestIdHasBeenSet() const { return m_reservedNodeExchangeRequestIdHasBeenSet; }
-    inline void SetReservedNodeExchangeRequestId(const Aws::String& value) { m_reservedNodeExchangeRequestIdHasBeenSet = true; m_reservedNodeExchangeRequestId = value; }
-    inline void SetReservedNodeExchangeRequestId(Aws::String&& value) { m_reservedNodeExchangeRequestIdHasBeenSet = true; m_reservedNodeExchangeRequestId = std::move(value); }
-    inline void SetReservedNodeExchangeRequestId(const char* value) { m_reservedNodeExchangeRequestIdHasBeenSet = true; m_reservedNodeExchangeRequestId.assign(value); }
-    inline DescribeReservedNodeExchangeStatusRequest& WithReservedNodeExchangeRequestId(const Aws::String& value) { SetReservedNodeExchangeRequestId(value); return *this;}
-    inline DescribeReservedNodeExchangeStatusRequest& WithReservedNodeExchangeRequestId(Aws::String&& value) { SetReservedNodeExchangeRequestId(std::move(value)); return *this;}
-    inline DescribeReservedNodeExchangeStatusRequest& WithReservedNodeExchangeRequestId(const char* value) { SetReservedNodeExchangeRequestId(value); return *this;}
+    template<typename ReservedNodeExchangeRequestIdT = Aws::String>
+    void SetReservedNodeExchangeRequestId(ReservedNodeExchangeRequestIdT&& value) { m_reservedNodeExchangeRequestIdHasBeenSet = true; m_reservedNodeExchangeRequestId = std::forward<ReservedNodeExchangeRequestIdT>(value); }
+    template<typename ReservedNodeExchangeRequestIdT = Aws::String>
+    DescribeReservedNodeExchangeStatusRequest& WithReservedNodeExchangeRequestId(ReservedNodeExchangeRequestIdT&& value) { SetReservedNodeExchangeRequestId(std::forward<ReservedNodeExchangeRequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,7 +69,7 @@ namespace Model
      * can retrieve the next set of records by retrying the command with the returned
      * marker value.</p>
      */
-    inline int GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
     inline DescribeReservedNodeExchangeStatusRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
@@ -88,14 +84,12 @@ namespace Model
      * set of response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline DescribeReservedNodeExchangeStatusRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeReservedNodeExchangeStatusRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeReservedNodeExchangeStatusRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeReservedNodeExchangeStatusRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
   private:
 
@@ -105,7 +99,7 @@ namespace Model
     Aws::String m_reservedNodeExchangeRequestId;
     bool m_reservedNodeExchangeRequestIdHasBeenSet = false;
 
-    int m_maxRecords;
+    int m_maxRecords{0};
     bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;

@@ -18,18 +18,7 @@ namespace TranscribeService
 namespace Model
 {
 
-VocabularyInfo::VocabularyInfo() : 
-    m_vocabularyNameHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_vocabularyState(VocabularyState::NOT_SET),
-    m_vocabularyStateHasBeenSet(false)
-{
-}
-
 VocabularyInfo::VocabularyInfo(JsonView jsonValue)
-  : VocabularyInfo()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ VocabularyInfo& VocabularyInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VocabularyName"))
   {
     m_vocabularyName = jsonValue.GetString("VocabularyName");
-
     m_vocabularyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LanguageCode"))
   {
     m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("LanguageCode"));
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VocabularyState"))
   {
     m_vocabularyState = VocabularyStateMapper::GetVocabularyStateForName(jsonValue.GetString("VocabularyState"));
-
     m_vocabularyStateHasBeenSet = true;
   }
-
   return *this;
 }
 

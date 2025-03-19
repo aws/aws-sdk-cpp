@@ -32,7 +32,7 @@ namespace Model
   class CookieSpecification
   {
   public:
-    AWS_WORKSPACESWEB_API CookieSpecification();
+    AWS_WORKSPACESWEB_API CookieSpecification() = default;
     AWS_WORKSPACESWEB_API CookieSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACESWEB_API CookieSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACESWEB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The domain of the cookie.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline CookieSpecification& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline CookieSpecification& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline CookieSpecification& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    CookieSpecification& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the cookie.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CookieSpecification& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CookieSpecification& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CookieSpecification& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CookieSpecification& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The path of the cookie.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline CookieSpecification& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline CookieSpecification& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline CookieSpecification& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    CookieSpecification& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
   private:
 

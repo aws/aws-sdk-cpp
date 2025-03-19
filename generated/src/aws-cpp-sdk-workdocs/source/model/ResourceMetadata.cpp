@@ -18,20 +18,7 @@ namespace WorkDocs
 namespace Model
 {
 
-ResourceMetadata::ResourceMetadata() : 
-    m_type(ResourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_originalNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_parentIdHasBeenSet(false)
-{
-}
-
 ResourceMetadata::ResourceMetadata(JsonView jsonValue)
-  : ResourceMetadata()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ ResourceMetadata& ResourceMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OriginalName"))
   {
     m_originalName = jsonValue.GetString("OriginalName");
-
     m_originalNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionId"))
   {
     m_versionId = jsonValue.GetString("VersionId");
-
     m_versionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Owner"))
   {
     m_owner = jsonValue.GetObject("Owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParentId"))
   {
     m_parentId = jsonValue.GetString("ParentId");
-
     m_parentIdHasBeenSet = true;
   }
-
   return *this;
 }
 

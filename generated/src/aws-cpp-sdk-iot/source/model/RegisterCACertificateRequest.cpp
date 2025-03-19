@@ -15,20 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-RegisterCACertificateRequest::RegisterCACertificateRequest() : 
-    m_caCertificateHasBeenSet(false),
-    m_verificationCertificateHasBeenSet(false),
-    m_setAsActive(false),
-    m_setAsActiveHasBeenSet(false),
-    m_allowAutoRegistration(false),
-    m_allowAutoRegistrationHasBeenSet(false),
-    m_registrationConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_certificateMode(CertificateMode::NOT_SET),
-    m_certificateModeHasBeenSet(false)
-{
-}
-
 Aws::String RegisterCACertificateRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -38,7 +38,7 @@ namespace Model
   class MaintenanceTrack
   {
   public:
-    AWS_REDSHIFT_API MaintenanceTrack();
+    AWS_REDSHIFT_API MaintenanceTrack() = default;
     AWS_REDSHIFT_API MaintenanceTrack(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API MaintenanceTrack& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -51,28 +51,24 @@ namespace Model
      * <p>The name of the maintenance track. Possible values are <code>current</code>
      * and <code>trailing</code>.</p>
      */
-    inline const Aws::String& GetMaintenanceTrackName() const{ return m_maintenanceTrackName; }
+    inline const Aws::String& GetMaintenanceTrackName() const { return m_maintenanceTrackName; }
     inline bool MaintenanceTrackNameHasBeenSet() const { return m_maintenanceTrackNameHasBeenSet; }
-    inline void SetMaintenanceTrackName(const Aws::String& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = value; }
-    inline void SetMaintenanceTrackName(Aws::String&& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = std::move(value); }
-    inline void SetMaintenanceTrackName(const char* value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName.assign(value); }
-    inline MaintenanceTrack& WithMaintenanceTrackName(const Aws::String& value) { SetMaintenanceTrackName(value); return *this;}
-    inline MaintenanceTrack& WithMaintenanceTrackName(Aws::String&& value) { SetMaintenanceTrackName(std::move(value)); return *this;}
-    inline MaintenanceTrack& WithMaintenanceTrackName(const char* value) { SetMaintenanceTrackName(value); return *this;}
+    template<typename MaintenanceTrackNameT = Aws::String>
+    void SetMaintenanceTrackName(MaintenanceTrackNameT&& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = std::forward<MaintenanceTrackNameT>(value); }
+    template<typename MaintenanceTrackNameT = Aws::String>
+    MaintenanceTrack& WithMaintenanceTrackName(MaintenanceTrackNameT&& value) { SetMaintenanceTrackName(std::forward<MaintenanceTrackNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version number for the cluster release.</p>
      */
-    inline const Aws::String& GetDatabaseVersion() const{ return m_databaseVersion; }
+    inline const Aws::String& GetDatabaseVersion() const { return m_databaseVersion; }
     inline bool DatabaseVersionHasBeenSet() const { return m_databaseVersionHasBeenSet; }
-    inline void SetDatabaseVersion(const Aws::String& value) { m_databaseVersionHasBeenSet = true; m_databaseVersion = value; }
-    inline void SetDatabaseVersion(Aws::String&& value) { m_databaseVersionHasBeenSet = true; m_databaseVersion = std::move(value); }
-    inline void SetDatabaseVersion(const char* value) { m_databaseVersionHasBeenSet = true; m_databaseVersion.assign(value); }
-    inline MaintenanceTrack& WithDatabaseVersion(const Aws::String& value) { SetDatabaseVersion(value); return *this;}
-    inline MaintenanceTrack& WithDatabaseVersion(Aws::String&& value) { SetDatabaseVersion(std::move(value)); return *this;}
-    inline MaintenanceTrack& WithDatabaseVersion(const char* value) { SetDatabaseVersion(value); return *this;}
+    template<typename DatabaseVersionT = Aws::String>
+    void SetDatabaseVersion(DatabaseVersionT&& value) { m_databaseVersionHasBeenSet = true; m_databaseVersion = std::forward<DatabaseVersionT>(value); }
+    template<typename DatabaseVersionT = Aws::String>
+    MaintenanceTrack& WithDatabaseVersion(DatabaseVersionT&& value) { SetDatabaseVersion(std::forward<DatabaseVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +76,14 @@ namespace Model
      * <p>An array of <a>UpdateTarget</a> objects to update with the maintenance track.
      * </p>
      */
-    inline const Aws::Vector<UpdateTarget>& GetUpdateTargets() const{ return m_updateTargets; }
+    inline const Aws::Vector<UpdateTarget>& GetUpdateTargets() const { return m_updateTargets; }
     inline bool UpdateTargetsHasBeenSet() const { return m_updateTargetsHasBeenSet; }
-    inline void SetUpdateTargets(const Aws::Vector<UpdateTarget>& value) { m_updateTargetsHasBeenSet = true; m_updateTargets = value; }
-    inline void SetUpdateTargets(Aws::Vector<UpdateTarget>&& value) { m_updateTargetsHasBeenSet = true; m_updateTargets = std::move(value); }
-    inline MaintenanceTrack& WithUpdateTargets(const Aws::Vector<UpdateTarget>& value) { SetUpdateTargets(value); return *this;}
-    inline MaintenanceTrack& WithUpdateTargets(Aws::Vector<UpdateTarget>&& value) { SetUpdateTargets(std::move(value)); return *this;}
-    inline MaintenanceTrack& AddUpdateTargets(const UpdateTarget& value) { m_updateTargetsHasBeenSet = true; m_updateTargets.push_back(value); return *this; }
-    inline MaintenanceTrack& AddUpdateTargets(UpdateTarget&& value) { m_updateTargetsHasBeenSet = true; m_updateTargets.push_back(std::move(value)); return *this; }
+    template<typename UpdateTargetsT = Aws::Vector<UpdateTarget>>
+    void SetUpdateTargets(UpdateTargetsT&& value) { m_updateTargetsHasBeenSet = true; m_updateTargets = std::forward<UpdateTargetsT>(value); }
+    template<typename UpdateTargetsT = Aws::Vector<UpdateTarget>>
+    MaintenanceTrack& WithUpdateTargets(UpdateTargetsT&& value) { SetUpdateTargets(std::forward<UpdateTargetsT>(value)); return *this;}
+    template<typename UpdateTargetsT = UpdateTarget>
+    MaintenanceTrack& AddUpdateTargets(UpdateTargetsT&& value) { m_updateTargetsHasBeenSet = true; m_updateTargets.emplace_back(std::forward<UpdateTargetsT>(value)); return *this; }
     ///@}
   private:
 

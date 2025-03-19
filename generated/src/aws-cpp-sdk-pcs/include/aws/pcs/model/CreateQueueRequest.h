@@ -25,7 +25,7 @@ namespace Model
   class CreateQueueRequest : public PCSRequest
   {
   public:
-    AWS_PCS_API CreateQueueRequest();
+    AWS_PCS_API CreateQueueRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name or ID of the cluster for which to create a queue.</p>
      */
-    inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+    inline const Aws::String& GetClusterIdentifier() const { return m_clusterIdentifier; }
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
-    inline CreateQueueRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
-    inline CreateQueueRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
-    inline CreateQueueRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+    template<typename ClusterIdentifierT = Aws::String>
+    void SetClusterIdentifier(ClusterIdentifierT&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::forward<ClusterIdentifierT>(value); }
+    template<typename ClusterIdentifierT = Aws::String>
+    CreateQueueRequest& WithClusterIdentifier(ClusterIdentifierT&& value) { SetClusterIdentifier(std::forward<ClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A name to identify the queue.</p>
      */
-    inline const Aws::String& GetQueueName() const{ return m_queueName; }
+    inline const Aws::String& GetQueueName() const { return m_queueName; }
     inline bool QueueNameHasBeenSet() const { return m_queueNameHasBeenSet; }
-    inline void SetQueueName(const Aws::String& value) { m_queueNameHasBeenSet = true; m_queueName = value; }
-    inline void SetQueueName(Aws::String&& value) { m_queueNameHasBeenSet = true; m_queueName = std::move(value); }
-    inline void SetQueueName(const char* value) { m_queueNameHasBeenSet = true; m_queueName.assign(value); }
-    inline CreateQueueRequest& WithQueueName(const Aws::String& value) { SetQueueName(value); return *this;}
-    inline CreateQueueRequest& WithQueueName(Aws::String&& value) { SetQueueName(std::move(value)); return *this;}
-    inline CreateQueueRequest& WithQueueName(const char* value) { SetQueueName(value); return *this;}
+    template<typename QueueNameT = Aws::String>
+    void SetQueueName(QueueNameT&& value) { m_queueNameHasBeenSet = true; m_queueName = std::forward<QueueNameT>(value); }
+    template<typename QueueNameT = Aws::String>
+    CreateQueueRequest& WithQueueName(QueueNameT&& value) { SetQueueName(std::forward<QueueNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +67,14 @@ namespace Model
      * <p>The list of compute node group configurations to associate with the queue.
      * Queues assign jobs to associated compute node groups.</p>
      */
-    inline const Aws::Vector<ComputeNodeGroupConfiguration>& GetComputeNodeGroupConfigurations() const{ return m_computeNodeGroupConfigurations; }
+    inline const Aws::Vector<ComputeNodeGroupConfiguration>& GetComputeNodeGroupConfigurations() const { return m_computeNodeGroupConfigurations; }
     inline bool ComputeNodeGroupConfigurationsHasBeenSet() const { return m_computeNodeGroupConfigurationsHasBeenSet; }
-    inline void SetComputeNodeGroupConfigurations(const Aws::Vector<ComputeNodeGroupConfiguration>& value) { m_computeNodeGroupConfigurationsHasBeenSet = true; m_computeNodeGroupConfigurations = value; }
-    inline void SetComputeNodeGroupConfigurations(Aws::Vector<ComputeNodeGroupConfiguration>&& value) { m_computeNodeGroupConfigurationsHasBeenSet = true; m_computeNodeGroupConfigurations = std::move(value); }
-    inline CreateQueueRequest& WithComputeNodeGroupConfigurations(const Aws::Vector<ComputeNodeGroupConfiguration>& value) { SetComputeNodeGroupConfigurations(value); return *this;}
-    inline CreateQueueRequest& WithComputeNodeGroupConfigurations(Aws::Vector<ComputeNodeGroupConfiguration>&& value) { SetComputeNodeGroupConfigurations(std::move(value)); return *this;}
-    inline CreateQueueRequest& AddComputeNodeGroupConfigurations(const ComputeNodeGroupConfiguration& value) { m_computeNodeGroupConfigurationsHasBeenSet = true; m_computeNodeGroupConfigurations.push_back(value); return *this; }
-    inline CreateQueueRequest& AddComputeNodeGroupConfigurations(ComputeNodeGroupConfiguration&& value) { m_computeNodeGroupConfigurationsHasBeenSet = true; m_computeNodeGroupConfigurations.push_back(std::move(value)); return *this; }
+    template<typename ComputeNodeGroupConfigurationsT = Aws::Vector<ComputeNodeGroupConfiguration>>
+    void SetComputeNodeGroupConfigurations(ComputeNodeGroupConfigurationsT&& value) { m_computeNodeGroupConfigurationsHasBeenSet = true; m_computeNodeGroupConfigurations = std::forward<ComputeNodeGroupConfigurationsT>(value); }
+    template<typename ComputeNodeGroupConfigurationsT = Aws::Vector<ComputeNodeGroupConfiguration>>
+    CreateQueueRequest& WithComputeNodeGroupConfigurations(ComputeNodeGroupConfigurationsT&& value) { SetComputeNodeGroupConfigurations(std::forward<ComputeNodeGroupConfigurationsT>(value)); return *this;}
+    template<typename ComputeNodeGroupConfigurationsT = ComputeNodeGroupConfiguration>
+    CreateQueueRequest& AddComputeNodeGroupConfigurations(ComputeNodeGroupConfigurationsT&& value) { m_computeNodeGroupConfigurationsHasBeenSet = true; m_computeNodeGroupConfigurations.emplace_back(std::forward<ComputeNodeGroupConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -91,14 +87,12 @@ namespace Model
      * If you don't specify a client token, the CLI and SDK automatically generate 1
      * for you.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateQueueRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateQueueRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateQueueRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateQueueRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,19 +100,16 @@ namespace Model
      * <p>1 or more tags added to the resource. Each tag consists of a tag key and tag
      * value. The tag value is optional and can be an empty string.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateQueueRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateQueueRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateQueueRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateQueueRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateQueueRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateQueueRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateQueueRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateQueueRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateQueueRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateQueueRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateQueueRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

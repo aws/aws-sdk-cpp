@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SecurityGroup::SecurityGroup() : 
-    m_groupIdHasBeenSet(false),
-    m_ipPermissionsEgressHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_securityGroupArnHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ipPermissionsHasBeenSet(false)
-{
-}
-
 SecurityGroup::SecurityGroup(const XmlNode& xmlNode)
-  : SecurityGroup()
 {
   *this = xmlNode;
 }
@@ -55,6 +41,7 @@ SecurityGroup& SecurityGroup::operator =(const XmlNode& xmlNode)
     if(!ipPermissionsEgressNode.IsNull())
     {
       XmlNode ipPermissionsEgressMember = ipPermissionsEgressNode.FirstChild("item");
+      m_ipPermissionsEgressHasBeenSet = !ipPermissionsEgressMember.IsNull();
       while(!ipPermissionsEgressMember.IsNull())
       {
         m_ipPermissionsEgress.push_back(ipPermissionsEgressMember);
@@ -67,6 +54,7 @@ SecurityGroup& SecurityGroup::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -109,6 +97,7 @@ SecurityGroup& SecurityGroup::operator =(const XmlNode& xmlNode)
     if(!ipPermissionsNode.IsNull())
     {
       XmlNode ipPermissionsMember = ipPermissionsNode.FirstChild("item");
+      m_ipPermissionsHasBeenSet = !ipPermissionsMember.IsNull();
       while(!ipPermissionsMember.IsNull())
       {
         m_ipPermissions.push_back(ipPermissionsMember);

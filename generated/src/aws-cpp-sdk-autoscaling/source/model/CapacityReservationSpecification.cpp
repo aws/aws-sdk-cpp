@@ -20,15 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-CapacityReservationSpecification::CapacityReservationSpecification() : 
-    m_capacityReservationPreference(CapacityReservationPreference::NOT_SET),
-    m_capacityReservationPreferenceHasBeenSet(false),
-    m_capacityReservationTargetHasBeenSet(false)
-{
-}
-
 CapacityReservationSpecification::CapacityReservationSpecification(const XmlNode& xmlNode)
-  : CapacityReservationSpecification()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ CapacityReservationSpecification& CapacityReservationSpecification::operator =(c
     XmlNode capacityReservationPreferenceNode = resultNode.FirstChild("CapacityReservationPreference");
     if(!capacityReservationPreferenceNode.IsNull())
     {
-      m_capacityReservationPreference = CapacityReservationPreferenceMapper::GetCapacityReservationPreferenceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(capacityReservationPreferenceNode.GetText()).c_str()).c_str());
+      m_capacityReservationPreference = CapacityReservationPreferenceMapper::GetCapacityReservationPreferenceForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(capacityReservationPreferenceNode.GetText()).c_str()));
       m_capacityReservationPreferenceHasBeenSet = true;
     }
     XmlNode capacityReservationTargetNode = resultNode.FirstChild("CapacityReservationTarget");

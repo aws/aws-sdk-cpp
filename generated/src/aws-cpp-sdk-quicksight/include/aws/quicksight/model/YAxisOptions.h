@@ -32,7 +32,7 @@ namespace Model
   class YAxisOptions
   {
   public:
-    AWS_QUICKSIGHT_API YAxisOptions();
+    AWS_QUICKSIGHT_API YAxisOptions() = default;
     AWS_QUICKSIGHT_API YAxisOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API YAxisOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,16 +44,14 @@ namespace Model
      * <code>PRIMARY_Y_AXIS</code>, the primary Y Axis is located on the leftmost
      * vertical axis of the chart.</p>
      */
-    inline const SingleYAxisOption& GetYAxis() const{ return m_yAxis; }
+    inline SingleYAxisOption GetYAxis() const { return m_yAxis; }
     inline bool YAxisHasBeenSet() const { return m_yAxisHasBeenSet; }
-    inline void SetYAxis(const SingleYAxisOption& value) { m_yAxisHasBeenSet = true; m_yAxis = value; }
-    inline void SetYAxis(SingleYAxisOption&& value) { m_yAxisHasBeenSet = true; m_yAxis = std::move(value); }
-    inline YAxisOptions& WithYAxis(const SingleYAxisOption& value) { SetYAxis(value); return *this;}
-    inline YAxisOptions& WithYAxis(SingleYAxisOption&& value) { SetYAxis(std::move(value)); return *this;}
+    inline void SetYAxis(SingleYAxisOption value) { m_yAxisHasBeenSet = true; m_yAxis = value; }
+    inline YAxisOptions& WithYAxis(SingleYAxisOption value) { SetYAxis(value); return *this;}
     ///@}
   private:
 
-    SingleYAxisOption m_yAxis;
+    SingleYAxisOption m_yAxis{SingleYAxisOption::NOT_SET};
     bool m_yAxisHasBeenSet = false;
   };
 

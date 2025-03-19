@@ -18,15 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-LatestInPipelineExecutionFilter::LatestInPipelineExecutionFilter() : 
-    m_pipelineExecutionIdHasBeenSet(false),
-    m_startTimeRange(StartTimeRange::NOT_SET),
-    m_startTimeRangeHasBeenSet(false)
-{
-}
-
 LatestInPipelineExecutionFilter::LatestInPipelineExecutionFilter(JsonView jsonValue)
-  : LatestInPipelineExecutionFilter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LatestInPipelineExecutionFilter& LatestInPipelineExecutionFilter::operator =(Jso
   if(jsonValue.ValueExists("pipelineExecutionId"))
   {
     m_pipelineExecutionId = jsonValue.GetString("pipelineExecutionId");
-
     m_pipelineExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTimeRange"))
   {
     m_startTimeRange = StartTimeRangeMapper::GetStartTimeRangeForName(jsonValue.GetString("startTimeRange"));
-
     m_startTimeRangeHasBeenSet = true;
   }
-
   return *this;
 }
 

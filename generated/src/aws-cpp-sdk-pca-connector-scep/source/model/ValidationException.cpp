@@ -18,15 +18,7 @@ namespace PcaConnectorScep
 namespace Model
 {
 
-ValidationException::ValidationException() : 
-    m_messageHasBeenSet(false),
-    m_reason(ValidationExceptionReason::NOT_SET),
-    m_reasonHasBeenSet(false)
-{
-}
-
 ValidationException::ValidationException(JsonView jsonValue)
-  : ValidationException()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ValidationException& ValidationException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = ValidationExceptionReasonMapper::GetValidationExceptionReasonForName(jsonValue.GetString("Reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

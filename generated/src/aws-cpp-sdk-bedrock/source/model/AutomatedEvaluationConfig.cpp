@@ -18,14 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-AutomatedEvaluationConfig::AutomatedEvaluationConfig() : 
-    m_datasetMetricConfigsHasBeenSet(false),
-    m_evaluatorModelConfigHasBeenSet(false)
-{
-}
-
 AutomatedEvaluationConfig::AutomatedEvaluationConfig(JsonView jsonValue)
-  : AutomatedEvaluationConfig()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ AutomatedEvaluationConfig& AutomatedEvaluationConfig::operator =(JsonView jsonVa
     }
     m_datasetMetricConfigsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evaluatorModelConfig"))
   {
     m_evaluatorModelConfig = jsonValue.GetObject("evaluatorModelConfig");
-
     m_evaluatorModelConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

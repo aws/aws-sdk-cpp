@@ -22,7 +22,7 @@ namespace Model
   class AssociateNatGatewayAddressRequest : public EC2Request
   {
   public:
-    AWS_EC2_API AssociateNatGatewayAddressRequest();
+    AWS_EC2_API AssociateNatGatewayAddressRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The ID of the NAT gateway.</p>
      */
-    inline const Aws::String& GetNatGatewayId() const{ return m_natGatewayId; }
+    inline const Aws::String& GetNatGatewayId() const { return m_natGatewayId; }
     inline bool NatGatewayIdHasBeenSet() const { return m_natGatewayIdHasBeenSet; }
-    inline void SetNatGatewayId(const Aws::String& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = value; }
-    inline void SetNatGatewayId(Aws::String&& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = std::move(value); }
-    inline void SetNatGatewayId(const char* value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId.assign(value); }
-    inline AssociateNatGatewayAddressRequest& WithNatGatewayId(const Aws::String& value) { SetNatGatewayId(value); return *this;}
-    inline AssociateNatGatewayAddressRequest& WithNatGatewayId(Aws::String&& value) { SetNatGatewayId(std::move(value)); return *this;}
-    inline AssociateNatGatewayAddressRequest& WithNatGatewayId(const char* value) { SetNatGatewayId(value); return *this;}
+    template<typename NatGatewayIdT = Aws::String>
+    void SetNatGatewayId(NatGatewayIdT&& value) { m_natGatewayIdHasBeenSet = true; m_natGatewayId = std::forward<NatGatewayIdT>(value); }
+    template<typename NatGatewayIdT = Aws::String>
+    AssociateNatGatewayAddressRequest& WithNatGatewayId(NatGatewayIdT&& value) { SetNatGatewayId(std::forward<NatGatewayIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,30 +54,28 @@ namespace Model
      * <p>The allocation IDs of EIPs that you want to associate with your NAT
      * gateway.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllocationIds() const{ return m_allocationIds; }
+    inline const Aws::Vector<Aws::String>& GetAllocationIds() const { return m_allocationIds; }
     inline bool AllocationIdsHasBeenSet() const { return m_allocationIdsHasBeenSet; }
-    inline void SetAllocationIds(const Aws::Vector<Aws::String>& value) { m_allocationIdsHasBeenSet = true; m_allocationIds = value; }
-    inline void SetAllocationIds(Aws::Vector<Aws::String>&& value) { m_allocationIdsHasBeenSet = true; m_allocationIds = std::move(value); }
-    inline AssociateNatGatewayAddressRequest& WithAllocationIds(const Aws::Vector<Aws::String>& value) { SetAllocationIds(value); return *this;}
-    inline AssociateNatGatewayAddressRequest& WithAllocationIds(Aws::Vector<Aws::String>&& value) { SetAllocationIds(std::move(value)); return *this;}
-    inline AssociateNatGatewayAddressRequest& AddAllocationIds(const Aws::String& value) { m_allocationIdsHasBeenSet = true; m_allocationIds.push_back(value); return *this; }
-    inline AssociateNatGatewayAddressRequest& AddAllocationIds(Aws::String&& value) { m_allocationIdsHasBeenSet = true; m_allocationIds.push_back(std::move(value)); return *this; }
-    inline AssociateNatGatewayAddressRequest& AddAllocationIds(const char* value) { m_allocationIdsHasBeenSet = true; m_allocationIds.push_back(value); return *this; }
+    template<typename AllocationIdsT = Aws::Vector<Aws::String>>
+    void SetAllocationIds(AllocationIdsT&& value) { m_allocationIdsHasBeenSet = true; m_allocationIds = std::forward<AllocationIdsT>(value); }
+    template<typename AllocationIdsT = Aws::Vector<Aws::String>>
+    AssociateNatGatewayAddressRequest& WithAllocationIds(AllocationIdsT&& value) { SetAllocationIds(std::forward<AllocationIdsT>(value)); return *this;}
+    template<typename AllocationIdsT = Aws::String>
+    AssociateNatGatewayAddressRequest& AddAllocationIds(AllocationIdsT&& value) { m_allocationIdsHasBeenSet = true; m_allocationIds.emplace_back(std::forward<AllocationIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The private IPv4 addresses that you want to assign to the NAT gateway.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPrivateIpAddresses() const{ return m_privateIpAddresses; }
+    inline const Aws::Vector<Aws::String>& GetPrivateIpAddresses() const { return m_privateIpAddresses; }
     inline bool PrivateIpAddressesHasBeenSet() const { return m_privateIpAddressesHasBeenSet; }
-    inline void SetPrivateIpAddresses(const Aws::Vector<Aws::String>& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = value; }
-    inline void SetPrivateIpAddresses(Aws::Vector<Aws::String>&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = std::move(value); }
-    inline AssociateNatGatewayAddressRequest& WithPrivateIpAddresses(const Aws::Vector<Aws::String>& value) { SetPrivateIpAddresses(value); return *this;}
-    inline AssociateNatGatewayAddressRequest& WithPrivateIpAddresses(Aws::Vector<Aws::String>&& value) { SetPrivateIpAddresses(std::move(value)); return *this;}
-    inline AssociateNatGatewayAddressRequest& AddPrivateIpAddresses(const Aws::String& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(value); return *this; }
-    inline AssociateNatGatewayAddressRequest& AddPrivateIpAddresses(Aws::String&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(std::move(value)); return *this; }
-    inline AssociateNatGatewayAddressRequest& AddPrivateIpAddresses(const char* value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(value); return *this; }
+    template<typename PrivateIpAddressesT = Aws::Vector<Aws::String>>
+    void SetPrivateIpAddresses(PrivateIpAddressesT&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = std::forward<PrivateIpAddressesT>(value); }
+    template<typename PrivateIpAddressesT = Aws::Vector<Aws::String>>
+    AssociateNatGatewayAddressRequest& WithPrivateIpAddresses(PrivateIpAddressesT&& value) { SetPrivateIpAddresses(std::forward<PrivateIpAddressesT>(value)); return *this;}
+    template<typename PrivateIpAddressesT = Aws::String>
+    AssociateNatGatewayAddressRequest& AddPrivateIpAddresses(PrivateIpAddressesT&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.emplace_back(std::forward<PrivateIpAddressesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -89,7 +85,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline AssociateNatGatewayAddressRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -105,7 +101,7 @@ namespace Model
     Aws::Vector<Aws::String> m_privateIpAddresses;
     bool m_privateIpAddressesHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

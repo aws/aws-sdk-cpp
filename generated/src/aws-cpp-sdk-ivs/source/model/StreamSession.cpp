@@ -18,20 +18,7 @@ namespace IVS
 namespace Model
 {
 
-StreamSession::StreamSession() : 
-    m_channelHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_ingestConfigurationHasBeenSet(false),
-    m_ingestConfigurationsHasBeenSet(false),
-    m_recordingConfigurationHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_streamIdHasBeenSet(false),
-    m_truncatedEventsHasBeenSet(false)
-{
-}
-
 StreamSession::StreamSession(JsonView jsonValue)
-  : StreamSession()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ StreamSession& StreamSession::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("channel"))
   {
     m_channel = jsonValue.GetObject("channel");
-
     m_channelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ingestConfiguration"))
   {
     m_ingestConfiguration = jsonValue.GetObject("ingestConfiguration");
-
     m_ingestConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ingestConfigurations"))
   {
     m_ingestConfigurations = jsonValue.GetObject("ingestConfigurations");
-
     m_ingestConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recordingConfiguration"))
   {
     m_recordingConfiguration = jsonValue.GetObject("recordingConfiguration");
-
     m_recordingConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamId"))
   {
     m_streamId = jsonValue.GetString("streamId");
-
     m_streamIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("truncatedEvents"))
   {
     Aws::Utils::Array<JsonView> truncatedEventsJsonList = jsonValue.GetArray("truncatedEvents");
@@ -96,7 +69,6 @@ StreamSession& StreamSession::operator =(JsonView jsonValue)
     }
     m_truncatedEventsHasBeenSet = true;
   }
-
   return *this;
 }
 

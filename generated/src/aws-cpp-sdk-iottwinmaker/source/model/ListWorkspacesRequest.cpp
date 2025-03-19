@@ -12,13 +12,6 @@ using namespace Aws::IoTTwinMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListWorkspacesRequest::ListWorkspacesRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListWorkspacesRequest::SerializePayload() const
 {
   JsonValue payload;

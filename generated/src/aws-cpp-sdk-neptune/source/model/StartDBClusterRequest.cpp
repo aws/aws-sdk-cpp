@@ -10,11 +10,6 @@
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-StartDBClusterRequest::StartDBClusterRequest() : 
-    m_dBClusterIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String StartDBClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

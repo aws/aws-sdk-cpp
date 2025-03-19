@@ -24,7 +24,7 @@ namespace Model
   class GetWorkloadRequest : public WellArchitectedRequest
   {
   public:
-    AWS_WELLARCHITECTED_API GetWorkloadRequest();
+    AWS_WELLARCHITECTED_API GetWorkloadRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
+    inline const Aws::String& GetWorkloadId() const { return m_workloadId; }
     inline bool WorkloadIdHasBeenSet() const { return m_workloadIdHasBeenSet; }
-    inline void SetWorkloadId(const Aws::String& value) { m_workloadIdHasBeenSet = true; m_workloadId = value; }
-    inline void SetWorkloadId(Aws::String&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::move(value); }
-    inline void SetWorkloadId(const char* value) { m_workloadIdHasBeenSet = true; m_workloadId.assign(value); }
-    inline GetWorkloadRequest& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-    inline GetWorkloadRequest& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-    inline GetWorkloadRequest& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    template<typename WorkloadIdT = Aws::String>
+    void SetWorkloadId(WorkloadIdT&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::forward<WorkloadIdT>(value); }
+    template<typename WorkloadIdT = Aws::String>
+    GetWorkloadRequest& WithWorkloadId(WorkloadIdT&& value) { SetWorkloadId(std::forward<WorkloadIdT>(value)); return *this;}
     ///@}
   private:
 

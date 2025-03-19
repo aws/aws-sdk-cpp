@@ -12,11 +12,6 @@ using namespace Aws::ivsrealtime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteStorageConfigurationRequest::DeleteStorageConfigurationRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteStorageConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

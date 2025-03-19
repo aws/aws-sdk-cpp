@@ -12,11 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeMaintenanceStartTimeRequest::DescribeMaintenanceStartTimeRequest() : 
-    m_gatewayARNHasBeenSet(false)
-{
-}
-
 Aws::String DescribeMaintenanceStartTimeRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -34,7 +34,7 @@ namespace Model
   class ValidationWarning
   {
   public:
-    AWS_DATAPIPELINE_API ValidationWarning();
+    AWS_DATAPIPELINE_API ValidationWarning() = default;
     AWS_DATAPIPELINE_API ValidationWarning(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAPIPELINE_API ValidationWarning& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,29 +44,26 @@ namespace Model
     /**
      * <p>The identifier of the object that contains the validation warning.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ValidationWarning& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ValidationWarning& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ValidationWarning& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ValidationWarning& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the validation warning.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetWarnings() const{ return m_warnings; }
+    inline const Aws::Vector<Aws::String>& GetWarnings() const { return m_warnings; }
     inline bool WarningsHasBeenSet() const { return m_warningsHasBeenSet; }
-    inline void SetWarnings(const Aws::Vector<Aws::String>& value) { m_warningsHasBeenSet = true; m_warnings = value; }
-    inline void SetWarnings(Aws::Vector<Aws::String>&& value) { m_warningsHasBeenSet = true; m_warnings = std::move(value); }
-    inline ValidationWarning& WithWarnings(const Aws::Vector<Aws::String>& value) { SetWarnings(value); return *this;}
-    inline ValidationWarning& WithWarnings(Aws::Vector<Aws::String>&& value) { SetWarnings(std::move(value)); return *this;}
-    inline ValidationWarning& AddWarnings(const Aws::String& value) { m_warningsHasBeenSet = true; m_warnings.push_back(value); return *this; }
-    inline ValidationWarning& AddWarnings(Aws::String&& value) { m_warningsHasBeenSet = true; m_warnings.push_back(std::move(value)); return *this; }
-    inline ValidationWarning& AddWarnings(const char* value) { m_warningsHasBeenSet = true; m_warnings.push_back(value); return *this; }
+    template<typename WarningsT = Aws::Vector<Aws::String>>
+    void SetWarnings(WarningsT&& value) { m_warningsHasBeenSet = true; m_warnings = std::forward<WarningsT>(value); }
+    template<typename WarningsT = Aws::Vector<Aws::String>>
+    ValidationWarning& WithWarnings(WarningsT&& value) { SetWarnings(std::forward<WarningsT>(value)); return *this;}
+    template<typename WarningsT = Aws::String>
+    ValidationWarning& AddWarnings(WarningsT&& value) { m_warningsHasBeenSet = true; m_warnings.emplace_back(std::forward<WarningsT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,21 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-SubscribedAsset::SubscribedAsset() : 
-    m_assetIdHasBeenSet(false),
-    m_assetRevisionHasBeenSet(false),
-    m_assetScopeHasBeenSet(false),
-    m_failureCauseHasBeenSet(false),
-    m_failureTimestampHasBeenSet(false),
-    m_grantedTimestampHasBeenSet(false),
-    m_status(SubscriptionGrantStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetNameHasBeenSet(false)
-{
-}
-
 SubscribedAsset::SubscribedAsset(JsonView jsonValue)
-  : SubscribedAsset()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ SubscribedAsset& SubscribedAsset::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("assetId"))
   {
     m_assetId = jsonValue.GetString("assetId");
-
     m_assetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetRevision"))
   {
     m_assetRevision = jsonValue.GetString("assetRevision");
-
     m_assetRevisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetScope"))
   {
     m_assetScope = jsonValue.GetObject("assetScope");
-
     m_assetScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureCause"))
   {
     m_failureCause = jsonValue.GetObject("failureCause");
-
     m_failureCauseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureTimestamp"))
   {
     m_failureTimestamp = jsonValue.GetDouble("failureTimestamp");
-
     m_failureTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("grantedTimestamp"))
   {
     m_grantedTimestamp = jsonValue.GetDouble("grantedTimestamp");
-
     m_grantedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = SubscriptionGrantStatusMapper::GetSubscriptionGrantStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetName"))
   {
     m_targetName = jsonValue.GetString("targetName");
-
     m_targetNameHasBeenSet = true;
   }
-
   return *this;
 }
 

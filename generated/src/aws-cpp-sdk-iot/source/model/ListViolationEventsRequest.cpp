@@ -15,23 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListViolationEventsRequest::ListViolationEventsRequest() : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_thingNameHasBeenSet(false),
-    m_securityProfileNameHasBeenSet(false),
-    m_behaviorCriteriaType(BehaviorCriteriaType::NOT_SET),
-    m_behaviorCriteriaTypeHasBeenSet(false),
-    m_listSuppressedAlerts(false),
-    m_listSuppressedAlertsHasBeenSet(false),
-    m_verificationState(VerificationState::NOT_SET),
-    m_verificationStateHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListViolationEventsRequest::SerializePayload() const
 {
   return {};

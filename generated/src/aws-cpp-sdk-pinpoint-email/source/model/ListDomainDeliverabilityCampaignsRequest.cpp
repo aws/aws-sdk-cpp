@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListDomainDeliverabilityCampaignsRequest::ListDomainDeliverabilityCampaignsRequest() : 
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_subscribedDomainHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false)
-{
-}
-
 Aws::String ListDomainDeliverabilityCampaignsRequest::SerializePayload() const
 {
   return {};

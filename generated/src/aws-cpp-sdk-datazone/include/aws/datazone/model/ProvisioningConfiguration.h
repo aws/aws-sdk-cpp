@@ -32,7 +32,7 @@ namespace Model
   class ProvisioningConfiguration
   {
   public:
-    AWS_DATAZONE_API ProvisioningConfiguration();
+    AWS_DATAZONE_API ProvisioningConfiguration() = default;
     AWS_DATAZONE_API ProvisioningConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API ProvisioningConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The Lake Formation configuration of the Data Lake blueprint.</p>
      */
-    inline const LakeFormationConfiguration& GetLakeFormationConfiguration() const{ return m_lakeFormationConfiguration; }
+    inline const LakeFormationConfiguration& GetLakeFormationConfiguration() const { return m_lakeFormationConfiguration; }
     inline bool LakeFormationConfigurationHasBeenSet() const { return m_lakeFormationConfigurationHasBeenSet; }
-    inline void SetLakeFormationConfiguration(const LakeFormationConfiguration& value) { m_lakeFormationConfigurationHasBeenSet = true; m_lakeFormationConfiguration = value; }
-    inline void SetLakeFormationConfiguration(LakeFormationConfiguration&& value) { m_lakeFormationConfigurationHasBeenSet = true; m_lakeFormationConfiguration = std::move(value); }
-    inline ProvisioningConfiguration& WithLakeFormationConfiguration(const LakeFormationConfiguration& value) { SetLakeFormationConfiguration(value); return *this;}
-    inline ProvisioningConfiguration& WithLakeFormationConfiguration(LakeFormationConfiguration&& value) { SetLakeFormationConfiguration(std::move(value)); return *this;}
+    template<typename LakeFormationConfigurationT = LakeFormationConfiguration>
+    void SetLakeFormationConfiguration(LakeFormationConfigurationT&& value) { m_lakeFormationConfigurationHasBeenSet = true; m_lakeFormationConfiguration = std::forward<LakeFormationConfigurationT>(value); }
+    template<typename LakeFormationConfigurationT = LakeFormationConfiguration>
+    ProvisioningConfiguration& WithLakeFormationConfiguration(LakeFormationConfigurationT&& value) { SetLakeFormationConfiguration(std::forward<LakeFormationConfigurationT>(value)); return *this;}
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class RuntimeHintValue
   {
   public:
-    AWS_LEXMODELSV2_API RuntimeHintValue();
+    AWS_LEXMODELSV2_API RuntimeHintValue() = default;
     AWS_LEXMODELSV2_API RuntimeHintValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API RuntimeHintValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The phrase that Amazon Lex should look for in the user's input to the
      * bot.</p>
      */
-    inline const Aws::String& GetPhrase() const{ return m_phrase; }
+    inline const Aws::String& GetPhrase() const { return m_phrase; }
     inline bool PhraseHasBeenSet() const { return m_phraseHasBeenSet; }
-    inline void SetPhrase(const Aws::String& value) { m_phraseHasBeenSet = true; m_phrase = value; }
-    inline void SetPhrase(Aws::String&& value) { m_phraseHasBeenSet = true; m_phrase = std::move(value); }
-    inline void SetPhrase(const char* value) { m_phraseHasBeenSet = true; m_phrase.assign(value); }
-    inline RuntimeHintValue& WithPhrase(const Aws::String& value) { SetPhrase(value); return *this;}
-    inline RuntimeHintValue& WithPhrase(Aws::String&& value) { SetPhrase(std::move(value)); return *this;}
-    inline RuntimeHintValue& WithPhrase(const char* value) { SetPhrase(value); return *this;}
+    template<typename PhraseT = Aws::String>
+    void SetPhrase(PhraseT&& value) { m_phraseHasBeenSet = true; m_phrase = std::forward<PhraseT>(value); }
+    template<typename PhraseT = Aws::String>
+    RuntimeHintValue& WithPhrase(PhraseT&& value) { SetPhrase(std::forward<PhraseT>(value)); return *this;}
     ///@}
   private:
 

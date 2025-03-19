@@ -18,19 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-SessionState::SessionState() : 
-    m_conversationHistoryHasBeenSet(false),
-    m_filesHasBeenSet(false),
-    m_invocationIdHasBeenSet(false),
-    m_knowledgeBaseConfigurationsHasBeenSet(false),
-    m_promptSessionAttributesHasBeenSet(false),
-    m_returnControlInvocationResultsHasBeenSet(false),
-    m_sessionAttributesHasBeenSet(false)
-{
-}
-
 SessionState::SessionState(JsonView jsonValue)
-  : SessionState()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ SessionState& SessionState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("conversationHistory"))
   {
     m_conversationHistory = jsonValue.GetObject("conversationHistory");
-
     m_conversationHistoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("files"))
   {
     Aws::Utils::Array<JsonView> filesJsonList = jsonValue.GetArray("files");
@@ -53,14 +39,11 @@ SessionState& SessionState::operator =(JsonView jsonValue)
     }
     m_filesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("invocationId"))
   {
     m_invocationId = jsonValue.GetString("invocationId");
-
     m_invocationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("knowledgeBaseConfigurations"))
   {
     Aws::Utils::Array<JsonView> knowledgeBaseConfigurationsJsonList = jsonValue.GetArray("knowledgeBaseConfigurations");
@@ -70,7 +53,6 @@ SessionState& SessionState::operator =(JsonView jsonValue)
     }
     m_knowledgeBaseConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("promptSessionAttributes"))
   {
     Aws::Map<Aws::String, JsonView> promptSessionAttributesJsonMap = jsonValue.GetObject("promptSessionAttributes").GetAllObjects();
@@ -80,7 +62,6 @@ SessionState& SessionState::operator =(JsonView jsonValue)
     }
     m_promptSessionAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("returnControlInvocationResults"))
   {
     Aws::Utils::Array<JsonView> returnControlInvocationResultsJsonList = jsonValue.GetArray("returnControlInvocationResults");
@@ -90,7 +71,6 @@ SessionState& SessionState::operator =(JsonView jsonValue)
     }
     m_returnControlInvocationResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionAttributes"))
   {
     Aws::Map<Aws::String, JsonView> sessionAttributesJsonMap = jsonValue.GetObject("sessionAttributes").GetAllObjects();
@@ -100,7 +80,6 @@ SessionState& SessionState::operator =(JsonView jsonValue)
     }
     m_sessionAttributesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class RoleConfiguration
   {
   public:
-    AWS_PROMETHEUSSERVICE_API RoleConfiguration();
+    AWS_PROMETHEUSSERVICE_API RoleConfiguration() = default;
     AWS_PROMETHEUSSERVICE_API RoleConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROMETHEUSSERVICE_API RoleConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>A ARN identifying the source role configuration.</p>
      */
-    inline const Aws::String& GetSourceRoleArn() const{ return m_sourceRoleArn; }
+    inline const Aws::String& GetSourceRoleArn() const { return m_sourceRoleArn; }
     inline bool SourceRoleArnHasBeenSet() const { return m_sourceRoleArnHasBeenSet; }
-    inline void SetSourceRoleArn(const Aws::String& value) { m_sourceRoleArnHasBeenSet = true; m_sourceRoleArn = value; }
-    inline void SetSourceRoleArn(Aws::String&& value) { m_sourceRoleArnHasBeenSet = true; m_sourceRoleArn = std::move(value); }
-    inline void SetSourceRoleArn(const char* value) { m_sourceRoleArnHasBeenSet = true; m_sourceRoleArn.assign(value); }
-    inline RoleConfiguration& WithSourceRoleArn(const Aws::String& value) { SetSourceRoleArn(value); return *this;}
-    inline RoleConfiguration& WithSourceRoleArn(Aws::String&& value) { SetSourceRoleArn(std::move(value)); return *this;}
-    inline RoleConfiguration& WithSourceRoleArn(const char* value) { SetSourceRoleArn(value); return *this;}
+    template<typename SourceRoleArnT = Aws::String>
+    void SetSourceRoleArn(SourceRoleArnT&& value) { m_sourceRoleArnHasBeenSet = true; m_sourceRoleArn = std::forward<SourceRoleArnT>(value); }
+    template<typename SourceRoleArnT = Aws::String>
+    RoleConfiguration& WithSourceRoleArn(SourceRoleArnT&& value) { SetSourceRoleArn(std::forward<SourceRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A ARN identifying the target role configuration.</p>
      */
-    inline const Aws::String& GetTargetRoleArn() const{ return m_targetRoleArn; }
+    inline const Aws::String& GetTargetRoleArn() const { return m_targetRoleArn; }
     inline bool TargetRoleArnHasBeenSet() const { return m_targetRoleArnHasBeenSet; }
-    inline void SetTargetRoleArn(const Aws::String& value) { m_targetRoleArnHasBeenSet = true; m_targetRoleArn = value; }
-    inline void SetTargetRoleArn(Aws::String&& value) { m_targetRoleArnHasBeenSet = true; m_targetRoleArn = std::move(value); }
-    inline void SetTargetRoleArn(const char* value) { m_targetRoleArnHasBeenSet = true; m_targetRoleArn.assign(value); }
-    inline RoleConfiguration& WithTargetRoleArn(const Aws::String& value) { SetTargetRoleArn(value); return *this;}
-    inline RoleConfiguration& WithTargetRoleArn(Aws::String&& value) { SetTargetRoleArn(std::move(value)); return *this;}
-    inline RoleConfiguration& WithTargetRoleArn(const char* value) { SetTargetRoleArn(value); return *this;}
+    template<typename TargetRoleArnT = Aws::String>
+    void SetTargetRoleArn(TargetRoleArnT&& value) { m_targetRoleArnHasBeenSet = true; m_targetRoleArn = std::forward<TargetRoleArnT>(value); }
+    template<typename TargetRoleArnT = Aws::String>
+    RoleConfiguration& WithTargetRoleArn(TargetRoleArnT&& value) { SetTargetRoleArn(std::forward<TargetRoleArnT>(value)); return *this;}
     ///@}
   private:
 

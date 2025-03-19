@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDimensionKeyDetailsResult::GetDimensionKeyDetailsResult()
-{
-}
-
 GetDimensionKeyDetailsResult::GetDimensionKeyDetailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ GetDimensionKeyDetailsResult& GetDimensionKeyDetailsResult::operator =(const Aws
     {
       m_dimensions.push_back(dimensionsJsonList[dimensionsIndex].AsObject());
     }
+    m_dimensionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

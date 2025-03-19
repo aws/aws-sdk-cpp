@@ -18,13 +18,7 @@ namespace TimestreamQuery
 namespace Model
 {
 
-QueryTemporalRange::QueryTemporalRange() : 
-    m_maxHasBeenSet(false)
-{
-}
-
 QueryTemporalRange::QueryTemporalRange(JsonView jsonValue)
-  : QueryTemporalRange()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ QueryTemporalRange& QueryTemporalRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Max"))
   {
     m_max = jsonValue.GetObject("Max");
-
     m_maxHasBeenSet = true;
   }
-
   return *this;
 }
 

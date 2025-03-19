@@ -12,11 +12,6 @@ using namespace Aws::TaxSettings::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTaxRegistrationRequest::DeleteTaxRegistrationRequest() : 
-    m_accountIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTaxRegistrationRequest::SerializePayload() const
 {
   JsonValue payload;

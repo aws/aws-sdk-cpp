@@ -20,15 +20,7 @@ namespace IAM
 namespace Model
 {
 
-SAMLProviderListEntry::SAMLProviderListEntry() : 
-    m_arnHasBeenSet(false),
-    m_validUntilHasBeenSet(false),
-    m_createDateHasBeenSet(false)
-{
-}
-
 SAMLProviderListEntry::SAMLProviderListEntry(const XmlNode& xmlNode)
-  : SAMLProviderListEntry()
 {
   *this = xmlNode;
 }

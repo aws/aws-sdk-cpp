@@ -21,7 +21,7 @@ namespace Model
   class AssociateBudgetWithResourceRequest : public ServiceCatalogRequest
   {
   public:
-    AWS_SERVICECATALOG_API AssociateBudgetWithResourceRequest();
+    AWS_SERVICECATALOG_API AssociateBudgetWithResourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The name of the budget you want to associate.</p>
      */
-    inline const Aws::String& GetBudgetName() const{ return m_budgetName; }
+    inline const Aws::String& GetBudgetName() const { return m_budgetName; }
     inline bool BudgetNameHasBeenSet() const { return m_budgetNameHasBeenSet; }
-    inline void SetBudgetName(const Aws::String& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
-    inline void SetBudgetName(Aws::String&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::move(value); }
-    inline void SetBudgetName(const char* value) { m_budgetNameHasBeenSet = true; m_budgetName.assign(value); }
-    inline AssociateBudgetWithResourceRequest& WithBudgetName(const Aws::String& value) { SetBudgetName(value); return *this;}
-    inline AssociateBudgetWithResourceRequest& WithBudgetName(Aws::String&& value) { SetBudgetName(std::move(value)); return *this;}
-    inline AssociateBudgetWithResourceRequest& WithBudgetName(const char* value) { SetBudgetName(value); return *this;}
+    template<typename BudgetNameT = Aws::String>
+    void SetBudgetName(BudgetNameT&& value) { m_budgetNameHasBeenSet = true; m_budgetName = std::forward<BudgetNameT>(value); }
+    template<typename BudgetNameT = Aws::String>
+    AssociateBudgetWithResourceRequest& WithBudgetName(BudgetNameT&& value) { SetBudgetName(std::forward<BudgetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The resource identifier. Either a portfolio-id or a product-id.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline AssociateBudgetWithResourceRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline AssociateBudgetWithResourceRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline AssociateBudgetWithResourceRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    AssociateBudgetWithResourceRequest& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-ObjectLambdaTransformationConfiguration::ObjectLambdaTransformationConfiguration() : 
-    m_actionsHasBeenSet(false),
-    m_contentTransformationHasBeenSet(false)
-{
-}
-
 ObjectLambdaTransformationConfiguration::ObjectLambdaTransformationConfiguration(const XmlNode& xmlNode)
-  : ObjectLambdaTransformationConfiguration()
 {
   *this = xmlNode;
 }
@@ -42,6 +35,7 @@ ObjectLambdaTransformationConfiguration& ObjectLambdaTransformationConfiguration
     if(!actionsNode.IsNull())
     {
       XmlNode actionsMember = actionsNode.FirstChild("Action");
+      m_actionsHasBeenSet = !actionsMember.IsNull();
       while(!actionsMember.IsNull())
       {
         m_actions.push_back(ObjectLambdaTransformationConfigurationActionMapper::GetObjectLambdaTransformationConfigurationActionForName(StringUtils::Trim(actionsMember.GetText().c_str())));

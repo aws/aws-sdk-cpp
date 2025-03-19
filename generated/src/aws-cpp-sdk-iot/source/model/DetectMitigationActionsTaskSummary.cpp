@@ -18,25 +18,7 @@ namespace IoT
 namespace Model
 {
 
-DetectMitigationActionsTaskSummary::DetectMitigationActionsTaskSummary() : 
-    m_taskIdHasBeenSet(false),
-    m_taskStatus(DetectMitigationActionsTaskStatus::NOT_SET),
-    m_taskStatusHasBeenSet(false),
-    m_taskStartTimeHasBeenSet(false),
-    m_taskEndTimeHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_violationEventOccurrenceRangeHasBeenSet(false),
-    m_onlyActiveViolationsIncluded(false),
-    m_onlyActiveViolationsIncludedHasBeenSet(false),
-    m_suppressedAlertsIncluded(false),
-    m_suppressedAlertsIncludedHasBeenSet(false),
-    m_actionsDefinitionHasBeenSet(false),
-    m_taskStatisticsHasBeenSet(false)
-{
-}
-
 DetectMitigationActionsTaskSummary::DetectMitigationActionsTaskSummary(JsonView jsonValue)
-  : DetectMitigationActionsTaskSummary()
 {
   *this = jsonValue;
 }
@@ -46,59 +28,43 @@ DetectMitigationActionsTaskSummary& DetectMitigationActionsTaskSummary::operator
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");
-
     m_taskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskStatus"))
   {
     m_taskStatus = DetectMitigationActionsTaskStatusMapper::GetDetectMitigationActionsTaskStatusForName(jsonValue.GetString("taskStatus"));
-
     m_taskStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskStartTime"))
   {
     m_taskStartTime = jsonValue.GetDouble("taskStartTime");
-
     m_taskStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskEndTime"))
   {
     m_taskEndTime = jsonValue.GetDouble("taskEndTime");
-
     m_taskEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("target"))
   {
     m_target = jsonValue.GetObject("target");
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("violationEventOccurrenceRange"))
   {
     m_violationEventOccurrenceRange = jsonValue.GetObject("violationEventOccurrenceRange");
-
     m_violationEventOccurrenceRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("onlyActiveViolationsIncluded"))
   {
     m_onlyActiveViolationsIncluded = jsonValue.GetBool("onlyActiveViolationsIncluded");
-
     m_onlyActiveViolationsIncludedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("suppressedAlertsIncluded"))
   {
     m_suppressedAlertsIncluded = jsonValue.GetBool("suppressedAlertsIncluded");
-
     m_suppressedAlertsIncludedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionsDefinition"))
   {
     Aws::Utils::Array<JsonView> actionsDefinitionJsonList = jsonValue.GetArray("actionsDefinition");
@@ -108,14 +74,11 @@ DetectMitigationActionsTaskSummary& DetectMitigationActionsTaskSummary::operator
     }
     m_actionsDefinitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskStatistics"))
   {
     m_taskStatistics = jsonValue.GetObject("taskStatistics");
-
     m_taskStatisticsHasBeenSet = true;
   }
-
   return *this;
 }
 

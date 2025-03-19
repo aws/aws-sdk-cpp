@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetCollectionResult::BatchGetCollectionResult()
-{
-}
-
 BatchGetCollectionResult::BatchGetCollectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetCollectionResult& BatchGetCollectionResult::operator =(const Aws::Amazon
     {
       m_collectionDetails.push_back(collectionDetailsJsonList[collectionDetailsIndex].AsObject());
     }
+    m_collectionDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collectionErrorDetails"))
   {
     Aws::Utils::Array<JsonView> collectionErrorDetailsJsonList = jsonValue.GetArray("collectionErrorDetails");
@@ -45,14 +41,15 @@ BatchGetCollectionResult& BatchGetCollectionResult::operator =(const Aws::Amazon
     {
       m_collectionErrorDetails.push_back(collectionErrorDetailsJsonList[collectionErrorDetailsIndex].AsObject());
     }
+    m_collectionErrorDetailsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

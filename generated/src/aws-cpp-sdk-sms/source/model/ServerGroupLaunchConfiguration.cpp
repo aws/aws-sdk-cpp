@@ -18,16 +18,7 @@ namespace SMS
 namespace Model
 {
 
-ServerGroupLaunchConfiguration::ServerGroupLaunchConfiguration() : 
-    m_serverGroupIdHasBeenSet(false),
-    m_launchOrder(0),
-    m_launchOrderHasBeenSet(false),
-    m_serverLaunchConfigurationsHasBeenSet(false)
-{
-}
-
 ServerGroupLaunchConfiguration::ServerGroupLaunchConfiguration(JsonView jsonValue)
-  : ServerGroupLaunchConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ServerGroupLaunchConfiguration& ServerGroupLaunchConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("serverGroupId"))
   {
     m_serverGroupId = jsonValue.GetString("serverGroupId");
-
     m_serverGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("launchOrder"))
   {
     m_launchOrder = jsonValue.GetInteger("launchOrder");
-
     m_launchOrderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverLaunchConfigurations"))
   {
     Aws::Utils::Array<JsonView> serverLaunchConfigurationsJsonList = jsonValue.GetArray("serverLaunchConfigurations");
@@ -57,7 +44,6 @@ ServerGroupLaunchConfiguration& ServerGroupLaunchConfiguration::operator =(JsonV
     }
     m_serverLaunchConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

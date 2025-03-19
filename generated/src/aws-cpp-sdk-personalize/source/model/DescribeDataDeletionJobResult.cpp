@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDataDeletionJobResult::DescribeDataDeletionJobResult()
-{
-}
-
 DescribeDataDeletionJobResult::DescribeDataDeletionJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeDataDeletionJobResult& DescribeDataDeletionJobResult::operator =(const A
   if(jsonValue.ValueExists("dataDeletionJob"))
   {
     m_dataDeletionJob = jsonValue.GetObject("dataDeletionJob");
-
+    m_dataDeletionJobHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

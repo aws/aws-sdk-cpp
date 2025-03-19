@@ -23,7 +23,7 @@ namespace Model
   class DescribeRecommendationExportJobsRequest : public ComputeOptimizerRequest
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API DescribeRecommendationExportJobsRequest();
+    AWS_COMPUTEOPTIMIZER_API DescribeRecommendationExportJobsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,15 +44,14 @@ namespace Model
      * <a>ExportEC2InstanceRecommendations</a> actions.</p> <p>All export jobs created
      * in the last seven days are returned if this parameter is omitted.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetJobIds() const{ return m_jobIds; }
+    inline const Aws::Vector<Aws::String>& GetJobIds() const { return m_jobIds; }
     inline bool JobIdsHasBeenSet() const { return m_jobIdsHasBeenSet; }
-    inline void SetJobIds(const Aws::Vector<Aws::String>& value) { m_jobIdsHasBeenSet = true; m_jobIds = value; }
-    inline void SetJobIds(Aws::Vector<Aws::String>&& value) { m_jobIdsHasBeenSet = true; m_jobIds = std::move(value); }
-    inline DescribeRecommendationExportJobsRequest& WithJobIds(const Aws::Vector<Aws::String>& value) { SetJobIds(value); return *this;}
-    inline DescribeRecommendationExportJobsRequest& WithJobIds(Aws::Vector<Aws::String>&& value) { SetJobIds(std::move(value)); return *this;}
-    inline DescribeRecommendationExportJobsRequest& AddJobIds(const Aws::String& value) { m_jobIdsHasBeenSet = true; m_jobIds.push_back(value); return *this; }
-    inline DescribeRecommendationExportJobsRequest& AddJobIds(Aws::String&& value) { m_jobIdsHasBeenSet = true; m_jobIds.push_back(std::move(value)); return *this; }
-    inline DescribeRecommendationExportJobsRequest& AddJobIds(const char* value) { m_jobIdsHasBeenSet = true; m_jobIds.push_back(value); return *this; }
+    template<typename JobIdsT = Aws::Vector<Aws::String>>
+    void SetJobIds(JobIdsT&& value) { m_jobIdsHasBeenSet = true; m_jobIds = std::forward<JobIdsT>(value); }
+    template<typename JobIdsT = Aws::Vector<Aws::String>>
+    DescribeRecommendationExportJobsRequest& WithJobIds(JobIdsT&& value) { SetJobIds(std::forward<JobIdsT>(value)); return *this;}
+    template<typename JobIdsT = Aws::String>
+    DescribeRecommendationExportJobsRequest& AddJobIds(JobIdsT&& value) { m_jobIdsHasBeenSet = true; m_jobIds.emplace_back(std::forward<JobIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,28 +59,26 @@ namespace Model
      * <p>An array of objects to specify a filter that returns a more specific list of
      * export jobs.</p>
      */
-    inline const Aws::Vector<JobFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<JobFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<JobFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<JobFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeRecommendationExportJobsRequest& WithFilters(const Aws::Vector<JobFilter>& value) { SetFilters(value); return *this;}
-    inline DescribeRecommendationExportJobsRequest& WithFilters(Aws::Vector<JobFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeRecommendationExportJobsRequest& AddFilters(const JobFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeRecommendationExportJobsRequest& AddFilters(JobFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<JobFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<JobFilter>>
+    DescribeRecommendationExportJobsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = JobFilter>
+    DescribeRecommendationExportJobsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token to advance to the next page of export jobs.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeRecommendationExportJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeRecommendationExportJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeRecommendationExportJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeRecommendationExportJobsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,7 +87,7 @@ namespace Model
      * retrieve the remaining results, make another request with the returned
      * <code>nextToken</code> value.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeRecommendationExportJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -106,7 +103,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

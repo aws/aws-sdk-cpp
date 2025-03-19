@@ -18,33 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsSageMakerNotebookInstanceDetails::AwsSageMakerNotebookInstanceDetails() : 
-    m_acceleratorTypesHasBeenSet(false),
-    m_additionalCodeRepositoriesHasBeenSet(false),
-    m_defaultCodeRepositoryHasBeenSet(false),
-    m_directInternetAccessHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_instanceMetadataServiceConfigurationHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_notebookInstanceArnHasBeenSet(false),
-    m_notebookInstanceLifecycleConfigNameHasBeenSet(false),
-    m_notebookInstanceNameHasBeenSet(false),
-    m_notebookInstanceStatusHasBeenSet(false),
-    m_platformIdentifierHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_rootAccessHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_volumeSizeInGB(0),
-    m_volumeSizeInGBHasBeenSet(false)
-{
-}
-
 AwsSageMakerNotebookInstanceDetails::AwsSageMakerNotebookInstanceDetails(JsonView jsonValue)
-  : AwsSageMakerNotebookInstanceDetails()
 {
   *this = jsonValue;
 }
@@ -60,7 +34,6 @@ AwsSageMakerNotebookInstanceDetails& AwsSageMakerNotebookInstanceDetails::operat
     }
     m_acceleratorTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalCodeRepositories"))
   {
     Aws::Utils::Array<JsonView> additionalCodeRepositoriesJsonList = jsonValue.GetArray("AdditionalCodeRepositories");
@@ -70,105 +43,76 @@ AwsSageMakerNotebookInstanceDetails& AwsSageMakerNotebookInstanceDetails::operat
     }
     m_additionalCodeRepositoriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultCodeRepository"))
   {
     m_defaultCodeRepository = jsonValue.GetString("DefaultCodeRepository");
-
     m_defaultCodeRepositoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DirectInternetAccess"))
   {
     m_directInternetAccess = jsonValue.GetString("DirectInternetAccess");
-
     m_directInternetAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceMetadataServiceConfiguration"))
   {
     m_instanceMetadataServiceConfiguration = jsonValue.GetObject("InstanceMetadataServiceConfiguration");
-
     m_instanceMetadataServiceConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = jsonValue.GetString("InstanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkInterfaceId"))
   {
     m_networkInterfaceId = jsonValue.GetString("NetworkInterfaceId");
-
     m_networkInterfaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotebookInstanceArn"))
   {
     m_notebookInstanceArn = jsonValue.GetString("NotebookInstanceArn");
-
     m_notebookInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotebookInstanceLifecycleConfigName"))
   {
     m_notebookInstanceLifecycleConfigName = jsonValue.GetString("NotebookInstanceLifecycleConfigName");
-
     m_notebookInstanceLifecycleConfigNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotebookInstanceName"))
   {
     m_notebookInstanceName = jsonValue.GetString("NotebookInstanceName");
-
     m_notebookInstanceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotebookInstanceStatus"))
   {
     m_notebookInstanceStatus = jsonValue.GetString("NotebookInstanceStatus");
-
     m_notebookInstanceStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlatformIdentifier"))
   {
     m_platformIdentifier = jsonValue.GetString("PlatformIdentifier");
-
     m_platformIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RootAccess"))
   {
     m_rootAccess = jsonValue.GetString("RootAccess");
-
     m_rootAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroups"))
   {
     Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
@@ -178,28 +122,21 @@ AwsSageMakerNotebookInstanceDetails& AwsSageMakerNotebookInstanceDetails::operat
     }
     m_securityGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetId"))
   {
     m_subnetId = jsonValue.GetString("SubnetId");
-
     m_subnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetString("Url");
-
     m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeSizeInGB"))
   {
     m_volumeSizeInGB = jsonValue.GetInteger("VolumeSizeInGB");
-
     m_volumeSizeInGBHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class Permission
   {
   public:
-    AWS_INSPECTOR2_API Permission();
+    AWS_INSPECTOR2_API Permission() = default;
     AWS_INSPECTOR2_API Permission(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Permission& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>The operations that can be performed with the given permissions.</p>
      */
-    inline const Operation& GetOperation() const{ return m_operation; }
+    inline Operation GetOperation() const { return m_operation; }
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
-    inline void SetOperation(const Operation& value) { m_operationHasBeenSet = true; m_operation = value; }
-    inline void SetOperation(Operation&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
-    inline Permission& WithOperation(const Operation& value) { SetOperation(value); return *this;}
-    inline Permission& WithOperation(Operation&& value) { SetOperation(std::move(value)); return *this;}
+    inline void SetOperation(Operation value) { m_operationHasBeenSet = true; m_operation = value; }
+    inline Permission& WithOperation(Operation value) { SetOperation(value); return *this;}
     ///@}
 
     ///@{
@@ -56,19 +54,17 @@ namespace Model
      * <p>The services that the permissions allow an account to perform the given
      * operations for.</p>
      */
-    inline const Service& GetService() const{ return m_service; }
+    inline Service GetService() const { return m_service; }
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
-    inline void SetService(const Service& value) { m_serviceHasBeenSet = true; m_service = value; }
-    inline void SetService(Service&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
-    inline Permission& WithService(const Service& value) { SetService(value); return *this;}
-    inline Permission& WithService(Service&& value) { SetService(std::move(value)); return *this;}
+    inline void SetService(Service value) { m_serviceHasBeenSet = true; m_service = value; }
+    inline Permission& WithService(Service value) { SetService(value); return *this;}
     ///@}
   private:
 
-    Operation m_operation;
+    Operation m_operation{Operation::NOT_SET};
     bool m_operationHasBeenSet = false;
 
-    Service m_service;
+    Service m_service{Service::NOT_SET};
     bool m_serviceHasBeenSet = false;
   };
 

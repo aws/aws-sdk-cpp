@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateRestoreTestingSelectionResult::UpdateRestoreTestingSelectionResult()
-{
-}
-
 UpdateRestoreTestingSelectionResult::UpdateRestoreTestingSelectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,39 +28,35 @@ UpdateRestoreTestingSelectionResult& UpdateRestoreTestingSelectionResult::operat
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RestoreTestingPlanArn"))
   {
     m_restoreTestingPlanArn = jsonValue.GetString("RestoreTestingPlanArn");
-
+    m_restoreTestingPlanArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RestoreTestingPlanName"))
   {
     m_restoreTestingPlanName = jsonValue.GetString("RestoreTestingPlanName");
-
+    m_restoreTestingPlanNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RestoreTestingSelectionName"))
   {
     m_restoreTestingSelectionName = jsonValue.GetString("RestoreTestingSelectionName");
-
+    m_restoreTestingSelectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateTime"))
   {
     m_updateTime = jsonValue.GetDouble("UpdateTime");
-
+    m_updateTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

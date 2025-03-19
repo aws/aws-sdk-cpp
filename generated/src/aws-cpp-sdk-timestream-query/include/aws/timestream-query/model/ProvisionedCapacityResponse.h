@@ -33,7 +33,7 @@ namespace Model
   class ProvisionedCapacityResponse
   {
   public:
-    AWS_TIMESTREAMQUERY_API ProvisionedCapacityResponse();
+    AWS_TIMESTREAMQUERY_API ProvisionedCapacityResponse() = default;
     AWS_TIMESTREAMQUERY_API ProvisionedCapacityResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API ProvisionedCapacityResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * This field is only visible when the compute mode is
      * <code>PROVISIONED</code>.</p>
      */
-    inline int GetActiveQueryTCU() const{ return m_activeQueryTCU; }
+    inline int GetActiveQueryTCU() const { return m_activeQueryTCU; }
     inline bool ActiveQueryTCUHasBeenSet() const { return m_activeQueryTCUHasBeenSet; }
     inline void SetActiveQueryTCU(int value) { m_activeQueryTCUHasBeenSet = true; m_activeQueryTCU = value; }
     inline ProvisionedCapacityResponse& WithActiveQueryTCU(int value) { SetActiveQueryTCU(value); return *this;}
@@ -57,28 +57,28 @@ namespace Model
      * provisioned capacity settings are modified. This field is only visible when the
      * compute mode is <code>PROVISIONED</code>.</p>
      */
-    inline const AccountSettingsNotificationConfiguration& GetNotificationConfiguration() const{ return m_notificationConfiguration; }
+    inline const AccountSettingsNotificationConfiguration& GetNotificationConfiguration() const { return m_notificationConfiguration; }
     inline bool NotificationConfigurationHasBeenSet() const { return m_notificationConfigurationHasBeenSet; }
-    inline void SetNotificationConfiguration(const AccountSettingsNotificationConfiguration& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = value; }
-    inline void SetNotificationConfiguration(AccountSettingsNotificationConfiguration&& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = std::move(value); }
-    inline ProvisionedCapacityResponse& WithNotificationConfiguration(const AccountSettingsNotificationConfiguration& value) { SetNotificationConfiguration(value); return *this;}
-    inline ProvisionedCapacityResponse& WithNotificationConfiguration(AccountSettingsNotificationConfiguration&& value) { SetNotificationConfiguration(std::move(value)); return *this;}
+    template<typename NotificationConfigurationT = AccountSettingsNotificationConfiguration>
+    void SetNotificationConfiguration(NotificationConfigurationT&& value) { m_notificationConfigurationHasBeenSet = true; m_notificationConfiguration = std::forward<NotificationConfigurationT>(value); }
+    template<typename NotificationConfigurationT = AccountSettingsNotificationConfiguration>
+    ProvisionedCapacityResponse& WithNotificationConfiguration(NotificationConfigurationT&& value) { SetNotificationConfiguration(std::forward<NotificationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the last update to the provisioned capacity settings.</p>
      */
-    inline const LastUpdate& GetLastUpdate() const{ return m_lastUpdate; }
+    inline const LastUpdate& GetLastUpdate() const { return m_lastUpdate; }
     inline bool LastUpdateHasBeenSet() const { return m_lastUpdateHasBeenSet; }
-    inline void SetLastUpdate(const LastUpdate& value) { m_lastUpdateHasBeenSet = true; m_lastUpdate = value; }
-    inline void SetLastUpdate(LastUpdate&& value) { m_lastUpdateHasBeenSet = true; m_lastUpdate = std::move(value); }
-    inline ProvisionedCapacityResponse& WithLastUpdate(const LastUpdate& value) { SetLastUpdate(value); return *this;}
-    inline ProvisionedCapacityResponse& WithLastUpdate(LastUpdate&& value) { SetLastUpdate(std::move(value)); return *this;}
+    template<typename LastUpdateT = LastUpdate>
+    void SetLastUpdate(LastUpdateT&& value) { m_lastUpdateHasBeenSet = true; m_lastUpdate = std::forward<LastUpdateT>(value); }
+    template<typename LastUpdateT = LastUpdate>
+    ProvisionedCapacityResponse& WithLastUpdate(LastUpdateT&& value) { SetLastUpdate(std::forward<LastUpdateT>(value)); return *this;}
     ///@}
   private:
 
-    int m_activeQueryTCU;
+    int m_activeQueryTCU{0};
     bool m_activeQueryTCUHasBeenSet = false;
 
     AccountSettingsNotificationConfiguration m_notificationConfiguration;

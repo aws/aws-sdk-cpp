@@ -45,7 +45,7 @@ namespace Model
   class InlineSessionState
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API InlineSessionState();
+    AWS_BEDROCKAGENTRUNTIME_API InlineSessionState() = default;
     AWS_BEDROCKAGENTRUNTIME_API InlineSessionState(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API InlineSessionState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,26 +55,26 @@ namespace Model
     /**
      * <p> Contains the conversation history that persist across sessions. </p>
      */
-    inline const ConversationHistory& GetConversationHistory() const{ return m_conversationHistory; }
+    inline const ConversationHistory& GetConversationHistory() const { return m_conversationHistory; }
     inline bool ConversationHistoryHasBeenSet() const { return m_conversationHistoryHasBeenSet; }
-    inline void SetConversationHistory(const ConversationHistory& value) { m_conversationHistoryHasBeenSet = true; m_conversationHistory = value; }
-    inline void SetConversationHistory(ConversationHistory&& value) { m_conversationHistoryHasBeenSet = true; m_conversationHistory = std::move(value); }
-    inline InlineSessionState& WithConversationHistory(const ConversationHistory& value) { SetConversationHistory(value); return *this;}
-    inline InlineSessionState& WithConversationHistory(ConversationHistory&& value) { SetConversationHistory(std::move(value)); return *this;}
+    template<typename ConversationHistoryT = ConversationHistory>
+    void SetConversationHistory(ConversationHistoryT&& value) { m_conversationHistoryHasBeenSet = true; m_conversationHistory = std::forward<ConversationHistoryT>(value); }
+    template<typename ConversationHistoryT = ConversationHistory>
+    InlineSessionState& WithConversationHistory(ConversationHistoryT&& value) { SetConversationHistory(std::forward<ConversationHistoryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Contains information about the files used by code interpreter. </p>
      */
-    inline const Aws::Vector<InputFile>& GetFiles() const{ return m_files; }
+    inline const Aws::Vector<InputFile>& GetFiles() const { return m_files; }
     inline bool FilesHasBeenSet() const { return m_filesHasBeenSet; }
-    inline void SetFiles(const Aws::Vector<InputFile>& value) { m_filesHasBeenSet = true; m_files = value; }
-    inline void SetFiles(Aws::Vector<InputFile>&& value) { m_filesHasBeenSet = true; m_files = std::move(value); }
-    inline InlineSessionState& WithFiles(const Aws::Vector<InputFile>& value) { SetFiles(value); return *this;}
-    inline InlineSessionState& WithFiles(Aws::Vector<InputFile>&& value) { SetFiles(std::move(value)); return *this;}
-    inline InlineSessionState& AddFiles(const InputFile& value) { m_filesHasBeenSet = true; m_files.push_back(value); return *this; }
-    inline InlineSessionState& AddFiles(InputFile&& value) { m_filesHasBeenSet = true; m_files.push_back(std::move(value)); return *this; }
+    template<typename FilesT = Aws::Vector<InputFile>>
+    void SetFiles(FilesT&& value) { m_filesHasBeenSet = true; m_files = std::forward<FilesT>(value); }
+    template<typename FilesT = Aws::Vector<InputFile>>
+    InlineSessionState& WithFiles(FilesT&& value) { SetFiles(std::forward<FilesT>(value)); return *this;}
+    template<typename FilesT = InputFile>
+    InlineSessionState& AddFiles(FilesT&& value) { m_filesHasBeenSet = true; m_files.emplace_back(std::forward<FilesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -86,14 +86,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-returncontrol.html">Return
      * control to the agent developer</a>. </p>
      */
-    inline const Aws::String& GetInvocationId() const{ return m_invocationId; }
+    inline const Aws::String& GetInvocationId() const { return m_invocationId; }
     inline bool InvocationIdHasBeenSet() const { return m_invocationIdHasBeenSet; }
-    inline void SetInvocationId(const Aws::String& value) { m_invocationIdHasBeenSet = true; m_invocationId = value; }
-    inline void SetInvocationId(Aws::String&& value) { m_invocationIdHasBeenSet = true; m_invocationId = std::move(value); }
-    inline void SetInvocationId(const char* value) { m_invocationIdHasBeenSet = true; m_invocationId.assign(value); }
-    inline InlineSessionState& WithInvocationId(const Aws::String& value) { SetInvocationId(value); return *this;}
-    inline InlineSessionState& WithInvocationId(Aws::String&& value) { SetInvocationId(std::move(value)); return *this;}
-    inline InlineSessionState& WithInvocationId(const char* value) { SetInvocationId(value); return *this;}
+    template<typename InvocationIdT = Aws::String>
+    void SetInvocationId(InvocationIdT&& value) { m_invocationIdHasBeenSet = true; m_invocationId = std::forward<InvocationIdT>(value); }
+    template<typename InvocationIdT = Aws::String>
+    InlineSessionState& WithInvocationId(InvocationIdT&& value) { SetInvocationId(std::forward<InvocationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,19 +99,16 @@ namespace Model
      * <p> Contains attributes that persist across a session and the values of those
      * attributes. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetPromptSessionAttributes() const{ return m_promptSessionAttributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetPromptSessionAttributes() const { return m_promptSessionAttributes; }
     inline bool PromptSessionAttributesHasBeenSet() const { return m_promptSessionAttributesHasBeenSet; }
-    inline void SetPromptSessionAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_promptSessionAttributesHasBeenSet = true; m_promptSessionAttributes = value; }
-    inline void SetPromptSessionAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_promptSessionAttributesHasBeenSet = true; m_promptSessionAttributes = std::move(value); }
-    inline InlineSessionState& WithPromptSessionAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetPromptSessionAttributes(value); return *this;}
-    inline InlineSessionState& WithPromptSessionAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetPromptSessionAttributes(std::move(value)); return *this;}
-    inline InlineSessionState& AddPromptSessionAttributes(const Aws::String& key, const Aws::String& value) { m_promptSessionAttributesHasBeenSet = true; m_promptSessionAttributes.emplace(key, value); return *this; }
-    inline InlineSessionState& AddPromptSessionAttributes(Aws::String&& key, const Aws::String& value) { m_promptSessionAttributesHasBeenSet = true; m_promptSessionAttributes.emplace(std::move(key), value); return *this; }
-    inline InlineSessionState& AddPromptSessionAttributes(const Aws::String& key, Aws::String&& value) { m_promptSessionAttributesHasBeenSet = true; m_promptSessionAttributes.emplace(key, std::move(value)); return *this; }
-    inline InlineSessionState& AddPromptSessionAttributes(Aws::String&& key, Aws::String&& value) { m_promptSessionAttributesHasBeenSet = true; m_promptSessionAttributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline InlineSessionState& AddPromptSessionAttributes(const char* key, Aws::String&& value) { m_promptSessionAttributesHasBeenSet = true; m_promptSessionAttributes.emplace(key, std::move(value)); return *this; }
-    inline InlineSessionState& AddPromptSessionAttributes(Aws::String&& key, const char* value) { m_promptSessionAttributesHasBeenSet = true; m_promptSessionAttributes.emplace(std::move(key), value); return *this; }
-    inline InlineSessionState& AddPromptSessionAttributes(const char* key, const char* value) { m_promptSessionAttributesHasBeenSet = true; m_promptSessionAttributes.emplace(key, value); return *this; }
+    template<typename PromptSessionAttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetPromptSessionAttributes(PromptSessionAttributesT&& value) { m_promptSessionAttributesHasBeenSet = true; m_promptSessionAttributes = std::forward<PromptSessionAttributesT>(value); }
+    template<typename PromptSessionAttributesT = Aws::Map<Aws::String, Aws::String>>
+    InlineSessionState& WithPromptSessionAttributes(PromptSessionAttributesT&& value) { SetPromptSessionAttributes(std::forward<PromptSessionAttributesT>(value)); return *this;}
+    template<typename PromptSessionAttributesKeyT = Aws::String, typename PromptSessionAttributesValueT = Aws::String>
+    InlineSessionState& AddPromptSessionAttributes(PromptSessionAttributesKeyT&& key, PromptSessionAttributesValueT&& value) {
+      m_promptSessionAttributesHasBeenSet = true; m_promptSessionAttributes.emplace(std::forward<PromptSessionAttributesKeyT>(key), std::forward<PromptSessionAttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -125,14 +120,14 @@ namespace Model
      * the <code>sessionState</code> field, the <code>inputText</code> field will be
      * ignored.</p> 
      */
-    inline const Aws::Vector<InvocationResultMember>& GetReturnControlInvocationResults() const{ return m_returnControlInvocationResults; }
+    inline const Aws::Vector<InvocationResultMember>& GetReturnControlInvocationResults() const { return m_returnControlInvocationResults; }
     inline bool ReturnControlInvocationResultsHasBeenSet() const { return m_returnControlInvocationResultsHasBeenSet; }
-    inline void SetReturnControlInvocationResults(const Aws::Vector<InvocationResultMember>& value) { m_returnControlInvocationResultsHasBeenSet = true; m_returnControlInvocationResults = value; }
-    inline void SetReturnControlInvocationResults(Aws::Vector<InvocationResultMember>&& value) { m_returnControlInvocationResultsHasBeenSet = true; m_returnControlInvocationResults = std::move(value); }
-    inline InlineSessionState& WithReturnControlInvocationResults(const Aws::Vector<InvocationResultMember>& value) { SetReturnControlInvocationResults(value); return *this;}
-    inline InlineSessionState& WithReturnControlInvocationResults(Aws::Vector<InvocationResultMember>&& value) { SetReturnControlInvocationResults(std::move(value)); return *this;}
-    inline InlineSessionState& AddReturnControlInvocationResults(const InvocationResultMember& value) { m_returnControlInvocationResultsHasBeenSet = true; m_returnControlInvocationResults.push_back(value); return *this; }
-    inline InlineSessionState& AddReturnControlInvocationResults(InvocationResultMember&& value) { m_returnControlInvocationResultsHasBeenSet = true; m_returnControlInvocationResults.push_back(std::move(value)); return *this; }
+    template<typename ReturnControlInvocationResultsT = Aws::Vector<InvocationResultMember>>
+    void SetReturnControlInvocationResults(ReturnControlInvocationResultsT&& value) { m_returnControlInvocationResultsHasBeenSet = true; m_returnControlInvocationResults = std::forward<ReturnControlInvocationResultsT>(value); }
+    template<typename ReturnControlInvocationResultsT = Aws::Vector<InvocationResultMember>>
+    InlineSessionState& WithReturnControlInvocationResults(ReturnControlInvocationResultsT&& value) { SetReturnControlInvocationResults(std::forward<ReturnControlInvocationResultsT>(value)); return *this;}
+    template<typename ReturnControlInvocationResultsT = InvocationResultMember>
+    InlineSessionState& AddReturnControlInvocationResults(ReturnControlInvocationResultsT&& value) { m_returnControlInvocationResultsHasBeenSet = true; m_returnControlInvocationResults.emplace_back(std::forward<ReturnControlInvocationResultsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -140,19 +135,16 @@ namespace Model
      * <p> Contains attributes that persist across a session and the values of those
      * attributes. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetSessionAttributes() const{ return m_sessionAttributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetSessionAttributes() const { return m_sessionAttributes; }
     inline bool SessionAttributesHasBeenSet() const { return m_sessionAttributesHasBeenSet; }
-    inline void SetSessionAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes = value; }
-    inline void SetSessionAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes = std::move(value); }
-    inline InlineSessionState& WithSessionAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetSessionAttributes(value); return *this;}
-    inline InlineSessionState& WithSessionAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetSessionAttributes(std::move(value)); return *this;}
-    inline InlineSessionState& AddSessionAttributes(const Aws::String& key, const Aws::String& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(key, value); return *this; }
-    inline InlineSessionState& AddSessionAttributes(Aws::String&& key, const Aws::String& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(std::move(key), value); return *this; }
-    inline InlineSessionState& AddSessionAttributes(const Aws::String& key, Aws::String&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(key, std::move(value)); return *this; }
-    inline InlineSessionState& AddSessionAttributes(Aws::String&& key, Aws::String&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline InlineSessionState& AddSessionAttributes(const char* key, Aws::String&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(key, std::move(value)); return *this; }
-    inline InlineSessionState& AddSessionAttributes(Aws::String&& key, const char* value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(std::move(key), value); return *this; }
-    inline InlineSessionState& AddSessionAttributes(const char* key, const char* value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(key, value); return *this; }
+    template<typename SessionAttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetSessionAttributes(SessionAttributesT&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes = std::forward<SessionAttributesT>(value); }
+    template<typename SessionAttributesT = Aws::Map<Aws::String, Aws::String>>
+    InlineSessionState& WithSessionAttributes(SessionAttributesT&& value) { SetSessionAttributes(std::forward<SessionAttributesT>(value)); return *this;}
+    template<typename SessionAttributesKeyT = Aws::String, typename SessionAttributesValueT = Aws::String>
+    InlineSessionState& AddSessionAttributes(SessionAttributesKeyT&& key, SessionAttributesValueT&& value) {
+      m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(std::forward<SessionAttributesKeyT>(key), std::forward<SessionAttributesValueT>(value)); return *this;
+    }
     ///@}
   private:
 

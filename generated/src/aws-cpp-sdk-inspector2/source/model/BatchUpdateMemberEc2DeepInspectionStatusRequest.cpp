@@ -12,11 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchUpdateMemberEc2DeepInspectionStatusRequest::BatchUpdateMemberEc2DeepInspectionStatusRequest() : 
-    m_accountIdsHasBeenSet(false)
-{
-}
-
 Aws::String BatchUpdateMemberEc2DeepInspectionStatusRequest::SerializePayload() const
 {
   JsonValue payload;

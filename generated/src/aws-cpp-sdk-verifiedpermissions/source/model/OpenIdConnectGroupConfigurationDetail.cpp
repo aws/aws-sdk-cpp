@@ -18,14 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-OpenIdConnectGroupConfigurationDetail::OpenIdConnectGroupConfigurationDetail() : 
-    m_groupClaimHasBeenSet(false),
-    m_groupEntityTypeHasBeenSet(false)
-{
-}
-
 OpenIdConnectGroupConfigurationDetail::OpenIdConnectGroupConfigurationDetail(JsonView jsonValue)
-  : OpenIdConnectGroupConfigurationDetail()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OpenIdConnectGroupConfigurationDetail& OpenIdConnectGroupConfigurationDetail::op
   if(jsonValue.ValueExists("groupClaim"))
   {
     m_groupClaim = jsonValue.GetString("groupClaim");
-
     m_groupClaimHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groupEntityType"))
   {
     m_groupEntityType = jsonValue.GetString("groupEntityType");
-
     m_groupEntityTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

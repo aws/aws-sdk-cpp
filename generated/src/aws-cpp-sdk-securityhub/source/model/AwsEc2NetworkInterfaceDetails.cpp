@@ -18,21 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2NetworkInterfaceDetails::AwsEc2NetworkInterfaceDetails() : 
-    m_attachmentHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_sourceDestCheck(false),
-    m_sourceDestCheckHasBeenSet(false),
-    m_ipV6AddressesHasBeenSet(false),
-    m_privateIpAddressesHasBeenSet(false),
-    m_publicDnsNameHasBeenSet(false),
-    m_publicIpHasBeenSet(false)
-{
-}
-
 AwsEc2NetworkInterfaceDetails::AwsEc2NetworkInterfaceDetails(JsonView jsonValue)
-  : AwsEc2NetworkInterfaceDetails()
 {
   *this = jsonValue;
 }
@@ -42,17 +28,13 @@ AwsEc2NetworkInterfaceDetails& AwsEc2NetworkInterfaceDetails::operator =(JsonVie
   if(jsonValue.ValueExists("Attachment"))
   {
     m_attachment = jsonValue.GetObject("Attachment");
-
     m_attachmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkInterfaceId"))
   {
     m_networkInterfaceId = jsonValue.GetString("NetworkInterfaceId");
-
     m_networkInterfaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroups"))
   {
     Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
@@ -62,14 +44,11 @@ AwsEc2NetworkInterfaceDetails& AwsEc2NetworkInterfaceDetails::operator =(JsonVie
     }
     m_securityGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceDestCheck"))
   {
     m_sourceDestCheck = jsonValue.GetBool("SourceDestCheck");
-
     m_sourceDestCheckHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpV6Addresses"))
   {
     Aws::Utils::Array<JsonView> ipV6AddressesJsonList = jsonValue.GetArray("IpV6Addresses");
@@ -79,7 +58,6 @@ AwsEc2NetworkInterfaceDetails& AwsEc2NetworkInterfaceDetails::operator =(JsonVie
     }
     m_ipV6AddressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrivateIpAddresses"))
   {
     Aws::Utils::Array<JsonView> privateIpAddressesJsonList = jsonValue.GetArray("PrivateIpAddresses");
@@ -89,21 +67,16 @@ AwsEc2NetworkInterfaceDetails& AwsEc2NetworkInterfaceDetails::operator =(JsonVie
     }
     m_privateIpAddressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublicDnsName"))
   {
     m_publicDnsName = jsonValue.GetString("PublicDnsName");
-
     m_publicDnsNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublicIp"))
   {
     m_publicIp = jsonValue.GetString("PublicIp");
-
     m_publicIpHasBeenSet = true;
   }
-
   return *this;
 }
 

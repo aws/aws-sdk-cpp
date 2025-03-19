@@ -33,7 +33,7 @@ namespace Model
   class WaypointOptimizationTravelModeOptions
   {
   public:
-    AWS_GEOROUTES_API WaypointOptimizationTravelModeOptions();
+    AWS_GEOROUTES_API WaypointOptimizationTravelModeOptions() = default;
     AWS_GEOROUTES_API WaypointOptimizationTravelModeOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API WaypointOptimizationTravelModeOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>Travel mode options when the provided travel mode is "Pedestrian"</p>
      */
-    inline const WaypointOptimizationPedestrianOptions& GetPedestrian() const{ return m_pedestrian; }
+    inline const WaypointOptimizationPedestrianOptions& GetPedestrian() const { return m_pedestrian; }
     inline bool PedestrianHasBeenSet() const { return m_pedestrianHasBeenSet; }
-    inline void SetPedestrian(const WaypointOptimizationPedestrianOptions& value) { m_pedestrianHasBeenSet = true; m_pedestrian = value; }
-    inline void SetPedestrian(WaypointOptimizationPedestrianOptions&& value) { m_pedestrianHasBeenSet = true; m_pedestrian = std::move(value); }
-    inline WaypointOptimizationTravelModeOptions& WithPedestrian(const WaypointOptimizationPedestrianOptions& value) { SetPedestrian(value); return *this;}
-    inline WaypointOptimizationTravelModeOptions& WithPedestrian(WaypointOptimizationPedestrianOptions&& value) { SetPedestrian(std::move(value)); return *this;}
+    template<typename PedestrianT = WaypointOptimizationPedestrianOptions>
+    void SetPedestrian(PedestrianT&& value) { m_pedestrianHasBeenSet = true; m_pedestrian = std::forward<PedestrianT>(value); }
+    template<typename PedestrianT = WaypointOptimizationPedestrianOptions>
+    WaypointOptimizationTravelModeOptions& WithPedestrian(PedestrianT&& value) { SetPedestrian(std::forward<PedestrianT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Travel mode options when the provided travel mode is "Truck"</p>
      */
-    inline const WaypointOptimizationTruckOptions& GetTruck() const{ return m_truck; }
+    inline const WaypointOptimizationTruckOptions& GetTruck() const { return m_truck; }
     inline bool TruckHasBeenSet() const { return m_truckHasBeenSet; }
-    inline void SetTruck(const WaypointOptimizationTruckOptions& value) { m_truckHasBeenSet = true; m_truck = value; }
-    inline void SetTruck(WaypointOptimizationTruckOptions&& value) { m_truckHasBeenSet = true; m_truck = std::move(value); }
-    inline WaypointOptimizationTravelModeOptions& WithTruck(const WaypointOptimizationTruckOptions& value) { SetTruck(value); return *this;}
-    inline WaypointOptimizationTravelModeOptions& WithTruck(WaypointOptimizationTruckOptions&& value) { SetTruck(std::move(value)); return *this;}
+    template<typename TruckT = WaypointOptimizationTruckOptions>
+    void SetTruck(TruckT&& value) { m_truckHasBeenSet = true; m_truck = std::forward<TruckT>(value); }
+    template<typename TruckT = WaypointOptimizationTruckOptions>
+    WaypointOptimizationTravelModeOptions& WithTruck(TruckT&& value) { SetTruck(std::forward<TruckT>(value)); return *this;}
     ///@}
   private:
 

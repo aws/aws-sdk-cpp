@@ -18,15 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-EcrRepositoryMetadata::EcrRepositoryMetadata() : 
-    m_nameHasBeenSet(false),
-    m_scanFrequency(EcrScanFrequency::NOT_SET),
-    m_scanFrequencyHasBeenSet(false)
-{
-}
-
 EcrRepositoryMetadata::EcrRepositoryMetadata(JsonView jsonValue)
-  : EcrRepositoryMetadata()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EcrRepositoryMetadata& EcrRepositoryMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanFrequency"))
   {
     m_scanFrequency = EcrScanFrequencyMapper::GetEcrScanFrequencyForName(jsonValue.GetString("scanFrequency"));
-
     m_scanFrequencyHasBeenSet = true;
   }
-
   return *this;
 }
 

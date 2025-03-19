@@ -18,16 +18,7 @@ namespace deadline
 namespace Model
 {
 
-QueueEnvironmentSummary::QueueEnvironmentSummary() : 
-    m_queueEnvironmentIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false)
-{
-}
-
 QueueEnvironmentSummary::QueueEnvironmentSummary(JsonView jsonValue)
-  : QueueEnvironmentSummary()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ QueueEnvironmentSummary& QueueEnvironmentSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("queueEnvironmentId"))
   {
     m_queueEnvironmentId = jsonValue.GetString("queueEnvironmentId");
-
     m_queueEnvironmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("priority"))
   {
     m_priority = jsonValue.GetInteger("priority");
-
     m_priorityHasBeenSet = true;
   }
-
   return *this;
 }
 

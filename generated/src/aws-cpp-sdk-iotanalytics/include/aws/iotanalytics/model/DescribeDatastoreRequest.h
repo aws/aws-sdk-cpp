@@ -25,7 +25,7 @@ namespace Model
   class DescribeDatastoreRequest : public IoTAnalyticsRequest
   {
   public:
-    AWS_IOTANALYTICS_API DescribeDatastoreRequest();
+    AWS_IOTANALYTICS_API DescribeDatastoreRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the data store</p>
      */
-    inline const Aws::String& GetDatastoreName() const{ return m_datastoreName; }
+    inline const Aws::String& GetDatastoreName() const { return m_datastoreName; }
     inline bool DatastoreNameHasBeenSet() const { return m_datastoreNameHasBeenSet; }
-    inline void SetDatastoreName(const Aws::String& value) { m_datastoreNameHasBeenSet = true; m_datastoreName = value; }
-    inline void SetDatastoreName(Aws::String&& value) { m_datastoreNameHasBeenSet = true; m_datastoreName = std::move(value); }
-    inline void SetDatastoreName(const char* value) { m_datastoreNameHasBeenSet = true; m_datastoreName.assign(value); }
-    inline DescribeDatastoreRequest& WithDatastoreName(const Aws::String& value) { SetDatastoreName(value); return *this;}
-    inline DescribeDatastoreRequest& WithDatastoreName(Aws::String&& value) { SetDatastoreName(std::move(value)); return *this;}
-    inline DescribeDatastoreRequest& WithDatastoreName(const char* value) { SetDatastoreName(value); return *this;}
+    template<typename DatastoreNameT = Aws::String>
+    void SetDatastoreName(DatastoreNameT&& value) { m_datastoreNameHasBeenSet = true; m_datastoreName = std::forward<DatastoreNameT>(value); }
+    template<typename DatastoreNameT = Aws::String>
+    DescribeDatastoreRequest& WithDatastoreName(DatastoreNameT&& value) { SetDatastoreName(std::forward<DatastoreNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * in the response. This feature can't be used with a data store whose S3 storage
      * is customer-managed.</p>
      */
-    inline bool GetIncludeStatistics() const{ return m_includeStatistics; }
+    inline bool GetIncludeStatistics() const { return m_includeStatistics; }
     inline bool IncludeStatisticsHasBeenSet() const { return m_includeStatisticsHasBeenSet; }
     inline void SetIncludeStatistics(bool value) { m_includeStatisticsHasBeenSet = true; m_includeStatistics = value; }
     inline DescribeDatastoreRequest& WithIncludeStatistics(bool value) { SetIncludeStatistics(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     Aws::String m_datastoreName;
     bool m_datastoreNameHasBeenSet = false;
 
-    bool m_includeStatistics;
+    bool m_includeStatistics{false};
     bool m_includeStatisticsHasBeenSet = false;
   };
 

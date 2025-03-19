@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-EmrSettings::EmrSettings() : 
-    m_assumableRoleArnsHasBeenSet(false),
-    m_executionRoleArnsHasBeenSet(false)
-{
-}
-
 EmrSettings::EmrSettings(JsonView jsonValue)
-  : EmrSettings()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ EmrSettings& EmrSettings::operator =(JsonView jsonValue)
     }
     m_assumableRoleArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionRoleArns"))
   {
     Aws::Utils::Array<JsonView> executionRoleArnsJsonList = jsonValue.GetArray("ExecutionRoleArns");
@@ -51,7 +43,6 @@ EmrSettings& EmrSettings::operator =(JsonView jsonValue)
     }
     m_executionRoleArnsHasBeenSet = true;
   }
-
   return *this;
 }
 

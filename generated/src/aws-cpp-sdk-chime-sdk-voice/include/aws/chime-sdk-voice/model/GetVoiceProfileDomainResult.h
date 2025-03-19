@@ -28,7 +28,7 @@ namespace Model
   class GetVoiceProfileDomainResult
   {
   public:
-    AWS_CHIMESDKVOICE_API GetVoiceProfileDomainResult();
+    AWS_CHIMESDKVOICE_API GetVoiceProfileDomainResult() = default;
     AWS_CHIMESDKVOICE_API GetVoiceProfileDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKVOICE_API GetVoiceProfileDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The details of the voice profile domain.</p>
      */
-    inline const VoiceProfileDomain& GetVoiceProfileDomain() const{ return m_voiceProfileDomain; }
-    inline void SetVoiceProfileDomain(const VoiceProfileDomain& value) { m_voiceProfileDomain = value; }
-    inline void SetVoiceProfileDomain(VoiceProfileDomain&& value) { m_voiceProfileDomain = std::move(value); }
-    inline GetVoiceProfileDomainResult& WithVoiceProfileDomain(const VoiceProfileDomain& value) { SetVoiceProfileDomain(value); return *this;}
-    inline GetVoiceProfileDomainResult& WithVoiceProfileDomain(VoiceProfileDomain&& value) { SetVoiceProfileDomain(std::move(value)); return *this;}
+    inline const VoiceProfileDomain& GetVoiceProfileDomain() const { return m_voiceProfileDomain; }
+    template<typename VoiceProfileDomainT = VoiceProfileDomain>
+    void SetVoiceProfileDomain(VoiceProfileDomainT&& value) { m_voiceProfileDomainHasBeenSet = true; m_voiceProfileDomain = std::forward<VoiceProfileDomainT>(value); }
+    template<typename VoiceProfileDomainT = VoiceProfileDomain>
+    GetVoiceProfileDomainResult& WithVoiceProfileDomain(VoiceProfileDomainT&& value) { SetVoiceProfileDomain(std::forward<VoiceProfileDomainT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetVoiceProfileDomainResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetVoiceProfileDomainResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetVoiceProfileDomainResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetVoiceProfileDomainResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     VoiceProfileDomain m_voiceProfileDomain;
+    bool m_voiceProfileDomainHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

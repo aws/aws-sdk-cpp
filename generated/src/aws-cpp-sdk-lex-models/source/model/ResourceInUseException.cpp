@@ -18,15 +18,7 @@ namespace LexModelBuildingService
 namespace Model
 {
 
-ResourceInUseException::ResourceInUseException() : 
-    m_referenceType(ReferenceType::NOT_SET),
-    m_referenceTypeHasBeenSet(false),
-    m_exampleReferenceHasBeenSet(false)
-{
-}
-
 ResourceInUseException::ResourceInUseException(JsonView jsonValue)
-  : ResourceInUseException()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ResourceInUseException& ResourceInUseException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("referenceType"))
   {
     m_referenceType = ReferenceTypeMapper::GetReferenceTypeForName(jsonValue.GetString("referenceType"));
-
     m_referenceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exampleReference"))
   {
     m_exampleReference = jsonValue.GetObject("exampleReference");
-
     m_exampleReferenceHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class RegisterRdsDbInstanceRequest : public OpsWorksRequest
   {
   public:
-    AWS_OPSWORKS_API RegisterRdsDbInstanceRequest();
+    AWS_OPSWORKS_API RegisterRdsDbInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,56 +38,48 @@ namespace Model
     /**
      * <p>The stack ID.</p>
      */
-    inline const Aws::String& GetStackId() const{ return m_stackId; }
+    inline const Aws::String& GetStackId() const { return m_stackId; }
     inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
-    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
-    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
-    inline RegisterRdsDbInstanceRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-    inline RegisterRdsDbInstanceRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-    inline RegisterRdsDbInstanceRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
+    template<typename StackIdT = Aws::String>
+    void SetStackId(StackIdT&& value) { m_stackIdHasBeenSet = true; m_stackId = std::forward<StackIdT>(value); }
+    template<typename StackIdT = Aws::String>
+    RegisterRdsDbInstanceRequest& WithStackId(StackIdT&& value) { SetStackId(std::forward<StackIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon RDS instance's ARN.</p>
      */
-    inline const Aws::String& GetRdsDbInstanceArn() const{ return m_rdsDbInstanceArn; }
+    inline const Aws::String& GetRdsDbInstanceArn() const { return m_rdsDbInstanceArn; }
     inline bool RdsDbInstanceArnHasBeenSet() const { return m_rdsDbInstanceArnHasBeenSet; }
-    inline void SetRdsDbInstanceArn(const Aws::String& value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn = value; }
-    inline void SetRdsDbInstanceArn(Aws::String&& value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn = std::move(value); }
-    inline void SetRdsDbInstanceArn(const char* value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn.assign(value); }
-    inline RegisterRdsDbInstanceRequest& WithRdsDbInstanceArn(const Aws::String& value) { SetRdsDbInstanceArn(value); return *this;}
-    inline RegisterRdsDbInstanceRequest& WithRdsDbInstanceArn(Aws::String&& value) { SetRdsDbInstanceArn(std::move(value)); return *this;}
-    inline RegisterRdsDbInstanceRequest& WithRdsDbInstanceArn(const char* value) { SetRdsDbInstanceArn(value); return *this;}
+    template<typename RdsDbInstanceArnT = Aws::String>
+    void SetRdsDbInstanceArn(RdsDbInstanceArnT&& value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn = std::forward<RdsDbInstanceArnT>(value); }
+    template<typename RdsDbInstanceArnT = Aws::String>
+    RegisterRdsDbInstanceRequest& WithRdsDbInstanceArn(RdsDbInstanceArnT&& value) { SetRdsDbInstanceArn(std::forward<RdsDbInstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The database's master user name.</p>
      */
-    inline const Aws::String& GetDbUser() const{ return m_dbUser; }
+    inline const Aws::String& GetDbUser() const { return m_dbUser; }
     inline bool DbUserHasBeenSet() const { return m_dbUserHasBeenSet; }
-    inline void SetDbUser(const Aws::String& value) { m_dbUserHasBeenSet = true; m_dbUser = value; }
-    inline void SetDbUser(Aws::String&& value) { m_dbUserHasBeenSet = true; m_dbUser = std::move(value); }
-    inline void SetDbUser(const char* value) { m_dbUserHasBeenSet = true; m_dbUser.assign(value); }
-    inline RegisterRdsDbInstanceRequest& WithDbUser(const Aws::String& value) { SetDbUser(value); return *this;}
-    inline RegisterRdsDbInstanceRequest& WithDbUser(Aws::String&& value) { SetDbUser(std::move(value)); return *this;}
-    inline RegisterRdsDbInstanceRequest& WithDbUser(const char* value) { SetDbUser(value); return *this;}
+    template<typename DbUserT = Aws::String>
+    void SetDbUser(DbUserT&& value) { m_dbUserHasBeenSet = true; m_dbUser = std::forward<DbUserT>(value); }
+    template<typename DbUserT = Aws::String>
+    RegisterRdsDbInstanceRequest& WithDbUser(DbUserT&& value) { SetDbUser(std::forward<DbUserT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The database password.</p>
      */
-    inline const Aws::String& GetDbPassword() const{ return m_dbPassword; }
+    inline const Aws::String& GetDbPassword() const { return m_dbPassword; }
     inline bool DbPasswordHasBeenSet() const { return m_dbPasswordHasBeenSet; }
-    inline void SetDbPassword(const Aws::String& value) { m_dbPasswordHasBeenSet = true; m_dbPassword = value; }
-    inline void SetDbPassword(Aws::String&& value) { m_dbPasswordHasBeenSet = true; m_dbPassword = std::move(value); }
-    inline void SetDbPassword(const char* value) { m_dbPasswordHasBeenSet = true; m_dbPassword.assign(value); }
-    inline RegisterRdsDbInstanceRequest& WithDbPassword(const Aws::String& value) { SetDbPassword(value); return *this;}
-    inline RegisterRdsDbInstanceRequest& WithDbPassword(Aws::String&& value) { SetDbPassword(std::move(value)); return *this;}
-    inline RegisterRdsDbInstanceRequest& WithDbPassword(const char* value) { SetDbPassword(value); return *this;}
+    template<typename DbPasswordT = Aws::String>
+    void SetDbPassword(DbPasswordT&& value) { m_dbPasswordHasBeenSet = true; m_dbPassword = std::forward<DbPasswordT>(value); }
+    template<typename DbPasswordT = Aws::String>
+    RegisterRdsDbInstanceRequest& WithDbPassword(DbPasswordT&& value) { SetDbPassword(std::forward<DbPasswordT>(value)); return *this;}
     ///@}
   private:
 

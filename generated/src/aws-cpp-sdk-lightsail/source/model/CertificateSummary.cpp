@@ -18,17 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-CertificateSummary::CertificateSummary() : 
-    m_certificateArnHasBeenSet(false),
-    m_certificateNameHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_certificateDetailHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 CertificateSummary::CertificateSummary(JsonView jsonValue)
-  : CertificateSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ CertificateSummary& CertificateSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("certificateArn"))
   {
     m_certificateArn = jsonValue.GetString("certificateArn");
-
     m_certificateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certificateName"))
   {
     m_certificateName = jsonValue.GetString("certificateName");
-
     m_certificateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainName"))
   {
     m_domainName = jsonValue.GetString("domainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certificateDetail"))
   {
     m_certificateDetail = jsonValue.GetObject("certificateDetail");
-
     m_certificateDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -72,7 +54,6 @@ CertificateSummary& CertificateSummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

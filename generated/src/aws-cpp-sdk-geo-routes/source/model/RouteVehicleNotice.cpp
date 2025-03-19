@@ -18,17 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteVehicleNotice::RouteVehicleNotice() : 
-    m_code(RouteVehicleNoticeCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_impact(RouteNoticeImpact::NOT_SET),
-    m_impactHasBeenSet(false)
-{
-}
-
 RouteVehicleNotice::RouteVehicleNotice(JsonView jsonValue)
-  : RouteVehicleNotice()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ RouteVehicleNotice& RouteVehicleNotice::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = RouteVehicleNoticeCodeMapper::GetRouteVehicleNoticeCodeForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Details"))
   {
     Aws::Utils::Array<JsonView> detailsJsonList = jsonValue.GetArray("Details");
@@ -51,14 +39,11 @@ RouteVehicleNotice& RouteVehicleNotice::operator =(JsonView jsonValue)
     }
     m_detailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Impact"))
   {
     m_impact = RouteNoticeImpactMapper::GetRouteNoticeImpactForName(jsonValue.GetString("Impact"));
-
     m_impactHasBeenSet = true;
   }
-
   return *this;
 }
 

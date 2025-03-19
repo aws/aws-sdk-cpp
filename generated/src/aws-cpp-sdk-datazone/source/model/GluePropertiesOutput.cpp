@@ -18,15 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-GluePropertiesOutput::GluePropertiesOutput() : 
-    m_errorMessageHasBeenSet(false),
-    m_status(ConnectionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 GluePropertiesOutput::GluePropertiesOutput(JsonView jsonValue)
-  : GluePropertiesOutput()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GluePropertiesOutput& GluePropertiesOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ConnectionStatusMapper::GetConnectionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,19 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-ForecastExportJobSummary::ForecastExportJobSummary() : 
-    m_forecastExportJobArnHasBeenSet(false),
-    m_forecastExportJobNameHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false)
-{
-}
-
 ForecastExportJobSummary::ForecastExportJobSummary(JsonView jsonValue)
-  : ForecastExportJobSummary()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ ForecastExportJobSummary& ForecastExportJobSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("ForecastExportJobArn"))
   {
     m_forecastExportJobArn = jsonValue.GetString("ForecastExportJobArn");
-
     m_forecastExportJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ForecastExportJobName"))
   {
     m_forecastExportJobName = jsonValue.GetString("ForecastExportJobName");
-
     m_forecastExportJobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Destination"))
   {
     m_destination = jsonValue.GetObject("Destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModificationTime"))
   {
     m_lastModificationTime = jsonValue.GetDouble("LastModificationTime");
-
     m_lastModificationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

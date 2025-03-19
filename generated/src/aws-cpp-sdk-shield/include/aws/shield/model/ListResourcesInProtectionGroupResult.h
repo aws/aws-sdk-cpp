@@ -28,7 +28,7 @@ namespace Model
   class ListResourcesInProtectionGroupResult
   {
   public:
-    AWS_SHIELD_API ListResourcesInProtectionGroupResult();
+    AWS_SHIELD_API ListResourcesInProtectionGroupResult() = default;
     AWS_SHIELD_API ListResourcesInProtectionGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SHIELD_API ListResourcesInProtectionGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,14 +38,13 @@ namespace Model
      * <p>The Amazon Resource Names (ARNs) of the resources that are included in the
      * protection group.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceArns() const{ return m_resourceArns; }
-    inline void SetResourceArns(const Aws::Vector<Aws::String>& value) { m_resourceArns = value; }
-    inline void SetResourceArns(Aws::Vector<Aws::String>&& value) { m_resourceArns = std::move(value); }
-    inline ListResourcesInProtectionGroupResult& WithResourceArns(const Aws::Vector<Aws::String>& value) { SetResourceArns(value); return *this;}
-    inline ListResourcesInProtectionGroupResult& WithResourceArns(Aws::Vector<Aws::String>&& value) { SetResourceArns(std::move(value)); return *this;}
-    inline ListResourcesInProtectionGroupResult& AddResourceArns(const Aws::String& value) { m_resourceArns.push_back(value); return *this; }
-    inline ListResourcesInProtectionGroupResult& AddResourceArns(Aws::String&& value) { m_resourceArns.push_back(std::move(value)); return *this; }
-    inline ListResourcesInProtectionGroupResult& AddResourceArns(const char* value) { m_resourceArns.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetResourceArns() const { return m_resourceArns; }
+    template<typename ResourceArnsT = Aws::Vector<Aws::String>>
+    void SetResourceArns(ResourceArnsT&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = std::forward<ResourceArnsT>(value); }
+    template<typename ResourceArnsT = Aws::Vector<Aws::String>>
+    ListResourcesInProtectionGroupResult& WithResourceArns(ResourceArnsT&& value) { SetResourceArns(std::forward<ResourceArnsT>(value)); return *this;}
+    template<typename ResourceArnsT = Aws::String>
+    ListResourcesInProtectionGroupResult& AddResourceArns(ResourceArnsT&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.emplace_back(std::forward<ResourceArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,32 +61,31 @@ namespace Model
      * not yet returned to you, the response will include a <code>NextToken</code>
      * value.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListResourcesInProtectionGroupResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListResourcesInProtectionGroupResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListResourcesInProtectionGroupResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListResourcesInProtectionGroupResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListResourcesInProtectionGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListResourcesInProtectionGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListResourcesInProtectionGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListResourcesInProtectionGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_resourceArns;
+    bool m_resourceArnsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,7 +32,7 @@ namespace Model
   class EntryDescription
   {
   public:
-    AWS_FMS_API EntryDescription();
+    AWS_FMS_API EntryDescription() = default;
     AWS_FMS_API EntryDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API EntryDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,12 +51,12 @@ namespace Model
      * last, in the order that you want them to run. Firewall Manager assigns the rule
      * numbers for you when you save the network ACL policy specification.</p>
      */
-    inline const NetworkAclEntry& GetEntryDetail() const{ return m_entryDetail; }
+    inline const NetworkAclEntry& GetEntryDetail() const { return m_entryDetail; }
     inline bool EntryDetailHasBeenSet() const { return m_entryDetailHasBeenSet; }
-    inline void SetEntryDetail(const NetworkAclEntry& value) { m_entryDetailHasBeenSet = true; m_entryDetail = value; }
-    inline void SetEntryDetail(NetworkAclEntry&& value) { m_entryDetailHasBeenSet = true; m_entryDetail = std::move(value); }
-    inline EntryDescription& WithEntryDetail(const NetworkAclEntry& value) { SetEntryDetail(value); return *this;}
-    inline EntryDescription& WithEntryDetail(NetworkAclEntry&& value) { SetEntryDetail(std::move(value)); return *this;}
+    template<typename EntryDetailT = NetworkAclEntry>
+    void SetEntryDetail(EntryDetailT&& value) { m_entryDetailHasBeenSet = true; m_entryDetail = std::forward<EntryDetailT>(value); }
+    template<typename EntryDetailT = NetworkAclEntry>
+    EntryDescription& WithEntryDetail(EntryDetailT&& value) { SetEntryDetail(std::forward<EntryDetailT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,7 +65,7 @@ namespace Model
      * by rule number. In a Firewall Manager network ACL policy, Firewall Manager
      * assigns rule numbers. </p>
      */
-    inline int GetEntryRuleNumber() const{ return m_entryRuleNumber; }
+    inline int GetEntryRuleNumber() const { return m_entryRuleNumber; }
     inline bool EntryRuleNumberHasBeenSet() const { return m_entryRuleNumberHasBeenSet; }
     inline void SetEntryRuleNumber(int value) { m_entryRuleNumberHasBeenSet = true; m_entryRuleNumber = value; }
     inline EntryDescription& WithEntryRuleNumber(int value) { SetEntryRuleNumber(value); return *this;}
@@ -77,22 +77,20 @@ namespace Model
      * for Firewall Manager-managed entries, specifies whether the entry is among those
      * that run first in the network ACL or those that run last. </p>
      */
-    inline const EntryType& GetEntryType() const{ return m_entryType; }
+    inline EntryType GetEntryType() const { return m_entryType; }
     inline bool EntryTypeHasBeenSet() const { return m_entryTypeHasBeenSet; }
-    inline void SetEntryType(const EntryType& value) { m_entryTypeHasBeenSet = true; m_entryType = value; }
-    inline void SetEntryType(EntryType&& value) { m_entryTypeHasBeenSet = true; m_entryType = std::move(value); }
-    inline EntryDescription& WithEntryType(const EntryType& value) { SetEntryType(value); return *this;}
-    inline EntryDescription& WithEntryType(EntryType&& value) { SetEntryType(std::move(value)); return *this;}
+    inline void SetEntryType(EntryType value) { m_entryTypeHasBeenSet = true; m_entryType = value; }
+    inline EntryDescription& WithEntryType(EntryType value) { SetEntryType(value); return *this;}
     ///@}
   private:
 
     NetworkAclEntry m_entryDetail;
     bool m_entryDetailHasBeenSet = false;
 
-    int m_entryRuleNumber;
+    int m_entryRuleNumber{0};
     bool m_entryRuleNumberHasBeenSet = false;
 
-    EntryType m_entryType;
+    EntryType m_entryType{EntryType::NOT_SET};
     bool m_entryTypeHasBeenSet = false;
   };
 

@@ -34,7 +34,7 @@ namespace Model
   class GetUserResult
   {
   public:
-    AWS_IAM_API GetUserResult();
+    AWS_IAM_API GetUserResult() = default;
     AWS_IAM_API GetUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_IAM_API GetUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -60,26 +60,28 @@ namespace Model
      * refer to access key last used information because it is accurate for all dates.
      * </p> 
      */
-    inline const User& GetUser() const{ return m_user; }
-    inline void SetUser(const User& value) { m_user = value; }
-    inline void SetUser(User&& value) { m_user = std::move(value); }
-    inline GetUserResult& WithUser(const User& value) { SetUser(value); return *this;}
-    inline GetUserResult& WithUser(User&& value) { SetUser(std::move(value)); return *this;}
+    inline const User& GetUser() const { return m_user; }
+    template<typename UserT = User>
+    void SetUser(UserT&& value) { m_userHasBeenSet = true; m_user = std::forward<UserT>(value); }
+    template<typename UserT = User>
+    GetUserResult& WithUser(UserT&& value) { SetUser(std::forward<UserT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetUserResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetUserResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetUserResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     User m_user;
+    bool m_userHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

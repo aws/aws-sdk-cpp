@@ -18,13 +18,7 @@ namespace BedrockDataAutomation
 namespace Model
 {
 
-DocumentOverrideConfiguration::DocumentOverrideConfiguration() : 
-    m_splitterHasBeenSet(false)
-{
-}
-
 DocumentOverrideConfiguration::DocumentOverrideConfiguration(JsonView jsonValue)
-  : DocumentOverrideConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DocumentOverrideConfiguration& DocumentOverrideConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("splitter"))
   {
     m_splitter = jsonValue.GetObject("splitter");
-
     m_splitterHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -27,7 +27,7 @@ namespace Model
   class GetCardinalityResult
   {
   public:
-    AWS_IOT_API GetCardinalityResult();
+    AWS_IOT_API GetCardinalityResult() = default;
     AWS_IOT_API GetCardinalityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API GetCardinalityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,26 +36,26 @@ namespace Model
     /**
      * <p>The approximate count of unique values that match the query.</p>
      */
-    inline int GetCardinality() const{ return m_cardinality; }
-    inline void SetCardinality(int value) { m_cardinality = value; }
+    inline int GetCardinality() const { return m_cardinality; }
+    inline void SetCardinality(int value) { m_cardinalityHasBeenSet = true; m_cardinality = value; }
     inline GetCardinalityResult& WithCardinality(int value) { SetCardinality(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCardinalityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCardinalityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCardinalityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCardinalityResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_cardinality;
+    int m_cardinality{0};
+    bool m_cardinalityHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

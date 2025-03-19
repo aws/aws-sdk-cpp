@@ -28,7 +28,7 @@ namespace Model
   class UpdateWorkspaceAuthenticationResult
   {
   public:
-    AWS_MANAGEDGRAFANA_API UpdateWorkspaceAuthenticationResult();
+    AWS_MANAGEDGRAFANA_API UpdateWorkspaceAuthenticationResult() = default;
     AWS_MANAGEDGRAFANA_API UpdateWorkspaceAuthenticationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MANAGEDGRAFANA_API UpdateWorkspaceAuthenticationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>A structure that describes the user authentication for this workspace after
      * the update is made.</p>
      */
-    inline const AuthenticationDescription& GetAuthentication() const{ return m_authentication; }
-    inline void SetAuthentication(const AuthenticationDescription& value) { m_authentication = value; }
-    inline void SetAuthentication(AuthenticationDescription&& value) { m_authentication = std::move(value); }
-    inline UpdateWorkspaceAuthenticationResult& WithAuthentication(const AuthenticationDescription& value) { SetAuthentication(value); return *this;}
-    inline UpdateWorkspaceAuthenticationResult& WithAuthentication(AuthenticationDescription&& value) { SetAuthentication(std::move(value)); return *this;}
+    inline const AuthenticationDescription& GetAuthentication() const { return m_authentication; }
+    template<typename AuthenticationT = AuthenticationDescription>
+    void SetAuthentication(AuthenticationT&& value) { m_authenticationHasBeenSet = true; m_authentication = std::forward<AuthenticationT>(value); }
+    template<typename AuthenticationT = AuthenticationDescription>
+    UpdateWorkspaceAuthenticationResult& WithAuthentication(AuthenticationT&& value) { SetAuthentication(std::forward<AuthenticationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateWorkspaceAuthenticationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateWorkspaceAuthenticationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateWorkspaceAuthenticationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateWorkspaceAuthenticationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AuthenticationDescription m_authentication;
+    bool m_authenticationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

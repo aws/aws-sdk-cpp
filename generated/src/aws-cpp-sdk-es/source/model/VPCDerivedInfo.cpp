@@ -18,16 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-VPCDerivedInfo::VPCDerivedInfo() : 
-    m_vPCIdHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
-{
-}
-
 VPCDerivedInfo::VPCDerivedInfo(JsonView jsonValue)
-  : VPCDerivedInfo()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ VPCDerivedInfo& VPCDerivedInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VPCId"))
   {
     m_vPCId = jsonValue.GetString("VPCId");
-
     m_vPCIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
@@ -50,7 +39,6 @@ VPCDerivedInfo& VPCDerivedInfo::operator =(JsonView jsonValue)
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZones"))
   {
     Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
@@ -60,7 +48,6 @@ VPCDerivedInfo& VPCDerivedInfo::operator =(JsonView jsonValue)
     }
     m_availabilityZonesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
@@ -70,7 +57,6 @@ VPCDerivedInfo& VPCDerivedInfo::operator =(JsonView jsonValue)
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

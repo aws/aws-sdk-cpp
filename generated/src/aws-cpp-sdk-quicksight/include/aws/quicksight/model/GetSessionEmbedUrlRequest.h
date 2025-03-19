@@ -25,7 +25,7 @@ namespace Model
   class GetSessionEmbedUrlRequest : public QuickSightRequest
   {
   public:
-    AWS_QUICKSIGHT_API GetSessionEmbedUrlRequest();
+    AWS_QUICKSIGHT_API GetSessionEmbedUrlRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The ID for the Amazon Web Services account associated with your Amazon
      * QuickSight subscription.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline GetSessionEmbedUrlRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline GetSessionEmbedUrlRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline GetSessionEmbedUrlRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    GetSessionEmbedUrlRequest& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * </code> - where <code>AnalysisId</code> is the actual ID key from the Amazon
      * QuickSight console URL of the analysis</p> </li> </ul>
      */
-    inline const Aws::String& GetEntryPoint() const{ return m_entryPoint; }
+    inline const Aws::String& GetEntryPoint() const { return m_entryPoint; }
     inline bool EntryPointHasBeenSet() const { return m_entryPointHasBeenSet; }
-    inline void SetEntryPoint(const Aws::String& value) { m_entryPointHasBeenSet = true; m_entryPoint = value; }
-    inline void SetEntryPoint(Aws::String&& value) { m_entryPointHasBeenSet = true; m_entryPoint = std::move(value); }
-    inline void SetEntryPoint(const char* value) { m_entryPointHasBeenSet = true; m_entryPoint.assign(value); }
-    inline GetSessionEmbedUrlRequest& WithEntryPoint(const Aws::String& value) { SetEntryPoint(value); return *this;}
-    inline GetSessionEmbedUrlRequest& WithEntryPoint(Aws::String&& value) { SetEntryPoint(std::move(value)); return *this;}
-    inline GetSessionEmbedUrlRequest& WithEntryPoint(const char* value) { SetEntryPoint(value); return *this;}
+    template<typename EntryPointT = Aws::String>
+    void SetEntryPoint(EntryPointT&& value) { m_entryPointHasBeenSet = true; m_entryPoint = std::forward<EntryPointT>(value); }
+    template<typename EntryPointT = Aws::String>
+    GetSessionEmbedUrlRequest& WithEntryPoint(EntryPointT&& value) { SetEntryPoint(std::forward<EntryPointT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,7 +76,7 @@ namespace Model
      * <p>How many minutes the session is valid. The session lifetime must be 15-600
      * minutes.</p>
      */
-    inline long long GetSessionLifetimeInMinutes() const{ return m_sessionLifetimeInMinutes; }
+    inline long long GetSessionLifetimeInMinutes() const { return m_sessionLifetimeInMinutes; }
     inline bool SessionLifetimeInMinutesHasBeenSet() const { return m_sessionLifetimeInMinutesHasBeenSet; }
     inline void SetSessionLifetimeInMinutes(long long value) { m_sessionLifetimeInMinutesHasBeenSet = true; m_sessionLifetimeInMinutes = value; }
     inline GetSessionEmbedUrlRequest& WithSessionLifetimeInMinutes(long long value) { SetSessionLifetimeInMinutes(value); return *this;}
@@ -98,14 +94,12 @@ namespace Model
      * <p>Omit this parameter for users in the third group, IAM users and IAM
      * role-based sessions.</p>
      */
-    inline const Aws::String& GetUserArn() const{ return m_userArn; }
+    inline const Aws::String& GetUserArn() const { return m_userArn; }
     inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
-    inline void SetUserArn(const Aws::String& value) { m_userArnHasBeenSet = true; m_userArn = value; }
-    inline void SetUserArn(Aws::String&& value) { m_userArnHasBeenSet = true; m_userArn = std::move(value); }
-    inline void SetUserArn(const char* value) { m_userArnHasBeenSet = true; m_userArn.assign(value); }
-    inline GetSessionEmbedUrlRequest& WithUserArn(const Aws::String& value) { SetUserArn(value); return *this;}
-    inline GetSessionEmbedUrlRequest& WithUserArn(Aws::String&& value) { SetUserArn(std::move(value)); return *this;}
-    inline GetSessionEmbedUrlRequest& WithUserArn(const char* value) { SetUserArn(value); return *this;}
+    template<typename UserArnT = Aws::String>
+    void SetUserArn(UserArnT&& value) { m_userArnHasBeenSet = true; m_userArn = std::forward<UserArnT>(value); }
+    template<typename UserArnT = Aws::String>
+    GetSessionEmbedUrlRequest& WithUserArn(UserArnT&& value) { SetUserArn(std::forward<UserArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -115,7 +109,7 @@ namespace Model
     Aws::String m_entryPoint;
     bool m_entryPointHasBeenSet = false;
 
-    long long m_sessionLifetimeInMinutes;
+    long long m_sessionLifetimeInMinutes{0};
     bool m_sessionLifetimeInMinutesHasBeenSet = false;
 
     Aws::String m_userArn;

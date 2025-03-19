@@ -32,7 +32,7 @@ namespace Model
   class RegisteredUserQSearchBarEmbeddingConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API RegisteredUserQSearchBarEmbeddingConfiguration();
+    AWS_QUICKSIGHT_API RegisteredUserQSearchBarEmbeddingConfiguration() = default;
     AWS_QUICKSIGHT_API RegisteredUserQSearchBarEmbeddingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API RegisteredUserQSearchBarEmbeddingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * specify an initial topic or if you specify a new reader experience topic, a list
      * of all shared legacy topics is shown in the Q bar. </p>
      */
-    inline const Aws::String& GetInitialTopicId() const{ return m_initialTopicId; }
+    inline const Aws::String& GetInitialTopicId() const { return m_initialTopicId; }
     inline bool InitialTopicIdHasBeenSet() const { return m_initialTopicIdHasBeenSet; }
-    inline void SetInitialTopicId(const Aws::String& value) { m_initialTopicIdHasBeenSet = true; m_initialTopicId = value; }
-    inline void SetInitialTopicId(Aws::String&& value) { m_initialTopicIdHasBeenSet = true; m_initialTopicId = std::move(value); }
-    inline void SetInitialTopicId(const char* value) { m_initialTopicIdHasBeenSet = true; m_initialTopicId.assign(value); }
-    inline RegisteredUserQSearchBarEmbeddingConfiguration& WithInitialTopicId(const Aws::String& value) { SetInitialTopicId(value); return *this;}
-    inline RegisteredUserQSearchBarEmbeddingConfiguration& WithInitialTopicId(Aws::String&& value) { SetInitialTopicId(std::move(value)); return *this;}
-    inline RegisteredUserQSearchBarEmbeddingConfiguration& WithInitialTopicId(const char* value) { SetInitialTopicId(value); return *this;}
+    template<typename InitialTopicIdT = Aws::String>
+    void SetInitialTopicId(InitialTopicIdT&& value) { m_initialTopicIdHasBeenSet = true; m_initialTopicId = std::forward<InitialTopicIdT>(value); }
+    template<typename InitialTopicIdT = Aws::String>
+    RegisteredUserQSearchBarEmbeddingConfiguration& WithInitialTopicId(InitialTopicIdT&& value) { SetInitialTopicId(std::forward<InitialTopicIdT>(value)); return *this;}
     ///@}
   private:
 

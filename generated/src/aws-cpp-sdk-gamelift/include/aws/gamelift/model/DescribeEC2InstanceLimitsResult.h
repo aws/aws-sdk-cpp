@@ -29,7 +29,7 @@ namespace Model
   class DescribeEC2InstanceLimitsResult
   {
   public:
-    AWS_GAMELIFT_API DescribeEC2InstanceLimitsResult();
+    AWS_GAMELIFT_API DescribeEC2InstanceLimitsResult() = default;
     AWS_GAMELIFT_API DescribeEC2InstanceLimitsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFT_API DescribeEC2InstanceLimitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>The maximum number of instances for the specified instance type.</p>
      */
-    inline const Aws::Vector<EC2InstanceLimit>& GetEC2InstanceLimits() const{ return m_eC2InstanceLimits; }
-    inline void SetEC2InstanceLimits(const Aws::Vector<EC2InstanceLimit>& value) { m_eC2InstanceLimits = value; }
-    inline void SetEC2InstanceLimits(Aws::Vector<EC2InstanceLimit>&& value) { m_eC2InstanceLimits = std::move(value); }
-    inline DescribeEC2InstanceLimitsResult& WithEC2InstanceLimits(const Aws::Vector<EC2InstanceLimit>& value) { SetEC2InstanceLimits(value); return *this;}
-    inline DescribeEC2InstanceLimitsResult& WithEC2InstanceLimits(Aws::Vector<EC2InstanceLimit>&& value) { SetEC2InstanceLimits(std::move(value)); return *this;}
-    inline DescribeEC2InstanceLimitsResult& AddEC2InstanceLimits(const EC2InstanceLimit& value) { m_eC2InstanceLimits.push_back(value); return *this; }
-    inline DescribeEC2InstanceLimitsResult& AddEC2InstanceLimits(EC2InstanceLimit&& value) { m_eC2InstanceLimits.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EC2InstanceLimit>& GetEC2InstanceLimits() const { return m_eC2InstanceLimits; }
+    template<typename EC2InstanceLimitsT = Aws::Vector<EC2InstanceLimit>>
+    void SetEC2InstanceLimits(EC2InstanceLimitsT&& value) { m_eC2InstanceLimitsHasBeenSet = true; m_eC2InstanceLimits = std::forward<EC2InstanceLimitsT>(value); }
+    template<typename EC2InstanceLimitsT = Aws::Vector<EC2InstanceLimit>>
+    DescribeEC2InstanceLimitsResult& WithEC2InstanceLimits(EC2InstanceLimitsT&& value) { SetEC2InstanceLimits(std::forward<EC2InstanceLimitsT>(value)); return *this;}
+    template<typename EC2InstanceLimitsT = EC2InstanceLimit>
+    DescribeEC2InstanceLimitsResult& AddEC2InstanceLimits(EC2InstanceLimitsT&& value) { m_eC2InstanceLimitsHasBeenSet = true; m_eC2InstanceLimits.emplace_back(std::forward<EC2InstanceLimitsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeEC2InstanceLimitsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeEC2InstanceLimitsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeEC2InstanceLimitsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeEC2InstanceLimitsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EC2InstanceLimit> m_eC2InstanceLimits;
+    bool m_eC2InstanceLimitsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -13,14 +13,6 @@ using namespace Aws::Glacier::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetJobOutputRequest::GetJobOutputRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_vaultNameHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_rangeHasBeenSet(false)
-{
-}
-
 Aws::String GetJobOutputRequest::SerializePayload() const
 {
   return {};

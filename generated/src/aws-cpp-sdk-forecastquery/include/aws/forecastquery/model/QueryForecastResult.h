@@ -28,7 +28,7 @@ namespace Model
   class QueryForecastResult
   {
   public:
-    AWS_FORECASTQUERYSERVICE_API QueryForecastResult();
+    AWS_FORECASTQUERYSERVICE_API QueryForecastResult() = default;
     AWS_FORECASTQUERYSERVICE_API QueryForecastResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FORECASTQUERYSERVICE_API QueryForecastResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The forecast.</p>
      */
-    inline const Forecast& GetForecast() const{ return m_forecast; }
-    inline void SetForecast(const Forecast& value) { m_forecast = value; }
-    inline void SetForecast(Forecast&& value) { m_forecast = std::move(value); }
-    inline QueryForecastResult& WithForecast(const Forecast& value) { SetForecast(value); return *this;}
-    inline QueryForecastResult& WithForecast(Forecast&& value) { SetForecast(std::move(value)); return *this;}
+    inline const Forecast& GetForecast() const { return m_forecast; }
+    template<typename ForecastT = Forecast>
+    void SetForecast(ForecastT&& value) { m_forecastHasBeenSet = true; m_forecast = std::forward<ForecastT>(value); }
+    template<typename ForecastT = Forecast>
+    QueryForecastResult& WithForecast(ForecastT&& value) { SetForecast(std::forward<ForecastT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline QueryForecastResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline QueryForecastResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline QueryForecastResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    QueryForecastResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Forecast m_forecast;
+    bool m_forecastHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

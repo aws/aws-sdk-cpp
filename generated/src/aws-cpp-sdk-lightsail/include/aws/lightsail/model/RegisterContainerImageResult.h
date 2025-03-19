@@ -28,7 +28,7 @@ namespace Model
   class RegisterContainerImageResult
   {
   public:
-    AWS_LIGHTSAIL_API RegisterContainerImageResult();
+    AWS_LIGHTSAIL_API RegisterContainerImageResult() = default;
     AWS_LIGHTSAIL_API RegisterContainerImageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API RegisterContainerImageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>An object that describes a container image that is registered to a Lightsail
      * container service</p>
      */
-    inline const ContainerImage& GetContainerImage() const{ return m_containerImage; }
-    inline void SetContainerImage(const ContainerImage& value) { m_containerImage = value; }
-    inline void SetContainerImage(ContainerImage&& value) { m_containerImage = std::move(value); }
-    inline RegisterContainerImageResult& WithContainerImage(const ContainerImage& value) { SetContainerImage(value); return *this;}
-    inline RegisterContainerImageResult& WithContainerImage(ContainerImage&& value) { SetContainerImage(std::move(value)); return *this;}
+    inline const ContainerImage& GetContainerImage() const { return m_containerImage; }
+    template<typename ContainerImageT = ContainerImage>
+    void SetContainerImage(ContainerImageT&& value) { m_containerImageHasBeenSet = true; m_containerImage = std::forward<ContainerImageT>(value); }
+    template<typename ContainerImageT = ContainerImage>
+    RegisterContainerImageResult& WithContainerImage(ContainerImageT&& value) { SetContainerImage(std::forward<ContainerImageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RegisterContainerImageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RegisterContainerImageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RegisterContainerImageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RegisterContainerImageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ContainerImage m_containerImage;
+    bool m_containerImageHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

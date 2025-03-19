@@ -32,7 +32,7 @@ namespace Model
   class ProfileQuestionUpdate
   {
   public:
-    AWS_WELLARCHITECTED_API ProfileQuestionUpdate();
+    AWS_WELLARCHITECTED_API ProfileQuestionUpdate() = default;
     AWS_WELLARCHITECTED_API ProfileQuestionUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API ProfileQuestionUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,29 +40,26 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetQuestionId() const{ return m_questionId; }
+    inline const Aws::String& GetQuestionId() const { return m_questionId; }
     inline bool QuestionIdHasBeenSet() const { return m_questionIdHasBeenSet; }
-    inline void SetQuestionId(const Aws::String& value) { m_questionIdHasBeenSet = true; m_questionId = value; }
-    inline void SetQuestionId(Aws::String&& value) { m_questionIdHasBeenSet = true; m_questionId = std::move(value); }
-    inline void SetQuestionId(const char* value) { m_questionIdHasBeenSet = true; m_questionId.assign(value); }
-    inline ProfileQuestionUpdate& WithQuestionId(const Aws::String& value) { SetQuestionId(value); return *this;}
-    inline ProfileQuestionUpdate& WithQuestionId(Aws::String&& value) { SetQuestionId(std::move(value)); return *this;}
-    inline ProfileQuestionUpdate& WithQuestionId(const char* value) { SetQuestionId(value); return *this;}
+    template<typename QuestionIdT = Aws::String>
+    void SetQuestionId(QuestionIdT&& value) { m_questionIdHasBeenSet = true; m_questionId = std::forward<QuestionIdT>(value); }
+    template<typename QuestionIdT = Aws::String>
+    ProfileQuestionUpdate& WithQuestionId(QuestionIdT&& value) { SetQuestionId(std::forward<QuestionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The selected choices.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSelectedChoiceIds() const{ return m_selectedChoiceIds; }
+    inline const Aws::Vector<Aws::String>& GetSelectedChoiceIds() const { return m_selectedChoiceIds; }
     inline bool SelectedChoiceIdsHasBeenSet() const { return m_selectedChoiceIdsHasBeenSet; }
-    inline void SetSelectedChoiceIds(const Aws::Vector<Aws::String>& value) { m_selectedChoiceIdsHasBeenSet = true; m_selectedChoiceIds = value; }
-    inline void SetSelectedChoiceIds(Aws::Vector<Aws::String>&& value) { m_selectedChoiceIdsHasBeenSet = true; m_selectedChoiceIds = std::move(value); }
-    inline ProfileQuestionUpdate& WithSelectedChoiceIds(const Aws::Vector<Aws::String>& value) { SetSelectedChoiceIds(value); return *this;}
-    inline ProfileQuestionUpdate& WithSelectedChoiceIds(Aws::Vector<Aws::String>&& value) { SetSelectedChoiceIds(std::move(value)); return *this;}
-    inline ProfileQuestionUpdate& AddSelectedChoiceIds(const Aws::String& value) { m_selectedChoiceIdsHasBeenSet = true; m_selectedChoiceIds.push_back(value); return *this; }
-    inline ProfileQuestionUpdate& AddSelectedChoiceIds(Aws::String&& value) { m_selectedChoiceIdsHasBeenSet = true; m_selectedChoiceIds.push_back(std::move(value)); return *this; }
-    inline ProfileQuestionUpdate& AddSelectedChoiceIds(const char* value) { m_selectedChoiceIdsHasBeenSet = true; m_selectedChoiceIds.push_back(value); return *this; }
+    template<typename SelectedChoiceIdsT = Aws::Vector<Aws::String>>
+    void SetSelectedChoiceIds(SelectedChoiceIdsT&& value) { m_selectedChoiceIdsHasBeenSet = true; m_selectedChoiceIds = std::forward<SelectedChoiceIdsT>(value); }
+    template<typename SelectedChoiceIdsT = Aws::Vector<Aws::String>>
+    ProfileQuestionUpdate& WithSelectedChoiceIds(SelectedChoiceIdsT&& value) { SetSelectedChoiceIds(std::forward<SelectedChoiceIdsT>(value)); return *this;}
+    template<typename SelectedChoiceIdsT = Aws::String>
+    ProfileQuestionUpdate& AddSelectedChoiceIds(SelectedChoiceIdsT&& value) { m_selectedChoiceIdsHasBeenSet = true; m_selectedChoiceIds.emplace_back(std::forward<SelectedChoiceIdsT>(value)); return *this; }
     ///@}
   private:
 

@@ -35,7 +35,7 @@ namespace Model
   class JobListDescriptor
   {
   public:
-    AWS_S3CONTROL_API JobListDescriptor();
+    AWS_S3CONTROL_API JobListDescriptor() = default;
     AWS_S3CONTROL_API JobListDescriptor(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API JobListDescriptor& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The ID for the specified job.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline JobListDescriptor& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline JobListDescriptor& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline JobListDescriptor& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    JobListDescriptor& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <p>The user-specified description that was included in the specified job's
      * <code>Create Job</code> request.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline JobListDescriptor& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline JobListDescriptor& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline JobListDescriptor& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    JobListDescriptor& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,19 +72,17 @@ namespace Model
      * <p>The operation that the specified job is configured to run on every object
      * listed in the manifest.</p>
      */
-    inline const OperationName& GetOperation() const{ return m_operation; }
+    inline OperationName GetOperation() const { return m_operation; }
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
-    inline void SetOperation(const OperationName& value) { m_operationHasBeenSet = true; m_operation = value; }
-    inline void SetOperation(OperationName&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
-    inline JobListDescriptor& WithOperation(const OperationName& value) { SetOperation(value); return *this;}
-    inline JobListDescriptor& WithOperation(OperationName&& value) { SetOperation(std::move(value)); return *this;}
+    inline void SetOperation(OperationName value) { m_operationHasBeenSet = true; m_operation = value; }
+    inline JobListDescriptor& WithOperation(OperationName value) { SetOperation(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current priority for the specified job.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline JobListDescriptor& WithPriority(int value) { SetPriority(value); return *this;}
@@ -98,24 +92,22 @@ namespace Model
     /**
      * <p>The specified job's current status.</p>
      */
-    inline const JobStatus& GetStatus() const{ return m_status; }
+    inline JobStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const JobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(JobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline JobListDescriptor& WithStatus(const JobStatus& value) { SetStatus(value); return *this;}
-    inline JobListDescriptor& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(JobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline JobListDescriptor& WithStatus(JobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp indicating when the specified job was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline JobListDescriptor& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline JobListDescriptor& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    JobListDescriptor& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,12 +115,12 @@ namespace Model
      * <p>A timestamp indicating when the specified job terminated. A job's termination
      * date is the date and time when it succeeded, failed, or was canceled.</p>
      */
-    inline const Aws::Utils::DateTime& GetTerminationDate() const{ return m_terminationDate; }
+    inline const Aws::Utils::DateTime& GetTerminationDate() const { return m_terminationDate; }
     inline bool TerminationDateHasBeenSet() const { return m_terminationDateHasBeenSet; }
-    inline void SetTerminationDate(const Aws::Utils::DateTime& value) { m_terminationDateHasBeenSet = true; m_terminationDate = value; }
-    inline void SetTerminationDate(Aws::Utils::DateTime&& value) { m_terminationDateHasBeenSet = true; m_terminationDate = std::move(value); }
-    inline JobListDescriptor& WithTerminationDate(const Aws::Utils::DateTime& value) { SetTerminationDate(value); return *this;}
-    inline JobListDescriptor& WithTerminationDate(Aws::Utils::DateTime&& value) { SetTerminationDate(std::move(value)); return *this;}
+    template<typename TerminationDateT = Aws::Utils::DateTime>
+    void SetTerminationDate(TerminationDateT&& value) { m_terminationDateHasBeenSet = true; m_terminationDate = std::forward<TerminationDateT>(value); }
+    template<typename TerminationDateT = Aws::Utils::DateTime>
+    JobListDescriptor& WithTerminationDate(TerminationDateT&& value) { SetTerminationDate(std::forward<TerminationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,12 +128,12 @@ namespace Model
      * <p>Describes the total number of tasks that the specified job has run, the
      * number of tasks that succeeded, and the number of tasks that failed.</p>
      */
-    inline const JobProgressSummary& GetProgressSummary() const{ return m_progressSummary; }
+    inline const JobProgressSummary& GetProgressSummary() const { return m_progressSummary; }
     inline bool ProgressSummaryHasBeenSet() const { return m_progressSummaryHasBeenSet; }
-    inline void SetProgressSummary(const JobProgressSummary& value) { m_progressSummaryHasBeenSet = true; m_progressSummary = value; }
-    inline void SetProgressSummary(JobProgressSummary&& value) { m_progressSummaryHasBeenSet = true; m_progressSummary = std::move(value); }
-    inline JobListDescriptor& WithProgressSummary(const JobProgressSummary& value) { SetProgressSummary(value); return *this;}
-    inline JobListDescriptor& WithProgressSummary(JobProgressSummary&& value) { SetProgressSummary(std::move(value)); return *this;}
+    template<typename ProgressSummaryT = JobProgressSummary>
+    void SetProgressSummary(ProgressSummaryT&& value) { m_progressSummaryHasBeenSet = true; m_progressSummary = std::forward<ProgressSummaryT>(value); }
+    template<typename ProgressSummaryT = JobProgressSummary>
+    JobListDescriptor& WithProgressSummary(ProgressSummaryT&& value) { SetProgressSummary(std::forward<ProgressSummaryT>(value)); return *this;}
     ///@}
   private:
 
@@ -151,19 +143,19 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    OperationName m_operation;
+    OperationName m_operation{OperationName::NOT_SET};
     bool m_operationHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
 
-    JobStatus m_status;
+    JobStatus m_status{JobStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_terminationDate;
+    Aws::Utils::DateTime m_terminationDate{};
     bool m_terminationDateHasBeenSet = false;
 
     JobProgressSummary m_progressSummary;

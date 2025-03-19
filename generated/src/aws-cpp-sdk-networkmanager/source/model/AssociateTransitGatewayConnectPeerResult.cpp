@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociateTransitGatewayConnectPeerResult::AssociateTransitGatewayConnectPeerResult()
-{
-}
-
 AssociateTransitGatewayConnectPeerResult::AssociateTransitGatewayConnectPeerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ AssociateTransitGatewayConnectPeerResult& AssociateTransitGatewayConnectPeerResu
   if(jsonValue.ValueExists("TransitGatewayConnectPeerAssociation"))
   {
     m_transitGatewayConnectPeerAssociation = jsonValue.GetObject("TransitGatewayConnectPeerAssociation");
-
+    m_transitGatewayConnectPeerAssociationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

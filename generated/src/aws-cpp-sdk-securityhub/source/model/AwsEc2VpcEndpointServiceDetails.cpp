@@ -18,25 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2VpcEndpointServiceDetails::AwsEc2VpcEndpointServiceDetails() : 
-    m_acceptanceRequired(false),
-    m_acceptanceRequiredHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_baseEndpointDnsNamesHasBeenSet(false),
-    m_managesVpcEndpoints(false),
-    m_managesVpcEndpointsHasBeenSet(false),
-    m_gatewayLoadBalancerArnsHasBeenSet(false),
-    m_networkLoadBalancerArnsHasBeenSet(false),
-    m_privateDnsNameHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_serviceStateHasBeenSet(false),
-    m_serviceTypeHasBeenSet(false)
-{
-}
-
 AwsEc2VpcEndpointServiceDetails::AwsEc2VpcEndpointServiceDetails(JsonView jsonValue)
-  : AwsEc2VpcEndpointServiceDetails()
 {
   *this = jsonValue;
 }
@@ -46,10 +28,8 @@ AwsEc2VpcEndpointServiceDetails& AwsEc2VpcEndpointServiceDetails::operator =(Jso
   if(jsonValue.ValueExists("AcceptanceRequired"))
   {
     m_acceptanceRequired = jsonValue.GetBool("AcceptanceRequired");
-
     m_acceptanceRequiredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZones"))
   {
     Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
@@ -59,7 +39,6 @@ AwsEc2VpcEndpointServiceDetails& AwsEc2VpcEndpointServiceDetails::operator =(Jso
     }
     m_availabilityZonesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BaseEndpointDnsNames"))
   {
     Aws::Utils::Array<JsonView> baseEndpointDnsNamesJsonList = jsonValue.GetArray("BaseEndpointDnsNames");
@@ -69,14 +48,11 @@ AwsEc2VpcEndpointServiceDetails& AwsEc2VpcEndpointServiceDetails::operator =(Jso
     }
     m_baseEndpointDnsNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManagesVpcEndpoints"))
   {
     m_managesVpcEndpoints = jsonValue.GetBool("ManagesVpcEndpoints");
-
     m_managesVpcEndpointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GatewayLoadBalancerArns"))
   {
     Aws::Utils::Array<JsonView> gatewayLoadBalancerArnsJsonList = jsonValue.GetArray("GatewayLoadBalancerArns");
@@ -86,7 +62,6 @@ AwsEc2VpcEndpointServiceDetails& AwsEc2VpcEndpointServiceDetails::operator =(Jso
     }
     m_gatewayLoadBalancerArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkLoadBalancerArns"))
   {
     Aws::Utils::Array<JsonView> networkLoadBalancerArnsJsonList = jsonValue.GetArray("NetworkLoadBalancerArns");
@@ -96,35 +71,26 @@ AwsEc2VpcEndpointServiceDetails& AwsEc2VpcEndpointServiceDetails::operator =(Jso
     }
     m_networkLoadBalancerArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrivateDnsName"))
   {
     m_privateDnsName = jsonValue.GetString("PrivateDnsName");
-
     m_privateDnsNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceId"))
   {
     m_serviceId = jsonValue.GetString("ServiceId");
-
     m_serviceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceName"))
   {
     m_serviceName = jsonValue.GetString("ServiceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceState"))
   {
     m_serviceState = jsonValue.GetString("ServiceState");
-
     m_serviceStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceType"))
   {
     Aws::Utils::Array<JsonView> serviceTypeJsonList = jsonValue.GetArray("ServiceType");
@@ -134,7 +100,6 @@ AwsEc2VpcEndpointServiceDetails& AwsEc2VpcEndpointServiceDetails::operator =(Jso
     }
     m_serviceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

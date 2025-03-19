@@ -12,11 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBackupPlanFromJSONRequest::GetBackupPlanFromJSONRequest() : 
-    m_backupPlanTemplateJsonHasBeenSet(false)
-{
-}
-
 Aws::String GetBackupPlanFromJSONRequest::SerializePayload() const
 {
   JsonValue payload;

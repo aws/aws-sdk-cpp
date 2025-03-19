@@ -12,11 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeServiceRevisionsRequest::DescribeServiceRevisionsRequest() : 
-    m_serviceRevisionArnsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeServiceRevisionsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,25 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-ReservedInstanceOffering::ReservedInstanceOffering() : 
-    m_reservedInstanceOfferingIdHasBeenSet(false),
-    m_instanceType(OpenSearchPartitionInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_fixedPrice(0.0),
-    m_fixedPriceHasBeenSet(false),
-    m_usagePrice(0.0),
-    m_usagePriceHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_paymentOption(ReservedInstancePaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_recurringChargesHasBeenSet(false)
-{
-}
-
 ReservedInstanceOffering::ReservedInstanceOffering(JsonView jsonValue)
-  : ReservedInstanceOffering()
 {
   *this = jsonValue;
 }
@@ -46,52 +28,38 @@ ReservedInstanceOffering& ReservedInstanceOffering::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("ReservedInstanceOfferingId"))
   {
     m_reservedInstanceOfferingId = jsonValue.GetString("ReservedInstanceOfferingId");
-
     m_reservedInstanceOfferingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = OpenSearchPartitionInstanceTypeMapper::GetOpenSearchPartitionInstanceTypeForName(jsonValue.GetString("InstanceType"));
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Duration"))
   {
     m_duration = jsonValue.GetInteger("Duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FixedPrice"))
   {
     m_fixedPrice = jsonValue.GetDouble("FixedPrice");
-
     m_fixedPriceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UsagePrice"))
   {
     m_usagePrice = jsonValue.GetDouble("UsagePrice");
-
     m_usagePriceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrencyCode"))
   {
     m_currencyCode = jsonValue.GetString("CurrencyCode");
-
     m_currencyCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PaymentOption"))
   {
     m_paymentOption = ReservedInstancePaymentOptionMapper::GetReservedInstancePaymentOptionForName(jsonValue.GetString("PaymentOption"));
-
     m_paymentOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecurringCharges"))
   {
     Aws::Utils::Array<JsonView> recurringChargesJsonList = jsonValue.GetArray("RecurringCharges");
@@ -101,7 +69,6 @@ ReservedInstanceOffering& ReservedInstanceOffering::operator =(JsonView jsonValu
     }
     m_recurringChargesHasBeenSet = true;
   }
-
   return *this;
 }
 

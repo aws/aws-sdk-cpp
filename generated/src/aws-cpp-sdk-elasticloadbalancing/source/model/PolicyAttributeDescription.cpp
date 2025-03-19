@@ -20,14 +20,7 @@ namespace ElasticLoadBalancing
 namespace Model
 {
 
-PolicyAttributeDescription::PolicyAttributeDescription() : 
-    m_attributeNameHasBeenSet(false),
-    m_attributeValueHasBeenSet(false)
-{
-}
-
 PolicyAttributeDescription::PolicyAttributeDescription(const XmlNode& xmlNode)
-  : PolicyAttributeDescription()
 {
   *this = xmlNode;
 }

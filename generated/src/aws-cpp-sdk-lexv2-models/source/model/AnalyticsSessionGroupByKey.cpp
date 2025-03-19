@@ -18,15 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-AnalyticsSessionGroupByKey::AnalyticsSessionGroupByKey() : 
-    m_name(AnalyticsSessionField::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 AnalyticsSessionGroupByKey::AnalyticsSessionGroupByKey(JsonView jsonValue)
-  : AnalyticsSessionGroupByKey()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AnalyticsSessionGroupByKey& AnalyticsSessionGroupByKey::operator =(JsonView json
   if(jsonValue.ValueExists("name"))
   {
     m_name = AnalyticsSessionFieldMapper::GetAnalyticsSessionFieldForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

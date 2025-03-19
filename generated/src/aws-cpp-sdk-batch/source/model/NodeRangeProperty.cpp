@@ -18,18 +18,7 @@ namespace Batch
 namespace Model
 {
 
-NodeRangeProperty::NodeRangeProperty() : 
-    m_targetNodesHasBeenSet(false),
-    m_containerHasBeenSet(false),
-    m_instanceTypesHasBeenSet(false),
-    m_ecsPropertiesHasBeenSet(false),
-    m_eksPropertiesHasBeenSet(false),
-    m_consumableResourcePropertiesHasBeenSet(false)
-{
-}
-
 NodeRangeProperty::NodeRangeProperty(JsonView jsonValue)
-  : NodeRangeProperty()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ NodeRangeProperty& NodeRangeProperty::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("targetNodes"))
   {
     m_targetNodes = jsonValue.GetString("targetNodes");
-
     m_targetNodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("container"))
   {
     m_container = jsonValue.GetObject("container");
-
     m_containerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceTypes"))
   {
     Aws::Utils::Array<JsonView> instanceTypesJsonList = jsonValue.GetArray("instanceTypes");
@@ -59,28 +44,21 @@ NodeRangeProperty& NodeRangeProperty::operator =(JsonView jsonValue)
     }
     m_instanceTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ecsProperties"))
   {
     m_ecsProperties = jsonValue.GetObject("ecsProperties");
-
     m_ecsPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eksProperties"))
   {
     m_eksProperties = jsonValue.GetObject("eksProperties");
-
     m_eksPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("consumableResourceProperties"))
   {
     m_consumableResourceProperties = jsonValue.GetObject("consumableResourceProperties");
-
     m_consumableResourcePropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

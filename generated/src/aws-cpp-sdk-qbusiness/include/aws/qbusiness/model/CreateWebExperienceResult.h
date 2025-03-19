@@ -27,7 +27,7 @@ namespace Model
   class CreateWebExperienceResult
   {
   public:
-    AWS_QBUSINESS_API CreateWebExperienceResult();
+    AWS_QBUSINESS_API CreateWebExperienceResult() = default;
     AWS_QBUSINESS_API CreateWebExperienceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QBUSINESS_API CreateWebExperienceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The identifier of the Amazon Q Business web experience.</p>
      */
-    inline const Aws::String& GetWebExperienceId() const{ return m_webExperienceId; }
-    inline void SetWebExperienceId(const Aws::String& value) { m_webExperienceId = value; }
-    inline void SetWebExperienceId(Aws::String&& value) { m_webExperienceId = std::move(value); }
-    inline void SetWebExperienceId(const char* value) { m_webExperienceId.assign(value); }
-    inline CreateWebExperienceResult& WithWebExperienceId(const Aws::String& value) { SetWebExperienceId(value); return *this;}
-    inline CreateWebExperienceResult& WithWebExperienceId(Aws::String&& value) { SetWebExperienceId(std::move(value)); return *this;}
-    inline CreateWebExperienceResult& WithWebExperienceId(const char* value) { SetWebExperienceId(value); return *this;}
+    inline const Aws::String& GetWebExperienceId() const { return m_webExperienceId; }
+    template<typename WebExperienceIdT = Aws::String>
+    void SetWebExperienceId(WebExperienceIdT&& value) { m_webExperienceIdHasBeenSet = true; m_webExperienceId = std::forward<WebExperienceIdT>(value); }
+    template<typename WebExperienceIdT = Aws::String>
+    CreateWebExperienceResult& WithWebExperienceId(WebExperienceIdT&& value) { SetWebExperienceId(std::forward<WebExperienceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Amazon Resource Name (ARN) of an Amazon Q Business web experience.</p>
      */
-    inline const Aws::String& GetWebExperienceArn() const{ return m_webExperienceArn; }
-    inline void SetWebExperienceArn(const Aws::String& value) { m_webExperienceArn = value; }
-    inline void SetWebExperienceArn(Aws::String&& value) { m_webExperienceArn = std::move(value); }
-    inline void SetWebExperienceArn(const char* value) { m_webExperienceArn.assign(value); }
-    inline CreateWebExperienceResult& WithWebExperienceArn(const Aws::String& value) { SetWebExperienceArn(value); return *this;}
-    inline CreateWebExperienceResult& WithWebExperienceArn(Aws::String&& value) { SetWebExperienceArn(std::move(value)); return *this;}
-    inline CreateWebExperienceResult& WithWebExperienceArn(const char* value) { SetWebExperienceArn(value); return *this;}
+    inline const Aws::String& GetWebExperienceArn() const { return m_webExperienceArn; }
+    template<typename WebExperienceArnT = Aws::String>
+    void SetWebExperienceArn(WebExperienceArnT&& value) { m_webExperienceArnHasBeenSet = true; m_webExperienceArn = std::forward<WebExperienceArnT>(value); }
+    template<typename WebExperienceArnT = Aws::String>
+    CreateWebExperienceResult& WithWebExperienceArn(WebExperienceArnT&& value) { SetWebExperienceArn(std::forward<WebExperienceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateWebExperienceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateWebExperienceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateWebExperienceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateWebExperienceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_webExperienceId;
+    bool m_webExperienceIdHasBeenSet = false;
 
     Aws::String m_webExperienceArn;
+    bool m_webExperienceArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

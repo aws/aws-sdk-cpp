@@ -18,14 +18,7 @@ namespace JsonProtocol
 namespace Model
 {
 
-ComplexError::ComplexError() : 
-    m_topLevelHasBeenSet(false),
-    m_nestedHasBeenSet(false)
-{
-}
-
 ComplexError::ComplexError(JsonView jsonValue)
-  : ComplexError()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ComplexError& ComplexError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TopLevel"))
   {
     m_topLevel = jsonValue.GetString("TopLevel");
-
     m_topLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Nested"))
   {
     m_nested = jsonValue.GetObject("Nested");
-
     m_nestedHasBeenSet = true;
   }
-
   return *this;
 }
 

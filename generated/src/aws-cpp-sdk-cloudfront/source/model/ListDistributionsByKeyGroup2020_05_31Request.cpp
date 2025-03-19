@@ -17,12 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListDistributionsByKeyGroup2020_05_31Request::ListDistributionsByKeyGroup2020_05_31Request() : 
-    m_markerHasBeenSet(false),
-    m_maxItemsHasBeenSet(false),
-    m_keyGroupIdHasBeenSet(false)
-{
-}
 
 Aws::String ListDistributionsByKeyGroup2020_05_31Request::SerializePayload() const
 {

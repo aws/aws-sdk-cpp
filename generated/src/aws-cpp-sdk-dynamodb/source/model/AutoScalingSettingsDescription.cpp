@@ -18,20 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-AutoScalingSettingsDescription::AutoScalingSettingsDescription() : 
-    m_minimumUnits(0),
-    m_minimumUnitsHasBeenSet(false),
-    m_maximumUnits(0),
-    m_maximumUnitsHasBeenSet(false),
-    m_autoScalingDisabled(false),
-    m_autoScalingDisabledHasBeenSet(false),
-    m_autoScalingRoleArnHasBeenSet(false),
-    m_scalingPoliciesHasBeenSet(false)
-{
-}
-
 AutoScalingSettingsDescription::AutoScalingSettingsDescription(JsonView jsonValue)
-  : AutoScalingSettingsDescription()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ AutoScalingSettingsDescription& AutoScalingSettingsDescription::operator =(JsonV
   if(jsonValue.ValueExists("MinimumUnits"))
   {
     m_minimumUnits = jsonValue.GetInt64("MinimumUnits");
-
     m_minimumUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumUnits"))
   {
     m_maximumUnits = jsonValue.GetInt64("MaximumUnits");
-
     m_maximumUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoScalingDisabled"))
   {
     m_autoScalingDisabled = jsonValue.GetBool("AutoScalingDisabled");
-
     m_autoScalingDisabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoScalingRoleArn"))
   {
     m_autoScalingRoleArn = jsonValue.GetString("AutoScalingRoleArn");
-
     m_autoScalingRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalingPolicies"))
   {
     Aws::Utils::Array<JsonView> scalingPoliciesJsonList = jsonValue.GetArray("ScalingPolicies");
@@ -75,7 +54,6 @@ AutoScalingSettingsDescription& AutoScalingSettingsDescription::operator =(JsonV
     }
     m_scalingPoliciesHasBeenSet = true;
   }
-
   return *this;
 }
 

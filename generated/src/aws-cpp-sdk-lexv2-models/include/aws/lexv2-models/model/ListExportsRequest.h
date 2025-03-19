@@ -24,7 +24,7 @@ namespace Model
   class ListExportsRequest : public LexModelsV2Request
   {
   public:
-    AWS_LEXMODELSV2_API ListExportsRequest();
+    AWS_LEXMODELSV2_API ListExportsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
     /**
      * <p>The unique identifier that Amazon Lex assigned to the bot.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
+    inline const Aws::String& GetBotId() const { return m_botId; }
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
-    inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
-    inline ListExportsRequest& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline ListExportsRequest& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline ListExportsRequest& WithBotId(const char* value) { SetBotId(value); return *this;}
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    ListExportsRequest& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the bot to list exports for. </p>
      */
-    inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
+    inline const Aws::String& GetBotVersion() const { return m_botVersion; }
     inline bool BotVersionHasBeenSet() const { return m_botVersionHasBeenSet; }
-    inline void SetBotVersion(const Aws::String& value) { m_botVersionHasBeenSet = true; m_botVersion = value; }
-    inline void SetBotVersion(Aws::String&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::move(value); }
-    inline void SetBotVersion(const char* value) { m_botVersionHasBeenSet = true; m_botVersion.assign(value); }
-    inline ListExportsRequest& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
-    inline ListExportsRequest& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
-    inline ListExportsRequest& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
+    template<typename BotVersionT = Aws::String>
+    void SetBotVersion(BotVersionT&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::forward<BotVersionT>(value); }
+    template<typename BotVersionT = Aws::String>
+    ListExportsRequest& WithBotVersion(BotVersionT&& value) { SetBotVersion(std::forward<BotVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +64,12 @@ namespace Model
      * <p>Determines the field that the list of exports is sorted by. You can sort by
      * the <code>LastUpdatedDateTime</code> field in ascending or descending order.</p>
      */
-    inline const ExportSortBy& GetSortBy() const{ return m_sortBy; }
+    inline const ExportSortBy& GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const ExportSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(ExportSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListExportsRequest& WithSortBy(const ExportSortBy& value) { SetSortBy(value); return *this;}
-    inline ListExportsRequest& WithSortBy(ExportSortBy&& value) { SetSortBy(std::move(value)); return *this;}
+    template<typename SortByT = ExportSortBy>
+    void SetSortBy(SortByT&& value) { m_sortByHasBeenSet = true; m_sortBy = std::forward<SortByT>(value); }
+    template<typename SortByT = ExportSortBy>
+    ListExportsRequest& WithSortBy(SortByT&& value) { SetSortBy(std::forward<SortByT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +78,14 @@ namespace Model
      * response to only those that match the filter specification. You can only specify
      * one filter and one string to filter on.</p>
      */
-    inline const Aws::Vector<ExportFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<ExportFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<ExportFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<ExportFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListExportsRequest& WithFilters(const Aws::Vector<ExportFilter>& value) { SetFilters(value); return *this;}
-    inline ListExportsRequest& WithFilters(Aws::Vector<ExportFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline ListExportsRequest& AddFilters(const ExportFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline ListExportsRequest& AddFilters(ExportFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<ExportFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<ExportFilter>>
+    ListExportsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = ExportFilter>
+    ListExportsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -98,7 +94,7 @@ namespace Model
      * fewer results than the max page size, only the actual number of results are
      * returned.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListExportsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -114,14 +110,12 @@ namespace Model
      * <code>ListExports</code> operation until the <code>nextToken</code> returned in
      * the response is null.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListExportsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListExportsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListExportsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListExportsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,14 +124,12 @@ namespace Model
      * resource type in the <code>filters</code> parameter, both bot locales and custom
      * vocabularies are exported.</p>
      */
-    inline const Aws::String& GetLocaleId() const{ return m_localeId; }
+    inline const Aws::String& GetLocaleId() const { return m_localeId; }
     inline bool LocaleIdHasBeenSet() const { return m_localeIdHasBeenSet; }
-    inline void SetLocaleId(const Aws::String& value) { m_localeIdHasBeenSet = true; m_localeId = value; }
-    inline void SetLocaleId(Aws::String&& value) { m_localeIdHasBeenSet = true; m_localeId = std::move(value); }
-    inline void SetLocaleId(const char* value) { m_localeIdHasBeenSet = true; m_localeId.assign(value); }
-    inline ListExportsRequest& WithLocaleId(const Aws::String& value) { SetLocaleId(value); return *this;}
-    inline ListExportsRequest& WithLocaleId(Aws::String&& value) { SetLocaleId(std::move(value)); return *this;}
-    inline ListExportsRequest& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
+    template<typename LocaleIdT = Aws::String>
+    void SetLocaleId(LocaleIdT&& value) { m_localeIdHasBeenSet = true; m_localeId = std::forward<LocaleIdT>(value); }
+    template<typename LocaleIdT = Aws::String>
+    ListExportsRequest& WithLocaleId(LocaleIdT&& value) { SetLocaleId(std::forward<LocaleIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -153,7 +145,7 @@ namespace Model
     Aws::Vector<ExportFilter> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

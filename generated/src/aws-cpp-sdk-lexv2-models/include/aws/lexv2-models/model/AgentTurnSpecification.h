@@ -31,7 +31,7 @@ namespace Model
   class AgentTurnSpecification
   {
   public:
-    AWS_LEXMODELSV2_API AgentTurnSpecification();
+    AWS_LEXMODELSV2_API AgentTurnSpecification() = default;
     AWS_LEXMODELSV2_API AgentTurnSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API AgentTurnSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The agent prompt for the agent turn in a test set.</p>
      */
-    inline const Aws::String& GetAgentPrompt() const{ return m_agentPrompt; }
+    inline const Aws::String& GetAgentPrompt() const { return m_agentPrompt; }
     inline bool AgentPromptHasBeenSet() const { return m_agentPromptHasBeenSet; }
-    inline void SetAgentPrompt(const Aws::String& value) { m_agentPromptHasBeenSet = true; m_agentPrompt = value; }
-    inline void SetAgentPrompt(Aws::String&& value) { m_agentPromptHasBeenSet = true; m_agentPrompt = std::move(value); }
-    inline void SetAgentPrompt(const char* value) { m_agentPromptHasBeenSet = true; m_agentPrompt.assign(value); }
-    inline AgentTurnSpecification& WithAgentPrompt(const Aws::String& value) { SetAgentPrompt(value); return *this;}
-    inline AgentTurnSpecification& WithAgentPrompt(Aws::String&& value) { SetAgentPrompt(std::move(value)); return *this;}
-    inline AgentTurnSpecification& WithAgentPrompt(const char* value) { SetAgentPrompt(value); return *this;}
+    template<typename AgentPromptT = Aws::String>
+    void SetAgentPrompt(AgentPromptT&& value) { m_agentPromptHasBeenSet = true; m_agentPrompt = std::forward<AgentPromptT>(value); }
+    template<typename AgentPromptT = Aws::String>
+    AgentTurnSpecification& WithAgentPrompt(AgentPromptT&& value) { SetAgentPrompt(std::forward<AgentPromptT>(value)); return *this;}
     ///@}
   private:
 

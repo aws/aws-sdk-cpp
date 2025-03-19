@@ -32,7 +32,7 @@ namespace Model
   class StreamingNotificationTarget
   {
   public:
-    AWS_CHIMESDKVOICE_API StreamingNotificationTarget();
+    AWS_CHIMESDKVOICE_API StreamingNotificationTarget() = default;
     AWS_CHIMESDKVOICE_API StreamingNotificationTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API StreamingNotificationTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The streaming notification target.</p>
      */
-    inline const NotificationTarget& GetNotificationTarget() const{ return m_notificationTarget; }
+    inline NotificationTarget GetNotificationTarget() const { return m_notificationTarget; }
     inline bool NotificationTargetHasBeenSet() const { return m_notificationTargetHasBeenSet; }
-    inline void SetNotificationTarget(const NotificationTarget& value) { m_notificationTargetHasBeenSet = true; m_notificationTarget = value; }
-    inline void SetNotificationTarget(NotificationTarget&& value) { m_notificationTargetHasBeenSet = true; m_notificationTarget = std::move(value); }
-    inline StreamingNotificationTarget& WithNotificationTarget(const NotificationTarget& value) { SetNotificationTarget(value); return *this;}
-    inline StreamingNotificationTarget& WithNotificationTarget(NotificationTarget&& value) { SetNotificationTarget(std::move(value)); return *this;}
+    inline void SetNotificationTarget(NotificationTarget value) { m_notificationTargetHasBeenSet = true; m_notificationTarget = value; }
+    inline StreamingNotificationTarget& WithNotificationTarget(NotificationTarget value) { SetNotificationTarget(value); return *this;}
     ///@}
   private:
 
-    NotificationTarget m_notificationTarget;
+    NotificationTarget m_notificationTarget{NotificationTarget::NOT_SET};
     bool m_notificationTargetHasBeenSet = false;
   };
 

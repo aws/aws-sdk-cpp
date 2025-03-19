@@ -29,7 +29,7 @@ namespace Model
   class GetWirelessDeviceStatisticsResult
   {
   public:
-    AWS_IOTWIRELESS_API GetWirelessDeviceStatisticsResult();
+    AWS_IOTWIRELESS_API GetWirelessDeviceStatisticsResult() = default;
     AWS_IOTWIRELESS_API GetWirelessDeviceStatisticsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTWIRELESS_API GetWirelessDeviceStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>The ID of the wireless device.</p>
      */
-    inline const Aws::String& GetWirelessDeviceId() const{ return m_wirelessDeviceId; }
-    inline void SetWirelessDeviceId(const Aws::String& value) { m_wirelessDeviceId = value; }
-    inline void SetWirelessDeviceId(Aws::String&& value) { m_wirelessDeviceId = std::move(value); }
-    inline void SetWirelessDeviceId(const char* value) { m_wirelessDeviceId.assign(value); }
-    inline GetWirelessDeviceStatisticsResult& WithWirelessDeviceId(const Aws::String& value) { SetWirelessDeviceId(value); return *this;}
-    inline GetWirelessDeviceStatisticsResult& WithWirelessDeviceId(Aws::String&& value) { SetWirelessDeviceId(std::move(value)); return *this;}
-    inline GetWirelessDeviceStatisticsResult& WithWirelessDeviceId(const char* value) { SetWirelessDeviceId(value); return *this;}
+    inline const Aws::String& GetWirelessDeviceId() const { return m_wirelessDeviceId; }
+    template<typename WirelessDeviceIdT = Aws::String>
+    void SetWirelessDeviceId(WirelessDeviceIdT&& value) { m_wirelessDeviceIdHasBeenSet = true; m_wirelessDeviceId = std::forward<WirelessDeviceIdT>(value); }
+    template<typename WirelessDeviceIdT = Aws::String>
+    GetWirelessDeviceStatisticsResult& WithWirelessDeviceId(WirelessDeviceIdT&& value) { SetWirelessDeviceId(std::forward<WirelessDeviceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,58 +50,59 @@ namespace Model
      * <p>The date and time when the most recent uplink was received.</p> 
      * <p>This value is only valid for 3 months.</p> 
      */
-    inline const Aws::String& GetLastUplinkReceivedAt() const{ return m_lastUplinkReceivedAt; }
-    inline void SetLastUplinkReceivedAt(const Aws::String& value) { m_lastUplinkReceivedAt = value; }
-    inline void SetLastUplinkReceivedAt(Aws::String&& value) { m_lastUplinkReceivedAt = std::move(value); }
-    inline void SetLastUplinkReceivedAt(const char* value) { m_lastUplinkReceivedAt.assign(value); }
-    inline GetWirelessDeviceStatisticsResult& WithLastUplinkReceivedAt(const Aws::String& value) { SetLastUplinkReceivedAt(value); return *this;}
-    inline GetWirelessDeviceStatisticsResult& WithLastUplinkReceivedAt(Aws::String&& value) { SetLastUplinkReceivedAt(std::move(value)); return *this;}
-    inline GetWirelessDeviceStatisticsResult& WithLastUplinkReceivedAt(const char* value) { SetLastUplinkReceivedAt(value); return *this;}
+    inline const Aws::String& GetLastUplinkReceivedAt() const { return m_lastUplinkReceivedAt; }
+    template<typename LastUplinkReceivedAtT = Aws::String>
+    void SetLastUplinkReceivedAt(LastUplinkReceivedAtT&& value) { m_lastUplinkReceivedAtHasBeenSet = true; m_lastUplinkReceivedAt = std::forward<LastUplinkReceivedAtT>(value); }
+    template<typename LastUplinkReceivedAtT = Aws::String>
+    GetWirelessDeviceStatisticsResult& WithLastUplinkReceivedAt(LastUplinkReceivedAtT&& value) { SetLastUplinkReceivedAt(std::forward<LastUplinkReceivedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the wireless device's operations.</p>
      */
-    inline const LoRaWANDeviceMetadata& GetLoRaWAN() const{ return m_loRaWAN; }
-    inline void SetLoRaWAN(const LoRaWANDeviceMetadata& value) { m_loRaWAN = value; }
-    inline void SetLoRaWAN(LoRaWANDeviceMetadata&& value) { m_loRaWAN = std::move(value); }
-    inline GetWirelessDeviceStatisticsResult& WithLoRaWAN(const LoRaWANDeviceMetadata& value) { SetLoRaWAN(value); return *this;}
-    inline GetWirelessDeviceStatisticsResult& WithLoRaWAN(LoRaWANDeviceMetadata&& value) { SetLoRaWAN(std::move(value)); return *this;}
+    inline const LoRaWANDeviceMetadata& GetLoRaWAN() const { return m_loRaWAN; }
+    template<typename LoRaWANT = LoRaWANDeviceMetadata>
+    void SetLoRaWAN(LoRaWANT&& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = std::forward<LoRaWANT>(value); }
+    template<typename LoRaWANT = LoRaWANDeviceMetadata>
+    GetWirelessDeviceStatisticsResult& WithLoRaWAN(LoRaWANT&& value) { SetLoRaWAN(std::forward<LoRaWANT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>MetaData for Sidewalk device.</p>
      */
-    inline const SidewalkDeviceMetadata& GetSidewalk() const{ return m_sidewalk; }
-    inline void SetSidewalk(const SidewalkDeviceMetadata& value) { m_sidewalk = value; }
-    inline void SetSidewalk(SidewalkDeviceMetadata&& value) { m_sidewalk = std::move(value); }
-    inline GetWirelessDeviceStatisticsResult& WithSidewalk(const SidewalkDeviceMetadata& value) { SetSidewalk(value); return *this;}
-    inline GetWirelessDeviceStatisticsResult& WithSidewalk(SidewalkDeviceMetadata&& value) { SetSidewalk(std::move(value)); return *this;}
+    inline const SidewalkDeviceMetadata& GetSidewalk() const { return m_sidewalk; }
+    template<typename SidewalkT = SidewalkDeviceMetadata>
+    void SetSidewalk(SidewalkT&& value) { m_sidewalkHasBeenSet = true; m_sidewalk = std::forward<SidewalkT>(value); }
+    template<typename SidewalkT = SidewalkDeviceMetadata>
+    GetWirelessDeviceStatisticsResult& WithSidewalk(SidewalkT&& value) { SetSidewalk(std::forward<SidewalkT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetWirelessDeviceStatisticsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetWirelessDeviceStatisticsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetWirelessDeviceStatisticsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetWirelessDeviceStatisticsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_wirelessDeviceId;
+    bool m_wirelessDeviceIdHasBeenSet = false;
 
     Aws::String m_lastUplinkReceivedAt;
+    bool m_lastUplinkReceivedAtHasBeenSet = false;
 
     LoRaWANDeviceMetadata m_loRaWAN;
+    bool m_loRaWANHasBeenSet = false;
 
     SidewalkDeviceMetadata m_sidewalk;
+    bool m_sidewalkHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

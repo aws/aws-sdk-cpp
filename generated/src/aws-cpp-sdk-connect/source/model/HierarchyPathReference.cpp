@@ -18,17 +18,7 @@ namespace Connect
 namespace Model
 {
 
-HierarchyPathReference::HierarchyPathReference() : 
-    m_levelOneHasBeenSet(false),
-    m_levelTwoHasBeenSet(false),
-    m_levelThreeHasBeenSet(false),
-    m_levelFourHasBeenSet(false),
-    m_levelFiveHasBeenSet(false)
-{
-}
-
 HierarchyPathReference::HierarchyPathReference(JsonView jsonValue)
-  : HierarchyPathReference()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ HierarchyPathReference& HierarchyPathReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LevelOne"))
   {
     m_levelOne = jsonValue.GetObject("LevelOne");
-
     m_levelOneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LevelTwo"))
   {
     m_levelTwo = jsonValue.GetObject("LevelTwo");
-
     m_levelTwoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LevelThree"))
   {
     m_levelThree = jsonValue.GetObject("LevelThree");
-
     m_levelThreeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LevelFour"))
   {
     m_levelFour = jsonValue.GetObject("LevelFour");
-
     m_levelFourHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LevelFive"))
   {
     m_levelFive = jsonValue.GetObject("LevelFive");
-
     m_levelFiveHasBeenSet = true;
   }
-
   return *this;
 }
 

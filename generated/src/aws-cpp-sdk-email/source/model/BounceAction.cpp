@@ -20,17 +20,7 @@ namespace SES
 namespace Model
 {
 
-BounceAction::BounceAction() : 
-    m_topicArnHasBeenSet(false),
-    m_smtpReplyCodeHasBeenSet(false),
-    m_statusCodeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_senderHasBeenSet(false)
-{
-}
-
 BounceAction::BounceAction(const XmlNode& xmlNode)
-  : BounceAction()
 {
   *this = xmlNode;
 }

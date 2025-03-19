@@ -35,7 +35,7 @@ namespace Model
   class VoiceConnector
   {
   public:
-    AWS_CHIMESDKVOICE_API VoiceConnector();
+    AWS_CHIMESDKVOICE_API VoiceConnector() = default;
     AWS_CHIMESDKVOICE_API VoiceConnector(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API VoiceConnector& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The Voice Connector's ID.</p>
      */
-    inline const Aws::String& GetVoiceConnectorId() const{ return m_voiceConnectorId; }
+    inline const Aws::String& GetVoiceConnectorId() const { return m_voiceConnectorId; }
     inline bool VoiceConnectorIdHasBeenSet() const { return m_voiceConnectorIdHasBeenSet; }
-    inline void SetVoiceConnectorId(const Aws::String& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = value; }
-    inline void SetVoiceConnectorId(Aws::String&& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = std::move(value); }
-    inline void SetVoiceConnectorId(const char* value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId.assign(value); }
-    inline VoiceConnector& WithVoiceConnectorId(const Aws::String& value) { SetVoiceConnectorId(value); return *this;}
-    inline VoiceConnector& WithVoiceConnectorId(Aws::String&& value) { SetVoiceConnectorId(std::move(value)); return *this;}
-    inline VoiceConnector& WithVoiceConnectorId(const char* value) { SetVoiceConnectorId(value); return *this;}
+    template<typename VoiceConnectorIdT = Aws::String>
+    void SetVoiceConnectorId(VoiceConnectorIdT&& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = std::forward<VoiceConnectorIdT>(value); }
+    template<typename VoiceConnectorIdT = Aws::String>
+    VoiceConnector& WithVoiceConnectorId(VoiceConnectorIdT&& value) { SetVoiceConnectorId(std::forward<VoiceConnectorIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,47 +58,41 @@ namespace Model
      * <p>The AWS Region in which the Voice Connector is created. Default:
      * us-east-1.</p>
      */
-    inline const VoiceConnectorAwsRegion& GetAwsRegion() const{ return m_awsRegion; }
+    inline VoiceConnectorAwsRegion GetAwsRegion() const { return m_awsRegion; }
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
-    inline void SetAwsRegion(const VoiceConnectorAwsRegion& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
-    inline void SetAwsRegion(VoiceConnectorAwsRegion&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
-    inline VoiceConnector& WithAwsRegion(const VoiceConnectorAwsRegion& value) { SetAwsRegion(value); return *this;}
-    inline VoiceConnector& WithAwsRegion(VoiceConnectorAwsRegion&& value) { SetAwsRegion(std::move(value)); return *this;}
+    inline void SetAwsRegion(VoiceConnectorAwsRegion value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
+    inline VoiceConnector& WithAwsRegion(VoiceConnectorAwsRegion value) { SetAwsRegion(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Voice Connector's name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline VoiceConnector& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline VoiceConnector& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline VoiceConnector& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    VoiceConnector& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The outbound host name for the Voice Connector.</p>
      */
-    inline const Aws::String& GetOutboundHostName() const{ return m_outboundHostName; }
+    inline const Aws::String& GetOutboundHostName() const { return m_outboundHostName; }
     inline bool OutboundHostNameHasBeenSet() const { return m_outboundHostNameHasBeenSet; }
-    inline void SetOutboundHostName(const Aws::String& value) { m_outboundHostNameHasBeenSet = true; m_outboundHostName = value; }
-    inline void SetOutboundHostName(Aws::String&& value) { m_outboundHostNameHasBeenSet = true; m_outboundHostName = std::move(value); }
-    inline void SetOutboundHostName(const char* value) { m_outboundHostNameHasBeenSet = true; m_outboundHostName.assign(value); }
-    inline VoiceConnector& WithOutboundHostName(const Aws::String& value) { SetOutboundHostName(value); return *this;}
-    inline VoiceConnector& WithOutboundHostName(Aws::String&& value) { SetOutboundHostName(std::move(value)); return *this;}
-    inline VoiceConnector& WithOutboundHostName(const char* value) { SetOutboundHostName(value); return *this;}
+    template<typename OutboundHostNameT = Aws::String>
+    void SetOutboundHostName(OutboundHostNameT&& value) { m_outboundHostNameHasBeenSet = true; m_outboundHostName = std::forward<OutboundHostNameT>(value); }
+    template<typename OutboundHostNameT = Aws::String>
+    VoiceConnector& WithOutboundHostName(OutboundHostNameT&& value) { SetOutboundHostName(std::forward<OutboundHostNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Enables or disables encryption for the Voice Connector.</p>
      */
-    inline bool GetRequireEncryption() const{ return m_requireEncryption; }
+    inline bool GetRequireEncryption() const { return m_requireEncryption; }
     inline bool RequireEncryptionHasBeenSet() const { return m_requireEncryptionHasBeenSet; }
     inline void SetRequireEncryption(bool value) { m_requireEncryptionHasBeenSet = true; m_requireEncryption = value; }
     inline VoiceConnector& WithRequireEncryption(bool value) { SetRequireEncryption(value); return *this;}
@@ -110,57 +102,53 @@ namespace Model
     /**
      * <p>The Voice Connector's creation timestamp, in ISO 8601 format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
     inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::move(value); }
-    inline VoiceConnector& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline VoiceConnector& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    VoiceConnector& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Voice Connector's updated timestamp, in ISO 8601 format.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedTimestamp() const{ return m_updatedTimestamp; }
+    inline const Aws::Utils::DateTime& GetUpdatedTimestamp() const { return m_updatedTimestamp; }
     inline bool UpdatedTimestampHasBeenSet() const { return m_updatedTimestampHasBeenSet; }
-    inline void SetUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_updatedTimestampHasBeenSet = true; m_updatedTimestamp = value; }
-    inline void SetUpdatedTimestamp(Aws::Utils::DateTime&& value) { m_updatedTimestampHasBeenSet = true; m_updatedTimestamp = std::move(value); }
-    inline VoiceConnector& WithUpdatedTimestamp(const Aws::Utils::DateTime& value) { SetUpdatedTimestamp(value); return *this;}
-    inline VoiceConnector& WithUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetUpdatedTimestamp(std::move(value)); return *this;}
+    template<typename UpdatedTimestampT = Aws::Utils::DateTime>
+    void SetUpdatedTimestamp(UpdatedTimestampT&& value) { m_updatedTimestampHasBeenSet = true; m_updatedTimestamp = std::forward<UpdatedTimestampT>(value); }
+    template<typename UpdatedTimestampT = Aws::Utils::DateTime>
+    VoiceConnector& WithUpdatedTimestamp(UpdatedTimestampT&& value) { SetUpdatedTimestamp(std::forward<UpdatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the Voice Connector.</p>
      */
-    inline const Aws::String& GetVoiceConnectorArn() const{ return m_voiceConnectorArn; }
+    inline const Aws::String& GetVoiceConnectorArn() const { return m_voiceConnectorArn; }
     inline bool VoiceConnectorArnHasBeenSet() const { return m_voiceConnectorArnHasBeenSet; }
-    inline void SetVoiceConnectorArn(const Aws::String& value) { m_voiceConnectorArnHasBeenSet = true; m_voiceConnectorArn = value; }
-    inline void SetVoiceConnectorArn(Aws::String&& value) { m_voiceConnectorArnHasBeenSet = true; m_voiceConnectorArn = std::move(value); }
-    inline void SetVoiceConnectorArn(const char* value) { m_voiceConnectorArnHasBeenSet = true; m_voiceConnectorArn.assign(value); }
-    inline VoiceConnector& WithVoiceConnectorArn(const Aws::String& value) { SetVoiceConnectorArn(value); return *this;}
-    inline VoiceConnector& WithVoiceConnectorArn(Aws::String&& value) { SetVoiceConnectorArn(std::move(value)); return *this;}
-    inline VoiceConnector& WithVoiceConnectorArn(const char* value) { SetVoiceConnectorArn(value); return *this;}
+    template<typename VoiceConnectorArnT = Aws::String>
+    void SetVoiceConnectorArn(VoiceConnectorArnT&& value) { m_voiceConnectorArnHasBeenSet = true; m_voiceConnectorArn = std::forward<VoiceConnectorArnT>(value); }
+    template<typename VoiceConnectorArnT = Aws::String>
+    VoiceConnector& WithVoiceConnectorArn(VoiceConnectorArnT&& value) { SetVoiceConnectorArn(std::forward<VoiceConnectorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The connectors for use with Amazon Connect.</p>
      */
-    inline const VoiceConnectorIntegrationType& GetIntegrationType() const{ return m_integrationType; }
+    inline VoiceConnectorIntegrationType GetIntegrationType() const { return m_integrationType; }
     inline bool IntegrationTypeHasBeenSet() const { return m_integrationTypeHasBeenSet; }
-    inline void SetIntegrationType(const VoiceConnectorIntegrationType& value) { m_integrationTypeHasBeenSet = true; m_integrationType = value; }
-    inline void SetIntegrationType(VoiceConnectorIntegrationType&& value) { m_integrationTypeHasBeenSet = true; m_integrationType = std::move(value); }
-    inline VoiceConnector& WithIntegrationType(const VoiceConnectorIntegrationType& value) { SetIntegrationType(value); return *this;}
-    inline VoiceConnector& WithIntegrationType(VoiceConnectorIntegrationType&& value) { SetIntegrationType(std::move(value)); return *this;}
+    inline void SetIntegrationType(VoiceConnectorIntegrationType value) { m_integrationTypeHasBeenSet = true; m_integrationType = value; }
+    inline VoiceConnector& WithIntegrationType(VoiceConnectorIntegrationType value) { SetIntegrationType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_voiceConnectorId;
     bool m_voiceConnectorIdHasBeenSet = false;
 
-    VoiceConnectorAwsRegion m_awsRegion;
+    VoiceConnectorAwsRegion m_awsRegion{VoiceConnectorAwsRegion::NOT_SET};
     bool m_awsRegionHasBeenSet = false;
 
     Aws::String m_name;
@@ -169,19 +157,19 @@ namespace Model
     Aws::String m_outboundHostName;
     bool m_outboundHostNameHasBeenSet = false;
 
-    bool m_requireEncryption;
+    bool m_requireEncryption{false};
     bool m_requireEncryptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
     bool m_createdTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedTimestamp;
+    Aws::Utils::DateTime m_updatedTimestamp{};
     bool m_updatedTimestampHasBeenSet = false;
 
     Aws::String m_voiceConnectorArn;
     bool m_voiceConnectorArnHasBeenSet = false;
 
-    VoiceConnectorIntegrationType m_integrationType;
+    VoiceConnectorIntegrationType m_integrationType{VoiceConnectorIntegrationType::NOT_SET};
     bool m_integrationTypeHasBeenSet = false;
   };
 

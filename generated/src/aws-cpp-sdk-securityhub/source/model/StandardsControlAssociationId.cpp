@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-StandardsControlAssociationId::StandardsControlAssociationId() : 
-    m_securityControlIdHasBeenSet(false),
-    m_standardsArnHasBeenSet(false)
-{
-}
-
 StandardsControlAssociationId::StandardsControlAssociationId(JsonView jsonValue)
-  : StandardsControlAssociationId()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StandardsControlAssociationId& StandardsControlAssociationId::operator =(JsonVie
   if(jsonValue.ValueExists("SecurityControlId"))
   {
     m_securityControlId = jsonValue.GetString("SecurityControlId");
-
     m_securityControlIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StandardsArn"))
   {
     m_standardsArn = jsonValue.GetString("StandardsArn");
-
     m_standardsArnHasBeenSet = true;
   }
-
   return *this;
 }
 

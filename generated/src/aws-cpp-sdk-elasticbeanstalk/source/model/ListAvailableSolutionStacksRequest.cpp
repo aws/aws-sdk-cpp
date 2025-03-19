@@ -10,10 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-ListAvailableSolutionStacksRequest::ListAvailableSolutionStacksRequest()
-{
-}
-
 Aws::String ListAvailableSolutionStacksRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -39,7 +39,7 @@ namespace Model
   class StatefulRule
   {
   public:
-    AWS_NETWORKFIREWALL_API StatefulRule();
+    AWS_NETWORKFIREWALL_API StatefulRule() = default;
     AWS_NETWORKFIREWALL_API StatefulRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API StatefulRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -66,12 +66,10 @@ namespace Model
      * header flags. REJECT is available only for TCP traffic. This option doesn't
      * support FTP or IMAP protocols.</p> </li> </ul>
      */
-    inline const StatefulAction& GetAction() const{ return m_action; }
+    inline StatefulAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const StatefulAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(StatefulAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline StatefulRule& WithAction(const StatefulAction& value) { SetAction(value); return *this;}
-    inline StatefulRule& WithAction(StatefulAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(StatefulAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline StatefulRule& WithAction(StatefulAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +77,12 @@ namespace Model
      * <p>The stateful inspection criteria for this rule, used to inspect traffic
      * flows. </p>
      */
-    inline const Header& GetHeader() const{ return m_header; }
+    inline const Header& GetHeader() const { return m_header; }
     inline bool HeaderHasBeenSet() const { return m_headerHasBeenSet; }
-    inline void SetHeader(const Header& value) { m_headerHasBeenSet = true; m_header = value; }
-    inline void SetHeader(Header&& value) { m_headerHasBeenSet = true; m_header = std::move(value); }
-    inline StatefulRule& WithHeader(const Header& value) { SetHeader(value); return *this;}
-    inline StatefulRule& WithHeader(Header&& value) { SetHeader(std::move(value)); return *this;}
+    template<typename HeaderT = Header>
+    void SetHeader(HeaderT&& value) { m_headerHasBeenSet = true; m_header = std::forward<HeaderT>(value); }
+    template<typename HeaderT = Header>
+    StatefulRule& WithHeader(HeaderT&& value) { SetHeader(std::forward<HeaderT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,18 +90,18 @@ namespace Model
      * <p>Additional options for the rule. These are the Suricata
      * <code>RuleOptions</code> settings.</p>
      */
-    inline const Aws::Vector<RuleOption>& GetRuleOptions() const{ return m_ruleOptions; }
+    inline const Aws::Vector<RuleOption>& GetRuleOptions() const { return m_ruleOptions; }
     inline bool RuleOptionsHasBeenSet() const { return m_ruleOptionsHasBeenSet; }
-    inline void SetRuleOptions(const Aws::Vector<RuleOption>& value) { m_ruleOptionsHasBeenSet = true; m_ruleOptions = value; }
-    inline void SetRuleOptions(Aws::Vector<RuleOption>&& value) { m_ruleOptionsHasBeenSet = true; m_ruleOptions = std::move(value); }
-    inline StatefulRule& WithRuleOptions(const Aws::Vector<RuleOption>& value) { SetRuleOptions(value); return *this;}
-    inline StatefulRule& WithRuleOptions(Aws::Vector<RuleOption>&& value) { SetRuleOptions(std::move(value)); return *this;}
-    inline StatefulRule& AddRuleOptions(const RuleOption& value) { m_ruleOptionsHasBeenSet = true; m_ruleOptions.push_back(value); return *this; }
-    inline StatefulRule& AddRuleOptions(RuleOption&& value) { m_ruleOptionsHasBeenSet = true; m_ruleOptions.push_back(std::move(value)); return *this; }
+    template<typename RuleOptionsT = Aws::Vector<RuleOption>>
+    void SetRuleOptions(RuleOptionsT&& value) { m_ruleOptionsHasBeenSet = true; m_ruleOptions = std::forward<RuleOptionsT>(value); }
+    template<typename RuleOptionsT = Aws::Vector<RuleOption>>
+    StatefulRule& WithRuleOptions(RuleOptionsT&& value) { SetRuleOptions(std::forward<RuleOptionsT>(value)); return *this;}
+    template<typename RuleOptionsT = RuleOption>
+    StatefulRule& AddRuleOptions(RuleOptionsT&& value) { m_ruleOptionsHasBeenSet = true; m_ruleOptions.emplace_back(std::forward<RuleOptionsT>(value)); return *this; }
     ///@}
   private:
 
-    StatefulAction m_action;
+    StatefulAction m_action{StatefulAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
     Header m_header;

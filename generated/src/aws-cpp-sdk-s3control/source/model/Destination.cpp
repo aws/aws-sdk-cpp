@@ -20,20 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-Destination::Destination() : 
-    m_accountHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_replicationTimeHasBeenSet(false),
-    m_accessControlTranslationHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_storageClass(ReplicationStorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false)
-{
-}
-
 Destination::Destination(const XmlNode& xmlNode)
-  : Destination()
 {
   *this = xmlNode;
 }
@@ -83,7 +70,7 @@ Destination& Destination::operator =(const XmlNode& xmlNode)
     XmlNode storageClassNode = resultNode.FirstChild("StorageClass");
     if(!storageClassNode.IsNull())
     {
-      m_storageClass = ReplicationStorageClassMapper::GetReplicationStorageClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageClassNode.GetText()).c_str()).c_str());
+      m_storageClass = ReplicationStorageClassMapper::GetReplicationStorageClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageClassNode.GetText()).c_str()));
       m_storageClassHasBeenSet = true;
     }
   }

@@ -23,7 +23,7 @@ namespace Model
   class SetLogDeliveryConfigurationRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API SetLogDeliveryConfigurationRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API SetLogDeliveryConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,26 @@ namespace Model
     /**
      * <p>The ID of the user pool where you want to configure logging.</p>
      */
-    inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+    inline const Aws::String& GetUserPoolId() const { return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-    inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-    inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-    inline SetLogDeliveryConfigurationRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-    inline SetLogDeliveryConfigurationRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-    inline SetLogDeliveryConfigurationRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    template<typename UserPoolIdT = Aws::String>
+    void SetUserPoolId(UserPoolIdT&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::forward<UserPoolIdT>(value); }
+    template<typename UserPoolIdT = Aws::String>
+    SetLogDeliveryConfigurationRequest& WithUserPoolId(UserPoolIdT&& value) { SetUserPoolId(std::forward<UserPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A collection of the logging configurations for a user pool.</p>
      */
-    inline const Aws::Vector<LogConfigurationType>& GetLogConfigurations() const{ return m_logConfigurations; }
+    inline const Aws::Vector<LogConfigurationType>& GetLogConfigurations() const { return m_logConfigurations; }
     inline bool LogConfigurationsHasBeenSet() const { return m_logConfigurationsHasBeenSet; }
-    inline void SetLogConfigurations(const Aws::Vector<LogConfigurationType>& value) { m_logConfigurationsHasBeenSet = true; m_logConfigurations = value; }
-    inline void SetLogConfigurations(Aws::Vector<LogConfigurationType>&& value) { m_logConfigurationsHasBeenSet = true; m_logConfigurations = std::move(value); }
-    inline SetLogDeliveryConfigurationRequest& WithLogConfigurations(const Aws::Vector<LogConfigurationType>& value) { SetLogConfigurations(value); return *this;}
-    inline SetLogDeliveryConfigurationRequest& WithLogConfigurations(Aws::Vector<LogConfigurationType>&& value) { SetLogConfigurations(std::move(value)); return *this;}
-    inline SetLogDeliveryConfigurationRequest& AddLogConfigurations(const LogConfigurationType& value) { m_logConfigurationsHasBeenSet = true; m_logConfigurations.push_back(value); return *this; }
-    inline SetLogDeliveryConfigurationRequest& AddLogConfigurations(LogConfigurationType&& value) { m_logConfigurationsHasBeenSet = true; m_logConfigurations.push_back(std::move(value)); return *this; }
+    template<typename LogConfigurationsT = Aws::Vector<LogConfigurationType>>
+    void SetLogConfigurations(LogConfigurationsT&& value) { m_logConfigurationsHasBeenSet = true; m_logConfigurations = std::forward<LogConfigurationsT>(value); }
+    template<typename LogConfigurationsT = Aws::Vector<LogConfigurationType>>
+    SetLogDeliveryConfigurationRequest& WithLogConfigurations(LogConfigurationsT&& value) { SetLogConfigurations(std::forward<LogConfigurationsT>(value)); return *this;}
+    template<typename LogConfigurationsT = LogConfigurationType>
+    SetLogDeliveryConfigurationRequest& AddLogConfigurations(LogConfigurationsT&& value) { m_logConfigurationsHasBeenSet = true; m_logConfigurations.emplace_back(std::forward<LogConfigurationsT>(value)); return *this; }
     ///@}
   private:
 

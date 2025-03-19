@@ -10,12 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeExportTasksRequest::DescribeExportTasksRequest() : 
-    m_filtersHasBeenSet(false),
-    m_exportTaskIdsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeExportTasksRequest::SerializePayload() const
 {
   Aws::StringStream ss;

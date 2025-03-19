@@ -18,33 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-VideoSelector::VideoSelector() : 
-    m_alphaBehavior(AlphaBehavior::NOT_SET),
-    m_alphaBehaviorHasBeenSet(false),
-    m_colorSpace(ColorSpace::NOT_SET),
-    m_colorSpaceHasBeenSet(false),
-    m_colorSpaceUsage(ColorSpaceUsage::NOT_SET),
-    m_colorSpaceUsageHasBeenSet(false),
-    m_embeddedTimecodeOverride(EmbeddedTimecodeOverride::NOT_SET),
-    m_embeddedTimecodeOverrideHasBeenSet(false),
-    m_hdr10MetadataHasBeenSet(false),
-    m_maxLuminance(0),
-    m_maxLuminanceHasBeenSet(false),
-    m_padVideo(PadVideo::NOT_SET),
-    m_padVideoHasBeenSet(false),
-    m_pid(0),
-    m_pidHasBeenSet(false),
-    m_programNumber(0),
-    m_programNumberHasBeenSet(false),
-    m_rotate(InputRotate::NOT_SET),
-    m_rotateHasBeenSet(false),
-    m_sampleRange(InputSampleRange::NOT_SET),
-    m_sampleRangeHasBeenSet(false)
-{
-}
-
 VideoSelector::VideoSelector(JsonView jsonValue)
-  : VideoSelector()
 {
   *this = jsonValue;
 }
@@ -54,80 +28,58 @@ VideoSelector& VideoSelector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("alphaBehavior"))
   {
     m_alphaBehavior = AlphaBehaviorMapper::GetAlphaBehaviorForName(jsonValue.GetString("alphaBehavior"));
-
     m_alphaBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("colorSpace"))
   {
     m_colorSpace = ColorSpaceMapper::GetColorSpaceForName(jsonValue.GetString("colorSpace"));
-
     m_colorSpaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("colorSpaceUsage"))
   {
     m_colorSpaceUsage = ColorSpaceUsageMapper::GetColorSpaceUsageForName(jsonValue.GetString("colorSpaceUsage"));
-
     m_colorSpaceUsageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("embeddedTimecodeOverride"))
   {
     m_embeddedTimecodeOverride = EmbeddedTimecodeOverrideMapper::GetEmbeddedTimecodeOverrideForName(jsonValue.GetString("embeddedTimecodeOverride"));
-
     m_embeddedTimecodeOverrideHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hdr10Metadata"))
   {
     m_hdr10Metadata = jsonValue.GetObject("hdr10Metadata");
-
     m_hdr10MetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxLuminance"))
   {
     m_maxLuminance = jsonValue.GetInteger("maxLuminance");
-
     m_maxLuminanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("padVideo"))
   {
     m_padVideo = PadVideoMapper::GetPadVideoForName(jsonValue.GetString("padVideo"));
-
     m_padVideoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pid"))
   {
     m_pid = jsonValue.GetInteger("pid");
-
     m_pidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("programNumber"))
   {
     m_programNumber = jsonValue.GetInteger("programNumber");
-
     m_programNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rotate"))
   {
     m_rotate = InputRotateMapper::GetInputRotateForName(jsonValue.GetString("rotate"));
-
     m_rotateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sampleRange"))
   {
     m_sampleRange = InputSampleRangeMapper::GetInputSampleRangeForName(jsonValue.GetString("sampleRange"));
-
     m_sampleRangeHasBeenSet = true;
   }
-
   return *this;
 }
 

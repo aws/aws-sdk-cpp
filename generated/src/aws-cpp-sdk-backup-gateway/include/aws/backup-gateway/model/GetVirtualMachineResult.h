@@ -28,7 +28,7 @@ namespace Model
   class GetVirtualMachineResult
   {
   public:
-    AWS_BACKUPGATEWAY_API GetVirtualMachineResult();
+    AWS_BACKUPGATEWAY_API GetVirtualMachineResult() = default;
     AWS_BACKUPGATEWAY_API GetVirtualMachineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUPGATEWAY_API GetVirtualMachineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>This object contains the basic attributes of <code>VirtualMachine</code>
      * contained by the output of <code>GetVirtualMachine</code> </p>
      */
-    inline const VirtualMachineDetails& GetVirtualMachine() const{ return m_virtualMachine; }
-    inline void SetVirtualMachine(const VirtualMachineDetails& value) { m_virtualMachine = value; }
-    inline void SetVirtualMachine(VirtualMachineDetails&& value) { m_virtualMachine = std::move(value); }
-    inline GetVirtualMachineResult& WithVirtualMachine(const VirtualMachineDetails& value) { SetVirtualMachine(value); return *this;}
-    inline GetVirtualMachineResult& WithVirtualMachine(VirtualMachineDetails&& value) { SetVirtualMachine(std::move(value)); return *this;}
+    inline const VirtualMachineDetails& GetVirtualMachine() const { return m_virtualMachine; }
+    template<typename VirtualMachineT = VirtualMachineDetails>
+    void SetVirtualMachine(VirtualMachineT&& value) { m_virtualMachineHasBeenSet = true; m_virtualMachine = std::forward<VirtualMachineT>(value); }
+    template<typename VirtualMachineT = VirtualMachineDetails>
+    GetVirtualMachineResult& WithVirtualMachine(VirtualMachineT&& value) { SetVirtualMachine(std::forward<VirtualMachineT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetVirtualMachineResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetVirtualMachineResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetVirtualMachineResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetVirtualMachineResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     VirtualMachineDetails m_virtualMachine;
+    bool m_virtualMachineHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

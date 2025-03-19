@@ -18,15 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-SetDimension::SetDimension() : 
-    m_dimensionType(DimensionType::NOT_SET),
-    m_dimensionTypeHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 SetDimension::SetDimension(JsonView jsonValue)
-  : SetDimension()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ SetDimension& SetDimension::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DimensionType"))
   {
     m_dimensionType = DimensionTypeMapper::GetDimensionTypeForName(jsonValue.GetString("DimensionType"));
-
     m_dimensionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -49,7 +39,6 @@ SetDimension& SetDimension::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

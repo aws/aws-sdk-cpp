@@ -36,7 +36,7 @@ namespace Model
   class VpcPeeringConnection
   {
   public:
-    AWS_EC2_API VpcPeeringConnection();
+    AWS_EC2_API VpcPeeringConnection() = default;
     AWS_EC2_API VpcPeeringConnection(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API VpcPeeringConnection& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,24 +49,24 @@ namespace Model
      * <p>Information about the accepter VPC. CIDR block information is only returned
      * when describing an active VPC peering connection.</p>
      */
-    inline const VpcPeeringConnectionVpcInfo& GetAccepterVpcInfo() const{ return m_accepterVpcInfo; }
+    inline const VpcPeeringConnectionVpcInfo& GetAccepterVpcInfo() const { return m_accepterVpcInfo; }
     inline bool AccepterVpcInfoHasBeenSet() const { return m_accepterVpcInfoHasBeenSet; }
-    inline void SetAccepterVpcInfo(const VpcPeeringConnectionVpcInfo& value) { m_accepterVpcInfoHasBeenSet = true; m_accepterVpcInfo = value; }
-    inline void SetAccepterVpcInfo(VpcPeeringConnectionVpcInfo&& value) { m_accepterVpcInfoHasBeenSet = true; m_accepterVpcInfo = std::move(value); }
-    inline VpcPeeringConnection& WithAccepterVpcInfo(const VpcPeeringConnectionVpcInfo& value) { SetAccepterVpcInfo(value); return *this;}
-    inline VpcPeeringConnection& WithAccepterVpcInfo(VpcPeeringConnectionVpcInfo&& value) { SetAccepterVpcInfo(std::move(value)); return *this;}
+    template<typename AccepterVpcInfoT = VpcPeeringConnectionVpcInfo>
+    void SetAccepterVpcInfo(AccepterVpcInfoT&& value) { m_accepterVpcInfoHasBeenSet = true; m_accepterVpcInfo = std::forward<AccepterVpcInfoT>(value); }
+    template<typename AccepterVpcInfoT = VpcPeeringConnectionVpcInfo>
+    VpcPeeringConnection& WithAccepterVpcInfo(AccepterVpcInfoT&& value) { SetAccepterVpcInfo(std::forward<AccepterVpcInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that an unaccepted VPC peering connection will expire.</p>
      */
-    inline const Aws::Utils::DateTime& GetExpirationTime() const{ return m_expirationTime; }
+    inline const Aws::Utils::DateTime& GetExpirationTime() const { return m_expirationTime; }
     inline bool ExpirationTimeHasBeenSet() const { return m_expirationTimeHasBeenSet; }
-    inline void SetExpirationTime(const Aws::Utils::DateTime& value) { m_expirationTimeHasBeenSet = true; m_expirationTime = value; }
-    inline void SetExpirationTime(Aws::Utils::DateTime&& value) { m_expirationTimeHasBeenSet = true; m_expirationTime = std::move(value); }
-    inline VpcPeeringConnection& WithExpirationTime(const Aws::Utils::DateTime& value) { SetExpirationTime(value); return *this;}
-    inline VpcPeeringConnection& WithExpirationTime(Aws::Utils::DateTime&& value) { SetExpirationTime(std::move(value)); return *this;}
+    template<typename ExpirationTimeT = Aws::Utils::DateTime>
+    void SetExpirationTime(ExpirationTimeT&& value) { m_expirationTimeHasBeenSet = true; m_expirationTime = std::forward<ExpirationTimeT>(value); }
+    template<typename ExpirationTimeT = Aws::Utils::DateTime>
+    VpcPeeringConnection& WithExpirationTime(ExpirationTimeT&& value) { SetExpirationTime(std::forward<ExpirationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,59 +74,57 @@ namespace Model
      * <p>Information about the requester VPC. CIDR block information is only returned
      * when describing an active VPC peering connection.</p>
      */
-    inline const VpcPeeringConnectionVpcInfo& GetRequesterVpcInfo() const{ return m_requesterVpcInfo; }
+    inline const VpcPeeringConnectionVpcInfo& GetRequesterVpcInfo() const { return m_requesterVpcInfo; }
     inline bool RequesterVpcInfoHasBeenSet() const { return m_requesterVpcInfoHasBeenSet; }
-    inline void SetRequesterVpcInfo(const VpcPeeringConnectionVpcInfo& value) { m_requesterVpcInfoHasBeenSet = true; m_requesterVpcInfo = value; }
-    inline void SetRequesterVpcInfo(VpcPeeringConnectionVpcInfo&& value) { m_requesterVpcInfoHasBeenSet = true; m_requesterVpcInfo = std::move(value); }
-    inline VpcPeeringConnection& WithRequesterVpcInfo(const VpcPeeringConnectionVpcInfo& value) { SetRequesterVpcInfo(value); return *this;}
-    inline VpcPeeringConnection& WithRequesterVpcInfo(VpcPeeringConnectionVpcInfo&& value) { SetRequesterVpcInfo(std::move(value)); return *this;}
+    template<typename RequesterVpcInfoT = VpcPeeringConnectionVpcInfo>
+    void SetRequesterVpcInfo(RequesterVpcInfoT&& value) { m_requesterVpcInfoHasBeenSet = true; m_requesterVpcInfo = std::forward<RequesterVpcInfoT>(value); }
+    template<typename RequesterVpcInfoT = VpcPeeringConnectionVpcInfo>
+    VpcPeeringConnection& WithRequesterVpcInfo(RequesterVpcInfoT&& value) { SetRequesterVpcInfo(std::forward<RequesterVpcInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the VPC peering connection.</p>
      */
-    inline const VpcPeeringConnectionStateReason& GetStatus() const{ return m_status; }
+    inline const VpcPeeringConnectionStateReason& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const VpcPeeringConnectionStateReason& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(VpcPeeringConnectionStateReason&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline VpcPeeringConnection& WithStatus(const VpcPeeringConnectionStateReason& value) { SetStatus(value); return *this;}
-    inline VpcPeeringConnection& WithStatus(VpcPeeringConnectionStateReason&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = VpcPeeringConnectionStateReason>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = VpcPeeringConnectionStateReason>
+    VpcPeeringConnection& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Any tags assigned to the resource.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline VpcPeeringConnection& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline VpcPeeringConnection& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline VpcPeeringConnection& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline VpcPeeringConnection& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    VpcPeeringConnection& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    VpcPeeringConnection& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the VPC peering connection.</p>
      */
-    inline const Aws::String& GetVpcPeeringConnectionId() const{ return m_vpcPeeringConnectionId; }
+    inline const Aws::String& GetVpcPeeringConnectionId() const { return m_vpcPeeringConnectionId; }
     inline bool VpcPeeringConnectionIdHasBeenSet() const { return m_vpcPeeringConnectionIdHasBeenSet; }
-    inline void SetVpcPeeringConnectionId(const Aws::String& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = value; }
-    inline void SetVpcPeeringConnectionId(Aws::String&& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = std::move(value); }
-    inline void SetVpcPeeringConnectionId(const char* value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId.assign(value); }
-    inline VpcPeeringConnection& WithVpcPeeringConnectionId(const Aws::String& value) { SetVpcPeeringConnectionId(value); return *this;}
-    inline VpcPeeringConnection& WithVpcPeeringConnectionId(Aws::String&& value) { SetVpcPeeringConnectionId(std::move(value)); return *this;}
-    inline VpcPeeringConnection& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
+    template<typename VpcPeeringConnectionIdT = Aws::String>
+    void SetVpcPeeringConnectionId(VpcPeeringConnectionIdT&& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = std::forward<VpcPeeringConnectionIdT>(value); }
+    template<typename VpcPeeringConnectionIdT = Aws::String>
+    VpcPeeringConnection& WithVpcPeeringConnectionId(VpcPeeringConnectionIdT&& value) { SetVpcPeeringConnectionId(std::forward<VpcPeeringConnectionIdT>(value)); return *this;}
     ///@}
   private:
 
     VpcPeeringConnectionVpcInfo m_accepterVpcInfo;
     bool m_accepterVpcInfoHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expirationTime;
+    Aws::Utils::DateTime m_expirationTime{};
     bool m_expirationTimeHasBeenSet = false;
 
     VpcPeeringConnectionVpcInfo m_requesterVpcInfo;

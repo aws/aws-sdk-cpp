@@ -18,20 +18,7 @@ namespace ACMPCA
 namespace Model
 {
 
-GeneralName::GeneralName() : 
-    m_otherNameHasBeenSet(false),
-    m_rfc822NameHasBeenSet(false),
-    m_dnsNameHasBeenSet(false),
-    m_directoryNameHasBeenSet(false),
-    m_ediPartyNameHasBeenSet(false),
-    m_uniformResourceIdentifierHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_registeredIdHasBeenSet(false)
-{
-}
-
 GeneralName::GeneralName(JsonView jsonValue)
-  : GeneralName()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ GeneralName& GeneralName::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OtherName"))
   {
     m_otherName = jsonValue.GetObject("OtherName");
-
     m_otherNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rfc822Name"))
   {
     m_rfc822Name = jsonValue.GetString("Rfc822Name");
-
     m_rfc822NameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsName"))
   {
     m_dnsName = jsonValue.GetString("DnsName");
-
     m_dnsNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DirectoryName"))
   {
     m_directoryName = jsonValue.GetObject("DirectoryName");
-
     m_directoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EdiPartyName"))
   {
     m_ediPartyName = jsonValue.GetObject("EdiPartyName");
-
     m_ediPartyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UniformResourceIdentifier"))
   {
     m_uniformResourceIdentifier = jsonValue.GetString("UniformResourceIdentifier");
-
     m_uniformResourceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpAddress"))
   {
     m_ipAddress = jsonValue.GetString("IpAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegisteredId"))
   {
     m_registeredId = jsonValue.GetString("RegisteredId");
-
     m_registeredIdHasBeenSet = true;
   }
-
   return *this;
 }
 

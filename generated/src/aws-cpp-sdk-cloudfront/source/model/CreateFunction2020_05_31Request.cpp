@@ -15,12 +15,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateFunction2020_05_31Request::CreateFunction2020_05_31Request() : 
-    m_nameHasBeenSet(false),
-    m_functionConfigHasBeenSet(false),
-    m_functionCodeHasBeenSet(false)
-{
-}
 
 Aws::String CreateFunction2020_05_31Request::SerializePayload() const
 {

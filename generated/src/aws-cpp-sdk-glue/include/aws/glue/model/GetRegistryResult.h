@@ -28,7 +28,7 @@ namespace Model
   class GetRegistryResult
   {
   public:
-    AWS_GLUE_API GetRegistryResult();
+    AWS_GLUE_API GetRegistryResult() = default;
     AWS_GLUE_API GetRegistryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API GetRegistryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,103 +37,96 @@ namespace Model
     /**
      * <p>The name of the registry.</p>
      */
-    inline const Aws::String& GetRegistryName() const{ return m_registryName; }
-    inline void SetRegistryName(const Aws::String& value) { m_registryName = value; }
-    inline void SetRegistryName(Aws::String&& value) { m_registryName = std::move(value); }
-    inline void SetRegistryName(const char* value) { m_registryName.assign(value); }
-    inline GetRegistryResult& WithRegistryName(const Aws::String& value) { SetRegistryName(value); return *this;}
-    inline GetRegistryResult& WithRegistryName(Aws::String&& value) { SetRegistryName(std::move(value)); return *this;}
-    inline GetRegistryResult& WithRegistryName(const char* value) { SetRegistryName(value); return *this;}
+    inline const Aws::String& GetRegistryName() const { return m_registryName; }
+    template<typename RegistryNameT = Aws::String>
+    void SetRegistryName(RegistryNameT&& value) { m_registryNameHasBeenSet = true; m_registryName = std::forward<RegistryNameT>(value); }
+    template<typename RegistryNameT = Aws::String>
+    GetRegistryResult& WithRegistryName(RegistryNameT&& value) { SetRegistryName(std::forward<RegistryNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the registry.</p>
      */
-    inline const Aws::String& GetRegistryArn() const{ return m_registryArn; }
-    inline void SetRegistryArn(const Aws::String& value) { m_registryArn = value; }
-    inline void SetRegistryArn(Aws::String&& value) { m_registryArn = std::move(value); }
-    inline void SetRegistryArn(const char* value) { m_registryArn.assign(value); }
-    inline GetRegistryResult& WithRegistryArn(const Aws::String& value) { SetRegistryArn(value); return *this;}
-    inline GetRegistryResult& WithRegistryArn(Aws::String&& value) { SetRegistryArn(std::move(value)); return *this;}
-    inline GetRegistryResult& WithRegistryArn(const char* value) { SetRegistryArn(value); return *this;}
+    inline const Aws::String& GetRegistryArn() const { return m_registryArn; }
+    template<typename RegistryArnT = Aws::String>
+    void SetRegistryArn(RegistryArnT&& value) { m_registryArnHasBeenSet = true; m_registryArn = std::forward<RegistryArnT>(value); }
+    template<typename RegistryArnT = Aws::String>
+    GetRegistryResult& WithRegistryArn(RegistryArnT&& value) { SetRegistryArn(std::forward<RegistryArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the registry.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetRegistryResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetRegistryResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetRegistryResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetRegistryResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the registry.</p>
      */
-    inline const RegistryStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const RegistryStatus& value) { m_status = value; }
-    inline void SetStatus(RegistryStatus&& value) { m_status = std::move(value); }
-    inline GetRegistryResult& WithStatus(const RegistryStatus& value) { SetStatus(value); return *this;}
-    inline GetRegistryResult& WithStatus(RegistryStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline RegistryStatus GetStatus() const { return m_status; }
+    inline void SetStatus(RegistryStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetRegistryResult& WithStatus(RegistryStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the registry was created.</p>
      */
-    inline const Aws::String& GetCreatedTime() const{ return m_createdTime; }
-    inline void SetCreatedTime(const Aws::String& value) { m_createdTime = value; }
-    inline void SetCreatedTime(Aws::String&& value) { m_createdTime = std::move(value); }
-    inline void SetCreatedTime(const char* value) { m_createdTime.assign(value); }
-    inline GetRegistryResult& WithCreatedTime(const Aws::String& value) { SetCreatedTime(value); return *this;}
-    inline GetRegistryResult& WithCreatedTime(Aws::String&& value) { SetCreatedTime(std::move(value)); return *this;}
-    inline GetRegistryResult& WithCreatedTime(const char* value) { SetCreatedTime(value); return *this;}
+    inline const Aws::String& GetCreatedTime() const { return m_createdTime; }
+    template<typename CreatedTimeT = Aws::String>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::String>
+    GetRegistryResult& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the registry was updated.</p>
      */
-    inline const Aws::String& GetUpdatedTime() const{ return m_updatedTime; }
-    inline void SetUpdatedTime(const Aws::String& value) { m_updatedTime = value; }
-    inline void SetUpdatedTime(Aws::String&& value) { m_updatedTime = std::move(value); }
-    inline void SetUpdatedTime(const char* value) { m_updatedTime.assign(value); }
-    inline GetRegistryResult& WithUpdatedTime(const Aws::String& value) { SetUpdatedTime(value); return *this;}
-    inline GetRegistryResult& WithUpdatedTime(Aws::String&& value) { SetUpdatedTime(std::move(value)); return *this;}
-    inline GetRegistryResult& WithUpdatedTime(const char* value) { SetUpdatedTime(value); return *this;}
+    inline const Aws::String& GetUpdatedTime() const { return m_updatedTime; }
+    template<typename UpdatedTimeT = Aws::String>
+    void SetUpdatedTime(UpdatedTimeT&& value) { m_updatedTimeHasBeenSet = true; m_updatedTime = std::forward<UpdatedTimeT>(value); }
+    template<typename UpdatedTimeT = Aws::String>
+    GetRegistryResult& WithUpdatedTime(UpdatedTimeT&& value) { SetUpdatedTime(std::forward<UpdatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRegistryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRegistryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRegistryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRegistryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_registryName;
+    bool m_registryNameHasBeenSet = false;
 
     Aws::String m_registryArn;
+    bool m_registryArnHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    RegistryStatus m_status;
+    RegistryStatus m_status{RegistryStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_createdTime;
+    bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_updatedTime;
+    bool m_updatedTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

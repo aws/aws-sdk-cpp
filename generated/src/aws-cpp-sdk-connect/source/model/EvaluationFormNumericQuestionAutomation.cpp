@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-EvaluationFormNumericQuestionAutomation::EvaluationFormNumericQuestionAutomation() : 
-    m_propertyValueHasBeenSet(false)
-{
-}
-
 EvaluationFormNumericQuestionAutomation::EvaluationFormNumericQuestionAutomation(JsonView jsonValue)
-  : EvaluationFormNumericQuestionAutomation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EvaluationFormNumericQuestionAutomation& EvaluationFormNumericQuestionAutomation
   if(jsonValue.ValueExists("PropertyValue"))
   {
     m_propertyValue = jsonValue.GetObject("PropertyValue");
-
     m_propertyValueHasBeenSet = true;
   }
-
   return *this;
 }
 

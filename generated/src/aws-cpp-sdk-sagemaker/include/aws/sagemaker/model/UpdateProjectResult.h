@@ -27,7 +27,7 @@ namespace Model
   class UpdateProjectResult
   {
   public:
-    AWS_SAGEMAKER_API UpdateProjectResult();
+    AWS_SAGEMAKER_API UpdateProjectResult() = default;
     AWS_SAGEMAKER_API UpdateProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API UpdateProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the project.</p>
      */
-    inline const Aws::String& GetProjectArn() const{ return m_projectArn; }
-    inline void SetProjectArn(const Aws::String& value) { m_projectArn = value; }
-    inline void SetProjectArn(Aws::String&& value) { m_projectArn = std::move(value); }
-    inline void SetProjectArn(const char* value) { m_projectArn.assign(value); }
-    inline UpdateProjectResult& WithProjectArn(const Aws::String& value) { SetProjectArn(value); return *this;}
-    inline UpdateProjectResult& WithProjectArn(Aws::String&& value) { SetProjectArn(std::move(value)); return *this;}
-    inline UpdateProjectResult& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
+    inline const Aws::String& GetProjectArn() const { return m_projectArn; }
+    template<typename ProjectArnT = Aws::String>
+    void SetProjectArn(ProjectArnT&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::forward<ProjectArnT>(value); }
+    template<typename ProjectArnT = Aws::String>
+    UpdateProjectResult& WithProjectArn(ProjectArnT&& value) { SetProjectArn(std::forward<ProjectArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateProjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateProjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateProjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateProjectResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_projectArn;
+    bool m_projectArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,23 +12,6 @@ using namespace Aws::RAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListPermissionAssociationsRequest::ListPermissionAssociationsRequest() : 
-    m_permissionArnHasBeenSet(false),
-    m_permissionVersion(0),
-    m_permissionVersionHasBeenSet(false),
-    m_associationStatus(ResourceShareAssociationStatus::NOT_SET),
-    m_associationStatusHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_featureSet(PermissionFeatureSet::NOT_SET),
-    m_featureSetHasBeenSet(false),
-    m_defaultVersion(false),
-    m_defaultVersionHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListPermissionAssociationsRequest::SerializePayload() const
 {
   JsonValue payload;

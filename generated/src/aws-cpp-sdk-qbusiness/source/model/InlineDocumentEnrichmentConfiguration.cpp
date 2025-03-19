@@ -18,16 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-InlineDocumentEnrichmentConfiguration::InlineDocumentEnrichmentConfiguration() : 
-    m_conditionHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_documentContentOperator(DocumentContentOperator::NOT_SET),
-    m_documentContentOperatorHasBeenSet(false)
-{
-}
-
 InlineDocumentEnrichmentConfiguration::InlineDocumentEnrichmentConfiguration(JsonView jsonValue)
-  : InlineDocumentEnrichmentConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ InlineDocumentEnrichmentConfiguration& InlineDocumentEnrichmentConfiguration::op
   if(jsonValue.ValueExists("condition"))
   {
     m_condition = jsonValue.GetObject("condition");
-
     m_conditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("target"))
   {
     m_target = jsonValue.GetObject("target");
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("documentContentOperator"))
   {
     m_documentContentOperator = DocumentContentOperatorMapper::GetDocumentContentOperatorForName(jsonValue.GetString("documentContentOperator"));
-
     m_documentContentOperatorHasBeenSet = true;
   }
-
   return *this;
 }
 

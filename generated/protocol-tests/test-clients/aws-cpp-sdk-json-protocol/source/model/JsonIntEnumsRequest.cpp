@@ -13,20 +13,6 @@ using namespace Aws::JsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-JsonIntEnumsRequest::JsonIntEnumsRequest() : 
-    m_intEnum1(0),
-    m_intEnum1HasBeenSet(false),
-    m_intEnum2(0),
-    m_intEnum2HasBeenSet(false),
-    m_intEnum3(0),
-    m_intEnum3HasBeenSet(false),
-    m_intEnumListHasBeenSet(false),
-    m_intEnumSetHasBeenSet(false),
-    m_intEnumMapHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Aws::String JsonIntEnumsRequest::SerializePayload() const
 {
   JsonValue payload;

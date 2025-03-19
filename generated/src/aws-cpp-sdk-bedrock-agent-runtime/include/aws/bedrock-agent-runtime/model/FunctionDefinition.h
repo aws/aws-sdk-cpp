@@ -36,7 +36,7 @@ namespace Model
   class FunctionDefinition
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API FunctionDefinition();
+    AWS_BEDROCKAGENTRUNTIME_API FunctionDefinition() = default;
     AWS_BEDROCKAGENTRUNTIME_API FunctionDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API FunctionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p> A description of the function and its purpose. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline FunctionDefinition& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline FunctionDefinition& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline FunctionDefinition& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    FunctionDefinition& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A name for the function. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline FunctionDefinition& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline FunctionDefinition& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline FunctionDefinition& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    FunctionDefinition& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,18 +71,16 @@ namespace Model
      * <p> The parameters that the agent elicits from the user to fulfill the function.
      * </p>
      */
-    inline const Aws::Map<Aws::String, ParameterDetail>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, ParameterDetail>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, ParameterDetail>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, ParameterDetail>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline FunctionDefinition& WithParameters(const Aws::Map<Aws::String, ParameterDetail>& value) { SetParameters(value); return *this;}
-    inline FunctionDefinition& WithParameters(Aws::Map<Aws::String, ParameterDetail>&& value) { SetParameters(std::move(value)); return *this;}
-    inline FunctionDefinition& AddParameters(const Aws::String& key, const ParameterDetail& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline FunctionDefinition& AddParameters(Aws::String&& key, const ParameterDetail& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline FunctionDefinition& AddParameters(const Aws::String& key, ParameterDetail&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline FunctionDefinition& AddParameters(Aws::String&& key, ParameterDetail&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline FunctionDefinition& AddParameters(const char* key, ParameterDetail&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline FunctionDefinition& AddParameters(const char* key, const ParameterDetail& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, ParameterDetail>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, ParameterDetail>>
+    FunctionDefinition& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = ParameterDetail>
+    FunctionDefinition& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -94,12 +88,10 @@ namespace Model
      * <p> Contains information if user confirmation is required to invoke the
      * function. </p>
      */
-    inline const RequireConfirmation& GetRequireConfirmation() const{ return m_requireConfirmation; }
+    inline RequireConfirmation GetRequireConfirmation() const { return m_requireConfirmation; }
     inline bool RequireConfirmationHasBeenSet() const { return m_requireConfirmationHasBeenSet; }
-    inline void SetRequireConfirmation(const RequireConfirmation& value) { m_requireConfirmationHasBeenSet = true; m_requireConfirmation = value; }
-    inline void SetRequireConfirmation(RequireConfirmation&& value) { m_requireConfirmationHasBeenSet = true; m_requireConfirmation = std::move(value); }
-    inline FunctionDefinition& WithRequireConfirmation(const RequireConfirmation& value) { SetRequireConfirmation(value); return *this;}
-    inline FunctionDefinition& WithRequireConfirmation(RequireConfirmation&& value) { SetRequireConfirmation(std::move(value)); return *this;}
+    inline void SetRequireConfirmation(RequireConfirmation value) { m_requireConfirmationHasBeenSet = true; m_requireConfirmation = value; }
+    inline FunctionDefinition& WithRequireConfirmation(RequireConfirmation value) { SetRequireConfirmation(value); return *this;}
     ///@}
   private:
 
@@ -112,7 +104,7 @@ namespace Model
     Aws::Map<Aws::String, ParameterDetail> m_parameters;
     bool m_parametersHasBeenSet = false;
 
-    RequireConfirmation m_requireConfirmation;
+    RequireConfirmation m_requireConfirmation{RequireConfirmation::NOT_SET};
     bool m_requireConfirmationHasBeenSet = false;
   };
 

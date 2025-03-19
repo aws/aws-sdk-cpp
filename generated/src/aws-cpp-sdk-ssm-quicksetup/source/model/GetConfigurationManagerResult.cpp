@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetConfigurationManagerResult::GetConfigurationManagerResult()
-{
-}
-
 GetConfigurationManagerResult::GetConfigurationManagerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,38 +32,33 @@ GetConfigurationManagerResult& GetConfigurationManagerResult::operator =(const A
     {
       m_configurationDefinitions.push_back(configurationDefinitionsJsonList[configurationDefinitionsIndex].AsObject());
     }
+    m_configurationDefinitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedAt"))
   {
     m_lastModifiedAt = jsonValue.GetString("LastModifiedAt");
-
+    m_lastModifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManagerArn"))
   {
     m_managerArn = jsonValue.GetString("ManagerArn");
-
+    m_managerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusSummaries"))
   {
     Aws::Utils::Array<JsonView> statusSummariesJsonList = jsonValue.GetArray("StatusSummaries");
@@ -75,8 +66,8 @@ GetConfigurationManagerResult& GetConfigurationManagerResult::operator =(const A
     {
       m_statusSummaries.push_back(statusSummariesJsonList[statusSummariesIndex].AsObject());
     }
+    m_statusSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -84,14 +75,15 @@ GetConfigurationManagerResult& GetConfigurationManagerResult::operator =(const A
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

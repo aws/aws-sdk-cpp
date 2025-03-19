@@ -12,11 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteWorkspaceBundleRequest::DeleteWorkspaceBundleRequest() : 
-    m_bundleIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWorkspaceBundleRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -29,7 +29,7 @@ namespace Model
   class GetCommandInvocationResult
   {
   public:
-    AWS_SSM_API GetCommandInvocationResult();
+    AWS_SSM_API GetCommandInvocationResult() = default;
     AWS_SSM_API GetCommandInvocationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSM_API GetCommandInvocationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>The parent command ID of the invocation plugin.</p>
      */
-    inline const Aws::String& GetCommandId() const{ return m_commandId; }
-    inline void SetCommandId(const Aws::String& value) { m_commandId = value; }
-    inline void SetCommandId(Aws::String&& value) { m_commandId = std::move(value); }
-    inline void SetCommandId(const char* value) { m_commandId.assign(value); }
-    inline GetCommandInvocationResult& WithCommandId(const Aws::String& value) { SetCommandId(value); return *this;}
-    inline GetCommandInvocationResult& WithCommandId(Aws::String&& value) { SetCommandId(std::move(value)); return *this;}
-    inline GetCommandInvocationResult& WithCommandId(const char* value) { SetCommandId(value); return *this;}
+    inline const Aws::String& GetCommandId() const { return m_commandId; }
+    template<typename CommandIdT = Aws::String>
+    void SetCommandId(CommandIdT&& value) { m_commandIdHasBeenSet = true; m_commandId = std::forward<CommandIdT>(value); }
+    template<typename CommandIdT = Aws::String>
+    GetCommandInvocationResult& WithCommandId(CommandIdT&& value) { SetCommandId(std::forward<CommandIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,26 +52,22 @@ namespace Model
      * on-premises server or VM in your hybrid environment that is configured for
      * Amazon Web Services Systems Manager.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceId.assign(value); }
-    inline GetCommandInvocationResult& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline GetCommandInvocationResult& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline GetCommandInvocationResult& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    GetCommandInvocationResult& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The comment text for the command.</p>
      */
-    inline const Aws::String& GetComment() const{ return m_comment; }
-    inline void SetComment(const Aws::String& value) { m_comment = value; }
-    inline void SetComment(Aws::String&& value) { m_comment = std::move(value); }
-    inline void SetComment(const char* value) { m_comment.assign(value); }
-    inline GetCommandInvocationResult& WithComment(const Aws::String& value) { SetComment(value); return *this;}
-    inline GetCommandInvocationResult& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
-    inline GetCommandInvocationResult& WithComment(const char* value) { SetComment(value); return *this;}
+    inline const Aws::String& GetComment() const { return m_comment; }
+    template<typename CommentT = Aws::String>
+    void SetComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment = std::forward<CommentT>(value); }
+    template<typename CommentT = Aws::String>
+    GetCommandInvocationResult& WithComment(CommentT&& value) { SetComment(std::forward<CommentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,26 +75,22 @@ namespace Model
      * <p>The name of the document that was run. For example,
      * <code>AWS-RunShellScript</code>.</p>
      */
-    inline const Aws::String& GetDocumentName() const{ return m_documentName; }
-    inline void SetDocumentName(const Aws::String& value) { m_documentName = value; }
-    inline void SetDocumentName(Aws::String&& value) { m_documentName = std::move(value); }
-    inline void SetDocumentName(const char* value) { m_documentName.assign(value); }
-    inline GetCommandInvocationResult& WithDocumentName(const Aws::String& value) { SetDocumentName(value); return *this;}
-    inline GetCommandInvocationResult& WithDocumentName(Aws::String&& value) { SetDocumentName(std::move(value)); return *this;}
-    inline GetCommandInvocationResult& WithDocumentName(const char* value) { SetDocumentName(value); return *this;}
+    inline const Aws::String& GetDocumentName() const { return m_documentName; }
+    template<typename DocumentNameT = Aws::String>
+    void SetDocumentName(DocumentNameT&& value) { m_documentNameHasBeenSet = true; m_documentName = std::forward<DocumentNameT>(value); }
+    template<typename DocumentNameT = Aws::String>
+    GetCommandInvocationResult& WithDocumentName(DocumentNameT&& value) { SetDocumentName(std::forward<DocumentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Systems Manager document (SSM document) version used in the request.</p>
      */
-    inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
-    inline void SetDocumentVersion(const Aws::String& value) { m_documentVersion = value; }
-    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersion = std::move(value); }
-    inline void SetDocumentVersion(const char* value) { m_documentVersion.assign(value); }
-    inline GetCommandInvocationResult& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
-    inline GetCommandInvocationResult& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
-    inline GetCommandInvocationResult& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+    inline const Aws::String& GetDocumentVersion() const { return m_documentVersion; }
+    template<typename DocumentVersionT = Aws::String>
+    void SetDocumentVersion(DocumentVersionT&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::forward<DocumentVersionT>(value); }
+    template<typename DocumentVersionT = Aws::String>
+    GetCommandInvocationResult& WithDocumentVersion(DocumentVersionT&& value) { SetDocumentVersion(std::forward<DocumentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,13 +98,11 @@ namespace Model
      * <p>The name of the plugin, or <i>step name</i>, for which details are reported.
      * For example, <code>aws:RunShellScript</code> is a plugin.</p>
      */
-    inline const Aws::String& GetPluginName() const{ return m_pluginName; }
-    inline void SetPluginName(const Aws::String& value) { m_pluginName = value; }
-    inline void SetPluginName(Aws::String&& value) { m_pluginName = std::move(value); }
-    inline void SetPluginName(const char* value) { m_pluginName.assign(value); }
-    inline GetCommandInvocationResult& WithPluginName(const Aws::String& value) { SetPluginName(value); return *this;}
-    inline GetCommandInvocationResult& WithPluginName(Aws::String&& value) { SetPluginName(std::move(value)); return *this;}
-    inline GetCommandInvocationResult& WithPluginName(const char* value) { SetPluginName(value); return *this;}
+    inline const Aws::String& GetPluginName() const { return m_pluginName; }
+    template<typename PluginNameT = Aws::String>
+    void SetPluginName(PluginNameT&& value) { m_pluginNameHasBeenSet = true; m_pluginName = std::forward<PluginNameT>(value); }
+    template<typename PluginNameT = Aws::String>
+    GetCommandInvocationResult& WithPluginName(PluginNameT&& value) { SetPluginName(std::forward<PluginNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,8 +111,8 @@ namespace Model
      * <code>-1</code>, then the command hasn't started running on the managed node, or
      * it wasn't received by the node.</p>
      */
-    inline int GetResponseCode() const{ return m_responseCode; }
-    inline void SetResponseCode(int value) { m_responseCode = value; }
+    inline int GetResponseCode() const { return m_responseCode; }
+    inline void SetResponseCode(int value) { m_responseCodeHasBeenSet = true; m_responseCode = value; }
     inline GetCommandInvocationResult& WithResponseCode(int value) { SetResponseCode(value); return *this;}
     ///@}
 
@@ -137,26 +125,22 @@ namespace Model
      * key=InvokedBefore,value=2017-06-07T00:00:00Z</code> </p> <p>If the plugin hasn't
      * started to run, the string is empty.</p>
      */
-    inline const Aws::String& GetExecutionStartDateTime() const{ return m_executionStartDateTime; }
-    inline void SetExecutionStartDateTime(const Aws::String& value) { m_executionStartDateTime = value; }
-    inline void SetExecutionStartDateTime(Aws::String&& value) { m_executionStartDateTime = std::move(value); }
-    inline void SetExecutionStartDateTime(const char* value) { m_executionStartDateTime.assign(value); }
-    inline GetCommandInvocationResult& WithExecutionStartDateTime(const Aws::String& value) { SetExecutionStartDateTime(value); return *this;}
-    inline GetCommandInvocationResult& WithExecutionStartDateTime(Aws::String&& value) { SetExecutionStartDateTime(std::move(value)); return *this;}
-    inline GetCommandInvocationResult& WithExecutionStartDateTime(const char* value) { SetExecutionStartDateTime(value); return *this;}
+    inline const Aws::String& GetExecutionStartDateTime() const { return m_executionStartDateTime; }
+    template<typename ExecutionStartDateTimeT = Aws::String>
+    void SetExecutionStartDateTime(ExecutionStartDateTimeT&& value) { m_executionStartDateTimeHasBeenSet = true; m_executionStartDateTime = std::forward<ExecutionStartDateTimeT>(value); }
+    template<typename ExecutionStartDateTimeT = Aws::String>
+    GetCommandInvocationResult& WithExecutionStartDateTime(ExecutionStartDateTimeT&& value) { SetExecutionStartDateTime(std::forward<ExecutionStartDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Duration since <code>ExecutionStartDateTime</code>.</p>
      */
-    inline const Aws::String& GetExecutionElapsedTime() const{ return m_executionElapsedTime; }
-    inline void SetExecutionElapsedTime(const Aws::String& value) { m_executionElapsedTime = value; }
-    inline void SetExecutionElapsedTime(Aws::String&& value) { m_executionElapsedTime = std::move(value); }
-    inline void SetExecutionElapsedTime(const char* value) { m_executionElapsedTime.assign(value); }
-    inline GetCommandInvocationResult& WithExecutionElapsedTime(const Aws::String& value) { SetExecutionElapsedTime(value); return *this;}
-    inline GetCommandInvocationResult& WithExecutionElapsedTime(Aws::String&& value) { SetExecutionElapsedTime(std::move(value)); return *this;}
-    inline GetCommandInvocationResult& WithExecutionElapsedTime(const char* value) { SetExecutionElapsedTime(value); return *this;}
+    inline const Aws::String& GetExecutionElapsedTime() const { return m_executionElapsedTime; }
+    template<typename ExecutionElapsedTimeT = Aws::String>
+    void SetExecutionElapsedTime(ExecutionElapsedTimeT&& value) { m_executionElapsedTimeHasBeenSet = true; m_executionElapsedTime = std::forward<ExecutionElapsedTimeT>(value); }
+    template<typename ExecutionElapsedTimeT = Aws::String>
+    GetCommandInvocationResult& WithExecutionElapsedTime(ExecutionElapsedTimeT&& value) { SetExecutionElapsedTime(std::forward<ExecutionElapsedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -168,13 +152,11 @@ namespace Model
      * key=InvokedAfter,value=2017-06-07T00:00:00Z</code> </p> <p>If the plugin hasn't
      * started to run, the string is empty.</p>
      */
-    inline const Aws::String& GetExecutionEndDateTime() const{ return m_executionEndDateTime; }
-    inline void SetExecutionEndDateTime(const Aws::String& value) { m_executionEndDateTime = value; }
-    inline void SetExecutionEndDateTime(Aws::String&& value) { m_executionEndDateTime = std::move(value); }
-    inline void SetExecutionEndDateTime(const char* value) { m_executionEndDateTime.assign(value); }
-    inline GetCommandInvocationResult& WithExecutionEndDateTime(const Aws::String& value) { SetExecutionEndDateTime(value); return *this;}
-    inline GetCommandInvocationResult& WithExecutionEndDateTime(Aws::String&& value) { SetExecutionEndDateTime(std::move(value)); return *this;}
-    inline GetCommandInvocationResult& WithExecutionEndDateTime(const char* value) { SetExecutionEndDateTime(value); return *this;}
+    inline const Aws::String& GetExecutionEndDateTime() const { return m_executionEndDateTime; }
+    template<typename ExecutionEndDateTimeT = Aws::String>
+    void SetExecutionEndDateTime(ExecutionEndDateTimeT&& value) { m_executionEndDateTimeHasBeenSet = true; m_executionEndDateTime = std::forward<ExecutionEndDateTimeT>(value); }
+    template<typename ExecutionEndDateTimeT = Aws::String>
+    GetCommandInvocationResult& WithExecutionEndDateTime(ExecutionEndDateTimeT&& value) { SetExecutionEndDateTime(std::forward<ExecutionEndDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -182,11 +164,9 @@ namespace Model
      * <p>The status of this invocation plugin. This status can be different than
      * <code>StatusDetails</code>.</p>
      */
-    inline const CommandInvocationStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const CommandInvocationStatus& value) { m_status = value; }
-    inline void SetStatus(CommandInvocationStatus&& value) { m_status = std::move(value); }
-    inline GetCommandInvocationResult& WithStatus(const CommandInvocationStatus& value) { SetStatus(value); return *this;}
-    inline GetCommandInvocationResult& WithStatus(CommandInvocationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline CommandInvocationStatus GetStatus() const { return m_status; }
+    inline void SetStatus(CommandInvocationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetCommandInvocationResult& WithStatus(CommandInvocationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -229,13 +209,11 @@ namespace Model
      * <code>MaxErrors</code> limit and subsequent command invocations were canceled by
      * the system. This is a terminal state.</p> </li> </ul>
      */
-    inline const Aws::String& GetStatusDetails() const{ return m_statusDetails; }
-    inline void SetStatusDetails(const Aws::String& value) { m_statusDetails = value; }
-    inline void SetStatusDetails(Aws::String&& value) { m_statusDetails = std::move(value); }
-    inline void SetStatusDetails(const char* value) { m_statusDetails.assign(value); }
-    inline GetCommandInvocationResult& WithStatusDetails(const Aws::String& value) { SetStatusDetails(value); return *this;}
-    inline GetCommandInvocationResult& WithStatusDetails(Aws::String&& value) { SetStatusDetails(std::move(value)); return *this;}
-    inline GetCommandInvocationResult& WithStatusDetails(const char* value) { SetStatusDetails(value); return *this;}
+    inline const Aws::String& GetStatusDetails() const { return m_statusDetails; }
+    template<typename StatusDetailsT = Aws::String>
+    void SetStatusDetails(StatusDetailsT&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::forward<StatusDetailsT>(value); }
+    template<typename StatusDetailsT = Aws::String>
+    GetCommandInvocationResult& WithStatusDetails(StatusDetailsT&& value) { SetStatusDetails(std::forward<StatusDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -244,13 +222,11 @@ namespace Model
      * the command hasn't finished running, if <code>ExecutionStatus</code> is neither
      * Succeeded nor Failed, then this string is empty.</p>
      */
-    inline const Aws::String& GetStandardOutputContent() const{ return m_standardOutputContent; }
-    inline void SetStandardOutputContent(const Aws::String& value) { m_standardOutputContent = value; }
-    inline void SetStandardOutputContent(Aws::String&& value) { m_standardOutputContent = std::move(value); }
-    inline void SetStandardOutputContent(const char* value) { m_standardOutputContent.assign(value); }
-    inline GetCommandInvocationResult& WithStandardOutputContent(const Aws::String& value) { SetStandardOutputContent(value); return *this;}
-    inline GetCommandInvocationResult& WithStandardOutputContent(Aws::String&& value) { SetStandardOutputContent(std::move(value)); return *this;}
-    inline GetCommandInvocationResult& WithStandardOutputContent(const char* value) { SetStandardOutputContent(value); return *this;}
+    inline const Aws::String& GetStandardOutputContent() const { return m_standardOutputContent; }
+    template<typename StandardOutputContentT = Aws::String>
+    void SetStandardOutputContent(StandardOutputContentT&& value) { m_standardOutputContentHasBeenSet = true; m_standardOutputContent = std::forward<StandardOutputContentT>(value); }
+    template<typename StandardOutputContentT = Aws::String>
+    GetCommandInvocationResult& WithStandardOutputContent(StandardOutputContentT&& value) { SetStandardOutputContent(std::forward<StandardOutputContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -259,13 +235,11 @@ namespace Model
      * Amazon Simple Storage Service (Amazon S3). If an S3 bucket wasn't specified,
      * then this string is empty.</p>
      */
-    inline const Aws::String& GetStandardOutputUrl() const{ return m_standardOutputUrl; }
-    inline void SetStandardOutputUrl(const Aws::String& value) { m_standardOutputUrl = value; }
-    inline void SetStandardOutputUrl(Aws::String&& value) { m_standardOutputUrl = std::move(value); }
-    inline void SetStandardOutputUrl(const char* value) { m_standardOutputUrl.assign(value); }
-    inline GetCommandInvocationResult& WithStandardOutputUrl(const Aws::String& value) { SetStandardOutputUrl(value); return *this;}
-    inline GetCommandInvocationResult& WithStandardOutputUrl(Aws::String&& value) { SetStandardOutputUrl(std::move(value)); return *this;}
-    inline GetCommandInvocationResult& WithStandardOutputUrl(const char* value) { SetStandardOutputUrl(value); return *this;}
+    inline const Aws::String& GetStandardOutputUrl() const { return m_standardOutputUrl; }
+    template<typename StandardOutputUrlT = Aws::String>
+    void SetStandardOutputUrl(StandardOutputUrlT&& value) { m_standardOutputUrlHasBeenSet = true; m_standardOutputUrl = std::forward<StandardOutputUrlT>(value); }
+    template<typename StandardOutputUrlT = Aws::String>
+    GetCommandInvocationResult& WithStandardOutputUrl(StandardOutputUrlT&& value) { SetStandardOutputUrl(std::forward<StandardOutputUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -273,13 +247,11 @@ namespace Model
      * <p>The first 8,000 characters written by the plugin to <code>stderr</code>. If
      * the command hasn't finished running, then this string is empty.</p>
      */
-    inline const Aws::String& GetStandardErrorContent() const{ return m_standardErrorContent; }
-    inline void SetStandardErrorContent(const Aws::String& value) { m_standardErrorContent = value; }
-    inline void SetStandardErrorContent(Aws::String&& value) { m_standardErrorContent = std::move(value); }
-    inline void SetStandardErrorContent(const char* value) { m_standardErrorContent.assign(value); }
-    inline GetCommandInvocationResult& WithStandardErrorContent(const Aws::String& value) { SetStandardErrorContent(value); return *this;}
-    inline GetCommandInvocationResult& WithStandardErrorContent(Aws::String&& value) { SetStandardErrorContent(std::move(value)); return *this;}
-    inline GetCommandInvocationResult& WithStandardErrorContent(const char* value) { SetStandardErrorContent(value); return *this;}
+    inline const Aws::String& GetStandardErrorContent() const { return m_standardErrorContent; }
+    template<typename StandardErrorContentT = Aws::String>
+    void SetStandardErrorContent(StandardErrorContentT&& value) { m_standardErrorContentHasBeenSet = true; m_standardErrorContent = std::forward<StandardErrorContentT>(value); }
+    template<typename StandardErrorContentT = Aws::String>
+    GetCommandInvocationResult& WithStandardErrorContent(StandardErrorContentT&& value) { SetStandardErrorContent(std::forward<StandardErrorContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -287,13 +259,11 @@ namespace Model
      * <p>The URL for the complete text written by the plugin to <code>stderr</code>.
      * If the command hasn't finished running, then this string is empty.</p>
      */
-    inline const Aws::String& GetStandardErrorUrl() const{ return m_standardErrorUrl; }
-    inline void SetStandardErrorUrl(const Aws::String& value) { m_standardErrorUrl = value; }
-    inline void SetStandardErrorUrl(Aws::String&& value) { m_standardErrorUrl = std::move(value); }
-    inline void SetStandardErrorUrl(const char* value) { m_standardErrorUrl.assign(value); }
-    inline GetCommandInvocationResult& WithStandardErrorUrl(const Aws::String& value) { SetStandardErrorUrl(value); return *this;}
-    inline GetCommandInvocationResult& WithStandardErrorUrl(Aws::String&& value) { SetStandardErrorUrl(std::move(value)); return *this;}
-    inline GetCommandInvocationResult& WithStandardErrorUrl(const char* value) { SetStandardErrorUrl(value); return *this;}
+    inline const Aws::String& GetStandardErrorUrl() const { return m_standardErrorUrl; }
+    template<typename StandardErrorUrlT = Aws::String>
+    void SetStandardErrorUrl(StandardErrorUrlT&& value) { m_standardErrorUrlHasBeenSet = true; m_standardErrorUrl = std::forward<StandardErrorUrlT>(value); }
+    template<typename StandardErrorUrlT = Aws::String>
+    GetCommandInvocationResult& WithStandardErrorUrl(StandardErrorUrlT&& value) { SetStandardErrorUrl(std::forward<StandardErrorUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -301,60 +271,76 @@ namespace Model
      * <p>Amazon CloudWatch Logs information where Systems Manager sent the command
      * output.</p>
      */
-    inline const CloudWatchOutputConfig& GetCloudWatchOutputConfig() const{ return m_cloudWatchOutputConfig; }
-    inline void SetCloudWatchOutputConfig(const CloudWatchOutputConfig& value) { m_cloudWatchOutputConfig = value; }
-    inline void SetCloudWatchOutputConfig(CloudWatchOutputConfig&& value) { m_cloudWatchOutputConfig = std::move(value); }
-    inline GetCommandInvocationResult& WithCloudWatchOutputConfig(const CloudWatchOutputConfig& value) { SetCloudWatchOutputConfig(value); return *this;}
-    inline GetCommandInvocationResult& WithCloudWatchOutputConfig(CloudWatchOutputConfig&& value) { SetCloudWatchOutputConfig(std::move(value)); return *this;}
+    inline const CloudWatchOutputConfig& GetCloudWatchOutputConfig() const { return m_cloudWatchOutputConfig; }
+    template<typename CloudWatchOutputConfigT = CloudWatchOutputConfig>
+    void SetCloudWatchOutputConfig(CloudWatchOutputConfigT&& value) { m_cloudWatchOutputConfigHasBeenSet = true; m_cloudWatchOutputConfig = std::forward<CloudWatchOutputConfigT>(value); }
+    template<typename CloudWatchOutputConfigT = CloudWatchOutputConfig>
+    GetCommandInvocationResult& WithCloudWatchOutputConfig(CloudWatchOutputConfigT&& value) { SetCloudWatchOutputConfig(std::forward<CloudWatchOutputConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCommandInvocationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCommandInvocationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCommandInvocationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCommandInvocationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_commandId;
+    bool m_commandIdHasBeenSet = false;
 
     Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet = false;
 
     Aws::String m_comment;
+    bool m_commentHasBeenSet = false;
 
     Aws::String m_documentName;
+    bool m_documentNameHasBeenSet = false;
 
     Aws::String m_documentVersion;
+    bool m_documentVersionHasBeenSet = false;
 
     Aws::String m_pluginName;
+    bool m_pluginNameHasBeenSet = false;
 
-    int m_responseCode;
+    int m_responseCode{0};
+    bool m_responseCodeHasBeenSet = false;
 
     Aws::String m_executionStartDateTime;
+    bool m_executionStartDateTimeHasBeenSet = false;
 
     Aws::String m_executionElapsedTime;
+    bool m_executionElapsedTimeHasBeenSet = false;
 
     Aws::String m_executionEndDateTime;
+    bool m_executionEndDateTimeHasBeenSet = false;
 
-    CommandInvocationStatus m_status;
+    CommandInvocationStatus m_status{CommandInvocationStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusDetails;
+    bool m_statusDetailsHasBeenSet = false;
 
     Aws::String m_standardOutputContent;
+    bool m_standardOutputContentHasBeenSet = false;
 
     Aws::String m_standardOutputUrl;
+    bool m_standardOutputUrlHasBeenSet = false;
 
     Aws::String m_standardErrorContent;
+    bool m_standardErrorContentHasBeenSet = false;
 
     Aws::String m_standardErrorUrl;
+    bool m_standardErrorUrlHasBeenSet = false;
 
     CloudWatchOutputConfig m_cloudWatchOutputConfig;
+    bool m_cloudWatchOutputConfigHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,7 +28,7 @@ namespace Model
   class DeleteBotAliasResult
   {
   public:
-    AWS_LEXMODELSV2_API DeleteBotAliasResult();
+    AWS_LEXMODELSV2_API DeleteBotAliasResult() = default;
     AWS_LEXMODELSV2_API DeleteBotAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELSV2_API DeleteBotAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,26 +37,22 @@ namespace Model
     /**
      * <p>The unique identifier of the bot alias to delete.</p>
      */
-    inline const Aws::String& GetBotAliasId() const{ return m_botAliasId; }
-    inline void SetBotAliasId(const Aws::String& value) { m_botAliasId = value; }
-    inline void SetBotAliasId(Aws::String&& value) { m_botAliasId = std::move(value); }
-    inline void SetBotAliasId(const char* value) { m_botAliasId.assign(value); }
-    inline DeleteBotAliasResult& WithBotAliasId(const Aws::String& value) { SetBotAliasId(value); return *this;}
-    inline DeleteBotAliasResult& WithBotAliasId(Aws::String&& value) { SetBotAliasId(std::move(value)); return *this;}
-    inline DeleteBotAliasResult& WithBotAliasId(const char* value) { SetBotAliasId(value); return *this;}
+    inline const Aws::String& GetBotAliasId() const { return m_botAliasId; }
+    template<typename BotAliasIdT = Aws::String>
+    void SetBotAliasId(BotAliasIdT&& value) { m_botAliasIdHasBeenSet = true; m_botAliasId = std::forward<BotAliasIdT>(value); }
+    template<typename BotAliasIdT = Aws::String>
+    DeleteBotAliasResult& WithBotAliasId(BotAliasIdT&& value) { SetBotAliasId(std::forward<BotAliasIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the bot that contains the alias to delete.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
-    inline void SetBotId(const Aws::String& value) { m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botId.assign(value); }
-    inline DeleteBotAliasResult& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline DeleteBotAliasResult& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline DeleteBotAliasResult& WithBotId(const char* value) { SetBotId(value); return *this;}
+    inline const Aws::String& GetBotId() const { return m_botId; }
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    DeleteBotAliasResult& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,32 +62,32 @@ namespace Model
      * no longer appear in the list of aliases returned by the
      * <code>ListBotAliases</code> operation.</p>
      */
-    inline const BotAliasStatus& GetBotAliasStatus() const{ return m_botAliasStatus; }
-    inline void SetBotAliasStatus(const BotAliasStatus& value) { m_botAliasStatus = value; }
-    inline void SetBotAliasStatus(BotAliasStatus&& value) { m_botAliasStatus = std::move(value); }
-    inline DeleteBotAliasResult& WithBotAliasStatus(const BotAliasStatus& value) { SetBotAliasStatus(value); return *this;}
-    inline DeleteBotAliasResult& WithBotAliasStatus(BotAliasStatus&& value) { SetBotAliasStatus(std::move(value)); return *this;}
+    inline BotAliasStatus GetBotAliasStatus() const { return m_botAliasStatus; }
+    inline void SetBotAliasStatus(BotAliasStatus value) { m_botAliasStatusHasBeenSet = true; m_botAliasStatus = value; }
+    inline DeleteBotAliasResult& WithBotAliasStatus(BotAliasStatus value) { SetBotAliasStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteBotAliasResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteBotAliasResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteBotAliasResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteBotAliasResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_botAliasId;
+    bool m_botAliasIdHasBeenSet = false;
 
     Aws::String m_botId;
+    bool m_botIdHasBeenSet = false;
 
-    BotAliasStatus m_botAliasStatus;
+    BotAliasStatus m_botAliasStatus{BotAliasStatus::NOT_SET};
+    bool m_botAliasStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

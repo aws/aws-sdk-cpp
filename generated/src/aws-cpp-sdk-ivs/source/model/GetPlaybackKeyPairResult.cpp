@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPlaybackKeyPairResult::GetPlaybackKeyPairResult()
-{
-}
-
 GetPlaybackKeyPairResult::GetPlaybackKeyPairResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetPlaybackKeyPairResult& GetPlaybackKeyPairResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("keyPair"))
   {
     m_keyPair = jsonValue.GetObject("keyPair");
-
+    m_keyPairHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

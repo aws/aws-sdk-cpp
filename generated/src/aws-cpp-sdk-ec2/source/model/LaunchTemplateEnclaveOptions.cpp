@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LaunchTemplateEnclaveOptions::LaunchTemplateEnclaveOptions() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 LaunchTemplateEnclaveOptions::LaunchTemplateEnclaveOptions(const XmlNode& xmlNode)
-  : LaunchTemplateEnclaveOptions()
 {
   *this = xmlNode;
 }

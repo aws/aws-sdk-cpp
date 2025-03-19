@@ -24,7 +24,7 @@ namespace Model
   class PurchaseOfferingRequest : public MediaConnectRequest
   {
   public:
-    AWS_MEDIACONNECT_API PurchaseOfferingRequest();
+    AWS_MEDIACONNECT_API PurchaseOfferingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
     /**
      * The Amazon Resource Name (ARN) of the offering.
      */
-    inline const Aws::String& GetOfferingArn() const{ return m_offeringArn; }
+    inline const Aws::String& GetOfferingArn() const { return m_offeringArn; }
     inline bool OfferingArnHasBeenSet() const { return m_offeringArnHasBeenSet; }
-    inline void SetOfferingArn(const Aws::String& value) { m_offeringArnHasBeenSet = true; m_offeringArn = value; }
-    inline void SetOfferingArn(Aws::String&& value) { m_offeringArnHasBeenSet = true; m_offeringArn = std::move(value); }
-    inline void SetOfferingArn(const char* value) { m_offeringArnHasBeenSet = true; m_offeringArn.assign(value); }
-    inline PurchaseOfferingRequest& WithOfferingArn(const Aws::String& value) { SetOfferingArn(value); return *this;}
-    inline PurchaseOfferingRequest& WithOfferingArn(Aws::String&& value) { SetOfferingArn(std::move(value)); return *this;}
-    inline PurchaseOfferingRequest& WithOfferingArn(const char* value) { SetOfferingArn(value); return *this;}
+    template<typename OfferingArnT = Aws::String>
+    void SetOfferingArn(OfferingArnT&& value) { m_offeringArnHasBeenSet = true; m_offeringArn = std::forward<OfferingArnT>(value); }
+    template<typename OfferingArnT = Aws::String>
+    PurchaseOfferingRequest& WithOfferingArn(OfferingArnT&& value) { SetOfferingArn(std::forward<OfferingArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The name that you want to use for the reservation.
      */
-    inline const Aws::String& GetReservationName() const{ return m_reservationName; }
+    inline const Aws::String& GetReservationName() const { return m_reservationName; }
     inline bool ReservationNameHasBeenSet() const { return m_reservationNameHasBeenSet; }
-    inline void SetReservationName(const Aws::String& value) { m_reservationNameHasBeenSet = true; m_reservationName = value; }
-    inline void SetReservationName(Aws::String&& value) { m_reservationNameHasBeenSet = true; m_reservationName = std::move(value); }
-    inline void SetReservationName(const char* value) { m_reservationNameHasBeenSet = true; m_reservationName.assign(value); }
-    inline PurchaseOfferingRequest& WithReservationName(const Aws::String& value) { SetReservationName(value); return *this;}
-    inline PurchaseOfferingRequest& WithReservationName(Aws::String&& value) { SetReservationName(std::move(value)); return *this;}
-    inline PurchaseOfferingRequest& WithReservationName(const char* value) { SetReservationName(value); return *this;}
+    template<typename ReservationNameT = Aws::String>
+    void SetReservationName(ReservationNameT&& value) { m_reservationNameHasBeenSet = true; m_reservationName = std::forward<ReservationNameT>(value); }
+    template<typename ReservationNameT = Aws::String>
+    PurchaseOfferingRequest& WithReservationName(ReservationNameT&& value) { SetReservationName(std::forward<ReservationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * YYYY-MM-DDTHH:mm:SSZ, where T and Z are literal characters. For example, to
      * specify 11:30pm on March 5, 2020, enter 2020-03-05T23:30:00Z.
      */
-    inline const Aws::String& GetStart() const{ return m_start; }
+    inline const Aws::String& GetStart() const { return m_start; }
     inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
-    inline void SetStart(const Aws::String& value) { m_startHasBeenSet = true; m_start = value; }
-    inline void SetStart(Aws::String&& value) { m_startHasBeenSet = true; m_start = std::move(value); }
-    inline void SetStart(const char* value) { m_startHasBeenSet = true; m_start.assign(value); }
-    inline PurchaseOfferingRequest& WithStart(const Aws::String& value) { SetStart(value); return *this;}
-    inline PurchaseOfferingRequest& WithStart(Aws::String&& value) { SetStart(std::move(value)); return *this;}
-    inline PurchaseOfferingRequest& WithStart(const char* value) { SetStart(value); return *this;}
+    template<typename StartT = Aws::String>
+    void SetStart(StartT&& value) { m_startHasBeenSet = true; m_start = std::forward<StartT>(value); }
+    template<typename StartT = Aws::String>
+    PurchaseOfferingRequest& WithStart(StartT&& value) { SetStart(std::forward<StartT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteChatControlsConfigurationRequest::DeleteChatControlsConfigurationRequest() : 
-    m_applicationIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteChatControlsConfigurationRequest::SerializePayload() const
 {
   return {};

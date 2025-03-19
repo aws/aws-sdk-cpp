@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateSyncConfigurationResult::UpdateSyncConfigurationResult()
-{
-}
-
 UpdateSyncConfigurationResult::UpdateSyncConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateSyncConfigurationResult& UpdateSyncConfigurationResult::operator =(const A
   if(jsonValue.ValueExists("SyncConfiguration"))
   {
     m_syncConfiguration = jsonValue.GetObject("SyncConfiguration");
-
+    m_syncConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

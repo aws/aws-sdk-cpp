@@ -21,7 +21,7 @@ namespace Model
   class GetSourceRepositoryCloneUrlsRequest : public CodeCatalystRequest
   {
   public:
-    AWS_CODECATALYST_API GetSourceRepositoryCloneUrlsRequest();
+    AWS_CODECATALYST_API GetSourceRepositoryCloneUrlsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,42 +36,36 @@ namespace Model
     /**
      * <p>The name of the space.</p>
      */
-    inline const Aws::String& GetSpaceName() const{ return m_spaceName; }
+    inline const Aws::String& GetSpaceName() const { return m_spaceName; }
     inline bool SpaceNameHasBeenSet() const { return m_spaceNameHasBeenSet; }
-    inline void SetSpaceName(const Aws::String& value) { m_spaceNameHasBeenSet = true; m_spaceName = value; }
-    inline void SetSpaceName(Aws::String&& value) { m_spaceNameHasBeenSet = true; m_spaceName = std::move(value); }
-    inline void SetSpaceName(const char* value) { m_spaceNameHasBeenSet = true; m_spaceName.assign(value); }
-    inline GetSourceRepositoryCloneUrlsRequest& WithSpaceName(const Aws::String& value) { SetSpaceName(value); return *this;}
-    inline GetSourceRepositoryCloneUrlsRequest& WithSpaceName(Aws::String&& value) { SetSpaceName(std::move(value)); return *this;}
-    inline GetSourceRepositoryCloneUrlsRequest& WithSpaceName(const char* value) { SetSpaceName(value); return *this;}
+    template<typename SpaceNameT = Aws::String>
+    void SetSpaceName(SpaceNameT&& value) { m_spaceNameHasBeenSet = true; m_spaceName = std::forward<SpaceNameT>(value); }
+    template<typename SpaceNameT = Aws::String>
+    GetSourceRepositoryCloneUrlsRequest& WithSpaceName(SpaceNameT&& value) { SetSpaceName(std::forward<SpaceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the project in the space.</p>
      */
-    inline const Aws::String& GetProjectName() const{ return m_projectName; }
+    inline const Aws::String& GetProjectName() const { return m_projectName; }
     inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
-    inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
-    inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
-    inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
-    inline GetSourceRepositoryCloneUrlsRequest& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-    inline GetSourceRepositoryCloneUrlsRequest& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-    inline GetSourceRepositoryCloneUrlsRequest& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+    template<typename ProjectNameT = Aws::String>
+    void SetProjectName(ProjectNameT&& value) { m_projectNameHasBeenSet = true; m_projectName = std::forward<ProjectNameT>(value); }
+    template<typename ProjectNameT = Aws::String>
+    GetSourceRepositoryCloneUrlsRequest& WithProjectName(ProjectNameT&& value) { SetProjectName(std::forward<ProjectNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the source repository.</p>
      */
-    inline const Aws::String& GetSourceRepositoryName() const{ return m_sourceRepositoryName; }
+    inline const Aws::String& GetSourceRepositoryName() const { return m_sourceRepositoryName; }
     inline bool SourceRepositoryNameHasBeenSet() const { return m_sourceRepositoryNameHasBeenSet; }
-    inline void SetSourceRepositoryName(const Aws::String& value) { m_sourceRepositoryNameHasBeenSet = true; m_sourceRepositoryName = value; }
-    inline void SetSourceRepositoryName(Aws::String&& value) { m_sourceRepositoryNameHasBeenSet = true; m_sourceRepositoryName = std::move(value); }
-    inline void SetSourceRepositoryName(const char* value) { m_sourceRepositoryNameHasBeenSet = true; m_sourceRepositoryName.assign(value); }
-    inline GetSourceRepositoryCloneUrlsRequest& WithSourceRepositoryName(const Aws::String& value) { SetSourceRepositoryName(value); return *this;}
-    inline GetSourceRepositoryCloneUrlsRequest& WithSourceRepositoryName(Aws::String&& value) { SetSourceRepositoryName(std::move(value)); return *this;}
-    inline GetSourceRepositoryCloneUrlsRequest& WithSourceRepositoryName(const char* value) { SetSourceRepositoryName(value); return *this;}
+    template<typename SourceRepositoryNameT = Aws::String>
+    void SetSourceRepositoryName(SourceRepositoryNameT&& value) { m_sourceRepositoryNameHasBeenSet = true; m_sourceRepositoryName = std::forward<SourceRepositoryNameT>(value); }
+    template<typename SourceRepositoryNameT = Aws::String>
+    GetSourceRepositoryCloneUrlsRequest& WithSourceRepositoryName(SourceRepositoryNameT&& value) { SetSourceRepositoryName(std::forward<SourceRepositoryNameT>(value)); return *this;}
     ///@}
   private:
 

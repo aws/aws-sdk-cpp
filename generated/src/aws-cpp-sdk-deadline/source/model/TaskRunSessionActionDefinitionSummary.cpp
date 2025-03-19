@@ -18,14 +18,7 @@ namespace deadline
 namespace Model
 {
 
-TaskRunSessionActionDefinitionSummary::TaskRunSessionActionDefinitionSummary() : 
-    m_taskIdHasBeenSet(false),
-    m_stepIdHasBeenSet(false)
-{
-}
-
 TaskRunSessionActionDefinitionSummary::TaskRunSessionActionDefinitionSummary(JsonView jsonValue)
-  : TaskRunSessionActionDefinitionSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TaskRunSessionActionDefinitionSummary& TaskRunSessionActionDefinitionSummary::op
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");
-
     m_taskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stepId"))
   {
     m_stepId = jsonValue.GetString("stepId");
-
     m_stepIdHasBeenSet = true;
   }
-
   return *this;
 }
 

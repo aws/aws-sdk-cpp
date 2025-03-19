@@ -12,12 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAutomaticTapeCreationPolicyRequest::UpdateAutomaticTapeCreationPolicyRequest() : 
-    m_automaticTapeCreationRulesHasBeenSet(false),
-    m_gatewayARNHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAutomaticTapeCreationPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

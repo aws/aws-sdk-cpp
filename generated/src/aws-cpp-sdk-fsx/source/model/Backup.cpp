@@ -18,34 +18,7 @@ namespace FSx
 namespace Model
 {
 
-Backup::Backup() : 
-    m_backupIdHasBeenSet(false),
-    m_lifecycle(BackupLifecycle::NOT_SET),
-    m_lifecycleHasBeenSet(false),
-    m_failureDetailsHasBeenSet(false),
-    m_type(BackupType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_progressPercent(0),
-    m_progressPercentHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_resourceARNHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_fileSystemHasBeenSet(false),
-    m_directoryInformationHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_sourceBackupIdHasBeenSet(false),
-    m_sourceBackupRegionHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_volumeHasBeenSet(false),
-    m_sizeInBytes(0),
-    m_sizeInBytesHasBeenSet(false)
-{
-}
-
 Backup::Backup(JsonView jsonValue)
-  : Backup()
 {
   *this = jsonValue;
 }
@@ -55,59 +28,43 @@ Backup& Backup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BackupId"))
   {
     m_backupId = jsonValue.GetString("BackupId");
-
     m_backupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lifecycle"))
   {
     m_lifecycle = BackupLifecycleMapper::GetBackupLifecycleForName(jsonValue.GetString("Lifecycle"));
-
     m_lifecycleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureDetails"))
   {
     m_failureDetails = jsonValue.GetObject("FailureDetails");
-
     m_failureDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = BackupTypeMapper::GetBackupTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProgressPercent"))
   {
     m_progressPercent = jsonValue.GetInteger("ProgressPercent");
-
     m_progressPercentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceARN"))
   {
     m_resourceARN = jsonValue.GetString("ResourceARN");
-
     m_resourceARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -117,63 +74,46 @@ Backup& Backup::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileSystem"))
   {
     m_fileSystem = jsonValue.GetObject("FileSystem");
-
     m_fileSystemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DirectoryInformation"))
   {
     m_directoryInformation = jsonValue.GetObject("DirectoryInformation");
-
     m_directoryInformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerId"))
   {
     m_ownerId = jsonValue.GetString("OwnerId");
-
     m_ownerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceBackupId"))
   {
     m_sourceBackupId = jsonValue.GetString("SourceBackupId");
-
     m_sourceBackupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceBackupRegion"))
   {
     m_sourceBackupRegion = jsonValue.GetString("SourceBackupRegion");
-
     m_sourceBackupRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Volume"))
   {
     m_volume = jsonValue.GetObject("Volume");
-
     m_volumeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SizeInBytes"))
   {
     m_sizeInBytes = jsonValue.GetInt64("SizeInBytes");
-
     m_sizeInBytesHasBeenSet = true;
   }
-
   return *this;
 }
 

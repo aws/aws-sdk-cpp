@@ -33,7 +33,7 @@ namespace Model
   class RDSInstanceEstimatedMonthlySavings
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API RDSInstanceEstimatedMonthlySavings();
+    AWS_COMPUTEOPTIMIZER_API RDSInstanceEstimatedMonthlySavings() = default;
     AWS_COMPUTEOPTIMIZER_API RDSInstanceEstimatedMonthlySavings(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API RDSInstanceEstimatedMonthlySavings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,29 +43,27 @@ namespace Model
     /**
      * <p> The currency of the estimated monthly savings. </p>
      */
-    inline const Currency& GetCurrency() const{ return m_currency; }
+    inline Currency GetCurrency() const { return m_currency; }
     inline bool CurrencyHasBeenSet() const { return m_currencyHasBeenSet; }
-    inline void SetCurrency(const Currency& value) { m_currencyHasBeenSet = true; m_currency = value; }
-    inline void SetCurrency(Currency&& value) { m_currencyHasBeenSet = true; m_currency = std::move(value); }
-    inline RDSInstanceEstimatedMonthlySavings& WithCurrency(const Currency& value) { SetCurrency(value); return *this;}
-    inline RDSInstanceEstimatedMonthlySavings& WithCurrency(Currency&& value) { SetCurrency(std::move(value)); return *this;}
+    inline void SetCurrency(Currency value) { m_currencyHasBeenSet = true; m_currency = value; }
+    inline RDSInstanceEstimatedMonthlySavings& WithCurrency(Currency value) { SetCurrency(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The value of the estimated monthly savings for Amazon RDS instances. </p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline RDSInstanceEstimatedMonthlySavings& WithValue(double value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    Currency m_currency;
+    Currency m_currency{Currency::NOT_SET};
     bool m_currencyHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TestRenderTemplateResult::TestRenderTemplateResult()
-{
-}
-
 TestRenderTemplateResult::TestRenderTemplateResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ TestRenderTemplateResult& TestRenderTemplateResult::operator =(const Aws::Amazon
     if(!renderedTemplateNode.IsNull())
     {
       m_renderedTemplate = Aws::Utils::Xml::DecodeEscapedXmlText(renderedTemplateNode.GetText());
+      m_renderedTemplateHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SES::Model::TestRenderTemplateResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

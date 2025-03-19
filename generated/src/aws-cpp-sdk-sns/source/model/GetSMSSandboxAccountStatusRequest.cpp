@@ -10,10 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-GetSMSSandboxAccountStatusRequest::GetSMSSandboxAccountStatusRequest()
-{
-}
-
 Aws::String GetSMSSandboxAccountStatusRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -31,7 +31,7 @@ namespace Model
   class Source
   {
   public:
-    AWS_PROMETHEUSSERVICE_API Source();
+    AWS_PROMETHEUSSERVICE_API Source() = default;
     AWS_PROMETHEUSSERVICE_API Source(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROMETHEUSSERVICE_API Source& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROMETHEUSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The Amazon EKS cluster from which a scraper collects metrics.</p>
      */
-    inline const EksConfiguration& GetEksConfiguration() const{ return m_eksConfiguration; }
+    inline const EksConfiguration& GetEksConfiguration() const { return m_eksConfiguration; }
     inline bool EksConfigurationHasBeenSet() const { return m_eksConfigurationHasBeenSet; }
-    inline void SetEksConfiguration(const EksConfiguration& value) { m_eksConfigurationHasBeenSet = true; m_eksConfiguration = value; }
-    inline void SetEksConfiguration(EksConfiguration&& value) { m_eksConfigurationHasBeenSet = true; m_eksConfiguration = std::move(value); }
-    inline Source& WithEksConfiguration(const EksConfiguration& value) { SetEksConfiguration(value); return *this;}
-    inline Source& WithEksConfiguration(EksConfiguration&& value) { SetEksConfiguration(std::move(value)); return *this;}
+    template<typename EksConfigurationT = EksConfiguration>
+    void SetEksConfiguration(EksConfigurationT&& value) { m_eksConfigurationHasBeenSet = true; m_eksConfiguration = std::forward<EksConfigurationT>(value); }
+    template<typename EksConfigurationT = EksConfiguration>
+    Source& WithEksConfiguration(EksConfigurationT&& value) { SetEksConfiguration(std::forward<EksConfigurationT>(value)); return *this;}
     ///@}
   private:
 

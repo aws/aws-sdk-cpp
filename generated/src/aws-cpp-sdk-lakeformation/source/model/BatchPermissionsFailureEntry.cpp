@@ -18,14 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-BatchPermissionsFailureEntry::BatchPermissionsFailureEntry() : 
-    m_requestEntryHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 BatchPermissionsFailureEntry::BatchPermissionsFailureEntry(JsonView jsonValue)
-  : BatchPermissionsFailureEntry()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BatchPermissionsFailureEntry& BatchPermissionsFailureEntry::operator =(JsonView 
   if(jsonValue.ValueExists("RequestEntry"))
   {
     m_requestEntry = jsonValue.GetObject("RequestEntry");
-
     m_requestEntryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetObject("Error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

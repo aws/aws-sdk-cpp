@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RecognizeCelebritiesResult::RecognizeCelebritiesResult() : 
-    m_orientationCorrection(OrientationCorrection::NOT_SET)
-{
-}
-
 RecognizeCelebritiesResult::RecognizeCelebritiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : RecognizeCelebritiesResult()
 {
   *this = result;
 }
@@ -38,8 +32,8 @@ RecognizeCelebritiesResult& RecognizeCelebritiesResult::operator =(const Aws::Am
     {
       m_celebrityFaces.push_back(celebrityFacesJsonList[celebrityFacesIndex].AsObject());
     }
+    m_celebrityFacesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnrecognizedFaces"))
   {
     Aws::Utils::Array<JsonView> unrecognizedFacesJsonList = jsonValue.GetArray("UnrecognizedFaces");
@@ -47,20 +41,20 @@ RecognizeCelebritiesResult& RecognizeCelebritiesResult::operator =(const Aws::Am
     {
       m_unrecognizedFaces.push_back(unrecognizedFacesJsonList[unrecognizedFacesIndex].AsObject());
     }
+    m_unrecognizedFacesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrientationCorrection"))
   {
     m_orientationCorrection = OrientationCorrectionMapper::GetOrientationCorrectionForName(jsonValue.GetString("OrientationCorrection"));
-
+    m_orientationCorrectionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

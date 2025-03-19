@@ -18,13 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-CatalogConfigurationDescription::CatalogConfigurationDescription() : 
-    m_glueDataCatalogConfigurationDescriptionHasBeenSet(false)
-{
-}
-
 CatalogConfigurationDescription::CatalogConfigurationDescription(JsonView jsonValue)
-  : CatalogConfigurationDescription()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CatalogConfigurationDescription& CatalogConfigurationDescription::operator =(Jso
   if(jsonValue.ValueExists("GlueDataCatalogConfigurationDescription"))
   {
     m_glueDataCatalogConfigurationDescription = jsonValue.GetObject("GlueDataCatalogConfigurationDescription");
-
     m_glueDataCatalogConfigurationDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

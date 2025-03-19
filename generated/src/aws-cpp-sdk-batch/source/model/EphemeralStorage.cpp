@@ -18,14 +18,7 @@ namespace Batch
 namespace Model
 {
 
-EphemeralStorage::EphemeralStorage() : 
-    m_sizeInGiB(0),
-    m_sizeInGiBHasBeenSet(false)
-{
-}
-
 EphemeralStorage::EphemeralStorage(JsonView jsonValue)
-  : EphemeralStorage()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ EphemeralStorage& EphemeralStorage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sizeInGiB"))
   {
     m_sizeInGiB = jsonValue.GetInteger("sizeInGiB");
-
     m_sizeInGiBHasBeenSet = true;
   }
-
   return *this;
 }
 

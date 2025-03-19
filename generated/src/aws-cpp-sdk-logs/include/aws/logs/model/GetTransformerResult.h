@@ -29,7 +29,7 @@ namespace Model
   class GetTransformerResult
   {
   public:
-    AWS_CLOUDWATCHLOGS_API GetTransformerResult();
+    AWS_CLOUDWATCHLOGS_API GetTransformerResult() = default;
     AWS_CLOUDWATCHLOGS_API GetTransformerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHLOGS_API GetTransformerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>The ARN of the log group that you specified in your request.</p>
      */
-    inline const Aws::String& GetLogGroupIdentifier() const{ return m_logGroupIdentifier; }
-    inline void SetLogGroupIdentifier(const Aws::String& value) { m_logGroupIdentifier = value; }
-    inline void SetLogGroupIdentifier(Aws::String&& value) { m_logGroupIdentifier = std::move(value); }
-    inline void SetLogGroupIdentifier(const char* value) { m_logGroupIdentifier.assign(value); }
-    inline GetTransformerResult& WithLogGroupIdentifier(const Aws::String& value) { SetLogGroupIdentifier(value); return *this;}
-    inline GetTransformerResult& WithLogGroupIdentifier(Aws::String&& value) { SetLogGroupIdentifier(std::move(value)); return *this;}
-    inline GetTransformerResult& WithLogGroupIdentifier(const char* value) { SetLogGroupIdentifier(value); return *this;}
+    inline const Aws::String& GetLogGroupIdentifier() const { return m_logGroupIdentifier; }
+    template<typename LogGroupIdentifierT = Aws::String>
+    void SetLogGroupIdentifier(LogGroupIdentifierT&& value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier = std::forward<LogGroupIdentifierT>(value); }
+    template<typename LogGroupIdentifierT = Aws::String>
+    GetTransformerResult& WithLogGroupIdentifier(LogGroupIdentifierT&& value) { SetLogGroupIdentifier(std::forward<LogGroupIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,8 +50,8 @@ namespace Model
      * <p>The creation time of the transformer, expressed as the number of milliseconds
      * after Jan 1, 1970 00:00:00 UTC.</p>
      */
-    inline long long GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(long long value) { m_creationTime = value; }
+    inline long long GetCreationTime() const { return m_creationTime; }
+    inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
     inline GetTransformerResult& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
     ///@}
 
@@ -62,8 +60,8 @@ namespace Model
      * <p>The date and time when this transformer was most recently modified, expressed
      * as the number of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
      */
-    inline long long GetLastModifiedTime() const{ return m_lastModifiedTime; }
-    inline void SetLastModifiedTime(long long value) { m_lastModifiedTime = value; }
+    inline long long GetLastModifiedTime() const { return m_lastModifiedTime; }
+    inline void SetLastModifiedTime(long long value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
     inline GetTransformerResult& WithLastModifiedTime(long long value) { SetLastModifiedTime(value); return *this;}
     ///@}
 
@@ -71,36 +69,39 @@ namespace Model
     /**
      * <p>This sructure contains the configuration of the requested transformer.</p>
      */
-    inline const Aws::Vector<Processor>& GetTransformerConfig() const{ return m_transformerConfig; }
-    inline void SetTransformerConfig(const Aws::Vector<Processor>& value) { m_transformerConfig = value; }
-    inline void SetTransformerConfig(Aws::Vector<Processor>&& value) { m_transformerConfig = std::move(value); }
-    inline GetTransformerResult& WithTransformerConfig(const Aws::Vector<Processor>& value) { SetTransformerConfig(value); return *this;}
-    inline GetTransformerResult& WithTransformerConfig(Aws::Vector<Processor>&& value) { SetTransformerConfig(std::move(value)); return *this;}
-    inline GetTransformerResult& AddTransformerConfig(const Processor& value) { m_transformerConfig.push_back(value); return *this; }
-    inline GetTransformerResult& AddTransformerConfig(Processor&& value) { m_transformerConfig.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Processor>& GetTransformerConfig() const { return m_transformerConfig; }
+    template<typename TransformerConfigT = Aws::Vector<Processor>>
+    void SetTransformerConfig(TransformerConfigT&& value) { m_transformerConfigHasBeenSet = true; m_transformerConfig = std::forward<TransformerConfigT>(value); }
+    template<typename TransformerConfigT = Aws::Vector<Processor>>
+    GetTransformerResult& WithTransformerConfig(TransformerConfigT&& value) { SetTransformerConfig(std::forward<TransformerConfigT>(value)); return *this;}
+    template<typename TransformerConfigT = Processor>
+    GetTransformerResult& AddTransformerConfig(TransformerConfigT&& value) { m_transformerConfigHasBeenSet = true; m_transformerConfig.emplace_back(std::forward<TransformerConfigT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTransformerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTransformerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTransformerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTransformerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_logGroupIdentifier;
+    bool m_logGroupIdentifierHasBeenSet = false;
 
-    long long m_creationTime;
+    long long m_creationTime{0};
+    bool m_creationTimeHasBeenSet = false;
 
-    long long m_lastModifiedTime;
+    long long m_lastModifiedTime{0};
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::Vector<Processor> m_transformerConfig;
+    bool m_transformerConfigHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

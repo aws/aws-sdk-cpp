@@ -12,12 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelArchivalRequest::CancelArchivalRequest() : 
-    m_gatewayARNHasBeenSet(false),
-    m_tapeARNHasBeenSet(false)
-{
-}
-
 Aws::String CancelArchivalRequest::SerializePayload() const
 {
   JsonValue payload;

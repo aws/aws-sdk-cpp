@@ -35,7 +35,7 @@ namespace Model
   class ReasoningContentBlockDelta
   {
   public:
-    AWS_BEDROCKRUNTIME_API ReasoningContentBlockDelta();
+    AWS_BEDROCKRUNTIME_API ReasoningContentBlockDelta() = default;
     AWS_BEDROCKRUNTIME_API ReasoningContentBlockDelta(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API ReasoningContentBlockDelta& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The reasoning that the model used to return the output.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline ReasoningContentBlockDelta& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline ReasoningContentBlockDelta& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline ReasoningContentBlockDelta& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    ReasoningContentBlockDelta& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,12 @@ namespace Model
      * <p>The content in the reasoning that was encrypted by the model provider for
      * safety reasons. The encryption doesn't affect the quality of responses.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetRedactedContent() const{ return m_redactedContent; }
+    inline const Aws::Utils::ByteBuffer& GetRedactedContent() const { return m_redactedContent; }
     inline bool RedactedContentHasBeenSet() const { return m_redactedContentHasBeenSet; }
-    inline void SetRedactedContent(const Aws::Utils::ByteBuffer& value) { m_redactedContentHasBeenSet = true; m_redactedContent = value; }
-    inline void SetRedactedContent(Aws::Utils::ByteBuffer&& value) { m_redactedContentHasBeenSet = true; m_redactedContent = std::move(value); }
-    inline ReasoningContentBlockDelta& WithRedactedContent(const Aws::Utils::ByteBuffer& value) { SetRedactedContent(value); return *this;}
-    inline ReasoningContentBlockDelta& WithRedactedContent(Aws::Utils::ByteBuffer&& value) { SetRedactedContent(std::move(value)); return *this;}
+    template<typename RedactedContentT = Aws::Utils::ByteBuffer>
+    void SetRedactedContent(RedactedContentT&& value) { m_redactedContentHasBeenSet = true; m_redactedContent = std::forward<RedactedContentT>(value); }
+    template<typename RedactedContentT = Aws::Utils::ByteBuffer>
+    ReasoningContentBlockDelta& WithRedactedContent(RedactedContentT&& value) { SetRedactedContent(std::forward<RedactedContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,21 +72,19 @@ namespace Model
      * you pass a reasoning block back to the API in a multi-turn conversation, include
      * the text and its signature unmodified.</p>
      */
-    inline const Aws::String& GetSignature() const{ return m_signature; }
+    inline const Aws::String& GetSignature() const { return m_signature; }
     inline bool SignatureHasBeenSet() const { return m_signatureHasBeenSet; }
-    inline void SetSignature(const Aws::String& value) { m_signatureHasBeenSet = true; m_signature = value; }
-    inline void SetSignature(Aws::String&& value) { m_signatureHasBeenSet = true; m_signature = std::move(value); }
-    inline void SetSignature(const char* value) { m_signatureHasBeenSet = true; m_signature.assign(value); }
-    inline ReasoningContentBlockDelta& WithSignature(const Aws::String& value) { SetSignature(value); return *this;}
-    inline ReasoningContentBlockDelta& WithSignature(Aws::String&& value) { SetSignature(std::move(value)); return *this;}
-    inline ReasoningContentBlockDelta& WithSignature(const char* value) { SetSignature(value); return *this;}
+    template<typename SignatureT = Aws::String>
+    void SetSignature(SignatureT&& value) { m_signatureHasBeenSet = true; m_signature = std::forward<SignatureT>(value); }
+    template<typename SignatureT = Aws::String>
+    ReasoningContentBlockDelta& WithSignature(SignatureT&& value) { SetSignature(std::forward<SignatureT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_text;
     bool m_textHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_redactedContent;
+    Aws::Utils::ByteBuffer m_redactedContent{};
     bool m_redactedContentHasBeenSet = false;
 
     Aws::String m_signature;

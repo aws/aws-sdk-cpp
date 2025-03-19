@@ -38,7 +38,7 @@ namespace Model
   class CachedMethods
   {
   public:
-    AWS_CLOUDFRONT_API CachedMethods();
+    AWS_CLOUDFRONT_API CachedMethods() = default;
     AWS_CLOUDFRONT_API CachedMethods(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API CachedMethods& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,7 +52,7 @@ namespace Model
      * <code>HEAD</code> requests) and <code>3</code> (for caching responses to
      * <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests).</p>
      */
-    inline int GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const { return m_quantity; }
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
     inline CachedMethods& WithQuantity(int value) { SetQuantity(value); return *this;}
@@ -66,18 +66,17 @@ namespace Model
      * which caching option you choose. For more information, see the preceding
      * section.</p>
      */
-    inline const Aws::Vector<Method>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<Method>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<Method>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<Method>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline CachedMethods& WithItems(const Aws::Vector<Method>& value) { SetItems(value); return *this;}
-    inline CachedMethods& WithItems(Aws::Vector<Method>&& value) { SetItems(std::move(value)); return *this;}
-    inline CachedMethods& AddItems(const Method& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline CachedMethods& AddItems(Method&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    template<typename ItemsT = Aws::Vector<Method>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<Method>>
+    CachedMethods& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    inline CachedMethods& AddItems(Method value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
     ///@}
   private:
 
-    int m_quantity;
+    int m_quantity{0};
     bool m_quantityHasBeenSet = false;
 
     Aws::Vector<Method> m_items;

@@ -18,15 +18,7 @@ namespace ivschat
 namespace Model
 {
 
-MessageReviewHandler::MessageReviewHandler() : 
-    m_uriHasBeenSet(false),
-    m_fallbackResult(FallbackResult::NOT_SET),
-    m_fallbackResultHasBeenSet(false)
-{
-}
-
 MessageReviewHandler::MessageReviewHandler(JsonView jsonValue)
-  : MessageReviewHandler()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MessageReviewHandler& MessageReviewHandler::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("uri"))
   {
     m_uri = jsonValue.GetString("uri");
-
     m_uriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fallbackResult"))
   {
     m_fallbackResult = FallbackResultMapper::GetFallbackResultForName(jsonValue.GetString("fallbackResult"));
-
     m_fallbackResultHasBeenSet = true;
   }
-
   return *this;
 }
 

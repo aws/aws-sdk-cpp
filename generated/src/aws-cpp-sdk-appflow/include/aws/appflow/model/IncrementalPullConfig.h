@@ -32,7 +32,7 @@ namespace Model
   class IncrementalPullConfig
   {
   public:
-    AWS_APPFLOW_API IncrementalPullConfig();
+    AWS_APPFLOW_API IncrementalPullConfig() = default;
     AWS_APPFLOW_API IncrementalPullConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API IncrementalPullConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p> A field that specifies the date time or timestamp field as the criteria to
      * use when importing incremental records from the source. </p>
      */
-    inline const Aws::String& GetDatetimeTypeFieldName() const{ return m_datetimeTypeFieldName; }
+    inline const Aws::String& GetDatetimeTypeFieldName() const { return m_datetimeTypeFieldName; }
     inline bool DatetimeTypeFieldNameHasBeenSet() const { return m_datetimeTypeFieldNameHasBeenSet; }
-    inline void SetDatetimeTypeFieldName(const Aws::String& value) { m_datetimeTypeFieldNameHasBeenSet = true; m_datetimeTypeFieldName = value; }
-    inline void SetDatetimeTypeFieldName(Aws::String&& value) { m_datetimeTypeFieldNameHasBeenSet = true; m_datetimeTypeFieldName = std::move(value); }
-    inline void SetDatetimeTypeFieldName(const char* value) { m_datetimeTypeFieldNameHasBeenSet = true; m_datetimeTypeFieldName.assign(value); }
-    inline IncrementalPullConfig& WithDatetimeTypeFieldName(const Aws::String& value) { SetDatetimeTypeFieldName(value); return *this;}
-    inline IncrementalPullConfig& WithDatetimeTypeFieldName(Aws::String&& value) { SetDatetimeTypeFieldName(std::move(value)); return *this;}
-    inline IncrementalPullConfig& WithDatetimeTypeFieldName(const char* value) { SetDatetimeTypeFieldName(value); return *this;}
+    template<typename DatetimeTypeFieldNameT = Aws::String>
+    void SetDatetimeTypeFieldName(DatetimeTypeFieldNameT&& value) { m_datetimeTypeFieldNameHasBeenSet = true; m_datetimeTypeFieldName = std::forward<DatetimeTypeFieldNameT>(value); }
+    template<typename DatetimeTypeFieldNameT = Aws::String>
+    IncrementalPullConfig& WithDatetimeTypeFieldName(DatetimeTypeFieldNameT&& value) { SetDatetimeTypeFieldName(std::forward<DatetimeTypeFieldNameT>(value)); return *this;}
     ///@}
   private:
 

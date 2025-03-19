@@ -30,7 +30,7 @@ namespace Model
   class ListSMSSandboxPhoneNumbersResult
   {
   public:
-    AWS_SNS_API ListSMSSandboxPhoneNumbersResult();
+    AWS_SNS_API ListSMSSandboxPhoneNumbersResult() = default;
     AWS_SNS_API ListSMSSandboxPhoneNumbersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_SNS_API ListSMSSandboxPhoneNumbersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>A list of the calling account's pending and verified phone numbers.</p>
      */
-    inline const Aws::Vector<SMSSandboxPhoneNumber>& GetPhoneNumbers() const{ return m_phoneNumbers; }
-    inline void SetPhoneNumbers(const Aws::Vector<SMSSandboxPhoneNumber>& value) { m_phoneNumbers = value; }
-    inline void SetPhoneNumbers(Aws::Vector<SMSSandboxPhoneNumber>&& value) { m_phoneNumbers = std::move(value); }
-    inline ListSMSSandboxPhoneNumbersResult& WithPhoneNumbers(const Aws::Vector<SMSSandboxPhoneNumber>& value) { SetPhoneNumbers(value); return *this;}
-    inline ListSMSSandboxPhoneNumbersResult& WithPhoneNumbers(Aws::Vector<SMSSandboxPhoneNumber>&& value) { SetPhoneNumbers(std::move(value)); return *this;}
-    inline ListSMSSandboxPhoneNumbersResult& AddPhoneNumbers(const SMSSandboxPhoneNumber& value) { m_phoneNumbers.push_back(value); return *this; }
-    inline ListSMSSandboxPhoneNumbersResult& AddPhoneNumbers(SMSSandboxPhoneNumber&& value) { m_phoneNumbers.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SMSSandboxPhoneNumber>& GetPhoneNumbers() const { return m_phoneNumbers; }
+    template<typename PhoneNumbersT = Aws::Vector<SMSSandboxPhoneNumber>>
+    void SetPhoneNumbers(PhoneNumbersT&& value) { m_phoneNumbersHasBeenSet = true; m_phoneNumbers = std::forward<PhoneNumbersT>(value); }
+    template<typename PhoneNumbersT = Aws::Vector<SMSSandboxPhoneNumber>>
+    ListSMSSandboxPhoneNumbersResult& WithPhoneNumbers(PhoneNumbersT&& value) { SetPhoneNumbers(std::forward<PhoneNumbersT>(value)); return *this;}
+    template<typename PhoneNumbersT = SMSSandboxPhoneNumber>
+    ListSMSSandboxPhoneNumbersResult& AddPhoneNumbers(PhoneNumbersT&& value) { m_phoneNumbersHasBeenSet = true; m_phoneNumbers.emplace_back(std::forward<PhoneNumbersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,30 +54,31 @@ namespace Model
      * <code>ListSMSSandboxPhoneNumbersInput</code> operation if additional pages of
      * records are available.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListSMSSandboxPhoneNumbersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSMSSandboxPhoneNumbersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSMSSandboxPhoneNumbersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSMSSandboxPhoneNumbersResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ListSMSSandboxPhoneNumbersResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ListSMSSandboxPhoneNumbersResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ListSMSSandboxPhoneNumbersResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SMSSandboxPhoneNumber> m_phoneNumbers;
+    bool m_phoneNumbersHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,7 +32,7 @@ namespace Model
   class SybaseSettings
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API SybaseSettings();
+    AWS_DATABASEMIGRATIONSERVICE_API SybaseSettings() = default;
     AWS_DATABASEMIGRATIONSERVICE_API SybaseSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API SybaseSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,35 +42,31 @@ namespace Model
     /**
      * <p>Database name for the endpoint.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline SybaseSettings& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline SybaseSettings& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline SybaseSettings& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    SybaseSettings& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Endpoint connection password.</p>
      */
-    inline const Aws::String& GetPassword() const{ return m_password; }
+    inline const Aws::String& GetPassword() const { return m_password; }
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
-    inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
-    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
-    inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
-    inline SybaseSettings& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
-    inline SybaseSettings& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
-    inline SybaseSettings& WithPassword(const char* value) { SetPassword(value); return *this;}
+    template<typename PasswordT = Aws::String>
+    void SetPassword(PasswordT&& value) { m_passwordHasBeenSet = true; m_password = std::forward<PasswordT>(value); }
+    template<typename PasswordT = Aws::String>
+    SybaseSettings& WithPassword(PasswordT&& value) { SetPassword(std::forward<PasswordT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Endpoint TCP port. The default is 5000.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline SybaseSettings& WithPort(int value) { SetPort(value); return *this;}
@@ -80,28 +76,24 @@ namespace Model
     /**
      * <p>Fully qualified domain name of the endpoint.</p>
      */
-    inline const Aws::String& GetServerName() const{ return m_serverName; }
+    inline const Aws::String& GetServerName() const { return m_serverName; }
     inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
-    inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
-    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
-    inline void SetServerName(const char* value) { m_serverNameHasBeenSet = true; m_serverName.assign(value); }
-    inline SybaseSettings& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
-    inline SybaseSettings& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
-    inline SybaseSettings& WithServerName(const char* value) { SetServerName(value); return *this;}
+    template<typename ServerNameT = Aws::String>
+    void SetServerName(ServerNameT&& value) { m_serverNameHasBeenSet = true; m_serverName = std::forward<ServerNameT>(value); }
+    template<typename ServerNameT = Aws::String>
+    SybaseSettings& WithServerName(ServerNameT&& value) { SetServerName(std::forward<ServerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Endpoint connection user name.</p>
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
+    inline const Aws::String& GetUsername() const { return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-    inline SybaseSettings& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline SybaseSettings& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline SybaseSettings& WithUsername(const char* value) { SetUsername(value); return *this;}
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    SybaseSettings& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,14 +115,12 @@ namespace Model
      * secrets to access Database Migration Service resources</a> in the <i>Database
      * Migration Service User Guide</i>.</p> 
      */
-    inline const Aws::String& GetSecretsManagerAccessRoleArn() const{ return m_secretsManagerAccessRoleArn; }
+    inline const Aws::String& GetSecretsManagerAccessRoleArn() const { return m_secretsManagerAccessRoleArn; }
     inline bool SecretsManagerAccessRoleArnHasBeenSet() const { return m_secretsManagerAccessRoleArnHasBeenSet; }
-    inline void SetSecretsManagerAccessRoleArn(const Aws::String& value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn = value; }
-    inline void SetSecretsManagerAccessRoleArn(Aws::String&& value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn = std::move(value); }
-    inline void SetSecretsManagerAccessRoleArn(const char* value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn.assign(value); }
-    inline SybaseSettings& WithSecretsManagerAccessRoleArn(const Aws::String& value) { SetSecretsManagerAccessRoleArn(value); return *this;}
-    inline SybaseSettings& WithSecretsManagerAccessRoleArn(Aws::String&& value) { SetSecretsManagerAccessRoleArn(std::move(value)); return *this;}
-    inline SybaseSettings& WithSecretsManagerAccessRoleArn(const char* value) { SetSecretsManagerAccessRoleArn(value); return *this;}
+    template<typename SecretsManagerAccessRoleArnT = Aws::String>
+    void SetSecretsManagerAccessRoleArn(SecretsManagerAccessRoleArnT&& value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn = std::forward<SecretsManagerAccessRoleArnT>(value); }
+    template<typename SecretsManagerAccessRoleArnT = Aws::String>
+    SybaseSettings& WithSecretsManagerAccessRoleArn(SecretsManagerAccessRoleArnT&& value) { SetSecretsManagerAccessRoleArn(std::forward<SecretsManagerAccessRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,14 +129,12 @@ namespace Model
      * <code>SecretsManagerSecret</code> that contains the SAP SAE endpoint connection
      * details.</p>
      */
-    inline const Aws::String& GetSecretsManagerSecretId() const{ return m_secretsManagerSecretId; }
+    inline const Aws::String& GetSecretsManagerSecretId() const { return m_secretsManagerSecretId; }
     inline bool SecretsManagerSecretIdHasBeenSet() const { return m_secretsManagerSecretIdHasBeenSet; }
-    inline void SetSecretsManagerSecretId(const Aws::String& value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId = value; }
-    inline void SetSecretsManagerSecretId(Aws::String&& value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId = std::move(value); }
-    inline void SetSecretsManagerSecretId(const char* value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId.assign(value); }
-    inline SybaseSettings& WithSecretsManagerSecretId(const Aws::String& value) { SetSecretsManagerSecretId(value); return *this;}
-    inline SybaseSettings& WithSecretsManagerSecretId(Aws::String&& value) { SetSecretsManagerSecretId(std::move(value)); return *this;}
-    inline SybaseSettings& WithSecretsManagerSecretId(const char* value) { SetSecretsManagerSecretId(value); return *this;}
+    template<typename SecretsManagerSecretIdT = Aws::String>
+    void SetSecretsManagerSecretId(SecretsManagerSecretIdT&& value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId = std::forward<SecretsManagerSecretIdT>(value); }
+    template<typename SecretsManagerSecretIdT = Aws::String>
+    SybaseSettings& WithSecretsManagerSecretId(SecretsManagerSecretIdT&& value) { SetSecretsManagerSecretId(std::forward<SecretsManagerSecretIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -156,7 +144,7 @@ namespace Model
     Aws::String m_password;
     bool m_passwordHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
     Aws::String m_serverName;

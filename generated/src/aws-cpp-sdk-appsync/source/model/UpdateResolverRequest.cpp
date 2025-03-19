@@ -12,27 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateResolverRequest::UpdateResolverRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_fieldNameHasBeenSet(false),
-    m_dataSourceNameHasBeenSet(false),
-    m_requestMappingTemplateHasBeenSet(false),
-    m_responseMappingTemplateHasBeenSet(false),
-    m_kind(ResolverKind::NOT_SET),
-    m_kindHasBeenSet(false),
-    m_pipelineConfigHasBeenSet(false),
-    m_syncConfigHasBeenSet(false),
-    m_cachingConfigHasBeenSet(false),
-    m_maxBatchSize(0),
-    m_maxBatchSizeHasBeenSet(false),
-    m_runtimeHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_metricsConfig(ResolverLevelMetricsConfig::NOT_SET),
-    m_metricsConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateResolverRequest::SerializePayload() const
 {
   JsonValue payload;

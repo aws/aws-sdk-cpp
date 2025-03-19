@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetOutpostResolverResult::GetOutpostResolverResult()
-{
-}
-
 GetOutpostResolverResult::GetOutpostResolverResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetOutpostResolverResult& GetOutpostResolverResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("OutpostResolver"))
   {
     m_outpostResolver = jsonValue.GetObject("OutpostResolver");
-
+    m_outpostResolverHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -37,7 +37,7 @@ namespace Model
   class KxCluster
   {
   public:
-    AWS_FINSPACE_API KxCluster();
+    AWS_FINSPACE_API KxCluster() = default;
     AWS_FINSPACE_API KxCluster(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API KxCluster& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,40 +54,34 @@ namespace Model
      * </li> <li> <p>DELETED – The cluster has been deleted.</p> </li> <li>
      * <p>DELETE_FAILED – The cluster failed to delete.</p> </li> </ul>
      */
-    inline const KxClusterStatus& GetStatus() const{ return m_status; }
+    inline KxClusterStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const KxClusterStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(KxClusterStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline KxCluster& WithStatus(const KxClusterStatus& value) { SetStatus(value); return *this;}
-    inline KxCluster& WithStatus(KxClusterStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(KxClusterStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline KxCluster& WithStatus(KxClusterStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error message when a failed state occurs. </p>
      */
-    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
-    inline KxCluster& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-    inline KxCluster& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-    inline KxCluster& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    KxCluster& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique name for the cluster.</p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline KxCluster& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline KxCluster& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline KxCluster& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    KxCluster& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,54 +110,48 @@ namespace Model
      * is readable by any RDB environment. It supports only single-node that is only
      * one kdb process.</p> </li> </ul>
      */
-    inline const KxClusterType& GetClusterType() const{ return m_clusterType; }
+    inline KxClusterType GetClusterType() const { return m_clusterType; }
     inline bool ClusterTypeHasBeenSet() const { return m_clusterTypeHasBeenSet; }
-    inline void SetClusterType(const KxClusterType& value) { m_clusterTypeHasBeenSet = true; m_clusterType = value; }
-    inline void SetClusterType(KxClusterType&& value) { m_clusterTypeHasBeenSet = true; m_clusterType = std::move(value); }
-    inline KxCluster& WithClusterType(const KxClusterType& value) { SetClusterType(value); return *this;}
-    inline KxCluster& WithClusterType(KxClusterType&& value) { SetClusterType(std::move(value)); return *this;}
+    inline void SetClusterType(KxClusterType value) { m_clusterTypeHasBeenSet = true; m_clusterType = value; }
+    inline KxCluster& WithClusterType(KxClusterType value) { SetClusterType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the cluster.</p>
      */
-    inline const Aws::String& GetClusterDescription() const{ return m_clusterDescription; }
+    inline const Aws::String& GetClusterDescription() const { return m_clusterDescription; }
     inline bool ClusterDescriptionHasBeenSet() const { return m_clusterDescriptionHasBeenSet; }
-    inline void SetClusterDescription(const Aws::String& value) { m_clusterDescriptionHasBeenSet = true; m_clusterDescription = value; }
-    inline void SetClusterDescription(Aws::String&& value) { m_clusterDescriptionHasBeenSet = true; m_clusterDescription = std::move(value); }
-    inline void SetClusterDescription(const char* value) { m_clusterDescriptionHasBeenSet = true; m_clusterDescription.assign(value); }
-    inline KxCluster& WithClusterDescription(const Aws::String& value) { SetClusterDescription(value); return *this;}
-    inline KxCluster& WithClusterDescription(Aws::String&& value) { SetClusterDescription(std::move(value)); return *this;}
-    inline KxCluster& WithClusterDescription(const char* value) { SetClusterDescription(value); return *this;}
+    template<typename ClusterDescriptionT = Aws::String>
+    void SetClusterDescription(ClusterDescriptionT&& value) { m_clusterDescriptionHasBeenSet = true; m_clusterDescription = std::forward<ClusterDescriptionT>(value); }
+    template<typename ClusterDescriptionT = Aws::String>
+    KxCluster& WithClusterDescription(ClusterDescriptionT&& value) { SetClusterDescription(std::forward<ClusterDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A version of the FinSpace managed kdb to run.</p>
      */
-    inline const Aws::String& GetReleaseLabel() const{ return m_releaseLabel; }
+    inline const Aws::String& GetReleaseLabel() const { return m_releaseLabel; }
     inline bool ReleaseLabelHasBeenSet() const { return m_releaseLabelHasBeenSet; }
-    inline void SetReleaseLabel(const Aws::String& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = value; }
-    inline void SetReleaseLabel(Aws::String&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = std::move(value); }
-    inline void SetReleaseLabel(const char* value) { m_releaseLabelHasBeenSet = true; m_releaseLabel.assign(value); }
-    inline KxCluster& WithReleaseLabel(const Aws::String& value) { SetReleaseLabel(value); return *this;}
-    inline KxCluster& WithReleaseLabel(Aws::String&& value) { SetReleaseLabel(std::move(value)); return *this;}
-    inline KxCluster& WithReleaseLabel(const char* value) { SetReleaseLabel(value); return *this;}
+    template<typename ReleaseLabelT = Aws::String>
+    void SetReleaseLabel(ReleaseLabelT&& value) { m_releaseLabelHasBeenSet = true; m_releaseLabel = std::forward<ReleaseLabelT>(value); }
+    template<typename ReleaseLabelT = Aws::String>
+    KxCluster& WithReleaseLabel(ReleaseLabelT&& value) { SetReleaseLabel(std::forward<ReleaseLabelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A list of volumes attached to the cluster. </p>
      */
-    inline const Aws::Vector<Volume>& GetVolumes() const{ return m_volumes; }
+    inline const Aws::Vector<Volume>& GetVolumes() const { return m_volumes; }
     inline bool VolumesHasBeenSet() const { return m_volumesHasBeenSet; }
-    inline void SetVolumes(const Aws::Vector<Volume>& value) { m_volumesHasBeenSet = true; m_volumes = value; }
-    inline void SetVolumes(Aws::Vector<Volume>&& value) { m_volumesHasBeenSet = true; m_volumes = std::move(value); }
-    inline KxCluster& WithVolumes(const Aws::Vector<Volume>& value) { SetVolumes(value); return *this;}
-    inline KxCluster& WithVolumes(Aws::Vector<Volume>&& value) { SetVolumes(std::move(value)); return *this;}
-    inline KxCluster& AddVolumes(const Volume& value) { m_volumesHasBeenSet = true; m_volumes.push_back(value); return *this; }
-    inline KxCluster& AddVolumes(Volume&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(std::move(value)); return *this; }
+    template<typename VolumesT = Aws::Vector<Volume>>
+    void SetVolumes(VolumesT&& value) { m_volumesHasBeenSet = true; m_volumes = std::forward<VolumesT>(value); }
+    template<typename VolumesT = Aws::Vector<Volume>>
+    KxCluster& WithVolumes(VolumesT&& value) { SetVolumes(std::forward<VolumesT>(value)); return *this;}
+    template<typename VolumesT = Volume>
+    KxCluster& AddVolumes(VolumesT&& value) { m_volumesHasBeenSet = true; m_volumes.emplace_back(std::forward<VolumesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -173,14 +161,12 @@ namespace Model
      * be loaded on the cluster. It must include the file name itself. For example,
      * <code>somedir/init.q</code>.</p>
      */
-    inline const Aws::String& GetInitializationScript() const{ return m_initializationScript; }
+    inline const Aws::String& GetInitializationScript() const { return m_initializationScript; }
     inline bool InitializationScriptHasBeenSet() const { return m_initializationScriptHasBeenSet; }
-    inline void SetInitializationScript(const Aws::String& value) { m_initializationScriptHasBeenSet = true; m_initializationScript = value; }
-    inline void SetInitializationScript(Aws::String&& value) { m_initializationScriptHasBeenSet = true; m_initializationScript = std::move(value); }
-    inline void SetInitializationScript(const char* value) { m_initializationScriptHasBeenSet = true; m_initializationScript.assign(value); }
-    inline KxCluster& WithInitializationScript(const Aws::String& value) { SetInitializationScript(value); return *this;}
-    inline KxCluster& WithInitializationScript(Aws::String&& value) { SetInitializationScript(std::move(value)); return *this;}
-    inline KxCluster& WithInitializationScript(const char* value) { SetInitializationScript(value); return *this;}
+    template<typename InitializationScriptT = Aws::String>
+    void SetInitializationScript(InitializationScriptT&& value) { m_initializationScriptHasBeenSet = true; m_initializationScript = std::forward<InitializationScriptT>(value); }
+    template<typename InitializationScriptT = Aws::String>
+    KxCluster& WithInitializationScript(InitializationScriptT&& value) { SetInitializationScript(std::forward<InitializationScriptT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -189,14 +175,12 @@ namespace Model
      * These permissions are assumed when a cluster attempts to access another cluster.
      * </p>
      */
-    inline const Aws::String& GetExecutionRole() const{ return m_executionRole; }
+    inline const Aws::String& GetExecutionRole() const { return m_executionRole; }
     inline bool ExecutionRoleHasBeenSet() const { return m_executionRoleHasBeenSet; }
-    inline void SetExecutionRole(const Aws::String& value) { m_executionRoleHasBeenSet = true; m_executionRole = value; }
-    inline void SetExecutionRole(Aws::String&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::move(value); }
-    inline void SetExecutionRole(const char* value) { m_executionRoleHasBeenSet = true; m_executionRole.assign(value); }
-    inline KxCluster& WithExecutionRole(const Aws::String& value) { SetExecutionRole(value); return *this;}
-    inline KxCluster& WithExecutionRole(Aws::String&& value) { SetExecutionRole(std::move(value)); return *this;}
-    inline KxCluster& WithExecutionRole(const char* value) { SetExecutionRole(value); return *this;}
+    template<typename ExecutionRoleT = Aws::String>
+    void SetExecutionRole(ExecutionRoleT&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::forward<ExecutionRoleT>(value); }
+    template<typename ExecutionRoleT = Aws::String>
+    KxCluster& WithExecutionRole(ExecutionRoleT&& value) { SetExecutionRole(std::forward<ExecutionRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -206,26 +190,22 @@ namespace Model
      * per cluster.</p> </li> <li> <p> <code>MULTI</code> – Assigns all the
      * availability zones per cluster.</p> </li> </ul>
      */
-    inline const KxAzMode& GetAzMode() const{ return m_azMode; }
+    inline KxAzMode GetAzMode() const { return m_azMode; }
     inline bool AzModeHasBeenSet() const { return m_azModeHasBeenSet; }
-    inline void SetAzMode(const KxAzMode& value) { m_azModeHasBeenSet = true; m_azMode = value; }
-    inline void SetAzMode(KxAzMode&& value) { m_azModeHasBeenSet = true; m_azMode = std::move(value); }
-    inline KxCluster& WithAzMode(const KxAzMode& value) { SetAzMode(value); return *this;}
-    inline KxCluster& WithAzMode(KxAzMode&& value) { SetAzMode(std::move(value)); return *this;}
+    inline void SetAzMode(KxAzMode value) { m_azModeHasBeenSet = true; m_azMode = value; }
+    inline KxCluster& WithAzMode(KxAzMode value) { SetAzMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The availability zone identifiers for the requested regions. </p>
      */
-    inline const Aws::String& GetAvailabilityZoneId() const{ return m_availabilityZoneId; }
+    inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
     inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
-    inline void SetAvailabilityZoneId(const Aws::String& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = value; }
-    inline void SetAvailabilityZoneId(Aws::String&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::move(value); }
-    inline void SetAvailabilityZoneId(const char* value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId.assign(value); }
-    inline KxCluster& WithAvailabilityZoneId(const Aws::String& value) { SetAvailabilityZoneId(value); return *this;}
-    inline KxCluster& WithAvailabilityZoneId(Aws::String&& value) { SetAvailabilityZoneId(std::move(value)); return *this;}
-    inline KxCluster& WithAvailabilityZoneId(const char* value) { SetAvailabilityZoneId(value); return *this;}
+    template<typename AvailabilityZoneIdT = Aws::String>
+    void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value); }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    KxCluster& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) { SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -234,12 +214,12 @@ namespace Model
      * time in milliseconds. For example, the value for Monday, November 1, 2021
      * 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTimestamp() const{ return m_lastModifiedTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTimestamp() const { return m_lastModifiedTimestamp; }
     inline bool LastModifiedTimestampHasBeenSet() const { return m_lastModifiedTimestampHasBeenSet; }
-    inline void SetLastModifiedTimestamp(const Aws::Utils::DateTime& value) { m_lastModifiedTimestampHasBeenSet = true; m_lastModifiedTimestamp = value; }
-    inline void SetLastModifiedTimestamp(Aws::Utils::DateTime&& value) { m_lastModifiedTimestampHasBeenSet = true; m_lastModifiedTimestamp = std::move(value); }
-    inline KxCluster& WithLastModifiedTimestamp(const Aws::Utils::DateTime& value) { SetLastModifiedTimestamp(value); return *this;}
-    inline KxCluster& WithLastModifiedTimestamp(Aws::Utils::DateTime&& value) { SetLastModifiedTimestamp(std::move(value)); return *this;}
+    template<typename LastModifiedTimestampT = Aws::Utils::DateTime>
+    void SetLastModifiedTimestamp(LastModifiedTimestampT&& value) { m_lastModifiedTimestampHasBeenSet = true; m_lastModifiedTimestamp = std::forward<LastModifiedTimestampT>(value); }
+    template<typename LastModifiedTimestampT = Aws::Utils::DateTime>
+    KxCluster& WithLastModifiedTimestamp(LastModifiedTimestampT&& value) { SetLastModifiedTimestamp(std::forward<LastModifiedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -248,16 +228,16 @@ namespace Model
      * determined as epoch time in milliseconds. For example, the value for Monday,
      * November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
     inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::move(value); }
-    inline KxCluster& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline KxCluster& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    KxCluster& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
   private:
 
-    KxClusterStatus m_status;
+    KxClusterStatus m_status{KxClusterStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
@@ -266,7 +246,7 @@ namespace Model
     Aws::String m_clusterName;
     bool m_clusterNameHasBeenSet = false;
 
-    KxClusterType m_clusterType;
+    KxClusterType m_clusterType{KxClusterType::NOT_SET};
     bool m_clusterTypeHasBeenSet = false;
 
     Aws::String m_clusterDescription;
@@ -284,16 +264,16 @@ namespace Model
     Aws::String m_executionRole;
     bool m_executionRoleHasBeenSet = false;
 
-    KxAzMode m_azMode;
+    KxAzMode m_azMode{KxAzMode::NOT_SET};
     bool m_azModeHasBeenSet = false;
 
     Aws::String m_availabilityZoneId;
     bool m_availabilityZoneIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTimestamp;
+    Aws::Utils::DateTime m_lastModifiedTimestamp{};
     bool m_lastModifiedTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
     bool m_createdTimestampHasBeenSet = false;
   };
 

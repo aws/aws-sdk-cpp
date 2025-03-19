@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeVpcClassicLinkDnsSupportResponse::DescribeVpcClassicLinkDnsSupportResponse()
-{
-}
-
 DescribeVpcClassicLinkDnsSupportResponse::DescribeVpcClassicLinkDnsSupportResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeVpcClassicLinkDnsSupportResponse& DescribeVpcClassicLinkDnsSupportRespon
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode vpcsNode = resultNode.FirstChild("vpcs");
     if(!vpcsNode.IsNull())
     {
       XmlNode vpcsMember = vpcsNode.FirstChild("item");
+      m_vpcsHasBeenSet = !vpcsMember.IsNull();
       while(!vpcsMember.IsNull())
       {
         m_vpcs.push_back(vpcsMember);
         vpcsMember = vpcsMember.NextNode("item");
       }
 
+      m_vpcsHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeVpcClassicLinkDnsSupportResponse& DescribeVpcClassicLinkDnsSupportRespon
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeVpcClassicLinkDnsSupportResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -33,7 +33,7 @@ namespace Model
   class ContractIdentifier
   {
   public:
-    AWS_MANAGEDBLOCKCHAINQUERY_API ContractIdentifier();
+    AWS_MANAGEDBLOCKCHAINQUERY_API ContractIdentifier() = default;
     AWS_MANAGEDBLOCKCHAINQUERY_API ContractIdentifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAINQUERY_API ContractIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAINQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,26 @@ namespace Model
     /**
      * <p>The blockchain network of the contract.</p>
      */
-    inline const QueryNetwork& GetNetwork() const{ return m_network; }
+    inline QueryNetwork GetNetwork() const { return m_network; }
     inline bool NetworkHasBeenSet() const { return m_networkHasBeenSet; }
-    inline void SetNetwork(const QueryNetwork& value) { m_networkHasBeenSet = true; m_network = value; }
-    inline void SetNetwork(QueryNetwork&& value) { m_networkHasBeenSet = true; m_network = std::move(value); }
-    inline ContractIdentifier& WithNetwork(const QueryNetwork& value) { SetNetwork(value); return *this;}
-    inline ContractIdentifier& WithNetwork(QueryNetwork&& value) { SetNetwork(std::move(value)); return *this;}
+    inline void SetNetwork(QueryNetwork value) { m_networkHasBeenSet = true; m_network = value; }
+    inline ContractIdentifier& WithNetwork(QueryNetwork value) { SetNetwork(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Container for the blockchain address about a contract.</p>
      */
-    inline const Aws::String& GetContractAddress() const{ return m_contractAddress; }
+    inline const Aws::String& GetContractAddress() const { return m_contractAddress; }
     inline bool ContractAddressHasBeenSet() const { return m_contractAddressHasBeenSet; }
-    inline void SetContractAddress(const Aws::String& value) { m_contractAddressHasBeenSet = true; m_contractAddress = value; }
-    inline void SetContractAddress(Aws::String&& value) { m_contractAddressHasBeenSet = true; m_contractAddress = std::move(value); }
-    inline void SetContractAddress(const char* value) { m_contractAddressHasBeenSet = true; m_contractAddress.assign(value); }
-    inline ContractIdentifier& WithContractAddress(const Aws::String& value) { SetContractAddress(value); return *this;}
-    inline ContractIdentifier& WithContractAddress(Aws::String&& value) { SetContractAddress(std::move(value)); return *this;}
-    inline ContractIdentifier& WithContractAddress(const char* value) { SetContractAddress(value); return *this;}
+    template<typename ContractAddressT = Aws::String>
+    void SetContractAddress(ContractAddressT&& value) { m_contractAddressHasBeenSet = true; m_contractAddress = std::forward<ContractAddressT>(value); }
+    template<typename ContractAddressT = Aws::String>
+    ContractIdentifier& WithContractAddress(ContractAddressT&& value) { SetContractAddress(std::forward<ContractAddressT>(value)); return *this;}
     ///@}
   private:
 
-    QueryNetwork m_network;
+    QueryNetwork m_network{QueryNetwork::NOT_SET};
     bool m_networkHasBeenSet = false;
 
     Aws::String m_contractAddress;

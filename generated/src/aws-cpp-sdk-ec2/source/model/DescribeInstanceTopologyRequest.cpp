@@ -10,18 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeInstanceTopologyRequest::DescribeInstanceTopologyRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false),
-    m_groupNamesHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String DescribeInstanceTopologyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

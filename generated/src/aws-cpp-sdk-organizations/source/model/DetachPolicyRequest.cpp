@@ -12,12 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetachPolicyRequest::DetachPolicyRequest() : 
-    m_policyIdHasBeenSet(false),
-    m_targetIdHasBeenSet(false)
-{
-}
-
 Aws::String DetachPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -31,7 +31,7 @@ namespace Model
   class RegisterImageRequest : public EC2Request
   {
   public:
-    AWS_EC2_API RegisterImageRequest();
+    AWS_EC2_API RegisterImageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -54,14 +54,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#canned-acl">Canned
      * ACLs</a> in the <i>Amazon S3 Service Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetImageLocation() const{ return m_imageLocation; }
+    inline const Aws::String& GetImageLocation() const { return m_imageLocation; }
     inline bool ImageLocationHasBeenSet() const { return m_imageLocationHasBeenSet; }
-    inline void SetImageLocation(const Aws::String& value) { m_imageLocationHasBeenSet = true; m_imageLocation = value; }
-    inline void SetImageLocation(Aws::String&& value) { m_imageLocationHasBeenSet = true; m_imageLocation = std::move(value); }
-    inline void SetImageLocation(const char* value) { m_imageLocationHasBeenSet = true; m_imageLocation.assign(value); }
-    inline RegisterImageRequest& WithImageLocation(const Aws::String& value) { SetImageLocation(value); return *this;}
-    inline RegisterImageRequest& WithImageLocation(Aws::String&& value) { SetImageLocation(std::move(value)); return *this;}
-    inline RegisterImageRequest& WithImageLocation(const char* value) { SetImageLocation(value); return *this;}
+    template<typename ImageLocationT = Aws::String>
+    void SetImageLocation(ImageLocationT&& value) { m_imageLocationHasBeenSet = true; m_imageLocation = std::forward<ImageLocationT>(value); }
+    template<typename ImageLocationT = Aws::String>
+    RegisterImageRequest& WithImageLocation(ImageLocationT&& value) { SetImageLocation(std::forward<ImageLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,15 +74,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/marketplace/latest/userguide/ami-products.html">AMI-based
      * products</a> in the <i>Amazon Web Services Marketplace Seller Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetBillingProducts() const{ return m_billingProducts; }
+    inline const Aws::Vector<Aws::String>& GetBillingProducts() const { return m_billingProducts; }
     inline bool BillingProductsHasBeenSet() const { return m_billingProductsHasBeenSet; }
-    inline void SetBillingProducts(const Aws::Vector<Aws::String>& value) { m_billingProductsHasBeenSet = true; m_billingProducts = value; }
-    inline void SetBillingProducts(Aws::Vector<Aws::String>&& value) { m_billingProductsHasBeenSet = true; m_billingProducts = std::move(value); }
-    inline RegisterImageRequest& WithBillingProducts(const Aws::Vector<Aws::String>& value) { SetBillingProducts(value); return *this;}
-    inline RegisterImageRequest& WithBillingProducts(Aws::Vector<Aws::String>&& value) { SetBillingProducts(std::move(value)); return *this;}
-    inline RegisterImageRequest& AddBillingProducts(const Aws::String& value) { m_billingProductsHasBeenSet = true; m_billingProducts.push_back(value); return *this; }
-    inline RegisterImageRequest& AddBillingProducts(Aws::String&& value) { m_billingProductsHasBeenSet = true; m_billingProducts.push_back(std::move(value)); return *this; }
-    inline RegisterImageRequest& AddBillingProducts(const char* value) { m_billingProductsHasBeenSet = true; m_billingProducts.push_back(value); return *this; }
+    template<typename BillingProductsT = Aws::Vector<Aws::String>>
+    void SetBillingProducts(BillingProductsT&& value) { m_billingProductsHasBeenSet = true; m_billingProducts = std::forward<BillingProductsT>(value); }
+    template<typename BillingProductsT = Aws::Vector<Aws::String>>
+    RegisterImageRequest& WithBillingProducts(BillingProductsT&& value) { SetBillingProducts(std::forward<BillingProductsT>(value)); return *this;}
+    template<typename BillingProductsT = Aws::String>
+    RegisterImageRequest& AddBillingProducts(BillingProductsT&& value) { m_billingProductsHasBeenSet = true; m_billingProducts.emplace_back(std::forward<BillingProductsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -96,12 +93,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot
      * modes</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
-    inline const BootModeValues& GetBootMode() const{ return m_bootMode; }
+    inline BootModeValues GetBootMode() const { return m_bootMode; }
     inline bool BootModeHasBeenSet() const { return m_bootModeHasBeenSet; }
-    inline void SetBootMode(const BootModeValues& value) { m_bootModeHasBeenSet = true; m_bootMode = value; }
-    inline void SetBootMode(BootModeValues&& value) { m_bootModeHasBeenSet = true; m_bootMode = std::move(value); }
-    inline RegisterImageRequest& WithBootMode(const BootModeValues& value) { SetBootMode(value); return *this;}
-    inline RegisterImageRequest& WithBootMode(BootModeValues&& value) { SetBootMode(std::move(value)); return *this;}
+    inline void SetBootMode(BootModeValues value) { m_bootModeHasBeenSet = true; m_bootMode = value; }
+    inline RegisterImageRequest& WithBootMode(BootModeValues value) { SetBootMode(value); return *this;}
     ///@}
 
     ///@{
@@ -111,12 +106,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitrotpm.html">NitroTPM</a>
      * in the <i>Amazon EC2 User Guide</i>.</p>
      */
-    inline const TpmSupportValues& GetTpmSupport() const{ return m_tpmSupport; }
+    inline TpmSupportValues GetTpmSupport() const { return m_tpmSupport; }
     inline bool TpmSupportHasBeenSet() const { return m_tpmSupportHasBeenSet; }
-    inline void SetTpmSupport(const TpmSupportValues& value) { m_tpmSupportHasBeenSet = true; m_tpmSupport = value; }
-    inline void SetTpmSupport(TpmSupportValues&& value) { m_tpmSupportHasBeenSet = true; m_tpmSupport = std::move(value); }
-    inline RegisterImageRequest& WithTpmSupport(const TpmSupportValues& value) { SetTpmSupport(value); return *this;}
-    inline RegisterImageRequest& WithTpmSupport(TpmSupportValues&& value) { SetTpmSupport(std::move(value)); return *this;}
+    inline void SetTpmSupport(TpmSupportValues value) { m_tpmSupportHasBeenSet = true; m_tpmSupport = value; }
+    inline RegisterImageRequest& WithTpmSupport(TpmSupportValues value) { SetTpmSupport(value); return *this;}
     ///@}
 
     ///@{
@@ -130,14 +123,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/uefi-secure-boot.html">UEFI
      * Secure Boot</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
-    inline const Aws::String& GetUefiData() const{ return m_uefiData; }
+    inline const Aws::String& GetUefiData() const { return m_uefiData; }
     inline bool UefiDataHasBeenSet() const { return m_uefiDataHasBeenSet; }
-    inline void SetUefiData(const Aws::String& value) { m_uefiDataHasBeenSet = true; m_uefiData = value; }
-    inline void SetUefiData(Aws::String&& value) { m_uefiDataHasBeenSet = true; m_uefiData = std::move(value); }
-    inline void SetUefiData(const char* value) { m_uefiDataHasBeenSet = true; m_uefiData.assign(value); }
-    inline RegisterImageRequest& WithUefiData(const Aws::String& value) { SetUefiData(value); return *this;}
-    inline RegisterImageRequest& WithUefiData(Aws::String&& value) { SetUefiData(std::move(value)); return *this;}
-    inline RegisterImageRequest& WithUefiData(const char* value) { SetUefiData(value); return *this;}
+    template<typename UefiDataT = Aws::String>
+    void SetUefiData(UefiDataT&& value) { m_uefiDataHasBeenSet = true; m_uefiData = std::forward<UefiDataT>(value); }
+    template<typename UefiDataT = Aws::String>
+    RegisterImageRequest& WithUefiData(UefiDataT&& value) { SetUefiData(std::forward<UefiDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,12 +144,10 @@ namespace Model
      * value to <code>v2.0</code>, make sure that your AMI software can support
      * IMDSv2.</p> 
      */
-    inline const ImdsSupportValues& GetImdsSupport() const{ return m_imdsSupport; }
+    inline ImdsSupportValues GetImdsSupport() const { return m_imdsSupport; }
     inline bool ImdsSupportHasBeenSet() const { return m_imdsSupportHasBeenSet; }
-    inline void SetImdsSupport(const ImdsSupportValues& value) { m_imdsSupportHasBeenSet = true; m_imdsSupport = value; }
-    inline void SetImdsSupport(ImdsSupportValues&& value) { m_imdsSupportHasBeenSet = true; m_imdsSupport = std::move(value); }
-    inline RegisterImageRequest& WithImdsSupport(const ImdsSupportValues& value) { SetImdsSupport(value); return *this;}
-    inline RegisterImageRequest& WithImdsSupport(ImdsSupportValues&& value) { SetImdsSupport(std::move(value)); return *this;}
+    inline void SetImdsSupport(ImdsSupportValues value) { m_imdsSupportHasBeenSet = true; m_imdsSupport = value; }
+    inline RegisterImageRequest& WithImdsSupport(ImdsSupportValues value) { SetImdsSupport(value); return *this;}
     ///@}
 
     ///@{
@@ -169,14 +158,14 @@ namespace Model
      * after it has been registered, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline RegisterImageRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline RegisterImageRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline RegisterImageRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline RegisterImageRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    void SetTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::forward<TagSpecificationsT>(value); }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    RegisterImageRequest& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
+    template<typename TagSpecificationsT = TagSpecification>
+    RegisterImageRequest& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -186,7 +175,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline RegisterImageRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -198,28 +187,24 @@ namespace Model
      * parentheses (()), square brackets ([]), spaces ( ), periods (.), slashes (/),
      * dashes (-), single quotes ('), at-signs (@), or underscores(_)</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline RegisterImageRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline RegisterImageRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline RegisterImageRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    RegisterImageRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description for your AMI.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline RegisterImageRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline RegisterImageRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline RegisterImageRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    RegisterImageRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -228,40 +213,34 @@ namespace Model
      * <code>i386</code>. For instance store-backed AMIs, the architecture specified in
      * the manifest file.</p>
      */
-    inline const ArchitectureValues& GetArchitecture() const{ return m_architecture; }
+    inline ArchitectureValues GetArchitecture() const { return m_architecture; }
     inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
-    inline void SetArchitecture(const ArchitectureValues& value) { m_architectureHasBeenSet = true; m_architecture = value; }
-    inline void SetArchitecture(ArchitectureValues&& value) { m_architectureHasBeenSet = true; m_architecture = std::move(value); }
-    inline RegisterImageRequest& WithArchitecture(const ArchitectureValues& value) { SetArchitecture(value); return *this;}
-    inline RegisterImageRequest& WithArchitecture(ArchitectureValues&& value) { SetArchitecture(std::move(value)); return *this;}
+    inline void SetArchitecture(ArchitectureValues value) { m_architectureHasBeenSet = true; m_architecture = value; }
+    inline RegisterImageRequest& WithArchitecture(ArchitectureValues value) { SetArchitecture(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the kernel.</p>
      */
-    inline const Aws::String& GetKernelId() const{ return m_kernelId; }
+    inline const Aws::String& GetKernelId() const { return m_kernelId; }
     inline bool KernelIdHasBeenSet() const { return m_kernelIdHasBeenSet; }
-    inline void SetKernelId(const Aws::String& value) { m_kernelIdHasBeenSet = true; m_kernelId = value; }
-    inline void SetKernelId(Aws::String&& value) { m_kernelIdHasBeenSet = true; m_kernelId = std::move(value); }
-    inline void SetKernelId(const char* value) { m_kernelIdHasBeenSet = true; m_kernelId.assign(value); }
-    inline RegisterImageRequest& WithKernelId(const Aws::String& value) { SetKernelId(value); return *this;}
-    inline RegisterImageRequest& WithKernelId(Aws::String&& value) { SetKernelId(std::move(value)); return *this;}
-    inline RegisterImageRequest& WithKernelId(const char* value) { SetKernelId(value); return *this;}
+    template<typename KernelIdT = Aws::String>
+    void SetKernelId(KernelIdT&& value) { m_kernelIdHasBeenSet = true; m_kernelId = std::forward<KernelIdT>(value); }
+    template<typename KernelIdT = Aws::String>
+    RegisterImageRequest& WithKernelId(KernelIdT&& value) { SetKernelId(std::forward<KernelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the RAM disk.</p>
      */
-    inline const Aws::String& GetRamdiskId() const{ return m_ramdiskId; }
+    inline const Aws::String& GetRamdiskId() const { return m_ramdiskId; }
     inline bool RamdiskIdHasBeenSet() const { return m_ramdiskIdHasBeenSet; }
-    inline void SetRamdiskId(const Aws::String& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = value; }
-    inline void SetRamdiskId(Aws::String&& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = std::move(value); }
-    inline void SetRamdiskId(const char* value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId.assign(value); }
-    inline RegisterImageRequest& WithRamdiskId(const Aws::String& value) { SetRamdiskId(value); return *this;}
-    inline RegisterImageRequest& WithRamdiskId(Aws::String&& value) { SetRamdiskId(std::move(value)); return *this;}
-    inline RegisterImageRequest& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
+    template<typename RamdiskIdT = Aws::String>
+    void SetRamdiskId(RamdiskIdT&& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = std::forward<RamdiskIdT>(value); }
+    template<typename RamdiskIdT = Aws::String>
+    RegisterImageRequest& WithRamdiskId(RamdiskIdT&& value) { SetRamdiskId(std::forward<RamdiskIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -269,14 +248,12 @@ namespace Model
      * <p>The device name of the root device volume (for example,
      * <code>/dev/sda1</code>).</p>
      */
-    inline const Aws::String& GetRootDeviceName() const{ return m_rootDeviceName; }
+    inline const Aws::String& GetRootDeviceName() const { return m_rootDeviceName; }
     inline bool RootDeviceNameHasBeenSet() const { return m_rootDeviceNameHasBeenSet; }
-    inline void SetRootDeviceName(const Aws::String& value) { m_rootDeviceNameHasBeenSet = true; m_rootDeviceName = value; }
-    inline void SetRootDeviceName(Aws::String&& value) { m_rootDeviceNameHasBeenSet = true; m_rootDeviceName = std::move(value); }
-    inline void SetRootDeviceName(const char* value) { m_rootDeviceNameHasBeenSet = true; m_rootDeviceName.assign(value); }
-    inline RegisterImageRequest& WithRootDeviceName(const Aws::String& value) { SetRootDeviceName(value); return *this;}
-    inline RegisterImageRequest& WithRootDeviceName(Aws::String&& value) { SetRootDeviceName(std::move(value)); return *this;}
-    inline RegisterImageRequest& WithRootDeviceName(const char* value) { SetRootDeviceName(value); return *this;}
+    template<typename RootDeviceNameT = Aws::String>
+    void SetRootDeviceName(RootDeviceNameT&& value) { m_rootDeviceNameHasBeenSet = true; m_rootDeviceName = std::forward<RootDeviceNameT>(value); }
+    template<typename RootDeviceNameT = Aws::String>
+    RegisterImageRequest& WithRootDeviceName(RootDeviceNameT&& value) { SetRootDeviceName(std::forward<RootDeviceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -290,14 +267,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html#ami">Amazon
      * EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
-    inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
+    inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const { return m_blockDeviceMappings; }
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
-    inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
-    inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
-    inline RegisterImageRequest& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
-    inline RegisterImageRequest& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
-    inline RegisterImageRequest& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
-    inline RegisterImageRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
+    template<typename BlockDeviceMappingsT = Aws::Vector<BlockDeviceMapping>>
+    void SetBlockDeviceMappings(BlockDeviceMappingsT&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::forward<BlockDeviceMappingsT>(value); }
+    template<typename BlockDeviceMappingsT = Aws::Vector<BlockDeviceMapping>>
+    RegisterImageRequest& WithBlockDeviceMappings(BlockDeviceMappingsT&& value) { SetBlockDeviceMappings(std::forward<BlockDeviceMappingsT>(value)); return *this;}
+    template<typename BlockDeviceMappingsT = BlockDeviceMapping>
+    RegisterImageRequest& AddBlockDeviceMappings(BlockDeviceMappingsT&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.emplace_back(std::forward<BlockDeviceMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -305,14 +282,12 @@ namespace Model
      * <p>The type of virtualization (<code>hvm</code> | <code>paravirtual</code>).</p>
      * <p>Default: <code>paravirtual</code> </p>
      */
-    inline const Aws::String& GetVirtualizationType() const{ return m_virtualizationType; }
+    inline const Aws::String& GetVirtualizationType() const { return m_virtualizationType; }
     inline bool VirtualizationTypeHasBeenSet() const { return m_virtualizationTypeHasBeenSet; }
-    inline void SetVirtualizationType(const Aws::String& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = value; }
-    inline void SetVirtualizationType(Aws::String&& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = std::move(value); }
-    inline void SetVirtualizationType(const char* value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType.assign(value); }
-    inline RegisterImageRequest& WithVirtualizationType(const Aws::String& value) { SetVirtualizationType(value); return *this;}
-    inline RegisterImageRequest& WithVirtualizationType(Aws::String&& value) { SetVirtualizationType(std::move(value)); return *this;}
-    inline RegisterImageRequest& WithVirtualizationType(const char* value) { SetVirtualizationType(value); return *this;}
+    template<typename VirtualizationTypeT = Aws::String>
+    void SetVirtualizationType(VirtualizationTypeT&& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = std::forward<VirtualizationTypeT>(value); }
+    template<typename VirtualizationTypeT = Aws::String>
+    RegisterImageRequest& WithVirtualizationType(VirtualizationTypeT&& value) { SetVirtualizationType(std::forward<VirtualizationTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -323,14 +298,12 @@ namespace Model
      * time.</p> <p>This option is supported only for HVM AMIs. Specifying this option
      * with a PV AMI can make instances launched from the AMI unreachable.</p>
      */
-    inline const Aws::String& GetSriovNetSupport() const{ return m_sriovNetSupport; }
+    inline const Aws::String& GetSriovNetSupport() const { return m_sriovNetSupport; }
     inline bool SriovNetSupportHasBeenSet() const { return m_sriovNetSupportHasBeenSet; }
-    inline void SetSriovNetSupport(const Aws::String& value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport = value; }
-    inline void SetSriovNetSupport(Aws::String&& value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport = std::move(value); }
-    inline void SetSriovNetSupport(const char* value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport.assign(value); }
-    inline RegisterImageRequest& WithSriovNetSupport(const Aws::String& value) { SetSriovNetSupport(value); return *this;}
-    inline RegisterImageRequest& WithSriovNetSupport(Aws::String&& value) { SetSriovNetSupport(std::move(value)); return *this;}
-    inline RegisterImageRequest& WithSriovNetSupport(const char* value) { SetSriovNetSupport(value); return *this;}
+    template<typename SriovNetSupportT = Aws::String>
+    void SetSriovNetSupport(SriovNetSupportT&& value) { m_sriovNetSupportHasBeenSet = true; m_sriovNetSupport = std::forward<SriovNetSupportT>(value); }
+    template<typename SriovNetSupportT = Aws::String>
+    RegisterImageRequest& WithSriovNetSupport(SriovNetSupportT&& value) { SetSriovNetSupport(std::forward<SriovNetSupportT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -340,7 +313,7 @@ namespace Model
      * only for HVM AMIs. Specifying this option with a PV AMI can make instances
      * launched from the AMI unreachable.</p>
      */
-    inline bool GetEnaSupport() const{ return m_enaSupport; }
+    inline bool GetEnaSupport() const { return m_enaSupport; }
     inline bool EnaSupportHasBeenSet() const { return m_enaSupportHasBeenSet; }
     inline void SetEnaSupport(bool value) { m_enaSupportHasBeenSet = true; m_enaSupport = value; }
     inline RegisterImageRequest& WithEnaSupport(bool value) { SetEnaSupport(value); return *this;}
@@ -353,22 +326,22 @@ namespace Model
     Aws::Vector<Aws::String> m_billingProducts;
     bool m_billingProductsHasBeenSet = false;
 
-    BootModeValues m_bootMode;
+    BootModeValues m_bootMode{BootModeValues::NOT_SET};
     bool m_bootModeHasBeenSet = false;
 
-    TpmSupportValues m_tpmSupport;
+    TpmSupportValues m_tpmSupport{TpmSupportValues::NOT_SET};
     bool m_tpmSupportHasBeenSet = false;
 
     Aws::String m_uefiData;
     bool m_uefiDataHasBeenSet = false;
 
-    ImdsSupportValues m_imdsSupport;
+    ImdsSupportValues m_imdsSupport{ImdsSupportValues::NOT_SET};
     bool m_imdsSupportHasBeenSet = false;
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_name;
@@ -377,7 +350,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    ArchitectureValues m_architecture;
+    ArchitectureValues m_architecture{ArchitectureValues::NOT_SET};
     bool m_architectureHasBeenSet = false;
 
     Aws::String m_kernelId;
@@ -398,7 +371,7 @@ namespace Model
     Aws::String m_sriovNetSupport;
     bool m_sriovNetSupportHasBeenSet = false;
 
-    bool m_enaSupport;
+    bool m_enaSupport{false};
     bool m_enaSupportHasBeenSet = false;
   };
 

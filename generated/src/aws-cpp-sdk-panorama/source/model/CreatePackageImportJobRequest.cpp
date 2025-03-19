@@ -12,16 +12,6 @@ using namespace Aws::Panorama::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePackageImportJobRequest::CreatePackageImportJobRequest() : 
-    m_clientTokenHasBeenSet(false),
-    m_inputConfigHasBeenSet(false),
-    m_jobTagsHasBeenSet(false),
-    m_jobType(PackageImportJobType::NOT_SET),
-    m_jobTypeHasBeenSet(false),
-    m_outputConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreatePackageImportJobRequest::SerializePayload() const
 {
   JsonValue payload;

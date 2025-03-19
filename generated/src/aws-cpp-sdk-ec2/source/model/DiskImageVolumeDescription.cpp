@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DiskImageVolumeDescription::DiskImageVolumeDescription() : 
-    m_idHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false)
-{
-}
-
 DiskImageVolumeDescription::DiskImageVolumeDescription(const XmlNode& xmlNode)
-  : DiskImageVolumeDescription()
 {
   *this = xmlNode;
 }

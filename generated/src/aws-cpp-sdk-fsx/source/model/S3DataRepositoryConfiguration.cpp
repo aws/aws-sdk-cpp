@@ -18,14 +18,7 @@ namespace FSx
 namespace Model
 {
 
-S3DataRepositoryConfiguration::S3DataRepositoryConfiguration() : 
-    m_autoImportPolicyHasBeenSet(false),
-    m_autoExportPolicyHasBeenSet(false)
-{
-}
-
 S3DataRepositoryConfiguration::S3DataRepositoryConfiguration(JsonView jsonValue)
-  : S3DataRepositoryConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3DataRepositoryConfiguration& S3DataRepositoryConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("AutoImportPolicy"))
   {
     m_autoImportPolicy = jsonValue.GetObject("AutoImportPolicy");
-
     m_autoImportPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoExportPolicy"))
   {
     m_autoExportPolicy = jsonValue.GetObject("AutoExportPolicy");
-
     m_autoExportPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

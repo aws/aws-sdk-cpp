@@ -18,15 +18,7 @@ namespace EKS
 namespace Model
 {
 
-LogSetup::LogSetup() : 
-    m_typesHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 LogSetup::LogSetup(JsonView jsonValue)
-  : LogSetup()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ LogSetup& LogSetup::operator =(JsonView jsonValue)
     }
     m_typesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

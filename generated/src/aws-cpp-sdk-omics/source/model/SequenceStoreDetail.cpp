@@ -18,25 +18,7 @@ namespace Omics
 namespace Model
 {
 
-SequenceStoreDetail::SequenceStoreDetail() : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sseConfigHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_fallbackLocationHasBeenSet(false),
-    m_eTagAlgorithmFamily(ETagAlgorithmFamily::NOT_SET),
-    m_eTagAlgorithmFamilyHasBeenSet(false),
-    m_status(SequenceStoreStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
-{
-}
-
 SequenceStoreDetail::SequenceStoreDetail(JsonView jsonValue)
-  : SequenceStoreDetail()
 {
   *this = jsonValue;
 }
@@ -46,80 +28,58 @@ SequenceStoreDetail& SequenceStoreDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sseConfig"))
   {
     m_sseConfig = jsonValue.GetObject("sseConfig");
-
     m_sseConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fallbackLocation"))
   {
     m_fallbackLocation = jsonValue.GetString("fallbackLocation");
-
     m_fallbackLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eTagAlgorithmFamily"))
   {
     m_eTagAlgorithmFamily = ETagAlgorithmFamilyMapper::GetETagAlgorithmFamilyForName(jsonValue.GetString("eTagAlgorithmFamily"));
-
     m_eTagAlgorithmFamilyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = SequenceStoreStatusMapper::GetSequenceStoreStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetString("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

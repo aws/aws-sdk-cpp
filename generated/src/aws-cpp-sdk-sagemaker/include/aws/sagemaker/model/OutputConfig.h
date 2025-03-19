@@ -40,7 +40,7 @@ namespace Model
   class OutputConfig
   {
   public:
-    AWS_SAGEMAKER_API OutputConfig();
+    AWS_SAGEMAKER_API OutputConfig() = default;
     AWS_SAGEMAKER_API OutputConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API OutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * <p>Identifies the S3 bucket where you want Amazon SageMaker AI to store the
      * model artifacts. For example, <code>s3://bucket-name/key-name-prefix</code>.</p>
      */
-    inline const Aws::String& GetS3OutputLocation() const{ return m_s3OutputLocation; }
+    inline const Aws::String& GetS3OutputLocation() const { return m_s3OutputLocation; }
     inline bool S3OutputLocationHasBeenSet() const { return m_s3OutputLocationHasBeenSet; }
-    inline void SetS3OutputLocation(const Aws::String& value) { m_s3OutputLocationHasBeenSet = true; m_s3OutputLocation = value; }
-    inline void SetS3OutputLocation(Aws::String&& value) { m_s3OutputLocationHasBeenSet = true; m_s3OutputLocation = std::move(value); }
-    inline void SetS3OutputLocation(const char* value) { m_s3OutputLocationHasBeenSet = true; m_s3OutputLocation.assign(value); }
-    inline OutputConfig& WithS3OutputLocation(const Aws::String& value) { SetS3OutputLocation(value); return *this;}
-    inline OutputConfig& WithS3OutputLocation(Aws::String&& value) { SetS3OutputLocation(std::move(value)); return *this;}
-    inline OutputConfig& WithS3OutputLocation(const char* value) { SetS3OutputLocation(value); return *this;}
+    template<typename S3OutputLocationT = Aws::String>
+    void SetS3OutputLocation(S3OutputLocationT&& value) { m_s3OutputLocationHasBeenSet = true; m_s3OutputLocation = std::forward<S3OutputLocationT>(value); }
+    template<typename S3OutputLocationT = Aws::String>
+    OutputConfig& WithS3OutputLocation(S3OutputLocationT&& value) { SetS3OutputLocation(std::forward<S3OutputLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +70,10 @@ namespace Model
      * Region, and <code>ml_inf2</code> is available only in US East (Ohio) Region.</p>
      * 
      */
-    inline const TargetDevice& GetTargetDevice() const{ return m_targetDevice; }
+    inline TargetDevice GetTargetDevice() const { return m_targetDevice; }
     inline bool TargetDeviceHasBeenSet() const { return m_targetDeviceHasBeenSet; }
-    inline void SetTargetDevice(const TargetDevice& value) { m_targetDeviceHasBeenSet = true; m_targetDevice = value; }
-    inline void SetTargetDevice(TargetDevice&& value) { m_targetDeviceHasBeenSet = true; m_targetDevice = std::move(value); }
-    inline OutputConfig& WithTargetDevice(const TargetDevice& value) { SetTargetDevice(value); return *this;}
-    inline OutputConfig& WithTargetDevice(TargetDevice&& value) { SetTargetDevice(std::move(value)); return *this;}
+    inline void SetTargetDevice(TargetDevice value) { m_targetDeviceHasBeenSet = true; m_targetDevice = value; }
+    inline OutputConfig& WithTargetDevice(TargetDevice value) { SetTargetDevice(value); return *this;}
     ///@}
 
     ///@{
@@ -103,12 +99,12 @@ namespace Model
      * "ANDROID", "Arch": "ARM64"},</code> </p> <p> <code> "CompilerOptions":
      * {'ANDROID_PLATFORM': 29}</code> </p> </li> </ul>
      */
-    inline const TargetPlatform& GetTargetPlatform() const{ return m_targetPlatform; }
+    inline const TargetPlatform& GetTargetPlatform() const { return m_targetPlatform; }
     inline bool TargetPlatformHasBeenSet() const { return m_targetPlatformHasBeenSet; }
-    inline void SetTargetPlatform(const TargetPlatform& value) { m_targetPlatformHasBeenSet = true; m_targetPlatform = value; }
-    inline void SetTargetPlatform(TargetPlatform&& value) { m_targetPlatformHasBeenSet = true; m_targetPlatform = std::move(value); }
-    inline OutputConfig& WithTargetPlatform(const TargetPlatform& value) { SetTargetPlatform(value); return *this;}
-    inline OutputConfig& WithTargetPlatform(TargetPlatform&& value) { SetTargetPlatform(std::move(value)); return *this;}
+    template<typename TargetPlatformT = TargetPlatform>
+    void SetTargetPlatform(TargetPlatformT&& value) { m_targetPlatformHasBeenSet = true; m_targetPlatform = std::forward<TargetPlatformT>(value); }
+    template<typename TargetPlatformT = TargetPlatform>
+    OutputConfig& WithTargetPlatform(TargetPlatformT&& value) { SetTargetPlatform(std::forward<TargetPlatformT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -159,14 +155,12 @@ namespace Model
      * "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
      * separated by newlines.</p> </li> </ul> </li> </ul>
      */
-    inline const Aws::String& GetCompilerOptions() const{ return m_compilerOptions; }
+    inline const Aws::String& GetCompilerOptions() const { return m_compilerOptions; }
     inline bool CompilerOptionsHasBeenSet() const { return m_compilerOptionsHasBeenSet; }
-    inline void SetCompilerOptions(const Aws::String& value) { m_compilerOptionsHasBeenSet = true; m_compilerOptions = value; }
-    inline void SetCompilerOptions(Aws::String&& value) { m_compilerOptionsHasBeenSet = true; m_compilerOptions = std::move(value); }
-    inline void SetCompilerOptions(const char* value) { m_compilerOptionsHasBeenSet = true; m_compilerOptions.assign(value); }
-    inline OutputConfig& WithCompilerOptions(const Aws::String& value) { SetCompilerOptions(value); return *this;}
-    inline OutputConfig& WithCompilerOptions(Aws::String&& value) { SetCompilerOptions(std::move(value)); return *this;}
-    inline OutputConfig& WithCompilerOptions(const char* value) { SetCompilerOptions(value); return *this;}
+    template<typename CompilerOptionsT = Aws::String>
+    void SetCompilerOptions(CompilerOptionsT&& value) { m_compilerOptionsHasBeenSet = true; m_compilerOptions = std::forward<CompilerOptionsT>(value); }
+    template<typename CompilerOptionsT = Aws::String>
+    OutputConfig& WithCompilerOptions(CompilerOptionsT&& value) { SetCompilerOptions(std::forward<CompilerOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -187,21 +181,19 @@ namespace Model
      * <code>arn:aws:kms:us-west-2:111122223333:alias/ExampleAlias</code> </p> </li>
      * </ul>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline OutputConfig& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline OutputConfig& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline OutputConfig& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    OutputConfig& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_s3OutputLocation;
     bool m_s3OutputLocationHasBeenSet = false;
 
-    TargetDevice m_targetDevice;
+    TargetDevice m_targetDevice{TargetDevice::NOT_SET};
     bool m_targetDeviceHasBeenSet = false;
 
     TargetPlatform m_targetPlatform;

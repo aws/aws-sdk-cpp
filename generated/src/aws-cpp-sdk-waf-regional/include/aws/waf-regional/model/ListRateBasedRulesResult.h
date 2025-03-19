@@ -29,7 +29,7 @@ namespace Model
   class ListRateBasedRulesResult
   {
   public:
-    AWS_WAFREGIONAL_API ListRateBasedRulesResult();
+    AWS_WAFREGIONAL_API ListRateBasedRulesResult() = default;
     AWS_WAFREGIONAL_API ListRateBasedRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WAFREGIONAL_API ListRateBasedRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,45 +43,44 @@ namespace Model
      * value from the response in the <code>NextMarker</code> value in the next
      * request.</p>
      */
-    inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
-    inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
-    inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
-    inline ListRateBasedRulesResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-    inline ListRateBasedRulesResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-    inline ListRateBasedRulesResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
+    template<typename NextMarkerT = Aws::String>
+    void SetNextMarker(NextMarkerT&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::forward<NextMarkerT>(value); }
+    template<typename NextMarkerT = Aws::String>
+    ListRateBasedRulesResult& WithNextMarker(NextMarkerT&& value) { SetNextMarker(std::forward<NextMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of <a>RuleSummary</a> objects.</p>
      */
-    inline const Aws::Vector<RuleSummary>& GetRules() const{ return m_rules; }
-    inline void SetRules(const Aws::Vector<RuleSummary>& value) { m_rules = value; }
-    inline void SetRules(Aws::Vector<RuleSummary>&& value) { m_rules = std::move(value); }
-    inline ListRateBasedRulesResult& WithRules(const Aws::Vector<RuleSummary>& value) { SetRules(value); return *this;}
-    inline ListRateBasedRulesResult& WithRules(Aws::Vector<RuleSummary>&& value) { SetRules(std::move(value)); return *this;}
-    inline ListRateBasedRulesResult& AddRules(const RuleSummary& value) { m_rules.push_back(value); return *this; }
-    inline ListRateBasedRulesResult& AddRules(RuleSummary&& value) { m_rules.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RuleSummary>& GetRules() const { return m_rules; }
+    template<typename RulesT = Aws::Vector<RuleSummary>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<RuleSummary>>
+    ListRateBasedRulesResult& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = RuleSummary>
+    ListRateBasedRulesResult& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListRateBasedRulesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListRateBasedRulesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListRateBasedRulesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListRateBasedRulesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextMarker;
+    bool m_nextMarkerHasBeenSet = false;
 
     Aws::Vector<RuleSummary> m_rules;
+    bool m_rulesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

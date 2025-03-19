@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-UiConfig::UiConfig() : 
-    m_uiTemplateS3UriHasBeenSet(false),
-    m_humanTaskUiArnHasBeenSet(false)
-{
-}
-
 UiConfig::UiConfig(JsonView jsonValue)
-  : UiConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UiConfig& UiConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UiTemplateS3Uri"))
   {
     m_uiTemplateS3Uri = jsonValue.GetString("UiTemplateS3Uri");
-
     m_uiTemplateS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HumanTaskUiArn"))
   {
     m_humanTaskUiArn = jsonValue.GetString("HumanTaskUiArn");
-
     m_humanTaskUiArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class QuickConnectSearchCriteria
   {
   public:
-    AWS_CONNECT_API QuickConnectSearchCriteria();
+    AWS_CONNECT_API QuickConnectSearchCriteria() = default;
     AWS_CONNECT_API QuickConnectSearchCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API QuickConnectSearchCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>A list of conditions which would be applied together with an OR
      * condition.</p>
      */
-    inline const Aws::Vector<QuickConnectSearchCriteria>& GetOrConditions() const{ return m_orConditions; }
+    inline const Aws::Vector<QuickConnectSearchCriteria>& GetOrConditions() const { return m_orConditions; }
     inline bool OrConditionsHasBeenSet() const { return m_orConditionsHasBeenSet; }
-    inline void SetOrConditions(const Aws::Vector<QuickConnectSearchCriteria>& value) { m_orConditionsHasBeenSet = true; m_orConditions = value; }
-    inline void SetOrConditions(Aws::Vector<QuickConnectSearchCriteria>&& value) { m_orConditionsHasBeenSet = true; m_orConditions = std::move(value); }
-    inline QuickConnectSearchCriteria& WithOrConditions(const Aws::Vector<QuickConnectSearchCriteria>& value) { SetOrConditions(value); return *this;}
-    inline QuickConnectSearchCriteria& WithOrConditions(Aws::Vector<QuickConnectSearchCriteria>&& value) { SetOrConditions(std::move(value)); return *this;}
-    inline QuickConnectSearchCriteria& AddOrConditions(const QuickConnectSearchCriteria& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(value); return *this; }
-    inline QuickConnectSearchCriteria& AddOrConditions(QuickConnectSearchCriteria&& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(std::move(value)); return *this; }
+    template<typename OrConditionsT = Aws::Vector<QuickConnectSearchCriteria>>
+    void SetOrConditions(OrConditionsT&& value) { m_orConditionsHasBeenSet = true; m_orConditions = std::forward<OrConditionsT>(value); }
+    template<typename OrConditionsT = Aws::Vector<QuickConnectSearchCriteria>>
+    QuickConnectSearchCriteria& WithOrConditions(OrConditionsT&& value) { SetOrConditions(std::forward<OrConditionsT>(value)); return *this;}
+    template<typename OrConditionsT = QuickConnectSearchCriteria>
+    QuickConnectSearchCriteria& AddOrConditions(OrConditionsT&& value) { m_orConditionsHasBeenSet = true; m_orConditions.emplace_back(std::forward<OrConditionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,14 +59,14 @@ namespace Model
      * <p>A list of conditions which would be applied together with an AND
      * condition.</p>
      */
-    inline const Aws::Vector<QuickConnectSearchCriteria>& GetAndConditions() const{ return m_andConditions; }
+    inline const Aws::Vector<QuickConnectSearchCriteria>& GetAndConditions() const { return m_andConditions; }
     inline bool AndConditionsHasBeenSet() const { return m_andConditionsHasBeenSet; }
-    inline void SetAndConditions(const Aws::Vector<QuickConnectSearchCriteria>& value) { m_andConditionsHasBeenSet = true; m_andConditions = value; }
-    inline void SetAndConditions(Aws::Vector<QuickConnectSearchCriteria>&& value) { m_andConditionsHasBeenSet = true; m_andConditions = std::move(value); }
-    inline QuickConnectSearchCriteria& WithAndConditions(const Aws::Vector<QuickConnectSearchCriteria>& value) { SetAndConditions(value); return *this;}
-    inline QuickConnectSearchCriteria& WithAndConditions(Aws::Vector<QuickConnectSearchCriteria>&& value) { SetAndConditions(std::move(value)); return *this;}
-    inline QuickConnectSearchCriteria& AddAndConditions(const QuickConnectSearchCriteria& value) { m_andConditionsHasBeenSet = true; m_andConditions.push_back(value); return *this; }
-    inline QuickConnectSearchCriteria& AddAndConditions(QuickConnectSearchCriteria&& value) { m_andConditionsHasBeenSet = true; m_andConditions.push_back(std::move(value)); return *this; }
+    template<typename AndConditionsT = Aws::Vector<QuickConnectSearchCriteria>>
+    void SetAndConditions(AndConditionsT&& value) { m_andConditionsHasBeenSet = true; m_andConditions = std::forward<AndConditionsT>(value); }
+    template<typename AndConditionsT = Aws::Vector<QuickConnectSearchCriteria>>
+    QuickConnectSearchCriteria& WithAndConditions(AndConditionsT&& value) { SetAndConditions(std::forward<AndConditionsT>(value)); return *this;}
+    template<typename AndConditionsT = QuickConnectSearchCriteria>
+    QuickConnectSearchCriteria& AddAndConditions(AndConditionsT&& value) { m_andConditionsHasBeenSet = true; m_andConditions.emplace_back(std::forward<AndConditionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -76,12 +76,12 @@ namespace Model
      * <code>name</code>, <code>description</code>, and <code>resourceID</code>.</p>
      * 
      */
-    inline const StringCondition& GetStringCondition() const{ return m_stringCondition; }
+    inline const StringCondition& GetStringCondition() const { return m_stringCondition; }
     inline bool StringConditionHasBeenSet() const { return m_stringConditionHasBeenSet; }
-    inline void SetStringCondition(const StringCondition& value) { m_stringConditionHasBeenSet = true; m_stringCondition = value; }
-    inline void SetStringCondition(StringCondition&& value) { m_stringConditionHasBeenSet = true; m_stringCondition = std::move(value); }
-    inline QuickConnectSearchCriteria& WithStringCondition(const StringCondition& value) { SetStringCondition(value); return *this;}
-    inline QuickConnectSearchCriteria& WithStringCondition(StringCondition&& value) { SetStringCondition(std::move(value)); return *this;}
+    template<typename StringConditionT = StringCondition>
+    void SetStringCondition(StringConditionT&& value) { m_stringConditionHasBeenSet = true; m_stringCondition = std::forward<StringConditionT>(value); }
+    template<typename StringConditionT = StringCondition>
+    QuickConnectSearchCriteria& WithStringCondition(StringConditionT&& value) { SetStringCondition(std::forward<StringConditionT>(value)); return *this;}
     ///@}
   private:
 

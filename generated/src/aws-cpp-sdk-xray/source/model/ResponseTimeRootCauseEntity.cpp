@@ -18,17 +18,7 @@ namespace XRay
 namespace Model
 {
 
-ResponseTimeRootCauseEntity::ResponseTimeRootCauseEntity() : 
-    m_nameHasBeenSet(false),
-    m_coverage(0.0),
-    m_coverageHasBeenSet(false),
-    m_remote(false),
-    m_remoteHasBeenSet(false)
-{
-}
-
 ResponseTimeRootCauseEntity::ResponseTimeRootCauseEntity(JsonView jsonValue)
-  : ResponseTimeRootCauseEntity()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ResponseTimeRootCauseEntity& ResponseTimeRootCauseEntity::operator =(JsonView js
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Coverage"))
   {
     m_coverage = jsonValue.GetDouble("Coverage");
-
     m_coverageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Remote"))
   {
     m_remote = jsonValue.GetBool("Remote");
-
     m_remoteHasBeenSet = true;
   }
-
   return *this;
 }
 

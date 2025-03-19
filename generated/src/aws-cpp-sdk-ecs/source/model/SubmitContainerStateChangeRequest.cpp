@@ -12,19 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SubmitContainerStateChangeRequest::SubmitContainerStateChangeRequest() : 
-    m_clusterHasBeenSet(false),
-    m_taskHasBeenSet(false),
-    m_containerNameHasBeenSet(false),
-    m_runtimeIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_exitCode(0),
-    m_exitCodeHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_networkBindingsHasBeenSet(false)
-{
-}
-
 Aws::String SubmitContainerStateChangeRequest::SerializePayload() const
 {
   JsonValue payload;

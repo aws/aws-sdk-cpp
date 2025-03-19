@@ -12,11 +12,6 @@ using namespace Aws::AppIntegrationsService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetApplicationRequest::GetApplicationRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String GetApplicationRequest::SerializePayload() const
 {
   return {};

@@ -10,11 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-GetPlatformApplicationAttributesRequest::GetPlatformApplicationAttributesRequest() : 
-    m_platformApplicationArnHasBeenSet(false)
-{
-}
-
 Aws::String GetPlatformApplicationAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

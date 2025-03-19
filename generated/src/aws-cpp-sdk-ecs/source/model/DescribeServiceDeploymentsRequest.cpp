@@ -12,11 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeServiceDeploymentsRequest::DescribeServiceDeploymentsRequest() : 
-    m_serviceDeploymentArnsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeServiceDeploymentsRequest::SerializePayload() const
 {
   JsonValue payload;

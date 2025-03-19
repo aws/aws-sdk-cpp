@@ -25,7 +25,7 @@ namespace Model
   class ListUsersRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API ListUsersRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API ListUsersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The ID of the user pool where you want to display or search for users.</p>
      */
-    inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+    inline const Aws::String& GetUserPoolId() const { return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-    inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-    inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-    inline ListUsersRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-    inline ListUsersRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-    inline ListUsersRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    template<typename UserPoolIdT = Aws::String>
+    void SetUserPoolId(UserPoolIdT&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::forward<UserPoolIdT>(value); }
+    template<typename UserPoolIdT = Aws::String>
+    ListUsersRequest& WithUserPoolId(UserPoolIdT&& value) { SetUserPoolId(std::forward<UserPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,15 +63,14 @@ namespace Model
      * user profile before an <code>AttributesToGet</code> parameter returns
      * results.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAttributesToGet() const{ return m_attributesToGet; }
+    inline const Aws::Vector<Aws::String>& GetAttributesToGet() const { return m_attributesToGet; }
     inline bool AttributesToGetHasBeenSet() const { return m_attributesToGetHasBeenSet; }
-    inline void SetAttributesToGet(const Aws::Vector<Aws::String>& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = value; }
-    inline void SetAttributesToGet(Aws::Vector<Aws::String>&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = std::move(value); }
-    inline ListUsersRequest& WithAttributesToGet(const Aws::Vector<Aws::String>& value) { SetAttributesToGet(value); return *this;}
-    inline ListUsersRequest& WithAttributesToGet(Aws::Vector<Aws::String>&& value) { SetAttributesToGet(std::move(value)); return *this;}
-    inline ListUsersRequest& AddAttributesToGet(const Aws::String& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
-    inline ListUsersRequest& AddAttributesToGet(Aws::String&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(std::move(value)); return *this; }
-    inline ListUsersRequest& AddAttributesToGet(const char* value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.push_back(value); return *this; }
+    template<typename AttributesToGetT = Aws::Vector<Aws::String>>
+    void SetAttributesToGet(AttributesToGetT&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet = std::forward<AttributesToGetT>(value); }
+    template<typename AttributesToGetT = Aws::Vector<Aws::String>>
+    ListUsersRequest& WithAttributesToGet(AttributesToGetT&& value) { SetAttributesToGet(std::forward<AttributesToGetT>(value)); return *this;}
+    template<typename AttributesToGetT = Aws::String>
+    ListUsersRequest& AddAttributesToGet(AttributesToGetT&& value) { m_attributesToGetHasBeenSet = true; m_attributesToGet.emplace_back(std::forward<AttributesToGetT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -81,7 +78,7 @@ namespace Model
      * <p>The maximum number of users that you want Amazon Cognito to return in the
      * response.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline ListUsersRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -96,14 +93,12 @@ namespace Model
      * pagination token. By use of this token, you can paginate through the full list
      * of items.</p>
      */
-    inline const Aws::String& GetPaginationToken() const{ return m_paginationToken; }
+    inline const Aws::String& GetPaginationToken() const { return m_paginationToken; }
     inline bool PaginationTokenHasBeenSet() const { return m_paginationTokenHasBeenSet; }
-    inline void SetPaginationToken(const Aws::String& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = value; }
-    inline void SetPaginationToken(Aws::String&& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = std::move(value); }
-    inline void SetPaginationToken(const char* value) { m_paginationTokenHasBeenSet = true; m_paginationToken.assign(value); }
-    inline ListUsersRequest& WithPaginationToken(const Aws::String& value) { SetPaginationToken(value); return *this;}
-    inline ListUsersRequest& WithPaginationToken(Aws::String&& value) { SetPaginationToken(std::move(value)); return *this;}
-    inline ListUsersRequest& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
+    template<typename PaginationTokenT = Aws::String>
+    void SetPaginationToken(PaginationTokenT&& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = std::forward<PaginationTokenT>(value); }
+    template<typename PaginationTokenT = Aws::String>
+    ListUsersRequest& WithPaginationToken(PaginationTokenT&& value) { SetPaginationToken(std::forward<PaginationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -146,14 +141,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-manage-user-accounts.html#cognito-user-pools-searching-for-users-listusers-api-examples">Examples
      * of Using the ListUsers API</a> in the <i>Amazon Cognito Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetFilter() const{ return m_filter; }
+    inline const Aws::String& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Aws::String& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Aws::String&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline void SetFilter(const char* value) { m_filterHasBeenSet = true; m_filter.assign(value); }
-    inline ListUsersRequest& WithFilter(const Aws::String& value) { SetFilter(value); return *this;}
-    inline ListUsersRequest& WithFilter(Aws::String&& value) { SetFilter(std::move(value)); return *this;}
-    inline ListUsersRequest& WithFilter(const char* value) { SetFilter(value); return *this;}
+    template<typename FilterT = Aws::String>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Aws::String>
+    ListUsersRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
   private:
 
@@ -163,7 +156,7 @@ namespace Model
     Aws::Vector<Aws::String> m_attributesToGet;
     bool m_attributesToGetHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
     Aws::String m_paginationToken;

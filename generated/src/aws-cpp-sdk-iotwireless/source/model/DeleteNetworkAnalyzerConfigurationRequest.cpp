@@ -12,11 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteNetworkAnalyzerConfigurationRequest::DeleteNetworkAnalyzerConfigurationRequest() : 
-    m_configurationNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteNetworkAnalyzerConfigurationRequest::SerializePayload() const
 {
   return {};

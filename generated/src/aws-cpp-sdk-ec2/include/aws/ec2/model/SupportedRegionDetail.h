@@ -31,7 +31,7 @@ namespace Model
   class SupportedRegionDetail
   {
   public:
-    AWS_EC2_API SupportedRegionDetail();
+    AWS_EC2_API SupportedRegionDetail() = default;
     AWS_EC2_API SupportedRegionDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API SupportedRegionDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Region code.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline SupportedRegionDetail& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline SupportedRegionDetail& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline SupportedRegionDetail& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    SupportedRegionDetail& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <code>Available</code>, <code>Deleting</code>, <code>Deleted</code>,
      * <code>Failed</code>, and <code>Closed</code>.</p>
      */
-    inline const Aws::String& GetServiceState() const{ return m_serviceState; }
+    inline const Aws::String& GetServiceState() const { return m_serviceState; }
     inline bool ServiceStateHasBeenSet() const { return m_serviceStateHasBeenSet; }
-    inline void SetServiceState(const Aws::String& value) { m_serviceStateHasBeenSet = true; m_serviceState = value; }
-    inline void SetServiceState(Aws::String&& value) { m_serviceStateHasBeenSet = true; m_serviceState = std::move(value); }
-    inline void SetServiceState(const char* value) { m_serviceStateHasBeenSet = true; m_serviceState.assign(value); }
-    inline SupportedRegionDetail& WithServiceState(const Aws::String& value) { SetServiceState(value); return *this;}
-    inline SupportedRegionDetail& WithServiceState(Aws::String&& value) { SetServiceState(std::move(value)); return *this;}
-    inline SupportedRegionDetail& WithServiceState(const char* value) { SetServiceState(value); return *this;}
+    template<typename ServiceStateT = Aws::String>
+    void SetServiceState(ServiceStateT&& value) { m_serviceStateHasBeenSet = true; m_serviceState = std::forward<ServiceStateT>(value); }
+    template<typename ServiceStateT = Aws::String>
+    SupportedRegionDetail& WithServiceState(ServiceStateT&& value) { SetServiceState(std::forward<ServiceStateT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsBackupRecoveryPointCalculatedLifecycleDetails::AwsBackupRecoveryPointCalculatedLifecycleDetails() : 
-    m_deleteAtHasBeenSet(false),
-    m_moveToColdStorageAtHasBeenSet(false)
-{
-}
-
 AwsBackupRecoveryPointCalculatedLifecycleDetails::AwsBackupRecoveryPointCalculatedLifecycleDetails(JsonView jsonValue)
-  : AwsBackupRecoveryPointCalculatedLifecycleDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsBackupRecoveryPointCalculatedLifecycleDetails& AwsBackupRecoveryPointCalculat
   if(jsonValue.ValueExists("DeleteAt"))
   {
     m_deleteAt = jsonValue.GetString("DeleteAt");
-
     m_deleteAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MoveToColdStorageAt"))
   {
     m_moveToColdStorageAt = jsonValue.GetString("MoveToColdStorageAt");
-
     m_moveToColdStorageAtHasBeenSet = true;
   }
-
   return *this;
 }
 

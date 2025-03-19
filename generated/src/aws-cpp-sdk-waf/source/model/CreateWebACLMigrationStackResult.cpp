@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateWebACLMigrationStackResult::CreateWebACLMigrationStackResult()
-{
-}
-
 CreateWebACLMigrationStackResult::CreateWebACLMigrationStackResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateWebACLMigrationStackResult& CreateWebACLMigrationStackResult::operator =(c
   if(jsonValue.ValueExists("S3ObjectUrl"))
   {
     m_s3ObjectUrl = jsonValue.GetString("S3ObjectUrl");
-
+    m_s3ObjectUrlHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

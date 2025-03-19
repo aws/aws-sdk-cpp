@@ -12,10 +12,6 @@ using namespace Aws::Shield::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDRTAccessRequest::DescribeDRTAccessRequest()
-{
-}
-
 Aws::String DescribeDRTAccessRequest::SerializePayload() const
 {
   return "{}";

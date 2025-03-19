@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteNamespaceResult::DeleteNamespaceResult() : 
-    m_status(0)
-{
-}
-
 DeleteNamespaceResult::DeleteNamespaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteNamespaceResult()
 {
   *this = result;
 }
@@ -37,10 +31,11 @@ DeleteNamespaceResult& DeleteNamespaceResult::operator =(const Aws::AmazonWebSer
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

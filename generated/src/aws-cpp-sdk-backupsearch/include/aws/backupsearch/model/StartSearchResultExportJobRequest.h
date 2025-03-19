@@ -23,7 +23,7 @@ namespace Model
   class StartSearchResultExportJobRequest : public BackupSearchRequest
   {
   public:
-    AWS_BACKUPSEARCH_API StartSearchResultExportJobRequest();
+    AWS_BACKUPSEARCH_API StartSearchResultExportJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The unique string that specifies the search job.</p>
      */
-    inline const Aws::String& GetSearchJobIdentifier() const{ return m_searchJobIdentifier; }
+    inline const Aws::String& GetSearchJobIdentifier() const { return m_searchJobIdentifier; }
     inline bool SearchJobIdentifierHasBeenSet() const { return m_searchJobIdentifierHasBeenSet; }
-    inline void SetSearchJobIdentifier(const Aws::String& value) { m_searchJobIdentifierHasBeenSet = true; m_searchJobIdentifier = value; }
-    inline void SetSearchJobIdentifier(Aws::String&& value) { m_searchJobIdentifierHasBeenSet = true; m_searchJobIdentifier = std::move(value); }
-    inline void SetSearchJobIdentifier(const char* value) { m_searchJobIdentifierHasBeenSet = true; m_searchJobIdentifier.assign(value); }
-    inline StartSearchResultExportJobRequest& WithSearchJobIdentifier(const Aws::String& value) { SetSearchJobIdentifier(value); return *this;}
-    inline StartSearchResultExportJobRequest& WithSearchJobIdentifier(Aws::String&& value) { SetSearchJobIdentifier(std::move(value)); return *this;}
-    inline StartSearchResultExportJobRequest& WithSearchJobIdentifier(const char* value) { SetSearchJobIdentifier(value); return *this;}
+    template<typename SearchJobIdentifierT = Aws::String>
+    void SetSearchJobIdentifier(SearchJobIdentifierT&& value) { m_searchJobIdentifierHasBeenSet = true; m_searchJobIdentifier = std::forward<SearchJobIdentifierT>(value); }
+    template<typename SearchJobIdentifierT = Aws::String>
+    StartSearchResultExportJobRequest& WithSearchJobIdentifier(SearchJobIdentifierT&& value) { SetSearchJobIdentifier(std::forward<SearchJobIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,12 +51,12 @@ namespace Model
      * <p>This specification contains a required string of the destination bucket;
      * optionally, you can include the destination prefix.</p>
      */
-    inline const ExportSpecification& GetExportSpecification() const{ return m_exportSpecification; }
+    inline const ExportSpecification& GetExportSpecification() const { return m_exportSpecification; }
     inline bool ExportSpecificationHasBeenSet() const { return m_exportSpecificationHasBeenSet; }
-    inline void SetExportSpecification(const ExportSpecification& value) { m_exportSpecificationHasBeenSet = true; m_exportSpecification = value; }
-    inline void SetExportSpecification(ExportSpecification&& value) { m_exportSpecificationHasBeenSet = true; m_exportSpecification = std::move(value); }
-    inline StartSearchResultExportJobRequest& WithExportSpecification(const ExportSpecification& value) { SetExportSpecification(value); return *this;}
-    inline StartSearchResultExportJobRequest& WithExportSpecification(ExportSpecification&& value) { SetExportSpecification(std::move(value)); return *this;}
+    template<typename ExportSpecificationT = ExportSpecification>
+    void SetExportSpecification(ExportSpecificationT&& value) { m_exportSpecificationHasBeenSet = true; m_exportSpecification = std::forward<ExportSpecificationT>(value); }
+    template<typename ExportSpecificationT = ExportSpecification>
+    StartSearchResultExportJobRequest& WithExportSpecification(ExportSpecificationT&& value) { SetExportSpecification(std::forward<ExportSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * completed. After this time, any request with the same token is treated as a new
      * request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline StartSearchResultExportJobRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline StartSearchResultExportJobRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline StartSearchResultExportJobRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    StartSearchResultExportJobRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,19 +80,16 @@ namespace Model
      * filter, and search for your resources. Allowed characters include UTF-8 letters,
      * numbers, spaces, and the following characters: + - = . _ : /. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline StartSearchResultExportJobRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline StartSearchResultExportJobRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline StartSearchResultExportJobRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline StartSearchResultExportJobRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline StartSearchResultExportJobRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline StartSearchResultExportJobRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline StartSearchResultExportJobRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline StartSearchResultExportJobRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline StartSearchResultExportJobRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    StartSearchResultExportJobRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    StartSearchResultExportJobRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -104,14 +97,12 @@ namespace Model
      * <p>This parameter specifies the role ARN used to start the search results export
      * jobs.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline StartSearchResultExportJobRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline StartSearchResultExportJobRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline StartSearchResultExportJobRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    StartSearchResultExportJobRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetReportGroupTrendResult::GetReportGroupTrendResult()
-{
-}
-
 GetReportGroupTrendResult::GetReportGroupTrendResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetReportGroupTrendResult& GetReportGroupTrendResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("stats"))
   {
     m_stats = jsonValue.GetObject("stats");
-
+    m_statsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rawData"))
   {
     Aws::Utils::Array<JsonView> rawDataJsonList = jsonValue.GetArray("rawData");
@@ -42,14 +37,15 @@ GetReportGroupTrendResult& GetReportGroupTrendResult::operator =(const Aws::Amaz
     {
       m_rawData.push_back(rawDataJsonList[rawDataIndex].AsObject());
     }
+    m_rawDataHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

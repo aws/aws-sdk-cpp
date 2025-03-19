@@ -31,7 +31,7 @@ namespace Model
   class AnywhereSettings
   {
   public:
-    AWS_MEDIALIVE_API AnywhereSettings();
+    AWS_MEDIALIVE_API AnywhereSettings() = default;
     AWS_MEDIALIVE_API AnywhereSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API AnywhereSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * The ID of the channel placement group for the channel.
      */
-    inline const Aws::String& GetChannelPlacementGroupId() const{ return m_channelPlacementGroupId; }
+    inline const Aws::String& GetChannelPlacementGroupId() const { return m_channelPlacementGroupId; }
     inline bool ChannelPlacementGroupIdHasBeenSet() const { return m_channelPlacementGroupIdHasBeenSet; }
-    inline void SetChannelPlacementGroupId(const Aws::String& value) { m_channelPlacementGroupIdHasBeenSet = true; m_channelPlacementGroupId = value; }
-    inline void SetChannelPlacementGroupId(Aws::String&& value) { m_channelPlacementGroupIdHasBeenSet = true; m_channelPlacementGroupId = std::move(value); }
-    inline void SetChannelPlacementGroupId(const char* value) { m_channelPlacementGroupIdHasBeenSet = true; m_channelPlacementGroupId.assign(value); }
-    inline AnywhereSettings& WithChannelPlacementGroupId(const Aws::String& value) { SetChannelPlacementGroupId(value); return *this;}
-    inline AnywhereSettings& WithChannelPlacementGroupId(Aws::String&& value) { SetChannelPlacementGroupId(std::move(value)); return *this;}
-    inline AnywhereSettings& WithChannelPlacementGroupId(const char* value) { SetChannelPlacementGroupId(value); return *this;}
+    template<typename ChannelPlacementGroupIdT = Aws::String>
+    void SetChannelPlacementGroupId(ChannelPlacementGroupIdT&& value) { m_channelPlacementGroupIdHasBeenSet = true; m_channelPlacementGroupId = std::forward<ChannelPlacementGroupIdT>(value); }
+    template<typename ChannelPlacementGroupIdT = Aws::String>
+    AnywhereSettings& WithChannelPlacementGroupId(ChannelPlacementGroupIdT&& value) { SetChannelPlacementGroupId(std::forward<ChannelPlacementGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The ID of the cluster for the channel.
      */
-    inline const Aws::String& GetClusterId() const{ return m_clusterId; }
+    inline const Aws::String& GetClusterId() const { return m_clusterId; }
     inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
-    inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
-    inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
-    inline AnywhereSettings& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
-    inline AnywhereSettings& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
-    inline AnywhereSettings& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+    template<typename ClusterIdT = Aws::String>
+    void SetClusterId(ClusterIdT&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::forward<ClusterIdT>(value); }
+    template<typename ClusterIdT = Aws::String>
+    AnywhereSettings& WithClusterId(ClusterIdT&& value) { SetClusterId(std::forward<ClusterIdT>(value)); return *this;}
     ///@}
   private:
 

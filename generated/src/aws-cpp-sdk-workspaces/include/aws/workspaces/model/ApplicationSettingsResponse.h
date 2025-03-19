@@ -33,7 +33,7 @@ namespace Model
   class ApplicationSettingsResponse
   {
   public:
-    AWS_WORKSPACES_API ApplicationSettingsResponse();
+    AWS_WORKSPACES_API ApplicationSettingsResponse() = default;
     AWS_WORKSPACES_API ApplicationSettingsResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API ApplicationSettingsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p>Specifies whether persistent application settings are enabled for users
      * during their pool sessions.</p>
      */
-    inline const ApplicationSettingsStatusEnum& GetStatus() const{ return m_status; }
+    inline ApplicationSettingsStatusEnum GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ApplicationSettingsStatusEnum& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ApplicationSettingsStatusEnum&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ApplicationSettingsResponse& WithStatus(const ApplicationSettingsStatusEnum& value) { SetStatus(value); return *this;}
-    inline ApplicationSettingsResponse& WithStatus(ApplicationSettingsStatusEnum&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ApplicationSettingsStatusEnum value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ApplicationSettingsResponse& WithStatus(ApplicationSettingsStatusEnum value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The path prefix for the S3 bucket where users’ persistent application
      * settings are stored.</p>
      */
-    inline const Aws::String& GetSettingsGroup() const{ return m_settingsGroup; }
+    inline const Aws::String& GetSettingsGroup() const { return m_settingsGroup; }
     inline bool SettingsGroupHasBeenSet() const { return m_settingsGroupHasBeenSet; }
-    inline void SetSettingsGroup(const Aws::String& value) { m_settingsGroupHasBeenSet = true; m_settingsGroup = value; }
-    inline void SetSettingsGroup(Aws::String&& value) { m_settingsGroupHasBeenSet = true; m_settingsGroup = std::move(value); }
-    inline void SetSettingsGroup(const char* value) { m_settingsGroupHasBeenSet = true; m_settingsGroup.assign(value); }
-    inline ApplicationSettingsResponse& WithSettingsGroup(const Aws::String& value) { SetSettingsGroup(value); return *this;}
-    inline ApplicationSettingsResponse& WithSettingsGroup(Aws::String&& value) { SetSettingsGroup(std::move(value)); return *this;}
-    inline ApplicationSettingsResponse& WithSettingsGroup(const char* value) { SetSettingsGroup(value); return *this;}
+    template<typename SettingsGroupT = Aws::String>
+    void SetSettingsGroup(SettingsGroupT&& value) { m_settingsGroupHasBeenSet = true; m_settingsGroup = std::forward<SettingsGroupT>(value); }
+    template<typename SettingsGroupT = Aws::String>
+    ApplicationSettingsResponse& WithSettingsGroup(SettingsGroupT&& value) { SetSettingsGroup(std::forward<SettingsGroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,18 +70,16 @@ namespace Model
      * an Amazon Web Services Region, an S3 bucket is created. The bucket is unique to
      * the Amazon Web Services account and the Region.</p>
      */
-    inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
+    inline const Aws::String& GetS3BucketName() const { return m_s3BucketName; }
     inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
-    inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
-    inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
-    inline void SetS3BucketName(const char* value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName.assign(value); }
-    inline ApplicationSettingsResponse& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
-    inline ApplicationSettingsResponse& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
-    inline ApplicationSettingsResponse& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
+    template<typename S3BucketNameT = Aws::String>
+    void SetS3BucketName(S3BucketNameT&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::forward<S3BucketNameT>(value); }
+    template<typename S3BucketNameT = Aws::String>
+    ApplicationSettingsResponse& WithS3BucketName(S3BucketNameT&& value) { SetS3BucketName(std::forward<S3BucketNameT>(value)); return *this;}
     ///@}
   private:
 
-    ApplicationSettingsStatusEnum m_status;
+    ApplicationSettingsStatusEnum m_status{ApplicationSettingsStatusEnum::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_settingsGroup;

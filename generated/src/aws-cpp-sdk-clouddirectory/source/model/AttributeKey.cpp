@@ -18,15 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-AttributeKey::AttributeKey() : 
-    m_schemaArnHasBeenSet(false),
-    m_facetNameHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 AttributeKey::AttributeKey(JsonView jsonValue)
-  : AttributeKey()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AttributeKey& AttributeKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SchemaArn"))
   {
     m_schemaArn = jsonValue.GetString("SchemaArn");
-
     m_schemaArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FacetName"))
   {
     m_facetName = jsonValue.GetString("FacetName");
-
     m_facetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

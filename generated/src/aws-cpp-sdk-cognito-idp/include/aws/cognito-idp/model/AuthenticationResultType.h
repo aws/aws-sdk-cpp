@@ -33,7 +33,7 @@ namespace Model
   class AuthenticationResultType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API AuthenticationResultType();
+    AWS_COGNITOIDENTITYPROVIDER_API AuthenticationResultType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API AuthenticationResultType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API AuthenticationResultType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,21 +43,19 @@ namespace Model
     /**
      * <p>Your user's access token.</p>
      */
-    inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
+    inline const Aws::String& GetAccessToken() const { return m_accessToken; }
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
-    inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
-    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
-    inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
-    inline AuthenticationResultType& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
-    inline AuthenticationResultType& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
-    inline AuthenticationResultType& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
+    template<typename AccessTokenT = Aws::String>
+    void SetAccessToken(AccessTokenT&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::forward<AccessTokenT>(value); }
+    template<typename AccessTokenT = Aws::String>
+    AuthenticationResultType& WithAccessToken(AccessTokenT&& value) { SetAccessToken(std::forward<AccessTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The expiration period of the authentication result in seconds.</p>
      */
-    inline int GetExpiresIn() const{ return m_expiresIn; }
+    inline int GetExpiresIn() const { return m_expiresIn; }
     inline bool ExpiresInHasBeenSet() const { return m_expiresInHasBeenSet; }
     inline void SetExpiresIn(int value) { m_expiresInHasBeenSet = true; m_expiresIn = value; }
     inline AuthenticationResultType& WithExpiresIn(int value) { SetExpiresIn(value); return *this;}
@@ -67,61 +65,55 @@ namespace Model
     /**
      * <p>The intended use of the token, for example <code>Bearer</code>.</p>
      */
-    inline const Aws::String& GetTokenType() const{ return m_tokenType; }
+    inline const Aws::String& GetTokenType() const { return m_tokenType; }
     inline bool TokenTypeHasBeenSet() const { return m_tokenTypeHasBeenSet; }
-    inline void SetTokenType(const Aws::String& value) { m_tokenTypeHasBeenSet = true; m_tokenType = value; }
-    inline void SetTokenType(Aws::String&& value) { m_tokenTypeHasBeenSet = true; m_tokenType = std::move(value); }
-    inline void SetTokenType(const char* value) { m_tokenTypeHasBeenSet = true; m_tokenType.assign(value); }
-    inline AuthenticationResultType& WithTokenType(const Aws::String& value) { SetTokenType(value); return *this;}
-    inline AuthenticationResultType& WithTokenType(Aws::String&& value) { SetTokenType(std::move(value)); return *this;}
-    inline AuthenticationResultType& WithTokenType(const char* value) { SetTokenType(value); return *this;}
+    template<typename TokenTypeT = Aws::String>
+    void SetTokenType(TokenTypeT&& value) { m_tokenTypeHasBeenSet = true; m_tokenType = std::forward<TokenTypeT>(value); }
+    template<typename TokenTypeT = Aws::String>
+    AuthenticationResultType& WithTokenType(TokenTypeT&& value) { SetTokenType(std::forward<TokenTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Your user's refresh token.</p>
      */
-    inline const Aws::String& GetRefreshToken() const{ return m_refreshToken; }
+    inline const Aws::String& GetRefreshToken() const { return m_refreshToken; }
     inline bool RefreshTokenHasBeenSet() const { return m_refreshTokenHasBeenSet; }
-    inline void SetRefreshToken(const Aws::String& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = value; }
-    inline void SetRefreshToken(Aws::String&& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = std::move(value); }
-    inline void SetRefreshToken(const char* value) { m_refreshTokenHasBeenSet = true; m_refreshToken.assign(value); }
-    inline AuthenticationResultType& WithRefreshToken(const Aws::String& value) { SetRefreshToken(value); return *this;}
-    inline AuthenticationResultType& WithRefreshToken(Aws::String&& value) { SetRefreshToken(std::move(value)); return *this;}
-    inline AuthenticationResultType& WithRefreshToken(const char* value) { SetRefreshToken(value); return *this;}
+    template<typename RefreshTokenT = Aws::String>
+    void SetRefreshToken(RefreshTokenT&& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = std::forward<RefreshTokenT>(value); }
+    template<typename RefreshTokenT = Aws::String>
+    AuthenticationResultType& WithRefreshToken(RefreshTokenT&& value) { SetRefreshToken(std::forward<RefreshTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Your user's ID token.</p>
      */
-    inline const Aws::String& GetIdToken() const{ return m_idToken; }
+    inline const Aws::String& GetIdToken() const { return m_idToken; }
     inline bool IdTokenHasBeenSet() const { return m_idTokenHasBeenSet; }
-    inline void SetIdToken(const Aws::String& value) { m_idTokenHasBeenSet = true; m_idToken = value; }
-    inline void SetIdToken(Aws::String&& value) { m_idTokenHasBeenSet = true; m_idToken = std::move(value); }
-    inline void SetIdToken(const char* value) { m_idTokenHasBeenSet = true; m_idToken.assign(value); }
-    inline AuthenticationResultType& WithIdToken(const Aws::String& value) { SetIdToken(value); return *this;}
-    inline AuthenticationResultType& WithIdToken(Aws::String&& value) { SetIdToken(std::move(value)); return *this;}
-    inline AuthenticationResultType& WithIdToken(const char* value) { SetIdToken(value); return *this;}
+    template<typename IdTokenT = Aws::String>
+    void SetIdToken(IdTokenT&& value) { m_idTokenHasBeenSet = true; m_idToken = std::forward<IdTokenT>(value); }
+    template<typename IdTokenT = Aws::String>
+    AuthenticationResultType& WithIdToken(IdTokenT&& value) { SetIdToken(std::forward<IdTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new device metadata from an authentication result.</p>
      */
-    inline const NewDeviceMetadataType& GetNewDeviceMetadata() const{ return m_newDeviceMetadata; }
+    inline const NewDeviceMetadataType& GetNewDeviceMetadata() const { return m_newDeviceMetadata; }
     inline bool NewDeviceMetadataHasBeenSet() const { return m_newDeviceMetadataHasBeenSet; }
-    inline void SetNewDeviceMetadata(const NewDeviceMetadataType& value) { m_newDeviceMetadataHasBeenSet = true; m_newDeviceMetadata = value; }
-    inline void SetNewDeviceMetadata(NewDeviceMetadataType&& value) { m_newDeviceMetadataHasBeenSet = true; m_newDeviceMetadata = std::move(value); }
-    inline AuthenticationResultType& WithNewDeviceMetadata(const NewDeviceMetadataType& value) { SetNewDeviceMetadata(value); return *this;}
-    inline AuthenticationResultType& WithNewDeviceMetadata(NewDeviceMetadataType&& value) { SetNewDeviceMetadata(std::move(value)); return *this;}
+    template<typename NewDeviceMetadataT = NewDeviceMetadataType>
+    void SetNewDeviceMetadata(NewDeviceMetadataT&& value) { m_newDeviceMetadataHasBeenSet = true; m_newDeviceMetadata = std::forward<NewDeviceMetadataT>(value); }
+    template<typename NewDeviceMetadataT = NewDeviceMetadataType>
+    AuthenticationResultType& WithNewDeviceMetadata(NewDeviceMetadataT&& value) { SetNewDeviceMetadata(std::forward<NewDeviceMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_accessToken;
     bool m_accessTokenHasBeenSet = false;
 
-    int m_expiresIn;
+    int m_expiresIn{0};
     bool m_expiresInHasBeenSet = false;
 
     Aws::String m_tokenType;

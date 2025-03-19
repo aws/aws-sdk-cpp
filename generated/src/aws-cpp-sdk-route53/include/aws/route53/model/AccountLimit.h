@@ -31,7 +31,7 @@ namespace Model
   class AccountLimit
   {
   public:
-    AWS_ROUTE53_API AccountLimit();
+    AWS_ROUTE53_API AccountLimit() = default;
     AWS_ROUTE53_API AccountLimit(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ROUTE53_API AccountLimit& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -54,12 +54,10 @@ namespace Model
      * instances are referred to as traffic flow policy records in the Amazon Route 53
      * console.)</p> </li> </ul>
      */
-    inline const AccountLimitType& GetType() const{ return m_type; }
+    inline AccountLimitType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const AccountLimitType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(AccountLimitType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline AccountLimit& WithType(const AccountLimitType& value) { SetType(value); return *this;}
-    inline AccountLimit& WithType(AccountLimitType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(AccountLimitType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline AccountLimit& WithType(AccountLimitType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -67,17 +65,17 @@ namespace Model
      * <p>The current value for the limit that is specified by <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type">Type</a>.</p>
      */
-    inline long long GetValue() const{ return m_value; }
+    inline long long GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(long long value) { m_valueHasBeenSet = true; m_value = value; }
     inline AccountLimit& WithValue(long long value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    AccountLimitType m_type;
+    AccountLimitType m_type{AccountLimitType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    long long m_value;
+    long long m_value{0};
     bool m_valueHasBeenSet = false;
   };
 

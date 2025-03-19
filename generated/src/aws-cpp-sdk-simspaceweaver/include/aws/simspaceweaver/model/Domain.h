@@ -37,7 +37,7 @@ namespace Model
   class Domain
   {
   public:
-    AWS_SIMSPACEWEAVER_API Domain();
+    AWS_SIMSPACEWEAVER_API Domain() = default;
     AWS_SIMSPACEWEAVER_API Domain(Aws::Utils::Json::JsonView jsonValue);
     AWS_SIMSPACEWEAVER_API Domain& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SIMSPACEWEAVER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,30 +55,26 @@ namespace Model
      * You use the <code>StartApp</code> API to start the apps and use the
      * <code>StopApp</code> API to stop the apps.</p> </li> </ul>
      */
-    inline const LifecycleManagementStrategy& GetLifecycle() const{ return m_lifecycle; }
+    inline LifecycleManagementStrategy GetLifecycle() const { return m_lifecycle; }
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
-    inline void SetLifecycle(const LifecycleManagementStrategy& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
-    inline void SetLifecycle(LifecycleManagementStrategy&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
-    inline Domain& WithLifecycle(const LifecycleManagementStrategy& value) { SetLifecycle(value); return *this;}
-    inline Domain& WithLifecycle(LifecycleManagementStrategy&& value) { SetLifecycle(std::move(value)); return *this;}
+    inline void SetLifecycle(LifecycleManagementStrategy value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
+    inline Domain& WithLifecycle(LifecycleManagementStrategy value) { SetLifecycle(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the domain.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Domain& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Domain& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Domain& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Domain& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 
-    LifecycleManagementStrategy m_lifecycle;
+    LifecycleManagementStrategy m_lifecycle{LifecycleManagementStrategy::NOT_SET};
     bool m_lifecycleHasBeenSet = false;
 
     Aws::String m_name;

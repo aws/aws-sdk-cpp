@@ -35,7 +35,7 @@ namespace Model
   class RoutingStrategy
   {
   public:
-    AWS_GAMELIFT_API RoutingStrategy();
+    AWS_GAMELIFT_API RoutingStrategy() = default;
     AWS_GAMELIFT_API RoutingStrategy(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API RoutingStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,10 @@ namespace Model
      * used to display a message to the user. A terminal alias throws a
      * TerminalRoutingStrategyException with the message embedded.</p> </li> </ul>
      */
-    inline const RoutingStrategyType& GetType() const{ return m_type; }
+    inline RoutingStrategyType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RoutingStrategyType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RoutingStrategyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline RoutingStrategy& WithType(const RoutingStrategyType& value) { SetType(value); return *this;}
-    inline RoutingStrategy& WithType(RoutingStrategyType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RoutingStrategyType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RoutingStrategy& WithType(RoutingStrategyType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -63,32 +61,28 @@ namespace Model
      * <p>A unique identifier for the fleet that the alias points to. This value is the
      * fleet ID, not the fleet ARN.</p>
      */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+    inline const Aws::String& GetFleetId() const { return m_fleetId; }
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-    inline RoutingStrategy& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline RoutingStrategy& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline RoutingStrategy& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    template<typename FleetIdT = Aws::String>
+    void SetFleetId(FleetIdT&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::forward<FleetIdT>(value); }
+    template<typename FleetIdT = Aws::String>
+    RoutingStrategy& WithFleetId(FleetIdT&& value) { SetFleetId(std::forward<FleetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The message text to be used with a terminal routing strategy.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline RoutingStrategy& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline RoutingStrategy& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline RoutingStrategy& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    RoutingStrategy& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
-    RoutingStrategyType m_type;
+    RoutingStrategyType m_type{RoutingStrategyType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_fleetId;

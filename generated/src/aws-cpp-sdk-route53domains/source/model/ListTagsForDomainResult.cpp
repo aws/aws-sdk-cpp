@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTagsForDomainResult::ListTagsForDomainResult()
-{
-}
-
 ListTagsForDomainResult::ListTagsForDomainResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ ListTagsForDomainResult& ListTagsForDomainResult::operator =(const Aws::AmazonWe
     {
       m_tagList.push_back(tagListJsonList[tagListIndex].AsObject());
     }
+    m_tagListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

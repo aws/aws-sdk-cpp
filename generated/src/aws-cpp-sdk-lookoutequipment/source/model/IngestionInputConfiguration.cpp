@@ -18,13 +18,7 @@ namespace LookoutEquipment
 namespace Model
 {
 
-IngestionInputConfiguration::IngestionInputConfiguration() : 
-    m_s3InputConfigurationHasBeenSet(false)
-{
-}
-
 IngestionInputConfiguration::IngestionInputConfiguration(JsonView jsonValue)
-  : IngestionInputConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IngestionInputConfiguration& IngestionInputConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("S3InputConfiguration"))
   {
     m_s3InputConfiguration = jsonValue.GetObject("S3InputConfiguration");
-
     m_s3InputConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

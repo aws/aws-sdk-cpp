@@ -12,13 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddRegionRequest::AddRegionRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_regionNameHasBeenSet(false),
-    m_vPCSettingsHasBeenSet(false)
-{
-}
-
 Aws::String AddRegionRequest::SerializePayload() const
 {
   JsonValue payload;

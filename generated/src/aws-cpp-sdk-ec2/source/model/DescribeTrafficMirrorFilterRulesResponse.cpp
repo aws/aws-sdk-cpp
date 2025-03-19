@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTrafficMirrorFilterRulesResponse::DescribeTrafficMirrorFilterRulesResponse()
-{
-}
-
 DescribeTrafficMirrorFilterRulesResponse::DescribeTrafficMirrorFilterRulesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeTrafficMirrorFilterRulesResponse& DescribeTrafficMirrorFilterRulesRespon
     if(!trafficMirrorFilterRulesNode.IsNull())
     {
       XmlNode trafficMirrorFilterRulesMember = trafficMirrorFilterRulesNode.FirstChild("item");
+      m_trafficMirrorFilterRulesHasBeenSet = !trafficMirrorFilterRulesMember.IsNull();
       while(!trafficMirrorFilterRulesMember.IsNull())
       {
         m_trafficMirrorFilterRules.push_back(trafficMirrorFilterRulesMember);
         trafficMirrorFilterRulesMember = trafficMirrorFilterRulesMember.NextNode("item");
       }
 
+      m_trafficMirrorFilterRulesHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeTrafficMirrorFilterRulesResponse& DescribeTrafficMirrorFilterRulesRespon
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeTrafficMirrorFilterRulesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -34,7 +34,7 @@ namespace Model
   class AwsOpportunityCustomer
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API AwsOpportunityCustomer();
+    AWS_PARTNERCENTRALSELLING_API AwsOpportunityCustomer() = default;
     AWS_PARTNERCENTRALSELLING_API AwsOpportunityCustomer(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API AwsOpportunityCustomer& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * contacts may include decision makers, influencers, and other stakeholders within
      * the customer's organization.</p>
      */
-    inline const Aws::Vector<Contact>& GetContacts() const{ return m_contacts; }
+    inline const Aws::Vector<Contact>& GetContacts() const { return m_contacts; }
     inline bool ContactsHasBeenSet() const { return m_contactsHasBeenSet; }
-    inline void SetContacts(const Aws::Vector<Contact>& value) { m_contactsHasBeenSet = true; m_contacts = value; }
-    inline void SetContacts(Aws::Vector<Contact>&& value) { m_contactsHasBeenSet = true; m_contacts = std::move(value); }
-    inline AwsOpportunityCustomer& WithContacts(const Aws::Vector<Contact>& value) { SetContacts(value); return *this;}
-    inline AwsOpportunityCustomer& WithContacts(Aws::Vector<Contact>&& value) { SetContacts(std::move(value)); return *this;}
-    inline AwsOpportunityCustomer& AddContacts(const Contact& value) { m_contactsHasBeenSet = true; m_contacts.push_back(value); return *this; }
-    inline AwsOpportunityCustomer& AddContacts(Contact&& value) { m_contactsHasBeenSet = true; m_contacts.push_back(std::move(value)); return *this; }
+    template<typename ContactsT = Aws::Vector<Contact>>
+    void SetContacts(ContactsT&& value) { m_contactsHasBeenSet = true; m_contacts = std::forward<ContactsT>(value); }
+    template<typename ContactsT = Aws::Vector<Contact>>
+    AwsOpportunityCustomer& WithContacts(ContactsT&& value) { SetContacts(std::forward<ContactsT>(value)); return *this;}
+    template<typename ContactsT = Contact>
+    AwsOpportunityCustomer& AddContacts(ContactsT&& value) { m_contactsHasBeenSet = true; m_contacts.emplace_back(std::forward<ContactsT>(value)); return *this; }
     ///@}
   private:
 

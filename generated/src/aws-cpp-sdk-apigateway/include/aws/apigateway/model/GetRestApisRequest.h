@@ -29,7 +29,7 @@ namespace Model
   class GetRestApisRequest : public APIGatewayRequest
   {
   public:
-    AWS_APIGATEWAY_API GetRestApisRequest();
+    AWS_APIGATEWAY_API GetRestApisRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The current pagination position in the paged result set.</p>
      */
-    inline const Aws::String& GetPosition() const{ return m_position; }
+    inline const Aws::String& GetPosition() const { return m_position; }
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    inline void SetPosition(const Aws::String& value) { m_positionHasBeenSet = true; m_position = value; }
-    inline void SetPosition(Aws::String&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-    inline void SetPosition(const char* value) { m_positionHasBeenSet = true; m_position.assign(value); }
-    inline GetRestApisRequest& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
-    inline GetRestApisRequest& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
-    inline GetRestApisRequest& WithPosition(const char* value) { SetPosition(value); return *this;}
+    template<typename PositionT = Aws::String>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Aws::String>
+    GetRestApisRequest& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * <p>The maximum number of returned results per page. The default value is 25 and
      * the maximum value is 500.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline GetRestApisRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -71,7 +69,7 @@ namespace Model
     Aws::String m_position;
     bool m_positionHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
   };
 

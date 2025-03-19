@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-StartTimecode::StartTimecode() : 
-    m_timecodeHasBeenSet(false)
-{
-}
-
 StartTimecode::StartTimecode(JsonView jsonValue)
-  : StartTimecode()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ StartTimecode& StartTimecode::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("timecode"))
   {
     m_timecode = jsonValue.GetString("timecode");
-
     m_timecodeHasBeenSet = true;
   }
-
   return *this;
 }
 

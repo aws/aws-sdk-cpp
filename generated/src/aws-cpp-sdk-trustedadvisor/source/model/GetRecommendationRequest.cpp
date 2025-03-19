@@ -12,11 +12,6 @@ using namespace Aws::TrustedAdvisor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRecommendationRequest::GetRecommendationRequest() : 
-    m_recommendationIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetRecommendationRequest::SerializePayload() const
 {
   return {};

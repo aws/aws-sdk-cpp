@@ -18,13 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-Condition::Condition() : 
-    m_expressionHasBeenSet(false)
-{
-}
-
 Condition::Condition(JsonView jsonValue)
-  : Condition()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Condition& Condition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Expression"))
   {
     m_expression = jsonValue.GetString("Expression");
-
     m_expressionHasBeenSet = true;
   }
-
   return *this;
 }
 

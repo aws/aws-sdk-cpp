@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeImageScanFindingsResult::DescribeImageScanFindingsResult()
-{
-}
-
 DescribeImageScanFindingsResult::DescribeImageScanFindingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,45 +28,40 @@ DescribeImageScanFindingsResult& DescribeImageScanFindingsResult::operator =(con
   if(jsonValue.ValueExists("registryId"))
   {
     m_registryId = jsonValue.GetString("registryId");
-
+    m_registryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
+    m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageId"))
   {
     m_imageId = jsonValue.GetObject("imageId");
-
+    m_imageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageScanStatus"))
   {
     m_imageScanStatus = jsonValue.GetObject("imageScanStatus");
-
+    m_imageScanStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageScanFindings"))
   {
     m_imageScanFindings = jsonValue.GetObject("imageScanFindings");
-
+    m_imageScanFindingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

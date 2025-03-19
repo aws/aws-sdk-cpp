@@ -32,7 +32,7 @@ namespace Model
   class AwsAmazonMqBrokerEncryptionOptionsDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsAmazonMqBrokerEncryptionOptionsDetails();
+    AWS_SECURITYHUB_API AwsAmazonMqBrokerEncryptionOptionsDetails() = default;
     AWS_SECURITYHUB_API AwsAmazonMqBrokerEncryptionOptionsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsAmazonMqBrokerEncryptionOptionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p> The KMS key that’s used to encrypt your data at rest. If not provided,
      * Amazon MQ will use a default KMS key to encrypt your data. </p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline AwsAmazonMqBrokerEncryptionOptionsDetails& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline AwsAmazonMqBrokerEncryptionOptionsDetails& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline AwsAmazonMqBrokerEncryptionOptionsDetails& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    AwsAmazonMqBrokerEncryptionOptionsDetails& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * <code>true</code> by default if no value is provided (for example, for RabbitMQ
      * brokers). </p>
      */
-    inline bool GetUseAwsOwnedKey() const{ return m_useAwsOwnedKey; }
+    inline bool GetUseAwsOwnedKey() const { return m_useAwsOwnedKey; }
     inline bool UseAwsOwnedKeyHasBeenSet() const { return m_useAwsOwnedKeyHasBeenSet; }
     inline void SetUseAwsOwnedKey(bool value) { m_useAwsOwnedKeyHasBeenSet = true; m_useAwsOwnedKey = value; }
     inline AwsAmazonMqBrokerEncryptionOptionsDetails& WithUseAwsOwnedKey(bool value) { SetUseAwsOwnedKey(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
     Aws::String m_kmsKeyId;
     bool m_kmsKeyIdHasBeenSet = false;
 
-    bool m_useAwsOwnedKey;
+    bool m_useAwsOwnedKey{false};
     bool m_useAwsOwnedKeyHasBeenSet = false;
   };
 

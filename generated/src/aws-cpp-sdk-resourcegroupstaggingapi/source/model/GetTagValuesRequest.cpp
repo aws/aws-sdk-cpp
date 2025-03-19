@@ -12,12 +12,6 @@ using namespace Aws::ResourceGroupsTaggingAPI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTagValuesRequest::GetTagValuesRequest() : 
-    m_paginationTokenHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 Aws::String GetTagValuesRequest::SerializePayload() const
 {
   JsonValue payload;

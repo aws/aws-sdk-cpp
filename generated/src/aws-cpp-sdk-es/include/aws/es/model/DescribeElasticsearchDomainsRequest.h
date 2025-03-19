@@ -27,7 +27,7 @@ namespace Model
   class DescribeElasticsearchDomainsRequest : public ElasticsearchServiceRequest
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API DescribeElasticsearchDomainsRequest();
+    AWS_ELASTICSEARCHSERVICE_API DescribeElasticsearchDomainsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,15 +42,14 @@ namespace Model
     /**
      * <p>The Elasticsearch domains for which you want information.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDomainNames() const{ return m_domainNames; }
+    inline const Aws::Vector<Aws::String>& GetDomainNames() const { return m_domainNames; }
     inline bool DomainNamesHasBeenSet() const { return m_domainNamesHasBeenSet; }
-    inline void SetDomainNames(const Aws::Vector<Aws::String>& value) { m_domainNamesHasBeenSet = true; m_domainNames = value; }
-    inline void SetDomainNames(Aws::Vector<Aws::String>&& value) { m_domainNamesHasBeenSet = true; m_domainNames = std::move(value); }
-    inline DescribeElasticsearchDomainsRequest& WithDomainNames(const Aws::Vector<Aws::String>& value) { SetDomainNames(value); return *this;}
-    inline DescribeElasticsearchDomainsRequest& WithDomainNames(Aws::Vector<Aws::String>&& value) { SetDomainNames(std::move(value)); return *this;}
-    inline DescribeElasticsearchDomainsRequest& AddDomainNames(const Aws::String& value) { m_domainNamesHasBeenSet = true; m_domainNames.push_back(value); return *this; }
-    inline DescribeElasticsearchDomainsRequest& AddDomainNames(Aws::String&& value) { m_domainNamesHasBeenSet = true; m_domainNames.push_back(std::move(value)); return *this; }
-    inline DescribeElasticsearchDomainsRequest& AddDomainNames(const char* value) { m_domainNamesHasBeenSet = true; m_domainNames.push_back(value); return *this; }
+    template<typename DomainNamesT = Aws::Vector<Aws::String>>
+    void SetDomainNames(DomainNamesT&& value) { m_domainNamesHasBeenSet = true; m_domainNames = std::forward<DomainNamesT>(value); }
+    template<typename DomainNamesT = Aws::Vector<Aws::String>>
+    DescribeElasticsearchDomainsRequest& WithDomainNames(DomainNamesT&& value) { SetDomainNames(std::forward<DomainNamesT>(value)); return *this;}
+    template<typename DomainNamesT = Aws::String>
+    DescribeElasticsearchDomainsRequest& AddDomainNames(DomainNamesT&& value) { m_domainNamesHasBeenSet = true; m_domainNames.emplace_back(std::forward<DomainNamesT>(value)); return *this; }
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class VisualInteractionOptions
   {
   public:
-    AWS_QUICKSIGHT_API VisualInteractionOptions();
+    AWS_QUICKSIGHT_API VisualInteractionOptions() = default;
     AWS_QUICKSIGHT_API VisualInteractionOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API VisualInteractionOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The on-visual menu options for a visual.</p>
      */
-    inline const VisualMenuOption& GetVisualMenuOption() const{ return m_visualMenuOption; }
+    inline const VisualMenuOption& GetVisualMenuOption() const { return m_visualMenuOption; }
     inline bool VisualMenuOptionHasBeenSet() const { return m_visualMenuOptionHasBeenSet; }
-    inline void SetVisualMenuOption(const VisualMenuOption& value) { m_visualMenuOptionHasBeenSet = true; m_visualMenuOption = value; }
-    inline void SetVisualMenuOption(VisualMenuOption&& value) { m_visualMenuOptionHasBeenSet = true; m_visualMenuOption = std::move(value); }
-    inline VisualInteractionOptions& WithVisualMenuOption(const VisualMenuOption& value) { SetVisualMenuOption(value); return *this;}
-    inline VisualInteractionOptions& WithVisualMenuOption(VisualMenuOption&& value) { SetVisualMenuOption(std::move(value)); return *this;}
+    template<typename VisualMenuOptionT = VisualMenuOption>
+    void SetVisualMenuOption(VisualMenuOptionT&& value) { m_visualMenuOptionHasBeenSet = true; m_visualMenuOption = std::forward<VisualMenuOptionT>(value); }
+    template<typename VisualMenuOptionT = VisualMenuOption>
+    VisualInteractionOptions& WithVisualMenuOption(VisualMenuOptionT&& value) { SetVisualMenuOption(std::forward<VisualMenuOptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The context menu options for a visual.</p>
      */
-    inline const ContextMenuOption& GetContextMenuOption() const{ return m_contextMenuOption; }
+    inline const ContextMenuOption& GetContextMenuOption() const { return m_contextMenuOption; }
     inline bool ContextMenuOptionHasBeenSet() const { return m_contextMenuOptionHasBeenSet; }
-    inline void SetContextMenuOption(const ContextMenuOption& value) { m_contextMenuOptionHasBeenSet = true; m_contextMenuOption = value; }
-    inline void SetContextMenuOption(ContextMenuOption&& value) { m_contextMenuOptionHasBeenSet = true; m_contextMenuOption = std::move(value); }
-    inline VisualInteractionOptions& WithContextMenuOption(const ContextMenuOption& value) { SetContextMenuOption(value); return *this;}
-    inline VisualInteractionOptions& WithContextMenuOption(ContextMenuOption&& value) { SetContextMenuOption(std::move(value)); return *this;}
+    template<typename ContextMenuOptionT = ContextMenuOption>
+    void SetContextMenuOption(ContextMenuOptionT&& value) { m_contextMenuOptionHasBeenSet = true; m_contextMenuOption = std::forward<ContextMenuOptionT>(value); }
+    template<typename ContextMenuOptionT = ContextMenuOption>
+    VisualInteractionOptions& WithContextMenuOption(ContextMenuOptionT&& value) { SetContextMenuOption(std::forward<ContextMenuOptionT>(value)); return *this;}
     ///@}
   private:
 

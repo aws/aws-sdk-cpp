@@ -12,13 +12,6 @@ using namespace Aws::IoTEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateInputRequest::UpdateInputRequest() : 
-    m_inputNameHasBeenSet(false),
-    m_inputDescriptionHasBeenSet(false),
-    m_inputDefinitionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateInputRequest::SerializePayload() const
 {
   JsonValue payload;

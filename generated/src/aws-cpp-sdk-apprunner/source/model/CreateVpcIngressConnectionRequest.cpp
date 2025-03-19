@@ -12,14 +12,6 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateVpcIngressConnectionRequest::CreateVpcIngressConnectionRequest() : 
-    m_serviceArnHasBeenSet(false),
-    m_vpcIngressConnectionNameHasBeenSet(false),
-    m_ingressVpcConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateVpcIngressConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

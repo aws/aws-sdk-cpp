@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PublishAppVersionResult::PublishAppVersionResult() : 
-    m_identifier(0)
-{
-}
-
 PublishAppVersionResult::PublishAppVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PublishAppVersionResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ PublishAppVersionResult& PublishAppVersionResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("appArn"))
   {
     m_appArn = jsonValue.GetString("appArn");
-
+    m_appArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appVersion"))
   {
     m_appVersion = jsonValue.GetString("appVersion");
-
+    m_appVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetInt64("identifier");
-
+    m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionName"))
   {
     m_versionName = jsonValue.GetString("versionName");
-
+    m_versionNameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

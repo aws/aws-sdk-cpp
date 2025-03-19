@@ -26,7 +26,7 @@ namespace Model
   class DeleteIdentitiesRequest : public CognitoIdentityRequest
   {
   public:
-    AWS_COGNITOIDENTITY_API DeleteIdentitiesRequest();
+    AWS_COGNITOIDENTITY_API DeleteIdentitiesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,15 +43,14 @@ namespace Model
     /**
      * <p>A list of 1-60 identities that you want to delete.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIdentityIdsToDelete() const{ return m_identityIdsToDelete; }
+    inline const Aws::Vector<Aws::String>& GetIdentityIdsToDelete() const { return m_identityIdsToDelete; }
     inline bool IdentityIdsToDeleteHasBeenSet() const { return m_identityIdsToDeleteHasBeenSet; }
-    inline void SetIdentityIdsToDelete(const Aws::Vector<Aws::String>& value) { m_identityIdsToDeleteHasBeenSet = true; m_identityIdsToDelete = value; }
-    inline void SetIdentityIdsToDelete(Aws::Vector<Aws::String>&& value) { m_identityIdsToDeleteHasBeenSet = true; m_identityIdsToDelete = std::move(value); }
-    inline DeleteIdentitiesRequest& WithIdentityIdsToDelete(const Aws::Vector<Aws::String>& value) { SetIdentityIdsToDelete(value); return *this;}
-    inline DeleteIdentitiesRequest& WithIdentityIdsToDelete(Aws::Vector<Aws::String>&& value) { SetIdentityIdsToDelete(std::move(value)); return *this;}
-    inline DeleteIdentitiesRequest& AddIdentityIdsToDelete(const Aws::String& value) { m_identityIdsToDeleteHasBeenSet = true; m_identityIdsToDelete.push_back(value); return *this; }
-    inline DeleteIdentitiesRequest& AddIdentityIdsToDelete(Aws::String&& value) { m_identityIdsToDeleteHasBeenSet = true; m_identityIdsToDelete.push_back(std::move(value)); return *this; }
-    inline DeleteIdentitiesRequest& AddIdentityIdsToDelete(const char* value) { m_identityIdsToDeleteHasBeenSet = true; m_identityIdsToDelete.push_back(value); return *this; }
+    template<typename IdentityIdsToDeleteT = Aws::Vector<Aws::String>>
+    void SetIdentityIdsToDelete(IdentityIdsToDeleteT&& value) { m_identityIdsToDeleteHasBeenSet = true; m_identityIdsToDelete = std::forward<IdentityIdsToDeleteT>(value); }
+    template<typename IdentityIdsToDeleteT = Aws::Vector<Aws::String>>
+    DeleteIdentitiesRequest& WithIdentityIdsToDelete(IdentityIdsToDeleteT&& value) { SetIdentityIdsToDelete(std::forward<IdentityIdsToDeleteT>(value)); return *this;}
+    template<typename IdentityIdsToDeleteT = Aws::String>
+    DeleteIdentitiesRequest& AddIdentityIdsToDelete(IdentityIdsToDeleteT&& value) { m_identityIdsToDeleteHasBeenSet = true; m_identityIdsToDelete.emplace_back(std::forward<IdentityIdsToDeleteT>(value)); return *this; }
     ///@}
   private:
 

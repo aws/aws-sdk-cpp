@@ -32,7 +32,7 @@ namespace Model
   class MetricWindow
   {
   public:
-    AWS_IOTSITEWISE_API MetricWindow();
+    AWS_IOTSITEWISE_API MetricWindow() = default;
     AWS_IOTSITEWISE_API MetricWindow(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API MetricWindow& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The tumbling time interval window.</p>
      */
-    inline const TumblingWindow& GetTumbling() const{ return m_tumbling; }
+    inline const TumblingWindow& GetTumbling() const { return m_tumbling; }
     inline bool TumblingHasBeenSet() const { return m_tumblingHasBeenSet; }
-    inline void SetTumbling(const TumblingWindow& value) { m_tumblingHasBeenSet = true; m_tumbling = value; }
-    inline void SetTumbling(TumblingWindow&& value) { m_tumblingHasBeenSet = true; m_tumbling = std::move(value); }
-    inline MetricWindow& WithTumbling(const TumblingWindow& value) { SetTumbling(value); return *this;}
-    inline MetricWindow& WithTumbling(TumblingWindow&& value) { SetTumbling(std::move(value)); return *this;}
+    template<typename TumblingT = TumblingWindow>
+    void SetTumbling(TumblingT&& value) { m_tumblingHasBeenSet = true; m_tumbling = std::forward<TumblingT>(value); }
+    template<typename TumblingT = TumblingWindow>
+    MetricWindow& WithTumbling(TumblingT&& value) { SetTumbling(std::forward<TumblingT>(value)); return *this;}
     ///@}
   private:
 

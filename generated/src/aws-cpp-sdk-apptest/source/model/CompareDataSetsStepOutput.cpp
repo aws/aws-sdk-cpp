@@ -18,15 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-CompareDataSetsStepOutput::CompareDataSetsStepOutput() : 
-    m_comparisonOutputLocationHasBeenSet(false),
-    m_comparisonStatus(ComparisonStatusEnum::NOT_SET),
-    m_comparisonStatusHasBeenSet(false)
-{
-}
-
 CompareDataSetsStepOutput::CompareDataSetsStepOutput(JsonView jsonValue)
-  : CompareDataSetsStepOutput()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CompareDataSetsStepOutput& CompareDataSetsStepOutput::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("comparisonOutputLocation"))
   {
     m_comparisonOutputLocation = jsonValue.GetString("comparisonOutputLocation");
-
     m_comparisonOutputLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("comparisonStatus"))
   {
     m_comparisonStatus = ComparisonStatusEnumMapper::GetComparisonStatusEnumForName(jsonValue.GetString("comparisonStatus"));
-
     m_comparisonStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

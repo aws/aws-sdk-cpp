@@ -12,15 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCurrentUserDataRequest::GetCurrentUserDataRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetCurrentUserDataRequest::SerializePayload() const
 {
   JsonValue payload;

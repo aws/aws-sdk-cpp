@@ -40,7 +40,7 @@ namespace Model
   class TypeConverter
   {
   public:
-    AWS_CLOUDWATCHLOGS_API TypeConverter();
+    AWS_CLOUDWATCHLOGS_API TypeConverter() = default;
     AWS_CLOUDWATCHLOGS_API TypeConverter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API TypeConverter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,14 @@ namespace Model
      * <p>An array of <code>TypeConverterEntry</code> objects, where each object
      * contains the information about one field to change the type of. </p>
      */
-    inline const Aws::Vector<TypeConverterEntry>& GetEntries() const{ return m_entries; }
+    inline const Aws::Vector<TypeConverterEntry>& GetEntries() const { return m_entries; }
     inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
-    inline void SetEntries(const Aws::Vector<TypeConverterEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
-    inline void SetEntries(Aws::Vector<TypeConverterEntry>&& value) { m_entriesHasBeenSet = true; m_entries = std::move(value); }
-    inline TypeConverter& WithEntries(const Aws::Vector<TypeConverterEntry>& value) { SetEntries(value); return *this;}
-    inline TypeConverter& WithEntries(Aws::Vector<TypeConverterEntry>&& value) { SetEntries(std::move(value)); return *this;}
-    inline TypeConverter& AddEntries(const TypeConverterEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
-    inline TypeConverter& AddEntries(TypeConverterEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
+    template<typename EntriesT = Aws::Vector<TypeConverterEntry>>
+    void SetEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries = std::forward<EntriesT>(value); }
+    template<typename EntriesT = Aws::Vector<TypeConverterEntry>>
+    TypeConverter& WithEntries(EntriesT&& value) { SetEntries(std::forward<EntriesT>(value)); return *this;}
+    template<typename EntriesT = TypeConverterEntry>
+    TypeConverter& AddEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries.emplace_back(std::forward<EntriesT>(value)); return *this; }
     ///@}
   private:
 

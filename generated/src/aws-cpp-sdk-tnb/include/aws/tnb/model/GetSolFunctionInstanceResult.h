@@ -31,7 +31,7 @@ namespace Model
   class GetSolFunctionInstanceResult
   {
   public:
-    AWS_TNB_API GetSolFunctionInstanceResult();
+    AWS_TNB_API GetSolFunctionInstanceResult() = default;
     AWS_TNB_API GetSolFunctionInstanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TNB_API GetSolFunctionInstanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,68 +40,60 @@ namespace Model
     /**
      * <p>Network function instance ARN.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline GetSolFunctionInstanceResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetSolFunctionInstanceResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetSolFunctionInstanceResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetSolFunctionInstanceResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Network function instance ID.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetSolFunctionInstanceResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetSolFunctionInstanceResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetSolFunctionInstanceResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetSolFunctionInstanceResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const GetSolVnfInfo& GetInstantiatedVnfInfo() const{ return m_instantiatedVnfInfo; }
-    inline void SetInstantiatedVnfInfo(const GetSolVnfInfo& value) { m_instantiatedVnfInfo = value; }
-    inline void SetInstantiatedVnfInfo(GetSolVnfInfo&& value) { m_instantiatedVnfInfo = std::move(value); }
-    inline GetSolFunctionInstanceResult& WithInstantiatedVnfInfo(const GetSolVnfInfo& value) { SetInstantiatedVnfInfo(value); return *this;}
-    inline GetSolFunctionInstanceResult& WithInstantiatedVnfInfo(GetSolVnfInfo&& value) { SetInstantiatedVnfInfo(std::move(value)); return *this;}
+    inline const GetSolVnfInfo& GetInstantiatedVnfInfo() const { return m_instantiatedVnfInfo; }
+    template<typename InstantiatedVnfInfoT = GetSolVnfInfo>
+    void SetInstantiatedVnfInfo(InstantiatedVnfInfoT&& value) { m_instantiatedVnfInfoHasBeenSet = true; m_instantiatedVnfInfo = std::forward<InstantiatedVnfInfoT>(value); }
+    template<typename InstantiatedVnfInfoT = GetSolVnfInfo>
+    GetSolFunctionInstanceResult& WithInstantiatedVnfInfo(InstantiatedVnfInfoT&& value) { SetInstantiatedVnfInfo(std::forward<InstantiatedVnfInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Network function instantiation state.</p>
      */
-    inline const VnfInstantiationState& GetInstantiationState() const{ return m_instantiationState; }
-    inline void SetInstantiationState(const VnfInstantiationState& value) { m_instantiationState = value; }
-    inline void SetInstantiationState(VnfInstantiationState&& value) { m_instantiationState = std::move(value); }
-    inline GetSolFunctionInstanceResult& WithInstantiationState(const VnfInstantiationState& value) { SetInstantiationState(value); return *this;}
-    inline GetSolFunctionInstanceResult& WithInstantiationState(VnfInstantiationState&& value) { SetInstantiationState(std::move(value)); return *this;}
+    inline VnfInstantiationState GetInstantiationState() const { return m_instantiationState; }
+    inline void SetInstantiationState(VnfInstantiationState value) { m_instantiationStateHasBeenSet = true; m_instantiationState = value; }
+    inline GetSolFunctionInstanceResult& WithInstantiationState(VnfInstantiationState value) { SetInstantiationState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const GetSolFunctionInstanceMetadata& GetMetadata() const{ return m_metadata; }
-    inline void SetMetadata(const GetSolFunctionInstanceMetadata& value) { m_metadata = value; }
-    inline void SetMetadata(GetSolFunctionInstanceMetadata&& value) { m_metadata = std::move(value); }
-    inline GetSolFunctionInstanceResult& WithMetadata(const GetSolFunctionInstanceMetadata& value) { SetMetadata(value); return *this;}
-    inline GetSolFunctionInstanceResult& WithMetadata(GetSolFunctionInstanceMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+    inline const GetSolFunctionInstanceMetadata& GetMetadata() const { return m_metadata; }
+    template<typename MetadataT = GetSolFunctionInstanceMetadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = GetSolFunctionInstanceMetadata>
+    GetSolFunctionInstanceResult& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Network instance ID.</p>
      */
-    inline const Aws::String& GetNsInstanceId() const{ return m_nsInstanceId; }
-    inline void SetNsInstanceId(const Aws::String& value) { m_nsInstanceId = value; }
-    inline void SetNsInstanceId(Aws::String&& value) { m_nsInstanceId = std::move(value); }
-    inline void SetNsInstanceId(const char* value) { m_nsInstanceId.assign(value); }
-    inline GetSolFunctionInstanceResult& WithNsInstanceId(const Aws::String& value) { SetNsInstanceId(value); return *this;}
-    inline GetSolFunctionInstanceResult& WithNsInstanceId(Aws::String&& value) { SetNsInstanceId(std::move(value)); return *this;}
-    inline GetSolFunctionInstanceResult& WithNsInstanceId(const char* value) { SetNsInstanceId(value); return *this;}
+    inline const Aws::String& GetNsInstanceId() const { return m_nsInstanceId; }
+    template<typename NsInstanceIdT = Aws::String>
+    void SetNsInstanceId(NsInstanceIdT&& value) { m_nsInstanceIdHasBeenSet = true; m_nsInstanceId = std::forward<NsInstanceIdT>(value); }
+    template<typename NsInstanceIdT = Aws::String>
+    GetSolFunctionInstanceResult& WithNsInstanceId(NsInstanceIdT&& value) { SetNsInstanceId(std::forward<NsInstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,122 +102,120 @@ namespace Model
      * consists of a key and an optional value. You can use tags to search and filter
      * your resources or track your Amazon Web Services costs.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetSolFunctionInstanceResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetSolFunctionInstanceResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetSolFunctionInstanceResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetSolFunctionInstanceResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetSolFunctionInstanceResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetSolFunctionInstanceResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetSolFunctionInstanceResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetSolFunctionInstanceResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetSolFunctionInstanceResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetSolFunctionInstanceResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetSolFunctionInstanceResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Function package ID.</p>
      */
-    inline const Aws::String& GetVnfPkgId() const{ return m_vnfPkgId; }
-    inline void SetVnfPkgId(const Aws::String& value) { m_vnfPkgId = value; }
-    inline void SetVnfPkgId(Aws::String&& value) { m_vnfPkgId = std::move(value); }
-    inline void SetVnfPkgId(const char* value) { m_vnfPkgId.assign(value); }
-    inline GetSolFunctionInstanceResult& WithVnfPkgId(const Aws::String& value) { SetVnfPkgId(value); return *this;}
-    inline GetSolFunctionInstanceResult& WithVnfPkgId(Aws::String&& value) { SetVnfPkgId(std::move(value)); return *this;}
-    inline GetSolFunctionInstanceResult& WithVnfPkgId(const char* value) { SetVnfPkgId(value); return *this;}
+    inline const Aws::String& GetVnfPkgId() const { return m_vnfPkgId; }
+    template<typename VnfPkgIdT = Aws::String>
+    void SetVnfPkgId(VnfPkgIdT&& value) { m_vnfPkgIdHasBeenSet = true; m_vnfPkgId = std::forward<VnfPkgIdT>(value); }
+    template<typename VnfPkgIdT = Aws::String>
+    GetSolFunctionInstanceResult& WithVnfPkgId(VnfPkgIdT&& value) { SetVnfPkgId(std::forward<VnfPkgIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Network function product name.</p>
      */
-    inline const Aws::String& GetVnfProductName() const{ return m_vnfProductName; }
-    inline void SetVnfProductName(const Aws::String& value) { m_vnfProductName = value; }
-    inline void SetVnfProductName(Aws::String&& value) { m_vnfProductName = std::move(value); }
-    inline void SetVnfProductName(const char* value) { m_vnfProductName.assign(value); }
-    inline GetSolFunctionInstanceResult& WithVnfProductName(const Aws::String& value) { SetVnfProductName(value); return *this;}
-    inline GetSolFunctionInstanceResult& WithVnfProductName(Aws::String&& value) { SetVnfProductName(std::move(value)); return *this;}
-    inline GetSolFunctionInstanceResult& WithVnfProductName(const char* value) { SetVnfProductName(value); return *this;}
+    inline const Aws::String& GetVnfProductName() const { return m_vnfProductName; }
+    template<typename VnfProductNameT = Aws::String>
+    void SetVnfProductName(VnfProductNameT&& value) { m_vnfProductNameHasBeenSet = true; m_vnfProductName = std::forward<VnfProductNameT>(value); }
+    template<typename VnfProductNameT = Aws::String>
+    GetSolFunctionInstanceResult& WithVnfProductName(VnfProductNameT&& value) { SetVnfProductName(std::forward<VnfProductNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Network function provider.</p>
      */
-    inline const Aws::String& GetVnfProvider() const{ return m_vnfProvider; }
-    inline void SetVnfProvider(const Aws::String& value) { m_vnfProvider = value; }
-    inline void SetVnfProvider(Aws::String&& value) { m_vnfProvider = std::move(value); }
-    inline void SetVnfProvider(const char* value) { m_vnfProvider.assign(value); }
-    inline GetSolFunctionInstanceResult& WithVnfProvider(const Aws::String& value) { SetVnfProvider(value); return *this;}
-    inline GetSolFunctionInstanceResult& WithVnfProvider(Aws::String&& value) { SetVnfProvider(std::move(value)); return *this;}
-    inline GetSolFunctionInstanceResult& WithVnfProvider(const char* value) { SetVnfProvider(value); return *this;}
+    inline const Aws::String& GetVnfProvider() const { return m_vnfProvider; }
+    template<typename VnfProviderT = Aws::String>
+    void SetVnfProvider(VnfProviderT&& value) { m_vnfProviderHasBeenSet = true; m_vnfProvider = std::forward<VnfProviderT>(value); }
+    template<typename VnfProviderT = Aws::String>
+    GetSolFunctionInstanceResult& WithVnfProvider(VnfProviderT&& value) { SetVnfProvider(std::forward<VnfProviderT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Function package descriptor ID.</p>
      */
-    inline const Aws::String& GetVnfdId() const{ return m_vnfdId; }
-    inline void SetVnfdId(const Aws::String& value) { m_vnfdId = value; }
-    inline void SetVnfdId(Aws::String&& value) { m_vnfdId = std::move(value); }
-    inline void SetVnfdId(const char* value) { m_vnfdId.assign(value); }
-    inline GetSolFunctionInstanceResult& WithVnfdId(const Aws::String& value) { SetVnfdId(value); return *this;}
-    inline GetSolFunctionInstanceResult& WithVnfdId(Aws::String&& value) { SetVnfdId(std::move(value)); return *this;}
-    inline GetSolFunctionInstanceResult& WithVnfdId(const char* value) { SetVnfdId(value); return *this;}
+    inline const Aws::String& GetVnfdId() const { return m_vnfdId; }
+    template<typename VnfdIdT = Aws::String>
+    void SetVnfdId(VnfdIdT&& value) { m_vnfdIdHasBeenSet = true; m_vnfdId = std::forward<VnfdIdT>(value); }
+    template<typename VnfdIdT = Aws::String>
+    GetSolFunctionInstanceResult& WithVnfdId(VnfdIdT&& value) { SetVnfdId(std::forward<VnfdIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Function package descriptor version.</p>
      */
-    inline const Aws::String& GetVnfdVersion() const{ return m_vnfdVersion; }
-    inline void SetVnfdVersion(const Aws::String& value) { m_vnfdVersion = value; }
-    inline void SetVnfdVersion(Aws::String&& value) { m_vnfdVersion = std::move(value); }
-    inline void SetVnfdVersion(const char* value) { m_vnfdVersion.assign(value); }
-    inline GetSolFunctionInstanceResult& WithVnfdVersion(const Aws::String& value) { SetVnfdVersion(value); return *this;}
-    inline GetSolFunctionInstanceResult& WithVnfdVersion(Aws::String&& value) { SetVnfdVersion(std::move(value)); return *this;}
-    inline GetSolFunctionInstanceResult& WithVnfdVersion(const char* value) { SetVnfdVersion(value); return *this;}
+    inline const Aws::String& GetVnfdVersion() const { return m_vnfdVersion; }
+    template<typename VnfdVersionT = Aws::String>
+    void SetVnfdVersion(VnfdVersionT&& value) { m_vnfdVersionHasBeenSet = true; m_vnfdVersion = std::forward<VnfdVersionT>(value); }
+    template<typename VnfdVersionT = Aws::String>
+    GetSolFunctionInstanceResult& WithVnfdVersion(VnfdVersionT&& value) { SetVnfdVersion(std::forward<VnfdVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSolFunctionInstanceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSolFunctionInstanceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSolFunctionInstanceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSolFunctionInstanceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     GetSolVnfInfo m_instantiatedVnfInfo;
+    bool m_instantiatedVnfInfoHasBeenSet = false;
 
-    VnfInstantiationState m_instantiationState;
+    VnfInstantiationState m_instantiationState{VnfInstantiationState::NOT_SET};
+    bool m_instantiationStateHasBeenSet = false;
 
     GetSolFunctionInstanceMetadata m_metadata;
+    bool m_metadataHasBeenSet = false;
 
     Aws::String m_nsInstanceId;
+    bool m_nsInstanceIdHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_vnfPkgId;
+    bool m_vnfPkgIdHasBeenSet = false;
 
     Aws::String m_vnfProductName;
+    bool m_vnfProductNameHasBeenSet = false;
 
     Aws::String m_vnfProvider;
+    bool m_vnfProviderHasBeenSet = false;
 
     Aws::String m_vnfdId;
+    bool m_vnfdIdHasBeenSet = false;
 
     Aws::String m_vnfdVersion;
+    bool m_vnfdVersionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

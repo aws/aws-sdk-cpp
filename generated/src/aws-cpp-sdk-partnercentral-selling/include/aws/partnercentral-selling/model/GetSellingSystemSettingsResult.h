@@ -27,7 +27,7 @@ namespace Model
   class GetSellingSystemSettingsResult
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API GetSellingSystemSettingsResult();
+    AWS_PARTNERCENTRALSELLING_API GetSellingSystemSettingsResult() = default;
     AWS_PARTNERCENTRALSELLING_API GetSellingSystemSettingsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PARTNERCENTRALSELLING_API GetSellingSystemSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
      * include <code>AWS</code> for production and <code>Sandbox</code> for testing
      * environments.</p>
      */
-    inline const Aws::String& GetCatalog() const{ return m_catalog; }
-    inline void SetCatalog(const Aws::String& value) { m_catalog = value; }
-    inline void SetCatalog(Aws::String&& value) { m_catalog = std::move(value); }
-    inline void SetCatalog(const char* value) { m_catalog.assign(value); }
-    inline GetSellingSystemSettingsResult& WithCatalog(const Aws::String& value) { SetCatalog(value); return *this;}
-    inline GetSellingSystemSettingsResult& WithCatalog(Aws::String&& value) { SetCatalog(std::move(value)); return *this;}
-    inline GetSellingSystemSettingsResult& WithCatalog(const char* value) { SetCatalog(value); return *this;}
+    inline const Aws::String& GetCatalog() const { return m_catalog; }
+    template<typename CatalogT = Aws::String>
+    void SetCatalog(CatalogT&& value) { m_catalogHasBeenSet = true; m_catalog = std::forward<CatalogT>(value); }
+    template<typename CatalogT = Aws::String>
+    GetSellingSystemSettingsResult& WithCatalog(CatalogT&& value) { SetCatalog(std::forward<CatalogT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,32 +50,31 @@ namespace Model
      * <p>Specifies the ARN of the IAM Role used for resource snapshot job
      * executions.</p>
      */
-    inline const Aws::String& GetResourceSnapshotJobRoleArn() const{ return m_resourceSnapshotJobRoleArn; }
-    inline void SetResourceSnapshotJobRoleArn(const Aws::String& value) { m_resourceSnapshotJobRoleArn = value; }
-    inline void SetResourceSnapshotJobRoleArn(Aws::String&& value) { m_resourceSnapshotJobRoleArn = std::move(value); }
-    inline void SetResourceSnapshotJobRoleArn(const char* value) { m_resourceSnapshotJobRoleArn.assign(value); }
-    inline GetSellingSystemSettingsResult& WithResourceSnapshotJobRoleArn(const Aws::String& value) { SetResourceSnapshotJobRoleArn(value); return *this;}
-    inline GetSellingSystemSettingsResult& WithResourceSnapshotJobRoleArn(Aws::String&& value) { SetResourceSnapshotJobRoleArn(std::move(value)); return *this;}
-    inline GetSellingSystemSettingsResult& WithResourceSnapshotJobRoleArn(const char* value) { SetResourceSnapshotJobRoleArn(value); return *this;}
+    inline const Aws::String& GetResourceSnapshotJobRoleArn() const { return m_resourceSnapshotJobRoleArn; }
+    template<typename ResourceSnapshotJobRoleArnT = Aws::String>
+    void SetResourceSnapshotJobRoleArn(ResourceSnapshotJobRoleArnT&& value) { m_resourceSnapshotJobRoleArnHasBeenSet = true; m_resourceSnapshotJobRoleArn = std::forward<ResourceSnapshotJobRoleArnT>(value); }
+    template<typename ResourceSnapshotJobRoleArnT = Aws::String>
+    GetSellingSystemSettingsResult& WithResourceSnapshotJobRoleArn(ResourceSnapshotJobRoleArnT&& value) { SetResourceSnapshotJobRoleArn(std::forward<ResourceSnapshotJobRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSellingSystemSettingsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSellingSystemSettingsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSellingSystemSettingsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSellingSystemSettingsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_catalog;
+    bool m_catalogHasBeenSet = false;
 
     Aws::String m_resourceSnapshotJobRoleArn;
+    bool m_resourceSnapshotJobRoleArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -15,12 +15,6 @@ using namespace Aws::S3Control::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateAccessPointForObjectLambdaRequest::CreateAccessPointForObjectLambdaRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_configurationHasBeenSet(false)
-{
-}
 
 Aws::String CreateAccessPointForObjectLambdaRequest::SerializePayload() const
 {

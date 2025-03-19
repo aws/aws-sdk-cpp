@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CreateDomainRequest::CreateDomainRequest() : 
-    m_domainHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDomainRequest::SerializePayload() const
 {
   JsonValue payload;

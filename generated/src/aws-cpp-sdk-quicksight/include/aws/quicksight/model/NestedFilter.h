@@ -34,7 +34,7 @@ namespace Model
   class NestedFilter
   {
   public:
-    AWS_QUICKSIGHT_API NestedFilter();
+    AWS_QUICKSIGHT_API NestedFilter() = default;
     AWS_QUICKSIGHT_API NestedFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API NestedFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,26 +45,24 @@ namespace Model
      * <p>An identifier that uniquely identifies a filter within a dashboard, analysis,
      * or template.</p>
      */
-    inline const Aws::String& GetFilterId() const{ return m_filterId; }
+    inline const Aws::String& GetFilterId() const { return m_filterId; }
     inline bool FilterIdHasBeenSet() const { return m_filterIdHasBeenSet; }
-    inline void SetFilterId(const Aws::String& value) { m_filterIdHasBeenSet = true; m_filterId = value; }
-    inline void SetFilterId(Aws::String&& value) { m_filterIdHasBeenSet = true; m_filterId = std::move(value); }
-    inline void SetFilterId(const char* value) { m_filterIdHasBeenSet = true; m_filterId.assign(value); }
-    inline NestedFilter& WithFilterId(const Aws::String& value) { SetFilterId(value); return *this;}
-    inline NestedFilter& WithFilterId(Aws::String&& value) { SetFilterId(std::move(value)); return *this;}
-    inline NestedFilter& WithFilterId(const char* value) { SetFilterId(value); return *this;}
+    template<typename FilterIdT = Aws::String>
+    void SetFilterId(FilterIdT&& value) { m_filterIdHasBeenSet = true; m_filterId = std::forward<FilterIdT>(value); }
+    template<typename FilterIdT = Aws::String>
+    NestedFilter& WithFilterId(FilterIdT&& value) { SetFilterId(std::forward<FilterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The column that the filter is applied to.</p>
      */
-    inline const ColumnIdentifier& GetColumn() const{ return m_column; }
+    inline const ColumnIdentifier& GetColumn() const { return m_column; }
     inline bool ColumnHasBeenSet() const { return m_columnHasBeenSet; }
-    inline void SetColumn(const ColumnIdentifier& value) { m_columnHasBeenSet = true; m_column = value; }
-    inline void SetColumn(ColumnIdentifier&& value) { m_columnHasBeenSet = true; m_column = std::move(value); }
-    inline NestedFilter& WithColumn(const ColumnIdentifier& value) { SetColumn(value); return *this;}
-    inline NestedFilter& WithColumn(ColumnIdentifier&& value) { SetColumn(std::move(value)); return *this;}
+    template<typename ColumnT = ColumnIdentifier>
+    void SetColumn(ColumnT&& value) { m_columnHasBeenSet = true; m_column = std::forward<ColumnT>(value); }
+    template<typename ColumnT = ColumnIdentifier>
+    NestedFilter& WithColumn(ColumnT&& value) { SetColumn(std::forward<ColumnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +70,7 @@ namespace Model
      * <p>A boolean condition to include or exclude the subset that is defined by the
      * values of the nested inner filter.</p>
      */
-    inline bool GetIncludeInnerSet() const{ return m_includeInnerSet; }
+    inline bool GetIncludeInnerSet() const { return m_includeInnerSet; }
     inline bool IncludeInnerSetHasBeenSet() const { return m_includeInnerSetHasBeenSet; }
     inline void SetIncludeInnerSet(bool value) { m_includeInnerSetHasBeenSet = true; m_includeInnerSet = value; }
     inline NestedFilter& WithIncludeInnerSet(bool value) { SetIncludeInnerSet(value); return *this;}
@@ -83,12 +81,12 @@ namespace Model
      * <p>The <code>InnerFilter</code> defines the subset of data to be used with the
      * <code>NestedFilter</code>.</p>
      */
-    inline const InnerFilter& GetInnerFilter() const{ return m_innerFilter; }
+    inline const InnerFilter& GetInnerFilter() const { return m_innerFilter; }
     inline bool InnerFilterHasBeenSet() const { return m_innerFilterHasBeenSet; }
-    inline void SetInnerFilter(const InnerFilter& value) { m_innerFilterHasBeenSet = true; m_innerFilter = value; }
-    inline void SetInnerFilter(InnerFilter&& value) { m_innerFilterHasBeenSet = true; m_innerFilter = std::move(value); }
-    inline NestedFilter& WithInnerFilter(const InnerFilter& value) { SetInnerFilter(value); return *this;}
-    inline NestedFilter& WithInnerFilter(InnerFilter&& value) { SetInnerFilter(std::move(value)); return *this;}
+    template<typename InnerFilterT = InnerFilter>
+    void SetInnerFilter(InnerFilterT&& value) { m_innerFilterHasBeenSet = true; m_innerFilter = std::forward<InnerFilterT>(value); }
+    template<typename InnerFilterT = InnerFilter>
+    NestedFilter& WithInnerFilter(InnerFilterT&& value) { SetInnerFilter(std::forward<InnerFilterT>(value)); return *this;}
     ///@}
   private:
 
@@ -98,7 +96,7 @@ namespace Model
     ColumnIdentifier m_column;
     bool m_columnHasBeenSet = false;
 
-    bool m_includeInnerSet;
+    bool m_includeInnerSet{false};
     bool m_includeInnerSetHasBeenSet = false;
 
     InnerFilter m_innerFilter;

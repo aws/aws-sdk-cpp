@@ -18,22 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-ForecastSummary::ForecastSummary() : 
-    m_forecastArnHasBeenSet(false),
-    m_forecastNameHasBeenSet(false),
-    m_predictorArnHasBeenSet(false),
-    m_createdUsingAutoPredictor(false),
-    m_createdUsingAutoPredictorHasBeenSet(false),
-    m_datasetGroupArnHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModificationTimeHasBeenSet(false)
-{
-}
-
 ForecastSummary::ForecastSummary(JsonView jsonValue)
-  : ForecastSummary()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ ForecastSummary& ForecastSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ForecastArn"))
   {
     m_forecastArn = jsonValue.GetString("ForecastArn");
-
     m_forecastArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ForecastName"))
   {
     m_forecastName = jsonValue.GetString("ForecastName");
-
     m_forecastNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PredictorArn"))
   {
     m_predictorArn = jsonValue.GetString("PredictorArn");
-
     m_predictorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedUsingAutoPredictor"))
   {
     m_createdUsingAutoPredictor = jsonValue.GetBool("CreatedUsingAutoPredictor");
-
     m_createdUsingAutoPredictorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetGroupArn"))
   {
     m_datasetGroupArn = jsonValue.GetString("DatasetGroupArn");
-
     m_datasetGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModificationTime"))
   {
     m_lastModificationTime = jsonValue.GetDouble("LastModificationTime");
-
     m_lastModificationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

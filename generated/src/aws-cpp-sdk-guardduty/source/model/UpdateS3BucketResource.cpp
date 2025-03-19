@@ -18,13 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-UpdateS3BucketResource::UpdateS3BucketResource() : 
-    m_objectPrefixesHasBeenSet(false)
-{
-}
-
 UpdateS3BucketResource::UpdateS3BucketResource(JsonView jsonValue)
-  : UpdateS3BucketResource()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ UpdateS3BucketResource& UpdateS3BucketResource::operator =(JsonView jsonValue)
     }
     m_objectPrefixesHasBeenSet = true;
   }
-
   return *this;
 }
 

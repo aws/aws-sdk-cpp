@@ -18,17 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ManagedAgent::ManagedAgent() : 
-    m_lastStartedAtHasBeenSet(false),
-    m_name(ManagedAgentName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_lastStatusHasBeenSet(false)
-{
-}
-
 ManagedAgent::ManagedAgent(JsonView jsonValue)
-  : ManagedAgent()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ManagedAgent& ManagedAgent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("lastStartedAt"))
   {
     m_lastStartedAt = jsonValue.GetDouble("lastStartedAt");
-
     m_lastStartedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = ManagedAgentNameMapper::GetManagedAgentNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastStatus"))
   {
     m_lastStatus = jsonValue.GetString("lastStatus");
-
     m_lastStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

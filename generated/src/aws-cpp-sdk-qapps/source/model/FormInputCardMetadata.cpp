@@ -18,13 +18,7 @@ namespace QApps
 namespace Model
 {
 
-FormInputCardMetadata::FormInputCardMetadata() : 
-    m_schemaHasBeenSet(false)
-{
-}
-
 FormInputCardMetadata::FormInputCardMetadata(JsonView jsonValue)
-  : FormInputCardMetadata()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FormInputCardMetadata& FormInputCardMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("schema"))
   {
     m_schema = jsonValue.GetObject("schema");
-
     m_schemaHasBeenSet = true;
   }
-
   return *this;
 }
 

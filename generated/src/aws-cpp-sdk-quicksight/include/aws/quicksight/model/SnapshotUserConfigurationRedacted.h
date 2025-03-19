@@ -34,7 +34,7 @@ namespace Model
   class SnapshotUserConfigurationRedacted
   {
   public:
-    AWS_QUICKSIGHT_API SnapshotUserConfigurationRedacted();
+    AWS_QUICKSIGHT_API SnapshotUserConfigurationRedacted() = default;
     AWS_QUICKSIGHT_API SnapshotUserConfigurationRedacted(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SnapshotUserConfigurationRedacted& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * <p> An array of records that describe anonymous users that the dashboard
      * snapshot is generated for. Sensitive user information is excluded. </p>
      */
-    inline const Aws::Vector<SnapshotAnonymousUserRedacted>& GetAnonymousUsers() const{ return m_anonymousUsers; }
+    inline const Aws::Vector<SnapshotAnonymousUserRedacted>& GetAnonymousUsers() const { return m_anonymousUsers; }
     inline bool AnonymousUsersHasBeenSet() const { return m_anonymousUsersHasBeenSet; }
-    inline void SetAnonymousUsers(const Aws::Vector<SnapshotAnonymousUserRedacted>& value) { m_anonymousUsersHasBeenSet = true; m_anonymousUsers = value; }
-    inline void SetAnonymousUsers(Aws::Vector<SnapshotAnonymousUserRedacted>&& value) { m_anonymousUsersHasBeenSet = true; m_anonymousUsers = std::move(value); }
-    inline SnapshotUserConfigurationRedacted& WithAnonymousUsers(const Aws::Vector<SnapshotAnonymousUserRedacted>& value) { SetAnonymousUsers(value); return *this;}
-    inline SnapshotUserConfigurationRedacted& WithAnonymousUsers(Aws::Vector<SnapshotAnonymousUserRedacted>&& value) { SetAnonymousUsers(std::move(value)); return *this;}
-    inline SnapshotUserConfigurationRedacted& AddAnonymousUsers(const SnapshotAnonymousUserRedacted& value) { m_anonymousUsersHasBeenSet = true; m_anonymousUsers.push_back(value); return *this; }
-    inline SnapshotUserConfigurationRedacted& AddAnonymousUsers(SnapshotAnonymousUserRedacted&& value) { m_anonymousUsersHasBeenSet = true; m_anonymousUsers.push_back(std::move(value)); return *this; }
+    template<typename AnonymousUsersT = Aws::Vector<SnapshotAnonymousUserRedacted>>
+    void SetAnonymousUsers(AnonymousUsersT&& value) { m_anonymousUsersHasBeenSet = true; m_anonymousUsers = std::forward<AnonymousUsersT>(value); }
+    template<typename AnonymousUsersT = Aws::Vector<SnapshotAnonymousUserRedacted>>
+    SnapshotUserConfigurationRedacted& WithAnonymousUsers(AnonymousUsersT&& value) { SetAnonymousUsers(std::forward<AnonymousUsersT>(value)); return *this;}
+    template<typename AnonymousUsersT = SnapshotAnonymousUserRedacted>
+    SnapshotUserConfigurationRedacted& AddAnonymousUsers(AnonymousUsersT&& value) { m_anonymousUsersHasBeenSet = true; m_anonymousUsers.emplace_back(std::forward<AnonymousUsersT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace CodeGuruReviewer
 namespace Model
 {
 
-CodeReviewType::CodeReviewType() : 
-    m_repositoryAnalysisHasBeenSet(false),
-    m_analysisTypesHasBeenSet(false)
-{
-}
-
 CodeReviewType::CodeReviewType(JsonView jsonValue)
-  : CodeReviewType()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CodeReviewType& CodeReviewType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RepositoryAnalysis"))
   {
     m_repositoryAnalysis = jsonValue.GetObject("RepositoryAnalysis");
-
     m_repositoryAnalysisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnalysisTypes"))
   {
     Aws::Utils::Array<JsonView> analysisTypesJsonList = jsonValue.GetArray("AnalysisTypes");
@@ -48,7 +39,6 @@ CodeReviewType& CodeReviewType::operator =(JsonView jsonValue)
     }
     m_analysisTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

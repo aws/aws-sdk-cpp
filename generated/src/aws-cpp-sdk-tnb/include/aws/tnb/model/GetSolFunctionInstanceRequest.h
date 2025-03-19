@@ -21,7 +21,7 @@ namespace Model
   class GetSolFunctionInstanceRequest : public TnbRequest
   {
   public:
-    AWS_TNB_API GetSolFunctionInstanceRequest();
+    AWS_TNB_API GetSolFunctionInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>ID of the network function.</p>
      */
-    inline const Aws::String& GetVnfInstanceId() const{ return m_vnfInstanceId; }
+    inline const Aws::String& GetVnfInstanceId() const { return m_vnfInstanceId; }
     inline bool VnfInstanceIdHasBeenSet() const { return m_vnfInstanceIdHasBeenSet; }
-    inline void SetVnfInstanceId(const Aws::String& value) { m_vnfInstanceIdHasBeenSet = true; m_vnfInstanceId = value; }
-    inline void SetVnfInstanceId(Aws::String&& value) { m_vnfInstanceIdHasBeenSet = true; m_vnfInstanceId = std::move(value); }
-    inline void SetVnfInstanceId(const char* value) { m_vnfInstanceIdHasBeenSet = true; m_vnfInstanceId.assign(value); }
-    inline GetSolFunctionInstanceRequest& WithVnfInstanceId(const Aws::String& value) { SetVnfInstanceId(value); return *this;}
-    inline GetSolFunctionInstanceRequest& WithVnfInstanceId(Aws::String&& value) { SetVnfInstanceId(std::move(value)); return *this;}
-    inline GetSolFunctionInstanceRequest& WithVnfInstanceId(const char* value) { SetVnfInstanceId(value); return *this;}
+    template<typename VnfInstanceIdT = Aws::String>
+    void SetVnfInstanceId(VnfInstanceIdT&& value) { m_vnfInstanceIdHasBeenSet = true; m_vnfInstanceId = std::forward<VnfInstanceIdT>(value); }
+    template<typename VnfInstanceIdT = Aws::String>
+    GetSolFunctionInstanceRequest& WithVnfInstanceId(VnfInstanceIdT&& value) { SetVnfInstanceId(std::forward<VnfInstanceIdT>(value)); return *this;}
     ///@}
   private:
 

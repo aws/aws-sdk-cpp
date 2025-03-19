@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListDistributionsByWebACLId2020_05_31Result::ListDistributionsByWebACLId2020_05_31Result()
-{
-}
-
 ListDistributionsByWebACLId2020_05_31Result::ListDistributionsByWebACLId2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ ListDistributionsByWebACLId2020_05_31Result& ListDistributionsByWebACLId2020_05_
   if(!resultNode.IsNull())
   {
     m_distributionList = resultNode;
+    m_distributionListHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,6 +37,7 @@ ListDistributionsByWebACLId2020_05_31Result& ListDistributionsByWebACLId2020_05_
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

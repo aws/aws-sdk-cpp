@@ -28,7 +28,7 @@ namespace Model
   class TerminateInstanceInAutoScalingGroupResult
   {
   public:
-    AWS_AUTOSCALING_API TerminateInstanceInAutoScalingGroupResult();
+    AWS_AUTOSCALING_API TerminateInstanceInAutoScalingGroupResult() = default;
     AWS_AUTOSCALING_API TerminateInstanceInAutoScalingGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_AUTOSCALING_API TerminateInstanceInAutoScalingGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>A scaling activity.</p>
      */
-    inline const Activity& GetActivity() const{ return m_activity; }
-    inline void SetActivity(const Activity& value) { m_activity = value; }
-    inline void SetActivity(Activity&& value) { m_activity = std::move(value); }
-    inline TerminateInstanceInAutoScalingGroupResult& WithActivity(const Activity& value) { SetActivity(value); return *this;}
-    inline TerminateInstanceInAutoScalingGroupResult& WithActivity(Activity&& value) { SetActivity(std::move(value)); return *this;}
+    inline const Activity& GetActivity() const { return m_activity; }
+    template<typename ActivityT = Activity>
+    void SetActivity(ActivityT&& value) { m_activityHasBeenSet = true; m_activity = std::forward<ActivityT>(value); }
+    template<typename ActivityT = Activity>
+    TerminateInstanceInAutoScalingGroupResult& WithActivity(ActivityT&& value) { SetActivity(std::forward<ActivityT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline TerminateInstanceInAutoScalingGroupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline TerminateInstanceInAutoScalingGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    TerminateInstanceInAutoScalingGroupResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Activity m_activity;
+    bool m_activityHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

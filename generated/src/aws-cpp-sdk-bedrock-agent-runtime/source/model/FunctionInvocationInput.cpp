@@ -18,19 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-FunctionInvocationInput::FunctionInvocationInput() : 
-    m_actionGroupHasBeenSet(false),
-    m_actionInvocationType(ActionInvocationType::NOT_SET),
-    m_actionInvocationTypeHasBeenSet(false),
-    m_agentIdHasBeenSet(false),
-    m_collaboratorNameHasBeenSet(false),
-    m_functionHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 FunctionInvocationInput::FunctionInvocationInput(JsonView jsonValue)
-  : FunctionInvocationInput()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ FunctionInvocationInput& FunctionInvocationInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actionGroup"))
   {
     m_actionGroup = jsonValue.GetString("actionGroup");
-
     m_actionGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionInvocationType"))
   {
     m_actionInvocationType = ActionInvocationTypeMapper::GetActionInvocationTypeForName(jsonValue.GetString("actionInvocationType"));
-
     m_actionInvocationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentId"))
   {
     m_agentId = jsonValue.GetString("agentId");
-
     m_agentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collaboratorName"))
   {
     m_collaboratorName = jsonValue.GetString("collaboratorName");
-
     m_collaboratorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("function"))
   {
     m_function = jsonValue.GetString("function");
-
     m_functionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("parameters");
@@ -81,7 +59,6 @@ FunctionInvocationInput& FunctionInvocationInput::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

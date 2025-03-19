@@ -12,13 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListServiceTemplatesRequest::ListServiceTemplatesRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListServiceTemplatesRequest::SerializePayload() const
 {
   JsonValue payload;

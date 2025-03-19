@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteThemeRequest::DeleteThemeRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_themeIdHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false)
-{
-}
-
 Aws::String DeleteThemeRequest::SerializePayload() const
 {
   return {};

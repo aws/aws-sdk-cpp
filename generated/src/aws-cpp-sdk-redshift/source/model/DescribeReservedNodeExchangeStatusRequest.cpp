@@ -10,15 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribeReservedNodeExchangeStatusRequest::DescribeReservedNodeExchangeStatusRequest() : 
-    m_reservedNodeIdHasBeenSet(false),
-    m_reservedNodeExchangeRequestIdHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeReservedNodeExchangeStatusRequest::SerializePayload() const
 {
   Aws::StringStream ss;

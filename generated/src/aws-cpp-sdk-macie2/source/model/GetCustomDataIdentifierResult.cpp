@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCustomDataIdentifierResult::GetCustomDataIdentifierResult() : 
-    m_deleted(false),
-    m_maximumMatchDistance(0)
-{
-}
-
 GetCustomDataIdentifierResult::GetCustomDataIdentifierResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetCustomDataIdentifierResult()
 {
   *this = result;
 }
@@ -35,33 +28,28 @@ GetCustomDataIdentifierResult& GetCustomDataIdentifierResult::operator =(const A
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deleted"))
   {
     m_deleted = jsonValue.GetBool("deleted");
-
+    m_deletedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ignoreWords"))
   {
     Aws::Utils::Array<JsonView> ignoreWordsJsonList = jsonValue.GetArray("ignoreWords");
@@ -69,8 +57,8 @@ GetCustomDataIdentifierResult& GetCustomDataIdentifierResult::operator =(const A
     {
       m_ignoreWords.push_back(ignoreWordsJsonList[ignoreWordsIndex].AsString());
     }
+    m_ignoreWordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("keywords"))
   {
     Aws::Utils::Array<JsonView> keywordsJsonList = jsonValue.GetArray("keywords");
@@ -78,26 +66,23 @@ GetCustomDataIdentifierResult& GetCustomDataIdentifierResult::operator =(const A
     {
       m_keywords.push_back(keywordsJsonList[keywordsIndex].AsString());
     }
+    m_keywordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maximumMatchDistance"))
   {
     m_maximumMatchDistance = jsonValue.GetInteger("maximumMatchDistance");
-
+    m_maximumMatchDistanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("regex"))
   {
     m_regex = jsonValue.GetString("regex");
-
+    m_regexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("severityLevels"))
   {
     Aws::Utils::Array<JsonView> severityLevelsJsonList = jsonValue.GetArray("severityLevels");
@@ -105,8 +90,8 @@ GetCustomDataIdentifierResult& GetCustomDataIdentifierResult::operator =(const A
     {
       m_severityLevels.push_back(severityLevelsJsonList[severityLevelsIndex].AsObject());
     }
+    m_severityLevelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -114,14 +99,15 @@ GetCustomDataIdentifierResult& GetCustomDataIdentifierResult::operator =(const A
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

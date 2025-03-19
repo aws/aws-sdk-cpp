@@ -32,7 +32,7 @@ namespace Model
   class DestinationDetail
   {
   public:
-    AWS_IVSREALTIME_API DestinationDetail();
+    AWS_IVSREALTIME_API DestinationDetail() = default;
     AWS_IVSREALTIME_API DestinationDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API DestinationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>An S3 detail object to return information about the S3 destination.</p>
      */
-    inline const S3Detail& GetS3() const{ return m_s3; }
+    inline const S3Detail& GetS3() const { return m_s3; }
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-    inline void SetS3(const S3Detail& value) { m_s3HasBeenSet = true; m_s3 = value; }
-    inline void SetS3(S3Detail&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-    inline DestinationDetail& WithS3(const S3Detail& value) { SetS3(value); return *this;}
-    inline DestinationDetail& WithS3(S3Detail&& value) { SetS3(std::move(value)); return *this;}
+    template<typename S3T = S3Detail>
+    void SetS3(S3T&& value) { m_s3HasBeenSet = true; m_s3 = std::forward<S3T>(value); }
+    template<typename S3T = S3Detail>
+    DestinationDetail& WithS3(S3T&& value) { SetS3(std::forward<S3T>(value)); return *this;}
     ///@}
   private:
 

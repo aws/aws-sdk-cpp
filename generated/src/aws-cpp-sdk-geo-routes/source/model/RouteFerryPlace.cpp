@@ -18,17 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteFerryPlace::RouteFerryPlace() : 
-    m_nameHasBeenSet(false),
-    m_originalPositionHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_waypointIndex(0),
-    m_waypointIndexHasBeenSet(false)
-{
-}
-
 RouteFerryPlace::RouteFerryPlace(JsonView jsonValue)
-  : RouteFerryPlace()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ RouteFerryPlace& RouteFerryPlace::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OriginalPosition"))
   {
     Aws::Utils::Array<JsonView> originalPositionJsonList = jsonValue.GetArray("OriginalPosition");
@@ -51,7 +39,6 @@ RouteFerryPlace& RouteFerryPlace::operator =(JsonView jsonValue)
     }
     m_originalPositionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Position"))
   {
     Aws::Utils::Array<JsonView> positionJsonList = jsonValue.GetArray("Position");
@@ -61,14 +48,11 @@ RouteFerryPlace& RouteFerryPlace::operator =(JsonView jsonValue)
     }
     m_positionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WaypointIndex"))
   {
     m_waypointIndex = jsonValue.GetInteger("WaypointIndex");
-
     m_waypointIndexHasBeenSet = true;
   }
-
   return *this;
 }
 

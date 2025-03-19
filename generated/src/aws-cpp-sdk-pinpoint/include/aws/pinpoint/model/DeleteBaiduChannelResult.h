@@ -28,35 +28,35 @@ namespace Model
   class DeleteBaiduChannelResult
   {
   public:
-    AWS_PINPOINT_API DeleteBaiduChannelResult();
+    AWS_PINPOINT_API DeleteBaiduChannelResult() = default;
     AWS_PINPOINT_API DeleteBaiduChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API DeleteBaiduChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const BaiduChannelResponse& GetBaiduChannelResponse() const{ return m_baiduChannelResponse; }
-    inline void SetBaiduChannelResponse(const BaiduChannelResponse& value) { m_baiduChannelResponse = value; }
-    inline void SetBaiduChannelResponse(BaiduChannelResponse&& value) { m_baiduChannelResponse = std::move(value); }
-    inline DeleteBaiduChannelResult& WithBaiduChannelResponse(const BaiduChannelResponse& value) { SetBaiduChannelResponse(value); return *this;}
-    inline DeleteBaiduChannelResult& WithBaiduChannelResponse(BaiduChannelResponse&& value) { SetBaiduChannelResponse(std::move(value)); return *this;}
+    inline const BaiduChannelResponse& GetBaiduChannelResponse() const { return m_baiduChannelResponse; }
+    template<typename BaiduChannelResponseT = BaiduChannelResponse>
+    void SetBaiduChannelResponse(BaiduChannelResponseT&& value) { m_baiduChannelResponseHasBeenSet = true; m_baiduChannelResponse = std::forward<BaiduChannelResponseT>(value); }
+    template<typename BaiduChannelResponseT = BaiduChannelResponse>
+    DeleteBaiduChannelResult& WithBaiduChannelResponse(BaiduChannelResponseT&& value) { SetBaiduChannelResponse(std::forward<BaiduChannelResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteBaiduChannelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteBaiduChannelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteBaiduChannelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteBaiduChannelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     BaiduChannelResponse m_baiduChannelResponse;
+    bool m_baiduChannelResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

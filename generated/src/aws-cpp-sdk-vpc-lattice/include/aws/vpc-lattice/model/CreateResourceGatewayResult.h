@@ -30,7 +30,7 @@ namespace Model
   class CreateResourceGatewayResult
   {
   public:
-    AWS_VPCLATTICE_API CreateResourceGatewayResult();
+    AWS_VPCLATTICE_API CreateResourceGatewayResult() = default;
     AWS_VPCLATTICE_API CreateResourceGatewayResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_VPCLATTICE_API CreateResourceGatewayResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,133 +39,126 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resource gateway.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline CreateResourceGatewayResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline CreateResourceGatewayResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline CreateResourceGatewayResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    CreateResourceGatewayResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the resource gateway.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline CreateResourceGatewayResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline CreateResourceGatewayResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline CreateResourceGatewayResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    CreateResourceGatewayResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of IP address for the resource gateway.</p>
      */
-    inline const ResourceGatewayIpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
-    inline void SetIpAddressType(const ResourceGatewayIpAddressType& value) { m_ipAddressType = value; }
-    inline void SetIpAddressType(ResourceGatewayIpAddressType&& value) { m_ipAddressType = std::move(value); }
-    inline CreateResourceGatewayResult& WithIpAddressType(const ResourceGatewayIpAddressType& value) { SetIpAddressType(value); return *this;}
-    inline CreateResourceGatewayResult& WithIpAddressType(ResourceGatewayIpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
+    inline ResourceGatewayIpAddressType GetIpAddressType() const { return m_ipAddressType; }
+    inline void SetIpAddressType(ResourceGatewayIpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline CreateResourceGatewayResult& WithIpAddressType(ResourceGatewayIpAddressType value) { SetIpAddressType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the resource gateway.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline CreateResourceGatewayResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateResourceGatewayResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateResourceGatewayResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateResourceGatewayResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IDs of the security groups for the resource gateway.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIds = std::move(value); }
-    inline CreateResourceGatewayResult& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline CreateResourceGatewayResult& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline CreateResourceGatewayResult& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIds.push_back(value); return *this; }
-    inline CreateResourceGatewayResult& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline CreateResourceGatewayResult& AddSecurityGroupIds(const char* value) { m_securityGroupIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    CreateResourceGatewayResult& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    CreateResourceGatewayResult& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The status of the resource gateway.</p>
      */
-    inline const ResourceGatewayStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ResourceGatewayStatus& value) { m_status = value; }
-    inline void SetStatus(ResourceGatewayStatus&& value) { m_status = std::move(value); }
-    inline CreateResourceGatewayResult& WithStatus(const ResourceGatewayStatus& value) { SetStatus(value); return *this;}
-    inline CreateResourceGatewayResult& WithStatus(ResourceGatewayStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ResourceGatewayStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ResourceGatewayStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CreateResourceGatewayResult& WithStatus(ResourceGatewayStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IDs of the resource gateway subnets.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
-    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIds = value; }
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIds = std::move(value); }
-    inline CreateResourceGatewayResult& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-    inline CreateResourceGatewayResult& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-    inline CreateResourceGatewayResult& AddSubnetIds(const Aws::String& value) { m_subnetIds.push_back(value); return *this; }
-    inline CreateResourceGatewayResult& AddSubnetIds(Aws::String&& value) { m_subnetIds.push_back(std::move(value)); return *this; }
-    inline CreateResourceGatewayResult& AddSubnetIds(const char* value) { m_subnetIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    void SetSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::forward<SubnetIdsT>(value); }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    CreateResourceGatewayResult& WithSubnetIds(SubnetIdsT&& value) { SetSubnetIds(std::forward<SubnetIdsT>(value)); return *this;}
+    template<typename SubnetIdsT = Aws::String>
+    CreateResourceGatewayResult& AddSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the VPC.</p>
      */
-    inline const Aws::String& GetVpcIdentifier() const{ return m_vpcIdentifier; }
-    inline void SetVpcIdentifier(const Aws::String& value) { m_vpcIdentifier = value; }
-    inline void SetVpcIdentifier(Aws::String&& value) { m_vpcIdentifier = std::move(value); }
-    inline void SetVpcIdentifier(const char* value) { m_vpcIdentifier.assign(value); }
-    inline CreateResourceGatewayResult& WithVpcIdentifier(const Aws::String& value) { SetVpcIdentifier(value); return *this;}
-    inline CreateResourceGatewayResult& WithVpcIdentifier(Aws::String&& value) { SetVpcIdentifier(std::move(value)); return *this;}
-    inline CreateResourceGatewayResult& WithVpcIdentifier(const char* value) { SetVpcIdentifier(value); return *this;}
+    inline const Aws::String& GetVpcIdentifier() const { return m_vpcIdentifier; }
+    template<typename VpcIdentifierT = Aws::String>
+    void SetVpcIdentifier(VpcIdentifierT&& value) { m_vpcIdentifierHasBeenSet = true; m_vpcIdentifier = std::forward<VpcIdentifierT>(value); }
+    template<typename VpcIdentifierT = Aws::String>
+    CreateResourceGatewayResult& WithVpcIdentifier(VpcIdentifierT&& value) { SetVpcIdentifier(std::forward<VpcIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateResourceGatewayResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateResourceGatewayResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateResourceGatewayResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateResourceGatewayResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
-    ResourceGatewayIpAddressType m_ipAddressType;
+    ResourceGatewayIpAddressType m_ipAddressType{ResourceGatewayIpAddressType::NOT_SET};
+    bool m_ipAddressTypeHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;
+    bool m_securityGroupIdsHasBeenSet = false;
 
-    ResourceGatewayStatus m_status;
+    ResourceGatewayStatus m_status{ResourceGatewayStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_subnetIds;
+    bool m_subnetIdsHasBeenSet = false;
 
     Aws::String m_vpcIdentifier;
+    bool m_vpcIdentifierHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,7 +34,7 @@ namespace Model
   class DhcpOptions
   {
   public:
-    AWS_EC2_API DhcpOptions();
+    AWS_EC2_API DhcpOptions() = default;
     AWS_EC2_API DhcpOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API DhcpOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,56 +46,52 @@ namespace Model
     /**
      * <p>The ID of the Amazon Web Services account that owns the DHCP options set.</p>
      */
-    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+    inline const Aws::String& GetOwnerId() const { return m_ownerId; }
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
-    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
-    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
-    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
-    inline DhcpOptions& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
-    inline DhcpOptions& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
-    inline DhcpOptions& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+    template<typename OwnerIdT = Aws::String>
+    void SetOwnerId(OwnerIdT&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::forward<OwnerIdT>(value); }
+    template<typename OwnerIdT = Aws::String>
+    DhcpOptions& WithOwnerId(OwnerIdT&& value) { SetOwnerId(std::forward<OwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Any tags assigned to the DHCP options set.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline DhcpOptions& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline DhcpOptions& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline DhcpOptions& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline DhcpOptions& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    DhcpOptions& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    DhcpOptions& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the set of DHCP options.</p>
      */
-    inline const Aws::String& GetDhcpOptionsId() const{ return m_dhcpOptionsId; }
+    inline const Aws::String& GetDhcpOptionsId() const { return m_dhcpOptionsId; }
     inline bool DhcpOptionsIdHasBeenSet() const { return m_dhcpOptionsIdHasBeenSet; }
-    inline void SetDhcpOptionsId(const Aws::String& value) { m_dhcpOptionsIdHasBeenSet = true; m_dhcpOptionsId = value; }
-    inline void SetDhcpOptionsId(Aws::String&& value) { m_dhcpOptionsIdHasBeenSet = true; m_dhcpOptionsId = std::move(value); }
-    inline void SetDhcpOptionsId(const char* value) { m_dhcpOptionsIdHasBeenSet = true; m_dhcpOptionsId.assign(value); }
-    inline DhcpOptions& WithDhcpOptionsId(const Aws::String& value) { SetDhcpOptionsId(value); return *this;}
-    inline DhcpOptions& WithDhcpOptionsId(Aws::String&& value) { SetDhcpOptionsId(std::move(value)); return *this;}
-    inline DhcpOptions& WithDhcpOptionsId(const char* value) { SetDhcpOptionsId(value); return *this;}
+    template<typename DhcpOptionsIdT = Aws::String>
+    void SetDhcpOptionsId(DhcpOptionsIdT&& value) { m_dhcpOptionsIdHasBeenSet = true; m_dhcpOptionsId = std::forward<DhcpOptionsIdT>(value); }
+    template<typename DhcpOptionsIdT = Aws::String>
+    DhcpOptions& WithDhcpOptionsId(DhcpOptionsIdT&& value) { SetDhcpOptionsId(std::forward<DhcpOptionsIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The DHCP options in the set.</p>
      */
-    inline const Aws::Vector<DhcpConfiguration>& GetDhcpConfigurations() const{ return m_dhcpConfigurations; }
+    inline const Aws::Vector<DhcpConfiguration>& GetDhcpConfigurations() const { return m_dhcpConfigurations; }
     inline bool DhcpConfigurationsHasBeenSet() const { return m_dhcpConfigurationsHasBeenSet; }
-    inline void SetDhcpConfigurations(const Aws::Vector<DhcpConfiguration>& value) { m_dhcpConfigurationsHasBeenSet = true; m_dhcpConfigurations = value; }
-    inline void SetDhcpConfigurations(Aws::Vector<DhcpConfiguration>&& value) { m_dhcpConfigurationsHasBeenSet = true; m_dhcpConfigurations = std::move(value); }
-    inline DhcpOptions& WithDhcpConfigurations(const Aws::Vector<DhcpConfiguration>& value) { SetDhcpConfigurations(value); return *this;}
-    inline DhcpOptions& WithDhcpConfigurations(Aws::Vector<DhcpConfiguration>&& value) { SetDhcpConfigurations(std::move(value)); return *this;}
-    inline DhcpOptions& AddDhcpConfigurations(const DhcpConfiguration& value) { m_dhcpConfigurationsHasBeenSet = true; m_dhcpConfigurations.push_back(value); return *this; }
-    inline DhcpOptions& AddDhcpConfigurations(DhcpConfiguration&& value) { m_dhcpConfigurationsHasBeenSet = true; m_dhcpConfigurations.push_back(std::move(value)); return *this; }
+    template<typename DhcpConfigurationsT = Aws::Vector<DhcpConfiguration>>
+    void SetDhcpConfigurations(DhcpConfigurationsT&& value) { m_dhcpConfigurationsHasBeenSet = true; m_dhcpConfigurations = std::forward<DhcpConfigurationsT>(value); }
+    template<typename DhcpConfigurationsT = Aws::Vector<DhcpConfiguration>>
+    DhcpOptions& WithDhcpConfigurations(DhcpConfigurationsT&& value) { SetDhcpConfigurations(std::forward<DhcpConfigurationsT>(value)); return *this;}
+    template<typename DhcpConfigurationsT = DhcpConfiguration>
+    DhcpOptions& AddDhcpConfigurations(DhcpConfigurationsT&& value) { m_dhcpConfigurationsHasBeenSet = true; m_dhcpConfigurations.emplace_back(std::forward<DhcpConfigurationsT>(value)); return *this; }
     ///@}
   private:
 

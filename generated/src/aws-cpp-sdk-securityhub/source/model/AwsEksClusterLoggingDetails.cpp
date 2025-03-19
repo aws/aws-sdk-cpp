@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEksClusterLoggingDetails::AwsEksClusterLoggingDetails() : 
-    m_clusterLoggingHasBeenSet(false)
-{
-}
-
 AwsEksClusterLoggingDetails::AwsEksClusterLoggingDetails(JsonView jsonValue)
-  : AwsEksClusterLoggingDetails()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AwsEksClusterLoggingDetails& AwsEksClusterLoggingDetails::operator =(JsonView js
     }
     m_clusterLoggingHasBeenSet = true;
   }
-
   return *this;
 }
 

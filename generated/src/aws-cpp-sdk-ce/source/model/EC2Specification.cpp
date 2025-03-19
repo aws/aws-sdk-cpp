@@ -18,14 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-EC2Specification::EC2Specification() : 
-    m_offeringClass(OfferingClass::NOT_SET),
-    m_offeringClassHasBeenSet(false)
-{
-}
-
 EC2Specification::EC2Specification(JsonView jsonValue)
-  : EC2Specification()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ EC2Specification& EC2Specification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OfferingClass"))
   {
     m_offeringClass = OfferingClassMapper::GetOfferingClassForName(jsonValue.GetString("OfferingClass"));
-
     m_offeringClassHasBeenSet = true;
   }
-
   return *this;
 }
 

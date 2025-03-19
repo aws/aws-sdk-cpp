@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreatePlatformEndpointResult::CreatePlatformEndpointResult()
-{
-}
-
 CreatePlatformEndpointResult::CreatePlatformEndpointResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ CreatePlatformEndpointResult& CreatePlatformEndpointResult::operator =(const Aws
     if(!endpointArnNode.IsNull())
     {
       m_endpointArn = Aws::Utils::Xml::DecodeEscapedXmlText(endpointArnNode.GetText());
+      m_endpointArnHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SNS::Model::CreatePlatformEndpointResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

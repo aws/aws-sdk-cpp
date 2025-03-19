@@ -29,7 +29,7 @@ namespace Model
   class ListAnswersRequest : public WellArchitectedRequest
   {
   public:
-    AWS_WELLARCHITECTED_API ListAnswersRequest();
+    AWS_WELLARCHITECTED_API ListAnswersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,43 +44,37 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
+    inline const Aws::String& GetWorkloadId() const { return m_workloadId; }
     inline bool WorkloadIdHasBeenSet() const { return m_workloadIdHasBeenSet; }
-    inline void SetWorkloadId(const Aws::String& value) { m_workloadIdHasBeenSet = true; m_workloadId = value; }
-    inline void SetWorkloadId(Aws::String&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::move(value); }
-    inline void SetWorkloadId(const char* value) { m_workloadIdHasBeenSet = true; m_workloadId.assign(value); }
-    inline ListAnswersRequest& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-    inline ListAnswersRequest& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-    inline ListAnswersRequest& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    template<typename WorkloadIdT = Aws::String>
+    void SetWorkloadId(WorkloadIdT&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::forward<WorkloadIdT>(value); }
+    template<typename WorkloadIdT = Aws::String>
+    ListAnswersRequest& WithWorkloadId(WorkloadIdT&& value) { SetWorkloadId(std::forward<WorkloadIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetLensAlias() const{ return m_lensAlias; }
+    inline const Aws::String& GetLensAlias() const { return m_lensAlias; }
     inline bool LensAliasHasBeenSet() const { return m_lensAliasHasBeenSet; }
-    inline void SetLensAlias(const Aws::String& value) { m_lensAliasHasBeenSet = true; m_lensAlias = value; }
-    inline void SetLensAlias(Aws::String&& value) { m_lensAliasHasBeenSet = true; m_lensAlias = std::move(value); }
-    inline void SetLensAlias(const char* value) { m_lensAliasHasBeenSet = true; m_lensAlias.assign(value); }
-    inline ListAnswersRequest& WithLensAlias(const Aws::String& value) { SetLensAlias(value); return *this;}
-    inline ListAnswersRequest& WithLensAlias(Aws::String&& value) { SetLensAlias(std::move(value)); return *this;}
-    inline ListAnswersRequest& WithLensAlias(const char* value) { SetLensAlias(value); return *this;}
+    template<typename LensAliasT = Aws::String>
+    void SetLensAlias(LensAliasT&& value) { m_lensAliasHasBeenSet = true; m_lensAlias = std::forward<LensAliasT>(value); }
+    template<typename LensAliasT = Aws::String>
+    ListAnswersRequest& WithLensAlias(LensAliasT&& value) { SetLensAlias(std::forward<LensAliasT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetPillarId() const{ return m_pillarId; }
+    inline const Aws::String& GetPillarId() const { return m_pillarId; }
     inline bool PillarIdHasBeenSet() const { return m_pillarIdHasBeenSet; }
-    inline void SetPillarId(const Aws::String& value) { m_pillarIdHasBeenSet = true; m_pillarId = value; }
-    inline void SetPillarId(Aws::String&& value) { m_pillarIdHasBeenSet = true; m_pillarId = std::move(value); }
-    inline void SetPillarId(const char* value) { m_pillarIdHasBeenSet = true; m_pillarId.assign(value); }
-    inline ListAnswersRequest& WithPillarId(const Aws::String& value) { SetPillarId(value); return *this;}
-    inline ListAnswersRequest& WithPillarId(Aws::String&& value) { SetPillarId(std::move(value)); return *this;}
-    inline ListAnswersRequest& WithPillarId(const char* value) { SetPillarId(value); return *this;}
+    template<typename PillarIdT = Aws::String>
+    void SetPillarId(PillarIdT&& value) { m_pillarIdHasBeenSet = true; m_pillarId = std::forward<PillarIdT>(value); }
+    template<typename PillarIdT = Aws::String>
+    ListAnswersRequest& WithPillarId(PillarIdT&& value) { SetPillarId(std::forward<PillarIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline int GetMilestoneNumber() const{ return m_milestoneNumber; }
+    inline int GetMilestoneNumber() const { return m_milestoneNumber; }
     inline bool MilestoneNumberHasBeenSet() const { return m_milestoneNumberHasBeenSet; }
     inline void SetMilestoneNumber(int value) { m_milestoneNumberHasBeenSet = true; m_milestoneNumber = value; }
     inline ListAnswersRequest& WithMilestoneNumber(int value) { SetMilestoneNumber(value); return *this;}
@@ -88,21 +82,19 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAnswersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAnswersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAnswersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAnswersRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return for this request.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListAnswersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -112,12 +104,10 @@ namespace Model
     /**
      * <p>The priority of the question.</p>
      */
-    inline const QuestionPriority& GetQuestionPriority() const{ return m_questionPriority; }
+    inline QuestionPriority GetQuestionPriority() const { return m_questionPriority; }
     inline bool QuestionPriorityHasBeenSet() const { return m_questionPriorityHasBeenSet; }
-    inline void SetQuestionPriority(const QuestionPriority& value) { m_questionPriorityHasBeenSet = true; m_questionPriority = value; }
-    inline void SetQuestionPriority(QuestionPriority&& value) { m_questionPriorityHasBeenSet = true; m_questionPriority = std::move(value); }
-    inline ListAnswersRequest& WithQuestionPriority(const QuestionPriority& value) { SetQuestionPriority(value); return *this;}
-    inline ListAnswersRequest& WithQuestionPriority(QuestionPriority&& value) { SetQuestionPriority(std::move(value)); return *this;}
+    inline void SetQuestionPriority(QuestionPriority value) { m_questionPriorityHasBeenSet = true; m_questionPriority = value; }
+    inline ListAnswersRequest& WithQuestionPriority(QuestionPriority value) { SetQuestionPriority(value); return *this;}
     ///@}
   private:
 
@@ -130,16 +120,16 @@ namespace Model
     Aws::String m_pillarId;
     bool m_pillarIdHasBeenSet = false;
 
-    int m_milestoneNumber;
+    int m_milestoneNumber{0};
     bool m_milestoneNumberHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    QuestionPriority m_questionPriority;
+    QuestionPriority m_questionPriority{QuestionPriority::NOT_SET};
     bool m_questionPriorityHasBeenSet = false;
   };
 

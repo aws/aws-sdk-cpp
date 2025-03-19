@@ -36,7 +36,7 @@ namespace Model
   class ResolverRuleConfig
   {
   public:
-    AWS_ROUTE53RESOLVER_API ResolverRuleConfig();
+    AWS_ROUTE53RESOLVER_API ResolverRuleConfig() = default;
     AWS_ROUTE53RESOLVER_API ResolverRuleConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RESOLVER_API ResolverRuleConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53RESOLVER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * <p>The new name for the Resolver rule. The name that you specify appears in the
      * Resolver dashboard in the Route 53 console. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ResolverRuleConfig& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ResolverRuleConfig& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ResolverRuleConfig& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ResolverRuleConfig& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,14 @@ namespace Model
      * <p>For DNS queries that originate in your VPC, the new IP addresses that you
      * want to route outbound DNS queries to.</p>
      */
-    inline const Aws::Vector<TargetAddress>& GetTargetIps() const{ return m_targetIps; }
+    inline const Aws::Vector<TargetAddress>& GetTargetIps() const { return m_targetIps; }
     inline bool TargetIpsHasBeenSet() const { return m_targetIpsHasBeenSet; }
-    inline void SetTargetIps(const Aws::Vector<TargetAddress>& value) { m_targetIpsHasBeenSet = true; m_targetIps = value; }
-    inline void SetTargetIps(Aws::Vector<TargetAddress>&& value) { m_targetIpsHasBeenSet = true; m_targetIps = std::move(value); }
-    inline ResolverRuleConfig& WithTargetIps(const Aws::Vector<TargetAddress>& value) { SetTargetIps(value); return *this;}
-    inline ResolverRuleConfig& WithTargetIps(Aws::Vector<TargetAddress>&& value) { SetTargetIps(std::move(value)); return *this;}
-    inline ResolverRuleConfig& AddTargetIps(const TargetAddress& value) { m_targetIpsHasBeenSet = true; m_targetIps.push_back(value); return *this; }
-    inline ResolverRuleConfig& AddTargetIps(TargetAddress&& value) { m_targetIpsHasBeenSet = true; m_targetIps.push_back(std::move(value)); return *this; }
+    template<typename TargetIpsT = Aws::Vector<TargetAddress>>
+    void SetTargetIps(TargetIpsT&& value) { m_targetIpsHasBeenSet = true; m_targetIps = std::forward<TargetIpsT>(value); }
+    template<typename TargetIpsT = Aws::Vector<TargetAddress>>
+    ResolverRuleConfig& WithTargetIps(TargetIpsT&& value) { SetTargetIps(std::forward<TargetIpsT>(value)); return *this;}
+    template<typename TargetIpsT = TargetAddress>
+    ResolverRuleConfig& AddTargetIps(TargetIpsT&& value) { m_targetIpsHasBeenSet = true; m_targetIps.emplace_back(std::forward<TargetIpsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -77,14 +75,12 @@ namespace Model
      * <p>The ID of the new outbound Resolver endpoint that you want to use to route
      * DNS queries to the IP addresses that you specify in <code>TargetIps</code>.</p>
      */
-    inline const Aws::String& GetResolverEndpointId() const{ return m_resolverEndpointId; }
+    inline const Aws::String& GetResolverEndpointId() const { return m_resolverEndpointId; }
     inline bool ResolverEndpointIdHasBeenSet() const { return m_resolverEndpointIdHasBeenSet; }
-    inline void SetResolverEndpointId(const Aws::String& value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId = value; }
-    inline void SetResolverEndpointId(Aws::String&& value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId = std::move(value); }
-    inline void SetResolverEndpointId(const char* value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId.assign(value); }
-    inline ResolverRuleConfig& WithResolverEndpointId(const Aws::String& value) { SetResolverEndpointId(value); return *this;}
-    inline ResolverRuleConfig& WithResolverEndpointId(Aws::String&& value) { SetResolverEndpointId(std::move(value)); return *this;}
-    inline ResolverRuleConfig& WithResolverEndpointId(const char* value) { SetResolverEndpointId(value); return *this;}
+    template<typename ResolverEndpointIdT = Aws::String>
+    void SetResolverEndpointId(ResolverEndpointIdT&& value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId = std::forward<ResolverEndpointIdT>(value); }
+    template<typename ResolverEndpointIdT = Aws::String>
+    ResolverRuleConfig& WithResolverEndpointId(ResolverEndpointIdT&& value) { SetResolverEndpointId(std::forward<ResolverEndpointIdT>(value)); return *this;}
     ///@}
   private:
 

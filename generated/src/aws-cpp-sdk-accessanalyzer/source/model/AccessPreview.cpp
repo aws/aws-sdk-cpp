@@ -18,19 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-AccessPreview::AccessPreview() : 
-    m_idHasBeenSet(false),
-    m_analyzerArnHasBeenSet(false),
-    m_configurationsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_status(AccessPreviewStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
-{
-}
-
 AccessPreview::AccessPreview(JsonView jsonValue)
-  : AccessPreview()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ AccessPreview& AccessPreview::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("analyzerArn"))
   {
     m_analyzerArn = jsonValue.GetString("analyzerArn");
-
     m_analyzerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configurations"))
   {
     Aws::Map<Aws::String, JsonView> configurationsJsonMap = jsonValue.GetObject("configurations").GetAllObjects();
@@ -60,28 +44,21 @@ AccessPreview& AccessPreview::operator =(JsonView jsonValue)
     }
     m_configurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = AccessPreviewStatusMapper::GetAccessPreviewStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetObject("statusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

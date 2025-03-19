@@ -25,7 +25,7 @@ namespace Model
   class GetJobOutputRequest : public GlacierRequest
   {
   public:
-    AWS_GLACIER_API GetJobOutputRequest();
+    AWS_GLACIER_API GetJobOutputRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,42 +46,36 @@ namespace Model
      * ID associated with the credentials used to sign the request. If you use an
      * account ID, do not include any hyphens ('-') in the ID.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline GetJobOutputRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline GetJobOutputRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline GetJobOutputRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    GetJobOutputRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the vault.</p>
      */
-    inline const Aws::String& GetVaultName() const{ return m_vaultName; }
+    inline const Aws::String& GetVaultName() const { return m_vaultName; }
     inline bool VaultNameHasBeenSet() const { return m_vaultNameHasBeenSet; }
-    inline void SetVaultName(const Aws::String& value) { m_vaultNameHasBeenSet = true; m_vaultName = value; }
-    inline void SetVaultName(Aws::String&& value) { m_vaultNameHasBeenSet = true; m_vaultName = std::move(value); }
-    inline void SetVaultName(const char* value) { m_vaultNameHasBeenSet = true; m_vaultName.assign(value); }
-    inline GetJobOutputRequest& WithVaultName(const Aws::String& value) { SetVaultName(value); return *this;}
-    inline GetJobOutputRequest& WithVaultName(Aws::String&& value) { SetVaultName(std::move(value)); return *this;}
-    inline GetJobOutputRequest& WithVaultName(const char* value) { SetVaultName(value); return *this;}
+    template<typename VaultNameT = Aws::String>
+    void SetVaultName(VaultNameT&& value) { m_vaultNameHasBeenSet = true; m_vaultName = std::forward<VaultNameT>(value); }
+    template<typename VaultNameT = Aws::String>
+    GetJobOutputRequest& WithVaultName(VaultNameT&& value) { SetVaultName(std::forward<VaultNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The job ID whose data is downloaded.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline GetJobOutputRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline GetJobOutputRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline GetJobOutputRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    GetJobOutputRequest& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,14 +103,12 @@ namespace Model
      * compare this value with the checksum you computed to ensure you have downloaded
      * the entire archive content with no errors.</p> <p/> </li> </ol>
      */
-    inline const Aws::String& GetRange() const{ return m_range; }
+    inline const Aws::String& GetRange() const { return m_range; }
     inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
-    inline void SetRange(const Aws::String& value) { m_rangeHasBeenSet = true; m_range = value; }
-    inline void SetRange(Aws::String&& value) { m_rangeHasBeenSet = true; m_range = std::move(value); }
-    inline void SetRange(const char* value) { m_rangeHasBeenSet = true; m_range.assign(value); }
-    inline GetJobOutputRequest& WithRange(const Aws::String& value) { SetRange(value); return *this;}
-    inline GetJobOutputRequest& WithRange(Aws::String&& value) { SetRange(std::move(value)); return *this;}
-    inline GetJobOutputRequest& WithRange(const char* value) { SetRange(value); return *this;}
+    template<typename RangeT = Aws::String>
+    void SetRange(RangeT&& value) { m_rangeHasBeenSet = true; m_range = std::forward<RangeT>(value); }
+    template<typename RangeT = Aws::String>
+    GetJobOutputRequest& WithRange(RangeT&& value) { SetRange(std::forward<RangeT>(value)); return *this;}
     ///@}
   private:
 

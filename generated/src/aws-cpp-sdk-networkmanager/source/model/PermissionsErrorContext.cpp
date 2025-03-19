@@ -18,13 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-PermissionsErrorContext::PermissionsErrorContext() : 
-    m_missingPermissionHasBeenSet(false)
-{
-}
-
 PermissionsErrorContext::PermissionsErrorContext(JsonView jsonValue)
-  : PermissionsErrorContext()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PermissionsErrorContext& PermissionsErrorContext::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MissingPermission"))
   {
     m_missingPermission = jsonValue.GetString("MissingPermission");
-
     m_missingPermissionHasBeenSet = true;
   }
-
   return *this;
 }
 

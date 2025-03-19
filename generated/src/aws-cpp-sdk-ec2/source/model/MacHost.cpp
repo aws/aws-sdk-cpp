@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-MacHost::MacHost() : 
-    m_hostIdHasBeenSet(false),
-    m_macOSLatestSupportedVersionsHasBeenSet(false)
-{
-}
-
 MacHost::MacHost(const XmlNode& xmlNode)
-  : MacHost()
 {
   *this = xmlNode;
 }
@@ -48,6 +41,7 @@ MacHost& MacHost::operator =(const XmlNode& xmlNode)
     if(!macOSLatestSupportedVersionsNode.IsNull())
     {
       XmlNode macOSLatestSupportedVersionsMember = macOSLatestSupportedVersionsNode.FirstChild("item");
+      m_macOSLatestSupportedVersionsHasBeenSet = !macOSLatestSupportedVersionsMember.IsNull();
       while(!macOSLatestSupportedVersionsMember.IsNull())
       {
         m_macOSLatestSupportedVersions.push_back(macOSLatestSupportedVersionsMember.GetText());

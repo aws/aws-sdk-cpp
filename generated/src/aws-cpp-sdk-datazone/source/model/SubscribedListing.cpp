@@ -18,19 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-SubscribedListing::SubscribedListing() : 
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_itemHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerProjectIdHasBeenSet(false),
-    m_ownerProjectNameHasBeenSet(false),
-    m_revisionHasBeenSet(false)
-{
-}
-
 SubscribedListing::SubscribedListing(JsonView jsonValue)
-  : SubscribedListing()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ SubscribedListing& SubscribedListing::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("item"))
   {
     m_item = jsonValue.GetObject("item");
-
     m_itemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ownerProjectId"))
   {
     m_ownerProjectId = jsonValue.GetString("ownerProjectId");
-
     m_ownerProjectIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ownerProjectName"))
   {
     m_ownerProjectName = jsonValue.GetString("ownerProjectName");
-
     m_ownerProjectNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revision"))
   {
     m_revision = jsonValue.GetString("revision");
-
     m_revisionHasBeenSet = true;
   }
-
   return *this;
 }
 

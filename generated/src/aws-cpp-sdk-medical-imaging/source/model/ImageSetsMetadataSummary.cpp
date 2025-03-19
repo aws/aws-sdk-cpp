@@ -18,18 +18,7 @@ namespace MedicalImaging
 namespace Model
 {
 
-ImageSetsMetadataSummary::ImageSetsMetadataSummary() : 
-    m_imageSetIdHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_dICOMTagsHasBeenSet(false)
-{
-}
-
 ImageSetsMetadataSummary::ImageSetsMetadataSummary(JsonView jsonValue)
-  : ImageSetsMetadataSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ImageSetsMetadataSummary& ImageSetsMetadataSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("imageSetId"))
   {
     m_imageSetId = jsonValue.GetString("imageSetId");
-
     m_imageSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetInteger("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DICOMTags"))
   {
     m_dICOMTags = jsonValue.GetObject("DICOMTags");
-
     m_dICOMTagsHasBeenSet = true;
   }
-
   return *this;
 }
 

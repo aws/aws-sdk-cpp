@@ -20,20 +20,7 @@ namespace Route53
 namespace Model
 {
 
-TrafficPolicySummary::TrafficPolicySummary() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(RRType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_latestVersion(0),
-    m_latestVersionHasBeenSet(false),
-    m_trafficPolicyCount(0),
-    m_trafficPolicyCountHasBeenSet(false)
-{
-}
-
 TrafficPolicySummary::TrafficPolicySummary(const XmlNode& xmlNode)
-  : TrafficPolicySummary()
 {
   *this = xmlNode;
 }
@@ -59,7 +46,7 @@ TrafficPolicySummary& TrafficPolicySummary::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = RRTypeMapper::GetRRTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = RRTypeMapper::GetRRTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode latestVersionNode = resultNode.FirstChild("LatestVersion");

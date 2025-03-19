@@ -18,18 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MultiplexProgramSettings::MultiplexProgramSettings() : 
-    m_preferredChannelPipeline(PreferredChannelPipeline::NOT_SET),
-    m_preferredChannelPipelineHasBeenSet(false),
-    m_programNumber(0),
-    m_programNumberHasBeenSet(false),
-    m_serviceDescriptorHasBeenSet(false),
-    m_videoSettingsHasBeenSet(false)
-{
-}
-
 MultiplexProgramSettings::MultiplexProgramSettings(JsonView jsonValue)
-  : MultiplexProgramSettings()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ MultiplexProgramSettings& MultiplexProgramSettings::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("preferredChannelPipeline"))
   {
     m_preferredChannelPipeline = PreferredChannelPipelineMapper::GetPreferredChannelPipelineForName(jsonValue.GetString("preferredChannelPipeline"));
-
     m_preferredChannelPipelineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("programNumber"))
   {
     m_programNumber = jsonValue.GetInteger("programNumber");
-
     m_programNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceDescriptor"))
   {
     m_serviceDescriptor = jsonValue.GetObject("serviceDescriptor");
-
     m_serviceDescriptorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("videoSettings"))
   {
     m_videoSettings = jsonValue.GetObject("videoSettings");
-
     m_videoSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

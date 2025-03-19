@@ -18,16 +18,7 @@ namespace MainframeModernization
 namespace Model
 {
 
-RecordLength::RecordLength() : 
-    m_max(0),
-    m_maxHasBeenSet(false),
-    m_min(0),
-    m_minHasBeenSet(false)
-{
-}
-
 RecordLength::RecordLength(JsonView jsonValue)
-  : RecordLength()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RecordLength& RecordLength::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("max"))
   {
     m_max = jsonValue.GetInteger("max");
-
     m_maxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("min"))
   {
     m_min = jsonValue.GetInteger("min");
-
     m_minHasBeenSet = true;
   }
-
   return *this;
 }
 

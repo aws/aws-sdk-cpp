@@ -47,7 +47,7 @@ namespace Model
   class TransformJob
   {
   public:
-    AWS_SAGEMAKER_API TransformJob();
+    AWS_SAGEMAKER_API TransformJob() = default;
     AWS_SAGEMAKER_API TransformJob(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API TransformJob& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,28 +57,24 @@ namespace Model
     /**
      * <p>The name of the transform job.</p>
      */
-    inline const Aws::String& GetTransformJobName() const{ return m_transformJobName; }
+    inline const Aws::String& GetTransformJobName() const { return m_transformJobName; }
     inline bool TransformJobNameHasBeenSet() const { return m_transformJobNameHasBeenSet; }
-    inline void SetTransformJobName(const Aws::String& value) { m_transformJobNameHasBeenSet = true; m_transformJobName = value; }
-    inline void SetTransformJobName(Aws::String&& value) { m_transformJobNameHasBeenSet = true; m_transformJobName = std::move(value); }
-    inline void SetTransformJobName(const char* value) { m_transformJobNameHasBeenSet = true; m_transformJobName.assign(value); }
-    inline TransformJob& WithTransformJobName(const Aws::String& value) { SetTransformJobName(value); return *this;}
-    inline TransformJob& WithTransformJobName(Aws::String&& value) { SetTransformJobName(std::move(value)); return *this;}
-    inline TransformJob& WithTransformJobName(const char* value) { SetTransformJobName(value); return *this;}
+    template<typename TransformJobNameT = Aws::String>
+    void SetTransformJobName(TransformJobNameT&& value) { m_transformJobNameHasBeenSet = true; m_transformJobName = std::forward<TransformJobNameT>(value); }
+    template<typename TransformJobNameT = Aws::String>
+    TransformJob& WithTransformJobName(TransformJobNameT&& value) { SetTransformJobName(std::forward<TransformJobNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the transform job.</p>
      */
-    inline const Aws::String& GetTransformJobArn() const{ return m_transformJobArn; }
+    inline const Aws::String& GetTransformJobArn() const { return m_transformJobArn; }
     inline bool TransformJobArnHasBeenSet() const { return m_transformJobArnHasBeenSet; }
-    inline void SetTransformJobArn(const Aws::String& value) { m_transformJobArnHasBeenSet = true; m_transformJobArn = value; }
-    inline void SetTransformJobArn(Aws::String&& value) { m_transformJobArnHasBeenSet = true; m_transformJobArn = std::move(value); }
-    inline void SetTransformJobArn(const char* value) { m_transformJobArnHasBeenSet = true; m_transformJobArn.assign(value); }
-    inline TransformJob& WithTransformJobArn(const Aws::String& value) { SetTransformJobArn(value); return *this;}
-    inline TransformJob& WithTransformJobArn(Aws::String&& value) { SetTransformJobArn(std::move(value)); return *this;}
-    inline TransformJob& WithTransformJobArn(const char* value) { SetTransformJobArn(value); return *this;}
+    template<typename TransformJobArnT = Aws::String>
+    void SetTransformJobArn(TransformJobArnT&& value) { m_transformJobArnHasBeenSet = true; m_transformJobArn = std::forward<TransformJobArnT>(value); }
+    template<typename TransformJobArnT = Aws::String>
+    TransformJob& WithTransformJobArn(TransformJobArnT&& value) { SetTransformJobArn(std::forward<TransformJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,40 +88,34 @@ namespace Model
      * - The transform job is stopping.</p> </li> <li> <p> <code>Stopped</code> - The
      * transform job has stopped.</p> </li> </ul>
      */
-    inline const TransformJobStatus& GetTransformJobStatus() const{ return m_transformJobStatus; }
+    inline TransformJobStatus GetTransformJobStatus() const { return m_transformJobStatus; }
     inline bool TransformJobStatusHasBeenSet() const { return m_transformJobStatusHasBeenSet; }
-    inline void SetTransformJobStatus(const TransformJobStatus& value) { m_transformJobStatusHasBeenSet = true; m_transformJobStatus = value; }
-    inline void SetTransformJobStatus(TransformJobStatus&& value) { m_transformJobStatusHasBeenSet = true; m_transformJobStatus = std::move(value); }
-    inline TransformJob& WithTransformJobStatus(const TransformJobStatus& value) { SetTransformJobStatus(value); return *this;}
-    inline TransformJob& WithTransformJobStatus(TransformJobStatus&& value) { SetTransformJobStatus(std::move(value)); return *this;}
+    inline void SetTransformJobStatus(TransformJobStatus value) { m_transformJobStatusHasBeenSet = true; m_transformJobStatus = value; }
+    inline TransformJob& WithTransformJobStatus(TransformJobStatus value) { SetTransformJobStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If the transform job failed, the reason it failed.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
-    inline TransformJob& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline TransformJob& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline TransformJob& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    TransformJob& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the model associated with the transform job.</p>
      */
-    inline const Aws::String& GetModelName() const{ return m_modelName; }
+    inline const Aws::String& GetModelName() const { return m_modelName; }
     inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
-    inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
-    inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
-    inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
-    inline TransformJob& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
-    inline TransformJob& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
-    inline TransformJob& WithModelName(const char* value) { SetModelName(value); return *this;}
+    template<typename ModelNameT = Aws::String>
+    void SetModelName(ModelNameT&& value) { m_modelNameHasBeenSet = true; m_modelName = std::forward<ModelNameT>(value); }
+    template<typename ModelNameT = Aws::String>
+    TransformJob& WithModelName(ModelNameT&& value) { SetModelName(std::forward<ModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,7 +127,7 @@ namespace Model
      * enabled, the default value is 1. For built-in algorithms, you don't need to set
      * a value for <code>MaxConcurrentTransforms</code>.</p>
      */
-    inline int GetMaxConcurrentTransforms() const{ return m_maxConcurrentTransforms; }
+    inline int GetMaxConcurrentTransforms() const { return m_maxConcurrentTransforms; }
     inline bool MaxConcurrentTransformsHasBeenSet() const { return m_maxConcurrentTransformsHasBeenSet; }
     inline void SetMaxConcurrentTransforms(int value) { m_maxConcurrentTransformsHasBeenSet = true; m_maxConcurrentTransforms = value; }
     inline TransformJob& WithMaxConcurrentTransforms(int value) { SetMaxConcurrentTransforms(value); return *this;}
@@ -145,12 +135,12 @@ namespace Model
 
     ///@{
     
-    inline const ModelClientConfig& GetModelClientConfig() const{ return m_modelClientConfig; }
+    inline const ModelClientConfig& GetModelClientConfig() const { return m_modelClientConfig; }
     inline bool ModelClientConfigHasBeenSet() const { return m_modelClientConfigHasBeenSet; }
-    inline void SetModelClientConfig(const ModelClientConfig& value) { m_modelClientConfigHasBeenSet = true; m_modelClientConfig = value; }
-    inline void SetModelClientConfig(ModelClientConfig&& value) { m_modelClientConfigHasBeenSet = true; m_modelClientConfig = std::move(value); }
-    inline TransformJob& WithModelClientConfig(const ModelClientConfig& value) { SetModelClientConfig(value); return *this;}
-    inline TransformJob& WithModelClientConfig(ModelClientConfig&& value) { SetModelClientConfig(std::move(value)); return *this;}
+    template<typename ModelClientConfigT = ModelClientConfig>
+    void SetModelClientConfig(ModelClientConfigT&& value) { m_modelClientConfigHasBeenSet = true; m_modelClientConfig = std::forward<ModelClientConfigT>(value); }
+    template<typename ModelClientConfigT = ModelClientConfig>
+    TransformJob& WithModelClientConfig(ModelClientConfigT&& value) { SetModelClientConfig(std::forward<ModelClientConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -165,7 +155,7 @@ namespace Model
      * the value to 0. This feature works only in supported algorithms. Currently,
      * SageMaker built-in algorithms do not support HTTP chunked encoding.</p>
      */
-    inline int GetMaxPayloadInMB() const{ return m_maxPayloadInMB; }
+    inline int GetMaxPayloadInMB() const { return m_maxPayloadInMB; }
     inline bool MaxPayloadInMBHasBeenSet() const { return m_maxPayloadInMBHasBeenSet; }
     inline void SetMaxPayloadInMB(int value) { m_maxPayloadInMBHasBeenSet = true; m_maxPayloadInMB = value; }
     inline TransformJob& WithMaxPayloadInMB(int value) { SetMaxPayloadInMB(value); return *this;}
@@ -177,12 +167,10 @@ namespace Model
      * inference request. A record is a single unit of input data that inference can be
      * made on. For example, a single line in a CSV file is a record.</p>
      */
-    inline const BatchStrategy& GetBatchStrategy() const{ return m_batchStrategy; }
+    inline BatchStrategy GetBatchStrategy() const { return m_batchStrategy; }
     inline bool BatchStrategyHasBeenSet() const { return m_batchStrategyHasBeenSet; }
-    inline void SetBatchStrategy(const BatchStrategy& value) { m_batchStrategyHasBeenSet = true; m_batchStrategy = value; }
-    inline void SetBatchStrategy(BatchStrategy&& value) { m_batchStrategyHasBeenSet = true; m_batchStrategy = std::move(value); }
-    inline TransformJob& WithBatchStrategy(const BatchStrategy& value) { SetBatchStrategy(value); return *this;}
-    inline TransformJob& WithBatchStrategy(BatchStrategy&& value) { SetBatchStrategy(std::move(value)); return *this;}
+    inline void SetBatchStrategy(BatchStrategy value) { m_batchStrategyHasBeenSet = true; m_batchStrategy = value; }
+    inline TransformJob& WithBatchStrategy(BatchStrategy value) { SetBatchStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -190,71 +178,68 @@ namespace Model
      * <p>The environment variables to set in the Docker container. We support up to 16
      * key and values entries in the map.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const{ return m_environment; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const { return m_environment; }
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
-    inline void SetEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { m_environmentHasBeenSet = true; m_environment = value; }
-    inline void SetEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
-    inline TransformJob& WithEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironment(value); return *this;}
-    inline TransformJob& WithEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironment(std::move(value)); return *this;}
-    inline TransformJob& AddEnvironment(const Aws::String& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
-    inline TransformJob& AddEnvironment(Aws::String&& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
-    inline TransformJob& AddEnvironment(const Aws::String& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
-    inline TransformJob& AddEnvironment(Aws::String&& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), std::move(value)); return *this; }
-    inline TransformJob& AddEnvironment(const char* key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
-    inline TransformJob& AddEnvironment(Aws::String&& key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
-    inline TransformJob& AddEnvironment(const char* key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
+    template<typename EnvironmentT = Aws::Map<Aws::String, Aws::String>>
+    void SetEnvironment(EnvironmentT&& value) { m_environmentHasBeenSet = true; m_environment = std::forward<EnvironmentT>(value); }
+    template<typename EnvironmentT = Aws::Map<Aws::String, Aws::String>>
+    TransformJob& WithEnvironment(EnvironmentT&& value) { SetEnvironment(std::forward<EnvironmentT>(value)); return *this;}
+    template<typename EnvironmentKeyT = Aws::String, typename EnvironmentValueT = Aws::String>
+    TransformJob& AddEnvironment(EnvironmentKeyT&& key, EnvironmentValueT&& value) {
+      m_environmentHasBeenSet = true; m_environment.emplace(std::forward<EnvironmentKeyT>(key), std::forward<EnvironmentValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const TransformInput& GetTransformInput() const{ return m_transformInput; }
+    inline const TransformInput& GetTransformInput() const { return m_transformInput; }
     inline bool TransformInputHasBeenSet() const { return m_transformInputHasBeenSet; }
-    inline void SetTransformInput(const TransformInput& value) { m_transformInputHasBeenSet = true; m_transformInput = value; }
-    inline void SetTransformInput(TransformInput&& value) { m_transformInputHasBeenSet = true; m_transformInput = std::move(value); }
-    inline TransformJob& WithTransformInput(const TransformInput& value) { SetTransformInput(value); return *this;}
-    inline TransformJob& WithTransformInput(TransformInput&& value) { SetTransformInput(std::move(value)); return *this;}
+    template<typename TransformInputT = TransformInput>
+    void SetTransformInput(TransformInputT&& value) { m_transformInputHasBeenSet = true; m_transformInput = std::forward<TransformInputT>(value); }
+    template<typename TransformInputT = TransformInput>
+    TransformJob& WithTransformInput(TransformInputT&& value) { SetTransformInput(std::forward<TransformInputT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TransformOutput& GetTransformOutput() const{ return m_transformOutput; }
+    inline const TransformOutput& GetTransformOutput() const { return m_transformOutput; }
     inline bool TransformOutputHasBeenSet() const { return m_transformOutputHasBeenSet; }
-    inline void SetTransformOutput(const TransformOutput& value) { m_transformOutputHasBeenSet = true; m_transformOutput = value; }
-    inline void SetTransformOutput(TransformOutput&& value) { m_transformOutputHasBeenSet = true; m_transformOutput = std::move(value); }
-    inline TransformJob& WithTransformOutput(const TransformOutput& value) { SetTransformOutput(value); return *this;}
-    inline TransformJob& WithTransformOutput(TransformOutput&& value) { SetTransformOutput(std::move(value)); return *this;}
+    template<typename TransformOutputT = TransformOutput>
+    void SetTransformOutput(TransformOutputT&& value) { m_transformOutputHasBeenSet = true; m_transformOutput = std::forward<TransformOutputT>(value); }
+    template<typename TransformOutputT = TransformOutput>
+    TransformJob& WithTransformOutput(TransformOutputT&& value) { SetTransformOutput(std::forward<TransformOutputT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const BatchDataCaptureConfig& GetDataCaptureConfig() const{ return m_dataCaptureConfig; }
+    inline const BatchDataCaptureConfig& GetDataCaptureConfig() const { return m_dataCaptureConfig; }
     inline bool DataCaptureConfigHasBeenSet() const { return m_dataCaptureConfigHasBeenSet; }
-    inline void SetDataCaptureConfig(const BatchDataCaptureConfig& value) { m_dataCaptureConfigHasBeenSet = true; m_dataCaptureConfig = value; }
-    inline void SetDataCaptureConfig(BatchDataCaptureConfig&& value) { m_dataCaptureConfigHasBeenSet = true; m_dataCaptureConfig = std::move(value); }
-    inline TransformJob& WithDataCaptureConfig(const BatchDataCaptureConfig& value) { SetDataCaptureConfig(value); return *this;}
-    inline TransformJob& WithDataCaptureConfig(BatchDataCaptureConfig&& value) { SetDataCaptureConfig(std::move(value)); return *this;}
+    template<typename DataCaptureConfigT = BatchDataCaptureConfig>
+    void SetDataCaptureConfig(DataCaptureConfigT&& value) { m_dataCaptureConfigHasBeenSet = true; m_dataCaptureConfig = std::forward<DataCaptureConfigT>(value); }
+    template<typename DataCaptureConfigT = BatchDataCaptureConfig>
+    TransformJob& WithDataCaptureConfig(DataCaptureConfigT&& value) { SetDataCaptureConfig(std::forward<DataCaptureConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TransformResources& GetTransformResources() const{ return m_transformResources; }
+    inline const TransformResources& GetTransformResources() const { return m_transformResources; }
     inline bool TransformResourcesHasBeenSet() const { return m_transformResourcesHasBeenSet; }
-    inline void SetTransformResources(const TransformResources& value) { m_transformResourcesHasBeenSet = true; m_transformResources = value; }
-    inline void SetTransformResources(TransformResources&& value) { m_transformResourcesHasBeenSet = true; m_transformResources = std::move(value); }
-    inline TransformJob& WithTransformResources(const TransformResources& value) { SetTransformResources(value); return *this;}
-    inline TransformJob& WithTransformResources(TransformResources&& value) { SetTransformResources(std::move(value)); return *this;}
+    template<typename TransformResourcesT = TransformResources>
+    void SetTransformResources(TransformResourcesT&& value) { m_transformResourcesHasBeenSet = true; m_transformResources = std::forward<TransformResourcesT>(value); }
+    template<typename TransformResourcesT = TransformResources>
+    TransformJob& WithTransformResources(TransformResourcesT&& value) { SetTransformResources(std::forward<TransformResourcesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp that shows when the transform Job was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline TransformJob& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline TransformJob& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    TransformJob& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -263,12 +248,12 @@ namespace Model
      * the time interval between this time and the value of
      * <code>TransformEndTime</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetTransformStartTime() const{ return m_transformStartTime; }
+    inline const Aws::Utils::DateTime& GetTransformStartTime() const { return m_transformStartTime; }
     inline bool TransformStartTimeHasBeenSet() const { return m_transformStartTimeHasBeenSet; }
-    inline void SetTransformStartTime(const Aws::Utils::DateTime& value) { m_transformStartTimeHasBeenSet = true; m_transformStartTime = value; }
-    inline void SetTransformStartTime(Aws::Utils::DateTime&& value) { m_transformStartTimeHasBeenSet = true; m_transformStartTime = std::move(value); }
-    inline TransformJob& WithTransformStartTime(const Aws::Utils::DateTime& value) { SetTransformStartTime(value); return *this;}
-    inline TransformJob& WithTransformStartTime(Aws::Utils::DateTime&& value) { SetTransformStartTime(std::move(value)); return *this;}
+    template<typename TransformStartTimeT = Aws::Utils::DateTime>
+    void SetTransformStartTime(TransformStartTimeT&& value) { m_transformStartTimeHasBeenSet = true; m_transformStartTime = std::forward<TransformStartTimeT>(value); }
+    template<typename TransformStartTimeT = Aws::Utils::DateTime>
+    TransformJob& WithTransformStartTime(TransformStartTimeT&& value) { SetTransformStartTime(std::forward<TransformStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -277,12 +262,12 @@ namespace Model
      * failed. You are billed for the time interval between this time and the value of
      * <code>TransformStartTime</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetTransformEndTime() const{ return m_transformEndTime; }
+    inline const Aws::Utils::DateTime& GetTransformEndTime() const { return m_transformEndTime; }
     inline bool TransformEndTimeHasBeenSet() const { return m_transformEndTimeHasBeenSet; }
-    inline void SetTransformEndTime(const Aws::Utils::DateTime& value) { m_transformEndTimeHasBeenSet = true; m_transformEndTime = value; }
-    inline void SetTransformEndTime(Aws::Utils::DateTime&& value) { m_transformEndTimeHasBeenSet = true; m_transformEndTime = std::move(value); }
-    inline TransformJob& WithTransformEndTime(const Aws::Utils::DateTime& value) { SetTransformEndTime(value); return *this;}
-    inline TransformJob& WithTransformEndTime(Aws::Utils::DateTime&& value) { SetTransformEndTime(std::move(value)); return *this;}
+    template<typename TransformEndTimeT = Aws::Utils::DateTime>
+    void SetTransformEndTime(TransformEndTimeT&& value) { m_transformEndTimeHasBeenSet = true; m_transformEndTime = std::forward<TransformEndTimeT>(value); }
+    template<typename TransformEndTimeT = Aws::Utils::DateTime>
+    TransformJob& WithTransformEndTime(TransformEndTimeT&& value) { SetTransformEndTime(std::forward<TransformEndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -290,14 +275,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the labeling job that created the transform
      * job.</p>
      */
-    inline const Aws::String& GetLabelingJobArn() const{ return m_labelingJobArn; }
+    inline const Aws::String& GetLabelingJobArn() const { return m_labelingJobArn; }
     inline bool LabelingJobArnHasBeenSet() const { return m_labelingJobArnHasBeenSet; }
-    inline void SetLabelingJobArn(const Aws::String& value) { m_labelingJobArnHasBeenSet = true; m_labelingJobArn = value; }
-    inline void SetLabelingJobArn(Aws::String&& value) { m_labelingJobArnHasBeenSet = true; m_labelingJobArn = std::move(value); }
-    inline void SetLabelingJobArn(const char* value) { m_labelingJobArnHasBeenSet = true; m_labelingJobArn.assign(value); }
-    inline TransformJob& WithLabelingJobArn(const Aws::String& value) { SetLabelingJobArn(value); return *this;}
-    inline TransformJob& WithLabelingJobArn(Aws::String&& value) { SetLabelingJobArn(std::move(value)); return *this;}
-    inline TransformJob& WithLabelingJobArn(const char* value) { SetLabelingJobArn(value); return *this;}
+    template<typename LabelingJobArnT = Aws::String>
+    void SetLabelingJobArn(LabelingJobArnT&& value) { m_labelingJobArnHasBeenSet = true; m_labelingJobArn = std::forward<LabelingJobArnT>(value); }
+    template<typename LabelingJobArnT = Aws::String>
+    TransformJob& WithLabelingJobArn(LabelingJobArnT&& value) { SetLabelingJobArn(std::forward<LabelingJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -305,48 +288,46 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the AutoML job that created the transform
      * job.</p>
      */
-    inline const Aws::String& GetAutoMLJobArn() const{ return m_autoMLJobArn; }
+    inline const Aws::String& GetAutoMLJobArn() const { return m_autoMLJobArn; }
     inline bool AutoMLJobArnHasBeenSet() const { return m_autoMLJobArnHasBeenSet; }
-    inline void SetAutoMLJobArn(const Aws::String& value) { m_autoMLJobArnHasBeenSet = true; m_autoMLJobArn = value; }
-    inline void SetAutoMLJobArn(Aws::String&& value) { m_autoMLJobArnHasBeenSet = true; m_autoMLJobArn = std::move(value); }
-    inline void SetAutoMLJobArn(const char* value) { m_autoMLJobArnHasBeenSet = true; m_autoMLJobArn.assign(value); }
-    inline TransformJob& WithAutoMLJobArn(const Aws::String& value) { SetAutoMLJobArn(value); return *this;}
-    inline TransformJob& WithAutoMLJobArn(Aws::String&& value) { SetAutoMLJobArn(std::move(value)); return *this;}
-    inline TransformJob& WithAutoMLJobArn(const char* value) { SetAutoMLJobArn(value); return *this;}
+    template<typename AutoMLJobArnT = Aws::String>
+    void SetAutoMLJobArn(AutoMLJobArnT&& value) { m_autoMLJobArnHasBeenSet = true; m_autoMLJobArn = std::forward<AutoMLJobArnT>(value); }
+    template<typename AutoMLJobArnT = Aws::String>
+    TransformJob& WithAutoMLJobArn(AutoMLJobArnT&& value) { SetAutoMLJobArn(std::forward<AutoMLJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DataProcessing& GetDataProcessing() const{ return m_dataProcessing; }
+    inline const DataProcessing& GetDataProcessing() const { return m_dataProcessing; }
     inline bool DataProcessingHasBeenSet() const { return m_dataProcessingHasBeenSet; }
-    inline void SetDataProcessing(const DataProcessing& value) { m_dataProcessingHasBeenSet = true; m_dataProcessing = value; }
-    inline void SetDataProcessing(DataProcessing&& value) { m_dataProcessingHasBeenSet = true; m_dataProcessing = std::move(value); }
-    inline TransformJob& WithDataProcessing(const DataProcessing& value) { SetDataProcessing(value); return *this;}
-    inline TransformJob& WithDataProcessing(DataProcessing&& value) { SetDataProcessing(std::move(value)); return *this;}
+    template<typename DataProcessingT = DataProcessing>
+    void SetDataProcessing(DataProcessingT&& value) { m_dataProcessingHasBeenSet = true; m_dataProcessing = std::forward<DataProcessingT>(value); }
+    template<typename DataProcessingT = DataProcessing>
+    TransformJob& WithDataProcessing(DataProcessingT&& value) { SetDataProcessing(std::forward<DataProcessingT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ExperimentConfig& GetExperimentConfig() const{ return m_experimentConfig; }
+    inline const ExperimentConfig& GetExperimentConfig() const { return m_experimentConfig; }
     inline bool ExperimentConfigHasBeenSet() const { return m_experimentConfigHasBeenSet; }
-    inline void SetExperimentConfig(const ExperimentConfig& value) { m_experimentConfigHasBeenSet = true; m_experimentConfig = value; }
-    inline void SetExperimentConfig(ExperimentConfig&& value) { m_experimentConfigHasBeenSet = true; m_experimentConfig = std::move(value); }
-    inline TransformJob& WithExperimentConfig(const ExperimentConfig& value) { SetExperimentConfig(value); return *this;}
-    inline TransformJob& WithExperimentConfig(ExperimentConfig&& value) { SetExperimentConfig(std::move(value)); return *this;}
+    template<typename ExperimentConfigT = ExperimentConfig>
+    void SetExperimentConfig(ExperimentConfigT&& value) { m_experimentConfigHasBeenSet = true; m_experimentConfig = std::forward<ExperimentConfigT>(value); }
+    template<typename ExperimentConfigT = ExperimentConfig>
+    TransformJob& WithExperimentConfig(ExperimentConfigT&& value) { SetExperimentConfig(std::forward<ExperimentConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of tags associated with the transform job.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline TransformJob& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline TransformJob& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline TransformJob& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline TransformJob& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    TransformJob& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    TransformJob& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -356,7 +337,7 @@ namespace Model
     Aws::String m_transformJobArn;
     bool m_transformJobArnHasBeenSet = false;
 
-    TransformJobStatus m_transformJobStatus;
+    TransformJobStatus m_transformJobStatus{TransformJobStatus::NOT_SET};
     bool m_transformJobStatusHasBeenSet = false;
 
     Aws::String m_failureReason;
@@ -365,16 +346,16 @@ namespace Model
     Aws::String m_modelName;
     bool m_modelNameHasBeenSet = false;
 
-    int m_maxConcurrentTransforms;
+    int m_maxConcurrentTransforms{0};
     bool m_maxConcurrentTransformsHasBeenSet = false;
 
     ModelClientConfig m_modelClientConfig;
     bool m_modelClientConfigHasBeenSet = false;
 
-    int m_maxPayloadInMB;
+    int m_maxPayloadInMB{0};
     bool m_maxPayloadInMBHasBeenSet = false;
 
-    BatchStrategy m_batchStrategy;
+    BatchStrategy m_batchStrategy{BatchStrategy::NOT_SET};
     bool m_batchStrategyHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_environment;
@@ -392,13 +373,13 @@ namespace Model
     TransformResources m_transformResources;
     bool m_transformResourcesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_transformStartTime;
+    Aws::Utils::DateTime m_transformStartTime{};
     bool m_transformStartTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_transformEndTime;
+    Aws::Utils::DateTime m_transformEndTime{};
     bool m_transformEndTimeHasBeenSet = false;
 
     Aws::String m_labelingJobArn;

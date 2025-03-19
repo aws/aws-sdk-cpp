@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEndpointAttributesResult::GetEndpointAttributesResult()
-{
-}
-
 GetEndpointAttributesResult::GetEndpointAttributesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -43,6 +39,7 @@ GetEndpointAttributesResult& GetEndpointAttributesResult::operator =(const Aws::
     if(!attributesNode.IsNull())
     {
       XmlNode attributesEntry = attributesNode.FirstChild("entry");
+      m_attributesHasBeenSet = !attributesEntry.IsNull();
       while(!attributesEntry.IsNull())
       {
         XmlNode keyNode = attributesEntry.FirstChild("key");
@@ -52,12 +49,14 @@ GetEndpointAttributesResult& GetEndpointAttributesResult::operator =(const Aws::
         attributesEntry = attributesEntry.NextNode("entry");
       }
 
+      m_attributesHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SNS::Model::GetEndpointAttributesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

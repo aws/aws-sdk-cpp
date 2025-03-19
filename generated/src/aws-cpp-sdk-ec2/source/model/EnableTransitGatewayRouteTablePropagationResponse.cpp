@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-EnableTransitGatewayRouteTablePropagationResponse::EnableTransitGatewayRouteTablePropagationResponse()
-{
-}
-
 EnableTransitGatewayRouteTablePropagationResponse::EnableTransitGatewayRouteTablePropagationResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ EnableTransitGatewayRouteTablePropagationResponse& EnableTransitGatewayRouteTabl
     if(!propagationNode.IsNull())
     {
       m_propagation = propagationNode;
+      m_propagationHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ EnableTransitGatewayRouteTablePropagationResponse& EnableTransitGatewayRouteTabl
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::EnableTransitGatewayRouteTablePropagationResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

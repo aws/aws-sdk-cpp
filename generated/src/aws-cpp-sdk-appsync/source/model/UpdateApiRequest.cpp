@@ -12,14 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateApiRequest::UpdateApiRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerContactHasBeenSet(false),
-    m_eventConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateApiRequest::SerializePayload() const
 {
   JsonValue payload;

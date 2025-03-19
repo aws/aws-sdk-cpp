@@ -18,21 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-PortInfo::PortInfo() : 
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false),
-    m_protocol(NetworkProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_cidrsHasBeenSet(false),
-    m_ipv6CidrsHasBeenSet(false),
-    m_cidrListAliasesHasBeenSet(false)
-{
-}
-
 PortInfo::PortInfo(JsonView jsonValue)
-  : PortInfo()
 {
   *this = jsonValue;
 }
@@ -42,24 +28,18 @@ PortInfo& PortInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fromPort"))
   {
     m_fromPort = jsonValue.GetInteger("fromPort");
-
     m_fromPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("toPort"))
   {
     m_toPort = jsonValue.GetInteger("toPort");
-
     m_toPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protocol"))
   {
     m_protocol = NetworkProtocolMapper::GetNetworkProtocolForName(jsonValue.GetString("protocol"));
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cidrs"))
   {
     Aws::Utils::Array<JsonView> cidrsJsonList = jsonValue.GetArray("cidrs");
@@ -69,7 +49,6 @@ PortInfo& PortInfo::operator =(JsonView jsonValue)
     }
     m_cidrsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipv6Cidrs"))
   {
     Aws::Utils::Array<JsonView> ipv6CidrsJsonList = jsonValue.GetArray("ipv6Cidrs");
@@ -79,7 +58,6 @@ PortInfo& PortInfo::operator =(JsonView jsonValue)
     }
     m_ipv6CidrsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cidrListAliases"))
   {
     Aws::Utils::Array<JsonView> cidrListAliasesJsonList = jsonValue.GetArray("cidrListAliases");
@@ -89,7 +67,6 @@ PortInfo& PortInfo::operator =(JsonView jsonValue)
     }
     m_cidrListAliasesHasBeenSet = true;
   }
-
   return *this;
 }
 

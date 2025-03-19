@@ -18,15 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-TelephonyOutboundMode::TelephonyOutboundMode() : 
-    m_progressiveHasBeenSet(false),
-    m_predictiveHasBeenSet(false),
-    m_agentlessHasBeenSet(false)
-{
-}
-
 TelephonyOutboundMode::TelephonyOutboundMode(JsonView jsonValue)
-  : TelephonyOutboundMode()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ TelephonyOutboundMode& TelephonyOutboundMode::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("progressive"))
   {
     m_progressive = jsonValue.GetObject("progressive");
-
     m_progressiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("predictive"))
   {
     m_predictive = jsonValue.GetObject("predictive");
-
     m_predictiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentless"))
   {
     m_agentless = jsonValue.GetObject("agentless");
-
     m_agentlessHasBeenSet = true;
   }
-
   return *this;
 }
 

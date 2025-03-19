@@ -20,19 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-RealtimeLogConfigs::RealtimeLogConfigs() : 
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_isTruncated(false),
-    m_isTruncatedHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_nextMarkerHasBeenSet(false)
-{
-}
-
 RealtimeLogConfigs::RealtimeLogConfigs(const XmlNode& xmlNode)
-  : RealtimeLogConfigs()
 {
   *this = xmlNode;
 }
@@ -53,6 +41,7 @@ RealtimeLogConfigs& RealtimeLogConfigs::operator =(const XmlNode& xmlNode)
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("member");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember);

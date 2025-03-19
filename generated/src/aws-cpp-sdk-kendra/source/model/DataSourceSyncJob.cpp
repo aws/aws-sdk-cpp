@@ -18,22 +18,7 @@ namespace kendra
 namespace Model
 {
 
-DataSourceSyncJob::DataSourceSyncJob() : 
-    m_executionIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_status(DataSourceSyncJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_dataSourceErrorCodeHasBeenSet(false),
-    m_metricsHasBeenSet(false)
-{
-}
-
 DataSourceSyncJob::DataSourceSyncJob(JsonView jsonValue)
-  : DataSourceSyncJob()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ DataSourceSyncJob& DataSourceSyncJob::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExecutionId"))
   {
     m_executionId = jsonValue.GetString("ExecutionId");
-
     m_executionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = DataSourceSyncJobStatusMapper::GetDataSourceSyncJobStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("ErrorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSourceErrorCode"))
   {
     m_dataSourceErrorCode = jsonValue.GetString("DataSourceErrorCode");
-
     m_dataSourceErrorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Metrics"))
   {
     m_metrics = jsonValue.GetObject("Metrics");
-
     m_metricsHasBeenSet = true;
   }
-
   return *this;
 }
 

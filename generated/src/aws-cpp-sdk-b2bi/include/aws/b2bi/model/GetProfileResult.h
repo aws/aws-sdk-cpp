@@ -29,7 +29,7 @@ namespace Model
   class GetProfileResult
   {
   public:
-    AWS_B2BI_API GetProfileResult();
+    AWS_B2BI_API GetProfileResult() = default;
     AWS_B2BI_API GetProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_B2BI_API GetProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>Returns the unique, system-generated identifier for the profile.</p>
      */
-    inline const Aws::String& GetProfileId() const{ return m_profileId; }
-    inline void SetProfileId(const Aws::String& value) { m_profileId = value; }
-    inline void SetProfileId(Aws::String&& value) { m_profileId = std::move(value); }
-    inline void SetProfileId(const char* value) { m_profileId.assign(value); }
-    inline GetProfileResult& WithProfileId(const Aws::String& value) { SetProfileId(value); return *this;}
-    inline GetProfileResult& WithProfileId(Aws::String&& value) { SetProfileId(std::move(value)); return *this;}
-    inline GetProfileResult& WithProfileId(const char* value) { SetProfileId(value); return *this;}
+    inline const Aws::String& GetProfileId() const { return m_profileId; }
+    template<typename ProfileIdT = Aws::String>
+    void SetProfileId(ProfileIdT&& value) { m_profileIdHasBeenSet = true; m_profileId = std::forward<ProfileIdT>(value); }
+    template<typename ProfileIdT = Aws::String>
+    GetProfileResult& WithProfileId(ProfileIdT&& value) { SetProfileId(std::forward<ProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,146 +50,141 @@ namespace Model
      * <p>Returns an Amazon Resource Name (ARN) for a specific Amazon Web Services
      * resource, such as a capability, partnership, profile, or transformer.</p>
      */
-    inline const Aws::String& GetProfileArn() const{ return m_profileArn; }
-    inline void SetProfileArn(const Aws::String& value) { m_profileArn = value; }
-    inline void SetProfileArn(Aws::String&& value) { m_profileArn = std::move(value); }
-    inline void SetProfileArn(const char* value) { m_profileArn.assign(value); }
-    inline GetProfileResult& WithProfileArn(const Aws::String& value) { SetProfileArn(value); return *this;}
-    inline GetProfileResult& WithProfileArn(Aws::String&& value) { SetProfileArn(std::move(value)); return *this;}
-    inline GetProfileResult& WithProfileArn(const char* value) { SetProfileArn(value); return *this;}
+    inline const Aws::String& GetProfileArn() const { return m_profileArn; }
+    template<typename ProfileArnT = Aws::String>
+    void SetProfileArn(ProfileArnT&& value) { m_profileArnHasBeenSet = true; m_profileArn = std::forward<ProfileArnT>(value); }
+    template<typename ProfileArnT = Aws::String>
+    GetProfileResult& WithProfileArn(ProfileArnT&& value) { SetProfileArn(std::forward<ProfileArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns the name of the profile, used to identify it.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetProfileResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetProfileResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetProfileResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetProfileResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns the email address associated with this customer profile.</p>
      */
-    inline const Aws::String& GetEmail() const{ return m_email; }
-    inline void SetEmail(const Aws::String& value) { m_email = value; }
-    inline void SetEmail(Aws::String&& value) { m_email = std::move(value); }
-    inline void SetEmail(const char* value) { m_email.assign(value); }
-    inline GetProfileResult& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
-    inline GetProfileResult& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
-    inline GetProfileResult& WithEmail(const char* value) { SetEmail(value); return *this;}
+    inline const Aws::String& GetEmail() const { return m_email; }
+    template<typename EmailT = Aws::String>
+    void SetEmail(EmailT&& value) { m_emailHasBeenSet = true; m_email = std::forward<EmailT>(value); }
+    template<typename EmailT = Aws::String>
+    GetProfileResult& WithEmail(EmailT&& value) { SetEmail(std::forward<EmailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns the phone number associated with the profile.</p>
      */
-    inline const Aws::String& GetPhone() const{ return m_phone; }
-    inline void SetPhone(const Aws::String& value) { m_phone = value; }
-    inline void SetPhone(Aws::String&& value) { m_phone = std::move(value); }
-    inline void SetPhone(const char* value) { m_phone.assign(value); }
-    inline GetProfileResult& WithPhone(const Aws::String& value) { SetPhone(value); return *this;}
-    inline GetProfileResult& WithPhone(Aws::String&& value) { SetPhone(std::move(value)); return *this;}
-    inline GetProfileResult& WithPhone(const char* value) { SetPhone(value); return *this;}
+    inline const Aws::String& GetPhone() const { return m_phone; }
+    template<typename PhoneT = Aws::String>
+    void SetPhone(PhoneT&& value) { m_phoneHasBeenSet = true; m_phone = std::forward<PhoneT>(value); }
+    template<typename PhoneT = Aws::String>
+    GetProfileResult& WithPhone(PhoneT&& value) { SetPhone(std::forward<PhoneT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns the name for the business associated with this profile.</p>
      */
-    inline const Aws::String& GetBusinessName() const{ return m_businessName; }
-    inline void SetBusinessName(const Aws::String& value) { m_businessName = value; }
-    inline void SetBusinessName(Aws::String&& value) { m_businessName = std::move(value); }
-    inline void SetBusinessName(const char* value) { m_businessName.assign(value); }
-    inline GetProfileResult& WithBusinessName(const Aws::String& value) { SetBusinessName(value); return *this;}
-    inline GetProfileResult& WithBusinessName(Aws::String&& value) { SetBusinessName(std::move(value)); return *this;}
-    inline GetProfileResult& WithBusinessName(const char* value) { SetBusinessName(value); return *this;}
+    inline const Aws::String& GetBusinessName() const { return m_businessName; }
+    template<typename BusinessNameT = Aws::String>
+    void SetBusinessName(BusinessNameT&& value) { m_businessNameHasBeenSet = true; m_businessName = std::forward<BusinessNameT>(value); }
+    template<typename BusinessNameT = Aws::String>
+    GetProfileResult& WithBusinessName(BusinessNameT&& value) { SetBusinessName(std::forward<BusinessNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns whether or not logging is enabled for this profile.</p>
      */
-    inline const Logging& GetLogging() const{ return m_logging; }
-    inline void SetLogging(const Logging& value) { m_logging = value; }
-    inline void SetLogging(Logging&& value) { m_logging = std::move(value); }
-    inline GetProfileResult& WithLogging(const Logging& value) { SetLogging(value); return *this;}
-    inline GetProfileResult& WithLogging(Logging&& value) { SetLogging(std::move(value)); return *this;}
+    inline Logging GetLogging() const { return m_logging; }
+    inline void SetLogging(Logging value) { m_loggingHasBeenSet = true; m_logging = value; }
+    inline GetProfileResult& WithLogging(Logging value) { SetLogging(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns the name of the logging group.</p>
      */
-    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupName = value; }
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupName = std::move(value); }
-    inline void SetLogGroupName(const char* value) { m_logGroupName.assign(value); }
-    inline GetProfileResult& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-    inline GetProfileResult& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-    inline GetProfileResult& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+    inline const Aws::String& GetLogGroupName() const { return m_logGroupName; }
+    template<typename LogGroupNameT = Aws::String>
+    void SetLogGroupName(LogGroupNameT&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::forward<LogGroupNameT>(value); }
+    template<typename LogGroupNameT = Aws::String>
+    GetProfileResult& WithLogGroupName(LogGroupNameT&& value) { SetLogGroupName(std::forward<LogGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns a timestamp for creation date and time of the transformer.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline GetProfileResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetProfileResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetProfileResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns a timestamp for last time the profile was modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetModifiedAt() const{ return m_modifiedAt; }
-    inline void SetModifiedAt(const Aws::Utils::DateTime& value) { m_modifiedAt = value; }
-    inline void SetModifiedAt(Aws::Utils::DateTime&& value) { m_modifiedAt = std::move(value); }
-    inline GetProfileResult& WithModifiedAt(const Aws::Utils::DateTime& value) { SetModifiedAt(value); return *this;}
-    inline GetProfileResult& WithModifiedAt(Aws::Utils::DateTime&& value) { SetModifiedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetModifiedAt() const { return m_modifiedAt; }
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    void SetModifiedAt(ModifiedAtT&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::forward<ModifiedAtT>(value); }
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    GetProfileResult& WithModifiedAt(ModifiedAtT&& value) { SetModifiedAt(std::forward<ModifiedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetProfileResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_profileId;
+    bool m_profileIdHasBeenSet = false;
 
     Aws::String m_profileArn;
+    bool m_profileArnHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_email;
+    bool m_emailHasBeenSet = false;
 
     Aws::String m_phone;
+    bool m_phoneHasBeenSet = false;
 
     Aws::String m_businessName;
+    bool m_businessNameHasBeenSet = false;
 
-    Logging m_logging;
+    Logging m_logging{Logging::NOT_SET};
+    bool m_loggingHasBeenSet = false;
 
     Aws::String m_logGroupName;
+    bool m_logGroupNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_modifiedAt;
+    Aws::Utils::DateTime m_modifiedAt{};
+    bool m_modifiedAtHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

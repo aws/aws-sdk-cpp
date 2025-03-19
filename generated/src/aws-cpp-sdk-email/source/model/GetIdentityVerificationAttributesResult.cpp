@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetIdentityVerificationAttributesResult::GetIdentityVerificationAttributesResult()
-{
-}
-
 GetIdentityVerificationAttributesResult::GetIdentityVerificationAttributesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -43,6 +39,7 @@ GetIdentityVerificationAttributesResult& GetIdentityVerificationAttributesResult
     if(!verificationAttributesNode.IsNull())
     {
       XmlNode verificationAttributesEntry = verificationAttributesNode.FirstChild("entry");
+      m_verificationAttributesHasBeenSet = !verificationAttributesEntry.IsNull();
       while(!verificationAttributesEntry.IsNull())
       {
         XmlNode keyNode = verificationAttributesEntry.FirstChild("key");
@@ -52,12 +49,14 @@ GetIdentityVerificationAttributesResult& GetIdentityVerificationAttributesResult
         verificationAttributesEntry = verificationAttributesEntry.NextNode("entry");
       }
 
+      m_verificationAttributesHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SES::Model::GetIdentityVerificationAttributesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

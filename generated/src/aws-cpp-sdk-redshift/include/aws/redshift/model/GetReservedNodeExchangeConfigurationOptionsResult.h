@@ -30,7 +30,7 @@ namespace Model
   class GetReservedNodeExchangeConfigurationOptionsResult
   {
   public:
-    AWS_REDSHIFT_API GetReservedNodeExchangeConfigurationOptionsResult();
+    AWS_REDSHIFT_API GetReservedNodeExchangeConfigurationOptionsResult() = default;
     AWS_REDSHIFT_API GetReservedNodeExchangeConfigurationOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_REDSHIFT_API GetReservedNodeExchangeConfigurationOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,13 +40,11 @@ namespace Model
      * <p>A pagination token provided by a previous
      * <code>GetReservedNodeExchangeConfigurationOptions</code> request.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline GetReservedNodeExchangeConfigurationOptionsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline GetReservedNodeExchangeConfigurationOptionsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline GetReservedNodeExchangeConfigurationOptionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    GetReservedNodeExchangeConfigurationOptionsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,30 +54,33 @@ namespace Model
      * Details include the node type, the price, the node count, and the offering
      * type.</p>
      */
-    inline const Aws::Vector<ReservedNodeConfigurationOption>& GetReservedNodeConfigurationOptionList() const{ return m_reservedNodeConfigurationOptionList; }
-    inline void SetReservedNodeConfigurationOptionList(const Aws::Vector<ReservedNodeConfigurationOption>& value) { m_reservedNodeConfigurationOptionList = value; }
-    inline void SetReservedNodeConfigurationOptionList(Aws::Vector<ReservedNodeConfigurationOption>&& value) { m_reservedNodeConfigurationOptionList = std::move(value); }
-    inline GetReservedNodeExchangeConfigurationOptionsResult& WithReservedNodeConfigurationOptionList(const Aws::Vector<ReservedNodeConfigurationOption>& value) { SetReservedNodeConfigurationOptionList(value); return *this;}
-    inline GetReservedNodeExchangeConfigurationOptionsResult& WithReservedNodeConfigurationOptionList(Aws::Vector<ReservedNodeConfigurationOption>&& value) { SetReservedNodeConfigurationOptionList(std::move(value)); return *this;}
-    inline GetReservedNodeExchangeConfigurationOptionsResult& AddReservedNodeConfigurationOptionList(const ReservedNodeConfigurationOption& value) { m_reservedNodeConfigurationOptionList.push_back(value); return *this; }
-    inline GetReservedNodeExchangeConfigurationOptionsResult& AddReservedNodeConfigurationOptionList(ReservedNodeConfigurationOption&& value) { m_reservedNodeConfigurationOptionList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReservedNodeConfigurationOption>& GetReservedNodeConfigurationOptionList() const { return m_reservedNodeConfigurationOptionList; }
+    template<typename ReservedNodeConfigurationOptionListT = Aws::Vector<ReservedNodeConfigurationOption>>
+    void SetReservedNodeConfigurationOptionList(ReservedNodeConfigurationOptionListT&& value) { m_reservedNodeConfigurationOptionListHasBeenSet = true; m_reservedNodeConfigurationOptionList = std::forward<ReservedNodeConfigurationOptionListT>(value); }
+    template<typename ReservedNodeConfigurationOptionListT = Aws::Vector<ReservedNodeConfigurationOption>>
+    GetReservedNodeExchangeConfigurationOptionsResult& WithReservedNodeConfigurationOptionList(ReservedNodeConfigurationOptionListT&& value) { SetReservedNodeConfigurationOptionList(std::forward<ReservedNodeConfigurationOptionListT>(value)); return *this;}
+    template<typename ReservedNodeConfigurationOptionListT = ReservedNodeConfigurationOption>
+    GetReservedNodeExchangeConfigurationOptionsResult& AddReservedNodeConfigurationOptionList(ReservedNodeConfigurationOptionListT&& value) { m_reservedNodeConfigurationOptionListHasBeenSet = true; m_reservedNodeConfigurationOptionList.emplace_back(std::forward<ReservedNodeConfigurationOptionListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetReservedNodeExchangeConfigurationOptionsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetReservedNodeExchangeConfigurationOptionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetReservedNodeExchangeConfigurationOptionsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::Vector<ReservedNodeConfigurationOption> m_reservedNodeConfigurationOptionList;
+    bool m_reservedNodeConfigurationOptionListHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

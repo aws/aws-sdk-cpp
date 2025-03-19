@@ -18,14 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-Image::Image() : 
-    m_idHasBeenSet(false),
-    m_fileHasBeenSet(false)
-{
-}
-
 Image::Image(JsonView jsonValue)
-  : Image()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Image& Image::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("file"))
   {
     m_file = jsonValue.GetObject("file");
-
     m_fileHasBeenSet = true;
   }
-
   return *this;
 }
 

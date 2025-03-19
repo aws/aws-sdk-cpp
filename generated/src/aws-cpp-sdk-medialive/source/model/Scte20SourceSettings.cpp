@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-Scte20SourceSettings::Scte20SourceSettings() : 
-    m_convert608To708(Scte20Convert608To708::NOT_SET),
-    m_convert608To708HasBeenSet(false),
-    m_source608ChannelNumber(0),
-    m_source608ChannelNumberHasBeenSet(false)
-{
-}
-
 Scte20SourceSettings::Scte20SourceSettings(JsonView jsonValue)
-  : Scte20SourceSettings()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Scte20SourceSettings& Scte20SourceSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("convert608To708"))
   {
     m_convert608To708 = Scte20Convert608To708Mapper::GetScte20Convert608To708ForName(jsonValue.GetString("convert608To708"));
-
     m_convert608To708HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source608ChannelNumber"))
   {
     m_source608ChannelNumber = jsonValue.GetInteger("source608ChannelNumber");
-
     m_source608ChannelNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

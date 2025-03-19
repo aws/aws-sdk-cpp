@@ -28,7 +28,7 @@ namespace Model
   class StartMaintenanceResult
   {
   public:
-    AWS_OPSWORKSCM_API StartMaintenanceResult();
+    AWS_OPSWORKSCM_API StartMaintenanceResult() = default;
     AWS_OPSWORKSCM_API StartMaintenanceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPSWORKSCM_API StartMaintenanceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Contains the response to a <code>StartMaintenance</code> request. </p>
      */
-    inline const Server& GetServer() const{ return m_server; }
-    inline void SetServer(const Server& value) { m_server = value; }
-    inline void SetServer(Server&& value) { m_server = std::move(value); }
-    inline StartMaintenanceResult& WithServer(const Server& value) { SetServer(value); return *this;}
-    inline StartMaintenanceResult& WithServer(Server&& value) { SetServer(std::move(value)); return *this;}
+    inline const Server& GetServer() const { return m_server; }
+    template<typename ServerT = Server>
+    void SetServer(ServerT&& value) { m_serverHasBeenSet = true; m_server = std::forward<ServerT>(value); }
+    template<typename ServerT = Server>
+    StartMaintenanceResult& WithServer(ServerT&& value) { SetServer(std::forward<ServerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartMaintenanceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartMaintenanceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartMaintenanceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartMaintenanceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Server m_server;
+    bool m_serverHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -15,19 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListJobRunsRequest::ListJobRunsRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_createdAtAfterHasBeenSet(false),
-    m_createdAtBeforeHasBeenSet(false),
-    m_statesHasBeenSet(false),
-    m_mode(JobRunMode::NOT_SET),
-    m_modeHasBeenSet(false)
-{
-}
-
 Aws::String ListJobRunsRequest::SerializePayload() const
 {
   return {};

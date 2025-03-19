@@ -12,13 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateConditionalForwarderRequest::CreateConditionalForwarderRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_remoteDomainNameHasBeenSet(false),
-    m_dnsIpAddrsHasBeenSet(false)
-{
-}
-
 Aws::String CreateConditionalForwarderRequest::SerializePayload() const
 {
   JsonValue payload;

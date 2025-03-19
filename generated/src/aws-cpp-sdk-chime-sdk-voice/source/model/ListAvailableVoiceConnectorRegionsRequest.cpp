@@ -12,10 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAvailableVoiceConnectorRegionsRequest::ListAvailableVoiceConnectorRegionsRequest()
-{
-}
-
 Aws::String ListAvailableVoiceConnectorRegionsRequest::SerializePayload() const
 {
   return {};

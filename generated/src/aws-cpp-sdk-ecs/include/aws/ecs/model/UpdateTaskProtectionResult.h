@@ -30,7 +30,7 @@ namespace Model
   class UpdateTaskProtectionResult
   {
   public:
-    AWS_ECS_API UpdateTaskProtectionResult();
+    AWS_ECS_API UpdateTaskProtectionResult() = default;
     AWS_ECS_API UpdateTaskProtectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECS_API UpdateTaskProtectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,45 +44,46 @@ namespace Model
      * it is <code>false</code>.</p> </li> <li> <p> <code>expirationDate</code>: The
      * epoch time when protection for the task will expire.</p> </li> </ul>
      */
-    inline const Aws::Vector<ProtectedTask>& GetProtectedTasks() const{ return m_protectedTasks; }
-    inline void SetProtectedTasks(const Aws::Vector<ProtectedTask>& value) { m_protectedTasks = value; }
-    inline void SetProtectedTasks(Aws::Vector<ProtectedTask>&& value) { m_protectedTasks = std::move(value); }
-    inline UpdateTaskProtectionResult& WithProtectedTasks(const Aws::Vector<ProtectedTask>& value) { SetProtectedTasks(value); return *this;}
-    inline UpdateTaskProtectionResult& WithProtectedTasks(Aws::Vector<ProtectedTask>&& value) { SetProtectedTasks(std::move(value)); return *this;}
-    inline UpdateTaskProtectionResult& AddProtectedTasks(const ProtectedTask& value) { m_protectedTasks.push_back(value); return *this; }
-    inline UpdateTaskProtectionResult& AddProtectedTasks(ProtectedTask&& value) { m_protectedTasks.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ProtectedTask>& GetProtectedTasks() const { return m_protectedTasks; }
+    template<typename ProtectedTasksT = Aws::Vector<ProtectedTask>>
+    void SetProtectedTasks(ProtectedTasksT&& value) { m_protectedTasksHasBeenSet = true; m_protectedTasks = std::forward<ProtectedTasksT>(value); }
+    template<typename ProtectedTasksT = Aws::Vector<ProtectedTask>>
+    UpdateTaskProtectionResult& WithProtectedTasks(ProtectedTasksT&& value) { SetProtectedTasks(std::forward<ProtectedTasksT>(value)); return *this;}
+    template<typename ProtectedTasksT = ProtectedTask>
+    UpdateTaskProtectionResult& AddProtectedTasks(ProtectedTasksT&& value) { m_protectedTasksHasBeenSet = true; m_protectedTasks.emplace_back(std::forward<ProtectedTasksT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Any failures associated with the call.</p>
      */
-    inline const Aws::Vector<Failure>& GetFailures() const{ return m_failures; }
-    inline void SetFailures(const Aws::Vector<Failure>& value) { m_failures = value; }
-    inline void SetFailures(Aws::Vector<Failure>&& value) { m_failures = std::move(value); }
-    inline UpdateTaskProtectionResult& WithFailures(const Aws::Vector<Failure>& value) { SetFailures(value); return *this;}
-    inline UpdateTaskProtectionResult& WithFailures(Aws::Vector<Failure>&& value) { SetFailures(std::move(value)); return *this;}
-    inline UpdateTaskProtectionResult& AddFailures(const Failure& value) { m_failures.push_back(value); return *this; }
-    inline UpdateTaskProtectionResult& AddFailures(Failure&& value) { m_failures.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Failure>& GetFailures() const { return m_failures; }
+    template<typename FailuresT = Aws::Vector<Failure>>
+    void SetFailures(FailuresT&& value) { m_failuresHasBeenSet = true; m_failures = std::forward<FailuresT>(value); }
+    template<typename FailuresT = Aws::Vector<Failure>>
+    UpdateTaskProtectionResult& WithFailures(FailuresT&& value) { SetFailures(std::forward<FailuresT>(value)); return *this;}
+    template<typename FailuresT = Failure>
+    UpdateTaskProtectionResult& AddFailures(FailuresT&& value) { m_failuresHasBeenSet = true; m_failures.emplace_back(std::forward<FailuresT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateTaskProtectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateTaskProtectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateTaskProtectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateTaskProtectionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ProtectedTask> m_protectedTasks;
+    bool m_protectedTasksHasBeenSet = false;
 
     Aws::Vector<Failure> m_failures;
+    bool m_failuresHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

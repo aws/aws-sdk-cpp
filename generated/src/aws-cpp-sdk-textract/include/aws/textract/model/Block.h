@@ -52,7 +52,7 @@ namespace Model
   class Block
   {
   public:
-    AWS_TEXTRACT_API Block();
+    AWS_TEXTRACT_API Block() = default;
     AWS_TEXTRACT_API Block(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Block& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -114,12 +114,10 @@ namespace Model
      * <code>LAYOUT_TEXT</code> - Text that is present typically as a part of
      * paragraphs in documents.</p> </li> </ul>
      */
-    inline const BlockType& GetBlockType() const{ return m_blockType; }
+    inline BlockType GetBlockType() const { return m_blockType; }
     inline bool BlockTypeHasBeenSet() const { return m_blockTypeHasBeenSet; }
-    inline void SetBlockType(const BlockType& value) { m_blockTypeHasBeenSet = true; m_blockType = value; }
-    inline void SetBlockType(BlockType&& value) { m_blockTypeHasBeenSet = true; m_blockType = std::move(value); }
-    inline Block& WithBlockType(const BlockType& value) { SetBlockType(value); return *this;}
-    inline Block& WithBlockType(BlockType&& value) { SetBlockType(std::move(value)); return *this;}
+    inline void SetBlockType(BlockType value) { m_blockTypeHasBeenSet = true; m_blockType = value; }
+    inline Block& WithBlockType(BlockType value) { SetBlockType(value); return *this;}
     ///@}
 
     ///@{
@@ -128,7 +126,7 @@ namespace Model
      * recognized text and the accuracy of the geometry points around the recognized
      * text.</p>
      */
-    inline double GetConfidence() const{ return m_confidence; }
+    inline double GetConfidence() const { return m_confidence; }
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
     inline void SetConfidence(double value) { m_confidenceHasBeenSet = true; m_confidence = value; }
     inline Block& WithConfidence(double value) { SetConfidence(value); return *this;}
@@ -138,14 +136,12 @@ namespace Model
     /**
      * <p>The word or line of text that's recognized by Amazon Textract. </p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline Block& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline Block& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline Block& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    Block& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,12 +149,10 @@ namespace Model
      * <p>The kind of text that Amazon Textract has detected. Can check for handwritten
      * text and printed text.</p>
      */
-    inline const TextType& GetTextType() const{ return m_textType; }
+    inline TextType GetTextType() const { return m_textType; }
     inline bool TextTypeHasBeenSet() const { return m_textTypeHasBeenSet; }
-    inline void SetTextType(const TextType& value) { m_textTypeHasBeenSet = true; m_textType = value; }
-    inline void SetTextType(TextType&& value) { m_textTypeHasBeenSet = true; m_textType = std::move(value); }
-    inline Block& WithTextType(const TextType& value) { SetTextType(value); return *this;}
-    inline Block& WithTextType(TextType&& value) { SetTextType(std::move(value)); return *this;}
+    inline void SetTextType(TextType value) { m_textTypeHasBeenSet = true; m_textType = value; }
+    inline Block& WithTextType(TextType value) { SetTextType(value); return *this;}
     ///@}
 
     ///@{
@@ -167,7 +161,7 @@ namespace Model
      * <code>RowIndex</code> isn't returned by <code>DetectDocumentText</code> and
      * <code>GetDocumentTextDetection</code>.</p>
      */
-    inline int GetRowIndex() const{ return m_rowIndex; }
+    inline int GetRowIndex() const { return m_rowIndex; }
     inline bool RowIndexHasBeenSet() const { return m_rowIndexHasBeenSet; }
     inline void SetRowIndex(int value) { m_rowIndexHasBeenSet = true; m_rowIndex = value; }
     inline Block& WithRowIndex(int value) { SetRowIndex(value); return *this;}
@@ -179,7 +173,7 @@ namespace Model
      * <code>ColumnIndex</code> isn't returned by <code>DetectDocumentText</code> and
      * <code>GetDocumentTextDetection</code>.</p>
      */
-    inline int GetColumnIndex() const{ return m_columnIndex; }
+    inline int GetColumnIndex() const { return m_columnIndex; }
     inline bool ColumnIndexHasBeenSet() const { return m_columnIndexHasBeenSet; }
     inline void SetColumnIndex(int value) { m_columnIndexHasBeenSet = true; m_columnIndex = value; }
     inline Block& WithColumnIndex(int value) { SetColumnIndex(value); return *this;}
@@ -191,7 +185,7 @@ namespace Model
      * returned by <code>DetectDocumentText</code> and
      * <code>GetDocumentTextDetection</code>.</p>
      */
-    inline int GetRowSpan() const{ return m_rowSpan; }
+    inline int GetRowSpan() const { return m_rowSpan; }
     inline bool RowSpanHasBeenSet() const { return m_rowSpanHasBeenSet; }
     inline void SetRowSpan(int value) { m_rowSpanHasBeenSet = true; m_rowSpan = value; }
     inline Block& WithRowSpan(int value) { SetRowSpan(value); return *this;}
@@ -203,7 +197,7 @@ namespace Model
      * returned by <code>DetectDocumentText</code> and
      * <code>GetDocumentTextDetection</code>. </p>
      */
-    inline int GetColumnSpan() const{ return m_columnSpan; }
+    inline int GetColumnSpan() const { return m_columnSpan; }
     inline bool ColumnSpanHasBeenSet() const { return m_columnSpanHasBeenSet; }
     inline void SetColumnSpan(int value) { m_columnSpanHasBeenSet = true; m_columnSpan = value; }
     inline Block& WithColumnSpan(int value) { SetColumnSpan(value); return *this;}
@@ -215,12 +209,12 @@ namespace Model
      * axis-aligned, coarse bounding box that surrounds the text, and a finer-grain
      * polygon for more accurate spatial information. </p>
      */
-    inline const Geometry& GetGeometry() const{ return m_geometry; }
+    inline const Geometry& GetGeometry() const { return m_geometry; }
     inline bool GeometryHasBeenSet() const { return m_geometryHasBeenSet; }
-    inline void SetGeometry(const Geometry& value) { m_geometryHasBeenSet = true; m_geometry = value; }
-    inline void SetGeometry(Geometry&& value) { m_geometryHasBeenSet = true; m_geometry = std::move(value); }
-    inline Block& WithGeometry(const Geometry& value) { SetGeometry(value); return *this;}
-    inline Block& WithGeometry(Geometry&& value) { SetGeometry(std::move(value)); return *this;}
+    template<typename GeometryT = Geometry>
+    void SetGeometry(GeometryT&& value) { m_geometryHasBeenSet = true; m_geometry = std::forward<GeometryT>(value); }
+    template<typename GeometryT = Geometry>
+    Block& WithGeometry(GeometryT&& value) { SetGeometry(std::forward<GeometryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -228,14 +222,12 @@ namespace Model
      * <p>The identifier for the recognized text. The identifier is only unique for a
      * single operation. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Block& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Block& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Block& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Block& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -246,14 +238,14 @@ namespace Model
      * in the list for relationships that don't exist, such as when the current block
      * has no child blocks.</p>
      */
-    inline const Aws::Vector<Relationship>& GetRelationships() const{ return m_relationships; }
+    inline const Aws::Vector<Relationship>& GetRelationships() const { return m_relationships; }
     inline bool RelationshipsHasBeenSet() const { return m_relationshipsHasBeenSet; }
-    inline void SetRelationships(const Aws::Vector<Relationship>& value) { m_relationshipsHasBeenSet = true; m_relationships = value; }
-    inline void SetRelationships(Aws::Vector<Relationship>&& value) { m_relationshipsHasBeenSet = true; m_relationships = std::move(value); }
-    inline Block& WithRelationships(const Aws::Vector<Relationship>& value) { SetRelationships(value); return *this;}
-    inline Block& WithRelationships(Aws::Vector<Relationship>&& value) { SetRelationships(std::move(value)); return *this;}
-    inline Block& AddRelationships(const Relationship& value) { m_relationshipsHasBeenSet = true; m_relationships.push_back(value); return *this; }
-    inline Block& AddRelationships(Relationship&& value) { m_relationshipsHasBeenSet = true; m_relationships.push_back(std::move(value)); return *this; }
+    template<typename RelationshipsT = Aws::Vector<Relationship>>
+    void SetRelationships(RelationshipsT&& value) { m_relationshipsHasBeenSet = true; m_relationships = std::forward<RelationshipsT>(value); }
+    template<typename RelationshipsT = Aws::Vector<Relationship>>
+    Block& WithRelationships(RelationshipsT&& value) { SetRelationships(std::forward<RelationshipsT>(value)); return *this;}
+    template<typename RelationshipsT = Relationship>
+    Block& AddRelationships(RelationshipsT&& value) { m_relationshipsHasBeenSet = true; m_relationships.emplace_back(std::forward<RelationshipsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -277,14 +269,13 @@ namespace Model
      * returned by <code>DetectDocumentText</code> and
      * <code>GetDocumentTextDetection</code>.</p>
      */
-    inline const Aws::Vector<EntityType>& GetEntityTypes() const{ return m_entityTypes; }
+    inline const Aws::Vector<EntityType>& GetEntityTypes() const { return m_entityTypes; }
     inline bool EntityTypesHasBeenSet() const { return m_entityTypesHasBeenSet; }
-    inline void SetEntityTypes(const Aws::Vector<EntityType>& value) { m_entityTypesHasBeenSet = true; m_entityTypes = value; }
-    inline void SetEntityTypes(Aws::Vector<EntityType>&& value) { m_entityTypesHasBeenSet = true; m_entityTypes = std::move(value); }
-    inline Block& WithEntityTypes(const Aws::Vector<EntityType>& value) { SetEntityTypes(value); return *this;}
-    inline Block& WithEntityTypes(Aws::Vector<EntityType>&& value) { SetEntityTypes(std::move(value)); return *this;}
-    inline Block& AddEntityTypes(const EntityType& value) { m_entityTypesHasBeenSet = true; m_entityTypes.push_back(value); return *this; }
-    inline Block& AddEntityTypes(EntityType&& value) { m_entityTypesHasBeenSet = true; m_entityTypes.push_back(std::move(value)); return *this; }
+    template<typename EntityTypesT = Aws::Vector<EntityType>>
+    void SetEntityTypes(EntityTypesT&& value) { m_entityTypesHasBeenSet = true; m_entityTypes = std::forward<EntityTypesT>(value); }
+    template<typename EntityTypesT = Aws::Vector<EntityType>>
+    Block& WithEntityTypes(EntityTypesT&& value) { SetEntityTypes(std::forward<EntityTypesT>(value)); return *this;}
+    inline Block& AddEntityTypes(EntityType value) { m_entityTypesHasBeenSet = true; m_entityTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -292,12 +283,10 @@ namespace Model
      * <p>The selection status of a selection element, such as an option button or
      * check box. </p>
      */
-    inline const SelectionStatus& GetSelectionStatus() const{ return m_selectionStatus; }
+    inline SelectionStatus GetSelectionStatus() const { return m_selectionStatus; }
     inline bool SelectionStatusHasBeenSet() const { return m_selectionStatusHasBeenSet; }
-    inline void SetSelectionStatus(const SelectionStatus& value) { m_selectionStatusHasBeenSet = true; m_selectionStatus = value; }
-    inline void SetSelectionStatus(SelectionStatus&& value) { m_selectionStatusHasBeenSet = true; m_selectionStatus = std::move(value); }
-    inline Block& WithSelectionStatus(const SelectionStatus& value) { SetSelectionStatus(value); return *this;}
-    inline Block& WithSelectionStatus(SelectionStatus&& value) { SetSelectionStatus(std::move(value)); return *this;}
+    inline void SetSelectionStatus(SelectionStatus value) { m_selectionStatusHasBeenSet = true; m_selectionStatus = value; }
+    inline Block& WithSelectionStatus(SelectionStatus value) { SetSelectionStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -309,7 +298,7 @@ namespace Model
      * document pages, is considered a single-page document. This means that for
      * scanned images the value of <code>Page</code> is always 1. </p>
      */
-    inline int GetPage() const{ return m_page; }
+    inline int GetPage() const { return m_page; }
     inline bool PageHasBeenSet() const { return m_pageHasBeenSet; }
     inline void SetPage(int value) { m_pageHasBeenSet = true; m_page = value; }
     inline Block& WithPage(int value) { SetPage(value); return *this;}
@@ -319,37 +308,37 @@ namespace Model
     /**
      * <p/>
      */
-    inline const Query& GetQuery() const{ return m_query; }
+    inline const Query& GetQuery() const { return m_query; }
     inline bool QueryHasBeenSet() const { return m_queryHasBeenSet; }
-    inline void SetQuery(const Query& value) { m_queryHasBeenSet = true; m_query = value; }
-    inline void SetQuery(Query&& value) { m_queryHasBeenSet = true; m_query = std::move(value); }
-    inline Block& WithQuery(const Query& value) { SetQuery(value); return *this;}
-    inline Block& WithQuery(Query&& value) { SetQuery(std::move(value)); return *this;}
+    template<typename QueryT = Query>
+    void SetQuery(QueryT&& value) { m_queryHasBeenSet = true; m_query = std::forward<QueryT>(value); }
+    template<typename QueryT = Query>
+    Block& WithQuery(QueryT&& value) { SetQuery(std::forward<QueryT>(value)); return *this;}
     ///@}
   private:
 
-    BlockType m_blockType;
+    BlockType m_blockType{BlockType::NOT_SET};
     bool m_blockTypeHasBeenSet = false;
 
-    double m_confidence;
+    double m_confidence{0.0};
     bool m_confidenceHasBeenSet = false;
 
     Aws::String m_text;
     bool m_textHasBeenSet = false;
 
-    TextType m_textType;
+    TextType m_textType{TextType::NOT_SET};
     bool m_textTypeHasBeenSet = false;
 
-    int m_rowIndex;
+    int m_rowIndex{0};
     bool m_rowIndexHasBeenSet = false;
 
-    int m_columnIndex;
+    int m_columnIndex{0};
     bool m_columnIndexHasBeenSet = false;
 
-    int m_rowSpan;
+    int m_rowSpan{0};
     bool m_rowSpanHasBeenSet = false;
 
-    int m_columnSpan;
+    int m_columnSpan{0};
     bool m_columnSpanHasBeenSet = false;
 
     Geometry m_geometry;
@@ -364,10 +353,10 @@ namespace Model
     Aws::Vector<EntityType> m_entityTypes;
     bool m_entityTypesHasBeenSet = false;
 
-    SelectionStatus m_selectionStatus;
+    SelectionStatus m_selectionStatus{SelectionStatus::NOT_SET};
     bool m_selectionStatusHasBeenSet = false;
 
-    int m_page;
+    int m_page{0};
     bool m_pageHasBeenSet = false;
 
     Query m_query;

@@ -32,7 +32,7 @@ namespace Model
   class DefaultPaginatedLayoutConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API DefaultPaginatedLayoutConfiguration();
+    AWS_QUICKSIGHT_API DefaultPaginatedLayoutConfiguration() = default;
     AWS_QUICKSIGHT_API DefaultPaginatedLayoutConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DefaultPaginatedLayoutConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The options that determine the default settings for a section-based layout
      * configuration.</p>
      */
-    inline const DefaultSectionBasedLayoutConfiguration& GetSectionBased() const{ return m_sectionBased; }
+    inline const DefaultSectionBasedLayoutConfiguration& GetSectionBased() const { return m_sectionBased; }
     inline bool SectionBasedHasBeenSet() const { return m_sectionBasedHasBeenSet; }
-    inline void SetSectionBased(const DefaultSectionBasedLayoutConfiguration& value) { m_sectionBasedHasBeenSet = true; m_sectionBased = value; }
-    inline void SetSectionBased(DefaultSectionBasedLayoutConfiguration&& value) { m_sectionBasedHasBeenSet = true; m_sectionBased = std::move(value); }
-    inline DefaultPaginatedLayoutConfiguration& WithSectionBased(const DefaultSectionBasedLayoutConfiguration& value) { SetSectionBased(value); return *this;}
-    inline DefaultPaginatedLayoutConfiguration& WithSectionBased(DefaultSectionBasedLayoutConfiguration&& value) { SetSectionBased(std::move(value)); return *this;}
+    template<typename SectionBasedT = DefaultSectionBasedLayoutConfiguration>
+    void SetSectionBased(SectionBasedT&& value) { m_sectionBasedHasBeenSet = true; m_sectionBased = std::forward<SectionBasedT>(value); }
+    template<typename SectionBasedT = DefaultSectionBasedLayoutConfiguration>
+    DefaultPaginatedLayoutConfiguration& WithSectionBased(SectionBasedT&& value) { SetSectionBased(std::forward<SectionBasedT>(value)); return *this;}
     ///@}
   private:
 

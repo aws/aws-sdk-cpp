@@ -12,19 +12,6 @@ using namespace Aws::Amplify::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartJobRequest::StartJobRequest() : 
-    m_appIdHasBeenSet(false),
-    m_branchNameHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_jobType(JobType::NOT_SET),
-    m_jobTypeHasBeenSet(false),
-    m_jobReasonHasBeenSet(false),
-    m_commitIdHasBeenSet(false),
-    m_commitMessageHasBeenSet(false),
-    m_commitTimeHasBeenSet(false)
-{
-}
-
 Aws::String StartJobRequest::SerializePayload() const
 {
   JsonValue payload;

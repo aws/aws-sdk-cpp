@@ -18,14 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-EntityAlreadyExistsException::EntityAlreadyExistsException() : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 EntityAlreadyExistsException::EntityAlreadyExistsException(JsonView jsonValue)
-  : EntityAlreadyExistsException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EntityAlreadyExistsException& EntityAlreadyExistsException::operator =(JsonView 
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   return *this;
 }
 

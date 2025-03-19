@@ -10,11 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-GetIdentityVerificationAttributesRequest::GetIdentityVerificationAttributesRequest() : 
-    m_identitiesHasBeenSet(false)
-{
-}
-
 Aws::String GetIdentityVerificationAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -12,11 +12,6 @@ using namespace Aws::WorkSpacesThinClient::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDeviceRequest::GetDeviceRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetDeviceRequest::SerializePayload() const
 {
   return {};

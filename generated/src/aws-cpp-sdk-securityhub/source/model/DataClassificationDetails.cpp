@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-DataClassificationDetails::DataClassificationDetails() : 
-    m_detailedResultsLocationHasBeenSet(false),
-    m_resultHasBeenSet(false)
-{
-}
-
 DataClassificationDetails::DataClassificationDetails(JsonView jsonValue)
-  : DataClassificationDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DataClassificationDetails& DataClassificationDetails::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("DetailedResultsLocation"))
   {
     m_detailedResultsLocation = jsonValue.GetString("DetailedResultsLocation");
-
     m_detailedResultsLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Result"))
   {
     m_result = jsonValue.GetObject("Result");
-
     m_resultHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -30,7 +30,7 @@ namespace Model
   class DescribeVpcEndpointConnectionsResponse
   {
   public:
-    AWS_EC2_API DescribeVpcEndpointConnectionsResponse();
+    AWS_EC2_API DescribeVpcEndpointConnectionsResponse() = default;
     AWS_EC2_API DescribeVpcEndpointConnectionsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeVpcEndpointConnectionsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>Information about the VPC endpoint connections.</p>
      */
-    inline const Aws::Vector<VpcEndpointConnection>& GetVpcEndpointConnections() const{ return m_vpcEndpointConnections; }
-    inline void SetVpcEndpointConnections(const Aws::Vector<VpcEndpointConnection>& value) { m_vpcEndpointConnections = value; }
-    inline void SetVpcEndpointConnections(Aws::Vector<VpcEndpointConnection>&& value) { m_vpcEndpointConnections = std::move(value); }
-    inline DescribeVpcEndpointConnectionsResponse& WithVpcEndpointConnections(const Aws::Vector<VpcEndpointConnection>& value) { SetVpcEndpointConnections(value); return *this;}
-    inline DescribeVpcEndpointConnectionsResponse& WithVpcEndpointConnections(Aws::Vector<VpcEndpointConnection>&& value) { SetVpcEndpointConnections(std::move(value)); return *this;}
-    inline DescribeVpcEndpointConnectionsResponse& AddVpcEndpointConnections(const VpcEndpointConnection& value) { m_vpcEndpointConnections.push_back(value); return *this; }
-    inline DescribeVpcEndpointConnectionsResponse& AddVpcEndpointConnections(VpcEndpointConnection&& value) { m_vpcEndpointConnections.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<VpcEndpointConnection>& GetVpcEndpointConnections() const { return m_vpcEndpointConnections; }
+    template<typename VpcEndpointConnectionsT = Aws::Vector<VpcEndpointConnection>>
+    void SetVpcEndpointConnections(VpcEndpointConnectionsT&& value) { m_vpcEndpointConnectionsHasBeenSet = true; m_vpcEndpointConnections = std::forward<VpcEndpointConnectionsT>(value); }
+    template<typename VpcEndpointConnectionsT = Aws::Vector<VpcEndpointConnection>>
+    DescribeVpcEndpointConnectionsResponse& WithVpcEndpointConnections(VpcEndpointConnectionsT&& value) { SetVpcEndpointConnections(std::forward<VpcEndpointConnectionsT>(value)); return *this;}
+    template<typename VpcEndpointConnectionsT = VpcEndpointConnection>
+    DescribeVpcEndpointConnectionsResponse& AddVpcEndpointConnections(VpcEndpointConnectionsT&& value) { m_vpcEndpointConnectionsHasBeenSet = true; m_vpcEndpointConnections.emplace_back(std::forward<VpcEndpointConnectionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeVpcEndpointConnectionsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeVpcEndpointConnectionsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeVpcEndpointConnectionsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeVpcEndpointConnectionsResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeVpcEndpointConnectionsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeVpcEndpointConnectionsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeVpcEndpointConnectionsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<VpcEndpointConnection> m_vpcEndpointConnections;
+    bool m_vpcEndpointConnectionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

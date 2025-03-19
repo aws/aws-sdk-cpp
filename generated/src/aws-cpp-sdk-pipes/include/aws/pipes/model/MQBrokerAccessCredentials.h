@@ -32,7 +32,7 @@ namespace Model
   class MQBrokerAccessCredentials
   {
   public:
-    AWS_PIPES_API MQBrokerAccessCredentials();
+    AWS_PIPES_API MQBrokerAccessCredentials() = default;
     AWS_PIPES_API MQBrokerAccessCredentials(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API MQBrokerAccessCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The ARN of the Secrets Manager secret.</p>
      */
-    inline const Aws::String& GetBasicAuth() const{ return m_basicAuth; }
+    inline const Aws::String& GetBasicAuth() const { return m_basicAuth; }
     inline bool BasicAuthHasBeenSet() const { return m_basicAuthHasBeenSet; }
-    inline void SetBasicAuth(const Aws::String& value) { m_basicAuthHasBeenSet = true; m_basicAuth = value; }
-    inline void SetBasicAuth(Aws::String&& value) { m_basicAuthHasBeenSet = true; m_basicAuth = std::move(value); }
-    inline void SetBasicAuth(const char* value) { m_basicAuthHasBeenSet = true; m_basicAuth.assign(value); }
-    inline MQBrokerAccessCredentials& WithBasicAuth(const Aws::String& value) { SetBasicAuth(value); return *this;}
-    inline MQBrokerAccessCredentials& WithBasicAuth(Aws::String&& value) { SetBasicAuth(std::move(value)); return *this;}
-    inline MQBrokerAccessCredentials& WithBasicAuth(const char* value) { SetBasicAuth(value); return *this;}
+    template<typename BasicAuthT = Aws::String>
+    void SetBasicAuth(BasicAuthT&& value) { m_basicAuthHasBeenSet = true; m_basicAuth = std::forward<BasicAuthT>(value); }
+    template<typename BasicAuthT = Aws::String>
+    MQBrokerAccessCredentials& WithBasicAuth(BasicAuthT&& value) { SetBasicAuth(std::forward<BasicAuthT>(value)); return *this;}
     ///@}
   private:
 

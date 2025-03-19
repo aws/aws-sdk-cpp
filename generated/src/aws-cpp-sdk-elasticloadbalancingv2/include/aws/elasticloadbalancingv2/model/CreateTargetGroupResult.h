@@ -29,7 +29,7 @@ namespace Model
   class CreateTargetGroupResult
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API CreateTargetGroupResult();
+    AWS_ELASTICLOADBALANCINGV2_API CreateTargetGroupResult() = default;
     AWS_ELASTICLOADBALANCINGV2_API CreateTargetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICLOADBALANCINGV2_API CreateTargetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,28 +38,30 @@ namespace Model
     /**
      * <p>Information about the target group.</p>
      */
-    inline const Aws::Vector<TargetGroup>& GetTargetGroups() const{ return m_targetGroups; }
-    inline void SetTargetGroups(const Aws::Vector<TargetGroup>& value) { m_targetGroups = value; }
-    inline void SetTargetGroups(Aws::Vector<TargetGroup>&& value) { m_targetGroups = std::move(value); }
-    inline CreateTargetGroupResult& WithTargetGroups(const Aws::Vector<TargetGroup>& value) { SetTargetGroups(value); return *this;}
-    inline CreateTargetGroupResult& WithTargetGroups(Aws::Vector<TargetGroup>&& value) { SetTargetGroups(std::move(value)); return *this;}
-    inline CreateTargetGroupResult& AddTargetGroups(const TargetGroup& value) { m_targetGroups.push_back(value); return *this; }
-    inline CreateTargetGroupResult& AddTargetGroups(TargetGroup&& value) { m_targetGroups.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TargetGroup>& GetTargetGroups() const { return m_targetGroups; }
+    template<typename TargetGroupsT = Aws::Vector<TargetGroup>>
+    void SetTargetGroups(TargetGroupsT&& value) { m_targetGroupsHasBeenSet = true; m_targetGroups = std::forward<TargetGroupsT>(value); }
+    template<typename TargetGroupsT = Aws::Vector<TargetGroup>>
+    CreateTargetGroupResult& WithTargetGroups(TargetGroupsT&& value) { SetTargetGroups(std::forward<TargetGroupsT>(value)); return *this;}
+    template<typename TargetGroupsT = TargetGroup>
+    CreateTargetGroupResult& AddTargetGroups(TargetGroupsT&& value) { m_targetGroupsHasBeenSet = true; m_targetGroups.emplace_back(std::forward<TargetGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateTargetGroupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateTargetGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateTargetGroupResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TargetGroup> m_targetGroups;
+    bool m_targetGroupsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

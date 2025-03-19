@@ -12,16 +12,6 @@ using namespace Aws::Route53Domains::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDomainContactRequest::UpdateDomainContactRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_adminContactHasBeenSet(false),
-    m_registrantContactHasBeenSet(false),
-    m_techContactHasBeenSet(false),
-    m_consentHasBeenSet(false),
-    m_billingContactHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDomainContactRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,15 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListClassificationJobsRequest::ListClassificationJobsRequest() : 
-    m_filterCriteriaHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sortCriteriaHasBeenSet(false)
-{
-}
-
 Aws::String ListClassificationJobsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEvidenceResult::GetEvidenceResult()
-{
-}
-
 GetEvidenceResult::GetEvidenceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetEvidenceResult& GetEvidenceResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("evidence"))
   {
     m_evidence = jsonValue.GetObject("evidence");
-
+    m_evidenceHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -34,7 +34,7 @@ namespace Model
   class AwsS3BucketNotificationConfigurationDetail
   {
   public:
-    AWS_SECURITYHUB_API AwsS3BucketNotificationConfigurationDetail();
+    AWS_SECURITYHUB_API AwsS3BucketNotificationConfigurationDetail() = default;
     AWS_SECURITYHUB_API AwsS3BucketNotificationConfigurationDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsS3BucketNotificationConfigurationDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,27 +44,26 @@ namespace Model
     /**
      * <p>The list of events that trigger a notification.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEvents() const{ return m_events; }
+    inline const Aws::Vector<Aws::String>& GetEvents() const { return m_events; }
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
-    inline void SetEvents(const Aws::Vector<Aws::String>& value) { m_eventsHasBeenSet = true; m_events = value; }
-    inline void SetEvents(Aws::Vector<Aws::String>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
-    inline AwsS3BucketNotificationConfigurationDetail& WithEvents(const Aws::Vector<Aws::String>& value) { SetEvents(value); return *this;}
-    inline AwsS3BucketNotificationConfigurationDetail& WithEvents(Aws::Vector<Aws::String>&& value) { SetEvents(std::move(value)); return *this;}
-    inline AwsS3BucketNotificationConfigurationDetail& AddEvents(const Aws::String& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
-    inline AwsS3BucketNotificationConfigurationDetail& AddEvents(Aws::String&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
-    inline AwsS3BucketNotificationConfigurationDetail& AddEvents(const char* value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
+    template<typename EventsT = Aws::Vector<Aws::String>>
+    void SetEvents(EventsT&& value) { m_eventsHasBeenSet = true; m_events = std::forward<EventsT>(value); }
+    template<typename EventsT = Aws::Vector<Aws::String>>
+    AwsS3BucketNotificationConfigurationDetail& WithEvents(EventsT&& value) { SetEvents(std::forward<EventsT>(value)); return *this;}
+    template<typename EventsT = Aws::String>
+    AwsS3BucketNotificationConfigurationDetail& AddEvents(EventsT&& value) { m_eventsHasBeenSet = true; m_events.emplace_back(std::forward<EventsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The filters that determine which S3 buckets generate notifications.</p>
      */
-    inline const AwsS3BucketNotificationConfigurationFilter& GetFilter() const{ return m_filter; }
+    inline const AwsS3BucketNotificationConfigurationFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const AwsS3BucketNotificationConfigurationFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(AwsS3BucketNotificationConfigurationFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline AwsS3BucketNotificationConfigurationDetail& WithFilter(const AwsS3BucketNotificationConfigurationFilter& value) { SetFilter(value); return *this;}
-    inline AwsS3BucketNotificationConfigurationDetail& WithFilter(AwsS3BucketNotificationConfigurationFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = AwsS3BucketNotificationConfigurationFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = AwsS3BucketNotificationConfigurationFilter>
+    AwsS3BucketNotificationConfigurationDetail& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +71,12 @@ namespace Model
      * <p>The ARN of the Lambda function, Amazon SQS queue, or Amazon SNS topic that
      * generates the notification.</p>
      */
-    inline const Aws::String& GetDestination() const{ return m_destination; }
+    inline const Aws::String& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
-    inline AwsS3BucketNotificationConfigurationDetail& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-    inline AwsS3BucketNotificationConfigurationDetail& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-    inline AwsS3BucketNotificationConfigurationDetail& WithDestination(const char* value) { SetDestination(value); return *this;}
+    template<typename DestinationT = Aws::String>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Aws::String>
+    AwsS3BucketNotificationConfigurationDetail& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +87,12 @@ namespace Model
      * </li> <li> <p> <code>QueueConfiguration</code> </p> </li> <li> <p>
      * <code>TopicConfiguration</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline AwsS3BucketNotificationConfigurationDetail& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline AwsS3BucketNotificationConfigurationDetail& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline AwsS3BucketNotificationConfigurationDetail& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    AwsS3BucketNotificationConfigurationDetail& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

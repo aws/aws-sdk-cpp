@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-TableError::TableError() : 
-    m_tableNameHasBeenSet(false),
-    m_errorDetailHasBeenSet(false)
-{
-}
-
 TableError::TableError(JsonView jsonValue)
-  : TableError()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TableError& TableError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorDetail"))
   {
     m_errorDetail = jsonValue.GetObject("ErrorDetail");
-
     m_errorDetailHasBeenSet = true;
   }
-
   return *this;
 }
 

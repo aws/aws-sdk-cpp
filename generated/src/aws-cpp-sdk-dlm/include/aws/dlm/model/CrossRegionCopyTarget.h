@@ -32,7 +32,7 @@ namespace Model
   class CrossRegionCopyTarget
   {
   public:
-    AWS_DLM_API CrossRegionCopyTarget();
+    AWS_DLM_API CrossRegionCopyTarget() = default;
     AWS_DLM_API CrossRegionCopyTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API CrossRegionCopyTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The target Region, for example <code>us-east-1</code>.</p>
      */
-    inline const Aws::String& GetTargetRegion() const{ return m_targetRegion; }
+    inline const Aws::String& GetTargetRegion() const { return m_targetRegion; }
     inline bool TargetRegionHasBeenSet() const { return m_targetRegionHasBeenSet; }
-    inline void SetTargetRegion(const Aws::String& value) { m_targetRegionHasBeenSet = true; m_targetRegion = value; }
-    inline void SetTargetRegion(Aws::String&& value) { m_targetRegionHasBeenSet = true; m_targetRegion = std::move(value); }
-    inline void SetTargetRegion(const char* value) { m_targetRegionHasBeenSet = true; m_targetRegion.assign(value); }
-    inline CrossRegionCopyTarget& WithTargetRegion(const Aws::String& value) { SetTargetRegion(value); return *this;}
-    inline CrossRegionCopyTarget& WithTargetRegion(Aws::String&& value) { SetTargetRegion(std::move(value)); return *this;}
-    inline CrossRegionCopyTarget& WithTargetRegion(const char* value) { SetTargetRegion(value); return *this;}
+    template<typename TargetRegionT = Aws::String>
+    void SetTargetRegion(TargetRegionT&& value) { m_targetRegionHasBeenSet = true; m_targetRegion = std::forward<TargetRegionT>(value); }
+    template<typename TargetRegionT = Aws::String>
+    CrossRegionCopyTarget& WithTargetRegion(TargetRegionT&& value) { SetTargetRegion(std::forward<TargetRegionT>(value)); return *this;}
     ///@}
   private:
 

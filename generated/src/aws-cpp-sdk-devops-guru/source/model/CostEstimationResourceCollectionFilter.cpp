@@ -18,14 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-CostEstimationResourceCollectionFilter::CostEstimationResourceCollectionFilter() : 
-    m_cloudFormationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 CostEstimationResourceCollectionFilter::CostEstimationResourceCollectionFilter(JsonView jsonValue)
-  : CostEstimationResourceCollectionFilter()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CostEstimationResourceCollectionFilter& CostEstimationResourceCollectionFilter::
   if(jsonValue.ValueExists("CloudFormation"))
   {
     m_cloudFormation = jsonValue.GetObject("CloudFormation");
-
     m_cloudFormationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -48,7 +39,6 @@ CostEstimationResourceCollectionFilter& CostEstimationResourceCollectionFilter::
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

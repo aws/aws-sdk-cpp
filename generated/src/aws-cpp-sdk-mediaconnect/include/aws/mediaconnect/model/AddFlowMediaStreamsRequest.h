@@ -26,7 +26,7 @@ namespace Model
   class AddFlowMediaStreamsRequest : public MediaConnectRequest
   {
   public:
-    AWS_MEDIACONNECT_API AddFlowMediaStreamsRequest();
+    AWS_MEDIACONNECT_API AddFlowMediaStreamsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,28 +41,26 @@ namespace Model
     /**
      * The Amazon Resource Name (ARN) of the flow.
      */
-    inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
+    inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
-    inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
-    inline void SetFlowArn(Aws::String&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::move(value); }
-    inline void SetFlowArn(const char* value) { m_flowArnHasBeenSet = true; m_flowArn.assign(value); }
-    inline AddFlowMediaStreamsRequest& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-    inline AddFlowMediaStreamsRequest& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-    inline AddFlowMediaStreamsRequest& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    template<typename FlowArnT = Aws::String>
+    void SetFlowArn(FlowArnT&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::forward<FlowArnT>(value); }
+    template<typename FlowArnT = Aws::String>
+    AddFlowMediaStreamsRequest& WithFlowArn(FlowArnT&& value) { SetFlowArn(std::forward<FlowArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The media streams that you want to add to the flow.
      */
-    inline const Aws::Vector<AddMediaStreamRequest>& GetMediaStreams() const{ return m_mediaStreams; }
+    inline const Aws::Vector<AddMediaStreamRequest>& GetMediaStreams() const { return m_mediaStreams; }
     inline bool MediaStreamsHasBeenSet() const { return m_mediaStreamsHasBeenSet; }
-    inline void SetMediaStreams(const Aws::Vector<AddMediaStreamRequest>& value) { m_mediaStreamsHasBeenSet = true; m_mediaStreams = value; }
-    inline void SetMediaStreams(Aws::Vector<AddMediaStreamRequest>&& value) { m_mediaStreamsHasBeenSet = true; m_mediaStreams = std::move(value); }
-    inline AddFlowMediaStreamsRequest& WithMediaStreams(const Aws::Vector<AddMediaStreamRequest>& value) { SetMediaStreams(value); return *this;}
-    inline AddFlowMediaStreamsRequest& WithMediaStreams(Aws::Vector<AddMediaStreamRequest>&& value) { SetMediaStreams(std::move(value)); return *this;}
-    inline AddFlowMediaStreamsRequest& AddMediaStreams(const AddMediaStreamRequest& value) { m_mediaStreamsHasBeenSet = true; m_mediaStreams.push_back(value); return *this; }
-    inline AddFlowMediaStreamsRequest& AddMediaStreams(AddMediaStreamRequest&& value) { m_mediaStreamsHasBeenSet = true; m_mediaStreams.push_back(std::move(value)); return *this; }
+    template<typename MediaStreamsT = Aws::Vector<AddMediaStreamRequest>>
+    void SetMediaStreams(MediaStreamsT&& value) { m_mediaStreamsHasBeenSet = true; m_mediaStreams = std::forward<MediaStreamsT>(value); }
+    template<typename MediaStreamsT = Aws::Vector<AddMediaStreamRequest>>
+    AddFlowMediaStreamsRequest& WithMediaStreams(MediaStreamsT&& value) { SetMediaStreams(std::forward<MediaStreamsT>(value)); return *this;}
+    template<typename MediaStreamsT = AddMediaStreamRequest>
+    AddFlowMediaStreamsRequest& AddMediaStreams(MediaStreamsT&& value) { m_mediaStreamsHasBeenSet = true; m_mediaStreams.emplace_back(std::forward<MediaStreamsT>(value)); return *this; }
     ///@}
   private:
 

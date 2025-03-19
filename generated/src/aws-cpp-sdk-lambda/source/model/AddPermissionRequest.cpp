@@ -15,22 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-AddPermissionRequest::AddPermissionRequest() : 
-    m_functionNameHasBeenSet(false),
-    m_statementIdHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_sourceAccountHasBeenSet(false),
-    m_eventSourceTokenHasBeenSet(false),
-    m_qualifierHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_principalOrgIDHasBeenSet(false),
-    m_functionUrlAuthType(FunctionUrlAuthType::NOT_SET),
-    m_functionUrlAuthTypeHasBeenSet(false)
-{
-}
-
 Aws::String AddPermissionRequest::SerializePayload() const
 {
   JsonValue payload;

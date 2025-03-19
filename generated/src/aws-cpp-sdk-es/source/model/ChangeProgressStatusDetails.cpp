@@ -18,26 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-ChangeProgressStatusDetails::ChangeProgressStatusDetails() : 
-    m_changeIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_status(OverallChangeStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_pendingPropertiesHasBeenSet(false),
-    m_completedPropertiesHasBeenSet(false),
-    m_totalNumberOfStages(0),
-    m_totalNumberOfStagesHasBeenSet(false),
-    m_changeProgressStagesHasBeenSet(false),
-    m_configChangeStatus(ConfigChangeStatus::NOT_SET),
-    m_configChangeStatusHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_initiatedBy(InitiatedBy::NOT_SET),
-    m_initiatedByHasBeenSet(false)
-{
-}
-
 ChangeProgressStatusDetails::ChangeProgressStatusDetails(JsonView jsonValue)
-  : ChangeProgressStatusDetails()
 {
   *this = jsonValue;
 }
@@ -47,24 +28,18 @@ ChangeProgressStatusDetails& ChangeProgressStatusDetails::operator =(JsonView js
   if(jsonValue.ValueExists("ChangeId"))
   {
     m_changeId = jsonValue.GetString("ChangeId");
-
     m_changeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = OverallChangeStatusMapper::GetOverallChangeStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PendingProperties"))
   {
     Aws::Utils::Array<JsonView> pendingPropertiesJsonList = jsonValue.GetArray("PendingProperties");
@@ -74,7 +49,6 @@ ChangeProgressStatusDetails& ChangeProgressStatusDetails::operator =(JsonView js
     }
     m_pendingPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletedProperties"))
   {
     Aws::Utils::Array<JsonView> completedPropertiesJsonList = jsonValue.GetArray("CompletedProperties");
@@ -84,14 +58,11 @@ ChangeProgressStatusDetails& ChangeProgressStatusDetails::operator =(JsonView js
     }
     m_completedPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalNumberOfStages"))
   {
     m_totalNumberOfStages = jsonValue.GetInteger("TotalNumberOfStages");
-
     m_totalNumberOfStagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChangeProgressStages"))
   {
     Aws::Utils::Array<JsonView> changeProgressStagesJsonList = jsonValue.GetArray("ChangeProgressStages");
@@ -101,28 +72,21 @@ ChangeProgressStatusDetails& ChangeProgressStatusDetails::operator =(JsonView js
     }
     m_changeProgressStagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigChangeStatus"))
   {
     m_configChangeStatus = ConfigChangeStatusMapper::GetConfigChangeStatusForName(jsonValue.GetString("ConfigChangeStatus"));
-
     m_configChangeStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InitiatedBy"))
   {
     m_initiatedBy = InitiatedByMapper::GetInitiatedByForName(jsonValue.GetString("InitiatedBy"));
-
     m_initiatedByHasBeenSet = true;
   }
-
   return *this;
 }
 

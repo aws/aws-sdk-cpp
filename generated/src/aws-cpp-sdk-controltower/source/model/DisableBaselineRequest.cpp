@@ -12,11 +12,6 @@ using namespace Aws::ControlTower::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisableBaselineRequest::DisableBaselineRequest() : 
-    m_enabledBaselineIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DisableBaselineRequest::SerializePayload() const
 {
   JsonValue payload;

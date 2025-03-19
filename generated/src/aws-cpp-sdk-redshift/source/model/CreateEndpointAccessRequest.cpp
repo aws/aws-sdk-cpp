@@ -10,15 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-CreateEndpointAccessRequest::CreateEndpointAccessRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_resourceOwnerHasBeenSet(false),
-    m_endpointNameHasBeenSet(false),
-    m_subnetGroupNameHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false)
-{
-}
-
 Aws::String CreateEndpointAccessRequest::SerializePayload() const
 {
   Aws::StringStream ss;

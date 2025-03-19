@@ -34,7 +34,7 @@ namespace Model
   class ResponseHeadersPolicyFrameOptions
   {
   public:
-    AWS_CLOUDFRONT_API ResponseHeadersPolicyFrameOptions();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyFrameOptions() = default;
     AWS_CLOUDFRONT_API ResponseHeadersPolicyFrameOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API ResponseHeadersPolicyFrameOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,7 +47,7 @@ namespace Model
      * <code>X-Frame-Options</code> HTTP response header received from the origin with
      * the one specified in this response headers policy.</p>
      */
-    inline bool GetOverride() const{ return m_override; }
+    inline bool GetOverride() const { return m_override; }
     inline bool OverrideHasBeenSet() const { return m_overrideHasBeenSet; }
     inline void SetOverride(bool value) { m_overrideHasBeenSet = true; m_override = value; }
     inline ResponseHeadersPolicyFrameOptions& WithOverride(bool value) { SetOverride(value); return *this;}
@@ -61,19 +61,17 @@ namespace Model
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/X-Frame-Options">X-Frame-Options</a>
      * in the MDN Web Docs.</p>
      */
-    inline const FrameOptionsList& GetFrameOption() const{ return m_frameOption; }
+    inline FrameOptionsList GetFrameOption() const { return m_frameOption; }
     inline bool FrameOptionHasBeenSet() const { return m_frameOptionHasBeenSet; }
-    inline void SetFrameOption(const FrameOptionsList& value) { m_frameOptionHasBeenSet = true; m_frameOption = value; }
-    inline void SetFrameOption(FrameOptionsList&& value) { m_frameOptionHasBeenSet = true; m_frameOption = std::move(value); }
-    inline ResponseHeadersPolicyFrameOptions& WithFrameOption(const FrameOptionsList& value) { SetFrameOption(value); return *this;}
-    inline ResponseHeadersPolicyFrameOptions& WithFrameOption(FrameOptionsList&& value) { SetFrameOption(std::move(value)); return *this;}
+    inline void SetFrameOption(FrameOptionsList value) { m_frameOptionHasBeenSet = true; m_frameOption = value; }
+    inline ResponseHeadersPolicyFrameOptions& WithFrameOption(FrameOptionsList value) { SetFrameOption(value); return *this;}
     ///@}
   private:
 
-    bool m_override;
+    bool m_override{false};
     bool m_overrideHasBeenSet = false;
 
-    FrameOptionsList m_frameOption;
+    FrameOptionsList m_frameOption{FrameOptionsList::NOT_SET};
     bool m_frameOptionHasBeenSet = false;
   };
 

@@ -18,14 +18,7 @@ namespace IdentityStore
 namespace Model
 {
 
-AttributeOperation::AttributeOperation() : 
-    m_attributePathHasBeenSet(false),
-    m_attributeValueHasBeenSet(false)
-{
-}
-
 AttributeOperation::AttributeOperation(JsonView jsonValue)
-  : AttributeOperation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AttributeOperation& AttributeOperation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AttributePath"))
   {
     m_attributePath = jsonValue.GetString("AttributePath");
-
     m_attributePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeValue"))
   {
     m_attributeValue = jsonValue.GetObject("AttributeValue");
-
     m_attributeValueHasBeenSet = true;
   }
-
   return *this;
 }
 

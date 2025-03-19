@@ -34,7 +34,7 @@ namespace Model
   class S3BucketDefinitionForJob
   {
   public:
-    AWS_MACIE2_API S3BucketDefinitionForJob();
+    AWS_MACIE2_API S3BucketDefinitionForJob() = default;
     AWS_MACIE2_API S3BucketDefinitionForJob(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API S3BucketDefinitionForJob& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,29 +45,26 @@ namespace Model
      * <p>The unique identifier for the Amazon Web Services account that owns the
      * buckets.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline S3BucketDefinitionForJob& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline S3BucketDefinitionForJob& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline S3BucketDefinitionForJob& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    S3BucketDefinitionForJob& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array that lists the names of the buckets.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetBuckets() const{ return m_buckets; }
+    inline const Aws::Vector<Aws::String>& GetBuckets() const { return m_buckets; }
     inline bool BucketsHasBeenSet() const { return m_bucketsHasBeenSet; }
-    inline void SetBuckets(const Aws::Vector<Aws::String>& value) { m_bucketsHasBeenSet = true; m_buckets = value; }
-    inline void SetBuckets(Aws::Vector<Aws::String>&& value) { m_bucketsHasBeenSet = true; m_buckets = std::move(value); }
-    inline S3BucketDefinitionForJob& WithBuckets(const Aws::Vector<Aws::String>& value) { SetBuckets(value); return *this;}
-    inline S3BucketDefinitionForJob& WithBuckets(Aws::Vector<Aws::String>&& value) { SetBuckets(std::move(value)); return *this;}
-    inline S3BucketDefinitionForJob& AddBuckets(const Aws::String& value) { m_bucketsHasBeenSet = true; m_buckets.push_back(value); return *this; }
-    inline S3BucketDefinitionForJob& AddBuckets(Aws::String&& value) { m_bucketsHasBeenSet = true; m_buckets.push_back(std::move(value)); return *this; }
-    inline S3BucketDefinitionForJob& AddBuckets(const char* value) { m_bucketsHasBeenSet = true; m_buckets.push_back(value); return *this; }
+    template<typename BucketsT = Aws::Vector<Aws::String>>
+    void SetBuckets(BucketsT&& value) { m_bucketsHasBeenSet = true; m_buckets = std::forward<BucketsT>(value); }
+    template<typename BucketsT = Aws::Vector<Aws::String>>
+    S3BucketDefinitionForJob& WithBuckets(BucketsT&& value) { SetBuckets(std::forward<BucketsT>(value)); return *this;}
+    template<typename BucketsT = Aws::String>
+    S3BucketDefinitionForJob& AddBuckets(BucketsT&& value) { m_bucketsHasBeenSet = true; m_buckets.emplace_back(std::forward<BucketsT>(value)); return *this; }
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class RetrieverContentSource
   {
   public:
-    AWS_QBUSINESS_API RetrieverContentSource();
+    AWS_QBUSINESS_API RetrieverContentSource() = default;
     AWS_QBUSINESS_API RetrieverContentSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API RetrieverContentSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The unique identifier of the retriever to use as the content source.</p>
      */
-    inline const Aws::String& GetRetrieverId() const{ return m_retrieverId; }
+    inline const Aws::String& GetRetrieverId() const { return m_retrieverId; }
     inline bool RetrieverIdHasBeenSet() const { return m_retrieverIdHasBeenSet; }
-    inline void SetRetrieverId(const Aws::String& value) { m_retrieverIdHasBeenSet = true; m_retrieverId = value; }
-    inline void SetRetrieverId(Aws::String&& value) { m_retrieverIdHasBeenSet = true; m_retrieverId = std::move(value); }
-    inline void SetRetrieverId(const char* value) { m_retrieverIdHasBeenSet = true; m_retrieverId.assign(value); }
-    inline RetrieverContentSource& WithRetrieverId(const Aws::String& value) { SetRetrieverId(value); return *this;}
-    inline RetrieverContentSource& WithRetrieverId(Aws::String&& value) { SetRetrieverId(std::move(value)); return *this;}
-    inline RetrieverContentSource& WithRetrieverId(const char* value) { SetRetrieverId(value); return *this;}
+    template<typename RetrieverIdT = Aws::String>
+    void SetRetrieverId(RetrieverIdT&& value) { m_retrieverIdHasBeenSet = true; m_retrieverId = std::forward<RetrieverIdT>(value); }
+    template<typename RetrieverIdT = Aws::String>
+    RetrieverContentSource& WithRetrieverId(RetrieverIdT&& value) { SetRetrieverId(std::forward<RetrieverIdT>(value)); return *this;}
     ///@}
   private:
 

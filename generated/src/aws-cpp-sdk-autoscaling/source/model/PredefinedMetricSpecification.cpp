@@ -20,15 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-PredefinedMetricSpecification::PredefinedMetricSpecification() : 
-    m_predefinedMetricType(MetricType::NOT_SET),
-    m_predefinedMetricTypeHasBeenSet(false),
-    m_resourceLabelHasBeenSet(false)
-{
-}
-
 PredefinedMetricSpecification::PredefinedMetricSpecification(const XmlNode& xmlNode)
-  : PredefinedMetricSpecification()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ PredefinedMetricSpecification& PredefinedMetricSpecification::operator =(const X
     XmlNode predefinedMetricTypeNode = resultNode.FirstChild("PredefinedMetricType");
     if(!predefinedMetricTypeNode.IsNull())
     {
-      m_predefinedMetricType = MetricTypeMapper::GetMetricTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(predefinedMetricTypeNode.GetText()).c_str()).c_str());
+      m_predefinedMetricType = MetricTypeMapper::GetMetricTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(predefinedMetricTypeNode.GetText()).c_str()));
       m_predefinedMetricTypeHasBeenSet = true;
     }
     XmlNode resourceLabelNode = resultNode.FirstChild("ResourceLabel");

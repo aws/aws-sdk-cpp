@@ -18,14 +18,7 @@ namespace BackupSearch
 namespace Model
 {
 
-S3ExportSpecification::S3ExportSpecification() : 
-    m_destinationBucketHasBeenSet(false),
-    m_destinationPrefixHasBeenSet(false)
-{
-}
-
 S3ExportSpecification::S3ExportSpecification(JsonView jsonValue)
-  : S3ExportSpecification()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3ExportSpecification& S3ExportSpecification::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DestinationBucket"))
   {
     m_destinationBucket = jsonValue.GetString("DestinationBucket");
-
     m_destinationBucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationPrefix"))
   {
     m_destinationPrefix = jsonValue.GetString("DestinationPrefix");
-
     m_destinationPrefixHasBeenSet = true;
   }
-
   return *this;
 }
 

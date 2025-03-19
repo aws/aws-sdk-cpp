@@ -29,7 +29,7 @@ namespace Model
   class TopicConfigOptions
   {
   public:
-    AWS_QUICKSIGHT_API TopicConfigOptions();
+    AWS_QUICKSIGHT_API TopicConfigOptions() = default;
     AWS_QUICKSIGHT_API TopicConfigOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TopicConfigOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>Enables Amazon Q Business Insights for a <code>Topic</code>.</p>
      */
-    inline bool GetQBusinessInsightsEnabled() const{ return m_qBusinessInsightsEnabled; }
+    inline bool GetQBusinessInsightsEnabled() const { return m_qBusinessInsightsEnabled; }
     inline bool QBusinessInsightsEnabledHasBeenSet() const { return m_qBusinessInsightsEnabledHasBeenSet; }
     inline void SetQBusinessInsightsEnabled(bool value) { m_qBusinessInsightsEnabledHasBeenSet = true; m_qBusinessInsightsEnabled = value; }
     inline TopicConfigOptions& WithQBusinessInsightsEnabled(bool value) { SetQBusinessInsightsEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_qBusinessInsightsEnabled;
+    bool m_qBusinessInsightsEnabled{false};
     bool m_qBusinessInsightsEnabledHasBeenSet = false;
   };
 

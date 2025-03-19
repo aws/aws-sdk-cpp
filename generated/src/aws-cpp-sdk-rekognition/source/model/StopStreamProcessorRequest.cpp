@@ -12,11 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopStreamProcessorRequest::StopStreamProcessorRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String StopStreamProcessorRequest::SerializePayload() const
 {
   JsonValue payload;

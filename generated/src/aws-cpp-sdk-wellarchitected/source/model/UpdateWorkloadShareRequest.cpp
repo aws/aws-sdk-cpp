@@ -12,14 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateWorkloadShareRequest::UpdateWorkloadShareRequest() : 
-    m_shareIdHasBeenSet(false),
-    m_workloadIdHasBeenSet(false),
-    m_permissionType(PermissionType::NOT_SET),
-    m_permissionTypeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateWorkloadShareRequest::SerializePayload() const
 {
   JsonValue payload;

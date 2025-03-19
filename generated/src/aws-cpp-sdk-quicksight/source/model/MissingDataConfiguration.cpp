@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-MissingDataConfiguration::MissingDataConfiguration() : 
-    m_treatmentOption(MissingDataTreatmentOption::NOT_SET),
-    m_treatmentOptionHasBeenSet(false)
-{
-}
-
 MissingDataConfiguration::MissingDataConfiguration(JsonView jsonValue)
-  : MissingDataConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ MissingDataConfiguration& MissingDataConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("TreatmentOption"))
   {
     m_treatmentOption = MissingDataTreatmentOptionMapper::GetMissingDataTreatmentOptionForName(jsonValue.GetString("TreatmentOption"));
-
     m_treatmentOptionHasBeenSet = true;
   }
-
   return *this;
 }
 

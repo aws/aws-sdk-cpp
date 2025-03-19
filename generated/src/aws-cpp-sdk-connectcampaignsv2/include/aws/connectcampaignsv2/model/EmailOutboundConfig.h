@@ -31,7 +31,7 @@ namespace Model
   class EmailOutboundConfig
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API EmailOutboundConfig();
+    AWS_CONNECTCAMPAIGNSV2_API EmailOutboundConfig() = default;
     AWS_CONNECTCAMPAIGNSV2_API EmailOutboundConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API EmailOutboundConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,38 +39,32 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetConnectSourceEmailAddress() const{ return m_connectSourceEmailAddress; }
+    inline const Aws::String& GetConnectSourceEmailAddress() const { return m_connectSourceEmailAddress; }
     inline bool ConnectSourceEmailAddressHasBeenSet() const { return m_connectSourceEmailAddressHasBeenSet; }
-    inline void SetConnectSourceEmailAddress(const Aws::String& value) { m_connectSourceEmailAddressHasBeenSet = true; m_connectSourceEmailAddress = value; }
-    inline void SetConnectSourceEmailAddress(Aws::String&& value) { m_connectSourceEmailAddressHasBeenSet = true; m_connectSourceEmailAddress = std::move(value); }
-    inline void SetConnectSourceEmailAddress(const char* value) { m_connectSourceEmailAddressHasBeenSet = true; m_connectSourceEmailAddress.assign(value); }
-    inline EmailOutboundConfig& WithConnectSourceEmailAddress(const Aws::String& value) { SetConnectSourceEmailAddress(value); return *this;}
-    inline EmailOutboundConfig& WithConnectSourceEmailAddress(Aws::String&& value) { SetConnectSourceEmailAddress(std::move(value)); return *this;}
-    inline EmailOutboundConfig& WithConnectSourceEmailAddress(const char* value) { SetConnectSourceEmailAddress(value); return *this;}
+    template<typename ConnectSourceEmailAddressT = Aws::String>
+    void SetConnectSourceEmailAddress(ConnectSourceEmailAddressT&& value) { m_connectSourceEmailAddressHasBeenSet = true; m_connectSourceEmailAddress = std::forward<ConnectSourceEmailAddressT>(value); }
+    template<typename ConnectSourceEmailAddressT = Aws::String>
+    EmailOutboundConfig& WithConnectSourceEmailAddress(ConnectSourceEmailAddressT&& value) { SetConnectSourceEmailAddress(std::forward<ConnectSourceEmailAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetSourceEmailAddressDisplayName() const{ return m_sourceEmailAddressDisplayName; }
+    inline const Aws::String& GetSourceEmailAddressDisplayName() const { return m_sourceEmailAddressDisplayName; }
     inline bool SourceEmailAddressDisplayNameHasBeenSet() const { return m_sourceEmailAddressDisplayNameHasBeenSet; }
-    inline void SetSourceEmailAddressDisplayName(const Aws::String& value) { m_sourceEmailAddressDisplayNameHasBeenSet = true; m_sourceEmailAddressDisplayName = value; }
-    inline void SetSourceEmailAddressDisplayName(Aws::String&& value) { m_sourceEmailAddressDisplayNameHasBeenSet = true; m_sourceEmailAddressDisplayName = std::move(value); }
-    inline void SetSourceEmailAddressDisplayName(const char* value) { m_sourceEmailAddressDisplayNameHasBeenSet = true; m_sourceEmailAddressDisplayName.assign(value); }
-    inline EmailOutboundConfig& WithSourceEmailAddressDisplayName(const Aws::String& value) { SetSourceEmailAddressDisplayName(value); return *this;}
-    inline EmailOutboundConfig& WithSourceEmailAddressDisplayName(Aws::String&& value) { SetSourceEmailAddressDisplayName(std::move(value)); return *this;}
-    inline EmailOutboundConfig& WithSourceEmailAddressDisplayName(const char* value) { SetSourceEmailAddressDisplayName(value); return *this;}
+    template<typename SourceEmailAddressDisplayNameT = Aws::String>
+    void SetSourceEmailAddressDisplayName(SourceEmailAddressDisplayNameT&& value) { m_sourceEmailAddressDisplayNameHasBeenSet = true; m_sourceEmailAddressDisplayName = std::forward<SourceEmailAddressDisplayNameT>(value); }
+    template<typename SourceEmailAddressDisplayNameT = Aws::String>
+    EmailOutboundConfig& WithSourceEmailAddressDisplayName(SourceEmailAddressDisplayNameT&& value) { SetSourceEmailAddressDisplayName(std::forward<SourceEmailAddressDisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetWisdomTemplateArn() const{ return m_wisdomTemplateArn; }
+    inline const Aws::String& GetWisdomTemplateArn() const { return m_wisdomTemplateArn; }
     inline bool WisdomTemplateArnHasBeenSet() const { return m_wisdomTemplateArnHasBeenSet; }
-    inline void SetWisdomTemplateArn(const Aws::String& value) { m_wisdomTemplateArnHasBeenSet = true; m_wisdomTemplateArn = value; }
-    inline void SetWisdomTemplateArn(Aws::String&& value) { m_wisdomTemplateArnHasBeenSet = true; m_wisdomTemplateArn = std::move(value); }
-    inline void SetWisdomTemplateArn(const char* value) { m_wisdomTemplateArnHasBeenSet = true; m_wisdomTemplateArn.assign(value); }
-    inline EmailOutboundConfig& WithWisdomTemplateArn(const Aws::String& value) { SetWisdomTemplateArn(value); return *this;}
-    inline EmailOutboundConfig& WithWisdomTemplateArn(Aws::String&& value) { SetWisdomTemplateArn(std::move(value)); return *this;}
-    inline EmailOutboundConfig& WithWisdomTemplateArn(const char* value) { SetWisdomTemplateArn(value); return *this;}
+    template<typename WisdomTemplateArnT = Aws::String>
+    void SetWisdomTemplateArn(WisdomTemplateArnT&& value) { m_wisdomTemplateArnHasBeenSet = true; m_wisdomTemplateArn = std::forward<WisdomTemplateArnT>(value); }
+    template<typename WisdomTemplateArnT = Aws::String>
+    EmailOutboundConfig& WithWisdomTemplateArn(WisdomTemplateArnT&& value) { SetWisdomTemplateArn(std::forward<WisdomTemplateArnT>(value)); return *this;}
     ///@}
   private:
 

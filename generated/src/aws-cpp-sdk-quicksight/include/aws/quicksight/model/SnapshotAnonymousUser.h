@@ -33,7 +33,7 @@ namespace Model
   class SnapshotAnonymousUser
   {
   public:
-    AWS_QUICKSIGHT_API SnapshotAnonymousUser();
+    AWS_QUICKSIGHT_API SnapshotAnonymousUser() = default;
     AWS_QUICKSIGHT_API SnapshotAnonymousUser(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SnapshotAnonymousUser& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,14 @@ namespace Model
      * Row-Level Security (RLS) with Tags</a>in the <i>Amazon QuickSight User
      * Guide</i>.</p>
      */
-    inline const Aws::Vector<SessionTag>& GetRowLevelPermissionTags() const{ return m_rowLevelPermissionTags; }
+    inline const Aws::Vector<SessionTag>& GetRowLevelPermissionTags() const { return m_rowLevelPermissionTags; }
     inline bool RowLevelPermissionTagsHasBeenSet() const { return m_rowLevelPermissionTagsHasBeenSet; }
-    inline void SetRowLevelPermissionTags(const Aws::Vector<SessionTag>& value) { m_rowLevelPermissionTagsHasBeenSet = true; m_rowLevelPermissionTags = value; }
-    inline void SetRowLevelPermissionTags(Aws::Vector<SessionTag>&& value) { m_rowLevelPermissionTagsHasBeenSet = true; m_rowLevelPermissionTags = std::move(value); }
-    inline SnapshotAnonymousUser& WithRowLevelPermissionTags(const Aws::Vector<SessionTag>& value) { SetRowLevelPermissionTags(value); return *this;}
-    inline SnapshotAnonymousUser& WithRowLevelPermissionTags(Aws::Vector<SessionTag>&& value) { SetRowLevelPermissionTags(std::move(value)); return *this;}
-    inline SnapshotAnonymousUser& AddRowLevelPermissionTags(const SessionTag& value) { m_rowLevelPermissionTagsHasBeenSet = true; m_rowLevelPermissionTags.push_back(value); return *this; }
-    inline SnapshotAnonymousUser& AddRowLevelPermissionTags(SessionTag&& value) { m_rowLevelPermissionTagsHasBeenSet = true; m_rowLevelPermissionTags.push_back(std::move(value)); return *this; }
+    template<typename RowLevelPermissionTagsT = Aws::Vector<SessionTag>>
+    void SetRowLevelPermissionTags(RowLevelPermissionTagsT&& value) { m_rowLevelPermissionTagsHasBeenSet = true; m_rowLevelPermissionTags = std::forward<RowLevelPermissionTagsT>(value); }
+    template<typename RowLevelPermissionTagsT = Aws::Vector<SessionTag>>
+    SnapshotAnonymousUser& WithRowLevelPermissionTags(RowLevelPermissionTagsT&& value) { SetRowLevelPermissionTags(std::forward<RowLevelPermissionTagsT>(value)); return *this;}
+    template<typename RowLevelPermissionTagsT = SessionTag>
+    SnapshotAnonymousUser& AddRowLevelPermissionTags(RowLevelPermissionTagsT&& value) { m_rowLevelPermissionTagsHasBeenSet = true; m_rowLevelPermissionTags.emplace_back(std::forward<RowLevelPermissionTagsT>(value)); return *this; }
     ///@}
   private:
 

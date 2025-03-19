@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-InExpression::InExpression() : 
-    m_columnNameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 InExpression::InExpression(JsonView jsonValue)
-  : InExpression()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ InExpression& InExpression::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("columnName"))
   {
     m_columnName = jsonValue.GetString("columnName");
-
     m_columnNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -48,7 +39,6 @@ InExpression& InExpression::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

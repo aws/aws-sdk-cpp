@@ -12,12 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPersonalAccessTokenMetadataRequest::GetPersonalAccessTokenMetadataRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_personalAccessTokenIdHasBeenSet(false)
-{
-}
-
 Aws::String GetPersonalAccessTokenMetadataRequest::SerializePayload() const
 {
   JsonValue payload;

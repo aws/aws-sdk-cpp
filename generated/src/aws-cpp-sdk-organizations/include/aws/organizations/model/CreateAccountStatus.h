@@ -37,7 +37,7 @@ namespace Model
   class CreateAccountStatus
   {
   public:
-    AWS_ORGANIZATIONS_API CreateAccountStatus();
+    AWS_ORGANIZATIONS_API CreateAccountStatus() = default;
     AWS_ORGANIZATIONS_API CreateAccountStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_ORGANIZATIONS_API CreateAccountStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,28 +51,24 @@ namespace Model
      * for a create account request ID string requires "car-" followed by from 8 to 32
      * lowercase letters or digits.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline CreateAccountStatus& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline CreateAccountStatus& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline CreateAccountStatus& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    CreateAccountStatus& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The account name given to the account when it was created.</p>
      */
-    inline const Aws::String& GetAccountName() const{ return m_accountName; }
+    inline const Aws::String& GetAccountName() const { return m_accountName; }
     inline bool AccountNameHasBeenSet() const { return m_accountNameHasBeenSet; }
-    inline void SetAccountName(const Aws::String& value) { m_accountNameHasBeenSet = true; m_accountName = value; }
-    inline void SetAccountName(Aws::String&& value) { m_accountNameHasBeenSet = true; m_accountName = std::move(value); }
-    inline void SetAccountName(const char* value) { m_accountNameHasBeenSet = true; m_accountName.assign(value); }
-    inline CreateAccountStatus& WithAccountName(const Aws::String& value) { SetAccountName(value); return *this;}
-    inline CreateAccountStatus& WithAccountName(Aws::String&& value) { SetAccountName(std::move(value)); return *this;}
-    inline CreateAccountStatus& WithAccountName(const char* value) { SetAccountName(value); return *this;}
+    template<typename AccountNameT = Aws::String>
+    void SetAccountName(AccountNameT&& value) { m_accountNameHasBeenSet = true; m_accountName = std::forward<AccountNameT>(value); }
+    template<typename AccountNameT = Aws::String>
+    CreateAccountStatus& WithAccountName(AccountNameT&& value) { SetAccountName(std::forward<AccountNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,36 +76,34 @@ namespace Model
      * <p>The status of the asynchronous request to create an Amazon Web Services
      * account.</p>
      */
-    inline const CreateAccountState& GetState() const{ return m_state; }
+    inline CreateAccountState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const CreateAccountState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(CreateAccountState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline CreateAccountStatus& WithState(const CreateAccountState& value) { SetState(value); return *this;}
-    inline CreateAccountStatus& WithState(CreateAccountState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(CreateAccountState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline CreateAccountStatus& WithState(CreateAccountState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the request was made for the account creation.</p>
      */
-    inline const Aws::Utils::DateTime& GetRequestedTimestamp() const{ return m_requestedTimestamp; }
+    inline const Aws::Utils::DateTime& GetRequestedTimestamp() const { return m_requestedTimestamp; }
     inline bool RequestedTimestampHasBeenSet() const { return m_requestedTimestampHasBeenSet; }
-    inline void SetRequestedTimestamp(const Aws::Utils::DateTime& value) { m_requestedTimestampHasBeenSet = true; m_requestedTimestamp = value; }
-    inline void SetRequestedTimestamp(Aws::Utils::DateTime&& value) { m_requestedTimestampHasBeenSet = true; m_requestedTimestamp = std::move(value); }
-    inline CreateAccountStatus& WithRequestedTimestamp(const Aws::Utils::DateTime& value) { SetRequestedTimestamp(value); return *this;}
-    inline CreateAccountStatus& WithRequestedTimestamp(Aws::Utils::DateTime&& value) { SetRequestedTimestamp(std::move(value)); return *this;}
+    template<typename RequestedTimestampT = Aws::Utils::DateTime>
+    void SetRequestedTimestamp(RequestedTimestampT&& value) { m_requestedTimestampHasBeenSet = true; m_requestedTimestamp = std::forward<RequestedTimestampT>(value); }
+    template<typename RequestedTimestampT = Aws::Utils::DateTime>
+    CreateAccountStatus& WithRequestedTimestamp(RequestedTimestampT&& value) { SetRequestedTimestamp(std::forward<RequestedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the account was created and the request completed.</p>
      */
-    inline const Aws::Utils::DateTime& GetCompletedTimestamp() const{ return m_completedTimestamp; }
+    inline const Aws::Utils::DateTime& GetCompletedTimestamp() const { return m_completedTimestamp; }
     inline bool CompletedTimestampHasBeenSet() const { return m_completedTimestampHasBeenSet; }
-    inline void SetCompletedTimestamp(const Aws::Utils::DateTime& value) { m_completedTimestampHasBeenSet = true; m_completedTimestamp = value; }
-    inline void SetCompletedTimestamp(Aws::Utils::DateTime&& value) { m_completedTimestampHasBeenSet = true; m_completedTimestamp = std::move(value); }
-    inline CreateAccountStatus& WithCompletedTimestamp(const Aws::Utils::DateTime& value) { SetCompletedTimestamp(value); return *this;}
-    inline CreateAccountStatus& WithCompletedTimestamp(Aws::Utils::DateTime&& value) { SetCompletedTimestamp(std::move(value)); return *this;}
+    template<typename CompletedTimestampT = Aws::Utils::DateTime>
+    void SetCompletedTimestamp(CompletedTimestampT&& value) { m_completedTimestampHasBeenSet = true; m_completedTimestamp = std::forward<CompletedTimestampT>(value); }
+    template<typename CompletedTimestampT = Aws::Utils::DateTime>
+    CreateAccountStatus& WithCompletedTimestamp(CompletedTimestampT&& value) { SetCompletedTimestamp(std::forward<CompletedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,14 +112,12 @@ namespace Model
      * new account.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a> for an account ID string requires exactly 12 digits.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline CreateAccountStatus& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline CreateAccountStatus& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline CreateAccountStatus& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    CreateAccountStatus& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,14 +125,12 @@ namespace Model
      * <p>If the account was created successfully, the unique identifier (ID) of the
      * new account in the Amazon Web Services GovCloud (US) Region.</p>
      */
-    inline const Aws::String& GetGovCloudAccountId() const{ return m_govCloudAccountId; }
+    inline const Aws::String& GetGovCloudAccountId() const { return m_govCloudAccountId; }
     inline bool GovCloudAccountIdHasBeenSet() const { return m_govCloudAccountIdHasBeenSet; }
-    inline void SetGovCloudAccountId(const Aws::String& value) { m_govCloudAccountIdHasBeenSet = true; m_govCloudAccountId = value; }
-    inline void SetGovCloudAccountId(Aws::String&& value) { m_govCloudAccountIdHasBeenSet = true; m_govCloudAccountId = std::move(value); }
-    inline void SetGovCloudAccountId(const char* value) { m_govCloudAccountIdHasBeenSet = true; m_govCloudAccountId.assign(value); }
-    inline CreateAccountStatus& WithGovCloudAccountId(const Aws::String& value) { SetGovCloudAccountId(value); return *this;}
-    inline CreateAccountStatus& WithGovCloudAccountId(Aws::String&& value) { SetGovCloudAccountId(std::move(value)); return *this;}
-    inline CreateAccountStatus& WithGovCloudAccountId(const char* value) { SetGovCloudAccountId(value); return *this;}
+    template<typename GovCloudAccountIdT = Aws::String>
+    void SetGovCloudAccountId(GovCloudAccountIdT&& value) { m_govCloudAccountIdHasBeenSet = true; m_govCloudAccountId = std::forward<GovCloudAccountIdT>(value); }
+    template<typename GovCloudAccountIdT = Aws::String>
+    CreateAccountStatus& WithGovCloudAccountId(GovCloudAccountIdT&& value) { SetGovCloudAccountId(std::forward<GovCloudAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -180,12 +170,10 @@ namespace Model
      * Services account that owns your organization has an unknown issue with business
      * license validation.</p> </li> </ul>
      */
-    inline const CreateAccountFailureReason& GetFailureReason() const{ return m_failureReason; }
+    inline CreateAccountFailureReason GetFailureReason() const { return m_failureReason; }
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-    inline void SetFailureReason(const CreateAccountFailureReason& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-    inline void SetFailureReason(CreateAccountFailureReason&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-    inline CreateAccountStatus& WithFailureReason(const CreateAccountFailureReason& value) { SetFailureReason(value); return *this;}
-    inline CreateAccountStatus& WithFailureReason(CreateAccountFailureReason&& value) { SetFailureReason(std::move(value)); return *this;}
+    inline void SetFailureReason(CreateAccountFailureReason value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
+    inline CreateAccountStatus& WithFailureReason(CreateAccountFailureReason value) { SetFailureReason(value); return *this;}
     ///@}
   private:
 
@@ -195,13 +183,13 @@ namespace Model
     Aws::String m_accountName;
     bool m_accountNameHasBeenSet = false;
 
-    CreateAccountState m_state;
+    CreateAccountState m_state{CreateAccountState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_requestedTimestamp;
+    Aws::Utils::DateTime m_requestedTimestamp{};
     bool m_requestedTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_completedTimestamp;
+    Aws::Utils::DateTime m_completedTimestamp{};
     bool m_completedTimestampHasBeenSet = false;
 
     Aws::String m_accountId;
@@ -210,7 +198,7 @@ namespace Model
     Aws::String m_govCloudAccountId;
     bool m_govCloudAccountIdHasBeenSet = false;
 
-    CreateAccountFailureReason m_failureReason;
+    CreateAccountFailureReason m_failureReason{CreateAccountFailureReason::NOT_SET};
     bool m_failureReasonHasBeenSet = false;
   };
 

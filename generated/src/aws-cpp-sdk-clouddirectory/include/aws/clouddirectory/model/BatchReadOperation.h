@@ -45,7 +45,7 @@ namespace Model
   class BatchReadOperation
   {
   public:
-    AWS_CLOUDDIRECTORY_API BatchReadOperation();
+    AWS_CLOUDDIRECTORY_API BatchReadOperation() = default;
     AWS_CLOUDDIRECTORY_API BatchReadOperation(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API BatchReadOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,12 +55,12 @@ namespace Model
     /**
      * <p>Lists all attributes that are associated with an object.</p>
      */
-    inline const BatchListObjectAttributes& GetListObjectAttributes() const{ return m_listObjectAttributes; }
+    inline const BatchListObjectAttributes& GetListObjectAttributes() const { return m_listObjectAttributes; }
     inline bool ListObjectAttributesHasBeenSet() const { return m_listObjectAttributesHasBeenSet; }
-    inline void SetListObjectAttributes(const BatchListObjectAttributes& value) { m_listObjectAttributesHasBeenSet = true; m_listObjectAttributes = value; }
-    inline void SetListObjectAttributes(BatchListObjectAttributes&& value) { m_listObjectAttributesHasBeenSet = true; m_listObjectAttributes = std::move(value); }
-    inline BatchReadOperation& WithListObjectAttributes(const BatchListObjectAttributes& value) { SetListObjectAttributes(value); return *this;}
-    inline BatchReadOperation& WithListObjectAttributes(BatchListObjectAttributes&& value) { SetListObjectAttributes(std::move(value)); return *this;}
+    template<typename ListObjectAttributesT = BatchListObjectAttributes>
+    void SetListObjectAttributes(ListObjectAttributesT&& value) { m_listObjectAttributesHasBeenSet = true; m_listObjectAttributes = std::forward<ListObjectAttributesT>(value); }
+    template<typename ListObjectAttributesT = BatchListObjectAttributes>
+    BatchReadOperation& WithListObjectAttributes(ListObjectAttributesT&& value) { SetListObjectAttributes(std::forward<ListObjectAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,24 +68,24 @@ namespace Model
      * <p>Returns a paginated list of child objects that are associated with a given
      * object.</p>
      */
-    inline const BatchListObjectChildren& GetListObjectChildren() const{ return m_listObjectChildren; }
+    inline const BatchListObjectChildren& GetListObjectChildren() const { return m_listObjectChildren; }
     inline bool ListObjectChildrenHasBeenSet() const { return m_listObjectChildrenHasBeenSet; }
-    inline void SetListObjectChildren(const BatchListObjectChildren& value) { m_listObjectChildrenHasBeenSet = true; m_listObjectChildren = value; }
-    inline void SetListObjectChildren(BatchListObjectChildren&& value) { m_listObjectChildrenHasBeenSet = true; m_listObjectChildren = std::move(value); }
-    inline BatchReadOperation& WithListObjectChildren(const BatchListObjectChildren& value) { SetListObjectChildren(value); return *this;}
-    inline BatchReadOperation& WithListObjectChildren(BatchListObjectChildren&& value) { SetListObjectChildren(std::move(value)); return *this;}
+    template<typename ListObjectChildrenT = BatchListObjectChildren>
+    void SetListObjectChildren(ListObjectChildrenT&& value) { m_listObjectChildrenHasBeenSet = true; m_listObjectChildren = std::forward<ListObjectChildrenT>(value); }
+    template<typename ListObjectChildrenT = BatchListObjectChildren>
+    BatchReadOperation& WithListObjectChildren(ListObjectChildrenT&& value) { SetListObjectChildren(std::forward<ListObjectChildrenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Lists indices attached to an object.</p>
      */
-    inline const BatchListAttachedIndices& GetListAttachedIndices() const{ return m_listAttachedIndices; }
+    inline const BatchListAttachedIndices& GetListAttachedIndices() const { return m_listAttachedIndices; }
     inline bool ListAttachedIndicesHasBeenSet() const { return m_listAttachedIndicesHasBeenSet; }
-    inline void SetListAttachedIndices(const BatchListAttachedIndices& value) { m_listAttachedIndicesHasBeenSet = true; m_listAttachedIndices = value; }
-    inline void SetListAttachedIndices(BatchListAttachedIndices&& value) { m_listAttachedIndicesHasBeenSet = true; m_listAttachedIndices = std::move(value); }
-    inline BatchReadOperation& WithListAttachedIndices(const BatchListAttachedIndices& value) { SetListAttachedIndices(value); return *this;}
-    inline BatchReadOperation& WithListAttachedIndices(BatchListAttachedIndices&& value) { SetListAttachedIndices(std::move(value)); return *this;}
+    template<typename ListAttachedIndicesT = BatchListAttachedIndices>
+    void SetListAttachedIndices(ListAttachedIndicesT&& value) { m_listAttachedIndicesHasBeenSet = true; m_listAttachedIndices = std::forward<ListAttachedIndicesT>(value); }
+    template<typename ListAttachedIndicesT = BatchListAttachedIndices>
+    BatchReadOperation& WithListAttachedIndices(ListAttachedIndicesT&& value) { SetListAttachedIndices(std::forward<ListAttachedIndicesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,36 +96,36 @@ namespace Model
      * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory
      * Structure</a>.</p>
      */
-    inline const BatchListObjectParentPaths& GetListObjectParentPaths() const{ return m_listObjectParentPaths; }
+    inline const BatchListObjectParentPaths& GetListObjectParentPaths() const { return m_listObjectParentPaths; }
     inline bool ListObjectParentPathsHasBeenSet() const { return m_listObjectParentPathsHasBeenSet; }
-    inline void SetListObjectParentPaths(const BatchListObjectParentPaths& value) { m_listObjectParentPathsHasBeenSet = true; m_listObjectParentPaths = value; }
-    inline void SetListObjectParentPaths(BatchListObjectParentPaths&& value) { m_listObjectParentPathsHasBeenSet = true; m_listObjectParentPaths = std::move(value); }
-    inline BatchReadOperation& WithListObjectParentPaths(const BatchListObjectParentPaths& value) { SetListObjectParentPaths(value); return *this;}
-    inline BatchReadOperation& WithListObjectParentPaths(BatchListObjectParentPaths&& value) { SetListObjectParentPaths(std::move(value)); return *this;}
+    template<typename ListObjectParentPathsT = BatchListObjectParentPaths>
+    void SetListObjectParentPaths(ListObjectParentPathsT&& value) { m_listObjectParentPathsHasBeenSet = true; m_listObjectParentPaths = std::forward<ListObjectParentPathsT>(value); }
+    template<typename ListObjectParentPathsT = BatchListObjectParentPaths>
+    BatchReadOperation& WithListObjectParentPaths(ListObjectParentPathsT&& value) { SetListObjectParentPaths(std::forward<ListObjectParentPathsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Retrieves metadata about an object.</p>
      */
-    inline const BatchGetObjectInformation& GetGetObjectInformation() const{ return m_getObjectInformation; }
+    inline const BatchGetObjectInformation& GetGetObjectInformation() const { return m_getObjectInformation; }
     inline bool GetObjectInformationHasBeenSet() const { return m_getObjectInformationHasBeenSet; }
-    inline void SetGetObjectInformation(const BatchGetObjectInformation& value) { m_getObjectInformationHasBeenSet = true; m_getObjectInformation = value; }
-    inline void SetGetObjectInformation(BatchGetObjectInformation&& value) { m_getObjectInformationHasBeenSet = true; m_getObjectInformation = std::move(value); }
-    inline BatchReadOperation& WithGetObjectInformation(const BatchGetObjectInformation& value) { SetGetObjectInformation(value); return *this;}
-    inline BatchReadOperation& WithGetObjectInformation(BatchGetObjectInformation&& value) { SetGetObjectInformation(std::move(value)); return *this;}
+    template<typename GetObjectInformationT = BatchGetObjectInformation>
+    void SetGetObjectInformation(GetObjectInformationT&& value) { m_getObjectInformationHasBeenSet = true; m_getObjectInformation = std::forward<GetObjectInformationT>(value); }
+    template<typename GetObjectInformationT = BatchGetObjectInformation>
+    BatchReadOperation& WithGetObjectInformation(GetObjectInformationT&& value) { SetGetObjectInformation(std::forward<GetObjectInformationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Retrieves attributes within a facet that are associated with an object.</p>
      */
-    inline const BatchGetObjectAttributes& GetGetObjectAttributes() const{ return m_getObjectAttributes; }
+    inline const BatchGetObjectAttributes& GetGetObjectAttributes() const { return m_getObjectAttributes; }
     inline bool GetObjectAttributesHasBeenSet() const { return m_getObjectAttributesHasBeenSet; }
-    inline void SetGetObjectAttributes(const BatchGetObjectAttributes& value) { m_getObjectAttributesHasBeenSet = true; m_getObjectAttributes = value; }
-    inline void SetGetObjectAttributes(BatchGetObjectAttributes&& value) { m_getObjectAttributesHasBeenSet = true; m_getObjectAttributes = std::move(value); }
-    inline BatchReadOperation& WithGetObjectAttributes(const BatchGetObjectAttributes& value) { SetGetObjectAttributes(value); return *this;}
-    inline BatchReadOperation& WithGetObjectAttributes(BatchGetObjectAttributes&& value) { SetGetObjectAttributes(std::move(value)); return *this;}
+    template<typename GetObjectAttributesT = BatchGetObjectAttributes>
+    void SetGetObjectAttributes(GetObjectAttributesT&& value) { m_getObjectAttributesHasBeenSet = true; m_getObjectAttributes = std::forward<GetObjectAttributesT>(value); }
+    template<typename GetObjectAttributesT = BatchGetObjectAttributes>
+    BatchReadOperation& WithGetObjectAttributes(GetObjectAttributesT&& value) { SetGetObjectAttributes(std::forward<GetObjectAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,24 +133,24 @@ namespace Model
      * <p>Lists parent objects that are associated with a given object in pagination
      * fashion.</p>
      */
-    inline const BatchListObjectParents& GetListObjectParents() const{ return m_listObjectParents; }
+    inline const BatchListObjectParents& GetListObjectParents() const { return m_listObjectParents; }
     inline bool ListObjectParentsHasBeenSet() const { return m_listObjectParentsHasBeenSet; }
-    inline void SetListObjectParents(const BatchListObjectParents& value) { m_listObjectParentsHasBeenSet = true; m_listObjectParents = value; }
-    inline void SetListObjectParents(BatchListObjectParents&& value) { m_listObjectParentsHasBeenSet = true; m_listObjectParents = std::move(value); }
-    inline BatchReadOperation& WithListObjectParents(const BatchListObjectParents& value) { SetListObjectParents(value); return *this;}
-    inline BatchReadOperation& WithListObjectParents(BatchListObjectParents&& value) { SetListObjectParents(std::move(value)); return *this;}
+    template<typename ListObjectParentsT = BatchListObjectParents>
+    void SetListObjectParents(ListObjectParentsT&& value) { m_listObjectParentsHasBeenSet = true; m_listObjectParents = std::forward<ListObjectParentsT>(value); }
+    template<typename ListObjectParentsT = BatchListObjectParents>
+    BatchReadOperation& WithListObjectParents(ListObjectParentsT&& value) { SetListObjectParents(std::forward<ListObjectParentsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns policies attached to an object in pagination fashion.</p>
      */
-    inline const BatchListObjectPolicies& GetListObjectPolicies() const{ return m_listObjectPolicies; }
+    inline const BatchListObjectPolicies& GetListObjectPolicies() const { return m_listObjectPolicies; }
     inline bool ListObjectPoliciesHasBeenSet() const { return m_listObjectPoliciesHasBeenSet; }
-    inline void SetListObjectPolicies(const BatchListObjectPolicies& value) { m_listObjectPoliciesHasBeenSet = true; m_listObjectPolicies = value; }
-    inline void SetListObjectPolicies(BatchListObjectPolicies&& value) { m_listObjectPoliciesHasBeenSet = true; m_listObjectPolicies = std::move(value); }
-    inline BatchReadOperation& WithListObjectPolicies(const BatchListObjectPolicies& value) { SetListObjectPolicies(value); return *this;}
-    inline BatchReadOperation& WithListObjectPolicies(BatchListObjectPolicies&& value) { SetListObjectPolicies(std::move(value)); return *this;}
+    template<typename ListObjectPoliciesT = BatchListObjectPolicies>
+    void SetListObjectPolicies(ListObjectPoliciesT&& value) { m_listObjectPoliciesHasBeenSet = true; m_listObjectPolicies = std::forward<ListObjectPoliciesT>(value); }
+    template<typename ListObjectPoliciesT = BatchListObjectPolicies>
+    BatchReadOperation& WithListObjectPolicies(ListObjectPoliciesT&& value) { SetListObjectPolicies(std::forward<ListObjectPoliciesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,12 +158,12 @@ namespace Model
      * <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is
      * attached.</p>
      */
-    inline const BatchListPolicyAttachments& GetListPolicyAttachments() const{ return m_listPolicyAttachments; }
+    inline const BatchListPolicyAttachments& GetListPolicyAttachments() const { return m_listPolicyAttachments; }
     inline bool ListPolicyAttachmentsHasBeenSet() const { return m_listPolicyAttachmentsHasBeenSet; }
-    inline void SetListPolicyAttachments(const BatchListPolicyAttachments& value) { m_listPolicyAttachmentsHasBeenSet = true; m_listPolicyAttachments = value; }
-    inline void SetListPolicyAttachments(BatchListPolicyAttachments&& value) { m_listPolicyAttachmentsHasBeenSet = true; m_listPolicyAttachments = std::move(value); }
-    inline BatchReadOperation& WithListPolicyAttachments(const BatchListPolicyAttachments& value) { SetListPolicyAttachments(value); return *this;}
-    inline BatchReadOperation& WithListPolicyAttachments(BatchListPolicyAttachments&& value) { SetListPolicyAttachments(std::move(value)); return *this;}
+    template<typename ListPolicyAttachmentsT = BatchListPolicyAttachments>
+    void SetListPolicyAttachments(ListPolicyAttachmentsT&& value) { m_listPolicyAttachmentsHasBeenSet = true; m_listPolicyAttachments = std::forward<ListPolicyAttachmentsT>(value); }
+    template<typename ListPolicyAttachmentsT = BatchListPolicyAttachments>
+    BatchReadOperation& WithListPolicyAttachments(ListPolicyAttachmentsT&& value) { SetListPolicyAttachments(std::forward<ListPolicyAttachmentsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -177,24 +177,24 @@ namespace Model
      * object are ignored. For more information, see <a
      * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
      */
-    inline const BatchLookupPolicy& GetLookupPolicy() const{ return m_lookupPolicy; }
+    inline const BatchLookupPolicy& GetLookupPolicy() const { return m_lookupPolicy; }
     inline bool LookupPolicyHasBeenSet() const { return m_lookupPolicyHasBeenSet; }
-    inline void SetLookupPolicy(const BatchLookupPolicy& value) { m_lookupPolicyHasBeenSet = true; m_lookupPolicy = value; }
-    inline void SetLookupPolicy(BatchLookupPolicy&& value) { m_lookupPolicyHasBeenSet = true; m_lookupPolicy = std::move(value); }
-    inline BatchReadOperation& WithLookupPolicy(const BatchLookupPolicy& value) { SetLookupPolicy(value); return *this;}
-    inline BatchReadOperation& WithLookupPolicy(BatchLookupPolicy&& value) { SetLookupPolicy(std::move(value)); return *this;}
+    template<typename LookupPolicyT = BatchLookupPolicy>
+    void SetLookupPolicy(LookupPolicyT&& value) { m_lookupPolicyHasBeenSet = true; m_lookupPolicy = std::forward<LookupPolicyT>(value); }
+    template<typename LookupPolicyT = BatchLookupPolicy>
+    BatchReadOperation& WithLookupPolicy(LookupPolicyT&& value) { SetLookupPolicy(std::forward<LookupPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Lists objects attached to the specified index.</p>
      */
-    inline const BatchListIndex& GetListIndex() const{ return m_listIndex; }
+    inline const BatchListIndex& GetListIndex() const { return m_listIndex; }
     inline bool ListIndexHasBeenSet() const { return m_listIndexHasBeenSet; }
-    inline void SetListIndex(const BatchListIndex& value) { m_listIndexHasBeenSet = true; m_listIndex = value; }
-    inline void SetListIndex(BatchListIndex&& value) { m_listIndexHasBeenSet = true; m_listIndex = std::move(value); }
-    inline BatchReadOperation& WithListIndex(const BatchListIndex& value) { SetListIndex(value); return *this;}
-    inline BatchReadOperation& WithListIndex(BatchListIndex&& value) { SetListIndex(std::move(value)); return *this;}
+    template<typename ListIndexT = BatchListIndex>
+    void SetListIndex(ListIndexT&& value) { m_listIndexHasBeenSet = true; m_listIndex = std::forward<ListIndexT>(value); }
+    template<typename ListIndexT = BatchListIndex>
+    BatchReadOperation& WithListIndex(ListIndexT&& value) { SetListIndex(std::forward<ListIndexT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -205,12 +205,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
      * Links</a>.</p>
      */
-    inline const BatchListOutgoingTypedLinks& GetListOutgoingTypedLinks() const{ return m_listOutgoingTypedLinks; }
+    inline const BatchListOutgoingTypedLinks& GetListOutgoingTypedLinks() const { return m_listOutgoingTypedLinks; }
     inline bool ListOutgoingTypedLinksHasBeenSet() const { return m_listOutgoingTypedLinksHasBeenSet; }
-    inline void SetListOutgoingTypedLinks(const BatchListOutgoingTypedLinks& value) { m_listOutgoingTypedLinksHasBeenSet = true; m_listOutgoingTypedLinks = value; }
-    inline void SetListOutgoingTypedLinks(BatchListOutgoingTypedLinks&& value) { m_listOutgoingTypedLinksHasBeenSet = true; m_listOutgoingTypedLinks = std::move(value); }
-    inline BatchReadOperation& WithListOutgoingTypedLinks(const BatchListOutgoingTypedLinks& value) { SetListOutgoingTypedLinks(value); return *this;}
-    inline BatchReadOperation& WithListOutgoingTypedLinks(BatchListOutgoingTypedLinks&& value) { SetListOutgoingTypedLinks(std::move(value)); return *this;}
+    template<typename ListOutgoingTypedLinksT = BatchListOutgoingTypedLinks>
+    void SetListOutgoingTypedLinks(ListOutgoingTypedLinksT&& value) { m_listOutgoingTypedLinksHasBeenSet = true; m_listOutgoingTypedLinks = std::forward<ListOutgoingTypedLinksT>(value); }
+    template<typename ListOutgoingTypedLinksT = BatchListOutgoingTypedLinks>
+    BatchReadOperation& WithListOutgoingTypedLinks(ListOutgoingTypedLinksT&& value) { SetListOutgoingTypedLinks(std::forward<ListOutgoingTypedLinksT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -221,24 +221,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
      * Links</a>.</p>
      */
-    inline const BatchListIncomingTypedLinks& GetListIncomingTypedLinks() const{ return m_listIncomingTypedLinks; }
+    inline const BatchListIncomingTypedLinks& GetListIncomingTypedLinks() const { return m_listIncomingTypedLinks; }
     inline bool ListIncomingTypedLinksHasBeenSet() const { return m_listIncomingTypedLinksHasBeenSet; }
-    inline void SetListIncomingTypedLinks(const BatchListIncomingTypedLinks& value) { m_listIncomingTypedLinksHasBeenSet = true; m_listIncomingTypedLinks = value; }
-    inline void SetListIncomingTypedLinks(BatchListIncomingTypedLinks&& value) { m_listIncomingTypedLinksHasBeenSet = true; m_listIncomingTypedLinks = std::move(value); }
-    inline BatchReadOperation& WithListIncomingTypedLinks(const BatchListIncomingTypedLinks& value) { SetListIncomingTypedLinks(value); return *this;}
-    inline BatchReadOperation& WithListIncomingTypedLinks(BatchListIncomingTypedLinks&& value) { SetListIncomingTypedLinks(std::move(value)); return *this;}
+    template<typename ListIncomingTypedLinksT = BatchListIncomingTypedLinks>
+    void SetListIncomingTypedLinks(ListIncomingTypedLinksT&& value) { m_listIncomingTypedLinksHasBeenSet = true; m_listIncomingTypedLinks = std::forward<ListIncomingTypedLinksT>(value); }
+    template<typename ListIncomingTypedLinksT = BatchListIncomingTypedLinks>
+    BatchReadOperation& WithListIncomingTypedLinks(ListIncomingTypedLinksT&& value) { SetListIncomingTypedLinks(std::forward<ListIncomingTypedLinksT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Retrieves attributes that are associated with a typed link.</p>
      */
-    inline const BatchGetLinkAttributes& GetGetLinkAttributes() const{ return m_getLinkAttributes; }
+    inline const BatchGetLinkAttributes& GetGetLinkAttributes() const { return m_getLinkAttributes; }
     inline bool GetLinkAttributesHasBeenSet() const { return m_getLinkAttributesHasBeenSet; }
-    inline void SetGetLinkAttributes(const BatchGetLinkAttributes& value) { m_getLinkAttributesHasBeenSet = true; m_getLinkAttributes = value; }
-    inline void SetGetLinkAttributes(BatchGetLinkAttributes&& value) { m_getLinkAttributesHasBeenSet = true; m_getLinkAttributes = std::move(value); }
-    inline BatchReadOperation& WithGetLinkAttributes(const BatchGetLinkAttributes& value) { SetGetLinkAttributes(value); return *this;}
-    inline BatchReadOperation& WithGetLinkAttributes(BatchGetLinkAttributes&& value) { SetGetLinkAttributes(std::move(value)); return *this;}
+    template<typename GetLinkAttributesT = BatchGetLinkAttributes>
+    void SetGetLinkAttributes(GetLinkAttributesT&& value) { m_getLinkAttributesHasBeenSet = true; m_getLinkAttributes = std::forward<GetLinkAttributesT>(value); }
+    template<typename GetLinkAttributesT = BatchGetLinkAttributes>
+    BatchReadOperation& WithGetLinkAttributes(GetLinkAttributesT&& value) { SetGetLinkAttributes(std::forward<GetLinkAttributesT>(value)); return *this;}
     ///@}
   private:
 

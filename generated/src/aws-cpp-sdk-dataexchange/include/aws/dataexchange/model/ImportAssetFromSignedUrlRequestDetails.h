@@ -32,7 +32,7 @@ namespace Model
   class ImportAssetFromSignedUrlRequestDetails
   {
   public:
-    AWS_DATAEXCHANGE_API ImportAssetFromSignedUrlRequestDetails();
+    AWS_DATAEXCHANGE_API ImportAssetFromSignedUrlRequestDetails() = default;
     AWS_DATAEXCHANGE_API ImportAssetFromSignedUrlRequestDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAEXCHANGE_API ImportAssetFromSignedUrlRequestDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAEXCHANGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * <p>The name of the asset. When importing from Amazon S3, the Amazon S3 object
      * key is used as the asset name.</p>
      */
-    inline const Aws::String& GetAssetName() const{ return m_assetName; }
+    inline const Aws::String& GetAssetName() const { return m_assetName; }
     inline bool AssetNameHasBeenSet() const { return m_assetNameHasBeenSet; }
-    inline void SetAssetName(const Aws::String& value) { m_assetNameHasBeenSet = true; m_assetName = value; }
-    inline void SetAssetName(Aws::String&& value) { m_assetNameHasBeenSet = true; m_assetName = std::move(value); }
-    inline void SetAssetName(const char* value) { m_assetNameHasBeenSet = true; m_assetName.assign(value); }
-    inline ImportAssetFromSignedUrlRequestDetails& WithAssetName(const Aws::String& value) { SetAssetName(value); return *this;}
-    inline ImportAssetFromSignedUrlRequestDetails& WithAssetName(Aws::String&& value) { SetAssetName(std::move(value)); return *this;}
-    inline ImportAssetFromSignedUrlRequestDetails& WithAssetName(const char* value) { SetAssetName(value); return *this;}
+    template<typename AssetNameT = Aws::String>
+    void SetAssetName(AssetNameT&& value) { m_assetNameHasBeenSet = true; m_assetName = std::forward<AssetNameT>(value); }
+    template<typename AssetNameT = Aws::String>
+    ImportAssetFromSignedUrlRequestDetails& WithAssetName(AssetNameT&& value) { SetAssetName(std::forward<AssetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the data set associated with this import job.</p>
      */
-    inline const Aws::String& GetDataSetId() const{ return m_dataSetId; }
+    inline const Aws::String& GetDataSetId() const { return m_dataSetId; }
     inline bool DataSetIdHasBeenSet() const { return m_dataSetIdHasBeenSet; }
-    inline void SetDataSetId(const Aws::String& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = value; }
-    inline void SetDataSetId(Aws::String&& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = std::move(value); }
-    inline void SetDataSetId(const char* value) { m_dataSetIdHasBeenSet = true; m_dataSetId.assign(value); }
-    inline ImportAssetFromSignedUrlRequestDetails& WithDataSetId(const Aws::String& value) { SetDataSetId(value); return *this;}
-    inline ImportAssetFromSignedUrlRequestDetails& WithDataSetId(Aws::String&& value) { SetDataSetId(std::move(value)); return *this;}
-    inline ImportAssetFromSignedUrlRequestDetails& WithDataSetId(const char* value) { SetDataSetId(value); return *this;}
+    template<typename DataSetIdT = Aws::String>
+    void SetDataSetId(DataSetIdT&& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = std::forward<DataSetIdT>(value); }
+    template<typename DataSetIdT = Aws::String>
+    ImportAssetFromSignedUrlRequestDetails& WithDataSetId(DataSetIdT&& value) { SetDataSetId(std::forward<DataSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * <p>The Base64-encoded Md5 hash for the asset, used to ensure the integrity of
      * the file at that location.</p>
      */
-    inline const Aws::String& GetMd5Hash() const{ return m_md5Hash; }
+    inline const Aws::String& GetMd5Hash() const { return m_md5Hash; }
     inline bool Md5HashHasBeenSet() const { return m_md5HashHasBeenSet; }
-    inline void SetMd5Hash(const Aws::String& value) { m_md5HashHasBeenSet = true; m_md5Hash = value; }
-    inline void SetMd5Hash(Aws::String&& value) { m_md5HashHasBeenSet = true; m_md5Hash = std::move(value); }
-    inline void SetMd5Hash(const char* value) { m_md5HashHasBeenSet = true; m_md5Hash.assign(value); }
-    inline ImportAssetFromSignedUrlRequestDetails& WithMd5Hash(const Aws::String& value) { SetMd5Hash(value); return *this;}
-    inline ImportAssetFromSignedUrlRequestDetails& WithMd5Hash(Aws::String&& value) { SetMd5Hash(std::move(value)); return *this;}
-    inline ImportAssetFromSignedUrlRequestDetails& WithMd5Hash(const char* value) { SetMd5Hash(value); return *this;}
+    template<typename Md5HashT = Aws::String>
+    void SetMd5Hash(Md5HashT&& value) { m_md5HashHasBeenSet = true; m_md5Hash = std::forward<Md5HashT>(value); }
+    template<typename Md5HashT = Aws::String>
+    ImportAssetFromSignedUrlRequestDetails& WithMd5Hash(Md5HashT&& value) { SetMd5Hash(std::forward<Md5HashT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +81,12 @@ namespace Model
      * <p>The unique identifier for the revision associated with this import
      * request.</p>
      */
-    inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
+    inline const Aws::String& GetRevisionId() const { return m_revisionId; }
     inline bool RevisionIdHasBeenSet() const { return m_revisionIdHasBeenSet; }
-    inline void SetRevisionId(const Aws::String& value) { m_revisionIdHasBeenSet = true; m_revisionId = value; }
-    inline void SetRevisionId(Aws::String&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::move(value); }
-    inline void SetRevisionId(const char* value) { m_revisionIdHasBeenSet = true; m_revisionId.assign(value); }
-    inline ImportAssetFromSignedUrlRequestDetails& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
-    inline ImportAssetFromSignedUrlRequestDetails& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
-    inline ImportAssetFromSignedUrlRequestDetails& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
+    template<typename RevisionIdT = Aws::String>
+    void SetRevisionId(RevisionIdT&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::forward<RevisionIdT>(value); }
+    template<typename RevisionIdT = Aws::String>
+    ImportAssetFromSignedUrlRequestDetails& WithRevisionId(RevisionIdT&& value) { SetRevisionId(std::forward<RevisionIdT>(value)); return *this;}
     ///@}
   private:
 

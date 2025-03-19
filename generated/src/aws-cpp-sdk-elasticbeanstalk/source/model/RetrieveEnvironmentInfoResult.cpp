@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RetrieveEnvironmentInfoResult::RetrieveEnvironmentInfoResult()
-{
-}
-
 RetrieveEnvironmentInfoResult::RetrieveEnvironmentInfoResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ RetrieveEnvironmentInfoResult& RetrieveEnvironmentInfoResult::operator =(const A
     if(!environmentInfoNode.IsNull())
     {
       XmlNode environmentInfoMember = environmentInfoNode.FirstChild("member");
+      m_environmentInfoHasBeenSet = !environmentInfoMember.IsNull();
       while(!environmentInfoMember.IsNull())
       {
         m_environmentInfo.push_back(environmentInfoMember);
         environmentInfoMember = environmentInfoMember.NextNode("member");
       }
 
+      m_environmentInfoHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticBeanstalk::Model::RetrieveEnvironmentInfoResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

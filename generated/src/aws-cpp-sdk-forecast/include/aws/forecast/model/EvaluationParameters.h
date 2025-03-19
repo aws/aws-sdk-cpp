@@ -32,7 +32,7 @@ namespace Model
   class EvaluationParameters
   {
   public:
-    AWS_FORECASTSERVICE_API EvaluationParameters();
+    AWS_FORECASTSERVICE_API EvaluationParameters() = default;
     AWS_FORECASTSERVICE_API EvaluationParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API EvaluationParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>The number of times to split the input data. The default is 1. Valid values
      * are 1 through 5.</p>
      */
-    inline int GetNumberOfBacktestWindows() const{ return m_numberOfBacktestWindows; }
+    inline int GetNumberOfBacktestWindows() const { return m_numberOfBacktestWindows; }
     inline bool NumberOfBacktestWindowsHasBeenSet() const { return m_numberOfBacktestWindowsHasBeenSet; }
     inline void SetNumberOfBacktestWindows(int value) { m_numberOfBacktestWindowsHasBeenSet = true; m_numberOfBacktestWindows = value; }
     inline EvaluationParameters& WithNumberOfBacktestWindows(int value) { SetNumberOfBacktestWindows(value); return *this;}
@@ -60,17 +60,17 @@ namespace Model
      * <code>ForecastHorizon</code> &lt;= <code>BackTestWindowOffset</code> &lt; 1/2 *
      * TARGET_TIME_SERIES dataset length</p>
      */
-    inline int GetBackTestWindowOffset() const{ return m_backTestWindowOffset; }
+    inline int GetBackTestWindowOffset() const { return m_backTestWindowOffset; }
     inline bool BackTestWindowOffsetHasBeenSet() const { return m_backTestWindowOffsetHasBeenSet; }
     inline void SetBackTestWindowOffset(int value) { m_backTestWindowOffsetHasBeenSet = true; m_backTestWindowOffset = value; }
     inline EvaluationParameters& WithBackTestWindowOffset(int value) { SetBackTestWindowOffset(value); return *this;}
     ///@}
   private:
 
-    int m_numberOfBacktestWindows;
+    int m_numberOfBacktestWindows{0};
     bool m_numberOfBacktestWindowsHasBeenSet = false;
 
-    int m_backTestWindowOffset;
+    int m_backTestWindowOffset{0};
     bool m_backTestWindowOffsetHasBeenSet = false;
   };
 

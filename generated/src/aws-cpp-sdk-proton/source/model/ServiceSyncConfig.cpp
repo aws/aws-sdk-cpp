@@ -18,18 +18,7 @@ namespace Proton
 namespace Model
 {
 
-ServiceSyncConfig::ServiceSyncConfig() : 
-    m_branchHasBeenSet(false),
-    m_filePathHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_repositoryProvider(RepositoryProvider::NOT_SET),
-    m_repositoryProviderHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
-{
-}
-
 ServiceSyncConfig::ServiceSyncConfig(JsonView jsonValue)
-  : ServiceSyncConfig()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ServiceSyncConfig& ServiceSyncConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("branch"))
   {
     m_branch = jsonValue.GetString("branch");
-
     m_branchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filePath"))
   {
     m_filePath = jsonValue.GetString("filePath");
-
     m_filePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryProvider"))
   {
     m_repositoryProvider = RepositoryProviderMapper::GetRepositoryProviderForName(jsonValue.GetString("repositoryProvider"));
-
     m_repositoryProviderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceName"))
   {
     m_serviceName = jsonValue.GetString("serviceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

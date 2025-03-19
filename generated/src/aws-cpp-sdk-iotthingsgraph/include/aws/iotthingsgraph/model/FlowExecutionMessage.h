@@ -34,7 +34,7 @@ namespace Model
   class FlowExecutionMessage
   {
   public:
-    AWS_IOTTHINGSGRAPH_API FlowExecutionMessage();
+    AWS_IOTTHINGSGRAPH_API FlowExecutionMessage() = default;
     AWS_IOTTHINGSGRAPH_API FlowExecutionMessage(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTHINGSGRAPH_API FlowExecutionMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTHINGSGRAPH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,62 +44,56 @@ namespace Model
     /**
      * <p>The unique identifier of the message.</p>
      */
-    inline const Aws::String& GetMessageId() const{ return m_messageId; }
+    inline const Aws::String& GetMessageId() const { return m_messageId; }
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
-    inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
-    inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
-    inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
-    inline FlowExecutionMessage& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
-    inline FlowExecutionMessage& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
-    inline FlowExecutionMessage& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+    template<typename MessageIdT = Aws::String>
+    void SetMessageId(MessageIdT&& value) { m_messageIdHasBeenSet = true; m_messageId = std::forward<MessageIdT>(value); }
+    template<typename MessageIdT = Aws::String>
+    FlowExecutionMessage& WithMessageId(MessageIdT&& value) { SetMessageId(std::forward<MessageIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of flow event .</p>
      */
-    inline const FlowExecutionEventType& GetEventType() const{ return m_eventType; }
+    inline FlowExecutionEventType GetEventType() const { return m_eventType; }
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-    inline void SetEventType(const FlowExecutionEventType& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
-    inline void SetEventType(FlowExecutionEventType&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
-    inline FlowExecutionMessage& WithEventType(const FlowExecutionEventType& value) { SetEventType(value); return *this;}
-    inline FlowExecutionMessage& WithEventType(FlowExecutionEventType&& value) { SetEventType(std::move(value)); return *this;}
+    inline void SetEventType(FlowExecutionEventType value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
+    inline FlowExecutionMessage& WithEventType(FlowExecutionEventType value) { SetEventType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the message was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline FlowExecutionMessage& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline FlowExecutionMessage& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    FlowExecutionMessage& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A string containing information about the flow event.</p>
      */
-    inline const Aws::String& GetPayload() const{ return m_payload; }
+    inline const Aws::String& GetPayload() const { return m_payload; }
     inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
-    inline void SetPayload(const Aws::String& value) { m_payloadHasBeenSet = true; m_payload = value; }
-    inline void SetPayload(Aws::String&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
-    inline void SetPayload(const char* value) { m_payloadHasBeenSet = true; m_payload.assign(value); }
-    inline FlowExecutionMessage& WithPayload(const Aws::String& value) { SetPayload(value); return *this;}
-    inline FlowExecutionMessage& WithPayload(Aws::String&& value) { SetPayload(std::move(value)); return *this;}
-    inline FlowExecutionMessage& WithPayload(const char* value) { SetPayload(value); return *this;}
+    template<typename PayloadT = Aws::String>
+    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
+    template<typename PayloadT = Aws::String>
+    FlowExecutionMessage& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_messageId;
     bool m_messageIdHasBeenSet = false;
 
-    FlowExecutionEventType m_eventType;
+    FlowExecutionEventType m_eventType{FlowExecutionEventType::NOT_SET};
     bool m_eventTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
 
     Aws::String m_payload;

@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-ContentBlock::ContentBlock() : 
-    m_textHasBeenSet(false)
-{
-}
-
 ContentBlock::ContentBlock(JsonView jsonValue)
-  : ContentBlock()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ContentBlock& ContentBlock::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

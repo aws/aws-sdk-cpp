@@ -24,7 +24,7 @@ namespace Model
   class StartRecoveryRequest : public DrsRequest
   {
   public:
-    AWS_DRS_API StartRecoveryRequest();
+    AWS_DRS_API StartRecoveryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>Whether this Source Server Recovery operation is a drill or not.</p>
      */
-    inline bool GetIsDrill() const{ return m_isDrill; }
+    inline bool GetIsDrill() const { return m_isDrill; }
     inline bool IsDrillHasBeenSet() const { return m_isDrillHasBeenSet; }
     inline void SetIsDrill(bool value) { m_isDrillHasBeenSet = true; m_isDrill = value; }
     inline StartRecoveryRequest& WithIsDrill(bool value) { SetIsDrill(value); return *this;}
@@ -49,37 +49,34 @@ namespace Model
     /**
      * <p>The Source Servers that we want to start a Recovery Job for.</p>
      */
-    inline const Aws::Vector<StartRecoveryRequestSourceServer>& GetSourceServers() const{ return m_sourceServers; }
+    inline const Aws::Vector<StartRecoveryRequestSourceServer>& GetSourceServers() const { return m_sourceServers; }
     inline bool SourceServersHasBeenSet() const { return m_sourceServersHasBeenSet; }
-    inline void SetSourceServers(const Aws::Vector<StartRecoveryRequestSourceServer>& value) { m_sourceServersHasBeenSet = true; m_sourceServers = value; }
-    inline void SetSourceServers(Aws::Vector<StartRecoveryRequestSourceServer>&& value) { m_sourceServersHasBeenSet = true; m_sourceServers = std::move(value); }
-    inline StartRecoveryRequest& WithSourceServers(const Aws::Vector<StartRecoveryRequestSourceServer>& value) { SetSourceServers(value); return *this;}
-    inline StartRecoveryRequest& WithSourceServers(Aws::Vector<StartRecoveryRequestSourceServer>&& value) { SetSourceServers(std::move(value)); return *this;}
-    inline StartRecoveryRequest& AddSourceServers(const StartRecoveryRequestSourceServer& value) { m_sourceServersHasBeenSet = true; m_sourceServers.push_back(value); return *this; }
-    inline StartRecoveryRequest& AddSourceServers(StartRecoveryRequestSourceServer&& value) { m_sourceServersHasBeenSet = true; m_sourceServers.push_back(std::move(value)); return *this; }
+    template<typename SourceServersT = Aws::Vector<StartRecoveryRequestSourceServer>>
+    void SetSourceServers(SourceServersT&& value) { m_sourceServersHasBeenSet = true; m_sourceServers = std::forward<SourceServersT>(value); }
+    template<typename SourceServersT = Aws::Vector<StartRecoveryRequestSourceServer>>
+    StartRecoveryRequest& WithSourceServers(SourceServersT&& value) { SetSourceServers(std::forward<SourceServersT>(value)); return *this;}
+    template<typename SourceServersT = StartRecoveryRequestSourceServer>
+    StartRecoveryRequest& AddSourceServers(SourceServersT&& value) { m_sourceServersHasBeenSet = true; m_sourceServers.emplace_back(std::forward<SourceServersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The tags to be associated with the Recovery Job.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline StartRecoveryRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline StartRecoveryRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline StartRecoveryRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline StartRecoveryRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline StartRecoveryRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline StartRecoveryRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline StartRecoveryRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline StartRecoveryRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline StartRecoveryRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    StartRecoveryRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    StartRecoveryRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
-    bool m_isDrill;
+    bool m_isDrill{false};
     bool m_isDrillHasBeenSet = false;
 
     Aws::Vector<StartRecoveryRequestSourceServer> m_sourceServers;

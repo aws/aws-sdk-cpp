@@ -18,18 +18,7 @@ namespace NeptuneGraph
 namespace Model
 {
 
-NeptuneImportOptions::NeptuneImportOptions() : 
-    m_s3ExportPathHasBeenSet(false),
-    m_s3ExportKmsKeyIdHasBeenSet(false),
-    m_preserveDefaultVertexLabels(false),
-    m_preserveDefaultVertexLabelsHasBeenSet(false),
-    m_preserveEdgeIds(false),
-    m_preserveEdgeIdsHasBeenSet(false)
-{
-}
-
 NeptuneImportOptions::NeptuneImportOptions(JsonView jsonValue)
-  : NeptuneImportOptions()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ NeptuneImportOptions& NeptuneImportOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3ExportPath"))
   {
     m_s3ExportPath = jsonValue.GetString("s3ExportPath");
-
     m_s3ExportPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3ExportKmsKeyId"))
   {
     m_s3ExportKmsKeyId = jsonValue.GetString("s3ExportKmsKeyId");
-
     m_s3ExportKmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("preserveDefaultVertexLabels"))
   {
     m_preserveDefaultVertexLabels = jsonValue.GetBool("preserveDefaultVertexLabels");
-
     m_preserveDefaultVertexLabelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("preserveEdgeIds"))
   {
     m_preserveEdgeIds = jsonValue.GetBool("preserveEdgeIds");
-
     m_preserveEdgeIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

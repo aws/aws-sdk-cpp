@@ -46,7 +46,7 @@ namespace Model
   class RequestCancelExternalWorkflowExecutionDecisionAttributes
   {
   public:
-    AWS_SWF_API RequestCancelExternalWorkflowExecutionDecisionAttributes();
+    AWS_SWF_API RequestCancelExternalWorkflowExecutionDecisionAttributes() = default;
     AWS_SWF_API RequestCancelExternalWorkflowExecutionDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API RequestCancelExternalWorkflowExecutionDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,28 +57,24 @@ namespace Model
      * <p> The <code>workflowId</code> of the external workflow execution to
      * cancel.</p>
      */
-    inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
+    inline const Aws::String& GetWorkflowId() const { return m_workflowId; }
     inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
-    inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
-    inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::move(value); }
-    inline void SetWorkflowId(const char* value) { m_workflowIdHasBeenSet = true; m_workflowId.assign(value); }
-    inline RequestCancelExternalWorkflowExecutionDecisionAttributes& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
-    inline RequestCancelExternalWorkflowExecutionDecisionAttributes& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
-    inline RequestCancelExternalWorkflowExecutionDecisionAttributes& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
+    template<typename WorkflowIdT = Aws::String>
+    void SetWorkflowId(WorkflowIdT&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::forward<WorkflowIdT>(value); }
+    template<typename WorkflowIdT = Aws::String>
+    RequestCancelExternalWorkflowExecutionDecisionAttributes& WithWorkflowId(WorkflowIdT&& value) { SetWorkflowId(std::forward<WorkflowIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The <code>runId</code> of the external workflow execution to cancel.</p>
      */
-    inline const Aws::String& GetRunId() const{ return m_runId; }
+    inline const Aws::String& GetRunId() const { return m_runId; }
     inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
-    inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
-    inline void SetRunId(Aws::String&& value) { m_runIdHasBeenSet = true; m_runId = std::move(value); }
-    inline void SetRunId(const char* value) { m_runIdHasBeenSet = true; m_runId.assign(value); }
-    inline RequestCancelExternalWorkflowExecutionDecisionAttributes& WithRunId(const Aws::String& value) { SetRunId(value); return *this;}
-    inline RequestCancelExternalWorkflowExecutionDecisionAttributes& WithRunId(Aws::String&& value) { SetRunId(std::move(value)); return *this;}
-    inline RequestCancelExternalWorkflowExecutionDecisionAttributes& WithRunId(const char* value) { SetRunId(value); return *this;}
+    template<typename RunIdT = Aws::String>
+    void SetRunId(RunIdT&& value) { m_runIdHasBeenSet = true; m_runId = std::forward<RunIdT>(value); }
+    template<typename RunIdT = Aws::String>
+    RequestCancelExternalWorkflowExecutionDecisionAttributes& WithRunId(RunIdT&& value) { SetRunId(std::forward<RunIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +82,12 @@ namespace Model
      * <p>The data attached to the event that can be used by the decider in subsequent
      * workflow tasks.</p>
      */
-    inline const Aws::String& GetControl() const{ return m_control; }
+    inline const Aws::String& GetControl() const { return m_control; }
     inline bool ControlHasBeenSet() const { return m_controlHasBeenSet; }
-    inline void SetControl(const Aws::String& value) { m_controlHasBeenSet = true; m_control = value; }
-    inline void SetControl(Aws::String&& value) { m_controlHasBeenSet = true; m_control = std::move(value); }
-    inline void SetControl(const char* value) { m_controlHasBeenSet = true; m_control.assign(value); }
-    inline RequestCancelExternalWorkflowExecutionDecisionAttributes& WithControl(const Aws::String& value) { SetControl(value); return *this;}
-    inline RequestCancelExternalWorkflowExecutionDecisionAttributes& WithControl(Aws::String&& value) { SetControl(std::move(value)); return *this;}
-    inline RequestCancelExternalWorkflowExecutionDecisionAttributes& WithControl(const char* value) { SetControl(value); return *this;}
+    template<typename ControlT = Aws::String>
+    void SetControl(ControlT&& value) { m_controlHasBeenSet = true; m_control = std::forward<ControlT>(value); }
+    template<typename ControlT = Aws::String>
+    RequestCancelExternalWorkflowExecutionDecisionAttributes& WithControl(ControlT&& value) { SetControl(std::forward<ControlT>(value)); return *this;}
     ///@}
   private:
 

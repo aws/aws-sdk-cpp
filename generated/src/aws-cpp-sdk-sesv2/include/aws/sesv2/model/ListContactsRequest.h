@@ -22,7 +22,7 @@ namespace Model
   class ListContactsRequest : public SESV2Request
   {
   public:
-    AWS_SESV2_API ListContactsRequest();
+    AWS_SESV2_API ListContactsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,26 +37,24 @@ namespace Model
     /**
      * <p>The name of the contact list.</p>
      */
-    inline const Aws::String& GetContactListName() const{ return m_contactListName; }
+    inline const Aws::String& GetContactListName() const { return m_contactListName; }
     inline bool ContactListNameHasBeenSet() const { return m_contactListNameHasBeenSet; }
-    inline void SetContactListName(const Aws::String& value) { m_contactListNameHasBeenSet = true; m_contactListName = value; }
-    inline void SetContactListName(Aws::String&& value) { m_contactListNameHasBeenSet = true; m_contactListName = std::move(value); }
-    inline void SetContactListName(const char* value) { m_contactListNameHasBeenSet = true; m_contactListName.assign(value); }
-    inline ListContactsRequest& WithContactListName(const Aws::String& value) { SetContactListName(value); return *this;}
-    inline ListContactsRequest& WithContactListName(Aws::String&& value) { SetContactListName(std::move(value)); return *this;}
-    inline ListContactsRequest& WithContactListName(const char* value) { SetContactListName(value); return *this;}
+    template<typename ContactListNameT = Aws::String>
+    void SetContactListName(ContactListNameT&& value) { m_contactListNameHasBeenSet = true; m_contactListName = std::forward<ContactListNameT>(value); }
+    template<typename ContactListNameT = Aws::String>
+    ListContactsRequest& WithContactListName(ContactListNameT&& value) { SetContactListName(std::forward<ContactListNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A filter that can be applied to a list of contacts.</p>
      */
-    inline const ListContactsFilter& GetFilter() const{ return m_filter; }
+    inline const ListContactsFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const ListContactsFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(ListContactsFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline ListContactsRequest& WithFilter(const ListContactsFilter& value) { SetFilter(value); return *this;}
-    inline ListContactsRequest& WithFilter(ListContactsFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = ListContactsFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = ListContactsFilter>
+    ListContactsRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,7 +66,7 @@ namespace Model
      * <code>NextToken</code> value in subsequent requests to retrieve additional
      * contacts.</p>
      */
-    inline int GetPageSize() const{ return m_pageSize; }
+    inline int GetPageSize() const { return m_pageSize; }
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
     inline ListContactsRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
@@ -81,14 +79,12 @@ namespace Model
      * call to ListContacts with the same parameters to retrieve the next page of
      * contacts.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListContactsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListContactsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListContactsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListContactsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -98,7 +94,7 @@ namespace Model
     ListContactsFilter m_filter;
     bool m_filterHasBeenSet = false;
 
-    int m_pageSize;
+    int m_pageSize{0};
     bool m_pageSizeHasBeenSet = false;
 
     Aws::String m_nextToken;

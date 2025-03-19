@@ -18,14 +18,7 @@ namespace ECS
 namespace Model
 {
 
-Secret::Secret() : 
-    m_nameHasBeenSet(false),
-    m_valueFromHasBeenSet(false)
-{
-}
-
 Secret::Secret(JsonView jsonValue)
-  : Secret()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Secret& Secret::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("valueFrom"))
   {
     m_valueFrom = jsonValue.GetString("valueFrom");
-
     m_valueFromHasBeenSet = true;
   }
-
   return *this;
 }
 

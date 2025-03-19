@@ -22,7 +22,7 @@ namespace Model
   class CreateBGPPeerRequest : public DirectConnectRequest
   {
   public:
-    AWS_DIRECTCONNECT_API CreateBGPPeerRequest();
+    AWS_DIRECTCONNECT_API CreateBGPPeerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,26 +39,24 @@ namespace Model
     /**
      * <p>The ID of the virtual interface.</p>
      */
-    inline const Aws::String& GetVirtualInterfaceId() const{ return m_virtualInterfaceId; }
+    inline const Aws::String& GetVirtualInterfaceId() const { return m_virtualInterfaceId; }
     inline bool VirtualInterfaceIdHasBeenSet() const { return m_virtualInterfaceIdHasBeenSet; }
-    inline void SetVirtualInterfaceId(const Aws::String& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = value; }
-    inline void SetVirtualInterfaceId(Aws::String&& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = std::move(value); }
-    inline void SetVirtualInterfaceId(const char* value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId.assign(value); }
-    inline CreateBGPPeerRequest& WithVirtualInterfaceId(const Aws::String& value) { SetVirtualInterfaceId(value); return *this;}
-    inline CreateBGPPeerRequest& WithVirtualInterfaceId(Aws::String&& value) { SetVirtualInterfaceId(std::move(value)); return *this;}
-    inline CreateBGPPeerRequest& WithVirtualInterfaceId(const char* value) { SetVirtualInterfaceId(value); return *this;}
+    template<typename VirtualInterfaceIdT = Aws::String>
+    void SetVirtualInterfaceId(VirtualInterfaceIdT&& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = std::forward<VirtualInterfaceIdT>(value); }
+    template<typename VirtualInterfaceIdT = Aws::String>
+    CreateBGPPeerRequest& WithVirtualInterfaceId(VirtualInterfaceIdT&& value) { SetVirtualInterfaceId(std::forward<VirtualInterfaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the BGP peer.</p>
      */
-    inline const NewBGPPeer& GetNewBGPPeer() const{ return m_newBGPPeer; }
+    inline const NewBGPPeer& GetNewBGPPeer() const { return m_newBGPPeer; }
     inline bool NewBGPPeerHasBeenSet() const { return m_newBGPPeerHasBeenSet; }
-    inline void SetNewBGPPeer(const NewBGPPeer& value) { m_newBGPPeerHasBeenSet = true; m_newBGPPeer = value; }
-    inline void SetNewBGPPeer(NewBGPPeer&& value) { m_newBGPPeerHasBeenSet = true; m_newBGPPeer = std::move(value); }
-    inline CreateBGPPeerRequest& WithNewBGPPeer(const NewBGPPeer& value) { SetNewBGPPeer(value); return *this;}
-    inline CreateBGPPeerRequest& WithNewBGPPeer(NewBGPPeer&& value) { SetNewBGPPeer(std::move(value)); return *this;}
+    template<typename NewBGPPeerT = NewBGPPeer>
+    void SetNewBGPPeer(NewBGPPeerT&& value) { m_newBGPPeerHasBeenSet = true; m_newBGPPeer = std::forward<NewBGPPeerT>(value); }
+    template<typename NewBGPPeerT = NewBGPPeer>
+    CreateBGPPeerRequest& WithNewBGPPeer(NewBGPPeerT&& value) { SetNewBGPPeer(std::forward<NewBGPPeerT>(value)); return *this;}
     ///@}
   private:
 

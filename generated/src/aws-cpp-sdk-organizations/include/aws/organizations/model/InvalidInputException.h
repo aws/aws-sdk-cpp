@@ -76,7 +76,7 @@ namespace Model
   class InvalidInputException
   {
   public:
-    AWS_ORGANIZATIONS_API InvalidInputException();
+    AWS_ORGANIZATIONS_API InvalidInputException() = default;
     AWS_ORGANIZATIONS_API InvalidInputException(Aws::Utils::Json::JsonView jsonValue);
     AWS_ORGANIZATIONS_API InvalidInputException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ORGANIZATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -84,31 +84,27 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline InvalidInputException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline InvalidInputException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline InvalidInputException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    InvalidInputException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const InvalidInputExceptionReason& GetReason() const{ return m_reason; }
+    inline InvalidInputExceptionReason GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const InvalidInputExceptionReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(InvalidInputExceptionReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline InvalidInputException& WithReason(const InvalidInputExceptionReason& value) { SetReason(value); return *this;}
-    inline InvalidInputException& WithReason(InvalidInputExceptionReason&& value) { SetReason(std::move(value)); return *this;}
+    inline void SetReason(InvalidInputExceptionReason value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline InvalidInputException& WithReason(InvalidInputExceptionReason value) { SetReason(value); return *this;}
     ///@}
   private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    InvalidInputExceptionReason m_reason;
+    InvalidInputExceptionReason m_reason{InvalidInputExceptionReason::NOT_SET};
     bool m_reasonHasBeenSet = false;
   };
 

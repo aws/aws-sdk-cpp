@@ -23,7 +23,7 @@ namespace Model
   class ListNotebookExecutionsRequest : public EMRRequest
   {
   public:
-    AWS_EMR_API ListNotebookExecutionsRequest();
+    AWS_EMR_API ListNotebookExecutionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The unique ID of the editor associated with the notebook execution.</p>
      */
-    inline const Aws::String& GetEditorId() const{ return m_editorId; }
+    inline const Aws::String& GetEditorId() const { return m_editorId; }
     inline bool EditorIdHasBeenSet() const { return m_editorIdHasBeenSet; }
-    inline void SetEditorId(const Aws::String& value) { m_editorIdHasBeenSet = true; m_editorId = value; }
-    inline void SetEditorId(Aws::String&& value) { m_editorIdHasBeenSet = true; m_editorId = std::move(value); }
-    inline void SetEditorId(const char* value) { m_editorIdHasBeenSet = true; m_editorId.assign(value); }
-    inline ListNotebookExecutionsRequest& WithEditorId(const Aws::String& value) { SetEditorId(value); return *this;}
-    inline ListNotebookExecutionsRequest& WithEditorId(Aws::String&& value) { SetEditorId(std::move(value)); return *this;}
-    inline ListNotebookExecutionsRequest& WithEditorId(const char* value) { SetEditorId(value); return *this;}
+    template<typename EditorIdT = Aws::String>
+    void SetEditorId(EditorIdT&& value) { m_editorIdHasBeenSet = true; m_editorId = std::forward<EditorIdT>(value); }
+    template<typename EditorIdT = Aws::String>
+    ListNotebookExecutionsRequest& WithEditorId(EditorIdT&& value) { SetEditorId(std::forward<EditorIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +68,10 @@ namespace Model
      * <code>STOPPED</code> indicates that the execution stopped because of a
      * <code>StopNotebookExecution</code> request.</p> </li> </ul>
      */
-    inline const NotebookExecutionStatus& GetStatus() const{ return m_status; }
+    inline NotebookExecutionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const NotebookExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(NotebookExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ListNotebookExecutionsRequest& WithStatus(const NotebookExecutionStatus& value) { SetStatus(value); return *this;}
-    inline ListNotebookExecutionsRequest& WithStatus(NotebookExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(NotebookExecutionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ListNotebookExecutionsRequest& WithStatus(NotebookExecutionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -83,12 +79,12 @@ namespace Model
      * <p>The beginning of time range filter for listing notebook executions. The
      * default is the timestamp of 30 days ago.</p>
      */
-    inline const Aws::Utils::DateTime& GetFrom() const{ return m_from; }
+    inline const Aws::Utils::DateTime& GetFrom() const { return m_from; }
     inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
-    inline void SetFrom(const Aws::Utils::DateTime& value) { m_fromHasBeenSet = true; m_from = value; }
-    inline void SetFrom(Aws::Utils::DateTime&& value) { m_fromHasBeenSet = true; m_from = std::move(value); }
-    inline ListNotebookExecutionsRequest& WithFrom(const Aws::Utils::DateTime& value) { SetFrom(value); return *this;}
-    inline ListNotebookExecutionsRequest& WithFrom(Aws::Utils::DateTime&& value) { SetFrom(std::move(value)); return *this;}
+    template<typename FromT = Aws::Utils::DateTime>
+    void SetFrom(FromT&& value) { m_fromHasBeenSet = true; m_from = std::forward<FromT>(value); }
+    template<typename FromT = Aws::Utils::DateTime>
+    ListNotebookExecutionsRequest& WithFrom(FromT&& value) { SetFrom(std::forward<FromT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,12 +92,12 @@ namespace Model
      * <p>The end of time range filter for listing notebook executions. The default is
      * the current timestamp.</p>
      */
-    inline const Aws::Utils::DateTime& GetTo() const{ return m_to; }
+    inline const Aws::Utils::DateTime& GetTo() const { return m_to; }
     inline bool ToHasBeenSet() const { return m_toHasBeenSet; }
-    inline void SetTo(const Aws::Utils::DateTime& value) { m_toHasBeenSet = true; m_to = value; }
-    inline void SetTo(Aws::Utils::DateTime&& value) { m_toHasBeenSet = true; m_to = std::move(value); }
-    inline ListNotebookExecutionsRequest& WithTo(const Aws::Utils::DateTime& value) { SetTo(value); return *this;}
-    inline ListNotebookExecutionsRequest& WithTo(Aws::Utils::DateTime&& value) { SetTo(std::move(value)); return *this;}
+    template<typename ToT = Aws::Utils::DateTime>
+    void SetTo(ToT&& value) { m_toHasBeenSet = true; m_to = std::forward<ToT>(value); }
+    template<typename ToT = Aws::Utils::DateTime>
+    ListNotebookExecutionsRequest& WithTo(ToT&& value) { SetTo(std::forward<ToT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,41 +106,37 @@ namespace Model
      * <code>ListNotebookExecutions</code> call, that indicates the start of the list
      * for this <code>ListNotebookExecutions</code> call.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline ListNotebookExecutionsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListNotebookExecutionsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListNotebookExecutionsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListNotebookExecutionsRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ID of the execution engine.</p>
      */
-    inline const Aws::String& GetExecutionEngineId() const{ return m_executionEngineId; }
+    inline const Aws::String& GetExecutionEngineId() const { return m_executionEngineId; }
     inline bool ExecutionEngineIdHasBeenSet() const { return m_executionEngineIdHasBeenSet; }
-    inline void SetExecutionEngineId(const Aws::String& value) { m_executionEngineIdHasBeenSet = true; m_executionEngineId = value; }
-    inline void SetExecutionEngineId(Aws::String&& value) { m_executionEngineIdHasBeenSet = true; m_executionEngineId = std::move(value); }
-    inline void SetExecutionEngineId(const char* value) { m_executionEngineIdHasBeenSet = true; m_executionEngineId.assign(value); }
-    inline ListNotebookExecutionsRequest& WithExecutionEngineId(const Aws::String& value) { SetExecutionEngineId(value); return *this;}
-    inline ListNotebookExecutionsRequest& WithExecutionEngineId(Aws::String&& value) { SetExecutionEngineId(std::move(value)); return *this;}
-    inline ListNotebookExecutionsRequest& WithExecutionEngineId(const char* value) { SetExecutionEngineId(value); return *this;}
+    template<typename ExecutionEngineIdT = Aws::String>
+    void SetExecutionEngineId(ExecutionEngineIdT&& value) { m_executionEngineIdHasBeenSet = true; m_executionEngineId = std::forward<ExecutionEngineIdT>(value); }
+    template<typename ExecutionEngineIdT = Aws::String>
+    ListNotebookExecutionsRequest& WithExecutionEngineId(ExecutionEngineIdT&& value) { SetExecutionEngineId(std::forward<ExecutionEngineIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_editorId;
     bool m_editorIdHasBeenSet = false;
 
-    NotebookExecutionStatus m_status;
+    NotebookExecutionStatus m_status{NotebookExecutionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_from;
+    Aws::Utils::DateTime m_from{};
     bool m_fromHasBeenSet = false;
 
-    Aws::Utils::DateTime m_to;
+    Aws::Utils::DateTime m_to{};
     bool m_toHasBeenSet = false;
 
     Aws::String m_marker;

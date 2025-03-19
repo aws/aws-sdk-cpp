@@ -20,38 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ReservedInstancesOffering::ReservedInstancesOffering() : 
-    m_currencyCode(CurrencyCodeValues::NOT_SET),
-    m_currencyCodeHasBeenSet(false),
-    m_instanceTenancy(Tenancy::NOT_SET),
-    m_instanceTenancyHasBeenSet(false),
-    m_marketplace(false),
-    m_marketplaceHasBeenSet(false),
-    m_offeringClass(OfferingClassType::NOT_SET),
-    m_offeringClassHasBeenSet(false),
-    m_offeringType(OfferingTypeValues::NOT_SET),
-    m_offeringTypeHasBeenSet(false),
-    m_pricingDetailsHasBeenSet(false),
-    m_recurringChargesHasBeenSet(false),
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_reservedInstancesOfferingIdHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_usagePrice(0.0),
-    m_usagePriceHasBeenSet(false),
-    m_fixedPrice(0.0),
-    m_fixedPriceHasBeenSet(false),
-    m_productDescription(RIProductDescription::NOT_SET),
-    m_productDescriptionHasBeenSet(false)
-{
-}
-
 ReservedInstancesOffering::ReservedInstancesOffering(const XmlNode& xmlNode)
-  : ReservedInstancesOffering()
 {
   *this = xmlNode;
 }
@@ -65,13 +34,13 @@ ReservedInstancesOffering& ReservedInstancesOffering::operator =(const XmlNode& 
     XmlNode currencyCodeNode = resultNode.FirstChild("currencyCode");
     if(!currencyCodeNode.IsNull())
     {
-      m_currencyCode = CurrencyCodeValuesMapper::GetCurrencyCodeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currencyCodeNode.GetText()).c_str()).c_str());
+      m_currencyCode = CurrencyCodeValuesMapper::GetCurrencyCodeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currencyCodeNode.GetText()).c_str()));
       m_currencyCodeHasBeenSet = true;
     }
     XmlNode instanceTenancyNode = resultNode.FirstChild("instanceTenancy");
     if(!instanceTenancyNode.IsNull())
     {
-      m_instanceTenancy = TenancyMapper::GetTenancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTenancyNode.GetText()).c_str()).c_str());
+      m_instanceTenancy = TenancyMapper::GetTenancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTenancyNode.GetText()).c_str()));
       m_instanceTenancyHasBeenSet = true;
     }
     XmlNode marketplaceNode = resultNode.FirstChild("marketplace");
@@ -83,19 +52,20 @@ ReservedInstancesOffering& ReservedInstancesOffering::operator =(const XmlNode& 
     XmlNode offeringClassNode = resultNode.FirstChild("offeringClass");
     if(!offeringClassNode.IsNull())
     {
-      m_offeringClass = OfferingClassTypeMapper::GetOfferingClassTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(offeringClassNode.GetText()).c_str()).c_str());
+      m_offeringClass = OfferingClassTypeMapper::GetOfferingClassTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(offeringClassNode.GetText()).c_str()));
       m_offeringClassHasBeenSet = true;
     }
     XmlNode offeringTypeNode = resultNode.FirstChild("offeringType");
     if(!offeringTypeNode.IsNull())
     {
-      m_offeringType = OfferingTypeValuesMapper::GetOfferingTypeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(offeringTypeNode.GetText()).c_str()).c_str());
+      m_offeringType = OfferingTypeValuesMapper::GetOfferingTypeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(offeringTypeNode.GetText()).c_str()));
       m_offeringTypeHasBeenSet = true;
     }
     XmlNode pricingDetailsNode = resultNode.FirstChild("pricingDetailsSet");
     if(!pricingDetailsNode.IsNull())
     {
       XmlNode pricingDetailsMember = pricingDetailsNode.FirstChild("item");
+      m_pricingDetailsHasBeenSet = !pricingDetailsMember.IsNull();
       while(!pricingDetailsMember.IsNull())
       {
         m_pricingDetails.push_back(pricingDetailsMember);
@@ -108,6 +78,7 @@ ReservedInstancesOffering& ReservedInstancesOffering::operator =(const XmlNode& 
     if(!recurringChargesNode.IsNull())
     {
       XmlNode recurringChargesMember = recurringChargesNode.FirstChild("item");
+      m_recurringChargesHasBeenSet = !recurringChargesMember.IsNull();
       while(!recurringChargesMember.IsNull())
       {
         m_recurringCharges.push_back(recurringChargesMember);
@@ -119,7 +90,7 @@ ReservedInstancesOffering& ReservedInstancesOffering::operator =(const XmlNode& 
     XmlNode scopeNode = resultNode.FirstChild("scope");
     if(!scopeNode.IsNull())
     {
-      m_scope = ScopeMapper::GetScopeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(scopeNode.GetText()).c_str()).c_str());
+      m_scope = ScopeMapper::GetScopeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(scopeNode.GetText()).c_str()));
       m_scopeHasBeenSet = true;
     }
     XmlNode reservedInstancesOfferingIdNode = resultNode.FirstChild("reservedInstancesOfferingId");
@@ -131,7 +102,7 @@ ReservedInstancesOffering& ReservedInstancesOffering::operator =(const XmlNode& 
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()).c_str());
+      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()));
       m_instanceTypeHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
@@ -161,7 +132,7 @@ ReservedInstancesOffering& ReservedInstancesOffering::operator =(const XmlNode& 
     XmlNode productDescriptionNode = resultNode.FirstChild("productDescription");
     if(!productDescriptionNode.IsNull())
     {
-      m_productDescription = RIProductDescriptionMapper::GetRIProductDescriptionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(productDescriptionNode.GetText()).c_str()).c_str());
+      m_productDescription = RIProductDescriptionMapper::GetRIProductDescriptionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(productDescriptionNode.GetText()).c_str()));
       m_productDescriptionHasBeenSet = true;
     }
   }

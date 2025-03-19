@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateMediaInsightsPipelineResult::CreateMediaInsightsPipelineResult()
-{
-}
-
 CreateMediaInsightsPipelineResult::CreateMediaInsightsPipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateMediaInsightsPipelineResult& CreateMediaInsightsPipelineResult::operator =
   if(jsonValue.ValueExists("MediaInsightsPipeline"))
   {
     m_mediaInsightsPipeline = jsonValue.GetObject("MediaInsightsPipeline");
-
+    m_mediaInsightsPipelineHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

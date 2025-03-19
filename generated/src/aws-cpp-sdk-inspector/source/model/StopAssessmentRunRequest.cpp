@@ -12,13 +12,6 @@ using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopAssessmentRunRequest::StopAssessmentRunRequest() : 
-    m_assessmentRunArnHasBeenSet(false),
-    m_stopAction(StopAction::NOT_SET),
-    m_stopActionHasBeenSet(false)
-{
-}
-
 Aws::String StopAssessmentRunRequest::SerializePayload() const
 {
   JsonValue payload;

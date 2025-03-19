@@ -10,14 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DescribeAutoScalingInstancesRequest::DescribeAutoScalingInstancesRequest() : 
-    m_instanceIdsHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAutoScalingInstancesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

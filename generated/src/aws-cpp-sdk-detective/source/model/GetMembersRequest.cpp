@@ -12,12 +12,6 @@ using namespace Aws::Detective::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMembersRequest::GetMembersRequest() : 
-    m_graphArnHasBeenSet(false),
-    m_accountIdsHasBeenSet(false)
-{
-}
-
 Aws::String GetMembersRequest::SerializePayload() const
 {
   JsonValue payload;

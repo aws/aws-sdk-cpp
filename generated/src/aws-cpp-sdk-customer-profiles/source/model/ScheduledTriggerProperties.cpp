@@ -18,21 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-ScheduledTriggerProperties::ScheduledTriggerProperties() : 
-    m_scheduleExpressionHasBeenSet(false),
-    m_dataPullMode(DataPullMode::NOT_SET),
-    m_dataPullModeHasBeenSet(false),
-    m_scheduleStartTimeHasBeenSet(false),
-    m_scheduleEndTimeHasBeenSet(false),
-    m_timezoneHasBeenSet(false),
-    m_scheduleOffset(0),
-    m_scheduleOffsetHasBeenSet(false),
-    m_firstExecutionFromHasBeenSet(false)
-{
-}
-
 ScheduledTriggerProperties::ScheduledTriggerProperties(JsonView jsonValue)
-  : ScheduledTriggerProperties()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ ScheduledTriggerProperties& ScheduledTriggerProperties::operator =(JsonView json
   if(jsonValue.ValueExists("ScheduleExpression"))
   {
     m_scheduleExpression = jsonValue.GetString("ScheduleExpression");
-
     m_scheduleExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataPullMode"))
   {
     m_dataPullMode = DataPullModeMapper::GetDataPullModeForName(jsonValue.GetString("DataPullMode"));
-
     m_dataPullModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduleStartTime"))
   {
     m_scheduleStartTime = jsonValue.GetDouble("ScheduleStartTime");
-
     m_scheduleStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduleEndTime"))
   {
     m_scheduleEndTime = jsonValue.GetDouble("ScheduleEndTime");
-
     m_scheduleEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timezone"))
   {
     m_timezone = jsonValue.GetString("Timezone");
-
     m_timezoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduleOffset"))
   {
     m_scheduleOffset = jsonValue.GetInt64("ScheduleOffset");
-
     m_scheduleOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirstExecutionFrom"))
   {
     m_firstExecutionFrom = jsonValue.GetDouble("FirstExecutionFrom");
-
     m_firstExecutionFromHasBeenSet = true;
   }
-
   return *this;
 }
 

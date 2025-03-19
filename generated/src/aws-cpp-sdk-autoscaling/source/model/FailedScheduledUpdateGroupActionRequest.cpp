@@ -20,15 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-FailedScheduledUpdateGroupActionRequest::FailedScheduledUpdateGroupActionRequest() : 
-    m_scheduledActionNameHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 FailedScheduledUpdateGroupActionRequest::FailedScheduledUpdateGroupActionRequest(const XmlNode& xmlNode)
-  : FailedScheduledUpdateGroupActionRequest()
 {
   *this = xmlNode;
 }

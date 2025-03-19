@@ -29,7 +29,7 @@ namespace Model
   class PutInsightSelectorsResult
   {
   public:
-    AWS_CLOUDTRAIL_API PutInsightSelectorsResult();
+    AWS_CLOUDTRAIL_API PutInsightSelectorsResult() = default;
     AWS_CLOUDTRAIL_API PutInsightSelectorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDTRAIL_API PutInsightSelectorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of a trail for which you want to change or add
      * Insights selectors.</p>
      */
-    inline const Aws::String& GetTrailARN() const{ return m_trailARN; }
-    inline void SetTrailARN(const Aws::String& value) { m_trailARN = value; }
-    inline void SetTrailARN(Aws::String&& value) { m_trailARN = std::move(value); }
-    inline void SetTrailARN(const char* value) { m_trailARN.assign(value); }
-    inline PutInsightSelectorsResult& WithTrailARN(const Aws::String& value) { SetTrailARN(value); return *this;}
-    inline PutInsightSelectorsResult& WithTrailARN(Aws::String&& value) { SetTrailARN(std::move(value)); return *this;}
-    inline PutInsightSelectorsResult& WithTrailARN(const char* value) { SetTrailARN(value); return *this;}
+    inline const Aws::String& GetTrailARN() const { return m_trailARN; }
+    template<typename TrailARNT = Aws::String>
+    void SetTrailARN(TrailARNT&& value) { m_trailARNHasBeenSet = true; m_trailARN = std::forward<TrailARNT>(value); }
+    template<typename TrailARNT = Aws::String>
+    PutInsightSelectorsResult& WithTrailARN(TrailARNT&& value) { SetTrailARN(std::forward<TrailARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,13 +52,13 @@ namespace Model
      * a trail or event data store. The valid Insights types are
      * <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
      */
-    inline const Aws::Vector<InsightSelector>& GetInsightSelectors() const{ return m_insightSelectors; }
-    inline void SetInsightSelectors(const Aws::Vector<InsightSelector>& value) { m_insightSelectors = value; }
-    inline void SetInsightSelectors(Aws::Vector<InsightSelector>&& value) { m_insightSelectors = std::move(value); }
-    inline PutInsightSelectorsResult& WithInsightSelectors(const Aws::Vector<InsightSelector>& value) { SetInsightSelectors(value); return *this;}
-    inline PutInsightSelectorsResult& WithInsightSelectors(Aws::Vector<InsightSelector>&& value) { SetInsightSelectors(std::move(value)); return *this;}
-    inline PutInsightSelectorsResult& AddInsightSelectors(const InsightSelector& value) { m_insightSelectors.push_back(value); return *this; }
-    inline PutInsightSelectorsResult& AddInsightSelectors(InsightSelector&& value) { m_insightSelectors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InsightSelector>& GetInsightSelectors() const { return m_insightSelectors; }
+    template<typename InsightSelectorsT = Aws::Vector<InsightSelector>>
+    void SetInsightSelectors(InsightSelectorsT&& value) { m_insightSelectorsHasBeenSet = true; m_insightSelectors = std::forward<InsightSelectorsT>(value); }
+    template<typename InsightSelectorsT = Aws::Vector<InsightSelector>>
+    PutInsightSelectorsResult& WithInsightSelectors(InsightSelectorsT&& value) { SetInsightSelectors(std::forward<InsightSelectorsT>(value)); return *this;}
+    template<typename InsightSelectorsT = InsightSelector>
+    PutInsightSelectorsResult& AddInsightSelectors(InsightSelectorsT&& value) { m_insightSelectorsHasBeenSet = true; m_insightSelectors.emplace_back(std::forward<InsightSelectorsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -68,49 +66,48 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the source event data store for which you
      * want to change or add Insights selectors.</p>
      */
-    inline const Aws::String& GetEventDataStoreArn() const{ return m_eventDataStoreArn; }
-    inline void SetEventDataStoreArn(const Aws::String& value) { m_eventDataStoreArn = value; }
-    inline void SetEventDataStoreArn(Aws::String&& value) { m_eventDataStoreArn = std::move(value); }
-    inline void SetEventDataStoreArn(const char* value) { m_eventDataStoreArn.assign(value); }
-    inline PutInsightSelectorsResult& WithEventDataStoreArn(const Aws::String& value) { SetEventDataStoreArn(value); return *this;}
-    inline PutInsightSelectorsResult& WithEventDataStoreArn(Aws::String&& value) { SetEventDataStoreArn(std::move(value)); return *this;}
-    inline PutInsightSelectorsResult& WithEventDataStoreArn(const char* value) { SetEventDataStoreArn(value); return *this;}
+    inline const Aws::String& GetEventDataStoreArn() const { return m_eventDataStoreArn; }
+    template<typename EventDataStoreArnT = Aws::String>
+    void SetEventDataStoreArn(EventDataStoreArnT&& value) { m_eventDataStoreArnHasBeenSet = true; m_eventDataStoreArn = std::forward<EventDataStoreArnT>(value); }
+    template<typename EventDataStoreArnT = Aws::String>
+    PutInsightSelectorsResult& WithEventDataStoreArn(EventDataStoreArnT&& value) { SetEventDataStoreArn(std::forward<EventDataStoreArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The ARN of the destination event data store that logs Insights events. </p>
      */
-    inline const Aws::String& GetInsightsDestination() const{ return m_insightsDestination; }
-    inline void SetInsightsDestination(const Aws::String& value) { m_insightsDestination = value; }
-    inline void SetInsightsDestination(Aws::String&& value) { m_insightsDestination = std::move(value); }
-    inline void SetInsightsDestination(const char* value) { m_insightsDestination.assign(value); }
-    inline PutInsightSelectorsResult& WithInsightsDestination(const Aws::String& value) { SetInsightsDestination(value); return *this;}
-    inline PutInsightSelectorsResult& WithInsightsDestination(Aws::String&& value) { SetInsightsDestination(std::move(value)); return *this;}
-    inline PutInsightSelectorsResult& WithInsightsDestination(const char* value) { SetInsightsDestination(value); return *this;}
+    inline const Aws::String& GetInsightsDestination() const { return m_insightsDestination; }
+    template<typename InsightsDestinationT = Aws::String>
+    void SetInsightsDestination(InsightsDestinationT&& value) { m_insightsDestinationHasBeenSet = true; m_insightsDestination = std::forward<InsightsDestinationT>(value); }
+    template<typename InsightsDestinationT = Aws::String>
+    PutInsightSelectorsResult& WithInsightsDestination(InsightsDestinationT&& value) { SetInsightsDestination(std::forward<InsightsDestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutInsightSelectorsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutInsightSelectorsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutInsightSelectorsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutInsightSelectorsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_trailARN;
+    bool m_trailARNHasBeenSet = false;
 
     Aws::Vector<InsightSelector> m_insightSelectors;
+    bool m_insightSelectorsHasBeenSet = false;
 
     Aws::String m_eventDataStoreArn;
+    bool m_eventDataStoreArnHasBeenSet = false;
 
     Aws::String m_insightsDestination;
+    bool m_insightsDestinationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

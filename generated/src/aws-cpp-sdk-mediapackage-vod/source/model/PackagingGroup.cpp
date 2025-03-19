@@ -18,21 +18,7 @@ namespace MediaPackageVod
 namespace Model
 {
 
-PackagingGroup::PackagingGroup() : 
-    m_approximateAssetCount(0),
-    m_approximateAssetCountHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_authorizationHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_egressAccessLogsHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 PackagingGroup::PackagingGroup(JsonView jsonValue)
-  : PackagingGroup()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ PackagingGroup& PackagingGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("approximateAssetCount"))
   {
     m_approximateAssetCount = jsonValue.GetInteger("approximateAssetCount");
-
     m_approximateAssetCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authorization"))
   {
     m_authorization = jsonValue.GetObject("authorization");
-
     m_authorizationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainName"))
   {
     m_domainName = jsonValue.GetString("domainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("egressAccessLogs"))
   {
     m_egressAccessLogs = jsonValue.GetObject("egressAccessLogs");
-
     m_egressAccessLogsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -97,7 +69,6 @@ PackagingGroup& PackagingGroup::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

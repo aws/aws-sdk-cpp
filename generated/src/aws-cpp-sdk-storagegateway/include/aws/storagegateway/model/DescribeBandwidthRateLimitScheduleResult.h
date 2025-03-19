@@ -29,20 +29,18 @@ namespace Model
   class DescribeBandwidthRateLimitScheduleResult
   {
   public:
-    AWS_STORAGEGATEWAY_API DescribeBandwidthRateLimitScheduleResult();
+    AWS_STORAGEGATEWAY_API DescribeBandwidthRateLimitScheduleResult() = default;
     AWS_STORAGEGATEWAY_API DescribeBandwidthRateLimitScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_STORAGEGATEWAY_API DescribeBandwidthRateLimitScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
-    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARN = value; }
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARN = std::move(value); }
-    inline void SetGatewayARN(const char* value) { m_gatewayARN.assign(value); }
-    inline DescribeBandwidthRateLimitScheduleResult& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-    inline DescribeBandwidthRateLimitScheduleResult& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-    inline DescribeBandwidthRateLimitScheduleResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
+    template<typename GatewayARNT = Aws::String>
+    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
+    template<typename GatewayARNT = Aws::String>
+    DescribeBandwidthRateLimitScheduleResult& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,32 +48,33 @@ namespace Model
      * <p> An array that contains the bandwidth rate limit intervals for a tape or
      * volume gateway. </p>
      */
-    inline const Aws::Vector<BandwidthRateLimitInterval>& GetBandwidthRateLimitIntervals() const{ return m_bandwidthRateLimitIntervals; }
-    inline void SetBandwidthRateLimitIntervals(const Aws::Vector<BandwidthRateLimitInterval>& value) { m_bandwidthRateLimitIntervals = value; }
-    inline void SetBandwidthRateLimitIntervals(Aws::Vector<BandwidthRateLimitInterval>&& value) { m_bandwidthRateLimitIntervals = std::move(value); }
-    inline DescribeBandwidthRateLimitScheduleResult& WithBandwidthRateLimitIntervals(const Aws::Vector<BandwidthRateLimitInterval>& value) { SetBandwidthRateLimitIntervals(value); return *this;}
-    inline DescribeBandwidthRateLimitScheduleResult& WithBandwidthRateLimitIntervals(Aws::Vector<BandwidthRateLimitInterval>&& value) { SetBandwidthRateLimitIntervals(std::move(value)); return *this;}
-    inline DescribeBandwidthRateLimitScheduleResult& AddBandwidthRateLimitIntervals(const BandwidthRateLimitInterval& value) { m_bandwidthRateLimitIntervals.push_back(value); return *this; }
-    inline DescribeBandwidthRateLimitScheduleResult& AddBandwidthRateLimitIntervals(BandwidthRateLimitInterval&& value) { m_bandwidthRateLimitIntervals.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BandwidthRateLimitInterval>& GetBandwidthRateLimitIntervals() const { return m_bandwidthRateLimitIntervals; }
+    template<typename BandwidthRateLimitIntervalsT = Aws::Vector<BandwidthRateLimitInterval>>
+    void SetBandwidthRateLimitIntervals(BandwidthRateLimitIntervalsT&& value) { m_bandwidthRateLimitIntervalsHasBeenSet = true; m_bandwidthRateLimitIntervals = std::forward<BandwidthRateLimitIntervalsT>(value); }
+    template<typename BandwidthRateLimitIntervalsT = Aws::Vector<BandwidthRateLimitInterval>>
+    DescribeBandwidthRateLimitScheduleResult& WithBandwidthRateLimitIntervals(BandwidthRateLimitIntervalsT&& value) { SetBandwidthRateLimitIntervals(std::forward<BandwidthRateLimitIntervalsT>(value)); return *this;}
+    template<typename BandwidthRateLimitIntervalsT = BandwidthRateLimitInterval>
+    DescribeBandwidthRateLimitScheduleResult& AddBandwidthRateLimitIntervals(BandwidthRateLimitIntervalsT&& value) { m_bandwidthRateLimitIntervalsHasBeenSet = true; m_bandwidthRateLimitIntervals.emplace_back(std::forward<BandwidthRateLimitIntervalsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeBandwidthRateLimitScheduleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeBandwidthRateLimitScheduleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeBandwidthRateLimitScheduleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeBandwidthRateLimitScheduleResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_gatewayARN;
+    bool m_gatewayARNHasBeenSet = false;
 
     Aws::Vector<BandwidthRateLimitInterval> m_bandwidthRateLimitIntervals;
+    bool m_bandwidthRateLimitIntervalsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

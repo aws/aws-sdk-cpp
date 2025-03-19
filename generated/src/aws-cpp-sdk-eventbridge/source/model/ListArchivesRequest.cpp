@@ -12,17 +12,6 @@ using namespace Aws::EventBridge::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListArchivesRequest::ListArchivesRequest() : 
-    m_namePrefixHasBeenSet(false),
-    m_eventSourceArnHasBeenSet(false),
-    m_state(ArchiveState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String ListArchivesRequest::SerializePayload() const
 {
   JsonValue payload;

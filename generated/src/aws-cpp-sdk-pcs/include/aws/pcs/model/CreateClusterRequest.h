@@ -27,7 +27,7 @@ namespace Model
   class CreateClusterRequest : public PCSRequest
   {
   public:
-    AWS_PCS_API CreateClusterRequest();
+    AWS_PCS_API CreateClusterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>A name to identify the cluster. Example: <code>MyCluster</code> </p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline CreateClusterRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline CreateClusterRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline CreateClusterRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    CreateClusterRequest& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,12 @@ namespace Model
      * <p>The cluster management and job scheduling software associated with the
      * cluster.</p>
      */
-    inline const SchedulerRequest& GetScheduler() const{ return m_scheduler; }
+    inline const SchedulerRequest& GetScheduler() const { return m_scheduler; }
     inline bool SchedulerHasBeenSet() const { return m_schedulerHasBeenSet; }
-    inline void SetScheduler(const SchedulerRequest& value) { m_schedulerHasBeenSet = true; m_scheduler = value; }
-    inline void SetScheduler(SchedulerRequest&& value) { m_schedulerHasBeenSet = true; m_scheduler = std::move(value); }
-    inline CreateClusterRequest& WithScheduler(const SchedulerRequest& value) { SetScheduler(value); return *this;}
-    inline CreateClusterRequest& WithScheduler(SchedulerRequest&& value) { SetScheduler(std::move(value)); return *this;}
+    template<typename SchedulerT = SchedulerRequest>
+    void SetScheduler(SchedulerT&& value) { m_schedulerHasBeenSet = true; m_scheduler = std::forward<SchedulerT>(value); }
+    template<typename SchedulerT = SchedulerRequest>
+    CreateClusterRequest& WithScheduler(SchedulerT&& value) { SetScheduler(std::forward<SchedulerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,36 +73,34 @@ namespace Model
      * <code>MEDIUM</code>: 512 compute nodes and 8192 jobs</p> </li> <li> <p>
      * <code>LARGE</code>: 2048 compute nodes and 16,384 jobs</p> </li> </ul>
      */
-    inline const Size& GetSize() const{ return m_size; }
+    inline Size GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
-    inline void SetSize(const Size& value) { m_sizeHasBeenSet = true; m_size = value; }
-    inline void SetSize(Size&& value) { m_sizeHasBeenSet = true; m_size = std::move(value); }
-    inline CreateClusterRequest& WithSize(const Size& value) { SetSize(value); return *this;}
-    inline CreateClusterRequest& WithSize(Size&& value) { SetSize(std::move(value)); return *this;}
+    inline void SetSize(Size value) { m_sizeHasBeenSet = true; m_size = value; }
+    inline CreateClusterRequest& WithSize(Size value) { SetSize(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The networking configuration used to set up the cluster's control plane.</p>
      */
-    inline const NetworkingRequest& GetNetworking() const{ return m_networking; }
+    inline const NetworkingRequest& GetNetworking() const { return m_networking; }
     inline bool NetworkingHasBeenSet() const { return m_networkingHasBeenSet; }
-    inline void SetNetworking(const NetworkingRequest& value) { m_networkingHasBeenSet = true; m_networking = value; }
-    inline void SetNetworking(NetworkingRequest&& value) { m_networkingHasBeenSet = true; m_networking = std::move(value); }
-    inline CreateClusterRequest& WithNetworking(const NetworkingRequest& value) { SetNetworking(value); return *this;}
-    inline CreateClusterRequest& WithNetworking(NetworkingRequest&& value) { SetNetworking(std::move(value)); return *this;}
+    template<typename NetworkingT = NetworkingRequest>
+    void SetNetworking(NetworkingT&& value) { m_networkingHasBeenSet = true; m_networking = std::forward<NetworkingT>(value); }
+    template<typename NetworkingT = NetworkingRequest>
+    CreateClusterRequest& WithNetworking(NetworkingT&& value) { SetNetworking(std::forward<NetworkingT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Additional options related to the Slurm scheduler.</p>
      */
-    inline const ClusterSlurmConfigurationRequest& GetSlurmConfiguration() const{ return m_slurmConfiguration; }
+    inline const ClusterSlurmConfigurationRequest& GetSlurmConfiguration() const { return m_slurmConfiguration; }
     inline bool SlurmConfigurationHasBeenSet() const { return m_slurmConfigurationHasBeenSet; }
-    inline void SetSlurmConfiguration(const ClusterSlurmConfigurationRequest& value) { m_slurmConfigurationHasBeenSet = true; m_slurmConfiguration = value; }
-    inline void SetSlurmConfiguration(ClusterSlurmConfigurationRequest&& value) { m_slurmConfigurationHasBeenSet = true; m_slurmConfiguration = std::move(value); }
-    inline CreateClusterRequest& WithSlurmConfiguration(const ClusterSlurmConfigurationRequest& value) { SetSlurmConfiguration(value); return *this;}
-    inline CreateClusterRequest& WithSlurmConfiguration(ClusterSlurmConfigurationRequest&& value) { SetSlurmConfiguration(std::move(value)); return *this;}
+    template<typename SlurmConfigurationT = ClusterSlurmConfigurationRequest>
+    void SetSlurmConfiguration(SlurmConfigurationT&& value) { m_slurmConfigurationHasBeenSet = true; m_slurmConfiguration = std::forward<SlurmConfigurationT>(value); }
+    template<typename SlurmConfigurationT = ClusterSlurmConfigurationRequest>
+    CreateClusterRequest& WithSlurmConfiguration(SlurmConfigurationT&& value) { SetSlurmConfiguration(std::forward<SlurmConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,14 +113,12 @@ namespace Model
      * If you don't specify a client token, the CLI and SDK automatically generate 1
      * for you.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateClusterRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateClusterRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateClusterRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateClusterRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,19 +126,16 @@ namespace Model
      * <p>1 or more tags added to the resource. Each tag consists of a tag key and tag
      * value. The tag value is optional and can be an empty string.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateClusterRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateClusterRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateClusterRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateClusterRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateClusterRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateClusterRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateClusterRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateClusterRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateClusterRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateClusterRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateClusterRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -154,7 +145,7 @@ namespace Model
     SchedulerRequest m_scheduler;
     bool m_schedulerHasBeenSet = false;
 
-    Size m_size;
+    Size m_size{Size::NOT_SET};
     bool m_sizeHasBeenSet = false;
 
     NetworkingRequest m_networking;

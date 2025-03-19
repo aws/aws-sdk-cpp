@@ -18,16 +18,7 @@ namespace AppConfig
 namespace Model
 {
 
-DeletionProtectionSettings::DeletionProtectionSettings() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_protectionPeriodInMinutes(0),
-    m_protectionPeriodInMinutesHasBeenSet(false)
-{
-}
-
 DeletionProtectionSettings::DeletionProtectionSettings(JsonView jsonValue)
-  : DeletionProtectionSettings()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ DeletionProtectionSettings& DeletionProtectionSettings::operator =(JsonView json
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProtectionPeriodInMinutes"))
   {
     m_protectionPeriodInMinutes = jsonValue.GetInteger("ProtectionPeriodInMinutes");
-
     m_protectionPeriodInMinutesHasBeenSet = true;
   }
-
   return *this;
 }
 

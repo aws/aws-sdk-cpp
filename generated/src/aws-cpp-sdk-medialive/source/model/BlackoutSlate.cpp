@@ -18,19 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-BlackoutSlate::BlackoutSlate() : 
-    m_blackoutSlateImageHasBeenSet(false),
-    m_networkEndBlackout(BlackoutSlateNetworkEndBlackout::NOT_SET),
-    m_networkEndBlackoutHasBeenSet(false),
-    m_networkEndBlackoutImageHasBeenSet(false),
-    m_networkIdHasBeenSet(false),
-    m_state(BlackoutSlateState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 BlackoutSlate::BlackoutSlate(JsonView jsonValue)
-  : BlackoutSlate()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ BlackoutSlate& BlackoutSlate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("blackoutSlateImage"))
   {
     m_blackoutSlateImage = jsonValue.GetObject("blackoutSlateImage");
-
     m_blackoutSlateImageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkEndBlackout"))
   {
     m_networkEndBlackout = BlackoutSlateNetworkEndBlackoutMapper::GetBlackoutSlateNetworkEndBlackoutForName(jsonValue.GetString("networkEndBlackout"));
-
     m_networkEndBlackoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkEndBlackoutImage"))
   {
     m_networkEndBlackoutImage = jsonValue.GetObject("networkEndBlackoutImage");
-
     m_networkEndBlackoutImageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkId"))
   {
     m_networkId = jsonValue.GetString("networkId");
-
     m_networkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = BlackoutSlateStateMapper::GetBlackoutSlateStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

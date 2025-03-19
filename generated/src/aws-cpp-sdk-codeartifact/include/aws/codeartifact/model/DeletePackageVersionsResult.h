@@ -30,7 +30,7 @@ namespace Model
   class DeletePackageVersionsResult
   {
   public:
-    AWS_CODEARTIFACT_API DeletePackageVersionsResult();
+    AWS_CODEARTIFACT_API DeletePackageVersionsResult() = default;
     AWS_CODEARTIFACT_API DeletePackageVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEARTIFACT_API DeletePackageVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,17 +40,15 @@ namespace Model
      * <p> A list of the package versions that were successfully deleted. The status of
      * every successful version will be <code>Deleted</code>. </p>
      */
-    inline const Aws::Map<Aws::String, SuccessfulPackageVersionInfo>& GetSuccessfulVersions() const{ return m_successfulVersions; }
-    inline void SetSuccessfulVersions(const Aws::Map<Aws::String, SuccessfulPackageVersionInfo>& value) { m_successfulVersions = value; }
-    inline void SetSuccessfulVersions(Aws::Map<Aws::String, SuccessfulPackageVersionInfo>&& value) { m_successfulVersions = std::move(value); }
-    inline DeletePackageVersionsResult& WithSuccessfulVersions(const Aws::Map<Aws::String, SuccessfulPackageVersionInfo>& value) { SetSuccessfulVersions(value); return *this;}
-    inline DeletePackageVersionsResult& WithSuccessfulVersions(Aws::Map<Aws::String, SuccessfulPackageVersionInfo>&& value) { SetSuccessfulVersions(std::move(value)); return *this;}
-    inline DeletePackageVersionsResult& AddSuccessfulVersions(const Aws::String& key, const SuccessfulPackageVersionInfo& value) { m_successfulVersions.emplace(key, value); return *this; }
-    inline DeletePackageVersionsResult& AddSuccessfulVersions(Aws::String&& key, const SuccessfulPackageVersionInfo& value) { m_successfulVersions.emplace(std::move(key), value); return *this; }
-    inline DeletePackageVersionsResult& AddSuccessfulVersions(const Aws::String& key, SuccessfulPackageVersionInfo&& value) { m_successfulVersions.emplace(key, std::move(value)); return *this; }
-    inline DeletePackageVersionsResult& AddSuccessfulVersions(Aws::String&& key, SuccessfulPackageVersionInfo&& value) { m_successfulVersions.emplace(std::move(key), std::move(value)); return *this; }
-    inline DeletePackageVersionsResult& AddSuccessfulVersions(const char* key, SuccessfulPackageVersionInfo&& value) { m_successfulVersions.emplace(key, std::move(value)); return *this; }
-    inline DeletePackageVersionsResult& AddSuccessfulVersions(const char* key, const SuccessfulPackageVersionInfo& value) { m_successfulVersions.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, SuccessfulPackageVersionInfo>& GetSuccessfulVersions() const { return m_successfulVersions; }
+    template<typename SuccessfulVersionsT = Aws::Map<Aws::String, SuccessfulPackageVersionInfo>>
+    void SetSuccessfulVersions(SuccessfulVersionsT&& value) { m_successfulVersionsHasBeenSet = true; m_successfulVersions = std::forward<SuccessfulVersionsT>(value); }
+    template<typename SuccessfulVersionsT = Aws::Map<Aws::String, SuccessfulPackageVersionInfo>>
+    DeletePackageVersionsResult& WithSuccessfulVersions(SuccessfulVersionsT&& value) { SetSuccessfulVersions(std::forward<SuccessfulVersionsT>(value)); return *this;}
+    template<typename SuccessfulVersionsKeyT = Aws::String, typename SuccessfulVersionsValueT = SuccessfulPackageVersionInfo>
+    DeletePackageVersionsResult& AddSuccessfulVersions(SuccessfulVersionsKeyT&& key, SuccessfulVersionsValueT&& value) {
+      m_successfulVersionsHasBeenSet = true; m_successfulVersions.emplace(std::forward<SuccessfulVersionsKeyT>(key), std::forward<SuccessfulVersionsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -63,36 +61,35 @@ namespace Model
      * </li> <li> <p> <code>NOT_FOUND</code> </p> </li> <li> <p> <code>SKIPPED</code>
      * </p> </li> </ul>
      */
-    inline const Aws::Map<Aws::String, PackageVersionError>& GetFailedVersions() const{ return m_failedVersions; }
-    inline void SetFailedVersions(const Aws::Map<Aws::String, PackageVersionError>& value) { m_failedVersions = value; }
-    inline void SetFailedVersions(Aws::Map<Aws::String, PackageVersionError>&& value) { m_failedVersions = std::move(value); }
-    inline DeletePackageVersionsResult& WithFailedVersions(const Aws::Map<Aws::String, PackageVersionError>& value) { SetFailedVersions(value); return *this;}
-    inline DeletePackageVersionsResult& WithFailedVersions(Aws::Map<Aws::String, PackageVersionError>&& value) { SetFailedVersions(std::move(value)); return *this;}
-    inline DeletePackageVersionsResult& AddFailedVersions(const Aws::String& key, const PackageVersionError& value) { m_failedVersions.emplace(key, value); return *this; }
-    inline DeletePackageVersionsResult& AddFailedVersions(Aws::String&& key, const PackageVersionError& value) { m_failedVersions.emplace(std::move(key), value); return *this; }
-    inline DeletePackageVersionsResult& AddFailedVersions(const Aws::String& key, PackageVersionError&& value) { m_failedVersions.emplace(key, std::move(value)); return *this; }
-    inline DeletePackageVersionsResult& AddFailedVersions(Aws::String&& key, PackageVersionError&& value) { m_failedVersions.emplace(std::move(key), std::move(value)); return *this; }
-    inline DeletePackageVersionsResult& AddFailedVersions(const char* key, PackageVersionError&& value) { m_failedVersions.emplace(key, std::move(value)); return *this; }
-    inline DeletePackageVersionsResult& AddFailedVersions(const char* key, const PackageVersionError& value) { m_failedVersions.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, PackageVersionError>& GetFailedVersions() const { return m_failedVersions; }
+    template<typename FailedVersionsT = Aws::Map<Aws::String, PackageVersionError>>
+    void SetFailedVersions(FailedVersionsT&& value) { m_failedVersionsHasBeenSet = true; m_failedVersions = std::forward<FailedVersionsT>(value); }
+    template<typename FailedVersionsT = Aws::Map<Aws::String, PackageVersionError>>
+    DeletePackageVersionsResult& WithFailedVersions(FailedVersionsT&& value) { SetFailedVersions(std::forward<FailedVersionsT>(value)); return *this;}
+    template<typename FailedVersionsKeyT = Aws::String, typename FailedVersionsValueT = PackageVersionError>
+    DeletePackageVersionsResult& AddFailedVersions(FailedVersionsKeyT&& key, FailedVersionsValueT&& value) {
+      m_failedVersionsHasBeenSet = true; m_failedVersions.emplace(std::forward<FailedVersionsKeyT>(key), std::forward<FailedVersionsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeletePackageVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeletePackageVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeletePackageVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeletePackageVersionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, SuccessfulPackageVersionInfo> m_successfulVersions;
+    bool m_successfulVersionsHasBeenSet = false;
 
     Aws::Map<Aws::String, PackageVersionError> m_failedVersions;
+    bool m_failedVersionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

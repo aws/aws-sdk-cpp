@@ -34,7 +34,7 @@ namespace Model
   class GroupSummary
   {
   public:
-    AWS_DIRECTORYSERVICEDATA_API GroupSummary();
+    AWS_DIRECTORYSERVICEDATA_API GroupSummary() = default;
     AWS_DIRECTORYSERVICEDATA_API GroupSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICEDATA_API GroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-groups#group-scope">Active
      * Directory security groups</a>.</p>
      */
-    inline const GroupScope& GetGroupScope() const{ return m_groupScope; }
+    inline GroupScope GetGroupScope() const { return m_groupScope; }
     inline bool GroupScopeHasBeenSet() const { return m_groupScopeHasBeenSet; }
-    inline void SetGroupScope(const GroupScope& value) { m_groupScopeHasBeenSet = true; m_groupScope = value; }
-    inline void SetGroupScope(GroupScope&& value) { m_groupScopeHasBeenSet = true; m_groupScope = std::move(value); }
-    inline GroupSummary& WithGroupScope(const GroupScope& value) { SetGroupScope(value); return *this;}
-    inline GroupSummary& WithGroupScope(GroupScope&& value) { SetGroupScope(std::move(value)); return *this;}
+    inline void SetGroupScope(GroupScope value) { m_groupScopeHasBeenSet = true; m_groupScope = value; }
+    inline GroupSummary& WithGroupScope(GroupScope value) { SetGroupScope(value); return *this;}
     ///@}
 
     ///@{
@@ -60,47 +58,41 @@ namespace Model
      * href="https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-groups#how-active-directory-security-groups-work">Active
      * Directory security group type</a>.</p>
      */
-    inline const GroupType& GetGroupType() const{ return m_groupType; }
+    inline GroupType GetGroupType() const { return m_groupType; }
     inline bool GroupTypeHasBeenSet() const { return m_groupTypeHasBeenSet; }
-    inline void SetGroupType(const GroupType& value) { m_groupTypeHasBeenSet = true; m_groupType = value; }
-    inline void SetGroupType(GroupType&& value) { m_groupTypeHasBeenSet = true; m_groupType = std::move(value); }
-    inline GroupSummary& WithGroupType(const GroupType& value) { SetGroupType(value); return *this;}
-    inline GroupSummary& WithGroupType(GroupType&& value) { SetGroupType(std::move(value)); return *this;}
+    inline void SetGroupType(GroupType value) { m_groupTypeHasBeenSet = true; m_groupType = value; }
+    inline GroupSummary& WithGroupType(GroupType value) { SetGroupType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the group.</p>
      */
-    inline const Aws::String& GetSAMAccountName() const{ return m_sAMAccountName; }
+    inline const Aws::String& GetSAMAccountName() const { return m_sAMAccountName; }
     inline bool SAMAccountNameHasBeenSet() const { return m_sAMAccountNameHasBeenSet; }
-    inline void SetSAMAccountName(const Aws::String& value) { m_sAMAccountNameHasBeenSet = true; m_sAMAccountName = value; }
-    inline void SetSAMAccountName(Aws::String&& value) { m_sAMAccountNameHasBeenSet = true; m_sAMAccountName = std::move(value); }
-    inline void SetSAMAccountName(const char* value) { m_sAMAccountNameHasBeenSet = true; m_sAMAccountName.assign(value); }
-    inline GroupSummary& WithSAMAccountName(const Aws::String& value) { SetSAMAccountName(value); return *this;}
-    inline GroupSummary& WithSAMAccountName(Aws::String&& value) { SetSAMAccountName(std::move(value)); return *this;}
-    inline GroupSummary& WithSAMAccountName(const char* value) { SetSAMAccountName(value); return *this;}
+    template<typename SAMAccountNameT = Aws::String>
+    void SetSAMAccountName(SAMAccountNameT&& value) { m_sAMAccountNameHasBeenSet = true; m_sAMAccountName = std::forward<SAMAccountNameT>(value); }
+    template<typename SAMAccountNameT = Aws::String>
+    GroupSummary& WithSAMAccountName(SAMAccountNameT&& value) { SetSAMAccountName(std::forward<SAMAccountNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique security identifier (SID) of the group.</p>
      */
-    inline const Aws::String& GetSID() const{ return m_sID; }
+    inline const Aws::String& GetSID() const { return m_sID; }
     inline bool SIDHasBeenSet() const { return m_sIDHasBeenSet; }
-    inline void SetSID(const Aws::String& value) { m_sIDHasBeenSet = true; m_sID = value; }
-    inline void SetSID(Aws::String&& value) { m_sIDHasBeenSet = true; m_sID = std::move(value); }
-    inline void SetSID(const char* value) { m_sIDHasBeenSet = true; m_sID.assign(value); }
-    inline GroupSummary& WithSID(const Aws::String& value) { SetSID(value); return *this;}
-    inline GroupSummary& WithSID(Aws::String&& value) { SetSID(std::move(value)); return *this;}
-    inline GroupSummary& WithSID(const char* value) { SetSID(value); return *this;}
+    template<typename SIDT = Aws::String>
+    void SetSID(SIDT&& value) { m_sIDHasBeenSet = true; m_sID = std::forward<SIDT>(value); }
+    template<typename SIDT = Aws::String>
+    GroupSummary& WithSID(SIDT&& value) { SetSID(std::forward<SIDT>(value)); return *this;}
     ///@}
   private:
 
-    GroupScope m_groupScope;
+    GroupScope m_groupScope{GroupScope::NOT_SET};
     bool m_groupScopeHasBeenSet = false;
 
-    GroupType m_groupType;
+    GroupType m_groupType{GroupType::NOT_SET};
     bool m_groupTypeHasBeenSet = false;
 
     Aws::String m_sAMAccountName;

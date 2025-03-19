@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPendingJobExecutionsResult::GetPendingJobExecutionsResult()
-{
-}
-
 GetPendingJobExecutionsResult::GetPendingJobExecutionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ GetPendingJobExecutionsResult& GetPendingJobExecutionsResult::operator =(const A
     {
       m_inProgressJobs.push_back(inProgressJobsJsonList[inProgressJobsIndex].AsObject());
     }
+    m_inProgressJobsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queuedJobs"))
   {
     Aws::Utils::Array<JsonView> queuedJobsJsonList = jsonValue.GetArray("queuedJobs");
@@ -45,14 +41,15 @@ GetPendingJobExecutionsResult& GetPendingJobExecutionsResult::operator =(const A
     {
       m_queuedJobs.push_back(queuedJobsJsonList[queuedJobsIndex].AsObject());
     }
+    m_queuedJobsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,16 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-MessageBody::MessageBody() : 
-    m_htmlHasBeenSet(false),
-    m_messageMalformed(false),
-    m_messageMalformedHasBeenSet(false),
-    m_textHasBeenSet(false)
-{
-}
-
 MessageBody::MessageBody(JsonView jsonValue)
-  : MessageBody()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ MessageBody& MessageBody::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Html"))
   {
     m_html = jsonValue.GetString("Html");
-
     m_htmlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageMalformed"))
   {
     m_messageMalformed = jsonValue.GetBool("MessageMalformed");
-
     m_messageMalformedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Text"))
   {
     m_text = jsonValue.GetString("Text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

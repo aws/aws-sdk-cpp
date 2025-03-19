@@ -12,12 +12,6 @@ using namespace Aws::DAX::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateParameterGroupRequest::UpdateParameterGroupRequest() : 
-    m_parameterGroupNameHasBeenSet(false),
-    m_parameterNameValuesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateParameterGroupRequest::SerializePayload() const
 {
   JsonValue payload;

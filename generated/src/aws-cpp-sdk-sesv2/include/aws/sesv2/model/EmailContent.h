@@ -38,7 +38,7 @@ namespace Model
   class EmailContent
   {
   public:
-    AWS_SESV2_API EmailContent();
+    AWS_SESV2_API EmailContent() = default;
     AWS_SESV2_API EmailContent(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API EmailContent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,12 @@ namespace Model
      * <p>The simple email message. The message consists of a subject and a message
      * body.</p>
      */
-    inline const Message& GetSimple() const{ return m_simple; }
+    inline const Message& GetSimple() const { return m_simple; }
     inline bool SimpleHasBeenSet() const { return m_simpleHasBeenSet; }
-    inline void SetSimple(const Message& value) { m_simpleHasBeenSet = true; m_simple = value; }
-    inline void SetSimple(Message&& value) { m_simpleHasBeenSet = true; m_simple = std::move(value); }
-    inline EmailContent& WithSimple(const Message& value) { SetSimple(value); return *this;}
-    inline EmailContent& WithSimple(Message&& value) { SetSimple(std::move(value)); return *this;}
+    template<typename SimpleT = Message>
+    void SetSimple(SimpleT&& value) { m_simpleHasBeenSet = true; m_simple = std::forward<SimpleT>(value); }
+    template<typename SimpleT = Message>
+    EmailContent& WithSimple(SimpleT&& value) { SetSimple(std::forward<SimpleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,24 +75,24 @@ namespace Model
      * characters. This restriction is defined in <a
      * href="https://tools.ietf.org/html/rfc5321">RFC 5321</a>.</p> </li> </ul>
      */
-    inline const RawMessage& GetRaw() const{ return m_raw; }
+    inline const RawMessage& GetRaw() const { return m_raw; }
     inline bool RawHasBeenSet() const { return m_rawHasBeenSet; }
-    inline void SetRaw(const RawMessage& value) { m_rawHasBeenSet = true; m_raw = value; }
-    inline void SetRaw(RawMessage&& value) { m_rawHasBeenSet = true; m_raw = std::move(value); }
-    inline EmailContent& WithRaw(const RawMessage& value) { SetRaw(value); return *this;}
-    inline EmailContent& WithRaw(RawMessage&& value) { SetRaw(std::move(value)); return *this;}
+    template<typename RawT = RawMessage>
+    void SetRaw(RawT&& value) { m_rawHasBeenSet = true; m_raw = std::forward<RawT>(value); }
+    template<typename RawT = RawMessage>
+    EmailContent& WithRaw(RawT&& value) { SetRaw(std::forward<RawT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The template to use for the email message.</p>
      */
-    inline const Template& GetTemplate() const{ return m_template; }
+    inline const Template& GetTemplate() const { return m_template; }
     inline bool TemplateHasBeenSet() const { return m_templateHasBeenSet; }
-    inline void SetTemplate(const Template& value) { m_templateHasBeenSet = true; m_template = value; }
-    inline void SetTemplate(Template&& value) { m_templateHasBeenSet = true; m_template = std::move(value); }
-    inline EmailContent& WithTemplate(const Template& value) { SetTemplate(value); return *this;}
-    inline EmailContent& WithTemplate(Template&& value) { SetTemplate(std::move(value)); return *this;}
+    template<typename TemplateT = Template>
+    void SetTemplate(TemplateT&& value) { m_templateHasBeenSet = true; m_template = std::forward<TemplateT>(value); }
+    template<typename TemplateT = Template>
+    EmailContent& WithTemplate(TemplateT&& value) { SetTemplate(std::forward<TemplateT>(value)); return *this;}
     ///@}
   private:
 

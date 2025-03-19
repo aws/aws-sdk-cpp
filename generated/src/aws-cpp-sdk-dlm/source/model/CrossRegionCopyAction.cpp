@@ -18,15 +18,7 @@ namespace DLM
 namespace Model
 {
 
-CrossRegionCopyAction::CrossRegionCopyAction() : 
-    m_targetHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_retainRuleHasBeenSet(false)
-{
-}
-
 CrossRegionCopyAction::CrossRegionCopyAction(JsonView jsonValue)
-  : CrossRegionCopyAction()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CrossRegionCopyAction& CrossRegionCopyAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Target"))
   {
     m_target = jsonValue.GetString("Target");
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionConfiguration"))
   {
     m_encryptionConfiguration = jsonValue.GetObject("EncryptionConfiguration");
-
     m_encryptionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetainRule"))
   {
     m_retainRule = jsonValue.GetObject("RetainRule");
-
     m_retainRuleHasBeenSet = true;
   }
-
   return *this;
 }
 

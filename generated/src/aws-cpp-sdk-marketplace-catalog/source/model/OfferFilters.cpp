@@ -18,22 +18,7 @@ namespace MarketplaceCatalog
 namespace Model
 {
 
-OfferFilters::OfferFilters() : 
-    m_entityIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_resaleAuthorizationIdHasBeenSet(false),
-    m_releaseDateHasBeenSet(false),
-    m_availabilityEndDateHasBeenSet(false),
-    m_buyerAccountsHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_targetingHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false)
-{
-}
-
 OfferFilters::OfferFilters(JsonView jsonValue)
-  : OfferFilters()
 {
   *this = jsonValue;
 }
@@ -43,73 +28,53 @@ OfferFilters& OfferFilters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EntityId"))
   {
     m_entityId = jsonValue.GetObject("EntityId");
-
     m_entityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetObject("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductId"))
   {
     m_productId = jsonValue.GetObject("ProductId");
-
     m_productIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResaleAuthorizationId"))
   {
     m_resaleAuthorizationId = jsonValue.GetObject("ResaleAuthorizationId");
-
     m_resaleAuthorizationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReleaseDate"))
   {
     m_releaseDate = jsonValue.GetObject("ReleaseDate");
-
     m_releaseDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityEndDate"))
   {
     m_availabilityEndDate = jsonValue.GetObject("AvailabilityEndDate");
-
     m_availabilityEndDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BuyerAccounts"))
   {
     m_buyerAccounts = jsonValue.GetObject("BuyerAccounts");
-
     m_buyerAccountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetObject("State");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Targeting"))
   {
     m_targeting = jsonValue.GetObject("Targeting");
-
     m_targetingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetObject("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class FunctionAssociation
   {
   public:
-    AWS_CLOUDFRONT_API FunctionAssociation();
+    AWS_CLOUDFRONT_API FunctionAssociation() = default;
     AWS_CLOUDFRONT_API FunctionAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API FunctionAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the function.</p>
      */
-    inline const Aws::String& GetFunctionARN() const{ return m_functionARN; }
+    inline const Aws::String& GetFunctionARN() const { return m_functionARN; }
     inline bool FunctionARNHasBeenSet() const { return m_functionARNHasBeenSet; }
-    inline void SetFunctionARN(const Aws::String& value) { m_functionARNHasBeenSet = true; m_functionARN = value; }
-    inline void SetFunctionARN(Aws::String&& value) { m_functionARNHasBeenSet = true; m_functionARN = std::move(value); }
-    inline void SetFunctionARN(const char* value) { m_functionARNHasBeenSet = true; m_functionARN.assign(value); }
-    inline FunctionAssociation& WithFunctionARN(const Aws::String& value) { SetFunctionARN(value); return *this;}
-    inline FunctionAssociation& WithFunctionARN(Aws::String&& value) { SetFunctionARN(std::move(value)); return *this;}
-    inline FunctionAssociation& WithFunctionARN(const char* value) { SetFunctionARN(value); return *this;}
+    template<typename FunctionARNT = Aws::String>
+    void SetFunctionARN(FunctionARNT&& value) { m_functionARNHasBeenSet = true; m_functionARN = std::forward<FunctionARNT>(value); }
+    template<typename FunctionARNT = Aws::String>
+    FunctionAssociation& WithFunctionARN(FunctionARNT&& value) { SetFunctionARN(std::forward<FunctionARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,19 +58,17 @@ namespace Model
      * (<code>origin-request</code> and <code>origin-response</code>) with a CloudFront
      * function.</p>
      */
-    inline const EventType& GetEventType() const{ return m_eventType; }
+    inline EventType GetEventType() const { return m_eventType; }
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-    inline void SetEventType(const EventType& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
-    inline void SetEventType(EventType&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
-    inline FunctionAssociation& WithEventType(const EventType& value) { SetEventType(value); return *this;}
-    inline FunctionAssociation& WithEventType(EventType&& value) { SetEventType(std::move(value)); return *this;}
+    inline void SetEventType(EventType value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
+    inline FunctionAssociation& WithEventType(EventType value) { SetEventType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_functionARN;
     bool m_functionARNHasBeenSet = false;
 
-    EventType m_eventType;
+    EventType m_eventType{EventType::NOT_SET};
     bool m_eventTypeHasBeenSet = false;
   };
 

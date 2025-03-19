@@ -18,14 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-LoggingOptions::LoggingOptions() : 
-    m_level(LoggingLevel::NOT_SET),
-    m_levelHasBeenSet(false)
-{
-}
-
 LoggingOptions::LoggingOptions(JsonView jsonValue)
-  : LoggingOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ LoggingOptions& LoggingOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("level"))
   {
     m_level = LoggingLevelMapper::GetLoggingLevelForName(jsonValue.GetString("level"));
-
     m_levelHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,14 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-SlotMigration::SlotMigration() : 
-    m_progressPercentage(0.0),
-    m_progressPercentageHasBeenSet(false)
-{
-}
-
 SlotMigration::SlotMigration(const XmlNode& xmlNode)
-  : SlotMigration()
 {
   *this = xmlNode;
 }

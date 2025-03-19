@@ -29,7 +29,7 @@ namespace Model
   class ListAppInstanceBotsResult
   {
   public:
-    AWS_CHIMESDKIDENTITY_API ListAppInstanceBotsResult();
+    AWS_CHIMESDKIDENTITY_API ListAppInstanceBotsResult() = default;
     AWS_CHIMESDKIDENTITY_API ListAppInstanceBotsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKIDENTITY_API ListAppInstanceBotsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,26 +38,24 @@ namespace Model
     /**
      * <p>The ARN of the AppInstance.</p>
      */
-    inline const Aws::String& GetAppInstanceArn() const{ return m_appInstanceArn; }
-    inline void SetAppInstanceArn(const Aws::String& value) { m_appInstanceArn = value; }
-    inline void SetAppInstanceArn(Aws::String&& value) { m_appInstanceArn = std::move(value); }
-    inline void SetAppInstanceArn(const char* value) { m_appInstanceArn.assign(value); }
-    inline ListAppInstanceBotsResult& WithAppInstanceArn(const Aws::String& value) { SetAppInstanceArn(value); return *this;}
-    inline ListAppInstanceBotsResult& WithAppInstanceArn(Aws::String&& value) { SetAppInstanceArn(std::move(value)); return *this;}
-    inline ListAppInstanceBotsResult& WithAppInstanceArn(const char* value) { SetAppInstanceArn(value); return *this;}
+    inline const Aws::String& GetAppInstanceArn() const { return m_appInstanceArn; }
+    template<typename AppInstanceArnT = Aws::String>
+    void SetAppInstanceArn(AppInstanceArnT&& value) { m_appInstanceArnHasBeenSet = true; m_appInstanceArn = std::forward<AppInstanceArnT>(value); }
+    template<typename AppInstanceArnT = Aws::String>
+    ListAppInstanceBotsResult& WithAppInstanceArn(AppInstanceArnT&& value) { SetAppInstanceArn(std::forward<AppInstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The information for each requested <code>AppInstanceBot</code>.</p>
      */
-    inline const Aws::Vector<AppInstanceBotSummary>& GetAppInstanceBots() const{ return m_appInstanceBots; }
-    inline void SetAppInstanceBots(const Aws::Vector<AppInstanceBotSummary>& value) { m_appInstanceBots = value; }
-    inline void SetAppInstanceBots(Aws::Vector<AppInstanceBotSummary>&& value) { m_appInstanceBots = std::move(value); }
-    inline ListAppInstanceBotsResult& WithAppInstanceBots(const Aws::Vector<AppInstanceBotSummary>& value) { SetAppInstanceBots(value); return *this;}
-    inline ListAppInstanceBotsResult& WithAppInstanceBots(Aws::Vector<AppInstanceBotSummary>&& value) { SetAppInstanceBots(std::move(value)); return *this;}
-    inline ListAppInstanceBotsResult& AddAppInstanceBots(const AppInstanceBotSummary& value) { m_appInstanceBots.push_back(value); return *this; }
-    inline ListAppInstanceBotsResult& AddAppInstanceBots(AppInstanceBotSummary&& value) { m_appInstanceBots.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AppInstanceBotSummary>& GetAppInstanceBots() const { return m_appInstanceBots; }
+    template<typename AppInstanceBotsT = Aws::Vector<AppInstanceBotSummary>>
+    void SetAppInstanceBots(AppInstanceBotsT&& value) { m_appInstanceBotsHasBeenSet = true; m_appInstanceBots = std::forward<AppInstanceBotsT>(value); }
+    template<typename AppInstanceBotsT = Aws::Vector<AppInstanceBotSummary>>
+    ListAppInstanceBotsResult& WithAppInstanceBots(AppInstanceBotsT&& value) { SetAppInstanceBots(std::forward<AppInstanceBotsT>(value)); return *this;}
+    template<typename AppInstanceBotsT = AppInstanceBotSummary>
+    ListAppInstanceBotsResult& AddAppInstanceBots(AppInstanceBotsT&& value) { m_appInstanceBotsHasBeenSet = true; m_appInstanceBots.emplace_back(std::forward<AppInstanceBotsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -65,34 +63,34 @@ namespace Model
      * <p>The token passed by previous API calls until all requested bots are
      * returned.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAppInstanceBotsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAppInstanceBotsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAppInstanceBotsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAppInstanceBotsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAppInstanceBotsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAppInstanceBotsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAppInstanceBotsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAppInstanceBotsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_appInstanceArn;
+    bool m_appInstanceArnHasBeenSet = false;
 
     Aws::Vector<AppInstanceBotSummary> m_appInstanceBots;
+    bool m_appInstanceBotsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,13 +12,6 @@ using namespace Aws::RDSDataService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CommitTransactionRequest::CommitTransactionRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_transactionIdHasBeenSet(false)
-{
-}
-
 Aws::String CommitTransactionRequest::SerializePayload() const
 {
   JsonValue payload;

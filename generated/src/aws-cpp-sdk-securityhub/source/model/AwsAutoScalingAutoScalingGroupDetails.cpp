@@ -18,23 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsAutoScalingAutoScalingGroupDetails::AwsAutoScalingAutoScalingGroupDetails() : 
-    m_launchConfigurationNameHasBeenSet(false),
-    m_loadBalancerNamesHasBeenSet(false),
-    m_healthCheckTypeHasBeenSet(false),
-    m_healthCheckGracePeriod(0),
-    m_healthCheckGracePeriodHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_mixedInstancesPolicyHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_launchTemplateHasBeenSet(false),
-    m_capacityRebalance(false),
-    m_capacityRebalanceHasBeenSet(false)
-{
-}
-
 AwsAutoScalingAutoScalingGroupDetails::AwsAutoScalingAutoScalingGroupDetails(JsonView jsonValue)
-  : AwsAutoScalingAutoScalingGroupDetails()
 {
   *this = jsonValue;
 }
@@ -44,10 +28,8 @@ AwsAutoScalingAutoScalingGroupDetails& AwsAutoScalingAutoScalingGroupDetails::op
   if(jsonValue.ValueExists("LaunchConfigurationName"))
   {
     m_launchConfigurationName = jsonValue.GetString("LaunchConfigurationName");
-
     m_launchConfigurationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoadBalancerNames"))
   {
     Aws::Utils::Array<JsonView> loadBalancerNamesJsonList = jsonValue.GetArray("LoadBalancerNames");
@@ -57,35 +39,26 @@ AwsAutoScalingAutoScalingGroupDetails& AwsAutoScalingAutoScalingGroupDetails::op
     }
     m_loadBalancerNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HealthCheckType"))
   {
     m_healthCheckType = jsonValue.GetString("HealthCheckType");
-
     m_healthCheckTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HealthCheckGracePeriod"))
   {
     m_healthCheckGracePeriod = jsonValue.GetInteger("HealthCheckGracePeriod");
-
     m_healthCheckGracePeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetString("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MixedInstancesPolicy"))
   {
     m_mixedInstancesPolicy = jsonValue.GetObject("MixedInstancesPolicy");
-
     m_mixedInstancesPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZones"))
   {
     Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
@@ -95,21 +68,16 @@ AwsAutoScalingAutoScalingGroupDetails& AwsAutoScalingAutoScalingGroupDetails::op
     }
     m_availabilityZonesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LaunchTemplate"))
   {
     m_launchTemplate = jsonValue.GetObject("LaunchTemplate");
-
     m_launchTemplateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CapacityRebalance"))
   {
     m_capacityRebalance = jsonValue.GetBool("CapacityRebalance");
-
     m_capacityRebalanceHasBeenSet = true;
   }
-
   return *this;
 }
 

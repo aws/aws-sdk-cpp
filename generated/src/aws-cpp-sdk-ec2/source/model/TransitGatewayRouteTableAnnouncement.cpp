@@ -20,25 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayRouteTableAnnouncement::TransitGatewayRouteTableAnnouncement() : 
-    m_transitGatewayRouteTableAnnouncementIdHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false),
-    m_coreNetworkIdHasBeenSet(false),
-    m_peerTransitGatewayIdHasBeenSet(false),
-    m_peerCoreNetworkIdHasBeenSet(false),
-    m_peeringAttachmentIdHasBeenSet(false),
-    m_announcementDirection(TransitGatewayRouteTableAnnouncementDirection::NOT_SET),
-    m_announcementDirectionHasBeenSet(false),
-    m_transitGatewayRouteTableIdHasBeenSet(false),
-    m_state(TransitGatewayRouteTableAnnouncementState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 TransitGatewayRouteTableAnnouncement::TransitGatewayRouteTableAnnouncement(const XmlNode& xmlNode)
-  : TransitGatewayRouteTableAnnouncement()
 {
   *this = xmlNode;
 }
@@ -88,7 +70,7 @@ TransitGatewayRouteTableAnnouncement& TransitGatewayRouteTableAnnouncement::oper
     XmlNode announcementDirectionNode = resultNode.FirstChild("announcementDirection");
     if(!announcementDirectionNode.IsNull())
     {
-      m_announcementDirection = TransitGatewayRouteTableAnnouncementDirectionMapper::GetTransitGatewayRouteTableAnnouncementDirectionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(announcementDirectionNode.GetText()).c_str()).c_str());
+      m_announcementDirection = TransitGatewayRouteTableAnnouncementDirectionMapper::GetTransitGatewayRouteTableAnnouncementDirectionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(announcementDirectionNode.GetText()).c_str()));
       m_announcementDirectionHasBeenSet = true;
     }
     XmlNode transitGatewayRouteTableIdNode = resultNode.FirstChild("transitGatewayRouteTableId");
@@ -100,7 +82,7 @@ TransitGatewayRouteTableAnnouncement& TransitGatewayRouteTableAnnouncement::oper
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = TransitGatewayRouteTableAnnouncementStateMapper::GetTransitGatewayRouteTableAnnouncementStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = TransitGatewayRouteTableAnnouncementStateMapper::GetTransitGatewayRouteTableAnnouncementStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("creationTime");
@@ -113,6 +95,7 @@ TransitGatewayRouteTableAnnouncement& TransitGatewayRouteTableAnnouncement::oper
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

@@ -27,7 +27,7 @@ namespace Model
   class CreateKxUserResult
   {
   public:
-    AWS_FINSPACE_API CreateKxUserResult();
+    AWS_FINSPACE_API CreateKxUserResult() = default;
     AWS_FINSPACE_API CreateKxUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FINSPACE_API CreateKxUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>A unique identifier for the user.</p>
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
-    inline void SetUserName(const Aws::String& value) { m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userName.assign(value); }
-    inline CreateKxUserResult& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline CreateKxUserResult& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline CreateKxUserResult& WithUserName(const char* value) { SetUserName(value); return *this;}
+    inline const Aws::String& GetUserName() const { return m_userName; }
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    CreateKxUserResult& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,62 +50,59 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
-    inline const Aws::String& GetUserArn() const{ return m_userArn; }
-    inline void SetUserArn(const Aws::String& value) { m_userArn = value; }
-    inline void SetUserArn(Aws::String&& value) { m_userArn = std::move(value); }
-    inline void SetUserArn(const char* value) { m_userArn.assign(value); }
-    inline CreateKxUserResult& WithUserArn(const Aws::String& value) { SetUserArn(value); return *this;}
-    inline CreateKxUserResult& WithUserArn(Aws::String&& value) { SetUserArn(std::move(value)); return *this;}
-    inline CreateKxUserResult& WithUserArn(const char* value) { SetUserArn(value); return *this;}
+    inline const Aws::String& GetUserArn() const { return m_userArn; }
+    template<typename UserArnT = Aws::String>
+    void SetUserArn(UserArnT&& value) { m_userArnHasBeenSet = true; m_userArn = std::forward<UserArnT>(value); }
+    template<typename UserArnT = Aws::String>
+    CreateKxUserResult& WithUserArn(UserArnT&& value) { SetUserArn(std::forward<UserArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the kdb environment.</p>
      */
-    inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
-    inline void SetEnvironmentId(const Aws::String& value) { m_environmentId = value; }
-    inline void SetEnvironmentId(Aws::String&& value) { m_environmentId = std::move(value); }
-    inline void SetEnvironmentId(const char* value) { m_environmentId.assign(value); }
-    inline CreateKxUserResult& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
-    inline CreateKxUserResult& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
-    inline CreateKxUserResult& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+    inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
+    template<typename EnvironmentIdT = Aws::String>
+    void SetEnvironmentId(EnvironmentIdT&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::forward<EnvironmentIdT>(value); }
+    template<typename EnvironmentIdT = Aws::String>
+    CreateKxUserResult& WithEnvironmentId(EnvironmentIdT&& value) { SetEnvironmentId(std::forward<EnvironmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IAM role ARN that will be associated with the user.</p>
      */
-    inline const Aws::String& GetIamRole() const{ return m_iamRole; }
-    inline void SetIamRole(const Aws::String& value) { m_iamRole = value; }
-    inline void SetIamRole(Aws::String&& value) { m_iamRole = std::move(value); }
-    inline void SetIamRole(const char* value) { m_iamRole.assign(value); }
-    inline CreateKxUserResult& WithIamRole(const Aws::String& value) { SetIamRole(value); return *this;}
-    inline CreateKxUserResult& WithIamRole(Aws::String&& value) { SetIamRole(std::move(value)); return *this;}
-    inline CreateKxUserResult& WithIamRole(const char* value) { SetIamRole(value); return *this;}
+    inline const Aws::String& GetIamRole() const { return m_iamRole; }
+    template<typename IamRoleT = Aws::String>
+    void SetIamRole(IamRoleT&& value) { m_iamRoleHasBeenSet = true; m_iamRole = std::forward<IamRoleT>(value); }
+    template<typename IamRoleT = Aws::String>
+    CreateKxUserResult& WithIamRole(IamRoleT&& value) { SetIamRole(std::forward<IamRoleT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateKxUserResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateKxUserResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateKxUserResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateKxUserResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_userName;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_userArn;
+    bool m_userArnHasBeenSet = false;
 
     Aws::String m_environmentId;
+    bool m_environmentIdHasBeenSet = false;
 
     Aws::String m_iamRole;
+    bool m_iamRoleHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

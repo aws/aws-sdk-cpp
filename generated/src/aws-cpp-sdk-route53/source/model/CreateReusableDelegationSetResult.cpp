@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateReusableDelegationSetResult::CreateReusableDelegationSetResult()
-{
-}
-
 CreateReusableDelegationSetResult::CreateReusableDelegationSetResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ CreateReusableDelegationSetResult& CreateReusableDelegationSetResult::operator =
     if(!delegationSetNode.IsNull())
     {
       m_delegationSet = delegationSetNode;
+      m_delegationSetHasBeenSet = true;
     }
   }
 
@@ -44,12 +41,14 @@ CreateReusableDelegationSetResult& CreateReusableDelegationSetResult::operator =
   if(locationIter != headers.end())
   {
     m_location = locationIter->second;
+    m_locationHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

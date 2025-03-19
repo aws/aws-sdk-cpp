@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListCollaborationIdNamespaceAssociationsResult::ListCollaborationIdNamespaceAssociationsResult()
-{
-}
-
 ListCollaborationIdNamespaceAssociationsResult::ListCollaborationIdNamespaceAssociationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListCollaborationIdNamespaceAssociationsResult& ListCollaborationIdNamespaceAsso
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collaborationIdNamespaceAssociationSummaries"))
   {
     Aws::Utils::Array<JsonView> collaborationIdNamespaceAssociationSummariesJsonList = jsonValue.GetArray("collaborationIdNamespaceAssociationSummaries");
@@ -42,14 +37,15 @@ ListCollaborationIdNamespaceAssociationsResult& ListCollaborationIdNamespaceAsso
     {
       m_collaborationIdNamespaceAssociationSummaries.push_back(collaborationIdNamespaceAssociationSummariesJsonList[collaborationIdNamespaceAssociationSummariesIndex].AsObject());
     }
+    m_collaborationIdNamespaceAssociationSummariesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

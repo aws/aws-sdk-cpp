@@ -32,7 +32,7 @@ namespace Model
   class SubscriptionLimits
   {
   public:
-    AWS_SHIELD_API SubscriptionLimits();
+    AWS_SHIELD_API SubscriptionLimits() = default;
     AWS_SHIELD_API SubscriptionLimits(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API SubscriptionLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>Limits settings on protections for your subscription. </p>
      */
-    inline const ProtectionLimits& GetProtectionLimits() const{ return m_protectionLimits; }
+    inline const ProtectionLimits& GetProtectionLimits() const { return m_protectionLimits; }
     inline bool ProtectionLimitsHasBeenSet() const { return m_protectionLimitsHasBeenSet; }
-    inline void SetProtectionLimits(const ProtectionLimits& value) { m_protectionLimitsHasBeenSet = true; m_protectionLimits = value; }
-    inline void SetProtectionLimits(ProtectionLimits&& value) { m_protectionLimitsHasBeenSet = true; m_protectionLimits = std::move(value); }
-    inline SubscriptionLimits& WithProtectionLimits(const ProtectionLimits& value) { SetProtectionLimits(value); return *this;}
-    inline SubscriptionLimits& WithProtectionLimits(ProtectionLimits&& value) { SetProtectionLimits(std::move(value)); return *this;}
+    template<typename ProtectionLimitsT = ProtectionLimits>
+    void SetProtectionLimits(ProtectionLimitsT&& value) { m_protectionLimitsHasBeenSet = true; m_protectionLimits = std::forward<ProtectionLimitsT>(value); }
+    template<typename ProtectionLimitsT = ProtectionLimits>
+    SubscriptionLimits& WithProtectionLimits(ProtectionLimitsT&& value) { SetProtectionLimits(std::forward<ProtectionLimitsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Limits settings on protection groups for your subscription. </p>
      */
-    inline const ProtectionGroupLimits& GetProtectionGroupLimits() const{ return m_protectionGroupLimits; }
+    inline const ProtectionGroupLimits& GetProtectionGroupLimits() const { return m_protectionGroupLimits; }
     inline bool ProtectionGroupLimitsHasBeenSet() const { return m_protectionGroupLimitsHasBeenSet; }
-    inline void SetProtectionGroupLimits(const ProtectionGroupLimits& value) { m_protectionGroupLimitsHasBeenSet = true; m_protectionGroupLimits = value; }
-    inline void SetProtectionGroupLimits(ProtectionGroupLimits&& value) { m_protectionGroupLimitsHasBeenSet = true; m_protectionGroupLimits = std::move(value); }
-    inline SubscriptionLimits& WithProtectionGroupLimits(const ProtectionGroupLimits& value) { SetProtectionGroupLimits(value); return *this;}
-    inline SubscriptionLimits& WithProtectionGroupLimits(ProtectionGroupLimits&& value) { SetProtectionGroupLimits(std::move(value)); return *this;}
+    template<typename ProtectionGroupLimitsT = ProtectionGroupLimits>
+    void SetProtectionGroupLimits(ProtectionGroupLimitsT&& value) { m_protectionGroupLimitsHasBeenSet = true; m_protectionGroupLimits = std::forward<ProtectionGroupLimitsT>(value); }
+    template<typename ProtectionGroupLimitsT = ProtectionGroupLimits>
+    SubscriptionLimits& WithProtectionGroupLimits(ProtectionGroupLimitsT&& value) { SetProtectionGroupLimits(std::forward<ProtectionGroupLimitsT>(value)); return *this;}
     ///@}
   private:
 

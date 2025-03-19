@@ -12,15 +12,6 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAssessmentFrameworkShareRequest::UpdateAssessmentFrameworkShareRequest() : 
-    m_requestIdHasBeenSet(false),
-    m_requestType(ShareRequestType::NOT_SET),
-    m_requestTypeHasBeenSet(false),
-    m_action(ShareRequestAction::NOT_SET),
-    m_actionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAssessmentFrameworkShareRequest::SerializePayload() const
 {
   JsonValue payload;

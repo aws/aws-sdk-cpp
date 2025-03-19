@@ -36,7 +36,7 @@ namespace Model
   class InvocationSummary
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API InvocationSummary();
+    AWS_BEDROCKAGENTRUNTIME_API InvocationSummary() = default;
     AWS_BEDROCKAGENTRUNTIME_API InvocationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API InvocationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,44 +46,40 @@ namespace Model
     /**
      * <p>The timestamp for when the invocation was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline InvocationSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline InvocationSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    InvocationSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the invocation in UUID format.</p>
      */
-    inline const Aws::String& GetInvocationId() const{ return m_invocationId; }
+    inline const Aws::String& GetInvocationId() const { return m_invocationId; }
     inline bool InvocationIdHasBeenSet() const { return m_invocationIdHasBeenSet; }
-    inline void SetInvocationId(const Aws::String& value) { m_invocationIdHasBeenSet = true; m_invocationId = value; }
-    inline void SetInvocationId(Aws::String&& value) { m_invocationIdHasBeenSet = true; m_invocationId = std::move(value); }
-    inline void SetInvocationId(const char* value) { m_invocationIdHasBeenSet = true; m_invocationId.assign(value); }
-    inline InvocationSummary& WithInvocationId(const Aws::String& value) { SetInvocationId(value); return *this;}
-    inline InvocationSummary& WithInvocationId(Aws::String&& value) { SetInvocationId(std::move(value)); return *this;}
-    inline InvocationSummary& WithInvocationId(const char* value) { SetInvocationId(value); return *this;}
+    template<typename InvocationIdT = Aws::String>
+    void SetInvocationId(InvocationIdT&& value) { m_invocationIdHasBeenSet = true; m_invocationId = std::forward<InvocationIdT>(value); }
+    template<typename InvocationIdT = Aws::String>
+    InvocationSummary& WithInvocationId(InvocationIdT&& value) { SetInvocationId(std::forward<InvocationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the session associated with the invocation.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline InvocationSummary& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline InvocationSummary& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline InvocationSummary& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    InvocationSummary& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_invocationId;

@@ -18,13 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-LambdaEffectiveRecommendationPreferences::LambdaEffectiveRecommendationPreferences() : 
-    m_savingsEstimationModeHasBeenSet(false)
-{
-}
-
 LambdaEffectiveRecommendationPreferences::LambdaEffectiveRecommendationPreferences(JsonView jsonValue)
-  : LambdaEffectiveRecommendationPreferences()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LambdaEffectiveRecommendationPreferences& LambdaEffectiveRecommendationPreferenc
   if(jsonValue.ValueExists("savingsEstimationMode"))
   {
     m_savingsEstimationMode = jsonValue.GetObject("savingsEstimationMode");
-
     m_savingsEstimationModeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class OfferLastModifiedDateFilter
   {
   public:
-    AWS_MARKETPLACECATALOG_API OfferLastModifiedDateFilter();
+    AWS_MARKETPLACECATALOG_API OfferLastModifiedDateFilter() = default;
     AWS_MARKETPLACECATALOG_API OfferLastModifiedDateFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API OfferLastModifiedDateFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Allows filtering on the <code>LastModifiedDate</code> of an offer with date
      * range as input.</p>
      */
-    inline const OfferLastModifiedDateFilterDateRange& GetDateRange() const{ return m_dateRange; }
+    inline const OfferLastModifiedDateFilterDateRange& GetDateRange() const { return m_dateRange; }
     inline bool DateRangeHasBeenSet() const { return m_dateRangeHasBeenSet; }
-    inline void SetDateRange(const OfferLastModifiedDateFilterDateRange& value) { m_dateRangeHasBeenSet = true; m_dateRange = value; }
-    inline void SetDateRange(OfferLastModifiedDateFilterDateRange&& value) { m_dateRangeHasBeenSet = true; m_dateRange = std::move(value); }
-    inline OfferLastModifiedDateFilter& WithDateRange(const OfferLastModifiedDateFilterDateRange& value) { SetDateRange(value); return *this;}
-    inline OfferLastModifiedDateFilter& WithDateRange(OfferLastModifiedDateFilterDateRange&& value) { SetDateRange(std::move(value)); return *this;}
+    template<typename DateRangeT = OfferLastModifiedDateFilterDateRange>
+    void SetDateRange(DateRangeT&& value) { m_dateRangeHasBeenSet = true; m_dateRange = std::forward<DateRangeT>(value); }
+    template<typename DateRangeT = OfferLastModifiedDateFilterDateRange>
+    OfferLastModifiedDateFilter& WithDateRange(DateRangeT&& value) { SetDateRange(std::forward<DateRangeT>(value)); return *this;}
     ///@}
   private:
 

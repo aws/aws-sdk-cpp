@@ -33,7 +33,7 @@ namespace Model
   class TimeSeriesForecastingSettings
   {
   public:
-    AWS_SAGEMAKER_API TimeSeriesForecastingSettings();
+    AWS_SAGEMAKER_API TimeSeriesForecastingSettings() = default;
     AWS_SAGEMAKER_API TimeSeriesForecastingSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API TimeSeriesForecastingSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p>Describes whether time series forecasting is enabled or disabled in the
      * Canvas application.</p>
      */
-    inline const FeatureStatus& GetStatus() const{ return m_status; }
+    inline FeatureStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const FeatureStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(FeatureStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline TimeSeriesForecastingSettings& WithStatus(const FeatureStatus& value) { SetStatus(value); return *this;}
-    inline TimeSeriesForecastingSettings& WithStatus(FeatureStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(FeatureStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline TimeSeriesForecastingSettings& WithStatus(FeatureStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -65,18 +63,16 @@ namespace Model
      * <code>forecast.amazonaws.com</code> added in the trust relationship as a service
      * principal.</p>
      */
-    inline const Aws::String& GetAmazonForecastRoleArn() const{ return m_amazonForecastRoleArn; }
+    inline const Aws::String& GetAmazonForecastRoleArn() const { return m_amazonForecastRoleArn; }
     inline bool AmazonForecastRoleArnHasBeenSet() const { return m_amazonForecastRoleArnHasBeenSet; }
-    inline void SetAmazonForecastRoleArn(const Aws::String& value) { m_amazonForecastRoleArnHasBeenSet = true; m_amazonForecastRoleArn = value; }
-    inline void SetAmazonForecastRoleArn(Aws::String&& value) { m_amazonForecastRoleArnHasBeenSet = true; m_amazonForecastRoleArn = std::move(value); }
-    inline void SetAmazonForecastRoleArn(const char* value) { m_amazonForecastRoleArnHasBeenSet = true; m_amazonForecastRoleArn.assign(value); }
-    inline TimeSeriesForecastingSettings& WithAmazonForecastRoleArn(const Aws::String& value) { SetAmazonForecastRoleArn(value); return *this;}
-    inline TimeSeriesForecastingSettings& WithAmazonForecastRoleArn(Aws::String&& value) { SetAmazonForecastRoleArn(std::move(value)); return *this;}
-    inline TimeSeriesForecastingSettings& WithAmazonForecastRoleArn(const char* value) { SetAmazonForecastRoleArn(value); return *this;}
+    template<typename AmazonForecastRoleArnT = Aws::String>
+    void SetAmazonForecastRoleArn(AmazonForecastRoleArnT&& value) { m_amazonForecastRoleArnHasBeenSet = true; m_amazonForecastRoleArn = std::forward<AmazonForecastRoleArnT>(value); }
+    template<typename AmazonForecastRoleArnT = Aws::String>
+    TimeSeriesForecastingSettings& WithAmazonForecastRoleArn(AmazonForecastRoleArnT&& value) { SetAmazonForecastRoleArn(std::forward<AmazonForecastRoleArnT>(value)); return *this;}
     ///@}
   private:
 
-    FeatureStatus m_status;
+    FeatureStatus m_status{FeatureStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_amazonForecastRoleArn;

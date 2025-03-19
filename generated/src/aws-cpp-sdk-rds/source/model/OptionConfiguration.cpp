@@ -20,19 +20,7 @@ namespace RDS
 namespace Model
 {
 
-OptionConfiguration::OptionConfiguration() : 
-    m_optionNameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_optionVersionHasBeenSet(false),
-    m_dBSecurityGroupMembershipsHasBeenSet(false),
-    m_vpcSecurityGroupMembershipsHasBeenSet(false),
-    m_optionSettingsHasBeenSet(false)
-{
-}
-
 OptionConfiguration::OptionConfiguration(const XmlNode& xmlNode)
-  : OptionConfiguration()
 {
   *this = xmlNode;
 }
@@ -65,6 +53,7 @@ OptionConfiguration& OptionConfiguration::operator =(const XmlNode& xmlNode)
     if(!dBSecurityGroupMembershipsNode.IsNull())
     {
       XmlNode dBSecurityGroupMembershipsMember = dBSecurityGroupMembershipsNode.FirstChild("DBSecurityGroupName");
+      m_dBSecurityGroupMembershipsHasBeenSet = !dBSecurityGroupMembershipsMember.IsNull();
       while(!dBSecurityGroupMembershipsMember.IsNull())
       {
         m_dBSecurityGroupMemberships.push_back(dBSecurityGroupMembershipsMember.GetText());
@@ -77,6 +66,7 @@ OptionConfiguration& OptionConfiguration::operator =(const XmlNode& xmlNode)
     if(!vpcSecurityGroupMembershipsNode.IsNull())
     {
       XmlNode vpcSecurityGroupMembershipsMember = vpcSecurityGroupMembershipsNode.FirstChild("VpcSecurityGroupId");
+      m_vpcSecurityGroupMembershipsHasBeenSet = !vpcSecurityGroupMembershipsMember.IsNull();
       while(!vpcSecurityGroupMembershipsMember.IsNull())
       {
         m_vpcSecurityGroupMemberships.push_back(vpcSecurityGroupMembershipsMember.GetText());
@@ -89,6 +79,7 @@ OptionConfiguration& OptionConfiguration::operator =(const XmlNode& xmlNode)
     if(!optionSettingsNode.IsNull())
     {
       XmlNode optionSettingsMember = optionSettingsNode.FirstChild("OptionSetting");
+      m_optionSettingsHasBeenSet = !optionSettingsMember.IsNull();
       while(!optionSettingsMember.IsNull())
       {
         m_optionSettings.push_back(optionSettingsMember);

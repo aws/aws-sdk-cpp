@@ -18,20 +18,7 @@ namespace MigrationHubRefactorSpaces
 namespace Model
 {
 
-ApiGatewayProxySummary::ApiGatewayProxySummary() : 
-    m_apiGatewayIdHasBeenSet(false),
-    m_endpointType(ApiGatewayEndpointType::NOT_SET),
-    m_endpointTypeHasBeenSet(false),
-    m_nlbArnHasBeenSet(false),
-    m_nlbNameHasBeenSet(false),
-    m_proxyUrlHasBeenSet(false),
-    m_stageNameHasBeenSet(false),
-    m_vpcLinkIdHasBeenSet(false)
-{
-}
-
 ApiGatewayProxySummary::ApiGatewayProxySummary(JsonView jsonValue)
-  : ApiGatewayProxySummary()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ ApiGatewayProxySummary& ApiGatewayProxySummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApiGatewayId"))
   {
     m_apiGatewayId = jsonValue.GetString("ApiGatewayId");
-
     m_apiGatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointType"))
   {
     m_endpointType = ApiGatewayEndpointTypeMapper::GetApiGatewayEndpointTypeForName(jsonValue.GetString("EndpointType"));
-
     m_endpointTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NlbArn"))
   {
     m_nlbArn = jsonValue.GetString("NlbArn");
-
     m_nlbArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NlbName"))
   {
     m_nlbName = jsonValue.GetString("NlbName");
-
     m_nlbNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProxyUrl"))
   {
     m_proxyUrl = jsonValue.GetString("ProxyUrl");
-
     m_proxyUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StageName"))
   {
     m_stageName = jsonValue.GetString("StageName");
-
     m_stageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcLinkId"))
   {
     m_vpcLinkId = jsonValue.GetString("VpcLinkId");
-
     m_vpcLinkIdHasBeenSet = true;
   }
-
   return *this;
 }
 

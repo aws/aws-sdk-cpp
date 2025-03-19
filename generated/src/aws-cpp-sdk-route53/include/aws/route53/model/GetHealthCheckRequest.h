@@ -25,7 +25,7 @@ namespace Model
   class GetHealthCheckRequest : public Route53Request
   {
   public:
-    AWS_ROUTE53_API GetHealthCheckRequest();
+    AWS_ROUTE53_API GetHealthCheckRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * specify which health check to use. The value can be up to 64 characters
      * long.</p>
      */
-    inline const Aws::String& GetHealthCheckId() const{ return m_healthCheckId; }
+    inline const Aws::String& GetHealthCheckId() const { return m_healthCheckId; }
     inline bool HealthCheckIdHasBeenSet() const { return m_healthCheckIdHasBeenSet; }
-    inline void SetHealthCheckId(const Aws::String& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = value; }
-    inline void SetHealthCheckId(Aws::String&& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = std::move(value); }
-    inline void SetHealthCheckId(const char* value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId.assign(value); }
-    inline GetHealthCheckRequest& WithHealthCheckId(const Aws::String& value) { SetHealthCheckId(value); return *this;}
-    inline GetHealthCheckRequest& WithHealthCheckId(Aws::String&& value) { SetHealthCheckId(std::move(value)); return *this;}
-    inline GetHealthCheckRequest& WithHealthCheckId(const char* value) { SetHealthCheckId(value); return *this;}
+    template<typename HealthCheckIdT = Aws::String>
+    void SetHealthCheckId(HealthCheckIdT&& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = std::forward<HealthCheckIdT>(value); }
+    template<typename HealthCheckIdT = Aws::String>
+    GetHealthCheckRequest& WithHealthCheckId(HealthCheckIdT&& value) { SetHealthCheckId(std::forward<HealthCheckIdT>(value)); return *this;}
     ///@}
   private:
 

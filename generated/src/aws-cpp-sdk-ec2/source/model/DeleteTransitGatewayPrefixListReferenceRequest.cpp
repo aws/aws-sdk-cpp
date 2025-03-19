@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteTransitGatewayPrefixListReferenceRequest::DeleteTransitGatewayPrefixListReferenceRequest() : 
-    m_transitGatewayRouteTableIdHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTransitGatewayPrefixListReferenceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AmazonElasticsearchParameters::AmazonElasticsearchParameters() : 
-    m_domainHasBeenSet(false)
-{
-}
-
 AmazonElasticsearchParameters::AmazonElasticsearchParameters(JsonView jsonValue)
-  : AmazonElasticsearchParameters()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AmazonElasticsearchParameters& AmazonElasticsearchParameters::operator =(JsonVie
   if(jsonValue.ValueExists("Domain"))
   {
     m_domain = jsonValue.GetString("Domain");
-
     m_domainHasBeenSet = true;
   }
-
   return *this;
 }
 

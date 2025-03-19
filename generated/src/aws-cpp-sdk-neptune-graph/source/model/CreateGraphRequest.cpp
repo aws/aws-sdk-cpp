@@ -12,22 +12,6 @@ using namespace Aws::NeptuneGraph::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateGraphRequest::CreateGraphRequest() : 
-    m_graphNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_publicConnectivity(false),
-    m_publicConnectivityHasBeenSet(false),
-    m_kmsKeyIdentifierHasBeenSet(false),
-    m_vectorSearchConfigurationHasBeenSet(false),
-    m_replicaCount(0),
-    m_replicaCountHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false),
-    m_provisionedMemory(0),
-    m_provisionedMemoryHasBeenSet(false)
-{
-}
-
 Aws::String CreateGraphRequest::SerializePayload() const
 {
   JsonValue payload;

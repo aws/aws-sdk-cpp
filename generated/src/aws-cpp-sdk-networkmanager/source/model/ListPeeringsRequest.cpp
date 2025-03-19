@@ -15,19 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListPeeringsRequest::ListPeeringsRequest() : 
-    m_coreNetworkIdHasBeenSet(false),
-    m_peeringType(PeeringType::NOT_SET),
-    m_peeringTypeHasBeenSet(false),
-    m_edgeLocationHasBeenSet(false),
-    m_state(PeeringState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListPeeringsRequest::SerializePayload() const
 {
   return {};

@@ -12,16 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateQualificationWithWorkerRequest::AssociateQualificationWithWorkerRequest() : 
-    m_qualificationTypeIdHasBeenSet(false),
-    m_workerIdHasBeenSet(false),
-    m_integerValue(0),
-    m_integerValueHasBeenSet(false),
-    m_sendNotification(false),
-    m_sendNotificationHasBeenSet(false)
-{
-}
-
 Aws::String AssociateQualificationWithWorkerRequest::SerializePayload() const
 {
   JsonValue payload;

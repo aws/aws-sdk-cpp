@@ -42,7 +42,7 @@ namespace Model
   class TumblingWindow
   {
   public:
-    AWS_IOTSITEWISE_API TumblingWindow();
+    AWS_IOTSITEWISE_API TumblingWindow() = default;
     AWS_IOTSITEWISE_API TumblingWindow(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API TumblingWindow& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,14 +59,12 @@ namespace Model
      * interval is inclusive. IoT SiteWise places the computed data point at the end of
      * the interval.</p>
      */
-    inline const Aws::String& GetInterval() const{ return m_interval; }
+    inline const Aws::String& GetInterval() const { return m_interval; }
     inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
-    inline void SetInterval(const Aws::String& value) { m_intervalHasBeenSet = true; m_interval = value; }
-    inline void SetInterval(Aws::String&& value) { m_intervalHasBeenSet = true; m_interval = std::move(value); }
-    inline void SetInterval(const char* value) { m_intervalHasBeenSet = true; m_interval.assign(value); }
-    inline TumblingWindow& WithInterval(const Aws::String& value) { SetInterval(value); return *this;}
-    inline TumblingWindow& WithInterval(Aws::String&& value) { SetInterval(std::move(value)); return *this;}
-    inline TumblingWindow& WithInterval(const char* value) { SetInterval(value); return *this;}
+    template<typename IntervalT = Aws::String>
+    void SetInterval(IntervalT&& value) { m_intervalHasBeenSet = true; m_interval = std::forward<IntervalT>(value); }
+    template<typename IntervalT = Aws::String>
+    TumblingWindow& WithInterval(IntervalT&& value) { SetInterval(std::forward<IntervalT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +96,12 @@ namespace Model
      * metric after 6 PM (PST), you get the first aggregation result at 6 PM (PST) the
      * next day.</p> </li> </ul> </li> </ul>
      */
-    inline const Aws::String& GetOffset() const{ return m_offset; }
+    inline const Aws::String& GetOffset() const { return m_offset; }
     inline bool OffsetHasBeenSet() const { return m_offsetHasBeenSet; }
-    inline void SetOffset(const Aws::String& value) { m_offsetHasBeenSet = true; m_offset = value; }
-    inline void SetOffset(Aws::String&& value) { m_offsetHasBeenSet = true; m_offset = std::move(value); }
-    inline void SetOffset(const char* value) { m_offsetHasBeenSet = true; m_offset.assign(value); }
-    inline TumblingWindow& WithOffset(const Aws::String& value) { SetOffset(value); return *this;}
-    inline TumblingWindow& WithOffset(Aws::String&& value) { SetOffset(std::move(value)); return *this;}
-    inline TumblingWindow& WithOffset(const char* value) { SetOffset(value); return *this;}
+    template<typename OffsetT = Aws::String>
+    void SetOffset(OffsetT&& value) { m_offsetHasBeenSet = true; m_offset = std::forward<OffsetT>(value); }
+    template<typename OffsetT = Aws::String>
+    TumblingWindow& WithOffset(OffsetT&& value) { SetOffset(std::forward<OffsetT>(value)); return *this;}
     ///@}
   private:
 

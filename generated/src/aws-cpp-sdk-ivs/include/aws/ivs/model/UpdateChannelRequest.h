@@ -26,7 +26,7 @@ namespace Model
   class UpdateChannelRequest : public IVSRequest
   {
   public:
-    AWS_IVS_API UpdateChannelRequest();
+    AWS_IVS_API UpdateChannelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,21 +41,19 @@ namespace Model
     /**
      * <p>ARN of the channel to be updated.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline UpdateChannelRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateChannelRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateChannelRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateChannelRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether the channel is private (enabled for playback authorization).</p>
      */
-    inline bool GetAuthorized() const{ return m_authorized; }
+    inline bool GetAuthorized() const { return m_authorized; }
     inline bool AuthorizedHasBeenSet() const { return m_authorizedHasBeenSet; }
     inline void SetAuthorized(bool value) { m_authorizedHasBeenSet = true; m_authorized = value; }
     inline UpdateChannelRequest& WithAuthorized(bool value) { SetAuthorized(value); return *this;}
@@ -70,12 +68,10 @@ namespace Model
      * be set to <code>TS</code> or <code>FRAGMENTED_MP4</code>. Default:
      * <code>TS</code>.</p>
      */
-    inline const ContainerFormat& GetContainerFormat() const{ return m_containerFormat; }
+    inline ContainerFormat GetContainerFormat() const { return m_containerFormat; }
     inline bool ContainerFormatHasBeenSet() const { return m_containerFormatHasBeenSet; }
-    inline void SetContainerFormat(const ContainerFormat& value) { m_containerFormatHasBeenSet = true; m_containerFormat = value; }
-    inline void SetContainerFormat(ContainerFormat&& value) { m_containerFormatHasBeenSet = true; m_containerFormat = std::move(value); }
-    inline UpdateChannelRequest& WithContainerFormat(const ContainerFormat& value) { SetContainerFormat(value); return *this;}
-    inline UpdateChannelRequest& WithContainerFormat(ContainerFormat&& value) { SetContainerFormat(std::move(value)); return *this;}
+    inline void SetContainerFormat(ContainerFormat value) { m_containerFormatHasBeenSet = true; m_containerFormat = value; }
+    inline UpdateChannelRequest& WithContainerFormat(ContainerFormat value) { SetContainerFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -83,7 +79,7 @@ namespace Model
      * <p>Whether the channel allows insecure RTMP and SRT ingest. Default:
      * <code>false</code>.</p>
      */
-    inline bool GetInsecureIngest() const{ return m_insecureIngest; }
+    inline bool GetInsecureIngest() const { return m_insecureIngest; }
     inline bool InsecureIngestHasBeenSet() const { return m_insecureIngestHasBeenSet; }
     inline void SetInsecureIngest(bool value) { m_insecureIngestHasBeenSet = true; m_insecureIngest = value; }
     inline UpdateChannelRequest& WithInsecureIngest(bool value) { SetInsecureIngest(value); return *this;}
@@ -95,12 +91,10 @@ namespace Model
      * video up to Full HD. Use <code>LOW</code> for near-real-time interaction with
      * viewers.</p>
      */
-    inline const ChannelLatencyMode& GetLatencyMode() const{ return m_latencyMode; }
+    inline ChannelLatencyMode GetLatencyMode() const { return m_latencyMode; }
     inline bool LatencyModeHasBeenSet() const { return m_latencyModeHasBeenSet; }
-    inline void SetLatencyMode(const ChannelLatencyMode& value) { m_latencyModeHasBeenSet = true; m_latencyMode = value; }
-    inline void SetLatencyMode(ChannelLatencyMode&& value) { m_latencyModeHasBeenSet = true; m_latencyMode = std::move(value); }
-    inline UpdateChannelRequest& WithLatencyMode(const ChannelLatencyMode& value) { SetLatencyMode(value); return *this;}
-    inline UpdateChannelRequest& WithLatencyMode(ChannelLatencyMode&& value) { SetLatencyMode(std::move(value)); return *this;}
+    inline void SetLatencyMode(ChannelLatencyMode value) { m_latencyModeHasBeenSet = true; m_latencyMode = value; }
+    inline UpdateChannelRequest& WithLatencyMode(ChannelLatencyMode value) { SetLatencyMode(value); return *this;}
     ///@}
 
     ///@{
@@ -108,26 +102,24 @@ namespace Model
      * <p>Object specifying multitrack input configuration. Default: no multitrack
      * input configuration is specified.</p>
      */
-    inline const MultitrackInputConfiguration& GetMultitrackInputConfiguration() const{ return m_multitrackInputConfiguration; }
+    inline const MultitrackInputConfiguration& GetMultitrackInputConfiguration() const { return m_multitrackInputConfiguration; }
     inline bool MultitrackInputConfigurationHasBeenSet() const { return m_multitrackInputConfigurationHasBeenSet; }
-    inline void SetMultitrackInputConfiguration(const MultitrackInputConfiguration& value) { m_multitrackInputConfigurationHasBeenSet = true; m_multitrackInputConfiguration = value; }
-    inline void SetMultitrackInputConfiguration(MultitrackInputConfiguration&& value) { m_multitrackInputConfigurationHasBeenSet = true; m_multitrackInputConfiguration = std::move(value); }
-    inline UpdateChannelRequest& WithMultitrackInputConfiguration(const MultitrackInputConfiguration& value) { SetMultitrackInputConfiguration(value); return *this;}
-    inline UpdateChannelRequest& WithMultitrackInputConfiguration(MultitrackInputConfiguration&& value) { SetMultitrackInputConfiguration(std::move(value)); return *this;}
+    template<typename MultitrackInputConfigurationT = MultitrackInputConfiguration>
+    void SetMultitrackInputConfiguration(MultitrackInputConfigurationT&& value) { m_multitrackInputConfigurationHasBeenSet = true; m_multitrackInputConfiguration = std::forward<MultitrackInputConfigurationT>(value); }
+    template<typename MultitrackInputConfigurationT = MultitrackInputConfiguration>
+    UpdateChannelRequest& WithMultitrackInputConfiguration(MultitrackInputConfigurationT&& value) { SetMultitrackInputConfiguration(std::forward<MultitrackInputConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Channel name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateChannelRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateChannelRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateChannelRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateChannelRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,14 +128,12 @@ namespace Model
      * ARN and enables playback restriction. If this is set to an empty string,
      * playback restriction policy is disabled.</p>
      */
-    inline const Aws::String& GetPlaybackRestrictionPolicyArn() const{ return m_playbackRestrictionPolicyArn; }
+    inline const Aws::String& GetPlaybackRestrictionPolicyArn() const { return m_playbackRestrictionPolicyArn; }
     inline bool PlaybackRestrictionPolicyArnHasBeenSet() const { return m_playbackRestrictionPolicyArnHasBeenSet; }
-    inline void SetPlaybackRestrictionPolicyArn(const Aws::String& value) { m_playbackRestrictionPolicyArnHasBeenSet = true; m_playbackRestrictionPolicyArn = value; }
-    inline void SetPlaybackRestrictionPolicyArn(Aws::String&& value) { m_playbackRestrictionPolicyArnHasBeenSet = true; m_playbackRestrictionPolicyArn = std::move(value); }
-    inline void SetPlaybackRestrictionPolicyArn(const char* value) { m_playbackRestrictionPolicyArnHasBeenSet = true; m_playbackRestrictionPolicyArn.assign(value); }
-    inline UpdateChannelRequest& WithPlaybackRestrictionPolicyArn(const Aws::String& value) { SetPlaybackRestrictionPolicyArn(value); return *this;}
-    inline UpdateChannelRequest& WithPlaybackRestrictionPolicyArn(Aws::String&& value) { SetPlaybackRestrictionPolicyArn(std::move(value)); return *this;}
-    inline UpdateChannelRequest& WithPlaybackRestrictionPolicyArn(const char* value) { SetPlaybackRestrictionPolicyArn(value); return *this;}
+    template<typename PlaybackRestrictionPolicyArnT = Aws::String>
+    void SetPlaybackRestrictionPolicyArn(PlaybackRestrictionPolicyArnT&& value) { m_playbackRestrictionPolicyArnHasBeenSet = true; m_playbackRestrictionPolicyArn = std::forward<PlaybackRestrictionPolicyArnT>(value); }
+    template<typename PlaybackRestrictionPolicyArnT = Aws::String>
+    UpdateChannelRequest& WithPlaybackRestrictionPolicyArn(PlaybackRestrictionPolicyArnT&& value) { SetPlaybackRestrictionPolicyArn(std::forward<PlaybackRestrictionPolicyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -155,12 +145,10 @@ namespace Model
      * (<code>BASIC</code> and <code>STANDARD</code>), <code>preset</code> is the empty
      * string (<code>""</code>).</p>
      */
-    inline const TranscodePreset& GetPreset() const{ return m_preset; }
+    inline TranscodePreset GetPreset() const { return m_preset; }
     inline bool PresetHasBeenSet() const { return m_presetHasBeenSet; }
-    inline void SetPreset(const TranscodePreset& value) { m_presetHasBeenSet = true; m_preset = value; }
-    inline void SetPreset(TranscodePreset&& value) { m_presetHasBeenSet = true; m_preset = std::move(value); }
-    inline UpdateChannelRequest& WithPreset(const TranscodePreset& value) { SetPreset(value); return *this;}
-    inline UpdateChannelRequest& WithPreset(TranscodePreset&& value) { SetPreset(std::move(value)); return *this;}
+    inline void SetPreset(TranscodePreset value) { m_presetHasBeenSet = true; m_preset = value; }
+    inline UpdateChannelRequest& WithPreset(TranscodePreset value) { SetPreset(value); return *this;}
     ///@}
 
     ///@{
@@ -169,14 +157,12 @@ namespace Model
      * and enables recording. If this is set to an empty string, recording is
      * disabled.</p>
      */
-    inline const Aws::String& GetRecordingConfigurationArn() const{ return m_recordingConfigurationArn; }
+    inline const Aws::String& GetRecordingConfigurationArn() const { return m_recordingConfigurationArn; }
     inline bool RecordingConfigurationArnHasBeenSet() const { return m_recordingConfigurationArnHasBeenSet; }
-    inline void SetRecordingConfigurationArn(const Aws::String& value) { m_recordingConfigurationArnHasBeenSet = true; m_recordingConfigurationArn = value; }
-    inline void SetRecordingConfigurationArn(Aws::String&& value) { m_recordingConfigurationArnHasBeenSet = true; m_recordingConfigurationArn = std::move(value); }
-    inline void SetRecordingConfigurationArn(const char* value) { m_recordingConfigurationArnHasBeenSet = true; m_recordingConfigurationArn.assign(value); }
-    inline UpdateChannelRequest& WithRecordingConfigurationArn(const Aws::String& value) { SetRecordingConfigurationArn(value); return *this;}
-    inline UpdateChannelRequest& WithRecordingConfigurationArn(Aws::String&& value) { SetRecordingConfigurationArn(std::move(value)); return *this;}
-    inline UpdateChannelRequest& WithRecordingConfigurationArn(const char* value) { SetRecordingConfigurationArn(value); return *this;}
+    template<typename RecordingConfigurationArnT = Aws::String>
+    void SetRecordingConfigurationArn(RecordingConfigurationArnT&& value) { m_recordingConfigurationArnHasBeenSet = true; m_recordingConfigurationArn = std::forward<RecordingConfigurationArnT>(value); }
+    template<typename RecordingConfigurationArnT = Aws::String>
+    UpdateChannelRequest& WithRecordingConfigurationArn(RecordingConfigurationArnT&& value) { SetRecordingConfigurationArn(std::forward<RecordingConfigurationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -187,28 +173,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/ivs/latest/LowLatencyAPIReference/channel-types.html">Channel
      * Types</a>.</p>
      */
-    inline const ChannelType& GetType() const{ return m_type; }
+    inline ChannelType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ChannelType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ChannelType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline UpdateChannelRequest& WithType(const ChannelType& value) { SetType(value); return *this;}
-    inline UpdateChannelRequest& WithType(ChannelType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ChannelType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline UpdateChannelRequest& WithType(ChannelType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    bool m_authorized;
+    bool m_authorized{false};
     bool m_authorizedHasBeenSet = false;
 
-    ContainerFormat m_containerFormat;
+    ContainerFormat m_containerFormat{ContainerFormat::NOT_SET};
     bool m_containerFormatHasBeenSet = false;
 
-    bool m_insecureIngest;
+    bool m_insecureIngest{false};
     bool m_insecureIngestHasBeenSet = false;
 
-    ChannelLatencyMode m_latencyMode;
+    ChannelLatencyMode m_latencyMode{ChannelLatencyMode::NOT_SET};
     bool m_latencyModeHasBeenSet = false;
 
     MultitrackInputConfiguration m_multitrackInputConfiguration;
@@ -220,13 +204,13 @@ namespace Model
     Aws::String m_playbackRestrictionPolicyArn;
     bool m_playbackRestrictionPolicyArnHasBeenSet = false;
 
-    TranscodePreset m_preset;
+    TranscodePreset m_preset{TranscodePreset::NOT_SET};
     bool m_presetHasBeenSet = false;
 
     Aws::String m_recordingConfigurationArn;
     bool m_recordingConfigurationArnHasBeenSet = false;
 
-    ChannelType m_type;
+    ChannelType m_type{ChannelType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

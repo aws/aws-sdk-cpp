@@ -20,24 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpcBlockPublicAccessOptions::VpcBlockPublicAccessOptions() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_state(VpcBlockPublicAccessState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_internetGatewayBlockMode(InternetGatewayBlockMode::NOT_SET),
-    m_internetGatewayBlockModeHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_lastUpdateTimestampHasBeenSet(false),
-    m_managedBy(ManagedBy::NOT_SET),
-    m_managedByHasBeenSet(false),
-    m_exclusionsAllowed(VpcBlockPublicAccessExclusionsAllowed::NOT_SET),
-    m_exclusionsAllowedHasBeenSet(false)
-{
-}
-
 VpcBlockPublicAccessOptions::VpcBlockPublicAccessOptions(const XmlNode& xmlNode)
-  : VpcBlockPublicAccessOptions()
 {
   *this = xmlNode;
 }
@@ -63,13 +46,13 @@ VpcBlockPublicAccessOptions& VpcBlockPublicAccessOptions::operator =(const XmlNo
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = VpcBlockPublicAccessStateMapper::GetVpcBlockPublicAccessStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = VpcBlockPublicAccessStateMapper::GetVpcBlockPublicAccessStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode internetGatewayBlockModeNode = resultNode.FirstChild("internetGatewayBlockMode");
     if(!internetGatewayBlockModeNode.IsNull())
     {
-      m_internetGatewayBlockMode = InternetGatewayBlockModeMapper::GetInternetGatewayBlockModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(internetGatewayBlockModeNode.GetText()).c_str()).c_str());
+      m_internetGatewayBlockMode = InternetGatewayBlockModeMapper::GetInternetGatewayBlockModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(internetGatewayBlockModeNode.GetText()).c_str()));
       m_internetGatewayBlockModeHasBeenSet = true;
     }
     XmlNode reasonNode = resultNode.FirstChild("reason");
@@ -87,13 +70,13 @@ VpcBlockPublicAccessOptions& VpcBlockPublicAccessOptions::operator =(const XmlNo
     XmlNode managedByNode = resultNode.FirstChild("managedBy");
     if(!managedByNode.IsNull())
     {
-      m_managedBy = ManagedByMapper::GetManagedByForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(managedByNode.GetText()).c_str()).c_str());
+      m_managedBy = ManagedByMapper::GetManagedByForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(managedByNode.GetText()).c_str()));
       m_managedByHasBeenSet = true;
     }
     XmlNode exclusionsAllowedNode = resultNode.FirstChild("exclusionsAllowed");
     if(!exclusionsAllowedNode.IsNull())
     {
-      m_exclusionsAllowed = VpcBlockPublicAccessExclusionsAllowedMapper::GetVpcBlockPublicAccessExclusionsAllowedForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(exclusionsAllowedNode.GetText()).c_str()).c_str());
+      m_exclusionsAllowed = VpcBlockPublicAccessExclusionsAllowedMapper::GetVpcBlockPublicAccessExclusionsAllowedForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(exclusionsAllowedNode.GetText()).c_str()));
       m_exclusionsAllowedHasBeenSet = true;
     }
   }

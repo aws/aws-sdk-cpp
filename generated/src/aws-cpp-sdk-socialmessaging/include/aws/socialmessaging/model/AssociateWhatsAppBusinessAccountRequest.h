@@ -22,7 +22,7 @@ namespace Model
   class AssociateWhatsAppBusinessAccountRequest : public SocialMessagingRequest
   {
   public:
-    AWS_SOCIALMESSAGING_API AssociateWhatsAppBusinessAccountRequest();
+    AWS_SOCIALMESSAGING_API AssociateWhatsAppBusinessAccountRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,12 +37,12 @@ namespace Model
     /**
      * <p>Contains the callback access token.</p>
      */
-    inline const WhatsAppSignupCallback& GetSignupCallback() const{ return m_signupCallback; }
+    inline const WhatsAppSignupCallback& GetSignupCallback() const { return m_signupCallback; }
     inline bool SignupCallbackHasBeenSet() const { return m_signupCallbackHasBeenSet; }
-    inline void SetSignupCallback(const WhatsAppSignupCallback& value) { m_signupCallbackHasBeenSet = true; m_signupCallback = value; }
-    inline void SetSignupCallback(WhatsAppSignupCallback&& value) { m_signupCallbackHasBeenSet = true; m_signupCallback = std::move(value); }
-    inline AssociateWhatsAppBusinessAccountRequest& WithSignupCallback(const WhatsAppSignupCallback& value) { SetSignupCallback(value); return *this;}
-    inline AssociateWhatsAppBusinessAccountRequest& WithSignupCallback(WhatsAppSignupCallback&& value) { SetSignupCallback(std::move(value)); return *this;}
+    template<typename SignupCallbackT = WhatsAppSignupCallback>
+    void SetSignupCallback(SignupCallbackT&& value) { m_signupCallbackHasBeenSet = true; m_signupCallback = std::forward<SignupCallbackT>(value); }
+    template<typename SignupCallbackT = WhatsAppSignupCallback>
+    AssociateWhatsAppBusinessAccountRequest& WithSignupCallback(SignupCallbackT&& value) { SetSignupCallback(std::forward<SignupCallbackT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,12 +50,12 @@ namespace Model
      * <p>A JSON object that contains the phone numbers and WhatsApp Business Account
      * to link to your account.</p>
      */
-    inline const WhatsAppSetupFinalization& GetSetupFinalization() const{ return m_setupFinalization; }
+    inline const WhatsAppSetupFinalization& GetSetupFinalization() const { return m_setupFinalization; }
     inline bool SetupFinalizationHasBeenSet() const { return m_setupFinalizationHasBeenSet; }
-    inline void SetSetupFinalization(const WhatsAppSetupFinalization& value) { m_setupFinalizationHasBeenSet = true; m_setupFinalization = value; }
-    inline void SetSetupFinalization(WhatsAppSetupFinalization&& value) { m_setupFinalizationHasBeenSet = true; m_setupFinalization = std::move(value); }
-    inline AssociateWhatsAppBusinessAccountRequest& WithSetupFinalization(const WhatsAppSetupFinalization& value) { SetSetupFinalization(value); return *this;}
-    inline AssociateWhatsAppBusinessAccountRequest& WithSetupFinalization(WhatsAppSetupFinalization&& value) { SetSetupFinalization(std::move(value)); return *this;}
+    template<typename SetupFinalizationT = WhatsAppSetupFinalization>
+    void SetSetupFinalization(SetupFinalizationT&& value) { m_setupFinalizationHasBeenSet = true; m_setupFinalization = std::forward<SetupFinalizationT>(value); }
+    template<typename SetupFinalizationT = WhatsAppSetupFinalization>
+    AssociateWhatsAppBusinessAccountRequest& WithSetupFinalization(SetupFinalizationT&& value) { SetSetupFinalization(std::forward<SetupFinalizationT>(value)); return *this;}
     ///@}
   private:
 

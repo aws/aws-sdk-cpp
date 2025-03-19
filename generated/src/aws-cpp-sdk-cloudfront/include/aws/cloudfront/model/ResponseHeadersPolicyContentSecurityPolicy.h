@@ -35,7 +35,7 @@ namespace Model
   class ResponseHeadersPolicyContentSecurityPolicy
   {
   public:
-    AWS_CLOUDFRONT_API ResponseHeadersPolicyContentSecurityPolicy();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyContentSecurityPolicy() = default;
     AWS_CLOUDFRONT_API ResponseHeadersPolicyContentSecurityPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API ResponseHeadersPolicyContentSecurityPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,7 +48,7 @@ namespace Model
      * <code>Content-Security-Policy</code> HTTP response header received from the
      * origin with the one specified in this response headers policy.</p>
      */
-    inline bool GetOverride() const{ return m_override; }
+    inline bool GetOverride() const { return m_override; }
     inline bool OverrideHasBeenSet() const { return m_overrideHasBeenSet; }
     inline void SetOverride(bool value) { m_overrideHasBeenSet = true; m_override = value; }
     inline ResponseHeadersPolicyContentSecurityPolicy& WithOverride(bool value) { SetOverride(value); return *this;}
@@ -59,18 +59,16 @@ namespace Model
      * <p>The policy directives and their values that CloudFront includes as values for
      * the <code>Content-Security-Policy</code> HTTP response header.</p>
      */
-    inline const Aws::String& GetContentSecurityPolicy() const{ return m_contentSecurityPolicy; }
+    inline const Aws::String& GetContentSecurityPolicy() const { return m_contentSecurityPolicy; }
     inline bool ContentSecurityPolicyHasBeenSet() const { return m_contentSecurityPolicyHasBeenSet; }
-    inline void SetContentSecurityPolicy(const Aws::String& value) { m_contentSecurityPolicyHasBeenSet = true; m_contentSecurityPolicy = value; }
-    inline void SetContentSecurityPolicy(Aws::String&& value) { m_contentSecurityPolicyHasBeenSet = true; m_contentSecurityPolicy = std::move(value); }
-    inline void SetContentSecurityPolicy(const char* value) { m_contentSecurityPolicyHasBeenSet = true; m_contentSecurityPolicy.assign(value); }
-    inline ResponseHeadersPolicyContentSecurityPolicy& WithContentSecurityPolicy(const Aws::String& value) { SetContentSecurityPolicy(value); return *this;}
-    inline ResponseHeadersPolicyContentSecurityPolicy& WithContentSecurityPolicy(Aws::String&& value) { SetContentSecurityPolicy(std::move(value)); return *this;}
-    inline ResponseHeadersPolicyContentSecurityPolicy& WithContentSecurityPolicy(const char* value) { SetContentSecurityPolicy(value); return *this;}
+    template<typename ContentSecurityPolicyT = Aws::String>
+    void SetContentSecurityPolicy(ContentSecurityPolicyT&& value) { m_contentSecurityPolicyHasBeenSet = true; m_contentSecurityPolicy = std::forward<ContentSecurityPolicyT>(value); }
+    template<typename ContentSecurityPolicyT = Aws::String>
+    ResponseHeadersPolicyContentSecurityPolicy& WithContentSecurityPolicy(ContentSecurityPolicyT&& value) { SetContentSecurityPolicy(std::forward<ContentSecurityPolicyT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_override;
+    bool m_override{false};
     bool m_overrideHasBeenSet = false;
 
     Aws::String m_contentSecurityPolicy;

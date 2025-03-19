@@ -21,7 +21,7 @@ namespace Model
   class AssociateResourceSharePermissionRequest : public RAMRequest
   {
   public:
-    AWS_RAM_API AssociateResourceSharePermissionRequest();
+    AWS_RAM_API AssociateResourceSharePermissionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * Resource Name (ARN)</a> of the resource share to which you want to add or
      * replace permissions.</p>
      */
-    inline const Aws::String& GetResourceShareArn() const{ return m_resourceShareArn; }
+    inline const Aws::String& GetResourceShareArn() const { return m_resourceShareArn; }
     inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
-    inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
-    inline void SetResourceShareArn(Aws::String&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::move(value); }
-    inline void SetResourceShareArn(const char* value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn.assign(value); }
-    inline AssociateResourceSharePermissionRequest& WithResourceShareArn(const Aws::String& value) { SetResourceShareArn(value); return *this;}
-    inline AssociateResourceSharePermissionRequest& WithResourceShareArn(Aws::String&& value) { SetResourceShareArn(std::move(value)); return *this;}
-    inline AssociateResourceSharePermissionRequest& WithResourceShareArn(const char* value) { SetResourceShareArn(value); return *this;}
+    template<typename ResourceShareArnT = Aws::String>
+    void SetResourceShareArn(ResourceShareArnT&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::forward<ResourceShareArnT>(value); }
+    template<typename ResourceShareArnT = Aws::String>
+    AssociateResourceSharePermissionRequest& WithResourceShareArn(ResourceShareArnT&& value) { SetResourceShareArn(std::forward<ResourceShareArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * library</a> page in the RAM console and then choose the name of the permission.
      * The ARN is displayed on the detail page.</p>
      */
-    inline const Aws::String& GetPermissionArn() const{ return m_permissionArn; }
+    inline const Aws::String& GetPermissionArn() const { return m_permissionArn; }
     inline bool PermissionArnHasBeenSet() const { return m_permissionArnHasBeenSet; }
-    inline void SetPermissionArn(const Aws::String& value) { m_permissionArnHasBeenSet = true; m_permissionArn = value; }
-    inline void SetPermissionArn(Aws::String&& value) { m_permissionArnHasBeenSet = true; m_permissionArn = std::move(value); }
-    inline void SetPermissionArn(const char* value) { m_permissionArnHasBeenSet = true; m_permissionArn.assign(value); }
-    inline AssociateResourceSharePermissionRequest& WithPermissionArn(const Aws::String& value) { SetPermissionArn(value); return *this;}
-    inline AssociateResourceSharePermissionRequest& WithPermissionArn(Aws::String&& value) { SetPermissionArn(std::move(value)); return *this;}
-    inline AssociateResourceSharePermissionRequest& WithPermissionArn(const char* value) { SetPermissionArn(value); return *this;}
+    template<typename PermissionArnT = Aws::String>
+    void SetPermissionArn(PermissionArnT&& value) { m_permissionArnHasBeenSet = true; m_permissionArn = std::forward<PermissionArnT>(value); }
+    template<typename PermissionArnT = Aws::String>
+    AssociateResourceSharePermissionRequest& WithPermissionArn(PermissionArnT&& value) { SetPermissionArn(std::forward<PermissionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,7 +78,7 @@ namespace Model
      * <code>true</code> then the operation returns an error. This helps prevent
      * accidental overwriting of a permission.</p> 
      */
-    inline bool GetReplace() const{ return m_replace; }
+    inline bool GetReplace() const { return m_replace; }
     inline bool ReplaceHasBeenSet() const { return m_replaceHasBeenSet; }
     inline void SetReplace(bool value) { m_replaceHasBeenSet = true; m_replace = value; }
     inline AssociateResourceSharePermissionRequest& WithReplace(bool value) { SetReplace(value); return *this;}
@@ -101,14 +97,12 @@ namespace Model
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
      * <code>IdempotentParameterMismatch</code> error.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline AssociateResourceSharePermissionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline AssociateResourceSharePermissionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline AssociateResourceSharePermissionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    AssociateResourceSharePermissionRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,7 +116,7 @@ namespace Model
      * version that is currently set as the default version for the permission. This
      * parameter is supported for backwards compatibility.</p> 
      */
-    inline int GetPermissionVersion() const{ return m_permissionVersion; }
+    inline int GetPermissionVersion() const { return m_permissionVersion; }
     inline bool PermissionVersionHasBeenSet() const { return m_permissionVersionHasBeenSet; }
     inline void SetPermissionVersion(int value) { m_permissionVersionHasBeenSet = true; m_permissionVersion = value; }
     inline AssociateResourceSharePermissionRequest& WithPermissionVersion(int value) { SetPermissionVersion(value); return *this;}
@@ -135,13 +129,13 @@ namespace Model
     Aws::String m_permissionArn;
     bool m_permissionArnHasBeenSet = false;
 
-    bool m_replace;
+    bool m_replace{false};
     bool m_replaceHasBeenSet = false;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    int m_permissionVersion;
+    int m_permissionVersion{0};
     bool m_permissionVersionHasBeenSet = false;
   };
 

@@ -22,7 +22,7 @@ namespace Model
   class GetManagedEndpointSessionCredentialsRequest : public EMRContainersRequest
   {
   public:
-    AWS_EMRCONTAINERS_API GetManagedEndpointSessionCredentialsRequest();
+    AWS_EMRCONTAINERS_API GetManagedEndpointSessionCredentialsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,42 +37,36 @@ namespace Model
     /**
      * <p>The ARN of the managed endpoint for which the request is submitted. </p>
      */
-    inline const Aws::String& GetEndpointIdentifier() const{ return m_endpointIdentifier; }
+    inline const Aws::String& GetEndpointIdentifier() const { return m_endpointIdentifier; }
     inline bool EndpointIdentifierHasBeenSet() const { return m_endpointIdentifierHasBeenSet; }
-    inline void SetEndpointIdentifier(const Aws::String& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = value; }
-    inline void SetEndpointIdentifier(Aws::String&& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = std::move(value); }
-    inline void SetEndpointIdentifier(const char* value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier.assign(value); }
-    inline GetManagedEndpointSessionCredentialsRequest& WithEndpointIdentifier(const Aws::String& value) { SetEndpointIdentifier(value); return *this;}
-    inline GetManagedEndpointSessionCredentialsRequest& WithEndpointIdentifier(Aws::String&& value) { SetEndpointIdentifier(std::move(value)); return *this;}
-    inline GetManagedEndpointSessionCredentialsRequest& WithEndpointIdentifier(const char* value) { SetEndpointIdentifier(value); return *this;}
+    template<typename EndpointIdentifierT = Aws::String>
+    void SetEndpointIdentifier(EndpointIdentifierT&& value) { m_endpointIdentifierHasBeenSet = true; m_endpointIdentifier = std::forward<EndpointIdentifierT>(value); }
+    template<typename EndpointIdentifierT = Aws::String>
+    GetManagedEndpointSessionCredentialsRequest& WithEndpointIdentifier(EndpointIdentifierT&& value) { SetEndpointIdentifier(std::forward<EndpointIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the Virtual Cluster which the Managed Endpoint belongs to. </p>
      */
-    inline const Aws::String& GetVirtualClusterIdentifier() const{ return m_virtualClusterIdentifier; }
+    inline const Aws::String& GetVirtualClusterIdentifier() const { return m_virtualClusterIdentifier; }
     inline bool VirtualClusterIdentifierHasBeenSet() const { return m_virtualClusterIdentifierHasBeenSet; }
-    inline void SetVirtualClusterIdentifier(const Aws::String& value) { m_virtualClusterIdentifierHasBeenSet = true; m_virtualClusterIdentifier = value; }
-    inline void SetVirtualClusterIdentifier(Aws::String&& value) { m_virtualClusterIdentifierHasBeenSet = true; m_virtualClusterIdentifier = std::move(value); }
-    inline void SetVirtualClusterIdentifier(const char* value) { m_virtualClusterIdentifierHasBeenSet = true; m_virtualClusterIdentifier.assign(value); }
-    inline GetManagedEndpointSessionCredentialsRequest& WithVirtualClusterIdentifier(const Aws::String& value) { SetVirtualClusterIdentifier(value); return *this;}
-    inline GetManagedEndpointSessionCredentialsRequest& WithVirtualClusterIdentifier(Aws::String&& value) { SetVirtualClusterIdentifier(std::move(value)); return *this;}
-    inline GetManagedEndpointSessionCredentialsRequest& WithVirtualClusterIdentifier(const char* value) { SetVirtualClusterIdentifier(value); return *this;}
+    template<typename VirtualClusterIdentifierT = Aws::String>
+    void SetVirtualClusterIdentifier(VirtualClusterIdentifierT&& value) { m_virtualClusterIdentifierHasBeenSet = true; m_virtualClusterIdentifier = std::forward<VirtualClusterIdentifierT>(value); }
+    template<typename VirtualClusterIdentifierT = Aws::String>
+    GetManagedEndpointSessionCredentialsRequest& WithVirtualClusterIdentifier(VirtualClusterIdentifierT&& value) { SetVirtualClusterIdentifier(std::forward<VirtualClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IAM Execution Role ARN that will be used by the job run. </p>
      */
-    inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+    inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
-    inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
-    inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
-    inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
-    inline GetManagedEndpointSessionCredentialsRequest& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
-    inline GetManagedEndpointSessionCredentialsRequest& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
-    inline GetManagedEndpointSessionCredentialsRequest& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
+    template<typename ExecutionRoleArnT = Aws::String>
+    void SetExecutionRoleArn(ExecutionRoleArnT&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::forward<ExecutionRoleArnT>(value); }
+    template<typename ExecutionRoleArnT = Aws::String>
+    GetManagedEndpointSessionCredentialsRequest& WithExecutionRoleArn(ExecutionRoleArnT&& value) { SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +74,12 @@ namespace Model
      * <p>Type of the token requested. Currently supported and default value of this
      * field is “TOKEN.”</p>
      */
-    inline const Aws::String& GetCredentialType() const{ return m_credentialType; }
+    inline const Aws::String& GetCredentialType() const { return m_credentialType; }
     inline bool CredentialTypeHasBeenSet() const { return m_credentialTypeHasBeenSet; }
-    inline void SetCredentialType(const Aws::String& value) { m_credentialTypeHasBeenSet = true; m_credentialType = value; }
-    inline void SetCredentialType(Aws::String&& value) { m_credentialTypeHasBeenSet = true; m_credentialType = std::move(value); }
-    inline void SetCredentialType(const char* value) { m_credentialTypeHasBeenSet = true; m_credentialType.assign(value); }
-    inline GetManagedEndpointSessionCredentialsRequest& WithCredentialType(const Aws::String& value) { SetCredentialType(value); return *this;}
-    inline GetManagedEndpointSessionCredentialsRequest& WithCredentialType(Aws::String&& value) { SetCredentialType(std::move(value)); return *this;}
-    inline GetManagedEndpointSessionCredentialsRequest& WithCredentialType(const char* value) { SetCredentialType(value); return *this;}
+    template<typename CredentialTypeT = Aws::String>
+    void SetCredentialType(CredentialTypeT&& value) { m_credentialTypeHasBeenSet = true; m_credentialType = std::forward<CredentialTypeT>(value); }
+    template<typename CredentialTypeT = Aws::String>
+    GetManagedEndpointSessionCredentialsRequest& WithCredentialType(CredentialTypeT&& value) { SetCredentialType(std::forward<CredentialTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,7 +87,7 @@ namespace Model
      * <p>Duration in seconds for which the session token is valid. The default
      * duration is 15 minutes and the maximum is 12 hours.</p>
      */
-    inline int GetDurationInSeconds() const{ return m_durationInSeconds; }
+    inline int GetDurationInSeconds() const { return m_durationInSeconds; }
     inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }
     inline void SetDurationInSeconds(int value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
     inline GetManagedEndpointSessionCredentialsRequest& WithDurationInSeconds(int value) { SetDurationInSeconds(value); return *this;}
@@ -106,28 +98,24 @@ namespace Model
      * <p>String identifier used to separate sections of the execution logs uploaded to
      * S3.</p>
      */
-    inline const Aws::String& GetLogContext() const{ return m_logContext; }
+    inline const Aws::String& GetLogContext() const { return m_logContext; }
     inline bool LogContextHasBeenSet() const { return m_logContextHasBeenSet; }
-    inline void SetLogContext(const Aws::String& value) { m_logContextHasBeenSet = true; m_logContext = value; }
-    inline void SetLogContext(Aws::String&& value) { m_logContextHasBeenSet = true; m_logContext = std::move(value); }
-    inline void SetLogContext(const char* value) { m_logContextHasBeenSet = true; m_logContext.assign(value); }
-    inline GetManagedEndpointSessionCredentialsRequest& WithLogContext(const Aws::String& value) { SetLogContext(value); return *this;}
-    inline GetManagedEndpointSessionCredentialsRequest& WithLogContext(Aws::String&& value) { SetLogContext(std::move(value)); return *this;}
-    inline GetManagedEndpointSessionCredentialsRequest& WithLogContext(const char* value) { SetLogContext(value); return *this;}
+    template<typename LogContextT = Aws::String>
+    void SetLogContext(LogContextT&& value) { m_logContextHasBeenSet = true; m_logContext = std::forward<LogContextT>(value); }
+    template<typename LogContextT = Aws::String>
+    GetManagedEndpointSessionCredentialsRequest& WithLogContext(LogContextT&& value) { SetLogContext(std::forward<LogContextT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The client idempotency token of the job run request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline GetManagedEndpointSessionCredentialsRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline GetManagedEndpointSessionCredentialsRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline GetManagedEndpointSessionCredentialsRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    GetManagedEndpointSessionCredentialsRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -143,7 +131,7 @@ namespace Model
     Aws::String m_credentialType;
     bool m_credentialTypeHasBeenSet = false;
 
-    int m_durationInSeconds;
+    int m_durationInSeconds{0};
     bool m_durationInSecondsHasBeenSet = false;
 
     Aws::String m_logContext;

@@ -20,17 +20,7 @@ namespace SNS
 namespace Model
 {
 
-Subscription::Subscription() : 
-    m_subscriptionArnHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_topicArnHasBeenSet(false)
-{
-}
-
 Subscription::Subscription(const XmlNode& xmlNode)
-  : Subscription()
 {
   *this = xmlNode;
 }

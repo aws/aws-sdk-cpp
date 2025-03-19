@@ -12,15 +12,6 @@ using namespace Aws::AppConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEnvironmentRequest::UpdateEnvironmentRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_monitorsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEnvironmentRequest::SerializePayload() const
 {
   JsonValue payload;

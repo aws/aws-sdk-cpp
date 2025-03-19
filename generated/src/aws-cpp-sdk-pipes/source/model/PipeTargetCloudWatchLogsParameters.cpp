@@ -18,14 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-PipeTargetCloudWatchLogsParameters::PipeTargetCloudWatchLogsParameters() : 
-    m_logStreamNameHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 PipeTargetCloudWatchLogsParameters::PipeTargetCloudWatchLogsParameters(JsonView jsonValue)
-  : PipeTargetCloudWatchLogsParameters()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PipeTargetCloudWatchLogsParameters& PipeTargetCloudWatchLogsParameters::operator
   if(jsonValue.ValueExists("LogStreamName"))
   {
     m_logStreamName = jsonValue.GetString("LogStreamName");
-
     m_logStreamNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetString("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   return *this;
 }
 

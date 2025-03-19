@@ -18,24 +18,7 @@ namespace finspace
 namespace Model
 {
 
-AutoScalingConfiguration::AutoScalingConfiguration() : 
-    m_minNodeCount(0),
-    m_minNodeCountHasBeenSet(false),
-    m_maxNodeCount(0),
-    m_maxNodeCountHasBeenSet(false),
-    m_autoScalingMetric(AutoScalingMetric::NOT_SET),
-    m_autoScalingMetricHasBeenSet(false),
-    m_metricTarget(0.0),
-    m_metricTargetHasBeenSet(false),
-    m_scaleInCooldownSeconds(0.0),
-    m_scaleInCooldownSecondsHasBeenSet(false),
-    m_scaleOutCooldownSeconds(0.0),
-    m_scaleOutCooldownSecondsHasBeenSet(false)
-{
-}
-
 AutoScalingConfiguration::AutoScalingConfiguration(JsonView jsonValue)
-  : AutoScalingConfiguration()
 {
   *this = jsonValue;
 }
@@ -45,45 +28,33 @@ AutoScalingConfiguration& AutoScalingConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("minNodeCount"))
   {
     m_minNodeCount = jsonValue.GetInteger("minNodeCount");
-
     m_minNodeCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxNodeCount"))
   {
     m_maxNodeCount = jsonValue.GetInteger("maxNodeCount");
-
     m_maxNodeCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoScalingMetric"))
   {
     m_autoScalingMetric = AutoScalingMetricMapper::GetAutoScalingMetricForName(jsonValue.GetString("autoScalingMetric"));
-
     m_autoScalingMetricHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricTarget"))
   {
     m_metricTarget = jsonValue.GetDouble("metricTarget");
-
     m_metricTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scaleInCooldownSeconds"))
   {
     m_scaleInCooldownSeconds = jsonValue.GetDouble("scaleInCooldownSeconds");
-
     m_scaleInCooldownSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scaleOutCooldownSeconds"))
   {
     m_scaleOutCooldownSeconds = jsonValue.GetDouble("scaleOutCooldownSeconds");
-
     m_scaleOutCooldownSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

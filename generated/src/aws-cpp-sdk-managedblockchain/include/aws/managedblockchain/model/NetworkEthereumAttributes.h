@@ -31,7 +31,7 @@ namespace Model
   class NetworkEthereumAttributes
   {
   public:
-    AWS_MANAGEDBLOCKCHAIN_API NetworkEthereumAttributes();
+    AWS_MANAGEDBLOCKCHAIN_API NetworkEthereumAttributes() = default;
     AWS_MANAGEDBLOCKCHAIN_API NetworkEthereumAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API NetworkEthereumAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * Chain IDs are as follows:</p> <ul> <li> <p>mainnet = <code>1</code> </p> </li>
      * </ul>
      */
-    inline const Aws::String& GetChainId() const{ return m_chainId; }
+    inline const Aws::String& GetChainId() const { return m_chainId; }
     inline bool ChainIdHasBeenSet() const { return m_chainIdHasBeenSet; }
-    inline void SetChainId(const Aws::String& value) { m_chainIdHasBeenSet = true; m_chainId = value; }
-    inline void SetChainId(Aws::String&& value) { m_chainIdHasBeenSet = true; m_chainId = std::move(value); }
-    inline void SetChainId(const char* value) { m_chainIdHasBeenSet = true; m_chainId.assign(value); }
-    inline NetworkEthereumAttributes& WithChainId(const Aws::String& value) { SetChainId(value); return *this;}
-    inline NetworkEthereumAttributes& WithChainId(Aws::String&& value) { SetChainId(std::move(value)); return *this;}
-    inline NetworkEthereumAttributes& WithChainId(const char* value) { SetChainId(value); return *this;}
+    template<typename ChainIdT = Aws::String>
+    void SetChainId(ChainIdT&& value) { m_chainIdHasBeenSet = true; m_chainId = std::forward<ChainIdT>(value); }
+    template<typename ChainIdT = Aws::String>
+    NetworkEthereumAttributes& WithChainId(ChainIdT&& value) { SetChainId(std::forward<ChainIdT>(value)); return *this;}
     ///@}
   private:
 

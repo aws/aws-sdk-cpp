@@ -18,17 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-AudioLogSetting::AudioLogSetting() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_selectiveLoggingEnabled(false),
-    m_selectiveLoggingEnabledHasBeenSet(false)
-{
-}
-
 AudioLogSetting::AudioLogSetting(JsonView jsonValue)
-  : AudioLogSetting()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ AudioLogSetting& AudioLogSetting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = jsonValue.GetObject("destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("selectiveLoggingEnabled"))
   {
     m_selectiveLoggingEnabled = jsonValue.GetBool("selectiveLoggingEnabled");
-
     m_selectiveLoggingEnabledHasBeenSet = true;
   }
-
   return *this;
 }
 

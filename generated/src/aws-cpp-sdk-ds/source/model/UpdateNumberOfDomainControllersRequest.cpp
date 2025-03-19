@@ -12,13 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateNumberOfDomainControllersRequest::UpdateNumberOfDomainControllersRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_desiredNumber(0),
-    m_desiredNumberHasBeenSet(false)
-{
-}
-
 Aws::String UpdateNumberOfDomainControllersRequest::SerializePayload() const
 {
   JsonValue payload;

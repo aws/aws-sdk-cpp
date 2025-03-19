@@ -32,7 +32,7 @@ namespace Model
   class InputFileSource
   {
   public:
-    AWS_B2BI_API InputFileSource();
+    AWS_B2BI_API InputFileSource() = default;
     AWS_B2BI_API InputFileSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API InputFileSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>Specify the input contents, as a string, for the source of an outbound
      * transformation.</p>
      */
-    inline const Aws::String& GetFileContent() const{ return m_fileContent; }
+    inline const Aws::String& GetFileContent() const { return m_fileContent; }
     inline bool FileContentHasBeenSet() const { return m_fileContentHasBeenSet; }
-    inline void SetFileContent(const Aws::String& value) { m_fileContentHasBeenSet = true; m_fileContent = value; }
-    inline void SetFileContent(Aws::String&& value) { m_fileContentHasBeenSet = true; m_fileContent = std::move(value); }
-    inline void SetFileContent(const char* value) { m_fileContentHasBeenSet = true; m_fileContent.assign(value); }
-    inline InputFileSource& WithFileContent(const Aws::String& value) { SetFileContent(value); return *this;}
-    inline InputFileSource& WithFileContent(Aws::String&& value) { SetFileContent(std::move(value)); return *this;}
-    inline InputFileSource& WithFileContent(const char* value) { SetFileContent(value); return *this;}
+    template<typename FileContentT = Aws::String>
+    void SetFileContent(FileContentT&& value) { m_fileContentHasBeenSet = true; m_fileContent = std::forward<FileContentT>(value); }
+    template<typename FileContentT = Aws::String>
+    InputFileSource& WithFileContent(FileContentT&& value) { SetFileContent(std::forward<FileContentT>(value)); return *this;}
     ///@}
   private:
 

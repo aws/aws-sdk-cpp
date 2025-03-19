@@ -36,7 +36,7 @@ namespace Model
   class DetectLabelsSettings
   {
   public:
-    AWS_REKOGNITION_API DetectLabelsSettings();
+    AWS_REKOGNITION_API DetectLabelsSettings() = default;
     AWS_REKOGNITION_API DetectLabelsSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API DetectLabelsSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,24 +46,24 @@ namespace Model
     /**
      * <p>Contains the specified filters for GENERAL_LABELS.</p>
      */
-    inline const GeneralLabelsSettings& GetGeneralLabels() const{ return m_generalLabels; }
+    inline const GeneralLabelsSettings& GetGeneralLabels() const { return m_generalLabels; }
     inline bool GeneralLabelsHasBeenSet() const { return m_generalLabelsHasBeenSet; }
-    inline void SetGeneralLabels(const GeneralLabelsSettings& value) { m_generalLabelsHasBeenSet = true; m_generalLabels = value; }
-    inline void SetGeneralLabels(GeneralLabelsSettings&& value) { m_generalLabelsHasBeenSet = true; m_generalLabels = std::move(value); }
-    inline DetectLabelsSettings& WithGeneralLabels(const GeneralLabelsSettings& value) { SetGeneralLabels(value); return *this;}
-    inline DetectLabelsSettings& WithGeneralLabels(GeneralLabelsSettings&& value) { SetGeneralLabels(std::move(value)); return *this;}
+    template<typename GeneralLabelsT = GeneralLabelsSettings>
+    void SetGeneralLabels(GeneralLabelsT&& value) { m_generalLabelsHasBeenSet = true; m_generalLabels = std::forward<GeneralLabelsT>(value); }
+    template<typename GeneralLabelsT = GeneralLabelsSettings>
+    DetectLabelsSettings& WithGeneralLabels(GeneralLabelsT&& value) { SetGeneralLabels(std::forward<GeneralLabelsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains the chosen number of maximum dominant colors in an image.</p>
      */
-    inline const DetectLabelsImagePropertiesSettings& GetImageProperties() const{ return m_imageProperties; }
+    inline const DetectLabelsImagePropertiesSettings& GetImageProperties() const { return m_imageProperties; }
     inline bool ImagePropertiesHasBeenSet() const { return m_imagePropertiesHasBeenSet; }
-    inline void SetImageProperties(const DetectLabelsImagePropertiesSettings& value) { m_imagePropertiesHasBeenSet = true; m_imageProperties = value; }
-    inline void SetImageProperties(DetectLabelsImagePropertiesSettings&& value) { m_imagePropertiesHasBeenSet = true; m_imageProperties = std::move(value); }
-    inline DetectLabelsSettings& WithImageProperties(const DetectLabelsImagePropertiesSettings& value) { SetImageProperties(value); return *this;}
-    inline DetectLabelsSettings& WithImageProperties(DetectLabelsImagePropertiesSettings&& value) { SetImageProperties(std::move(value)); return *this;}
+    template<typename ImagePropertiesT = DetectLabelsImagePropertiesSettings>
+    void SetImageProperties(ImagePropertiesT&& value) { m_imagePropertiesHasBeenSet = true; m_imageProperties = std::forward<ImagePropertiesT>(value); }
+    template<typename ImagePropertiesT = DetectLabelsImagePropertiesSettings>
+    DetectLabelsSettings& WithImageProperties(ImagePropertiesT&& value) { SetImageProperties(std::forward<ImagePropertiesT>(value)); return *this;}
     ///@}
   private:
 

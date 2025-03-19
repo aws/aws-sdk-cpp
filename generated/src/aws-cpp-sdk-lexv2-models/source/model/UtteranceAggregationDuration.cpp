@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-UtteranceAggregationDuration::UtteranceAggregationDuration() : 
-    m_relativeAggregationDurationHasBeenSet(false)
-{
-}
-
 UtteranceAggregationDuration::UtteranceAggregationDuration(JsonView jsonValue)
-  : UtteranceAggregationDuration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UtteranceAggregationDuration& UtteranceAggregationDuration::operator =(JsonView 
   if(jsonValue.ValueExists("relativeAggregationDuration"))
   {
     m_relativeAggregationDuration = jsonValue.GetObject("relativeAggregationDuration");
-
     m_relativeAggregationDurationHasBeenSet = true;
   }
-
   return *this;
 }
 

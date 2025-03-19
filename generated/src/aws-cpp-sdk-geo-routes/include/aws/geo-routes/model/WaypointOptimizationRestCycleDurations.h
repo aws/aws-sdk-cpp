@@ -33,7 +33,7 @@ namespace Model
   class WaypointOptimizationRestCycleDurations
   {
   public:
-    AWS_GEOROUTES_API WaypointOptimizationRestCycleDurations();
+    AWS_GEOROUTES_API WaypointOptimizationRestCycleDurations() = default;
     AWS_GEOROUTES_API WaypointOptimizationRestCycleDurations(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API WaypointOptimizationRestCycleDurations& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>Resting phase of the cycle.</p> <p> <b>Unit</b>: <code>seconds</code> </p>
      */
-    inline long long GetRestDuration() const{ return m_restDuration; }
+    inline long long GetRestDuration() const { return m_restDuration; }
     inline bool RestDurationHasBeenSet() const { return m_restDurationHasBeenSet; }
     inline void SetRestDuration(long long value) { m_restDurationHasBeenSet = true; m_restDuration = value; }
     inline WaypointOptimizationRestCycleDurations& WithRestDuration(long long value) { SetRestDuration(value); return *this;}
@@ -53,17 +53,17 @@ namespace Model
     /**
      * <p>Working phase of the cycle.</p> <p> <b>Unit</b>: <code>seconds</code> </p>
      */
-    inline long long GetWorkDuration() const{ return m_workDuration; }
+    inline long long GetWorkDuration() const { return m_workDuration; }
     inline bool WorkDurationHasBeenSet() const { return m_workDurationHasBeenSet; }
     inline void SetWorkDuration(long long value) { m_workDurationHasBeenSet = true; m_workDuration = value; }
     inline WaypointOptimizationRestCycleDurations& WithWorkDuration(long long value) { SetWorkDuration(value); return *this;}
     ///@}
   private:
 
-    long long m_restDuration;
+    long long m_restDuration{0};
     bool m_restDurationHasBeenSet = false;
 
-    long long m_workDuration;
+    long long m_workDuration{0};
     bool m_workDurationHasBeenSet = false;
   };
 

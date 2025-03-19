@@ -35,7 +35,7 @@ namespace Model
   class Encryption
   {
   public:
-    AWS_ELASTICTRANSCODER_API Encryption();
+    AWS_ELASTICTRANSCODER_API Encryption() = default;
     AWS_ELASTICTRANSCODER_API Encryption(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Encryption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -64,14 +64,12 @@ namespace Model
      * is important that you safely manage your encryption keys. If you lose them, you
      * won't be able to unencrypt your data.</p> 
      */
-    inline const Aws::String& GetMode() const{ return m_mode; }
+    inline const Aws::String& GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const Aws::String& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(Aws::String&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline void SetMode(const char* value) { m_modeHasBeenSet = true; m_mode.assign(value); }
-    inline Encryption& WithMode(const Aws::String& value) { SetMode(value); return *this;}
-    inline Encryption& WithMode(Aws::String&& value) { SetMode(std::move(value)); return *this;}
-    inline Encryption& WithMode(const char* value) { SetMode(value); return *this;}
+    template<typename ModeT = Aws::String>
+    void SetMode(ModeT&& value) { m_modeHasBeenSet = true; m_mode = std::forward<ModeT>(value); }
+    template<typename ModeT = Aws::String>
+    Encryption& WithMode(ModeT&& value) { SetMode(std::forward<ModeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +81,12 @@ namespace Model
      * </p> <p>The key must also be encrypted by using the Amazon Key Management
      * Service.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline Encryption& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline Encryption& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline Encryption& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    Encryption& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +97,12 @@ namespace Model
      * corrupted in transit. The key MD5 must be base64-encoded, and it must be exactly
      * 16 bytes long before being base64-encoded.</p>
      */
-    inline const Aws::String& GetKeyMd5() const{ return m_keyMd5; }
+    inline const Aws::String& GetKeyMd5() const { return m_keyMd5; }
     inline bool KeyMd5HasBeenSet() const { return m_keyMd5HasBeenSet; }
-    inline void SetKeyMd5(const Aws::String& value) { m_keyMd5HasBeenSet = true; m_keyMd5 = value; }
-    inline void SetKeyMd5(Aws::String&& value) { m_keyMd5HasBeenSet = true; m_keyMd5 = std::move(value); }
-    inline void SetKeyMd5(const char* value) { m_keyMd5HasBeenSet = true; m_keyMd5.assign(value); }
-    inline Encryption& WithKeyMd5(const Aws::String& value) { SetKeyMd5(value); return *this;}
-    inline Encryption& WithKeyMd5(Aws::String&& value) { SetKeyMd5(std::move(value)); return *this;}
-    inline Encryption& WithKeyMd5(const char* value) { SetKeyMd5(value); return *this;}
+    template<typename KeyMd5T = Aws::String>
+    void SetKeyMd5(KeyMd5T&& value) { m_keyMd5HasBeenSet = true; m_keyMd5 = std::forward<KeyMd5T>(value); }
+    template<typename KeyMd5T = Aws::String>
+    Encryption& WithKeyMd5(KeyMd5T&& value) { SetKeyMd5(std::forward<KeyMd5T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,14 +113,12 @@ namespace Model
      * vector must be base64-encoded, and it must be exactly 16 bytes long before being
      * base64-encoded.</p>
      */
-    inline const Aws::String& GetInitializationVector() const{ return m_initializationVector; }
+    inline const Aws::String& GetInitializationVector() const { return m_initializationVector; }
     inline bool InitializationVectorHasBeenSet() const { return m_initializationVectorHasBeenSet; }
-    inline void SetInitializationVector(const Aws::String& value) { m_initializationVectorHasBeenSet = true; m_initializationVector = value; }
-    inline void SetInitializationVector(Aws::String&& value) { m_initializationVectorHasBeenSet = true; m_initializationVector = std::move(value); }
-    inline void SetInitializationVector(const char* value) { m_initializationVectorHasBeenSet = true; m_initializationVector.assign(value); }
-    inline Encryption& WithInitializationVector(const Aws::String& value) { SetInitializationVector(value); return *this;}
-    inline Encryption& WithInitializationVector(Aws::String&& value) { SetInitializationVector(std::move(value)); return *this;}
-    inline Encryption& WithInitializationVector(const char* value) { SetInitializationVector(value); return *this;}
+    template<typename InitializationVectorT = Aws::String>
+    void SetInitializationVector(InitializationVectorT&& value) { m_initializationVectorHasBeenSet = true; m_initializationVector = std::forward<InitializationVectorT>(value); }
+    template<typename InitializationVectorT = Aws::String>
+    Encryption& WithInitializationVector(InitializationVectorT&& value) { SetInitializationVector(std::forward<InitializationVectorT>(value)); return *this;}
     ///@}
   private:
 

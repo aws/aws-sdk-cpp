@@ -18,15 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-BatchGetAssetPropertyValueHistoryErrorInfo::BatchGetAssetPropertyValueHistoryErrorInfo() : 
-    m_errorCode(BatchGetAssetPropertyValueHistoryErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorTimestampHasBeenSet(false)
-{
-}
-
 BatchGetAssetPropertyValueHistoryErrorInfo::BatchGetAssetPropertyValueHistoryErrorInfo(JsonView jsonValue)
-  : BatchGetAssetPropertyValueHistoryErrorInfo()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ BatchGetAssetPropertyValueHistoryErrorInfo& BatchGetAssetPropertyValueHistoryErr
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = BatchGetAssetPropertyValueHistoryErrorCodeMapper::GetBatchGetAssetPropertyValueHistoryErrorCodeForName(jsonValue.GetString("errorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorTimestamp"))
   {
     m_errorTimestamp = jsonValue.GetDouble("errorTimestamp");
-
     m_errorTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

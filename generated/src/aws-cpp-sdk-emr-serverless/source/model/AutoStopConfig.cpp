@@ -18,16 +18,7 @@ namespace EMRServerless
 namespace Model
 {
 
-AutoStopConfig::AutoStopConfig() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_idleTimeoutMinutes(0),
-    m_idleTimeoutMinutesHasBeenSet(false)
-{
-}
-
 AutoStopConfig::AutoStopConfig(JsonView jsonValue)
-  : AutoStopConfig()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AutoStopConfig& AutoStopConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("idleTimeoutMinutes"))
   {
     m_idleTimeoutMinutes = jsonValue.GetInteger("idleTimeoutMinutes");
-
     m_idleTimeoutMinutesHasBeenSet = true;
   }
-
   return *this;
 }
 

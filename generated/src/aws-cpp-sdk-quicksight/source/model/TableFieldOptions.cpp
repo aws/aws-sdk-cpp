@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TableFieldOptions::TableFieldOptions() : 
-    m_selectedFieldOptionsHasBeenSet(false),
-    m_orderHasBeenSet(false),
-    m_pinnedFieldOptionsHasBeenSet(false)
-{
-}
-
 TableFieldOptions::TableFieldOptions(JsonView jsonValue)
-  : TableFieldOptions()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ TableFieldOptions& TableFieldOptions::operator =(JsonView jsonValue)
     }
     m_selectedFieldOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Order"))
   {
     Aws::Utils::Array<JsonView> orderJsonList = jsonValue.GetArray("Order");
@@ -52,14 +43,11 @@ TableFieldOptions& TableFieldOptions::operator =(JsonView jsonValue)
     }
     m_orderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PinnedFieldOptions"))
   {
     m_pinnedFieldOptions = jsonValue.GetObject("PinnedFieldOptions");
-
     m_pinnedFieldOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

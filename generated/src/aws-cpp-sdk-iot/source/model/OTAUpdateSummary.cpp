@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-OTAUpdateSummary::OTAUpdateSummary() : 
-    m_otaUpdateIdHasBeenSet(false),
-    m_otaUpdateArnHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
-{
-}
-
 OTAUpdateSummary::OTAUpdateSummary(JsonView jsonValue)
-  : OTAUpdateSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ OTAUpdateSummary& OTAUpdateSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("otaUpdateId"))
   {
     m_otaUpdateId = jsonValue.GetString("otaUpdateId");
-
     m_otaUpdateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("otaUpdateArn"))
   {
     m_otaUpdateArn = jsonValue.GetString("otaUpdateArn");
-
     m_otaUpdateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   return *this;
 }
 

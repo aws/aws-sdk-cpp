@@ -12,10 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeEventConfigurationsRequest::DescribeEventConfigurationsRequest()
-{
-}
-
 Aws::String DescribeEventConfigurationsRequest::SerializePayload() const
 {
   return {};

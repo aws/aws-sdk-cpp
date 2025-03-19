@@ -20,13 +20,7 @@ namespace QueryProtocol
 namespace Model
 {
 
-NestedStructWithMap::NestedStructWithMap() : 
-    m_mapArgHasBeenSet(false)
-{
-}
-
 NestedStructWithMap::NestedStructWithMap(const XmlNode& xmlNode)
-  : NestedStructWithMap()
 {
   *this = xmlNode;
 }
@@ -42,6 +36,7 @@ NestedStructWithMap& NestedStructWithMap::operator =(const XmlNode& xmlNode)
     if(!mapArgNode.IsNull())
     {
       XmlNode mapArgEntry = mapArgNode.FirstChild("entry");
+      m_mapArgHasBeenSet = !mapArgEntry.IsNull();
       while(!mapArgEntry.IsNull())
       {
         XmlNode keyNode = mapArgEntry.FirstChild("key");

@@ -19,40 +19,7 @@ namespace DirectConnect
 namespace Model
 {
 
-Connection::Connection() : 
-    m_ownerAccountHasBeenSet(false),
-    m_connectionIdHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
-    m_connectionState(ConnectionState::NOT_SET),
-    m_connectionStateHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_bandwidthHasBeenSet(false),
-    m_vlan(0),
-    m_vlanHasBeenSet(false),
-    m_partnerNameHasBeenSet(false),
-    m_loaIssueTimeHasBeenSet(false),
-    m_lagIdHasBeenSet(false),
-    m_awsDeviceHasBeenSet(false),
-    m_jumboFrameCapable(false),
-    m_jumboFrameCapableHasBeenSet(false),
-    m_awsDeviceV2HasBeenSet(false),
-    m_awsLogicalDeviceIdHasBeenSet(false),
-    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET),
-    m_hasLogicalRedundancyHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_providerNameHasBeenSet(false),
-    m_macSecCapable(false),
-    m_macSecCapableHasBeenSet(false),
-    m_portEncryptionStatusHasBeenSet(false),
-    m_encryptionModeHasBeenSet(false),
-    m_macSecKeysHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Connection::Connection(JsonView jsonValue)
-  : Connection()
 {
   *this = jsonValue;
 }
@@ -62,115 +29,83 @@ Connection& Connection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ownerAccount"))
   {
     m_ownerAccount = jsonValue.GetString("ownerAccount");
-
     m_ownerAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectionId"))
   {
     m_connectionId = jsonValue.GetString("connectionId");
-
     m_connectionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectionName"))
   {
     m_connectionName = jsonValue.GetString("connectionName");
-
     m_connectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectionState"))
   {
     m_connectionState = ConnectionStateMapper::GetConnectionStateForName(jsonValue.GetString("connectionState"));
-
     m_connectionStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetString("location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bandwidth"))
   {
     m_bandwidth = jsonValue.GetString("bandwidth");
-
     m_bandwidthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vlan"))
   {
     m_vlan = jsonValue.GetInteger("vlan");
-
     m_vlanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("partnerName"))
   {
     m_partnerName = jsonValue.GetString("partnerName");
-
     m_partnerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("loaIssueTime"))
   {
     m_loaIssueTime = jsonValue.GetDouble("loaIssueTime");
-
     m_loaIssueTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lagId"))
   {
     m_lagId = jsonValue.GetString("lagId");
-
     m_lagIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsDevice"))
   {
     m_awsDevice = jsonValue.GetString("awsDevice");
-
     m_awsDeviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jumboFrameCapable"))
   {
     m_jumboFrameCapable = jsonValue.GetBool("jumboFrameCapable");
-
     m_jumboFrameCapableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsDeviceV2"))
   {
     m_awsDeviceV2 = jsonValue.GetString("awsDeviceV2");
-
     m_awsDeviceV2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsLogicalDeviceId"))
   {
     m_awsLogicalDeviceId = jsonValue.GetString("awsLogicalDeviceId");
-
     m_awsLogicalDeviceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hasLogicalRedundancy"))
   {
     m_hasLogicalRedundancy = HasLogicalRedundancyMapper::GetHasLogicalRedundancyForName(jsonValue.GetString("hasLogicalRedundancy"));
-
     m_hasLogicalRedundancyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -180,35 +115,26 @@ Connection& Connection::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("providerName"))
   {
     m_providerName = jsonValue.GetString("providerName");
-
     m_providerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("macSecCapable"))
   {
     m_macSecCapable = jsonValue.GetBool("macSecCapable");
-
     m_macSecCapableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("portEncryptionStatus"))
   {
     m_portEncryptionStatus = jsonValue.GetString("portEncryptionStatus");
-
     m_portEncryptionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionMode"))
   {
     m_encryptionMode = jsonValue.GetString("encryptionMode");
-
     m_encryptionModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("macSecKeys"))
   {
     Aws::Utils::Array<JsonView> macSecKeysJsonList = jsonValue.GetArray("macSecKeys");
@@ -218,7 +144,6 @@ Connection& Connection::operator =(JsonView jsonValue)
     }
     m_macSecKeysHasBeenSet = true;
   }
-
   return *this;
 }
 

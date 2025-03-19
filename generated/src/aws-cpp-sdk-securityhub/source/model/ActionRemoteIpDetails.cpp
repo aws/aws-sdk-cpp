@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-ActionRemoteIpDetails::ActionRemoteIpDetails() : 
-    m_ipAddressV4HasBeenSet(false),
-    m_organizationHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_geoLocationHasBeenSet(false)
-{
-}
-
 ActionRemoteIpDetails::ActionRemoteIpDetails(JsonView jsonValue)
-  : ActionRemoteIpDetails()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ ActionRemoteIpDetails& ActionRemoteIpDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IpAddressV4"))
   {
     m_ipAddressV4 = jsonValue.GetString("IpAddressV4");
-
     m_ipAddressV4HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Organization"))
   {
     m_organization = jsonValue.GetObject("Organization");
-
     m_organizationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Country"))
   {
     m_country = jsonValue.GetObject("Country");
-
     m_countryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("City"))
   {
     m_city = jsonValue.GetObject("City");
-
     m_cityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GeoLocation"))
   {
     m_geoLocation = jsonValue.GetObject("GeoLocation");
-
     m_geoLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

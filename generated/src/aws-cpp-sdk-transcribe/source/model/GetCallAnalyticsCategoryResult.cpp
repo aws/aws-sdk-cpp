@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCallAnalyticsCategoryResult::GetCallAnalyticsCategoryResult()
-{
-}
-
 GetCallAnalyticsCategoryResult::GetCallAnalyticsCategoryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetCallAnalyticsCategoryResult& GetCallAnalyticsCategoryResult::operator =(const
   if(jsonValue.ValueExists("CategoryProperties"))
   {
     m_categoryProperties = jsonValue.GetObject("CategoryProperties");
-
+    m_categoryPropertiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

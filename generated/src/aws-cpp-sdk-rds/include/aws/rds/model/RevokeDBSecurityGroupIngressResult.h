@@ -28,33 +28,35 @@ namespace Model
   class RevokeDBSecurityGroupIngressResult
   {
   public:
-    AWS_RDS_API RevokeDBSecurityGroupIngressResult();
+    AWS_RDS_API RevokeDBSecurityGroupIngressResult() = default;
     AWS_RDS_API RevokeDBSecurityGroupIngressResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RDS_API RevokeDBSecurityGroupIngressResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const DBSecurityGroup& GetDBSecurityGroup() const{ return m_dBSecurityGroup; }
-    inline void SetDBSecurityGroup(const DBSecurityGroup& value) { m_dBSecurityGroup = value; }
-    inline void SetDBSecurityGroup(DBSecurityGroup&& value) { m_dBSecurityGroup = std::move(value); }
-    inline RevokeDBSecurityGroupIngressResult& WithDBSecurityGroup(const DBSecurityGroup& value) { SetDBSecurityGroup(value); return *this;}
-    inline RevokeDBSecurityGroupIngressResult& WithDBSecurityGroup(DBSecurityGroup&& value) { SetDBSecurityGroup(std::move(value)); return *this;}
+    inline const DBSecurityGroup& GetDBSecurityGroup() const { return m_dBSecurityGroup; }
+    template<typename DBSecurityGroupT = DBSecurityGroup>
+    void SetDBSecurityGroup(DBSecurityGroupT&& value) { m_dBSecurityGroupHasBeenSet = true; m_dBSecurityGroup = std::forward<DBSecurityGroupT>(value); }
+    template<typename DBSecurityGroupT = DBSecurityGroup>
+    RevokeDBSecurityGroupIngressResult& WithDBSecurityGroup(DBSecurityGroupT&& value) { SetDBSecurityGroup(std::forward<DBSecurityGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline RevokeDBSecurityGroupIngressResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline RevokeDBSecurityGroupIngressResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    RevokeDBSecurityGroupIngressResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     DBSecurityGroup m_dBSecurityGroup;
+    bool m_dBSecurityGroupHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

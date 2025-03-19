@@ -13,18 +13,6 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-JsonTimestampsRequest::JsonTimestampsRequest() : 
-    m_normalHasBeenSet(false),
-    m_dateTimeHasBeenSet(false),
-    m_dateTimeOnTargetHasBeenSet(false),
-    m_epochSecondsHasBeenSet(false),
-    m_epochSecondsOnTargetHasBeenSet(false),
-    m_httpDateHasBeenSet(false),
-    m_httpDateOnTargetHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Aws::String JsonTimestampsRequest::SerializePayload() const
 {
   JsonValue payload;

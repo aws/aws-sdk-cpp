@@ -25,7 +25,7 @@ namespace Model
   class GetBotChannelAssociationsRequest : public LexModelBuildingServiceRequest
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API GetBotChannelAssociationsRequest();
+    AWS_LEXMODELBUILDINGSERVICE_API GetBotChannelAssociationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the Amazon Lex bot in the association.</p>
      */
-    inline const Aws::String& GetBotName() const{ return m_botName; }
+    inline const Aws::String& GetBotName() const { return m_botName; }
     inline bool BotNameHasBeenSet() const { return m_botNameHasBeenSet; }
-    inline void SetBotName(const Aws::String& value) { m_botNameHasBeenSet = true; m_botName = value; }
-    inline void SetBotName(Aws::String&& value) { m_botNameHasBeenSet = true; m_botName = std::move(value); }
-    inline void SetBotName(const char* value) { m_botNameHasBeenSet = true; m_botName.assign(value); }
-    inline GetBotChannelAssociationsRequest& WithBotName(const Aws::String& value) { SetBotName(value); return *this;}
-    inline GetBotChannelAssociationsRequest& WithBotName(Aws::String&& value) { SetBotName(std::move(value)); return *this;}
-    inline GetBotChannelAssociationsRequest& WithBotName(const char* value) { SetBotName(value); return *this;}
+    template<typename BotNameT = Aws::String>
+    void SetBotName(BotNameT&& value) { m_botNameHasBeenSet = true; m_botName = std::forward<BotNameT>(value); }
+    template<typename BotNameT = Aws::String>
+    GetBotChannelAssociationsRequest& WithBotName(BotNameT&& value) { SetBotName(std::forward<BotNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>An alias pointing to the specific version of the Amazon Lex bot to which this
      * association is being made.</p>
      */
-    inline const Aws::String& GetBotAlias() const{ return m_botAlias; }
+    inline const Aws::String& GetBotAlias() const { return m_botAlias; }
     inline bool BotAliasHasBeenSet() const { return m_botAliasHasBeenSet; }
-    inline void SetBotAlias(const Aws::String& value) { m_botAliasHasBeenSet = true; m_botAlias = value; }
-    inline void SetBotAlias(Aws::String&& value) { m_botAliasHasBeenSet = true; m_botAlias = std::move(value); }
-    inline void SetBotAlias(const char* value) { m_botAliasHasBeenSet = true; m_botAlias.assign(value); }
-    inline GetBotChannelAssociationsRequest& WithBotAlias(const Aws::String& value) { SetBotAlias(value); return *this;}
-    inline GetBotChannelAssociationsRequest& WithBotAlias(Aws::String&& value) { SetBotAlias(std::move(value)); return *this;}
-    inline GetBotChannelAssociationsRequest& WithBotAlias(const char* value) { SetBotAlias(value); return *this;}
+    template<typename BotAliasT = Aws::String>
+    void SetBotAlias(BotAliasT&& value) { m_botAliasHasBeenSet = true; m_botAlias = std::forward<BotAliasT>(value); }
+    template<typename BotAliasT = Aws::String>
+    GetBotChannelAssociationsRequest& WithBotAlias(BotAliasT&& value) { SetBotAlias(std::forward<BotAliasT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * response. To fetch the next page of associations, specify the pagination token
      * in the next request. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetBotChannelAssociationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetBotChannelAssociationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetBotChannelAssociationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetBotChannelAssociationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,7 +83,7 @@ namespace Model
      * <p>The maximum number of associations to return in the response. The default is
      * 50. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetBotChannelAssociationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -102,14 +96,12 @@ namespace Model
      * matches both "xyzabc" and "abcxyz." To return all bot channel associations, use
      * a hyphen ("-") as the <code>nameContains</code> parameter.</p>
      */
-    inline const Aws::String& GetNameContains() const{ return m_nameContains; }
+    inline const Aws::String& GetNameContains() const { return m_nameContains; }
     inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
-    inline void SetNameContains(const Aws::String& value) { m_nameContainsHasBeenSet = true; m_nameContains = value; }
-    inline void SetNameContains(Aws::String&& value) { m_nameContainsHasBeenSet = true; m_nameContains = std::move(value); }
-    inline void SetNameContains(const char* value) { m_nameContainsHasBeenSet = true; m_nameContains.assign(value); }
-    inline GetBotChannelAssociationsRequest& WithNameContains(const Aws::String& value) { SetNameContains(value); return *this;}
-    inline GetBotChannelAssociationsRequest& WithNameContains(Aws::String&& value) { SetNameContains(std::move(value)); return *this;}
-    inline GetBotChannelAssociationsRequest& WithNameContains(const char* value) { SetNameContains(value); return *this;}
+    template<typename NameContainsT = Aws::String>
+    void SetNameContains(NameContainsT&& value) { m_nameContainsHasBeenSet = true; m_nameContains = std::forward<NameContainsT>(value); }
+    template<typename NameContainsT = Aws::String>
+    GetBotChannelAssociationsRequest& WithNameContains(NameContainsT&& value) { SetNameContains(std::forward<NameContainsT>(value)); return *this;}
     ///@}
   private:
 
@@ -122,7 +114,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nameContains;

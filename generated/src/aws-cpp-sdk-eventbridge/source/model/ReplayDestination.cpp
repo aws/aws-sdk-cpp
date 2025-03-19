@@ -18,14 +18,7 @@ namespace EventBridge
 namespace Model
 {
 
-ReplayDestination::ReplayDestination() : 
-    m_arnHasBeenSet(false),
-    m_filterArnsHasBeenSet(false)
-{
-}
-
 ReplayDestination::ReplayDestination(JsonView jsonValue)
-  : ReplayDestination()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ReplayDestination& ReplayDestination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FilterArns"))
   {
     Aws::Utils::Array<JsonView> filterArnsJsonList = jsonValue.GetArray("FilterArns");
@@ -48,7 +39,6 @@ ReplayDestination& ReplayDestination::operator =(JsonView jsonValue)
     }
     m_filterArnsHasBeenSet = true;
   }
-
   return *this;
 }
 

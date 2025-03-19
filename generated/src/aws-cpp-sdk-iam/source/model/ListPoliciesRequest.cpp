@@ -10,20 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-ListPoliciesRequest::ListPoliciesRequest() : 
-    m_scope(PolicyScopeType::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_onlyAttached(false),
-    m_onlyAttachedHasBeenSet(false),
-    m_pathPrefixHasBeenSet(false),
-    m_policyUsageFilter(PolicyUsageType::NOT_SET),
-    m_policyUsageFilterHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false)
-{
-}
-
 Aws::String ListPoliciesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

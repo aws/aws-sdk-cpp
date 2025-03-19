@@ -18,15 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-ListMetadataTransferJobsFilter::ListMetadataTransferJobsFilter() : 
-    m_workspaceIdHasBeenSet(false),
-    m_state(MetadataTransferJobState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 ListMetadataTransferJobsFilter::ListMetadataTransferJobsFilter(JsonView jsonValue)
-  : ListMetadataTransferJobsFilter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ListMetadataTransferJobsFilter& ListMetadataTransferJobsFilter::operator =(JsonV
   if(jsonValue.ValueExists("workspaceId"))
   {
     m_workspaceId = jsonValue.GetString("workspaceId");
-
     m_workspaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = MetadataTransferJobStateMapper::GetMetadataTransferJobStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

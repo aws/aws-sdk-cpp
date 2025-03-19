@@ -31,7 +31,7 @@ namespace Model
   class EmailContent
   {
   public:
-    AWS_IOTEVENTS_API EmailContent();
+    AWS_IOTEVENTS_API EmailContent() = default;
     AWS_IOTEVENTS_API EmailContent(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API EmailContent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The subject of the email.</p>
      */
-    inline const Aws::String& GetSubject() const{ return m_subject; }
+    inline const Aws::String& GetSubject() const { return m_subject; }
     inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
-    inline void SetSubject(const Aws::String& value) { m_subjectHasBeenSet = true; m_subject = value; }
-    inline void SetSubject(Aws::String&& value) { m_subjectHasBeenSet = true; m_subject = std::move(value); }
-    inline void SetSubject(const char* value) { m_subjectHasBeenSet = true; m_subject.assign(value); }
-    inline EmailContent& WithSubject(const Aws::String& value) { SetSubject(value); return *this;}
-    inline EmailContent& WithSubject(Aws::String&& value) { SetSubject(std::move(value)); return *this;}
-    inline EmailContent& WithSubject(const char* value) { SetSubject(value); return *this;}
+    template<typename SubjectT = Aws::String>
+    void SetSubject(SubjectT&& value) { m_subjectHasBeenSet = true; m_subject = std::forward<SubjectT>(value); }
+    template<typename SubjectT = Aws::String>
+    EmailContent& WithSubject(SubjectT&& value) { SetSubject(std::forward<SubjectT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <p>The message that you want to send. The message can be up to 200
      * characters.</p>
      */
-    inline const Aws::String& GetAdditionalMessage() const{ return m_additionalMessage; }
+    inline const Aws::String& GetAdditionalMessage() const { return m_additionalMessage; }
     inline bool AdditionalMessageHasBeenSet() const { return m_additionalMessageHasBeenSet; }
-    inline void SetAdditionalMessage(const Aws::String& value) { m_additionalMessageHasBeenSet = true; m_additionalMessage = value; }
-    inline void SetAdditionalMessage(Aws::String&& value) { m_additionalMessageHasBeenSet = true; m_additionalMessage = std::move(value); }
-    inline void SetAdditionalMessage(const char* value) { m_additionalMessageHasBeenSet = true; m_additionalMessage.assign(value); }
-    inline EmailContent& WithAdditionalMessage(const Aws::String& value) { SetAdditionalMessage(value); return *this;}
-    inline EmailContent& WithAdditionalMessage(Aws::String&& value) { SetAdditionalMessage(std::move(value)); return *this;}
-    inline EmailContent& WithAdditionalMessage(const char* value) { SetAdditionalMessage(value); return *this;}
+    template<typename AdditionalMessageT = Aws::String>
+    void SetAdditionalMessage(AdditionalMessageT&& value) { m_additionalMessageHasBeenSet = true; m_additionalMessage = std::forward<AdditionalMessageT>(value); }
+    template<typename AdditionalMessageT = Aws::String>
+    EmailContent& WithAdditionalMessage(AdditionalMessageT&& value) { SetAdditionalMessage(std::forward<AdditionalMessageT>(value)); return *this;}
     ///@}
   private:
 

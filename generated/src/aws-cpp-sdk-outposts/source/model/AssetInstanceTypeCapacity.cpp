@@ -18,15 +18,7 @@ namespace Outposts
 namespace Model
 {
 
-AssetInstanceTypeCapacity::AssetInstanceTypeCapacity() : 
-    m_instanceTypeHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
-{
-}
-
 AssetInstanceTypeCapacity::AssetInstanceTypeCapacity(JsonView jsonValue)
-  : AssetInstanceTypeCapacity()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AssetInstanceTypeCapacity& AssetInstanceTypeCapacity::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = jsonValue.GetString("InstanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Count"))
   {
     m_count = jsonValue.GetInteger("Count");
-
     m_countHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-AIMLOptionsStatus::AIMLOptionsStatus() : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 AIMLOptionsStatus::AIMLOptionsStatus(JsonView jsonValue)
-  : AIMLOptionsStatus()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AIMLOptionsStatus& AIMLOptionsStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Options"))
   {
     m_options = jsonValue.GetObject("Options");
-
     m_optionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

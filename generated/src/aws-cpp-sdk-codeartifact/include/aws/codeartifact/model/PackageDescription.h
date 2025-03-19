@@ -33,7 +33,7 @@ namespace Model
   class PackageDescription
   {
   public:
-    AWS_CODEARTIFACT_API PackageDescription();
+    AWS_CODEARTIFACT_API PackageDescription() = default;
     AWS_CODEARTIFACT_API PackageDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEARTIFACT_API PackageDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>A format that specifies the type of the package.</p>
      */
-    inline const PackageFormat& GetFormat() const{ return m_format; }
+    inline PackageFormat GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const PackageFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(PackageFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline PackageDescription& WithFormat(const PackageFormat& value) { SetFormat(value); return *this;}
-    inline PackageDescription& WithFormat(PackageFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(PackageFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline PackageDescription& WithFormat(PackageFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -62,44 +60,40 @@ namespace Model
      * package versions do not contain a corresponding component, package versions of
      * those formats do not have a namespace. </p> </li> </ul>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline PackageDescription& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline PackageDescription& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline PackageDescription& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    PackageDescription& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the package.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PackageDescription& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PackageDescription& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PackageDescription& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PackageDescription& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The package origin configuration for the package.</p>
      */
-    inline const PackageOriginConfiguration& GetOriginConfiguration() const{ return m_originConfiguration; }
+    inline const PackageOriginConfiguration& GetOriginConfiguration() const { return m_originConfiguration; }
     inline bool OriginConfigurationHasBeenSet() const { return m_originConfigurationHasBeenSet; }
-    inline void SetOriginConfiguration(const PackageOriginConfiguration& value) { m_originConfigurationHasBeenSet = true; m_originConfiguration = value; }
-    inline void SetOriginConfiguration(PackageOriginConfiguration&& value) { m_originConfigurationHasBeenSet = true; m_originConfiguration = std::move(value); }
-    inline PackageDescription& WithOriginConfiguration(const PackageOriginConfiguration& value) { SetOriginConfiguration(value); return *this;}
-    inline PackageDescription& WithOriginConfiguration(PackageOriginConfiguration&& value) { SetOriginConfiguration(std::move(value)); return *this;}
+    template<typename OriginConfigurationT = PackageOriginConfiguration>
+    void SetOriginConfiguration(OriginConfigurationT&& value) { m_originConfigurationHasBeenSet = true; m_originConfiguration = std::forward<OriginConfigurationT>(value); }
+    template<typename OriginConfigurationT = PackageOriginConfiguration>
+    PackageDescription& WithOriginConfiguration(OriginConfigurationT&& value) { SetOriginConfiguration(std::forward<OriginConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    PackageFormat m_format;
+    PackageFormat m_format{PackageFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
 
     Aws::String m_namespace;

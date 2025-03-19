@@ -10,14 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribeRedshiftIdcApplicationsRequest::DescribeRedshiftIdcApplicationsRequest() : 
-    m_redshiftIdcApplicationArnHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRedshiftIdcApplicationsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

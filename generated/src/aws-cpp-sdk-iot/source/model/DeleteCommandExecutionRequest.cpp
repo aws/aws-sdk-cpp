@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteCommandExecutionRequest::DeleteCommandExecutionRequest() : 
-    m_executionIdHasBeenSet(false),
-    m_targetArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCommandExecutionRequest::SerializePayload() const
 {
   return {};

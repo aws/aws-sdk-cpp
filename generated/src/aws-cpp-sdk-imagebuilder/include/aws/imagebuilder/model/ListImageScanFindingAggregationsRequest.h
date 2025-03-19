@@ -22,7 +22,7 @@ namespace Model
   class ListImageScanFindingAggregationsRequest : public ImagebuilderRequest
   {
   public:
-    AWS_IMAGEBUILDER_API ListImageScanFindingAggregationsRequest();
+    AWS_IMAGEBUILDER_API ListImageScanFindingAggregationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,12 +35,12 @@ namespace Model
 
     ///@{
     
-    inline const Filter& GetFilter() const{ return m_filter; }
+    inline const Filter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Filter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline ListImageScanFindingAggregationsRequest& WithFilter(const Filter& value) { SetFilter(value); return *this;}
-    inline ListImageScanFindingAggregationsRequest& WithFilter(Filter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = Filter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Filter>
+    ListImageScanFindingAggregationsRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -48,14 +48,12 @@ namespace Model
      * <p>A token to specify where to start paginating. This is the nextToken from a
      * previously truncated response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListImageScanFindingAggregationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListImageScanFindingAggregationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListImageScanFindingAggregationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListImageScanFindingAggregationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 

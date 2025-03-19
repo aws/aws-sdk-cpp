@@ -37,7 +37,7 @@ namespace Model
   class ReservedCapacityOffering
   {
   public:
-    AWS_SAGEMAKER_API ReservedCapacityOffering();
+    AWS_SAGEMAKER_API ReservedCapacityOffering() = default;
     AWS_SAGEMAKER_API ReservedCapacityOffering(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ReservedCapacityOffering& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,19 +47,17 @@ namespace Model
     /**
      * <p>The instance type for the reserved capacity offering.</p>
      */
-    inline const ReservedCapacityInstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline ReservedCapacityInstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const ReservedCapacityInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(ReservedCapacityInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline ReservedCapacityOffering& WithInstanceType(const ReservedCapacityInstanceType& value) { SetInstanceType(value); return *this;}
-    inline ReservedCapacityOffering& WithInstanceType(ReservedCapacityInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(ReservedCapacityInstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline ReservedCapacityOffering& WithInstanceType(ReservedCapacityInstanceType value) { SetInstanceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of instances in the reserved capacity offering.</p>
      */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const { return m_instanceCount; }
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
     inline ReservedCapacityOffering& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
@@ -69,14 +67,12 @@ namespace Model
     /**
      * <p>The availability zone for the reserved capacity offering.</p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-    inline ReservedCapacityOffering& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline ReservedCapacityOffering& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline ReservedCapacityOffering& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    ReservedCapacityOffering& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,7 +80,7 @@ namespace Model
      * <p>The number of whole hours in the total duration for this reserved capacity
      * offering.</p>
      */
-    inline long long GetDurationHours() const{ return m_durationHours; }
+    inline long long GetDurationHours() const { return m_durationHours; }
     inline bool DurationHoursHasBeenSet() const { return m_durationHoursHasBeenSet; }
     inline void SetDurationHours(long long value) { m_durationHoursHasBeenSet = true; m_durationHours = value; }
     inline ReservedCapacityOffering& WithDurationHours(long long value) { SetDurationHours(value); return *this;}
@@ -95,7 +91,7 @@ namespace Model
      * <p>The additional minutes beyond whole hours in the total duration for this
      * reserved capacity offering.</p>
      */
-    inline long long GetDurationMinutes() const{ return m_durationMinutes; }
+    inline long long GetDurationMinutes() const { return m_durationMinutes; }
     inline bool DurationMinutesHasBeenSet() const { return m_durationMinutesHasBeenSet; }
     inline void SetDurationMinutes(long long value) { m_durationMinutesHasBeenSet = true; m_durationMinutes = value; }
     inline ReservedCapacityOffering& WithDurationMinutes(long long value) { SetDurationMinutes(value); return *this;}
@@ -105,46 +101,46 @@ namespace Model
     /**
      * <p>The start time of the reserved capacity offering.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline ReservedCapacityOffering& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline ReservedCapacityOffering& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    ReservedCapacityOffering& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The end time of the reserved capacity offering.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline ReservedCapacityOffering& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline ReservedCapacityOffering& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    ReservedCapacityOffering& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
   private:
 
-    ReservedCapacityInstanceType m_instanceType;
+    ReservedCapacityInstanceType m_instanceType{ReservedCapacityInstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
-    int m_instanceCount;
+    int m_instanceCount{0};
     bool m_instanceCountHasBeenSet = false;
 
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet = false;
 
-    long long m_durationHours;
+    long long m_durationHours{0};
     bool m_durationHoursHasBeenSet = false;
 
-    long long m_durationMinutes;
+    long long m_durationMinutes{0};
     bool m_durationMinutesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
   };
 

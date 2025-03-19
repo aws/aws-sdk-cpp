@@ -18,19 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DirectKafkaSource::DirectKafkaSource() : 
-    m_nameHasBeenSet(false),
-    m_streamingOptionsHasBeenSet(false),
-    m_windowSize(0),
-    m_windowSizeHasBeenSet(false),
-    m_detectSchema(false),
-    m_detectSchemaHasBeenSet(false),
-    m_dataPreviewOptionsHasBeenSet(false)
-{
-}
-
 DirectKafkaSource::DirectKafkaSource(JsonView jsonValue)
-  : DirectKafkaSource()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ DirectKafkaSource& DirectKafkaSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamingOptions"))
   {
     m_streamingOptions = jsonValue.GetObject("StreamingOptions");
-
     m_streamingOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WindowSize"))
   {
     m_windowSize = jsonValue.GetInteger("WindowSize");
-
     m_windowSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DetectSchema"))
   {
     m_detectSchema = jsonValue.GetBool("DetectSchema");
-
     m_detectSchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataPreviewOptions"))
   {
     m_dataPreviewOptions = jsonValue.GetObject("DataPreviewOptions");
-
     m_dataPreviewOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

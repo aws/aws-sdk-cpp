@@ -32,7 +32,7 @@ namespace Model
   class AwsEventsEndpointRoutingConfigDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEventsEndpointRoutingConfigDetails();
+    AWS_SECURITYHUB_API AwsEventsEndpointRoutingConfigDetails() = default;
     AWS_SECURITYHUB_API AwsEventsEndpointRoutingConfigDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEventsEndpointRoutingConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p> The failover configuration for an endpoint. This includes what triggers
      * failover and what happens when it's triggered.</p>
      */
-    inline const AwsEventsEndpointRoutingConfigFailoverConfigDetails& GetFailoverConfig() const{ return m_failoverConfig; }
+    inline const AwsEventsEndpointRoutingConfigFailoverConfigDetails& GetFailoverConfig() const { return m_failoverConfig; }
     inline bool FailoverConfigHasBeenSet() const { return m_failoverConfigHasBeenSet; }
-    inline void SetFailoverConfig(const AwsEventsEndpointRoutingConfigFailoverConfigDetails& value) { m_failoverConfigHasBeenSet = true; m_failoverConfig = value; }
-    inline void SetFailoverConfig(AwsEventsEndpointRoutingConfigFailoverConfigDetails&& value) { m_failoverConfigHasBeenSet = true; m_failoverConfig = std::move(value); }
-    inline AwsEventsEndpointRoutingConfigDetails& WithFailoverConfig(const AwsEventsEndpointRoutingConfigFailoverConfigDetails& value) { SetFailoverConfig(value); return *this;}
-    inline AwsEventsEndpointRoutingConfigDetails& WithFailoverConfig(AwsEventsEndpointRoutingConfigFailoverConfigDetails&& value) { SetFailoverConfig(std::move(value)); return *this;}
+    template<typename FailoverConfigT = AwsEventsEndpointRoutingConfigFailoverConfigDetails>
+    void SetFailoverConfig(FailoverConfigT&& value) { m_failoverConfigHasBeenSet = true; m_failoverConfig = std::forward<FailoverConfigT>(value); }
+    template<typename FailoverConfigT = AwsEventsEndpointRoutingConfigFailoverConfigDetails>
+    AwsEventsEndpointRoutingConfigDetails& WithFailoverConfig(FailoverConfigT&& value) { SetFailoverConfig(std::forward<FailoverConfigT>(value)); return *this;}
     ///@}
   private:
 

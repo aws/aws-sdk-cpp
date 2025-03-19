@@ -32,7 +32,7 @@ namespace Model
   class Ec2ConfigurationState
   {
   public:
-    AWS_INSPECTOR2_API Ec2ConfigurationState();
+    AWS_INSPECTOR2_API Ec2ConfigurationState() = default;
     AWS_INSPECTOR2_API Ec2ConfigurationState(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Ec2ConfigurationState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>An object that contains details about the state of the Amazon EC2 scan
      * mode.</p>
      */
-    inline const Ec2ScanModeState& GetScanModeState() const{ return m_scanModeState; }
+    inline const Ec2ScanModeState& GetScanModeState() const { return m_scanModeState; }
     inline bool ScanModeStateHasBeenSet() const { return m_scanModeStateHasBeenSet; }
-    inline void SetScanModeState(const Ec2ScanModeState& value) { m_scanModeStateHasBeenSet = true; m_scanModeState = value; }
-    inline void SetScanModeState(Ec2ScanModeState&& value) { m_scanModeStateHasBeenSet = true; m_scanModeState = std::move(value); }
-    inline Ec2ConfigurationState& WithScanModeState(const Ec2ScanModeState& value) { SetScanModeState(value); return *this;}
-    inline Ec2ConfigurationState& WithScanModeState(Ec2ScanModeState&& value) { SetScanModeState(std::move(value)); return *this;}
+    template<typename ScanModeStateT = Ec2ScanModeState>
+    void SetScanModeState(ScanModeStateT&& value) { m_scanModeStateHasBeenSet = true; m_scanModeState = std::forward<ScanModeStateT>(value); }
+    template<typename ScanModeStateT = Ec2ScanModeState>
+    Ec2ConfigurationState& WithScanModeState(ScanModeStateT&& value) { SetScanModeState(std::forward<ScanModeStateT>(value)); return *this;}
     ///@}
   private:
 

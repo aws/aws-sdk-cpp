@@ -12,13 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeRegionsRequest::DescribeRegionsRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_regionNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRegionsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -29,7 +29,7 @@ namespace Model
   class ListStandardsControlAssociationsResult
   {
   public:
-    AWS_SECURITYHUB_API ListStandardsControlAssociationsResult();
+    AWS_SECURITYHUB_API ListStandardsControlAssociationsResult() = default;
     AWS_SECURITYHUB_API ListStandardsControlAssociationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECURITYHUB_API ListStandardsControlAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p> An array that provides the enablement status and other details for each
      * security control that applies to each enabled standard. </p>
      */
-    inline const Aws::Vector<StandardsControlAssociationSummary>& GetStandardsControlAssociationSummaries() const{ return m_standardsControlAssociationSummaries; }
-    inline void SetStandardsControlAssociationSummaries(const Aws::Vector<StandardsControlAssociationSummary>& value) { m_standardsControlAssociationSummaries = value; }
-    inline void SetStandardsControlAssociationSummaries(Aws::Vector<StandardsControlAssociationSummary>&& value) { m_standardsControlAssociationSummaries = std::move(value); }
-    inline ListStandardsControlAssociationsResult& WithStandardsControlAssociationSummaries(const Aws::Vector<StandardsControlAssociationSummary>& value) { SetStandardsControlAssociationSummaries(value); return *this;}
-    inline ListStandardsControlAssociationsResult& WithStandardsControlAssociationSummaries(Aws::Vector<StandardsControlAssociationSummary>&& value) { SetStandardsControlAssociationSummaries(std::move(value)); return *this;}
-    inline ListStandardsControlAssociationsResult& AddStandardsControlAssociationSummaries(const StandardsControlAssociationSummary& value) { m_standardsControlAssociationSummaries.push_back(value); return *this; }
-    inline ListStandardsControlAssociationsResult& AddStandardsControlAssociationSummaries(StandardsControlAssociationSummary&& value) { m_standardsControlAssociationSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<StandardsControlAssociationSummary>& GetStandardsControlAssociationSummaries() const { return m_standardsControlAssociationSummaries; }
+    template<typename StandardsControlAssociationSummariesT = Aws::Vector<StandardsControlAssociationSummary>>
+    void SetStandardsControlAssociationSummaries(StandardsControlAssociationSummariesT&& value) { m_standardsControlAssociationSummariesHasBeenSet = true; m_standardsControlAssociationSummaries = std::forward<StandardsControlAssociationSummariesT>(value); }
+    template<typename StandardsControlAssociationSummariesT = Aws::Vector<StandardsControlAssociationSummary>>
+    ListStandardsControlAssociationsResult& WithStandardsControlAssociationSummaries(StandardsControlAssociationSummariesT&& value) { SetStandardsControlAssociationSummaries(std::forward<StandardsControlAssociationSummariesT>(value)); return *this;}
+    template<typename StandardsControlAssociationSummariesT = StandardsControlAssociationSummary>
+    ListStandardsControlAssociationsResult& AddStandardsControlAssociationSummaries(StandardsControlAssociationSummariesT&& value) { m_standardsControlAssociationSummariesHasBeenSet = true; m_standardsControlAssociationSummaries.emplace_back(std::forward<StandardsControlAssociationSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p> A pagination parameter that's included in the response only if it was
      * included in the request. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListStandardsControlAssociationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListStandardsControlAssociationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListStandardsControlAssociationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListStandardsControlAssociationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListStandardsControlAssociationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListStandardsControlAssociationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListStandardsControlAssociationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListStandardsControlAssociationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<StandardsControlAssociationSummary> m_standardsControlAssociationSummaries;
+    bool m_standardsControlAssociationSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

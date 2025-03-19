@@ -35,7 +35,7 @@ namespace Model
   class KeySigningKey
   {
   public:
-    AWS_ROUTE53_API KeySigningKey();
+    AWS_ROUTE53_API KeySigningKey() = default;
     AWS_ROUTE53_API KeySigningKey(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ROUTE53_API KeySigningKey& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,14 +48,12 @@ namespace Model
      * include numbers, letters, and underscores (_). <code>Name</code> must be unique
      * for each key-signing key in the same hosted zone.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline KeySigningKey& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline KeySigningKey& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline KeySigningKey& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    KeySigningKey& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +73,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html">Key
      * Management Service concepts</a>.</p>
      */
-    inline const Aws::String& GetKmsArn() const{ return m_kmsArn; }
+    inline const Aws::String& GetKmsArn() const { return m_kmsArn; }
     inline bool KmsArnHasBeenSet() const { return m_kmsArnHasBeenSet; }
-    inline void SetKmsArn(const Aws::String& value) { m_kmsArnHasBeenSet = true; m_kmsArn = value; }
-    inline void SetKmsArn(Aws::String&& value) { m_kmsArnHasBeenSet = true; m_kmsArn = std::move(value); }
-    inline void SetKmsArn(const char* value) { m_kmsArnHasBeenSet = true; m_kmsArn.assign(value); }
-    inline KeySigningKey& WithKmsArn(const Aws::String& value) { SetKmsArn(value); return *this;}
-    inline KeySigningKey& WithKmsArn(Aws::String&& value) { SetKmsArn(std::move(value)); return *this;}
-    inline KeySigningKey& WithKmsArn(const char* value) { SetKmsArn(value); return *this;}
+    template<typename KmsArnT = Aws::String>
+    void SetKmsArn(KmsArnT&& value) { m_kmsArnHasBeenSet = true; m_kmsArn = std::forward<KmsArnT>(value); }
+    template<typename KmsArnT = Aws::String>
+    KeySigningKey& WithKmsArn(KmsArnT&& value) { SetKmsArn(std::forward<KmsArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,7 +86,7 @@ namespace Model
      * <p>An integer that specifies how the key is used. For key-signing key (KSK),
      * this value is always 257.</p>
      */
-    inline int GetFlag() const{ return m_flag; }
+    inline int GetFlag() const { return m_flag; }
     inline bool FlagHasBeenSet() const { return m_flagHasBeenSet; }
     inline void SetFlag(int value) { m_flagHasBeenSet = true; m_flag = value; }
     inline KeySigningKey& WithFlag(int value) { SetFlag(value); return *this;}
@@ -103,14 +99,12 @@ namespace Model
      * href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>.
      * </p>
      */
-    inline const Aws::String& GetSigningAlgorithmMnemonic() const{ return m_signingAlgorithmMnemonic; }
+    inline const Aws::String& GetSigningAlgorithmMnemonic() const { return m_signingAlgorithmMnemonic; }
     inline bool SigningAlgorithmMnemonicHasBeenSet() const { return m_signingAlgorithmMnemonicHasBeenSet; }
-    inline void SetSigningAlgorithmMnemonic(const Aws::String& value) { m_signingAlgorithmMnemonicHasBeenSet = true; m_signingAlgorithmMnemonic = value; }
-    inline void SetSigningAlgorithmMnemonic(Aws::String&& value) { m_signingAlgorithmMnemonicHasBeenSet = true; m_signingAlgorithmMnemonic = std::move(value); }
-    inline void SetSigningAlgorithmMnemonic(const char* value) { m_signingAlgorithmMnemonicHasBeenSet = true; m_signingAlgorithmMnemonic.assign(value); }
-    inline KeySigningKey& WithSigningAlgorithmMnemonic(const Aws::String& value) { SetSigningAlgorithmMnemonic(value); return *this;}
-    inline KeySigningKey& WithSigningAlgorithmMnemonic(Aws::String&& value) { SetSigningAlgorithmMnemonic(std::move(value)); return *this;}
-    inline KeySigningKey& WithSigningAlgorithmMnemonic(const char* value) { SetSigningAlgorithmMnemonic(value); return *this;}
+    template<typename SigningAlgorithmMnemonicT = Aws::String>
+    void SetSigningAlgorithmMnemonic(SigningAlgorithmMnemonicT&& value) { m_signingAlgorithmMnemonicHasBeenSet = true; m_signingAlgorithmMnemonic = std::forward<SigningAlgorithmMnemonicT>(value); }
+    template<typename SigningAlgorithmMnemonicT = Aws::String>
+    KeySigningKey& WithSigningAlgorithmMnemonic(SigningAlgorithmMnemonicT&& value) { SetSigningAlgorithmMnemonic(std::forward<SigningAlgorithmMnemonicT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,7 +114,7 @@ namespace Model
      * href="https://tools.ietf.org/html/rfc8624#section-3.1">RFC-8624 Section 3.1</a>.
      * </p>
      */
-    inline int GetSigningAlgorithmType() const{ return m_signingAlgorithmType; }
+    inline int GetSigningAlgorithmType() const { return m_signingAlgorithmType; }
     inline bool SigningAlgorithmTypeHasBeenSet() const { return m_signingAlgorithmTypeHasBeenSet; }
     inline void SetSigningAlgorithmType(int value) { m_signingAlgorithmTypeHasBeenSet = true; m_signingAlgorithmType = value; }
     inline KeySigningKey& WithSigningAlgorithmType(int value) { SetSigningAlgorithmType(value); return *this;}
@@ -133,14 +127,12 @@ namespace Model
      * href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section 3.3</a>.
      * </p>
      */
-    inline const Aws::String& GetDigestAlgorithmMnemonic() const{ return m_digestAlgorithmMnemonic; }
+    inline const Aws::String& GetDigestAlgorithmMnemonic() const { return m_digestAlgorithmMnemonic; }
     inline bool DigestAlgorithmMnemonicHasBeenSet() const { return m_digestAlgorithmMnemonicHasBeenSet; }
-    inline void SetDigestAlgorithmMnemonic(const Aws::String& value) { m_digestAlgorithmMnemonicHasBeenSet = true; m_digestAlgorithmMnemonic = value; }
-    inline void SetDigestAlgorithmMnemonic(Aws::String&& value) { m_digestAlgorithmMnemonicHasBeenSet = true; m_digestAlgorithmMnemonic = std::move(value); }
-    inline void SetDigestAlgorithmMnemonic(const char* value) { m_digestAlgorithmMnemonicHasBeenSet = true; m_digestAlgorithmMnemonic.assign(value); }
-    inline KeySigningKey& WithDigestAlgorithmMnemonic(const Aws::String& value) { SetDigestAlgorithmMnemonic(value); return *this;}
-    inline KeySigningKey& WithDigestAlgorithmMnemonic(Aws::String&& value) { SetDigestAlgorithmMnemonic(std::move(value)); return *this;}
-    inline KeySigningKey& WithDigestAlgorithmMnemonic(const char* value) { SetDigestAlgorithmMnemonic(value); return *this;}
+    template<typename DigestAlgorithmMnemonicT = Aws::String>
+    void SetDigestAlgorithmMnemonic(DigestAlgorithmMnemonicT&& value) { m_digestAlgorithmMnemonicHasBeenSet = true; m_digestAlgorithmMnemonic = std::forward<DigestAlgorithmMnemonicT>(value); }
+    template<typename DigestAlgorithmMnemonicT = Aws::String>
+    KeySigningKey& WithDigestAlgorithmMnemonic(DigestAlgorithmMnemonicT&& value) { SetDigestAlgorithmMnemonic(std::forward<DigestAlgorithmMnemonicT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -150,7 +142,7 @@ namespace Model
      * href="https://tools.ietf.org/html/rfc8624#section-3.3">RFC-8624 Section
      * 3.3</a>.</p>
      */
-    inline int GetDigestAlgorithmType() const{ return m_digestAlgorithmType; }
+    inline int GetDigestAlgorithmType() const { return m_digestAlgorithmType; }
     inline bool DigestAlgorithmTypeHasBeenSet() const { return m_digestAlgorithmTypeHasBeenSet; }
     inline void SetDigestAlgorithmType(int value) { m_digestAlgorithmTypeHasBeenSet = true; m_digestAlgorithmType = value; }
     inline KeySigningKey& WithDigestAlgorithmType(int value) { SetDigestAlgorithmType(value); return *this;}
@@ -162,7 +154,7 @@ namespace Model
      * process used to calculate the value is described in <a
      * href="https://tools.ietf.org/rfc/rfc4034.txt">RFC-4034 Appendix B</a>.</p>
      */
-    inline int GetKeyTag() const{ return m_keyTag; }
+    inline int GetKeyTag() const { return m_keyTag; }
     inline bool KeyTagHasBeenSet() const { return m_keyTagHasBeenSet; }
     inline void SetKeyTag(int value) { m_keyTagHasBeenSet = true; m_keyTag = value; }
     inline KeySigningKey& WithKeyTag(int value) { SetKeyTag(value); return *this;}
@@ -175,14 +167,12 @@ namespace Model
      * signatures that are used to secure certain kinds of information provided by the
      * DNS system.</p>
      */
-    inline const Aws::String& GetDigestValue() const{ return m_digestValue; }
+    inline const Aws::String& GetDigestValue() const { return m_digestValue; }
     inline bool DigestValueHasBeenSet() const { return m_digestValueHasBeenSet; }
-    inline void SetDigestValue(const Aws::String& value) { m_digestValueHasBeenSet = true; m_digestValue = value; }
-    inline void SetDigestValue(Aws::String&& value) { m_digestValueHasBeenSet = true; m_digestValue = std::move(value); }
-    inline void SetDigestValue(const char* value) { m_digestValueHasBeenSet = true; m_digestValue.assign(value); }
-    inline KeySigningKey& WithDigestValue(const Aws::String& value) { SetDigestValue(value); return *this;}
-    inline KeySigningKey& WithDigestValue(Aws::String&& value) { SetDigestValue(std::move(value)); return *this;}
-    inline KeySigningKey& WithDigestValue(const char* value) { SetDigestValue(value); return *this;}
+    template<typename DigestValueT = Aws::String>
+    void SetDigestValue(DigestValueT&& value) { m_digestValueHasBeenSet = true; m_digestValue = std::forward<DigestValueT>(value); }
+    template<typename DigestValueT = Aws::String>
+    KeySigningKey& WithDigestValue(DigestValueT&& value) { SetDigestValue(std::forward<DigestValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -190,42 +180,36 @@ namespace Model
      * <p>The public key, represented as a Base64 encoding, as required by <a
      * href="https://tools.ietf.org/rfc/rfc4034.txt"> RFC-4034 Page 5</a>.</p>
      */
-    inline const Aws::String& GetPublicKey() const{ return m_publicKey; }
+    inline const Aws::String& GetPublicKey() const { return m_publicKey; }
     inline bool PublicKeyHasBeenSet() const { return m_publicKeyHasBeenSet; }
-    inline void SetPublicKey(const Aws::String& value) { m_publicKeyHasBeenSet = true; m_publicKey = value; }
-    inline void SetPublicKey(Aws::String&& value) { m_publicKeyHasBeenSet = true; m_publicKey = std::move(value); }
-    inline void SetPublicKey(const char* value) { m_publicKeyHasBeenSet = true; m_publicKey.assign(value); }
-    inline KeySigningKey& WithPublicKey(const Aws::String& value) { SetPublicKey(value); return *this;}
-    inline KeySigningKey& WithPublicKey(Aws::String&& value) { SetPublicKey(std::move(value)); return *this;}
-    inline KeySigningKey& WithPublicKey(const char* value) { SetPublicKey(value); return *this;}
+    template<typename PublicKeyT = Aws::String>
+    void SetPublicKey(PublicKeyT&& value) { m_publicKeyHasBeenSet = true; m_publicKey = std::forward<PublicKeyT>(value); }
+    template<typename PublicKeyT = Aws::String>
+    KeySigningKey& WithPublicKey(PublicKeyT&& value) { SetPublicKey(std::forward<PublicKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A string that represents a delegation signer (DS) record.</p>
      */
-    inline const Aws::String& GetDSRecord() const{ return m_dSRecord; }
+    inline const Aws::String& GetDSRecord() const { return m_dSRecord; }
     inline bool DSRecordHasBeenSet() const { return m_dSRecordHasBeenSet; }
-    inline void SetDSRecord(const Aws::String& value) { m_dSRecordHasBeenSet = true; m_dSRecord = value; }
-    inline void SetDSRecord(Aws::String&& value) { m_dSRecordHasBeenSet = true; m_dSRecord = std::move(value); }
-    inline void SetDSRecord(const char* value) { m_dSRecordHasBeenSet = true; m_dSRecord.assign(value); }
-    inline KeySigningKey& WithDSRecord(const Aws::String& value) { SetDSRecord(value); return *this;}
-    inline KeySigningKey& WithDSRecord(Aws::String&& value) { SetDSRecord(std::move(value)); return *this;}
-    inline KeySigningKey& WithDSRecord(const char* value) { SetDSRecord(value); return *this;}
+    template<typename DSRecordT = Aws::String>
+    void SetDSRecord(DSRecordT&& value) { m_dSRecordHasBeenSet = true; m_dSRecord = std::forward<DSRecordT>(value); }
+    template<typename DSRecordT = Aws::String>
+    KeySigningKey& WithDSRecord(DSRecordT&& value) { SetDSRecord(std::forward<DSRecordT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A string that represents a DNSKEY record.</p>
      */
-    inline const Aws::String& GetDNSKEYRecord() const{ return m_dNSKEYRecord; }
+    inline const Aws::String& GetDNSKEYRecord() const { return m_dNSKEYRecord; }
     inline bool DNSKEYRecordHasBeenSet() const { return m_dNSKEYRecordHasBeenSet; }
-    inline void SetDNSKEYRecord(const Aws::String& value) { m_dNSKEYRecordHasBeenSet = true; m_dNSKEYRecord = value; }
-    inline void SetDNSKEYRecord(Aws::String&& value) { m_dNSKEYRecordHasBeenSet = true; m_dNSKEYRecord = std::move(value); }
-    inline void SetDNSKEYRecord(const char* value) { m_dNSKEYRecordHasBeenSet = true; m_dNSKEYRecord.assign(value); }
-    inline KeySigningKey& WithDNSKEYRecord(const Aws::String& value) { SetDNSKEYRecord(value); return *this;}
-    inline KeySigningKey& WithDNSKEYRecord(Aws::String&& value) { SetDNSKEYRecord(std::move(value)); return *this;}
-    inline KeySigningKey& WithDNSKEYRecord(const char* value) { SetDNSKEYRecord(value); return *this;}
+    template<typename DNSKEYRecordT = Aws::String>
+    void SetDNSKEYRecord(DNSKEYRecordT&& value) { m_dNSKEYRecordHasBeenSet = true; m_dNSKEYRecord = std::forward<DNSKEYRecordT>(value); }
+    template<typename DNSKEYRecordT = Aws::String>
+    KeySigningKey& WithDNSKEYRecord(DNSKEYRecordT&& value) { SetDNSKEYRecord(std::forward<DNSKEYRecordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -243,14 +227,12 @@ namespace Model
      * this KSK, you must correct the problem. For example, you may need to activate or
      * deactivate the KSK.</p> </dd> </dl>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline KeySigningKey& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline KeySigningKey& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline KeySigningKey& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    KeySigningKey& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -260,38 +242,36 @@ namespace Model
      * includes information about what the problem might be and steps that you can take
      * to correct the issue.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline KeySigningKey& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline KeySigningKey& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline KeySigningKey& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    KeySigningKey& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date when the key-signing key (KSK) was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
+    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
     inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
-    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
-    inline KeySigningKey& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
-    inline KeySigningKey& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    KeySigningKey& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last time that the key-signing key (KSK) was changed.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline const Aws::Utils::DateTime& GetLastModifiedDate() const { return m_lastModifiedDate; }
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-    inline void SetLastModifiedDate(Aws::Utils::DateTime&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
-    inline KeySigningKey& WithLastModifiedDate(const Aws::Utils::DateTime& value) { SetLastModifiedDate(value); return *this;}
-    inline KeySigningKey& WithLastModifiedDate(Aws::Utils::DateTime&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = Aws::Utils::DateTime>
+    KeySigningKey& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
   private:
 
@@ -301,22 +281,22 @@ namespace Model
     Aws::String m_kmsArn;
     bool m_kmsArnHasBeenSet = false;
 
-    int m_flag;
+    int m_flag{0};
     bool m_flagHasBeenSet = false;
 
     Aws::String m_signingAlgorithmMnemonic;
     bool m_signingAlgorithmMnemonicHasBeenSet = false;
 
-    int m_signingAlgorithmType;
+    int m_signingAlgorithmType{0};
     bool m_signingAlgorithmTypeHasBeenSet = false;
 
     Aws::String m_digestAlgorithmMnemonic;
     bool m_digestAlgorithmMnemonicHasBeenSet = false;
 
-    int m_digestAlgorithmType;
+    int m_digestAlgorithmType{0};
     bool m_digestAlgorithmTypeHasBeenSet = false;
 
-    int m_keyTag;
+    int m_keyTag{0};
     bool m_keyTagHasBeenSet = false;
 
     Aws::String m_digestValue;
@@ -337,10 +317,10 @@ namespace Model
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdDate;
+    Aws::Utils::DateTime m_createdDate{};
     bool m_createdDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedDate;
+    Aws::Utils::DateTime m_lastModifiedDate{};
     bool m_lastModifiedDateHasBeenSet = false;
   };
 

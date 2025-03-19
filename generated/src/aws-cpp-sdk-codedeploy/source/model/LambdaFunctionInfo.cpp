@@ -18,18 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-LambdaFunctionInfo::LambdaFunctionInfo() : 
-    m_functionNameHasBeenSet(false),
-    m_functionAliasHasBeenSet(false),
-    m_currentVersionHasBeenSet(false),
-    m_targetVersionHasBeenSet(false),
-    m_targetVersionWeight(0.0),
-    m_targetVersionWeightHasBeenSet(false)
-{
-}
-
 LambdaFunctionInfo::LambdaFunctionInfo(JsonView jsonValue)
-  : LambdaFunctionInfo()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ LambdaFunctionInfo& LambdaFunctionInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("functionName"))
   {
     m_functionName = jsonValue.GetString("functionName");
-
     m_functionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("functionAlias"))
   {
     m_functionAlias = jsonValue.GetString("functionAlias");
-
     m_functionAliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentVersion"))
   {
     m_currentVersion = jsonValue.GetString("currentVersion");
-
     m_currentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetVersion"))
   {
     m_targetVersion = jsonValue.GetString("targetVersion");
-
     m_targetVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetVersionWeight"))
   {
     m_targetVersionWeight = jsonValue.GetDouble("targetVersionWeight");
-
     m_targetVersionWeightHasBeenSet = true;
   }
-
   return *this;
 }
 

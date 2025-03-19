@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DirectoryServiceAuthenticationRequest::DirectoryServiceAuthenticationRequest() : 
-    m_directoryIdHasBeenSet(false)
-{
-}
-
 DirectoryServiceAuthenticationRequest::DirectoryServiceAuthenticationRequest(const XmlNode& xmlNode)
-  : DirectoryServiceAuthenticationRequest()
 {
   *this = xmlNode;
 }

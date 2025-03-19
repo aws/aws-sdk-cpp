@@ -27,7 +27,7 @@ namespace Model
   class UpdateHubResult
   {
   public:
-    AWS_SAGEMAKER_API UpdateHubResult();
+    AWS_SAGEMAKER_API UpdateHubResult() = default;
     AWS_SAGEMAKER_API UpdateHubResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API UpdateHubResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the updated hub.</p>
      */
-    inline const Aws::String& GetHubArn() const{ return m_hubArn; }
-    inline void SetHubArn(const Aws::String& value) { m_hubArn = value; }
-    inline void SetHubArn(Aws::String&& value) { m_hubArn = std::move(value); }
-    inline void SetHubArn(const char* value) { m_hubArn.assign(value); }
-    inline UpdateHubResult& WithHubArn(const Aws::String& value) { SetHubArn(value); return *this;}
-    inline UpdateHubResult& WithHubArn(Aws::String&& value) { SetHubArn(std::move(value)); return *this;}
-    inline UpdateHubResult& WithHubArn(const char* value) { SetHubArn(value); return *this;}
+    inline const Aws::String& GetHubArn() const { return m_hubArn; }
+    template<typename HubArnT = Aws::String>
+    void SetHubArn(HubArnT&& value) { m_hubArnHasBeenSet = true; m_hubArn = std::forward<HubArnT>(value); }
+    template<typename HubArnT = Aws::String>
+    UpdateHubResult& WithHubArn(HubArnT&& value) { SetHubArn(std::forward<HubArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateHubResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateHubResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateHubResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateHubResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_hubArn;
+    bool m_hubArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

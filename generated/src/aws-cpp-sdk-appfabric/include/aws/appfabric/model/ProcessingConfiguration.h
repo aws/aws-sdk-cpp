@@ -32,7 +32,7 @@ namespace Model
   class ProcessingConfiguration
   {
   public:
-    AWS_APPFABRIC_API ProcessingConfiguration();
+    AWS_APPFABRIC_API ProcessingConfiguration() = default;
     AWS_APPFABRIC_API ProcessingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFABRIC_API ProcessingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFABRIC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Contains information about an audit log processing configuration.</p>
      */
-    inline const AuditLogProcessingConfiguration& GetAuditLog() const{ return m_auditLog; }
+    inline const AuditLogProcessingConfiguration& GetAuditLog() const { return m_auditLog; }
     inline bool AuditLogHasBeenSet() const { return m_auditLogHasBeenSet; }
-    inline void SetAuditLog(const AuditLogProcessingConfiguration& value) { m_auditLogHasBeenSet = true; m_auditLog = value; }
-    inline void SetAuditLog(AuditLogProcessingConfiguration&& value) { m_auditLogHasBeenSet = true; m_auditLog = std::move(value); }
-    inline ProcessingConfiguration& WithAuditLog(const AuditLogProcessingConfiguration& value) { SetAuditLog(value); return *this;}
-    inline ProcessingConfiguration& WithAuditLog(AuditLogProcessingConfiguration&& value) { SetAuditLog(std::move(value)); return *this;}
+    template<typename AuditLogT = AuditLogProcessingConfiguration>
+    void SetAuditLog(AuditLogT&& value) { m_auditLogHasBeenSet = true; m_auditLog = std::forward<AuditLogT>(value); }
+    template<typename AuditLogT = AuditLogProcessingConfiguration>
+    ProcessingConfiguration& WithAuditLog(AuditLogT&& value) { SetAuditLog(std::forward<AuditLogT>(value)); return *this;}
     ///@}
   private:
 

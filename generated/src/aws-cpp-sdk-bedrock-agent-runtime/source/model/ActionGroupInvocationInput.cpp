@@ -18,21 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-ActionGroupInvocationInput::ActionGroupInvocationInput() : 
-    m_actionGroupNameHasBeenSet(false),
-    m_apiPathHasBeenSet(false),
-    m_executionType(ExecutionType::NOT_SET),
-    m_executionTypeHasBeenSet(false),
-    m_functionHasBeenSet(false),
-    m_invocationIdHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_requestBodyHasBeenSet(false),
-    m_verbHasBeenSet(false)
-{
-}
-
 ActionGroupInvocationInput::ActionGroupInvocationInput(JsonView jsonValue)
-  : ActionGroupInvocationInput()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ ActionGroupInvocationInput& ActionGroupInvocationInput::operator =(JsonView json
   if(jsonValue.ValueExists("actionGroupName"))
   {
     m_actionGroupName = jsonValue.GetString("actionGroupName");
-
     m_actionGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiPath"))
   {
     m_apiPath = jsonValue.GetString("apiPath");
-
     m_apiPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionType"))
   {
     m_executionType = ExecutionTypeMapper::GetExecutionTypeForName(jsonValue.GetString("executionType"));
-
     m_executionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("function"))
   {
     m_function = jsonValue.GetString("function");
-
     m_functionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("invocationId"))
   {
     m_invocationId = jsonValue.GetString("invocationId");
-
     m_invocationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("parameters");
@@ -83,21 +59,16 @@ ActionGroupInvocationInput& ActionGroupInvocationInput::operator =(JsonView json
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestBody"))
   {
     m_requestBody = jsonValue.GetObject("requestBody");
-
     m_requestBodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("verb"))
   {
     m_verb = jsonValue.GetString("verb");
-
     m_verbHasBeenSet = true;
   }
-
   return *this;
 }
 

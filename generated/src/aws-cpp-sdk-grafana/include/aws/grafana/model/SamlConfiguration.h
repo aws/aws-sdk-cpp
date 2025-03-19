@@ -36,7 +36,7 @@ namespace Model
   class SamlConfiguration
   {
   public:
-    AWS_MANAGEDGRAFANA_API SamlConfiguration();
+    AWS_MANAGEDGRAFANA_API SamlConfiguration() = default;
     AWS_MANAGEDGRAFANA_API SamlConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDGRAFANA_API SamlConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,15 +48,14 @@ namespace Model
      * the Amazon Managed Grafana workspace. If this is empty, all organizations in the
      * assertion attribute have access.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowedOrganizations() const{ return m_allowedOrganizations; }
+    inline const Aws::Vector<Aws::String>& GetAllowedOrganizations() const { return m_allowedOrganizations; }
     inline bool AllowedOrganizationsHasBeenSet() const { return m_allowedOrganizationsHasBeenSet; }
-    inline void SetAllowedOrganizations(const Aws::Vector<Aws::String>& value) { m_allowedOrganizationsHasBeenSet = true; m_allowedOrganizations = value; }
-    inline void SetAllowedOrganizations(Aws::Vector<Aws::String>&& value) { m_allowedOrganizationsHasBeenSet = true; m_allowedOrganizations = std::move(value); }
-    inline SamlConfiguration& WithAllowedOrganizations(const Aws::Vector<Aws::String>& value) { SetAllowedOrganizations(value); return *this;}
-    inline SamlConfiguration& WithAllowedOrganizations(Aws::Vector<Aws::String>&& value) { SetAllowedOrganizations(std::move(value)); return *this;}
-    inline SamlConfiguration& AddAllowedOrganizations(const Aws::String& value) { m_allowedOrganizationsHasBeenSet = true; m_allowedOrganizations.push_back(value); return *this; }
-    inline SamlConfiguration& AddAllowedOrganizations(Aws::String&& value) { m_allowedOrganizationsHasBeenSet = true; m_allowedOrganizations.push_back(std::move(value)); return *this; }
-    inline SamlConfiguration& AddAllowedOrganizations(const char* value) { m_allowedOrganizationsHasBeenSet = true; m_allowedOrganizations.push_back(value); return *this; }
+    template<typename AllowedOrganizationsT = Aws::Vector<Aws::String>>
+    void SetAllowedOrganizations(AllowedOrganizationsT&& value) { m_allowedOrganizationsHasBeenSet = true; m_allowedOrganizations = std::forward<AllowedOrganizationsT>(value); }
+    template<typename AllowedOrganizationsT = Aws::Vector<Aws::String>>
+    SamlConfiguration& WithAllowedOrganizations(AllowedOrganizationsT&& value) { SetAllowedOrganizations(std::forward<AllowedOrganizationsT>(value)); return *this;}
+    template<typename AllowedOrganizationsT = Aws::String>
+    SamlConfiguration& AddAllowedOrganizations(AllowedOrganizationsT&& value) { m_allowedOrganizationsHasBeenSet = true; m_allowedOrganizations.emplace_back(std::forward<AllowedOrganizationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -65,12 +64,12 @@ namespace Model
      * used to define information about the users authenticated by that IdP to use the
      * workspace.</p>
      */
-    inline const AssertionAttributes& GetAssertionAttributes() const{ return m_assertionAttributes; }
+    inline const AssertionAttributes& GetAssertionAttributes() const { return m_assertionAttributes; }
     inline bool AssertionAttributesHasBeenSet() const { return m_assertionAttributesHasBeenSet; }
-    inline void SetAssertionAttributes(const AssertionAttributes& value) { m_assertionAttributesHasBeenSet = true; m_assertionAttributes = value; }
-    inline void SetAssertionAttributes(AssertionAttributes&& value) { m_assertionAttributesHasBeenSet = true; m_assertionAttributes = std::move(value); }
-    inline SamlConfiguration& WithAssertionAttributes(const AssertionAttributes& value) { SetAssertionAttributes(value); return *this;}
-    inline SamlConfiguration& WithAssertionAttributes(AssertionAttributes&& value) { SetAssertionAttributes(std::move(value)); return *this;}
+    template<typename AssertionAttributesT = AssertionAttributes>
+    void SetAssertionAttributes(AssertionAttributesT&& value) { m_assertionAttributesHasBeenSet = true; m_assertionAttributes = std::forward<AssertionAttributesT>(value); }
+    template<typename AssertionAttributesT = AssertionAttributes>
+    SamlConfiguration& WithAssertionAttributes(AssertionAttributesT&& value) { SetAssertionAttributes(std::forward<AssertionAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,12 +77,12 @@ namespace Model
      * <p>A structure containing the identity provider (IdP) metadata used to integrate
      * the identity provider with this workspace.</p>
      */
-    inline const IdpMetadata& GetIdpMetadata() const{ return m_idpMetadata; }
+    inline const IdpMetadata& GetIdpMetadata() const { return m_idpMetadata; }
     inline bool IdpMetadataHasBeenSet() const { return m_idpMetadataHasBeenSet; }
-    inline void SetIdpMetadata(const IdpMetadata& value) { m_idpMetadataHasBeenSet = true; m_idpMetadata = value; }
-    inline void SetIdpMetadata(IdpMetadata&& value) { m_idpMetadataHasBeenSet = true; m_idpMetadata = std::move(value); }
-    inline SamlConfiguration& WithIdpMetadata(const IdpMetadata& value) { SetIdpMetadata(value); return *this;}
-    inline SamlConfiguration& WithIdpMetadata(IdpMetadata&& value) { SetIdpMetadata(std::move(value)); return *this;}
+    template<typename IdpMetadataT = IdpMetadata>
+    void SetIdpMetadata(IdpMetadataT&& value) { m_idpMetadataHasBeenSet = true; m_idpMetadata = std::forward<IdpMetadataT>(value); }
+    template<typename IdpMetadataT = IdpMetadata>
+    SamlConfiguration& WithIdpMetadata(IdpMetadataT&& value) { SetIdpMetadata(std::forward<IdpMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,7 +90,7 @@ namespace Model
      * <p>How long a sign-on session by a SAML user is valid, before the user has to
      * sign on again.</p>
      */
-    inline int GetLoginValidityDuration() const{ return m_loginValidityDuration; }
+    inline int GetLoginValidityDuration() const { return m_loginValidityDuration; }
     inline bool LoginValidityDurationHasBeenSet() const { return m_loginValidityDurationHasBeenSet; }
     inline void SetLoginValidityDuration(int value) { m_loginValidityDurationHasBeenSet = true; m_loginValidityDuration = value; }
     inline SamlConfiguration& WithLoginValidityDuration(int value) { SetLoginValidityDuration(value); return *this;}
@@ -103,12 +102,12 @@ namespace Model
      * the Grafana <code>Admin</code> and <code>Editor</code> roles in the
      * workspace.</p>
      */
-    inline const RoleValues& GetRoleValues() const{ return m_roleValues; }
+    inline const RoleValues& GetRoleValues() const { return m_roleValues; }
     inline bool RoleValuesHasBeenSet() const { return m_roleValuesHasBeenSet; }
-    inline void SetRoleValues(const RoleValues& value) { m_roleValuesHasBeenSet = true; m_roleValues = value; }
-    inline void SetRoleValues(RoleValues&& value) { m_roleValuesHasBeenSet = true; m_roleValues = std::move(value); }
-    inline SamlConfiguration& WithRoleValues(const RoleValues& value) { SetRoleValues(value); return *this;}
-    inline SamlConfiguration& WithRoleValues(RoleValues&& value) { SetRoleValues(std::move(value)); return *this;}
+    template<typename RoleValuesT = RoleValues>
+    void SetRoleValues(RoleValuesT&& value) { m_roleValuesHasBeenSet = true; m_roleValues = std::forward<RoleValuesT>(value); }
+    template<typename RoleValuesT = RoleValues>
+    SamlConfiguration& WithRoleValues(RoleValuesT&& value) { SetRoleValues(std::forward<RoleValuesT>(value)); return *this;}
     ///@}
   private:
 
@@ -121,7 +120,7 @@ namespace Model
     IdpMetadata m_idpMetadata;
     bool m_idpMetadataHasBeenSet = false;
 
-    int m_loginValidityDuration;
+    int m_loginValidityDuration{0};
     bool m_loginValidityDurationHasBeenSet = false;
 
     RoleValues m_roleValues;

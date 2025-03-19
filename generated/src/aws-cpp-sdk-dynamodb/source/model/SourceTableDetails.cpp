@@ -18,25 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-SourceTableDetails::SourceTableDetails() : 
-    m_tableNameHasBeenSet(false),
-    m_tableIdHasBeenSet(false),
-    m_tableArnHasBeenSet(false),
-    m_tableSizeBytes(0),
-    m_tableSizeBytesHasBeenSet(false),
-    m_keySchemaHasBeenSet(false),
-    m_tableCreationDateTimeHasBeenSet(false),
-    m_provisionedThroughputHasBeenSet(false),
-    m_onDemandThroughputHasBeenSet(false),
-    m_itemCount(0),
-    m_itemCountHasBeenSet(false),
-    m_billingMode(BillingMode::NOT_SET),
-    m_billingModeHasBeenSet(false)
-{
-}
-
 SourceTableDetails::SourceTableDetails(JsonView jsonValue)
-  : SourceTableDetails()
 {
   *this = jsonValue;
 }
@@ -46,31 +28,23 @@ SourceTableDetails& SourceTableDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableId"))
   {
     m_tableId = jsonValue.GetString("TableId");
-
     m_tableIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableArn"))
   {
     m_tableArn = jsonValue.GetString("TableArn");
-
     m_tableArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableSizeBytes"))
   {
     m_tableSizeBytes = jsonValue.GetInt64("TableSizeBytes");
-
     m_tableSizeBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeySchema"))
   {
     Aws::Utils::Array<JsonView> keySchemaJsonList = jsonValue.GetArray("KeySchema");
@@ -80,42 +54,31 @@ SourceTableDetails& SourceTableDetails::operator =(JsonView jsonValue)
     }
     m_keySchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableCreationDateTime"))
   {
     m_tableCreationDateTime = jsonValue.GetDouble("TableCreationDateTime");
-
     m_tableCreationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedThroughput"))
   {
     m_provisionedThroughput = jsonValue.GetObject("ProvisionedThroughput");
-
     m_provisionedThroughputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnDemandThroughput"))
   {
     m_onDemandThroughput = jsonValue.GetObject("OnDemandThroughput");
-
     m_onDemandThroughputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ItemCount"))
   {
     m_itemCount = jsonValue.GetInt64("ItemCount");
-
     m_itemCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BillingMode"))
   {
     m_billingMode = BillingModeMapper::GetBillingModeForName(jsonValue.GetString("BillingMode"));
-
     m_billingModeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-Alarm::Alarm() : 
-    m_alarmNameHasBeenSet(false)
-{
-}
-
 Alarm::Alarm(JsonView jsonValue)
-  : Alarm()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Alarm& Alarm::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AlarmName"))
   {
     m_alarmName = jsonValue.GetString("AlarmName");
-
     m_alarmNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeliverConfigSnapshotResult::DeliverConfigSnapshotResult()
-{
-}
-
 DeliverConfigSnapshotResult::DeliverConfigSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeliverConfigSnapshotResult& DeliverConfigSnapshotResult::operator =(const Aws::
   if(jsonValue.ValueExists("configSnapshotId"))
   {
     m_configSnapshotId = jsonValue.GetString("configSnapshotId");
-
+    m_configSnapshotIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

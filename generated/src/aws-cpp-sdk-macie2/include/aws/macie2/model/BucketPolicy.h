@@ -30,7 +30,7 @@ namespace Model
   class BucketPolicy
   {
   public:
-    AWS_MACIE2_API BucketPolicy();
+    AWS_MACIE2_API BucketPolicy() = default;
     AWS_MACIE2_API BucketPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API BucketPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>Specifies whether the bucket policy allows the general public to have read
      * access to the bucket.</p>
      */
-    inline bool GetAllowsPublicReadAccess() const{ return m_allowsPublicReadAccess; }
+    inline bool GetAllowsPublicReadAccess() const { return m_allowsPublicReadAccess; }
     inline bool AllowsPublicReadAccessHasBeenSet() const { return m_allowsPublicReadAccessHasBeenSet; }
     inline void SetAllowsPublicReadAccess(bool value) { m_allowsPublicReadAccessHasBeenSet = true; m_allowsPublicReadAccess = value; }
     inline BucketPolicy& WithAllowsPublicReadAccess(bool value) { SetAllowsPublicReadAccess(value); return *this;}
@@ -52,17 +52,17 @@ namespace Model
      * <p>Specifies whether the bucket policy allows the general public to have write
      * access to the bucket.</p>
      */
-    inline bool GetAllowsPublicWriteAccess() const{ return m_allowsPublicWriteAccess; }
+    inline bool GetAllowsPublicWriteAccess() const { return m_allowsPublicWriteAccess; }
     inline bool AllowsPublicWriteAccessHasBeenSet() const { return m_allowsPublicWriteAccessHasBeenSet; }
     inline void SetAllowsPublicWriteAccess(bool value) { m_allowsPublicWriteAccessHasBeenSet = true; m_allowsPublicWriteAccess = value; }
     inline BucketPolicy& WithAllowsPublicWriteAccess(bool value) { SetAllowsPublicWriteAccess(value); return *this;}
     ///@}
   private:
 
-    bool m_allowsPublicReadAccess;
+    bool m_allowsPublicReadAccess{false};
     bool m_allowsPublicReadAccessHasBeenSet = false;
 
-    bool m_allowsPublicWriteAccess;
+    bool m_allowsPublicWriteAccess{false};
     bool m_allowsPublicWriteAccessHasBeenSet = false;
   };
 

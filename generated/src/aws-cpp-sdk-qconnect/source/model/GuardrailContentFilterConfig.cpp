@@ -18,18 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-GuardrailContentFilterConfig::GuardrailContentFilterConfig() : 
-    m_inputStrength(GuardrailFilterStrength::NOT_SET),
-    m_inputStrengthHasBeenSet(false),
-    m_outputStrength(GuardrailFilterStrength::NOT_SET),
-    m_outputStrengthHasBeenSet(false),
-    m_type(GuardrailContentFilterType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 GuardrailContentFilterConfig::GuardrailContentFilterConfig(JsonView jsonValue)
-  : GuardrailContentFilterConfig()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ GuardrailContentFilterConfig& GuardrailContentFilterConfig::operator =(JsonView 
   if(jsonValue.ValueExists("inputStrength"))
   {
     m_inputStrength = GuardrailFilterStrengthMapper::GetGuardrailFilterStrengthForName(jsonValue.GetString("inputStrength"));
-
     m_inputStrengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputStrength"))
   {
     m_outputStrength = GuardrailFilterStrengthMapper::GetGuardrailFilterStrengthForName(jsonValue.GetString("outputStrength"));
-
     m_outputStrengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = GuardrailContentFilterTypeMapper::GetGuardrailContentFilterTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class ConnectionPoolConfiguration
   {
   public:
-    AWS_RDS_API ConnectionPoolConfiguration();
+    AWS_RDS_API ConnectionPoolConfiguration() = default;
     AWS_RDS_API ConnectionPoolConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API ConnectionPoolConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,7 +52,7 @@ namespace Model
      * for RDS for Microsoft SQL Server, and <code>100</code> for all other engines</p>
      * <p>Constraints:</p> <ul> <li> <p>Must be between 1 and 100.</p> </li> </ul>
      */
-    inline int GetMaxConnectionsPercent() const{ return m_maxConnectionsPercent; }
+    inline int GetMaxConnectionsPercent() const { return m_maxConnectionsPercent; }
     inline bool MaxConnectionsPercentHasBeenSet() const { return m_maxConnectionsPercentHasBeenSet; }
     inline void SetMaxConnectionsPercent(int value) { m_maxConnectionsPercentHasBeenSet = true; m_maxConnectionsPercent = value; }
     inline ConnectionPoolConfiguration& WithMaxConnectionsPercent(int value) { SetMaxConnectionsPercent(value); return *this;}
@@ -77,7 +77,7 @@ namespace Model
      * <p>Must be between 0 and the value of <code>MaxConnectionsPercent</code>.</p>
      * </li> </ul>
      */
-    inline int GetMaxIdleConnectionsPercent() const{ return m_maxIdleConnectionsPercent; }
+    inline int GetMaxIdleConnectionsPercent() const { return m_maxIdleConnectionsPercent; }
     inline bool MaxIdleConnectionsPercentHasBeenSet() const { return m_maxIdleConnectionsPercentHasBeenSet; }
     inline void SetMaxIdleConnectionsPercent(int value) { m_maxIdleConnectionsPercentHasBeenSet = true; m_maxIdleConnectionsPercent = value; }
     inline ConnectionPoolConfiguration& WithMaxIdleConnectionsPercent(int value) { SetMaxIdleConnectionsPercent(value); return *this;}
@@ -91,7 +91,7 @@ namespace Model
      * client sessions.</p> <p>Default: <code>120</code> </p> <p>Constraints:</p> <ul>
      * <li> <p>Must be between 0 and 3600.</p> </li> </ul>
      */
-    inline int GetConnectionBorrowTimeout() const{ return m_connectionBorrowTimeout; }
+    inline int GetConnectionBorrowTimeout() const { return m_connectionBorrowTimeout; }
     inline bool ConnectionBorrowTimeoutHasBeenSet() const { return m_connectionBorrowTimeoutHasBeenSet; }
     inline void SetConnectionBorrowTimeout(int value) { m_connectionBorrowTimeoutHasBeenSet = true; m_connectionBorrowTimeout = value; }
     inline ConnectionPoolConfiguration& WithConnectionBorrowTimeout(int value) { SetConnectionBorrowTimeout(value); return *this;}
@@ -105,15 +105,14 @@ namespace Model
      * of SQL operations from the pinning behavior.</p> <p>Default: no session pinning
      * filters</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSessionPinningFilters() const{ return m_sessionPinningFilters; }
+    inline const Aws::Vector<Aws::String>& GetSessionPinningFilters() const { return m_sessionPinningFilters; }
     inline bool SessionPinningFiltersHasBeenSet() const { return m_sessionPinningFiltersHasBeenSet; }
-    inline void SetSessionPinningFilters(const Aws::Vector<Aws::String>& value) { m_sessionPinningFiltersHasBeenSet = true; m_sessionPinningFilters = value; }
-    inline void SetSessionPinningFilters(Aws::Vector<Aws::String>&& value) { m_sessionPinningFiltersHasBeenSet = true; m_sessionPinningFilters = std::move(value); }
-    inline ConnectionPoolConfiguration& WithSessionPinningFilters(const Aws::Vector<Aws::String>& value) { SetSessionPinningFilters(value); return *this;}
-    inline ConnectionPoolConfiguration& WithSessionPinningFilters(Aws::Vector<Aws::String>&& value) { SetSessionPinningFilters(std::move(value)); return *this;}
-    inline ConnectionPoolConfiguration& AddSessionPinningFilters(const Aws::String& value) { m_sessionPinningFiltersHasBeenSet = true; m_sessionPinningFilters.push_back(value); return *this; }
-    inline ConnectionPoolConfiguration& AddSessionPinningFilters(Aws::String&& value) { m_sessionPinningFiltersHasBeenSet = true; m_sessionPinningFilters.push_back(std::move(value)); return *this; }
-    inline ConnectionPoolConfiguration& AddSessionPinningFilters(const char* value) { m_sessionPinningFiltersHasBeenSet = true; m_sessionPinningFilters.push_back(value); return *this; }
+    template<typename SessionPinningFiltersT = Aws::Vector<Aws::String>>
+    void SetSessionPinningFilters(SessionPinningFiltersT&& value) { m_sessionPinningFiltersHasBeenSet = true; m_sessionPinningFilters = std::forward<SessionPinningFiltersT>(value); }
+    template<typename SessionPinningFiltersT = Aws::Vector<Aws::String>>
+    ConnectionPoolConfiguration& WithSessionPinningFilters(SessionPinningFiltersT&& value) { SetSessionPinningFilters(std::forward<SessionPinningFiltersT>(value)); return *this;}
+    template<typename SessionPinningFiltersT = Aws::String>
+    ConnectionPoolConfiguration& AddSessionPinningFilters(SessionPinningFiltersT&& value) { m_sessionPinningFiltersHasBeenSet = true; m_sessionPinningFilters.emplace_back(std::forward<SessionPinningFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -127,24 +126,22 @@ namespace Model
      * variable2=value2</code> </p> <p>For multiple statements, use semicolons as the
      * separator.</p> <p>Default: no initialization query</p>
      */
-    inline const Aws::String& GetInitQuery() const{ return m_initQuery; }
+    inline const Aws::String& GetInitQuery() const { return m_initQuery; }
     inline bool InitQueryHasBeenSet() const { return m_initQueryHasBeenSet; }
-    inline void SetInitQuery(const Aws::String& value) { m_initQueryHasBeenSet = true; m_initQuery = value; }
-    inline void SetInitQuery(Aws::String&& value) { m_initQueryHasBeenSet = true; m_initQuery = std::move(value); }
-    inline void SetInitQuery(const char* value) { m_initQueryHasBeenSet = true; m_initQuery.assign(value); }
-    inline ConnectionPoolConfiguration& WithInitQuery(const Aws::String& value) { SetInitQuery(value); return *this;}
-    inline ConnectionPoolConfiguration& WithInitQuery(Aws::String&& value) { SetInitQuery(std::move(value)); return *this;}
-    inline ConnectionPoolConfiguration& WithInitQuery(const char* value) { SetInitQuery(value); return *this;}
+    template<typename InitQueryT = Aws::String>
+    void SetInitQuery(InitQueryT&& value) { m_initQueryHasBeenSet = true; m_initQuery = std::forward<InitQueryT>(value); }
+    template<typename InitQueryT = Aws::String>
+    ConnectionPoolConfiguration& WithInitQuery(InitQueryT&& value) { SetInitQuery(std::forward<InitQueryT>(value)); return *this;}
     ///@}
   private:
 
-    int m_maxConnectionsPercent;
+    int m_maxConnectionsPercent{0};
     bool m_maxConnectionsPercentHasBeenSet = false;
 
-    int m_maxIdleConnectionsPercent;
+    int m_maxIdleConnectionsPercent{0};
     bool m_maxIdleConnectionsPercentHasBeenSet = false;
 
-    int m_connectionBorrowTimeout;
+    int m_connectionBorrowTimeout{0};
     bool m_connectionBorrowTimeoutHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_sessionPinningFilters;

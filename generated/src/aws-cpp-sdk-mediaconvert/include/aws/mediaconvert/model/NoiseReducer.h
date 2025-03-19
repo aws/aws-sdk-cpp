@@ -39,7 +39,7 @@ namespace Model
   class NoiseReducer
   {
   public:
-    AWS_MEDIACONVERT_API NoiseReducer();
+    AWS_MEDIACONVERT_API NoiseReducer() = default;
     AWS_MEDIACONVERT_API NoiseReducer(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API NoiseReducer& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,52 +54,50 @@ namespace Model
      * reduction. * Spatial does frequency-domain filtering based on JND principles. *
      * Temporal optimizes video quality for complex motion.
      */
-    inline const NoiseReducerFilter& GetFilter() const{ return m_filter; }
+    inline NoiseReducerFilter GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const NoiseReducerFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(NoiseReducerFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline NoiseReducer& WithFilter(const NoiseReducerFilter& value) { SetFilter(value); return *this;}
-    inline NoiseReducer& WithFilter(NoiseReducerFilter&& value) { SetFilter(std::move(value)); return *this;}
+    inline void SetFilter(NoiseReducerFilter value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline NoiseReducer& WithFilter(NoiseReducerFilter value) { SetFilter(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Settings for a noise reducer filter
      */
-    inline const NoiseReducerFilterSettings& GetFilterSettings() const{ return m_filterSettings; }
+    inline const NoiseReducerFilterSettings& GetFilterSettings() const { return m_filterSettings; }
     inline bool FilterSettingsHasBeenSet() const { return m_filterSettingsHasBeenSet; }
-    inline void SetFilterSettings(const NoiseReducerFilterSettings& value) { m_filterSettingsHasBeenSet = true; m_filterSettings = value; }
-    inline void SetFilterSettings(NoiseReducerFilterSettings&& value) { m_filterSettingsHasBeenSet = true; m_filterSettings = std::move(value); }
-    inline NoiseReducer& WithFilterSettings(const NoiseReducerFilterSettings& value) { SetFilterSettings(value); return *this;}
-    inline NoiseReducer& WithFilterSettings(NoiseReducerFilterSettings&& value) { SetFilterSettings(std::move(value)); return *this;}
+    template<typename FilterSettingsT = NoiseReducerFilterSettings>
+    void SetFilterSettings(FilterSettingsT&& value) { m_filterSettingsHasBeenSet = true; m_filterSettings = std::forward<FilterSettingsT>(value); }
+    template<typename FilterSettingsT = NoiseReducerFilterSettings>
+    NoiseReducer& WithFilterSettings(FilterSettingsT&& value) { SetFilterSettings(std::forward<FilterSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Noise reducer filter settings for spatial filter.
      */
-    inline const NoiseReducerSpatialFilterSettings& GetSpatialFilterSettings() const{ return m_spatialFilterSettings; }
+    inline const NoiseReducerSpatialFilterSettings& GetSpatialFilterSettings() const { return m_spatialFilterSettings; }
     inline bool SpatialFilterSettingsHasBeenSet() const { return m_spatialFilterSettingsHasBeenSet; }
-    inline void SetSpatialFilterSettings(const NoiseReducerSpatialFilterSettings& value) { m_spatialFilterSettingsHasBeenSet = true; m_spatialFilterSettings = value; }
-    inline void SetSpatialFilterSettings(NoiseReducerSpatialFilterSettings&& value) { m_spatialFilterSettingsHasBeenSet = true; m_spatialFilterSettings = std::move(value); }
-    inline NoiseReducer& WithSpatialFilterSettings(const NoiseReducerSpatialFilterSettings& value) { SetSpatialFilterSettings(value); return *this;}
-    inline NoiseReducer& WithSpatialFilterSettings(NoiseReducerSpatialFilterSettings&& value) { SetSpatialFilterSettings(std::move(value)); return *this;}
+    template<typename SpatialFilterSettingsT = NoiseReducerSpatialFilterSettings>
+    void SetSpatialFilterSettings(SpatialFilterSettingsT&& value) { m_spatialFilterSettingsHasBeenSet = true; m_spatialFilterSettings = std::forward<SpatialFilterSettingsT>(value); }
+    template<typename SpatialFilterSettingsT = NoiseReducerSpatialFilterSettings>
+    NoiseReducer& WithSpatialFilterSettings(SpatialFilterSettingsT&& value) { SetSpatialFilterSettings(std::forward<SpatialFilterSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Noise reducer filter settings for temporal filter.
      */
-    inline const NoiseReducerTemporalFilterSettings& GetTemporalFilterSettings() const{ return m_temporalFilterSettings; }
+    inline const NoiseReducerTemporalFilterSettings& GetTemporalFilterSettings() const { return m_temporalFilterSettings; }
     inline bool TemporalFilterSettingsHasBeenSet() const { return m_temporalFilterSettingsHasBeenSet; }
-    inline void SetTemporalFilterSettings(const NoiseReducerTemporalFilterSettings& value) { m_temporalFilterSettingsHasBeenSet = true; m_temporalFilterSettings = value; }
-    inline void SetTemporalFilterSettings(NoiseReducerTemporalFilterSettings&& value) { m_temporalFilterSettingsHasBeenSet = true; m_temporalFilterSettings = std::move(value); }
-    inline NoiseReducer& WithTemporalFilterSettings(const NoiseReducerTemporalFilterSettings& value) { SetTemporalFilterSettings(value); return *this;}
-    inline NoiseReducer& WithTemporalFilterSettings(NoiseReducerTemporalFilterSettings&& value) { SetTemporalFilterSettings(std::move(value)); return *this;}
+    template<typename TemporalFilterSettingsT = NoiseReducerTemporalFilterSettings>
+    void SetTemporalFilterSettings(TemporalFilterSettingsT&& value) { m_temporalFilterSettingsHasBeenSet = true; m_temporalFilterSettings = std::forward<TemporalFilterSettingsT>(value); }
+    template<typename TemporalFilterSettingsT = NoiseReducerTemporalFilterSettings>
+    NoiseReducer& WithTemporalFilterSettings(TemporalFilterSettingsT&& value) { SetTemporalFilterSettings(std::forward<TemporalFilterSettingsT>(value)); return *this;}
     ///@}
   private:
 
-    NoiseReducerFilter m_filter;
+    NoiseReducerFilter m_filter{NoiseReducerFilter::NOT_SET};
     bool m_filterHasBeenSet = false;
 
     NoiseReducerFilterSettings m_filterSettings;

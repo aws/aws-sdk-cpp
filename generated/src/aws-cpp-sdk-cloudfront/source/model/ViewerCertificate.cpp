@@ -20,20 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ViewerCertificate::ViewerCertificate() : 
-    m_cloudFrontDefaultCertificate(false),
-    m_cloudFrontDefaultCertificateHasBeenSet(false),
-    m_iAMCertificateIdHasBeenSet(false),
-    m_aCMCertificateArnHasBeenSet(false),
-    m_sSLSupportMethod(SSLSupportMethod::NOT_SET),
-    m_sSLSupportMethodHasBeenSet(false),
-    m_minimumProtocolVersion(MinimumProtocolVersion::NOT_SET),
-    m_minimumProtocolVersionHasBeenSet(false)
-{
-}
-
 ViewerCertificate::ViewerCertificate(const XmlNode& xmlNode)
-  : ViewerCertificate()
 {
   *this = xmlNode;
 }
@@ -65,13 +52,13 @@ ViewerCertificate& ViewerCertificate::operator =(const XmlNode& xmlNode)
     XmlNode sSLSupportMethodNode = resultNode.FirstChild("SSLSupportMethod");
     if(!sSLSupportMethodNode.IsNull())
     {
-      m_sSLSupportMethod = SSLSupportMethodMapper::GetSSLSupportMethodForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sSLSupportMethodNode.GetText()).c_str()).c_str());
+      m_sSLSupportMethod = SSLSupportMethodMapper::GetSSLSupportMethodForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sSLSupportMethodNode.GetText()).c_str()));
       m_sSLSupportMethodHasBeenSet = true;
     }
     XmlNode minimumProtocolVersionNode = resultNode.FirstChild("MinimumProtocolVersion");
     if(!minimumProtocolVersionNode.IsNull())
     {
-      m_minimumProtocolVersion = MinimumProtocolVersionMapper::GetMinimumProtocolVersionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minimumProtocolVersionNode.GetText()).c_str()).c_str());
+      m_minimumProtocolVersion = MinimumProtocolVersionMapper::GetMinimumProtocolVersionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minimumProtocolVersionNode.GetText()).c_str()));
       m_minimumProtocolVersionHasBeenSet = true;
     }
   }

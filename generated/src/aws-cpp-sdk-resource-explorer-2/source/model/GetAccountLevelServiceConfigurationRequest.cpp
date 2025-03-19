@@ -12,10 +12,6 @@ using namespace Aws::ResourceExplorer2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAccountLevelServiceConfigurationRequest::GetAccountLevelServiceConfigurationRequest()
-{
-}
-
 Aws::String GetAccountLevelServiceConfigurationRequest::SerializePayload() const
 {
   return {};

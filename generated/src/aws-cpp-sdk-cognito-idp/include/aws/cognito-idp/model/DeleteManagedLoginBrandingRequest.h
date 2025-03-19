@@ -21,7 +21,7 @@ namespace Model
   class DeleteManagedLoginBrandingRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API DeleteManagedLoginBrandingRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API DeleteManagedLoginBrandingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID of the managed login branding style that you want to delete.</p>
      */
-    inline const Aws::String& GetManagedLoginBrandingId() const{ return m_managedLoginBrandingId; }
+    inline const Aws::String& GetManagedLoginBrandingId() const { return m_managedLoginBrandingId; }
     inline bool ManagedLoginBrandingIdHasBeenSet() const { return m_managedLoginBrandingIdHasBeenSet; }
-    inline void SetManagedLoginBrandingId(const Aws::String& value) { m_managedLoginBrandingIdHasBeenSet = true; m_managedLoginBrandingId = value; }
-    inline void SetManagedLoginBrandingId(Aws::String&& value) { m_managedLoginBrandingIdHasBeenSet = true; m_managedLoginBrandingId = std::move(value); }
-    inline void SetManagedLoginBrandingId(const char* value) { m_managedLoginBrandingIdHasBeenSet = true; m_managedLoginBrandingId.assign(value); }
-    inline DeleteManagedLoginBrandingRequest& WithManagedLoginBrandingId(const Aws::String& value) { SetManagedLoginBrandingId(value); return *this;}
-    inline DeleteManagedLoginBrandingRequest& WithManagedLoginBrandingId(Aws::String&& value) { SetManagedLoginBrandingId(std::move(value)); return *this;}
-    inline DeleteManagedLoginBrandingRequest& WithManagedLoginBrandingId(const char* value) { SetManagedLoginBrandingId(value); return *this;}
+    template<typename ManagedLoginBrandingIdT = Aws::String>
+    void SetManagedLoginBrandingId(ManagedLoginBrandingIdT&& value) { m_managedLoginBrandingIdHasBeenSet = true; m_managedLoginBrandingId = std::forward<ManagedLoginBrandingIdT>(value); }
+    template<typename ManagedLoginBrandingIdT = Aws::String>
+    DeleteManagedLoginBrandingRequest& WithManagedLoginBrandingId(ManagedLoginBrandingIdT&& value) { SetManagedLoginBrandingId(std::forward<ManagedLoginBrandingIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * <p>The ID of the user pool that contains the managed login branding style that
      * you want to delete.</p>
      */
-    inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+    inline const Aws::String& GetUserPoolId() const { return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-    inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-    inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-    inline DeleteManagedLoginBrandingRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-    inline DeleteManagedLoginBrandingRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-    inline DeleteManagedLoginBrandingRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    template<typename UserPoolIdT = Aws::String>
+    void SetUserPoolId(UserPoolIdT&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::forward<UserPoolIdT>(value); }
+    template<typename UserPoolIdT = Aws::String>
+    DeleteManagedLoginBrandingRequest& WithUserPoolId(UserPoolIdT&& value) { SetUserPoolId(std::forward<UserPoolIdT>(value)); return *this;}
     ///@}
   private:
 

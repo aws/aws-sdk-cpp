@@ -12,12 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeVPCConnectionRequest::DescribeVPCConnectionRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_vPCConnectionIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeVPCConnectionRequest::SerializePayload() const
 {
   return {};

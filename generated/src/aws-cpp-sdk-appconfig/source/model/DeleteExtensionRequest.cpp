@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteExtensionRequest::DeleteExtensionRequest() : 
-    m_extensionIdentifierHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false)
-{
-}
-
 Aws::String DeleteExtensionRequest::SerializePayload() const
 {
   return {};

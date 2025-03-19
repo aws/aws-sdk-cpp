@@ -18,17 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-AnalysisRuleList::AnalysisRuleList() : 
-    m_joinColumnsHasBeenSet(false),
-    m_allowedJoinOperatorsHasBeenSet(false),
-    m_listColumnsHasBeenSet(false),
-    m_additionalAnalyses(AdditionalAnalyses::NOT_SET),
-    m_additionalAnalysesHasBeenSet(false)
-{
-}
-
 AnalysisRuleList::AnalysisRuleList(JsonView jsonValue)
-  : AnalysisRuleList()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ AnalysisRuleList& AnalysisRuleList::operator =(JsonView jsonValue)
     }
     m_joinColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowedJoinOperators"))
   {
     Aws::Utils::Array<JsonView> allowedJoinOperatorsJsonList = jsonValue.GetArray("allowedJoinOperators");
@@ -54,7 +43,6 @@ AnalysisRuleList& AnalysisRuleList::operator =(JsonView jsonValue)
     }
     m_allowedJoinOperatorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listColumns"))
   {
     Aws::Utils::Array<JsonView> listColumnsJsonList = jsonValue.GetArray("listColumns");
@@ -64,14 +52,11 @@ AnalysisRuleList& AnalysisRuleList::operator =(JsonView jsonValue)
     }
     m_listColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("additionalAnalyses"))
   {
     m_additionalAnalyses = AdditionalAnalysesMapper::GetAdditionalAnalysesForName(jsonValue.GetString("additionalAnalyses"));
-
     m_additionalAnalysesHasBeenSet = true;
   }
-
   return *this;
 }
 

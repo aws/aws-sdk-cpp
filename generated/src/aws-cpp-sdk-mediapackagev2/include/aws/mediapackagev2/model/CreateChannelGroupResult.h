@@ -29,7 +29,7 @@ namespace Model
   class CreateChannelGroupResult
   {
   public:
-    AWS_MEDIAPACKAGEV2_API CreateChannelGroupResult();
+    AWS_MEDIAPACKAGEV2_API CreateChannelGroupResult() = default;
     AWS_MEDIAPACKAGEV2_API CreateChannelGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIAPACKAGEV2_API CreateChannelGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,26 +40,22 @@ namespace Model
      * for the channel group, and must be unique for your account in the AWS
      * Region.</p>
      */
-    inline const Aws::String& GetChannelGroupName() const{ return m_channelGroupName; }
-    inline void SetChannelGroupName(const Aws::String& value) { m_channelGroupName = value; }
-    inline void SetChannelGroupName(Aws::String&& value) { m_channelGroupName = std::move(value); }
-    inline void SetChannelGroupName(const char* value) { m_channelGroupName.assign(value); }
-    inline CreateChannelGroupResult& WithChannelGroupName(const Aws::String& value) { SetChannelGroupName(value); return *this;}
-    inline CreateChannelGroupResult& WithChannelGroupName(Aws::String&& value) { SetChannelGroupName(std::move(value)); return *this;}
-    inline CreateChannelGroupResult& WithChannelGroupName(const char* value) { SetChannelGroupName(value); return *this;}
+    inline const Aws::String& GetChannelGroupName() const { return m_channelGroupName; }
+    template<typename ChannelGroupNameT = Aws::String>
+    void SetChannelGroupName(ChannelGroupNameT&& value) { m_channelGroupNameHasBeenSet = true; m_channelGroupName = std::forward<ChannelGroupNameT>(value); }
+    template<typename ChannelGroupNameT = Aws::String>
+    CreateChannelGroupResult& WithChannelGroupName(ChannelGroupNameT&& value) { SetChannelGroupName(std::forward<ChannelGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) associated with the resource.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline CreateChannelGroupResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline CreateChannelGroupResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline CreateChannelGroupResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    CreateChannelGroupResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,35 +64,33 @@ namespace Model
      * egress domain with a downstream CDN (such as Amazon CloudFront) or playback
      * device.</p>
      */
-    inline const Aws::String& GetEgressDomain() const{ return m_egressDomain; }
-    inline void SetEgressDomain(const Aws::String& value) { m_egressDomain = value; }
-    inline void SetEgressDomain(Aws::String&& value) { m_egressDomain = std::move(value); }
-    inline void SetEgressDomain(const char* value) { m_egressDomain.assign(value); }
-    inline CreateChannelGroupResult& WithEgressDomain(const Aws::String& value) { SetEgressDomain(value); return *this;}
-    inline CreateChannelGroupResult& WithEgressDomain(Aws::String&& value) { SetEgressDomain(std::move(value)); return *this;}
-    inline CreateChannelGroupResult& WithEgressDomain(const char* value) { SetEgressDomain(value); return *this;}
+    inline const Aws::String& GetEgressDomain() const { return m_egressDomain; }
+    template<typename EgressDomainT = Aws::String>
+    void SetEgressDomain(EgressDomainT&& value) { m_egressDomainHasBeenSet = true; m_egressDomain = std::forward<EgressDomainT>(value); }
+    template<typename EgressDomainT = Aws::String>
+    CreateChannelGroupResult& WithEgressDomain(EgressDomainT&& value) { SetEgressDomain(std::forward<EgressDomainT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the channel group was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline CreateChannelGroupResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline CreateChannelGroupResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    CreateChannelGroupResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the channel group was modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetModifiedAt() const{ return m_modifiedAt; }
-    inline void SetModifiedAt(const Aws::Utils::DateTime& value) { m_modifiedAt = value; }
-    inline void SetModifiedAt(Aws::Utils::DateTime&& value) { m_modifiedAt = std::move(value); }
-    inline CreateChannelGroupResult& WithModifiedAt(const Aws::Utils::DateTime& value) { SetModifiedAt(value); return *this;}
-    inline CreateChannelGroupResult& WithModifiedAt(Aws::Utils::DateTime&& value) { SetModifiedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetModifiedAt() const { return m_modifiedAt; }
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    void SetModifiedAt(ModifiedAtT&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::forward<ModifiedAtT>(value); }
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    CreateChannelGroupResult& WithModifiedAt(ModifiedAtT&& value) { SetModifiedAt(std::forward<ModifiedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,26 +98,22 @@ namespace Model
      * <p>The current Entity Tag (ETag) associated with this resource. The entity tag
      * can be used to safely make concurrent updates to the resource.</p>
      */
-    inline const Aws::String& GetETag() const{ return m_eTag; }
-    inline void SetETag(const Aws::String& value) { m_eTag = value; }
-    inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
-    inline void SetETag(const char* value) { m_eTag.assign(value); }
-    inline CreateChannelGroupResult& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-    inline CreateChannelGroupResult& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-    inline CreateChannelGroupResult& WithETag(const char* value) { SetETag(value); return *this;}
+    inline const Aws::String& GetETag() const { return m_eTag; }
+    template<typename ETagT = Aws::String>
+    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
+    template<typename ETagT = Aws::String>
+    CreateChannelGroupResult& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description for your channel group.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline CreateChannelGroupResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateChannelGroupResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateChannelGroupResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateChannelGroupResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,49 +121,53 @@ namespace Model
      * <p>The comma-separated list of tag key:value pairs assigned to the channel
      * group.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline CreateChannelGroupResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateChannelGroupResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateChannelGroupResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline CreateChannelGroupResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateChannelGroupResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateChannelGroupResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateChannelGroupResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateChannelGroupResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateChannelGroupResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateChannelGroupResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateChannelGroupResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateChannelGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateChannelGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateChannelGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateChannelGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_channelGroupName;
+    bool m_channelGroupNameHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_egressDomain;
+    bool m_egressDomainHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_modifiedAt;
+    Aws::Utils::DateTime m_modifiedAt{};
+    bool m_modifiedAtHasBeenSet = false;
 
     Aws::String m_eTag;
+    bool m_eTagHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

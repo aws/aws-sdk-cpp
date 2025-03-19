@@ -18,16 +18,7 @@ namespace IoT
 namespace Model
 {
 
-CloudwatchAlarmAction::CloudwatchAlarmAction() : 
-    m_roleArnHasBeenSet(false),
-    m_alarmNameHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_stateValueHasBeenSet(false)
-{
-}
-
 CloudwatchAlarmAction::CloudwatchAlarmAction(JsonView jsonValue)
-  : CloudwatchAlarmAction()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ CloudwatchAlarmAction& CloudwatchAlarmAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("alarmName"))
   {
     m_alarmName = jsonValue.GetString("alarmName");
-
     m_alarmNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateReason"))
   {
     m_stateReason = jsonValue.GetString("stateReason");
-
     m_stateReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stateValue"))
   {
     m_stateValue = jsonValue.GetString("stateValue");
-
     m_stateValueHasBeenSet = true;
   }
-
   return *this;
 }
 

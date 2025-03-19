@@ -25,7 +25,7 @@ namespace Model
   class CreatePrivacyBudgetTemplateRequest : public CleanRoomsRequest
   {
   public:
-    AWS_CLEANROOMS_API CreatePrivacyBudgetTemplateRequest();
+    AWS_CLEANROOMS_API CreatePrivacyBudgetTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * privacy budget template is created in the collaboration that this membership
      * belongs to. Accepts a membership ID.</p>
      */
-    inline const Aws::String& GetMembershipIdentifier() const{ return m_membershipIdentifier; }
+    inline const Aws::String& GetMembershipIdentifier() const { return m_membershipIdentifier; }
     inline bool MembershipIdentifierHasBeenSet() const { return m_membershipIdentifierHasBeenSet; }
-    inline void SetMembershipIdentifier(const Aws::String& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = value; }
-    inline void SetMembershipIdentifier(Aws::String&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::move(value); }
-    inline void SetMembershipIdentifier(const char* value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier.assign(value); }
-    inline CreatePrivacyBudgetTemplateRequest& WithMembershipIdentifier(const Aws::String& value) { SetMembershipIdentifier(value); return *this;}
-    inline CreatePrivacyBudgetTemplateRequest& WithMembershipIdentifier(Aws::String&& value) { SetMembershipIdentifier(std::move(value)); return *this;}
-    inline CreatePrivacyBudgetTemplateRequest& WithMembershipIdentifier(const char* value) { SetMembershipIdentifier(value); return *this;}
+    template<typename MembershipIdentifierT = Aws::String>
+    void SetMembershipIdentifier(MembershipIdentifierT&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::forward<MembershipIdentifierT>(value); }
+    template<typename MembershipIdentifierT = Aws::String>
+    CreatePrivacyBudgetTemplateRequest& WithMembershipIdentifier(MembershipIdentifierT&& value) { SetMembershipIdentifier(std::forward<MembershipIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,36 +60,32 @@ namespace Model
      * queries across refreshes. Avoid choosing this if the same rows will be
      * repeatedly queried between privacy budget refreshes.</p> 
      */
-    inline const PrivacyBudgetTemplateAutoRefresh& GetAutoRefresh() const{ return m_autoRefresh; }
+    inline PrivacyBudgetTemplateAutoRefresh GetAutoRefresh() const { return m_autoRefresh; }
     inline bool AutoRefreshHasBeenSet() const { return m_autoRefreshHasBeenSet; }
-    inline void SetAutoRefresh(const PrivacyBudgetTemplateAutoRefresh& value) { m_autoRefreshHasBeenSet = true; m_autoRefresh = value; }
-    inline void SetAutoRefresh(PrivacyBudgetTemplateAutoRefresh&& value) { m_autoRefreshHasBeenSet = true; m_autoRefresh = std::move(value); }
-    inline CreatePrivacyBudgetTemplateRequest& WithAutoRefresh(const PrivacyBudgetTemplateAutoRefresh& value) { SetAutoRefresh(value); return *this;}
-    inline CreatePrivacyBudgetTemplateRequest& WithAutoRefresh(PrivacyBudgetTemplateAutoRefresh&& value) { SetAutoRefresh(std::move(value)); return *this;}
+    inline void SetAutoRefresh(PrivacyBudgetTemplateAutoRefresh value) { m_autoRefreshHasBeenSet = true; m_autoRefresh = value; }
+    inline CreatePrivacyBudgetTemplateRequest& WithAutoRefresh(PrivacyBudgetTemplateAutoRefresh value) { SetAutoRefresh(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the type of the privacy budget template.</p>
      */
-    inline const PrivacyBudgetType& GetPrivacyBudgetType() const{ return m_privacyBudgetType; }
+    inline PrivacyBudgetType GetPrivacyBudgetType() const { return m_privacyBudgetType; }
     inline bool PrivacyBudgetTypeHasBeenSet() const { return m_privacyBudgetTypeHasBeenSet; }
-    inline void SetPrivacyBudgetType(const PrivacyBudgetType& value) { m_privacyBudgetTypeHasBeenSet = true; m_privacyBudgetType = value; }
-    inline void SetPrivacyBudgetType(PrivacyBudgetType&& value) { m_privacyBudgetTypeHasBeenSet = true; m_privacyBudgetType = std::move(value); }
-    inline CreatePrivacyBudgetTemplateRequest& WithPrivacyBudgetType(const PrivacyBudgetType& value) { SetPrivacyBudgetType(value); return *this;}
-    inline CreatePrivacyBudgetTemplateRequest& WithPrivacyBudgetType(PrivacyBudgetType&& value) { SetPrivacyBudgetType(std::move(value)); return *this;}
+    inline void SetPrivacyBudgetType(PrivacyBudgetType value) { m_privacyBudgetTypeHasBeenSet = true; m_privacyBudgetType = value; }
+    inline CreatePrivacyBudgetTemplateRequest& WithPrivacyBudgetType(PrivacyBudgetType value) { SetPrivacyBudgetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies your parameters for the privacy budget template.</p>
      */
-    inline const PrivacyBudgetTemplateParametersInput& GetParameters() const{ return m_parameters; }
+    inline const PrivacyBudgetTemplateParametersInput& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const PrivacyBudgetTemplateParametersInput& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(PrivacyBudgetTemplateParametersInput&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline CreatePrivacyBudgetTemplateRequest& WithParameters(const PrivacyBudgetTemplateParametersInput& value) { SetParameters(value); return *this;}
-    inline CreatePrivacyBudgetTemplateRequest& WithParameters(PrivacyBudgetTemplateParametersInput&& value) { SetParameters(std::move(value)); return *this;}
+    template<typename ParametersT = PrivacyBudgetTemplateParametersInput>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = PrivacyBudgetTemplateParametersInput>
+    CreatePrivacyBudgetTemplateRequest& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,29 +95,26 @@ namespace Model
      * use tagging, you can also use tag-based access control in IAM policies to
      * control access to this resource.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreatePrivacyBudgetTemplateRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreatePrivacyBudgetTemplateRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreatePrivacyBudgetTemplateRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreatePrivacyBudgetTemplateRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreatePrivacyBudgetTemplateRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreatePrivacyBudgetTemplateRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreatePrivacyBudgetTemplateRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreatePrivacyBudgetTemplateRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreatePrivacyBudgetTemplateRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreatePrivacyBudgetTemplateRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreatePrivacyBudgetTemplateRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
     Aws::String m_membershipIdentifier;
     bool m_membershipIdentifierHasBeenSet = false;
 
-    PrivacyBudgetTemplateAutoRefresh m_autoRefresh;
+    PrivacyBudgetTemplateAutoRefresh m_autoRefresh{PrivacyBudgetTemplateAutoRefresh::NOT_SET};
     bool m_autoRefreshHasBeenSet = false;
 
-    PrivacyBudgetType m_privacyBudgetType;
+    PrivacyBudgetType m_privacyBudgetType{PrivacyBudgetType::NOT_SET};
     bool m_privacyBudgetTypeHasBeenSet = false;
 
     PrivacyBudgetTemplateParametersInput m_parameters;

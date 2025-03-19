@@ -32,7 +32,7 @@ namespace Model
   class ConcatenationSink
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API ConcatenationSink();
+    AWS_CHIMESDKMEDIAPIPELINES_API ConcatenationSink() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API ConcatenationSink(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API ConcatenationSink& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,26 @@ namespace Model
     /**
      * <p>The type of data sink in the configuration object.</p>
      */
-    inline const ConcatenationSinkType& GetType() const{ return m_type; }
+    inline ConcatenationSinkType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ConcatenationSinkType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ConcatenationSinkType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ConcatenationSink& WithType(const ConcatenationSinkType& value) { SetType(value); return *this;}
-    inline ConcatenationSink& WithType(ConcatenationSinkType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ConcatenationSinkType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ConcatenationSink& WithType(ConcatenationSinkType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration settings for an Amazon S3 bucket sink.</p>
      */
-    inline const S3BucketSinkConfiguration& GetS3BucketSinkConfiguration() const{ return m_s3BucketSinkConfiguration; }
+    inline const S3BucketSinkConfiguration& GetS3BucketSinkConfiguration() const { return m_s3BucketSinkConfiguration; }
     inline bool S3BucketSinkConfigurationHasBeenSet() const { return m_s3BucketSinkConfigurationHasBeenSet; }
-    inline void SetS3BucketSinkConfiguration(const S3BucketSinkConfiguration& value) { m_s3BucketSinkConfigurationHasBeenSet = true; m_s3BucketSinkConfiguration = value; }
-    inline void SetS3BucketSinkConfiguration(S3BucketSinkConfiguration&& value) { m_s3BucketSinkConfigurationHasBeenSet = true; m_s3BucketSinkConfiguration = std::move(value); }
-    inline ConcatenationSink& WithS3BucketSinkConfiguration(const S3BucketSinkConfiguration& value) { SetS3BucketSinkConfiguration(value); return *this;}
-    inline ConcatenationSink& WithS3BucketSinkConfiguration(S3BucketSinkConfiguration&& value) { SetS3BucketSinkConfiguration(std::move(value)); return *this;}
+    template<typename S3BucketSinkConfigurationT = S3BucketSinkConfiguration>
+    void SetS3BucketSinkConfiguration(S3BucketSinkConfigurationT&& value) { m_s3BucketSinkConfigurationHasBeenSet = true; m_s3BucketSinkConfiguration = std::forward<S3BucketSinkConfigurationT>(value); }
+    template<typename S3BucketSinkConfigurationT = S3BucketSinkConfiguration>
+    ConcatenationSink& WithS3BucketSinkConfiguration(S3BucketSinkConfigurationT&& value) { SetS3BucketSinkConfiguration(std::forward<S3BucketSinkConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    ConcatenationSinkType m_type;
+    ConcatenationSinkType m_type{ConcatenationSinkType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     S3BucketSinkConfiguration m_s3BucketSinkConfiguration;

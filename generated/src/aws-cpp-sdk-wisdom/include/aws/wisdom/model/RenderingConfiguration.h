@@ -31,7 +31,7 @@ namespace Model
   class RenderingConfiguration
   {
   public:
-    AWS_CONNECTWISDOMSERVICE_API RenderingConfiguration();
+    AWS_CONNECTWISDOMSERVICE_API RenderingConfiguration() = default;
     AWS_CONNECTWISDOMSERVICE_API RenderingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTWISDOMSERVICE_API RenderingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>.
      * </p>
      */
-    inline const Aws::String& GetTemplateUri() const{ return m_templateUri; }
+    inline const Aws::String& GetTemplateUri() const { return m_templateUri; }
     inline bool TemplateUriHasBeenSet() const { return m_templateUriHasBeenSet; }
-    inline void SetTemplateUri(const Aws::String& value) { m_templateUriHasBeenSet = true; m_templateUri = value; }
-    inline void SetTemplateUri(Aws::String&& value) { m_templateUriHasBeenSet = true; m_templateUri = std::move(value); }
-    inline void SetTemplateUri(const char* value) { m_templateUriHasBeenSet = true; m_templateUri.assign(value); }
-    inline RenderingConfiguration& WithTemplateUri(const Aws::String& value) { SetTemplateUri(value); return *this;}
-    inline RenderingConfiguration& WithTemplateUri(Aws::String&& value) { SetTemplateUri(std::move(value)); return *this;}
-    inline RenderingConfiguration& WithTemplateUri(const char* value) { SetTemplateUri(value); return *this;}
+    template<typename TemplateUriT = Aws::String>
+    void SetTemplateUri(TemplateUriT&& value) { m_templateUriHasBeenSet = true; m_templateUri = std::forward<TemplateUriT>(value); }
+    template<typename TemplateUriT = Aws::String>
+    RenderingConfiguration& WithTemplateUri(TemplateUriT&& value) { SetTemplateUri(std::forward<TemplateUriT>(value)); return *this;}
     ///@}
   private:
 

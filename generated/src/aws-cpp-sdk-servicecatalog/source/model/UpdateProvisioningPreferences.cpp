@@ -18,24 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-UpdateProvisioningPreferences::UpdateProvisioningPreferences() : 
-    m_stackSetAccountsHasBeenSet(false),
-    m_stackSetRegionsHasBeenSet(false),
-    m_stackSetFailureToleranceCount(0),
-    m_stackSetFailureToleranceCountHasBeenSet(false),
-    m_stackSetFailureTolerancePercentage(0),
-    m_stackSetFailureTolerancePercentageHasBeenSet(false),
-    m_stackSetMaxConcurrencyCount(0),
-    m_stackSetMaxConcurrencyCountHasBeenSet(false),
-    m_stackSetMaxConcurrencyPercentage(0),
-    m_stackSetMaxConcurrencyPercentageHasBeenSet(false),
-    m_stackSetOperationType(StackSetOperationType::NOT_SET),
-    m_stackSetOperationTypeHasBeenSet(false)
-{
-}
-
 UpdateProvisioningPreferences::UpdateProvisioningPreferences(JsonView jsonValue)
-  : UpdateProvisioningPreferences()
 {
   *this = jsonValue;
 }
@@ -51,7 +34,6 @@ UpdateProvisioningPreferences& UpdateProvisioningPreferences::operator =(JsonVie
     }
     m_stackSetAccountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StackSetRegions"))
   {
     Aws::Utils::Array<JsonView> stackSetRegionsJsonList = jsonValue.GetArray("StackSetRegions");
@@ -61,42 +43,31 @@ UpdateProvisioningPreferences& UpdateProvisioningPreferences::operator =(JsonVie
     }
     m_stackSetRegionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StackSetFailureToleranceCount"))
   {
     m_stackSetFailureToleranceCount = jsonValue.GetInteger("StackSetFailureToleranceCount");
-
     m_stackSetFailureToleranceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StackSetFailureTolerancePercentage"))
   {
     m_stackSetFailureTolerancePercentage = jsonValue.GetInteger("StackSetFailureTolerancePercentage");
-
     m_stackSetFailureTolerancePercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StackSetMaxConcurrencyCount"))
   {
     m_stackSetMaxConcurrencyCount = jsonValue.GetInteger("StackSetMaxConcurrencyCount");
-
     m_stackSetMaxConcurrencyCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StackSetMaxConcurrencyPercentage"))
   {
     m_stackSetMaxConcurrencyPercentage = jsonValue.GetInteger("StackSetMaxConcurrencyPercentage");
-
     m_stackSetMaxConcurrencyPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StackSetOperationType"))
   {
     m_stackSetOperationType = StackSetOperationTypeMapper::GetStackSetOperationTypeForName(jsonValue.GetString("StackSetOperationType"));
-
     m_stackSetOperationTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

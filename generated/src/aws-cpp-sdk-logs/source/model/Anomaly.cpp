@@ -18,39 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-Anomaly::Anomaly() : 
-    m_anomalyIdHasBeenSet(false),
-    m_patternIdHasBeenSet(false),
-    m_anomalyDetectorArnHasBeenSet(false),
-    m_patternStringHasBeenSet(false),
-    m_patternRegexHasBeenSet(false),
-    m_priorityHasBeenSet(false),
-    m_firstSeen(0),
-    m_firstSeenHasBeenSet(false),
-    m_lastSeen(0),
-    m_lastSeenHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_histogramHasBeenSet(false),
-    m_logSamplesHasBeenSet(false),
-    m_patternTokensHasBeenSet(false),
-    m_logGroupArnListHasBeenSet(false),
-    m_suppressed(false),
-    m_suppressedHasBeenSet(false),
-    m_suppressedDate(0),
-    m_suppressedDateHasBeenSet(false),
-    m_suppressedUntil(0),
-    m_suppressedUntilHasBeenSet(false),
-    m_isPatternLevelSuppression(false),
-    m_isPatternLevelSuppressionHasBeenSet(false)
-{
-}
-
 Anomaly::Anomaly(JsonView jsonValue)
-  : Anomaly()
 {
   *this = jsonValue;
 }
@@ -60,80 +28,58 @@ Anomaly& Anomaly::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("anomalyId"))
   {
     m_anomalyId = jsonValue.GetString("anomalyId");
-
     m_anomalyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("patternId"))
   {
     m_patternId = jsonValue.GetString("patternId");
-
     m_patternIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("anomalyDetectorArn"))
   {
     m_anomalyDetectorArn = jsonValue.GetString("anomalyDetectorArn");
-
     m_anomalyDetectorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("patternString"))
   {
     m_patternString = jsonValue.GetString("patternString");
-
     m_patternStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("patternRegex"))
   {
     m_patternRegex = jsonValue.GetString("patternRegex");
-
     m_patternRegexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("priority"))
   {
     m_priority = jsonValue.GetString("priority");
-
     m_priorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("firstSeen"))
   {
     m_firstSeen = jsonValue.GetInt64("firstSeen");
-
     m_firstSeenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastSeen"))
   {
     m_lastSeen = jsonValue.GetInt64("lastSeen");
-
     m_lastSeenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("active"))
   {
     m_active = jsonValue.GetBool("active");
-
     m_activeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("histogram"))
   {
     Aws::Map<Aws::String, JsonView> histogramJsonMap = jsonValue.GetObject("histogram").GetAllObjects();
@@ -143,7 +89,6 @@ Anomaly& Anomaly::operator =(JsonView jsonValue)
     }
     m_histogramHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logSamples"))
   {
     Aws::Utils::Array<JsonView> logSamplesJsonList = jsonValue.GetArray("logSamples");
@@ -153,7 +98,6 @@ Anomaly& Anomaly::operator =(JsonView jsonValue)
     }
     m_logSamplesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("patternTokens"))
   {
     Aws::Utils::Array<JsonView> patternTokensJsonList = jsonValue.GetArray("patternTokens");
@@ -163,7 +107,6 @@ Anomaly& Anomaly::operator =(JsonView jsonValue)
     }
     m_patternTokensHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logGroupArnList"))
   {
     Aws::Utils::Array<JsonView> logGroupArnListJsonList = jsonValue.GetArray("logGroupArnList");
@@ -173,35 +116,26 @@ Anomaly& Anomaly::operator =(JsonView jsonValue)
     }
     m_logGroupArnListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("suppressed"))
   {
     m_suppressed = jsonValue.GetBool("suppressed");
-
     m_suppressedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("suppressedDate"))
   {
     m_suppressedDate = jsonValue.GetInt64("suppressedDate");
-
     m_suppressedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("suppressedUntil"))
   {
     m_suppressedUntil = jsonValue.GetInt64("suppressedUntil");
-
     m_suppressedUntilHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isPatternLevelSuppression"))
   {
     m_isPatternLevelSuppression = jsonValue.GetBool("isPatternLevelSuppression");
-
     m_isPatternLevelSuppressionHasBeenSet = true;
   }
-
   return *this;
 }
 

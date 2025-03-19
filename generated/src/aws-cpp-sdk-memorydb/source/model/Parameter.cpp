@@ -18,18 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-Parameter::Parameter() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dataTypeHasBeenSet(false),
-    m_allowedValuesHasBeenSet(false),
-    m_minimumEngineVersionHasBeenSet(false)
-{
-}
-
 Parameter::Parameter(JsonView jsonValue)
-  : Parameter()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ Parameter& Parameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataType"))
   {
     m_dataType = jsonValue.GetString("DataType");
-
     m_dataTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowedValues"))
   {
     m_allowedValues = jsonValue.GetString("AllowedValues");
-
     m_allowedValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinimumEngineVersion"))
   {
     m_minimumEngineVersion = jsonValue.GetString("MinimumEngineVersion");
-
     m_minimumEngineVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

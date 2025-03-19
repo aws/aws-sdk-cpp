@@ -22,7 +22,7 @@ namespace Model
   class StartCisSessionRequest : public Inspector2Request
   {
   public:
-    AWS_INSPECTOR2_API StartCisSessionRequest();
+    AWS_INSPECTOR2_API StartCisSessionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,26 +37,24 @@ namespace Model
     /**
      * <p>The start CIS session message.</p>
      */
-    inline const StartCisSessionMessage& GetMessage() const{ return m_message; }
+    inline const StartCisSessionMessage& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const StartCisSessionMessage& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(StartCisSessionMessage&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline StartCisSessionRequest& WithMessage(const StartCisSessionMessage& value) { SetMessage(value); return *this;}
-    inline StartCisSessionRequest& WithMessage(StartCisSessionMessage&& value) { SetMessage(std::move(value)); return *this;}
+    template<typename MessageT = StartCisSessionMessage>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = StartCisSessionMessage>
+    StartCisSessionRequest& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the scan job.</p>
      */
-    inline const Aws::String& GetScanJobId() const{ return m_scanJobId; }
+    inline const Aws::String& GetScanJobId() const { return m_scanJobId; }
     inline bool ScanJobIdHasBeenSet() const { return m_scanJobIdHasBeenSet; }
-    inline void SetScanJobId(const Aws::String& value) { m_scanJobIdHasBeenSet = true; m_scanJobId = value; }
-    inline void SetScanJobId(Aws::String&& value) { m_scanJobIdHasBeenSet = true; m_scanJobId = std::move(value); }
-    inline void SetScanJobId(const char* value) { m_scanJobIdHasBeenSet = true; m_scanJobId.assign(value); }
-    inline StartCisSessionRequest& WithScanJobId(const Aws::String& value) { SetScanJobId(value); return *this;}
-    inline StartCisSessionRequest& WithScanJobId(Aws::String&& value) { SetScanJobId(std::move(value)); return *this;}
-    inline StartCisSessionRequest& WithScanJobId(const char* value) { SetScanJobId(value); return *this;}
+    template<typename ScanJobIdT = Aws::String>
+    void SetScanJobId(ScanJobIdT&& value) { m_scanJobIdHasBeenSet = true; m_scanJobId = std::forward<ScanJobIdT>(value); }
+    template<typename ScanJobIdT = Aws::String>
+    StartCisSessionRequest& WithScanJobId(ScanJobIdT&& value) { SetScanJobId(std::forward<ScanJobIdT>(value)); return *this;}
     ///@}
   private:
 

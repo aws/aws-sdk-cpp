@@ -34,7 +34,7 @@ namespace Model
   class ServerlessV2FeaturesSupport
   {
   public:
-    AWS_RDS_API ServerlessV2FeaturesSupport();
+    AWS_RDS_API ServerlessV2FeaturesSupport() = default;
     AWS_RDS_API ServerlessV2FeaturesSupport(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API ServerlessV2FeaturesSupport& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,7 +47,7 @@ namespace Model
      * <p>If the minimum capacity is 0 ACUs, the engine version supports the automatic
      * pause/resume feature of Aurora Serverless v2.</p>
      */
-    inline double GetMinCapacity() const{ return m_minCapacity; }
+    inline double GetMinCapacity() const { return m_minCapacity; }
     inline bool MinCapacityHasBeenSet() const { return m_minCapacityHasBeenSet; }
     inline void SetMinCapacity(double value) { m_minCapacityHasBeenSet = true; m_minCapacity = value; }
     inline ServerlessV2FeaturesSupport& WithMinCapacity(double value) { SetMinCapacity(value); return *this;}
@@ -59,17 +59,17 @@ namespace Model
      * engine version. Depending on the engine version, the maximum capacity for an
      * Aurora Serverless v2 cluster might be <code>256</code> or <code>128</code>. </p>
      */
-    inline double GetMaxCapacity() const{ return m_maxCapacity; }
+    inline double GetMaxCapacity() const { return m_maxCapacity; }
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
     inline void SetMaxCapacity(double value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
     inline ServerlessV2FeaturesSupport& WithMaxCapacity(double value) { SetMaxCapacity(value); return *this;}
     ///@}
   private:
 
-    double m_minCapacity;
+    double m_minCapacity{0.0};
     bool m_minCapacityHasBeenSet = false;
 
-    double m_maxCapacity;
+    double m_maxCapacity{0.0};
     bool m_maxCapacityHasBeenSet = false;
   };
 

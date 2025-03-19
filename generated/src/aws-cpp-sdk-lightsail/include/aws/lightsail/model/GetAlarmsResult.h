@@ -29,7 +29,7 @@ namespace Model
   class GetAlarmsResult
   {
   public:
-    AWS_LIGHTSAIL_API GetAlarmsResult();
+    AWS_LIGHTSAIL_API GetAlarmsResult() = default;
     AWS_LIGHTSAIL_API GetAlarmsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetAlarmsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>An array of objects that describe the alarms.</p>
      */
-    inline const Aws::Vector<Alarm>& GetAlarms() const{ return m_alarms; }
-    inline void SetAlarms(const Aws::Vector<Alarm>& value) { m_alarms = value; }
-    inline void SetAlarms(Aws::Vector<Alarm>&& value) { m_alarms = std::move(value); }
-    inline GetAlarmsResult& WithAlarms(const Aws::Vector<Alarm>& value) { SetAlarms(value); return *this;}
-    inline GetAlarmsResult& WithAlarms(Aws::Vector<Alarm>&& value) { SetAlarms(std::move(value)); return *this;}
-    inline GetAlarmsResult& AddAlarms(const Alarm& value) { m_alarms.push_back(value); return *this; }
-    inline GetAlarmsResult& AddAlarms(Alarm&& value) { m_alarms.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Alarm>& GetAlarms() const { return m_alarms; }
+    template<typename AlarmsT = Aws::Vector<Alarm>>
+    void SetAlarms(AlarmsT&& value) { m_alarmsHasBeenSet = true; m_alarms = std::forward<AlarmsT>(value); }
+    template<typename AlarmsT = Aws::Vector<Alarm>>
+    GetAlarmsResult& WithAlarms(AlarmsT&& value) { SetAlarms(std::forward<AlarmsT>(value)); return *this;}
+    template<typename AlarmsT = Alarm>
+    GetAlarmsResult& AddAlarms(AlarmsT&& value) { m_alarmsHasBeenSet = true; m_alarms.emplace_back(std::forward<AlarmsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * request and specify the next page token using the <code>pageToken</code>
      * parameter.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-    inline GetAlarmsResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline GetAlarmsResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline GetAlarmsResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    GetAlarmsResult& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAlarmsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAlarmsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAlarmsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAlarmsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Alarm> m_alarms;
+    bool m_alarmsHasBeenSet = false;
 
     Aws::String m_nextPageToken;
+    bool m_nextPageTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

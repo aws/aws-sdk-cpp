@@ -16,14 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTrafficPolicyInstancesByPolicyResult::ListTrafficPolicyInstancesByPolicyResult() : 
-    m_trafficPolicyInstanceTypeMarker(RRType::NOT_SET),
-    m_isTruncated(false)
-{
-}
-
 ListTrafficPolicyInstancesByPolicyResult::ListTrafficPolicyInstancesByPolicyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ListTrafficPolicyInstancesByPolicyResult()
 {
   *this = result;
 }
@@ -39,37 +32,44 @@ ListTrafficPolicyInstancesByPolicyResult& ListTrafficPolicyInstancesByPolicyResu
     if(!trafficPolicyInstancesNode.IsNull())
     {
       XmlNode trafficPolicyInstancesMember = trafficPolicyInstancesNode.FirstChild("TrafficPolicyInstance");
+      m_trafficPolicyInstancesHasBeenSet = !trafficPolicyInstancesMember.IsNull();
       while(!trafficPolicyInstancesMember.IsNull())
       {
         m_trafficPolicyInstances.push_back(trafficPolicyInstancesMember);
         trafficPolicyInstancesMember = trafficPolicyInstancesMember.NextNode("TrafficPolicyInstance");
       }
 
+      m_trafficPolicyInstancesHasBeenSet = true;
     }
     XmlNode hostedZoneIdMarkerNode = resultNode.FirstChild("HostedZoneIdMarker");
     if(!hostedZoneIdMarkerNode.IsNull())
     {
       m_hostedZoneIdMarker = Aws::Utils::Xml::DecodeEscapedXmlText(hostedZoneIdMarkerNode.GetText());
+      m_hostedZoneIdMarkerHasBeenSet = true;
     }
     XmlNode trafficPolicyInstanceNameMarkerNode = resultNode.FirstChild("TrafficPolicyInstanceNameMarker");
     if(!trafficPolicyInstanceNameMarkerNode.IsNull())
     {
       m_trafficPolicyInstanceNameMarker = Aws::Utils::Xml::DecodeEscapedXmlText(trafficPolicyInstanceNameMarkerNode.GetText());
+      m_trafficPolicyInstanceNameMarkerHasBeenSet = true;
     }
     XmlNode trafficPolicyInstanceTypeMarkerNode = resultNode.FirstChild("TrafficPolicyInstanceTypeMarker");
     if(!trafficPolicyInstanceTypeMarkerNode.IsNull())
     {
-      m_trafficPolicyInstanceTypeMarker = RRTypeMapper::GetRRTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trafficPolicyInstanceTypeMarkerNode.GetText()).c_str()).c_str());
+      m_trafficPolicyInstanceTypeMarker = RRTypeMapper::GetRRTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trafficPolicyInstanceTypeMarkerNode.GetText()).c_str()));
+      m_trafficPolicyInstanceTypeMarkerHasBeenSet = true;
     }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
     if(!isTruncatedNode.IsNull())
     {
       m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
+      m_isTruncatedHasBeenSet = true;
     }
     XmlNode maxItemsNode = resultNode.FirstChild("MaxItems");
     if(!maxItemsNode.IsNull())
     {
       m_maxItems = Aws::Utils::Xml::DecodeEscapedXmlText(maxItemsNode.GetText());
+      m_maxItemsHasBeenSet = true;
     }
   }
 
@@ -78,6 +78,7 @@ ListTrafficPolicyInstancesByPolicyResult& ListTrafficPolicyInstancesByPolicyResu
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

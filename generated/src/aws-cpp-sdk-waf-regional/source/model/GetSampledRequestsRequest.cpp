@@ -12,15 +12,6 @@ using namespace Aws::WAFRegional::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSampledRequestsRequest::GetSampledRequestsRequest() : 
-    m_webAclIdHasBeenSet(false),
-    m_ruleIdHasBeenSet(false),
-    m_timeWindowHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false)
-{
-}
-
 Aws::String GetSampledRequestsRequest::SerializePayload() const
 {
   JsonValue payload;

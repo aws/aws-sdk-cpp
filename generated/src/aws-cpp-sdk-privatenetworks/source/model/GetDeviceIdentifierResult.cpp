@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDeviceIdentifierResult::GetDeviceIdentifierResult()
-{
-}
-
 GetDeviceIdentifierResult::GetDeviceIdentifierResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetDeviceIdentifierResult& GetDeviceIdentifierResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("deviceIdentifier"))
   {
     m_deviceIdentifier = jsonValue.GetObject("deviceIdentifier");
-
+    m_deviceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -42,14 +37,15 @@ GetDeviceIdentifierResult& GetDeviceIdentifierResult::operator =(const Aws::Amaz
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteAssetModelRequest::DeleteAssetModelRequest() : 
-    m_assetModelIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_ifMatchHasBeenSet(false),
-    m_ifNoneMatchHasBeenSet(false),
-    m_matchForVersionType(AssetModelVersionType::NOT_SET),
-    m_matchForVersionTypeHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAssetModelRequest::SerializePayload() const
 {
   return {};

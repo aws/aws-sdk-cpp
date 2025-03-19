@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetReplicationSetRequest::GetReplicationSetRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String GetReplicationSetRequest::SerializePayload() const
 {
   return {};

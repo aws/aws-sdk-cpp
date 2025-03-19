@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribePromptResult::DescribePromptResult()
-{
-}
-
 DescribePromptResult::DescribePromptResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribePromptResult& DescribePromptResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("Prompt"))
   {
     m_prompt = jsonValue.GetObject("Prompt");
-
+    m_promptHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

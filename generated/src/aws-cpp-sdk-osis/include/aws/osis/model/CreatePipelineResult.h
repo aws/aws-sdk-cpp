@@ -28,7 +28,7 @@ namespace Model
   class CreatePipelineResult
   {
   public:
-    AWS_OSIS_API CreatePipelineResult();
+    AWS_OSIS_API CreatePipelineResult() = default;
     AWS_OSIS_API CreatePipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OSIS_API CreatePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Container for information about the created pipeline.</p>
      */
-    inline const Pipeline& GetPipeline() const{ return m_pipeline; }
-    inline void SetPipeline(const Pipeline& value) { m_pipeline = value; }
-    inline void SetPipeline(Pipeline&& value) { m_pipeline = std::move(value); }
-    inline CreatePipelineResult& WithPipeline(const Pipeline& value) { SetPipeline(value); return *this;}
-    inline CreatePipelineResult& WithPipeline(Pipeline&& value) { SetPipeline(std::move(value)); return *this;}
+    inline const Pipeline& GetPipeline() const { return m_pipeline; }
+    template<typename PipelineT = Pipeline>
+    void SetPipeline(PipelineT&& value) { m_pipelineHasBeenSet = true; m_pipeline = std::forward<PipelineT>(value); }
+    template<typename PipelineT = Pipeline>
+    CreatePipelineResult& WithPipeline(PipelineT&& value) { SetPipeline(std::forward<PipelineT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreatePipelineResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreatePipelineResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreatePipelineResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreatePipelineResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Pipeline m_pipeline;
+    bool m_pipelineHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

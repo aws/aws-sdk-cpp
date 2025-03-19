@@ -33,7 +33,7 @@ namespace Model
   class DefaultTextAreaControlOptions
   {
   public:
-    AWS_QUICKSIGHT_API DefaultTextAreaControlOptions();
+    AWS_QUICKSIGHT_API DefaultTextAreaControlOptions() = default;
     AWS_QUICKSIGHT_API DefaultTextAreaControlOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DefaultTextAreaControlOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The delimiter that is used to separate the lines in text.</p>
      */
-    inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
+    inline const Aws::String& GetDelimiter() const { return m_delimiter; }
     inline bool DelimiterHasBeenSet() const { return m_delimiterHasBeenSet; }
-    inline void SetDelimiter(const Aws::String& value) { m_delimiterHasBeenSet = true; m_delimiter = value; }
-    inline void SetDelimiter(Aws::String&& value) { m_delimiterHasBeenSet = true; m_delimiter = std::move(value); }
-    inline void SetDelimiter(const char* value) { m_delimiterHasBeenSet = true; m_delimiter.assign(value); }
-    inline DefaultTextAreaControlOptions& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
-    inline DefaultTextAreaControlOptions& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
-    inline DefaultTextAreaControlOptions& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
+    template<typename DelimiterT = Aws::String>
+    void SetDelimiter(DelimiterT&& value) { m_delimiterHasBeenSet = true; m_delimiter = std::forward<DelimiterT>(value); }
+    template<typename DelimiterT = Aws::String>
+    DefaultTextAreaControlOptions& WithDelimiter(DelimiterT&& value) { SetDelimiter(std::forward<DelimiterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The display options of a control.</p>
      */
-    inline const TextAreaControlDisplayOptions& GetDisplayOptions() const{ return m_displayOptions; }
+    inline const TextAreaControlDisplayOptions& GetDisplayOptions() const { return m_displayOptions; }
     inline bool DisplayOptionsHasBeenSet() const { return m_displayOptionsHasBeenSet; }
-    inline void SetDisplayOptions(const TextAreaControlDisplayOptions& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = value; }
-    inline void SetDisplayOptions(TextAreaControlDisplayOptions&& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = std::move(value); }
-    inline DefaultTextAreaControlOptions& WithDisplayOptions(const TextAreaControlDisplayOptions& value) { SetDisplayOptions(value); return *this;}
-    inline DefaultTextAreaControlOptions& WithDisplayOptions(TextAreaControlDisplayOptions&& value) { SetDisplayOptions(std::move(value)); return *this;}
+    template<typename DisplayOptionsT = TextAreaControlDisplayOptions>
+    void SetDisplayOptions(DisplayOptionsT&& value) { m_displayOptionsHasBeenSet = true; m_displayOptions = std::forward<DisplayOptionsT>(value); }
+    template<typename DisplayOptionsT = TextAreaControlDisplayOptions>
+    DefaultTextAreaControlOptions& WithDisplayOptions(DisplayOptionsT&& value) { SetDisplayOptions(std::forward<DisplayOptionsT>(value)); return *this;}
     ///@}
   private:
 

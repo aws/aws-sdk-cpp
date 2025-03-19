@@ -26,7 +26,7 @@ namespace Model
   class DescribeLoadBalancerPoliciesRequest : public ElasticLoadBalancingRequest
   {
   public:
-    AWS_ELASTICLOADBALANCING_API DescribeLoadBalancerPoliciesRequest();
+    AWS_ELASTICLOADBALANCING_API DescribeLoadBalancerPoliciesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,29 +45,26 @@ namespace Model
     /**
      * <p>The name of the load balancer.</p>
      */
-    inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
+    inline const Aws::String& GetLoadBalancerName() const { return m_loadBalancerName; }
     inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
-    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
-    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::move(value); }
-    inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
-    inline DescribeLoadBalancerPoliciesRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
-    inline DescribeLoadBalancerPoliciesRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(std::move(value)); return *this;}
-    inline DescribeLoadBalancerPoliciesRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
+    template<typename LoadBalancerNameT = Aws::String>
+    void SetLoadBalancerName(LoadBalancerNameT&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::forward<LoadBalancerNameT>(value); }
+    template<typename LoadBalancerNameT = Aws::String>
+    DescribeLoadBalancerPoliciesRequest& WithLoadBalancerName(LoadBalancerNameT&& value) { SetLoadBalancerName(std::forward<LoadBalancerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The names of the policies.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPolicyNames() const{ return m_policyNames; }
+    inline const Aws::Vector<Aws::String>& GetPolicyNames() const { return m_policyNames; }
     inline bool PolicyNamesHasBeenSet() const { return m_policyNamesHasBeenSet; }
-    inline void SetPolicyNames(const Aws::Vector<Aws::String>& value) { m_policyNamesHasBeenSet = true; m_policyNames = value; }
-    inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNamesHasBeenSet = true; m_policyNames = std::move(value); }
-    inline DescribeLoadBalancerPoliciesRequest& WithPolicyNames(const Aws::Vector<Aws::String>& value) { SetPolicyNames(value); return *this;}
-    inline DescribeLoadBalancerPoliciesRequest& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(std::move(value)); return *this;}
-    inline DescribeLoadBalancerPoliciesRequest& AddPolicyNames(const Aws::String& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
-    inline DescribeLoadBalancerPoliciesRequest& AddPolicyNames(Aws::String&& value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(std::move(value)); return *this; }
-    inline DescribeLoadBalancerPoliciesRequest& AddPolicyNames(const char* value) { m_policyNamesHasBeenSet = true; m_policyNames.push_back(value); return *this; }
+    template<typename PolicyNamesT = Aws::Vector<Aws::String>>
+    void SetPolicyNames(PolicyNamesT&& value) { m_policyNamesHasBeenSet = true; m_policyNames = std::forward<PolicyNamesT>(value); }
+    template<typename PolicyNamesT = Aws::Vector<Aws::String>>
+    DescribeLoadBalancerPoliciesRequest& WithPolicyNames(PolicyNamesT&& value) { SetPolicyNames(std::forward<PolicyNamesT>(value)); return *this;}
+    template<typename PolicyNamesT = Aws::String>
+    DescribeLoadBalancerPoliciesRequest& AddPolicyNames(PolicyNamesT&& value) { m_policyNamesHasBeenSet = true; m_policyNames.emplace_back(std::forward<PolicyNamesT>(value)); return *this; }
     ///@}
   private:
 

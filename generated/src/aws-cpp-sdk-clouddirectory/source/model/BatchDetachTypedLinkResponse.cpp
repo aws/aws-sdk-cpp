@@ -18,10 +18,6 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchDetachTypedLinkResponse::BatchDetachTypedLinkResponse()
-{
-}
-
 BatchDetachTypedLinkResponse::BatchDetachTypedLinkResponse(JsonView jsonValue)
 {
   *this = jsonValue;

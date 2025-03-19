@@ -18,16 +18,7 @@ namespace EBS
 namespace Model
 {
 
-ChangedBlock::ChangedBlock() : 
-    m_blockIndex(0),
-    m_blockIndexHasBeenSet(false),
-    m_firstBlockTokenHasBeenSet(false),
-    m_secondBlockTokenHasBeenSet(false)
-{
-}
-
 ChangedBlock::ChangedBlock(JsonView jsonValue)
-  : ChangedBlock()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ChangedBlock& ChangedBlock::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BlockIndex"))
   {
     m_blockIndex = jsonValue.GetInteger("BlockIndex");
-
     m_blockIndexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirstBlockToken"))
   {
     m_firstBlockToken = jsonValue.GetString("FirstBlockToken");
-
     m_firstBlockTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecondBlockToken"))
   {
     m_secondBlockToken = jsonValue.GetString("SecondBlockToken");
-
     m_secondBlockTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

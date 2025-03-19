@@ -18,17 +18,7 @@ namespace EFS
 namespace Model
 {
 
-CreationInfo::CreationInfo() : 
-    m_ownerUid(0),
-    m_ownerUidHasBeenSet(false),
-    m_ownerGid(0),
-    m_ownerGidHasBeenSet(false),
-    m_permissionsHasBeenSet(false)
-{
-}
-
 CreationInfo::CreationInfo(JsonView jsonValue)
-  : CreationInfo()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ CreationInfo& CreationInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OwnerUid"))
   {
     m_ownerUid = jsonValue.GetInt64("OwnerUid");
-
     m_ownerUidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerGid"))
   {
     m_ownerGid = jsonValue.GetInt64("OwnerGid");
-
     m_ownerGidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Permissions"))
   {
     m_permissions = jsonValue.GetString("Permissions");
-
     m_permissionsHasBeenSet = true;
   }
-
   return *this;
 }
 

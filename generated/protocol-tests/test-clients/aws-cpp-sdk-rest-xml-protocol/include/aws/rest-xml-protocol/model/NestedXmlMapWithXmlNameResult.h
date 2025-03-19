@@ -28,41 +28,39 @@ namespace Model
   class NestedXmlMapWithXmlNameResult
   {
   public:
-    AWS_RESTXMLPROTOCOL_API NestedXmlMapWithXmlNameResult();
+    AWS_RESTXMLPROTOCOL_API NestedXmlMapWithXmlNameResult() = default;
     AWS_RESTXMLPROTOCOL_API NestedXmlMapWithXmlNameResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RESTXMLPROTOCOL_API NestedXmlMapWithXmlNameResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& GetNestedXmlMapWithXmlNameMap() const{ return m_nestedXmlMapWithXmlNameMap; }
-    inline void SetNestedXmlMapWithXmlNameMap(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& value) { m_nestedXmlMapWithXmlNameMap = value; }
-    inline void SetNestedXmlMapWithXmlNameMap(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>&& value) { m_nestedXmlMapWithXmlNameMap = std::move(value); }
-    inline NestedXmlMapWithXmlNameResult& WithNestedXmlMapWithXmlNameMap(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& value) { SetNestedXmlMapWithXmlNameMap(value); return *this;}
-    inline NestedXmlMapWithXmlNameResult& WithNestedXmlMapWithXmlNameMap(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>&& value) { SetNestedXmlMapWithXmlNameMap(std::move(value)); return *this;}
-    inline NestedXmlMapWithXmlNameResult& AddNestedXmlMapWithXmlNameMap(const Aws::String& key, const Aws::Map<Aws::String, Aws::String>& value) { m_nestedXmlMapWithXmlNameMap.emplace(key, value); return *this; }
-    inline NestedXmlMapWithXmlNameResult& AddNestedXmlMapWithXmlNameMap(Aws::String&& key, const Aws::Map<Aws::String, Aws::String>& value) { m_nestedXmlMapWithXmlNameMap.emplace(std::move(key), value); return *this; }
-    inline NestedXmlMapWithXmlNameResult& AddNestedXmlMapWithXmlNameMap(const Aws::String& key, Aws::Map<Aws::String, Aws::String>&& value) { m_nestedXmlMapWithXmlNameMap.emplace(key, std::move(value)); return *this; }
-    inline NestedXmlMapWithXmlNameResult& AddNestedXmlMapWithXmlNameMap(Aws::String&& key, Aws::Map<Aws::String, Aws::String>&& value) { m_nestedXmlMapWithXmlNameMap.emplace(std::move(key), std::move(value)); return *this; }
-    inline NestedXmlMapWithXmlNameResult& AddNestedXmlMapWithXmlNameMap(const char* key, Aws::Map<Aws::String, Aws::String>&& value) { m_nestedXmlMapWithXmlNameMap.emplace(key, std::move(value)); return *this; }
-    inline NestedXmlMapWithXmlNameResult& AddNestedXmlMapWithXmlNameMap(const char* key, const Aws::Map<Aws::String, Aws::String>& value) { m_nestedXmlMapWithXmlNameMap.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>& GetNestedXmlMapWithXmlNameMap() const { return m_nestedXmlMapWithXmlNameMap; }
+    template<typename NestedXmlMapWithXmlNameMapT = Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>>
+    void SetNestedXmlMapWithXmlNameMap(NestedXmlMapWithXmlNameMapT&& value) { m_nestedXmlMapWithXmlNameMapHasBeenSet = true; m_nestedXmlMapWithXmlNameMap = std::forward<NestedXmlMapWithXmlNameMapT>(value); }
+    template<typename NestedXmlMapWithXmlNameMapT = Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>>>
+    NestedXmlMapWithXmlNameResult& WithNestedXmlMapWithXmlNameMap(NestedXmlMapWithXmlNameMapT&& value) { SetNestedXmlMapWithXmlNameMap(std::forward<NestedXmlMapWithXmlNameMapT>(value)); return *this;}
+    template<typename NestedXmlMapWithXmlNameMapKeyT = Aws::String, typename NestedXmlMapWithXmlNameMapValueT = Aws::Map<Aws::String, Aws::String>>
+    NestedXmlMapWithXmlNameResult& AddNestedXmlMapWithXmlNameMap(NestedXmlMapWithXmlNameMapKeyT&& key, NestedXmlMapWithXmlNameMapValueT&& value) {
+      m_nestedXmlMapWithXmlNameMapHasBeenSet = true; m_nestedXmlMapWithXmlNameMap.emplace(std::forward<NestedXmlMapWithXmlNameMapKeyT>(key), std::forward<NestedXmlMapWithXmlNameMapValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline NestedXmlMapWithXmlNameResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline NestedXmlMapWithXmlNameResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline NestedXmlMapWithXmlNameResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    NestedXmlMapWithXmlNameResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_nestedXmlMapWithXmlNameMap;
+    bool m_nestedXmlMapWithXmlNameMapHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

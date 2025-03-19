@@ -12,13 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ApplyPendingMaintenanceActionRequest::ApplyPendingMaintenanceActionRequest() : 
-    m_replicationInstanceArnHasBeenSet(false),
-    m_applyActionHasBeenSet(false),
-    m_optInTypeHasBeenSet(false)
-{
-}
-
 Aws::String ApplyPendingMaintenanceActionRequest::SerializePayload() const
 {
   JsonValue payload;

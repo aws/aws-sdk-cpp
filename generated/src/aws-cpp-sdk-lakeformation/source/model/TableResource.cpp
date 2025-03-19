@@ -18,16 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-TableResource::TableResource() : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tableWildcardHasBeenSet(false)
-{
-}
-
 TableResource::TableResource(JsonView jsonValue)
-  : TableResource()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ TableResource& TableResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CatalogId"))
   {
     m_catalogId = jsonValue.GetString("CatalogId");
-
     m_catalogIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableWildcard"))
   {
     m_tableWildcard = jsonValue.GetObject("TableWildcard");
-
     m_tableWildcardHasBeenSet = true;
   }
-
   return *this;
 }
 

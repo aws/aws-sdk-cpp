@@ -10,13 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-ModifyIntegrationRequest::ModifyIntegrationRequest() : 
-    m_integrationArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_integrationNameHasBeenSet(false)
-{
-}
-
 Aws::String ModifyIntegrationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

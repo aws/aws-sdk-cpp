@@ -20,14 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-SystemStatus::SystemStatus() : 
-    m_cPUUtilizationHasBeenSet(false),
-    m_loadAverageHasBeenSet(false)
-{
-}
-
 SystemStatus::SystemStatus(const XmlNode& xmlNode)
-  : SystemStatus()
 {
   *this = xmlNode;
 }
@@ -48,6 +41,7 @@ SystemStatus& SystemStatus::operator =(const XmlNode& xmlNode)
     if(!loadAverageNode.IsNull())
     {
       XmlNode loadAverageMember = loadAverageNode.FirstChild("member");
+      m_loadAverageHasBeenSet = !loadAverageMember.IsNull();
       while(!loadAverageMember.IsNull())
       {
         m_loadAverage.push_back(StringUtils::ConvertToDouble(StringUtils::Trim(loadAverageMember.GetText().c_str()).c_str()));

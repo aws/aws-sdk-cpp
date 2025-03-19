@@ -18,13 +18,7 @@ namespace Glue
 namespace Model
 {
 
-ExportLabelsTaskRunProperties::ExportLabelsTaskRunProperties() : 
-    m_outputS3PathHasBeenSet(false)
-{
-}
-
 ExportLabelsTaskRunProperties::ExportLabelsTaskRunProperties(JsonView jsonValue)
-  : ExportLabelsTaskRunProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ExportLabelsTaskRunProperties& ExportLabelsTaskRunProperties::operator =(JsonVie
   if(jsonValue.ValueExists("OutputS3Path"))
   {
     m_outputS3Path = jsonValue.GetString("OutputS3Path");
-
     m_outputS3PathHasBeenSet = true;
   }
-
   return *this;
 }
 

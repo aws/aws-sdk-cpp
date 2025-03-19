@@ -18,16 +18,7 @@ namespace Omics
 namespace Model
 {
 
-ActivateReadSetSourceItem::ActivateReadSetSourceItem() : 
-    m_readSetIdHasBeenSet(false),
-    m_status(ReadSetActivationJobItemStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 ActivateReadSetSourceItem::ActivateReadSetSourceItem(JsonView jsonValue)
-  : ActivateReadSetSourceItem()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ActivateReadSetSourceItem& ActivateReadSetSourceItem::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("readSetId"))
   {
     m_readSetId = jsonValue.GetString("readSetId");
-
     m_readSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ReadSetActivationJobItemStatusMapper::GetReadSetActivationJobItemStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

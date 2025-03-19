@@ -18,13 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-ActionExecutionPayloadField::ActionExecutionPayloadField() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 ActionExecutionPayloadField::ActionExecutionPayloadField(JsonView jsonValue)
-  : ActionExecutionPayloadField()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ActionExecutionPayloadField& ActionExecutionPayloadField::operator =(JsonView js
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

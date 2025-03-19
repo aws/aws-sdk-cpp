@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateJobTemplateResult::CreateJobTemplateResult()
-{
-}
-
 CreateJobTemplateResult::CreateJobTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateJobTemplateResult& CreateJobTemplateResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("jobTemplateArn"))
   {
     m_jobTemplateArn = jsonValue.GetString("jobTemplateArn");
-
+    m_jobTemplateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobTemplateId"))
   {
     m_jobTemplateId = jsonValue.GetString("jobTemplateId");
-
+    m_jobTemplateIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

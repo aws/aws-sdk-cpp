@@ -33,7 +33,7 @@ namespace Model
   class RdsDbInstanceStorage
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API RdsDbInstanceStorage();
+    AWS_COSTOPTIMIZATIONHUB_API RdsDbInstanceStorage() = default;
     AWS_COSTOPTIMIZATIONHUB_API RdsDbInstanceStorage(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API RdsDbInstanceStorage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,22 +44,22 @@ namespace Model
      * <p>The Amazon RDS DB instance storage configuration used for
      * recommendations.</p>
      */
-    inline const RdsDbInstanceStorageConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const RdsDbInstanceStorageConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const RdsDbInstanceStorageConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(RdsDbInstanceStorageConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline RdsDbInstanceStorage& WithConfiguration(const RdsDbInstanceStorageConfiguration& value) { SetConfiguration(value); return *this;}
-    inline RdsDbInstanceStorage& WithConfiguration(RdsDbInstanceStorageConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = RdsDbInstanceStorageConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = RdsDbInstanceStorageConfiguration>
+    RdsDbInstanceStorage& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResourceCostCalculation& GetCostCalculation() const{ return m_costCalculation; }
+    inline const ResourceCostCalculation& GetCostCalculation() const { return m_costCalculation; }
     inline bool CostCalculationHasBeenSet() const { return m_costCalculationHasBeenSet; }
-    inline void SetCostCalculation(const ResourceCostCalculation& value) { m_costCalculationHasBeenSet = true; m_costCalculation = value; }
-    inline void SetCostCalculation(ResourceCostCalculation&& value) { m_costCalculationHasBeenSet = true; m_costCalculation = std::move(value); }
-    inline RdsDbInstanceStorage& WithCostCalculation(const ResourceCostCalculation& value) { SetCostCalculation(value); return *this;}
-    inline RdsDbInstanceStorage& WithCostCalculation(ResourceCostCalculation&& value) { SetCostCalculation(std::move(value)); return *this;}
+    template<typename CostCalculationT = ResourceCostCalculation>
+    void SetCostCalculation(CostCalculationT&& value) { m_costCalculationHasBeenSet = true; m_costCalculation = std::forward<CostCalculationT>(value); }
+    template<typename CostCalculationT = ResourceCostCalculation>
+    RdsDbInstanceStorage& WithCostCalculation(CostCalculationT&& value) { SetCostCalculation(std::forward<CostCalculationT>(value)); return *this;}
     ///@}
   private:
 

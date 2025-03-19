@@ -18,26 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsS3BucketBucketLifecycleConfigurationRulesDetails::AwsS3BucketBucketLifecycleConfigurationRulesDetails() : 
-    m_abortIncompleteMultipartUploadHasBeenSet(false),
-    m_expirationDateHasBeenSet(false),
-    m_expirationInDays(0),
-    m_expirationInDaysHasBeenSet(false),
-    m_expiredObjectDeleteMarker(false),
-    m_expiredObjectDeleteMarkerHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_iDHasBeenSet(false),
-    m_noncurrentVersionExpirationInDays(0),
-    m_noncurrentVersionExpirationInDaysHasBeenSet(false),
-    m_noncurrentVersionTransitionsHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_transitionsHasBeenSet(false)
-{
-}
-
 AwsS3BucketBucketLifecycleConfigurationRulesDetails::AwsS3BucketBucketLifecycleConfigurationRulesDetails(JsonView jsonValue)
-  : AwsS3BucketBucketLifecycleConfigurationRulesDetails()
 {
   *this = jsonValue;
 }
@@ -47,52 +28,38 @@ AwsS3BucketBucketLifecycleConfigurationRulesDetails& AwsS3BucketBucketLifecycleC
   if(jsonValue.ValueExists("AbortIncompleteMultipartUpload"))
   {
     m_abortIncompleteMultipartUpload = jsonValue.GetObject("AbortIncompleteMultipartUpload");
-
     m_abortIncompleteMultipartUploadHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpirationDate"))
   {
     m_expirationDate = jsonValue.GetString("ExpirationDate");
-
     m_expirationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpirationInDays"))
   {
     m_expirationInDays = jsonValue.GetInteger("ExpirationInDays");
-
     m_expirationInDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpiredObjectDeleteMarker"))
   {
     m_expiredObjectDeleteMarker = jsonValue.GetBool("ExpiredObjectDeleteMarker");
-
     m_expiredObjectDeleteMarkerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Filter"))
   {
     m_filter = jsonValue.GetObject("Filter");
-
     m_filterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ID"))
   {
     m_iD = jsonValue.GetString("ID");
-
     m_iDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NoncurrentVersionExpirationInDays"))
   {
     m_noncurrentVersionExpirationInDays = jsonValue.GetInteger("NoncurrentVersionExpirationInDays");
-
     m_noncurrentVersionExpirationInDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NoncurrentVersionTransitions"))
   {
     Aws::Utils::Array<JsonView> noncurrentVersionTransitionsJsonList = jsonValue.GetArray("NoncurrentVersionTransitions");
@@ -102,21 +69,16 @@ AwsS3BucketBucketLifecycleConfigurationRulesDetails& AwsS3BucketBucketLifecycleC
     }
     m_noncurrentVersionTransitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Prefix"))
   {
     m_prefix = jsonValue.GetString("Prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Transitions"))
   {
     Aws::Utils::Array<JsonView> transitionsJsonList = jsonValue.GetArray("Transitions");
@@ -126,7 +88,6 @@ AwsS3BucketBucketLifecycleConfigurationRulesDetails& AwsS3BucketBucketLifecycleC
     }
     m_transitionsHasBeenSet = true;
   }
-
   return *this;
 }
 

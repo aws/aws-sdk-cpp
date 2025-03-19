@@ -12,11 +12,6 @@ using namespace Aws::Route53Resolver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetFirewallRuleGroupPolicyRequest::GetFirewallRuleGroupPolicyRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String GetFirewallRuleGroupPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

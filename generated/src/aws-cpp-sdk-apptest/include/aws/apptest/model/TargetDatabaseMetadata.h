@@ -32,7 +32,7 @@ namespace Model
   class TargetDatabaseMetadata
   {
   public:
-    AWS_APPTEST_API TargetDatabaseMetadata();
+    AWS_APPTEST_API TargetDatabaseMetadata() = default;
     AWS_APPTEST_API TargetDatabaseMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API TargetDatabaseMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,31 +42,27 @@ namespace Model
     /**
      * <p>The type of the target database metadata.</p>
      */
-    inline const TargetDatabase& GetType() const{ return m_type; }
+    inline TargetDatabase GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const TargetDatabase& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(TargetDatabase&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline TargetDatabaseMetadata& WithType(const TargetDatabase& value) { SetType(value); return *this;}
-    inline TargetDatabaseMetadata& WithType(TargetDatabase&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(TargetDatabase value) { m_typeHasBeenSet = true; m_type = value; }
+    inline TargetDatabaseMetadata& WithType(TargetDatabase value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The capture tool of the target database metadata.</p>
      */
-    inline const CaptureTool& GetCaptureTool() const{ return m_captureTool; }
+    inline CaptureTool GetCaptureTool() const { return m_captureTool; }
     inline bool CaptureToolHasBeenSet() const { return m_captureToolHasBeenSet; }
-    inline void SetCaptureTool(const CaptureTool& value) { m_captureToolHasBeenSet = true; m_captureTool = value; }
-    inline void SetCaptureTool(CaptureTool&& value) { m_captureToolHasBeenSet = true; m_captureTool = std::move(value); }
-    inline TargetDatabaseMetadata& WithCaptureTool(const CaptureTool& value) { SetCaptureTool(value); return *this;}
-    inline TargetDatabaseMetadata& WithCaptureTool(CaptureTool&& value) { SetCaptureTool(std::move(value)); return *this;}
+    inline void SetCaptureTool(CaptureTool value) { m_captureToolHasBeenSet = true; m_captureTool = value; }
+    inline TargetDatabaseMetadata& WithCaptureTool(CaptureTool value) { SetCaptureTool(value); return *this;}
     ///@}
   private:
 
-    TargetDatabase m_type;
+    TargetDatabase m_type{TargetDatabase::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    CaptureTool m_captureTool;
+    CaptureTool m_captureTool{CaptureTool::NOT_SET};
     bool m_captureToolHasBeenSet = false;
   };
 

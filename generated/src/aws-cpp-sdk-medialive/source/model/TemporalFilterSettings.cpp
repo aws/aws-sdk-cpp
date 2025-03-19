@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-TemporalFilterSettings::TemporalFilterSettings() : 
-    m_postFilterSharpening(TemporalFilterPostFilterSharpening::NOT_SET),
-    m_postFilterSharpeningHasBeenSet(false),
-    m_strength(TemporalFilterStrength::NOT_SET),
-    m_strengthHasBeenSet(false)
-{
-}
-
 TemporalFilterSettings::TemporalFilterSettings(JsonView jsonValue)
-  : TemporalFilterSettings()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TemporalFilterSettings& TemporalFilterSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("postFilterSharpening"))
   {
     m_postFilterSharpening = TemporalFilterPostFilterSharpeningMapper::GetTemporalFilterPostFilterSharpeningForName(jsonValue.GetString("postFilterSharpening"));
-
     m_postFilterSharpeningHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("strength"))
   {
     m_strength = TemporalFilterStrengthMapper::GetTemporalFilterStrengthForName(jsonValue.GetString("strength"));
-
     m_strengthHasBeenSet = true;
   }
-
   return *this;
 }
 

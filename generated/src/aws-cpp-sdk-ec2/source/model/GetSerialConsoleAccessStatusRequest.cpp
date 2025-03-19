@@ -10,12 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-GetSerialConsoleAccessStatusRequest::GetSerialConsoleAccessStatusRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String GetSerialConsoleAccessStatusRequest::SerializePayload() const
 {
   Aws::StringStream ss;

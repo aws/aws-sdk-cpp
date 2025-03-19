@@ -18,40 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Session::Session() : 
-    m_idHasBeenSet(false),
-    m_createdOnHasBeenSet(false),
-    m_status(SessionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_defaultArgumentsHasBeenSet(false),
-    m_connectionsHasBeenSet(false),
-    m_progress(0.0),
-    m_progressHasBeenSet(false),
-    m_maxCapacity(0.0),
-    m_maxCapacityHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false),
-    m_glueVersionHasBeenSet(false),
-    m_numberOfWorkers(0),
-    m_numberOfWorkersHasBeenSet(false),
-    m_workerType(WorkerType::NOT_SET),
-    m_workerTypeHasBeenSet(false),
-    m_completedOnHasBeenSet(false),
-    m_executionTime(0.0),
-    m_executionTimeHasBeenSet(false),
-    m_dPUSeconds(0.0),
-    m_dPUSecondsHasBeenSet(false),
-    m_idleTimeout(0),
-    m_idleTimeoutHasBeenSet(false),
-    m_profileNameHasBeenSet(false)
-{
-}
-
 Session::Session(JsonView jsonValue)
-  : Session()
 {
   *this = jsonValue;
 }
@@ -61,52 +28,38 @@ Session& Session::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedOn"))
   {
     m_createdOn = jsonValue.GetDouble("CreatedOn");
-
     m_createdOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = SessionStatusMapper::GetSessionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Role"))
   {
     m_role = jsonValue.GetString("Role");
-
     m_roleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Command"))
   {
     m_command = jsonValue.GetObject("Command");
-
     m_commandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultArguments"))
   {
     Aws::Map<Aws::String, JsonView> defaultArgumentsJsonMap = jsonValue.GetObject("DefaultArguments").GetAllObjects();
@@ -116,91 +69,66 @@ Session& Session::operator =(JsonView jsonValue)
     }
     m_defaultArgumentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Connections"))
   {
     m_connections = jsonValue.GetObject("Connections");
-
     m_connectionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Progress"))
   {
     m_progress = jsonValue.GetDouble("Progress");
-
     m_progressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxCapacity"))
   {
     m_maxCapacity = jsonValue.GetDouble("MaxCapacity");
-
     m_maxCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityConfiguration"))
   {
     m_securityConfiguration = jsonValue.GetString("SecurityConfiguration");
-
     m_securityConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlueVersion"))
   {
     m_glueVersion = jsonValue.GetString("GlueVersion");
-
     m_glueVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfWorkers"))
   {
     m_numberOfWorkers = jsonValue.GetInteger("NumberOfWorkers");
-
     m_numberOfWorkersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkerType"))
   {
     m_workerType = WorkerTypeMapper::GetWorkerTypeForName(jsonValue.GetString("WorkerType"));
-
     m_workerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletedOn"))
   {
     m_completedOn = jsonValue.GetDouble("CompletedOn");
-
     m_completedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionTime"))
   {
     m_executionTime = jsonValue.GetDouble("ExecutionTime");
-
     m_executionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DPUSeconds"))
   {
     m_dPUSeconds = jsonValue.GetDouble("DPUSeconds");
-
     m_dPUSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdleTimeout"))
   {
     m_idleTimeout = jsonValue.GetInteger("IdleTimeout");
-
     m_idleTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProfileName"))
   {
     m_profileName = jsonValue.GetString("ProfileName");
-
     m_profileNameHasBeenSet = true;
   }
-
   return *this;
 }
 

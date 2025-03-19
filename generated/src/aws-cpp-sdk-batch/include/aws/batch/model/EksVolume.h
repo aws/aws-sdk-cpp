@@ -35,7 +35,7 @@ namespace Model
   class EksVolume
   {
   public:
-    AWS_BATCH_API EksVolume();
+    AWS_BATCH_API EksVolume() = default;
     AWS_BATCH_API EksVolume(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API EksVolume& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * href="https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#dns-subdomain-names">DNS
      * subdomain names</a> in the <i>Kubernetes documentation</i>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline EksVolume& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline EksVolume& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline EksVolume& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    EksVolume& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,12 +63,12 @@ namespace Model
      * href="https://kubernetes.io/docs/concepts/storage/volumes/#hostpath">hostPath</a>
      * in the <i>Kubernetes documentation</i>.</p>
      */
-    inline const EksHostPath& GetHostPath() const{ return m_hostPath; }
+    inline const EksHostPath& GetHostPath() const { return m_hostPath; }
     inline bool HostPathHasBeenSet() const { return m_hostPathHasBeenSet; }
-    inline void SetHostPath(const EksHostPath& value) { m_hostPathHasBeenSet = true; m_hostPath = value; }
-    inline void SetHostPath(EksHostPath&& value) { m_hostPathHasBeenSet = true; m_hostPath = std::move(value); }
-    inline EksVolume& WithHostPath(const EksHostPath& value) { SetHostPath(value); return *this;}
-    inline EksVolume& WithHostPath(EksHostPath&& value) { SetHostPath(std::move(value)); return *this;}
+    template<typename HostPathT = EksHostPath>
+    void SetHostPath(HostPathT&& value) { m_hostPathHasBeenSet = true; m_hostPath = std::forward<HostPathT>(value); }
+    template<typename HostPathT = EksHostPath>
+    EksVolume& WithHostPath(HostPathT&& value) { SetHostPath(std::forward<HostPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,12 +78,12 @@ namespace Model
      * href="https://kubernetes.io/docs/concepts/storage/volumes/#emptydir">emptyDir</a>
      * in the <i>Kubernetes documentation</i>.</p>
      */
-    inline const EksEmptyDir& GetEmptyDir() const{ return m_emptyDir; }
+    inline const EksEmptyDir& GetEmptyDir() const { return m_emptyDir; }
     inline bool EmptyDirHasBeenSet() const { return m_emptyDirHasBeenSet; }
-    inline void SetEmptyDir(const EksEmptyDir& value) { m_emptyDirHasBeenSet = true; m_emptyDir = value; }
-    inline void SetEmptyDir(EksEmptyDir&& value) { m_emptyDirHasBeenSet = true; m_emptyDir = std::move(value); }
-    inline EksVolume& WithEmptyDir(const EksEmptyDir& value) { SetEmptyDir(value); return *this;}
-    inline EksVolume& WithEmptyDir(EksEmptyDir&& value) { SetEmptyDir(std::move(value)); return *this;}
+    template<typename EmptyDirT = EksEmptyDir>
+    void SetEmptyDir(EmptyDirT&& value) { m_emptyDirHasBeenSet = true; m_emptyDir = std::forward<EmptyDirT>(value); }
+    template<typename EmptyDirT = EksEmptyDir>
+    EksVolume& WithEmptyDir(EmptyDirT&& value) { SetEmptyDir(std::forward<EmptyDirT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,12 +93,12 @@ namespace Model
      * href="https://kubernetes.io/docs/concepts/storage/volumes/#secret">secret</a> in
      * the <i>Kubernetes documentation</i>.</p>
      */
-    inline const EksSecret& GetSecret() const{ return m_secret; }
+    inline const EksSecret& GetSecret() const { return m_secret; }
     inline bool SecretHasBeenSet() const { return m_secretHasBeenSet; }
-    inline void SetSecret(const EksSecret& value) { m_secretHasBeenSet = true; m_secret = value; }
-    inline void SetSecret(EksSecret&& value) { m_secretHasBeenSet = true; m_secret = std::move(value); }
-    inline EksVolume& WithSecret(const EksSecret& value) { SetSecret(value); return *this;}
-    inline EksVolume& WithSecret(EksSecret&& value) { SetSecret(std::move(value)); return *this;}
+    template<typename SecretT = EksSecret>
+    void SetSecret(SecretT&& value) { m_secretHasBeenSet = true; m_secret = std::forward<SecretT>(value); }
+    template<typename SecretT = EksSecret>
+    EksVolume& WithSecret(SecretT&& value) { SetSecret(std::forward<SecretT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,12 +109,12 @@ namespace Model
      * href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/#persistentvolumeclaims">
      * Persistent Volume Claims</a> in the <i>Kubernetes documentation</i>.</p>
      */
-    inline const EksPersistentVolumeClaim& GetPersistentVolumeClaim() const{ return m_persistentVolumeClaim; }
+    inline const EksPersistentVolumeClaim& GetPersistentVolumeClaim() const { return m_persistentVolumeClaim; }
     inline bool PersistentVolumeClaimHasBeenSet() const { return m_persistentVolumeClaimHasBeenSet; }
-    inline void SetPersistentVolumeClaim(const EksPersistentVolumeClaim& value) { m_persistentVolumeClaimHasBeenSet = true; m_persistentVolumeClaim = value; }
-    inline void SetPersistentVolumeClaim(EksPersistentVolumeClaim&& value) { m_persistentVolumeClaimHasBeenSet = true; m_persistentVolumeClaim = std::move(value); }
-    inline EksVolume& WithPersistentVolumeClaim(const EksPersistentVolumeClaim& value) { SetPersistentVolumeClaim(value); return *this;}
-    inline EksVolume& WithPersistentVolumeClaim(EksPersistentVolumeClaim&& value) { SetPersistentVolumeClaim(std::move(value)); return *this;}
+    template<typename PersistentVolumeClaimT = EksPersistentVolumeClaim>
+    void SetPersistentVolumeClaim(PersistentVolumeClaimT&& value) { m_persistentVolumeClaimHasBeenSet = true; m_persistentVolumeClaim = std::forward<PersistentVolumeClaimT>(value); }
+    template<typename PersistentVolumeClaimT = EksPersistentVolumeClaim>
+    EksVolume& WithPersistentVolumeClaim(PersistentVolumeClaimT&& value) { SetPersistentVolumeClaim(std::forward<PersistentVolumeClaimT>(value)); return *this;}
     ///@}
   private:
 

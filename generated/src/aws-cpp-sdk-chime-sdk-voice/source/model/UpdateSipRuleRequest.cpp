@@ -12,15 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSipRuleRequest::UpdateSipRuleRequest() : 
-    m_sipRuleIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_disabled(false),
-    m_disabledHasBeenSet(false),
-    m_targetApplicationsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSipRuleRequest::SerializePayload() const
 {
   JsonValue payload;

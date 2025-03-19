@@ -47,7 +47,7 @@ namespace Model
   class StepAdjustment
   {
   public:
-    AWS_APPLICATIONAUTOSCALING_API StepAdjustment();
+    AWS_APPLICATIONAUTOSCALING_API StepAdjustment() = default;
     AWS_APPLICATIONAUTOSCALING_API StepAdjustment(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONAUTOSCALING_API StepAdjustment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONAUTOSCALING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -62,7 +62,7 @@ namespace Model
      * than the threshold plus the lower bound). A null value indicates negative
      * infinity.</p>
      */
-    inline double GetMetricIntervalLowerBound() const{ return m_metricIntervalLowerBound; }
+    inline double GetMetricIntervalLowerBound() const { return m_metricIntervalLowerBound; }
     inline bool MetricIntervalLowerBoundHasBeenSet() const { return m_metricIntervalLowerBoundHasBeenSet; }
     inline void SetMetricIntervalLowerBound(double value) { m_metricIntervalLowerBoundHasBeenSet = true; m_metricIntervalLowerBound = value; }
     inline StepAdjustment& WithMetricIntervalLowerBound(double value) { SetMetricIntervalLowerBound(value); return *this;}
@@ -77,7 +77,7 @@ namespace Model
      * threshold plus the upper bound). A null value indicates positive infinity.</p>
      * <p>The upper bound must be greater than the lower bound.</p>
      */
-    inline double GetMetricIntervalUpperBound() const{ return m_metricIntervalUpperBound; }
+    inline double GetMetricIntervalUpperBound() const { return m_metricIntervalUpperBound; }
     inline bool MetricIntervalUpperBoundHasBeenSet() const { return m_metricIntervalUpperBoundHasBeenSet; }
     inline void SetMetricIntervalUpperBound(double value) { m_metricIntervalUpperBoundHasBeenSet = true; m_metricIntervalUpperBound = value; }
     inline StepAdjustment& WithMetricIntervalUpperBound(double value) { SetMetricIntervalUpperBound(value); return *this;}
@@ -90,20 +90,20 @@ namespace Model
      * the current capacity. For exact capacity, you must specify a non-negative
      * value.</p>
      */
-    inline int GetScalingAdjustment() const{ return m_scalingAdjustment; }
+    inline int GetScalingAdjustment() const { return m_scalingAdjustment; }
     inline bool ScalingAdjustmentHasBeenSet() const { return m_scalingAdjustmentHasBeenSet; }
     inline void SetScalingAdjustment(int value) { m_scalingAdjustmentHasBeenSet = true; m_scalingAdjustment = value; }
     inline StepAdjustment& WithScalingAdjustment(int value) { SetScalingAdjustment(value); return *this;}
     ///@}
   private:
 
-    double m_metricIntervalLowerBound;
+    double m_metricIntervalLowerBound{0.0};
     bool m_metricIntervalLowerBoundHasBeenSet = false;
 
-    double m_metricIntervalUpperBound;
+    double m_metricIntervalUpperBound{0.0};
     bool m_metricIntervalUpperBoundHasBeenSet = false;
 
-    int m_scalingAdjustment;
+    int m_scalingAdjustment{0};
     bool m_scalingAdjustmentHasBeenSet = false;
   };
 

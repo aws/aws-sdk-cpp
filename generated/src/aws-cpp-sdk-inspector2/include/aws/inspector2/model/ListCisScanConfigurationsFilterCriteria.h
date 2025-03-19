@@ -34,7 +34,7 @@ namespace Model
   class ListCisScanConfigurationsFilterCriteria
   {
   public:
-    AWS_INSPECTOR2_API ListCisScanConfigurationsFilterCriteria();
+    AWS_INSPECTOR2_API ListCisScanConfigurationsFilterCriteria() = default;
     AWS_INSPECTOR2_API ListCisScanConfigurationsFilterCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API ListCisScanConfigurationsFilterCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,42 +44,42 @@ namespace Model
     /**
      * <p>The list of scan configuration ARN filters.</p>
      */
-    inline const Aws::Vector<CisStringFilter>& GetScanConfigurationArnFilters() const{ return m_scanConfigurationArnFilters; }
+    inline const Aws::Vector<CisStringFilter>& GetScanConfigurationArnFilters() const { return m_scanConfigurationArnFilters; }
     inline bool ScanConfigurationArnFiltersHasBeenSet() const { return m_scanConfigurationArnFiltersHasBeenSet; }
-    inline void SetScanConfigurationArnFilters(const Aws::Vector<CisStringFilter>& value) { m_scanConfigurationArnFiltersHasBeenSet = true; m_scanConfigurationArnFilters = value; }
-    inline void SetScanConfigurationArnFilters(Aws::Vector<CisStringFilter>&& value) { m_scanConfigurationArnFiltersHasBeenSet = true; m_scanConfigurationArnFilters = std::move(value); }
-    inline ListCisScanConfigurationsFilterCriteria& WithScanConfigurationArnFilters(const Aws::Vector<CisStringFilter>& value) { SetScanConfigurationArnFilters(value); return *this;}
-    inline ListCisScanConfigurationsFilterCriteria& WithScanConfigurationArnFilters(Aws::Vector<CisStringFilter>&& value) { SetScanConfigurationArnFilters(std::move(value)); return *this;}
-    inline ListCisScanConfigurationsFilterCriteria& AddScanConfigurationArnFilters(const CisStringFilter& value) { m_scanConfigurationArnFiltersHasBeenSet = true; m_scanConfigurationArnFilters.push_back(value); return *this; }
-    inline ListCisScanConfigurationsFilterCriteria& AddScanConfigurationArnFilters(CisStringFilter&& value) { m_scanConfigurationArnFiltersHasBeenSet = true; m_scanConfigurationArnFilters.push_back(std::move(value)); return *this; }
+    template<typename ScanConfigurationArnFiltersT = Aws::Vector<CisStringFilter>>
+    void SetScanConfigurationArnFilters(ScanConfigurationArnFiltersT&& value) { m_scanConfigurationArnFiltersHasBeenSet = true; m_scanConfigurationArnFilters = std::forward<ScanConfigurationArnFiltersT>(value); }
+    template<typename ScanConfigurationArnFiltersT = Aws::Vector<CisStringFilter>>
+    ListCisScanConfigurationsFilterCriteria& WithScanConfigurationArnFilters(ScanConfigurationArnFiltersT&& value) { SetScanConfigurationArnFilters(std::forward<ScanConfigurationArnFiltersT>(value)); return *this;}
+    template<typename ScanConfigurationArnFiltersT = CisStringFilter>
+    ListCisScanConfigurationsFilterCriteria& AddScanConfigurationArnFilters(ScanConfigurationArnFiltersT&& value) { m_scanConfigurationArnFiltersHasBeenSet = true; m_scanConfigurationArnFilters.emplace_back(std::forward<ScanConfigurationArnFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The list of scan name filters.</p>
      */
-    inline const Aws::Vector<CisStringFilter>& GetScanNameFilters() const{ return m_scanNameFilters; }
+    inline const Aws::Vector<CisStringFilter>& GetScanNameFilters() const { return m_scanNameFilters; }
     inline bool ScanNameFiltersHasBeenSet() const { return m_scanNameFiltersHasBeenSet; }
-    inline void SetScanNameFilters(const Aws::Vector<CisStringFilter>& value) { m_scanNameFiltersHasBeenSet = true; m_scanNameFilters = value; }
-    inline void SetScanNameFilters(Aws::Vector<CisStringFilter>&& value) { m_scanNameFiltersHasBeenSet = true; m_scanNameFilters = std::move(value); }
-    inline ListCisScanConfigurationsFilterCriteria& WithScanNameFilters(const Aws::Vector<CisStringFilter>& value) { SetScanNameFilters(value); return *this;}
-    inline ListCisScanConfigurationsFilterCriteria& WithScanNameFilters(Aws::Vector<CisStringFilter>&& value) { SetScanNameFilters(std::move(value)); return *this;}
-    inline ListCisScanConfigurationsFilterCriteria& AddScanNameFilters(const CisStringFilter& value) { m_scanNameFiltersHasBeenSet = true; m_scanNameFilters.push_back(value); return *this; }
-    inline ListCisScanConfigurationsFilterCriteria& AddScanNameFilters(CisStringFilter&& value) { m_scanNameFiltersHasBeenSet = true; m_scanNameFilters.push_back(std::move(value)); return *this; }
+    template<typename ScanNameFiltersT = Aws::Vector<CisStringFilter>>
+    void SetScanNameFilters(ScanNameFiltersT&& value) { m_scanNameFiltersHasBeenSet = true; m_scanNameFilters = std::forward<ScanNameFiltersT>(value); }
+    template<typename ScanNameFiltersT = Aws::Vector<CisStringFilter>>
+    ListCisScanConfigurationsFilterCriteria& WithScanNameFilters(ScanNameFiltersT&& value) { SetScanNameFilters(std::forward<ScanNameFiltersT>(value)); return *this;}
+    template<typename ScanNameFiltersT = CisStringFilter>
+    ListCisScanConfigurationsFilterCriteria& AddScanNameFilters(ScanNameFiltersT&& value) { m_scanNameFiltersHasBeenSet = true; m_scanNameFilters.emplace_back(std::forward<ScanNameFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The list of target resource tag filters.</p>
      */
-    inline const Aws::Vector<TagFilter>& GetTargetResourceTagFilters() const{ return m_targetResourceTagFilters; }
+    inline const Aws::Vector<TagFilter>& GetTargetResourceTagFilters() const { return m_targetResourceTagFilters; }
     inline bool TargetResourceTagFiltersHasBeenSet() const { return m_targetResourceTagFiltersHasBeenSet; }
-    inline void SetTargetResourceTagFilters(const Aws::Vector<TagFilter>& value) { m_targetResourceTagFiltersHasBeenSet = true; m_targetResourceTagFilters = value; }
-    inline void SetTargetResourceTagFilters(Aws::Vector<TagFilter>&& value) { m_targetResourceTagFiltersHasBeenSet = true; m_targetResourceTagFilters = std::move(value); }
-    inline ListCisScanConfigurationsFilterCriteria& WithTargetResourceTagFilters(const Aws::Vector<TagFilter>& value) { SetTargetResourceTagFilters(value); return *this;}
-    inline ListCisScanConfigurationsFilterCriteria& WithTargetResourceTagFilters(Aws::Vector<TagFilter>&& value) { SetTargetResourceTagFilters(std::move(value)); return *this;}
-    inline ListCisScanConfigurationsFilterCriteria& AddTargetResourceTagFilters(const TagFilter& value) { m_targetResourceTagFiltersHasBeenSet = true; m_targetResourceTagFilters.push_back(value); return *this; }
-    inline ListCisScanConfigurationsFilterCriteria& AddTargetResourceTagFilters(TagFilter&& value) { m_targetResourceTagFiltersHasBeenSet = true; m_targetResourceTagFilters.push_back(std::move(value)); return *this; }
+    template<typename TargetResourceTagFiltersT = Aws::Vector<TagFilter>>
+    void SetTargetResourceTagFilters(TargetResourceTagFiltersT&& value) { m_targetResourceTagFiltersHasBeenSet = true; m_targetResourceTagFilters = std::forward<TargetResourceTagFiltersT>(value); }
+    template<typename TargetResourceTagFiltersT = Aws::Vector<TagFilter>>
+    ListCisScanConfigurationsFilterCriteria& WithTargetResourceTagFilters(TargetResourceTagFiltersT&& value) { SetTargetResourceTagFilters(std::forward<TargetResourceTagFiltersT>(value)); return *this;}
+    template<typename TargetResourceTagFiltersT = TagFilter>
+    ListCisScanConfigurationsFilterCriteria& AddTargetResourceTagFilters(TargetResourceTagFiltersT&& value) { m_targetResourceTagFiltersHasBeenSet = true; m_targetResourceTagFilters.emplace_back(std::forward<TargetResourceTagFiltersT>(value)); return *this; }
     ///@}
   private:
 

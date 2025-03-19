@@ -32,7 +32,7 @@ namespace Model
   class ConfusionMatrix
   {
   public:
-    AWS_GLUE_API ConfusionMatrix();
+    AWS_GLUE_API ConfusionMatrix() = default;
     AWS_GLUE_API ConfusionMatrix(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API ConfusionMatrix& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>The number of matches in the data that the transform correctly found, in the
      * confusion matrix for your transform.</p>
      */
-    inline long long GetNumTruePositives() const{ return m_numTruePositives; }
+    inline long long GetNumTruePositives() const { return m_numTruePositives; }
     inline bool NumTruePositivesHasBeenSet() const { return m_numTruePositivesHasBeenSet; }
     inline void SetNumTruePositives(long long value) { m_numTruePositivesHasBeenSet = true; m_numTruePositives = value; }
     inline ConfusionMatrix& WithNumTruePositives(long long value) { SetNumTruePositives(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
      * <p>The number of nonmatches in the data that the transform incorrectly
      * classified as a match, in the confusion matrix for your transform.</p>
      */
-    inline long long GetNumFalsePositives() const{ return m_numFalsePositives; }
+    inline long long GetNumFalsePositives() const { return m_numFalsePositives; }
     inline bool NumFalsePositivesHasBeenSet() const { return m_numFalsePositivesHasBeenSet; }
     inline void SetNumFalsePositives(long long value) { m_numFalsePositivesHasBeenSet = true; m_numFalsePositives = value; }
     inline ConfusionMatrix& WithNumFalsePositives(long long value) { SetNumFalsePositives(value); return *this;}
@@ -65,7 +65,7 @@ namespace Model
      * <p>The number of nonmatches in the data that the transform correctly rejected,
      * in the confusion matrix for your transform.</p>
      */
-    inline long long GetNumTrueNegatives() const{ return m_numTrueNegatives; }
+    inline long long GetNumTrueNegatives() const { return m_numTrueNegatives; }
     inline bool NumTrueNegativesHasBeenSet() const { return m_numTrueNegativesHasBeenSet; }
     inline void SetNumTrueNegatives(long long value) { m_numTrueNegativesHasBeenSet = true; m_numTrueNegatives = value; }
     inline ConfusionMatrix& WithNumTrueNegatives(long long value) { SetNumTrueNegatives(value); return *this;}
@@ -76,23 +76,23 @@ namespace Model
      * <p>The number of matches in the data that the transform didn't find, in the
      * confusion matrix for your transform.</p>
      */
-    inline long long GetNumFalseNegatives() const{ return m_numFalseNegatives; }
+    inline long long GetNumFalseNegatives() const { return m_numFalseNegatives; }
     inline bool NumFalseNegativesHasBeenSet() const { return m_numFalseNegativesHasBeenSet; }
     inline void SetNumFalseNegatives(long long value) { m_numFalseNegativesHasBeenSet = true; m_numFalseNegatives = value; }
     inline ConfusionMatrix& WithNumFalseNegatives(long long value) { SetNumFalseNegatives(value); return *this;}
     ///@}
   private:
 
-    long long m_numTruePositives;
+    long long m_numTruePositives{0};
     bool m_numTruePositivesHasBeenSet = false;
 
-    long long m_numFalsePositives;
+    long long m_numFalsePositives{0};
     bool m_numFalsePositivesHasBeenSet = false;
 
-    long long m_numTrueNegatives;
+    long long m_numTrueNegatives{0};
     bool m_numTrueNegativesHasBeenSet = false;
 
-    long long m_numFalseNegatives;
+    long long m_numFalseNegatives{0};
     bool m_numFalseNegativesHasBeenSet = false;
   };
 

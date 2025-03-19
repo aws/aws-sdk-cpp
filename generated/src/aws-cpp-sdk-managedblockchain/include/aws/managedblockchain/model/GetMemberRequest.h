@@ -21,7 +21,7 @@ namespace Model
   class GetMemberRequest : public ManagedBlockchainRequest
   {
   public:
-    AWS_MANAGEDBLOCKCHAIN_API GetMemberRequest();
+    AWS_MANAGEDBLOCKCHAIN_API GetMemberRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The unique identifier of the network to which the member belongs.</p>
      */
-    inline const Aws::String& GetNetworkId() const{ return m_networkId; }
+    inline const Aws::String& GetNetworkId() const { return m_networkId; }
     inline bool NetworkIdHasBeenSet() const { return m_networkIdHasBeenSet; }
-    inline void SetNetworkId(const Aws::String& value) { m_networkIdHasBeenSet = true; m_networkId = value; }
-    inline void SetNetworkId(Aws::String&& value) { m_networkIdHasBeenSet = true; m_networkId = std::move(value); }
-    inline void SetNetworkId(const char* value) { m_networkIdHasBeenSet = true; m_networkId.assign(value); }
-    inline GetMemberRequest& WithNetworkId(const Aws::String& value) { SetNetworkId(value); return *this;}
-    inline GetMemberRequest& WithNetworkId(Aws::String&& value) { SetNetworkId(std::move(value)); return *this;}
-    inline GetMemberRequest& WithNetworkId(const char* value) { SetNetworkId(value); return *this;}
+    template<typename NetworkIdT = Aws::String>
+    void SetNetworkId(NetworkIdT&& value) { m_networkIdHasBeenSet = true; m_networkId = std::forward<NetworkIdT>(value); }
+    template<typename NetworkIdT = Aws::String>
+    GetMemberRequest& WithNetworkId(NetworkIdT&& value) { SetNetworkId(std::forward<NetworkIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the member.</p>
      */
-    inline const Aws::String& GetMemberId() const{ return m_memberId; }
+    inline const Aws::String& GetMemberId() const { return m_memberId; }
     inline bool MemberIdHasBeenSet() const { return m_memberIdHasBeenSet; }
-    inline void SetMemberId(const Aws::String& value) { m_memberIdHasBeenSet = true; m_memberId = value; }
-    inline void SetMemberId(Aws::String&& value) { m_memberIdHasBeenSet = true; m_memberId = std::move(value); }
-    inline void SetMemberId(const char* value) { m_memberIdHasBeenSet = true; m_memberId.assign(value); }
-    inline GetMemberRequest& WithMemberId(const Aws::String& value) { SetMemberId(value); return *this;}
-    inline GetMemberRequest& WithMemberId(Aws::String&& value) { SetMemberId(std::move(value)); return *this;}
-    inline GetMemberRequest& WithMemberId(const char* value) { SetMemberId(value); return *this;}
+    template<typename MemberIdT = Aws::String>
+    void SetMemberId(MemberIdT&& value) { m_memberIdHasBeenSet = true; m_memberId = std::forward<MemberIdT>(value); }
+    template<typename MemberIdT = Aws::String>
+    GetMemberRequest& WithMemberId(MemberIdT&& value) { SetMemberId(std::forward<MemberIdT>(value)); return *this;}
     ///@}
   private:
 

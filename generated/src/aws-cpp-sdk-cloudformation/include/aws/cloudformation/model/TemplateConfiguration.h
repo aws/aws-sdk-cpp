@@ -33,7 +33,7 @@ namespace Model
   class TemplateConfiguration
   {
   public:
-    AWS_CLOUDFORMATION_API TemplateConfiguration();
+    AWS_CLOUDFORMATION_API TemplateConfiguration() = default;
     AWS_CLOUDFORMATION_API TemplateConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API TemplateConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -51,12 +51,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-deletionpolicy.html">DeletionPolicy
      * attribute</a> in the <i>CloudFormation User Guide</i>.</p>
      */
-    inline const GeneratedTemplateDeletionPolicy& GetDeletionPolicy() const{ return m_deletionPolicy; }
+    inline GeneratedTemplateDeletionPolicy GetDeletionPolicy() const { return m_deletionPolicy; }
     inline bool DeletionPolicyHasBeenSet() const { return m_deletionPolicyHasBeenSet; }
-    inline void SetDeletionPolicy(const GeneratedTemplateDeletionPolicy& value) { m_deletionPolicyHasBeenSet = true; m_deletionPolicy = value; }
-    inline void SetDeletionPolicy(GeneratedTemplateDeletionPolicy&& value) { m_deletionPolicyHasBeenSet = true; m_deletionPolicy = std::move(value); }
-    inline TemplateConfiguration& WithDeletionPolicy(const GeneratedTemplateDeletionPolicy& value) { SetDeletionPolicy(value); return *this;}
-    inline TemplateConfiguration& WithDeletionPolicy(GeneratedTemplateDeletionPolicy&& value) { SetDeletionPolicy(std::move(value)); return *this;}
+    inline void SetDeletionPolicy(GeneratedTemplateDeletionPolicy value) { m_deletionPolicyHasBeenSet = true; m_deletionPolicy = value; }
+    inline TemplateConfiguration& WithDeletionPolicy(GeneratedTemplateDeletionPolicy value) { SetDeletionPolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -70,19 +68,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-attribute-updatereplacepolicy.html">UpdateReplacePolicy
      * attribute</a> in the <i>CloudFormation User Guide</i>.</p>
      */
-    inline const GeneratedTemplateUpdateReplacePolicy& GetUpdateReplacePolicy() const{ return m_updateReplacePolicy; }
+    inline GeneratedTemplateUpdateReplacePolicy GetUpdateReplacePolicy() const { return m_updateReplacePolicy; }
     inline bool UpdateReplacePolicyHasBeenSet() const { return m_updateReplacePolicyHasBeenSet; }
-    inline void SetUpdateReplacePolicy(const GeneratedTemplateUpdateReplacePolicy& value) { m_updateReplacePolicyHasBeenSet = true; m_updateReplacePolicy = value; }
-    inline void SetUpdateReplacePolicy(GeneratedTemplateUpdateReplacePolicy&& value) { m_updateReplacePolicyHasBeenSet = true; m_updateReplacePolicy = std::move(value); }
-    inline TemplateConfiguration& WithUpdateReplacePolicy(const GeneratedTemplateUpdateReplacePolicy& value) { SetUpdateReplacePolicy(value); return *this;}
-    inline TemplateConfiguration& WithUpdateReplacePolicy(GeneratedTemplateUpdateReplacePolicy&& value) { SetUpdateReplacePolicy(std::move(value)); return *this;}
+    inline void SetUpdateReplacePolicy(GeneratedTemplateUpdateReplacePolicy value) { m_updateReplacePolicyHasBeenSet = true; m_updateReplacePolicy = value; }
+    inline TemplateConfiguration& WithUpdateReplacePolicy(GeneratedTemplateUpdateReplacePolicy value) { SetUpdateReplacePolicy(value); return *this;}
     ///@}
   private:
 
-    GeneratedTemplateDeletionPolicy m_deletionPolicy;
+    GeneratedTemplateDeletionPolicy m_deletionPolicy{GeneratedTemplateDeletionPolicy::NOT_SET};
     bool m_deletionPolicyHasBeenSet = false;
 
-    GeneratedTemplateUpdateReplacePolicy m_updateReplacePolicy;
+    GeneratedTemplateUpdateReplacePolicy m_updateReplacePolicy{GeneratedTemplateUpdateReplacePolicy::NOT_SET};
     bool m_updateReplacePolicyHasBeenSet = false;
   };
 

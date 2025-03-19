@@ -31,7 +31,7 @@ namespace Model
   class ServiceUnavailableException
   {
   public:
-    AWS_CHIMESDKMEETINGS_API ServiceUnavailableException();
+    AWS_CHIMESDKMEETINGS_API ServiceUnavailableException() = default;
     AWS_CHIMESDKMEETINGS_API ServiceUnavailableException(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEETINGS_API ServiceUnavailableException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,54 +39,46 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetCode() const{ return m_code; }
+    inline const Aws::String& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-    inline ServiceUnavailableException& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-    inline ServiceUnavailableException& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-    inline ServiceUnavailableException& WithCode(const char* value) { SetCode(value); return *this;}
+    template<typename CodeT = Aws::String>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = Aws::String>
+    ServiceUnavailableException& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ServiceUnavailableException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ServiceUnavailableException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ServiceUnavailableException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ServiceUnavailableException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The request id associated with the call responsible for the exception.</p>
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline ServiceUnavailableException& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ServiceUnavailableException& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ServiceUnavailableException& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ServiceUnavailableException& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of seconds the caller should wait before retrying.</p>
      */
-    inline const Aws::String& GetRetryAfterSeconds() const{ return m_retryAfterSeconds; }
+    inline const Aws::String& GetRetryAfterSeconds() const { return m_retryAfterSeconds; }
     inline bool RetryAfterSecondsHasBeenSet() const { return m_retryAfterSecondsHasBeenSet; }
-    inline void SetRetryAfterSeconds(const Aws::String& value) { m_retryAfterSecondsHasBeenSet = true; m_retryAfterSeconds = value; }
-    inline void SetRetryAfterSeconds(Aws::String&& value) { m_retryAfterSecondsHasBeenSet = true; m_retryAfterSeconds = std::move(value); }
-    inline void SetRetryAfterSeconds(const char* value) { m_retryAfterSecondsHasBeenSet = true; m_retryAfterSeconds.assign(value); }
-    inline ServiceUnavailableException& WithRetryAfterSeconds(const Aws::String& value) { SetRetryAfterSeconds(value); return *this;}
-    inline ServiceUnavailableException& WithRetryAfterSeconds(Aws::String&& value) { SetRetryAfterSeconds(std::move(value)); return *this;}
-    inline ServiceUnavailableException& WithRetryAfterSeconds(const char* value) { SetRetryAfterSeconds(value); return *this;}
+    template<typename RetryAfterSecondsT = Aws::String>
+    void SetRetryAfterSeconds(RetryAfterSecondsT&& value) { m_retryAfterSecondsHasBeenSet = true; m_retryAfterSeconds = std::forward<RetryAfterSecondsT>(value); }
+    template<typename RetryAfterSecondsT = Aws::String>
+    ServiceUnavailableException& WithRetryAfterSeconds(RetryAfterSecondsT&& value) { SetRetryAfterSeconds(std::forward<RetryAfterSecondsT>(value)); return *this;}
     ///@}
   private:
 

@@ -29,7 +29,7 @@ namespace Model
   class DescribeRemediationExecutionStatusResult
   {
   public:
-    AWS_CONFIGSERVICE_API DescribeRemediationExecutionStatusResult();
+    AWS_CONFIGSERVICE_API DescribeRemediationExecutionStatusResult() = default;
     AWS_CONFIGSERVICE_API DescribeRemediationExecutionStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API DescribeRemediationExecutionStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Returns a list of remediation execution statuses objects.</p>
      */
-    inline const Aws::Vector<RemediationExecutionStatus>& GetRemediationExecutionStatuses() const{ return m_remediationExecutionStatuses; }
-    inline void SetRemediationExecutionStatuses(const Aws::Vector<RemediationExecutionStatus>& value) { m_remediationExecutionStatuses = value; }
-    inline void SetRemediationExecutionStatuses(Aws::Vector<RemediationExecutionStatus>&& value) { m_remediationExecutionStatuses = std::move(value); }
-    inline DescribeRemediationExecutionStatusResult& WithRemediationExecutionStatuses(const Aws::Vector<RemediationExecutionStatus>& value) { SetRemediationExecutionStatuses(value); return *this;}
-    inline DescribeRemediationExecutionStatusResult& WithRemediationExecutionStatuses(Aws::Vector<RemediationExecutionStatus>&& value) { SetRemediationExecutionStatuses(std::move(value)); return *this;}
-    inline DescribeRemediationExecutionStatusResult& AddRemediationExecutionStatuses(const RemediationExecutionStatus& value) { m_remediationExecutionStatuses.push_back(value); return *this; }
-    inline DescribeRemediationExecutionStatusResult& AddRemediationExecutionStatuses(RemediationExecutionStatus&& value) { m_remediationExecutionStatuses.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RemediationExecutionStatus>& GetRemediationExecutionStatuses() const { return m_remediationExecutionStatuses; }
+    template<typename RemediationExecutionStatusesT = Aws::Vector<RemediationExecutionStatus>>
+    void SetRemediationExecutionStatuses(RemediationExecutionStatusesT&& value) { m_remediationExecutionStatusesHasBeenSet = true; m_remediationExecutionStatuses = std::forward<RemediationExecutionStatusesT>(value); }
+    template<typename RemediationExecutionStatusesT = Aws::Vector<RemediationExecutionStatus>>
+    DescribeRemediationExecutionStatusResult& WithRemediationExecutionStatuses(RemediationExecutionStatusesT&& value) { SetRemediationExecutionStatuses(std::forward<RemediationExecutionStatusesT>(value)); return *this;}
+    template<typename RemediationExecutionStatusesT = RemediationExecutionStatus>
+    DescribeRemediationExecutionStatusResult& AddRemediationExecutionStatuses(RemediationExecutionStatusesT&& value) { m_remediationExecutionStatusesHasBeenSet = true; m_remediationExecutionStatuses.emplace_back(std::forward<RemediationExecutionStatusesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The <code>nextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeRemediationExecutionStatusResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeRemediationExecutionStatusResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeRemediationExecutionStatusResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeRemediationExecutionStatusResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeRemediationExecutionStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeRemediationExecutionStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeRemediationExecutionStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeRemediationExecutionStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<RemediationExecutionStatus> m_remediationExecutionStatuses;
+    bool m_remediationExecutionStatusesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

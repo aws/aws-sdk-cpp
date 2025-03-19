@@ -32,7 +32,7 @@ namespace Model
   class FormatOptions
   {
   public:
-    AWS_OMICS_API FormatOptions();
+    AWS_OMICS_API FormatOptions() = default;
     AWS_OMICS_API FormatOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API FormatOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>Options for a TSV file.</p>
      */
-    inline const TsvOptions& GetTsvOptions() const{ return m_tsvOptions; }
+    inline const TsvOptions& GetTsvOptions() const { return m_tsvOptions; }
     inline bool TsvOptionsHasBeenSet() const { return m_tsvOptionsHasBeenSet; }
-    inline void SetTsvOptions(const TsvOptions& value) { m_tsvOptionsHasBeenSet = true; m_tsvOptions = value; }
-    inline void SetTsvOptions(TsvOptions&& value) { m_tsvOptionsHasBeenSet = true; m_tsvOptions = std::move(value); }
-    inline FormatOptions& WithTsvOptions(const TsvOptions& value) { SetTsvOptions(value); return *this;}
-    inline FormatOptions& WithTsvOptions(TsvOptions&& value) { SetTsvOptions(std::move(value)); return *this;}
+    template<typename TsvOptionsT = TsvOptions>
+    void SetTsvOptions(TsvOptionsT&& value) { m_tsvOptionsHasBeenSet = true; m_tsvOptions = std::forward<TsvOptionsT>(value); }
+    template<typename TsvOptionsT = TsvOptions>
+    FormatOptions& WithTsvOptions(TsvOptionsT&& value) { SetTsvOptions(std::forward<TsvOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Options for a VCF file.</p>
      */
-    inline const VcfOptions& GetVcfOptions() const{ return m_vcfOptions; }
+    inline const VcfOptions& GetVcfOptions() const { return m_vcfOptions; }
     inline bool VcfOptionsHasBeenSet() const { return m_vcfOptionsHasBeenSet; }
-    inline void SetVcfOptions(const VcfOptions& value) { m_vcfOptionsHasBeenSet = true; m_vcfOptions = value; }
-    inline void SetVcfOptions(VcfOptions&& value) { m_vcfOptionsHasBeenSet = true; m_vcfOptions = std::move(value); }
-    inline FormatOptions& WithVcfOptions(const VcfOptions& value) { SetVcfOptions(value); return *this;}
-    inline FormatOptions& WithVcfOptions(VcfOptions&& value) { SetVcfOptions(std::move(value)); return *this;}
+    template<typename VcfOptionsT = VcfOptions>
+    void SetVcfOptions(VcfOptionsT&& value) { m_vcfOptionsHasBeenSet = true; m_vcfOptions = std::forward<VcfOptionsT>(value); }
+    template<typename VcfOptionsT = VcfOptions>
+    FormatOptions& WithVcfOptions(VcfOptionsT&& value) { SetVcfOptions(std::forward<VcfOptionsT>(value)); return *this;}
     ///@}
   private:
 

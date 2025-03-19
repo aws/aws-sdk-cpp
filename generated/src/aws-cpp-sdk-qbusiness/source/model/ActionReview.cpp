@@ -18,17 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-ActionReview::ActionReview() : 
-    m_pluginIdHasBeenSet(false),
-    m_pluginType(PluginType::NOT_SET),
-    m_pluginTypeHasBeenSet(false),
-    m_payloadHasBeenSet(false),
-    m_payloadFieldNameSeparatorHasBeenSet(false)
-{
-}
-
 ActionReview::ActionReview(JsonView jsonValue)
-  : ActionReview()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ ActionReview& ActionReview::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("pluginId"))
   {
     m_pluginId = jsonValue.GetString("pluginId");
-
     m_pluginIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pluginType"))
   {
     m_pluginType = PluginTypeMapper::GetPluginTypeForName(jsonValue.GetString("pluginType"));
-
     m_pluginTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("payload"))
   {
     Aws::Map<Aws::String, JsonView> payloadJsonMap = jsonValue.GetObject("payload").GetAllObjects();
@@ -58,14 +44,11 @@ ActionReview& ActionReview::operator =(JsonView jsonValue)
     }
     m_payloadHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("payloadFieldNameSeparator"))
   {
     m_payloadFieldNameSeparator = jsonValue.GetString("payloadFieldNameSeparator");
-
     m_payloadFieldNameSeparatorHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class ResourceDataSyncSource
   {
   public:
-    AWS_SSM_API ResourceDataSyncSource();
+    AWS_SSM_API ResourceDataSyncSource() = default;
     AWS_SSM_API ResourceDataSyncSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API ResourceDataSyncSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * is either <code>AwsOrganizations</code> (if an organization is present in
      * Organizations) or <code>SingleAccountMultiRegions</code>.</p>
      */
-    inline const Aws::String& GetSourceType() const{ return m_sourceType; }
+    inline const Aws::String& GetSourceType() const { return m_sourceType; }
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-    inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-    inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
-    inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
-    inline ResourceDataSyncSource& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
-    inline ResourceDataSyncSource& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
-    inline ResourceDataSyncSource& WithSourceType(const char* value) { SetSourceType(value); return *this;}
+    template<typename SourceTypeT = Aws::String>
+    void SetSourceType(SourceTypeT&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::forward<SourceTypeT>(value); }
+    template<typename SourceTypeT = Aws::String>
+    ResourceDataSyncSource& WithSourceType(SourceTypeT&& value) { SetSourceType(std::forward<SourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,12 @@ namespace Model
      * <p>Information about the <code>AwsOrganizationsSource</code> resource data sync
      * source. A sync source of this type can synchronize data from Organizations.</p>
      */
-    inline const ResourceDataSyncAwsOrganizationsSource& GetAwsOrganizationsSource() const{ return m_awsOrganizationsSource; }
+    inline const ResourceDataSyncAwsOrganizationsSource& GetAwsOrganizationsSource() const { return m_awsOrganizationsSource; }
     inline bool AwsOrganizationsSourceHasBeenSet() const { return m_awsOrganizationsSourceHasBeenSet; }
-    inline void SetAwsOrganizationsSource(const ResourceDataSyncAwsOrganizationsSource& value) { m_awsOrganizationsSourceHasBeenSet = true; m_awsOrganizationsSource = value; }
-    inline void SetAwsOrganizationsSource(ResourceDataSyncAwsOrganizationsSource&& value) { m_awsOrganizationsSourceHasBeenSet = true; m_awsOrganizationsSource = std::move(value); }
-    inline ResourceDataSyncSource& WithAwsOrganizationsSource(const ResourceDataSyncAwsOrganizationsSource& value) { SetAwsOrganizationsSource(value); return *this;}
-    inline ResourceDataSyncSource& WithAwsOrganizationsSource(ResourceDataSyncAwsOrganizationsSource&& value) { SetAwsOrganizationsSource(std::move(value)); return *this;}
+    template<typename AwsOrganizationsSourceT = ResourceDataSyncAwsOrganizationsSource>
+    void SetAwsOrganizationsSource(AwsOrganizationsSourceT&& value) { m_awsOrganizationsSourceHasBeenSet = true; m_awsOrganizationsSource = std::forward<AwsOrganizationsSourceT>(value); }
+    template<typename AwsOrganizationsSourceT = ResourceDataSyncAwsOrganizationsSource>
+    ResourceDataSyncSource& WithAwsOrganizationsSource(AwsOrganizationsSourceT&& value) { SetAwsOrganizationsSource(std::forward<AwsOrganizationsSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,15 +72,14 @@ namespace Model
      * <p>The <code>SyncSource</code> Amazon Web Services Regions included in the
      * resource data sync.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSourceRegions() const{ return m_sourceRegions; }
+    inline const Aws::Vector<Aws::String>& GetSourceRegions() const { return m_sourceRegions; }
     inline bool SourceRegionsHasBeenSet() const { return m_sourceRegionsHasBeenSet; }
-    inline void SetSourceRegions(const Aws::Vector<Aws::String>& value) { m_sourceRegionsHasBeenSet = true; m_sourceRegions = value; }
-    inline void SetSourceRegions(Aws::Vector<Aws::String>&& value) { m_sourceRegionsHasBeenSet = true; m_sourceRegions = std::move(value); }
-    inline ResourceDataSyncSource& WithSourceRegions(const Aws::Vector<Aws::String>& value) { SetSourceRegions(value); return *this;}
-    inline ResourceDataSyncSource& WithSourceRegions(Aws::Vector<Aws::String>&& value) { SetSourceRegions(std::move(value)); return *this;}
-    inline ResourceDataSyncSource& AddSourceRegions(const Aws::String& value) { m_sourceRegionsHasBeenSet = true; m_sourceRegions.push_back(value); return *this; }
-    inline ResourceDataSyncSource& AddSourceRegions(Aws::String&& value) { m_sourceRegionsHasBeenSet = true; m_sourceRegions.push_back(std::move(value)); return *this; }
-    inline ResourceDataSyncSource& AddSourceRegions(const char* value) { m_sourceRegionsHasBeenSet = true; m_sourceRegions.push_back(value); return *this; }
+    template<typename SourceRegionsT = Aws::Vector<Aws::String>>
+    void SetSourceRegions(SourceRegionsT&& value) { m_sourceRegionsHasBeenSet = true; m_sourceRegions = std::forward<SourceRegionsT>(value); }
+    template<typename SourceRegionsT = Aws::Vector<Aws::String>>
+    ResourceDataSyncSource& WithSourceRegions(SourceRegionsT&& value) { SetSourceRegions(std::forward<SourceRegionsT>(value)); return *this;}
+    template<typename SourceRegionsT = Aws::String>
+    ResourceDataSyncSource& AddSourceRegions(SourceRegionsT&& value) { m_sourceRegionsHasBeenSet = true; m_sourceRegions.emplace_back(std::forward<SourceRegionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -90,7 +87,7 @@ namespace Model
      * <p>Whether to automatically synchronize and aggregate data from new Amazon Web
      * Services Regions when those Regions come online.</p>
      */
-    inline bool GetIncludeFutureRegions() const{ return m_includeFutureRegions; }
+    inline bool GetIncludeFutureRegions() const { return m_includeFutureRegions; }
     inline bool IncludeFutureRegionsHasBeenSet() const { return m_includeFutureRegionsHasBeenSet; }
     inline void SetIncludeFutureRegions(bool value) { m_includeFutureRegionsHasBeenSet = true; m_includeFutureRegions = value; }
     inline ResourceDataSyncSource& WithIncludeFutureRegions(bool value) { SetIncludeFutureRegions(value); return *this;}
@@ -107,7 +104,7 @@ namespace Model
      * up Systems Manager Explorer to display data from multiple accounts and
      * Regions</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>
      */
-    inline bool GetEnableAllOpsDataSources() const{ return m_enableAllOpsDataSources; }
+    inline bool GetEnableAllOpsDataSources() const { return m_enableAllOpsDataSources; }
     inline bool EnableAllOpsDataSourcesHasBeenSet() const { return m_enableAllOpsDataSourcesHasBeenSet; }
     inline void SetEnableAllOpsDataSources(bool value) { m_enableAllOpsDataSourcesHasBeenSet = true; m_enableAllOpsDataSources = value; }
     inline ResourceDataSyncSource& WithEnableAllOpsDataSources(bool value) { SetEnableAllOpsDataSources(value); return *this;}
@@ -123,10 +120,10 @@ namespace Model
     Aws::Vector<Aws::String> m_sourceRegions;
     bool m_sourceRegionsHasBeenSet = false;
 
-    bool m_includeFutureRegions;
+    bool m_includeFutureRegions{false};
     bool m_includeFutureRegionsHasBeenSet = false;
 
-    bool m_enableAllOpsDataSources;
+    bool m_enableAllOpsDataSources{false};
     bool m_enableAllOpsDataSourcesHasBeenSet = false;
   };
 

@@ -12,11 +12,6 @@ using namespace Aws::IVS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPlaybackKeyPairRequest::GetPlaybackKeyPairRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String GetPlaybackKeyPairRequest::SerializePayload() const
 {
   JsonValue payload;

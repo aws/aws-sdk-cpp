@@ -41,7 +41,7 @@ namespace Model
   class AutoScalingGroupRecommendation
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API AutoScalingGroupRecommendation();
+    AWS_COMPUTEOPTIMIZER_API AutoScalingGroupRecommendation() = default;
     AWS_COMPUTEOPTIMIZER_API AutoScalingGroupRecommendation(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API AutoScalingGroupRecommendation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,42 +51,36 @@ namespace Model
     /**
      * <p>The Amazon Web Services account ID of the Auto Scaling group.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline AutoScalingGroupRecommendation& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline AutoScalingGroupRecommendation& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline AutoScalingGroupRecommendation& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    AutoScalingGroupRecommendation& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Auto Scaling group.</p>
      */
-    inline const Aws::String& GetAutoScalingGroupArn() const{ return m_autoScalingGroupArn; }
+    inline const Aws::String& GetAutoScalingGroupArn() const { return m_autoScalingGroupArn; }
     inline bool AutoScalingGroupArnHasBeenSet() const { return m_autoScalingGroupArnHasBeenSet; }
-    inline void SetAutoScalingGroupArn(const Aws::String& value) { m_autoScalingGroupArnHasBeenSet = true; m_autoScalingGroupArn = value; }
-    inline void SetAutoScalingGroupArn(Aws::String&& value) { m_autoScalingGroupArnHasBeenSet = true; m_autoScalingGroupArn = std::move(value); }
-    inline void SetAutoScalingGroupArn(const char* value) { m_autoScalingGroupArnHasBeenSet = true; m_autoScalingGroupArn.assign(value); }
-    inline AutoScalingGroupRecommendation& WithAutoScalingGroupArn(const Aws::String& value) { SetAutoScalingGroupArn(value); return *this;}
-    inline AutoScalingGroupRecommendation& WithAutoScalingGroupArn(Aws::String&& value) { SetAutoScalingGroupArn(std::move(value)); return *this;}
-    inline AutoScalingGroupRecommendation& WithAutoScalingGroupArn(const char* value) { SetAutoScalingGroupArn(value); return *this;}
+    template<typename AutoScalingGroupArnT = Aws::String>
+    void SetAutoScalingGroupArn(AutoScalingGroupArnT&& value) { m_autoScalingGroupArnHasBeenSet = true; m_autoScalingGroupArn = std::forward<AutoScalingGroupArnT>(value); }
+    template<typename AutoScalingGroupArnT = Aws::String>
+    AutoScalingGroupRecommendation& WithAutoScalingGroupArn(AutoScalingGroupArnT&& value) { SetAutoScalingGroupArn(std::forward<AutoScalingGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
-    inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+    inline const Aws::String& GetAutoScalingGroupName() const { return m_autoScalingGroupName; }
     inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
-    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
-    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
-    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
-    inline AutoScalingGroupRecommendation& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
-    inline AutoScalingGroupRecommendation& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
-    inline AutoScalingGroupRecommendation& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+    template<typename AutoScalingGroupNameT = Aws::String>
+    void SetAutoScalingGroupName(AutoScalingGroupNameT&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::forward<AutoScalingGroupNameT>(value); }
+    template<typename AutoScalingGroupNameT = Aws::String>
+    AutoScalingGroupRecommendation& WithAutoScalingGroupName(AutoScalingGroupNameT&& value) { SetAutoScalingGroupName(std::forward<AutoScalingGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,12 +95,10 @@ namespace Model
      * For optimized resources, Compute Optimizer might recommend a new generation
      * instance type.</p> </li> </ul>
      */
-    inline const Finding& GetFinding() const{ return m_finding; }
+    inline Finding GetFinding() const { return m_finding; }
     inline bool FindingHasBeenSet() const { return m_findingHasBeenSet; }
-    inline void SetFinding(const Finding& value) { m_findingHasBeenSet = true; m_finding = value; }
-    inline void SetFinding(Finding&& value) { m_findingHasBeenSet = true; m_finding = std::move(value); }
-    inline AutoScalingGroupRecommendation& WithFinding(const Finding& value) { SetFinding(value); return *this;}
-    inline AutoScalingGroupRecommendation& WithFinding(Finding&& value) { SetFinding(std::move(value)); return *this;}
+    inline void SetFinding(Finding value) { m_findingHasBeenSet = true; m_finding = value; }
+    inline AutoScalingGroupRecommendation& WithFinding(Finding value) { SetFinding(value); return *this;}
     ///@}
 
     ///@{
@@ -114,14 +106,14 @@ namespace Model
      * <p>An array of objects that describe the utilization metrics of the Auto Scaling
      * group.</p>
      */
-    inline const Aws::Vector<UtilizationMetric>& GetUtilizationMetrics() const{ return m_utilizationMetrics; }
+    inline const Aws::Vector<UtilizationMetric>& GetUtilizationMetrics() const { return m_utilizationMetrics; }
     inline bool UtilizationMetricsHasBeenSet() const { return m_utilizationMetricsHasBeenSet; }
-    inline void SetUtilizationMetrics(const Aws::Vector<UtilizationMetric>& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics = value; }
-    inline void SetUtilizationMetrics(Aws::Vector<UtilizationMetric>&& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics = std::move(value); }
-    inline AutoScalingGroupRecommendation& WithUtilizationMetrics(const Aws::Vector<UtilizationMetric>& value) { SetUtilizationMetrics(value); return *this;}
-    inline AutoScalingGroupRecommendation& WithUtilizationMetrics(Aws::Vector<UtilizationMetric>&& value) { SetUtilizationMetrics(std::move(value)); return *this;}
-    inline AutoScalingGroupRecommendation& AddUtilizationMetrics(const UtilizationMetric& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics.push_back(value); return *this; }
-    inline AutoScalingGroupRecommendation& AddUtilizationMetrics(UtilizationMetric&& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics.push_back(std::move(value)); return *this; }
+    template<typename UtilizationMetricsT = Aws::Vector<UtilizationMetric>>
+    void SetUtilizationMetrics(UtilizationMetricsT&& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics = std::forward<UtilizationMetricsT>(value); }
+    template<typename UtilizationMetricsT = Aws::Vector<UtilizationMetric>>
+    AutoScalingGroupRecommendation& WithUtilizationMetrics(UtilizationMetricsT&& value) { SetUtilizationMetrics(std::forward<UtilizationMetricsT>(value)); return *this;}
+    template<typename UtilizationMetricsT = UtilizationMetric>
+    AutoScalingGroupRecommendation& AddUtilizationMetrics(UtilizationMetricsT&& value) { m_utilizationMetricsHasBeenSet = true; m_utilizationMetrics.emplace_back(std::forward<UtilizationMetricsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -129,7 +121,7 @@ namespace Model
      * <p>The number of days for which utilization metrics were analyzed for the Auto
      * Scaling group.</p>
      */
-    inline double GetLookBackPeriodInDays() const{ return m_lookBackPeriodInDays; }
+    inline double GetLookBackPeriodInDays() const { return m_lookBackPeriodInDays; }
     inline bool LookBackPeriodInDaysHasBeenSet() const { return m_lookBackPeriodInDaysHasBeenSet; }
     inline void SetLookBackPeriodInDays(double value) { m_lookBackPeriodInDaysHasBeenSet = true; m_lookBackPeriodInDays = value; }
     inline AutoScalingGroupRecommendation& WithLookBackPeriodInDays(double value) { SetLookBackPeriodInDays(value); return *this;}
@@ -140,12 +132,12 @@ namespace Model
      * <p>An array of objects that describe the current configuration of the Auto
      * Scaling group.</p>
      */
-    inline const AutoScalingGroupConfiguration& GetCurrentConfiguration() const{ return m_currentConfiguration; }
+    inline const AutoScalingGroupConfiguration& GetCurrentConfiguration() const { return m_currentConfiguration; }
     inline bool CurrentConfigurationHasBeenSet() const { return m_currentConfigurationHasBeenSet; }
-    inline void SetCurrentConfiguration(const AutoScalingGroupConfiguration& value) { m_currentConfigurationHasBeenSet = true; m_currentConfiguration = value; }
-    inline void SetCurrentConfiguration(AutoScalingGroupConfiguration&& value) { m_currentConfigurationHasBeenSet = true; m_currentConfiguration = std::move(value); }
-    inline AutoScalingGroupRecommendation& WithCurrentConfiguration(const AutoScalingGroupConfiguration& value) { SetCurrentConfiguration(value); return *this;}
-    inline AutoScalingGroupRecommendation& WithCurrentConfiguration(AutoScalingGroupConfiguration&& value) { SetCurrentConfiguration(std::move(value)); return *this;}
+    template<typename CurrentConfigurationT = AutoScalingGroupConfiguration>
+    void SetCurrentConfiguration(CurrentConfigurationT&& value) { m_currentConfigurationHasBeenSet = true; m_currentConfiguration = std::forward<CurrentConfigurationT>(value); }
+    template<typename CurrentConfigurationT = AutoScalingGroupConfiguration>
+    AutoScalingGroupRecommendation& WithCurrentConfiguration(CurrentConfigurationT&& value) { SetCurrentConfiguration(std::forward<CurrentConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,12 +145,12 @@ namespace Model
      * <p> Describes the GPU accelerator settings for the current instance type of the
      * Auto Scaling group. </p>
      */
-    inline const GpuInfo& GetCurrentInstanceGpuInfo() const{ return m_currentInstanceGpuInfo; }
+    inline const GpuInfo& GetCurrentInstanceGpuInfo() const { return m_currentInstanceGpuInfo; }
     inline bool CurrentInstanceGpuInfoHasBeenSet() const { return m_currentInstanceGpuInfoHasBeenSet; }
-    inline void SetCurrentInstanceGpuInfo(const GpuInfo& value) { m_currentInstanceGpuInfoHasBeenSet = true; m_currentInstanceGpuInfo = value; }
-    inline void SetCurrentInstanceGpuInfo(GpuInfo&& value) { m_currentInstanceGpuInfoHasBeenSet = true; m_currentInstanceGpuInfo = std::move(value); }
-    inline AutoScalingGroupRecommendation& WithCurrentInstanceGpuInfo(const GpuInfo& value) { SetCurrentInstanceGpuInfo(value); return *this;}
-    inline AutoScalingGroupRecommendation& WithCurrentInstanceGpuInfo(GpuInfo&& value) { SetCurrentInstanceGpuInfo(std::move(value)); return *this;}
+    template<typename CurrentInstanceGpuInfoT = GpuInfo>
+    void SetCurrentInstanceGpuInfo(CurrentInstanceGpuInfoT&& value) { m_currentInstanceGpuInfoHasBeenSet = true; m_currentInstanceGpuInfo = std::forward<CurrentInstanceGpuInfoT>(value); }
+    template<typename CurrentInstanceGpuInfoT = GpuInfo>
+    AutoScalingGroupRecommendation& WithCurrentInstanceGpuInfo(CurrentInstanceGpuInfoT&& value) { SetCurrentInstanceGpuInfo(std::forward<CurrentInstanceGpuInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -166,14 +158,14 @@ namespace Model
      * <p>An array of objects that describe the recommendation options for the Auto
      * Scaling group.</p>
      */
-    inline const Aws::Vector<AutoScalingGroupRecommendationOption>& GetRecommendationOptions() const{ return m_recommendationOptions; }
+    inline const Aws::Vector<AutoScalingGroupRecommendationOption>& GetRecommendationOptions() const { return m_recommendationOptions; }
     inline bool RecommendationOptionsHasBeenSet() const { return m_recommendationOptionsHasBeenSet; }
-    inline void SetRecommendationOptions(const Aws::Vector<AutoScalingGroupRecommendationOption>& value) { m_recommendationOptionsHasBeenSet = true; m_recommendationOptions = value; }
-    inline void SetRecommendationOptions(Aws::Vector<AutoScalingGroupRecommendationOption>&& value) { m_recommendationOptionsHasBeenSet = true; m_recommendationOptions = std::move(value); }
-    inline AutoScalingGroupRecommendation& WithRecommendationOptions(const Aws::Vector<AutoScalingGroupRecommendationOption>& value) { SetRecommendationOptions(value); return *this;}
-    inline AutoScalingGroupRecommendation& WithRecommendationOptions(Aws::Vector<AutoScalingGroupRecommendationOption>&& value) { SetRecommendationOptions(std::move(value)); return *this;}
-    inline AutoScalingGroupRecommendation& AddRecommendationOptions(const AutoScalingGroupRecommendationOption& value) { m_recommendationOptionsHasBeenSet = true; m_recommendationOptions.push_back(value); return *this; }
-    inline AutoScalingGroupRecommendation& AddRecommendationOptions(AutoScalingGroupRecommendationOption&& value) { m_recommendationOptionsHasBeenSet = true; m_recommendationOptions.push_back(std::move(value)); return *this; }
+    template<typename RecommendationOptionsT = Aws::Vector<AutoScalingGroupRecommendationOption>>
+    void SetRecommendationOptions(RecommendationOptionsT&& value) { m_recommendationOptionsHasBeenSet = true; m_recommendationOptions = std::forward<RecommendationOptionsT>(value); }
+    template<typename RecommendationOptionsT = Aws::Vector<AutoScalingGroupRecommendationOption>>
+    AutoScalingGroupRecommendation& WithRecommendationOptions(RecommendationOptionsT&& value) { SetRecommendationOptions(std::forward<RecommendationOptionsT>(value)); return *this;}
+    template<typename RecommendationOptionsT = AutoScalingGroupRecommendationOption>
+    AutoScalingGroupRecommendation& AddRecommendationOptions(RecommendationOptionsT&& value) { m_recommendationOptionsHasBeenSet = true; m_recommendationOptions.emplace_back(std::forward<RecommendationOptionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -181,12 +173,12 @@ namespace Model
      * <p>The timestamp of when the Auto Scaling group recommendation was last
      * generated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastRefreshTimestamp() const{ return m_lastRefreshTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastRefreshTimestamp() const { return m_lastRefreshTimestamp; }
     inline bool LastRefreshTimestampHasBeenSet() const { return m_lastRefreshTimestampHasBeenSet; }
-    inline void SetLastRefreshTimestamp(const Aws::Utils::DateTime& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = value; }
-    inline void SetLastRefreshTimestamp(Aws::Utils::DateTime&& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = std::move(value); }
-    inline AutoScalingGroupRecommendation& WithLastRefreshTimestamp(const Aws::Utils::DateTime& value) { SetLastRefreshTimestamp(value); return *this;}
-    inline AutoScalingGroupRecommendation& WithLastRefreshTimestamp(Aws::Utils::DateTime&& value) { SetLastRefreshTimestamp(std::move(value)); return *this;}
+    template<typename LastRefreshTimestampT = Aws::Utils::DateTime>
+    void SetLastRefreshTimestamp(LastRefreshTimestampT&& value) { m_lastRefreshTimestampHasBeenSet = true; m_lastRefreshTimestamp = std::forward<LastRefreshTimestampT>(value); }
+    template<typename LastRefreshTimestampT = Aws::Utils::DateTime>
+    AutoScalingGroupRecommendation& WithLastRefreshTimestamp(LastRefreshTimestampT&& value) { SetLastRefreshTimestamp(std::forward<LastRefreshTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -196,12 +188,10 @@ namespace Model
      * group configuration has insufficient capacity and cannot meet workload
      * requirements.</p>
      */
-    inline const CurrentPerformanceRisk& GetCurrentPerformanceRisk() const{ return m_currentPerformanceRisk; }
+    inline CurrentPerformanceRisk GetCurrentPerformanceRisk() const { return m_currentPerformanceRisk; }
     inline bool CurrentPerformanceRiskHasBeenSet() const { return m_currentPerformanceRiskHasBeenSet; }
-    inline void SetCurrentPerformanceRisk(const CurrentPerformanceRisk& value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = value; }
-    inline void SetCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = std::move(value); }
-    inline AutoScalingGroupRecommendation& WithCurrentPerformanceRisk(const CurrentPerformanceRisk& value) { SetCurrentPerformanceRisk(value); return *this;}
-    inline AutoScalingGroupRecommendation& WithCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { SetCurrentPerformanceRisk(std::move(value)); return *this;}
+    inline void SetCurrentPerformanceRisk(CurrentPerformanceRisk value) { m_currentPerformanceRiskHasBeenSet = true; m_currentPerformanceRisk = value; }
+    inline AutoScalingGroupRecommendation& WithCurrentPerformanceRisk(CurrentPerformanceRisk value) { SetCurrentPerformanceRisk(value); return *this;}
     ///@}
 
     ///@{
@@ -209,12 +199,12 @@ namespace Model
      * <p>An object that describes the effective recommendation preferences for the
      * Auto Scaling group.</p>
      */
-    inline const EffectiveRecommendationPreferences& GetEffectiveRecommendationPreferences() const{ return m_effectiveRecommendationPreferences; }
+    inline const EffectiveRecommendationPreferences& GetEffectiveRecommendationPreferences() const { return m_effectiveRecommendationPreferences; }
     inline bool EffectiveRecommendationPreferencesHasBeenSet() const { return m_effectiveRecommendationPreferencesHasBeenSet; }
-    inline void SetEffectiveRecommendationPreferences(const EffectiveRecommendationPreferences& value) { m_effectiveRecommendationPreferencesHasBeenSet = true; m_effectiveRecommendationPreferences = value; }
-    inline void SetEffectiveRecommendationPreferences(EffectiveRecommendationPreferences&& value) { m_effectiveRecommendationPreferencesHasBeenSet = true; m_effectiveRecommendationPreferences = std::move(value); }
-    inline AutoScalingGroupRecommendation& WithEffectiveRecommendationPreferences(const EffectiveRecommendationPreferences& value) { SetEffectiveRecommendationPreferences(value); return *this;}
-    inline AutoScalingGroupRecommendation& WithEffectiveRecommendationPreferences(EffectiveRecommendationPreferences&& value) { SetEffectiveRecommendationPreferences(std::move(value)); return *this;}
+    template<typename EffectiveRecommendationPreferencesT = EffectiveRecommendationPreferences>
+    void SetEffectiveRecommendationPreferences(EffectiveRecommendationPreferencesT&& value) { m_effectiveRecommendationPreferencesHasBeenSet = true; m_effectiveRecommendationPreferences = std::forward<EffectiveRecommendationPreferencesT>(value); }
+    template<typename EffectiveRecommendationPreferencesT = EffectiveRecommendationPreferences>
+    AutoScalingGroupRecommendation& WithEffectiveRecommendationPreferences(EffectiveRecommendationPreferencesT&& value) { SetEffectiveRecommendationPreferences(std::forward<EffectiveRecommendationPreferencesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -236,14 +226,13 @@ namespace Model
      * <code>SQLServer</code> - Infers that SQLServer might be running on the
      * instance.</p> </li> </ul>
      */
-    inline const Aws::Vector<InferredWorkloadType>& GetInferredWorkloadTypes() const{ return m_inferredWorkloadTypes; }
+    inline const Aws::Vector<InferredWorkloadType>& GetInferredWorkloadTypes() const { return m_inferredWorkloadTypes; }
     inline bool InferredWorkloadTypesHasBeenSet() const { return m_inferredWorkloadTypesHasBeenSet; }
-    inline void SetInferredWorkloadTypes(const Aws::Vector<InferredWorkloadType>& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = value; }
-    inline void SetInferredWorkloadTypes(Aws::Vector<InferredWorkloadType>&& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = std::move(value); }
-    inline AutoScalingGroupRecommendation& WithInferredWorkloadTypes(const Aws::Vector<InferredWorkloadType>& value) { SetInferredWorkloadTypes(value); return *this;}
-    inline AutoScalingGroupRecommendation& WithInferredWorkloadTypes(Aws::Vector<InferredWorkloadType>&& value) { SetInferredWorkloadTypes(std::move(value)); return *this;}
-    inline AutoScalingGroupRecommendation& AddInferredWorkloadTypes(const InferredWorkloadType& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes.push_back(value); return *this; }
-    inline AutoScalingGroupRecommendation& AddInferredWorkloadTypes(InferredWorkloadType&& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes.push_back(std::move(value)); return *this; }
+    template<typename InferredWorkloadTypesT = Aws::Vector<InferredWorkloadType>>
+    void SetInferredWorkloadTypes(InferredWorkloadTypesT&& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes = std::forward<InferredWorkloadTypesT>(value); }
+    template<typename InferredWorkloadTypesT = Aws::Vector<InferredWorkloadType>>
+    AutoScalingGroupRecommendation& WithInferredWorkloadTypes(InferredWorkloadTypesT&& value) { SetInferredWorkloadTypes(std::forward<InferredWorkloadTypesT>(value)); return *this;}
+    inline AutoScalingGroupRecommendation& AddInferredWorkloadTypes(InferredWorkloadType value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes.push_back(value); return *this; }
     ///@}
   private:
 
@@ -256,13 +245,13 @@ namespace Model
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet = false;
 
-    Finding m_finding;
+    Finding m_finding{Finding::NOT_SET};
     bool m_findingHasBeenSet = false;
 
     Aws::Vector<UtilizationMetric> m_utilizationMetrics;
     bool m_utilizationMetricsHasBeenSet = false;
 
-    double m_lookBackPeriodInDays;
+    double m_lookBackPeriodInDays{0.0};
     bool m_lookBackPeriodInDaysHasBeenSet = false;
 
     AutoScalingGroupConfiguration m_currentConfiguration;
@@ -274,10 +263,10 @@ namespace Model
     Aws::Vector<AutoScalingGroupRecommendationOption> m_recommendationOptions;
     bool m_recommendationOptionsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastRefreshTimestamp;
+    Aws::Utils::DateTime m_lastRefreshTimestamp{};
     bool m_lastRefreshTimestampHasBeenSet = false;
 
-    CurrentPerformanceRisk m_currentPerformanceRisk;
+    CurrentPerformanceRisk m_currentPerformanceRisk{CurrentPerformanceRisk::NOT_SET};
     bool m_currentPerformanceRiskHasBeenSet = false;
 
     EffectiveRecommendationPreferences m_effectiveRecommendationPreferences;

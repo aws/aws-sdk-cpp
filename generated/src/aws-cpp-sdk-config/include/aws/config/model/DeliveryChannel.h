@@ -33,7 +33,7 @@ namespace Model
   class DeliveryChannel
   {
   public:
-    AWS_CONFIGSERVICE_API DeliveryChannel();
+    AWS_CONFIGSERVICE_API DeliveryChannel() = default;
     AWS_CONFIGSERVICE_API DeliveryChannel(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API DeliveryChannel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * delivery channel, and then you must use the PutDeliveryChannel command to create
      * a delivery channel that has the desired name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DeliveryChannel& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DeliveryChannel& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DeliveryChannel& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DeliveryChannel& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,28 +64,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
      * for the Amazon S3 Bucket</a> in the <i>Config Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
+    inline const Aws::String& GetS3BucketName() const { return m_s3BucketName; }
     inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
-    inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
-    inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
-    inline void SetS3BucketName(const char* value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName.assign(value); }
-    inline DeliveryChannel& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
-    inline DeliveryChannel& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
-    inline DeliveryChannel& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
+    template<typename S3BucketNameT = Aws::String>
+    void SetS3BucketName(S3BucketNameT&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::forward<S3BucketNameT>(value); }
+    template<typename S3BucketNameT = Aws::String>
+    DeliveryChannel& WithS3BucketName(S3BucketNameT&& value) { SetS3BucketName(std::forward<S3BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The prefix for the specified Amazon S3 bucket.</p>
      */
-    inline const Aws::String& GetS3KeyPrefix() const{ return m_s3KeyPrefix; }
+    inline const Aws::String& GetS3KeyPrefix() const { return m_s3KeyPrefix; }
     inline bool S3KeyPrefixHasBeenSet() const { return m_s3KeyPrefixHasBeenSet; }
-    inline void SetS3KeyPrefix(const Aws::String& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = value; }
-    inline void SetS3KeyPrefix(Aws::String&& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = std::move(value); }
-    inline void SetS3KeyPrefix(const char* value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix.assign(value); }
-    inline DeliveryChannel& WithS3KeyPrefix(const Aws::String& value) { SetS3KeyPrefix(value); return *this;}
-    inline DeliveryChannel& WithS3KeyPrefix(Aws::String&& value) { SetS3KeyPrefix(std::move(value)); return *this;}
-    inline DeliveryChannel& WithS3KeyPrefix(const char* value) { SetS3KeyPrefix(value); return *this;}
+    template<typename S3KeyPrefixT = Aws::String>
+    void SetS3KeyPrefix(S3KeyPrefixT&& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = std::forward<S3KeyPrefixT>(value); }
+    template<typename S3KeyPrefixT = Aws::String>
+    DeliveryChannel& WithS3KeyPrefix(S3KeyPrefixT&& value) { SetS3KeyPrefix(std::forward<S3KeyPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +90,12 @@ namespace Model
      * (KMS key) used to encrypt objects delivered by Config. Must belong to the same
      * Region as the destination S3 bucket.</p>
      */
-    inline const Aws::String& GetS3KmsKeyArn() const{ return m_s3KmsKeyArn; }
+    inline const Aws::String& GetS3KmsKeyArn() const { return m_s3KmsKeyArn; }
     inline bool S3KmsKeyArnHasBeenSet() const { return m_s3KmsKeyArnHasBeenSet; }
-    inline void SetS3KmsKeyArn(const Aws::String& value) { m_s3KmsKeyArnHasBeenSet = true; m_s3KmsKeyArn = value; }
-    inline void SetS3KmsKeyArn(Aws::String&& value) { m_s3KmsKeyArnHasBeenSet = true; m_s3KmsKeyArn = std::move(value); }
-    inline void SetS3KmsKeyArn(const char* value) { m_s3KmsKeyArnHasBeenSet = true; m_s3KmsKeyArn.assign(value); }
-    inline DeliveryChannel& WithS3KmsKeyArn(const Aws::String& value) { SetS3KmsKeyArn(value); return *this;}
-    inline DeliveryChannel& WithS3KmsKeyArn(Aws::String&& value) { SetS3KmsKeyArn(std::move(value)); return *this;}
-    inline DeliveryChannel& WithS3KmsKeyArn(const char* value) { SetS3KmsKeyArn(value); return *this;}
+    template<typename S3KmsKeyArnT = Aws::String>
+    void SetS3KmsKeyArn(S3KmsKeyArnT&& value) { m_s3KmsKeyArnHasBeenSet = true; m_s3KmsKeyArn = std::forward<S3KmsKeyArnT>(value); }
+    template<typename S3KmsKeyArnT = Aws::String>
+    DeliveryChannel& WithS3KmsKeyArn(S3KmsKeyArnT&& value) { SetS3KmsKeyArn(std::forward<S3KmsKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,14 +107,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
      * for the Amazon SNS Topic</a> in the <i>Config Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetSnsTopicARN() const{ return m_snsTopicARN; }
+    inline const Aws::String& GetSnsTopicARN() const { return m_snsTopicARN; }
     inline bool SnsTopicARNHasBeenSet() const { return m_snsTopicARNHasBeenSet; }
-    inline void SetSnsTopicARN(const Aws::String& value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN = value; }
-    inline void SetSnsTopicARN(Aws::String&& value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN = std::move(value); }
-    inline void SetSnsTopicARN(const char* value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN.assign(value); }
-    inline DeliveryChannel& WithSnsTopicARN(const Aws::String& value) { SetSnsTopicARN(value); return *this;}
-    inline DeliveryChannel& WithSnsTopicARN(Aws::String&& value) { SetSnsTopicARN(std::move(value)); return *this;}
-    inline DeliveryChannel& WithSnsTopicARN(const char* value) { SetSnsTopicARN(value); return *this;}
+    template<typename SnsTopicARNT = Aws::String>
+    void SetSnsTopicARN(SnsTopicARNT&& value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN = std::forward<SnsTopicARNT>(value); }
+    template<typename SnsTopicARNT = Aws::String>
+    DeliveryChannel& WithSnsTopicARN(SnsTopicARNT&& value) { SetSnsTopicARN(std::forward<SnsTopicARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,12 +120,12 @@ namespace Model
      * <p>The options for how often Config delivers configuration snapshots to the
      * Amazon S3 bucket.</p>
      */
-    inline const ConfigSnapshotDeliveryProperties& GetConfigSnapshotDeliveryProperties() const{ return m_configSnapshotDeliveryProperties; }
+    inline const ConfigSnapshotDeliveryProperties& GetConfigSnapshotDeliveryProperties() const { return m_configSnapshotDeliveryProperties; }
     inline bool ConfigSnapshotDeliveryPropertiesHasBeenSet() const { return m_configSnapshotDeliveryPropertiesHasBeenSet; }
-    inline void SetConfigSnapshotDeliveryProperties(const ConfigSnapshotDeliveryProperties& value) { m_configSnapshotDeliveryPropertiesHasBeenSet = true; m_configSnapshotDeliveryProperties = value; }
-    inline void SetConfigSnapshotDeliveryProperties(ConfigSnapshotDeliveryProperties&& value) { m_configSnapshotDeliveryPropertiesHasBeenSet = true; m_configSnapshotDeliveryProperties = std::move(value); }
-    inline DeliveryChannel& WithConfigSnapshotDeliveryProperties(const ConfigSnapshotDeliveryProperties& value) { SetConfigSnapshotDeliveryProperties(value); return *this;}
-    inline DeliveryChannel& WithConfigSnapshotDeliveryProperties(ConfigSnapshotDeliveryProperties&& value) { SetConfigSnapshotDeliveryProperties(std::move(value)); return *this;}
+    template<typename ConfigSnapshotDeliveryPropertiesT = ConfigSnapshotDeliveryProperties>
+    void SetConfigSnapshotDeliveryProperties(ConfigSnapshotDeliveryPropertiesT&& value) { m_configSnapshotDeliveryPropertiesHasBeenSet = true; m_configSnapshotDeliveryProperties = std::forward<ConfigSnapshotDeliveryPropertiesT>(value); }
+    template<typename ConfigSnapshotDeliveryPropertiesT = ConfigSnapshotDeliveryProperties>
+    DeliveryChannel& WithConfigSnapshotDeliveryProperties(ConfigSnapshotDeliveryPropertiesT&& value) { SetConfigSnapshotDeliveryProperties(std::forward<ConfigSnapshotDeliveryPropertiesT>(value)); return *this;}
     ///@}
   private:
 

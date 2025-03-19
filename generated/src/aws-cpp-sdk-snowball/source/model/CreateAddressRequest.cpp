@@ -12,11 +12,6 @@ using namespace Aws::Snowball::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAddressRequest::CreateAddressRequest() : 
-    m_addressHasBeenSet(false)
-{
-}
-
 Aws::String CreateAddressRequest::SerializePayload() const
 {
   JsonValue payload;

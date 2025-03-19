@@ -18,21 +18,7 @@ namespace ApplicationAutoScaling
 namespace Model
 {
 
-PredictiveScalingPolicyConfiguration::PredictiveScalingPolicyConfiguration() : 
-    m_metricSpecificationsHasBeenSet(false),
-    m_mode(PredictiveScalingMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_schedulingBufferTime(0),
-    m_schedulingBufferTimeHasBeenSet(false),
-    m_maxCapacityBreachBehavior(PredictiveScalingMaxCapacityBreachBehavior::NOT_SET),
-    m_maxCapacityBreachBehaviorHasBeenSet(false),
-    m_maxCapacityBuffer(0),
-    m_maxCapacityBufferHasBeenSet(false)
-{
-}
-
 PredictiveScalingPolicyConfiguration::PredictiveScalingPolicyConfiguration(JsonView jsonValue)
-  : PredictiveScalingPolicyConfiguration()
 {
   *this = jsonValue;
 }
@@ -48,35 +34,26 @@ PredictiveScalingPolicyConfiguration& PredictiveScalingPolicyConfiguration::oper
     }
     m_metricSpecificationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Mode"))
   {
     m_mode = PredictiveScalingModeMapper::GetPredictiveScalingModeForName(jsonValue.GetString("Mode"));
-
     m_modeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchedulingBufferTime"))
   {
     m_schedulingBufferTime = jsonValue.GetInteger("SchedulingBufferTime");
-
     m_schedulingBufferTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxCapacityBreachBehavior"))
   {
     m_maxCapacityBreachBehavior = PredictiveScalingMaxCapacityBreachBehaviorMapper::GetPredictiveScalingMaxCapacityBreachBehaviorForName(jsonValue.GetString("MaxCapacityBreachBehavior"));
-
     m_maxCapacityBreachBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxCapacityBuffer"))
   {
     m_maxCapacityBuffer = jsonValue.GetInteger("MaxCapacityBuffer");
-
     m_maxCapacityBufferHasBeenSet = true;
   }
-
   return *this;
 }
 

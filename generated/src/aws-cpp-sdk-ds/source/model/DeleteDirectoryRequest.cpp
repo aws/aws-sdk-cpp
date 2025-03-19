@@ -12,11 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDirectoryRequest::DeleteDirectoryRequest() : 
-    m_directoryIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDirectoryRequest::SerializePayload() const
 {
   JsonValue payload;

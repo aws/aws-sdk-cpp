@@ -18,15 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-ResultRowValue::ResultRowValue() : 
-    m_keyHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 ResultRowValue::ResultRowValue(JsonView jsonValue)
-  : ResultRowValue()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ResultRowValue& ResultRowValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

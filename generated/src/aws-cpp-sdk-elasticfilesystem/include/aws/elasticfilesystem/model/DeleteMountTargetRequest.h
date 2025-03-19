@@ -24,7 +24,7 @@ namespace Model
   class DeleteMountTargetRequest : public EFSRequest
   {
   public:
-    AWS_EFS_API DeleteMountTargetRequest();
+    AWS_EFS_API DeleteMountTargetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The ID of the mount target to delete (String).</p>
      */
-    inline const Aws::String& GetMountTargetId() const{ return m_mountTargetId; }
+    inline const Aws::String& GetMountTargetId() const { return m_mountTargetId; }
     inline bool MountTargetIdHasBeenSet() const { return m_mountTargetIdHasBeenSet; }
-    inline void SetMountTargetId(const Aws::String& value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId = value; }
-    inline void SetMountTargetId(Aws::String&& value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId = std::move(value); }
-    inline void SetMountTargetId(const char* value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId.assign(value); }
-    inline DeleteMountTargetRequest& WithMountTargetId(const Aws::String& value) { SetMountTargetId(value); return *this;}
-    inline DeleteMountTargetRequest& WithMountTargetId(Aws::String&& value) { SetMountTargetId(std::move(value)); return *this;}
-    inline DeleteMountTargetRequest& WithMountTargetId(const char* value) { SetMountTargetId(value); return *this;}
+    template<typename MountTargetIdT = Aws::String>
+    void SetMountTargetId(MountTargetIdT&& value) { m_mountTargetIdHasBeenSet = true; m_mountTargetId = std::forward<MountTargetIdT>(value); }
+    template<typename MountTargetIdT = Aws::String>
+    DeleteMountTargetRequest& WithMountTargetId(MountTargetIdT&& value) { SetMountTargetId(std::forward<MountTargetIdT>(value)); return *this;}
     ///@}
   private:
 

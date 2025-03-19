@@ -18,21 +18,7 @@ namespace IdentityStore
 namespace Model
 {
 
-Address::Address() : 
-    m_streetAddressHasBeenSet(false),
-    m_localityHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_postalCodeHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_formattedHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_primary(false),
-    m_primaryHasBeenSet(false)
-{
-}
-
 Address::Address(JsonView jsonValue)
-  : Address()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ Address& Address::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StreetAddress"))
   {
     m_streetAddress = jsonValue.GetString("StreetAddress");
-
     m_streetAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Locality"))
   {
     m_locality = jsonValue.GetString("Locality");
-
     m_localityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostalCode"))
   {
     m_postalCode = jsonValue.GetString("PostalCode");
-
     m_postalCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Country"))
   {
     m_country = jsonValue.GetString("Country");
-
     m_countryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Formatted"))
   {
     m_formatted = jsonValue.GetString("Formatted");
-
     m_formattedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Primary"))
   {
     m_primary = jsonValue.GetBool("Primary");
-
     m_primaryHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-LoggingOptions::LoggingOptions() : 
-    m_roleArnHasBeenSet(false),
-    m_level(LoggingLevel::NOT_SET),
-    m_levelHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 LoggingOptions::LoggingOptions(JsonView jsonValue)
-  : LoggingOptions()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ LoggingOptions& LoggingOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("level"))
   {
     m_level = LoggingLevelMapper::GetLoggingLevelForName(jsonValue.GetString("level"));
-
     m_levelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

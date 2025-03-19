@@ -32,7 +32,7 @@ namespace Model
   class TestCases
   {
   public:
-    AWS_APPTEST_API TestCases();
+    AWS_APPTEST_API TestCases() = default;
     AWS_APPTEST_API TestCases(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API TestCases& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,15 +42,14 @@ namespace Model
     /**
      * <p>The sequential of the test case.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSequential() const{ return m_sequential; }
+    inline const Aws::Vector<Aws::String>& GetSequential() const { return m_sequential; }
     inline bool SequentialHasBeenSet() const { return m_sequentialHasBeenSet; }
-    inline void SetSequential(const Aws::Vector<Aws::String>& value) { m_sequentialHasBeenSet = true; m_sequential = value; }
-    inline void SetSequential(Aws::Vector<Aws::String>&& value) { m_sequentialHasBeenSet = true; m_sequential = std::move(value); }
-    inline TestCases& WithSequential(const Aws::Vector<Aws::String>& value) { SetSequential(value); return *this;}
-    inline TestCases& WithSequential(Aws::Vector<Aws::String>&& value) { SetSequential(std::move(value)); return *this;}
-    inline TestCases& AddSequential(const Aws::String& value) { m_sequentialHasBeenSet = true; m_sequential.push_back(value); return *this; }
-    inline TestCases& AddSequential(Aws::String&& value) { m_sequentialHasBeenSet = true; m_sequential.push_back(std::move(value)); return *this; }
-    inline TestCases& AddSequential(const char* value) { m_sequentialHasBeenSet = true; m_sequential.push_back(value); return *this; }
+    template<typename SequentialT = Aws::Vector<Aws::String>>
+    void SetSequential(SequentialT&& value) { m_sequentialHasBeenSet = true; m_sequential = std::forward<SequentialT>(value); }
+    template<typename SequentialT = Aws::Vector<Aws::String>>
+    TestCases& WithSequential(SequentialT&& value) { SetSequential(std::forward<SequentialT>(value)); return *this;}
+    template<typename SequentialT = Aws::String>
+    TestCases& AddSequential(SequentialT&& value) { m_sequentialHasBeenSet = true; m_sequential.emplace_back(std::forward<SequentialT>(value)); return *this; }
     ///@}
   private:
 

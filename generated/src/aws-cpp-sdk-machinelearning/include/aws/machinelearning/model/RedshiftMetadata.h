@@ -33,7 +33,7 @@ namespace Model
   class RedshiftMetadata
   {
   public:
-    AWS_MACHINELEARNING_API RedshiftMetadata();
+    AWS_MACHINELEARNING_API RedshiftMetadata() = default;
     AWS_MACHINELEARNING_API RedshiftMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACHINELEARNING_API RedshiftMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,24 +41,22 @@ namespace Model
 
     ///@{
     
-    inline const RedshiftDatabase& GetRedshiftDatabase() const{ return m_redshiftDatabase; }
+    inline const RedshiftDatabase& GetRedshiftDatabase() const { return m_redshiftDatabase; }
     inline bool RedshiftDatabaseHasBeenSet() const { return m_redshiftDatabaseHasBeenSet; }
-    inline void SetRedshiftDatabase(const RedshiftDatabase& value) { m_redshiftDatabaseHasBeenSet = true; m_redshiftDatabase = value; }
-    inline void SetRedshiftDatabase(RedshiftDatabase&& value) { m_redshiftDatabaseHasBeenSet = true; m_redshiftDatabase = std::move(value); }
-    inline RedshiftMetadata& WithRedshiftDatabase(const RedshiftDatabase& value) { SetRedshiftDatabase(value); return *this;}
-    inline RedshiftMetadata& WithRedshiftDatabase(RedshiftDatabase&& value) { SetRedshiftDatabase(std::move(value)); return *this;}
+    template<typename RedshiftDatabaseT = RedshiftDatabase>
+    void SetRedshiftDatabase(RedshiftDatabaseT&& value) { m_redshiftDatabaseHasBeenSet = true; m_redshiftDatabase = std::forward<RedshiftDatabaseT>(value); }
+    template<typename RedshiftDatabaseT = RedshiftDatabase>
+    RedshiftMetadata& WithRedshiftDatabase(RedshiftDatabaseT&& value) { SetRedshiftDatabase(std::forward<RedshiftDatabaseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetDatabaseUserName() const{ return m_databaseUserName; }
+    inline const Aws::String& GetDatabaseUserName() const { return m_databaseUserName; }
     inline bool DatabaseUserNameHasBeenSet() const { return m_databaseUserNameHasBeenSet; }
-    inline void SetDatabaseUserName(const Aws::String& value) { m_databaseUserNameHasBeenSet = true; m_databaseUserName = value; }
-    inline void SetDatabaseUserName(Aws::String&& value) { m_databaseUserNameHasBeenSet = true; m_databaseUserName = std::move(value); }
-    inline void SetDatabaseUserName(const char* value) { m_databaseUserNameHasBeenSet = true; m_databaseUserName.assign(value); }
-    inline RedshiftMetadata& WithDatabaseUserName(const Aws::String& value) { SetDatabaseUserName(value); return *this;}
-    inline RedshiftMetadata& WithDatabaseUserName(Aws::String&& value) { SetDatabaseUserName(std::move(value)); return *this;}
-    inline RedshiftMetadata& WithDatabaseUserName(const char* value) { SetDatabaseUserName(value); return *this;}
+    template<typename DatabaseUserNameT = Aws::String>
+    void SetDatabaseUserName(DatabaseUserNameT&& value) { m_databaseUserNameHasBeenSet = true; m_databaseUserName = std::forward<DatabaseUserNameT>(value); }
+    template<typename DatabaseUserNameT = Aws::String>
+    RedshiftMetadata& WithDatabaseUserName(DatabaseUserNameT&& value) { SetDatabaseUserName(std::forward<DatabaseUserNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * <p> The SQL query that is specified during <a>CreateDataSourceFromRedshift</a>.
      * Returns only if <code>Verbose</code> is true in GetDataSourceInput. </p>
      */
-    inline const Aws::String& GetSelectSqlQuery() const{ return m_selectSqlQuery; }
+    inline const Aws::String& GetSelectSqlQuery() const { return m_selectSqlQuery; }
     inline bool SelectSqlQueryHasBeenSet() const { return m_selectSqlQueryHasBeenSet; }
-    inline void SetSelectSqlQuery(const Aws::String& value) { m_selectSqlQueryHasBeenSet = true; m_selectSqlQuery = value; }
-    inline void SetSelectSqlQuery(Aws::String&& value) { m_selectSqlQueryHasBeenSet = true; m_selectSqlQuery = std::move(value); }
-    inline void SetSelectSqlQuery(const char* value) { m_selectSqlQueryHasBeenSet = true; m_selectSqlQuery.assign(value); }
-    inline RedshiftMetadata& WithSelectSqlQuery(const Aws::String& value) { SetSelectSqlQuery(value); return *this;}
-    inline RedshiftMetadata& WithSelectSqlQuery(Aws::String&& value) { SetSelectSqlQuery(std::move(value)); return *this;}
-    inline RedshiftMetadata& WithSelectSqlQuery(const char* value) { SetSelectSqlQuery(value); return *this;}
+    template<typename SelectSqlQueryT = Aws::String>
+    void SetSelectSqlQuery(SelectSqlQueryT&& value) { m_selectSqlQueryHasBeenSet = true; m_selectSqlQuery = std::forward<SelectSqlQueryT>(value); }
+    template<typename SelectSqlQueryT = Aws::String>
+    RedshiftMetadata& WithSelectSqlQuery(SelectSqlQueryT&& value) { SetSelectSqlQuery(std::forward<SelectSqlQueryT>(value)); return *this;}
     ///@}
   private:
 

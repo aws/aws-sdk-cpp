@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutIndexPolicyResult::PutIndexPolicyResult()
-{
-}
-
 PutIndexPolicyResult::PutIndexPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ PutIndexPolicyResult& PutIndexPolicyResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("indexPolicy"))
   {
     m_indexPolicy = jsonValue.GetObject("indexPolicy");
-
+    m_indexPolicyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

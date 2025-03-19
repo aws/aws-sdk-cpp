@@ -18,13 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-ClassificationExportConfiguration::ClassificationExportConfiguration() : 
-    m_s3DestinationHasBeenSet(false)
-{
-}
-
 ClassificationExportConfiguration::ClassificationExportConfiguration(JsonView jsonValue)
-  : ClassificationExportConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ClassificationExportConfiguration& ClassificationExportConfiguration::operator =
   if(jsonValue.ValueExists("s3Destination"))
   {
     m_s3Destination = jsonValue.GetObject("s3Destination");
-
     m_s3DestinationHasBeenSet = true;
   }
-
   return *this;
 }
 

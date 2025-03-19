@@ -12,12 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDocumentDefaultVersionRequest::UpdateDocumentDefaultVersionRequest() : 
-    m_nameHasBeenSet(false),
-    m_documentVersionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDocumentDefaultVersionRequest::SerializePayload() const
 {
   JsonValue payload;

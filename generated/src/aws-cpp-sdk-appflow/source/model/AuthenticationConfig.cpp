@@ -18,22 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-AuthenticationConfig::AuthenticationConfig() : 
-    m_isBasicAuthSupported(false),
-    m_isBasicAuthSupportedHasBeenSet(false),
-    m_isApiKeyAuthSupported(false),
-    m_isApiKeyAuthSupportedHasBeenSet(false),
-    m_isOAuth2Supported(false),
-    m_isOAuth2SupportedHasBeenSet(false),
-    m_isCustomAuthSupported(false),
-    m_isCustomAuthSupportedHasBeenSet(false),
-    m_oAuth2DefaultsHasBeenSet(false),
-    m_customAuthConfigsHasBeenSet(false)
-{
-}
-
 AuthenticationConfig::AuthenticationConfig(JsonView jsonValue)
-  : AuthenticationConfig()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ AuthenticationConfig& AuthenticationConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("isBasicAuthSupported"))
   {
     m_isBasicAuthSupported = jsonValue.GetBool("isBasicAuthSupported");
-
     m_isBasicAuthSupportedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isApiKeyAuthSupported"))
   {
     m_isApiKeyAuthSupported = jsonValue.GetBool("isApiKeyAuthSupported");
-
     m_isApiKeyAuthSupportedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isOAuth2Supported"))
   {
     m_isOAuth2Supported = jsonValue.GetBool("isOAuth2Supported");
-
     m_isOAuth2SupportedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isCustomAuthSupported"))
   {
     m_isCustomAuthSupported = jsonValue.GetBool("isCustomAuthSupported");
-
     m_isCustomAuthSupportedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("oAuth2Defaults"))
   {
     m_oAuth2Defaults = jsonValue.GetObject("oAuth2Defaults");
-
     m_oAuth2DefaultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customAuthConfigs"))
   {
     Aws::Utils::Array<JsonView> customAuthConfigsJsonList = jsonValue.GetArray("customAuthConfigs");
@@ -84,7 +59,6 @@ AuthenticationConfig& AuthenticationConfig::operator =(JsonView jsonValue)
     }
     m_customAuthConfigsHasBeenSet = true;
   }
-
   return *this;
 }
 

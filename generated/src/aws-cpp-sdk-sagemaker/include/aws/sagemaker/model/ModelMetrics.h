@@ -34,7 +34,7 @@ namespace Model
   class ModelMetrics
   {
   public:
-    AWS_SAGEMAKER_API ModelMetrics();
+    AWS_SAGEMAKER_API ModelMetrics() = default;
     AWS_SAGEMAKER_API ModelMetrics(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ModelMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,48 +44,48 @@ namespace Model
     /**
      * <p>Metrics that measure the quality of a model.</p>
      */
-    inline const ModelQuality& GetModelQuality() const{ return m_modelQuality; }
+    inline const ModelQuality& GetModelQuality() const { return m_modelQuality; }
     inline bool ModelQualityHasBeenSet() const { return m_modelQualityHasBeenSet; }
-    inline void SetModelQuality(const ModelQuality& value) { m_modelQualityHasBeenSet = true; m_modelQuality = value; }
-    inline void SetModelQuality(ModelQuality&& value) { m_modelQualityHasBeenSet = true; m_modelQuality = std::move(value); }
-    inline ModelMetrics& WithModelQuality(const ModelQuality& value) { SetModelQuality(value); return *this;}
-    inline ModelMetrics& WithModelQuality(ModelQuality&& value) { SetModelQuality(std::move(value)); return *this;}
+    template<typename ModelQualityT = ModelQuality>
+    void SetModelQuality(ModelQualityT&& value) { m_modelQualityHasBeenSet = true; m_modelQuality = std::forward<ModelQualityT>(value); }
+    template<typename ModelQualityT = ModelQuality>
+    ModelMetrics& WithModelQuality(ModelQualityT&& value) { SetModelQuality(std::forward<ModelQualityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Metrics that measure the quality of the input data for a model.</p>
      */
-    inline const ModelDataQuality& GetModelDataQuality() const{ return m_modelDataQuality; }
+    inline const ModelDataQuality& GetModelDataQuality() const { return m_modelDataQuality; }
     inline bool ModelDataQualityHasBeenSet() const { return m_modelDataQualityHasBeenSet; }
-    inline void SetModelDataQuality(const ModelDataQuality& value) { m_modelDataQualityHasBeenSet = true; m_modelDataQuality = value; }
-    inline void SetModelDataQuality(ModelDataQuality&& value) { m_modelDataQualityHasBeenSet = true; m_modelDataQuality = std::move(value); }
-    inline ModelMetrics& WithModelDataQuality(const ModelDataQuality& value) { SetModelDataQuality(value); return *this;}
-    inline ModelMetrics& WithModelDataQuality(ModelDataQuality&& value) { SetModelDataQuality(std::move(value)); return *this;}
+    template<typename ModelDataQualityT = ModelDataQuality>
+    void SetModelDataQuality(ModelDataQualityT&& value) { m_modelDataQualityHasBeenSet = true; m_modelDataQuality = std::forward<ModelDataQualityT>(value); }
+    template<typename ModelDataQualityT = ModelDataQuality>
+    ModelMetrics& WithModelDataQuality(ModelDataQualityT&& value) { SetModelDataQuality(std::forward<ModelDataQualityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Metrics that measure bias in a model.</p>
      */
-    inline const Bias& GetBias() const{ return m_bias; }
+    inline const Bias& GetBias() const { return m_bias; }
     inline bool BiasHasBeenSet() const { return m_biasHasBeenSet; }
-    inline void SetBias(const Bias& value) { m_biasHasBeenSet = true; m_bias = value; }
-    inline void SetBias(Bias&& value) { m_biasHasBeenSet = true; m_bias = std::move(value); }
-    inline ModelMetrics& WithBias(const Bias& value) { SetBias(value); return *this;}
-    inline ModelMetrics& WithBias(Bias&& value) { SetBias(std::move(value)); return *this;}
+    template<typename BiasT = Bias>
+    void SetBias(BiasT&& value) { m_biasHasBeenSet = true; m_bias = std::forward<BiasT>(value); }
+    template<typename BiasT = Bias>
+    ModelMetrics& WithBias(BiasT&& value) { SetBias(std::forward<BiasT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Metrics that help explain a model.</p>
      */
-    inline const Explainability& GetExplainability() const{ return m_explainability; }
+    inline const Explainability& GetExplainability() const { return m_explainability; }
     inline bool ExplainabilityHasBeenSet() const { return m_explainabilityHasBeenSet; }
-    inline void SetExplainability(const Explainability& value) { m_explainabilityHasBeenSet = true; m_explainability = value; }
-    inline void SetExplainability(Explainability&& value) { m_explainabilityHasBeenSet = true; m_explainability = std::move(value); }
-    inline ModelMetrics& WithExplainability(const Explainability& value) { SetExplainability(value); return *this;}
-    inline ModelMetrics& WithExplainability(Explainability&& value) { SetExplainability(std::move(value)); return *this;}
+    template<typename ExplainabilityT = Explainability>
+    void SetExplainability(ExplainabilityT&& value) { m_explainabilityHasBeenSet = true; m_explainability = std::forward<ExplainabilityT>(value); }
+    template<typename ExplainabilityT = Explainability>
+    ModelMetrics& WithExplainability(ExplainabilityT&& value) { SetExplainability(std::forward<ExplainabilityT>(value)); return *this;}
     ///@}
   private:
 

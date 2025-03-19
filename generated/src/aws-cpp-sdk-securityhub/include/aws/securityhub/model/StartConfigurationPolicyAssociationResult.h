@@ -31,7 +31,7 @@ namespace Model
   class StartConfigurationPolicyAssociationResult
   {
   public:
-    AWS_SECURITYHUB_API StartConfigurationPolicyAssociationResult();
+    AWS_SECURITYHUB_API StartConfigurationPolicyAssociationResult() = default;
     AWS_SECURITYHUB_API StartConfigurationPolicyAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECURITYHUB_API StartConfigurationPolicyAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,11 @@ namespace Model
     /**
      * <p> The UUID of the configuration policy. </p>
      */
-    inline const Aws::String& GetConfigurationPolicyId() const{ return m_configurationPolicyId; }
-    inline void SetConfigurationPolicyId(const Aws::String& value) { m_configurationPolicyId = value; }
-    inline void SetConfigurationPolicyId(Aws::String&& value) { m_configurationPolicyId = std::move(value); }
-    inline void SetConfigurationPolicyId(const char* value) { m_configurationPolicyId.assign(value); }
-    inline StartConfigurationPolicyAssociationResult& WithConfigurationPolicyId(const Aws::String& value) { SetConfigurationPolicyId(value); return *this;}
-    inline StartConfigurationPolicyAssociationResult& WithConfigurationPolicyId(Aws::String&& value) { SetConfigurationPolicyId(std::move(value)); return *this;}
-    inline StartConfigurationPolicyAssociationResult& WithConfigurationPolicyId(const char* value) { SetConfigurationPolicyId(value); return *this;}
+    inline const Aws::String& GetConfigurationPolicyId() const { return m_configurationPolicyId; }
+    template<typename ConfigurationPolicyIdT = Aws::String>
+    void SetConfigurationPolicyId(ConfigurationPolicyIdT&& value) { m_configurationPolicyIdHasBeenSet = true; m_configurationPolicyId = std::forward<ConfigurationPolicyIdT>(value); }
+    template<typename ConfigurationPolicyIdT = Aws::String>
+    StartConfigurationPolicyAssociationResult& WithConfigurationPolicyId(ConfigurationPolicyIdT&& value) { SetConfigurationPolicyId(std::forward<ConfigurationPolicyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,13 +52,11 @@ namespace Model
      * <p> The identifier of the target account, organizational unit, or the
      * organization root with which the configuration is associated. </p>
      */
-    inline const Aws::String& GetTargetId() const{ return m_targetId; }
-    inline void SetTargetId(const Aws::String& value) { m_targetId = value; }
-    inline void SetTargetId(Aws::String&& value) { m_targetId = std::move(value); }
-    inline void SetTargetId(const char* value) { m_targetId.assign(value); }
-    inline StartConfigurationPolicyAssociationResult& WithTargetId(const Aws::String& value) { SetTargetId(value); return *this;}
-    inline StartConfigurationPolicyAssociationResult& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
-    inline StartConfigurationPolicyAssociationResult& WithTargetId(const char* value) { SetTargetId(value); return *this;}
+    inline const Aws::String& GetTargetId() const { return m_targetId; }
+    template<typename TargetIdT = Aws::String>
+    void SetTargetId(TargetIdT&& value) { m_targetIdHasBeenSet = true; m_targetId = std::forward<TargetIdT>(value); }
+    template<typename TargetIdT = Aws::String>
+    StartConfigurationPolicyAssociationResult& WithTargetId(TargetIdT&& value) { SetTargetId(std::forward<TargetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,11 +64,9 @@ namespace Model
      * <p> Indicates whether the target is an Amazon Web Services account,
      * organizational unit, or the organization root. </p>
      */
-    inline const TargetType& GetTargetType() const{ return m_targetType; }
-    inline void SetTargetType(const TargetType& value) { m_targetType = value; }
-    inline void SetTargetType(TargetType&& value) { m_targetType = std::move(value); }
-    inline StartConfigurationPolicyAssociationResult& WithTargetType(const TargetType& value) { SetTargetType(value); return *this;}
-    inline StartConfigurationPolicyAssociationResult& WithTargetType(TargetType&& value) { SetTargetType(std::move(value)); return *this;}
+    inline TargetType GetTargetType() const { return m_targetType; }
+    inline void SetTargetType(TargetType value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
+    inline StartConfigurationPolicyAssociationResult& WithTargetType(TargetType value) { SetTargetType(value); return *this;}
     ///@}
 
     ///@{
@@ -81,11 +75,9 @@ namespace Model
      * configuration was directly applied by the Security Hub delegated administrator
      * or inherited from a parent. </p>
      */
-    inline const AssociationType& GetAssociationType() const{ return m_associationType; }
-    inline void SetAssociationType(const AssociationType& value) { m_associationType = value; }
-    inline void SetAssociationType(AssociationType&& value) { m_associationType = std::move(value); }
-    inline StartConfigurationPolicyAssociationResult& WithAssociationType(const AssociationType& value) { SetAssociationType(value); return *this;}
-    inline StartConfigurationPolicyAssociationResult& WithAssociationType(AssociationType&& value) { SetAssociationType(std::move(value)); return *this;}
+    inline AssociationType GetAssociationType() const { return m_associationType; }
+    inline void SetAssociationType(AssociationType value) { m_associationTypeHasBeenSet = true; m_associationType = value; }
+    inline StartConfigurationPolicyAssociationResult& WithAssociationType(AssociationType value) { SetAssociationType(value); return *this;}
     ///@}
 
     ///@{
@@ -93,11 +85,11 @@ namespace Model
      * <p> The date and time, in UTC and ISO 8601 format, that the configuration policy
      * association was last updated. </p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAt = std::move(value); }
-    inline StartConfigurationPolicyAssociationResult& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline StartConfigurationPolicyAssociationResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    StartConfigurationPolicyAssociationResult& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,11 +97,9 @@ namespace Model
      * <p> The current status of the association between the specified target and the
      * configuration. </p>
      */
-    inline const ConfigurationPolicyAssociationStatus& GetAssociationStatus() const{ return m_associationStatus; }
-    inline void SetAssociationStatus(const ConfigurationPolicyAssociationStatus& value) { m_associationStatus = value; }
-    inline void SetAssociationStatus(ConfigurationPolicyAssociationStatus&& value) { m_associationStatus = std::move(value); }
-    inline StartConfigurationPolicyAssociationResult& WithAssociationStatus(const ConfigurationPolicyAssociationStatus& value) { SetAssociationStatus(value); return *this;}
-    inline StartConfigurationPolicyAssociationResult& WithAssociationStatus(ConfigurationPolicyAssociationStatus&& value) { SetAssociationStatus(std::move(value)); return *this;}
+    inline ConfigurationPolicyAssociationStatus GetAssociationStatus() const { return m_associationStatus; }
+    inline void SetAssociationStatus(ConfigurationPolicyAssociationStatus value) { m_associationStatusHasBeenSet = true; m_associationStatus = value; }
+    inline StartConfigurationPolicyAssociationResult& WithAssociationStatus(ConfigurationPolicyAssociationStatus value) { SetAssociationStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -117,42 +107,46 @@ namespace Model
      * <p> An explanation for a <code>FAILED</code> value for
      * <code>AssociationStatus</code>. </p>
      */
-    inline const Aws::String& GetAssociationStatusMessage() const{ return m_associationStatusMessage; }
-    inline void SetAssociationStatusMessage(const Aws::String& value) { m_associationStatusMessage = value; }
-    inline void SetAssociationStatusMessage(Aws::String&& value) { m_associationStatusMessage = std::move(value); }
-    inline void SetAssociationStatusMessage(const char* value) { m_associationStatusMessage.assign(value); }
-    inline StartConfigurationPolicyAssociationResult& WithAssociationStatusMessage(const Aws::String& value) { SetAssociationStatusMessage(value); return *this;}
-    inline StartConfigurationPolicyAssociationResult& WithAssociationStatusMessage(Aws::String&& value) { SetAssociationStatusMessage(std::move(value)); return *this;}
-    inline StartConfigurationPolicyAssociationResult& WithAssociationStatusMessage(const char* value) { SetAssociationStatusMessage(value); return *this;}
+    inline const Aws::String& GetAssociationStatusMessage() const { return m_associationStatusMessage; }
+    template<typename AssociationStatusMessageT = Aws::String>
+    void SetAssociationStatusMessage(AssociationStatusMessageT&& value) { m_associationStatusMessageHasBeenSet = true; m_associationStatusMessage = std::forward<AssociationStatusMessageT>(value); }
+    template<typename AssociationStatusMessageT = Aws::String>
+    StartConfigurationPolicyAssociationResult& WithAssociationStatusMessage(AssociationStatusMessageT&& value) { SetAssociationStatusMessage(std::forward<AssociationStatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartConfigurationPolicyAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartConfigurationPolicyAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartConfigurationPolicyAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartConfigurationPolicyAssociationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_configurationPolicyId;
+    bool m_configurationPolicyIdHasBeenSet = false;
 
     Aws::String m_targetId;
+    bool m_targetIdHasBeenSet = false;
 
-    TargetType m_targetType;
+    TargetType m_targetType{TargetType::NOT_SET};
+    bool m_targetTypeHasBeenSet = false;
 
-    AssociationType m_associationType;
+    AssociationType m_associationType{AssociationType::NOT_SET};
+    bool m_associationTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
+    bool m_updatedAtHasBeenSet = false;
 
-    ConfigurationPolicyAssociationStatus m_associationStatus;
+    ConfigurationPolicyAssociationStatus m_associationStatus{ConfigurationPolicyAssociationStatus::NOT_SET};
+    bool m_associationStatusHasBeenSet = false;
 
     Aws::String m_associationStatusMessage;
+    bool m_associationStatusMessageHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

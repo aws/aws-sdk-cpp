@@ -12,12 +12,6 @@ using namespace Aws::AppConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateExtensionAssociationRequest::UpdateExtensionAssociationRequest() : 
-    m_extensionAssociationIdHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 Aws::String UpdateExtensionAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

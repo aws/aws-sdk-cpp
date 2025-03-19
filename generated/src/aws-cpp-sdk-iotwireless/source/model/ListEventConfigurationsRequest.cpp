@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListEventConfigurationsRequest::ListEventConfigurationsRequest() : 
-    m_resourceType(EventNotificationResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListEventConfigurationsRequest::SerializePayload() const
 {
   return {};

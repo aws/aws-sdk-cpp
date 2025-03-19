@@ -33,7 +33,7 @@ namespace Model
   class RejectedRecord
   {
   public:
-    AWS_TIMESTREAMWRITE_API RejectedRecord();
+    AWS_TIMESTREAMWRITE_API RejectedRecord() = default;
     AWS_TIMESTREAMWRITE_API RejectedRecord(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMWRITE_API RejectedRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p> The index of the record in the input request for WriteRecords. Indexes begin
      * with 0. </p>
      */
-    inline int GetRecordIndex() const{ return m_recordIndex; }
+    inline int GetRecordIndex() const { return m_recordIndex; }
     inline bool RecordIndexHasBeenSet() const { return m_recordIndexHasBeenSet; }
     inline void SetRecordIndex(int value) { m_recordIndexHasBeenSet = true; m_recordIndex = value; }
     inline RejectedRecord& WithRecordIndex(int value) { SetRecordIndex(value); return *this;}
@@ -77,14 +77,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Access
      * Management</a> in the Timestream Developer Guide. </p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline RejectedRecord& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline RejectedRecord& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline RejectedRecord& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    RejectedRecord& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,20 +91,20 @@ namespace Model
      * where an identical record exists with a higher version than the version in the
      * write request.</p>
      */
-    inline long long GetExistingVersion() const{ return m_existingVersion; }
+    inline long long GetExistingVersion() const { return m_existingVersion; }
     inline bool ExistingVersionHasBeenSet() const { return m_existingVersionHasBeenSet; }
     inline void SetExistingVersion(long long value) { m_existingVersionHasBeenSet = true; m_existingVersion = value; }
     inline RejectedRecord& WithExistingVersion(long long value) { SetExistingVersion(value); return *this;}
     ///@}
   private:
 
-    int m_recordIndex;
+    int m_recordIndex{0};
     bool m_recordIndexHasBeenSet = false;
 
     Aws::String m_reason;
     bool m_reasonHasBeenSet = false;
 
-    long long m_existingVersion;
+    long long m_existingVersion{0};
     bool m_existingVersionHasBeenSet = false;
   };
 

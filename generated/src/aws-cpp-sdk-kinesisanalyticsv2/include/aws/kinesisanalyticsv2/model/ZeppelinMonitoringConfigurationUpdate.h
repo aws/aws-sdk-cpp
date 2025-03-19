@@ -32,7 +32,7 @@ namespace Model
   class ZeppelinMonitoringConfigurationUpdate
   {
   public:
-    AWS_KINESISANALYTICSV2_API ZeppelinMonitoringConfigurationUpdate();
+    AWS_KINESISANALYTICSV2_API ZeppelinMonitoringConfigurationUpdate() = default;
     AWS_KINESISANALYTICSV2_API ZeppelinMonitoringConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API ZeppelinMonitoringConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>Updates to the logging level for Apache Zeppelin within a Managed Service for
      * Apache Flink Studio notebook.</p>
      */
-    inline const LogLevel& GetLogLevelUpdate() const{ return m_logLevelUpdate; }
+    inline LogLevel GetLogLevelUpdate() const { return m_logLevelUpdate; }
     inline bool LogLevelUpdateHasBeenSet() const { return m_logLevelUpdateHasBeenSet; }
-    inline void SetLogLevelUpdate(const LogLevel& value) { m_logLevelUpdateHasBeenSet = true; m_logLevelUpdate = value; }
-    inline void SetLogLevelUpdate(LogLevel&& value) { m_logLevelUpdateHasBeenSet = true; m_logLevelUpdate = std::move(value); }
-    inline ZeppelinMonitoringConfigurationUpdate& WithLogLevelUpdate(const LogLevel& value) { SetLogLevelUpdate(value); return *this;}
-    inline ZeppelinMonitoringConfigurationUpdate& WithLogLevelUpdate(LogLevel&& value) { SetLogLevelUpdate(std::move(value)); return *this;}
+    inline void SetLogLevelUpdate(LogLevel value) { m_logLevelUpdateHasBeenSet = true; m_logLevelUpdate = value; }
+    inline ZeppelinMonitoringConfigurationUpdate& WithLogLevelUpdate(LogLevel value) { SetLogLevelUpdate(value); return *this;}
     ///@}
   private:
 
-    LogLevel m_logLevelUpdate;
+    LogLevel m_logLevelUpdate{LogLevel::NOT_SET};
     bool m_logLevelUpdateHasBeenSet = false;
   };
 

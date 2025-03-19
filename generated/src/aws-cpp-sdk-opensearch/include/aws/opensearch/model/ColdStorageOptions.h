@@ -32,7 +32,7 @@ namespace Model
   class ColdStorageOptions
   {
   public:
-    AWS_OPENSEARCHSERVICE_API ColdStorageOptions();
+    AWS_OPENSEARCHSERVICE_API ColdStorageOptions() = default;
     AWS_OPENSEARCHSERVICE_API ColdStorageOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API ColdStorageOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
      * <p>Whether to enable or disable cold storage on the domain. You must enable
      * UltraWarm storage to enable cold storage.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline ColdStorageOptions& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

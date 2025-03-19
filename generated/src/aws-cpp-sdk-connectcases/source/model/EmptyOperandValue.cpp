@@ -18,10 +18,6 @@ namespace ConnectCases
 namespace Model
 {
 
-EmptyOperandValue::EmptyOperandValue()
-{
-}
-
 EmptyOperandValue::EmptyOperandValue(JsonView jsonValue)
 {
   *this = jsonValue;

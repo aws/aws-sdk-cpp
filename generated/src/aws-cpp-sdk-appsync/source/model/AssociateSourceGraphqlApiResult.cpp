@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociateSourceGraphqlApiResult::AssociateSourceGraphqlApiResult()
-{
-}
-
 AssociateSourceGraphqlApiResult::AssociateSourceGraphqlApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ AssociateSourceGraphqlApiResult& AssociateSourceGraphqlApiResult::operator =(con
   if(jsonValue.ValueExists("sourceApiAssociation"))
   {
     m_sourceApiAssociation = jsonValue.GetObject("sourceApiAssociation");
-
+    m_sourceApiAssociationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

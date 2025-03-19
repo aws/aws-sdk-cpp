@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-ExportResourceSpecification::ExportResourceSpecification() : 
-    m_botExportSpecificationHasBeenSet(false),
-    m_botLocaleExportSpecificationHasBeenSet(false),
-    m_customVocabularyExportSpecificationHasBeenSet(false),
-    m_testSetExportSpecificationHasBeenSet(false)
-{
-}
-
 ExportResourceSpecification::ExportResourceSpecification(JsonView jsonValue)
-  : ExportResourceSpecification()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ExportResourceSpecification& ExportResourceSpecification::operator =(JsonView js
   if(jsonValue.ValueExists("botExportSpecification"))
   {
     m_botExportSpecification = jsonValue.GetObject("botExportSpecification");
-
     m_botExportSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botLocaleExportSpecification"))
   {
     m_botLocaleExportSpecification = jsonValue.GetObject("botLocaleExportSpecification");
-
     m_botLocaleExportSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customVocabularyExportSpecification"))
   {
     m_customVocabularyExportSpecification = jsonValue.GetObject("customVocabularyExportSpecification");
-
     m_customVocabularyExportSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testSetExportSpecification"))
   {
     m_testSetExportSpecification = jsonValue.GetObject("testSetExportSpecification");
-
     m_testSetExportSpecificationHasBeenSet = true;
   }
-
   return *this;
 }
 

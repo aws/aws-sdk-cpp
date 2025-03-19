@@ -18,15 +18,7 @@ namespace ECS
 namespace Model
 {
 
-VolumeFrom::VolumeFrom() : 
-    m_sourceContainerHasBeenSet(false),
-    m_readOnly(false),
-    m_readOnlyHasBeenSet(false)
-{
-}
-
 VolumeFrom::VolumeFrom(JsonView jsonValue)
-  : VolumeFrom()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ VolumeFrom& VolumeFrom::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sourceContainer"))
   {
     m_sourceContainer = jsonValue.GetString("sourceContainer");
-
     m_sourceContainerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("readOnly"))
   {
     m_readOnly = jsonValue.GetBool("readOnly");
-
     m_readOnlyHasBeenSet = true;
   }
-
   return *this;
 }
 

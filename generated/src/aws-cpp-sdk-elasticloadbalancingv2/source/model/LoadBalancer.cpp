@@ -20,32 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-LoadBalancer::LoadBalancer() : 
-    m_loadBalancerArnHasBeenSet(false),
-    m_dNSNameHasBeenSet(false),
-    m_canonicalHostedZoneIdHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_loadBalancerNameHasBeenSet(false),
-    m_scheme(LoadBalancerSchemeEnum::NOT_SET),
-    m_schemeHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_type(LoadBalancerTypeEnum::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_customerOwnedIpv4PoolHasBeenSet(false),
-    m_enforceSecurityGroupInboundRulesOnPrivateLinkTrafficHasBeenSet(false),
-    m_enablePrefixForIpv6SourceNat(EnablePrefixForIpv6SourceNatEnum::NOT_SET),
-    m_enablePrefixForIpv6SourceNatHasBeenSet(false),
-    m_ipamPoolsHasBeenSet(false)
-{
-}
-
 LoadBalancer::LoadBalancer(const XmlNode& xmlNode)
-  : LoadBalancer()
 {
   *this = xmlNode;
 }
@@ -89,7 +64,7 @@ LoadBalancer& LoadBalancer::operator =(const XmlNode& xmlNode)
     XmlNode schemeNode = resultNode.FirstChild("Scheme");
     if(!schemeNode.IsNull())
     {
-      m_scheme = LoadBalancerSchemeEnumMapper::GetLoadBalancerSchemeEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(schemeNode.GetText()).c_str()).c_str());
+      m_scheme = LoadBalancerSchemeEnumMapper::GetLoadBalancerSchemeEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(schemeNode.GetText()).c_str()));
       m_schemeHasBeenSet = true;
     }
     XmlNode vpcIdNode = resultNode.FirstChild("VpcId");
@@ -107,13 +82,14 @@ LoadBalancer& LoadBalancer::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = LoadBalancerTypeEnumMapper::GetLoadBalancerTypeEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = LoadBalancerTypeEnumMapper::GetLoadBalancerTypeEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode availabilityZonesNode = resultNode.FirstChild("AvailabilityZones");
     if(!availabilityZonesNode.IsNull())
     {
       XmlNode availabilityZonesMember = availabilityZonesNode.FirstChild("member");
+      m_availabilityZonesHasBeenSet = !availabilityZonesMember.IsNull();
       while(!availabilityZonesMember.IsNull())
       {
         m_availabilityZones.push_back(availabilityZonesMember);
@@ -126,6 +102,7 @@ LoadBalancer& LoadBalancer::operator =(const XmlNode& xmlNode)
     if(!securityGroupsNode.IsNull())
     {
       XmlNode securityGroupsMember = securityGroupsNode.FirstChild("member");
+      m_securityGroupsHasBeenSet = !securityGroupsMember.IsNull();
       while(!securityGroupsMember.IsNull())
       {
         m_securityGroups.push_back(securityGroupsMember.GetText());
@@ -137,7 +114,7 @@ LoadBalancer& LoadBalancer::operator =(const XmlNode& xmlNode)
     XmlNode ipAddressTypeNode = resultNode.FirstChild("IpAddressType");
     if(!ipAddressTypeNode.IsNull())
     {
-      m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()).c_str());
+      m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipAddressTypeNode.GetText()).c_str()));
       m_ipAddressTypeHasBeenSet = true;
     }
     XmlNode customerOwnedIpv4PoolNode = resultNode.FirstChild("CustomerOwnedIpv4Pool");
@@ -155,7 +132,7 @@ LoadBalancer& LoadBalancer::operator =(const XmlNode& xmlNode)
     XmlNode enablePrefixForIpv6SourceNatNode = resultNode.FirstChild("EnablePrefixForIpv6SourceNat");
     if(!enablePrefixForIpv6SourceNatNode.IsNull())
     {
-      m_enablePrefixForIpv6SourceNat = EnablePrefixForIpv6SourceNatEnumMapper::GetEnablePrefixForIpv6SourceNatEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enablePrefixForIpv6SourceNatNode.GetText()).c_str()).c_str());
+      m_enablePrefixForIpv6SourceNat = EnablePrefixForIpv6SourceNatEnumMapper::GetEnablePrefixForIpv6SourceNatEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enablePrefixForIpv6SourceNatNode.GetText()).c_str()));
       m_enablePrefixForIpv6SourceNatHasBeenSet = true;
     }
     XmlNode ipamPoolsNode = resultNode.FirstChild("IpamPools");

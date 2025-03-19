@@ -18,15 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-WorkloadEstimateUsageQuantity::WorkloadEstimateUsageQuantity() : 
-    m_unitHasBeenSet(false),
-    m_amount(0.0),
-    m_amountHasBeenSet(false)
-{
-}
-
 WorkloadEstimateUsageQuantity::WorkloadEstimateUsageQuantity(JsonView jsonValue)
-  : WorkloadEstimateUsageQuantity()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ WorkloadEstimateUsageQuantity& WorkloadEstimateUsageQuantity::operator =(JsonVie
   if(jsonValue.ValueExists("unit"))
   {
     m_unit = jsonValue.GetString("unit");
-
     m_unitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("amount"))
   {
     m_amount = jsonValue.GetDouble("amount");
-
     m_amountHasBeenSet = true;
   }
-
   return *this;
 }
 

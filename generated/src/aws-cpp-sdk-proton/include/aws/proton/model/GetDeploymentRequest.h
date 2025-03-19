@@ -21,7 +21,7 @@ namespace Model
   class GetDeploymentRequest : public ProtonRequest
   {
   public:
-    AWS_PROTON_API GetDeploymentRequest();
+    AWS_PROTON_API GetDeploymentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,42 +38,36 @@ namespace Model
     /**
      * <p>The name of a component that you want to get the detailed data for.</p>
      */
-    inline const Aws::String& GetComponentName() const{ return m_componentName; }
+    inline const Aws::String& GetComponentName() const { return m_componentName; }
     inline bool ComponentNameHasBeenSet() const { return m_componentNameHasBeenSet; }
-    inline void SetComponentName(const Aws::String& value) { m_componentNameHasBeenSet = true; m_componentName = value; }
-    inline void SetComponentName(Aws::String&& value) { m_componentNameHasBeenSet = true; m_componentName = std::move(value); }
-    inline void SetComponentName(const char* value) { m_componentNameHasBeenSet = true; m_componentName.assign(value); }
-    inline GetDeploymentRequest& WithComponentName(const Aws::String& value) { SetComponentName(value); return *this;}
-    inline GetDeploymentRequest& WithComponentName(Aws::String&& value) { SetComponentName(std::move(value)); return *this;}
-    inline GetDeploymentRequest& WithComponentName(const char* value) { SetComponentName(value); return *this;}
+    template<typename ComponentNameT = Aws::String>
+    void SetComponentName(ComponentNameT&& value) { m_componentNameHasBeenSet = true; m_componentName = std::forward<ComponentNameT>(value); }
+    template<typename ComponentNameT = Aws::String>
+    GetDeploymentRequest& WithComponentName(ComponentNameT&& value) { SetComponentName(std::forward<ComponentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of a environment that you want to get the detailed data for.</p>
      */
-    inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
+    inline const Aws::String& GetEnvironmentName() const { return m_environmentName; }
     inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
-    inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
-    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::move(value); }
-    inline void SetEnvironmentName(const char* value) { m_environmentNameHasBeenSet = true; m_environmentName.assign(value); }
-    inline GetDeploymentRequest& WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
-    inline GetDeploymentRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(std::move(value)); return *this;}
-    inline GetDeploymentRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
+    template<typename EnvironmentNameT = Aws::String>
+    void SetEnvironmentName(EnvironmentNameT&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::forward<EnvironmentNameT>(value); }
+    template<typename EnvironmentNameT = Aws::String>
+    GetDeploymentRequest& WithEnvironmentName(EnvironmentNameT&& value) { SetEnvironmentName(std::forward<EnvironmentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the deployment that you want to get the detailed data for.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline GetDeploymentRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetDeploymentRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetDeploymentRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetDeploymentRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,28 +75,24 @@ namespace Model
      * <p>The name of the service instance associated with the given deployment ID.
      * <code>serviceName</code> must be specified to identify the service instance.</p>
      */
-    inline const Aws::String& GetServiceInstanceName() const{ return m_serviceInstanceName; }
+    inline const Aws::String& GetServiceInstanceName() const { return m_serviceInstanceName; }
     inline bool ServiceInstanceNameHasBeenSet() const { return m_serviceInstanceNameHasBeenSet; }
-    inline void SetServiceInstanceName(const Aws::String& value) { m_serviceInstanceNameHasBeenSet = true; m_serviceInstanceName = value; }
-    inline void SetServiceInstanceName(Aws::String&& value) { m_serviceInstanceNameHasBeenSet = true; m_serviceInstanceName = std::move(value); }
-    inline void SetServiceInstanceName(const char* value) { m_serviceInstanceNameHasBeenSet = true; m_serviceInstanceName.assign(value); }
-    inline GetDeploymentRequest& WithServiceInstanceName(const Aws::String& value) { SetServiceInstanceName(value); return *this;}
-    inline GetDeploymentRequest& WithServiceInstanceName(Aws::String&& value) { SetServiceInstanceName(std::move(value)); return *this;}
-    inline GetDeploymentRequest& WithServiceInstanceName(const char* value) { SetServiceInstanceName(value); return *this;}
+    template<typename ServiceInstanceNameT = Aws::String>
+    void SetServiceInstanceName(ServiceInstanceNameT&& value) { m_serviceInstanceNameHasBeenSet = true; m_serviceInstanceName = std::forward<ServiceInstanceNameT>(value); }
+    template<typename ServiceInstanceNameT = Aws::String>
+    GetDeploymentRequest& WithServiceInstanceName(ServiceInstanceNameT&& value) { SetServiceInstanceName(std::forward<ServiceInstanceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the service associated with the given deployment ID.</p>
      */
-    inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+    inline const Aws::String& GetServiceName() const { return m_serviceName; }
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-    inline GetDeploymentRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-    inline GetDeploymentRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-    inline GetDeploymentRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+    template<typename ServiceNameT = Aws::String>
+    void SetServiceName(ServiceNameT&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::forward<ServiceNameT>(value); }
+    template<typename ServiceNameT = Aws::String>
+    GetDeploymentRequest& WithServiceName(ServiceNameT&& value) { SetServiceName(std::forward<ServiceNameT>(value)); return *this;}
     ///@}
   private:
 

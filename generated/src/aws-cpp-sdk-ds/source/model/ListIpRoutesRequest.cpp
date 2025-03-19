@@ -12,14 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListIpRoutesRequest::ListIpRoutesRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String ListIpRoutesRequest::SerializePayload() const
 {
   JsonValue payload;

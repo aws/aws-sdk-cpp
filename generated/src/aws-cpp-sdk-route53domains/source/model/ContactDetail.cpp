@@ -18,28 +18,7 @@ namespace Route53Domains
 namespace Model
 {
 
-ContactDetail::ContactDetail() : 
-    m_firstNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
-    m_contactType(ContactType::NOT_SET),
-    m_contactTypeHasBeenSet(false),
-    m_organizationNameHasBeenSet(false),
-    m_addressLine1HasBeenSet(false),
-    m_addressLine2HasBeenSet(false),
-    m_cityHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_countryCode(CountryCode::NOT_SET),
-    m_countryCodeHasBeenSet(false),
-    m_zipCodeHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_faxHasBeenSet(false),
-    m_extraParamsHasBeenSet(false)
-{
-}
-
 ContactDetail::ContactDetail(JsonView jsonValue)
-  : ContactDetail()
 {
   *this = jsonValue;
 }
@@ -49,94 +28,68 @@ ContactDetail& ContactDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FirstName"))
   {
     m_firstName = jsonValue.GetString("FirstName");
-
     m_firstNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastName"))
   {
     m_lastName = jsonValue.GetString("LastName");
-
     m_lastNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContactType"))
   {
     m_contactType = ContactTypeMapper::GetContactTypeForName(jsonValue.GetString("ContactType"));
-
     m_contactTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationName"))
   {
     m_organizationName = jsonValue.GetString("OrganizationName");
-
     m_organizationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddressLine1"))
   {
     m_addressLine1 = jsonValue.GetString("AddressLine1");
-
     m_addressLine1HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddressLine2"))
   {
     m_addressLine2 = jsonValue.GetString("AddressLine2");
-
     m_addressLine2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("City"))
   {
     m_city = jsonValue.GetString("City");
-
     m_cityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetString("State");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CountryCode"))
   {
     m_countryCode = CountryCodeMapper::GetCountryCodeForName(jsonValue.GetString("CountryCode"));
-
     m_countryCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ZipCode"))
   {
     m_zipCode = jsonValue.GetString("ZipCode");
-
     m_zipCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhoneNumber"))
   {
     m_phoneNumber = jsonValue.GetString("PhoneNumber");
-
     m_phoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Email"))
   {
     m_email = jsonValue.GetString("Email");
-
     m_emailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Fax"))
   {
     m_fax = jsonValue.GetString("Fax");
-
     m_faxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExtraParams"))
   {
     Aws::Utils::Array<JsonView> extraParamsJsonList = jsonValue.GetArray("ExtraParams");
@@ -146,7 +99,6 @@ ContactDetail& ContactDetail::operator =(JsonView jsonValue)
     }
     m_extraParamsHasBeenSet = true;
   }
-
   return *this;
 }
 

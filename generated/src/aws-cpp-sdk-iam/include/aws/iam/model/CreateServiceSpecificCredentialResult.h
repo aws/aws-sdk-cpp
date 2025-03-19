@@ -28,7 +28,7 @@ namespace Model
   class CreateServiceSpecificCredentialResult
   {
   public:
-    AWS_IAM_API CreateServiceSpecificCredentialResult();
+    AWS_IAM_API CreateServiceSpecificCredentialResult() = default;
     AWS_IAM_API CreateServiceSpecificCredentialResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_IAM_API CreateServiceSpecificCredentialResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -41,26 +41,28 @@ namespace Model
      * Instead, you must reset the password with
      * <a>ResetServiceSpecificCredential</a>.</p> 
      */
-    inline const ServiceSpecificCredential& GetServiceSpecificCredential() const{ return m_serviceSpecificCredential; }
-    inline void SetServiceSpecificCredential(const ServiceSpecificCredential& value) { m_serviceSpecificCredential = value; }
-    inline void SetServiceSpecificCredential(ServiceSpecificCredential&& value) { m_serviceSpecificCredential = std::move(value); }
-    inline CreateServiceSpecificCredentialResult& WithServiceSpecificCredential(const ServiceSpecificCredential& value) { SetServiceSpecificCredential(value); return *this;}
-    inline CreateServiceSpecificCredentialResult& WithServiceSpecificCredential(ServiceSpecificCredential&& value) { SetServiceSpecificCredential(std::move(value)); return *this;}
+    inline const ServiceSpecificCredential& GetServiceSpecificCredential() const { return m_serviceSpecificCredential; }
+    template<typename ServiceSpecificCredentialT = ServiceSpecificCredential>
+    void SetServiceSpecificCredential(ServiceSpecificCredentialT&& value) { m_serviceSpecificCredentialHasBeenSet = true; m_serviceSpecificCredential = std::forward<ServiceSpecificCredentialT>(value); }
+    template<typename ServiceSpecificCredentialT = ServiceSpecificCredential>
+    CreateServiceSpecificCredentialResult& WithServiceSpecificCredential(ServiceSpecificCredentialT&& value) { SetServiceSpecificCredential(std::forward<ServiceSpecificCredentialT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateServiceSpecificCredentialResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateServiceSpecificCredentialResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateServiceSpecificCredentialResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     ServiceSpecificCredential m_serviceSpecificCredential;
+    bool m_serviceSpecificCredentialHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,19 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeStorageSystemResourceMetricsRequest::DescribeStorageSystemResourceMetricsRequest() : 
-    m_discoveryJobArnHasBeenSet(false),
-    m_resourceType(DiscoveryResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeStorageSystemResourceMetricsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class DocLink
   {
   public:
-    AWS_RDS_API DocLink();
+    AWS_RDS_API DocLink() = default;
     AWS_RDS_API DocLink(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API DocLink& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The text with the link to documentation for the recommendation.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline DocLink& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline DocLink& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline DocLink& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    DocLink& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The URL for the documentation for the recommendation.</p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline DocLink& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline DocLink& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline DocLink& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    DocLink& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
   private:
 

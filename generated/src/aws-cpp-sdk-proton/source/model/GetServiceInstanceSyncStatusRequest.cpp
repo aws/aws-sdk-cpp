@@ -12,12 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetServiceInstanceSyncStatusRequest::GetServiceInstanceSyncStatusRequest() : 
-    m_serviceInstanceNameHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
-{
-}
-
 Aws::String GetServiceInstanceSyncStatusRequest::SerializePayload() const
 {
   JsonValue payload;

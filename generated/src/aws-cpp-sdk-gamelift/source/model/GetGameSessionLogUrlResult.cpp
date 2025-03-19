@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetGameSessionLogUrlResult::GetGameSessionLogUrlResult()
-{
-}
-
 GetGameSessionLogUrlResult::GetGameSessionLogUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetGameSessionLogUrlResult& GetGameSessionLogUrlResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("PreSignedUrl"))
   {
     m_preSignedUrl = jsonValue.GetString("PreSignedUrl");
-
+    m_preSignedUrlHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

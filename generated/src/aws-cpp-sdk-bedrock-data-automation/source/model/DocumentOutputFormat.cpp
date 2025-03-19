@@ -18,14 +18,7 @@ namespace BedrockDataAutomation
 namespace Model
 {
 
-DocumentOutputFormat::DocumentOutputFormat() : 
-    m_textFormatHasBeenSet(false),
-    m_additionalFileFormatHasBeenSet(false)
-{
-}
-
 DocumentOutputFormat::DocumentOutputFormat(JsonView jsonValue)
-  : DocumentOutputFormat()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DocumentOutputFormat& DocumentOutputFormat::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("textFormat"))
   {
     m_textFormat = jsonValue.GetObject("textFormat");
-
     m_textFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("additionalFileFormat"))
   {
     m_additionalFileFormat = jsonValue.GetObject("additionalFileFormat");
-
     m_additionalFileFormatHasBeenSet = true;
   }
-
   return *this;
 }
 

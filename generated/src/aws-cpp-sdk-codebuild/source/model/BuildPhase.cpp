@@ -18,21 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-BuildPhase::BuildPhase() : 
-    m_phaseType(BuildPhaseType::NOT_SET),
-    m_phaseTypeHasBeenSet(false),
-    m_phaseStatus(StatusType::NOT_SET),
-    m_phaseStatusHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false),
-    m_contextsHasBeenSet(false)
-{
-}
-
 BuildPhase::BuildPhase(JsonView jsonValue)
-  : BuildPhase()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ BuildPhase& BuildPhase::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("phaseType"))
   {
     m_phaseType = BuildPhaseTypeMapper::GetBuildPhaseTypeForName(jsonValue.GetString("phaseType"));
-
     m_phaseTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("phaseStatus"))
   {
     m_phaseStatus = StatusTypeMapper::GetStatusTypeForName(jsonValue.GetString("phaseStatus"));
-
     m_phaseStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("durationInSeconds"))
   {
     m_durationInSeconds = jsonValue.GetInt64("durationInSeconds");
-
     m_durationInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contexts"))
   {
     Aws::Utils::Array<JsonView> contextsJsonList = jsonValue.GetArray("contexts");
@@ -83,7 +59,6 @@ BuildPhase& BuildPhase::operator =(JsonView jsonValue)
     }
     m_contextsHasBeenSet = true;
   }
-
   return *this;
 }
 

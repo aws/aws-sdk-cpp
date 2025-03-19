@@ -18,14 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-SavedAddress::SavedAddress() : 
-    m_addressHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
-{
-}
-
 SavedAddress::SavedAddress(JsonView jsonValue)
-  : SavedAddress()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SavedAddress& SavedAddress::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Address"))
   {
     m_address = jsonValue.GetString("Address");
-
     m_addressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

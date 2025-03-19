@@ -33,7 +33,7 @@ namespace Model
   class DeleteLaunchTemplateVersionsResponseErrorItem
   {
   public:
-    AWS_EC2_API DeleteLaunchTemplateVersionsResponseErrorItem();
+    AWS_EC2_API DeleteLaunchTemplateVersionsResponseErrorItem() = default;
     AWS_EC2_API DeleteLaunchTemplateVersionsResponseErrorItem(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API DeleteLaunchTemplateVersionsResponseErrorItem& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,35 +45,31 @@ namespace Model
     /**
      * <p>The ID of the launch template.</p>
      */
-    inline const Aws::String& GetLaunchTemplateId() const{ return m_launchTemplateId; }
+    inline const Aws::String& GetLaunchTemplateId() const { return m_launchTemplateId; }
     inline bool LaunchTemplateIdHasBeenSet() const { return m_launchTemplateIdHasBeenSet; }
-    inline void SetLaunchTemplateId(const Aws::String& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = value; }
-    inline void SetLaunchTemplateId(Aws::String&& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = std::move(value); }
-    inline void SetLaunchTemplateId(const char* value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId.assign(value); }
-    inline DeleteLaunchTemplateVersionsResponseErrorItem& WithLaunchTemplateId(const Aws::String& value) { SetLaunchTemplateId(value); return *this;}
-    inline DeleteLaunchTemplateVersionsResponseErrorItem& WithLaunchTemplateId(Aws::String&& value) { SetLaunchTemplateId(std::move(value)); return *this;}
-    inline DeleteLaunchTemplateVersionsResponseErrorItem& WithLaunchTemplateId(const char* value) { SetLaunchTemplateId(value); return *this;}
+    template<typename LaunchTemplateIdT = Aws::String>
+    void SetLaunchTemplateId(LaunchTemplateIdT&& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = std::forward<LaunchTemplateIdT>(value); }
+    template<typename LaunchTemplateIdT = Aws::String>
+    DeleteLaunchTemplateVersionsResponseErrorItem& WithLaunchTemplateId(LaunchTemplateIdT&& value) { SetLaunchTemplateId(std::forward<LaunchTemplateIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the launch template.</p>
      */
-    inline const Aws::String& GetLaunchTemplateName() const{ return m_launchTemplateName; }
+    inline const Aws::String& GetLaunchTemplateName() const { return m_launchTemplateName; }
     inline bool LaunchTemplateNameHasBeenSet() const { return m_launchTemplateNameHasBeenSet; }
-    inline void SetLaunchTemplateName(const Aws::String& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = value; }
-    inline void SetLaunchTemplateName(Aws::String&& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = std::move(value); }
-    inline void SetLaunchTemplateName(const char* value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName.assign(value); }
-    inline DeleteLaunchTemplateVersionsResponseErrorItem& WithLaunchTemplateName(const Aws::String& value) { SetLaunchTemplateName(value); return *this;}
-    inline DeleteLaunchTemplateVersionsResponseErrorItem& WithLaunchTemplateName(Aws::String&& value) { SetLaunchTemplateName(std::move(value)); return *this;}
-    inline DeleteLaunchTemplateVersionsResponseErrorItem& WithLaunchTemplateName(const char* value) { SetLaunchTemplateName(value); return *this;}
+    template<typename LaunchTemplateNameT = Aws::String>
+    void SetLaunchTemplateName(LaunchTemplateNameT&& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = std::forward<LaunchTemplateNameT>(value); }
+    template<typename LaunchTemplateNameT = Aws::String>
+    DeleteLaunchTemplateVersionsResponseErrorItem& WithLaunchTemplateName(LaunchTemplateNameT&& value) { SetLaunchTemplateName(std::forward<LaunchTemplateNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version number of the launch template.</p>
      */
-    inline long long GetVersionNumber() const{ return m_versionNumber; }
+    inline long long GetVersionNumber() const { return m_versionNumber; }
     inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
     inline void SetVersionNumber(long long value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
     inline DeleteLaunchTemplateVersionsResponseErrorItem& WithVersionNumber(long long value) { SetVersionNumber(value); return *this;}
@@ -83,12 +79,12 @@ namespace Model
     /**
      * <p>Information about the error.</p>
      */
-    inline const ResponseError& GetResponseError() const{ return m_responseError; }
+    inline const ResponseError& GetResponseError() const { return m_responseError; }
     inline bool ResponseErrorHasBeenSet() const { return m_responseErrorHasBeenSet; }
-    inline void SetResponseError(const ResponseError& value) { m_responseErrorHasBeenSet = true; m_responseError = value; }
-    inline void SetResponseError(ResponseError&& value) { m_responseErrorHasBeenSet = true; m_responseError = std::move(value); }
-    inline DeleteLaunchTemplateVersionsResponseErrorItem& WithResponseError(const ResponseError& value) { SetResponseError(value); return *this;}
-    inline DeleteLaunchTemplateVersionsResponseErrorItem& WithResponseError(ResponseError&& value) { SetResponseError(std::move(value)); return *this;}
+    template<typename ResponseErrorT = ResponseError>
+    void SetResponseError(ResponseErrorT&& value) { m_responseErrorHasBeenSet = true; m_responseError = std::forward<ResponseErrorT>(value); }
+    template<typename ResponseErrorT = ResponseError>
+    DeleteLaunchTemplateVersionsResponseErrorItem& WithResponseError(ResponseErrorT&& value) { SetResponseError(std::forward<ResponseErrorT>(value)); return *this;}
     ///@}
   private:
 
@@ -98,7 +94,7 @@ namespace Model
     Aws::String m_launchTemplateName;
     bool m_launchTemplateNameHasBeenSet = false;
 
-    long long m_versionNumber;
+    long long m_versionNumber{0};
     bool m_versionNumberHasBeenSet = false;
 
     ResponseError m_responseError;

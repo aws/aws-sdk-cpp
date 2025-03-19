@@ -12,11 +12,6 @@ using namespace Aws::Support::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSeverityLevelsRequest::DescribeSeverityLevelsRequest() : 
-    m_languageHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSeverityLevelsRequest::SerializePayload() const
 {
   JsonValue payload;

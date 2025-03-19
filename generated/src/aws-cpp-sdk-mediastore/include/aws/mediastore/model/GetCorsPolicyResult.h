@@ -29,7 +29,7 @@ namespace Model
   class GetCorsPolicyResult
   {
   public:
-    AWS_MEDIASTORE_API GetCorsPolicyResult();
+    AWS_MEDIASTORE_API GetCorsPolicyResult() = default;
     AWS_MEDIASTORE_API GetCorsPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIASTORE_API GetCorsPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>The CORS policy assigned to the container.</p>
      */
-    inline const Aws::Vector<CorsRule>& GetCorsPolicy() const{ return m_corsPolicy; }
-    inline void SetCorsPolicy(const Aws::Vector<CorsRule>& value) { m_corsPolicy = value; }
-    inline void SetCorsPolicy(Aws::Vector<CorsRule>&& value) { m_corsPolicy = std::move(value); }
-    inline GetCorsPolicyResult& WithCorsPolicy(const Aws::Vector<CorsRule>& value) { SetCorsPolicy(value); return *this;}
-    inline GetCorsPolicyResult& WithCorsPolicy(Aws::Vector<CorsRule>&& value) { SetCorsPolicy(std::move(value)); return *this;}
-    inline GetCorsPolicyResult& AddCorsPolicy(const CorsRule& value) { m_corsPolicy.push_back(value); return *this; }
-    inline GetCorsPolicyResult& AddCorsPolicy(CorsRule&& value) { m_corsPolicy.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CorsRule>& GetCorsPolicy() const { return m_corsPolicy; }
+    template<typename CorsPolicyT = Aws::Vector<CorsRule>>
+    void SetCorsPolicy(CorsPolicyT&& value) { m_corsPolicyHasBeenSet = true; m_corsPolicy = std::forward<CorsPolicyT>(value); }
+    template<typename CorsPolicyT = Aws::Vector<CorsRule>>
+    GetCorsPolicyResult& WithCorsPolicy(CorsPolicyT&& value) { SetCorsPolicy(std::forward<CorsPolicyT>(value)); return *this;}
+    template<typename CorsPolicyT = CorsRule>
+    GetCorsPolicyResult& AddCorsPolicy(CorsPolicyT&& value) { m_corsPolicyHasBeenSet = true; m_corsPolicy.emplace_back(std::forward<CorsPolicyT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCorsPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCorsPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCorsPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCorsPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CorsRule> m_corsPolicy;
+    bool m_corsPolicyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

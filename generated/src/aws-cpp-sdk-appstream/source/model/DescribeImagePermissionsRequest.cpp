@@ -12,15 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeImagePermissionsRequest::DescribeImagePermissionsRequest() : 
-    m_nameHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_sharedAwsAccountIdsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeImagePermissionsRequest::SerializePayload() const
 {
   JsonValue payload;

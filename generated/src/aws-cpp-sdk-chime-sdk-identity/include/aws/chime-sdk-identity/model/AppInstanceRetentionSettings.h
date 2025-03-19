@@ -32,7 +32,7 @@ namespace Model
   class AppInstanceRetentionSettings
   {
   public:
-    AWS_CHIMESDKIDENTITY_API AppInstanceRetentionSettings();
+    AWS_CHIMESDKIDENTITY_API AppInstanceRetentionSettings() = default;
     AWS_CHIMESDKIDENTITY_API AppInstanceRetentionSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKIDENTITY_API AppInstanceRetentionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The length of time in days to retain the messages in a channel.</p>
      */
-    inline const ChannelRetentionSettings& GetChannelRetentionSettings() const{ return m_channelRetentionSettings; }
+    inline const ChannelRetentionSettings& GetChannelRetentionSettings() const { return m_channelRetentionSettings; }
     inline bool ChannelRetentionSettingsHasBeenSet() const { return m_channelRetentionSettingsHasBeenSet; }
-    inline void SetChannelRetentionSettings(const ChannelRetentionSettings& value) { m_channelRetentionSettingsHasBeenSet = true; m_channelRetentionSettings = value; }
-    inline void SetChannelRetentionSettings(ChannelRetentionSettings&& value) { m_channelRetentionSettingsHasBeenSet = true; m_channelRetentionSettings = std::move(value); }
-    inline AppInstanceRetentionSettings& WithChannelRetentionSettings(const ChannelRetentionSettings& value) { SetChannelRetentionSettings(value); return *this;}
-    inline AppInstanceRetentionSettings& WithChannelRetentionSettings(ChannelRetentionSettings&& value) { SetChannelRetentionSettings(std::move(value)); return *this;}
+    template<typename ChannelRetentionSettingsT = ChannelRetentionSettings>
+    void SetChannelRetentionSettings(ChannelRetentionSettingsT&& value) { m_channelRetentionSettingsHasBeenSet = true; m_channelRetentionSettings = std::forward<ChannelRetentionSettingsT>(value); }
+    template<typename ChannelRetentionSettingsT = ChannelRetentionSettings>
+    AppInstanceRetentionSettings& WithChannelRetentionSettings(ChannelRetentionSettingsT&& value) { SetChannelRetentionSettings(std::forward<ChannelRetentionSettingsT>(value)); return *this;}
     ///@}
   private:
 

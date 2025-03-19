@@ -28,7 +28,7 @@ namespace Model
   class ListRulesPackagesResult
   {
   public:
-    AWS_INSPECTOR_API ListRulesPackagesResult();
+    AWS_INSPECTOR_API ListRulesPackagesResult() = default;
     AWS_INSPECTOR_API ListRulesPackagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INSPECTOR_API ListRulesPackagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,14 +38,13 @@ namespace Model
      * <p>The list of ARNs that specifies the rules packages returned by the
      * action.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRulesPackageArns() const{ return m_rulesPackageArns; }
-    inline void SetRulesPackageArns(const Aws::Vector<Aws::String>& value) { m_rulesPackageArns = value; }
-    inline void SetRulesPackageArns(Aws::Vector<Aws::String>&& value) { m_rulesPackageArns = std::move(value); }
-    inline ListRulesPackagesResult& WithRulesPackageArns(const Aws::Vector<Aws::String>& value) { SetRulesPackageArns(value); return *this;}
-    inline ListRulesPackagesResult& WithRulesPackageArns(Aws::Vector<Aws::String>&& value) { SetRulesPackageArns(std::move(value)); return *this;}
-    inline ListRulesPackagesResult& AddRulesPackageArns(const Aws::String& value) { m_rulesPackageArns.push_back(value); return *this; }
-    inline ListRulesPackagesResult& AddRulesPackageArns(Aws::String&& value) { m_rulesPackageArns.push_back(std::move(value)); return *this; }
-    inline ListRulesPackagesResult& AddRulesPackageArns(const char* value) { m_rulesPackageArns.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetRulesPackageArns() const { return m_rulesPackageArns; }
+    template<typename RulesPackageArnsT = Aws::Vector<Aws::String>>
+    void SetRulesPackageArns(RulesPackageArnsT&& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns = std::forward<RulesPackageArnsT>(value); }
+    template<typename RulesPackageArnsT = Aws::Vector<Aws::String>>
+    ListRulesPackagesResult& WithRulesPackageArns(RulesPackageArnsT&& value) { SetRulesPackageArns(std::forward<RulesPackageArnsT>(value)); return *this;}
+    template<typename RulesPackageArnsT = Aws::String>
+    ListRulesPackagesResult& AddRulesPackageArns(RulesPackageArnsT&& value) { m_rulesPackageArnsHasBeenSet = true; m_rulesPackageArns.emplace_back(std::forward<RulesPackageArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +54,31 @@ namespace Model
      * <b>nextToken</b> parameter in a subsequent pagination request. If there is no
      * more data to be listed, this parameter is set to null.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListRulesPackagesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRulesPackagesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRulesPackagesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRulesPackagesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListRulesPackagesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListRulesPackagesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListRulesPackagesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListRulesPackagesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_rulesPackageArns;
+    bool m_rulesPackageArnsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,7 +32,7 @@ namespace Model
   class ResourceAlreadyExistsFault
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API ResourceAlreadyExistsFault();
+    AWS_DATABASEMIGRATIONSERVICE_API ResourceAlreadyExistsFault() = default;
     AWS_DATABASEMIGRATIONSERVICE_API ResourceAlreadyExistsFault(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API ResourceAlreadyExistsFault& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p/>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ResourceAlreadyExistsFault& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ResourceAlreadyExistsFault& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ResourceAlreadyExistsFault& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ResourceAlreadyExistsFault& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline ResourceAlreadyExistsFault& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline ResourceAlreadyExistsFault& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline ResourceAlreadyExistsFault& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    ResourceAlreadyExistsFault& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
   private:
 

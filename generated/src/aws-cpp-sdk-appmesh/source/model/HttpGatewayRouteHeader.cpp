@@ -18,16 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-HttpGatewayRouteHeader::HttpGatewayRouteHeader() : 
-    m_invert(false),
-    m_invertHasBeenSet(false),
-    m_matchHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 HttpGatewayRouteHeader::HttpGatewayRouteHeader(JsonView jsonValue)
-  : HttpGatewayRouteHeader()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ HttpGatewayRouteHeader& HttpGatewayRouteHeader::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("invert"))
   {
     m_invert = jsonValue.GetBool("invert");
-
     m_invertHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("match"))
   {
     m_match = jsonValue.GetObject("match");
-
     m_matchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

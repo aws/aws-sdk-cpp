@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-PromptSearchCriteria::PromptSearchCriteria() : 
-    m_orConditionsHasBeenSet(false),
-    m_andConditionsHasBeenSet(false),
-    m_stringConditionHasBeenSet(false)
-{
-}
-
 PromptSearchCriteria::PromptSearchCriteria(JsonView jsonValue)
-  : PromptSearchCriteria()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ PromptSearchCriteria& PromptSearchCriteria::operator =(JsonView jsonValue)
     }
     m_orConditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AndConditions"))
   {
     Aws::Utils::Array<JsonView> andConditionsJsonList = jsonValue.GetArray("AndConditions");
@@ -52,14 +43,11 @@ PromptSearchCriteria& PromptSearchCriteria::operator =(JsonView jsonValue)
     }
     m_andConditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StringCondition"))
   {
     m_stringCondition = jsonValue.GetObject("StringCondition");
-
     m_stringConditionHasBeenSet = true;
   }
-
   return *this;
 }
 

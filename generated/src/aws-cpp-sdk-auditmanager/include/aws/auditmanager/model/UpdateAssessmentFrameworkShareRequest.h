@@ -23,7 +23,7 @@ namespace Model
   class UpdateAssessmentFrameworkShareRequest : public AuditManagerRequest
   {
   public:
-    AWS_AUDITMANAGER_API UpdateAssessmentFrameworkShareRequest();
+    AWS_AUDITMANAGER_API UpdateAssessmentFrameworkShareRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p> The unique identifier for the share request. </p>
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline UpdateAssessmentFrameworkShareRequest& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateAssessmentFrameworkShareRequest& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateAssessmentFrameworkShareRequest& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateAssessmentFrameworkShareRequest& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,34 +51,30 @@ namespace Model
      * <p>Specifies whether the share request is a sent request or a received
      * request.</p>
      */
-    inline const ShareRequestType& GetRequestType() const{ return m_requestType; }
+    inline ShareRequestType GetRequestType() const { return m_requestType; }
     inline bool RequestTypeHasBeenSet() const { return m_requestTypeHasBeenSet; }
-    inline void SetRequestType(const ShareRequestType& value) { m_requestTypeHasBeenSet = true; m_requestType = value; }
-    inline void SetRequestType(ShareRequestType&& value) { m_requestTypeHasBeenSet = true; m_requestType = std::move(value); }
-    inline UpdateAssessmentFrameworkShareRequest& WithRequestType(const ShareRequestType& value) { SetRequestType(value); return *this;}
-    inline UpdateAssessmentFrameworkShareRequest& WithRequestType(ShareRequestType&& value) { SetRequestType(std::move(value)); return *this;}
+    inline void SetRequestType(ShareRequestType value) { m_requestTypeHasBeenSet = true; m_requestType = value; }
+    inline UpdateAssessmentFrameworkShareRequest& WithRequestType(ShareRequestType value) { SetRequestType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the update action for the share request.</p>
      */
-    inline const ShareRequestAction& GetAction() const{ return m_action; }
+    inline ShareRequestAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const ShareRequestAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(ShareRequestAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline UpdateAssessmentFrameworkShareRequest& WithAction(const ShareRequestAction& value) { SetAction(value); return *this;}
-    inline UpdateAssessmentFrameworkShareRequest& WithAction(ShareRequestAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(ShareRequestAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline UpdateAssessmentFrameworkShareRequest& WithAction(ShareRequestAction value) { SetAction(value); return *this;}
     ///@}
   private:
 
     Aws::String m_requestId;
     bool m_requestIdHasBeenSet = false;
 
-    ShareRequestType m_requestType;
+    ShareRequestType m_requestType{ShareRequestType::NOT_SET};
     bool m_requestTypeHasBeenSet = false;
 
-    ShareRequestAction m_action;
+    ShareRequestAction m_action{ShareRequestAction::NOT_SET};
     bool m_actionHasBeenSet = false;
   };
 

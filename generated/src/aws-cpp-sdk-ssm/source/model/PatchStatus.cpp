@@ -18,17 +18,7 @@ namespace SSM
 namespace Model
 {
 
-PatchStatus::PatchStatus() : 
-    m_deploymentStatus(PatchDeploymentStatus::NOT_SET),
-    m_deploymentStatusHasBeenSet(false),
-    m_complianceLevel(PatchComplianceLevel::NOT_SET),
-    m_complianceLevelHasBeenSet(false),
-    m_approvalDateHasBeenSet(false)
-{
-}
-
 PatchStatus::PatchStatus(JsonView jsonValue)
-  : PatchStatus()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ PatchStatus& PatchStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DeploymentStatus"))
   {
     m_deploymentStatus = PatchDeploymentStatusMapper::GetPatchDeploymentStatusForName(jsonValue.GetString("DeploymentStatus"));
-
     m_deploymentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComplianceLevel"))
   {
     m_complianceLevel = PatchComplianceLevelMapper::GetPatchComplianceLevelForName(jsonValue.GetString("ComplianceLevel"));
-
     m_complianceLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApprovalDate"))
   {
     m_approvalDate = jsonValue.GetDouble("ApprovalDate");
-
     m_approvalDateHasBeenSet = true;
   }
-
   return *this;
 }
 

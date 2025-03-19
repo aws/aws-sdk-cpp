@@ -18,18 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-EnhancedMetricsConfig::EnhancedMetricsConfig() : 
-    m_resolverLevelMetricsBehavior(ResolverLevelMetricsBehavior::NOT_SET),
-    m_resolverLevelMetricsBehaviorHasBeenSet(false),
-    m_dataSourceLevelMetricsBehavior(DataSourceLevelMetricsBehavior::NOT_SET),
-    m_dataSourceLevelMetricsBehaviorHasBeenSet(false),
-    m_operationLevelMetricsConfig(OperationLevelMetricsConfig::NOT_SET),
-    m_operationLevelMetricsConfigHasBeenSet(false)
-{
-}
-
 EnhancedMetricsConfig::EnhancedMetricsConfig(JsonView jsonValue)
-  : EnhancedMetricsConfig()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ EnhancedMetricsConfig& EnhancedMetricsConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resolverLevelMetricsBehavior"))
   {
     m_resolverLevelMetricsBehavior = ResolverLevelMetricsBehaviorMapper::GetResolverLevelMetricsBehaviorForName(jsonValue.GetString("resolverLevelMetricsBehavior"));
-
     m_resolverLevelMetricsBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataSourceLevelMetricsBehavior"))
   {
     m_dataSourceLevelMetricsBehavior = DataSourceLevelMetricsBehaviorMapper::GetDataSourceLevelMetricsBehaviorForName(jsonValue.GetString("dataSourceLevelMetricsBehavior"));
-
     m_dataSourceLevelMetricsBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operationLevelMetricsConfig"))
   {
     m_operationLevelMetricsConfig = OperationLevelMetricsConfigMapper::GetOperationLevelMetricsConfigForName(jsonValue.GetString("operationLevelMetricsConfig"));
-
     m_operationLevelMetricsConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

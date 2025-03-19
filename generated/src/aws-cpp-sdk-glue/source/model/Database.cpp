@@ -18,21 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Database::Database() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_locationUriHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_createTableDefaultPermissionsHasBeenSet(false),
-    m_targetDatabaseHasBeenSet(false),
-    m_catalogIdHasBeenSet(false),
-    m_federatedDatabaseHasBeenSet(false)
-{
-}
-
 Database::Database(JsonView jsonValue)
-  : Database()
 {
   *this = jsonValue;
 }
@@ -42,24 +28,18 @@ Database& Database::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocationUri"))
   {
     m_locationUri = jsonValue.GetString("LocationUri");
-
     m_locationUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -69,14 +49,11 @@ Database& Database::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTime"))
   {
     m_createTime = jsonValue.GetDouble("CreateTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTableDefaultPermissions"))
   {
     Aws::Utils::Array<JsonView> createTableDefaultPermissionsJsonList = jsonValue.GetArray("CreateTableDefaultPermissions");
@@ -86,28 +63,21 @@ Database& Database::operator =(JsonView jsonValue)
     }
     m_createTableDefaultPermissionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetDatabase"))
   {
     m_targetDatabase = jsonValue.GetObject("TargetDatabase");
-
     m_targetDatabaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CatalogId"))
   {
     m_catalogId = jsonValue.GetString("CatalogId");
-
     m_catalogIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FederatedDatabase"))
   {
     m_federatedDatabase = jsonValue.GetObject("FederatedDatabase");
-
     m_federatedDatabaseHasBeenSet = true;
   }
-
   return *this;
 }
 

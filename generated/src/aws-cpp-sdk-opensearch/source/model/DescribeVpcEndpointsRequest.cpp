@@ -12,11 +12,6 @@ using namespace Aws::OpenSearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeVpcEndpointsRequest::DescribeVpcEndpointsRequest() : 
-    m_vpcEndpointIdsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeVpcEndpointsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutVoiceConnectorExternalSystemsConfigurationResult::PutVoiceConnectorExternalSystemsConfigurationResult()
-{
-}
-
 PutVoiceConnectorExternalSystemsConfigurationResult::PutVoiceConnectorExternalSystemsConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ PutVoiceConnectorExternalSystemsConfigurationResult& PutVoiceConnectorExternalSy
   if(jsonValue.ValueExists("ExternalSystemsConfiguration"))
   {
     m_externalSystemsConfiguration = jsonValue.GetObject("ExternalSystemsConfiguration");
-
+    m_externalSystemsConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

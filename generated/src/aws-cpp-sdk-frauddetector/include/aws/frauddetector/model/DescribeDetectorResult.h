@@ -29,7 +29,7 @@ namespace Model
   class DescribeDetectorResult
   {
   public:
-    AWS_FRAUDDETECTOR_API DescribeDetectorResult();
+    AWS_FRAUDDETECTOR_API DescribeDetectorResult() = default;
     AWS_FRAUDDETECTOR_API DescribeDetectorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FRAUDDETECTOR_API DescribeDetectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,75 +38,72 @@ namespace Model
     /**
      * <p>The detector ID.</p>
      */
-    inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
-    inline void SetDetectorId(const Aws::String& value) { m_detectorId = value; }
-    inline void SetDetectorId(Aws::String&& value) { m_detectorId = std::move(value); }
-    inline void SetDetectorId(const char* value) { m_detectorId.assign(value); }
-    inline DescribeDetectorResult& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
-    inline DescribeDetectorResult& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
-    inline DescribeDetectorResult& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
+    inline const Aws::String& GetDetectorId() const { return m_detectorId; }
+    template<typename DetectorIdT = Aws::String>
+    void SetDetectorId(DetectorIdT&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::forward<DetectorIdT>(value); }
+    template<typename DetectorIdT = Aws::String>
+    DescribeDetectorResult& WithDetectorId(DetectorIdT&& value) { SetDetectorId(std::forward<DetectorIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status and description for each detector version.</p>
      */
-    inline const Aws::Vector<DetectorVersionSummary>& GetDetectorVersionSummaries() const{ return m_detectorVersionSummaries; }
-    inline void SetDetectorVersionSummaries(const Aws::Vector<DetectorVersionSummary>& value) { m_detectorVersionSummaries = value; }
-    inline void SetDetectorVersionSummaries(Aws::Vector<DetectorVersionSummary>&& value) { m_detectorVersionSummaries = std::move(value); }
-    inline DescribeDetectorResult& WithDetectorVersionSummaries(const Aws::Vector<DetectorVersionSummary>& value) { SetDetectorVersionSummaries(value); return *this;}
-    inline DescribeDetectorResult& WithDetectorVersionSummaries(Aws::Vector<DetectorVersionSummary>&& value) { SetDetectorVersionSummaries(std::move(value)); return *this;}
-    inline DescribeDetectorResult& AddDetectorVersionSummaries(const DetectorVersionSummary& value) { m_detectorVersionSummaries.push_back(value); return *this; }
-    inline DescribeDetectorResult& AddDetectorVersionSummaries(DetectorVersionSummary&& value) { m_detectorVersionSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DetectorVersionSummary>& GetDetectorVersionSummaries() const { return m_detectorVersionSummaries; }
+    template<typename DetectorVersionSummariesT = Aws::Vector<DetectorVersionSummary>>
+    void SetDetectorVersionSummaries(DetectorVersionSummariesT&& value) { m_detectorVersionSummariesHasBeenSet = true; m_detectorVersionSummaries = std::forward<DetectorVersionSummariesT>(value); }
+    template<typename DetectorVersionSummariesT = Aws::Vector<DetectorVersionSummary>>
+    DescribeDetectorResult& WithDetectorVersionSummaries(DetectorVersionSummariesT&& value) { SetDetectorVersionSummaries(std::forward<DetectorVersionSummariesT>(value)); return *this;}
+    template<typename DetectorVersionSummariesT = DetectorVersionSummary>
+    DescribeDetectorResult& AddDetectorVersionSummaries(DetectorVersionSummariesT&& value) { m_detectorVersionSummariesHasBeenSet = true; m_detectorVersionSummaries.emplace_back(std::forward<DetectorVersionSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The next token to be used for subsequent requests.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeDetectorResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeDetectorResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeDetectorResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeDetectorResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The detector ARN.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline DescribeDetectorResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DescribeDetectorResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DescribeDetectorResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DescribeDetectorResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDetectorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDetectorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDetectorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDetectorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_detectorId;
+    bool m_detectorIdHasBeenSet = false;
 
     Aws::Vector<DetectorVersionSummary> m_detectorVersionSummaries;
+    bool m_detectorVersionSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

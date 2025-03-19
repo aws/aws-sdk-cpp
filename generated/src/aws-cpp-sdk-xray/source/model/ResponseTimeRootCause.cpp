@@ -18,15 +18,7 @@ namespace XRay
 namespace Model
 {
 
-ResponseTimeRootCause::ResponseTimeRootCause() : 
-    m_servicesHasBeenSet(false),
-    m_clientImpacting(false),
-    m_clientImpactingHasBeenSet(false)
-{
-}
-
 ResponseTimeRootCause::ResponseTimeRootCause(JsonView jsonValue)
-  : ResponseTimeRootCause()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ ResponseTimeRootCause& ResponseTimeRootCause::operator =(JsonView jsonValue)
     }
     m_servicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientImpacting"))
   {
     m_clientImpacting = jsonValue.GetBool("ClientImpacting");
-
     m_clientImpactingHasBeenSet = true;
   }
-
   return *this;
 }
 

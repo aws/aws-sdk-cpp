@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RegisterVolumeResult::RegisterVolumeResult()
-{
-}
-
 RegisterVolumeResult::RegisterVolumeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ RegisterVolumeResult& RegisterVolumeResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("VolumeId"))
   {
     m_volumeId = jsonValue.GetString("VolumeId");
-
+    m_volumeIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

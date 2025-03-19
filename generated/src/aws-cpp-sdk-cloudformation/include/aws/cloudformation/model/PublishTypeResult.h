@@ -28,7 +28,7 @@ namespace Model
   class PublishTypeResult
   {
   public:
-    AWS_CLOUDFORMATION_API PublishTypeResult();
+    AWS_CLOUDFORMATION_API PublishTypeResult() = default;
     AWS_CLOUDFORMATION_API PublishTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFORMATION_API PublishTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) assigned to the public extension upon
      * publication.</p>
      */
-    inline const Aws::String& GetPublicTypeArn() const{ return m_publicTypeArn; }
-    inline void SetPublicTypeArn(const Aws::String& value) { m_publicTypeArn = value; }
-    inline void SetPublicTypeArn(Aws::String&& value) { m_publicTypeArn = std::move(value); }
-    inline void SetPublicTypeArn(const char* value) { m_publicTypeArn.assign(value); }
-    inline PublishTypeResult& WithPublicTypeArn(const Aws::String& value) { SetPublicTypeArn(value); return *this;}
-    inline PublishTypeResult& WithPublicTypeArn(Aws::String&& value) { SetPublicTypeArn(std::move(value)); return *this;}
-    inline PublishTypeResult& WithPublicTypeArn(const char* value) { SetPublicTypeArn(value); return *this;}
+    inline const Aws::String& GetPublicTypeArn() const { return m_publicTypeArn; }
+    template<typename PublicTypeArnT = Aws::String>
+    void SetPublicTypeArn(PublicTypeArnT&& value) { m_publicTypeArnHasBeenSet = true; m_publicTypeArn = std::forward<PublicTypeArnT>(value); }
+    template<typename PublicTypeArnT = Aws::String>
+    PublishTypeResult& WithPublicTypeArn(PublicTypeArnT&& value) { SetPublicTypeArn(std::forward<PublicTypeArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline PublishTypeResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline PublishTypeResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    PublishTypeResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_publicTypeArn;
+    bool m_publicTypeArnHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

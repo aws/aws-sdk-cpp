@@ -18,14 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-IdcAuthConfiguration::IdcAuthConfiguration() : 
-    m_idcApplicationArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 IdcAuthConfiguration::IdcAuthConfiguration(JsonView jsonValue)
-  : IdcAuthConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IdcAuthConfiguration& IdcAuthConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("idcApplicationArn"))
   {
     m_idcApplicationArn = jsonValue.GetString("idcApplicationArn");
-
     m_idcApplicationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

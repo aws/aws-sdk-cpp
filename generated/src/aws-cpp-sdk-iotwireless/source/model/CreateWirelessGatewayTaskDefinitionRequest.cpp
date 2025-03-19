@@ -12,17 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWirelessGatewayTaskDefinitionRequest::CreateWirelessGatewayTaskDefinitionRequest() : 
-    m_autoCreateTasks(false),
-    m_autoCreateTasksHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_updateHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateWirelessGatewayTaskDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

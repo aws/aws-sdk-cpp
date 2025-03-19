@@ -18,13 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-AccountLevelPermissions::AccountLevelPermissions() : 
-    m_blockPublicAccessHasBeenSet(false)
-{
-}
-
 AccountLevelPermissions::AccountLevelPermissions(JsonView jsonValue)
-  : AccountLevelPermissions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AccountLevelPermissions& AccountLevelPermissions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("blockPublicAccess"))
   {
     m_blockPublicAccess = jsonValue.GetObject("blockPublicAccess");
-
     m_blockPublicAccessHasBeenSet = true;
   }
-
   return *this;
 }
 

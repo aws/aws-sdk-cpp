@@ -18,15 +18,7 @@ namespace DLM
 namespace Model
 {
 
-EncryptionConfiguration::EncryptionConfiguration() : 
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_cmkArnHasBeenSet(false)
-{
-}
-
 EncryptionConfiguration::EncryptionConfiguration(JsonView jsonValue)
-  : EncryptionConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EncryptionConfiguration& EncryptionConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Encrypted"))
   {
     m_encrypted = jsonValue.GetBool("Encrypted");
-
     m_encryptedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CmkArn"))
   {
     m_cmkArn = jsonValue.GetString("CmkArn");
-
     m_cmkArnHasBeenSet = true;
   }
-
   return *this;
 }
 

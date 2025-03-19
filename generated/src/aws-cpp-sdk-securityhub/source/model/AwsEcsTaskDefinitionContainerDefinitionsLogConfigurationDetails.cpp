@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails() : 
-    m_logDriverHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_secretOptionsHasBeenSet(false)
-{
-}
-
 AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails::AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails(JsonView jsonValue)
-  : AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& AwsEcsTaskDefin
   if(jsonValue.ValueExists("LogDriver"))
   {
     m_logDriver = jsonValue.GetString("LogDriver");
-
     m_logDriverHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Options"))
   {
     Aws::Map<Aws::String, JsonView> optionsJsonMap = jsonValue.GetObject("Options").GetAllObjects();
@@ -49,7 +39,6 @@ AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& AwsEcsTaskDefin
     }
     m_optionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretOptions"))
   {
     Aws::Utils::Array<JsonView> secretOptionsJsonList = jsonValue.GetArray("SecretOptions");
@@ -59,7 +48,6 @@ AwsEcsTaskDefinitionContainerDefinitionsLogConfigurationDetails& AwsEcsTaskDefin
     }
     m_secretOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-SensitivityInspectionTemplateIncludes::SensitivityInspectionTemplateIncludes() : 
-    m_allowListIdsHasBeenSet(false),
-    m_customDataIdentifierIdsHasBeenSet(false),
-    m_managedDataIdentifierIdsHasBeenSet(false)
-{
-}
-
 SensitivityInspectionTemplateIncludes::SensitivityInspectionTemplateIncludes(JsonView jsonValue)
-  : SensitivityInspectionTemplateIncludes()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ SensitivityInspectionTemplateIncludes& SensitivityInspectionTemplateIncludes::op
     }
     m_allowListIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customDataIdentifierIds"))
   {
     Aws::Utils::Array<JsonView> customDataIdentifierIdsJsonList = jsonValue.GetArray("customDataIdentifierIds");
@@ -52,7 +43,6 @@ SensitivityInspectionTemplateIncludes& SensitivityInspectionTemplateIncludes::op
     }
     m_customDataIdentifierIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedDataIdentifierIds"))
   {
     Aws::Utils::Array<JsonView> managedDataIdentifierIdsJsonList = jsonValue.GetArray("managedDataIdentifierIds");
@@ -62,7 +52,6 @@ SensitivityInspectionTemplateIncludes& SensitivityInspectionTemplateIncludes::op
     }
     m_managedDataIdentifierIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

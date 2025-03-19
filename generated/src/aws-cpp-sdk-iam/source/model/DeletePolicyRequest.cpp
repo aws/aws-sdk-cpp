@@ -10,11 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeletePolicyRequest::DeletePolicyRequest() : 
-    m_policyArnHasBeenSet(false)
-{
-}
-
 Aws::String DeletePolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

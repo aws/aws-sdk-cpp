@@ -18,18 +18,7 @@ namespace Athena
 namespace Model
 {
 
-QueryResultsS3AccessGrantsConfiguration::QueryResultsS3AccessGrantsConfiguration() : 
-    m_enableS3AccessGrants(false),
-    m_enableS3AccessGrantsHasBeenSet(false),
-    m_createUserLevelPrefix(false),
-    m_createUserLevelPrefixHasBeenSet(false),
-    m_authenticationType(AuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false)
-{
-}
-
 QueryResultsS3AccessGrantsConfiguration::QueryResultsS3AccessGrantsConfiguration(JsonView jsonValue)
-  : QueryResultsS3AccessGrantsConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ QueryResultsS3AccessGrantsConfiguration& QueryResultsS3AccessGrantsConfiguration
   if(jsonValue.ValueExists("EnableS3AccessGrants"))
   {
     m_enableS3AccessGrants = jsonValue.GetBool("EnableS3AccessGrants");
-
     m_enableS3AccessGrantsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateUserLevelPrefix"))
   {
     m_createUserLevelPrefix = jsonValue.GetBool("CreateUserLevelPrefix");
-
     m_createUserLevelPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthenticationType"))
   {
     m_authenticationType = AuthenticationTypeMapper::GetAuthenticationTypeForName(jsonValue.GetString("AuthenticationType"));
-
     m_authenticationTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

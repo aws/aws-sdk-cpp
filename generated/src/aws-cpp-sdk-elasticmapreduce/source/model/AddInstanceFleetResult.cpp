@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AddInstanceFleetResult::AddInstanceFleetResult()
-{
-}
-
 AddInstanceFleetResult::AddInstanceFleetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ AddInstanceFleetResult& AddInstanceFleetResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("ClusterId"))
   {
     m_clusterId = jsonValue.GetString("ClusterId");
-
+    m_clusterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceFleetId"))
   {
     m_instanceFleetId = jsonValue.GetString("InstanceFleetId");
-
+    m_instanceFleetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterArn"))
   {
     m_clusterArn = jsonValue.GetString("ClusterArn");
-
+    m_clusterArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

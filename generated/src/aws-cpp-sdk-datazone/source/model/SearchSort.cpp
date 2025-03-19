@@ -18,15 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-SearchSort::SearchSort() : 
-    m_attributeHasBeenSet(false),
-    m_order(SortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
-{
-}
-
 SearchSort::SearchSort(JsonView jsonValue)
-  : SearchSort()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SearchSort& SearchSort::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attribute"))
   {
     m_attribute = jsonValue.GetString("attribute");
-
     m_attributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("order"))
   {
     m_order = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("order"));
-
     m_orderHasBeenSet = true;
   }
-
   return *this;
 }
 

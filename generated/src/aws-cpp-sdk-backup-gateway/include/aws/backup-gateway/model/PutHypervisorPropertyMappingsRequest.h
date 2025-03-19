@@ -23,7 +23,7 @@ namespace Model
   class PutHypervisorPropertyMappingsRequest : public BackupGatewayRequest
   {
   public:
-    AWS_BACKUPGATEWAY_API PutHypervisorPropertyMappingsRequest();
+    AWS_BACKUPGATEWAY_API PutHypervisorPropertyMappingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the hypervisor.</p>
      */
-    inline const Aws::String& GetHypervisorArn() const{ return m_hypervisorArn; }
+    inline const Aws::String& GetHypervisorArn() const { return m_hypervisorArn; }
     inline bool HypervisorArnHasBeenSet() const { return m_hypervisorArnHasBeenSet; }
-    inline void SetHypervisorArn(const Aws::String& value) { m_hypervisorArnHasBeenSet = true; m_hypervisorArn = value; }
-    inline void SetHypervisorArn(Aws::String&& value) { m_hypervisorArnHasBeenSet = true; m_hypervisorArn = std::move(value); }
-    inline void SetHypervisorArn(const char* value) { m_hypervisorArnHasBeenSet = true; m_hypervisorArn.assign(value); }
-    inline PutHypervisorPropertyMappingsRequest& WithHypervisorArn(const Aws::String& value) { SetHypervisorArn(value); return *this;}
-    inline PutHypervisorPropertyMappingsRequest& WithHypervisorArn(Aws::String&& value) { SetHypervisorArn(std::move(value)); return *this;}
-    inline PutHypervisorPropertyMappingsRequest& WithHypervisorArn(const char* value) { SetHypervisorArn(value); return *this;}
+    template<typename HypervisorArnT = Aws::String>
+    void SetHypervisorArn(HypervisorArnT&& value) { m_hypervisorArnHasBeenSet = true; m_hypervisorArn = std::forward<HypervisorArnT>(value); }
+    template<typename HypervisorArnT = Aws::String>
+    PutHypervisorPropertyMappingsRequest& WithHypervisorArn(HypervisorArnT&& value) { SetHypervisorArn(std::forward<HypervisorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role.</p>
      */
-    inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
+    inline const Aws::String& GetIamRoleArn() const { return m_iamRoleArn; }
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
-    inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
-    inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
-    inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
-    inline PutHypervisorPropertyMappingsRequest& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
-    inline PutHypervisorPropertyMappingsRequest& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
-    inline PutHypervisorPropertyMappingsRequest& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
+    template<typename IamRoleArnT = Aws::String>
+    void SetIamRoleArn(IamRoleArnT&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::forward<IamRoleArnT>(value); }
+    template<typename IamRoleArnT = Aws::String>
+    PutHypervisorPropertyMappingsRequest& WithIamRoleArn(IamRoleArnT&& value) { SetIamRoleArn(std::forward<IamRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +65,14 @@ namespace Model
      * <p>This action requests the mappings of on-premises VMware tags to the Amazon
      * Web Services tags.</p>
      */
-    inline const Aws::Vector<VmwareToAwsTagMapping>& GetVmwareToAwsTagMappings() const{ return m_vmwareToAwsTagMappings; }
+    inline const Aws::Vector<VmwareToAwsTagMapping>& GetVmwareToAwsTagMappings() const { return m_vmwareToAwsTagMappings; }
     inline bool VmwareToAwsTagMappingsHasBeenSet() const { return m_vmwareToAwsTagMappingsHasBeenSet; }
-    inline void SetVmwareToAwsTagMappings(const Aws::Vector<VmwareToAwsTagMapping>& value) { m_vmwareToAwsTagMappingsHasBeenSet = true; m_vmwareToAwsTagMappings = value; }
-    inline void SetVmwareToAwsTagMappings(Aws::Vector<VmwareToAwsTagMapping>&& value) { m_vmwareToAwsTagMappingsHasBeenSet = true; m_vmwareToAwsTagMappings = std::move(value); }
-    inline PutHypervisorPropertyMappingsRequest& WithVmwareToAwsTagMappings(const Aws::Vector<VmwareToAwsTagMapping>& value) { SetVmwareToAwsTagMappings(value); return *this;}
-    inline PutHypervisorPropertyMappingsRequest& WithVmwareToAwsTagMappings(Aws::Vector<VmwareToAwsTagMapping>&& value) { SetVmwareToAwsTagMappings(std::move(value)); return *this;}
-    inline PutHypervisorPropertyMappingsRequest& AddVmwareToAwsTagMappings(const VmwareToAwsTagMapping& value) { m_vmwareToAwsTagMappingsHasBeenSet = true; m_vmwareToAwsTagMappings.push_back(value); return *this; }
-    inline PutHypervisorPropertyMappingsRequest& AddVmwareToAwsTagMappings(VmwareToAwsTagMapping&& value) { m_vmwareToAwsTagMappingsHasBeenSet = true; m_vmwareToAwsTagMappings.push_back(std::move(value)); return *this; }
+    template<typename VmwareToAwsTagMappingsT = Aws::Vector<VmwareToAwsTagMapping>>
+    void SetVmwareToAwsTagMappings(VmwareToAwsTagMappingsT&& value) { m_vmwareToAwsTagMappingsHasBeenSet = true; m_vmwareToAwsTagMappings = std::forward<VmwareToAwsTagMappingsT>(value); }
+    template<typename VmwareToAwsTagMappingsT = Aws::Vector<VmwareToAwsTagMapping>>
+    PutHypervisorPropertyMappingsRequest& WithVmwareToAwsTagMappings(VmwareToAwsTagMappingsT&& value) { SetVmwareToAwsTagMappings(std::forward<VmwareToAwsTagMappingsT>(value)); return *this;}
+    template<typename VmwareToAwsTagMappingsT = VmwareToAwsTagMapping>
+    PutHypervisorPropertyMappingsRequest& AddVmwareToAwsTagMappings(VmwareToAwsTagMappingsT&& value) { m_vmwareToAwsTagMappingsHasBeenSet = true; m_vmwareToAwsTagMappings.emplace_back(std::forward<VmwareToAwsTagMappingsT>(value)); return *this; }
     ///@}
   private:
 

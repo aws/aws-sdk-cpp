@@ -30,7 +30,7 @@ namespace Model
   class AcceleratorTotalMemoryMiB
   {
   public:
-    AWS_EC2_API AcceleratorTotalMemoryMiB();
+    AWS_EC2_API AcceleratorTotalMemoryMiB() = default;
     AWS_EC2_API AcceleratorTotalMemoryMiB(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API AcceleratorTotalMemoryMiB& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,7 +43,7 @@ namespace Model
      * <p>The minimum amount of accelerator memory, in MiB. If this parameter is not
      * specified, there is no minimum limit.</p>
      */
-    inline int GetMin() const{ return m_min; }
+    inline int GetMin() const { return m_min; }
     inline bool MinHasBeenSet() const { return m_minHasBeenSet; }
     inline void SetMin(int value) { m_minHasBeenSet = true; m_min = value; }
     inline AcceleratorTotalMemoryMiB& WithMin(int value) { SetMin(value); return *this;}
@@ -54,17 +54,17 @@ namespace Model
      * <p>The maximum amount of accelerator memory, in MiB. If this parameter is not
      * specified, there is no maximum limit.</p>
      */
-    inline int GetMax() const{ return m_max; }
+    inline int GetMax() const { return m_max; }
     inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
     inline void SetMax(int value) { m_maxHasBeenSet = true; m_max = value; }
     inline AcceleratorTotalMemoryMiB& WithMax(int value) { SetMax(value); return *this;}
     ///@}
   private:
 
-    int m_min;
+    int m_min{0};
     bool m_minHasBeenSet = false;
 
-    int m_max;
+    int m_max{0};
     bool m_maxHasBeenSet = false;
   };
 

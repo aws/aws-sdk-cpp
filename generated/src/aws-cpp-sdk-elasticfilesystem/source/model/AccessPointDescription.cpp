@@ -19,24 +19,7 @@ namespace EFS
 namespace Model
 {
 
-AccessPointDescription::AccessPointDescription() : 
-    m_clientTokenHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_accessPointIdHasBeenSet(false),
-    m_accessPointArnHasBeenSet(false),
-    m_fileSystemIdHasBeenSet(false),
-    m_posixUserHasBeenSet(false),
-    m_rootDirectoryHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_lifeCycleState(LifeCycleState::NOT_SET),
-    m_lifeCycleStateHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 AccessPointDescription::AccessPointDescription(JsonView jsonValue)
-  : AccessPointDescription()
 {
   *this = jsonValue;
 }
@@ -46,17 +29,13 @@ AccessPointDescription& AccessPointDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClientToken"))
   {
     m_clientToken = jsonValue.GetString("ClientToken");
-
     m_clientTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -66,56 +45,41 @@ AccessPointDescription& AccessPointDescription::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessPointId"))
   {
     m_accessPointId = jsonValue.GetString("AccessPointId");
-
     m_accessPointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessPointArn"))
   {
     m_accessPointArn = jsonValue.GetString("AccessPointArn");
-
     m_accessPointArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileSystemId"))
   {
     m_fileSystemId = jsonValue.GetString("FileSystemId");
-
     m_fileSystemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PosixUser"))
   {
     m_posixUser = jsonValue.GetObject("PosixUser");
-
     m_posixUserHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RootDirectory"))
   {
     m_rootDirectory = jsonValue.GetObject("RootDirectory");
-
     m_rootDirectoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerId"))
   {
     m_ownerId = jsonValue.GetString("OwnerId");
-
     m_ownerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LifeCycleState"))
   {
     m_lifeCycleState = LifeCycleStateMapper::GetLifeCycleStateForName(jsonValue.GetString("LifeCycleState"));
-
     m_lifeCycleStateHasBeenSet = true;
   }
-
   return *this;
 }
 

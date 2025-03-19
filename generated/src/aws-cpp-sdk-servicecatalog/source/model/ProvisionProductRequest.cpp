@@ -12,24 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ProvisionProductRequest::ProvisionProductRequest() : 
-    m_acceptLanguageHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_productNameHasBeenSet(false),
-    m_provisioningArtifactIdHasBeenSet(false),
-    m_provisioningArtifactNameHasBeenSet(false),
-    m_pathIdHasBeenSet(false),
-    m_pathNameHasBeenSet(false),
-    m_provisionedProductNameHasBeenSet(false),
-    m_provisioningParametersHasBeenSet(false),
-    m_provisioningPreferencesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_notificationArnsHasBeenSet(false),
-    m_provisionToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_provisionTokenHasBeenSet(true)
-{
-}
-
 Aws::String ProvisionProductRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class RemovePermissionResult
   {
   public:
-    AWS_CODEGURUPROFILER_API RemovePermissionResult();
+    AWS_CODEGURUPROFILER_API RemovePermissionResult() = default;
     AWS_CODEGURUPROFILER_API RemovePermissionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEGURUPROFILER_API RemovePermissionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,13 +43,11 @@ namespace Model
      * <p> The JSON-formatted resource-based policy on the profiling group after the
      * specified permissions were removed. </p>
      */
-    inline const Aws::String& GetPolicy() const{ return m_policy; }
-    inline void SetPolicy(const Aws::String& value) { m_policy = value; }
-    inline void SetPolicy(Aws::String&& value) { m_policy = std::move(value); }
-    inline void SetPolicy(const char* value) { m_policy.assign(value); }
-    inline RemovePermissionResult& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-    inline RemovePermissionResult& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-    inline RemovePermissionResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    inline const Aws::String& GetPolicy() const { return m_policy; }
+    template<typename PolicyT = Aws::String>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Aws::String>
+    RemovePermissionResult& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,32 +57,31 @@ namespace Model
      * JSON-formatted policy is in the <code>policy</code> element of the response.
      * </p>
      */
-    inline const Aws::String& GetRevisionId() const{ return m_revisionId; }
-    inline void SetRevisionId(const Aws::String& value) { m_revisionId = value; }
-    inline void SetRevisionId(Aws::String&& value) { m_revisionId = std::move(value); }
-    inline void SetRevisionId(const char* value) { m_revisionId.assign(value); }
-    inline RemovePermissionResult& WithRevisionId(const Aws::String& value) { SetRevisionId(value); return *this;}
-    inline RemovePermissionResult& WithRevisionId(Aws::String&& value) { SetRevisionId(std::move(value)); return *this;}
-    inline RemovePermissionResult& WithRevisionId(const char* value) { SetRevisionId(value); return *this;}
+    inline const Aws::String& GetRevisionId() const { return m_revisionId; }
+    template<typename RevisionIdT = Aws::String>
+    void SetRevisionId(RevisionIdT&& value) { m_revisionIdHasBeenSet = true; m_revisionId = std::forward<RevisionIdT>(value); }
+    template<typename RevisionIdT = Aws::String>
+    RemovePermissionResult& WithRevisionId(RevisionIdT&& value) { SetRevisionId(std::forward<RevisionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RemovePermissionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RemovePermissionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RemovePermissionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RemovePermissionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_policy;
+    bool m_policyHasBeenSet = false;
 
     Aws::String m_revisionId;
+    bool m_revisionIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

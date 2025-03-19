@@ -12,11 +12,6 @@ using namespace Aws::drs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopReplicationRequest::StopReplicationRequest() : 
-    m_sourceServerIDHasBeenSet(false)
-{
-}
-
 Aws::String StopReplicationRequest::SerializePayload() const
 {
   JsonValue payload;

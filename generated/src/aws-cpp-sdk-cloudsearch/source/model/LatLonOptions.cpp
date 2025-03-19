@@ -20,22 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-LatLonOptions::LatLonOptions() : 
-    m_defaultValueHasBeenSet(false),
-    m_sourceFieldHasBeenSet(false),
-    m_facetEnabled(false),
-    m_facetEnabledHasBeenSet(false),
-    m_searchEnabled(false),
-    m_searchEnabledHasBeenSet(false),
-    m_returnEnabled(false),
-    m_returnEnabledHasBeenSet(false),
-    m_sortEnabled(false),
-    m_sortEnabledHasBeenSet(false)
-{
-}
-
 LatLonOptions::LatLonOptions(const XmlNode& xmlNode)
-  : LatLonOptions()
 {
   *this = xmlNode;
 }

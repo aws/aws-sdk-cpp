@@ -20,16 +20,7 @@ namespace SimpleDB
 namespace Model
 {
 
-UpdateCondition::UpdateCondition() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_exists(false),
-    m_existsHasBeenSet(false)
-{
-}
-
 UpdateCondition::UpdateCondition(const XmlNode& xmlNode)
-  : UpdateCondition()
 {
   *this = xmlNode;
 }

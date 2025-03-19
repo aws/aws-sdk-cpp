@@ -18,32 +18,7 @@ namespace TranscribeStreamingService
 namespace Model
 {
 
-MedicalScribeStreamDetails::MedicalScribeStreamDetails() : 
-    m_sessionIdHasBeenSet(false),
-    m_streamCreatedAtHasBeenSet(false),
-    m_streamEndedAtHasBeenSet(false),
-    m_languageCode(MedicalScribeLanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_mediaSampleRateHertz(0),
-    m_mediaSampleRateHertzHasBeenSet(false),
-    m_mediaEncoding(MedicalScribeMediaEncoding::NOT_SET),
-    m_mediaEncodingHasBeenSet(false),
-    m_vocabularyNameHasBeenSet(false),
-    m_vocabularyFilterNameHasBeenSet(false),
-    m_vocabularyFilterMethod(MedicalScribeVocabularyFilterMethod::NOT_SET),
-    m_vocabularyFilterMethodHasBeenSet(false),
-    m_resourceAccessRoleArnHasBeenSet(false),
-    m_channelDefinitionsHasBeenSet(false),
-    m_encryptionSettingsHasBeenSet(false),
-    m_streamStatus(MedicalScribeStreamStatus::NOT_SET),
-    m_streamStatusHasBeenSet(false),
-    m_postStreamAnalyticsSettingsHasBeenSet(false),
-    m_postStreamAnalyticsResultHasBeenSet(false)
-{
-}
-
 MedicalScribeStreamDetails::MedicalScribeStreamDetails(JsonView jsonValue)
-  : MedicalScribeStreamDetails()
 {
   *this = jsonValue;
 }
@@ -53,73 +28,53 @@ MedicalScribeStreamDetails& MedicalScribeStreamDetails::operator =(JsonView json
   if(jsonValue.ValueExists("SessionId"))
   {
     m_sessionId = jsonValue.GetString("SessionId");
-
     m_sessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamCreatedAt"))
   {
     m_streamCreatedAt = jsonValue.GetDouble("StreamCreatedAt");
-
     m_streamCreatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamEndedAt"))
   {
     m_streamEndedAt = jsonValue.GetDouble("StreamEndedAt");
-
     m_streamEndedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LanguageCode"))
   {
     m_languageCode = MedicalScribeLanguageCodeMapper::GetMedicalScribeLanguageCodeForName(jsonValue.GetString("LanguageCode"));
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaSampleRateHertz"))
   {
     m_mediaSampleRateHertz = jsonValue.GetInteger("MediaSampleRateHertz");
-
     m_mediaSampleRateHertzHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaEncoding"))
   {
     m_mediaEncoding = MedicalScribeMediaEncodingMapper::GetMedicalScribeMediaEncodingForName(jsonValue.GetString("MediaEncoding"));
-
     m_mediaEncodingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VocabularyName"))
   {
     m_vocabularyName = jsonValue.GetString("VocabularyName");
-
     m_vocabularyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VocabularyFilterName"))
   {
     m_vocabularyFilterName = jsonValue.GetString("VocabularyFilterName");
-
     m_vocabularyFilterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VocabularyFilterMethod"))
   {
     m_vocabularyFilterMethod = MedicalScribeVocabularyFilterMethodMapper::GetMedicalScribeVocabularyFilterMethodForName(jsonValue.GetString("VocabularyFilterMethod"));
-
     m_vocabularyFilterMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceAccessRoleArn"))
   {
     m_resourceAccessRoleArn = jsonValue.GetString("ResourceAccessRoleArn");
-
     m_resourceAccessRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChannelDefinitions"))
   {
     Aws::Utils::Array<JsonView> channelDefinitionsJsonList = jsonValue.GetArray("ChannelDefinitions");
@@ -129,35 +84,26 @@ MedicalScribeStreamDetails& MedicalScribeStreamDetails::operator =(JsonView json
     }
     m_channelDefinitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionSettings"))
   {
     m_encryptionSettings = jsonValue.GetObject("EncryptionSettings");
-
     m_encryptionSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamStatus"))
   {
     m_streamStatus = MedicalScribeStreamStatusMapper::GetMedicalScribeStreamStatusForName(jsonValue.GetString("StreamStatus"));
-
     m_streamStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostStreamAnalyticsSettings"))
   {
     m_postStreamAnalyticsSettings = jsonValue.GetObject("PostStreamAnalyticsSettings");
-
     m_postStreamAnalyticsSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostStreamAnalyticsResult"))
   {
     m_postStreamAnalyticsResult = jsonValue.GetObject("PostStreamAnalyticsResult");
-
     m_postStreamAnalyticsResultHasBeenSet = true;
   }
-
   return *this;
 }
 

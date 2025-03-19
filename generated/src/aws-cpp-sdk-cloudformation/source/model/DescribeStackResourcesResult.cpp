@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeStackResourcesResult::DescribeStackResourcesResult()
-{
-}
-
 DescribeStackResourcesResult::DescribeStackResourcesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ DescribeStackResourcesResult& DescribeStackResourcesResult::operator =(const Aws
     if(!stackResourcesNode.IsNull())
     {
       XmlNode stackResourcesMember = stackResourcesNode.FirstChild("member");
+      m_stackResourcesHasBeenSet = !stackResourcesMember.IsNull();
       while(!stackResourcesMember.IsNull())
       {
         m_stackResources.push_back(stackResourcesMember);
         stackResourcesMember = stackResourcesMember.NextNode("member");
       }
 
+      m_stackResourcesHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::DescribeStackResourcesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

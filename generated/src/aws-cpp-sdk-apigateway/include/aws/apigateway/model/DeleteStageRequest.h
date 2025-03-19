@@ -25,7 +25,7 @@ namespace Model
   class DeleteStageRequest : public APIGatewayRequest
   {
   public:
-    AWS_APIGATEWAY_API DeleteStageRequest();
+    AWS_APIGATEWAY_API DeleteStageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
     /**
      * <p>The string identifier of the associated RestApi.</p>
      */
-    inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
+    inline const Aws::String& GetRestApiId() const { return m_restApiId; }
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
-    inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
-    inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
-    inline DeleteStageRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
-    inline DeleteStageRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
-    inline DeleteStageRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+    template<typename RestApiIdT = Aws::String>
+    void SetRestApiId(RestApiIdT&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::forward<RestApiIdT>(value); }
+    template<typename RestApiIdT = Aws::String>
+    DeleteStageRequest& WithRestApiId(RestApiIdT&& value) { SetRestApiId(std::forward<RestApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Stage resource to delete.</p>
      */
-    inline const Aws::String& GetStageName() const{ return m_stageName; }
+    inline const Aws::String& GetStageName() const { return m_stageName; }
     inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
-    inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
-    inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
-    inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
-    inline DeleteStageRequest& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
-    inline DeleteStageRequest& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
-    inline DeleteStageRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
+    template<typename StageNameT = Aws::String>
+    void SetStageName(StageNameT&& value) { m_stageNameHasBeenSet = true; m_stageName = std::forward<StageNameT>(value); }
+    template<typename StageNameT = Aws::String>
+    DeleteStageRequest& WithStageName(StageNameT&& value) { SetStageName(std::forward<StageNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,11 +12,6 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateNetworkSettingsRequest::DisassociateNetworkSettingsRequest() : 
-    m_portalArnHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateNetworkSettingsRequest::SerializePayload() const
 {
   return {};

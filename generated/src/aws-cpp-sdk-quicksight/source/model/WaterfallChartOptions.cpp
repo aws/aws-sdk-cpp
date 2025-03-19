@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-WaterfallChartOptions::WaterfallChartOptions() : 
-    m_totalBarLabelHasBeenSet(false)
-{
-}
-
 WaterfallChartOptions::WaterfallChartOptions(JsonView jsonValue)
-  : WaterfallChartOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ WaterfallChartOptions& WaterfallChartOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TotalBarLabel"))
   {
     m_totalBarLabel = jsonValue.GetString("TotalBarLabel");
-
     m_totalBarLabelHasBeenSet = true;
   }
-
   return *this;
 }
 

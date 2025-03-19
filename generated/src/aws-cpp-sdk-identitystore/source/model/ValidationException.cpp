@@ -18,14 +18,7 @@ namespace IdentityStore
 namespace Model
 {
 
-ValidationException::ValidationException() : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 ValidationException::ValidationException(JsonView jsonValue)
-  : ValidationException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ValidationException& ValidationException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   return *this;
 }
 

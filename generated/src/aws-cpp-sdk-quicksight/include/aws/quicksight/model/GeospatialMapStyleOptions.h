@@ -31,7 +31,7 @@ namespace Model
   class GeospatialMapStyleOptions
   {
   public:
-    AWS_QUICKSIGHT_API GeospatialMapStyleOptions();
+    AWS_QUICKSIGHT_API GeospatialMapStyleOptions() = default;
     AWS_QUICKSIGHT_API GeospatialMapStyleOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GeospatialMapStyleOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>The base map style of the geospatial map.</p>
      */
-    inline const BaseMapStyleType& GetBaseMapStyle() const{ return m_baseMapStyle; }
+    inline BaseMapStyleType GetBaseMapStyle() const { return m_baseMapStyle; }
     inline bool BaseMapStyleHasBeenSet() const { return m_baseMapStyleHasBeenSet; }
-    inline void SetBaseMapStyle(const BaseMapStyleType& value) { m_baseMapStyleHasBeenSet = true; m_baseMapStyle = value; }
-    inline void SetBaseMapStyle(BaseMapStyleType&& value) { m_baseMapStyleHasBeenSet = true; m_baseMapStyle = std::move(value); }
-    inline GeospatialMapStyleOptions& WithBaseMapStyle(const BaseMapStyleType& value) { SetBaseMapStyle(value); return *this;}
-    inline GeospatialMapStyleOptions& WithBaseMapStyle(BaseMapStyleType&& value) { SetBaseMapStyle(std::move(value)); return *this;}
+    inline void SetBaseMapStyle(BaseMapStyleType value) { m_baseMapStyleHasBeenSet = true; m_baseMapStyle = value; }
+    inline GeospatialMapStyleOptions& WithBaseMapStyle(BaseMapStyleType value) { SetBaseMapStyle(value); return *this;}
     ///@}
   private:
 
-    BaseMapStyleType m_baseMapStyle;
+    BaseMapStyleType m_baseMapStyle{BaseMapStyleType::NOT_SET};
     bool m_baseMapStyleHasBeenSet = false;
   };
 

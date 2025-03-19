@@ -20,13 +20,7 @@ namespace SES
 namespace Model
 {
 
-AlreadyExistsException::AlreadyExistsException() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 AlreadyExistsException::AlreadyExistsException(const XmlNode& xmlNode)
-  : AlreadyExistsException()
 {
   *this = xmlNode;
 }

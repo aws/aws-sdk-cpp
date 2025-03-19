@@ -18,14 +18,7 @@ namespace NetworkFlowMonitor
 namespace Model
 {
 
-TargetResource::TargetResource() : 
-    m_targetIdentifierHasBeenSet(false),
-    m_regionHasBeenSet(false)
-{
-}
-
 TargetResource::TargetResource(JsonView jsonValue)
-  : TargetResource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TargetResource& TargetResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("targetIdentifier"))
   {
     m_targetIdentifier = jsonValue.GetObject("targetIdentifier");
-
     m_targetIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   return *this;
 }
 

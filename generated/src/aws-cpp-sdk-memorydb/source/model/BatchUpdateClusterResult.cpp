@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchUpdateClusterResult::BatchUpdateClusterResult()
-{
-}
-
 BatchUpdateClusterResult::BatchUpdateClusterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchUpdateClusterResult& BatchUpdateClusterResult::operator =(const Aws::Amazon
     {
       m_processedClusters.push_back(processedClustersJsonList[processedClustersIndex].AsObject());
     }
+    m_processedClustersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnprocessedClusters"))
   {
     Aws::Utils::Array<JsonView> unprocessedClustersJsonList = jsonValue.GetArray("UnprocessedClusters");
@@ -45,14 +41,15 @@ BatchUpdateClusterResult& BatchUpdateClusterResult::operator =(const Aws::Amazon
     {
       m_unprocessedClusters.push_back(unprocessedClustersJsonList[unprocessedClustersIndex].AsObject());
     }
+    m_unprocessedClustersHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

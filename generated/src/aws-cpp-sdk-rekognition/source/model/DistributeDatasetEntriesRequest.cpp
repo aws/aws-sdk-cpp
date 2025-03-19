@@ -12,11 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DistributeDatasetEntriesRequest::DistributeDatasetEntriesRequest() : 
-    m_datasetsHasBeenSet(false)
-{
-}
-
 Aws::String DistributeDatasetEntriesRequest::SerializePayload() const
 {
   JsonValue payload;

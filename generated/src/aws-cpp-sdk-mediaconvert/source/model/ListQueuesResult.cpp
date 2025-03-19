@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListQueuesResult::ListQueuesResult() : 
-    m_totalConcurrentJobs(0),
-    m_unallocatedConcurrentJobs(0)
-{
-}
-
 ListQueuesResult::ListQueuesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListQueuesResult()
 {
   *this = result;
 }
@@ -35,9 +28,8 @@ ListQueuesResult& ListQueuesResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queues"))
   {
     Aws::Utils::Array<JsonView> queuesJsonList = jsonValue.GetArray("queues");
@@ -45,26 +37,25 @@ ListQueuesResult& ListQueuesResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_queues.push_back(queuesJsonList[queuesIndex].AsObject());
     }
+    m_queuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalConcurrentJobs"))
   {
     m_totalConcurrentJobs = jsonValue.GetInteger("totalConcurrentJobs");
-
+    m_totalConcurrentJobsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unallocatedConcurrentJobs"))
   {
     m_unallocatedConcurrentJobs = jsonValue.GetInteger("unallocatedConcurrentJobs");
-
+    m_unallocatedConcurrentJobsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

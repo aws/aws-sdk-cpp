@@ -32,7 +32,7 @@ namespace Model
   class EventPayload
   {
   public:
-    AWS_CODECATALYST_API EventPayload();
+    AWS_CODECATALYST_API EventPayload() = default;
     AWS_CODECATALYST_API EventPayload(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECATALYST_API EventPayload& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The type of content in the event payload.</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
+    inline const Aws::String& GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-    inline EventPayload& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline EventPayload& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline EventPayload& WithContentType(const char* value) { SetContentType(value); return *this;}
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    EventPayload& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data included in the event payload.</p>
      */
-    inline const Aws::String& GetData() const{ return m_data; }
+    inline const Aws::String& GetData() const { return m_data; }
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    inline void SetData(const Aws::String& value) { m_dataHasBeenSet = true; m_data = value; }
-    inline void SetData(Aws::String&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-    inline void SetData(const char* value) { m_dataHasBeenSet = true; m_data.assign(value); }
-    inline EventPayload& WithData(const Aws::String& value) { SetData(value); return *this;}
-    inline EventPayload& WithData(Aws::String&& value) { SetData(std::move(value)); return *this;}
-    inline EventPayload& WithData(const char* value) { SetData(value); return *this;}
+    template<typename DataT = Aws::String>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = Aws::String>
+    EventPayload& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
     ///@}
   private:
 

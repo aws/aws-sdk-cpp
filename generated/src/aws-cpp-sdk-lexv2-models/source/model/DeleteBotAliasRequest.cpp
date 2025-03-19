@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteBotAliasRequest::DeleteBotAliasRequest() : 
-    m_botAliasIdHasBeenSet(false),
-    m_botIdHasBeenSet(false),
-    m_skipResourceInUseCheck(false),
-    m_skipResourceInUseCheckHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBotAliasRequest::SerializePayload() const
 {
   return {};

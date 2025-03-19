@@ -18,14 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-RetryOptions::RetryOptions() : 
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false)
-{
-}
-
 RetryOptions::RetryOptions(JsonView jsonValue)
-  : RetryOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RetryOptions& RetryOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DurationInSeconds"))
   {
     m_durationInSeconds = jsonValue.GetInteger("DurationInSeconds");
-
     m_durationInSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

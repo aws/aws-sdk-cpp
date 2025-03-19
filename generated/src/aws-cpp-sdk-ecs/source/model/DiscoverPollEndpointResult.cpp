@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DiscoverPollEndpointResult::DiscoverPollEndpointResult()
-{
-}
-
 DiscoverPollEndpointResult::DiscoverPollEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ DiscoverPollEndpointResult& DiscoverPollEndpointResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("endpoint"))
   {
     m_endpoint = jsonValue.GetString("endpoint");
-
+    m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("telemetryEndpoint"))
   {
     m_telemetryEndpoint = jsonValue.GetString("telemetryEndpoint");
-
+    m_telemetryEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceConnectEndpoint"))
   {
     m_serviceConnectEndpoint = jsonValue.GetString("serviceConnectEndpoint");
-
+    m_serviceConnectEndpointHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

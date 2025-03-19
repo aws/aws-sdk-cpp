@@ -12,11 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteScheduledActionRequest::DeleteScheduledActionRequest() : 
-    m_scheduledActionNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteScheduledActionRequest::SerializePayload() const
 {
   JsonValue payload;

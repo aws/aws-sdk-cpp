@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ScalingPolicyMetric::ScalingPolicyMetric() : 
-    m_invocationsPerInstance(0),
-    m_invocationsPerInstanceHasBeenSet(false),
-    m_modelLatency(0),
-    m_modelLatencyHasBeenSet(false)
-{
-}
-
 ScalingPolicyMetric::ScalingPolicyMetric(JsonView jsonValue)
-  : ScalingPolicyMetric()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ScalingPolicyMetric& ScalingPolicyMetric::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InvocationsPerInstance"))
   {
     m_invocationsPerInstance = jsonValue.GetInteger("InvocationsPerInstance");
-
     m_invocationsPerInstanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelLatency"))
   {
     m_modelLatency = jsonValue.GetInteger("ModelLatency");
-
     m_modelLatencyHasBeenSet = true;
   }
-
   return *this;
 }
 

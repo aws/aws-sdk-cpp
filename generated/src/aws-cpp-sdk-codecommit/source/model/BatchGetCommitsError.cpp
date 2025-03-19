@@ -18,15 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-BatchGetCommitsError::BatchGetCommitsError() : 
-    m_commitIdHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 BatchGetCommitsError::BatchGetCommitsError(JsonView jsonValue)
-  : BatchGetCommitsError()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BatchGetCommitsError& BatchGetCommitsError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("commitId"))
   {
     m_commitId = jsonValue.GetString("commitId");
-
     m_commitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = jsonValue.GetString("errorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

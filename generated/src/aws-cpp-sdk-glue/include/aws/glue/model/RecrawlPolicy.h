@@ -35,7 +35,7 @@ namespace Model
   class RecrawlPolicy
   {
   public:
-    AWS_GLUE_API RecrawlPolicy();
+    AWS_GLUE_API RecrawlPolicy() = default;
     AWS_GLUE_API RecrawlPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API RecrawlPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,16 +51,14 @@ namespace Model
      * <code>CRAWL_EVENT_MODE</code> specifies crawling only the changes identified by
      * Amazon S3 events.</p>
      */
-    inline const RecrawlBehavior& GetRecrawlBehavior() const{ return m_recrawlBehavior; }
+    inline RecrawlBehavior GetRecrawlBehavior() const { return m_recrawlBehavior; }
     inline bool RecrawlBehaviorHasBeenSet() const { return m_recrawlBehaviorHasBeenSet; }
-    inline void SetRecrawlBehavior(const RecrawlBehavior& value) { m_recrawlBehaviorHasBeenSet = true; m_recrawlBehavior = value; }
-    inline void SetRecrawlBehavior(RecrawlBehavior&& value) { m_recrawlBehaviorHasBeenSet = true; m_recrawlBehavior = std::move(value); }
-    inline RecrawlPolicy& WithRecrawlBehavior(const RecrawlBehavior& value) { SetRecrawlBehavior(value); return *this;}
-    inline RecrawlPolicy& WithRecrawlBehavior(RecrawlBehavior&& value) { SetRecrawlBehavior(std::move(value)); return *this;}
+    inline void SetRecrawlBehavior(RecrawlBehavior value) { m_recrawlBehaviorHasBeenSet = true; m_recrawlBehavior = value; }
+    inline RecrawlPolicy& WithRecrawlBehavior(RecrawlBehavior value) { SetRecrawlBehavior(value); return *this;}
     ///@}
   private:
 
-    RecrawlBehavior m_recrawlBehavior;
+    RecrawlBehavior m_recrawlBehavior{RecrawlBehavior::NOT_SET};
     bool m_recrawlBehaviorHasBeenSet = false;
   };
 

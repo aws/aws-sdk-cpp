@@ -10,14 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-ModifyDBProxyTargetGroupRequest::ModifyDBProxyTargetGroupRequest() : 
-    m_targetGroupNameHasBeenSet(false),
-    m_dBProxyNameHasBeenSet(false),
-    m_connectionPoolConfigHasBeenSet(false),
-    m_newNameHasBeenSet(false)
-{
-}
-
 Aws::String ModifyDBProxyTargetGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -12,11 +12,6 @@ using namespace Aws::TimestreamWrite::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeBatchLoadTaskRequest::DescribeBatchLoadTaskRequest() : 
-    m_taskIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeBatchLoadTaskRequest::SerializePayload() const
 {
   JsonValue payload;

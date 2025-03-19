@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSolNetworkPackageResult::CreateSolNetworkPackageResult() : 
-    m_nsdOnboardingState(NsdOnboardingState::NOT_SET),
-    m_nsdOperationalState(NsdOperationalState::NOT_SET),
-    m_nsdUsageState(NsdUsageState::NOT_SET)
-{
-}
-
 CreateSolNetworkPackageResult::CreateSolNetworkPackageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateSolNetworkPackageResult()
 {
   *this = result;
 }
@@ -36,33 +28,28 @@ CreateSolNetworkPackageResult& CreateSolNetworkPackageResult::operator =(const A
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nsdOnboardingState"))
   {
     m_nsdOnboardingState = NsdOnboardingStateMapper::GetNsdOnboardingStateForName(jsonValue.GetString("nsdOnboardingState"));
-
+    m_nsdOnboardingStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nsdOperationalState"))
   {
     m_nsdOperationalState = NsdOperationalStateMapper::GetNsdOperationalStateForName(jsonValue.GetString("nsdOperationalState"));
-
+    m_nsdOperationalStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nsdUsageState"))
   {
     m_nsdUsageState = NsdUsageStateMapper::GetNsdUsageStateForName(jsonValue.GetString("nsdUsageState"));
-
+    m_nsdUsageStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -70,14 +57,15 @@ CreateSolNetworkPackageResult& CreateSolNetworkPackageResult::operator =(const A
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

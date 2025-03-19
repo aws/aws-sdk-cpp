@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TestEventPatternResult::TestEventPatternResult() : 
-    m_result(false)
-{
-}
-
 TestEventPatternResult::TestEventPatternResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : TestEventPatternResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ TestEventPatternResult& TestEventPatternResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("Result"))
   {
     m_result = jsonValue.GetBool("Result");
-
+    m_resultHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

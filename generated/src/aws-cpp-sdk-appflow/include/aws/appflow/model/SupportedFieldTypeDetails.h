@@ -33,7 +33,7 @@ namespace Model
   class SupportedFieldTypeDetails
   {
   public:
-    AWS_APPFLOW_API SupportedFieldTypeDetails();
+    AWS_APPFLOW_API SupportedFieldTypeDetails() = default;
     AWS_APPFLOW_API SupportedFieldTypeDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API SupportedFieldTypeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p> The initial supported version for <code>fieldType</code>. If this is later
      * changed to a different version, v2 will be introduced. </p>
      */
-    inline const FieldTypeDetails& GetV1() const{ return m_v1; }
+    inline const FieldTypeDetails& GetV1() const { return m_v1; }
     inline bool V1HasBeenSet() const { return m_v1HasBeenSet; }
-    inline void SetV1(const FieldTypeDetails& value) { m_v1HasBeenSet = true; m_v1 = value; }
-    inline void SetV1(FieldTypeDetails&& value) { m_v1HasBeenSet = true; m_v1 = std::move(value); }
-    inline SupportedFieldTypeDetails& WithV1(const FieldTypeDetails& value) { SetV1(value); return *this;}
-    inline SupportedFieldTypeDetails& WithV1(FieldTypeDetails&& value) { SetV1(std::move(value)); return *this;}
+    template<typename V1T = FieldTypeDetails>
+    void SetV1(V1T&& value) { m_v1HasBeenSet = true; m_v1 = std::forward<V1T>(value); }
+    template<typename V1T = FieldTypeDetails>
+    SupportedFieldTypeDetails& WithV1(V1T&& value) { SetV1(std::forward<V1T>(value)); return *this;}
     ///@}
   private:
 

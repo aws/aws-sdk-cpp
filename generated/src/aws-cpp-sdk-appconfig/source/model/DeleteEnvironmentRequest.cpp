@@ -13,14 +13,6 @@ using namespace Aws::AppConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEnvironmentRequest::DeleteEnvironmentRequest() : 
-    m_environmentIdHasBeenSet(false),
-    m_applicationIdHasBeenSet(false),
-    m_deletionProtectionCheck(DeletionProtectionCheck::NOT_SET),
-    m_deletionProtectionCheckHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEnvironmentRequest::SerializePayload() const
 {
   return {};

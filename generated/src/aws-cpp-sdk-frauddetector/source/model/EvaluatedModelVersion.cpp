@@ -18,16 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-EvaluatedModelVersion::EvaluatedModelVersion() : 
-    m_modelIdHasBeenSet(false),
-    m_modelVersionHasBeenSet(false),
-    m_modelTypeHasBeenSet(false),
-    m_evaluationsHasBeenSet(false)
-{
-}
-
 EvaluatedModelVersion::EvaluatedModelVersion(JsonView jsonValue)
-  : EvaluatedModelVersion()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ EvaluatedModelVersion& EvaluatedModelVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("modelId"))
   {
     m_modelId = jsonValue.GetString("modelId");
-
     m_modelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelVersion"))
   {
     m_modelVersion = jsonValue.GetString("modelVersion");
-
     m_modelVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelType"))
   {
     m_modelType = jsonValue.GetString("modelType");
-
     m_modelTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evaluations"))
   {
     Aws::Utils::Array<JsonView> evaluationsJsonList = jsonValue.GetArray("evaluations");
@@ -64,7 +49,6 @@ EvaluatedModelVersion& EvaluatedModelVersion::operator =(JsonView jsonValue)
     }
     m_evaluationsHasBeenSet = true;
   }
-
   return *this;
 }
 

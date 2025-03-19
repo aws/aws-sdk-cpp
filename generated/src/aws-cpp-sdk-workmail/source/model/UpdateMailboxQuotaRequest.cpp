@@ -12,14 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMailboxQuotaRequest::UpdateMailboxQuotaRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_mailboxQuota(0),
-    m_mailboxQuotaHasBeenSet(false)
-{
-}
-
 Aws::String UpdateMailboxQuotaRequest::SerializePayload() const
 {
   JsonValue payload;

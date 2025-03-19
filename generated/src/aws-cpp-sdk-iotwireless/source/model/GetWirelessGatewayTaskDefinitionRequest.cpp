@@ -12,11 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetWirelessGatewayTaskDefinitionRequest::GetWirelessGatewayTaskDefinitionRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetWirelessGatewayTaskDefinitionRequest::SerializePayload() const
 {
   return {};

@@ -22,7 +22,7 @@ namespace Model
   class DisassociateSigninDelegateGroupsFromAccountRequest : public ChimeRequest
   {
   public:
-    AWS_CHIME_API DisassociateSigninDelegateGroupsFromAccountRequest();
+    AWS_CHIME_API DisassociateSigninDelegateGroupsFromAccountRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,29 +37,26 @@ namespace Model
     /**
      * <p>The Amazon Chime account ID.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline DisassociateSigninDelegateGroupsFromAccountRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline DisassociateSigninDelegateGroupsFromAccountRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline DisassociateSigninDelegateGroupsFromAccountRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    DisassociateSigninDelegateGroupsFromAccountRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sign-in delegate group names.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetGroupNames() const{ return m_groupNames; }
+    inline const Aws::Vector<Aws::String>& GetGroupNames() const { return m_groupNames; }
     inline bool GroupNamesHasBeenSet() const { return m_groupNamesHasBeenSet; }
-    inline void SetGroupNames(const Aws::Vector<Aws::String>& value) { m_groupNamesHasBeenSet = true; m_groupNames = value; }
-    inline void SetGroupNames(Aws::Vector<Aws::String>&& value) { m_groupNamesHasBeenSet = true; m_groupNames = std::move(value); }
-    inline DisassociateSigninDelegateGroupsFromAccountRequest& WithGroupNames(const Aws::Vector<Aws::String>& value) { SetGroupNames(value); return *this;}
-    inline DisassociateSigninDelegateGroupsFromAccountRequest& WithGroupNames(Aws::Vector<Aws::String>&& value) { SetGroupNames(std::move(value)); return *this;}
-    inline DisassociateSigninDelegateGroupsFromAccountRequest& AddGroupNames(const Aws::String& value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(value); return *this; }
-    inline DisassociateSigninDelegateGroupsFromAccountRequest& AddGroupNames(Aws::String&& value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(std::move(value)); return *this; }
-    inline DisassociateSigninDelegateGroupsFromAccountRequest& AddGroupNames(const char* value) { m_groupNamesHasBeenSet = true; m_groupNames.push_back(value); return *this; }
+    template<typename GroupNamesT = Aws::Vector<Aws::String>>
+    void SetGroupNames(GroupNamesT&& value) { m_groupNamesHasBeenSet = true; m_groupNames = std::forward<GroupNamesT>(value); }
+    template<typename GroupNamesT = Aws::Vector<Aws::String>>
+    DisassociateSigninDelegateGroupsFromAccountRequest& WithGroupNames(GroupNamesT&& value) { SetGroupNames(std::forward<GroupNamesT>(value)); return *this;}
+    template<typename GroupNamesT = Aws::String>
+    DisassociateSigninDelegateGroupsFromAccountRequest& AddGroupNames(GroupNamesT&& value) { m_groupNamesHasBeenSet = true; m_groupNames.emplace_back(std::forward<GroupNamesT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-QueryGenerationInput::QueryGenerationInput() : 
-    m_textHasBeenSet(false),
-    m_type(InputQueryType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 QueryGenerationInput::QueryGenerationInput(JsonView jsonValue)
-  : QueryGenerationInput()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ QueryGenerationInput& QueryGenerationInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = InputQueryTypeMapper::GetInputQueryTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

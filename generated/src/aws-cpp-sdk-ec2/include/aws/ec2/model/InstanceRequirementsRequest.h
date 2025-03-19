@@ -80,7 +80,7 @@ namespace Model
   class InstanceRequirementsRequest
   {
   public:
-    AWS_EC2_API InstanceRequirementsRequest();
+    AWS_EC2_API InstanceRequirementsRequest() = default;
     AWS_EC2_API InstanceRequirementsRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API InstanceRequirementsRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -92,24 +92,24 @@ namespace Model
     /**
      * <p>The minimum and maximum number of vCPUs.</p>
      */
-    inline const VCpuCountRangeRequest& GetVCpuCount() const{ return m_vCpuCount; }
+    inline const VCpuCountRangeRequest& GetVCpuCount() const { return m_vCpuCount; }
     inline bool VCpuCountHasBeenSet() const { return m_vCpuCountHasBeenSet; }
-    inline void SetVCpuCount(const VCpuCountRangeRequest& value) { m_vCpuCountHasBeenSet = true; m_vCpuCount = value; }
-    inline void SetVCpuCount(VCpuCountRangeRequest&& value) { m_vCpuCountHasBeenSet = true; m_vCpuCount = std::move(value); }
-    inline InstanceRequirementsRequest& WithVCpuCount(const VCpuCountRangeRequest& value) { SetVCpuCount(value); return *this;}
-    inline InstanceRequirementsRequest& WithVCpuCount(VCpuCountRangeRequest&& value) { SetVCpuCount(std::move(value)); return *this;}
+    template<typename VCpuCountT = VCpuCountRangeRequest>
+    void SetVCpuCount(VCpuCountT&& value) { m_vCpuCountHasBeenSet = true; m_vCpuCount = std::forward<VCpuCountT>(value); }
+    template<typename VCpuCountT = VCpuCountRangeRequest>
+    InstanceRequirementsRequest& WithVCpuCount(VCpuCountT&& value) { SetVCpuCount(std::forward<VCpuCountT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The minimum and maximum amount of memory, in MiB.</p>
      */
-    inline const MemoryMiBRequest& GetMemoryMiB() const{ return m_memoryMiB; }
+    inline const MemoryMiBRequest& GetMemoryMiB() const { return m_memoryMiB; }
     inline bool MemoryMiBHasBeenSet() const { return m_memoryMiBHasBeenSet; }
-    inline void SetMemoryMiB(const MemoryMiBRequest& value) { m_memoryMiBHasBeenSet = true; m_memoryMiB = value; }
-    inline void SetMemoryMiB(MemoryMiBRequest&& value) { m_memoryMiBHasBeenSet = true; m_memoryMiB = std::move(value); }
-    inline InstanceRequirementsRequest& WithMemoryMiB(const MemoryMiBRequest& value) { SetMemoryMiB(value); return *this;}
-    inline InstanceRequirementsRequest& WithMemoryMiB(MemoryMiBRequest&& value) { SetMemoryMiB(std::move(value)); return *this;}
+    template<typename MemoryMiBT = MemoryMiBRequest>
+    void SetMemoryMiB(MemoryMiBT&& value) { m_memoryMiBHasBeenSet = true; m_memoryMiB = std::forward<MemoryMiBT>(value); }
+    template<typename MemoryMiBT = MemoryMiBRequest>
+    InstanceRequirementsRequest& WithMemoryMiB(MemoryMiBT&& value) { SetMemoryMiB(std::forward<MemoryMiBT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,14 +124,13 @@ namespace Model
      * architecture based on the Amazon Machine Image (AMI) that you specify in your
      * launch template.</p>  <p>Default: Any manufacturer</p>
      */
-    inline const Aws::Vector<CpuManufacturer>& GetCpuManufacturers() const{ return m_cpuManufacturers; }
+    inline const Aws::Vector<CpuManufacturer>& GetCpuManufacturers() const { return m_cpuManufacturers; }
     inline bool CpuManufacturersHasBeenSet() const { return m_cpuManufacturersHasBeenSet; }
-    inline void SetCpuManufacturers(const Aws::Vector<CpuManufacturer>& value) { m_cpuManufacturersHasBeenSet = true; m_cpuManufacturers = value; }
-    inline void SetCpuManufacturers(Aws::Vector<CpuManufacturer>&& value) { m_cpuManufacturersHasBeenSet = true; m_cpuManufacturers = std::move(value); }
-    inline InstanceRequirementsRequest& WithCpuManufacturers(const Aws::Vector<CpuManufacturer>& value) { SetCpuManufacturers(value); return *this;}
-    inline InstanceRequirementsRequest& WithCpuManufacturers(Aws::Vector<CpuManufacturer>&& value) { SetCpuManufacturers(std::move(value)); return *this;}
-    inline InstanceRequirementsRequest& AddCpuManufacturers(const CpuManufacturer& value) { m_cpuManufacturersHasBeenSet = true; m_cpuManufacturers.push_back(value); return *this; }
-    inline InstanceRequirementsRequest& AddCpuManufacturers(CpuManufacturer&& value) { m_cpuManufacturersHasBeenSet = true; m_cpuManufacturers.push_back(std::move(value)); return *this; }
+    template<typename CpuManufacturersT = Aws::Vector<CpuManufacturer>>
+    void SetCpuManufacturers(CpuManufacturersT&& value) { m_cpuManufacturersHasBeenSet = true; m_cpuManufacturers = std::forward<CpuManufacturersT>(value); }
+    template<typename CpuManufacturersT = Aws::Vector<CpuManufacturer>>
+    InstanceRequirementsRequest& WithCpuManufacturers(CpuManufacturersT&& value) { SetCpuManufacturers(std::forward<CpuManufacturersT>(value)); return *this;}
+    inline InstanceRequirementsRequest& AddCpuManufacturers(CpuManufacturer value) { m_cpuManufacturersHasBeenSet = true; m_cpuManufacturers.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -139,12 +138,12 @@ namespace Model
      * <p>The minimum and maximum amount of memory per vCPU, in GiB.</p> <p>Default: No
      * minimum or maximum limits</p>
      */
-    inline const MemoryGiBPerVCpuRequest& GetMemoryGiBPerVCpu() const{ return m_memoryGiBPerVCpu; }
+    inline const MemoryGiBPerVCpuRequest& GetMemoryGiBPerVCpu() const { return m_memoryGiBPerVCpu; }
     inline bool MemoryGiBPerVCpuHasBeenSet() const { return m_memoryGiBPerVCpuHasBeenSet; }
-    inline void SetMemoryGiBPerVCpu(const MemoryGiBPerVCpuRequest& value) { m_memoryGiBPerVCpuHasBeenSet = true; m_memoryGiBPerVCpu = value; }
-    inline void SetMemoryGiBPerVCpu(MemoryGiBPerVCpuRequest&& value) { m_memoryGiBPerVCpuHasBeenSet = true; m_memoryGiBPerVCpu = std::move(value); }
-    inline InstanceRequirementsRequest& WithMemoryGiBPerVCpu(const MemoryGiBPerVCpuRequest& value) { SetMemoryGiBPerVCpu(value); return *this;}
-    inline InstanceRequirementsRequest& WithMemoryGiBPerVCpu(MemoryGiBPerVCpuRequest&& value) { SetMemoryGiBPerVCpu(std::move(value)); return *this;}
+    template<typename MemoryGiBPerVCpuT = MemoryGiBPerVCpuRequest>
+    void SetMemoryGiBPerVCpu(MemoryGiBPerVCpuT&& value) { m_memoryGiBPerVCpuHasBeenSet = true; m_memoryGiBPerVCpu = std::forward<MemoryGiBPerVCpuT>(value); }
+    template<typename MemoryGiBPerVCpuT = MemoryGiBPerVCpuRequest>
+    InstanceRequirementsRequest& WithMemoryGiBPerVCpu(MemoryGiBPerVCpuT&& value) { SetMemoryGiBPerVCpu(std::forward<MemoryGiBPerVCpuT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -161,15 +160,14 @@ namespace Model
      * can't specify <code>AllowedInstanceTypes</code>.</p>  <p>Default: No
      * excluded instance types</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExcludedInstanceTypes() const{ return m_excludedInstanceTypes; }
+    inline const Aws::Vector<Aws::String>& GetExcludedInstanceTypes() const { return m_excludedInstanceTypes; }
     inline bool ExcludedInstanceTypesHasBeenSet() const { return m_excludedInstanceTypesHasBeenSet; }
-    inline void SetExcludedInstanceTypes(const Aws::Vector<Aws::String>& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes = value; }
-    inline void SetExcludedInstanceTypes(Aws::Vector<Aws::String>&& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes = std::move(value); }
-    inline InstanceRequirementsRequest& WithExcludedInstanceTypes(const Aws::Vector<Aws::String>& value) { SetExcludedInstanceTypes(value); return *this;}
-    inline InstanceRequirementsRequest& WithExcludedInstanceTypes(Aws::Vector<Aws::String>&& value) { SetExcludedInstanceTypes(std::move(value)); return *this;}
-    inline InstanceRequirementsRequest& AddExcludedInstanceTypes(const Aws::String& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes.push_back(value); return *this; }
-    inline InstanceRequirementsRequest& AddExcludedInstanceTypes(Aws::String&& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes.push_back(std::move(value)); return *this; }
-    inline InstanceRequirementsRequest& AddExcludedInstanceTypes(const char* value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes.push_back(value); return *this; }
+    template<typename ExcludedInstanceTypesT = Aws::Vector<Aws::String>>
+    void SetExcludedInstanceTypes(ExcludedInstanceTypesT&& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes = std::forward<ExcludedInstanceTypesT>(value); }
+    template<typename ExcludedInstanceTypesT = Aws::Vector<Aws::String>>
+    InstanceRequirementsRequest& WithExcludedInstanceTypes(ExcludedInstanceTypesT&& value) { SetExcludedInstanceTypes(std::forward<ExcludedInstanceTypesT>(value)); return *this;}
+    template<typename ExcludedInstanceTypesT = Aws::String>
+    InstanceRequirementsRequest& AddExcludedInstanceTypes(ExcludedInstanceTypesT&& value) { m_excludedInstanceTypesHasBeenSet = true; m_excludedInstanceTypes.emplace_back(std::forward<ExcludedInstanceTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -184,14 +182,13 @@ namespace Model
      * instance types, specify <code>previous</code>.</p> <p>Default: Current and
      * previous generation instance types</p>
      */
-    inline const Aws::Vector<InstanceGeneration>& GetInstanceGenerations() const{ return m_instanceGenerations; }
+    inline const Aws::Vector<InstanceGeneration>& GetInstanceGenerations() const { return m_instanceGenerations; }
     inline bool InstanceGenerationsHasBeenSet() const { return m_instanceGenerationsHasBeenSet; }
-    inline void SetInstanceGenerations(const Aws::Vector<InstanceGeneration>& value) { m_instanceGenerationsHasBeenSet = true; m_instanceGenerations = value; }
-    inline void SetInstanceGenerations(Aws::Vector<InstanceGeneration>&& value) { m_instanceGenerationsHasBeenSet = true; m_instanceGenerations = std::move(value); }
-    inline InstanceRequirementsRequest& WithInstanceGenerations(const Aws::Vector<InstanceGeneration>& value) { SetInstanceGenerations(value); return *this;}
-    inline InstanceRequirementsRequest& WithInstanceGenerations(Aws::Vector<InstanceGeneration>&& value) { SetInstanceGenerations(std::move(value)); return *this;}
-    inline InstanceRequirementsRequest& AddInstanceGenerations(const InstanceGeneration& value) { m_instanceGenerationsHasBeenSet = true; m_instanceGenerations.push_back(value); return *this; }
-    inline InstanceRequirementsRequest& AddInstanceGenerations(InstanceGeneration&& value) { m_instanceGenerationsHasBeenSet = true; m_instanceGenerations.push_back(std::move(value)); return *this; }
+    template<typename InstanceGenerationsT = Aws::Vector<InstanceGeneration>>
+    void SetInstanceGenerations(InstanceGenerationsT&& value) { m_instanceGenerationsHasBeenSet = true; m_instanceGenerations = std::forward<InstanceGenerationsT>(value); }
+    template<typename InstanceGenerationsT = Aws::Vector<InstanceGeneration>>
+    InstanceRequirementsRequest& WithInstanceGenerations(InstanceGenerationsT&& value) { SetInstanceGenerations(std::forward<InstanceGenerationsT>(value)); return *this;}
+    inline InstanceRequirementsRequest& AddInstanceGenerations(InstanceGeneration value) { m_instanceGenerationsHasBeenSet = true; m_instanceGenerations.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -222,7 +219,7 @@ namespace Model
      * parameters and specify a high value, such as <code>999999</code>.</p> 
      * <p>Default: <code>100</code> </p>
      */
-    inline int GetSpotMaxPricePercentageOverLowestPrice() const{ return m_spotMaxPricePercentageOverLowestPrice; }
+    inline int GetSpotMaxPricePercentageOverLowestPrice() const { return m_spotMaxPricePercentageOverLowestPrice; }
     inline bool SpotMaxPricePercentageOverLowestPriceHasBeenSet() const { return m_spotMaxPricePercentageOverLowestPriceHasBeenSet; }
     inline void SetSpotMaxPricePercentageOverLowestPrice(int value) { m_spotMaxPricePercentageOverLowestPriceHasBeenSet = true; m_spotMaxPricePercentageOverLowestPrice = value; }
     inline InstanceRequirementsRequest& WithSpotMaxPricePercentageOverLowestPrice(int value) { SetSpotMaxPricePercentageOverLowestPrice(value); return *this;}
@@ -247,7 +244,7 @@ namespace Model
      * per-vCPU or per-memory price instead of the per-instance price.</p> 
      * <p>Default: <code>20</code> </p>
      */
-    inline int GetOnDemandMaxPricePercentageOverLowestPrice() const{ return m_onDemandMaxPricePercentageOverLowestPrice; }
+    inline int GetOnDemandMaxPricePercentageOverLowestPrice() const { return m_onDemandMaxPricePercentageOverLowestPrice; }
     inline bool OnDemandMaxPricePercentageOverLowestPriceHasBeenSet() const { return m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet; }
     inline void SetOnDemandMaxPricePercentageOverLowestPrice(int value) { m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet = true; m_onDemandMaxPricePercentageOverLowestPrice = value; }
     inline InstanceRequirementsRequest& WithOnDemandMaxPricePercentageOverLowestPrice(int value) { SetOnDemandMaxPricePercentageOverLowestPrice(value); return *this;}
@@ -262,12 +259,10 @@ namespace Model
      * instance types, specify <code>excluded</code>.</p> </li> </ul> <p>Default:
      * <code>excluded</code> </p>
      */
-    inline const BareMetal& GetBareMetal() const{ return m_bareMetal; }
+    inline BareMetal GetBareMetal() const { return m_bareMetal; }
     inline bool BareMetalHasBeenSet() const { return m_bareMetalHasBeenSet; }
-    inline void SetBareMetal(const BareMetal& value) { m_bareMetalHasBeenSet = true; m_bareMetal = value; }
-    inline void SetBareMetal(BareMetal&& value) { m_bareMetalHasBeenSet = true; m_bareMetal = std::move(value); }
-    inline InstanceRequirementsRequest& WithBareMetal(const BareMetal& value) { SetBareMetal(value); return *this;}
-    inline InstanceRequirementsRequest& WithBareMetal(BareMetal&& value) { SetBareMetal(std::move(value)); return *this;}
+    inline void SetBareMetal(BareMetal value) { m_bareMetalHasBeenSet = true; m_bareMetal = value; }
+    inline InstanceRequirementsRequest& WithBareMetal(BareMetal value) { SetBareMetal(value); return *this;}
     ///@}
 
     ///@{
@@ -281,12 +276,10 @@ namespace Model
      * <li> <p>To exclude burstable performance instance types, specify
      * <code>excluded</code>.</p> </li> </ul> <p>Default: <code>excluded</code> </p>
      */
-    inline const BurstablePerformance& GetBurstablePerformance() const{ return m_burstablePerformance; }
+    inline BurstablePerformance GetBurstablePerformance() const { return m_burstablePerformance; }
     inline bool BurstablePerformanceHasBeenSet() const { return m_burstablePerformanceHasBeenSet; }
-    inline void SetBurstablePerformance(const BurstablePerformance& value) { m_burstablePerformanceHasBeenSet = true; m_burstablePerformance = value; }
-    inline void SetBurstablePerformance(BurstablePerformance&& value) { m_burstablePerformanceHasBeenSet = true; m_burstablePerformance = std::move(value); }
-    inline InstanceRequirementsRequest& WithBurstablePerformance(const BurstablePerformance& value) { SetBurstablePerformance(value); return *this;}
-    inline InstanceRequirementsRequest& WithBurstablePerformance(BurstablePerformance&& value) { SetBurstablePerformance(std::move(value)); return *this;}
+    inline void SetBurstablePerformance(BurstablePerformance value) { m_burstablePerformanceHasBeenSet = true; m_burstablePerformance = value; }
+    inline InstanceRequirementsRequest& WithBurstablePerformance(BurstablePerformance value) { SetBurstablePerformance(value); return *this;}
     ///@}
 
     ///@{
@@ -296,7 +289,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_GetSpotPlacementScores.html">GetSpotPlacementScores</a>.</p>
      * <p>Default: <code>false</code> </p>
      */
-    inline bool GetRequireHibernateSupport() const{ return m_requireHibernateSupport; }
+    inline bool GetRequireHibernateSupport() const { return m_requireHibernateSupport; }
     inline bool RequireHibernateSupportHasBeenSet() const { return m_requireHibernateSupportHasBeenSet; }
     inline void SetRequireHibernateSupport(bool value) { m_requireHibernateSupportHasBeenSet = true; m_requireHibernateSupport = value; }
     inline InstanceRequirementsRequest& WithRequireHibernateSupport(bool value) { SetRequireHibernateSupport(value); return *this;}
@@ -307,12 +300,12 @@ namespace Model
      * <p>The minimum and maximum number of network interfaces.</p> <p>Default: No
      * minimum or maximum limits</p>
      */
-    inline const NetworkInterfaceCountRequest& GetNetworkInterfaceCount() const{ return m_networkInterfaceCount; }
+    inline const NetworkInterfaceCountRequest& GetNetworkInterfaceCount() const { return m_networkInterfaceCount; }
     inline bool NetworkInterfaceCountHasBeenSet() const { return m_networkInterfaceCountHasBeenSet; }
-    inline void SetNetworkInterfaceCount(const NetworkInterfaceCountRequest& value) { m_networkInterfaceCountHasBeenSet = true; m_networkInterfaceCount = value; }
-    inline void SetNetworkInterfaceCount(NetworkInterfaceCountRequest&& value) { m_networkInterfaceCountHasBeenSet = true; m_networkInterfaceCount = std::move(value); }
-    inline InstanceRequirementsRequest& WithNetworkInterfaceCount(const NetworkInterfaceCountRequest& value) { SetNetworkInterfaceCount(value); return *this;}
-    inline InstanceRequirementsRequest& WithNetworkInterfaceCount(NetworkInterfaceCountRequest&& value) { SetNetworkInterfaceCount(std::move(value)); return *this;}
+    template<typename NetworkInterfaceCountT = NetworkInterfaceCountRequest>
+    void SetNetworkInterfaceCount(NetworkInterfaceCountT&& value) { m_networkInterfaceCountHasBeenSet = true; m_networkInterfaceCount = std::forward<NetworkInterfaceCountT>(value); }
+    template<typename NetworkInterfaceCountT = NetworkInterfaceCountRequest>
+    InstanceRequirementsRequest& WithNetworkInterfaceCount(NetworkInterfaceCountT&& value) { SetNetworkInterfaceCount(std::forward<NetworkInterfaceCountT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -327,12 +320,10 @@ namespace Model
      * exclude instance types with instance store volumes, specify
      * <code>excluded</code>.</p> </li> </ul> <p>Default: <code>included</code> </p>
      */
-    inline const LocalStorage& GetLocalStorage() const{ return m_localStorage; }
+    inline LocalStorage GetLocalStorage() const { return m_localStorage; }
     inline bool LocalStorageHasBeenSet() const { return m_localStorageHasBeenSet; }
-    inline void SetLocalStorage(const LocalStorage& value) { m_localStorageHasBeenSet = true; m_localStorage = value; }
-    inline void SetLocalStorage(LocalStorage&& value) { m_localStorageHasBeenSet = true; m_localStorage = std::move(value); }
-    inline InstanceRequirementsRequest& WithLocalStorage(const LocalStorage& value) { SetLocalStorage(value); return *this;}
-    inline InstanceRequirementsRequest& WithLocalStorage(LocalStorage&& value) { SetLocalStorage(std::move(value)); return *this;}
+    inline void SetLocalStorage(LocalStorage value) { m_localStorageHasBeenSet = true; m_localStorage = value; }
+    inline InstanceRequirementsRequest& WithLocalStorage(LocalStorage value) { SetLocalStorage(value); return *this;}
     ///@}
 
     ///@{
@@ -343,14 +334,13 @@ namespace Model
      * <code>ssd</code>.</p> </li> </ul> <p>Default: <code>hdd</code> and
      * <code>ssd</code> </p>
      */
-    inline const Aws::Vector<LocalStorageType>& GetLocalStorageTypes() const{ return m_localStorageTypes; }
+    inline const Aws::Vector<LocalStorageType>& GetLocalStorageTypes() const { return m_localStorageTypes; }
     inline bool LocalStorageTypesHasBeenSet() const { return m_localStorageTypesHasBeenSet; }
-    inline void SetLocalStorageTypes(const Aws::Vector<LocalStorageType>& value) { m_localStorageTypesHasBeenSet = true; m_localStorageTypes = value; }
-    inline void SetLocalStorageTypes(Aws::Vector<LocalStorageType>&& value) { m_localStorageTypesHasBeenSet = true; m_localStorageTypes = std::move(value); }
-    inline InstanceRequirementsRequest& WithLocalStorageTypes(const Aws::Vector<LocalStorageType>& value) { SetLocalStorageTypes(value); return *this;}
-    inline InstanceRequirementsRequest& WithLocalStorageTypes(Aws::Vector<LocalStorageType>&& value) { SetLocalStorageTypes(std::move(value)); return *this;}
-    inline InstanceRequirementsRequest& AddLocalStorageTypes(const LocalStorageType& value) { m_localStorageTypesHasBeenSet = true; m_localStorageTypes.push_back(value); return *this; }
-    inline InstanceRequirementsRequest& AddLocalStorageTypes(LocalStorageType&& value) { m_localStorageTypesHasBeenSet = true; m_localStorageTypes.push_back(std::move(value)); return *this; }
+    template<typename LocalStorageTypesT = Aws::Vector<LocalStorageType>>
+    void SetLocalStorageTypes(LocalStorageTypesT&& value) { m_localStorageTypesHasBeenSet = true; m_localStorageTypes = std::forward<LocalStorageTypesT>(value); }
+    template<typename LocalStorageTypesT = Aws::Vector<LocalStorageType>>
+    InstanceRequirementsRequest& WithLocalStorageTypes(LocalStorageTypesT&& value) { SetLocalStorageTypes(std::forward<LocalStorageTypesT>(value)); return *this;}
+    inline InstanceRequirementsRequest& AddLocalStorageTypes(LocalStorageType value) { m_localStorageTypesHasBeenSet = true; m_localStorageTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -358,12 +348,12 @@ namespace Model
      * <p>The minimum and maximum amount of total local storage, in GB.</p> <p>Default:
      * No minimum or maximum limits</p>
      */
-    inline const TotalLocalStorageGBRequest& GetTotalLocalStorageGB() const{ return m_totalLocalStorageGB; }
+    inline const TotalLocalStorageGBRequest& GetTotalLocalStorageGB() const { return m_totalLocalStorageGB; }
     inline bool TotalLocalStorageGBHasBeenSet() const { return m_totalLocalStorageGBHasBeenSet; }
-    inline void SetTotalLocalStorageGB(const TotalLocalStorageGBRequest& value) { m_totalLocalStorageGBHasBeenSet = true; m_totalLocalStorageGB = value; }
-    inline void SetTotalLocalStorageGB(TotalLocalStorageGBRequest&& value) { m_totalLocalStorageGBHasBeenSet = true; m_totalLocalStorageGB = std::move(value); }
-    inline InstanceRequirementsRequest& WithTotalLocalStorageGB(const TotalLocalStorageGBRequest& value) { SetTotalLocalStorageGB(value); return *this;}
-    inline InstanceRequirementsRequest& WithTotalLocalStorageGB(TotalLocalStorageGBRequest&& value) { SetTotalLocalStorageGB(std::move(value)); return *this;}
+    template<typename TotalLocalStorageGBT = TotalLocalStorageGBRequest>
+    void SetTotalLocalStorageGB(TotalLocalStorageGBT&& value) { m_totalLocalStorageGBHasBeenSet = true; m_totalLocalStorageGB = std::forward<TotalLocalStorageGBT>(value); }
+    template<typename TotalLocalStorageGBT = TotalLocalStorageGBRequest>
+    InstanceRequirementsRequest& WithTotalLocalStorageGB(TotalLocalStorageGBT&& value) { SetTotalLocalStorageGB(std::forward<TotalLocalStorageGBT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -374,12 +364,12 @@ namespace Model
      * EBS–optimized instances</a> in the <i>Amazon EC2 User Guide</i>.</p> <p>Default:
      * No minimum or maximum limits</p>
      */
-    inline const BaselineEbsBandwidthMbpsRequest& GetBaselineEbsBandwidthMbps() const{ return m_baselineEbsBandwidthMbps; }
+    inline const BaselineEbsBandwidthMbpsRequest& GetBaselineEbsBandwidthMbps() const { return m_baselineEbsBandwidthMbps; }
     inline bool BaselineEbsBandwidthMbpsHasBeenSet() const { return m_baselineEbsBandwidthMbpsHasBeenSet; }
-    inline void SetBaselineEbsBandwidthMbps(const BaselineEbsBandwidthMbpsRequest& value) { m_baselineEbsBandwidthMbpsHasBeenSet = true; m_baselineEbsBandwidthMbps = value; }
-    inline void SetBaselineEbsBandwidthMbps(BaselineEbsBandwidthMbpsRequest&& value) { m_baselineEbsBandwidthMbpsHasBeenSet = true; m_baselineEbsBandwidthMbps = std::move(value); }
-    inline InstanceRequirementsRequest& WithBaselineEbsBandwidthMbps(const BaselineEbsBandwidthMbpsRequest& value) { SetBaselineEbsBandwidthMbps(value); return *this;}
-    inline InstanceRequirementsRequest& WithBaselineEbsBandwidthMbps(BaselineEbsBandwidthMbpsRequest&& value) { SetBaselineEbsBandwidthMbps(std::move(value)); return *this;}
+    template<typename BaselineEbsBandwidthMbpsT = BaselineEbsBandwidthMbpsRequest>
+    void SetBaselineEbsBandwidthMbps(BaselineEbsBandwidthMbpsT&& value) { m_baselineEbsBandwidthMbpsHasBeenSet = true; m_baselineEbsBandwidthMbps = std::forward<BaselineEbsBandwidthMbpsT>(value); }
+    template<typename BaselineEbsBandwidthMbpsT = BaselineEbsBandwidthMbpsRequest>
+    InstanceRequirementsRequest& WithBaselineEbsBandwidthMbps(BaselineEbsBandwidthMbpsT&& value) { SetBaselineEbsBandwidthMbps(std::forward<BaselineEbsBandwidthMbpsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -390,14 +380,13 @@ namespace Model
      * <li> <p>For instance types with Inference accelerators, specify
      * <code>inference</code>.</p> </li> </ul> <p>Default: Any accelerator type</p>
      */
-    inline const Aws::Vector<AcceleratorType>& GetAcceleratorTypes() const{ return m_acceleratorTypes; }
+    inline const Aws::Vector<AcceleratorType>& GetAcceleratorTypes() const { return m_acceleratorTypes; }
     inline bool AcceleratorTypesHasBeenSet() const { return m_acceleratorTypesHasBeenSet; }
-    inline void SetAcceleratorTypes(const Aws::Vector<AcceleratorType>& value) { m_acceleratorTypesHasBeenSet = true; m_acceleratorTypes = value; }
-    inline void SetAcceleratorTypes(Aws::Vector<AcceleratorType>&& value) { m_acceleratorTypesHasBeenSet = true; m_acceleratorTypes = std::move(value); }
-    inline InstanceRequirementsRequest& WithAcceleratorTypes(const Aws::Vector<AcceleratorType>& value) { SetAcceleratorTypes(value); return *this;}
-    inline InstanceRequirementsRequest& WithAcceleratorTypes(Aws::Vector<AcceleratorType>&& value) { SetAcceleratorTypes(std::move(value)); return *this;}
-    inline InstanceRequirementsRequest& AddAcceleratorTypes(const AcceleratorType& value) { m_acceleratorTypesHasBeenSet = true; m_acceleratorTypes.push_back(value); return *this; }
-    inline InstanceRequirementsRequest& AddAcceleratorTypes(AcceleratorType&& value) { m_acceleratorTypesHasBeenSet = true; m_acceleratorTypes.push_back(std::move(value)); return *this; }
+    template<typename AcceleratorTypesT = Aws::Vector<AcceleratorType>>
+    void SetAcceleratorTypes(AcceleratorTypesT&& value) { m_acceleratorTypesHasBeenSet = true; m_acceleratorTypes = std::forward<AcceleratorTypesT>(value); }
+    template<typename AcceleratorTypesT = Aws::Vector<AcceleratorType>>
+    InstanceRequirementsRequest& WithAcceleratorTypes(AcceleratorTypesT&& value) { SetAcceleratorTypes(std::forward<AcceleratorTypesT>(value)); return *this;}
+    inline InstanceRequirementsRequest& AddAcceleratorTypes(AcceleratorType value) { m_acceleratorTypesHasBeenSet = true; m_acceleratorTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -407,12 +396,12 @@ namespace Model
      * instance types, set <code>Max</code> to <code>0</code>.</p> <p>Default: No
      * minimum or maximum limits</p>
      */
-    inline const AcceleratorCountRequest& GetAcceleratorCount() const{ return m_acceleratorCount; }
+    inline const AcceleratorCountRequest& GetAcceleratorCount() const { return m_acceleratorCount; }
     inline bool AcceleratorCountHasBeenSet() const { return m_acceleratorCountHasBeenSet; }
-    inline void SetAcceleratorCount(const AcceleratorCountRequest& value) { m_acceleratorCountHasBeenSet = true; m_acceleratorCount = value; }
-    inline void SetAcceleratorCount(AcceleratorCountRequest&& value) { m_acceleratorCountHasBeenSet = true; m_acceleratorCount = std::move(value); }
-    inline InstanceRequirementsRequest& WithAcceleratorCount(const AcceleratorCountRequest& value) { SetAcceleratorCount(value); return *this;}
-    inline InstanceRequirementsRequest& WithAcceleratorCount(AcceleratorCountRequest&& value) { SetAcceleratorCount(std::move(value)); return *this;}
+    template<typename AcceleratorCountT = AcceleratorCountRequest>
+    void SetAcceleratorCount(AcceleratorCountT&& value) { m_acceleratorCountHasBeenSet = true; m_acceleratorCount = std::forward<AcceleratorCountT>(value); }
+    template<typename AcceleratorCountT = AcceleratorCountRequest>
+    InstanceRequirementsRequest& WithAcceleratorCount(AcceleratorCountT&& value) { SetAcceleratorCount(std::forward<AcceleratorCountT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -426,14 +415,13 @@ namespace Model
      * </li> <li> <p>For instance types with Xilinx devices, specify
      * <code>xilinx</code>.</p> </li> </ul> <p>Default: Any manufacturer</p>
      */
-    inline const Aws::Vector<AcceleratorManufacturer>& GetAcceleratorManufacturers() const{ return m_acceleratorManufacturers; }
+    inline const Aws::Vector<AcceleratorManufacturer>& GetAcceleratorManufacturers() const { return m_acceleratorManufacturers; }
     inline bool AcceleratorManufacturersHasBeenSet() const { return m_acceleratorManufacturersHasBeenSet; }
-    inline void SetAcceleratorManufacturers(const Aws::Vector<AcceleratorManufacturer>& value) { m_acceleratorManufacturersHasBeenSet = true; m_acceleratorManufacturers = value; }
-    inline void SetAcceleratorManufacturers(Aws::Vector<AcceleratorManufacturer>&& value) { m_acceleratorManufacturersHasBeenSet = true; m_acceleratorManufacturers = std::move(value); }
-    inline InstanceRequirementsRequest& WithAcceleratorManufacturers(const Aws::Vector<AcceleratorManufacturer>& value) { SetAcceleratorManufacturers(value); return *this;}
-    inline InstanceRequirementsRequest& WithAcceleratorManufacturers(Aws::Vector<AcceleratorManufacturer>&& value) { SetAcceleratorManufacturers(std::move(value)); return *this;}
-    inline InstanceRequirementsRequest& AddAcceleratorManufacturers(const AcceleratorManufacturer& value) { m_acceleratorManufacturersHasBeenSet = true; m_acceleratorManufacturers.push_back(value); return *this; }
-    inline InstanceRequirementsRequest& AddAcceleratorManufacturers(AcceleratorManufacturer&& value) { m_acceleratorManufacturersHasBeenSet = true; m_acceleratorManufacturers.push_back(std::move(value)); return *this; }
+    template<typename AcceleratorManufacturersT = Aws::Vector<AcceleratorManufacturer>>
+    void SetAcceleratorManufacturers(AcceleratorManufacturersT&& value) { m_acceleratorManufacturersHasBeenSet = true; m_acceleratorManufacturers = std::forward<AcceleratorManufacturersT>(value); }
+    template<typename AcceleratorManufacturersT = Aws::Vector<AcceleratorManufacturer>>
+    InstanceRequirementsRequest& WithAcceleratorManufacturers(AcceleratorManufacturersT&& value) { SetAcceleratorManufacturers(std::forward<AcceleratorManufacturersT>(value)); return *this;}
+    inline InstanceRequirementsRequest& AddAcceleratorManufacturers(AcceleratorManufacturer value) { m_acceleratorManufacturersHasBeenSet = true; m_acceleratorManufacturers.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -455,14 +443,13 @@ namespace Model
      * <p>For instance types with NVIDIA V100 GPUs, specify <code>v100</code>.</p>
      * </li> </ul> <p>Default: Any accelerator</p>
      */
-    inline const Aws::Vector<AcceleratorName>& GetAcceleratorNames() const{ return m_acceleratorNames; }
+    inline const Aws::Vector<AcceleratorName>& GetAcceleratorNames() const { return m_acceleratorNames; }
     inline bool AcceleratorNamesHasBeenSet() const { return m_acceleratorNamesHasBeenSet; }
-    inline void SetAcceleratorNames(const Aws::Vector<AcceleratorName>& value) { m_acceleratorNamesHasBeenSet = true; m_acceleratorNames = value; }
-    inline void SetAcceleratorNames(Aws::Vector<AcceleratorName>&& value) { m_acceleratorNamesHasBeenSet = true; m_acceleratorNames = std::move(value); }
-    inline InstanceRequirementsRequest& WithAcceleratorNames(const Aws::Vector<AcceleratorName>& value) { SetAcceleratorNames(value); return *this;}
-    inline InstanceRequirementsRequest& WithAcceleratorNames(Aws::Vector<AcceleratorName>&& value) { SetAcceleratorNames(std::move(value)); return *this;}
-    inline InstanceRequirementsRequest& AddAcceleratorNames(const AcceleratorName& value) { m_acceleratorNamesHasBeenSet = true; m_acceleratorNames.push_back(value); return *this; }
-    inline InstanceRequirementsRequest& AddAcceleratorNames(AcceleratorName&& value) { m_acceleratorNamesHasBeenSet = true; m_acceleratorNames.push_back(std::move(value)); return *this; }
+    template<typename AcceleratorNamesT = Aws::Vector<AcceleratorName>>
+    void SetAcceleratorNames(AcceleratorNamesT&& value) { m_acceleratorNamesHasBeenSet = true; m_acceleratorNames = std::forward<AcceleratorNamesT>(value); }
+    template<typename AcceleratorNamesT = Aws::Vector<AcceleratorName>>
+    InstanceRequirementsRequest& WithAcceleratorNames(AcceleratorNamesT&& value) { SetAcceleratorNames(std::forward<AcceleratorNamesT>(value)); return *this;}
+    inline InstanceRequirementsRequest& AddAcceleratorNames(AcceleratorName value) { m_acceleratorNamesHasBeenSet = true; m_acceleratorNames.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -470,12 +457,12 @@ namespace Model
      * <p>The minimum and maximum amount of total accelerator memory, in MiB.</p>
      * <p>Default: No minimum or maximum limits</p>
      */
-    inline const AcceleratorTotalMemoryMiBRequest& GetAcceleratorTotalMemoryMiB() const{ return m_acceleratorTotalMemoryMiB; }
+    inline const AcceleratorTotalMemoryMiBRequest& GetAcceleratorTotalMemoryMiB() const { return m_acceleratorTotalMemoryMiB; }
     inline bool AcceleratorTotalMemoryMiBHasBeenSet() const { return m_acceleratorTotalMemoryMiBHasBeenSet; }
-    inline void SetAcceleratorTotalMemoryMiB(const AcceleratorTotalMemoryMiBRequest& value) { m_acceleratorTotalMemoryMiBHasBeenSet = true; m_acceleratorTotalMemoryMiB = value; }
-    inline void SetAcceleratorTotalMemoryMiB(AcceleratorTotalMemoryMiBRequest&& value) { m_acceleratorTotalMemoryMiBHasBeenSet = true; m_acceleratorTotalMemoryMiB = std::move(value); }
-    inline InstanceRequirementsRequest& WithAcceleratorTotalMemoryMiB(const AcceleratorTotalMemoryMiBRequest& value) { SetAcceleratorTotalMemoryMiB(value); return *this;}
-    inline InstanceRequirementsRequest& WithAcceleratorTotalMemoryMiB(AcceleratorTotalMemoryMiBRequest&& value) { SetAcceleratorTotalMemoryMiB(std::move(value)); return *this;}
+    template<typename AcceleratorTotalMemoryMiBT = AcceleratorTotalMemoryMiBRequest>
+    void SetAcceleratorTotalMemoryMiB(AcceleratorTotalMemoryMiBT&& value) { m_acceleratorTotalMemoryMiBHasBeenSet = true; m_acceleratorTotalMemoryMiB = std::forward<AcceleratorTotalMemoryMiBT>(value); }
+    template<typename AcceleratorTotalMemoryMiBT = AcceleratorTotalMemoryMiBRequest>
+    InstanceRequirementsRequest& WithAcceleratorTotalMemoryMiB(AcceleratorTotalMemoryMiBT&& value) { SetAcceleratorTotalMemoryMiB(std::forward<AcceleratorTotalMemoryMiBT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -486,12 +473,12 @@ namespace Model
      * EC2 instance network bandwidth</a> in the <i>Amazon EC2 User Guide</i>.</p>
      * <p>Default: No minimum or maximum limits</p>
      */
-    inline const NetworkBandwidthGbpsRequest& GetNetworkBandwidthGbps() const{ return m_networkBandwidthGbps; }
+    inline const NetworkBandwidthGbpsRequest& GetNetworkBandwidthGbps() const { return m_networkBandwidthGbps; }
     inline bool NetworkBandwidthGbpsHasBeenSet() const { return m_networkBandwidthGbpsHasBeenSet; }
-    inline void SetNetworkBandwidthGbps(const NetworkBandwidthGbpsRequest& value) { m_networkBandwidthGbpsHasBeenSet = true; m_networkBandwidthGbps = value; }
-    inline void SetNetworkBandwidthGbps(NetworkBandwidthGbpsRequest&& value) { m_networkBandwidthGbpsHasBeenSet = true; m_networkBandwidthGbps = std::move(value); }
-    inline InstanceRequirementsRequest& WithNetworkBandwidthGbps(const NetworkBandwidthGbpsRequest& value) { SetNetworkBandwidthGbps(value); return *this;}
-    inline InstanceRequirementsRequest& WithNetworkBandwidthGbps(NetworkBandwidthGbpsRequest&& value) { SetNetworkBandwidthGbps(std::move(value)); return *this;}
+    template<typename NetworkBandwidthGbpsT = NetworkBandwidthGbpsRequest>
+    void SetNetworkBandwidthGbps(NetworkBandwidthGbpsT&& value) { m_networkBandwidthGbpsHasBeenSet = true; m_networkBandwidthGbps = std::forward<NetworkBandwidthGbpsT>(value); }
+    template<typename NetworkBandwidthGbpsT = NetworkBandwidthGbpsRequest>
+    InstanceRequirementsRequest& WithNetworkBandwidthGbps(NetworkBandwidthGbpsT&& value) { SetNetworkBandwidthGbps(std::forward<NetworkBandwidthGbpsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -509,15 +496,14 @@ namespace Model
      * specify <code>ExcludedInstanceTypes</code>.</p>  <p>Default: All instance
      * types</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowedInstanceTypes() const{ return m_allowedInstanceTypes; }
+    inline const Aws::Vector<Aws::String>& GetAllowedInstanceTypes() const { return m_allowedInstanceTypes; }
     inline bool AllowedInstanceTypesHasBeenSet() const { return m_allowedInstanceTypesHasBeenSet; }
-    inline void SetAllowedInstanceTypes(const Aws::Vector<Aws::String>& value) { m_allowedInstanceTypesHasBeenSet = true; m_allowedInstanceTypes = value; }
-    inline void SetAllowedInstanceTypes(Aws::Vector<Aws::String>&& value) { m_allowedInstanceTypesHasBeenSet = true; m_allowedInstanceTypes = std::move(value); }
-    inline InstanceRequirementsRequest& WithAllowedInstanceTypes(const Aws::Vector<Aws::String>& value) { SetAllowedInstanceTypes(value); return *this;}
-    inline InstanceRequirementsRequest& WithAllowedInstanceTypes(Aws::Vector<Aws::String>&& value) { SetAllowedInstanceTypes(std::move(value)); return *this;}
-    inline InstanceRequirementsRequest& AddAllowedInstanceTypes(const Aws::String& value) { m_allowedInstanceTypesHasBeenSet = true; m_allowedInstanceTypes.push_back(value); return *this; }
-    inline InstanceRequirementsRequest& AddAllowedInstanceTypes(Aws::String&& value) { m_allowedInstanceTypesHasBeenSet = true; m_allowedInstanceTypes.push_back(std::move(value)); return *this; }
-    inline InstanceRequirementsRequest& AddAllowedInstanceTypes(const char* value) { m_allowedInstanceTypesHasBeenSet = true; m_allowedInstanceTypes.push_back(value); return *this; }
+    template<typename AllowedInstanceTypesT = Aws::Vector<Aws::String>>
+    void SetAllowedInstanceTypes(AllowedInstanceTypesT&& value) { m_allowedInstanceTypesHasBeenSet = true; m_allowedInstanceTypes = std::forward<AllowedInstanceTypesT>(value); }
+    template<typename AllowedInstanceTypesT = Aws::Vector<Aws::String>>
+    InstanceRequirementsRequest& WithAllowedInstanceTypes(AllowedInstanceTypesT&& value) { SetAllowedInstanceTypes(std::forward<AllowedInstanceTypesT>(value)); return *this;}
+    template<typename AllowedInstanceTypesT = Aws::String>
+    InstanceRequirementsRequest& AddAllowedInstanceTypes(AllowedInstanceTypesT&& value) { m_allowedInstanceTypesHasBeenSet = true; m_allowedInstanceTypes.emplace_back(std::forward<AllowedInstanceTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -543,7 +529,7 @@ namespace Model
      * consider all instance types that match your attributes, include one of these
      * parameters and specify a high value, such as <code>999999</code>.</p> 
      */
-    inline int GetMaxSpotPriceAsPercentageOfOptimalOnDemandPrice() const{ return m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice; }
+    inline int GetMaxSpotPriceAsPercentageOfOptimalOnDemandPrice() const { return m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice; }
     inline bool MaxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet() const { return m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet; }
     inline void SetMaxSpotPriceAsPercentageOfOptimalOnDemandPrice(int value) { m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet = true; m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice = value; }
     inline InstanceRequirementsRequest& WithMaxSpotPriceAsPercentageOfOptimalOnDemandPrice(int value) { SetMaxSpotPriceAsPercentageOfOptimalOnDemandPrice(value); return *this;}
@@ -560,12 +546,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-fleet-attribute-based-instance-type-selection.html#ec2fleet-abis-performance-protection">Performance
      * protection</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
-    inline const BaselinePerformanceFactorsRequest& GetBaselinePerformanceFactors() const{ return m_baselinePerformanceFactors; }
+    inline const BaselinePerformanceFactorsRequest& GetBaselinePerformanceFactors() const { return m_baselinePerformanceFactors; }
     inline bool BaselinePerformanceFactorsHasBeenSet() const { return m_baselinePerformanceFactorsHasBeenSet; }
-    inline void SetBaselinePerformanceFactors(const BaselinePerformanceFactorsRequest& value) { m_baselinePerformanceFactorsHasBeenSet = true; m_baselinePerformanceFactors = value; }
-    inline void SetBaselinePerformanceFactors(BaselinePerformanceFactorsRequest&& value) { m_baselinePerformanceFactorsHasBeenSet = true; m_baselinePerformanceFactors = std::move(value); }
-    inline InstanceRequirementsRequest& WithBaselinePerformanceFactors(const BaselinePerformanceFactorsRequest& value) { SetBaselinePerformanceFactors(value); return *this;}
-    inline InstanceRequirementsRequest& WithBaselinePerformanceFactors(BaselinePerformanceFactorsRequest&& value) { SetBaselinePerformanceFactors(std::move(value)); return *this;}
+    template<typename BaselinePerformanceFactorsT = BaselinePerformanceFactorsRequest>
+    void SetBaselinePerformanceFactors(BaselinePerformanceFactorsT&& value) { m_baselinePerformanceFactorsHasBeenSet = true; m_baselinePerformanceFactors = std::forward<BaselinePerformanceFactorsT>(value); }
+    template<typename BaselinePerformanceFactorsT = BaselinePerformanceFactorsRequest>
+    InstanceRequirementsRequest& WithBaselinePerformanceFactors(BaselinePerformanceFactorsT&& value) { SetBaselinePerformanceFactors(std::forward<BaselinePerformanceFactorsT>(value)); return *this;}
     ///@}
   private:
 
@@ -587,25 +573,25 @@ namespace Model
     Aws::Vector<InstanceGeneration> m_instanceGenerations;
     bool m_instanceGenerationsHasBeenSet = false;
 
-    int m_spotMaxPricePercentageOverLowestPrice;
+    int m_spotMaxPricePercentageOverLowestPrice{0};
     bool m_spotMaxPricePercentageOverLowestPriceHasBeenSet = false;
 
-    int m_onDemandMaxPricePercentageOverLowestPrice;
+    int m_onDemandMaxPricePercentageOverLowestPrice{0};
     bool m_onDemandMaxPricePercentageOverLowestPriceHasBeenSet = false;
 
-    BareMetal m_bareMetal;
+    BareMetal m_bareMetal{BareMetal::NOT_SET};
     bool m_bareMetalHasBeenSet = false;
 
-    BurstablePerformance m_burstablePerformance;
+    BurstablePerformance m_burstablePerformance{BurstablePerformance::NOT_SET};
     bool m_burstablePerformanceHasBeenSet = false;
 
-    bool m_requireHibernateSupport;
+    bool m_requireHibernateSupport{false};
     bool m_requireHibernateSupportHasBeenSet = false;
 
     NetworkInterfaceCountRequest m_networkInterfaceCount;
     bool m_networkInterfaceCountHasBeenSet = false;
 
-    LocalStorage m_localStorage;
+    LocalStorage m_localStorage{LocalStorage::NOT_SET};
     bool m_localStorageHasBeenSet = false;
 
     Aws::Vector<LocalStorageType> m_localStorageTypes;
@@ -638,7 +624,7 @@ namespace Model
     Aws::Vector<Aws::String> m_allowedInstanceTypes;
     bool m_allowedInstanceTypesHasBeenSet = false;
 
-    int m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice;
+    int m_maxSpotPriceAsPercentageOfOptimalOnDemandPrice{0};
     bool m_maxSpotPriceAsPercentageOfOptimalOnDemandPriceHasBeenSet = false;
 
     BaselinePerformanceFactorsRequest m_baselinePerformanceFactors;

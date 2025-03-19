@@ -29,7 +29,7 @@ namespace Model
   class ListServiceDeploymentsResult
   {
   public:
-    AWS_ECS_API ListServiceDeploymentsResult();
+    AWS_ECS_API ListServiceDeploymentsResult() = default;
     AWS_ECS_API ListServiceDeploymentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECS_API ListServiceDeploymentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,13 +46,13 @@ namespace Model
      * current state.</p> </li> <li> <p>The ARN of the service revision that is being
      * deployed.</p> </li> </ul>
      */
-    inline const Aws::Vector<ServiceDeploymentBrief>& GetServiceDeployments() const{ return m_serviceDeployments; }
-    inline void SetServiceDeployments(const Aws::Vector<ServiceDeploymentBrief>& value) { m_serviceDeployments = value; }
-    inline void SetServiceDeployments(Aws::Vector<ServiceDeploymentBrief>&& value) { m_serviceDeployments = std::move(value); }
-    inline ListServiceDeploymentsResult& WithServiceDeployments(const Aws::Vector<ServiceDeploymentBrief>& value) { SetServiceDeployments(value); return *this;}
-    inline ListServiceDeploymentsResult& WithServiceDeployments(Aws::Vector<ServiceDeploymentBrief>&& value) { SetServiceDeployments(std::move(value)); return *this;}
-    inline ListServiceDeploymentsResult& AddServiceDeployments(const ServiceDeploymentBrief& value) { m_serviceDeployments.push_back(value); return *this; }
-    inline ListServiceDeploymentsResult& AddServiceDeployments(ServiceDeploymentBrief&& value) { m_serviceDeployments.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ServiceDeploymentBrief>& GetServiceDeployments() const { return m_serviceDeployments; }
+    template<typename ServiceDeploymentsT = Aws::Vector<ServiceDeploymentBrief>>
+    void SetServiceDeployments(ServiceDeploymentsT&& value) { m_serviceDeploymentsHasBeenSet = true; m_serviceDeployments = std::forward<ServiceDeploymentsT>(value); }
+    template<typename ServiceDeploymentsT = Aws::Vector<ServiceDeploymentBrief>>
+    ListServiceDeploymentsResult& WithServiceDeployments(ServiceDeploymentsT&& value) { SetServiceDeployments(std::forward<ServiceDeploymentsT>(value)); return *this;}
+    template<typename ServiceDeploymentsT = ServiceDeploymentBrief>
+    ListServiceDeploymentsResult& AddServiceDeployments(ServiceDeploymentsT&& value) { m_serviceDeploymentsHasBeenSet = true; m_serviceDeployments.emplace_back(std::forward<ServiceDeploymentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,32 +63,31 @@ namespace Model
      * value can be used to retrieve the next page of results. This value is null when
      * there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListServiceDeploymentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListServiceDeploymentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListServiceDeploymentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListServiceDeploymentsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListServiceDeploymentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListServiceDeploymentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListServiceDeploymentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListServiceDeploymentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ServiceDeploymentBrief> m_serviceDeployments;
+    bool m_serviceDeploymentsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,18 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-Address::Address() : 
-    m_cityHasBeenSet(false),
-    m_countryCode(CountryCode::NOT_SET),
-    m_countryCodeHasBeenSet(false),
-    m_postalCodeHasBeenSet(false),
-    m_stateOrRegionHasBeenSet(false),
-    m_streetAddressHasBeenSet(false)
-{
-}
-
 Address::Address(JsonView jsonValue)
-  : Address()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ Address& Address::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("City"))
   {
     m_city = jsonValue.GetString("City");
-
     m_cityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CountryCode"))
   {
     m_countryCode = CountryCodeMapper::GetCountryCodeForName(jsonValue.GetString("CountryCode"));
-
     m_countryCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostalCode"))
   {
     m_postalCode = jsonValue.GetString("PostalCode");
-
     m_postalCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateOrRegion"))
   {
     m_stateOrRegion = jsonValue.GetString("StateOrRegion");
-
     m_stateOrRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreetAddress"))
   {
     m_streetAddress = jsonValue.GetString("StreetAddress");
-
     m_streetAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

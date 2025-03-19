@@ -32,7 +32,7 @@ namespace Model
   class ParticipatingResourceID
   {
   public:
-    AWS_DRS_API ParticipatingResourceID();
+    AWS_DRS_API ParticipatingResourceID() = default;
     AWS_DRS_API ParticipatingResourceID(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API ParticipatingResourceID& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>Source Network ID.</p>
      */
-    inline const Aws::String& GetSourceNetworkID() const{ return m_sourceNetworkID; }
+    inline const Aws::String& GetSourceNetworkID() const { return m_sourceNetworkID; }
     inline bool SourceNetworkIDHasBeenSet() const { return m_sourceNetworkIDHasBeenSet; }
-    inline void SetSourceNetworkID(const Aws::String& value) { m_sourceNetworkIDHasBeenSet = true; m_sourceNetworkID = value; }
-    inline void SetSourceNetworkID(Aws::String&& value) { m_sourceNetworkIDHasBeenSet = true; m_sourceNetworkID = std::move(value); }
-    inline void SetSourceNetworkID(const char* value) { m_sourceNetworkIDHasBeenSet = true; m_sourceNetworkID.assign(value); }
-    inline ParticipatingResourceID& WithSourceNetworkID(const Aws::String& value) { SetSourceNetworkID(value); return *this;}
-    inline ParticipatingResourceID& WithSourceNetworkID(Aws::String&& value) { SetSourceNetworkID(std::move(value)); return *this;}
-    inline ParticipatingResourceID& WithSourceNetworkID(const char* value) { SetSourceNetworkID(value); return *this;}
+    template<typename SourceNetworkIDT = Aws::String>
+    void SetSourceNetworkID(SourceNetworkIDT&& value) { m_sourceNetworkIDHasBeenSet = true; m_sourceNetworkID = std::forward<SourceNetworkIDT>(value); }
+    template<typename SourceNetworkIDT = Aws::String>
+    ParticipatingResourceID& WithSourceNetworkID(SourceNetworkIDT&& value) { SetSourceNetworkID(std::forward<SourceNetworkIDT>(value)); return *this;}
     ///@}
   private:
 

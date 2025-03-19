@@ -12,11 +12,6 @@ using namespace Aws::ivsrealtime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEncoderConfigurationRequest::DeleteEncoderConfigurationRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEncoderConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

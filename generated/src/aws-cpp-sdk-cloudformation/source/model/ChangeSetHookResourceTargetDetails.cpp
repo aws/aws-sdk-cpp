@@ -20,16 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ChangeSetHookResourceTargetDetails::ChangeSetHookResourceTargetDetails() : 
-    m_logicalResourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceAction(ChangeAction::NOT_SET),
-    m_resourceActionHasBeenSet(false)
-{
-}
-
 ChangeSetHookResourceTargetDetails::ChangeSetHookResourceTargetDetails(const XmlNode& xmlNode)
-  : ChangeSetHookResourceTargetDetails()
 {
   *this = xmlNode;
 }
@@ -55,7 +46,7 @@ ChangeSetHookResourceTargetDetails& ChangeSetHookResourceTargetDetails::operator
     XmlNode resourceActionNode = resultNode.FirstChild("ResourceAction");
     if(!resourceActionNode.IsNull())
     {
-      m_resourceAction = ChangeActionMapper::GetChangeActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceActionNode.GetText()).c_str()).c_str());
+      m_resourceAction = ChangeActionMapper::GetChangeActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceActionNode.GetText()).c_str()));
       m_resourceActionHasBeenSet = true;
     }
   }

@@ -21,7 +21,7 @@ namespace Model
   class GetDiskRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API GetDiskRequest();
+    AWS_LIGHTSAIL_API GetDiskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the disk (<code>my-disk</code>).</p>
      */
-    inline const Aws::String& GetDiskName() const{ return m_diskName; }
+    inline const Aws::String& GetDiskName() const { return m_diskName; }
     inline bool DiskNameHasBeenSet() const { return m_diskNameHasBeenSet; }
-    inline void SetDiskName(const Aws::String& value) { m_diskNameHasBeenSet = true; m_diskName = value; }
-    inline void SetDiskName(Aws::String&& value) { m_diskNameHasBeenSet = true; m_diskName = std::move(value); }
-    inline void SetDiskName(const char* value) { m_diskNameHasBeenSet = true; m_diskName.assign(value); }
-    inline GetDiskRequest& WithDiskName(const Aws::String& value) { SetDiskName(value); return *this;}
-    inline GetDiskRequest& WithDiskName(Aws::String&& value) { SetDiskName(std::move(value)); return *this;}
-    inline GetDiskRequest& WithDiskName(const char* value) { SetDiskName(value); return *this;}
+    template<typename DiskNameT = Aws::String>
+    void SetDiskName(DiskNameT&& value) { m_diskNameHasBeenSet = true; m_diskName = std::forward<DiskNameT>(value); }
+    template<typename DiskNameT = Aws::String>
+    GetDiskRequest& WithDiskName(DiskNameT&& value) { SetDiskName(std::forward<DiskNameT>(value)); return *this;}
     ///@}
   private:
 

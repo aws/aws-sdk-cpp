@@ -13,20 +13,6 @@ using namespace Aws::ConnectParticipant::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTranscriptRequest::GetTranscriptRequest() : 
-    m_contactIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_scanDirection(ScanDirection::NOT_SET),
-    m_scanDirectionHasBeenSet(false),
-    m_sortOrder(SortKey::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_startPositionHasBeenSet(false),
-    m_connectionTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetTranscriptRequest::SerializePayload() const
 {
   JsonValue payload;

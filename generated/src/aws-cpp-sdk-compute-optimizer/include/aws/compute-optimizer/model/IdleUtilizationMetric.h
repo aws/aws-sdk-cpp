@@ -33,7 +33,7 @@ namespace Model
   class IdleUtilizationMetric
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API IdleUtilizationMetric();
+    AWS_COMPUTEOPTIMIZER_API IdleUtilizationMetric() = default;
     AWS_COMPUTEOPTIMIZER_API IdleUtilizationMetric(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API IdleUtilizationMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>The name of the utilization metric.</p>
      */
-    inline const IdleMetricName& GetName() const{ return m_name; }
+    inline IdleMetricName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const IdleMetricName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(IdleMetricName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline IdleUtilizationMetric& WithName(const IdleMetricName& value) { SetName(value); return *this;}
-    inline IdleUtilizationMetric& WithName(IdleMetricName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(IdleMetricName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline IdleUtilizationMetric& WithName(IdleMetricName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -67,32 +65,30 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon
      * CloudWatch User Guide</a>.</p>
      */
-    inline const MetricStatistic& GetStatistic() const{ return m_statistic; }
+    inline MetricStatistic GetStatistic() const { return m_statistic; }
     inline bool StatisticHasBeenSet() const { return m_statisticHasBeenSet; }
-    inline void SetStatistic(const MetricStatistic& value) { m_statisticHasBeenSet = true; m_statistic = value; }
-    inline void SetStatistic(MetricStatistic&& value) { m_statisticHasBeenSet = true; m_statistic = std::move(value); }
-    inline IdleUtilizationMetric& WithStatistic(const MetricStatistic& value) { SetStatistic(value); return *this;}
-    inline IdleUtilizationMetric& WithStatistic(MetricStatistic&& value) { SetStatistic(std::move(value)); return *this;}
+    inline void SetStatistic(MetricStatistic value) { m_statisticHasBeenSet = true; m_statistic = value; }
+    inline IdleUtilizationMetric& WithStatistic(MetricStatistic value) { SetStatistic(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the utilization metric.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline IdleUtilizationMetric& WithValue(double value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    IdleMetricName m_name;
+    IdleMetricName m_name{IdleMetricName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    MetricStatistic m_statistic;
+    MetricStatistic m_statistic{MetricStatistic::NOT_SET};
     bool m_statisticHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

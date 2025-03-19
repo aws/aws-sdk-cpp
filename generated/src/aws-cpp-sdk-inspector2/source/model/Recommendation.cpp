@@ -18,14 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-Recommendation::Recommendation() : 
-    m_urlHasBeenSet(false),
-    m_textHasBeenSet(false)
-{
-}
-
 Recommendation::Recommendation(JsonView jsonValue)
-  : Recommendation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Recommendation& Recommendation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetString("Url");
-
     m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

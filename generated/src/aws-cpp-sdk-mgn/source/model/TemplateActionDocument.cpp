@@ -19,31 +19,7 @@ namespace mgn
 namespace Model
 {
 
-TemplateActionDocument::TemplateActionDocument() : 
-    m_actionIDHasBeenSet(false),
-    m_actionNameHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_category(ActionCategory::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_documentIdentifierHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_externalParametersHasBeenSet(false),
-    m_mustSucceedForCutover(false),
-    m_mustSucceedForCutoverHasBeenSet(false),
-    m_operatingSystemHasBeenSet(false),
-    m_order(0),
-    m_orderHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_timeoutSeconds(0),
-    m_timeoutSecondsHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 TemplateActionDocument::TemplateActionDocument(JsonView jsonValue)
-  : TemplateActionDocument()
 {
   *this = jsonValue;
 }
@@ -53,52 +29,38 @@ TemplateActionDocument& TemplateActionDocument::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actionID"))
   {
     m_actionID = jsonValue.GetString("actionID");
-
     m_actionIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionName"))
   {
     m_actionName = jsonValue.GetString("actionName");
-
     m_actionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("active"))
   {
     m_active = jsonValue.GetBool("active");
-
     m_activeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("category"))
   {
     m_category = ActionCategoryMapper::GetActionCategoryForName(jsonValue.GetString("category"));
-
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("documentIdentifier"))
   {
     m_documentIdentifier = jsonValue.GetString("documentIdentifier");
-
     m_documentIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("documentVersion"))
   {
     m_documentVersion = jsonValue.GetString("documentVersion");
-
     m_documentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalParameters"))
   {
     Aws::Map<Aws::String, JsonView> externalParametersJsonMap = jsonValue.GetObject("externalParameters").GetAllObjects();
@@ -108,28 +70,21 @@ TemplateActionDocument& TemplateActionDocument::operator =(JsonView jsonValue)
     }
     m_externalParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mustSucceedForCutover"))
   {
     m_mustSucceedForCutover = jsonValue.GetBool("mustSucceedForCutover");
-
     m_mustSucceedForCutoverHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operatingSystem"))
   {
     m_operatingSystem = jsonValue.GetString("operatingSystem");
-
     m_operatingSystemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("order"))
   {
     m_order = jsonValue.GetInteger("order");
-
     m_orderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
@@ -146,14 +101,11 @@ TemplateActionDocument& TemplateActionDocument::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeoutSeconds"))
   {
     m_timeoutSeconds = jsonValue.GetInteger("timeoutSeconds");
-
     m_timeoutSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,35 +28,35 @@ namespace Model
   class EnableHostedZoneDNSSECResult
   {
   public:
-    AWS_ROUTE53_API EnableHostedZoneDNSSECResult();
+    AWS_ROUTE53_API EnableHostedZoneDNSSECResult() = default;
     AWS_ROUTE53_API EnableHostedZoneDNSSECResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API EnableHostedZoneDNSSECResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const ChangeInfo& GetChangeInfo() const{ return m_changeInfo; }
-    inline void SetChangeInfo(const ChangeInfo& value) { m_changeInfo = value; }
-    inline void SetChangeInfo(ChangeInfo&& value) { m_changeInfo = std::move(value); }
-    inline EnableHostedZoneDNSSECResult& WithChangeInfo(const ChangeInfo& value) { SetChangeInfo(value); return *this;}
-    inline EnableHostedZoneDNSSECResult& WithChangeInfo(ChangeInfo&& value) { SetChangeInfo(std::move(value)); return *this;}
+    inline const ChangeInfo& GetChangeInfo() const { return m_changeInfo; }
+    template<typename ChangeInfoT = ChangeInfo>
+    void SetChangeInfo(ChangeInfoT&& value) { m_changeInfoHasBeenSet = true; m_changeInfo = std::forward<ChangeInfoT>(value); }
+    template<typename ChangeInfoT = ChangeInfo>
+    EnableHostedZoneDNSSECResult& WithChangeInfo(ChangeInfoT&& value) { SetChangeInfo(std::forward<ChangeInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline EnableHostedZoneDNSSECResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline EnableHostedZoneDNSSECResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline EnableHostedZoneDNSSECResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    EnableHostedZoneDNSSECResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ChangeInfo m_changeInfo;
+    bool m_changeInfoHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -23,7 +23,7 @@ namespace Model
   class CompleteSnapshotRequest : public EBSRequest
   {
   public:
-    AWS_EBS_API CompleteSnapshotRequest();
+    AWS_EBS_API CompleteSnapshotRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,21 +40,19 @@ namespace Model
     /**
      * <p>The ID of the snapshot.</p>
      */
-    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+    inline const Aws::String& GetSnapshotId() const { return m_snapshotId; }
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
-    inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
-    inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
-    inline CompleteSnapshotRequest& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-    inline CompleteSnapshotRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-    inline CompleteSnapshotRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+    template<typename SnapshotIdT = Aws::String>
+    void SetSnapshotId(SnapshotIdT&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::forward<SnapshotIdT>(value); }
+    template<typename SnapshotIdT = Aws::String>
+    CompleteSnapshotRequest& WithSnapshotId(SnapshotIdT&& value) { SetSnapshotId(std::forward<SnapshotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of blocks that were written to the snapshot.</p>
      */
-    inline int GetChangedBlocksCount() const{ return m_changedBlocksCount; }
+    inline int GetChangedBlocksCount() const { return m_changedBlocksCount; }
     inline bool ChangedBlocksCountHasBeenSet() const { return m_changedBlocksCountHasBeenSet; }
     inline void SetChangedBlocksCount(int value) { m_changedBlocksCountHasBeenSet = true; m_changedBlocksCount = value; }
     inline CompleteSnapshotRequest& WithChangedBlocksCount(int value) { SetChangedBlocksCount(value); return *this;}
@@ -68,14 +66,12 @@ namespace Model
      * block index, concatenate them to form a single string, and then generate the
      * checksum on the entire string using the SHA256 algorithm.</p>
      */
-    inline const Aws::String& GetChecksum() const{ return m_checksum; }
+    inline const Aws::String& GetChecksum() const { return m_checksum; }
     inline bool ChecksumHasBeenSet() const { return m_checksumHasBeenSet; }
-    inline void SetChecksum(const Aws::String& value) { m_checksumHasBeenSet = true; m_checksum = value; }
-    inline void SetChecksum(Aws::String&& value) { m_checksumHasBeenSet = true; m_checksum = std::move(value); }
-    inline void SetChecksum(const char* value) { m_checksumHasBeenSet = true; m_checksum.assign(value); }
-    inline CompleteSnapshotRequest& WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
-    inline CompleteSnapshotRequest& WithChecksum(Aws::String&& value) { SetChecksum(std::move(value)); return *this;}
-    inline CompleteSnapshotRequest& WithChecksum(const char* value) { SetChecksum(value); return *this;}
+    template<typename ChecksumT = Aws::String>
+    void SetChecksum(ChecksumT&& value) { m_checksumHasBeenSet = true; m_checksum = std::forward<ChecksumT>(value); }
+    template<typename ChecksumT = Aws::String>
+    CompleteSnapshotRequest& WithChecksum(ChecksumT&& value) { SetChecksum(std::forward<ChecksumT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,12 +79,10 @@ namespace Model
      * <p>The algorithm used to generate the checksum. Currently, the only supported
      * algorithm is <code>SHA256</code>.</p>
      */
-    inline const ChecksumAlgorithm& GetChecksumAlgorithm() const{ return m_checksumAlgorithm; }
+    inline ChecksumAlgorithm GetChecksumAlgorithm() const { return m_checksumAlgorithm; }
     inline bool ChecksumAlgorithmHasBeenSet() const { return m_checksumAlgorithmHasBeenSet; }
-    inline void SetChecksumAlgorithm(const ChecksumAlgorithm& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = value; }
-    inline void SetChecksumAlgorithm(ChecksumAlgorithm&& value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = std::move(value); }
-    inline CompleteSnapshotRequest& WithChecksumAlgorithm(const ChecksumAlgorithm& value) { SetChecksumAlgorithm(value); return *this;}
-    inline CompleteSnapshotRequest& WithChecksumAlgorithm(ChecksumAlgorithm&& value) { SetChecksumAlgorithm(std::move(value)); return *this;}
+    inline void SetChecksumAlgorithm(ChecksumAlgorithm value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = value; }
+    inline CompleteSnapshotRequest& WithChecksumAlgorithm(ChecksumAlgorithm value) { SetChecksumAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -96,28 +90,26 @@ namespace Model
      * <p>The aggregation method used to generate the checksum. Currently, the only
      * supported aggregation method is <code>LINEAR</code>.</p>
      */
-    inline const ChecksumAggregationMethod& GetChecksumAggregationMethod() const{ return m_checksumAggregationMethod; }
+    inline ChecksumAggregationMethod GetChecksumAggregationMethod() const { return m_checksumAggregationMethod; }
     inline bool ChecksumAggregationMethodHasBeenSet() const { return m_checksumAggregationMethodHasBeenSet; }
-    inline void SetChecksumAggregationMethod(const ChecksumAggregationMethod& value) { m_checksumAggregationMethodHasBeenSet = true; m_checksumAggregationMethod = value; }
-    inline void SetChecksumAggregationMethod(ChecksumAggregationMethod&& value) { m_checksumAggregationMethodHasBeenSet = true; m_checksumAggregationMethod = std::move(value); }
-    inline CompleteSnapshotRequest& WithChecksumAggregationMethod(const ChecksumAggregationMethod& value) { SetChecksumAggregationMethod(value); return *this;}
-    inline CompleteSnapshotRequest& WithChecksumAggregationMethod(ChecksumAggregationMethod&& value) { SetChecksumAggregationMethod(std::move(value)); return *this;}
+    inline void SetChecksumAggregationMethod(ChecksumAggregationMethod value) { m_checksumAggregationMethodHasBeenSet = true; m_checksumAggregationMethod = value; }
+    inline CompleteSnapshotRequest& WithChecksumAggregationMethod(ChecksumAggregationMethod value) { SetChecksumAggregationMethod(value); return *this;}
     ///@}
   private:
 
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet = false;
 
-    int m_changedBlocksCount;
+    int m_changedBlocksCount{0};
     bool m_changedBlocksCountHasBeenSet = false;
 
     Aws::String m_checksum;
     bool m_checksumHasBeenSet = false;
 
-    ChecksumAlgorithm m_checksumAlgorithm;
+    ChecksumAlgorithm m_checksumAlgorithm{ChecksumAlgorithm::NOT_SET};
     bool m_checksumAlgorithmHasBeenSet = false;
 
-    ChecksumAggregationMethod m_checksumAggregationMethod;
+    ChecksumAggregationMethod m_checksumAggregationMethod{ChecksumAggregationMethod::NOT_SET};
     bool m_checksumAggregationMethodHasBeenSet = false;
   };
 

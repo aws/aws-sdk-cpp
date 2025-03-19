@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TemplateError::TemplateError() : 
-    m_type(TemplateErrorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_violatedEntitiesHasBeenSet(false)
-{
-}
-
 TemplateError::TemplateError(JsonView jsonValue)
-  : TemplateError()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TemplateError& TemplateError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = TemplateErrorTypeMapper::GetTemplateErrorTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ViolatedEntities"))
   {
     Aws::Utils::Array<JsonView> violatedEntitiesJsonList = jsonValue.GetArray("ViolatedEntities");
@@ -57,7 +44,6 @@ TemplateError& TemplateError::operator =(JsonView jsonValue)
     }
     m_violatedEntitiesHasBeenSet = true;
   }
-
   return *this;
 }
 

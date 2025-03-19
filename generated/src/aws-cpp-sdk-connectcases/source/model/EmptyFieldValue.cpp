@@ -18,10 +18,6 @@ namespace ConnectCases
 namespace Model
 {
 
-EmptyFieldValue::EmptyFieldValue()
-{
-}
-
 EmptyFieldValue::EmptyFieldValue(JsonView jsonValue)
 {
   *this = jsonValue;

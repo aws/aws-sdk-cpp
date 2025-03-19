@@ -22,7 +22,7 @@ namespace Model
   class DescribeScalingPoliciesRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API DescribeScalingPoliciesRequest();
+    AWS_GAMELIFT_API DescribeScalingPoliciesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>A unique identifier for the fleet for which to retrieve scaling policies. You
      * can use either the fleet ID or ARN value.</p>
      */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+    inline const Aws::String& GetFleetId() const { return m_fleetId; }
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-    inline DescribeScalingPoliciesRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline DescribeScalingPoliciesRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline DescribeScalingPoliciesRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    template<typename FleetIdT = Aws::String>
+    void SetFleetId(FleetIdT&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::forward<FleetIdT>(value); }
+    template<typename FleetIdT = Aws::String>
+    DescribeScalingPoliciesRequest& WithFleetId(FleetIdT&& value) { SetFleetId(std::forward<FleetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +61,10 @@ namespace Model
      * deleted.</p> </li> <li> <p> <b>ERROR</b> -- An error occurred in creating the
      * policy. It should be removed and recreated.</p> </li> </ul>
      */
-    inline const ScalingStatusType& GetStatusFilter() const{ return m_statusFilter; }
+    inline ScalingStatusType GetStatusFilter() const { return m_statusFilter; }
     inline bool StatusFilterHasBeenSet() const { return m_statusFilterHasBeenSet; }
-    inline void SetStatusFilter(const ScalingStatusType& value) { m_statusFilterHasBeenSet = true; m_statusFilter = value; }
-    inline void SetStatusFilter(ScalingStatusType&& value) { m_statusFilterHasBeenSet = true; m_statusFilter = std::move(value); }
-    inline DescribeScalingPoliciesRequest& WithStatusFilter(const ScalingStatusType& value) { SetStatusFilter(value); return *this;}
-    inline DescribeScalingPoliciesRequest& WithStatusFilter(ScalingStatusType&& value) { SetStatusFilter(std::move(value)); return *this;}
+    inline void SetStatusFilter(ScalingStatusType value) { m_statusFilterHasBeenSet = true; m_statusFilter = value; }
+    inline DescribeScalingPoliciesRequest& WithStatusFilter(ScalingStatusType value) { SetStatusFilter(value); return *this;}
     ///@}
 
     ///@{
@@ -76,7 +72,7 @@ namespace Model
      * <p>The maximum number of results to return. Use this parameter with
      * <code>NextToken</code> to get results as a set of sequential pages.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline DescribeScalingPoliciesRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -88,14 +84,12 @@ namespace Model
      * the token that is returned with a previous call to this operation. To start at
      * the beginning of the result set, do not specify a value.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeScalingPoliciesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeScalingPoliciesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeScalingPoliciesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeScalingPoliciesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,24 +97,22 @@ namespace Model
      * <p> The fleet location. If you don't specify this value, the response contains
      * the scaling policies of every location in the fleet. </p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline DescribeScalingPoliciesRequest& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline DescribeScalingPoliciesRequest& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline DescribeScalingPoliciesRequest& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    DescribeScalingPoliciesRequest& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_fleetId;
     bool m_fleetIdHasBeenSet = false;
 
-    ScalingStatusType m_statusFilter;
+    ScalingStatusType m_statusFilter{ScalingStatusType::NOT_SET};
     bool m_statusFilterHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;

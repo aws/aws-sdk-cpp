@@ -29,7 +29,7 @@ namespace Model
   class GetFeedbackResult
   {
   public:
-    AWS_LOOKOUTMETRICS_API GetFeedbackResult();
+    AWS_LOOKOUTMETRICS_API GetFeedbackResult() = default;
     AWS_LOOKOUTMETRICS_API GetFeedbackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOOKOUTMETRICS_API GetFeedbackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>Feedback for an anomalous metric.</p>
      */
-    inline const Aws::Vector<TimeSeriesFeedback>& GetAnomalyGroupTimeSeriesFeedback() const{ return m_anomalyGroupTimeSeriesFeedback; }
-    inline void SetAnomalyGroupTimeSeriesFeedback(const Aws::Vector<TimeSeriesFeedback>& value) { m_anomalyGroupTimeSeriesFeedback = value; }
-    inline void SetAnomalyGroupTimeSeriesFeedback(Aws::Vector<TimeSeriesFeedback>&& value) { m_anomalyGroupTimeSeriesFeedback = std::move(value); }
-    inline GetFeedbackResult& WithAnomalyGroupTimeSeriesFeedback(const Aws::Vector<TimeSeriesFeedback>& value) { SetAnomalyGroupTimeSeriesFeedback(value); return *this;}
-    inline GetFeedbackResult& WithAnomalyGroupTimeSeriesFeedback(Aws::Vector<TimeSeriesFeedback>&& value) { SetAnomalyGroupTimeSeriesFeedback(std::move(value)); return *this;}
-    inline GetFeedbackResult& AddAnomalyGroupTimeSeriesFeedback(const TimeSeriesFeedback& value) { m_anomalyGroupTimeSeriesFeedback.push_back(value); return *this; }
-    inline GetFeedbackResult& AddAnomalyGroupTimeSeriesFeedback(TimeSeriesFeedback&& value) { m_anomalyGroupTimeSeriesFeedback.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TimeSeriesFeedback>& GetAnomalyGroupTimeSeriesFeedback() const { return m_anomalyGroupTimeSeriesFeedback; }
+    template<typename AnomalyGroupTimeSeriesFeedbackT = Aws::Vector<TimeSeriesFeedback>>
+    void SetAnomalyGroupTimeSeriesFeedback(AnomalyGroupTimeSeriesFeedbackT&& value) { m_anomalyGroupTimeSeriesFeedbackHasBeenSet = true; m_anomalyGroupTimeSeriesFeedback = std::forward<AnomalyGroupTimeSeriesFeedbackT>(value); }
+    template<typename AnomalyGroupTimeSeriesFeedbackT = Aws::Vector<TimeSeriesFeedback>>
+    GetFeedbackResult& WithAnomalyGroupTimeSeriesFeedback(AnomalyGroupTimeSeriesFeedbackT&& value) { SetAnomalyGroupTimeSeriesFeedback(std::forward<AnomalyGroupTimeSeriesFeedbackT>(value)); return *this;}
+    template<typename AnomalyGroupTimeSeriesFeedbackT = TimeSeriesFeedback>
+    GetFeedbackResult& AddAnomalyGroupTimeSeriesFeedback(AnomalyGroupTimeSeriesFeedbackT&& value) { m_anomalyGroupTimeSeriesFeedbackHasBeenSet = true; m_anomalyGroupTimeSeriesFeedback.emplace_back(std::forward<AnomalyGroupTimeSeriesFeedbackT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token that's included if more results are available.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetFeedbackResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetFeedbackResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetFeedbackResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetFeedbackResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetFeedbackResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetFeedbackResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetFeedbackResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetFeedbackResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TimeSeriesFeedback> m_anomalyGroupTimeSeriesFeedback;
+    bool m_anomalyGroupTimeSeriesFeedbackHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

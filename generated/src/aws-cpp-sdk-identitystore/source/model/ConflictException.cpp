@@ -18,16 +18,7 @@ namespace IdentityStore
 namespace Model
 {
 
-ConflictException::ConflictException() : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_reason(ConflictExceptionReason::NOT_SET),
-    m_reasonHasBeenSet(false)
-{
-}
-
 ConflictException::ConflictException(JsonView jsonValue)
-  : ConflictException()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ConflictException& ConflictException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = ConflictExceptionReasonMapper::GetConflictExceptionReasonForName(jsonValue.GetString("Reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

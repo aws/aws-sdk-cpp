@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateChatTokenResult::CreateChatTokenResult()
-{
-}
-
 CreateChatTokenResult::CreateChatTokenResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ CreateChatTokenResult& CreateChatTokenResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("token"))
   {
     m_token = jsonValue.GetString("token");
-
+    m_tokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tokenExpirationTime"))
   {
     m_tokenExpirationTime = jsonValue.GetString("tokenExpirationTime");
-
+    m_tokenExpirationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionExpirationTime"))
   {
     m_sessionExpirationTime = jsonValue.GetString("sessionExpirationTime");
-
+    m_sessionExpirationTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

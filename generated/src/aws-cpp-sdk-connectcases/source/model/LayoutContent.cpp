@@ -18,13 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-LayoutContent::LayoutContent() : 
-    m_basicHasBeenSet(false)
-{
-}
-
 LayoutContent::LayoutContent(JsonView jsonValue)
-  : LayoutContent()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LayoutContent& LayoutContent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("basic"))
   {
     m_basic = jsonValue.GetObject("basic");
-
     m_basicHasBeenSet = true;
   }
-
   return *this;
 }
 

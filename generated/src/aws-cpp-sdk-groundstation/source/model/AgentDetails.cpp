@@ -18,18 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-AgentDetails::AgentDetails() : 
-    m_agentCpuCoresHasBeenSet(false),
-    m_agentVersionHasBeenSet(false),
-    m_componentVersionsHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_reservedCpuCoresHasBeenSet(false)
-{
-}
-
 AgentDetails::AgentDetails(JsonView jsonValue)
-  : AgentDetails()
 {
   *this = jsonValue;
 }
@@ -45,14 +34,11 @@ AgentDetails& AgentDetails::operator =(JsonView jsonValue)
     }
     m_agentCpuCoresHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentVersion"))
   {
     m_agentVersion = jsonValue.GetString("agentVersion");
-
     m_agentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentVersions"))
   {
     Aws::Utils::Array<JsonView> componentVersionsJsonList = jsonValue.GetArray("componentVersions");
@@ -62,21 +48,16 @@ AgentDetails& AgentDetails::operator =(JsonView jsonValue)
     }
     m_componentVersionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceId"))
   {
     m_instanceId = jsonValue.GetString("instanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = jsonValue.GetString("instanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reservedCpuCores"))
   {
     Aws::Utils::Array<JsonView> reservedCpuCoresJsonList = jsonValue.GetArray("reservedCpuCores");
@@ -86,7 +67,6 @@ AgentDetails& AgentDetails::operator =(JsonView jsonValue)
     }
     m_reservedCpuCoresHasBeenSet = true;
   }
-
   return *this;
 }
 

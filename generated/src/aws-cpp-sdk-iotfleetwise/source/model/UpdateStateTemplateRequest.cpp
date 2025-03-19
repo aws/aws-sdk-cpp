@@ -12,16 +12,6 @@ using namespace Aws::IoTFleetWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateStateTemplateRequest::UpdateStateTemplateRequest() : 
-    m_identifierHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_stateTemplatePropertiesToAddHasBeenSet(false),
-    m_stateTemplatePropertiesToRemoveHasBeenSet(false),
-    m_dataExtraDimensionsHasBeenSet(false),
-    m_metadataExtraDimensionsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateStateTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

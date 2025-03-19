@@ -31,7 +31,7 @@ namespace Model
   class SidewalkUpdateAccount
   {
   public:
-    AWS_IOTWIRELESS_API SidewalkUpdateAccount();
+    AWS_IOTWIRELESS_API SidewalkUpdateAccount() = default;
     AWS_IOTWIRELESS_API SidewalkUpdateAccount(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API SidewalkUpdateAccount& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The new Sidewalk application server private key.</p>
      */
-    inline const Aws::String& GetAppServerPrivateKey() const{ return m_appServerPrivateKey; }
+    inline const Aws::String& GetAppServerPrivateKey() const { return m_appServerPrivateKey; }
     inline bool AppServerPrivateKeyHasBeenSet() const { return m_appServerPrivateKeyHasBeenSet; }
-    inline void SetAppServerPrivateKey(const Aws::String& value) { m_appServerPrivateKeyHasBeenSet = true; m_appServerPrivateKey = value; }
-    inline void SetAppServerPrivateKey(Aws::String&& value) { m_appServerPrivateKeyHasBeenSet = true; m_appServerPrivateKey = std::move(value); }
-    inline void SetAppServerPrivateKey(const char* value) { m_appServerPrivateKeyHasBeenSet = true; m_appServerPrivateKey.assign(value); }
-    inline SidewalkUpdateAccount& WithAppServerPrivateKey(const Aws::String& value) { SetAppServerPrivateKey(value); return *this;}
-    inline SidewalkUpdateAccount& WithAppServerPrivateKey(Aws::String&& value) { SetAppServerPrivateKey(std::move(value)); return *this;}
-    inline SidewalkUpdateAccount& WithAppServerPrivateKey(const char* value) { SetAppServerPrivateKey(value); return *this;}
+    template<typename AppServerPrivateKeyT = Aws::String>
+    void SetAppServerPrivateKey(AppServerPrivateKeyT&& value) { m_appServerPrivateKeyHasBeenSet = true; m_appServerPrivateKey = std::forward<AppServerPrivateKeyT>(value); }
+    template<typename AppServerPrivateKeyT = Aws::String>
+    SidewalkUpdateAccount& WithAppServerPrivateKey(AppServerPrivateKeyT&& value) { SetAppServerPrivateKey(std::forward<AppServerPrivateKeyT>(value)); return *this;}
     ///@}
   private:
 

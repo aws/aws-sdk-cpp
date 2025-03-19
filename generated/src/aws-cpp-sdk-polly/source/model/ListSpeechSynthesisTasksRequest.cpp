@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListSpeechSynthesisTasksRequest::ListSpeechSynthesisTasksRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_status(TaskStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String ListSpeechSynthesisTasksRequest::SerializePayload() const
 {
   return {};

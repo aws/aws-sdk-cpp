@@ -34,7 +34,7 @@ namespace Model
   class VehicleMiddleware
   {
   public:
-    AWS_IOTFLEETWISE_API VehicleMiddleware();
+    AWS_IOTFLEETWISE_API VehicleMiddleware() = default;
     AWS_IOTFLEETWISE_API VehicleMiddleware(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API VehicleMiddleware& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,33 +44,29 @@ namespace Model
     /**
      * <p>The name of the vehicle middleware. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline VehicleMiddleware& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline VehicleMiddleware& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline VehicleMiddleware& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    VehicleMiddleware& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The protocol name of the vehicle middleware. </p>
      */
-    inline const VehicleMiddlewareProtocol& GetProtocolName() const{ return m_protocolName; }
+    inline VehicleMiddlewareProtocol GetProtocolName() const { return m_protocolName; }
     inline bool ProtocolNameHasBeenSet() const { return m_protocolNameHasBeenSet; }
-    inline void SetProtocolName(const VehicleMiddlewareProtocol& value) { m_protocolNameHasBeenSet = true; m_protocolName = value; }
-    inline void SetProtocolName(VehicleMiddlewareProtocol&& value) { m_protocolNameHasBeenSet = true; m_protocolName = std::move(value); }
-    inline VehicleMiddleware& WithProtocolName(const VehicleMiddlewareProtocol& value) { SetProtocolName(value); return *this;}
-    inline VehicleMiddleware& WithProtocolName(VehicleMiddlewareProtocol&& value) { SetProtocolName(std::move(value)); return *this;}
+    inline void SetProtocolName(VehicleMiddlewareProtocol value) { m_protocolNameHasBeenSet = true; m_protocolName = value; }
+    inline VehicleMiddleware& WithProtocolName(VehicleMiddlewareProtocol value) { SetProtocolName(value); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    VehicleMiddlewareProtocol m_protocolName;
+    VehicleMiddlewareProtocol m_protocolName{VehicleMiddlewareProtocol::NOT_SET};
     bool m_protocolNameHasBeenSet = false;
   };
 

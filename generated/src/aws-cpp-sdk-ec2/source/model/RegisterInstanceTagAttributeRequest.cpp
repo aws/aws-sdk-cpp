@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-RegisterInstanceTagAttributeRequest::RegisterInstanceTagAttributeRequest() : 
-    m_includeAllTagsOfInstance(false),
-    m_includeAllTagsOfInstanceHasBeenSet(false),
-    m_instanceTagKeysHasBeenSet(false)
-{
-}
-
 RegisterInstanceTagAttributeRequest::RegisterInstanceTagAttributeRequest(const XmlNode& xmlNode)
-  : RegisterInstanceTagAttributeRequest()
 {
   *this = xmlNode;
 }
@@ -49,6 +41,7 @@ RegisterInstanceTagAttributeRequest& RegisterInstanceTagAttributeRequest::operat
     if(!instanceTagKeysNode.IsNull())
     {
       XmlNode instanceTagKeysMember = instanceTagKeysNode.FirstChild("item");
+      m_instanceTagKeysHasBeenSet = !instanceTagKeysMember.IsNull();
       while(!instanceTagKeysMember.IsNull())
       {
         m_instanceTagKeys.push_back(instanceTagKeysMember.GetText());

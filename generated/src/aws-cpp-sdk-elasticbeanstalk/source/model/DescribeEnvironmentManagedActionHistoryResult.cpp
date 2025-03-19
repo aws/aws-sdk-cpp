@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEnvironmentManagedActionHistoryResult::DescribeEnvironmentManagedActionHistoryResult()
-{
-}
-
 DescribeEnvironmentManagedActionHistoryResult::DescribeEnvironmentManagedActionHistoryResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeEnvironmentManagedActionHistoryResult& DescribeEnvironmentManagedActionH
     if(!managedActionHistoryItemsNode.IsNull())
     {
       XmlNode managedActionHistoryItemsMember = managedActionHistoryItemsNode.FirstChild("member");
+      m_managedActionHistoryItemsHasBeenSet = !managedActionHistoryItemsMember.IsNull();
       while(!managedActionHistoryItemsMember.IsNull())
       {
         m_managedActionHistoryItems.push_back(managedActionHistoryItemsMember);
         managedActionHistoryItemsMember = managedActionHistoryItemsMember.NextNode("member");
       }
 
+      m_managedActionHistoryItemsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticBeanstalk::Model::DescribeEnvironmentManagedActionHistoryResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

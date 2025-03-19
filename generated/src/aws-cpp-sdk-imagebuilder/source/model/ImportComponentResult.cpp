@@ -16,10 +16,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ImportComponentResult::ImportComponentResult()
-{
-}
-
 ImportComponentResult::ImportComponentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -31,21 +27,18 @@ ImportComponentResult& ImportComponentResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
+    m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientToken"))
   {
     m_clientToken = jsonValue.GetString("clientToken");
-
+    m_clientTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentBuildVersionArn"))
   {
     m_componentBuildVersionArn = jsonValue.GetString("componentBuildVersionArn");
-
+    m_componentBuildVersionArnHasBeenSet = true;
   }
-
 
 
   return *this;

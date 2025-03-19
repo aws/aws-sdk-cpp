@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDataQualityRulesetRequest::DeleteDataQualityRulesetRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDataQualityRulesetRequest::SerializePayload() const
 {
   JsonValue payload;

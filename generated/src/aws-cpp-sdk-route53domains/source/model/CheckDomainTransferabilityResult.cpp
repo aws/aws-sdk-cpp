@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CheckDomainTransferabilityResult::CheckDomainTransferabilityResult()
-{
-}
-
 CheckDomainTransferabilityResult::CheckDomainTransferabilityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CheckDomainTransferabilityResult& CheckDomainTransferabilityResult::operator =(c
   if(jsonValue.ValueExists("Transferability"))
   {
     m_transferability = jsonValue.GetObject("Transferability");
-
+    m_transferabilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
+    m_messageHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

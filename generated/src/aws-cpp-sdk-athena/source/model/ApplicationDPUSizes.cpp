@@ -18,14 +18,7 @@ namespace Athena
 namespace Model
 {
 
-ApplicationDPUSizes::ApplicationDPUSizes() : 
-    m_applicationRuntimeIdHasBeenSet(false),
-    m_supportedDPUSizesHasBeenSet(false)
-{
-}
-
 ApplicationDPUSizes::ApplicationDPUSizes(JsonView jsonValue)
-  : ApplicationDPUSizes()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ApplicationDPUSizes& ApplicationDPUSizes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApplicationRuntimeId"))
   {
     m_applicationRuntimeId = jsonValue.GetString("ApplicationRuntimeId");
-
     m_applicationRuntimeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportedDPUSizes"))
   {
     Aws::Utils::Array<JsonView> supportedDPUSizesJsonList = jsonValue.GetArray("SupportedDPUSizes");
@@ -48,7 +39,6 @@ ApplicationDPUSizes& ApplicationDPUSizes::operator =(JsonView jsonValue)
     }
     m_supportedDPUSizesHasBeenSet = true;
   }
-
   return *this;
 }
 

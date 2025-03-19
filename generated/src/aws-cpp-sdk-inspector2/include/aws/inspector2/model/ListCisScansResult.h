@@ -29,7 +29,7 @@ namespace Model
   class ListCisScansResult
   {
   public:
-    AWS_INSPECTOR2_API ListCisScansResult();
+    AWS_INSPECTOR2_API ListCisScansResult() = default;
     AWS_INSPECTOR2_API ListCisScansResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INSPECTOR2_API ListCisScansResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>The pagination token from a previous request that's used to retrieve the next
      * page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCisScansResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCisScansResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCisScansResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCisScansResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The CIS scans.</p>
      */
-    inline const Aws::Vector<CisScan>& GetScans() const{ return m_scans; }
-    inline void SetScans(const Aws::Vector<CisScan>& value) { m_scans = value; }
-    inline void SetScans(Aws::Vector<CisScan>&& value) { m_scans = std::move(value); }
-    inline ListCisScansResult& WithScans(const Aws::Vector<CisScan>& value) { SetScans(value); return *this;}
-    inline ListCisScansResult& WithScans(Aws::Vector<CisScan>&& value) { SetScans(std::move(value)); return *this;}
-    inline ListCisScansResult& AddScans(const CisScan& value) { m_scans.push_back(value); return *this; }
-    inline ListCisScansResult& AddScans(CisScan&& value) { m_scans.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CisScan>& GetScans() const { return m_scans; }
+    template<typename ScansT = Aws::Vector<CisScan>>
+    void SetScans(ScansT&& value) { m_scansHasBeenSet = true; m_scans = std::forward<ScansT>(value); }
+    template<typename ScansT = Aws::Vector<CisScan>>
+    ListCisScansResult& WithScans(ScansT&& value) { SetScans(std::forward<ScansT>(value)); return *this;}
+    template<typename ScansT = CisScan>
+    ListCisScansResult& AddScans(ScansT&& value) { m_scansHasBeenSet = true; m_scans.emplace_back(std::forward<ScansT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCisScansResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCisScansResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCisScansResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCisScansResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<CisScan> m_scans;
+    bool m_scansHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,7 +32,7 @@ namespace Model
   class RdsSalSettings
   {
   public:
-    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API RdsSalSettings();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API RdsSalSettings() = default;
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API RdsSalSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API RdsSalSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The <code>CredentialsProvider</code> resource contains a reference to the
      * credentials provider that's used for RDS license server user administration.</p>
      */
-    inline const CredentialsProvider& GetRdsSalCredentialsProvider() const{ return m_rdsSalCredentialsProvider; }
+    inline const CredentialsProvider& GetRdsSalCredentialsProvider() const { return m_rdsSalCredentialsProvider; }
     inline bool RdsSalCredentialsProviderHasBeenSet() const { return m_rdsSalCredentialsProviderHasBeenSet; }
-    inline void SetRdsSalCredentialsProvider(const CredentialsProvider& value) { m_rdsSalCredentialsProviderHasBeenSet = true; m_rdsSalCredentialsProvider = value; }
-    inline void SetRdsSalCredentialsProvider(CredentialsProvider&& value) { m_rdsSalCredentialsProviderHasBeenSet = true; m_rdsSalCredentialsProvider = std::move(value); }
-    inline RdsSalSettings& WithRdsSalCredentialsProvider(const CredentialsProvider& value) { SetRdsSalCredentialsProvider(value); return *this;}
-    inline RdsSalSettings& WithRdsSalCredentialsProvider(CredentialsProvider&& value) { SetRdsSalCredentialsProvider(std::move(value)); return *this;}
+    template<typename RdsSalCredentialsProviderT = CredentialsProvider>
+    void SetRdsSalCredentialsProvider(RdsSalCredentialsProviderT&& value) { m_rdsSalCredentialsProviderHasBeenSet = true; m_rdsSalCredentialsProvider = std::forward<RdsSalCredentialsProviderT>(value); }
+    template<typename RdsSalCredentialsProviderT = CredentialsProvider>
+    RdsSalSettings& WithRdsSalCredentialsProvider(RdsSalCredentialsProviderT&& value) { SetRdsSalCredentialsProvider(std::forward<RdsSalCredentialsProviderT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,18 +18,7 @@ namespace SagemakerEdgeManager
 namespace Model
 {
 
-EdgeDeployment::EdgeDeployment() : 
-    m_deploymentNameHasBeenSet(false),
-    m_type(DeploymentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_failureHandlingPolicy(FailureHandlingPolicy::NOT_SET),
-    m_failureHandlingPolicyHasBeenSet(false),
-    m_definitionsHasBeenSet(false)
-{
-}
-
 EdgeDeployment::EdgeDeployment(JsonView jsonValue)
-  : EdgeDeployment()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ EdgeDeployment& EdgeDeployment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DeploymentName"))
   {
     m_deploymentName = jsonValue.GetString("DeploymentName");
-
     m_deploymentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = DeploymentTypeMapper::GetDeploymentTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureHandlingPolicy"))
   {
     m_failureHandlingPolicy = FailureHandlingPolicyMapper::GetFailureHandlingPolicyForName(jsonValue.GetString("FailureHandlingPolicy"));
-
     m_failureHandlingPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Definitions"))
   {
     Aws::Utils::Array<JsonView> definitionsJsonList = jsonValue.GetArray("Definitions");
@@ -66,7 +49,6 @@ EdgeDeployment& EdgeDeployment::operator =(JsonView jsonValue)
     }
     m_definitionsHasBeenSet = true;
   }
-
   return *this;
 }
 

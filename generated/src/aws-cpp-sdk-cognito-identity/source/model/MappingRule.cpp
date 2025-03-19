@@ -18,17 +18,7 @@ namespace CognitoIdentity
 namespace Model
 {
 
-MappingRule::MappingRule() : 
-    m_claimHasBeenSet(false),
-    m_matchType(MappingRuleMatchType::NOT_SET),
-    m_matchTypeHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_roleARNHasBeenSet(false)
-{
-}
-
 MappingRule::MappingRule(JsonView jsonValue)
-  : MappingRule()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ MappingRule& MappingRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Claim"))
   {
     m_claim = jsonValue.GetString("Claim");
-
     m_claimHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MatchType"))
   {
     m_matchType = MappingRuleMatchTypeMapper::GetMappingRuleMatchTypeForName(jsonValue.GetString("MatchType"));
-
     m_matchTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleARN"))
   {
     m_roleARN = jsonValue.GetString("RoleARN");
-
     m_roleARNHasBeenSet = true;
   }
-
   return *this;
 }
 

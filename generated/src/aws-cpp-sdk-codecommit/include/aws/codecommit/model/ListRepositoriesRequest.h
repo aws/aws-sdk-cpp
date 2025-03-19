@@ -27,7 +27,7 @@ namespace Model
   class ListRepositoriesRequest : public CodeCommitRequest
   {
   public:
-    AWS_CODECOMMIT_API ListRepositoriesRequest();
+    AWS_CODECOMMIT_API ListRepositoriesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,48 +47,42 @@ namespace Model
      * sends the token back to CodeCommit, another page of 1,000 records is
      * retrieved.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListRepositoriesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRepositoriesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRepositoriesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRepositoriesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The criteria used to sort the results of a list repositories operation.</p>
      */
-    inline const SortByEnum& GetSortBy() const{ return m_sortBy; }
+    inline SortByEnum GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const SortByEnum& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(SortByEnum&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListRepositoriesRequest& WithSortBy(const SortByEnum& value) { SetSortBy(value); return *this;}
-    inline ListRepositoriesRequest& WithSortBy(SortByEnum&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(SortByEnum value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline ListRepositoriesRequest& WithSortBy(SortByEnum value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The order in which to sort the results of a list repositories operation.</p>
      */
-    inline const OrderEnum& GetOrder() const{ return m_order; }
+    inline OrderEnum GetOrder() const { return m_order; }
     inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
-    inline void SetOrder(const OrderEnum& value) { m_orderHasBeenSet = true; m_order = value; }
-    inline void SetOrder(OrderEnum&& value) { m_orderHasBeenSet = true; m_order = std::move(value); }
-    inline ListRepositoriesRequest& WithOrder(const OrderEnum& value) { SetOrder(value); return *this;}
-    inline ListRepositoriesRequest& WithOrder(OrderEnum&& value) { SetOrder(std::move(value)); return *this;}
+    inline void SetOrder(OrderEnum value) { m_orderHasBeenSet = true; m_order = value; }
+    inline ListRepositoriesRequest& WithOrder(OrderEnum value) { SetOrder(value); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    SortByEnum m_sortBy;
+    SortByEnum m_sortBy{SortByEnum::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    OrderEnum m_order;
+    OrderEnum m_order{OrderEnum::NOT_SET};
     bool m_orderHasBeenSet = false;
   };
 

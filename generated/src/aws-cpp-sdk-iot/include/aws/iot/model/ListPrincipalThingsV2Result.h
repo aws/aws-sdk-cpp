@@ -29,7 +29,7 @@ namespace Model
   class ListPrincipalThingsV2Result
   {
   public:
-    AWS_IOT_API ListPrincipalThingsV2Result();
+    AWS_IOT_API ListPrincipalThingsV2Result() = default;
     AWS_IOT_API ListPrincipalThingsV2Result(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API ListPrincipalThingsV2Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A list of <code>thingPrincipalObject</code> that represents the principal and
      * the type of relation it has with the thing.</p>
      */
-    inline const Aws::Vector<PrincipalThingObject>& GetPrincipalThingObjects() const{ return m_principalThingObjects; }
-    inline void SetPrincipalThingObjects(const Aws::Vector<PrincipalThingObject>& value) { m_principalThingObjects = value; }
-    inline void SetPrincipalThingObjects(Aws::Vector<PrincipalThingObject>&& value) { m_principalThingObjects = std::move(value); }
-    inline ListPrincipalThingsV2Result& WithPrincipalThingObjects(const Aws::Vector<PrincipalThingObject>& value) { SetPrincipalThingObjects(value); return *this;}
-    inline ListPrincipalThingsV2Result& WithPrincipalThingObjects(Aws::Vector<PrincipalThingObject>&& value) { SetPrincipalThingObjects(std::move(value)); return *this;}
-    inline ListPrincipalThingsV2Result& AddPrincipalThingObjects(const PrincipalThingObject& value) { m_principalThingObjects.push_back(value); return *this; }
-    inline ListPrincipalThingsV2Result& AddPrincipalThingObjects(PrincipalThingObject&& value) { m_principalThingObjects.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PrincipalThingObject>& GetPrincipalThingObjects() const { return m_principalThingObjects; }
+    template<typename PrincipalThingObjectsT = Aws::Vector<PrincipalThingObject>>
+    void SetPrincipalThingObjects(PrincipalThingObjectsT&& value) { m_principalThingObjectsHasBeenSet = true; m_principalThingObjects = std::forward<PrincipalThingObjectsT>(value); }
+    template<typename PrincipalThingObjectsT = Aws::Vector<PrincipalThingObject>>
+    ListPrincipalThingsV2Result& WithPrincipalThingObjects(PrincipalThingObjectsT&& value) { SetPrincipalThingObjects(std::forward<PrincipalThingObjectsT>(value)); return *this;}
+    template<typename PrincipalThingObjectsT = PrincipalThingObject>
+    ListPrincipalThingsV2Result& AddPrincipalThingObjects(PrincipalThingObjectsT&& value) { m_principalThingObjectsHasBeenSet = true; m_principalThingObjects.emplace_back(std::forward<PrincipalThingObjectsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>The token to use to get the next set of results, or <b>null</b> if there are
      * no additional results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListPrincipalThingsV2Result& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPrincipalThingsV2Result& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPrincipalThingsV2Result& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPrincipalThingsV2Result& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListPrincipalThingsV2Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListPrincipalThingsV2Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListPrincipalThingsV2Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListPrincipalThingsV2Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<PrincipalThingObject> m_principalThingObjects;
+    bool m_principalThingObjectsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

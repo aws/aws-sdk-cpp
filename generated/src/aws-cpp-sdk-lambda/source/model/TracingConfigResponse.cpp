@@ -18,14 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-TracingConfigResponse::TracingConfigResponse() : 
-    m_mode(TracingMode::NOT_SET),
-    m_modeHasBeenSet(false)
-{
-}
-
 TracingConfigResponse::TracingConfigResponse(JsonView jsonValue)
-  : TracingConfigResponse()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TracingConfigResponse& TracingConfigResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Mode"))
   {
     m_mode = TracingModeMapper::GetTracingModeForName(jsonValue.GetString("Mode"));
-
     m_modeHasBeenSet = true;
   }
-
   return *this;
 }
 

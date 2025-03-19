@@ -27,7 +27,7 @@ namespace Model
   class CreateAutoMLJobResult
   {
   public:
-    AWS_SAGEMAKER_API CreateAutoMLJobResult();
+    AWS_SAGEMAKER_API CreateAutoMLJobResult() = default;
     AWS_SAGEMAKER_API CreateAutoMLJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API CreateAutoMLJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The unique ARN assigned to the AutoML job when it is created.</p>
      */
-    inline const Aws::String& GetAutoMLJobArn() const{ return m_autoMLJobArn; }
-    inline void SetAutoMLJobArn(const Aws::String& value) { m_autoMLJobArn = value; }
-    inline void SetAutoMLJobArn(Aws::String&& value) { m_autoMLJobArn = std::move(value); }
-    inline void SetAutoMLJobArn(const char* value) { m_autoMLJobArn.assign(value); }
-    inline CreateAutoMLJobResult& WithAutoMLJobArn(const Aws::String& value) { SetAutoMLJobArn(value); return *this;}
-    inline CreateAutoMLJobResult& WithAutoMLJobArn(Aws::String&& value) { SetAutoMLJobArn(std::move(value)); return *this;}
-    inline CreateAutoMLJobResult& WithAutoMLJobArn(const char* value) { SetAutoMLJobArn(value); return *this;}
+    inline const Aws::String& GetAutoMLJobArn() const { return m_autoMLJobArn; }
+    template<typename AutoMLJobArnT = Aws::String>
+    void SetAutoMLJobArn(AutoMLJobArnT&& value) { m_autoMLJobArnHasBeenSet = true; m_autoMLJobArn = std::forward<AutoMLJobArnT>(value); }
+    template<typename AutoMLJobArnT = Aws::String>
+    CreateAutoMLJobResult& WithAutoMLJobArn(AutoMLJobArnT&& value) { SetAutoMLJobArn(std::forward<AutoMLJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAutoMLJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAutoMLJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAutoMLJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAutoMLJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_autoMLJobArn;
+    bool m_autoMLJobArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

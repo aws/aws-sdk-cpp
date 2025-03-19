@@ -12,18 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-LookupEventsRequest::LookupEventsRequest() : 
-    m_lookupAttributesHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_eventCategory(EventCategory::NOT_SET),
-    m_eventCategoryHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String LookupEventsRequest::SerializePayload() const
 {
   JsonValue payload;

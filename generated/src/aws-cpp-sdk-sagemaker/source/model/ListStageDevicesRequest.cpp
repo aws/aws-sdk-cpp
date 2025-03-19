@@ -12,17 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListStageDevicesRequest::ListStageDevicesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_edgeDeploymentPlanNameHasBeenSet(false),
-    m_excludeDevicesDeployedInOtherStage(false),
-    m_excludeDevicesDeployedInOtherStageHasBeenSet(false),
-    m_stageNameHasBeenSet(false)
-{
-}
-
 Aws::String ListStageDevicesRequest::SerializePayload() const
 {
   JsonValue payload;

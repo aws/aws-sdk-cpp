@@ -18,18 +18,7 @@ namespace Connect
 namespace Model
 {
 
-SecurityProfileSearchSummary::SecurityProfileSearchSummary() : 
-    m_idHasBeenSet(false),
-    m_organizationResourceIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_securityProfileNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 SecurityProfileSearchSummary::SecurityProfileSearchSummary(JsonView jsonValue)
-  : SecurityProfileSearchSummary()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ SecurityProfileSearchSummary& SecurityProfileSearchSummary::operator =(JsonView 
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationResourceId"))
   {
     m_organizationResourceId = jsonValue.GetString("OrganizationResourceId");
-
     m_organizationResourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityProfileName"))
   {
     m_securityProfileName = jsonValue.GetString("SecurityProfileName");
-
     m_securityProfileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -80,7 +59,6 @@ SecurityProfileSearchSummary& SecurityProfileSearchSummary::operator =(JsonView 
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

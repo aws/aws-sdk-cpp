@@ -18,18 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-Evaluation::Evaluation() : 
-    m_approved(false),
-    m_approvedHasBeenSet(false),
-    m_overridden(false),
-    m_overriddenHasBeenSet(false),
-    m_approvalRulesSatisfiedHasBeenSet(false),
-    m_approvalRulesNotSatisfiedHasBeenSet(false)
-{
-}
-
 Evaluation::Evaluation(JsonView jsonValue)
-  : Evaluation()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ Evaluation& Evaluation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("approved"))
   {
     m_approved = jsonValue.GetBool("approved");
-
     m_approvedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("overridden"))
   {
     m_overridden = jsonValue.GetBool("overridden");
-
     m_overriddenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("approvalRulesSatisfied"))
   {
     Aws::Utils::Array<JsonView> approvalRulesSatisfiedJsonList = jsonValue.GetArray("approvalRulesSatisfied");
@@ -59,7 +44,6 @@ Evaluation& Evaluation::operator =(JsonView jsonValue)
     }
     m_approvalRulesSatisfiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("approvalRulesNotSatisfied"))
   {
     Aws::Utils::Array<JsonView> approvalRulesNotSatisfiedJsonList = jsonValue.GetArray("approvalRulesNotSatisfied");
@@ -69,7 +53,6 @@ Evaluation& Evaluation::operator =(JsonView jsonValue)
     }
     m_approvalRulesNotSatisfiedHasBeenSet = true;
   }
-
   return *this;
 }
 

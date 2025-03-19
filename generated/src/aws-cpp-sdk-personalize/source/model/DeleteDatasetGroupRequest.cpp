@@ -12,11 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDatasetGroupRequest::DeleteDatasetGroupRequest() : 
-    m_datasetGroupArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDatasetGroupRequest::SerializePayload() const
 {
   JsonValue payload;

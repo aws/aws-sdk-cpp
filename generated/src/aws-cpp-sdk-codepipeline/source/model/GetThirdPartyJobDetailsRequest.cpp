@@ -12,12 +12,6 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetThirdPartyJobDetailsRequest::GetThirdPartyJobDetailsRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetThirdPartyJobDetailsRequest::SerializePayload() const
 {
   JsonValue payload;

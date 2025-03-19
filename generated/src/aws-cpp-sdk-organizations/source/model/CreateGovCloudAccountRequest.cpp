@@ -12,16 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateGovCloudAccountRequest::CreateGovCloudAccountRequest() : 
-    m_emailHasBeenSet(false),
-    m_accountNameHasBeenSet(false),
-    m_roleNameHasBeenSet(false),
-    m_iamUserAccessToBilling(IAMUserAccessToBilling::NOT_SET),
-    m_iamUserAccessToBillingHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateGovCloudAccountRequest::SerializePayload() const
 {
   JsonValue payload;

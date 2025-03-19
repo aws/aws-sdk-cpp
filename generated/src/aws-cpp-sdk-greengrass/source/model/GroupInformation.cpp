@@ -18,19 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-GroupInformation::GroupInformation() : 
-    m_arnHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false),
-    m_latestVersionHasBeenSet(false),
-    m_latestVersionArnHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 GroupInformation::GroupInformation(JsonView jsonValue)
-  : GroupInformation()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ GroupInformation& GroupInformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTimestamp"))
   {
     m_creationTimestamp = jsonValue.GetString("CreationTimestamp");
-
     m_creationTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTimestamp"))
   {
     m_lastUpdatedTimestamp = jsonValue.GetString("LastUpdatedTimestamp");
-
     m_lastUpdatedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestVersion"))
   {
     m_latestVersion = jsonValue.GetString("LatestVersion");
-
     m_latestVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestVersionArn"))
   {
     m_latestVersionArn = jsonValue.GetString("LatestVersionArn");
-
     m_latestVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

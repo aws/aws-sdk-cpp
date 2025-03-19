@@ -33,7 +33,7 @@ namespace Model
   class LogSetup
   {
   public:
-    AWS_EKS_API LogSetup();
+    AWS_EKS_API LogSetup() = default;
     AWS_EKS_API LogSetup(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API LogSetup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,13 @@ namespace Model
     /**
      * <p>The available cluster control plane log types.</p>
      */
-    inline const Aws::Vector<LogType>& GetTypes() const{ return m_types; }
+    inline const Aws::Vector<LogType>& GetTypes() const { return m_types; }
     inline bool TypesHasBeenSet() const { return m_typesHasBeenSet; }
-    inline void SetTypes(const Aws::Vector<LogType>& value) { m_typesHasBeenSet = true; m_types = value; }
-    inline void SetTypes(Aws::Vector<LogType>&& value) { m_typesHasBeenSet = true; m_types = std::move(value); }
-    inline LogSetup& WithTypes(const Aws::Vector<LogType>& value) { SetTypes(value); return *this;}
-    inline LogSetup& WithTypes(Aws::Vector<LogType>&& value) { SetTypes(std::move(value)); return *this;}
-    inline LogSetup& AddTypes(const LogType& value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
-    inline LogSetup& AddTypes(LogType&& value) { m_typesHasBeenSet = true; m_types.push_back(std::move(value)); return *this; }
+    template<typename TypesT = Aws::Vector<LogType>>
+    void SetTypes(TypesT&& value) { m_typesHasBeenSet = true; m_types = std::forward<TypesT>(value); }
+    template<typename TypesT = Aws::Vector<LogType>>
+    LogSetup& WithTypes(TypesT&& value) { SetTypes(std::forward<TypesT>(value)); return *this;}
+    inline LogSetup& AddTypes(LogType value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -60,7 +59,7 @@ namespace Model
      * control plane logs. Each individual log type can be enabled or disabled
      * independently.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline LogSetup& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -70,7 +69,7 @@ namespace Model
     Aws::Vector<LogType> m_types;
     bool m_typesHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteVolumeRequest::DeleteVolumeRequest() : 
-    m_volumeIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVolumeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

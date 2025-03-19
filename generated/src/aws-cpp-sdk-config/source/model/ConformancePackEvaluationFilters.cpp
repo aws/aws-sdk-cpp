@@ -18,17 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-ConformancePackEvaluationFilters::ConformancePackEvaluationFilters() : 
-    m_configRuleNamesHasBeenSet(false),
-    m_complianceType(ConformancePackComplianceType::NOT_SET),
-    m_complianceTypeHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false)
-{
-}
-
 ConformancePackEvaluationFilters::ConformancePackEvaluationFilters(JsonView jsonValue)
-  : ConformancePackEvaluationFilters()
 {
   *this = jsonValue;
 }
@@ -44,21 +34,16 @@ ConformancePackEvaluationFilters& ConformancePackEvaluationFilters::operator =(J
     }
     m_configRuleNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComplianceType"))
   {
     m_complianceType = ConformancePackComplianceTypeMapper::GetConformancePackComplianceTypeForName(jsonValue.GetString("ComplianceType"));
-
     m_complianceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceIds"))
   {
     Aws::Utils::Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("ResourceIds");
@@ -68,7 +53,6 @@ ConformancePackEvaluationFilters& ConformancePackEvaluationFilters::operator =(J
     }
     m_resourceIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

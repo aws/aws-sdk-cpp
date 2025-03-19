@@ -34,7 +34,7 @@ namespace Model
   class SectionBasedLayoutPaperCanvasSizeOptions
   {
   public:
-    AWS_QUICKSIGHT_API SectionBasedLayoutPaperCanvasSizeOptions();
+    AWS_QUICKSIGHT_API SectionBasedLayoutPaperCanvasSizeOptions() = default;
     AWS_QUICKSIGHT_API SectionBasedLayoutPaperCanvasSizeOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SectionBasedLayoutPaperCanvasSizeOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>The paper size that is used to define canvas dimensions.</p>
      */
-    inline const PaperSize& GetPaperSize() const{ return m_paperSize; }
+    inline PaperSize GetPaperSize() const { return m_paperSize; }
     inline bool PaperSizeHasBeenSet() const { return m_paperSizeHasBeenSet; }
-    inline void SetPaperSize(const PaperSize& value) { m_paperSizeHasBeenSet = true; m_paperSize = value; }
-    inline void SetPaperSize(PaperSize&& value) { m_paperSizeHasBeenSet = true; m_paperSize = std::move(value); }
-    inline SectionBasedLayoutPaperCanvasSizeOptions& WithPaperSize(const PaperSize& value) { SetPaperSize(value); return *this;}
-    inline SectionBasedLayoutPaperCanvasSizeOptions& WithPaperSize(PaperSize&& value) { SetPaperSize(std::move(value)); return *this;}
+    inline void SetPaperSize(PaperSize value) { m_paperSizeHasBeenSet = true; m_paperSize = value; }
+    inline SectionBasedLayoutPaperCanvasSizeOptions& WithPaperSize(PaperSize value) { SetPaperSize(value); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,10 @@ namespace Model
      * the following options:</p> <ul> <li> <p>PORTRAIT</p> </li> <li> <p>LANDSCAPE</p>
      * </li> </ul>
      */
-    inline const PaperOrientation& GetPaperOrientation() const{ return m_paperOrientation; }
+    inline PaperOrientation GetPaperOrientation() const { return m_paperOrientation; }
     inline bool PaperOrientationHasBeenSet() const { return m_paperOrientationHasBeenSet; }
-    inline void SetPaperOrientation(const PaperOrientation& value) { m_paperOrientationHasBeenSet = true; m_paperOrientation = value; }
-    inline void SetPaperOrientation(PaperOrientation&& value) { m_paperOrientationHasBeenSet = true; m_paperOrientation = std::move(value); }
-    inline SectionBasedLayoutPaperCanvasSizeOptions& WithPaperOrientation(const PaperOrientation& value) { SetPaperOrientation(value); return *this;}
-    inline SectionBasedLayoutPaperCanvasSizeOptions& WithPaperOrientation(PaperOrientation&& value) { SetPaperOrientation(std::move(value)); return *this;}
+    inline void SetPaperOrientation(PaperOrientation value) { m_paperOrientationHasBeenSet = true; m_paperOrientation = value; }
+    inline SectionBasedLayoutPaperCanvasSizeOptions& WithPaperOrientation(PaperOrientation value) { SetPaperOrientation(value); return *this;}
     ///@}
 
     ///@{
@@ -71,19 +67,19 @@ namespace Model
      * <p>Defines the spacing between the canvas content and the top, bottom, left, and
      * right edges.</p>
      */
-    inline const Spacing& GetPaperMargin() const{ return m_paperMargin; }
+    inline const Spacing& GetPaperMargin() const { return m_paperMargin; }
     inline bool PaperMarginHasBeenSet() const { return m_paperMarginHasBeenSet; }
-    inline void SetPaperMargin(const Spacing& value) { m_paperMarginHasBeenSet = true; m_paperMargin = value; }
-    inline void SetPaperMargin(Spacing&& value) { m_paperMarginHasBeenSet = true; m_paperMargin = std::move(value); }
-    inline SectionBasedLayoutPaperCanvasSizeOptions& WithPaperMargin(const Spacing& value) { SetPaperMargin(value); return *this;}
-    inline SectionBasedLayoutPaperCanvasSizeOptions& WithPaperMargin(Spacing&& value) { SetPaperMargin(std::move(value)); return *this;}
+    template<typename PaperMarginT = Spacing>
+    void SetPaperMargin(PaperMarginT&& value) { m_paperMarginHasBeenSet = true; m_paperMargin = std::forward<PaperMarginT>(value); }
+    template<typename PaperMarginT = Spacing>
+    SectionBasedLayoutPaperCanvasSizeOptions& WithPaperMargin(PaperMarginT&& value) { SetPaperMargin(std::forward<PaperMarginT>(value)); return *this;}
     ///@}
   private:
 
-    PaperSize m_paperSize;
+    PaperSize m_paperSize{PaperSize::NOT_SET};
     bool m_paperSizeHasBeenSet = false;
 
-    PaperOrientation m_paperOrientation;
+    PaperOrientation m_paperOrientation{PaperOrientation::NOT_SET};
     bool m_paperOrientationHasBeenSet = false;
 
     Spacing m_paperMargin;

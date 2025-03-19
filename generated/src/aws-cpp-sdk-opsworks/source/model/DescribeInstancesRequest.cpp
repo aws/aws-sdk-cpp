@@ -12,13 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeInstancesRequest::DescribeInstancesRequest() : 
-    m_stackIdHasBeenSet(false),
-    m_layerIdHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeInstancesRequest::SerializePayload() const
 {
   JsonValue payload;

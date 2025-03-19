@@ -21,7 +21,7 @@ namespace Model
   class StartFlywheelIterationRequest : public ComprehendRequest
   {
   public:
-    AWS_COMPREHEND_API StartFlywheelIterationRequest();
+    AWS_COMPREHEND_API StartFlywheelIterationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ARN of the flywheel.</p>
      */
-    inline const Aws::String& GetFlywheelArn() const{ return m_flywheelArn; }
+    inline const Aws::String& GetFlywheelArn() const { return m_flywheelArn; }
     inline bool FlywheelArnHasBeenSet() const { return m_flywheelArnHasBeenSet; }
-    inline void SetFlywheelArn(const Aws::String& value) { m_flywheelArnHasBeenSet = true; m_flywheelArn = value; }
-    inline void SetFlywheelArn(Aws::String&& value) { m_flywheelArnHasBeenSet = true; m_flywheelArn = std::move(value); }
-    inline void SetFlywheelArn(const char* value) { m_flywheelArnHasBeenSet = true; m_flywheelArn.assign(value); }
-    inline StartFlywheelIterationRequest& WithFlywheelArn(const Aws::String& value) { SetFlywheelArn(value); return *this;}
-    inline StartFlywheelIterationRequest& WithFlywheelArn(Aws::String&& value) { SetFlywheelArn(std::move(value)); return *this;}
-    inline StartFlywheelIterationRequest& WithFlywheelArn(const char* value) { SetFlywheelArn(value); return *this;}
+    template<typename FlywheelArnT = Aws::String>
+    void SetFlywheelArn(FlywheelArnT&& value) { m_flywheelArnHasBeenSet = true; m_flywheelArn = std::forward<FlywheelArnT>(value); }
+    template<typename FlywheelArnT = Aws::String>
+    StartFlywheelIterationRequest& WithFlywheelArn(FlywheelArnT&& value) { SetFlywheelArn(std::forward<FlywheelArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * <p>A unique identifier for the request. If you don't set the client request
      * token, Amazon Comprehend generates one.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline StartFlywheelIterationRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline StartFlywheelIterationRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline StartFlywheelIterationRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    StartFlywheelIterationRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
   private:
 

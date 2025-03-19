@@ -21,7 +21,7 @@ namespace Model
   class CreateAppBlockBuilderStreamingURLRequest : public AppStreamRequest
   {
   public:
-    AWS_APPSTREAM_API CreateAppBlockBuilderStreamingURLRequest();
+    AWS_APPSTREAM_API CreateAppBlockBuilderStreamingURLRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the app block builder.</p>
      */
-    inline const Aws::String& GetAppBlockBuilderName() const{ return m_appBlockBuilderName; }
+    inline const Aws::String& GetAppBlockBuilderName() const { return m_appBlockBuilderName; }
     inline bool AppBlockBuilderNameHasBeenSet() const { return m_appBlockBuilderNameHasBeenSet; }
-    inline void SetAppBlockBuilderName(const Aws::String& value) { m_appBlockBuilderNameHasBeenSet = true; m_appBlockBuilderName = value; }
-    inline void SetAppBlockBuilderName(Aws::String&& value) { m_appBlockBuilderNameHasBeenSet = true; m_appBlockBuilderName = std::move(value); }
-    inline void SetAppBlockBuilderName(const char* value) { m_appBlockBuilderNameHasBeenSet = true; m_appBlockBuilderName.assign(value); }
-    inline CreateAppBlockBuilderStreamingURLRequest& WithAppBlockBuilderName(const Aws::String& value) { SetAppBlockBuilderName(value); return *this;}
-    inline CreateAppBlockBuilderStreamingURLRequest& WithAppBlockBuilderName(Aws::String&& value) { SetAppBlockBuilderName(std::move(value)); return *this;}
-    inline CreateAppBlockBuilderStreamingURLRequest& WithAppBlockBuilderName(const char* value) { SetAppBlockBuilderName(value); return *this;}
+    template<typename AppBlockBuilderNameT = Aws::String>
+    void SetAppBlockBuilderName(AppBlockBuilderNameT&& value) { m_appBlockBuilderNameHasBeenSet = true; m_appBlockBuilderName = std::forward<AppBlockBuilderNameT>(value); }
+    template<typename AppBlockBuilderNameT = Aws::String>
+    CreateAppBlockBuilderStreamingURLRequest& WithAppBlockBuilderName(AppBlockBuilderNameT&& value) { SetAppBlockBuilderName(std::forward<AppBlockBuilderNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,7 +51,7 @@ namespace Model
      * <p>The time that the streaming URL will be valid, in seconds. Specify a value
      * between 1 and 604800 seconds. The default is 3600 seconds.</p>
      */
-    inline long long GetValidity() const{ return m_validity; }
+    inline long long GetValidity() const { return m_validity; }
     inline bool ValidityHasBeenSet() const { return m_validityHasBeenSet; }
     inline void SetValidity(long long value) { m_validityHasBeenSet = true; m_validity = value; }
     inline CreateAppBlockBuilderStreamingURLRequest& WithValidity(long long value) { SetValidity(value); return *this;}
@@ -63,7 +61,7 @@ namespace Model
     Aws::String m_appBlockBuilderName;
     bool m_appBlockBuilderNameHasBeenSet = false;
 
-    long long m_validity;
+    long long m_validity{0};
     bool m_validityHasBeenSet = false;
   };
 

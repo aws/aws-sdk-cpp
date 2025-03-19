@@ -18,17 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-ManagedRuleGroupSummary::ManagedRuleGroupSummary() : 
-    m_vendorNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versioningSupported(false),
-    m_versioningSupportedHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 ManagedRuleGroupSummary::ManagedRuleGroupSummary(JsonView jsonValue)
-  : ManagedRuleGroupSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ManagedRuleGroupSummary& ManagedRuleGroupSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VendorName"))
   {
     m_vendorName = jsonValue.GetString("VendorName");
-
     m_vendorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersioningSupported"))
   {
     m_versioningSupported = jsonValue.GetBool("VersioningSupported");
-
     m_versioningSupportedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

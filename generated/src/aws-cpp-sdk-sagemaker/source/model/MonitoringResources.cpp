@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-MonitoringResources::MonitoringResources() : 
-    m_clusterConfigHasBeenSet(false)
-{
-}
-
 MonitoringResources::MonitoringResources(JsonView jsonValue)
-  : MonitoringResources()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MonitoringResources& MonitoringResources::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClusterConfig"))
   {
     m_clusterConfig = jsonValue.GetObject("ClusterConfig");
-
     m_clusterConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

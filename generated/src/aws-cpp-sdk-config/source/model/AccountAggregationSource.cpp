@@ -18,16 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-AccountAggregationSource::AccountAggregationSource() : 
-    m_accountIdsHasBeenSet(false),
-    m_allAwsRegions(false),
-    m_allAwsRegionsHasBeenSet(false),
-    m_awsRegionsHasBeenSet(false)
-{
-}
-
 AccountAggregationSource::AccountAggregationSource(JsonView jsonValue)
-  : AccountAggregationSource()
 {
   *this = jsonValue;
 }
@@ -43,14 +34,11 @@ AccountAggregationSource& AccountAggregationSource::operator =(JsonView jsonValu
     }
     m_accountIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllAwsRegions"))
   {
     m_allAwsRegions = jsonValue.GetBool("AllAwsRegions");
-
     m_allAwsRegionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsRegions"))
   {
     Aws::Utils::Array<JsonView> awsRegionsJsonList = jsonValue.GetArray("AwsRegions");
@@ -60,7 +48,6 @@ AccountAggregationSource& AccountAggregationSource::operator =(JsonView jsonValu
     }
     m_awsRegionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -25,7 +25,7 @@ namespace Model
   class ListXssMatchSetsRequest : public WAFRegionalRequest
   {
   public:
-    AWS_WAFREGIONAL_API ListXssMatchSetsRequest();
+    AWS_WAFREGIONAL_API ListXssMatchSetsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
      * <code>NextMarker</code> from the previous response to get information about
      * another batch of <code>XssMatchSets</code>.</p>
      */
-    inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
+    inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
     inline bool NextMarkerHasBeenSet() const { return m_nextMarkerHasBeenSet; }
-    inline void SetNextMarker(const Aws::String& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = value; }
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::move(value); }
-    inline void SetNextMarker(const char* value) { m_nextMarkerHasBeenSet = true; m_nextMarker.assign(value); }
-    inline ListXssMatchSetsRequest& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-    inline ListXssMatchSetsRequest& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-    inline ListXssMatchSetsRequest& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    template<typename NextMarkerT = Aws::String>
+    void SetNextMarker(NextMarkerT&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::forward<NextMarkerT>(value); }
+    template<typename NextMarkerT = Aws::String>
+    ListXssMatchSetsRequest& WithNextMarker(NextMarkerT&& value) { SetNextMarker(std::forward<NextMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,7 +64,7 @@ namespace Model
      * <code>NextMarker</code> value that you can use to get another batch of
      * <code>Rules</code>.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline ListXssMatchSetsRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -76,7 +74,7 @@ namespace Model
     Aws::String m_nextMarker;
     bool m_nextMarkerHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
   };
 

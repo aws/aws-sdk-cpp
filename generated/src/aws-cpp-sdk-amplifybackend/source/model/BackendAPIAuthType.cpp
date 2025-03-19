@@ -18,15 +18,7 @@ namespace AmplifyBackend
 namespace Model
 {
 
-BackendAPIAuthType::BackendAPIAuthType() : 
-    m_mode(Mode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_settingsHasBeenSet(false)
-{
-}
-
 BackendAPIAuthType::BackendAPIAuthType(JsonView jsonValue)
-  : BackendAPIAuthType()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ BackendAPIAuthType& BackendAPIAuthType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("mode"))
   {
     m_mode = ModeMapper::GetModeForName(jsonValue.GetString("mode"));
-
     m_modeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("settings"))
   {
     m_settings = jsonValue.GetObject("settings");
-
     m_settingsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,18 +12,6 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateConfiguredTableRequest::CreateConfiguredTableRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tableReferenceHasBeenSet(false),
-    m_allowedColumnsHasBeenSet(false),
-    m_analysisMethod(AnalysisMethod::NOT_SET),
-    m_analysisMethodHasBeenSet(false),
-    m_selectedAnalysisMethodsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateConfiguredTableRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,18 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-AnomalyDetector::AnomalyDetector() : 
-    m_configurationHasBeenSet(false),
-    m_stateValue(AnomalyDetectorStateValue::NOT_SET),
-    m_stateValueHasBeenSet(false),
-    m_metricCharacteristicsHasBeenSet(false),
-    m_singleMetricAnomalyDetectorHasBeenSet(false),
-    m_metricMathAnomalyDetectorHasBeenSet(false)
-{
-}
-
 AnomalyDetector::AnomalyDetector(const XmlNode& xmlNode)
-  : AnomalyDetector()
 {
   *this = xmlNode;
 }
@@ -51,7 +40,7 @@ AnomalyDetector& AnomalyDetector::operator =(const XmlNode& xmlNode)
     XmlNode stateValueNode = resultNode.FirstChild("StateValue");
     if(!stateValueNode.IsNull())
     {
-      m_stateValue = AnomalyDetectorStateValueMapper::GetAnomalyDetectorStateValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateValueNode.GetText()).c_str()).c_str());
+      m_stateValue = AnomalyDetectorStateValueMapper::GetAnomalyDetectorStateValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateValueNode.GetText()).c_str()));
       m_stateValueHasBeenSet = true;
     }
     XmlNode metricCharacteristicsNode = resultNode.FirstChild("MetricCharacteristics");

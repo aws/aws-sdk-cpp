@@ -12,10 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAccountAuditConfigurationRequest::DescribeAccountAuditConfigurationRequest()
-{
-}
-
 Aws::String DescribeAccountAuditConfigurationRequest::SerializePayload() const
 {
   return {};

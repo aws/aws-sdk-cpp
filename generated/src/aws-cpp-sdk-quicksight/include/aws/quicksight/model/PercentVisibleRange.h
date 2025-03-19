@@ -29,7 +29,7 @@ namespace Model
   class PercentVisibleRange
   {
   public:
-    AWS_QUICKSIGHT_API PercentVisibleRange();
+    AWS_QUICKSIGHT_API PercentVisibleRange() = default;
     AWS_QUICKSIGHT_API PercentVisibleRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API PercentVisibleRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>The lower bound of the range.</p>
      */
-    inline double GetFrom() const{ return m_from; }
+    inline double GetFrom() const { return m_from; }
     inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
     inline void SetFrom(double value) { m_fromHasBeenSet = true; m_from = value; }
     inline PercentVisibleRange& WithFrom(double value) { SetFrom(value); return *this;}
@@ -49,17 +49,17 @@ namespace Model
     /**
      * <p>The top bound of the range.</p>
      */
-    inline double GetTo() const{ return m_to; }
+    inline double GetTo() const { return m_to; }
     inline bool ToHasBeenSet() const { return m_toHasBeenSet; }
     inline void SetTo(double value) { m_toHasBeenSet = true; m_to = value; }
     inline PercentVisibleRange& WithTo(double value) { SetTo(value); return *this;}
     ///@}
   private:
 
-    double m_from;
+    double m_from{0.0};
     bool m_fromHasBeenSet = false;
 
-    double m_to;
+    double m_to{0.0};
     bool m_toHasBeenSet = false;
   };
 

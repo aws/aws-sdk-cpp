@@ -12,11 +12,6 @@ using namespace Aws::ElasticsearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteVpcEndpointRequest::DeleteVpcEndpointRequest() : 
-    m_vpcEndpointIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVpcEndpointRequest::SerializePayload() const
 {
   return {};

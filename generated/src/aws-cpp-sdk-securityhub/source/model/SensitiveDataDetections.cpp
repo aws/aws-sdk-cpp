@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-SensitiveDataDetections::SensitiveDataDetections() : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_occurrencesHasBeenSet(false)
-{
-}
-
 SensitiveDataDetections::SensitiveDataDetections(JsonView jsonValue)
-  : SensitiveDataDetections()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SensitiveDataDetections& SensitiveDataDetections::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Count"))
   {
     m_count = jsonValue.GetInt64("Count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Occurrences"))
   {
     m_occurrences = jsonValue.GetObject("Occurrences");
-
     m_occurrencesHasBeenSet = true;
   }
-
   return *this;
 }
 

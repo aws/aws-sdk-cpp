@@ -32,7 +32,7 @@ namespace Model
   class DeviceConfiguration
   {
   public:
-    AWS_SNOWBALL_API DeviceConfiguration();
+    AWS_SNOWBALL_API DeviceConfiguration() = default;
     AWS_SNOWBALL_API DeviceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API DeviceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Returns information about the device configuration for an Snowcone job.</p>
      */
-    inline const SnowconeDeviceConfiguration& GetSnowconeDeviceConfiguration() const{ return m_snowconeDeviceConfiguration; }
+    inline const SnowconeDeviceConfiguration& GetSnowconeDeviceConfiguration() const { return m_snowconeDeviceConfiguration; }
     inline bool SnowconeDeviceConfigurationHasBeenSet() const { return m_snowconeDeviceConfigurationHasBeenSet; }
-    inline void SetSnowconeDeviceConfiguration(const SnowconeDeviceConfiguration& value) { m_snowconeDeviceConfigurationHasBeenSet = true; m_snowconeDeviceConfiguration = value; }
-    inline void SetSnowconeDeviceConfiguration(SnowconeDeviceConfiguration&& value) { m_snowconeDeviceConfigurationHasBeenSet = true; m_snowconeDeviceConfiguration = std::move(value); }
-    inline DeviceConfiguration& WithSnowconeDeviceConfiguration(const SnowconeDeviceConfiguration& value) { SetSnowconeDeviceConfiguration(value); return *this;}
-    inline DeviceConfiguration& WithSnowconeDeviceConfiguration(SnowconeDeviceConfiguration&& value) { SetSnowconeDeviceConfiguration(std::move(value)); return *this;}
+    template<typename SnowconeDeviceConfigurationT = SnowconeDeviceConfiguration>
+    void SetSnowconeDeviceConfiguration(SnowconeDeviceConfigurationT&& value) { m_snowconeDeviceConfigurationHasBeenSet = true; m_snowconeDeviceConfiguration = std::forward<SnowconeDeviceConfigurationT>(value); }
+    template<typename SnowconeDeviceConfigurationT = SnowconeDeviceConfiguration>
+    DeviceConfiguration& WithSnowconeDeviceConfiguration(SnowconeDeviceConfigurationT&& value) { SetSnowconeDeviceConfiguration(std::forward<SnowconeDeviceConfigurationT>(value)); return *this;}
     ///@}
   private:
 

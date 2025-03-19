@@ -18,21 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-SearchPlaceIndexForSuggestionsSummary::SearchPlaceIndexForSuggestionsSummary() : 
-    m_textHasBeenSet(false),
-    m_biasPositionHasBeenSet(false),
-    m_filterBBoxHasBeenSet(false),
-    m_filterCountriesHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_filterCategoriesHasBeenSet(false)
-{
-}
-
 SearchPlaceIndexForSuggestionsSummary::SearchPlaceIndexForSuggestionsSummary(JsonView jsonValue)
-  : SearchPlaceIndexForSuggestionsSummary()
 {
   *this = jsonValue;
 }
@@ -42,10 +28,8 @@ SearchPlaceIndexForSuggestionsSummary& SearchPlaceIndexForSuggestionsSummary::op
   if(jsonValue.ValueExists("Text"))
   {
     m_text = jsonValue.GetString("Text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BiasPosition"))
   {
     Aws::Utils::Array<JsonView> biasPositionJsonList = jsonValue.GetArray("BiasPosition");
@@ -55,7 +39,6 @@ SearchPlaceIndexForSuggestionsSummary& SearchPlaceIndexForSuggestionsSummary::op
     }
     m_biasPositionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FilterBBox"))
   {
     Aws::Utils::Array<JsonView> filterBBoxJsonList = jsonValue.GetArray("FilterBBox");
@@ -65,7 +48,6 @@ SearchPlaceIndexForSuggestionsSummary& SearchPlaceIndexForSuggestionsSummary::op
     }
     m_filterBBoxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FilterCountries"))
   {
     Aws::Utils::Array<JsonView> filterCountriesJsonList = jsonValue.GetArray("FilterCountries");
@@ -75,28 +57,21 @@ SearchPlaceIndexForSuggestionsSummary& SearchPlaceIndexForSuggestionsSummary::op
     }
     m_filterCountriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxResults"))
   {
     m_maxResults = jsonValue.GetInteger("MaxResults");
-
     m_maxResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSource"))
   {
     m_dataSource = jsonValue.GetString("DataSource");
-
     m_dataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Language"))
   {
     m_language = jsonValue.GetString("Language");
-
     m_languageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FilterCategories"))
   {
     Aws::Utils::Array<JsonView> filterCategoriesJsonList = jsonValue.GetArray("FilterCategories");
@@ -106,7 +81,6 @@ SearchPlaceIndexForSuggestionsSummary& SearchPlaceIndexForSuggestionsSummary::op
     }
     m_filterCategoriesHasBeenSet = true;
   }
-
   return *this;
 }
 

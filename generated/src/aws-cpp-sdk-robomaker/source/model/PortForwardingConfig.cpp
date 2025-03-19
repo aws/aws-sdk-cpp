@@ -18,13 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-PortForwardingConfig::PortForwardingConfig() : 
-    m_portMappingsHasBeenSet(false)
-{
-}
-
 PortForwardingConfig::PortForwardingConfig(JsonView jsonValue)
-  : PortForwardingConfig()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ PortForwardingConfig& PortForwardingConfig::operator =(JsonView jsonValue)
     }
     m_portMappingsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,28 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-IncidentRecord::IncidentRecord() : 
-    m_arnHasBeenSet(false),
-    m_automationExecutionsHasBeenSet(false),
-    m_chatChannelHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_dedupeStringHasBeenSet(false),
-    m_impact(0),
-    m_impactHasBeenSet(false),
-    m_incidentRecordSourceHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_notificationTargetsHasBeenSet(false),
-    m_resolvedTimeHasBeenSet(false),
-    m_status(IncidentRecordStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_summaryHasBeenSet(false),
-    m_titleHasBeenSet(false)
-{
-}
-
 IncidentRecord::IncidentRecord(JsonView jsonValue)
-  : IncidentRecord()
 {
   *this = jsonValue;
 }
@@ -49,10 +28,8 @@ IncidentRecord& IncidentRecord::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("automationExecutions"))
   {
     Aws::Utils::Array<JsonView> automationExecutionsJsonList = jsonValue.GetArray("automationExecutions");
@@ -62,56 +39,41 @@ IncidentRecord& IncidentRecord::operator =(JsonView jsonValue)
     }
     m_automationExecutionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("chatChannel"))
   {
     m_chatChannel = jsonValue.GetObject("chatChannel");
-
     m_chatChannelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dedupeString"))
   {
     m_dedupeString = jsonValue.GetString("dedupeString");
-
     m_dedupeStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("impact"))
   {
     m_impact = jsonValue.GetInteger("impact");
-
     m_impactHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("incidentRecordSource"))
   {
     m_incidentRecordSource = jsonValue.GetObject("incidentRecordSource");
-
     m_incidentRecordSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedBy"))
   {
     m_lastModifiedBy = jsonValue.GetString("lastModifiedBy");
-
     m_lastModifiedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("lastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notificationTargets"))
   {
     Aws::Utils::Array<JsonView> notificationTargetsJsonList = jsonValue.GetArray("notificationTargets");
@@ -121,35 +83,26 @@ IncidentRecord& IncidentRecord::operator =(JsonView jsonValue)
     }
     m_notificationTargetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resolvedTime"))
   {
     m_resolvedTime = jsonValue.GetDouble("resolvedTime");
-
     m_resolvedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = IncidentRecordStatusMapper::GetIncidentRecordStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("summary"))
   {
     m_summary = jsonValue.GetString("summary");
-
     m_summaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   return *this;
 }
 

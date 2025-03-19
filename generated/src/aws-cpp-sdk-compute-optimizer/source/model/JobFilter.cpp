@@ -18,15 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-JobFilter::JobFilter() : 
-    m_name(JobFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 JobFilter::JobFilter(JsonView jsonValue)
-  : JobFilter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ JobFilter& JobFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = JobFilterNameMapper::GetJobFilterNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -49,7 +39,6 @@ JobFilter& JobFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

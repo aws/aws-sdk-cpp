@@ -39,7 +39,7 @@ namespace Model
   class ProgressEvent
   {
   public:
-    AWS_CLOUDCONTROLAPI_API ProgressEvent();
+    AWS_CLOUDCONTROLAPI_API ProgressEvent() = default;
     AWS_CLOUDCONTROLAPI_API ProgressEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDCONTROLAPI_API ProgressEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDCONTROLAPI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
     /**
      * <p>The name of the resource type used in the operation.</p>
      */
-    inline const Aws::String& GetTypeName() const{ return m_typeName; }
+    inline const Aws::String& GetTypeName() const { return m_typeName; }
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
-    inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
-    inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
-    inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
-    inline ProgressEvent& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
-    inline ProgressEvent& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
-    inline ProgressEvent& WithTypeName(const char* value) { SetTypeName(value); return *this;}
+    template<typename TypeNameT = Aws::String>
+    void SetTypeName(TypeNameT&& value) { m_typeNameHasBeenSet = true; m_typeName = std::forward<TypeNameT>(value); }
+    template<typename TypeNameT = Aws::String>
+    ProgressEvent& WithTypeName(TypeNameT&& value) { SetTypeName(std::forward<TypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * resource identifier may be available before the resource operation has reached a
      * status of <code>SUCCESS</code>.</p> 
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline ProgressEvent& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline ProgressEvent& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline ProgressEvent& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    ProgressEvent& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,40 +78,34 @@ namespace Model
      * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_GetResourceRequestStatus.html">GetResourceRequestStatus</a>
      * to return the current status of a resource operation request.</p>
      */
-    inline const Aws::String& GetRequestToken() const{ return m_requestToken; }
+    inline const Aws::String& GetRequestToken() const { return m_requestToken; }
     inline bool RequestTokenHasBeenSet() const { return m_requestTokenHasBeenSet; }
-    inline void SetRequestToken(const Aws::String& value) { m_requestTokenHasBeenSet = true; m_requestToken = value; }
-    inline void SetRequestToken(Aws::String&& value) { m_requestTokenHasBeenSet = true; m_requestToken = std::move(value); }
-    inline void SetRequestToken(const char* value) { m_requestTokenHasBeenSet = true; m_requestToken.assign(value); }
-    inline ProgressEvent& WithRequestToken(const Aws::String& value) { SetRequestToken(value); return *this;}
-    inline ProgressEvent& WithRequestToken(Aws::String&& value) { SetRequestToken(std::move(value)); return *this;}
-    inline ProgressEvent& WithRequestToken(const char* value) { SetRequestToken(value); return *this;}
+    template<typename RequestTokenT = Aws::String>
+    void SetRequestToken(RequestTokenT&& value) { m_requestTokenHasBeenSet = true; m_requestToken = std::forward<RequestTokenT>(value); }
+    template<typename RequestTokenT = Aws::String>
+    ProgressEvent& WithRequestToken(RequestTokenT&& value) { SetRequestToken(std::forward<RequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique token representing the Hooks operation for the request.</p>
      */
-    inline const Aws::String& GetHooksRequestToken() const{ return m_hooksRequestToken; }
+    inline const Aws::String& GetHooksRequestToken() const { return m_hooksRequestToken; }
     inline bool HooksRequestTokenHasBeenSet() const { return m_hooksRequestTokenHasBeenSet; }
-    inline void SetHooksRequestToken(const Aws::String& value) { m_hooksRequestTokenHasBeenSet = true; m_hooksRequestToken = value; }
-    inline void SetHooksRequestToken(Aws::String&& value) { m_hooksRequestTokenHasBeenSet = true; m_hooksRequestToken = std::move(value); }
-    inline void SetHooksRequestToken(const char* value) { m_hooksRequestTokenHasBeenSet = true; m_hooksRequestToken.assign(value); }
-    inline ProgressEvent& WithHooksRequestToken(const Aws::String& value) { SetHooksRequestToken(value); return *this;}
-    inline ProgressEvent& WithHooksRequestToken(Aws::String&& value) { SetHooksRequestToken(std::move(value)); return *this;}
-    inline ProgressEvent& WithHooksRequestToken(const char* value) { SetHooksRequestToken(value); return *this;}
+    template<typename HooksRequestTokenT = Aws::String>
+    void SetHooksRequestToken(HooksRequestTokenT&& value) { m_hooksRequestTokenHasBeenSet = true; m_hooksRequestToken = std::forward<HooksRequestTokenT>(value); }
+    template<typename HooksRequestTokenT = Aws::String>
+    ProgressEvent& WithHooksRequestToken(HooksRequestTokenT&& value) { SetHooksRequestToken(std::forward<HooksRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource operation type.</p>
      */
-    inline const Operation& GetOperation() const{ return m_operation; }
+    inline Operation GetOperation() const { return m_operation; }
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
-    inline void SetOperation(const Operation& value) { m_operationHasBeenSet = true; m_operation = value; }
-    inline void SetOperation(Operation&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
-    inline ProgressEvent& WithOperation(const Operation& value) { SetOperation(value); return *this;}
-    inline ProgressEvent& WithOperation(Operation&& value) { SetOperation(std::move(value)); return *this;}
+    inline void SetOperation(Operation value) { m_operationHasBeenSet = true; m_operation = value; }
+    inline ProgressEvent& WithOperation(Operation value) { SetOperation(value); return *this;}
     ///@}
 
     ///@{
@@ -131,24 +121,22 @@ namespace Model
      * <code>CANCEL_COMPLETE</code>: The resource operation has been canceled.</p>
      * </li> </ul>
      */
-    inline const OperationStatus& GetOperationStatus() const{ return m_operationStatus; }
+    inline OperationStatus GetOperationStatus() const { return m_operationStatus; }
     inline bool OperationStatusHasBeenSet() const { return m_operationStatusHasBeenSet; }
-    inline void SetOperationStatus(const OperationStatus& value) { m_operationStatusHasBeenSet = true; m_operationStatus = value; }
-    inline void SetOperationStatus(OperationStatus&& value) { m_operationStatusHasBeenSet = true; m_operationStatus = std::move(value); }
-    inline ProgressEvent& WithOperationStatus(const OperationStatus& value) { SetOperationStatus(value); return *this;}
-    inline ProgressEvent& WithOperationStatus(OperationStatus&& value) { SetOperationStatus(std::move(value)); return *this;}
+    inline void SetOperationStatus(OperationStatus value) { m_operationStatusHasBeenSet = true; m_operationStatus = value; }
+    inline ProgressEvent& WithOperationStatus(OperationStatus value) { SetOperationStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the resource operation request was initiated.</p>
      */
-    inline const Aws::Utils::DateTime& GetEventTime() const{ return m_eventTime; }
+    inline const Aws::Utils::DateTime& GetEventTime() const { return m_eventTime; }
     inline bool EventTimeHasBeenSet() const { return m_eventTimeHasBeenSet; }
-    inline void SetEventTime(const Aws::Utils::DateTime& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
-    inline void SetEventTime(Aws::Utils::DateTime&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::move(value); }
-    inline ProgressEvent& WithEventTime(const Aws::Utils::DateTime& value) { SetEventTime(value); return *this;}
-    inline ProgressEvent& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(std::move(value)); return *this;}
+    template<typename EventTimeT = Aws::Utils::DateTime>
+    void SetEventTime(EventTimeT&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::forward<EventTimeT>(value); }
+    template<typename EventTimeT = Aws::Utils::DateTime>
+    ProgressEvent& WithEventTime(EventTimeT&& value) { SetEventTime(std::forward<EventTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -156,28 +144,24 @@ namespace Model
      * <p>A JSON string containing the resource model, consisting of each resource
      * property and its current value.</p>
      */
-    inline const Aws::String& GetResourceModel() const{ return m_resourceModel; }
+    inline const Aws::String& GetResourceModel() const { return m_resourceModel; }
     inline bool ResourceModelHasBeenSet() const { return m_resourceModelHasBeenSet; }
-    inline void SetResourceModel(const Aws::String& value) { m_resourceModelHasBeenSet = true; m_resourceModel = value; }
-    inline void SetResourceModel(Aws::String&& value) { m_resourceModelHasBeenSet = true; m_resourceModel = std::move(value); }
-    inline void SetResourceModel(const char* value) { m_resourceModelHasBeenSet = true; m_resourceModel.assign(value); }
-    inline ProgressEvent& WithResourceModel(const Aws::String& value) { SetResourceModel(value); return *this;}
-    inline ProgressEvent& WithResourceModel(Aws::String&& value) { SetResourceModel(std::move(value)); return *this;}
-    inline ProgressEvent& WithResourceModel(const char* value) { SetResourceModel(value); return *this;}
+    template<typename ResourceModelT = Aws::String>
+    void SetResourceModel(ResourceModelT&& value) { m_resourceModelHasBeenSet = true; m_resourceModel = std::forward<ResourceModelT>(value); }
+    template<typename ResourceModelT = Aws::String>
+    ProgressEvent& WithResourceModel(ResourceModelT&& value) { SetResourceModel(std::forward<ResourceModelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Any message explaining the current status.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline ProgressEvent& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline ProgressEvent& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline ProgressEvent& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    ProgressEvent& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -188,24 +172,22 @@ namespace Model
      * error codes</a> in the <i>CloudFormation Command Line Interface User Guide for
      * Extension Development</i>.</p>
      */
-    inline const HandlerErrorCode& GetErrorCode() const{ return m_errorCode; }
+    inline HandlerErrorCode GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const HandlerErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(HandlerErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline ProgressEvent& WithErrorCode(const HandlerErrorCode& value) { SetErrorCode(value); return *this;}
-    inline ProgressEvent& WithErrorCode(HandlerErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline void SetErrorCode(HandlerErrorCode value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline ProgressEvent& WithErrorCode(HandlerErrorCode value) { SetErrorCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When to next request the status of this resource operation request.</p>
      */
-    inline const Aws::Utils::DateTime& GetRetryAfter() const{ return m_retryAfter; }
+    inline const Aws::Utils::DateTime& GetRetryAfter() const { return m_retryAfter; }
     inline bool RetryAfterHasBeenSet() const { return m_retryAfterHasBeenSet; }
-    inline void SetRetryAfter(const Aws::Utils::DateTime& value) { m_retryAfterHasBeenSet = true; m_retryAfter = value; }
-    inline void SetRetryAfter(Aws::Utils::DateTime&& value) { m_retryAfterHasBeenSet = true; m_retryAfter = std::move(value); }
-    inline ProgressEvent& WithRetryAfter(const Aws::Utils::DateTime& value) { SetRetryAfter(value); return *this;}
-    inline ProgressEvent& WithRetryAfter(Aws::Utils::DateTime&& value) { SetRetryAfter(std::move(value)); return *this;}
+    template<typename RetryAfterT = Aws::Utils::DateTime>
+    void SetRetryAfter(RetryAfterT&& value) { m_retryAfterHasBeenSet = true; m_retryAfter = std::forward<RetryAfterT>(value); }
+    template<typename RetryAfterT = Aws::Utils::DateTime>
+    ProgressEvent& WithRetryAfter(RetryAfterT&& value) { SetRetryAfter(std::forward<RetryAfterT>(value)); return *this;}
     ///@}
   private:
 
@@ -221,13 +203,13 @@ namespace Model
     Aws::String m_hooksRequestToken;
     bool m_hooksRequestTokenHasBeenSet = false;
 
-    Operation m_operation;
+    Operation m_operation{Operation::NOT_SET};
     bool m_operationHasBeenSet = false;
 
-    OperationStatus m_operationStatus;
+    OperationStatus m_operationStatus{OperationStatus::NOT_SET};
     bool m_operationStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_eventTime;
+    Aws::Utils::DateTime m_eventTime{};
     bool m_eventTimeHasBeenSet = false;
 
     Aws::String m_resourceModel;
@@ -236,10 +218,10 @@ namespace Model
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet = false;
 
-    HandlerErrorCode m_errorCode;
+    HandlerErrorCode m_errorCode{HandlerErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_retryAfter;
+    Aws::Utils::DateTime m_retryAfter{};
     bool m_retryAfterHasBeenSet = false;
   };
 

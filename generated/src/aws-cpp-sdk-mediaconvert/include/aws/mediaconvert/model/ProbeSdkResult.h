@@ -29,7 +29,7 @@ namespace Model
   class ProbeSdkResult
   {
   public:
-    AWS_MEDIACONVERT_API ProbeSdkResult();
+    AWS_MEDIACONVERT_API ProbeSdkResult() = default;
     AWS_MEDIACONVERT_API ProbeSdkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIACONVERT_API ProbeSdkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * List of probe results for the input media file(s).
      */
-    inline const Aws::Vector<ProbeResult>& GetProbeResults() const{ return m_probeResults; }
-    inline void SetProbeResults(const Aws::Vector<ProbeResult>& value) { m_probeResults = value; }
-    inline void SetProbeResults(Aws::Vector<ProbeResult>&& value) { m_probeResults = std::move(value); }
-    inline ProbeSdkResult& WithProbeResults(const Aws::Vector<ProbeResult>& value) { SetProbeResults(value); return *this;}
-    inline ProbeSdkResult& WithProbeResults(Aws::Vector<ProbeResult>&& value) { SetProbeResults(std::move(value)); return *this;}
-    inline ProbeSdkResult& AddProbeResults(const ProbeResult& value) { m_probeResults.push_back(value); return *this; }
-    inline ProbeSdkResult& AddProbeResults(ProbeResult&& value) { m_probeResults.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ProbeResult>& GetProbeResults() const { return m_probeResults; }
+    template<typename ProbeResultsT = Aws::Vector<ProbeResult>>
+    void SetProbeResults(ProbeResultsT&& value) { m_probeResultsHasBeenSet = true; m_probeResults = std::forward<ProbeResultsT>(value); }
+    template<typename ProbeResultsT = Aws::Vector<ProbeResult>>
+    ProbeSdkResult& WithProbeResults(ProbeResultsT&& value) { SetProbeResults(std::forward<ProbeResultsT>(value)); return *this;}
+    template<typename ProbeResultsT = ProbeResult>
+    ProbeSdkResult& AddProbeResults(ProbeResultsT&& value) { m_probeResultsHasBeenSet = true; m_probeResults.emplace_back(std::forward<ProbeResultsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ProbeSdkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ProbeSdkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ProbeSdkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ProbeSdkResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ProbeResult> m_probeResults;
+    bool m_probeResultsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

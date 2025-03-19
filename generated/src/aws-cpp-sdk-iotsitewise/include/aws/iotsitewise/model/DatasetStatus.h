@@ -34,7 +34,7 @@ namespace Model
   class DatasetStatus
   {
   public:
-    AWS_IOTSITEWISE_API DatasetStatus();
+    AWS_IOTSITEWISE_API DatasetStatus() = default;
     AWS_IOTSITEWISE_API DatasetStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API DatasetStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,24 @@ namespace Model
     /**
      * <p>The current status of the dataset.</p>
      */
-    inline const DatasetState& GetState() const{ return m_state; }
+    inline DatasetState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const DatasetState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(DatasetState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline DatasetStatus& WithState(const DatasetState& value) { SetState(value); return *this;}
-    inline DatasetStatus& WithState(DatasetState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(DatasetState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline DatasetStatus& WithState(DatasetState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ErrorDetails& GetError() const{ return m_error; }
+    inline const ErrorDetails& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const ErrorDetails& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(ErrorDetails&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline DatasetStatus& WithError(const ErrorDetails& value) { SetError(value); return *this;}
-    inline DatasetStatus& WithError(ErrorDetails&& value) { SetError(std::move(value)); return *this;}
+    template<typename ErrorT = ErrorDetails>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = ErrorDetails>
+    DatasetStatus& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
   private:
 
-    DatasetState m_state;
+    DatasetState m_state{DatasetState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     ErrorDetails m_error;

@@ -18,13 +18,7 @@ namespace CodeArtifact
 namespace Model
 {
 
-PackageGroupOriginConfiguration::PackageGroupOriginConfiguration() : 
-    m_restrictionsHasBeenSet(false)
-{
-}
-
 PackageGroupOriginConfiguration::PackageGroupOriginConfiguration(JsonView jsonValue)
-  : PackageGroupOriginConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ PackageGroupOriginConfiguration& PackageGroupOriginConfiguration::operator =(Jso
     }
     m_restrictionsHasBeenSet = true;
   }
-
   return *this;
 }
 

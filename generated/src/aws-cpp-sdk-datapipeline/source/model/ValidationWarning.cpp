@@ -18,14 +18,7 @@ namespace DataPipeline
 namespace Model
 {
 
-ValidationWarning::ValidationWarning() : 
-    m_idHasBeenSet(false),
-    m_warningsHasBeenSet(false)
-{
-}
-
 ValidationWarning::ValidationWarning(JsonView jsonValue)
-  : ValidationWarning()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ValidationWarning& ValidationWarning::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("warnings"))
   {
     Aws::Utils::Array<JsonView> warningsJsonList = jsonValue.GetArray("warnings");
@@ -48,7 +39,6 @@ ValidationWarning& ValidationWarning::operator =(JsonView jsonValue)
     }
     m_warningsHasBeenSet = true;
   }
-
   return *this;
 }
 

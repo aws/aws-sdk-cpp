@@ -19,24 +19,7 @@ namespace DynamoDBStreams
 namespace Model
 {
 
-AttributeValue::AttributeValue() : 
-    m_sHasBeenSet(false),
-    m_nHasBeenSet(false),
-    m_bHasBeenSet(false),
-    m_sSHasBeenSet(false),
-    m_nSHasBeenSet(false),
-    m_bSHasBeenSet(false),
-    m_mHasBeenSet(false),
-    m_lHasBeenSet(false),
-    m_nULL(false),
-    m_nULLHasBeenSet(false),
-    m_bOOL(false),
-    m_bOOLHasBeenSet(false)
-{
-}
-
 AttributeValue::AttributeValue(JsonView jsonValue)
-  : AttributeValue()
 {
   *this = jsonValue;
 }
@@ -46,23 +29,18 @@ AttributeValue& AttributeValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S"))
   {
     m_s = jsonValue.GetString("S");
-
     m_sHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("N"))
   {
     m_n = jsonValue.GetString("N");
-
     m_nHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("B"))
   {
     m_b = HashingUtils::Base64Decode(jsonValue.GetString("B"));
     m_bHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SS"))
   {
     Aws::Utils::Array<JsonView> sSJsonList = jsonValue.GetArray("SS");
@@ -72,7 +50,6 @@ AttributeValue& AttributeValue::operator =(JsonView jsonValue)
     }
     m_sSHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NS"))
   {
     Aws::Utils::Array<JsonView> nSJsonList = jsonValue.GetArray("NS");
@@ -82,7 +59,6 @@ AttributeValue& AttributeValue::operator =(JsonView jsonValue)
     }
     m_nSHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BS"))
   {
     Aws::Utils::Array<JsonView> bSJsonList = jsonValue.GetArray("BS");
@@ -92,7 +68,6 @@ AttributeValue& AttributeValue::operator =(JsonView jsonValue)
     }
     m_bSHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("M"))
   {
     Aws::Map<Aws::String, JsonView> mJsonMap = jsonValue.GetObject("M").GetAllObjects();
@@ -102,7 +77,6 @@ AttributeValue& AttributeValue::operator =(JsonView jsonValue)
     }
     m_mHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("L"))
   {
     Aws::Utils::Array<JsonView> lJsonList = jsonValue.GetArray("L");
@@ -112,21 +86,16 @@ AttributeValue& AttributeValue::operator =(JsonView jsonValue)
     }
     m_lHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NULL"))
   {
     m_nULL = jsonValue.GetBool("NULL");
-
     m_nULLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BOOL"))
   {
     m_bOOL = jsonValue.GetBool("BOOL");
-
     m_bOOLHasBeenSet = true;
   }
-
   return *this;
 }
 

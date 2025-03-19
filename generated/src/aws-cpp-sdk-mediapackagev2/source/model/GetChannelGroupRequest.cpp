@@ -12,11 +12,6 @@ using namespace Aws::mediapackagev2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetChannelGroupRequest::GetChannelGroupRequest() : 
-    m_channelGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String GetChannelGroupRequest::SerializePayload() const
 {
   return {};

@@ -32,7 +32,7 @@ namespace Model
   class ListAccountAssignmentsFilter
   {
   public:
-    AWS_SSOADMIN_API ListAccountAssignmentsFilter();
+    AWS_SSOADMIN_API ListAccountAssignmentsFilter() = default;
     AWS_SSOADMIN_API ListAccountAssignmentsFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API ListAccountAssignmentsFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The ID number of an Amazon Web Services account that filters the results in
      * the response.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline ListAccountAssignmentsFilter& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline ListAccountAssignmentsFilter& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline ListAccountAssignmentsFilter& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    ListAccountAssignmentsFilter& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
   private:
 

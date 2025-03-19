@@ -22,7 +22,7 @@ namespace Model
   class CreateContactMethodRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API CreateContactMethodRequest();
+    AWS_LIGHTSAIL_API CreateContactMethodRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -54,12 +54,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-notifications">Notifications
      * in Amazon Lightsail</a>.</p>
      */
-    inline const ContactProtocol& GetProtocol() const{ return m_protocol; }
+    inline ContactProtocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const ContactProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(ContactProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline CreateContactMethodRequest& WithProtocol(const ContactProtocol& value) { SetProtocol(value); return *this;}
-    inline CreateContactMethodRequest& WithProtocol(ContactProtocol&& value) { SetProtocol(std::move(value)); return *this;}
+    inline void SetProtocol(ContactProtocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline CreateContactMethodRequest& WithProtocol(ContactProtocol value) { SetProtocol(value); return *this;}
     ///@}
 
     ///@{
@@ -73,18 +71,16 @@ namespace Model
      * +1XXX5550100. For more information, see <a
      * href="https://en.wikipedia.org/wiki/E.164">E.164</a> on <i>Wikipedia</i>.</p>
      */
-    inline const Aws::String& GetContactEndpoint() const{ return m_contactEndpoint; }
+    inline const Aws::String& GetContactEndpoint() const { return m_contactEndpoint; }
     inline bool ContactEndpointHasBeenSet() const { return m_contactEndpointHasBeenSet; }
-    inline void SetContactEndpoint(const Aws::String& value) { m_contactEndpointHasBeenSet = true; m_contactEndpoint = value; }
-    inline void SetContactEndpoint(Aws::String&& value) { m_contactEndpointHasBeenSet = true; m_contactEndpoint = std::move(value); }
-    inline void SetContactEndpoint(const char* value) { m_contactEndpointHasBeenSet = true; m_contactEndpoint.assign(value); }
-    inline CreateContactMethodRequest& WithContactEndpoint(const Aws::String& value) { SetContactEndpoint(value); return *this;}
-    inline CreateContactMethodRequest& WithContactEndpoint(Aws::String&& value) { SetContactEndpoint(std::move(value)); return *this;}
-    inline CreateContactMethodRequest& WithContactEndpoint(const char* value) { SetContactEndpoint(value); return *this;}
+    template<typename ContactEndpointT = Aws::String>
+    void SetContactEndpoint(ContactEndpointT&& value) { m_contactEndpointHasBeenSet = true; m_contactEndpoint = std::forward<ContactEndpointT>(value); }
+    template<typename ContactEndpointT = Aws::String>
+    CreateContactMethodRequest& WithContactEndpoint(ContactEndpointT&& value) { SetContactEndpoint(std::forward<ContactEndpointT>(value)); return *this;}
     ///@}
   private:
 
-    ContactProtocol m_protocol;
+    ContactProtocol m_protocol{ContactProtocol::NOT_SET};
     bool m_protocolHasBeenSet = false;
 
     Aws::String m_contactEndpoint;

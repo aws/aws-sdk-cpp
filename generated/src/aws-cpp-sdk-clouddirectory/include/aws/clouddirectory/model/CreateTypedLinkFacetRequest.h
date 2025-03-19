@@ -22,7 +22,7 @@ namespace Model
   class CreateTypedLinkFacetRequest : public CloudDirectoryRequest
   {
   public:
-    AWS_CLOUDDIRECTORY_API CreateTypedLinkFacetRequest();
+    AWS_CLOUDDIRECTORY_API CreateTypedLinkFacetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,26 +40,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that is associated with the schema. For more
      * information, see <a>arns</a>.</p>
      */
-    inline const Aws::String& GetSchemaArn() const{ return m_schemaArn; }
+    inline const Aws::String& GetSchemaArn() const { return m_schemaArn; }
     inline bool SchemaArnHasBeenSet() const { return m_schemaArnHasBeenSet; }
-    inline void SetSchemaArn(const Aws::String& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
-    inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::move(value); }
-    inline void SetSchemaArn(const char* value) { m_schemaArnHasBeenSet = true; m_schemaArn.assign(value); }
-    inline CreateTypedLinkFacetRequest& WithSchemaArn(const Aws::String& value) { SetSchemaArn(value); return *this;}
-    inline CreateTypedLinkFacetRequest& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
-    inline CreateTypedLinkFacetRequest& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
+    template<typename SchemaArnT = Aws::String>
+    void SetSchemaArn(SchemaArnT&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::forward<SchemaArnT>(value); }
+    template<typename SchemaArnT = Aws::String>
+    CreateTypedLinkFacetRequest& WithSchemaArn(SchemaArnT&& value) { SetSchemaArn(std::forward<SchemaArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> <a>Facet</a> structure that is associated with the typed link facet.</p>
      */
-    inline const TypedLinkFacet& GetFacet() const{ return m_facet; }
+    inline const TypedLinkFacet& GetFacet() const { return m_facet; }
     inline bool FacetHasBeenSet() const { return m_facetHasBeenSet; }
-    inline void SetFacet(const TypedLinkFacet& value) { m_facetHasBeenSet = true; m_facet = value; }
-    inline void SetFacet(TypedLinkFacet&& value) { m_facetHasBeenSet = true; m_facet = std::move(value); }
-    inline CreateTypedLinkFacetRequest& WithFacet(const TypedLinkFacet& value) { SetFacet(value); return *this;}
-    inline CreateTypedLinkFacetRequest& WithFacet(TypedLinkFacet&& value) { SetFacet(std::move(value)); return *this;}
+    template<typename FacetT = TypedLinkFacet>
+    void SetFacet(FacetT&& value) { m_facetHasBeenSet = true; m_facet = std::forward<FacetT>(value); }
+    template<typename FacetT = TypedLinkFacet>
+    CreateTypedLinkFacetRequest& WithFacet(FacetT&& value) { SetFacet(std::forward<FacetT>(value)); return *this;}
     ///@}
   private:
 

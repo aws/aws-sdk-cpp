@@ -32,7 +32,7 @@ namespace Model
   class ClientVpnEndpointStatus
   {
   public:
-    AWS_EC2_API ClientVpnEndpointStatus();
+    AWS_EC2_API ClientVpnEndpointStatus() = default;
     AWS_EC2_API ClientVpnEndpointStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ClientVpnEndpointStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -53,30 +53,26 @@ namespace Model
      * has been deleted. The Client VPN endpoint cannot accept connections.</p> </li>
      * </ul>
      */
-    inline const ClientVpnEndpointStatusCode& GetCode() const{ return m_code; }
+    inline ClientVpnEndpointStatusCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const ClientVpnEndpointStatusCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(ClientVpnEndpointStatusCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline ClientVpnEndpointStatus& WithCode(const ClientVpnEndpointStatusCode& value) { SetCode(value); return *this;}
-    inline ClientVpnEndpointStatus& WithCode(ClientVpnEndpointStatusCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(ClientVpnEndpointStatusCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline ClientVpnEndpointStatus& WithCode(ClientVpnEndpointStatusCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message about the status of the Client VPN endpoint.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ClientVpnEndpointStatus& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ClientVpnEndpointStatus& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ClientVpnEndpointStatus& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ClientVpnEndpointStatus& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
-    ClientVpnEndpointStatusCode m_code;
+    ClientVpnEndpointStatusCode m_code{ClientVpnEndpointStatusCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
     Aws::String m_message;

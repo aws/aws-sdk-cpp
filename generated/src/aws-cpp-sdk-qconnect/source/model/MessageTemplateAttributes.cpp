@@ -18,16 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-MessageTemplateAttributes::MessageTemplateAttributes() : 
-    m_agentAttributesHasBeenSet(false),
-    m_customAttributesHasBeenSet(false),
-    m_customerProfileAttributesHasBeenSet(false),
-    m_systemAttributesHasBeenSet(false)
-{
-}
-
 MessageTemplateAttributes::MessageTemplateAttributes(JsonView jsonValue)
-  : MessageTemplateAttributes()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ MessageTemplateAttributes& MessageTemplateAttributes::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("agentAttributes"))
   {
     m_agentAttributes = jsonValue.GetObject("agentAttributes");
-
     m_agentAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customAttributes"))
   {
     Aws::Map<Aws::String, JsonView> customAttributesJsonMap = jsonValue.GetObject("customAttributes").GetAllObjects();
@@ -50,21 +39,16 @@ MessageTemplateAttributes& MessageTemplateAttributes::operator =(JsonView jsonVa
     }
     m_customAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customerProfileAttributes"))
   {
     m_customerProfileAttributes = jsonValue.GetObject("customerProfileAttributes");
-
     m_customerProfileAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("systemAttributes"))
   {
     m_systemAttributes = jsonValue.GetObject("systemAttributes");
-
     m_systemAttributesHasBeenSet = true;
   }
-
   return *this;
 }
 

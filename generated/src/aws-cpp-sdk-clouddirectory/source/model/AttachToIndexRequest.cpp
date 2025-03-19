@@ -13,13 +13,6 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AttachToIndexRequest::AttachToIndexRequest() : 
-    m_directoryArnHasBeenSet(false),
-    m_indexReferenceHasBeenSet(false),
-    m_targetReferenceHasBeenSet(false)
-{
-}
-
 Aws::String AttachToIndexRequest::SerializePayload() const
 {
   JsonValue payload;

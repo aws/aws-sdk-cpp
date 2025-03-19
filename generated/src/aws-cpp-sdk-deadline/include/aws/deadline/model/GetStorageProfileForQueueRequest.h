@@ -21,7 +21,7 @@ namespace Model
   class GetStorageProfileForQueueRequest : public DeadlineRequest
   {
   public:
-    AWS_DEADLINE_API GetStorageProfileForQueueRequest();
+    AWS_DEADLINE_API GetStorageProfileForQueueRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,42 +36,36 @@ namespace Model
     /**
      * <p>The farm ID for the queue in storage profile.</p>
      */
-    inline const Aws::String& GetFarmId() const{ return m_farmId; }
+    inline const Aws::String& GetFarmId() const { return m_farmId; }
     inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-    inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
-    inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
-    inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
-    inline GetStorageProfileForQueueRequest& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
-    inline GetStorageProfileForQueueRequest& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
-    inline GetStorageProfileForQueueRequest& WithFarmId(const char* value) { SetFarmId(value); return *this;}
+    template<typename FarmIdT = Aws::String>
+    void SetFarmId(FarmIdT&& value) { m_farmIdHasBeenSet = true; m_farmId = std::forward<FarmIdT>(value); }
+    template<typename FarmIdT = Aws::String>
+    GetStorageProfileForQueueRequest& WithFarmId(FarmIdT&& value) { SetFarmId(std::forward<FarmIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The queue ID the queue in the storage profile.</p>
      */
-    inline const Aws::String& GetQueueId() const{ return m_queueId; }
+    inline const Aws::String& GetQueueId() const { return m_queueId; }
     inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
-    inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
-    inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
-    inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
-    inline GetStorageProfileForQueueRequest& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
-    inline GetStorageProfileForQueueRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
-    inline GetStorageProfileForQueueRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
+    template<typename QueueIdT = Aws::String>
+    void SetQueueId(QueueIdT&& value) { m_queueIdHasBeenSet = true; m_queueId = std::forward<QueueIdT>(value); }
+    template<typename QueueIdT = Aws::String>
+    GetStorageProfileForQueueRequest& WithQueueId(QueueIdT&& value) { SetQueueId(std::forward<QueueIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The storage profile ID for the storage profile in the queue.</p>
      */
-    inline const Aws::String& GetStorageProfileId() const{ return m_storageProfileId; }
+    inline const Aws::String& GetStorageProfileId() const { return m_storageProfileId; }
     inline bool StorageProfileIdHasBeenSet() const { return m_storageProfileIdHasBeenSet; }
-    inline void SetStorageProfileId(const Aws::String& value) { m_storageProfileIdHasBeenSet = true; m_storageProfileId = value; }
-    inline void SetStorageProfileId(Aws::String&& value) { m_storageProfileIdHasBeenSet = true; m_storageProfileId = std::move(value); }
-    inline void SetStorageProfileId(const char* value) { m_storageProfileIdHasBeenSet = true; m_storageProfileId.assign(value); }
-    inline GetStorageProfileForQueueRequest& WithStorageProfileId(const Aws::String& value) { SetStorageProfileId(value); return *this;}
-    inline GetStorageProfileForQueueRequest& WithStorageProfileId(Aws::String&& value) { SetStorageProfileId(std::move(value)); return *this;}
-    inline GetStorageProfileForQueueRequest& WithStorageProfileId(const char* value) { SetStorageProfileId(value); return *this;}
+    template<typename StorageProfileIdT = Aws::String>
+    void SetStorageProfileId(StorageProfileIdT&& value) { m_storageProfileIdHasBeenSet = true; m_storageProfileId = std::forward<StorageProfileIdT>(value); }
+    template<typename StorageProfileIdT = Aws::String>
+    GetStorageProfileForQueueRequest& WithStorageProfileId(StorageProfileIdT&& value) { SetStorageProfileId(std::forward<StorageProfileIdT>(value)); return *this;}
     ///@}
   private:
 

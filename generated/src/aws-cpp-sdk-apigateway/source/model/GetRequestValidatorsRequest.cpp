@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetRequestValidatorsRequest::GetRequestValidatorsRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String GetRequestValidatorsRequest::SerializePayload() const
 {
   return {};

@@ -18,15 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-KinesisStreamSourceDescription::KinesisStreamSourceDescription() : 
-    m_kinesisStreamARNHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_deliveryStartTimestampHasBeenSet(false)
-{
-}
-
 KinesisStreamSourceDescription::KinesisStreamSourceDescription(JsonView jsonValue)
-  : KinesisStreamSourceDescription()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ KinesisStreamSourceDescription& KinesisStreamSourceDescription::operator =(JsonV
   if(jsonValue.ValueExists("KinesisStreamARN"))
   {
     m_kinesisStreamARN = jsonValue.GetString("KinesisStreamARN");
-
     m_kinesisStreamARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleARN"))
   {
     m_roleARN = jsonValue.GetString("RoleARN");
-
     m_roleARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeliveryStartTimestamp"))
   {
     m_deliveryStartTimestamp = jsonValue.GetDouble("DeliveryStartTimestamp");
-
     m_deliveryStartTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

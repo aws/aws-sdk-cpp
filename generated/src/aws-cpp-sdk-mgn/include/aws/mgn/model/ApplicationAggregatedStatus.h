@@ -33,7 +33,7 @@ namespace Model
   class ApplicationAggregatedStatus
   {
   public:
-    AWS_MGN_API ApplicationAggregatedStatus();
+    AWS_MGN_API ApplicationAggregatedStatus() = default;
     AWS_MGN_API ApplicationAggregatedStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API ApplicationAggregatedStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,61 +43,55 @@ namespace Model
     /**
      * <p>Application aggregated status health status.</p>
      */
-    inline const ApplicationHealthStatus& GetHealthStatus() const{ return m_healthStatus; }
+    inline ApplicationHealthStatus GetHealthStatus() const { return m_healthStatus; }
     inline bool HealthStatusHasBeenSet() const { return m_healthStatusHasBeenSet; }
-    inline void SetHealthStatus(const ApplicationHealthStatus& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
-    inline void SetHealthStatus(ApplicationHealthStatus&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = std::move(value); }
-    inline ApplicationAggregatedStatus& WithHealthStatus(const ApplicationHealthStatus& value) { SetHealthStatus(value); return *this;}
-    inline ApplicationAggregatedStatus& WithHealthStatus(ApplicationHealthStatus&& value) { SetHealthStatus(std::move(value)); return *this;}
+    inline void SetHealthStatus(ApplicationHealthStatus value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
+    inline ApplicationAggregatedStatus& WithHealthStatus(ApplicationHealthStatus value) { SetHealthStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Application aggregated status last update dateTime.</p>
      */
-    inline const Aws::String& GetLastUpdateDateTime() const{ return m_lastUpdateDateTime; }
+    inline const Aws::String& GetLastUpdateDateTime() const { return m_lastUpdateDateTime; }
     inline bool LastUpdateDateTimeHasBeenSet() const { return m_lastUpdateDateTimeHasBeenSet; }
-    inline void SetLastUpdateDateTime(const Aws::String& value) { m_lastUpdateDateTimeHasBeenSet = true; m_lastUpdateDateTime = value; }
-    inline void SetLastUpdateDateTime(Aws::String&& value) { m_lastUpdateDateTimeHasBeenSet = true; m_lastUpdateDateTime = std::move(value); }
-    inline void SetLastUpdateDateTime(const char* value) { m_lastUpdateDateTimeHasBeenSet = true; m_lastUpdateDateTime.assign(value); }
-    inline ApplicationAggregatedStatus& WithLastUpdateDateTime(const Aws::String& value) { SetLastUpdateDateTime(value); return *this;}
-    inline ApplicationAggregatedStatus& WithLastUpdateDateTime(Aws::String&& value) { SetLastUpdateDateTime(std::move(value)); return *this;}
-    inline ApplicationAggregatedStatus& WithLastUpdateDateTime(const char* value) { SetLastUpdateDateTime(value); return *this;}
+    template<typename LastUpdateDateTimeT = Aws::String>
+    void SetLastUpdateDateTime(LastUpdateDateTimeT&& value) { m_lastUpdateDateTimeHasBeenSet = true; m_lastUpdateDateTime = std::forward<LastUpdateDateTimeT>(value); }
+    template<typename LastUpdateDateTimeT = Aws::String>
+    ApplicationAggregatedStatus& WithLastUpdateDateTime(LastUpdateDateTimeT&& value) { SetLastUpdateDateTime(std::forward<LastUpdateDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Application aggregated status progress status.</p>
      */
-    inline const ApplicationProgressStatus& GetProgressStatus() const{ return m_progressStatus; }
+    inline ApplicationProgressStatus GetProgressStatus() const { return m_progressStatus; }
     inline bool ProgressStatusHasBeenSet() const { return m_progressStatusHasBeenSet; }
-    inline void SetProgressStatus(const ApplicationProgressStatus& value) { m_progressStatusHasBeenSet = true; m_progressStatus = value; }
-    inline void SetProgressStatus(ApplicationProgressStatus&& value) { m_progressStatusHasBeenSet = true; m_progressStatus = std::move(value); }
-    inline ApplicationAggregatedStatus& WithProgressStatus(const ApplicationProgressStatus& value) { SetProgressStatus(value); return *this;}
-    inline ApplicationAggregatedStatus& WithProgressStatus(ApplicationProgressStatus&& value) { SetProgressStatus(std::move(value)); return *this;}
+    inline void SetProgressStatus(ApplicationProgressStatus value) { m_progressStatusHasBeenSet = true; m_progressStatus = value; }
+    inline ApplicationAggregatedStatus& WithProgressStatus(ApplicationProgressStatus value) { SetProgressStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Application aggregated status total source servers amount.</p>
      */
-    inline long long GetTotalSourceServers() const{ return m_totalSourceServers; }
+    inline long long GetTotalSourceServers() const { return m_totalSourceServers; }
     inline bool TotalSourceServersHasBeenSet() const { return m_totalSourceServersHasBeenSet; }
     inline void SetTotalSourceServers(long long value) { m_totalSourceServersHasBeenSet = true; m_totalSourceServers = value; }
     inline ApplicationAggregatedStatus& WithTotalSourceServers(long long value) { SetTotalSourceServers(value); return *this;}
     ///@}
   private:
 
-    ApplicationHealthStatus m_healthStatus;
+    ApplicationHealthStatus m_healthStatus{ApplicationHealthStatus::NOT_SET};
     bool m_healthStatusHasBeenSet = false;
 
     Aws::String m_lastUpdateDateTime;
     bool m_lastUpdateDateTimeHasBeenSet = false;
 
-    ApplicationProgressStatus m_progressStatus;
+    ApplicationProgressStatus m_progressStatus{ApplicationProgressStatus::NOT_SET};
     bool m_progressStatusHasBeenSet = false;
 
-    long long m_totalSourceServers;
+    long long m_totalSourceServers{0};
     bool m_totalSourceServersHasBeenSet = false;
   };
 

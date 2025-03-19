@@ -34,7 +34,7 @@ namespace Model
   class CommonPrefix
   {
   public:
-    AWS_S3CRT_API CommonPrefix();
+    AWS_S3CRT_API CommonPrefix() = default;
     AWS_S3CRT_API CommonPrefix(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API CommonPrefix& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>Container for the specified common prefix.</p>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline CommonPrefix& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline CommonPrefix& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline CommonPrefix& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    CommonPrefix& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
   private:
 

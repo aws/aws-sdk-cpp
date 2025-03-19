@@ -29,7 +29,7 @@ namespace Model
   class ConverseStreamMetrics
   {
   public:
-    AWS_BEDROCKRUNTIME_API ConverseStreamMetrics();
+    AWS_BEDROCKRUNTIME_API ConverseStreamMetrics() = default;
     AWS_BEDROCKRUNTIME_API ConverseStreamMetrics(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API ConverseStreamMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>The latency for the streaming request, in milliseconds.</p>
      */
-    inline long long GetLatencyMs() const{ return m_latencyMs; }
+    inline long long GetLatencyMs() const { return m_latencyMs; }
     inline bool LatencyMsHasBeenSet() const { return m_latencyMsHasBeenSet; }
     inline void SetLatencyMs(long long value) { m_latencyMsHasBeenSet = true; m_latencyMs = value; }
     inline ConverseStreamMetrics& WithLatencyMs(long long value) { SetLatencyMs(value); return *this;}
     ///@}
   private:
 
-    long long m_latencyMs;
+    long long m_latencyMs{0};
     bool m_latencyMsHasBeenSet = false;
   };
 

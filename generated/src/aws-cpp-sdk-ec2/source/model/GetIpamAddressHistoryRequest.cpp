@@ -10,20 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-GetIpamAddressHistoryRequest::GetIpamAddressHistoryRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_cidrHasBeenSet(false),
-    m_ipamScopeIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetIpamAddressHistoryRequest::SerializePayload() const
 {
   Aws::StringStream ss;

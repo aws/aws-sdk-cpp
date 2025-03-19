@@ -21,7 +21,7 @@ namespace Model
   class GetUserAuthFactorsRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API GetUserAuthFactorsRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API GetUserAuthFactorsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * user. Must include a scope claim for
      * <code>aws.cognito.signin.user.admin</code>.</p>
      */
-    inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
+    inline const Aws::String& GetAccessToken() const { return m_accessToken; }
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
-    inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
-    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
-    inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
-    inline GetUserAuthFactorsRequest& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
-    inline GetUserAuthFactorsRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
-    inline GetUserAuthFactorsRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
+    template<typename AccessTokenT = Aws::String>
+    void SetAccessToken(AccessTokenT&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::forward<AccessTokenT>(value); }
+    template<typename AccessTokenT = Aws::String>
+    GetUserAuthFactorsRequest& WithAccessToken(AccessTokenT&& value) { SetAccessToken(std::forward<AccessTokenT>(value)); return *this;}
     ///@}
   private:
 

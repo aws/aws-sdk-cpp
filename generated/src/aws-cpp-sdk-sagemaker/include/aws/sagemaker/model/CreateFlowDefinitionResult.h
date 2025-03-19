@@ -27,7 +27,7 @@ namespace Model
   class CreateFlowDefinitionResult
   {
   public:
-    AWS_SAGEMAKER_API CreateFlowDefinitionResult();
+    AWS_SAGEMAKER_API CreateFlowDefinitionResult() = default;
     AWS_SAGEMAKER_API CreateFlowDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API CreateFlowDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the flow definition you create.</p>
      */
-    inline const Aws::String& GetFlowDefinitionArn() const{ return m_flowDefinitionArn; }
-    inline void SetFlowDefinitionArn(const Aws::String& value) { m_flowDefinitionArn = value; }
-    inline void SetFlowDefinitionArn(Aws::String&& value) { m_flowDefinitionArn = std::move(value); }
-    inline void SetFlowDefinitionArn(const char* value) { m_flowDefinitionArn.assign(value); }
-    inline CreateFlowDefinitionResult& WithFlowDefinitionArn(const Aws::String& value) { SetFlowDefinitionArn(value); return *this;}
-    inline CreateFlowDefinitionResult& WithFlowDefinitionArn(Aws::String&& value) { SetFlowDefinitionArn(std::move(value)); return *this;}
-    inline CreateFlowDefinitionResult& WithFlowDefinitionArn(const char* value) { SetFlowDefinitionArn(value); return *this;}
+    inline const Aws::String& GetFlowDefinitionArn() const { return m_flowDefinitionArn; }
+    template<typename FlowDefinitionArnT = Aws::String>
+    void SetFlowDefinitionArn(FlowDefinitionArnT&& value) { m_flowDefinitionArnHasBeenSet = true; m_flowDefinitionArn = std::forward<FlowDefinitionArnT>(value); }
+    template<typename FlowDefinitionArnT = Aws::String>
+    CreateFlowDefinitionResult& WithFlowDefinitionArn(FlowDefinitionArnT&& value) { SetFlowDefinitionArn(std::forward<FlowDefinitionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateFlowDefinitionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateFlowDefinitionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateFlowDefinitionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateFlowDefinitionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_flowDefinitionArn;
+    bool m_flowDefinitionArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ namespace Model
   class NotificationSettingKey
   {
   public:
-    AWS_ROLESANYWHERE_API NotificationSettingKey();
+    AWS_ROLESANYWHERE_API NotificationSettingKey() = default;
     AWS_ROLESANYWHERE_API NotificationSettingKey(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROLESANYWHERE_API NotificationSettingKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROLESANYWHERE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,27 @@ namespace Model
     /**
      * <p>The specified channel of notification.</p>
      */
-    inline const NotificationChannel& GetChannel() const{ return m_channel; }
+    inline NotificationChannel GetChannel() const { return m_channel; }
     inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
-    inline void SetChannel(const NotificationChannel& value) { m_channelHasBeenSet = true; m_channel = value; }
-    inline void SetChannel(NotificationChannel&& value) { m_channelHasBeenSet = true; m_channel = std::move(value); }
-    inline NotificationSettingKey& WithChannel(const NotificationChannel& value) { SetChannel(value); return *this;}
-    inline NotificationSettingKey& WithChannel(NotificationChannel&& value) { SetChannel(std::move(value)); return *this;}
+    inline void SetChannel(NotificationChannel value) { m_channelHasBeenSet = true; m_channel = value; }
+    inline NotificationSettingKey& WithChannel(NotificationChannel value) { SetChannel(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The notification setting event to reset.</p>
      */
-    inline const NotificationEvent& GetEvent() const{ return m_event; }
+    inline NotificationEvent GetEvent() const { return m_event; }
     inline bool EventHasBeenSet() const { return m_eventHasBeenSet; }
-    inline void SetEvent(const NotificationEvent& value) { m_eventHasBeenSet = true; m_event = value; }
-    inline void SetEvent(NotificationEvent&& value) { m_eventHasBeenSet = true; m_event = std::move(value); }
-    inline NotificationSettingKey& WithEvent(const NotificationEvent& value) { SetEvent(value); return *this;}
-    inline NotificationSettingKey& WithEvent(NotificationEvent&& value) { SetEvent(std::move(value)); return *this;}
+    inline void SetEvent(NotificationEvent value) { m_eventHasBeenSet = true; m_event = value; }
+    inline NotificationSettingKey& WithEvent(NotificationEvent value) { SetEvent(value); return *this;}
     ///@}
   private:
 
-    NotificationChannel m_channel;
+    NotificationChannel m_channel{NotificationChannel::NOT_SET};
     bool m_channelHasBeenSet = false;
 
-    NotificationEvent m_event;
+    NotificationEvent m_event{NotificationEvent::NOT_SET};
     bool m_eventHasBeenSet = false;
   };
 

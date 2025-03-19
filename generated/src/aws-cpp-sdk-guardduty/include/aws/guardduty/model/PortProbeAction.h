@@ -33,7 +33,7 @@ namespace Model
   class PortProbeAction
   {
   public:
-    AWS_GUARDDUTY_API PortProbeAction();
+    AWS_GUARDDUTY_API PortProbeAction() = default;
     AWS_GUARDDUTY_API PortProbeAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API PortProbeAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>Indicates whether EC2 blocked the port probe to the instance, such as with an
      * ACL.</p>
      */
-    inline bool GetBlocked() const{ return m_blocked; }
+    inline bool GetBlocked() const { return m_blocked; }
     inline bool BlockedHasBeenSet() const { return m_blockedHasBeenSet; }
     inline void SetBlocked(bool value) { m_blockedHasBeenSet = true; m_blocked = value; }
     inline PortProbeAction& WithBlocked(bool value) { SetBlocked(value); return *this;}
@@ -54,18 +54,18 @@ namespace Model
     /**
      * <p>A list of objects related to port probe details.</p>
      */
-    inline const Aws::Vector<PortProbeDetail>& GetPortProbeDetails() const{ return m_portProbeDetails; }
+    inline const Aws::Vector<PortProbeDetail>& GetPortProbeDetails() const { return m_portProbeDetails; }
     inline bool PortProbeDetailsHasBeenSet() const { return m_portProbeDetailsHasBeenSet; }
-    inline void SetPortProbeDetails(const Aws::Vector<PortProbeDetail>& value) { m_portProbeDetailsHasBeenSet = true; m_portProbeDetails = value; }
-    inline void SetPortProbeDetails(Aws::Vector<PortProbeDetail>&& value) { m_portProbeDetailsHasBeenSet = true; m_portProbeDetails = std::move(value); }
-    inline PortProbeAction& WithPortProbeDetails(const Aws::Vector<PortProbeDetail>& value) { SetPortProbeDetails(value); return *this;}
-    inline PortProbeAction& WithPortProbeDetails(Aws::Vector<PortProbeDetail>&& value) { SetPortProbeDetails(std::move(value)); return *this;}
-    inline PortProbeAction& AddPortProbeDetails(const PortProbeDetail& value) { m_portProbeDetailsHasBeenSet = true; m_portProbeDetails.push_back(value); return *this; }
-    inline PortProbeAction& AddPortProbeDetails(PortProbeDetail&& value) { m_portProbeDetailsHasBeenSet = true; m_portProbeDetails.push_back(std::move(value)); return *this; }
+    template<typename PortProbeDetailsT = Aws::Vector<PortProbeDetail>>
+    void SetPortProbeDetails(PortProbeDetailsT&& value) { m_portProbeDetailsHasBeenSet = true; m_portProbeDetails = std::forward<PortProbeDetailsT>(value); }
+    template<typename PortProbeDetailsT = Aws::Vector<PortProbeDetail>>
+    PortProbeAction& WithPortProbeDetails(PortProbeDetailsT&& value) { SetPortProbeDetails(std::forward<PortProbeDetailsT>(value)); return *this;}
+    template<typename PortProbeDetailsT = PortProbeDetail>
+    PortProbeAction& AddPortProbeDetails(PortProbeDetailsT&& value) { m_portProbeDetailsHasBeenSet = true; m_portProbeDetails.emplace_back(std::forward<PortProbeDetailsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_blocked;
+    bool m_blocked{false};
     bool m_blockedHasBeenSet = false;
 
     Aws::Vector<PortProbeDetail> m_portProbeDetails;

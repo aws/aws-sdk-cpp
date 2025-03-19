@@ -28,7 +28,7 @@ namespace Model
   class CreateManagedLoginBrandingResult
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API CreateManagedLoginBrandingResult();
+    AWS_COGNITOIDENTITYPROVIDER_API CreateManagedLoginBrandingResult() = default;
     AWS_COGNITOIDENTITYPROVIDER_API CreateManagedLoginBrandingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOIDENTITYPROVIDER_API CreateManagedLoginBrandingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The details of the branding style that you created.</p>
      */
-    inline const ManagedLoginBrandingType& GetManagedLoginBranding() const{ return m_managedLoginBranding; }
-    inline void SetManagedLoginBranding(const ManagedLoginBrandingType& value) { m_managedLoginBranding = value; }
-    inline void SetManagedLoginBranding(ManagedLoginBrandingType&& value) { m_managedLoginBranding = std::move(value); }
-    inline CreateManagedLoginBrandingResult& WithManagedLoginBranding(const ManagedLoginBrandingType& value) { SetManagedLoginBranding(value); return *this;}
-    inline CreateManagedLoginBrandingResult& WithManagedLoginBranding(ManagedLoginBrandingType&& value) { SetManagedLoginBranding(std::move(value)); return *this;}
+    inline const ManagedLoginBrandingType& GetManagedLoginBranding() const { return m_managedLoginBranding; }
+    template<typename ManagedLoginBrandingT = ManagedLoginBrandingType>
+    void SetManagedLoginBranding(ManagedLoginBrandingT&& value) { m_managedLoginBrandingHasBeenSet = true; m_managedLoginBranding = std::forward<ManagedLoginBrandingT>(value); }
+    template<typename ManagedLoginBrandingT = ManagedLoginBrandingType>
+    CreateManagedLoginBrandingResult& WithManagedLoginBranding(ManagedLoginBrandingT&& value) { SetManagedLoginBranding(std::forward<ManagedLoginBrandingT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateManagedLoginBrandingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateManagedLoginBrandingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateManagedLoginBrandingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateManagedLoginBrandingResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ManagedLoginBrandingType m_managedLoginBranding;
+    bool m_managedLoginBrandingHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,11 +12,6 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetNetworkSettingsRequest::GetNetworkSettingsRequest() : 
-    m_networkSettingsArnHasBeenSet(false)
-{
-}
-
 Aws::String GetNetworkSettingsRequest::SerializePayload() const
 {
   return {};

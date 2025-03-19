@@ -22,7 +22,7 @@ namespace Model
   class PutRemediationConfigurationsRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API PutRemediationConfigurationsRequest();
+    AWS_CONFIGSERVICE_API PutRemediationConfigurationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>A list of remediation configuration objects.</p>
      */
-    inline const Aws::Vector<RemediationConfiguration>& GetRemediationConfigurations() const{ return m_remediationConfigurations; }
+    inline const Aws::Vector<RemediationConfiguration>& GetRemediationConfigurations() const { return m_remediationConfigurations; }
     inline bool RemediationConfigurationsHasBeenSet() const { return m_remediationConfigurationsHasBeenSet; }
-    inline void SetRemediationConfigurations(const Aws::Vector<RemediationConfiguration>& value) { m_remediationConfigurationsHasBeenSet = true; m_remediationConfigurations = value; }
-    inline void SetRemediationConfigurations(Aws::Vector<RemediationConfiguration>&& value) { m_remediationConfigurationsHasBeenSet = true; m_remediationConfigurations = std::move(value); }
-    inline PutRemediationConfigurationsRequest& WithRemediationConfigurations(const Aws::Vector<RemediationConfiguration>& value) { SetRemediationConfigurations(value); return *this;}
-    inline PutRemediationConfigurationsRequest& WithRemediationConfigurations(Aws::Vector<RemediationConfiguration>&& value) { SetRemediationConfigurations(std::move(value)); return *this;}
-    inline PutRemediationConfigurationsRequest& AddRemediationConfigurations(const RemediationConfiguration& value) { m_remediationConfigurationsHasBeenSet = true; m_remediationConfigurations.push_back(value); return *this; }
-    inline PutRemediationConfigurationsRequest& AddRemediationConfigurations(RemediationConfiguration&& value) { m_remediationConfigurationsHasBeenSet = true; m_remediationConfigurations.push_back(std::move(value)); return *this; }
+    template<typename RemediationConfigurationsT = Aws::Vector<RemediationConfiguration>>
+    void SetRemediationConfigurations(RemediationConfigurationsT&& value) { m_remediationConfigurationsHasBeenSet = true; m_remediationConfigurations = std::forward<RemediationConfigurationsT>(value); }
+    template<typename RemediationConfigurationsT = Aws::Vector<RemediationConfiguration>>
+    PutRemediationConfigurationsRequest& WithRemediationConfigurations(RemediationConfigurationsT&& value) { SetRemediationConfigurations(std::forward<RemediationConfigurationsT>(value)); return *this;}
+    template<typename RemediationConfigurationsT = RemediationConfiguration>
+    PutRemediationConfigurationsRequest& AddRemediationConfigurations(RemediationConfigurationsT&& value) { m_remediationConfigurationsHasBeenSet = true; m_remediationConfigurations.emplace_back(std::forward<RemediationConfigurationsT>(value)); return *this; }
     ///@}
   private:
 

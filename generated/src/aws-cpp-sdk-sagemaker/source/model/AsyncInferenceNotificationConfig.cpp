@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AsyncInferenceNotificationConfig::AsyncInferenceNotificationConfig() : 
-    m_successTopicHasBeenSet(false),
-    m_errorTopicHasBeenSet(false),
-    m_includeInferenceResponseInHasBeenSet(false)
-{
-}
-
 AsyncInferenceNotificationConfig::AsyncInferenceNotificationConfig(JsonView jsonValue)
-  : AsyncInferenceNotificationConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AsyncInferenceNotificationConfig& AsyncInferenceNotificationConfig::operator =(J
   if(jsonValue.ValueExists("SuccessTopic"))
   {
     m_successTopic = jsonValue.GetString("SuccessTopic");
-
     m_successTopicHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorTopic"))
   {
     m_errorTopic = jsonValue.GetString("ErrorTopic");
-
     m_errorTopicHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludeInferenceResponseIn"))
   {
     Aws::Utils::Array<JsonView> includeInferenceResponseInJsonList = jsonValue.GetArray("IncludeInferenceResponseIn");
@@ -56,7 +44,6 @@ AsyncInferenceNotificationConfig& AsyncInferenceNotificationConfig::operator =(J
     }
     m_includeInferenceResponseInHasBeenSet = true;
   }
-
   return *this;
 }
 

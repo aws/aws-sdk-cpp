@@ -32,7 +32,7 @@ namespace Model
   class VisaPinVerificationValue
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API VisaPinVerificationValue();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API VisaPinVerificationValue() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API VisaPinVerificationValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API VisaPinVerificationValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The encrypted PIN block data to verify.</p>
      */
-    inline const Aws::String& GetEncryptedPinBlock() const{ return m_encryptedPinBlock; }
+    inline const Aws::String& GetEncryptedPinBlock() const { return m_encryptedPinBlock; }
     inline bool EncryptedPinBlockHasBeenSet() const { return m_encryptedPinBlockHasBeenSet; }
-    inline void SetEncryptedPinBlock(const Aws::String& value) { m_encryptedPinBlockHasBeenSet = true; m_encryptedPinBlock = value; }
-    inline void SetEncryptedPinBlock(Aws::String&& value) { m_encryptedPinBlockHasBeenSet = true; m_encryptedPinBlock = std::move(value); }
-    inline void SetEncryptedPinBlock(const char* value) { m_encryptedPinBlockHasBeenSet = true; m_encryptedPinBlock.assign(value); }
-    inline VisaPinVerificationValue& WithEncryptedPinBlock(const Aws::String& value) { SetEncryptedPinBlock(value); return *this;}
-    inline VisaPinVerificationValue& WithEncryptedPinBlock(Aws::String&& value) { SetEncryptedPinBlock(std::move(value)); return *this;}
-    inline VisaPinVerificationValue& WithEncryptedPinBlock(const char* value) { SetEncryptedPinBlock(value); return *this;}
+    template<typename EncryptedPinBlockT = Aws::String>
+    void SetEncryptedPinBlock(EncryptedPinBlockT&& value) { m_encryptedPinBlockHasBeenSet = true; m_encryptedPinBlock = std::forward<EncryptedPinBlockT>(value); }
+    template<typename EncryptedPinBlockT = Aws::String>
+    VisaPinVerificationValue& WithEncryptedPinBlock(EncryptedPinBlockT&& value) { SetEncryptedPinBlock(std::forward<EncryptedPinBlockT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * <p>The value for PIN verification index. It is used in the Visa PIN algorithm to
      * calculate the PVV (PIN Verification Value).</p>
      */
-    inline int GetPinVerificationKeyIndex() const{ return m_pinVerificationKeyIndex; }
+    inline int GetPinVerificationKeyIndex() const { return m_pinVerificationKeyIndex; }
     inline bool PinVerificationKeyIndexHasBeenSet() const { return m_pinVerificationKeyIndexHasBeenSet; }
     inline void SetPinVerificationKeyIndex(int value) { m_pinVerificationKeyIndexHasBeenSet = true; m_pinVerificationKeyIndex = value; }
     inline VisaPinVerificationValue& WithPinVerificationKeyIndex(int value) { SetPinVerificationKeyIndex(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_encryptedPinBlock;
     bool m_encryptedPinBlockHasBeenSet = false;
 
-    int m_pinVerificationKeyIndex;
+    int m_pinVerificationKeyIndex{0};
     bool m_pinVerificationKeyIndexHasBeenSet = false;
   };
 

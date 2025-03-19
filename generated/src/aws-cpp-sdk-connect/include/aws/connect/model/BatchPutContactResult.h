@@ -30,7 +30,7 @@ namespace Model
   class BatchPutContactResult
   {
   public:
-    AWS_CONNECT_API BatchPutContactResult();
+    AWS_CONNECT_API BatchPutContactResult() = default;
     AWS_CONNECT_API BatchPutContactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API BatchPutContactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,46 @@ namespace Model
     /**
      * <p>List of requests for which contact was successfully created.</p>
      */
-    inline const Aws::Vector<SuccessfulRequest>& GetSuccessfulRequestList() const{ return m_successfulRequestList; }
-    inline void SetSuccessfulRequestList(const Aws::Vector<SuccessfulRequest>& value) { m_successfulRequestList = value; }
-    inline void SetSuccessfulRequestList(Aws::Vector<SuccessfulRequest>&& value) { m_successfulRequestList = std::move(value); }
-    inline BatchPutContactResult& WithSuccessfulRequestList(const Aws::Vector<SuccessfulRequest>& value) { SetSuccessfulRequestList(value); return *this;}
-    inline BatchPutContactResult& WithSuccessfulRequestList(Aws::Vector<SuccessfulRequest>&& value) { SetSuccessfulRequestList(std::move(value)); return *this;}
-    inline BatchPutContactResult& AddSuccessfulRequestList(const SuccessfulRequest& value) { m_successfulRequestList.push_back(value); return *this; }
-    inline BatchPutContactResult& AddSuccessfulRequestList(SuccessfulRequest&& value) { m_successfulRequestList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SuccessfulRequest>& GetSuccessfulRequestList() const { return m_successfulRequestList; }
+    template<typename SuccessfulRequestListT = Aws::Vector<SuccessfulRequest>>
+    void SetSuccessfulRequestList(SuccessfulRequestListT&& value) { m_successfulRequestListHasBeenSet = true; m_successfulRequestList = std::forward<SuccessfulRequestListT>(value); }
+    template<typename SuccessfulRequestListT = Aws::Vector<SuccessfulRequest>>
+    BatchPutContactResult& WithSuccessfulRequestList(SuccessfulRequestListT&& value) { SetSuccessfulRequestList(std::forward<SuccessfulRequestListT>(value)); return *this;}
+    template<typename SuccessfulRequestListT = SuccessfulRequest>
+    BatchPutContactResult& AddSuccessfulRequestList(SuccessfulRequestListT&& value) { m_successfulRequestListHasBeenSet = true; m_successfulRequestList.emplace_back(std::forward<SuccessfulRequestListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>List of requests for which contact creation failed.</p>
      */
-    inline const Aws::Vector<FailedRequest>& GetFailedRequestList() const{ return m_failedRequestList; }
-    inline void SetFailedRequestList(const Aws::Vector<FailedRequest>& value) { m_failedRequestList = value; }
-    inline void SetFailedRequestList(Aws::Vector<FailedRequest>&& value) { m_failedRequestList = std::move(value); }
-    inline BatchPutContactResult& WithFailedRequestList(const Aws::Vector<FailedRequest>& value) { SetFailedRequestList(value); return *this;}
-    inline BatchPutContactResult& WithFailedRequestList(Aws::Vector<FailedRequest>&& value) { SetFailedRequestList(std::move(value)); return *this;}
-    inline BatchPutContactResult& AddFailedRequestList(const FailedRequest& value) { m_failedRequestList.push_back(value); return *this; }
-    inline BatchPutContactResult& AddFailedRequestList(FailedRequest&& value) { m_failedRequestList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FailedRequest>& GetFailedRequestList() const { return m_failedRequestList; }
+    template<typename FailedRequestListT = Aws::Vector<FailedRequest>>
+    void SetFailedRequestList(FailedRequestListT&& value) { m_failedRequestListHasBeenSet = true; m_failedRequestList = std::forward<FailedRequestListT>(value); }
+    template<typename FailedRequestListT = Aws::Vector<FailedRequest>>
+    BatchPutContactResult& WithFailedRequestList(FailedRequestListT&& value) { SetFailedRequestList(std::forward<FailedRequestListT>(value)); return *this;}
+    template<typename FailedRequestListT = FailedRequest>
+    BatchPutContactResult& AddFailedRequestList(FailedRequestListT&& value) { m_failedRequestListHasBeenSet = true; m_failedRequestList.emplace_back(std::forward<FailedRequestListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchPutContactResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchPutContactResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchPutContactResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchPutContactResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SuccessfulRequest> m_successfulRequestList;
+    bool m_successfulRequestListHasBeenSet = false;
 
     Aws::Vector<FailedRequest> m_failedRequestList;
+    bool m_failedRequestListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

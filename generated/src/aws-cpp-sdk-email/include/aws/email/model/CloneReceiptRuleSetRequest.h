@@ -28,7 +28,7 @@ namespace Model
   class CloneReceiptRuleSetRequest : public SESRequest
   {
   public:
-    AWS_SES_API CloneReceiptRuleSetRequest();
+    AWS_SES_API CloneReceiptRuleSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -51,28 +51,24 @@ namespace Model
      * letter or number.</p> </li> <li> <p>Contain 64 characters or fewer.</p> </li>
      * </ul>
      */
-    inline const Aws::String& GetRuleSetName() const{ return m_ruleSetName; }
+    inline const Aws::String& GetRuleSetName() const { return m_ruleSetName; }
     inline bool RuleSetNameHasBeenSet() const { return m_ruleSetNameHasBeenSet; }
-    inline void SetRuleSetName(const Aws::String& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
-    inline void SetRuleSetName(Aws::String&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = std::move(value); }
-    inline void SetRuleSetName(const char* value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName.assign(value); }
-    inline CloneReceiptRuleSetRequest& WithRuleSetName(const Aws::String& value) { SetRuleSetName(value); return *this;}
-    inline CloneReceiptRuleSetRequest& WithRuleSetName(Aws::String&& value) { SetRuleSetName(std::move(value)); return *this;}
-    inline CloneReceiptRuleSetRequest& WithRuleSetName(const char* value) { SetRuleSetName(value); return *this;}
+    template<typename RuleSetNameT = Aws::String>
+    void SetRuleSetName(RuleSetNameT&& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = std::forward<RuleSetNameT>(value); }
+    template<typename RuleSetNameT = Aws::String>
+    CloneReceiptRuleSetRequest& WithRuleSetName(RuleSetNameT&& value) { SetRuleSetName(std::forward<RuleSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the rule set to clone.</p>
      */
-    inline const Aws::String& GetOriginalRuleSetName() const{ return m_originalRuleSetName; }
+    inline const Aws::String& GetOriginalRuleSetName() const { return m_originalRuleSetName; }
     inline bool OriginalRuleSetNameHasBeenSet() const { return m_originalRuleSetNameHasBeenSet; }
-    inline void SetOriginalRuleSetName(const Aws::String& value) { m_originalRuleSetNameHasBeenSet = true; m_originalRuleSetName = value; }
-    inline void SetOriginalRuleSetName(Aws::String&& value) { m_originalRuleSetNameHasBeenSet = true; m_originalRuleSetName = std::move(value); }
-    inline void SetOriginalRuleSetName(const char* value) { m_originalRuleSetNameHasBeenSet = true; m_originalRuleSetName.assign(value); }
-    inline CloneReceiptRuleSetRequest& WithOriginalRuleSetName(const Aws::String& value) { SetOriginalRuleSetName(value); return *this;}
-    inline CloneReceiptRuleSetRequest& WithOriginalRuleSetName(Aws::String&& value) { SetOriginalRuleSetName(std::move(value)); return *this;}
-    inline CloneReceiptRuleSetRequest& WithOriginalRuleSetName(const char* value) { SetOriginalRuleSetName(value); return *this;}
+    template<typename OriginalRuleSetNameT = Aws::String>
+    void SetOriginalRuleSetName(OriginalRuleSetNameT&& value) { m_originalRuleSetNameHasBeenSet = true; m_originalRuleSetName = std::forward<OriginalRuleSetNameT>(value); }
+    template<typename OriginalRuleSetNameT = Aws::String>
+    CloneReceiptRuleSetRequest& WithOriginalRuleSetName(OriginalRuleSetNameT&& value) { SetOriginalRuleSetName(std::forward<OriginalRuleSetNameT>(value)); return *this;}
     ///@}
   private:
 

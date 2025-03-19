@@ -12,11 +12,6 @@ using namespace Aws::FMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetResourceSetRequest::GetResourceSetRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String GetResourceSetRequest::SerializePayload() const
 {
   JsonValue payload;

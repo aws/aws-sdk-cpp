@@ -18,16 +18,7 @@ namespace Braket
 namespace Model
 {
 
-JobEventDetails::JobEventDetails() : 
-    m_eventType(JobEventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_timeOfEventHasBeenSet(false)
-{
-}
-
 JobEventDetails::JobEventDetails(JsonView jsonValue)
-  : JobEventDetails()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ JobEventDetails& JobEventDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eventType"))
   {
     m_eventType = JobEventTypeMapper::GetJobEventTypeForName(jsonValue.GetString("eventType"));
-
     m_eventTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeOfEvent"))
   {
     m_timeOfEvent = jsonValue.GetString("timeOfEvent");
-
     m_timeOfEventHasBeenSet = true;
   }
-
   return *this;
 }
 

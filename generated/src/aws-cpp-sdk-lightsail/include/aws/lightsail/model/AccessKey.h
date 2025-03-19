@@ -46,7 +46,7 @@ namespace Model
   class AccessKey
   {
   public:
-    AWS_LIGHTSAIL_API AccessKey();
+    AWS_LIGHTSAIL_API AccessKey() = default;
     AWS_LIGHTSAIL_API AccessKey(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API AccessKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,14 +56,12 @@ namespace Model
     /**
      * <p>The ID of the access key.</p>
      */
-    inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
+    inline const Aws::String& GetAccessKeyId() const { return m_accessKeyId; }
     inline bool AccessKeyIdHasBeenSet() const { return m_accessKeyIdHasBeenSet; }
-    inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
-    inline void SetAccessKeyId(Aws::String&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = std::move(value); }
-    inline void SetAccessKeyId(const char* value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId.assign(value); }
-    inline AccessKey& WithAccessKeyId(const Aws::String& value) { SetAccessKeyId(value); return *this;}
-    inline AccessKey& WithAccessKeyId(Aws::String&& value) { SetAccessKeyId(std::move(value)); return *this;}
-    inline AccessKey& WithAccessKeyId(const char* value) { SetAccessKeyId(value); return *this;}
+    template<typename AccessKeyIdT = Aws::String>
+    void SetAccessKeyId(AccessKeyIdT&& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = std::forward<AccessKeyIdT>(value); }
+    template<typename AccessKeyIdT = Aws::String>
+    AccessKey& WithAccessKeyId(AccessKeyIdT&& value) { SetAccessKeyId(std::forward<AccessKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +70,12 @@ namespace Model
      * secret access key in a safe location. We recommend that you delete the access
      * key if the secret access key is compromised.</p>
      */
-    inline const Aws::String& GetSecretAccessKey() const{ return m_secretAccessKey; }
+    inline const Aws::String& GetSecretAccessKey() const { return m_secretAccessKey; }
     inline bool SecretAccessKeyHasBeenSet() const { return m_secretAccessKeyHasBeenSet; }
-    inline void SetSecretAccessKey(const Aws::String& value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey = value; }
-    inline void SetSecretAccessKey(Aws::String&& value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey = std::move(value); }
-    inline void SetSecretAccessKey(const char* value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey.assign(value); }
-    inline AccessKey& WithSecretAccessKey(const Aws::String& value) { SetSecretAccessKey(value); return *this;}
-    inline AccessKey& WithSecretAccessKey(Aws::String&& value) { SetSecretAccessKey(std::move(value)); return *this;}
-    inline AccessKey& WithSecretAccessKey(const char* value) { SetSecretAccessKey(value); return *this;}
+    template<typename SecretAccessKeyT = Aws::String>
+    void SetSecretAccessKey(SecretAccessKeyT&& value) { m_secretAccessKeyHasBeenSet = true; m_secretAccessKey = std::forward<SecretAccessKeyT>(value); }
+    template<typename SecretAccessKeyT = Aws::String>
+    AccessKey& WithSecretAccessKey(SecretAccessKeyT&& value) { SetSecretAccessKey(std::forward<SecretAccessKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,24 +83,22 @@ namespace Model
      * <p>The status of the access key.</p> <p>A status of <code>Active</code> means
      * that the key is valid, while <code>Inactive</code> means it is not.</p>
      */
-    inline const StatusType& GetStatus() const{ return m_status; }
+    inline StatusType GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StatusType& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AccessKey& WithStatus(const StatusType& value) { SetStatus(value); return *this;}
-    inline AccessKey& WithStatus(StatusType&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(StatusType value) { m_statusHasBeenSet = true; m_status = value; }
+    inline AccessKey& WithStatus(StatusType value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when the access key was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline AccessKey& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline AccessKey& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    AccessKey& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,12 +110,12 @@ namespace Model
      * <code>serviceName</code> values are <code>N/A</code>, and the
      * <code>lastUsedDate</code> value is null.</p> 
      */
-    inline const AccessKeyLastUsed& GetLastUsed() const{ return m_lastUsed; }
+    inline const AccessKeyLastUsed& GetLastUsed() const { return m_lastUsed; }
     inline bool LastUsedHasBeenSet() const { return m_lastUsedHasBeenSet; }
-    inline void SetLastUsed(const AccessKeyLastUsed& value) { m_lastUsedHasBeenSet = true; m_lastUsed = value; }
-    inline void SetLastUsed(AccessKeyLastUsed&& value) { m_lastUsedHasBeenSet = true; m_lastUsed = std::move(value); }
-    inline AccessKey& WithLastUsed(const AccessKeyLastUsed& value) { SetLastUsed(value); return *this;}
-    inline AccessKey& WithLastUsed(AccessKeyLastUsed&& value) { SetLastUsed(std::move(value)); return *this;}
+    template<typename LastUsedT = AccessKeyLastUsed>
+    void SetLastUsed(LastUsedT&& value) { m_lastUsedHasBeenSet = true; m_lastUsed = std::forward<LastUsedT>(value); }
+    template<typename LastUsedT = AccessKeyLastUsed>
+    AccessKey& WithLastUsed(LastUsedT&& value) { SetLastUsed(std::forward<LastUsedT>(value)); return *this;}
     ///@}
   private:
 
@@ -131,10 +125,10 @@ namespace Model
     Aws::String m_secretAccessKey;
     bool m_secretAccessKeyHasBeenSet = false;
 
-    StatusType m_status;
+    StatusType m_status{StatusType::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     AccessKeyLastUsed m_lastUsed;

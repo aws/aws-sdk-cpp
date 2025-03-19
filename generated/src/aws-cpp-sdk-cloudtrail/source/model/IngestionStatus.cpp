@@ -18,17 +18,7 @@ namespace CloudTrail
 namespace Model
 {
 
-IngestionStatus::IngestionStatus() : 
-    m_latestIngestionSuccessTimeHasBeenSet(false),
-    m_latestIngestionSuccessEventIDHasBeenSet(false),
-    m_latestIngestionErrorCodeHasBeenSet(false),
-    m_latestIngestionAttemptTimeHasBeenSet(false),
-    m_latestIngestionAttemptEventIDHasBeenSet(false)
-{
-}
-
 IngestionStatus::IngestionStatus(JsonView jsonValue)
-  : IngestionStatus()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ IngestionStatus& IngestionStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LatestIngestionSuccessTime"))
   {
     m_latestIngestionSuccessTime = jsonValue.GetDouble("LatestIngestionSuccessTime");
-
     m_latestIngestionSuccessTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestIngestionSuccessEventID"))
   {
     m_latestIngestionSuccessEventID = jsonValue.GetString("LatestIngestionSuccessEventID");
-
     m_latestIngestionSuccessEventIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestIngestionErrorCode"))
   {
     m_latestIngestionErrorCode = jsonValue.GetString("LatestIngestionErrorCode");
-
     m_latestIngestionErrorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestIngestionAttemptTime"))
   {
     m_latestIngestionAttemptTime = jsonValue.GetDouble("LatestIngestionAttemptTime");
-
     m_latestIngestionAttemptTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestIngestionAttemptEventID"))
   {
     m_latestIngestionAttemptEventID = jsonValue.GetString("LatestIngestionAttemptEventID");
-
     m_latestIngestionAttemptEventIDHasBeenSet = true;
   }
-
   return *this;
 }
 

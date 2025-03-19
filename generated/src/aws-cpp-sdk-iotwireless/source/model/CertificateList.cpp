@@ -18,15 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-CertificateList::CertificateList() : 
-    m_signingAlg(SigningAlg::NOT_SET),
-    m_signingAlgHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 CertificateList::CertificateList(JsonView jsonValue)
-  : CertificateList()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CertificateList& CertificateList::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SigningAlg"))
   {
     m_signingAlg = SigningAlgMapper::GetSigningAlgForName(jsonValue.GetString("SigningAlg"));
-
     m_signingAlgHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-ResourceConfig::ResourceConfig() : 
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_volumeSizeInGB(0),
-    m_volumeSizeInGBHasBeenSet(false)
-{
-}
-
 ResourceConfig::ResourceConfig(JsonView jsonValue)
-  : ResourceConfig()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ ResourceConfig& ResourceConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("instanceCount"))
   {
     m_instanceCount = jsonValue.GetInteger("instanceCount");
-
     m_instanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(jsonValue.GetString("instanceType"));
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumeSizeInGB"))
   {
     m_volumeSizeInGB = jsonValue.GetInteger("volumeSizeInGB");
-
     m_volumeSizeInGBHasBeenSet = true;
   }
-
   return *this;
 }
 

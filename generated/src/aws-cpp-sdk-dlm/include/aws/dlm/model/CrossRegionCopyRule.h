@@ -37,7 +37,7 @@ namespace Model
   class CrossRegionCopyRule
   {
   public:
-    AWS_DLM_API CrossRegionCopyRule();
+    AWS_DLM_API CrossRegionCopyRule() = default;
     AWS_DLM_API CrossRegionCopyRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API CrossRegionCopyRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
      * target Region or the Amazon Resource Name (ARN) of the target Outpost for the
      * snapshot copies.</p>
      */
-    inline const Aws::String& GetTargetRegion() const{ return m_targetRegion; }
+    inline const Aws::String& GetTargetRegion() const { return m_targetRegion; }
     inline bool TargetRegionHasBeenSet() const { return m_targetRegionHasBeenSet; }
-    inline void SetTargetRegion(const Aws::String& value) { m_targetRegionHasBeenSet = true; m_targetRegion = value; }
-    inline void SetTargetRegion(Aws::String&& value) { m_targetRegionHasBeenSet = true; m_targetRegion = std::move(value); }
-    inline void SetTargetRegion(const char* value) { m_targetRegionHasBeenSet = true; m_targetRegion.assign(value); }
-    inline CrossRegionCopyRule& WithTargetRegion(const Aws::String& value) { SetTargetRegion(value); return *this;}
-    inline CrossRegionCopyRule& WithTargetRegion(Aws::String&& value) { SetTargetRegion(std::move(value)); return *this;}
-    inline CrossRegionCopyRule& WithTargetRegion(const char* value) { SetTargetRegion(value); return *this;}
+    template<typename TargetRegionT = Aws::String>
+    void SetTargetRegion(TargetRegionT&& value) { m_targetRegionHasBeenSet = true; m_targetRegion = std::forward<TargetRegionT>(value); }
+    template<typename TargetRegionT = Aws::String>
+    CrossRegionCopyRule& WithTargetRegion(TargetRegionT&& value) { SetTargetRegion(std::forward<TargetRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * only]</b> The target Region or the Amazon Resource Name (ARN) of the target
      * Outpost for the snapshot copies.</p>
      */
-    inline const Aws::String& GetTarget() const{ return m_target; }
+    inline const Aws::String& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
-    inline CrossRegionCopyRule& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
-    inline CrossRegionCopyRule& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
-    inline CrossRegionCopyRule& WithTarget(const char* value) { SetTarget(value); return *this;}
+    template<typename TargetT = Aws::String>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = Aws::String>
+    CrossRegionCopyRule& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,7 +82,7 @@ namespace Model
      * are encrypted, even if this parameter is false or if encryption by default is
      * not enabled.</p>
      */
-    inline bool GetEncrypted() const{ return m_encrypted; }
+    inline bool GetEncrypted() const { return m_encrypted; }
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
     inline CrossRegionCopyRule& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
@@ -98,14 +94,12 @@ namespace Model
      * this parameter is not specified, the default KMS key for the account is
      * used.</p>
      */
-    inline const Aws::String& GetCmkArn() const{ return m_cmkArn; }
+    inline const Aws::String& GetCmkArn() const { return m_cmkArn; }
     inline bool CmkArnHasBeenSet() const { return m_cmkArnHasBeenSet; }
-    inline void SetCmkArn(const Aws::String& value) { m_cmkArnHasBeenSet = true; m_cmkArn = value; }
-    inline void SetCmkArn(Aws::String&& value) { m_cmkArnHasBeenSet = true; m_cmkArn = std::move(value); }
-    inline void SetCmkArn(const char* value) { m_cmkArnHasBeenSet = true; m_cmkArn.assign(value); }
-    inline CrossRegionCopyRule& WithCmkArn(const Aws::String& value) { SetCmkArn(value); return *this;}
-    inline CrossRegionCopyRule& WithCmkArn(Aws::String&& value) { SetCmkArn(std::move(value)); return *this;}
-    inline CrossRegionCopyRule& WithCmkArn(const char* value) { SetCmkArn(value); return *this;}
+    template<typename CmkArnT = Aws::String>
+    void SetCmkArn(CmkArnT&& value) { m_cmkArnHasBeenSet = true; m_cmkArn = std::forward<CmkArnT>(value); }
+    template<typename CmkArnT = Aws::String>
+    CrossRegionCopyRule& WithCmkArn(CmkArnT&& value) { SetCmkArn(std::forward<CmkArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,7 +107,7 @@ namespace Model
      * <p>Indicates whether to copy all user-defined tags from the source snapshot or
      * AMI to the cross-Region copy.</p>
      */
-    inline bool GetCopyTags() const{ return m_copyTags; }
+    inline bool GetCopyTags() const { return m_copyTags; }
     inline bool CopyTagsHasBeenSet() const { return m_copyTagsHasBeenSet; }
     inline void SetCopyTags(bool value) { m_copyTagsHasBeenSet = true; m_copyTags = value; }
     inline CrossRegionCopyRule& WithCopyTags(bool value) { SetCopyTags(value); return *this;}
@@ -124,12 +118,12 @@ namespace Model
      * <p>The retention rule that indicates how long the cross-Region snapshot or AMI
      * copies are to be retained in the destination Region.</p>
      */
-    inline const CrossRegionCopyRetainRule& GetRetainRule() const{ return m_retainRule; }
+    inline const CrossRegionCopyRetainRule& GetRetainRule() const { return m_retainRule; }
     inline bool RetainRuleHasBeenSet() const { return m_retainRuleHasBeenSet; }
-    inline void SetRetainRule(const CrossRegionCopyRetainRule& value) { m_retainRuleHasBeenSet = true; m_retainRule = value; }
-    inline void SetRetainRule(CrossRegionCopyRetainRule&& value) { m_retainRuleHasBeenSet = true; m_retainRule = std::move(value); }
-    inline CrossRegionCopyRule& WithRetainRule(const CrossRegionCopyRetainRule& value) { SetRetainRule(value); return *this;}
-    inline CrossRegionCopyRule& WithRetainRule(CrossRegionCopyRetainRule&& value) { SetRetainRule(std::move(value)); return *this;}
+    template<typename RetainRuleT = CrossRegionCopyRetainRule>
+    void SetRetainRule(RetainRuleT&& value) { m_retainRuleHasBeenSet = true; m_retainRule = std::forward<RetainRuleT>(value); }
+    template<typename RetainRuleT = CrossRegionCopyRetainRule>
+    CrossRegionCopyRule& WithRetainRule(RetainRuleT&& value) { SetRetainRule(std::forward<RetainRuleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,12 +131,12 @@ namespace Model
      * <p> <b>[Custom AMI policies only]</b> The AMI deprecation rule for cross-Region
      * AMI copies created by the rule.</p>
      */
-    inline const CrossRegionCopyDeprecateRule& GetDeprecateRule() const{ return m_deprecateRule; }
+    inline const CrossRegionCopyDeprecateRule& GetDeprecateRule() const { return m_deprecateRule; }
     inline bool DeprecateRuleHasBeenSet() const { return m_deprecateRuleHasBeenSet; }
-    inline void SetDeprecateRule(const CrossRegionCopyDeprecateRule& value) { m_deprecateRuleHasBeenSet = true; m_deprecateRule = value; }
-    inline void SetDeprecateRule(CrossRegionCopyDeprecateRule&& value) { m_deprecateRuleHasBeenSet = true; m_deprecateRule = std::move(value); }
-    inline CrossRegionCopyRule& WithDeprecateRule(const CrossRegionCopyDeprecateRule& value) { SetDeprecateRule(value); return *this;}
-    inline CrossRegionCopyRule& WithDeprecateRule(CrossRegionCopyDeprecateRule&& value) { SetDeprecateRule(std::move(value)); return *this;}
+    template<typename DeprecateRuleT = CrossRegionCopyDeprecateRule>
+    void SetDeprecateRule(DeprecateRuleT&& value) { m_deprecateRuleHasBeenSet = true; m_deprecateRule = std::forward<DeprecateRuleT>(value); }
+    template<typename DeprecateRuleT = CrossRegionCopyDeprecateRule>
+    CrossRegionCopyRule& WithDeprecateRule(DeprecateRuleT&& value) { SetDeprecateRule(std::forward<DeprecateRuleT>(value)); return *this;}
     ///@}
   private:
 
@@ -152,13 +146,13 @@ namespace Model
     Aws::String m_target;
     bool m_targetHasBeenSet = false;
 
-    bool m_encrypted;
+    bool m_encrypted{false};
     bool m_encryptedHasBeenSet = false;
 
     Aws::String m_cmkArn;
     bool m_cmkArnHasBeenSet = false;
 
-    bool m_copyTags;
+    bool m_copyTags{false};
     bool m_copyTagsHasBeenSet = false;
 
     CrossRegionCopyRetainRule m_retainRule;

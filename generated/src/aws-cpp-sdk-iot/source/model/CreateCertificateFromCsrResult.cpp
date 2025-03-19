@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateCertificateFromCsrResult::CreateCertificateFromCsrResult()
-{
-}
-
 CreateCertificateFromCsrResult::CreateCertificateFromCsrResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ CreateCertificateFromCsrResult& CreateCertificateFromCsrResult::operator =(const
   if(jsonValue.ValueExists("certificateArn"))
   {
     m_certificateArn = jsonValue.GetString("certificateArn");
-
+    m_certificateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certificateId"))
   {
     m_certificateId = jsonValue.GetString("certificateId");
-
+    m_certificateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certificatePem"))
   {
     m_certificatePem = jsonValue.GetString("certificatePem");
-
+    m_certificatePemHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -34,7 +34,7 @@ namespace Model
   class VpcInformation
   {
   public:
-    AWS_PCACONNECTORAD_API VpcInformation();
+    AWS_PCACONNECTORAD_API VpcInformation() = default;
     AWS_PCACONNECTORAD_API VpcInformation(Aws::Utils::Json::JsonView jsonValue);
     AWS_PCACONNECTORAD_API VpcInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PCACONNECTORAD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>The VPC IP address type.</p>
      */
-    inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
+    inline IpAddressType GetIpAddressType() const { return m_ipAddressType; }
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
-    inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
-    inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
-    inline VpcInformation& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
-    inline VpcInformation& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
+    inline void SetIpAddressType(IpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline VpcInformation& WithIpAddressType(IpAddressType value) { SetIpAddressType(value); return *this;}
     ///@}
 
     ///@{
@@ -57,19 +55,18 @@ namespace Model
      * <p>The security groups used with the connector. You can use a maximum of 4
      * security groups with a connector.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-    inline VpcInformation& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline VpcInformation& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline VpcInformation& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-    inline VpcInformation& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline VpcInformation& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    VpcInformation& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    VpcInformation& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
   private:
 
-    IpAddressType m_ipAddressType;
+    IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
     bool m_ipAddressTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_securityGroupIds;

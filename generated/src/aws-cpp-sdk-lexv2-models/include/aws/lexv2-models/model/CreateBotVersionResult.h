@@ -31,7 +31,7 @@ namespace Model
   class CreateBotVersionResult
   {
   public:
-    AWS_LEXMODELSV2_API CreateBotVersionResult();
+    AWS_LEXMODELSV2_API CreateBotVersionResult() = default;
     AWS_LEXMODELSV2_API CreateBotVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELSV2_API CreateBotVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,56 +40,48 @@ namespace Model
     /**
      * <p>The bot identifier specified in the request.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
-    inline void SetBotId(const Aws::String& value) { m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botId.assign(value); }
-    inline CreateBotVersionResult& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline CreateBotVersionResult& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline CreateBotVersionResult& WithBotId(const char* value) { SetBotId(value); return *this;}
+    inline const Aws::String& GetBotId() const { return m_botId; }
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    CreateBotVersionResult& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the version specified in the request.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline CreateBotVersionResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateBotVersionResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateBotVersionResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateBotVersionResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version number assigned to the version.</p>
      */
-    inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
-    inline void SetBotVersion(const Aws::String& value) { m_botVersion = value; }
-    inline void SetBotVersion(Aws::String&& value) { m_botVersion = std::move(value); }
-    inline void SetBotVersion(const char* value) { m_botVersion.assign(value); }
-    inline CreateBotVersionResult& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
-    inline CreateBotVersionResult& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
-    inline CreateBotVersionResult& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
+    inline const Aws::String& GetBotVersion() const { return m_botVersion; }
+    template<typename BotVersionT = Aws::String>
+    void SetBotVersion(BotVersionT&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::forward<BotVersionT>(value); }
+    template<typename BotVersionT = Aws::String>
+    CreateBotVersionResult& WithBotVersion(BotVersionT&& value) { SetBotVersion(std::forward<BotVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source versions used for each locale in the new version.</p>
      */
-    inline const Aws::Map<Aws::String, BotVersionLocaleDetails>& GetBotVersionLocaleSpecification() const{ return m_botVersionLocaleSpecification; }
-    inline void SetBotVersionLocaleSpecification(const Aws::Map<Aws::String, BotVersionLocaleDetails>& value) { m_botVersionLocaleSpecification = value; }
-    inline void SetBotVersionLocaleSpecification(Aws::Map<Aws::String, BotVersionLocaleDetails>&& value) { m_botVersionLocaleSpecification = std::move(value); }
-    inline CreateBotVersionResult& WithBotVersionLocaleSpecification(const Aws::Map<Aws::String, BotVersionLocaleDetails>& value) { SetBotVersionLocaleSpecification(value); return *this;}
-    inline CreateBotVersionResult& WithBotVersionLocaleSpecification(Aws::Map<Aws::String, BotVersionLocaleDetails>&& value) { SetBotVersionLocaleSpecification(std::move(value)); return *this;}
-    inline CreateBotVersionResult& AddBotVersionLocaleSpecification(const Aws::String& key, const BotVersionLocaleDetails& value) { m_botVersionLocaleSpecification.emplace(key, value); return *this; }
-    inline CreateBotVersionResult& AddBotVersionLocaleSpecification(Aws::String&& key, const BotVersionLocaleDetails& value) { m_botVersionLocaleSpecification.emplace(std::move(key), value); return *this; }
-    inline CreateBotVersionResult& AddBotVersionLocaleSpecification(const Aws::String& key, BotVersionLocaleDetails&& value) { m_botVersionLocaleSpecification.emplace(key, std::move(value)); return *this; }
-    inline CreateBotVersionResult& AddBotVersionLocaleSpecification(Aws::String&& key, BotVersionLocaleDetails&& value) { m_botVersionLocaleSpecification.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateBotVersionResult& AddBotVersionLocaleSpecification(const char* key, BotVersionLocaleDetails&& value) { m_botVersionLocaleSpecification.emplace(key, std::move(value)); return *this; }
-    inline CreateBotVersionResult& AddBotVersionLocaleSpecification(const char* key, const BotVersionLocaleDetails& value) { m_botVersionLocaleSpecification.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, BotVersionLocaleDetails>& GetBotVersionLocaleSpecification() const { return m_botVersionLocaleSpecification; }
+    template<typename BotVersionLocaleSpecificationT = Aws::Map<Aws::String, BotVersionLocaleDetails>>
+    void SetBotVersionLocaleSpecification(BotVersionLocaleSpecificationT&& value) { m_botVersionLocaleSpecificationHasBeenSet = true; m_botVersionLocaleSpecification = std::forward<BotVersionLocaleSpecificationT>(value); }
+    template<typename BotVersionLocaleSpecificationT = Aws::Map<Aws::String, BotVersionLocaleDetails>>
+    CreateBotVersionResult& WithBotVersionLocaleSpecification(BotVersionLocaleSpecificationT&& value) { SetBotVersionLocaleSpecification(std::forward<BotVersionLocaleSpecificationT>(value)); return *this;}
+    template<typename BotVersionLocaleSpecificationKeyT = Aws::String, typename BotVersionLocaleSpecificationValueT = BotVersionLocaleDetails>
+    CreateBotVersionResult& AddBotVersionLocaleSpecification(BotVersionLocaleSpecificationKeyT&& key, BotVersionLocaleSpecificationValueT&& value) {
+      m_botVersionLocaleSpecificationHasBeenSet = true; m_botVersionLocaleSpecification.emplace(std::forward<BotVersionLocaleSpecificationKeyT>(key), std::forward<BotVersionLocaleSpecificationValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -99,49 +91,52 @@ namespace Model
      * sets status to <code>Available</code>. If Amazon Lex can't build the bot, it
      * sets status to <code>Failed</code>.</p>
      */
-    inline const BotStatus& GetBotStatus() const{ return m_botStatus; }
-    inline void SetBotStatus(const BotStatus& value) { m_botStatus = value; }
-    inline void SetBotStatus(BotStatus&& value) { m_botStatus = std::move(value); }
-    inline CreateBotVersionResult& WithBotStatus(const BotStatus& value) { SetBotStatus(value); return *this;}
-    inline CreateBotVersionResult& WithBotStatus(BotStatus&& value) { SetBotStatus(std::move(value)); return *this;}
+    inline BotStatus GetBotStatus() const { return m_botStatus; }
+    inline void SetBotStatus(BotStatus value) { m_botStatusHasBeenSet = true; m_botStatus = value; }
+    inline CreateBotVersionResult& WithBotStatus(BotStatus value) { SetBotStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp of the date and time that the version was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
-    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTime = value; }
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTime = std::move(value); }
-    inline CreateBotVersionResult& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-    inline CreateBotVersionResult& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    CreateBotVersionResult& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateBotVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateBotVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateBotVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateBotVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_botId;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_botVersion;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::Map<Aws::String, BotVersionLocaleDetails> m_botVersionLocaleSpecification;
+    bool m_botVersionLocaleSpecificationHasBeenSet = false;
 
-    BotStatus m_botStatus;
+    BotStatus m_botStatus{BotStatus::NOT_SET};
+    bool m_botStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDateTime;
+    Aws::Utils::DateTime m_creationDateTime{};
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,7 +25,7 @@ namespace Model
   class CreateWebhookRequest : public CodeBuildRequest
   {
   public:
-    AWS_CODEBUILD_API CreateWebhookRequest();
+    AWS_CODEBUILD_API CreateWebhookRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the CodeBuild project.</p>
      */
-    inline const Aws::String& GetProjectName() const{ return m_projectName; }
+    inline const Aws::String& GetProjectName() const { return m_projectName; }
     inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
-    inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
-    inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
-    inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
-    inline CreateWebhookRequest& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-    inline CreateWebhookRequest& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-    inline CreateWebhookRequest& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+    template<typename ProjectNameT = Aws::String>
+    void SetProjectName(ProjectNameT&& value) { m_projectNameHasBeenSet = true; m_projectName = std::forward<ProjectNameT>(value); }
+    template<typename ProjectNameT = Aws::String>
+    CreateWebhookRequest& WithProjectName(ProjectNameT&& value) { SetProjectName(std::forward<ProjectNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * branches are built.</p>  <p>It is recommended that you use
      * <code>filterGroups</code> instead of <code>branchFilter</code>. </p> 
      */
-    inline const Aws::String& GetBranchFilter() const{ return m_branchFilter; }
+    inline const Aws::String& GetBranchFilter() const { return m_branchFilter; }
     inline bool BranchFilterHasBeenSet() const { return m_branchFilterHasBeenSet; }
-    inline void SetBranchFilter(const Aws::String& value) { m_branchFilterHasBeenSet = true; m_branchFilter = value; }
-    inline void SetBranchFilter(Aws::String&& value) { m_branchFilterHasBeenSet = true; m_branchFilter = std::move(value); }
-    inline void SetBranchFilter(const char* value) { m_branchFilterHasBeenSet = true; m_branchFilter.assign(value); }
-    inline CreateWebhookRequest& WithBranchFilter(const Aws::String& value) { SetBranchFilter(value); return *this;}
-    inline CreateWebhookRequest& WithBranchFilter(Aws::String&& value) { SetBranchFilter(std::move(value)); return *this;}
-    inline CreateWebhookRequest& WithBranchFilter(const char* value) { SetBranchFilter(value); return *this;}
+    template<typename BranchFilterT = Aws::String>
+    void SetBranchFilter(BranchFilterT&& value) { m_branchFilterHasBeenSet = true; m_branchFilter = std::forward<BranchFilterT>(value); }
+    template<typename BranchFilterT = Aws::String>
+    CreateWebhookRequest& WithBranchFilter(BranchFilterT&& value) { SetBranchFilter(std::forward<BranchFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +75,14 @@ namespace Model
      * <code>filterGroups</code> array must pass. For a filter group to pass, each of
      * its filters must pass. </p>
      */
-    inline const Aws::Vector<Aws::Vector<WebhookFilter>>& GetFilterGroups() const{ return m_filterGroups; }
+    inline const Aws::Vector<Aws::Vector<WebhookFilter>>& GetFilterGroups() const { return m_filterGroups; }
     inline bool FilterGroupsHasBeenSet() const { return m_filterGroupsHasBeenSet; }
-    inline void SetFilterGroups(const Aws::Vector<Aws::Vector<WebhookFilter>>& value) { m_filterGroupsHasBeenSet = true; m_filterGroups = value; }
-    inline void SetFilterGroups(Aws::Vector<Aws::Vector<WebhookFilter>>&& value) { m_filterGroupsHasBeenSet = true; m_filterGroups = std::move(value); }
-    inline CreateWebhookRequest& WithFilterGroups(const Aws::Vector<Aws::Vector<WebhookFilter>>& value) { SetFilterGroups(value); return *this;}
-    inline CreateWebhookRequest& WithFilterGroups(Aws::Vector<Aws::Vector<WebhookFilter>>&& value) { SetFilterGroups(std::move(value)); return *this;}
-    inline CreateWebhookRequest& AddFilterGroups(const Aws::Vector<WebhookFilter>& value) { m_filterGroupsHasBeenSet = true; m_filterGroups.push_back(value); return *this; }
-    inline CreateWebhookRequest& AddFilterGroups(Aws::Vector<WebhookFilter>&& value) { m_filterGroupsHasBeenSet = true; m_filterGroups.push_back(std::move(value)); return *this; }
+    template<typename FilterGroupsT = Aws::Vector<Aws::Vector<WebhookFilter>>>
+    void SetFilterGroups(FilterGroupsT&& value) { m_filterGroupsHasBeenSet = true; m_filterGroups = std::forward<FilterGroupsT>(value); }
+    template<typename FilterGroupsT = Aws::Vector<Aws::Vector<WebhookFilter>>>
+    CreateWebhookRequest& WithFilterGroups(FilterGroupsT&& value) { SetFilterGroups(std::forward<FilterGroupsT>(value)); return *this;}
+    template<typename FilterGroupsT = Aws::Vector<WebhookFilter>>
+    CreateWebhookRequest& AddFilterGroups(FilterGroupsT&& value) { m_filterGroupsHasBeenSet = true; m_filterGroups.emplace_back(std::forward<FilterGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -99,12 +95,10 @@ namespace Model
      * Configure a CodeBuild-hosted Buildkite runner</a> in the <i>CodeBuild user
      * guide</i>.</p> 
      */
-    inline const WebhookBuildType& GetBuildType() const{ return m_buildType; }
+    inline WebhookBuildType GetBuildType() const { return m_buildType; }
     inline bool BuildTypeHasBeenSet() const { return m_buildTypeHasBeenSet; }
-    inline void SetBuildType(const WebhookBuildType& value) { m_buildTypeHasBeenSet = true; m_buildType = value; }
-    inline void SetBuildType(WebhookBuildType&& value) { m_buildTypeHasBeenSet = true; m_buildType = std::move(value); }
-    inline CreateWebhookRequest& WithBuildType(const WebhookBuildType& value) { SetBuildType(value); return *this;}
-    inline CreateWebhookRequest& WithBuildType(WebhookBuildType&& value) { SetBuildType(std::move(value)); return *this;}
+    inline void SetBuildType(WebhookBuildType value) { m_buildTypeHasBeenSet = true; m_buildType = value; }
+    inline CreateWebhookRequest& WithBuildType(WebhookBuildType value) { SetBuildType(value); return *this;}
     ///@}
 
     ///@{
@@ -115,7 +109,7 @@ namespace Model
      * output can be used to manually create a webhook within GitHub.</p>  <p>
      * <code>manualCreation</code> is only available for GitHub webhooks.</p> 
      */
-    inline bool GetManualCreation() const{ return m_manualCreation; }
+    inline bool GetManualCreation() const { return m_manualCreation; }
     inline bool ManualCreationHasBeenSet() const { return m_manualCreationHasBeenSet; }
     inline void SetManualCreation(bool value) { m_manualCreationHasBeenSet = true; m_manualCreation = value; }
     inline CreateWebhookRequest& WithManualCreation(bool value) { SetManualCreation(value); return *this;}
@@ -127,12 +121,12 @@ namespace Model
      * <p>Global or organization webhooks are only available for GitHub and Github
      * Enterprise webhooks.</p> 
      */
-    inline const ScopeConfiguration& GetScopeConfiguration() const{ return m_scopeConfiguration; }
+    inline const ScopeConfiguration& GetScopeConfiguration() const { return m_scopeConfiguration; }
     inline bool ScopeConfigurationHasBeenSet() const { return m_scopeConfigurationHasBeenSet; }
-    inline void SetScopeConfiguration(const ScopeConfiguration& value) { m_scopeConfigurationHasBeenSet = true; m_scopeConfiguration = value; }
-    inline void SetScopeConfiguration(ScopeConfiguration&& value) { m_scopeConfigurationHasBeenSet = true; m_scopeConfiguration = std::move(value); }
-    inline CreateWebhookRequest& WithScopeConfiguration(const ScopeConfiguration& value) { SetScopeConfiguration(value); return *this;}
-    inline CreateWebhookRequest& WithScopeConfiguration(ScopeConfiguration&& value) { SetScopeConfiguration(std::move(value)); return *this;}
+    template<typename ScopeConfigurationT = ScopeConfiguration>
+    void SetScopeConfiguration(ScopeConfigurationT&& value) { m_scopeConfigurationHasBeenSet = true; m_scopeConfiguration = std::forward<ScopeConfigurationT>(value); }
+    template<typename ScopeConfigurationT = ScopeConfiguration>
+    CreateWebhookRequest& WithScopeConfiguration(ScopeConfigurationT&& value) { SetScopeConfiguration(std::forward<ScopeConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -145,10 +139,10 @@ namespace Model
     Aws::Vector<Aws::Vector<WebhookFilter>> m_filterGroups;
     bool m_filterGroupsHasBeenSet = false;
 
-    WebhookBuildType m_buildType;
+    WebhookBuildType m_buildType{WebhookBuildType::NOT_SET};
     bool m_buildTypeHasBeenSet = false;
 
-    bool m_manualCreation;
+    bool m_manualCreation{false};
     bool m_manualCreationHasBeenSet = false;
 
     ScopeConfiguration m_scopeConfiguration;

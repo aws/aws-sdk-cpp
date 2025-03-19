@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyVpnTunnelCertificateRequest::ModifyVpnTunnelCertificateRequest() : 
-    m_vpnConnectionIdHasBeenSet(false),
-    m_vpnTunnelOutsideIpAddressHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ModifyVpnTunnelCertificateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

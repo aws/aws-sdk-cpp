@@ -30,7 +30,7 @@ namespace Model
   class SetIdentityNotificationTopicRequest : public SESRequest
   {
   public:
-    AWS_SES_API SetIdentityNotificationTopicRequest();
+    AWS_SES_API SetIdentityNotificationTopicRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -54,14 +54,12 @@ namespace Model
      * <code>sender@example.com</code>, <code>example.com</code>,
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p>
      */
-    inline const Aws::String& GetIdentity() const{ return m_identity; }
+    inline const Aws::String& GetIdentity() const { return m_identity; }
     inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
-    inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
-    inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = std::move(value); }
-    inline void SetIdentity(const char* value) { m_identityHasBeenSet = true; m_identity.assign(value); }
-    inline SetIdentityNotificationTopicRequest& WithIdentity(const Aws::String& value) { SetIdentity(value); return *this;}
-    inline SetIdentityNotificationTopicRequest& WithIdentity(Aws::String&& value) { SetIdentity(std::move(value)); return *this;}
-    inline SetIdentityNotificationTopicRequest& WithIdentity(const char* value) { SetIdentity(value); return *this;}
+    template<typename IdentityT = Aws::String>
+    void SetIdentity(IdentityT&& value) { m_identityHasBeenSet = true; m_identity = std::forward<IdentityT>(value); }
+    template<typename IdentityT = Aws::String>
+    SetIdentityNotificationTopicRequest& WithIdentity(IdentityT&& value) { SetIdentity(std::forward<IdentityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +67,10 @@ namespace Model
      * <p>The type of notifications that are published to the specified Amazon SNS
      * topic.</p>
      */
-    inline const NotificationType& GetNotificationType() const{ return m_notificationType; }
+    inline NotificationType GetNotificationType() const { return m_notificationType; }
     inline bool NotificationTypeHasBeenSet() const { return m_notificationTypeHasBeenSet; }
-    inline void SetNotificationType(const NotificationType& value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
-    inline void SetNotificationType(NotificationType&& value) { m_notificationTypeHasBeenSet = true; m_notificationType = std::move(value); }
-    inline SetIdentityNotificationTopicRequest& WithNotificationType(const NotificationType& value) { SetNotificationType(value); return *this;}
-    inline SetIdentityNotificationTopicRequest& WithNotificationType(NotificationType&& value) { SetNotificationType(std::move(value)); return *this;}
+    inline void SetNotificationType(NotificationType value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
+    inline SetIdentityNotificationTopicRequest& WithNotificationType(NotificationType value) { SetNotificationType(value); return *this;}
     ///@}
 
     ///@{
@@ -83,21 +79,19 @@ namespace Model
      * omitted from the request or a null value is passed, <code>SnsTopic</code> is
      * cleared and publishing is disabled.</p>
      */
-    inline const Aws::String& GetSnsTopic() const{ return m_snsTopic; }
+    inline const Aws::String& GetSnsTopic() const { return m_snsTopic; }
     inline bool SnsTopicHasBeenSet() const { return m_snsTopicHasBeenSet; }
-    inline void SetSnsTopic(const Aws::String& value) { m_snsTopicHasBeenSet = true; m_snsTopic = value; }
-    inline void SetSnsTopic(Aws::String&& value) { m_snsTopicHasBeenSet = true; m_snsTopic = std::move(value); }
-    inline void SetSnsTopic(const char* value) { m_snsTopicHasBeenSet = true; m_snsTopic.assign(value); }
-    inline SetIdentityNotificationTopicRequest& WithSnsTopic(const Aws::String& value) { SetSnsTopic(value); return *this;}
-    inline SetIdentityNotificationTopicRequest& WithSnsTopic(Aws::String&& value) { SetSnsTopic(std::move(value)); return *this;}
-    inline SetIdentityNotificationTopicRequest& WithSnsTopic(const char* value) { SetSnsTopic(value); return *this;}
+    template<typename SnsTopicT = Aws::String>
+    void SetSnsTopic(SnsTopicT&& value) { m_snsTopicHasBeenSet = true; m_snsTopic = std::forward<SnsTopicT>(value); }
+    template<typename SnsTopicT = Aws::String>
+    SetIdentityNotificationTopicRequest& WithSnsTopic(SnsTopicT&& value) { SetSnsTopic(std::forward<SnsTopicT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_identity;
     bool m_identityHasBeenSet = false;
 
-    NotificationType m_notificationType;
+    NotificationType m_notificationType{NotificationType::NOT_SET};
     bool m_notificationTypeHasBeenSet = false;
 
     Aws::String m_snsTopic;

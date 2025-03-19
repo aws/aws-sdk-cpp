@@ -12,11 +12,6 @@ using namespace Aws::SupportApp::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListSlackWorkspaceConfigurationsRequest::ListSlackWorkspaceConfigurationsRequest() : 
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListSlackWorkspaceConfigurationsRequest::SerializePayload() const
 {
   JsonValue payload;

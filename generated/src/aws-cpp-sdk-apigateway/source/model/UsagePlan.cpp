@@ -19,21 +19,7 @@ namespace APIGateway
 namespace Model
 {
 
-UsagePlan::UsagePlan() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_apiStagesHasBeenSet(false),
-    m_throttleHasBeenSet(false),
-    m_quotaHasBeenSet(false),
-    m_productCodeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 UsagePlan::UsagePlan(JsonView jsonValue)
-  : UsagePlan()
 {
   *this = jsonValue;
 }
@@ -43,24 +29,18 @@ UsagePlan& UsagePlan::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiStages"))
   {
     Aws::Utils::Array<JsonView> apiStagesJsonList = jsonValue.GetArray("apiStages");
@@ -70,28 +50,21 @@ UsagePlan& UsagePlan::operator =(JsonView jsonValue)
     }
     m_apiStagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("throttle"))
   {
     m_throttle = jsonValue.GetObject("throttle");
-
     m_throttleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("quota"))
   {
     m_quota = jsonValue.GetObject("quota");
-
     m_quotaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("productCode"))
   {
     m_productCode = jsonValue.GetString("productCode");
-
     m_productCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -101,7 +74,6 @@ UsagePlan& UsagePlan::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -24,7 +24,7 @@ namespace Model
   class StartQueryWorkloadInsightsTopContributorsDataRequest : public NetworkFlowMonitorRequest
   {
   public:
-    AWS_NETWORKFLOWMONITOR_API StartQueryWorkloadInsightsTopContributorsDataRequest();
+    AWS_NETWORKFLOWMONITOR_API StartQueryWorkloadInsightsTopContributorsDataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * results for. A scope ID is an internally-generated identifier that includes all
      * the resources for a specific root account.</p>
      */
-    inline const Aws::String& GetScopeId() const{ return m_scopeId; }
+    inline const Aws::String& GetScopeId() const { return m_scopeId; }
     inline bool ScopeIdHasBeenSet() const { return m_scopeIdHasBeenSet; }
-    inline void SetScopeId(const Aws::String& value) { m_scopeIdHasBeenSet = true; m_scopeId = value; }
-    inline void SetScopeId(Aws::String&& value) { m_scopeIdHasBeenSet = true; m_scopeId = std::move(value); }
-    inline void SetScopeId(const char* value) { m_scopeIdHasBeenSet = true; m_scopeId.assign(value); }
-    inline StartQueryWorkloadInsightsTopContributorsDataRequest& WithScopeId(const Aws::String& value) { SetScopeId(value); return *this;}
-    inline StartQueryWorkloadInsightsTopContributorsDataRequest& WithScopeId(Aws::String&& value) { SetScopeId(std::move(value)); return *this;}
-    inline StartQueryWorkloadInsightsTopContributorsDataRequest& WithScopeId(const char* value) { SetScopeId(value); return *this;}
+    template<typename ScopeIdT = Aws::String>
+    void SetScopeId(ScopeIdT&& value) { m_scopeIdHasBeenSet = true; m_scopeId = std::forward<ScopeIdT>(value); }
+    template<typename ScopeIdT = Aws::String>
+    StartQueryWorkloadInsightsTopContributorsDataRequest& WithScopeId(ScopeIdT&& value) { SetScopeId(std::forward<ScopeIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +54,12 @@ namespace Model
      * <p>The timestamp that is the date and time beginning of the period that you want
      * to retrieve results for with your query.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline StartQueryWorkloadInsightsTopContributorsDataRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline StartQueryWorkloadInsightsTopContributorsDataRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    StartQueryWorkloadInsightsTopContributorsDataRequest& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +67,12 @@ namespace Model
      * <p>The timestamp that is the date and time end of the period that you want to
      * retrieve results for with your query.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline StartQueryWorkloadInsightsTopContributorsDataRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline StartQueryWorkloadInsightsTopContributorsDataRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    StartQueryWorkloadInsightsTopContributorsDataRequest& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,12 +82,10 @@ namespace Model
      * of metric, for a monitor and (optionally) within a specific category, such as
      * network flows between Availability Zones.</p>
      */
-    inline const WorkloadInsightsMetric& GetMetricName() const{ return m_metricName; }
+    inline WorkloadInsightsMetric GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const WorkloadInsightsMetric& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(WorkloadInsightsMetric&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline StartQueryWorkloadInsightsTopContributorsDataRequest& WithMetricName(const WorkloadInsightsMetric& value) { SetMetricName(value); return *this;}
-    inline StartQueryWorkloadInsightsTopContributorsDataRequest& WithMetricName(WorkloadInsightsMetric&& value) { SetMetricName(std::move(value)); return *this;}
+    inline void SetMetricName(WorkloadInsightsMetric value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+    inline StartQueryWorkloadInsightsTopContributorsDataRequest& WithMetricName(WorkloadInsightsMetric value) { SetMetricName(value); return *this;}
     ///@}
 
     ///@{
@@ -104,28 +100,26 @@ namespace Model
      * <code>UNCLASSIFIED</code>: Top contributor network flows that do not have a
      * bucket classification</p> </li> </ul>
      */
-    inline const DestinationCategory& GetDestinationCategory() const{ return m_destinationCategory; }
+    inline DestinationCategory GetDestinationCategory() const { return m_destinationCategory; }
     inline bool DestinationCategoryHasBeenSet() const { return m_destinationCategoryHasBeenSet; }
-    inline void SetDestinationCategory(const DestinationCategory& value) { m_destinationCategoryHasBeenSet = true; m_destinationCategory = value; }
-    inline void SetDestinationCategory(DestinationCategory&& value) { m_destinationCategoryHasBeenSet = true; m_destinationCategory = std::move(value); }
-    inline StartQueryWorkloadInsightsTopContributorsDataRequest& WithDestinationCategory(const DestinationCategory& value) { SetDestinationCategory(value); return *this;}
-    inline StartQueryWorkloadInsightsTopContributorsDataRequest& WithDestinationCategory(DestinationCategory&& value) { SetDestinationCategory(std::move(value)); return *this;}
+    inline void SetDestinationCategory(DestinationCategory value) { m_destinationCategoryHasBeenSet = true; m_destinationCategory = value; }
+    inline StartQueryWorkloadInsightsTopContributorsDataRequest& WithDestinationCategory(DestinationCategory value) { SetDestinationCategory(value); return *this;}
     ///@}
   private:
 
     Aws::String m_scopeId;
     bool m_scopeIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
-    WorkloadInsightsMetric m_metricName;
+    WorkloadInsightsMetric m_metricName{WorkloadInsightsMetric::NOT_SET};
     bool m_metricNameHasBeenSet = false;
 
-    DestinationCategory m_destinationCategory;
+    DestinationCategory m_destinationCategory{DestinationCategory::NOT_SET};
     bool m_destinationCategoryHasBeenSet = false;
   };
 

@@ -33,7 +33,7 @@ namespace Model
   class DataSource
   {
   public:
-    AWS_PERSONALIZE_API DataSource();
+    AWS_PERSONALIZE_API DataSource() = default;
     AWS_PERSONALIZE_API DataSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * in the folder and any sub folder. Use the following syntax with a <code>/</code>
      * after the folder name:</p> <p> <code>s3://bucket-name/folder-name/</code> </p>
      */
-    inline const Aws::String& GetDataLocation() const{ return m_dataLocation; }
+    inline const Aws::String& GetDataLocation() const { return m_dataLocation; }
     inline bool DataLocationHasBeenSet() const { return m_dataLocationHasBeenSet; }
-    inline void SetDataLocation(const Aws::String& value) { m_dataLocationHasBeenSet = true; m_dataLocation = value; }
-    inline void SetDataLocation(Aws::String&& value) { m_dataLocationHasBeenSet = true; m_dataLocation = std::move(value); }
-    inline void SetDataLocation(const char* value) { m_dataLocationHasBeenSet = true; m_dataLocation.assign(value); }
-    inline DataSource& WithDataLocation(const Aws::String& value) { SetDataLocation(value); return *this;}
-    inline DataSource& WithDataLocation(Aws::String&& value) { SetDataLocation(std::move(value)); return *this;}
-    inline DataSource& WithDataLocation(const char* value) { SetDataLocation(value); return *this;}
+    template<typename DataLocationT = Aws::String>
+    void SetDataLocation(DataLocationT&& value) { m_dataLocationHasBeenSet = true; m_dataLocation = std::forward<DataLocationT>(value); }
+    template<typename DataLocationT = Aws::String>
+    DataSource& WithDataLocation(DataLocationT&& value) { SetDataLocation(std::forward<DataLocationT>(value)); return *this;}
     ///@}
   private:
 

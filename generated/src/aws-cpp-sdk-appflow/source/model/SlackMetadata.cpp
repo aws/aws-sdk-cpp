@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-SlackMetadata::SlackMetadata() : 
-    m_oAuthScopesHasBeenSet(false)
-{
-}
-
 SlackMetadata::SlackMetadata(JsonView jsonValue)
-  : SlackMetadata()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SlackMetadata& SlackMetadata::operator =(JsonView jsonValue)
     }
     m_oAuthScopesHasBeenSet = true;
   }
-
   return *this;
 }
 

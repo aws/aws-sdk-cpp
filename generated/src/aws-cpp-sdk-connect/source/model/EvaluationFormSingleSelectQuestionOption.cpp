@@ -18,18 +18,7 @@ namespace Connect
 namespace Model
 {
 
-EvaluationFormSingleSelectQuestionOption::EvaluationFormSingleSelectQuestionOption() : 
-    m_refIdHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_score(0),
-    m_scoreHasBeenSet(false),
-    m_automaticFail(false),
-    m_automaticFailHasBeenSet(false)
-{
-}
-
 EvaluationFormSingleSelectQuestionOption::EvaluationFormSingleSelectQuestionOption(JsonView jsonValue)
-  : EvaluationFormSingleSelectQuestionOption()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ EvaluationFormSingleSelectQuestionOption& EvaluationFormSingleSelectQuestionOpti
   if(jsonValue.ValueExists("RefId"))
   {
     m_refId = jsonValue.GetString("RefId");
-
     m_refIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Text"))
   {
     m_text = jsonValue.GetString("Text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Score"))
   {
     m_score = jsonValue.GetInteger("Score");
-
     m_scoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutomaticFail"))
   {
     m_automaticFail = jsonValue.GetBool("AutomaticFail");
-
     m_automaticFailHasBeenSet = true;
   }
-
   return *this;
 }
 

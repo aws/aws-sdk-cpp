@@ -12,13 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetServiceTemplateVersionRequest::GetServiceTemplateVersionRequest() : 
-    m_majorVersionHasBeenSet(false),
-    m_minorVersionHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
-{
-}
-
 Aws::String GetServiceTemplateVersionRequest::SerializePayload() const
 {
   JsonValue payload;

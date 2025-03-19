@@ -29,7 +29,7 @@ namespace Model
   class ListProcessingJobsResult
   {
   public:
-    AWS_SAGEMAKER_API ListProcessingJobsResult();
+    AWS_SAGEMAKER_API ListProcessingJobsResult() = default;
     AWS_SAGEMAKER_API ListProcessingJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API ListProcessingJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>An array of <code>ProcessingJobSummary</code> objects, each listing a
      * processing job.</p>
      */
-    inline const Aws::Vector<ProcessingJobSummary>& GetProcessingJobSummaries() const{ return m_processingJobSummaries; }
-    inline void SetProcessingJobSummaries(const Aws::Vector<ProcessingJobSummary>& value) { m_processingJobSummaries = value; }
-    inline void SetProcessingJobSummaries(Aws::Vector<ProcessingJobSummary>&& value) { m_processingJobSummaries = std::move(value); }
-    inline ListProcessingJobsResult& WithProcessingJobSummaries(const Aws::Vector<ProcessingJobSummary>& value) { SetProcessingJobSummaries(value); return *this;}
-    inline ListProcessingJobsResult& WithProcessingJobSummaries(Aws::Vector<ProcessingJobSummary>&& value) { SetProcessingJobSummaries(std::move(value)); return *this;}
-    inline ListProcessingJobsResult& AddProcessingJobSummaries(const ProcessingJobSummary& value) { m_processingJobSummaries.push_back(value); return *this; }
-    inline ListProcessingJobsResult& AddProcessingJobSummaries(ProcessingJobSummary&& value) { m_processingJobSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ProcessingJobSummary>& GetProcessingJobSummaries() const { return m_processingJobSummaries; }
+    template<typename ProcessingJobSummariesT = Aws::Vector<ProcessingJobSummary>>
+    void SetProcessingJobSummaries(ProcessingJobSummariesT&& value) { m_processingJobSummariesHasBeenSet = true; m_processingJobSummaries = std::forward<ProcessingJobSummariesT>(value); }
+    template<typename ProcessingJobSummariesT = Aws::Vector<ProcessingJobSummary>>
+    ListProcessingJobsResult& WithProcessingJobSummaries(ProcessingJobSummariesT&& value) { SetProcessingJobSummaries(std::forward<ProcessingJobSummariesT>(value)); return *this;}
+    template<typename ProcessingJobSummariesT = ProcessingJobSummary>
+    ListProcessingJobsResult& AddProcessingJobSummaries(ProcessingJobSummariesT&& value) { m_processingJobSummariesHasBeenSet = true; m_processingJobSummaries.emplace_back(std::forward<ProcessingJobSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>If the response is truncated, Amazon SageMaker returns this token. To
      * retrieve the next set of processing jobs, use it in the subsequent request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListProcessingJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListProcessingJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListProcessingJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListProcessingJobsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListProcessingJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListProcessingJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListProcessingJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListProcessingJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ProcessingJobSummary> m_processingJobSummaries;
+    bool m_processingJobSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

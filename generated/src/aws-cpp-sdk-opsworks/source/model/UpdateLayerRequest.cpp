@@ -12,32 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateLayerRequest::UpdateLayerRequest() : 
-    m_layerIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_shortnameHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_cloudWatchLogsConfigurationHasBeenSet(false),
-    m_customInstanceProfileArnHasBeenSet(false),
-    m_customJsonHasBeenSet(false),
-    m_customSecurityGroupIdsHasBeenSet(false),
-    m_packagesHasBeenSet(false),
-    m_volumeConfigurationsHasBeenSet(false),
-    m_enableAutoHealing(false),
-    m_enableAutoHealingHasBeenSet(false),
-    m_autoAssignElasticIps(false),
-    m_autoAssignElasticIpsHasBeenSet(false),
-    m_autoAssignPublicIps(false),
-    m_autoAssignPublicIpsHasBeenSet(false),
-    m_customRecipesHasBeenSet(false),
-    m_installUpdatesOnBoot(false),
-    m_installUpdatesOnBootHasBeenSet(false),
-    m_useEbsOptimizedInstances(false),
-    m_useEbsOptimizedInstancesHasBeenSet(false),
-    m_lifecycleEventConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateLayerRequest::SerializePayload() const
 {
   JsonValue payload;

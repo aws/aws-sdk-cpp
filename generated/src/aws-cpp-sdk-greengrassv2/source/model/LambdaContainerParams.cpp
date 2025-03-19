@@ -18,18 +18,7 @@ namespace GreengrassV2
 namespace Model
 {
 
-LambdaContainerParams::LambdaContainerParams() : 
-    m_memorySizeInKB(0),
-    m_memorySizeInKBHasBeenSet(false),
-    m_mountROSysfs(false),
-    m_mountROSysfsHasBeenSet(false),
-    m_volumesHasBeenSet(false),
-    m_devicesHasBeenSet(false)
-{
-}
-
 LambdaContainerParams::LambdaContainerParams(JsonView jsonValue)
-  : LambdaContainerParams()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ LambdaContainerParams& LambdaContainerParams::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("memorySizeInKB"))
   {
     m_memorySizeInKB = jsonValue.GetInteger("memorySizeInKB");
-
     m_memorySizeInKBHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mountROSysfs"))
   {
     m_mountROSysfs = jsonValue.GetBool("mountROSysfs");
-
     m_mountROSysfsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumes"))
   {
     Aws::Utils::Array<JsonView> volumesJsonList = jsonValue.GetArray("volumes");
@@ -59,7 +44,6 @@ LambdaContainerParams& LambdaContainerParams::operator =(JsonView jsonValue)
     }
     m_volumesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("devices"))
   {
     Aws::Utils::Array<JsonView> devicesJsonList = jsonValue.GetArray("devices");
@@ -69,7 +53,6 @@ LambdaContainerParams& LambdaContainerParams::operator =(JsonView jsonValue)
     }
     m_devicesHasBeenSet = true;
   }
-
   return *this;
 }
 

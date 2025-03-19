@@ -32,7 +32,7 @@ namespace Model
   class UserSearchFilter
   {
   public:
-    AWS_CONNECT_API UserSearchFilter();
+    AWS_CONNECT_API UserSearchFilter() = default;
     AWS_CONNECT_API UserSearchFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API UserSearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const ControlPlaneTagFilter& GetTagFilter() const{ return m_tagFilter; }
+    inline const ControlPlaneTagFilter& GetTagFilter() const { return m_tagFilter; }
     inline bool TagFilterHasBeenSet() const { return m_tagFilterHasBeenSet; }
-    inline void SetTagFilter(const ControlPlaneTagFilter& value) { m_tagFilterHasBeenSet = true; m_tagFilter = value; }
-    inline void SetTagFilter(ControlPlaneTagFilter&& value) { m_tagFilterHasBeenSet = true; m_tagFilter = std::move(value); }
-    inline UserSearchFilter& WithTagFilter(const ControlPlaneTagFilter& value) { SetTagFilter(value); return *this;}
-    inline UserSearchFilter& WithTagFilter(ControlPlaneTagFilter&& value) { SetTagFilter(std::move(value)); return *this;}
+    template<typename TagFilterT = ControlPlaneTagFilter>
+    void SetTagFilter(TagFilterT&& value) { m_tagFilterHasBeenSet = true; m_tagFilter = std::forward<TagFilterT>(value); }
+    template<typename TagFilterT = ControlPlaneTagFilter>
+    UserSearchFilter& WithTagFilter(TagFilterT&& value) { SetTagFilter(std::forward<TagFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +61,12 @@ namespace Model
      * combination of both is not supported and such request will throw
      * AccessDeniedException.</p> 
      */
-    inline const ControlPlaneUserAttributeFilter& GetUserAttributeFilter() const{ return m_userAttributeFilter; }
+    inline const ControlPlaneUserAttributeFilter& GetUserAttributeFilter() const { return m_userAttributeFilter; }
     inline bool UserAttributeFilterHasBeenSet() const { return m_userAttributeFilterHasBeenSet; }
-    inline void SetUserAttributeFilter(const ControlPlaneUserAttributeFilter& value) { m_userAttributeFilterHasBeenSet = true; m_userAttributeFilter = value; }
-    inline void SetUserAttributeFilter(ControlPlaneUserAttributeFilter&& value) { m_userAttributeFilterHasBeenSet = true; m_userAttributeFilter = std::move(value); }
-    inline UserSearchFilter& WithUserAttributeFilter(const ControlPlaneUserAttributeFilter& value) { SetUserAttributeFilter(value); return *this;}
-    inline UserSearchFilter& WithUserAttributeFilter(ControlPlaneUserAttributeFilter&& value) { SetUserAttributeFilter(std::move(value)); return *this;}
+    template<typename UserAttributeFilterT = ControlPlaneUserAttributeFilter>
+    void SetUserAttributeFilter(UserAttributeFilterT&& value) { m_userAttributeFilterHasBeenSet = true; m_userAttributeFilter = std::forward<UserAttributeFilterT>(value); }
+    template<typename UserAttributeFilterT = ControlPlaneUserAttributeFilter>
+    UserSearchFilter& WithUserAttributeFilter(UserAttributeFilterT&& value) { SetUserAttributeFilter(std::forward<UserAttributeFilterT>(value)); return *this;}
     ///@}
   private:
 

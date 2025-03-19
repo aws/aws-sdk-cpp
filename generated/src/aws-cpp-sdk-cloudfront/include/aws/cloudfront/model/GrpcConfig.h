@@ -37,7 +37,7 @@ namespace Model
   class GrpcConfig
   {
   public:
-    AWS_CLOUDFRONT_API GrpcConfig();
+    AWS_CLOUDFRONT_API GrpcConfig() = default;
     AWS_CLOUDFRONT_API GrpcConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API GrpcConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,14 +49,14 @@ namespace Model
      * <p>Enables your CloudFront distribution to receive gRPC requests and to proxy
      * them directly to your origins.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline GrpcConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

@@ -31,7 +31,7 @@ namespace Model
   class RecognizedBotMember
   {
   public:
-    AWS_LEXRUNTIMEV2_API RecognizedBotMember();
+    AWS_LEXRUNTIMEV2_API RecognizedBotMember() = default;
     AWS_LEXRUNTIMEV2_API RecognizedBotMember(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API RecognizedBotMember& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The identifier of the bot member that processes the request.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
+    inline const Aws::String& GetBotId() const { return m_botId; }
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
-    inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
-    inline RecognizedBotMember& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline RecognizedBotMember& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline RecognizedBotMember& WithBotId(const char* value) { SetBotId(value); return *this;}
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    RecognizedBotMember& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the bot member that processes the request.</p>
      */
-    inline const Aws::String& GetBotName() const{ return m_botName; }
+    inline const Aws::String& GetBotName() const { return m_botName; }
     inline bool BotNameHasBeenSet() const { return m_botNameHasBeenSet; }
-    inline void SetBotName(const Aws::String& value) { m_botNameHasBeenSet = true; m_botName = value; }
-    inline void SetBotName(Aws::String&& value) { m_botNameHasBeenSet = true; m_botName = std::move(value); }
-    inline void SetBotName(const char* value) { m_botNameHasBeenSet = true; m_botName.assign(value); }
-    inline RecognizedBotMember& WithBotName(const Aws::String& value) { SetBotName(value); return *this;}
-    inline RecognizedBotMember& WithBotName(Aws::String&& value) { SetBotName(std::move(value)); return *this;}
-    inline RecognizedBotMember& WithBotName(const char* value) { SetBotName(value); return *this;}
+    template<typename BotNameT = Aws::String>
+    void SetBotName(BotNameT&& value) { m_botNameHasBeenSet = true; m_botName = std::forward<BotNameT>(value); }
+    template<typename BotNameT = Aws::String>
+    RecognizedBotMember& WithBotName(BotNameT&& value) { SetBotName(std::forward<BotNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,16 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-CPU::CPU() : 
-    m_frequencyHasBeenSet(false),
-    m_architectureHasBeenSet(false),
-    m_clock(0.0),
-    m_clockHasBeenSet(false)
-{
-}
-
 CPU::CPU(JsonView jsonValue)
-  : CPU()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CPU& CPU::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("frequency"))
   {
     m_frequency = jsonValue.GetString("frequency");
-
     m_frequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("architecture"))
   {
     m_architecture = jsonValue.GetString("architecture");
-
     m_architectureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clock"))
   {
     m_clock = jsonValue.GetDouble("clock");
-
     m_clockHasBeenSet = true;
   }
-
   return *this;
 }
 

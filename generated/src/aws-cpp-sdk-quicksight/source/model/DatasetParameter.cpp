@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DatasetParameter::DatasetParameter() : 
-    m_stringDatasetParameterHasBeenSet(false),
-    m_decimalDatasetParameterHasBeenSet(false),
-    m_integerDatasetParameterHasBeenSet(false),
-    m_dateTimeDatasetParameterHasBeenSet(false)
-{
-}
-
 DatasetParameter::DatasetParameter(JsonView jsonValue)
-  : DatasetParameter()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ DatasetParameter& DatasetParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StringDatasetParameter"))
   {
     m_stringDatasetParameter = jsonValue.GetObject("StringDatasetParameter");
-
     m_stringDatasetParameterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DecimalDatasetParameter"))
   {
     m_decimalDatasetParameter = jsonValue.GetObject("DecimalDatasetParameter");
-
     m_decimalDatasetParameterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IntegerDatasetParameter"))
   {
     m_integerDatasetParameter = jsonValue.GetObject("IntegerDatasetParameter");
-
     m_integerDatasetParameterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateTimeDatasetParameter"))
   {
     m_dateTimeDatasetParameter = jsonValue.GetObject("DateTimeDatasetParameter");
-
     m_dateTimeDatasetParameterHasBeenSet = true;
   }
-
   return *this;
 }
 

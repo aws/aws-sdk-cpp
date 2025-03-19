@@ -28,7 +28,7 @@ namespace Model
   class CreateInferenceProfileResult
   {
   public:
-    AWS_BEDROCK_API CreateInferenceProfileResult();
+    AWS_BEDROCK_API CreateInferenceProfileResult() = default;
     AWS_BEDROCK_API CreateInferenceProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCK_API CreateInferenceProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>The ARN of the inference profile that you created.</p>
      */
-    inline const Aws::String& GetInferenceProfileArn() const{ return m_inferenceProfileArn; }
-    inline void SetInferenceProfileArn(const Aws::String& value) { m_inferenceProfileArn = value; }
-    inline void SetInferenceProfileArn(Aws::String&& value) { m_inferenceProfileArn = std::move(value); }
-    inline void SetInferenceProfileArn(const char* value) { m_inferenceProfileArn.assign(value); }
-    inline CreateInferenceProfileResult& WithInferenceProfileArn(const Aws::String& value) { SetInferenceProfileArn(value); return *this;}
-    inline CreateInferenceProfileResult& WithInferenceProfileArn(Aws::String&& value) { SetInferenceProfileArn(std::move(value)); return *this;}
-    inline CreateInferenceProfileResult& WithInferenceProfileArn(const char* value) { SetInferenceProfileArn(value); return *this;}
+    inline const Aws::String& GetInferenceProfileArn() const { return m_inferenceProfileArn; }
+    template<typename InferenceProfileArnT = Aws::String>
+    void SetInferenceProfileArn(InferenceProfileArnT&& value) { m_inferenceProfileArnHasBeenSet = true; m_inferenceProfileArn = std::forward<InferenceProfileArnT>(value); }
+    template<typename InferenceProfileArnT = Aws::String>
+    CreateInferenceProfileResult& WithInferenceProfileArn(InferenceProfileArnT&& value) { SetInferenceProfileArn(std::forward<InferenceProfileArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,30 +49,29 @@ namespace Model
      * <p>The status of the inference profile. <code>ACTIVE</code> means that the
      * inference profile is ready to be used.</p>
      */
-    inline const InferenceProfileStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const InferenceProfileStatus& value) { m_status = value; }
-    inline void SetStatus(InferenceProfileStatus&& value) { m_status = std::move(value); }
-    inline CreateInferenceProfileResult& WithStatus(const InferenceProfileStatus& value) { SetStatus(value); return *this;}
-    inline CreateInferenceProfileResult& WithStatus(InferenceProfileStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline InferenceProfileStatus GetStatus() const { return m_status; }
+    inline void SetStatus(InferenceProfileStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CreateInferenceProfileResult& WithStatus(InferenceProfileStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateInferenceProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateInferenceProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateInferenceProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateInferenceProfileResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_inferenceProfileArn;
+    bool m_inferenceProfileArnHasBeenSet = false;
 
-    InferenceProfileStatus m_status;
+    InferenceProfileStatus m_status{InferenceProfileStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,15 +12,6 @@ using namespace Aws::PaymentCryptography::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListKeysRequest::ListKeysRequest() : 
-    m_keyState(KeyState::NOT_SET),
-    m_keyStateHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListKeysRequest::SerializePayload() const
 {
   JsonValue payload;

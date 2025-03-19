@@ -18,20 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-ContainerDetails::ContainerDetails() : 
-    m_containerRuntimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_imageNameHasBeenSet(false),
-    m_launchedAtHasBeenSet(false),
-    m_volumeMountsHasBeenSet(false),
-    m_privileged(false),
-    m_privilegedHasBeenSet(false)
-{
-}
-
 ContainerDetails::ContainerDetails(JsonView jsonValue)
-  : ContainerDetails()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ ContainerDetails& ContainerDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ContainerRuntime"))
   {
     m_containerRuntime = jsonValue.GetString("ContainerRuntime");
-
     m_containerRuntimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageId"))
   {
     m_imageId = jsonValue.GetString("ImageId");
-
     m_imageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageName"))
   {
     m_imageName = jsonValue.GetString("ImageName");
-
     m_imageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LaunchedAt"))
   {
     m_launchedAt = jsonValue.GetString("LaunchedAt");
-
     m_launchedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeMounts"))
   {
     Aws::Utils::Array<JsonView> volumeMountsJsonList = jsonValue.GetArray("VolumeMounts");
@@ -82,14 +59,11 @@ ContainerDetails& ContainerDetails::operator =(JsonView jsonValue)
     }
     m_volumeMountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Privileged"))
   {
     m_privileged = jsonValue.GetBool("Privileged");
-
     m_privilegedHasBeenSet = true;
   }
-
   return *this;
 }
 

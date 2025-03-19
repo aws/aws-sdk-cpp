@@ -18,10 +18,6 @@ namespace MediaLive
 namespace Model
 {
 
-RawSettings::RawSettings()
-{
-}
-
 RawSettings::RawSettings(JsonView jsonValue)
 {
   *this = jsonValue;

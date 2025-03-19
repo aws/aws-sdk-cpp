@@ -33,7 +33,7 @@ namespace Model
   class Selector
   {
   public:
-    AWS_DATAPIPELINE_API Selector();
+    AWS_DATAPIPELINE_API Selector() = default;
     AWS_DATAPIPELINE_API Selector(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAPIPELINE_API Selector& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,24 +46,22 @@ namespace Model
      * is used by the AWS Data Pipeline API. If the field is not set on the object, the
      * condition fails.</p>
      */
-    inline const Aws::String& GetFieldName() const{ return m_fieldName; }
+    inline const Aws::String& GetFieldName() const { return m_fieldName; }
     inline bool FieldNameHasBeenSet() const { return m_fieldNameHasBeenSet; }
-    inline void SetFieldName(const Aws::String& value) { m_fieldNameHasBeenSet = true; m_fieldName = value; }
-    inline void SetFieldName(Aws::String&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::move(value); }
-    inline void SetFieldName(const char* value) { m_fieldNameHasBeenSet = true; m_fieldName.assign(value); }
-    inline Selector& WithFieldName(const Aws::String& value) { SetFieldName(value); return *this;}
-    inline Selector& WithFieldName(Aws::String&& value) { SetFieldName(std::move(value)); return *this;}
-    inline Selector& WithFieldName(const char* value) { SetFieldName(value); return *this;}
+    template<typename FieldNameT = Aws::String>
+    void SetFieldName(FieldNameT&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::forward<FieldNameT>(value); }
+    template<typename FieldNameT = Aws::String>
+    Selector& WithFieldName(FieldNameT&& value) { SetFieldName(std::forward<FieldNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Operator& GetOperator() const{ return m_operator; }
+    inline const Operator& GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const Operator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(Operator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline Selector& WithOperator(const Operator& value) { SetOperator(value); return *this;}
-    inline Selector& WithOperator(Operator&& value) { SetOperator(std::move(value)); return *this;}
+    template<typename OperatorT = Operator>
+    void SetOperator(OperatorT&& value) { m_operatorHasBeenSet = true; m_operator = std::forward<OperatorT>(value); }
+    template<typename OperatorT = Operator>
+    Selector& WithOperator(OperatorT&& value) { SetOperator(std::forward<OperatorT>(value)); return *this;}
     ///@}
   private:
 

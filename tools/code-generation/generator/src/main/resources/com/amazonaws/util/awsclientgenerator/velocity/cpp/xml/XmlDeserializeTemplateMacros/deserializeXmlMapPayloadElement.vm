@@ -27,6 +27,7 @@
     ${macro.spaces}XmlNode ${macro.mapVarName} = ${lowerCaseVarName}Node.FirstChild("entry");
 #end
 #end###if($mapVarName)
+    ${macro.spaces}${CppViewHelper.computeVariableHasBeenSetName($memberName)} = !${macro.mapVarName}.IsNull();
     ${macro.spaces}while(!${macro.mapVarName}.IsNull())
     ${macro.spaces}{
 #if($member.locationName)

@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-MarketoConnectorProfileProperties::MarketoConnectorProfileProperties() : 
-    m_instanceUrlHasBeenSet(false)
-{
-}
-
 MarketoConnectorProfileProperties::MarketoConnectorProfileProperties(JsonView jsonValue)
-  : MarketoConnectorProfileProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MarketoConnectorProfileProperties& MarketoConnectorProfileProperties::operator =
   if(jsonValue.ValueExists("instanceUrl"))
   {
     m_instanceUrl = jsonValue.GetString("instanceUrl");
-
     m_instanceUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

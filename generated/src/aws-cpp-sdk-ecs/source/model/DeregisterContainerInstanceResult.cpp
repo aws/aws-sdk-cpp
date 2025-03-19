@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeregisterContainerInstanceResult::DeregisterContainerInstanceResult()
-{
-}
-
 DeregisterContainerInstanceResult::DeregisterContainerInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeregisterContainerInstanceResult& DeregisterContainerInstanceResult::operator =
   if(jsonValue.ValueExists("containerInstance"))
   {
     m_containerInstance = jsonValue.GetObject("containerInstance");
-
+    m_containerInstanceHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

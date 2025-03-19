@@ -12,14 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateLoadBalancerAttributeRequest::UpdateLoadBalancerAttributeRequest() : 
-    m_loadBalancerNameHasBeenSet(false),
-    m_attributeName(LoadBalancerAttributeName::NOT_SET),
-    m_attributeNameHasBeenSet(false),
-    m_attributeValueHasBeenSet(false)
-{
-}
-
 Aws::String UpdateLoadBalancerAttributeRequest::SerializePayload() const
 {
   JsonValue payload;

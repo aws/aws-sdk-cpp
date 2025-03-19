@@ -18,16 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-GetLabelDetectionRequestMetadata::GetLabelDetectionRequestMetadata() : 
-    m_sortBy(LabelDetectionSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_aggregateBy(LabelDetectionAggregateBy::NOT_SET),
-    m_aggregateByHasBeenSet(false)
-{
-}
-
 GetLabelDetectionRequestMetadata::GetLabelDetectionRequestMetadata(JsonView jsonValue)
-  : GetLabelDetectionRequestMetadata()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ GetLabelDetectionRequestMetadata& GetLabelDetectionRequestMetadata::operator =(J
   if(jsonValue.ValueExists("SortBy"))
   {
     m_sortBy = LabelDetectionSortByMapper::GetLabelDetectionSortByForName(jsonValue.GetString("SortBy"));
-
     m_sortByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AggregateBy"))
   {
     m_aggregateBy = LabelDetectionAggregateByMapper::GetLabelDetectionAggregateByForName(jsonValue.GetString("AggregateBy"));
-
     m_aggregateByHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace WAF
 namespace Model
 {
 
-ByteMatchSetUpdate::ByteMatchSetUpdate() : 
-    m_action(ChangeAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_byteMatchTupleHasBeenSet(false)
-{
-}
-
 ByteMatchSetUpdate::ByteMatchSetUpdate(JsonView jsonValue)
-  : ByteMatchSetUpdate()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ByteMatchSetUpdate& ByteMatchSetUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Action"))
   {
     m_action = ChangeActionMapper::GetChangeActionForName(jsonValue.GetString("Action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ByteMatchTuple"))
   {
     m_byteMatchTuple = jsonValue.GetObject("ByteMatchTuple");
-
     m_byteMatchTupleHasBeenSet = true;
   }
-
   return *this;
 }
 

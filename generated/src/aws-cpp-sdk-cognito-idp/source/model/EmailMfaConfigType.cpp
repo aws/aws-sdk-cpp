@@ -18,14 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-EmailMfaConfigType::EmailMfaConfigType() : 
-    m_messageHasBeenSet(false),
-    m_subjectHasBeenSet(false)
-{
-}
-
 EmailMfaConfigType::EmailMfaConfigType(JsonView jsonValue)
-  : EmailMfaConfigType()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EmailMfaConfigType& EmailMfaConfigType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subject"))
   {
     m_subject = jsonValue.GetString("Subject");
-
     m_subjectHasBeenSet = true;
   }
-
   return *this;
 }
 

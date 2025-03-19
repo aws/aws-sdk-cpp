@@ -13,16 +13,6 @@ using namespace Aws::PrometheusService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRuleGroupsNamespaceRequest::CreateRuleGroupsNamespaceRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_dataHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateRuleGroupsNamespaceRequest::SerializePayload() const
 {
   JsonValue payload;

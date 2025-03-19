@@ -18,25 +18,7 @@ namespace AuditManager
 namespace Model
 {
 
-Delegation::Delegation() : 
-    m_idHasBeenSet(false),
-    m_assessmentNameHasBeenSet(false),
-    m_assessmentIdHasBeenSet(false),
-    m_status(DelegationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_roleType(RoleType::NOT_SET),
-    m_roleTypeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_controlSetIdHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_createdByHasBeenSet(false)
-{
-}
-
 Delegation::Delegation(JsonView jsonValue)
-  : Delegation()
 {
   *this = jsonValue;
 }
@@ -46,80 +28,58 @@ Delegation& Delegation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assessmentName"))
   {
     m_assessmentName = jsonValue.GetString("assessmentName");
-
     m_assessmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assessmentId"))
   {
     m_assessmentId = jsonValue.GetString("assessmentId");
-
     m_assessmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DelegationStatusMapper::GetDelegationStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleType"))
   {
     m_roleType = RoleTypeMapper::GetRoleTypeForName(jsonValue.GetString("roleType"));
-
     m_roleTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdated"))
   {
     m_lastUpdated = jsonValue.GetDouble("lastUpdated");
-
     m_lastUpdatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("controlSetId"))
   {
     m_controlSetId = jsonValue.GetString("controlSetId");
-
     m_controlSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("comment"))
   {
     m_comment = jsonValue.GetString("comment");
-
     m_commentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class AddBridgeNetworkSourceRequest
   {
   public:
-    AWS_MEDIACONNECT_API AddBridgeNetworkSourceRequest();
+    AWS_MEDIACONNECT_API AddBridgeNetworkSourceRequest() = default;
     AWS_MEDIACONNECT_API AddBridgeNetworkSourceRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API AddBridgeNetworkSourceRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,22 @@ namespace Model
     /**
      * The network source multicast IP.
      */
-    inline const Aws::String& GetMulticastIp() const{ return m_multicastIp; }
+    inline const Aws::String& GetMulticastIp() const { return m_multicastIp; }
     inline bool MulticastIpHasBeenSet() const { return m_multicastIpHasBeenSet; }
-    inline void SetMulticastIp(const Aws::String& value) { m_multicastIpHasBeenSet = true; m_multicastIp = value; }
-    inline void SetMulticastIp(Aws::String&& value) { m_multicastIpHasBeenSet = true; m_multicastIp = std::move(value); }
-    inline void SetMulticastIp(const char* value) { m_multicastIpHasBeenSet = true; m_multicastIp.assign(value); }
-    inline AddBridgeNetworkSourceRequest& WithMulticastIp(const Aws::String& value) { SetMulticastIp(value); return *this;}
-    inline AddBridgeNetworkSourceRequest& WithMulticastIp(Aws::String&& value) { SetMulticastIp(std::move(value)); return *this;}
-    inline AddBridgeNetworkSourceRequest& WithMulticastIp(const char* value) { SetMulticastIp(value); return *this;}
+    template<typename MulticastIpT = Aws::String>
+    void SetMulticastIp(MulticastIpT&& value) { m_multicastIpHasBeenSet = true; m_multicastIp = std::forward<MulticastIpT>(value); }
+    template<typename MulticastIpT = Aws::String>
+    AddBridgeNetworkSourceRequest& WithMulticastIp(MulticastIpT&& value) { SetMulticastIp(std::forward<MulticastIpT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const MulticastSourceSettings& GetMulticastSourceSettings() const{ return m_multicastSourceSettings; }
+    inline const MulticastSourceSettings& GetMulticastSourceSettings() const { return m_multicastSourceSettings; }
     inline bool MulticastSourceSettingsHasBeenSet() const { return m_multicastSourceSettingsHasBeenSet; }
-    inline void SetMulticastSourceSettings(const MulticastSourceSettings& value) { m_multicastSourceSettingsHasBeenSet = true; m_multicastSourceSettings = value; }
-    inline void SetMulticastSourceSettings(MulticastSourceSettings&& value) { m_multicastSourceSettingsHasBeenSet = true; m_multicastSourceSettings = std::move(value); }
-    inline AddBridgeNetworkSourceRequest& WithMulticastSourceSettings(const MulticastSourceSettings& value) { SetMulticastSourceSettings(value); return *this;}
-    inline AddBridgeNetworkSourceRequest& WithMulticastSourceSettings(MulticastSourceSettings&& value) { SetMulticastSourceSettings(std::move(value)); return *this;}
+    template<typename MulticastSourceSettingsT = MulticastSourceSettings>
+    void SetMulticastSourceSettings(MulticastSourceSettingsT&& value) { m_multicastSourceSettingsHasBeenSet = true; m_multicastSourceSettings = std::forward<MulticastSourceSettingsT>(value); }
+    template<typename MulticastSourceSettingsT = MulticastSourceSettings>
+    AddBridgeNetworkSourceRequest& WithMulticastSourceSettings(MulticastSourceSettingsT&& value) { SetMulticastSourceSettings(std::forward<MulticastSourceSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,35 +66,31 @@ namespace Model
      * The name of the network source. This name is used to reference the source and
      * must be unique among sources in this bridge.
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AddBridgeNetworkSourceRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AddBridgeNetworkSourceRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AddBridgeNetworkSourceRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AddBridgeNetworkSourceRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The network source's gateway network name.
      */
-    inline const Aws::String& GetNetworkName() const{ return m_networkName; }
+    inline const Aws::String& GetNetworkName() const { return m_networkName; }
     inline bool NetworkNameHasBeenSet() const { return m_networkNameHasBeenSet; }
-    inline void SetNetworkName(const Aws::String& value) { m_networkNameHasBeenSet = true; m_networkName = value; }
-    inline void SetNetworkName(Aws::String&& value) { m_networkNameHasBeenSet = true; m_networkName = std::move(value); }
-    inline void SetNetworkName(const char* value) { m_networkNameHasBeenSet = true; m_networkName.assign(value); }
-    inline AddBridgeNetworkSourceRequest& WithNetworkName(const Aws::String& value) { SetNetworkName(value); return *this;}
-    inline AddBridgeNetworkSourceRequest& WithNetworkName(Aws::String&& value) { SetNetworkName(std::move(value)); return *this;}
-    inline AddBridgeNetworkSourceRequest& WithNetworkName(const char* value) { SetNetworkName(value); return *this;}
+    template<typename NetworkNameT = Aws::String>
+    void SetNetworkName(NetworkNameT&& value) { m_networkNameHasBeenSet = true; m_networkName = std::forward<NetworkNameT>(value); }
+    template<typename NetworkNameT = Aws::String>
+    AddBridgeNetworkSourceRequest& WithNetworkName(NetworkNameT&& value) { SetNetworkName(std::forward<NetworkNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The network source port.
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline AddBridgeNetworkSourceRequest& WithPort(int value) { SetPort(value); return *this;}
@@ -106,12 +100,10 @@ namespace Model
     /**
      * The network source protocol.
      */
-    inline const Protocol& GetProtocol() const{ return m_protocol; }
+    inline Protocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const Protocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(Protocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline AddBridgeNetworkSourceRequest& WithProtocol(const Protocol& value) { SetProtocol(value); return *this;}
-    inline AddBridgeNetworkSourceRequest& WithProtocol(Protocol&& value) { SetProtocol(std::move(value)); return *this;}
+    inline void SetProtocol(Protocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline AddBridgeNetworkSourceRequest& WithProtocol(Protocol value) { SetProtocol(value); return *this;}
     ///@}
   private:
 
@@ -127,10 +119,10 @@ namespace Model
     Aws::String m_networkName;
     bool m_networkNameHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
-    Protocol m_protocol;
+    Protocol m_protocol{Protocol::NOT_SET};
     bool m_protocolHasBeenSet = false;
   };
 

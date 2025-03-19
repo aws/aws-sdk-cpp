@@ -10,10 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DescribeMetricCollectionTypesRequest::DescribeMetricCollectionTypesRequest()
-{
-}
-
 Aws::String DescribeMetricCollectionTypesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

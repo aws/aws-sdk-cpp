@@ -29,7 +29,7 @@ namespace Model
   class ListHostedZonesResult
   {
   public:
-    AWS_ROUTE53_API ListHostedZonesResult();
+    AWS_ROUTE53_API ListHostedZonesResult() = default;
     AWS_ROUTE53_API ListHostedZonesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ROUTE53_API ListHostedZonesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A complex type that contains general information about the hosted zone.</p>
      */
-    inline const Aws::Vector<HostedZone>& GetHostedZones() const{ return m_hostedZones; }
-    inline void SetHostedZones(const Aws::Vector<HostedZone>& value) { m_hostedZones = value; }
-    inline void SetHostedZones(Aws::Vector<HostedZone>&& value) { m_hostedZones = std::move(value); }
-    inline ListHostedZonesResult& WithHostedZones(const Aws::Vector<HostedZone>& value) { SetHostedZones(value); return *this;}
-    inline ListHostedZonesResult& WithHostedZones(Aws::Vector<HostedZone>&& value) { SetHostedZones(std::move(value)); return *this;}
-    inline ListHostedZonesResult& AddHostedZones(const HostedZone& value) { m_hostedZones.push_back(value); return *this; }
-    inline ListHostedZonesResult& AddHostedZones(HostedZone&& value) { m_hostedZones.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<HostedZone>& GetHostedZones() const { return m_hostedZones; }
+    template<typename HostedZonesT = Aws::Vector<HostedZone>>
+    void SetHostedZones(HostedZonesT&& value) { m_hostedZonesHasBeenSet = true; m_hostedZones = std::forward<HostedZonesT>(value); }
+    template<typename HostedZonesT = Aws::Vector<HostedZone>>
+    ListHostedZonesResult& WithHostedZones(HostedZonesT&& value) { SetHostedZones(std::forward<HostedZonesT>(value)); return *this;}
+    template<typename HostedZonesT = HostedZone>
+    ListHostedZonesResult& AddHostedZones(HostedZonesT&& value) { m_hostedZonesHasBeenSet = true; m_hostedZones.emplace_back(std::forward<HostedZonesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,13 +53,11 @@ namespace Model
      * <code>Marker</code> is the value that you specified for the <code>marker</code>
      * parameter in the request that produced the current response.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline ListHostedZonesResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListHostedZonesResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListHostedZonesResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListHostedZonesResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,8 +67,8 @@ namespace Model
      * <code>ListHostedZones</code> request and specifying the value of
      * <code>NextMarker</code> in the <code>marker</code> parameter.</p>
      */
-    inline bool GetIsTruncated() const{ return m_isTruncated; }
-    inline void SetIsTruncated(bool value) { m_isTruncated = value; }
+    inline bool GetIsTruncated() const { return m_isTruncated; }
+    inline void SetIsTruncated(bool value) { m_isTruncatedHasBeenSet = true; m_isTruncated = value; }
     inline ListHostedZonesResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
     ///@}
 
@@ -83,13 +81,11 @@ namespace Model
      * <code>marker</code> parameter.</p> <p>This element is present only if
      * <code>IsTruncated</code> is <code>true</code>.</p>
      */
-    inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
-    inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
-    inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
-    inline ListHostedZonesResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-    inline ListHostedZonesResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-    inline ListHostedZonesResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
+    template<typename NextMarkerT = Aws::String>
+    void SetNextMarker(NextMarkerT&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::forward<NextMarkerT>(value); }
+    template<typename NextMarkerT = Aws::String>
+    ListHostedZonesResult& WithNextMarker(NextMarkerT&& value) { SetNextMarker(std::forward<NextMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,38 +93,40 @@ namespace Model
      * <p>The value that you specified for the <code>maxitems</code> parameter in the
      * call to <code>ListHostedZones</code> that produced the current response.</p>
      */
-    inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
-    inline void SetMaxItems(const Aws::String& value) { m_maxItems = value; }
-    inline void SetMaxItems(Aws::String&& value) { m_maxItems = std::move(value); }
-    inline void SetMaxItems(const char* value) { m_maxItems.assign(value); }
-    inline ListHostedZonesResult& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
-    inline ListHostedZonesResult& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
-    inline ListHostedZonesResult& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
+    inline const Aws::String& GetMaxItems() const { return m_maxItems; }
+    template<typename MaxItemsT = Aws::String>
+    void SetMaxItems(MaxItemsT&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::forward<MaxItemsT>(value); }
+    template<typename MaxItemsT = Aws::String>
+    ListHostedZonesResult& WithMaxItems(MaxItemsT&& value) { SetMaxItems(std::forward<MaxItemsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListHostedZonesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListHostedZonesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListHostedZonesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListHostedZonesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<HostedZone> m_hostedZones;
+    bool m_hostedZonesHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
-    bool m_isTruncated;
+    bool m_isTruncated{false};
+    bool m_isTruncatedHasBeenSet = false;
 
     Aws::String m_nextMarker;
+    bool m_nextMarkerHasBeenSet = false;
 
     Aws::String m_maxItems;
+    bool m_maxItemsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

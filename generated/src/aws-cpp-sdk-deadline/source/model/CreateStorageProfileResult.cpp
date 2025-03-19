@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateStorageProfileResult::CreateStorageProfileResult()
-{
-}
-
 CreateStorageProfileResult::CreateStorageProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateStorageProfileResult& CreateStorageProfileResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("storageProfileId"))
   {
     m_storageProfileId = jsonValue.GetString("storageProfileId");
-
+    m_storageProfileIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

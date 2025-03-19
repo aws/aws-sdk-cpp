@@ -39,7 +39,7 @@ namespace Model
   class XssMatchSetSummary
   {
   public:
-    AWS_WAFREGIONAL_API XssMatchSetSummary();
+    AWS_WAFREGIONAL_API XssMatchSetSummary() = default;
     AWS_WAFREGIONAL_API XssMatchSetSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API XssMatchSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,14 +56,12 @@ namespace Model
      * <a>DeleteXssMatchSet</a>).</p> <p> <code>XssMatchSetId</code> is returned by
      * <a>CreateXssMatchSet</a> and by <a>ListXssMatchSets</a>.</p>
      */
-    inline const Aws::String& GetXssMatchSetId() const{ return m_xssMatchSetId; }
+    inline const Aws::String& GetXssMatchSetId() const { return m_xssMatchSetId; }
     inline bool XssMatchSetIdHasBeenSet() const { return m_xssMatchSetIdHasBeenSet; }
-    inline void SetXssMatchSetId(const Aws::String& value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId = value; }
-    inline void SetXssMatchSetId(Aws::String&& value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId = std::move(value); }
-    inline void SetXssMatchSetId(const char* value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId.assign(value); }
-    inline XssMatchSetSummary& WithXssMatchSetId(const Aws::String& value) { SetXssMatchSetId(value); return *this;}
-    inline XssMatchSetSummary& WithXssMatchSetId(Aws::String&& value) { SetXssMatchSetId(std::move(value)); return *this;}
-    inline XssMatchSetSummary& WithXssMatchSetId(const char* value) { SetXssMatchSetId(value); return *this;}
+    template<typename XssMatchSetIdT = Aws::String>
+    void SetXssMatchSetId(XssMatchSetIdT&& value) { m_xssMatchSetIdHasBeenSet = true; m_xssMatchSetId = std::forward<XssMatchSetIdT>(value); }
+    template<typename XssMatchSetIdT = Aws::String>
+    XssMatchSetSummary& WithXssMatchSetId(XssMatchSetIdT&& value) { SetXssMatchSetId(std::forward<XssMatchSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * <p>The name of the <code>XssMatchSet</code>, if any, specified by
      * <code>Id</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline XssMatchSetSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline XssMatchSetSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline XssMatchSetSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    XssMatchSetSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

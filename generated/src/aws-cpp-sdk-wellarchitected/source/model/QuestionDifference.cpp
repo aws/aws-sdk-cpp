@@ -18,16 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-QuestionDifference::QuestionDifference() : 
-    m_questionIdHasBeenSet(false),
-    m_questionTitleHasBeenSet(false),
-    m_differenceStatus(DifferenceStatus::NOT_SET),
-    m_differenceStatusHasBeenSet(false)
-{
-}
-
 QuestionDifference::QuestionDifference(JsonView jsonValue)
-  : QuestionDifference()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ QuestionDifference& QuestionDifference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("QuestionId"))
   {
     m_questionId = jsonValue.GetString("QuestionId");
-
     m_questionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QuestionTitle"))
   {
     m_questionTitle = jsonValue.GetString("QuestionTitle");
-
     m_questionTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DifferenceStatus"))
   {
     m_differenceStatus = DifferenceStatusMapper::GetDifferenceStatusForName(jsonValue.GetString("DifferenceStatus"));
-
     m_differenceStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

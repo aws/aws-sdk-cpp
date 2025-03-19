@@ -32,7 +32,7 @@ namespace Model
   class HyperPodPropertiesInput
   {
   public:
-    AWS_DATAZONE_API HyperPodPropertiesInput();
+    AWS_DATAZONE_API HyperPodPropertiesInput() = default;
     AWS_DATAZONE_API HyperPodPropertiesInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API HyperPodPropertiesInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The cluster name the hyper pod properties.</p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline HyperPodPropertiesInput& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline HyperPodPropertiesInput& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline HyperPodPropertiesInput& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    HyperPodPropertiesInput& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
   private:
 

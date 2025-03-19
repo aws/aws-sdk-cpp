@@ -18,16 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-CloudWatchLogsConfig::CloudWatchLogsConfig() : 
-    m_status(LogsConfigStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_streamNameHasBeenSet(false)
-{
-}
-
 CloudWatchLogsConfig::CloudWatchLogsConfig(JsonView jsonValue)
-  : CloudWatchLogsConfig()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CloudWatchLogsConfig& CloudWatchLogsConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = LogsConfigStatusTypeMapper::GetLogsConfigStatusTypeForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groupName"))
   {
     m_groupName = jsonValue.GetString("groupName");
-
     m_groupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamName"))
   {
     m_streamName = jsonValue.GetString("streamName");
-
     m_streamNameHasBeenSet = true;
   }
-
   return *this;
 }
 

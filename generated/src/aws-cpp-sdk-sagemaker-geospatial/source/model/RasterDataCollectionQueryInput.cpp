@@ -18,16 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-RasterDataCollectionQueryInput::RasterDataCollectionQueryInput() : 
-    m_areaOfInterestHasBeenSet(false),
-    m_propertyFiltersHasBeenSet(false),
-    m_rasterDataCollectionArnHasBeenSet(false),
-    m_timeRangeFilterHasBeenSet(false)
-{
-}
-
 RasterDataCollectionQueryInput::RasterDataCollectionQueryInput(JsonView jsonValue)
-  : RasterDataCollectionQueryInput()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ RasterDataCollectionQueryInput& RasterDataCollectionQueryInput::operator =(JsonV
   if(jsonValue.ValueExists("AreaOfInterest"))
   {
     m_areaOfInterest = jsonValue.GetObject("AreaOfInterest");
-
     m_areaOfInterestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PropertyFilters"))
   {
     m_propertyFilters = jsonValue.GetObject("PropertyFilters");
-
     m_propertyFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RasterDataCollectionArn"))
   {
     m_rasterDataCollectionArn = jsonValue.GetString("RasterDataCollectionArn");
-
     m_rasterDataCollectionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeRangeFilter"))
   {
     m_timeRangeFilter = jsonValue.GetObject("TimeRangeFilter");
-
     m_timeRangeFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

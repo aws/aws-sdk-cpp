@@ -22,7 +22,7 @@ namespace Model
   class UpdateThingGroupRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API UpdateThingGroupRequest();
+    AWS_IOT_API UpdateThingGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,26 +37,24 @@ namespace Model
     /**
      * <p>The thing group to update.</p>
      */
-    inline const Aws::String& GetThingGroupName() const{ return m_thingGroupName; }
+    inline const Aws::String& GetThingGroupName() const { return m_thingGroupName; }
     inline bool ThingGroupNameHasBeenSet() const { return m_thingGroupNameHasBeenSet; }
-    inline void SetThingGroupName(const Aws::String& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = value; }
-    inline void SetThingGroupName(Aws::String&& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = std::move(value); }
-    inline void SetThingGroupName(const char* value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName.assign(value); }
-    inline UpdateThingGroupRequest& WithThingGroupName(const Aws::String& value) { SetThingGroupName(value); return *this;}
-    inline UpdateThingGroupRequest& WithThingGroupName(Aws::String&& value) { SetThingGroupName(std::move(value)); return *this;}
-    inline UpdateThingGroupRequest& WithThingGroupName(const char* value) { SetThingGroupName(value); return *this;}
+    template<typename ThingGroupNameT = Aws::String>
+    void SetThingGroupName(ThingGroupNameT&& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = std::forward<ThingGroupNameT>(value); }
+    template<typename ThingGroupNameT = Aws::String>
+    UpdateThingGroupRequest& WithThingGroupName(ThingGroupNameT&& value) { SetThingGroupName(std::forward<ThingGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The thing group properties.</p>
      */
-    inline const ThingGroupProperties& GetThingGroupProperties() const{ return m_thingGroupProperties; }
+    inline const ThingGroupProperties& GetThingGroupProperties() const { return m_thingGroupProperties; }
     inline bool ThingGroupPropertiesHasBeenSet() const { return m_thingGroupPropertiesHasBeenSet; }
-    inline void SetThingGroupProperties(const ThingGroupProperties& value) { m_thingGroupPropertiesHasBeenSet = true; m_thingGroupProperties = value; }
-    inline void SetThingGroupProperties(ThingGroupProperties&& value) { m_thingGroupPropertiesHasBeenSet = true; m_thingGroupProperties = std::move(value); }
-    inline UpdateThingGroupRequest& WithThingGroupProperties(const ThingGroupProperties& value) { SetThingGroupProperties(value); return *this;}
-    inline UpdateThingGroupRequest& WithThingGroupProperties(ThingGroupProperties&& value) { SetThingGroupProperties(std::move(value)); return *this;}
+    template<typename ThingGroupPropertiesT = ThingGroupProperties>
+    void SetThingGroupProperties(ThingGroupPropertiesT&& value) { m_thingGroupPropertiesHasBeenSet = true; m_thingGroupProperties = std::forward<ThingGroupPropertiesT>(value); }
+    template<typename ThingGroupPropertiesT = ThingGroupProperties>
+    UpdateThingGroupRequest& WithThingGroupProperties(ThingGroupPropertiesT&& value) { SetThingGroupProperties(std::forward<ThingGroupPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,7 +62,7 @@ namespace Model
      * <p>The expected version of the thing group. If this does not match the version
      * of the thing group being updated, the update will fail.</p>
      */
-    inline long long GetExpectedVersion() const{ return m_expectedVersion; }
+    inline long long GetExpectedVersion() const { return m_expectedVersion; }
     inline bool ExpectedVersionHasBeenSet() const { return m_expectedVersionHasBeenSet; }
     inline void SetExpectedVersion(long long value) { m_expectedVersionHasBeenSet = true; m_expectedVersion = value; }
     inline UpdateThingGroupRequest& WithExpectedVersion(long long value) { SetExpectedVersion(value); return *this;}
@@ -77,7 +75,7 @@ namespace Model
     ThingGroupProperties m_thingGroupProperties;
     bool m_thingGroupPropertiesHasBeenSet = false;
 
-    long long m_expectedVersion;
+    long long m_expectedVersion{0};
     bool m_expectedVersionHasBeenSet = false;
   };
 

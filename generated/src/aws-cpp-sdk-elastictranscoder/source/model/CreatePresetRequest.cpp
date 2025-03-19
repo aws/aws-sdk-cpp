@@ -12,16 +12,6 @@ using namespace Aws::ElasticTranscoder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePresetRequest::CreatePresetRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_containerHasBeenSet(false),
-    m_videoHasBeenSet(false),
-    m_audioHasBeenSet(false),
-    m_thumbnailsHasBeenSet(false)
-{
-}
-
 Aws::String CreatePresetRequest::SerializePayload() const
 {
   JsonValue payload;

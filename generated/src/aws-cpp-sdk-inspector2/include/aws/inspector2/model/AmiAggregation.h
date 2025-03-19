@@ -35,7 +35,7 @@ namespace Model
   class AmiAggregation
   {
   public:
-    AWS_INSPECTOR2_API AmiAggregation();
+    AWS_INSPECTOR2_API AmiAggregation() = default;
     AWS_INSPECTOR2_API AmiAggregation(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API AmiAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,48 +45,44 @@ namespace Model
     /**
      * <p>The IDs of AMIs to aggregate findings for.</p>
      */
-    inline const Aws::Vector<StringFilter>& GetAmis() const{ return m_amis; }
+    inline const Aws::Vector<StringFilter>& GetAmis() const { return m_amis; }
     inline bool AmisHasBeenSet() const { return m_amisHasBeenSet; }
-    inline void SetAmis(const Aws::Vector<StringFilter>& value) { m_amisHasBeenSet = true; m_amis = value; }
-    inline void SetAmis(Aws::Vector<StringFilter>&& value) { m_amisHasBeenSet = true; m_amis = std::move(value); }
-    inline AmiAggregation& WithAmis(const Aws::Vector<StringFilter>& value) { SetAmis(value); return *this;}
-    inline AmiAggregation& WithAmis(Aws::Vector<StringFilter>&& value) { SetAmis(std::move(value)); return *this;}
-    inline AmiAggregation& AddAmis(const StringFilter& value) { m_amisHasBeenSet = true; m_amis.push_back(value); return *this; }
-    inline AmiAggregation& AddAmis(StringFilter&& value) { m_amisHasBeenSet = true; m_amis.push_back(std::move(value)); return *this; }
+    template<typename AmisT = Aws::Vector<StringFilter>>
+    void SetAmis(AmisT&& value) { m_amisHasBeenSet = true; m_amis = std::forward<AmisT>(value); }
+    template<typename AmisT = Aws::Vector<StringFilter>>
+    AmiAggregation& WithAmis(AmisT&& value) { SetAmis(std::forward<AmisT>(value)); return *this;}
+    template<typename AmisT = StringFilter>
+    AmiAggregation& AddAmis(AmisT&& value) { m_amisHasBeenSet = true; m_amis.emplace_back(std::forward<AmisT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The value to sort results by.</p>
      */
-    inline const AmiSortBy& GetSortBy() const{ return m_sortBy; }
+    inline AmiSortBy GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const AmiSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(AmiSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline AmiAggregation& WithSortBy(const AmiSortBy& value) { SetSortBy(value); return *this;}
-    inline AmiAggregation& WithSortBy(AmiSortBy&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(AmiSortBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline AmiAggregation& WithSortBy(AmiSortBy value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The order to sort results by.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline AmiAggregation& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline AmiAggregation& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline AmiAggregation& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<StringFilter> m_amis;
     bool m_amisHasBeenSet = false;
 
-    AmiSortBy m_sortBy;
+    AmiSortBy m_sortBy{AmiSortBy::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

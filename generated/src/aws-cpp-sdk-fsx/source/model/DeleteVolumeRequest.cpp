@@ -12,15 +12,6 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteVolumeRequest::DeleteVolumeRequest() : 
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_volumeIdHasBeenSet(false),
-    m_ontapConfigurationHasBeenSet(false),
-    m_openZFSConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVolumeRequest::SerializePayload() const
 {
   JsonValue payload;

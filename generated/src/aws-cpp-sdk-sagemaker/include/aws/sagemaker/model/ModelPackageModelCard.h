@@ -44,7 +44,7 @@ namespace Model
   class ModelPackageModelCard
   {
   public:
-    AWS_SAGEMAKER_API ModelPackageModelCard();
+    AWS_SAGEMAKER_API ModelPackageModelCard() = default;
     AWS_SAGEMAKER_API ModelPackageModelCard(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ModelPackageModelCard& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,14 +57,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-registry-details.html#model-card-schema">Model
      * Package Model Card Schema</a>.</p>
      */
-    inline const Aws::String& GetModelCardContent() const{ return m_modelCardContent; }
+    inline const Aws::String& GetModelCardContent() const { return m_modelCardContent; }
     inline bool ModelCardContentHasBeenSet() const { return m_modelCardContentHasBeenSet; }
-    inline void SetModelCardContent(const Aws::String& value) { m_modelCardContentHasBeenSet = true; m_modelCardContent = value; }
-    inline void SetModelCardContent(Aws::String&& value) { m_modelCardContentHasBeenSet = true; m_modelCardContent = std::move(value); }
-    inline void SetModelCardContent(const char* value) { m_modelCardContentHasBeenSet = true; m_modelCardContent.assign(value); }
-    inline ModelPackageModelCard& WithModelCardContent(const Aws::String& value) { SetModelCardContent(value); return *this;}
-    inline ModelPackageModelCard& WithModelCardContent(Aws::String&& value) { SetModelCardContent(std::move(value)); return *this;}
-    inline ModelPackageModelCard& WithModelCardContent(const char* value) { SetModelCardContent(value); return *this;}
+    template<typename ModelCardContentT = Aws::String>
+    void SetModelCardContent(ModelCardContentT&& value) { m_modelCardContentHasBeenSet = true; m_modelCardContent = std::forward<ModelCardContentT>(value); }
+    template<typename ModelCardContentT = Aws::String>
+    ModelPackageModelCard& WithModelCardContent(ModelCardContentT&& value) { SetModelCardContent(std::forward<ModelCardContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,19 +77,17 @@ namespace Model
      * model card content, you will receive the message <code>Model Card is in Archived
      * state</code>.</p> </li> </ul>
      */
-    inline const ModelCardStatus& GetModelCardStatus() const{ return m_modelCardStatus; }
+    inline ModelCardStatus GetModelCardStatus() const { return m_modelCardStatus; }
     inline bool ModelCardStatusHasBeenSet() const { return m_modelCardStatusHasBeenSet; }
-    inline void SetModelCardStatus(const ModelCardStatus& value) { m_modelCardStatusHasBeenSet = true; m_modelCardStatus = value; }
-    inline void SetModelCardStatus(ModelCardStatus&& value) { m_modelCardStatusHasBeenSet = true; m_modelCardStatus = std::move(value); }
-    inline ModelPackageModelCard& WithModelCardStatus(const ModelCardStatus& value) { SetModelCardStatus(value); return *this;}
-    inline ModelPackageModelCard& WithModelCardStatus(ModelCardStatus&& value) { SetModelCardStatus(std::move(value)); return *this;}
+    inline void SetModelCardStatus(ModelCardStatus value) { m_modelCardStatusHasBeenSet = true; m_modelCardStatus = value; }
+    inline ModelPackageModelCard& WithModelCardStatus(ModelCardStatus value) { SetModelCardStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_modelCardContent;
     bool m_modelCardContentHasBeenSet = false;
 
-    ModelCardStatus m_modelCardStatus;
+    ModelCardStatus m_modelCardStatus{ModelCardStatus::NOT_SET};
     bool m_modelCardStatusHasBeenSet = false;
   };
 

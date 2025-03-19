@@ -33,7 +33,7 @@ namespace Model
   class Homogeneous
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Homogeneous();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Homogeneous() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Homogeneous(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Homogeneous& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,13 @@ namespace Model
      * <p> The target database engine for homogeneous database migration preferences.
      * </p>
      */
-    inline const Aws::Vector<HomogeneousTargetDatabaseEngine>& GetTargetDatabaseEngine() const{ return m_targetDatabaseEngine; }
+    inline const Aws::Vector<HomogeneousTargetDatabaseEngine>& GetTargetDatabaseEngine() const { return m_targetDatabaseEngine; }
     inline bool TargetDatabaseEngineHasBeenSet() const { return m_targetDatabaseEngineHasBeenSet; }
-    inline void SetTargetDatabaseEngine(const Aws::Vector<HomogeneousTargetDatabaseEngine>& value) { m_targetDatabaseEngineHasBeenSet = true; m_targetDatabaseEngine = value; }
-    inline void SetTargetDatabaseEngine(Aws::Vector<HomogeneousTargetDatabaseEngine>&& value) { m_targetDatabaseEngineHasBeenSet = true; m_targetDatabaseEngine = std::move(value); }
-    inline Homogeneous& WithTargetDatabaseEngine(const Aws::Vector<HomogeneousTargetDatabaseEngine>& value) { SetTargetDatabaseEngine(value); return *this;}
-    inline Homogeneous& WithTargetDatabaseEngine(Aws::Vector<HomogeneousTargetDatabaseEngine>&& value) { SetTargetDatabaseEngine(std::move(value)); return *this;}
-    inline Homogeneous& AddTargetDatabaseEngine(const HomogeneousTargetDatabaseEngine& value) { m_targetDatabaseEngineHasBeenSet = true; m_targetDatabaseEngine.push_back(value); return *this; }
-    inline Homogeneous& AddTargetDatabaseEngine(HomogeneousTargetDatabaseEngine&& value) { m_targetDatabaseEngineHasBeenSet = true; m_targetDatabaseEngine.push_back(std::move(value)); return *this; }
+    template<typename TargetDatabaseEngineT = Aws::Vector<HomogeneousTargetDatabaseEngine>>
+    void SetTargetDatabaseEngine(TargetDatabaseEngineT&& value) { m_targetDatabaseEngineHasBeenSet = true; m_targetDatabaseEngine = std::forward<TargetDatabaseEngineT>(value); }
+    template<typename TargetDatabaseEngineT = Aws::Vector<HomogeneousTargetDatabaseEngine>>
+    Homogeneous& WithTargetDatabaseEngine(TargetDatabaseEngineT&& value) { SetTargetDatabaseEngine(std::forward<TargetDatabaseEngineT>(value)); return *this;}
+    inline Homogeneous& AddTargetDatabaseEngine(HomogeneousTargetDatabaseEngine value) { m_targetDatabaseEngineHasBeenSet = true; m_targetDatabaseEngine.push_back(value); return *this; }
     ///@}
   private:
 

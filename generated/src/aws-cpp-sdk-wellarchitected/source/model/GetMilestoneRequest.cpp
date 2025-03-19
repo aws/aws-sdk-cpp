@@ -12,13 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMilestoneRequest::GetMilestoneRequest() : 
-    m_workloadIdHasBeenSet(false),
-    m_milestoneNumber(0),
-    m_milestoneNumberHasBeenSet(false)
-{
-}
-
 Aws::String GetMilestoneRequest::SerializePayload() const
 {
   return {};

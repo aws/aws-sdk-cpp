@@ -16,10 +16,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteDistributionConfigurationResult::DeleteDistributionConfigurationResult()
-{
-}
-
 DeleteDistributionConfigurationResult::DeleteDistributionConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -31,15 +27,13 @@ DeleteDistributionConfigurationResult& DeleteDistributionConfigurationResult::op
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
+    m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("distributionConfigurationArn"))
   {
     m_distributionConfigurationArn = jsonValue.GetString("distributionConfigurationArn");
-
+    m_distributionConfigurationArnHasBeenSet = true;
   }
-
 
 
   return *this;

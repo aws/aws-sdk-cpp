@@ -10,12 +10,6 @@
 using namespace Aws::DocDB::Model;
 using namespace Aws::Utils;
 
-AddTagsToResourceRequest::AddTagsToResourceRequest() : 
-    m_resourceNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String AddTagsToResourceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

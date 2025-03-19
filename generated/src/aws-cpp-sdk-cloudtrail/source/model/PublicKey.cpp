@@ -19,16 +19,7 @@ namespace CloudTrail
 namespace Model
 {
 
-PublicKey::PublicKey() : 
-    m_valueHasBeenSet(false),
-    m_validityStartTimeHasBeenSet(false),
-    m_validityEndTimeHasBeenSet(false),
-    m_fingerprintHasBeenSet(false)
-{
-}
-
 PublicKey::PublicKey(JsonView jsonValue)
-  : PublicKey()
 {
   *this = jsonValue;
 }
@@ -40,28 +31,21 @@ PublicKey& PublicKey::operator =(JsonView jsonValue)
     m_value = HashingUtils::Base64Decode(jsonValue.GetString("Value"));
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidityStartTime"))
   {
     m_validityStartTime = jsonValue.GetDouble("ValidityStartTime");
-
     m_validityStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidityEndTime"))
   {
     m_validityEndTime = jsonValue.GetDouble("ValidityEndTime");
-
     m_validityEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Fingerprint"))
   {
     m_fingerprint = jsonValue.GetString("Fingerprint");
-
     m_fingerprintHasBeenSet = true;
   }
-
   return *this;
 }
 

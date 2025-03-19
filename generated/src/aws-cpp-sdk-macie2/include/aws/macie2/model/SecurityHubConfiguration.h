@@ -34,7 +34,7 @@ namespace Model
   class SecurityHubConfiguration
   {
   public:
-    AWS_MACIE2_API SecurityHubConfiguration();
+    AWS_MACIE2_API SecurityHubConfiguration() = default;
     AWS_MACIE2_API SecurityHubConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API SecurityHubConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,7 +47,7 @@ namespace Model
      * findings that weren't suppressed by a findings filter. The default value is
      * false.</p>
      */
-    inline bool GetPublishClassificationFindings() const{ return m_publishClassificationFindings; }
+    inline bool GetPublishClassificationFindings() const { return m_publishClassificationFindings; }
     inline bool PublishClassificationFindingsHasBeenSet() const { return m_publishClassificationFindingsHasBeenSet; }
     inline void SetPublishClassificationFindings(bool value) { m_publishClassificationFindingsHasBeenSet = true; m_publishClassificationFindings = value; }
     inline SecurityHubConfiguration& WithPublishClassificationFindings(bool value) { SetPublishClassificationFindings(value); return *this;}
@@ -60,17 +60,17 @@ namespace Model
      * findings that weren't suppressed by a findings filter. The default value is
      * true.</p>
      */
-    inline bool GetPublishPolicyFindings() const{ return m_publishPolicyFindings; }
+    inline bool GetPublishPolicyFindings() const { return m_publishPolicyFindings; }
     inline bool PublishPolicyFindingsHasBeenSet() const { return m_publishPolicyFindingsHasBeenSet; }
     inline void SetPublishPolicyFindings(bool value) { m_publishPolicyFindingsHasBeenSet = true; m_publishPolicyFindings = value; }
     inline SecurityHubConfiguration& WithPublishPolicyFindings(bool value) { SetPublishPolicyFindings(value); return *this;}
     ///@}
   private:
 
-    bool m_publishClassificationFindings;
+    bool m_publishClassificationFindings{false};
     bool m_publishClassificationFindingsHasBeenSet = false;
 
-    bool m_publishPolicyFindings;
+    bool m_publishPolicyFindings{false};
     bool m_publishPolicyFindingsHasBeenSet = false;
   };
 

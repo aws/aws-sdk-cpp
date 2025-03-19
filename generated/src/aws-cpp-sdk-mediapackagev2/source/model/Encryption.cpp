@@ -18,17 +18,7 @@ namespace mediapackagev2
 namespace Model
 {
 
-Encryption::Encryption() : 
-    m_constantInitializationVectorHasBeenSet(false),
-    m_encryptionMethodHasBeenSet(false),
-    m_keyRotationIntervalSeconds(0),
-    m_keyRotationIntervalSecondsHasBeenSet(false),
-    m_spekeKeyProviderHasBeenSet(false)
-{
-}
-
 Encryption::Encryption(JsonView jsonValue)
-  : Encryption()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Encryption& Encryption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConstantInitializationVector"))
   {
     m_constantInitializationVector = jsonValue.GetString("ConstantInitializationVector");
-
     m_constantInitializationVectorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionMethod"))
   {
     m_encryptionMethod = jsonValue.GetObject("EncryptionMethod");
-
     m_encryptionMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyRotationIntervalSeconds"))
   {
     m_keyRotationIntervalSeconds = jsonValue.GetInteger("KeyRotationIntervalSeconds");
-
     m_keyRotationIntervalSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpekeKeyProvider"))
   {
     m_spekeKeyProvider = jsonValue.GetObject("SpekeKeyProvider");
-
     m_spekeKeyProviderHasBeenSet = true;
   }
-
   return *this;
 }
 

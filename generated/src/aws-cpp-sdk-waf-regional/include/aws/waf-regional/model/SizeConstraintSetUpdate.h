@@ -42,7 +42,7 @@ namespace Model
   class SizeConstraintSetUpdate
   {
   public:
-    AWS_WAFREGIONAL_API SizeConstraintSetUpdate();
+    AWS_WAFREGIONAL_API SizeConstraintSetUpdate() = default;
     AWS_WAFREGIONAL_API SizeConstraintSetUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API SizeConstraintSetUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,12 +54,10 @@ namespace Model
      * <a>SizeConstraintSet</a>. Use <code>DELETE</code> to remove a
      * <code>SizeConstraintSetUpdate</code> from a <code>SizeConstraintSet</code>.</p>
      */
-    inline const ChangeAction& GetAction() const{ return m_action; }
+    inline ChangeAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline SizeConstraintSetUpdate& WithAction(const ChangeAction& value) { SetAction(value); return *this;}
-    inline SizeConstraintSetUpdate& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(ChangeAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline SizeConstraintSetUpdate& WithAction(ChangeAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -71,16 +69,16 @@ namespace Model
      * <code>FieldToMatch</code>". If that expression is true, the
      * <code>SizeConstraint</code> is considered to match.</p>
      */
-    inline const SizeConstraint& GetSizeConstraint() const{ return m_sizeConstraint; }
+    inline const SizeConstraint& GetSizeConstraint() const { return m_sizeConstraint; }
     inline bool SizeConstraintHasBeenSet() const { return m_sizeConstraintHasBeenSet; }
-    inline void SetSizeConstraint(const SizeConstraint& value) { m_sizeConstraintHasBeenSet = true; m_sizeConstraint = value; }
-    inline void SetSizeConstraint(SizeConstraint&& value) { m_sizeConstraintHasBeenSet = true; m_sizeConstraint = std::move(value); }
-    inline SizeConstraintSetUpdate& WithSizeConstraint(const SizeConstraint& value) { SetSizeConstraint(value); return *this;}
-    inline SizeConstraintSetUpdate& WithSizeConstraint(SizeConstraint&& value) { SetSizeConstraint(std::move(value)); return *this;}
+    template<typename SizeConstraintT = SizeConstraint>
+    void SetSizeConstraint(SizeConstraintT&& value) { m_sizeConstraintHasBeenSet = true; m_sizeConstraint = std::forward<SizeConstraintT>(value); }
+    template<typename SizeConstraintT = SizeConstraint>
+    SizeConstraintSetUpdate& WithSizeConstraint(SizeConstraintT&& value) { SetSizeConstraint(std::forward<SizeConstraintT>(value)); return *this;}
     ///@}
   private:
 
-    ChangeAction m_action;
+    ChangeAction m_action{ChangeAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
     SizeConstraint m_sizeConstraint;

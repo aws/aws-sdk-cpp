@@ -10,14 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-GetPredictiveScalingForecastRequest::GetPredictiveScalingForecastRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_policyNameHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 Aws::String GetPredictiveScalingForecastRequest::SerializePayload() const
 {
   Aws::StringStream ss;

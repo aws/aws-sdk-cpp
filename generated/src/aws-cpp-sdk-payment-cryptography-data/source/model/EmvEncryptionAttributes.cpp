@@ -18,20 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-EmvEncryptionAttributes::EmvEncryptionAttributes() : 
-    m_majorKeyDerivationMode(EmvMajorKeyDerivationMode::NOT_SET),
-    m_majorKeyDerivationModeHasBeenSet(false),
-    m_primaryAccountNumberHasBeenSet(false),
-    m_panSequenceNumberHasBeenSet(false),
-    m_sessionDerivationDataHasBeenSet(false),
-    m_mode(EmvEncryptionMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_initializationVectorHasBeenSet(false)
-{
-}
-
 EmvEncryptionAttributes::EmvEncryptionAttributes(JsonView jsonValue)
-  : EmvEncryptionAttributes()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ EmvEncryptionAttributes& EmvEncryptionAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MajorKeyDerivationMode"))
   {
     m_majorKeyDerivationMode = EmvMajorKeyDerivationModeMapper::GetEmvMajorKeyDerivationModeForName(jsonValue.GetString("MajorKeyDerivationMode"));
-
     m_majorKeyDerivationModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryAccountNumber"))
   {
     m_primaryAccountNumber = jsonValue.GetString("PrimaryAccountNumber");
-
     m_primaryAccountNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PanSequenceNumber"))
   {
     m_panSequenceNumber = jsonValue.GetString("PanSequenceNumber");
-
     m_panSequenceNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SessionDerivationData"))
   {
     m_sessionDerivationData = jsonValue.GetString("SessionDerivationData");
-
     m_sessionDerivationDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Mode"))
   {
     m_mode = EmvEncryptionModeMapper::GetEmvEncryptionModeForName(jsonValue.GetString("Mode"));
-
     m_modeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InitializationVector"))
   {
     m_initializationVector = jsonValue.GetString("InitializationVector");
-
     m_initializationVectorHasBeenSet = true;
   }
-
   return *this;
 }
 

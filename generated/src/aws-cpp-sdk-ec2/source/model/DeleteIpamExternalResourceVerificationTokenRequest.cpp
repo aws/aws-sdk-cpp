@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteIpamExternalResourceVerificationTokenRequest::DeleteIpamExternalResourceVerificationTokenRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_ipamExternalResourceVerificationTokenIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIpamExternalResourceVerificationTokenRequest::SerializePayload() const
 {
   Aws::StringStream ss;

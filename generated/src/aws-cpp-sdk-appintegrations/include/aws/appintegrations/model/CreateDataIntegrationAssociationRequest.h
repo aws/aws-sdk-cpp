@@ -25,7 +25,7 @@ namespace Model
   class CreateDataIntegrationAssociationRequest : public AppIntegrationsServiceRequest
   {
   public:
-    AWS_APPINTEGRATIONSSERVICE_API CreateDataIntegrationAssociationRequest();
+    AWS_APPINTEGRATIONSSERVICE_API CreateDataIntegrationAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>A unique identifier for the DataIntegration.</p>
      */
-    inline const Aws::String& GetDataIntegrationIdentifier() const{ return m_dataIntegrationIdentifier; }
+    inline const Aws::String& GetDataIntegrationIdentifier() const { return m_dataIntegrationIdentifier; }
     inline bool DataIntegrationIdentifierHasBeenSet() const { return m_dataIntegrationIdentifierHasBeenSet; }
-    inline void SetDataIntegrationIdentifier(const Aws::String& value) { m_dataIntegrationIdentifierHasBeenSet = true; m_dataIntegrationIdentifier = value; }
-    inline void SetDataIntegrationIdentifier(Aws::String&& value) { m_dataIntegrationIdentifierHasBeenSet = true; m_dataIntegrationIdentifier = std::move(value); }
-    inline void SetDataIntegrationIdentifier(const char* value) { m_dataIntegrationIdentifierHasBeenSet = true; m_dataIntegrationIdentifier.assign(value); }
-    inline CreateDataIntegrationAssociationRequest& WithDataIntegrationIdentifier(const Aws::String& value) { SetDataIntegrationIdentifier(value); return *this;}
-    inline CreateDataIntegrationAssociationRequest& WithDataIntegrationIdentifier(Aws::String&& value) { SetDataIntegrationIdentifier(std::move(value)); return *this;}
-    inline CreateDataIntegrationAssociationRequest& WithDataIntegrationIdentifier(const char* value) { SetDataIntegrationIdentifier(value); return *this;}
+    template<typename DataIntegrationIdentifierT = Aws::String>
+    void SetDataIntegrationIdentifier(DataIntegrationIdentifierT&& value) { m_dataIntegrationIdentifierHasBeenSet = true; m_dataIntegrationIdentifier = std::forward<DataIntegrationIdentifierT>(value); }
+    template<typename DataIntegrationIdentifierT = Aws::String>
+    CreateDataIntegrationAssociationRequest& WithDataIntegrationIdentifier(DataIntegrationIdentifierT&& value) { SetDataIntegrationIdentifier(std::forward<DataIntegrationIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,63 +53,54 @@ namespace Model
      * <p>The identifier for the client that is associated with the DataIntegration
      * association.</p>
      */
-    inline const Aws::String& GetClientId() const{ return m_clientId; }
+    inline const Aws::String& GetClientId() const { return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
-    inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
-    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
-    inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
-    inline CreateDataIntegrationAssociationRequest& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
-    inline CreateDataIntegrationAssociationRequest& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
-    inline CreateDataIntegrationAssociationRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
+    template<typename ClientIdT = Aws::String>
+    void SetClientId(ClientIdT&& value) { m_clientIdHasBeenSet = true; m_clientId = std::forward<ClientIdT>(value); }
+    template<typename ClientIdT = Aws::String>
+    CreateDataIntegrationAssociationRequest& WithClientId(ClientIdT&& value) { SetClientId(std::forward<ClientIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& GetObjectConfiguration() const{ return m_objectConfiguration; }
+    inline const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& GetObjectConfiguration() const { return m_objectConfiguration; }
     inline bool ObjectConfigurationHasBeenSet() const { return m_objectConfigurationHasBeenSet; }
-    inline void SetObjectConfiguration(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { m_objectConfigurationHasBeenSet = true; m_objectConfiguration = value; }
-    inline void SetObjectConfiguration(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { m_objectConfigurationHasBeenSet = true; m_objectConfiguration = std::move(value); }
-    inline CreateDataIntegrationAssociationRequest& WithObjectConfiguration(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { SetObjectConfiguration(value); return *this;}
-    inline CreateDataIntegrationAssociationRequest& WithObjectConfiguration(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { SetObjectConfiguration(std::move(value)); return *this;}
-    inline CreateDataIntegrationAssociationRequest& AddObjectConfiguration(const Aws::String& key, const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_objectConfigurationHasBeenSet = true; m_objectConfiguration.emplace(key, value); return *this; }
-    inline CreateDataIntegrationAssociationRequest& AddObjectConfiguration(Aws::String&& key, const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_objectConfigurationHasBeenSet = true; m_objectConfiguration.emplace(std::move(key), value); return *this; }
-    inline CreateDataIntegrationAssociationRequest& AddObjectConfiguration(const Aws::String& key, Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_objectConfigurationHasBeenSet = true; m_objectConfiguration.emplace(key, std::move(value)); return *this; }
-    inline CreateDataIntegrationAssociationRequest& AddObjectConfiguration(Aws::String&& key, Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_objectConfigurationHasBeenSet = true; m_objectConfiguration.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateDataIntegrationAssociationRequest& AddObjectConfiguration(const char* key, Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_objectConfigurationHasBeenSet = true; m_objectConfiguration.emplace(key, std::move(value)); return *this; }
-    inline CreateDataIntegrationAssociationRequest& AddObjectConfiguration(const char* key, const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_objectConfigurationHasBeenSet = true; m_objectConfiguration.emplace(key, value); return *this; }
+    template<typename ObjectConfigurationT = Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>>
+    void SetObjectConfiguration(ObjectConfigurationT&& value) { m_objectConfigurationHasBeenSet = true; m_objectConfiguration = std::forward<ObjectConfigurationT>(value); }
+    template<typename ObjectConfigurationT = Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>>
+    CreateDataIntegrationAssociationRequest& WithObjectConfiguration(ObjectConfigurationT&& value) { SetObjectConfiguration(std::forward<ObjectConfigurationT>(value)); return *this;}
+    template<typename ObjectConfigurationKeyT = Aws::String, typename ObjectConfigurationValueT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    CreateDataIntegrationAssociationRequest& AddObjectConfiguration(ObjectConfigurationKeyT&& key, ObjectConfigurationValueT&& value) {
+      m_objectConfigurationHasBeenSet = true; m_objectConfiguration.emplace(std::forward<ObjectConfigurationKeyT>(key), std::forward<ObjectConfigurationValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The URI of the data destination.</p>
      */
-    inline const Aws::String& GetDestinationURI() const{ return m_destinationURI; }
+    inline const Aws::String& GetDestinationURI() const { return m_destinationURI; }
     inline bool DestinationURIHasBeenSet() const { return m_destinationURIHasBeenSet; }
-    inline void SetDestinationURI(const Aws::String& value) { m_destinationURIHasBeenSet = true; m_destinationURI = value; }
-    inline void SetDestinationURI(Aws::String&& value) { m_destinationURIHasBeenSet = true; m_destinationURI = std::move(value); }
-    inline void SetDestinationURI(const char* value) { m_destinationURIHasBeenSet = true; m_destinationURI.assign(value); }
-    inline CreateDataIntegrationAssociationRequest& WithDestinationURI(const Aws::String& value) { SetDestinationURI(value); return *this;}
-    inline CreateDataIntegrationAssociationRequest& WithDestinationURI(Aws::String&& value) { SetDestinationURI(std::move(value)); return *this;}
-    inline CreateDataIntegrationAssociationRequest& WithDestinationURI(const char* value) { SetDestinationURI(value); return *this;}
+    template<typename DestinationURIT = Aws::String>
+    void SetDestinationURI(DestinationURIT&& value) { m_destinationURIHasBeenSet = true; m_destinationURI = std::forward<DestinationURIT>(value); }
+    template<typename DestinationURIT = Aws::String>
+    CreateDataIntegrationAssociationRequest& WithDestinationURI(DestinationURIT&& value) { SetDestinationURI(std::forward<DestinationURIT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The mapping of metadata to be extracted from the data.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetClientAssociationMetadata() const{ return m_clientAssociationMetadata; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetClientAssociationMetadata() const { return m_clientAssociationMetadata; }
     inline bool ClientAssociationMetadataHasBeenSet() const { return m_clientAssociationMetadataHasBeenSet; }
-    inline void SetClientAssociationMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_clientAssociationMetadataHasBeenSet = true; m_clientAssociationMetadata = value; }
-    inline void SetClientAssociationMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_clientAssociationMetadataHasBeenSet = true; m_clientAssociationMetadata = std::move(value); }
-    inline CreateDataIntegrationAssociationRequest& WithClientAssociationMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetClientAssociationMetadata(value); return *this;}
-    inline CreateDataIntegrationAssociationRequest& WithClientAssociationMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetClientAssociationMetadata(std::move(value)); return *this;}
-    inline CreateDataIntegrationAssociationRequest& AddClientAssociationMetadata(const Aws::String& key, const Aws::String& value) { m_clientAssociationMetadataHasBeenSet = true; m_clientAssociationMetadata.emplace(key, value); return *this; }
-    inline CreateDataIntegrationAssociationRequest& AddClientAssociationMetadata(Aws::String&& key, const Aws::String& value) { m_clientAssociationMetadataHasBeenSet = true; m_clientAssociationMetadata.emplace(std::move(key), value); return *this; }
-    inline CreateDataIntegrationAssociationRequest& AddClientAssociationMetadata(const Aws::String& key, Aws::String&& value) { m_clientAssociationMetadataHasBeenSet = true; m_clientAssociationMetadata.emplace(key, std::move(value)); return *this; }
-    inline CreateDataIntegrationAssociationRequest& AddClientAssociationMetadata(Aws::String&& key, Aws::String&& value) { m_clientAssociationMetadataHasBeenSet = true; m_clientAssociationMetadata.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateDataIntegrationAssociationRequest& AddClientAssociationMetadata(const char* key, Aws::String&& value) { m_clientAssociationMetadataHasBeenSet = true; m_clientAssociationMetadata.emplace(key, std::move(value)); return *this; }
-    inline CreateDataIntegrationAssociationRequest& AddClientAssociationMetadata(Aws::String&& key, const char* value) { m_clientAssociationMetadataHasBeenSet = true; m_clientAssociationMetadata.emplace(std::move(key), value); return *this; }
-    inline CreateDataIntegrationAssociationRequest& AddClientAssociationMetadata(const char* key, const char* value) { m_clientAssociationMetadataHasBeenSet = true; m_clientAssociationMetadata.emplace(key, value); return *this; }
+    template<typename ClientAssociationMetadataT = Aws::Map<Aws::String, Aws::String>>
+    void SetClientAssociationMetadata(ClientAssociationMetadataT&& value) { m_clientAssociationMetadataHasBeenSet = true; m_clientAssociationMetadata = std::forward<ClientAssociationMetadataT>(value); }
+    template<typename ClientAssociationMetadataT = Aws::Map<Aws::String, Aws::String>>
+    CreateDataIntegrationAssociationRequest& WithClientAssociationMetadata(ClientAssociationMetadataT&& value) { SetClientAssociationMetadata(std::forward<ClientAssociationMetadataT>(value)); return *this;}
+    template<typename ClientAssociationMetadataKeyT = Aws::String, typename ClientAssociationMetadataValueT = Aws::String>
+    CreateDataIntegrationAssociationRequest& AddClientAssociationMetadata(ClientAssociationMetadataKeyT&& key, ClientAssociationMetadataValueT&& value) {
+      m_clientAssociationMetadataHasBeenSet = true; m_clientAssociationMetadata.emplace(std::forward<ClientAssociationMetadataKeyT>(key), std::forward<ClientAssociationMetadataValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -122,26 +111,24 @@ namespace Model
      * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
      * retries safe with idempotent APIs</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateDataIntegrationAssociationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateDataIntegrationAssociationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateDataIntegrationAssociationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateDataIntegrationAssociationRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration for how the files should be pulled from the source.</p>
      */
-    inline const ExecutionConfiguration& GetExecutionConfiguration() const{ return m_executionConfiguration; }
+    inline const ExecutionConfiguration& GetExecutionConfiguration() const { return m_executionConfiguration; }
     inline bool ExecutionConfigurationHasBeenSet() const { return m_executionConfigurationHasBeenSet; }
-    inline void SetExecutionConfiguration(const ExecutionConfiguration& value) { m_executionConfigurationHasBeenSet = true; m_executionConfiguration = value; }
-    inline void SetExecutionConfiguration(ExecutionConfiguration&& value) { m_executionConfigurationHasBeenSet = true; m_executionConfiguration = std::move(value); }
-    inline CreateDataIntegrationAssociationRequest& WithExecutionConfiguration(const ExecutionConfiguration& value) { SetExecutionConfiguration(value); return *this;}
-    inline CreateDataIntegrationAssociationRequest& WithExecutionConfiguration(ExecutionConfiguration&& value) { SetExecutionConfiguration(std::move(value)); return *this;}
+    template<typename ExecutionConfigurationT = ExecutionConfiguration>
+    void SetExecutionConfiguration(ExecutionConfigurationT&& value) { m_executionConfigurationHasBeenSet = true; m_executionConfiguration = std::forward<ExecutionConfigurationT>(value); }
+    template<typename ExecutionConfigurationT = ExecutionConfiguration>
+    CreateDataIntegrationAssociationRequest& WithExecutionConfiguration(ExecutionConfigurationT&& value) { SetExecutionConfiguration(std::forward<ExecutionConfigurationT>(value)); return *this;}
     ///@}
   private:
 

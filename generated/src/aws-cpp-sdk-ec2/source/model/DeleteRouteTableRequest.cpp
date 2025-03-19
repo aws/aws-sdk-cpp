@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteRouteTableRequest::DeleteRouteTableRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRouteTableRequest::SerializePayload() const
 {
   Aws::StringStream ss;

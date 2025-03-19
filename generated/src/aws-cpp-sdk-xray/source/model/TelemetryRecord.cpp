@@ -18,22 +18,7 @@ namespace XRay
 namespace Model
 {
 
-TelemetryRecord::TelemetryRecord() : 
-    m_timestampHasBeenSet(false),
-    m_segmentsReceivedCount(0),
-    m_segmentsReceivedCountHasBeenSet(false),
-    m_segmentsSentCount(0),
-    m_segmentsSentCountHasBeenSet(false),
-    m_segmentsSpilloverCount(0),
-    m_segmentsSpilloverCountHasBeenSet(false),
-    m_segmentsRejectedCount(0),
-    m_segmentsRejectedCountHasBeenSet(false),
-    m_backendConnectionErrorsHasBeenSet(false)
-{
-}
-
 TelemetryRecord::TelemetryRecord(JsonView jsonValue)
-  : TelemetryRecord()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ TelemetryRecord& TelemetryRecord::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SegmentsReceivedCount"))
   {
     m_segmentsReceivedCount = jsonValue.GetInteger("SegmentsReceivedCount");
-
     m_segmentsReceivedCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SegmentsSentCount"))
   {
     m_segmentsSentCount = jsonValue.GetInteger("SegmentsSentCount");
-
     m_segmentsSentCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SegmentsSpilloverCount"))
   {
     m_segmentsSpilloverCount = jsonValue.GetInteger("SegmentsSpilloverCount");
-
     m_segmentsSpilloverCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SegmentsRejectedCount"))
   {
     m_segmentsRejectedCount = jsonValue.GetInteger("SegmentsRejectedCount");
-
     m_segmentsRejectedCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackendConnectionErrors"))
   {
     m_backendConnectionErrors = jsonValue.GetObject("BackendConnectionErrors");
-
     m_backendConnectionErrorsHasBeenSet = true;
   }
-
   return *this;
 }
 

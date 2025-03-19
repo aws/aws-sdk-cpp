@@ -32,7 +32,7 @@ namespace Model
   class NetworkFabricConfiguration
   {
   public:
-    AWS_MANAGEDBLOCKCHAIN_API NetworkFabricConfiguration();
+    AWS_MANAGEDBLOCKCHAIN_API NetworkFabricConfiguration() = default;
     AWS_MANAGEDBLOCKCHAIN_API NetworkFabricConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API NetworkFabricConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,16 +45,14 @@ namespace Model
      * href="http://aws.amazon.com/managed-blockchain/pricing/">Amazon Managed
      * Blockchain Pricing</a>.</p>
      */
-    inline const Edition& GetEdition() const{ return m_edition; }
+    inline Edition GetEdition() const { return m_edition; }
     inline bool EditionHasBeenSet() const { return m_editionHasBeenSet; }
-    inline void SetEdition(const Edition& value) { m_editionHasBeenSet = true; m_edition = value; }
-    inline void SetEdition(Edition&& value) { m_editionHasBeenSet = true; m_edition = std::move(value); }
-    inline NetworkFabricConfiguration& WithEdition(const Edition& value) { SetEdition(value); return *this;}
-    inline NetworkFabricConfiguration& WithEdition(Edition&& value) { SetEdition(std::move(value)); return *this;}
+    inline void SetEdition(Edition value) { m_editionHasBeenSet = true; m_edition = value; }
+    inline NetworkFabricConfiguration& WithEdition(Edition value) { SetEdition(value); return *this;}
     ///@}
   private:
 
-    Edition m_edition;
+    Edition m_edition{Edition::NOT_SET};
     bool m_editionHasBeenSet = false;
   };
 

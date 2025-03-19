@@ -27,37 +27,35 @@ namespace Model
   class HttpChecksumRequiredResult
   {
   public:
-    AWS_RESTJSONPROTOCOL_API HttpChecksumRequiredResult();
+    AWS_RESTJSONPROTOCOL_API HttpChecksumRequiredResult() = default;
     AWS_RESTJSONPROTOCOL_API HttpChecksumRequiredResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESTJSONPROTOCOL_API HttpChecksumRequiredResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetFoo() const{ return m_foo; }
-    inline void SetFoo(const Aws::String& value) { m_foo = value; }
-    inline void SetFoo(Aws::String&& value) { m_foo = std::move(value); }
-    inline void SetFoo(const char* value) { m_foo.assign(value); }
-    inline HttpChecksumRequiredResult& WithFoo(const Aws::String& value) { SetFoo(value); return *this;}
-    inline HttpChecksumRequiredResult& WithFoo(Aws::String&& value) { SetFoo(std::move(value)); return *this;}
-    inline HttpChecksumRequiredResult& WithFoo(const char* value) { SetFoo(value); return *this;}
+    inline const Aws::String& GetFoo() const { return m_foo; }
+    template<typename FooT = Aws::String>
+    void SetFoo(FooT&& value) { m_fooHasBeenSet = true; m_foo = std::forward<FooT>(value); }
+    template<typename FooT = Aws::String>
+    HttpChecksumRequiredResult& WithFoo(FooT&& value) { SetFoo(std::forward<FooT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline HttpChecksumRequiredResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline HttpChecksumRequiredResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline HttpChecksumRequiredResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    HttpChecksumRequiredResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_foo;
+    bool m_fooHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

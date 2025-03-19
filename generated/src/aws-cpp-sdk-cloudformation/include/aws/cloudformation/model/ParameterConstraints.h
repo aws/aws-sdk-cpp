@@ -35,7 +35,7 @@ namespace Model
   class ParameterConstraints
   {
   public:
-    AWS_CLOUDFORMATION_API ParameterConstraints();
+    AWS_CLOUDFORMATION_API ParameterConstraints() = default;
     AWS_CLOUDFORMATION_API ParameterConstraints(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API ParameterConstraints& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,15 +47,14 @@ namespace Model
     /**
      * <p>A list of values that are permitted for a parameter.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowedValues() const{ return m_allowedValues; }
+    inline const Aws::Vector<Aws::String>& GetAllowedValues() const { return m_allowedValues; }
     inline bool AllowedValuesHasBeenSet() const { return m_allowedValuesHasBeenSet; }
-    inline void SetAllowedValues(const Aws::Vector<Aws::String>& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = value; }
-    inline void SetAllowedValues(Aws::Vector<Aws::String>&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = std::move(value); }
-    inline ParameterConstraints& WithAllowedValues(const Aws::Vector<Aws::String>& value) { SetAllowedValues(value); return *this;}
-    inline ParameterConstraints& WithAllowedValues(Aws::Vector<Aws::String>&& value) { SetAllowedValues(std::move(value)); return *this;}
-    inline ParameterConstraints& AddAllowedValues(const Aws::String& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(value); return *this; }
-    inline ParameterConstraints& AddAllowedValues(Aws::String&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(std::move(value)); return *this; }
-    inline ParameterConstraints& AddAllowedValues(const char* value) { m_allowedValuesHasBeenSet = true; m_allowedValues.push_back(value); return *this; }
+    template<typename AllowedValuesT = Aws::Vector<Aws::String>>
+    void SetAllowedValues(AllowedValuesT&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = std::forward<AllowedValuesT>(value); }
+    template<typename AllowedValuesT = Aws::Vector<Aws::String>>
+    ParameterConstraints& WithAllowedValues(AllowedValuesT&& value) { SetAllowedValues(std::forward<AllowedValuesT>(value)); return *this;}
+    template<typename AllowedValuesT = Aws::String>
+    ParameterConstraints& AddAllowedValues(AllowedValuesT&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues.emplace_back(std::forward<AllowedValuesT>(value)); return *this; }
     ///@}
   private:
 

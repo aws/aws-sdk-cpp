@@ -18,21 +18,7 @@ namespace EFS
 namespace Model
 {
 
-FileSystemSize::FileSystemSize() : 
-    m_value(0),
-    m_valueHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_valueInIA(0),
-    m_valueInIAHasBeenSet(false),
-    m_valueInStandard(0),
-    m_valueInStandardHasBeenSet(false),
-    m_valueInArchive(0),
-    m_valueInArchiveHasBeenSet(false)
-{
-}
-
 FileSystemSize::FileSystemSize(JsonView jsonValue)
-  : FileSystemSize()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ FileSystemSize& FileSystemSize::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetInt64("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValueInIA"))
   {
     m_valueInIA = jsonValue.GetInt64("ValueInIA");
-
     m_valueInIAHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValueInStandard"))
   {
     m_valueInStandard = jsonValue.GetInt64("ValueInStandard");
-
     m_valueInStandardHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValueInArchive"))
   {
     m_valueInArchive = jsonValue.GetInt64("ValueInArchive");
-
     m_valueInArchiveHasBeenSet = true;
   }
-
   return *this;
 }
 

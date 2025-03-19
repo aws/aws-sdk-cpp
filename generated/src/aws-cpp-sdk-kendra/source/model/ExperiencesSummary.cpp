@@ -18,18 +18,7 @@ namespace kendra
 namespace Model
 {
 
-ExperiencesSummary::ExperiencesSummary() : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_status(ExperienceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_endpointsHasBeenSet(false)
-{
-}
-
 ExperiencesSummary::ExperiencesSummary(JsonView jsonValue)
-  : ExperiencesSummary()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ExperiencesSummary& ExperiencesSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ExperienceStatusMapper::GetExperienceStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Endpoints"))
   {
     Aws::Utils::Array<JsonView> endpointsJsonList = jsonValue.GetArray("Endpoints");
@@ -73,7 +54,6 @@ ExperiencesSummary& ExperiencesSummary::operator =(JsonView jsonValue)
     }
     m_endpointsHasBeenSet = true;
   }
-
   return *this;
 }
 

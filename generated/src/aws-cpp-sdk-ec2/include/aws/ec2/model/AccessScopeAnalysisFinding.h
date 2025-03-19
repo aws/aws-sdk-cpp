@@ -33,7 +33,7 @@ namespace Model
   class AccessScopeAnalysisFinding
   {
   public:
-    AWS_EC2_API AccessScopeAnalysisFinding();
+    AWS_EC2_API AccessScopeAnalysisFinding() = default;
     AWS_EC2_API AccessScopeAnalysisFinding(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API AccessScopeAnalysisFinding& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,56 +45,50 @@ namespace Model
     /**
      * <p>The ID of the Network Access Scope analysis.</p>
      */
-    inline const Aws::String& GetNetworkInsightsAccessScopeAnalysisId() const{ return m_networkInsightsAccessScopeAnalysisId; }
+    inline const Aws::String& GetNetworkInsightsAccessScopeAnalysisId() const { return m_networkInsightsAccessScopeAnalysisId; }
     inline bool NetworkInsightsAccessScopeAnalysisIdHasBeenSet() const { return m_networkInsightsAccessScopeAnalysisIdHasBeenSet; }
-    inline void SetNetworkInsightsAccessScopeAnalysisId(const Aws::String& value) { m_networkInsightsAccessScopeAnalysisIdHasBeenSet = true; m_networkInsightsAccessScopeAnalysisId = value; }
-    inline void SetNetworkInsightsAccessScopeAnalysisId(Aws::String&& value) { m_networkInsightsAccessScopeAnalysisIdHasBeenSet = true; m_networkInsightsAccessScopeAnalysisId = std::move(value); }
-    inline void SetNetworkInsightsAccessScopeAnalysisId(const char* value) { m_networkInsightsAccessScopeAnalysisIdHasBeenSet = true; m_networkInsightsAccessScopeAnalysisId.assign(value); }
-    inline AccessScopeAnalysisFinding& WithNetworkInsightsAccessScopeAnalysisId(const Aws::String& value) { SetNetworkInsightsAccessScopeAnalysisId(value); return *this;}
-    inline AccessScopeAnalysisFinding& WithNetworkInsightsAccessScopeAnalysisId(Aws::String&& value) { SetNetworkInsightsAccessScopeAnalysisId(std::move(value)); return *this;}
-    inline AccessScopeAnalysisFinding& WithNetworkInsightsAccessScopeAnalysisId(const char* value) { SetNetworkInsightsAccessScopeAnalysisId(value); return *this;}
+    template<typename NetworkInsightsAccessScopeAnalysisIdT = Aws::String>
+    void SetNetworkInsightsAccessScopeAnalysisId(NetworkInsightsAccessScopeAnalysisIdT&& value) { m_networkInsightsAccessScopeAnalysisIdHasBeenSet = true; m_networkInsightsAccessScopeAnalysisId = std::forward<NetworkInsightsAccessScopeAnalysisIdT>(value); }
+    template<typename NetworkInsightsAccessScopeAnalysisIdT = Aws::String>
+    AccessScopeAnalysisFinding& WithNetworkInsightsAccessScopeAnalysisId(NetworkInsightsAccessScopeAnalysisIdT&& value) { SetNetworkInsightsAccessScopeAnalysisId(std::forward<NetworkInsightsAccessScopeAnalysisIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Network Access Scope.</p>
      */
-    inline const Aws::String& GetNetworkInsightsAccessScopeId() const{ return m_networkInsightsAccessScopeId; }
+    inline const Aws::String& GetNetworkInsightsAccessScopeId() const { return m_networkInsightsAccessScopeId; }
     inline bool NetworkInsightsAccessScopeIdHasBeenSet() const { return m_networkInsightsAccessScopeIdHasBeenSet; }
-    inline void SetNetworkInsightsAccessScopeId(const Aws::String& value) { m_networkInsightsAccessScopeIdHasBeenSet = true; m_networkInsightsAccessScopeId = value; }
-    inline void SetNetworkInsightsAccessScopeId(Aws::String&& value) { m_networkInsightsAccessScopeIdHasBeenSet = true; m_networkInsightsAccessScopeId = std::move(value); }
-    inline void SetNetworkInsightsAccessScopeId(const char* value) { m_networkInsightsAccessScopeIdHasBeenSet = true; m_networkInsightsAccessScopeId.assign(value); }
-    inline AccessScopeAnalysisFinding& WithNetworkInsightsAccessScopeId(const Aws::String& value) { SetNetworkInsightsAccessScopeId(value); return *this;}
-    inline AccessScopeAnalysisFinding& WithNetworkInsightsAccessScopeId(Aws::String&& value) { SetNetworkInsightsAccessScopeId(std::move(value)); return *this;}
-    inline AccessScopeAnalysisFinding& WithNetworkInsightsAccessScopeId(const char* value) { SetNetworkInsightsAccessScopeId(value); return *this;}
+    template<typename NetworkInsightsAccessScopeIdT = Aws::String>
+    void SetNetworkInsightsAccessScopeId(NetworkInsightsAccessScopeIdT&& value) { m_networkInsightsAccessScopeIdHasBeenSet = true; m_networkInsightsAccessScopeId = std::forward<NetworkInsightsAccessScopeIdT>(value); }
+    template<typename NetworkInsightsAccessScopeIdT = Aws::String>
+    AccessScopeAnalysisFinding& WithNetworkInsightsAccessScopeId(NetworkInsightsAccessScopeIdT&& value) { SetNetworkInsightsAccessScopeId(std::forward<NetworkInsightsAccessScopeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the finding.</p>
      */
-    inline const Aws::String& GetFindingId() const{ return m_findingId; }
+    inline const Aws::String& GetFindingId() const { return m_findingId; }
     inline bool FindingIdHasBeenSet() const { return m_findingIdHasBeenSet; }
-    inline void SetFindingId(const Aws::String& value) { m_findingIdHasBeenSet = true; m_findingId = value; }
-    inline void SetFindingId(Aws::String&& value) { m_findingIdHasBeenSet = true; m_findingId = std::move(value); }
-    inline void SetFindingId(const char* value) { m_findingIdHasBeenSet = true; m_findingId.assign(value); }
-    inline AccessScopeAnalysisFinding& WithFindingId(const Aws::String& value) { SetFindingId(value); return *this;}
-    inline AccessScopeAnalysisFinding& WithFindingId(Aws::String&& value) { SetFindingId(std::move(value)); return *this;}
-    inline AccessScopeAnalysisFinding& WithFindingId(const char* value) { SetFindingId(value); return *this;}
+    template<typename FindingIdT = Aws::String>
+    void SetFindingId(FindingIdT&& value) { m_findingIdHasBeenSet = true; m_findingId = std::forward<FindingIdT>(value); }
+    template<typename FindingIdT = Aws::String>
+    AccessScopeAnalysisFinding& WithFindingId(FindingIdT&& value) { SetFindingId(std::forward<FindingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The finding components.</p>
      */
-    inline const Aws::Vector<PathComponent>& GetFindingComponents() const{ return m_findingComponents; }
+    inline const Aws::Vector<PathComponent>& GetFindingComponents() const { return m_findingComponents; }
     inline bool FindingComponentsHasBeenSet() const { return m_findingComponentsHasBeenSet; }
-    inline void SetFindingComponents(const Aws::Vector<PathComponent>& value) { m_findingComponentsHasBeenSet = true; m_findingComponents = value; }
-    inline void SetFindingComponents(Aws::Vector<PathComponent>&& value) { m_findingComponentsHasBeenSet = true; m_findingComponents = std::move(value); }
-    inline AccessScopeAnalysisFinding& WithFindingComponents(const Aws::Vector<PathComponent>& value) { SetFindingComponents(value); return *this;}
-    inline AccessScopeAnalysisFinding& WithFindingComponents(Aws::Vector<PathComponent>&& value) { SetFindingComponents(std::move(value)); return *this;}
-    inline AccessScopeAnalysisFinding& AddFindingComponents(const PathComponent& value) { m_findingComponentsHasBeenSet = true; m_findingComponents.push_back(value); return *this; }
-    inline AccessScopeAnalysisFinding& AddFindingComponents(PathComponent&& value) { m_findingComponentsHasBeenSet = true; m_findingComponents.push_back(std::move(value)); return *this; }
+    template<typename FindingComponentsT = Aws::Vector<PathComponent>>
+    void SetFindingComponents(FindingComponentsT&& value) { m_findingComponentsHasBeenSet = true; m_findingComponents = std::forward<FindingComponentsT>(value); }
+    template<typename FindingComponentsT = Aws::Vector<PathComponent>>
+    AccessScopeAnalysisFinding& WithFindingComponents(FindingComponentsT&& value) { SetFindingComponents(std::forward<FindingComponentsT>(value)); return *this;}
+    template<typename FindingComponentsT = PathComponent>
+    AccessScopeAnalysisFinding& AddFindingComponents(FindingComponentsT&& value) { m_findingComponentsHasBeenSet = true; m_findingComponents.emplace_back(std::forward<FindingComponentsT>(value)); return *this; }
     ///@}
   private:
 

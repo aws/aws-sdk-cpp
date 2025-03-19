@@ -18,14 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-CloudFormation::CloudFormation() : 
-    m_templateLocationHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 CloudFormation::CloudFormation(JsonView jsonValue)
-  : CloudFormation()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CloudFormation& CloudFormation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("templateLocation"))
   {
     m_templateLocation = jsonValue.GetString("templateLocation");
-
     m_templateLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("parameters").GetAllObjects();
@@ -48,7 +39,6 @@ CloudFormation& CloudFormation::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteVehicleArrival::RouteVehicleArrival() : 
-    m_placeHasBeenSet(false),
-    m_timeHasBeenSet(false)
-{
-}
-
 RouteVehicleArrival::RouteVehicleArrival(JsonView jsonValue)
-  : RouteVehicleArrival()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RouteVehicleArrival& RouteVehicleArrival::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Place"))
   {
     m_place = jsonValue.GetObject("Place");
-
     m_placeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Time"))
   {
     m_time = jsonValue.GetString("Time");
-
     m_timeHasBeenSet = true;
   }
-
   return *this;
 }
 

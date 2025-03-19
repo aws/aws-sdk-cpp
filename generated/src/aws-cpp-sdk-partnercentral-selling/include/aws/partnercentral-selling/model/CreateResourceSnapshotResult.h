@@ -27,7 +27,7 @@ namespace Model
   class CreateResourceSnapshotResult
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API CreateResourceSnapshotResult();
+    AWS_PARTNERCENTRALSELLING_API CreateResourceSnapshotResult() = default;
     AWS_PARTNERCENTRALSELLING_API CreateResourceSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PARTNERCENTRALSELLING_API CreateResourceSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
      * <p> Specifies the Amazon Resource Name (ARN) that uniquely identifies the
      * snapshot created. </p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline CreateResourceSnapshotResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline CreateResourceSnapshotResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline CreateResourceSnapshotResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    CreateResourceSnapshotResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,28 +50,29 @@ namespace Model
      * important information about the snapshot's place in the sequence of snapshots
      * for the given resource. </p>
      */
-    inline int GetRevision() const{ return m_revision; }
-    inline void SetRevision(int value) { m_revision = value; }
+    inline int GetRevision() const { return m_revision; }
+    inline void SetRevision(int value) { m_revisionHasBeenSet = true; m_revision = value; }
     inline CreateResourceSnapshotResult& WithRevision(int value) { SetRevision(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateResourceSnapshotResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateResourceSnapshotResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateResourceSnapshotResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateResourceSnapshotResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
-    int m_revision;
+    int m_revision{0};
+    bool m_revisionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

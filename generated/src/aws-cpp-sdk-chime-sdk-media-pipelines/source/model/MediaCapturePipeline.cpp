@@ -18,27 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-MediaCapturePipeline::MediaCapturePipeline() : 
-    m_mediaPipelineIdHasBeenSet(false),
-    m_mediaPipelineArnHasBeenSet(false),
-    m_sourceType(MediaPipelineSourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_status(MediaPipelineStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_sinkType(MediaPipelineSinkType::NOT_SET),
-    m_sinkTypeHasBeenSet(false),
-    m_sinkArnHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false),
-    m_chimeSdkMeetingConfigurationHasBeenSet(false),
-    m_sseAwsKeyManagementParamsHasBeenSet(false),
-    m_sinkIamRoleArnHasBeenSet(false)
-{
-}
-
 MediaCapturePipeline::MediaCapturePipeline(JsonView jsonValue)
-  : MediaCapturePipeline()
 {
   *this = jsonValue;
 }
@@ -48,87 +28,63 @@ MediaCapturePipeline& MediaCapturePipeline::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MediaPipelineId"))
   {
     m_mediaPipelineId = jsonValue.GetString("MediaPipelineId");
-
     m_mediaPipelineIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaPipelineArn"))
   {
     m_mediaPipelineArn = jsonValue.GetString("MediaPipelineArn");
-
     m_mediaPipelineArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceType"))
   {
     m_sourceType = MediaPipelineSourceTypeMapper::GetMediaPipelineSourceTypeForName(jsonValue.GetString("SourceType"));
-
     m_sourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceArn"))
   {
     m_sourceArn = jsonValue.GetString("SourceArn");
-
     m_sourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = MediaPipelineStatusMapper::GetMediaPipelineStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SinkType"))
   {
     m_sinkType = MediaPipelineSinkTypeMapper::GetMediaPipelineSinkTypeForName(jsonValue.GetString("SinkType"));
-
     m_sinkTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SinkArn"))
   {
     m_sinkArn = jsonValue.GetString("SinkArn");
-
     m_sinkArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetString("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedTimestamp"))
   {
     m_updatedTimestamp = jsonValue.GetString("UpdatedTimestamp");
-
     m_updatedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChimeSdkMeetingConfiguration"))
   {
     m_chimeSdkMeetingConfiguration = jsonValue.GetObject("ChimeSdkMeetingConfiguration");
-
     m_chimeSdkMeetingConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SseAwsKeyManagementParams"))
   {
     m_sseAwsKeyManagementParams = jsonValue.GetObject("SseAwsKeyManagementParams");
-
     m_sseAwsKeyManagementParamsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SinkIamRoleArn"))
   {
     m_sinkIamRoleArn = jsonValue.GetString("SinkIamRoleArn");
-
     m_sinkIamRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

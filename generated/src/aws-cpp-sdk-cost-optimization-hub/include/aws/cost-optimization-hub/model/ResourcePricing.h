@@ -32,7 +32,7 @@ namespace Model
   class ResourcePricing
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API ResourcePricing();
+    AWS_COSTOPTIMIZATIONHUB_API ResourcePricing() = default;
     AWS_COSTOPTIMIZATIONHUB_API ResourcePricing(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API ResourcePricing& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>The savings estimate using Amazon Web Services public pricing without
      * incorporating any discounts.</p>
      */
-    inline double GetEstimatedCostBeforeDiscounts() const{ return m_estimatedCostBeforeDiscounts; }
+    inline double GetEstimatedCostBeforeDiscounts() const { return m_estimatedCostBeforeDiscounts; }
     inline bool EstimatedCostBeforeDiscountsHasBeenSet() const { return m_estimatedCostBeforeDiscountsHasBeenSet; }
     inline void SetEstimatedCostBeforeDiscounts(double value) { m_estimatedCostBeforeDiscountsHasBeenSet = true; m_estimatedCostBeforeDiscounts = value; }
     inline ResourcePricing& WithEstimatedCostBeforeDiscounts(double value) { SetEstimatedCostBeforeDiscounts(value); return *this;}
@@ -53,7 +53,7 @@ namespace Model
     /**
      * <p>The estimated net unused amortized commitment for the recommendation.</p>
      */
-    inline double GetEstimatedNetUnusedAmortizedCommitments() const{ return m_estimatedNetUnusedAmortizedCommitments; }
+    inline double GetEstimatedNetUnusedAmortizedCommitments() const { return m_estimatedNetUnusedAmortizedCommitments; }
     inline bool EstimatedNetUnusedAmortizedCommitmentsHasBeenSet() const { return m_estimatedNetUnusedAmortizedCommitmentsHasBeenSet; }
     inline void SetEstimatedNetUnusedAmortizedCommitments(double value) { m_estimatedNetUnusedAmortizedCommitmentsHasBeenSet = true; m_estimatedNetUnusedAmortizedCommitments = value; }
     inline ResourcePricing& WithEstimatedNetUnusedAmortizedCommitments(double value) { SetEstimatedNetUnusedAmortizedCommitments(value); return *this;}
@@ -63,12 +63,12 @@ namespace Model
     /**
      * <p>The estimated discounts for a recommendation.</p>
      */
-    inline const EstimatedDiscounts& GetEstimatedDiscounts() const{ return m_estimatedDiscounts; }
+    inline const EstimatedDiscounts& GetEstimatedDiscounts() const { return m_estimatedDiscounts; }
     inline bool EstimatedDiscountsHasBeenSet() const { return m_estimatedDiscountsHasBeenSet; }
-    inline void SetEstimatedDiscounts(const EstimatedDiscounts& value) { m_estimatedDiscountsHasBeenSet = true; m_estimatedDiscounts = value; }
-    inline void SetEstimatedDiscounts(EstimatedDiscounts&& value) { m_estimatedDiscountsHasBeenSet = true; m_estimatedDiscounts = std::move(value); }
-    inline ResourcePricing& WithEstimatedDiscounts(const EstimatedDiscounts& value) { SetEstimatedDiscounts(value); return *this;}
-    inline ResourcePricing& WithEstimatedDiscounts(EstimatedDiscounts&& value) { SetEstimatedDiscounts(std::move(value)); return *this;}
+    template<typename EstimatedDiscountsT = EstimatedDiscounts>
+    void SetEstimatedDiscounts(EstimatedDiscountsT&& value) { m_estimatedDiscountsHasBeenSet = true; m_estimatedDiscounts = std::forward<EstimatedDiscountsT>(value); }
+    template<typename EstimatedDiscountsT = EstimatedDiscounts>
+    ResourcePricing& WithEstimatedDiscounts(EstimatedDiscountsT&& value) { SetEstimatedDiscounts(std::forward<EstimatedDiscountsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,23 +76,23 @@ namespace Model
      * <p>The savings estimate incorporating all discounts with Amazon Web Services,
      * such as Reserved Instances and Savings Plans.</p>
      */
-    inline double GetEstimatedCostAfterDiscounts() const{ return m_estimatedCostAfterDiscounts; }
+    inline double GetEstimatedCostAfterDiscounts() const { return m_estimatedCostAfterDiscounts; }
     inline bool EstimatedCostAfterDiscountsHasBeenSet() const { return m_estimatedCostAfterDiscountsHasBeenSet; }
     inline void SetEstimatedCostAfterDiscounts(double value) { m_estimatedCostAfterDiscountsHasBeenSet = true; m_estimatedCostAfterDiscounts = value; }
     inline ResourcePricing& WithEstimatedCostAfterDiscounts(double value) { SetEstimatedCostAfterDiscounts(value); return *this;}
     ///@}
   private:
 
-    double m_estimatedCostBeforeDiscounts;
+    double m_estimatedCostBeforeDiscounts{0.0};
     bool m_estimatedCostBeforeDiscountsHasBeenSet = false;
 
-    double m_estimatedNetUnusedAmortizedCommitments;
+    double m_estimatedNetUnusedAmortizedCommitments{0.0};
     bool m_estimatedNetUnusedAmortizedCommitmentsHasBeenSet = false;
 
     EstimatedDiscounts m_estimatedDiscounts;
     bool m_estimatedDiscountsHasBeenSet = false;
 
-    double m_estimatedCostAfterDiscounts;
+    double m_estimatedCostAfterDiscounts{0.0};
     bool m_estimatedCostAfterDiscountsHasBeenSet = false;
   };
 

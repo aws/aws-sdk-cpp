@@ -21,7 +21,7 @@ namespace Model
   class DeleteInstanceRequest : public OpsWorksRequest
   {
   public:
-    AWS_OPSWORKS_API DeleteInstanceRequest();
+    AWS_OPSWORKS_API DeleteInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,21 +38,19 @@ namespace Model
     /**
      * <p>The instance ID.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline DeleteInstanceRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline DeleteInstanceRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline DeleteInstanceRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    DeleteInstanceRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether to delete the instance Elastic IP address.</p>
      */
-    inline bool GetDeleteElasticIp() const{ return m_deleteElasticIp; }
+    inline bool GetDeleteElasticIp() const { return m_deleteElasticIp; }
     inline bool DeleteElasticIpHasBeenSet() const { return m_deleteElasticIpHasBeenSet; }
     inline void SetDeleteElasticIp(bool value) { m_deleteElasticIpHasBeenSet = true; m_deleteElasticIp = value; }
     inline DeleteInstanceRequest& WithDeleteElasticIp(bool value) { SetDeleteElasticIp(value); return *this;}
@@ -62,7 +60,7 @@ namespace Model
     /**
      * <p>Whether to delete the instance's Amazon EBS volumes.</p>
      */
-    inline bool GetDeleteVolumes() const{ return m_deleteVolumes; }
+    inline bool GetDeleteVolumes() const { return m_deleteVolumes; }
     inline bool DeleteVolumesHasBeenSet() const { return m_deleteVolumesHasBeenSet; }
     inline void SetDeleteVolumes(bool value) { m_deleteVolumesHasBeenSet = true; m_deleteVolumes = value; }
     inline DeleteInstanceRequest& WithDeleteVolumes(bool value) { SetDeleteVolumes(value); return *this;}
@@ -72,10 +70,10 @@ namespace Model
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
 
-    bool m_deleteElasticIp;
+    bool m_deleteElasticIp{false};
     bool m_deleteElasticIpHasBeenSet = false;
 
-    bool m_deleteVolumes;
+    bool m_deleteVolumes{false};
     bool m_deleteVolumesHasBeenSet = false;
   };
 

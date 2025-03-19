@@ -18,16 +18,7 @@ namespace MainframeModernization
 namespace Model
 {
 
-DatasetOrgAttributes::DatasetOrgAttributes() : 
-    m_gdgHasBeenSet(false),
-    m_poHasBeenSet(false),
-    m_psHasBeenSet(false),
-    m_vsamHasBeenSet(false)
-{
-}
-
 DatasetOrgAttributes::DatasetOrgAttributes(JsonView jsonValue)
-  : DatasetOrgAttributes()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ DatasetOrgAttributes& DatasetOrgAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("gdg"))
   {
     m_gdg = jsonValue.GetObject("gdg");
-
     m_gdgHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("po"))
   {
     m_po = jsonValue.GetObject("po");
-
     m_poHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ps"))
   {
     m_ps = jsonValue.GetObject("ps");
-
     m_psHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vsam"))
   {
     m_vsam = jsonValue.GetObject("vsam");
-
     m_vsamHasBeenSet = true;
   }
-
   return *this;
 }
 

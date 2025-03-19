@@ -18,13 +18,7 @@ namespace TranscribeService
 namespace Model
 {
 
-MedicalTranscript::MedicalTranscript() : 
-    m_transcriptFileUriHasBeenSet(false)
-{
-}
-
 MedicalTranscript::MedicalTranscript(JsonView jsonValue)
-  : MedicalTranscript()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MedicalTranscript& MedicalTranscript::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TranscriptFileUri"))
   {
     m_transcriptFileUri = jsonValue.GetString("TranscriptFileUri");
-
     m_transcriptFileUriHasBeenSet = true;
   }
-
   return *this;
 }
 

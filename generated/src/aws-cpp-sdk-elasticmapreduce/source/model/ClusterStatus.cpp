@@ -18,17 +18,7 @@ namespace EMR
 namespace Model
 {
 
-ClusterStatus::ClusterStatus() : 
-    m_state(ClusterState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateChangeReasonHasBeenSet(false),
-    m_timelineHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false)
-{
-}
-
 ClusterStatus::ClusterStatus(JsonView jsonValue)
-  : ClusterStatus()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ClusterStatus& ClusterStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("State"))
   {
     m_state = ClusterStateMapper::GetClusterStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateChangeReason"))
   {
     m_stateChangeReason = jsonValue.GetObject("StateChangeReason");
-
     m_stateChangeReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timeline"))
   {
     m_timeline = jsonValue.GetObject("Timeline");
-
     m_timelineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorDetails"))
   {
     Aws::Utils::Array<JsonView> errorDetailsJsonList = jsonValue.GetArray("ErrorDetails");
@@ -65,7 +49,6 @@ ClusterStatus& ClusterStatus::operator =(JsonView jsonValue)
     }
     m_errorDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

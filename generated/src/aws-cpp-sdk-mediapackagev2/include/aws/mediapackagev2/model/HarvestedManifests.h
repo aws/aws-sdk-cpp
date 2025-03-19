@@ -35,7 +35,7 @@ namespace Model
   class HarvestedManifests
   {
   public:
-    AWS_MEDIAPACKAGEV2_API HarvestedManifests();
+    AWS_MEDIAPACKAGEV2_API HarvestedManifests() = default;
     AWS_MEDIAPACKAGEV2_API HarvestedManifests(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API HarvestedManifests& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,42 +45,42 @@ namespace Model
     /**
      * <p>A list of harvested HLS manifests.</p>
      */
-    inline const Aws::Vector<HarvestedHlsManifest>& GetHlsManifests() const{ return m_hlsManifests; }
+    inline const Aws::Vector<HarvestedHlsManifest>& GetHlsManifests() const { return m_hlsManifests; }
     inline bool HlsManifestsHasBeenSet() const { return m_hlsManifestsHasBeenSet; }
-    inline void SetHlsManifests(const Aws::Vector<HarvestedHlsManifest>& value) { m_hlsManifestsHasBeenSet = true; m_hlsManifests = value; }
-    inline void SetHlsManifests(Aws::Vector<HarvestedHlsManifest>&& value) { m_hlsManifestsHasBeenSet = true; m_hlsManifests = std::move(value); }
-    inline HarvestedManifests& WithHlsManifests(const Aws::Vector<HarvestedHlsManifest>& value) { SetHlsManifests(value); return *this;}
-    inline HarvestedManifests& WithHlsManifests(Aws::Vector<HarvestedHlsManifest>&& value) { SetHlsManifests(std::move(value)); return *this;}
-    inline HarvestedManifests& AddHlsManifests(const HarvestedHlsManifest& value) { m_hlsManifestsHasBeenSet = true; m_hlsManifests.push_back(value); return *this; }
-    inline HarvestedManifests& AddHlsManifests(HarvestedHlsManifest&& value) { m_hlsManifestsHasBeenSet = true; m_hlsManifests.push_back(std::move(value)); return *this; }
+    template<typename HlsManifestsT = Aws::Vector<HarvestedHlsManifest>>
+    void SetHlsManifests(HlsManifestsT&& value) { m_hlsManifestsHasBeenSet = true; m_hlsManifests = std::forward<HlsManifestsT>(value); }
+    template<typename HlsManifestsT = Aws::Vector<HarvestedHlsManifest>>
+    HarvestedManifests& WithHlsManifests(HlsManifestsT&& value) { SetHlsManifests(std::forward<HlsManifestsT>(value)); return *this;}
+    template<typename HlsManifestsT = HarvestedHlsManifest>
+    HarvestedManifests& AddHlsManifests(HlsManifestsT&& value) { m_hlsManifestsHasBeenSet = true; m_hlsManifests.emplace_back(std::forward<HlsManifestsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of harvested DASH manifests.</p>
      */
-    inline const Aws::Vector<HarvestedDashManifest>& GetDashManifests() const{ return m_dashManifests; }
+    inline const Aws::Vector<HarvestedDashManifest>& GetDashManifests() const { return m_dashManifests; }
     inline bool DashManifestsHasBeenSet() const { return m_dashManifestsHasBeenSet; }
-    inline void SetDashManifests(const Aws::Vector<HarvestedDashManifest>& value) { m_dashManifestsHasBeenSet = true; m_dashManifests = value; }
-    inline void SetDashManifests(Aws::Vector<HarvestedDashManifest>&& value) { m_dashManifestsHasBeenSet = true; m_dashManifests = std::move(value); }
-    inline HarvestedManifests& WithDashManifests(const Aws::Vector<HarvestedDashManifest>& value) { SetDashManifests(value); return *this;}
-    inline HarvestedManifests& WithDashManifests(Aws::Vector<HarvestedDashManifest>&& value) { SetDashManifests(std::move(value)); return *this;}
-    inline HarvestedManifests& AddDashManifests(const HarvestedDashManifest& value) { m_dashManifestsHasBeenSet = true; m_dashManifests.push_back(value); return *this; }
-    inline HarvestedManifests& AddDashManifests(HarvestedDashManifest&& value) { m_dashManifestsHasBeenSet = true; m_dashManifests.push_back(std::move(value)); return *this; }
+    template<typename DashManifestsT = Aws::Vector<HarvestedDashManifest>>
+    void SetDashManifests(DashManifestsT&& value) { m_dashManifestsHasBeenSet = true; m_dashManifests = std::forward<DashManifestsT>(value); }
+    template<typename DashManifestsT = Aws::Vector<HarvestedDashManifest>>
+    HarvestedManifests& WithDashManifests(DashManifestsT&& value) { SetDashManifests(std::forward<DashManifestsT>(value)); return *this;}
+    template<typename DashManifestsT = HarvestedDashManifest>
+    HarvestedManifests& AddDashManifests(DashManifestsT&& value) { m_dashManifestsHasBeenSet = true; m_dashManifests.emplace_back(std::forward<DashManifestsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of harvested Low-Latency HLS manifests.</p>
      */
-    inline const Aws::Vector<HarvestedLowLatencyHlsManifest>& GetLowLatencyHlsManifests() const{ return m_lowLatencyHlsManifests; }
+    inline const Aws::Vector<HarvestedLowLatencyHlsManifest>& GetLowLatencyHlsManifests() const { return m_lowLatencyHlsManifests; }
     inline bool LowLatencyHlsManifestsHasBeenSet() const { return m_lowLatencyHlsManifestsHasBeenSet; }
-    inline void SetLowLatencyHlsManifests(const Aws::Vector<HarvestedLowLatencyHlsManifest>& value) { m_lowLatencyHlsManifestsHasBeenSet = true; m_lowLatencyHlsManifests = value; }
-    inline void SetLowLatencyHlsManifests(Aws::Vector<HarvestedLowLatencyHlsManifest>&& value) { m_lowLatencyHlsManifestsHasBeenSet = true; m_lowLatencyHlsManifests = std::move(value); }
-    inline HarvestedManifests& WithLowLatencyHlsManifests(const Aws::Vector<HarvestedLowLatencyHlsManifest>& value) { SetLowLatencyHlsManifests(value); return *this;}
-    inline HarvestedManifests& WithLowLatencyHlsManifests(Aws::Vector<HarvestedLowLatencyHlsManifest>&& value) { SetLowLatencyHlsManifests(std::move(value)); return *this;}
-    inline HarvestedManifests& AddLowLatencyHlsManifests(const HarvestedLowLatencyHlsManifest& value) { m_lowLatencyHlsManifestsHasBeenSet = true; m_lowLatencyHlsManifests.push_back(value); return *this; }
-    inline HarvestedManifests& AddLowLatencyHlsManifests(HarvestedLowLatencyHlsManifest&& value) { m_lowLatencyHlsManifestsHasBeenSet = true; m_lowLatencyHlsManifests.push_back(std::move(value)); return *this; }
+    template<typename LowLatencyHlsManifestsT = Aws::Vector<HarvestedLowLatencyHlsManifest>>
+    void SetLowLatencyHlsManifests(LowLatencyHlsManifestsT&& value) { m_lowLatencyHlsManifestsHasBeenSet = true; m_lowLatencyHlsManifests = std::forward<LowLatencyHlsManifestsT>(value); }
+    template<typename LowLatencyHlsManifestsT = Aws::Vector<HarvestedLowLatencyHlsManifest>>
+    HarvestedManifests& WithLowLatencyHlsManifests(LowLatencyHlsManifestsT&& value) { SetLowLatencyHlsManifests(std::forward<LowLatencyHlsManifestsT>(value)); return *this;}
+    template<typename LowLatencyHlsManifestsT = HarvestedLowLatencyHlsManifest>
+    HarvestedManifests& AddLowLatencyHlsManifests(LowLatencyHlsManifestsT&& value) { m_lowLatencyHlsManifestsHasBeenSet = true; m_lowLatencyHlsManifests.emplace_back(std::forward<LowLatencyHlsManifestsT>(value)); return *this; }
     ///@}
   private:
 

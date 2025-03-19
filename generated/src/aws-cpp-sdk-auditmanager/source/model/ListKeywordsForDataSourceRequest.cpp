@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListKeywordsForDataSourceRequest::ListKeywordsForDataSourceRequest() : 
-    m_source(DataSourceType::NOT_SET),
-    m_sourceHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListKeywordsForDataSourceRequest::SerializePayload() const
 {
   return {};

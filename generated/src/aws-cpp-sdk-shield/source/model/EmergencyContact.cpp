@@ -18,15 +18,7 @@ namespace Shield
 namespace Model
 {
 
-EmergencyContact::EmergencyContact() : 
-    m_emailAddressHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_contactNotesHasBeenSet(false)
-{
-}
-
 EmergencyContact::EmergencyContact(JsonView jsonValue)
-  : EmergencyContact()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ EmergencyContact& EmergencyContact::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EmailAddress"))
   {
     m_emailAddress = jsonValue.GetString("EmailAddress");
-
     m_emailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhoneNumber"))
   {
     m_phoneNumber = jsonValue.GetString("PhoneNumber");
-
     m_phoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContactNotes"))
   {
     m_contactNotes = jsonValue.GetString("ContactNotes");
-
     m_contactNotesHasBeenSet = true;
   }
-
   return *this;
 }
 

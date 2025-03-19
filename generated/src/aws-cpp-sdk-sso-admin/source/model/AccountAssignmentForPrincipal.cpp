@@ -18,17 +18,7 @@ namespace SSOAdmin
 namespace Model
 {
 
-AccountAssignmentForPrincipal::AccountAssignmentForPrincipal() : 
-    m_accountIdHasBeenSet(false),
-    m_permissionSetArnHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_principalType(PrincipalType::NOT_SET),
-    m_principalTypeHasBeenSet(false)
-{
-}
-
 AccountAssignmentForPrincipal::AccountAssignmentForPrincipal(JsonView jsonValue)
-  : AccountAssignmentForPrincipal()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AccountAssignmentForPrincipal& AccountAssignmentForPrincipal::operator =(JsonVie
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PermissionSetArn"))
   {
     m_permissionSetArn = jsonValue.GetString("PermissionSetArn");
-
     m_permissionSetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrincipalId"))
   {
     m_principalId = jsonValue.GetString("PrincipalId");
-
     m_principalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrincipalType"))
   {
     m_principalType = PrincipalTypeMapper::GetPrincipalTypeForName(jsonValue.GetString("PrincipalType"));
-
     m_principalTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

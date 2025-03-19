@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateInputResult::UpdateInputResult()
-{
-}
-
 UpdateInputResult::UpdateInputResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateInputResult& UpdateInputResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("inputConfiguration"))
   {
     m_inputConfiguration = jsonValue.GetObject("inputConfiguration");
-
+    m_inputConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

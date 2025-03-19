@@ -31,7 +31,7 @@ namespace Model
   class ChildBlock
   {
   public:
-    AWS_COMPREHEND_API ChildBlock();
+    AWS_COMPREHEND_API ChildBlock() = default;
     AWS_COMPREHEND_API ChildBlock(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API ChildBlock& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,21 +41,19 @@ namespace Model
     /**
      * <p>Unique identifier for the child block.</p>
      */
-    inline const Aws::String& GetChildBlockId() const{ return m_childBlockId; }
+    inline const Aws::String& GetChildBlockId() const { return m_childBlockId; }
     inline bool ChildBlockIdHasBeenSet() const { return m_childBlockIdHasBeenSet; }
-    inline void SetChildBlockId(const Aws::String& value) { m_childBlockIdHasBeenSet = true; m_childBlockId = value; }
-    inline void SetChildBlockId(Aws::String&& value) { m_childBlockIdHasBeenSet = true; m_childBlockId = std::move(value); }
-    inline void SetChildBlockId(const char* value) { m_childBlockIdHasBeenSet = true; m_childBlockId.assign(value); }
-    inline ChildBlock& WithChildBlockId(const Aws::String& value) { SetChildBlockId(value); return *this;}
-    inline ChildBlock& WithChildBlockId(Aws::String&& value) { SetChildBlockId(std::move(value)); return *this;}
-    inline ChildBlock& WithChildBlockId(const char* value) { SetChildBlockId(value); return *this;}
+    template<typename ChildBlockIdT = Aws::String>
+    void SetChildBlockId(ChildBlockIdT&& value) { m_childBlockIdHasBeenSet = true; m_childBlockId = std::forward<ChildBlockIdT>(value); }
+    template<typename ChildBlockIdT = Aws::String>
+    ChildBlock& WithChildBlockId(ChildBlockIdT&& value) { SetChildBlockId(std::forward<ChildBlockIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Offset of the start of the child block within its parent block.</p>
      */
-    inline int GetBeginOffset() const{ return m_beginOffset; }
+    inline int GetBeginOffset() const { return m_beginOffset; }
     inline bool BeginOffsetHasBeenSet() const { return m_beginOffsetHasBeenSet; }
     inline void SetBeginOffset(int value) { m_beginOffsetHasBeenSet = true; m_beginOffset = value; }
     inline ChildBlock& WithBeginOffset(int value) { SetBeginOffset(value); return *this;}
@@ -65,7 +63,7 @@ namespace Model
     /**
      * <p>Offset of the end of the child block within its parent block.</p>
      */
-    inline int GetEndOffset() const{ return m_endOffset; }
+    inline int GetEndOffset() const { return m_endOffset; }
     inline bool EndOffsetHasBeenSet() const { return m_endOffsetHasBeenSet; }
     inline void SetEndOffset(int value) { m_endOffsetHasBeenSet = true; m_endOffset = value; }
     inline ChildBlock& WithEndOffset(int value) { SetEndOffset(value); return *this;}
@@ -75,10 +73,10 @@ namespace Model
     Aws::String m_childBlockId;
     bool m_childBlockIdHasBeenSet = false;
 
-    int m_beginOffset;
+    int m_beginOffset{0};
     bool m_beginOffsetHasBeenSet = false;
 
-    int m_endOffset;
+    int m_endOffset{0};
     bool m_endOffsetHasBeenSet = false;
   };
 

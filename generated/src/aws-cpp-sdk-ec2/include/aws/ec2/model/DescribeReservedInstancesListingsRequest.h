@@ -27,7 +27,7 @@ namespace Model
   class DescribeReservedInstancesListingsRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeReservedInstancesListingsRequest();
+    AWS_EC2_API DescribeReservedInstancesListingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>One or more Reserved Instance IDs.</p>
      */
-    inline const Aws::String& GetReservedInstancesId() const{ return m_reservedInstancesId; }
+    inline const Aws::String& GetReservedInstancesId() const { return m_reservedInstancesId; }
     inline bool ReservedInstancesIdHasBeenSet() const { return m_reservedInstancesIdHasBeenSet; }
-    inline void SetReservedInstancesId(const Aws::String& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = value; }
-    inline void SetReservedInstancesId(Aws::String&& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = std::move(value); }
-    inline void SetReservedInstancesId(const char* value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId.assign(value); }
-    inline DescribeReservedInstancesListingsRequest& WithReservedInstancesId(const Aws::String& value) { SetReservedInstancesId(value); return *this;}
-    inline DescribeReservedInstancesListingsRequest& WithReservedInstancesId(Aws::String&& value) { SetReservedInstancesId(std::move(value)); return *this;}
-    inline DescribeReservedInstancesListingsRequest& WithReservedInstancesId(const char* value) { SetReservedInstancesId(value); return *this;}
+    template<typename ReservedInstancesIdT = Aws::String>
+    void SetReservedInstancesId(ReservedInstancesIdT&& value) { m_reservedInstancesIdHasBeenSet = true; m_reservedInstancesId = std::forward<ReservedInstancesIdT>(value); }
+    template<typename ReservedInstancesIdT = Aws::String>
+    DescribeReservedInstancesListingsRequest& WithReservedInstancesId(ReservedInstancesIdT&& value) { SetReservedInstancesId(std::forward<ReservedInstancesIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>One or more Reserved Instance listing IDs.</p>
      */
-    inline const Aws::String& GetReservedInstancesListingId() const{ return m_reservedInstancesListingId; }
+    inline const Aws::String& GetReservedInstancesListingId() const { return m_reservedInstancesListingId; }
     inline bool ReservedInstancesListingIdHasBeenSet() const { return m_reservedInstancesListingIdHasBeenSet; }
-    inline void SetReservedInstancesListingId(const Aws::String& value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId = value; }
-    inline void SetReservedInstancesListingId(Aws::String&& value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId = std::move(value); }
-    inline void SetReservedInstancesListingId(const char* value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId.assign(value); }
-    inline DescribeReservedInstancesListingsRequest& WithReservedInstancesListingId(const Aws::String& value) { SetReservedInstancesListingId(value); return *this;}
-    inline DescribeReservedInstancesListingsRequest& WithReservedInstancesListingId(Aws::String&& value) { SetReservedInstancesListingId(std::move(value)); return *this;}
-    inline DescribeReservedInstancesListingsRequest& WithReservedInstancesListingId(const char* value) { SetReservedInstancesListingId(value); return *this;}
+    template<typename ReservedInstancesListingIdT = Aws::String>
+    void SetReservedInstancesListingId(ReservedInstancesListingIdT&& value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId = std::forward<ReservedInstancesListingIdT>(value); }
+    template<typename ReservedInstancesListingIdT = Aws::String>
+    DescribeReservedInstancesListingsRequest& WithReservedInstancesListingId(ReservedInstancesListingIdT&& value) { SetReservedInstancesListingId(std::forward<ReservedInstancesListingIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +76,14 @@ namespace Model
      * <code>cancelled</code> | <code>closed</code>).</p> </li> <li> <p>
      * <code>status-message</code> - The reason for the status.</p> </li> </ul>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeReservedInstancesListingsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeReservedInstancesListingsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeReservedInstancesListingsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeReservedInstancesListingsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    DescribeReservedInstancesListingsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    DescribeReservedInstancesListingsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
   private:
 

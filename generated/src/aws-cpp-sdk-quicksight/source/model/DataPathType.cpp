@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DataPathType::DataPathType() : 
-    m_pivotTableDataPathType(PivotTableDataPathType::NOT_SET),
-    m_pivotTableDataPathTypeHasBeenSet(false)
-{
-}
-
 DataPathType::DataPathType(JsonView jsonValue)
-  : DataPathType()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DataPathType& DataPathType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PivotTableDataPathType"))
   {
     m_pivotTableDataPathType = PivotTableDataPathTypeMapper::GetPivotTableDataPathTypeForName(jsonValue.GetString("PivotTableDataPathType"));
-
     m_pivotTableDataPathTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

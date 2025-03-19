@@ -18,23 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-JobSummary::JobSummary() : 
-    m_bucketCriteriaHasBeenSet(false),
-    m_bucketDefinitionsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_jobType(JobType::NOT_SET),
-    m_jobTypeHasBeenSet(false),
-    m_lastRunErrorStatusHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_userPausedDetailsHasBeenSet(false)
-{
-}
-
 JobSummary::JobSummary(JsonView jsonValue)
-  : JobSummary()
 {
   *this = jsonValue;
 }
@@ -44,10 +28,8 @@ JobSummary& JobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucketCriteria"))
   {
     m_bucketCriteria = jsonValue.GetObject("bucketCriteria");
-
     m_bucketCriteriaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bucketDefinitions"))
   {
     Aws::Utils::Array<JsonView> bucketDefinitionsJsonList = jsonValue.GetArray("bucketDefinitions");
@@ -57,56 +39,41 @@ JobSummary& JobSummary::operator =(JsonView jsonValue)
     }
     m_bucketDefinitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobStatus"))
   {
     m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("jobStatus"));
-
     m_jobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobType"))
   {
     m_jobType = JobTypeMapper::GetJobTypeForName(jsonValue.GetString("jobType"));
-
     m_jobTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastRunErrorStatus"))
   {
     m_lastRunErrorStatus = jsonValue.GetObject("lastRunErrorStatus");
-
     m_lastRunErrorStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userPausedDetails"))
   {
     m_userPausedDetails = jsonValue.GetObject("userPausedDetails");
-
     m_userPausedDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

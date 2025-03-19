@@ -31,7 +31,7 @@ namespace Model
   class CreateBotLocaleResult
   {
   public:
-    AWS_LEXMODELSV2_API CreateBotLocaleResult();
+    AWS_LEXMODELSV2_API CreateBotLocaleResult() = default;
     AWS_LEXMODELSV2_API CreateBotLocaleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELSV2_API CreateBotLocaleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,65 +40,55 @@ namespace Model
     /**
      * <p>The specified bot identifier.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
-    inline void SetBotId(const Aws::String& value) { m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botId.assign(value); }
-    inline CreateBotLocaleResult& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline CreateBotLocaleResult& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline CreateBotLocaleResult& WithBotId(const char* value) { SetBotId(value); return *this;}
+    inline const Aws::String& GetBotId() const { return m_botId; }
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    CreateBotLocaleResult& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The specified bot version.</p>
      */
-    inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
-    inline void SetBotVersion(const Aws::String& value) { m_botVersion = value; }
-    inline void SetBotVersion(Aws::String&& value) { m_botVersion = std::move(value); }
-    inline void SetBotVersion(const char* value) { m_botVersion.assign(value); }
-    inline CreateBotLocaleResult& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
-    inline CreateBotLocaleResult& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
-    inline CreateBotLocaleResult& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
+    inline const Aws::String& GetBotVersion() const { return m_botVersion; }
+    template<typename BotVersionT = Aws::String>
+    void SetBotVersion(BotVersionT&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::forward<BotVersionT>(value); }
+    template<typename BotVersionT = Aws::String>
+    CreateBotLocaleResult& WithBotVersion(BotVersionT&& value) { SetBotVersion(std::forward<BotVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The specified locale name.</p>
      */
-    inline const Aws::String& GetLocaleName() const{ return m_localeName; }
-    inline void SetLocaleName(const Aws::String& value) { m_localeName = value; }
-    inline void SetLocaleName(Aws::String&& value) { m_localeName = std::move(value); }
-    inline void SetLocaleName(const char* value) { m_localeName.assign(value); }
-    inline CreateBotLocaleResult& WithLocaleName(const Aws::String& value) { SetLocaleName(value); return *this;}
-    inline CreateBotLocaleResult& WithLocaleName(Aws::String&& value) { SetLocaleName(std::move(value)); return *this;}
-    inline CreateBotLocaleResult& WithLocaleName(const char* value) { SetLocaleName(value); return *this;}
+    inline const Aws::String& GetLocaleName() const { return m_localeName; }
+    template<typename LocaleNameT = Aws::String>
+    void SetLocaleName(LocaleNameT&& value) { m_localeNameHasBeenSet = true; m_localeName = std::forward<LocaleNameT>(value); }
+    template<typename LocaleNameT = Aws::String>
+    CreateBotLocaleResult& WithLocaleName(LocaleNameT&& value) { SetLocaleName(std::forward<LocaleNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The specified locale identifier.</p>
      */
-    inline const Aws::String& GetLocaleId() const{ return m_localeId; }
-    inline void SetLocaleId(const Aws::String& value) { m_localeId = value; }
-    inline void SetLocaleId(Aws::String&& value) { m_localeId = std::move(value); }
-    inline void SetLocaleId(const char* value) { m_localeId.assign(value); }
-    inline CreateBotLocaleResult& WithLocaleId(const Aws::String& value) { SetLocaleId(value); return *this;}
-    inline CreateBotLocaleResult& WithLocaleId(Aws::String&& value) { SetLocaleId(std::move(value)); return *this;}
-    inline CreateBotLocaleResult& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
+    inline const Aws::String& GetLocaleId() const { return m_localeId; }
+    template<typename LocaleIdT = Aws::String>
+    void SetLocaleId(LocaleIdT&& value) { m_localeIdHasBeenSet = true; m_localeId = std::forward<LocaleIdT>(value); }
+    template<typename LocaleIdT = Aws::String>
+    CreateBotLocaleResult& WithLocaleId(LocaleIdT&& value) { SetLocaleId(std::forward<LocaleIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The specified description of the bot locale.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline CreateBotLocaleResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateBotLocaleResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateBotLocaleResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateBotLocaleResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,8 +97,8 @@ namespace Model
      * <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code>
      * intents.</p>
      */
-    inline double GetNluIntentConfidenceThreshold() const{ return m_nluIntentConfidenceThreshold; }
-    inline void SetNluIntentConfidenceThreshold(double value) { m_nluIntentConfidenceThreshold = value; }
+    inline double GetNluIntentConfidenceThreshold() const { return m_nluIntentConfidenceThreshold; }
+    inline void SetNluIntentConfidenceThreshold(double value) { m_nluIntentConfidenceThresholdHasBeenSet = true; m_nluIntentConfidenceThreshold = value; }
     inline CreateBotLocaleResult& WithNluIntentConfidenceThreshold(double value) { SetNluIntentConfidenceThreshold(value); return *this;}
     ///@}
 
@@ -117,11 +107,11 @@ namespace Model
      * <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the
      * user.</p>
      */
-    inline const VoiceSettings& GetVoiceSettings() const{ return m_voiceSettings; }
-    inline void SetVoiceSettings(const VoiceSettings& value) { m_voiceSettings = value; }
-    inline void SetVoiceSettings(VoiceSettings&& value) { m_voiceSettings = std::move(value); }
-    inline CreateBotLocaleResult& WithVoiceSettings(const VoiceSettings& value) { SetVoiceSettings(value); return *this;}
-    inline CreateBotLocaleResult& WithVoiceSettings(VoiceSettings&& value) { SetVoiceSettings(std::move(value)); return *this;}
+    inline const VoiceSettings& GetVoiceSettings() const { return m_voiceSettings; }
+    template<typename VoiceSettingsT = VoiceSettings>
+    void SetVoiceSettings(VoiceSettingsT&& value) { m_voiceSettingsHasBeenSet = true; m_voiceSettings = std::forward<VoiceSettingsT>(value); }
+    template<typename VoiceSettingsT = VoiceSettings>
+    CreateBotLocaleResult& WithVoiceSettings(VoiceSettingsT&& value) { SetVoiceSettings(std::forward<VoiceSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,66 +125,73 @@ namespace Model
      * problem with building the bot, the status is <code>Failed</code>. If the bot was
      * saved but not built, the status is <code>NotBuilt</code>.</p>
      */
-    inline const BotLocaleStatus& GetBotLocaleStatus() const{ return m_botLocaleStatus; }
-    inline void SetBotLocaleStatus(const BotLocaleStatus& value) { m_botLocaleStatus = value; }
-    inline void SetBotLocaleStatus(BotLocaleStatus&& value) { m_botLocaleStatus = std::move(value); }
-    inline CreateBotLocaleResult& WithBotLocaleStatus(const BotLocaleStatus& value) { SetBotLocaleStatus(value); return *this;}
-    inline CreateBotLocaleResult& WithBotLocaleStatus(BotLocaleStatus&& value) { SetBotLocaleStatus(std::move(value)); return *this;}
+    inline BotLocaleStatus GetBotLocaleStatus() const { return m_botLocaleStatus; }
+    inline void SetBotLocaleStatus(BotLocaleStatus value) { m_botLocaleStatusHasBeenSet = true; m_botLocaleStatus = value; }
+    inline CreateBotLocaleResult& WithBotLocaleStatus(BotLocaleStatus value) { SetBotLocaleStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp specifying the date and time that the bot locale was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
-    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTime = value; }
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTime = std::move(value); }
-    inline CreateBotLocaleResult& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-    inline CreateBotLocaleResult& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    CreateBotLocaleResult& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const GenerativeAISettings& GetGenerativeAISettings() const{ return m_generativeAISettings; }
-    inline void SetGenerativeAISettings(const GenerativeAISettings& value) { m_generativeAISettings = value; }
-    inline void SetGenerativeAISettings(GenerativeAISettings&& value) { m_generativeAISettings = std::move(value); }
-    inline CreateBotLocaleResult& WithGenerativeAISettings(const GenerativeAISettings& value) { SetGenerativeAISettings(value); return *this;}
-    inline CreateBotLocaleResult& WithGenerativeAISettings(GenerativeAISettings&& value) { SetGenerativeAISettings(std::move(value)); return *this;}
+    inline const GenerativeAISettings& GetGenerativeAISettings() const { return m_generativeAISettings; }
+    template<typename GenerativeAISettingsT = GenerativeAISettings>
+    void SetGenerativeAISettings(GenerativeAISettingsT&& value) { m_generativeAISettingsHasBeenSet = true; m_generativeAISettings = std::forward<GenerativeAISettingsT>(value); }
+    template<typename GenerativeAISettingsT = GenerativeAISettings>
+    CreateBotLocaleResult& WithGenerativeAISettings(GenerativeAISettingsT&& value) { SetGenerativeAISettings(std::forward<GenerativeAISettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateBotLocaleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateBotLocaleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateBotLocaleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateBotLocaleResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_botId;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_botVersion;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::String m_localeName;
+    bool m_localeNameHasBeenSet = false;
 
     Aws::String m_localeId;
+    bool m_localeIdHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    double m_nluIntentConfidenceThreshold;
+    double m_nluIntentConfidenceThreshold{0.0};
+    bool m_nluIntentConfidenceThresholdHasBeenSet = false;
 
     VoiceSettings m_voiceSettings;
+    bool m_voiceSettingsHasBeenSet = false;
 
-    BotLocaleStatus m_botLocaleStatus;
+    BotLocaleStatus m_botLocaleStatus{BotLocaleStatus::NOT_SET};
+    bool m_botLocaleStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDateTime;
+    Aws::Utils::DateTime m_creationDateTime{};
+    bool m_creationDateTimeHasBeenSet = false;
 
     GenerativeAISettings m_generativeAISettings;
+    bool m_generativeAISettingsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

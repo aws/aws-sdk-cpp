@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListEnrollmentStatusesResult::ListEnrollmentStatusesResult() : 
-    m_includeMemberAccounts(false)
-{
-}
-
 ListEnrollmentStatusesResult::ListEnrollmentStatusesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListEnrollmentStatusesResult()
 {
   *this = result;
 }
@@ -38,26 +32,25 @@ ListEnrollmentStatusesResult& ListEnrollmentStatusesResult::operator =(const Aws
     {
       m_items.push_back(itemsJsonList[itemsIndex].AsObject());
     }
+    m_itemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("includeMemberAccounts"))
   {
     m_includeMemberAccounts = jsonValue.GetBool("includeMemberAccounts");
-
+    m_includeMemberAccountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

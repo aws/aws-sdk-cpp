@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutOrganizationConfigRuleResult::PutOrganizationConfigRuleResult()
-{
-}
-
 PutOrganizationConfigRuleResult::PutOrganizationConfigRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ PutOrganizationConfigRuleResult& PutOrganizationConfigRuleResult::operator =(con
   if(jsonValue.ValueExists("OrganizationConfigRuleArn"))
   {
     m_organizationConfigRuleArn = jsonValue.GetString("OrganizationConfigRuleArn");
-
+    m_organizationConfigRuleArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,12 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateAppBlockBuilderAppBlockRequest::DisassociateAppBlockBuilderAppBlockRequest() : 
-    m_appBlockArnHasBeenSet(false),
-    m_appBlockBuilderNameHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateAppBlockBuilderAppBlockRequest::SerializePayload() const
 {
   JsonValue payload;

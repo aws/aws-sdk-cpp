@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateFlowMediaStreamResult::UpdateFlowMediaStreamResult()
-{
-}
-
 UpdateFlowMediaStreamResult::UpdateFlowMediaStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ UpdateFlowMediaStreamResult& UpdateFlowMediaStreamResult::operator =(const Aws::
   if(jsonValue.ValueExists("flowArn"))
   {
     m_flowArn = jsonValue.GetString("flowArn");
-
+    m_flowArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mediaStream"))
   {
     m_mediaStream = jsonValue.GetObject("mediaStream");
-
+    m_mediaStreamHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

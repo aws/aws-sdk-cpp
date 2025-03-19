@@ -18,18 +18,7 @@ namespace Backup
 namespace Model
 {
 
-BackupSelectionsListMember::BackupSelectionsListMember() : 
-    m_selectionIdHasBeenSet(false),
-    m_selectionNameHasBeenSet(false),
-    m_backupPlanIdHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false)
-{
-}
-
 BackupSelectionsListMember::BackupSelectionsListMember(JsonView jsonValue)
-  : BackupSelectionsListMember()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ BackupSelectionsListMember& BackupSelectionsListMember::operator =(JsonView json
   if(jsonValue.ValueExists("SelectionId"))
   {
     m_selectionId = jsonValue.GetString("SelectionId");
-
     m_selectionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectionName"))
   {
     m_selectionName = jsonValue.GetString("SelectionName");
-
     m_selectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupPlanId"))
   {
     m_backupPlanId = jsonValue.GetString("BackupPlanId");
-
     m_backupPlanIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatorRequestId"))
   {
     m_creatorRequestId = jsonValue.GetString("CreatorRequestId");
-
     m_creatorRequestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamRoleArn"))
   {
     m_iamRoleArn = jsonValue.GetString("IamRoleArn");
-
     m_iamRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

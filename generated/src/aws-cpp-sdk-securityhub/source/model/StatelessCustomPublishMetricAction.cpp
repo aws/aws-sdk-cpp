@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-StatelessCustomPublishMetricAction::StatelessCustomPublishMetricAction() : 
-    m_dimensionsHasBeenSet(false)
-{
-}
-
 StatelessCustomPublishMetricAction::StatelessCustomPublishMetricAction(JsonView jsonValue)
-  : StatelessCustomPublishMetricAction()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ StatelessCustomPublishMetricAction& StatelessCustomPublishMetricAction::operator
     }
     m_dimensionsHasBeenSet = true;
   }
-
   return *this;
 }
 

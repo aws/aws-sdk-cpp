@@ -18,30 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-MessageTemplateSearchResultData::MessageTemplateSearchResultData() : 
-    m_channelSubtype(ChannelSubtype::NOT_SET),
-    m_channelSubtypeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_groupingConfigurationHasBeenSet(false),
-    m_isActive(false),
-    m_isActiveHasBeenSet(false),
-    m_knowledgeBaseArnHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_messageTemplateArnHasBeenSet(false),
-    m_messageTemplateIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false)
-{
-}
-
 MessageTemplateSearchResultData::MessageTemplateSearchResultData(JsonView jsonValue)
-  : MessageTemplateSearchResultData()
 {
   *this = jsonValue;
 }
@@ -51,94 +28,68 @@ MessageTemplateSearchResultData& MessageTemplateSearchResultData::operator =(Jso
   if(jsonValue.ValueExists("channelSubtype"))
   {
     m_channelSubtype = ChannelSubtypeMapper::GetChannelSubtypeForName(jsonValue.GetString("channelSubtype"));
-
     m_channelSubtypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTime"))
   {
     m_createdTime = jsonValue.GetString("createdTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groupingConfiguration"))
   {
     m_groupingConfiguration = jsonValue.GetObject("groupingConfiguration");
-
     m_groupingConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isActive"))
   {
     m_isActive = jsonValue.GetBool("isActive");
-
     m_isActiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("knowledgeBaseArn"))
   {
     m_knowledgeBaseArn = jsonValue.GetString("knowledgeBaseArn");
-
     m_knowledgeBaseArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("knowledgeBaseId"))
   {
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
-
     m_knowledgeBaseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("language"))
   {
     m_language = jsonValue.GetString("language");
-
     m_languageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedBy"))
   {
     m_lastModifiedBy = jsonValue.GetString("lastModifiedBy");
-
     m_lastModifiedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetString("lastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("messageTemplateArn"))
   {
     m_messageTemplateArn = jsonValue.GetString("messageTemplateArn");
-
     m_messageTemplateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("messageTemplateId"))
   {
     m_messageTemplateId = jsonValue.GetString("messageTemplateId");
-
     m_messageTemplateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -148,14 +99,11 @@ MessageTemplateSearchResultData& MessageTemplateSearchResultData::operator =(Jso
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionNumber"))
   {
     m_versionNumber = jsonValue.GetInt64("versionNumber");
-
     m_versionNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

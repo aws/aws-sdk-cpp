@@ -18,14 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-SyncState::SyncState() : 
-    m_attachmentHasBeenSet(false),
-    m_configHasBeenSet(false)
-{
-}
-
 SyncState::SyncState(JsonView jsonValue)
-  : SyncState()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SyncState& SyncState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Attachment"))
   {
     m_attachment = jsonValue.GetObject("Attachment");
-
     m_attachmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Config"))
   {
     Aws::Map<Aws::String, JsonView> configJsonMap = jsonValue.GetObject("Config").GetAllObjects();
@@ -48,7 +39,6 @@ SyncState& SyncState::operator =(JsonView jsonValue)
     }
     m_configHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-SignInDistribution::SignInDistribution() : 
-    m_regionHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 SignInDistribution::SignInDistribution(JsonView jsonValue)
-  : SignInDistribution()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SignInDistribution& SignInDistribution::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

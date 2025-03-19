@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeBackupVaultRequest::DescribeBackupVaultRequest() : 
-    m_backupVaultNameHasBeenSet(false),
-    m_backupVaultAccountIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeBackupVaultRequest::SerializePayload() const
 {
   return {};

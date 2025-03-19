@@ -12,18 +12,6 @@ using namespace Aws::PrivateNetworks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateNetworkSiteRequest::CreateNetworkSiteRequest() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_networkArnHasBeenSet(false),
-    m_networkSiteNameHasBeenSet(false),
-    m_pendingPlanHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateNetworkSiteRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,22 +12,6 @@ using namespace Aws::GroundStation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMissionProfileRequest::CreateMissionProfileRequest() : 
-    m_contactPostPassDurationSeconds(0),
-    m_contactPostPassDurationSecondsHasBeenSet(false),
-    m_contactPrePassDurationSeconds(0),
-    m_contactPrePassDurationSecondsHasBeenSet(false),
-    m_dataflowEdgesHasBeenSet(false),
-    m_minimumViableContactDurationSeconds(0),
-    m_minimumViableContactDurationSecondsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_streamsKmsKeyHasBeenSet(false),
-    m_streamsKmsRoleHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_trackingConfigArnHasBeenSet(false)
-{
-}
-
 Aws::String CreateMissionProfileRequest::SerializePayload() const
 {
   JsonValue payload;

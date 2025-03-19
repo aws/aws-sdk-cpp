@@ -33,7 +33,7 @@ namespace Model
   class CollectiveConstantEntry
   {
   public:
-    AWS_QUICKSIGHT_API CollectiveConstantEntry();
+    AWS_QUICKSIGHT_API CollectiveConstantEntry() = default;
     AWS_QUICKSIGHT_API CollectiveConstantEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API CollectiveConstantEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,26 @@ namespace Model
     /**
      * <p>The <code>ConstantType</code> of a <code>CollectiveConstantEntry</code>.</p>
      */
-    inline const ConstantType& GetConstantType() const{ return m_constantType; }
+    inline ConstantType GetConstantType() const { return m_constantType; }
     inline bool ConstantTypeHasBeenSet() const { return m_constantTypeHasBeenSet; }
-    inline void SetConstantType(const ConstantType& value) { m_constantTypeHasBeenSet = true; m_constantType = value; }
-    inline void SetConstantType(ConstantType&& value) { m_constantTypeHasBeenSet = true; m_constantType = std::move(value); }
-    inline CollectiveConstantEntry& WithConstantType(const ConstantType& value) { SetConstantType(value); return *this;}
-    inline CollectiveConstantEntry& WithConstantType(ConstantType&& value) { SetConstantType(std::move(value)); return *this;}
+    inline void SetConstantType(ConstantType value) { m_constantTypeHasBeenSet = true; m_constantType = value; }
+    inline CollectiveConstantEntry& WithConstantType(ConstantType value) { SetConstantType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of a <code>CollectiveConstantEntry</code>.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline CollectiveConstantEntry& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline CollectiveConstantEntry& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline CollectiveConstantEntry& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    CollectiveConstantEntry& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    ConstantType m_constantType;
+    ConstantType m_constantType{ConstantType::NOT_SET};
     bool m_constantTypeHasBeenSet = false;
 
     Aws::String m_value;

@@ -18,16 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteFerryNotice::RouteFerryNotice() : 
-    m_code(RouteFerryNoticeCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_impact(RouteNoticeImpact::NOT_SET),
-    m_impactHasBeenSet(false)
-{
-}
-
 RouteFerryNotice::RouteFerryNotice(JsonView jsonValue)
-  : RouteFerryNotice()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RouteFerryNotice& RouteFerryNotice::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = RouteFerryNoticeCodeMapper::GetRouteFerryNoticeCodeForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Impact"))
   {
     m_impact = RouteNoticeImpactMapper::GetRouteNoticeImpactForName(jsonValue.GetString("Impact"));
-
     m_impactHasBeenSet = true;
   }
-
   return *this;
 }
 

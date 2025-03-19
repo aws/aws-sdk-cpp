@@ -12,12 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRepositoryEncryptionKeyRequest::UpdateRepositoryEncryptionKeyRequest() : 
-    m_repositoryNameHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRepositoryEncryptionKeyRequest::SerializePayload() const
 {
   JsonValue payload;

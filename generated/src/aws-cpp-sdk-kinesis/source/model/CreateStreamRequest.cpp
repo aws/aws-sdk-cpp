@@ -12,15 +12,6 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateStreamRequest::CreateStreamRequest() : 
-    m_streamNameHasBeenSet(false),
-    m_shardCount(0),
-    m_shardCountHasBeenSet(false),
-    m_streamModeDetailsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateStreamRequest::SerializePayload() const
 {
   JsonValue payload;

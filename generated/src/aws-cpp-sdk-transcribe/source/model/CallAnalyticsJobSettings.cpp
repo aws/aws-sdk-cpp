@@ -18,21 +18,7 @@ namespace TranscribeService
 namespace Model
 {
 
-CallAnalyticsJobSettings::CallAnalyticsJobSettings() : 
-    m_vocabularyNameHasBeenSet(false),
-    m_vocabularyFilterNameHasBeenSet(false),
-    m_vocabularyFilterMethod(VocabularyFilterMethod::NOT_SET),
-    m_vocabularyFilterMethodHasBeenSet(false),
-    m_languageModelNameHasBeenSet(false),
-    m_contentRedactionHasBeenSet(false),
-    m_languageOptionsHasBeenSet(false),
-    m_languageIdSettingsHasBeenSet(false),
-    m_summarizationHasBeenSet(false)
-{
-}
-
 CallAnalyticsJobSettings::CallAnalyticsJobSettings(JsonView jsonValue)
-  : CallAnalyticsJobSettings()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ CallAnalyticsJobSettings& CallAnalyticsJobSettings::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("VocabularyName"))
   {
     m_vocabularyName = jsonValue.GetString("VocabularyName");
-
     m_vocabularyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VocabularyFilterName"))
   {
     m_vocabularyFilterName = jsonValue.GetString("VocabularyFilterName");
-
     m_vocabularyFilterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VocabularyFilterMethod"))
   {
     m_vocabularyFilterMethod = VocabularyFilterMethodMapper::GetVocabularyFilterMethodForName(jsonValue.GetString("VocabularyFilterMethod"));
-
     m_vocabularyFilterMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LanguageModelName"))
   {
     m_languageModelName = jsonValue.GetString("LanguageModelName");
-
     m_languageModelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentRedaction"))
   {
     m_contentRedaction = jsonValue.GetObject("ContentRedaction");
-
     m_contentRedactionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LanguageOptions"))
   {
     Aws::Utils::Array<JsonView> languageOptionsJsonList = jsonValue.GetArray("LanguageOptions");
@@ -83,7 +59,6 @@ CallAnalyticsJobSettings& CallAnalyticsJobSettings::operator =(JsonView jsonValu
     }
     m_languageOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LanguageIdSettings"))
   {
     Aws::Map<Aws::String, JsonView> languageIdSettingsJsonMap = jsonValue.GetObject("LanguageIdSettings").GetAllObjects();
@@ -93,14 +68,11 @@ CallAnalyticsJobSettings& CallAnalyticsJobSettings::operator =(JsonView jsonValu
     }
     m_languageIdSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Summarization"))
   {
     m_summarization = jsonValue.GetObject("Summarization");
-
     m_summarizationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -27,7 +27,7 @@ namespace Model
   class PutThirdPartyJobSuccessResultRequest : public CodePipelineRequest
   {
   public:
-    AWS_CODEPIPELINE_API PutThirdPartyJobSuccessResultRequest();
+    AWS_CODEPIPELINE_API PutThirdPartyJobSuccessResultRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * <p>The ID of the job that successfully completed. This is the same ID returned
      * from <code>PollForThirdPartyJobs</code>.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline PutThirdPartyJobSuccessResultRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline PutThirdPartyJobSuccessResultRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline PutThirdPartyJobSuccessResultRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    PutThirdPartyJobSuccessResultRequest& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,26 +58,24 @@ namespace Model
      * <p>The clientToken portion of the clientId and clientToken pair used to verify
      * that the calling entity is allowed access to the job and its details.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline PutThirdPartyJobSuccessResultRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline PutThirdPartyJobSuccessResultRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline PutThirdPartyJobSuccessResultRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    PutThirdPartyJobSuccessResultRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Represents information about a current revision.</p>
      */
-    inline const CurrentRevision& GetCurrentRevision() const{ return m_currentRevision; }
+    inline const CurrentRevision& GetCurrentRevision() const { return m_currentRevision; }
     inline bool CurrentRevisionHasBeenSet() const { return m_currentRevisionHasBeenSet; }
-    inline void SetCurrentRevision(const CurrentRevision& value) { m_currentRevisionHasBeenSet = true; m_currentRevision = value; }
-    inline void SetCurrentRevision(CurrentRevision&& value) { m_currentRevisionHasBeenSet = true; m_currentRevision = std::move(value); }
-    inline PutThirdPartyJobSuccessResultRequest& WithCurrentRevision(const CurrentRevision& value) { SetCurrentRevision(value); return *this;}
-    inline PutThirdPartyJobSuccessResultRequest& WithCurrentRevision(CurrentRevision&& value) { SetCurrentRevision(std::move(value)); return *this;}
+    template<typename CurrentRevisionT = CurrentRevision>
+    void SetCurrentRevision(CurrentRevisionT&& value) { m_currentRevisionHasBeenSet = true; m_currentRevision = std::forward<CurrentRevisionT>(value); }
+    template<typename CurrentRevisionT = CurrentRevision>
+    PutThirdPartyJobSuccessResultRequest& WithCurrentRevision(CurrentRevisionT&& value) { SetCurrentRevision(std::forward<CurrentRevisionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +86,12 @@ namespace Model
      * to return more information about the progress of the partner action. When the
      * action is complete, no continuation token should be supplied.</p>
      */
-    inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
+    inline const Aws::String& GetContinuationToken() const { return m_continuationToken; }
     inline bool ContinuationTokenHasBeenSet() const { return m_continuationTokenHasBeenSet; }
-    inline void SetContinuationToken(const Aws::String& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = value; }
-    inline void SetContinuationToken(Aws::String&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::move(value); }
-    inline void SetContinuationToken(const char* value) { m_continuationTokenHasBeenSet = true; m_continuationToken.assign(value); }
-    inline PutThirdPartyJobSuccessResultRequest& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
-    inline PutThirdPartyJobSuccessResultRequest& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
-    inline PutThirdPartyJobSuccessResultRequest& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
+    template<typename ContinuationTokenT = Aws::String>
+    void SetContinuationToken(ContinuationTokenT&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::forward<ContinuationTokenT>(value); }
+    template<typename ContinuationTokenT = Aws::String>
+    PutThirdPartyJobSuccessResultRequest& WithContinuationToken(ContinuationTokenT&& value) { SetContinuationToken(std::forward<ContinuationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,12 +99,12 @@ namespace Model
      * <p>The details of the actions taken and results produced on an artifact as it
      * passes through stages in the pipeline. </p>
      */
-    inline const ExecutionDetails& GetExecutionDetails() const{ return m_executionDetails; }
+    inline const ExecutionDetails& GetExecutionDetails() const { return m_executionDetails; }
     inline bool ExecutionDetailsHasBeenSet() const { return m_executionDetailsHasBeenSet; }
-    inline void SetExecutionDetails(const ExecutionDetails& value) { m_executionDetailsHasBeenSet = true; m_executionDetails = value; }
-    inline void SetExecutionDetails(ExecutionDetails&& value) { m_executionDetailsHasBeenSet = true; m_executionDetails = std::move(value); }
-    inline PutThirdPartyJobSuccessResultRequest& WithExecutionDetails(const ExecutionDetails& value) { SetExecutionDetails(value); return *this;}
-    inline PutThirdPartyJobSuccessResultRequest& WithExecutionDetails(ExecutionDetails&& value) { SetExecutionDetails(std::move(value)); return *this;}
+    template<typename ExecutionDetailsT = ExecutionDetails>
+    void SetExecutionDetails(ExecutionDetailsT&& value) { m_executionDetailsHasBeenSet = true; m_executionDetails = std::forward<ExecutionDetailsT>(value); }
+    template<typename ExecutionDetailsT = ExecutionDetails>
+    PutThirdPartyJobSuccessResultRequest& WithExecutionDetails(ExecutionDetailsT&& value) { SetExecutionDetails(std::forward<ExecutionDetailsT>(value)); return *this;}
     ///@}
   private:
 

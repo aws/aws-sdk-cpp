@@ -34,7 +34,7 @@ namespace Model
   class CrawlFilterConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API CrawlFilterConfiguration();
+    AWS_BEDROCKAGENT_API CrawlFilterConfiguration() = default;
     AWS_BEDROCKAGENT_API CrawlFilterConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API CrawlFilterConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>The configuration of filtering certain objects or content types of the data
      * source.</p>
      */
-    inline const PatternObjectFilterConfiguration& GetPatternObjectFilter() const{ return m_patternObjectFilter; }
+    inline const PatternObjectFilterConfiguration& GetPatternObjectFilter() const { return m_patternObjectFilter; }
     inline bool PatternObjectFilterHasBeenSet() const { return m_patternObjectFilterHasBeenSet; }
-    inline void SetPatternObjectFilter(const PatternObjectFilterConfiguration& value) { m_patternObjectFilterHasBeenSet = true; m_patternObjectFilter = value; }
-    inline void SetPatternObjectFilter(PatternObjectFilterConfiguration&& value) { m_patternObjectFilterHasBeenSet = true; m_patternObjectFilter = std::move(value); }
-    inline CrawlFilterConfiguration& WithPatternObjectFilter(const PatternObjectFilterConfiguration& value) { SetPatternObjectFilter(value); return *this;}
-    inline CrawlFilterConfiguration& WithPatternObjectFilter(PatternObjectFilterConfiguration&& value) { SetPatternObjectFilter(std::move(value)); return *this;}
+    template<typename PatternObjectFilterT = PatternObjectFilterConfiguration>
+    void SetPatternObjectFilter(PatternObjectFilterT&& value) { m_patternObjectFilterHasBeenSet = true; m_patternObjectFilter = std::forward<PatternObjectFilterT>(value); }
+    template<typename PatternObjectFilterT = PatternObjectFilterConfiguration>
+    CrawlFilterConfiguration& WithPatternObjectFilter(PatternObjectFilterT&& value) { SetPatternObjectFilter(std::forward<PatternObjectFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,19 +59,17 @@ namespace Model
      * the data source. For example, the <code>PATTERN</code> type is regular
      * expression patterns you can apply to filter your content.</p>
      */
-    inline const CrawlFilterConfigurationType& GetType() const{ return m_type; }
+    inline CrawlFilterConfigurationType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const CrawlFilterConfigurationType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(CrawlFilterConfigurationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CrawlFilterConfiguration& WithType(const CrawlFilterConfigurationType& value) { SetType(value); return *this;}
-    inline CrawlFilterConfiguration& WithType(CrawlFilterConfigurationType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(CrawlFilterConfigurationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CrawlFilterConfiguration& WithType(CrawlFilterConfigurationType value) { SetType(value); return *this;}
     ///@}
   private:
 
     PatternObjectFilterConfiguration m_patternObjectFilter;
     bool m_patternObjectFilterHasBeenSet = false;
 
-    CrawlFilterConfigurationType m_type;
+    CrawlFilterConfigurationType m_type{CrawlFilterConfigurationType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

@@ -20,14 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-AbortIncompleteMultipartUpload::AbortIncompleteMultipartUpload() : 
-    m_daysAfterInitiation(0),
-    m_daysAfterInitiationHasBeenSet(false)
-{
-}
-
 AbortIncompleteMultipartUpload::AbortIncompleteMultipartUpload(const XmlNode& xmlNode)
-  : AbortIncompleteMultipartUpload()
 {
   *this = xmlNode;
 }

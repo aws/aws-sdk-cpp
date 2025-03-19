@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Order::Order() : 
-    m_columnHasBeenSet(false),
-    m_sortOrder(0),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 Order::Order(JsonView jsonValue)
-  : Order()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Order& Order::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Column"))
   {
     m_column = jsonValue.GetString("Column");
-
     m_columnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortOrder"))
   {
     m_sortOrder = jsonValue.GetInteger("SortOrder");
-
     m_sortOrderHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,14 +12,6 @@ using namespace Aws::ControlTower::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListControlOperationsRequest::ListControlOperationsRequest() : 
-    m_filterHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListControlOperationsRequest::SerializePayload() const
 {
   JsonValue payload;

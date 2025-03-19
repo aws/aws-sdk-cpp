@@ -18,32 +18,7 @@ namespace PinpointEmail
 namespace Model
 {
 
-DomainDeliverabilityCampaign::DomainDeliverabilityCampaign() : 
-    m_campaignIdHasBeenSet(false),
-    m_imageUrlHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_fromAddressHasBeenSet(false),
-    m_sendingIpsHasBeenSet(false),
-    m_firstSeenDateTimeHasBeenSet(false),
-    m_lastSeenDateTimeHasBeenSet(false),
-    m_inboxCount(0),
-    m_inboxCountHasBeenSet(false),
-    m_spamCount(0),
-    m_spamCountHasBeenSet(false),
-    m_readRate(0.0),
-    m_readRateHasBeenSet(false),
-    m_deleteRate(0.0),
-    m_deleteRateHasBeenSet(false),
-    m_readDeleteRate(0.0),
-    m_readDeleteRateHasBeenSet(false),
-    m_projectedVolume(0),
-    m_projectedVolumeHasBeenSet(false),
-    m_espsHasBeenSet(false)
-{
-}
-
 DomainDeliverabilityCampaign::DomainDeliverabilityCampaign(JsonView jsonValue)
-  : DomainDeliverabilityCampaign()
 {
   *this = jsonValue;
 }
@@ -53,31 +28,23 @@ DomainDeliverabilityCampaign& DomainDeliverabilityCampaign::operator =(JsonView 
   if(jsonValue.ValueExists("CampaignId"))
   {
     m_campaignId = jsonValue.GetString("CampaignId");
-
     m_campaignIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageUrl"))
   {
     m_imageUrl = jsonValue.GetString("ImageUrl");
-
     m_imageUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subject"))
   {
     m_subject = jsonValue.GetString("Subject");
-
     m_subjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FromAddress"))
   {
     m_fromAddress = jsonValue.GetString("FromAddress");
-
     m_fromAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SendingIps"))
   {
     Aws::Utils::Array<JsonView> sendingIpsJsonList = jsonValue.GetArray("SendingIps");
@@ -87,63 +54,46 @@ DomainDeliverabilityCampaign& DomainDeliverabilityCampaign::operator =(JsonView 
     }
     m_sendingIpsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirstSeenDateTime"))
   {
     m_firstSeenDateTime = jsonValue.GetDouble("FirstSeenDateTime");
-
     m_firstSeenDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastSeenDateTime"))
   {
     m_lastSeenDateTime = jsonValue.GetDouble("LastSeenDateTime");
-
     m_lastSeenDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InboxCount"))
   {
     m_inboxCount = jsonValue.GetInt64("InboxCount");
-
     m_inboxCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpamCount"))
   {
     m_spamCount = jsonValue.GetInt64("SpamCount");
-
     m_spamCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReadRate"))
   {
     m_readRate = jsonValue.GetDouble("ReadRate");
-
     m_readRateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeleteRate"))
   {
     m_deleteRate = jsonValue.GetDouble("DeleteRate");
-
     m_deleteRateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReadDeleteRate"))
   {
     m_readDeleteRate = jsonValue.GetDouble("ReadDeleteRate");
-
     m_readDeleteRateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProjectedVolume"))
   {
     m_projectedVolume = jsonValue.GetInt64("ProjectedVolume");
-
     m_projectedVolumeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Esps"))
   {
     Aws::Utils::Array<JsonView> espsJsonList = jsonValue.GetArray("Esps");
@@ -153,7 +103,6 @@ DomainDeliverabilityCampaign& DomainDeliverabilityCampaign::operator =(JsonView 
     }
     m_espsHasBeenSet = true;
   }
-
   return *this;
 }
 

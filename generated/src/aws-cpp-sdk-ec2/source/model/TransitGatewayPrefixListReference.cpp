@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayPrefixListReference::TransitGatewayPrefixListReference() : 
-    m_transitGatewayRouteTableIdHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_prefixListOwnerIdHasBeenSet(false),
-    m_state(TransitGatewayPrefixListReferenceState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_blackhole(false),
-    m_blackholeHasBeenSet(false),
-    m_transitGatewayAttachmentHasBeenSet(false)
-{
-}
-
 TransitGatewayPrefixListReference::TransitGatewayPrefixListReference(const XmlNode& xmlNode)
-  : TransitGatewayPrefixListReference()
 {
   *this = xmlNode;
 }
@@ -65,7 +52,7 @@ TransitGatewayPrefixListReference& TransitGatewayPrefixListReference::operator =
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = TransitGatewayPrefixListReferenceStateMapper::GetTransitGatewayPrefixListReferenceStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = TransitGatewayPrefixListReferenceStateMapper::GetTransitGatewayPrefixListReferenceStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode blackholeNode = resultNode.FirstChild("blackhole");

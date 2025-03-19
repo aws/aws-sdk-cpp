@@ -33,7 +33,7 @@ namespace Model
   class ImportReferenceSourceItem
   {
   public:
-    AWS_OMICS_API ImportReferenceSourceItem();
+    AWS_OMICS_API ImportReferenceSourceItem() = default;
     AWS_OMICS_API ImportReferenceSourceItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API ImportReferenceSourceItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,108 +43,93 @@ namespace Model
     /**
      * <p>The source file's location in Amazon S3.</p>
      */
-    inline const Aws::String& GetSourceFile() const{ return m_sourceFile; }
+    inline const Aws::String& GetSourceFile() const { return m_sourceFile; }
     inline bool SourceFileHasBeenSet() const { return m_sourceFileHasBeenSet; }
-    inline void SetSourceFile(const Aws::String& value) { m_sourceFileHasBeenSet = true; m_sourceFile = value; }
-    inline void SetSourceFile(Aws::String&& value) { m_sourceFileHasBeenSet = true; m_sourceFile = std::move(value); }
-    inline void SetSourceFile(const char* value) { m_sourceFileHasBeenSet = true; m_sourceFile.assign(value); }
-    inline ImportReferenceSourceItem& WithSourceFile(const Aws::String& value) { SetSourceFile(value); return *this;}
-    inline ImportReferenceSourceItem& WithSourceFile(Aws::String&& value) { SetSourceFile(std::move(value)); return *this;}
-    inline ImportReferenceSourceItem& WithSourceFile(const char* value) { SetSourceFile(value); return *this;}
+    template<typename SourceFileT = Aws::String>
+    void SetSourceFile(SourceFileT&& value) { m_sourceFileHasBeenSet = true; m_sourceFile = std::forward<SourceFileT>(value); }
+    template<typename SourceFileT = Aws::String>
+    ImportReferenceSourceItem& WithSourceFile(SourceFileT&& value) { SetSourceFile(std::forward<SourceFileT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source's status.</p>
      */
-    inline const ReferenceImportJobItemStatus& GetStatus() const{ return m_status; }
+    inline ReferenceImportJobItemStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ReferenceImportJobItemStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ReferenceImportJobItemStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ImportReferenceSourceItem& WithStatus(const ReferenceImportJobItemStatus& value) { SetStatus(value); return *this;}
-    inline ImportReferenceSourceItem& WithStatus(ReferenceImportJobItemStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ReferenceImportJobItemStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ImportReferenceSourceItem& WithStatus(ReferenceImportJobItemStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source's status message.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline ImportReferenceSourceItem& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline ImportReferenceSourceItem& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline ImportReferenceSourceItem& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    ImportReferenceSourceItem& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source's name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ImportReferenceSourceItem& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ImportReferenceSourceItem& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ImportReferenceSourceItem& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ImportReferenceSourceItem& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source's description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ImportReferenceSourceItem& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ImportReferenceSourceItem& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ImportReferenceSourceItem& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ImportReferenceSourceItem& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source's tags.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ImportReferenceSourceItem& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline ImportReferenceSourceItem& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline ImportReferenceSourceItem& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline ImportReferenceSourceItem& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline ImportReferenceSourceItem& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline ImportReferenceSourceItem& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline ImportReferenceSourceItem& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline ImportReferenceSourceItem& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline ImportReferenceSourceItem& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    ImportReferenceSourceItem& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    ImportReferenceSourceItem& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The source's reference ID.</p>
      */
-    inline const Aws::String& GetReferenceId() const{ return m_referenceId; }
+    inline const Aws::String& GetReferenceId() const { return m_referenceId; }
     inline bool ReferenceIdHasBeenSet() const { return m_referenceIdHasBeenSet; }
-    inline void SetReferenceId(const Aws::String& value) { m_referenceIdHasBeenSet = true; m_referenceId = value; }
-    inline void SetReferenceId(Aws::String&& value) { m_referenceIdHasBeenSet = true; m_referenceId = std::move(value); }
-    inline void SetReferenceId(const char* value) { m_referenceIdHasBeenSet = true; m_referenceId.assign(value); }
-    inline ImportReferenceSourceItem& WithReferenceId(const Aws::String& value) { SetReferenceId(value); return *this;}
-    inline ImportReferenceSourceItem& WithReferenceId(Aws::String&& value) { SetReferenceId(std::move(value)); return *this;}
-    inline ImportReferenceSourceItem& WithReferenceId(const char* value) { SetReferenceId(value); return *this;}
+    template<typename ReferenceIdT = Aws::String>
+    void SetReferenceId(ReferenceIdT&& value) { m_referenceIdHasBeenSet = true; m_referenceId = std::forward<ReferenceIdT>(value); }
+    template<typename ReferenceIdT = Aws::String>
+    ImportReferenceSourceItem& WithReferenceId(ReferenceIdT&& value) { SetReferenceId(std::forward<ReferenceIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_sourceFile;
     bool m_sourceFileHasBeenSet = false;
 
-    ReferenceImportJobItemStatus m_status;
+    ReferenceImportJobItemStatus m_status{ReferenceImportJobItemStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;

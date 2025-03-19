@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetAuthorizationTokenRequest::GetAuthorizationTokenRequest() : 
-    m_domainHasBeenSet(false),
-    m_domainOwnerHasBeenSet(false),
-    m_durationSeconds(0),
-    m_durationSecondsHasBeenSet(false)
-{
-}
-
 Aws::String GetAuthorizationTokenRequest::SerializePayload() const
 {
   return {};

@@ -30,7 +30,7 @@ namespace Model
   class GeoLocation
   {
   public:
-    AWS_GUARDDUTY_API GeoLocation();
+    AWS_GUARDDUTY_API GeoLocation() = default;
     AWS_GUARDDUTY_API GeoLocation(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API GeoLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The latitude information of the remote IP address.</p>
      */
-    inline double GetLat() const{ return m_lat; }
+    inline double GetLat() const { return m_lat; }
     inline bool LatHasBeenSet() const { return m_latHasBeenSet; }
     inline void SetLat(double value) { m_latHasBeenSet = true; m_lat = value; }
     inline GeoLocation& WithLat(double value) { SetLat(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>The longitude information of the remote IP address.</p>
      */
-    inline double GetLon() const{ return m_lon; }
+    inline double GetLon() const { return m_lon; }
     inline bool LonHasBeenSet() const { return m_lonHasBeenSet; }
     inline void SetLon(double value) { m_lonHasBeenSet = true; m_lon = value; }
     inline GeoLocation& WithLon(double value) { SetLon(value); return *this;}
     ///@}
   private:
 
-    double m_lat;
+    double m_lat{0.0};
     bool m_latHasBeenSet = false;
 
-    double m_lon;
+    double m_lon{0.0};
     bool m_lonHasBeenSet = false;
   };
 

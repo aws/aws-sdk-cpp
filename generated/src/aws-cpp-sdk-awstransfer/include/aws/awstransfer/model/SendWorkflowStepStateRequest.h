@@ -22,7 +22,7 @@ namespace Model
   class SendWorkflowStepStateRequest : public TransferRequest
   {
   public:
-    AWS_TRANSFER_API SendWorkflowStepStateRequest();
+    AWS_TRANSFER_API SendWorkflowStepStateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
     /**
      * <p>A unique identifier for the workflow.</p>
      */
-    inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
+    inline const Aws::String& GetWorkflowId() const { return m_workflowId; }
     inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
-    inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
-    inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::move(value); }
-    inline void SetWorkflowId(const char* value) { m_workflowIdHasBeenSet = true; m_workflowId.assign(value); }
-    inline SendWorkflowStepStateRequest& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
-    inline SendWorkflowStepStateRequest& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
-    inline SendWorkflowStepStateRequest& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
+    template<typename WorkflowIdT = Aws::String>
+    void SetWorkflowId(WorkflowIdT&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::forward<WorkflowIdT>(value); }
+    template<typename WorkflowIdT = Aws::String>
+    SendWorkflowStepStateRequest& WithWorkflowId(WorkflowIdT&& value) { SetWorkflowId(std::forward<WorkflowIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the execution of a workflow.</p>
      */
-    inline const Aws::String& GetExecutionId() const{ return m_executionId; }
+    inline const Aws::String& GetExecutionId() const { return m_executionId; }
     inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
-    inline void SetExecutionId(const Aws::String& value) { m_executionIdHasBeenSet = true; m_executionId = value; }
-    inline void SetExecutionId(Aws::String&& value) { m_executionIdHasBeenSet = true; m_executionId = std::move(value); }
-    inline void SetExecutionId(const char* value) { m_executionIdHasBeenSet = true; m_executionId.assign(value); }
-    inline SendWorkflowStepStateRequest& WithExecutionId(const Aws::String& value) { SetExecutionId(value); return *this;}
-    inline SendWorkflowStepStateRequest& WithExecutionId(Aws::String&& value) { SetExecutionId(std::move(value)); return *this;}
-    inline SendWorkflowStepStateRequest& WithExecutionId(const char* value) { SetExecutionId(value); return *this;}
+    template<typename ExecutionIdT = Aws::String>
+    void SetExecutionId(ExecutionIdT&& value) { m_executionIdHasBeenSet = true; m_executionId = std::forward<ExecutionIdT>(value); }
+    template<typename ExecutionIdT = Aws::String>
+    SendWorkflowStepStateRequest& WithExecutionId(ExecutionIdT&& value) { SetExecutionId(std::forward<ExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,26 +64,22 @@ namespace Model
      * <p>Used to distinguish between multiple callbacks for multiple Lambda steps
      * within the same execution.</p>
      */
-    inline const Aws::String& GetToken() const{ return m_token; }
+    inline const Aws::String& GetToken() const { return m_token; }
     inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
-    inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
-    inline void SetToken(Aws::String&& value) { m_tokenHasBeenSet = true; m_token = std::move(value); }
-    inline void SetToken(const char* value) { m_tokenHasBeenSet = true; m_token.assign(value); }
-    inline SendWorkflowStepStateRequest& WithToken(const Aws::String& value) { SetToken(value); return *this;}
-    inline SendWorkflowStepStateRequest& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
-    inline SendWorkflowStepStateRequest& WithToken(const char* value) { SetToken(value); return *this;}
+    template<typename TokenT = Aws::String>
+    void SetToken(TokenT&& value) { m_tokenHasBeenSet = true; m_token = std::forward<TokenT>(value); }
+    template<typename TokenT = Aws::String>
+    SendWorkflowStepStateRequest& WithToken(TokenT&& value) { SetToken(std::forward<TokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the specified step succeeded or failed.</p>
      */
-    inline const CustomStepStatus& GetStatus() const{ return m_status; }
+    inline CustomStepStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const CustomStepStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(CustomStepStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline SendWorkflowStepStateRequest& WithStatus(const CustomStepStatus& value) { SetStatus(value); return *this;}
-    inline SendWorkflowStepStateRequest& WithStatus(CustomStepStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(CustomStepStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline SendWorkflowStepStateRequest& WithStatus(CustomStepStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -100,7 +92,7 @@ namespace Model
     Aws::String m_token;
     bool m_tokenHasBeenSet = false;
 
-    CustomStepStatus m_status;
+    CustomStepStatus m_status{CustomStepStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

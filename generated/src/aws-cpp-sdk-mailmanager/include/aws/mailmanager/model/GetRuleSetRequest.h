@@ -21,7 +21,7 @@ namespace Model
   class GetRuleSetRequest : public MailManagerRequest
   {
   public:
-    AWS_MAILMANAGER_API GetRuleSetRequest();
+    AWS_MAILMANAGER_API GetRuleSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The identifier of an existing rule set to be retrieved.</p>
      */
-    inline const Aws::String& GetRuleSetId() const{ return m_ruleSetId; }
+    inline const Aws::String& GetRuleSetId() const { return m_ruleSetId; }
     inline bool RuleSetIdHasBeenSet() const { return m_ruleSetIdHasBeenSet; }
-    inline void SetRuleSetId(const Aws::String& value) { m_ruleSetIdHasBeenSet = true; m_ruleSetId = value; }
-    inline void SetRuleSetId(Aws::String&& value) { m_ruleSetIdHasBeenSet = true; m_ruleSetId = std::move(value); }
-    inline void SetRuleSetId(const char* value) { m_ruleSetIdHasBeenSet = true; m_ruleSetId.assign(value); }
-    inline GetRuleSetRequest& WithRuleSetId(const Aws::String& value) { SetRuleSetId(value); return *this;}
-    inline GetRuleSetRequest& WithRuleSetId(Aws::String&& value) { SetRuleSetId(std::move(value)); return *this;}
-    inline GetRuleSetRequest& WithRuleSetId(const char* value) { SetRuleSetId(value); return *this;}
+    template<typename RuleSetIdT = Aws::String>
+    void SetRuleSetId(RuleSetIdT&& value) { m_ruleSetIdHasBeenSet = true; m_ruleSetId = std::forward<RuleSetIdT>(value); }
+    template<typename RuleSetIdT = Aws::String>
+    GetRuleSetRequest& WithRuleSetId(RuleSetIdT&& value) { SetRuleSetId(std::forward<RuleSetIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,14 +12,6 @@ using namespace Aws::ACMPCA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RevokeCertificateRequest::RevokeCertificateRequest() : 
-    m_certificateAuthorityArnHasBeenSet(false),
-    m_certificateSerialHasBeenSet(false),
-    m_revocationReason(RevocationReason::NOT_SET),
-    m_revocationReasonHasBeenSet(false)
-{
-}
-
 Aws::String RevokeCertificateRequest::SerializePayload() const
 {
   JsonValue payload;

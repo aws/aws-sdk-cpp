@@ -12,22 +12,6 @@ using namespace Aws::EBS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartSnapshotRequest::StartSnapshotRequest() : 
-    m_volumeSize(0),
-    m_volumeSizeHasBeenSet(false),
-    m_parentSnapshotIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false)
-{
-}
-
 Aws::String StartSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DisassociateResolverRuleResult::DisassociateResolverRuleResult()
-{
-}
-
 DisassociateResolverRuleResult::DisassociateResolverRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DisassociateResolverRuleResult& DisassociateResolverRuleResult::operator =(const
   if(jsonValue.ValueExists("ResolverRuleAssociation"))
   {
     m_resolverRuleAssociation = jsonValue.GetObject("ResolverRuleAssociation");
-
+    m_resolverRuleAssociationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

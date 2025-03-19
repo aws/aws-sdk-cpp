@@ -18,19 +18,7 @@ namespace CodeGuruSecurity
 namespace Model
 {
 
-FilePath::FilePath() : 
-    m_codeSnippetHasBeenSet(false),
-    m_endLine(0),
-    m_endLineHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_startLine(0),
-    m_startLineHasBeenSet(false)
-{
-}
-
 FilePath::FilePath(JsonView jsonValue)
-  : FilePath()
 {
   *this = jsonValue;
 }
@@ -46,35 +34,26 @@ FilePath& FilePath::operator =(JsonView jsonValue)
     }
     m_codeSnippetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endLine"))
   {
     m_endLine = jsonValue.GetInteger("endLine");
-
     m_endLineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("path"))
   {
     m_path = jsonValue.GetString("path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startLine"))
   {
     m_startLine = jsonValue.GetInteger("startLine");
-
     m_startLineHasBeenSet = true;
   }
-
   return *this;
 }
 

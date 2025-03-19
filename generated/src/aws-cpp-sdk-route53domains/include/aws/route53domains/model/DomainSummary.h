@@ -32,7 +32,7 @@ namespace Model
   class DomainSummary
   {
   public:
-    AWS_ROUTE53DOMAINS_API DomainSummary();
+    AWS_ROUTE53DOMAINS_API DomainSummary() = default;
     AWS_ROUTE53DOMAINS_API DomainSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53DOMAINS_API DomainSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The name of the domain that the summary information applies to.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline DomainSummary& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline DomainSummary& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline DomainSummary& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    DomainSummary& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the domain is automatically renewed upon expiration.</p>
      */
-    inline bool GetAutoRenew() const{ return m_autoRenew; }
+    inline bool GetAutoRenew() const { return m_autoRenew; }
     inline bool AutoRenewHasBeenSet() const { return m_autoRenewHasBeenSet; }
     inline void SetAutoRenew(bool value) { m_autoRenewHasBeenSet = true; m_autoRenew = value; }
     inline DomainSummary& WithAutoRenew(bool value) { SetAutoRenew(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
      * <p>Indicates whether a domain is locked from unauthorized transfer to another
      * party.</p>
      */
-    inline bool GetTransferLock() const{ return m_transferLock; }
+    inline bool GetTransferLock() const { return m_transferLock; }
     inline bool TransferLockHasBeenSet() const { return m_transferLockHasBeenSet; }
     inline void SetTransferLock(bool value) { m_transferLockHasBeenSet = true; m_transferLock = value; }
     inline DomainSummary& WithTransferLock(bool value) { SetTransferLock(value); return *this;}
@@ -78,25 +76,25 @@ namespace Model
      * <p>Expiration date of the domain in Unix time format and Coordinated Universal
      * Time (UTC).</p>
      */
-    inline const Aws::Utils::DateTime& GetExpiry() const{ return m_expiry; }
+    inline const Aws::Utils::DateTime& GetExpiry() const { return m_expiry; }
     inline bool ExpiryHasBeenSet() const { return m_expiryHasBeenSet; }
-    inline void SetExpiry(const Aws::Utils::DateTime& value) { m_expiryHasBeenSet = true; m_expiry = value; }
-    inline void SetExpiry(Aws::Utils::DateTime&& value) { m_expiryHasBeenSet = true; m_expiry = std::move(value); }
-    inline DomainSummary& WithExpiry(const Aws::Utils::DateTime& value) { SetExpiry(value); return *this;}
-    inline DomainSummary& WithExpiry(Aws::Utils::DateTime&& value) { SetExpiry(std::move(value)); return *this;}
+    template<typename ExpiryT = Aws::Utils::DateTime>
+    void SetExpiry(ExpiryT&& value) { m_expiryHasBeenSet = true; m_expiry = std::forward<ExpiryT>(value); }
+    template<typename ExpiryT = Aws::Utils::DateTime>
+    DomainSummary& WithExpiry(ExpiryT&& value) { SetExpiry(std::forward<ExpiryT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet = false;
 
-    bool m_autoRenew;
+    bool m_autoRenew{false};
     bool m_autoRenewHasBeenSet = false;
 
-    bool m_transferLock;
+    bool m_transferLock{false};
     bool m_transferLockHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expiry;
+    Aws::Utils::DateTime m_expiry{};
     bool m_expiryHasBeenSet = false;
   };
 

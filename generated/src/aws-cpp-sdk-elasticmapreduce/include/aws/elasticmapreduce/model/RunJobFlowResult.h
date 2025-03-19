@@ -33,7 +33,7 @@ namespace Model
   class RunJobFlowResult
   {
   public:
-    AWS_EMR_API RunJobFlowResult();
+    AWS_EMR_API RunJobFlowResult() = default;
     AWS_EMR_API RunJobFlowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EMR_API RunJobFlowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,45 +42,42 @@ namespace Model
     /**
      * <p>A unique identifier for the job flow.</p>
      */
-    inline const Aws::String& GetJobFlowId() const{ return m_jobFlowId; }
-    inline void SetJobFlowId(const Aws::String& value) { m_jobFlowId = value; }
-    inline void SetJobFlowId(Aws::String&& value) { m_jobFlowId = std::move(value); }
-    inline void SetJobFlowId(const char* value) { m_jobFlowId.assign(value); }
-    inline RunJobFlowResult& WithJobFlowId(const Aws::String& value) { SetJobFlowId(value); return *this;}
-    inline RunJobFlowResult& WithJobFlowId(Aws::String&& value) { SetJobFlowId(std::move(value)); return *this;}
-    inline RunJobFlowResult& WithJobFlowId(const char* value) { SetJobFlowId(value); return *this;}
+    inline const Aws::String& GetJobFlowId() const { return m_jobFlowId; }
+    template<typename JobFlowIdT = Aws::String>
+    void SetJobFlowId(JobFlowIdT&& value) { m_jobFlowIdHasBeenSet = true; m_jobFlowId = std::forward<JobFlowIdT>(value); }
+    template<typename JobFlowIdT = Aws::String>
+    RunJobFlowResult& WithJobFlowId(JobFlowIdT&& value) { SetJobFlowId(std::forward<JobFlowIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the cluster.</p>
      */
-    inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
-    inline void SetClusterArn(const Aws::String& value) { m_clusterArn = value; }
-    inline void SetClusterArn(Aws::String&& value) { m_clusterArn = std::move(value); }
-    inline void SetClusterArn(const char* value) { m_clusterArn.assign(value); }
-    inline RunJobFlowResult& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
-    inline RunJobFlowResult& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
-    inline RunJobFlowResult& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+    inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
+    template<typename ClusterArnT = Aws::String>
+    void SetClusterArn(ClusterArnT&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::forward<ClusterArnT>(value); }
+    template<typename ClusterArnT = Aws::String>
+    RunJobFlowResult& WithClusterArn(ClusterArnT&& value) { SetClusterArn(std::forward<ClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RunJobFlowResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RunJobFlowResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RunJobFlowResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RunJobFlowResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_jobFlowId;
+    bool m_jobFlowIdHasBeenSet = false;
 
     Aws::String m_clusterArn;
+    bool m_clusterArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

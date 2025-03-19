@@ -32,7 +32,7 @@ namespace Model
   class OutputLocationRef
   {
   public:
-    AWS_MEDIALIVE_API OutputLocationRef();
+    AWS_MEDIALIVE_API OutputLocationRef() = default;
     AWS_MEDIALIVE_API OutputLocationRef(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API OutputLocationRef& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetDestinationRefId() const{ return m_destinationRefId; }
+    inline const Aws::String& GetDestinationRefId() const { return m_destinationRefId; }
     inline bool DestinationRefIdHasBeenSet() const { return m_destinationRefIdHasBeenSet; }
-    inline void SetDestinationRefId(const Aws::String& value) { m_destinationRefIdHasBeenSet = true; m_destinationRefId = value; }
-    inline void SetDestinationRefId(Aws::String&& value) { m_destinationRefIdHasBeenSet = true; m_destinationRefId = std::move(value); }
-    inline void SetDestinationRefId(const char* value) { m_destinationRefIdHasBeenSet = true; m_destinationRefId.assign(value); }
-    inline OutputLocationRef& WithDestinationRefId(const Aws::String& value) { SetDestinationRefId(value); return *this;}
-    inline OutputLocationRef& WithDestinationRefId(Aws::String&& value) { SetDestinationRefId(std::move(value)); return *this;}
-    inline OutputLocationRef& WithDestinationRefId(const char* value) { SetDestinationRefId(value); return *this;}
+    template<typename DestinationRefIdT = Aws::String>
+    void SetDestinationRefId(DestinationRefIdT&& value) { m_destinationRefIdHasBeenSet = true; m_destinationRefId = std::forward<DestinationRefIdT>(value); }
+    template<typename DestinationRefIdT = Aws::String>
+    OutputLocationRef& WithDestinationRefId(DestinationRefIdT&& value) { SetDestinationRefId(std::forward<DestinationRefIdT>(value)); return *this;}
     ///@}
   private:
 

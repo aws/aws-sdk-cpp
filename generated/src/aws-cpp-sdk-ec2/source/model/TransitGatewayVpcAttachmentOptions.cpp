@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayVpcAttachmentOptions::TransitGatewayVpcAttachmentOptions() : 
-    m_dnsSupport(DnsSupportValue::NOT_SET),
-    m_dnsSupportHasBeenSet(false),
-    m_securityGroupReferencingSupport(SecurityGroupReferencingSupportValue::NOT_SET),
-    m_securityGroupReferencingSupportHasBeenSet(false),
-    m_ipv6Support(Ipv6SupportValue::NOT_SET),
-    m_ipv6SupportHasBeenSet(false),
-    m_applianceModeSupport(ApplianceModeSupportValue::NOT_SET),
-    m_applianceModeSupportHasBeenSet(false)
-{
-}
-
 TransitGatewayVpcAttachmentOptions::TransitGatewayVpcAttachmentOptions(const XmlNode& xmlNode)
-  : TransitGatewayVpcAttachmentOptions()
 {
   *this = xmlNode;
 }
@@ -47,25 +34,25 @@ TransitGatewayVpcAttachmentOptions& TransitGatewayVpcAttachmentOptions::operator
     XmlNode dnsSupportNode = resultNode.FirstChild("dnsSupport");
     if(!dnsSupportNode.IsNull())
     {
-      m_dnsSupport = DnsSupportValueMapper::GetDnsSupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dnsSupportNode.GetText()).c_str()).c_str());
+      m_dnsSupport = DnsSupportValueMapper::GetDnsSupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(dnsSupportNode.GetText()).c_str()));
       m_dnsSupportHasBeenSet = true;
     }
     XmlNode securityGroupReferencingSupportNode = resultNode.FirstChild("securityGroupReferencingSupport");
     if(!securityGroupReferencingSupportNode.IsNull())
     {
-      m_securityGroupReferencingSupport = SecurityGroupReferencingSupportValueMapper::GetSecurityGroupReferencingSupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(securityGroupReferencingSupportNode.GetText()).c_str()).c_str());
+      m_securityGroupReferencingSupport = SecurityGroupReferencingSupportValueMapper::GetSecurityGroupReferencingSupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(securityGroupReferencingSupportNode.GetText()).c_str()));
       m_securityGroupReferencingSupportHasBeenSet = true;
     }
     XmlNode ipv6SupportNode = resultNode.FirstChild("ipv6Support");
     if(!ipv6SupportNode.IsNull())
     {
-      m_ipv6Support = Ipv6SupportValueMapper::GetIpv6SupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv6SupportNode.GetText()).c_str()).c_str());
+      m_ipv6Support = Ipv6SupportValueMapper::GetIpv6SupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv6SupportNode.GetText()).c_str()));
       m_ipv6SupportHasBeenSet = true;
     }
     XmlNode applianceModeSupportNode = resultNode.FirstChild("applianceModeSupport");
     if(!applianceModeSupportNode.IsNull())
     {
-      m_applianceModeSupport = ApplianceModeSupportValueMapper::GetApplianceModeSupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(applianceModeSupportNode.GetText()).c_str()).c_str());
+      m_applianceModeSupport = ApplianceModeSupportValueMapper::GetApplianceModeSupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(applianceModeSupportNode.GetText()).c_str()));
       m_applianceModeSupportHasBeenSet = true;
     }
   }

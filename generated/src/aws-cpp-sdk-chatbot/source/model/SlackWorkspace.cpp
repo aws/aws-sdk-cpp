@@ -18,16 +18,7 @@ namespace chatbot
 namespace Model
 {
 
-SlackWorkspace::SlackWorkspace() : 
-    m_slackTeamIdHasBeenSet(false),
-    m_slackTeamNameHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false)
-{
-}
-
 SlackWorkspace::SlackWorkspace(JsonView jsonValue)
-  : SlackWorkspace()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ SlackWorkspace& SlackWorkspace::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SlackTeamId"))
   {
     m_slackTeamId = jsonValue.GetString("SlackTeamId");
-
     m_slackTeamIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SlackTeamName"))
   {
     m_slackTeamName = jsonValue.GetString("SlackTeamName");
-
     m_slackTeamNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetString("State");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateReason"))
   {
     m_stateReason = jsonValue.GetString("StateReason");
-
     m_stateReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

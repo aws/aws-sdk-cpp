@@ -27,7 +27,7 @@ namespace Model
   class CreateFlywheelResult
   {
   public:
-    AWS_COMPREHEND_API CreateFlywheelResult();
+    AWS_COMPREHEND_API CreateFlywheelResult() = default;
     AWS_COMPREHEND_API CreateFlywheelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHEND_API CreateFlywheelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The Amazon Resource Number (ARN) of the flywheel.</p>
      */
-    inline const Aws::String& GetFlywheelArn() const{ return m_flywheelArn; }
-    inline void SetFlywheelArn(const Aws::String& value) { m_flywheelArn = value; }
-    inline void SetFlywheelArn(Aws::String&& value) { m_flywheelArn = std::move(value); }
-    inline void SetFlywheelArn(const char* value) { m_flywheelArn.assign(value); }
-    inline CreateFlywheelResult& WithFlywheelArn(const Aws::String& value) { SetFlywheelArn(value); return *this;}
-    inline CreateFlywheelResult& WithFlywheelArn(Aws::String&& value) { SetFlywheelArn(std::move(value)); return *this;}
-    inline CreateFlywheelResult& WithFlywheelArn(const char* value) { SetFlywheelArn(value); return *this;}
+    inline const Aws::String& GetFlywheelArn() const { return m_flywheelArn; }
+    template<typename FlywheelArnT = Aws::String>
+    void SetFlywheelArn(FlywheelArnT&& value) { m_flywheelArnHasBeenSet = true; m_flywheelArn = std::forward<FlywheelArnT>(value); }
+    template<typename FlywheelArnT = Aws::String>
+    CreateFlywheelResult& WithFlywheelArn(FlywheelArnT&& value) { SetFlywheelArn(std::forward<FlywheelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Number (ARN) of the active model version.</p>
      */
-    inline const Aws::String& GetActiveModelArn() const{ return m_activeModelArn; }
-    inline void SetActiveModelArn(const Aws::String& value) { m_activeModelArn = value; }
-    inline void SetActiveModelArn(Aws::String&& value) { m_activeModelArn = std::move(value); }
-    inline void SetActiveModelArn(const char* value) { m_activeModelArn.assign(value); }
-    inline CreateFlywheelResult& WithActiveModelArn(const Aws::String& value) { SetActiveModelArn(value); return *this;}
-    inline CreateFlywheelResult& WithActiveModelArn(Aws::String&& value) { SetActiveModelArn(std::move(value)); return *this;}
-    inline CreateFlywheelResult& WithActiveModelArn(const char* value) { SetActiveModelArn(value); return *this;}
+    inline const Aws::String& GetActiveModelArn() const { return m_activeModelArn; }
+    template<typename ActiveModelArnT = Aws::String>
+    void SetActiveModelArn(ActiveModelArnT&& value) { m_activeModelArnHasBeenSet = true; m_activeModelArn = std::forward<ActiveModelArnT>(value); }
+    template<typename ActiveModelArnT = Aws::String>
+    CreateFlywheelResult& WithActiveModelArn(ActiveModelArnT&& value) { SetActiveModelArn(std::forward<ActiveModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateFlywheelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateFlywheelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateFlywheelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateFlywheelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_flywheelArn;
+    bool m_flywheelArnHasBeenSet = false;
 
     Aws::String m_activeModelArn;
+    bool m_activeModelArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

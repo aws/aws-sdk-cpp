@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CapacityReservationInfo::CapacityReservationInfo() : 
-    m_instanceTypeHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_tenancy(CapacityReservationTenancy::NOT_SET),
-    m_tenancyHasBeenSet(false)
-{
-}
-
 CapacityReservationInfo::CapacityReservationInfo(const XmlNode& xmlNode)
-  : CapacityReservationInfo()
 {
   *this = xmlNode;
 }
@@ -55,7 +46,7 @@ CapacityReservationInfo& CapacityReservationInfo::operator =(const XmlNode& xmlN
     XmlNode tenancyNode = resultNode.FirstChild("tenancy");
     if(!tenancyNode.IsNull())
     {
-      m_tenancy = CapacityReservationTenancyMapper::GetCapacityReservationTenancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tenancyNode.GetText()).c_str()).c_str());
+      m_tenancy = CapacityReservationTenancyMapper::GetCapacityReservationTenancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tenancyNode.GetText()).c_str()));
       m_tenancyHasBeenSet = true;
     }
   }

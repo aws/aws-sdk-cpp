@@ -18,13 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-AmazonMskCluster::AmazonMskCluster() : 
-    m_mskClusterArnHasBeenSet(false)
-{
-}
-
 AmazonMskCluster::AmazonMskCluster(JsonView jsonValue)
-  : AmazonMskCluster()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AmazonMskCluster& AmazonMskCluster::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("mskClusterArn"))
   {
     m_mskClusterArn = jsonValue.GetString("mskClusterArn");
-
     m_mskClusterArnHasBeenSet = true;
   }
-
   return *this;
 }
 

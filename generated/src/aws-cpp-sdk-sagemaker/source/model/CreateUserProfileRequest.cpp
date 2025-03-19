@@ -12,16 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateUserProfileRequest::CreateUserProfileRequest() : 
-    m_domainIdHasBeenSet(false),
-    m_userProfileNameHasBeenSet(false),
-    m_singleSignOnUserIdentifierHasBeenSet(false),
-    m_singleSignOnUserValueHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_userSettingsHasBeenSet(false)
-{
-}
-
 Aws::String CreateUserProfileRequest::SerializePayload() const
 {
   JsonValue payload;

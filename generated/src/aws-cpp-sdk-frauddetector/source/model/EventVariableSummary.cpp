@@ -18,15 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-EventVariableSummary::EventVariableSummary() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_sourceHasBeenSet(false)
-{
-}
-
 EventVariableSummary::EventVariableSummary(JsonView jsonValue)
-  : EventVariableSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ EventVariableSummary& EventVariableSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CheckSchemaVersionValidityResult::CheckSchemaVersionValidityResult() : 
-    m_valid(false)
-{
-}
-
 CheckSchemaVersionValidityResult::CheckSchemaVersionValidityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CheckSchemaVersionValidityResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ CheckSchemaVersionValidityResult& CheckSchemaVersionValidityResult::operator =(c
   if(jsonValue.ValueExists("Valid"))
   {
     m_valid = jsonValue.GetBool("Valid");
-
+    m_validHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetString("Error");
-
+    m_errorHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

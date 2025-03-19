@@ -29,7 +29,7 @@ namespace Model
   class UntagResourcesResult
   {
   public:
-    AWS_RESOURCEGROUPSTAGGINGAPI_API UntagResourcesResult();
+    AWS_RESOURCEGROUPSTAGGINGAPI_API UntagResourcesResult() = default;
     AWS_RESOURCEGROUPSTAGGINGAPI_API UntagResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESOURCEGROUPSTAGGINGAPI_API UntagResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,34 +42,32 @@ namespace Model
      * an error message. If there are no errors, the <code>FailedResourcesMap</code> is
      * empty.</p>
      */
-    inline const Aws::Map<Aws::String, FailureInfo>& GetFailedResourcesMap() const{ return m_failedResourcesMap; }
-    inline void SetFailedResourcesMap(const Aws::Map<Aws::String, FailureInfo>& value) { m_failedResourcesMap = value; }
-    inline void SetFailedResourcesMap(Aws::Map<Aws::String, FailureInfo>&& value) { m_failedResourcesMap = std::move(value); }
-    inline UntagResourcesResult& WithFailedResourcesMap(const Aws::Map<Aws::String, FailureInfo>& value) { SetFailedResourcesMap(value); return *this;}
-    inline UntagResourcesResult& WithFailedResourcesMap(Aws::Map<Aws::String, FailureInfo>&& value) { SetFailedResourcesMap(std::move(value)); return *this;}
-    inline UntagResourcesResult& AddFailedResourcesMap(const Aws::String& key, const FailureInfo& value) { m_failedResourcesMap.emplace(key, value); return *this; }
-    inline UntagResourcesResult& AddFailedResourcesMap(Aws::String&& key, const FailureInfo& value) { m_failedResourcesMap.emplace(std::move(key), value); return *this; }
-    inline UntagResourcesResult& AddFailedResourcesMap(const Aws::String& key, FailureInfo&& value) { m_failedResourcesMap.emplace(key, std::move(value)); return *this; }
-    inline UntagResourcesResult& AddFailedResourcesMap(Aws::String&& key, FailureInfo&& value) { m_failedResourcesMap.emplace(std::move(key), std::move(value)); return *this; }
-    inline UntagResourcesResult& AddFailedResourcesMap(const char* key, FailureInfo&& value) { m_failedResourcesMap.emplace(key, std::move(value)); return *this; }
-    inline UntagResourcesResult& AddFailedResourcesMap(const char* key, const FailureInfo& value) { m_failedResourcesMap.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, FailureInfo>& GetFailedResourcesMap() const { return m_failedResourcesMap; }
+    template<typename FailedResourcesMapT = Aws::Map<Aws::String, FailureInfo>>
+    void SetFailedResourcesMap(FailedResourcesMapT&& value) { m_failedResourcesMapHasBeenSet = true; m_failedResourcesMap = std::forward<FailedResourcesMapT>(value); }
+    template<typename FailedResourcesMapT = Aws::Map<Aws::String, FailureInfo>>
+    UntagResourcesResult& WithFailedResourcesMap(FailedResourcesMapT&& value) { SetFailedResourcesMap(std::forward<FailedResourcesMapT>(value)); return *this;}
+    template<typename FailedResourcesMapKeyT = Aws::String, typename FailedResourcesMapValueT = FailureInfo>
+    UntagResourcesResult& AddFailedResourcesMap(FailedResourcesMapKeyT&& key, FailedResourcesMapValueT&& value) {
+      m_failedResourcesMapHasBeenSet = true; m_failedResourcesMap.emplace(std::forward<FailedResourcesMapKeyT>(key), std::forward<FailedResourcesMapValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UntagResourcesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UntagResourcesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UntagResourcesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UntagResourcesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, FailureInfo> m_failedResourcesMap;
+    bool m_failedResourcesMapHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

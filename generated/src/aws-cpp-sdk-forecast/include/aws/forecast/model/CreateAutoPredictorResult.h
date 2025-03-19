@@ -27,7 +27,7 @@ namespace Model
   class CreateAutoPredictorResult
   {
   public:
-    AWS_FORECASTSERVICE_API CreateAutoPredictorResult();
+    AWS_FORECASTSERVICE_API CreateAutoPredictorResult() = default;
     AWS_FORECASTSERVICE_API CreateAutoPredictorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FORECASTSERVICE_API CreateAutoPredictorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the predictor.</p>
      */
-    inline const Aws::String& GetPredictorArn() const{ return m_predictorArn; }
-    inline void SetPredictorArn(const Aws::String& value) { m_predictorArn = value; }
-    inline void SetPredictorArn(Aws::String&& value) { m_predictorArn = std::move(value); }
-    inline void SetPredictorArn(const char* value) { m_predictorArn.assign(value); }
-    inline CreateAutoPredictorResult& WithPredictorArn(const Aws::String& value) { SetPredictorArn(value); return *this;}
-    inline CreateAutoPredictorResult& WithPredictorArn(Aws::String&& value) { SetPredictorArn(std::move(value)); return *this;}
-    inline CreateAutoPredictorResult& WithPredictorArn(const char* value) { SetPredictorArn(value); return *this;}
+    inline const Aws::String& GetPredictorArn() const { return m_predictorArn; }
+    template<typename PredictorArnT = Aws::String>
+    void SetPredictorArn(PredictorArnT&& value) { m_predictorArnHasBeenSet = true; m_predictorArn = std::forward<PredictorArnT>(value); }
+    template<typename PredictorArnT = Aws::String>
+    CreateAutoPredictorResult& WithPredictorArn(PredictorArnT&& value) { SetPredictorArn(std::forward<PredictorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAutoPredictorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAutoPredictorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAutoPredictorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAutoPredictorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_predictorArn;
+    bool m_predictorArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

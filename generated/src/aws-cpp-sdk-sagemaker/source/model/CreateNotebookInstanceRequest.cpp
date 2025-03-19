@@ -12,30 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateNotebookInstanceRequest::CreateNotebookInstanceRequest() : 
-    m_notebookInstanceNameHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_lifecycleConfigNameHasBeenSet(false),
-    m_directInternetAccess(DirectInternetAccess::NOT_SET),
-    m_directInternetAccessHasBeenSet(false),
-    m_volumeSizeInGB(0),
-    m_volumeSizeInGBHasBeenSet(false),
-    m_acceleratorTypesHasBeenSet(false),
-    m_defaultCodeRepositoryHasBeenSet(false),
-    m_additionalCodeRepositoriesHasBeenSet(false),
-    m_rootAccess(RootAccess::NOT_SET),
-    m_rootAccessHasBeenSet(false),
-    m_platformIdentifierHasBeenSet(false),
-    m_instanceMetadataServiceConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateNotebookInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

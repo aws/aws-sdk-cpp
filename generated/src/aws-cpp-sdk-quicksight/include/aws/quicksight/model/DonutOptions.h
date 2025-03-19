@@ -33,7 +33,7 @@ namespace Model
   class DonutOptions
   {
   public:
-    AWS_QUICKSIGHT_API DonutOptions();
+    AWS_QUICKSIGHT_API DonutOptions() = default;
     AWS_QUICKSIGHT_API DonutOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DonutOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * <code>MEDIUM</code>- A medium-sized donut chart</p> </li> <li> <p>
      * <code>LARGE</code>- A large-sized donut chart</p> </li> </ul>
      */
-    inline const ArcOptions& GetArcOptions() const{ return m_arcOptions; }
+    inline const ArcOptions& GetArcOptions() const { return m_arcOptions; }
     inline bool ArcOptionsHasBeenSet() const { return m_arcOptionsHasBeenSet; }
-    inline void SetArcOptions(const ArcOptions& value) { m_arcOptionsHasBeenSet = true; m_arcOptions = value; }
-    inline void SetArcOptions(ArcOptions&& value) { m_arcOptionsHasBeenSet = true; m_arcOptions = std::move(value); }
-    inline DonutOptions& WithArcOptions(const ArcOptions& value) { SetArcOptions(value); return *this;}
-    inline DonutOptions& WithArcOptions(ArcOptions&& value) { SetArcOptions(std::move(value)); return *this;}
+    template<typename ArcOptionsT = ArcOptions>
+    void SetArcOptions(ArcOptionsT&& value) { m_arcOptionsHasBeenSet = true; m_arcOptions = std::forward<ArcOptionsT>(value); }
+    template<typename ArcOptionsT = ArcOptions>
+    DonutOptions& WithArcOptions(ArcOptionsT&& value) { SetArcOptions(std::forward<ArcOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +60,12 @@ namespace Model
      * <p>The label options of the label that is displayed in the center of a donut
      * chart. This option isn't available for pie charts.</p>
      */
-    inline const DonutCenterOptions& GetDonutCenterOptions() const{ return m_donutCenterOptions; }
+    inline const DonutCenterOptions& GetDonutCenterOptions() const { return m_donutCenterOptions; }
     inline bool DonutCenterOptionsHasBeenSet() const { return m_donutCenterOptionsHasBeenSet; }
-    inline void SetDonutCenterOptions(const DonutCenterOptions& value) { m_donutCenterOptionsHasBeenSet = true; m_donutCenterOptions = value; }
-    inline void SetDonutCenterOptions(DonutCenterOptions&& value) { m_donutCenterOptionsHasBeenSet = true; m_donutCenterOptions = std::move(value); }
-    inline DonutOptions& WithDonutCenterOptions(const DonutCenterOptions& value) { SetDonutCenterOptions(value); return *this;}
-    inline DonutOptions& WithDonutCenterOptions(DonutCenterOptions&& value) { SetDonutCenterOptions(std::move(value)); return *this;}
+    template<typename DonutCenterOptionsT = DonutCenterOptions>
+    void SetDonutCenterOptions(DonutCenterOptionsT&& value) { m_donutCenterOptionsHasBeenSet = true; m_donutCenterOptions = std::forward<DonutCenterOptionsT>(value); }
+    template<typename DonutCenterOptionsT = DonutCenterOptions>
+    DonutOptions& WithDonutCenterOptions(DonutCenterOptionsT&& value) { SetDonutCenterOptions(std::forward<DonutCenterOptionsT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class WhatsAppSignupCallbackResult
   {
   public:
-    AWS_SOCIALMESSAGING_API WhatsAppSignupCallbackResult();
+    AWS_SOCIALMESSAGING_API WhatsAppSignupCallbackResult() = default;
     AWS_SOCIALMESSAGING_API WhatsAppSignupCallbackResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_SOCIALMESSAGING_API WhatsAppSignupCallbackResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SOCIALMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <code>WhatsAppSignupCallback</code> and used by
      * <code>WhatsAppSetupFinalization</code>.</p>
      */
-    inline const Aws::String& GetAssociateInProgressToken() const{ return m_associateInProgressToken; }
+    inline const Aws::String& GetAssociateInProgressToken() const { return m_associateInProgressToken; }
     inline bool AssociateInProgressTokenHasBeenSet() const { return m_associateInProgressTokenHasBeenSet; }
-    inline void SetAssociateInProgressToken(const Aws::String& value) { m_associateInProgressTokenHasBeenSet = true; m_associateInProgressToken = value; }
-    inline void SetAssociateInProgressToken(Aws::String&& value) { m_associateInProgressTokenHasBeenSet = true; m_associateInProgressToken = std::move(value); }
-    inline void SetAssociateInProgressToken(const char* value) { m_associateInProgressTokenHasBeenSet = true; m_associateInProgressToken.assign(value); }
-    inline WhatsAppSignupCallbackResult& WithAssociateInProgressToken(const Aws::String& value) { SetAssociateInProgressToken(value); return *this;}
-    inline WhatsAppSignupCallbackResult& WithAssociateInProgressToken(Aws::String&& value) { SetAssociateInProgressToken(std::move(value)); return *this;}
-    inline WhatsAppSignupCallbackResult& WithAssociateInProgressToken(const char* value) { SetAssociateInProgressToken(value); return *this;}
+    template<typename AssociateInProgressTokenT = Aws::String>
+    void SetAssociateInProgressToken(AssociateInProgressTokenT&& value) { m_associateInProgressTokenHasBeenSet = true; m_associateInProgressToken = std::forward<AssociateInProgressTokenT>(value); }
+    template<typename AssociateInProgressTokenT = Aws::String>
+    WhatsAppSignupCallbackResult& WithAssociateInProgressToken(AssociateInProgressTokenT&& value) { SetAssociateInProgressToken(std::forward<AssociateInProgressTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,18 +58,16 @@ namespace Model
      * <p>A LinkedWhatsAppBusinessAccountIdMetaData object map containing the details
      * of any WhatsAppBusiness accounts that have incomplete setup.</p>
      */
-    inline const Aws::Map<Aws::String, LinkedWhatsAppBusinessAccountIdMetaData>& GetLinkedAccountsWithIncompleteSetup() const{ return m_linkedAccountsWithIncompleteSetup; }
+    inline const Aws::Map<Aws::String, LinkedWhatsAppBusinessAccountIdMetaData>& GetLinkedAccountsWithIncompleteSetup() const { return m_linkedAccountsWithIncompleteSetup; }
     inline bool LinkedAccountsWithIncompleteSetupHasBeenSet() const { return m_linkedAccountsWithIncompleteSetupHasBeenSet; }
-    inline void SetLinkedAccountsWithIncompleteSetup(const Aws::Map<Aws::String, LinkedWhatsAppBusinessAccountIdMetaData>& value) { m_linkedAccountsWithIncompleteSetupHasBeenSet = true; m_linkedAccountsWithIncompleteSetup = value; }
-    inline void SetLinkedAccountsWithIncompleteSetup(Aws::Map<Aws::String, LinkedWhatsAppBusinessAccountIdMetaData>&& value) { m_linkedAccountsWithIncompleteSetupHasBeenSet = true; m_linkedAccountsWithIncompleteSetup = std::move(value); }
-    inline WhatsAppSignupCallbackResult& WithLinkedAccountsWithIncompleteSetup(const Aws::Map<Aws::String, LinkedWhatsAppBusinessAccountIdMetaData>& value) { SetLinkedAccountsWithIncompleteSetup(value); return *this;}
-    inline WhatsAppSignupCallbackResult& WithLinkedAccountsWithIncompleteSetup(Aws::Map<Aws::String, LinkedWhatsAppBusinessAccountIdMetaData>&& value) { SetLinkedAccountsWithIncompleteSetup(std::move(value)); return *this;}
-    inline WhatsAppSignupCallbackResult& AddLinkedAccountsWithIncompleteSetup(const Aws::String& key, const LinkedWhatsAppBusinessAccountIdMetaData& value) { m_linkedAccountsWithIncompleteSetupHasBeenSet = true; m_linkedAccountsWithIncompleteSetup.emplace(key, value); return *this; }
-    inline WhatsAppSignupCallbackResult& AddLinkedAccountsWithIncompleteSetup(Aws::String&& key, const LinkedWhatsAppBusinessAccountIdMetaData& value) { m_linkedAccountsWithIncompleteSetupHasBeenSet = true; m_linkedAccountsWithIncompleteSetup.emplace(std::move(key), value); return *this; }
-    inline WhatsAppSignupCallbackResult& AddLinkedAccountsWithIncompleteSetup(const Aws::String& key, LinkedWhatsAppBusinessAccountIdMetaData&& value) { m_linkedAccountsWithIncompleteSetupHasBeenSet = true; m_linkedAccountsWithIncompleteSetup.emplace(key, std::move(value)); return *this; }
-    inline WhatsAppSignupCallbackResult& AddLinkedAccountsWithIncompleteSetup(Aws::String&& key, LinkedWhatsAppBusinessAccountIdMetaData&& value) { m_linkedAccountsWithIncompleteSetupHasBeenSet = true; m_linkedAccountsWithIncompleteSetup.emplace(std::move(key), std::move(value)); return *this; }
-    inline WhatsAppSignupCallbackResult& AddLinkedAccountsWithIncompleteSetup(const char* key, LinkedWhatsAppBusinessAccountIdMetaData&& value) { m_linkedAccountsWithIncompleteSetupHasBeenSet = true; m_linkedAccountsWithIncompleteSetup.emplace(key, std::move(value)); return *this; }
-    inline WhatsAppSignupCallbackResult& AddLinkedAccountsWithIncompleteSetup(const char* key, const LinkedWhatsAppBusinessAccountIdMetaData& value) { m_linkedAccountsWithIncompleteSetupHasBeenSet = true; m_linkedAccountsWithIncompleteSetup.emplace(key, value); return *this; }
+    template<typename LinkedAccountsWithIncompleteSetupT = Aws::Map<Aws::String, LinkedWhatsAppBusinessAccountIdMetaData>>
+    void SetLinkedAccountsWithIncompleteSetup(LinkedAccountsWithIncompleteSetupT&& value) { m_linkedAccountsWithIncompleteSetupHasBeenSet = true; m_linkedAccountsWithIncompleteSetup = std::forward<LinkedAccountsWithIncompleteSetupT>(value); }
+    template<typename LinkedAccountsWithIncompleteSetupT = Aws::Map<Aws::String, LinkedWhatsAppBusinessAccountIdMetaData>>
+    WhatsAppSignupCallbackResult& WithLinkedAccountsWithIncompleteSetup(LinkedAccountsWithIncompleteSetupT&& value) { SetLinkedAccountsWithIncompleteSetup(std::forward<LinkedAccountsWithIncompleteSetupT>(value)); return *this;}
+    template<typename LinkedAccountsWithIncompleteSetupKeyT = Aws::String, typename LinkedAccountsWithIncompleteSetupValueT = LinkedWhatsAppBusinessAccountIdMetaData>
+    WhatsAppSignupCallbackResult& AddLinkedAccountsWithIncompleteSetup(LinkedAccountsWithIncompleteSetupKeyT&& key, LinkedAccountsWithIncompleteSetupValueT&& value) {
+      m_linkedAccountsWithIncompleteSetupHasBeenSet = true; m_linkedAccountsWithIncompleteSetup.emplace(std::forward<LinkedAccountsWithIncompleteSetupKeyT>(key), std::forward<LinkedAccountsWithIncompleteSetupValueT>(value)); return *this;
+    }
     ///@}
   private:
 

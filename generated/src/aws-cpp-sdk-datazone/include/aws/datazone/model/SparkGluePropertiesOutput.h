@@ -32,7 +32,7 @@ namespace Model
   class SparkGluePropertiesOutput
   {
   public:
-    AWS_DATAZONE_API SparkGluePropertiesOutput();
+    AWS_DATAZONE_API SparkGluePropertiesOutput() = default;
     AWS_DATAZONE_API SparkGluePropertiesOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API SparkGluePropertiesOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The additional args in the Spark Amazon Web Services Glue properties. </p>
      */
-    inline const SparkGlueArgs& GetAdditionalArgs() const{ return m_additionalArgs; }
+    inline const SparkGlueArgs& GetAdditionalArgs() const { return m_additionalArgs; }
     inline bool AdditionalArgsHasBeenSet() const { return m_additionalArgsHasBeenSet; }
-    inline void SetAdditionalArgs(const SparkGlueArgs& value) { m_additionalArgsHasBeenSet = true; m_additionalArgs = value; }
-    inline void SetAdditionalArgs(SparkGlueArgs&& value) { m_additionalArgsHasBeenSet = true; m_additionalArgs = std::move(value); }
-    inline SparkGluePropertiesOutput& WithAdditionalArgs(const SparkGlueArgs& value) { SetAdditionalArgs(value); return *this;}
-    inline SparkGluePropertiesOutput& WithAdditionalArgs(SparkGlueArgs&& value) { SetAdditionalArgs(std::move(value)); return *this;}
+    template<typename AdditionalArgsT = SparkGlueArgs>
+    void SetAdditionalArgs(AdditionalArgsT&& value) { m_additionalArgsHasBeenSet = true; m_additionalArgs = std::forward<AdditionalArgsT>(value); }
+    template<typename AdditionalArgsT = SparkGlueArgs>
+    SparkGluePropertiesOutput& WithAdditionalArgs(AdditionalArgsT&& value) { SetAdditionalArgs(std::forward<AdditionalArgsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +55,12 @@ namespace Model
      * <p>The Amazon Web Services Glue connection name in the Spark Amazon Web Services
      * Glue properties. </p>
      */
-    inline const Aws::String& GetGlueConnectionName() const{ return m_glueConnectionName; }
+    inline const Aws::String& GetGlueConnectionName() const { return m_glueConnectionName; }
     inline bool GlueConnectionNameHasBeenSet() const { return m_glueConnectionNameHasBeenSet; }
-    inline void SetGlueConnectionName(const Aws::String& value) { m_glueConnectionNameHasBeenSet = true; m_glueConnectionName = value; }
-    inline void SetGlueConnectionName(Aws::String&& value) { m_glueConnectionNameHasBeenSet = true; m_glueConnectionName = std::move(value); }
-    inline void SetGlueConnectionName(const char* value) { m_glueConnectionNameHasBeenSet = true; m_glueConnectionName.assign(value); }
-    inline SparkGluePropertiesOutput& WithGlueConnectionName(const Aws::String& value) { SetGlueConnectionName(value); return *this;}
-    inline SparkGluePropertiesOutput& WithGlueConnectionName(Aws::String&& value) { SetGlueConnectionName(std::move(value)); return *this;}
-    inline SparkGluePropertiesOutput& WithGlueConnectionName(const char* value) { SetGlueConnectionName(value); return *this;}
+    template<typename GlueConnectionNameT = Aws::String>
+    void SetGlueConnectionName(GlueConnectionNameT&& value) { m_glueConnectionNameHasBeenSet = true; m_glueConnectionName = std::forward<GlueConnectionNameT>(value); }
+    template<typename GlueConnectionNameT = Aws::String>
+    SparkGluePropertiesOutput& WithGlueConnectionName(GlueConnectionNameT&& value) { SetGlueConnectionName(std::forward<GlueConnectionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,21 +68,19 @@ namespace Model
      * <p>The Amazon Web Services Glue version in the Spark Amazon Web Services Glue
      * properties. </p>
      */
-    inline const Aws::String& GetGlueVersion() const{ return m_glueVersion; }
+    inline const Aws::String& GetGlueVersion() const { return m_glueVersion; }
     inline bool GlueVersionHasBeenSet() const { return m_glueVersionHasBeenSet; }
-    inline void SetGlueVersion(const Aws::String& value) { m_glueVersionHasBeenSet = true; m_glueVersion = value; }
-    inline void SetGlueVersion(Aws::String&& value) { m_glueVersionHasBeenSet = true; m_glueVersion = std::move(value); }
-    inline void SetGlueVersion(const char* value) { m_glueVersionHasBeenSet = true; m_glueVersion.assign(value); }
-    inline SparkGluePropertiesOutput& WithGlueVersion(const Aws::String& value) { SetGlueVersion(value); return *this;}
-    inline SparkGluePropertiesOutput& WithGlueVersion(Aws::String&& value) { SetGlueVersion(std::move(value)); return *this;}
-    inline SparkGluePropertiesOutput& WithGlueVersion(const char* value) { SetGlueVersion(value); return *this;}
+    template<typename GlueVersionT = Aws::String>
+    void SetGlueVersion(GlueVersionT&& value) { m_glueVersionHasBeenSet = true; m_glueVersion = std::forward<GlueVersionT>(value); }
+    template<typename GlueVersionT = Aws::String>
+    SparkGluePropertiesOutput& WithGlueVersion(GlueVersionT&& value) { SetGlueVersion(std::forward<GlueVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The idle timeout in the Spark Amazon Web Services Glue properties. </p>
      */
-    inline int GetIdleTimeout() const{ return m_idleTimeout; }
+    inline int GetIdleTimeout() const { return m_idleTimeout; }
     inline bool IdleTimeoutHasBeenSet() const { return m_idleTimeoutHasBeenSet; }
     inline void SetIdleTimeout(int value) { m_idleTimeoutHasBeenSet = true; m_idleTimeout = value; }
     inline SparkGluePropertiesOutput& WithIdleTimeout(int value) { SetIdleTimeout(value); return *this;}
@@ -94,21 +90,19 @@ namespace Model
     /**
      * <p>The Java virtual env in the Spark Amazon Web Services Glue properties. </p>
      */
-    inline const Aws::String& GetJavaVirtualEnv() const{ return m_javaVirtualEnv; }
+    inline const Aws::String& GetJavaVirtualEnv() const { return m_javaVirtualEnv; }
     inline bool JavaVirtualEnvHasBeenSet() const { return m_javaVirtualEnvHasBeenSet; }
-    inline void SetJavaVirtualEnv(const Aws::String& value) { m_javaVirtualEnvHasBeenSet = true; m_javaVirtualEnv = value; }
-    inline void SetJavaVirtualEnv(Aws::String&& value) { m_javaVirtualEnvHasBeenSet = true; m_javaVirtualEnv = std::move(value); }
-    inline void SetJavaVirtualEnv(const char* value) { m_javaVirtualEnvHasBeenSet = true; m_javaVirtualEnv.assign(value); }
-    inline SparkGluePropertiesOutput& WithJavaVirtualEnv(const Aws::String& value) { SetJavaVirtualEnv(value); return *this;}
-    inline SparkGluePropertiesOutput& WithJavaVirtualEnv(Aws::String&& value) { SetJavaVirtualEnv(std::move(value)); return *this;}
-    inline SparkGluePropertiesOutput& WithJavaVirtualEnv(const char* value) { SetJavaVirtualEnv(value); return *this;}
+    template<typename JavaVirtualEnvT = Aws::String>
+    void SetJavaVirtualEnv(JavaVirtualEnvT&& value) { m_javaVirtualEnvHasBeenSet = true; m_javaVirtualEnv = std::forward<JavaVirtualEnvT>(value); }
+    template<typename JavaVirtualEnvT = Aws::String>
+    SparkGluePropertiesOutput& WithJavaVirtualEnv(JavaVirtualEnvT&& value) { SetJavaVirtualEnv(std::forward<JavaVirtualEnvT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of workers in the Spark Amazon Web Services Glue properties. </p>
      */
-    inline int GetNumberOfWorkers() const{ return m_numberOfWorkers; }
+    inline int GetNumberOfWorkers() const { return m_numberOfWorkers; }
     inline bool NumberOfWorkersHasBeenSet() const { return m_numberOfWorkersHasBeenSet; }
     inline void SetNumberOfWorkers(int value) { m_numberOfWorkersHasBeenSet = true; m_numberOfWorkers = value; }
     inline SparkGluePropertiesOutput& WithNumberOfWorkers(int value) { SetNumberOfWorkers(value); return *this;}
@@ -118,28 +112,24 @@ namespace Model
     /**
      * <p>The Python virtual env in the Spark Amazon Web Services Glue properties. </p>
      */
-    inline const Aws::String& GetPythonVirtualEnv() const{ return m_pythonVirtualEnv; }
+    inline const Aws::String& GetPythonVirtualEnv() const { return m_pythonVirtualEnv; }
     inline bool PythonVirtualEnvHasBeenSet() const { return m_pythonVirtualEnvHasBeenSet; }
-    inline void SetPythonVirtualEnv(const Aws::String& value) { m_pythonVirtualEnvHasBeenSet = true; m_pythonVirtualEnv = value; }
-    inline void SetPythonVirtualEnv(Aws::String&& value) { m_pythonVirtualEnvHasBeenSet = true; m_pythonVirtualEnv = std::move(value); }
-    inline void SetPythonVirtualEnv(const char* value) { m_pythonVirtualEnvHasBeenSet = true; m_pythonVirtualEnv.assign(value); }
-    inline SparkGluePropertiesOutput& WithPythonVirtualEnv(const Aws::String& value) { SetPythonVirtualEnv(value); return *this;}
-    inline SparkGluePropertiesOutput& WithPythonVirtualEnv(Aws::String&& value) { SetPythonVirtualEnv(std::move(value)); return *this;}
-    inline SparkGluePropertiesOutput& WithPythonVirtualEnv(const char* value) { SetPythonVirtualEnv(value); return *this;}
+    template<typename PythonVirtualEnvT = Aws::String>
+    void SetPythonVirtualEnv(PythonVirtualEnvT&& value) { m_pythonVirtualEnvHasBeenSet = true; m_pythonVirtualEnv = std::forward<PythonVirtualEnvT>(value); }
+    template<typename PythonVirtualEnvT = Aws::String>
+    SparkGluePropertiesOutput& WithPythonVirtualEnv(PythonVirtualEnvT&& value) { SetPythonVirtualEnv(std::forward<PythonVirtualEnvT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The worker type in the Spark Amazon Web Services Glue properties. </p>
      */
-    inline const Aws::String& GetWorkerType() const{ return m_workerType; }
+    inline const Aws::String& GetWorkerType() const { return m_workerType; }
     inline bool WorkerTypeHasBeenSet() const { return m_workerTypeHasBeenSet; }
-    inline void SetWorkerType(const Aws::String& value) { m_workerTypeHasBeenSet = true; m_workerType = value; }
-    inline void SetWorkerType(Aws::String&& value) { m_workerTypeHasBeenSet = true; m_workerType = std::move(value); }
-    inline void SetWorkerType(const char* value) { m_workerTypeHasBeenSet = true; m_workerType.assign(value); }
-    inline SparkGluePropertiesOutput& WithWorkerType(const Aws::String& value) { SetWorkerType(value); return *this;}
-    inline SparkGluePropertiesOutput& WithWorkerType(Aws::String&& value) { SetWorkerType(std::move(value)); return *this;}
-    inline SparkGluePropertiesOutput& WithWorkerType(const char* value) { SetWorkerType(value); return *this;}
+    template<typename WorkerTypeT = Aws::String>
+    void SetWorkerType(WorkerTypeT&& value) { m_workerTypeHasBeenSet = true; m_workerType = std::forward<WorkerTypeT>(value); }
+    template<typename WorkerTypeT = Aws::String>
+    SparkGluePropertiesOutput& WithWorkerType(WorkerTypeT&& value) { SetWorkerType(std::forward<WorkerTypeT>(value)); return *this;}
     ///@}
   private:
 
@@ -152,13 +142,13 @@ namespace Model
     Aws::String m_glueVersion;
     bool m_glueVersionHasBeenSet = false;
 
-    int m_idleTimeout;
+    int m_idleTimeout{0};
     bool m_idleTimeoutHasBeenSet = false;
 
     Aws::String m_javaVirtualEnv;
     bool m_javaVirtualEnvHasBeenSet = false;
 
-    int m_numberOfWorkers;
+    int m_numberOfWorkers{0};
     bool m_numberOfWorkersHasBeenSet = false;
 
     Aws::String m_pythonVirtualEnv;

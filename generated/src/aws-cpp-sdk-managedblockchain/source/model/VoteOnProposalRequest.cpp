@@ -12,15 +12,6 @@ using namespace Aws::ManagedBlockchain::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-VoteOnProposalRequest::VoteOnProposalRequest() : 
-    m_networkIdHasBeenSet(false),
-    m_proposalIdHasBeenSet(false),
-    m_voterMemberIdHasBeenSet(false),
-    m_vote(VoteValue::NOT_SET),
-    m_voteHasBeenSet(false)
-{
-}
-
 Aws::String VoteOnProposalRequest::SerializePayload() const
 {
   JsonValue payload;

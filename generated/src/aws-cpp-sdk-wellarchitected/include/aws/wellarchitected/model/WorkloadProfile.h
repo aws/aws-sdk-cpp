@@ -31,7 +31,7 @@ namespace Model
   class WorkloadProfile
   {
   public:
-    AWS_WELLARCHITECTED_API WorkloadProfile();
+    AWS_WELLARCHITECTED_API WorkloadProfile() = default;
     AWS_WELLARCHITECTED_API WorkloadProfile(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API WorkloadProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The profile ARN.</p>
      */
-    inline const Aws::String& GetProfileArn() const{ return m_profileArn; }
+    inline const Aws::String& GetProfileArn() const { return m_profileArn; }
     inline bool ProfileArnHasBeenSet() const { return m_profileArnHasBeenSet; }
-    inline void SetProfileArn(const Aws::String& value) { m_profileArnHasBeenSet = true; m_profileArn = value; }
-    inline void SetProfileArn(Aws::String&& value) { m_profileArnHasBeenSet = true; m_profileArn = std::move(value); }
-    inline void SetProfileArn(const char* value) { m_profileArnHasBeenSet = true; m_profileArn.assign(value); }
-    inline WorkloadProfile& WithProfileArn(const Aws::String& value) { SetProfileArn(value); return *this;}
-    inline WorkloadProfile& WithProfileArn(Aws::String&& value) { SetProfileArn(std::move(value)); return *this;}
-    inline WorkloadProfile& WithProfileArn(const char* value) { SetProfileArn(value); return *this;}
+    template<typename ProfileArnT = Aws::String>
+    void SetProfileArn(ProfileArnT&& value) { m_profileArnHasBeenSet = true; m_profileArn = std::forward<ProfileArnT>(value); }
+    template<typename ProfileArnT = Aws::String>
+    WorkloadProfile& WithProfileArn(ProfileArnT&& value) { SetProfileArn(std::forward<ProfileArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The profile version.</p>
      */
-    inline const Aws::String& GetProfileVersion() const{ return m_profileVersion; }
+    inline const Aws::String& GetProfileVersion() const { return m_profileVersion; }
     inline bool ProfileVersionHasBeenSet() const { return m_profileVersionHasBeenSet; }
-    inline void SetProfileVersion(const Aws::String& value) { m_profileVersionHasBeenSet = true; m_profileVersion = value; }
-    inline void SetProfileVersion(Aws::String&& value) { m_profileVersionHasBeenSet = true; m_profileVersion = std::move(value); }
-    inline void SetProfileVersion(const char* value) { m_profileVersionHasBeenSet = true; m_profileVersion.assign(value); }
-    inline WorkloadProfile& WithProfileVersion(const Aws::String& value) { SetProfileVersion(value); return *this;}
-    inline WorkloadProfile& WithProfileVersion(Aws::String&& value) { SetProfileVersion(std::move(value)); return *this;}
-    inline WorkloadProfile& WithProfileVersion(const char* value) { SetProfileVersion(value); return *this;}
+    template<typename ProfileVersionT = Aws::String>
+    void SetProfileVersion(ProfileVersionT&& value) { m_profileVersionHasBeenSet = true; m_profileVersion = std::forward<ProfileVersionT>(value); }
+    template<typename ProfileVersionT = Aws::String>
+    WorkloadProfile& WithProfileVersion(ProfileVersionT&& value) { SetProfileVersion(std::forward<ProfileVersionT>(value)); return *this;}
     ///@}
   private:
 

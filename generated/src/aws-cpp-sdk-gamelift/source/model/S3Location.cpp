@@ -18,16 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-S3Location::S3Location() : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_objectVersionHasBeenSet(false)
-{
-}
-
 S3Location::S3Location(JsonView jsonValue)
-  : S3Location()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ S3Location& S3Location::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Bucket"))
   {
     m_bucket = jsonValue.GetString("Bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectVersion"))
   {
     m_objectVersion = jsonValue.GetString("ObjectVersion");
-
     m_objectVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

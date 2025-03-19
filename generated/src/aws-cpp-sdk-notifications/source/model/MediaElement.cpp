@@ -18,17 +18,7 @@ namespace Notifications
 namespace Model
 {
 
-MediaElement::MediaElement() : 
-    m_mediaIdHasBeenSet(false),
-    m_type(MediaElementType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_captionHasBeenSet(false)
-{
-}
-
 MediaElement::MediaElement(JsonView jsonValue)
-  : MediaElement()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ MediaElement& MediaElement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("mediaId"))
   {
     m_mediaId = jsonValue.GetString("mediaId");
-
     m_mediaIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = MediaElementTypeMapper::GetMediaElementTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("caption"))
   {
     m_caption = jsonValue.GetString("caption");
-
     m_captionHasBeenSet = true;
   }
-
   return *this;
 }
 

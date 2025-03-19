@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessEndpointTarget::VerifiedAccessEndpointTarget() : 
-    m_verifiedAccessEndpointIdHasBeenSet(false),
-    m_verifiedAccessEndpointTargetIpAddressHasBeenSet(false),
-    m_verifiedAccessEndpointTargetDnsHasBeenSet(false)
-{
-}
-
 VerifiedAccessEndpointTarget::VerifiedAccessEndpointTarget(const XmlNode& xmlNode)
-  : VerifiedAccessEndpointTarget()
 {
   *this = xmlNode;
 }

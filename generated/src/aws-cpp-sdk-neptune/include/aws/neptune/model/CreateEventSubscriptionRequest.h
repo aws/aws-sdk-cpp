@@ -23,7 +23,7 @@ namespace Model
   class CreateEventSubscriptionRequest : public NeptuneRequest
   {
   public:
-    AWS_NEPTUNE_API CreateEventSubscriptionRequest();
+    AWS_NEPTUNE_API CreateEventSubscriptionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of the subscription.</p> <p>Constraints: The name must be less than
      * 255 characters.</p>
      */
-    inline const Aws::String& GetSubscriptionName() const{ return m_subscriptionName; }
+    inline const Aws::String& GetSubscriptionName() const { return m_subscriptionName; }
     inline bool SubscriptionNameHasBeenSet() const { return m_subscriptionNameHasBeenSet; }
-    inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
-    inline void SetSubscriptionName(Aws::String&& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = std::move(value); }
-    inline void SetSubscriptionName(const char* value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName.assign(value); }
-    inline CreateEventSubscriptionRequest& WithSubscriptionName(const Aws::String& value) { SetSubscriptionName(value); return *this;}
-    inline CreateEventSubscriptionRequest& WithSubscriptionName(Aws::String&& value) { SetSubscriptionName(std::move(value)); return *this;}
-    inline CreateEventSubscriptionRequest& WithSubscriptionName(const char* value) { SetSubscriptionName(value); return *this;}
+    template<typename SubscriptionNameT = Aws::String>
+    void SetSubscriptionName(SubscriptionNameT&& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = std::forward<SubscriptionNameT>(value); }
+    template<typename SubscriptionNameT = Aws::String>
+    CreateEventSubscriptionRequest& WithSubscriptionName(SubscriptionNameT&& value) { SetSubscriptionName(std::forward<SubscriptionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * notification. The ARN is created by Amazon SNS when you create a topic and
      * subscribe to it.</p>
      */
-    inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
+    inline const Aws::String& GetSnsTopicArn() const { return m_snsTopicArn; }
     inline bool SnsTopicArnHasBeenSet() const { return m_snsTopicArnHasBeenSet; }
-    inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = value; }
-    inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::move(value); }
-    inline void SetSnsTopicArn(const char* value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn.assign(value); }
-    inline CreateEventSubscriptionRequest& WithSnsTopicArn(const Aws::String& value) { SetSnsTopicArn(value); return *this;}
-    inline CreateEventSubscriptionRequest& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(std::move(value)); return *this;}
-    inline CreateEventSubscriptionRequest& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
+    template<typename SnsTopicArnT = Aws::String>
+    void SetSnsTopicArn(SnsTopicArnT&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::forward<SnsTopicArnT>(value); }
+    template<typename SnsTopicArnT = Aws::String>
+    CreateEventSubscriptionRequest& WithSnsTopicArn(SnsTopicArnT&& value) { SetSnsTopicArn(std::forward<SnsTopicArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +74,12 @@ namespace Model
      * <code>db-parameter-group</code> | <code>db-security-group</code> |
      * <code>db-snapshot</code> | <code>db-cluster-snapshot</code> </p>
      */
-    inline const Aws::String& GetSourceType() const{ return m_sourceType; }
+    inline const Aws::String& GetSourceType() const { return m_sourceType; }
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-    inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-    inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
-    inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
-    inline CreateEventSubscriptionRequest& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
-    inline CreateEventSubscriptionRequest& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
-    inline CreateEventSubscriptionRequest& WithSourceType(const char* value) { SetSourceType(value); return *this;}
+    template<typename SourceTypeT = Aws::String>
+    void SetSourceType(SourceTypeT&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::forward<SourceTypeT>(value); }
+    template<typename SourceTypeT = Aws::String>
+    CreateEventSubscriptionRequest& WithSourceType(SourceTypeT&& value) { SetSourceType(std::forward<SourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,15 +88,14 @@ namespace Model
      * You can see a list of the categories for a given SourceType by using the
      * <b>DescribeEventCategories</b> action.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEventCategories() const{ return m_eventCategories; }
+    inline const Aws::Vector<Aws::String>& GetEventCategories() const { return m_eventCategories; }
     inline bool EventCategoriesHasBeenSet() const { return m_eventCategoriesHasBeenSet; }
-    inline void SetEventCategories(const Aws::Vector<Aws::String>& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = value; }
-    inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = std::move(value); }
-    inline CreateEventSubscriptionRequest& WithEventCategories(const Aws::Vector<Aws::String>& value) { SetEventCategories(value); return *this;}
-    inline CreateEventSubscriptionRequest& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(std::move(value)); return *this;}
-    inline CreateEventSubscriptionRequest& AddEventCategories(const Aws::String& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
-    inline CreateEventSubscriptionRequest& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(std::move(value)); return *this; }
-    inline CreateEventSubscriptionRequest& AddEventCategories(const char* value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
+    template<typename EventCategoriesT = Aws::Vector<Aws::String>>
+    void SetEventCategories(EventCategoriesT&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = std::forward<EventCategoriesT>(value); }
+    template<typename EventCategoriesT = Aws::Vector<Aws::String>>
+    CreateEventSubscriptionRequest& WithEventCategories(EventCategoriesT&& value) { SetEventCategories(std::forward<EventCategoriesT>(value)); return *this;}
+    template<typename EventCategoriesT = Aws::String>
+    CreateEventSubscriptionRequest& AddEventCategories(EventCategoriesT&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.emplace_back(std::forward<EventCategoriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -120,15 +113,14 @@ namespace Model
      * source type is a DB snapshot, a <code>DBSnapshotIdentifier</code> must be
      * supplied.</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetSourceIds() const{ return m_sourceIds; }
+    inline const Aws::Vector<Aws::String>& GetSourceIds() const { return m_sourceIds; }
     inline bool SourceIdsHasBeenSet() const { return m_sourceIdsHasBeenSet; }
-    inline void SetSourceIds(const Aws::Vector<Aws::String>& value) { m_sourceIdsHasBeenSet = true; m_sourceIds = value; }
-    inline void SetSourceIds(Aws::Vector<Aws::String>&& value) { m_sourceIdsHasBeenSet = true; m_sourceIds = std::move(value); }
-    inline CreateEventSubscriptionRequest& WithSourceIds(const Aws::Vector<Aws::String>& value) { SetSourceIds(value); return *this;}
-    inline CreateEventSubscriptionRequest& WithSourceIds(Aws::Vector<Aws::String>&& value) { SetSourceIds(std::move(value)); return *this;}
-    inline CreateEventSubscriptionRequest& AddSourceIds(const Aws::String& value) { m_sourceIdsHasBeenSet = true; m_sourceIds.push_back(value); return *this; }
-    inline CreateEventSubscriptionRequest& AddSourceIds(Aws::String&& value) { m_sourceIdsHasBeenSet = true; m_sourceIds.push_back(std::move(value)); return *this; }
-    inline CreateEventSubscriptionRequest& AddSourceIds(const char* value) { m_sourceIdsHasBeenSet = true; m_sourceIds.push_back(value); return *this; }
+    template<typename SourceIdsT = Aws::Vector<Aws::String>>
+    void SetSourceIds(SourceIdsT&& value) { m_sourceIdsHasBeenSet = true; m_sourceIds = std::forward<SourceIdsT>(value); }
+    template<typename SourceIdsT = Aws::Vector<Aws::String>>
+    CreateEventSubscriptionRequest& WithSourceIds(SourceIdsT&& value) { SetSourceIds(std::forward<SourceIdsT>(value)); return *this;}
+    template<typename SourceIdsT = Aws::String>
+    CreateEventSubscriptionRequest& AddSourceIds(SourceIdsT&& value) { m_sourceIdsHasBeenSet = true; m_sourceIds.emplace_back(std::forward<SourceIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -136,7 +128,7 @@ namespace Model
      * <p> A Boolean value; set to <b>true</b> to activate the subscription, set to
      * <b>false</b> to create the subscription but not active it.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline CreateEventSubscriptionRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -146,14 +138,14 @@ namespace Model
     /**
      * <p>The tags to be applied to the new event subscription.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateEventSubscriptionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateEventSubscriptionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateEventSubscriptionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateEventSubscriptionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateEventSubscriptionRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateEventSubscriptionRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -172,7 +164,7 @@ namespace Model
     Aws::Vector<Aws::String> m_sourceIds;
     bool m_sourceIdsHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

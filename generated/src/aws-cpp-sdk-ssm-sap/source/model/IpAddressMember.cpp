@@ -18,17 +18,7 @@ namespace SsmSap
 namespace Model
 {
 
-IpAddressMember::IpAddressMember() : 
-    m_ipAddressHasBeenSet(false),
-    m_primary(false),
-    m_primaryHasBeenSet(false),
-    m_allocationType(AllocationType::NOT_SET),
-    m_allocationTypeHasBeenSet(false)
-{
-}
-
 IpAddressMember::IpAddressMember(JsonView jsonValue)
-  : IpAddressMember()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ IpAddressMember& IpAddressMember::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IpAddress"))
   {
     m_ipAddress = jsonValue.GetString("IpAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Primary"))
   {
     m_primary = jsonValue.GetBool("Primary");
-
     m_primaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllocationType"))
   {
     m_allocationType = AllocationTypeMapper::GetAllocationTypeForName(jsonValue.GetString("AllocationType"));
-
     m_allocationTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

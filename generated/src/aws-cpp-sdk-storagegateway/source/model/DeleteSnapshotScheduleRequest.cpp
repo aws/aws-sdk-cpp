@@ -12,11 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSnapshotScheduleRequest::DeleteSnapshotScheduleRequest() : 
-    m_volumeARNHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSnapshotScheduleRequest::SerializePayload() const
 {
   JsonValue payload;

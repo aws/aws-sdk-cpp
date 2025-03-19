@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetSegmentsRequest::GetSegmentsRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_pageSizeHasBeenSet(false),
-    m_tokenHasBeenSet(false)
-{
-}
-
 Aws::String GetSegmentsRequest::SerializePayload() const
 {
   return {};

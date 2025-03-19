@@ -12,10 +12,6 @@ using namespace Aws::SupportApp::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAccountAliasRequest::DeleteAccountAliasRequest()
-{
-}
-
 Aws::String DeleteAccountAliasRequest::SerializePayload() const
 {
   return {};

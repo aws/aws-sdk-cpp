@@ -18,14 +18,7 @@ namespace ManagedGrafana
 namespace Model
 {
 
-IdpMetadata::IdpMetadata() : 
-    m_urlHasBeenSet(false),
-    m_xmlHasBeenSet(false)
-{
-}
-
 IdpMetadata::IdpMetadata(JsonView jsonValue)
-  : IdpMetadata()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IdpMetadata& IdpMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("xml"))
   {
     m_xml = jsonValue.GetString("xml");
-
     m_xmlHasBeenSet = true;
   }
-
   return *this;
 }
 

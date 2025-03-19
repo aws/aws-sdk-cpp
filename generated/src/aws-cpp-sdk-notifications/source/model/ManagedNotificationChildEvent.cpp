@@ -18,28 +18,7 @@ namespace Notifications
 namespace Model
 {
 
-ManagedNotificationChildEvent::ManagedNotificationChildEvent() : 
-    m_schemaVersion(SchemaVersion::NOT_SET),
-    m_schemaVersionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_messageComponentsHasBeenSet(false),
-    m_sourceEventDetailUrlHasBeenSet(false),
-    m_sourceEventDetailUrlDisplayTextHasBeenSet(false),
-    m_notificationType(NotificationType::NOT_SET),
-    m_notificationTypeHasBeenSet(false),
-    m_eventStatus(EventStatus::NOT_SET),
-    m_eventStatusHasBeenSet(false),
-    m_aggregateManagedNotificationEventArnHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_textPartsHasBeenSet(false),
-    m_organizationalUnitIdHasBeenSet(false),
-    m_aggregationDetailHasBeenSet(false)
-{
-}
-
 ManagedNotificationChildEvent::ManagedNotificationChildEvent(JsonView jsonValue)
-  : ManagedNotificationChildEvent()
 {
   *this = jsonValue;
 }
@@ -49,73 +28,53 @@ ManagedNotificationChildEvent& ManagedNotificationChildEvent::operator =(JsonVie
   if(jsonValue.ValueExists("schemaVersion"))
   {
     m_schemaVersion = SchemaVersionMapper::GetSchemaVersionForName(jsonValue.GetString("schemaVersion"));
-
     m_schemaVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("messageComponents"))
   {
     m_messageComponents = jsonValue.GetObject("messageComponents");
-
     m_messageComponentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceEventDetailUrl"))
   {
     m_sourceEventDetailUrl = jsonValue.GetString("sourceEventDetailUrl");
-
     m_sourceEventDetailUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceEventDetailUrlDisplayText"))
   {
     m_sourceEventDetailUrlDisplayText = jsonValue.GetString("sourceEventDetailUrlDisplayText");
-
     m_sourceEventDetailUrlDisplayTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notificationType"))
   {
     m_notificationType = NotificationTypeMapper::GetNotificationTypeForName(jsonValue.GetString("notificationType"));
-
     m_notificationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventStatus"))
   {
     m_eventStatus = EventStatusMapper::GetEventStatusForName(jsonValue.GetString("eventStatus"));
-
     m_eventStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregateManagedNotificationEventArn"))
   {
     m_aggregateManagedNotificationEventArn = jsonValue.GetString("aggregateManagedNotificationEventArn");
-
     m_aggregateManagedNotificationEventArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("textParts"))
   {
     Aws::Map<Aws::String, JsonView> textPartsJsonMap = jsonValue.GetObject("textParts").GetAllObjects();
@@ -125,21 +84,16 @@ ManagedNotificationChildEvent& ManagedNotificationChildEvent::operator =(JsonVie
     }
     m_textPartsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("organizationalUnitId"))
   {
     m_organizationalUnitId = jsonValue.GetString("organizationalUnitId");
-
     m_organizationalUnitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregationDetail"))
   {
     m_aggregationDetail = jsonValue.GetObject("aggregationDetail");
-
     m_aggregationDetailHasBeenSet = true;
   }
-
   return *this;
 }
 

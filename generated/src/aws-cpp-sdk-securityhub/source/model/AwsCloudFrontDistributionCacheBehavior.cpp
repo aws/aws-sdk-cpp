@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsCloudFrontDistributionCacheBehavior::AwsCloudFrontDistributionCacheBehavior() : 
-    m_viewerProtocolPolicyHasBeenSet(false)
-{
-}
-
 AwsCloudFrontDistributionCacheBehavior::AwsCloudFrontDistributionCacheBehavior(JsonView jsonValue)
-  : AwsCloudFrontDistributionCacheBehavior()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsCloudFrontDistributionCacheBehavior& AwsCloudFrontDistributionCacheBehavior::
   if(jsonValue.ValueExists("ViewerProtocolPolicy"))
   {
     m_viewerProtocolPolicy = jsonValue.GetString("ViewerProtocolPolicy");
-
     m_viewerProtocolPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

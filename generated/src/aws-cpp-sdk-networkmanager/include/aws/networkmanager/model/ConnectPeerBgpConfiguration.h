@@ -31,7 +31,7 @@ namespace Model
   class ConnectPeerBgpConfiguration
   {
   public:
-    AWS_NETWORKMANAGER_API ConnectPeerBgpConfiguration();
+    AWS_NETWORKMANAGER_API ConnectPeerBgpConfiguration() = default;
     AWS_NETWORKMANAGER_API ConnectPeerBgpConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API ConnectPeerBgpConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The ASN of the Coret Network.</p>
      */
-    inline long long GetCoreNetworkAsn() const{ return m_coreNetworkAsn; }
+    inline long long GetCoreNetworkAsn() const { return m_coreNetworkAsn; }
     inline bool CoreNetworkAsnHasBeenSet() const { return m_coreNetworkAsnHasBeenSet; }
     inline void SetCoreNetworkAsn(long long value) { m_coreNetworkAsnHasBeenSet = true; m_coreNetworkAsn = value; }
     inline ConnectPeerBgpConfiguration& WithCoreNetworkAsn(long long value) { SetCoreNetworkAsn(value); return *this;}
@@ -51,7 +51,7 @@ namespace Model
     /**
      * <p>The ASN of the Connect peer.</p>
      */
-    inline long long GetPeerAsn() const{ return m_peerAsn; }
+    inline long long GetPeerAsn() const { return m_peerAsn; }
     inline bool PeerAsnHasBeenSet() const { return m_peerAsnHasBeenSet; }
     inline void SetPeerAsn(long long value) { m_peerAsnHasBeenSet = true; m_peerAsn = value; }
     inline ConnectPeerBgpConfiguration& WithPeerAsn(long long value) { SetPeerAsn(value); return *this;}
@@ -61,35 +61,31 @@ namespace Model
     /**
      * <p>The address of a core network.</p>
      */
-    inline const Aws::String& GetCoreNetworkAddress() const{ return m_coreNetworkAddress; }
+    inline const Aws::String& GetCoreNetworkAddress() const { return m_coreNetworkAddress; }
     inline bool CoreNetworkAddressHasBeenSet() const { return m_coreNetworkAddressHasBeenSet; }
-    inline void SetCoreNetworkAddress(const Aws::String& value) { m_coreNetworkAddressHasBeenSet = true; m_coreNetworkAddress = value; }
-    inline void SetCoreNetworkAddress(Aws::String&& value) { m_coreNetworkAddressHasBeenSet = true; m_coreNetworkAddress = std::move(value); }
-    inline void SetCoreNetworkAddress(const char* value) { m_coreNetworkAddressHasBeenSet = true; m_coreNetworkAddress.assign(value); }
-    inline ConnectPeerBgpConfiguration& WithCoreNetworkAddress(const Aws::String& value) { SetCoreNetworkAddress(value); return *this;}
-    inline ConnectPeerBgpConfiguration& WithCoreNetworkAddress(Aws::String&& value) { SetCoreNetworkAddress(std::move(value)); return *this;}
-    inline ConnectPeerBgpConfiguration& WithCoreNetworkAddress(const char* value) { SetCoreNetworkAddress(value); return *this;}
+    template<typename CoreNetworkAddressT = Aws::String>
+    void SetCoreNetworkAddress(CoreNetworkAddressT&& value) { m_coreNetworkAddressHasBeenSet = true; m_coreNetworkAddress = std::forward<CoreNetworkAddressT>(value); }
+    template<typename CoreNetworkAddressT = Aws::String>
+    ConnectPeerBgpConfiguration& WithCoreNetworkAddress(CoreNetworkAddressT&& value) { SetCoreNetworkAddress(std::forward<CoreNetworkAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The address of a core network Connect peer.</p>
      */
-    inline const Aws::String& GetPeerAddress() const{ return m_peerAddress; }
+    inline const Aws::String& GetPeerAddress() const { return m_peerAddress; }
     inline bool PeerAddressHasBeenSet() const { return m_peerAddressHasBeenSet; }
-    inline void SetPeerAddress(const Aws::String& value) { m_peerAddressHasBeenSet = true; m_peerAddress = value; }
-    inline void SetPeerAddress(Aws::String&& value) { m_peerAddressHasBeenSet = true; m_peerAddress = std::move(value); }
-    inline void SetPeerAddress(const char* value) { m_peerAddressHasBeenSet = true; m_peerAddress.assign(value); }
-    inline ConnectPeerBgpConfiguration& WithPeerAddress(const Aws::String& value) { SetPeerAddress(value); return *this;}
-    inline ConnectPeerBgpConfiguration& WithPeerAddress(Aws::String&& value) { SetPeerAddress(std::move(value)); return *this;}
-    inline ConnectPeerBgpConfiguration& WithPeerAddress(const char* value) { SetPeerAddress(value); return *this;}
+    template<typename PeerAddressT = Aws::String>
+    void SetPeerAddress(PeerAddressT&& value) { m_peerAddressHasBeenSet = true; m_peerAddress = std::forward<PeerAddressT>(value); }
+    template<typename PeerAddressT = Aws::String>
+    ConnectPeerBgpConfiguration& WithPeerAddress(PeerAddressT&& value) { SetPeerAddress(std::forward<PeerAddressT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_coreNetworkAsn;
+    long long m_coreNetworkAsn{0};
     bool m_coreNetworkAsnHasBeenSet = false;
 
-    long long m_peerAsn;
+    long long m_peerAsn{0};
     bool m_peerAsnHasBeenSet = false;
 
     Aws::String m_coreNetworkAddress;

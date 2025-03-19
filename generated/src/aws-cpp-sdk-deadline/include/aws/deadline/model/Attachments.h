@@ -33,7 +33,7 @@ namespace Model
   class Attachments
   {
   public:
-    AWS_DEADLINE_API Attachments();
+    AWS_DEADLINE_API Attachments() = default;
     AWS_DEADLINE_API Attachments(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Attachments& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,31 @@ namespace Model
     /**
      * <p>A list of manifests which describe job attachment configurations.</p>
      */
-    inline const Aws::Vector<ManifestProperties>& GetManifests() const{ return m_manifests; }
+    inline const Aws::Vector<ManifestProperties>& GetManifests() const { return m_manifests; }
     inline bool ManifestsHasBeenSet() const { return m_manifestsHasBeenSet; }
-    inline void SetManifests(const Aws::Vector<ManifestProperties>& value) { m_manifestsHasBeenSet = true; m_manifests = value; }
-    inline void SetManifests(Aws::Vector<ManifestProperties>&& value) { m_manifestsHasBeenSet = true; m_manifests = std::move(value); }
-    inline Attachments& WithManifests(const Aws::Vector<ManifestProperties>& value) { SetManifests(value); return *this;}
-    inline Attachments& WithManifests(Aws::Vector<ManifestProperties>&& value) { SetManifests(std::move(value)); return *this;}
-    inline Attachments& AddManifests(const ManifestProperties& value) { m_manifestsHasBeenSet = true; m_manifests.push_back(value); return *this; }
-    inline Attachments& AddManifests(ManifestProperties&& value) { m_manifestsHasBeenSet = true; m_manifests.push_back(std::move(value)); return *this; }
+    template<typename ManifestsT = Aws::Vector<ManifestProperties>>
+    void SetManifests(ManifestsT&& value) { m_manifestsHasBeenSet = true; m_manifests = std::forward<ManifestsT>(value); }
+    template<typename ManifestsT = Aws::Vector<ManifestProperties>>
+    Attachments& WithManifests(ManifestsT&& value) { SetManifests(std::forward<ManifestsT>(value)); return *this;}
+    template<typename ManifestsT = ManifestProperties>
+    Attachments& AddManifests(ManifestsT&& value) { m_manifestsHasBeenSet = true; m_manifests.emplace_back(std::forward<ManifestsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The file system.</p>
      */
-    inline const JobAttachmentsFileSystem& GetFileSystem() const{ return m_fileSystem; }
+    inline JobAttachmentsFileSystem GetFileSystem() const { return m_fileSystem; }
     inline bool FileSystemHasBeenSet() const { return m_fileSystemHasBeenSet; }
-    inline void SetFileSystem(const JobAttachmentsFileSystem& value) { m_fileSystemHasBeenSet = true; m_fileSystem = value; }
-    inline void SetFileSystem(JobAttachmentsFileSystem&& value) { m_fileSystemHasBeenSet = true; m_fileSystem = std::move(value); }
-    inline Attachments& WithFileSystem(const JobAttachmentsFileSystem& value) { SetFileSystem(value); return *this;}
-    inline Attachments& WithFileSystem(JobAttachmentsFileSystem&& value) { SetFileSystem(std::move(value)); return *this;}
+    inline void SetFileSystem(JobAttachmentsFileSystem value) { m_fileSystemHasBeenSet = true; m_fileSystem = value; }
+    inline Attachments& WithFileSystem(JobAttachmentsFileSystem value) { SetFileSystem(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<ManifestProperties> m_manifests;
     bool m_manifestsHasBeenSet = false;
 
-    JobAttachmentsFileSystem m_fileSystem;
+    JobAttachmentsFileSystem m_fileSystem{JobAttachmentsFileSystem::NOT_SET};
     bool m_fileSystemHasBeenSet = false;
   };
 

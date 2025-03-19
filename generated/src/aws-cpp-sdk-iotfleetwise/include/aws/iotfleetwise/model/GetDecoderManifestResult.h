@@ -29,7 +29,7 @@ namespace Model
   class GetDecoderManifestResult
   {
   public:
-    AWS_IOTFLEETWISE_API GetDecoderManifestResult();
+    AWS_IOTFLEETWISE_API GetDecoderManifestResult() = default;
     AWS_IOTFLEETWISE_API GetDecoderManifestResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTFLEETWISE_API GetDecoderManifestResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,39 +38,33 @@ namespace Model
     /**
      * <p> The name of the decoder manifest. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetDecoderManifestResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetDecoderManifestResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetDecoderManifestResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetDecoderManifestResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Amazon Resource Name (ARN) of the decoder manifest. </p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline GetDecoderManifestResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetDecoderManifestResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetDecoderManifestResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetDecoderManifestResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A brief description of the decoder manifest.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetDecoderManifestResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetDecoderManifestResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetDecoderManifestResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetDecoderManifestResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,13 +72,11 @@ namespace Model
      * <p> The ARN of a vehicle model (model manifest) associated with the decoder
      * manifest.</p>
      */
-    inline const Aws::String& GetModelManifestArn() const{ return m_modelManifestArn; }
-    inline void SetModelManifestArn(const Aws::String& value) { m_modelManifestArn = value; }
-    inline void SetModelManifestArn(Aws::String&& value) { m_modelManifestArn = std::move(value); }
-    inline void SetModelManifestArn(const char* value) { m_modelManifestArn.assign(value); }
-    inline GetDecoderManifestResult& WithModelManifestArn(const Aws::String& value) { SetModelManifestArn(value); return *this;}
-    inline GetDecoderManifestResult& WithModelManifestArn(Aws::String&& value) { SetModelManifestArn(std::move(value)); return *this;}
-    inline GetDecoderManifestResult& WithModelManifestArn(const char* value) { SetModelManifestArn(value); return *this;}
+    inline const Aws::String& GetModelManifestArn() const { return m_modelManifestArn; }
+    template<typename ModelManifestArnT = Aws::String>
+    void SetModelManifestArn(ModelManifestArnT&& value) { m_modelManifestArnHasBeenSet = true; m_modelManifestArn = std::forward<ModelManifestArnT>(value); }
+    template<typename ModelManifestArnT = Aws::String>
+    GetDecoderManifestResult& WithModelManifestArn(ModelManifestArnT&& value) { SetModelManifestArn(std::forward<ModelManifestArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,11 +85,9 @@ namespace Model
      * decoder manifest can't be edited. If the status is marked <code>DRAFT</code>,
      * you can edit the decoder manifest.</p>
      */
-    inline const ManifestStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ManifestStatus& value) { m_status = value; }
-    inline void SetStatus(ManifestStatus&& value) { m_status = std::move(value); }
-    inline GetDecoderManifestResult& WithStatus(const ManifestStatus& value) { SetStatus(value); return *this;}
-    inline GetDecoderManifestResult& WithStatus(ManifestStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ManifestStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ManifestStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetDecoderManifestResult& WithStatus(ManifestStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -105,11 +95,11 @@ namespace Model
      * <p> The time the decoder manifest was created in seconds since epoch (January 1,
      * 1970 at midnight UTC time). </p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline GetDecoderManifestResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline GetDecoderManifestResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    GetDecoderManifestResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,11 +107,11 @@ namespace Model
      * <p> The time the decoder manifest was last updated in seconds since epoch
      * (January 1, 1970 at midnight UTC time). </p>
      */
-    inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
-    inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTime = value; }
-    inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTime = std::move(value); }
-    inline GetDecoderManifestResult& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
-    inline GetDecoderManifestResult& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModificationTime() const { return m_lastModificationTime; }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    void SetLastModificationTime(LastModificationTimeT&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::forward<LastModificationTimeT>(value); }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    GetDecoderManifestResult& WithLastModificationTime(LastModificationTimeT&& value) { SetLastModificationTime(std::forward<LastModificationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,44 +120,49 @@ namespace Model
      * an <code>INVALID</code> status, the message contains detailed reason and help
      * information.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
-    inline void SetMessage(const Aws::String& value) { m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_message.assign(value); }
-    inline GetDecoderManifestResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline GetDecoderManifestResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline GetDecoderManifestResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+    inline const Aws::String& GetMessage() const { return m_message; }
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    GetDecoderManifestResult& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDecoderManifestResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDecoderManifestResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDecoderManifestResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDecoderManifestResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_modelManifestArn;
+    bool m_modelManifestArnHasBeenSet = false;
 
-    ManifestStatus m_status;
+    ManifestStatus m_status{ManifestStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModificationTime;
+    Aws::Utils::DateTime m_lastModificationTime{};
+    bool m_lastModificationTimeHasBeenSet = false;
 
     Aws::String m_message;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,13 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-PhoneNumberField::PhoneNumberField() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 PhoneNumberField::PhoneNumberField(JsonView jsonValue)
-  : PhoneNumberField()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PhoneNumberField& PhoneNumberField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Identifier"))
   {
     m_identifier = jsonValue.GetString("Identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   return *this;
 }
 

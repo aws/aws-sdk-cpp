@@ -27,7 +27,7 @@ namespace Model
   class GetInvitationsCountResult
   {
   public:
-    AWS_MACIE2_API GetInvitationsCountResult();
+    AWS_MACIE2_API GetInvitationsCountResult() = default;
     AWS_MACIE2_API GetInvitationsCountResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MACIE2_API GetInvitationsCountResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,26 +37,26 @@ namespace Model
      * <p>The total number of invitations that were received by the account, not
      * including the currently accepted invitation.</p>
      */
-    inline long long GetInvitationsCount() const{ return m_invitationsCount; }
-    inline void SetInvitationsCount(long long value) { m_invitationsCount = value; }
+    inline long long GetInvitationsCount() const { return m_invitationsCount; }
+    inline void SetInvitationsCount(long long value) { m_invitationsCountHasBeenSet = true; m_invitationsCount = value; }
     inline GetInvitationsCountResult& WithInvitationsCount(long long value) { SetInvitationsCount(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetInvitationsCountResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetInvitationsCountResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetInvitationsCountResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetInvitationsCountResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_invitationsCount;
+    long long m_invitationsCount{0};
+    bool m_invitationsCountHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

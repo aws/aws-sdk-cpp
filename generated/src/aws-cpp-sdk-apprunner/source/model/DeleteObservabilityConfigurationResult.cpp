@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteObservabilityConfigurationResult::DeleteObservabilityConfigurationResult()
-{
-}
-
 DeleteObservabilityConfigurationResult::DeleteObservabilityConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeleteObservabilityConfigurationResult& DeleteObservabilityConfigurationResult::
   if(jsonValue.ValueExists("ObservabilityConfiguration"))
   {
     m_observabilityConfiguration = jsonValue.GetObject("ObservabilityConfiguration");
-
+    m_observabilityConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

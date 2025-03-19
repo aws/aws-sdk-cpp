@@ -23,7 +23,7 @@ namespace Model
   class GetDiscoveredSchemaRequest : public SchemasRequest
   {
   public:
-    AWS_SCHEMAS_API GetDiscoveredSchemaRequest();
+    AWS_SCHEMAS_API GetDiscoveredSchemaRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,34 +40,31 @@ namespace Model
      * that were used to generate the schema. The array includes a single type of event
      * and has a maximum size of 10 events.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEvents() const{ return m_events; }
+    inline const Aws::Vector<Aws::String>& GetEvents() const { return m_events; }
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
-    inline void SetEvents(const Aws::Vector<Aws::String>& value) { m_eventsHasBeenSet = true; m_events = value; }
-    inline void SetEvents(Aws::Vector<Aws::String>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
-    inline GetDiscoveredSchemaRequest& WithEvents(const Aws::Vector<Aws::String>& value) { SetEvents(value); return *this;}
-    inline GetDiscoveredSchemaRequest& WithEvents(Aws::Vector<Aws::String>&& value) { SetEvents(std::move(value)); return *this;}
-    inline GetDiscoveredSchemaRequest& AddEvents(const Aws::String& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
-    inline GetDiscoveredSchemaRequest& AddEvents(Aws::String&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
-    inline GetDiscoveredSchemaRequest& AddEvents(const char* value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
+    template<typename EventsT = Aws::Vector<Aws::String>>
+    void SetEvents(EventsT&& value) { m_eventsHasBeenSet = true; m_events = std::forward<EventsT>(value); }
+    template<typename EventsT = Aws::Vector<Aws::String>>
+    GetDiscoveredSchemaRequest& WithEvents(EventsT&& value) { SetEvents(std::forward<EventsT>(value)); return *this;}
+    template<typename EventsT = Aws::String>
+    GetDiscoveredSchemaRequest& AddEvents(EventsT&& value) { m_eventsHasBeenSet = true; m_events.emplace_back(std::forward<EventsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The type of event.</p>
      */
-    inline const Type& GetType() const{ return m_type; }
+    inline Type GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline GetDiscoveredSchemaRequest& WithType(const Type& value) { SetType(value); return *this;}
-    inline GetDiscoveredSchemaRequest& WithType(Type&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(Type value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GetDiscoveredSchemaRequest& WithType(Type value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_events;
     bool m_eventsHasBeenSet = false;
 
-    Type m_type;
+    Type m_type{Type::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

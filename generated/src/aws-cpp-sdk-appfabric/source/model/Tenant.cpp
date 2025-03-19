@@ -18,14 +18,7 @@ namespace AppFabric
 namespace Model
 {
 
-Tenant::Tenant() : 
-    m_tenantIdentifierHasBeenSet(false),
-    m_tenantDisplayNameHasBeenSet(false)
-{
-}
-
 Tenant::Tenant(JsonView jsonValue)
-  : Tenant()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Tenant& Tenant::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("tenantIdentifier"))
   {
     m_tenantIdentifier = jsonValue.GetString("tenantIdentifier");
-
     m_tenantIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tenantDisplayName"))
   {
     m_tenantDisplayName = jsonValue.GetString("tenantDisplayName");
-
     m_tenantDisplayNameHasBeenSet = true;
   }
-
   return *this;
 }
 

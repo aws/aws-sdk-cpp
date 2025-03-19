@@ -12,11 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelVariantImportJobRequest::CancelVariantImportJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelVariantImportJobRequest::SerializePayload() const
 {
   return {};

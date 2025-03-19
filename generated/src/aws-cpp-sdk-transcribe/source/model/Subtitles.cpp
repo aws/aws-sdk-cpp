@@ -18,15 +18,7 @@ namespace TranscribeService
 namespace Model
 {
 
-Subtitles::Subtitles() : 
-    m_formatsHasBeenSet(false),
-    m_outputStartIndex(0),
-    m_outputStartIndexHasBeenSet(false)
-{
-}
-
 Subtitles::Subtitles(JsonView jsonValue)
-  : Subtitles()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ Subtitles& Subtitles::operator =(JsonView jsonValue)
     }
     m_formatsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputStartIndex"))
   {
     m_outputStartIndex = jsonValue.GetInteger("OutputStartIndex");
-
     m_outputStartIndexHasBeenSet = true;
   }
-
   return *this;
 }
 

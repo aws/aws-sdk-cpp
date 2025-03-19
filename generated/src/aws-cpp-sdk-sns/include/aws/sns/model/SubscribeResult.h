@@ -33,7 +33,7 @@ namespace Model
   class SubscribeResult
   {
   public:
-    AWS_SNS_API SubscribeResult();
+    AWS_SNS_API SubscribeResult() = default;
     AWS_SNS_API SubscribeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_SNS_API SubscribeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -45,28 +45,28 @@ namespace Model
      * request parameter <code>ReturnSubscriptionArn</code> is true, then the value is
      * always the subscription ARN, even if the subscription requires confirmation.</p>
      */
-    inline const Aws::String& GetSubscriptionArn() const{ return m_subscriptionArn; }
-    inline void SetSubscriptionArn(const Aws::String& value) { m_subscriptionArn = value; }
-    inline void SetSubscriptionArn(Aws::String&& value) { m_subscriptionArn = std::move(value); }
-    inline void SetSubscriptionArn(const char* value) { m_subscriptionArn.assign(value); }
-    inline SubscribeResult& WithSubscriptionArn(const Aws::String& value) { SetSubscriptionArn(value); return *this;}
-    inline SubscribeResult& WithSubscriptionArn(Aws::String&& value) { SetSubscriptionArn(std::move(value)); return *this;}
-    inline SubscribeResult& WithSubscriptionArn(const char* value) { SetSubscriptionArn(value); return *this;}
+    inline const Aws::String& GetSubscriptionArn() const { return m_subscriptionArn; }
+    template<typename SubscriptionArnT = Aws::String>
+    void SetSubscriptionArn(SubscriptionArnT&& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = std::forward<SubscriptionArnT>(value); }
+    template<typename SubscriptionArnT = Aws::String>
+    SubscribeResult& WithSubscriptionArn(SubscriptionArnT&& value) { SetSubscriptionArn(std::forward<SubscriptionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline SubscribeResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline SubscribeResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    SubscribeResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_subscriptionArn;
+    bool m_subscriptionArnHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

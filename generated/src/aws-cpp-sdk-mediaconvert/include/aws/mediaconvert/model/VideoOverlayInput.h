@@ -35,7 +35,7 @@ namespace Model
   class VideoOverlayInput
   {
   public:
-    AWS_MEDIACONVERT_API VideoOverlayInput();
+    AWS_MEDIACONVERT_API VideoOverlayInput() = default;
     AWS_MEDIACONVERT_API VideoOverlayInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API VideoOverlayInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
 To specify
      * one or more Transitions for your base input video instead: Leave blank.
      */
-    inline const Aws::String& GetFileInput() const{ return m_fileInput; }
+    inline const Aws::String& GetFileInput() const { return m_fileInput; }
     inline bool FileInputHasBeenSet() const { return m_fileInputHasBeenSet; }
-    inline void SetFileInput(const Aws::String& value) { m_fileInputHasBeenSet = true; m_fileInput = value; }
-    inline void SetFileInput(Aws::String&& value) { m_fileInputHasBeenSet = true; m_fileInput = std::move(value); }
-    inline void SetFileInput(const char* value) { m_fileInputHasBeenSet = true; m_fileInput.assign(value); }
-    inline VideoOverlayInput& WithFileInput(const Aws::String& value) { SetFileInput(value); return *this;}
-    inline VideoOverlayInput& WithFileInput(Aws::String&& value) { SetFileInput(std::move(value)); return *this;}
-    inline VideoOverlayInput& WithFileInput(const char* value) { SetFileInput(value); return *this;}
+    template<typename FileInputT = Aws::String>
+    void SetFileInput(FileInputT&& value) { m_fileInputHasBeenSet = true; m_fileInput = std::forward<FileInputT>(value); }
+    template<typename FileInputT = Aws::String>
+    VideoOverlayInput& WithFileInput(FileInputT&& value) { SetFileInput(std::forward<FileInputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,14 @@ To specify
      * input clip, you must also specify its start timecode, end timecode, or both
      * start and end timecode.
      */
-    inline const Aws::Vector<VideoOverlayInputClipping>& GetInputClippings() const{ return m_inputClippings; }
+    inline const Aws::Vector<VideoOverlayInputClipping>& GetInputClippings() const { return m_inputClippings; }
     inline bool InputClippingsHasBeenSet() const { return m_inputClippingsHasBeenSet; }
-    inline void SetInputClippings(const Aws::Vector<VideoOverlayInputClipping>& value) { m_inputClippingsHasBeenSet = true; m_inputClippings = value; }
-    inline void SetInputClippings(Aws::Vector<VideoOverlayInputClipping>&& value) { m_inputClippingsHasBeenSet = true; m_inputClippings = std::move(value); }
-    inline VideoOverlayInput& WithInputClippings(const Aws::Vector<VideoOverlayInputClipping>& value) { SetInputClippings(value); return *this;}
-    inline VideoOverlayInput& WithInputClippings(Aws::Vector<VideoOverlayInputClipping>&& value) { SetInputClippings(std::move(value)); return *this;}
-    inline VideoOverlayInput& AddInputClippings(const VideoOverlayInputClipping& value) { m_inputClippingsHasBeenSet = true; m_inputClippings.push_back(value); return *this; }
-    inline VideoOverlayInput& AddInputClippings(VideoOverlayInputClipping&& value) { m_inputClippingsHasBeenSet = true; m_inputClippings.push_back(std::move(value)); return *this; }
+    template<typename InputClippingsT = Aws::Vector<VideoOverlayInputClipping>>
+    void SetInputClippings(InputClippingsT&& value) { m_inputClippingsHasBeenSet = true; m_inputClippings = std::forward<InputClippingsT>(value); }
+    template<typename InputClippingsT = Aws::Vector<VideoOverlayInputClipping>>
+    VideoOverlayInput& WithInputClippings(InputClippingsT&& value) { SetInputClippings(std::forward<InputClippingsT>(value)); return *this;}
+    template<typename InputClippingsT = VideoOverlayInputClipping>
+    VideoOverlayInput& AddInputClippings(InputClippingsT&& value) { m_inputClippingsHasBeenSet = true; m_inputClippings.emplace_back(std::forward<InputClippingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -81,12 +79,10 @@ To specify
      * you do, enter the starting timecode in Start timecode. If you don't specify a
      * value for Timecode source, MediaConvert uses Embedded by default.
      */
-    inline const InputTimecodeSource& GetTimecodeSource() const{ return m_timecodeSource; }
+    inline InputTimecodeSource GetTimecodeSource() const { return m_timecodeSource; }
     inline bool TimecodeSourceHasBeenSet() const { return m_timecodeSourceHasBeenSet; }
-    inline void SetTimecodeSource(const InputTimecodeSource& value) { m_timecodeSourceHasBeenSet = true; m_timecodeSource = value; }
-    inline void SetTimecodeSource(InputTimecodeSource&& value) { m_timecodeSourceHasBeenSet = true; m_timecodeSource = std::move(value); }
-    inline VideoOverlayInput& WithTimecodeSource(const InputTimecodeSource& value) { SetTimecodeSource(value); return *this;}
-    inline VideoOverlayInput& WithTimecodeSource(InputTimecodeSource&& value) { SetTimecodeSource(std::move(value)); return *this;}
+    inline void SetTimecodeSource(InputTimecodeSource value) { m_timecodeSourceHasBeenSet = true; m_timecodeSource = value; }
+    inline VideoOverlayInput& WithTimecodeSource(InputTimecodeSource value) { SetTimecodeSource(value); return *this;}
     ///@}
 
     ///@{
@@ -94,14 +90,12 @@ To specify
      * Specify the starting timecode for this video overlay. To use this setting, you
      * must set Timecode source to Specified start.
      */
-    inline const Aws::String& GetTimecodeStart() const{ return m_timecodeStart; }
+    inline const Aws::String& GetTimecodeStart() const { return m_timecodeStart; }
     inline bool TimecodeStartHasBeenSet() const { return m_timecodeStartHasBeenSet; }
-    inline void SetTimecodeStart(const Aws::String& value) { m_timecodeStartHasBeenSet = true; m_timecodeStart = value; }
-    inline void SetTimecodeStart(Aws::String&& value) { m_timecodeStartHasBeenSet = true; m_timecodeStart = std::move(value); }
-    inline void SetTimecodeStart(const char* value) { m_timecodeStartHasBeenSet = true; m_timecodeStart.assign(value); }
-    inline VideoOverlayInput& WithTimecodeStart(const Aws::String& value) { SetTimecodeStart(value); return *this;}
-    inline VideoOverlayInput& WithTimecodeStart(Aws::String&& value) { SetTimecodeStart(std::move(value)); return *this;}
-    inline VideoOverlayInput& WithTimecodeStart(const char* value) { SetTimecodeStart(value); return *this;}
+    template<typename TimecodeStartT = Aws::String>
+    void SetTimecodeStart(TimecodeStartT&& value) { m_timecodeStartHasBeenSet = true; m_timecodeStart = std::forward<TimecodeStartT>(value); }
+    template<typename TimecodeStartT = Aws::String>
+    VideoOverlayInput& WithTimecodeStart(TimecodeStartT&& value) { SetTimecodeStart(std::forward<TimecodeStartT>(value)); return *this;}
     ///@}
   private:
 
@@ -111,7 +105,7 @@ To specify
     Aws::Vector<VideoOverlayInputClipping> m_inputClippings;
     bool m_inputClippingsHasBeenSet = false;
 
-    InputTimecodeSource m_timecodeSource;
+    InputTimecodeSource m_timecodeSource{InputTimecodeSource::NOT_SET};
     bool m_timecodeSourceHasBeenSet = false;
 
     Aws::String m_timecodeStart;

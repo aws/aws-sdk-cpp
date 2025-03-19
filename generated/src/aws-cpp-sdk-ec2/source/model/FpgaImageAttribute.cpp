@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-FpgaImageAttribute::FpgaImageAttribute() : 
-    m_fpgaImageIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_loadPermissionsHasBeenSet(false),
-    m_productCodesHasBeenSet(false)
-{
-}
-
 FpgaImageAttribute::FpgaImageAttribute(const XmlNode& xmlNode)
-  : FpgaImageAttribute()
 {
   *this = xmlNode;
 }
@@ -63,6 +53,7 @@ FpgaImageAttribute& FpgaImageAttribute::operator =(const XmlNode& xmlNode)
     if(!loadPermissionsNode.IsNull())
     {
       XmlNode loadPermissionsMember = loadPermissionsNode.FirstChild("item");
+      m_loadPermissionsHasBeenSet = !loadPermissionsMember.IsNull();
       while(!loadPermissionsMember.IsNull())
       {
         m_loadPermissions.push_back(loadPermissionsMember);
@@ -75,6 +66,7 @@ FpgaImageAttribute& FpgaImageAttribute::operator =(const XmlNode& xmlNode)
     if(!productCodesNode.IsNull())
     {
       XmlNode productCodesMember = productCodesNode.FirstChild("item");
+      m_productCodesHasBeenSet = !productCodesMember.IsNull();
       while(!productCodesMember.IsNull())
       {
         m_productCodes.push_back(productCodesMember);

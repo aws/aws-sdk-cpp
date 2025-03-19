@@ -14,13 +14,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-ListDistributionsByRealtimeLogConfig2020_05_31Request::ListDistributionsByRealtimeLogConfig2020_05_31Request() : 
-    m_markerHasBeenSet(false),
-    m_maxItemsHasBeenSet(false),
-    m_realtimeLogConfigNameHasBeenSet(false),
-    m_realtimeLogConfigArnHasBeenSet(false)
-{
-}
 
 Aws::String ListDistributionsByRealtimeLogConfig2020_05_31Request::SerializePayload() const
 {

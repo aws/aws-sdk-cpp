@@ -18,18 +18,7 @@ namespace CodeArtifact
 namespace Model
 {
 
-AssociatedPackage::AssociatedPackage() : 
-    m_format(PackageFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_packageHasBeenSet(false),
-    m_associationType(PackageGroupAssociationType::NOT_SET),
-    m_associationTypeHasBeenSet(false)
-{
-}
-
 AssociatedPackage::AssociatedPackage(JsonView jsonValue)
-  : AssociatedPackage()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ AssociatedPackage& AssociatedPackage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("format"))
   {
     m_format = PackageFormatMapper::GetPackageFormatForName(jsonValue.GetString("format"));
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespace"))
   {
     m_namespace = jsonValue.GetString("namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("package"))
   {
     m_package = jsonValue.GetString("package");
-
     m_packageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associationType"))
   {
     m_associationType = PackageGroupAssociationTypeMapper::GetPackageGroupAssociationTypeForName(jsonValue.GetString("associationType"));
-
     m_associationTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace LicenseManagerUserSubscriptions
 namespace Model
 {
 
-LicenseServer::LicenseServer() : 
-    m_healthStatus(LicenseServerHealthStatus::NOT_SET),
-    m_healthStatusHasBeenSet(false),
-    m_ipv4AddressHasBeenSet(false),
-    m_provisioningStatus(LicenseServerEndpointProvisioningStatus::NOT_SET),
-    m_provisioningStatusHasBeenSet(false)
-{
-}
-
 LicenseServer::LicenseServer(JsonView jsonValue)
-  : LicenseServer()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ LicenseServer& LicenseServer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HealthStatus"))
   {
     m_healthStatus = LicenseServerHealthStatusMapper::GetLicenseServerHealthStatusForName(jsonValue.GetString("HealthStatus"));
-
     m_healthStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ipv4Address"))
   {
     m_ipv4Address = jsonValue.GetString("Ipv4Address");
-
     m_ipv4AddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisioningStatus"))
   {
     m_provisioningStatus = LicenseServerEndpointProvisioningStatusMapper::GetLicenseServerEndpointProvisioningStatusForName(jsonValue.GetString("ProvisioningStatus"));
-
     m_provisioningStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

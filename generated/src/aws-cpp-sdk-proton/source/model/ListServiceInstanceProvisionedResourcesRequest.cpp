@@ -12,13 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListServiceInstanceProvisionedResourcesRequest::ListServiceInstanceProvisionedResourcesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_serviceInstanceNameHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
-{
-}
-
 Aws::String ListServiceInstanceProvisionedResourcesRequest::SerializePayload() const
 {
   JsonValue payload;

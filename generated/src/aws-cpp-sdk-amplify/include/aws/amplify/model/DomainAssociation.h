@@ -37,7 +37,7 @@ namespace Model
   class DomainAssociation
   {
   public:
-    AWS_AMPLIFY_API DomainAssociation();
+    AWS_AMPLIFY_API DomainAssociation() = default;
     AWS_AMPLIFY_API DomainAssociation(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFY_API DomainAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,35 +47,31 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (ARN) for the domain association. </p>
      */
-    inline const Aws::String& GetDomainAssociationArn() const{ return m_domainAssociationArn; }
+    inline const Aws::String& GetDomainAssociationArn() const { return m_domainAssociationArn; }
     inline bool DomainAssociationArnHasBeenSet() const { return m_domainAssociationArnHasBeenSet; }
-    inline void SetDomainAssociationArn(const Aws::String& value) { m_domainAssociationArnHasBeenSet = true; m_domainAssociationArn = value; }
-    inline void SetDomainAssociationArn(Aws::String&& value) { m_domainAssociationArnHasBeenSet = true; m_domainAssociationArn = std::move(value); }
-    inline void SetDomainAssociationArn(const char* value) { m_domainAssociationArnHasBeenSet = true; m_domainAssociationArn.assign(value); }
-    inline DomainAssociation& WithDomainAssociationArn(const Aws::String& value) { SetDomainAssociationArn(value); return *this;}
-    inline DomainAssociation& WithDomainAssociationArn(Aws::String&& value) { SetDomainAssociationArn(std::move(value)); return *this;}
-    inline DomainAssociation& WithDomainAssociationArn(const char* value) { SetDomainAssociationArn(value); return *this;}
+    template<typename DomainAssociationArnT = Aws::String>
+    void SetDomainAssociationArn(DomainAssociationArnT&& value) { m_domainAssociationArnHasBeenSet = true; m_domainAssociationArn = std::forward<DomainAssociationArnT>(value); }
+    template<typename DomainAssociationArnT = Aws::String>
+    DomainAssociation& WithDomainAssociationArn(DomainAssociationArnT&& value) { SetDomainAssociationArn(std::forward<DomainAssociationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the domain. </p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline DomainAssociation& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline DomainAssociation& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline DomainAssociation& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    DomainAssociation& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Enables the automated creation of subdomains for branches. </p>
      */
-    inline bool GetEnableAutoSubDomain() const{ return m_enableAutoSubDomain; }
+    inline bool GetEnableAutoSubDomain() const { return m_enableAutoSubDomain; }
     inline bool EnableAutoSubDomainHasBeenSet() const { return m_enableAutoSubDomainHasBeenSet; }
     inline void SetEnableAutoSubDomain(bool value) { m_enableAutoSubDomainHasBeenSet = true; m_enableAutoSubDomain = value; }
     inline DomainAssociation& WithEnableAutoSubDomain(bool value) { SetEnableAutoSubDomain(value); return *this;}
@@ -85,15 +81,14 @@ namespace Model
     /**
      * <p> Sets branch patterns for automatic subdomain creation. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetAutoSubDomainCreationPatterns() const{ return m_autoSubDomainCreationPatterns; }
+    inline const Aws::Vector<Aws::String>& GetAutoSubDomainCreationPatterns() const { return m_autoSubDomainCreationPatterns; }
     inline bool AutoSubDomainCreationPatternsHasBeenSet() const { return m_autoSubDomainCreationPatternsHasBeenSet; }
-    inline void SetAutoSubDomainCreationPatterns(const Aws::Vector<Aws::String>& value) { m_autoSubDomainCreationPatternsHasBeenSet = true; m_autoSubDomainCreationPatterns = value; }
-    inline void SetAutoSubDomainCreationPatterns(Aws::Vector<Aws::String>&& value) { m_autoSubDomainCreationPatternsHasBeenSet = true; m_autoSubDomainCreationPatterns = std::move(value); }
-    inline DomainAssociation& WithAutoSubDomainCreationPatterns(const Aws::Vector<Aws::String>& value) { SetAutoSubDomainCreationPatterns(value); return *this;}
-    inline DomainAssociation& WithAutoSubDomainCreationPatterns(Aws::Vector<Aws::String>&& value) { SetAutoSubDomainCreationPatterns(std::move(value)); return *this;}
-    inline DomainAssociation& AddAutoSubDomainCreationPatterns(const Aws::String& value) { m_autoSubDomainCreationPatternsHasBeenSet = true; m_autoSubDomainCreationPatterns.push_back(value); return *this; }
-    inline DomainAssociation& AddAutoSubDomainCreationPatterns(Aws::String&& value) { m_autoSubDomainCreationPatternsHasBeenSet = true; m_autoSubDomainCreationPatterns.push_back(std::move(value)); return *this; }
-    inline DomainAssociation& AddAutoSubDomainCreationPatterns(const char* value) { m_autoSubDomainCreationPatternsHasBeenSet = true; m_autoSubDomainCreationPatterns.push_back(value); return *this; }
+    template<typename AutoSubDomainCreationPatternsT = Aws::Vector<Aws::String>>
+    void SetAutoSubDomainCreationPatterns(AutoSubDomainCreationPatternsT&& value) { m_autoSubDomainCreationPatternsHasBeenSet = true; m_autoSubDomainCreationPatterns = std::forward<AutoSubDomainCreationPatternsT>(value); }
+    template<typename AutoSubDomainCreationPatternsT = Aws::Vector<Aws::String>>
+    DomainAssociation& WithAutoSubDomainCreationPatterns(AutoSubDomainCreationPatternsT&& value) { SetAutoSubDomainCreationPatterns(std::forward<AutoSubDomainCreationPatternsT>(value)); return *this;}
+    template<typename AutoSubDomainCreationPatternsT = Aws::String>
+    DomainAssociation& AddAutoSubDomainCreationPatterns(AutoSubDomainCreationPatternsT&& value) { m_autoSubDomainCreationPatternsHasBeenSet = true; m_autoSubDomainCreationPatterns.emplace_back(std::forward<AutoSubDomainCreationPatternsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -101,26 +96,22 @@ namespace Model
      * <p> The required AWS Identity and Access Management (IAM) service role for the
      * Amazon Resource Name (ARN) for automatically creating subdomains. </p>
      */
-    inline const Aws::String& GetAutoSubDomainIAMRole() const{ return m_autoSubDomainIAMRole; }
+    inline const Aws::String& GetAutoSubDomainIAMRole() const { return m_autoSubDomainIAMRole; }
     inline bool AutoSubDomainIAMRoleHasBeenSet() const { return m_autoSubDomainIAMRoleHasBeenSet; }
-    inline void SetAutoSubDomainIAMRole(const Aws::String& value) { m_autoSubDomainIAMRoleHasBeenSet = true; m_autoSubDomainIAMRole = value; }
-    inline void SetAutoSubDomainIAMRole(Aws::String&& value) { m_autoSubDomainIAMRoleHasBeenSet = true; m_autoSubDomainIAMRole = std::move(value); }
-    inline void SetAutoSubDomainIAMRole(const char* value) { m_autoSubDomainIAMRoleHasBeenSet = true; m_autoSubDomainIAMRole.assign(value); }
-    inline DomainAssociation& WithAutoSubDomainIAMRole(const Aws::String& value) { SetAutoSubDomainIAMRole(value); return *this;}
-    inline DomainAssociation& WithAutoSubDomainIAMRole(Aws::String&& value) { SetAutoSubDomainIAMRole(std::move(value)); return *this;}
-    inline DomainAssociation& WithAutoSubDomainIAMRole(const char* value) { SetAutoSubDomainIAMRole(value); return *this;}
+    template<typename AutoSubDomainIAMRoleT = Aws::String>
+    void SetAutoSubDomainIAMRole(AutoSubDomainIAMRoleT&& value) { m_autoSubDomainIAMRoleHasBeenSet = true; m_autoSubDomainIAMRole = std::forward<AutoSubDomainIAMRoleT>(value); }
+    template<typename AutoSubDomainIAMRoleT = Aws::String>
+    DomainAssociation& WithAutoSubDomainIAMRole(AutoSubDomainIAMRoleT&& value) { SetAutoSubDomainIAMRole(std::forward<AutoSubDomainIAMRoleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The current status of the domain association. </p>
      */
-    inline const DomainStatus& GetDomainStatus() const{ return m_domainStatus; }
+    inline DomainStatus GetDomainStatus() const { return m_domainStatus; }
     inline bool DomainStatusHasBeenSet() const { return m_domainStatusHasBeenSet; }
-    inline void SetDomainStatus(const DomainStatus& value) { m_domainStatusHasBeenSet = true; m_domainStatus = value; }
-    inline void SetDomainStatus(DomainStatus&& value) { m_domainStatusHasBeenSet = true; m_domainStatus = std::move(value); }
-    inline DomainAssociation& WithDomainStatus(const DomainStatus& value) { SetDomainStatus(value); return *this;}
-    inline DomainAssociation& WithDomainStatus(DomainStatus&& value) { SetDomainStatus(std::move(value)); return *this;}
+    inline void SetDomainStatus(DomainStatus value) { m_domainStatusHasBeenSet = true; m_domainStatus = value; }
+    inline DomainAssociation& WithDomainStatus(DomainStatus value) { SetDomainStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -147,12 +138,10 @@ namespace Model
      * be provisioned or associated, and there is no existing active certificate to
      * roll back to.</p> </dd> </dl>
      */
-    inline const UpdateStatus& GetUpdateStatus() const{ return m_updateStatus; }
+    inline UpdateStatus GetUpdateStatus() const { return m_updateStatus; }
     inline bool UpdateStatusHasBeenSet() const { return m_updateStatusHasBeenSet; }
-    inline void SetUpdateStatus(const UpdateStatus& value) { m_updateStatusHasBeenSet = true; m_updateStatus = value; }
-    inline void SetUpdateStatus(UpdateStatus&& value) { m_updateStatusHasBeenSet = true; m_updateStatus = std::move(value); }
-    inline DomainAssociation& WithUpdateStatus(const UpdateStatus& value) { SetUpdateStatus(value); return *this;}
-    inline DomainAssociation& WithUpdateStatus(UpdateStatus&& value) { SetUpdateStatus(std::move(value)); return *this;}
+    inline void SetUpdateStatus(UpdateStatus value) { m_updateStatusHasBeenSet = true; m_updateStatus = value; }
+    inline DomainAssociation& WithUpdateStatus(UpdateStatus value) { SetUpdateStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -160,42 +149,38 @@ namespace Model
      * <p> Additional information that describes why the domain association is in the
      * current state.</p>
      */
-    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
-    inline DomainAssociation& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-    inline DomainAssociation& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-    inline DomainAssociation& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    DomainAssociation& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The DNS record for certificate verification. </p>
      */
-    inline const Aws::String& GetCertificateVerificationDNSRecord() const{ return m_certificateVerificationDNSRecord; }
+    inline const Aws::String& GetCertificateVerificationDNSRecord() const { return m_certificateVerificationDNSRecord; }
     inline bool CertificateVerificationDNSRecordHasBeenSet() const { return m_certificateVerificationDNSRecordHasBeenSet; }
-    inline void SetCertificateVerificationDNSRecord(const Aws::String& value) { m_certificateVerificationDNSRecordHasBeenSet = true; m_certificateVerificationDNSRecord = value; }
-    inline void SetCertificateVerificationDNSRecord(Aws::String&& value) { m_certificateVerificationDNSRecordHasBeenSet = true; m_certificateVerificationDNSRecord = std::move(value); }
-    inline void SetCertificateVerificationDNSRecord(const char* value) { m_certificateVerificationDNSRecordHasBeenSet = true; m_certificateVerificationDNSRecord.assign(value); }
-    inline DomainAssociation& WithCertificateVerificationDNSRecord(const Aws::String& value) { SetCertificateVerificationDNSRecord(value); return *this;}
-    inline DomainAssociation& WithCertificateVerificationDNSRecord(Aws::String&& value) { SetCertificateVerificationDNSRecord(std::move(value)); return *this;}
-    inline DomainAssociation& WithCertificateVerificationDNSRecord(const char* value) { SetCertificateVerificationDNSRecord(value); return *this;}
+    template<typename CertificateVerificationDNSRecordT = Aws::String>
+    void SetCertificateVerificationDNSRecord(CertificateVerificationDNSRecordT&& value) { m_certificateVerificationDNSRecordHasBeenSet = true; m_certificateVerificationDNSRecord = std::forward<CertificateVerificationDNSRecordT>(value); }
+    template<typename CertificateVerificationDNSRecordT = Aws::String>
+    DomainAssociation& WithCertificateVerificationDNSRecord(CertificateVerificationDNSRecordT&& value) { SetCertificateVerificationDNSRecord(std::forward<CertificateVerificationDNSRecordT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The subdomains for the domain association. </p>
      */
-    inline const Aws::Vector<SubDomain>& GetSubDomains() const{ return m_subDomains; }
+    inline const Aws::Vector<SubDomain>& GetSubDomains() const { return m_subDomains; }
     inline bool SubDomainsHasBeenSet() const { return m_subDomainsHasBeenSet; }
-    inline void SetSubDomains(const Aws::Vector<SubDomain>& value) { m_subDomainsHasBeenSet = true; m_subDomains = value; }
-    inline void SetSubDomains(Aws::Vector<SubDomain>&& value) { m_subDomainsHasBeenSet = true; m_subDomains = std::move(value); }
-    inline DomainAssociation& WithSubDomains(const Aws::Vector<SubDomain>& value) { SetSubDomains(value); return *this;}
-    inline DomainAssociation& WithSubDomains(Aws::Vector<SubDomain>&& value) { SetSubDomains(std::move(value)); return *this;}
-    inline DomainAssociation& AddSubDomains(const SubDomain& value) { m_subDomainsHasBeenSet = true; m_subDomains.push_back(value); return *this; }
-    inline DomainAssociation& AddSubDomains(SubDomain&& value) { m_subDomainsHasBeenSet = true; m_subDomains.push_back(std::move(value)); return *this; }
+    template<typename SubDomainsT = Aws::Vector<SubDomain>>
+    void SetSubDomains(SubDomainsT&& value) { m_subDomainsHasBeenSet = true; m_subDomains = std::forward<SubDomainsT>(value); }
+    template<typename SubDomainsT = Aws::Vector<SubDomain>>
+    DomainAssociation& WithSubDomains(SubDomainsT&& value) { SetSubDomains(std::forward<SubDomainsT>(value)); return *this;}
+    template<typename SubDomainsT = SubDomain>
+    DomainAssociation& AddSubDomains(SubDomainsT&& value) { m_subDomainsHasBeenSet = true; m_subDomains.emplace_back(std::forward<SubDomainsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -207,12 +192,12 @@ namespace Model
      * instead of the current active certificate. Otherwise, <code>certificate</code>
      * points to the current active certificate.</p>
      */
-    inline const Certificate& GetCertificate() const{ return m_certificate; }
+    inline const Certificate& GetCertificate() const { return m_certificate; }
     inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
-    inline void SetCertificate(const Certificate& value) { m_certificateHasBeenSet = true; m_certificate = value; }
-    inline void SetCertificate(Certificate&& value) { m_certificateHasBeenSet = true; m_certificate = std::move(value); }
-    inline DomainAssociation& WithCertificate(const Certificate& value) { SetCertificate(value); return *this;}
-    inline DomainAssociation& WithCertificate(Certificate&& value) { SetCertificate(std::move(value)); return *this;}
+    template<typename CertificateT = Certificate>
+    void SetCertificate(CertificateT&& value) { m_certificateHasBeenSet = true; m_certificate = std::forward<CertificateT>(value); }
+    template<typename CertificateT = Certificate>
+    DomainAssociation& WithCertificate(CertificateT&& value) { SetCertificate(std::forward<CertificateT>(value)); return *this;}
     ///@}
   private:
 
@@ -222,7 +207,7 @@ namespace Model
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet = false;
 
-    bool m_enableAutoSubDomain;
+    bool m_enableAutoSubDomain{false};
     bool m_enableAutoSubDomainHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_autoSubDomainCreationPatterns;
@@ -231,10 +216,10 @@ namespace Model
     Aws::String m_autoSubDomainIAMRole;
     bool m_autoSubDomainIAMRoleHasBeenSet = false;
 
-    DomainStatus m_domainStatus;
+    DomainStatus m_domainStatus{DomainStatus::NOT_SET};
     bool m_domainStatusHasBeenSet = false;
 
-    UpdateStatus m_updateStatus;
+    UpdateStatus m_updateStatus{UpdateStatus::NOT_SET};
     bool m_updateStatusHasBeenSet = false;
 
     Aws::String m_statusReason;

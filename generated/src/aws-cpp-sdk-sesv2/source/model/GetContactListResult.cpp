@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetContactListResult::GetContactListResult()
-{
-}
-
 GetContactListResult::GetContactListResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetContactListResult& GetContactListResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("ContactListName"))
   {
     m_contactListName = jsonValue.GetString("ContactListName");
-
+    m_contactListNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Topics"))
   {
     Aws::Utils::Array<JsonView> topicsJsonList = jsonValue.GetArray("Topics");
@@ -42,26 +37,23 @@ GetContactListResult& GetContactListResult::operator =(const Aws::AmazonWebServi
     {
       m_topics.push_back(topicsJsonList[topicsIndex].AsObject());
     }
+    m_topicsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
+    m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTimestamp"))
   {
     m_lastUpdatedTimestamp = jsonValue.GetDouble("LastUpdatedTimestamp");
-
+    m_lastUpdatedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -69,14 +61,15 @@ GetContactListResult& GetContactListResult::operator =(const Aws::AmazonWebServi
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

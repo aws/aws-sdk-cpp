@@ -18,15 +18,7 @@ namespace BedrockDataAutomation
 namespace Model
 {
 
-AudioExtractionCategory::AudioExtractionCategory() : 
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_typesHasBeenSet(false)
-{
-}
-
 AudioExtractionCategory::AudioExtractionCategory(JsonView jsonValue)
-  : AudioExtractionCategory()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AudioExtractionCategory& AudioExtractionCategory::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("state"))
   {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("types"))
   {
     Aws::Utils::Array<JsonView> typesJsonList = jsonValue.GetArray("types");
@@ -49,7 +39,6 @@ AudioExtractionCategory& AudioExtractionCategory::operator =(JsonView jsonValue)
     }
     m_typesHasBeenSet = true;
   }
-
   return *this;
 }
 

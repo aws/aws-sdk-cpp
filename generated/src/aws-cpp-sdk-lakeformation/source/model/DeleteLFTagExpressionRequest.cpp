@@ -12,12 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLFTagExpressionRequest::DeleteLFTagExpressionRequest() : 
-    m_nameHasBeenSet(false),
-    m_catalogIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLFTagExpressionRequest::SerializePayload() const
 {
   JsonValue payload;

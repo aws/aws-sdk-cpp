@@ -21,7 +21,7 @@ namespace Model
   class DeleteFirewallRuleGroupRequest : public Route53ResolverRequest
   {
   public:
-    AWS_ROUTE53RESOLVER_API DeleteFirewallRuleGroupRequest();
+    AWS_ROUTE53RESOLVER_API DeleteFirewallRuleGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The unique identifier of the firewall rule group that you want to delete.
      * </p>
      */
-    inline const Aws::String& GetFirewallRuleGroupId() const{ return m_firewallRuleGroupId; }
+    inline const Aws::String& GetFirewallRuleGroupId() const { return m_firewallRuleGroupId; }
     inline bool FirewallRuleGroupIdHasBeenSet() const { return m_firewallRuleGroupIdHasBeenSet; }
-    inline void SetFirewallRuleGroupId(const Aws::String& value) { m_firewallRuleGroupIdHasBeenSet = true; m_firewallRuleGroupId = value; }
-    inline void SetFirewallRuleGroupId(Aws::String&& value) { m_firewallRuleGroupIdHasBeenSet = true; m_firewallRuleGroupId = std::move(value); }
-    inline void SetFirewallRuleGroupId(const char* value) { m_firewallRuleGroupIdHasBeenSet = true; m_firewallRuleGroupId.assign(value); }
-    inline DeleteFirewallRuleGroupRequest& WithFirewallRuleGroupId(const Aws::String& value) { SetFirewallRuleGroupId(value); return *this;}
-    inline DeleteFirewallRuleGroupRequest& WithFirewallRuleGroupId(Aws::String&& value) { SetFirewallRuleGroupId(std::move(value)); return *this;}
-    inline DeleteFirewallRuleGroupRequest& WithFirewallRuleGroupId(const char* value) { SetFirewallRuleGroupId(value); return *this;}
+    template<typename FirewallRuleGroupIdT = Aws::String>
+    void SetFirewallRuleGroupId(FirewallRuleGroupIdT&& value) { m_firewallRuleGroupIdHasBeenSet = true; m_firewallRuleGroupId = std::forward<FirewallRuleGroupIdT>(value); }
+    template<typename FirewallRuleGroupIdT = Aws::String>
+    DeleteFirewallRuleGroupRequest& WithFirewallRuleGroupId(FirewallRuleGroupIdT&& value) { SetFirewallRuleGroupId(std::forward<FirewallRuleGroupIdT>(value)); return *this;}
     ///@}
   private:
 

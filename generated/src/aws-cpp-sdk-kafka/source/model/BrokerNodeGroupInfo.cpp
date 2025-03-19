@@ -18,20 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-BrokerNodeGroupInfo::BrokerNodeGroupInfo() : 
-    m_brokerAZDistribution(BrokerAZDistribution::NOT_SET),
-    m_brokerAZDistributionHasBeenSet(false),
-    m_clientSubnetsHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_storageInfoHasBeenSet(false),
-    m_connectivityInfoHasBeenSet(false),
-    m_zoneIdsHasBeenSet(false)
-{
-}
-
 BrokerNodeGroupInfo::BrokerNodeGroupInfo(JsonView jsonValue)
-  : BrokerNodeGroupInfo()
 {
   *this = jsonValue;
 }
@@ -41,10 +28,8 @@ BrokerNodeGroupInfo& BrokerNodeGroupInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("brokerAZDistribution"))
   {
     m_brokerAZDistribution = BrokerAZDistributionMapper::GetBrokerAZDistributionForName(jsonValue.GetString("brokerAZDistribution"));
-
     m_brokerAZDistributionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientSubnets"))
   {
     Aws::Utils::Array<JsonView> clientSubnetsJsonList = jsonValue.GetArray("clientSubnets");
@@ -54,14 +39,11 @@ BrokerNodeGroupInfo& BrokerNodeGroupInfo::operator =(JsonView jsonValue)
     }
     m_clientSubnetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = jsonValue.GetString("instanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityGroups"))
   {
     Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
@@ -71,21 +53,16 @@ BrokerNodeGroupInfo& BrokerNodeGroupInfo::operator =(JsonView jsonValue)
     }
     m_securityGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageInfo"))
   {
     m_storageInfo = jsonValue.GetObject("storageInfo");
-
     m_storageInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectivityInfo"))
   {
     m_connectivityInfo = jsonValue.GetObject("connectivityInfo");
-
     m_connectivityInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("zoneIds"))
   {
     Aws::Utils::Array<JsonView> zoneIdsJsonList = jsonValue.GetArray("zoneIds");
@@ -95,7 +72,6 @@ BrokerNodeGroupInfo& BrokerNodeGroupInfo::operator =(JsonView jsonValue)
     }
     m_zoneIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

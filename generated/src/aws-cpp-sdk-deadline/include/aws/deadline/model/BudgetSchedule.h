@@ -31,7 +31,7 @@ namespace Model
   class BudgetSchedule
   {
   public:
-    AWS_DEADLINE_API BudgetSchedule();
+    AWS_DEADLINE_API BudgetSchedule() = default;
     AWS_DEADLINE_API BudgetSchedule(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API BudgetSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The fixed start and end time of the budget's schedule.</p>
      */
-    inline const FixedBudgetSchedule& GetFixed() const{ return m_fixed; }
+    inline const FixedBudgetSchedule& GetFixed() const { return m_fixed; }
     inline bool FixedHasBeenSet() const { return m_fixedHasBeenSet; }
-    inline void SetFixed(const FixedBudgetSchedule& value) { m_fixedHasBeenSet = true; m_fixed = value; }
-    inline void SetFixed(FixedBudgetSchedule&& value) { m_fixedHasBeenSet = true; m_fixed = std::move(value); }
-    inline BudgetSchedule& WithFixed(const FixedBudgetSchedule& value) { SetFixed(value); return *this;}
-    inline BudgetSchedule& WithFixed(FixedBudgetSchedule&& value) { SetFixed(std::move(value)); return *this;}
+    template<typename FixedT = FixedBudgetSchedule>
+    void SetFixed(FixedT&& value) { m_fixedHasBeenSet = true; m_fixed = std::forward<FixedT>(value); }
+    template<typename FixedT = FixedBudgetSchedule>
+    BudgetSchedule& WithFixed(FixedT&& value) { SetFixed(std::forward<FixedT>(value)); return *this;}
     ///@}
   private:
 

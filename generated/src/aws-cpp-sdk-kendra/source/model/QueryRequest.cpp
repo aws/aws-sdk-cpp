@@ -12,28 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-QueryRequest::QueryRequest() : 
-    m_indexIdHasBeenSet(false),
-    m_queryTextHasBeenSet(false),
-    m_attributeFilterHasBeenSet(false),
-    m_facetsHasBeenSet(false),
-    m_requestedDocumentAttributesHasBeenSet(false),
-    m_queryResultTypeFilter(QueryResultType::NOT_SET),
-    m_queryResultTypeFilterHasBeenSet(false),
-    m_documentRelevanceOverrideConfigurationsHasBeenSet(false),
-    m_pageNumber(0),
-    m_pageNumberHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false),
-    m_sortingConfigurationHasBeenSet(false),
-    m_sortingConfigurationsHasBeenSet(false),
-    m_userContextHasBeenSet(false),
-    m_visitorIdHasBeenSet(false),
-    m_spellCorrectionConfigurationHasBeenSet(false),
-    m_collapseConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String QueryRequest::SerializePayload() const
 {
   JsonValue payload;

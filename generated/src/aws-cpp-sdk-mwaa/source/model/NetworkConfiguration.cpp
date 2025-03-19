@@ -18,14 +18,7 @@ namespace MWAA
 namespace Model
 {
 
-NetworkConfiguration::NetworkConfiguration() : 
-    m_subnetIdsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
-{
-}
-
 NetworkConfiguration::NetworkConfiguration(JsonView jsonValue)
-  : NetworkConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ NetworkConfiguration& NetworkConfiguration::operator =(JsonView jsonValue)
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
@@ -51,7 +43,6 @@ NetworkConfiguration& NetworkConfiguration::operator =(JsonView jsonValue)
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

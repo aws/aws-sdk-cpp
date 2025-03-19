@@ -36,7 +36,7 @@ namespace Model
   class S3HudiSource
   {
   public:
-    AWS_GLUE_API S3HudiSource();
+    AWS_GLUE_API S3HudiSource() = default;
     AWS_GLUE_API S3HudiSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API S3HudiSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,74 +46,68 @@ namespace Model
     /**
      * <p>The name of the Hudi source.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline S3HudiSource& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline S3HudiSource& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline S3HudiSource& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    S3HudiSource& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of the Amazon S3 paths to read from.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPaths() const{ return m_paths; }
+    inline const Aws::Vector<Aws::String>& GetPaths() const { return m_paths; }
     inline bool PathsHasBeenSet() const { return m_pathsHasBeenSet; }
-    inline void SetPaths(const Aws::Vector<Aws::String>& value) { m_pathsHasBeenSet = true; m_paths = value; }
-    inline void SetPaths(Aws::Vector<Aws::String>&& value) { m_pathsHasBeenSet = true; m_paths = std::move(value); }
-    inline S3HudiSource& WithPaths(const Aws::Vector<Aws::String>& value) { SetPaths(value); return *this;}
-    inline S3HudiSource& WithPaths(Aws::Vector<Aws::String>&& value) { SetPaths(std::move(value)); return *this;}
-    inline S3HudiSource& AddPaths(const Aws::String& value) { m_pathsHasBeenSet = true; m_paths.push_back(value); return *this; }
-    inline S3HudiSource& AddPaths(Aws::String&& value) { m_pathsHasBeenSet = true; m_paths.push_back(std::move(value)); return *this; }
-    inline S3HudiSource& AddPaths(const char* value) { m_pathsHasBeenSet = true; m_paths.push_back(value); return *this; }
+    template<typename PathsT = Aws::Vector<Aws::String>>
+    void SetPaths(PathsT&& value) { m_pathsHasBeenSet = true; m_paths = std::forward<PathsT>(value); }
+    template<typename PathsT = Aws::Vector<Aws::String>>
+    S3HudiSource& WithPaths(PathsT&& value) { SetPaths(std::forward<PathsT>(value)); return *this;}
+    template<typename PathsT = Aws::String>
+    S3HudiSource& AddPaths(PathsT&& value) { m_pathsHasBeenSet = true; m_paths.emplace_back(std::forward<PathsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specifies additional connection options.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalHudiOptions() const{ return m_additionalHudiOptions; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalHudiOptions() const { return m_additionalHudiOptions; }
     inline bool AdditionalHudiOptionsHasBeenSet() const { return m_additionalHudiOptionsHasBeenSet; }
-    inline void SetAdditionalHudiOptions(const Aws::Map<Aws::String, Aws::String>& value) { m_additionalHudiOptionsHasBeenSet = true; m_additionalHudiOptions = value; }
-    inline void SetAdditionalHudiOptions(Aws::Map<Aws::String, Aws::String>&& value) { m_additionalHudiOptionsHasBeenSet = true; m_additionalHudiOptions = std::move(value); }
-    inline S3HudiSource& WithAdditionalHudiOptions(const Aws::Map<Aws::String, Aws::String>& value) { SetAdditionalHudiOptions(value); return *this;}
-    inline S3HudiSource& WithAdditionalHudiOptions(Aws::Map<Aws::String, Aws::String>&& value) { SetAdditionalHudiOptions(std::move(value)); return *this;}
-    inline S3HudiSource& AddAdditionalHudiOptions(const Aws::String& key, const Aws::String& value) { m_additionalHudiOptionsHasBeenSet = true; m_additionalHudiOptions.emplace(key, value); return *this; }
-    inline S3HudiSource& AddAdditionalHudiOptions(Aws::String&& key, const Aws::String& value) { m_additionalHudiOptionsHasBeenSet = true; m_additionalHudiOptions.emplace(std::move(key), value); return *this; }
-    inline S3HudiSource& AddAdditionalHudiOptions(const Aws::String& key, Aws::String&& value) { m_additionalHudiOptionsHasBeenSet = true; m_additionalHudiOptions.emplace(key, std::move(value)); return *this; }
-    inline S3HudiSource& AddAdditionalHudiOptions(Aws::String&& key, Aws::String&& value) { m_additionalHudiOptionsHasBeenSet = true; m_additionalHudiOptions.emplace(std::move(key), std::move(value)); return *this; }
-    inline S3HudiSource& AddAdditionalHudiOptions(const char* key, Aws::String&& value) { m_additionalHudiOptionsHasBeenSet = true; m_additionalHudiOptions.emplace(key, std::move(value)); return *this; }
-    inline S3HudiSource& AddAdditionalHudiOptions(Aws::String&& key, const char* value) { m_additionalHudiOptionsHasBeenSet = true; m_additionalHudiOptions.emplace(std::move(key), value); return *this; }
-    inline S3HudiSource& AddAdditionalHudiOptions(const char* key, const char* value) { m_additionalHudiOptionsHasBeenSet = true; m_additionalHudiOptions.emplace(key, value); return *this; }
+    template<typename AdditionalHudiOptionsT = Aws::Map<Aws::String, Aws::String>>
+    void SetAdditionalHudiOptions(AdditionalHudiOptionsT&& value) { m_additionalHudiOptionsHasBeenSet = true; m_additionalHudiOptions = std::forward<AdditionalHudiOptionsT>(value); }
+    template<typename AdditionalHudiOptionsT = Aws::Map<Aws::String, Aws::String>>
+    S3HudiSource& WithAdditionalHudiOptions(AdditionalHudiOptionsT&& value) { SetAdditionalHudiOptions(std::forward<AdditionalHudiOptionsT>(value)); return *this;}
+    template<typename AdditionalHudiOptionsKeyT = Aws::String, typename AdditionalHudiOptionsValueT = Aws::String>
+    S3HudiSource& AddAdditionalHudiOptions(AdditionalHudiOptionsKeyT&& key, AdditionalHudiOptionsValueT&& value) {
+      m_additionalHudiOptionsHasBeenSet = true; m_additionalHudiOptions.emplace(std::forward<AdditionalHudiOptionsKeyT>(key), std::forward<AdditionalHudiOptionsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Specifies additional options for the connector.</p>
      */
-    inline const S3DirectSourceAdditionalOptions& GetAdditionalOptions() const{ return m_additionalOptions; }
+    inline const S3DirectSourceAdditionalOptions& GetAdditionalOptions() const { return m_additionalOptions; }
     inline bool AdditionalOptionsHasBeenSet() const { return m_additionalOptionsHasBeenSet; }
-    inline void SetAdditionalOptions(const S3DirectSourceAdditionalOptions& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions = value; }
-    inline void SetAdditionalOptions(S3DirectSourceAdditionalOptions&& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions = std::move(value); }
-    inline S3HudiSource& WithAdditionalOptions(const S3DirectSourceAdditionalOptions& value) { SetAdditionalOptions(value); return *this;}
-    inline S3HudiSource& WithAdditionalOptions(S3DirectSourceAdditionalOptions&& value) { SetAdditionalOptions(std::move(value)); return *this;}
+    template<typename AdditionalOptionsT = S3DirectSourceAdditionalOptions>
+    void SetAdditionalOptions(AdditionalOptionsT&& value) { m_additionalOptionsHasBeenSet = true; m_additionalOptions = std::forward<AdditionalOptionsT>(value); }
+    template<typename AdditionalOptionsT = S3DirectSourceAdditionalOptions>
+    S3HudiSource& WithAdditionalOptions(AdditionalOptionsT&& value) { SetAdditionalOptions(std::forward<AdditionalOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the data schema for the Hudi source.</p>
      */
-    inline const Aws::Vector<GlueSchema>& GetOutputSchemas() const{ return m_outputSchemas; }
+    inline const Aws::Vector<GlueSchema>& GetOutputSchemas() const { return m_outputSchemas; }
     inline bool OutputSchemasHasBeenSet() const { return m_outputSchemasHasBeenSet; }
-    inline void SetOutputSchemas(const Aws::Vector<GlueSchema>& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas = value; }
-    inline void SetOutputSchemas(Aws::Vector<GlueSchema>&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas = std::move(value); }
-    inline S3HudiSource& WithOutputSchemas(const Aws::Vector<GlueSchema>& value) { SetOutputSchemas(value); return *this;}
-    inline S3HudiSource& WithOutputSchemas(Aws::Vector<GlueSchema>&& value) { SetOutputSchemas(std::move(value)); return *this;}
-    inline S3HudiSource& AddOutputSchemas(const GlueSchema& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas.push_back(value); return *this; }
-    inline S3HudiSource& AddOutputSchemas(GlueSchema&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas.push_back(std::move(value)); return *this; }
+    template<typename OutputSchemasT = Aws::Vector<GlueSchema>>
+    void SetOutputSchemas(OutputSchemasT&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas = std::forward<OutputSchemasT>(value); }
+    template<typename OutputSchemasT = Aws::Vector<GlueSchema>>
+    S3HudiSource& WithOutputSchemas(OutputSchemasT&& value) { SetOutputSchemas(std::forward<OutputSchemasT>(value)); return *this;}
+    template<typename OutputSchemasT = GlueSchema>
+    S3HudiSource& AddOutputSchemas(OutputSchemasT&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas.emplace_back(std::forward<OutputSchemasT>(value)); return *this; }
     ///@}
   private:
 

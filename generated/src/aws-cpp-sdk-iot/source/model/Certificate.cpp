@@ -18,19 +18,7 @@ namespace IoT
 namespace Model
 {
 
-Certificate::Certificate() : 
-    m_certificateArnHasBeenSet(false),
-    m_certificateIdHasBeenSet(false),
-    m_status(CertificateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_certificateMode(CertificateMode::NOT_SET),
-    m_certificateModeHasBeenSet(false),
-    m_creationDateHasBeenSet(false)
-{
-}
-
 Certificate::Certificate(JsonView jsonValue)
-  : Certificate()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ Certificate& Certificate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("certificateArn"))
   {
     m_certificateArn = jsonValue.GetString("certificateArn");
-
     m_certificateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certificateId"))
   {
     m_certificateId = jsonValue.GetString("certificateId");
-
     m_certificateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = CertificateStatusMapper::GetCertificateStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certificateMode"))
   {
     m_certificateMode = CertificateModeMapper::GetCertificateModeForName(jsonValue.GetString("certificateMode"));
-
     m_certificateModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   return *this;
 }
 

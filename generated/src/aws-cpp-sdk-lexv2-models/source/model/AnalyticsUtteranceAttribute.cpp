@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-AnalyticsUtteranceAttribute::AnalyticsUtteranceAttribute() : 
-    m_name(AnalyticsUtteranceAttributeName::NOT_SET),
-    m_nameHasBeenSet(false)
-{
-}
-
 AnalyticsUtteranceAttribute::AnalyticsUtteranceAttribute(JsonView jsonValue)
-  : AnalyticsUtteranceAttribute()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AnalyticsUtteranceAttribute& AnalyticsUtteranceAttribute::operator =(JsonView js
   if(jsonValue.ValueExists("name"))
   {
     m_name = AnalyticsUtteranceAttributeNameMapper::GetAnalyticsUtteranceAttributeNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

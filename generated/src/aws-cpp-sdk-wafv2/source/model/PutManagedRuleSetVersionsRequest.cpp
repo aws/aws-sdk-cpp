@@ -12,17 +12,6 @@ using namespace Aws::WAFV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutManagedRuleSetVersionsRequest::PutManagedRuleSetVersionsRequest() : 
-    m_nameHasBeenSet(false),
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lockTokenHasBeenSet(false),
-    m_recommendedVersionHasBeenSet(false),
-    m_versionsToPublishHasBeenSet(false)
-{
-}
-
 Aws::String PutManagedRuleSetVersionsRequest::SerializePayload() const
 {
   JsonValue payload;

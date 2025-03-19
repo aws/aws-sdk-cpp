@@ -28,7 +28,7 @@ namespace Model
   class DescribeCodeReviewResult
   {
   public:
-    AWS_CODEGURUREVIEWER_API DescribeCodeReviewResult();
+    AWS_CODEGURUREVIEWER_API DescribeCodeReviewResult() = default;
     AWS_CODEGURUREVIEWER_API DescribeCodeReviewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEGURUREVIEWER_API DescribeCodeReviewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the code review.</p>
      */
-    inline const CodeReview& GetCodeReview() const{ return m_codeReview; }
-    inline void SetCodeReview(const CodeReview& value) { m_codeReview = value; }
-    inline void SetCodeReview(CodeReview&& value) { m_codeReview = std::move(value); }
-    inline DescribeCodeReviewResult& WithCodeReview(const CodeReview& value) { SetCodeReview(value); return *this;}
-    inline DescribeCodeReviewResult& WithCodeReview(CodeReview&& value) { SetCodeReview(std::move(value)); return *this;}
+    inline const CodeReview& GetCodeReview() const { return m_codeReview; }
+    template<typename CodeReviewT = CodeReview>
+    void SetCodeReview(CodeReviewT&& value) { m_codeReviewHasBeenSet = true; m_codeReview = std::forward<CodeReviewT>(value); }
+    template<typename CodeReviewT = CodeReview>
+    DescribeCodeReviewResult& WithCodeReview(CodeReviewT&& value) { SetCodeReview(std::forward<CodeReviewT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeCodeReviewResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeCodeReviewResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeCodeReviewResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeCodeReviewResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CodeReview m_codeReview;
+    bool m_codeReviewHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

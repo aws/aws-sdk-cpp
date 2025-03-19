@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeVolumeStatusResponse::DescribeVolumeStatusResponse()
-{
-}
-
 DescribeVolumeStatusResponse::DescribeVolumeStatusResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeVolumeStatusResponse& DescribeVolumeStatusResponse::operator =(const Aws
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode volumeStatusesNode = resultNode.FirstChild("volumeStatusSet");
     if(!volumeStatusesNode.IsNull())
     {
       XmlNode volumeStatusesMember = volumeStatusesNode.FirstChild("item");
+      m_volumeStatusesHasBeenSet = !volumeStatusesMember.IsNull();
       while(!volumeStatusesMember.IsNull())
       {
         m_volumeStatuses.push_back(volumeStatusesMember);
         volumeStatusesMember = volumeStatusesMember.NextNode("item");
       }
 
+      m_volumeStatusesHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeVolumeStatusResponse& DescribeVolumeStatusResponse::operator =(const Aws
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeVolumeStatusResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

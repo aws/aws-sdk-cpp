@@ -18,14 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-OutputDataConfig::OutputDataConfig() : 
-    m_s3UriHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 OutputDataConfig::OutputDataConfig(JsonView jsonValue)
-  : OutputDataConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OutputDataConfig& OutputDataConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

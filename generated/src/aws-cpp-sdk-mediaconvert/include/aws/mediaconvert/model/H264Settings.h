@@ -59,7 +59,7 @@ namespace Model
   class H264Settings
   {
   public:
-    AWS_MEDIACONVERT_API H264Settings();
+    AWS_MEDIACONVERT_API H264Settings() = default;
     AWS_MEDIACONVERT_API H264Settings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API H264Settings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -77,12 +77,10 @@ namespace Model
      * applies to the following settings: H264FlickerAdaptiveQuantization,
      * H264SpatialAdaptiveQuantization, and H264TemporalAdaptiveQuantization.
      */
-    inline const H264AdaptiveQuantization& GetAdaptiveQuantization() const{ return m_adaptiveQuantization; }
+    inline H264AdaptiveQuantization GetAdaptiveQuantization() const { return m_adaptiveQuantization; }
     inline bool AdaptiveQuantizationHasBeenSet() const { return m_adaptiveQuantizationHasBeenSet; }
-    inline void SetAdaptiveQuantization(const H264AdaptiveQuantization& value) { m_adaptiveQuantizationHasBeenSet = true; m_adaptiveQuantization = value; }
-    inline void SetAdaptiveQuantization(H264AdaptiveQuantization&& value) { m_adaptiveQuantizationHasBeenSet = true; m_adaptiveQuantization = std::move(value); }
-    inline H264Settings& WithAdaptiveQuantization(const H264AdaptiveQuantization& value) { SetAdaptiveQuantization(value); return *this;}
-    inline H264Settings& WithAdaptiveQuantization(H264AdaptiveQuantization&& value) { SetAdaptiveQuantization(std::move(value)); return *this;}
+    inline void SetAdaptiveQuantization(H264AdaptiveQuantization value) { m_adaptiveQuantizationHasBeenSet = true; m_adaptiveQuantization = value; }
+    inline H264Settings& WithAdaptiveQuantization(H264AdaptiveQuantization value) { SetAdaptiveQuantization(value); return *this;}
     ///@}
 
     ///@{
@@ -96,12 +94,12 @@ namespace Model
      * When you include Bandwidth reduction filter, you cannot include the Noise
      * reducer preprocessor.
      */
-    inline const BandwidthReductionFilter& GetBandwidthReductionFilter() const{ return m_bandwidthReductionFilter; }
+    inline const BandwidthReductionFilter& GetBandwidthReductionFilter() const { return m_bandwidthReductionFilter; }
     inline bool BandwidthReductionFilterHasBeenSet() const { return m_bandwidthReductionFilterHasBeenSet; }
-    inline void SetBandwidthReductionFilter(const BandwidthReductionFilter& value) { m_bandwidthReductionFilterHasBeenSet = true; m_bandwidthReductionFilter = value; }
-    inline void SetBandwidthReductionFilter(BandwidthReductionFilter&& value) { m_bandwidthReductionFilterHasBeenSet = true; m_bandwidthReductionFilter = std::move(value); }
-    inline H264Settings& WithBandwidthReductionFilter(const BandwidthReductionFilter& value) { SetBandwidthReductionFilter(value); return *this;}
-    inline H264Settings& WithBandwidthReductionFilter(BandwidthReductionFilter&& value) { SetBandwidthReductionFilter(std::move(value)); return *this;}
+    template<typename BandwidthReductionFilterT = BandwidthReductionFilter>
+    void SetBandwidthReductionFilter(BandwidthReductionFilterT&& value) { m_bandwidthReductionFilterHasBeenSet = true; m_bandwidthReductionFilter = std::forward<BandwidthReductionFilterT>(value); }
+    template<typename BandwidthReductionFilterT = BandwidthReductionFilter>
+    H264Settings& WithBandwidthReductionFilter(BandwidthReductionFilterT&& value) { SetBandwidthReductionFilter(std::forward<BandwidthReductionFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,7 +108,7 @@ namespace Model
      * Smooth outputs, bitrates must be unique when rounded down to the nearest
      * multiple of 1000.
      */
-    inline int GetBitrate() const{ return m_bitrate; }
+    inline int GetBitrate() const { return m_bitrate; }
     inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }
     inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
     inline H264Settings& WithBitrate(int value) { SetBitrate(value); return *this;}
@@ -121,12 +119,10 @@ namespace Model
      * Specify an H.264 level that is consistent with your output video settings. If
      * you aren't sure what level to specify, choose Auto.
      */
-    inline const H264CodecLevel& GetCodecLevel() const{ return m_codecLevel; }
+    inline H264CodecLevel GetCodecLevel() const { return m_codecLevel; }
     inline bool CodecLevelHasBeenSet() const { return m_codecLevelHasBeenSet; }
-    inline void SetCodecLevel(const H264CodecLevel& value) { m_codecLevelHasBeenSet = true; m_codecLevel = value; }
-    inline void SetCodecLevel(H264CodecLevel&& value) { m_codecLevelHasBeenSet = true; m_codecLevel = std::move(value); }
-    inline H264Settings& WithCodecLevel(const H264CodecLevel& value) { SetCodecLevel(value); return *this;}
-    inline H264Settings& WithCodecLevel(H264CodecLevel&& value) { SetCodecLevel(std::move(value)); return *this;}
+    inline void SetCodecLevel(H264CodecLevel value) { m_codecLevelHasBeenSet = true; m_codecLevel = value; }
+    inline H264Settings& WithCodecLevel(H264CodecLevel value) { SetCodecLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -134,12 +130,10 @@ namespace Model
      * H.264 Profile. High 4:2:2 and 10-bit profiles are only available with the AVC-I
      * License.
      */
-    inline const H264CodecProfile& GetCodecProfile() const{ return m_codecProfile; }
+    inline H264CodecProfile GetCodecProfile() const { return m_codecProfile; }
     inline bool CodecProfileHasBeenSet() const { return m_codecProfileHasBeenSet; }
-    inline void SetCodecProfile(const H264CodecProfile& value) { m_codecProfileHasBeenSet = true; m_codecProfile = value; }
-    inline void SetCodecProfile(H264CodecProfile&& value) { m_codecProfileHasBeenSet = true; m_codecProfile = std::move(value); }
-    inline H264Settings& WithCodecProfile(const H264CodecProfile& value) { SetCodecProfile(value); return *this;}
-    inline H264Settings& WithCodecProfile(H264CodecProfile&& value) { SetCodecProfile(std::move(value)); return *this;}
+    inline void SetCodecProfile(H264CodecProfile value) { m_codecProfileHasBeenSet = true; m_codecProfile = value; }
+    inline H264Settings& WithCodecProfile(H264CodecProfile value) { SetCodecProfile(value); return *this;}
     ///@}
 
     ///@{
@@ -152,12 +146,10 @@ namespace Model
      * limited by the value that you choose for B-frames between reference frames. To
      * use the same number B-frames for all types of content: Choose Static.
      */
-    inline const H264DynamicSubGop& GetDynamicSubGop() const{ return m_dynamicSubGop; }
+    inline H264DynamicSubGop GetDynamicSubGop() const { return m_dynamicSubGop; }
     inline bool DynamicSubGopHasBeenSet() const { return m_dynamicSubGopHasBeenSet; }
-    inline void SetDynamicSubGop(const H264DynamicSubGop& value) { m_dynamicSubGopHasBeenSet = true; m_dynamicSubGop = value; }
-    inline void SetDynamicSubGop(H264DynamicSubGop&& value) { m_dynamicSubGopHasBeenSet = true; m_dynamicSubGop = std::move(value); }
-    inline H264Settings& WithDynamicSubGop(const H264DynamicSubGop& value) { SetDynamicSubGop(value); return *this;}
-    inline H264Settings& WithDynamicSubGop(H264DynamicSubGop&& value) { SetDynamicSubGop(std::move(value)); return *this;}
+    inline void SetDynamicSubGop(H264DynamicSubGop value) { m_dynamicSubGopHasBeenSet = true; m_dynamicSubGop = value; }
+    inline H264Settings& WithDynamicSubGop(H264DynamicSubGop value) { SetDynamicSubGop(value); return *this;}
     ///@}
 
     ///@{
@@ -167,24 +159,20 @@ namespace Model
      * the default value, Include. To not include end of stream markers: Choose
      * Suppress. This is useful when your output will be inserted into another stream.
      */
-    inline const H264EndOfStreamMarkers& GetEndOfStreamMarkers() const{ return m_endOfStreamMarkers; }
+    inline H264EndOfStreamMarkers GetEndOfStreamMarkers() const { return m_endOfStreamMarkers; }
     inline bool EndOfStreamMarkersHasBeenSet() const { return m_endOfStreamMarkersHasBeenSet; }
-    inline void SetEndOfStreamMarkers(const H264EndOfStreamMarkers& value) { m_endOfStreamMarkersHasBeenSet = true; m_endOfStreamMarkers = value; }
-    inline void SetEndOfStreamMarkers(H264EndOfStreamMarkers&& value) { m_endOfStreamMarkersHasBeenSet = true; m_endOfStreamMarkers = std::move(value); }
-    inline H264Settings& WithEndOfStreamMarkers(const H264EndOfStreamMarkers& value) { SetEndOfStreamMarkers(value); return *this;}
-    inline H264Settings& WithEndOfStreamMarkers(H264EndOfStreamMarkers&& value) { SetEndOfStreamMarkers(std::move(value)); return *this;}
+    inline void SetEndOfStreamMarkers(H264EndOfStreamMarkers value) { m_endOfStreamMarkersHasBeenSet = true; m_endOfStreamMarkers = value; }
+    inline H264Settings& WithEndOfStreamMarkers(H264EndOfStreamMarkers value) { SetEndOfStreamMarkers(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Entropy encoding mode. Use CABAC (must be in Main or High profile) or CAVLC.
      */
-    inline const H264EntropyEncoding& GetEntropyEncoding() const{ return m_entropyEncoding; }
+    inline H264EntropyEncoding GetEntropyEncoding() const { return m_entropyEncoding; }
     inline bool EntropyEncodingHasBeenSet() const { return m_entropyEncodingHasBeenSet; }
-    inline void SetEntropyEncoding(const H264EntropyEncoding& value) { m_entropyEncodingHasBeenSet = true; m_entropyEncoding = value; }
-    inline void SetEntropyEncoding(H264EntropyEncoding&& value) { m_entropyEncodingHasBeenSet = true; m_entropyEncoding = std::move(value); }
-    inline H264Settings& WithEntropyEncoding(const H264EntropyEncoding& value) { SetEntropyEncoding(value); return *this;}
-    inline H264Settings& WithEntropyEncoding(H264EntropyEncoding&& value) { SetEntropyEncoding(std::move(value)); return *this;}
+    inline void SetEntropyEncoding(H264EntropyEncoding value) { m_entropyEncodingHasBeenSet = true; m_entropyEncoding = value; }
+    inline H264Settings& WithEntropyEncoding(H264EntropyEncoding value) { SetEntropyEncoding(value); return *this;}
     ///@}
 
     ///@{
@@ -195,12 +183,10 @@ namespace Model
      * Choose MBAFF to disable PAFF and have MediaConvert use MBAFF encoding for
      * interlaced outputs.
      */
-    inline const H264FieldEncoding& GetFieldEncoding() const{ return m_fieldEncoding; }
+    inline H264FieldEncoding GetFieldEncoding() const { return m_fieldEncoding; }
     inline bool FieldEncodingHasBeenSet() const { return m_fieldEncodingHasBeenSet; }
-    inline void SetFieldEncoding(const H264FieldEncoding& value) { m_fieldEncodingHasBeenSet = true; m_fieldEncoding = value; }
-    inline void SetFieldEncoding(H264FieldEncoding&& value) { m_fieldEncodingHasBeenSet = true; m_fieldEncoding = std::move(value); }
-    inline H264Settings& WithFieldEncoding(const H264FieldEncoding& value) { SetFieldEncoding(value); return *this;}
-    inline H264Settings& WithFieldEncoding(H264FieldEncoding&& value) { SetFieldEncoding(std::move(value)); return *this;}
+    inline void SetFieldEncoding(H264FieldEncoding value) { m_fieldEncodingHasBeenSet = true; m_fieldEncoding = value; }
+    inline H264Settings& WithFieldEncoding(H264FieldEncoding value) { SetFieldEncoding(value); return *this;}
     ///@}
 
     ///@{
@@ -219,12 +205,10 @@ namespace Model
      * H264FlickerAdaptiveQuantization, you must set Adaptive quantization to a value
      * other than AUTO.
      */
-    inline const H264FlickerAdaptiveQuantization& GetFlickerAdaptiveQuantization() const{ return m_flickerAdaptiveQuantization; }
+    inline H264FlickerAdaptiveQuantization GetFlickerAdaptiveQuantization() const { return m_flickerAdaptiveQuantization; }
     inline bool FlickerAdaptiveQuantizationHasBeenSet() const { return m_flickerAdaptiveQuantizationHasBeenSet; }
-    inline void SetFlickerAdaptiveQuantization(const H264FlickerAdaptiveQuantization& value) { m_flickerAdaptiveQuantizationHasBeenSet = true; m_flickerAdaptiveQuantization = value; }
-    inline void SetFlickerAdaptiveQuantization(H264FlickerAdaptiveQuantization&& value) { m_flickerAdaptiveQuantizationHasBeenSet = true; m_flickerAdaptiveQuantization = std::move(value); }
-    inline H264Settings& WithFlickerAdaptiveQuantization(const H264FlickerAdaptiveQuantization& value) { SetFlickerAdaptiveQuantization(value); return *this;}
-    inline H264Settings& WithFlickerAdaptiveQuantization(H264FlickerAdaptiveQuantization&& value) { SetFlickerAdaptiveQuantization(std::move(value)); return *this;}
+    inline void SetFlickerAdaptiveQuantization(H264FlickerAdaptiveQuantization value) { m_flickerAdaptiveQuantizationHasBeenSet = true; m_flickerAdaptiveQuantization = value; }
+    inline H264Settings& WithFlickerAdaptiveQuantization(H264FlickerAdaptiveQuantization value) { SetFlickerAdaptiveQuantization(value); return *this;}
     ///@}
 
     ///@{
@@ -236,12 +220,10 @@ namespace Model
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction.
      */
-    inline const H264FramerateControl& GetFramerateControl() const{ return m_framerateControl; }
+    inline H264FramerateControl GetFramerateControl() const { return m_framerateControl; }
     inline bool FramerateControlHasBeenSet() const { return m_framerateControlHasBeenSet; }
-    inline void SetFramerateControl(const H264FramerateControl& value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
-    inline void SetFramerateControl(H264FramerateControl&& value) { m_framerateControlHasBeenSet = true; m_framerateControl = std::move(value); }
-    inline H264Settings& WithFramerateControl(const H264FramerateControl& value) { SetFramerateControl(value); return *this;}
-    inline H264Settings& WithFramerateControl(H264FramerateControl&& value) { SetFramerateControl(std::move(value)); return *this;}
+    inline void SetFramerateControl(H264FramerateControl value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
+    inline H264Settings& WithFramerateControl(H264FramerateControl value) { SetFramerateControl(value); return *this;}
     ///@}
 
     ///@{
@@ -263,12 +245,10 @@ namespace Model
      * duration of your output will become shorter at higher frame rates and longer at
      * lower frame rates.
      */
-    inline const H264FramerateConversionAlgorithm& GetFramerateConversionAlgorithm() const{ return m_framerateConversionAlgorithm; }
+    inline H264FramerateConversionAlgorithm GetFramerateConversionAlgorithm() const { return m_framerateConversionAlgorithm; }
     inline bool FramerateConversionAlgorithmHasBeenSet() const { return m_framerateConversionAlgorithmHasBeenSet; }
-    inline void SetFramerateConversionAlgorithm(const H264FramerateConversionAlgorithm& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
-    inline void SetFramerateConversionAlgorithm(H264FramerateConversionAlgorithm&& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = std::move(value); }
-    inline H264Settings& WithFramerateConversionAlgorithm(const H264FramerateConversionAlgorithm& value) { SetFramerateConversionAlgorithm(value); return *this;}
-    inline H264Settings& WithFramerateConversionAlgorithm(H264FramerateConversionAlgorithm&& value) { SetFramerateConversionAlgorithm(std::move(value)); return *this;}
+    inline void SetFramerateConversionAlgorithm(H264FramerateConversionAlgorithm value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
+    inline H264Settings& WithFramerateConversionAlgorithm(H264FramerateConversionAlgorithm value) { SetFramerateConversionAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -280,7 +260,7 @@ namespace Model
      * console for transcode jobs that use frame rate conversion, provide the value as
      * a decimal number for Framerate. In this example, specify 23.976.
      */
-    inline int GetFramerateDenominator() const{ return m_framerateDenominator; }
+    inline int GetFramerateDenominator() const { return m_framerateDenominator; }
     inline bool FramerateDenominatorHasBeenSet() const { return m_framerateDenominatorHasBeenSet; }
     inline void SetFramerateDenominator(int value) { m_framerateDenominatorHasBeenSet = true; m_framerateDenominator = value; }
     inline H264Settings& WithFramerateDenominator(int value) { SetFramerateDenominator(value); return *this;}
@@ -295,7 +275,7 @@ namespace Model
      * transcode jobs that use frame rate conversion, provide the value as a decimal
      * number for Framerate. In this example, specify 23.976.
      */
-    inline int GetFramerateNumerator() const{ return m_framerateNumerator; }
+    inline int GetFramerateNumerator() const { return m_framerateNumerator; }
     inline bool FramerateNumeratorHasBeenSet() const { return m_framerateNumeratorHasBeenSet; }
     inline void SetFramerateNumerator(int value) { m_framerateNumeratorHasBeenSet = true; m_framerateNumerator = value; }
     inline H264Settings& WithFramerateNumerator(int value) { SetFramerateNumerator(value); return *this;}
@@ -309,12 +289,10 @@ namespace Model
      * improve the video quality of your output relative to its bitrate. To not use
      * reference B-frames: Choose Disabled.
      */
-    inline const H264GopBReference& GetGopBReference() const{ return m_gopBReference; }
+    inline H264GopBReference GetGopBReference() const { return m_gopBReference; }
     inline bool GopBReferenceHasBeenSet() const { return m_gopBReferenceHasBeenSet; }
-    inline void SetGopBReference(const H264GopBReference& value) { m_gopBReferenceHasBeenSet = true; m_gopBReference = value; }
-    inline void SetGopBReference(H264GopBReference&& value) { m_gopBReferenceHasBeenSet = true; m_gopBReference = std::move(value); }
-    inline H264Settings& WithGopBReference(const H264GopBReference& value) { SetGopBReference(value); return *this;}
-    inline H264Settings& WithGopBReference(H264GopBReference&& value) { SetGopBReference(std::move(value)); return *this;}
+    inline void SetGopBReference(H264GopBReference value) { m_gopBReferenceHasBeenSet = true; m_gopBReference = value; }
+    inline H264Settings& WithGopBReference(H264GopBReference value) { SetGopBReference(value); return *this;}
     ///@}
 
     ///@{
@@ -326,7 +304,7 @@ namespace Model
      * do this by keeping the default empty value. If you do explicitly specify a
      * value, for segmented outputs, don't set this value to 0.
      */
-    inline int GetGopClosedCadence() const{ return m_gopClosedCadence; }
+    inline int GetGopClosedCadence() const { return m_gopClosedCadence; }
     inline bool GopClosedCadenceHasBeenSet() const { return m_gopClosedCadenceHasBeenSet; }
     inline void SetGopClosedCadence(int value) { m_gopClosedCadenceHasBeenSet = true; m_gopClosedCadence = value; }
     inline H264Settings& WithGopClosedCadence(int value) { SetGopClosedCadence(value); return *this;}
@@ -343,7 +321,7 @@ namespace Model
      * leave GOP size blank and set GOP mode control to Auto in each output in your
      * output group.
      */
-    inline double GetGopSize() const{ return m_gopSize; }
+    inline double GetGopSize() const { return m_gopSize; }
     inline bool GopSizeHasBeenSet() const { return m_gopSizeHasBeenSet; }
     inline void SetGopSize(double value) { m_gopSizeHasBeenSet = true; m_gopSize = value; }
     inline H264Settings& WithGopSize(double value) { SetGopSize(value); return *this;}
@@ -361,12 +339,10 @@ namespace Model
      * choose Specified, frames or Specified, seconds and then provide the GOP length
      * in the related setting GOP size.
      */
-    inline const H264GopSizeUnits& GetGopSizeUnits() const{ return m_gopSizeUnits; }
+    inline H264GopSizeUnits GetGopSizeUnits() const { return m_gopSizeUnits; }
     inline bool GopSizeUnitsHasBeenSet() const { return m_gopSizeUnitsHasBeenSet; }
-    inline void SetGopSizeUnits(const H264GopSizeUnits& value) { m_gopSizeUnitsHasBeenSet = true; m_gopSizeUnits = value; }
-    inline void SetGopSizeUnits(H264GopSizeUnits&& value) { m_gopSizeUnitsHasBeenSet = true; m_gopSizeUnits = std::move(value); }
-    inline H264Settings& WithGopSizeUnits(const H264GopSizeUnits& value) { SetGopSizeUnits(value); return *this;}
-    inline H264Settings& WithGopSizeUnits(H264GopSizeUnits&& value) { SetGopSizeUnits(std::move(value)); return *this;}
+    inline void SetGopSizeUnits(H264GopSizeUnits value) { m_gopSizeUnitsHasBeenSet = true; m_gopSizeUnits = value; }
+    inline H264Settings& WithGopSizeUnits(H264GopSizeUnits value) { SetGopSizeUnits(value); return *this;}
     ///@}
 
     ///@{
@@ -376,7 +352,7 @@ namespace Model
      * segment. For the best video quality: Set to 0 or leave blank to automatically
      * determine the final buffer fill percentage.
      */
-    inline int GetHrdBufferFinalFillPercentage() const{ return m_hrdBufferFinalFillPercentage; }
+    inline int GetHrdBufferFinalFillPercentage() const { return m_hrdBufferFinalFillPercentage; }
     inline bool HrdBufferFinalFillPercentageHasBeenSet() const { return m_hrdBufferFinalFillPercentageHasBeenSet; }
     inline void SetHrdBufferFinalFillPercentage(int value) { m_hrdBufferFinalFillPercentageHasBeenSet = true; m_hrdBufferFinalFillPercentage = value; }
     inline H264Settings& WithHrdBufferFinalFillPercentage(int value) { SetHrdBufferFinalFillPercentage(value); return *this;}
@@ -386,7 +362,7 @@ namespace Model
     /**
      * Percentage of the buffer that should initially be filled (HRD buffer model).
      */
-    inline int GetHrdBufferInitialFillPercentage() const{ return m_hrdBufferInitialFillPercentage; }
+    inline int GetHrdBufferInitialFillPercentage() const { return m_hrdBufferInitialFillPercentage; }
     inline bool HrdBufferInitialFillPercentageHasBeenSet() const { return m_hrdBufferInitialFillPercentageHasBeenSet; }
     inline void SetHrdBufferInitialFillPercentage(int value) { m_hrdBufferInitialFillPercentageHasBeenSet = true; m_hrdBufferInitialFillPercentage = value; }
     inline H264Settings& WithHrdBufferInitialFillPercentage(int value) { SetHrdBufferInitialFillPercentage(value); return *this;}
@@ -397,7 +373,7 @@ namespace Model
      * Size of buffer (HRD buffer model) in bits. For example, enter five megabits as
      * 5000000.
      */
-    inline int GetHrdBufferSize() const{ return m_hrdBufferSize; }
+    inline int GetHrdBufferSize() const { return m_hrdBufferSize; }
     inline bool HrdBufferSizeHasBeenSet() const { return m_hrdBufferSizeHasBeenSet; }
     inline void SetHrdBufferSize(int value) { m_hrdBufferSizeHasBeenSet = true; m_hrdBufferSize = value; }
     inline H264Settings& WithHrdBufferSize(int value) { SetHrdBufferSize(value); return *this;}
@@ -416,12 +392,10 @@ namespace Model
      * the source. If the source is progressive, the output will be interlaced with top
      * field bottom field first, depending on which of the Follow options you choose.
      */
-    inline const H264InterlaceMode& GetInterlaceMode() const{ return m_interlaceMode; }
+    inline H264InterlaceMode GetInterlaceMode() const { return m_interlaceMode; }
     inline bool InterlaceModeHasBeenSet() const { return m_interlaceModeHasBeenSet; }
-    inline void SetInterlaceMode(const H264InterlaceMode& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = value; }
-    inline void SetInterlaceMode(H264InterlaceMode&& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = std::move(value); }
-    inline H264Settings& WithInterlaceMode(const H264InterlaceMode& value) { SetInterlaceMode(value); return *this;}
-    inline H264Settings& WithInterlaceMode(H264InterlaceMode&& value) { SetInterlaceMode(std::move(value)); return *this;}
+    inline void SetInterlaceMode(H264InterlaceMode value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = value; }
+    inline H264Settings& WithInterlaceMode(H264InterlaceMode value) { SetInterlaceMode(value); return *this;}
     ///@}
 
     ///@{
@@ -429,7 +403,7 @@ namespace Model
      * Maximum bitrate in bits/second. For example, enter five megabits per second as
      * 5000000. Required when Rate control mode is QVBR.
      */
-    inline int GetMaxBitrate() const{ return m_maxBitrate; }
+    inline int GetMaxBitrate() const { return m_maxBitrate; }
     inline bool MaxBitrateHasBeenSet() const { return m_maxBitrateHasBeenSet; }
     inline void SetMaxBitrate(int value) { m_maxBitrateHasBeenSet = true; m_maxBitrate = value; }
     inline H264Settings& WithMaxBitrate(int value) { SetMaxBitrate(value); return *this;}
@@ -455,7 +429,7 @@ namespace Model
      * output's cadence-driven GOP. Use when your downstream systems require a regular
      * GOP size.
      */
-    inline int GetMinIInterval() const{ return m_minIInterval; }
+    inline int GetMinIInterval() const { return m_minIInterval; }
     inline bool MinIIntervalHasBeenSet() const { return m_minIIntervalHasBeenSet; }
     inline void SetMinIInterval(int value) { m_minIIntervalHasBeenSet = true; m_minIInterval = value; }
     inline H264Settings& WithMinIInterval(int value) { SetMinIInterval(value); return *this;}
@@ -469,7 +443,7 @@ namespace Model
      * manually specify the number of B-frames between reference frames: Enter an
      * integer from 0 to 7.
      */
-    inline int GetNumberBFramesBetweenReferenceFrames() const{ return m_numberBFramesBetweenReferenceFrames; }
+    inline int GetNumberBFramesBetweenReferenceFrames() const { return m_numberBFramesBetweenReferenceFrames; }
     inline bool NumberBFramesBetweenReferenceFramesHasBeenSet() const { return m_numberBFramesBetweenReferenceFramesHasBeenSet; }
     inline void SetNumberBFramesBetweenReferenceFrames(int value) { m_numberBFramesBetweenReferenceFramesHasBeenSet = true; m_numberBFramesBetweenReferenceFrames = value; }
     inline H264Settings& WithNumberBFramesBetweenReferenceFrames(int value) { SetNumberBFramesBetweenReferenceFrames(value); return *this;}
@@ -480,7 +454,7 @@ namespace Model
      * Number of reference frames to use. The encoder may use more than requested if
      * using B-frames and/or interlaced encoding.
      */
-    inline int GetNumberReferenceFrames() const{ return m_numberReferenceFrames; }
+    inline int GetNumberReferenceFrames() const { return m_numberReferenceFrames; }
     inline bool NumberReferenceFramesHasBeenSet() const { return m_numberReferenceFramesHasBeenSet; }
     inline void SetNumberReferenceFrames(int value) { m_numberReferenceFramesHasBeenSet = true; m_numberReferenceFrames = value; }
     inline H264Settings& WithNumberReferenceFrames(int value) { SetNumberReferenceFrames(value); return *this;}
@@ -494,12 +468,10 @@ namespace Model
      * value other than Follow source. When you choose SPECIFIED for this setting, you
      * must also specify values for the parNumerator and parDenominator settings.
      */
-    inline const H264ParControl& GetParControl() const{ return m_parControl; }
+    inline H264ParControl GetParControl() const { return m_parControl; }
     inline bool ParControlHasBeenSet() const { return m_parControlHasBeenSet; }
-    inline void SetParControl(const H264ParControl& value) { m_parControlHasBeenSet = true; m_parControl = value; }
-    inline void SetParControl(H264ParControl&& value) { m_parControlHasBeenSet = true; m_parControl = std::move(value); }
-    inline H264Settings& WithParControl(const H264ParControl& value) { SetParControl(value); return *this;}
-    inline H264Settings& WithParControl(H264ParControl&& value) { SetParControl(std::move(value)); return *this;}
+    inline void SetParControl(H264ParControl value) { m_parControlHasBeenSet = true; m_parControl = value; }
+    inline H264Settings& WithParControl(H264ParControl value) { SetParControl(value); return *this;}
     ///@}
 
     ///@{
@@ -510,7 +482,7 @@ namespace Model
      * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
      * specify the ratio 40:33. In this example, the value for parDenominator is 33.
      */
-    inline int GetParDenominator() const{ return m_parDenominator; }
+    inline int GetParDenominator() const { return m_parDenominator; }
     inline bool ParDenominatorHasBeenSet() const { return m_parDenominatorHasBeenSet; }
     inline void SetParDenominator(int value) { m_parDenominatorHasBeenSet = true; m_parDenominator = value; }
     inline H264Settings& WithParDenominator(int value) { SetParDenominator(value); return *this;}
@@ -524,7 +496,7 @@ namespace Model
      * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
      * specify the ratio 40:33. In this example, the value for parNumerator is 40.
      */
-    inline int GetParNumerator() const{ return m_parNumerator; }
+    inline int GetParNumerator() const { return m_parNumerator; }
     inline bool ParNumeratorHasBeenSet() const { return m_parNumeratorHasBeenSet; }
     inline void SetParNumerator(int value) { m_parNumeratorHasBeenSet = true; m_parNumerator = value; }
     inline H264Settings& WithParNumerator(int value) { SetParNumerator(value); return *this;}
@@ -540,12 +512,10 @@ namespace Model
      * pass HQ. MediaConvert performs an analysis pass on your input followed by an
      * encoding pass. Outputs that use this feature incur pro-tier pricing.
      */
-    inline const H264QualityTuningLevel& GetQualityTuningLevel() const{ return m_qualityTuningLevel; }
+    inline H264QualityTuningLevel GetQualityTuningLevel() const { return m_qualityTuningLevel; }
     inline bool QualityTuningLevelHasBeenSet() const { return m_qualityTuningLevelHasBeenSet; }
-    inline void SetQualityTuningLevel(const H264QualityTuningLevel& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = value; }
-    inline void SetQualityTuningLevel(H264QualityTuningLevel&& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = std::move(value); }
-    inline H264Settings& WithQualityTuningLevel(const H264QualityTuningLevel& value) { SetQualityTuningLevel(value); return *this;}
-    inline H264Settings& WithQualityTuningLevel(H264QualityTuningLevel&& value) { SetQualityTuningLevel(std::move(value)); return *this;}
+    inline void SetQualityTuningLevel(H264QualityTuningLevel value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = value; }
+    inline H264Settings& WithQualityTuningLevel(H264QualityTuningLevel value) { SetQualityTuningLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -553,12 +523,12 @@ namespace Model
      * Settings for quality-defined variable bitrate encoding with the H.265 codec. Use
      * these settings only when you set QVBR for Rate control mode.
      */
-    inline const H264QvbrSettings& GetQvbrSettings() const{ return m_qvbrSettings; }
+    inline const H264QvbrSettings& GetQvbrSettings() const { return m_qvbrSettings; }
     inline bool QvbrSettingsHasBeenSet() const { return m_qvbrSettingsHasBeenSet; }
-    inline void SetQvbrSettings(const H264QvbrSettings& value) { m_qvbrSettingsHasBeenSet = true; m_qvbrSettings = value; }
-    inline void SetQvbrSettings(H264QvbrSettings&& value) { m_qvbrSettingsHasBeenSet = true; m_qvbrSettings = std::move(value); }
-    inline H264Settings& WithQvbrSettings(const H264QvbrSettings& value) { SetQvbrSettings(value); return *this;}
-    inline H264Settings& WithQvbrSettings(H264QvbrSettings&& value) { SetQvbrSettings(std::move(value)); return *this;}
+    template<typename QvbrSettingsT = H264QvbrSettings>
+    void SetQvbrSettings(QvbrSettingsT&& value) { m_qvbrSettingsHasBeenSet = true; m_qvbrSettings = std::forward<QvbrSettingsT>(value); }
+    template<typename QvbrSettingsT = H264QvbrSettings>
+    H264Settings& WithQvbrSettings(QvbrSettingsT&& value) { SetQvbrSettings(std::forward<QvbrSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -566,24 +536,20 @@ namespace Model
      * Use this setting to specify whether this output has a variable bitrate (VBR),
      * constant bitrate (CBR) or quality-defined variable bitrate (QVBR).
      */
-    inline const H264RateControlMode& GetRateControlMode() const{ return m_rateControlMode; }
+    inline H264RateControlMode GetRateControlMode() const { return m_rateControlMode; }
     inline bool RateControlModeHasBeenSet() const { return m_rateControlModeHasBeenSet; }
-    inline void SetRateControlMode(const H264RateControlMode& value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = value; }
-    inline void SetRateControlMode(H264RateControlMode&& value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = std::move(value); }
-    inline H264Settings& WithRateControlMode(const H264RateControlMode& value) { SetRateControlMode(value); return *this;}
-    inline H264Settings& WithRateControlMode(H264RateControlMode&& value) { SetRateControlMode(std::move(value)); return *this;}
+    inline void SetRateControlMode(H264RateControlMode value) { m_rateControlModeHasBeenSet = true; m_rateControlMode = value; }
+    inline H264Settings& WithRateControlMode(H264RateControlMode value) { SetRateControlMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Places a PPS header on each encoded picture, even if repeated.
      */
-    inline const H264RepeatPps& GetRepeatPps() const{ return m_repeatPps; }
+    inline H264RepeatPps GetRepeatPps() const { return m_repeatPps; }
     inline bool RepeatPpsHasBeenSet() const { return m_repeatPpsHasBeenSet; }
-    inline void SetRepeatPps(const H264RepeatPps& value) { m_repeatPpsHasBeenSet = true; m_repeatPps = value; }
-    inline void SetRepeatPps(H264RepeatPps&& value) { m_repeatPpsHasBeenSet = true; m_repeatPps = std::move(value); }
-    inline H264Settings& WithRepeatPps(const H264RepeatPps& value) { SetRepeatPps(value); return *this;}
-    inline H264Settings& WithRepeatPps(H264RepeatPps&& value) { SetRepeatPps(std::move(value)); return *this;}
+    inline void SetRepeatPps(H264RepeatPps value) { m_repeatPpsHasBeenSet = true; m_repeatPps = value; }
+    inline H264Settings& WithRepeatPps(H264RepeatPps value) { SetRepeatPps(value); return *this;}
     ///@}
 
     ///@{
@@ -597,12 +563,10 @@ namespace Model
      * 720p or higher in resolution. To not apply saliency aware encoding, prioritizing
      * encoding speed over perceptual video quality: Choose Disabled.
      */
-    inline const H264SaliencyAwareEncoding& GetSaliencyAwareEncoding() const{ return m_saliencyAwareEncoding; }
+    inline H264SaliencyAwareEncoding GetSaliencyAwareEncoding() const { return m_saliencyAwareEncoding; }
     inline bool SaliencyAwareEncodingHasBeenSet() const { return m_saliencyAwareEncodingHasBeenSet; }
-    inline void SetSaliencyAwareEncoding(const H264SaliencyAwareEncoding& value) { m_saliencyAwareEncodingHasBeenSet = true; m_saliencyAwareEncoding = value; }
-    inline void SetSaliencyAwareEncoding(H264SaliencyAwareEncoding&& value) { m_saliencyAwareEncodingHasBeenSet = true; m_saliencyAwareEncoding = std::move(value); }
-    inline H264Settings& WithSaliencyAwareEncoding(const H264SaliencyAwareEncoding& value) { SetSaliencyAwareEncoding(value); return *this;}
-    inline H264Settings& WithSaliencyAwareEncoding(H264SaliencyAwareEncoding&& value) { SetSaliencyAwareEncoding(std::move(value)); return *this;}
+    inline void SetSaliencyAwareEncoding(H264SaliencyAwareEncoding value) { m_saliencyAwareEncodingHasBeenSet = true; m_saliencyAwareEncoding = value; }
+    inline H264Settings& WithSaliencyAwareEncoding(H264SaliencyAwareEncoding value) { SetSaliencyAwareEncoding(value); return *this;}
     ///@}
 
     ///@{
@@ -620,12 +584,10 @@ namespace Model
      * use optimized interlacing for hard telecine outputs. You must also set Interlace
      * mode to a value other than Progressive.
      */
-    inline const H264ScanTypeConversionMode& GetScanTypeConversionMode() const{ return m_scanTypeConversionMode; }
+    inline H264ScanTypeConversionMode GetScanTypeConversionMode() const { return m_scanTypeConversionMode; }
     inline bool ScanTypeConversionModeHasBeenSet() const { return m_scanTypeConversionModeHasBeenSet; }
-    inline void SetScanTypeConversionMode(const H264ScanTypeConversionMode& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = value; }
-    inline void SetScanTypeConversionMode(H264ScanTypeConversionMode&& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = std::move(value); }
-    inline H264Settings& WithScanTypeConversionMode(const H264ScanTypeConversionMode& value) { SetScanTypeConversionMode(value); return *this;}
-    inline H264Settings& WithScanTypeConversionMode(H264ScanTypeConversionMode&& value) { SetScanTypeConversionMode(std::move(value)); return *this;}
+    inline void SetScanTypeConversionMode(H264ScanTypeConversionMode value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = value; }
+    inline H264Settings& WithScanTypeConversionMode(H264ScanTypeConversionMode value) { SetScanTypeConversionMode(value); return *this;}
     ///@}
 
     ///@{
@@ -636,12 +598,10 @@ namespace Model
      * improvement. For more information about QVBR, see
      * https://docs.aws.amazon.com/console/mediaconvert/cbr-vbr-qvbr.
      */
-    inline const H264SceneChangeDetect& GetSceneChangeDetect() const{ return m_sceneChangeDetect; }
+    inline H264SceneChangeDetect GetSceneChangeDetect() const { return m_sceneChangeDetect; }
     inline bool SceneChangeDetectHasBeenSet() const { return m_sceneChangeDetectHasBeenSet; }
-    inline void SetSceneChangeDetect(const H264SceneChangeDetect& value) { m_sceneChangeDetectHasBeenSet = true; m_sceneChangeDetect = value; }
-    inline void SetSceneChangeDetect(H264SceneChangeDetect&& value) { m_sceneChangeDetectHasBeenSet = true; m_sceneChangeDetect = std::move(value); }
-    inline H264Settings& WithSceneChangeDetect(const H264SceneChangeDetect& value) { SetSceneChangeDetect(value); return *this;}
-    inline H264Settings& WithSceneChangeDetect(H264SceneChangeDetect&& value) { SetSceneChangeDetect(std::move(value)); return *this;}
+    inline void SetSceneChangeDetect(H264SceneChangeDetect value) { m_sceneChangeDetectHasBeenSet = true; m_sceneChangeDetect = value; }
+    inline H264Settings& WithSceneChangeDetect(H264SceneChangeDetect value) { SetSceneChangeDetect(value); return *this;}
     ///@}
 
     ///@{
@@ -650,7 +610,7 @@ namespace Model
      * macroblock rows for progressive pictures, and less than or equal to half the
      * number of macroblock rows for interlaced pictures.
      */
-    inline int GetSlices() const{ return m_slices; }
+    inline int GetSlices() const { return m_slices; }
     inline bool SlicesHasBeenSet() const { return m_slicesHasBeenSet; }
     inline void SetSlices(int value) { m_slicesHasBeenSet = true; m_slices = value; }
     inline H264Settings& WithSlices(int value) { SetSlices(value); return *this;}
@@ -665,12 +625,10 @@ namespace Model
      * slightly reduce the duration of your video. Required settings: You must also set
      * Framerate to 25.
      */
-    inline const H264SlowPal& GetSlowPal() const{ return m_slowPal; }
+    inline H264SlowPal GetSlowPal() const { return m_slowPal; }
     inline bool SlowPalHasBeenSet() const { return m_slowPalHasBeenSet; }
-    inline void SetSlowPal(const H264SlowPal& value) { m_slowPalHasBeenSet = true; m_slowPal = value; }
-    inline void SetSlowPal(H264SlowPal&& value) { m_slowPalHasBeenSet = true; m_slowPal = std::move(value); }
-    inline H264Settings& WithSlowPal(const H264SlowPal& value) { SetSlowPal(value); return *this;}
-    inline H264Settings& WithSlowPal(H264SlowPal&& value) { SetSlowPal(std::move(value)); return *this;}
+    inline void SetSlowPal(H264SlowPal value) { m_slowPalHasBeenSet = true; m_slowPal = value; }
+    inline H264Settings& WithSlowPal(H264SlowPal value) { SetSlowPal(value); return *this;}
     ///@}
 
     ///@{
@@ -686,7 +644,7 @@ namespace Model
      * result in increasing reduction of high-frequency data. The value 128 results in
      * the softest video.
      */
-    inline int GetSoftness() const{ return m_softness; }
+    inline int GetSoftness() const { return m_softness; }
     inline bool SoftnessHasBeenSet() const { return m_softnessHasBeenSet; }
     inline void SetSoftness(int value) { m_softnessHasBeenSet = true; m_softness = value; }
     inline H264Settings& WithSoftness(int value) { SetSoftness(value); return *this;}
@@ -717,24 +675,20 @@ namespace Model
      * Higher. To manually enable or disable H264SpatialAdaptiveQuantization, you must
      * set Adaptive quantization to a value other than AUTO.
      */
-    inline const H264SpatialAdaptiveQuantization& GetSpatialAdaptiveQuantization() const{ return m_spatialAdaptiveQuantization; }
+    inline H264SpatialAdaptiveQuantization GetSpatialAdaptiveQuantization() const { return m_spatialAdaptiveQuantization; }
     inline bool SpatialAdaptiveQuantizationHasBeenSet() const { return m_spatialAdaptiveQuantizationHasBeenSet; }
-    inline void SetSpatialAdaptiveQuantization(const H264SpatialAdaptiveQuantization& value) { m_spatialAdaptiveQuantizationHasBeenSet = true; m_spatialAdaptiveQuantization = value; }
-    inline void SetSpatialAdaptiveQuantization(H264SpatialAdaptiveQuantization&& value) { m_spatialAdaptiveQuantizationHasBeenSet = true; m_spatialAdaptiveQuantization = std::move(value); }
-    inline H264Settings& WithSpatialAdaptiveQuantization(const H264SpatialAdaptiveQuantization& value) { SetSpatialAdaptiveQuantization(value); return *this;}
-    inline H264Settings& WithSpatialAdaptiveQuantization(H264SpatialAdaptiveQuantization&& value) { SetSpatialAdaptiveQuantization(std::move(value)); return *this;}
+    inline void SetSpatialAdaptiveQuantization(H264SpatialAdaptiveQuantization value) { m_spatialAdaptiveQuantizationHasBeenSet = true; m_spatialAdaptiveQuantization = value; }
+    inline H264Settings& WithSpatialAdaptiveQuantization(H264SpatialAdaptiveQuantization value) { SetSpatialAdaptiveQuantization(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Produces a bitstream compliant with SMPTE RP-2027.
      */
-    inline const H264Syntax& GetSyntax() const{ return m_syntax; }
+    inline H264Syntax GetSyntax() const { return m_syntax; }
     inline bool SyntaxHasBeenSet() const { return m_syntaxHasBeenSet; }
-    inline void SetSyntax(const H264Syntax& value) { m_syntaxHasBeenSet = true; m_syntax = value; }
-    inline void SetSyntax(H264Syntax&& value) { m_syntaxHasBeenSet = true; m_syntax = std::move(value); }
-    inline H264Settings& WithSyntax(const H264Syntax& value) { SetSyntax(value); return *this;}
-    inline H264Settings& WithSyntax(H264Syntax&& value) { SetSyntax(std::move(value)); return *this;}
+    inline void SetSyntax(H264Syntax value) { m_syntaxHasBeenSet = true; m_syntax = value; }
+    inline H264Settings& WithSyntax(H264Syntax value) { SetSyntax(value); return *this;}
     ///@}
 
     ///@{
@@ -747,12 +701,10 @@ namespace Model
      * default value, None, MediaConvert does a standard frame rate conversion to 29.97
      * without doing anything with the field polarity to create a smoother picture.
      */
-    inline const H264Telecine& GetTelecine() const{ return m_telecine; }
+    inline H264Telecine GetTelecine() const { return m_telecine; }
     inline bool TelecineHasBeenSet() const { return m_telecineHasBeenSet; }
-    inline void SetTelecine(const H264Telecine& value) { m_telecineHasBeenSet = true; m_telecine = value; }
-    inline void SetTelecine(H264Telecine&& value) { m_telecineHasBeenSet = true; m_telecine = std::move(value); }
-    inline H264Settings& WithTelecine(const H264Telecine& value) { SetTelecine(value); return *this;}
-    inline H264Settings& WithTelecine(H264Telecine&& value) { SetTelecine(std::move(value)); return *this;}
+    inline void SetTelecine(H264Telecine value) { m_telecineHasBeenSet = true; m_telecine = value; }
+    inline H264Settings& WithTelecine(H264Telecine value) { SetTelecine(value); return *this;}
     ///@}
 
     ///@{
@@ -779,24 +731,20 @@ namespace Model
      * H264TemporalAdaptiveQuantization, you must set Adaptive quantization to a value
      * other than AUTO.
      */
-    inline const H264TemporalAdaptiveQuantization& GetTemporalAdaptiveQuantization() const{ return m_temporalAdaptiveQuantization; }
+    inline H264TemporalAdaptiveQuantization GetTemporalAdaptiveQuantization() const { return m_temporalAdaptiveQuantization; }
     inline bool TemporalAdaptiveQuantizationHasBeenSet() const { return m_temporalAdaptiveQuantizationHasBeenSet; }
-    inline void SetTemporalAdaptiveQuantization(const H264TemporalAdaptiveQuantization& value) { m_temporalAdaptiveQuantizationHasBeenSet = true; m_temporalAdaptiveQuantization = value; }
-    inline void SetTemporalAdaptiveQuantization(H264TemporalAdaptiveQuantization&& value) { m_temporalAdaptiveQuantizationHasBeenSet = true; m_temporalAdaptiveQuantization = std::move(value); }
-    inline H264Settings& WithTemporalAdaptiveQuantization(const H264TemporalAdaptiveQuantization& value) { SetTemporalAdaptiveQuantization(value); return *this;}
-    inline H264Settings& WithTemporalAdaptiveQuantization(H264TemporalAdaptiveQuantization&& value) { SetTemporalAdaptiveQuantization(std::move(value)); return *this;}
+    inline void SetTemporalAdaptiveQuantization(H264TemporalAdaptiveQuantization value) { m_temporalAdaptiveQuantizationHasBeenSet = true; m_temporalAdaptiveQuantization = value; }
+    inline H264Settings& WithTemporalAdaptiveQuantization(H264TemporalAdaptiveQuantization value) { SetTemporalAdaptiveQuantization(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Inserts timecode for each frame as 4 bytes of an unregistered SEI message.
      */
-    inline const H264UnregisteredSeiTimecode& GetUnregisteredSeiTimecode() const{ return m_unregisteredSeiTimecode; }
+    inline H264UnregisteredSeiTimecode GetUnregisteredSeiTimecode() const { return m_unregisteredSeiTimecode; }
     inline bool UnregisteredSeiTimecodeHasBeenSet() const { return m_unregisteredSeiTimecodeHasBeenSet; }
-    inline void SetUnregisteredSeiTimecode(const H264UnregisteredSeiTimecode& value) { m_unregisteredSeiTimecodeHasBeenSet = true; m_unregisteredSeiTimecode = value; }
-    inline void SetUnregisteredSeiTimecode(H264UnregisteredSeiTimecode&& value) { m_unregisteredSeiTimecodeHasBeenSet = true; m_unregisteredSeiTimecode = std::move(value); }
-    inline H264Settings& WithUnregisteredSeiTimecode(const H264UnregisteredSeiTimecode& value) { SetUnregisteredSeiTimecode(value); return *this;}
-    inline H264Settings& WithUnregisteredSeiTimecode(H264UnregisteredSeiTimecode&& value) { SetUnregisteredSeiTimecode(std::move(value)); return *this;}
+    inline void SetUnregisteredSeiTimecode(H264UnregisteredSeiTimecode value) { m_unregisteredSeiTimecodeHasBeenSet = true; m_unregisteredSeiTimecode = value; }
+    inline H264Settings& WithUnregisteredSeiTimecode(H264UnregisteredSeiTimecode value) { SetUnregisteredSeiTimecode(value); return *this;}
     ///@}
 
     ///@{
@@ -809,148 +757,146 @@ namespace Model
      * 'stsd' box): Choose AVC3. When you do, note that your output might not play
      * properly with some downstream systems or players.
      */
-    inline const H264WriteMp4PackagingType& GetWriteMp4PackagingType() const{ return m_writeMp4PackagingType; }
+    inline H264WriteMp4PackagingType GetWriteMp4PackagingType() const { return m_writeMp4PackagingType; }
     inline bool WriteMp4PackagingTypeHasBeenSet() const { return m_writeMp4PackagingTypeHasBeenSet; }
-    inline void SetWriteMp4PackagingType(const H264WriteMp4PackagingType& value) { m_writeMp4PackagingTypeHasBeenSet = true; m_writeMp4PackagingType = value; }
-    inline void SetWriteMp4PackagingType(H264WriteMp4PackagingType&& value) { m_writeMp4PackagingTypeHasBeenSet = true; m_writeMp4PackagingType = std::move(value); }
-    inline H264Settings& WithWriteMp4PackagingType(const H264WriteMp4PackagingType& value) { SetWriteMp4PackagingType(value); return *this;}
-    inline H264Settings& WithWriteMp4PackagingType(H264WriteMp4PackagingType&& value) { SetWriteMp4PackagingType(std::move(value)); return *this;}
+    inline void SetWriteMp4PackagingType(H264WriteMp4PackagingType value) { m_writeMp4PackagingTypeHasBeenSet = true; m_writeMp4PackagingType = value; }
+    inline H264Settings& WithWriteMp4PackagingType(H264WriteMp4PackagingType value) { SetWriteMp4PackagingType(value); return *this;}
     ///@}
   private:
 
-    H264AdaptiveQuantization m_adaptiveQuantization;
+    H264AdaptiveQuantization m_adaptiveQuantization{H264AdaptiveQuantization::NOT_SET};
     bool m_adaptiveQuantizationHasBeenSet = false;
 
     BandwidthReductionFilter m_bandwidthReductionFilter;
     bool m_bandwidthReductionFilterHasBeenSet = false;
 
-    int m_bitrate;
+    int m_bitrate{0};
     bool m_bitrateHasBeenSet = false;
 
-    H264CodecLevel m_codecLevel;
+    H264CodecLevel m_codecLevel{H264CodecLevel::NOT_SET};
     bool m_codecLevelHasBeenSet = false;
 
-    H264CodecProfile m_codecProfile;
+    H264CodecProfile m_codecProfile{H264CodecProfile::NOT_SET};
     bool m_codecProfileHasBeenSet = false;
 
-    H264DynamicSubGop m_dynamicSubGop;
+    H264DynamicSubGop m_dynamicSubGop{H264DynamicSubGop::NOT_SET};
     bool m_dynamicSubGopHasBeenSet = false;
 
-    H264EndOfStreamMarkers m_endOfStreamMarkers;
+    H264EndOfStreamMarkers m_endOfStreamMarkers{H264EndOfStreamMarkers::NOT_SET};
     bool m_endOfStreamMarkersHasBeenSet = false;
 
-    H264EntropyEncoding m_entropyEncoding;
+    H264EntropyEncoding m_entropyEncoding{H264EntropyEncoding::NOT_SET};
     bool m_entropyEncodingHasBeenSet = false;
 
-    H264FieldEncoding m_fieldEncoding;
+    H264FieldEncoding m_fieldEncoding{H264FieldEncoding::NOT_SET};
     bool m_fieldEncodingHasBeenSet = false;
 
-    H264FlickerAdaptiveQuantization m_flickerAdaptiveQuantization;
+    H264FlickerAdaptiveQuantization m_flickerAdaptiveQuantization{H264FlickerAdaptiveQuantization::NOT_SET};
     bool m_flickerAdaptiveQuantizationHasBeenSet = false;
 
-    H264FramerateControl m_framerateControl;
+    H264FramerateControl m_framerateControl{H264FramerateControl::NOT_SET};
     bool m_framerateControlHasBeenSet = false;
 
-    H264FramerateConversionAlgorithm m_framerateConversionAlgorithm;
+    H264FramerateConversionAlgorithm m_framerateConversionAlgorithm{H264FramerateConversionAlgorithm::NOT_SET};
     bool m_framerateConversionAlgorithmHasBeenSet = false;
 
-    int m_framerateDenominator;
+    int m_framerateDenominator{0};
     bool m_framerateDenominatorHasBeenSet = false;
 
-    int m_framerateNumerator;
+    int m_framerateNumerator{0};
     bool m_framerateNumeratorHasBeenSet = false;
 
-    H264GopBReference m_gopBReference;
+    H264GopBReference m_gopBReference{H264GopBReference::NOT_SET};
     bool m_gopBReferenceHasBeenSet = false;
 
-    int m_gopClosedCadence;
+    int m_gopClosedCadence{0};
     bool m_gopClosedCadenceHasBeenSet = false;
 
-    double m_gopSize;
+    double m_gopSize{0.0};
     bool m_gopSizeHasBeenSet = false;
 
-    H264GopSizeUnits m_gopSizeUnits;
+    H264GopSizeUnits m_gopSizeUnits{H264GopSizeUnits::NOT_SET};
     bool m_gopSizeUnitsHasBeenSet = false;
 
-    int m_hrdBufferFinalFillPercentage;
+    int m_hrdBufferFinalFillPercentage{0};
     bool m_hrdBufferFinalFillPercentageHasBeenSet = false;
 
-    int m_hrdBufferInitialFillPercentage;
+    int m_hrdBufferInitialFillPercentage{0};
     bool m_hrdBufferInitialFillPercentageHasBeenSet = false;
 
-    int m_hrdBufferSize;
+    int m_hrdBufferSize{0};
     bool m_hrdBufferSizeHasBeenSet = false;
 
-    H264InterlaceMode m_interlaceMode;
+    H264InterlaceMode m_interlaceMode{H264InterlaceMode::NOT_SET};
     bool m_interlaceModeHasBeenSet = false;
 
-    int m_maxBitrate;
+    int m_maxBitrate{0};
     bool m_maxBitrateHasBeenSet = false;
 
-    int m_minIInterval;
+    int m_minIInterval{0};
     bool m_minIIntervalHasBeenSet = false;
 
-    int m_numberBFramesBetweenReferenceFrames;
+    int m_numberBFramesBetweenReferenceFrames{0};
     bool m_numberBFramesBetweenReferenceFramesHasBeenSet = false;
 
-    int m_numberReferenceFrames;
+    int m_numberReferenceFrames{0};
     bool m_numberReferenceFramesHasBeenSet = false;
 
-    H264ParControl m_parControl;
+    H264ParControl m_parControl{H264ParControl::NOT_SET};
     bool m_parControlHasBeenSet = false;
 
-    int m_parDenominator;
+    int m_parDenominator{0};
     bool m_parDenominatorHasBeenSet = false;
 
-    int m_parNumerator;
+    int m_parNumerator{0};
     bool m_parNumeratorHasBeenSet = false;
 
-    H264QualityTuningLevel m_qualityTuningLevel;
+    H264QualityTuningLevel m_qualityTuningLevel{H264QualityTuningLevel::NOT_SET};
     bool m_qualityTuningLevelHasBeenSet = false;
 
     H264QvbrSettings m_qvbrSettings;
     bool m_qvbrSettingsHasBeenSet = false;
 
-    H264RateControlMode m_rateControlMode;
+    H264RateControlMode m_rateControlMode{H264RateControlMode::NOT_SET};
     bool m_rateControlModeHasBeenSet = false;
 
-    H264RepeatPps m_repeatPps;
+    H264RepeatPps m_repeatPps{H264RepeatPps::NOT_SET};
     bool m_repeatPpsHasBeenSet = false;
 
-    H264SaliencyAwareEncoding m_saliencyAwareEncoding;
+    H264SaliencyAwareEncoding m_saliencyAwareEncoding{H264SaliencyAwareEncoding::NOT_SET};
     bool m_saliencyAwareEncodingHasBeenSet = false;
 
-    H264ScanTypeConversionMode m_scanTypeConversionMode;
+    H264ScanTypeConversionMode m_scanTypeConversionMode{H264ScanTypeConversionMode::NOT_SET};
     bool m_scanTypeConversionModeHasBeenSet = false;
 
-    H264SceneChangeDetect m_sceneChangeDetect;
+    H264SceneChangeDetect m_sceneChangeDetect{H264SceneChangeDetect::NOT_SET};
     bool m_sceneChangeDetectHasBeenSet = false;
 
-    int m_slices;
+    int m_slices{0};
     bool m_slicesHasBeenSet = false;
 
-    H264SlowPal m_slowPal;
+    H264SlowPal m_slowPal{H264SlowPal::NOT_SET};
     bool m_slowPalHasBeenSet = false;
 
-    int m_softness;
+    int m_softness{0};
     bool m_softnessHasBeenSet = false;
 
-    H264SpatialAdaptiveQuantization m_spatialAdaptiveQuantization;
+    H264SpatialAdaptiveQuantization m_spatialAdaptiveQuantization{H264SpatialAdaptiveQuantization::NOT_SET};
     bool m_spatialAdaptiveQuantizationHasBeenSet = false;
 
-    H264Syntax m_syntax;
+    H264Syntax m_syntax{H264Syntax::NOT_SET};
     bool m_syntaxHasBeenSet = false;
 
-    H264Telecine m_telecine;
+    H264Telecine m_telecine{H264Telecine::NOT_SET};
     bool m_telecineHasBeenSet = false;
 
-    H264TemporalAdaptiveQuantization m_temporalAdaptiveQuantization;
+    H264TemporalAdaptiveQuantization m_temporalAdaptiveQuantization{H264TemporalAdaptiveQuantization::NOT_SET};
     bool m_temporalAdaptiveQuantizationHasBeenSet = false;
 
-    H264UnregisteredSeiTimecode m_unregisteredSeiTimecode;
+    H264UnregisteredSeiTimecode m_unregisteredSeiTimecode{H264UnregisteredSeiTimecode::NOT_SET};
     bool m_unregisteredSeiTimecodeHasBeenSet = false;
 
-    H264WriteMp4PackagingType m_writeMp4PackagingType;
+    H264WriteMp4PackagingType m_writeMp4PackagingType{H264WriteMp4PackagingType::NOT_SET};
     bool m_writeMp4PackagingTypeHasBeenSet = false;
   };
 

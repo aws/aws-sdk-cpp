@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AggregationPartitionBy::AggregationPartitionBy() : 
-    m_fieldNameHasBeenSet(false),
-    m_timeGranularity(TimeGranularity::NOT_SET),
-    m_timeGranularityHasBeenSet(false)
-{
-}
-
 AggregationPartitionBy::AggregationPartitionBy(JsonView jsonValue)
-  : AggregationPartitionBy()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AggregationPartitionBy& AggregationPartitionBy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldName"))
   {
     m_fieldName = jsonValue.GetString("FieldName");
-
     m_fieldNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeGranularity"))
   {
     m_timeGranularity = TimeGranularityMapper::GetTimeGranularityForName(jsonValue.GetString("TimeGranularity"));
-
     m_timeGranularityHasBeenSet = true;
   }
-
   return *this;
 }
 

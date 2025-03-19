@@ -18,23 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-Plugin::Plugin() : 
-    m_pluginIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_type(PluginType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_serverUrlHasBeenSet(false),
-    m_state(PluginState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_buildStatus(PluginBuildStatus::NOT_SET),
-    m_buildStatusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 Plugin::Plugin(JsonView jsonValue)
-  : Plugin()
 {
   *this = jsonValue;
 }
@@ -44,59 +28,43 @@ Plugin& Plugin::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("pluginId"))
   {
     m_pluginId = jsonValue.GetString("pluginId");
-
     m_pluginIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = PluginTypeMapper::GetPluginTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverUrl"))
   {
     m_serverUrl = jsonValue.GetString("serverUrl");
-
     m_serverUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = PluginStateMapper::GetPluginStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("buildStatus"))
   {
     m_buildStatus = PluginBuildStatusMapper::GetPluginBuildStatusForName(jsonValue.GetString("buildStatus"));
-
     m_buildStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

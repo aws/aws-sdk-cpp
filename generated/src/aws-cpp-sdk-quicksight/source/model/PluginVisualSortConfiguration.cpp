@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PluginVisualSortConfiguration::PluginVisualSortConfiguration() : 
-    m_pluginVisualTableQuerySortHasBeenSet(false)
-{
-}
-
 PluginVisualSortConfiguration::PluginVisualSortConfiguration(JsonView jsonValue)
-  : PluginVisualSortConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PluginVisualSortConfiguration& PluginVisualSortConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("PluginVisualTableQuerySort"))
   {
     m_pluginVisualTableQuerySort = jsonValue.GetObject("PluginVisualTableQuerySort");
-
     m_pluginVisualTableQuerySortHasBeenSet = true;
   }
-
   return *this;
 }
 

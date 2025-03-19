@@ -21,7 +21,7 @@ namespace Model
   class GetRelayRequest : public MailManagerRequest
   {
   public:
-    AWS_MAILMANAGER_API GetRelayRequest();
+    AWS_MAILMANAGER_API GetRelayRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>A unique relay identifier.</p>
      */
-    inline const Aws::String& GetRelayId() const{ return m_relayId; }
+    inline const Aws::String& GetRelayId() const { return m_relayId; }
     inline bool RelayIdHasBeenSet() const { return m_relayIdHasBeenSet; }
-    inline void SetRelayId(const Aws::String& value) { m_relayIdHasBeenSet = true; m_relayId = value; }
-    inline void SetRelayId(Aws::String&& value) { m_relayIdHasBeenSet = true; m_relayId = std::move(value); }
-    inline void SetRelayId(const char* value) { m_relayIdHasBeenSet = true; m_relayId.assign(value); }
-    inline GetRelayRequest& WithRelayId(const Aws::String& value) { SetRelayId(value); return *this;}
-    inline GetRelayRequest& WithRelayId(Aws::String&& value) { SetRelayId(std::move(value)); return *this;}
-    inline GetRelayRequest& WithRelayId(const char* value) { SetRelayId(value); return *this;}
+    template<typename RelayIdT = Aws::String>
+    void SetRelayId(RelayIdT&& value) { m_relayIdHasBeenSet = true; m_relayId = std::forward<RelayIdT>(value); }
+    template<typename RelayIdT = Aws::String>
+    GetRelayRequest& WithRelayId(RelayIdT&& value) { SetRelayId(std::forward<RelayIdT>(value)); return *this;}
     ///@}
   private:
 

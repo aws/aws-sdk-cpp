@@ -34,7 +34,7 @@ namespace Model
   class RetrieveAndGenerateConfiguration
   {
   public:
-    AWS_BEDROCK_API RetrieveAndGenerateConfiguration();
+    AWS_BEDROCK_API RetrieveAndGenerateConfiguration() = default;
     AWS_BEDROCK_API RetrieveAndGenerateConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API RetrieveAndGenerateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
      * then currently only Claude 3 Sonnet models for knowledge bases are
      * supported.</p>
      */
-    inline const RetrieveAndGenerateType& GetType() const{ return m_type; }
+    inline RetrieveAndGenerateType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RetrieveAndGenerateType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RetrieveAndGenerateType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline RetrieveAndGenerateConfiguration& WithType(const RetrieveAndGenerateType& value) { SetType(value); return *this;}
-    inline RetrieveAndGenerateConfiguration& WithType(RetrieveAndGenerateType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RetrieveAndGenerateType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RetrieveAndGenerateConfiguration& WithType(RetrieveAndGenerateType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,12 @@ namespace Model
      * <p>Contains configuration details for the knowledge base retrieval and response
      * generation.</p>
      */
-    inline const KnowledgeBaseRetrieveAndGenerateConfiguration& GetKnowledgeBaseConfiguration() const{ return m_knowledgeBaseConfiguration; }
+    inline const KnowledgeBaseRetrieveAndGenerateConfiguration& GetKnowledgeBaseConfiguration() const { return m_knowledgeBaseConfiguration; }
     inline bool KnowledgeBaseConfigurationHasBeenSet() const { return m_knowledgeBaseConfigurationHasBeenSet; }
-    inline void SetKnowledgeBaseConfiguration(const KnowledgeBaseRetrieveAndGenerateConfiguration& value) { m_knowledgeBaseConfigurationHasBeenSet = true; m_knowledgeBaseConfiguration = value; }
-    inline void SetKnowledgeBaseConfiguration(KnowledgeBaseRetrieveAndGenerateConfiguration&& value) { m_knowledgeBaseConfigurationHasBeenSet = true; m_knowledgeBaseConfiguration = std::move(value); }
-    inline RetrieveAndGenerateConfiguration& WithKnowledgeBaseConfiguration(const KnowledgeBaseRetrieveAndGenerateConfiguration& value) { SetKnowledgeBaseConfiguration(value); return *this;}
-    inline RetrieveAndGenerateConfiguration& WithKnowledgeBaseConfiguration(KnowledgeBaseRetrieveAndGenerateConfiguration&& value) { SetKnowledgeBaseConfiguration(std::move(value)); return *this;}
+    template<typename KnowledgeBaseConfigurationT = KnowledgeBaseRetrieveAndGenerateConfiguration>
+    void SetKnowledgeBaseConfiguration(KnowledgeBaseConfigurationT&& value) { m_knowledgeBaseConfigurationHasBeenSet = true; m_knowledgeBaseConfiguration = std::forward<KnowledgeBaseConfigurationT>(value); }
+    template<typename KnowledgeBaseConfigurationT = KnowledgeBaseRetrieveAndGenerateConfiguration>
+    RetrieveAndGenerateConfiguration& WithKnowledgeBaseConfiguration(KnowledgeBaseConfigurationT&& value) { SetKnowledgeBaseConfiguration(std::forward<KnowledgeBaseConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,16 +71,16 @@ namespace Model
      * <p>The configuration for the external source wrapper object in the
      * <code>retrieveAndGenerate</code> function.</p>
      */
-    inline const ExternalSourcesRetrieveAndGenerateConfiguration& GetExternalSourcesConfiguration() const{ return m_externalSourcesConfiguration; }
+    inline const ExternalSourcesRetrieveAndGenerateConfiguration& GetExternalSourcesConfiguration() const { return m_externalSourcesConfiguration; }
     inline bool ExternalSourcesConfigurationHasBeenSet() const { return m_externalSourcesConfigurationHasBeenSet; }
-    inline void SetExternalSourcesConfiguration(const ExternalSourcesRetrieveAndGenerateConfiguration& value) { m_externalSourcesConfigurationHasBeenSet = true; m_externalSourcesConfiguration = value; }
-    inline void SetExternalSourcesConfiguration(ExternalSourcesRetrieveAndGenerateConfiguration&& value) { m_externalSourcesConfigurationHasBeenSet = true; m_externalSourcesConfiguration = std::move(value); }
-    inline RetrieveAndGenerateConfiguration& WithExternalSourcesConfiguration(const ExternalSourcesRetrieveAndGenerateConfiguration& value) { SetExternalSourcesConfiguration(value); return *this;}
-    inline RetrieveAndGenerateConfiguration& WithExternalSourcesConfiguration(ExternalSourcesRetrieveAndGenerateConfiguration&& value) { SetExternalSourcesConfiguration(std::move(value)); return *this;}
+    template<typename ExternalSourcesConfigurationT = ExternalSourcesRetrieveAndGenerateConfiguration>
+    void SetExternalSourcesConfiguration(ExternalSourcesConfigurationT&& value) { m_externalSourcesConfigurationHasBeenSet = true; m_externalSourcesConfiguration = std::forward<ExternalSourcesConfigurationT>(value); }
+    template<typename ExternalSourcesConfigurationT = ExternalSourcesRetrieveAndGenerateConfiguration>
+    RetrieveAndGenerateConfiguration& WithExternalSourcesConfiguration(ExternalSourcesConfigurationT&& value) { SetExternalSourcesConfiguration(std::forward<ExternalSourcesConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    RetrieveAndGenerateType m_type;
+    RetrieveAndGenerateType m_type{RetrieveAndGenerateType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     KnowledgeBaseRetrieveAndGenerateConfiguration m_knowledgeBaseConfiguration;

@@ -31,7 +31,7 @@ namespace Model
   class UpdateJsonClassifierRequest
   {
   public:
-    AWS_GLUE_API UpdateJsonClassifierRequest();
+    AWS_GLUE_API UpdateJsonClassifierRequest() = default;
     AWS_GLUE_API UpdateJsonClassifierRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API UpdateJsonClassifierRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The name of the classifier.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateJsonClassifierRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateJsonClassifierRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateJsonClassifierRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateJsonClassifierRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing
      * JsonPath Custom Classifiers</a>.</p>
      */
-    inline const Aws::String& GetJsonPath() const{ return m_jsonPath; }
+    inline const Aws::String& GetJsonPath() const { return m_jsonPath; }
     inline bool JsonPathHasBeenSet() const { return m_jsonPathHasBeenSet; }
-    inline void SetJsonPath(const Aws::String& value) { m_jsonPathHasBeenSet = true; m_jsonPath = value; }
-    inline void SetJsonPath(Aws::String&& value) { m_jsonPathHasBeenSet = true; m_jsonPath = std::move(value); }
-    inline void SetJsonPath(const char* value) { m_jsonPathHasBeenSet = true; m_jsonPath.assign(value); }
-    inline UpdateJsonClassifierRequest& WithJsonPath(const Aws::String& value) { SetJsonPath(value); return *this;}
-    inline UpdateJsonClassifierRequest& WithJsonPath(Aws::String&& value) { SetJsonPath(std::move(value)); return *this;}
-    inline UpdateJsonClassifierRequest& WithJsonPath(const char* value) { SetJsonPath(value); return *this;}
+    template<typename JsonPathT = Aws::String>
+    void SetJsonPath(JsonPathT&& value) { m_jsonPathHasBeenSet = true; m_jsonPath = std::forward<JsonPathT>(value); }
+    template<typename JsonPathT = Aws::String>
+    UpdateJsonClassifierRequest& WithJsonPath(JsonPathT&& value) { SetJsonPath(std::forward<JsonPathT>(value)); return *this;}
     ///@}
   private:
 

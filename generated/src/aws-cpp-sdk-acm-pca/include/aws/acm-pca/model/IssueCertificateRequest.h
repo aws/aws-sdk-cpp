@@ -25,7 +25,7 @@ namespace Model
   class IssueCertificateRequest : public ACMPCARequest
   {
   public:
-    AWS_ACMPCA_API IssueCertificateRequest();
+    AWS_ACMPCA_API IssueCertificateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -51,12 +51,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html#template-order-of-operations">order
      * of operation rules</a> to determine what information is used.</p>
      */
-    inline const ApiPassthrough& GetApiPassthrough() const{ return m_apiPassthrough; }
+    inline const ApiPassthrough& GetApiPassthrough() const { return m_apiPassthrough; }
     inline bool ApiPassthroughHasBeenSet() const { return m_apiPassthroughHasBeenSet; }
-    inline void SetApiPassthrough(const ApiPassthrough& value) { m_apiPassthroughHasBeenSet = true; m_apiPassthrough = value; }
-    inline void SetApiPassthrough(ApiPassthrough&& value) { m_apiPassthroughHasBeenSet = true; m_apiPassthrough = std::move(value); }
-    inline IssueCertificateRequest& WithApiPassthrough(const ApiPassthrough& value) { SetApiPassthrough(value); return *this;}
-    inline IssueCertificateRequest& WithApiPassthrough(ApiPassthrough&& value) { SetApiPassthrough(std::move(value)); return *this;}
+    template<typename ApiPassthroughT = ApiPassthrough>
+    void SetApiPassthrough(ApiPassthroughT&& value) { m_apiPassthroughHasBeenSet = true; m_apiPassthrough = std::forward<ApiPassthroughT>(value); }
+    template<typename ApiPassthroughT = ApiPassthrough>
+    IssueCertificateRequest& WithApiPassthrough(ApiPassthroughT&& value) { SetApiPassthrough(std::forward<ApiPassthroughT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +67,12 @@ namespace Model
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code> </p>
      */
-    inline const Aws::String& GetCertificateAuthorityArn() const{ return m_certificateAuthorityArn; }
+    inline const Aws::String& GetCertificateAuthorityArn() const { return m_certificateAuthorityArn; }
     inline bool CertificateAuthorityArnHasBeenSet() const { return m_certificateAuthorityArnHasBeenSet; }
-    inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
-    inline void SetCertificateAuthorityArn(Aws::String&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::move(value); }
-    inline void SetCertificateAuthorityArn(const char* value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn.assign(value); }
-    inline IssueCertificateRequest& WithCertificateAuthorityArn(const Aws::String& value) { SetCertificateAuthorityArn(value); return *this;}
-    inline IssueCertificateRequest& WithCertificateAuthorityArn(Aws::String&& value) { SetCertificateAuthorityArn(std::move(value)); return *this;}
-    inline IssueCertificateRequest& WithCertificateAuthorityArn(const char* value) { SetCertificateAuthorityArn(value); return *this;}
+    template<typename CertificateAuthorityArnT = Aws::String>
+    void SetCertificateAuthorityArn(CertificateAuthorityArnT&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::forward<CertificateAuthorityArnT>(value); }
+    template<typename CertificateAuthorityArnT = Aws::String>
+    IssueCertificateRequest& WithCertificateAuthorityArn(CertificateAuthorityArnT&& value) { SetCertificateAuthorityArn(std::forward<CertificateAuthorityArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,12 +89,12 @@ namespace Model
      * CSR must provide either a <i>subject name</i> or a <i>subject alternative
      * name</i> or the request will be rejected. </p>
      */
-    inline const Aws::Utils::ByteBuffer& GetCsr() const{ return m_csr; }
+    inline const Aws::Utils::ByteBuffer& GetCsr() const { return m_csr; }
     inline bool CsrHasBeenSet() const { return m_csrHasBeenSet; }
-    inline void SetCsr(const Aws::Utils::ByteBuffer& value) { m_csrHasBeenSet = true; m_csr = value; }
-    inline void SetCsr(Aws::Utils::ByteBuffer&& value) { m_csrHasBeenSet = true; m_csr = std::move(value); }
-    inline IssueCertificateRequest& WithCsr(const Aws::Utils::ByteBuffer& value) { SetCsr(value); return *this;}
-    inline IssueCertificateRequest& WithCsr(Aws::Utils::ByteBuffer&& value) { SetCsr(std::move(value)); return *this;}
+    template<typename CsrT = Aws::Utils::ByteBuffer>
+    void SetCsr(CsrT&& value) { m_csrHasBeenSet = true; m_csr = std::forward<CsrT>(value); }
+    template<typename CsrT = Aws::Utils::ByteBuffer>
+    IssueCertificateRequest& WithCsr(CsrT&& value) { SetCsr(std::forward<CsrT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,12 +106,10 @@ namespace Model
      * signing algorithm family (RSA or ECDSA) must match the algorithm family of the
      * CA's secret key.</p> 
      */
-    inline const SigningAlgorithm& GetSigningAlgorithm() const{ return m_signingAlgorithm; }
+    inline SigningAlgorithm GetSigningAlgorithm() const { return m_signingAlgorithm; }
     inline bool SigningAlgorithmHasBeenSet() const { return m_signingAlgorithmHasBeenSet; }
-    inline void SetSigningAlgorithm(const SigningAlgorithm& value) { m_signingAlgorithmHasBeenSet = true; m_signingAlgorithm = value; }
-    inline void SetSigningAlgorithm(SigningAlgorithm&& value) { m_signingAlgorithmHasBeenSet = true; m_signingAlgorithm = std::move(value); }
-    inline IssueCertificateRequest& WithSigningAlgorithm(const SigningAlgorithm& value) { SetSigningAlgorithm(value); return *this;}
-    inline IssueCertificateRequest& WithSigningAlgorithm(SigningAlgorithm&& value) { SetSigningAlgorithm(std::move(value)); return *this;}
+    inline void SetSigningAlgorithm(SigningAlgorithm value) { m_signingAlgorithmHasBeenSet = true; m_signingAlgorithm = value; }
+    inline IssueCertificateRequest& WithSigningAlgorithm(SigningAlgorithm value) { SetSigningAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -131,14 +127,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/privateca/latest/userguide/UsingTemplates.html">Understanding
      * Certificate Templates</a>.</p>
      */
-    inline const Aws::String& GetTemplateArn() const{ return m_templateArn; }
+    inline const Aws::String& GetTemplateArn() const { return m_templateArn; }
     inline bool TemplateArnHasBeenSet() const { return m_templateArnHasBeenSet; }
-    inline void SetTemplateArn(const Aws::String& value) { m_templateArnHasBeenSet = true; m_templateArn = value; }
-    inline void SetTemplateArn(Aws::String&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::move(value); }
-    inline void SetTemplateArn(const char* value) { m_templateArnHasBeenSet = true; m_templateArn.assign(value); }
-    inline IssueCertificateRequest& WithTemplateArn(const Aws::String& value) { SetTemplateArn(value); return *this;}
-    inline IssueCertificateRequest& WithTemplateArn(Aws::String&& value) { SetTemplateArn(std::move(value)); return *this;}
-    inline IssueCertificateRequest& WithTemplateArn(const char* value) { SetTemplateArn(value); return *this;}
+    template<typename TemplateArnT = Aws::String>
+    void SetTemplateArn(TemplateArnT&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::forward<TemplateArnT>(value); }
+    template<typename TemplateArnT = Aws::String>
+    IssueCertificateRequest& WithTemplateArn(TemplateArnT&& value) { SetTemplateArn(std::forward<TemplateArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,12 +152,12 @@ namespace Model
      * configured on a certificate must not exceed the limit set on its parents in the
      * CA hierarchy.</p>
      */
-    inline const Validity& GetValidity() const{ return m_validity; }
+    inline const Validity& GetValidity() const { return m_validity; }
     inline bool ValidityHasBeenSet() const { return m_validityHasBeenSet; }
-    inline void SetValidity(const Validity& value) { m_validityHasBeenSet = true; m_validity = value; }
-    inline void SetValidity(Validity&& value) { m_validityHasBeenSet = true; m_validity = std::move(value); }
-    inline IssueCertificateRequest& WithValidity(const Validity& value) { SetValidity(value); return *this;}
-    inline IssueCertificateRequest& WithValidity(Validity&& value) { SetValidity(std::move(value)); return *this;}
+    template<typename ValidityT = Validity>
+    void SetValidity(ValidityT&& value) { m_validityHasBeenSet = true; m_validity = std::forward<ValidityT>(value); }
+    template<typename ValidityT = Validity>
+    IssueCertificateRequest& WithValidity(ValidityT&& value) { SetValidity(std::forward<ValidityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -184,12 +178,12 @@ namespace Model
      * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.1.2.5">Validity</a>
      * in RFC 5280.</p>
      */
-    inline const Validity& GetValidityNotBefore() const{ return m_validityNotBefore; }
+    inline const Validity& GetValidityNotBefore() const { return m_validityNotBefore; }
     inline bool ValidityNotBeforeHasBeenSet() const { return m_validityNotBeforeHasBeenSet; }
-    inline void SetValidityNotBefore(const Validity& value) { m_validityNotBeforeHasBeenSet = true; m_validityNotBefore = value; }
-    inline void SetValidityNotBefore(Validity&& value) { m_validityNotBeforeHasBeenSet = true; m_validityNotBefore = std::move(value); }
-    inline IssueCertificateRequest& WithValidityNotBefore(const Validity& value) { SetValidityNotBefore(value); return *this;}
-    inline IssueCertificateRequest& WithValidityNotBefore(Validity&& value) { SetValidityNotBefore(std::move(value)); return *this;}
+    template<typename ValidityNotBeforeT = Validity>
+    void SetValidityNotBefore(ValidityNotBeforeT&& value) { m_validityNotBeforeHasBeenSet = true; m_validityNotBefore = std::forward<ValidityNotBeforeT>(value); }
+    template<typename ValidityNotBeforeT = Validity>
+    IssueCertificateRequest& WithValidityNotBefore(ValidityNotBeforeT&& value) { SetValidityNotBefore(std::forward<ValidityNotBeforeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -203,14 +197,12 @@ namespace Model
      * Web Services Private CA recognizes that you are requesting multiple
      * certificates.</p>
      */
-    inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
+    inline const Aws::String& GetIdempotencyToken() const { return m_idempotencyToken; }
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
-    inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
-    inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
-    inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
-    inline IssueCertificateRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
-    inline IssueCertificateRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
-    inline IssueCertificateRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
+    template<typename IdempotencyTokenT = Aws::String>
+    void SetIdempotencyToken(IdempotencyTokenT&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::forward<IdempotencyTokenT>(value); }
+    template<typename IdempotencyTokenT = Aws::String>
+    IssueCertificateRequest& WithIdempotencyToken(IdempotencyTokenT&& value) { SetIdempotencyToken(std::forward<IdempotencyTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -220,10 +212,10 @@ namespace Model
     Aws::String m_certificateAuthorityArn;
     bool m_certificateAuthorityArnHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_csr;
+    Aws::Utils::ByteBuffer m_csr{};
     bool m_csrHasBeenSet = false;
 
-    SigningAlgorithm m_signingAlgorithm;
+    SigningAlgorithm m_signingAlgorithm{SigningAlgorithm::NOT_SET};
     bool m_signingAlgorithmHasBeenSet = false;
 
     Aws::String m_templateArn;

@@ -18,21 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-ColorConversion3DLUTSetting::ColorConversion3DLUTSetting() : 
-    m_fileInputHasBeenSet(false),
-    m_inputColorSpace(ColorSpace::NOT_SET),
-    m_inputColorSpaceHasBeenSet(false),
-    m_inputMasteringLuminance(0),
-    m_inputMasteringLuminanceHasBeenSet(false),
-    m_outputColorSpace(ColorSpace::NOT_SET),
-    m_outputColorSpaceHasBeenSet(false),
-    m_outputMasteringLuminance(0),
-    m_outputMasteringLuminanceHasBeenSet(false)
-{
-}
-
 ColorConversion3DLUTSetting::ColorConversion3DLUTSetting(JsonView jsonValue)
-  : ColorConversion3DLUTSetting()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ ColorConversion3DLUTSetting& ColorConversion3DLUTSetting::operator =(JsonView js
   if(jsonValue.ValueExists("fileInput"))
   {
     m_fileInput = jsonValue.GetString("fileInput");
-
     m_fileInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputColorSpace"))
   {
     m_inputColorSpace = ColorSpaceMapper::GetColorSpaceForName(jsonValue.GetString("inputColorSpace"));
-
     m_inputColorSpaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputMasteringLuminance"))
   {
     m_inputMasteringLuminance = jsonValue.GetInteger("inputMasteringLuminance");
-
     m_inputMasteringLuminanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputColorSpace"))
   {
     m_outputColorSpace = ColorSpaceMapper::GetColorSpaceForName(jsonValue.GetString("outputColorSpace"));
-
     m_outputColorSpaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputMasteringLuminance"))
   {
     m_outputMasteringLuminance = jsonValue.GetInteger("outputMasteringLuminance");
-
     m_outputMasteringLuminanceHasBeenSet = true;
   }
-
   return *this;
 }
 

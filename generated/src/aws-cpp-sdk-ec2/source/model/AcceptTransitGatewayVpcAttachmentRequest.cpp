@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-AcceptTransitGatewayVpcAttachmentRequest::AcceptTransitGatewayVpcAttachmentRequest() : 
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String AcceptTransitGatewayVpcAttachmentRequest::SerializePayload() const
 {
   Aws::StringStream ss;

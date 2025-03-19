@@ -12,12 +12,6 @@ using namespace Aws::ResourceGroupsTaggingAPI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UntagResourcesRequest::UntagResourcesRequest() : 
-    m_resourceARNListHasBeenSet(false),
-    m_tagKeysHasBeenSet(false)
-{
-}
-
 Aws::String UntagResourcesRequest::SerializePayload() const
 {
   JsonValue payload;

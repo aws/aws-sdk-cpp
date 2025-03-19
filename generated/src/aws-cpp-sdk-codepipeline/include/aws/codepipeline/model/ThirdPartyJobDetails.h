@@ -33,7 +33,7 @@ namespace Model
   class ThirdPartyJobDetails
   {
   public:
-    AWS_CODEPIPELINE_API ThirdPartyJobDetails();
+    AWS_CODEPIPELINE_API ThirdPartyJobDetails() = default;
     AWS_CODEPIPELINE_API ThirdPartyJobDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API ThirdPartyJobDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The identifier used to identify the job details in CodePipeline.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ThirdPartyJobDetails& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ThirdPartyJobDetails& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ThirdPartyJobDetails& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ThirdPartyJobDetails& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data to be returned by the third party job worker.</p>
      */
-    inline const ThirdPartyJobData& GetData() const{ return m_data; }
+    inline const ThirdPartyJobData& GetData() const { return m_data; }
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    inline void SetData(const ThirdPartyJobData& value) { m_dataHasBeenSet = true; m_data = value; }
-    inline void SetData(ThirdPartyJobData&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-    inline ThirdPartyJobDetails& WithData(const ThirdPartyJobData& value) { SetData(value); return *this;}
-    inline ThirdPartyJobDetails& WithData(ThirdPartyJobData&& value) { SetData(std::move(value)); return *this;}
+    template<typename DataT = ThirdPartyJobData>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = ThirdPartyJobData>
+    ThirdPartyJobDetails& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * job is being worked on by only one job worker. Use this number in an
      * <a>AcknowledgeThirdPartyJob</a> request.</p>
      */
-    inline const Aws::String& GetNonce() const{ return m_nonce; }
+    inline const Aws::String& GetNonce() const { return m_nonce; }
     inline bool NonceHasBeenSet() const { return m_nonceHasBeenSet; }
-    inline void SetNonce(const Aws::String& value) { m_nonceHasBeenSet = true; m_nonce = value; }
-    inline void SetNonce(Aws::String&& value) { m_nonceHasBeenSet = true; m_nonce = std::move(value); }
-    inline void SetNonce(const char* value) { m_nonceHasBeenSet = true; m_nonce.assign(value); }
-    inline ThirdPartyJobDetails& WithNonce(const Aws::String& value) { SetNonce(value); return *this;}
-    inline ThirdPartyJobDetails& WithNonce(Aws::String&& value) { SetNonce(std::move(value)); return *this;}
-    inline ThirdPartyJobDetails& WithNonce(const char* value) { SetNonce(value); return *this;}
+    template<typename NonceT = Aws::String>
+    void SetNonce(NonceT&& value) { m_nonceHasBeenSet = true; m_nonce = std::forward<NonceT>(value); }
+    template<typename NonceT = Aws::String>
+    ThirdPartyJobDetails& WithNonce(NonceT&& value) { SetNonce(std::forward<NonceT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,16 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-OAuth2Properties::OAuth2Properties() : 
-    m_tokenUrlHasBeenSet(false),
-    m_oAuth2GrantType(OAuth2GrantType::NOT_SET),
-    m_oAuth2GrantTypeHasBeenSet(false),
-    m_tokenUrlCustomPropertiesHasBeenSet(false)
-{
-}
-
 OAuth2Properties::OAuth2Properties(JsonView jsonValue)
-  : OAuth2Properties()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ OAuth2Properties& OAuth2Properties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("tokenUrl"))
   {
     m_tokenUrl = jsonValue.GetString("tokenUrl");
-
     m_tokenUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("oAuth2GrantType"))
   {
     m_oAuth2GrantType = OAuth2GrantTypeMapper::GetOAuth2GrantTypeForName(jsonValue.GetString("oAuth2GrantType"));
-
     m_oAuth2GrantTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tokenUrlCustomProperties"))
   {
     Aws::Map<Aws::String, JsonView> tokenUrlCustomPropertiesJsonMap = jsonValue.GetObject("tokenUrlCustomProperties").GetAllObjects();
@@ -57,7 +44,6 @@ OAuth2Properties& OAuth2Properties::operator =(JsonView jsonValue)
     }
     m_tokenUrlCustomPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

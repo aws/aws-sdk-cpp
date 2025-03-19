@@ -34,7 +34,7 @@ namespace Model
   class LastRecorderStatus
   {
   public:
-    AWS_KINESISVIDEO_API LastRecorderStatus();
+    AWS_KINESISVIDEO_API LastRecorderStatus() = default;
     AWS_KINESISVIDEO_API LastRecorderStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEO_API LastRecorderStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>A description of a recorder job’s latest status.</p>
      */
-    inline const Aws::String& GetJobStatusDetails() const{ return m_jobStatusDetails; }
+    inline const Aws::String& GetJobStatusDetails() const { return m_jobStatusDetails; }
     inline bool JobStatusDetailsHasBeenSet() const { return m_jobStatusDetailsHasBeenSet; }
-    inline void SetJobStatusDetails(const Aws::String& value) { m_jobStatusDetailsHasBeenSet = true; m_jobStatusDetails = value; }
-    inline void SetJobStatusDetails(Aws::String&& value) { m_jobStatusDetailsHasBeenSet = true; m_jobStatusDetails = std::move(value); }
-    inline void SetJobStatusDetails(const char* value) { m_jobStatusDetailsHasBeenSet = true; m_jobStatusDetails.assign(value); }
-    inline LastRecorderStatus& WithJobStatusDetails(const Aws::String& value) { SetJobStatusDetails(value); return *this;}
-    inline LastRecorderStatus& WithJobStatusDetails(Aws::String&& value) { SetJobStatusDetails(std::move(value)); return *this;}
-    inline LastRecorderStatus& WithJobStatusDetails(const char* value) { SetJobStatusDetails(value); return *this;}
+    template<typename JobStatusDetailsT = Aws::String>
+    void SetJobStatusDetails(JobStatusDetailsT&& value) { m_jobStatusDetailsHasBeenSet = true; m_jobStatusDetails = std::forward<JobStatusDetailsT>(value); }
+    template<typename JobStatusDetailsT = Aws::String>
+    LastRecorderStatus& WithJobStatusDetails(JobStatusDetailsT&& value) { SetJobStatusDetails(std::forward<JobStatusDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,49 +57,47 @@ namespace Model
      * <p>The timestamp at which the recorder job was last executed and media stored to
      * local disk.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastCollectedTime() const{ return m_lastCollectedTime; }
+    inline const Aws::Utils::DateTime& GetLastCollectedTime() const { return m_lastCollectedTime; }
     inline bool LastCollectedTimeHasBeenSet() const { return m_lastCollectedTimeHasBeenSet; }
-    inline void SetLastCollectedTime(const Aws::Utils::DateTime& value) { m_lastCollectedTimeHasBeenSet = true; m_lastCollectedTime = value; }
-    inline void SetLastCollectedTime(Aws::Utils::DateTime&& value) { m_lastCollectedTimeHasBeenSet = true; m_lastCollectedTime = std::move(value); }
-    inline LastRecorderStatus& WithLastCollectedTime(const Aws::Utils::DateTime& value) { SetLastCollectedTime(value); return *this;}
-    inline LastRecorderStatus& WithLastCollectedTime(Aws::Utils::DateTime&& value) { SetLastCollectedTime(std::move(value)); return *this;}
+    template<typename LastCollectedTimeT = Aws::Utils::DateTime>
+    void SetLastCollectedTime(LastCollectedTimeT&& value) { m_lastCollectedTimeHasBeenSet = true; m_lastCollectedTime = std::forward<LastCollectedTimeT>(value); }
+    template<typename LastCollectedTimeT = Aws::Utils::DateTime>
+    LastRecorderStatus& WithLastCollectedTime(LastCollectedTimeT&& value) { SetLastCollectedTime(std::forward<LastCollectedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp at which the recorder status was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const { return m_lastUpdatedTime; }
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
-    inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
-    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
-    inline LastRecorderStatus& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
-    inline LastRecorderStatus& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedTime(LastUpdatedTimeT&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::forward<LastUpdatedTimeT>(value); }
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    LastRecorderStatus& WithLastUpdatedTime(LastUpdatedTimeT&& value) { SetLastUpdatedTime(std::forward<LastUpdatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the latest recorder job.</p>
      */
-    inline const RecorderStatus& GetRecorderStatus() const{ return m_recorderStatus; }
+    inline RecorderStatus GetRecorderStatus() const { return m_recorderStatus; }
     inline bool RecorderStatusHasBeenSet() const { return m_recorderStatusHasBeenSet; }
-    inline void SetRecorderStatus(const RecorderStatus& value) { m_recorderStatusHasBeenSet = true; m_recorderStatus = value; }
-    inline void SetRecorderStatus(RecorderStatus&& value) { m_recorderStatusHasBeenSet = true; m_recorderStatus = std::move(value); }
-    inline LastRecorderStatus& WithRecorderStatus(const RecorderStatus& value) { SetRecorderStatus(value); return *this;}
-    inline LastRecorderStatus& WithRecorderStatus(RecorderStatus&& value) { SetRecorderStatus(std::move(value)); return *this;}
+    inline void SetRecorderStatus(RecorderStatus value) { m_recorderStatusHasBeenSet = true; m_recorderStatus = value; }
+    inline LastRecorderStatus& WithRecorderStatus(RecorderStatus value) { SetRecorderStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_jobStatusDetails;
     bool m_jobStatusDetailsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastCollectedTime;
+    Aws::Utils::DateTime m_lastCollectedTime{};
     bool m_lastCollectedTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedTime;
+    Aws::Utils::DateTime m_lastUpdatedTime{};
     bool m_lastUpdatedTimeHasBeenSet = false;
 
-    RecorderStatus m_recorderStatus;
+    RecorderStatus m_recorderStatus{RecorderStatus::NOT_SET};
     bool m_recorderStatusHasBeenSet = false;
   };
 

@@ -28,7 +28,7 @@ namespace Model
   class DescribeSolutionVersionResult
   {
   public:
-    AWS_PERSONALIZE_API DescribeSolutionVersionResult();
+    AWS_PERSONALIZE_API DescribeSolutionVersionResult() = default;
     AWS_PERSONALIZE_API DescribeSolutionVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PERSONALIZE_API DescribeSolutionVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The solution version.</p>
      */
-    inline const SolutionVersion& GetSolutionVersion() const{ return m_solutionVersion; }
-    inline void SetSolutionVersion(const SolutionVersion& value) { m_solutionVersion = value; }
-    inline void SetSolutionVersion(SolutionVersion&& value) { m_solutionVersion = std::move(value); }
-    inline DescribeSolutionVersionResult& WithSolutionVersion(const SolutionVersion& value) { SetSolutionVersion(value); return *this;}
-    inline DescribeSolutionVersionResult& WithSolutionVersion(SolutionVersion&& value) { SetSolutionVersion(std::move(value)); return *this;}
+    inline const SolutionVersion& GetSolutionVersion() const { return m_solutionVersion; }
+    template<typename SolutionVersionT = SolutionVersion>
+    void SetSolutionVersion(SolutionVersionT&& value) { m_solutionVersionHasBeenSet = true; m_solutionVersion = std::forward<SolutionVersionT>(value); }
+    template<typename SolutionVersionT = SolutionVersion>
+    DescribeSolutionVersionResult& WithSolutionVersion(SolutionVersionT&& value) { SetSolutionVersion(std::forward<SolutionVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeSolutionVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeSolutionVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeSolutionVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeSolutionVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     SolutionVersion m_solutionVersion;
+    bool m_solutionVersionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

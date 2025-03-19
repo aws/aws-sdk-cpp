@@ -49,7 +49,7 @@ namespace Model
   class MaintenanceWindowLambdaParameters
   {
   public:
-    AWS_SSM_API MaintenanceWindowLambdaParameters();
+    AWS_SSM_API MaintenanceWindowLambdaParameters() = default;
     AWS_SSM_API MaintenanceWindowLambdaParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API MaintenanceWindowLambdaParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -61,14 +61,12 @@ namespace Model
      * invoking. You can then process the client information in your Lambda function as
      * you choose through the context variable.</p>
      */
-    inline const Aws::String& GetClientContext() const{ return m_clientContext; }
+    inline const Aws::String& GetClientContext() const { return m_clientContext; }
     inline bool ClientContextHasBeenSet() const { return m_clientContextHasBeenSet; }
-    inline void SetClientContext(const Aws::String& value) { m_clientContextHasBeenSet = true; m_clientContext = value; }
-    inline void SetClientContext(Aws::String&& value) { m_clientContextHasBeenSet = true; m_clientContext = std::move(value); }
-    inline void SetClientContext(const char* value) { m_clientContextHasBeenSet = true; m_clientContext.assign(value); }
-    inline MaintenanceWindowLambdaParameters& WithClientContext(const Aws::String& value) { SetClientContext(value); return *this;}
-    inline MaintenanceWindowLambdaParameters& WithClientContext(Aws::String&& value) { SetClientContext(std::move(value)); return *this;}
-    inline MaintenanceWindowLambdaParameters& WithClientContext(const char* value) { SetClientContext(value); return *this;}
+    template<typename ClientContextT = Aws::String>
+    void SetClientContext(ClientContextT&& value) { m_clientContextHasBeenSet = true; m_clientContext = std::forward<ClientContextT>(value); }
+    template<typename ClientContextT = Aws::String>
+    MaintenanceWindowLambdaParameters& WithClientContext(ClientContextT&& value) { SetClientContext(std::forward<ClientContextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,26 +77,24 @@ namespace Model
      * operation uses the alias ARN to invoke the Lambda function version to which the
      * alias points.</p>
      */
-    inline const Aws::String& GetQualifier() const{ return m_qualifier; }
+    inline const Aws::String& GetQualifier() const { return m_qualifier; }
     inline bool QualifierHasBeenSet() const { return m_qualifierHasBeenSet; }
-    inline void SetQualifier(const Aws::String& value) { m_qualifierHasBeenSet = true; m_qualifier = value; }
-    inline void SetQualifier(Aws::String&& value) { m_qualifierHasBeenSet = true; m_qualifier = std::move(value); }
-    inline void SetQualifier(const char* value) { m_qualifierHasBeenSet = true; m_qualifier.assign(value); }
-    inline MaintenanceWindowLambdaParameters& WithQualifier(const Aws::String& value) { SetQualifier(value); return *this;}
-    inline MaintenanceWindowLambdaParameters& WithQualifier(Aws::String&& value) { SetQualifier(std::move(value)); return *this;}
-    inline MaintenanceWindowLambdaParameters& WithQualifier(const char* value) { SetQualifier(value); return *this;}
+    template<typename QualifierT = Aws::String>
+    void SetQualifier(QualifierT&& value) { m_qualifierHasBeenSet = true; m_qualifier = std::forward<QualifierT>(value); }
+    template<typename QualifierT = Aws::String>
+    MaintenanceWindowLambdaParameters& WithQualifier(QualifierT&& value) { SetQualifier(std::forward<QualifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>JSON to provide to your Lambda function as input.</p>
      */
-    inline const Aws::Utils::CryptoBuffer& GetPayload() const{ return m_payload; }
+    inline const Aws::Utils::CryptoBuffer& GetPayload() const { return m_payload; }
     inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
-    inline void SetPayload(const Aws::Utils::CryptoBuffer& value) { m_payloadHasBeenSet = true; m_payload = value; }
-    inline void SetPayload(Aws::Utils::CryptoBuffer&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
-    inline MaintenanceWindowLambdaParameters& WithPayload(const Aws::Utils::CryptoBuffer& value) { SetPayload(value); return *this;}
-    inline MaintenanceWindowLambdaParameters& WithPayload(Aws::Utils::CryptoBuffer&& value) { SetPayload(std::move(value)); return *this;}
+    template<typename PayloadT = Aws::Utils::CryptoBuffer>
+    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
+    template<typename PayloadT = Aws::Utils::CryptoBuffer>
+    MaintenanceWindowLambdaParameters& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
     ///@}
   private:
 
@@ -108,7 +104,7 @@ namespace Model
     Aws::String m_qualifier;
     bool m_qualifierHasBeenSet = false;
 
-    Aws::Utils::CryptoBuffer m_payload;
+    Aws::Utils::CryptoBuffer m_payload{};
     bool m_payloadHasBeenSet = false;
   };
 

@@ -20,14 +20,7 @@ namespace RDS
 namespace Model
 {
 
-MinimumEngineVersionPerAllowedValue::MinimumEngineVersionPerAllowedValue() : 
-    m_allowedValueHasBeenSet(false),
-    m_minimumEngineVersionHasBeenSet(false)
-{
-}
-
 MinimumEngineVersionPerAllowedValue::MinimumEngineVersionPerAllowedValue(const XmlNode& xmlNode)
-  : MinimumEngineVersionPerAllowedValue()
 {
   *this = xmlNode;
 }

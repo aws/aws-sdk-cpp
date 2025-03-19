@@ -18,16 +18,7 @@ namespace B2BI
 namespace Model
 {
 
-X12Details::X12Details() : 
-    m_transactionSet(X12TransactionSet::NOT_SET),
-    m_transactionSetHasBeenSet(false),
-    m_version(X12Version::NOT_SET),
-    m_versionHasBeenSet(false)
-{
-}
-
 X12Details::X12Details(JsonView jsonValue)
-  : X12Details()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ X12Details& X12Details::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("transactionSet"))
   {
     m_transactionSet = X12TransactionSetMapper::GetX12TransactionSetForName(jsonValue.GetString("transactionSet"));
-
     m_transactionSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = X12VersionMapper::GetX12VersionForName(jsonValue.GetString("version"));
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

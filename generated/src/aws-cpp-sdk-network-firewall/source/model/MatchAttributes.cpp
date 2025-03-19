@@ -18,18 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-MatchAttributes::MatchAttributes() : 
-    m_sourcesHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_sourcePortsHasBeenSet(false),
-    m_destinationPortsHasBeenSet(false),
-    m_protocolsHasBeenSet(false),
-    m_tCPFlagsHasBeenSet(false)
-{
-}
-
 MatchAttributes::MatchAttributes(JsonView jsonValue)
-  : MatchAttributes()
 {
   *this = jsonValue;
 }
@@ -45,7 +34,6 @@ MatchAttributes& MatchAttributes::operator =(JsonView jsonValue)
     }
     m_sourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Destinations"))
   {
     Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("Destinations");
@@ -55,7 +43,6 @@ MatchAttributes& MatchAttributes::operator =(JsonView jsonValue)
     }
     m_destinationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourcePorts"))
   {
     Aws::Utils::Array<JsonView> sourcePortsJsonList = jsonValue.GetArray("SourcePorts");
@@ -65,7 +52,6 @@ MatchAttributes& MatchAttributes::operator =(JsonView jsonValue)
     }
     m_sourcePortsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationPorts"))
   {
     Aws::Utils::Array<JsonView> destinationPortsJsonList = jsonValue.GetArray("DestinationPorts");
@@ -75,7 +61,6 @@ MatchAttributes& MatchAttributes::operator =(JsonView jsonValue)
     }
     m_destinationPortsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Protocols"))
   {
     Aws::Utils::Array<JsonView> protocolsJsonList = jsonValue.GetArray("Protocols");
@@ -85,7 +70,6 @@ MatchAttributes& MatchAttributes::operator =(JsonView jsonValue)
     }
     m_protocolsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TCPFlags"))
   {
     Aws::Utils::Array<JsonView> tCPFlagsJsonList = jsonValue.GetArray("TCPFlags");
@@ -95,7 +79,6 @@ MatchAttributes& MatchAttributes::operator =(JsonView jsonValue)
     }
     m_tCPFlagsHasBeenSet = true;
   }
-
   return *this;
 }
 

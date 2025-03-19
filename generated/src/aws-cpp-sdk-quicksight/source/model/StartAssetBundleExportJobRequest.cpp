@@ -12,27 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartAssetBundleExportJobRequest::StartAssetBundleExportJobRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_assetBundleExportJobIdHasBeenSet(false),
-    m_resourceArnsHasBeenSet(false),
-    m_includeAllDependencies(false),
-    m_includeAllDependenciesHasBeenSet(false),
-    m_exportFormat(AssetBundleExportFormat::NOT_SET),
-    m_exportFormatHasBeenSet(false),
-    m_cloudFormationOverridePropertyConfigurationHasBeenSet(false),
-    m_includePermissions(false),
-    m_includePermissionsHasBeenSet(false),
-    m_includeTags(false),
-    m_includeTagsHasBeenSet(false),
-    m_validationStrategyHasBeenSet(false),
-    m_includeFolderMemberships(false),
-    m_includeFolderMembershipsHasBeenSet(false),
-    m_includeFolderMembers(IncludeFolderMembers::NOT_SET),
-    m_includeFolderMembersHasBeenSet(false)
-{
-}
-
 Aws::String StartAssetBundleExportJobRequest::SerializePayload() const
 {
   JsonValue payload;

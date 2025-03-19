@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayConnectRequestBgpOptions::TransitGatewayConnectRequestBgpOptions() : 
-    m_peerAsn(0),
-    m_peerAsnHasBeenSet(false)
-{
-}
-
 TransitGatewayConnectRequestBgpOptions::TransitGatewayConnectRequestBgpOptions(const XmlNode& xmlNode)
-  : TransitGatewayConnectRequestBgpOptions()
 {
   *this = xmlNode;
 }

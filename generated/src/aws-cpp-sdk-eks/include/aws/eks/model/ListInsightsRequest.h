@@ -22,7 +22,7 @@ namespace Model
   class ListInsightsRequest : public EKSRequest
   {
   public:
-    AWS_EKS_API ListInsightsRequest();
+    AWS_EKS_API ListInsightsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
     /**
      * <p>The name of the Amazon EKS cluster associated with the insights.</p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline ListInsightsRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline ListInsightsRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline ListInsightsRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    ListInsightsRequest& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,12 +51,12 @@ namespace Model
      * which insights are returned by category, associated Kubernetes version, and
      * status.</p>
      */
-    inline const InsightsFilter& GetFilter() const{ return m_filter; }
+    inline const InsightsFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const InsightsFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(InsightsFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline ListInsightsRequest& WithFilter(const InsightsFilter& value) { SetFilter(value); return *this;}
-    inline ListInsightsRequest& WithFilter(InsightsFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = InsightsFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = InsightsFilter>
+    ListInsightsRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,7 +71,7 @@ namespace Model
      * <code>ListInsights</code> returns up to 100 results and a <code>nextToken</code>
      * value, if applicable.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListInsightsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -87,14 +85,12 @@ namespace Model
      * this value to retrieve the next page of results. This value is <code>null</code>
      * when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListInsightsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListInsightsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListInsightsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListInsightsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -104,7 +100,7 @@ namespace Model
     InsightsFilter m_filter;
     bool m_filterHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

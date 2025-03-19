@@ -22,7 +22,7 @@ namespace Model
   class UpdateQuickSightQSearchConfigurationRequest : public QuickSightRequest
   {
   public:
-    AWS_QUICKSIGHT_API UpdateQuickSightQSearchConfigurationRequest();
+    AWS_QUICKSIGHT_API UpdateQuickSightQSearchConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * <p>The ID of the Amazon Web Services account that contains the Amazon QuickSight
      * Q Search configuration that you want to update.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline UpdateQuickSightQSearchConfigurationRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline UpdateQuickSightQSearchConfigurationRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline UpdateQuickSightQSearchConfigurationRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    UpdateQuickSightQSearchConfigurationRequest& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,19 +51,17 @@ namespace Model
      * <p>The status of the Amazon QuickSight Q Search configuration that the user
      * wants to update.</p>
      */
-    inline const QSearchStatus& GetQSearchStatus() const{ return m_qSearchStatus; }
+    inline QSearchStatus GetQSearchStatus() const { return m_qSearchStatus; }
     inline bool QSearchStatusHasBeenSet() const { return m_qSearchStatusHasBeenSet; }
-    inline void SetQSearchStatus(const QSearchStatus& value) { m_qSearchStatusHasBeenSet = true; m_qSearchStatus = value; }
-    inline void SetQSearchStatus(QSearchStatus&& value) { m_qSearchStatusHasBeenSet = true; m_qSearchStatus = std::move(value); }
-    inline UpdateQuickSightQSearchConfigurationRequest& WithQSearchStatus(const QSearchStatus& value) { SetQSearchStatus(value); return *this;}
-    inline UpdateQuickSightQSearchConfigurationRequest& WithQSearchStatus(QSearchStatus&& value) { SetQSearchStatus(std::move(value)); return *this;}
+    inline void SetQSearchStatus(QSearchStatus value) { m_qSearchStatusHasBeenSet = true; m_qSearchStatus = value; }
+    inline UpdateQuickSightQSearchConfigurationRequest& WithQSearchStatus(QSearchStatus value) { SetQSearchStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_awsAccountId;
     bool m_awsAccountIdHasBeenSet = false;
 
-    QSearchStatus m_qSearchStatus;
+    QSearchStatus m_qSearchStatus{QSearchStatus::NOT_SET};
     bool m_qSearchStatusHasBeenSet = false;
   };
 

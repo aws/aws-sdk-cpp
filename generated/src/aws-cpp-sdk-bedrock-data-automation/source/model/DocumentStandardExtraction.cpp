@@ -18,14 +18,7 @@ namespace BedrockDataAutomation
 namespace Model
 {
 
-DocumentStandardExtraction::DocumentStandardExtraction() : 
-    m_granularityHasBeenSet(false),
-    m_boundingBoxHasBeenSet(false)
-{
-}
-
 DocumentStandardExtraction::DocumentStandardExtraction(JsonView jsonValue)
-  : DocumentStandardExtraction()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DocumentStandardExtraction& DocumentStandardExtraction::operator =(JsonView json
   if(jsonValue.ValueExists("granularity"))
   {
     m_granularity = jsonValue.GetObject("granularity");
-
     m_granularityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("boundingBox"))
   {
     m_boundingBox = jsonValue.GetObject("boundingBox");
-
     m_boundingBoxHasBeenSet = true;
   }
-
   return *this;
 }
 

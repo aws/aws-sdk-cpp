@@ -31,7 +31,7 @@ namespace Model
   class Rule
   {
   public:
-    AWS_FRAUDDETECTOR_API Rule();
+    AWS_FRAUDDETECTOR_API Rule() = default;
     AWS_FRAUDDETECTOR_API Rule(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Rule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,42 +41,36 @@ namespace Model
     /**
      * <p>The detector for which the rule is associated.</p>
      */
-    inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
+    inline const Aws::String& GetDetectorId() const { return m_detectorId; }
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
-    inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
-    inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
-    inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
-    inline Rule& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
-    inline Rule& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
-    inline Rule& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
+    template<typename DetectorIdT = Aws::String>
+    void SetDetectorId(DetectorIdT&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::forward<DetectorIdT>(value); }
+    template<typename DetectorIdT = Aws::String>
+    Rule& WithDetectorId(DetectorIdT&& value) { SetDetectorId(std::forward<DetectorIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The rule ID.</p>
      */
-    inline const Aws::String& GetRuleId() const{ return m_ruleId; }
+    inline const Aws::String& GetRuleId() const { return m_ruleId; }
     inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
-    inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
-    inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::move(value); }
-    inline void SetRuleId(const char* value) { m_ruleIdHasBeenSet = true; m_ruleId.assign(value); }
-    inline Rule& WithRuleId(const Aws::String& value) { SetRuleId(value); return *this;}
-    inline Rule& WithRuleId(Aws::String&& value) { SetRuleId(std::move(value)); return *this;}
-    inline Rule& WithRuleId(const char* value) { SetRuleId(value); return *this;}
+    template<typename RuleIdT = Aws::String>
+    void SetRuleId(RuleIdT&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::forward<RuleIdT>(value); }
+    template<typename RuleIdT = Aws::String>
+    Rule& WithRuleId(RuleIdT&& value) { SetRuleId(std::forward<RuleIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The rule version.</p>
      */
-    inline const Aws::String& GetRuleVersion() const{ return m_ruleVersion; }
+    inline const Aws::String& GetRuleVersion() const { return m_ruleVersion; }
     inline bool RuleVersionHasBeenSet() const { return m_ruleVersionHasBeenSet; }
-    inline void SetRuleVersion(const Aws::String& value) { m_ruleVersionHasBeenSet = true; m_ruleVersion = value; }
-    inline void SetRuleVersion(Aws::String&& value) { m_ruleVersionHasBeenSet = true; m_ruleVersion = std::move(value); }
-    inline void SetRuleVersion(const char* value) { m_ruleVersionHasBeenSet = true; m_ruleVersion.assign(value); }
-    inline Rule& WithRuleVersion(const Aws::String& value) { SetRuleVersion(value); return *this;}
-    inline Rule& WithRuleVersion(Aws::String&& value) { SetRuleVersion(std::move(value)); return *this;}
-    inline Rule& WithRuleVersion(const char* value) { SetRuleVersion(value); return *this;}
+    template<typename RuleVersionT = Aws::String>
+    void SetRuleVersion(RuleVersionT&& value) { m_ruleVersionHasBeenSet = true; m_ruleVersion = std::forward<RuleVersionT>(value); }
+    template<typename RuleVersionT = Aws::String>
+    Rule& WithRuleVersion(RuleVersionT&& value) { SetRuleVersion(std::forward<RuleVersionT>(value)); return *this;}
     ///@}
   private:
 

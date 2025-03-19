@@ -24,7 +24,7 @@ namespace Model
   class CreateGrantRequest : public KMSRequest
   {
   public:
-    AWS_KMS_API CreateGrantRequest();
+    AWS_KMS_API CreateGrantRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
      * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
      * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
-    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
-    inline CreateGrantRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline CreateGrantRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline CreateGrantRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    CreateGrantRequest& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
      * ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</p>
      */
-    inline const Aws::String& GetGranteePrincipal() const{ return m_granteePrincipal; }
+    inline const Aws::String& GetGranteePrincipal() const { return m_granteePrincipal; }
     inline bool GranteePrincipalHasBeenSet() const { return m_granteePrincipalHasBeenSet; }
-    inline void SetGranteePrincipal(const Aws::String& value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal = value; }
-    inline void SetGranteePrincipal(Aws::String&& value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal = std::move(value); }
-    inline void SetGranteePrincipal(const char* value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal.assign(value); }
-    inline CreateGrantRequest& WithGranteePrincipal(const Aws::String& value) { SetGranteePrincipal(value); return *this;}
-    inline CreateGrantRequest& WithGranteePrincipal(Aws::String&& value) { SetGranteePrincipal(std::move(value)); return *this;}
-    inline CreateGrantRequest& WithGranteePrincipal(const char* value) { SetGranteePrincipal(value); return *this;}
+    template<typename GranteePrincipalT = Aws::String>
+    void SetGranteePrincipal(GranteePrincipalT&& value) { m_granteePrincipalHasBeenSet = true; m_granteePrincipal = std::forward<GranteePrincipalT>(value); }
+    template<typename GranteePrincipalT = Aws::String>
+    CreateGrantRequest& WithGranteePrincipal(GranteePrincipalT&& value) { SetGranteePrincipal(std::forward<GranteePrincipalT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +91,12 @@ namespace Model
      * and revoking grants</a> in the <i>Key Management Service Developer Guide</i>.
      * </p>
      */
-    inline const Aws::String& GetRetiringPrincipal() const{ return m_retiringPrincipal; }
+    inline const Aws::String& GetRetiringPrincipal() const { return m_retiringPrincipal; }
     inline bool RetiringPrincipalHasBeenSet() const { return m_retiringPrincipalHasBeenSet; }
-    inline void SetRetiringPrincipal(const Aws::String& value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal = value; }
-    inline void SetRetiringPrincipal(Aws::String&& value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal = std::move(value); }
-    inline void SetRetiringPrincipal(const char* value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal.assign(value); }
-    inline CreateGrantRequest& WithRetiringPrincipal(const Aws::String& value) { SetRetiringPrincipal(value); return *this;}
-    inline CreateGrantRequest& WithRetiringPrincipal(Aws::String&& value) { SetRetiringPrincipal(std::move(value)); return *this;}
-    inline CreateGrantRequest& WithRetiringPrincipal(const char* value) { SetRetiringPrincipal(value); return *this;}
+    template<typename RetiringPrincipalT = Aws::String>
+    void SetRetiringPrincipal(RetiringPrincipalT&& value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal = std::forward<RetiringPrincipalT>(value); }
+    template<typename RetiringPrincipalT = Aws::String>
+    CreateGrantRequest& WithRetiringPrincipal(RetiringPrincipalT&& value) { SetRetiringPrincipal(std::forward<RetiringPrincipalT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,14 +110,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">Grant
      * operations</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
-    inline const Aws::Vector<GrantOperation>& GetOperations() const{ return m_operations; }
+    inline const Aws::Vector<GrantOperation>& GetOperations() const { return m_operations; }
     inline bool OperationsHasBeenSet() const { return m_operationsHasBeenSet; }
-    inline void SetOperations(const Aws::Vector<GrantOperation>& value) { m_operationsHasBeenSet = true; m_operations = value; }
-    inline void SetOperations(Aws::Vector<GrantOperation>&& value) { m_operationsHasBeenSet = true; m_operations = std::move(value); }
-    inline CreateGrantRequest& WithOperations(const Aws::Vector<GrantOperation>& value) { SetOperations(value); return *this;}
-    inline CreateGrantRequest& WithOperations(Aws::Vector<GrantOperation>&& value) { SetOperations(std::move(value)); return *this;}
-    inline CreateGrantRequest& AddOperations(const GrantOperation& value) { m_operationsHasBeenSet = true; m_operations.push_back(value); return *this; }
-    inline CreateGrantRequest& AddOperations(GrantOperation&& value) { m_operationsHasBeenSet = true; m_operations.push_back(std::move(value)); return *this; }
+    template<typename OperationsT = Aws::Vector<GrantOperation>>
+    void SetOperations(OperationsT&& value) { m_operationsHasBeenSet = true; m_operations = std::forward<OperationsT>(value); }
+    template<typename OperationsT = Aws::Vector<GrantOperation>>
+    CreateGrantRequest& WithOperations(OperationsT&& value) { SetOperations(std::forward<OperationsT>(value)); return *this;}
+    inline CreateGrantRequest& AddOperations(GrantOperation value) { m_operationsHasBeenSet = true; m_operations.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -156,12 +149,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * context</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. </p>
      */
-    inline const GrantConstraints& GetConstraints() const{ return m_constraints; }
+    inline const GrantConstraints& GetConstraints() const { return m_constraints; }
     inline bool ConstraintsHasBeenSet() const { return m_constraintsHasBeenSet; }
-    inline void SetConstraints(const GrantConstraints& value) { m_constraintsHasBeenSet = true; m_constraints = value; }
-    inline void SetConstraints(GrantConstraints&& value) { m_constraintsHasBeenSet = true; m_constraints = std::move(value); }
-    inline CreateGrantRequest& WithConstraints(const GrantConstraints& value) { SetConstraints(value); return *this;}
-    inline CreateGrantRequest& WithConstraints(GrantConstraints&& value) { SetConstraints(std::move(value)); return *this;}
+    template<typename ConstraintsT = GrantConstraints>
+    void SetConstraints(ConstraintsT&& value) { m_constraintsHasBeenSet = true; m_constraints = std::forward<ConstraintsT>(value); }
+    template<typename ConstraintsT = GrantConstraints>
+    CreateGrantRequest& WithConstraints(ConstraintsT&& value) { SetConstraints(std::forward<ConstraintsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -174,15 +167,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grant-manage.html#using-grant-token">Using
      * a grant token</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetGrantTokens() const{ return m_grantTokens; }
+    inline const Aws::Vector<Aws::String>& GetGrantTokens() const { return m_grantTokens; }
     inline bool GrantTokensHasBeenSet() const { return m_grantTokensHasBeenSet; }
-    inline void SetGrantTokens(const Aws::Vector<Aws::String>& value) { m_grantTokensHasBeenSet = true; m_grantTokens = value; }
-    inline void SetGrantTokens(Aws::Vector<Aws::String>&& value) { m_grantTokensHasBeenSet = true; m_grantTokens = std::move(value); }
-    inline CreateGrantRequest& WithGrantTokens(const Aws::Vector<Aws::String>& value) { SetGrantTokens(value); return *this;}
-    inline CreateGrantRequest& WithGrantTokens(Aws::Vector<Aws::String>&& value) { SetGrantTokens(std::move(value)); return *this;}
-    inline CreateGrantRequest& AddGrantTokens(const Aws::String& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
-    inline CreateGrantRequest& AddGrantTokens(Aws::String&& value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(std::move(value)); return *this; }
-    inline CreateGrantRequest& AddGrantTokens(const char* value) { m_grantTokensHasBeenSet = true; m_grantTokens.push_back(value); return *this; }
+    template<typename GrantTokensT = Aws::Vector<Aws::String>>
+    void SetGrantTokens(GrantTokensT&& value) { m_grantTokensHasBeenSet = true; m_grantTokens = std::forward<GrantTokensT>(value); }
+    template<typename GrantTokensT = Aws::Vector<Aws::String>>
+    CreateGrantRequest& WithGrantTokens(GrantTokensT&& value) { SetGrantTokens(std::forward<GrantTokensT>(value)); return *this;}
+    template<typename GrantTokensT = Aws::String>
+    CreateGrantRequest& AddGrantTokens(GrantTokensT&& value) { m_grantTokensHasBeenSet = true; m_grantTokens.emplace_back(std::forward<GrantTokensT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -202,14 +194,12 @@ namespace Model
      * returned. All grant tokens for the same grant ID can be used
      * interchangeably.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateGrantRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateGrantRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateGrantRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateGrantRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -219,7 +209,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/programming-dryrun.html">Testing
      * your KMS API calls</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline CreateGrantRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -247,7 +237,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

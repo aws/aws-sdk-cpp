@@ -18,31 +18,7 @@ namespace Batch
 namespace Model
 {
 
-TaskContainerProperties::TaskContainerProperties() : 
-    m_commandHasBeenSet(false),
-    m_dependsOnHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_essential(false),
-    m_essentialHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_linuxParametersHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false),
-    m_mountPointsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_privileged(false),
-    m_privilegedHasBeenSet(false),
-    m_readonlyRootFilesystem(false),
-    m_readonlyRootFilesystemHasBeenSet(false),
-    m_repositoryCredentialsHasBeenSet(false),
-    m_resourceRequirementsHasBeenSet(false),
-    m_secretsHasBeenSet(false),
-    m_ulimitsHasBeenSet(false),
-    m_userHasBeenSet(false)
-{
-}
-
 TaskContainerProperties::TaskContainerProperties(JsonView jsonValue)
-  : TaskContainerProperties()
 {
   *this = jsonValue;
 }
@@ -58,7 +34,6 @@ TaskContainerProperties& TaskContainerProperties::operator =(JsonView jsonValue)
     }
     m_commandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dependsOn"))
   {
     Aws::Utils::Array<JsonView> dependsOnJsonList = jsonValue.GetArray("dependsOn");
@@ -68,7 +43,6 @@ TaskContainerProperties& TaskContainerProperties::operator =(JsonView jsonValue)
     }
     m_dependsOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environment"))
   {
     Aws::Utils::Array<JsonView> environmentJsonList = jsonValue.GetArray("environment");
@@ -78,35 +52,26 @@ TaskContainerProperties& TaskContainerProperties::operator =(JsonView jsonValue)
     }
     m_environmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("essential"))
   {
     m_essential = jsonValue.GetBool("essential");
-
     m_essentialHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("image"))
   {
     m_image = jsonValue.GetString("image");
-
     m_imageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("linuxParameters"))
   {
     m_linuxParameters = jsonValue.GetObject("linuxParameters");
-
     m_linuxParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logConfiguration"))
   {
     m_logConfiguration = jsonValue.GetObject("logConfiguration");
-
     m_logConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mountPoints"))
   {
     Aws::Utils::Array<JsonView> mountPointsJsonList = jsonValue.GetArray("mountPoints");
@@ -116,35 +81,26 @@ TaskContainerProperties& TaskContainerProperties::operator =(JsonView jsonValue)
     }
     m_mountPointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("privileged"))
   {
     m_privileged = jsonValue.GetBool("privileged");
-
     m_privilegedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("readonlyRootFilesystem"))
   {
     m_readonlyRootFilesystem = jsonValue.GetBool("readonlyRootFilesystem");
-
     m_readonlyRootFilesystemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryCredentials"))
   {
     m_repositoryCredentials = jsonValue.GetObject("repositoryCredentials");
-
     m_repositoryCredentialsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceRequirements"))
   {
     Aws::Utils::Array<JsonView> resourceRequirementsJsonList = jsonValue.GetArray("resourceRequirements");
@@ -154,7 +110,6 @@ TaskContainerProperties& TaskContainerProperties::operator =(JsonView jsonValue)
     }
     m_resourceRequirementsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secrets"))
   {
     Aws::Utils::Array<JsonView> secretsJsonList = jsonValue.GetArray("secrets");
@@ -164,7 +119,6 @@ TaskContainerProperties& TaskContainerProperties::operator =(JsonView jsonValue)
     }
     m_secretsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ulimits"))
   {
     Aws::Utils::Array<JsonView> ulimitsJsonList = jsonValue.GetArray("ulimits");
@@ -174,14 +128,11 @@ TaskContainerProperties& TaskContainerProperties::operator =(JsonView jsonValue)
     }
     m_ulimitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("user"))
   {
     m_user = jsonValue.GetString("user");
-
     m_userHasBeenSet = true;
   }
-
   return *this;
 }
 

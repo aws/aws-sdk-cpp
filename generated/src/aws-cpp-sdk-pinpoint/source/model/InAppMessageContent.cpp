@@ -18,18 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-InAppMessageContent::InAppMessageContent() : 
-    m_backgroundColorHasBeenSet(false),
-    m_bodyConfigHasBeenSet(false),
-    m_headerConfigHasBeenSet(false),
-    m_imageUrlHasBeenSet(false),
-    m_primaryBtnHasBeenSet(false),
-    m_secondaryBtnHasBeenSet(false)
-{
-}
-
 InAppMessageContent::InAppMessageContent(JsonView jsonValue)
-  : InAppMessageContent()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ InAppMessageContent& InAppMessageContent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BackgroundColor"))
   {
     m_backgroundColor = jsonValue.GetString("BackgroundColor");
-
     m_backgroundColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BodyConfig"))
   {
     m_bodyConfig = jsonValue.GetObject("BodyConfig");
-
     m_bodyConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HeaderConfig"))
   {
     m_headerConfig = jsonValue.GetObject("HeaderConfig");
-
     m_headerConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageUrl"))
   {
     m_imageUrl = jsonValue.GetString("ImageUrl");
-
     m_imageUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryBtn"))
   {
     m_primaryBtn = jsonValue.GetObject("PrimaryBtn");
-
     m_primaryBtnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecondaryBtn"))
   {
     m_secondaryBtn = jsonValue.GetObject("SecondaryBtn");
-
     m_secondaryBtnHasBeenSet = true;
   }
-
   return *this;
 }
 

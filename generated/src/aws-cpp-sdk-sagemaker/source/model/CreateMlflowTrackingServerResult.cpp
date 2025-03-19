@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateMlflowTrackingServerResult::CreateMlflowTrackingServerResult()
-{
-}
-
 CreateMlflowTrackingServerResult::CreateMlflowTrackingServerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateMlflowTrackingServerResult& CreateMlflowTrackingServerResult::operator =(c
   if(jsonValue.ValueExists("TrackingServerArn"))
   {
     m_trackingServerArn = jsonValue.GetString("TrackingServerArn");
-
+    m_trackingServerArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

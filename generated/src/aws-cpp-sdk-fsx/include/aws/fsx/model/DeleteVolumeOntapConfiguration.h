@@ -34,7 +34,7 @@ namespace Model
   class DeleteVolumeOntapConfiguration
   {
   public:
-    AWS_FSX_API DeleteVolumeOntapConfiguration();
+    AWS_FSX_API DeleteVolumeOntapConfiguration() = default;
     AWS_FSX_API DeleteVolumeOntapConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API DeleteVolumeOntapConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * <p>Set to true if you want to skip taking a final backup of the volume you are
      * deleting.</p>
      */
-    inline bool GetSkipFinalBackup() const{ return m_skipFinalBackup; }
+    inline bool GetSkipFinalBackup() const { return m_skipFinalBackup; }
     inline bool SkipFinalBackupHasBeenSet() const { return m_skipFinalBackupHasBeenSet; }
     inline void SetSkipFinalBackup(bool value) { m_skipFinalBackupHasBeenSet = true; m_skipFinalBackup = value; }
     inline DeleteVolumeOntapConfiguration& WithSkipFinalBackup(bool value) { SetSkipFinalBackup(value); return *this;}
@@ -53,14 +53,14 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Vector<Tag>& GetFinalBackupTags() const{ return m_finalBackupTags; }
+    inline const Aws::Vector<Tag>& GetFinalBackupTags() const { return m_finalBackupTags; }
     inline bool FinalBackupTagsHasBeenSet() const { return m_finalBackupTagsHasBeenSet; }
-    inline void SetFinalBackupTags(const Aws::Vector<Tag>& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags = value; }
-    inline void SetFinalBackupTags(Aws::Vector<Tag>&& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags = std::move(value); }
-    inline DeleteVolumeOntapConfiguration& WithFinalBackupTags(const Aws::Vector<Tag>& value) { SetFinalBackupTags(value); return *this;}
-    inline DeleteVolumeOntapConfiguration& WithFinalBackupTags(Aws::Vector<Tag>&& value) { SetFinalBackupTags(std::move(value)); return *this;}
-    inline DeleteVolumeOntapConfiguration& AddFinalBackupTags(const Tag& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags.push_back(value); return *this; }
-    inline DeleteVolumeOntapConfiguration& AddFinalBackupTags(Tag&& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags.push_back(std::move(value)); return *this; }
+    template<typename FinalBackupTagsT = Aws::Vector<Tag>>
+    void SetFinalBackupTags(FinalBackupTagsT&& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags = std::forward<FinalBackupTagsT>(value); }
+    template<typename FinalBackupTagsT = Aws::Vector<Tag>>
+    DeleteVolumeOntapConfiguration& WithFinalBackupTags(FinalBackupTagsT&& value) { SetFinalBackupTags(std::forward<FinalBackupTagsT>(value)); return *this;}
+    template<typename FinalBackupTagsT = Tag>
+    DeleteVolumeOntapConfiguration& AddFinalBackupTags(FinalBackupTagsT&& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags.emplace_back(std::forward<FinalBackupTagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -74,20 +74,20 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snaplock-delete-volume.html">
      * Deleting a SnapLock volume</a>. </p>
      */
-    inline bool GetBypassSnaplockEnterpriseRetention() const{ return m_bypassSnaplockEnterpriseRetention; }
+    inline bool GetBypassSnaplockEnterpriseRetention() const { return m_bypassSnaplockEnterpriseRetention; }
     inline bool BypassSnaplockEnterpriseRetentionHasBeenSet() const { return m_bypassSnaplockEnterpriseRetentionHasBeenSet; }
     inline void SetBypassSnaplockEnterpriseRetention(bool value) { m_bypassSnaplockEnterpriseRetentionHasBeenSet = true; m_bypassSnaplockEnterpriseRetention = value; }
     inline DeleteVolumeOntapConfiguration& WithBypassSnaplockEnterpriseRetention(bool value) { SetBypassSnaplockEnterpriseRetention(value); return *this;}
     ///@}
   private:
 
-    bool m_skipFinalBackup;
+    bool m_skipFinalBackup{false};
     bool m_skipFinalBackupHasBeenSet = false;
 
     Aws::Vector<Tag> m_finalBackupTags;
     bool m_finalBackupTagsHasBeenSet = false;
 
-    bool m_bypassSnaplockEnterpriseRetention;
+    bool m_bypassSnaplockEnterpriseRetention{false};
     bool m_bypassSnaplockEnterpriseRetentionHasBeenSet = false;
   };
 

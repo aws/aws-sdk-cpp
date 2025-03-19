@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRDSDatabaseRecommendationsResult::GetRDSDatabaseRecommendationsResult()
-{
-}
-
 GetRDSDatabaseRecommendationsResult::GetRDSDatabaseRecommendationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetRDSDatabaseRecommendationsResult& GetRDSDatabaseRecommendationsResult::operat
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rdsDBRecommendations"))
   {
     Aws::Utils::Array<JsonView> rdsDBRecommendationsJsonList = jsonValue.GetArray("rdsDBRecommendations");
@@ -42,8 +37,8 @@ GetRDSDatabaseRecommendationsResult& GetRDSDatabaseRecommendationsResult::operat
     {
       m_rdsDBRecommendations.push_back(rdsDBRecommendationsJsonList[rdsDBRecommendationsIndex].AsObject());
     }
+    m_rdsDBRecommendationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
@@ -51,14 +46,15 @@ GetRDSDatabaseRecommendationsResult& GetRDSDatabaseRecommendationsResult::operat
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+    m_errorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -33,7 +33,7 @@ namespace Model
   class GetAnalyzedResourceResult
   {
   public:
-    AWS_ACCESSANALYZER_API GetAnalyzedResourceResult();
+    AWS_ACCESSANALYZER_API GetAnalyzedResourceResult() = default;
     AWS_ACCESSANALYZER_API GetAnalyzedResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ACCESSANALYZER_API GetAnalyzedResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
      * <p>An <code>AnalyzedResource</code> object that contains information that IAM
      * Access Analyzer found when it analyzed the resource.</p>
      */
-    inline const AnalyzedResource& GetResource() const{ return m_resource; }
-    inline void SetResource(const AnalyzedResource& value) { m_resource = value; }
-    inline void SetResource(AnalyzedResource&& value) { m_resource = std::move(value); }
-    inline GetAnalyzedResourceResult& WithResource(const AnalyzedResource& value) { SetResource(value); return *this;}
-    inline GetAnalyzedResourceResult& WithResource(AnalyzedResource&& value) { SetResource(std::move(value)); return *this;}
+    inline const AnalyzedResource& GetResource() const { return m_resource; }
+    template<typename ResourceT = AnalyzedResource>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = AnalyzedResource>
+    GetAnalyzedResourceResult& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAnalyzedResourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAnalyzedResourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAnalyzedResourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAnalyzedResourceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AnalyzedResource m_resource;
+    bool m_resourceHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

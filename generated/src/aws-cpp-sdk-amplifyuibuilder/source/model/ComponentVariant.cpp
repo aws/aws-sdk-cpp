@@ -18,14 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-ComponentVariant::ComponentVariant() : 
-    m_variantValuesHasBeenSet(false),
-    m_overridesHasBeenSet(false)
-{
-}
-
 ComponentVariant::ComponentVariant(JsonView jsonValue)
-  : ComponentVariant()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ ComponentVariant& ComponentVariant::operator =(JsonView jsonValue)
     }
     m_variantValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("overrides"))
   {
     Aws::Map<Aws::String, JsonView> overridesJsonMap = jsonValue.GetObject("overrides").GetAllObjects();
@@ -57,7 +49,6 @@ ComponentVariant& ComponentVariant::operator =(JsonView jsonValue)
     }
     m_overridesHasBeenSet = true;
   }
-
   return *this;
 }
 

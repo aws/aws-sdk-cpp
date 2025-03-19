@@ -22,7 +22,7 @@ namespace Model
   class UpdateAccountSettingsRequest : public ProtonRequest
   {
   public:
-    AWS_PROTON_API UpdateAccountSettingsRequest();
+    AWS_PROTON_API UpdateAccountSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,7 +41,7 @@ namespace Model
      * account settings. Don't set this field if you are updating the configured
      * pipeline repository.</p>
      */
-    inline bool GetDeletePipelineProvisioningRepository() const{ return m_deletePipelineProvisioningRepository; }
+    inline bool GetDeletePipelineProvisioningRepository() const { return m_deletePipelineProvisioningRepository; }
     inline bool DeletePipelineProvisioningRepositoryHasBeenSet() const { return m_deletePipelineProvisioningRepositoryHasBeenSet; }
     inline void SetDeletePipelineProvisioningRepository(bool value) { m_deletePipelineProvisioningRepositoryHasBeenSet = true; m_deletePipelineProvisioningRepository = value; }
     inline UpdateAccountSettingsRequest& WithDeletePipelineProvisioningRepository(bool value) { SetDeletePipelineProvisioningRepository(value); return *this;}
@@ -53,14 +53,12 @@ namespace Model
      * provisioning pipelines. Proton assumes this role for CodeBuild-based
      * provisioning.</p>
      */
-    inline const Aws::String& GetPipelineCodebuildRoleArn() const{ return m_pipelineCodebuildRoleArn; }
+    inline const Aws::String& GetPipelineCodebuildRoleArn() const { return m_pipelineCodebuildRoleArn; }
     inline bool PipelineCodebuildRoleArnHasBeenSet() const { return m_pipelineCodebuildRoleArnHasBeenSet; }
-    inline void SetPipelineCodebuildRoleArn(const Aws::String& value) { m_pipelineCodebuildRoleArnHasBeenSet = true; m_pipelineCodebuildRoleArn = value; }
-    inline void SetPipelineCodebuildRoleArn(Aws::String&& value) { m_pipelineCodebuildRoleArnHasBeenSet = true; m_pipelineCodebuildRoleArn = std::move(value); }
-    inline void SetPipelineCodebuildRoleArn(const char* value) { m_pipelineCodebuildRoleArnHasBeenSet = true; m_pipelineCodebuildRoleArn.assign(value); }
-    inline UpdateAccountSettingsRequest& WithPipelineCodebuildRoleArn(const Aws::String& value) { SetPipelineCodebuildRoleArn(value); return *this;}
-    inline UpdateAccountSettingsRequest& WithPipelineCodebuildRoleArn(Aws::String&& value) { SetPipelineCodebuildRoleArn(std::move(value)); return *this;}
-    inline UpdateAccountSettingsRequest& WithPipelineCodebuildRoleArn(const char* value) { SetPipelineCodebuildRoleArn(value); return *this;}
+    template<typename PipelineCodebuildRoleArnT = Aws::String>
+    void SetPipelineCodebuildRoleArn(PipelineCodebuildRoleArnT&& value) { m_pipelineCodebuildRoleArnHasBeenSet = true; m_pipelineCodebuildRoleArn = std::forward<PipelineCodebuildRoleArnT>(value); }
+    template<typename PipelineCodebuildRoleArnT = Aws::String>
+    UpdateAccountSettingsRequest& WithPipelineCodebuildRoleArn(PipelineCodebuildRoleArnT&& value) { SetPipelineCodebuildRoleArn(std::forward<PipelineCodebuildRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +71,12 @@ namespace Model
      * <code>deletePipelineProvisioningRepository</code> to <code>true</code>, and
      * don't set <code>pipelineProvisioningRepository</code>.</p>
      */
-    inline const RepositoryBranchInput& GetPipelineProvisioningRepository() const{ return m_pipelineProvisioningRepository; }
+    inline const RepositoryBranchInput& GetPipelineProvisioningRepository() const { return m_pipelineProvisioningRepository; }
     inline bool PipelineProvisioningRepositoryHasBeenSet() const { return m_pipelineProvisioningRepositoryHasBeenSet; }
-    inline void SetPipelineProvisioningRepository(const RepositoryBranchInput& value) { m_pipelineProvisioningRepositoryHasBeenSet = true; m_pipelineProvisioningRepository = value; }
-    inline void SetPipelineProvisioningRepository(RepositoryBranchInput&& value) { m_pipelineProvisioningRepositoryHasBeenSet = true; m_pipelineProvisioningRepository = std::move(value); }
-    inline UpdateAccountSettingsRequest& WithPipelineProvisioningRepository(const RepositoryBranchInput& value) { SetPipelineProvisioningRepository(value); return *this;}
-    inline UpdateAccountSettingsRequest& WithPipelineProvisioningRepository(RepositoryBranchInput&& value) { SetPipelineProvisioningRepository(std::move(value)); return *this;}
+    template<typename PipelineProvisioningRepositoryT = RepositoryBranchInput>
+    void SetPipelineProvisioningRepository(PipelineProvisioningRepositoryT&& value) { m_pipelineProvisioningRepositoryHasBeenSet = true; m_pipelineProvisioningRepository = std::forward<PipelineProvisioningRepositoryT>(value); }
+    template<typename PipelineProvisioningRepositoryT = RepositoryBranchInput>
+    UpdateAccountSettingsRequest& WithPipelineProvisioningRepository(PipelineProvisioningRepositoryT&& value) { SetPipelineProvisioningRepository(std::forward<PipelineProvisioningRepositoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,18 +87,16 @@ namespace Model
      * provisioning.</p> <p>To remove a previously configured ARN, specify an empty
      * string.</p>
      */
-    inline const Aws::String& GetPipelineServiceRoleArn() const{ return m_pipelineServiceRoleArn; }
+    inline const Aws::String& GetPipelineServiceRoleArn() const { return m_pipelineServiceRoleArn; }
     inline bool PipelineServiceRoleArnHasBeenSet() const { return m_pipelineServiceRoleArnHasBeenSet; }
-    inline void SetPipelineServiceRoleArn(const Aws::String& value) { m_pipelineServiceRoleArnHasBeenSet = true; m_pipelineServiceRoleArn = value; }
-    inline void SetPipelineServiceRoleArn(Aws::String&& value) { m_pipelineServiceRoleArnHasBeenSet = true; m_pipelineServiceRoleArn = std::move(value); }
-    inline void SetPipelineServiceRoleArn(const char* value) { m_pipelineServiceRoleArnHasBeenSet = true; m_pipelineServiceRoleArn.assign(value); }
-    inline UpdateAccountSettingsRequest& WithPipelineServiceRoleArn(const Aws::String& value) { SetPipelineServiceRoleArn(value); return *this;}
-    inline UpdateAccountSettingsRequest& WithPipelineServiceRoleArn(Aws::String&& value) { SetPipelineServiceRoleArn(std::move(value)); return *this;}
-    inline UpdateAccountSettingsRequest& WithPipelineServiceRoleArn(const char* value) { SetPipelineServiceRoleArn(value); return *this;}
+    template<typename PipelineServiceRoleArnT = Aws::String>
+    void SetPipelineServiceRoleArn(PipelineServiceRoleArnT&& value) { m_pipelineServiceRoleArnHasBeenSet = true; m_pipelineServiceRoleArn = std::forward<PipelineServiceRoleArnT>(value); }
+    template<typename PipelineServiceRoleArnT = Aws::String>
+    UpdateAccountSettingsRequest& WithPipelineServiceRoleArn(PipelineServiceRoleArnT&& value) { SetPipelineServiceRoleArn(std::forward<PipelineServiceRoleArnT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_deletePipelineProvisioningRepository;
+    bool m_deletePipelineProvisioningRepository{false};
     bool m_deletePipelineProvisioningRepositoryHasBeenSet = false;
 
     Aws::String m_pipelineCodebuildRoleArn;

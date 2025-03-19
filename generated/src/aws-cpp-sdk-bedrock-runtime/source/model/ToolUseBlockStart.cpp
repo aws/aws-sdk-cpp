@@ -18,14 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-ToolUseBlockStart::ToolUseBlockStart() : 
-    m_toolUseIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 ToolUseBlockStart::ToolUseBlockStart(JsonView jsonValue)
-  : ToolUseBlockStart()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ToolUseBlockStart& ToolUseBlockStart::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("toolUseId"))
   {
     m_toolUseId = jsonValue.GetString("toolUseId");
-
     m_toolUseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class OriginRequestPolicyHeadersConfig
   {
   public:
-    AWS_CLOUDFRONT_API OriginRequestPolicyHeadersConfig();
+    AWS_CLOUDFRONT_API OriginRequestPolicyHeadersConfig() = default;
     AWS_CLOUDFRONT_API OriginRequestPolicyHeadersConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API OriginRequestPolicyHeadersConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -60,26 +60,24 @@ namespace Model
      * <i> <b>except</b> </i> for those listed in the <code>Headers</code> type, which
      * are not included.</p> </li> </ul>
      */
-    inline const OriginRequestPolicyHeaderBehavior& GetHeaderBehavior() const{ return m_headerBehavior; }
+    inline OriginRequestPolicyHeaderBehavior GetHeaderBehavior() const { return m_headerBehavior; }
     inline bool HeaderBehaviorHasBeenSet() const { return m_headerBehaviorHasBeenSet; }
-    inline void SetHeaderBehavior(const OriginRequestPolicyHeaderBehavior& value) { m_headerBehaviorHasBeenSet = true; m_headerBehavior = value; }
-    inline void SetHeaderBehavior(OriginRequestPolicyHeaderBehavior&& value) { m_headerBehaviorHasBeenSet = true; m_headerBehavior = std::move(value); }
-    inline OriginRequestPolicyHeadersConfig& WithHeaderBehavior(const OriginRequestPolicyHeaderBehavior& value) { SetHeaderBehavior(value); return *this;}
-    inline OriginRequestPolicyHeadersConfig& WithHeaderBehavior(OriginRequestPolicyHeaderBehavior&& value) { SetHeaderBehavior(std::move(value)); return *this;}
+    inline void SetHeaderBehavior(OriginRequestPolicyHeaderBehavior value) { m_headerBehaviorHasBeenSet = true; m_headerBehavior = value; }
+    inline OriginRequestPolicyHeadersConfig& WithHeaderBehavior(OriginRequestPolicyHeaderBehavior value) { SetHeaderBehavior(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Headers& GetHeaders() const{ return m_headers; }
+    inline const Headers& GetHeaders() const { return m_headers; }
     inline bool HeadersHasBeenSet() const { return m_headersHasBeenSet; }
-    inline void SetHeaders(const Headers& value) { m_headersHasBeenSet = true; m_headers = value; }
-    inline void SetHeaders(Headers&& value) { m_headersHasBeenSet = true; m_headers = std::move(value); }
-    inline OriginRequestPolicyHeadersConfig& WithHeaders(const Headers& value) { SetHeaders(value); return *this;}
-    inline OriginRequestPolicyHeadersConfig& WithHeaders(Headers&& value) { SetHeaders(std::move(value)); return *this;}
+    template<typename HeadersT = Headers>
+    void SetHeaders(HeadersT&& value) { m_headersHasBeenSet = true; m_headers = std::forward<HeadersT>(value); }
+    template<typename HeadersT = Headers>
+    OriginRequestPolicyHeadersConfig& WithHeaders(HeadersT&& value) { SetHeaders(std::forward<HeadersT>(value)); return *this;}
     ///@}
   private:
 
-    OriginRequestPolicyHeaderBehavior m_headerBehavior;
+    OriginRequestPolicyHeaderBehavior m_headerBehavior{OriginRequestPolicyHeaderBehavior::NOT_SET};
     bool m_headerBehaviorHasBeenSet = false;
 
     Headers m_headers;

@@ -10,16 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ListSnapshotsInRecycleBinRequest::ListSnapshotsInRecycleBinRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_snapshotIdsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ListSnapshotsInRecycleBinRequest::SerializePayload() const
 {
   Aws::StringStream ss;

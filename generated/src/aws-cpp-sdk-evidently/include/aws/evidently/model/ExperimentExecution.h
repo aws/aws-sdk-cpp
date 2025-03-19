@@ -32,7 +32,7 @@ namespace Model
   class ExperimentExecution
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API ExperimentExecution();
+    AWS_CLOUDWATCHEVIDENTLY_API ExperimentExecution() = default;
     AWS_CLOUDWATCHEVIDENTLY_API ExperimentExecution(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHEVIDENTLY_API ExperimentExecution& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,31 +42,31 @@ namespace Model
     /**
      * <p>The date and time that the experiment ended.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndedTime() const{ return m_endedTime; }
+    inline const Aws::Utils::DateTime& GetEndedTime() const { return m_endedTime; }
     inline bool EndedTimeHasBeenSet() const { return m_endedTimeHasBeenSet; }
-    inline void SetEndedTime(const Aws::Utils::DateTime& value) { m_endedTimeHasBeenSet = true; m_endedTime = value; }
-    inline void SetEndedTime(Aws::Utils::DateTime&& value) { m_endedTimeHasBeenSet = true; m_endedTime = std::move(value); }
-    inline ExperimentExecution& WithEndedTime(const Aws::Utils::DateTime& value) { SetEndedTime(value); return *this;}
-    inline ExperimentExecution& WithEndedTime(Aws::Utils::DateTime&& value) { SetEndedTime(std::move(value)); return *this;}
+    template<typename EndedTimeT = Aws::Utils::DateTime>
+    void SetEndedTime(EndedTimeT&& value) { m_endedTimeHasBeenSet = true; m_endedTime = std::forward<EndedTimeT>(value); }
+    template<typename EndedTimeT = Aws::Utils::DateTime>
+    ExperimentExecution& WithEndedTime(EndedTimeT&& value) { SetEndedTime(std::forward<EndedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the experiment started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartedTime() const{ return m_startedTime; }
+    inline const Aws::Utils::DateTime& GetStartedTime() const { return m_startedTime; }
     inline bool StartedTimeHasBeenSet() const { return m_startedTimeHasBeenSet; }
-    inline void SetStartedTime(const Aws::Utils::DateTime& value) { m_startedTimeHasBeenSet = true; m_startedTime = value; }
-    inline void SetStartedTime(Aws::Utils::DateTime&& value) { m_startedTimeHasBeenSet = true; m_startedTime = std::move(value); }
-    inline ExperimentExecution& WithStartedTime(const Aws::Utils::DateTime& value) { SetStartedTime(value); return *this;}
-    inline ExperimentExecution& WithStartedTime(Aws::Utils::DateTime&& value) { SetStartedTime(std::move(value)); return *this;}
+    template<typename StartedTimeT = Aws::Utils::DateTime>
+    void SetStartedTime(StartedTimeT&& value) { m_startedTimeHasBeenSet = true; m_startedTime = std::forward<StartedTimeT>(value); }
+    template<typename StartedTimeT = Aws::Utils::DateTime>
+    ExperimentExecution& WithStartedTime(StartedTimeT&& value) { SetStartedTime(std::forward<StartedTimeT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_endedTime;
+    Aws::Utils::DateTime m_endedTime{};
     bool m_endedTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startedTime;
+    Aws::Utils::DateTime m_startedTime{};
     bool m_startedTimeHasBeenSet = false;
   };
 

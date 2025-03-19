@@ -33,7 +33,7 @@ namespace Model
   class FindingAggregationAccountDetails
   {
   public:
-    AWS_ACCESSANALYZER_API FindingAggregationAccountDetails();
+    AWS_ACCESSANALYZER_API FindingAggregationAccountDetails() = default;
     AWS_ACCESSANALYZER_API FindingAggregationAccountDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API FindingAggregationAccountDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The ID of the Amazon Web Services account for which unused access finding
      * details are provided.</p>
      */
-    inline const Aws::String& GetAccount() const{ return m_account; }
+    inline const Aws::String& GetAccount() const { return m_account; }
     inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
-    inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
-    inline void SetAccount(Aws::String&& value) { m_accountHasBeenSet = true; m_account = std::move(value); }
-    inline void SetAccount(const char* value) { m_accountHasBeenSet = true; m_account.assign(value); }
-    inline FindingAggregationAccountDetails& WithAccount(const Aws::String& value) { SetAccount(value); return *this;}
-    inline FindingAggregationAccountDetails& WithAccount(Aws::String&& value) { SetAccount(std::move(value)); return *this;}
-    inline FindingAggregationAccountDetails& WithAccount(const char* value) { SetAccount(value); return *this;}
+    template<typename AccountT = Aws::String>
+    void SetAccount(AccountT&& value) { m_accountHasBeenSet = true; m_account = std::forward<AccountT>(value); }
+    template<typename AccountT = Aws::String>
+    FindingAggregationAccountDetails& WithAccount(AccountT&& value) { SetAccount(std::forward<AccountT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * <p>The number of active unused access findings for the specified Amazon Web
      * Services account.</p>
      */
-    inline int GetNumberOfActiveFindings() const{ return m_numberOfActiveFindings; }
+    inline int GetNumberOfActiveFindings() const { return m_numberOfActiveFindings; }
     inline bool NumberOfActiveFindingsHasBeenSet() const { return m_numberOfActiveFindingsHasBeenSet; }
     inline void SetNumberOfActiveFindings(int value) { m_numberOfActiveFindingsHasBeenSet = true; m_numberOfActiveFindings = value; }
     inline FindingAggregationAccountDetails& WithNumberOfActiveFindings(int value) { SetNumberOfActiveFindings(value); return *this;}
@@ -70,22 +68,22 @@ namespace Model
      * <p>Provides the number of active findings for each type of unused access for the
      * specified Amazon Web Services account.</p>
      */
-    inline const Aws::Map<Aws::String, int>& GetDetails() const{ return m_details; }
+    inline const Aws::Map<Aws::String, int>& GetDetails() const { return m_details; }
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-    inline void SetDetails(const Aws::Map<Aws::String, int>& value) { m_detailsHasBeenSet = true; m_details = value; }
-    inline void SetDetails(Aws::Map<Aws::String, int>&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-    inline FindingAggregationAccountDetails& WithDetails(const Aws::Map<Aws::String, int>& value) { SetDetails(value); return *this;}
-    inline FindingAggregationAccountDetails& WithDetails(Aws::Map<Aws::String, int>&& value) { SetDetails(std::move(value)); return *this;}
-    inline FindingAggregationAccountDetails& AddDetails(const Aws::String& key, int value) { m_detailsHasBeenSet = true; m_details.emplace(key, value); return *this; }
-    inline FindingAggregationAccountDetails& AddDetails(Aws::String&& key, int value) { m_detailsHasBeenSet = true; m_details.emplace(std::move(key), value); return *this; }
-    inline FindingAggregationAccountDetails& AddDetails(const char* key, int value) { m_detailsHasBeenSet = true; m_details.emplace(key, value); return *this; }
+    template<typename DetailsT = Aws::Map<Aws::String, int>>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = Aws::Map<Aws::String, int>>
+    FindingAggregationAccountDetails& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
+    inline FindingAggregationAccountDetails& AddDetails(Aws::String key, int value) {
+      m_detailsHasBeenSet = true; m_details.emplace(key, value); return *this;
+    }
     ///@}
   private:
 
     Aws::String m_account;
     bool m_accountHasBeenSet = false;
 
-    int m_numberOfActiveFindings;
+    int m_numberOfActiveFindings{0};
     bool m_numberOfActiveFindingsHasBeenSet = false;
 
     Aws::Map<Aws::String, int> m_details;

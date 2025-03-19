@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ReservedInstanceReservationValue::ReservedInstanceReservationValue() : 
-    m_reservationValueHasBeenSet(false),
-    m_reservedInstanceIdHasBeenSet(false)
-{
-}
-
 ReservedInstanceReservationValue::ReservedInstanceReservationValue(const XmlNode& xmlNode)
-  : ReservedInstanceReservationValue()
 {
   *this = xmlNode;
 }

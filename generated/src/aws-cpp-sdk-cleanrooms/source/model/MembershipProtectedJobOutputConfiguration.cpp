@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-MembershipProtectedJobOutputConfiguration::MembershipProtectedJobOutputConfiguration() : 
-    m_s3HasBeenSet(false)
-{
-}
-
 MembershipProtectedJobOutputConfiguration::MembershipProtectedJobOutputConfiguration(JsonView jsonValue)
-  : MembershipProtectedJobOutputConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MembershipProtectedJobOutputConfiguration& MembershipProtectedJobOutputConfigura
   if(jsonValue.ValueExists("s3"))
   {
     m_s3 = jsonValue.GetObject("s3");
-
     m_s3HasBeenSet = true;
   }
-
   return *this;
 }
 

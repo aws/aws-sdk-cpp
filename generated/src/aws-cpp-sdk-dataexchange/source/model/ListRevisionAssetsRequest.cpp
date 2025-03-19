@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListRevisionAssetsRequest::ListRevisionAssetsRequest() : 
-    m_dataSetIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
-{
-}
-
 Aws::String ListRevisionAssetsRequest::SerializePayload() const
 {
   return {};

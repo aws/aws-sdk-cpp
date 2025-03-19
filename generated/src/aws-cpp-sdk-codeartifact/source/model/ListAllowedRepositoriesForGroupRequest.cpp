@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAllowedRepositoriesForGroupRequest::ListAllowedRepositoriesForGroupRequest() : 
-    m_domainHasBeenSet(false),
-    m_domainOwnerHasBeenSet(false),
-    m_packageGroupHasBeenSet(false),
-    m_originRestrictionType(PackageGroupOriginRestrictionType::NOT_SET),
-    m_originRestrictionTypeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListAllowedRepositoriesForGroupRequest::SerializePayload() const
 {
   return {};

@@ -32,7 +32,7 @@ namespace Model
   class TaskExecutionFilesFailedDetail
   {
   public:
-    AWS_DATASYNC_API TaskExecutionFilesFailedDetail();
+    AWS_DATASYNC_API TaskExecutionFilesFailedDetail() = default;
     AWS_DATASYNC_API TaskExecutionFilesFailedDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API TaskExecutionFilesFailedDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>The number of objects that DataSync fails to prepare during your task
      * execution.</p>
      */
-    inline long long GetPrepare() const{ return m_prepare; }
+    inline long long GetPrepare() const { return m_prepare; }
     inline bool PrepareHasBeenSet() const { return m_prepareHasBeenSet; }
     inline void SetPrepare(long long value) { m_prepareHasBeenSet = true; m_prepare = value; }
     inline TaskExecutionFilesFailedDetail& WithPrepare(long long value) { SetPrepare(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
      * <p>The number of objects that DataSync fails to transfer during your task
      * execution.</p>
      */
-    inline long long GetTransfer() const{ return m_transfer; }
+    inline long long GetTransfer() const { return m_transfer; }
     inline bool TransferHasBeenSet() const { return m_transferHasBeenSet; }
     inline void SetTransfer(long long value) { m_transferHasBeenSet = true; m_transfer = value; }
     inline TaskExecutionFilesFailedDetail& WithTransfer(long long value) { SetTransfer(value); return *this;}
@@ -65,7 +65,7 @@ namespace Model
      * <p>The number of objects that DataSync fails to verify during your task
      * execution.</p>
      */
-    inline long long GetVerify() const{ return m_verify; }
+    inline long long GetVerify() const { return m_verify; }
     inline bool VerifyHasBeenSet() const { return m_verifyHasBeenSet; }
     inline void SetVerify(long long value) { m_verifyHasBeenSet = true; m_verify = value; }
     inline TaskExecutionFilesFailedDetail& WithVerify(long long value) { SetVerify(value); return *this;}
@@ -76,23 +76,23 @@ namespace Model
      * <p>The number of objects that DataSync fails to delete during your task
      * execution.</p>
      */
-    inline long long GetDelete() const{ return m_delete; }
+    inline long long GetDelete() const { return m_delete; }
     inline bool DeleteHasBeenSet() const { return m_deleteHasBeenSet; }
     inline void SetDelete(long long value) { m_deleteHasBeenSet = true; m_delete = value; }
     inline TaskExecutionFilesFailedDetail& WithDelete(long long value) { SetDelete(value); return *this;}
     ///@}
   private:
 
-    long long m_prepare;
+    long long m_prepare{0};
     bool m_prepareHasBeenSet = false;
 
-    long long m_transfer;
+    long long m_transfer{0};
     bool m_transferHasBeenSet = false;
 
-    long long m_verify;
+    long long m_verify{0};
     bool m_verifyHasBeenSet = false;
 
-    long long m_delete;
+    long long m_delete{0};
     bool m_deleteHasBeenSet = false;
   };
 

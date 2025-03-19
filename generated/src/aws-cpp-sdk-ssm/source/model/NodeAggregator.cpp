@@ -18,19 +18,7 @@ namespace SSM
 namespace Model
 {
 
-NodeAggregator::NodeAggregator() : 
-    m_aggregatorType(NodeAggregatorType::NOT_SET),
-    m_aggregatorTypeHasBeenSet(false),
-    m_typeName(NodeTypeName::NOT_SET),
-    m_typeNameHasBeenSet(false),
-    m_attributeName(NodeAttributeName::NOT_SET),
-    m_attributeNameHasBeenSet(false),
-    m_aggregatorsHasBeenSet(false)
-{
-}
-
 NodeAggregator::NodeAggregator(JsonView jsonValue)
-  : NodeAggregator()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ NodeAggregator& NodeAggregator::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AggregatorType"))
   {
     m_aggregatorType = NodeAggregatorTypeMapper::GetNodeAggregatorTypeForName(jsonValue.GetString("AggregatorType"));
-
     m_aggregatorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TypeName"))
   {
     m_typeName = NodeTypeNameMapper::GetNodeTypeNameForName(jsonValue.GetString("TypeName"));
-
     m_typeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeName"))
   {
     m_attributeName = NodeAttributeNameMapper::GetNodeAttributeNameForName(jsonValue.GetString("AttributeName"));
-
     m_attributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Aggregators"))
   {
     Aws::Utils::Array<JsonView> aggregatorsJsonList = jsonValue.GetArray("Aggregators");
@@ -67,7 +49,6 @@ NodeAggregator& NodeAggregator::operator =(JsonView jsonValue)
     }
     m_aggregatorsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-Finding::Finding() : 
-    m_creationTimeHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 Finding::Finding(JsonView jsonValue)
-  : Finding()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Finding& Finding::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("details"))
   {
     m_details = jsonValue.GetObject("details");
-
     m_detailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("lastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

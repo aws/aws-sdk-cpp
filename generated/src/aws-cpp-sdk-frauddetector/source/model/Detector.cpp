@@ -18,18 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-Detector::Detector() : 
-    m_detectorIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_eventTypeNameHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 Detector::Detector(JsonView jsonValue)
-  : Detector()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ Detector& Detector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("detectorId"))
   {
     m_detectorId = jsonValue.GetString("detectorId");
-
     m_detectorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventTypeName"))
   {
     m_eventTypeName = jsonValue.GetString("eventTypeName");
-
     m_eventTypeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetString("lastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTime"))
   {
     m_createdTime = jsonValue.GetString("createdTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

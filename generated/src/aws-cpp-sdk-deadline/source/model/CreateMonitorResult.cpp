@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateMonitorResult::CreateMonitorResult()
-{
-}
-
 CreateMonitorResult::CreateMonitorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateMonitorResult& CreateMonitorResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("monitorId"))
   {
     m_monitorId = jsonValue.GetString("monitorId");
-
+    m_monitorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identityCenterApplicationArn"))
   {
     m_identityCenterApplicationArn = jsonValue.GetString("identityCenterApplicationArn");
-
+    m_identityCenterApplicationArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

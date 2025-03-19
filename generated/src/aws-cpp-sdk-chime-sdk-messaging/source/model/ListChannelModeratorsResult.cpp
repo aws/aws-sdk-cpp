@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListChannelModeratorsResult::ListChannelModeratorsResult()
-{
-}
-
 ListChannelModeratorsResult::ListChannelModeratorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ ListChannelModeratorsResult& ListChannelModeratorsResult::operator =(const Aws::
   if(jsonValue.ValueExists("ChannelArn"))
   {
     m_channelArn = jsonValue.GetString("ChannelArn");
-
+    m_channelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChannelModerators"))
   {
     Aws::Utils::Array<JsonView> channelModeratorsJsonList = jsonValue.GetArray("ChannelModerators");
@@ -48,14 +42,15 @@ ListChannelModeratorsResult& ListChannelModeratorsResult::operator =(const Aws::
     {
       m_channelModerators.push_back(channelModeratorsJsonList[channelModeratorsIndex].AsObject());
     }
+    m_channelModeratorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

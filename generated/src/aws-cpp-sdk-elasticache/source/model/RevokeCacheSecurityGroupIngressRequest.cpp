@@ -10,13 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-RevokeCacheSecurityGroupIngressRequest::RevokeCacheSecurityGroupIngressRequest() : 
-    m_cacheSecurityGroupNameHasBeenSet(false),
-    m_eC2SecurityGroupNameHasBeenSet(false),
-    m_eC2SecurityGroupOwnerIdHasBeenSet(false)
-{
-}
-
 Aws::String RevokeCacheSecurityGroupIngressRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -32,7 +32,7 @@ namespace Model
   class LocationalDeployment
   {
   public:
-    AWS_GAMELIFT_API LocationalDeployment();
+    AWS_GAMELIFT_API LocationalDeployment() = default;
     AWS_GAMELIFT_API LocationalDeployment(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API LocationalDeployment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,16 +50,14 @@ namespace Model
      * completed.</p> </li> <li> <p> <code>CANCELLED</code> -- The deployment was
      * cancelled.</p> </li> </ul>
      */
-    inline const DeploymentStatus& GetDeploymentStatus() const{ return m_deploymentStatus; }
+    inline DeploymentStatus GetDeploymentStatus() const { return m_deploymentStatus; }
     inline bool DeploymentStatusHasBeenSet() const { return m_deploymentStatusHasBeenSet; }
-    inline void SetDeploymentStatus(const DeploymentStatus& value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = value; }
-    inline void SetDeploymentStatus(DeploymentStatus&& value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = std::move(value); }
-    inline LocationalDeployment& WithDeploymentStatus(const DeploymentStatus& value) { SetDeploymentStatus(value); return *this;}
-    inline LocationalDeployment& WithDeploymentStatus(DeploymentStatus&& value) { SetDeploymentStatus(std::move(value)); return *this;}
+    inline void SetDeploymentStatus(DeploymentStatus value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = value; }
+    inline LocationalDeployment& WithDeploymentStatus(DeploymentStatus value) { SetDeploymentStatus(value); return *this;}
     ///@}
   private:
 
-    DeploymentStatus m_deploymentStatus;
+    DeploymentStatus m_deploymentStatus{DeploymentStatus::NOT_SET};
     bool m_deploymentStatusHasBeenSet = false;
   };
 

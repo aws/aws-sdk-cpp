@@ -31,7 +31,7 @@ namespace Model
   class DatastoreStatistics
   {
   public:
-    AWS_IOTANALYTICS_API DatastoreStatistics();
+    AWS_IOTANALYTICS_API DatastoreStatistics() = default;
     AWS_IOTANALYTICS_API DatastoreStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API DatastoreStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The estimated size of the data store.</p>
      */
-    inline const EstimatedResourceSize& GetSize() const{ return m_size; }
+    inline const EstimatedResourceSize& GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
-    inline void SetSize(const EstimatedResourceSize& value) { m_sizeHasBeenSet = true; m_size = value; }
-    inline void SetSize(EstimatedResourceSize&& value) { m_sizeHasBeenSet = true; m_size = std::move(value); }
-    inline DatastoreStatistics& WithSize(const EstimatedResourceSize& value) { SetSize(value); return *this;}
-    inline DatastoreStatistics& WithSize(EstimatedResourceSize&& value) { SetSize(std::move(value)); return *this;}
+    template<typename SizeT = EstimatedResourceSize>
+    void SetSize(SizeT&& value) { m_sizeHasBeenSet = true; m_size = std::forward<SizeT>(value); }
+    template<typename SizeT = EstimatedResourceSize>
+    DatastoreStatistics& WithSize(SizeT&& value) { SetSize(std::forward<SizeT>(value)); return *this;}
     ///@}
   private:
 

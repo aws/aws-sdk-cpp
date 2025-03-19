@@ -29,7 +29,7 @@ namespace Model
   class UnmonitorInstancesResponse
   {
   public:
-    AWS_EC2_API UnmonitorInstancesResponse();
+    AWS_EC2_API UnmonitorInstancesResponse() = default;
     AWS_EC2_API UnmonitorInstancesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API UnmonitorInstancesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,28 +38,30 @@ namespace Model
     /**
      * <p>The monitoring information.</p>
      */
-    inline const Aws::Vector<InstanceMonitoring>& GetInstanceMonitorings() const{ return m_instanceMonitorings; }
-    inline void SetInstanceMonitorings(const Aws::Vector<InstanceMonitoring>& value) { m_instanceMonitorings = value; }
-    inline void SetInstanceMonitorings(Aws::Vector<InstanceMonitoring>&& value) { m_instanceMonitorings = std::move(value); }
-    inline UnmonitorInstancesResponse& WithInstanceMonitorings(const Aws::Vector<InstanceMonitoring>& value) { SetInstanceMonitorings(value); return *this;}
-    inline UnmonitorInstancesResponse& WithInstanceMonitorings(Aws::Vector<InstanceMonitoring>&& value) { SetInstanceMonitorings(std::move(value)); return *this;}
-    inline UnmonitorInstancesResponse& AddInstanceMonitorings(const InstanceMonitoring& value) { m_instanceMonitorings.push_back(value); return *this; }
-    inline UnmonitorInstancesResponse& AddInstanceMonitorings(InstanceMonitoring&& value) { m_instanceMonitorings.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InstanceMonitoring>& GetInstanceMonitorings() const { return m_instanceMonitorings; }
+    template<typename InstanceMonitoringsT = Aws::Vector<InstanceMonitoring>>
+    void SetInstanceMonitorings(InstanceMonitoringsT&& value) { m_instanceMonitoringsHasBeenSet = true; m_instanceMonitorings = std::forward<InstanceMonitoringsT>(value); }
+    template<typename InstanceMonitoringsT = Aws::Vector<InstanceMonitoring>>
+    UnmonitorInstancesResponse& WithInstanceMonitorings(InstanceMonitoringsT&& value) { SetInstanceMonitorings(std::forward<InstanceMonitoringsT>(value)); return *this;}
+    template<typename InstanceMonitoringsT = InstanceMonitoring>
+    UnmonitorInstancesResponse& AddInstanceMonitorings(InstanceMonitoringsT&& value) { m_instanceMonitoringsHasBeenSet = true; m_instanceMonitorings.emplace_back(std::forward<InstanceMonitoringsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline UnmonitorInstancesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline UnmonitorInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    UnmonitorInstancesResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<InstanceMonitoring> m_instanceMonitorings;
+    bool m_instanceMonitoringsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

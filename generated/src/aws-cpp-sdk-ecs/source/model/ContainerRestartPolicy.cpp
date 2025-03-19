@@ -18,17 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ContainerRestartPolicy::ContainerRestartPolicy() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_ignoredExitCodesHasBeenSet(false),
-    m_restartAttemptPeriod(0),
-    m_restartAttemptPeriodHasBeenSet(false)
-{
-}
-
 ContainerRestartPolicy::ContainerRestartPolicy(JsonView jsonValue)
-  : ContainerRestartPolicy()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ ContainerRestartPolicy& ContainerRestartPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ignoredExitCodes"))
   {
     Aws::Utils::Array<JsonView> ignoredExitCodesJsonList = jsonValue.GetArray("ignoredExitCodes");
@@ -51,14 +39,11 @@ ContainerRestartPolicy& ContainerRestartPolicy::operator =(JsonView jsonValue)
     }
     m_ignoredExitCodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("restartAttemptPeriod"))
   {
     m_restartAttemptPeriod = jsonValue.GetInteger("restartAttemptPeriod");
-
     m_restartAttemptPeriodHasBeenSet = true;
   }
-
   return *this;
 }
 

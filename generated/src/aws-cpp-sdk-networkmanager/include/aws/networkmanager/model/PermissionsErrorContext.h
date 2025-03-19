@@ -32,7 +32,7 @@ namespace Model
   class PermissionsErrorContext
   {
   public:
-    AWS_NETWORKMANAGER_API PermissionsErrorContext();
+    AWS_NETWORKMANAGER_API PermissionsErrorContext() = default;
     AWS_NETWORKMANAGER_API PermissionsErrorContext(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API PermissionsErrorContext& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The missing permissions.</p>
      */
-    inline const Aws::String& GetMissingPermission() const{ return m_missingPermission; }
+    inline const Aws::String& GetMissingPermission() const { return m_missingPermission; }
     inline bool MissingPermissionHasBeenSet() const { return m_missingPermissionHasBeenSet; }
-    inline void SetMissingPermission(const Aws::String& value) { m_missingPermissionHasBeenSet = true; m_missingPermission = value; }
-    inline void SetMissingPermission(Aws::String&& value) { m_missingPermissionHasBeenSet = true; m_missingPermission = std::move(value); }
-    inline void SetMissingPermission(const char* value) { m_missingPermissionHasBeenSet = true; m_missingPermission.assign(value); }
-    inline PermissionsErrorContext& WithMissingPermission(const Aws::String& value) { SetMissingPermission(value); return *this;}
-    inline PermissionsErrorContext& WithMissingPermission(Aws::String&& value) { SetMissingPermission(std::move(value)); return *this;}
-    inline PermissionsErrorContext& WithMissingPermission(const char* value) { SetMissingPermission(value); return *this;}
+    template<typename MissingPermissionT = Aws::String>
+    void SetMissingPermission(MissingPermissionT&& value) { m_missingPermissionHasBeenSet = true; m_missingPermission = std::forward<MissingPermissionT>(value); }
+    template<typename MissingPermissionT = Aws::String>
+    PermissionsErrorContext& WithMissingPermission(MissingPermissionT&& value) { SetMissingPermission(std::forward<MissingPermissionT>(value)); return *this;}
     ///@}
   private:
 

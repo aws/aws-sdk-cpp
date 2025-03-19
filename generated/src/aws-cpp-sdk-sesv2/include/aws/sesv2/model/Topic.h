@@ -33,7 +33,7 @@ namespace Model
   class Topic
   {
   public:
-    AWS_SESV2_API Topic();
+    AWS_SESV2_API Topic() = default;
     AWS_SESV2_API Topic(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Topic& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,42 +43,36 @@ namespace Model
     /**
      * <p>The name of the topic.</p>
      */
-    inline const Aws::String& GetTopicName() const{ return m_topicName; }
+    inline const Aws::String& GetTopicName() const { return m_topicName; }
     inline bool TopicNameHasBeenSet() const { return m_topicNameHasBeenSet; }
-    inline void SetTopicName(const Aws::String& value) { m_topicNameHasBeenSet = true; m_topicName = value; }
-    inline void SetTopicName(Aws::String&& value) { m_topicNameHasBeenSet = true; m_topicName = std::move(value); }
-    inline void SetTopicName(const char* value) { m_topicNameHasBeenSet = true; m_topicName.assign(value); }
-    inline Topic& WithTopicName(const Aws::String& value) { SetTopicName(value); return *this;}
-    inline Topic& WithTopicName(Aws::String&& value) { SetTopicName(std::move(value)); return *this;}
-    inline Topic& WithTopicName(const char* value) { SetTopicName(value); return *this;}
+    template<typename TopicNameT = Aws::String>
+    void SetTopicName(TopicNameT&& value) { m_topicNameHasBeenSet = true; m_topicName = std::forward<TopicNameT>(value); }
+    template<typename TopicNameT = Aws::String>
+    Topic& WithTopicName(TopicNameT&& value) { SetTopicName(std::forward<TopicNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the topic the contact will see.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline Topic& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline Topic& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline Topic& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    Topic& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of what the topic is about, which the contact will see.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Topic& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Topic& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Topic& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Topic& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +80,10 @@ namespace Model
      * <p>The default subscription status to be applied to a contact if the contact has
      * not noted their preference for subscribing to a topic.</p>
      */
-    inline const SubscriptionStatus& GetDefaultSubscriptionStatus() const{ return m_defaultSubscriptionStatus; }
+    inline SubscriptionStatus GetDefaultSubscriptionStatus() const { return m_defaultSubscriptionStatus; }
     inline bool DefaultSubscriptionStatusHasBeenSet() const { return m_defaultSubscriptionStatusHasBeenSet; }
-    inline void SetDefaultSubscriptionStatus(const SubscriptionStatus& value) { m_defaultSubscriptionStatusHasBeenSet = true; m_defaultSubscriptionStatus = value; }
-    inline void SetDefaultSubscriptionStatus(SubscriptionStatus&& value) { m_defaultSubscriptionStatusHasBeenSet = true; m_defaultSubscriptionStatus = std::move(value); }
-    inline Topic& WithDefaultSubscriptionStatus(const SubscriptionStatus& value) { SetDefaultSubscriptionStatus(value); return *this;}
-    inline Topic& WithDefaultSubscriptionStatus(SubscriptionStatus&& value) { SetDefaultSubscriptionStatus(std::move(value)); return *this;}
+    inline void SetDefaultSubscriptionStatus(SubscriptionStatus value) { m_defaultSubscriptionStatusHasBeenSet = true; m_defaultSubscriptionStatus = value; }
+    inline Topic& WithDefaultSubscriptionStatus(SubscriptionStatus value) { SetDefaultSubscriptionStatus(value); return *this;}
     ///@}
   private:
 
@@ -104,7 +96,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    SubscriptionStatus m_defaultSubscriptionStatus;
+    SubscriptionStatus m_defaultSubscriptionStatus{SubscriptionStatus::NOT_SET};
     bool m_defaultSubscriptionStatusHasBeenSet = false;
   };
 

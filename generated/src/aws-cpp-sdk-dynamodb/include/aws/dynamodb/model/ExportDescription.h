@@ -38,7 +38,7 @@ namespace Model
   class ExportDescription
   {
   public:
-    AWS_DYNAMODB_API ExportDescription();
+    AWS_DYNAMODB_API ExportDescription() = default;
     AWS_DYNAMODB_API ExportDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API ExportDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the table export.</p>
      */
-    inline const Aws::String& GetExportArn() const{ return m_exportArn; }
+    inline const Aws::String& GetExportArn() const { return m_exportArn; }
     inline bool ExportArnHasBeenSet() const { return m_exportArnHasBeenSet; }
-    inline void SetExportArn(const Aws::String& value) { m_exportArnHasBeenSet = true; m_exportArn = value; }
-    inline void SetExportArn(Aws::String&& value) { m_exportArnHasBeenSet = true; m_exportArn = std::move(value); }
-    inline void SetExportArn(const char* value) { m_exportArnHasBeenSet = true; m_exportArn.assign(value); }
-    inline ExportDescription& WithExportArn(const Aws::String& value) { SetExportArn(value); return *this;}
-    inline ExportDescription& WithExportArn(Aws::String&& value) { SetExportArn(std::move(value)); return *this;}
-    inline ExportDescription& WithExportArn(const char* value) { SetExportArn(value); return *this;}
+    template<typename ExportArnT = Aws::String>
+    void SetExportArn(ExportArnT&& value) { m_exportArnHasBeenSet = true; m_exportArn = std::forward<ExportArnT>(value); }
+    template<typename ExportArnT = Aws::String>
+    ExportDescription& WithExportArn(ExportArnT&& value) { SetExportArn(std::forward<ExportArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,90 +61,82 @@ namespace Model
      * <p>Export can be in one of the following states: IN_PROGRESS, COMPLETED, or
      * FAILED.</p>
      */
-    inline const ExportStatus& GetExportStatus() const{ return m_exportStatus; }
+    inline ExportStatus GetExportStatus() const { return m_exportStatus; }
     inline bool ExportStatusHasBeenSet() const { return m_exportStatusHasBeenSet; }
-    inline void SetExportStatus(const ExportStatus& value) { m_exportStatusHasBeenSet = true; m_exportStatus = value; }
-    inline void SetExportStatus(ExportStatus&& value) { m_exportStatusHasBeenSet = true; m_exportStatus = std::move(value); }
-    inline ExportDescription& WithExportStatus(const ExportStatus& value) { SetExportStatus(value); return *this;}
-    inline ExportDescription& WithExportStatus(ExportStatus&& value) { SetExportStatus(std::move(value)); return *this;}
+    inline void SetExportStatus(ExportStatus value) { m_exportStatusHasBeenSet = true; m_exportStatus = value; }
+    inline ExportDescription& WithExportStatus(ExportStatus value) { SetExportStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the export task began.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline ExportDescription& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline ExportDescription& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    ExportDescription& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the export task completed.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline ExportDescription& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline ExportDescription& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    ExportDescription& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the manifest file for the export task.</p>
      */
-    inline const Aws::String& GetExportManifest() const{ return m_exportManifest; }
+    inline const Aws::String& GetExportManifest() const { return m_exportManifest; }
     inline bool ExportManifestHasBeenSet() const { return m_exportManifestHasBeenSet; }
-    inline void SetExportManifest(const Aws::String& value) { m_exportManifestHasBeenSet = true; m_exportManifest = value; }
-    inline void SetExportManifest(Aws::String&& value) { m_exportManifestHasBeenSet = true; m_exportManifest = std::move(value); }
-    inline void SetExportManifest(const char* value) { m_exportManifestHasBeenSet = true; m_exportManifest.assign(value); }
-    inline ExportDescription& WithExportManifest(const Aws::String& value) { SetExportManifest(value); return *this;}
-    inline ExportDescription& WithExportManifest(Aws::String&& value) { SetExportManifest(std::move(value)); return *this;}
-    inline ExportDescription& WithExportManifest(const char* value) { SetExportManifest(value); return *this;}
+    template<typename ExportManifestT = Aws::String>
+    void SetExportManifest(ExportManifestT&& value) { m_exportManifestHasBeenSet = true; m_exportManifest = std::forward<ExportManifestT>(value); }
+    template<typename ExportManifestT = Aws::String>
+    ExportDescription& WithExportManifest(ExportManifestT&& value) { SetExportManifest(std::forward<ExportManifestT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the table that was exported.</p>
      */
-    inline const Aws::String& GetTableArn() const{ return m_tableArn; }
+    inline const Aws::String& GetTableArn() const { return m_tableArn; }
     inline bool TableArnHasBeenSet() const { return m_tableArnHasBeenSet; }
-    inline void SetTableArn(const Aws::String& value) { m_tableArnHasBeenSet = true; m_tableArn = value; }
-    inline void SetTableArn(Aws::String&& value) { m_tableArnHasBeenSet = true; m_tableArn = std::move(value); }
-    inline void SetTableArn(const char* value) { m_tableArnHasBeenSet = true; m_tableArn.assign(value); }
-    inline ExportDescription& WithTableArn(const Aws::String& value) { SetTableArn(value); return *this;}
-    inline ExportDescription& WithTableArn(Aws::String&& value) { SetTableArn(std::move(value)); return *this;}
-    inline ExportDescription& WithTableArn(const char* value) { SetTableArn(value); return *this;}
+    template<typename TableArnT = Aws::String>
+    void SetTableArn(TableArnT&& value) { m_tableArnHasBeenSet = true; m_tableArn = std::forward<TableArnT>(value); }
+    template<typename TableArnT = Aws::String>
+    ExportDescription& WithTableArn(TableArnT&& value) { SetTableArn(std::forward<TableArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Unique ID of the table that was exported.</p>
      */
-    inline const Aws::String& GetTableId() const{ return m_tableId; }
+    inline const Aws::String& GetTableId() const { return m_tableId; }
     inline bool TableIdHasBeenSet() const { return m_tableIdHasBeenSet; }
-    inline void SetTableId(const Aws::String& value) { m_tableIdHasBeenSet = true; m_tableId = value; }
-    inline void SetTableId(Aws::String&& value) { m_tableIdHasBeenSet = true; m_tableId = std::move(value); }
-    inline void SetTableId(const char* value) { m_tableIdHasBeenSet = true; m_tableId.assign(value); }
-    inline ExportDescription& WithTableId(const Aws::String& value) { SetTableId(value); return *this;}
-    inline ExportDescription& WithTableId(Aws::String&& value) { SetTableId(std::move(value)); return *this;}
-    inline ExportDescription& WithTableId(const char* value) { SetTableId(value); return *this;}
+    template<typename TableIdT = Aws::String>
+    void SetTableId(TableIdT&& value) { m_tableIdHasBeenSet = true; m_tableId = std::forward<TableIdT>(value); }
+    template<typename TableIdT = Aws::String>
+    ExportDescription& WithTableId(TableIdT&& value) { SetTableId(std::forward<TableIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Point in time from which table data was exported.</p>
      */
-    inline const Aws::Utils::DateTime& GetExportTime() const{ return m_exportTime; }
+    inline const Aws::Utils::DateTime& GetExportTime() const { return m_exportTime; }
     inline bool ExportTimeHasBeenSet() const { return m_exportTimeHasBeenSet; }
-    inline void SetExportTime(const Aws::Utils::DateTime& value) { m_exportTimeHasBeenSet = true; m_exportTime = value; }
-    inline void SetExportTime(Aws::Utils::DateTime&& value) { m_exportTimeHasBeenSet = true; m_exportTime = std::move(value); }
-    inline ExportDescription& WithExportTime(const Aws::Utils::DateTime& value) { SetExportTime(value); return *this;}
-    inline ExportDescription& WithExportTime(Aws::Utils::DateTime&& value) { SetExportTime(std::move(value)); return *this;}
+    template<typename ExportTimeT = Aws::Utils::DateTime>
+    void SetExportTime(ExportTimeT&& value) { m_exportTimeHasBeenSet = true; m_exportTime = std::forward<ExportTimeT>(value); }
+    template<typename ExportTimeT = Aws::Utils::DateTime>
+    ExportDescription& WithExportTime(ExportTimeT&& value) { SetExportTime(std::forward<ExportTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -155,28 +145,24 @@ namespace Model
      * calls to <code>ExportTableToPointInTimeInput</code> idempotent, meaning that
      * multiple identical calls have the same effect as one single call.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline ExportDescription& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline ExportDescription& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline ExportDescription& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    ExportDescription& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Amazon S3 bucket containing the export.</p>
      */
-    inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
+    inline const Aws::String& GetS3Bucket() const { return m_s3Bucket; }
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
-    inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
-    inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
-    inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
-    inline ExportDescription& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
-    inline ExportDescription& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
-    inline ExportDescription& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
+    template<typename S3BucketT = Aws::String>
+    void SetS3Bucket(S3BucketT&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::forward<S3BucketT>(value); }
+    template<typename S3BucketT = Aws::String>
+    ExportDescription& WithS3Bucket(S3BucketT&& value) { SetS3Bucket(std::forward<S3BucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -184,14 +170,12 @@ namespace Model
      * <p>The ID of the Amazon Web Services account that owns the bucket containing the
      * export.</p>
      */
-    inline const Aws::String& GetS3BucketOwner() const{ return m_s3BucketOwner; }
+    inline const Aws::String& GetS3BucketOwner() const { return m_s3BucketOwner; }
     inline bool S3BucketOwnerHasBeenSet() const { return m_s3BucketOwnerHasBeenSet; }
-    inline void SetS3BucketOwner(const Aws::String& value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner = value; }
-    inline void SetS3BucketOwner(Aws::String&& value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner = std::move(value); }
-    inline void SetS3BucketOwner(const char* value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner.assign(value); }
-    inline ExportDescription& WithS3BucketOwner(const Aws::String& value) { SetS3BucketOwner(value); return *this;}
-    inline ExportDescription& WithS3BucketOwner(Aws::String&& value) { SetS3BucketOwner(std::move(value)); return *this;}
-    inline ExportDescription& WithS3BucketOwner(const char* value) { SetS3BucketOwner(value); return *this;}
+    template<typename S3BucketOwnerT = Aws::String>
+    void SetS3BucketOwner(S3BucketOwnerT&& value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner = std::forward<S3BucketOwnerT>(value); }
+    template<typename S3BucketOwnerT = Aws::String>
+    ExportDescription& WithS3BucketOwner(S3BucketOwnerT&& value) { SetS3BucketOwner(std::forward<S3BucketOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -199,14 +183,12 @@ namespace Model
      * <p>The Amazon S3 bucket prefix used as the file name and path of the exported
      * snapshot.</p>
      */
-    inline const Aws::String& GetS3Prefix() const{ return m_s3Prefix; }
+    inline const Aws::String& GetS3Prefix() const { return m_s3Prefix; }
     inline bool S3PrefixHasBeenSet() const { return m_s3PrefixHasBeenSet; }
-    inline void SetS3Prefix(const Aws::String& value) { m_s3PrefixHasBeenSet = true; m_s3Prefix = value; }
-    inline void SetS3Prefix(Aws::String&& value) { m_s3PrefixHasBeenSet = true; m_s3Prefix = std::move(value); }
-    inline void SetS3Prefix(const char* value) { m_s3PrefixHasBeenSet = true; m_s3Prefix.assign(value); }
-    inline ExportDescription& WithS3Prefix(const Aws::String& value) { SetS3Prefix(value); return *this;}
-    inline ExportDescription& WithS3Prefix(Aws::String&& value) { SetS3Prefix(std::move(value)); return *this;}
-    inline ExportDescription& WithS3Prefix(const char* value) { SetS3Prefix(value); return *this;}
+    template<typename S3PrefixT = Aws::String>
+    void SetS3Prefix(S3PrefixT&& value) { m_s3PrefixHasBeenSet = true; m_s3Prefix = std::forward<S3PrefixT>(value); }
+    template<typename S3PrefixT = Aws::String>
+    ExportDescription& WithS3Prefix(S3PrefixT&& value) { SetS3Prefix(std::forward<S3PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -217,12 +199,10 @@ namespace Model
      * </li> <li> <p> <code>KMS</code> - server-side encryption with KMS managed
      * keys</p> </li> </ul>
      */
-    inline const S3SseAlgorithm& GetS3SseAlgorithm() const{ return m_s3SseAlgorithm; }
+    inline S3SseAlgorithm GetS3SseAlgorithm() const { return m_s3SseAlgorithm; }
     inline bool S3SseAlgorithmHasBeenSet() const { return m_s3SseAlgorithmHasBeenSet; }
-    inline void SetS3SseAlgorithm(const S3SseAlgorithm& value) { m_s3SseAlgorithmHasBeenSet = true; m_s3SseAlgorithm = value; }
-    inline void SetS3SseAlgorithm(S3SseAlgorithm&& value) { m_s3SseAlgorithmHasBeenSet = true; m_s3SseAlgorithm = std::move(value); }
-    inline ExportDescription& WithS3SseAlgorithm(const S3SseAlgorithm& value) { SetS3SseAlgorithm(value); return *this;}
-    inline ExportDescription& WithS3SseAlgorithm(S3SseAlgorithm&& value) { SetS3SseAlgorithm(std::move(value)); return *this;}
+    inline void SetS3SseAlgorithm(S3SseAlgorithm value) { m_s3SseAlgorithmHasBeenSet = true; m_s3SseAlgorithm = value; }
+    inline ExportDescription& WithS3SseAlgorithm(S3SseAlgorithm value) { SetS3SseAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -230,42 +210,36 @@ namespace Model
      * <p>The ID of the KMS managed key used to encrypt the S3 bucket where export data
      * is stored (if applicable).</p>
      */
-    inline const Aws::String& GetS3SseKmsKeyId() const{ return m_s3SseKmsKeyId; }
+    inline const Aws::String& GetS3SseKmsKeyId() const { return m_s3SseKmsKeyId; }
     inline bool S3SseKmsKeyIdHasBeenSet() const { return m_s3SseKmsKeyIdHasBeenSet; }
-    inline void SetS3SseKmsKeyId(const Aws::String& value) { m_s3SseKmsKeyIdHasBeenSet = true; m_s3SseKmsKeyId = value; }
-    inline void SetS3SseKmsKeyId(Aws::String&& value) { m_s3SseKmsKeyIdHasBeenSet = true; m_s3SseKmsKeyId = std::move(value); }
-    inline void SetS3SseKmsKeyId(const char* value) { m_s3SseKmsKeyIdHasBeenSet = true; m_s3SseKmsKeyId.assign(value); }
-    inline ExportDescription& WithS3SseKmsKeyId(const Aws::String& value) { SetS3SseKmsKeyId(value); return *this;}
-    inline ExportDescription& WithS3SseKmsKeyId(Aws::String&& value) { SetS3SseKmsKeyId(std::move(value)); return *this;}
-    inline ExportDescription& WithS3SseKmsKeyId(const char* value) { SetS3SseKmsKeyId(value); return *this;}
+    template<typename S3SseKmsKeyIdT = Aws::String>
+    void SetS3SseKmsKeyId(S3SseKmsKeyIdT&& value) { m_s3SseKmsKeyIdHasBeenSet = true; m_s3SseKmsKeyId = std::forward<S3SseKmsKeyIdT>(value); }
+    template<typename S3SseKmsKeyIdT = Aws::String>
+    ExportDescription& WithS3SseKmsKeyId(S3SseKmsKeyIdT&& value) { SetS3SseKmsKeyId(std::forward<S3SseKmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Status code for the result of the failed export.</p>
      */
-    inline const Aws::String& GetFailureCode() const{ return m_failureCode; }
+    inline const Aws::String& GetFailureCode() const { return m_failureCode; }
     inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
-    inline void SetFailureCode(const Aws::String& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
-    inline void SetFailureCode(Aws::String&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
-    inline void SetFailureCode(const char* value) { m_failureCodeHasBeenSet = true; m_failureCode.assign(value); }
-    inline ExportDescription& WithFailureCode(const Aws::String& value) { SetFailureCode(value); return *this;}
-    inline ExportDescription& WithFailureCode(Aws::String&& value) { SetFailureCode(std::move(value)); return *this;}
-    inline ExportDescription& WithFailureCode(const char* value) { SetFailureCode(value); return *this;}
+    template<typename FailureCodeT = Aws::String>
+    void SetFailureCode(FailureCodeT&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::forward<FailureCodeT>(value); }
+    template<typename FailureCodeT = Aws::String>
+    ExportDescription& WithFailureCode(FailureCodeT&& value) { SetFailureCode(std::forward<FailureCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Export failure reason description.</p>
      */
-    inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
+    inline const Aws::String& GetFailureMessage() const { return m_failureMessage; }
     inline bool FailureMessageHasBeenSet() const { return m_failureMessageHasBeenSet; }
-    inline void SetFailureMessage(const Aws::String& value) { m_failureMessageHasBeenSet = true; m_failureMessage = value; }
-    inline void SetFailureMessage(Aws::String&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::move(value); }
-    inline void SetFailureMessage(const char* value) { m_failureMessageHasBeenSet = true; m_failureMessage.assign(value); }
-    inline ExportDescription& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
-    inline ExportDescription& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
-    inline ExportDescription& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
+    template<typename FailureMessageT = Aws::String>
+    void SetFailureMessage(FailureMessageT&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::forward<FailureMessageT>(value); }
+    template<typename FailureMessageT = Aws::String>
+    ExportDescription& WithFailureMessage(FailureMessageT&& value) { SetFailureMessage(std::forward<FailureMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -273,19 +247,17 @@ namespace Model
      * <p>The format of the exported data. Valid values for <code>ExportFormat</code>
      * are <code>DYNAMODB_JSON</code> or <code>ION</code>.</p>
      */
-    inline const ExportFormat& GetExportFormat() const{ return m_exportFormat; }
+    inline ExportFormat GetExportFormat() const { return m_exportFormat; }
     inline bool ExportFormatHasBeenSet() const { return m_exportFormatHasBeenSet; }
-    inline void SetExportFormat(const ExportFormat& value) { m_exportFormatHasBeenSet = true; m_exportFormat = value; }
-    inline void SetExportFormat(ExportFormat&& value) { m_exportFormatHasBeenSet = true; m_exportFormat = std::move(value); }
-    inline ExportDescription& WithExportFormat(const ExportFormat& value) { SetExportFormat(value); return *this;}
-    inline ExportDescription& WithExportFormat(ExportFormat&& value) { SetExportFormat(std::move(value)); return *this;}
+    inline void SetExportFormat(ExportFormat value) { m_exportFormatHasBeenSet = true; m_exportFormat = value; }
+    inline ExportDescription& WithExportFormat(ExportFormat value) { SetExportFormat(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The billable size of the table export.</p>
      */
-    inline long long GetBilledSizeBytes() const{ return m_billedSizeBytes; }
+    inline long long GetBilledSizeBytes() const { return m_billedSizeBytes; }
     inline bool BilledSizeBytesHasBeenSet() const { return m_billedSizeBytesHasBeenSet; }
     inline void SetBilledSizeBytes(long long value) { m_billedSizeBytesHasBeenSet = true; m_billedSizeBytes = value; }
     inline ExportDescription& WithBilledSizeBytes(long long value) { SetBilledSizeBytes(value); return *this;}
@@ -295,7 +267,7 @@ namespace Model
     /**
      * <p>The number of items exported.</p>
      */
-    inline long long GetItemCount() const{ return m_itemCount; }
+    inline long long GetItemCount() const { return m_itemCount; }
     inline bool ItemCountHasBeenSet() const { return m_itemCountHasBeenSet; }
     inline void SetItemCount(long long value) { m_itemCountHasBeenSet = true; m_itemCount = value; }
     inline ExportDescription& WithItemCount(long long value) { SetItemCount(value); return *this;}
@@ -306,12 +278,10 @@ namespace Model
      * <p>The type of export that was performed. Valid values are
      * <code>FULL_EXPORT</code> or <code>INCREMENTAL_EXPORT</code>.</p>
      */
-    inline const ExportType& GetExportType() const{ return m_exportType; }
+    inline ExportType GetExportType() const { return m_exportType; }
     inline bool ExportTypeHasBeenSet() const { return m_exportTypeHasBeenSet; }
-    inline void SetExportType(const ExportType& value) { m_exportTypeHasBeenSet = true; m_exportType = value; }
-    inline void SetExportType(ExportType&& value) { m_exportTypeHasBeenSet = true; m_exportType = std::move(value); }
-    inline ExportDescription& WithExportType(const ExportType& value) { SetExportType(value); return *this;}
-    inline ExportDescription& WithExportType(ExportType&& value) { SetExportType(std::move(value)); return *this;}
+    inline void SetExportType(ExportType value) { m_exportTypeHasBeenSet = true; m_exportType = value; }
+    inline ExportDescription& WithExportType(ExportType value) { SetExportType(value); return *this;}
     ///@}
 
     ///@{
@@ -319,25 +289,25 @@ namespace Model
      * <p>Optional object containing the parameters specific to an incremental
      * export.</p>
      */
-    inline const IncrementalExportSpecification& GetIncrementalExportSpecification() const{ return m_incrementalExportSpecification; }
+    inline const IncrementalExportSpecification& GetIncrementalExportSpecification() const { return m_incrementalExportSpecification; }
     inline bool IncrementalExportSpecificationHasBeenSet() const { return m_incrementalExportSpecificationHasBeenSet; }
-    inline void SetIncrementalExportSpecification(const IncrementalExportSpecification& value) { m_incrementalExportSpecificationHasBeenSet = true; m_incrementalExportSpecification = value; }
-    inline void SetIncrementalExportSpecification(IncrementalExportSpecification&& value) { m_incrementalExportSpecificationHasBeenSet = true; m_incrementalExportSpecification = std::move(value); }
-    inline ExportDescription& WithIncrementalExportSpecification(const IncrementalExportSpecification& value) { SetIncrementalExportSpecification(value); return *this;}
-    inline ExportDescription& WithIncrementalExportSpecification(IncrementalExportSpecification&& value) { SetIncrementalExportSpecification(std::move(value)); return *this;}
+    template<typename IncrementalExportSpecificationT = IncrementalExportSpecification>
+    void SetIncrementalExportSpecification(IncrementalExportSpecificationT&& value) { m_incrementalExportSpecificationHasBeenSet = true; m_incrementalExportSpecification = std::forward<IncrementalExportSpecificationT>(value); }
+    template<typename IncrementalExportSpecificationT = IncrementalExportSpecification>
+    ExportDescription& WithIncrementalExportSpecification(IncrementalExportSpecificationT&& value) { SetIncrementalExportSpecification(std::forward<IncrementalExportSpecificationT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_exportArn;
     bool m_exportArnHasBeenSet = false;
 
-    ExportStatus m_exportStatus;
+    ExportStatus m_exportStatus{ExportStatus::NOT_SET};
     bool m_exportStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
     Aws::String m_exportManifest;
@@ -349,7 +319,7 @@ namespace Model
     Aws::String m_tableId;
     bool m_tableIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_exportTime;
+    Aws::Utils::DateTime m_exportTime{};
     bool m_exportTimeHasBeenSet = false;
 
     Aws::String m_clientToken;
@@ -364,7 +334,7 @@ namespace Model
     Aws::String m_s3Prefix;
     bool m_s3PrefixHasBeenSet = false;
 
-    S3SseAlgorithm m_s3SseAlgorithm;
+    S3SseAlgorithm m_s3SseAlgorithm{S3SseAlgorithm::NOT_SET};
     bool m_s3SseAlgorithmHasBeenSet = false;
 
     Aws::String m_s3SseKmsKeyId;
@@ -376,16 +346,16 @@ namespace Model
     Aws::String m_failureMessage;
     bool m_failureMessageHasBeenSet = false;
 
-    ExportFormat m_exportFormat;
+    ExportFormat m_exportFormat{ExportFormat::NOT_SET};
     bool m_exportFormatHasBeenSet = false;
 
-    long long m_billedSizeBytes;
+    long long m_billedSizeBytes{0};
     bool m_billedSizeBytesHasBeenSet = false;
 
-    long long m_itemCount;
+    long long m_itemCount{0};
     bool m_itemCountHasBeenSet = false;
 
-    ExportType m_exportType;
+    ExportType m_exportType{ExportType::NOT_SET};
     bool m_exportTypeHasBeenSet = false;
 
     IncrementalExportSpecification m_incrementalExportSpecification;

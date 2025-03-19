@@ -12,11 +12,6 @@ using namespace Aws::IoTManagedIntegrations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEventLogConfigurationRequest::DeleteEventLogConfigurationRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEventLogConfigurationRequest::SerializePayload() const
 {
   return {};

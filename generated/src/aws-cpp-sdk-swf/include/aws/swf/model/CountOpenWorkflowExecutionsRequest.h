@@ -25,7 +25,7 @@ namespace Model
   class CountOpenWorkflowExecutionsRequest : public SWFRequest
   {
   public:
-    AWS_SWF_API CountOpenWorkflowExecutionsRequest();
+    AWS_SWF_API CountOpenWorkflowExecutionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the domain containing the workflow executions to count.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline CountOpenWorkflowExecutionsRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline CountOpenWorkflowExecutionsRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline CountOpenWorkflowExecutionsRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    CountOpenWorkflowExecutionsRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +55,12 @@ namespace Model
      * <p>Specifies the start time criteria that workflow executions must meet in order
      * to be counted.</p>
      */
-    inline const ExecutionTimeFilter& GetStartTimeFilter() const{ return m_startTimeFilter; }
+    inline const ExecutionTimeFilter& GetStartTimeFilter() const { return m_startTimeFilter; }
     inline bool StartTimeFilterHasBeenSet() const { return m_startTimeFilterHasBeenSet; }
-    inline void SetStartTimeFilter(const ExecutionTimeFilter& value) { m_startTimeFilterHasBeenSet = true; m_startTimeFilter = value; }
-    inline void SetStartTimeFilter(ExecutionTimeFilter&& value) { m_startTimeFilterHasBeenSet = true; m_startTimeFilter = std::move(value); }
-    inline CountOpenWorkflowExecutionsRequest& WithStartTimeFilter(const ExecutionTimeFilter& value) { SetStartTimeFilter(value); return *this;}
-    inline CountOpenWorkflowExecutionsRequest& WithStartTimeFilter(ExecutionTimeFilter&& value) { SetStartTimeFilter(std::move(value)); return *this;}
+    template<typename StartTimeFilterT = ExecutionTimeFilter>
+    void SetStartTimeFilter(StartTimeFilterT&& value) { m_startTimeFilterHasBeenSet = true; m_startTimeFilter = std::forward<StartTimeFilterT>(value); }
+    template<typename StartTimeFilterT = ExecutionTimeFilter>
+    CountOpenWorkflowExecutionsRequest& WithStartTimeFilter(StartTimeFilterT&& value) { SetStartTimeFilter(std::forward<StartTimeFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +70,12 @@ namespace Model
      * are mutually exclusive. You can specify at most one of these in a request.</p>
      * 
      */
-    inline const WorkflowTypeFilter& GetTypeFilter() const{ return m_typeFilter; }
+    inline const WorkflowTypeFilter& GetTypeFilter() const { return m_typeFilter; }
     inline bool TypeFilterHasBeenSet() const { return m_typeFilterHasBeenSet; }
-    inline void SetTypeFilter(const WorkflowTypeFilter& value) { m_typeFilterHasBeenSet = true; m_typeFilter = value; }
-    inline void SetTypeFilter(WorkflowTypeFilter&& value) { m_typeFilterHasBeenSet = true; m_typeFilter = std::move(value); }
-    inline CountOpenWorkflowExecutionsRequest& WithTypeFilter(const WorkflowTypeFilter& value) { SetTypeFilter(value); return *this;}
-    inline CountOpenWorkflowExecutionsRequest& WithTypeFilter(WorkflowTypeFilter&& value) { SetTypeFilter(std::move(value)); return *this;}
+    template<typename TypeFilterT = WorkflowTypeFilter>
+    void SetTypeFilter(TypeFilterT&& value) { m_typeFilterHasBeenSet = true; m_typeFilter = std::forward<TypeFilterT>(value); }
+    template<typename TypeFilterT = WorkflowTypeFilter>
+    CountOpenWorkflowExecutionsRequest& WithTypeFilter(TypeFilterT&& value) { SetTypeFilter(std::forward<TypeFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +85,12 @@ namespace Model
      * and <code>tagFilter</code> are mutually exclusive. You can specify at most one
      * of these in a request.</p> 
      */
-    inline const TagFilter& GetTagFilter() const{ return m_tagFilter; }
+    inline const TagFilter& GetTagFilter() const { return m_tagFilter; }
     inline bool TagFilterHasBeenSet() const { return m_tagFilterHasBeenSet; }
-    inline void SetTagFilter(const TagFilter& value) { m_tagFilterHasBeenSet = true; m_tagFilter = value; }
-    inline void SetTagFilter(TagFilter&& value) { m_tagFilterHasBeenSet = true; m_tagFilter = std::move(value); }
-    inline CountOpenWorkflowExecutionsRequest& WithTagFilter(const TagFilter& value) { SetTagFilter(value); return *this;}
-    inline CountOpenWorkflowExecutionsRequest& WithTagFilter(TagFilter&& value) { SetTagFilter(std::move(value)); return *this;}
+    template<typename TagFilterT = TagFilter>
+    void SetTagFilter(TagFilterT&& value) { m_tagFilterHasBeenSet = true; m_tagFilter = std::forward<TagFilterT>(value); }
+    template<typename TagFilterT = TagFilter>
+    CountOpenWorkflowExecutionsRequest& WithTagFilter(TagFilterT&& value) { SetTagFilter(std::forward<TagFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +100,12 @@ namespace Model
      * <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You
      * can specify at most one of these in a request.</p> 
      */
-    inline const WorkflowExecutionFilter& GetExecutionFilter() const{ return m_executionFilter; }
+    inline const WorkflowExecutionFilter& GetExecutionFilter() const { return m_executionFilter; }
     inline bool ExecutionFilterHasBeenSet() const { return m_executionFilterHasBeenSet; }
-    inline void SetExecutionFilter(const WorkflowExecutionFilter& value) { m_executionFilterHasBeenSet = true; m_executionFilter = value; }
-    inline void SetExecutionFilter(WorkflowExecutionFilter&& value) { m_executionFilterHasBeenSet = true; m_executionFilter = std::move(value); }
-    inline CountOpenWorkflowExecutionsRequest& WithExecutionFilter(const WorkflowExecutionFilter& value) { SetExecutionFilter(value); return *this;}
-    inline CountOpenWorkflowExecutionsRequest& WithExecutionFilter(WorkflowExecutionFilter&& value) { SetExecutionFilter(std::move(value)); return *this;}
+    template<typename ExecutionFilterT = WorkflowExecutionFilter>
+    void SetExecutionFilter(ExecutionFilterT&& value) { m_executionFilterHasBeenSet = true; m_executionFilter = std::forward<ExecutionFilterT>(value); }
+    template<typename ExecutionFilterT = WorkflowExecutionFilter>
+    CountOpenWorkflowExecutionsRequest& WithExecutionFilter(ExecutionFilterT&& value) { SetExecutionFilter(std::forward<ExecutionFilterT>(value)); return *this;}
     ///@}
   private:
 

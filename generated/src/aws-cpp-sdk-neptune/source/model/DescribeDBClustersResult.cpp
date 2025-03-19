@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDBClustersResult::DescribeDBClustersResult()
-{
-}
-
 DescribeDBClustersResult::DescribeDBClustersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeDBClustersResult& DescribeDBClustersResult::operator =(const Aws::Amazon
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode dBClustersNode = resultNode.FirstChild("DBClusters");
     if(!dBClustersNode.IsNull())
     {
       XmlNode dBClustersMember = dBClustersNode.FirstChild("DBCluster");
+      m_dBClustersHasBeenSet = !dBClustersMember.IsNull();
       while(!dBClustersMember.IsNull())
       {
         m_dBClusters.push_back(dBClustersMember);
         dBClustersMember = dBClustersMember.NextNode("DBCluster");
       }
 
+      m_dBClustersHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Neptune::Model::DescribeDBClustersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

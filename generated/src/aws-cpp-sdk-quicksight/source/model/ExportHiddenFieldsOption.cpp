@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ExportHiddenFieldsOption::ExportHiddenFieldsOption() : 
-    m_availabilityStatus(DashboardBehavior::NOT_SET),
-    m_availabilityStatusHasBeenSet(false)
-{
-}
-
 ExportHiddenFieldsOption::ExportHiddenFieldsOption(JsonView jsonValue)
-  : ExportHiddenFieldsOption()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ExportHiddenFieldsOption& ExportHiddenFieldsOption::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("AvailabilityStatus"))
   {
     m_availabilityStatus = DashboardBehaviorMapper::GetDashboardBehaviorForName(jsonValue.GetString("AvailabilityStatus"));
-
     m_availabilityStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

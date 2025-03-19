@@ -18,23 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-DefaultWorkspaceCreationProperties::DefaultWorkspaceCreationProperties() : 
-    m_enableWorkDocs(false),
-    m_enableWorkDocsHasBeenSet(false),
-    m_enableInternetAccess(false),
-    m_enableInternetAccessHasBeenSet(false),
-    m_defaultOuHasBeenSet(false),
-    m_customSecurityGroupIdHasBeenSet(false),
-    m_userEnabledAsLocalAdministrator(false),
-    m_userEnabledAsLocalAdministratorHasBeenSet(false),
-    m_enableMaintenanceMode(false),
-    m_enableMaintenanceModeHasBeenSet(false),
-    m_instanceIamRoleArnHasBeenSet(false)
-{
-}
-
 DefaultWorkspaceCreationProperties::DefaultWorkspaceCreationProperties(JsonView jsonValue)
-  : DefaultWorkspaceCreationProperties()
 {
   *this = jsonValue;
 }
@@ -44,52 +28,38 @@ DefaultWorkspaceCreationProperties& DefaultWorkspaceCreationProperties::operator
   if(jsonValue.ValueExists("EnableWorkDocs"))
   {
     m_enableWorkDocs = jsonValue.GetBool("EnableWorkDocs");
-
     m_enableWorkDocsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableInternetAccess"))
   {
     m_enableInternetAccess = jsonValue.GetBool("EnableInternetAccess");
-
     m_enableInternetAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultOu"))
   {
     m_defaultOu = jsonValue.GetString("DefaultOu");
-
     m_defaultOuHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomSecurityGroupId"))
   {
     m_customSecurityGroupId = jsonValue.GetString("CustomSecurityGroupId");
-
     m_customSecurityGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserEnabledAsLocalAdministrator"))
   {
     m_userEnabledAsLocalAdministrator = jsonValue.GetBool("UserEnabledAsLocalAdministrator");
-
     m_userEnabledAsLocalAdministratorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableMaintenanceMode"))
   {
     m_enableMaintenanceMode = jsonValue.GetBool("EnableMaintenanceMode");
-
     m_enableMaintenanceModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceIamRoleArn"))
   {
     m_instanceIamRoleArn = jsonValue.GetString("InstanceIamRoleArn");
-
     m_instanceIamRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

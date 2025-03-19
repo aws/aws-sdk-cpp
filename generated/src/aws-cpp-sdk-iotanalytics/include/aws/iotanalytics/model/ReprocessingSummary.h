@@ -33,7 +33,7 @@ namespace Model
   class ReprocessingSummary
   {
   public:
-    AWS_IOTANALYTICS_API ReprocessingSummary();
+    AWS_IOTANALYTICS_API ReprocessingSummary() = default;
     AWS_IOTANALYTICS_API ReprocessingSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API ReprocessingSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,48 +44,44 @@ namespace Model
      * <p>The <code>reprocessingId</code> returned by
      * <code>StartPipelineReprocessing</code>.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ReprocessingSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ReprocessingSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ReprocessingSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ReprocessingSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the pipeline reprocessing.</p>
      */
-    inline const ReprocessingStatus& GetStatus() const{ return m_status; }
+    inline ReprocessingStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ReprocessingStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ReprocessingStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ReprocessingSummary& WithStatus(const ReprocessingStatus& value) { SetStatus(value); return *this;}
-    inline ReprocessingSummary& WithStatus(ReprocessingStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ReprocessingStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ReprocessingSummary& WithStatus(ReprocessingStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the pipeline reprocessing was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline ReprocessingSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline ReprocessingSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    ReprocessingSummary& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    ReprocessingStatus m_status;
+    ReprocessingStatus m_status{ReprocessingStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
   };
 

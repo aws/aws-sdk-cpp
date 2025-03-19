@@ -22,7 +22,7 @@ namespace Model
   class DescribeJobsRequest : public DrsRequest
   {
   public:
-    AWS_DRS_API DescribeJobsRequest();
+    AWS_DRS_API DescribeJobsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,19 +37,19 @@ namespace Model
     /**
      * <p>A set of filters by which to return Jobs.</p>
      */
-    inline const DescribeJobsRequestFilters& GetFilters() const{ return m_filters; }
+    inline const DescribeJobsRequestFilters& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const DescribeJobsRequestFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(DescribeJobsRequestFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeJobsRequest& WithFilters(const DescribeJobsRequestFilters& value) { SetFilters(value); return *this;}
-    inline DescribeJobsRequest& WithFilters(DescribeJobsRequestFilters&& value) { SetFilters(std::move(value)); return *this;}
+    template<typename FiltersT = DescribeJobsRequestFilters>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = DescribeJobsRequestFilters>
+    DescribeJobsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Maximum number of Jobs to retrieve.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -59,21 +59,19 @@ namespace Model
     /**
      * <p>The token of the next Job to retrieve.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeJobsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     DescribeJobsRequestFilters m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

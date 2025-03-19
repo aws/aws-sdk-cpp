@@ -33,7 +33,7 @@ namespace Model
   class EngagementCustomerProjectDetails
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API EngagementCustomerProjectDetails();
+    AWS_PARTNERCENTRALSELLING_API EngagementCustomerProjectDetails() = default;
     AWS_PARTNERCENTRALSELLING_API EngagementCustomerProjectDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API EngagementCustomerProjectDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,42 +43,36 @@ namespace Model
     /**
      * <p>A description of the business problem the project aims to solve.</p>
      */
-    inline const Aws::String& GetBusinessProblem() const{ return m_businessProblem; }
+    inline const Aws::String& GetBusinessProblem() const { return m_businessProblem; }
     inline bool BusinessProblemHasBeenSet() const { return m_businessProblemHasBeenSet; }
-    inline void SetBusinessProblem(const Aws::String& value) { m_businessProblemHasBeenSet = true; m_businessProblem = value; }
-    inline void SetBusinessProblem(Aws::String&& value) { m_businessProblemHasBeenSet = true; m_businessProblem = std::move(value); }
-    inline void SetBusinessProblem(const char* value) { m_businessProblemHasBeenSet = true; m_businessProblem.assign(value); }
-    inline EngagementCustomerProjectDetails& WithBusinessProblem(const Aws::String& value) { SetBusinessProblem(value); return *this;}
-    inline EngagementCustomerProjectDetails& WithBusinessProblem(Aws::String&& value) { SetBusinessProblem(std::move(value)); return *this;}
-    inline EngagementCustomerProjectDetails& WithBusinessProblem(const char* value) { SetBusinessProblem(value); return *this;}
+    template<typename BusinessProblemT = Aws::String>
+    void SetBusinessProblem(BusinessProblemT&& value) { m_businessProblemHasBeenSet = true; m_businessProblem = std::forward<BusinessProblemT>(value); }
+    template<typename BusinessProblemT = Aws::String>
+    EngagementCustomerProjectDetails& WithBusinessProblem(BusinessProblemT&& value) { SetBusinessProblem(std::forward<BusinessProblemT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target completion date for the customer's project.</p>
      */
-    inline const Aws::String& GetTargetCompletionDate() const{ return m_targetCompletionDate; }
+    inline const Aws::String& GetTargetCompletionDate() const { return m_targetCompletionDate; }
     inline bool TargetCompletionDateHasBeenSet() const { return m_targetCompletionDateHasBeenSet; }
-    inline void SetTargetCompletionDate(const Aws::String& value) { m_targetCompletionDateHasBeenSet = true; m_targetCompletionDate = value; }
-    inline void SetTargetCompletionDate(Aws::String&& value) { m_targetCompletionDateHasBeenSet = true; m_targetCompletionDate = std::move(value); }
-    inline void SetTargetCompletionDate(const char* value) { m_targetCompletionDateHasBeenSet = true; m_targetCompletionDate.assign(value); }
-    inline EngagementCustomerProjectDetails& WithTargetCompletionDate(const Aws::String& value) { SetTargetCompletionDate(value); return *this;}
-    inline EngagementCustomerProjectDetails& WithTargetCompletionDate(Aws::String&& value) { SetTargetCompletionDate(std::move(value)); return *this;}
-    inline EngagementCustomerProjectDetails& WithTargetCompletionDate(const char* value) { SetTargetCompletionDate(value); return *this;}
+    template<typename TargetCompletionDateT = Aws::String>
+    void SetTargetCompletionDate(TargetCompletionDateT&& value) { m_targetCompletionDateHasBeenSet = true; m_targetCompletionDate = std::forward<TargetCompletionDateT>(value); }
+    template<typename TargetCompletionDateT = Aws::String>
+    EngagementCustomerProjectDetails& WithTargetCompletionDate(TargetCompletionDateT&& value) { SetTargetCompletionDate(std::forward<TargetCompletionDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The title of the project.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline EngagementCustomerProjectDetails& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline EngagementCustomerProjectDetails& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline EngagementCustomerProjectDetails& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    EngagementCustomerProjectDetails& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
   private:
 

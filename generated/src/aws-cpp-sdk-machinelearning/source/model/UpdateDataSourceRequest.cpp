@@ -12,12 +12,6 @@ using namespace Aws::MachineLearning::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDataSourceRequest::UpdateDataSourceRequest() : 
-    m_dataSourceIdHasBeenSet(false),
-    m_dataSourceNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDataSourceRequest::SerializePayload() const
 {
   JsonValue payload;

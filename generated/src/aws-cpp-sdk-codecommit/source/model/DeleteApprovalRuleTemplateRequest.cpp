@@ -12,11 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteApprovalRuleTemplateRequest::DeleteApprovalRuleTemplateRequest() : 
-    m_approvalRuleTemplateNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteApprovalRuleTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

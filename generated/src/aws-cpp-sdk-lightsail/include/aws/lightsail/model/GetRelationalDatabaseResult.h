@@ -28,7 +28,7 @@ namespace Model
   class GetRelationalDatabaseResult
   {
   public:
-    AWS_LIGHTSAIL_API GetRelationalDatabaseResult();
+    AWS_LIGHTSAIL_API GetRelationalDatabaseResult() = default;
     AWS_LIGHTSAIL_API GetRelationalDatabaseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetRelationalDatabaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>An object describing the specified database.</p>
      */
-    inline const RelationalDatabase& GetRelationalDatabase() const{ return m_relationalDatabase; }
-    inline void SetRelationalDatabase(const RelationalDatabase& value) { m_relationalDatabase = value; }
-    inline void SetRelationalDatabase(RelationalDatabase&& value) { m_relationalDatabase = std::move(value); }
-    inline GetRelationalDatabaseResult& WithRelationalDatabase(const RelationalDatabase& value) { SetRelationalDatabase(value); return *this;}
-    inline GetRelationalDatabaseResult& WithRelationalDatabase(RelationalDatabase&& value) { SetRelationalDatabase(std::move(value)); return *this;}
+    inline const RelationalDatabase& GetRelationalDatabase() const { return m_relationalDatabase; }
+    template<typename RelationalDatabaseT = RelationalDatabase>
+    void SetRelationalDatabase(RelationalDatabaseT&& value) { m_relationalDatabaseHasBeenSet = true; m_relationalDatabase = std::forward<RelationalDatabaseT>(value); }
+    template<typename RelationalDatabaseT = RelationalDatabase>
+    GetRelationalDatabaseResult& WithRelationalDatabase(RelationalDatabaseT&& value) { SetRelationalDatabase(std::forward<RelationalDatabaseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRelationalDatabaseResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRelationalDatabaseResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRelationalDatabaseResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRelationalDatabaseResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RelationalDatabase m_relationalDatabase;
+    bool m_relationalDatabaseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

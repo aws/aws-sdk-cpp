@@ -18,17 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-KinesisVideoStreamSourceRuntimeConfiguration::KinesisVideoStreamSourceRuntimeConfiguration() : 
-    m_streamsHasBeenSet(false),
-    m_mediaEncoding(MediaEncoding::NOT_SET),
-    m_mediaEncodingHasBeenSet(false),
-    m_mediaSampleRate(0),
-    m_mediaSampleRateHasBeenSet(false)
-{
-}
-
 KinesisVideoStreamSourceRuntimeConfiguration::KinesisVideoStreamSourceRuntimeConfiguration(JsonView jsonValue)
-  : KinesisVideoStreamSourceRuntimeConfiguration()
 {
   *this = jsonValue;
 }
@@ -44,21 +34,16 @@ KinesisVideoStreamSourceRuntimeConfiguration& KinesisVideoStreamSourceRuntimeCon
     }
     m_streamsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaEncoding"))
   {
     m_mediaEncoding = MediaEncodingMapper::GetMediaEncodingForName(jsonValue.GetString("MediaEncoding"));
-
     m_mediaEncodingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaSampleRate"))
   {
     m_mediaSampleRate = jsonValue.GetInteger("MediaSampleRate");
-
     m_mediaSampleRateHasBeenSet = true;
   }
-
   return *this;
 }
 

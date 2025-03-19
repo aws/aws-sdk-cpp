@@ -34,7 +34,7 @@ namespace Model
   class KinesisFirehoseOutputUpdate
   {
   public:
-    AWS_KINESISANALYTICSV2_API KinesisFirehoseOutputUpdate();
+    AWS_KINESISANALYTICSV2_API KinesisFirehoseOutputUpdate() = default;
     AWS_KINESISANALYTICSV2_API KinesisFirehoseOutputUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API KinesisFirehoseOutputUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the delivery stream to write to. </p>
      */
-    inline const Aws::String& GetResourceARNUpdate() const{ return m_resourceARNUpdate; }
+    inline const Aws::String& GetResourceARNUpdate() const { return m_resourceARNUpdate; }
     inline bool ResourceARNUpdateHasBeenSet() const { return m_resourceARNUpdateHasBeenSet; }
-    inline void SetResourceARNUpdate(const Aws::String& value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate = value; }
-    inline void SetResourceARNUpdate(Aws::String&& value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate = std::move(value); }
-    inline void SetResourceARNUpdate(const char* value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate.assign(value); }
-    inline KinesisFirehoseOutputUpdate& WithResourceARNUpdate(const Aws::String& value) { SetResourceARNUpdate(value); return *this;}
-    inline KinesisFirehoseOutputUpdate& WithResourceARNUpdate(Aws::String&& value) { SetResourceARNUpdate(std::move(value)); return *this;}
-    inline KinesisFirehoseOutputUpdate& WithResourceARNUpdate(const char* value) { SetResourceARNUpdate(value); return *this;}
+    template<typename ResourceARNUpdateT = Aws::String>
+    void SetResourceARNUpdate(ResourceARNUpdateT&& value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate = std::forward<ResourceARNUpdateT>(value); }
+    template<typename ResourceARNUpdateT = Aws::String>
+    KinesisFirehoseOutputUpdate& WithResourceARNUpdate(ResourceARNUpdateT&& value) { SetResourceARNUpdate(std::forward<ResourceARNUpdateT>(value)); return *this;}
     ///@}
   private:
 

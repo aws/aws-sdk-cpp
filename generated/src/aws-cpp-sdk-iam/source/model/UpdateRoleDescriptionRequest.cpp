@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-UpdateRoleDescriptionRequest::UpdateRoleDescriptionRequest() : 
-    m_roleNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRoleDescriptionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

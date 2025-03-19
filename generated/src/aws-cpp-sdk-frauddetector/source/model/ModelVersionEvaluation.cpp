@@ -18,15 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-ModelVersionEvaluation::ModelVersionEvaluation() : 
-    m_outputVariableNameHasBeenSet(false),
-    m_evaluationScoreHasBeenSet(false),
-    m_predictionExplanationsHasBeenSet(false)
-{
-}
-
 ModelVersionEvaluation::ModelVersionEvaluation(JsonView jsonValue)
-  : ModelVersionEvaluation()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ModelVersionEvaluation& ModelVersionEvaluation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("outputVariableName"))
   {
     m_outputVariableName = jsonValue.GetString("outputVariableName");
-
     m_outputVariableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("evaluationScore"))
   {
     m_evaluationScore = jsonValue.GetString("evaluationScore");
-
     m_evaluationScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("predictionExplanations"))
   {
     m_predictionExplanations = jsonValue.GetObject("predictionExplanations");
-
     m_predictionExplanationsHasBeenSet = true;
   }
-
   return *this;
 }
 

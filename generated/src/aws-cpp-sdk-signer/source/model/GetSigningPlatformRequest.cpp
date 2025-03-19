@@ -12,11 +12,6 @@ using namespace Aws::signer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSigningPlatformRequest::GetSigningPlatformRequest() : 
-    m_platformIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSigningPlatformRequest::SerializePayload() const
 {
   return {};

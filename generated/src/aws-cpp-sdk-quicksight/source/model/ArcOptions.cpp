@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ArcOptions::ArcOptions() : 
-    m_arcThickness(ArcThickness::NOT_SET),
-    m_arcThicknessHasBeenSet(false)
-{
-}
-
 ArcOptions::ArcOptions(JsonView jsonValue)
-  : ArcOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ArcOptions& ArcOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ArcThickness"))
   {
     m_arcThickness = ArcThicknessMapper::GetArcThicknessForName(jsonValue.GetString("ArcThickness"));
-
     m_arcThicknessHasBeenSet = true;
   }
-
   return *this;
 }
 

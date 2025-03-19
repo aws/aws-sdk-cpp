@@ -18,19 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-NetworkRoute::NetworkRoute() : 
-    m_destinationCidrBlockHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false),
-    m_state(RouteState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_type(RouteType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 NetworkRoute::NetworkRoute(JsonView jsonValue)
-  : NetworkRoute()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ NetworkRoute& NetworkRoute::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DestinationCidrBlock"))
   {
     m_destinationCidrBlock = jsonValue.GetString("DestinationCidrBlock");
-
     m_destinationCidrBlockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Destinations"))
   {
     Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("Destinations");
@@ -53,28 +39,21 @@ NetworkRoute& NetworkRoute::operator =(JsonView jsonValue)
     }
     m_destinationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrefixListId"))
   {
     m_prefixListId = jsonValue.GetString("PrefixListId");
-
     m_prefixListIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = RouteStateMapper::GetRouteStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = RouteTypeMapper::GetRouteTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

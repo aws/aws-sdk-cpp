@@ -12,25 +12,6 @@ using namespace Aws::IoTTwinMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPropertyValueHistoryRequest::GetPropertyValueHistoryRequest() : 
-    m_workspaceIdHasBeenSet(false),
-    m_entityIdHasBeenSet(false),
-    m_componentNameHasBeenSet(false),
-    m_componentPathHasBeenSet(false),
-    m_componentTypeIdHasBeenSet(false),
-    m_selectedPropertiesHasBeenSet(false),
-    m_propertyFiltersHasBeenSet(false),
-    m_interpolationHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_orderByTime(OrderByTime::NOT_SET),
-    m_orderByTimeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 Aws::String GetPropertyValueHistoryRequest::SerializePayload() const
 {
   JsonValue payload;

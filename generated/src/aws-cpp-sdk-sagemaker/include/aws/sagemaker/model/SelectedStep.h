@@ -32,7 +32,7 @@ namespace Model
   class SelectedStep
   {
   public:
-    AWS_SAGEMAKER_API SelectedStep();
+    AWS_SAGEMAKER_API SelectedStep() = default;
     AWS_SAGEMAKER_API SelectedStep(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API SelectedStep& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the pipeline step.</p>
      */
-    inline const Aws::String& GetStepName() const{ return m_stepName; }
+    inline const Aws::String& GetStepName() const { return m_stepName; }
     inline bool StepNameHasBeenSet() const { return m_stepNameHasBeenSet; }
-    inline void SetStepName(const Aws::String& value) { m_stepNameHasBeenSet = true; m_stepName = value; }
-    inline void SetStepName(Aws::String&& value) { m_stepNameHasBeenSet = true; m_stepName = std::move(value); }
-    inline void SetStepName(const char* value) { m_stepNameHasBeenSet = true; m_stepName.assign(value); }
-    inline SelectedStep& WithStepName(const Aws::String& value) { SetStepName(value); return *this;}
-    inline SelectedStep& WithStepName(Aws::String&& value) { SetStepName(std::move(value)); return *this;}
-    inline SelectedStep& WithStepName(const char* value) { SetStepName(value); return *this;}
+    template<typename StepNameT = Aws::String>
+    void SetStepName(StepNameT&& value) { m_stepNameHasBeenSet = true; m_stepName = std::forward<StepNameT>(value); }
+    template<typename StepNameT = Aws::String>
+    SelectedStep& WithStepName(StepNameT&& value) { SetStepName(std::forward<StepNameT>(value)); return *this;}
     ///@}
   private:
 

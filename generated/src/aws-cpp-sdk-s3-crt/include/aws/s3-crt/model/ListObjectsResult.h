@@ -32,7 +32,7 @@ namespace Model
   class ListObjectsResult
   {
   public:
-    AWS_S3CRT_API ListObjectsResult();
+    AWS_S3CRT_API ListObjectsResult() = default;
     AWS_S3CRT_API ListObjectsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3CRT_API ListObjectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -42,8 +42,8 @@ namespace Model
      * <p>A flag that indicates whether Amazon S3 returned all of the results that
      * satisfied the search criteria.</p>
      */
-    inline bool GetIsTruncated() const{ return m_isTruncated; }
-    inline void SetIsTruncated(bool value) { m_isTruncated = value; }
+    inline bool GetIsTruncated() const { return m_isTruncated; }
+    inline void SetIsTruncated(bool value) { m_isTruncatedHasBeenSet = true; m_isTruncated = value; }
     inline ListObjectsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
     ///@}
 
@@ -52,13 +52,11 @@ namespace Model
      * <p>Indicates where in the bucket listing begins. Marker is included in the
      * response if it was sent with the request.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline ListObjectsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListObjectsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListObjectsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListObjectsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,52 +72,46 @@ namespace Model
      * parameter in the subsequent request to get the next set of object keys.</p>
      * 
      */
-    inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
-    inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
-    inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
-    inline ListObjectsResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-    inline ListObjectsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-    inline ListObjectsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
+    template<typename NextMarkerT = Aws::String>
+    void SetNextMarker(NextMarkerT&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::forward<NextMarkerT>(value); }
+    template<typename NextMarkerT = Aws::String>
+    ListObjectsResult& WithNextMarker(NextMarkerT&& value) { SetNextMarker(std::forward<NextMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Metadata about each object returned.</p>
      */
-    inline const Aws::Vector<Object>& GetContents() const{ return m_contents; }
-    inline void SetContents(const Aws::Vector<Object>& value) { m_contents = value; }
-    inline void SetContents(Aws::Vector<Object>&& value) { m_contents = std::move(value); }
-    inline ListObjectsResult& WithContents(const Aws::Vector<Object>& value) { SetContents(value); return *this;}
-    inline ListObjectsResult& WithContents(Aws::Vector<Object>&& value) { SetContents(std::move(value)); return *this;}
-    inline ListObjectsResult& AddContents(const Object& value) { m_contents.push_back(value); return *this; }
-    inline ListObjectsResult& AddContents(Object&& value) { m_contents.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Object>& GetContents() const { return m_contents; }
+    template<typename ContentsT = Aws::Vector<Object>>
+    void SetContents(ContentsT&& value) { m_contentsHasBeenSet = true; m_contents = std::forward<ContentsT>(value); }
+    template<typename ContentsT = Aws::Vector<Object>>
+    ListObjectsResult& WithContents(ContentsT&& value) { SetContents(std::forward<ContentsT>(value)); return *this;}
+    template<typename ContentsT = Object>
+    ListObjectsResult& AddContents(ContentsT&& value) { m_contentsHasBeenSet = true; m_contents.emplace_back(std::forward<ContentsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The bucket name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline ListObjectsResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ListObjectsResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ListObjectsResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ListObjectsResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Keys that begin with the indicated prefix.</p>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
-    inline void SetPrefix(const Aws::String& value) { m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefix.assign(value); }
-    inline ListObjectsResult& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline ListObjectsResult& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline ListObjectsResult& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    ListObjectsResult& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,21 +122,19 @@ namespace Model
      * elsewhere in the response. Each rolled-up result counts as only one return
      * against the <code>MaxKeys</code> value.</p>
      */
-    inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
-    inline void SetDelimiter(const Aws::String& value) { m_delimiter = value; }
-    inline void SetDelimiter(Aws::String&& value) { m_delimiter = std::move(value); }
-    inline void SetDelimiter(const char* value) { m_delimiter.assign(value); }
-    inline ListObjectsResult& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
-    inline ListObjectsResult& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
-    inline ListObjectsResult& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
+    inline const Aws::String& GetDelimiter() const { return m_delimiter; }
+    template<typename DelimiterT = Aws::String>
+    void SetDelimiter(DelimiterT&& value) { m_delimiterHasBeenSet = true; m_delimiter = std::forward<DelimiterT>(value); }
+    template<typename DelimiterT = Aws::String>
+    ListObjectsResult& WithDelimiter(DelimiterT&& value) { SetDelimiter(std::forward<DelimiterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of keys returned in the response body.</p>
      */
-    inline int GetMaxKeys() const{ return m_maxKeys; }
-    inline void SetMaxKeys(int value) { m_maxKeys = value; }
+    inline int GetMaxKeys() const { return m_maxKeys; }
+    inline void SetMaxKeys(int value) { m_maxKeysHasBeenSet = true; m_maxKeys = value; }
     inline ListObjectsResult& WithMaxKeys(int value) { SetMaxKeys(value); return *this;}
     ///@}
 
@@ -162,13 +152,13 @@ namespace Model
      * <code>notes/summer/</code>. All of the keys that roll up into a common prefix
      * count as a single return when calculating the number of returns.</p>
      */
-    inline const Aws::Vector<CommonPrefix>& GetCommonPrefixes() const{ return m_commonPrefixes; }
-    inline void SetCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { m_commonPrefixes = value; }
-    inline void SetCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { m_commonPrefixes = std::move(value); }
-    inline ListObjectsResult& WithCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { SetCommonPrefixes(value); return *this;}
-    inline ListObjectsResult& WithCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { SetCommonPrefixes(std::move(value)); return *this;}
-    inline ListObjectsResult& AddCommonPrefixes(const CommonPrefix& value) { m_commonPrefixes.push_back(value); return *this; }
-    inline ListObjectsResult& AddCommonPrefixes(CommonPrefix&& value) { m_commonPrefixes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CommonPrefix>& GetCommonPrefixes() const { return m_commonPrefixes; }
+    template<typename CommonPrefixesT = Aws::Vector<CommonPrefix>>
+    void SetCommonPrefixes(CommonPrefixesT&& value) { m_commonPrefixesHasBeenSet = true; m_commonPrefixes = std::forward<CommonPrefixesT>(value); }
+    template<typename CommonPrefixesT = Aws::Vector<CommonPrefix>>
+    ListObjectsResult& WithCommonPrefixes(CommonPrefixesT&& value) { SetCommonPrefixes(std::forward<CommonPrefixesT>(value)); return *this;}
+    template<typename CommonPrefixesT = CommonPrefix>
+    ListObjectsResult& AddCommonPrefixes(CommonPrefixesT&& value) { m_commonPrefixesHasBeenSet = true; m_commonPrefixes.emplace_back(std::forward<CommonPrefixesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -188,57 +178,63 @@ namespace Model
      * <code>test_file(3).png</code> will appear as
      * <code>test_file%283%29.png</code>.</p> 
      */
-    inline const EncodingType& GetEncodingType() const{ return m_encodingType; }
-    inline void SetEncodingType(const EncodingType& value) { m_encodingType = value; }
-    inline void SetEncodingType(EncodingType&& value) { m_encodingType = std::move(value); }
-    inline ListObjectsResult& WithEncodingType(const EncodingType& value) { SetEncodingType(value); return *this;}
-    inline ListObjectsResult& WithEncodingType(EncodingType&& value) { SetEncodingType(std::move(value)); return *this;}
+    inline EncodingType GetEncodingType() const { return m_encodingType; }
+    inline void SetEncodingType(EncodingType value) { m_encodingTypeHasBeenSet = true; m_encodingType = value; }
+    inline ListObjectsResult& WithEncodingType(EncodingType value) { SetEncodingType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const RequestCharged& GetRequestCharged() const{ return m_requestCharged; }
-    inline void SetRequestCharged(const RequestCharged& value) { m_requestCharged = value; }
-    inline void SetRequestCharged(RequestCharged&& value) { m_requestCharged = std::move(value); }
-    inline ListObjectsResult& WithRequestCharged(const RequestCharged& value) { SetRequestCharged(value); return *this;}
-    inline ListObjectsResult& WithRequestCharged(RequestCharged&& value) { SetRequestCharged(std::move(value)); return *this;}
+    inline RequestCharged GetRequestCharged() const { return m_requestCharged; }
+    inline void SetRequestCharged(RequestCharged value) { m_requestChargedHasBeenSet = true; m_requestCharged = value; }
+    inline ListObjectsResult& WithRequestCharged(RequestCharged value) { SetRequestCharged(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListObjectsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListObjectsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListObjectsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListObjectsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_isTruncated;
+    bool m_isTruncated{false};
+    bool m_isTruncatedHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_nextMarker;
+    bool m_nextMarkerHasBeenSet = false;
 
     Aws::Vector<Object> m_contents;
+    bool m_contentsHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_prefix;
+    bool m_prefixHasBeenSet = false;
 
     Aws::String m_delimiter;
+    bool m_delimiterHasBeenSet = false;
 
-    int m_maxKeys;
+    int m_maxKeys{0};
+    bool m_maxKeysHasBeenSet = false;
 
     Aws::Vector<CommonPrefix> m_commonPrefixes;
+    bool m_commonPrefixesHasBeenSet = false;
 
-    EncodingType m_encodingType;
+    EncodingType m_encodingType{EncodingType::NOT_SET};
+    bool m_encodingTypeHasBeenSet = false;
 
-    RequestCharged m_requestCharged;
+    RequestCharged m_requestCharged{RequestCharged::NOT_SET};
+    bool m_requestChargedHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

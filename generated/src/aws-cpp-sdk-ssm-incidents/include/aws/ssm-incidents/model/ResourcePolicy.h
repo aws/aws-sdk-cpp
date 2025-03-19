@@ -32,7 +32,7 @@ namespace Model
   class ResourcePolicy
   {
   public:
-    AWS_SSMINCIDENTS_API ResourcePolicy();
+    AWS_SSMINCIDENTS_API ResourcePolicy() = default;
     AWS_SSMINCIDENTS_API ResourcePolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMINCIDENTS_API ResourcePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The JSON blob that describes the policy.</p>
      */
-    inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
+    inline const Aws::String& GetPolicyDocument() const { return m_policyDocument; }
     inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
-    inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
-    inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::move(value); }
-    inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
-    inline ResourcePolicy& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
-    inline ResourcePolicy& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
-    inline ResourcePolicy& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
+    template<typename PolicyDocumentT = Aws::String>
+    void SetPolicyDocument(PolicyDocumentT&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::forward<PolicyDocumentT>(value); }
+    template<typename PolicyDocumentT = Aws::String>
+    ResourcePolicy& WithPolicyDocument(PolicyDocumentT&& value) { SetPolicyDocument(std::forward<PolicyDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the resource policy.</p>
      */
-    inline const Aws::String& GetPolicyId() const{ return m_policyId; }
+    inline const Aws::String& GetPolicyId() const { return m_policyId; }
     inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
-    inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
-    inline void SetPolicyId(Aws::String&& value) { m_policyIdHasBeenSet = true; m_policyId = std::move(value); }
-    inline void SetPolicyId(const char* value) { m_policyIdHasBeenSet = true; m_policyId.assign(value); }
-    inline ResourcePolicy& WithPolicyId(const Aws::String& value) { SetPolicyId(value); return *this;}
-    inline ResourcePolicy& WithPolicyId(Aws::String&& value) { SetPolicyId(std::move(value)); return *this;}
-    inline ResourcePolicy& WithPolicyId(const char* value) { SetPolicyId(value); return *this;}
+    template<typename PolicyIdT = Aws::String>
+    void SetPolicyId(PolicyIdT&& value) { m_policyIdHasBeenSet = true; m_policyId = std::forward<PolicyIdT>(value); }
+    template<typename PolicyIdT = Aws::String>
+    ResourcePolicy& WithPolicyId(PolicyIdT&& value) { SetPolicyId(std::forward<PolicyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +67,12 @@ namespace Model
      * <p>The Amazon Web Services Region that policy allows resources to be used
      * in.</p>
      */
-    inline const Aws::String& GetRamResourceShareRegion() const{ return m_ramResourceShareRegion; }
+    inline const Aws::String& GetRamResourceShareRegion() const { return m_ramResourceShareRegion; }
     inline bool RamResourceShareRegionHasBeenSet() const { return m_ramResourceShareRegionHasBeenSet; }
-    inline void SetRamResourceShareRegion(const Aws::String& value) { m_ramResourceShareRegionHasBeenSet = true; m_ramResourceShareRegion = value; }
-    inline void SetRamResourceShareRegion(Aws::String&& value) { m_ramResourceShareRegionHasBeenSet = true; m_ramResourceShareRegion = std::move(value); }
-    inline void SetRamResourceShareRegion(const char* value) { m_ramResourceShareRegionHasBeenSet = true; m_ramResourceShareRegion.assign(value); }
-    inline ResourcePolicy& WithRamResourceShareRegion(const Aws::String& value) { SetRamResourceShareRegion(value); return *this;}
-    inline ResourcePolicy& WithRamResourceShareRegion(Aws::String&& value) { SetRamResourceShareRegion(std::move(value)); return *this;}
-    inline ResourcePolicy& WithRamResourceShareRegion(const char* value) { SetRamResourceShareRegion(value); return *this;}
+    template<typename RamResourceShareRegionT = Aws::String>
+    void SetRamResourceShareRegion(RamResourceShareRegionT&& value) { m_ramResourceShareRegionHasBeenSet = true; m_ramResourceShareRegion = std::forward<RamResourceShareRegionT>(value); }
+    template<typename RamResourceShareRegionT = Aws::String>
+    ResourcePolicy& WithRamResourceShareRegion(RamResourceShareRegionT&& value) { SetRamResourceShareRegion(std::forward<RamResourceShareRegionT>(value)); return *this;}
     ///@}
   private:
 

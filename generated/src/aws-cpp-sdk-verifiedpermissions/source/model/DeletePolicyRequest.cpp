@@ -12,12 +12,6 @@ using namespace Aws::VerifiedPermissions::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePolicyRequest::DeletePolicyRequest() : 
-    m_policyStoreIdHasBeenSet(false),
-    m_policyIdHasBeenSet(false)
-{
-}
-
 Aws::String DeletePolicyRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,16 +18,7 @@ namespace CodeGuruProfiler
 namespace Model
 {
 
-AnomalyInstance::AnomalyInstance() : 
-    m_endTimeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_userFeedbackHasBeenSet(false)
-{
-}
-
 AnomalyInstance::AnomalyInstance(JsonView jsonValue)
-  : AnomalyInstance()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AnomalyInstance& AnomalyInstance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userFeedback"))
   {
     m_userFeedback = jsonValue.GetObject("userFeedback");
-
     m_userFeedbackHasBeenSet = true;
   }
-
   return *this;
 }
 

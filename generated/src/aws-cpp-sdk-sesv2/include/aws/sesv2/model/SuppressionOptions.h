@@ -33,7 +33,7 @@ namespace Model
   class SuppressionOptions
   {
   public:
-    AWS_SESV2_API SuppressionOptions();
+    AWS_SESV2_API SuppressionOptions() = default;
     AWS_SESV2_API SuppressionOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API SuppressionOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,13 @@ namespace Model
      * Amazon SES adds an email address to the suppression list for your account when a
      * message sent to that address results in a hard bounce.</p> </li> </ul>
      */
-    inline const Aws::Vector<SuppressionListReason>& GetSuppressedReasons() const{ return m_suppressedReasons; }
+    inline const Aws::Vector<SuppressionListReason>& GetSuppressedReasons() const { return m_suppressedReasons; }
     inline bool SuppressedReasonsHasBeenSet() const { return m_suppressedReasonsHasBeenSet; }
-    inline void SetSuppressedReasons(const Aws::Vector<SuppressionListReason>& value) { m_suppressedReasonsHasBeenSet = true; m_suppressedReasons = value; }
-    inline void SetSuppressedReasons(Aws::Vector<SuppressionListReason>&& value) { m_suppressedReasonsHasBeenSet = true; m_suppressedReasons = std::move(value); }
-    inline SuppressionOptions& WithSuppressedReasons(const Aws::Vector<SuppressionListReason>& value) { SetSuppressedReasons(value); return *this;}
-    inline SuppressionOptions& WithSuppressedReasons(Aws::Vector<SuppressionListReason>&& value) { SetSuppressedReasons(std::move(value)); return *this;}
-    inline SuppressionOptions& AddSuppressedReasons(const SuppressionListReason& value) { m_suppressedReasonsHasBeenSet = true; m_suppressedReasons.push_back(value); return *this; }
-    inline SuppressionOptions& AddSuppressedReasons(SuppressionListReason&& value) { m_suppressedReasonsHasBeenSet = true; m_suppressedReasons.push_back(std::move(value)); return *this; }
+    template<typename SuppressedReasonsT = Aws::Vector<SuppressionListReason>>
+    void SetSuppressedReasons(SuppressedReasonsT&& value) { m_suppressedReasonsHasBeenSet = true; m_suppressedReasons = std::forward<SuppressedReasonsT>(value); }
+    template<typename SuppressedReasonsT = Aws::Vector<SuppressionListReason>>
+    SuppressionOptions& WithSuppressedReasons(SuppressedReasonsT&& value) { SetSuppressedReasons(std::forward<SuppressedReasonsT>(value)); return *this;}
+    inline SuppressionOptions& AddSuppressedReasons(SuppressionListReason value) { m_suppressedReasonsHasBeenSet = true; m_suppressedReasons.push_back(value); return *this; }
     ///@}
   private:
 

@@ -21,7 +21,7 @@ namespace Model
   class DescribeListenerRequest : public GlobalAcceleratorRequest
   {
   public:
-    AWS_GLOBALACCELERATOR_API DescribeListenerRequest();
+    AWS_GLOBALACCELERATOR_API DescribeListenerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the listener to describe.</p>
      */
-    inline const Aws::String& GetListenerArn() const{ return m_listenerArn; }
+    inline const Aws::String& GetListenerArn() const { return m_listenerArn; }
     inline bool ListenerArnHasBeenSet() const { return m_listenerArnHasBeenSet; }
-    inline void SetListenerArn(const Aws::String& value) { m_listenerArnHasBeenSet = true; m_listenerArn = value; }
-    inline void SetListenerArn(Aws::String&& value) { m_listenerArnHasBeenSet = true; m_listenerArn = std::move(value); }
-    inline void SetListenerArn(const char* value) { m_listenerArnHasBeenSet = true; m_listenerArn.assign(value); }
-    inline DescribeListenerRequest& WithListenerArn(const Aws::String& value) { SetListenerArn(value); return *this;}
-    inline DescribeListenerRequest& WithListenerArn(Aws::String&& value) { SetListenerArn(std::move(value)); return *this;}
-    inline DescribeListenerRequest& WithListenerArn(const char* value) { SetListenerArn(value); return *this;}
+    template<typename ListenerArnT = Aws::String>
+    void SetListenerArn(ListenerArnT&& value) { m_listenerArnHasBeenSet = true; m_listenerArn = std::forward<ListenerArnT>(value); }
+    template<typename ListenerArnT = Aws::String>
+    DescribeListenerRequest& WithListenerArn(ListenerArnT&& value) { SetListenerArn(std::forward<ListenerArnT>(value)); return *this;}
     ///@}
   private:
 

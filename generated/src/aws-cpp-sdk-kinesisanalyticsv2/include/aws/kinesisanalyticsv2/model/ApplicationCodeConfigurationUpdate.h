@@ -34,7 +34,7 @@ namespace Model
   class ApplicationCodeConfigurationUpdate
   {
   public:
-    AWS_KINESISANALYTICSV2_API ApplicationCodeConfigurationUpdate();
+    AWS_KINESISANALYTICSV2_API ApplicationCodeConfigurationUpdate() = default;
     AWS_KINESISANALYTICSV2_API ApplicationCodeConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API ApplicationCodeConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,26 @@ namespace Model
     /**
      * <p>Describes updates to the code content type.</p>
      */
-    inline const CodeContentType& GetCodeContentTypeUpdate() const{ return m_codeContentTypeUpdate; }
+    inline CodeContentType GetCodeContentTypeUpdate() const { return m_codeContentTypeUpdate; }
     inline bool CodeContentTypeUpdateHasBeenSet() const { return m_codeContentTypeUpdateHasBeenSet; }
-    inline void SetCodeContentTypeUpdate(const CodeContentType& value) { m_codeContentTypeUpdateHasBeenSet = true; m_codeContentTypeUpdate = value; }
-    inline void SetCodeContentTypeUpdate(CodeContentType&& value) { m_codeContentTypeUpdateHasBeenSet = true; m_codeContentTypeUpdate = std::move(value); }
-    inline ApplicationCodeConfigurationUpdate& WithCodeContentTypeUpdate(const CodeContentType& value) { SetCodeContentTypeUpdate(value); return *this;}
-    inline ApplicationCodeConfigurationUpdate& WithCodeContentTypeUpdate(CodeContentType&& value) { SetCodeContentTypeUpdate(std::move(value)); return *this;}
+    inline void SetCodeContentTypeUpdate(CodeContentType value) { m_codeContentTypeUpdateHasBeenSet = true; m_codeContentTypeUpdate = value; }
+    inline ApplicationCodeConfigurationUpdate& WithCodeContentTypeUpdate(CodeContentType value) { SetCodeContentTypeUpdate(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes updates to the code content of an application.</p>
      */
-    inline const CodeContentUpdate& GetCodeContentUpdate() const{ return m_codeContentUpdate; }
+    inline const CodeContentUpdate& GetCodeContentUpdate() const { return m_codeContentUpdate; }
     inline bool CodeContentUpdateHasBeenSet() const { return m_codeContentUpdateHasBeenSet; }
-    inline void SetCodeContentUpdate(const CodeContentUpdate& value) { m_codeContentUpdateHasBeenSet = true; m_codeContentUpdate = value; }
-    inline void SetCodeContentUpdate(CodeContentUpdate&& value) { m_codeContentUpdateHasBeenSet = true; m_codeContentUpdate = std::move(value); }
-    inline ApplicationCodeConfigurationUpdate& WithCodeContentUpdate(const CodeContentUpdate& value) { SetCodeContentUpdate(value); return *this;}
-    inline ApplicationCodeConfigurationUpdate& WithCodeContentUpdate(CodeContentUpdate&& value) { SetCodeContentUpdate(std::move(value)); return *this;}
+    template<typename CodeContentUpdateT = CodeContentUpdate>
+    void SetCodeContentUpdate(CodeContentUpdateT&& value) { m_codeContentUpdateHasBeenSet = true; m_codeContentUpdate = std::forward<CodeContentUpdateT>(value); }
+    template<typename CodeContentUpdateT = CodeContentUpdate>
+    ApplicationCodeConfigurationUpdate& WithCodeContentUpdate(CodeContentUpdateT&& value) { SetCodeContentUpdate(std::forward<CodeContentUpdateT>(value)); return *this;}
     ///@}
   private:
 
-    CodeContentType m_codeContentTypeUpdate;
+    CodeContentType m_codeContentTypeUpdate{CodeContentType::NOT_SET};
     bool m_codeContentTypeUpdateHasBeenSet = false;
 
     CodeContentUpdate m_codeContentUpdate;

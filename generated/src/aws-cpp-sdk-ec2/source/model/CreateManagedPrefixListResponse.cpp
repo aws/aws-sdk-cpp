@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateManagedPrefixListResponse::CreateManagedPrefixListResponse()
-{
-}
-
 CreateManagedPrefixListResponse::CreateManagedPrefixListResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ CreateManagedPrefixListResponse& CreateManagedPrefixListResponse::operator =(con
     if(!prefixListNode.IsNull())
     {
       m_prefixList = prefixListNode;
+      m_prefixListHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ CreateManagedPrefixListResponse& CreateManagedPrefixListResponse::operator =(con
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateManagedPrefixListResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

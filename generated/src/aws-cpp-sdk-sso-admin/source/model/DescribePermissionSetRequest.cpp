@@ -12,12 +12,6 @@ using namespace Aws::SSOAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribePermissionSetRequest::DescribePermissionSetRequest() : 
-    m_instanceArnHasBeenSet(false),
-    m_permissionSetArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribePermissionSetRequest::SerializePayload() const
 {
   JsonValue payload;

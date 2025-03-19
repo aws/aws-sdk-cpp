@@ -33,7 +33,7 @@ namespace Model
   class TimeSeriesConfig
   {
   public:
-    AWS_SAGEMAKER_API TimeSeriesConfig();
+    AWS_SAGEMAKER_API TimeSeriesConfig() = default;
     AWS_SAGEMAKER_API TimeSeriesConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API TimeSeriesConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * predict for each item in your dataset. The data type of the target variable must
      * be numerical.</p>
      */
-    inline const Aws::String& GetTargetAttributeName() const{ return m_targetAttributeName; }
+    inline const Aws::String& GetTargetAttributeName() const { return m_targetAttributeName; }
     inline bool TargetAttributeNameHasBeenSet() const { return m_targetAttributeNameHasBeenSet; }
-    inline void SetTargetAttributeName(const Aws::String& value) { m_targetAttributeNameHasBeenSet = true; m_targetAttributeName = value; }
-    inline void SetTargetAttributeName(Aws::String&& value) { m_targetAttributeNameHasBeenSet = true; m_targetAttributeName = std::move(value); }
-    inline void SetTargetAttributeName(const char* value) { m_targetAttributeNameHasBeenSet = true; m_targetAttributeName.assign(value); }
-    inline TimeSeriesConfig& WithTargetAttributeName(const Aws::String& value) { SetTargetAttributeName(value); return *this;}
-    inline TimeSeriesConfig& WithTargetAttributeName(Aws::String&& value) { SetTargetAttributeName(std::move(value)); return *this;}
-    inline TimeSeriesConfig& WithTargetAttributeName(const char* value) { SetTargetAttributeName(value); return *this;}
+    template<typename TargetAttributeNameT = Aws::String>
+    void SetTargetAttributeName(TargetAttributeNameT&& value) { m_targetAttributeNameHasBeenSet = true; m_targetAttributeName = std::forward<TargetAttributeNameT>(value); }
+    template<typename TargetAttributeNameT = Aws::String>
+    TimeSeriesConfig& WithTargetAttributeName(TargetAttributeNameT&& value) { SetTargetAttributeName(std::forward<TargetAttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>The name of the column indicating a point in time at which the target value
      * of a given item is recorded.</p>
      */
-    inline const Aws::String& GetTimestampAttributeName() const{ return m_timestampAttributeName; }
+    inline const Aws::String& GetTimestampAttributeName() const { return m_timestampAttributeName; }
     inline bool TimestampAttributeNameHasBeenSet() const { return m_timestampAttributeNameHasBeenSet; }
-    inline void SetTimestampAttributeName(const Aws::String& value) { m_timestampAttributeNameHasBeenSet = true; m_timestampAttributeName = value; }
-    inline void SetTimestampAttributeName(Aws::String&& value) { m_timestampAttributeNameHasBeenSet = true; m_timestampAttributeName = std::move(value); }
-    inline void SetTimestampAttributeName(const char* value) { m_timestampAttributeNameHasBeenSet = true; m_timestampAttributeName.assign(value); }
-    inline TimeSeriesConfig& WithTimestampAttributeName(const Aws::String& value) { SetTimestampAttributeName(value); return *this;}
-    inline TimeSeriesConfig& WithTimestampAttributeName(Aws::String&& value) { SetTimestampAttributeName(std::move(value)); return *this;}
-    inline TimeSeriesConfig& WithTimestampAttributeName(const char* value) { SetTimestampAttributeName(value); return *this;}
+    template<typename TimestampAttributeNameT = Aws::String>
+    void SetTimestampAttributeName(TimestampAttributeNameT&& value) { m_timestampAttributeNameHasBeenSet = true; m_timestampAttributeName = std::forward<TimestampAttributeNameT>(value); }
+    template<typename TimestampAttributeNameT = Aws::String>
+    TimeSeriesConfig& WithTimestampAttributeName(TimestampAttributeNameT&& value) { SetTimestampAttributeName(std::forward<TimestampAttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * <p>The name of the column that represents the set of item identifiers for which
      * you want to predict the target value.</p>
      */
-    inline const Aws::String& GetItemIdentifierAttributeName() const{ return m_itemIdentifierAttributeName; }
+    inline const Aws::String& GetItemIdentifierAttributeName() const { return m_itemIdentifierAttributeName; }
     inline bool ItemIdentifierAttributeNameHasBeenSet() const { return m_itemIdentifierAttributeNameHasBeenSet; }
-    inline void SetItemIdentifierAttributeName(const Aws::String& value) { m_itemIdentifierAttributeNameHasBeenSet = true; m_itemIdentifierAttributeName = value; }
-    inline void SetItemIdentifierAttributeName(Aws::String&& value) { m_itemIdentifierAttributeNameHasBeenSet = true; m_itemIdentifierAttributeName = std::move(value); }
-    inline void SetItemIdentifierAttributeName(const char* value) { m_itemIdentifierAttributeNameHasBeenSet = true; m_itemIdentifierAttributeName.assign(value); }
-    inline TimeSeriesConfig& WithItemIdentifierAttributeName(const Aws::String& value) { SetItemIdentifierAttributeName(value); return *this;}
-    inline TimeSeriesConfig& WithItemIdentifierAttributeName(Aws::String&& value) { SetItemIdentifierAttributeName(std::move(value)); return *this;}
-    inline TimeSeriesConfig& WithItemIdentifierAttributeName(const char* value) { SetItemIdentifierAttributeName(value); return *this;}
+    template<typename ItemIdentifierAttributeNameT = Aws::String>
+    void SetItemIdentifierAttributeName(ItemIdentifierAttributeNameT&& value) { m_itemIdentifierAttributeNameHasBeenSet = true; m_itemIdentifierAttributeName = std::forward<ItemIdentifierAttributeNameT>(value); }
+    template<typename ItemIdentifierAttributeNameT = Aws::String>
+    TimeSeriesConfig& WithItemIdentifierAttributeName(ItemIdentifierAttributeNameT&& value) { SetItemIdentifierAttributeName(std::forward<ItemIdentifierAttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,15 +84,14 @@ namespace Model
      * <p>A set of columns names that can be grouped with the item identifier column to
      * create a composite key for which a target value is predicted.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetGroupingAttributeNames() const{ return m_groupingAttributeNames; }
+    inline const Aws::Vector<Aws::String>& GetGroupingAttributeNames() const { return m_groupingAttributeNames; }
     inline bool GroupingAttributeNamesHasBeenSet() const { return m_groupingAttributeNamesHasBeenSet; }
-    inline void SetGroupingAttributeNames(const Aws::Vector<Aws::String>& value) { m_groupingAttributeNamesHasBeenSet = true; m_groupingAttributeNames = value; }
-    inline void SetGroupingAttributeNames(Aws::Vector<Aws::String>&& value) { m_groupingAttributeNamesHasBeenSet = true; m_groupingAttributeNames = std::move(value); }
-    inline TimeSeriesConfig& WithGroupingAttributeNames(const Aws::Vector<Aws::String>& value) { SetGroupingAttributeNames(value); return *this;}
-    inline TimeSeriesConfig& WithGroupingAttributeNames(Aws::Vector<Aws::String>&& value) { SetGroupingAttributeNames(std::move(value)); return *this;}
-    inline TimeSeriesConfig& AddGroupingAttributeNames(const Aws::String& value) { m_groupingAttributeNamesHasBeenSet = true; m_groupingAttributeNames.push_back(value); return *this; }
-    inline TimeSeriesConfig& AddGroupingAttributeNames(Aws::String&& value) { m_groupingAttributeNamesHasBeenSet = true; m_groupingAttributeNames.push_back(std::move(value)); return *this; }
-    inline TimeSeriesConfig& AddGroupingAttributeNames(const char* value) { m_groupingAttributeNamesHasBeenSet = true; m_groupingAttributeNames.push_back(value); return *this; }
+    template<typename GroupingAttributeNamesT = Aws::Vector<Aws::String>>
+    void SetGroupingAttributeNames(GroupingAttributeNamesT&& value) { m_groupingAttributeNamesHasBeenSet = true; m_groupingAttributeNames = std::forward<GroupingAttributeNamesT>(value); }
+    template<typename GroupingAttributeNamesT = Aws::Vector<Aws::String>>
+    TimeSeriesConfig& WithGroupingAttributeNames(GroupingAttributeNamesT&& value) { SetGroupingAttributeNames(std::forward<GroupingAttributeNamesT>(value)); return *this;}
+    template<typename GroupingAttributeNamesT = Aws::String>
+    TimeSeriesConfig& AddGroupingAttributeNames(GroupingAttributeNamesT&& value) { m_groupingAttributeNamesHasBeenSet = true; m_groupingAttributeNames.emplace_back(std::forward<GroupingAttributeNamesT>(value)); return *this; }
     ///@}
   private:
 

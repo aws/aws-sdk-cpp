@@ -21,7 +21,7 @@ namespace Model
   class CreateCloudFormationTemplateRequest : public ServerlessApplicationRepositoryRequest
   {
   public:
-    AWS_SERVERLESSAPPLICATIONREPOSITORY_API CreateCloudFormationTemplateRequest();
+    AWS_SERVERLESSAPPLICATIONREPOSITORY_API CreateCloudFormationTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline CreateCloudFormationTemplateRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline CreateCloudFormationTemplateRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline CreateCloudFormationTemplateRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    CreateCloudFormationTemplateRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * href="https://semver.org/">https://semver.org/</a>
  </p>
      */
-    inline const Aws::String& GetSemanticVersion() const{ return m_semanticVersion; }
+    inline const Aws::String& GetSemanticVersion() const { return m_semanticVersion; }
     inline bool SemanticVersionHasBeenSet() const { return m_semanticVersionHasBeenSet; }
-    inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = value; }
-    inline void SetSemanticVersion(Aws::String&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::move(value); }
-    inline void SetSemanticVersion(const char* value) { m_semanticVersionHasBeenSet = true; m_semanticVersion.assign(value); }
-    inline CreateCloudFormationTemplateRequest& WithSemanticVersion(const Aws::String& value) { SetSemanticVersion(value); return *this;}
-    inline CreateCloudFormationTemplateRequest& WithSemanticVersion(Aws::String&& value) { SetSemanticVersion(std::move(value)); return *this;}
-    inline CreateCloudFormationTemplateRequest& WithSemanticVersion(const char* value) { SetSemanticVersion(value); return *this;}
+    template<typename SemanticVersionT = Aws::String>
+    void SetSemanticVersion(SemanticVersionT&& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = std::forward<SemanticVersionT>(value); }
+    template<typename SemanticVersionT = Aws::String>
+    CreateCloudFormationTemplateRequest& WithSemanticVersion(SemanticVersionT&& value) { SetSemanticVersion(std::forward<SemanticVersionT>(value)); return *this;}
     ///@}
   private:
 

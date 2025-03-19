@@ -25,7 +25,7 @@ namespace Model
   class ListRulesRequest : public VPCLatticeRequest
   {
   public:
-    AWS_VPCLATTICE_API ListRulesRequest();
+    AWS_VPCLATTICE_API ListRulesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The ID or ARN of the listener.</p>
      */
-    inline const Aws::String& GetListenerIdentifier() const{ return m_listenerIdentifier; }
+    inline const Aws::String& GetListenerIdentifier() const { return m_listenerIdentifier; }
     inline bool ListenerIdentifierHasBeenSet() const { return m_listenerIdentifierHasBeenSet; }
-    inline void SetListenerIdentifier(const Aws::String& value) { m_listenerIdentifierHasBeenSet = true; m_listenerIdentifier = value; }
-    inline void SetListenerIdentifier(Aws::String&& value) { m_listenerIdentifierHasBeenSet = true; m_listenerIdentifier = std::move(value); }
-    inline void SetListenerIdentifier(const char* value) { m_listenerIdentifierHasBeenSet = true; m_listenerIdentifier.assign(value); }
-    inline ListRulesRequest& WithListenerIdentifier(const Aws::String& value) { SetListenerIdentifier(value); return *this;}
-    inline ListRulesRequest& WithListenerIdentifier(Aws::String&& value) { SetListenerIdentifier(std::move(value)); return *this;}
-    inline ListRulesRequest& WithListenerIdentifier(const char* value) { SetListenerIdentifier(value); return *this;}
+    template<typename ListenerIdentifierT = Aws::String>
+    void SetListenerIdentifier(ListenerIdentifierT&& value) { m_listenerIdentifierHasBeenSet = true; m_listenerIdentifier = std::forward<ListenerIdentifierT>(value); }
+    template<typename ListenerIdentifierT = Aws::String>
+    ListRulesRequest& WithListenerIdentifier(ListenerIdentifierT&& value) { SetListenerIdentifier(std::forward<ListenerIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListRulesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -66,35 +64,31 @@ namespace Model
     /**
      * <p>A pagination token for the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListRulesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRulesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRulesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRulesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID or ARN of the service.</p>
      */
-    inline const Aws::String& GetServiceIdentifier() const{ return m_serviceIdentifier; }
+    inline const Aws::String& GetServiceIdentifier() const { return m_serviceIdentifier; }
     inline bool ServiceIdentifierHasBeenSet() const { return m_serviceIdentifierHasBeenSet; }
-    inline void SetServiceIdentifier(const Aws::String& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = value; }
-    inline void SetServiceIdentifier(Aws::String&& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = std::move(value); }
-    inline void SetServiceIdentifier(const char* value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier.assign(value); }
-    inline ListRulesRequest& WithServiceIdentifier(const Aws::String& value) { SetServiceIdentifier(value); return *this;}
-    inline ListRulesRequest& WithServiceIdentifier(Aws::String&& value) { SetServiceIdentifier(std::move(value)); return *this;}
-    inline ListRulesRequest& WithServiceIdentifier(const char* value) { SetServiceIdentifier(value); return *this;}
+    template<typename ServiceIdentifierT = Aws::String>
+    void SetServiceIdentifier(ServiceIdentifierT&& value) { m_serviceIdentifierHasBeenSet = true; m_serviceIdentifier = std::forward<ServiceIdentifierT>(value); }
+    template<typename ServiceIdentifierT = Aws::String>
+    ListRulesRequest& WithServiceIdentifier(ServiceIdentifierT&& value) { SetServiceIdentifier(std::forward<ServiceIdentifierT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_listenerIdentifier;
     bool m_listenerIdentifierHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

@@ -20,17 +20,7 @@ namespace SES
 namespace Model
 {
 
-S3Action::S3Action() : 
-    m_topicArnHasBeenSet(false),
-    m_bucketNameHasBeenSet(false),
-    m_objectKeyPrefixHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false)
-{
-}
-
 S3Action::S3Action(const XmlNode& xmlNode)
-  : S3Action()
 {
   *this = xmlNode;
 }

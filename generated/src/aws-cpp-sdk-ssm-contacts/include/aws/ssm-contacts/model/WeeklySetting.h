@@ -32,7 +32,7 @@ namespace Model
   class WeeklySetting
   {
   public:
-    AWS_SSMCONTACTS_API WeeklySetting();
+    AWS_SSMCONTACTS_API WeeklySetting() = default;
     AWS_SSMCONTACTS_API WeeklySetting(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMCONTACTS_API WeeklySetting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,26 @@ namespace Model
     /**
      * <p>The day of the week when weekly recurring on-call shift rotations begins.</p>
      */
-    inline const DayOfWeek& GetDayOfWeek() const{ return m_dayOfWeek; }
+    inline DayOfWeek GetDayOfWeek() const { return m_dayOfWeek; }
     inline bool DayOfWeekHasBeenSet() const { return m_dayOfWeekHasBeenSet; }
-    inline void SetDayOfWeek(const DayOfWeek& value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = value; }
-    inline void SetDayOfWeek(DayOfWeek&& value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = std::move(value); }
-    inline WeeklySetting& WithDayOfWeek(const DayOfWeek& value) { SetDayOfWeek(value); return *this;}
-    inline WeeklySetting& WithDayOfWeek(DayOfWeek&& value) { SetDayOfWeek(std::move(value)); return *this;}
+    inline void SetDayOfWeek(DayOfWeek value) { m_dayOfWeekHasBeenSet = true; m_dayOfWeek = value; }
+    inline WeeklySetting& WithDayOfWeek(DayOfWeek value) { SetDayOfWeek(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time of day when a weekly recurring on-call shift rotation begins.</p>
      */
-    inline const HandOffTime& GetHandOffTime() const{ return m_handOffTime; }
+    inline const HandOffTime& GetHandOffTime() const { return m_handOffTime; }
     inline bool HandOffTimeHasBeenSet() const { return m_handOffTimeHasBeenSet; }
-    inline void SetHandOffTime(const HandOffTime& value) { m_handOffTimeHasBeenSet = true; m_handOffTime = value; }
-    inline void SetHandOffTime(HandOffTime&& value) { m_handOffTimeHasBeenSet = true; m_handOffTime = std::move(value); }
-    inline WeeklySetting& WithHandOffTime(const HandOffTime& value) { SetHandOffTime(value); return *this;}
-    inline WeeklySetting& WithHandOffTime(HandOffTime&& value) { SetHandOffTime(std::move(value)); return *this;}
+    template<typename HandOffTimeT = HandOffTime>
+    void SetHandOffTime(HandOffTimeT&& value) { m_handOffTimeHasBeenSet = true; m_handOffTime = std::forward<HandOffTimeT>(value); }
+    template<typename HandOffTimeT = HandOffTime>
+    WeeklySetting& WithHandOffTime(HandOffTimeT&& value) { SetHandOffTime(std::forward<HandOffTimeT>(value)); return *this;}
     ///@}
   private:
 
-    DayOfWeek m_dayOfWeek;
+    DayOfWeek m_dayOfWeek{DayOfWeek::NOT_SET};
     bool m_dayOfWeekHasBeenSet = false;
 
     HandOffTime m_handOffTime;

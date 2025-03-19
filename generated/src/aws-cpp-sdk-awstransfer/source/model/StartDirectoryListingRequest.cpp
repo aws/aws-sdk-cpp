@@ -12,15 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartDirectoryListingRequest::StartDirectoryListingRequest() : 
-    m_connectorIdHasBeenSet(false),
-    m_remoteDirectoryPathHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_outputDirectoryPathHasBeenSet(false)
-{
-}
-
 Aws::String StartDirectoryListingRequest::SerializePayload() const
 {
   JsonValue payload;

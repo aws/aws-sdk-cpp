@@ -12,15 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateQueueLimitAssociationRequest::UpdateQueueLimitAssociationRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_limitIdHasBeenSet(false),
-    m_status(UpdateQueueLimitAssociationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String UpdateQueueLimitAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

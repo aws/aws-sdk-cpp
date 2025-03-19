@@ -29,7 +29,7 @@ namespace Model
   class ListReviewPolicyResultsForHITResult
   {
   public:
-    AWS_MTURK_API ListReviewPolicyResultsForHITResult();
+    AWS_MTURK_API ListReviewPolicyResultsForHITResult() = default;
     AWS_MTURK_API ListReviewPolicyResultsForHITResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MTURK_API ListReviewPolicyResultsForHITResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>The HITId of the HIT for which results have been returned.</p>
      */
-    inline const Aws::String& GetHITId() const{ return m_hITId; }
-    inline void SetHITId(const Aws::String& value) { m_hITId = value; }
-    inline void SetHITId(Aws::String&& value) { m_hITId = std::move(value); }
-    inline void SetHITId(const char* value) { m_hITId.assign(value); }
-    inline ListReviewPolicyResultsForHITResult& WithHITId(const Aws::String& value) { SetHITId(value); return *this;}
-    inline ListReviewPolicyResultsForHITResult& WithHITId(Aws::String&& value) { SetHITId(std::move(value)); return *this;}
-    inline ListReviewPolicyResultsForHITResult& WithHITId(const char* value) { SetHITId(value); return *this;}
+    inline const Aws::String& GetHITId() const { return m_hITId; }
+    template<typename HITIdT = Aws::String>
+    void SetHITId(HITIdT&& value) { m_hITIdHasBeenSet = true; m_hITId = std::forward<HITIdT>(value); }
+    template<typename HITIdT = Aws::String>
+    ListReviewPolicyResultsForHITResult& WithHITId(HITIdT&& value) { SetHITId(std::forward<HITIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,11 +50,11 @@ namespace Model
      * <p> The name of the Assignment-level Review Policy. This contains only the
      * PolicyName element. </p>
      */
-    inline const ReviewPolicy& GetAssignmentReviewPolicy() const{ return m_assignmentReviewPolicy; }
-    inline void SetAssignmentReviewPolicy(const ReviewPolicy& value) { m_assignmentReviewPolicy = value; }
-    inline void SetAssignmentReviewPolicy(ReviewPolicy&& value) { m_assignmentReviewPolicy = std::move(value); }
-    inline ListReviewPolicyResultsForHITResult& WithAssignmentReviewPolicy(const ReviewPolicy& value) { SetAssignmentReviewPolicy(value); return *this;}
-    inline ListReviewPolicyResultsForHITResult& WithAssignmentReviewPolicy(ReviewPolicy&& value) { SetAssignmentReviewPolicy(std::move(value)); return *this;}
+    inline const ReviewPolicy& GetAssignmentReviewPolicy() const { return m_assignmentReviewPolicy; }
+    template<typename AssignmentReviewPolicyT = ReviewPolicy>
+    void SetAssignmentReviewPolicy(AssignmentReviewPolicyT&& value) { m_assignmentReviewPolicyHasBeenSet = true; m_assignmentReviewPolicy = std::forward<AssignmentReviewPolicyT>(value); }
+    template<typename AssignmentReviewPolicyT = ReviewPolicy>
+    ListReviewPolicyResultsForHITResult& WithAssignmentReviewPolicy(AssignmentReviewPolicyT&& value) { SetAssignmentReviewPolicy(std::forward<AssignmentReviewPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,22 +62,22 @@ namespace Model
      * <p>The name of the HIT-level Review Policy. This contains only the PolicyName
      * element.</p>
      */
-    inline const ReviewPolicy& GetHITReviewPolicy() const{ return m_hITReviewPolicy; }
-    inline void SetHITReviewPolicy(const ReviewPolicy& value) { m_hITReviewPolicy = value; }
-    inline void SetHITReviewPolicy(ReviewPolicy&& value) { m_hITReviewPolicy = std::move(value); }
-    inline ListReviewPolicyResultsForHITResult& WithHITReviewPolicy(const ReviewPolicy& value) { SetHITReviewPolicy(value); return *this;}
-    inline ListReviewPolicyResultsForHITResult& WithHITReviewPolicy(ReviewPolicy&& value) { SetHITReviewPolicy(std::move(value)); return *this;}
+    inline const ReviewPolicy& GetHITReviewPolicy() const { return m_hITReviewPolicy; }
+    template<typename HITReviewPolicyT = ReviewPolicy>
+    void SetHITReviewPolicy(HITReviewPolicyT&& value) { m_hITReviewPolicyHasBeenSet = true; m_hITReviewPolicy = std::forward<HITReviewPolicyT>(value); }
+    template<typename HITReviewPolicyT = ReviewPolicy>
+    ListReviewPolicyResultsForHITResult& WithHITReviewPolicy(HITReviewPolicyT&& value) { SetHITReviewPolicy(std::forward<HITReviewPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Contains both ReviewResult and ReviewAction elements for an Assignment. </p>
      */
-    inline const ReviewReport& GetAssignmentReviewReport() const{ return m_assignmentReviewReport; }
-    inline void SetAssignmentReviewReport(const ReviewReport& value) { m_assignmentReviewReport = value; }
-    inline void SetAssignmentReviewReport(ReviewReport&& value) { m_assignmentReviewReport = std::move(value); }
-    inline ListReviewPolicyResultsForHITResult& WithAssignmentReviewReport(const ReviewReport& value) { SetAssignmentReviewReport(value); return *this;}
-    inline ListReviewPolicyResultsForHITResult& WithAssignmentReviewReport(ReviewReport&& value) { SetAssignmentReviewReport(std::move(value)); return *this;}
+    inline const ReviewReport& GetAssignmentReviewReport() const { return m_assignmentReviewReport; }
+    template<typename AssignmentReviewReportT = ReviewReport>
+    void SetAssignmentReviewReport(AssignmentReviewReportT&& value) { m_assignmentReviewReportHasBeenSet = true; m_assignmentReviewReport = std::forward<AssignmentReviewReportT>(value); }
+    template<typename AssignmentReviewReportT = ReviewReport>
+    ListReviewPolicyResultsForHITResult& WithAssignmentReviewReport(AssignmentReviewReportT&& value) { SetAssignmentReviewReport(std::forward<AssignmentReviewReportT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,49 +85,52 @@ namespace Model
      * <p>Contains both ReviewResult and ReviewAction elements for a particular HIT.
      * </p>
      */
-    inline const ReviewReport& GetHITReviewReport() const{ return m_hITReviewReport; }
-    inline void SetHITReviewReport(const ReviewReport& value) { m_hITReviewReport = value; }
-    inline void SetHITReviewReport(ReviewReport&& value) { m_hITReviewReport = std::move(value); }
-    inline ListReviewPolicyResultsForHITResult& WithHITReviewReport(const ReviewReport& value) { SetHITReviewReport(value); return *this;}
-    inline ListReviewPolicyResultsForHITResult& WithHITReviewReport(ReviewReport&& value) { SetHITReviewReport(std::move(value)); return *this;}
+    inline const ReviewReport& GetHITReviewReport() const { return m_hITReviewReport; }
+    template<typename HITReviewReportT = ReviewReport>
+    void SetHITReviewReport(HITReviewReportT&& value) { m_hITReviewReportHasBeenSet = true; m_hITReviewReport = std::forward<HITReviewReportT>(value); }
+    template<typename HITReviewReportT = ReviewReport>
+    ListReviewPolicyResultsForHITResult& WithHITReviewReport(HITReviewReportT&& value) { SetHITReviewReport(std::forward<HITReviewReportT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListReviewPolicyResultsForHITResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListReviewPolicyResultsForHITResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListReviewPolicyResultsForHITResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListReviewPolicyResultsForHITResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListReviewPolicyResultsForHITResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListReviewPolicyResultsForHITResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListReviewPolicyResultsForHITResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListReviewPolicyResultsForHITResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_hITId;
+    bool m_hITIdHasBeenSet = false;
 
     ReviewPolicy m_assignmentReviewPolicy;
+    bool m_assignmentReviewPolicyHasBeenSet = false;
 
     ReviewPolicy m_hITReviewPolicy;
+    bool m_hITReviewPolicyHasBeenSet = false;
 
     ReviewReport m_assignmentReviewReport;
+    bool m_assignmentReviewReportHasBeenSet = false;
 
     ReviewReport m_hITReviewReport;
+    bool m_hITReviewReportHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

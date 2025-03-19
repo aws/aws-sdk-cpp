@@ -12,17 +12,6 @@ using namespace Aws::SSOOIDC::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterClientRequest::RegisterClientRequest() : 
-    m_clientNameHasBeenSet(false),
-    m_clientTypeHasBeenSet(false),
-    m_scopesHasBeenSet(false),
-    m_redirectUrisHasBeenSet(false),
-    m_grantTypesHasBeenSet(false),
-    m_issuerUrlHasBeenSet(false),
-    m_entitledApplicationArnHasBeenSet(false)
-{
-}
-
 Aws::String RegisterClientRequest::SerializePayload() const
 {
   JsonValue payload;

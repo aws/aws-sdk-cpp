@@ -12,15 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRetrieverRequest::UpdateRetrieverRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_retrieverIdHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRetrieverRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -10,16 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribeSnapshotCopyGrantsRequest::DescribeSnapshotCopyGrantsRequest() : 
-    m_snapshotCopyGrantNameHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_tagKeysHasBeenSet(false),
-    m_tagValuesHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSnapshotCopyGrantsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

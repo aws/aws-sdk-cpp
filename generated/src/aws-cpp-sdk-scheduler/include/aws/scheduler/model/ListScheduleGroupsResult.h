@@ -29,7 +29,7 @@ namespace Model
   class ListScheduleGroupsResult
   {
   public:
-    AWS_SCHEDULER_API ListScheduleGroupsResult();
+    AWS_SCHEDULER_API ListScheduleGroupsResult() = default;
     AWS_SCHEDULER_API ListScheduleGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SCHEDULER_API ListScheduleGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>Indicates whether there are additional results to retrieve. If the value is
      * null, there are no more results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListScheduleGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListScheduleGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListScheduleGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListScheduleGroupsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The schedule groups that match the specified criteria.</p>
      */
-    inline const Aws::Vector<ScheduleGroupSummary>& GetScheduleGroups() const{ return m_scheduleGroups; }
-    inline void SetScheduleGroups(const Aws::Vector<ScheduleGroupSummary>& value) { m_scheduleGroups = value; }
-    inline void SetScheduleGroups(Aws::Vector<ScheduleGroupSummary>&& value) { m_scheduleGroups = std::move(value); }
-    inline ListScheduleGroupsResult& WithScheduleGroups(const Aws::Vector<ScheduleGroupSummary>& value) { SetScheduleGroups(value); return *this;}
-    inline ListScheduleGroupsResult& WithScheduleGroups(Aws::Vector<ScheduleGroupSummary>&& value) { SetScheduleGroups(std::move(value)); return *this;}
-    inline ListScheduleGroupsResult& AddScheduleGroups(const ScheduleGroupSummary& value) { m_scheduleGroups.push_back(value); return *this; }
-    inline ListScheduleGroupsResult& AddScheduleGroups(ScheduleGroupSummary&& value) { m_scheduleGroups.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ScheduleGroupSummary>& GetScheduleGroups() const { return m_scheduleGroups; }
+    template<typename ScheduleGroupsT = Aws::Vector<ScheduleGroupSummary>>
+    void SetScheduleGroups(ScheduleGroupsT&& value) { m_scheduleGroupsHasBeenSet = true; m_scheduleGroups = std::forward<ScheduleGroupsT>(value); }
+    template<typename ScheduleGroupsT = Aws::Vector<ScheduleGroupSummary>>
+    ListScheduleGroupsResult& WithScheduleGroups(ScheduleGroupsT&& value) { SetScheduleGroups(std::forward<ScheduleGroupsT>(value)); return *this;}
+    template<typename ScheduleGroupsT = ScheduleGroupSummary>
+    ListScheduleGroupsResult& AddScheduleGroups(ScheduleGroupsT&& value) { m_scheduleGroupsHasBeenSet = true; m_scheduleGroups.emplace_back(std::forward<ScheduleGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListScheduleGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListScheduleGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListScheduleGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListScheduleGroupsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ScheduleGroupSummary> m_scheduleGroups;
+    bool m_scheduleGroupsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

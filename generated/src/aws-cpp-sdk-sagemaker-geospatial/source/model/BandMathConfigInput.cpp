@@ -18,14 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-BandMathConfigInput::BandMathConfigInput() : 
-    m_customIndicesHasBeenSet(false),
-    m_predefinedIndicesHasBeenSet(false)
-{
-}
-
 BandMathConfigInput::BandMathConfigInput(JsonView jsonValue)
-  : BandMathConfigInput()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ BandMathConfigInput& BandMathConfigInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CustomIndices"))
   {
     m_customIndices = jsonValue.GetObject("CustomIndices");
-
     m_customIndicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PredefinedIndices"))
   {
     Aws::Utils::Array<JsonView> predefinedIndicesJsonList = jsonValue.GetArray("PredefinedIndices");
@@ -48,7 +39,6 @@ BandMathConfigInput& BandMathConfigInput::operator =(JsonView jsonValue)
     }
     m_predefinedIndicesHasBeenSet = true;
   }
-
   return *this;
 }
 

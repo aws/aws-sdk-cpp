@@ -18,14 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-GeocodeFilter::GeocodeFilter() : 
-    m_includeCountriesHasBeenSet(false),
-    m_includePlaceTypesHasBeenSet(false)
-{
-}
-
 GeocodeFilter::GeocodeFilter(JsonView jsonValue)
-  : GeocodeFilter()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ GeocodeFilter& GeocodeFilter::operator =(JsonView jsonValue)
     }
     m_includeCountriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludePlaceTypes"))
   {
     Aws::Utils::Array<JsonView> includePlaceTypesJsonList = jsonValue.GetArray("IncludePlaceTypes");
@@ -51,7 +43,6 @@ GeocodeFilter& GeocodeFilter::operator =(JsonView jsonValue)
     }
     m_includePlaceTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

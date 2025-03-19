@@ -18,17 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-LinkAssociation::LinkAssociation() : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_deviceIdHasBeenSet(false),
-    m_linkIdHasBeenSet(false),
-    m_linkAssociationState(LinkAssociationState::NOT_SET),
-    m_linkAssociationStateHasBeenSet(false)
-{
-}
-
 LinkAssociation::LinkAssociation(JsonView jsonValue)
-  : LinkAssociation()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ LinkAssociation& LinkAssociation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GlobalNetworkId"))
   {
     m_globalNetworkId = jsonValue.GetString("GlobalNetworkId");
-
     m_globalNetworkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceId"))
   {
     m_deviceId = jsonValue.GetString("DeviceId");
-
     m_deviceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LinkId"))
   {
     m_linkId = jsonValue.GetString("LinkId");
-
     m_linkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LinkAssociationState"))
   {
     m_linkAssociationState = LinkAssociationStateMapper::GetLinkAssociationStateForName(jsonValue.GetString("LinkAssociationState"));
-
     m_linkAssociationStateHasBeenSet = true;
   }
-
   return *this;
 }
 

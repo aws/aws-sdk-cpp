@@ -29,7 +29,7 @@ namespace Model
   class BatchUpdateDetectorResult
   {
   public:
-    AWS_IOTEVENTSDATA_API BatchUpdateDetectorResult();
+    AWS_IOTEVENTSDATA_API BatchUpdateDetectorResult() = default;
     AWS_IOTEVENTSDATA_API BatchUpdateDetectorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTEVENTSDATA_API BatchUpdateDetectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p>A list of those detector updates that resulted in errors. (If an error is
      * listed here, the specific update did not occur.)</p>
      */
-    inline const Aws::Vector<BatchUpdateDetectorErrorEntry>& GetBatchUpdateDetectorErrorEntries() const{ return m_batchUpdateDetectorErrorEntries; }
-    inline void SetBatchUpdateDetectorErrorEntries(const Aws::Vector<BatchUpdateDetectorErrorEntry>& value) { m_batchUpdateDetectorErrorEntries = value; }
-    inline void SetBatchUpdateDetectorErrorEntries(Aws::Vector<BatchUpdateDetectorErrorEntry>&& value) { m_batchUpdateDetectorErrorEntries = std::move(value); }
-    inline BatchUpdateDetectorResult& WithBatchUpdateDetectorErrorEntries(const Aws::Vector<BatchUpdateDetectorErrorEntry>& value) { SetBatchUpdateDetectorErrorEntries(value); return *this;}
-    inline BatchUpdateDetectorResult& WithBatchUpdateDetectorErrorEntries(Aws::Vector<BatchUpdateDetectorErrorEntry>&& value) { SetBatchUpdateDetectorErrorEntries(std::move(value)); return *this;}
-    inline BatchUpdateDetectorResult& AddBatchUpdateDetectorErrorEntries(const BatchUpdateDetectorErrorEntry& value) { m_batchUpdateDetectorErrorEntries.push_back(value); return *this; }
-    inline BatchUpdateDetectorResult& AddBatchUpdateDetectorErrorEntries(BatchUpdateDetectorErrorEntry&& value) { m_batchUpdateDetectorErrorEntries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchUpdateDetectorErrorEntry>& GetBatchUpdateDetectorErrorEntries() const { return m_batchUpdateDetectorErrorEntries; }
+    template<typename BatchUpdateDetectorErrorEntriesT = Aws::Vector<BatchUpdateDetectorErrorEntry>>
+    void SetBatchUpdateDetectorErrorEntries(BatchUpdateDetectorErrorEntriesT&& value) { m_batchUpdateDetectorErrorEntriesHasBeenSet = true; m_batchUpdateDetectorErrorEntries = std::forward<BatchUpdateDetectorErrorEntriesT>(value); }
+    template<typename BatchUpdateDetectorErrorEntriesT = Aws::Vector<BatchUpdateDetectorErrorEntry>>
+    BatchUpdateDetectorResult& WithBatchUpdateDetectorErrorEntries(BatchUpdateDetectorErrorEntriesT&& value) { SetBatchUpdateDetectorErrorEntries(std::forward<BatchUpdateDetectorErrorEntriesT>(value)); return *this;}
+    template<typename BatchUpdateDetectorErrorEntriesT = BatchUpdateDetectorErrorEntry>
+    BatchUpdateDetectorResult& AddBatchUpdateDetectorErrorEntries(BatchUpdateDetectorErrorEntriesT&& value) { m_batchUpdateDetectorErrorEntriesHasBeenSet = true; m_batchUpdateDetectorErrorEntries.emplace_back(std::forward<BatchUpdateDetectorErrorEntriesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchUpdateDetectorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchUpdateDetectorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchUpdateDetectorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchUpdateDetectorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchUpdateDetectorErrorEntry> m_batchUpdateDetectorErrorEntries;
+    bool m_batchUpdateDetectorErrorEntriesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

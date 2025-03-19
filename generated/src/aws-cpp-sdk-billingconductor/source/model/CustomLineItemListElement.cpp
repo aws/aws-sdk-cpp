@@ -18,27 +18,7 @@ namespace BillingConductor
 namespace Model
 {
 
-CustomLineItemListElement::CustomLineItemListElement() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_chargeDetailsHasBeenSet(false),
-    m_currencyCode(CurrencyCode::NOT_SET),
-    m_currencyCodeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_productCodeHasBeenSet(false),
-    m_billingGroupArnHasBeenSet(false),
-    m_creationTime(0),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTime(0),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_associationSize(0),
-    m_associationSizeHasBeenSet(false),
-    m_accountIdHasBeenSet(false)
-{
-}
-
 CustomLineItemListElement::CustomLineItemListElement(JsonView jsonValue)
-  : CustomLineItemListElement()
 {
   *this = jsonValue;
 }
@@ -48,80 +28,58 @@ CustomLineItemListElement& CustomLineItemListElement::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChargeDetails"))
   {
     m_chargeDetails = jsonValue.GetObject("ChargeDetails");
-
     m_chargeDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrencyCode"))
   {
     m_currencyCode = CurrencyCodeMapper::GetCurrencyCodeForName(jsonValue.GetString("CurrencyCode"));
-
     m_currencyCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductCode"))
   {
     m_productCode = jsonValue.GetString("ProductCode");
-
     m_productCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BillingGroupArn"))
   {
     m_billingGroupArn = jsonValue.GetString("BillingGroupArn");
-
     m_billingGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetInt64("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetInt64("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationSize"))
   {
     m_associationSize = jsonValue.GetInt64("AssociationSize");
-
     m_associationSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   return *this;
 }
 

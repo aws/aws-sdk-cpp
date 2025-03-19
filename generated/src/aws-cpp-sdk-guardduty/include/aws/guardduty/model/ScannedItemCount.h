@@ -29,7 +29,7 @@ namespace Model
   class ScannedItemCount
   {
   public:
-    AWS_GUARDDUTY_API ScannedItemCount();
+    AWS_GUARDDUTY_API ScannedItemCount() = default;
     AWS_GUARDDUTY_API ScannedItemCount(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API ScannedItemCount& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>Total GB of files scanned for malware.</p>
      */
-    inline int GetTotalGb() const{ return m_totalGb; }
+    inline int GetTotalGb() const { return m_totalGb; }
     inline bool TotalGbHasBeenSet() const { return m_totalGbHasBeenSet; }
     inline void SetTotalGb(int value) { m_totalGbHasBeenSet = true; m_totalGb = value; }
     inline ScannedItemCount& WithTotalGb(int value) { SetTotalGb(value); return *this;}
@@ -49,7 +49,7 @@ namespace Model
     /**
      * <p>Number of files scanned.</p>
      */
-    inline int GetFiles() const{ return m_files; }
+    inline int GetFiles() const { return m_files; }
     inline bool FilesHasBeenSet() const { return m_filesHasBeenSet; }
     inline void SetFiles(int value) { m_filesHasBeenSet = true; m_files = value; }
     inline ScannedItemCount& WithFiles(int value) { SetFiles(value); return *this;}
@@ -59,20 +59,20 @@ namespace Model
     /**
      * <p>Total number of scanned volumes.</p>
      */
-    inline int GetVolumes() const{ return m_volumes; }
+    inline int GetVolumes() const { return m_volumes; }
     inline bool VolumesHasBeenSet() const { return m_volumesHasBeenSet; }
     inline void SetVolumes(int value) { m_volumesHasBeenSet = true; m_volumes = value; }
     inline ScannedItemCount& WithVolumes(int value) { SetVolumes(value); return *this;}
     ///@}
   private:
 
-    int m_totalGb;
+    int m_totalGb{0};
     bool m_totalGbHasBeenSet = false;
 
-    int m_files;
+    int m_files{0};
     bool m_filesHasBeenSet = false;
 
-    int m_volumes;
+    int m_volumes{0};
     bool m_volumesHasBeenSet = false;
   };
 

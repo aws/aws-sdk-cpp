@@ -35,7 +35,7 @@ namespace Model
   class FileCacheLustreConfiguration
   {
   public:
-    AWS_FSX_API FileCacheLustreConfiguration();
+    AWS_FSX_API FileCacheLustreConfiguration() = default;
     AWS_FSX_API FileCacheLustreConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API FileCacheLustreConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,7 +48,7 @@ namespace Model
      * capacity is equal to Storage capacity (TiB) * PerUnitStorageThroughput
      * (MB/s/TiB). The only supported value is <code>1000</code>.</p>
      */
-    inline int GetPerUnitStorageThroughput() const{ return m_perUnitStorageThroughput; }
+    inline int GetPerUnitStorageThroughput() const { return m_perUnitStorageThroughput; }
     inline bool PerUnitStorageThroughputHasBeenSet() const { return m_perUnitStorageThroughputHasBeenSet; }
     inline void SetPerUnitStorageThroughput(int value) { m_perUnitStorageThroughputHasBeenSet = true; m_perUnitStorageThroughput = value; }
     inline FileCacheLustreConfiguration& WithPerUnitStorageThroughput(int value) { SetPerUnitStorageThroughput(value); return *this;}
@@ -59,12 +59,10 @@ namespace Model
      * <p>The deployment type of the Amazon File Cache resource, which must be
      * <code>CACHE_1</code>.</p>
      */
-    inline const FileCacheLustreDeploymentType& GetDeploymentType() const{ return m_deploymentType; }
+    inline FileCacheLustreDeploymentType GetDeploymentType() const { return m_deploymentType; }
     inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
-    inline void SetDeploymentType(const FileCacheLustreDeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
-    inline void SetDeploymentType(FileCacheLustreDeploymentType&& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = std::move(value); }
-    inline FileCacheLustreConfiguration& WithDeploymentType(const FileCacheLustreDeploymentType& value) { SetDeploymentType(value); return *this;}
-    inline FileCacheLustreConfiguration& WithDeploymentType(FileCacheLustreDeploymentType&& value) { SetDeploymentType(std::move(value)); return *this;}
+    inline void SetDeploymentType(FileCacheLustreDeploymentType value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
+    inline FileCacheLustreConfiguration& WithDeploymentType(FileCacheLustreDeploymentType value) { SetDeploymentType(value); return *this;}
     ///@}
 
     ///@{
@@ -73,38 +71,34 @@ namespace Model
      * a cache ID to the <code>DescribeFileCaches</code> operation, it returns the the
      * <code>MountName</code> value as part of the cache's description.</p>
      */
-    inline const Aws::String& GetMountName() const{ return m_mountName; }
+    inline const Aws::String& GetMountName() const { return m_mountName; }
     inline bool MountNameHasBeenSet() const { return m_mountNameHasBeenSet; }
-    inline void SetMountName(const Aws::String& value) { m_mountNameHasBeenSet = true; m_mountName = value; }
-    inline void SetMountName(Aws::String&& value) { m_mountNameHasBeenSet = true; m_mountName = std::move(value); }
-    inline void SetMountName(const char* value) { m_mountNameHasBeenSet = true; m_mountName.assign(value); }
-    inline FileCacheLustreConfiguration& WithMountName(const Aws::String& value) { SetMountName(value); return *this;}
-    inline FileCacheLustreConfiguration& WithMountName(Aws::String&& value) { SetMountName(std::move(value)); return *this;}
-    inline FileCacheLustreConfiguration& WithMountName(const char* value) { SetMountName(value); return *this;}
+    template<typename MountNameT = Aws::String>
+    void SetMountName(MountNameT&& value) { m_mountNameHasBeenSet = true; m_mountName = std::forward<MountNameT>(value); }
+    template<typename MountNameT = Aws::String>
+    FileCacheLustreConfiguration& WithMountName(MountNameT&& value) { SetMountName(std::forward<MountNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetWeeklyMaintenanceStartTime() const{ return m_weeklyMaintenanceStartTime; }
+    inline const Aws::String& GetWeeklyMaintenanceStartTime() const { return m_weeklyMaintenanceStartTime; }
     inline bool WeeklyMaintenanceStartTimeHasBeenSet() const { return m_weeklyMaintenanceStartTimeHasBeenSet; }
-    inline void SetWeeklyMaintenanceStartTime(const Aws::String& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = value; }
-    inline void SetWeeklyMaintenanceStartTime(Aws::String&& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = std::move(value); }
-    inline void SetWeeklyMaintenanceStartTime(const char* value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime.assign(value); }
-    inline FileCacheLustreConfiguration& WithWeeklyMaintenanceStartTime(const Aws::String& value) { SetWeeklyMaintenanceStartTime(value); return *this;}
-    inline FileCacheLustreConfiguration& WithWeeklyMaintenanceStartTime(Aws::String&& value) { SetWeeklyMaintenanceStartTime(std::move(value)); return *this;}
-    inline FileCacheLustreConfiguration& WithWeeklyMaintenanceStartTime(const char* value) { SetWeeklyMaintenanceStartTime(value); return *this;}
+    template<typename WeeklyMaintenanceStartTimeT = Aws::String>
+    void SetWeeklyMaintenanceStartTime(WeeklyMaintenanceStartTimeT&& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = std::forward<WeeklyMaintenanceStartTimeT>(value); }
+    template<typename WeeklyMaintenanceStartTimeT = Aws::String>
+    FileCacheLustreConfiguration& WithWeeklyMaintenanceStartTime(WeeklyMaintenanceStartTimeT&& value) { SetWeeklyMaintenanceStartTime(std::forward<WeeklyMaintenanceStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration for a Lustre MDT (Metadata Target) storage volume.</p>
      */
-    inline const FileCacheLustreMetadataConfiguration& GetMetadataConfiguration() const{ return m_metadataConfiguration; }
+    inline const FileCacheLustreMetadataConfiguration& GetMetadataConfiguration() const { return m_metadataConfiguration; }
     inline bool MetadataConfigurationHasBeenSet() const { return m_metadataConfigurationHasBeenSet; }
-    inline void SetMetadataConfiguration(const FileCacheLustreMetadataConfiguration& value) { m_metadataConfigurationHasBeenSet = true; m_metadataConfiguration = value; }
-    inline void SetMetadataConfiguration(FileCacheLustreMetadataConfiguration&& value) { m_metadataConfigurationHasBeenSet = true; m_metadataConfiguration = std::move(value); }
-    inline FileCacheLustreConfiguration& WithMetadataConfiguration(const FileCacheLustreMetadataConfiguration& value) { SetMetadataConfiguration(value); return *this;}
-    inline FileCacheLustreConfiguration& WithMetadataConfiguration(FileCacheLustreMetadataConfiguration&& value) { SetMetadataConfiguration(std::move(value)); return *this;}
+    template<typename MetadataConfigurationT = FileCacheLustreMetadataConfiguration>
+    void SetMetadataConfiguration(MetadataConfigurationT&& value) { m_metadataConfigurationHasBeenSet = true; m_metadataConfiguration = std::forward<MetadataConfigurationT>(value); }
+    template<typename MetadataConfigurationT = FileCacheLustreMetadataConfiguration>
+    FileCacheLustreConfiguration& WithMetadataConfiguration(MetadataConfigurationT&& value) { SetMetadataConfiguration(std::forward<MetadataConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,19 +106,19 @@ namespace Model
      * <p>The configuration for Lustre logging used to write the enabled logging events
      * for your Amazon File Cache resource to Amazon CloudWatch Logs.</p>
      */
-    inline const LustreLogConfiguration& GetLogConfiguration() const{ return m_logConfiguration; }
+    inline const LustreLogConfiguration& GetLogConfiguration() const { return m_logConfiguration; }
     inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
-    inline void SetLogConfiguration(const LustreLogConfiguration& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
-    inline void SetLogConfiguration(LustreLogConfiguration&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
-    inline FileCacheLustreConfiguration& WithLogConfiguration(const LustreLogConfiguration& value) { SetLogConfiguration(value); return *this;}
-    inline FileCacheLustreConfiguration& WithLogConfiguration(LustreLogConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}
+    template<typename LogConfigurationT = LustreLogConfiguration>
+    void SetLogConfiguration(LogConfigurationT&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::forward<LogConfigurationT>(value); }
+    template<typename LogConfigurationT = LustreLogConfiguration>
+    FileCacheLustreConfiguration& WithLogConfiguration(LogConfigurationT&& value) { SetLogConfiguration(std::forward<LogConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    int m_perUnitStorageThroughput;
+    int m_perUnitStorageThroughput{0};
     bool m_perUnitStorageThroughputHasBeenSet = false;
 
-    FileCacheLustreDeploymentType m_deploymentType;
+    FileCacheLustreDeploymentType m_deploymentType{FileCacheLustreDeploymentType::NOT_SET};
     bool m_deploymentTypeHasBeenSet = false;
 
     Aws::String m_mountName;

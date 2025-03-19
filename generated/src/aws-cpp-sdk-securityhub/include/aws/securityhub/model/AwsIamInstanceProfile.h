@@ -33,7 +33,7 @@ namespace Model
   class AwsIamInstanceProfile
   {
   public:
-    AWS_SECURITYHUB_API AwsIamInstanceProfile();
+    AWS_SECURITYHUB_API AwsIamInstanceProfile() = default;
     AWS_SECURITYHUB_API AwsIamInstanceProfile(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsIamInstanceProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The ARN of the instance profile.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline AwsIamInstanceProfile& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline AwsIamInstanceProfile& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline AwsIamInstanceProfile& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    AwsIamInstanceProfile& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,70 +57,62 @@ namespace Model
      * about the validation and formatting of timestamp fields in Security Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::String& GetCreateDate() const{ return m_createDate; }
+    inline const Aws::String& GetCreateDate() const { return m_createDate; }
     inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
-    inline void SetCreateDate(const Aws::String& value) { m_createDateHasBeenSet = true; m_createDate = value; }
-    inline void SetCreateDate(Aws::String&& value) { m_createDateHasBeenSet = true; m_createDate = std::move(value); }
-    inline void SetCreateDate(const char* value) { m_createDateHasBeenSet = true; m_createDate.assign(value); }
-    inline AwsIamInstanceProfile& WithCreateDate(const Aws::String& value) { SetCreateDate(value); return *this;}
-    inline AwsIamInstanceProfile& WithCreateDate(Aws::String&& value) { SetCreateDate(std::move(value)); return *this;}
-    inline AwsIamInstanceProfile& WithCreateDate(const char* value) { SetCreateDate(value); return *this;}
+    template<typename CreateDateT = Aws::String>
+    void SetCreateDate(CreateDateT&& value) { m_createDateHasBeenSet = true; m_createDate = std::forward<CreateDateT>(value); }
+    template<typename CreateDateT = Aws::String>
+    AwsIamInstanceProfile& WithCreateDate(CreateDateT&& value) { SetCreateDate(std::forward<CreateDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the instance profile.</p>
      */
-    inline const Aws::String& GetInstanceProfileId() const{ return m_instanceProfileId; }
+    inline const Aws::String& GetInstanceProfileId() const { return m_instanceProfileId; }
     inline bool InstanceProfileIdHasBeenSet() const { return m_instanceProfileIdHasBeenSet; }
-    inline void SetInstanceProfileId(const Aws::String& value) { m_instanceProfileIdHasBeenSet = true; m_instanceProfileId = value; }
-    inline void SetInstanceProfileId(Aws::String&& value) { m_instanceProfileIdHasBeenSet = true; m_instanceProfileId = std::move(value); }
-    inline void SetInstanceProfileId(const char* value) { m_instanceProfileIdHasBeenSet = true; m_instanceProfileId.assign(value); }
-    inline AwsIamInstanceProfile& WithInstanceProfileId(const Aws::String& value) { SetInstanceProfileId(value); return *this;}
-    inline AwsIamInstanceProfile& WithInstanceProfileId(Aws::String&& value) { SetInstanceProfileId(std::move(value)); return *this;}
-    inline AwsIamInstanceProfile& WithInstanceProfileId(const char* value) { SetInstanceProfileId(value); return *this;}
+    template<typename InstanceProfileIdT = Aws::String>
+    void SetInstanceProfileId(InstanceProfileIdT&& value) { m_instanceProfileIdHasBeenSet = true; m_instanceProfileId = std::forward<InstanceProfileIdT>(value); }
+    template<typename InstanceProfileIdT = Aws::String>
+    AwsIamInstanceProfile& WithInstanceProfileId(InstanceProfileIdT&& value) { SetInstanceProfileId(std::forward<InstanceProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the instance profile.</p>
      */
-    inline const Aws::String& GetInstanceProfileName() const{ return m_instanceProfileName; }
+    inline const Aws::String& GetInstanceProfileName() const { return m_instanceProfileName; }
     inline bool InstanceProfileNameHasBeenSet() const { return m_instanceProfileNameHasBeenSet; }
-    inline void SetInstanceProfileName(const Aws::String& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = value; }
-    inline void SetInstanceProfileName(Aws::String&& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = std::move(value); }
-    inline void SetInstanceProfileName(const char* value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName.assign(value); }
-    inline AwsIamInstanceProfile& WithInstanceProfileName(const Aws::String& value) { SetInstanceProfileName(value); return *this;}
-    inline AwsIamInstanceProfile& WithInstanceProfileName(Aws::String&& value) { SetInstanceProfileName(std::move(value)); return *this;}
-    inline AwsIamInstanceProfile& WithInstanceProfileName(const char* value) { SetInstanceProfileName(value); return *this;}
+    template<typename InstanceProfileNameT = Aws::String>
+    void SetInstanceProfileName(InstanceProfileNameT&& value) { m_instanceProfileNameHasBeenSet = true; m_instanceProfileName = std::forward<InstanceProfileNameT>(value); }
+    template<typename InstanceProfileNameT = Aws::String>
+    AwsIamInstanceProfile& WithInstanceProfileName(InstanceProfileNameT&& value) { SetInstanceProfileName(std::forward<InstanceProfileNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The path to the instance profile.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline AwsIamInstanceProfile& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline AwsIamInstanceProfile& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline AwsIamInstanceProfile& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    AwsIamInstanceProfile& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The roles associated with the instance profile.</p>
      */
-    inline const Aws::Vector<AwsIamInstanceProfileRole>& GetRoles() const{ return m_roles; }
+    inline const Aws::Vector<AwsIamInstanceProfileRole>& GetRoles() const { return m_roles; }
     inline bool RolesHasBeenSet() const { return m_rolesHasBeenSet; }
-    inline void SetRoles(const Aws::Vector<AwsIamInstanceProfileRole>& value) { m_rolesHasBeenSet = true; m_roles = value; }
-    inline void SetRoles(Aws::Vector<AwsIamInstanceProfileRole>&& value) { m_rolesHasBeenSet = true; m_roles = std::move(value); }
-    inline AwsIamInstanceProfile& WithRoles(const Aws::Vector<AwsIamInstanceProfileRole>& value) { SetRoles(value); return *this;}
-    inline AwsIamInstanceProfile& WithRoles(Aws::Vector<AwsIamInstanceProfileRole>&& value) { SetRoles(std::move(value)); return *this;}
-    inline AwsIamInstanceProfile& AddRoles(const AwsIamInstanceProfileRole& value) { m_rolesHasBeenSet = true; m_roles.push_back(value); return *this; }
-    inline AwsIamInstanceProfile& AddRoles(AwsIamInstanceProfileRole&& value) { m_rolesHasBeenSet = true; m_roles.push_back(std::move(value)); return *this; }
+    template<typename RolesT = Aws::Vector<AwsIamInstanceProfileRole>>
+    void SetRoles(RolesT&& value) { m_rolesHasBeenSet = true; m_roles = std::forward<RolesT>(value); }
+    template<typename RolesT = Aws::Vector<AwsIamInstanceProfileRole>>
+    AwsIamInstanceProfile& WithRoles(RolesT&& value) { SetRoles(std::forward<RolesT>(value)); return *this;}
+    template<typename RolesT = AwsIamInstanceProfileRole>
+    AwsIamInstanceProfile& AddRoles(RolesT&& value) { m_rolesHasBeenSet = true; m_roles.emplace_back(std::forward<RolesT>(value)); return *this; }
     ///@}
   private:
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeBridgeResult::DescribeBridgeResult()
-{
-}
-
 DescribeBridgeResult::DescribeBridgeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeBridgeResult& DescribeBridgeResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("bridge"))
   {
     m_bridge = jsonValue.GetObject("bridge");
-
+    m_bridgeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

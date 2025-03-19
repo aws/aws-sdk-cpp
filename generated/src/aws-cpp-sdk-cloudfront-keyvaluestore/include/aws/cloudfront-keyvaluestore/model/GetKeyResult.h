@@ -32,7 +32,7 @@ namespace Model
   class GetKeyResult
   {
   public:
-    AWS_CLOUDFRONTKEYVALUESTORE_API GetKeyResult();
+    AWS_CLOUDFRONTKEYVALUESTORE_API GetKeyResult() = default;
     AWS_CLOUDFRONTKEYVALUESTORE_API GetKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDFRONTKEYVALUESTORE_API GetKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,34 +41,30 @@ namespace Model
     /**
      * <p>The key of the key value pair.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
-    inline void SetKey(const Aws::String& value) { m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_key.assign(value); }
-    inline GetKeyResult& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline GetKeyResult& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline GetKeyResult& WithKey(const char* value) { SetKey(value); return *this;}
+    inline const Aws::String& GetKey() const { return m_key; }
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    GetKeyResult& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the key value pair.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
-    inline void SetValue(const Aws::String& value) { m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_value.assign(value); }
-    inline GetKeyResult& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline GetKeyResult& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline GetKeyResult& WithValue(const char* value) { SetValue(value); return *this;}
+    inline const Aws::String& GetValue() const { return m_value; }
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    GetKeyResult& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Number of key value pairs in the Key Value Store.</p>
      */
-    inline int GetItemCount() const{ return m_itemCount; }
-    inline void SetItemCount(int value) { m_itemCount = value; }
+    inline int GetItemCount() const { return m_itemCount; }
+    inline void SetItemCount(int value) { m_itemCountHasBeenSet = true; m_itemCount = value; }
     inline GetKeyResult& WithItemCount(int value) { SetItemCount(value); return *this;}
     ///@}
 
@@ -76,32 +72,35 @@ namespace Model
     /**
      * <p>Total size of the Key Value Store in bytes.</p>
      */
-    inline long long GetTotalSizeInBytes() const{ return m_totalSizeInBytes; }
-    inline void SetTotalSizeInBytes(long long value) { m_totalSizeInBytes = value; }
+    inline long long GetTotalSizeInBytes() const { return m_totalSizeInBytes; }
+    inline void SetTotalSizeInBytes(long long value) { m_totalSizeInBytesHasBeenSet = true; m_totalSizeInBytes = value; }
     inline GetKeyResult& WithTotalSizeInBytes(long long value) { SetTotalSizeInBytes(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetKeyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_key;
+    bool m_keyHasBeenSet = false;
 
     Aws::String m_value;
+    bool m_valueHasBeenSet = false;
 
-    int m_itemCount;
+    int m_itemCount{0};
+    bool m_itemCountHasBeenSet = false;
 
-    long long m_totalSizeInBytes;
+    long long m_totalSizeInBytes{0};
+    bool m_totalSizeInBytesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

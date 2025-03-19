@@ -18,14 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-ObjectIdentifierAndLinkNameTuple::ObjectIdentifierAndLinkNameTuple() : 
-    m_objectIdentifierHasBeenSet(false),
-    m_linkNameHasBeenSet(false)
-{
-}
-
 ObjectIdentifierAndLinkNameTuple::ObjectIdentifierAndLinkNameTuple(JsonView jsonValue)
-  : ObjectIdentifierAndLinkNameTuple()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ObjectIdentifierAndLinkNameTuple& ObjectIdentifierAndLinkNameTuple::operator =(J
   if(jsonValue.ValueExists("ObjectIdentifier"))
   {
     m_objectIdentifier = jsonValue.GetString("ObjectIdentifier");
-
     m_objectIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LinkName"))
   {
     m_linkName = jsonValue.GetString("LinkName");
-
     m_linkNameHasBeenSet = true;
   }
-
   return *this;
 }
 

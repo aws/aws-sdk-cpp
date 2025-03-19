@@ -12,14 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribePatchGroupsRequest::DescribePatchGroupsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribePatchGroupsRequest::SerializePayload() const
 {
   JsonValue payload;

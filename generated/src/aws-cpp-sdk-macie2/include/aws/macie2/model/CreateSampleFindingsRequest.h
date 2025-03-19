@@ -22,7 +22,7 @@ namespace Model
   class CreateSampleFindingsRequest : public Macie2Request
   {
   public:
-    AWS_MACIE2_API CreateSampleFindingsRequest();
+    AWS_MACIE2_API CreateSampleFindingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,13 @@ namespace Model
      * create a sample of every type of finding that Amazon Macie supports, don't
      * include this array in your request.</p>
      */
-    inline const Aws::Vector<FindingType>& GetFindingTypes() const{ return m_findingTypes; }
+    inline const Aws::Vector<FindingType>& GetFindingTypes() const { return m_findingTypes; }
     inline bool FindingTypesHasBeenSet() const { return m_findingTypesHasBeenSet; }
-    inline void SetFindingTypes(const Aws::Vector<FindingType>& value) { m_findingTypesHasBeenSet = true; m_findingTypes = value; }
-    inline void SetFindingTypes(Aws::Vector<FindingType>&& value) { m_findingTypesHasBeenSet = true; m_findingTypes = std::move(value); }
-    inline CreateSampleFindingsRequest& WithFindingTypes(const Aws::Vector<FindingType>& value) { SetFindingTypes(value); return *this;}
-    inline CreateSampleFindingsRequest& WithFindingTypes(Aws::Vector<FindingType>&& value) { SetFindingTypes(std::move(value)); return *this;}
-    inline CreateSampleFindingsRequest& AddFindingTypes(const FindingType& value) { m_findingTypesHasBeenSet = true; m_findingTypes.push_back(value); return *this; }
-    inline CreateSampleFindingsRequest& AddFindingTypes(FindingType&& value) { m_findingTypesHasBeenSet = true; m_findingTypes.push_back(std::move(value)); return *this; }
+    template<typename FindingTypesT = Aws::Vector<FindingType>>
+    void SetFindingTypes(FindingTypesT&& value) { m_findingTypesHasBeenSet = true; m_findingTypes = std::forward<FindingTypesT>(value); }
+    template<typename FindingTypesT = Aws::Vector<FindingType>>
+    CreateSampleFindingsRequest& WithFindingTypes(FindingTypesT&& value) { SetFindingTypes(std::forward<FindingTypesT>(value)); return *this;}
+    inline CreateSampleFindingsRequest& AddFindingTypes(FindingType value) { m_findingTypesHasBeenSet = true; m_findingTypes.push_back(value); return *this; }
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-BarChartFieldWells::BarChartFieldWells() : 
-    m_barChartAggregatedFieldWellsHasBeenSet(false)
-{
-}
-
 BarChartFieldWells::BarChartFieldWells(JsonView jsonValue)
-  : BarChartFieldWells()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BarChartFieldWells& BarChartFieldWells::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BarChartAggregatedFieldWells"))
   {
     m_barChartAggregatedFieldWells = jsonValue.GetObject("BarChartAggregatedFieldWells");
-
     m_barChartAggregatedFieldWellsHasBeenSet = true;
   }
-
   return *this;
 }
 

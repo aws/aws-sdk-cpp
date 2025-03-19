@@ -18,28 +18,7 @@ namespace Connect
 namespace Model
 {
 
-View::View() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(ViewStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(ViewType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_versionDescriptionHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_viewContentSha256HasBeenSet(false)
-{
-}
-
 View::View(JsonView jsonValue)
-  : View()
 {
   *this = jsonValue;
 }
@@ -49,66 +28,48 @@ View& View::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ViewStatusMapper::GetViewStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ViewTypeMapper::GetViewTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetInteger("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionDescription"))
   {
     m_versionDescription = jsonValue.GetString("VersionDescription");
-
     m_versionDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetObject("Content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -118,28 +79,21 @@ View& View::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ViewContentSha256"))
   {
     m_viewContentSha256 = jsonValue.GetString("ViewContentSha256");
-
     m_viewContentSha256HasBeenSet = true;
   }
-
   return *this;
 }
 

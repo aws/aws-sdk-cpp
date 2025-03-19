@@ -18,15 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-LayersListItem::LayersListItem() : 
-    m_layerNameHasBeenSet(false),
-    m_layerArnHasBeenSet(false),
-    m_latestMatchingVersionHasBeenSet(false)
-{
-}
-
 LayersListItem::LayersListItem(JsonView jsonValue)
-  : LayersListItem()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ LayersListItem& LayersListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LayerName"))
   {
     m_layerName = jsonValue.GetString("LayerName");
-
     m_layerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LayerArn"))
   {
     m_layerArn = jsonValue.GetString("LayerArn");
-
     m_layerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestMatchingVersion"))
   {
     m_latestMatchingVersion = jsonValue.GetObject("LatestMatchingVersion");
-
     m_latestMatchingVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

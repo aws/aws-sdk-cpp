@@ -14,12 +14,6 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-GetReusableDelegationSetLimitRequest::GetReusableDelegationSetLimitRequest() : 
-    m_type(ReusableDelegationSetLimitType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_delegationSetIdHasBeenSet(false)
-{
-}
 
 Aws::String GetReusableDelegationSetLimitRequest::SerializePayload() const
 {

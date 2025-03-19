@@ -12,11 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetOrganizationCustomRulePolicyRequest::GetOrganizationCustomRulePolicyRequest() : 
-    m_organizationConfigRuleNameHasBeenSet(false)
-{
-}
-
 Aws::String GetOrganizationCustomRulePolicyRequest::SerializePayload() const
 {
   JsonValue payload;

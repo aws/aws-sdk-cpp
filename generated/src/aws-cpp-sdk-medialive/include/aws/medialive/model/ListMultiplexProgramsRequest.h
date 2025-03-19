@@ -29,7 +29,7 @@ namespace Model
   class ListMultiplexProgramsRequest : public MediaLiveRequest
   {
   public:
-    AWS_MEDIALIVE_API ListMultiplexProgramsRequest();
+    AWS_MEDIALIVE_API ListMultiplexProgramsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,7 +46,7 @@ namespace Model
     /**
      * The maximum number of items to return.
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListMultiplexProgramsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -56,32 +56,28 @@ namespace Model
     /**
      * The ID of the multiplex that the programs belong to.
      */
-    inline const Aws::String& GetMultiplexId() const{ return m_multiplexId; }
+    inline const Aws::String& GetMultiplexId() const { return m_multiplexId; }
     inline bool MultiplexIdHasBeenSet() const { return m_multiplexIdHasBeenSet; }
-    inline void SetMultiplexId(const Aws::String& value) { m_multiplexIdHasBeenSet = true; m_multiplexId = value; }
-    inline void SetMultiplexId(Aws::String&& value) { m_multiplexIdHasBeenSet = true; m_multiplexId = std::move(value); }
-    inline void SetMultiplexId(const char* value) { m_multiplexIdHasBeenSet = true; m_multiplexId.assign(value); }
-    inline ListMultiplexProgramsRequest& WithMultiplexId(const Aws::String& value) { SetMultiplexId(value); return *this;}
-    inline ListMultiplexProgramsRequest& WithMultiplexId(Aws::String&& value) { SetMultiplexId(std::move(value)); return *this;}
-    inline ListMultiplexProgramsRequest& WithMultiplexId(const char* value) { SetMultiplexId(value); return *this;}
+    template<typename MultiplexIdT = Aws::String>
+    void SetMultiplexId(MultiplexIdT&& value) { m_multiplexIdHasBeenSet = true; m_multiplexId = std::forward<MultiplexIdT>(value); }
+    template<typename MultiplexIdT = Aws::String>
+    ListMultiplexProgramsRequest& WithMultiplexId(MultiplexIdT&& value) { SetMultiplexId(std::forward<MultiplexIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The token to retrieve the next page of results.
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListMultiplexProgramsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMultiplexProgramsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMultiplexProgramsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMultiplexProgramsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_multiplexId;

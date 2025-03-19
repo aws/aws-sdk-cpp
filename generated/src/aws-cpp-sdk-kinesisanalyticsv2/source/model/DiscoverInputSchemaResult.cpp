@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DiscoverInputSchemaResult::DiscoverInputSchemaResult()
-{
-}
-
 DiscoverInputSchemaResult::DiscoverInputSchemaResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DiscoverInputSchemaResult& DiscoverInputSchemaResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("InputSchema"))
   {
     m_inputSchema = jsonValue.GetObject("InputSchema");
-
+    m_inputSchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParsedInputRecords"))
   {
     Aws::Utils::Array<JsonView> parsedInputRecordsJsonList = jsonValue.GetArray("ParsedInputRecords");
@@ -49,8 +44,8 @@ DiscoverInputSchemaResult& DiscoverInputSchemaResult::operator =(const Aws::Amaz
       }
       m_parsedInputRecords.push_back(std::move(parsedInputRecordList));
     }
+    m_parsedInputRecordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProcessedInputRecords"))
   {
     Aws::Utils::Array<JsonView> processedInputRecordsJsonList = jsonValue.GetArray("ProcessedInputRecords");
@@ -58,8 +53,8 @@ DiscoverInputSchemaResult& DiscoverInputSchemaResult::operator =(const Aws::Amaz
     {
       m_processedInputRecords.push_back(processedInputRecordsJsonList[processedInputRecordsIndex].AsString());
     }
+    m_processedInputRecordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RawInputRecords"))
   {
     Aws::Utils::Array<JsonView> rawInputRecordsJsonList = jsonValue.GetArray("RawInputRecords");
@@ -67,14 +62,15 @@ DiscoverInputSchemaResult& DiscoverInputSchemaResult::operator =(const Aws::Amaz
     {
       m_rawInputRecords.push_back(rawInputRecordsJsonList[rawInputRecordsIndex].AsString());
     }
+    m_rawInputRecordsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

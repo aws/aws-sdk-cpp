@@ -12,15 +12,6 @@ using namespace Aws::BedrockAgentRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RetrieveAndGenerateStreamRequest::RetrieveAndGenerateStreamRequest() : 
-    m_inputHasBeenSet(false),
-    m_retrieveAndGenerateConfigurationHasBeenSet(false),
-    m_sessionConfigurationHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
-{
-}
-
 Aws::String RetrieveAndGenerateStreamRequest::SerializePayload() const
 {
   JsonValue payload;

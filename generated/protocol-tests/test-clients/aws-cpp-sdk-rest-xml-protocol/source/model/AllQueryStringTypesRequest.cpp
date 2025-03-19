@@ -17,39 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-AllQueryStringTypesRequest::AllQueryStringTypesRequest() : 
-    m_queryStringHasBeenSet(false),
-    m_queryStringListHasBeenSet(false),
-    m_queryStringSetHasBeenSet(false),
-    m_queryByte(0),
-    m_queryByteHasBeenSet(false),
-    m_queryShort(0),
-    m_queryShortHasBeenSet(false),
-    m_queryInteger(0),
-    m_queryIntegerHasBeenSet(false),
-    m_queryIntegerListHasBeenSet(false),
-    m_queryIntegerSetHasBeenSet(false),
-    m_queryLong(0),
-    m_queryLongHasBeenSet(false),
-    m_queryFloat(0.0),
-    m_queryFloatHasBeenSet(false),
-    m_queryDouble(0.0),
-    m_queryDoubleHasBeenSet(false),
-    m_queryDoubleListHasBeenSet(false),
-    m_queryBoolean(false),
-    m_queryBooleanHasBeenSet(false),
-    m_queryBooleanListHasBeenSet(false),
-    m_queryTimestampHasBeenSet(false),
-    m_queryTimestampListHasBeenSet(false),
-    m_queryEnum(FooEnum::NOT_SET),
-    m_queryEnumHasBeenSet(false),
-    m_queryEnumListHasBeenSet(false),
-    m_queryIntegerEnum(0),
-    m_queryIntegerEnumHasBeenSet(false),
-    m_queryIntegerEnumListHasBeenSet(false),
-    m_queryParamsMapOfStringsHasBeenSet(false)
-{
-}
 
 Aws::String AllQueryStringTypesRequest::SerializePayload() const
 {

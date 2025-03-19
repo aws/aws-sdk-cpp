@@ -35,7 +35,7 @@ namespace Model
   class Tls
   {
   public:
-    AWS_KAFKA_API Tls();
+    AWS_KAFKA_API Tls() = default;
     AWS_KAFKA_API Tls(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Tls& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,15 +47,14 @@ namespace Model
             <p>List of ACM Certificate Authority ARNs.</p>
          
      */
-    inline const Aws::Vector<Aws::String>& GetCertificateAuthorityArnList() const{ return m_certificateAuthorityArnList; }
+    inline const Aws::Vector<Aws::String>& GetCertificateAuthorityArnList() const { return m_certificateAuthorityArnList; }
     inline bool CertificateAuthorityArnListHasBeenSet() const { return m_certificateAuthorityArnListHasBeenSet; }
-    inline void SetCertificateAuthorityArnList(const Aws::Vector<Aws::String>& value) { m_certificateAuthorityArnListHasBeenSet = true; m_certificateAuthorityArnList = value; }
-    inline void SetCertificateAuthorityArnList(Aws::Vector<Aws::String>&& value) { m_certificateAuthorityArnListHasBeenSet = true; m_certificateAuthorityArnList = std::move(value); }
-    inline Tls& WithCertificateAuthorityArnList(const Aws::Vector<Aws::String>& value) { SetCertificateAuthorityArnList(value); return *this;}
-    inline Tls& WithCertificateAuthorityArnList(Aws::Vector<Aws::String>&& value) { SetCertificateAuthorityArnList(std::move(value)); return *this;}
-    inline Tls& AddCertificateAuthorityArnList(const Aws::String& value) { m_certificateAuthorityArnListHasBeenSet = true; m_certificateAuthorityArnList.push_back(value); return *this; }
-    inline Tls& AddCertificateAuthorityArnList(Aws::String&& value) { m_certificateAuthorityArnListHasBeenSet = true; m_certificateAuthorityArnList.push_back(std::move(value)); return *this; }
-    inline Tls& AddCertificateAuthorityArnList(const char* value) { m_certificateAuthorityArnListHasBeenSet = true; m_certificateAuthorityArnList.push_back(value); return *this; }
+    template<typename CertificateAuthorityArnListT = Aws::Vector<Aws::String>>
+    void SetCertificateAuthorityArnList(CertificateAuthorityArnListT&& value) { m_certificateAuthorityArnListHasBeenSet = true; m_certificateAuthorityArnList = std::forward<CertificateAuthorityArnListT>(value); }
+    template<typename CertificateAuthorityArnListT = Aws::Vector<Aws::String>>
+    Tls& WithCertificateAuthorityArnList(CertificateAuthorityArnListT&& value) { SetCertificateAuthorityArnList(std::forward<CertificateAuthorityArnListT>(value)); return *this;}
+    template<typename CertificateAuthorityArnListT = Aws::String>
+    Tls& AddCertificateAuthorityArnList(CertificateAuthorityArnListT&& value) { m_certificateAuthorityArnListHasBeenSet = true; m_certificateAuthorityArnList.emplace_back(std::forward<CertificateAuthorityArnListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -65,7 +64,7 @@ namespace Model
      * authentication.</p>
          
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline Tls& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -75,7 +74,7 @@ namespace Model
     Aws::Vector<Aws::String> m_certificateAuthorityArnList;
     bool m_certificateAuthorityArnListHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

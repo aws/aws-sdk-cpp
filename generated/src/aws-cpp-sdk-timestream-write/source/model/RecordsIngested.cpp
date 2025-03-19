@@ -18,18 +18,7 @@ namespace TimestreamWrite
 namespace Model
 {
 
-RecordsIngested::RecordsIngested() : 
-    m_total(0),
-    m_totalHasBeenSet(false),
-    m_memoryStore(0),
-    m_memoryStoreHasBeenSet(false),
-    m_magneticStore(0),
-    m_magneticStoreHasBeenSet(false)
-{
-}
-
 RecordsIngested::RecordsIngested(JsonView jsonValue)
-  : RecordsIngested()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ RecordsIngested& RecordsIngested::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Total"))
   {
     m_total = jsonValue.GetInteger("Total");
-
     m_totalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MemoryStore"))
   {
     m_memoryStore = jsonValue.GetInteger("MemoryStore");
-
     m_memoryStoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MagneticStore"))
   {
     m_magneticStore = jsonValue.GetInteger("MagneticStore");
-
     m_magneticStoreHasBeenSet = true;
   }
-
   return *this;
 }
 

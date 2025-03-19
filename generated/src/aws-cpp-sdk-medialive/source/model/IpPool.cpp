@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-IpPool::IpPool() : 
-    m_cidrHasBeenSet(false)
-{
-}
-
 IpPool::IpPool(JsonView jsonValue)
-  : IpPool()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IpPool& IpPool::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cidr"))
   {
     m_cidr = jsonValue.GetString("cidr");
-
     m_cidrHasBeenSet = true;
   }
-
   return *this;
 }
 

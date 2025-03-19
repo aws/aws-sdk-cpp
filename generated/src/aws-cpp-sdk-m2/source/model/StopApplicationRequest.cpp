@@ -12,13 +12,6 @@ using namespace Aws::MainframeModernization::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopApplicationRequest::StopApplicationRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_forceStop(false),
-    m_forceStopHasBeenSet(false)
-{
-}
-
 Aws::String StopApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

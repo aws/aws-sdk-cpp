@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails() : 
-    m_conditionHasBeenSet(false),
-    m_containerNameHasBeenSet(false)
-{
-}
-
 AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails::AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails(JsonView jsonValue)
-  : AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsEcsTaskDefinitionContainerDefinitionsDependsOnDetails& AwsEcsTaskDefinitionCo
   if(jsonValue.ValueExists("Condition"))
   {
     m_condition = jsonValue.GetString("Condition");
-
     m_conditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainerName"))
   {
     m_containerName = jsonValue.GetString("ContainerName");
-
     m_containerNameHasBeenSet = true;
   }
-
   return *this;
 }
 

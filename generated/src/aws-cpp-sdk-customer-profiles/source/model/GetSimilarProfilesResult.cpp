@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSimilarProfilesResult::GetSimilarProfilesResult() : 
-    m_matchType(MatchType::NOT_SET),
-    m_ruleLevel(0),
-    m_confidenceScore(0.0)
-{
-}
-
 GetSimilarProfilesResult::GetSimilarProfilesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetSimilarProfilesResult()
 {
   *this = result;
 }
@@ -40,44 +32,40 @@ GetSimilarProfilesResult& GetSimilarProfilesResult::operator =(const Aws::Amazon
     {
       m_profileIds.push_back(profileIdsJsonList[profileIdsIndex].AsString());
     }
+    m_profileIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MatchId"))
   {
     m_matchId = jsonValue.GetString("MatchId");
-
+    m_matchIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MatchType"))
   {
     m_matchType = MatchTypeMapper::GetMatchTypeForName(jsonValue.GetString("MatchType"));
-
+    m_matchTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleLevel"))
   {
     m_ruleLevel = jsonValue.GetInteger("RuleLevel");
-
+    m_ruleLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfidenceScore"))
   {
     m_confidenceScore = jsonValue.GetDouble("ConfidenceScore");
-
+    m_confidenceScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

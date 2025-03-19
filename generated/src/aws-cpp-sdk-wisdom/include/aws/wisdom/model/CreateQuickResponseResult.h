@@ -28,7 +28,7 @@ namespace Model
   class CreateQuickResponseResult
   {
   public:
-    AWS_CONNECTWISDOMSERVICE_API CreateQuickResponseResult();
+    AWS_CONNECTWISDOMSERVICE_API CreateQuickResponseResult() = default;
     AWS_CONNECTWISDOMSERVICE_API CreateQuickResponseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECTWISDOMSERVICE_API CreateQuickResponseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The quick response.</p>
      */
-    inline const QuickResponseData& GetQuickResponse() const{ return m_quickResponse; }
-    inline void SetQuickResponse(const QuickResponseData& value) { m_quickResponse = value; }
-    inline void SetQuickResponse(QuickResponseData&& value) { m_quickResponse = std::move(value); }
-    inline CreateQuickResponseResult& WithQuickResponse(const QuickResponseData& value) { SetQuickResponse(value); return *this;}
-    inline CreateQuickResponseResult& WithQuickResponse(QuickResponseData&& value) { SetQuickResponse(std::move(value)); return *this;}
+    inline const QuickResponseData& GetQuickResponse() const { return m_quickResponse; }
+    template<typename QuickResponseT = QuickResponseData>
+    void SetQuickResponse(QuickResponseT&& value) { m_quickResponseHasBeenSet = true; m_quickResponse = std::forward<QuickResponseT>(value); }
+    template<typename QuickResponseT = QuickResponseData>
+    CreateQuickResponseResult& WithQuickResponse(QuickResponseT&& value) { SetQuickResponse(std::forward<QuickResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateQuickResponseResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateQuickResponseResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateQuickResponseResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateQuickResponseResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     QuickResponseData m_quickResponse;
+    bool m_quickResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

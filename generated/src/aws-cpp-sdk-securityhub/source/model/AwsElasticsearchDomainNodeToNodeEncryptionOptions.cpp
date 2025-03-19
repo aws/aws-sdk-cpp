@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsElasticsearchDomainNodeToNodeEncryptionOptions::AwsElasticsearchDomainNodeToNodeEncryptionOptions() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 AwsElasticsearchDomainNodeToNodeEncryptionOptions::AwsElasticsearchDomainNodeToNodeEncryptionOptions(JsonView jsonValue)
-  : AwsElasticsearchDomainNodeToNodeEncryptionOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AwsElasticsearchDomainNodeToNodeEncryptionOptions& AwsElasticsearchDomainNodeToN
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

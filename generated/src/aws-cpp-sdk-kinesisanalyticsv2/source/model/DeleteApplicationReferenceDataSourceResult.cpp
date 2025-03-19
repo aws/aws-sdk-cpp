@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteApplicationReferenceDataSourceResult::DeleteApplicationReferenceDataSourceResult() : 
-    m_applicationVersionId(0)
-{
-}
-
 DeleteApplicationReferenceDataSourceResult::DeleteApplicationReferenceDataSourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteApplicationReferenceDataSourceResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ DeleteApplicationReferenceDataSourceResult& DeleteApplicationReferenceDataSource
   if(jsonValue.ValueExists("ApplicationARN"))
   {
     m_applicationARN = jsonValue.GetString("ApplicationARN");
-
+    m_applicationARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationVersionId"))
   {
     m_applicationVersionId = jsonValue.GetInt64("ApplicationVersionId");
-
+    m_applicationVersionIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DateTimeParameterDeclaration::DateTimeParameterDeclaration() : 
-    m_nameHasBeenSet(false),
-    m_defaultValuesHasBeenSet(false),
-    m_timeGranularity(TimeGranularity::NOT_SET),
-    m_timeGranularityHasBeenSet(false),
-    m_valueWhenUnsetHasBeenSet(false),
-    m_mappedDataSetParametersHasBeenSet(false)
-{
-}
-
 DateTimeParameterDeclaration::DateTimeParameterDeclaration(JsonView jsonValue)
-  : DateTimeParameterDeclaration()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ DateTimeParameterDeclaration& DateTimeParameterDeclaration::operator =(JsonView 
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultValues"))
   {
     m_defaultValues = jsonValue.GetObject("DefaultValues");
-
     m_defaultValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeGranularity"))
   {
     m_timeGranularity = TimeGranularityMapper::GetTimeGranularityForName(jsonValue.GetString("TimeGranularity"));
-
     m_timeGranularityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValueWhenUnset"))
   {
     m_valueWhenUnset = jsonValue.GetObject("ValueWhenUnset");
-
     m_valueWhenUnsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MappedDataSetParameters"))
   {
     Aws::Utils::Array<JsonView> mappedDataSetParametersJsonList = jsonValue.GetArray("MappedDataSetParameters");
@@ -73,7 +54,6 @@ DateTimeParameterDeclaration& DateTimeParameterDeclaration::operator =(JsonView 
     }
     m_mappedDataSetParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

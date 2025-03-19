@@ -18,20 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-TaskExecutionFilesFailedDetail::TaskExecutionFilesFailedDetail() : 
-    m_prepare(0),
-    m_prepareHasBeenSet(false),
-    m_transfer(0),
-    m_transferHasBeenSet(false),
-    m_verify(0),
-    m_verifyHasBeenSet(false),
-    m_delete(0),
-    m_deleteHasBeenSet(false)
-{
-}
-
 TaskExecutionFilesFailedDetail::TaskExecutionFilesFailedDetail(JsonView jsonValue)
-  : TaskExecutionFilesFailedDetail()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ TaskExecutionFilesFailedDetail& TaskExecutionFilesFailedDetail::operator =(JsonV
   if(jsonValue.ValueExists("Prepare"))
   {
     m_prepare = jsonValue.GetInt64("Prepare");
-
     m_prepareHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Transfer"))
   {
     m_transfer = jsonValue.GetInt64("Transfer");
-
     m_transferHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Verify"))
   {
     m_verify = jsonValue.GetInt64("Verify");
-
     m_verifyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Delete"))
   {
     m_delete = jsonValue.GetInt64("Delete");
-
     m_deleteHasBeenSet = true;
   }
-
   return *this;
 }
 

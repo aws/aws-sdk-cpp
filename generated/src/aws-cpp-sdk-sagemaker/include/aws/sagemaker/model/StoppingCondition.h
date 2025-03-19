@@ -43,7 +43,7 @@ namespace Model
   class StoppingCondition
   {
   public:
-    AWS_SAGEMAKER_API StoppingCondition();
+    AWS_SAGEMAKER_API StoppingCondition() = default;
     AWS_SAGEMAKER_API StoppingCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API StoppingCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -64,7 +64,7 @@ namespace Model
      * metrics or archiving and uploading models after it has been stopped, is 30
      * days.</p>
      */
-    inline int GetMaxRuntimeInSeconds() const{ return m_maxRuntimeInSeconds; }
+    inline int GetMaxRuntimeInSeconds() const { return m_maxRuntimeInSeconds; }
     inline bool MaxRuntimeInSecondsHasBeenSet() const { return m_maxRuntimeInSecondsHasBeenSet; }
     inline void SetMaxRuntimeInSeconds(int value) { m_maxRuntimeInSecondsHasBeenSet = true; m_maxRuntimeInSeconds = value; }
     inline StoppingCondition& WithMaxRuntimeInSeconds(int value) { SetMaxRuntimeInSeconds(value); return *this;}
@@ -80,7 +80,7 @@ namespace Model
      * the job request, <code>MaxWaitTimeInSeconds</code> specifies the maximum time
      * for all of the attempts in total, not each individual attempt.</p>
      */
-    inline int GetMaxWaitTimeInSeconds() const{ return m_maxWaitTimeInSeconds; }
+    inline int GetMaxWaitTimeInSeconds() const { return m_maxWaitTimeInSeconds; }
     inline bool MaxWaitTimeInSecondsHasBeenSet() const { return m_maxWaitTimeInSecondsHasBeenSet; }
     inline void SetMaxWaitTimeInSeconds(int value) { m_maxWaitTimeInSecondsHasBeenSet = true; m_maxWaitTimeInSeconds = value; }
     inline StoppingCondition& WithMaxWaitTimeInSeconds(int value) { SetMaxWaitTimeInSeconds(value); return *this;}
@@ -91,20 +91,20 @@ namespace Model
      * <p>The maximum length of time, in seconds, that a training or compilation job
      * can be pending before it is stopped.</p>
      */
-    inline int GetMaxPendingTimeInSeconds() const{ return m_maxPendingTimeInSeconds; }
+    inline int GetMaxPendingTimeInSeconds() const { return m_maxPendingTimeInSeconds; }
     inline bool MaxPendingTimeInSecondsHasBeenSet() const { return m_maxPendingTimeInSecondsHasBeenSet; }
     inline void SetMaxPendingTimeInSeconds(int value) { m_maxPendingTimeInSecondsHasBeenSet = true; m_maxPendingTimeInSeconds = value; }
     inline StoppingCondition& WithMaxPendingTimeInSeconds(int value) { SetMaxPendingTimeInSeconds(value); return *this;}
     ///@}
   private:
 
-    int m_maxRuntimeInSeconds;
+    int m_maxRuntimeInSeconds{0};
     bool m_maxRuntimeInSecondsHasBeenSet = false;
 
-    int m_maxWaitTimeInSeconds;
+    int m_maxWaitTimeInSeconds{0};
     bool m_maxWaitTimeInSecondsHasBeenSet = false;
 
-    int m_maxPendingTimeInSeconds;
+    int m_maxPendingTimeInSeconds{0};
     bool m_maxPendingTimeInSecondsHasBeenSet = false;
   };
 

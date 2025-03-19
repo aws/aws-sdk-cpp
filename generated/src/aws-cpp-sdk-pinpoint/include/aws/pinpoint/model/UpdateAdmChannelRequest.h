@@ -22,7 +22,7 @@ namespace Model
   class UpdateAdmChannelRequest : public PinpointRequest
   {
   public:
-    AWS_PINPOINT_API UpdateAdmChannelRequest();
+    AWS_PINPOINT_API UpdateAdmChannelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,12 +35,12 @@ namespace Model
 
     ///@{
     
-    inline const ADMChannelRequest& GetADMChannelRequest() const{ return m_aDMChannelRequest; }
+    inline const ADMChannelRequest& GetADMChannelRequest() const { return m_aDMChannelRequest; }
     inline bool ADMChannelRequestHasBeenSet() const { return m_aDMChannelRequestHasBeenSet; }
-    inline void SetADMChannelRequest(const ADMChannelRequest& value) { m_aDMChannelRequestHasBeenSet = true; m_aDMChannelRequest = value; }
-    inline void SetADMChannelRequest(ADMChannelRequest&& value) { m_aDMChannelRequestHasBeenSet = true; m_aDMChannelRequest = std::move(value); }
-    inline UpdateAdmChannelRequest& WithADMChannelRequest(const ADMChannelRequest& value) { SetADMChannelRequest(value); return *this;}
-    inline UpdateAdmChannelRequest& WithADMChannelRequest(ADMChannelRequest&& value) { SetADMChannelRequest(std::move(value)); return *this;}
+    template<typename ADMChannelRequestT = ADMChannelRequest>
+    void SetADMChannelRequest(ADMChannelRequestT&& value) { m_aDMChannelRequestHasBeenSet = true; m_aDMChannelRequest = std::forward<ADMChannelRequestT>(value); }
+    template<typename ADMChannelRequestT = ADMChannelRequest>
+    UpdateAdmChannelRequest& WithADMChannelRequest(ADMChannelRequestT&& value) { SetADMChannelRequest(std::forward<ADMChannelRequestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -48,14 +48,12 @@ namespace Model
      * <p>The unique identifier for the application. This identifier is displayed as
      * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline UpdateAdmChannelRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline UpdateAdmChannelRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline UpdateAdmChannelRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    UpdateAdmChannelRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-ExportRevisionsToS3RequestDetails::ExportRevisionsToS3RequestDetails() : 
-    m_dataSetIdHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_revisionDestinationsHasBeenSet(false)
-{
-}
-
 ExportRevisionsToS3RequestDetails::ExportRevisionsToS3RequestDetails(JsonView jsonValue)
-  : ExportRevisionsToS3RequestDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ExportRevisionsToS3RequestDetails& ExportRevisionsToS3RequestDetails::operator =
   if(jsonValue.ValueExists("DataSetId"))
   {
     m_dataSetId = jsonValue.GetString("DataSetId");
-
     m_dataSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Encryption"))
   {
     m_encryption = jsonValue.GetObject("Encryption");
-
     m_encryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RevisionDestinations"))
   {
     Aws::Utils::Array<JsonView> revisionDestinationsJsonList = jsonValue.GetArray("RevisionDestinations");
@@ -56,7 +44,6 @@ ExportRevisionsToS3RequestDetails& ExportRevisionsToS3RequestDetails::operator =
     }
     m_revisionDestinationsHasBeenSet = true;
   }
-
   return *this;
 }
 

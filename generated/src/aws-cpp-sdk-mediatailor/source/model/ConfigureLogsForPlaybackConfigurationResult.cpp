@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ConfigureLogsForPlaybackConfigurationResult::ConfigureLogsForPlaybackConfigurationResult() : 
-    m_percentEnabled(0)
-{
-}
-
 ConfigureLogsForPlaybackConfigurationResult::ConfigureLogsForPlaybackConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ConfigureLogsForPlaybackConfigurationResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ ConfigureLogsForPlaybackConfigurationResult& ConfigureLogsForPlaybackConfigurati
   if(jsonValue.ValueExists("PercentEnabled"))
   {
     m_percentEnabled = jsonValue.GetInteger("PercentEnabled");
-
+    m_percentEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlaybackConfigurationName"))
   {
     m_playbackConfigurationName = jsonValue.GetString("PlaybackConfigurationName");
-
+    m_playbackConfigurationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnabledLoggingStrategies"))
   {
     Aws::Utils::Array<JsonView> enabledLoggingStrategiesJsonList = jsonValue.GetArray("EnabledLoggingStrategies");
@@ -50,14 +42,15 @@ ConfigureLogsForPlaybackConfigurationResult& ConfigureLogsForPlaybackConfigurati
     {
       m_enabledLoggingStrategies.push_back(LoggingStrategyMapper::GetLoggingStrategyForName(enabledLoggingStrategiesJsonList[enabledLoggingStrategiesIndex].AsString()));
     }
+    m_enabledLoggingStrategiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

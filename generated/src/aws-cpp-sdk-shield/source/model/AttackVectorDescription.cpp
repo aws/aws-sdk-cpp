@@ -18,13 +18,7 @@ namespace Shield
 namespace Model
 {
 
-AttackVectorDescription::AttackVectorDescription() : 
-    m_vectorTypeHasBeenSet(false)
-{
-}
-
 AttackVectorDescription::AttackVectorDescription(JsonView jsonValue)
-  : AttackVectorDescription()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AttackVectorDescription& AttackVectorDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VectorType"))
   {
     m_vectorType = jsonValue.GetString("VectorType");
-
     m_vectorTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

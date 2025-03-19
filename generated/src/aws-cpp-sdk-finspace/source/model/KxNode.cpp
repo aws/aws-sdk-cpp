@@ -18,17 +18,7 @@ namespace finspace
 namespace Model
 {
 
-KxNode::KxNode() : 
-    m_nodeIdHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_launchTimeHasBeenSet(false),
-    m_status(KxNodeStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 KxNode::KxNode(JsonView jsonValue)
-  : KxNode()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ KxNode& KxNode::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("nodeId"))
   {
     m_nodeId = jsonValue.GetString("nodeId");
-
     m_nodeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("availabilityZoneId"))
   {
     m_availabilityZoneId = jsonValue.GetString("availabilityZoneId");
-
     m_availabilityZoneIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("launchTime"))
   {
     m_launchTime = jsonValue.GetDouble("launchTime");
-
     m_launchTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = KxNodeStatusMapper::GetKxNodeStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

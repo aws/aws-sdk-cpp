@@ -18,16 +18,7 @@ namespace MediaPackageVod
 namespace Model
 {
 
-HlsEncryption::HlsEncryption() : 
-    m_constantInitializationVectorHasBeenSet(false),
-    m_encryptionMethod(EncryptionMethod::NOT_SET),
-    m_encryptionMethodHasBeenSet(false),
-    m_spekeKeyProviderHasBeenSet(false)
-{
-}
-
 HlsEncryption::HlsEncryption(JsonView jsonValue)
-  : HlsEncryption()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ HlsEncryption& HlsEncryption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("constantInitializationVector"))
   {
     m_constantInitializationVector = jsonValue.GetString("constantInitializationVector");
-
     m_constantInitializationVectorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionMethod"))
   {
     m_encryptionMethod = EncryptionMethodMapper::GetEncryptionMethodForName(jsonValue.GetString("encryptionMethod"));
-
     m_encryptionMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("spekeKeyProvider"))
   {
     m_spekeKeyProvider = jsonValue.GetObject("spekeKeyProvider");
-
     m_spekeKeyProviderHasBeenSet = true;
   }
-
   return *this;
 }
 

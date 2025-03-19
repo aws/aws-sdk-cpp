@@ -12,14 +12,6 @@ using namespace Aws::GroundStation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMinuteUsageRequest::GetMinuteUsageRequest() : 
-    m_month(0),
-    m_monthHasBeenSet(false),
-    m_year(0),
-    m_yearHasBeenSet(false)
-{
-}
-
 Aws::String GetMinuteUsageRequest::SerializePayload() const
 {
   JsonValue payload;

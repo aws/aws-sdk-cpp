@@ -18,17 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-BatchGetPolicyErrorItem::BatchGetPolicyErrorItem() : 
-    m_code(BatchGetPolicyErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_policyStoreIdHasBeenSet(false),
-    m_policyIdHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 BatchGetPolicyErrorItem::BatchGetPolicyErrorItem(JsonView jsonValue)
-  : BatchGetPolicyErrorItem()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ BatchGetPolicyErrorItem& BatchGetPolicyErrorItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("code"))
   {
     m_code = BatchGetPolicyErrorCodeMapper::GetBatchGetPolicyErrorCodeForName(jsonValue.GetString("code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyStoreId"))
   {
     m_policyStoreId = jsonValue.GetString("policyStoreId");
-
     m_policyStoreIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyId"))
   {
     m_policyId = jsonValue.GetString("policyId");
-
     m_policyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

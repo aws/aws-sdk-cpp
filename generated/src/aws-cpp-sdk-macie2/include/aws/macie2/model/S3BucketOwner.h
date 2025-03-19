@@ -32,7 +32,7 @@ namespace Model
   class S3BucketOwner
   {
   public:
-    AWS_MACIE2_API S3BucketOwner();
+    AWS_MACIE2_API S3BucketOwner() = default;
     AWS_MACIE2_API S3BucketOwner(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API S3BucketOwner& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The display name of the account that owns the bucket.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline S3BucketOwner& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline S3BucketOwner& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline S3BucketOwner& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    S3BucketOwner& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The canonical user ID for the account that owns the bucket.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline S3BucketOwner& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline S3BucketOwner& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline S3BucketOwner& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    S3BucketOwner& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
   private:
 

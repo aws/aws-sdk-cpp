@@ -29,7 +29,7 @@ namespace Model
   class DescribeGameServerInstancesResult
   {
   public:
-    AWS_GAMELIFT_API DescribeGameServerInstancesResult();
+    AWS_GAMELIFT_API DescribeGameServerInstancesResult() = default;
     AWS_GAMELIFT_API DescribeGameServerInstancesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GAMELIFT_API DescribeGameServerInstancesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The collection of requested game server instances.</p>
      */
-    inline const Aws::Vector<GameServerInstance>& GetGameServerInstances() const{ return m_gameServerInstances; }
-    inline void SetGameServerInstances(const Aws::Vector<GameServerInstance>& value) { m_gameServerInstances = value; }
-    inline void SetGameServerInstances(Aws::Vector<GameServerInstance>&& value) { m_gameServerInstances = std::move(value); }
-    inline DescribeGameServerInstancesResult& WithGameServerInstances(const Aws::Vector<GameServerInstance>& value) { SetGameServerInstances(value); return *this;}
-    inline DescribeGameServerInstancesResult& WithGameServerInstances(Aws::Vector<GameServerInstance>&& value) { SetGameServerInstances(std::move(value)); return *this;}
-    inline DescribeGameServerInstancesResult& AddGameServerInstances(const GameServerInstance& value) { m_gameServerInstances.push_back(value); return *this; }
-    inline DescribeGameServerInstancesResult& AddGameServerInstances(GameServerInstance&& value) { m_gameServerInstances.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<GameServerInstance>& GetGameServerInstances() const { return m_gameServerInstances; }
+    template<typename GameServerInstancesT = Aws::Vector<GameServerInstance>>
+    void SetGameServerInstances(GameServerInstancesT&& value) { m_gameServerInstancesHasBeenSet = true; m_gameServerInstances = std::forward<GameServerInstancesT>(value); }
+    template<typename GameServerInstancesT = Aws::Vector<GameServerInstance>>
+    DescribeGameServerInstancesResult& WithGameServerInstances(GameServerInstancesT&& value) { SetGameServerInstances(std::forward<GameServerInstancesT>(value)); return *this;}
+    template<typename GameServerInstancesT = GameServerInstance>
+    DescribeGameServerInstancesResult& AddGameServerInstances(GameServerInstancesT&& value) { m_gameServerInstancesHasBeenSet = true; m_gameServerInstances.emplace_back(std::forward<GameServerInstancesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * this operation. If no token is returned, these results represent the end of the
      * list.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeGameServerInstancesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeGameServerInstancesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeGameServerInstancesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeGameServerInstancesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeGameServerInstancesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeGameServerInstancesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeGameServerInstancesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeGameServerInstancesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<GameServerInstance> m_gameServerInstances;
+    bool m_gameServerInstancesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

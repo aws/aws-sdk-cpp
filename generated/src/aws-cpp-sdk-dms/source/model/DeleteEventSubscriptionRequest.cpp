@@ -12,11 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEventSubscriptionRequest::DeleteEventSubscriptionRequest() : 
-    m_subscriptionNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEventSubscriptionRequest::SerializePayload() const
 {
   JsonValue payload;

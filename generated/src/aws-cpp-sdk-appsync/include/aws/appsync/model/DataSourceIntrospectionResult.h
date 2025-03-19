@@ -35,7 +35,7 @@ namespace Model
   class DataSourceIntrospectionResult
   {
   public:
-    AWS_APPSYNC_API DataSourceIntrospectionResult();
+    AWS_APPSYNC_API DataSourceIntrospectionResult() = default;
     AWS_APPSYNC_API DataSourceIntrospectionResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API DataSourceIntrospectionResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
     /**
      * <p>The array of <code>DataSourceIntrospectionModel</code> objects.</p>
      */
-    inline const Aws::Vector<DataSourceIntrospectionModel>& GetModels() const{ return m_models; }
+    inline const Aws::Vector<DataSourceIntrospectionModel>& GetModels() const { return m_models; }
     inline bool ModelsHasBeenSet() const { return m_modelsHasBeenSet; }
-    inline void SetModels(const Aws::Vector<DataSourceIntrospectionModel>& value) { m_modelsHasBeenSet = true; m_models = value; }
-    inline void SetModels(Aws::Vector<DataSourceIntrospectionModel>&& value) { m_modelsHasBeenSet = true; m_models = std::move(value); }
-    inline DataSourceIntrospectionResult& WithModels(const Aws::Vector<DataSourceIntrospectionModel>& value) { SetModels(value); return *this;}
-    inline DataSourceIntrospectionResult& WithModels(Aws::Vector<DataSourceIntrospectionModel>&& value) { SetModels(std::move(value)); return *this;}
-    inline DataSourceIntrospectionResult& AddModels(const DataSourceIntrospectionModel& value) { m_modelsHasBeenSet = true; m_models.push_back(value); return *this; }
-    inline DataSourceIntrospectionResult& AddModels(DataSourceIntrospectionModel&& value) { m_modelsHasBeenSet = true; m_models.push_back(std::move(value)); return *this; }
+    template<typename ModelsT = Aws::Vector<DataSourceIntrospectionModel>>
+    void SetModels(ModelsT&& value) { m_modelsHasBeenSet = true; m_models = std::forward<ModelsT>(value); }
+    template<typename ModelsT = Aws::Vector<DataSourceIntrospectionModel>>
+    DataSourceIntrospectionResult& WithModels(ModelsT&& value) { SetModels(std::forward<ModelsT>(value)); return *this;}
+    template<typename ModelsT = DataSourceIntrospectionModel>
+    DataSourceIntrospectionResult& AddModels(ModelsT&& value) { m_modelsHasBeenSet = true; m_models.emplace_back(std::forward<ModelsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,14 +61,12 @@ namespace Model
      * paginating. This value is typically taken from <code>nextToken</code> value from
      * the previous response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DataSourceIntrospectionResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DataSourceIntrospectionResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DataSourceIntrospectionResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DataSourceIntrospectionResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 

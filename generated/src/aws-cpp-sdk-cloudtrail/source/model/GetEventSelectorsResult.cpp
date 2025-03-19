@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEventSelectorsResult::GetEventSelectorsResult()
-{
-}
-
 GetEventSelectorsResult::GetEventSelectorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetEventSelectorsResult& GetEventSelectorsResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("TrailARN"))
   {
     m_trailARN = jsonValue.GetString("TrailARN");
-
+    m_trailARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventSelectors"))
   {
     Aws::Utils::Array<JsonView> eventSelectorsJsonList = jsonValue.GetArray("EventSelectors");
@@ -42,8 +37,8 @@ GetEventSelectorsResult& GetEventSelectorsResult::operator =(const Aws::AmazonWe
     {
       m_eventSelectors.push_back(eventSelectorsJsonList[eventSelectorsIndex].AsObject());
     }
+    m_eventSelectorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdvancedEventSelectors"))
   {
     Aws::Utils::Array<JsonView> advancedEventSelectorsJsonList = jsonValue.GetArray("AdvancedEventSelectors");
@@ -51,14 +46,15 @@ GetEventSelectorsResult& GetEventSelectorsResult::operator =(const Aws::AmazonWe
     {
       m_advancedEventSelectors.push_back(advancedEventSelectorsJsonList[advancedEventSelectorsIndex].AsObject());
     }
+    m_advancedEventSelectorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

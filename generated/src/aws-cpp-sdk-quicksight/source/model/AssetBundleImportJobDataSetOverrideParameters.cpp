@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AssetBundleImportJobDataSetOverrideParameters::AssetBundleImportJobDataSetOverrideParameters() : 
-    m_dataSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 AssetBundleImportJobDataSetOverrideParameters::AssetBundleImportJobDataSetOverrideParameters(JsonView jsonValue)
-  : AssetBundleImportJobDataSetOverrideParameters()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AssetBundleImportJobDataSetOverrideParameters& AssetBundleImportJobDataSetOverri
   if(jsonValue.ValueExists("DataSetId"))
   {
     m_dataSetId = jsonValue.GetString("DataSetId");
-
     m_dataSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

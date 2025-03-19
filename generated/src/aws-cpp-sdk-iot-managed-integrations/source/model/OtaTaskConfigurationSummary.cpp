@@ -18,15 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-OtaTaskConfigurationSummary::OtaTaskConfigurationSummary() : 
-    m_taskConfigurationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
-{
-}
-
 OtaTaskConfigurationSummary::OtaTaskConfigurationSummary(JsonView jsonValue)
-  : OtaTaskConfigurationSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ OtaTaskConfigurationSummary& OtaTaskConfigurationSummary::operator =(JsonView js
   if(jsonValue.ValueExists("TaskConfigurationId"))
   {
     m_taskConfigurationId = jsonValue.GetString("TaskConfigurationId");
-
     m_taskConfigurationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   return *this;
 }
 

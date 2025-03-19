@@ -31,7 +31,7 @@ namespace Model
   class WebvttDestinationSettings
   {
   public:
-    AWS_MEDIALIVE_API WebvttDestinationSettings();
+    AWS_MEDIALIVE_API WebvttDestinationSettings() = default;
     AWS_MEDIALIVE_API WebvttDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API WebvttDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,16 +44,14 @@ namespace Model
      * are EMBEDDED or TELETEXT.  NO_STYLE_DATA - Don't pass through the style. The
      * output captions will not contain any font styling information.
      */
-    inline const WebvttDestinationStyleControl& GetStyleControl() const{ return m_styleControl; }
+    inline WebvttDestinationStyleControl GetStyleControl() const { return m_styleControl; }
     inline bool StyleControlHasBeenSet() const { return m_styleControlHasBeenSet; }
-    inline void SetStyleControl(const WebvttDestinationStyleControl& value) { m_styleControlHasBeenSet = true; m_styleControl = value; }
-    inline void SetStyleControl(WebvttDestinationStyleControl&& value) { m_styleControlHasBeenSet = true; m_styleControl = std::move(value); }
-    inline WebvttDestinationSettings& WithStyleControl(const WebvttDestinationStyleControl& value) { SetStyleControl(value); return *this;}
-    inline WebvttDestinationSettings& WithStyleControl(WebvttDestinationStyleControl&& value) { SetStyleControl(std::move(value)); return *this;}
+    inline void SetStyleControl(WebvttDestinationStyleControl value) { m_styleControlHasBeenSet = true; m_styleControl = value; }
+    inline WebvttDestinationSettings& WithStyleControl(WebvttDestinationStyleControl value) { SetStyleControl(value); return *this;}
     ///@}
   private:
 
-    WebvttDestinationStyleControl m_styleControl;
+    WebvttDestinationStyleControl m_styleControl{WebvttDestinationStyleControl::NOT_SET};
     bool m_styleControlHasBeenSet = false;
   };
 

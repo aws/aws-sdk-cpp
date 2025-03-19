@@ -18,14 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-ErrorDetails::ErrorDetails() : 
-    m_errorTypeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 ErrorDetails::ErrorDetails(JsonView jsonValue)
-  : ErrorDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ErrorDetails& ErrorDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ErrorType"))
   {
     m_errorType = jsonValue.GetString("ErrorType");
-
     m_errorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

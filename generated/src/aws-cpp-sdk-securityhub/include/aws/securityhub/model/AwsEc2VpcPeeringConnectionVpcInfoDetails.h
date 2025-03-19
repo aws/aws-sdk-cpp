@@ -35,7 +35,7 @@ namespace Model
   class AwsEc2VpcPeeringConnectionVpcInfoDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2VpcPeeringConnectionVpcInfoDetails();
+    AWS_SECURITYHUB_API AwsEc2VpcPeeringConnectionVpcInfoDetails() = default;
     AWS_SECURITYHUB_API AwsEc2VpcPeeringConnectionVpcInfoDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2VpcPeeringConnectionVpcInfoDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,56 +45,52 @@ namespace Model
     /**
      * <p>The IPv4 CIDR block for the VPC. </p>
      */
-    inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
+    inline const Aws::String& GetCidrBlock() const { return m_cidrBlock; }
     inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
-    inline void SetCidrBlock(const Aws::String& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = value; }
-    inline void SetCidrBlock(Aws::String&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::move(value); }
-    inline void SetCidrBlock(const char* value) { m_cidrBlockHasBeenSet = true; m_cidrBlock.assign(value); }
-    inline AwsEc2VpcPeeringConnectionVpcInfoDetails& WithCidrBlock(const Aws::String& value) { SetCidrBlock(value); return *this;}
-    inline AwsEc2VpcPeeringConnectionVpcInfoDetails& WithCidrBlock(Aws::String&& value) { SetCidrBlock(std::move(value)); return *this;}
-    inline AwsEc2VpcPeeringConnectionVpcInfoDetails& WithCidrBlock(const char* value) { SetCidrBlock(value); return *this;}
+    template<typename CidrBlockT = Aws::String>
+    void SetCidrBlock(CidrBlockT&& value) { m_cidrBlockHasBeenSet = true; m_cidrBlock = std::forward<CidrBlockT>(value); }
+    template<typename CidrBlockT = Aws::String>
+    AwsEc2VpcPeeringConnectionVpcInfoDetails& WithCidrBlock(CidrBlockT&& value) { SetCidrBlock(std::forward<CidrBlockT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the IPv4 CIDR blocks for the VPC. </p>
      */
-    inline const Aws::Vector<VpcInfoCidrBlockSetDetails>& GetCidrBlockSet() const{ return m_cidrBlockSet; }
+    inline const Aws::Vector<VpcInfoCidrBlockSetDetails>& GetCidrBlockSet() const { return m_cidrBlockSet; }
     inline bool CidrBlockSetHasBeenSet() const { return m_cidrBlockSetHasBeenSet; }
-    inline void SetCidrBlockSet(const Aws::Vector<VpcInfoCidrBlockSetDetails>& value) { m_cidrBlockSetHasBeenSet = true; m_cidrBlockSet = value; }
-    inline void SetCidrBlockSet(Aws::Vector<VpcInfoCidrBlockSetDetails>&& value) { m_cidrBlockSetHasBeenSet = true; m_cidrBlockSet = std::move(value); }
-    inline AwsEc2VpcPeeringConnectionVpcInfoDetails& WithCidrBlockSet(const Aws::Vector<VpcInfoCidrBlockSetDetails>& value) { SetCidrBlockSet(value); return *this;}
-    inline AwsEc2VpcPeeringConnectionVpcInfoDetails& WithCidrBlockSet(Aws::Vector<VpcInfoCidrBlockSetDetails>&& value) { SetCidrBlockSet(std::move(value)); return *this;}
-    inline AwsEc2VpcPeeringConnectionVpcInfoDetails& AddCidrBlockSet(const VpcInfoCidrBlockSetDetails& value) { m_cidrBlockSetHasBeenSet = true; m_cidrBlockSet.push_back(value); return *this; }
-    inline AwsEc2VpcPeeringConnectionVpcInfoDetails& AddCidrBlockSet(VpcInfoCidrBlockSetDetails&& value) { m_cidrBlockSetHasBeenSet = true; m_cidrBlockSet.push_back(std::move(value)); return *this; }
+    template<typename CidrBlockSetT = Aws::Vector<VpcInfoCidrBlockSetDetails>>
+    void SetCidrBlockSet(CidrBlockSetT&& value) { m_cidrBlockSetHasBeenSet = true; m_cidrBlockSet = std::forward<CidrBlockSetT>(value); }
+    template<typename CidrBlockSetT = Aws::Vector<VpcInfoCidrBlockSetDetails>>
+    AwsEc2VpcPeeringConnectionVpcInfoDetails& WithCidrBlockSet(CidrBlockSetT&& value) { SetCidrBlockSet(std::forward<CidrBlockSetT>(value)); return *this;}
+    template<typename CidrBlockSetT = VpcInfoCidrBlockSetDetails>
+    AwsEc2VpcPeeringConnectionVpcInfoDetails& AddCidrBlockSet(CidrBlockSetT&& value) { m_cidrBlockSetHasBeenSet = true; m_cidrBlockSet.emplace_back(std::forward<CidrBlockSetT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The IPv6 CIDR block for the VPC. </p>
      */
-    inline const Aws::Vector<VpcInfoIpv6CidrBlockSetDetails>& GetIpv6CidrBlockSet() const{ return m_ipv6CidrBlockSet; }
+    inline const Aws::Vector<VpcInfoIpv6CidrBlockSetDetails>& GetIpv6CidrBlockSet() const { return m_ipv6CidrBlockSet; }
     inline bool Ipv6CidrBlockSetHasBeenSet() const { return m_ipv6CidrBlockSetHasBeenSet; }
-    inline void SetIpv6CidrBlockSet(const Aws::Vector<VpcInfoIpv6CidrBlockSetDetails>& value) { m_ipv6CidrBlockSetHasBeenSet = true; m_ipv6CidrBlockSet = value; }
-    inline void SetIpv6CidrBlockSet(Aws::Vector<VpcInfoIpv6CidrBlockSetDetails>&& value) { m_ipv6CidrBlockSetHasBeenSet = true; m_ipv6CidrBlockSet = std::move(value); }
-    inline AwsEc2VpcPeeringConnectionVpcInfoDetails& WithIpv6CidrBlockSet(const Aws::Vector<VpcInfoIpv6CidrBlockSetDetails>& value) { SetIpv6CidrBlockSet(value); return *this;}
-    inline AwsEc2VpcPeeringConnectionVpcInfoDetails& WithIpv6CidrBlockSet(Aws::Vector<VpcInfoIpv6CidrBlockSetDetails>&& value) { SetIpv6CidrBlockSet(std::move(value)); return *this;}
-    inline AwsEc2VpcPeeringConnectionVpcInfoDetails& AddIpv6CidrBlockSet(const VpcInfoIpv6CidrBlockSetDetails& value) { m_ipv6CidrBlockSetHasBeenSet = true; m_ipv6CidrBlockSet.push_back(value); return *this; }
-    inline AwsEc2VpcPeeringConnectionVpcInfoDetails& AddIpv6CidrBlockSet(VpcInfoIpv6CidrBlockSetDetails&& value) { m_ipv6CidrBlockSetHasBeenSet = true; m_ipv6CidrBlockSet.push_back(std::move(value)); return *this; }
+    template<typename Ipv6CidrBlockSetT = Aws::Vector<VpcInfoIpv6CidrBlockSetDetails>>
+    void SetIpv6CidrBlockSet(Ipv6CidrBlockSetT&& value) { m_ipv6CidrBlockSetHasBeenSet = true; m_ipv6CidrBlockSet = std::forward<Ipv6CidrBlockSetT>(value); }
+    template<typename Ipv6CidrBlockSetT = Aws::Vector<VpcInfoIpv6CidrBlockSetDetails>>
+    AwsEc2VpcPeeringConnectionVpcInfoDetails& WithIpv6CidrBlockSet(Ipv6CidrBlockSetT&& value) { SetIpv6CidrBlockSet(std::forward<Ipv6CidrBlockSetT>(value)); return *this;}
+    template<typename Ipv6CidrBlockSetT = VpcInfoIpv6CidrBlockSetDetails>
+    AwsEc2VpcPeeringConnectionVpcInfoDetails& AddIpv6CidrBlockSet(Ipv6CidrBlockSetT&& value) { m_ipv6CidrBlockSetHasBeenSet = true; m_ipv6CidrBlockSet.emplace_back(std::forward<Ipv6CidrBlockSetT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Amazon Web Services account that owns the VPC. </p>
      */
-    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+    inline const Aws::String& GetOwnerId() const { return m_ownerId; }
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
-    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
-    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
-    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
-    inline AwsEc2VpcPeeringConnectionVpcInfoDetails& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
-    inline AwsEc2VpcPeeringConnectionVpcInfoDetails& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
-    inline AwsEc2VpcPeeringConnectionVpcInfoDetails& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+    template<typename OwnerIdT = Aws::String>
+    void SetOwnerId(OwnerIdT&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::forward<OwnerIdT>(value); }
+    template<typename OwnerIdT = Aws::String>
+    AwsEc2VpcPeeringConnectionVpcInfoDetails& WithOwnerId(OwnerIdT&& value) { SetOwnerId(std::forward<OwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,40 +98,36 @@ namespace Model
      * <p>Information about the VPC peering connection options for the accepter or
      * requester VPC. </p>
      */
-    inline const VpcInfoPeeringOptionsDetails& GetPeeringOptions() const{ return m_peeringOptions; }
+    inline const VpcInfoPeeringOptionsDetails& GetPeeringOptions() const { return m_peeringOptions; }
     inline bool PeeringOptionsHasBeenSet() const { return m_peeringOptionsHasBeenSet; }
-    inline void SetPeeringOptions(const VpcInfoPeeringOptionsDetails& value) { m_peeringOptionsHasBeenSet = true; m_peeringOptions = value; }
-    inline void SetPeeringOptions(VpcInfoPeeringOptionsDetails&& value) { m_peeringOptionsHasBeenSet = true; m_peeringOptions = std::move(value); }
-    inline AwsEc2VpcPeeringConnectionVpcInfoDetails& WithPeeringOptions(const VpcInfoPeeringOptionsDetails& value) { SetPeeringOptions(value); return *this;}
-    inline AwsEc2VpcPeeringConnectionVpcInfoDetails& WithPeeringOptions(VpcInfoPeeringOptionsDetails&& value) { SetPeeringOptions(std::move(value)); return *this;}
+    template<typename PeeringOptionsT = VpcInfoPeeringOptionsDetails>
+    void SetPeeringOptions(PeeringOptionsT&& value) { m_peeringOptionsHasBeenSet = true; m_peeringOptions = std::forward<PeeringOptionsT>(value); }
+    template<typename PeeringOptionsT = VpcInfoPeeringOptionsDetails>
+    AwsEc2VpcPeeringConnectionVpcInfoDetails& WithPeeringOptions(PeeringOptionsT&& value) { SetPeeringOptions(std::forward<PeeringOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Region in which the VPC is located. </p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline AwsEc2VpcPeeringConnectionVpcInfoDetails& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline AwsEc2VpcPeeringConnectionVpcInfoDetails& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline AwsEc2VpcPeeringConnectionVpcInfoDetails& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    AwsEc2VpcPeeringConnectionVpcInfoDetails& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the VPC. </p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline AwsEc2VpcPeeringConnectionVpcInfoDetails& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline AwsEc2VpcPeeringConnectionVpcInfoDetails& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline AwsEc2VpcPeeringConnectionVpcInfoDetails& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    AwsEc2VpcPeeringConnectionVpcInfoDetails& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
   private:
 

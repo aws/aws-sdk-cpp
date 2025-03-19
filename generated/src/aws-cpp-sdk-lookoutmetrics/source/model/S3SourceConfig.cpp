@@ -18,16 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-S3SourceConfig::S3SourceConfig() : 
-    m_roleArnHasBeenSet(false),
-    m_templatedPathListHasBeenSet(false),
-    m_historicalDataPathListHasBeenSet(false),
-    m_fileFormatDescriptorHasBeenSet(false)
-{
-}
-
 S3SourceConfig::S3SourceConfig(JsonView jsonValue)
-  : S3SourceConfig()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ S3SourceConfig& S3SourceConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplatedPathList"))
   {
     Aws::Utils::Array<JsonView> templatedPathListJsonList = jsonValue.GetArray("TemplatedPathList");
@@ -50,7 +39,6 @@ S3SourceConfig& S3SourceConfig::operator =(JsonView jsonValue)
     }
     m_templatedPathListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HistoricalDataPathList"))
   {
     Aws::Utils::Array<JsonView> historicalDataPathListJsonList = jsonValue.GetArray("HistoricalDataPathList");
@@ -60,14 +48,11 @@ S3SourceConfig& S3SourceConfig::operator =(JsonView jsonValue)
     }
     m_historicalDataPathListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileFormatDescriptor"))
   {
     m_fileFormatDescriptor = jsonValue.GetObject("FileFormatDescriptor");
-
     m_fileFormatDescriptorHasBeenSet = true;
   }
-
   return *this;
 }
 

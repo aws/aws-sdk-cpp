@@ -18,14 +18,7 @@ namespace deadline
 namespace Model
 {
 
-ParameterSpace::ParameterSpace() : 
-    m_parametersHasBeenSet(false),
-    m_combinationHasBeenSet(false)
-{
-}
-
 ParameterSpace::ParameterSpace(JsonView jsonValue)
-  : ParameterSpace()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ ParameterSpace& ParameterSpace::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("combination"))
   {
     m_combination = jsonValue.GetString("combination");
-
     m_combinationHasBeenSet = true;
   }
-
   return *this;
 }
 

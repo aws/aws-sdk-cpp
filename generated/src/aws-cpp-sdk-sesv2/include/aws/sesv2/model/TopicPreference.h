@@ -33,7 +33,7 @@ namespace Model
   class TopicPreference
   {
   public:
-    AWS_SESV2_API TopicPreference();
+    AWS_SESV2_API TopicPreference() = default;
     AWS_SESV2_API TopicPreference(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API TopicPreference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the topic.</p>
      */
-    inline const Aws::String& GetTopicName() const{ return m_topicName; }
+    inline const Aws::String& GetTopicName() const { return m_topicName; }
     inline bool TopicNameHasBeenSet() const { return m_topicNameHasBeenSet; }
-    inline void SetTopicName(const Aws::String& value) { m_topicNameHasBeenSet = true; m_topicName = value; }
-    inline void SetTopicName(Aws::String&& value) { m_topicNameHasBeenSet = true; m_topicName = std::move(value); }
-    inline void SetTopicName(const char* value) { m_topicNameHasBeenSet = true; m_topicName.assign(value); }
-    inline TopicPreference& WithTopicName(const Aws::String& value) { SetTopicName(value); return *this;}
-    inline TopicPreference& WithTopicName(Aws::String&& value) { SetTopicName(std::move(value)); return *this;}
-    inline TopicPreference& WithTopicName(const char* value) { SetTopicName(value); return *this;}
+    template<typename TopicNameT = Aws::String>
+    void SetTopicName(TopicNameT&& value) { m_topicNameHasBeenSet = true; m_topicName = std::forward<TopicNameT>(value); }
+    template<typename TopicNameT = Aws::String>
+    TopicPreference& WithTopicName(TopicNameT&& value) { SetTopicName(std::forward<TopicNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,19 +56,17 @@ namespace Model
      * <p>The contact's subscription status to a topic which is either
      * <code>OPT_IN</code> or <code>OPT_OUT</code>.</p>
      */
-    inline const SubscriptionStatus& GetSubscriptionStatus() const{ return m_subscriptionStatus; }
+    inline SubscriptionStatus GetSubscriptionStatus() const { return m_subscriptionStatus; }
     inline bool SubscriptionStatusHasBeenSet() const { return m_subscriptionStatusHasBeenSet; }
-    inline void SetSubscriptionStatus(const SubscriptionStatus& value) { m_subscriptionStatusHasBeenSet = true; m_subscriptionStatus = value; }
-    inline void SetSubscriptionStatus(SubscriptionStatus&& value) { m_subscriptionStatusHasBeenSet = true; m_subscriptionStatus = std::move(value); }
-    inline TopicPreference& WithSubscriptionStatus(const SubscriptionStatus& value) { SetSubscriptionStatus(value); return *this;}
-    inline TopicPreference& WithSubscriptionStatus(SubscriptionStatus&& value) { SetSubscriptionStatus(std::move(value)); return *this;}
+    inline void SetSubscriptionStatus(SubscriptionStatus value) { m_subscriptionStatusHasBeenSet = true; m_subscriptionStatus = value; }
+    inline TopicPreference& WithSubscriptionStatus(SubscriptionStatus value) { SetSubscriptionStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_topicName;
     bool m_topicNameHasBeenSet = false;
 
-    SubscriptionStatus m_subscriptionStatus;
+    SubscriptionStatus m_subscriptionStatus{SubscriptionStatus::NOT_SET};
     bool m_subscriptionStatusHasBeenSet = false;
   };
 

@@ -28,7 +28,7 @@ namespace Model
   class DescribeChannelResult
   {
   public:
-    AWS_CHIMESDKMESSAGING_API DescribeChannelResult();
+    AWS_CHIMESDKMESSAGING_API DescribeChannelResult() = default;
     AWS_CHIMESDKMESSAGING_API DescribeChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKMESSAGING_API DescribeChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The channel details.</p>
      */
-    inline const Channel& GetChannel() const{ return m_channel; }
-    inline void SetChannel(const Channel& value) { m_channel = value; }
-    inline void SetChannel(Channel&& value) { m_channel = std::move(value); }
-    inline DescribeChannelResult& WithChannel(const Channel& value) { SetChannel(value); return *this;}
-    inline DescribeChannelResult& WithChannel(Channel&& value) { SetChannel(std::move(value)); return *this;}
+    inline const Channel& GetChannel() const { return m_channel; }
+    template<typename ChannelT = Channel>
+    void SetChannel(ChannelT&& value) { m_channelHasBeenSet = true; m_channel = std::forward<ChannelT>(value); }
+    template<typename ChannelT = Channel>
+    DescribeChannelResult& WithChannel(ChannelT&& value) { SetChannel(std::forward<ChannelT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeChannelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeChannelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeChannelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeChannelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Channel m_channel;
+    bool m_channelHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

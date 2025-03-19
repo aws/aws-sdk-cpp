@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RegisterElasticIpResult::RegisterElasticIpResult()
-{
-}
-
 RegisterElasticIpResult::RegisterElasticIpResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ RegisterElasticIpResult& RegisterElasticIpResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("ElasticIp"))
   {
     m_elasticIp = jsonValue.GetString("ElasticIp");
-
+    m_elasticIpHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

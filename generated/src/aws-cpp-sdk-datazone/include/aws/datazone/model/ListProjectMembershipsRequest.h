@@ -27,7 +27,7 @@ namespace Model
   class ListProjectMembershipsRequest : public DataZoneRequest
   {
   public:
-    AWS_DATAZONE_API ListProjectMembershipsRequest();
+    AWS_DATAZONE_API ListProjectMembershipsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * <p>The identifier of the Amazon DataZone domain in which you want to list
      * project memberships.</p>
      */
-    inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
+    inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-    inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
-    inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
-    inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
-    inline ListProjectMembershipsRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
-    inline ListProjectMembershipsRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
-    inline ListProjectMembershipsRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
+    template<typename DomainIdentifierT = Aws::String>
+    void SetDomainIdentifier(DomainIdentifierT&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::forward<DomainIdentifierT>(value); }
+    template<typename DomainIdentifierT = Aws::String>
+    ListProjectMembershipsRequest& WithDomainIdentifier(DomainIdentifierT&& value) { SetDomainIdentifier(std::forward<DomainIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,7 +61,7 @@ namespace Model
      * <code>NextToken</code> value that you can use in a subsequent call to
      * <code>ListProjectMemberships</code> to list the next set of memberships.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListProjectMembershipsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -78,59 +76,51 @@ namespace Model
      * specify this <code>NextToken</code> value in a subsequent call to
      * <code>ListProjectMemberships</code> to list the next set of memberships.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListProjectMembershipsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListProjectMembershipsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListProjectMembershipsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListProjectMembershipsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the project whose memberships you want to list.</p>
      */
-    inline const Aws::String& GetProjectIdentifier() const{ return m_projectIdentifier; }
+    inline const Aws::String& GetProjectIdentifier() const { return m_projectIdentifier; }
     inline bool ProjectIdentifierHasBeenSet() const { return m_projectIdentifierHasBeenSet; }
-    inline void SetProjectIdentifier(const Aws::String& value) { m_projectIdentifierHasBeenSet = true; m_projectIdentifier = value; }
-    inline void SetProjectIdentifier(Aws::String&& value) { m_projectIdentifierHasBeenSet = true; m_projectIdentifier = std::move(value); }
-    inline void SetProjectIdentifier(const char* value) { m_projectIdentifierHasBeenSet = true; m_projectIdentifier.assign(value); }
-    inline ListProjectMembershipsRequest& WithProjectIdentifier(const Aws::String& value) { SetProjectIdentifier(value); return *this;}
-    inline ListProjectMembershipsRequest& WithProjectIdentifier(Aws::String&& value) { SetProjectIdentifier(std::move(value)); return *this;}
-    inline ListProjectMembershipsRequest& WithProjectIdentifier(const char* value) { SetProjectIdentifier(value); return *this;}
+    template<typename ProjectIdentifierT = Aws::String>
+    void SetProjectIdentifier(ProjectIdentifierT&& value) { m_projectIdentifierHasBeenSet = true; m_projectIdentifier = std::forward<ProjectIdentifierT>(value); }
+    template<typename ProjectIdentifierT = Aws::String>
+    ListProjectMembershipsRequest& WithProjectIdentifier(ProjectIdentifierT&& value) { SetProjectIdentifier(std::forward<ProjectIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The method by which you want to sort the project memberships.</p>
      */
-    inline const SortFieldProject& GetSortBy() const{ return m_sortBy; }
+    inline SortFieldProject GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const SortFieldProject& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(SortFieldProject&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListProjectMembershipsRequest& WithSortBy(const SortFieldProject& value) { SetSortBy(value); return *this;}
-    inline ListProjectMembershipsRequest& WithSortBy(SortFieldProject&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(SortFieldProject value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline ListProjectMembershipsRequest& WithSortBy(SortFieldProject value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sort order of the project memberships.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListProjectMembershipsRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline ListProjectMembershipsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListProjectMembershipsRequest& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
     Aws::String m_domainIdentifier;
     bool m_domainIdentifierHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
@@ -139,10 +129,10 @@ namespace Model
     Aws::String m_projectIdentifier;
     bool m_projectIdentifierHasBeenSet = false;
 
-    SortFieldProject m_sortBy;
+    SortFieldProject m_sortBy{SortFieldProject::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

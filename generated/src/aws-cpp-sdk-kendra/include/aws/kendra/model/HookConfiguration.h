@@ -44,7 +44,7 @@ namespace Model
   class HookConfiguration
   {
   public:
-    AWS_KENDRA_API HookConfiguration();
+    AWS_KENDRA_API HookConfiguration() = default;
     AWS_KENDRA_API HookConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API HookConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,12 +57,12 @@ namespace Model
      * then Amazon Kendra should invoke a function that inserts the current
      * date-time.</p>
      */
-    inline const DocumentAttributeCondition& GetInvocationCondition() const{ return m_invocationCondition; }
+    inline const DocumentAttributeCondition& GetInvocationCondition() const { return m_invocationCondition; }
     inline bool InvocationConditionHasBeenSet() const { return m_invocationConditionHasBeenSet; }
-    inline void SetInvocationCondition(const DocumentAttributeCondition& value) { m_invocationConditionHasBeenSet = true; m_invocationCondition = value; }
-    inline void SetInvocationCondition(DocumentAttributeCondition&& value) { m_invocationConditionHasBeenSet = true; m_invocationCondition = std::move(value); }
-    inline HookConfiguration& WithInvocationCondition(const DocumentAttributeCondition& value) { SetInvocationCondition(value); return *this;}
-    inline HookConfiguration& WithInvocationCondition(DocumentAttributeCondition&& value) { SetInvocationCondition(std::move(value)); return *this;}
+    template<typename InvocationConditionT = DocumentAttributeCondition>
+    void SetInvocationCondition(InvocationConditionT&& value) { m_invocationConditionHasBeenSet = true; m_invocationCondition = std::forward<InvocationConditionT>(value); }
+    template<typename InvocationConditionT = DocumentAttributeCondition>
+    HookConfiguration& WithInvocationCondition(InvocationConditionT&& value) { SetInvocationCondition(std::forward<InvocationConditionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +72,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">an IAM roles
      * for Amazon Kendra</a>.</p>
      */
-    inline const Aws::String& GetLambdaArn() const{ return m_lambdaArn; }
+    inline const Aws::String& GetLambdaArn() const { return m_lambdaArn; }
     inline bool LambdaArnHasBeenSet() const { return m_lambdaArnHasBeenSet; }
-    inline void SetLambdaArn(const Aws::String& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = value; }
-    inline void SetLambdaArn(Aws::String&& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = std::move(value); }
-    inline void SetLambdaArn(const char* value) { m_lambdaArnHasBeenSet = true; m_lambdaArn.assign(value); }
-    inline HookConfiguration& WithLambdaArn(const Aws::String& value) { SetLambdaArn(value); return *this;}
-    inline HookConfiguration& WithLambdaArn(Aws::String&& value) { SetLambdaArn(std::move(value)); return *this;}
-    inline HookConfiguration& WithLambdaArn(const char* value) { SetLambdaArn(value); return *this;}
+    template<typename LambdaArnT = Aws::String>
+    void SetLambdaArn(LambdaArnT&& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = std::forward<LambdaArnT>(value); }
+    template<typename LambdaArnT = Aws::String>
+    HookConfiguration& WithLambdaArn(LambdaArnT&& value) { SetLambdaArn(std::forward<LambdaArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +87,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#cde-data-contracts-lambda">Data
      * contracts for Lambda functions</a>.</p>
      */
-    inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
+    inline const Aws::String& GetS3Bucket() const { return m_s3Bucket; }
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
-    inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
-    inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
-    inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
-    inline HookConfiguration& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
-    inline HookConfiguration& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
-    inline HookConfiguration& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
+    template<typename S3BucketT = Aws::String>
+    void SetS3Bucket(S3BucketT&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::forward<S3BucketT>(value); }
+    template<typename S3BucketT = Aws::String>
+    HookConfiguration& WithS3Bucket(S3BucketT&& value) { SetS3Bucket(std::forward<S3BucketT>(value)); return *this;}
     ///@}
   private:
 

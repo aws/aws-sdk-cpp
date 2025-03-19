@@ -33,7 +33,7 @@ namespace Model
   class CustomEmailLambdaVersionConfigType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API CustomEmailLambdaVersionConfigType();
+    AWS_COGNITOIDENTITYPROVIDER_API CustomEmailLambdaVersionConfigType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API CustomEmailLambdaVersionConfigType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API CustomEmailLambdaVersionConfigType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * features.</p> <p>You must use a <code>LambdaVersion</code> of <code>V1_0</code>
      * with a custom sender function.</p>
      */
-    inline const CustomEmailSenderLambdaVersionType& GetLambdaVersion() const{ return m_lambdaVersion; }
+    inline CustomEmailSenderLambdaVersionType GetLambdaVersion() const { return m_lambdaVersion; }
     inline bool LambdaVersionHasBeenSet() const { return m_lambdaVersionHasBeenSet; }
-    inline void SetLambdaVersion(const CustomEmailSenderLambdaVersionType& value) { m_lambdaVersionHasBeenSet = true; m_lambdaVersion = value; }
-    inline void SetLambdaVersion(CustomEmailSenderLambdaVersionType&& value) { m_lambdaVersionHasBeenSet = true; m_lambdaVersion = std::move(value); }
-    inline CustomEmailLambdaVersionConfigType& WithLambdaVersion(const CustomEmailSenderLambdaVersionType& value) { SetLambdaVersion(value); return *this;}
-    inline CustomEmailLambdaVersionConfigType& WithLambdaVersion(CustomEmailSenderLambdaVersionType&& value) { SetLambdaVersion(std::move(value)); return *this;}
+    inline void SetLambdaVersion(CustomEmailSenderLambdaVersionType value) { m_lambdaVersionHasBeenSet = true; m_lambdaVersion = value; }
+    inline CustomEmailLambdaVersionConfigType& WithLambdaVersion(CustomEmailSenderLambdaVersionType value) { SetLambdaVersion(value); return *this;}
     ///@}
 
     ///@{
@@ -59,18 +57,16 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the function that you want to assign to
      * your Lambda trigger.</p>
      */
-    inline const Aws::String& GetLambdaArn() const{ return m_lambdaArn; }
+    inline const Aws::String& GetLambdaArn() const { return m_lambdaArn; }
     inline bool LambdaArnHasBeenSet() const { return m_lambdaArnHasBeenSet; }
-    inline void SetLambdaArn(const Aws::String& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = value; }
-    inline void SetLambdaArn(Aws::String&& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = std::move(value); }
-    inline void SetLambdaArn(const char* value) { m_lambdaArnHasBeenSet = true; m_lambdaArn.assign(value); }
-    inline CustomEmailLambdaVersionConfigType& WithLambdaArn(const Aws::String& value) { SetLambdaArn(value); return *this;}
-    inline CustomEmailLambdaVersionConfigType& WithLambdaArn(Aws::String&& value) { SetLambdaArn(std::move(value)); return *this;}
-    inline CustomEmailLambdaVersionConfigType& WithLambdaArn(const char* value) { SetLambdaArn(value); return *this;}
+    template<typename LambdaArnT = Aws::String>
+    void SetLambdaArn(LambdaArnT&& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = std::forward<LambdaArnT>(value); }
+    template<typename LambdaArnT = Aws::String>
+    CustomEmailLambdaVersionConfigType& WithLambdaArn(LambdaArnT&& value) { SetLambdaArn(std::forward<LambdaArnT>(value)); return *this;}
     ///@}
   private:
 
-    CustomEmailSenderLambdaVersionType m_lambdaVersion;
+    CustomEmailSenderLambdaVersionType m_lambdaVersion{CustomEmailSenderLambdaVersionType::NOT_SET};
     bool m_lambdaVersionHasBeenSet = false;
 
     Aws::String m_lambdaArn;

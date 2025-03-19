@@ -32,7 +32,7 @@ namespace Model
   class GrantedEntity
   {
   public:
-    AWS_DATAZONE_API GrantedEntity();
+    AWS_DATAZONE_API GrantedEntity() = default;
     AWS_DATAZONE_API GrantedEntity(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API GrantedEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The listing for which a subscription is granted.</p>
      */
-    inline const ListingRevision& GetListing() const{ return m_listing; }
+    inline const ListingRevision& GetListing() const { return m_listing; }
     inline bool ListingHasBeenSet() const { return m_listingHasBeenSet; }
-    inline void SetListing(const ListingRevision& value) { m_listingHasBeenSet = true; m_listing = value; }
-    inline void SetListing(ListingRevision&& value) { m_listingHasBeenSet = true; m_listing = std::move(value); }
-    inline GrantedEntity& WithListing(const ListingRevision& value) { SetListing(value); return *this;}
-    inline GrantedEntity& WithListing(ListingRevision&& value) { SetListing(std::move(value)); return *this;}
+    template<typename ListingT = ListingRevision>
+    void SetListing(ListingT&& value) { m_listingHasBeenSet = true; m_listing = std::forward<ListingT>(value); }
+    template<typename ListingT = ListingRevision>
+    GrantedEntity& WithListing(ListingT&& value) { SetListing(std::forward<ListingT>(value)); return *this;}
     ///@}
   private:
 

@@ -16,13 +16,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-UpdateFunction2020_05_31Request::UpdateFunction2020_05_31Request() : 
-    m_nameHasBeenSet(false),
-    m_ifMatchHasBeenSet(false),
-    m_functionConfigHasBeenSet(false),
-    m_functionCodeHasBeenSet(false)
-{
-}
 
 Aws::String UpdateFunction2020_05_31Request::SerializePayload() const
 {

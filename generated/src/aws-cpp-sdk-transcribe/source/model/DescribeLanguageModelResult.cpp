@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLanguageModelResult::DescribeLanguageModelResult()
-{
-}
-
 DescribeLanguageModelResult::DescribeLanguageModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeLanguageModelResult& DescribeLanguageModelResult::operator =(const Aws::
   if(jsonValue.ValueExists("LanguageModel"))
   {
     m_languageModel = jsonValue.GetObject("LanguageModel");
-
+    m_languageModelHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

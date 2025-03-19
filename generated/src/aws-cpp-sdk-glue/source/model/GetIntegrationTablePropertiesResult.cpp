@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetIntegrationTablePropertiesResult::GetIntegrationTablePropertiesResult()
-{
-}
-
 GetIntegrationTablePropertiesResult::GetIntegrationTablePropertiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,30 @@ GetIntegrationTablePropertiesResult& GetIntegrationTablePropertiesResult::operat
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
+    m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
+    m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceTableConfig"))
   {
     m_sourceTableConfig = jsonValue.GetObject("SourceTableConfig");
-
+    m_sourceTableConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetTableConfig"))
   {
     m_targetTableConfig = jsonValue.GetObject("TargetTableConfig");
-
+    m_targetTableConfigHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

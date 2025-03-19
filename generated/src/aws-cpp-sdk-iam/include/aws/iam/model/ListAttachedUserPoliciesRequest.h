@@ -21,7 +21,7 @@ namespace Model
   class ListAttachedUserPoliciesRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API ListAttachedUserPoliciesRequest();
+    AWS_IAM_API ListAttachedUserPoliciesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
+    inline const Aws::String& GetUserName() const { return m_userName; }
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-    inline ListAttachedUserPoliciesRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline ListAttachedUserPoliciesRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline ListAttachedUserPoliciesRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    ListAttachedUserPoliciesRequest& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * character (<code>\u007F</code>), including most punctuation characters, digits,
      * and upper and lowercased letters.</p>
      */
-    inline const Aws::String& GetPathPrefix() const{ return m_pathPrefix; }
+    inline const Aws::String& GetPathPrefix() const { return m_pathPrefix; }
     inline bool PathPrefixHasBeenSet() const { return m_pathPrefixHasBeenSet; }
-    inline void SetPathPrefix(const Aws::String& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = value; }
-    inline void SetPathPrefix(Aws::String&& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = std::move(value); }
-    inline void SetPathPrefix(const char* value) { m_pathPrefixHasBeenSet = true; m_pathPrefix.assign(value); }
-    inline ListAttachedUserPoliciesRequest& WithPathPrefix(const Aws::String& value) { SetPathPrefix(value); return *this;}
-    inline ListAttachedUserPoliciesRequest& WithPathPrefix(Aws::String&& value) { SetPathPrefix(std::move(value)); return *this;}
-    inline ListAttachedUserPoliciesRequest& WithPathPrefix(const char* value) { SetPathPrefix(value); return *this;}
+    template<typename PathPrefixT = Aws::String>
+    void SetPathPrefix(PathPrefixT&& value) { m_pathPrefixHasBeenSet = true; m_pathPrefix = std::forward<PathPrefixT>(value); }
+    template<typename PathPrefixT = Aws::String>
+    ListAttachedUserPoliciesRequest& WithPathPrefix(PathPrefixT&& value) { SetPathPrefix(std::forward<PathPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +78,12 @@ namespace Model
      * <code>Marker</code> element in the response that you received to indicate where
      * the next call should start.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline ListAttachedUserPoliciesRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListAttachedUserPoliciesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListAttachedUserPoliciesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListAttachedUserPoliciesRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,7 +97,7 @@ namespace Model
      * <code>true</code>, and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>
      */
-    inline int GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
     inline ListAttachedUserPoliciesRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
@@ -119,7 +113,7 @@ namespace Model
     Aws::String m_marker;
     bool m_markerHasBeenSet = false;
 
-    int m_maxItems;
+    int m_maxItems{0};
     bool m_maxItemsHasBeenSet = false;
   };
 

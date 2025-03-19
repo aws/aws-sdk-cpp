@@ -18,14 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-AutomaticTapeCreationPolicyInfo::AutomaticTapeCreationPolicyInfo() : 
-    m_automaticTapeCreationRulesHasBeenSet(false),
-    m_gatewayARNHasBeenSet(false)
-{
-}
-
 AutomaticTapeCreationPolicyInfo::AutomaticTapeCreationPolicyInfo(JsonView jsonValue)
-  : AutomaticTapeCreationPolicyInfo()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ AutomaticTapeCreationPolicyInfo& AutomaticTapeCreationPolicyInfo::operator =(Jso
     }
     m_automaticTapeCreationRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
-
     m_gatewayARNHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class RespondActivityTaskFailedRequest : public SWFRequest
   {
   public:
-    AWS_SWF_API RespondActivityTaskFailedRequest();
+    AWS_SWF_API RespondActivityTaskFailedRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,42 +42,36 @@ namespace Model
      * <code>taskToken</code> must also be passed. This enables it to provide its
      * progress and respond with results.</p> 
      */
-    inline const Aws::String& GetTaskToken() const{ return m_taskToken; }
+    inline const Aws::String& GetTaskToken() const { return m_taskToken; }
     inline bool TaskTokenHasBeenSet() const { return m_taskTokenHasBeenSet; }
-    inline void SetTaskToken(const Aws::String& value) { m_taskTokenHasBeenSet = true; m_taskToken = value; }
-    inline void SetTaskToken(Aws::String&& value) { m_taskTokenHasBeenSet = true; m_taskToken = std::move(value); }
-    inline void SetTaskToken(const char* value) { m_taskTokenHasBeenSet = true; m_taskToken.assign(value); }
-    inline RespondActivityTaskFailedRequest& WithTaskToken(const Aws::String& value) { SetTaskToken(value); return *this;}
-    inline RespondActivityTaskFailedRequest& WithTaskToken(Aws::String&& value) { SetTaskToken(std::move(value)); return *this;}
-    inline RespondActivityTaskFailedRequest& WithTaskToken(const char* value) { SetTaskToken(value); return *this;}
+    template<typename TaskTokenT = Aws::String>
+    void SetTaskToken(TaskTokenT&& value) { m_taskTokenHasBeenSet = true; m_taskToken = std::forward<TaskTokenT>(value); }
+    template<typename TaskTokenT = Aws::String>
+    RespondActivityTaskFailedRequest& WithTaskToken(TaskTokenT&& value) { SetTaskToken(std::forward<TaskTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Description of the error that may assist in diagnostics.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline RespondActivityTaskFailedRequest& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline RespondActivityTaskFailedRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline RespondActivityTaskFailedRequest& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    RespondActivityTaskFailedRequest& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Detailed information about the failure.</p>
      */
-    inline const Aws::String& GetDetails() const{ return m_details; }
+    inline const Aws::String& GetDetails() const { return m_details; }
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-    inline void SetDetails(const Aws::String& value) { m_detailsHasBeenSet = true; m_details = value; }
-    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-    inline void SetDetails(const char* value) { m_detailsHasBeenSet = true; m_details.assign(value); }
-    inline RespondActivityTaskFailedRequest& WithDetails(const Aws::String& value) { SetDetails(value); return *this;}
-    inline RespondActivityTaskFailedRequest& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
-    inline RespondActivityTaskFailedRequest& WithDetails(const char* value) { SetDetails(value); return *this;}
+    template<typename DetailsT = Aws::String>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = Aws::String>
+    RespondActivityTaskFailedRequest& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
     ///@}
   private:
 

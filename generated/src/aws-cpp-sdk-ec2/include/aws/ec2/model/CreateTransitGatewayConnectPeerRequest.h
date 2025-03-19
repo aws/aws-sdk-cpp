@@ -24,7 +24,7 @@ namespace Model
   class CreateTransitGatewayConnectPeerRequest : public EC2Request
   {
   public:
-    AWS_EC2_API CreateTransitGatewayConnectPeerRequest();
+    AWS_EC2_API CreateTransitGatewayConnectPeerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The ID of the Connect attachment.</p>
      */
-    inline const Aws::String& GetTransitGatewayAttachmentId() const{ return m_transitGatewayAttachmentId; }
+    inline const Aws::String& GetTransitGatewayAttachmentId() const { return m_transitGatewayAttachmentId; }
     inline bool TransitGatewayAttachmentIdHasBeenSet() const { return m_transitGatewayAttachmentIdHasBeenSet; }
-    inline void SetTransitGatewayAttachmentId(const Aws::String& value) { m_transitGatewayAttachmentIdHasBeenSet = true; m_transitGatewayAttachmentId = value; }
-    inline void SetTransitGatewayAttachmentId(Aws::String&& value) { m_transitGatewayAttachmentIdHasBeenSet = true; m_transitGatewayAttachmentId = std::move(value); }
-    inline void SetTransitGatewayAttachmentId(const char* value) { m_transitGatewayAttachmentIdHasBeenSet = true; m_transitGatewayAttachmentId.assign(value); }
-    inline CreateTransitGatewayConnectPeerRequest& WithTransitGatewayAttachmentId(const Aws::String& value) { SetTransitGatewayAttachmentId(value); return *this;}
-    inline CreateTransitGatewayConnectPeerRequest& WithTransitGatewayAttachmentId(Aws::String&& value) { SetTransitGatewayAttachmentId(std::move(value)); return *this;}
-    inline CreateTransitGatewayConnectPeerRequest& WithTransitGatewayAttachmentId(const char* value) { SetTransitGatewayAttachmentId(value); return *this;}
+    template<typename TransitGatewayAttachmentIdT = Aws::String>
+    void SetTransitGatewayAttachmentId(TransitGatewayAttachmentIdT&& value) { m_transitGatewayAttachmentIdHasBeenSet = true; m_transitGatewayAttachmentId = std::forward<TransitGatewayAttachmentIdT>(value); }
+    template<typename TransitGatewayAttachmentIdT = Aws::String>
+    CreateTransitGatewayConnectPeerRequest& WithTransitGatewayAttachmentId(TransitGatewayAttachmentIdT&& value) { SetTransitGatewayAttachmentId(std::forward<TransitGatewayAttachmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * specified, Amazon automatically assigns the first available IP address from the
      * transit gateway CIDR block.</p>
      */
-    inline const Aws::String& GetTransitGatewayAddress() const{ return m_transitGatewayAddress; }
+    inline const Aws::String& GetTransitGatewayAddress() const { return m_transitGatewayAddress; }
     inline bool TransitGatewayAddressHasBeenSet() const { return m_transitGatewayAddressHasBeenSet; }
-    inline void SetTransitGatewayAddress(const Aws::String& value) { m_transitGatewayAddressHasBeenSet = true; m_transitGatewayAddress = value; }
-    inline void SetTransitGatewayAddress(Aws::String&& value) { m_transitGatewayAddressHasBeenSet = true; m_transitGatewayAddress = std::move(value); }
-    inline void SetTransitGatewayAddress(const char* value) { m_transitGatewayAddressHasBeenSet = true; m_transitGatewayAddress.assign(value); }
-    inline CreateTransitGatewayConnectPeerRequest& WithTransitGatewayAddress(const Aws::String& value) { SetTransitGatewayAddress(value); return *this;}
-    inline CreateTransitGatewayConnectPeerRequest& WithTransitGatewayAddress(Aws::String&& value) { SetTransitGatewayAddress(std::move(value)); return *this;}
-    inline CreateTransitGatewayConnectPeerRequest& WithTransitGatewayAddress(const char* value) { SetTransitGatewayAddress(value); return *this;}
+    template<typename TransitGatewayAddressT = Aws::String>
+    void SetTransitGatewayAddress(TransitGatewayAddressT&& value) { m_transitGatewayAddressHasBeenSet = true; m_transitGatewayAddress = std::forward<TransitGatewayAddressT>(value); }
+    template<typename TransitGatewayAddressT = Aws::String>
+    CreateTransitGatewayConnectPeerRequest& WithTransitGatewayAddress(TransitGatewayAddressT&& value) { SetTransitGatewayAddress(std::forward<TransitGatewayAddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,26 +71,24 @@ namespace Model
      * <p>The peer IP address (GRE outer IP address) on the appliance side of the
      * Connect peer.</p>
      */
-    inline const Aws::String& GetPeerAddress() const{ return m_peerAddress; }
+    inline const Aws::String& GetPeerAddress() const { return m_peerAddress; }
     inline bool PeerAddressHasBeenSet() const { return m_peerAddressHasBeenSet; }
-    inline void SetPeerAddress(const Aws::String& value) { m_peerAddressHasBeenSet = true; m_peerAddress = value; }
-    inline void SetPeerAddress(Aws::String&& value) { m_peerAddressHasBeenSet = true; m_peerAddress = std::move(value); }
-    inline void SetPeerAddress(const char* value) { m_peerAddressHasBeenSet = true; m_peerAddress.assign(value); }
-    inline CreateTransitGatewayConnectPeerRequest& WithPeerAddress(const Aws::String& value) { SetPeerAddress(value); return *this;}
-    inline CreateTransitGatewayConnectPeerRequest& WithPeerAddress(Aws::String&& value) { SetPeerAddress(std::move(value)); return *this;}
-    inline CreateTransitGatewayConnectPeerRequest& WithPeerAddress(const char* value) { SetPeerAddress(value); return *this;}
+    template<typename PeerAddressT = Aws::String>
+    void SetPeerAddress(PeerAddressT&& value) { m_peerAddressHasBeenSet = true; m_peerAddress = std::forward<PeerAddressT>(value); }
+    template<typename PeerAddressT = Aws::String>
+    CreateTransitGatewayConnectPeerRequest& WithPeerAddress(PeerAddressT&& value) { SetPeerAddress(std::forward<PeerAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The BGP options for the Connect peer.</p>
      */
-    inline const TransitGatewayConnectRequestBgpOptions& GetBgpOptions() const{ return m_bgpOptions; }
+    inline const TransitGatewayConnectRequestBgpOptions& GetBgpOptions() const { return m_bgpOptions; }
     inline bool BgpOptionsHasBeenSet() const { return m_bgpOptionsHasBeenSet; }
-    inline void SetBgpOptions(const TransitGatewayConnectRequestBgpOptions& value) { m_bgpOptionsHasBeenSet = true; m_bgpOptions = value; }
-    inline void SetBgpOptions(TransitGatewayConnectRequestBgpOptions&& value) { m_bgpOptionsHasBeenSet = true; m_bgpOptions = std::move(value); }
-    inline CreateTransitGatewayConnectPeerRequest& WithBgpOptions(const TransitGatewayConnectRequestBgpOptions& value) { SetBgpOptions(value); return *this;}
-    inline CreateTransitGatewayConnectPeerRequest& WithBgpOptions(TransitGatewayConnectRequestBgpOptions&& value) { SetBgpOptions(std::move(value)); return *this;}
+    template<typename BgpOptionsT = TransitGatewayConnectRequestBgpOptions>
+    void SetBgpOptions(BgpOptionsT&& value) { m_bgpOptionsHasBeenSet = true; m_bgpOptions = std::forward<BgpOptionsT>(value); }
+    template<typename BgpOptionsT = TransitGatewayConnectRequestBgpOptions>
+    CreateTransitGatewayConnectPeerRequest& WithBgpOptions(BgpOptionsT&& value) { SetBgpOptions(std::forward<BgpOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,29 +99,28 @@ namespace Model
      * IP address. You can also optionally specify a size /125 IPv6 CIDR block from the
      * <code>fd00::/8</code> range.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInsideCidrBlocks() const{ return m_insideCidrBlocks; }
+    inline const Aws::Vector<Aws::String>& GetInsideCidrBlocks() const { return m_insideCidrBlocks; }
     inline bool InsideCidrBlocksHasBeenSet() const { return m_insideCidrBlocksHasBeenSet; }
-    inline void SetInsideCidrBlocks(const Aws::Vector<Aws::String>& value) { m_insideCidrBlocksHasBeenSet = true; m_insideCidrBlocks = value; }
-    inline void SetInsideCidrBlocks(Aws::Vector<Aws::String>&& value) { m_insideCidrBlocksHasBeenSet = true; m_insideCidrBlocks = std::move(value); }
-    inline CreateTransitGatewayConnectPeerRequest& WithInsideCidrBlocks(const Aws::Vector<Aws::String>& value) { SetInsideCidrBlocks(value); return *this;}
-    inline CreateTransitGatewayConnectPeerRequest& WithInsideCidrBlocks(Aws::Vector<Aws::String>&& value) { SetInsideCidrBlocks(std::move(value)); return *this;}
-    inline CreateTransitGatewayConnectPeerRequest& AddInsideCidrBlocks(const Aws::String& value) { m_insideCidrBlocksHasBeenSet = true; m_insideCidrBlocks.push_back(value); return *this; }
-    inline CreateTransitGatewayConnectPeerRequest& AddInsideCidrBlocks(Aws::String&& value) { m_insideCidrBlocksHasBeenSet = true; m_insideCidrBlocks.push_back(std::move(value)); return *this; }
-    inline CreateTransitGatewayConnectPeerRequest& AddInsideCidrBlocks(const char* value) { m_insideCidrBlocksHasBeenSet = true; m_insideCidrBlocks.push_back(value); return *this; }
+    template<typename InsideCidrBlocksT = Aws::Vector<Aws::String>>
+    void SetInsideCidrBlocks(InsideCidrBlocksT&& value) { m_insideCidrBlocksHasBeenSet = true; m_insideCidrBlocks = std::forward<InsideCidrBlocksT>(value); }
+    template<typename InsideCidrBlocksT = Aws::Vector<Aws::String>>
+    CreateTransitGatewayConnectPeerRequest& WithInsideCidrBlocks(InsideCidrBlocksT&& value) { SetInsideCidrBlocks(std::forward<InsideCidrBlocksT>(value)); return *this;}
+    template<typename InsideCidrBlocksT = Aws::String>
+    CreateTransitGatewayConnectPeerRequest& AddInsideCidrBlocks(InsideCidrBlocksT&& value) { m_insideCidrBlocksHasBeenSet = true; m_insideCidrBlocks.emplace_back(std::forward<InsideCidrBlocksT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The tags to apply to the Connect peer.</p>
      */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline CreateTransitGatewayConnectPeerRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline CreateTransitGatewayConnectPeerRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline CreateTransitGatewayConnectPeerRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline CreateTransitGatewayConnectPeerRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    void SetTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::forward<TagSpecificationsT>(value); }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    CreateTransitGatewayConnectPeerRequest& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
+    template<typename TagSpecificationsT = TagSpecification>
+    CreateTransitGatewayConnectPeerRequest& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -137,7 +130,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline CreateTransitGatewayConnectPeerRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -162,7 +155,7 @@ namespace Model
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

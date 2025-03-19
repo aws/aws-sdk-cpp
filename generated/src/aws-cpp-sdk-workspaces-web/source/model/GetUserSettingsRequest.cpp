@@ -12,11 +12,6 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetUserSettingsRequest::GetUserSettingsRequest() : 
-    m_userSettingsArnHasBeenSet(false)
-{
-}
-
 Aws::String GetUserSettingsRequest::SerializePayload() const
 {
   return {};

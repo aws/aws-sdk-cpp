@@ -35,7 +35,7 @@ namespace Model
   class ConnectorDataSource
   {
   public:
-    AWS_GLUE_API ConnectorDataSource();
+    AWS_GLUE_API ConnectorDataSource() = default;
     AWS_GLUE_API ConnectorDataSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API ConnectorDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The name of this source node.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ConnectorDataSource& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ConnectorDataSource& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ConnectorDataSource& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ConnectorDataSource& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * </li> <li> <p> <code>saphana</code> </p> </li> <li> <p> <code>teradata</code>
      * </p> </li> <li> <p> <code>vertica</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetConnectionType() const{ return m_connectionType; }
+    inline const Aws::String& GetConnectionType() const { return m_connectionType; }
     inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
-    inline void SetConnectionType(const Aws::String& value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
-    inline void SetConnectionType(Aws::String&& value) { m_connectionTypeHasBeenSet = true; m_connectionType = std::move(value); }
-    inline void SetConnectionType(const char* value) { m_connectionTypeHasBeenSet = true; m_connectionType.assign(value); }
-    inline ConnectorDataSource& WithConnectionType(const Aws::String& value) { SetConnectionType(value); return *this;}
-    inline ConnectorDataSource& WithConnectionType(Aws::String&& value) { SetConnectionType(std::move(value)); return *this;}
-    inline ConnectorDataSource& WithConnectionType(const char* value) { SetConnectionType(value); return *this;}
+    template<typename ConnectionTypeT = Aws::String>
+    void SetConnectionType(ConnectionTypeT&& value) { m_connectionTypeHasBeenSet = true; m_connectionType = std::forward<ConnectionTypeT>(value); }
+    template<typename ConnectionTypeT = Aws::String>
+    ConnectorDataSource& WithConnectionType(ConnectionTypeT&& value) { SetConnectionType(std::forward<ConnectionTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,33 +77,30 @@ namespace Model
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-connect.html">
      * Connection parameters</a> section of the Glue documentation.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetData() const{ return m_data; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetData() const { return m_data; }
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    inline void SetData(const Aws::Map<Aws::String, Aws::String>& value) { m_dataHasBeenSet = true; m_data = value; }
-    inline void SetData(Aws::Map<Aws::String, Aws::String>&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-    inline ConnectorDataSource& WithData(const Aws::Map<Aws::String, Aws::String>& value) { SetData(value); return *this;}
-    inline ConnectorDataSource& WithData(Aws::Map<Aws::String, Aws::String>&& value) { SetData(std::move(value)); return *this;}
-    inline ConnectorDataSource& AddData(const Aws::String& key, const Aws::String& value) { m_dataHasBeenSet = true; m_data.emplace(key, value); return *this; }
-    inline ConnectorDataSource& AddData(Aws::String&& key, const Aws::String& value) { m_dataHasBeenSet = true; m_data.emplace(std::move(key), value); return *this; }
-    inline ConnectorDataSource& AddData(const Aws::String& key, Aws::String&& value) { m_dataHasBeenSet = true; m_data.emplace(key, std::move(value)); return *this; }
-    inline ConnectorDataSource& AddData(Aws::String&& key, Aws::String&& value) { m_dataHasBeenSet = true; m_data.emplace(std::move(key), std::move(value)); return *this; }
-    inline ConnectorDataSource& AddData(const char* key, Aws::String&& value) { m_dataHasBeenSet = true; m_data.emplace(key, std::move(value)); return *this; }
-    inline ConnectorDataSource& AddData(Aws::String&& key, const char* value) { m_dataHasBeenSet = true; m_data.emplace(std::move(key), value); return *this; }
-    inline ConnectorDataSource& AddData(const char* key, const char* value) { m_dataHasBeenSet = true; m_data.emplace(key, value); return *this; }
+    template<typename DataT = Aws::Map<Aws::String, Aws::String>>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = Aws::Map<Aws::String, Aws::String>>
+    ConnectorDataSource& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
+    template<typename DataKeyT = Aws::String, typename DataValueT = Aws::String>
+    ConnectorDataSource& AddData(DataKeyT&& key, DataValueT&& value) {
+      m_dataHasBeenSet = true; m_data.emplace(std::forward<DataKeyT>(key), std::forward<DataValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Specifies the data schema for this source.</p>
      */
-    inline const Aws::Vector<GlueSchema>& GetOutputSchemas() const{ return m_outputSchemas; }
+    inline const Aws::Vector<GlueSchema>& GetOutputSchemas() const { return m_outputSchemas; }
     inline bool OutputSchemasHasBeenSet() const { return m_outputSchemasHasBeenSet; }
-    inline void SetOutputSchemas(const Aws::Vector<GlueSchema>& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas = value; }
-    inline void SetOutputSchemas(Aws::Vector<GlueSchema>&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas = std::move(value); }
-    inline ConnectorDataSource& WithOutputSchemas(const Aws::Vector<GlueSchema>& value) { SetOutputSchemas(value); return *this;}
-    inline ConnectorDataSource& WithOutputSchemas(Aws::Vector<GlueSchema>&& value) { SetOutputSchemas(std::move(value)); return *this;}
-    inline ConnectorDataSource& AddOutputSchemas(const GlueSchema& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas.push_back(value); return *this; }
-    inline ConnectorDataSource& AddOutputSchemas(GlueSchema&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas.push_back(std::move(value)); return *this; }
+    template<typename OutputSchemasT = Aws::Vector<GlueSchema>>
+    void SetOutputSchemas(OutputSchemasT&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas = std::forward<OutputSchemasT>(value); }
+    template<typename OutputSchemasT = Aws::Vector<GlueSchema>>
+    ConnectorDataSource& WithOutputSchemas(OutputSchemasT&& value) { SetOutputSchemas(std::forward<OutputSchemasT>(value)); return *this;}
+    template<typename OutputSchemasT = GlueSchema>
+    ConnectorDataSource& AddOutputSchemas(OutputSchemasT&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas.emplace_back(std::forward<OutputSchemasT>(value)); return *this; }
     ///@}
   private:
 

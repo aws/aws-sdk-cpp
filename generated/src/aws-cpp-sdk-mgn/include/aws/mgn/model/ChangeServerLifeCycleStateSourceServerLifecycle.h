@@ -32,7 +32,7 @@ namespace Model
   class ChangeServerLifeCycleStateSourceServerLifecycle
   {
   public:
-    AWS_MGN_API ChangeServerLifeCycleStateSourceServerLifecycle();
+    AWS_MGN_API ChangeServerLifeCycleStateSourceServerLifecycle() = default;
     AWS_MGN_API ChangeServerLifeCycleStateSourceServerLifecycle(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API ChangeServerLifeCycleStateSourceServerLifecycle& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The request to change the source server migration lifecycle state.</p>
      */
-    inline const ChangeServerLifeCycleStateSourceServerLifecycleState& GetState() const{ return m_state; }
+    inline ChangeServerLifeCycleStateSourceServerLifecycleState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ChangeServerLifeCycleStateSourceServerLifecycleState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ChangeServerLifeCycleStateSourceServerLifecycleState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline ChangeServerLifeCycleStateSourceServerLifecycle& WithState(const ChangeServerLifeCycleStateSourceServerLifecycleState& value) { SetState(value); return *this;}
-    inline ChangeServerLifeCycleStateSourceServerLifecycle& WithState(ChangeServerLifeCycleStateSourceServerLifecycleState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(ChangeServerLifeCycleStateSourceServerLifecycleState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline ChangeServerLifeCycleStateSourceServerLifecycle& WithState(ChangeServerLifeCycleStateSourceServerLifecycleState value) { SetState(value); return *this;}
     ///@}
   private:
 
-    ChangeServerLifeCycleStateSourceServerLifecycleState m_state;
+    ChangeServerLifeCycleStateSourceServerLifecycleState m_state{ChangeServerLifeCycleStateSourceServerLifecycleState::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

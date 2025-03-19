@@ -14,11 +14,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-XmlAttributesRequest::XmlAttributesRequest() : 
-    m_fooHasBeenSet(false),
-    m_attrHasBeenSet(false)
-{
-}
 
 Aws::String XmlAttributesRequest::SerializePayload() const
 {

@@ -35,7 +35,7 @@ namespace Model
   class ApplicationSummary
   {
   public:
-    AWS_SSMSAP_API ApplicationSummary();
+    AWS_SSMSAP_API ApplicationSummary() = default;
     AWS_SSMSAP_API ApplicationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMSAP_API ApplicationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMSAP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,81 +45,70 @@ namespace Model
     /**
      * <p>The ID of the application.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ApplicationSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ApplicationSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ApplicationSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ApplicationSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the latest discovery.</p>
      */
-    inline const ApplicationDiscoveryStatus& GetDiscoveryStatus() const{ return m_discoveryStatus; }
+    inline ApplicationDiscoveryStatus GetDiscoveryStatus() const { return m_discoveryStatus; }
     inline bool DiscoveryStatusHasBeenSet() const { return m_discoveryStatusHasBeenSet; }
-    inline void SetDiscoveryStatus(const ApplicationDiscoveryStatus& value) { m_discoveryStatusHasBeenSet = true; m_discoveryStatus = value; }
-    inline void SetDiscoveryStatus(ApplicationDiscoveryStatus&& value) { m_discoveryStatusHasBeenSet = true; m_discoveryStatus = std::move(value); }
-    inline ApplicationSummary& WithDiscoveryStatus(const ApplicationDiscoveryStatus& value) { SetDiscoveryStatus(value); return *this;}
-    inline ApplicationSummary& WithDiscoveryStatus(ApplicationDiscoveryStatus&& value) { SetDiscoveryStatus(std::move(value)); return *this;}
+    inline void SetDiscoveryStatus(ApplicationDiscoveryStatus value) { m_discoveryStatusHasBeenSet = true; m_discoveryStatus = value; }
+    inline ApplicationSummary& WithDiscoveryStatus(ApplicationDiscoveryStatus value) { SetDiscoveryStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the application.</p>
      */
-    inline const ApplicationType& GetType() const{ return m_type; }
+    inline ApplicationType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ApplicationType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ApplicationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ApplicationSummary& WithType(const ApplicationType& value) { SetType(value); return *this;}
-    inline ApplicationSummary& WithType(ApplicationType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ApplicationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ApplicationSummary& WithType(ApplicationType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ApplicationSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ApplicationSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ApplicationSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ApplicationSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags on the application.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ApplicationSummary& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline ApplicationSummary& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline ApplicationSummary& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline ApplicationSummary& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline ApplicationSummary& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline ApplicationSummary& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline ApplicationSummary& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline ApplicationSummary& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline ApplicationSummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    ApplicationSummary& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    ApplicationSummary& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    ApplicationDiscoveryStatus m_discoveryStatus;
+    ApplicationDiscoveryStatus m_discoveryStatus{ApplicationDiscoveryStatus::NOT_SET};
     bool m_discoveryStatusHasBeenSet = false;
 
-    ApplicationType m_type;
+    ApplicationType m_type{ApplicationType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_arn;

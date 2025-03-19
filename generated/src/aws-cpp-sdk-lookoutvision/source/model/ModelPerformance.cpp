@@ -18,18 +18,7 @@ namespace LookoutforVision
 namespace Model
 {
 
-ModelPerformance::ModelPerformance() : 
-    m_f1Score(0.0),
-    m_f1ScoreHasBeenSet(false),
-    m_recall(0.0),
-    m_recallHasBeenSet(false),
-    m_precision(0.0),
-    m_precisionHasBeenSet(false)
-{
-}
-
 ModelPerformance::ModelPerformance(JsonView jsonValue)
-  : ModelPerformance()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ ModelPerformance& ModelPerformance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("F1Score"))
   {
     m_f1Score = jsonValue.GetDouble("F1Score");
-
     m_f1ScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Recall"))
   {
     m_recall = jsonValue.GetDouble("Recall");
-
     m_recallHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Precision"))
   {
     m_precision = jsonValue.GetDouble("Precision");
-
     m_precisionHasBeenSet = true;
   }
-
   return *this;
 }
 

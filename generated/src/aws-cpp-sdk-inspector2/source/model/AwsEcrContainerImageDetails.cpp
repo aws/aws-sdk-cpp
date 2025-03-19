@@ -18,20 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-AwsEcrContainerImageDetails::AwsEcrContainerImageDetails() : 
-    m_architectureHasBeenSet(false),
-    m_authorHasBeenSet(false),
-    m_imageHashHasBeenSet(false),
-    m_imageTagsHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_pushedAtHasBeenSet(false),
-    m_registryHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false)
-{
-}
-
 AwsEcrContainerImageDetails::AwsEcrContainerImageDetails(JsonView jsonValue)
-  : AwsEcrContainerImageDetails()
 {
   *this = jsonValue;
 }
@@ -41,24 +28,18 @@ AwsEcrContainerImageDetails& AwsEcrContainerImageDetails::operator =(JsonView js
   if(jsonValue.ValueExists("architecture"))
   {
     m_architecture = jsonValue.GetString("architecture");
-
     m_architectureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("author"))
   {
     m_author = jsonValue.GetString("author");
-
     m_authorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageHash"))
   {
     m_imageHash = jsonValue.GetString("imageHash");
-
     m_imageHashHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageTags"))
   {
     Aws::Utils::Array<JsonView> imageTagsJsonList = jsonValue.GetArray("imageTags");
@@ -68,35 +49,26 @@ AwsEcrContainerImageDetails& AwsEcrContainerImageDetails::operator =(JsonView js
     }
     m_imageTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platform"))
   {
     m_platform = jsonValue.GetString("platform");
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pushedAt"))
   {
     m_pushedAt = jsonValue.GetDouble("pushedAt");
-
     m_pushedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registry"))
   {
     m_registry = jsonValue.GetString("registry");
-
     m_registryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   return *this;
 }
 

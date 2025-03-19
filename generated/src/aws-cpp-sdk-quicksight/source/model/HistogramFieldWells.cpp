@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-HistogramFieldWells::HistogramFieldWells() : 
-    m_histogramAggregatedFieldWellsHasBeenSet(false)
-{
-}
-
 HistogramFieldWells::HistogramFieldWells(JsonView jsonValue)
-  : HistogramFieldWells()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ HistogramFieldWells& HistogramFieldWells::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HistogramAggregatedFieldWells"))
   {
     m_histogramAggregatedFieldWells = jsonValue.GetObject("HistogramAggregatedFieldWells");
-
     m_histogramAggregatedFieldWellsHasBeenSet = true;
   }
-
   return *this;
 }
 

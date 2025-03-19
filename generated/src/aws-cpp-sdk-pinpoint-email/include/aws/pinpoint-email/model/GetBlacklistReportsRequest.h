@@ -30,7 +30,7 @@ namespace Model
   class GetBlacklistReportsRequest : public PinpointEmailRequest
   {
   public:
-    AWS_PINPOINTEMAIL_API GetBlacklistReportsRequest();
+    AWS_PINPOINTEMAIL_API GetBlacklistReportsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,15 +49,14 @@ namespace Model
      * You can only specify the dedicated IP addresses that you use to send email using
      * Amazon Pinpoint or Amazon SES.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetBlacklistItemNames() const{ return m_blacklistItemNames; }
+    inline const Aws::Vector<Aws::String>& GetBlacklistItemNames() const { return m_blacklistItemNames; }
     inline bool BlacklistItemNamesHasBeenSet() const { return m_blacklistItemNamesHasBeenSet; }
-    inline void SetBlacklistItemNames(const Aws::Vector<Aws::String>& value) { m_blacklistItemNamesHasBeenSet = true; m_blacklistItemNames = value; }
-    inline void SetBlacklistItemNames(Aws::Vector<Aws::String>&& value) { m_blacklistItemNamesHasBeenSet = true; m_blacklistItemNames = std::move(value); }
-    inline GetBlacklistReportsRequest& WithBlacklistItemNames(const Aws::Vector<Aws::String>& value) { SetBlacklistItemNames(value); return *this;}
-    inline GetBlacklistReportsRequest& WithBlacklistItemNames(Aws::Vector<Aws::String>&& value) { SetBlacklistItemNames(std::move(value)); return *this;}
-    inline GetBlacklistReportsRequest& AddBlacklistItemNames(const Aws::String& value) { m_blacklistItemNamesHasBeenSet = true; m_blacklistItemNames.push_back(value); return *this; }
-    inline GetBlacklistReportsRequest& AddBlacklistItemNames(Aws::String&& value) { m_blacklistItemNamesHasBeenSet = true; m_blacklistItemNames.push_back(std::move(value)); return *this; }
-    inline GetBlacklistReportsRequest& AddBlacklistItemNames(const char* value) { m_blacklistItemNamesHasBeenSet = true; m_blacklistItemNames.push_back(value); return *this; }
+    template<typename BlacklistItemNamesT = Aws::Vector<Aws::String>>
+    void SetBlacklistItemNames(BlacklistItemNamesT&& value) { m_blacklistItemNamesHasBeenSet = true; m_blacklistItemNames = std::forward<BlacklistItemNamesT>(value); }
+    template<typename BlacklistItemNamesT = Aws::Vector<Aws::String>>
+    GetBlacklistReportsRequest& WithBlacklistItemNames(BlacklistItemNamesT&& value) { SetBlacklistItemNames(std::forward<BlacklistItemNamesT>(value)); return *this;}
+    template<typename BlacklistItemNamesT = Aws::String>
+    GetBlacklistReportsRequest& AddBlacklistItemNames(BlacklistItemNamesT&& value) { m_blacklistItemNamesHasBeenSet = true; m_blacklistItemNames.emplace_back(std::forward<BlacklistItemNamesT>(value)); return *this; }
     ///@}
   private:
 

@@ -27,7 +27,7 @@ namespace Model
   class CopyImageResult
   {
   public:
-    AWS_APPSTREAM_API CopyImageResult();
+    AWS_APPSTREAM_API CopyImageResult() = default;
     AWS_APPSTREAM_API CopyImageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSTREAM_API CopyImageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The name of the destination image.</p>
      */
-    inline const Aws::String& GetDestinationImageName() const{ return m_destinationImageName; }
-    inline void SetDestinationImageName(const Aws::String& value) { m_destinationImageName = value; }
-    inline void SetDestinationImageName(Aws::String&& value) { m_destinationImageName = std::move(value); }
-    inline void SetDestinationImageName(const char* value) { m_destinationImageName.assign(value); }
-    inline CopyImageResult& WithDestinationImageName(const Aws::String& value) { SetDestinationImageName(value); return *this;}
-    inline CopyImageResult& WithDestinationImageName(Aws::String&& value) { SetDestinationImageName(std::move(value)); return *this;}
-    inline CopyImageResult& WithDestinationImageName(const char* value) { SetDestinationImageName(value); return *this;}
+    inline const Aws::String& GetDestinationImageName() const { return m_destinationImageName; }
+    template<typename DestinationImageNameT = Aws::String>
+    void SetDestinationImageName(DestinationImageNameT&& value) { m_destinationImageNameHasBeenSet = true; m_destinationImageName = std::forward<DestinationImageNameT>(value); }
+    template<typename DestinationImageNameT = Aws::String>
+    CopyImageResult& WithDestinationImageName(DestinationImageNameT&& value) { SetDestinationImageName(std::forward<DestinationImageNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CopyImageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CopyImageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CopyImageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CopyImageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_destinationImageName;
+    bool m_destinationImageNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

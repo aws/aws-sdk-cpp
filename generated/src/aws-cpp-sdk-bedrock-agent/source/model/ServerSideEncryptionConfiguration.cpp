@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-ServerSideEncryptionConfiguration::ServerSideEncryptionConfiguration() : 
-    m_kmsKeyArnHasBeenSet(false)
-{
-}
-
 ServerSideEncryptionConfiguration::ServerSideEncryptionConfiguration(JsonView jsonValue)
-  : ServerSideEncryptionConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ServerSideEncryptionConfiguration& ServerSideEncryptionConfiguration::operator =
   if(jsonValue.ValueExists("kmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,16 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-EnableLoggingRequest::EnableLoggingRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_bucketNameHasBeenSet(false),
-    m_s3KeyPrefixHasBeenSet(false),
-    m_logDestinationType(LogDestinationType::NOT_SET),
-    m_logDestinationTypeHasBeenSet(false),
-    m_logExportsHasBeenSet(false)
-{
-}
-
 Aws::String EnableLoggingRequest::SerializePayload() const
 {
   Aws::StringStream ss;

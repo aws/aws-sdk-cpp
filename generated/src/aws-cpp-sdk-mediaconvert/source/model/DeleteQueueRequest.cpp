@@ -12,11 +12,6 @@ using namespace Aws::MediaConvert::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteQueueRequest::DeleteQueueRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteQueueRequest::SerializePayload() const
 {
   return {};

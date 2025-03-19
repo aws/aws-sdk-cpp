@@ -23,7 +23,7 @@ namespace Model
   class DeleteAttributesRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API DeleteAttributesRequest();
+    AWS_ECS_API DeleteAttributesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * contains the resource to delete attributes. If you do not specify a cluster, the
      * default cluster is assumed.</p>
      */
-    inline const Aws::String& GetCluster() const{ return m_cluster; }
+    inline const Aws::String& GetCluster() const { return m_cluster; }
     inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
-    inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
-    inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
-    inline DeleteAttributesRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
-    inline DeleteAttributesRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
-    inline DeleteAttributesRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+    template<typename ClusterT = Aws::String>
+    void SetCluster(ClusterT&& value) { m_clusterHasBeenSet = true; m_cluster = std::forward<ClusterT>(value); }
+    template<typename ClusterT = Aws::String>
+    DeleteAttributesRequest& WithCluster(ClusterT&& value) { SetCluster(std::forward<ClusterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,14 @@ namespace Model
      * and target ID, but don't specify the value. If you specify the target ID using
      * the short form, you must also specify the target type.</p>
      */
-    inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<Attribute>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Vector<Attribute>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline DeleteAttributesRequest& WithAttributes(const Aws::Vector<Attribute>& value) { SetAttributes(value); return *this;}
-    inline DeleteAttributesRequest& WithAttributes(Aws::Vector<Attribute>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline DeleteAttributesRequest& AddAttributes(const Attribute& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-    inline DeleteAttributesRequest& AddAttributes(Attribute&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
+    template<typename AttributesT = Aws::Vector<Attribute>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Vector<Attribute>>
+    DeleteAttributesRequest& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesT = Attribute>
+    DeleteAttributesRequest& AddAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes.emplace_back(std::forward<AttributesT>(value)); return *this; }
     ///@}
   private:
 

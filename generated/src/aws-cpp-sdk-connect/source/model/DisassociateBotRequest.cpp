@@ -12,15 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateBotRequest::DisassociateBotRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_lexBotHasBeenSet(false),
-    m_lexV2BotHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String DisassociateBotRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,21 +12,6 @@ using namespace Aws::ApiGatewayV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateStageRequest::UpdateStageRequest() : 
-    m_accessLogSettingsHasBeenSet(false),
-    m_apiIdHasBeenSet(false),
-    m_autoDeploy(false),
-    m_autoDeployHasBeenSet(false),
-    m_clientCertificateIdHasBeenSet(false),
-    m_defaultRouteSettingsHasBeenSet(false),
-    m_deploymentIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_routeSettingsHasBeenSet(false),
-    m_stageNameHasBeenSet(false),
-    m_stageVariablesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateStageRequest::SerializePayload() const
 {
   JsonValue payload;

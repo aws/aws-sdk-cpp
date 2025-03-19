@@ -12,11 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetServiceSettingRequest::GetServiceSettingRequest() : 
-    m_settingIdHasBeenSet(false)
-{
-}
-
 Aws::String GetServiceSettingRequest::SerializePayload() const
 {
   JsonValue payload;

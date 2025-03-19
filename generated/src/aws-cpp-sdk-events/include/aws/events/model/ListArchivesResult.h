@@ -29,7 +29,7 @@ namespace Model
   class ListArchivesResult
   {
   public:
-    AWS_CLOUDWATCHEVENTS_API ListArchivesResult();
+    AWS_CLOUDWATCHEVENTS_API ListArchivesResult() = default;
     AWS_CLOUDWATCHEVENTS_API ListArchivesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHEVENTS_API ListArchivesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>An array of <code>Archive</code> objects that include details about an
      * archive.</p>
      */
-    inline const Aws::Vector<Archive>& GetArchives() const{ return m_archives; }
-    inline void SetArchives(const Aws::Vector<Archive>& value) { m_archives = value; }
-    inline void SetArchives(Aws::Vector<Archive>&& value) { m_archives = std::move(value); }
-    inline ListArchivesResult& WithArchives(const Aws::Vector<Archive>& value) { SetArchives(value); return *this;}
-    inline ListArchivesResult& WithArchives(Aws::Vector<Archive>&& value) { SetArchives(std::move(value)); return *this;}
-    inline ListArchivesResult& AddArchives(const Archive& value) { m_archives.push_back(value); return *this; }
-    inline ListArchivesResult& AddArchives(Archive&& value) { m_archives.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Archive>& GetArchives() const { return m_archives; }
+    template<typename ArchivesT = Aws::Vector<Archive>>
+    void SetArchives(ArchivesT&& value) { m_archivesHasBeenSet = true; m_archives = std::forward<ArchivesT>(value); }
+    template<typename ArchivesT = Aws::Vector<Archive>>
+    ListArchivesResult& WithArchives(ArchivesT&& value) { SetArchives(std::forward<ArchivesT>(value)); return *this;}
+    template<typename ArchivesT = Archive>
+    ListArchivesResult& AddArchives(ArchivesT&& value) { m_archivesHasBeenSet = true; m_archives.emplace_back(std::forward<ArchivesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>The token returned by a previous call to retrieve the next set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListArchivesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListArchivesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListArchivesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListArchivesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListArchivesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListArchivesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListArchivesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListArchivesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Archive> m_archives;
+    bool m_archivesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

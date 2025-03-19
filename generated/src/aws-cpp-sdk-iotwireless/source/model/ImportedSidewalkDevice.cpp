@@ -18,17 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-ImportedSidewalkDevice::ImportedSidewalkDevice() : 
-    m_sidewalkManufacturingSnHasBeenSet(false),
-    m_onboardingStatus(OnboardStatus::NOT_SET),
-    m_onboardingStatusHasBeenSet(false),
-    m_onboardingStatusReasonHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
-{
-}
-
 ImportedSidewalkDevice::ImportedSidewalkDevice(JsonView jsonValue)
-  : ImportedSidewalkDevice()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ImportedSidewalkDevice& ImportedSidewalkDevice::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SidewalkManufacturingSn"))
   {
     m_sidewalkManufacturingSn = jsonValue.GetString("SidewalkManufacturingSn");
-
     m_sidewalkManufacturingSnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnboardingStatus"))
   {
     m_onboardingStatus = OnboardStatusMapper::GetOnboardStatusForName(jsonValue.GetString("OnboardingStatus"));
-
     m_onboardingStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnboardingStatusReason"))
   {
     m_onboardingStatusReason = jsonValue.GetString("OnboardingStatusReason");
-
     m_onboardingStatusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetString("LastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

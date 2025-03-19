@@ -10,11 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-DeleteUserRequest::DeleteUserRequest() : 
-    m_userIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteUserRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -25,7 +25,7 @@ namespace Model
   class CancelReservedInstancesListingRequest : public EC2Request
   {
   public:
-    AWS_EC2_API CancelReservedInstancesListingRequest();
+    AWS_EC2_API CancelReservedInstancesListingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The ID of the Reserved Instance listing.</p>
      */
-    inline const Aws::String& GetReservedInstancesListingId() const{ return m_reservedInstancesListingId; }
+    inline const Aws::String& GetReservedInstancesListingId() const { return m_reservedInstancesListingId; }
     inline bool ReservedInstancesListingIdHasBeenSet() const { return m_reservedInstancesListingIdHasBeenSet; }
-    inline void SetReservedInstancesListingId(const Aws::String& value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId = value; }
-    inline void SetReservedInstancesListingId(Aws::String&& value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId = std::move(value); }
-    inline void SetReservedInstancesListingId(const char* value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId.assign(value); }
-    inline CancelReservedInstancesListingRequest& WithReservedInstancesListingId(const Aws::String& value) { SetReservedInstancesListingId(value); return *this;}
-    inline CancelReservedInstancesListingRequest& WithReservedInstancesListingId(Aws::String&& value) { SetReservedInstancesListingId(std::move(value)); return *this;}
-    inline CancelReservedInstancesListingRequest& WithReservedInstancesListingId(const char* value) { SetReservedInstancesListingId(value); return *this;}
+    template<typename ReservedInstancesListingIdT = Aws::String>
+    void SetReservedInstancesListingId(ReservedInstancesListingIdT&& value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId = std::forward<ReservedInstancesListingIdT>(value); }
+    template<typename ReservedInstancesListingIdT = Aws::String>
+    CancelReservedInstancesListingRequest& WithReservedInstancesListingId(ReservedInstancesListingIdT&& value) { SetReservedInstancesListingId(std::forward<ReservedInstancesListingIdT>(value)); return *this;}
     ///@}
   private:
 

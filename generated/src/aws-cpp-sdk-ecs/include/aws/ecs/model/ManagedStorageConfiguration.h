@@ -32,7 +32,7 @@ namespace Model
   class ManagedStorageConfiguration
   {
   public:
-    AWS_ECS_API ManagedStorageConfiguration();
+    AWS_ECS_API ManagedStorageConfiguration() = default;
     AWS_ECS_API ManagedStorageConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API ManagedStorageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>Specify a Key Management Service key ID to encrypt the managed storage.</p>
      * <p>The key must be a single Region key.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline ManagedStorageConfiguration& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline ManagedStorageConfiguration& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline ManagedStorageConfiguration& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    ManagedStorageConfiguration& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>Specify the Key Management Service key ID for the Fargate ephemeral
      * storage.</p> <p>The key must be a single Region key.</p>
      */
-    inline const Aws::String& GetFargateEphemeralStorageKmsKeyId() const{ return m_fargateEphemeralStorageKmsKeyId; }
+    inline const Aws::String& GetFargateEphemeralStorageKmsKeyId() const { return m_fargateEphemeralStorageKmsKeyId; }
     inline bool FargateEphemeralStorageKmsKeyIdHasBeenSet() const { return m_fargateEphemeralStorageKmsKeyIdHasBeenSet; }
-    inline void SetFargateEphemeralStorageKmsKeyId(const Aws::String& value) { m_fargateEphemeralStorageKmsKeyIdHasBeenSet = true; m_fargateEphemeralStorageKmsKeyId = value; }
-    inline void SetFargateEphemeralStorageKmsKeyId(Aws::String&& value) { m_fargateEphemeralStorageKmsKeyIdHasBeenSet = true; m_fargateEphemeralStorageKmsKeyId = std::move(value); }
-    inline void SetFargateEphemeralStorageKmsKeyId(const char* value) { m_fargateEphemeralStorageKmsKeyIdHasBeenSet = true; m_fargateEphemeralStorageKmsKeyId.assign(value); }
-    inline ManagedStorageConfiguration& WithFargateEphemeralStorageKmsKeyId(const Aws::String& value) { SetFargateEphemeralStorageKmsKeyId(value); return *this;}
-    inline ManagedStorageConfiguration& WithFargateEphemeralStorageKmsKeyId(Aws::String&& value) { SetFargateEphemeralStorageKmsKeyId(std::move(value)); return *this;}
-    inline ManagedStorageConfiguration& WithFargateEphemeralStorageKmsKeyId(const char* value) { SetFargateEphemeralStorageKmsKeyId(value); return *this;}
+    template<typename FargateEphemeralStorageKmsKeyIdT = Aws::String>
+    void SetFargateEphemeralStorageKmsKeyId(FargateEphemeralStorageKmsKeyIdT&& value) { m_fargateEphemeralStorageKmsKeyIdHasBeenSet = true; m_fargateEphemeralStorageKmsKeyId = std::forward<FargateEphemeralStorageKmsKeyIdT>(value); }
+    template<typename FargateEphemeralStorageKmsKeyIdT = Aws::String>
+    ManagedStorageConfiguration& WithFargateEphemeralStorageKmsKeyId(FargateEphemeralStorageKmsKeyIdT&& value) { SetFargateEphemeralStorageKmsKeyId(std::forward<FargateEphemeralStorageKmsKeyIdT>(value)); return *this;}
     ///@}
   private:
 

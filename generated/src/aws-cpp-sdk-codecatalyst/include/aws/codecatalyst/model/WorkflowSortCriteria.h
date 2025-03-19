@@ -30,7 +30,7 @@ namespace Model
   class WorkflowSortCriteria
   {
   public:
-    AWS_CODECATALYST_API WorkflowSortCriteria();
+    AWS_CODECATALYST_API WorkflowSortCriteria() = default;
     AWS_CODECATALYST_API WorkflowSortCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECATALYST_API WorkflowSortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECATALYST_API Aws::Utils::Json::JsonValue Jsonize() const;

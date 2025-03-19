@@ -12,11 +12,6 @@ using namespace Aws::OpsWorksCM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteServerRequest::DeleteServerRequest() : 
-    m_serverNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteServerRequest::SerializePayload() const
 {
   JsonValue payload;

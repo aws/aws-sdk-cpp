@@ -18,14 +18,7 @@ namespace IoT
 namespace Model
 {
 
-UserProperty::UserProperty() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 UserProperty::UserProperty(JsonView jsonValue)
-  : UserProperty()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UserProperty& UserProperty::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

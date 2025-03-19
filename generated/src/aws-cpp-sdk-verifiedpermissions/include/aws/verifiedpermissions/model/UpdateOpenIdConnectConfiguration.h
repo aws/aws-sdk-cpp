@@ -40,7 +40,7 @@ namespace Model
   class UpdateOpenIdConnectConfiguration
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API UpdateOpenIdConnectConfiguration();
+    AWS_VERIFIEDPERMISSIONS_API UpdateOpenIdConnectConfiguration() = default;
     AWS_VERIFIEDPERMISSIONS_API UpdateOpenIdConnectConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API UpdateOpenIdConnectConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
      * discovery endpoint at the path
      * <code>.well-known/openid-configuration</code>.</p>
      */
-    inline const Aws::String& GetIssuer() const{ return m_issuer; }
+    inline const Aws::String& GetIssuer() const { return m_issuer; }
     inline bool IssuerHasBeenSet() const { return m_issuerHasBeenSet; }
-    inline void SetIssuer(const Aws::String& value) { m_issuerHasBeenSet = true; m_issuer = value; }
-    inline void SetIssuer(Aws::String&& value) { m_issuerHasBeenSet = true; m_issuer = std::move(value); }
-    inline void SetIssuer(const char* value) { m_issuerHasBeenSet = true; m_issuer.assign(value); }
-    inline UpdateOpenIdConnectConfiguration& WithIssuer(const Aws::String& value) { SetIssuer(value); return *this;}
-    inline UpdateOpenIdConnectConfiguration& WithIssuer(Aws::String&& value) { SetIssuer(std::move(value)); return *this;}
-    inline UpdateOpenIdConnectConfiguration& WithIssuer(const char* value) { SetIssuer(value); return *this;}
+    template<typename IssuerT = Aws::String>
+    void SetIssuer(IssuerT&& value) { m_issuerHasBeenSet = true; m_issuer = std::forward<IssuerT>(value); }
+    template<typename IssuerT = Aws::String>
+    UpdateOpenIdConnectConfiguration& WithIssuer(IssuerT&& value) { SetIssuer(std::forward<IssuerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * <code>MyOIDCProvider</code>, you can reference principals in your policies in
      * the format <code>MyCorp::User::MyOIDCProvider|Carlos</code>.</p>
      */
-    inline const Aws::String& GetEntityIdPrefix() const{ return m_entityIdPrefix; }
+    inline const Aws::String& GetEntityIdPrefix() const { return m_entityIdPrefix; }
     inline bool EntityIdPrefixHasBeenSet() const { return m_entityIdPrefixHasBeenSet; }
-    inline void SetEntityIdPrefix(const Aws::String& value) { m_entityIdPrefixHasBeenSet = true; m_entityIdPrefix = value; }
-    inline void SetEntityIdPrefix(Aws::String&& value) { m_entityIdPrefixHasBeenSet = true; m_entityIdPrefix = std::move(value); }
-    inline void SetEntityIdPrefix(const char* value) { m_entityIdPrefixHasBeenSet = true; m_entityIdPrefix.assign(value); }
-    inline UpdateOpenIdConnectConfiguration& WithEntityIdPrefix(const Aws::String& value) { SetEntityIdPrefix(value); return *this;}
-    inline UpdateOpenIdConnectConfiguration& WithEntityIdPrefix(Aws::String&& value) { SetEntityIdPrefix(std::move(value)); return *this;}
-    inline UpdateOpenIdConnectConfiguration& WithEntityIdPrefix(const char* value) { SetEntityIdPrefix(value); return *this;}
+    template<typename EntityIdPrefixT = Aws::String>
+    void SetEntityIdPrefix(EntityIdPrefixT&& value) { m_entityIdPrefixHasBeenSet = true; m_entityIdPrefix = std::forward<EntityIdPrefixT>(value); }
+    template<typename EntityIdPrefixT = Aws::String>
+    UpdateOpenIdConnectConfiguration& WithEntityIdPrefix(EntityIdPrefixT&& value) { SetEntityIdPrefix(std::forward<EntityIdPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +82,12 @@ namespace Model
      * object can map the contents of a <code>groups</code> claim to
      * <code>MyCorp::UserGroup</code>.</p>
      */
-    inline const UpdateOpenIdConnectGroupConfiguration& GetGroupConfiguration() const{ return m_groupConfiguration; }
+    inline const UpdateOpenIdConnectGroupConfiguration& GetGroupConfiguration() const { return m_groupConfiguration; }
     inline bool GroupConfigurationHasBeenSet() const { return m_groupConfigurationHasBeenSet; }
-    inline void SetGroupConfiguration(const UpdateOpenIdConnectGroupConfiguration& value) { m_groupConfigurationHasBeenSet = true; m_groupConfiguration = value; }
-    inline void SetGroupConfiguration(UpdateOpenIdConnectGroupConfiguration&& value) { m_groupConfigurationHasBeenSet = true; m_groupConfiguration = std::move(value); }
-    inline UpdateOpenIdConnectConfiguration& WithGroupConfiguration(const UpdateOpenIdConnectGroupConfiguration& value) { SetGroupConfiguration(value); return *this;}
-    inline UpdateOpenIdConnectConfiguration& WithGroupConfiguration(UpdateOpenIdConnectGroupConfiguration&& value) { SetGroupConfiguration(std::move(value)); return *this;}
+    template<typename GroupConfigurationT = UpdateOpenIdConnectGroupConfiguration>
+    void SetGroupConfiguration(GroupConfigurationT&& value) { m_groupConfigurationHasBeenSet = true; m_groupConfiguration = std::forward<GroupConfigurationT>(value); }
+    template<typename GroupConfigurationT = UpdateOpenIdConnectGroupConfiguration>
+    UpdateOpenIdConnectConfiguration& WithGroupConfiguration(GroupConfigurationT&& value) { SetGroupConfiguration(std::forward<GroupConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,12 +96,12 @@ namespace Model
      * Your policy store can process either identity (ID) or access tokens from a given
      * OIDC identity source.</p>
      */
-    inline const UpdateOpenIdConnectTokenSelection& GetTokenSelection() const{ return m_tokenSelection; }
+    inline const UpdateOpenIdConnectTokenSelection& GetTokenSelection() const { return m_tokenSelection; }
     inline bool TokenSelectionHasBeenSet() const { return m_tokenSelectionHasBeenSet; }
-    inline void SetTokenSelection(const UpdateOpenIdConnectTokenSelection& value) { m_tokenSelectionHasBeenSet = true; m_tokenSelection = value; }
-    inline void SetTokenSelection(UpdateOpenIdConnectTokenSelection&& value) { m_tokenSelectionHasBeenSet = true; m_tokenSelection = std::move(value); }
-    inline UpdateOpenIdConnectConfiguration& WithTokenSelection(const UpdateOpenIdConnectTokenSelection& value) { SetTokenSelection(value); return *this;}
-    inline UpdateOpenIdConnectConfiguration& WithTokenSelection(UpdateOpenIdConnectTokenSelection&& value) { SetTokenSelection(std::move(value)); return *this;}
+    template<typename TokenSelectionT = UpdateOpenIdConnectTokenSelection>
+    void SetTokenSelection(TokenSelectionT&& value) { m_tokenSelectionHasBeenSet = true; m_tokenSelection = std::forward<TokenSelectionT>(value); }
+    template<typename TokenSelectionT = UpdateOpenIdConnectTokenSelection>
+    UpdateOpenIdConnectConfiguration& WithTokenSelection(TokenSelectionT&& value) { SetTokenSelection(std::forward<TokenSelectionT>(value)); return *this;}
     ///@}
   private:
 

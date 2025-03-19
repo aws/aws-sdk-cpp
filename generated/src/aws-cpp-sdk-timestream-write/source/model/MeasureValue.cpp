@@ -18,16 +18,7 @@ namespace TimestreamWrite
 namespace Model
 {
 
-MeasureValue::MeasureValue() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_type(MeasureValueType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 MeasureValue::MeasureValue(JsonView jsonValue)
-  : MeasureValue()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ MeasureValue& MeasureValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = MeasureValueTypeMapper::GetMeasureValueTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

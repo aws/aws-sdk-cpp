@@ -12,11 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteInstanceSnapshotRequest::DeleteInstanceSnapshotRequest() : 
-    m_instanceSnapshotNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteInstanceSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

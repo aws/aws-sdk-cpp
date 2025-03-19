@@ -21,7 +21,7 @@ namespace Model
   class UpdateLocationFsxWindowsRequest : public DataSyncRequest
   {
   public:
-    AWS_DATASYNC_API UpdateLocationFsxWindowsRequest();
+    AWS_DATASYNC_API UpdateLocationFsxWindowsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>Specifies the ARN of the FSx for Windows File Server transfer location that
      * you're updating.</p>
      */
-    inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
+    inline const Aws::String& GetLocationArn() const { return m_locationArn; }
     inline bool LocationArnHasBeenSet() const { return m_locationArnHasBeenSet; }
-    inline void SetLocationArn(const Aws::String& value) { m_locationArnHasBeenSet = true; m_locationArn = value; }
-    inline void SetLocationArn(Aws::String&& value) { m_locationArnHasBeenSet = true; m_locationArn = std::move(value); }
-    inline void SetLocationArn(const char* value) { m_locationArnHasBeenSet = true; m_locationArn.assign(value); }
-    inline UpdateLocationFsxWindowsRequest& WithLocationArn(const Aws::String& value) { SetLocationArn(value); return *this;}
-    inline UpdateLocationFsxWindowsRequest& WithLocationArn(Aws::String&& value) { SetLocationArn(std::move(value)); return *this;}
-    inline UpdateLocationFsxWindowsRequest& WithLocationArn(const char* value) { SetLocationArn(value); return *this;}
+    template<typename LocationArnT = Aws::String>
+    void SetLocationArn(LocationArnT&& value) { m_locationArnHasBeenSet = true; m_locationArn = std::forward<LocationArnT>(value); }
+    template<typename LocationArnT = Aws::String>
+    UpdateLocationFsxWindowsRequest& WithLocationArn(LocationArnT&& value) { SetLocationArn(std::forward<LocationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * uses this subdirectory to read or write data (depending on whether the file
      * system is a source or destination location).</p>
      */
-    inline const Aws::String& GetSubdirectory() const{ return m_subdirectory; }
+    inline const Aws::String& GetSubdirectory() const { return m_subdirectory; }
     inline bool SubdirectoryHasBeenSet() const { return m_subdirectoryHasBeenSet; }
-    inline void SetSubdirectory(const Aws::String& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = value; }
-    inline void SetSubdirectory(Aws::String&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::move(value); }
-    inline void SetSubdirectory(const char* value) { m_subdirectoryHasBeenSet = true; m_subdirectory.assign(value); }
-    inline UpdateLocationFsxWindowsRequest& WithSubdirectory(const Aws::String& value) { SetSubdirectory(value); return *this;}
-    inline UpdateLocationFsxWindowsRequest& WithSubdirectory(Aws::String&& value) { SetSubdirectory(std::move(value)); return *this;}
-    inline UpdateLocationFsxWindowsRequest& WithSubdirectory(const char* value) { SetSubdirectory(value); return *this;}
+    template<typename SubdirectoryT = Aws::String>
+    void SetSubdirectory(SubdirectoryT&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::forward<SubdirectoryT>(value); }
+    template<typename SubdirectoryT = Aws::String>
+    UpdateLocationFsxWindowsRequest& WithSubdirectory(SubdirectoryT&& value) { SetSubdirectory(std::forward<SubdirectoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * domains in your environment, configuring this parameter makes sure that DataSync
      * connects to the right file system.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline UpdateLocationFsxWindowsRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline UpdateLocationFsxWindowsRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline UpdateLocationFsxWindowsRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    UpdateLocationFsxWindowsRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +85,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-fsx-location.html#create-fsx-windows-location-permissions">required
      * permissions</a> for FSx for Windows File Server locations.</p>
      */
-    inline const Aws::String& GetUser() const{ return m_user; }
+    inline const Aws::String& GetUser() const { return m_user; }
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
-    inline void SetUser(const Aws::String& value) { m_userHasBeenSet = true; m_user = value; }
-    inline void SetUser(Aws::String&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
-    inline void SetUser(const char* value) { m_userHasBeenSet = true; m_user.assign(value); }
-    inline UpdateLocationFsxWindowsRequest& WithUser(const Aws::String& value) { SetUser(value); return *this;}
-    inline UpdateLocationFsxWindowsRequest& WithUser(Aws::String&& value) { SetUser(std::move(value)); return *this;}
-    inline UpdateLocationFsxWindowsRequest& WithUser(const char* value) { SetUser(value); return *this;}
+    template<typename UserT = Aws::String>
+    void SetUser(UserT&& value) { m_userHasBeenSet = true; m_user = std::forward<UserT>(value); }
+    template<typename UserT = Aws::String>
+    UpdateLocationFsxWindowsRequest& WithUser(UserT&& value) { SetUser(std::forward<UserT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,14 +99,12 @@ namespace Model
      * the files, folders, and file metadata in your FSx for Windows File Server file
      * system.</p>
      */
-    inline const Aws::String& GetPassword() const{ return m_password; }
+    inline const Aws::String& GetPassword() const { return m_password; }
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
-    inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
-    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
-    inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
-    inline UpdateLocationFsxWindowsRequest& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
-    inline UpdateLocationFsxWindowsRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
-    inline UpdateLocationFsxWindowsRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
+    template<typename PasswordT = Aws::String>
+    void SetPassword(PasswordT&& value) { m_passwordHasBeenSet = true; m_password = std::forward<PasswordT>(value); }
+    template<typename PasswordT = Aws::String>
+    UpdateLocationFsxWindowsRequest& WithPassword(PasswordT&& value) { SetPassword(std::forward<PasswordT>(value)); return *this;}
     ///@}
   private:
 

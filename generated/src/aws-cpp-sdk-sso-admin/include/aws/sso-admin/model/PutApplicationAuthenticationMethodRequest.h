@@ -23,7 +23,7 @@ namespace Model
   class PutApplicationAuthenticationMethodRequest : public SSOAdminRequest
   {
   public:
-    AWS_SSOADMIN_API PutApplicationAuthenticationMethodRequest();
+    AWS_SSOADMIN_API PutApplicationAuthenticationMethodRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>Specifies the ARN of the application with the authentication method to add or
      * update.</p>
      */
-    inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
+    inline const Aws::String& GetApplicationArn() const { return m_applicationArn; }
     inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
-    inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
-    inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
-    inline void SetApplicationArn(const char* value) { m_applicationArnHasBeenSet = true; m_applicationArn.assign(value); }
-    inline PutApplicationAuthenticationMethodRequest& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
-    inline PutApplicationAuthenticationMethodRequest& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
-    inline PutApplicationAuthenticationMethodRequest& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
+    template<typename ApplicationArnT = Aws::String>
+    void SetApplicationArn(ApplicationArnT&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::forward<ApplicationArnT>(value); }
+    template<typename ApplicationArnT = Aws::String>
+    PutApplicationAuthenticationMethodRequest& WithApplicationArn(ApplicationArnT&& value) { SetApplicationArn(std::forward<ApplicationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +55,12 @@ namespace Model
      * update. The structure type you provide is determined by the
      * <code>AuthenticationMethodType</code> parameter.</p>
      */
-    inline const AuthenticationMethod& GetAuthenticationMethod() const{ return m_authenticationMethod; }
+    inline const AuthenticationMethod& GetAuthenticationMethod() const { return m_authenticationMethod; }
     inline bool AuthenticationMethodHasBeenSet() const { return m_authenticationMethodHasBeenSet; }
-    inline void SetAuthenticationMethod(const AuthenticationMethod& value) { m_authenticationMethodHasBeenSet = true; m_authenticationMethod = value; }
-    inline void SetAuthenticationMethod(AuthenticationMethod&& value) { m_authenticationMethodHasBeenSet = true; m_authenticationMethod = std::move(value); }
-    inline PutApplicationAuthenticationMethodRequest& WithAuthenticationMethod(const AuthenticationMethod& value) { SetAuthenticationMethod(value); return *this;}
-    inline PutApplicationAuthenticationMethodRequest& WithAuthenticationMethod(AuthenticationMethod&& value) { SetAuthenticationMethod(std::move(value)); return *this;}
+    template<typename AuthenticationMethodT = AuthenticationMethod>
+    void SetAuthenticationMethod(AuthenticationMethodT&& value) { m_authenticationMethodHasBeenSet = true; m_authenticationMethod = std::forward<AuthenticationMethodT>(value); }
+    template<typename AuthenticationMethodT = AuthenticationMethod>
+    PutApplicationAuthenticationMethodRequest& WithAuthenticationMethod(AuthenticationMethodT&& value) { SetAuthenticationMethod(std::forward<AuthenticationMethodT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +68,10 @@ namespace Model
      * <p>Specifies the type of the authentication method that you want to add or
      * update.</p>
      */
-    inline const AuthenticationMethodType& GetAuthenticationMethodType() const{ return m_authenticationMethodType; }
+    inline AuthenticationMethodType GetAuthenticationMethodType() const { return m_authenticationMethodType; }
     inline bool AuthenticationMethodTypeHasBeenSet() const { return m_authenticationMethodTypeHasBeenSet; }
-    inline void SetAuthenticationMethodType(const AuthenticationMethodType& value) { m_authenticationMethodTypeHasBeenSet = true; m_authenticationMethodType = value; }
-    inline void SetAuthenticationMethodType(AuthenticationMethodType&& value) { m_authenticationMethodTypeHasBeenSet = true; m_authenticationMethodType = std::move(value); }
-    inline PutApplicationAuthenticationMethodRequest& WithAuthenticationMethodType(const AuthenticationMethodType& value) { SetAuthenticationMethodType(value); return *this;}
-    inline PutApplicationAuthenticationMethodRequest& WithAuthenticationMethodType(AuthenticationMethodType&& value) { SetAuthenticationMethodType(std::move(value)); return *this;}
+    inline void SetAuthenticationMethodType(AuthenticationMethodType value) { m_authenticationMethodTypeHasBeenSet = true; m_authenticationMethodType = value; }
+    inline PutApplicationAuthenticationMethodRequest& WithAuthenticationMethodType(AuthenticationMethodType value) { SetAuthenticationMethodType(value); return *this;}
     ///@}
   private:
 
@@ -85,7 +81,7 @@ namespace Model
     AuthenticationMethod m_authenticationMethod;
     bool m_authenticationMethodHasBeenSet = false;
 
-    AuthenticationMethodType m_authenticationMethodType;
+    AuthenticationMethodType m_authenticationMethodType{AuthenticationMethodType::NOT_SET};
     bool m_authenticationMethodTypeHasBeenSet = false;
   };
 

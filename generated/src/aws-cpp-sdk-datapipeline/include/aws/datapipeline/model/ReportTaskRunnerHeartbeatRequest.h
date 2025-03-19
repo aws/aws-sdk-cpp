@@ -25,7 +25,7 @@ namespace Model
   class ReportTaskRunnerHeartbeatRequest : public DataPipelineRequest
   {
   public:
-    AWS_DATAPIPELINE_API ReportTaskRunnerHeartbeatRequest();
+    AWS_DATAPIPELINE_API ReportTaskRunnerHeartbeatRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * it launches the application. If you have written a custom task runner, you
      * should assign a unique identifier for the task runner.</p>
      */
-    inline const Aws::String& GetTaskrunnerId() const{ return m_taskrunnerId; }
+    inline const Aws::String& GetTaskrunnerId() const { return m_taskrunnerId; }
     inline bool TaskrunnerIdHasBeenSet() const { return m_taskrunnerIdHasBeenSet; }
-    inline void SetTaskrunnerId(const Aws::String& value) { m_taskrunnerIdHasBeenSet = true; m_taskrunnerId = value; }
-    inline void SetTaskrunnerId(Aws::String&& value) { m_taskrunnerIdHasBeenSet = true; m_taskrunnerId = std::move(value); }
-    inline void SetTaskrunnerId(const char* value) { m_taskrunnerIdHasBeenSet = true; m_taskrunnerId.assign(value); }
-    inline ReportTaskRunnerHeartbeatRequest& WithTaskrunnerId(const Aws::String& value) { SetTaskrunnerId(value); return *this;}
-    inline ReportTaskRunnerHeartbeatRequest& WithTaskrunnerId(Aws::String&& value) { SetTaskrunnerId(std::move(value)); return *this;}
-    inline ReportTaskRunnerHeartbeatRequest& WithTaskrunnerId(const char* value) { SetTaskrunnerId(value); return *this;}
+    template<typename TaskrunnerIdT = Aws::String>
+    void SetTaskrunnerId(TaskrunnerIdT&& value) { m_taskrunnerIdHasBeenSet = true; m_taskrunnerId = std::forward<TaskrunnerIdT>(value); }
+    template<typename TaskrunnerIdT = Aws::String>
+    ReportTaskRunnerHeartbeatRequest& WithTaskrunnerId(TaskrunnerIdT&& value) { SetTaskrunnerId(std::forward<TaskrunnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,28 +62,24 @@ namespace Model
      * wildcard values permitted in <code>workerGroup</code>; the string must be an
      * exact, case-sensitive, match.</p>
      */
-    inline const Aws::String& GetWorkerGroup() const{ return m_workerGroup; }
+    inline const Aws::String& GetWorkerGroup() const { return m_workerGroup; }
     inline bool WorkerGroupHasBeenSet() const { return m_workerGroupHasBeenSet; }
-    inline void SetWorkerGroup(const Aws::String& value) { m_workerGroupHasBeenSet = true; m_workerGroup = value; }
-    inline void SetWorkerGroup(Aws::String&& value) { m_workerGroupHasBeenSet = true; m_workerGroup = std::move(value); }
-    inline void SetWorkerGroup(const char* value) { m_workerGroupHasBeenSet = true; m_workerGroup.assign(value); }
-    inline ReportTaskRunnerHeartbeatRequest& WithWorkerGroup(const Aws::String& value) { SetWorkerGroup(value); return *this;}
-    inline ReportTaskRunnerHeartbeatRequest& WithWorkerGroup(Aws::String&& value) { SetWorkerGroup(std::move(value)); return *this;}
-    inline ReportTaskRunnerHeartbeatRequest& WithWorkerGroup(const char* value) { SetWorkerGroup(value); return *this;}
+    template<typename WorkerGroupT = Aws::String>
+    void SetWorkerGroup(WorkerGroupT&& value) { m_workerGroupHasBeenSet = true; m_workerGroup = std::forward<WorkerGroupT>(value); }
+    template<typename WorkerGroupT = Aws::String>
+    ReportTaskRunnerHeartbeatRequest& WithWorkerGroup(WorkerGroupT&& value) { SetWorkerGroup(std::forward<WorkerGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The public DNS name of the task runner.</p>
      */
-    inline const Aws::String& GetHostname() const{ return m_hostname; }
+    inline const Aws::String& GetHostname() const { return m_hostname; }
     inline bool HostnameHasBeenSet() const { return m_hostnameHasBeenSet; }
-    inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
-    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
-    inline void SetHostname(const char* value) { m_hostnameHasBeenSet = true; m_hostname.assign(value); }
-    inline ReportTaskRunnerHeartbeatRequest& WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
-    inline ReportTaskRunnerHeartbeatRequest& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
-    inline ReportTaskRunnerHeartbeatRequest& WithHostname(const char* value) { SetHostname(value); return *this;}
+    template<typename HostnameT = Aws::String>
+    void SetHostname(HostnameT&& value) { m_hostnameHasBeenSet = true; m_hostname = std::forward<HostnameT>(value); }
+    template<typename HostnameT = Aws::String>
+    ReportTaskRunnerHeartbeatRequest& WithHostname(HostnameT&& value) { SetHostname(std::forward<HostnameT>(value)); return *this;}
     ///@}
   private:
 

@@ -29,7 +29,7 @@ namespace Model
   class ListHumanLoopsResult
   {
   public:
-    AWS_AUGMENTEDAIRUNTIME_API ListHumanLoopsResult();
+    AWS_AUGMENTEDAIRUNTIME_API ListHumanLoopsResult() = default;
     AWS_AUGMENTEDAIRUNTIME_API ListHumanLoopsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AUGMENTEDAIRUNTIME_API ListHumanLoopsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>An array of objects that contain information about the human loops.</p>
      */
-    inline const Aws::Vector<HumanLoopSummary>& GetHumanLoopSummaries() const{ return m_humanLoopSummaries; }
-    inline void SetHumanLoopSummaries(const Aws::Vector<HumanLoopSummary>& value) { m_humanLoopSummaries = value; }
-    inline void SetHumanLoopSummaries(Aws::Vector<HumanLoopSummary>&& value) { m_humanLoopSummaries = std::move(value); }
-    inline ListHumanLoopsResult& WithHumanLoopSummaries(const Aws::Vector<HumanLoopSummary>& value) { SetHumanLoopSummaries(value); return *this;}
-    inline ListHumanLoopsResult& WithHumanLoopSummaries(Aws::Vector<HumanLoopSummary>&& value) { SetHumanLoopSummaries(std::move(value)); return *this;}
-    inline ListHumanLoopsResult& AddHumanLoopSummaries(const HumanLoopSummary& value) { m_humanLoopSummaries.push_back(value); return *this; }
-    inline ListHumanLoopsResult& AddHumanLoopSummaries(HumanLoopSummary&& value) { m_humanLoopSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<HumanLoopSummary>& GetHumanLoopSummaries() const { return m_humanLoopSummaries; }
+    template<typename HumanLoopSummariesT = Aws::Vector<HumanLoopSummary>>
+    void SetHumanLoopSummaries(HumanLoopSummariesT&& value) { m_humanLoopSummariesHasBeenSet = true; m_humanLoopSummaries = std::forward<HumanLoopSummariesT>(value); }
+    template<typename HumanLoopSummariesT = Aws::Vector<HumanLoopSummary>>
+    ListHumanLoopsResult& WithHumanLoopSummaries(HumanLoopSummariesT&& value) { SetHumanLoopSummaries(std::forward<HumanLoopSummariesT>(value)); return *this;}
+    template<typename HumanLoopSummariesT = HumanLoopSummary>
+    ListHumanLoopsResult& AddHumanLoopSummaries(HumanLoopSummariesT&& value) { m_humanLoopSummariesHasBeenSet = true; m_humanLoopSummaries.emplace_back(std::forward<HumanLoopSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A token to display the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListHumanLoopsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListHumanLoopsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListHumanLoopsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListHumanLoopsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListHumanLoopsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListHumanLoopsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListHumanLoopsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListHumanLoopsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<HumanLoopSummary> m_humanLoopSummaries;
+    bool m_humanLoopSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

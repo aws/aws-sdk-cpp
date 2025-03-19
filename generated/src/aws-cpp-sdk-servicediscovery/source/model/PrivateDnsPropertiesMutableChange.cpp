@@ -18,13 +18,7 @@ namespace ServiceDiscovery
 namespace Model
 {
 
-PrivateDnsPropertiesMutableChange::PrivateDnsPropertiesMutableChange() : 
-    m_sOAHasBeenSet(false)
-{
-}
-
 PrivateDnsPropertiesMutableChange::PrivateDnsPropertiesMutableChange(JsonView jsonValue)
-  : PrivateDnsPropertiesMutableChange()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PrivateDnsPropertiesMutableChange& PrivateDnsPropertiesMutableChange::operator =
   if(jsonValue.ValueExists("SOA"))
   {
     m_sOA = jsonValue.GetObject("SOA");
-
     m_sOAHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,23 +18,7 @@ namespace IoTThingsGraph
 namespace Model
 {
 
-SystemInstanceSummary::SystemInstanceSummary() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_status(SystemInstanceDeploymentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_target(DeploymentTarget::NOT_SET),
-    m_targetHasBeenSet(false),
-    m_greengrassGroupNameHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_greengrassGroupIdHasBeenSet(false),
-    m_greengrassGroupVersionIdHasBeenSet(false)
-{
-}
-
 SystemInstanceSummary::SystemInstanceSummary(JsonView jsonValue)
-  : SystemInstanceSummary()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ SystemInstanceSummary& SystemInstanceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = SystemInstanceDeploymentStatusMapper::GetSystemInstanceDeploymentStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("target"))
   {
     m_target = DeploymentTargetMapper::GetDeploymentTargetForName(jsonValue.GetString("target"));
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("greengrassGroupName"))
   {
     m_greengrassGroupName = jsonValue.GetString("greengrassGroupName");
-
     m_greengrassGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("greengrassGroupId"))
   {
     m_greengrassGroupId = jsonValue.GetString("greengrassGroupId");
-
     m_greengrassGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("greengrassGroupVersionId"))
   {
     m_greengrassGroupVersionId = jsonValue.GetString("greengrassGroupVersionId");
-
     m_greengrassGroupVersionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

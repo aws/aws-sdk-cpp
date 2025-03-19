@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-ParameterDefinition::ParameterDefinition() : 
-    m_descriptionHasBeenSet(false),
-    m_configurationOptionsHasBeenSet(false)
-{
-}
-
 ParameterDefinition::ParameterDefinition(JsonView jsonValue)
-  : ParameterDefinition()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ParameterDefinition& ParameterDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigurationOptions"))
   {
     m_configurationOptions = jsonValue.GetObject("ConfigurationOptions");
-
     m_configurationOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

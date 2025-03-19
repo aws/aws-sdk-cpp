@@ -18,26 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-Session::Session() : 
-    m_idHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_stackNameHasBeenSet(false),
-    m_fleetNameHasBeenSet(false),
-    m_state(SessionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_connectionState(SessionConnectionState::NOT_SET),
-    m_connectionStateHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_maxExpirationTimeHasBeenSet(false),
-    m_authenticationType(AuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false),
-    m_networkAccessConfigurationHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 Session::Session(JsonView jsonValue)
-  : Session()
 {
   *this = jsonValue;
 }
@@ -47,80 +28,58 @@ Session& Session::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserId"))
   {
     m_userId = jsonValue.GetString("UserId");
-
     m_userIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StackName"))
   {
     m_stackName = jsonValue.GetString("StackName");
-
     m_stackNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FleetName"))
   {
     m_fleetName = jsonValue.GetString("FleetName");
-
     m_fleetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = SessionStateMapper::GetSessionStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionState"))
   {
     m_connectionState = SessionConnectionStateMapper::GetSessionConnectionStateForName(jsonValue.GetString("ConnectionState"));
-
     m_connectionStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxExpirationTime"))
   {
     m_maxExpirationTime = jsonValue.GetDouble("MaxExpirationTime");
-
     m_maxExpirationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthenticationType"))
   {
     m_authenticationType = AuthenticationTypeMapper::GetAuthenticationTypeForName(jsonValue.GetString("AuthenticationType"));
-
     m_authenticationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkAccessConfiguration"))
   {
     m_networkAccessConfiguration = jsonValue.GetObject("NetworkAccessConfiguration");
-
     m_networkAccessConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

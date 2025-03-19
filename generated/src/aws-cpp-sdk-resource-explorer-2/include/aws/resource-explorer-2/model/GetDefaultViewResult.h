@@ -27,7 +27,7 @@ namespace Model
   class GetDefaultViewResult
   {
   public:
-    AWS_RESOURCEEXPLORER2_API GetDefaultViewResult();
+    AWS_RESOURCEEXPLORER2_API GetDefaultViewResult() = default;
     AWS_RESOURCEEXPLORER2_API GetDefaultViewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESOURCEEXPLORER2_API GetDefaultViewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,28 @@ namespace Model
      * resource name (ARN)</a> of the view that is the current default for the Amazon
      * Web Services Region in which you called this operation.</p>
      */
-    inline const Aws::String& GetViewArn() const{ return m_viewArn; }
-    inline void SetViewArn(const Aws::String& value) { m_viewArn = value; }
-    inline void SetViewArn(Aws::String&& value) { m_viewArn = std::move(value); }
-    inline void SetViewArn(const char* value) { m_viewArn.assign(value); }
-    inline GetDefaultViewResult& WithViewArn(const Aws::String& value) { SetViewArn(value); return *this;}
-    inline GetDefaultViewResult& WithViewArn(Aws::String&& value) { SetViewArn(std::move(value)); return *this;}
-    inline GetDefaultViewResult& WithViewArn(const char* value) { SetViewArn(value); return *this;}
+    inline const Aws::String& GetViewArn() const { return m_viewArn; }
+    template<typename ViewArnT = Aws::String>
+    void SetViewArn(ViewArnT&& value) { m_viewArnHasBeenSet = true; m_viewArn = std::forward<ViewArnT>(value); }
+    template<typename ViewArnT = Aws::String>
+    GetDefaultViewResult& WithViewArn(ViewArnT&& value) { SetViewArn(std::forward<ViewArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDefaultViewResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDefaultViewResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDefaultViewResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDefaultViewResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_viewArn;
+    bool m_viewArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

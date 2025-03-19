@@ -32,7 +32,7 @@ namespace Model
   class CalculateRouteMatrixSummary
   {
   public:
-    AWS_LOCATIONSERVICE_API CalculateRouteMatrixSummary();
+    AWS_LOCATIONSERVICE_API CalculateRouteMatrixSummary() = default;
     AWS_LOCATIONSERVICE_API CalculateRouteMatrixSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API CalculateRouteMatrixSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers</a>.</p>
      */
-    inline const Aws::String& GetDataSource() const{ return m_dataSource; }
+    inline const Aws::String& GetDataSource() const { return m_dataSource; }
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-    inline void SetDataSource(const Aws::String& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-    inline void SetDataSource(Aws::String&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-    inline void SetDataSource(const char* value) { m_dataSourceHasBeenSet = true; m_dataSource.assign(value); }
-    inline CalculateRouteMatrixSummary& WithDataSource(const Aws::String& value) { SetDataSource(value); return *this;}
-    inline CalculateRouteMatrixSummary& WithDataSource(Aws::String&& value) { SetDataSource(std::move(value)); return *this;}
-    inline CalculateRouteMatrixSummary& WithDataSource(const char* value) { SetDataSource(value); return *this;}
+    template<typename DataSourceT = Aws::String>
+    void SetDataSource(DataSourceT&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::forward<DataSourceT>(value); }
+    template<typename DataSourceT = Aws::String>
+    CalculateRouteMatrixSummary& WithDataSource(DataSourceT&& value) { SetDataSource(std::forward<DataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,7 +62,7 @@ namespace Model
      * <code>DeparturePositions</code> multiplied by the number of
      * <code>DestinationPositions</code>.</p>
      */
-    inline int GetRouteCount() const{ return m_routeCount; }
+    inline int GetRouteCount() const { return m_routeCount; }
     inline bool RouteCountHasBeenSet() const { return m_routeCountHasBeenSet; }
     inline void SetRouteCount(int value) { m_routeCountHasBeenSet = true; m_routeCount = value; }
     inline CalculateRouteMatrixSummary& WithRouteCount(int value) { SetRouteCount(value); return *this;}
@@ -75,7 +73,7 @@ namespace Model
      * <p>The count of error results in the route matrix. If this number is 0, all
      * routes were calculated successfully.</p>
      */
-    inline int GetErrorCount() const{ return m_errorCount; }
+    inline int GetErrorCount() const { return m_errorCount; }
     inline bool ErrorCountHasBeenSet() const { return m_errorCountHasBeenSet; }
     inline void SetErrorCount(int value) { m_errorCountHasBeenSet = true; m_errorCount = value; }
     inline CalculateRouteMatrixSummary& WithErrorCount(int value) { SetErrorCount(value); return *this;}
@@ -85,25 +83,23 @@ namespace Model
     /**
      * <p>The unit of measurement for route distances.</p>
      */
-    inline const DistanceUnit& GetDistanceUnit() const{ return m_distanceUnit; }
+    inline DistanceUnit GetDistanceUnit() const { return m_distanceUnit; }
     inline bool DistanceUnitHasBeenSet() const { return m_distanceUnitHasBeenSet; }
-    inline void SetDistanceUnit(const DistanceUnit& value) { m_distanceUnitHasBeenSet = true; m_distanceUnit = value; }
-    inline void SetDistanceUnit(DistanceUnit&& value) { m_distanceUnitHasBeenSet = true; m_distanceUnit = std::move(value); }
-    inline CalculateRouteMatrixSummary& WithDistanceUnit(const DistanceUnit& value) { SetDistanceUnit(value); return *this;}
-    inline CalculateRouteMatrixSummary& WithDistanceUnit(DistanceUnit&& value) { SetDistanceUnit(std::move(value)); return *this;}
+    inline void SetDistanceUnit(DistanceUnit value) { m_distanceUnitHasBeenSet = true; m_distanceUnit = value; }
+    inline CalculateRouteMatrixSummary& WithDistanceUnit(DistanceUnit value) { SetDistanceUnit(value); return *this;}
     ///@}
   private:
 
     Aws::String m_dataSource;
     bool m_dataSourceHasBeenSet = false;
 
-    int m_routeCount;
+    int m_routeCount{0};
     bool m_routeCountHasBeenSet = false;
 
-    int m_errorCount;
+    int m_errorCount{0};
     bool m_errorCountHasBeenSet = false;
 
-    DistanceUnit m_distanceUnit;
+    DistanceUnit m_distanceUnit{DistanceUnit::NOT_SET};
     bool m_distanceUnitHasBeenSet = false;
   };
 

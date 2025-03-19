@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDBParameterGroupResult::CreateDBParameterGroupResult()
-{
-}
-
 CreateDBParameterGroupResult::CreateDBParameterGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ CreateDBParameterGroupResult& CreateDBParameterGroupResult::operator =(const Aws
     if(!dBParameterGroupNode.IsNull())
     {
       m_dBParameterGroup = dBParameterGroupNode;
+      m_dBParameterGroupHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Neptune::Model::CreateDBParameterGroupResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Result::Result() : 
-    m_accountIdHasBeenSet(false),
-    m_processingResultHasBeenSet(false)
-{
-}
-
 Result::Result(JsonView jsonValue)
-  : Result()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Result& Result::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProcessingResult"))
   {
     m_processingResult = jsonValue.GetString("ProcessingResult");
-
     m_processingResultHasBeenSet = true;
   }
-
   return *this;
 }
 

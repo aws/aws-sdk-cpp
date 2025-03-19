@@ -34,7 +34,7 @@ namespace Model
   class DescribeNFSFileSharesResult
   {
   public:
-    AWS_STORAGEGATEWAY_API DescribeNFSFileSharesResult();
+    AWS_STORAGEGATEWAY_API DescribeNFSFileSharesResult() = default;
     AWS_STORAGEGATEWAY_API DescribeNFSFileSharesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_STORAGEGATEWAY_API DescribeNFSFileSharesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,30 +43,30 @@ namespace Model
     /**
      * <p>An array containing a description for each requested file share.</p>
      */
-    inline const Aws::Vector<NFSFileShareInfo>& GetNFSFileShareInfoList() const{ return m_nFSFileShareInfoList; }
-    inline void SetNFSFileShareInfoList(const Aws::Vector<NFSFileShareInfo>& value) { m_nFSFileShareInfoList = value; }
-    inline void SetNFSFileShareInfoList(Aws::Vector<NFSFileShareInfo>&& value) { m_nFSFileShareInfoList = std::move(value); }
-    inline DescribeNFSFileSharesResult& WithNFSFileShareInfoList(const Aws::Vector<NFSFileShareInfo>& value) { SetNFSFileShareInfoList(value); return *this;}
-    inline DescribeNFSFileSharesResult& WithNFSFileShareInfoList(Aws::Vector<NFSFileShareInfo>&& value) { SetNFSFileShareInfoList(std::move(value)); return *this;}
-    inline DescribeNFSFileSharesResult& AddNFSFileShareInfoList(const NFSFileShareInfo& value) { m_nFSFileShareInfoList.push_back(value); return *this; }
-    inline DescribeNFSFileSharesResult& AddNFSFileShareInfoList(NFSFileShareInfo&& value) { m_nFSFileShareInfoList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<NFSFileShareInfo>& GetNFSFileShareInfoList() const { return m_nFSFileShareInfoList; }
+    template<typename NFSFileShareInfoListT = Aws::Vector<NFSFileShareInfo>>
+    void SetNFSFileShareInfoList(NFSFileShareInfoListT&& value) { m_nFSFileShareInfoListHasBeenSet = true; m_nFSFileShareInfoList = std::forward<NFSFileShareInfoListT>(value); }
+    template<typename NFSFileShareInfoListT = Aws::Vector<NFSFileShareInfo>>
+    DescribeNFSFileSharesResult& WithNFSFileShareInfoList(NFSFileShareInfoListT&& value) { SetNFSFileShareInfoList(std::forward<NFSFileShareInfoListT>(value)); return *this;}
+    template<typename NFSFileShareInfoListT = NFSFileShareInfo>
+    DescribeNFSFileSharesResult& AddNFSFileShareInfoList(NFSFileShareInfoListT&& value) { m_nFSFileShareInfoListHasBeenSet = true; m_nFSFileShareInfoList.emplace_back(std::forward<NFSFileShareInfoListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeNFSFileSharesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeNFSFileSharesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeNFSFileSharesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeNFSFileSharesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<NFSFileShareInfo> m_nFSFileShareInfoList;
+    bool m_nFSFileShareInfoListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

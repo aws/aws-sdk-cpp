@@ -18,36 +18,7 @@ namespace OpsWorksCM
 namespace Model
 {
 
-Backup::Backup() : 
-    m_backupArnHasBeenSet(false),
-    m_backupIdHasBeenSet(false),
-    m_backupType(BackupType::NOT_SET),
-    m_backupTypeHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineModelHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_instanceProfileArnHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_keyPairHasBeenSet(false),
-    m_preferredBackupWindowHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_s3LogUrlHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_serviceRoleArnHasBeenSet(false),
-    m_status(BackupStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusDescriptionHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_toolsVersionHasBeenSet(false),
-    m_userArnHasBeenSet(false)
-{
-}
-
 Backup::Backup(JsonView jsonValue)
-  : Backup()
 {
   *this = jsonValue;
 }
@@ -57,101 +28,73 @@ Backup& Backup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BackupArn"))
   {
     m_backupArn = jsonValue.GetString("BackupArn");
-
     m_backupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupId"))
   {
     m_backupId = jsonValue.GetString("BackupId");
-
     m_backupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupType"))
   {
     m_backupType = BackupTypeMapper::GetBackupTypeForName(jsonValue.GetString("BackupType"));
-
     m_backupTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Engine"))
   {
     m_engine = jsonValue.GetString("Engine");
-
     m_engineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineModel"))
   {
     m_engineModel = jsonValue.GetString("EngineModel");
-
     m_engineModelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineVersion"))
   {
     m_engineVersion = jsonValue.GetString("EngineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceProfileArn"))
   {
     m_instanceProfileArn = jsonValue.GetString("InstanceProfileArn");
-
     m_instanceProfileArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = jsonValue.GetString("InstanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyPair"))
   {
     m_keyPair = jsonValue.GetString("KeyPair");
-
     m_keyPairHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreferredBackupWindow"))
   {
     m_preferredBackupWindow = jsonValue.GetString("PreferredBackupWindow");
-
     m_preferredBackupWindowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreferredMaintenanceWindow"))
   {
     m_preferredMaintenanceWindow = jsonValue.GetString("PreferredMaintenanceWindow");
-
     m_preferredMaintenanceWindowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3LogUrl"))
   {
     m_s3LogUrl = jsonValue.GetString("S3LogUrl");
-
     m_s3LogUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
@@ -161,35 +104,26 @@ Backup& Backup::operator =(JsonView jsonValue)
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerName"))
   {
     m_serverName = jsonValue.GetString("ServerName");
-
     m_serverNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceRoleArn"))
   {
     m_serviceRoleArn = jsonValue.GetString("ServiceRoleArn");
-
     m_serviceRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = BackupStatusMapper::GetBackupStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusDescription"))
   {
     m_statusDescription = jsonValue.GetString("StatusDescription");
-
     m_statusDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
@@ -199,21 +133,16 @@ Backup& Backup::operator =(JsonView jsonValue)
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ToolsVersion"))
   {
     m_toolsVersion = jsonValue.GetString("ToolsVersion");
-
     m_toolsVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserArn"))
   {
     m_userArn = jsonValue.GetString("UserArn");
-
     m_userArnHasBeenSet = true;
   }
-
   return *this;
 }
 

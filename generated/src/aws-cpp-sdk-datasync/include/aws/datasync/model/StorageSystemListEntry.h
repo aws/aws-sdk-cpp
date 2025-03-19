@@ -32,7 +32,7 @@ namespace Model
   class StorageSystemListEntry
   {
   public:
-    AWS_DATASYNC_API StorageSystemListEntry();
+    AWS_DATASYNC_API StorageSystemListEntry() = default;
     AWS_DATASYNC_API StorageSystemListEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API StorageSystemListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon Resource Names (ARN) of an on-premises storage system that you
      * added to DataSync Discovery.</p>
      */
-    inline const Aws::String& GetStorageSystemArn() const{ return m_storageSystemArn; }
+    inline const Aws::String& GetStorageSystemArn() const { return m_storageSystemArn; }
     inline bool StorageSystemArnHasBeenSet() const { return m_storageSystemArnHasBeenSet; }
-    inline void SetStorageSystemArn(const Aws::String& value) { m_storageSystemArnHasBeenSet = true; m_storageSystemArn = value; }
-    inline void SetStorageSystemArn(Aws::String&& value) { m_storageSystemArnHasBeenSet = true; m_storageSystemArn = std::move(value); }
-    inline void SetStorageSystemArn(const char* value) { m_storageSystemArnHasBeenSet = true; m_storageSystemArn.assign(value); }
-    inline StorageSystemListEntry& WithStorageSystemArn(const Aws::String& value) { SetStorageSystemArn(value); return *this;}
-    inline StorageSystemListEntry& WithStorageSystemArn(Aws::String&& value) { SetStorageSystemArn(std::move(value)); return *this;}
-    inline StorageSystemListEntry& WithStorageSystemArn(const char* value) { SetStorageSystemArn(value); return *this;}
+    template<typename StorageSystemArnT = Aws::String>
+    void SetStorageSystemArn(StorageSystemArnT&& value) { m_storageSystemArnHasBeenSet = true; m_storageSystemArn = std::forward<StorageSystemArnT>(value); }
+    template<typename StorageSystemArnT = Aws::String>
+    StorageSystemListEntry& WithStorageSystemArn(StorageSystemArnT&& value) { SetStorageSystemArn(std::forward<StorageSystemArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The name of an on-premises storage system that you added to DataSync
      * Discovery.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline StorageSystemListEntry& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline StorageSystemListEntry& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline StorageSystemListEntry& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    StorageSystemListEntry& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

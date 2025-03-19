@@ -12,18 +12,6 @@ using namespace Aws::Outposts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateOutpostRequest::CreateOutpostRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_siteIdHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_supportedHardwareType(SupportedHardwareType::NOT_SET),
-    m_supportedHardwareTypeHasBeenSet(false)
-{
-}
-
 Aws::String CreateOutpostRequest::SerializePayload() const
 {
   JsonValue payload;

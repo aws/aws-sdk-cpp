@@ -21,7 +21,7 @@ namespace Model
   class CompleteMigrationRequest : public ElastiCacheRequest
   {
   public:
-    AWS_ELASTICACHE_API CompleteMigrationRequest();
+    AWS_ELASTICACHE_API CompleteMigrationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The ID of the replication group to which data is being migrated.</p>
      */
-    inline const Aws::String& GetReplicationGroupId() const{ return m_replicationGroupId; }
+    inline const Aws::String& GetReplicationGroupId() const { return m_replicationGroupId; }
     inline bool ReplicationGroupIdHasBeenSet() const { return m_replicationGroupIdHasBeenSet; }
-    inline void SetReplicationGroupId(const Aws::String& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
-    inline void SetReplicationGroupId(Aws::String&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = std::move(value); }
-    inline void SetReplicationGroupId(const char* value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId.assign(value); }
-    inline CompleteMigrationRequest& WithReplicationGroupId(const Aws::String& value) { SetReplicationGroupId(value); return *this;}
-    inline CompleteMigrationRequest& WithReplicationGroupId(Aws::String&& value) { SetReplicationGroupId(std::move(value)); return *this;}
-    inline CompleteMigrationRequest& WithReplicationGroupId(const char* value) { SetReplicationGroupId(value); return *this;}
+    template<typename ReplicationGroupIdT = Aws::String>
+    void SetReplicationGroupId(ReplicationGroupIdT&& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = std::forward<ReplicationGroupIdT>(value); }
+    template<typename ReplicationGroupIdT = Aws::String>
+    CompleteMigrationRequest& WithReplicationGroupId(ReplicationGroupIdT&& value) { SetReplicationGroupId(std::forward<ReplicationGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,7 +54,7 @@ namespace Model
      * recommended to use this option only to abort the migration and not recommended
      * when application wants to continue migration to ElastiCache.</p>
      */
-    inline bool GetForce() const{ return m_force; }
+    inline bool GetForce() const { return m_force; }
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
     inline CompleteMigrationRequest& WithForce(bool value) { SetForce(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     Aws::String m_replicationGroupId;
     bool m_replicationGroupIdHasBeenSet = false;
 
-    bool m_force;
+    bool m_force{false};
     bool m_forceHasBeenSet = false;
   };
 

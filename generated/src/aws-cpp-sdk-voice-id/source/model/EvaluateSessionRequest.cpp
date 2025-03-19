@@ -12,12 +12,6 @@ using namespace Aws::VoiceID::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EvaluateSessionRequest::EvaluateSessionRequest() : 
-    m_domainIdHasBeenSet(false),
-    m_sessionNameOrIdHasBeenSet(false)
-{
-}
-
 Aws::String EvaluateSessionRequest::SerializePayload() const
 {
   JsonValue payload;

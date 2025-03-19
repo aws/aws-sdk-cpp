@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetUpgradeStatusResult::GetUpgradeStatusResult() : 
-    m_upgradeStep(UpgradeStep::NOT_SET),
-    m_stepStatus(UpgradeStatus::NOT_SET)
-{
-}
-
 GetUpgradeStatusResult::GetUpgradeStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetUpgradeStatusResult()
 {
   *this = result;
 }
@@ -35,27 +28,25 @@ GetUpgradeStatusResult& GetUpgradeStatusResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("UpgradeStep"))
   {
     m_upgradeStep = UpgradeStepMapper::GetUpgradeStepForName(jsonValue.GetString("UpgradeStep"));
-
+    m_upgradeStepHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StepStatus"))
   {
     m_stepStatus = UpgradeStatusMapper::GetUpgradeStatusForName(jsonValue.GetString("StepStatus"));
-
+    m_stepStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpgradeName"))
   {
     m_upgradeName = jsonValue.GetString("UpgradeName");
-
+    m_upgradeNameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -21,7 +21,7 @@ namespace Model
   class DescribeACLsRequest : public MemoryDBRequest
   {
   public:
-    AWS_MEMORYDB_API DescribeACLsRequest();
+    AWS_MEMORYDB_API DescribeACLsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the ACL.</p>
      */
-    inline const Aws::String& GetACLName() const{ return m_aCLName; }
+    inline const Aws::String& GetACLName() const { return m_aCLName; }
     inline bool ACLNameHasBeenSet() const { return m_aCLNameHasBeenSet; }
-    inline void SetACLName(const Aws::String& value) { m_aCLNameHasBeenSet = true; m_aCLName = value; }
-    inline void SetACLName(Aws::String&& value) { m_aCLNameHasBeenSet = true; m_aCLName = std::move(value); }
-    inline void SetACLName(const char* value) { m_aCLNameHasBeenSet = true; m_aCLName.assign(value); }
-    inline DescribeACLsRequest& WithACLName(const Aws::String& value) { SetACLName(value); return *this;}
-    inline DescribeACLsRequest& WithACLName(Aws::String&& value) { SetACLName(std::move(value)); return *this;}
-    inline DescribeACLsRequest& WithACLName(const char* value) { SetACLName(value); return *this;}
+    template<typename ACLNameT = Aws::String>
+    void SetACLName(ACLNameT&& value) { m_aCLNameHasBeenSet = true; m_aCLName = std::forward<ACLNameT>(value); }
+    template<typename ACLNameT = Aws::String>
+    DescribeACLsRequest& WithACLName(ACLNameT&& value) { SetACLName(std::forward<ACLNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,7 +52,7 @@ namespace Model
      * exist than the specified MaxResults value, a token is included in the response
      * so that the remaining results can be retrieved.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeACLsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -68,21 +66,19 @@ namespace Model
      * again using the returned token to retrieve the next page. Keep all other
      * arguments unchanged. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeACLsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeACLsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeACLsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeACLsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_aCLName;
     bool m_aCLNameHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

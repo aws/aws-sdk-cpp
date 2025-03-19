@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Member::Member() : 
-    m_accountIdHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_administratorIdHasBeenSet(false),
-    m_memberStatusHasBeenSet(false),
-    m_invitedAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 Member::Member(JsonView jsonValue)
-  : Member()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ Member& Member::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Email"))
   {
     m_email = jsonValue.GetString("Email");
-
     m_emailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdministratorId"))
   {
     m_administratorId = jsonValue.GetString("AdministratorId");
-
     m_administratorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MemberStatus"))
   {
     m_memberStatus = jsonValue.GetString("MemberStatus");
-
     m_memberStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvitedAt"))
   {
     m_invitedAt = jsonValue.GetString("InvitedAt");
-
     m_invitedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetString("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

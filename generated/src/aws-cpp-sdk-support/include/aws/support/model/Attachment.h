@@ -35,7 +35,7 @@ namespace Model
   class Attachment
   {
   public:
-    AWS_SUPPORT_API Attachment();
+    AWS_SUPPORT_API Attachment() = default;
     AWS_SUPPORT_API Attachment(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPORT_API Attachment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPORT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,33 +45,31 @@ namespace Model
     /**
      * <p>The name of the attachment file.</p>
      */
-    inline const Aws::String& GetFileName() const{ return m_fileName; }
+    inline const Aws::String& GetFileName() const { return m_fileName; }
     inline bool FileNameHasBeenSet() const { return m_fileNameHasBeenSet; }
-    inline void SetFileName(const Aws::String& value) { m_fileNameHasBeenSet = true; m_fileName = value; }
-    inline void SetFileName(Aws::String&& value) { m_fileNameHasBeenSet = true; m_fileName = std::move(value); }
-    inline void SetFileName(const char* value) { m_fileNameHasBeenSet = true; m_fileName.assign(value); }
-    inline Attachment& WithFileName(const Aws::String& value) { SetFileName(value); return *this;}
-    inline Attachment& WithFileName(Aws::String&& value) { SetFileName(std::move(value)); return *this;}
-    inline Attachment& WithFileName(const char* value) { SetFileName(value); return *this;}
+    template<typename FileNameT = Aws::String>
+    void SetFileName(FileNameT&& value) { m_fileNameHasBeenSet = true; m_fileName = std::forward<FileNameT>(value); }
+    template<typename FileNameT = Aws::String>
+    Attachment& WithFileName(FileNameT&& value) { SetFileName(std::forward<FileNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The content of the attachment file.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
+    inline const Aws::Utils::ByteBuffer& GetData() const { return m_data; }
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
-    inline void SetData(Aws::Utils::ByteBuffer&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-    inline Attachment& WithData(const Aws::Utils::ByteBuffer& value) { SetData(value); return *this;}
-    inline Attachment& WithData(Aws::Utils::ByteBuffer&& value) { SetData(std::move(value)); return *this;}
+    template<typename DataT = Aws::Utils::ByteBuffer>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = Aws::Utils::ByteBuffer>
+    Attachment& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_fileName;
     bool m_fileNameHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_data;
+    Aws::Utils::ByteBuffer m_data{};
     bool m_dataHasBeenSet = false;
   };
 

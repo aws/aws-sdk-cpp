@@ -31,7 +31,7 @@ namespace Model
   class ChannelEgressEndpoint
   {
   public:
-    AWS_MEDIALIVE_API ChannelEgressEndpoint();
+    AWS_MEDIALIVE_API ChannelEgressEndpoint() = default;
     AWS_MEDIALIVE_API ChannelEgressEndpoint(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API ChannelEgressEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * Public IP of where a channel's output comes from
      */
-    inline const Aws::String& GetSourceIp() const{ return m_sourceIp; }
+    inline const Aws::String& GetSourceIp() const { return m_sourceIp; }
     inline bool SourceIpHasBeenSet() const { return m_sourceIpHasBeenSet; }
-    inline void SetSourceIp(const Aws::String& value) { m_sourceIpHasBeenSet = true; m_sourceIp = value; }
-    inline void SetSourceIp(Aws::String&& value) { m_sourceIpHasBeenSet = true; m_sourceIp = std::move(value); }
-    inline void SetSourceIp(const char* value) { m_sourceIpHasBeenSet = true; m_sourceIp.assign(value); }
-    inline ChannelEgressEndpoint& WithSourceIp(const Aws::String& value) { SetSourceIp(value); return *this;}
-    inline ChannelEgressEndpoint& WithSourceIp(Aws::String&& value) { SetSourceIp(std::move(value)); return *this;}
-    inline ChannelEgressEndpoint& WithSourceIp(const char* value) { SetSourceIp(value); return *this;}
+    template<typename SourceIpT = Aws::String>
+    void SetSourceIp(SourceIpT&& value) { m_sourceIpHasBeenSet = true; m_sourceIp = std::forward<SourceIpT>(value); }
+    template<typename SourceIpT = Aws::String>
+    ChannelEgressEndpoint& WithSourceIp(SourceIpT&& value) { SetSourceIp(std::forward<SourceIpT>(value)); return *this;}
     ///@}
   private:
 

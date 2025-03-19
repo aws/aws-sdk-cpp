@@ -33,7 +33,7 @@ namespace Model
   class ResourceActionSummary
   {
   public:
-    AWS_APPTEST_API ResourceActionSummary();
+    AWS_APPTEST_API ResourceActionSummary() = default;
     AWS_APPTEST_API ResourceActionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API ResourceActionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The CloudFormation template of the resource action summary.</p>
      */
-    inline const CloudFormationStepSummary& GetCloudFormation() const{ return m_cloudFormation; }
+    inline const CloudFormationStepSummary& GetCloudFormation() const { return m_cloudFormation; }
     inline bool CloudFormationHasBeenSet() const { return m_cloudFormationHasBeenSet; }
-    inline void SetCloudFormation(const CloudFormationStepSummary& value) { m_cloudFormationHasBeenSet = true; m_cloudFormation = value; }
-    inline void SetCloudFormation(CloudFormationStepSummary&& value) { m_cloudFormationHasBeenSet = true; m_cloudFormation = std::move(value); }
-    inline ResourceActionSummary& WithCloudFormation(const CloudFormationStepSummary& value) { SetCloudFormation(value); return *this;}
-    inline ResourceActionSummary& WithCloudFormation(CloudFormationStepSummary&& value) { SetCloudFormation(std::move(value)); return *this;}
+    template<typename CloudFormationT = CloudFormationStepSummary>
+    void SetCloudFormation(CloudFormationT&& value) { m_cloudFormationHasBeenSet = true; m_cloudFormation = std::forward<CloudFormationT>(value); }
+    template<typename CloudFormationT = CloudFormationStepSummary>
+    ResourceActionSummary& WithCloudFormation(CloudFormationT&& value) { SetCloudFormation(std::forward<CloudFormationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +56,12 @@ namespace Model
      * <p>The AWS Mainframe Modernization managed application of the resource action
      * summary.</p>
      */
-    inline const M2ManagedApplicationStepSummary& GetM2ManagedApplication() const{ return m_m2ManagedApplication; }
+    inline const M2ManagedApplicationStepSummary& GetM2ManagedApplication() const { return m_m2ManagedApplication; }
     inline bool M2ManagedApplicationHasBeenSet() const { return m_m2ManagedApplicationHasBeenSet; }
-    inline void SetM2ManagedApplication(const M2ManagedApplicationStepSummary& value) { m_m2ManagedApplicationHasBeenSet = true; m_m2ManagedApplication = value; }
-    inline void SetM2ManagedApplication(M2ManagedApplicationStepSummary&& value) { m_m2ManagedApplicationHasBeenSet = true; m_m2ManagedApplication = std::move(value); }
-    inline ResourceActionSummary& WithM2ManagedApplication(const M2ManagedApplicationStepSummary& value) { SetM2ManagedApplication(value); return *this;}
-    inline ResourceActionSummary& WithM2ManagedApplication(M2ManagedApplicationStepSummary&& value) { SetM2ManagedApplication(std::move(value)); return *this;}
+    template<typename M2ManagedApplicationT = M2ManagedApplicationStepSummary>
+    void SetM2ManagedApplication(M2ManagedApplicationT&& value) { m_m2ManagedApplicationHasBeenSet = true; m_m2ManagedApplication = std::forward<M2ManagedApplicationT>(value); }
+    template<typename M2ManagedApplicationT = M2ManagedApplicationStepSummary>
+    ResourceActionSummary& WithM2ManagedApplication(M2ManagedApplicationT&& value) { SetM2ManagedApplication(std::forward<M2ManagedApplicationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +69,12 @@ namespace Model
      * <p>The AWS Mainframe Modernization non-managed application of the resource
      * action summary.</p>
      */
-    inline const M2NonManagedApplicationStepSummary& GetM2NonManagedApplication() const{ return m_m2NonManagedApplication; }
+    inline const M2NonManagedApplicationStepSummary& GetM2NonManagedApplication() const { return m_m2NonManagedApplication; }
     inline bool M2NonManagedApplicationHasBeenSet() const { return m_m2NonManagedApplicationHasBeenSet; }
-    inline void SetM2NonManagedApplication(const M2NonManagedApplicationStepSummary& value) { m_m2NonManagedApplicationHasBeenSet = true; m_m2NonManagedApplication = value; }
-    inline void SetM2NonManagedApplication(M2NonManagedApplicationStepSummary&& value) { m_m2NonManagedApplicationHasBeenSet = true; m_m2NonManagedApplication = std::move(value); }
-    inline ResourceActionSummary& WithM2NonManagedApplication(const M2NonManagedApplicationStepSummary& value) { SetM2NonManagedApplication(value); return *this;}
-    inline ResourceActionSummary& WithM2NonManagedApplication(M2NonManagedApplicationStepSummary&& value) { SetM2NonManagedApplication(std::move(value)); return *this;}
+    template<typename M2NonManagedApplicationT = M2NonManagedApplicationStepSummary>
+    void SetM2NonManagedApplication(M2NonManagedApplicationT&& value) { m_m2NonManagedApplicationHasBeenSet = true; m_m2NonManagedApplication = std::forward<M2NonManagedApplicationT>(value); }
+    template<typename M2NonManagedApplicationT = M2NonManagedApplicationStepSummary>
+    ResourceActionSummary& WithM2NonManagedApplication(M2NonManagedApplicationT&& value) { SetM2NonManagedApplication(std::forward<M2NonManagedApplicationT>(value)); return *this;}
     ///@}
   private:
 

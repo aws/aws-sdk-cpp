@@ -18,19 +18,7 @@ namespace Connect
 namespace Model
 {
 
-HistoricalMetric::HistoricalMetric() : 
-    m_name(HistoricalMetricName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_thresholdHasBeenSet(false),
-    m_statistic(Statistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_unit(Unit::NOT_SET),
-    m_unitHasBeenSet(false)
-{
-}
-
 HistoricalMetric::HistoricalMetric(JsonView jsonValue)
-  : HistoricalMetric()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ HistoricalMetric& HistoricalMetric::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = HistoricalMetricNameMapper::GetHistoricalMetricNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Threshold"))
   {
     m_threshold = jsonValue.GetObject("Threshold");
-
     m_thresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Statistic"))
   {
     m_statistic = StatisticMapper::GetStatisticForName(jsonValue.GetString("Statistic"));
-
     m_statisticHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unit"))
   {
     m_unit = UnitMapper::GetUnitForName(jsonValue.GetString("Unit"));
-
     m_unitHasBeenSet = true;
   }
-
   return *this;
 }
 

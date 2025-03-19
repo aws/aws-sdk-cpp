@@ -12,15 +12,6 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutApprovalResultRequest::PutApprovalResultRequest() : 
-    m_pipelineNameHasBeenSet(false),
-    m_stageNameHasBeenSet(false),
-    m_actionNameHasBeenSet(false),
-    m_resultHasBeenSet(false),
-    m_tokenHasBeenSet(false)
-{
-}
-
 Aws::String PutApprovalResultRequest::SerializePayload() const
 {
   JsonValue payload;

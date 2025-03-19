@@ -21,7 +21,7 @@ namespace Model
   class GetRateBasedRuleManagedKeysRequest : public WAFRequest
   {
   public:
-    AWS_WAF_API GetRateBasedRuleManagedKeysRequest();
+    AWS_WAF_API GetRateBasedRuleManagedKeysRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
      * a list of <code>ManagedKeys</code>. <code>RuleId</code> is returned by
      * <a>CreateRateBasedRule</a> and by <a>ListRateBasedRules</a>.</p>
      */
-    inline const Aws::String& GetRuleId() const{ return m_ruleId; }
+    inline const Aws::String& GetRuleId() const { return m_ruleId; }
     inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
-    inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
-    inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::move(value); }
-    inline void SetRuleId(const char* value) { m_ruleIdHasBeenSet = true; m_ruleId.assign(value); }
-    inline GetRateBasedRuleManagedKeysRequest& WithRuleId(const Aws::String& value) { SetRuleId(value); return *this;}
-    inline GetRateBasedRuleManagedKeysRequest& WithRuleId(Aws::String&& value) { SetRuleId(std::move(value)); return *this;}
-    inline GetRateBasedRuleManagedKeysRequest& WithRuleId(const char* value) { SetRuleId(value); return *this;}
+    template<typename RuleIdT = Aws::String>
+    void SetRuleId(RuleIdT&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::forward<RuleIdT>(value); }
+    template<typename RuleIdT = Aws::String>
+    GetRateBasedRuleManagedKeysRequest& WithRuleId(RuleIdT&& value) { SetRuleId(std::forward<RuleIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A null value and not currently used. Do not include this in your request.</p>
      */
-    inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
+    inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
     inline bool NextMarkerHasBeenSet() const { return m_nextMarkerHasBeenSet; }
-    inline void SetNextMarker(const Aws::String& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = value; }
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::move(value); }
-    inline void SetNextMarker(const char* value) { m_nextMarkerHasBeenSet = true; m_nextMarker.assign(value); }
-    inline GetRateBasedRuleManagedKeysRequest& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-    inline GetRateBasedRuleManagedKeysRequest& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-    inline GetRateBasedRuleManagedKeysRequest& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    template<typename NextMarkerT = Aws::String>
+    void SetNextMarker(NextMarkerT&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::forward<NextMarkerT>(value); }
+    template<typename NextMarkerT = Aws::String>
+    GetRateBasedRuleManagedKeysRequest& WithNextMarker(NextMarkerT&& value) { SetNextMarker(std::forward<NextMarkerT>(value)); return *this;}
     ///@}
   private:
 

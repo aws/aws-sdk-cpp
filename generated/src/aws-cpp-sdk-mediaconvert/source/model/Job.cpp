@@ -18,51 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-Job::Job() : 
-    m_accelerationSettingsHasBeenSet(false),
-    m_accelerationStatus(AccelerationStatus::NOT_SET),
-    m_accelerationStatusHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_billingTagsSource(BillingTagsSource::NOT_SET),
-    m_billingTagsSourceHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_currentPhase(JobPhase::NOT_SET),
-    m_currentPhaseHasBeenSet(false),
-    m_errorCode(0),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_hopDestinationsHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_jobEngineVersionRequestedHasBeenSet(false),
-    m_jobEngineVersionUsedHasBeenSet(false),
-    m_jobPercentComplete(0),
-    m_jobPercentCompleteHasBeenSet(false),
-    m_jobTemplateHasBeenSet(false),
-    m_messagesHasBeenSet(false),
-    m_outputGroupDetailsHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_queueHasBeenSet(false),
-    m_queueTransitionsHasBeenSet(false),
-    m_retryCount(0),
-    m_retryCountHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_simulateReservedQueue(SimulateReservedQueue::NOT_SET),
-    m_simulateReservedQueueHasBeenSet(false),
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusUpdateInterval(StatusUpdateInterval::NOT_SET),
-    m_statusUpdateIntervalHasBeenSet(false),
-    m_timingHasBeenSet(false),
-    m_userMetadataHasBeenSet(false),
-    m_warningsHasBeenSet(false)
-{
-}
-
 Job::Job(JsonView jsonValue)
-  : Job()
 {
   *this = jsonValue;
 }
@@ -72,66 +28,48 @@ Job& Job::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accelerationSettings"))
   {
     m_accelerationSettings = jsonValue.GetObject("accelerationSettings");
-
     m_accelerationSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accelerationStatus"))
   {
     m_accelerationStatus = AccelerationStatusMapper::GetAccelerationStatusForName(jsonValue.GetString("accelerationStatus"));
-
     m_accelerationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("billingTagsSource"))
   {
     m_billingTagsSource = BillingTagsSourceMapper::GetBillingTagsSourceForName(jsonValue.GetString("billingTagsSource"));
-
     m_billingTagsSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientRequestToken"))
   {
     m_clientRequestToken = jsonValue.GetString("clientRequestToken");
-
     m_clientRequestTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentPhase"))
   {
     m_currentPhase = JobPhaseMapper::GetJobPhaseForName(jsonValue.GetString("currentPhase"));
-
     m_currentPhaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = jsonValue.GetInteger("errorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hopDestinations"))
   {
     Aws::Utils::Array<JsonView> hopDestinationsJsonList = jsonValue.GetArray("hopDestinations");
@@ -141,49 +79,36 @@ Job& Job::operator =(JsonView jsonValue)
     }
     m_hopDestinationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobEngineVersionRequested"))
   {
     m_jobEngineVersionRequested = jsonValue.GetString("jobEngineVersionRequested");
-
     m_jobEngineVersionRequestedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobEngineVersionUsed"))
   {
     m_jobEngineVersionUsed = jsonValue.GetString("jobEngineVersionUsed");
-
     m_jobEngineVersionUsedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobPercentComplete"))
   {
     m_jobPercentComplete = jsonValue.GetInteger("jobPercentComplete");
-
     m_jobPercentCompleteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobTemplate"))
   {
     m_jobTemplate = jsonValue.GetString("jobTemplate");
-
     m_jobTemplateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("messages"))
   {
     m_messages = jsonValue.GetObject("messages");
-
     m_messagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputGroupDetails"))
   {
     Aws::Utils::Array<JsonView> outputGroupDetailsJsonList = jsonValue.GetArray("outputGroupDetails");
@@ -193,21 +118,16 @@ Job& Job::operator =(JsonView jsonValue)
     }
     m_outputGroupDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("priority"))
   {
     m_priority = jsonValue.GetInteger("priority");
-
     m_priorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queue"))
   {
     m_queue = jsonValue.GetString("queue");
-
     m_queueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queueTransitions"))
   {
     Aws::Utils::Array<JsonView> queueTransitionsJsonList = jsonValue.GetArray("queueTransitions");
@@ -217,56 +137,41 @@ Job& Job::operator =(JsonView jsonValue)
     }
     m_queueTransitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retryCount"))
   {
     m_retryCount = jsonValue.GetInteger("retryCount");
-
     m_retryCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("role"))
   {
     m_role = jsonValue.GetString("role");
-
     m_roleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("settings"))
   {
     m_settings = jsonValue.GetObject("settings");
-
     m_settingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("simulateReservedQueue"))
   {
     m_simulateReservedQueue = SimulateReservedQueueMapper::GetSimulateReservedQueueForName(jsonValue.GetString("simulateReservedQueue"));
-
     m_simulateReservedQueueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusUpdateInterval"))
   {
     m_statusUpdateInterval = StatusUpdateIntervalMapper::GetStatusUpdateIntervalForName(jsonValue.GetString("statusUpdateInterval"));
-
     m_statusUpdateIntervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timing"))
   {
     m_timing = jsonValue.GetObject("timing");
-
     m_timingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userMetadata"))
   {
     Aws::Map<Aws::String, JsonView> userMetadataJsonMap = jsonValue.GetObject("userMetadata").GetAllObjects();
@@ -276,7 +181,6 @@ Job& Job::operator =(JsonView jsonValue)
     }
     m_userMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("warnings"))
   {
     Aws::Utils::Array<JsonView> warningsJsonList = jsonValue.GetArray("warnings");
@@ -286,7 +190,6 @@ Job& Job::operator =(JsonView jsonValue)
     }
     m_warningsHasBeenSet = true;
   }
-
   return *this;
 }
 

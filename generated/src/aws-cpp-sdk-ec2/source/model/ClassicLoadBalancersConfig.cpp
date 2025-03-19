@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ClassicLoadBalancersConfig::ClassicLoadBalancersConfig() : 
-    m_classicLoadBalancersHasBeenSet(false)
-{
-}
-
 ClassicLoadBalancersConfig::ClassicLoadBalancersConfig(const XmlNode& xmlNode)
-  : ClassicLoadBalancersConfig()
 {
   *this = xmlNode;
 }
@@ -41,6 +35,7 @@ ClassicLoadBalancersConfig& ClassicLoadBalancersConfig::operator =(const XmlNode
     if(!classicLoadBalancersNode.IsNull())
     {
       XmlNode classicLoadBalancersMember = classicLoadBalancersNode.FirstChild("item");
+      m_classicLoadBalancersHasBeenSet = !classicLoadBalancersMember.IsNull();
       while(!classicLoadBalancersMember.IsNull())
       {
         m_classicLoadBalancers.push_back(classicLoadBalancersMember);

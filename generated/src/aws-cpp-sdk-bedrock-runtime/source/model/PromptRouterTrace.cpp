@@ -18,13 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-PromptRouterTrace::PromptRouterTrace() : 
-    m_invokedModelIdHasBeenSet(false)
-{
-}
-
 PromptRouterTrace::PromptRouterTrace(JsonView jsonValue)
-  : PromptRouterTrace()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PromptRouterTrace& PromptRouterTrace::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("invokedModelId"))
   {
     m_invokedModelId = jsonValue.GetString("invokedModelId");
-
     m_invokedModelIdHasBeenSet = true;
   }
-
   return *this;
 }
 

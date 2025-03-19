@@ -12,13 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateQueueFleetAssociationRequest::CreateQueueFleetAssociationRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_fleetIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateQueueFleetAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

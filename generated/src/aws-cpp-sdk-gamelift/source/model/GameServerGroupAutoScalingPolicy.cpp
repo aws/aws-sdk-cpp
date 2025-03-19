@@ -18,15 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-GameServerGroupAutoScalingPolicy::GameServerGroupAutoScalingPolicy() : 
-    m_estimatedInstanceWarmup(0),
-    m_estimatedInstanceWarmupHasBeenSet(false),
-    m_targetTrackingConfigurationHasBeenSet(false)
-{
-}
-
 GameServerGroupAutoScalingPolicy::GameServerGroupAutoScalingPolicy(JsonView jsonValue)
-  : GameServerGroupAutoScalingPolicy()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GameServerGroupAutoScalingPolicy& GameServerGroupAutoScalingPolicy::operator =(J
   if(jsonValue.ValueExists("EstimatedInstanceWarmup"))
   {
     m_estimatedInstanceWarmup = jsonValue.GetInteger("EstimatedInstanceWarmup");
-
     m_estimatedInstanceWarmupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetTrackingConfiguration"))
   {
     m_targetTrackingConfiguration = jsonValue.GetObject("TargetTrackingConfiguration");
-
     m_targetTrackingConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

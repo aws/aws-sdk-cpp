@@ -31,7 +31,7 @@ namespace Model
   class StatusDetails
   {
   public:
-    AWS_CLEANROOMSML_API StatusDetails();
+    AWS_CLEANROOMSML_API StatusDetails() = default;
     AWS_CLEANROOMSML_API StatusDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API StatusDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * programmatic error handling. Clean Rooms ML will not change the status code for
      * existing error conditions.</p>
      */
-    inline const Aws::String& GetStatusCode() const{ return m_statusCode; }
+    inline const Aws::String& GetStatusCode() const { return m_statusCode; }
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-    inline void SetStatusCode(const Aws::String& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
-    inline void SetStatusCode(Aws::String&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
-    inline void SetStatusCode(const char* value) { m_statusCodeHasBeenSet = true; m_statusCode.assign(value); }
-    inline StatusDetails& WithStatusCode(const Aws::String& value) { SetStatusCode(value); return *this;}
-    inline StatusDetails& WithStatusCode(Aws::String&& value) { SetStatusCode(std::move(value)); return *this;}
-    inline StatusDetails& WithStatusCode(const char* value) { SetStatusCode(value); return *this;}
+    template<typename StatusCodeT = Aws::String>
+    void SetStatusCode(StatusCodeT&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::forward<StatusCodeT>(value); }
+    template<typename StatusCodeT = Aws::String>
+    StatusDetails& WithStatusCode(StatusCodeT&& value) { SetStatusCode(std::forward<StatusCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * consumption and can change at any time. Use the <code>statusCode</code> for
      * programmatic error handling.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline StatusDetails& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline StatusDetails& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline StatusDetails& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    StatusDetails& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

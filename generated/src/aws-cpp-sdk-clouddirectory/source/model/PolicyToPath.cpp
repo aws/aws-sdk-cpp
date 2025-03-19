@@ -18,14 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-PolicyToPath::PolicyToPath() : 
-    m_pathHasBeenSet(false),
-    m_policiesHasBeenSet(false)
-{
-}
-
 PolicyToPath::PolicyToPath(JsonView jsonValue)
-  : PolicyToPath()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ PolicyToPath& PolicyToPath::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Policies"))
   {
     Aws::Utils::Array<JsonView> policiesJsonList = jsonValue.GetArray("Policies");
@@ -48,7 +39,6 @@ PolicyToPath& PolicyToPath::operator =(JsonView jsonValue)
     }
     m_policiesHasBeenSet = true;
   }
-
   return *this;
 }
 

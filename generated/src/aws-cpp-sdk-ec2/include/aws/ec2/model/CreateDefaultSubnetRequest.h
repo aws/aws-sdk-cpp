@@ -21,7 +21,7 @@ namespace Model
   class CreateDefaultSubnetRequest : public EC2Request
   {
   public:
-    AWS_EC2_API CreateDefaultSubnetRequest();
+    AWS_EC2_API CreateDefaultSubnetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The Availability Zone in which to create the default subnet.</p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-    inline CreateDefaultSubnetRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline CreateDefaultSubnetRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline CreateDefaultSubnetRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    CreateDefaultSubnetRequest& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline CreateDefaultSubnetRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
      * default subnet for this Availability Zone, you must delete it before you can
      * create an IPv6 only subnet.</p>
      */
-    inline bool GetIpv6Native() const{ return m_ipv6Native; }
+    inline bool GetIpv6Native() const { return m_ipv6Native; }
     inline bool Ipv6NativeHasBeenSet() const { return m_ipv6NativeHasBeenSet; }
     inline void SetIpv6Native(bool value) { m_ipv6NativeHasBeenSet = true; m_ipv6Native = value; }
     inline CreateDefaultSubnetRequest& WithIpv6Native(bool value) { SetIpv6Native(value); return *this;}
@@ -79,10 +77,10 @@ namespace Model
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
-    bool m_ipv6Native;
+    bool m_ipv6Native{false};
     bool m_ipv6NativeHasBeenSet = false;
   };
 

@@ -32,7 +32,7 @@ namespace Model
   class InstanceNetworkInterfaceAssociation
   {
   public:
-    AWS_EC2_API InstanceNetworkInterfaceAssociation();
+    AWS_EC2_API InstanceNetworkInterfaceAssociation() = default;
     AWS_EC2_API InstanceNetworkInterfaceAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API InstanceNetworkInterfaceAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,56 +44,48 @@ namespace Model
     /**
      * <p>The carrier IP address associated with the network interface.</p>
      */
-    inline const Aws::String& GetCarrierIp() const{ return m_carrierIp; }
+    inline const Aws::String& GetCarrierIp() const { return m_carrierIp; }
     inline bool CarrierIpHasBeenSet() const { return m_carrierIpHasBeenSet; }
-    inline void SetCarrierIp(const Aws::String& value) { m_carrierIpHasBeenSet = true; m_carrierIp = value; }
-    inline void SetCarrierIp(Aws::String&& value) { m_carrierIpHasBeenSet = true; m_carrierIp = std::move(value); }
-    inline void SetCarrierIp(const char* value) { m_carrierIpHasBeenSet = true; m_carrierIp.assign(value); }
-    inline InstanceNetworkInterfaceAssociation& WithCarrierIp(const Aws::String& value) { SetCarrierIp(value); return *this;}
-    inline InstanceNetworkInterfaceAssociation& WithCarrierIp(Aws::String&& value) { SetCarrierIp(std::move(value)); return *this;}
-    inline InstanceNetworkInterfaceAssociation& WithCarrierIp(const char* value) { SetCarrierIp(value); return *this;}
+    template<typename CarrierIpT = Aws::String>
+    void SetCarrierIp(CarrierIpT&& value) { m_carrierIpHasBeenSet = true; m_carrierIp = std::forward<CarrierIpT>(value); }
+    template<typename CarrierIpT = Aws::String>
+    InstanceNetworkInterfaceAssociation& WithCarrierIp(CarrierIpT&& value) { SetCarrierIp(std::forward<CarrierIpT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The customer-owned IP address associated with the network interface.</p>
      */
-    inline const Aws::String& GetCustomerOwnedIp() const{ return m_customerOwnedIp; }
+    inline const Aws::String& GetCustomerOwnedIp() const { return m_customerOwnedIp; }
     inline bool CustomerOwnedIpHasBeenSet() const { return m_customerOwnedIpHasBeenSet; }
-    inline void SetCustomerOwnedIp(const Aws::String& value) { m_customerOwnedIpHasBeenSet = true; m_customerOwnedIp = value; }
-    inline void SetCustomerOwnedIp(Aws::String&& value) { m_customerOwnedIpHasBeenSet = true; m_customerOwnedIp = std::move(value); }
-    inline void SetCustomerOwnedIp(const char* value) { m_customerOwnedIpHasBeenSet = true; m_customerOwnedIp.assign(value); }
-    inline InstanceNetworkInterfaceAssociation& WithCustomerOwnedIp(const Aws::String& value) { SetCustomerOwnedIp(value); return *this;}
-    inline InstanceNetworkInterfaceAssociation& WithCustomerOwnedIp(Aws::String&& value) { SetCustomerOwnedIp(std::move(value)); return *this;}
-    inline InstanceNetworkInterfaceAssociation& WithCustomerOwnedIp(const char* value) { SetCustomerOwnedIp(value); return *this;}
+    template<typename CustomerOwnedIpT = Aws::String>
+    void SetCustomerOwnedIp(CustomerOwnedIpT&& value) { m_customerOwnedIpHasBeenSet = true; m_customerOwnedIp = std::forward<CustomerOwnedIpT>(value); }
+    template<typename CustomerOwnedIpT = Aws::String>
+    InstanceNetworkInterfaceAssociation& WithCustomerOwnedIp(CustomerOwnedIpT&& value) { SetCustomerOwnedIp(std::forward<CustomerOwnedIpT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the owner of the Elastic IP address.</p>
      */
-    inline const Aws::String& GetIpOwnerId() const{ return m_ipOwnerId; }
+    inline const Aws::String& GetIpOwnerId() const { return m_ipOwnerId; }
     inline bool IpOwnerIdHasBeenSet() const { return m_ipOwnerIdHasBeenSet; }
-    inline void SetIpOwnerId(const Aws::String& value) { m_ipOwnerIdHasBeenSet = true; m_ipOwnerId = value; }
-    inline void SetIpOwnerId(Aws::String&& value) { m_ipOwnerIdHasBeenSet = true; m_ipOwnerId = std::move(value); }
-    inline void SetIpOwnerId(const char* value) { m_ipOwnerIdHasBeenSet = true; m_ipOwnerId.assign(value); }
-    inline InstanceNetworkInterfaceAssociation& WithIpOwnerId(const Aws::String& value) { SetIpOwnerId(value); return *this;}
-    inline InstanceNetworkInterfaceAssociation& WithIpOwnerId(Aws::String&& value) { SetIpOwnerId(std::move(value)); return *this;}
-    inline InstanceNetworkInterfaceAssociation& WithIpOwnerId(const char* value) { SetIpOwnerId(value); return *this;}
+    template<typename IpOwnerIdT = Aws::String>
+    void SetIpOwnerId(IpOwnerIdT&& value) { m_ipOwnerIdHasBeenSet = true; m_ipOwnerId = std::forward<IpOwnerIdT>(value); }
+    template<typename IpOwnerIdT = Aws::String>
+    InstanceNetworkInterfaceAssociation& WithIpOwnerId(IpOwnerIdT&& value) { SetIpOwnerId(std::forward<IpOwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The public DNS name.</p>
      */
-    inline const Aws::String& GetPublicDnsName() const{ return m_publicDnsName; }
+    inline const Aws::String& GetPublicDnsName() const { return m_publicDnsName; }
     inline bool PublicDnsNameHasBeenSet() const { return m_publicDnsNameHasBeenSet; }
-    inline void SetPublicDnsName(const Aws::String& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = value; }
-    inline void SetPublicDnsName(Aws::String&& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = std::move(value); }
-    inline void SetPublicDnsName(const char* value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName.assign(value); }
-    inline InstanceNetworkInterfaceAssociation& WithPublicDnsName(const Aws::String& value) { SetPublicDnsName(value); return *this;}
-    inline InstanceNetworkInterfaceAssociation& WithPublicDnsName(Aws::String&& value) { SetPublicDnsName(std::move(value)); return *this;}
-    inline InstanceNetworkInterfaceAssociation& WithPublicDnsName(const char* value) { SetPublicDnsName(value); return *this;}
+    template<typename PublicDnsNameT = Aws::String>
+    void SetPublicDnsName(PublicDnsNameT&& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = std::forward<PublicDnsNameT>(value); }
+    template<typename PublicDnsNameT = Aws::String>
+    InstanceNetworkInterfaceAssociation& WithPublicDnsName(PublicDnsNameT&& value) { SetPublicDnsName(std::forward<PublicDnsNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +93,12 @@ namespace Model
      * <p>The public IP address or Elastic IP address bound to the network
      * interface.</p>
      */
-    inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
+    inline const Aws::String& GetPublicIp() const { return m_publicIp; }
     inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
-    inline void SetPublicIp(const Aws::String& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
-    inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::move(value); }
-    inline void SetPublicIp(const char* value) { m_publicIpHasBeenSet = true; m_publicIp.assign(value); }
-    inline InstanceNetworkInterfaceAssociation& WithPublicIp(const Aws::String& value) { SetPublicIp(value); return *this;}
-    inline InstanceNetworkInterfaceAssociation& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
-    inline InstanceNetworkInterfaceAssociation& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
+    template<typename PublicIpT = Aws::String>
+    void SetPublicIp(PublicIpT&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::forward<PublicIpT>(value); }
+    template<typename PublicIpT = Aws::String>
+    InstanceNetworkInterfaceAssociation& WithPublicIp(PublicIpT&& value) { SetPublicIp(std::forward<PublicIpT>(value)); return *this;}
     ///@}
   private:
 

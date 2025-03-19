@@ -33,7 +33,7 @@ namespace Model
   class ListServiceInstancesFilter
   {
   public:
-    AWS_PROTON_API ListServiceInstancesFilter();
+    AWS_PROTON_API ListServiceInstancesFilter() = default;
     AWS_PROTON_API ListServiceInstancesFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROTON_API ListServiceInstancesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>The name of a filtering criterion.</p>
      */
-    inline const ListServiceInstancesFilterBy& GetKey() const{ return m_key; }
+    inline ListServiceInstancesFilterBy GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const ListServiceInstancesFilterBy& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(ListServiceInstancesFilterBy&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline ListServiceInstancesFilter& WithKey(const ListServiceInstancesFilterBy& value) { SetKey(value); return *this;}
-    inline ListServiceInstancesFilter& WithKey(ListServiceInstancesFilterBy&& value) { SetKey(std::move(value)); return *this;}
+    inline void SetKey(ListServiceInstancesFilterBy value) { m_keyHasBeenSet = true; m_key = value; }
+    inline ListServiceInstancesFilter& WithKey(ListServiceInstancesFilterBy value) { SetKey(value); return *this;}
     ///@}
 
     ///@{
@@ -59,18 +57,16 @@ namespace Model
      * with no UTC offset and with an optional fractional precision (for example,
      * <code>1985-04-12T23:20:50.52Z</code>).</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline ListServiceInstancesFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline ListServiceInstancesFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline ListServiceInstancesFilter& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    ListServiceInstancesFilter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    ListServiceInstancesFilterBy m_key;
+    ListServiceInstancesFilterBy m_key{ListServiceInstancesFilterBy::NOT_SET};
     bool m_keyHasBeenSet = false;
 
     Aws::String m_value;

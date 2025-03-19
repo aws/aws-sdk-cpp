@@ -30,7 +30,7 @@ namespace Model
   class GetColumnStatisticsForTableResult
   {
   public:
-    AWS_GLUE_API GetColumnStatisticsForTableResult();
+    AWS_GLUE_API GetColumnStatisticsForTableResult() = default;
     AWS_GLUE_API GetColumnStatisticsForTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API GetColumnStatisticsForTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,46 @@ namespace Model
     /**
      * <p>List of ColumnStatistics.</p>
      */
-    inline const Aws::Vector<ColumnStatistics>& GetColumnStatisticsList() const{ return m_columnStatisticsList; }
-    inline void SetColumnStatisticsList(const Aws::Vector<ColumnStatistics>& value) { m_columnStatisticsList = value; }
-    inline void SetColumnStatisticsList(Aws::Vector<ColumnStatistics>&& value) { m_columnStatisticsList = std::move(value); }
-    inline GetColumnStatisticsForTableResult& WithColumnStatisticsList(const Aws::Vector<ColumnStatistics>& value) { SetColumnStatisticsList(value); return *this;}
-    inline GetColumnStatisticsForTableResult& WithColumnStatisticsList(Aws::Vector<ColumnStatistics>&& value) { SetColumnStatisticsList(std::move(value)); return *this;}
-    inline GetColumnStatisticsForTableResult& AddColumnStatisticsList(const ColumnStatistics& value) { m_columnStatisticsList.push_back(value); return *this; }
-    inline GetColumnStatisticsForTableResult& AddColumnStatisticsList(ColumnStatistics&& value) { m_columnStatisticsList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ColumnStatistics>& GetColumnStatisticsList() const { return m_columnStatisticsList; }
+    template<typename ColumnStatisticsListT = Aws::Vector<ColumnStatistics>>
+    void SetColumnStatisticsList(ColumnStatisticsListT&& value) { m_columnStatisticsListHasBeenSet = true; m_columnStatisticsList = std::forward<ColumnStatisticsListT>(value); }
+    template<typename ColumnStatisticsListT = Aws::Vector<ColumnStatistics>>
+    GetColumnStatisticsForTableResult& WithColumnStatisticsList(ColumnStatisticsListT&& value) { SetColumnStatisticsList(std::forward<ColumnStatisticsListT>(value)); return *this;}
+    template<typename ColumnStatisticsListT = ColumnStatistics>
+    GetColumnStatisticsForTableResult& AddColumnStatisticsList(ColumnStatisticsListT&& value) { m_columnStatisticsListHasBeenSet = true; m_columnStatisticsList.emplace_back(std::forward<ColumnStatisticsListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>List of ColumnStatistics that failed to be retrieved.</p>
      */
-    inline const Aws::Vector<ColumnError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<ColumnError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<ColumnError>&& value) { m_errors = std::move(value); }
-    inline GetColumnStatisticsForTableResult& WithErrors(const Aws::Vector<ColumnError>& value) { SetErrors(value); return *this;}
-    inline GetColumnStatisticsForTableResult& WithErrors(Aws::Vector<ColumnError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline GetColumnStatisticsForTableResult& AddErrors(const ColumnError& value) { m_errors.push_back(value); return *this; }
-    inline GetColumnStatisticsForTableResult& AddErrors(ColumnError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ColumnError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<ColumnError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<ColumnError>>
+    GetColumnStatisticsForTableResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = ColumnError>
+    GetColumnStatisticsForTableResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetColumnStatisticsForTableResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetColumnStatisticsForTableResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetColumnStatisticsForTableResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetColumnStatisticsForTableResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ColumnStatistics> m_columnStatisticsList;
+    bool m_columnStatisticsListHasBeenSet = false;
 
     Aws::Vector<ColumnError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

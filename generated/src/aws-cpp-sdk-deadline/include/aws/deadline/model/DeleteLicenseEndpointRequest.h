@@ -21,7 +21,7 @@ namespace Model
   class DeleteLicenseEndpointRequest : public DeadlineRequest
   {
   public:
-    AWS_DEADLINE_API DeleteLicenseEndpointRequest();
+    AWS_DEADLINE_API DeleteLicenseEndpointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The license endpoint ID of the license endpoint to delete.</p>
      */
-    inline const Aws::String& GetLicenseEndpointId() const{ return m_licenseEndpointId; }
+    inline const Aws::String& GetLicenseEndpointId() const { return m_licenseEndpointId; }
     inline bool LicenseEndpointIdHasBeenSet() const { return m_licenseEndpointIdHasBeenSet; }
-    inline void SetLicenseEndpointId(const Aws::String& value) { m_licenseEndpointIdHasBeenSet = true; m_licenseEndpointId = value; }
-    inline void SetLicenseEndpointId(Aws::String&& value) { m_licenseEndpointIdHasBeenSet = true; m_licenseEndpointId = std::move(value); }
-    inline void SetLicenseEndpointId(const char* value) { m_licenseEndpointIdHasBeenSet = true; m_licenseEndpointId.assign(value); }
-    inline DeleteLicenseEndpointRequest& WithLicenseEndpointId(const Aws::String& value) { SetLicenseEndpointId(value); return *this;}
-    inline DeleteLicenseEndpointRequest& WithLicenseEndpointId(Aws::String&& value) { SetLicenseEndpointId(std::move(value)); return *this;}
-    inline DeleteLicenseEndpointRequest& WithLicenseEndpointId(const char* value) { SetLicenseEndpointId(value); return *this;}
+    template<typename LicenseEndpointIdT = Aws::String>
+    void SetLicenseEndpointId(LicenseEndpointIdT&& value) { m_licenseEndpointIdHasBeenSet = true; m_licenseEndpointId = std::forward<LicenseEndpointIdT>(value); }
+    template<typename LicenseEndpointIdT = Aws::String>
+    DeleteLicenseEndpointRequest& WithLicenseEndpointId(LicenseEndpointIdT&& value) { SetLicenseEndpointId(std::forward<LicenseEndpointIdT>(value)); return *this;}
     ///@}
   private:
 

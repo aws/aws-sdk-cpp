@@ -18,13 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-IndiaAdditionalInfo::IndiaAdditionalInfo() : 
-    m_panHasBeenSet(false)
-{
-}
-
 IndiaAdditionalInfo::IndiaAdditionalInfo(JsonView jsonValue)
-  : IndiaAdditionalInfo()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IndiaAdditionalInfo& IndiaAdditionalInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("pan"))
   {
     m_pan = jsonValue.GetString("pan");
-
     m_panHasBeenSet = true;
   }
-
   return *this;
 }
 

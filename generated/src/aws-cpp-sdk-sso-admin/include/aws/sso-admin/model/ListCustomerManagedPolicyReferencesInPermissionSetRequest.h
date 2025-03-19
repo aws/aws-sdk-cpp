@@ -21,7 +21,7 @@ namespace Model
   class ListCustomerManagedPolicyReferencesInPermissionSetRequest : public SSOAdminRequest
   {
   public:
-    AWS_SSOADMIN_API ListCustomerManagedPolicyReferencesInPermissionSetRequest();
+    AWS_SSOADMIN_API ListCustomerManagedPolicyReferencesInPermissionSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,21 +39,19 @@ namespace Model
      * <p>The ARN of the IAM Identity Center instance under which the operation will be
      * executed. </p>
      */
-    inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
+    inline const Aws::String& GetInstanceArn() const { return m_instanceArn; }
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
-    inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
-    inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
-    inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
-    inline ListCustomerManagedPolicyReferencesInPermissionSetRequest& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
-    inline ListCustomerManagedPolicyReferencesInPermissionSetRequest& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
-    inline ListCustomerManagedPolicyReferencesInPermissionSetRequest& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
+    template<typename InstanceArnT = Aws::String>
+    void SetInstanceArn(InstanceArnT&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::forward<InstanceArnT>(value); }
+    template<typename InstanceArnT = Aws::String>
+    ListCustomerManagedPolicyReferencesInPermissionSetRequest& WithInstanceArn(InstanceArnT&& value) { SetInstanceArn(std::forward<InstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to display for the list call.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListCustomerManagedPolicyReferencesInPermissionSetRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -64,35 +62,31 @@ namespace Model
      * <p>The pagination token for the list API. Initially the value is null. Use the
      * output of previous API calls to make subsequent calls.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListCustomerManagedPolicyReferencesInPermissionSetRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCustomerManagedPolicyReferencesInPermissionSetRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCustomerManagedPolicyReferencesInPermissionSetRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCustomerManagedPolicyReferencesInPermissionSetRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the <code>PermissionSet</code>. </p>
      */
-    inline const Aws::String& GetPermissionSetArn() const{ return m_permissionSetArn; }
+    inline const Aws::String& GetPermissionSetArn() const { return m_permissionSetArn; }
     inline bool PermissionSetArnHasBeenSet() const { return m_permissionSetArnHasBeenSet; }
-    inline void SetPermissionSetArn(const Aws::String& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = value; }
-    inline void SetPermissionSetArn(Aws::String&& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = std::move(value); }
-    inline void SetPermissionSetArn(const char* value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn.assign(value); }
-    inline ListCustomerManagedPolicyReferencesInPermissionSetRequest& WithPermissionSetArn(const Aws::String& value) { SetPermissionSetArn(value); return *this;}
-    inline ListCustomerManagedPolicyReferencesInPermissionSetRequest& WithPermissionSetArn(Aws::String&& value) { SetPermissionSetArn(std::move(value)); return *this;}
-    inline ListCustomerManagedPolicyReferencesInPermissionSetRequest& WithPermissionSetArn(const char* value) { SetPermissionSetArn(value); return *this;}
+    template<typename PermissionSetArnT = Aws::String>
+    void SetPermissionSetArn(PermissionSetArnT&& value) { m_permissionSetArnHasBeenSet = true; m_permissionSetArn = std::forward<PermissionSetArnT>(value); }
+    template<typename PermissionSetArnT = Aws::String>
+    ListCustomerManagedPolicyReferencesInPermissionSetRequest& WithPermissionSetArn(PermissionSetArnT&& value) { SetPermissionSetArn(std::forward<PermissionSetArnT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_instanceArn;
     bool m_instanceArnHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

@@ -32,7 +32,7 @@ namespace Model
   class UnusedAccessConfiguration
   {
   public:
-    AWS_ACCESSANALYZER_API UnusedAccessConfiguration();
+    AWS_ACCESSANALYZER_API UnusedAccessConfiguration() = default;
     AWS_ACCESSANALYZER_API UnusedAccessConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API UnusedAccessConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
      * that hasn't been used in 90 or more days since the analyzer's last scan. You can
      * choose a value between 1 and 365 days.</p>
      */
-    inline int GetUnusedAccessAge() const{ return m_unusedAccessAge; }
+    inline int GetUnusedAccessAge() const { return m_unusedAccessAge; }
     inline bool UnusedAccessAgeHasBeenSet() const { return m_unusedAccessAgeHasBeenSet; }
     inline void SetUnusedAccessAge(int value) { m_unusedAccessAgeHasBeenSet = true; m_unusedAccessAge = value; }
     inline UnusedAccessConfiguration& WithUnusedAccessAge(int value) { SetUnusedAccessAge(value); return *this;}
@@ -54,16 +54,16 @@ namespace Model
 
     ///@{
     
-    inline const AnalysisRule& GetAnalysisRule() const{ return m_analysisRule; }
+    inline const AnalysisRule& GetAnalysisRule() const { return m_analysisRule; }
     inline bool AnalysisRuleHasBeenSet() const { return m_analysisRuleHasBeenSet; }
-    inline void SetAnalysisRule(const AnalysisRule& value) { m_analysisRuleHasBeenSet = true; m_analysisRule = value; }
-    inline void SetAnalysisRule(AnalysisRule&& value) { m_analysisRuleHasBeenSet = true; m_analysisRule = std::move(value); }
-    inline UnusedAccessConfiguration& WithAnalysisRule(const AnalysisRule& value) { SetAnalysisRule(value); return *this;}
-    inline UnusedAccessConfiguration& WithAnalysisRule(AnalysisRule&& value) { SetAnalysisRule(std::move(value)); return *this;}
+    template<typename AnalysisRuleT = AnalysisRule>
+    void SetAnalysisRule(AnalysisRuleT&& value) { m_analysisRuleHasBeenSet = true; m_analysisRule = std::forward<AnalysisRuleT>(value); }
+    template<typename AnalysisRuleT = AnalysisRule>
+    UnusedAccessConfiguration& WithAnalysisRule(AnalysisRuleT&& value) { SetAnalysisRule(std::forward<AnalysisRuleT>(value)); return *this;}
     ///@}
   private:
 
-    int m_unusedAccessAge;
+    int m_unusedAccessAge{0};
     bool m_unusedAccessAgeHasBeenSet = false;
 
     AnalysisRule m_analysisRule;

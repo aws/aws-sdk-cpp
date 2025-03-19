@@ -12,12 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDatasetEntriesRequest::UpdateDatasetEntriesRequest() : 
-    m_datasetArnHasBeenSet(false),
-    m_changesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDatasetEntriesRequest::SerializePayload() const
 {
   JsonValue payload;

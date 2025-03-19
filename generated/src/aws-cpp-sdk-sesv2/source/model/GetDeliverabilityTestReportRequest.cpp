@@ -12,11 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDeliverabilityTestReportRequest::GetDeliverabilityTestReportRequest() : 
-    m_reportIdHasBeenSet(false)
-{
-}
-
 Aws::String GetDeliverabilityTestReportRequest::SerializePayload() const
 {
   return {};

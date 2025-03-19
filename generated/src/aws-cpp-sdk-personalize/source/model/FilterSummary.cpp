@@ -18,19 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-FilterSummary::FilterSummary() : 
-    m_nameHasBeenSet(false),
-    m_filterArnHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_datasetGroupArnHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 FilterSummary::FilterSummary(JsonView jsonValue)
-  : FilterSummary()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ FilterSummary& FilterSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filterArn"))
   {
     m_filterArn = jsonValue.GetString("filterArn");
-
     m_filterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datasetGroupArn"))
   {
     m_datasetGroupArn = jsonValue.GetString("datasetGroupArn");
-
     m_datasetGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

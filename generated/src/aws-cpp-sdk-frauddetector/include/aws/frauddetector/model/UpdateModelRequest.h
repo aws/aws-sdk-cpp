@@ -22,7 +22,7 @@ namespace Model
   class UpdateModelRequest : public FraudDetectorRequest
   {
   public:
-    AWS_FRAUDDETECTOR_API UpdateModelRequest();
+    AWS_FRAUDDETECTOR_API UpdateModelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,47 +39,41 @@ namespace Model
     /**
      * <p>The model ID.</p>
      */
-    inline const Aws::String& GetModelId() const{ return m_modelId; }
+    inline const Aws::String& GetModelId() const { return m_modelId; }
     inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }
-    inline void SetModelId(const Aws::String& value) { m_modelIdHasBeenSet = true; m_modelId = value; }
-    inline void SetModelId(Aws::String&& value) { m_modelIdHasBeenSet = true; m_modelId = std::move(value); }
-    inline void SetModelId(const char* value) { m_modelIdHasBeenSet = true; m_modelId.assign(value); }
-    inline UpdateModelRequest& WithModelId(const Aws::String& value) { SetModelId(value); return *this;}
-    inline UpdateModelRequest& WithModelId(Aws::String&& value) { SetModelId(std::move(value)); return *this;}
-    inline UpdateModelRequest& WithModelId(const char* value) { SetModelId(value); return *this;}
+    template<typename ModelIdT = Aws::String>
+    void SetModelId(ModelIdT&& value) { m_modelIdHasBeenSet = true; m_modelId = std::forward<ModelIdT>(value); }
+    template<typename ModelIdT = Aws::String>
+    UpdateModelRequest& WithModelId(ModelIdT&& value) { SetModelId(std::forward<ModelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The model type.</p>
      */
-    inline const ModelTypeEnum& GetModelType() const{ return m_modelType; }
+    inline ModelTypeEnum GetModelType() const { return m_modelType; }
     inline bool ModelTypeHasBeenSet() const { return m_modelTypeHasBeenSet; }
-    inline void SetModelType(const ModelTypeEnum& value) { m_modelTypeHasBeenSet = true; m_modelType = value; }
-    inline void SetModelType(ModelTypeEnum&& value) { m_modelTypeHasBeenSet = true; m_modelType = std::move(value); }
-    inline UpdateModelRequest& WithModelType(const ModelTypeEnum& value) { SetModelType(value); return *this;}
-    inline UpdateModelRequest& WithModelType(ModelTypeEnum&& value) { SetModelType(std::move(value)); return *this;}
+    inline void SetModelType(ModelTypeEnum value) { m_modelTypeHasBeenSet = true; m_modelType = value; }
+    inline UpdateModelRequest& WithModelType(ModelTypeEnum value) { SetModelType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new model description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateModelRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateModelRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateModelRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateModelRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_modelId;
     bool m_modelIdHasBeenSet = false;
 
-    ModelTypeEnum m_modelType;
+    ModelTypeEnum m_modelType{ModelTypeEnum::NOT_SET};
     bool m_modelTypeHasBeenSet = false;
 
     Aws::String m_description;

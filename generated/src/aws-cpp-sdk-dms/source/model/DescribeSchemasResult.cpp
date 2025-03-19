@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeSchemasResult::DescribeSchemasResult()
-{
-}
-
 DescribeSchemasResult::DescribeSchemasResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeSchemasResult& DescribeSchemasResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
-
+    m_markerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Schemas"))
   {
     Aws::Utils::Array<JsonView> schemasJsonList = jsonValue.GetArray("Schemas");
@@ -42,14 +37,15 @@ DescribeSchemasResult& DescribeSchemasResult::operator =(const Aws::AmazonWebSer
     {
       m_schemas.push_back(schemasJsonList[schemasIndex].AsString());
     }
+    m_schemasHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

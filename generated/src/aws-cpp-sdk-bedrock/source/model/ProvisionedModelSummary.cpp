@@ -18,28 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-ProvisionedModelSummary::ProvisionedModelSummary() : 
-    m_provisionedModelNameHasBeenSet(false),
-    m_provisionedModelArnHasBeenSet(false),
-    m_modelArnHasBeenSet(false),
-    m_desiredModelArnHasBeenSet(false),
-    m_foundationModelArnHasBeenSet(false),
-    m_modelUnits(0),
-    m_modelUnitsHasBeenSet(false),
-    m_desiredModelUnits(0),
-    m_desiredModelUnitsHasBeenSet(false),
-    m_status(ProvisionedModelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_commitmentDuration(CommitmentDuration::NOT_SET),
-    m_commitmentDurationHasBeenSet(false),
-    m_commitmentExpirationTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 ProvisionedModelSummary::ProvisionedModelSummary(JsonView jsonValue)
-  : ProvisionedModelSummary()
 {
   *this = jsonValue;
 }
@@ -49,87 +28,63 @@ ProvisionedModelSummary& ProvisionedModelSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("provisionedModelName"))
   {
     m_provisionedModelName = jsonValue.GetString("provisionedModelName");
-
     m_provisionedModelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("provisionedModelArn"))
   {
     m_provisionedModelArn = jsonValue.GetString("provisionedModelArn");
-
     m_provisionedModelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelArn"))
   {
     m_modelArn = jsonValue.GetString("modelArn");
-
     m_modelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("desiredModelArn"))
   {
     m_desiredModelArn = jsonValue.GetString("desiredModelArn");
-
     m_desiredModelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("foundationModelArn"))
   {
     m_foundationModelArn = jsonValue.GetString("foundationModelArn");
-
     m_foundationModelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelUnits"))
   {
     m_modelUnits = jsonValue.GetInteger("modelUnits");
-
     m_modelUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("desiredModelUnits"))
   {
     m_desiredModelUnits = jsonValue.GetInteger("desiredModelUnits");
-
     m_desiredModelUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ProvisionedModelStatusMapper::GetProvisionedModelStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("commitmentDuration"))
   {
     m_commitmentDuration = CommitmentDurationMapper::GetCommitmentDurationForName(jsonValue.GetString("commitmentDuration"));
-
     m_commitmentDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("commitmentExpirationTime"))
   {
     m_commitmentExpirationTime = jsonValue.GetString("commitmentExpirationTime");
-
     m_commitmentExpirationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetString("lastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

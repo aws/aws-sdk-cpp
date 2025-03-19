@@ -35,7 +35,7 @@ namespace Model
   class PurchaseScheduledInstancesResponse
   {
   public:
-    AWS_EC2_API PurchaseScheduledInstancesResponse();
+    AWS_EC2_API PurchaseScheduledInstancesResponse() = default;
     AWS_EC2_API PurchaseScheduledInstancesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API PurchaseScheduledInstancesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,28 +44,30 @@ namespace Model
     /**
      * <p>Information about the Scheduled Instances.</p>
      */
-    inline const Aws::Vector<ScheduledInstance>& GetScheduledInstanceSet() const{ return m_scheduledInstanceSet; }
-    inline void SetScheduledInstanceSet(const Aws::Vector<ScheduledInstance>& value) { m_scheduledInstanceSet = value; }
-    inline void SetScheduledInstanceSet(Aws::Vector<ScheduledInstance>&& value) { m_scheduledInstanceSet = std::move(value); }
-    inline PurchaseScheduledInstancesResponse& WithScheduledInstanceSet(const Aws::Vector<ScheduledInstance>& value) { SetScheduledInstanceSet(value); return *this;}
-    inline PurchaseScheduledInstancesResponse& WithScheduledInstanceSet(Aws::Vector<ScheduledInstance>&& value) { SetScheduledInstanceSet(std::move(value)); return *this;}
-    inline PurchaseScheduledInstancesResponse& AddScheduledInstanceSet(const ScheduledInstance& value) { m_scheduledInstanceSet.push_back(value); return *this; }
-    inline PurchaseScheduledInstancesResponse& AddScheduledInstanceSet(ScheduledInstance&& value) { m_scheduledInstanceSet.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ScheduledInstance>& GetScheduledInstanceSet() const { return m_scheduledInstanceSet; }
+    template<typename ScheduledInstanceSetT = Aws::Vector<ScheduledInstance>>
+    void SetScheduledInstanceSet(ScheduledInstanceSetT&& value) { m_scheduledInstanceSetHasBeenSet = true; m_scheduledInstanceSet = std::forward<ScheduledInstanceSetT>(value); }
+    template<typename ScheduledInstanceSetT = Aws::Vector<ScheduledInstance>>
+    PurchaseScheduledInstancesResponse& WithScheduledInstanceSet(ScheduledInstanceSetT&& value) { SetScheduledInstanceSet(std::forward<ScheduledInstanceSetT>(value)); return *this;}
+    template<typename ScheduledInstanceSetT = ScheduledInstance>
+    PurchaseScheduledInstancesResponse& AddScheduledInstanceSet(ScheduledInstanceSetT&& value) { m_scheduledInstanceSetHasBeenSet = true; m_scheduledInstanceSet.emplace_back(std::forward<ScheduledInstanceSetT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline PurchaseScheduledInstancesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline PurchaseScheduledInstancesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    PurchaseScheduledInstancesResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ScheduledInstance> m_scheduledInstanceSet;
+    bool m_scheduledInstanceSetHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

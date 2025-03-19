@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetResolverQueryLogConfigPolicyResult::GetResolverQueryLogConfigPolicyResult()
-{
-}
-
 GetResolverQueryLogConfigPolicyResult::GetResolverQueryLogConfigPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetResolverQueryLogConfigPolicyResult& GetResolverQueryLogConfigPolicyResult::op
   if(jsonValue.ValueExists("ResolverQueryLogConfigPolicy"))
   {
     m_resolverQueryLogConfigPolicy = jsonValue.GetString("ResolverQueryLogConfigPolicy");
-
+    m_resolverQueryLogConfigPolicyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

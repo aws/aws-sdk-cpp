@@ -35,7 +35,7 @@ namespace Model
   class UpdateFileSystemOpenZFSConfiguration
   {
   public:
-    AWS_FSX_API UpdateFileSystemOpenZFSConfiguration();
+    AWS_FSX_API UpdateFileSystemOpenZFSConfiguration() = default;
     AWS_FSX_API UpdateFileSystemOpenZFSConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API UpdateFileSystemOpenZFSConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
 
     ///@{
     
-    inline int GetAutomaticBackupRetentionDays() const{ return m_automaticBackupRetentionDays; }
+    inline int GetAutomaticBackupRetentionDays() const { return m_automaticBackupRetentionDays; }
     inline bool AutomaticBackupRetentionDaysHasBeenSet() const { return m_automaticBackupRetentionDaysHasBeenSet; }
     inline void SetAutomaticBackupRetentionDays(int value) { m_automaticBackupRetentionDaysHasBeenSet = true; m_automaticBackupRetentionDays = value; }
     inline UpdateFileSystemOpenZFSConfiguration& WithAutomaticBackupRetentionDays(int value) { SetAutomaticBackupRetentionDays(value); return *this;}
@@ -60,7 +60,7 @@ namespace Model
      * user-initiated backup, no tags are copied from the file system, regardless of
      * this value.</p>
      */
-    inline bool GetCopyTagsToBackups() const{ return m_copyTagsToBackups; }
+    inline bool GetCopyTagsToBackups() const { return m_copyTagsToBackups; }
     inline bool CopyTagsToBackupsHasBeenSet() const { return m_copyTagsToBackupsHasBeenSet; }
     inline void SetCopyTagsToBackups(bool value) { m_copyTagsToBackupsHasBeenSet = true; m_copyTagsToBackups = value; }
     inline UpdateFileSystemOpenZFSConfiguration& WithCopyTagsToBackups(bool value) { SetCopyTagsToBackups(value); return *this;}
@@ -76,7 +76,7 @@ namespace Model
      * specify one or more tags when creating the snapshot, no tags are copied from the
      * volume, regardless of this value.</p>
      */
-    inline bool GetCopyTagsToVolumes() const{ return m_copyTagsToVolumes; }
+    inline bool GetCopyTagsToVolumes() const { return m_copyTagsToVolumes; }
     inline bool CopyTagsToVolumesHasBeenSet() const { return m_copyTagsToVolumesHasBeenSet; }
     inline void SetCopyTagsToVolumes(bool value) { m_copyTagsToVolumesHasBeenSet = true; m_copyTagsToVolumes = value; }
     inline UpdateFileSystemOpenZFSConfiguration& WithCopyTagsToVolumes(bool value) { SetCopyTagsToVolumes(value); return *this;}
@@ -84,14 +84,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetDailyAutomaticBackupStartTime() const{ return m_dailyAutomaticBackupStartTime; }
+    inline const Aws::String& GetDailyAutomaticBackupStartTime() const { return m_dailyAutomaticBackupStartTime; }
     inline bool DailyAutomaticBackupStartTimeHasBeenSet() const { return m_dailyAutomaticBackupStartTimeHasBeenSet; }
-    inline void SetDailyAutomaticBackupStartTime(const Aws::String& value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime = value; }
-    inline void SetDailyAutomaticBackupStartTime(Aws::String&& value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime = std::move(value); }
-    inline void SetDailyAutomaticBackupStartTime(const char* value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime.assign(value); }
-    inline UpdateFileSystemOpenZFSConfiguration& WithDailyAutomaticBackupStartTime(const Aws::String& value) { SetDailyAutomaticBackupStartTime(value); return *this;}
-    inline UpdateFileSystemOpenZFSConfiguration& WithDailyAutomaticBackupStartTime(Aws::String&& value) { SetDailyAutomaticBackupStartTime(std::move(value)); return *this;}
-    inline UpdateFileSystemOpenZFSConfiguration& WithDailyAutomaticBackupStartTime(const char* value) { SetDailyAutomaticBackupStartTime(value); return *this;}
+    template<typename DailyAutomaticBackupStartTimeT = Aws::String>
+    void SetDailyAutomaticBackupStartTime(DailyAutomaticBackupStartTimeT&& value) { m_dailyAutomaticBackupStartTimeHasBeenSet = true; m_dailyAutomaticBackupStartTime = std::forward<DailyAutomaticBackupStartTimeT>(value); }
+    template<typename DailyAutomaticBackupStartTimeT = Aws::String>
+    UpdateFileSystemOpenZFSConfiguration& WithDailyAutomaticBackupStartTime(DailyAutomaticBackupStartTimeT&& value) { SetDailyAutomaticBackupStartTime(std::forward<DailyAutomaticBackupStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,7 +101,7 @@ namespace Model
      * 5120, 7680, or 10240 MB/s.</p> </li> <li> <p>For <code>SINGLE_AZ_1</code>, valid
      * values are 64, 128, 256, 512, 1024, 2048, 3072, or 4096 MB/s.</p> </li> </ul>
      */
-    inline int GetThroughputCapacity() const{ return m_throughputCapacity; }
+    inline int GetThroughputCapacity() const { return m_throughputCapacity; }
     inline bool ThroughputCapacityHasBeenSet() const { return m_throughputCapacityHasBeenSet; }
     inline void SetThroughputCapacity(int value) { m_throughputCapacityHasBeenSet = true; m_throughputCapacity = value; }
     inline UpdateFileSystemOpenZFSConfiguration& WithThroughputCapacity(int value) { SetThroughputCapacity(value); return *this;}
@@ -111,24 +109,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetWeeklyMaintenanceStartTime() const{ return m_weeklyMaintenanceStartTime; }
+    inline const Aws::String& GetWeeklyMaintenanceStartTime() const { return m_weeklyMaintenanceStartTime; }
     inline bool WeeklyMaintenanceStartTimeHasBeenSet() const { return m_weeklyMaintenanceStartTimeHasBeenSet; }
-    inline void SetWeeklyMaintenanceStartTime(const Aws::String& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = value; }
-    inline void SetWeeklyMaintenanceStartTime(Aws::String&& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = std::move(value); }
-    inline void SetWeeklyMaintenanceStartTime(const char* value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime.assign(value); }
-    inline UpdateFileSystemOpenZFSConfiguration& WithWeeklyMaintenanceStartTime(const Aws::String& value) { SetWeeklyMaintenanceStartTime(value); return *this;}
-    inline UpdateFileSystemOpenZFSConfiguration& WithWeeklyMaintenanceStartTime(Aws::String&& value) { SetWeeklyMaintenanceStartTime(std::move(value)); return *this;}
-    inline UpdateFileSystemOpenZFSConfiguration& WithWeeklyMaintenanceStartTime(const char* value) { SetWeeklyMaintenanceStartTime(value); return *this;}
+    template<typename WeeklyMaintenanceStartTimeT = Aws::String>
+    void SetWeeklyMaintenanceStartTime(WeeklyMaintenanceStartTimeT&& value) { m_weeklyMaintenanceStartTimeHasBeenSet = true; m_weeklyMaintenanceStartTime = std::forward<WeeklyMaintenanceStartTimeT>(value); }
+    template<typename WeeklyMaintenanceStartTimeT = Aws::String>
+    UpdateFileSystemOpenZFSConfiguration& WithWeeklyMaintenanceStartTime(WeeklyMaintenanceStartTimeT&& value) { SetWeeklyMaintenanceStartTime(std::forward<WeeklyMaintenanceStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DiskIopsConfiguration& GetDiskIopsConfiguration() const{ return m_diskIopsConfiguration; }
+    inline const DiskIopsConfiguration& GetDiskIopsConfiguration() const { return m_diskIopsConfiguration; }
     inline bool DiskIopsConfigurationHasBeenSet() const { return m_diskIopsConfigurationHasBeenSet; }
-    inline void SetDiskIopsConfiguration(const DiskIopsConfiguration& value) { m_diskIopsConfigurationHasBeenSet = true; m_diskIopsConfiguration = value; }
-    inline void SetDiskIopsConfiguration(DiskIopsConfiguration&& value) { m_diskIopsConfigurationHasBeenSet = true; m_diskIopsConfiguration = std::move(value); }
-    inline UpdateFileSystemOpenZFSConfiguration& WithDiskIopsConfiguration(const DiskIopsConfiguration& value) { SetDiskIopsConfiguration(value); return *this;}
-    inline UpdateFileSystemOpenZFSConfiguration& WithDiskIopsConfiguration(DiskIopsConfiguration&& value) { SetDiskIopsConfiguration(std::move(value)); return *this;}
+    template<typename DiskIopsConfigurationT = DiskIopsConfiguration>
+    void SetDiskIopsConfiguration(DiskIopsConfigurationT&& value) { m_diskIopsConfigurationHasBeenSet = true; m_diskIopsConfiguration = std::forward<DiskIopsConfigurationT>(value); }
+    template<typename DiskIopsConfigurationT = DiskIopsConfiguration>
+    UpdateFileSystemOpenZFSConfiguration& WithDiskIopsConfiguration(DiskIopsConfigurationT&& value) { SetDiskIopsConfiguration(std::forward<DiskIopsConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,15 +132,14 @@ namespace Model
      * <p>(Multi-AZ only) A list of IDs of new virtual private cloud (VPC) route tables
      * to associate (add) with your Amazon FSx for OpenZFS file system.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAddRouteTableIds() const{ return m_addRouteTableIds; }
+    inline const Aws::Vector<Aws::String>& GetAddRouteTableIds() const { return m_addRouteTableIds; }
     inline bool AddRouteTableIdsHasBeenSet() const { return m_addRouteTableIdsHasBeenSet; }
-    inline void SetAddRouteTableIds(const Aws::Vector<Aws::String>& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds = value; }
-    inline void SetAddRouteTableIds(Aws::Vector<Aws::String>&& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds = std::move(value); }
-    inline UpdateFileSystemOpenZFSConfiguration& WithAddRouteTableIds(const Aws::Vector<Aws::String>& value) { SetAddRouteTableIds(value); return *this;}
-    inline UpdateFileSystemOpenZFSConfiguration& WithAddRouteTableIds(Aws::Vector<Aws::String>&& value) { SetAddRouteTableIds(std::move(value)); return *this;}
-    inline UpdateFileSystemOpenZFSConfiguration& AddAddRouteTableIds(const Aws::String& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds.push_back(value); return *this; }
-    inline UpdateFileSystemOpenZFSConfiguration& AddAddRouteTableIds(Aws::String&& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds.push_back(std::move(value)); return *this; }
-    inline UpdateFileSystemOpenZFSConfiguration& AddAddRouteTableIds(const char* value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds.push_back(value); return *this; }
+    template<typename AddRouteTableIdsT = Aws::Vector<Aws::String>>
+    void SetAddRouteTableIds(AddRouteTableIdsT&& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds = std::forward<AddRouteTableIdsT>(value); }
+    template<typename AddRouteTableIdsT = Aws::Vector<Aws::String>>
+    UpdateFileSystemOpenZFSConfiguration& WithAddRouteTableIds(AddRouteTableIdsT&& value) { SetAddRouteTableIds(std::forward<AddRouteTableIdsT>(value)); return *this;}
+    template<typename AddRouteTableIdsT = Aws::String>
+    UpdateFileSystemOpenZFSConfiguration& AddAddRouteTableIds(AddRouteTableIdsT&& value) { m_addRouteTableIdsHasBeenSet = true; m_addRouteTableIds.emplace_back(std::forward<AddRouteTableIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -154,15 +149,14 @@ namespace Model
      * You can use the API operation to retrieve the list of VPC route table IDs for a
      * file system.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRemoveRouteTableIds() const{ return m_removeRouteTableIds; }
+    inline const Aws::Vector<Aws::String>& GetRemoveRouteTableIds() const { return m_removeRouteTableIds; }
     inline bool RemoveRouteTableIdsHasBeenSet() const { return m_removeRouteTableIdsHasBeenSet; }
-    inline void SetRemoveRouteTableIds(const Aws::Vector<Aws::String>& value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds = value; }
-    inline void SetRemoveRouteTableIds(Aws::Vector<Aws::String>&& value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds = std::move(value); }
-    inline UpdateFileSystemOpenZFSConfiguration& WithRemoveRouteTableIds(const Aws::Vector<Aws::String>& value) { SetRemoveRouteTableIds(value); return *this;}
-    inline UpdateFileSystemOpenZFSConfiguration& WithRemoveRouteTableIds(Aws::Vector<Aws::String>&& value) { SetRemoveRouteTableIds(std::move(value)); return *this;}
-    inline UpdateFileSystemOpenZFSConfiguration& AddRemoveRouteTableIds(const Aws::String& value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds.push_back(value); return *this; }
-    inline UpdateFileSystemOpenZFSConfiguration& AddRemoveRouteTableIds(Aws::String&& value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds.push_back(std::move(value)); return *this; }
-    inline UpdateFileSystemOpenZFSConfiguration& AddRemoveRouteTableIds(const char* value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds.push_back(value); return *this; }
+    template<typename RemoveRouteTableIdsT = Aws::Vector<Aws::String>>
+    void SetRemoveRouteTableIds(RemoveRouteTableIdsT&& value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds = std::forward<RemoveRouteTableIdsT>(value); }
+    template<typename RemoveRouteTableIdsT = Aws::Vector<Aws::String>>
+    UpdateFileSystemOpenZFSConfiguration& WithRemoveRouteTableIds(RemoveRouteTableIdsT&& value) { SetRemoveRouteTableIds(std::forward<RemoveRouteTableIdsT>(value)); return *this;}
+    template<typename RemoveRouteTableIdsT = Aws::String>
+    UpdateFileSystemOpenZFSConfiguration& AddRemoveRouteTableIds(RemoveRouteTableIdsT&& value) { m_removeRouteTableIdsHasBeenSet = true; m_removeRouteTableIds.emplace_back(std::forward<RemoveRouteTableIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -170,28 +164,28 @@ namespace Model
      * <p> The configuration for the optional provisioned SSD read cache on file
      * systems that use the Intelligent-Tiering storage class.</p>
      */
-    inline const OpenZFSReadCacheConfiguration& GetReadCacheConfiguration() const{ return m_readCacheConfiguration; }
+    inline const OpenZFSReadCacheConfiguration& GetReadCacheConfiguration() const { return m_readCacheConfiguration; }
     inline bool ReadCacheConfigurationHasBeenSet() const { return m_readCacheConfigurationHasBeenSet; }
-    inline void SetReadCacheConfiguration(const OpenZFSReadCacheConfiguration& value) { m_readCacheConfigurationHasBeenSet = true; m_readCacheConfiguration = value; }
-    inline void SetReadCacheConfiguration(OpenZFSReadCacheConfiguration&& value) { m_readCacheConfigurationHasBeenSet = true; m_readCacheConfiguration = std::move(value); }
-    inline UpdateFileSystemOpenZFSConfiguration& WithReadCacheConfiguration(const OpenZFSReadCacheConfiguration& value) { SetReadCacheConfiguration(value); return *this;}
-    inline UpdateFileSystemOpenZFSConfiguration& WithReadCacheConfiguration(OpenZFSReadCacheConfiguration&& value) { SetReadCacheConfiguration(std::move(value)); return *this;}
+    template<typename ReadCacheConfigurationT = OpenZFSReadCacheConfiguration>
+    void SetReadCacheConfiguration(ReadCacheConfigurationT&& value) { m_readCacheConfigurationHasBeenSet = true; m_readCacheConfiguration = std::forward<ReadCacheConfigurationT>(value); }
+    template<typename ReadCacheConfigurationT = OpenZFSReadCacheConfiguration>
+    UpdateFileSystemOpenZFSConfiguration& WithReadCacheConfiguration(ReadCacheConfigurationT&& value) { SetReadCacheConfiguration(std::forward<ReadCacheConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    int m_automaticBackupRetentionDays;
+    int m_automaticBackupRetentionDays{0};
     bool m_automaticBackupRetentionDaysHasBeenSet = false;
 
-    bool m_copyTagsToBackups;
+    bool m_copyTagsToBackups{false};
     bool m_copyTagsToBackupsHasBeenSet = false;
 
-    bool m_copyTagsToVolumes;
+    bool m_copyTagsToVolumes{false};
     bool m_copyTagsToVolumesHasBeenSet = false;
 
     Aws::String m_dailyAutomaticBackupStartTime;
     bool m_dailyAutomaticBackupStartTimeHasBeenSet = false;
 
-    int m_throughputCapacity;
+    int m_throughputCapacity{0};
     bool m_throughputCapacityHasBeenSet = false;
 
     Aws::String m_weeklyMaintenanceStartTime;

@@ -18,13 +18,7 @@ namespace LicenseManager
 namespace Model
 {
 
-LicenseConversionContext::LicenseConversionContext() : 
-    m_usageOperationHasBeenSet(false)
-{
-}
-
 LicenseConversionContext::LicenseConversionContext(JsonView jsonValue)
-  : LicenseConversionContext()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LicenseConversionContext& LicenseConversionContext::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("UsageOperation"))
   {
     m_usageOperation = jsonValue.GetString("UsageOperation");
-
     m_usageOperationHasBeenSet = true;
   }
-
   return *this;
 }
 

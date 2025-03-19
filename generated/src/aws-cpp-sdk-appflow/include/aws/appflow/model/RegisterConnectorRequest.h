@@ -24,7 +24,7 @@ namespace Model
   class RegisterConnectorRequest : public AppflowRequest
   {
   public:
-    AWS_APPFLOW_API RegisterConnectorRequest();
+    AWS_APPFLOW_API RegisterConnectorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
      * <p> The name of the connector. The name is unique for each
      * <code>ConnectorRegistration</code> in your Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetConnectorLabel() const{ return m_connectorLabel; }
+    inline const Aws::String& GetConnectorLabel() const { return m_connectorLabel; }
     inline bool ConnectorLabelHasBeenSet() const { return m_connectorLabelHasBeenSet; }
-    inline void SetConnectorLabel(const Aws::String& value) { m_connectorLabelHasBeenSet = true; m_connectorLabel = value; }
-    inline void SetConnectorLabel(Aws::String&& value) { m_connectorLabelHasBeenSet = true; m_connectorLabel = std::move(value); }
-    inline void SetConnectorLabel(const char* value) { m_connectorLabelHasBeenSet = true; m_connectorLabel.assign(value); }
-    inline RegisterConnectorRequest& WithConnectorLabel(const Aws::String& value) { SetConnectorLabel(value); return *this;}
-    inline RegisterConnectorRequest& WithConnectorLabel(Aws::String&& value) { SetConnectorLabel(std::move(value)); return *this;}
-    inline RegisterConnectorRequest& WithConnectorLabel(const char* value) { SetConnectorLabel(value); return *this;}
+    template<typename ConnectorLabelT = Aws::String>
+    void SetConnectorLabel(ConnectorLabelT&& value) { m_connectorLabelHasBeenSet = true; m_connectorLabel = std::forward<ConnectorLabelT>(value); }
+    template<typename ConnectorLabelT = Aws::String>
+    RegisterConnectorRequest& WithConnectorLabel(ConnectorLabelT&& value) { SetConnectorLabel(std::forward<ConnectorLabelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description about the connector that's being registered.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline RegisterConnectorRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline RegisterConnectorRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline RegisterConnectorRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    RegisterConnectorRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +65,10 @@ namespace Model
      * <p>The provisioning type of the connector. Currently the only supported value is
      * LAMBDA. </p>
      */
-    inline const ConnectorProvisioningType& GetConnectorProvisioningType() const{ return m_connectorProvisioningType; }
+    inline ConnectorProvisioningType GetConnectorProvisioningType() const { return m_connectorProvisioningType; }
     inline bool ConnectorProvisioningTypeHasBeenSet() const { return m_connectorProvisioningTypeHasBeenSet; }
-    inline void SetConnectorProvisioningType(const ConnectorProvisioningType& value) { m_connectorProvisioningTypeHasBeenSet = true; m_connectorProvisioningType = value; }
-    inline void SetConnectorProvisioningType(ConnectorProvisioningType&& value) { m_connectorProvisioningTypeHasBeenSet = true; m_connectorProvisioningType = std::move(value); }
-    inline RegisterConnectorRequest& WithConnectorProvisioningType(const ConnectorProvisioningType& value) { SetConnectorProvisioningType(value); return *this;}
-    inline RegisterConnectorRequest& WithConnectorProvisioningType(ConnectorProvisioningType&& value) { SetConnectorProvisioningType(std::move(value)); return *this;}
+    inline void SetConnectorProvisioningType(ConnectorProvisioningType value) { m_connectorProvisioningTypeHasBeenSet = true; m_connectorProvisioningType = value; }
+    inline RegisterConnectorRequest& WithConnectorProvisioningType(ConnectorProvisioningType value) { SetConnectorProvisioningType(value); return *this;}
     ///@}
 
     ///@{
@@ -82,12 +76,12 @@ namespace Model
      * <p>The provisioning type of the connector. Currently the only supported value is
      * LAMBDA.</p>
      */
-    inline const ConnectorProvisioningConfig& GetConnectorProvisioningConfig() const{ return m_connectorProvisioningConfig; }
+    inline const ConnectorProvisioningConfig& GetConnectorProvisioningConfig() const { return m_connectorProvisioningConfig; }
     inline bool ConnectorProvisioningConfigHasBeenSet() const { return m_connectorProvisioningConfigHasBeenSet; }
-    inline void SetConnectorProvisioningConfig(const ConnectorProvisioningConfig& value) { m_connectorProvisioningConfigHasBeenSet = true; m_connectorProvisioningConfig = value; }
-    inline void SetConnectorProvisioningConfig(ConnectorProvisioningConfig&& value) { m_connectorProvisioningConfigHasBeenSet = true; m_connectorProvisioningConfig = std::move(value); }
-    inline RegisterConnectorRequest& WithConnectorProvisioningConfig(const ConnectorProvisioningConfig& value) { SetConnectorProvisioningConfig(value); return *this;}
-    inline RegisterConnectorRequest& WithConnectorProvisioningConfig(ConnectorProvisioningConfig&& value) { SetConnectorProvisioningConfig(std::move(value)); return *this;}
+    template<typename ConnectorProvisioningConfigT = ConnectorProvisioningConfig>
+    void SetConnectorProvisioningConfig(ConnectorProvisioningConfigT&& value) { m_connectorProvisioningConfigHasBeenSet = true; m_connectorProvisioningConfig = std::forward<ConnectorProvisioningConfigT>(value); }
+    template<typename ConnectorProvisioningConfigT = ConnectorProvisioningConfig>
+    RegisterConnectorRequest& WithConnectorProvisioningConfig(ConnectorProvisioningConfigT&& value) { SetConnectorProvisioningConfig(std::forward<ConnectorProvisioningConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,14 +98,12 @@ namespace Model
      * for <code>clientToken</code>, Amazon AppFlow considers it a new call to
      * <code>RegisterConnector</code>. The token is active for 8 hours.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline RegisterConnectorRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline RegisterConnectorRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline RegisterConnectorRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    RegisterConnectorRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -121,7 +113,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    ConnectorProvisioningType m_connectorProvisioningType;
+    ConnectorProvisioningType m_connectorProvisioningType{ConnectorProvisioningType::NOT_SET};
     bool m_connectorProvisioningTypeHasBeenSet = false;
 
     ConnectorProvisioningConfig m_connectorProvisioningConfig;

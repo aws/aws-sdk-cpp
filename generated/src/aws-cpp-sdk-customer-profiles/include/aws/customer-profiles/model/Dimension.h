@@ -35,7 +35,7 @@ namespace Model
   class Dimension
   {
   public:
-    AWS_CUSTOMERPROFILES_API Dimension();
+    AWS_CUSTOMERPROFILES_API Dimension() = default;
     AWS_CUSTOMERPROFILES_API Dimension(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Dimension& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,30 +45,28 @@ namespace Model
     /**
      * <p>Object that holds the profile attributes to segment on.</p>
      */
-    inline const ProfileAttributes& GetProfileAttributes() const{ return m_profileAttributes; }
+    inline const ProfileAttributes& GetProfileAttributes() const { return m_profileAttributes; }
     inline bool ProfileAttributesHasBeenSet() const { return m_profileAttributesHasBeenSet; }
-    inline void SetProfileAttributes(const ProfileAttributes& value) { m_profileAttributesHasBeenSet = true; m_profileAttributes = value; }
-    inline void SetProfileAttributes(ProfileAttributes&& value) { m_profileAttributesHasBeenSet = true; m_profileAttributes = std::move(value); }
-    inline Dimension& WithProfileAttributes(const ProfileAttributes& value) { SetProfileAttributes(value); return *this;}
-    inline Dimension& WithProfileAttributes(ProfileAttributes&& value) { SetProfileAttributes(std::move(value)); return *this;}
+    template<typename ProfileAttributesT = ProfileAttributes>
+    void SetProfileAttributes(ProfileAttributesT&& value) { m_profileAttributesHasBeenSet = true; m_profileAttributes = std::forward<ProfileAttributesT>(value); }
+    template<typename ProfileAttributesT = ProfileAttributes>
+    Dimension& WithProfileAttributes(ProfileAttributesT&& value) { SetProfileAttributes(std::forward<ProfileAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Object that holds the calculated attributes to segment on.</p>
      */
-    inline const Aws::Map<Aws::String, CalculatedAttributeDimension>& GetCalculatedAttributes() const{ return m_calculatedAttributes; }
+    inline const Aws::Map<Aws::String, CalculatedAttributeDimension>& GetCalculatedAttributes() const { return m_calculatedAttributes; }
     inline bool CalculatedAttributesHasBeenSet() const { return m_calculatedAttributesHasBeenSet; }
-    inline void SetCalculatedAttributes(const Aws::Map<Aws::String, CalculatedAttributeDimension>& value) { m_calculatedAttributesHasBeenSet = true; m_calculatedAttributes = value; }
-    inline void SetCalculatedAttributes(Aws::Map<Aws::String, CalculatedAttributeDimension>&& value) { m_calculatedAttributesHasBeenSet = true; m_calculatedAttributes = std::move(value); }
-    inline Dimension& WithCalculatedAttributes(const Aws::Map<Aws::String, CalculatedAttributeDimension>& value) { SetCalculatedAttributes(value); return *this;}
-    inline Dimension& WithCalculatedAttributes(Aws::Map<Aws::String, CalculatedAttributeDimension>&& value) { SetCalculatedAttributes(std::move(value)); return *this;}
-    inline Dimension& AddCalculatedAttributes(const Aws::String& key, const CalculatedAttributeDimension& value) { m_calculatedAttributesHasBeenSet = true; m_calculatedAttributes.emplace(key, value); return *this; }
-    inline Dimension& AddCalculatedAttributes(Aws::String&& key, const CalculatedAttributeDimension& value) { m_calculatedAttributesHasBeenSet = true; m_calculatedAttributes.emplace(std::move(key), value); return *this; }
-    inline Dimension& AddCalculatedAttributes(const Aws::String& key, CalculatedAttributeDimension&& value) { m_calculatedAttributesHasBeenSet = true; m_calculatedAttributes.emplace(key, std::move(value)); return *this; }
-    inline Dimension& AddCalculatedAttributes(Aws::String&& key, CalculatedAttributeDimension&& value) { m_calculatedAttributesHasBeenSet = true; m_calculatedAttributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline Dimension& AddCalculatedAttributes(const char* key, CalculatedAttributeDimension&& value) { m_calculatedAttributesHasBeenSet = true; m_calculatedAttributes.emplace(key, std::move(value)); return *this; }
-    inline Dimension& AddCalculatedAttributes(const char* key, const CalculatedAttributeDimension& value) { m_calculatedAttributesHasBeenSet = true; m_calculatedAttributes.emplace(key, value); return *this; }
+    template<typename CalculatedAttributesT = Aws::Map<Aws::String, CalculatedAttributeDimension>>
+    void SetCalculatedAttributes(CalculatedAttributesT&& value) { m_calculatedAttributesHasBeenSet = true; m_calculatedAttributes = std::forward<CalculatedAttributesT>(value); }
+    template<typename CalculatedAttributesT = Aws::Map<Aws::String, CalculatedAttributeDimension>>
+    Dimension& WithCalculatedAttributes(CalculatedAttributesT&& value) { SetCalculatedAttributes(std::forward<CalculatedAttributesT>(value)); return *this;}
+    template<typename CalculatedAttributesKeyT = Aws::String, typename CalculatedAttributesValueT = CalculatedAttributeDimension>
+    Dimension& AddCalculatedAttributes(CalculatedAttributesKeyT&& key, CalculatedAttributesValueT&& value) {
+      m_calculatedAttributesHasBeenSet = true; m_calculatedAttributes.emplace(std::forward<CalculatedAttributesKeyT>(key), std::forward<CalculatedAttributesValueT>(value)); return *this;
+    }
     ///@}
   private:
 

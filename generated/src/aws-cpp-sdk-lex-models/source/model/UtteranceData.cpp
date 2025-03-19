@@ -18,19 +18,7 @@ namespace LexModelBuildingService
 namespace Model
 {
 
-UtteranceData::UtteranceData() : 
-    m_utteranceStringHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_distinctUsers(0),
-    m_distinctUsersHasBeenSet(false),
-    m_firstUtteredDateHasBeenSet(false),
-    m_lastUtteredDateHasBeenSet(false)
-{
-}
-
 UtteranceData::UtteranceData(JsonView jsonValue)
-  : UtteranceData()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ UtteranceData& UtteranceData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("utteranceString"))
   {
     m_utteranceString = jsonValue.GetString("utteranceString");
-
     m_utteranceStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetInteger("count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("distinctUsers"))
   {
     m_distinctUsers = jsonValue.GetInteger("distinctUsers");
-
     m_distinctUsersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("firstUtteredDate"))
   {
     m_firstUtteredDate = jsonValue.GetDouble("firstUtteredDate");
-
     m_firstUtteredDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUtteredDate"))
   {
     m_lastUtteredDate = jsonValue.GetDouble("lastUtteredDate");
-
     m_lastUtteredDateHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class CreateWebACLResult
   {
   public:
-    AWS_WAFV2_API CreateWebACLResult();
+    AWS_WAFV2_API CreateWebACLResult() = default;
     AWS_WAFV2_API CreateWebACLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WAFV2_API CreateWebACLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,28 +40,28 @@ namespace Model
      * retrieve and manage a <code>WebACL</code>, and the ARN, that you provide to
      * operations like <a>AssociateWebACL</a>.</p>
      */
-    inline const WebACLSummary& GetSummary() const{ return m_summary; }
-    inline void SetSummary(const WebACLSummary& value) { m_summary = value; }
-    inline void SetSummary(WebACLSummary&& value) { m_summary = std::move(value); }
-    inline CreateWebACLResult& WithSummary(const WebACLSummary& value) { SetSummary(value); return *this;}
-    inline CreateWebACLResult& WithSummary(WebACLSummary&& value) { SetSummary(std::move(value)); return *this;}
+    inline const WebACLSummary& GetSummary() const { return m_summary; }
+    template<typename SummaryT = WebACLSummary>
+    void SetSummary(SummaryT&& value) { m_summaryHasBeenSet = true; m_summary = std::forward<SummaryT>(value); }
+    template<typename SummaryT = WebACLSummary>
+    CreateWebACLResult& WithSummary(SummaryT&& value) { SetSummary(std::forward<SummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateWebACLResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateWebACLResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateWebACLResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateWebACLResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     WebACLSummary m_summary;
+    bool m_summaryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,28 +12,6 @@ using namespace Aws::KinesisVideoArchivedMedia::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetImagesRequest::GetImagesRequest() : 
-    m_streamNameHasBeenSet(false),
-    m_streamARNHasBeenSet(false),
-    m_imageSelectorType(ImageSelectorType::NOT_SET),
-    m_imageSelectorTypeHasBeenSet(false),
-    m_startTimestampHasBeenSet(false),
-    m_endTimestampHasBeenSet(false),
-    m_samplingInterval(0),
-    m_samplingIntervalHasBeenSet(false),
-    m_format(Format::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_formatConfigHasBeenSet(false),
-    m_widthPixels(0),
-    m_widthPixelsHasBeenSet(false),
-    m_heightPixels(0),
-    m_heightPixelsHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetImagesRequest::SerializePayload() const
 {
   JsonValue payload;

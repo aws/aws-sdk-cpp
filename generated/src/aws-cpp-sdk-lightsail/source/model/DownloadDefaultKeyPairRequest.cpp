@@ -12,10 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DownloadDefaultKeyPairRequest::DownloadDefaultKeyPairRequest()
-{
-}
-
 Aws::String DownloadDefaultKeyPairRequest::SerializePayload() const
 {
   return "{}";

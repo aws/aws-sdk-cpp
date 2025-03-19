@@ -22,7 +22,7 @@ namespace Model
   class UpdateUserHierarchyStructureRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API UpdateUserHierarchyStructureRequest();
+    AWS_CONNECT_API UpdateUserHierarchyStructureRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,12 +37,12 @@ namespace Model
     /**
      * <p>The hierarchy levels to update.</p>
      */
-    inline const HierarchyStructureUpdate& GetHierarchyStructure() const{ return m_hierarchyStructure; }
+    inline const HierarchyStructureUpdate& GetHierarchyStructure() const { return m_hierarchyStructure; }
     inline bool HierarchyStructureHasBeenSet() const { return m_hierarchyStructureHasBeenSet; }
-    inline void SetHierarchyStructure(const HierarchyStructureUpdate& value) { m_hierarchyStructureHasBeenSet = true; m_hierarchyStructure = value; }
-    inline void SetHierarchyStructure(HierarchyStructureUpdate&& value) { m_hierarchyStructureHasBeenSet = true; m_hierarchyStructure = std::move(value); }
-    inline UpdateUserHierarchyStructureRequest& WithHierarchyStructure(const HierarchyStructureUpdate& value) { SetHierarchyStructure(value); return *this;}
-    inline UpdateUserHierarchyStructureRequest& WithHierarchyStructure(HierarchyStructureUpdate&& value) { SetHierarchyStructure(std::move(value)); return *this;}
+    template<typename HierarchyStructureT = HierarchyStructureUpdate>
+    void SetHierarchyStructure(HierarchyStructureT&& value) { m_hierarchyStructureHasBeenSet = true; m_hierarchyStructure = std::forward<HierarchyStructureT>(value); }
+    template<typename HierarchyStructureT = HierarchyStructureUpdate>
+    UpdateUserHierarchyStructureRequest& WithHierarchyStructure(HierarchyStructureT&& value) { SetHierarchyStructure(std::forward<HierarchyStructureT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,14 +51,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline UpdateUserHierarchyStructureRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline UpdateUserHierarchyStructureRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline UpdateUserHierarchyStructureRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    UpdateUserHierarchyStructureRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
   private:
 

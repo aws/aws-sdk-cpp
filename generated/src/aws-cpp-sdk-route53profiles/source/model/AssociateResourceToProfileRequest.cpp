@@ -12,14 +12,6 @@ using namespace Aws::Route53Profiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateResourceToProfileRequest::AssociateResourceToProfileRequest() : 
-    m_nameHasBeenSet(false),
-    m_profileIdHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_resourcePropertiesHasBeenSet(false)
-{
-}
-
 Aws::String AssociateResourceToProfileRequest::SerializePayload() const
 {
   JsonValue payload;

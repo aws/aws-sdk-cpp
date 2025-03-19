@@ -12,13 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateUserDefinedFunctionRequest::CreateUserDefinedFunctionRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_functionInputHasBeenSet(false)
-{
-}
-
 Aws::String CreateUserDefinedFunctionRequest::SerializePayload() const
 {
   JsonValue payload;

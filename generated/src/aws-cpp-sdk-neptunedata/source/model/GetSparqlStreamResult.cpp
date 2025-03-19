@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSparqlStreamResult::GetSparqlStreamResult() : 
-    m_lastTrxTimestampInMillis(0),
-    m_totalRecords(0)
-{
-}
-
 GetSparqlStreamResult::GetSparqlStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetSparqlStreamResult()
 {
   *this = result;
 }
@@ -39,20 +32,18 @@ GetSparqlStreamResult& GetSparqlStreamResult::operator =(const Aws::AmazonWebSer
     {
       m_lastEventId[lastEventIdItem.first] = lastEventIdItem.second.AsString();
     }
+    m_lastEventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastTrxTimestamp"))
   {
     m_lastTrxTimestampInMillis = jsonValue.GetInt64("lastTrxTimestamp");
-
+    m_lastTrxTimestampInMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("format"))
   {
     m_format = jsonValue.GetString("format");
-
+    m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("records"))
   {
     Aws::Utils::Array<JsonView> recordsJsonList = jsonValue.GetArray("records");
@@ -60,20 +51,20 @@ GetSparqlStreamResult& GetSparqlStreamResult::operator =(const Aws::AmazonWebSer
     {
       m_records.push_back(recordsJsonList[recordsIndex].AsObject());
     }
+    m_recordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalRecords"))
   {
     m_totalRecords = jsonValue.GetInteger("totalRecords");
-
+    m_totalRecordsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

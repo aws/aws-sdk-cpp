@@ -18,15 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-MapConfiguration::MapConfiguration() : 
-    m_styleHasBeenSet(false),
-    m_politicalViewHasBeenSet(false),
-    m_customLayersHasBeenSet(false)
-{
-}
-
 MapConfiguration::MapConfiguration(JsonView jsonValue)
-  : MapConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MapConfiguration& MapConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Style"))
   {
     m_style = jsonValue.GetString("Style");
-
     m_styleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PoliticalView"))
   {
     m_politicalView = jsonValue.GetString("PoliticalView");
-
     m_politicalViewHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomLayers"))
   {
     Aws::Utils::Array<JsonView> customLayersJsonList = jsonValue.GetArray("CustomLayers");
@@ -56,7 +44,6 @@ MapConfiguration& MapConfiguration::operator =(JsonView jsonValue)
     }
     m_customLayersHasBeenSet = true;
   }
-
   return *this;
 }
 

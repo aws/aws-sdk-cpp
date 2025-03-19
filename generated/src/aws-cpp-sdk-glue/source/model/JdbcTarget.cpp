@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-JdbcTarget::JdbcTarget() : 
-    m_connectionNameHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_exclusionsHasBeenSet(false),
-    m_enableAdditionalMetadataHasBeenSet(false)
-{
-}
-
 JdbcTarget::JdbcTarget(JsonView jsonValue)
-  : JdbcTarget()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ JdbcTarget& JdbcTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConnectionName"))
   {
     m_connectionName = jsonValue.GetString("ConnectionName");
-
     m_connectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Exclusions"))
   {
     Aws::Utils::Array<JsonView> exclusionsJsonList = jsonValue.GetArray("Exclusions");
@@ -57,7 +44,6 @@ JdbcTarget& JdbcTarget::operator =(JsonView jsonValue)
     }
     m_exclusionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableAdditionalMetadata"))
   {
     Aws::Utils::Array<JsonView> enableAdditionalMetadataJsonList = jsonValue.GetArray("EnableAdditionalMetadata");
@@ -67,7 +53,6 @@ JdbcTarget& JdbcTarget::operator =(JsonView jsonValue)
     }
     m_enableAdditionalMetadataHasBeenSet = true;
   }
-
   return *this;
 }
 

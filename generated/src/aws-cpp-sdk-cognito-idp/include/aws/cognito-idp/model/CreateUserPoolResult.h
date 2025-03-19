@@ -34,7 +34,7 @@ namespace Model
   class CreateUserPoolResult
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API CreateUserPoolResult();
+    AWS_COGNITOIDENTITYPROVIDER_API CreateUserPoolResult() = default;
     AWS_COGNITOIDENTITYPROVIDER_API CreateUserPoolResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOIDENTITYPROVIDER_API CreateUserPoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>The details of the created user pool.</p>
      */
-    inline const UserPoolType& GetUserPool() const{ return m_userPool; }
-    inline void SetUserPool(const UserPoolType& value) { m_userPool = value; }
-    inline void SetUserPool(UserPoolType&& value) { m_userPool = std::move(value); }
-    inline CreateUserPoolResult& WithUserPool(const UserPoolType& value) { SetUserPool(value); return *this;}
-    inline CreateUserPoolResult& WithUserPool(UserPoolType&& value) { SetUserPool(std::move(value)); return *this;}
+    inline const UserPoolType& GetUserPool() const { return m_userPool; }
+    template<typename UserPoolT = UserPoolType>
+    void SetUserPool(UserPoolT&& value) { m_userPoolHasBeenSet = true; m_userPool = std::forward<UserPoolT>(value); }
+    template<typename UserPoolT = UserPoolType>
+    CreateUserPoolResult& WithUserPool(UserPoolT&& value) { SetUserPool(std::forward<UserPoolT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateUserPoolResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateUserPoolResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateUserPoolResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateUserPoolResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     UserPoolType m_userPool;
+    bool m_userPoolHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

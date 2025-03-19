@@ -32,7 +32,7 @@ namespace Model
   class SamlConfigOptions
   {
   public:
-    AWS_OPENSEARCHSERVERLESS_API SamlConfigOptions();
+    AWS_OPENSEARCHSERVERLESS_API SamlConfigOptions() = default;
     AWS_OPENSEARCHSERVERLESS_API SamlConfigOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVERLESS_API SamlConfigOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The XML IdP metadata file generated from your identity provider.</p>
      */
-    inline const Aws::String& GetMetadata() const{ return m_metadata; }
+    inline const Aws::String& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline void SetMetadata(const char* value) { m_metadataHasBeenSet = true; m_metadata.assign(value); }
-    inline SamlConfigOptions& WithMetadata(const Aws::String& value) { SetMetadata(value); return *this;}
-    inline SamlConfigOptions& WithMetadata(Aws::String&& value) { SetMetadata(std::move(value)); return *this;}
-    inline SamlConfigOptions& WithMetadata(const char* value) { SetMetadata(value); return *this;}
+    template<typename MetadataT = Aws::String>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Aws::String>
+    SamlConfigOptions& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A user attribute for this SAML integration.</p>
      */
-    inline const Aws::String& GetUserAttribute() const{ return m_userAttribute; }
+    inline const Aws::String& GetUserAttribute() const { return m_userAttribute; }
     inline bool UserAttributeHasBeenSet() const { return m_userAttributeHasBeenSet; }
-    inline void SetUserAttribute(const Aws::String& value) { m_userAttributeHasBeenSet = true; m_userAttribute = value; }
-    inline void SetUserAttribute(Aws::String&& value) { m_userAttributeHasBeenSet = true; m_userAttribute = std::move(value); }
-    inline void SetUserAttribute(const char* value) { m_userAttributeHasBeenSet = true; m_userAttribute.assign(value); }
-    inline SamlConfigOptions& WithUserAttribute(const Aws::String& value) { SetUserAttribute(value); return *this;}
-    inline SamlConfigOptions& WithUserAttribute(Aws::String&& value) { SetUserAttribute(std::move(value)); return *this;}
-    inline SamlConfigOptions& WithUserAttribute(const char* value) { SetUserAttribute(value); return *this;}
+    template<typename UserAttributeT = Aws::String>
+    void SetUserAttribute(UserAttributeT&& value) { m_userAttributeHasBeenSet = true; m_userAttribute = std::forward<UserAttributeT>(value); }
+    template<typename UserAttributeT = Aws::String>
+    SamlConfigOptions& WithUserAttribute(UserAttributeT&& value) { SetUserAttribute(std::forward<UserAttributeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The group attribute for this SAML integration.</p>
      */
-    inline const Aws::String& GetGroupAttribute() const{ return m_groupAttribute; }
+    inline const Aws::String& GetGroupAttribute() const { return m_groupAttribute; }
     inline bool GroupAttributeHasBeenSet() const { return m_groupAttributeHasBeenSet; }
-    inline void SetGroupAttribute(const Aws::String& value) { m_groupAttributeHasBeenSet = true; m_groupAttribute = value; }
-    inline void SetGroupAttribute(Aws::String&& value) { m_groupAttributeHasBeenSet = true; m_groupAttribute = std::move(value); }
-    inline void SetGroupAttribute(const char* value) { m_groupAttributeHasBeenSet = true; m_groupAttribute.assign(value); }
-    inline SamlConfigOptions& WithGroupAttribute(const Aws::String& value) { SetGroupAttribute(value); return *this;}
-    inline SamlConfigOptions& WithGroupAttribute(Aws::String&& value) { SetGroupAttribute(std::move(value)); return *this;}
-    inline SamlConfigOptions& WithGroupAttribute(const char* value) { SetGroupAttribute(value); return *this;}
+    template<typename GroupAttributeT = Aws::String>
+    void SetGroupAttribute(GroupAttributeT&& value) { m_groupAttributeHasBeenSet = true; m_groupAttribute = std::forward<GroupAttributeT>(value); }
+    template<typename GroupAttributeT = Aws::String>
+    SamlConfigOptions& WithGroupAttribute(GroupAttributeT&& value) { SetGroupAttribute(std::forward<GroupAttributeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,21 +79,19 @@ namespace Model
      * <p>Custom entity id attribute to override default entity id for this saml
      * integration.</p>
      */
-    inline const Aws::String& GetOpenSearchServerlessEntityId() const{ return m_openSearchServerlessEntityId; }
+    inline const Aws::String& GetOpenSearchServerlessEntityId() const { return m_openSearchServerlessEntityId; }
     inline bool OpenSearchServerlessEntityIdHasBeenSet() const { return m_openSearchServerlessEntityIdHasBeenSet; }
-    inline void SetOpenSearchServerlessEntityId(const Aws::String& value) { m_openSearchServerlessEntityIdHasBeenSet = true; m_openSearchServerlessEntityId = value; }
-    inline void SetOpenSearchServerlessEntityId(Aws::String&& value) { m_openSearchServerlessEntityIdHasBeenSet = true; m_openSearchServerlessEntityId = std::move(value); }
-    inline void SetOpenSearchServerlessEntityId(const char* value) { m_openSearchServerlessEntityIdHasBeenSet = true; m_openSearchServerlessEntityId.assign(value); }
-    inline SamlConfigOptions& WithOpenSearchServerlessEntityId(const Aws::String& value) { SetOpenSearchServerlessEntityId(value); return *this;}
-    inline SamlConfigOptions& WithOpenSearchServerlessEntityId(Aws::String&& value) { SetOpenSearchServerlessEntityId(std::move(value)); return *this;}
-    inline SamlConfigOptions& WithOpenSearchServerlessEntityId(const char* value) { SetOpenSearchServerlessEntityId(value); return *this;}
+    template<typename OpenSearchServerlessEntityIdT = Aws::String>
+    void SetOpenSearchServerlessEntityId(OpenSearchServerlessEntityIdT&& value) { m_openSearchServerlessEntityIdHasBeenSet = true; m_openSearchServerlessEntityId = std::forward<OpenSearchServerlessEntityIdT>(value); }
+    template<typename OpenSearchServerlessEntityIdT = Aws::String>
+    SamlConfigOptions& WithOpenSearchServerlessEntityId(OpenSearchServerlessEntityIdT&& value) { SetOpenSearchServerlessEntityId(std::forward<OpenSearchServerlessEntityIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The session timeout, in minutes. Default is 60 minutes (12 hours).</p>
      */
-    inline int GetSessionTimeout() const{ return m_sessionTimeout; }
+    inline int GetSessionTimeout() const { return m_sessionTimeout; }
     inline bool SessionTimeoutHasBeenSet() const { return m_sessionTimeoutHasBeenSet; }
     inline void SetSessionTimeout(int value) { m_sessionTimeoutHasBeenSet = true; m_sessionTimeout = value; }
     inline SamlConfigOptions& WithSessionTimeout(int value) { SetSessionTimeout(value); return *this;}
@@ -118,7 +110,7 @@ namespace Model
     Aws::String m_openSearchServerlessEntityId;
     bool m_openSearchServerlessEntityIdHasBeenSet = false;
 
-    int m_sessionTimeout;
+    int m_sessionTimeout{0};
     bool m_sessionTimeoutHasBeenSet = false;
   };
 

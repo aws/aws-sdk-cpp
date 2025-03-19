@@ -33,7 +33,7 @@ namespace Model
   class IndexAction
   {
   public:
-    AWS_BACKUP_API IndexAction();
+    AWS_BACKUP_API IndexAction() = default;
     AWS_BACKUP_API IndexAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API IndexAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,15 +46,14 @@ namespace Model
      * </li> <li> <p> <code>S3</code> for Amazon Simple Storage Service (Amazon S3)</p>
      * </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceTypes() const{ return m_resourceTypes; }
+    inline const Aws::Vector<Aws::String>& GetResourceTypes() const { return m_resourceTypes; }
     inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
-    inline void SetResourceTypes(const Aws::Vector<Aws::String>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
-    inline void SetResourceTypes(Aws::Vector<Aws::String>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
-    inline IndexAction& WithResourceTypes(const Aws::Vector<Aws::String>& value) { SetResourceTypes(value); return *this;}
-    inline IndexAction& WithResourceTypes(Aws::Vector<Aws::String>&& value) { SetResourceTypes(std::move(value)); return *this;}
-    inline IndexAction& AddResourceTypes(const Aws::String& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
-    inline IndexAction& AddResourceTypes(Aws::String&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
-    inline IndexAction& AddResourceTypes(const char* value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
+    template<typename ResourceTypesT = Aws::Vector<Aws::String>>
+    void SetResourceTypes(ResourceTypesT&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::forward<ResourceTypesT>(value); }
+    template<typename ResourceTypesT = Aws::Vector<Aws::String>>
+    IndexAction& WithResourceTypes(ResourceTypesT&& value) { SetResourceTypes(std::forward<ResourceTypesT>(value)); return *this;}
+    template<typename ResourceTypesT = Aws::String>
+    IndexAction& AddResourceTypes(ResourceTypesT&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.emplace_back(std::forward<ResourceTypesT>(value)); return *this; }
     ///@}
   private:
 

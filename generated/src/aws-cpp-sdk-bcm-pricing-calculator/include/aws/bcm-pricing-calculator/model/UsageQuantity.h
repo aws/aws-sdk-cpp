@@ -33,7 +33,7 @@ namespace Model
   class UsageQuantity
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API UsageQuantity();
+    AWS_BCMPRICINGCALCULATOR_API UsageQuantity() = default;
     AWS_BCMPRICINGCALCULATOR_API UsageQuantity(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API UsageQuantity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,46 +43,44 @@ namespace Model
     /**
      * <p> The start hour of the usage period. </p>
      */
-    inline const Aws::Utils::DateTime& GetStartHour() const{ return m_startHour; }
+    inline const Aws::Utils::DateTime& GetStartHour() const { return m_startHour; }
     inline bool StartHourHasBeenSet() const { return m_startHourHasBeenSet; }
-    inline void SetStartHour(const Aws::Utils::DateTime& value) { m_startHourHasBeenSet = true; m_startHour = value; }
-    inline void SetStartHour(Aws::Utils::DateTime&& value) { m_startHourHasBeenSet = true; m_startHour = std::move(value); }
-    inline UsageQuantity& WithStartHour(const Aws::Utils::DateTime& value) { SetStartHour(value); return *this;}
-    inline UsageQuantity& WithStartHour(Aws::Utils::DateTime&& value) { SetStartHour(std::move(value)); return *this;}
+    template<typename StartHourT = Aws::Utils::DateTime>
+    void SetStartHour(StartHourT&& value) { m_startHourHasBeenSet = true; m_startHour = std::forward<StartHourT>(value); }
+    template<typename StartHourT = Aws::Utils::DateTime>
+    UsageQuantity& WithStartHour(StartHourT&& value) { SetStartHour(std::forward<StartHourT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The unit of measurement for the usage quantity. </p>
      */
-    inline const Aws::String& GetUnit() const{ return m_unit; }
+    inline const Aws::String& GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const Aws::String& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(Aws::String&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline void SetUnit(const char* value) { m_unitHasBeenSet = true; m_unit.assign(value); }
-    inline UsageQuantity& WithUnit(const Aws::String& value) { SetUnit(value); return *this;}
-    inline UsageQuantity& WithUnit(Aws::String&& value) { SetUnit(std::move(value)); return *this;}
-    inline UsageQuantity& WithUnit(const char* value) { SetUnit(value); return *this;}
+    template<typename UnitT = Aws::String>
+    void SetUnit(UnitT&& value) { m_unitHasBeenSet = true; m_unit = std::forward<UnitT>(value); }
+    template<typename UnitT = Aws::String>
+    UsageQuantity& WithUnit(UnitT&& value) { SetUnit(std::forward<UnitT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The numeric value of the usage quantity. </p>
      */
-    inline double GetAmount() const{ return m_amount; }
+    inline double GetAmount() const { return m_amount; }
     inline bool AmountHasBeenSet() const { return m_amountHasBeenSet; }
     inline void SetAmount(double value) { m_amountHasBeenSet = true; m_amount = value; }
     inline UsageQuantity& WithAmount(double value) { SetAmount(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_startHour;
+    Aws::Utils::DateTime m_startHour{};
     bool m_startHourHasBeenSet = false;
 
     Aws::String m_unit;
     bool m_unitHasBeenSet = false;
 
-    double m_amount;
+    double m_amount{0.0};
     bool m_amountHasBeenSet = false;
   };
 

@@ -18,15 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-S3AccessPointConfiguration::S3AccessPointConfiguration() : 
-    m_accessPointPolicyHasBeenSet(false),
-    m_publicAccessBlockHasBeenSet(false),
-    m_networkOriginHasBeenSet(false)
-{
-}
-
 S3AccessPointConfiguration::S3AccessPointConfiguration(JsonView jsonValue)
-  : S3AccessPointConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ S3AccessPointConfiguration& S3AccessPointConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("accessPointPolicy"))
   {
     m_accessPointPolicy = jsonValue.GetString("accessPointPolicy");
-
     m_accessPointPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicAccessBlock"))
   {
     m_publicAccessBlock = jsonValue.GetObject("publicAccessBlock");
-
     m_publicAccessBlockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkOrigin"))
   {
     m_networkOrigin = jsonValue.GetObject("networkOrigin");
-
     m_networkOriginHasBeenSet = true;
   }
-
   return *this;
 }
 

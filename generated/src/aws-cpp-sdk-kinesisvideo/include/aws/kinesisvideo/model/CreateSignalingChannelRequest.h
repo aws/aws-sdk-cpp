@@ -25,7 +25,7 @@ namespace Model
   class CreateSignalingChannelRequest : public KinesisVideoRequest
   {
   public:
-    AWS_KINESISVIDEO_API CreateSignalingChannelRequest();
+    AWS_KINESISVIDEO_API CreateSignalingChannelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>A name for the signaling channel that you are creating. It must be unique for
      * each Amazon Web Services account and Amazon Web Services Region.</p>
      */
-    inline const Aws::String& GetChannelName() const{ return m_channelName; }
+    inline const Aws::String& GetChannelName() const { return m_channelName; }
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
-    inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
-    inline void SetChannelName(Aws::String&& value) { m_channelNameHasBeenSet = true; m_channelName = std::move(value); }
-    inline void SetChannelName(const char* value) { m_channelNameHasBeenSet = true; m_channelName.assign(value); }
-    inline CreateSignalingChannelRequest& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
-    inline CreateSignalingChannelRequest& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
-    inline CreateSignalingChannelRequest& WithChannelName(const char* value) { SetChannelName(value); return *this;}
+    template<typename ChannelNameT = Aws::String>
+    void SetChannelName(ChannelNameT&& value) { m_channelNameHasBeenSet = true; m_channelName = std::forward<ChannelNameT>(value); }
+    template<typename ChannelNameT = Aws::String>
+    CreateSignalingChannelRequest& WithChannelName(ChannelNameT&& value) { SetChannelName(std::forward<ChannelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +54,10 @@ namespace Model
      * <p>A type of the signaling channel that you are creating. Currently,
      * <code>SINGLE_MASTER</code> is the only supported channel type. </p>
      */
-    inline const ChannelType& GetChannelType() const{ return m_channelType; }
+    inline ChannelType GetChannelType() const { return m_channelType; }
     inline bool ChannelTypeHasBeenSet() const { return m_channelTypeHasBeenSet; }
-    inline void SetChannelType(const ChannelType& value) { m_channelTypeHasBeenSet = true; m_channelType = value; }
-    inline void SetChannelType(ChannelType&& value) { m_channelTypeHasBeenSet = true; m_channelType = std::move(value); }
-    inline CreateSignalingChannelRequest& WithChannelType(const ChannelType& value) { SetChannelType(value); return *this;}
-    inline CreateSignalingChannelRequest& WithChannelType(ChannelType&& value) { SetChannelType(std::move(value)); return *this;}
+    inline void SetChannelType(ChannelType value) { m_channelTypeHasBeenSet = true; m_channelType = value; }
+    inline CreateSignalingChannelRequest& WithChannelType(ChannelType value) { SetChannelType(value); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +65,12 @@ namespace Model
      * <p>A structure containing the configuration for the <code>SINGLE_MASTER</code>
      * channel type. </p>
      */
-    inline const SingleMasterConfiguration& GetSingleMasterConfiguration() const{ return m_singleMasterConfiguration; }
+    inline const SingleMasterConfiguration& GetSingleMasterConfiguration() const { return m_singleMasterConfiguration; }
     inline bool SingleMasterConfigurationHasBeenSet() const { return m_singleMasterConfigurationHasBeenSet; }
-    inline void SetSingleMasterConfiguration(const SingleMasterConfiguration& value) { m_singleMasterConfigurationHasBeenSet = true; m_singleMasterConfiguration = value; }
-    inline void SetSingleMasterConfiguration(SingleMasterConfiguration&& value) { m_singleMasterConfigurationHasBeenSet = true; m_singleMasterConfiguration = std::move(value); }
-    inline CreateSignalingChannelRequest& WithSingleMasterConfiguration(const SingleMasterConfiguration& value) { SetSingleMasterConfiguration(value); return *this;}
-    inline CreateSignalingChannelRequest& WithSingleMasterConfiguration(SingleMasterConfiguration&& value) { SetSingleMasterConfiguration(std::move(value)); return *this;}
+    template<typename SingleMasterConfigurationT = SingleMasterConfiguration>
+    void SetSingleMasterConfiguration(SingleMasterConfigurationT&& value) { m_singleMasterConfigurationHasBeenSet = true; m_singleMasterConfiguration = std::forward<SingleMasterConfigurationT>(value); }
+    template<typename SingleMasterConfigurationT = SingleMasterConfiguration>
+    CreateSignalingChannelRequest& WithSingleMasterConfiguration(SingleMasterConfigurationT&& value) { SetSingleMasterConfiguration(std::forward<SingleMasterConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,21 +78,21 @@ namespace Model
      * <p>A set of tags (key-value pairs) that you want to associate with this
      * channel.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateSignalingChannelRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateSignalingChannelRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateSignalingChannelRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateSignalingChannelRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateSignalingChannelRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateSignalingChannelRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_channelName;
     bool m_channelNameHasBeenSet = false;
 
-    ChannelType m_channelType;
+    ChannelType m_channelType{ChannelType::NOT_SET};
     bool m_channelTypeHasBeenSet = false;
 
     SingleMasterConfiguration m_singleMasterConfiguration;

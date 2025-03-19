@@ -20,43 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Snapshot::Snapshot() : 
-    m_ownerAliasHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_storageTier(StorageTier::NOT_SET),
-    m_storageTierHasBeenSet(false),
-    m_restoreExpiryTimeHasBeenSet(false),
-    m_sseType(SSEType::NOT_SET),
-    m_sseTypeHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_transferType(TransferType::NOT_SET),
-    m_transferTypeHasBeenSet(false),
-    m_completionDurationMinutes(0),
-    m_completionDurationMinutesHasBeenSet(false),
-    m_completionTimeHasBeenSet(false),
-    m_fullSnapshotSizeInBytes(0),
-    m_fullSnapshotSizeInBytesHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_state(SnapshotState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateMessageHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_progressHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_volumeSize(0),
-    m_volumeSizeHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_dataEncryptionKeyIdHasBeenSet(false)
-{
-}
-
 Snapshot::Snapshot(const XmlNode& xmlNode)
-  : Snapshot()
 {
   *this = xmlNode;
 }
@@ -83,6 +47,7 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -94,7 +59,7 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
     XmlNode storageTierNode = resultNode.FirstChild("storageTier");
     if(!storageTierNode.IsNull())
     {
-      m_storageTier = StorageTierMapper::GetStorageTierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageTierNode.GetText()).c_str()).c_str());
+      m_storageTier = StorageTierMapper::GetStorageTierForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageTierNode.GetText()).c_str()));
       m_storageTierHasBeenSet = true;
     }
     XmlNode restoreExpiryTimeNode = resultNode.FirstChild("restoreExpiryTime");
@@ -106,7 +71,7 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
     XmlNode sseTypeNode = resultNode.FirstChild("sseType");
     if(!sseTypeNode.IsNull())
     {
-      m_sseType = SSETypeMapper::GetSSETypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sseTypeNode.GetText()).c_str()).c_str());
+      m_sseType = SSETypeMapper::GetSSETypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sseTypeNode.GetText()).c_str()));
       m_sseTypeHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");
@@ -118,7 +83,7 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
     XmlNode transferTypeNode = resultNode.FirstChild("transferType");
     if(!transferTypeNode.IsNull())
     {
-      m_transferType = TransferTypeMapper::GetTransferTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transferTypeNode.GetText()).c_str()).c_str());
+      m_transferType = TransferTypeMapper::GetTransferTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transferTypeNode.GetText()).c_str()));
       m_transferTypeHasBeenSet = true;
     }
     XmlNode completionDurationMinutesNode = resultNode.FirstChild("completionDurationMinutes");
@@ -154,7 +119,7 @@ Snapshot& Snapshot::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("status");
     if(!stateNode.IsNull())
     {
-      m_state = SnapshotStateMapper::GetSnapshotStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = SnapshotStateMapper::GetSnapshotStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode stateMessageNode = resultNode.FirstChild("statusMessage");

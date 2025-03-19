@@ -21,7 +21,7 @@ namespace Model
   class RegisterSlackWorkspaceForOrganizationRequest : public SupportAppRequest
   {
   public:
-    AWS_SUPPORTAPP_API RegisterSlackWorkspaceForOrganizationRequest();
+    AWS_SUPPORTAPP_API RegisterSlackWorkspaceForOrganizationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * <code>T012ABCDEFG</code>. Specify the Slack workspace that you want to use for
      * your organization.</p>
      */
-    inline const Aws::String& GetTeamId() const{ return m_teamId; }
+    inline const Aws::String& GetTeamId() const { return m_teamId; }
     inline bool TeamIdHasBeenSet() const { return m_teamIdHasBeenSet; }
-    inline void SetTeamId(const Aws::String& value) { m_teamIdHasBeenSet = true; m_teamId = value; }
-    inline void SetTeamId(Aws::String&& value) { m_teamIdHasBeenSet = true; m_teamId = std::move(value); }
-    inline void SetTeamId(const char* value) { m_teamIdHasBeenSet = true; m_teamId.assign(value); }
-    inline RegisterSlackWorkspaceForOrganizationRequest& WithTeamId(const Aws::String& value) { SetTeamId(value); return *this;}
-    inline RegisterSlackWorkspaceForOrganizationRequest& WithTeamId(Aws::String&& value) { SetTeamId(std::move(value)); return *this;}
-    inline RegisterSlackWorkspaceForOrganizationRequest& WithTeamId(const char* value) { SetTeamId(value); return *this;}
+    template<typename TeamIdT = Aws::String>
+    void SetTeamId(TeamIdT&& value) { m_teamIdHasBeenSet = true; m_teamId = std::forward<TeamIdT>(value); }
+    template<typename TeamIdT = Aws::String>
+    RegisterSlackWorkspaceForOrganizationRequest& WithTeamId(TeamIdT&& value) { SetTeamId(std::forward<TeamIdT>(value)); return *this;}
     ///@}
   private:
 

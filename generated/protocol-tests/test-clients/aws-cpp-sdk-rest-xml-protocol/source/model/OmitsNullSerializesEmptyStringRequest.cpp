@@ -17,11 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-OmitsNullSerializesEmptyStringRequest::OmitsNullSerializesEmptyStringRequest() : 
-    m_nullValueHasBeenSet(false),
-    m_emptyStringHasBeenSet(false)
-{
-}
 
 Aws::String OmitsNullSerializesEmptyStringRequest::SerializePayload() const
 {

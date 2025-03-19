@@ -12,13 +12,6 @@ using namespace Aws::NetworkFlowMonitor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateScopeRequest::UpdateScopeRequest() : 
-    m_scopeIdHasBeenSet(false),
-    m_resourcesToAddHasBeenSet(false),
-    m_resourcesToDeleteHasBeenSet(false)
-{
-}
-
 Aws::String UpdateScopeRequest::SerializePayload() const
 {
   JsonValue payload;

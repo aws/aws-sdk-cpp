@@ -20,21 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-CloudFrontOriginAccessIdentityList::CloudFrontOriginAccessIdentityList() : 
-    m_markerHasBeenSet(false),
-    m_nextMarkerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_isTruncated(false),
-    m_isTruncatedHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 CloudFrontOriginAccessIdentityList::CloudFrontOriginAccessIdentityList(const XmlNode& xmlNode)
-  : CloudFrontOriginAccessIdentityList()
 {
   *this = xmlNode;
 }
@@ -79,6 +65,7 @@ CloudFrontOriginAccessIdentityList& CloudFrontOriginAccessIdentityList::operator
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("CloudFrontOriginAccessIdentitySummary");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember);

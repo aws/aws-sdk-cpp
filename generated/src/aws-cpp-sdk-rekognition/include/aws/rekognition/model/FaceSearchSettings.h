@@ -34,7 +34,7 @@ namespace Model
   class FaceSearchSettings
   {
   public:
-    AWS_REKOGNITION_API FaceSearchSettings();
+    AWS_REKOGNITION_API FaceSearchSettings() = default;
     AWS_REKOGNITION_API FaceSearchSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API FaceSearchSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The ID of a collection that contains faces that you want to search for.</p>
      */
-    inline const Aws::String& GetCollectionId() const{ return m_collectionId; }
+    inline const Aws::String& GetCollectionId() const { return m_collectionId; }
     inline bool CollectionIdHasBeenSet() const { return m_collectionIdHasBeenSet; }
-    inline void SetCollectionId(const Aws::String& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
-    inline void SetCollectionId(Aws::String&& value) { m_collectionIdHasBeenSet = true; m_collectionId = std::move(value); }
-    inline void SetCollectionId(const char* value) { m_collectionIdHasBeenSet = true; m_collectionId.assign(value); }
-    inline FaceSearchSettings& WithCollectionId(const Aws::String& value) { SetCollectionId(value); return *this;}
-    inline FaceSearchSettings& WithCollectionId(Aws::String&& value) { SetCollectionId(std::move(value)); return *this;}
-    inline FaceSearchSettings& WithCollectionId(const char* value) { SetCollectionId(value); return *this;}
+    template<typename CollectionIdT = Aws::String>
+    void SetCollectionId(CollectionIdT&& value) { m_collectionIdHasBeenSet = true; m_collectionId = std::forward<CollectionIdT>(value); }
+    template<typename CollectionIdT = Aws::String>
+    FaceSearchSettings& WithCollectionId(CollectionIdT&& value) { SetCollectionId(std::forward<CollectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * highest confidence. Values between 0 and 100 are accepted, and values lower than
      * 80 are set to 80.</p>
      */
-    inline double GetFaceMatchThreshold() const{ return m_faceMatchThreshold; }
+    inline double GetFaceMatchThreshold() const { return m_faceMatchThreshold; }
     inline bool FaceMatchThresholdHasBeenSet() const { return m_faceMatchThresholdHasBeenSet; }
     inline void SetFaceMatchThreshold(double value) { m_faceMatchThresholdHasBeenSet = true; m_faceMatchThreshold = value; }
     inline FaceSearchSettings& WithFaceMatchThreshold(double value) { SetFaceMatchThreshold(value); return *this;}
@@ -71,7 +69,7 @@ namespace Model
     Aws::String m_collectionId;
     bool m_collectionIdHasBeenSet = false;
 
-    double m_faceMatchThreshold;
+    double m_faceMatchThreshold{0.0};
     bool m_faceMatchThresholdHasBeenSet = false;
   };
 

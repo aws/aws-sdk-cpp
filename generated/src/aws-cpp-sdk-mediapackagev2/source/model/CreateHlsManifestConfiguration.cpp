@@ -18,23 +18,7 @@ namespace mediapackagev2
 namespace Model
 {
 
-CreateHlsManifestConfiguration::CreateHlsManifestConfiguration() : 
-    m_manifestNameHasBeenSet(false),
-    m_childManifestNameHasBeenSet(false),
-    m_scteHlsHasBeenSet(false),
-    m_startTagHasBeenSet(false),
-    m_manifestWindowSeconds(0),
-    m_manifestWindowSecondsHasBeenSet(false),
-    m_programDateTimeIntervalSeconds(0),
-    m_programDateTimeIntervalSecondsHasBeenSet(false),
-    m_filterConfigurationHasBeenSet(false),
-    m_urlEncodeChildManifest(false),
-    m_urlEncodeChildManifestHasBeenSet(false)
-{
-}
-
 CreateHlsManifestConfiguration::CreateHlsManifestConfiguration(JsonView jsonValue)
-  : CreateHlsManifestConfiguration()
 {
   *this = jsonValue;
 }
@@ -44,59 +28,43 @@ CreateHlsManifestConfiguration& CreateHlsManifestConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("ManifestName"))
   {
     m_manifestName = jsonValue.GetString("ManifestName");
-
     m_manifestNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChildManifestName"))
   {
     m_childManifestName = jsonValue.GetString("ChildManifestName");
-
     m_childManifestNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScteHls"))
   {
     m_scteHls = jsonValue.GetObject("ScteHls");
-
     m_scteHlsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTag"))
   {
     m_startTag = jsonValue.GetObject("StartTag");
-
     m_startTagHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManifestWindowSeconds"))
   {
     m_manifestWindowSeconds = jsonValue.GetInteger("ManifestWindowSeconds");
-
     m_manifestWindowSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProgramDateTimeIntervalSeconds"))
   {
     m_programDateTimeIntervalSeconds = jsonValue.GetInteger("ProgramDateTimeIntervalSeconds");
-
     m_programDateTimeIntervalSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FilterConfiguration"))
   {
     m_filterConfiguration = jsonValue.GetObject("FilterConfiguration");
-
     m_filterConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UrlEncodeChildManifest"))
   {
     m_urlEncodeChildManifest = jsonValue.GetBool("UrlEncodeChildManifest");
-
     m_urlEncodeChildManifestHasBeenSet = true;
   }
-
   return *this;
 }
 

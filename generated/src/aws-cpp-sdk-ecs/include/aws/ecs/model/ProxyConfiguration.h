@@ -42,7 +42,7 @@ namespace Model
   class ProxyConfiguration
   {
   public:
-    AWS_ECS_API ProxyConfiguration();
+    AWS_ECS_API ProxyConfiguration() = default;
     AWS_ECS_API ProxyConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API ProxyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,26 +52,22 @@ namespace Model
     /**
      * <p>The proxy type. The only supported value is <code>APPMESH</code>.</p>
      */
-    inline const ProxyConfigurationType& GetType() const{ return m_type; }
+    inline ProxyConfigurationType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ProxyConfigurationType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ProxyConfigurationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ProxyConfiguration& WithType(const ProxyConfigurationType& value) { SetType(value); return *this;}
-    inline ProxyConfiguration& WithType(ProxyConfigurationType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ProxyConfigurationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ProxyConfiguration& WithType(ProxyConfigurationType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the container that will serve as the App Mesh proxy.</p>
      */
-    inline const Aws::String& GetContainerName() const{ return m_containerName; }
+    inline const Aws::String& GetContainerName() const { return m_containerName; }
     inline bool ContainerNameHasBeenSet() const { return m_containerNameHasBeenSet; }
-    inline void SetContainerName(const Aws::String& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
-    inline void SetContainerName(Aws::String&& value) { m_containerNameHasBeenSet = true; m_containerName = std::move(value); }
-    inline void SetContainerName(const char* value) { m_containerNameHasBeenSet = true; m_containerName.assign(value); }
-    inline ProxyConfiguration& WithContainerName(const Aws::String& value) { SetContainerName(value); return *this;}
-    inline ProxyConfiguration& WithContainerName(Aws::String&& value) { SetContainerName(std::move(value)); return *this;}
-    inline ProxyConfiguration& WithContainerName(const char* value) { SetContainerName(value); return *this;}
+    template<typename ContainerNameT = Aws::String>
+    void SetContainerName(ContainerNameT&& value) { m_containerNameHasBeenSet = true; m_containerName = std::forward<ContainerNameT>(value); }
+    template<typename ContainerNameT = Aws::String>
+    ProxyConfiguration& WithContainerName(ContainerNameT&& value) { SetContainerName(std::forward<ContainerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,18 +95,18 @@ namespace Model
      * specified IP addresses is ignored and not redirected to the
      * <code>ProxyEgressPort</code>. It can be an empty list.</p> </li> </ul>
      */
-    inline const Aws::Vector<KeyValuePair>& GetProperties() const{ return m_properties; }
+    inline const Aws::Vector<KeyValuePair>& GetProperties() const { return m_properties; }
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
-    inline void SetProperties(const Aws::Vector<KeyValuePair>& value) { m_propertiesHasBeenSet = true; m_properties = value; }
-    inline void SetProperties(Aws::Vector<KeyValuePair>&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
-    inline ProxyConfiguration& WithProperties(const Aws::Vector<KeyValuePair>& value) { SetProperties(value); return *this;}
-    inline ProxyConfiguration& WithProperties(Aws::Vector<KeyValuePair>&& value) { SetProperties(std::move(value)); return *this;}
-    inline ProxyConfiguration& AddProperties(const KeyValuePair& value) { m_propertiesHasBeenSet = true; m_properties.push_back(value); return *this; }
-    inline ProxyConfiguration& AddProperties(KeyValuePair&& value) { m_propertiesHasBeenSet = true; m_properties.push_back(std::move(value)); return *this; }
+    template<typename PropertiesT = Aws::Vector<KeyValuePair>>
+    void SetProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties = std::forward<PropertiesT>(value); }
+    template<typename PropertiesT = Aws::Vector<KeyValuePair>>
+    ProxyConfiguration& WithProperties(PropertiesT&& value) { SetProperties(std::forward<PropertiesT>(value)); return *this;}
+    template<typename PropertiesT = KeyValuePair>
+    ProxyConfiguration& AddProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties.emplace_back(std::forward<PropertiesT>(value)); return *this; }
     ///@}
   private:
 
-    ProxyConfigurationType m_type;
+    ProxyConfigurationType m_type{ProxyConfigurationType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_containerName;

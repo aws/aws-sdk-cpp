@@ -20,14 +20,7 @@ namespace SimpleDB
 namespace Model
 {
 
-ReplaceableItem::ReplaceableItem() : 
-    m_nameHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 ReplaceableItem::ReplaceableItem(const XmlNode& xmlNode)
-  : ReplaceableItem()
 {
   *this = xmlNode;
 }
@@ -48,6 +41,7 @@ ReplaceableItem& ReplaceableItem::operator =(const XmlNode& xmlNode)
     if(!attributesNode.IsNull())
     {
       XmlNode attributeMember = attributesNode;
+      m_attributesHasBeenSet = !attributeMember.IsNull();
       while(!attributeMember.IsNull())
       {
         m_attributes.push_back(attributeMember);

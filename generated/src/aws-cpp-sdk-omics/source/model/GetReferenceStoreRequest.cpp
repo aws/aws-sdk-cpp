@@ -12,11 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetReferenceStoreRequest::GetReferenceStoreRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetReferenceStoreRequest::SerializePayload() const
 {
   return {};

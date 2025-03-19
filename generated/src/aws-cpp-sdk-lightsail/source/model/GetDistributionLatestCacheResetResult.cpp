@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDistributionLatestCacheResetResult::GetDistributionLatestCacheResetResult()
-{
-}
-
 GetDistributionLatestCacheResetResult::GetDistributionLatestCacheResetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetDistributionLatestCacheResetResult& GetDistributionLatestCacheResetResult::op
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetDouble("createTime");
-
+    m_createTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

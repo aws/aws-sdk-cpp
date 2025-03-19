@@ -34,7 +34,7 @@ namespace Model
   class FileSource
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API FileSource();
+    AWS_BEDROCKAGENTRUNTIME_API FileSource() = default;
     AWS_BEDROCKAGENTRUNTIME_API FileSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API FileSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,36 +44,34 @@ namespace Model
     /**
      * <p>The data and the text of the attached files.</p>
      */
-    inline const ByteContentFile& GetByteContent() const{ return m_byteContent; }
+    inline const ByteContentFile& GetByteContent() const { return m_byteContent; }
     inline bool ByteContentHasBeenSet() const { return m_byteContentHasBeenSet; }
-    inline void SetByteContent(const ByteContentFile& value) { m_byteContentHasBeenSet = true; m_byteContent = value; }
-    inline void SetByteContent(ByteContentFile&& value) { m_byteContentHasBeenSet = true; m_byteContent = std::move(value); }
-    inline FileSource& WithByteContent(const ByteContentFile& value) { SetByteContent(value); return *this;}
-    inline FileSource& WithByteContent(ByteContentFile&& value) { SetByteContent(std::move(value)); return *this;}
+    template<typename ByteContentT = ByteContentFile>
+    void SetByteContent(ByteContentT&& value) { m_byteContentHasBeenSet = true; m_byteContent = std::forward<ByteContentT>(value); }
+    template<typename ByteContentT = ByteContentFile>
+    FileSource& WithByteContent(ByteContentT&& value) { SetByteContent(std::forward<ByteContentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The s3 location of the files to attach.</p>
      */
-    inline const S3ObjectFile& GetS3Location() const{ return m_s3Location; }
+    inline const S3ObjectFile& GetS3Location() const { return m_s3Location; }
     inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
-    inline void SetS3Location(const S3ObjectFile& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
-    inline void SetS3Location(S3ObjectFile&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::move(value); }
-    inline FileSource& WithS3Location(const S3ObjectFile& value) { SetS3Location(value); return *this;}
-    inline FileSource& WithS3Location(S3ObjectFile&& value) { SetS3Location(std::move(value)); return *this;}
+    template<typename S3LocationT = S3ObjectFile>
+    void SetS3Location(S3LocationT&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::forward<S3LocationT>(value); }
+    template<typename S3LocationT = S3ObjectFile>
+    FileSource& WithS3Location(S3LocationT&& value) { SetS3Location(std::forward<S3LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source type of the files to attach.</p>
      */
-    inline const FileSourceType& GetSourceType() const{ return m_sourceType; }
+    inline FileSourceType GetSourceType() const { return m_sourceType; }
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-    inline void SetSourceType(const FileSourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-    inline void SetSourceType(FileSourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
-    inline FileSource& WithSourceType(const FileSourceType& value) { SetSourceType(value); return *this;}
-    inline FileSource& WithSourceType(FileSourceType&& value) { SetSourceType(std::move(value)); return *this;}
+    inline void SetSourceType(FileSourceType value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+    inline FileSource& WithSourceType(FileSourceType value) { SetSourceType(value); return *this;}
     ///@}
   private:
 
@@ -83,7 +81,7 @@ namespace Model
     S3ObjectFile m_s3Location;
     bool m_s3LocationHasBeenSet = false;
 
-    FileSourceType m_sourceType;
+    FileSourceType m_sourceType{FileSourceType::NOT_SET};
     bool m_sourceTypeHasBeenSet = false;
   };
 

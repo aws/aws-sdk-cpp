@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TopicSortClause::TopicSortClause() : 
-    m_operandHasBeenSet(false),
-    m_sortDirection(TopicSortDirection::NOT_SET),
-    m_sortDirectionHasBeenSet(false)
-{
-}
-
 TopicSortClause::TopicSortClause(JsonView jsonValue)
-  : TopicSortClause()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TopicSortClause& TopicSortClause::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Operand"))
   {
     m_operand = jsonValue.GetObject("Operand");
-
     m_operandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortDirection"))
   {
     m_sortDirection = TopicSortDirectionMapper::GetTopicSortDirectionForName(jsonValue.GetString("SortDirection"));
-
     m_sortDirectionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,14 +10,6 @@
 using namespace Aws::SimpleDB::Model;
 using namespace Aws::Utils;
 
-SelectRequest::SelectRequest() : 
-    m_selectExpressionHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_consistentRead(false),
-    m_consistentReadHasBeenSet(false)
-{
-}
-
 Aws::String SelectRequest::SerializePayload() const
 {
   Aws::StringStream ss;

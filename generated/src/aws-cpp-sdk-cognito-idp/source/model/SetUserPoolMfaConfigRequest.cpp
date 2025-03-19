@@ -12,17 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SetUserPoolMfaConfigRequest::SetUserPoolMfaConfigRequest() : 
-    m_userPoolIdHasBeenSet(false),
-    m_smsMfaConfigurationHasBeenSet(false),
-    m_softwareTokenMfaConfigurationHasBeenSet(false),
-    m_emailMfaConfigurationHasBeenSet(false),
-    m_mfaConfiguration(UserPoolMfaType::NOT_SET),
-    m_mfaConfigurationHasBeenSet(false),
-    m_webAuthnConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String SetUserPoolMfaConfigRequest::SerializePayload() const
 {
   JsonValue payload;

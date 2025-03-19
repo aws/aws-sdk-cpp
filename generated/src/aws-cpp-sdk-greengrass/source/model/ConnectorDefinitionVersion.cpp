@@ -18,13 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-ConnectorDefinitionVersion::ConnectorDefinitionVersion() : 
-    m_connectorsHasBeenSet(false)
-{
-}
-
 ConnectorDefinitionVersion::ConnectorDefinitionVersion(JsonView jsonValue)
-  : ConnectorDefinitionVersion()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ConnectorDefinitionVersion& ConnectorDefinitionVersion::operator =(JsonView json
     }
     m_connectorsHasBeenSet = true;
   }
-
   return *this;
 }
 

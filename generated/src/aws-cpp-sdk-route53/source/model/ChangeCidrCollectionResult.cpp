@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ChangeCidrCollectionResult::ChangeCidrCollectionResult()
-{
-}
-
 ChangeCidrCollectionResult::ChangeCidrCollectionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ ChangeCidrCollectionResult& ChangeCidrCollectionResult::operator =(const Aws::Am
     if(!idNode.IsNull())
     {
       m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
+      m_idHasBeenSet = true;
     }
   }
 
@@ -44,6 +41,7 @@ ChangeCidrCollectionResult& ChangeCidrCollectionResult::operator =(const Aws::Am
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

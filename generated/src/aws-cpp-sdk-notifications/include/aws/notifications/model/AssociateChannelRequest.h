@@ -21,7 +21,7 @@ namespace Model
   class AssociateChannelRequest : public NotificationsRequest
   {
   public:
-    AWS_NOTIFICATIONS_API AssociateChannelRequest();
+    AWS_NOTIFICATIONS_API AssociateChannelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * <code>NotificationConfiguration</code>.</p> <p>Supported ARNs include Chatbot,
      * the Console Mobile Application, and notifications-contacts.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline AssociateChannelRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline AssociateChannelRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline AssociateChannelRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    AssociateChannelRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * <p>The ARN of the <code>NotificationConfiguration</code> to associate with the
      * Channel.</p>
      */
-    inline const Aws::String& GetNotificationConfigurationArn() const{ return m_notificationConfigurationArn; }
+    inline const Aws::String& GetNotificationConfigurationArn() const { return m_notificationConfigurationArn; }
     inline bool NotificationConfigurationArnHasBeenSet() const { return m_notificationConfigurationArnHasBeenSet; }
-    inline void SetNotificationConfigurationArn(const Aws::String& value) { m_notificationConfigurationArnHasBeenSet = true; m_notificationConfigurationArn = value; }
-    inline void SetNotificationConfigurationArn(Aws::String&& value) { m_notificationConfigurationArnHasBeenSet = true; m_notificationConfigurationArn = std::move(value); }
-    inline void SetNotificationConfigurationArn(const char* value) { m_notificationConfigurationArnHasBeenSet = true; m_notificationConfigurationArn.assign(value); }
-    inline AssociateChannelRequest& WithNotificationConfigurationArn(const Aws::String& value) { SetNotificationConfigurationArn(value); return *this;}
-    inline AssociateChannelRequest& WithNotificationConfigurationArn(Aws::String&& value) { SetNotificationConfigurationArn(std::move(value)); return *this;}
-    inline AssociateChannelRequest& WithNotificationConfigurationArn(const char* value) { SetNotificationConfigurationArn(value); return *this;}
+    template<typename NotificationConfigurationArnT = Aws::String>
+    void SetNotificationConfigurationArn(NotificationConfigurationArnT&& value) { m_notificationConfigurationArnHasBeenSet = true; m_notificationConfigurationArn = std::forward<NotificationConfigurationArnT>(value); }
+    template<typename NotificationConfigurationArnT = Aws::String>
+    AssociateChannelRequest& WithNotificationConfigurationArn(NotificationConfigurationArnT&& value) { SetNotificationConfigurationArn(std::forward<NotificationConfigurationArnT>(value)); return *this;}
     ///@}
   private:
 

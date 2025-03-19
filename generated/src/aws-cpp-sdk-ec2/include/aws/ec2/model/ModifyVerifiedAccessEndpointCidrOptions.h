@@ -33,7 +33,7 @@ namespace Model
   class ModifyVerifiedAccessEndpointCidrOptions
   {
   public:
-    AWS_EC2_API ModifyVerifiedAccessEndpointCidrOptions();
+    AWS_EC2_API ModifyVerifiedAccessEndpointCidrOptions() = default;
     AWS_EC2_API ModifyVerifiedAccessEndpointCidrOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ModifyVerifiedAccessEndpointCidrOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,14 @@ namespace Model
     /**
      * <p>The port ranges.</p>
      */
-    inline const Aws::Vector<ModifyVerifiedAccessEndpointPortRange>& GetPortRanges() const{ return m_portRanges; }
+    inline const Aws::Vector<ModifyVerifiedAccessEndpointPortRange>& GetPortRanges() const { return m_portRanges; }
     inline bool PortRangesHasBeenSet() const { return m_portRangesHasBeenSet; }
-    inline void SetPortRanges(const Aws::Vector<ModifyVerifiedAccessEndpointPortRange>& value) { m_portRangesHasBeenSet = true; m_portRanges = value; }
-    inline void SetPortRanges(Aws::Vector<ModifyVerifiedAccessEndpointPortRange>&& value) { m_portRangesHasBeenSet = true; m_portRanges = std::move(value); }
-    inline ModifyVerifiedAccessEndpointCidrOptions& WithPortRanges(const Aws::Vector<ModifyVerifiedAccessEndpointPortRange>& value) { SetPortRanges(value); return *this;}
-    inline ModifyVerifiedAccessEndpointCidrOptions& WithPortRanges(Aws::Vector<ModifyVerifiedAccessEndpointPortRange>&& value) { SetPortRanges(std::move(value)); return *this;}
-    inline ModifyVerifiedAccessEndpointCidrOptions& AddPortRanges(const ModifyVerifiedAccessEndpointPortRange& value) { m_portRangesHasBeenSet = true; m_portRanges.push_back(value); return *this; }
-    inline ModifyVerifiedAccessEndpointCidrOptions& AddPortRanges(ModifyVerifiedAccessEndpointPortRange&& value) { m_portRangesHasBeenSet = true; m_portRanges.push_back(std::move(value)); return *this; }
+    template<typename PortRangesT = Aws::Vector<ModifyVerifiedAccessEndpointPortRange>>
+    void SetPortRanges(PortRangesT&& value) { m_portRangesHasBeenSet = true; m_portRanges = std::forward<PortRangesT>(value); }
+    template<typename PortRangesT = Aws::Vector<ModifyVerifiedAccessEndpointPortRange>>
+    ModifyVerifiedAccessEndpointCidrOptions& WithPortRanges(PortRangesT&& value) { SetPortRanges(std::forward<PortRangesT>(value)); return *this;}
+    template<typename PortRangesT = ModifyVerifiedAccessEndpointPortRange>
+    ModifyVerifiedAccessEndpointCidrOptions& AddPortRanges(PortRangesT&& value) { m_portRangesHasBeenSet = true; m_portRanges.emplace_back(std::forward<PortRangesT>(value)); return *this; }
     ///@}
   private:
 

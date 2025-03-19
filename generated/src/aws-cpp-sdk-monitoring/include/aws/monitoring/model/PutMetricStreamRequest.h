@@ -26,7 +26,7 @@ namespace Model
   class PutMetricStreamRequest : public CloudWatchRequest
   {
   public:
-    AWS_CLOUDWATCH_API PutMetricStreamRequest();
+    AWS_CLOUDWATCH_API PutMetricStreamRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
      * account and Region.</p> <p>If you are updating a metric stream, specify the name
      * of that stream here.</p> <p>Valid characters are A-Z, a-z, 0-9, "-" and "_".</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PutMetricStreamRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PutMetricStreamRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PutMetricStreamRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PutMetricStreamRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,14 @@ namespace Model
      * <code>IncludeFilters</code> and <code>ExcludeFilters</code> in the same
      * operation.</p>
      */
-    inline const Aws::Vector<MetricStreamFilter>& GetIncludeFilters() const{ return m_includeFilters; }
+    inline const Aws::Vector<MetricStreamFilter>& GetIncludeFilters() const { return m_includeFilters; }
     inline bool IncludeFiltersHasBeenSet() const { return m_includeFiltersHasBeenSet; }
-    inline void SetIncludeFilters(const Aws::Vector<MetricStreamFilter>& value) { m_includeFiltersHasBeenSet = true; m_includeFilters = value; }
-    inline void SetIncludeFilters(Aws::Vector<MetricStreamFilter>&& value) { m_includeFiltersHasBeenSet = true; m_includeFilters = std::move(value); }
-    inline PutMetricStreamRequest& WithIncludeFilters(const Aws::Vector<MetricStreamFilter>& value) { SetIncludeFilters(value); return *this;}
-    inline PutMetricStreamRequest& WithIncludeFilters(Aws::Vector<MetricStreamFilter>&& value) { SetIncludeFilters(std::move(value)); return *this;}
-    inline PutMetricStreamRequest& AddIncludeFilters(const MetricStreamFilter& value) { m_includeFiltersHasBeenSet = true; m_includeFilters.push_back(value); return *this; }
-    inline PutMetricStreamRequest& AddIncludeFilters(MetricStreamFilter&& value) { m_includeFiltersHasBeenSet = true; m_includeFilters.push_back(std::move(value)); return *this; }
+    template<typename IncludeFiltersT = Aws::Vector<MetricStreamFilter>>
+    void SetIncludeFilters(IncludeFiltersT&& value) { m_includeFiltersHasBeenSet = true; m_includeFilters = std::forward<IncludeFiltersT>(value); }
+    template<typename IncludeFiltersT = Aws::Vector<MetricStreamFilter>>
+    PutMetricStreamRequest& WithIncludeFilters(IncludeFiltersT&& value) { SetIncludeFilters(std::forward<IncludeFiltersT>(value)); return *this;}
+    template<typename IncludeFiltersT = MetricStreamFilter>
+    PutMetricStreamRequest& AddIncludeFilters(IncludeFiltersT&& value) { m_includeFiltersHasBeenSet = true; m_includeFilters.emplace_back(std::forward<IncludeFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -82,14 +80,14 @@ namespace Model
      * include <code>ExcludeFilters</code> and <code>IncludeFilters</code> in the same
      * operation.</p>
      */
-    inline const Aws::Vector<MetricStreamFilter>& GetExcludeFilters() const{ return m_excludeFilters; }
+    inline const Aws::Vector<MetricStreamFilter>& GetExcludeFilters() const { return m_excludeFilters; }
     inline bool ExcludeFiltersHasBeenSet() const { return m_excludeFiltersHasBeenSet; }
-    inline void SetExcludeFilters(const Aws::Vector<MetricStreamFilter>& value) { m_excludeFiltersHasBeenSet = true; m_excludeFilters = value; }
-    inline void SetExcludeFilters(Aws::Vector<MetricStreamFilter>&& value) { m_excludeFiltersHasBeenSet = true; m_excludeFilters = std::move(value); }
-    inline PutMetricStreamRequest& WithExcludeFilters(const Aws::Vector<MetricStreamFilter>& value) { SetExcludeFilters(value); return *this;}
-    inline PutMetricStreamRequest& WithExcludeFilters(Aws::Vector<MetricStreamFilter>&& value) { SetExcludeFilters(std::move(value)); return *this;}
-    inline PutMetricStreamRequest& AddExcludeFilters(const MetricStreamFilter& value) { m_excludeFiltersHasBeenSet = true; m_excludeFilters.push_back(value); return *this; }
-    inline PutMetricStreamRequest& AddExcludeFilters(MetricStreamFilter&& value) { m_excludeFiltersHasBeenSet = true; m_excludeFilters.push_back(std::move(value)); return *this; }
+    template<typename ExcludeFiltersT = Aws::Vector<MetricStreamFilter>>
+    void SetExcludeFilters(ExcludeFiltersT&& value) { m_excludeFiltersHasBeenSet = true; m_excludeFilters = std::forward<ExcludeFiltersT>(value); }
+    template<typename ExcludeFiltersT = Aws::Vector<MetricStreamFilter>>
+    PutMetricStreamRequest& WithExcludeFilters(ExcludeFiltersT&& value) { SetExcludeFilters(std::forward<ExcludeFiltersT>(value)); return *this;}
+    template<typename ExcludeFiltersT = MetricStreamFilter>
+    PutMetricStreamRequest& AddExcludeFilters(ExcludeFiltersT&& value) { m_excludeFiltersHasBeenSet = true; m_excludeFilters.emplace_back(std::forward<ExcludeFiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -98,14 +96,12 @@ namespace Model
      * metric stream. This Amazon Kinesis Data Firehose delivery stream must already
      * exist and must be in the same account as the metric stream.</p>
      */
-    inline const Aws::String& GetFirehoseArn() const{ return m_firehoseArn; }
+    inline const Aws::String& GetFirehoseArn() const { return m_firehoseArn; }
     inline bool FirehoseArnHasBeenSet() const { return m_firehoseArnHasBeenSet; }
-    inline void SetFirehoseArn(const Aws::String& value) { m_firehoseArnHasBeenSet = true; m_firehoseArn = value; }
-    inline void SetFirehoseArn(Aws::String&& value) { m_firehoseArnHasBeenSet = true; m_firehoseArn = std::move(value); }
-    inline void SetFirehoseArn(const char* value) { m_firehoseArnHasBeenSet = true; m_firehoseArn.assign(value); }
-    inline PutMetricStreamRequest& WithFirehoseArn(const Aws::String& value) { SetFirehoseArn(value); return *this;}
-    inline PutMetricStreamRequest& WithFirehoseArn(Aws::String&& value) { SetFirehoseArn(std::move(value)); return *this;}
-    inline PutMetricStreamRequest& WithFirehoseArn(const char* value) { SetFirehoseArn(value); return *this;}
+    template<typename FirehoseArnT = Aws::String>
+    void SetFirehoseArn(FirehoseArnT&& value) { m_firehoseArnHasBeenSet = true; m_firehoseArn = std::forward<FirehoseArnT>(value); }
+    template<typename FirehoseArnT = Aws::String>
+    PutMetricStreamRequest& WithFirehoseArn(FirehoseArnT&& value) { SetFirehoseArn(std::forward<FirehoseArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,14 +112,12 @@ namespace Model
      * permissions:</p> <ul> <li> <p>firehose:PutRecord</p> </li> <li>
      * <p>firehose:PutRecordBatch</p> </li> </ul>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline PutMetricStreamRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline PutMetricStreamRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline PutMetricStreamRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    PutMetricStreamRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,12 +128,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-metric-streams-formats.html">
      * Metric streams output formats</a>.</p>
      */
-    inline const MetricStreamOutputFormat& GetOutputFormat() const{ return m_outputFormat; }
+    inline MetricStreamOutputFormat GetOutputFormat() const { return m_outputFormat; }
     inline bool OutputFormatHasBeenSet() const { return m_outputFormatHasBeenSet; }
-    inline void SetOutputFormat(const MetricStreamOutputFormat& value) { m_outputFormatHasBeenSet = true; m_outputFormat = value; }
-    inline void SetOutputFormat(MetricStreamOutputFormat&& value) { m_outputFormatHasBeenSet = true; m_outputFormat = std::move(value); }
-    inline PutMetricStreamRequest& WithOutputFormat(const MetricStreamOutputFormat& value) { SetOutputFormat(value); return *this;}
-    inline PutMetricStreamRequest& WithOutputFormat(MetricStreamOutputFormat&& value) { SetOutputFormat(std::move(value)); return *this;}
+    inline void SetOutputFormat(MetricStreamOutputFormat value) { m_outputFormatHasBeenSet = true; m_outputFormat = value; }
+    inline PutMetricStreamRequest& WithOutputFormat(MetricStreamOutputFormat value) { SetOutputFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -156,14 +148,14 @@ namespace Model
      * or <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline PutMetricStreamRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline PutMetricStreamRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline PutMetricStreamRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline PutMetricStreamRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    PutMetricStreamRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    PutMetricStreamRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -183,14 +175,14 @@ namespace Model
      * <code>opentelemetry1.0</code> or <code>opentelemetry0.7</code>, you can stream
      * percentile statistics such as p95, p99.9, and so on.</p>
      */
-    inline const Aws::Vector<MetricStreamStatisticsConfiguration>& GetStatisticsConfigurations() const{ return m_statisticsConfigurations; }
+    inline const Aws::Vector<MetricStreamStatisticsConfiguration>& GetStatisticsConfigurations() const { return m_statisticsConfigurations; }
     inline bool StatisticsConfigurationsHasBeenSet() const { return m_statisticsConfigurationsHasBeenSet; }
-    inline void SetStatisticsConfigurations(const Aws::Vector<MetricStreamStatisticsConfiguration>& value) { m_statisticsConfigurationsHasBeenSet = true; m_statisticsConfigurations = value; }
-    inline void SetStatisticsConfigurations(Aws::Vector<MetricStreamStatisticsConfiguration>&& value) { m_statisticsConfigurationsHasBeenSet = true; m_statisticsConfigurations = std::move(value); }
-    inline PutMetricStreamRequest& WithStatisticsConfigurations(const Aws::Vector<MetricStreamStatisticsConfiguration>& value) { SetStatisticsConfigurations(value); return *this;}
-    inline PutMetricStreamRequest& WithStatisticsConfigurations(Aws::Vector<MetricStreamStatisticsConfiguration>&& value) { SetStatisticsConfigurations(std::move(value)); return *this;}
-    inline PutMetricStreamRequest& AddStatisticsConfigurations(const MetricStreamStatisticsConfiguration& value) { m_statisticsConfigurationsHasBeenSet = true; m_statisticsConfigurations.push_back(value); return *this; }
-    inline PutMetricStreamRequest& AddStatisticsConfigurations(MetricStreamStatisticsConfiguration&& value) { m_statisticsConfigurationsHasBeenSet = true; m_statisticsConfigurations.push_back(std::move(value)); return *this; }
+    template<typename StatisticsConfigurationsT = Aws::Vector<MetricStreamStatisticsConfiguration>>
+    void SetStatisticsConfigurations(StatisticsConfigurationsT&& value) { m_statisticsConfigurationsHasBeenSet = true; m_statisticsConfigurations = std::forward<StatisticsConfigurationsT>(value); }
+    template<typename StatisticsConfigurationsT = Aws::Vector<MetricStreamStatisticsConfiguration>>
+    PutMetricStreamRequest& WithStatisticsConfigurations(StatisticsConfigurationsT&& value) { SetStatisticsConfigurations(std::forward<StatisticsConfigurationsT>(value)); return *this;}
+    template<typename StatisticsConfigurationsT = MetricStreamStatisticsConfiguration>
+    PutMetricStreamRequest& AddStatisticsConfigurations(StatisticsConfigurationsT&& value) { m_statisticsConfigurationsHasBeenSet = true; m_statisticsConfigurations.emplace_back(std::forward<StatisticsConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -199,7 +191,7 @@ namespace Model
      * <code>true</code> to include metrics from source accounts in the metric
      * stream.</p>
      */
-    inline bool GetIncludeLinkedAccountsMetrics() const{ return m_includeLinkedAccountsMetrics; }
+    inline bool GetIncludeLinkedAccountsMetrics() const { return m_includeLinkedAccountsMetrics; }
     inline bool IncludeLinkedAccountsMetricsHasBeenSet() const { return m_includeLinkedAccountsMetricsHasBeenSet; }
     inline void SetIncludeLinkedAccountsMetrics(bool value) { m_includeLinkedAccountsMetricsHasBeenSet = true; m_includeLinkedAccountsMetrics = value; }
     inline PutMetricStreamRequest& WithIncludeLinkedAccountsMetrics(bool value) { SetIncludeLinkedAccountsMetrics(value); return *this;}
@@ -221,7 +213,7 @@ namespace Model
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
 
-    MetricStreamOutputFormat m_outputFormat;
+    MetricStreamOutputFormat m_outputFormat{MetricStreamOutputFormat::NOT_SET};
     bool m_outputFormatHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
@@ -230,7 +222,7 @@ namespace Model
     Aws::Vector<MetricStreamStatisticsConfiguration> m_statisticsConfigurations;
     bool m_statisticsConfigurationsHasBeenSet = false;
 
-    bool m_includeLinkedAccountsMetrics;
+    bool m_includeLinkedAccountsMetrics{false};
     bool m_includeLinkedAccountsMetricsHasBeenSet = false;
   };
 

@@ -32,7 +32,7 @@ namespace Model
   class AddBridgeFlowSourceRequest
   {
   public:
-    AWS_MEDIACONNECT_API AddBridgeFlowSourceRequest();
+    AWS_MEDIACONNECT_API AddBridgeFlowSourceRequest() = default;
     AWS_MEDIACONNECT_API AddBridgeFlowSourceRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API AddBridgeFlowSourceRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
      * The Amazon Resource Number (ARN) of the cloud flow to use as a source of this
      * bridge.
      */
-    inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
+    inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
-    inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
-    inline void SetFlowArn(Aws::String&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::move(value); }
-    inline void SetFlowArn(const char* value) { m_flowArnHasBeenSet = true; m_flowArn.assign(value); }
-    inline AddBridgeFlowSourceRequest& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-    inline AddBridgeFlowSourceRequest& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-    inline AddBridgeFlowSourceRequest& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    template<typename FlowArnT = Aws::String>
+    void SetFlowArn(FlowArnT&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::forward<FlowArnT>(value); }
+    template<typename FlowArnT = Aws::String>
+    AddBridgeFlowSourceRequest& WithFlowArn(FlowArnT&& value) { SetFlowArn(std::forward<FlowArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The name of the VPC interface attachment to use for this source.
      */
-    inline const VpcInterfaceAttachment& GetFlowVpcInterfaceAttachment() const{ return m_flowVpcInterfaceAttachment; }
+    inline const VpcInterfaceAttachment& GetFlowVpcInterfaceAttachment() const { return m_flowVpcInterfaceAttachment; }
     inline bool FlowVpcInterfaceAttachmentHasBeenSet() const { return m_flowVpcInterfaceAttachmentHasBeenSet; }
-    inline void SetFlowVpcInterfaceAttachment(const VpcInterfaceAttachment& value) { m_flowVpcInterfaceAttachmentHasBeenSet = true; m_flowVpcInterfaceAttachment = value; }
-    inline void SetFlowVpcInterfaceAttachment(VpcInterfaceAttachment&& value) { m_flowVpcInterfaceAttachmentHasBeenSet = true; m_flowVpcInterfaceAttachment = std::move(value); }
-    inline AddBridgeFlowSourceRequest& WithFlowVpcInterfaceAttachment(const VpcInterfaceAttachment& value) { SetFlowVpcInterfaceAttachment(value); return *this;}
-    inline AddBridgeFlowSourceRequest& WithFlowVpcInterfaceAttachment(VpcInterfaceAttachment&& value) { SetFlowVpcInterfaceAttachment(std::move(value)); return *this;}
+    template<typename FlowVpcInterfaceAttachmentT = VpcInterfaceAttachment>
+    void SetFlowVpcInterfaceAttachment(FlowVpcInterfaceAttachmentT&& value) { m_flowVpcInterfaceAttachmentHasBeenSet = true; m_flowVpcInterfaceAttachment = std::forward<FlowVpcInterfaceAttachmentT>(value); }
+    template<typename FlowVpcInterfaceAttachmentT = VpcInterfaceAttachment>
+    AddBridgeFlowSourceRequest& WithFlowVpcInterfaceAttachment(FlowVpcInterfaceAttachmentT&& value) { SetFlowVpcInterfaceAttachment(std::forward<FlowVpcInterfaceAttachmentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * The name of the flow source. This name is used to reference the source and must
      * be unique among sources in this bridge.
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AddBridgeFlowSourceRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AddBridgeFlowSourceRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AddBridgeFlowSourceRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AddBridgeFlowSourceRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

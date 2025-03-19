@@ -12,11 +12,6 @@ using namespace Aws::Route53Domains::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelDomainTransferToAnotherAwsAccountRequest::CancelDomainTransferToAnotherAwsAccountRequest() : 
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String CancelDomainTransferToAnotherAwsAccountRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -35,7 +35,7 @@ namespace Model
   class SimpleCriterionForJob
   {
   public:
-    AWS_MACIE2_API SimpleCriterionForJob();
+    AWS_MACIE2_API SimpleCriterionForJob() = default;
     AWS_MACIE2_API SimpleCriterionForJob(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API SimpleCriterionForJob& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,24 +46,20 @@ namespace Model
      * <p>The operator to use in the condition. Valid values are EQ (equals) and NE
      * (not equals).</p>
      */
-    inline const JobComparator& GetComparator() const{ return m_comparator; }
+    inline JobComparator GetComparator() const { return m_comparator; }
     inline bool ComparatorHasBeenSet() const { return m_comparatorHasBeenSet; }
-    inline void SetComparator(const JobComparator& value) { m_comparatorHasBeenSet = true; m_comparator = value; }
-    inline void SetComparator(JobComparator&& value) { m_comparatorHasBeenSet = true; m_comparator = std::move(value); }
-    inline SimpleCriterionForJob& WithComparator(const JobComparator& value) { SetComparator(value); return *this;}
-    inline SimpleCriterionForJob& WithComparator(JobComparator&& value) { SetComparator(std::move(value)); return *this;}
+    inline void SetComparator(JobComparator value) { m_comparatorHasBeenSet = true; m_comparator = value; }
+    inline SimpleCriterionForJob& WithComparator(JobComparator value) { SetComparator(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The property to use in the condition.</p>
      */
-    inline const SimpleCriterionKeyForJob& GetKey() const{ return m_key; }
+    inline SimpleCriterionKeyForJob GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const SimpleCriterionKeyForJob& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(SimpleCriterionKeyForJob&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline SimpleCriterionForJob& WithKey(const SimpleCriterionKeyForJob& value) { SetKey(value); return *this;}
-    inline SimpleCriterionForJob& WithKey(SimpleCriterionKeyForJob&& value) { SetKey(std::move(value)); return *this;}
+    inline void SetKey(SimpleCriterionKeyForJob value) { m_keyHasBeenSet = true; m_key = value; }
+    inline SimpleCriterionForJob& WithKey(SimpleCriterionKeyForJob value) { SetKey(value); return *this;}
     ///@}
 
     ///@{
@@ -83,22 +79,21 @@ namespace Model
      * doesn't support use of partial values or wildcard characters in these
      * values.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline SimpleCriterionForJob& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline SimpleCriterionForJob& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline SimpleCriterionForJob& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline SimpleCriterionForJob& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline SimpleCriterionForJob& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    SimpleCriterionForJob& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    SimpleCriterionForJob& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    JobComparator m_comparator;
+    JobComparator m_comparator{JobComparator::NOT_SET};
     bool m_comparatorHasBeenSet = false;
 
-    SimpleCriterionKeyForJob m_key;
+    SimpleCriterionKeyForJob m_key{SimpleCriterionKeyForJob::NOT_SET};
     bool m_keyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

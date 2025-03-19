@@ -18,19 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-TextInferenceConfig::TextInferenceConfig() : 
-    m_temperature(0.0),
-    m_temperatureHasBeenSet(false),
-    m_topP(0.0),
-    m_topPHasBeenSet(false),
-    m_maxTokens(0),
-    m_maxTokensHasBeenSet(false),
-    m_stopSequencesHasBeenSet(false)
-{
-}
-
 TextInferenceConfig::TextInferenceConfig(JsonView jsonValue)
-  : TextInferenceConfig()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ TextInferenceConfig& TextInferenceConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("temperature"))
   {
     m_temperature = jsonValue.GetDouble("temperature");
-
     m_temperatureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("topP"))
   {
     m_topP = jsonValue.GetDouble("topP");
-
     m_topPHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxTokens"))
   {
     m_maxTokens = jsonValue.GetInteger("maxTokens");
-
     m_maxTokensHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stopSequences"))
   {
     Aws::Utils::Array<JsonView> stopSequencesJsonList = jsonValue.GetArray("stopSequences");
@@ -67,7 +49,6 @@ TextInferenceConfig& TextInferenceConfig::operator =(JsonView jsonValue)
     }
     m_stopSequencesHasBeenSet = true;
   }
-
   return *this;
 }
 

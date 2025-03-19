@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-InferenceComponentStartupParameters::InferenceComponentStartupParameters() : 
-    m_modelDataDownloadTimeoutInSeconds(0),
-    m_modelDataDownloadTimeoutInSecondsHasBeenSet(false),
-    m_containerStartupHealthCheckTimeoutInSeconds(0),
-    m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet(false)
-{
-}
-
 InferenceComponentStartupParameters::InferenceComponentStartupParameters(JsonView jsonValue)
-  : InferenceComponentStartupParameters()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ InferenceComponentStartupParameters& InferenceComponentStartupParameters::operat
   if(jsonValue.ValueExists("ModelDataDownloadTimeoutInSeconds"))
   {
     m_modelDataDownloadTimeoutInSeconds = jsonValue.GetInteger("ModelDataDownloadTimeoutInSeconds");
-
     m_modelDataDownloadTimeoutInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainerStartupHealthCheckTimeoutInSeconds"))
   {
     m_containerStartupHealthCheckTimeoutInSeconds = jsonValue.GetInteger("ContainerStartupHealthCheckTimeoutInSeconds");
-
     m_containerStartupHealthCheckTimeoutInSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

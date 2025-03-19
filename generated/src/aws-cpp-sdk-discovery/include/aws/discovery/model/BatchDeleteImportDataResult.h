@@ -29,7 +29,7 @@ namespace Model
   class BatchDeleteImportDataResult
   {
   public:
-    AWS_APPLICATIONDISCOVERYSERVICE_API BatchDeleteImportDataResult();
+    AWS_APPLICATIONDISCOVERYSERVICE_API BatchDeleteImportDataResult() = default;
     AWS_APPLICATIONDISCOVERYSERVICE_API BatchDeleteImportDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONDISCOVERYSERVICE_API BatchDeleteImportDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p>Error messages returned for each import task that you deleted as a response
      * for this command.</p>
      */
-    inline const Aws::Vector<BatchDeleteImportDataError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<BatchDeleteImportDataError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchDeleteImportDataError>&& value) { m_errors = std::move(value); }
-    inline BatchDeleteImportDataResult& WithErrors(const Aws::Vector<BatchDeleteImportDataError>& value) { SetErrors(value); return *this;}
-    inline BatchDeleteImportDataResult& WithErrors(Aws::Vector<BatchDeleteImportDataError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchDeleteImportDataResult& AddErrors(const BatchDeleteImportDataError& value) { m_errors.push_back(value); return *this; }
-    inline BatchDeleteImportDataResult& AddErrors(BatchDeleteImportDataError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchDeleteImportDataError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchDeleteImportDataError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchDeleteImportDataError>>
+    BatchDeleteImportDataResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchDeleteImportDataError>
+    BatchDeleteImportDataResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchDeleteImportDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchDeleteImportDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchDeleteImportDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchDeleteImportDataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchDeleteImportDataError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

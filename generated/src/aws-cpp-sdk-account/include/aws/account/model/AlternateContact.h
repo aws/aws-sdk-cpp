@@ -33,7 +33,7 @@ namespace Model
   class AlternateContact
   {
   public:
-    AWS_ACCOUNT_API AlternateContact();
+    AWS_ACCOUNT_API AlternateContact() = default;
     AWS_ACCOUNT_API AlternateContact(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCOUNT_API AlternateContact& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCOUNT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,72 +43,62 @@ namespace Model
     /**
      * <p>The type of alternate contact.</p>
      */
-    inline const AlternateContactType& GetAlternateContactType() const{ return m_alternateContactType; }
+    inline AlternateContactType GetAlternateContactType() const { return m_alternateContactType; }
     inline bool AlternateContactTypeHasBeenSet() const { return m_alternateContactTypeHasBeenSet; }
-    inline void SetAlternateContactType(const AlternateContactType& value) { m_alternateContactTypeHasBeenSet = true; m_alternateContactType = value; }
-    inline void SetAlternateContactType(AlternateContactType&& value) { m_alternateContactTypeHasBeenSet = true; m_alternateContactType = std::move(value); }
-    inline AlternateContact& WithAlternateContactType(const AlternateContactType& value) { SetAlternateContactType(value); return *this;}
-    inline AlternateContact& WithAlternateContactType(AlternateContactType&& value) { SetAlternateContactType(std::move(value)); return *this;}
+    inline void SetAlternateContactType(AlternateContactType value) { m_alternateContactTypeHasBeenSet = true; m_alternateContactType = value; }
+    inline AlternateContact& WithAlternateContactType(AlternateContactType value) { SetAlternateContactType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The email address associated with this alternate contact.</p>
      */
-    inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
+    inline const Aws::String& GetEmailAddress() const { return m_emailAddress; }
     inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
-    inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
-    inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::move(value); }
-    inline void SetEmailAddress(const char* value) { m_emailAddressHasBeenSet = true; m_emailAddress.assign(value); }
-    inline AlternateContact& WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
-    inline AlternateContact& WithEmailAddress(Aws::String&& value) { SetEmailAddress(std::move(value)); return *this;}
-    inline AlternateContact& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
+    template<typename EmailAddressT = Aws::String>
+    void SetEmailAddress(EmailAddressT&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::forward<EmailAddressT>(value); }
+    template<typename EmailAddressT = Aws::String>
+    AlternateContact& WithEmailAddress(EmailAddressT&& value) { SetEmailAddress(std::forward<EmailAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name associated with this alternate contact.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AlternateContact& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AlternateContact& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AlternateContact& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AlternateContact& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The phone number associated with this alternate contact.</p>
      */
-    inline const Aws::String& GetPhoneNumber() const{ return m_phoneNumber; }
+    inline const Aws::String& GetPhoneNumber() const { return m_phoneNumber; }
     inline bool PhoneNumberHasBeenSet() const { return m_phoneNumberHasBeenSet; }
-    inline void SetPhoneNumber(const Aws::String& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = value; }
-    inline void SetPhoneNumber(Aws::String&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = std::move(value); }
-    inline void SetPhoneNumber(const char* value) { m_phoneNumberHasBeenSet = true; m_phoneNumber.assign(value); }
-    inline AlternateContact& WithPhoneNumber(const Aws::String& value) { SetPhoneNumber(value); return *this;}
-    inline AlternateContact& WithPhoneNumber(Aws::String&& value) { SetPhoneNumber(std::move(value)); return *this;}
-    inline AlternateContact& WithPhoneNumber(const char* value) { SetPhoneNumber(value); return *this;}
+    template<typename PhoneNumberT = Aws::String>
+    void SetPhoneNumber(PhoneNumberT&& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = std::forward<PhoneNumberT>(value); }
+    template<typename PhoneNumberT = Aws::String>
+    AlternateContact& WithPhoneNumber(PhoneNumberT&& value) { SetPhoneNumber(std::forward<PhoneNumberT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The title associated with this alternate contact.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline AlternateContact& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline AlternateContact& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline AlternateContact& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    AlternateContact& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
   private:
 
-    AlternateContactType m_alternateContactType;
+    AlternateContactType m_alternateContactType{AlternateContactType::NOT_SET};
     bool m_alternateContactTypeHasBeenSet = false;
 
     Aws::String m_emailAddress;

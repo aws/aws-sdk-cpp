@@ -29,7 +29,7 @@ namespace Model
   class EventBridgeConfiguration
   {
   public:
-    AWS_BEDROCKDATAAUTOMATIONRUNTIME_API EventBridgeConfiguration();
+    AWS_BEDROCKDATAAUTOMATIONRUNTIME_API EventBridgeConfiguration() = default;
     AWS_BEDROCKDATAAUTOMATIONRUNTIME_API EventBridgeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATIONRUNTIME_API EventBridgeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATIONRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>Event bridge flag.</p>
      */
-    inline bool GetEventBridgeEnabled() const{ return m_eventBridgeEnabled; }
+    inline bool GetEventBridgeEnabled() const { return m_eventBridgeEnabled; }
     inline bool EventBridgeEnabledHasBeenSet() const { return m_eventBridgeEnabledHasBeenSet; }
     inline void SetEventBridgeEnabled(bool value) { m_eventBridgeEnabledHasBeenSet = true; m_eventBridgeEnabled = value; }
     inline EventBridgeConfiguration& WithEventBridgeEnabled(bool value) { SetEventBridgeEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_eventBridgeEnabled;
+    bool m_eventBridgeEnabled{false};
     bool m_eventBridgeEnabledHasBeenSet = false;
   };
 

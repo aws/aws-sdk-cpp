@@ -18,13 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-UserIdentity::UserIdentity() : 
-    m_idHasBeenSet(false)
-{
-}
-
 UserIdentity::UserIdentity(JsonView jsonValue)
-  : UserIdentity()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UserIdentity& UserIdentity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,21 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-CmafEncryptionSettings::CmafEncryptionSettings() : 
-    m_constantInitializationVectorHasBeenSet(false),
-    m_encryptionMethod(CmafEncryptionType::NOT_SET),
-    m_encryptionMethodHasBeenSet(false),
-    m_initializationVectorInManifest(CmafInitializationVectorInManifest::NOT_SET),
-    m_initializationVectorInManifestHasBeenSet(false),
-    m_spekeKeyProviderHasBeenSet(false),
-    m_staticKeyProviderHasBeenSet(false),
-    m_type(CmafKeyProviderType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 CmafEncryptionSettings::CmafEncryptionSettings(JsonView jsonValue)
-  : CmafEncryptionSettings()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ CmafEncryptionSettings& CmafEncryptionSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("constantInitializationVector"))
   {
     m_constantInitializationVector = jsonValue.GetString("constantInitializationVector");
-
     m_constantInitializationVectorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionMethod"))
   {
     m_encryptionMethod = CmafEncryptionTypeMapper::GetCmafEncryptionTypeForName(jsonValue.GetString("encryptionMethod"));
-
     m_encryptionMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("initializationVectorInManifest"))
   {
     m_initializationVectorInManifest = CmafInitializationVectorInManifestMapper::GetCmafInitializationVectorInManifestForName(jsonValue.GetString("initializationVectorInManifest"));
-
     m_initializationVectorInManifestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("spekeKeyProvider"))
   {
     m_spekeKeyProvider = jsonValue.GetObject("spekeKeyProvider");
-
     m_spekeKeyProviderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("staticKeyProvider"))
   {
     m_staticKeyProvider = jsonValue.GetObject("staticKeyProvider");
-
     m_staticKeyProviderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = CmafKeyProviderTypeMapper::GetCmafKeyProviderTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

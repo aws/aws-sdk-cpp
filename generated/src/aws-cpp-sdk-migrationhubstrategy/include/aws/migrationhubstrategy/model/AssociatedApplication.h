@@ -32,7 +32,7 @@ namespace Model
   class AssociatedApplication
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AssociatedApplication();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AssociatedApplication() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AssociatedApplication(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API AssociatedApplication& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p> ID of the application as defined in Application Discovery Service. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline AssociatedApplication& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline AssociatedApplication& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline AssociatedApplication& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    AssociatedApplication& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Name of the application as defined in Application Discovery Service. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AssociatedApplication& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AssociatedApplication& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AssociatedApplication& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AssociatedApplication& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

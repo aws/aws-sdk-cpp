@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-UnfilteredPartition::UnfilteredPartition() : 
-    m_partitionHasBeenSet(false),
-    m_authorizedColumnsHasBeenSet(false),
-    m_isRegisteredWithLakeFormation(false),
-    m_isRegisteredWithLakeFormationHasBeenSet(false)
-{
-}
-
 UnfilteredPartition::UnfilteredPartition(JsonView jsonValue)
-  : UnfilteredPartition()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ UnfilteredPartition& UnfilteredPartition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Partition"))
   {
     m_partition = jsonValue.GetObject("Partition");
-
     m_partitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthorizedColumns"))
   {
     Aws::Utils::Array<JsonView> authorizedColumnsJsonList = jsonValue.GetArray("AuthorizedColumns");
@@ -50,14 +39,11 @@ UnfilteredPartition& UnfilteredPartition::operator =(JsonView jsonValue)
     }
     m_authorizedColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsRegisteredWithLakeFormation"))
   {
     m_isRegisteredWithLakeFormation = jsonValue.GetBool("IsRegisteredWithLakeFormation");
-
     m_isRegisteredWithLakeFormationHasBeenSet = true;
   }
-
   return *this;
 }
 

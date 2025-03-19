@@ -21,7 +21,7 @@ namespace Model
   class GetAssistantAssociationRequest : public ConnectWisdomServiceRequest
   {
   public:
-    AWS_CONNECTWISDOMSERVICE_API GetAssistantAssociationRequest();
+    AWS_CONNECTWISDOMSERVICE_API GetAssistantAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The identifier of the assistant association. Can be either the ID or the ARN.
      * URLs cannot contain the ARN.</p>
      */
-    inline const Aws::String& GetAssistantAssociationId() const{ return m_assistantAssociationId; }
+    inline const Aws::String& GetAssistantAssociationId() const { return m_assistantAssociationId; }
     inline bool AssistantAssociationIdHasBeenSet() const { return m_assistantAssociationIdHasBeenSet; }
-    inline void SetAssistantAssociationId(const Aws::String& value) { m_assistantAssociationIdHasBeenSet = true; m_assistantAssociationId = value; }
-    inline void SetAssistantAssociationId(Aws::String&& value) { m_assistantAssociationIdHasBeenSet = true; m_assistantAssociationId = std::move(value); }
-    inline void SetAssistantAssociationId(const char* value) { m_assistantAssociationIdHasBeenSet = true; m_assistantAssociationId.assign(value); }
-    inline GetAssistantAssociationRequest& WithAssistantAssociationId(const Aws::String& value) { SetAssistantAssociationId(value); return *this;}
-    inline GetAssistantAssociationRequest& WithAssistantAssociationId(Aws::String&& value) { SetAssistantAssociationId(std::move(value)); return *this;}
-    inline GetAssistantAssociationRequest& WithAssistantAssociationId(const char* value) { SetAssistantAssociationId(value); return *this;}
+    template<typename AssistantAssociationIdT = Aws::String>
+    void SetAssistantAssociationId(AssistantAssociationIdT&& value) { m_assistantAssociationIdHasBeenSet = true; m_assistantAssociationId = std::forward<AssistantAssociationIdT>(value); }
+    template<typename AssistantAssociationIdT = Aws::String>
+    GetAssistantAssociationRequest& WithAssistantAssociationId(AssistantAssociationIdT&& value) { SetAssistantAssociationId(std::forward<AssistantAssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,14 +50,12 @@ namespace Model
      * <p>The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs
      * cannot contain the ARN.</p>
      */
-    inline const Aws::String& GetAssistantId() const{ return m_assistantId; }
+    inline const Aws::String& GetAssistantId() const { return m_assistantId; }
     inline bool AssistantIdHasBeenSet() const { return m_assistantIdHasBeenSet; }
-    inline void SetAssistantId(const Aws::String& value) { m_assistantIdHasBeenSet = true; m_assistantId = value; }
-    inline void SetAssistantId(Aws::String&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::move(value); }
-    inline void SetAssistantId(const char* value) { m_assistantIdHasBeenSet = true; m_assistantId.assign(value); }
-    inline GetAssistantAssociationRequest& WithAssistantId(const Aws::String& value) { SetAssistantId(value); return *this;}
-    inline GetAssistantAssociationRequest& WithAssistantId(Aws::String&& value) { SetAssistantId(std::move(value)); return *this;}
-    inline GetAssistantAssociationRequest& WithAssistantId(const char* value) { SetAssistantId(value); return *this;}
+    template<typename AssistantIdT = Aws::String>
+    void SetAssistantId(AssistantIdT&& value) { m_assistantIdHasBeenSet = true; m_assistantId = std::forward<AssistantIdT>(value); }
+    template<typename AssistantIdT = Aws::String>
+    GetAssistantAssociationRequest& WithAssistantId(AssistantIdT&& value) { SetAssistantId(std::forward<AssistantIdT>(value)); return *this;}
     ///@}
   private:
 

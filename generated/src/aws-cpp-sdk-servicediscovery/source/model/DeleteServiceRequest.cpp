@@ -12,11 +12,6 @@ using namespace Aws::ServiceDiscovery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteServiceRequest::DeleteServiceRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteServiceRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,30 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-PackageDetails::PackageDetails() : 
-    m_packageIDHasBeenSet(false),
-    m_packageNameHasBeenSet(false),
-    m_packageType(PackageType::NOT_SET),
-    m_packageTypeHasBeenSet(false),
-    m_packageDescriptionHasBeenSet(false),
-    m_packageStatus(PackageStatus::NOT_SET),
-    m_packageStatusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_availablePackageVersionHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_availablePluginPropertiesHasBeenSet(false),
-    m_availablePackageConfigurationHasBeenSet(false),
-    m_allowListedUserListHasBeenSet(false),
-    m_packageOwnerHasBeenSet(false),
-    m_packageVendingOptionsHasBeenSet(false),
-    m_packageEncryptionOptionsHasBeenSet(false)
-{
-}
-
 PackageDetails::PackageDetails(JsonView jsonValue)
-  : PackageDetails()
 {
   *this = jsonValue;
 }
@@ -51,87 +28,63 @@ PackageDetails& PackageDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PackageID"))
   {
     m_packageID = jsonValue.GetString("PackageID");
-
     m_packageIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PackageName"))
   {
     m_packageName = jsonValue.GetString("PackageName");
-
     m_packageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PackageType"))
   {
     m_packageType = PackageTypeMapper::GetPackageTypeForName(jsonValue.GetString("PackageType"));
-
     m_packageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PackageDescription"))
   {
     m_packageDescription = jsonValue.GetString("PackageDescription");
-
     m_packageDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PackageStatus"))
   {
     m_packageStatus = PackageStatusMapper::GetPackageStatusForName(jsonValue.GetString("PackageStatus"));
-
     m_packageStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailablePackageVersion"))
   {
     m_availablePackageVersion = jsonValue.GetString("AvailablePackageVersion");
-
     m_availablePackageVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorDetails"))
   {
     m_errorDetails = jsonValue.GetObject("ErrorDetails");
-
     m_errorDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineVersion"))
   {
     m_engineVersion = jsonValue.GetString("EngineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailablePluginProperties"))
   {
     m_availablePluginProperties = jsonValue.GetObject("AvailablePluginProperties");
-
     m_availablePluginPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailablePackageConfiguration"))
   {
     m_availablePackageConfiguration = jsonValue.GetObject("AvailablePackageConfiguration");
-
     m_availablePackageConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowListedUserList"))
   {
     Aws::Utils::Array<JsonView> allowListedUserListJsonList = jsonValue.GetArray("AllowListedUserList");
@@ -141,28 +94,21 @@ PackageDetails& PackageDetails::operator =(JsonView jsonValue)
     }
     m_allowListedUserListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PackageOwner"))
   {
     m_packageOwner = jsonValue.GetString("PackageOwner");
-
     m_packageOwnerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PackageVendingOptions"))
   {
     m_packageVendingOptions = jsonValue.GetObject("PackageVendingOptions");
-
     m_packageVendingOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PackageEncryptionOptions"))
   {
     m_packageEncryptionOptions = jsonValue.GetObject("PackageEncryptionOptions");
-
     m_packageEncryptionOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

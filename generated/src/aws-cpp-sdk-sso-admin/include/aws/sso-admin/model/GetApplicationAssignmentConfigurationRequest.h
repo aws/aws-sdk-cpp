@@ -21,7 +21,7 @@ namespace Model
   class GetApplicationAssignmentConfigurationRequest : public SSOAdminRequest
   {
   public:
-    AWS_SSOADMIN_API GetApplicationAssignmentConfigurationRequest();
+    AWS_SSOADMIN_API GetApplicationAssignmentConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
      */
-    inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
+    inline const Aws::String& GetApplicationArn() const { return m_applicationArn; }
     inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
-    inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
-    inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
-    inline void SetApplicationArn(const char* value) { m_applicationArnHasBeenSet = true; m_applicationArn.assign(value); }
-    inline GetApplicationAssignmentConfigurationRequest& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
-    inline GetApplicationAssignmentConfigurationRequest& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
-    inline GetApplicationAssignmentConfigurationRequest& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
+    template<typename ApplicationArnT = Aws::String>
+    void SetApplicationArn(ApplicationArnT&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::forward<ApplicationArnT>(value); }
+    template<typename ApplicationArnT = Aws::String>
+    GetApplicationAssignmentConfigurationRequest& WithApplicationArn(ApplicationArnT&& value) { SetApplicationArn(std::forward<ApplicationArnT>(value)); return *this;}
     ///@}
   private:
 

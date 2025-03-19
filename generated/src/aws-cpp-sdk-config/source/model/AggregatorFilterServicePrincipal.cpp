@@ -18,15 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-AggregatorFilterServicePrincipal::AggregatorFilterServicePrincipal() : 
-    m_type(AggregatorFilterType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 AggregatorFilterServicePrincipal::AggregatorFilterServicePrincipal(JsonView jsonValue)
-  : AggregatorFilterServicePrincipal()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AggregatorFilterServicePrincipal& AggregatorFilterServicePrincipal::operator =(J
   if(jsonValue.ValueExists("Type"))
   {
     m_type = AggregatorFilterTypeMapper::GetAggregatorFilterTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     Aws::Utils::Array<JsonView> valueJsonList = jsonValue.GetArray("Value");
@@ -49,7 +39,6 @@ AggregatorFilterServicePrincipal& AggregatorFilterServicePrincipal::operator =(J
     }
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

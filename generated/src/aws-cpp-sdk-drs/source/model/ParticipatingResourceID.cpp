@@ -18,13 +18,7 @@ namespace drs
 namespace Model
 {
 
-ParticipatingResourceID::ParticipatingResourceID() : 
-    m_sourceNetworkIDHasBeenSet(false)
-{
-}
-
 ParticipatingResourceID::ParticipatingResourceID(JsonView jsonValue)
-  : ParticipatingResourceID()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ParticipatingResourceID& ParticipatingResourceID::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sourceNetworkID"))
   {
     m_sourceNetworkID = jsonValue.GetString("sourceNetworkID");
-
     m_sourceNetworkIDHasBeenSet = true;
   }
-
   return *this;
 }
 

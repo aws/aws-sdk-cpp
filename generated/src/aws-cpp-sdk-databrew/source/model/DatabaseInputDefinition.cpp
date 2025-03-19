@@ -18,16 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-DatabaseInputDefinition::DatabaseInputDefinition() : 
-    m_glueConnectionNameHasBeenSet(false),
-    m_databaseTableNameHasBeenSet(false),
-    m_tempDirectoryHasBeenSet(false),
-    m_queryStringHasBeenSet(false)
-{
-}
-
 DatabaseInputDefinition::DatabaseInputDefinition(JsonView jsonValue)
-  : DatabaseInputDefinition()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ DatabaseInputDefinition& DatabaseInputDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GlueConnectionName"))
   {
     m_glueConnectionName = jsonValue.GetString("GlueConnectionName");
-
     m_glueConnectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseTableName"))
   {
     m_databaseTableName = jsonValue.GetString("DatabaseTableName");
-
     m_databaseTableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TempDirectory"))
   {
     m_tempDirectory = jsonValue.GetObject("TempDirectory");
-
     m_tempDirectoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryString"))
   {
     m_queryString = jsonValue.GetString("QueryString");
-
     m_queryStringHasBeenSet = true;
   }
-
   return *this;
 }
 

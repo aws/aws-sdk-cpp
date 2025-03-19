@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-IntegerParameterRangeSpecification::IntegerParameterRangeSpecification() : 
-    m_minValueHasBeenSet(false),
-    m_maxValueHasBeenSet(false)
-{
-}
-
 IntegerParameterRangeSpecification::IntegerParameterRangeSpecification(JsonView jsonValue)
-  : IntegerParameterRangeSpecification()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IntegerParameterRangeSpecification& IntegerParameterRangeSpecification::operator
   if(jsonValue.ValueExists("MinValue"))
   {
     m_minValue = jsonValue.GetString("MinValue");
-
     m_minValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxValue"))
   {
     m_maxValue = jsonValue.GetString("MaxValue");
-
     m_maxValueHasBeenSet = true;
   }
-
   return *this;
 }
 

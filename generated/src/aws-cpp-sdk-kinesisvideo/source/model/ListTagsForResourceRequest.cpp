@@ -12,12 +12,6 @@ using namespace Aws::KinesisVideo::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTagsForResourceRequest::ListTagsForResourceRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_resourceARNHasBeenSet(false)
-{
-}
-
 Aws::String ListTagsForResourceRequest::SerializePayload() const
 {
   JsonValue payload;

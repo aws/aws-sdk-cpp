@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayConnect::TransitGatewayConnect() : 
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_transportTransitGatewayAttachmentIdHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false),
-    m_state(TransitGatewayAttachmentState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 TransitGatewayConnect::TransitGatewayConnect(const XmlNode& xmlNode)
-  : TransitGatewayConnect()
 {
   *this = xmlNode;
 }
@@ -65,7 +52,7 @@ TransitGatewayConnect& TransitGatewayConnect::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = TransitGatewayAttachmentStateMapper::GetTransitGatewayAttachmentStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = TransitGatewayAttachmentStateMapper::GetTransitGatewayAttachmentStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("creationTime");
@@ -84,6 +71,7 @@ TransitGatewayConnect& TransitGatewayConnect::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

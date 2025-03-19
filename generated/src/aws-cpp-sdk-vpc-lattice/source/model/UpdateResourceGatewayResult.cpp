@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateResourceGatewayResult::UpdateResourceGatewayResult() : 
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_status(ResourceGatewayStatus::NOT_SET)
-{
-}
-
 UpdateResourceGatewayResult::UpdateResourceGatewayResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateResourceGatewayResult()
 {
   *this = result;
 }
@@ -35,27 +28,23 @@ UpdateResourceGatewayResult& UpdateResourceGatewayResult::operator =(const Aws::
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipAddressType"))
   {
     m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(jsonValue.GetString("ipAddressType"));
-
+    m_ipAddressTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
@@ -63,14 +52,13 @@ UpdateResourceGatewayResult& UpdateResourceGatewayResult::operator =(const Aws::
     {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
     }
+    m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ResourceGatewayStatusMapper::GetResourceGatewayStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
@@ -78,20 +66,20 @@ UpdateResourceGatewayResult& UpdateResourceGatewayResult::operator =(const Aws::
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
     }
+    m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcId"))
   {
     m_vpcId = jsonValue.GetString("vpcId");
-
+    m_vpcIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

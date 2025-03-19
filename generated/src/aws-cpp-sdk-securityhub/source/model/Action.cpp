@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Action::Action() : 
-    m_actionTypeHasBeenSet(false),
-    m_networkConnectionActionHasBeenSet(false),
-    m_awsApiCallActionHasBeenSet(false),
-    m_dnsRequestActionHasBeenSet(false),
-    m_portProbeActionHasBeenSet(false)
-{
-}
-
 Action::Action(JsonView jsonValue)
-  : Action()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ Action& Action::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ActionType"))
   {
     m_actionType = jsonValue.GetString("ActionType");
-
     m_actionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkConnectionAction"))
   {
     m_networkConnectionAction = jsonValue.GetObject("NetworkConnectionAction");
-
     m_networkConnectionActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsApiCallAction"))
   {
     m_awsApiCallAction = jsonValue.GetObject("AwsApiCallAction");
-
     m_awsApiCallActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsRequestAction"))
   {
     m_dnsRequestAction = jsonValue.GetObject("DnsRequestAction");
-
     m_dnsRequestActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PortProbeAction"))
   {
     m_portProbeAction = jsonValue.GetObject("PortProbeAction");
-
     m_portProbeActionHasBeenSet = true;
   }
-
   return *this;
 }
 

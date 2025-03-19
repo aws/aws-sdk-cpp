@@ -12,12 +12,6 @@ using namespace Aws::PrometheusService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeRuleGroupsNamespaceRequest::DescribeRuleGroupsNamespaceRequest() : 
-    m_nameHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRuleGroupsNamespaceRequest::SerializePayload() const
 {
   return {};

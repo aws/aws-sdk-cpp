@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AttachVerifiedAccessTrustProviderResponse::AttachVerifiedAccessTrustProviderResponse()
-{
-}
-
 AttachVerifiedAccessTrustProviderResponse::AttachVerifiedAccessTrustProviderResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ AttachVerifiedAccessTrustProviderResponse& AttachVerifiedAccessTrustProviderResp
     if(!verifiedAccessTrustProviderNode.IsNull())
     {
       m_verifiedAccessTrustProvider = verifiedAccessTrustProviderNode;
+      m_verifiedAccessTrustProviderHasBeenSet = true;
     }
     XmlNode verifiedAccessInstanceNode = resultNode.FirstChild("verifiedAccessInstance");
     if(!verifiedAccessInstanceNode.IsNull())
     {
       m_verifiedAccessInstance = verifiedAccessInstanceNode;
+      m_verifiedAccessInstanceHasBeenSet = true;
     }
   }
 
@@ -55,6 +53,7 @@ AttachVerifiedAccessTrustProviderResponse& AttachVerifiedAccessTrustProviderResp
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AttachVerifiedAccessTrustProviderResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

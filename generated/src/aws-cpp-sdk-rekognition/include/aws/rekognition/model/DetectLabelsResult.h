@@ -31,7 +31,7 @@ namespace Model
   class DetectLabelsResult
   {
   public:
-    AWS_REKOGNITION_API DetectLabelsResult();
+    AWS_REKOGNITION_API DetectLabelsResult() = default;
     AWS_REKOGNITION_API DetectLabelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REKOGNITION_API DetectLabelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
     /**
      * <p>An array of labels for the real-world objects detected. </p>
      */
-    inline const Aws::Vector<Label>& GetLabels() const{ return m_labels; }
-    inline void SetLabels(const Aws::Vector<Label>& value) { m_labels = value; }
-    inline void SetLabels(Aws::Vector<Label>&& value) { m_labels = std::move(value); }
-    inline DetectLabelsResult& WithLabels(const Aws::Vector<Label>& value) { SetLabels(value); return *this;}
-    inline DetectLabelsResult& WithLabels(Aws::Vector<Label>&& value) { SetLabels(std::move(value)); return *this;}
-    inline DetectLabelsResult& AddLabels(const Label& value) { m_labels.push_back(value); return *this; }
-    inline DetectLabelsResult& AddLabels(Label&& value) { m_labels.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Label>& GetLabels() const { return m_labels; }
+    template<typename LabelsT = Aws::Vector<Label>>
+    void SetLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels = std::forward<LabelsT>(value); }
+    template<typename LabelsT = Aws::Vector<Label>>
+    DetectLabelsResult& WithLabels(LabelsT&& value) { SetLabels(std::forward<LabelsT>(value)); return *this;}
+    template<typename LabelsT = Label>
+    DetectLabelsResult& AddLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels.emplace_back(std::forward<LabelsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,11 +63,9 @@ namespace Model
      * coordinates aren't translated and represent the object locations before the
      * image is rotated. </p>
      */
-    inline const OrientationCorrection& GetOrientationCorrection() const{ return m_orientationCorrection; }
-    inline void SetOrientationCorrection(const OrientationCorrection& value) { m_orientationCorrection = value; }
-    inline void SetOrientationCorrection(OrientationCorrection&& value) { m_orientationCorrection = std::move(value); }
-    inline DetectLabelsResult& WithOrientationCorrection(const OrientationCorrection& value) { SetOrientationCorrection(value); return *this;}
-    inline DetectLabelsResult& WithOrientationCorrection(OrientationCorrection&& value) { SetOrientationCorrection(std::move(value)); return *this;}
+    inline OrientationCorrection GetOrientationCorrection() const { return m_orientationCorrection; }
+    inline void SetOrientationCorrection(OrientationCorrection value) { m_orientationCorrectionHasBeenSet = true; m_orientationCorrection = value; }
+    inline DetectLabelsResult& WithOrientationCorrection(OrientationCorrection value) { SetOrientationCorrection(value); return *this;}
     ///@}
 
     ///@{
@@ -75,13 +73,11 @@ namespace Model
      * <p>Version number of the label detection model that was used to detect
      * labels.</p>
      */
-    inline const Aws::String& GetLabelModelVersion() const{ return m_labelModelVersion; }
-    inline void SetLabelModelVersion(const Aws::String& value) { m_labelModelVersion = value; }
-    inline void SetLabelModelVersion(Aws::String&& value) { m_labelModelVersion = std::move(value); }
-    inline void SetLabelModelVersion(const char* value) { m_labelModelVersion.assign(value); }
-    inline DetectLabelsResult& WithLabelModelVersion(const Aws::String& value) { SetLabelModelVersion(value); return *this;}
-    inline DetectLabelsResult& WithLabelModelVersion(Aws::String&& value) { SetLabelModelVersion(std::move(value)); return *this;}
-    inline DetectLabelsResult& WithLabelModelVersion(const char* value) { SetLabelModelVersion(value); return *this;}
+    inline const Aws::String& GetLabelModelVersion() const { return m_labelModelVersion; }
+    template<typename LabelModelVersionT = Aws::String>
+    void SetLabelModelVersion(LabelModelVersionT&& value) { m_labelModelVersionHasBeenSet = true; m_labelModelVersion = std::forward<LabelModelVersionT>(value); }
+    template<typename LabelModelVersionT = Aws::String>
+    DetectLabelsResult& WithLabelModelVersion(LabelModelVersionT&& value) { SetLabelModelVersion(std::forward<LabelModelVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,34 +85,37 @@ namespace Model
      * <p>Information about the properties of the input image, such as brightness,
      * sharpness, contrast, and dominant colors.</p>
      */
-    inline const DetectLabelsImageProperties& GetImageProperties() const{ return m_imageProperties; }
-    inline void SetImageProperties(const DetectLabelsImageProperties& value) { m_imageProperties = value; }
-    inline void SetImageProperties(DetectLabelsImageProperties&& value) { m_imageProperties = std::move(value); }
-    inline DetectLabelsResult& WithImageProperties(const DetectLabelsImageProperties& value) { SetImageProperties(value); return *this;}
-    inline DetectLabelsResult& WithImageProperties(DetectLabelsImageProperties&& value) { SetImageProperties(std::move(value)); return *this;}
+    inline const DetectLabelsImageProperties& GetImageProperties() const { return m_imageProperties; }
+    template<typename ImagePropertiesT = DetectLabelsImageProperties>
+    void SetImageProperties(ImagePropertiesT&& value) { m_imagePropertiesHasBeenSet = true; m_imageProperties = std::forward<ImagePropertiesT>(value); }
+    template<typename ImagePropertiesT = DetectLabelsImageProperties>
+    DetectLabelsResult& WithImageProperties(ImagePropertiesT&& value) { SetImageProperties(std::forward<ImagePropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DetectLabelsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DetectLabelsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DetectLabelsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DetectLabelsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Label> m_labels;
+    bool m_labelsHasBeenSet = false;
 
-    OrientationCorrection m_orientationCorrection;
+    OrientationCorrection m_orientationCorrection{OrientationCorrection::NOT_SET};
+    bool m_orientationCorrectionHasBeenSet = false;
 
     Aws::String m_labelModelVersion;
+    bool m_labelModelVersionHasBeenSet = false;
 
     DetectLabelsImageProperties m_imageProperties;
+    bool m_imagePropertiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

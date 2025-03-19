@@ -12,11 +12,6 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPlaybackConfigurationRequest::GetPlaybackConfigurationRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetPlaybackConfigurationRequest::SerializePayload() const
 {
   return {};

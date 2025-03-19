@@ -12,12 +12,6 @@ using namespace Aws::EntityResolution::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetProviderServiceRequest::GetProviderServiceRequest() : 
-    m_providerNameHasBeenSet(false),
-    m_providerServiceNameHasBeenSet(false)
-{
-}
-
 Aws::String GetProviderServiceRequest::SerializePayload() const
 {
   return {};

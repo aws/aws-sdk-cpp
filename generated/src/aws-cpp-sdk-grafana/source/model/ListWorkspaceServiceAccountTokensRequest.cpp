@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListWorkspaceServiceAccountTokensRequest::ListWorkspaceServiceAccountTokensRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_serviceAccountIdHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
-{
-}
-
 Aws::String ListWorkspaceServiceAccountTokensRequest::SerializePayload() const
 {
   return {};

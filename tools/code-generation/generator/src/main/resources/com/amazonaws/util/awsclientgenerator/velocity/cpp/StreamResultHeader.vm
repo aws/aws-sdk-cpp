@@ -34,10 +34,9 @@ namespace Model
   class $typeInfo.className
   {
   public:
-    ${exportMacro} ${typeInfo.className}();
-    //We have to define these because Microsoft doesn't auto generate them
-    ${exportMacro} ${typeInfo.className}(${typeInfo.className}&&);
-    ${exportMacro} ${classNameRef} operator=(${typeInfo.className}&&);
+    ${exportMacro} ${typeInfo.className}() = default;
+    ${exportMacro} ${typeInfo.className}(${typeInfo.className}&&) = default;
+    ${exportMacro} ${classNameRef} operator=(${typeInfo.className}&&) = default;
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     ${typeInfo.className}(const ${typeInfo.className}&) = delete;

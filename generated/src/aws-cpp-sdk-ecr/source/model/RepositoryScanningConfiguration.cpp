@@ -18,19 +18,7 @@ namespace ECR
 namespace Model
 {
 
-RepositoryScanningConfiguration::RepositoryScanningConfiguration() : 
-    m_repositoryArnHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_scanOnPush(false),
-    m_scanOnPushHasBeenSet(false),
-    m_scanFrequency(ScanFrequency::NOT_SET),
-    m_scanFrequencyHasBeenSet(false),
-    m_appliedScanFiltersHasBeenSet(false)
-{
-}
-
 RepositoryScanningConfiguration::RepositoryScanningConfiguration(JsonView jsonValue)
-  : RepositoryScanningConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ RepositoryScanningConfiguration& RepositoryScanningConfiguration::operator =(Jso
   if(jsonValue.ValueExists("repositoryArn"))
   {
     m_repositoryArn = jsonValue.GetString("repositoryArn");
-
     m_repositoryArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanOnPush"))
   {
     m_scanOnPush = jsonValue.GetBool("scanOnPush");
-
     m_scanOnPushHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanFrequency"))
   {
     m_scanFrequency = ScanFrequencyMapper::GetScanFrequencyForName(jsonValue.GetString("scanFrequency"));
-
     m_scanFrequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appliedScanFilters"))
   {
     Aws::Utils::Array<JsonView> appliedScanFiltersJsonList = jsonValue.GetArray("appliedScanFilters");
@@ -74,7 +54,6 @@ RepositoryScanningConfiguration& RepositoryScanningConfiguration::operator =(Jso
     }
     m_appliedScanFiltersHasBeenSet = true;
   }
-
   return *this;
 }
 

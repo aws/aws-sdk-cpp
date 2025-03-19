@@ -32,7 +32,7 @@ namespace Model
   class GuardrailCoverage
   {
   public:
-    AWS_BEDROCKRUNTIME_API GuardrailCoverage();
+    AWS_BEDROCKRUNTIME_API GuardrailCoverage() = default;
     AWS_BEDROCKRUNTIME_API GuardrailCoverage(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API GuardrailCoverage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The text characters of the guardrail coverage details.</p>
      */
-    inline const GuardrailTextCharactersCoverage& GetTextCharacters() const{ return m_textCharacters; }
+    inline const GuardrailTextCharactersCoverage& GetTextCharacters() const { return m_textCharacters; }
     inline bool TextCharactersHasBeenSet() const { return m_textCharactersHasBeenSet; }
-    inline void SetTextCharacters(const GuardrailTextCharactersCoverage& value) { m_textCharactersHasBeenSet = true; m_textCharacters = value; }
-    inline void SetTextCharacters(GuardrailTextCharactersCoverage&& value) { m_textCharactersHasBeenSet = true; m_textCharacters = std::move(value); }
-    inline GuardrailCoverage& WithTextCharacters(const GuardrailTextCharactersCoverage& value) { SetTextCharacters(value); return *this;}
-    inline GuardrailCoverage& WithTextCharacters(GuardrailTextCharactersCoverage&& value) { SetTextCharacters(std::move(value)); return *this;}
+    template<typename TextCharactersT = GuardrailTextCharactersCoverage>
+    void SetTextCharacters(TextCharactersT&& value) { m_textCharactersHasBeenSet = true; m_textCharacters = std::forward<TextCharactersT>(value); }
+    template<typename TextCharactersT = GuardrailTextCharactersCoverage>
+    GuardrailCoverage& WithTextCharacters(TextCharactersT&& value) { SetTextCharacters(std::forward<TextCharactersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,12 +55,12 @@ namespace Model
      * <p>The guardrail coverage for images (the number of images that guardrails
      * guarded).</p>
      */
-    inline const GuardrailImageCoverage& GetImages() const{ return m_images; }
+    inline const GuardrailImageCoverage& GetImages() const { return m_images; }
     inline bool ImagesHasBeenSet() const { return m_imagesHasBeenSet; }
-    inline void SetImages(const GuardrailImageCoverage& value) { m_imagesHasBeenSet = true; m_images = value; }
-    inline void SetImages(GuardrailImageCoverage&& value) { m_imagesHasBeenSet = true; m_images = std::move(value); }
-    inline GuardrailCoverage& WithImages(const GuardrailImageCoverage& value) { SetImages(value); return *this;}
-    inline GuardrailCoverage& WithImages(GuardrailImageCoverage&& value) { SetImages(std::move(value)); return *this;}
+    template<typename ImagesT = GuardrailImageCoverage>
+    void SetImages(ImagesT&& value) { m_imagesHasBeenSet = true; m_images = std::forward<ImagesT>(value); }
+    template<typename ImagesT = GuardrailImageCoverage>
+    GuardrailCoverage& WithImages(ImagesT&& value) { SetImages(std::forward<ImagesT>(value)); return *this;}
     ///@}
   private:
 

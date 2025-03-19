@@ -21,7 +21,7 @@ namespace Model
   class UpdateSubscriptionRequest : public ShieldRequest
   {
   public:
-    AWS_SHIELD_API UpdateSubscriptionRequest();
+    AWS_SHIELD_API UpdateSubscriptionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,16 +44,14 @@ namespace Model
      * <code>AutoRenew</code>, the existing value for <code>AutoRenew</code> remains
      * unchanged.</p>
      */
-    inline const AutoRenew& GetAutoRenew() const{ return m_autoRenew; }
+    inline AutoRenew GetAutoRenew() const { return m_autoRenew; }
     inline bool AutoRenewHasBeenSet() const { return m_autoRenewHasBeenSet; }
-    inline void SetAutoRenew(const AutoRenew& value) { m_autoRenewHasBeenSet = true; m_autoRenew = value; }
-    inline void SetAutoRenew(AutoRenew&& value) { m_autoRenewHasBeenSet = true; m_autoRenew = std::move(value); }
-    inline UpdateSubscriptionRequest& WithAutoRenew(const AutoRenew& value) { SetAutoRenew(value); return *this;}
-    inline UpdateSubscriptionRequest& WithAutoRenew(AutoRenew&& value) { SetAutoRenew(std::move(value)); return *this;}
+    inline void SetAutoRenew(AutoRenew value) { m_autoRenewHasBeenSet = true; m_autoRenew = value; }
+    inline UpdateSubscriptionRequest& WithAutoRenew(AutoRenew value) { SetAutoRenew(value); return *this;}
     ///@}
   private:
 
-    AutoRenew m_autoRenew;
+    AutoRenew m_autoRenew{AutoRenew::NOT_SET};
     bool m_autoRenewHasBeenSet = false;
   };
 

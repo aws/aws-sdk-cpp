@@ -27,7 +27,7 @@ namespace Model
   class StartRestoreJobResult
   {
   public:
-    AWS_BACKUP_API StartRestoreJobResult();
+    AWS_BACKUP_API StartRestoreJobResult() = default;
     AWS_BACKUP_API StartRestoreJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUP_API StartRestoreJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>Uniquely identifies the job that restores a recovery point.</p>
      */
-    inline const Aws::String& GetRestoreJobId() const{ return m_restoreJobId; }
-    inline void SetRestoreJobId(const Aws::String& value) { m_restoreJobId = value; }
-    inline void SetRestoreJobId(Aws::String&& value) { m_restoreJobId = std::move(value); }
-    inline void SetRestoreJobId(const char* value) { m_restoreJobId.assign(value); }
-    inline StartRestoreJobResult& WithRestoreJobId(const Aws::String& value) { SetRestoreJobId(value); return *this;}
-    inline StartRestoreJobResult& WithRestoreJobId(Aws::String&& value) { SetRestoreJobId(std::move(value)); return *this;}
-    inline StartRestoreJobResult& WithRestoreJobId(const char* value) { SetRestoreJobId(value); return *this;}
+    inline const Aws::String& GetRestoreJobId() const { return m_restoreJobId; }
+    template<typename RestoreJobIdT = Aws::String>
+    void SetRestoreJobId(RestoreJobIdT&& value) { m_restoreJobIdHasBeenSet = true; m_restoreJobId = std::forward<RestoreJobIdT>(value); }
+    template<typename RestoreJobIdT = Aws::String>
+    StartRestoreJobResult& WithRestoreJobId(RestoreJobIdT&& value) { SetRestoreJobId(std::forward<RestoreJobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartRestoreJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartRestoreJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartRestoreJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartRestoreJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_restoreJobId;
+    bool m_restoreJobIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

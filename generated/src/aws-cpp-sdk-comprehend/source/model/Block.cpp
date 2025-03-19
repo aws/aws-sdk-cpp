@@ -18,20 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-Block::Block() : 
-    m_idHasBeenSet(false),
-    m_blockType(BlockType::NOT_SET),
-    m_blockTypeHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_page(0),
-    m_pageHasBeenSet(false),
-    m_geometryHasBeenSet(false),
-    m_relationshipsHasBeenSet(false)
-{
-}
-
 Block::Block(JsonView jsonValue)
-  : Block()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ Block& Block::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BlockType"))
   {
     m_blockType = BlockTypeMapper::GetBlockTypeForName(jsonValue.GetString("BlockType"));
-
     m_blockTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Text"))
   {
     m_text = jsonValue.GetString("Text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Page"))
   {
     m_page = jsonValue.GetInteger("Page");
-
     m_pageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Geometry"))
   {
     m_geometry = jsonValue.GetObject("Geometry");
-
     m_geometryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Relationships"))
   {
     Aws::Utils::Array<JsonView> relationshipsJsonList = jsonValue.GetArray("Relationships");
@@ -82,7 +59,6 @@ Block& Block::operator =(JsonView jsonValue)
     }
     m_relationshipsHasBeenSet = true;
   }
-
   return *this;
 }
 

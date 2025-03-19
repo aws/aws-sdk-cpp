@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-RouteTableAssociationState::RouteTableAssociationState() : 
-    m_state(RouteTableAssociationStateCode::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 RouteTableAssociationState::RouteTableAssociationState(const XmlNode& xmlNode)
-  : RouteTableAssociationState()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ RouteTableAssociationState& RouteTableAssociationState::operator =(const XmlNode
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = RouteTableAssociationStateCodeMapper::GetRouteTableAssociationStateCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = RouteTableAssociationStateCodeMapper::GetRouteTableAssociationStateCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("statusMessage");

@@ -18,23 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-WorkspacesPoolSession::WorkspacesPoolSession() : 
-    m_authenticationType(AuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false),
-    m_connectionState(SessionConnectionState::NOT_SET),
-    m_connectionStateHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_poolIdHasBeenSet(false),
-    m_expirationTimeHasBeenSet(false),
-    m_networkAccessConfigurationHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_userIdHasBeenSet(false)
-{
-}
-
 WorkspacesPoolSession::WorkspacesPoolSession(JsonView jsonValue)
-  : WorkspacesPoolSession()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ WorkspacesPoolSession& WorkspacesPoolSession::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AuthenticationType"))
   {
     m_authenticationType = AuthenticationTypeMapper::GetAuthenticationTypeForName(jsonValue.GetString("AuthenticationType"));
-
     m_authenticationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionState"))
   {
     m_connectionState = SessionConnectionStateMapper::GetSessionConnectionStateForName(jsonValue.GetString("ConnectionState"));
-
     m_connectionStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SessionId"))
   {
     m_sessionId = jsonValue.GetString("SessionId");
-
     m_sessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PoolId"))
   {
     m_poolId = jsonValue.GetString("PoolId");
-
     m_poolIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpirationTime"))
   {
     m_expirationTime = jsonValue.GetDouble("ExpirationTime");
-
     m_expirationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkAccessConfiguration"))
   {
     m_networkAccessConfiguration = jsonValue.GetObject("NetworkAccessConfiguration");
-
     m_networkAccessConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserId"))
   {
     m_userId = jsonValue.GetString("UserId");
-
     m_userIdHasBeenSet = true;
   }
-
   return *this;
 }
 

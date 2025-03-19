@@ -18,13 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-AvailabilityZone::AvailabilityZone() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 AvailabilityZone::AvailabilityZone(JsonView jsonValue)
-  : AvailabilityZone()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AvailabilityZone& AvailabilityZone::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

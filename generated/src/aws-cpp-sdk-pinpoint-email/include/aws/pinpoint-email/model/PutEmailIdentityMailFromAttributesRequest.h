@@ -26,7 +26,7 @@ namespace Model
   class PutEmailIdentityMailFromAttributesRequest : public PinpointEmailRequest
   {
   public:
-    AWS_PINPOINTEMAIL_API PutEmailIdentityMailFromAttributesRequest();
+    AWS_PINPOINTEMAIL_API PutEmailIdentityMailFromAttributesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>The verified email identity that you want to set up the custom MAIL FROM
      * domain for.</p>
      */
-    inline const Aws::String& GetEmailIdentity() const{ return m_emailIdentity; }
+    inline const Aws::String& GetEmailIdentity() const { return m_emailIdentity; }
     inline bool EmailIdentityHasBeenSet() const { return m_emailIdentityHasBeenSet; }
-    inline void SetEmailIdentity(const Aws::String& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = value; }
-    inline void SetEmailIdentity(Aws::String&& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = std::move(value); }
-    inline void SetEmailIdentity(const char* value) { m_emailIdentityHasBeenSet = true; m_emailIdentity.assign(value); }
-    inline PutEmailIdentityMailFromAttributesRequest& WithEmailIdentity(const Aws::String& value) { SetEmailIdentity(value); return *this;}
-    inline PutEmailIdentityMailFromAttributesRequest& WithEmailIdentity(Aws::String&& value) { SetEmailIdentity(std::move(value)); return *this;}
-    inline PutEmailIdentityMailFromAttributesRequest& WithEmailIdentity(const char* value) { SetEmailIdentity(value); return *this;}
+    template<typename EmailIdentityT = Aws::String>
+    void SetEmailIdentity(EmailIdentityT&& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = std::forward<EmailIdentityT>(value); }
+    template<typename EmailIdentityT = Aws::String>
+    PutEmailIdentityMailFromAttributesRequest& WithEmailIdentity(EmailIdentityT&& value) { SetEmailIdentity(std::forward<EmailIdentityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * MAIL FROM domain is a destination for feedback forwarding emails.</p> </li>
      * </ul>
      */
-    inline const Aws::String& GetMailFromDomain() const{ return m_mailFromDomain; }
+    inline const Aws::String& GetMailFromDomain() const { return m_mailFromDomain; }
     inline bool MailFromDomainHasBeenSet() const { return m_mailFromDomainHasBeenSet; }
-    inline void SetMailFromDomain(const Aws::String& value) { m_mailFromDomainHasBeenSet = true; m_mailFromDomain = value; }
-    inline void SetMailFromDomain(Aws::String&& value) { m_mailFromDomainHasBeenSet = true; m_mailFromDomain = std::move(value); }
-    inline void SetMailFromDomain(const char* value) { m_mailFromDomainHasBeenSet = true; m_mailFromDomain.assign(value); }
-    inline PutEmailIdentityMailFromAttributesRequest& WithMailFromDomain(const Aws::String& value) { SetMailFromDomain(value); return *this;}
-    inline PutEmailIdentityMailFromAttributesRequest& WithMailFromDomain(Aws::String&& value) { SetMailFromDomain(std::move(value)); return *this;}
-    inline PutEmailIdentityMailFromAttributesRequest& WithMailFromDomain(const char* value) { SetMailFromDomain(value); return *this;}
+    template<typename MailFromDomainT = Aws::String>
+    void SetMailFromDomain(MailFromDomainT&& value) { m_mailFromDomainHasBeenSet = true; m_mailFromDomain = std::forward<MailFromDomainT>(value); }
+    template<typename MailFromDomainT = Aws::String>
+    PutEmailIdentityMailFromAttributesRequest& WithMailFromDomain(MailFromDomainT&& value) { SetMailFromDomain(std::forward<MailFromDomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,12 +78,10 @@ namespace Model
      * MAIL FROM domain configuration is in the <code>Pending</code>,
      * <code>Failed</code>, and <code>TemporaryFailure</code> states.</p>
      */
-    inline const BehaviorOnMxFailure& GetBehaviorOnMxFailure() const{ return m_behaviorOnMxFailure; }
+    inline BehaviorOnMxFailure GetBehaviorOnMxFailure() const { return m_behaviorOnMxFailure; }
     inline bool BehaviorOnMxFailureHasBeenSet() const { return m_behaviorOnMxFailureHasBeenSet; }
-    inline void SetBehaviorOnMxFailure(const BehaviorOnMxFailure& value) { m_behaviorOnMxFailureHasBeenSet = true; m_behaviorOnMxFailure = value; }
-    inline void SetBehaviorOnMxFailure(BehaviorOnMxFailure&& value) { m_behaviorOnMxFailureHasBeenSet = true; m_behaviorOnMxFailure = std::move(value); }
-    inline PutEmailIdentityMailFromAttributesRequest& WithBehaviorOnMxFailure(const BehaviorOnMxFailure& value) { SetBehaviorOnMxFailure(value); return *this;}
-    inline PutEmailIdentityMailFromAttributesRequest& WithBehaviorOnMxFailure(BehaviorOnMxFailure&& value) { SetBehaviorOnMxFailure(std::move(value)); return *this;}
+    inline void SetBehaviorOnMxFailure(BehaviorOnMxFailure value) { m_behaviorOnMxFailureHasBeenSet = true; m_behaviorOnMxFailure = value; }
+    inline PutEmailIdentityMailFromAttributesRequest& WithBehaviorOnMxFailure(BehaviorOnMxFailure value) { SetBehaviorOnMxFailure(value); return *this;}
     ///@}
   private:
 
@@ -97,7 +91,7 @@ namespace Model
     Aws::String m_mailFromDomain;
     bool m_mailFromDomainHasBeenSet = false;
 
-    BehaviorOnMxFailure m_behaviorOnMxFailure;
+    BehaviorOnMxFailure m_behaviorOnMxFailure{BehaviorOnMxFailure::NOT_SET};
     bool m_behaviorOnMxFailureHasBeenSet = false;
   };
 

@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2ClientVpnEndpointAuthenticationOptionsDetails::AwsEc2ClientVpnEndpointAuthenticationOptionsDetails() : 
-    m_typeHasBeenSet(false),
-    m_activeDirectoryHasBeenSet(false),
-    m_mutualAuthenticationHasBeenSet(false),
-    m_federatedAuthenticationHasBeenSet(false)
-{
-}
-
 AwsEc2ClientVpnEndpointAuthenticationOptionsDetails::AwsEc2ClientVpnEndpointAuthenticationOptionsDetails(JsonView jsonValue)
-  : AwsEc2ClientVpnEndpointAuthenticationOptionsDetails()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AwsEc2ClientVpnEndpointAuthenticationOptionsDetails& AwsEc2ClientVpnEndpointAuth
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActiveDirectory"))
   {
     m_activeDirectory = jsonValue.GetObject("ActiveDirectory");
-
     m_activeDirectoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MutualAuthentication"))
   {
     m_mutualAuthentication = jsonValue.GetObject("MutualAuthentication");
-
     m_mutualAuthenticationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FederatedAuthentication"))
   {
     m_federatedAuthentication = jsonValue.GetObject("FederatedAuthentication");
-
     m_federatedAuthenticationHasBeenSet = true;
   }
-
   return *this;
 }
 

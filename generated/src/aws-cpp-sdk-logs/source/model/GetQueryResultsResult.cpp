@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetQueryResultsResult::GetQueryResultsResult() : 
-    m_queryLanguage(QueryLanguage::NOT_SET),
-    m_status(QueryStatus::NOT_SET)
-{
-}
-
 GetQueryResultsResult::GetQueryResultsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetQueryResultsResult()
 {
   *this = result;
 }
@@ -35,9 +28,8 @@ GetQueryResultsResult& GetQueryResultsResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("queryLanguage"))
   {
     m_queryLanguage = QueryLanguageMapper::GetQueryLanguageForName(jsonValue.GetString("queryLanguage"));
-
+    m_queryLanguageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("results"))
   {
     Aws::Utils::Array<JsonView> resultsJsonList = jsonValue.GetArray("results");
@@ -52,32 +44,30 @@ GetQueryResultsResult& GetQueryResultsResult::operator =(const Aws::AmazonWebSer
       }
       m_results.push_back(std::move(resultRowsList));
     }
+    m_resultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statistics"))
   {
     m_statistics = jsonValue.GetObject("statistics");
-
+    m_statisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = QueryStatusMapper::GetQueryStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionKey"))
   {
     m_encryptionKey = jsonValue.GetString("encryptionKey");
-
+    m_encryptionKeyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

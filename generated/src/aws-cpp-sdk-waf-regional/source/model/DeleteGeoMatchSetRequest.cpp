@@ -12,12 +12,6 @@ using namespace Aws::WAFRegional::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteGeoMatchSetRequest::DeleteGeoMatchSetRequest() : 
-    m_geoMatchSetIdHasBeenSet(false),
-    m_changeTokenHasBeenSet(false)
-{
-}
-
 Aws::String DeleteGeoMatchSetRequest::SerializePayload() const
 {
   JsonValue payload;

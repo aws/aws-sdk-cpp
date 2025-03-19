@@ -19,17 +19,7 @@ namespace SQS
 namespace Model
 {
 
-MessageAttributeValue::MessageAttributeValue() : 
-    m_stringValueHasBeenSet(false),
-    m_binaryValueHasBeenSet(false),
-    m_stringListValuesHasBeenSet(false),
-    m_binaryListValuesHasBeenSet(false),
-    m_dataTypeHasBeenSet(false)
-{
-}
-
 MessageAttributeValue::MessageAttributeValue(JsonView jsonValue)
-  : MessageAttributeValue()
 {
   *this = jsonValue;
 }
@@ -39,16 +29,13 @@ MessageAttributeValue& MessageAttributeValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StringValue"))
   {
     m_stringValue = jsonValue.GetString("StringValue");
-
     m_stringValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BinaryValue"))
   {
     m_binaryValue = HashingUtils::Base64Decode(jsonValue.GetString("BinaryValue"));
     m_binaryValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StringListValues"))
   {
     Aws::Utils::Array<JsonView> stringListValuesJsonList = jsonValue.GetArray("StringListValues");
@@ -58,7 +45,6 @@ MessageAttributeValue& MessageAttributeValue::operator =(JsonView jsonValue)
     }
     m_stringListValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BinaryListValues"))
   {
     Aws::Utils::Array<JsonView> binaryListValuesJsonList = jsonValue.GetArray("BinaryListValues");
@@ -68,14 +54,11 @@ MessageAttributeValue& MessageAttributeValue::operator =(JsonView jsonValue)
     }
     m_binaryListValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataType"))
   {
     m_dataType = jsonValue.GetString("DataType");
-
     m_dataTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace MigrationHubOrchestrator
 namespace Model
 {
 
-TemplateSource::TemplateSource() : 
-    m_workflowIdHasBeenSet(false)
-{
-}
-
 TemplateSource::TemplateSource(JsonView jsonValue)
-  : TemplateSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TemplateSource& TemplateSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("workflowId"))
   {
     m_workflowId = jsonValue.GetString("workflowId");
-
     m_workflowIdHasBeenSet = true;
   }
-
   return *this;
 }
 

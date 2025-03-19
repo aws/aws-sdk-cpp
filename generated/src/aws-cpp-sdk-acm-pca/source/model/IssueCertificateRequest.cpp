@@ -13,19 +13,6 @@ using namespace Aws::ACMPCA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-IssueCertificateRequest::IssueCertificateRequest() : 
-    m_apiPassthroughHasBeenSet(false),
-    m_certificateAuthorityArnHasBeenSet(false),
-    m_csrHasBeenSet(false),
-    m_signingAlgorithm(SigningAlgorithm::NOT_SET),
-    m_signingAlgorithmHasBeenSet(false),
-    m_templateArnHasBeenSet(false),
-    m_validityHasBeenSet(false),
-    m_validityNotBeforeHasBeenSet(false),
-    m_idempotencyTokenHasBeenSet(false)
-{
-}
-
 Aws::String IssueCertificateRequest::SerializePayload() const
 {
   JsonValue payload;

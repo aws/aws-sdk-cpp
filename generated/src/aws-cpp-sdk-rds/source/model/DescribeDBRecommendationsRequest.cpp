@@ -10,17 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DescribeDBRecommendationsRequest::DescribeDBRecommendationsRequest() : 
-    m_lastUpdatedAfterHasBeenSet(false),
-    m_lastUpdatedBeforeHasBeenSet(false),
-    m_localeHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDBRecommendationsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

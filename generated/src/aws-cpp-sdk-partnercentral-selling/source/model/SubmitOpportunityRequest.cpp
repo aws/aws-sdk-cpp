@@ -12,16 +12,6 @@ using namespace Aws::PartnerCentralSelling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SubmitOpportunityRequest::SubmitOpportunityRequest() : 
-    m_catalogHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_involvementType(SalesInvolvementType::NOT_SET),
-    m_involvementTypeHasBeenSet(false),
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
-{
-}
-
 Aws::String SubmitOpportunityRequest::SerializePayload() const
 {
   JsonValue payload;

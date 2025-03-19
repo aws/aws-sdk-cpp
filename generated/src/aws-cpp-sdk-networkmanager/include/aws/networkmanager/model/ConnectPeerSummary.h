@@ -35,7 +35,7 @@ namespace Model
   class ConnectPeerSummary
   {
   public:
-    AWS_NETWORKMANAGER_API ConnectPeerSummary();
+    AWS_NETWORKMANAGER_API ConnectPeerSummary() = default;
     AWS_NETWORKMANAGER_API ConnectPeerSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API ConnectPeerSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,108 +45,96 @@ namespace Model
     /**
      * <p>The ID of a core network.</p>
      */
-    inline const Aws::String& GetCoreNetworkId() const{ return m_coreNetworkId; }
+    inline const Aws::String& GetCoreNetworkId() const { return m_coreNetworkId; }
     inline bool CoreNetworkIdHasBeenSet() const { return m_coreNetworkIdHasBeenSet; }
-    inline void SetCoreNetworkId(const Aws::String& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = value; }
-    inline void SetCoreNetworkId(Aws::String&& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = std::move(value); }
-    inline void SetCoreNetworkId(const char* value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId.assign(value); }
-    inline ConnectPeerSummary& WithCoreNetworkId(const Aws::String& value) { SetCoreNetworkId(value); return *this;}
-    inline ConnectPeerSummary& WithCoreNetworkId(Aws::String&& value) { SetCoreNetworkId(std::move(value)); return *this;}
-    inline ConnectPeerSummary& WithCoreNetworkId(const char* value) { SetCoreNetworkId(value); return *this;}
+    template<typename CoreNetworkIdT = Aws::String>
+    void SetCoreNetworkId(CoreNetworkIdT&& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = std::forward<CoreNetworkIdT>(value); }
+    template<typename CoreNetworkIdT = Aws::String>
+    ConnectPeerSummary& WithCoreNetworkId(CoreNetworkIdT&& value) { SetCoreNetworkId(std::forward<CoreNetworkIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of a Connect peer attachment.</p>
      */
-    inline const Aws::String& GetConnectAttachmentId() const{ return m_connectAttachmentId; }
+    inline const Aws::String& GetConnectAttachmentId() const { return m_connectAttachmentId; }
     inline bool ConnectAttachmentIdHasBeenSet() const { return m_connectAttachmentIdHasBeenSet; }
-    inline void SetConnectAttachmentId(const Aws::String& value) { m_connectAttachmentIdHasBeenSet = true; m_connectAttachmentId = value; }
-    inline void SetConnectAttachmentId(Aws::String&& value) { m_connectAttachmentIdHasBeenSet = true; m_connectAttachmentId = std::move(value); }
-    inline void SetConnectAttachmentId(const char* value) { m_connectAttachmentIdHasBeenSet = true; m_connectAttachmentId.assign(value); }
-    inline ConnectPeerSummary& WithConnectAttachmentId(const Aws::String& value) { SetConnectAttachmentId(value); return *this;}
-    inline ConnectPeerSummary& WithConnectAttachmentId(Aws::String&& value) { SetConnectAttachmentId(std::move(value)); return *this;}
-    inline ConnectPeerSummary& WithConnectAttachmentId(const char* value) { SetConnectAttachmentId(value); return *this;}
+    template<typename ConnectAttachmentIdT = Aws::String>
+    void SetConnectAttachmentId(ConnectAttachmentIdT&& value) { m_connectAttachmentIdHasBeenSet = true; m_connectAttachmentId = std::forward<ConnectAttachmentIdT>(value); }
+    template<typename ConnectAttachmentIdT = Aws::String>
+    ConnectPeerSummary& WithConnectAttachmentId(ConnectAttachmentIdT&& value) { SetConnectAttachmentId(std::forward<ConnectAttachmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of a Connect peer.</p>
      */
-    inline const Aws::String& GetConnectPeerId() const{ return m_connectPeerId; }
+    inline const Aws::String& GetConnectPeerId() const { return m_connectPeerId; }
     inline bool ConnectPeerIdHasBeenSet() const { return m_connectPeerIdHasBeenSet; }
-    inline void SetConnectPeerId(const Aws::String& value) { m_connectPeerIdHasBeenSet = true; m_connectPeerId = value; }
-    inline void SetConnectPeerId(Aws::String&& value) { m_connectPeerIdHasBeenSet = true; m_connectPeerId = std::move(value); }
-    inline void SetConnectPeerId(const char* value) { m_connectPeerIdHasBeenSet = true; m_connectPeerId.assign(value); }
-    inline ConnectPeerSummary& WithConnectPeerId(const Aws::String& value) { SetConnectPeerId(value); return *this;}
-    inline ConnectPeerSummary& WithConnectPeerId(Aws::String&& value) { SetConnectPeerId(std::move(value)); return *this;}
-    inline ConnectPeerSummary& WithConnectPeerId(const char* value) { SetConnectPeerId(value); return *this;}
+    template<typename ConnectPeerIdT = Aws::String>
+    void SetConnectPeerId(ConnectPeerIdT&& value) { m_connectPeerIdHasBeenSet = true; m_connectPeerId = std::forward<ConnectPeerIdT>(value); }
+    template<typename ConnectPeerIdT = Aws::String>
+    ConnectPeerSummary& WithConnectPeerId(ConnectPeerIdT&& value) { SetConnectPeerId(std::forward<ConnectPeerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Region where the edge is located.</p>
      */
-    inline const Aws::String& GetEdgeLocation() const{ return m_edgeLocation; }
+    inline const Aws::String& GetEdgeLocation() const { return m_edgeLocation; }
     inline bool EdgeLocationHasBeenSet() const { return m_edgeLocationHasBeenSet; }
-    inline void SetEdgeLocation(const Aws::String& value) { m_edgeLocationHasBeenSet = true; m_edgeLocation = value; }
-    inline void SetEdgeLocation(Aws::String&& value) { m_edgeLocationHasBeenSet = true; m_edgeLocation = std::move(value); }
-    inline void SetEdgeLocation(const char* value) { m_edgeLocationHasBeenSet = true; m_edgeLocation.assign(value); }
-    inline ConnectPeerSummary& WithEdgeLocation(const Aws::String& value) { SetEdgeLocation(value); return *this;}
-    inline ConnectPeerSummary& WithEdgeLocation(Aws::String&& value) { SetEdgeLocation(std::move(value)); return *this;}
-    inline ConnectPeerSummary& WithEdgeLocation(const char* value) { SetEdgeLocation(value); return *this;}
+    template<typename EdgeLocationT = Aws::String>
+    void SetEdgeLocation(EdgeLocationT&& value) { m_edgeLocationHasBeenSet = true; m_edgeLocation = std::forward<EdgeLocationT>(value); }
+    template<typename EdgeLocationT = Aws::String>
+    ConnectPeerSummary& WithEdgeLocation(EdgeLocationT&& value) { SetEdgeLocation(std::forward<EdgeLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of a Connect peer.</p>
      */
-    inline const ConnectPeerState& GetConnectPeerState() const{ return m_connectPeerState; }
+    inline ConnectPeerState GetConnectPeerState() const { return m_connectPeerState; }
     inline bool ConnectPeerStateHasBeenSet() const { return m_connectPeerStateHasBeenSet; }
-    inline void SetConnectPeerState(const ConnectPeerState& value) { m_connectPeerStateHasBeenSet = true; m_connectPeerState = value; }
-    inline void SetConnectPeerState(ConnectPeerState&& value) { m_connectPeerStateHasBeenSet = true; m_connectPeerState = std::move(value); }
-    inline ConnectPeerSummary& WithConnectPeerState(const ConnectPeerState& value) { SetConnectPeerState(value); return *this;}
-    inline ConnectPeerSummary& WithConnectPeerState(ConnectPeerState&& value) { SetConnectPeerState(std::move(value)); return *this;}
+    inline void SetConnectPeerState(ConnectPeerState value) { m_connectPeerStateHasBeenSet = true; m_connectPeerState = value; }
+    inline ConnectPeerSummary& WithConnectPeerState(ConnectPeerState value) { SetConnectPeerState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when a Connect peer was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline ConnectPeerSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline ConnectPeerSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    ConnectPeerSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of key-value tags associated with the Connect peer summary.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ConnectPeerSummary& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline ConnectPeerSummary& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline ConnectPeerSummary& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline ConnectPeerSummary& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    ConnectPeerSummary& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    ConnectPeerSummary& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The subnet ARN for the Connect peer summary.</p>
      */
-    inline const Aws::String& GetSubnetArn() const{ return m_subnetArn; }
+    inline const Aws::String& GetSubnetArn() const { return m_subnetArn; }
     inline bool SubnetArnHasBeenSet() const { return m_subnetArnHasBeenSet; }
-    inline void SetSubnetArn(const Aws::String& value) { m_subnetArnHasBeenSet = true; m_subnetArn = value; }
-    inline void SetSubnetArn(Aws::String&& value) { m_subnetArnHasBeenSet = true; m_subnetArn = std::move(value); }
-    inline void SetSubnetArn(const char* value) { m_subnetArnHasBeenSet = true; m_subnetArn.assign(value); }
-    inline ConnectPeerSummary& WithSubnetArn(const Aws::String& value) { SetSubnetArn(value); return *this;}
-    inline ConnectPeerSummary& WithSubnetArn(Aws::String&& value) { SetSubnetArn(std::move(value)); return *this;}
-    inline ConnectPeerSummary& WithSubnetArn(const char* value) { SetSubnetArn(value); return *this;}
+    template<typename SubnetArnT = Aws::String>
+    void SetSubnetArn(SubnetArnT&& value) { m_subnetArnHasBeenSet = true; m_subnetArn = std::forward<SubnetArnT>(value); }
+    template<typename SubnetArnT = Aws::String>
+    ConnectPeerSummary& WithSubnetArn(SubnetArnT&& value) { SetSubnetArn(std::forward<SubnetArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -162,10 +150,10 @@ namespace Model
     Aws::String m_edgeLocation;
     bool m_edgeLocationHasBeenSet = false;
 
-    ConnectPeerState m_connectPeerState;
+    ConnectPeerState m_connectPeerState{ConnectPeerState::NOT_SET};
     bool m_connectPeerStateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

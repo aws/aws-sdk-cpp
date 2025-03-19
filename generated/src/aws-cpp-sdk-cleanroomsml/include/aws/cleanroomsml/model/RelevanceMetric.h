@@ -31,7 +31,7 @@ namespace Model
   class RelevanceMetric
   {
   public:
-    AWS_CLEANROOMSML_API RelevanceMetric();
+    AWS_CLEANROOMSML_API RelevanceMetric() = default;
     AWS_CLEANROOMSML_API RelevanceMetric(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API RelevanceMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,19 +39,19 @@ namespace Model
 
     ///@{
     
-    inline const AudienceSize& GetAudienceSize() const{ return m_audienceSize; }
+    inline const AudienceSize& GetAudienceSize() const { return m_audienceSize; }
     inline bool AudienceSizeHasBeenSet() const { return m_audienceSizeHasBeenSet; }
-    inline void SetAudienceSize(const AudienceSize& value) { m_audienceSizeHasBeenSet = true; m_audienceSize = value; }
-    inline void SetAudienceSize(AudienceSize&& value) { m_audienceSizeHasBeenSet = true; m_audienceSize = std::move(value); }
-    inline RelevanceMetric& WithAudienceSize(const AudienceSize& value) { SetAudienceSize(value); return *this;}
-    inline RelevanceMetric& WithAudienceSize(AudienceSize&& value) { SetAudienceSize(std::move(value)); return *this;}
+    template<typename AudienceSizeT = AudienceSize>
+    void SetAudienceSize(AudienceSizeT&& value) { m_audienceSizeHasBeenSet = true; m_audienceSize = std::forward<AudienceSizeT>(value); }
+    template<typename AudienceSizeT = AudienceSize>
+    RelevanceMetric& WithAudienceSize(AudienceSizeT&& value) { SetAudienceSize(std::forward<AudienceSizeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The relevance score of the generated audience.</p>
      */
-    inline double GetScore() const{ return m_score; }
+    inline double GetScore() const { return m_score; }
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
     inline RelevanceMetric& WithScore(double value) { SetScore(value); return *this;}
@@ -61,7 +61,7 @@ namespace Model
     AudienceSize m_audienceSize;
     bool m_audienceSizeHasBeenSet = false;
 
-    double m_score;
+    double m_score{0.0};
     bool m_scoreHasBeenSet = false;
   };
 

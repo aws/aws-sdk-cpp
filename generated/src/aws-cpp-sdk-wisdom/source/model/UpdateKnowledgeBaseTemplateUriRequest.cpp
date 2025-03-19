@@ -12,12 +12,6 @@ using namespace Aws::ConnectWisdomService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateKnowledgeBaseTemplateUriRequest::UpdateKnowledgeBaseTemplateUriRequest() : 
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_templateUriHasBeenSet(false)
-{
-}
-
 Aws::String UpdateKnowledgeBaseTemplateUriRequest::SerializePayload() const
 {
   JsonValue payload;

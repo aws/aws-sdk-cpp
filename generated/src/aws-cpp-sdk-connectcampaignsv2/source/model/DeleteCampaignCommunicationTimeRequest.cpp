@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteCampaignCommunicationTimeRequest::DeleteCampaignCommunicationTimeRequest() : 
-    m_idHasBeenSet(false),
-    m_config(CommunicationTimeConfigType::NOT_SET),
-    m_configHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCampaignCommunicationTimeRequest::SerializePayload() const
 {
   return {};

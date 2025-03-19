@@ -18,14 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-SenderIdAndCountry::SenderIdAndCountry() : 
-    m_senderIdHasBeenSet(false),
-    m_isoCountryCodeHasBeenSet(false)
-{
-}
-
 SenderIdAndCountry::SenderIdAndCountry(JsonView jsonValue)
-  : SenderIdAndCountry()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SenderIdAndCountry& SenderIdAndCountry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SenderId"))
   {
     m_senderId = jsonValue.GetString("SenderId");
-
     m_senderIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsoCountryCode"))
   {
     m_isoCountryCode = jsonValue.GetString("IsoCountryCode");
-
     m_isoCountryCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

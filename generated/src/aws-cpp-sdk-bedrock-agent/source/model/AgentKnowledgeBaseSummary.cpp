@@ -18,17 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-AgentKnowledgeBaseSummary::AgentKnowledgeBaseSummary() : 
-    m_descriptionHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_knowledgeBaseState(KnowledgeBaseState::NOT_SET),
-    m_knowledgeBaseStateHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 AgentKnowledgeBaseSummary::AgentKnowledgeBaseSummary(JsonView jsonValue)
-  : AgentKnowledgeBaseSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AgentKnowledgeBaseSummary& AgentKnowledgeBaseSummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("knowledgeBaseId"))
   {
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
-
     m_knowledgeBaseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("knowledgeBaseState"))
   {
     m_knowledgeBaseState = KnowledgeBaseStateMapper::GetKnowledgeBaseStateForName(jsonValue.GetString("knowledgeBaseState"));
-
     m_knowledgeBaseStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

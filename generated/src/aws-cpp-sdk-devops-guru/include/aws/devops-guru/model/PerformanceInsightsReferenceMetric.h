@@ -32,7 +32,7 @@ namespace Model
   class PerformanceInsightsReferenceMetric
   {
   public:
-    AWS_DEVOPSGURU_API PerformanceInsightsReferenceMetric();
+    AWS_DEVOPSGURU_API PerformanceInsightsReferenceMetric() = default;
     AWS_DEVOPSGURU_API PerformanceInsightsReferenceMetric(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API PerformanceInsightsReferenceMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>A query to be processed on the metric.</p>
      */
-    inline const PerformanceInsightsMetricQuery& GetMetricQuery() const{ return m_metricQuery; }
+    inline const PerformanceInsightsMetricQuery& GetMetricQuery() const { return m_metricQuery; }
     inline bool MetricQueryHasBeenSet() const { return m_metricQueryHasBeenSet; }
-    inline void SetMetricQuery(const PerformanceInsightsMetricQuery& value) { m_metricQueryHasBeenSet = true; m_metricQuery = value; }
-    inline void SetMetricQuery(PerformanceInsightsMetricQuery&& value) { m_metricQueryHasBeenSet = true; m_metricQuery = std::move(value); }
-    inline PerformanceInsightsReferenceMetric& WithMetricQuery(const PerformanceInsightsMetricQuery& value) { SetMetricQuery(value); return *this;}
-    inline PerformanceInsightsReferenceMetric& WithMetricQuery(PerformanceInsightsMetricQuery&& value) { SetMetricQuery(std::move(value)); return *this;}
+    template<typename MetricQueryT = PerformanceInsightsMetricQuery>
+    void SetMetricQuery(MetricQueryT&& value) { m_metricQueryHasBeenSet = true; m_metricQuery = std::forward<MetricQueryT>(value); }
+    template<typename MetricQueryT = PerformanceInsightsMetricQuery>
+    PerformanceInsightsReferenceMetric& WithMetricQuery(MetricQueryT&& value) { SetMetricQuery(std::forward<MetricQueryT>(value)); return *this;}
     ///@}
   private:
 

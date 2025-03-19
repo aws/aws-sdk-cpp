@@ -18,29 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-RecommendationTemplate::RecommendationTemplate() : 
-    m_appArnHasBeenSet(false),
-    m_assessmentArnHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_format(TemplateFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_needsReplacements(false),
-    m_needsReplacementsHasBeenSet(false),
-    m_recommendationIdsHasBeenSet(false),
-    m_recommendationTemplateArnHasBeenSet(false),
-    m_recommendationTypesHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_status(RecommendationTemplateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_templatesLocationHasBeenSet(false)
-{
-}
-
 RecommendationTemplate::RecommendationTemplate(JsonView jsonValue)
-  : RecommendationTemplate()
 {
   *this = jsonValue;
 }
@@ -50,52 +28,38 @@ RecommendationTemplate& RecommendationTemplate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("appArn"))
   {
     m_appArn = jsonValue.GetString("appArn");
-
     m_appArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assessmentArn"))
   {
     m_assessmentArn = jsonValue.GetString("assessmentArn");
-
     m_assessmentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("format"))
   {
     m_format = TemplateFormatMapper::GetTemplateFormatForName(jsonValue.GetString("format"));
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("needsReplacements"))
   {
     m_needsReplacements = jsonValue.GetBool("needsReplacements");
-
     m_needsReplacementsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationIds"))
   {
     Aws::Utils::Array<JsonView> recommendationIdsJsonList = jsonValue.GetArray("recommendationIds");
@@ -105,14 +69,11 @@ RecommendationTemplate& RecommendationTemplate::operator =(JsonView jsonValue)
     }
     m_recommendationIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationTemplateArn"))
   {
     m_recommendationTemplateArn = jsonValue.GetString("recommendationTemplateArn");
-
     m_recommendationTemplateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationTypes"))
   {
     Aws::Utils::Array<JsonView> recommendationTypesJsonList = jsonValue.GetArray("recommendationTypes");
@@ -122,21 +83,16 @@ RecommendationTemplate& RecommendationTemplate::operator =(JsonView jsonValue)
     }
     m_recommendationTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = RecommendationTemplateStatusMapper::GetRecommendationTemplateStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -146,14 +102,11 @@ RecommendationTemplate& RecommendationTemplate::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templatesLocation"))
   {
     m_templatesLocation = jsonValue.GetObject("templatesLocation");
-
     m_templatesLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

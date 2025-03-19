@@ -18,13 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-CampaignCustomMessage::CampaignCustomMessage() : 
-    m_dataHasBeenSet(false)
-{
-}
-
 CampaignCustomMessage::CampaignCustomMessage(JsonView jsonValue)
-  : CampaignCustomMessage()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CampaignCustomMessage& CampaignCustomMessage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Data"))
   {
     m_data = jsonValue.GetString("Data");
-
     m_dataHasBeenSet = true;
   }
-
   return *this;
 }
 

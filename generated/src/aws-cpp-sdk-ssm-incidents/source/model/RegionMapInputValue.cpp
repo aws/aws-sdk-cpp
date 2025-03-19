@@ -18,13 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-RegionMapInputValue::RegionMapInputValue() : 
-    m_sseKmsKeyIdHasBeenSet(false)
-{
-}
-
 RegionMapInputValue::RegionMapInputValue(JsonView jsonValue)
-  : RegionMapInputValue()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RegionMapInputValue& RegionMapInputValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sseKmsKeyId"))
   {
     m_sseKmsKeyId = jsonValue.GetString("sseKmsKeyId");
-
     m_sseKmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

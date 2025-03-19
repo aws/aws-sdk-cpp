@@ -18,18 +18,7 @@ namespace Chime
 namespace Model
 {
 
-Room::Room() : 
-    m_roomIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
-{
-}
-
 Room::Room(JsonView jsonValue)
-  : Room()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ Room& Room::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RoomId"))
   {
     m_roomId = jsonValue.GetString("RoomId");
-
     m_roomIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetString("CreatedBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetString("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedTimestamp"))
   {
     m_updatedTimestamp = jsonValue.GetString("UpdatedTimestamp");
-
     m_updatedTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

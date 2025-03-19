@@ -20,14 +20,7 @@ namespace DocDB
 namespace Model
 {
 
-DBClusterSnapshotAttributesResult::DBClusterSnapshotAttributesResult() : 
-    m_dBClusterSnapshotIdentifierHasBeenSet(false),
-    m_dBClusterSnapshotAttributesHasBeenSet(false)
-{
-}
-
 DBClusterSnapshotAttributesResult::DBClusterSnapshotAttributesResult(const XmlNode& xmlNode)
-  : DBClusterSnapshotAttributesResult()
 {
   *this = xmlNode;
 }
@@ -48,6 +41,7 @@ DBClusterSnapshotAttributesResult& DBClusterSnapshotAttributesResult::operator =
     if(!dBClusterSnapshotAttributesNode.IsNull())
     {
       XmlNode dBClusterSnapshotAttributesMember = dBClusterSnapshotAttributesNode.FirstChild("DBClusterSnapshotAttribute");
+      m_dBClusterSnapshotAttributesHasBeenSet = !dBClusterSnapshotAttributesMember.IsNull();
       while(!dBClusterSnapshotAttributesMember.IsNull())
       {
         m_dBClusterSnapshotAttributes.push_back(dBClusterSnapshotAttributesMember);

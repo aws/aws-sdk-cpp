@@ -28,7 +28,7 @@ namespace Model
   class CreateVpcIngressConnectionResult
   {
   public:
-    AWS_APPRUNNER_API CreateVpcIngressConnectionResult();
+    AWS_APPRUNNER_API CreateVpcIngressConnectionResult() = default;
     AWS_APPRUNNER_API CreateVpcIngressConnectionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPRUNNER_API CreateVpcIngressConnectionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>A description of the App Runner VPC Ingress Connection resource that's
      * created by this request. </p>
      */
-    inline const VpcIngressConnection& GetVpcIngressConnection() const{ return m_vpcIngressConnection; }
-    inline void SetVpcIngressConnection(const VpcIngressConnection& value) { m_vpcIngressConnection = value; }
-    inline void SetVpcIngressConnection(VpcIngressConnection&& value) { m_vpcIngressConnection = std::move(value); }
-    inline CreateVpcIngressConnectionResult& WithVpcIngressConnection(const VpcIngressConnection& value) { SetVpcIngressConnection(value); return *this;}
-    inline CreateVpcIngressConnectionResult& WithVpcIngressConnection(VpcIngressConnection&& value) { SetVpcIngressConnection(std::move(value)); return *this;}
+    inline const VpcIngressConnection& GetVpcIngressConnection() const { return m_vpcIngressConnection; }
+    template<typename VpcIngressConnectionT = VpcIngressConnection>
+    void SetVpcIngressConnection(VpcIngressConnectionT&& value) { m_vpcIngressConnectionHasBeenSet = true; m_vpcIngressConnection = std::forward<VpcIngressConnectionT>(value); }
+    template<typename VpcIngressConnectionT = VpcIngressConnection>
+    CreateVpcIngressConnectionResult& WithVpcIngressConnection(VpcIngressConnectionT&& value) { SetVpcIngressConnection(std::forward<VpcIngressConnectionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateVpcIngressConnectionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateVpcIngressConnectionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateVpcIngressConnectionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateVpcIngressConnectionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     VpcIngressConnection m_vpcIngressConnection;
+    bool m_vpcIngressConnectionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -15,23 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListSubscriptionGrantsRequest::ListSubscriptionGrantsRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_owningProjectIdHasBeenSet(false),
-    m_sortBy(SortKey::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_subscribedListingIdHasBeenSet(false),
-    m_subscriptionIdHasBeenSet(false),
-    m_subscriptionTargetIdHasBeenSet(false)
-{
-}
-
 Aws::String ListSubscriptionGrantsRequest::SerializePayload() const
 {
   return {};

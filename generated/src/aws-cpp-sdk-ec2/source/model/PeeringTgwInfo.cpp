@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PeeringTgwInfo::PeeringTgwInfo() : 
-    m_transitGatewayIdHasBeenSet(false),
-    m_coreNetworkIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_regionHasBeenSet(false)
-{
-}
-
 PeeringTgwInfo::PeeringTgwInfo(const XmlNode& xmlNode)
-  : PeeringTgwInfo()
 {
   *this = xmlNode;
 }

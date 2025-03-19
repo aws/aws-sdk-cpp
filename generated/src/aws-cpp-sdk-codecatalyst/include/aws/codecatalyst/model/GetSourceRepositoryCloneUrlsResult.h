@@ -27,7 +27,7 @@ namespace Model
   class GetSourceRepositoryCloneUrlsResult
   {
   public:
-    AWS_CODECATALYST_API GetSourceRepositoryCloneUrlsResult();
+    AWS_CODECATALYST_API GetSourceRepositoryCloneUrlsResult() = default;
     AWS_CODECATALYST_API GetSourceRepositoryCloneUrlsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECATALYST_API GetSourceRepositoryCloneUrlsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The HTTPS URL to use when cloning the source repository.</p>
      */
-    inline const Aws::String& GetHttps() const{ return m_https; }
-    inline void SetHttps(const Aws::String& value) { m_https = value; }
-    inline void SetHttps(Aws::String&& value) { m_https = std::move(value); }
-    inline void SetHttps(const char* value) { m_https.assign(value); }
-    inline GetSourceRepositoryCloneUrlsResult& WithHttps(const Aws::String& value) { SetHttps(value); return *this;}
-    inline GetSourceRepositoryCloneUrlsResult& WithHttps(Aws::String&& value) { SetHttps(std::move(value)); return *this;}
-    inline GetSourceRepositoryCloneUrlsResult& WithHttps(const char* value) { SetHttps(value); return *this;}
+    inline const Aws::String& GetHttps() const { return m_https; }
+    template<typename HttpsT = Aws::String>
+    void SetHttps(HttpsT&& value) { m_httpsHasBeenSet = true; m_https = std::forward<HttpsT>(value); }
+    template<typename HttpsT = Aws::String>
+    GetSourceRepositoryCloneUrlsResult& WithHttps(HttpsT&& value) { SetHttps(std::forward<HttpsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSourceRepositoryCloneUrlsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSourceRepositoryCloneUrlsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSourceRepositoryCloneUrlsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSourceRepositoryCloneUrlsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_https;
+    bool m_httpsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

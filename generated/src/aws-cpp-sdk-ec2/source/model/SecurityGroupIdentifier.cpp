@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SecurityGroupIdentifier::SecurityGroupIdentifier() : 
-    m_groupIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
-{
-}
-
 SecurityGroupIdentifier::SecurityGroupIdentifier(const XmlNode& xmlNode)
-  : SecurityGroupIdentifier()
 {
   *this = xmlNode;
 }

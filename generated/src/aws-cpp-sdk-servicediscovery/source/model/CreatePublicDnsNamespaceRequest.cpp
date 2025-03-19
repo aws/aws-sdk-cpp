@@ -12,16 +12,6 @@ using namespace Aws::ServiceDiscovery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePublicDnsNamespaceRequest::CreatePublicDnsNamespaceRequest() : 
-    m_nameHasBeenSet(false),
-    m_creatorRequestId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_creatorRequestIdHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
-{
-}
-
 Aws::String CreatePublicDnsNamespaceRequest::SerializePayload() const
 {
   JsonValue payload;

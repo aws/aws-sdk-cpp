@@ -23,7 +23,7 @@ namespace Model
   class SimulateCustomPolicyRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API SimulateCustomPolicyRequest();
+    AWS_IAM_API SimulateCustomPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -65,15 +65,14 @@ namespace Model
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetPolicyInputList() const{ return m_policyInputList; }
+    inline const Aws::Vector<Aws::String>& GetPolicyInputList() const { return m_policyInputList; }
     inline bool PolicyInputListHasBeenSet() const { return m_policyInputListHasBeenSet; }
-    inline void SetPolicyInputList(const Aws::Vector<Aws::String>& value) { m_policyInputListHasBeenSet = true; m_policyInputList = value; }
-    inline void SetPolicyInputList(Aws::Vector<Aws::String>&& value) { m_policyInputListHasBeenSet = true; m_policyInputList = std::move(value); }
-    inline SimulateCustomPolicyRequest& WithPolicyInputList(const Aws::Vector<Aws::String>& value) { SetPolicyInputList(value); return *this;}
-    inline SimulateCustomPolicyRequest& WithPolicyInputList(Aws::Vector<Aws::String>&& value) { SetPolicyInputList(std::move(value)); return *this;}
-    inline SimulateCustomPolicyRequest& AddPolicyInputList(const Aws::String& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
-    inline SimulateCustomPolicyRequest& AddPolicyInputList(Aws::String&& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(std::move(value)); return *this; }
-    inline SimulateCustomPolicyRequest& AddPolicyInputList(const char* value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
+    template<typename PolicyInputListT = Aws::Vector<Aws::String>>
+    void SetPolicyInputList(PolicyInputListT&& value) { m_policyInputListHasBeenSet = true; m_policyInputList = std::forward<PolicyInputListT>(value); }
+    template<typename PolicyInputListT = Aws::Vector<Aws::String>>
+    SimulateCustomPolicyRequest& WithPolicyInputList(PolicyInputListT&& value) { SetPolicyInputList(std::forward<PolicyInputListT>(value)); return *this;}
+    template<typename PolicyInputListT = Aws::String>
+    SimulateCustomPolicyRequest& AddPolicyInputList(PolicyInputListT&& value) { m_policyInputListHasBeenSet = true; m_policyInputList.emplace_back(std::forward<PolicyInputListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -100,15 +99,14 @@ namespace Model
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetPermissionsBoundaryPolicyInputList() const{ return m_permissionsBoundaryPolicyInputList; }
+    inline const Aws::Vector<Aws::String>& GetPermissionsBoundaryPolicyInputList() const { return m_permissionsBoundaryPolicyInputList; }
     inline bool PermissionsBoundaryPolicyInputListHasBeenSet() const { return m_permissionsBoundaryPolicyInputListHasBeenSet; }
-    inline void SetPermissionsBoundaryPolicyInputList(const Aws::Vector<Aws::String>& value) { m_permissionsBoundaryPolicyInputListHasBeenSet = true; m_permissionsBoundaryPolicyInputList = value; }
-    inline void SetPermissionsBoundaryPolicyInputList(Aws::Vector<Aws::String>&& value) { m_permissionsBoundaryPolicyInputListHasBeenSet = true; m_permissionsBoundaryPolicyInputList = std::move(value); }
-    inline SimulateCustomPolicyRequest& WithPermissionsBoundaryPolicyInputList(const Aws::Vector<Aws::String>& value) { SetPermissionsBoundaryPolicyInputList(value); return *this;}
-    inline SimulateCustomPolicyRequest& WithPermissionsBoundaryPolicyInputList(Aws::Vector<Aws::String>&& value) { SetPermissionsBoundaryPolicyInputList(std::move(value)); return *this;}
-    inline SimulateCustomPolicyRequest& AddPermissionsBoundaryPolicyInputList(const Aws::String& value) { m_permissionsBoundaryPolicyInputListHasBeenSet = true; m_permissionsBoundaryPolicyInputList.push_back(value); return *this; }
-    inline SimulateCustomPolicyRequest& AddPermissionsBoundaryPolicyInputList(Aws::String&& value) { m_permissionsBoundaryPolicyInputListHasBeenSet = true; m_permissionsBoundaryPolicyInputList.push_back(std::move(value)); return *this; }
-    inline SimulateCustomPolicyRequest& AddPermissionsBoundaryPolicyInputList(const char* value) { m_permissionsBoundaryPolicyInputListHasBeenSet = true; m_permissionsBoundaryPolicyInputList.push_back(value); return *this; }
+    template<typename PermissionsBoundaryPolicyInputListT = Aws::Vector<Aws::String>>
+    void SetPermissionsBoundaryPolicyInputList(PermissionsBoundaryPolicyInputListT&& value) { m_permissionsBoundaryPolicyInputListHasBeenSet = true; m_permissionsBoundaryPolicyInputList = std::forward<PermissionsBoundaryPolicyInputListT>(value); }
+    template<typename PermissionsBoundaryPolicyInputListT = Aws::Vector<Aws::String>>
+    SimulateCustomPolicyRequest& WithPermissionsBoundaryPolicyInputList(PermissionsBoundaryPolicyInputListT&& value) { SetPermissionsBoundaryPolicyInputList(std::forward<PermissionsBoundaryPolicyInputListT>(value)); return *this;}
+    template<typename PermissionsBoundaryPolicyInputListT = Aws::String>
+    SimulateCustomPolicyRequest& AddPermissionsBoundaryPolicyInputList(PermissionsBoundaryPolicyInputListT&& value) { m_permissionsBoundaryPolicyInputListHasBeenSet = true; m_permissionsBoundaryPolicyInputList.emplace_back(std::forward<PermissionsBoundaryPolicyInputListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -118,15 +116,14 @@ namespace Model
      * service identifier, such as <code>iam:CreateUser</code>. This operation does not
      * support using wildcards (*) in an action name.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetActionNames() const{ return m_actionNames; }
+    inline const Aws::Vector<Aws::String>& GetActionNames() const { return m_actionNames; }
     inline bool ActionNamesHasBeenSet() const { return m_actionNamesHasBeenSet; }
-    inline void SetActionNames(const Aws::Vector<Aws::String>& value) { m_actionNamesHasBeenSet = true; m_actionNames = value; }
-    inline void SetActionNames(Aws::Vector<Aws::String>&& value) { m_actionNamesHasBeenSet = true; m_actionNames = std::move(value); }
-    inline SimulateCustomPolicyRequest& WithActionNames(const Aws::Vector<Aws::String>& value) { SetActionNames(value); return *this;}
-    inline SimulateCustomPolicyRequest& WithActionNames(Aws::Vector<Aws::String>&& value) { SetActionNames(std::move(value)); return *this;}
-    inline SimulateCustomPolicyRequest& AddActionNames(const Aws::String& value) { m_actionNamesHasBeenSet = true; m_actionNames.push_back(value); return *this; }
-    inline SimulateCustomPolicyRequest& AddActionNames(Aws::String&& value) { m_actionNamesHasBeenSet = true; m_actionNames.push_back(std::move(value)); return *this; }
-    inline SimulateCustomPolicyRequest& AddActionNames(const char* value) { m_actionNamesHasBeenSet = true; m_actionNames.push_back(value); return *this; }
+    template<typename ActionNamesT = Aws::Vector<Aws::String>>
+    void SetActionNames(ActionNamesT&& value) { m_actionNamesHasBeenSet = true; m_actionNames = std::forward<ActionNamesT>(value); }
+    template<typename ActionNamesT = Aws::Vector<Aws::String>>
+    SimulateCustomPolicyRequest& WithActionNames(ActionNamesT&& value) { SetActionNames(std::forward<ActionNamesT>(value)); return *this;}
+    template<typename ActionNamesT = Aws::String>
+    SimulateCustomPolicyRequest& AddActionNames(ActionNamesT&& value) { m_actionNamesHasBeenSet = true; m_actionNames.emplace_back(std::forward<ActionNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -148,15 +145,14 @@ namespace Model
      * Reference</i>.</p>  <p>Simulation of resource-based policies isn't
      * supported for IAM roles.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetResourceArns() const{ return m_resourceArns; }
+    inline const Aws::Vector<Aws::String>& GetResourceArns() const { return m_resourceArns; }
     inline bool ResourceArnsHasBeenSet() const { return m_resourceArnsHasBeenSet; }
-    inline void SetResourceArns(const Aws::Vector<Aws::String>& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = value; }
-    inline void SetResourceArns(Aws::Vector<Aws::String>&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = std::move(value); }
-    inline SimulateCustomPolicyRequest& WithResourceArns(const Aws::Vector<Aws::String>& value) { SetResourceArns(value); return *this;}
-    inline SimulateCustomPolicyRequest& WithResourceArns(Aws::Vector<Aws::String>&& value) { SetResourceArns(std::move(value)); return *this;}
-    inline SimulateCustomPolicyRequest& AddResourceArns(const Aws::String& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
-    inline SimulateCustomPolicyRequest& AddResourceArns(Aws::String&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(std::move(value)); return *this; }
-    inline SimulateCustomPolicyRequest& AddResourceArns(const char* value) { m_resourceArnsHasBeenSet = true; m_resourceArns.push_back(value); return *this; }
+    template<typename ResourceArnsT = Aws::Vector<Aws::String>>
+    void SetResourceArns(ResourceArnsT&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = std::forward<ResourceArnsT>(value); }
+    template<typename ResourceArnsT = Aws::Vector<Aws::String>>
+    SimulateCustomPolicyRequest& WithResourceArns(ResourceArnsT&& value) { SetResourceArns(std::forward<ResourceArnsT>(value)); return *this;}
+    template<typename ResourceArnsT = Aws::String>
+    SimulateCustomPolicyRequest& AddResourceArns(ResourceArnsT&& value) { m_resourceArnsHasBeenSet = true; m_resourceArns.emplace_back(std::forward<ResourceArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -179,14 +175,12 @@ namespace Model
      * carriage return (<code>\u000D</code>)</p> </li> </ul>  <p>Simulation of
      * resource-based policies isn't supported for IAM roles.</p> 
      */
-    inline const Aws::String& GetResourcePolicy() const{ return m_resourcePolicy; }
+    inline const Aws::String& GetResourcePolicy() const { return m_resourcePolicy; }
     inline bool ResourcePolicyHasBeenSet() const { return m_resourcePolicyHasBeenSet; }
-    inline void SetResourcePolicy(const Aws::String& value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy = value; }
-    inline void SetResourcePolicy(Aws::String&& value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy = std::move(value); }
-    inline void SetResourcePolicy(const char* value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy.assign(value); }
-    inline SimulateCustomPolicyRequest& WithResourcePolicy(const Aws::String& value) { SetResourcePolicy(value); return *this;}
-    inline SimulateCustomPolicyRequest& WithResourcePolicy(Aws::String&& value) { SetResourcePolicy(std::move(value)); return *this;}
-    inline SimulateCustomPolicyRequest& WithResourcePolicy(const char* value) { SetResourcePolicy(value); return *this;}
+    template<typename ResourcePolicyT = Aws::String>
+    void SetResourcePolicy(ResourcePolicyT&& value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy = std::forward<ResourcePolicyT>(value); }
+    template<typename ResourcePolicyT = Aws::String>
+    SimulateCustomPolicyRequest& WithResourcePolicy(ResourcePolicyT&& value) { SetResourcePolicy(std::forward<ResourcePolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -206,14 +200,12 @@ namespace Model
      * the account with the 112233445566 ID, use the following ARN:
      * <code>arn:aws:iam::112233445566-ID:root</code>. </p>
      */
-    inline const Aws::String& GetResourceOwner() const{ return m_resourceOwner; }
+    inline const Aws::String& GetResourceOwner() const { return m_resourceOwner; }
     inline bool ResourceOwnerHasBeenSet() const { return m_resourceOwnerHasBeenSet; }
-    inline void SetResourceOwner(const Aws::String& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = value; }
-    inline void SetResourceOwner(Aws::String&& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = std::move(value); }
-    inline void SetResourceOwner(const char* value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner.assign(value); }
-    inline SimulateCustomPolicyRequest& WithResourceOwner(const Aws::String& value) { SetResourceOwner(value); return *this;}
-    inline SimulateCustomPolicyRequest& WithResourceOwner(Aws::String&& value) { SetResourceOwner(std::move(value)); return *this;}
-    inline SimulateCustomPolicyRequest& WithResourceOwner(const char* value) { SetResourceOwner(value); return *this;}
+    template<typename ResourceOwnerT = Aws::String>
+    void SetResourceOwner(ResourceOwnerT&& value) { m_resourceOwnerHasBeenSet = true; m_resourceOwner = std::forward<ResourceOwnerT>(value); }
+    template<typename ResourceOwnerT = Aws::String>
+    SimulateCustomPolicyRequest& WithResourceOwner(ResourceOwnerT&& value) { SetResourceOwner(std::forward<ResourceOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -225,14 +217,12 @@ namespace Model
      * of an IAM user. You cannot specify the ARN of an assumed role, federated user,
      * or a service principal.</p>
      */
-    inline const Aws::String& GetCallerArn() const{ return m_callerArn; }
+    inline const Aws::String& GetCallerArn() const { return m_callerArn; }
     inline bool CallerArnHasBeenSet() const { return m_callerArnHasBeenSet; }
-    inline void SetCallerArn(const Aws::String& value) { m_callerArnHasBeenSet = true; m_callerArn = value; }
-    inline void SetCallerArn(Aws::String&& value) { m_callerArnHasBeenSet = true; m_callerArn = std::move(value); }
-    inline void SetCallerArn(const char* value) { m_callerArnHasBeenSet = true; m_callerArn.assign(value); }
-    inline SimulateCustomPolicyRequest& WithCallerArn(const Aws::String& value) { SetCallerArn(value); return *this;}
-    inline SimulateCustomPolicyRequest& WithCallerArn(Aws::String&& value) { SetCallerArn(std::move(value)); return *this;}
-    inline SimulateCustomPolicyRequest& WithCallerArn(const char* value) { SetCallerArn(value); return *this;}
+    template<typename CallerArnT = Aws::String>
+    void SetCallerArn(CallerArnT&& value) { m_callerArnHasBeenSet = true; m_callerArn = std::forward<CallerArnT>(value); }
+    template<typename CallerArnT = Aws::String>
+    SimulateCustomPolicyRequest& WithCallerArn(CallerArnT&& value) { SetCallerArn(std::forward<CallerArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -241,14 +231,14 @@ namespace Model
      * Whenever a context key is evaluated in one of the simulated IAM permissions
      * policies, the corresponding value is supplied.</p>
      */
-    inline const Aws::Vector<ContextEntry>& GetContextEntries() const{ return m_contextEntries; }
+    inline const Aws::Vector<ContextEntry>& GetContextEntries() const { return m_contextEntries; }
     inline bool ContextEntriesHasBeenSet() const { return m_contextEntriesHasBeenSet; }
-    inline void SetContextEntries(const Aws::Vector<ContextEntry>& value) { m_contextEntriesHasBeenSet = true; m_contextEntries = value; }
-    inline void SetContextEntries(Aws::Vector<ContextEntry>&& value) { m_contextEntriesHasBeenSet = true; m_contextEntries = std::move(value); }
-    inline SimulateCustomPolicyRequest& WithContextEntries(const Aws::Vector<ContextEntry>& value) { SetContextEntries(value); return *this;}
-    inline SimulateCustomPolicyRequest& WithContextEntries(Aws::Vector<ContextEntry>&& value) { SetContextEntries(std::move(value)); return *this;}
-    inline SimulateCustomPolicyRequest& AddContextEntries(const ContextEntry& value) { m_contextEntriesHasBeenSet = true; m_contextEntries.push_back(value); return *this; }
-    inline SimulateCustomPolicyRequest& AddContextEntries(ContextEntry&& value) { m_contextEntriesHasBeenSet = true; m_contextEntries.push_back(std::move(value)); return *this; }
+    template<typename ContextEntriesT = Aws::Vector<ContextEntry>>
+    void SetContextEntries(ContextEntriesT&& value) { m_contextEntriesHasBeenSet = true; m_contextEntries = std::forward<ContextEntriesT>(value); }
+    template<typename ContextEntriesT = Aws::Vector<ContextEntry>>
+    SimulateCustomPolicyRequest& WithContextEntries(ContextEntriesT&& value) { SetContextEntries(std::forward<ContextEntriesT>(value)); return *this;}
+    template<typename ContextEntriesT = ContextEntry>
+    SimulateCustomPolicyRequest& AddContextEntries(ContextEntriesT&& value) { m_contextEntriesHasBeenSet = true; m_contextEntries.emplace_back(std::forward<ContextEntriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -275,14 +265,12 @@ namespace Model
      * volume</p> </li> <li> <p> <b>EC2-VPC-EBS-Subnet</b> </p> <p>instance, image,
      * security group, network interface, subnet, volume</p> </li> </ul>
      */
-    inline const Aws::String& GetResourceHandlingOption() const{ return m_resourceHandlingOption; }
+    inline const Aws::String& GetResourceHandlingOption() const { return m_resourceHandlingOption; }
     inline bool ResourceHandlingOptionHasBeenSet() const { return m_resourceHandlingOptionHasBeenSet; }
-    inline void SetResourceHandlingOption(const Aws::String& value) { m_resourceHandlingOptionHasBeenSet = true; m_resourceHandlingOption = value; }
-    inline void SetResourceHandlingOption(Aws::String&& value) { m_resourceHandlingOptionHasBeenSet = true; m_resourceHandlingOption = std::move(value); }
-    inline void SetResourceHandlingOption(const char* value) { m_resourceHandlingOptionHasBeenSet = true; m_resourceHandlingOption.assign(value); }
-    inline SimulateCustomPolicyRequest& WithResourceHandlingOption(const Aws::String& value) { SetResourceHandlingOption(value); return *this;}
-    inline SimulateCustomPolicyRequest& WithResourceHandlingOption(Aws::String&& value) { SetResourceHandlingOption(std::move(value)); return *this;}
-    inline SimulateCustomPolicyRequest& WithResourceHandlingOption(const char* value) { SetResourceHandlingOption(value); return *this;}
+    template<typename ResourceHandlingOptionT = Aws::String>
+    void SetResourceHandlingOption(ResourceHandlingOptionT&& value) { m_resourceHandlingOptionHasBeenSet = true; m_resourceHandlingOption = std::forward<ResourceHandlingOptionT>(value); }
+    template<typename ResourceHandlingOptionT = Aws::String>
+    SimulateCustomPolicyRequest& WithResourceHandlingOption(ResourceHandlingOptionT&& value) { SetResourceHandlingOption(std::forward<ResourceHandlingOptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -296,7 +284,7 @@ namespace Model
      * <code>true</code>, and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>
      */
-    inline int GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
     inline SimulateCustomPolicyRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
@@ -309,14 +297,12 @@ namespace Model
      * <code>Marker</code> element in the response that you received to indicate where
      * the next call should start.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline SimulateCustomPolicyRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline SimulateCustomPolicyRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline SimulateCustomPolicyRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    SimulateCustomPolicyRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
   private:
 
@@ -347,7 +333,7 @@ namespace Model
     Aws::String m_resourceHandlingOption;
     bool m_resourceHandlingOptionHasBeenSet = false;
 
-    int m_maxItems;
+    int m_maxItems{0};
     bool m_maxItemsHasBeenSet = false;
 
     Aws::String m_marker;

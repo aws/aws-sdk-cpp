@@ -41,7 +41,7 @@ namespace Model
   class CustomTransformationConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API CustomTransformationConfiguration();
+    AWS_BEDROCKAGENT_API CustomTransformationConfiguration() = default;
     AWS_BEDROCKAGENT_API CustomTransformationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API CustomTransformationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,26 +51,26 @@ namespace Model
     /**
      * <p>An S3 bucket path for input and output objects.</p>
      */
-    inline const IntermediateStorage& GetIntermediateStorage() const{ return m_intermediateStorage; }
+    inline const IntermediateStorage& GetIntermediateStorage() const { return m_intermediateStorage; }
     inline bool IntermediateStorageHasBeenSet() const { return m_intermediateStorageHasBeenSet; }
-    inline void SetIntermediateStorage(const IntermediateStorage& value) { m_intermediateStorageHasBeenSet = true; m_intermediateStorage = value; }
-    inline void SetIntermediateStorage(IntermediateStorage&& value) { m_intermediateStorageHasBeenSet = true; m_intermediateStorage = std::move(value); }
-    inline CustomTransformationConfiguration& WithIntermediateStorage(const IntermediateStorage& value) { SetIntermediateStorage(value); return *this;}
-    inline CustomTransformationConfiguration& WithIntermediateStorage(IntermediateStorage&& value) { SetIntermediateStorage(std::move(value)); return *this;}
+    template<typename IntermediateStorageT = IntermediateStorage>
+    void SetIntermediateStorage(IntermediateStorageT&& value) { m_intermediateStorageHasBeenSet = true; m_intermediateStorage = std::forward<IntermediateStorageT>(value); }
+    template<typename IntermediateStorageT = IntermediateStorage>
+    CustomTransformationConfiguration& WithIntermediateStorage(IntermediateStorageT&& value) { SetIntermediateStorage(std::forward<IntermediateStorageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A Lambda function that processes documents.</p>
      */
-    inline const Aws::Vector<Transformation>& GetTransformations() const{ return m_transformations; }
+    inline const Aws::Vector<Transformation>& GetTransformations() const { return m_transformations; }
     inline bool TransformationsHasBeenSet() const { return m_transformationsHasBeenSet; }
-    inline void SetTransformations(const Aws::Vector<Transformation>& value) { m_transformationsHasBeenSet = true; m_transformations = value; }
-    inline void SetTransformations(Aws::Vector<Transformation>&& value) { m_transformationsHasBeenSet = true; m_transformations = std::move(value); }
-    inline CustomTransformationConfiguration& WithTransformations(const Aws::Vector<Transformation>& value) { SetTransformations(value); return *this;}
-    inline CustomTransformationConfiguration& WithTransformations(Aws::Vector<Transformation>&& value) { SetTransformations(std::move(value)); return *this;}
-    inline CustomTransformationConfiguration& AddTransformations(const Transformation& value) { m_transformationsHasBeenSet = true; m_transformations.push_back(value); return *this; }
-    inline CustomTransformationConfiguration& AddTransformations(Transformation&& value) { m_transformationsHasBeenSet = true; m_transformations.push_back(std::move(value)); return *this; }
+    template<typename TransformationsT = Aws::Vector<Transformation>>
+    void SetTransformations(TransformationsT&& value) { m_transformationsHasBeenSet = true; m_transformations = std::forward<TransformationsT>(value); }
+    template<typename TransformationsT = Aws::Vector<Transformation>>
+    CustomTransformationConfiguration& WithTransformations(TransformationsT&& value) { SetTransformations(std::forward<TransformationsT>(value)); return *this;}
+    template<typename TransformationsT = Transformation>
+    CustomTransformationConfiguration& AddTransformations(TransformationsT&& value) { m_transformationsHasBeenSet = true; m_transformations.emplace_back(std::forward<TransformationsT>(value)); return *this; }
     ///@}
   private:
 

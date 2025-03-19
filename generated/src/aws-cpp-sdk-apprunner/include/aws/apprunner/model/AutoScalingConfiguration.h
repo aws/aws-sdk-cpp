@@ -40,7 +40,7 @@ namespace Model
   class AutoScalingConfiguration
   {
   public:
-    AWS_APPRUNNER_API AutoScalingConfiguration();
+    AWS_APPRUNNER_API AutoScalingConfiguration() = default;
     AWS_APPRUNNER_API AutoScalingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API AutoScalingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of this auto scaling configuration.</p>
      */
-    inline const Aws::String& GetAutoScalingConfigurationArn() const{ return m_autoScalingConfigurationArn; }
+    inline const Aws::String& GetAutoScalingConfigurationArn() const { return m_autoScalingConfigurationArn; }
     inline bool AutoScalingConfigurationArnHasBeenSet() const { return m_autoScalingConfigurationArnHasBeenSet; }
-    inline void SetAutoScalingConfigurationArn(const Aws::String& value) { m_autoScalingConfigurationArnHasBeenSet = true; m_autoScalingConfigurationArn = value; }
-    inline void SetAutoScalingConfigurationArn(Aws::String&& value) { m_autoScalingConfigurationArnHasBeenSet = true; m_autoScalingConfigurationArn = std::move(value); }
-    inline void SetAutoScalingConfigurationArn(const char* value) { m_autoScalingConfigurationArnHasBeenSet = true; m_autoScalingConfigurationArn.assign(value); }
-    inline AutoScalingConfiguration& WithAutoScalingConfigurationArn(const Aws::String& value) { SetAutoScalingConfigurationArn(value); return *this;}
-    inline AutoScalingConfiguration& WithAutoScalingConfigurationArn(Aws::String&& value) { SetAutoScalingConfigurationArn(std::move(value)); return *this;}
-    inline AutoScalingConfiguration& WithAutoScalingConfigurationArn(const char* value) { SetAutoScalingConfigurationArn(value); return *this;}
+    template<typename AutoScalingConfigurationArnT = Aws::String>
+    void SetAutoScalingConfigurationArn(AutoScalingConfigurationArnT&& value) { m_autoScalingConfigurationArnHasBeenSet = true; m_autoScalingConfigurationArn = std::forward<AutoScalingConfigurationArnT>(value); }
+    template<typename AutoScalingConfigurationArnT = Aws::String>
+    AutoScalingConfiguration& WithAutoScalingConfigurationArn(AutoScalingConfigurationArnT&& value) { SetAutoScalingConfigurationArn(std::forward<AutoScalingConfigurationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * <p>The customer-provided auto scaling configuration name. It can be used in
      * multiple revisions of a configuration.</p>
      */
-    inline const Aws::String& GetAutoScalingConfigurationName() const{ return m_autoScalingConfigurationName; }
+    inline const Aws::String& GetAutoScalingConfigurationName() const { return m_autoScalingConfigurationName; }
     inline bool AutoScalingConfigurationNameHasBeenSet() const { return m_autoScalingConfigurationNameHasBeenSet; }
-    inline void SetAutoScalingConfigurationName(const Aws::String& value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName = value; }
-    inline void SetAutoScalingConfigurationName(Aws::String&& value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName = std::move(value); }
-    inline void SetAutoScalingConfigurationName(const char* value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName.assign(value); }
-    inline AutoScalingConfiguration& WithAutoScalingConfigurationName(const Aws::String& value) { SetAutoScalingConfigurationName(value); return *this;}
-    inline AutoScalingConfiguration& WithAutoScalingConfigurationName(Aws::String&& value) { SetAutoScalingConfigurationName(std::move(value)); return *this;}
-    inline AutoScalingConfiguration& WithAutoScalingConfigurationName(const char* value) { SetAutoScalingConfigurationName(value); return *this;}
+    template<typename AutoScalingConfigurationNameT = Aws::String>
+    void SetAutoScalingConfigurationName(AutoScalingConfigurationNameT&& value) { m_autoScalingConfigurationNameHasBeenSet = true; m_autoScalingConfigurationName = std::forward<AutoScalingConfigurationNameT>(value); }
+    template<typename AutoScalingConfigurationNameT = Aws::String>
+    AutoScalingConfiguration& WithAutoScalingConfigurationName(AutoScalingConfigurationNameT&& value) { SetAutoScalingConfigurationName(std::forward<AutoScalingConfigurationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,7 +77,7 @@ namespace Model
      * active configurations (<code>"Status": "ACTIVE"</code>) that share the same
      * <code>AutoScalingConfigurationName</code>.</p>
      */
-    inline int GetAutoScalingConfigurationRevision() const{ return m_autoScalingConfigurationRevision; }
+    inline int GetAutoScalingConfigurationRevision() const { return m_autoScalingConfigurationRevision; }
     inline bool AutoScalingConfigurationRevisionHasBeenSet() const { return m_autoScalingConfigurationRevisionHasBeenSet; }
     inline void SetAutoScalingConfigurationRevision(int value) { m_autoScalingConfigurationRevisionHasBeenSet = true; m_autoScalingConfigurationRevision = value; }
     inline AutoScalingConfiguration& WithAutoScalingConfigurationRevision(int value) { SetAutoScalingConfigurationRevision(value); return *this;}
@@ -94,7 +90,7 @@ namespace Model
      * <code>AutoScalingConfigurationName</code>. It's set to <code>false</code>
      * otherwise.</p>
      */
-    inline bool GetLatest() const{ return m_latest; }
+    inline bool GetLatest() const { return m_latest; }
     inline bool LatestHasBeenSet() const { return m_latestHasBeenSet; }
     inline void SetLatest(bool value) { m_latestHasBeenSet = true; m_latest = value; }
     inline AutoScalingConfiguration& WithLatest(bool value) { SetLatest(value); return *this;}
@@ -107,12 +103,10 @@ namespace Model
      * used. Inactive configuration revisions are permanently removed some time after
      * they are deleted.</p>
      */
-    inline const AutoScalingConfigurationStatus& GetStatus() const{ return m_status; }
+    inline AutoScalingConfigurationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const AutoScalingConfigurationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(AutoScalingConfigurationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AutoScalingConfiguration& WithStatus(const AutoScalingConfigurationStatus& value) { SetStatus(value); return *this;}
-    inline AutoScalingConfiguration& WithStatus(AutoScalingConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(AutoScalingConfigurationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline AutoScalingConfiguration& WithStatus(AutoScalingConfigurationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -121,7 +115,7 @@ namespace Model
      * number of concurrent requests exceeds this limit, App Runner scales the service
      * up.</p>
      */
-    inline int GetMaxConcurrency() const{ return m_maxConcurrency; }
+    inline int GetMaxConcurrency() const { return m_maxConcurrency; }
     inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
     inline void SetMaxConcurrency(int value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
     inline AutoScalingConfiguration& WithMaxConcurrency(int value) { SetMaxConcurrency(value); return *this;}
@@ -138,7 +132,7 @@ namespace Model
      * doubles the number of provisioned instances during deployments, to maintain the
      * same capacity for both old and new code.</p>
      */
-    inline int GetMinSize() const{ return m_minSize; }
+    inline int GetMinSize() const { return m_minSize; }
     inline bool MinSizeHasBeenSet() const { return m_minSizeHasBeenSet; }
     inline void SetMinSize(int value) { m_minSizeHasBeenSet = true; m_minSize = value; }
     inline AutoScalingConfiguration& WithMinSize(int value) { SetMinSize(value); return *this;}
@@ -149,7 +143,7 @@ namespace Model
      * <p>The maximum number of instances that a service scales up to. At most
      * <code>MaxSize</code> instances actively serve traffic for your service.</p>
      */
-    inline int GetMaxSize() const{ return m_maxSize; }
+    inline int GetMaxSize() const { return m_maxSize; }
     inline bool MaxSizeHasBeenSet() const { return m_maxSizeHasBeenSet; }
     inline void SetMaxSize(int value) { m_maxSizeHasBeenSet = true; m_maxSize = value; }
     inline AutoScalingConfiguration& WithMaxSize(int value) { SetMaxSize(value); return *this;}
@@ -160,12 +154,12 @@ namespace Model
      * <p>The time when the auto scaling configuration was created. It's in Unix time
      * stamp format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline AutoScalingConfiguration& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline AutoScalingConfiguration& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    AutoScalingConfiguration& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -173,12 +167,12 @@ namespace Model
      * <p>The time when the auto scaling configuration was deleted. It's in Unix time
      * stamp format.</p>
      */
-    inline const Aws::Utils::DateTime& GetDeletedAt() const{ return m_deletedAt; }
+    inline const Aws::Utils::DateTime& GetDeletedAt() const { return m_deletedAt; }
     inline bool DeletedAtHasBeenSet() const { return m_deletedAtHasBeenSet; }
-    inline void SetDeletedAt(const Aws::Utils::DateTime& value) { m_deletedAtHasBeenSet = true; m_deletedAt = value; }
-    inline void SetDeletedAt(Aws::Utils::DateTime&& value) { m_deletedAtHasBeenSet = true; m_deletedAt = std::move(value); }
-    inline AutoScalingConfiguration& WithDeletedAt(const Aws::Utils::DateTime& value) { SetDeletedAt(value); return *this;}
-    inline AutoScalingConfiguration& WithDeletedAt(Aws::Utils::DateTime&& value) { SetDeletedAt(std::move(value)); return *this;}
+    template<typename DeletedAtT = Aws::Utils::DateTime>
+    void SetDeletedAt(DeletedAtT&& value) { m_deletedAtHasBeenSet = true; m_deletedAt = std::forward<DeletedAtT>(value); }
+    template<typename DeletedAtT = Aws::Utils::DateTime>
+    AutoScalingConfiguration& WithDeletedAt(DeletedAtT&& value) { SetDeletedAt(std::forward<DeletedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -188,7 +182,7 @@ namespace Model
      * are associated. A value of <code>false</code> indicates no services are
      * associated.</p>
      */
-    inline bool GetHasAssociatedService() const{ return m_hasAssociatedService; }
+    inline bool GetHasAssociatedService() const { return m_hasAssociatedService; }
     inline bool HasAssociatedServiceHasBeenSet() const { return m_hasAssociatedServiceHasBeenSet; }
     inline void SetHasAssociatedService(bool value) { m_hasAssociatedServiceHasBeenSet = true; m_hasAssociatedService = value; }
     inline AutoScalingConfiguration& WithHasAssociatedService(bool value) { SetHasAssociatedService(value); return *this;}
@@ -203,7 +197,7 @@ namespace Model
      * <code>AutoScalingConfiguration</code> can be any revision under the same
      * <code>AutoScalingConfigurationName</code>.</p>
      */
-    inline bool GetIsDefault() const{ return m_isDefault; }
+    inline bool GetIsDefault() const { return m_isDefault; }
     inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
     inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
     inline AutoScalingConfiguration& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
@@ -216,34 +210,34 @@ namespace Model
     Aws::String m_autoScalingConfigurationName;
     bool m_autoScalingConfigurationNameHasBeenSet = false;
 
-    int m_autoScalingConfigurationRevision;
+    int m_autoScalingConfigurationRevision{0};
     bool m_autoScalingConfigurationRevisionHasBeenSet = false;
 
-    bool m_latest;
+    bool m_latest{false};
     bool m_latestHasBeenSet = false;
 
-    AutoScalingConfigurationStatus m_status;
+    AutoScalingConfigurationStatus m_status{AutoScalingConfigurationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    int m_maxConcurrency;
+    int m_maxConcurrency{0};
     bool m_maxConcurrencyHasBeenSet = false;
 
-    int m_minSize;
+    int m_minSize{0};
     bool m_minSizeHasBeenSet = false;
 
-    int m_maxSize;
+    int m_maxSize{0};
     bool m_maxSizeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_deletedAt;
+    Aws::Utils::DateTime m_deletedAt{};
     bool m_deletedAtHasBeenSet = false;
 
-    bool m_hasAssociatedService;
+    bool m_hasAssociatedService{false};
     bool m_hasAssociatedServiceHasBeenSet = false;
 
-    bool m_isDefault;
+    bool m_isDefault{false};
     bool m_isDefaultHasBeenSet = false;
   };
 

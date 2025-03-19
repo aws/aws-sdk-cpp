@@ -12,14 +12,6 @@ using namespace Aws::DevOpsGuru::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListMonitoredResourcesRequest::ListMonitoredResourcesRequest() : 
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListMonitoredResourcesRequest::SerializePayload() const
 {
   JsonValue payload;

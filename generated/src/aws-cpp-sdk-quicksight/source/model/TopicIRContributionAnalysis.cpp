@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TopicIRContributionAnalysis::TopicIRContributionAnalysis() : 
-    m_factorsHasBeenSet(false),
-    m_timeRangesHasBeenSet(false),
-    m_direction(ContributionAnalysisDirection::NOT_SET),
-    m_directionHasBeenSet(false),
-    m_sortType(ContributionAnalysisSortType::NOT_SET),
-    m_sortTypeHasBeenSet(false)
-{
-}
-
 TopicIRContributionAnalysis::TopicIRContributionAnalysis(JsonView jsonValue)
-  : TopicIRContributionAnalysis()
 {
   *this = jsonValue;
 }
@@ -45,28 +34,21 @@ TopicIRContributionAnalysis& TopicIRContributionAnalysis::operator =(JsonView js
     }
     m_factorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeRanges"))
   {
     m_timeRanges = jsonValue.GetObject("TimeRanges");
-
     m_timeRangesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Direction"))
   {
     m_direction = ContributionAnalysisDirectionMapper::GetContributionAnalysisDirectionForName(jsonValue.GetString("Direction"));
-
     m_directionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortType"))
   {
     m_sortType = ContributionAnalysisSortTypeMapper::GetContributionAnalysisSortTypeForName(jsonValue.GetString("SortType"));
-
     m_sortTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

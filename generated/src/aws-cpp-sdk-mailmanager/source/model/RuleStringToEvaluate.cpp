@@ -18,15 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-RuleStringToEvaluate::RuleStringToEvaluate() : 
-    m_attribute(RuleStringEmailAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_mimeHeaderAttributeHasBeenSet(false)
-{
-}
-
 RuleStringToEvaluate::RuleStringToEvaluate(JsonView jsonValue)
-  : RuleStringToEvaluate()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RuleStringToEvaluate& RuleStringToEvaluate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Attribute"))
   {
     m_attribute = RuleStringEmailAttributeMapper::GetRuleStringEmailAttributeForName(jsonValue.GetString("Attribute"));
-
     m_attributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MimeHeaderAttribute"))
   {
     m_mimeHeaderAttribute = jsonValue.GetString("MimeHeaderAttribute");
-
     m_mimeHeaderAttributeHasBeenSet = true;
   }
-
   return *this;
 }
 

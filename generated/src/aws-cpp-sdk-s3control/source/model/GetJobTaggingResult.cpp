@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetJobTaggingResult::GetJobTaggingResult()
-{
-}
-
 GetJobTaggingResult::GetJobTaggingResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,12 +32,14 @@ GetJobTaggingResult& GetJobTaggingResult::operator =(const Aws::AmazonWebService
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("member");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("member");
       }
 
+      m_tagsHasBeenSet = true;
     }
   }
 
@@ -50,12 +48,14 @@ GetJobTaggingResult& GetJobTaggingResult::operator =(const Aws::AmazonWebService
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& hostIdIter = headers.find("x-amz-id-2");
   if(hostIdIter != headers.end())
   {
     m_hostId = hostIdIter->second;
+    m_hostIdHasBeenSet = true;
   }
 
   return *this;

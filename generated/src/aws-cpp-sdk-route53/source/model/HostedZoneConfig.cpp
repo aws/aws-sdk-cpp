@@ -20,15 +20,7 @@ namespace Route53
 namespace Model
 {
 
-HostedZoneConfig::HostedZoneConfig() : 
-    m_commentHasBeenSet(false),
-    m_privateZone(false),
-    m_privateZoneHasBeenSet(false)
-{
-}
-
 HostedZoneConfig::HostedZoneConfig(const XmlNode& xmlNode)
-  : HostedZoneConfig()
 {
   *this = xmlNode;
 }

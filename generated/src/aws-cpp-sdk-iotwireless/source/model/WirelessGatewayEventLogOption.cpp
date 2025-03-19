@@ -18,16 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-WirelessGatewayEventLogOption::WirelessGatewayEventLogOption() : 
-    m_event(WirelessGatewayEvent::NOT_SET),
-    m_eventHasBeenSet(false),
-    m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false)
-{
-}
-
 WirelessGatewayEventLogOption::WirelessGatewayEventLogOption(JsonView jsonValue)
-  : WirelessGatewayEventLogOption()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ WirelessGatewayEventLogOption& WirelessGatewayEventLogOption::operator =(JsonVie
   if(jsonValue.ValueExists("Event"))
   {
     m_event = WirelessGatewayEventMapper::GetWirelessGatewayEventForName(jsonValue.GetString("Event"));
-
     m_eventHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogLevel"))
   {
     m_logLevel = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("LogLevel"));
-
     m_logLevelHasBeenSet = true;
   }
-
   return *this;
 }
 

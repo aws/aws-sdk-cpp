@@ -12,15 +12,6 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePrivacyBudgetTemplateRequest::UpdatePrivacyBudgetTemplateRequest() : 
-    m_membershipIdentifierHasBeenSet(false),
-    m_privacyBudgetTemplateIdentifierHasBeenSet(false),
-    m_privacyBudgetType(PrivacyBudgetType::NOT_SET),
-    m_privacyBudgetTypeHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePrivacyBudgetTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

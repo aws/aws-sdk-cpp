@@ -18,18 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-RefreshSchemasStatus::RefreshSchemasStatus() : 
-    m_endpointArnHasBeenSet(false),
-    m_replicationInstanceArnHasBeenSet(false),
-    m_status(RefreshSchemasStatusTypeValue::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastRefreshDateHasBeenSet(false),
-    m_lastFailureMessageHasBeenSet(false)
-{
-}
-
 RefreshSchemasStatus::RefreshSchemasStatus(JsonView jsonValue)
-  : RefreshSchemasStatus()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ RefreshSchemasStatus& RefreshSchemasStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EndpointArn"))
   {
     m_endpointArn = jsonValue.GetString("EndpointArn");
-
     m_endpointArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationInstanceArn"))
   {
     m_replicationInstanceArn = jsonValue.GetString("ReplicationInstanceArn");
-
     m_replicationInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = RefreshSchemasStatusTypeValueMapper::GetRefreshSchemasStatusTypeValueForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastRefreshDate"))
   {
     m_lastRefreshDate = jsonValue.GetDouble("LastRefreshDate");
-
     m_lastRefreshDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastFailureMessage"))
   {
     m_lastFailureMessage = jsonValue.GetString("LastFailureMessage");
-
     m_lastFailureMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

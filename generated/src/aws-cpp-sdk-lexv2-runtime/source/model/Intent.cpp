@@ -18,18 +18,7 @@ namespace LexRuntimeV2
 namespace Model
 {
 
-Intent::Intent() : 
-    m_nameHasBeenSet(false),
-    m_slotsHasBeenSet(false),
-    m_state(IntentState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_confirmationState(ConfirmationState::NOT_SET),
-    m_confirmationStateHasBeenSet(false)
-{
-}
-
 Intent::Intent(JsonView jsonValue)
-  : Intent()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ Intent& Intent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slots"))
   {
     Aws::Map<Aws::String, JsonView> slotsJsonMap = jsonValue.GetObject("slots").GetAllObjects();
@@ -52,21 +39,16 @@ Intent& Intent::operator =(JsonView jsonValue)
     }
     m_slotsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = IntentStateMapper::GetIntentStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("confirmationState"))
   {
     m_confirmationState = ConfirmationStateMapper::GetConfirmationStateForName(jsonValue.GetString("confirmationState"));
-
     m_confirmationStateHasBeenSet = true;
   }
-
   return *this;
 }
 

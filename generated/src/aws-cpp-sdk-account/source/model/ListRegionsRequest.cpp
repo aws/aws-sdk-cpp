@@ -12,15 +12,6 @@ using namespace Aws::Account::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListRegionsRequest::ListRegionsRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_regionOptStatusContainsHasBeenSet(false)
-{
-}
-
 Aws::String ListRegionsRequest::SerializePayload() const
 {
   JsonValue payload;

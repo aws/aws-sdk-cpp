@@ -29,7 +29,7 @@ namespace Model
   class ListDataIngestionJobsResult
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API ListDataIngestionJobsResult();
+    AWS_LOOKOUTEQUIPMENT_API ListDataIngestionJobsResult() = default;
     AWS_LOOKOUTEQUIPMENT_API ListDataIngestionJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOOKOUTEQUIPMENT_API ListDataIngestionJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
      * <p> An opaque pagination token indicating where to continue the listing of data
      * ingestion jobs. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListDataIngestionJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDataIngestionJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDataIngestionJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDataIngestionJobsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,32 +51,33 @@ namespace Model
      * <p>Specifies information about the specific data ingestion job, including
      * dataset name and status. </p>
      */
-    inline const Aws::Vector<DataIngestionJobSummary>& GetDataIngestionJobSummaries() const{ return m_dataIngestionJobSummaries; }
-    inline void SetDataIngestionJobSummaries(const Aws::Vector<DataIngestionJobSummary>& value) { m_dataIngestionJobSummaries = value; }
-    inline void SetDataIngestionJobSummaries(Aws::Vector<DataIngestionJobSummary>&& value) { m_dataIngestionJobSummaries = std::move(value); }
-    inline ListDataIngestionJobsResult& WithDataIngestionJobSummaries(const Aws::Vector<DataIngestionJobSummary>& value) { SetDataIngestionJobSummaries(value); return *this;}
-    inline ListDataIngestionJobsResult& WithDataIngestionJobSummaries(Aws::Vector<DataIngestionJobSummary>&& value) { SetDataIngestionJobSummaries(std::move(value)); return *this;}
-    inline ListDataIngestionJobsResult& AddDataIngestionJobSummaries(const DataIngestionJobSummary& value) { m_dataIngestionJobSummaries.push_back(value); return *this; }
-    inline ListDataIngestionJobsResult& AddDataIngestionJobSummaries(DataIngestionJobSummary&& value) { m_dataIngestionJobSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DataIngestionJobSummary>& GetDataIngestionJobSummaries() const { return m_dataIngestionJobSummaries; }
+    template<typename DataIngestionJobSummariesT = Aws::Vector<DataIngestionJobSummary>>
+    void SetDataIngestionJobSummaries(DataIngestionJobSummariesT&& value) { m_dataIngestionJobSummariesHasBeenSet = true; m_dataIngestionJobSummaries = std::forward<DataIngestionJobSummariesT>(value); }
+    template<typename DataIngestionJobSummariesT = Aws::Vector<DataIngestionJobSummary>>
+    ListDataIngestionJobsResult& WithDataIngestionJobSummaries(DataIngestionJobSummariesT&& value) { SetDataIngestionJobSummaries(std::forward<DataIngestionJobSummariesT>(value)); return *this;}
+    template<typename DataIngestionJobSummariesT = DataIngestionJobSummary>
+    ListDataIngestionJobsResult& AddDataIngestionJobSummaries(DataIngestionJobSummariesT&& value) { m_dataIngestionJobSummariesHasBeenSet = true; m_dataIngestionJobSummaries.emplace_back(std::forward<DataIngestionJobSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListDataIngestionJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListDataIngestionJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListDataIngestionJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListDataIngestionJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<DataIngestionJobSummary> m_dataIngestionJobSummaries;
+    bool m_dataIngestionJobSummariesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

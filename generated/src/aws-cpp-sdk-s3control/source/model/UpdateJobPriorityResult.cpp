@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateJobPriorityResult::UpdateJobPriorityResult() : 
-    m_priority(0)
-{
-}
-
 UpdateJobPriorityResult::UpdateJobPriorityResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : UpdateJobPriorityResult()
 {
   *this = result;
 }
@@ -38,11 +32,13 @@ UpdateJobPriorityResult& UpdateJobPriorityResult::operator =(const Aws::AmazonWe
     if(!jobIdNode.IsNull())
     {
       m_jobId = Aws::Utils::Xml::DecodeEscapedXmlText(jobIdNode.GetText());
+      m_jobIdHasBeenSet = true;
     }
     XmlNode priorityNode = resultNode.FirstChild("Priority");
     if(!priorityNode.IsNull())
     {
       m_priority = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priorityNode.GetText()).c_str()).c_str());
+      m_priorityHasBeenSet = true;
     }
   }
 
@@ -51,12 +47,14 @@ UpdateJobPriorityResult& UpdateJobPriorityResult::operator =(const Aws::AmazonWe
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& hostIdIter = headers.find("x-amz-id-2");
   if(hostIdIter != headers.end())
   {
     m_hostId = hostIdIter->second;
+    m_hostIdHasBeenSet = true;
   }
 
   return *this;

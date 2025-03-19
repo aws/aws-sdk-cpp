@@ -18,15 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-KerberosAuthenticationSettings::KerberosAuthenticationSettings() : 
-    m_keyCacheSecretIdHasBeenSet(false),
-    m_keyCacheSecretIamArnHasBeenSet(false),
-    m_krb5FileContentsHasBeenSet(false)
-{
-}
-
 KerberosAuthenticationSettings::KerberosAuthenticationSettings(JsonView jsonValue)
-  : KerberosAuthenticationSettings()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ KerberosAuthenticationSettings& KerberosAuthenticationSettings::operator =(JsonV
   if(jsonValue.ValueExists("KeyCacheSecretId"))
   {
     m_keyCacheSecretId = jsonValue.GetString("KeyCacheSecretId");
-
     m_keyCacheSecretIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyCacheSecretIamArn"))
   {
     m_keyCacheSecretIamArn = jsonValue.GetString("KeyCacheSecretIamArn");
-
     m_keyCacheSecretIamArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Krb5FileContents"))
   {
     m_krb5FileContents = jsonValue.GetString("Krb5FileContents");
-
     m_krb5FileContentsHasBeenSet = true;
   }
-
   return *this;
 }
 

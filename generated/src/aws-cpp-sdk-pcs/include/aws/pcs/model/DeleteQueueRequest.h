@@ -22,7 +22,7 @@ namespace Model
   class DeleteQueueRequest : public PCSRequest
   {
   public:
-    AWS_PCS_API DeleteQueueRequest();
+    AWS_PCS_API DeleteQueueRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
     /**
      * <p>The name or ID of the cluster of the queue.</p>
      */
-    inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+    inline const Aws::String& GetClusterIdentifier() const { return m_clusterIdentifier; }
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
-    inline DeleteQueueRequest& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
-    inline DeleteQueueRequest& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
-    inline DeleteQueueRequest& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+    template<typename ClusterIdentifierT = Aws::String>
+    void SetClusterIdentifier(ClusterIdentifierT&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::forward<ClusterIdentifierT>(value); }
+    template<typename ClusterIdentifierT = Aws::String>
+    DeleteQueueRequest& WithClusterIdentifier(ClusterIdentifierT&& value) { SetClusterIdentifier(std::forward<ClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name or ID of the queue to delete.</p>
      */
-    inline const Aws::String& GetQueueIdentifier() const{ return m_queueIdentifier; }
+    inline const Aws::String& GetQueueIdentifier() const { return m_queueIdentifier; }
     inline bool QueueIdentifierHasBeenSet() const { return m_queueIdentifierHasBeenSet; }
-    inline void SetQueueIdentifier(const Aws::String& value) { m_queueIdentifierHasBeenSet = true; m_queueIdentifier = value; }
-    inline void SetQueueIdentifier(Aws::String&& value) { m_queueIdentifierHasBeenSet = true; m_queueIdentifier = std::move(value); }
-    inline void SetQueueIdentifier(const char* value) { m_queueIdentifierHasBeenSet = true; m_queueIdentifier.assign(value); }
-    inline DeleteQueueRequest& WithQueueIdentifier(const Aws::String& value) { SetQueueIdentifier(value); return *this;}
-    inline DeleteQueueRequest& WithQueueIdentifier(Aws::String&& value) { SetQueueIdentifier(std::move(value)); return *this;}
-    inline DeleteQueueRequest& WithQueueIdentifier(const char* value) { SetQueueIdentifier(value); return *this;}
+    template<typename QueueIdentifierT = Aws::String>
+    void SetQueueIdentifier(QueueIdentifierT&& value) { m_queueIdentifierHasBeenSet = true; m_queueIdentifier = std::forward<QueueIdentifierT>(value); }
+    template<typename QueueIdentifierT = Aws::String>
+    DeleteQueueRequest& WithQueueIdentifier(QueueIdentifierT&& value) { SetQueueIdentifier(std::forward<QueueIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * If you don't specify a client token, the CLI and SDK automatically generate 1
      * for you.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline DeleteQueueRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline DeleteQueueRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline DeleteQueueRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    DeleteQueueRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

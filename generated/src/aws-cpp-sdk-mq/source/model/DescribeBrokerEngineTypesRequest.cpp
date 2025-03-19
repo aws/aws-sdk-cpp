@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeBrokerEngineTypesRequest::DescribeBrokerEngineTypesRequest() : 
-    m_engineTypeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeBrokerEngineTypesRequest::SerializePayload() const
 {
   return {};

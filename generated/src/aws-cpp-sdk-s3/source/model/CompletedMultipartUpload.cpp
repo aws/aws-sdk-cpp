@@ -20,13 +20,7 @@ namespace S3
 namespace Model
 {
 
-CompletedMultipartUpload::CompletedMultipartUpload() : 
-    m_partsHasBeenSet(false)
-{
-}
-
 CompletedMultipartUpload::CompletedMultipartUpload(const XmlNode& xmlNode)
-  : CompletedMultipartUpload()
 {
   *this = xmlNode;
 }
@@ -41,6 +35,7 @@ CompletedMultipartUpload& CompletedMultipartUpload::operator =(const XmlNode& xm
     if(!partsNode.IsNull())
     {
       XmlNode partMember = partsNode;
+      m_partsHasBeenSet = !partMember.IsNull();
       while(!partMember.IsNull())
       {
         m_parts.push_back(partMember);

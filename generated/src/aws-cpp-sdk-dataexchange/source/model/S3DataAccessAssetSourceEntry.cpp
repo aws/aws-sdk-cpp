@@ -18,16 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-S3DataAccessAssetSourceEntry::S3DataAccessAssetSourceEntry() : 
-    m_bucketHasBeenSet(false),
-    m_keyPrefixesHasBeenSet(false),
-    m_keysHasBeenSet(false),
-    m_kmsKeysToGrantHasBeenSet(false)
-{
-}
-
 S3DataAccessAssetSourceEntry::S3DataAccessAssetSourceEntry(JsonView jsonValue)
-  : S3DataAccessAssetSourceEntry()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ S3DataAccessAssetSourceEntry& S3DataAccessAssetSourceEntry::operator =(JsonView 
   if(jsonValue.ValueExists("Bucket"))
   {
     m_bucket = jsonValue.GetString("Bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyPrefixes"))
   {
     Aws::Utils::Array<JsonView> keyPrefixesJsonList = jsonValue.GetArray("KeyPrefixes");
@@ -50,7 +39,6 @@ S3DataAccessAssetSourceEntry& S3DataAccessAssetSourceEntry::operator =(JsonView 
     }
     m_keyPrefixesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Keys"))
   {
     Aws::Utils::Array<JsonView> keysJsonList = jsonValue.GetArray("Keys");
@@ -60,7 +48,6 @@ S3DataAccessAssetSourceEntry& S3DataAccessAssetSourceEntry::operator =(JsonView 
     }
     m_keysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeysToGrant"))
   {
     Aws::Utils::Array<JsonView> kmsKeysToGrantJsonList = jsonValue.GetArray("KmsKeysToGrant");
@@ -70,7 +57,6 @@ S3DataAccessAssetSourceEntry& S3DataAccessAssetSourceEntry::operator =(JsonView 
     }
     m_kmsKeysToGrantHasBeenSet = true;
   }
-
   return *this;
 }
 

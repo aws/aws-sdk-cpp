@@ -12,11 +12,6 @@ using namespace Aws::OpenSearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePackageRequest::DeletePackageRequest() : 
-    m_packageIDHasBeenSet(false)
-{
-}
-
 Aws::String DeletePackageRequest::SerializePayload() const
 {
   return {};

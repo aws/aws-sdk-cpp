@@ -10,12 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-CreateTagsRequest::CreateTagsRequest() : 
-    m_resourceNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateTagsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

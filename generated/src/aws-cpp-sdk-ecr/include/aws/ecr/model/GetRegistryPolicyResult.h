@@ -27,7 +27,7 @@ namespace Model
   class GetRegistryPolicyResult
   {
   public:
-    AWS_ECR_API GetRegistryPolicyResult();
+    AWS_ECR_API GetRegistryPolicyResult() = default;
     AWS_ECR_API GetRegistryPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECR_API GetRegistryPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The registry ID associated with the request.</p>
      */
-    inline const Aws::String& GetRegistryId() const{ return m_registryId; }
-    inline void SetRegistryId(const Aws::String& value) { m_registryId = value; }
-    inline void SetRegistryId(Aws::String&& value) { m_registryId = std::move(value); }
-    inline void SetRegistryId(const char* value) { m_registryId.assign(value); }
-    inline GetRegistryPolicyResult& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
-    inline GetRegistryPolicyResult& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
-    inline GetRegistryPolicyResult& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
+    inline const Aws::String& GetRegistryId() const { return m_registryId; }
+    template<typename RegistryIdT = Aws::String>
+    void SetRegistryId(RegistryIdT&& value) { m_registryIdHasBeenSet = true; m_registryId = std::forward<RegistryIdT>(value); }
+    template<typename RegistryIdT = Aws::String>
+    GetRegistryPolicyResult& WithRegistryId(RegistryIdT&& value) { SetRegistryId(std::forward<RegistryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The JSON text of the permissions policy for a registry.</p>
      */
-    inline const Aws::String& GetPolicyText() const{ return m_policyText; }
-    inline void SetPolicyText(const Aws::String& value) { m_policyText = value; }
-    inline void SetPolicyText(Aws::String&& value) { m_policyText = std::move(value); }
-    inline void SetPolicyText(const char* value) { m_policyText.assign(value); }
-    inline GetRegistryPolicyResult& WithPolicyText(const Aws::String& value) { SetPolicyText(value); return *this;}
-    inline GetRegistryPolicyResult& WithPolicyText(Aws::String&& value) { SetPolicyText(std::move(value)); return *this;}
-    inline GetRegistryPolicyResult& WithPolicyText(const char* value) { SetPolicyText(value); return *this;}
+    inline const Aws::String& GetPolicyText() const { return m_policyText; }
+    template<typename PolicyTextT = Aws::String>
+    void SetPolicyText(PolicyTextT&& value) { m_policyTextHasBeenSet = true; m_policyText = std::forward<PolicyTextT>(value); }
+    template<typename PolicyTextT = Aws::String>
+    GetRegistryPolicyResult& WithPolicyText(PolicyTextT&& value) { SetPolicyText(std::forward<PolicyTextT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRegistryPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRegistryPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRegistryPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRegistryPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_registryId;
+    bool m_registryIdHasBeenSet = false;
 
     Aws::String m_policyText;
+    bool m_policyTextHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

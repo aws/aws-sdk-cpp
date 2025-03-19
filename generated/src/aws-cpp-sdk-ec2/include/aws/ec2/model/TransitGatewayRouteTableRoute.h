@@ -32,7 +32,7 @@ namespace Model
   class TransitGatewayRouteTableRoute
   {
   public:
-    AWS_EC2_API TransitGatewayRouteTableRoute();
+    AWS_EC2_API TransitGatewayRouteTableRoute() = default;
     AWS_EC2_API TransitGatewayRouteTableRoute(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API TransitGatewayRouteTableRoute& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The CIDR block used for destination matches.</p>
      */
-    inline const Aws::String& GetDestinationCidr() const{ return m_destinationCidr; }
+    inline const Aws::String& GetDestinationCidr() const { return m_destinationCidr; }
     inline bool DestinationCidrHasBeenSet() const { return m_destinationCidrHasBeenSet; }
-    inline void SetDestinationCidr(const Aws::String& value) { m_destinationCidrHasBeenSet = true; m_destinationCidr = value; }
-    inline void SetDestinationCidr(Aws::String&& value) { m_destinationCidrHasBeenSet = true; m_destinationCidr = std::move(value); }
-    inline void SetDestinationCidr(const char* value) { m_destinationCidrHasBeenSet = true; m_destinationCidr.assign(value); }
-    inline TransitGatewayRouteTableRoute& WithDestinationCidr(const Aws::String& value) { SetDestinationCidr(value); return *this;}
-    inline TransitGatewayRouteTableRoute& WithDestinationCidr(Aws::String&& value) { SetDestinationCidr(std::move(value)); return *this;}
-    inline TransitGatewayRouteTableRoute& WithDestinationCidr(const char* value) { SetDestinationCidr(value); return *this;}
+    template<typename DestinationCidrT = Aws::String>
+    void SetDestinationCidr(DestinationCidrT&& value) { m_destinationCidrHasBeenSet = true; m_destinationCidr = std::forward<DestinationCidrT>(value); }
+    template<typename DestinationCidrT = Aws::String>
+    TransitGatewayRouteTableRoute& WithDestinationCidr(DestinationCidrT&& value) { SetDestinationCidr(std::forward<DestinationCidrT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the route.</p>
      */
-    inline const Aws::String& GetState() const{ return m_state; }
+    inline const Aws::String& GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
-    inline TransitGatewayRouteTableRoute& WithState(const Aws::String& value) { SetState(value); return *this;}
-    inline TransitGatewayRouteTableRoute& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
-    inline TransitGatewayRouteTableRoute& WithState(const char* value) { SetState(value); return *this;}
+    template<typename StateT = Aws::String>
+    void SetState(StateT&& value) { m_stateHasBeenSet = true; m_state = std::forward<StateT>(value); }
+    template<typename StateT = Aws::String>
+    TransitGatewayRouteTableRoute& WithState(StateT&& value) { SetState(std::forward<StateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,70 +69,60 @@ namespace Model
      * <p>The route origin. The following are the possible values:</p> <ul> <li>
      * <p>static</p> </li> <li> <p>propagated</p> </li> </ul>
      */
-    inline const Aws::String& GetRouteOrigin() const{ return m_routeOrigin; }
+    inline const Aws::String& GetRouteOrigin() const { return m_routeOrigin; }
     inline bool RouteOriginHasBeenSet() const { return m_routeOriginHasBeenSet; }
-    inline void SetRouteOrigin(const Aws::String& value) { m_routeOriginHasBeenSet = true; m_routeOrigin = value; }
-    inline void SetRouteOrigin(Aws::String&& value) { m_routeOriginHasBeenSet = true; m_routeOrigin = std::move(value); }
-    inline void SetRouteOrigin(const char* value) { m_routeOriginHasBeenSet = true; m_routeOrigin.assign(value); }
-    inline TransitGatewayRouteTableRoute& WithRouteOrigin(const Aws::String& value) { SetRouteOrigin(value); return *this;}
-    inline TransitGatewayRouteTableRoute& WithRouteOrigin(Aws::String&& value) { SetRouteOrigin(std::move(value)); return *this;}
-    inline TransitGatewayRouteTableRoute& WithRouteOrigin(const char* value) { SetRouteOrigin(value); return *this;}
+    template<typename RouteOriginT = Aws::String>
+    void SetRouteOrigin(RouteOriginT&& value) { m_routeOriginHasBeenSet = true; m_routeOrigin = std::forward<RouteOriginT>(value); }
+    template<typename RouteOriginT = Aws::String>
+    TransitGatewayRouteTableRoute& WithRouteOrigin(RouteOriginT&& value) { SetRouteOrigin(std::forward<RouteOriginT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the prefix list.</p>
      */
-    inline const Aws::String& GetPrefixListId() const{ return m_prefixListId; }
+    inline const Aws::String& GetPrefixListId() const { return m_prefixListId; }
     inline bool PrefixListIdHasBeenSet() const { return m_prefixListIdHasBeenSet; }
-    inline void SetPrefixListId(const Aws::String& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = value; }
-    inline void SetPrefixListId(Aws::String&& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = std::move(value); }
-    inline void SetPrefixListId(const char* value) { m_prefixListIdHasBeenSet = true; m_prefixListId.assign(value); }
-    inline TransitGatewayRouteTableRoute& WithPrefixListId(const Aws::String& value) { SetPrefixListId(value); return *this;}
-    inline TransitGatewayRouteTableRoute& WithPrefixListId(Aws::String&& value) { SetPrefixListId(std::move(value)); return *this;}
-    inline TransitGatewayRouteTableRoute& WithPrefixListId(const char* value) { SetPrefixListId(value); return *this;}
+    template<typename PrefixListIdT = Aws::String>
+    void SetPrefixListId(PrefixListIdT&& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = std::forward<PrefixListIdT>(value); }
+    template<typename PrefixListIdT = Aws::String>
+    TransitGatewayRouteTableRoute& WithPrefixListId(PrefixListIdT&& value) { SetPrefixListId(std::forward<PrefixListIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the route attachment.</p>
      */
-    inline const Aws::String& GetAttachmentId() const{ return m_attachmentId; }
+    inline const Aws::String& GetAttachmentId() const { return m_attachmentId; }
     inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
-    inline void SetAttachmentId(const Aws::String& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = value; }
-    inline void SetAttachmentId(Aws::String&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::move(value); }
-    inline void SetAttachmentId(const char* value) { m_attachmentIdHasBeenSet = true; m_attachmentId.assign(value); }
-    inline TransitGatewayRouteTableRoute& WithAttachmentId(const Aws::String& value) { SetAttachmentId(value); return *this;}
-    inline TransitGatewayRouteTableRoute& WithAttachmentId(Aws::String&& value) { SetAttachmentId(std::move(value)); return *this;}
-    inline TransitGatewayRouteTableRoute& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
+    template<typename AttachmentIdT = Aws::String>
+    void SetAttachmentId(AttachmentIdT&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::forward<AttachmentIdT>(value); }
+    template<typename AttachmentIdT = Aws::String>
+    TransitGatewayRouteTableRoute& WithAttachmentId(AttachmentIdT&& value) { SetAttachmentId(std::forward<AttachmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the resource for the route attachment.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline TransitGatewayRouteTableRoute& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline TransitGatewayRouteTableRoute& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline TransitGatewayRouteTableRoute& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    TransitGatewayRouteTableRoute& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource type for the route attachment.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline TransitGatewayRouteTableRoute& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline TransitGatewayRouteTableRoute& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline TransitGatewayRouteTableRoute& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    TransitGatewayRouteTableRoute& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
   private:
 

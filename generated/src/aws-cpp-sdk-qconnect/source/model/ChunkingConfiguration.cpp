@@ -18,17 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-ChunkingConfiguration::ChunkingConfiguration() : 
-    m_chunkingStrategy(ChunkingStrategy::NOT_SET),
-    m_chunkingStrategyHasBeenSet(false),
-    m_fixedSizeChunkingConfigurationHasBeenSet(false),
-    m_hierarchicalChunkingConfigurationHasBeenSet(false),
-    m_semanticChunkingConfigurationHasBeenSet(false)
-{
-}
-
 ChunkingConfiguration::ChunkingConfiguration(JsonView jsonValue)
-  : ChunkingConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ChunkingConfiguration& ChunkingConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("chunkingStrategy"))
   {
     m_chunkingStrategy = ChunkingStrategyMapper::GetChunkingStrategyForName(jsonValue.GetString("chunkingStrategy"));
-
     m_chunkingStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fixedSizeChunkingConfiguration"))
   {
     m_fixedSizeChunkingConfiguration = jsonValue.GetObject("fixedSizeChunkingConfiguration");
-
     m_fixedSizeChunkingConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hierarchicalChunkingConfiguration"))
   {
     m_hierarchicalChunkingConfiguration = jsonValue.GetObject("hierarchicalChunkingConfiguration");
-
     m_hierarchicalChunkingConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("semanticChunkingConfiguration"))
   {
     m_semanticChunkingConfiguration = jsonValue.GetObject("semanticChunkingConfiguration");
-
     m_semanticChunkingConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

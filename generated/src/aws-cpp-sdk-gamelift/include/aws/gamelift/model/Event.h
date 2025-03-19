@@ -36,7 +36,7 @@ namespace Model
   class Event
   {
   public:
-    AWS_GAMELIFT_API Event();
+    AWS_GAMELIFT_API Event() = default;
     AWS_GAMELIFT_API Event(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Event& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>A unique identifier for a fleet event.</p>
      */
-    inline const Aws::String& GetEventId() const{ return m_eventId; }
+    inline const Aws::String& GetEventId() const { return m_eventId; }
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
-    inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
-    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
-    inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
-    inline Event& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
-    inline Event& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
-    inline Event& WithEventId(const char* value) { SetEventId(value); return *this;}
+    template<typename EventIdT = Aws::String>
+    void SetEventId(EventIdT&& value) { m_eventIdHasBeenSet = true; m_eventId = std::forward<EventIdT>(value); }
+    template<typename EventIdT = Aws::String>
+    Event& WithEventId(EventIdT&& value) { SetEventId(std::forward<EventIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for an event resource, such as a fleet ID.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline Event& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline Event& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline Event& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    Event& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -189,26 +185,22 @@ namespace Model
      * <p>FLEET_DELETED -- A request to delete a fleet was initiated.</p> </li> <li>
      * <p> GENERIC_EVENT -- An unspecified event has occurred.</p> </li> </ul>
      */
-    inline const EventCode& GetEventCode() const{ return m_eventCode; }
+    inline EventCode GetEventCode() const { return m_eventCode; }
     inline bool EventCodeHasBeenSet() const { return m_eventCodeHasBeenSet; }
-    inline void SetEventCode(const EventCode& value) { m_eventCodeHasBeenSet = true; m_eventCode = value; }
-    inline void SetEventCode(EventCode&& value) { m_eventCodeHasBeenSet = true; m_eventCode = std::move(value); }
-    inline Event& WithEventCode(const EventCode& value) { SetEventCode(value); return *this;}
-    inline Event& WithEventCode(EventCode&& value) { SetEventCode(std::move(value)); return *this;}
+    inline void SetEventCode(EventCode value) { m_eventCodeHasBeenSet = true; m_eventCode = value; }
+    inline Event& WithEventCode(EventCode value) { SetEventCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Additional information related to the event.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline Event& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline Event& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline Event& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    Event& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -216,12 +208,12 @@ namespace Model
      * <p>Time stamp indicating when this event occurred. Format is a number expressed
      * in Unix time as milliseconds (for example <code>"1469498468.057"</code>).</p>
      */
-    inline const Aws::Utils::DateTime& GetEventTime() const{ return m_eventTime; }
+    inline const Aws::Utils::DateTime& GetEventTime() const { return m_eventTime; }
     inline bool EventTimeHasBeenSet() const { return m_eventTimeHasBeenSet; }
-    inline void SetEventTime(const Aws::Utils::DateTime& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
-    inline void SetEventTime(Aws::Utils::DateTime&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::move(value); }
-    inline Event& WithEventTime(const Aws::Utils::DateTime& value) { SetEventTime(value); return *this;}
-    inline Event& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(std::move(value)); return *this;}
+    template<typename EventTimeT = Aws::Utils::DateTime>
+    void SetEventTime(EventTimeT&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::forward<EventTimeT>(value); }
+    template<typename EventTimeT = Aws::Utils::DateTime>
+    Event& WithEventTime(EventTimeT&& value) { SetEventTime(std::forward<EventTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -230,21 +222,19 @@ namespace Model
      * This is useful for debugging issues. The URL is valid for 15 minutes. You can
      * also access fleet creation logs through the Amazon GameLift console.</p>
      */
-    inline const Aws::String& GetPreSignedLogUrl() const{ return m_preSignedLogUrl; }
+    inline const Aws::String& GetPreSignedLogUrl() const { return m_preSignedLogUrl; }
     inline bool PreSignedLogUrlHasBeenSet() const { return m_preSignedLogUrlHasBeenSet; }
-    inline void SetPreSignedLogUrl(const Aws::String& value) { m_preSignedLogUrlHasBeenSet = true; m_preSignedLogUrl = value; }
-    inline void SetPreSignedLogUrl(Aws::String&& value) { m_preSignedLogUrlHasBeenSet = true; m_preSignedLogUrl = std::move(value); }
-    inline void SetPreSignedLogUrl(const char* value) { m_preSignedLogUrlHasBeenSet = true; m_preSignedLogUrl.assign(value); }
-    inline Event& WithPreSignedLogUrl(const Aws::String& value) { SetPreSignedLogUrl(value); return *this;}
-    inline Event& WithPreSignedLogUrl(Aws::String&& value) { SetPreSignedLogUrl(std::move(value)); return *this;}
-    inline Event& WithPreSignedLogUrl(const char* value) { SetPreSignedLogUrl(value); return *this;}
+    template<typename PreSignedLogUrlT = Aws::String>
+    void SetPreSignedLogUrl(PreSignedLogUrlT&& value) { m_preSignedLogUrlHasBeenSet = true; m_preSignedLogUrl = std::forward<PreSignedLogUrlT>(value); }
+    template<typename PreSignedLogUrlT = Aws::String>
+    Event& WithPreSignedLogUrl(PreSignedLogUrlT&& value) { SetPreSignedLogUrl(std::forward<PreSignedLogUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of times that this event occurred.</p>
      */
-    inline long long GetCount() const{ return m_count; }
+    inline long long GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(long long value) { m_countHasBeenSet = true; m_count = value; }
     inline Event& WithCount(long long value) { SetCount(value); return *this;}
@@ -257,19 +247,19 @@ namespace Model
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
-    EventCode m_eventCode;
+    EventCode m_eventCode{EventCode::NOT_SET};
     bool m_eventCodeHasBeenSet = false;
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_eventTime;
+    Aws::Utils::DateTime m_eventTime{};
     bool m_eventTimeHasBeenSet = false;
 
     Aws::String m_preSignedLogUrl;
     bool m_preSignedLogUrlHasBeenSet = false;
 
-    long long m_count;
+    long long m_count{0};
     bool m_countHasBeenSet = false;
   };
 

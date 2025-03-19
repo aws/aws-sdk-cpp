@@ -33,7 +33,7 @@ namespace Model
   class SourceSelectionCriteria
   {
   public:
-    AWS_S3CONTROL_API SourceSelectionCriteria();
+    AWS_S3CONTROL_API SourceSelectionCriteria() = default;
     AWS_S3CONTROL_API SourceSelectionCriteria(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API SourceSelectionCriteria& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,12 +48,12 @@ namespace Model
      * this element is required. </p>  <p>This is not supported by Amazon S3 on
      * Outposts buckets.</p> 
      */
-    inline const SseKmsEncryptedObjects& GetSseKmsEncryptedObjects() const{ return m_sseKmsEncryptedObjects; }
+    inline const SseKmsEncryptedObjects& GetSseKmsEncryptedObjects() const { return m_sseKmsEncryptedObjects; }
     inline bool SseKmsEncryptedObjectsHasBeenSet() const { return m_sseKmsEncryptedObjectsHasBeenSet; }
-    inline void SetSseKmsEncryptedObjects(const SseKmsEncryptedObjects& value) { m_sseKmsEncryptedObjectsHasBeenSet = true; m_sseKmsEncryptedObjects = value; }
-    inline void SetSseKmsEncryptedObjects(SseKmsEncryptedObjects&& value) { m_sseKmsEncryptedObjectsHasBeenSet = true; m_sseKmsEncryptedObjects = std::move(value); }
-    inline SourceSelectionCriteria& WithSseKmsEncryptedObjects(const SseKmsEncryptedObjects& value) { SetSseKmsEncryptedObjects(value); return *this;}
-    inline SourceSelectionCriteria& WithSseKmsEncryptedObjects(SseKmsEncryptedObjects&& value) { SetSseKmsEncryptedObjects(std::move(value)); return *this;}
+    template<typename SseKmsEncryptedObjectsT = SseKmsEncryptedObjects>
+    void SetSseKmsEncryptedObjects(SseKmsEncryptedObjectsT&& value) { m_sseKmsEncryptedObjectsHasBeenSet = true; m_sseKmsEncryptedObjects = std::forward<SseKmsEncryptedObjectsT>(value); }
+    template<typename SseKmsEncryptedObjectsT = SseKmsEncryptedObjects>
+    SourceSelectionCriteria& WithSseKmsEncryptedObjects(SseKmsEncryptedObjectsT&& value) { SetSseKmsEncryptedObjects(std::forward<SseKmsEncryptedObjectsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +70,12 @@ namespace Model
      * the source and destination buckets to replicate replica metadata changes between
      * the source and the replicas.</p> 
      */
-    inline const ReplicaModifications& GetReplicaModifications() const{ return m_replicaModifications; }
+    inline const ReplicaModifications& GetReplicaModifications() const { return m_replicaModifications; }
     inline bool ReplicaModificationsHasBeenSet() const { return m_replicaModificationsHasBeenSet; }
-    inline void SetReplicaModifications(const ReplicaModifications& value) { m_replicaModificationsHasBeenSet = true; m_replicaModifications = value; }
-    inline void SetReplicaModifications(ReplicaModifications&& value) { m_replicaModificationsHasBeenSet = true; m_replicaModifications = std::move(value); }
-    inline SourceSelectionCriteria& WithReplicaModifications(const ReplicaModifications& value) { SetReplicaModifications(value); return *this;}
-    inline SourceSelectionCriteria& WithReplicaModifications(ReplicaModifications&& value) { SetReplicaModifications(std::move(value)); return *this;}
+    template<typename ReplicaModificationsT = ReplicaModifications>
+    void SetReplicaModifications(ReplicaModificationsT&& value) { m_replicaModificationsHasBeenSet = true; m_replicaModifications = std::forward<ReplicaModificationsT>(value); }
+    template<typename ReplicaModificationsT = ReplicaModifications>
+    SourceSelectionCriteria& WithReplicaModifications(ReplicaModificationsT&& value) { SetReplicaModifications(std::forward<ReplicaModificationsT>(value)); return *this;}
     ///@}
   private:
 

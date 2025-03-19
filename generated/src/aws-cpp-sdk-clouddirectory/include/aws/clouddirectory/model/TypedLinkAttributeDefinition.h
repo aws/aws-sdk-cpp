@@ -36,7 +36,7 @@ namespace Model
   class TypedLinkAttributeDefinition
   {
   public:
-    AWS_CLOUDDIRECTORY_API TypedLinkAttributeDefinition();
+    AWS_CLOUDDIRECTORY_API TypedLinkAttributeDefinition() = default;
     AWS_CLOUDDIRECTORY_API TypedLinkAttributeDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API TypedLinkAttributeDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,45 +46,41 @@ namespace Model
     /**
      * <p>The unique name of the typed link attribute.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline TypedLinkAttributeDefinition& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline TypedLinkAttributeDefinition& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline TypedLinkAttributeDefinition& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    TypedLinkAttributeDefinition& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the attribute.</p>
      */
-    inline const FacetAttributeType& GetType() const{ return m_type; }
+    inline FacetAttributeType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const FacetAttributeType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(FacetAttributeType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline TypedLinkAttributeDefinition& WithType(const FacetAttributeType& value) { SetType(value); return *this;}
-    inline TypedLinkAttributeDefinition& WithType(FacetAttributeType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(FacetAttributeType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline TypedLinkAttributeDefinition& WithType(FacetAttributeType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The default value of the attribute (if configured).</p>
      */
-    inline const TypedAttributeValue& GetDefaultValue() const{ return m_defaultValue; }
+    inline const TypedAttributeValue& GetDefaultValue() const { return m_defaultValue; }
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-    inline void SetDefaultValue(const TypedAttributeValue& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-    inline void SetDefaultValue(TypedAttributeValue&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-    inline TypedLinkAttributeDefinition& WithDefaultValue(const TypedAttributeValue& value) { SetDefaultValue(value); return *this;}
-    inline TypedLinkAttributeDefinition& WithDefaultValue(TypedAttributeValue&& value) { SetDefaultValue(std::move(value)); return *this;}
+    template<typename DefaultValueT = TypedAttributeValue>
+    void SetDefaultValue(DefaultValueT&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::forward<DefaultValueT>(value); }
+    template<typename DefaultValueT = TypedAttributeValue>
+    TypedLinkAttributeDefinition& WithDefaultValue(DefaultValueT&& value) { SetDefaultValue(std::forward<DefaultValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether the attribute is mutable or not.</p>
      */
-    inline bool GetIsImmutable() const{ return m_isImmutable; }
+    inline bool GetIsImmutable() const { return m_isImmutable; }
     inline bool IsImmutableHasBeenSet() const { return m_isImmutableHasBeenSet; }
     inline void SetIsImmutable(bool value) { m_isImmutableHasBeenSet = true; m_isImmutable = value; }
     inline TypedLinkAttributeDefinition& WithIsImmutable(bool value) { SetIsImmutable(value); return *this;}
@@ -94,49 +90,45 @@ namespace Model
     /**
      * <p>Validation rules that are attached to the attribute definition.</p>
      */
-    inline const Aws::Map<Aws::String, Rule>& GetRules() const{ return m_rules; }
+    inline const Aws::Map<Aws::String, Rule>& GetRules() const { return m_rules; }
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    inline void SetRules(const Aws::Map<Aws::String, Rule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-    inline void SetRules(Aws::Map<Aws::String, Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-    inline TypedLinkAttributeDefinition& WithRules(const Aws::Map<Aws::String, Rule>& value) { SetRules(value); return *this;}
-    inline TypedLinkAttributeDefinition& WithRules(Aws::Map<Aws::String, Rule>&& value) { SetRules(std::move(value)); return *this;}
-    inline TypedLinkAttributeDefinition& AddRules(const Aws::String& key, const Rule& value) { m_rulesHasBeenSet = true; m_rules.emplace(key, value); return *this; }
-    inline TypedLinkAttributeDefinition& AddRules(Aws::String&& key, const Rule& value) { m_rulesHasBeenSet = true; m_rules.emplace(std::move(key), value); return *this; }
-    inline TypedLinkAttributeDefinition& AddRules(const Aws::String& key, Rule&& value) { m_rulesHasBeenSet = true; m_rules.emplace(key, std::move(value)); return *this; }
-    inline TypedLinkAttributeDefinition& AddRules(Aws::String&& key, Rule&& value) { m_rulesHasBeenSet = true; m_rules.emplace(std::move(key), std::move(value)); return *this; }
-    inline TypedLinkAttributeDefinition& AddRules(const char* key, Rule&& value) { m_rulesHasBeenSet = true; m_rules.emplace(key, std::move(value)); return *this; }
-    inline TypedLinkAttributeDefinition& AddRules(const char* key, const Rule& value) { m_rulesHasBeenSet = true; m_rules.emplace(key, value); return *this; }
+    template<typename RulesT = Aws::Map<Aws::String, Rule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Map<Aws::String, Rule>>
+    TypedLinkAttributeDefinition& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesKeyT = Aws::String, typename RulesValueT = Rule>
+    TypedLinkAttributeDefinition& AddRules(RulesKeyT&& key, RulesValueT&& value) {
+      m_rulesHasBeenSet = true; m_rules.emplace(std::forward<RulesKeyT>(key), std::forward<RulesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The required behavior of the <code>TypedLinkAttributeDefinition</code>.</p>
      */
-    inline const RequiredAttributeBehavior& GetRequiredBehavior() const{ return m_requiredBehavior; }
+    inline RequiredAttributeBehavior GetRequiredBehavior() const { return m_requiredBehavior; }
     inline bool RequiredBehaviorHasBeenSet() const { return m_requiredBehaviorHasBeenSet; }
-    inline void SetRequiredBehavior(const RequiredAttributeBehavior& value) { m_requiredBehaviorHasBeenSet = true; m_requiredBehavior = value; }
-    inline void SetRequiredBehavior(RequiredAttributeBehavior&& value) { m_requiredBehaviorHasBeenSet = true; m_requiredBehavior = std::move(value); }
-    inline TypedLinkAttributeDefinition& WithRequiredBehavior(const RequiredAttributeBehavior& value) { SetRequiredBehavior(value); return *this;}
-    inline TypedLinkAttributeDefinition& WithRequiredBehavior(RequiredAttributeBehavior&& value) { SetRequiredBehavior(std::move(value)); return *this;}
+    inline void SetRequiredBehavior(RequiredAttributeBehavior value) { m_requiredBehaviorHasBeenSet = true; m_requiredBehavior = value; }
+    inline TypedLinkAttributeDefinition& WithRequiredBehavior(RequiredAttributeBehavior value) { SetRequiredBehavior(value); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    FacetAttributeType m_type;
+    FacetAttributeType m_type{FacetAttributeType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     TypedAttributeValue m_defaultValue;
     bool m_defaultValueHasBeenSet = false;
 
-    bool m_isImmutable;
+    bool m_isImmutable{false};
     bool m_isImmutableHasBeenSet = false;
 
     Aws::Map<Aws::String, Rule> m_rules;
     bool m_rulesHasBeenSet = false;
 
-    RequiredAttributeBehavior m_requiredBehavior;
+    RequiredAttributeBehavior m_requiredBehavior{RequiredAttributeBehavior::NOT_SET};
     bool m_requiredBehaviorHasBeenSet = false;
   };
 

@@ -18,15 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-FormInputValueProperty::FormInputValueProperty() : 
-    m_valueHasBeenSet(false),
-    m_bindingPropertiesHasBeenSet(false),
-    m_concatHasBeenSet(false)
-{
-}
-
 FormInputValueProperty::FormInputValueProperty(JsonView jsonValue)
-  : FormInputValueProperty()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ FormInputValueProperty& FormInputValueProperty::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bindingProperties"))
   {
     m_bindingProperties = jsonValue.GetObject("bindingProperties");
-
     m_bindingPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("concat"))
   {
     Aws::Utils::Array<JsonView> concatJsonList = jsonValue.GetArray("concat");
@@ -56,7 +44,6 @@ FormInputValueProperty& FormInputValueProperty::operator =(JsonView jsonValue)
     }
     m_concatHasBeenSet = true;
   }
-
   return *this;
 }
 

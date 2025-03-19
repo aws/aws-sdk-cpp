@@ -20,17 +20,7 @@ namespace RDS
 namespace Model
 {
 
-AccountQuota::AccountQuota() : 
-    m_accountQuotaNameHasBeenSet(false),
-    m_used(0),
-    m_usedHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false)
-{
-}
-
 AccountQuota::AccountQuota(const XmlNode& xmlNode)
-  : AccountQuota()
 {
   *this = xmlNode;
 }

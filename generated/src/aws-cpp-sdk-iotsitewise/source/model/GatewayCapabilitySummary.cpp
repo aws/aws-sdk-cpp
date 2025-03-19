@@ -18,15 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-GatewayCapabilitySummary::GatewayCapabilitySummary() : 
-    m_capabilityNamespaceHasBeenSet(false),
-    m_capabilitySyncStatus(CapabilitySyncStatus::NOT_SET),
-    m_capabilitySyncStatusHasBeenSet(false)
-{
-}
-
 GatewayCapabilitySummary::GatewayCapabilitySummary(JsonView jsonValue)
-  : GatewayCapabilitySummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GatewayCapabilitySummary& GatewayCapabilitySummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("capabilityNamespace"))
   {
     m_capabilityNamespace = jsonValue.GetString("capabilityNamespace");
-
     m_capabilityNamespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("capabilitySyncStatus"))
   {
     m_capabilitySyncStatus = CapabilitySyncStatusMapper::GetCapabilitySyncStatusForName(jsonValue.GetString("capabilitySyncStatus"));
-
     m_capabilitySyncStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

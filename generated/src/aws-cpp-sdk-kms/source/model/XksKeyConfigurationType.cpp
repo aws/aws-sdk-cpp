@@ -18,13 +18,7 @@ namespace KMS
 namespace Model
 {
 
-XksKeyConfigurationType::XksKeyConfigurationType() : 
-    m_idHasBeenSet(false)
-{
-}
-
 XksKeyConfigurationType::XksKeyConfigurationType(JsonView jsonValue)
-  : XksKeyConfigurationType()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ XksKeyConfigurationType& XksKeyConfigurationType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

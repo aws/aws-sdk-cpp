@@ -21,7 +21,7 @@ namespace Model
   class ListResourceDataSyncRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API ListResourceDataSyncRequest();
+    AWS_SSM_API ListResourceDataSyncRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * to an Amazon S3 bucket. Specify <code>SyncFromSource</code> to view resource
      * data syncs from Organizations or from multiple Amazon Web Services Regions.</p>
      */
-    inline const Aws::String& GetSyncType() const{ return m_syncType; }
+    inline const Aws::String& GetSyncType() const { return m_syncType; }
     inline bool SyncTypeHasBeenSet() const { return m_syncTypeHasBeenSet; }
-    inline void SetSyncType(const Aws::String& value) { m_syncTypeHasBeenSet = true; m_syncType = value; }
-    inline void SetSyncType(Aws::String&& value) { m_syncTypeHasBeenSet = true; m_syncType = std::move(value); }
-    inline void SetSyncType(const char* value) { m_syncTypeHasBeenSet = true; m_syncType.assign(value); }
-    inline ListResourceDataSyncRequest& WithSyncType(const Aws::String& value) { SetSyncType(value); return *this;}
-    inline ListResourceDataSyncRequest& WithSyncType(Aws::String&& value) { SetSyncType(std::move(value)); return *this;}
-    inline ListResourceDataSyncRequest& WithSyncType(const char* value) { SetSyncType(value); return *this;}
+    template<typename SyncTypeT = Aws::String>
+    void SetSyncType(SyncTypeT&& value) { m_syncTypeHasBeenSet = true; m_syncType = std::forward<SyncTypeT>(value); }
+    template<typename SyncTypeT = Aws::String>
+    ListResourceDataSyncRequest& WithSyncType(SyncTypeT&& value) { SetSyncType(std::forward<SyncTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <p>A token to start the list. Use this token to get the next set of results.
      * </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListResourceDataSyncRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListResourceDataSyncRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListResourceDataSyncRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListResourceDataSyncRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +68,7 @@ namespace Model
      * token that you can specify in a subsequent call to get the next set of
      * results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListResourceDataSyncRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -85,7 +81,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

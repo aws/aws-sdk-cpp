@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetLandingZoneOperationResult::GetLandingZoneOperationResult()
-{
-}
-
 GetLandingZoneOperationResult::GetLandingZoneOperationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetLandingZoneOperationResult& GetLandingZoneOperationResult::operator =(const A
   if(jsonValue.ValueExists("operationDetails"))
   {
     m_operationDetails = jsonValue.GetObject("operationDetails");
-
+    m_operationDetailsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

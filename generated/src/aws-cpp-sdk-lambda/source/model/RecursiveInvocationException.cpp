@@ -18,14 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-RecursiveInvocationException::RecursiveInvocationException() : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 RecursiveInvocationException::RecursiveInvocationException(JsonView jsonValue)
-  : RecursiveInvocationException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RecursiveInvocationException& RecursiveInvocationException::operator =(JsonView 
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

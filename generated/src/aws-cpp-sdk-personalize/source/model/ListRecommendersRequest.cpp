@@ -12,14 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListRecommendersRequest::ListRecommendersRequest() : 
-    m_datasetGroupArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListRecommendersRequest::SerializePayload() const
 {
   JsonValue payload;

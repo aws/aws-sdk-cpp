@@ -10,11 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-DeleteTopicRequest::DeleteTopicRequest() : 
-    m_topicArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTopicRequest::SerializePayload() const
 {
   Aws::StringStream ss;

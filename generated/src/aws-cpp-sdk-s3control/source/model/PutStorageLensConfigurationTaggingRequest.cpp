@@ -15,12 +15,6 @@ using namespace Aws::S3Control::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-PutStorageLensConfigurationTaggingRequest::PutStorageLensConfigurationTaggingRequest() : 
-    m_configIdHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
 
 Aws::String PutStorageLensConfigurationTaggingRequest::SerializePayload() const
 {

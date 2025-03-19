@@ -20,77 +20,7 @@ namespace Neptune
 namespace Model
 {
 
-DBInstance::DBInstance() : 
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_dBInstanceClassHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_dBInstanceStatusHasBeenSet(false),
-    m_masterUsernameHasBeenSet(false),
-    m_dBNameHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_instanceCreateTimeHasBeenSet(false),
-    m_preferredBackupWindowHasBeenSet(false),
-    m_backupRetentionPeriod(0),
-    m_backupRetentionPeriodHasBeenSet(false),
-    m_dBSecurityGroupsHasBeenSet(false),
-    m_vpcSecurityGroupsHasBeenSet(false),
-    m_dBParameterGroupsHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_dBSubnetGroupHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_pendingModifiedValuesHasBeenSet(false),
-    m_latestRestorableTimeHasBeenSet(false),
-    m_multiAZ(false),
-    m_multiAZHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false),
-    m_readReplicaSourceDBInstanceIdentifierHasBeenSet(false),
-    m_readReplicaDBInstanceIdentifiersHasBeenSet(false),
-    m_readReplicaDBClusterIdentifiersHasBeenSet(false),
-    m_licenseModelHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_optionGroupMembershipsHasBeenSet(false),
-    m_characterSetNameHasBeenSet(false),
-    m_secondaryAvailabilityZoneHasBeenSet(false),
-    m_statusInfosHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_tdeCredentialArnHasBeenSet(false),
-    m_dbInstancePort(0),
-    m_dbInstancePortHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_storageEncrypted(false),
-    m_storageEncryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_dbiResourceIdHasBeenSet(false),
-    m_cACertificateIdentifierHasBeenSet(false),
-    m_domainMembershipsHasBeenSet(false),
-    m_copyTagsToSnapshot(false),
-    m_copyTagsToSnapshotHasBeenSet(false),
-    m_monitoringInterval(0),
-    m_monitoringIntervalHasBeenSet(false),
-    m_enhancedMonitoringResourceArnHasBeenSet(false),
-    m_monitoringRoleArnHasBeenSet(false),
-    m_promotionTier(0),
-    m_promotionTierHasBeenSet(false),
-    m_dBInstanceArnHasBeenSet(false),
-    m_timezoneHasBeenSet(false),
-    m_iAMDatabaseAuthenticationEnabled(false),
-    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
-    m_performanceInsightsEnabled(false),
-    m_performanceInsightsEnabledHasBeenSet(false),
-    m_performanceInsightsKMSKeyIdHasBeenSet(false),
-    m_enabledCloudwatchLogsExportsHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false)
-{
-}
-
 DBInstance::DBInstance(const XmlNode& xmlNode)
-  : DBInstance()
 {
   *this = xmlNode;
 }
@@ -171,6 +101,7 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
     if(!dBSecurityGroupsNode.IsNull())
     {
       XmlNode dBSecurityGroupsMember = dBSecurityGroupsNode.FirstChild("DBSecurityGroup");
+      m_dBSecurityGroupsHasBeenSet = !dBSecurityGroupsMember.IsNull();
       while(!dBSecurityGroupsMember.IsNull())
       {
         m_dBSecurityGroups.push_back(dBSecurityGroupsMember);
@@ -183,6 +114,7 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
     if(!vpcSecurityGroupsNode.IsNull())
     {
       XmlNode vpcSecurityGroupsMember = vpcSecurityGroupsNode.FirstChild("VpcSecurityGroupMembership");
+      m_vpcSecurityGroupsHasBeenSet = !vpcSecurityGroupsMember.IsNull();
       while(!vpcSecurityGroupsMember.IsNull())
       {
         m_vpcSecurityGroups.push_back(vpcSecurityGroupsMember);
@@ -195,6 +127,7 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
     if(!dBParameterGroupsNode.IsNull())
     {
       XmlNode dBParameterGroupsMember = dBParameterGroupsNode.FirstChild("DBParameterGroup");
+      m_dBParameterGroupsHasBeenSet = !dBParameterGroupsMember.IsNull();
       while(!dBParameterGroupsMember.IsNull())
       {
         m_dBParameterGroups.push_back(dBParameterGroupsMember);
@@ -261,6 +194,7 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
     if(!readReplicaDBInstanceIdentifiersNode.IsNull())
     {
       XmlNode readReplicaDBInstanceIdentifiersMember = readReplicaDBInstanceIdentifiersNode.FirstChild("ReadReplicaDBInstanceIdentifier");
+      m_readReplicaDBInstanceIdentifiersHasBeenSet = !readReplicaDBInstanceIdentifiersMember.IsNull();
       while(!readReplicaDBInstanceIdentifiersMember.IsNull())
       {
         m_readReplicaDBInstanceIdentifiers.push_back(readReplicaDBInstanceIdentifiersMember.GetText());
@@ -273,6 +207,7 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
     if(!readReplicaDBClusterIdentifiersNode.IsNull())
     {
       XmlNode readReplicaDBClusterIdentifiersMember = readReplicaDBClusterIdentifiersNode.FirstChild("ReadReplicaDBClusterIdentifier");
+      m_readReplicaDBClusterIdentifiersHasBeenSet = !readReplicaDBClusterIdentifiersMember.IsNull();
       while(!readReplicaDBClusterIdentifiersMember.IsNull())
       {
         m_readReplicaDBClusterIdentifiers.push_back(readReplicaDBClusterIdentifiersMember.GetText());
@@ -297,6 +232,7 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
     if(!optionGroupMembershipsNode.IsNull())
     {
       XmlNode optionGroupMembershipsMember = optionGroupMembershipsNode.FirstChild("OptionGroupMembership");
+      m_optionGroupMembershipsHasBeenSet = !optionGroupMembershipsMember.IsNull();
       while(!optionGroupMembershipsMember.IsNull())
       {
         m_optionGroupMemberships.push_back(optionGroupMembershipsMember);
@@ -321,6 +257,7 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
     if(!statusInfosNode.IsNull())
     {
       XmlNode statusInfosMember = statusInfosNode.FirstChild("DBInstanceStatusInfo");
+      m_statusInfosHasBeenSet = !statusInfosMember.IsNull();
       while(!statusInfosMember.IsNull())
       {
         m_statusInfos.push_back(statusInfosMember);
@@ -381,6 +318,7 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
     if(!domainMembershipsNode.IsNull())
     {
       XmlNode domainMembershipsMember = domainMembershipsNode.FirstChild("DomainMembership");
+      m_domainMembershipsHasBeenSet = !domainMembershipsMember.IsNull();
       while(!domainMembershipsMember.IsNull())
       {
         m_domainMemberships.push_back(domainMembershipsMember);
@@ -453,6 +391,7 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
     if(!enabledCloudwatchLogsExportsNode.IsNull())
     {
       XmlNode enabledCloudwatchLogsExportsMember = enabledCloudwatchLogsExportsNode.FirstChild("member");
+      m_enabledCloudwatchLogsExportsHasBeenSet = !enabledCloudwatchLogsExportsMember.IsNull();
       while(!enabledCloudwatchLogsExportsMember.IsNull())
       {
         m_enabledCloudwatchLogsExports.push_back(enabledCloudwatchLogsExportsMember.GetText());

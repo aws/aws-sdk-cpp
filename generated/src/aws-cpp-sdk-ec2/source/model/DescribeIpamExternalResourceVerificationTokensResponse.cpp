@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeIpamExternalResourceVerificationTokensResponse::DescribeIpamExternalResourceVerificationTokensResponse()
-{
-}
-
 DescribeIpamExternalResourceVerificationTokensResponse::DescribeIpamExternalResourceVerificationTokensResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeIpamExternalResourceVerificationTokensResponse& DescribeIpamExternalReso
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode ipamExternalResourceVerificationTokensNode = resultNode.FirstChild("ipamExternalResourceVerificationTokenSet");
     if(!ipamExternalResourceVerificationTokensNode.IsNull())
     {
       XmlNode ipamExternalResourceVerificationTokensMember = ipamExternalResourceVerificationTokensNode.FirstChild("item");
+      m_ipamExternalResourceVerificationTokensHasBeenSet = !ipamExternalResourceVerificationTokensMember.IsNull();
       while(!ipamExternalResourceVerificationTokensMember.IsNull())
       {
         m_ipamExternalResourceVerificationTokens.push_back(ipamExternalResourceVerificationTokensMember);
         ipamExternalResourceVerificationTokensMember = ipamExternalResourceVerificationTokensMember.NextNode("item");
       }
 
+      m_ipamExternalResourceVerificationTokensHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeIpamExternalResourceVerificationTokensResponse& DescribeIpamExternalReso
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeIpamExternalResourceVerificationTokensResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

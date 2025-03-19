@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-CalculatedField::CalculatedField() : 
-    m_dataSetIdentifierHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_expressionHasBeenSet(false)
-{
-}
-
 CalculatedField::CalculatedField(JsonView jsonValue)
-  : CalculatedField()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CalculatedField& CalculatedField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataSetIdentifier"))
   {
     m_dataSetIdentifier = jsonValue.GetString("DataSetIdentifier");
-
     m_dataSetIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Expression"))
   {
     m_expression = jsonValue.GetString("Expression");
-
     m_expressionHasBeenSet = true;
   }
-
   return *this;
 }
 

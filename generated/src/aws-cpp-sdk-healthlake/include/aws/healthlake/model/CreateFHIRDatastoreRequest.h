@@ -28,7 +28,7 @@ namespace Model
   class CreateFHIRDatastoreRequest : public HealthLakeRequest
   {
   public:
-    AWS_HEALTHLAKE_API CreateFHIRDatastoreRequest();
+    AWS_HEALTHLAKE_API CreateFHIRDatastoreRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,26 +45,22 @@ namespace Model
     /**
      * <p>The user generated name for the data store.</p>
      */
-    inline const Aws::String& GetDatastoreName() const{ return m_datastoreName; }
+    inline const Aws::String& GetDatastoreName() const { return m_datastoreName; }
     inline bool DatastoreNameHasBeenSet() const { return m_datastoreNameHasBeenSet; }
-    inline void SetDatastoreName(const Aws::String& value) { m_datastoreNameHasBeenSet = true; m_datastoreName = value; }
-    inline void SetDatastoreName(Aws::String&& value) { m_datastoreNameHasBeenSet = true; m_datastoreName = std::move(value); }
-    inline void SetDatastoreName(const char* value) { m_datastoreNameHasBeenSet = true; m_datastoreName.assign(value); }
-    inline CreateFHIRDatastoreRequest& WithDatastoreName(const Aws::String& value) { SetDatastoreName(value); return *this;}
-    inline CreateFHIRDatastoreRequest& WithDatastoreName(Aws::String&& value) { SetDatastoreName(std::move(value)); return *this;}
-    inline CreateFHIRDatastoreRequest& WithDatastoreName(const char* value) { SetDatastoreName(value); return *this;}
+    template<typename DatastoreNameT = Aws::String>
+    void SetDatastoreName(DatastoreNameT&& value) { m_datastoreNameHasBeenSet = true; m_datastoreName = std::forward<DatastoreNameT>(value); }
+    template<typename DatastoreNameT = Aws::String>
+    CreateFHIRDatastoreRequest& WithDatastoreName(DatastoreNameT&& value) { SetDatastoreName(std::forward<DatastoreNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The FHIR version of the data store. The only supported version is R4.</p>
      */
-    inline const FHIRVersion& GetDatastoreTypeVersion() const{ return m_datastoreTypeVersion; }
+    inline FHIRVersion GetDatastoreTypeVersion() const { return m_datastoreTypeVersion; }
     inline bool DatastoreTypeVersionHasBeenSet() const { return m_datastoreTypeVersionHasBeenSet; }
-    inline void SetDatastoreTypeVersion(const FHIRVersion& value) { m_datastoreTypeVersionHasBeenSet = true; m_datastoreTypeVersion = value; }
-    inline void SetDatastoreTypeVersion(FHIRVersion&& value) { m_datastoreTypeVersionHasBeenSet = true; m_datastoreTypeVersion = std::move(value); }
-    inline CreateFHIRDatastoreRequest& WithDatastoreTypeVersion(const FHIRVersion& value) { SetDatastoreTypeVersion(value); return *this;}
-    inline CreateFHIRDatastoreRequest& WithDatastoreTypeVersion(FHIRVersion&& value) { SetDatastoreTypeVersion(std::move(value)); return *this;}
+    inline void SetDatastoreTypeVersion(FHIRVersion value) { m_datastoreTypeVersionHasBeenSet = true; m_datastoreTypeVersion = value; }
+    inline CreateFHIRDatastoreRequest& WithDatastoreTypeVersion(FHIRVersion value) { SetDatastoreTypeVersion(value); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +68,12 @@ namespace Model
      * <p> The server-side encryption key configuration for a customer provided
      * encryption key specified for creating a data store. </p>
      */
-    inline const SseConfiguration& GetSseConfiguration() const{ return m_sseConfiguration; }
+    inline const SseConfiguration& GetSseConfiguration() const { return m_sseConfiguration; }
     inline bool SseConfigurationHasBeenSet() const { return m_sseConfigurationHasBeenSet; }
-    inline void SetSseConfiguration(const SseConfiguration& value) { m_sseConfigurationHasBeenSet = true; m_sseConfiguration = value; }
-    inline void SetSseConfiguration(SseConfiguration&& value) { m_sseConfigurationHasBeenSet = true; m_sseConfiguration = std::move(value); }
-    inline CreateFHIRDatastoreRequest& WithSseConfiguration(const SseConfiguration& value) { SetSseConfiguration(value); return *this;}
-    inline CreateFHIRDatastoreRequest& WithSseConfiguration(SseConfiguration&& value) { SetSseConfiguration(std::move(value)); return *this;}
+    template<typename SseConfigurationT = SseConfiguration>
+    void SetSseConfiguration(SseConfigurationT&& value) { m_sseConfigurationHasBeenSet = true; m_sseConfiguration = std::forward<SseConfigurationT>(value); }
+    template<typename SseConfigurationT = SseConfiguration>
+    CreateFHIRDatastoreRequest& WithSseConfiguration(SseConfigurationT&& value) { SetSseConfiguration(std::forward<SseConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,40 +82,38 @@ namespace Model
      * Currently, the only supported preloaded data is synthetic data generated from
      * Synthea.</p>
      */
-    inline const PreloadDataConfig& GetPreloadDataConfig() const{ return m_preloadDataConfig; }
+    inline const PreloadDataConfig& GetPreloadDataConfig() const { return m_preloadDataConfig; }
     inline bool PreloadDataConfigHasBeenSet() const { return m_preloadDataConfigHasBeenSet; }
-    inline void SetPreloadDataConfig(const PreloadDataConfig& value) { m_preloadDataConfigHasBeenSet = true; m_preloadDataConfig = value; }
-    inline void SetPreloadDataConfig(PreloadDataConfig&& value) { m_preloadDataConfigHasBeenSet = true; m_preloadDataConfig = std::move(value); }
-    inline CreateFHIRDatastoreRequest& WithPreloadDataConfig(const PreloadDataConfig& value) { SetPreloadDataConfig(value); return *this;}
-    inline CreateFHIRDatastoreRequest& WithPreloadDataConfig(PreloadDataConfig&& value) { SetPreloadDataConfig(std::move(value)); return *this;}
+    template<typename PreloadDataConfigT = PreloadDataConfig>
+    void SetPreloadDataConfig(PreloadDataConfigT&& value) { m_preloadDataConfigHasBeenSet = true; m_preloadDataConfig = std::forward<PreloadDataConfigT>(value); }
+    template<typename PreloadDataConfigT = PreloadDataConfig>
+    CreateFHIRDatastoreRequest& WithPreloadDataConfig(PreloadDataConfigT&& value) { SetPreloadDataConfig(std::forward<PreloadDataConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Optional user provided token used for ensuring idempotency.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateFHIRDatastoreRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateFHIRDatastoreRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateFHIRDatastoreRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateFHIRDatastoreRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Resource tags that are applied to a data store when it is created. </p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateFHIRDatastoreRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateFHIRDatastoreRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateFHIRDatastoreRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateFHIRDatastoreRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateFHIRDatastoreRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateFHIRDatastoreRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -127,19 +121,19 @@ namespace Model
      * <p>The configuration of the identity provider that you want to use for your data
      * store.</p>
      */
-    inline const IdentityProviderConfiguration& GetIdentityProviderConfiguration() const{ return m_identityProviderConfiguration; }
+    inline const IdentityProviderConfiguration& GetIdentityProviderConfiguration() const { return m_identityProviderConfiguration; }
     inline bool IdentityProviderConfigurationHasBeenSet() const { return m_identityProviderConfigurationHasBeenSet; }
-    inline void SetIdentityProviderConfiguration(const IdentityProviderConfiguration& value) { m_identityProviderConfigurationHasBeenSet = true; m_identityProviderConfiguration = value; }
-    inline void SetIdentityProviderConfiguration(IdentityProviderConfiguration&& value) { m_identityProviderConfigurationHasBeenSet = true; m_identityProviderConfiguration = std::move(value); }
-    inline CreateFHIRDatastoreRequest& WithIdentityProviderConfiguration(const IdentityProviderConfiguration& value) { SetIdentityProviderConfiguration(value); return *this;}
-    inline CreateFHIRDatastoreRequest& WithIdentityProviderConfiguration(IdentityProviderConfiguration&& value) { SetIdentityProviderConfiguration(std::move(value)); return *this;}
+    template<typename IdentityProviderConfigurationT = IdentityProviderConfiguration>
+    void SetIdentityProviderConfiguration(IdentityProviderConfigurationT&& value) { m_identityProviderConfigurationHasBeenSet = true; m_identityProviderConfiguration = std::forward<IdentityProviderConfigurationT>(value); }
+    template<typename IdentityProviderConfigurationT = IdentityProviderConfiguration>
+    CreateFHIRDatastoreRequest& WithIdentityProviderConfiguration(IdentityProviderConfigurationT&& value) { SetIdentityProviderConfiguration(std::forward<IdentityProviderConfigurationT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_datastoreName;
     bool m_datastoreNameHasBeenSet = false;
 
-    FHIRVersion m_datastoreTypeVersion;
+    FHIRVersion m_datastoreTypeVersion{FHIRVersion::NOT_SET};
     bool m_datastoreTypeVersionHasBeenSet = false;
 
     SseConfiguration m_sseConfiguration;

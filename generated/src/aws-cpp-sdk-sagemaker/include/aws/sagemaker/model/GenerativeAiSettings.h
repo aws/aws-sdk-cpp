@@ -35,7 +35,7 @@ namespace Model
   class GenerativeAiSettings
   {
   public:
-    AWS_SAGEMAKER_API GenerativeAiSettings();
+    AWS_SAGEMAKER_API GenerativeAiSettings() = default;
     AWS_SAGEMAKER_API GenerativeAiSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API GenerativeAiSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * read and write permissions, as well as a trust relationship that establishes
      * <code>bedrock.amazonaws.com</code> as a service principal.</p>
      */
-    inline const Aws::String& GetAmazonBedrockRoleArn() const{ return m_amazonBedrockRoleArn; }
+    inline const Aws::String& GetAmazonBedrockRoleArn() const { return m_amazonBedrockRoleArn; }
     inline bool AmazonBedrockRoleArnHasBeenSet() const { return m_amazonBedrockRoleArnHasBeenSet; }
-    inline void SetAmazonBedrockRoleArn(const Aws::String& value) { m_amazonBedrockRoleArnHasBeenSet = true; m_amazonBedrockRoleArn = value; }
-    inline void SetAmazonBedrockRoleArn(Aws::String&& value) { m_amazonBedrockRoleArnHasBeenSet = true; m_amazonBedrockRoleArn = std::move(value); }
-    inline void SetAmazonBedrockRoleArn(const char* value) { m_amazonBedrockRoleArnHasBeenSet = true; m_amazonBedrockRoleArn.assign(value); }
-    inline GenerativeAiSettings& WithAmazonBedrockRoleArn(const Aws::String& value) { SetAmazonBedrockRoleArn(value); return *this;}
-    inline GenerativeAiSettings& WithAmazonBedrockRoleArn(Aws::String&& value) { SetAmazonBedrockRoleArn(std::move(value)); return *this;}
-    inline GenerativeAiSettings& WithAmazonBedrockRoleArn(const char* value) { SetAmazonBedrockRoleArn(value); return *this;}
+    template<typename AmazonBedrockRoleArnT = Aws::String>
+    void SetAmazonBedrockRoleArn(AmazonBedrockRoleArnT&& value) { m_amazonBedrockRoleArnHasBeenSet = true; m_amazonBedrockRoleArn = std::forward<AmazonBedrockRoleArnT>(value); }
+    template<typename AmazonBedrockRoleArnT = Aws::String>
+    GenerativeAiSettings& WithAmazonBedrockRoleArn(AmazonBedrockRoleArnT&& value) { SetAmazonBedrockRoleArn(std::forward<AmazonBedrockRoleArnT>(value)); return *this;}
     ///@}
   private:
 

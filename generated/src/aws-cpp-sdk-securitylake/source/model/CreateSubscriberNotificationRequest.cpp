@@ -12,12 +12,6 @@ using namespace Aws::SecurityLake::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSubscriberNotificationRequest::CreateSubscriberNotificationRequest() : 
-    m_configurationHasBeenSet(false),
-    m_subscriberIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateSubscriberNotificationRequest::SerializePayload() const
 {
   JsonValue payload;

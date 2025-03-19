@@ -18,14 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-IotTopicPublishAction::IotTopicPublishAction() : 
-    m_mqttTopicHasBeenSet(false),
-    m_payloadHasBeenSet(false)
-{
-}
-
 IotTopicPublishAction::IotTopicPublishAction(JsonView jsonValue)
-  : IotTopicPublishAction()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IotTopicPublishAction& IotTopicPublishAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("mqttTopic"))
   {
     m_mqttTopic = jsonValue.GetString("mqttTopic");
-
     m_mqttTopicHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("payload"))
   {
     m_payload = jsonValue.GetObject("payload");
-
     m_payloadHasBeenSet = true;
   }
-
   return *this;
 }
 

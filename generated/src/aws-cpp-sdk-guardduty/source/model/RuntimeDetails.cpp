@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-RuntimeDetails::RuntimeDetails() : 
-    m_processHasBeenSet(false),
-    m_contextHasBeenSet(false)
-{
-}
-
 RuntimeDetails::RuntimeDetails(JsonView jsonValue)
-  : RuntimeDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RuntimeDetails& RuntimeDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("process"))
   {
     m_process = jsonValue.GetObject("process");
-
     m_processHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("context"))
   {
     m_context = jsonValue.GetObject("context");
-
     m_contextHasBeenSet = true;
   }
-
   return *this;
 }
 

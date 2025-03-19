@@ -18,26 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-IcebergDestinationDescription::IcebergDestinationDescription() : 
-    m_destinationTableConfigurationListHasBeenSet(false),
-    m_schemaEvolutionConfigurationHasBeenSet(false),
-    m_tableCreationConfigurationHasBeenSet(false),
-    m_bufferingHintsHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false),
-    m_processingConfigurationHasBeenSet(false),
-    m_s3BackupMode(IcebergS3BackupMode::NOT_SET),
-    m_s3BackupModeHasBeenSet(false),
-    m_retryOptionsHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_appendOnly(false),
-    m_appendOnlyHasBeenSet(false),
-    m_catalogConfigurationHasBeenSet(false),
-    m_s3DestinationDescriptionHasBeenSet(false)
-{
-}
-
 IcebergDestinationDescription::IcebergDestinationDescription(JsonView jsonValue)
-  : IcebergDestinationDescription()
 {
   *this = jsonValue;
 }
@@ -53,84 +34,61 @@ IcebergDestinationDescription& IcebergDestinationDescription::operator =(JsonVie
     }
     m_destinationTableConfigurationListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaEvolutionConfiguration"))
   {
     m_schemaEvolutionConfiguration = jsonValue.GetObject("SchemaEvolutionConfiguration");
-
     m_schemaEvolutionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableCreationConfiguration"))
   {
     m_tableCreationConfiguration = jsonValue.GetObject("TableCreationConfiguration");
-
     m_tableCreationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BufferingHints"))
   {
     m_bufferingHints = jsonValue.GetObject("BufferingHints");
-
     m_bufferingHintsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchLoggingOptions"))
   {
     m_cloudWatchLoggingOptions = jsonValue.GetObject("CloudWatchLoggingOptions");
-
     m_cloudWatchLoggingOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProcessingConfiguration"))
   {
     m_processingConfiguration = jsonValue.GetObject("ProcessingConfiguration");
-
     m_processingConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3BackupMode"))
   {
     m_s3BackupMode = IcebergS3BackupModeMapper::GetIcebergS3BackupModeForName(jsonValue.GetString("S3BackupMode"));
-
     m_s3BackupModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetryOptions"))
   {
     m_retryOptions = jsonValue.GetObject("RetryOptions");
-
     m_retryOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleARN"))
   {
     m_roleARN = jsonValue.GetString("RoleARN");
-
     m_roleARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppendOnly"))
   {
     m_appendOnly = jsonValue.GetBool("AppendOnly");
-
     m_appendOnlyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CatalogConfiguration"))
   {
     m_catalogConfiguration = jsonValue.GetObject("CatalogConfiguration");
-
     m_catalogConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3DestinationDescription"))
   {
     m_s3DestinationDescription = jsonValue.GetObject("S3DestinationDescription");
-
     m_s3DestinationDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

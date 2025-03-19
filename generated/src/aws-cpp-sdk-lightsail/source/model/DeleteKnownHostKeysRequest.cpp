@@ -12,11 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteKnownHostKeysRequest::DeleteKnownHostKeysRequest() : 
-    m_instanceNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteKnownHostKeysRequest::SerializePayload() const
 {
   JsonValue payload;

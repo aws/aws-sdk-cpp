@@ -30,7 +30,7 @@ namespace Model
   class GetDataflowGraphResult
   {
   public:
-    AWS_GLUE_API GetDataflowGraphResult();
+    AWS_GLUE_API GetDataflowGraphResult() = default;
     AWS_GLUE_API GetDataflowGraphResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API GetDataflowGraphResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,46 @@ namespace Model
     /**
      * <p>A list of the nodes in the resulting DAG.</p>
      */
-    inline const Aws::Vector<CodeGenNode>& GetDagNodes() const{ return m_dagNodes; }
-    inline void SetDagNodes(const Aws::Vector<CodeGenNode>& value) { m_dagNodes = value; }
-    inline void SetDagNodes(Aws::Vector<CodeGenNode>&& value) { m_dagNodes = std::move(value); }
-    inline GetDataflowGraphResult& WithDagNodes(const Aws::Vector<CodeGenNode>& value) { SetDagNodes(value); return *this;}
-    inline GetDataflowGraphResult& WithDagNodes(Aws::Vector<CodeGenNode>&& value) { SetDagNodes(std::move(value)); return *this;}
-    inline GetDataflowGraphResult& AddDagNodes(const CodeGenNode& value) { m_dagNodes.push_back(value); return *this; }
-    inline GetDataflowGraphResult& AddDagNodes(CodeGenNode&& value) { m_dagNodes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CodeGenNode>& GetDagNodes() const { return m_dagNodes; }
+    template<typename DagNodesT = Aws::Vector<CodeGenNode>>
+    void SetDagNodes(DagNodesT&& value) { m_dagNodesHasBeenSet = true; m_dagNodes = std::forward<DagNodesT>(value); }
+    template<typename DagNodesT = Aws::Vector<CodeGenNode>>
+    GetDataflowGraphResult& WithDagNodes(DagNodesT&& value) { SetDagNodes(std::forward<DagNodesT>(value)); return *this;}
+    template<typename DagNodesT = CodeGenNode>
+    GetDataflowGraphResult& AddDagNodes(DagNodesT&& value) { m_dagNodesHasBeenSet = true; m_dagNodes.emplace_back(std::forward<DagNodesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of the edges in the resulting DAG.</p>
      */
-    inline const Aws::Vector<CodeGenEdge>& GetDagEdges() const{ return m_dagEdges; }
-    inline void SetDagEdges(const Aws::Vector<CodeGenEdge>& value) { m_dagEdges = value; }
-    inline void SetDagEdges(Aws::Vector<CodeGenEdge>&& value) { m_dagEdges = std::move(value); }
-    inline GetDataflowGraphResult& WithDagEdges(const Aws::Vector<CodeGenEdge>& value) { SetDagEdges(value); return *this;}
-    inline GetDataflowGraphResult& WithDagEdges(Aws::Vector<CodeGenEdge>&& value) { SetDagEdges(std::move(value)); return *this;}
-    inline GetDataflowGraphResult& AddDagEdges(const CodeGenEdge& value) { m_dagEdges.push_back(value); return *this; }
-    inline GetDataflowGraphResult& AddDagEdges(CodeGenEdge&& value) { m_dagEdges.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CodeGenEdge>& GetDagEdges() const { return m_dagEdges; }
+    template<typename DagEdgesT = Aws::Vector<CodeGenEdge>>
+    void SetDagEdges(DagEdgesT&& value) { m_dagEdgesHasBeenSet = true; m_dagEdges = std::forward<DagEdgesT>(value); }
+    template<typename DagEdgesT = Aws::Vector<CodeGenEdge>>
+    GetDataflowGraphResult& WithDagEdges(DagEdgesT&& value) { SetDagEdges(std::forward<DagEdgesT>(value)); return *this;}
+    template<typename DagEdgesT = CodeGenEdge>
+    GetDataflowGraphResult& AddDagEdges(DagEdgesT&& value) { m_dagEdgesHasBeenSet = true; m_dagEdges.emplace_back(std::forward<DagEdgesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDataflowGraphResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDataflowGraphResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDataflowGraphResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDataflowGraphResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CodeGenNode> m_dagNodes;
+    bool m_dagNodesHasBeenSet = false;
 
     Aws::Vector<CodeGenEdge> m_dagEdges;
+    bool m_dagEdgesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

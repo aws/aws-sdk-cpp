@@ -27,7 +27,7 @@ namespace Model
   class AssociateMemberResult
   {
   public:
-    AWS_INSPECTOR2_API AssociateMemberResult();
+    AWS_INSPECTOR2_API AssociateMemberResult() = default;
     AWS_INSPECTOR2_API AssociateMemberResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INSPECTOR2_API AssociateMemberResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The Amazon Web Services account ID of the successfully associated member
      * account.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
-    inline void SetAccountId(const Aws::String& value) { m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountId.assign(value); }
-    inline AssociateMemberResult& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline AssociateMemberResult& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline AssociateMemberResult& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    AssociateMemberResult& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AssociateMemberResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AssociateMemberResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AssociateMemberResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AssociateMemberResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_accountId;
+    bool m_accountIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

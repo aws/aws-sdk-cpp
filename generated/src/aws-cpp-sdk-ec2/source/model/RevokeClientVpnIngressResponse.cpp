@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RevokeClientVpnIngressResponse::RevokeClientVpnIngressResponse()
-{
-}
-
 RevokeClientVpnIngressResponse::RevokeClientVpnIngressResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ RevokeClientVpnIngressResponse& RevokeClientVpnIngressResponse::operator =(const
     if(!statusNode.IsNull())
     {
       m_status = statusNode;
+      m_statusHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ RevokeClientVpnIngressResponse& RevokeClientVpnIngressResponse::operator =(const
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::RevokeClientVpnIngressResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

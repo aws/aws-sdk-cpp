@@ -12,13 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetachVolumeRequest::DetachVolumeRequest() : 
-    m_volumeARNHasBeenSet(false),
-    m_forceDetach(false),
-    m_forceDetachHasBeenSet(false)
-{
-}
-
 Aws::String DetachVolumeRequest::SerializePayload() const
 {
   JsonValue payload;

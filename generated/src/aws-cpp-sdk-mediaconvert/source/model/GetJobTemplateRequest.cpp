@@ -12,11 +12,6 @@ using namespace Aws::MediaConvert::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetJobTemplateRequest::GetJobTemplateRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetJobTemplateRequest::SerializePayload() const
 {
   return {};

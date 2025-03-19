@@ -18,15 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-TaxExemptionType::TaxExemptionType() : 
-    m_applicableJurisdictionsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
-{
-}
-
 TaxExemptionType::TaxExemptionType(JsonView jsonValue)
-  : TaxExemptionType()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ TaxExemptionType& TaxExemptionType::operator =(JsonView jsonValue)
     }
     m_applicableJurisdictionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   return *this;
 }
 

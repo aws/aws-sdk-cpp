@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-WaypointOptimizationAccessHours::WaypointOptimizationAccessHours() : 
-    m_fromHasBeenSet(false),
-    m_toHasBeenSet(false)
-{
-}
-
 WaypointOptimizationAccessHours::WaypointOptimizationAccessHours(JsonView jsonValue)
-  : WaypointOptimizationAccessHours()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ WaypointOptimizationAccessHours& WaypointOptimizationAccessHours::operator =(Jso
   if(jsonValue.ValueExists("From"))
   {
     m_from = jsonValue.GetObject("From");
-
     m_fromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("To"))
   {
     m_to = jsonValue.GetObject("To");
-
     m_toHasBeenSet = true;
   }
-
   return *this;
 }
 

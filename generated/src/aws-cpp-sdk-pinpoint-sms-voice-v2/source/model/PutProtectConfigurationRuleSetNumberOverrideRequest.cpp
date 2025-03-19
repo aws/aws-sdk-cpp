@@ -12,17 +12,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutProtectConfigurationRuleSetNumberOverrideRequest::PutProtectConfigurationRuleSetNumberOverrideRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_protectConfigurationIdHasBeenSet(false),
-    m_destinationPhoneNumberHasBeenSet(false),
-    m_action(ProtectConfigurationRuleOverrideAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_expirationTimestampHasBeenSet(false)
-{
-}
-
 Aws::String PutProtectConfigurationRuleSetNumberOverrideRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,12 +12,6 @@ using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RecordActivityTaskHeartbeatRequest::RecordActivityTaskHeartbeatRequest() : 
-    m_taskTokenHasBeenSet(false),
-    m_detailsHasBeenSet(false)
-{
-}
-
 Aws::String RecordActivityTaskHeartbeatRequest::SerializePayload() const
 {
   JsonValue payload;

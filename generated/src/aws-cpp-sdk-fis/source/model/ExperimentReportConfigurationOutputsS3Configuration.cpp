@@ -18,14 +18,7 @@ namespace FIS
 namespace Model
 {
 
-ExperimentReportConfigurationOutputsS3Configuration::ExperimentReportConfigurationOutputsS3Configuration() : 
-    m_bucketNameHasBeenSet(false),
-    m_prefixHasBeenSet(false)
-{
-}
-
 ExperimentReportConfigurationOutputsS3Configuration::ExperimentReportConfigurationOutputsS3Configuration(JsonView jsonValue)
-  : ExperimentReportConfigurationOutputsS3Configuration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ExperimentReportConfigurationOutputsS3Configuration& ExperimentReportConfigurati
   if(jsonValue.ValueExists("bucketName"))
   {
     m_bucketName = jsonValue.GetString("bucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prefix"))
   {
     m_prefix = jsonValue.GetString("prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   return *this;
 }
 

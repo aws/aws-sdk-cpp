@@ -18,18 +18,7 @@ namespace CodeGuruReviewer
 namespace Model
 {
 
-MetricsSummary::MetricsSummary() : 
-    m_meteredLinesOfCodeCount(0),
-    m_meteredLinesOfCodeCountHasBeenSet(false),
-    m_suppressedLinesOfCodeCount(0),
-    m_suppressedLinesOfCodeCountHasBeenSet(false),
-    m_findingsCount(0),
-    m_findingsCountHasBeenSet(false)
-{
-}
-
 MetricsSummary::MetricsSummary(JsonView jsonValue)
-  : MetricsSummary()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ MetricsSummary& MetricsSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MeteredLinesOfCodeCount"))
   {
     m_meteredLinesOfCodeCount = jsonValue.GetInt64("MeteredLinesOfCodeCount");
-
     m_meteredLinesOfCodeCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SuppressedLinesOfCodeCount"))
   {
     m_suppressedLinesOfCodeCount = jsonValue.GetInt64("SuppressedLinesOfCodeCount");
-
     m_suppressedLinesOfCodeCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FindingsCount"))
   {
     m_findingsCount = jsonValue.GetInt64("FindingsCount");
-
     m_findingsCountHasBeenSet = true;
   }
-
   return *this;
 }
 

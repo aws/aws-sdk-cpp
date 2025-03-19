@@ -12,13 +12,6 @@ using namespace Aws::CognitoIdentity::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCredentialsForIdentityRequest::GetCredentialsForIdentityRequest() : 
-    m_identityIdHasBeenSet(false),
-    m_loginsHasBeenSet(false),
-    m_customRoleArnHasBeenSet(false)
-{
-}
-
 Aws::String GetCredentialsForIdentityRequest::SerializePayload() const
 {
   JsonValue payload;

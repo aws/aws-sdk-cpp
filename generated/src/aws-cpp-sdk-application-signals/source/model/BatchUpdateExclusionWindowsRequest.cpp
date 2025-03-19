@@ -12,13 +12,6 @@ using namespace Aws::ApplicationSignals::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchUpdateExclusionWindowsRequest::BatchUpdateExclusionWindowsRequest() : 
-    m_sloIdsHasBeenSet(false),
-    m_addExclusionWindowsHasBeenSet(false),
-    m_removeExclusionWindowsHasBeenSet(false)
-{
-}
-
 Aws::String BatchUpdateExclusionWindowsRequest::SerializePayload() const
 {
   JsonValue payload;

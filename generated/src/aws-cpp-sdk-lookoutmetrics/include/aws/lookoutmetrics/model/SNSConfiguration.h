@@ -34,7 +34,7 @@ namespace Model
   class SNSConfiguration
   {
   public:
-    AWS_LOOKOUTMETRICS_API SNSConfiguration();
+    AWS_LOOKOUTMETRICS_API SNSConfiguration() = default;
     AWS_LOOKOUTMETRICS_API SNSConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API SNSConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The ARN of the IAM role that has access to the target SNS topic.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline SNSConfiguration& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline SNSConfiguration& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline SNSConfiguration& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    SNSConfiguration& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the target SNS topic.</p>
      */
-    inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
+    inline const Aws::String& GetSnsTopicArn() const { return m_snsTopicArn; }
     inline bool SnsTopicArnHasBeenSet() const { return m_snsTopicArnHasBeenSet; }
-    inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = value; }
-    inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::move(value); }
-    inline void SetSnsTopicArn(const char* value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn.assign(value); }
-    inline SNSConfiguration& WithSnsTopicArn(const Aws::String& value) { SetSnsTopicArn(value); return *this;}
-    inline SNSConfiguration& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(std::move(value)); return *this;}
-    inline SNSConfiguration& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
+    template<typename SnsTopicArnT = Aws::String>
+    void SetSnsTopicArn(SnsTopicArnT&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::forward<SnsTopicArnT>(value); }
+    template<typename SnsTopicArnT = Aws::String>
+    SNSConfiguration& WithSnsTopicArn(SnsTopicArnT&& value) { SetSnsTopicArn(std::forward<SnsTopicArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,12 +74,10 @@ namespace Model
      * Send human-readable alerts with a link to the anomaly detail page. We recommend
      * this for SMS.</p> </li> </ul>
      */
-    inline const SnsFormat& GetSnsFormat() const{ return m_snsFormat; }
+    inline SnsFormat GetSnsFormat() const { return m_snsFormat; }
     inline bool SnsFormatHasBeenSet() const { return m_snsFormatHasBeenSet; }
-    inline void SetSnsFormat(const SnsFormat& value) { m_snsFormatHasBeenSet = true; m_snsFormat = value; }
-    inline void SetSnsFormat(SnsFormat&& value) { m_snsFormatHasBeenSet = true; m_snsFormat = std::move(value); }
-    inline SNSConfiguration& WithSnsFormat(const SnsFormat& value) { SetSnsFormat(value); return *this;}
-    inline SNSConfiguration& WithSnsFormat(SnsFormat&& value) { SetSnsFormat(std::move(value)); return *this;}
+    inline void SetSnsFormat(SnsFormat value) { m_snsFormatHasBeenSet = true; m_snsFormat = value; }
+    inline SNSConfiguration& WithSnsFormat(SnsFormat value) { SetSnsFormat(value); return *this;}
     ///@}
   private:
 
@@ -93,7 +87,7 @@ namespace Model
     Aws::String m_snsTopicArn;
     bool m_snsTopicArnHasBeenSet = false;
 
-    SnsFormat m_snsFormat;
+    SnsFormat m_snsFormat{SnsFormat::NOT_SET};
     bool m_snsFormatHasBeenSet = false;
   };
 

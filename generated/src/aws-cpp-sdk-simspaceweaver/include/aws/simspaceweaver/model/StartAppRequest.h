@@ -23,7 +23,7 @@ namespace Model
   class StartAppRequest : public SimSpaceWeaverRequest
   {
   public:
-    AWS_SIMSPACEWEAVER_API StartAppRequest();
+    AWS_SIMSPACEWEAVER_API StartAppRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,80 +41,70 @@ namespace Model
      * known as an <i>idempotency token</i>. A <code>ClientToken</code> expires after
      * 24 hours.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline StartAppRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline StartAppRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline StartAppRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    StartAppRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the app.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline StartAppRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline StartAppRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline StartAppRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    StartAppRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the domain of the app.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline StartAppRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline StartAppRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline StartAppRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    StartAppRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const LaunchOverrides& GetLaunchOverrides() const{ return m_launchOverrides; }
+    inline const LaunchOverrides& GetLaunchOverrides() const { return m_launchOverrides; }
     inline bool LaunchOverridesHasBeenSet() const { return m_launchOverridesHasBeenSet; }
-    inline void SetLaunchOverrides(const LaunchOverrides& value) { m_launchOverridesHasBeenSet = true; m_launchOverrides = value; }
-    inline void SetLaunchOverrides(LaunchOverrides&& value) { m_launchOverridesHasBeenSet = true; m_launchOverrides = std::move(value); }
-    inline StartAppRequest& WithLaunchOverrides(const LaunchOverrides& value) { SetLaunchOverrides(value); return *this;}
-    inline StartAppRequest& WithLaunchOverrides(LaunchOverrides&& value) { SetLaunchOverrides(std::move(value)); return *this;}
+    template<typename LaunchOverridesT = LaunchOverrides>
+    void SetLaunchOverrides(LaunchOverridesT&& value) { m_launchOverridesHasBeenSet = true; m_launchOverrides = std::forward<LaunchOverridesT>(value); }
+    template<typename LaunchOverridesT = LaunchOverrides>
+    StartAppRequest& WithLaunchOverrides(LaunchOverridesT&& value) { SetLaunchOverrides(std::forward<LaunchOverridesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the app.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline StartAppRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline StartAppRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline StartAppRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    StartAppRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the simulation of the app.</p>
      */
-    inline const Aws::String& GetSimulation() const{ return m_simulation; }
+    inline const Aws::String& GetSimulation() const { return m_simulation; }
     inline bool SimulationHasBeenSet() const { return m_simulationHasBeenSet; }
-    inline void SetSimulation(const Aws::String& value) { m_simulationHasBeenSet = true; m_simulation = value; }
-    inline void SetSimulation(Aws::String&& value) { m_simulationHasBeenSet = true; m_simulation = std::move(value); }
-    inline void SetSimulation(const char* value) { m_simulationHasBeenSet = true; m_simulation.assign(value); }
-    inline StartAppRequest& WithSimulation(const Aws::String& value) { SetSimulation(value); return *this;}
-    inline StartAppRequest& WithSimulation(Aws::String&& value) { SetSimulation(std::move(value)); return *this;}
-    inline StartAppRequest& WithSimulation(const char* value) { SetSimulation(value); return *this;}
+    template<typename SimulationT = Aws::String>
+    void SetSimulation(SimulationT&& value) { m_simulationHasBeenSet = true; m_simulation = std::forward<SimulationT>(value); }
+    template<typename SimulationT = Aws::String>
+    StartAppRequest& WithSimulation(SimulationT&& value) { SetSimulation(std::forward<SimulationT>(value)); return *this;}
     ///@}
   private:
 

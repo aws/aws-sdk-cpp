@@ -36,7 +36,7 @@ namespace Model
   class ApprovalThresholdPolicy
   {
   public:
-    AWS_MANAGEDBLOCKCHAIN_API ApprovalThresholdPolicy();
+    AWS_MANAGEDBLOCKCHAIN_API ApprovalThresholdPolicy() = default;
     AWS_MANAGEDBLOCKCHAIN_API ApprovalThresholdPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API ApprovalThresholdPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,7 +53,7 @@ namespace Model
      * indicates that 6 <code>YES</code> votes are required for the proposal to be
      * approved.</p>
      */
-    inline int GetThresholdPercentage() const{ return m_thresholdPercentage; }
+    inline int GetThresholdPercentage() const { return m_thresholdPercentage; }
     inline bool ThresholdPercentageHasBeenSet() const { return m_thresholdPercentageHasBeenSet; }
     inline void SetThresholdPercentage(int value) { m_thresholdPercentageHasBeenSet = true; m_thresholdPercentage = value; }
     inline ApprovalThresholdPolicy& WithThresholdPercentage(int value) { SetThresholdPercentage(value); return *this;}
@@ -67,7 +67,7 @@ namespace Model
      * before the duration expires, the proposal is <code>EXPIRED</code> and
      * <code>ProposalActions</code> aren't carried out.</p>
      */
-    inline int GetProposalDurationInHours() const{ return m_proposalDurationInHours; }
+    inline int GetProposalDurationInHours() const { return m_proposalDurationInHours; }
     inline bool ProposalDurationInHoursHasBeenSet() const { return m_proposalDurationInHoursHasBeenSet; }
     inline void SetProposalDurationInHours(int value) { m_proposalDurationInHoursHasBeenSet = true; m_proposalDurationInHours = value; }
     inline ApprovalThresholdPolicy& WithProposalDurationInHours(int value) { SetProposalDurationInHours(value); return *this;}
@@ -79,22 +79,20 @@ namespace Model
      * <code>ThresholdPercentage</code> or must be greater than or equal to the
      * <code>ThresholdPercentage</code> to be approved.</p>
      */
-    inline const ThresholdComparator& GetThresholdComparator() const{ return m_thresholdComparator; }
+    inline ThresholdComparator GetThresholdComparator() const { return m_thresholdComparator; }
     inline bool ThresholdComparatorHasBeenSet() const { return m_thresholdComparatorHasBeenSet; }
-    inline void SetThresholdComparator(const ThresholdComparator& value) { m_thresholdComparatorHasBeenSet = true; m_thresholdComparator = value; }
-    inline void SetThresholdComparator(ThresholdComparator&& value) { m_thresholdComparatorHasBeenSet = true; m_thresholdComparator = std::move(value); }
-    inline ApprovalThresholdPolicy& WithThresholdComparator(const ThresholdComparator& value) { SetThresholdComparator(value); return *this;}
-    inline ApprovalThresholdPolicy& WithThresholdComparator(ThresholdComparator&& value) { SetThresholdComparator(std::move(value)); return *this;}
+    inline void SetThresholdComparator(ThresholdComparator value) { m_thresholdComparatorHasBeenSet = true; m_thresholdComparator = value; }
+    inline ApprovalThresholdPolicy& WithThresholdComparator(ThresholdComparator value) { SetThresholdComparator(value); return *this;}
     ///@}
   private:
 
-    int m_thresholdPercentage;
+    int m_thresholdPercentage{0};
     bool m_thresholdPercentageHasBeenSet = false;
 
-    int m_proposalDurationInHours;
+    int m_proposalDurationInHours{0};
     bool m_proposalDurationInHoursHasBeenSet = false;
 
-    ThresholdComparator m_thresholdComparator;
+    ThresholdComparator m_thresholdComparator{ThresholdComparator::NOT_SET};
     bool m_thresholdComparatorHasBeenSet = false;
   };
 

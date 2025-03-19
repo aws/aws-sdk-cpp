@@ -18,19 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Compliance::Compliance() : 
-    m_status(ComplianceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_relatedRequirementsHasBeenSet(false),
-    m_statusReasonsHasBeenSet(false),
-    m_securityControlIdHasBeenSet(false),
-    m_associatedStandardsHasBeenSet(false),
-    m_securityControlParametersHasBeenSet(false)
-{
-}
-
 Compliance::Compliance(JsonView jsonValue)
-  : Compliance()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ Compliance& Compliance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ComplianceStatusMapper::GetComplianceStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelatedRequirements"))
   {
     Aws::Utils::Array<JsonView> relatedRequirementsJsonList = jsonValue.GetArray("RelatedRequirements");
@@ -53,7 +39,6 @@ Compliance& Compliance::operator =(JsonView jsonValue)
     }
     m_relatedRequirementsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusReasons"))
   {
     Aws::Utils::Array<JsonView> statusReasonsJsonList = jsonValue.GetArray("StatusReasons");
@@ -63,14 +48,11 @@ Compliance& Compliance::operator =(JsonView jsonValue)
     }
     m_statusReasonsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityControlId"))
   {
     m_securityControlId = jsonValue.GetString("SecurityControlId");
-
     m_securityControlIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociatedStandards"))
   {
     Aws::Utils::Array<JsonView> associatedStandardsJsonList = jsonValue.GetArray("AssociatedStandards");
@@ -80,7 +62,6 @@ Compliance& Compliance::operator =(JsonView jsonValue)
     }
     m_associatedStandardsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityControlParameters"))
   {
     Aws::Utils::Array<JsonView> securityControlParametersJsonList = jsonValue.GetArray("SecurityControlParameters");
@@ -90,7 +71,6 @@ Compliance& Compliance::operator =(JsonView jsonValue)
     }
     m_securityControlParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

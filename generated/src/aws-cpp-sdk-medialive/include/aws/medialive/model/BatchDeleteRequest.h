@@ -25,7 +25,7 @@ namespace Model
   class BatchDeleteRequest : public MediaLiveRequest
   {
   public:
-    AWS_MEDIALIVE_API BatchDeleteRequest();
+    AWS_MEDIALIVE_API BatchDeleteRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,60 +40,56 @@ namespace Model
     /**
      * List of channel IDs
      */
-    inline const Aws::Vector<Aws::String>& GetChannelIds() const{ return m_channelIds; }
+    inline const Aws::Vector<Aws::String>& GetChannelIds() const { return m_channelIds; }
     inline bool ChannelIdsHasBeenSet() const { return m_channelIdsHasBeenSet; }
-    inline void SetChannelIds(const Aws::Vector<Aws::String>& value) { m_channelIdsHasBeenSet = true; m_channelIds = value; }
-    inline void SetChannelIds(Aws::Vector<Aws::String>&& value) { m_channelIdsHasBeenSet = true; m_channelIds = std::move(value); }
-    inline BatchDeleteRequest& WithChannelIds(const Aws::Vector<Aws::String>& value) { SetChannelIds(value); return *this;}
-    inline BatchDeleteRequest& WithChannelIds(Aws::Vector<Aws::String>&& value) { SetChannelIds(std::move(value)); return *this;}
-    inline BatchDeleteRequest& AddChannelIds(const Aws::String& value) { m_channelIdsHasBeenSet = true; m_channelIds.push_back(value); return *this; }
-    inline BatchDeleteRequest& AddChannelIds(Aws::String&& value) { m_channelIdsHasBeenSet = true; m_channelIds.push_back(std::move(value)); return *this; }
-    inline BatchDeleteRequest& AddChannelIds(const char* value) { m_channelIdsHasBeenSet = true; m_channelIds.push_back(value); return *this; }
+    template<typename ChannelIdsT = Aws::Vector<Aws::String>>
+    void SetChannelIds(ChannelIdsT&& value) { m_channelIdsHasBeenSet = true; m_channelIds = std::forward<ChannelIdsT>(value); }
+    template<typename ChannelIdsT = Aws::Vector<Aws::String>>
+    BatchDeleteRequest& WithChannelIds(ChannelIdsT&& value) { SetChannelIds(std::forward<ChannelIdsT>(value)); return *this;}
+    template<typename ChannelIdsT = Aws::String>
+    BatchDeleteRequest& AddChannelIds(ChannelIdsT&& value) { m_channelIdsHasBeenSet = true; m_channelIds.emplace_back(std::forward<ChannelIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * List of input IDs
      */
-    inline const Aws::Vector<Aws::String>& GetInputIds() const{ return m_inputIds; }
+    inline const Aws::Vector<Aws::String>& GetInputIds() const { return m_inputIds; }
     inline bool InputIdsHasBeenSet() const { return m_inputIdsHasBeenSet; }
-    inline void SetInputIds(const Aws::Vector<Aws::String>& value) { m_inputIdsHasBeenSet = true; m_inputIds = value; }
-    inline void SetInputIds(Aws::Vector<Aws::String>&& value) { m_inputIdsHasBeenSet = true; m_inputIds = std::move(value); }
-    inline BatchDeleteRequest& WithInputIds(const Aws::Vector<Aws::String>& value) { SetInputIds(value); return *this;}
-    inline BatchDeleteRequest& WithInputIds(Aws::Vector<Aws::String>&& value) { SetInputIds(std::move(value)); return *this;}
-    inline BatchDeleteRequest& AddInputIds(const Aws::String& value) { m_inputIdsHasBeenSet = true; m_inputIds.push_back(value); return *this; }
-    inline BatchDeleteRequest& AddInputIds(Aws::String&& value) { m_inputIdsHasBeenSet = true; m_inputIds.push_back(std::move(value)); return *this; }
-    inline BatchDeleteRequest& AddInputIds(const char* value) { m_inputIdsHasBeenSet = true; m_inputIds.push_back(value); return *this; }
+    template<typename InputIdsT = Aws::Vector<Aws::String>>
+    void SetInputIds(InputIdsT&& value) { m_inputIdsHasBeenSet = true; m_inputIds = std::forward<InputIdsT>(value); }
+    template<typename InputIdsT = Aws::Vector<Aws::String>>
+    BatchDeleteRequest& WithInputIds(InputIdsT&& value) { SetInputIds(std::forward<InputIdsT>(value)); return *this;}
+    template<typename InputIdsT = Aws::String>
+    BatchDeleteRequest& AddInputIds(InputIdsT&& value) { m_inputIdsHasBeenSet = true; m_inputIds.emplace_back(std::forward<InputIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * List of input security group IDs
      */
-    inline const Aws::Vector<Aws::String>& GetInputSecurityGroupIds() const{ return m_inputSecurityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetInputSecurityGroupIds() const { return m_inputSecurityGroupIds; }
     inline bool InputSecurityGroupIdsHasBeenSet() const { return m_inputSecurityGroupIdsHasBeenSet; }
-    inline void SetInputSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_inputSecurityGroupIdsHasBeenSet = true; m_inputSecurityGroupIds = value; }
-    inline void SetInputSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_inputSecurityGroupIdsHasBeenSet = true; m_inputSecurityGroupIds = std::move(value); }
-    inline BatchDeleteRequest& WithInputSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetInputSecurityGroupIds(value); return *this;}
-    inline BatchDeleteRequest& WithInputSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetInputSecurityGroupIds(std::move(value)); return *this;}
-    inline BatchDeleteRequest& AddInputSecurityGroupIds(const Aws::String& value) { m_inputSecurityGroupIdsHasBeenSet = true; m_inputSecurityGroupIds.push_back(value); return *this; }
-    inline BatchDeleteRequest& AddInputSecurityGroupIds(Aws::String&& value) { m_inputSecurityGroupIdsHasBeenSet = true; m_inputSecurityGroupIds.push_back(std::move(value)); return *this; }
-    inline BatchDeleteRequest& AddInputSecurityGroupIds(const char* value) { m_inputSecurityGroupIdsHasBeenSet = true; m_inputSecurityGroupIds.push_back(value); return *this; }
+    template<typename InputSecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetInputSecurityGroupIds(InputSecurityGroupIdsT&& value) { m_inputSecurityGroupIdsHasBeenSet = true; m_inputSecurityGroupIds = std::forward<InputSecurityGroupIdsT>(value); }
+    template<typename InputSecurityGroupIdsT = Aws::Vector<Aws::String>>
+    BatchDeleteRequest& WithInputSecurityGroupIds(InputSecurityGroupIdsT&& value) { SetInputSecurityGroupIds(std::forward<InputSecurityGroupIdsT>(value)); return *this;}
+    template<typename InputSecurityGroupIdsT = Aws::String>
+    BatchDeleteRequest& AddInputSecurityGroupIds(InputSecurityGroupIdsT&& value) { m_inputSecurityGroupIdsHasBeenSet = true; m_inputSecurityGroupIds.emplace_back(std::forward<InputSecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * List of multiplex IDs
      */
-    inline const Aws::Vector<Aws::String>& GetMultiplexIds() const{ return m_multiplexIds; }
+    inline const Aws::Vector<Aws::String>& GetMultiplexIds() const { return m_multiplexIds; }
     inline bool MultiplexIdsHasBeenSet() const { return m_multiplexIdsHasBeenSet; }
-    inline void SetMultiplexIds(const Aws::Vector<Aws::String>& value) { m_multiplexIdsHasBeenSet = true; m_multiplexIds = value; }
-    inline void SetMultiplexIds(Aws::Vector<Aws::String>&& value) { m_multiplexIdsHasBeenSet = true; m_multiplexIds = std::move(value); }
-    inline BatchDeleteRequest& WithMultiplexIds(const Aws::Vector<Aws::String>& value) { SetMultiplexIds(value); return *this;}
-    inline BatchDeleteRequest& WithMultiplexIds(Aws::Vector<Aws::String>&& value) { SetMultiplexIds(std::move(value)); return *this;}
-    inline BatchDeleteRequest& AddMultiplexIds(const Aws::String& value) { m_multiplexIdsHasBeenSet = true; m_multiplexIds.push_back(value); return *this; }
-    inline BatchDeleteRequest& AddMultiplexIds(Aws::String&& value) { m_multiplexIdsHasBeenSet = true; m_multiplexIds.push_back(std::move(value)); return *this; }
-    inline BatchDeleteRequest& AddMultiplexIds(const char* value) { m_multiplexIdsHasBeenSet = true; m_multiplexIds.push_back(value); return *this; }
+    template<typename MultiplexIdsT = Aws::Vector<Aws::String>>
+    void SetMultiplexIds(MultiplexIdsT&& value) { m_multiplexIdsHasBeenSet = true; m_multiplexIds = std::forward<MultiplexIdsT>(value); }
+    template<typename MultiplexIdsT = Aws::Vector<Aws::String>>
+    BatchDeleteRequest& WithMultiplexIds(MultiplexIdsT&& value) { SetMultiplexIds(std::forward<MultiplexIdsT>(value)); return *this;}
+    template<typename MultiplexIdsT = Aws::String>
+    BatchDeleteRequest& AddMultiplexIds(MultiplexIdsT&& value) { m_multiplexIdsHasBeenSet = true; m_multiplexIds.emplace_back(std::forward<MultiplexIdsT>(value)); return *this; }
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class KxDeploymentConfiguration
   {
   public:
-    AWS_FINSPACE_API KxDeploymentConfiguration();
+    AWS_FINSPACE_API KxDeploymentConfiguration() = default;
     AWS_FINSPACE_API KxDeploymentConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API KxDeploymentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,16 +51,14 @@ namespace Model
      * <code>initializationScript</code> and <code>commandLineArguments</code>
      * parameters.</p> </li> </ul>
      */
-    inline const KxDeploymentStrategy& GetDeploymentStrategy() const{ return m_deploymentStrategy; }
+    inline KxDeploymentStrategy GetDeploymentStrategy() const { return m_deploymentStrategy; }
     inline bool DeploymentStrategyHasBeenSet() const { return m_deploymentStrategyHasBeenSet; }
-    inline void SetDeploymentStrategy(const KxDeploymentStrategy& value) { m_deploymentStrategyHasBeenSet = true; m_deploymentStrategy = value; }
-    inline void SetDeploymentStrategy(KxDeploymentStrategy&& value) { m_deploymentStrategyHasBeenSet = true; m_deploymentStrategy = std::move(value); }
-    inline KxDeploymentConfiguration& WithDeploymentStrategy(const KxDeploymentStrategy& value) { SetDeploymentStrategy(value); return *this;}
-    inline KxDeploymentConfiguration& WithDeploymentStrategy(KxDeploymentStrategy&& value) { SetDeploymentStrategy(std::move(value)); return *this;}
+    inline void SetDeploymentStrategy(KxDeploymentStrategy value) { m_deploymentStrategyHasBeenSet = true; m_deploymentStrategy = value; }
+    inline KxDeploymentConfiguration& WithDeploymentStrategy(KxDeploymentStrategy value) { SetDeploymentStrategy(value); return *this;}
     ///@}
   private:
 
-    KxDeploymentStrategy m_deploymentStrategy;
+    KxDeploymentStrategy m_deploymentStrategy{KxDeploymentStrategy::NOT_SET};
     bool m_deploymentStrategyHasBeenSet = false;
   };
 

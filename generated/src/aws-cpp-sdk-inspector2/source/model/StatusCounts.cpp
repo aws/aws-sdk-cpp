@@ -18,18 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-StatusCounts::StatusCounts() : 
-    m_failed(0),
-    m_failedHasBeenSet(false),
-    m_passed(0),
-    m_passedHasBeenSet(false),
-    m_skipped(0),
-    m_skippedHasBeenSet(false)
-{
-}
-
 StatusCounts::StatusCounts(JsonView jsonValue)
-  : StatusCounts()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ StatusCounts& StatusCounts::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("failed"))
   {
     m_failed = jsonValue.GetInteger("failed");
-
     m_failedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("passed"))
   {
     m_passed = jsonValue.GetInteger("passed");
-
     m_passedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("skipped"))
   {
     m_skipped = jsonValue.GetInteger("skipped");
-
     m_skippedHasBeenSet = true;
   }
-
   return *this;
 }
 

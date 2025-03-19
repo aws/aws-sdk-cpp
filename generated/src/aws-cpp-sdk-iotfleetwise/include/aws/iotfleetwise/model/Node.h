@@ -37,7 +37,7 @@ namespace Model
   class Node
   {
   public:
-    AWS_IOTFLEETWISE_API Node();
+    AWS_IOTFLEETWISE_API Node() = default;
     AWS_IOTFLEETWISE_API Node(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Node& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,22 +48,22 @@ namespace Model
      * <p>Information about a node specified as a branch.</p>  <p>A group of
      * signals that are defined in a hierarchical structure.</p> 
      */
-    inline const Branch& GetBranch() const{ return m_branch; }
+    inline const Branch& GetBranch() const { return m_branch; }
     inline bool BranchHasBeenSet() const { return m_branchHasBeenSet; }
-    inline void SetBranch(const Branch& value) { m_branchHasBeenSet = true; m_branch = value; }
-    inline void SetBranch(Branch&& value) { m_branchHasBeenSet = true; m_branch = std::move(value); }
-    inline Node& WithBranch(const Branch& value) { SetBranch(value); return *this;}
-    inline Node& WithBranch(Branch&& value) { SetBranch(std::move(value)); return *this;}
+    template<typename BranchT = Branch>
+    void SetBranch(BranchT&& value) { m_branchHasBeenSet = true; m_branch = std::forward<BranchT>(value); }
+    template<typename BranchT = Branch>
+    Node& WithBranch(BranchT&& value) { SetBranch(std::forward<BranchT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Sensor& GetSensor() const{ return m_sensor; }
+    inline const Sensor& GetSensor() const { return m_sensor; }
     inline bool SensorHasBeenSet() const { return m_sensorHasBeenSet; }
-    inline void SetSensor(const Sensor& value) { m_sensorHasBeenSet = true; m_sensor = value; }
-    inline void SetSensor(Sensor&& value) { m_sensorHasBeenSet = true; m_sensor = std::move(value); }
-    inline Node& WithSensor(const Sensor& value) { SetSensor(value); return *this;}
-    inline Node& WithSensor(Sensor&& value) { SetSensor(std::move(value)); return *this;}
+    template<typename SensorT = Sensor>
+    void SetSensor(SensorT&& value) { m_sensorHasBeenSet = true; m_sensor = std::forward<SensorT>(value); }
+    template<typename SensorT = Sensor>
+    Node& WithSensor(SensorT&& value) { SetSensor(std::forward<SensorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +71,12 @@ namespace Model
      * <p>Information about a node specified as an actuator.</p>  <p>An actuator
      * is a digital representation of a vehicle device.</p> 
      */
-    inline const Actuator& GetActuator() const{ return m_actuator; }
+    inline const Actuator& GetActuator() const { return m_actuator; }
     inline bool ActuatorHasBeenSet() const { return m_actuatorHasBeenSet; }
-    inline void SetActuator(const Actuator& value) { m_actuatorHasBeenSet = true; m_actuator = value; }
-    inline void SetActuator(Actuator&& value) { m_actuatorHasBeenSet = true; m_actuator = std::move(value); }
-    inline Node& WithActuator(const Actuator& value) { SetActuator(value); return *this;}
-    inline Node& WithActuator(Actuator&& value) { SetActuator(std::move(value)); return *this;}
+    template<typename ActuatorT = Actuator>
+    void SetActuator(ActuatorT&& value) { m_actuatorHasBeenSet = true; m_actuator = std::forward<ActuatorT>(value); }
+    template<typename ActuatorT = Actuator>
+    Node& WithActuator(ActuatorT&& value) { SetActuator(std::forward<ActuatorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,24 +84,24 @@ namespace Model
      * <p>Information about a node specified as an attribute.</p>  <p>An
      * attribute represents static information about a vehicle.</p> 
      */
-    inline const Attribute& GetAttribute() const{ return m_attribute; }
+    inline const Attribute& GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const Attribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(Attribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline Node& WithAttribute(const Attribute& value) { SetAttribute(value); return *this;}
-    inline Node& WithAttribute(Attribute&& value) { SetAttribute(std::move(value)); return *this;}
+    template<typename AttributeT = Attribute>
+    void SetAttribute(AttributeT&& value) { m_attributeHasBeenSet = true; m_attribute = std::forward<AttributeT>(value); }
+    template<typename AttributeT = Attribute>
+    Node& WithAttribute(AttributeT&& value) { SetAttribute(std::forward<AttributeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Represents a complex or higher-order data structure.</p>
      */
-    inline const CustomStruct& GetStruct() const{ return m_struct; }
+    inline const CustomStruct& GetStruct() const { return m_struct; }
     inline bool StructHasBeenSet() const { return m_structHasBeenSet; }
-    inline void SetStruct(const CustomStruct& value) { m_structHasBeenSet = true; m_struct = value; }
-    inline void SetStruct(CustomStruct&& value) { m_structHasBeenSet = true; m_struct = std::move(value); }
-    inline Node& WithStruct(const CustomStruct& value) { SetStruct(value); return *this;}
-    inline Node& WithStruct(CustomStruct&& value) { SetStruct(std::move(value)); return *this;}
+    template<typename StructT = CustomStruct>
+    void SetStruct(StructT&& value) { m_structHasBeenSet = true; m_struct = std::forward<StructT>(value); }
+    template<typename StructT = CustomStruct>
+    Node& WithStruct(StructT&& value) { SetStruct(std::forward<StructT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,12 +109,12 @@ namespace Model
      * <p>Represents a member of the complex data structure. The <code>datatype</code>
      * of the property can be either primitive or another <code>struct</code>.</p>
      */
-    inline const CustomProperty& GetProperty() const{ return m_property; }
+    inline const CustomProperty& GetProperty() const { return m_property; }
     inline bool PropertyHasBeenSet() const { return m_propertyHasBeenSet; }
-    inline void SetProperty(const CustomProperty& value) { m_propertyHasBeenSet = true; m_property = value; }
-    inline void SetProperty(CustomProperty&& value) { m_propertyHasBeenSet = true; m_property = std::move(value); }
-    inline Node& WithProperty(const CustomProperty& value) { SetProperty(value); return *this;}
-    inline Node& WithProperty(CustomProperty&& value) { SetProperty(std::move(value)); return *this;}
+    template<typename PropertyT = CustomProperty>
+    void SetProperty(PropertyT&& value) { m_propertyHasBeenSet = true; m_property = std::forward<PropertyT>(value); }
+    template<typename PropertyT = CustomProperty>
+    Node& WithProperty(PropertyT&& value) { SetProperty(std::forward<PropertyT>(value)); return *this;}
     ///@}
   private:
 

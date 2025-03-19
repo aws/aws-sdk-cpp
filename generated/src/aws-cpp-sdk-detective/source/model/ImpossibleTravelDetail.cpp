@@ -18,18 +18,7 @@ namespace Detective
 namespace Model
 {
 
-ImpossibleTravelDetail::ImpossibleTravelDetail() : 
-    m_startingIpAddressHasBeenSet(false),
-    m_endingIpAddressHasBeenSet(false),
-    m_startingLocationHasBeenSet(false),
-    m_endingLocationHasBeenSet(false),
-    m_hourlyTimeDelta(0),
-    m_hourlyTimeDeltaHasBeenSet(false)
-{
-}
-
 ImpossibleTravelDetail::ImpossibleTravelDetail(JsonView jsonValue)
-  : ImpossibleTravelDetail()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ImpossibleTravelDetail& ImpossibleTravelDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StartingIpAddress"))
   {
     m_startingIpAddress = jsonValue.GetString("StartingIpAddress");
-
     m_startingIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndingIpAddress"))
   {
     m_endingIpAddress = jsonValue.GetString("EndingIpAddress");
-
     m_endingIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartingLocation"))
   {
     m_startingLocation = jsonValue.GetString("StartingLocation");
-
     m_startingLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndingLocation"))
   {
     m_endingLocation = jsonValue.GetString("EndingLocation");
-
     m_endingLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HourlyTimeDelta"))
   {
     m_hourlyTimeDelta = jsonValue.GetInteger("HourlyTimeDelta");
-
     m_hourlyTimeDeltaHasBeenSet = true;
   }
-
   return *this;
 }
 

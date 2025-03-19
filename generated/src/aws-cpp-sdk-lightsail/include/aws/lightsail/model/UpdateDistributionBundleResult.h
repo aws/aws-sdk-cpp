@@ -28,7 +28,7 @@ namespace Model
   class UpdateDistributionBundleResult
   {
   public:
-    AWS_LIGHTSAIL_API UpdateDistributionBundleResult();
+    AWS_LIGHTSAIL_API UpdateDistributionBundleResult() = default;
     AWS_LIGHTSAIL_API UpdateDistributionBundleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API UpdateDistributionBundleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,28 +39,28 @@ namespace Model
      * request, the timestamp of the request, and the resources affected by the
      * request.</p>
      */
-    inline const Operation& GetOperation() const{ return m_operation; }
-    inline void SetOperation(const Operation& value) { m_operation = value; }
-    inline void SetOperation(Operation&& value) { m_operation = std::move(value); }
-    inline UpdateDistributionBundleResult& WithOperation(const Operation& value) { SetOperation(value); return *this;}
-    inline UpdateDistributionBundleResult& WithOperation(Operation&& value) { SetOperation(std::move(value)); return *this;}
+    inline const Operation& GetOperation() const { return m_operation; }
+    template<typename OperationT = Operation>
+    void SetOperation(OperationT&& value) { m_operationHasBeenSet = true; m_operation = std::forward<OperationT>(value); }
+    template<typename OperationT = Operation>
+    UpdateDistributionBundleResult& WithOperation(OperationT&& value) { SetOperation(std::forward<OperationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateDistributionBundleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateDistributionBundleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateDistributionBundleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateDistributionBundleResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Operation m_operation;
+    bool m_operationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

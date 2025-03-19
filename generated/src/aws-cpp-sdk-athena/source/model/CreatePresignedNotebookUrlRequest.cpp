@@ -12,11 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePresignedNotebookUrlRequest::CreatePresignedNotebookUrlRequest() : 
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 Aws::String CreatePresignedNotebookUrlRequest::SerializePayload() const
 {
   JsonValue payload;

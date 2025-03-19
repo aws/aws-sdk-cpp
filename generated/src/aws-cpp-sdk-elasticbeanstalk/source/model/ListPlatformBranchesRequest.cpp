@@ -10,14 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-ListPlatformBranchesRequest::ListPlatformBranchesRequest() : 
-    m_filtersHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListPlatformBranchesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

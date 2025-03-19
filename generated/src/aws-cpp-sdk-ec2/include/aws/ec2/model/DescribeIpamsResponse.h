@@ -30,7 +30,7 @@ namespace Model
   class DescribeIpamsResponse
   {
   public:
-    AWS_EC2_API DescribeIpamsResponse();
+    AWS_EC2_API DescribeIpamsResponse() = default;
     AWS_EC2_API DescribeIpamsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeIpamsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,43 +40,44 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeIpamsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeIpamsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeIpamsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeIpamsResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the IPAMs.</p>
      */
-    inline const Aws::Vector<Ipam>& GetIpams() const{ return m_ipams; }
-    inline void SetIpams(const Aws::Vector<Ipam>& value) { m_ipams = value; }
-    inline void SetIpams(Aws::Vector<Ipam>&& value) { m_ipams = std::move(value); }
-    inline DescribeIpamsResponse& WithIpams(const Aws::Vector<Ipam>& value) { SetIpams(value); return *this;}
-    inline DescribeIpamsResponse& WithIpams(Aws::Vector<Ipam>&& value) { SetIpams(std::move(value)); return *this;}
-    inline DescribeIpamsResponse& AddIpams(const Ipam& value) { m_ipams.push_back(value); return *this; }
-    inline DescribeIpamsResponse& AddIpams(Ipam&& value) { m_ipams.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Ipam>& GetIpams() const { return m_ipams; }
+    template<typename IpamsT = Aws::Vector<Ipam>>
+    void SetIpams(IpamsT&& value) { m_ipamsHasBeenSet = true; m_ipams = std::forward<IpamsT>(value); }
+    template<typename IpamsT = Aws::Vector<Ipam>>
+    DescribeIpamsResponse& WithIpams(IpamsT&& value) { SetIpams(std::forward<IpamsT>(value)); return *this;}
+    template<typename IpamsT = Ipam>
+    DescribeIpamsResponse& AddIpams(IpamsT&& value) { m_ipamsHasBeenSet = true; m_ipams.emplace_back(std::forward<IpamsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeIpamsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeIpamsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeIpamsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<Ipam> m_ipams;
+    bool m_ipamsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

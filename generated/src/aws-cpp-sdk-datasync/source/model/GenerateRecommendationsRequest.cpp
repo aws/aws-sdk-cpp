@@ -12,14 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GenerateRecommendationsRequest::GenerateRecommendationsRequest() : 
-    m_discoveryJobArnHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false),
-    m_resourceType(DiscoveryResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 Aws::String GenerateRecommendationsRequest::SerializePayload() const
 {
   JsonValue payload;

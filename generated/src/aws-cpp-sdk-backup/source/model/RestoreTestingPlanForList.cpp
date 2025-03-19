@@ -18,21 +18,7 @@ namespace Backup
 namespace Model
 {
 
-RestoreTestingPlanForList::RestoreTestingPlanForList() : 
-    m_creationTimeHasBeenSet(false),
-    m_lastExecutionTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_restoreTestingPlanArnHasBeenSet(false),
-    m_restoreTestingPlanNameHasBeenSet(false),
-    m_scheduleExpressionHasBeenSet(false),
-    m_scheduleExpressionTimezoneHasBeenSet(false),
-    m_startWindowHours(0),
-    m_startWindowHoursHasBeenSet(false)
-{
-}
-
 RestoreTestingPlanForList::RestoreTestingPlanForList(JsonView jsonValue)
-  : RestoreTestingPlanForList()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ RestoreTestingPlanForList& RestoreTestingPlanForList::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastExecutionTime"))
   {
     m_lastExecutionTime = jsonValue.GetDouble("LastExecutionTime");
-
     m_lastExecutionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("LastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RestoreTestingPlanArn"))
   {
     m_restoreTestingPlanArn = jsonValue.GetString("RestoreTestingPlanArn");
-
     m_restoreTestingPlanArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RestoreTestingPlanName"))
   {
     m_restoreTestingPlanName = jsonValue.GetString("RestoreTestingPlanName");
-
     m_restoreTestingPlanNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduleExpression"))
   {
     m_scheduleExpression = jsonValue.GetString("ScheduleExpression");
-
     m_scheduleExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduleExpressionTimezone"))
   {
     m_scheduleExpressionTimezone = jsonValue.GetString("ScheduleExpressionTimezone");
-
     m_scheduleExpressionTimezoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartWindowHours"))
   {
     m_startWindowHours = jsonValue.GetInteger("StartWindowHours");
-
     m_startWindowHoursHasBeenSet = true;
   }
-
   return *this;
 }
 

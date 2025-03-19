@@ -36,7 +36,7 @@ namespace Model
   class ComponentChild
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API ComponentChild();
+    AWS_AMPLIFYUIBUILDER_API ComponentChild() = default;
     AWS_AMPLIFYUIBUILDER_API ComponentChild(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API ComponentChild& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>The type of the child component. </p>
      */
-    inline const Aws::String& GetComponentType() const{ return m_componentType; }
+    inline const Aws::String& GetComponentType() const { return m_componentType; }
     inline bool ComponentTypeHasBeenSet() const { return m_componentTypeHasBeenSet; }
-    inline void SetComponentType(const Aws::String& value) { m_componentTypeHasBeenSet = true; m_componentType = value; }
-    inline void SetComponentType(Aws::String&& value) { m_componentTypeHasBeenSet = true; m_componentType = std::move(value); }
-    inline void SetComponentType(const char* value) { m_componentTypeHasBeenSet = true; m_componentType.assign(value); }
-    inline ComponentChild& WithComponentType(const Aws::String& value) { SetComponentType(value); return *this;}
-    inline ComponentChild& WithComponentType(Aws::String&& value) { SetComponentType(std::move(value)); return *this;}
-    inline ComponentChild& WithComponentType(const char* value) { SetComponentType(value); return *this;}
+    template<typename ComponentTypeT = Aws::String>
+    void SetComponentType(ComponentTypeT&& value) { m_componentTypeHasBeenSet = true; m_componentType = std::forward<ComponentTypeT>(value); }
+    template<typename ComponentTypeT = Aws::String>
+    ComponentChild& WithComponentType(ComponentTypeT&& value) { SetComponentType(std::forward<ComponentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the child component.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ComponentChild& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ComponentChild& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ComponentChild& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ComponentChild& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,32 +71,30 @@ namespace Model
      * <p>Describes the properties of the child component. You can't specify
      * <code>tags</code> as a valid property for <code>properties</code>.</p>
      */
-    inline const Aws::Map<Aws::String, ComponentProperty>& GetProperties() const{ return m_properties; }
+    inline const Aws::Map<Aws::String, ComponentProperty>& GetProperties() const { return m_properties; }
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
-    inline void SetProperties(const Aws::Map<Aws::String, ComponentProperty>& value) { m_propertiesHasBeenSet = true; m_properties = value; }
-    inline void SetProperties(Aws::Map<Aws::String, ComponentProperty>&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
-    inline ComponentChild& WithProperties(const Aws::Map<Aws::String, ComponentProperty>& value) { SetProperties(value); return *this;}
-    inline ComponentChild& WithProperties(Aws::Map<Aws::String, ComponentProperty>&& value) { SetProperties(std::move(value)); return *this;}
-    inline ComponentChild& AddProperties(const Aws::String& key, const ComponentProperty& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
-    inline ComponentChild& AddProperties(Aws::String&& key, const ComponentProperty& value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), value); return *this; }
-    inline ComponentChild& AddProperties(const Aws::String& key, ComponentProperty&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, std::move(value)); return *this; }
-    inline ComponentChild& AddProperties(Aws::String&& key, ComponentProperty&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), std::move(value)); return *this; }
-    inline ComponentChild& AddProperties(const char* key, ComponentProperty&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, std::move(value)); return *this; }
-    inline ComponentChild& AddProperties(const char* key, const ComponentProperty& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
+    template<typename PropertiesT = Aws::Map<Aws::String, ComponentProperty>>
+    void SetProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties = std::forward<PropertiesT>(value); }
+    template<typename PropertiesT = Aws::Map<Aws::String, ComponentProperty>>
+    ComponentChild& WithProperties(PropertiesT&& value) { SetProperties(std::forward<PropertiesT>(value)); return *this;}
+    template<typename PropertiesKeyT = Aws::String, typename PropertiesValueT = ComponentProperty>
+    ComponentChild& AddProperties(PropertiesKeyT&& key, PropertiesValueT&& value) {
+      m_propertiesHasBeenSet = true; m_properties.emplace(std::forward<PropertiesKeyT>(key), std::forward<PropertiesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The list of <code>ComponentChild</code> instances for this component.</p>
      */
-    inline const Aws::Vector<ComponentChild>& GetChildren() const{ return m_children; }
+    inline const Aws::Vector<ComponentChild>& GetChildren() const { return m_children; }
     inline bool ChildrenHasBeenSet() const { return m_childrenHasBeenSet; }
-    inline void SetChildren(const Aws::Vector<ComponentChild>& value) { m_childrenHasBeenSet = true; m_children = value; }
-    inline void SetChildren(Aws::Vector<ComponentChild>&& value) { m_childrenHasBeenSet = true; m_children = std::move(value); }
-    inline ComponentChild& WithChildren(const Aws::Vector<ComponentChild>& value) { SetChildren(value); return *this;}
-    inline ComponentChild& WithChildren(Aws::Vector<ComponentChild>&& value) { SetChildren(std::move(value)); return *this;}
-    inline ComponentChild& AddChildren(const ComponentChild& value) { m_childrenHasBeenSet = true; m_children.push_back(value); return *this; }
-    inline ComponentChild& AddChildren(ComponentChild&& value) { m_childrenHasBeenSet = true; m_children.push_back(std::move(value)); return *this; }
+    template<typename ChildrenT = Aws::Vector<ComponentChild>>
+    void SetChildren(ChildrenT&& value) { m_childrenHasBeenSet = true; m_children = std::forward<ChildrenT>(value); }
+    template<typename ChildrenT = Aws::Vector<ComponentChild>>
+    ComponentChild& WithChildren(ChildrenT&& value) { SetChildren(std::forward<ChildrenT>(value)); return *this;}
+    template<typename ChildrenT = ComponentChild>
+    ComponentChild& AddChildren(ChildrenT&& value) { m_childrenHasBeenSet = true; m_children.emplace_back(std::forward<ChildrenT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -109,18 +103,16 @@ namespace Model
      * workflow feature in Amplify Studio that allows you to bind events and actions to
      * components.</p>
      */
-    inline const Aws::Map<Aws::String, ComponentEvent>& GetEvents() const{ return m_events; }
+    inline const Aws::Map<Aws::String, ComponentEvent>& GetEvents() const { return m_events; }
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
-    inline void SetEvents(const Aws::Map<Aws::String, ComponentEvent>& value) { m_eventsHasBeenSet = true; m_events = value; }
-    inline void SetEvents(Aws::Map<Aws::String, ComponentEvent>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
-    inline ComponentChild& WithEvents(const Aws::Map<Aws::String, ComponentEvent>& value) { SetEvents(value); return *this;}
-    inline ComponentChild& WithEvents(Aws::Map<Aws::String, ComponentEvent>&& value) { SetEvents(std::move(value)); return *this;}
-    inline ComponentChild& AddEvents(const Aws::String& key, const ComponentEvent& value) { m_eventsHasBeenSet = true; m_events.emplace(key, value); return *this; }
-    inline ComponentChild& AddEvents(Aws::String&& key, const ComponentEvent& value) { m_eventsHasBeenSet = true; m_events.emplace(std::move(key), value); return *this; }
-    inline ComponentChild& AddEvents(const Aws::String& key, ComponentEvent&& value) { m_eventsHasBeenSet = true; m_events.emplace(key, std::move(value)); return *this; }
-    inline ComponentChild& AddEvents(Aws::String&& key, ComponentEvent&& value) { m_eventsHasBeenSet = true; m_events.emplace(std::move(key), std::move(value)); return *this; }
-    inline ComponentChild& AddEvents(const char* key, ComponentEvent&& value) { m_eventsHasBeenSet = true; m_events.emplace(key, std::move(value)); return *this; }
-    inline ComponentChild& AddEvents(const char* key, const ComponentEvent& value) { m_eventsHasBeenSet = true; m_events.emplace(key, value); return *this; }
+    template<typename EventsT = Aws::Map<Aws::String, ComponentEvent>>
+    void SetEvents(EventsT&& value) { m_eventsHasBeenSet = true; m_events = std::forward<EventsT>(value); }
+    template<typename EventsT = Aws::Map<Aws::String, ComponentEvent>>
+    ComponentChild& WithEvents(EventsT&& value) { SetEvents(std::forward<EventsT>(value)); return *this;}
+    template<typename EventsKeyT = Aws::String, typename EventsValueT = ComponentEvent>
+    ComponentChild& AddEvents(EventsKeyT&& key, EventsValueT&& value) {
+      m_eventsHasBeenSet = true; m_events.emplace(std::forward<EventsKeyT>(key), std::forward<EventsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -128,14 +120,12 @@ namespace Model
      * <p>The unique ID of the child component in its original source system, such as
      * Figma.</p>
      */
-    inline const Aws::String& GetSourceId() const{ return m_sourceId; }
+    inline const Aws::String& GetSourceId() const { return m_sourceId; }
     inline bool SourceIdHasBeenSet() const { return m_sourceIdHasBeenSet; }
-    inline void SetSourceId(const Aws::String& value) { m_sourceIdHasBeenSet = true; m_sourceId = value; }
-    inline void SetSourceId(Aws::String&& value) { m_sourceIdHasBeenSet = true; m_sourceId = std::move(value); }
-    inline void SetSourceId(const char* value) { m_sourceIdHasBeenSet = true; m_sourceId.assign(value); }
-    inline ComponentChild& WithSourceId(const Aws::String& value) { SetSourceId(value); return *this;}
-    inline ComponentChild& WithSourceId(Aws::String&& value) { SetSourceId(std::move(value)); return *this;}
-    inline ComponentChild& WithSourceId(const char* value) { SetSourceId(value); return *this;}
+    template<typename SourceIdT = Aws::String>
+    void SetSourceId(SourceIdT&& value) { m_sourceIdHasBeenSet = true; m_sourceId = std::forward<SourceIdT>(value); }
+    template<typename SourceIdT = Aws::String>
+    ComponentChild& WithSourceId(SourceIdT&& value) { SetSourceId(std::forward<SourceIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -36,7 +36,7 @@ namespace Model
   class FilterCriterion
   {
   public:
-    AWS_GUARDDUTY_API FilterCriterion();
+    AWS_GUARDDUTY_API FilterCriterion() = default;
     AWS_GUARDDUTY_API FilterCriterion(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API FilterCriterion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,28 +49,26 @@ namespace Model
      * <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been
      * deprecated.</p> 
      */
-    inline const CriterionKey& GetCriterionKey() const{ return m_criterionKey; }
+    inline CriterionKey GetCriterionKey() const { return m_criterionKey; }
     inline bool CriterionKeyHasBeenSet() const { return m_criterionKeyHasBeenSet; }
-    inline void SetCriterionKey(const CriterionKey& value) { m_criterionKeyHasBeenSet = true; m_criterionKey = value; }
-    inline void SetCriterionKey(CriterionKey&& value) { m_criterionKeyHasBeenSet = true; m_criterionKey = std::move(value); }
-    inline FilterCriterion& WithCriterionKey(const CriterionKey& value) { SetCriterionKey(value); return *this;}
-    inline FilterCriterion& WithCriterionKey(CriterionKey&& value) { SetCriterionKey(std::move(value)); return *this;}
+    inline void SetCriterionKey(CriterionKey value) { m_criterionKeyHasBeenSet = true; m_criterionKey = value; }
+    inline FilterCriterion& WithCriterionKey(CriterionKey value) { SetCriterionKey(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains information about the condition.</p>
      */
-    inline const FilterCondition& GetFilterCondition() const{ return m_filterCondition; }
+    inline const FilterCondition& GetFilterCondition() const { return m_filterCondition; }
     inline bool FilterConditionHasBeenSet() const { return m_filterConditionHasBeenSet; }
-    inline void SetFilterCondition(const FilterCondition& value) { m_filterConditionHasBeenSet = true; m_filterCondition = value; }
-    inline void SetFilterCondition(FilterCondition&& value) { m_filterConditionHasBeenSet = true; m_filterCondition = std::move(value); }
-    inline FilterCriterion& WithFilterCondition(const FilterCondition& value) { SetFilterCondition(value); return *this;}
-    inline FilterCriterion& WithFilterCondition(FilterCondition&& value) { SetFilterCondition(std::move(value)); return *this;}
+    template<typename FilterConditionT = FilterCondition>
+    void SetFilterCondition(FilterConditionT&& value) { m_filterConditionHasBeenSet = true; m_filterCondition = std::forward<FilterConditionT>(value); }
+    template<typename FilterConditionT = FilterCondition>
+    FilterCriterion& WithFilterCondition(FilterConditionT&& value) { SetFilterCondition(std::forward<FilterConditionT>(value)); return *this;}
     ///@}
   private:
 
-    CriterionKey m_criterionKey;
+    CriterionKey m_criterionKey{CriterionKey::NOT_SET};
     bool m_criterionKeyHasBeenSet = false;
 
     FilterCondition m_filterCondition;

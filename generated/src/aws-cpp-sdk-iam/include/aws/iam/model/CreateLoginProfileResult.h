@@ -34,7 +34,7 @@ namespace Model
   class CreateLoginProfileResult
   {
   public:
-    AWS_IAM_API CreateLoginProfileResult();
+    AWS_IAM_API CreateLoginProfileResult() = default;
     AWS_IAM_API CreateLoginProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_IAM_API CreateLoginProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -43,26 +43,28 @@ namespace Model
     /**
      * <p>A structure containing the user name and password create date.</p>
      */
-    inline const LoginProfile& GetLoginProfile() const{ return m_loginProfile; }
-    inline void SetLoginProfile(const LoginProfile& value) { m_loginProfile = value; }
-    inline void SetLoginProfile(LoginProfile&& value) { m_loginProfile = std::move(value); }
-    inline CreateLoginProfileResult& WithLoginProfile(const LoginProfile& value) { SetLoginProfile(value); return *this;}
-    inline CreateLoginProfileResult& WithLoginProfile(LoginProfile&& value) { SetLoginProfile(std::move(value)); return *this;}
+    inline const LoginProfile& GetLoginProfile() const { return m_loginProfile; }
+    template<typename LoginProfileT = LoginProfile>
+    void SetLoginProfile(LoginProfileT&& value) { m_loginProfileHasBeenSet = true; m_loginProfile = std::forward<LoginProfileT>(value); }
+    template<typename LoginProfileT = LoginProfile>
+    CreateLoginProfileResult& WithLoginProfile(LoginProfileT&& value) { SetLoginProfile(std::forward<LoginProfileT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateLoginProfileResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateLoginProfileResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateLoginProfileResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     LoginProfile m_loginProfile;
+    bool m_loginProfileHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

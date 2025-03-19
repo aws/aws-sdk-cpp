@@ -12,10 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAccountBalanceRequest::GetAccountBalanceRequest()
-{
-}
-
 Aws::String GetAccountBalanceRequest::SerializePayload() const
 {
   return "{}";

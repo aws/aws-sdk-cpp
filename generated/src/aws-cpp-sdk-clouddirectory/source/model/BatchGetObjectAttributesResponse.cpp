@@ -18,13 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchGetObjectAttributesResponse::BatchGetObjectAttributesResponse() : 
-    m_attributesHasBeenSet(false)
-{
-}
-
 BatchGetObjectAttributesResponse::BatchGetObjectAttributesResponse(JsonView jsonValue)
-  : BatchGetObjectAttributesResponse()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ BatchGetObjectAttributesResponse& BatchGetObjectAttributesResponse::operator =(J
     }
     m_attributesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,24 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSavingsPlansPurchaseRecommendationRequest::GetSavingsPlansPurchaseRecommendationRequest() : 
-    m_savingsPlansType(SupportedSavingsPlansType::NOT_SET),
-    m_savingsPlansTypeHasBeenSet(false),
-    m_termInYears(TermInYears::NOT_SET),
-    m_termInYearsHasBeenSet(false),
-    m_paymentOption(PaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_accountScope(AccountScope::NOT_SET),
-    m_accountScopeHasBeenSet(false),
-    m_nextPageTokenHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false),
-    m_lookbackPeriodInDays(LookbackPeriodInDays::NOT_SET),
-    m_lookbackPeriodInDaysHasBeenSet(false),
-    m_filterHasBeenSet(false)
-{
-}
-
 Aws::String GetSavingsPlansPurchaseRecommendationRequest::SerializePayload() const
 {
   JsonValue payload;

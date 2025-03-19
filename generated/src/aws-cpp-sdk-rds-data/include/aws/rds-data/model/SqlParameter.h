@@ -33,7 +33,7 @@ namespace Model
   class SqlParameter
   {
   public:
-    AWS_RDSDATASERVICE_API SqlParameter();
+    AWS_RDSDATASERVICE_API SqlParameter() = default;
     AWS_RDSDATASERVICE_API SqlParameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_RDSDATASERVICE_API SqlParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RDSDATASERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The name of the parameter.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SqlParameter& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SqlParameter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SqlParameter& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SqlParameter& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the parameter.</p>
      */
-    inline const Field& GetValue() const{ return m_value; }
+    inline const Field& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Field& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Field&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline SqlParameter& WithValue(const Field& value) { SetValue(value); return *this;}
-    inline SqlParameter& WithValue(Field&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = Field>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Field>
+    SqlParameter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +83,10 @@ namespace Model
      * parameter value is sent as an object of <code>UUID</code> type to the database.
      * </p> </li> </ul>
      */
-    inline const TypeHint& GetTypeHint() const{ return m_typeHint; }
+    inline TypeHint GetTypeHint() const { return m_typeHint; }
     inline bool TypeHintHasBeenSet() const { return m_typeHintHasBeenSet; }
-    inline void SetTypeHint(const TypeHint& value) { m_typeHintHasBeenSet = true; m_typeHint = value; }
-    inline void SetTypeHint(TypeHint&& value) { m_typeHintHasBeenSet = true; m_typeHint = std::move(value); }
-    inline SqlParameter& WithTypeHint(const TypeHint& value) { SetTypeHint(value); return *this;}
-    inline SqlParameter& WithTypeHint(TypeHint&& value) { SetTypeHint(std::move(value)); return *this;}
+    inline void SetTypeHint(TypeHint value) { m_typeHintHasBeenSet = true; m_typeHint = value; }
+    inline SqlParameter& WithTypeHint(TypeHint value) { SetTypeHint(value); return *this;}
     ///@}
   private:
 
@@ -100,7 +96,7 @@ namespace Model
     Field m_value;
     bool m_valueHasBeenSet = false;
 
-    TypeHint m_typeHint;
+    TypeHint m_typeHint{TypeHint::NOT_SET};
     bool m_typeHintHasBeenSet = false;
   };
 

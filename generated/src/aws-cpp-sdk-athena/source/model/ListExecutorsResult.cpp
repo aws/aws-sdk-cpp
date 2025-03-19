@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListExecutorsResult::ListExecutorsResult()
-{
-}
-
 ListExecutorsResult::ListExecutorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ ListExecutorsResult& ListExecutorsResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("SessionId"))
   {
     m_sessionId = jsonValue.GetString("SessionId");
-
+    m_sessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutorsSummary"))
   {
     Aws::Utils::Array<JsonView> executorsSummaryJsonList = jsonValue.GetArray("ExecutorsSummary");
@@ -48,14 +42,15 @@ ListExecutorsResult& ListExecutorsResult::operator =(const Aws::AmazonWebService
     {
       m_executorsSummary.push_back(executorsSummaryJsonList[executorsSummaryIndex].AsObject());
     }
+    m_executorsSummaryHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

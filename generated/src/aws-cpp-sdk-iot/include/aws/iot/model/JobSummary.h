@@ -34,7 +34,7 @@ namespace Model
   class JobSummary
   {
   public:
-    AWS_IOT_API JobSummary();
+    AWS_IOT_API JobSummary() = default;
     AWS_IOT_API JobSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API JobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,42 +44,36 @@ namespace Model
     /**
      * <p>The job ARN.</p>
      */
-    inline const Aws::String& GetJobArn() const{ return m_jobArn; }
+    inline const Aws::String& GetJobArn() const { return m_jobArn; }
     inline bool JobArnHasBeenSet() const { return m_jobArnHasBeenSet; }
-    inline void SetJobArn(const Aws::String& value) { m_jobArnHasBeenSet = true; m_jobArn = value; }
-    inline void SetJobArn(Aws::String&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::move(value); }
-    inline void SetJobArn(const char* value) { m_jobArnHasBeenSet = true; m_jobArn.assign(value); }
-    inline JobSummary& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
-    inline JobSummary& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
-    inline JobSummary& WithJobArn(const char* value) { SetJobArn(value); return *this;}
+    template<typename JobArnT = Aws::String>
+    void SetJobArn(JobArnT&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::forward<JobArnT>(value); }
+    template<typename JobArnT = Aws::String>
+    JobSummary& WithJobArn(JobArnT&& value) { SetJobArn(std::forward<JobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier you assigned to this job when it was created.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline JobSummary& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline JobSummary& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline JobSummary& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    JobSummary& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the thing group.</p>
      */
-    inline const Aws::String& GetThingGroupId() const{ return m_thingGroupId; }
+    inline const Aws::String& GetThingGroupId() const { return m_thingGroupId; }
     inline bool ThingGroupIdHasBeenSet() const { return m_thingGroupIdHasBeenSet; }
-    inline void SetThingGroupId(const Aws::String& value) { m_thingGroupIdHasBeenSet = true; m_thingGroupId = value; }
-    inline void SetThingGroupId(Aws::String&& value) { m_thingGroupIdHasBeenSet = true; m_thingGroupId = std::move(value); }
-    inline void SetThingGroupId(const char* value) { m_thingGroupIdHasBeenSet = true; m_thingGroupId.assign(value); }
-    inline JobSummary& WithThingGroupId(const Aws::String& value) { SetThingGroupId(value); return *this;}
-    inline JobSummary& WithThingGroupId(Aws::String&& value) { SetThingGroupId(std::move(value)); return *this;}
-    inline JobSummary& WithThingGroupId(const char* value) { SetThingGroupId(value); return *this;}
+    template<typename ThingGroupIdT = Aws::String>
+    void SetThingGroupId(ThingGroupIdT&& value) { m_thingGroupIdHasBeenSet = true; m_thingGroupId = std::forward<ThingGroupIdT>(value); }
+    template<typename ThingGroupIdT = Aws::String>
+    JobSummary& WithThingGroupId(ThingGroupIdT&& value) { SetThingGroupId(std::forward<ThingGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,60 +88,56 @@ namespace Model
      * jobs, devices that join the group receive the job execution even after the job
      * has been created.</p> 
      */
-    inline const TargetSelection& GetTargetSelection() const{ return m_targetSelection; }
+    inline TargetSelection GetTargetSelection() const { return m_targetSelection; }
     inline bool TargetSelectionHasBeenSet() const { return m_targetSelectionHasBeenSet; }
-    inline void SetTargetSelection(const TargetSelection& value) { m_targetSelectionHasBeenSet = true; m_targetSelection = value; }
-    inline void SetTargetSelection(TargetSelection&& value) { m_targetSelectionHasBeenSet = true; m_targetSelection = std::move(value); }
-    inline JobSummary& WithTargetSelection(const TargetSelection& value) { SetTargetSelection(value); return *this;}
-    inline JobSummary& WithTargetSelection(TargetSelection&& value) { SetTargetSelection(std::move(value)); return *this;}
+    inline void SetTargetSelection(TargetSelection value) { m_targetSelectionHasBeenSet = true; m_targetSelection = value; }
+    inline JobSummary& WithTargetSelection(TargetSelection value) { SetTargetSelection(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The job summary status.</p>
      */
-    inline const JobStatus& GetStatus() const{ return m_status; }
+    inline JobStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const JobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(JobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline JobSummary& WithStatus(const JobStatus& value) { SetStatus(value); return *this;}
-    inline JobSummary& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(JobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline JobSummary& WithStatus(JobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time, in seconds since the epoch, when the job was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline JobSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline JobSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    JobSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time, in seconds since the epoch, when the job was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::move(value); }
-    inline JobSummary& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline JobSummary& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    JobSummary& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time, in seconds since the epoch, when the job completed.</p>
      */
-    inline const Aws::Utils::DateTime& GetCompletedAt() const{ return m_completedAt; }
+    inline const Aws::Utils::DateTime& GetCompletedAt() const { return m_completedAt; }
     inline bool CompletedAtHasBeenSet() const { return m_completedAtHasBeenSet; }
-    inline void SetCompletedAt(const Aws::Utils::DateTime& value) { m_completedAtHasBeenSet = true; m_completedAt = value; }
-    inline void SetCompletedAt(Aws::Utils::DateTime&& value) { m_completedAtHasBeenSet = true; m_completedAt = std::move(value); }
-    inline JobSummary& WithCompletedAt(const Aws::Utils::DateTime& value) { SetCompletedAt(value); return *this;}
-    inline JobSummary& WithCompletedAt(Aws::Utils::DateTime&& value) { SetCompletedAt(std::move(value)); return *this;}
+    template<typename CompletedAtT = Aws::Utils::DateTime>
+    void SetCompletedAt(CompletedAtT&& value) { m_completedAtHasBeenSet = true; m_completedAt = std::forward<CompletedAtT>(value); }
+    template<typename CompletedAtT = Aws::Utils::DateTime>
+    JobSummary& WithCompletedAt(CompletedAtT&& value) { SetCompletedAt(std::forward<CompletedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -156,7 +146,7 @@ namespace Model
      * new job executions or canceling previously created executions, otherwise
      * false.</p>
      */
-    inline bool GetIsConcurrent() const{ return m_isConcurrent; }
+    inline bool GetIsConcurrent() const { return m_isConcurrent; }
     inline bool IsConcurrentHasBeenSet() const { return m_isConcurrentHasBeenSet; }
     inline void SetIsConcurrent(bool value) { m_isConcurrentHasBeenSet = true; m_isConcurrent = value; }
     inline JobSummary& WithIsConcurrent(bool value) { SetIsConcurrent(value); return *this;}
@@ -172,22 +162,22 @@ namespace Model
     Aws::String m_thingGroupId;
     bool m_thingGroupIdHasBeenSet = false;
 
-    TargetSelection m_targetSelection;
+    TargetSelection m_targetSelection{TargetSelection::NOT_SET};
     bool m_targetSelectionHasBeenSet = false;
 
-    JobStatus m_status;
+    JobStatus m_status{JobStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
     bool m_lastUpdatedAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_completedAt;
+    Aws::Utils::DateTime m_completedAt{};
     bool m_completedAtHasBeenSet = false;
 
-    bool m_isConcurrent;
+    bool m_isConcurrent{false};
     bool m_isConcurrentHasBeenSet = false;
   };
 

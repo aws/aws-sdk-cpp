@@ -24,7 +24,7 @@ namespace Model
   class SwapEnvironmentCNAMEsRequest : public ElasticBeanstalkRequest
   {
   public:
-    AWS_ELASTICBEANSTALK_API SwapEnvironmentCNAMEsRequest();
+    AWS_ELASTICBEANSTALK_API SwapEnvironmentCNAMEsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
      * the <code>SourceEnvironmentId</code>, you must specify the
      * <code>DestinationEnvironmentId</code>. </p>
      */
-    inline const Aws::String& GetSourceEnvironmentId() const{ return m_sourceEnvironmentId; }
+    inline const Aws::String& GetSourceEnvironmentId() const { return m_sourceEnvironmentId; }
     inline bool SourceEnvironmentIdHasBeenSet() const { return m_sourceEnvironmentIdHasBeenSet; }
-    inline void SetSourceEnvironmentId(const Aws::String& value) { m_sourceEnvironmentIdHasBeenSet = true; m_sourceEnvironmentId = value; }
-    inline void SetSourceEnvironmentId(Aws::String&& value) { m_sourceEnvironmentIdHasBeenSet = true; m_sourceEnvironmentId = std::move(value); }
-    inline void SetSourceEnvironmentId(const char* value) { m_sourceEnvironmentIdHasBeenSet = true; m_sourceEnvironmentId.assign(value); }
-    inline SwapEnvironmentCNAMEsRequest& WithSourceEnvironmentId(const Aws::String& value) { SetSourceEnvironmentId(value); return *this;}
-    inline SwapEnvironmentCNAMEsRequest& WithSourceEnvironmentId(Aws::String&& value) { SetSourceEnvironmentId(std::move(value)); return *this;}
-    inline SwapEnvironmentCNAMEsRequest& WithSourceEnvironmentId(const char* value) { SetSourceEnvironmentId(value); return *this;}
+    template<typename SourceEnvironmentIdT = Aws::String>
+    void SetSourceEnvironmentId(SourceEnvironmentIdT&& value) { m_sourceEnvironmentIdHasBeenSet = true; m_sourceEnvironmentId = std::forward<SourceEnvironmentIdT>(value); }
+    template<typename SourceEnvironmentIdT = Aws::String>
+    SwapEnvironmentCNAMEsRequest& WithSourceEnvironmentId(SourceEnvironmentIdT&& value) { SetSourceEnvironmentId(std::forward<SourceEnvironmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * the <code>SourceEnvironmentName</code>, you must specify the
      * <code>DestinationEnvironmentName</code>. </p>
      */
-    inline const Aws::String& GetSourceEnvironmentName() const{ return m_sourceEnvironmentName; }
+    inline const Aws::String& GetSourceEnvironmentName() const { return m_sourceEnvironmentName; }
     inline bool SourceEnvironmentNameHasBeenSet() const { return m_sourceEnvironmentNameHasBeenSet; }
-    inline void SetSourceEnvironmentName(const Aws::String& value) { m_sourceEnvironmentNameHasBeenSet = true; m_sourceEnvironmentName = value; }
-    inline void SetSourceEnvironmentName(Aws::String&& value) { m_sourceEnvironmentNameHasBeenSet = true; m_sourceEnvironmentName = std::move(value); }
-    inline void SetSourceEnvironmentName(const char* value) { m_sourceEnvironmentNameHasBeenSet = true; m_sourceEnvironmentName.assign(value); }
-    inline SwapEnvironmentCNAMEsRequest& WithSourceEnvironmentName(const Aws::String& value) { SetSourceEnvironmentName(value); return *this;}
-    inline SwapEnvironmentCNAMEsRequest& WithSourceEnvironmentName(Aws::String&& value) { SetSourceEnvironmentName(std::move(value)); return *this;}
-    inline SwapEnvironmentCNAMEsRequest& WithSourceEnvironmentName(const char* value) { SetSourceEnvironmentName(value); return *this;}
+    template<typename SourceEnvironmentNameT = Aws::String>
+    void SetSourceEnvironmentName(SourceEnvironmentNameT&& value) { m_sourceEnvironmentNameHasBeenSet = true; m_sourceEnvironmentName = std::forward<SourceEnvironmentNameT>(value); }
+    template<typename SourceEnvironmentNameT = Aws::String>
+    SwapEnvironmentCNAMEsRequest& WithSourceEnvironmentName(SourceEnvironmentNameT&& value) { SetSourceEnvironmentName(std::forward<SourceEnvironmentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +79,12 @@ namespace Model
      * specify the <code>SourceEnvironmentId</code> with the
      * <code>DestinationEnvironmentId</code>. </p>
      */
-    inline const Aws::String& GetDestinationEnvironmentId() const{ return m_destinationEnvironmentId; }
+    inline const Aws::String& GetDestinationEnvironmentId() const { return m_destinationEnvironmentId; }
     inline bool DestinationEnvironmentIdHasBeenSet() const { return m_destinationEnvironmentIdHasBeenSet; }
-    inline void SetDestinationEnvironmentId(const Aws::String& value) { m_destinationEnvironmentIdHasBeenSet = true; m_destinationEnvironmentId = value; }
-    inline void SetDestinationEnvironmentId(Aws::String&& value) { m_destinationEnvironmentIdHasBeenSet = true; m_destinationEnvironmentId = std::move(value); }
-    inline void SetDestinationEnvironmentId(const char* value) { m_destinationEnvironmentIdHasBeenSet = true; m_destinationEnvironmentId.assign(value); }
-    inline SwapEnvironmentCNAMEsRequest& WithDestinationEnvironmentId(const Aws::String& value) { SetDestinationEnvironmentId(value); return *this;}
-    inline SwapEnvironmentCNAMEsRequest& WithDestinationEnvironmentId(Aws::String&& value) { SetDestinationEnvironmentId(std::move(value)); return *this;}
-    inline SwapEnvironmentCNAMEsRequest& WithDestinationEnvironmentId(const char* value) { SetDestinationEnvironmentId(value); return *this;}
+    template<typename DestinationEnvironmentIdT = Aws::String>
+    void SetDestinationEnvironmentId(DestinationEnvironmentIdT&& value) { m_destinationEnvironmentIdHasBeenSet = true; m_destinationEnvironmentId = std::forward<DestinationEnvironmentIdT>(value); }
+    template<typename DestinationEnvironmentIdT = Aws::String>
+    SwapEnvironmentCNAMEsRequest& WithDestinationEnvironmentId(DestinationEnvironmentIdT&& value) { SetDestinationEnvironmentId(std::forward<DestinationEnvironmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +95,12 @@ namespace Model
      * specify the <code>SourceEnvironmentName</code> with the
      * <code>DestinationEnvironmentName</code>. </p>
      */
-    inline const Aws::String& GetDestinationEnvironmentName() const{ return m_destinationEnvironmentName; }
+    inline const Aws::String& GetDestinationEnvironmentName() const { return m_destinationEnvironmentName; }
     inline bool DestinationEnvironmentNameHasBeenSet() const { return m_destinationEnvironmentNameHasBeenSet; }
-    inline void SetDestinationEnvironmentName(const Aws::String& value) { m_destinationEnvironmentNameHasBeenSet = true; m_destinationEnvironmentName = value; }
-    inline void SetDestinationEnvironmentName(Aws::String&& value) { m_destinationEnvironmentNameHasBeenSet = true; m_destinationEnvironmentName = std::move(value); }
-    inline void SetDestinationEnvironmentName(const char* value) { m_destinationEnvironmentNameHasBeenSet = true; m_destinationEnvironmentName.assign(value); }
-    inline SwapEnvironmentCNAMEsRequest& WithDestinationEnvironmentName(const Aws::String& value) { SetDestinationEnvironmentName(value); return *this;}
-    inline SwapEnvironmentCNAMEsRequest& WithDestinationEnvironmentName(Aws::String&& value) { SetDestinationEnvironmentName(std::move(value)); return *this;}
-    inline SwapEnvironmentCNAMEsRequest& WithDestinationEnvironmentName(const char* value) { SetDestinationEnvironmentName(value); return *this;}
+    template<typename DestinationEnvironmentNameT = Aws::String>
+    void SetDestinationEnvironmentName(DestinationEnvironmentNameT&& value) { m_destinationEnvironmentNameHasBeenSet = true; m_destinationEnvironmentName = std::forward<DestinationEnvironmentNameT>(value); }
+    template<typename DestinationEnvironmentNameT = Aws::String>
+    SwapEnvironmentCNAMEsRequest& WithDestinationEnvironmentName(DestinationEnvironmentNameT&& value) { SetDestinationEnvironmentName(std::forward<DestinationEnvironmentNameT>(value)); return *this;}
     ///@}
   private:
 

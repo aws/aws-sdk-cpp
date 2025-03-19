@@ -32,7 +32,7 @@ namespace Model
   class Resource
   {
   public:
-    AWS_DATAZONE_API Resource();
+    AWS_DATAZONE_API Resource() = default;
     AWS_DATAZONE_API Resource(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of a provisioned resource of this Amazon DataZone environment.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Resource& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Resource& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Resource& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Resource& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,42 +55,36 @@ namespace Model
      * <p>The provider of a provisioned resource of this Amazon DataZone
      * environment.</p>
      */
-    inline const Aws::String& GetProvider() const{ return m_provider; }
+    inline const Aws::String& GetProvider() const { return m_provider; }
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
-    inline void SetProvider(const Aws::String& value) { m_providerHasBeenSet = true; m_provider = value; }
-    inline void SetProvider(Aws::String&& value) { m_providerHasBeenSet = true; m_provider = std::move(value); }
-    inline void SetProvider(const char* value) { m_providerHasBeenSet = true; m_provider.assign(value); }
-    inline Resource& WithProvider(const Aws::String& value) { SetProvider(value); return *this;}
-    inline Resource& WithProvider(Aws::String&& value) { SetProvider(std::move(value)); return *this;}
-    inline Resource& WithProvider(const char* value) { SetProvider(value); return *this;}
+    template<typename ProviderT = Aws::String>
+    void SetProvider(ProviderT&& value) { m_providerHasBeenSet = true; m_provider = std::forward<ProviderT>(value); }
+    template<typename ProviderT = Aws::String>
+    Resource& WithProvider(ProviderT&& value) { SetProvider(std::forward<ProviderT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of a provisioned resource of this Amazon DataZone environment.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline Resource& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline Resource& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline Resource& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    Resource& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of a provisioned resource of this Amazon DataZone environment.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline Resource& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline Resource& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline Resource& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    Resource& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

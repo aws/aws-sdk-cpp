@@ -13,19 +13,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateStorageProfileRequest::UpdateStorageProfileRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_farmIdHasBeenSet(false),
-    m_storageProfileIdHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_osFamily(StorageProfileOperatingSystemFamily::NOT_SET),
-    m_osFamilyHasBeenSet(false),
-    m_fileSystemLocationsToAddHasBeenSet(false),
-    m_fileSystemLocationsToRemoveHasBeenSet(false)
-{
-}
-
 Aws::String UpdateStorageProfileRequest::SerializePayload() const
 {
   JsonValue payload;

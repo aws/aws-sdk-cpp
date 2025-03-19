@@ -21,7 +21,7 @@ namespace Model
   class DescribeActionRequest : public IoTSiteWiseRequest
   {
   public:
-    AWS_IOTSITEWISE_API DescribeActionRequest();
+    AWS_IOTSITEWISE_API DescribeActionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID of the action.</p>
      */
-    inline const Aws::String& GetActionId() const{ return m_actionId; }
+    inline const Aws::String& GetActionId() const { return m_actionId; }
     inline bool ActionIdHasBeenSet() const { return m_actionIdHasBeenSet; }
-    inline void SetActionId(const Aws::String& value) { m_actionIdHasBeenSet = true; m_actionId = value; }
-    inline void SetActionId(Aws::String&& value) { m_actionIdHasBeenSet = true; m_actionId = std::move(value); }
-    inline void SetActionId(const char* value) { m_actionIdHasBeenSet = true; m_actionId.assign(value); }
-    inline DescribeActionRequest& WithActionId(const Aws::String& value) { SetActionId(value); return *this;}
-    inline DescribeActionRequest& WithActionId(Aws::String&& value) { SetActionId(std::move(value)); return *this;}
-    inline DescribeActionRequest& WithActionId(const char* value) { SetActionId(value); return *this;}
+    template<typename ActionIdT = Aws::String>
+    void SetActionId(ActionIdT&& value) { m_actionIdHasBeenSet = true; m_actionId = std::forward<ActionIdT>(value); }
+    template<typename ActionIdT = Aws::String>
+    DescribeActionRequest& WithActionId(ActionIdT&& value) { SetActionId(std::forward<ActionIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -31,7 +31,7 @@ namespace Model
   class SchemaFacet
   {
   public:
-    AWS_CLOUDDIRECTORY_API SchemaFacet();
+    AWS_CLOUDDIRECTORY_API SchemaFacet() = default;
     AWS_CLOUDDIRECTORY_API SchemaFacet(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API SchemaFacet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
      * Schema Upgrade</a> for a description of when to provide minor versions. If this
      * value is set, FacetName must also be set.</p>
      */
-    inline const Aws::String& GetSchemaArn() const{ return m_schemaArn; }
+    inline const Aws::String& GetSchemaArn() const { return m_schemaArn; }
     inline bool SchemaArnHasBeenSet() const { return m_schemaArnHasBeenSet; }
-    inline void SetSchemaArn(const Aws::String& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
-    inline void SetSchemaArn(Aws::String&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::move(value); }
-    inline void SetSchemaArn(const char* value) { m_schemaArnHasBeenSet = true; m_schemaArn.assign(value); }
-    inline SchemaFacet& WithSchemaArn(const Aws::String& value) { SetSchemaArn(value); return *this;}
-    inline SchemaFacet& WithSchemaArn(Aws::String&& value) { SetSchemaArn(std::move(value)); return *this;}
-    inline SchemaFacet& WithSchemaArn(const char* value) { SetSchemaArn(value); return *this;}
+    template<typename SchemaArnT = Aws::String>
+    void SetSchemaArn(SchemaArnT&& value) { m_schemaArnHasBeenSet = true; m_schemaArn = std::forward<SchemaArnT>(value); }
+    template<typename SchemaArnT = Aws::String>
+    SchemaFacet& WithSchemaArn(SchemaArnT&& value) { SetSchemaArn(std::forward<SchemaArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the facet. If this value is set, SchemaArn must also be set.</p>
      */
-    inline const Aws::String& GetFacetName() const{ return m_facetName; }
+    inline const Aws::String& GetFacetName() const { return m_facetName; }
     inline bool FacetNameHasBeenSet() const { return m_facetNameHasBeenSet; }
-    inline void SetFacetName(const Aws::String& value) { m_facetNameHasBeenSet = true; m_facetName = value; }
-    inline void SetFacetName(Aws::String&& value) { m_facetNameHasBeenSet = true; m_facetName = std::move(value); }
-    inline void SetFacetName(const char* value) { m_facetNameHasBeenSet = true; m_facetName.assign(value); }
-    inline SchemaFacet& WithFacetName(const Aws::String& value) { SetFacetName(value); return *this;}
-    inline SchemaFacet& WithFacetName(Aws::String&& value) { SetFacetName(std::move(value)); return *this;}
-    inline SchemaFacet& WithFacetName(const char* value) { SetFacetName(value); return *this;}
+    template<typename FacetNameT = Aws::String>
+    void SetFacetName(FacetNameT&& value) { m_facetNameHasBeenSet = true; m_facetName = std::forward<FacetNameT>(value); }
+    template<typename FacetNameT = Aws::String>
+    SchemaFacet& WithFacetName(FacetNameT&& value) { SetFacetName(std::forward<FacetNameT>(value)); return *this;}
     ///@}
   private:
 

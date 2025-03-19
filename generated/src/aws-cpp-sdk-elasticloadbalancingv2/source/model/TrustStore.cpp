@@ -20,20 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-TrustStore::TrustStore() : 
-    m_nameHasBeenSet(false),
-    m_trustStoreArnHasBeenSet(false),
-    m_status(TrustStoreStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_numberOfCaCertificates(0),
-    m_numberOfCaCertificatesHasBeenSet(false),
-    m_totalRevokedEntries(0),
-    m_totalRevokedEntriesHasBeenSet(false)
-{
-}
-
 TrustStore::TrustStore(const XmlNode& xmlNode)
-  : TrustStore()
 {
   *this = xmlNode;
 }
@@ -59,7 +46,7 @@ TrustStore& TrustStore::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = TrustStoreStatusMapper::GetTrustStoreStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = TrustStoreStatusMapper::GetTrustStoreStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode numberOfCaCertificatesNode = resultNode.FirstChild("NumberOfCaCertificates");

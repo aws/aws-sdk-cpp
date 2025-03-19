@@ -32,7 +32,7 @@ namespace Model
   class LoadingAnimation
   {
   public:
-    AWS_QUICKSIGHT_API LoadingAnimation();
+    AWS_QUICKSIGHT_API LoadingAnimation() = default;
     AWS_QUICKSIGHT_API LoadingAnimation(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API LoadingAnimation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The visibility configuration of <code>LoadingAnimation</code>.</p>
      */
-    inline const Visibility& GetVisibility() const{ return m_visibility; }
+    inline Visibility GetVisibility() const { return m_visibility; }
     inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
-    inline void SetVisibility(const Visibility& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
-    inline void SetVisibility(Visibility&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
-    inline LoadingAnimation& WithVisibility(const Visibility& value) { SetVisibility(value); return *this;}
-    inline LoadingAnimation& WithVisibility(Visibility&& value) { SetVisibility(std::move(value)); return *this;}
+    inline void SetVisibility(Visibility value) { m_visibilityHasBeenSet = true; m_visibility = value; }
+    inline LoadingAnimation& WithVisibility(Visibility value) { SetVisibility(value); return *this;}
     ///@}
   private:
 
-    Visibility m_visibility;
+    Visibility m_visibility{Visibility::NOT_SET};
     bool m_visibilityHasBeenSet = false;
   };
 

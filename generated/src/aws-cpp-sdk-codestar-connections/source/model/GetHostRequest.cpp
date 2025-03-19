@@ -12,11 +12,6 @@ using namespace Aws::CodeStarconnections::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetHostRequest::GetHostRequest() : 
-    m_hostArnHasBeenSet(false)
-{
-}
-
 Aws::String GetHostRequest::SerializePayload() const
 {
   JsonValue payload;

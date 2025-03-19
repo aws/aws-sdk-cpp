@@ -28,7 +28,7 @@ namespace Model
   class UpdateBandwidthRateLimitRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API UpdateBandwidthRateLimitRequest();
+    AWS_STORAGEGATEWAY_API UpdateBandwidthRateLimitRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,21 +43,19 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
+    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
-    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
-    inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
-    inline UpdateBandwidthRateLimitRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-    inline UpdateBandwidthRateLimitRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-    inline UpdateBandwidthRateLimitRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    template<typename GatewayARNT = Aws::String>
+    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
+    template<typename GatewayARNT = Aws::String>
+    UpdateBandwidthRateLimitRequest& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The average upload bandwidth rate limit in bits per second.</p>
      */
-    inline long long GetAverageUploadRateLimitInBitsPerSec() const{ return m_averageUploadRateLimitInBitsPerSec; }
+    inline long long GetAverageUploadRateLimitInBitsPerSec() const { return m_averageUploadRateLimitInBitsPerSec; }
     inline bool AverageUploadRateLimitInBitsPerSecHasBeenSet() const { return m_averageUploadRateLimitInBitsPerSecHasBeenSet; }
     inline void SetAverageUploadRateLimitInBitsPerSec(long long value) { m_averageUploadRateLimitInBitsPerSecHasBeenSet = true; m_averageUploadRateLimitInBitsPerSec = value; }
     inline UpdateBandwidthRateLimitRequest& WithAverageUploadRateLimitInBitsPerSec(long long value) { SetAverageUploadRateLimitInBitsPerSec(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     /**
      * <p>The average download bandwidth rate limit in bits per second.</p>
      */
-    inline long long GetAverageDownloadRateLimitInBitsPerSec() const{ return m_averageDownloadRateLimitInBitsPerSec; }
+    inline long long GetAverageDownloadRateLimitInBitsPerSec() const { return m_averageDownloadRateLimitInBitsPerSec; }
     inline bool AverageDownloadRateLimitInBitsPerSecHasBeenSet() const { return m_averageDownloadRateLimitInBitsPerSecHasBeenSet; }
     inline void SetAverageDownloadRateLimitInBitsPerSec(long long value) { m_averageDownloadRateLimitInBitsPerSecHasBeenSet = true; m_averageDownloadRateLimitInBitsPerSec = value; }
     inline UpdateBandwidthRateLimitRequest& WithAverageDownloadRateLimitInBitsPerSec(long long value) { SetAverageDownloadRateLimitInBitsPerSec(value); return *this;}
@@ -77,10 +75,10 @@ namespace Model
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet = false;
 
-    long long m_averageUploadRateLimitInBitsPerSec;
+    long long m_averageUploadRateLimitInBitsPerSec{0};
     bool m_averageUploadRateLimitInBitsPerSecHasBeenSet = false;
 
-    long long m_averageDownloadRateLimitInBitsPerSec;
+    long long m_averageDownloadRateLimitInBitsPerSec{0};
     bool m_averageDownloadRateLimitInBitsPerSecHasBeenSet = false;
   };
 

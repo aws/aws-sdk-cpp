@@ -11,15 +11,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ImportKeyPairRequest::ImportKeyPairRequest() : 
-    m_tagSpecificationsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_keyNameHasBeenSet(false),
-    m_publicKeyMaterialHasBeenSet(false)
-{
-}
-
 Aws::String ImportKeyPairRequest::SerializePayload() const
 {
   Aws::StringStream ss;

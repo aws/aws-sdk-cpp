@@ -12,11 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteGlobalNetworkRequest::DeleteGlobalNetworkRequest() : 
-    m_globalNetworkIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteGlobalNetworkRequest::SerializePayload() const
 {
   return {};

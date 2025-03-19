@@ -18,14 +18,7 @@ namespace Snowball
 namespace Model
 {
 
-InvalidResourceException::InvalidResourceException() : 
-    m_messageHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 InvalidResourceException::InvalidResourceException(JsonView jsonValue)
-  : InvalidResourceException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InvalidResourceException& InvalidResourceException::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

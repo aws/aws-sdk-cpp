@@ -27,7 +27,7 @@ namespace Model
   class GetNotificationChannelResult
   {
   public:
-    AWS_FMS_API GetNotificationChannelResult();
+    AWS_FMS_API GetNotificationChannelResult() = default;
     AWS_FMS_API GetNotificationChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FMS_API GetNotificationChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The SNS topic that records Firewall Manager activity. </p>
      */
-    inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
-    inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArn = value; }
-    inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArn = std::move(value); }
-    inline void SetSnsTopicArn(const char* value) { m_snsTopicArn.assign(value); }
-    inline GetNotificationChannelResult& WithSnsTopicArn(const Aws::String& value) { SetSnsTopicArn(value); return *this;}
-    inline GetNotificationChannelResult& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(std::move(value)); return *this;}
-    inline GetNotificationChannelResult& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
+    inline const Aws::String& GetSnsTopicArn() const { return m_snsTopicArn; }
+    template<typename SnsTopicArnT = Aws::String>
+    void SetSnsTopicArn(SnsTopicArnT&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::forward<SnsTopicArnT>(value); }
+    template<typename SnsTopicArnT = Aws::String>
+    GetNotificationChannelResult& WithSnsTopicArn(SnsTopicArnT&& value) { SetSnsTopicArn(std::forward<SnsTopicArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IAM role that is used by Firewall Manager to record activity to SNS.</p>
      */
-    inline const Aws::String& GetSnsRoleName() const{ return m_snsRoleName; }
-    inline void SetSnsRoleName(const Aws::String& value) { m_snsRoleName = value; }
-    inline void SetSnsRoleName(Aws::String&& value) { m_snsRoleName = std::move(value); }
-    inline void SetSnsRoleName(const char* value) { m_snsRoleName.assign(value); }
-    inline GetNotificationChannelResult& WithSnsRoleName(const Aws::String& value) { SetSnsRoleName(value); return *this;}
-    inline GetNotificationChannelResult& WithSnsRoleName(Aws::String&& value) { SetSnsRoleName(std::move(value)); return *this;}
-    inline GetNotificationChannelResult& WithSnsRoleName(const char* value) { SetSnsRoleName(value); return *this;}
+    inline const Aws::String& GetSnsRoleName() const { return m_snsRoleName; }
+    template<typename SnsRoleNameT = Aws::String>
+    void SetSnsRoleName(SnsRoleNameT&& value) { m_snsRoleNameHasBeenSet = true; m_snsRoleName = std::forward<SnsRoleNameT>(value); }
+    template<typename SnsRoleNameT = Aws::String>
+    GetNotificationChannelResult& WithSnsRoleName(SnsRoleNameT&& value) { SetSnsRoleName(std::forward<SnsRoleNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetNotificationChannelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetNotificationChannelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetNotificationChannelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetNotificationChannelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_snsTopicArn;
+    bool m_snsTopicArnHasBeenSet = false;
 
     Aws::String m_snsRoleName;
+    bool m_snsRoleNameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

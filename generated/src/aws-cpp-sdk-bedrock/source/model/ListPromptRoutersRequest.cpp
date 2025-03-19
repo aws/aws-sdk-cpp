@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListPromptRoutersRequest::ListPromptRoutersRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_type(PromptRouterType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String ListPromptRoutersRequest::SerializePayload() const
 {
   return {};

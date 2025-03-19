@@ -10,17 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-ModifyDBShardGroupRequest::ModifyDBShardGroupRequest() : 
-    m_dBShardGroupIdentifierHasBeenSet(false),
-    m_maxACU(0.0),
-    m_maxACUHasBeenSet(false),
-    m_minACU(0.0),
-    m_minACUHasBeenSet(false),
-    m_computeRedundancy(0),
-    m_computeRedundancyHasBeenSet(false)
-{
-}
-
 Aws::String ModifyDBShardGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

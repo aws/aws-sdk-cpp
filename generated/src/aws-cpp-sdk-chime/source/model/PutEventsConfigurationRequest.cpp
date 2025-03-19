@@ -12,14 +12,6 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutEventsConfigurationRequest::PutEventsConfigurationRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_botIdHasBeenSet(false),
-    m_outboundEventsHTTPSEndpointHasBeenSet(false),
-    m_lambdaFunctionArnHasBeenSet(false)
-{
-}
-
 Aws::String PutEventsConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

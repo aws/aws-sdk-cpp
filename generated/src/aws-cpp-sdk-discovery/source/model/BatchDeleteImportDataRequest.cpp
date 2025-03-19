@@ -12,13 +12,6 @@ using namespace Aws::ApplicationDiscoveryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDeleteImportDataRequest::BatchDeleteImportDataRequest() : 
-    m_importTaskIdsHasBeenSet(false),
-    m_deleteHistory(false),
-    m_deleteHistoryHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeleteImportDataRequest::SerializePayload() const
 {
   JsonValue payload;

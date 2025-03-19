@@ -18,13 +18,7 @@ namespace ChimeSDKMessaging
 namespace Model
 {
 
-ChannelMembershipPreferences::ChannelMembershipPreferences() : 
-    m_pushNotificationsHasBeenSet(false)
-{
-}
-
 ChannelMembershipPreferences::ChannelMembershipPreferences(JsonView jsonValue)
-  : ChannelMembershipPreferences()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ChannelMembershipPreferences& ChannelMembershipPreferences::operator =(JsonView 
   if(jsonValue.ValueExists("PushNotifications"))
   {
     m_pushNotifications = jsonValue.GetObject("PushNotifications");
-
     m_pushNotificationsHasBeenSet = true;
   }
-
   return *this;
 }
 

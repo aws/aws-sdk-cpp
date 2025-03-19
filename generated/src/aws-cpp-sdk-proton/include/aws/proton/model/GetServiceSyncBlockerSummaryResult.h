@@ -28,7 +28,7 @@ namespace Model
   class GetServiceSyncBlockerSummaryResult
   {
   public:
-    AWS_PROTON_API GetServiceSyncBlockerSummaryResult();
+    AWS_PROTON_API GetServiceSyncBlockerSummaryResult() = default;
     AWS_PROTON_API GetServiceSyncBlockerSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PROTON_API GetServiceSyncBlockerSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The detailed data of the requested service sync blocker summary.</p>
      */
-    inline const ServiceSyncBlockerSummary& GetServiceSyncBlockerSummary() const{ return m_serviceSyncBlockerSummary; }
-    inline void SetServiceSyncBlockerSummary(const ServiceSyncBlockerSummary& value) { m_serviceSyncBlockerSummary = value; }
-    inline void SetServiceSyncBlockerSummary(ServiceSyncBlockerSummary&& value) { m_serviceSyncBlockerSummary = std::move(value); }
-    inline GetServiceSyncBlockerSummaryResult& WithServiceSyncBlockerSummary(const ServiceSyncBlockerSummary& value) { SetServiceSyncBlockerSummary(value); return *this;}
-    inline GetServiceSyncBlockerSummaryResult& WithServiceSyncBlockerSummary(ServiceSyncBlockerSummary&& value) { SetServiceSyncBlockerSummary(std::move(value)); return *this;}
+    inline const ServiceSyncBlockerSummary& GetServiceSyncBlockerSummary() const { return m_serviceSyncBlockerSummary; }
+    template<typename ServiceSyncBlockerSummaryT = ServiceSyncBlockerSummary>
+    void SetServiceSyncBlockerSummary(ServiceSyncBlockerSummaryT&& value) { m_serviceSyncBlockerSummaryHasBeenSet = true; m_serviceSyncBlockerSummary = std::forward<ServiceSyncBlockerSummaryT>(value); }
+    template<typename ServiceSyncBlockerSummaryT = ServiceSyncBlockerSummary>
+    GetServiceSyncBlockerSummaryResult& WithServiceSyncBlockerSummary(ServiceSyncBlockerSummaryT&& value) { SetServiceSyncBlockerSummary(std::forward<ServiceSyncBlockerSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetServiceSyncBlockerSummaryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetServiceSyncBlockerSummaryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetServiceSyncBlockerSummaryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetServiceSyncBlockerSummaryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ServiceSyncBlockerSummary m_serviceSyncBlockerSummary;
+    bool m_serviceSyncBlockerSummaryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

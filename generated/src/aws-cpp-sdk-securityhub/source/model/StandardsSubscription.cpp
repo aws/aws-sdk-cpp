@@ -18,20 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-StandardsSubscription::StandardsSubscription() : 
-    m_standardsSubscriptionArnHasBeenSet(false),
-    m_standardsArnHasBeenSet(false),
-    m_standardsInputHasBeenSet(false),
-    m_standardsStatus(StandardsStatus::NOT_SET),
-    m_standardsStatusHasBeenSet(false),
-    m_standardsControlsUpdatable(StandardsControlsUpdatable::NOT_SET),
-    m_standardsControlsUpdatableHasBeenSet(false),
-    m_standardsStatusReasonHasBeenSet(false)
-{
-}
-
 StandardsSubscription::StandardsSubscription(JsonView jsonValue)
-  : StandardsSubscription()
 {
   *this = jsonValue;
 }
@@ -41,17 +28,13 @@ StandardsSubscription& StandardsSubscription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StandardsSubscriptionArn"))
   {
     m_standardsSubscriptionArn = jsonValue.GetString("StandardsSubscriptionArn");
-
     m_standardsSubscriptionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StandardsArn"))
   {
     m_standardsArn = jsonValue.GetString("StandardsArn");
-
     m_standardsArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StandardsInput"))
   {
     Aws::Map<Aws::String, JsonView> standardsInputJsonMap = jsonValue.GetObject("StandardsInput").GetAllObjects();
@@ -61,28 +44,21 @@ StandardsSubscription& StandardsSubscription::operator =(JsonView jsonValue)
     }
     m_standardsInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StandardsStatus"))
   {
     m_standardsStatus = StandardsStatusMapper::GetStandardsStatusForName(jsonValue.GetString("StandardsStatus"));
-
     m_standardsStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StandardsControlsUpdatable"))
   {
     m_standardsControlsUpdatable = StandardsControlsUpdatableMapper::GetStandardsControlsUpdatableForName(jsonValue.GetString("StandardsControlsUpdatable"));
-
     m_standardsControlsUpdatableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StandardsStatusReason"))
   {
     m_standardsStatusReason = jsonValue.GetObject("StandardsStatusReason");
-
     m_standardsStatusReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

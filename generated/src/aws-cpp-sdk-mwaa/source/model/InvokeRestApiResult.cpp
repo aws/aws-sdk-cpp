@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-InvokeRestApiResult::InvokeRestApiResult() : 
-    m_restApiStatusCode(0)
-{
-}
-
 InvokeRestApiResult::InvokeRestApiResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : InvokeRestApiResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ InvokeRestApiResult& InvokeRestApiResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("RestApiStatusCode"))
   {
     m_restApiStatusCode = jsonValue.GetInteger("RestApiStatusCode");
-
+    m_restApiStatusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RestApiResponse"))
   {
     m_restApiResponse = jsonValue.GetObject("RestApiResponse");
-
+    m_restApiResponseHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

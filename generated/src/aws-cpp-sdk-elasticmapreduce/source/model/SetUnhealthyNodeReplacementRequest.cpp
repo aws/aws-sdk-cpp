@@ -12,13 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SetUnhealthyNodeReplacementRequest::SetUnhealthyNodeReplacementRequest() : 
-    m_jobFlowIdsHasBeenSet(false),
-    m_unhealthyNodeReplacement(false),
-    m_unhealthyNodeReplacementHasBeenSet(false)
-{
-}
-
 Aws::String SetUnhealthyNodeReplacementRequest::SerializePayload() const
 {
   JsonValue payload;

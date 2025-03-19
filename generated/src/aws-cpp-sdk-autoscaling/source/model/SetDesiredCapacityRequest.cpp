@@ -10,15 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-SetDesiredCapacityRequest::SetDesiredCapacityRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_desiredCapacity(0),
-    m_desiredCapacityHasBeenSet(false),
-    m_honorCooldown(false),
-    m_honorCooldownHasBeenSet(false)
-{
-}
-
 Aws::String SetDesiredCapacityRequest::SerializePayload() const
 {
   Aws::StringStream ss;

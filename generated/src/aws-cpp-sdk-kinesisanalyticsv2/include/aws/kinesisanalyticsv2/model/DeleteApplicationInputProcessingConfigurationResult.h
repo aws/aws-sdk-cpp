@@ -27,7 +27,7 @@ namespace Model
   class DeleteApplicationInputProcessingConfigurationResult
   {
   public:
-    AWS_KINESISANALYTICSV2_API DeleteApplicationInputProcessingConfigurationResult();
+    AWS_KINESISANALYTICSV2_API DeleteApplicationInputProcessingConfigurationResult() = default;
     AWS_KINESISANALYTICSV2_API DeleteApplicationInputProcessingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KINESISANALYTICSV2_API DeleteApplicationInputProcessingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,41 +36,40 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
-    inline const Aws::String& GetApplicationARN() const{ return m_applicationARN; }
-    inline void SetApplicationARN(const Aws::String& value) { m_applicationARN = value; }
-    inline void SetApplicationARN(Aws::String&& value) { m_applicationARN = std::move(value); }
-    inline void SetApplicationARN(const char* value) { m_applicationARN.assign(value); }
-    inline DeleteApplicationInputProcessingConfigurationResult& WithApplicationARN(const Aws::String& value) { SetApplicationARN(value); return *this;}
-    inline DeleteApplicationInputProcessingConfigurationResult& WithApplicationARN(Aws::String&& value) { SetApplicationARN(std::move(value)); return *this;}
-    inline DeleteApplicationInputProcessingConfigurationResult& WithApplicationARN(const char* value) { SetApplicationARN(value); return *this;}
+    inline const Aws::String& GetApplicationARN() const { return m_applicationARN; }
+    template<typename ApplicationARNT = Aws::String>
+    void SetApplicationARN(ApplicationARNT&& value) { m_applicationARNHasBeenSet = true; m_applicationARN = std::forward<ApplicationARNT>(value); }
+    template<typename ApplicationARNT = Aws::String>
+    DeleteApplicationInputProcessingConfigurationResult& WithApplicationARN(ApplicationARNT&& value) { SetApplicationARN(std::forward<ApplicationARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current application version ID.</p>
      */
-    inline long long GetApplicationVersionId() const{ return m_applicationVersionId; }
-    inline void SetApplicationVersionId(long long value) { m_applicationVersionId = value; }
+    inline long long GetApplicationVersionId() const { return m_applicationVersionId; }
+    inline void SetApplicationVersionId(long long value) { m_applicationVersionIdHasBeenSet = true; m_applicationVersionId = value; }
     inline DeleteApplicationInputProcessingConfigurationResult& WithApplicationVersionId(long long value) { SetApplicationVersionId(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteApplicationInputProcessingConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteApplicationInputProcessingConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteApplicationInputProcessingConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteApplicationInputProcessingConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_applicationARN;
+    bool m_applicationARNHasBeenSet = false;
 
-    long long m_applicationVersionId;
+    long long m_applicationVersionId{0};
+    bool m_applicationVersionIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

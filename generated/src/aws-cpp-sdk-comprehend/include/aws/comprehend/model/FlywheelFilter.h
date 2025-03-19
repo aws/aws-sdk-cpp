@@ -33,7 +33,7 @@ namespace Model
   class FlywheelFilter
   {
   public:
-    AWS_COMPREHEND_API FlywheelFilter();
+    AWS_COMPREHEND_API FlywheelFilter() = default;
     AWS_COMPREHEND_API FlywheelFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API FlywheelFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>Filter the flywheels based on the flywheel status.</p>
      */
-    inline const FlywheelStatus& GetStatus() const{ return m_status; }
+    inline FlywheelStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const FlywheelStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(FlywheelStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline FlywheelFilter& WithStatus(const FlywheelStatus& value) { SetStatus(value); return *this;}
-    inline FlywheelFilter& WithStatus(FlywheelStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(FlywheelStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline FlywheelFilter& WithStatus(FlywheelStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +54,12 @@ namespace Model
      * <p>Filter the flywheels to include flywheels created after the specified
      * time.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTimeAfter() const{ return m_creationTimeAfter; }
+    inline const Aws::Utils::DateTime& GetCreationTimeAfter() const { return m_creationTimeAfter; }
     inline bool CreationTimeAfterHasBeenSet() const { return m_creationTimeAfterHasBeenSet; }
-    inline void SetCreationTimeAfter(const Aws::Utils::DateTime& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = value; }
-    inline void SetCreationTimeAfter(Aws::Utils::DateTime&& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = std::move(value); }
-    inline FlywheelFilter& WithCreationTimeAfter(const Aws::Utils::DateTime& value) { SetCreationTimeAfter(value); return *this;}
-    inline FlywheelFilter& WithCreationTimeAfter(Aws::Utils::DateTime&& value) { SetCreationTimeAfter(std::move(value)); return *this;}
+    template<typename CreationTimeAfterT = Aws::Utils::DateTime>
+    void SetCreationTimeAfter(CreationTimeAfterT&& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = std::forward<CreationTimeAfterT>(value); }
+    template<typename CreationTimeAfterT = Aws::Utils::DateTime>
+    FlywheelFilter& WithCreationTimeAfter(CreationTimeAfterT&& value) { SetCreationTimeAfter(std::forward<CreationTimeAfterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,22 +67,22 @@ namespace Model
      * <p>Filter the flywheels to include flywheels created before the specified
      * time.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTimeBefore() const{ return m_creationTimeBefore; }
+    inline const Aws::Utils::DateTime& GetCreationTimeBefore() const { return m_creationTimeBefore; }
     inline bool CreationTimeBeforeHasBeenSet() const { return m_creationTimeBeforeHasBeenSet; }
-    inline void SetCreationTimeBefore(const Aws::Utils::DateTime& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = value; }
-    inline void SetCreationTimeBefore(Aws::Utils::DateTime&& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = std::move(value); }
-    inline FlywheelFilter& WithCreationTimeBefore(const Aws::Utils::DateTime& value) { SetCreationTimeBefore(value); return *this;}
-    inline FlywheelFilter& WithCreationTimeBefore(Aws::Utils::DateTime&& value) { SetCreationTimeBefore(std::move(value)); return *this;}
+    template<typename CreationTimeBeforeT = Aws::Utils::DateTime>
+    void SetCreationTimeBefore(CreationTimeBeforeT&& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = std::forward<CreationTimeBeforeT>(value); }
+    template<typename CreationTimeBeforeT = Aws::Utils::DateTime>
+    FlywheelFilter& WithCreationTimeBefore(CreationTimeBeforeT&& value) { SetCreationTimeBefore(std::forward<CreationTimeBeforeT>(value)); return *this;}
     ///@}
   private:
 
-    FlywheelStatus m_status;
+    FlywheelStatus m_status{FlywheelStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTimeAfter;
+    Aws::Utils::DateTime m_creationTimeAfter{};
     bool m_creationTimeAfterHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTimeBefore;
+    Aws::Utils::DateTime m_creationTimeBefore{};
     bool m_creationTimeBeforeHasBeenSet = false;
   };
 

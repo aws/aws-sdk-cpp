@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-InvocationInputMember::InvocationInputMember() : 
-    m_apiInvocationInputHasBeenSet(false),
-    m_functionInvocationInputHasBeenSet(false)
-{
-}
-
 InvocationInputMember::InvocationInputMember(JsonView jsonValue)
-  : InvocationInputMember()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InvocationInputMember& InvocationInputMember::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("apiInvocationInput"))
   {
     m_apiInvocationInput = jsonValue.GetObject("apiInvocationInput");
-
     m_apiInvocationInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("functionInvocationInput"))
   {
     m_functionInvocationInput = jsonValue.GetObject("functionInvocationInput");
-
     m_functionInvocationInputHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -35,7 +35,7 @@ namespace Model
   class AssignContactCategoryActionDefinition
   {
   public:
-    AWS_CONNECT_API AssignContactCategoryActionDefinition();
+    AWS_CONNECT_API AssignContactCategoryActionDefinition() = default;
     AWS_CONNECT_API AssignContactCategoryActionDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API AssignContactCategoryActionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;

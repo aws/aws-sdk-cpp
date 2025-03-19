@@ -32,7 +32,7 @@ namespace Model
   class MulticastWirelessMetadata
   {
   public:
-    AWS_IOTWIRELESS_API MulticastWirelessMetadata();
+    AWS_IOTWIRELESS_API MulticastWirelessMetadata() = default;
     AWS_IOTWIRELESS_API MulticastWirelessMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API MulticastWirelessMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const LoRaWANMulticastMetadata& GetLoRaWAN() const{ return m_loRaWAN; }
+    inline const LoRaWANMulticastMetadata& GetLoRaWAN() const { return m_loRaWAN; }
     inline bool LoRaWANHasBeenSet() const { return m_loRaWANHasBeenSet; }
-    inline void SetLoRaWAN(const LoRaWANMulticastMetadata& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = value; }
-    inline void SetLoRaWAN(LoRaWANMulticastMetadata&& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = std::move(value); }
-    inline MulticastWirelessMetadata& WithLoRaWAN(const LoRaWANMulticastMetadata& value) { SetLoRaWAN(value); return *this;}
-    inline MulticastWirelessMetadata& WithLoRaWAN(LoRaWANMulticastMetadata&& value) { SetLoRaWAN(std::move(value)); return *this;}
+    template<typename LoRaWANT = LoRaWANMulticastMetadata>
+    void SetLoRaWAN(LoRaWANT&& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = std::forward<LoRaWANT>(value); }
+    template<typename LoRaWANT = LoRaWANMulticastMetadata>
+    MulticastWirelessMetadata& WithLoRaWAN(LoRaWANT&& value) { SetLoRaWAN(std::forward<LoRaWANT>(value)); return *this;}
     ///@}
   private:
 

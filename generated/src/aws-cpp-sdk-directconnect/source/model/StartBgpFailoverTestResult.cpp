@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartBgpFailoverTestResult::StartBgpFailoverTestResult()
-{
-}
-
 StartBgpFailoverTestResult::StartBgpFailoverTestResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ StartBgpFailoverTestResult& StartBgpFailoverTestResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("virtualInterfaceTest"))
   {
     m_virtualInterfaceTest = jsonValue.GetObject("virtualInterfaceTest");
-
+    m_virtualInterfaceTestHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ChangeResourceRecordSetsResult::ChangeResourceRecordSetsResult()
-{
-}
-
 ChangeResourceRecordSetsResult::ChangeResourceRecordSetsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ ChangeResourceRecordSetsResult& ChangeResourceRecordSetsResult::operator =(const
     if(!changeInfoNode.IsNull())
     {
       m_changeInfo = changeInfoNode;
+      m_changeInfoHasBeenSet = true;
     }
   }
 
@@ -44,6 +41,7 @@ ChangeResourceRecordSetsResult& ChangeResourceRecordSetsResult::operator =(const
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

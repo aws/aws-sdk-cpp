@@ -35,7 +35,7 @@ namespace Model
   class SessionChainingConfig
   {
   public:
-    AWS_SAGEMAKER_API SessionChainingConfig();
+    AWS_SAGEMAKER_API SessionChainingConfig() = default;
     AWS_SAGEMAKER_API SessionChainingConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API SessionChainingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,14 @@ namespace Model
      * training job creation role and reuse these tags when assuming the training job
      * execution role.</p>
      */
-    inline bool GetEnableSessionTagChaining() const{ return m_enableSessionTagChaining; }
+    inline bool GetEnableSessionTagChaining() const { return m_enableSessionTagChaining; }
     inline bool EnableSessionTagChainingHasBeenSet() const { return m_enableSessionTagChainingHasBeenSet; }
     inline void SetEnableSessionTagChaining(bool value) { m_enableSessionTagChainingHasBeenSet = true; m_enableSessionTagChaining = value; }
     inline SessionChainingConfig& WithEnableSessionTagChaining(bool value) { SetEnableSessionTagChaining(value); return *this;}
     ///@}
   private:
 
-    bool m_enableSessionTagChaining;
+    bool m_enableSessionTagChaining{false};
     bool m_enableSessionTagChainingHasBeenSet = false;
   };
 

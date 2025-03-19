@@ -12,17 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateWirelessGatewayRequest::UpdateWirelessGatewayRequest() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_joinEuiFiltersHasBeenSet(false),
-    m_netIdFiltersHasBeenSet(false),
-    m_maxEirp(0.0),
-    m_maxEirpHasBeenSet(false)
-{
-}
-
 Aws::String UpdateWirelessGatewayRequest::SerializePayload() const
 {
   JsonValue payload;

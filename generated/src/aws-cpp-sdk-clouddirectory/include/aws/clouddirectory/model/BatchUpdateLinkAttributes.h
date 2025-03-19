@@ -37,7 +37,7 @@ namespace Model
   class BatchUpdateLinkAttributes
   {
   public:
-    AWS_CLOUDDIRECTORY_API BatchUpdateLinkAttributes();
+    AWS_CLOUDDIRECTORY_API BatchUpdateLinkAttributes() = default;
     AWS_CLOUDDIRECTORY_API BatchUpdateLinkAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API BatchUpdateLinkAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,26 +47,26 @@ namespace Model
     /**
      * <p>Allows a typed link specifier to be accepted as input.</p>
      */
-    inline const TypedLinkSpecifier& GetTypedLinkSpecifier() const{ return m_typedLinkSpecifier; }
+    inline const TypedLinkSpecifier& GetTypedLinkSpecifier() const { return m_typedLinkSpecifier; }
     inline bool TypedLinkSpecifierHasBeenSet() const { return m_typedLinkSpecifierHasBeenSet; }
-    inline void SetTypedLinkSpecifier(const TypedLinkSpecifier& value) { m_typedLinkSpecifierHasBeenSet = true; m_typedLinkSpecifier = value; }
-    inline void SetTypedLinkSpecifier(TypedLinkSpecifier&& value) { m_typedLinkSpecifierHasBeenSet = true; m_typedLinkSpecifier = std::move(value); }
-    inline BatchUpdateLinkAttributes& WithTypedLinkSpecifier(const TypedLinkSpecifier& value) { SetTypedLinkSpecifier(value); return *this;}
-    inline BatchUpdateLinkAttributes& WithTypedLinkSpecifier(TypedLinkSpecifier&& value) { SetTypedLinkSpecifier(std::move(value)); return *this;}
+    template<typename TypedLinkSpecifierT = TypedLinkSpecifier>
+    void SetTypedLinkSpecifier(TypedLinkSpecifierT&& value) { m_typedLinkSpecifierHasBeenSet = true; m_typedLinkSpecifier = std::forward<TypedLinkSpecifierT>(value); }
+    template<typename TypedLinkSpecifierT = TypedLinkSpecifier>
+    BatchUpdateLinkAttributes& WithTypedLinkSpecifier(TypedLinkSpecifierT&& value) { SetTypedLinkSpecifier(std::forward<TypedLinkSpecifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The attributes update structure.</p>
      */
-    inline const Aws::Vector<LinkAttributeUpdate>& GetAttributeUpdates() const{ return m_attributeUpdates; }
+    inline const Aws::Vector<LinkAttributeUpdate>& GetAttributeUpdates() const { return m_attributeUpdates; }
     inline bool AttributeUpdatesHasBeenSet() const { return m_attributeUpdatesHasBeenSet; }
-    inline void SetAttributeUpdates(const Aws::Vector<LinkAttributeUpdate>& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates = value; }
-    inline void SetAttributeUpdates(Aws::Vector<LinkAttributeUpdate>&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates = std::move(value); }
-    inline BatchUpdateLinkAttributes& WithAttributeUpdates(const Aws::Vector<LinkAttributeUpdate>& value) { SetAttributeUpdates(value); return *this;}
-    inline BatchUpdateLinkAttributes& WithAttributeUpdates(Aws::Vector<LinkAttributeUpdate>&& value) { SetAttributeUpdates(std::move(value)); return *this;}
-    inline BatchUpdateLinkAttributes& AddAttributeUpdates(const LinkAttributeUpdate& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.push_back(value); return *this; }
-    inline BatchUpdateLinkAttributes& AddAttributeUpdates(LinkAttributeUpdate&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.push_back(std::move(value)); return *this; }
+    template<typename AttributeUpdatesT = Aws::Vector<LinkAttributeUpdate>>
+    void SetAttributeUpdates(AttributeUpdatesT&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates = std::forward<AttributeUpdatesT>(value); }
+    template<typename AttributeUpdatesT = Aws::Vector<LinkAttributeUpdate>>
+    BatchUpdateLinkAttributes& WithAttributeUpdates(AttributeUpdatesT&& value) { SetAttributeUpdates(std::forward<AttributeUpdatesT>(value)); return *this;}
+    template<typename AttributeUpdatesT = LinkAttributeUpdate>
+    BatchUpdateLinkAttributes& AddAttributeUpdates(AttributeUpdatesT&& value) { m_attributeUpdatesHasBeenSet = true; m_attributeUpdates.emplace_back(std::forward<AttributeUpdatesT>(value)); return *this; }
     ///@}
   private:
 

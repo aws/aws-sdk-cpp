@@ -31,7 +31,7 @@ namespace Model
   class ImpactedAwsRegion
   {
   public:
-    AWS_SECURITYIR_API ImpactedAwsRegion();
+    AWS_SECURITYIR_API ImpactedAwsRegion() = default;
     AWS_SECURITYIR_API ImpactedAwsRegion(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYIR_API ImpactedAwsRegion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYIR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p/>
      */
-    inline const AwsRegion& GetRegion() const{ return m_region; }
+    inline AwsRegion GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const AwsRegion& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(AwsRegion&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline ImpactedAwsRegion& WithRegion(const AwsRegion& value) { SetRegion(value); return *this;}
-    inline ImpactedAwsRegion& WithRegion(AwsRegion&& value) { SetRegion(std::move(value)); return *this;}
+    inline void SetRegion(AwsRegion value) { m_regionHasBeenSet = true; m_region = value; }
+    inline ImpactedAwsRegion& WithRegion(AwsRegion value) { SetRegion(value); return *this;}
     ///@}
   private:
 
-    AwsRegion m_region;
+    AwsRegion m_region{AwsRegion::NOT_SET};
     bool m_regionHasBeenSet = false;
   };
 

@@ -29,7 +29,7 @@ namespace Model
   class ListTargetedSentimentDetectionJobsResult
   {
   public:
-    AWS_COMPREHEND_API ListTargetedSentimentDetectionJobsResult();
+    AWS_COMPREHEND_API ListTargetedSentimentDetectionJobsResult() = default;
     AWS_COMPREHEND_API ListTargetedSentimentDetectionJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHEND_API ListTargetedSentimentDetectionJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A list containing the properties of each job that is returned.</p>
      */
-    inline const Aws::Vector<TargetedSentimentDetectionJobProperties>& GetTargetedSentimentDetectionJobPropertiesList() const{ return m_targetedSentimentDetectionJobPropertiesList; }
-    inline void SetTargetedSentimentDetectionJobPropertiesList(const Aws::Vector<TargetedSentimentDetectionJobProperties>& value) { m_targetedSentimentDetectionJobPropertiesList = value; }
-    inline void SetTargetedSentimentDetectionJobPropertiesList(Aws::Vector<TargetedSentimentDetectionJobProperties>&& value) { m_targetedSentimentDetectionJobPropertiesList = std::move(value); }
-    inline ListTargetedSentimentDetectionJobsResult& WithTargetedSentimentDetectionJobPropertiesList(const Aws::Vector<TargetedSentimentDetectionJobProperties>& value) { SetTargetedSentimentDetectionJobPropertiesList(value); return *this;}
-    inline ListTargetedSentimentDetectionJobsResult& WithTargetedSentimentDetectionJobPropertiesList(Aws::Vector<TargetedSentimentDetectionJobProperties>&& value) { SetTargetedSentimentDetectionJobPropertiesList(std::move(value)); return *this;}
-    inline ListTargetedSentimentDetectionJobsResult& AddTargetedSentimentDetectionJobPropertiesList(const TargetedSentimentDetectionJobProperties& value) { m_targetedSentimentDetectionJobPropertiesList.push_back(value); return *this; }
-    inline ListTargetedSentimentDetectionJobsResult& AddTargetedSentimentDetectionJobPropertiesList(TargetedSentimentDetectionJobProperties&& value) { m_targetedSentimentDetectionJobPropertiesList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TargetedSentimentDetectionJobProperties>& GetTargetedSentimentDetectionJobPropertiesList() const { return m_targetedSentimentDetectionJobPropertiesList; }
+    template<typename TargetedSentimentDetectionJobPropertiesListT = Aws::Vector<TargetedSentimentDetectionJobProperties>>
+    void SetTargetedSentimentDetectionJobPropertiesList(TargetedSentimentDetectionJobPropertiesListT&& value) { m_targetedSentimentDetectionJobPropertiesListHasBeenSet = true; m_targetedSentimentDetectionJobPropertiesList = std::forward<TargetedSentimentDetectionJobPropertiesListT>(value); }
+    template<typename TargetedSentimentDetectionJobPropertiesListT = Aws::Vector<TargetedSentimentDetectionJobProperties>>
+    ListTargetedSentimentDetectionJobsResult& WithTargetedSentimentDetectionJobPropertiesList(TargetedSentimentDetectionJobPropertiesListT&& value) { SetTargetedSentimentDetectionJobPropertiesList(std::forward<TargetedSentimentDetectionJobPropertiesListT>(value)); return *this;}
+    template<typename TargetedSentimentDetectionJobPropertiesListT = TargetedSentimentDetectionJobProperties>
+    ListTargetedSentimentDetectionJobsResult& AddTargetedSentimentDetectionJobPropertiesList(TargetedSentimentDetectionJobPropertiesListT&& value) { m_targetedSentimentDetectionJobPropertiesListHasBeenSet = true; m_targetedSentimentDetectionJobPropertiesList.emplace_back(std::forward<TargetedSentimentDetectionJobPropertiesListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Identifies the next page of results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListTargetedSentimentDetectionJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTargetedSentimentDetectionJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTargetedSentimentDetectionJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTargetedSentimentDetectionJobsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListTargetedSentimentDetectionJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListTargetedSentimentDetectionJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListTargetedSentimentDetectionJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListTargetedSentimentDetectionJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TargetedSentimentDetectionJobProperties> m_targetedSentimentDetectionJobPropertiesList;
+    bool m_targetedSentimentDetectionJobPropertiesListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

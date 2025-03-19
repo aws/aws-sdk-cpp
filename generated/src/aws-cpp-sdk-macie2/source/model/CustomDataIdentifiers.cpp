@@ -18,15 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-CustomDataIdentifiers::CustomDataIdentifiers() : 
-    m_detectionsHasBeenSet(false),
-    m_totalCount(0),
-    m_totalCountHasBeenSet(false)
-{
-}
-
 CustomDataIdentifiers::CustomDataIdentifiers(JsonView jsonValue)
-  : CustomDataIdentifiers()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ CustomDataIdentifiers& CustomDataIdentifiers::operator =(JsonView jsonValue)
     }
     m_detectionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalCount"))
   {
     m_totalCount = jsonValue.GetInt64("totalCount");
-
     m_totalCountHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,21 +18,7 @@ namespace InternetMonitor
 namespace Model
 {
 
-InternetEventSummary::InternetEventSummary() : 
-    m_eventIdHasBeenSet(false),
-    m_eventArnHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_clientLocationHasBeenSet(false),
-    m_eventType(InternetEventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_eventStatus(InternetEventStatus::NOT_SET),
-    m_eventStatusHasBeenSet(false)
-{
-}
-
 InternetEventSummary::InternetEventSummary(JsonView jsonValue)
-  : InternetEventSummary()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ InternetEventSummary& InternetEventSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EventId"))
   {
     m_eventId = jsonValue.GetString("EventId");
-
     m_eventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventArn"))
   {
     m_eventArn = jsonValue.GetString("EventArn");
-
     m_eventArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedAt"))
   {
     m_startedAt = jsonValue.GetString("StartedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndedAt"))
   {
     m_endedAt = jsonValue.GetString("EndedAt");
-
     m_endedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientLocation"))
   {
     m_clientLocation = jsonValue.GetObject("ClientLocation");
-
     m_clientLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventType"))
   {
     m_eventType = InternetEventTypeMapper::GetInternetEventTypeForName(jsonValue.GetString("EventType"));
-
     m_eventTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventStatus"))
   {
     m_eventStatus = InternetEventStatusMapper::GetInternetEventStatusForName(jsonValue.GetString("EventStatus"));
-
     m_eventStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

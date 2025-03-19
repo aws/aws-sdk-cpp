@@ -20,14 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-DashboardValidationMessage::DashboardValidationMessage() : 
-    m_dataPathHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 DashboardValidationMessage::DashboardValidationMessage(const XmlNode& xmlNode)
-  : DashboardValidationMessage()
 {
   *this = xmlNode;
 }

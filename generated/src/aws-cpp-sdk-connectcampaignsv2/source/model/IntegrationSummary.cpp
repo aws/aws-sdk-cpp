@@ -18,14 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-IntegrationSummary::IntegrationSummary() : 
-    m_customerProfilesHasBeenSet(false),
-    m_qConnectHasBeenSet(false)
-{
-}
-
 IntegrationSummary::IntegrationSummary(JsonView jsonValue)
-  : IntegrationSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IntegrationSummary& IntegrationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("customerProfiles"))
   {
     m_customerProfiles = jsonValue.GetObject("customerProfiles");
-
     m_customerProfilesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("qConnect"))
   {
     m_qConnect = jsonValue.GetObject("qConnect");
-
     m_qConnectHasBeenSet = true;
   }
-
   return *this;
 }
 

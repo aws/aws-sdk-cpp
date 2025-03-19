@@ -33,7 +33,7 @@ namespace Model
   class ClusterEbsVolumeConfig
   {
   public:
-    AWS_SAGEMAKER_API ClusterEbsVolumeConfig();
+    AWS_SAGEMAKER_API ClusterEbsVolumeConfig() = default;
     AWS_SAGEMAKER_API ClusterEbsVolumeConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ClusterEbsVolumeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * volume is attached to each instance within the SageMaker HyperPod cluster
      * instance group and mounted to <code>/opt/sagemaker</code>.</p>
      */
-    inline int GetVolumeSizeInGB() const{ return m_volumeSizeInGB; }
+    inline int GetVolumeSizeInGB() const { return m_volumeSizeInGB; }
     inline bool VolumeSizeInGBHasBeenSet() const { return m_volumeSizeInGBHasBeenSet; }
     inline void SetVolumeSizeInGB(int value) { m_volumeSizeInGBHasBeenSet = true; m_volumeSizeInGB = value; }
     inline ClusterEbsVolumeConfig& WithVolumeSizeInGB(int value) { SetVolumeSizeInGB(value); return *this;}
     ///@}
   private:
 
-    int m_volumeSizeInGB;
+    int m_volumeSizeInGB{0};
     bool m_volumeSizeInGBHasBeenSet = false;
   };
 

@@ -18,14 +18,7 @@ namespace CloudWatchEvidently
 namespace Model
 {
 
-VariationConfig::VariationConfig() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 VariationConfig::VariationConfig(JsonView jsonValue)
-  : VariationConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ VariationConfig& VariationConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

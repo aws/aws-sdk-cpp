@@ -18,18 +18,7 @@ namespace Inspector
 namespace Model
 {
 
-Exclusion::Exclusion() : 
-    m_arnHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_recommendationHasBeenSet(false),
-    m_scopesHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 Exclusion::Exclusion(JsonView jsonValue)
-  : Exclusion()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ Exclusion& Exclusion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendation"))
   {
     m_recommendation = jsonValue.GetString("recommendation");
-
     m_recommendationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scopes"))
   {
     Aws::Utils::Array<JsonView> scopesJsonList = jsonValue.GetArray("scopes");
@@ -73,7 +54,6 @@ Exclusion& Exclusion::operator =(JsonView jsonValue)
     }
     m_scopesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("attributes");
@@ -83,7 +63,6 @@ Exclusion& Exclusion::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   return *this;
 }
 

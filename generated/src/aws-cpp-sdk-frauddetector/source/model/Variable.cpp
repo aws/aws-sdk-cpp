@@ -18,23 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-Variable::Variable() : 
-    m_nameHasBeenSet(false),
-    m_dataType(DataType::NOT_SET),
-    m_dataTypeHasBeenSet(false),
-    m_dataSource(DataSource::NOT_SET),
-    m_dataSourceHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_variableTypeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 Variable::Variable(JsonView jsonValue)
-  : Variable()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ Variable& Variable::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataType"))
   {
     m_dataType = DataTypeMapper::GetDataTypeForName(jsonValue.GetString("dataType"));
-
     m_dataTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataSource"))
   {
     m_dataSource = DataSourceMapper::GetDataSourceForName(jsonValue.GetString("dataSource"));
-
     m_dataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultValue"))
   {
     m_defaultValue = jsonValue.GetString("defaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("variableType"))
   {
     m_variableType = jsonValue.GetString("variableType");
-
     m_variableTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetString("lastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTime"))
   {
     m_createdTime = jsonValue.GetString("createdTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

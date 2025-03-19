@@ -35,7 +35,7 @@ namespace Model
   class ControlDomainInsights
   {
   public:
-    AWS_AUDITMANAGER_API ControlDomainInsights();
+    AWS_AUDITMANAGER_API ControlDomainInsights() = default;
     AWS_AUDITMANAGER_API ControlDomainInsights(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API ControlDomainInsights& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The name of the control domain. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ControlDomainInsights& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ControlDomainInsights& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ControlDomainInsights& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ControlDomainInsights& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * <code>ListDomains</code> </a> in the Amazon Web Services Control Catalog API
      * Reference.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ControlDomainInsights& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ControlDomainInsights& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ControlDomainInsights& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ControlDomainInsights& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,7 +75,7 @@ namespace Model
      * <p>The number of controls in the control domain that collected non-compliant
      * evidence on the <code>lastUpdated</code> date. </p>
      */
-    inline int GetControlsCountByNoncompliantEvidence() const{ return m_controlsCountByNoncompliantEvidence; }
+    inline int GetControlsCountByNoncompliantEvidence() const { return m_controlsCountByNoncompliantEvidence; }
     inline bool ControlsCountByNoncompliantEvidenceHasBeenSet() const { return m_controlsCountByNoncompliantEvidenceHasBeenSet; }
     inline void SetControlsCountByNoncompliantEvidence(int value) { m_controlsCountByNoncompliantEvidenceHasBeenSet = true; m_controlsCountByNoncompliantEvidence = value; }
     inline ControlDomainInsights& WithControlsCountByNoncompliantEvidence(int value) { SetControlsCountByNoncompliantEvidence(value); return *this;}
@@ -89,7 +85,7 @@ namespace Model
     /**
      * <p>The total number of controls in the control domain. </p>
      */
-    inline int GetTotalControlsCount() const{ return m_totalControlsCount; }
+    inline int GetTotalControlsCount() const { return m_totalControlsCount; }
     inline bool TotalControlsCountHasBeenSet() const { return m_totalControlsCountHasBeenSet; }
     inline void SetTotalControlsCount(int value) { m_totalControlsCountHasBeenSet = true; m_totalControlsCount = value; }
     inline ControlDomainInsights& WithTotalControlsCount(int value) { SetTotalControlsCount(value); return *this;}
@@ -100,24 +96,24 @@ namespace Model
      * <p>A breakdown of the compliance check status for the evidence that’s associated
      * with the control domain. </p>
      */
-    inline const EvidenceInsights& GetEvidenceInsights() const{ return m_evidenceInsights; }
+    inline const EvidenceInsights& GetEvidenceInsights() const { return m_evidenceInsights; }
     inline bool EvidenceInsightsHasBeenSet() const { return m_evidenceInsightsHasBeenSet; }
-    inline void SetEvidenceInsights(const EvidenceInsights& value) { m_evidenceInsightsHasBeenSet = true; m_evidenceInsights = value; }
-    inline void SetEvidenceInsights(EvidenceInsights&& value) { m_evidenceInsightsHasBeenSet = true; m_evidenceInsights = std::move(value); }
-    inline ControlDomainInsights& WithEvidenceInsights(const EvidenceInsights& value) { SetEvidenceInsights(value); return *this;}
-    inline ControlDomainInsights& WithEvidenceInsights(EvidenceInsights&& value) { SetEvidenceInsights(std::move(value)); return *this;}
+    template<typename EvidenceInsightsT = EvidenceInsights>
+    void SetEvidenceInsights(EvidenceInsightsT&& value) { m_evidenceInsightsHasBeenSet = true; m_evidenceInsights = std::forward<EvidenceInsightsT>(value); }
+    template<typename EvidenceInsightsT = EvidenceInsights>
+    ControlDomainInsights& WithEvidenceInsights(EvidenceInsightsT&& value) { SetEvidenceInsights(std::forward<EvidenceInsightsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the control domain insights were last updated. </p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
+    inline const Aws::Utils::DateTime& GetLastUpdated() const { return m_lastUpdated; }
     inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
-    inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
-    inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
-    inline ControlDomainInsights& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
-    inline ControlDomainInsights& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
+    template<typename LastUpdatedT = Aws::Utils::DateTime>
+    void SetLastUpdated(LastUpdatedT&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::forward<LastUpdatedT>(value); }
+    template<typename LastUpdatedT = Aws::Utils::DateTime>
+    ControlDomainInsights& WithLastUpdated(LastUpdatedT&& value) { SetLastUpdated(std::forward<LastUpdatedT>(value)); return *this;}
     ///@}
   private:
 
@@ -127,16 +123,16 @@ namespace Model
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    int m_controlsCountByNoncompliantEvidence;
+    int m_controlsCountByNoncompliantEvidence{0};
     bool m_controlsCountByNoncompliantEvidenceHasBeenSet = false;
 
-    int m_totalControlsCount;
+    int m_totalControlsCount{0};
     bool m_totalControlsCountHasBeenSet = false;
 
     EvidenceInsights m_evidenceInsights;
     bool m_evidenceInsightsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdated;
+    Aws::Utils::DateTime m_lastUpdated{};
     bool m_lastUpdatedHasBeenSet = false;
   };
 

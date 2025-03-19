@@ -12,14 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeEffectivePatchesForPatchBaselineRequest::DescribeEffectivePatchesForPatchBaselineRequest() : 
-    m_baselineIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEffectivePatchesForPatchBaselineRequest::SerializePayload() const
 {
   JsonValue payload;

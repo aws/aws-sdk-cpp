@@ -30,7 +30,7 @@ namespace Model
   class DescribeSuggestersRequest : public CloudSearchRequest
   {
   public:
-    AWS_CLOUDSEARCH_API DescribeSuggestersRequest();
+    AWS_CLOUDSEARCH_API DescribeSuggestersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,29 +49,26 @@ namespace Model
     /**
      * <p>The name of the domain you want to describe.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline DescribeSuggestersRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline DescribeSuggestersRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline DescribeSuggestersRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    DescribeSuggestersRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The suggesters you want to describe.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSuggesterNames() const{ return m_suggesterNames; }
+    inline const Aws::Vector<Aws::String>& GetSuggesterNames() const { return m_suggesterNames; }
     inline bool SuggesterNamesHasBeenSet() const { return m_suggesterNamesHasBeenSet; }
-    inline void SetSuggesterNames(const Aws::Vector<Aws::String>& value) { m_suggesterNamesHasBeenSet = true; m_suggesterNames = value; }
-    inline void SetSuggesterNames(Aws::Vector<Aws::String>&& value) { m_suggesterNamesHasBeenSet = true; m_suggesterNames = std::move(value); }
-    inline DescribeSuggestersRequest& WithSuggesterNames(const Aws::Vector<Aws::String>& value) { SetSuggesterNames(value); return *this;}
-    inline DescribeSuggestersRequest& WithSuggesterNames(Aws::Vector<Aws::String>&& value) { SetSuggesterNames(std::move(value)); return *this;}
-    inline DescribeSuggestersRequest& AddSuggesterNames(const Aws::String& value) { m_suggesterNamesHasBeenSet = true; m_suggesterNames.push_back(value); return *this; }
-    inline DescribeSuggestersRequest& AddSuggesterNames(Aws::String&& value) { m_suggesterNamesHasBeenSet = true; m_suggesterNames.push_back(std::move(value)); return *this; }
-    inline DescribeSuggestersRequest& AddSuggesterNames(const char* value) { m_suggesterNamesHasBeenSet = true; m_suggesterNames.push_back(value); return *this; }
+    template<typename SuggesterNamesT = Aws::Vector<Aws::String>>
+    void SetSuggesterNames(SuggesterNamesT&& value) { m_suggesterNamesHasBeenSet = true; m_suggesterNames = std::forward<SuggesterNamesT>(value); }
+    template<typename SuggesterNamesT = Aws::Vector<Aws::String>>
+    DescribeSuggestersRequest& WithSuggesterNames(SuggesterNamesT&& value) { SetSuggesterNames(std::forward<SuggesterNamesT>(value)); return *this;}
+    template<typename SuggesterNamesT = Aws::String>
+    DescribeSuggestersRequest& AddSuggesterNames(SuggesterNamesT&& value) { m_suggesterNamesHasBeenSet = true; m_suggesterNames.emplace_back(std::forward<SuggesterNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -79,7 +76,7 @@ namespace Model
      * <p>Whether to display the deployed configuration (<code>true</code>) or include
      * any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
      */
-    inline bool GetDeployed() const{ return m_deployed; }
+    inline bool GetDeployed() const { return m_deployed; }
     inline bool DeployedHasBeenSet() const { return m_deployedHasBeenSet; }
     inline void SetDeployed(bool value) { m_deployedHasBeenSet = true; m_deployed = value; }
     inline DescribeSuggestersRequest& WithDeployed(bool value) { SetDeployed(value); return *this;}
@@ -92,7 +89,7 @@ namespace Model
     Aws::Vector<Aws::String> m_suggesterNames;
     bool m_suggesterNamesHasBeenSet = false;
 
-    bool m_deployed;
+    bool m_deployed{false};
     bool m_deployedHasBeenSet = false;
   };
 

@@ -33,7 +33,7 @@ namespace Model
   class SqsAction
   {
   public:
-    AWS_IOTEVENTS_API SqsAction();
+    AWS_IOTEVENTS_API SqsAction() = default;
     AWS_IOTEVENTS_API SqsAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API SqsAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The URL of the SQS queue where the data is written.</p>
      */
-    inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
+    inline const Aws::String& GetQueueUrl() const { return m_queueUrl; }
     inline bool QueueUrlHasBeenSet() const { return m_queueUrlHasBeenSet; }
-    inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
-    inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = std::move(value); }
-    inline void SetQueueUrl(const char* value) { m_queueUrlHasBeenSet = true; m_queueUrl.assign(value); }
-    inline SqsAction& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
-    inline SqsAction& WithQueueUrl(Aws::String&& value) { SetQueueUrl(std::move(value)); return *this;}
-    inline SqsAction& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
+    template<typename QueueUrlT = Aws::String>
+    void SetQueueUrl(QueueUrlT&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = std::forward<QueueUrlT>(value); }
+    template<typename QueueUrlT = Aws::String>
+    SqsAction& WithQueueUrl(QueueUrlT&& value) { SetQueueUrl(std::forward<QueueUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * <p>Set this to TRUE if you want the data to be base-64 encoded before it is
      * written to the queue. Otherwise, set this to FALSE.</p>
      */
-    inline bool GetUseBase64() const{ return m_useBase64; }
+    inline bool GetUseBase64() const { return m_useBase64; }
     inline bool UseBase64HasBeenSet() const { return m_useBase64HasBeenSet; }
     inline void SetUseBase64(bool value) { m_useBase64HasBeenSet = true; m_useBase64 = value; }
     inline SqsAction& WithUseBase64(bool value) { SetUseBase64(value); return *this;}
@@ -69,19 +67,19 @@ namespace Model
      * <p>You can configure the action payload when you send a message to an Amazon SQS
      * queue.</p>
      */
-    inline const Payload& GetPayload() const{ return m_payload; }
+    inline const Payload& GetPayload() const { return m_payload; }
     inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
-    inline void SetPayload(const Payload& value) { m_payloadHasBeenSet = true; m_payload = value; }
-    inline void SetPayload(Payload&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
-    inline SqsAction& WithPayload(const Payload& value) { SetPayload(value); return *this;}
-    inline SqsAction& WithPayload(Payload&& value) { SetPayload(std::move(value)); return *this;}
+    template<typename PayloadT = Payload>
+    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
+    template<typename PayloadT = Payload>
+    SqsAction& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_queueUrl;
     bool m_queueUrlHasBeenSet = false;
 
-    bool m_useBase64;
+    bool m_useBase64{false};
     bool m_useBase64HasBeenSet = false;
 
     Payload m_payload;

@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-ChannelEngineVersionResponse::ChannelEngineVersionResponse() : 
-    m_expirationDateHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 ChannelEngineVersionResponse::ChannelEngineVersionResponse(JsonView jsonValue)
-  : ChannelEngineVersionResponse()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ChannelEngineVersionResponse& ChannelEngineVersionResponse::operator =(JsonView 
   if(jsonValue.ValueExists("expirationDate"))
   {
     m_expirationDate = jsonValue.GetString("expirationDate");
-
     m_expirationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

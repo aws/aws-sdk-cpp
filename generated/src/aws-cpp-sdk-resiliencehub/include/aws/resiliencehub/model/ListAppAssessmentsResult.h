@@ -29,7 +29,7 @@ namespace Model
   class ListAppAssessmentsResult
   {
   public:
-    AWS_RESILIENCEHUB_API ListAppAssessmentsResult();
+    AWS_RESILIENCEHUB_API ListAppAssessmentsResult() = default;
     AWS_RESILIENCEHUB_API ListAppAssessmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESILIENCEHUB_API ListAppAssessmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,45 +40,44 @@ namespace Model
      * object includes application versions, associated Amazon Resource Numbers (ARNs),
      * cost, messages, resiliency scores, and more.</p>
      */
-    inline const Aws::Vector<AppAssessmentSummary>& GetAssessmentSummaries() const{ return m_assessmentSummaries; }
-    inline void SetAssessmentSummaries(const Aws::Vector<AppAssessmentSummary>& value) { m_assessmentSummaries = value; }
-    inline void SetAssessmentSummaries(Aws::Vector<AppAssessmentSummary>&& value) { m_assessmentSummaries = std::move(value); }
-    inline ListAppAssessmentsResult& WithAssessmentSummaries(const Aws::Vector<AppAssessmentSummary>& value) { SetAssessmentSummaries(value); return *this;}
-    inline ListAppAssessmentsResult& WithAssessmentSummaries(Aws::Vector<AppAssessmentSummary>&& value) { SetAssessmentSummaries(std::move(value)); return *this;}
-    inline ListAppAssessmentsResult& AddAssessmentSummaries(const AppAssessmentSummary& value) { m_assessmentSummaries.push_back(value); return *this; }
-    inline ListAppAssessmentsResult& AddAssessmentSummaries(AppAssessmentSummary&& value) { m_assessmentSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AppAssessmentSummary>& GetAssessmentSummaries() const { return m_assessmentSummaries; }
+    template<typename AssessmentSummariesT = Aws::Vector<AppAssessmentSummary>>
+    void SetAssessmentSummaries(AssessmentSummariesT&& value) { m_assessmentSummariesHasBeenSet = true; m_assessmentSummaries = std::forward<AssessmentSummariesT>(value); }
+    template<typename AssessmentSummariesT = Aws::Vector<AppAssessmentSummary>>
+    ListAppAssessmentsResult& WithAssessmentSummaries(AssessmentSummariesT&& value) { SetAssessmentSummaries(std::forward<AssessmentSummariesT>(value)); return *this;}
+    template<typename AssessmentSummariesT = AppAssessmentSummary>
+    ListAppAssessmentsResult& AddAssessmentSummaries(AssessmentSummariesT&& value) { m_assessmentSummariesHasBeenSet = true; m_assessmentSummaries.emplace_back(std::forward<AssessmentSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Token for the next set of results, or null if there are no more results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAppAssessmentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAppAssessmentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAppAssessmentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAppAssessmentsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAppAssessmentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAppAssessmentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAppAssessmentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAppAssessmentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AppAssessmentSummary> m_assessmentSummaries;
+    bool m_assessmentSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

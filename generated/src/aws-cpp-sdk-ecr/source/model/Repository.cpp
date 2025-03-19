@@ -18,21 +18,7 @@ namespace ECR
 namespace Model
 {
 
-Repository::Repository() : 
-    m_repositoryArnHasBeenSet(false),
-    m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_repositoryUriHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_imageTagMutability(ImageTagMutability::NOT_SET),
-    m_imageTagMutabilityHasBeenSet(false),
-    m_imageScanningConfigurationHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
-{
-}
-
 Repository::Repository(JsonView jsonValue)
-  : Repository()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ Repository& Repository::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("repositoryArn"))
   {
     m_repositoryArn = jsonValue.GetString("repositoryArn");
-
     m_repositoryArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registryId"))
   {
     m_registryId = jsonValue.GetString("registryId");
-
     m_registryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryUri"))
   {
     m_repositoryUri = jsonValue.GetString("repositoryUri");
-
     m_repositoryUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageTagMutability"))
   {
     m_imageTagMutability = ImageTagMutabilityMapper::GetImageTagMutabilityForName(jsonValue.GetString("imageTagMutability"));
-
     m_imageTagMutabilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageScanningConfiguration"))
   {
     m_imageScanningConfiguration = jsonValue.GetObject("imageScanningConfiguration");
-
     m_imageScanningConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionConfiguration"))
   {
     m_encryptionConfiguration = jsonValue.GetObject("encryptionConfiguration");
-
     m_encryptionConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

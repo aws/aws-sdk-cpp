@@ -18,16 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-CampaignHook::CampaignHook() : 
-    m_lambdaFunctionNameHasBeenSet(false),
-    m_mode(Mode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_webUrlHasBeenSet(false)
-{
-}
-
 CampaignHook::CampaignHook(JsonView jsonValue)
-  : CampaignHook()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CampaignHook& CampaignHook::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LambdaFunctionName"))
   {
     m_lambdaFunctionName = jsonValue.GetString("LambdaFunctionName");
-
     m_lambdaFunctionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Mode"))
   {
     m_mode = ModeMapper::GetModeForName(jsonValue.GetString("Mode"));
-
     m_modeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WebUrl"))
   {
     m_webUrl = jsonValue.GetString("WebUrl");
-
     m_webUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

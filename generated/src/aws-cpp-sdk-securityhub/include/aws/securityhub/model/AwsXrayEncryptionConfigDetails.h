@@ -32,7 +32,7 @@ namespace Model
   class AwsXrayEncryptionConfigDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsXrayEncryptionConfigDetails();
+    AWS_SECURITYHUB_API AwsXrayEncryptionConfigDetails() = default;
     AWS_SECURITYHUB_API AwsXrayEncryptionConfigDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsXrayEncryptionConfigDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The identifier of the KMS key that is used for encryption. Provided if
      * <code>Type</code> is <code>KMS</code>.</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
-    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
-    inline AwsXrayEncryptionConfigDetails& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline AwsXrayEncryptionConfigDetails& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline AwsXrayEncryptionConfigDetails& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    AwsXrayEncryptionConfigDetails& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * equal to <code>UPDATING</code>, X-Ray might use both the old and new
      * encryption.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline AwsXrayEncryptionConfigDetails& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline AwsXrayEncryptionConfigDetails& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline AwsXrayEncryptionConfigDetails& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    AwsXrayEncryptionConfigDetails& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * <p>The type of encryption. <code>KMS</code> indicates that the encryption uses
      * KMS keys. <code>NONE</code> indicates the default encryption.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline AwsXrayEncryptionConfigDetails& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline AwsXrayEncryptionConfigDetails& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline AwsXrayEncryptionConfigDetails& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    AwsXrayEncryptionConfigDetails& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

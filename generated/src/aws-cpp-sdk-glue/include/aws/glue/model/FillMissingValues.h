@@ -35,7 +35,7 @@ namespace Model
   class FillMissingValues
   {
   public:
-    AWS_GLUE_API FillMissingValues();
+    AWS_GLUE_API FillMissingValues() = default;
     AWS_GLUE_API FillMissingValues(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API FillMissingValues& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,29 +45,26 @@ namespace Model
     /**
      * <p>The name of the transform node.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline FillMissingValues& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline FillMissingValues& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline FillMissingValues& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    FillMissingValues& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data inputs identified by their node names.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInputs() const{ return m_inputs; }
+    inline const Aws::Vector<Aws::String>& GetInputs() const { return m_inputs; }
     inline bool InputsHasBeenSet() const { return m_inputsHasBeenSet; }
-    inline void SetInputs(const Aws::Vector<Aws::String>& value) { m_inputsHasBeenSet = true; m_inputs = value; }
-    inline void SetInputs(Aws::Vector<Aws::String>&& value) { m_inputsHasBeenSet = true; m_inputs = std::move(value); }
-    inline FillMissingValues& WithInputs(const Aws::Vector<Aws::String>& value) { SetInputs(value); return *this;}
-    inline FillMissingValues& WithInputs(Aws::Vector<Aws::String>&& value) { SetInputs(std::move(value)); return *this;}
-    inline FillMissingValues& AddInputs(const Aws::String& value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
-    inline FillMissingValues& AddInputs(Aws::String&& value) { m_inputsHasBeenSet = true; m_inputs.push_back(std::move(value)); return *this; }
-    inline FillMissingValues& AddInputs(const char* value) { m_inputsHasBeenSet = true; m_inputs.push_back(value); return *this; }
+    template<typename InputsT = Aws::Vector<Aws::String>>
+    void SetInputs(InputsT&& value) { m_inputsHasBeenSet = true; m_inputs = std::forward<InputsT>(value); }
+    template<typename InputsT = Aws::Vector<Aws::String>>
+    FillMissingValues& WithInputs(InputsT&& value) { SetInputs(std::forward<InputsT>(value)); return *this;}
+    template<typename InputsT = Aws::String>
+    FillMissingValues& AddInputs(InputsT&& value) { m_inputsHasBeenSet = true; m_inputs.emplace_back(std::forward<InputsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -75,14 +72,12 @@ namespace Model
      * <p>A JSON path to a variable in the data structure for the dataset that is
      * imputed.</p>
      */
-    inline const Aws::String& GetImputedPath() const{ return m_imputedPath; }
+    inline const Aws::String& GetImputedPath() const { return m_imputedPath; }
     inline bool ImputedPathHasBeenSet() const { return m_imputedPathHasBeenSet; }
-    inline void SetImputedPath(const Aws::String& value) { m_imputedPathHasBeenSet = true; m_imputedPath = value; }
-    inline void SetImputedPath(Aws::String&& value) { m_imputedPathHasBeenSet = true; m_imputedPath = std::move(value); }
-    inline void SetImputedPath(const char* value) { m_imputedPathHasBeenSet = true; m_imputedPath.assign(value); }
-    inline FillMissingValues& WithImputedPath(const Aws::String& value) { SetImputedPath(value); return *this;}
-    inline FillMissingValues& WithImputedPath(Aws::String&& value) { SetImputedPath(std::move(value)); return *this;}
-    inline FillMissingValues& WithImputedPath(const char* value) { SetImputedPath(value); return *this;}
+    template<typename ImputedPathT = Aws::String>
+    void SetImputedPath(ImputedPathT&& value) { m_imputedPathHasBeenSet = true; m_imputedPath = std::forward<ImputedPathT>(value); }
+    template<typename ImputedPathT = Aws::String>
+    FillMissingValues& WithImputedPath(ImputedPathT&& value) { SetImputedPath(std::forward<ImputedPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +85,12 @@ namespace Model
      * <p>A JSON path to a variable in the data structure for the dataset that is
      * filled.</p>
      */
-    inline const Aws::String& GetFilledPath() const{ return m_filledPath; }
+    inline const Aws::String& GetFilledPath() const { return m_filledPath; }
     inline bool FilledPathHasBeenSet() const { return m_filledPathHasBeenSet; }
-    inline void SetFilledPath(const Aws::String& value) { m_filledPathHasBeenSet = true; m_filledPath = value; }
-    inline void SetFilledPath(Aws::String&& value) { m_filledPathHasBeenSet = true; m_filledPath = std::move(value); }
-    inline void SetFilledPath(const char* value) { m_filledPathHasBeenSet = true; m_filledPath.assign(value); }
-    inline FillMissingValues& WithFilledPath(const Aws::String& value) { SetFilledPath(value); return *this;}
-    inline FillMissingValues& WithFilledPath(Aws::String&& value) { SetFilledPath(std::move(value)); return *this;}
-    inline FillMissingValues& WithFilledPath(const char* value) { SetFilledPath(value); return *this;}
+    template<typename FilledPathT = Aws::String>
+    void SetFilledPath(FilledPathT&& value) { m_filledPathHasBeenSet = true; m_filledPath = std::forward<FilledPathT>(value); }
+    template<typename FilledPathT = Aws::String>
+    FillMissingValues& WithFilledPath(FilledPathT&& value) { SetFilledPath(std::forward<FilledPathT>(value)); return *this;}
     ///@}
   private:
 

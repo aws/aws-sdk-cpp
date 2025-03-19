@@ -33,7 +33,7 @@ namespace Model
   class Target
   {
   public:
-    AWS_SECURITYHUB_API Target();
+    AWS_SECURITYHUB_API Target() = default;
     AWS_SECURITYHUB_API Target(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Target& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,42 +43,36 @@ namespace Model
     /**
      * <p> The Amazon Web Services account ID of the target account. </p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline Target& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline Target& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline Target& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    Target& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The organizational unit ID of the target organizational unit. </p>
      */
-    inline const Aws::String& GetOrganizationalUnitId() const{ return m_organizationalUnitId; }
+    inline const Aws::String& GetOrganizationalUnitId() const { return m_organizationalUnitId; }
     inline bool OrganizationalUnitIdHasBeenSet() const { return m_organizationalUnitIdHasBeenSet; }
-    inline void SetOrganizationalUnitId(const Aws::String& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = value; }
-    inline void SetOrganizationalUnitId(Aws::String&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = std::move(value); }
-    inline void SetOrganizationalUnitId(const char* value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId.assign(value); }
-    inline Target& WithOrganizationalUnitId(const Aws::String& value) { SetOrganizationalUnitId(value); return *this;}
-    inline Target& WithOrganizationalUnitId(Aws::String&& value) { SetOrganizationalUnitId(std::move(value)); return *this;}
-    inline Target& WithOrganizationalUnitId(const char* value) { SetOrganizationalUnitId(value); return *this;}
+    template<typename OrganizationalUnitIdT = Aws::String>
+    void SetOrganizationalUnitId(OrganizationalUnitIdT&& value) { m_organizationalUnitIdHasBeenSet = true; m_organizationalUnitId = std::forward<OrganizationalUnitIdT>(value); }
+    template<typename OrganizationalUnitIdT = Aws::String>
+    Target& WithOrganizationalUnitId(OrganizationalUnitIdT&& value) { SetOrganizationalUnitId(std::forward<OrganizationalUnitIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The ID of the organization root. </p>
      */
-    inline const Aws::String& GetRootId() const{ return m_rootId; }
+    inline const Aws::String& GetRootId() const { return m_rootId; }
     inline bool RootIdHasBeenSet() const { return m_rootIdHasBeenSet; }
-    inline void SetRootId(const Aws::String& value) { m_rootIdHasBeenSet = true; m_rootId = value; }
-    inline void SetRootId(Aws::String&& value) { m_rootIdHasBeenSet = true; m_rootId = std::move(value); }
-    inline void SetRootId(const char* value) { m_rootIdHasBeenSet = true; m_rootId.assign(value); }
-    inline Target& WithRootId(const Aws::String& value) { SetRootId(value); return *this;}
-    inline Target& WithRootId(Aws::String&& value) { SetRootId(std::move(value)); return *this;}
-    inline Target& WithRootId(const char* value) { SetRootId(value); return *this;}
+    template<typename RootIdT = Aws::String>
+    void SetRootId(RootIdT&& value) { m_rootIdHasBeenSet = true; m_rootId = std::forward<RootIdT>(value); }
+    template<typename RootIdT = Aws::String>
+    Target& WithRootId(RootIdT&& value) { SetRootId(std::forward<RootIdT>(value)); return *this;}
     ///@}
   private:
 

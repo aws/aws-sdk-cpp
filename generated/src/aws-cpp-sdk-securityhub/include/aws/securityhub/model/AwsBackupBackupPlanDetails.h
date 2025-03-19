@@ -34,7 +34,7 @@ namespace Model
   class AwsBackupBackupPlanDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsBackupBackupPlanDetails();
+    AWS_SECURITYHUB_API AwsBackupBackupPlanDetails() = default;
     AWS_SECURITYHUB_API AwsBackupBackupPlanDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsBackupBackupPlanDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,40 +45,36 @@ namespace Model
      * <p>Uniquely identifies the backup plan to be associated with the selection of
      * resources. </p>
      */
-    inline const AwsBackupBackupPlanBackupPlanDetails& GetBackupPlan() const{ return m_backupPlan; }
+    inline const AwsBackupBackupPlanBackupPlanDetails& GetBackupPlan() const { return m_backupPlan; }
     inline bool BackupPlanHasBeenSet() const { return m_backupPlanHasBeenSet; }
-    inline void SetBackupPlan(const AwsBackupBackupPlanBackupPlanDetails& value) { m_backupPlanHasBeenSet = true; m_backupPlan = value; }
-    inline void SetBackupPlan(AwsBackupBackupPlanBackupPlanDetails&& value) { m_backupPlanHasBeenSet = true; m_backupPlan = std::move(value); }
-    inline AwsBackupBackupPlanDetails& WithBackupPlan(const AwsBackupBackupPlanBackupPlanDetails& value) { SetBackupPlan(value); return *this;}
-    inline AwsBackupBackupPlanDetails& WithBackupPlan(AwsBackupBackupPlanBackupPlanDetails&& value) { SetBackupPlan(std::move(value)); return *this;}
+    template<typename BackupPlanT = AwsBackupBackupPlanBackupPlanDetails>
+    void SetBackupPlan(BackupPlanT&& value) { m_backupPlanHasBeenSet = true; m_backupPlan = std::forward<BackupPlanT>(value); }
+    template<typename BackupPlanT = AwsBackupBackupPlanBackupPlanDetails>
+    AwsBackupBackupPlanDetails& WithBackupPlan(BackupPlanT&& value) { SetBackupPlan(std::forward<BackupPlanT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An Amazon Resource Name (ARN) that uniquely identifies the backup plan. </p>
      */
-    inline const Aws::String& GetBackupPlanArn() const{ return m_backupPlanArn; }
+    inline const Aws::String& GetBackupPlanArn() const { return m_backupPlanArn; }
     inline bool BackupPlanArnHasBeenSet() const { return m_backupPlanArnHasBeenSet; }
-    inline void SetBackupPlanArn(const Aws::String& value) { m_backupPlanArnHasBeenSet = true; m_backupPlanArn = value; }
-    inline void SetBackupPlanArn(Aws::String&& value) { m_backupPlanArnHasBeenSet = true; m_backupPlanArn = std::move(value); }
-    inline void SetBackupPlanArn(const char* value) { m_backupPlanArnHasBeenSet = true; m_backupPlanArn.assign(value); }
-    inline AwsBackupBackupPlanDetails& WithBackupPlanArn(const Aws::String& value) { SetBackupPlanArn(value); return *this;}
-    inline AwsBackupBackupPlanDetails& WithBackupPlanArn(Aws::String&& value) { SetBackupPlanArn(std::move(value)); return *this;}
-    inline AwsBackupBackupPlanDetails& WithBackupPlanArn(const char* value) { SetBackupPlanArn(value); return *this;}
+    template<typename BackupPlanArnT = Aws::String>
+    void SetBackupPlanArn(BackupPlanArnT&& value) { m_backupPlanArnHasBeenSet = true; m_backupPlanArn = std::forward<BackupPlanArnT>(value); }
+    template<typename BackupPlanArnT = Aws::String>
+    AwsBackupBackupPlanDetails& WithBackupPlanArn(BackupPlanArnT&& value) { SetBackupPlanArn(std::forward<BackupPlanArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique ID for the backup plan. </p>
      */
-    inline const Aws::String& GetBackupPlanId() const{ return m_backupPlanId; }
+    inline const Aws::String& GetBackupPlanId() const { return m_backupPlanId; }
     inline bool BackupPlanIdHasBeenSet() const { return m_backupPlanIdHasBeenSet; }
-    inline void SetBackupPlanId(const Aws::String& value) { m_backupPlanIdHasBeenSet = true; m_backupPlanId = value; }
-    inline void SetBackupPlanId(Aws::String&& value) { m_backupPlanIdHasBeenSet = true; m_backupPlanId = std::move(value); }
-    inline void SetBackupPlanId(const char* value) { m_backupPlanIdHasBeenSet = true; m_backupPlanId.assign(value); }
-    inline AwsBackupBackupPlanDetails& WithBackupPlanId(const Aws::String& value) { SetBackupPlanId(value); return *this;}
-    inline AwsBackupBackupPlanDetails& WithBackupPlanId(Aws::String&& value) { SetBackupPlanId(std::move(value)); return *this;}
-    inline AwsBackupBackupPlanDetails& WithBackupPlanId(const char* value) { SetBackupPlanId(value); return *this;}
+    template<typename BackupPlanIdT = Aws::String>
+    void SetBackupPlanId(BackupPlanIdT&& value) { m_backupPlanIdHasBeenSet = true; m_backupPlanId = std::forward<BackupPlanIdT>(value); }
+    template<typename BackupPlanIdT = Aws::String>
+    AwsBackupBackupPlanDetails& WithBackupPlanId(BackupPlanIdT&& value) { SetBackupPlanId(std::forward<BackupPlanIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +82,12 @@ namespace Model
      * <p>Unique, randomly generated, Unicode, UTF-8 encoded strings. Version IDs
      * cannot be edited. </p>
      */
-    inline const Aws::String& GetVersionId() const{ return m_versionId; }
+    inline const Aws::String& GetVersionId() const { return m_versionId; }
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
-    inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
-    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
-    inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
-    inline AwsBackupBackupPlanDetails& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
-    inline AwsBackupBackupPlanDetails& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
-    inline AwsBackupBackupPlanDetails& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+    template<typename VersionIdT = Aws::String>
+    void SetVersionId(VersionIdT&& value) { m_versionIdHasBeenSet = true; m_versionId = std::forward<VersionIdT>(value); }
+    template<typename VersionIdT = Aws::String>
+    AwsBackupBackupPlanDetails& WithVersionId(VersionIdT&& value) { SetVersionId(std::forward<VersionIdT>(value)); return *this;}
     ///@}
   private:
 

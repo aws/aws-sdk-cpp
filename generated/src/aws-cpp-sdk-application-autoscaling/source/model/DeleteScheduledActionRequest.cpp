@@ -12,16 +12,6 @@ using namespace Aws::ApplicationAutoScaling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteScheduledActionRequest::DeleteScheduledActionRequest() : 
-    m_serviceNamespace(ServiceNamespace::NOT_SET),
-    m_serviceNamespaceHasBeenSet(false),
-    m_scheduledActionNameHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_scalableDimension(ScalableDimension::NOT_SET),
-    m_scalableDimensionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteScheduledActionRequest::SerializePayload() const
 {
   JsonValue payload;

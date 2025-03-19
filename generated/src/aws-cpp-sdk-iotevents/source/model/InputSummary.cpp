@@ -18,19 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-InputSummary::InputSummary() : 
-    m_inputNameHasBeenSet(false),
-    m_inputDescriptionHasBeenSet(false),
-    m_inputArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_status(InputStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 InputSummary::InputSummary(JsonView jsonValue)
-  : InputSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ InputSummary& InputSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("inputName"))
   {
     m_inputName = jsonValue.GetString("inputName");
-
     m_inputNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputDescription"))
   {
     m_inputDescription = jsonValue.GetString("inputDescription");
-
     m_inputDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputArn"))
   {
     m_inputArn = jsonValue.GetString("inputArn");
-
     m_inputArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("lastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = InputStatusMapper::GetInputStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -35,7 +35,7 @@ namespace Model
   class DataDeletionJobSummary
   {
   public:
-    AWS_PERSONALIZE_API DataDeletionJobSummary();
+    AWS_PERSONALIZE_API DataDeletionJobSummary() = default;
     AWS_PERSONALIZE_API DataDeletionJobSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API DataDeletionJobSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the data deletion job.</p>
      */
-    inline const Aws::String& GetDataDeletionJobArn() const{ return m_dataDeletionJobArn; }
+    inline const Aws::String& GetDataDeletionJobArn() const { return m_dataDeletionJobArn; }
     inline bool DataDeletionJobArnHasBeenSet() const { return m_dataDeletionJobArnHasBeenSet; }
-    inline void SetDataDeletionJobArn(const Aws::String& value) { m_dataDeletionJobArnHasBeenSet = true; m_dataDeletionJobArn = value; }
-    inline void SetDataDeletionJobArn(Aws::String&& value) { m_dataDeletionJobArnHasBeenSet = true; m_dataDeletionJobArn = std::move(value); }
-    inline void SetDataDeletionJobArn(const char* value) { m_dataDeletionJobArnHasBeenSet = true; m_dataDeletionJobArn.assign(value); }
-    inline DataDeletionJobSummary& WithDataDeletionJobArn(const Aws::String& value) { SetDataDeletionJobArn(value); return *this;}
-    inline DataDeletionJobSummary& WithDataDeletionJobArn(Aws::String&& value) { SetDataDeletionJobArn(std::move(value)); return *this;}
-    inline DataDeletionJobSummary& WithDataDeletionJobArn(const char* value) { SetDataDeletionJobArn(value); return *this;}
+    template<typename DataDeletionJobArnT = Aws::String>
+    void SetDataDeletionJobArn(DataDeletionJobArnT&& value) { m_dataDeletionJobArnHasBeenSet = true; m_dataDeletionJobArn = std::forward<DataDeletionJobArnT>(value); }
+    template<typename DataDeletionJobArnT = Aws::String>
+    DataDeletionJobSummary& WithDataDeletionJobArn(DataDeletionJobArnT&& value) { SetDataDeletionJobArn(std::forward<DataDeletionJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,28 +58,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the dataset group the job deleted records
      * from.</p>
      */
-    inline const Aws::String& GetDatasetGroupArn() const{ return m_datasetGroupArn; }
+    inline const Aws::String& GetDatasetGroupArn() const { return m_datasetGroupArn; }
     inline bool DatasetGroupArnHasBeenSet() const { return m_datasetGroupArnHasBeenSet; }
-    inline void SetDatasetGroupArn(const Aws::String& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = value; }
-    inline void SetDatasetGroupArn(Aws::String&& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = std::move(value); }
-    inline void SetDatasetGroupArn(const char* value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn.assign(value); }
-    inline DataDeletionJobSummary& WithDatasetGroupArn(const Aws::String& value) { SetDatasetGroupArn(value); return *this;}
-    inline DataDeletionJobSummary& WithDatasetGroupArn(Aws::String&& value) { SetDatasetGroupArn(std::move(value)); return *this;}
-    inline DataDeletionJobSummary& WithDatasetGroupArn(const char* value) { SetDatasetGroupArn(value); return *this;}
+    template<typename DatasetGroupArnT = Aws::String>
+    void SetDatasetGroupArn(DatasetGroupArnT&& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = std::forward<DatasetGroupArnT>(value); }
+    template<typename DatasetGroupArnT = Aws::String>
+    DataDeletionJobSummary& WithDatasetGroupArn(DatasetGroupArnT&& value) { SetDatasetGroupArn(std::forward<DatasetGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the data deletion job.</p>
      */
-    inline const Aws::String& GetJobName() const{ return m_jobName; }
+    inline const Aws::String& GetJobName() const { return m_jobName; }
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
-    inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
-    inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
-    inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
-    inline DataDeletionJobSummary& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
-    inline DataDeletionJobSummary& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
-    inline DataDeletionJobSummary& WithJobName(const char* value) { SetJobName(value); return *this;}
+    template<typename JobNameT = Aws::String>
+    void SetJobName(JobNameT&& value) { m_jobNameHasBeenSet = true; m_jobName = std::forward<JobNameT>(value); }
+    template<typename JobNameT = Aws::String>
+    DataDeletionJobSummary& WithJobName(JobNameT&& value) { SetJobName(std::forward<JobNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,52 +84,48 @@ namespace Model
      * of the following statuses:</p> <ul> <li> <p>PENDING &gt; IN_PROGRESS &gt;
      * COMPLETED -or- FAILED</p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline DataDeletionJobSummary& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline DataDeletionJobSummary& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline DataDeletionJobSummary& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    DataDeletionJobSummary& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The creation date and time (in Unix time) of the data deletion job.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
     inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
-    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::move(value); }
-    inline DataDeletionJobSummary& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-    inline DataDeletionJobSummary& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    DataDeletionJobSummary& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time (in Unix time) the data deletion job was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const{ return m_lastUpdatedDateTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const { return m_lastUpdatedDateTime; }
     inline bool LastUpdatedDateTimeHasBeenSet() const { return m_lastUpdatedDateTimeHasBeenSet; }
-    inline void SetLastUpdatedDateTime(const Aws::Utils::DateTime& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = value; }
-    inline void SetLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::move(value); }
-    inline DataDeletionJobSummary& WithLastUpdatedDateTime(const Aws::Utils::DateTime& value) { SetLastUpdatedDateTime(value); return *this;}
-    inline DataDeletionJobSummary& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::forward<LastUpdatedDateTimeT>(value); }
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    DataDeletionJobSummary& WithLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { SetLastUpdatedDateTime(std::forward<LastUpdatedDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If a data deletion job fails, provides the reason why.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
-    inline DataDeletionJobSummary& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline DataDeletionJobSummary& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline DataDeletionJobSummary& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    DataDeletionJobSummary& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
   private:
 
@@ -151,10 +141,10 @@ namespace Model
     Aws::String m_status;
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDateTime;
+    Aws::Utils::DateTime m_creationDateTime{};
     bool m_creationDateTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedDateTime;
+    Aws::Utils::DateTime m_lastUpdatedDateTime{};
     bool m_lastUpdatedDateTimeHasBeenSet = false;
 
     Aws::String m_failureReason;

@@ -12,11 +12,6 @@ using namespace Aws::MWAA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCliTokenRequest::CreateCliTokenRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String CreateCliTokenRequest::SerializePayload() const
 {
   return {};

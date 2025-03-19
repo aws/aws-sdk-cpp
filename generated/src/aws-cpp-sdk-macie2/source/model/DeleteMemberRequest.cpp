@@ -12,11 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMemberRequest::DeleteMemberRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMemberRequest::SerializePayload() const
 {
   return {};

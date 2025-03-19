@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-OptimizationOutput::OptimizationOutput() : 
-    m_recommendedInferenceImageHasBeenSet(false)
-{
-}
-
 OptimizationOutput::OptimizationOutput(JsonView jsonValue)
-  : OptimizationOutput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OptimizationOutput& OptimizationOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RecommendedInferenceImage"))
   {
     m_recommendedInferenceImage = jsonValue.GetString("RecommendedInferenceImage");
-
     m_recommendedInferenceImageHasBeenSet = true;
   }
-
   return *this;
 }
 

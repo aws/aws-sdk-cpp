@@ -18,13 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-Ip::Ip() : 
-    m_ipAddressHasBeenSet(false)
-{
-}
-
 Ip::Ip(JsonView jsonValue)
-  : Ip()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Ip& Ip::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IpAddress"))
   {
     m_ipAddress = jsonValue.GetString("IpAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-SipMediaApplicationLoggingConfiguration::SipMediaApplicationLoggingConfiguration() : 
-    m_enableSipMediaApplicationMessageLogs(false),
-    m_enableSipMediaApplicationMessageLogsHasBeenSet(false)
-{
-}
-
 SipMediaApplicationLoggingConfiguration::SipMediaApplicationLoggingConfiguration(JsonView jsonValue)
-  : SipMediaApplicationLoggingConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SipMediaApplicationLoggingConfiguration& SipMediaApplicationLoggingConfiguration
   if(jsonValue.ValueExists("EnableSipMediaApplicationMessageLogs"))
   {
     m_enableSipMediaApplicationMessageLogs = jsonValue.GetBool("EnableSipMediaApplicationMessageLogs");
-
     m_enableSipMediaApplicationMessageLogsHasBeenSet = true;
   }
-
   return *this;
 }
 

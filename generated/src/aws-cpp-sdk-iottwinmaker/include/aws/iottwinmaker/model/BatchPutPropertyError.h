@@ -33,7 +33,7 @@ namespace Model
   class BatchPutPropertyError
   {
   public:
-    AWS_IOTTWINMAKER_API BatchPutPropertyError();
+    AWS_IOTTWINMAKER_API BatchPutPropertyError() = default;
     AWS_IOTTWINMAKER_API BatchPutPropertyError(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API BatchPutPropertyError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The error code.</p>
      */
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-    inline BatchPutPropertyError& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-    inline BatchPutPropertyError& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-    inline BatchPutPropertyError& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    template<typename ErrorCodeT = Aws::String>
+    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
+    template<typename ErrorCodeT = Aws::String>
+    BatchPutPropertyError& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error message.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline BatchPutPropertyError& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline BatchPutPropertyError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline BatchPutPropertyError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    BatchPutPropertyError& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +68,12 @@ namespace Model
      * <p>An object that contains information about errors returned by the
      * <code>BatchPutProperty</code> action.</p>
      */
-    inline const PropertyValueEntry& GetEntry() const{ return m_entry; }
+    inline const PropertyValueEntry& GetEntry() const { return m_entry; }
     inline bool EntryHasBeenSet() const { return m_entryHasBeenSet; }
-    inline void SetEntry(const PropertyValueEntry& value) { m_entryHasBeenSet = true; m_entry = value; }
-    inline void SetEntry(PropertyValueEntry&& value) { m_entryHasBeenSet = true; m_entry = std::move(value); }
-    inline BatchPutPropertyError& WithEntry(const PropertyValueEntry& value) { SetEntry(value); return *this;}
-    inline BatchPutPropertyError& WithEntry(PropertyValueEntry&& value) { SetEntry(std::move(value)); return *this;}
+    template<typename EntryT = PropertyValueEntry>
+    void SetEntry(EntryT&& value) { m_entryHasBeenSet = true; m_entry = std::forward<EntryT>(value); }
+    template<typename EntryT = PropertyValueEntry>
+    BatchPutPropertyError& WithEntry(EntryT&& value) { SetEntry(std::forward<EntryT>(value)); return *this;}
     ///@}
   private:
 

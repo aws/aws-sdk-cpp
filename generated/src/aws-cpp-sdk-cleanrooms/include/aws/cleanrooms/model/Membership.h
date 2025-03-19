@@ -41,7 +41,7 @@ namespace Model
   class Membership
   {
   public:
-    AWS_CLEANROOMS_API Membership();
+    AWS_CLEANROOMS_API Membership() = default;
     AWS_CLEANROOMS_API Membership(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Membership& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,56 +51,48 @@ namespace Model
     /**
      * <p>The unique ID of the membership.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Membership& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Membership& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Membership& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Membership& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ARN for the membership.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline Membership& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline Membership& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline Membership& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    Membership& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ARN for the membership's associated collaboration.</p>
      */
-    inline const Aws::String& GetCollaborationArn() const{ return m_collaborationArn; }
+    inline const Aws::String& GetCollaborationArn() const { return m_collaborationArn; }
     inline bool CollaborationArnHasBeenSet() const { return m_collaborationArnHasBeenSet; }
-    inline void SetCollaborationArn(const Aws::String& value) { m_collaborationArnHasBeenSet = true; m_collaborationArn = value; }
-    inline void SetCollaborationArn(Aws::String&& value) { m_collaborationArnHasBeenSet = true; m_collaborationArn = std::move(value); }
-    inline void SetCollaborationArn(const char* value) { m_collaborationArnHasBeenSet = true; m_collaborationArn.assign(value); }
-    inline Membership& WithCollaborationArn(const Aws::String& value) { SetCollaborationArn(value); return *this;}
-    inline Membership& WithCollaborationArn(Aws::String&& value) { SetCollaborationArn(std::move(value)); return *this;}
-    inline Membership& WithCollaborationArn(const char* value) { SetCollaborationArn(value); return *this;}
+    template<typename CollaborationArnT = Aws::String>
+    void SetCollaborationArn(CollaborationArnT&& value) { m_collaborationArnHasBeenSet = true; m_collaborationArn = std::forward<CollaborationArnT>(value); }
+    template<typename CollaborationArnT = Aws::String>
+    Membership& WithCollaborationArn(CollaborationArnT&& value) { SetCollaborationArn(std::forward<CollaborationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique ID for the membership's collaboration.</p>
      */
-    inline const Aws::String& GetCollaborationId() const{ return m_collaborationId; }
+    inline const Aws::String& GetCollaborationId() const { return m_collaborationId; }
     inline bool CollaborationIdHasBeenSet() const { return m_collaborationIdHasBeenSet; }
-    inline void SetCollaborationId(const Aws::String& value) { m_collaborationIdHasBeenSet = true; m_collaborationId = value; }
-    inline void SetCollaborationId(Aws::String&& value) { m_collaborationIdHasBeenSet = true; m_collaborationId = std::move(value); }
-    inline void SetCollaborationId(const char* value) { m_collaborationIdHasBeenSet = true; m_collaborationId.assign(value); }
-    inline Membership& WithCollaborationId(const Aws::String& value) { SetCollaborationId(value); return *this;}
-    inline Membership& WithCollaborationId(Aws::String&& value) { SetCollaborationId(std::move(value)); return *this;}
-    inline Membership& WithCollaborationId(const char* value) { SetCollaborationId(value); return *this;}
+    template<typename CollaborationIdT = Aws::String>
+    void SetCollaborationId(CollaborationIdT&& value) { m_collaborationIdHasBeenSet = true; m_collaborationId = std::forward<CollaborationIdT>(value); }
+    template<typename CollaborationIdT = Aws::String>
+    Membership& WithCollaborationId(CollaborationIdT&& value) { SetCollaborationId(std::forward<CollaborationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,92 +100,83 @@ namespace Model
      * <p>The identifier used to reference members of the collaboration. Currently only
      * supports Amazon Web Services account ID.</p>
      */
-    inline const Aws::String& GetCollaborationCreatorAccountId() const{ return m_collaborationCreatorAccountId; }
+    inline const Aws::String& GetCollaborationCreatorAccountId() const { return m_collaborationCreatorAccountId; }
     inline bool CollaborationCreatorAccountIdHasBeenSet() const { return m_collaborationCreatorAccountIdHasBeenSet; }
-    inline void SetCollaborationCreatorAccountId(const Aws::String& value) { m_collaborationCreatorAccountIdHasBeenSet = true; m_collaborationCreatorAccountId = value; }
-    inline void SetCollaborationCreatorAccountId(Aws::String&& value) { m_collaborationCreatorAccountIdHasBeenSet = true; m_collaborationCreatorAccountId = std::move(value); }
-    inline void SetCollaborationCreatorAccountId(const char* value) { m_collaborationCreatorAccountIdHasBeenSet = true; m_collaborationCreatorAccountId.assign(value); }
-    inline Membership& WithCollaborationCreatorAccountId(const Aws::String& value) { SetCollaborationCreatorAccountId(value); return *this;}
-    inline Membership& WithCollaborationCreatorAccountId(Aws::String&& value) { SetCollaborationCreatorAccountId(std::move(value)); return *this;}
-    inline Membership& WithCollaborationCreatorAccountId(const char* value) { SetCollaborationCreatorAccountId(value); return *this;}
+    template<typename CollaborationCreatorAccountIdT = Aws::String>
+    void SetCollaborationCreatorAccountId(CollaborationCreatorAccountIdT&& value) { m_collaborationCreatorAccountIdHasBeenSet = true; m_collaborationCreatorAccountId = std::forward<CollaborationCreatorAccountIdT>(value); }
+    template<typename CollaborationCreatorAccountIdT = Aws::String>
+    Membership& WithCollaborationCreatorAccountId(CollaborationCreatorAccountIdT&& value) { SetCollaborationCreatorAccountId(std::forward<CollaborationCreatorAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The display name of the collaboration creator.</p>
      */
-    inline const Aws::String& GetCollaborationCreatorDisplayName() const{ return m_collaborationCreatorDisplayName; }
+    inline const Aws::String& GetCollaborationCreatorDisplayName() const { return m_collaborationCreatorDisplayName; }
     inline bool CollaborationCreatorDisplayNameHasBeenSet() const { return m_collaborationCreatorDisplayNameHasBeenSet; }
-    inline void SetCollaborationCreatorDisplayName(const Aws::String& value) { m_collaborationCreatorDisplayNameHasBeenSet = true; m_collaborationCreatorDisplayName = value; }
-    inline void SetCollaborationCreatorDisplayName(Aws::String&& value) { m_collaborationCreatorDisplayNameHasBeenSet = true; m_collaborationCreatorDisplayName = std::move(value); }
-    inline void SetCollaborationCreatorDisplayName(const char* value) { m_collaborationCreatorDisplayNameHasBeenSet = true; m_collaborationCreatorDisplayName.assign(value); }
-    inline Membership& WithCollaborationCreatorDisplayName(const Aws::String& value) { SetCollaborationCreatorDisplayName(value); return *this;}
-    inline Membership& WithCollaborationCreatorDisplayName(Aws::String&& value) { SetCollaborationCreatorDisplayName(std::move(value)); return *this;}
-    inline Membership& WithCollaborationCreatorDisplayName(const char* value) { SetCollaborationCreatorDisplayName(value); return *this;}
+    template<typename CollaborationCreatorDisplayNameT = Aws::String>
+    void SetCollaborationCreatorDisplayName(CollaborationCreatorDisplayNameT&& value) { m_collaborationCreatorDisplayNameHasBeenSet = true; m_collaborationCreatorDisplayName = std::forward<CollaborationCreatorDisplayNameT>(value); }
+    template<typename CollaborationCreatorDisplayNameT = Aws::String>
+    Membership& WithCollaborationCreatorDisplayName(CollaborationCreatorDisplayNameT&& value) { SetCollaborationCreatorDisplayName(std::forward<CollaborationCreatorDisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the membership's collaboration.</p>
      */
-    inline const Aws::String& GetCollaborationName() const{ return m_collaborationName; }
+    inline const Aws::String& GetCollaborationName() const { return m_collaborationName; }
     inline bool CollaborationNameHasBeenSet() const { return m_collaborationNameHasBeenSet; }
-    inline void SetCollaborationName(const Aws::String& value) { m_collaborationNameHasBeenSet = true; m_collaborationName = value; }
-    inline void SetCollaborationName(Aws::String&& value) { m_collaborationNameHasBeenSet = true; m_collaborationName = std::move(value); }
-    inline void SetCollaborationName(const char* value) { m_collaborationNameHasBeenSet = true; m_collaborationName.assign(value); }
-    inline Membership& WithCollaborationName(const Aws::String& value) { SetCollaborationName(value); return *this;}
-    inline Membership& WithCollaborationName(Aws::String&& value) { SetCollaborationName(std::move(value)); return *this;}
-    inline Membership& WithCollaborationName(const char* value) { SetCollaborationName(value); return *this;}
+    template<typename CollaborationNameT = Aws::String>
+    void SetCollaborationName(CollaborationNameT&& value) { m_collaborationNameHasBeenSet = true; m_collaborationName = std::forward<CollaborationNameT>(value); }
+    template<typename CollaborationNameT = Aws::String>
+    Membership& WithCollaborationName(CollaborationNameT&& value) { SetCollaborationName(std::forward<CollaborationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the membership was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
-    inline Membership& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline Membership& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    Membership& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the membership metadata was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
+    inline const Aws::Utils::DateTime& GetUpdateTime() const { return m_updateTime; }
     inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::move(value); }
-    inline Membership& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-    inline Membership& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    void SetUpdateTime(UpdateTimeT&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::forward<UpdateTimeT>(value); }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    Membership& WithUpdateTime(UpdateTimeT&& value) { SetUpdateTime(std::forward<UpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the membership.</p>
      */
-    inline const MembershipStatus& GetStatus() const{ return m_status; }
+    inline MembershipStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const MembershipStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(MembershipStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Membership& WithStatus(const MembershipStatus& value) { SetStatus(value); return *this;}
-    inline Membership& WithStatus(MembershipStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(MembershipStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline Membership& WithStatus(MembershipStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The abilities granted to the collaboration member.</p>
      */
-    inline const Aws::Vector<MemberAbility>& GetMemberAbilities() const{ return m_memberAbilities; }
+    inline const Aws::Vector<MemberAbility>& GetMemberAbilities() const { return m_memberAbilities; }
     inline bool MemberAbilitiesHasBeenSet() const { return m_memberAbilitiesHasBeenSet; }
-    inline void SetMemberAbilities(const Aws::Vector<MemberAbility>& value) { m_memberAbilitiesHasBeenSet = true; m_memberAbilities = value; }
-    inline void SetMemberAbilities(Aws::Vector<MemberAbility>&& value) { m_memberAbilitiesHasBeenSet = true; m_memberAbilities = std::move(value); }
-    inline Membership& WithMemberAbilities(const Aws::Vector<MemberAbility>& value) { SetMemberAbilities(value); return *this;}
-    inline Membership& WithMemberAbilities(Aws::Vector<MemberAbility>&& value) { SetMemberAbilities(std::move(value)); return *this;}
-    inline Membership& AddMemberAbilities(const MemberAbility& value) { m_memberAbilitiesHasBeenSet = true; m_memberAbilities.push_back(value); return *this; }
-    inline Membership& AddMemberAbilities(MemberAbility&& value) { m_memberAbilitiesHasBeenSet = true; m_memberAbilities.push_back(std::move(value)); return *this; }
+    template<typename MemberAbilitiesT = Aws::Vector<MemberAbility>>
+    void SetMemberAbilities(MemberAbilitiesT&& value) { m_memberAbilitiesHasBeenSet = true; m_memberAbilities = std::forward<MemberAbilitiesT>(value); }
+    template<typename MemberAbilitiesT = Aws::Vector<MemberAbility>>
+    Membership& WithMemberAbilities(MemberAbilitiesT&& value) { SetMemberAbilities(std::forward<MemberAbilitiesT>(value)); return *this;}
+    inline Membership& AddMemberAbilities(MemberAbility value) { m_memberAbilitiesHasBeenSet = true; m_memberAbilities.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -201,12 +184,12 @@ namespace Model
      * <p>Specifies the ML member abilities that are granted to a collaboration
      * member.</p>
      */
-    inline const MLMemberAbilities& GetMlMemberAbilities() const{ return m_mlMemberAbilities; }
+    inline const MLMemberAbilities& GetMlMemberAbilities() const { return m_mlMemberAbilities; }
     inline bool MlMemberAbilitiesHasBeenSet() const { return m_mlMemberAbilitiesHasBeenSet; }
-    inline void SetMlMemberAbilities(const MLMemberAbilities& value) { m_mlMemberAbilitiesHasBeenSet = true; m_mlMemberAbilities = value; }
-    inline void SetMlMemberAbilities(MLMemberAbilities&& value) { m_mlMemberAbilitiesHasBeenSet = true; m_mlMemberAbilities = std::move(value); }
-    inline Membership& WithMlMemberAbilities(const MLMemberAbilities& value) { SetMlMemberAbilities(value); return *this;}
-    inline Membership& WithMlMemberAbilities(MLMemberAbilities&& value) { SetMlMemberAbilities(std::move(value)); return *this;}
+    template<typename MlMemberAbilitiesT = MLMemberAbilities>
+    void SetMlMemberAbilities(MlMemberAbilitiesT&& value) { m_mlMemberAbilitiesHasBeenSet = true; m_mlMemberAbilities = std::forward<MlMemberAbilitiesT>(value); }
+    template<typename MlMemberAbilitiesT = MLMemberAbilities>
+    Membership& WithMlMemberAbilities(MlMemberAbilitiesT&& value) { SetMlMemberAbilities(std::forward<MlMemberAbilitiesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -216,12 +199,10 @@ namespace Model
      * queries run within this collaboration and those logs can be viewed in Amazon
      * CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
      */
-    inline const MembershipQueryLogStatus& GetQueryLogStatus() const{ return m_queryLogStatus; }
+    inline MembershipQueryLogStatus GetQueryLogStatus() const { return m_queryLogStatus; }
     inline bool QueryLogStatusHasBeenSet() const { return m_queryLogStatusHasBeenSet; }
-    inline void SetQueryLogStatus(const MembershipQueryLogStatus& value) { m_queryLogStatusHasBeenSet = true; m_queryLogStatus = value; }
-    inline void SetQueryLogStatus(MembershipQueryLogStatus&& value) { m_queryLogStatusHasBeenSet = true; m_queryLogStatus = std::move(value); }
-    inline Membership& WithQueryLogStatus(const MembershipQueryLogStatus& value) { SetQueryLogStatus(value); return *this;}
-    inline Membership& WithQueryLogStatus(MembershipQueryLogStatus&& value) { SetQueryLogStatus(std::move(value)); return *this;}
+    inline void SetQueryLogStatus(MembershipQueryLogStatus value) { m_queryLogStatusHasBeenSet = true; m_queryLogStatus = value; }
+    inline Membership& WithQueryLogStatus(MembershipQueryLogStatus value) { SetQueryLogStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -231,12 +212,10 @@ namespace Model
      * jobs run within this collaboration and those logs can be viewed in Amazon
      * CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
      */
-    inline const MembershipJobLogStatus& GetJobLogStatus() const{ return m_jobLogStatus; }
+    inline MembershipJobLogStatus GetJobLogStatus() const { return m_jobLogStatus; }
     inline bool JobLogStatusHasBeenSet() const { return m_jobLogStatusHasBeenSet; }
-    inline void SetJobLogStatus(const MembershipJobLogStatus& value) { m_jobLogStatusHasBeenSet = true; m_jobLogStatus = value; }
-    inline void SetJobLogStatus(MembershipJobLogStatus&& value) { m_jobLogStatusHasBeenSet = true; m_jobLogStatus = std::move(value); }
-    inline Membership& WithJobLogStatus(const MembershipJobLogStatus& value) { SetJobLogStatus(value); return *this;}
-    inline Membership& WithJobLogStatus(MembershipJobLogStatus&& value) { SetJobLogStatus(std::move(value)); return *this;}
+    inline void SetJobLogStatus(MembershipJobLogStatus value) { m_jobLogStatusHasBeenSet = true; m_jobLogStatus = value; }
+    inline Membership& WithJobLogStatus(MembershipJobLogStatus value) { SetJobLogStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -244,36 +223,36 @@ namespace Model
      * <p>The default protected query result configuration as specified by the member
      * who can receive results.</p>
      */
-    inline const MembershipProtectedQueryResultConfiguration& GetDefaultResultConfiguration() const{ return m_defaultResultConfiguration; }
+    inline const MembershipProtectedQueryResultConfiguration& GetDefaultResultConfiguration() const { return m_defaultResultConfiguration; }
     inline bool DefaultResultConfigurationHasBeenSet() const { return m_defaultResultConfigurationHasBeenSet; }
-    inline void SetDefaultResultConfiguration(const MembershipProtectedQueryResultConfiguration& value) { m_defaultResultConfigurationHasBeenSet = true; m_defaultResultConfiguration = value; }
-    inline void SetDefaultResultConfiguration(MembershipProtectedQueryResultConfiguration&& value) { m_defaultResultConfigurationHasBeenSet = true; m_defaultResultConfiguration = std::move(value); }
-    inline Membership& WithDefaultResultConfiguration(const MembershipProtectedQueryResultConfiguration& value) { SetDefaultResultConfiguration(value); return *this;}
-    inline Membership& WithDefaultResultConfiguration(MembershipProtectedQueryResultConfiguration&& value) { SetDefaultResultConfiguration(std::move(value)); return *this;}
+    template<typename DefaultResultConfigurationT = MembershipProtectedQueryResultConfiguration>
+    void SetDefaultResultConfiguration(DefaultResultConfigurationT&& value) { m_defaultResultConfigurationHasBeenSet = true; m_defaultResultConfiguration = std::forward<DefaultResultConfigurationT>(value); }
+    template<typename DefaultResultConfigurationT = MembershipProtectedQueryResultConfiguration>
+    Membership& WithDefaultResultConfiguration(DefaultResultConfigurationT&& value) { SetDefaultResultConfiguration(std::forward<DefaultResultConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The default job result configuration for the membership.</p>
      */
-    inline const MembershipProtectedJobResultConfiguration& GetDefaultJobResultConfiguration() const{ return m_defaultJobResultConfiguration; }
+    inline const MembershipProtectedJobResultConfiguration& GetDefaultJobResultConfiguration() const { return m_defaultJobResultConfiguration; }
     inline bool DefaultJobResultConfigurationHasBeenSet() const { return m_defaultJobResultConfigurationHasBeenSet; }
-    inline void SetDefaultJobResultConfiguration(const MembershipProtectedJobResultConfiguration& value) { m_defaultJobResultConfigurationHasBeenSet = true; m_defaultJobResultConfiguration = value; }
-    inline void SetDefaultJobResultConfiguration(MembershipProtectedJobResultConfiguration&& value) { m_defaultJobResultConfigurationHasBeenSet = true; m_defaultJobResultConfiguration = std::move(value); }
-    inline Membership& WithDefaultJobResultConfiguration(const MembershipProtectedJobResultConfiguration& value) { SetDefaultJobResultConfiguration(value); return *this;}
-    inline Membership& WithDefaultJobResultConfiguration(MembershipProtectedJobResultConfiguration&& value) { SetDefaultJobResultConfiguration(std::move(value)); return *this;}
+    template<typename DefaultJobResultConfigurationT = MembershipProtectedJobResultConfiguration>
+    void SetDefaultJobResultConfiguration(DefaultJobResultConfigurationT&& value) { m_defaultJobResultConfigurationHasBeenSet = true; m_defaultJobResultConfiguration = std::forward<DefaultJobResultConfigurationT>(value); }
+    template<typename DefaultJobResultConfigurationT = MembershipProtectedJobResultConfiguration>
+    Membership& WithDefaultJobResultConfiguration(DefaultJobResultConfigurationT&& value) { SetDefaultJobResultConfiguration(std::forward<DefaultJobResultConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The payment responsibilities accepted by the collaboration member.</p>
      */
-    inline const MembershipPaymentConfiguration& GetPaymentConfiguration() const{ return m_paymentConfiguration; }
+    inline const MembershipPaymentConfiguration& GetPaymentConfiguration() const { return m_paymentConfiguration; }
     inline bool PaymentConfigurationHasBeenSet() const { return m_paymentConfigurationHasBeenSet; }
-    inline void SetPaymentConfiguration(const MembershipPaymentConfiguration& value) { m_paymentConfigurationHasBeenSet = true; m_paymentConfiguration = value; }
-    inline void SetPaymentConfiguration(MembershipPaymentConfiguration&& value) { m_paymentConfigurationHasBeenSet = true; m_paymentConfiguration = std::move(value); }
-    inline Membership& WithPaymentConfiguration(const MembershipPaymentConfiguration& value) { SetPaymentConfiguration(value); return *this;}
-    inline Membership& WithPaymentConfiguration(MembershipPaymentConfiguration&& value) { SetPaymentConfiguration(std::move(value)); return *this;}
+    template<typename PaymentConfigurationT = MembershipPaymentConfiguration>
+    void SetPaymentConfiguration(PaymentConfigurationT&& value) { m_paymentConfigurationHasBeenSet = true; m_paymentConfiguration = std::forward<PaymentConfigurationT>(value); }
+    template<typename PaymentConfigurationT = MembershipPaymentConfiguration>
+    Membership& WithPaymentConfiguration(PaymentConfigurationT&& value) { SetPaymentConfiguration(std::forward<PaymentConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -298,13 +277,13 @@ namespace Model
     Aws::String m_collaborationName;
     bool m_collaborationNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::Utils::DateTime m_createTime{};
     bool m_createTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updateTime;
+    Aws::Utils::DateTime m_updateTime{};
     bool m_updateTimeHasBeenSet = false;
 
-    MembershipStatus m_status;
+    MembershipStatus m_status{MembershipStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Vector<MemberAbility> m_memberAbilities;
@@ -313,10 +292,10 @@ namespace Model
     MLMemberAbilities m_mlMemberAbilities;
     bool m_mlMemberAbilitiesHasBeenSet = false;
 
-    MembershipQueryLogStatus m_queryLogStatus;
+    MembershipQueryLogStatus m_queryLogStatus{MembershipQueryLogStatus::NOT_SET};
     bool m_queryLogStatusHasBeenSet = false;
 
-    MembershipJobLogStatus m_jobLogStatus;
+    MembershipJobLogStatus m_jobLogStatus{MembershipJobLogStatus::NOT_SET};
     bool m_jobLogStatusHasBeenSet = false;
 
     MembershipProtectedQueryResultConfiguration m_defaultResultConfiguration;

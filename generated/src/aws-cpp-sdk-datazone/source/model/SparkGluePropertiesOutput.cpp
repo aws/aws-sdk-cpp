@@ -18,22 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-SparkGluePropertiesOutput::SparkGluePropertiesOutput() : 
-    m_additionalArgsHasBeenSet(false),
-    m_glueConnectionNameHasBeenSet(false),
-    m_glueVersionHasBeenSet(false),
-    m_idleTimeout(0),
-    m_idleTimeoutHasBeenSet(false),
-    m_javaVirtualEnvHasBeenSet(false),
-    m_numberOfWorkers(0),
-    m_numberOfWorkersHasBeenSet(false),
-    m_pythonVirtualEnvHasBeenSet(false),
-    m_workerTypeHasBeenSet(false)
-{
-}
-
 SparkGluePropertiesOutput::SparkGluePropertiesOutput(JsonView jsonValue)
-  : SparkGluePropertiesOutput()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ SparkGluePropertiesOutput& SparkGluePropertiesOutput::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("additionalArgs"))
   {
     m_additionalArgs = jsonValue.GetObject("additionalArgs");
-
     m_additionalArgsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("glueConnectionName"))
   {
     m_glueConnectionName = jsonValue.GetString("glueConnectionName");
-
     m_glueConnectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("glueVersion"))
   {
     m_glueVersion = jsonValue.GetString("glueVersion");
-
     m_glueVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("idleTimeout"))
   {
     m_idleTimeout = jsonValue.GetInteger("idleTimeout");
-
     m_idleTimeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("javaVirtualEnv"))
   {
     m_javaVirtualEnv = jsonValue.GetString("javaVirtualEnv");
-
     m_javaVirtualEnvHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfWorkers"))
   {
     m_numberOfWorkers = jsonValue.GetInteger("numberOfWorkers");
-
     m_numberOfWorkersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pythonVirtualEnv"))
   {
     m_pythonVirtualEnv = jsonValue.GetString("pythonVirtualEnv");
-
     m_pythonVirtualEnvHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workerType"))
   {
     m_workerType = jsonValue.GetString("workerType");
-
     m_workerTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

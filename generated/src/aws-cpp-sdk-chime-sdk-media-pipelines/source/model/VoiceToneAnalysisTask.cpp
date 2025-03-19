@@ -18,17 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-VoiceToneAnalysisTask::VoiceToneAnalysisTask() : 
-    m_voiceToneAnalysisTaskIdHasBeenSet(false),
-    m_voiceToneAnalysisTaskStatus(MediaPipelineTaskStatus::NOT_SET),
-    m_voiceToneAnalysisTaskStatusHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
-{
-}
-
 VoiceToneAnalysisTask::VoiceToneAnalysisTask(JsonView jsonValue)
-  : VoiceToneAnalysisTask()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ VoiceToneAnalysisTask& VoiceToneAnalysisTask::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VoiceToneAnalysisTaskId"))
   {
     m_voiceToneAnalysisTaskId = jsonValue.GetString("VoiceToneAnalysisTaskId");
-
     m_voiceToneAnalysisTaskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VoiceToneAnalysisTaskStatus"))
   {
     m_voiceToneAnalysisTaskStatus = MediaPipelineTaskStatusMapper::GetMediaPipelineTaskStatusForName(jsonValue.GetString("VoiceToneAnalysisTaskStatus"));
-
     m_voiceToneAnalysisTaskStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetString("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedTimestamp"))
   {
     m_updatedTimestamp = jsonValue.GetString("UpdatedTimestamp");
-
     m_updatedTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

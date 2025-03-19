@@ -12,12 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSessionRequest::GetSessionRequest() : 
-    m_assistantIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSessionRequest::SerializePayload() const
 {
   return {};

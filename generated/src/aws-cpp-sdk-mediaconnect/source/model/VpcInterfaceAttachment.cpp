@@ -18,13 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-VpcInterfaceAttachment::VpcInterfaceAttachment() : 
-    m_vpcInterfaceNameHasBeenSet(false)
-{
-}
-
 VpcInterfaceAttachment::VpcInterfaceAttachment(JsonView jsonValue)
-  : VpcInterfaceAttachment()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ VpcInterfaceAttachment& VpcInterfaceAttachment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("vpcInterfaceName"))
   {
     m_vpcInterfaceName = jsonValue.GetString("vpcInterfaceName");
-
     m_vpcInterfaceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -19,21 +19,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-ServiceQuotaExceededException::ServiceQuotaExceededException() : 
-    m_accessControlAllowOriginHasBeenSet(false),
-    m_accessControlExposeHeadersHasBeenSet(false),
-    m_cacheControlHasBeenSet(false),
-    m_contentSecurityPolicyHasBeenSet(false),
-    m_strictTransportSecurityHasBeenSet(false),
-    m_xContentTypeOptionsHasBeenSet(false),
-    m_xFrameOptionsHasBeenSet(false),
-    m_xAmznErrorTypeHasBeenSet(false),
-    m_exceptionMessageHasBeenSet(false)
-{
-}
-
 ServiceQuotaExceededException::ServiceQuotaExceededException(JsonView jsonValue)
-  : ServiceQuotaExceededException()
 {
   *this = jsonValue;
 }
@@ -43,10 +29,8 @@ ServiceQuotaExceededException& ServiceQuotaExceededException::operator =(JsonVie
   if(jsonValue.ValueExists("exceptionMessage"))
   {
     m_exceptionMessage = jsonValue.GetString("exceptionMessage");
-
     m_exceptionMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

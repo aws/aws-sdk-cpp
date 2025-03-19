@@ -26,7 +26,7 @@ namespace Model
   class ListOpportunitiesRequest : public PartnerCentralSellingRequest
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API ListOpportunitiesRequest();
+    AWS_PARTNERCENTRALSELLING_API ListOpportunitiesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
      * catalog, and <code>Sandbox</code> for testing in secure, isolated
      * environments.</p>
      */
-    inline const Aws::String& GetCatalog() const{ return m_catalog; }
+    inline const Aws::String& GetCatalog() const { return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
-    inline void SetCatalog(const Aws::String& value) { m_catalogHasBeenSet = true; m_catalog = value; }
-    inline void SetCatalog(Aws::String&& value) { m_catalogHasBeenSet = true; m_catalog = std::move(value); }
-    inline void SetCatalog(const char* value) { m_catalogHasBeenSet = true; m_catalog.assign(value); }
-    inline ListOpportunitiesRequest& WithCatalog(const Aws::String& value) { SetCatalog(value); return *this;}
-    inline ListOpportunitiesRequest& WithCatalog(Aws::String&& value) { SetCatalog(std::move(value)); return *this;}
-    inline ListOpportunitiesRequest& WithCatalog(const char* value) { SetCatalog(value); return *this;}
+    template<typename CatalogT = Aws::String>
+    void SetCatalog(CatalogT&& value) { m_catalogHasBeenSet = true; m_catalog = std::forward<CatalogT>(value); }
+    template<typename CatalogT = Aws::String>
+    ListOpportunitiesRequest& WithCatalog(CatalogT&& value) { SetCatalog(std::forward<CatalogT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,15 +62,14 @@ namespace Model
      * partners to search for opportunities associated with a specific customer by
      * matching the provided company name string.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCustomerCompanyName() const{ return m_customerCompanyName; }
+    inline const Aws::Vector<Aws::String>& GetCustomerCompanyName() const { return m_customerCompanyName; }
     inline bool CustomerCompanyNameHasBeenSet() const { return m_customerCompanyNameHasBeenSet; }
-    inline void SetCustomerCompanyName(const Aws::Vector<Aws::String>& value) { m_customerCompanyNameHasBeenSet = true; m_customerCompanyName = value; }
-    inline void SetCustomerCompanyName(Aws::Vector<Aws::String>&& value) { m_customerCompanyNameHasBeenSet = true; m_customerCompanyName = std::move(value); }
-    inline ListOpportunitiesRequest& WithCustomerCompanyName(const Aws::Vector<Aws::String>& value) { SetCustomerCompanyName(value); return *this;}
-    inline ListOpportunitiesRequest& WithCustomerCompanyName(Aws::Vector<Aws::String>&& value) { SetCustomerCompanyName(std::move(value)); return *this;}
-    inline ListOpportunitiesRequest& AddCustomerCompanyName(const Aws::String& value) { m_customerCompanyNameHasBeenSet = true; m_customerCompanyName.push_back(value); return *this; }
-    inline ListOpportunitiesRequest& AddCustomerCompanyName(Aws::String&& value) { m_customerCompanyNameHasBeenSet = true; m_customerCompanyName.push_back(std::move(value)); return *this; }
-    inline ListOpportunitiesRequest& AddCustomerCompanyName(const char* value) { m_customerCompanyNameHasBeenSet = true; m_customerCompanyName.push_back(value); return *this; }
+    template<typename CustomerCompanyNameT = Aws::Vector<Aws::String>>
+    void SetCustomerCompanyName(CustomerCompanyNameT&& value) { m_customerCompanyNameHasBeenSet = true; m_customerCompanyName = std::forward<CustomerCompanyNameT>(value); }
+    template<typename CustomerCompanyNameT = Aws::Vector<Aws::String>>
+    ListOpportunitiesRequest& WithCustomerCompanyName(CustomerCompanyNameT&& value) { SetCustomerCompanyName(std::forward<CustomerCompanyNameT>(value)); return *this;}
+    template<typename CustomerCompanyNameT = Aws::String>
+    ListOpportunitiesRequest& AddCustomerCompanyName(CustomerCompanyNameT&& value) { m_customerCompanyNameHasBeenSet = true; m_customerCompanyName.emplace_back(std::forward<CustomerCompanyNameT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -81,15 +78,14 @@ namespace Model
      * partners to retrieve specific opportunities by providing their unique
      * identifiers, ensuring precise results.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::Vector<Aws::String>& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::Vector<Aws::String>& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::Vector<Aws::String>&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline ListOpportunitiesRequest& WithIdentifier(const Aws::Vector<Aws::String>& value) { SetIdentifier(value); return *this;}
-    inline ListOpportunitiesRequest& WithIdentifier(Aws::Vector<Aws::String>&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline ListOpportunitiesRequest& AddIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier.push_back(value); return *this; }
-    inline ListOpportunitiesRequest& AddIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier.push_back(std::move(value)); return *this; }
-    inline ListOpportunitiesRequest& AddIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.push_back(value); return *this; }
+    template<typename IdentifierT = Aws::Vector<Aws::String>>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::Vector<Aws::String>>
+    ListOpportunitiesRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
+    template<typename IdentifierT = Aws::String>
+    ListOpportunitiesRequest& AddIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier.emplace_back(std::forward<IdentifierT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -98,12 +94,12 @@ namespace Model
      * helps retrieve opportunities that were updated after the specified date,
      * allowing partners to track recent changes or updates.</p>
      */
-    inline const LastModifiedDate& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline const LastModifiedDate& GetLastModifiedDate() const { return m_lastModifiedDate; }
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
-    inline void SetLastModifiedDate(const LastModifiedDate& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
-    inline void SetLastModifiedDate(LastModifiedDate&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::move(value); }
-    inline ListOpportunitiesRequest& WithLastModifiedDate(const LastModifiedDate& value) { SetLastModifiedDate(value); return *this;}
-    inline ListOpportunitiesRequest& WithLastModifiedDate(LastModifiedDate&& value) { SetLastModifiedDate(std::move(value)); return *this;}
+    template<typename LastModifiedDateT = LastModifiedDate>
+    void SetLastModifiedDate(LastModifiedDateT&& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = std::forward<LastModifiedDateT>(value); }
+    template<typename LastModifiedDateT = LastModifiedDate>
+    ListOpportunitiesRequest& WithLastModifiedDate(LastModifiedDateT&& value) { SetLastModifiedDate(std::forward<LastModifiedDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,14 +109,13 @@ namespace Model
      * Submission</code>, <code>In Review</code>, <code>Action Required</code>, or
      * <code>Approved</code>.</p>
      */
-    inline const Aws::Vector<ReviewStatus>& GetLifeCycleReviewStatus() const{ return m_lifeCycleReviewStatus; }
+    inline const Aws::Vector<ReviewStatus>& GetLifeCycleReviewStatus() const { return m_lifeCycleReviewStatus; }
     inline bool LifeCycleReviewStatusHasBeenSet() const { return m_lifeCycleReviewStatusHasBeenSet; }
-    inline void SetLifeCycleReviewStatus(const Aws::Vector<ReviewStatus>& value) { m_lifeCycleReviewStatusHasBeenSet = true; m_lifeCycleReviewStatus = value; }
-    inline void SetLifeCycleReviewStatus(Aws::Vector<ReviewStatus>&& value) { m_lifeCycleReviewStatusHasBeenSet = true; m_lifeCycleReviewStatus = std::move(value); }
-    inline ListOpportunitiesRequest& WithLifeCycleReviewStatus(const Aws::Vector<ReviewStatus>& value) { SetLifeCycleReviewStatus(value); return *this;}
-    inline ListOpportunitiesRequest& WithLifeCycleReviewStatus(Aws::Vector<ReviewStatus>&& value) { SetLifeCycleReviewStatus(std::move(value)); return *this;}
-    inline ListOpportunitiesRequest& AddLifeCycleReviewStatus(const ReviewStatus& value) { m_lifeCycleReviewStatusHasBeenSet = true; m_lifeCycleReviewStatus.push_back(value); return *this; }
-    inline ListOpportunitiesRequest& AddLifeCycleReviewStatus(ReviewStatus&& value) { m_lifeCycleReviewStatusHasBeenSet = true; m_lifeCycleReviewStatus.push_back(std::move(value)); return *this; }
+    template<typename LifeCycleReviewStatusT = Aws::Vector<ReviewStatus>>
+    void SetLifeCycleReviewStatus(LifeCycleReviewStatusT&& value) { m_lifeCycleReviewStatusHasBeenSet = true; m_lifeCycleReviewStatus = std::forward<LifeCycleReviewStatusT>(value); }
+    template<typename LifeCycleReviewStatusT = Aws::Vector<ReviewStatus>>
+    ListOpportunitiesRequest& WithLifeCycleReviewStatus(LifeCycleReviewStatusT&& value) { SetLifeCycleReviewStatus(std::forward<LifeCycleReviewStatusT>(value)); return *this;}
+    inline ListOpportunitiesRequest& AddLifeCycleReviewStatus(ReviewStatus value) { m_lifeCycleReviewStatusHasBeenSet = true; m_lifeCycleReviewStatus.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -130,14 +125,13 @@ namespace Model
      * <code>Qualified</code>, <code>Technical Validation</code>, <code>Business
      * Validation</code>, or <code>Closed Won</code>.</p>
      */
-    inline const Aws::Vector<Stage>& GetLifeCycleStage() const{ return m_lifeCycleStage; }
+    inline const Aws::Vector<Stage>& GetLifeCycleStage() const { return m_lifeCycleStage; }
     inline bool LifeCycleStageHasBeenSet() const { return m_lifeCycleStageHasBeenSet; }
-    inline void SetLifeCycleStage(const Aws::Vector<Stage>& value) { m_lifeCycleStageHasBeenSet = true; m_lifeCycleStage = value; }
-    inline void SetLifeCycleStage(Aws::Vector<Stage>&& value) { m_lifeCycleStageHasBeenSet = true; m_lifeCycleStage = std::move(value); }
-    inline ListOpportunitiesRequest& WithLifeCycleStage(const Aws::Vector<Stage>& value) { SetLifeCycleStage(value); return *this;}
-    inline ListOpportunitiesRequest& WithLifeCycleStage(Aws::Vector<Stage>&& value) { SetLifeCycleStage(std::move(value)); return *this;}
-    inline ListOpportunitiesRequest& AddLifeCycleStage(const Stage& value) { m_lifeCycleStageHasBeenSet = true; m_lifeCycleStage.push_back(value); return *this; }
-    inline ListOpportunitiesRequest& AddLifeCycleStage(Stage&& value) { m_lifeCycleStageHasBeenSet = true; m_lifeCycleStage.push_back(std::move(value)); return *this; }
+    template<typename LifeCycleStageT = Aws::Vector<Stage>>
+    void SetLifeCycleStage(LifeCycleStageT&& value) { m_lifeCycleStageHasBeenSet = true; m_lifeCycleStage = std::forward<LifeCycleStageT>(value); }
+    template<typename LifeCycleStageT = Aws::Vector<Stage>>
+    ListOpportunitiesRequest& WithLifeCycleStage(LifeCycleStageT&& value) { SetLifeCycleStage(std::forward<LifeCycleStageT>(value)); return *this;}
+    inline ListOpportunitiesRequest& AddLifeCycleStage(Stage value) { m_lifeCycleStageHasBeenSet = true; m_lifeCycleStage.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -146,7 +140,7 @@ namespace Model
      * limits the number of opportunities returned in the response to avoid providing
      * too many results at once.</p> <p>Default: 20</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListOpportunitiesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -158,14 +152,12 @@ namespace Model
      * calls. This token is included in the response only if there are additional
      * result pages available.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListOpportunitiesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListOpportunitiesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListOpportunitiesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListOpportunitiesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -173,12 +165,12 @@ namespace Model
      * <p>An object that specifies how the response is sorted. The default
      * <code>Sort.SortBy</code> value is <code>LastModifiedDate</code>.</p>
      */
-    inline const OpportunitySort& GetSort() const{ return m_sort; }
+    inline const OpportunitySort& GetSort() const { return m_sort; }
     inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
-    inline void SetSort(const OpportunitySort& value) { m_sortHasBeenSet = true; m_sort = value; }
-    inline void SetSort(OpportunitySort&& value) { m_sortHasBeenSet = true; m_sort = std::move(value); }
-    inline ListOpportunitiesRequest& WithSort(const OpportunitySort& value) { SetSort(value); return *this;}
-    inline ListOpportunitiesRequest& WithSort(OpportunitySort&& value) { SetSort(std::move(value)); return *this;}
+    template<typename SortT = OpportunitySort>
+    void SetSort(SortT&& value) { m_sortHasBeenSet = true; m_sort = std::forward<SortT>(value); }
+    template<typename SortT = OpportunitySort>
+    ListOpportunitiesRequest& WithSort(SortT&& value) { SetSort(std::forward<SortT>(value)); return *this;}
     ///@}
   private:
 
@@ -200,7 +192,7 @@ namespace Model
     Aws::Vector<Stage> m_lifeCycleStage;
     bool m_lifeCycleStageHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

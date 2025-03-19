@@ -27,7 +27,7 @@ namespace Model
   class CreateLicenseEndpointResult
   {
   public:
-    AWS_DEADLINE_API CreateLicenseEndpointResult();
+    AWS_DEADLINE_API CreateLicenseEndpointResult() = default;
     AWS_DEADLINE_API CreateLicenseEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEADLINE_API CreateLicenseEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The license endpoint ID.</p>
      */
-    inline const Aws::String& GetLicenseEndpointId() const{ return m_licenseEndpointId; }
-    inline void SetLicenseEndpointId(const Aws::String& value) { m_licenseEndpointId = value; }
-    inline void SetLicenseEndpointId(Aws::String&& value) { m_licenseEndpointId = std::move(value); }
-    inline void SetLicenseEndpointId(const char* value) { m_licenseEndpointId.assign(value); }
-    inline CreateLicenseEndpointResult& WithLicenseEndpointId(const Aws::String& value) { SetLicenseEndpointId(value); return *this;}
-    inline CreateLicenseEndpointResult& WithLicenseEndpointId(Aws::String&& value) { SetLicenseEndpointId(std::move(value)); return *this;}
-    inline CreateLicenseEndpointResult& WithLicenseEndpointId(const char* value) { SetLicenseEndpointId(value); return *this;}
+    inline const Aws::String& GetLicenseEndpointId() const { return m_licenseEndpointId; }
+    template<typename LicenseEndpointIdT = Aws::String>
+    void SetLicenseEndpointId(LicenseEndpointIdT&& value) { m_licenseEndpointIdHasBeenSet = true; m_licenseEndpointId = std::forward<LicenseEndpointIdT>(value); }
+    template<typename LicenseEndpointIdT = Aws::String>
+    CreateLicenseEndpointResult& WithLicenseEndpointId(LicenseEndpointIdT&& value) { SetLicenseEndpointId(std::forward<LicenseEndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateLicenseEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateLicenseEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateLicenseEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateLicenseEndpointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_licenseEndpointId;
+    bool m_licenseEndpointIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

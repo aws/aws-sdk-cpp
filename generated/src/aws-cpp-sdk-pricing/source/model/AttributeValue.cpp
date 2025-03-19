@@ -18,13 +18,7 @@ namespace Pricing
 namespace Model
 {
 
-AttributeValue::AttributeValue() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 AttributeValue::AttributeValue(JsonView jsonValue)
-  : AttributeValue()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AttributeValue& AttributeValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

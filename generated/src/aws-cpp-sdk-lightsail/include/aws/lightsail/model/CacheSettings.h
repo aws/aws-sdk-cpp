@@ -38,7 +38,7 @@ namespace Model
   class CacheSettings
   {
   public:
-    AWS_LIGHTSAIL_API CacheSettings();
+    AWS_LIGHTSAIL_API CacheSettings() = default;
     AWS_LIGHTSAIL_API CacheSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API CacheSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,7 +53,7 @@ namespace Model
      * max-age</code>, <code>Cache-Control s-maxage</code>, and <code>Expires</code> to
      * objects.</p> 
      */
-    inline long long GetDefaultTTL() const{ return m_defaultTTL; }
+    inline long long GetDefaultTTL() const { return m_defaultTTL; }
     inline bool DefaultTTLHasBeenSet() const { return m_defaultTTLHasBeenSet; }
     inline void SetDefaultTTL(long long value) { m_defaultTTLHasBeenSet = true; m_defaultTTL = value; }
     inline CacheSettings& WithDefaultTTL(long long value) { SetDefaultTTL(value); return *this;}
@@ -67,7 +67,7 @@ namespace Model
      * specified for <code>minimumTTL</code> if the distribution is configured to
      * forward all headers to the origin.</p>
      */
-    inline long long GetMinimumTTL() const{ return m_minimumTTL; }
+    inline long long GetMinimumTTL() const { return m_minimumTTL; }
     inline bool MinimumTTLHasBeenSet() const { return m_minimumTTLHasBeenSet; }
     inline void SetMinimumTTL(long long value) { m_minimumTTLHasBeenSet = true; m_minimumTTL = value; }
     inline CacheSettings& WithMinimumTTL(long long value) { SetMinimumTTL(value); return *this;}
@@ -81,7 +81,7 @@ namespace Model
      * when the origin adds HTTP headers such as <code>Cache-Control max-age</code>,
      * <code>Cache-Control s-maxage</code>, and <code>Expires</code> to objects.</p>
      */
-    inline long long GetMaximumTTL() const{ return m_maximumTTL; }
+    inline long long GetMaximumTTL() const { return m_maximumTTL; }
     inline bool MaximumTTLHasBeenSet() const { return m_maximumTTLHasBeenSet; }
     inline void SetMaximumTTL(long long value) { m_maximumTTLHasBeenSet = true; m_maximumTTL = value; }
     inline CacheSettings& WithMaximumTTL(long long value) { SetMaximumTTL(value); return *this;}
@@ -103,14 +103,12 @@ namespace Model
      * don't want them to. For example, you might not want users to have permission to
      * delete objects from your origin.</p>
      */
-    inline const Aws::String& GetAllowedHTTPMethods() const{ return m_allowedHTTPMethods; }
+    inline const Aws::String& GetAllowedHTTPMethods() const { return m_allowedHTTPMethods; }
     inline bool AllowedHTTPMethodsHasBeenSet() const { return m_allowedHTTPMethodsHasBeenSet; }
-    inline void SetAllowedHTTPMethods(const Aws::String& value) { m_allowedHTTPMethodsHasBeenSet = true; m_allowedHTTPMethods = value; }
-    inline void SetAllowedHTTPMethods(Aws::String&& value) { m_allowedHTTPMethodsHasBeenSet = true; m_allowedHTTPMethods = std::move(value); }
-    inline void SetAllowedHTTPMethods(const char* value) { m_allowedHTTPMethodsHasBeenSet = true; m_allowedHTTPMethods.assign(value); }
-    inline CacheSettings& WithAllowedHTTPMethods(const Aws::String& value) { SetAllowedHTTPMethods(value); return *this;}
-    inline CacheSettings& WithAllowedHTTPMethods(Aws::String&& value) { SetAllowedHTTPMethods(std::move(value)); return *this;}
-    inline CacheSettings& WithAllowedHTTPMethods(const char* value) { SetAllowedHTTPMethods(value); return *this;}
+    template<typename AllowedHTTPMethodsT = Aws::String>
+    void SetAllowedHTTPMethods(AllowedHTTPMethodsT&& value) { m_allowedHTTPMethodsHasBeenSet = true; m_allowedHTTPMethods = std::forward<AllowedHTTPMethodsT>(value); }
+    template<typename AllowedHTTPMethodsT = Aws::String>
+    CacheSettings& WithAllowedHTTPMethods(AllowedHTTPMethodsT&& value) { SetAllowedHTTPMethods(std::forward<AllowedHTTPMethodsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,14 +120,12 @@ namespace Model
      * caches responses to the <code>GET</code>, <code>HEAD</code>, and
      * <code>OPTIONS</code> methods.</p> </li> </ul>
      */
-    inline const Aws::String& GetCachedHTTPMethods() const{ return m_cachedHTTPMethods; }
+    inline const Aws::String& GetCachedHTTPMethods() const { return m_cachedHTTPMethods; }
     inline bool CachedHTTPMethodsHasBeenSet() const { return m_cachedHTTPMethodsHasBeenSet; }
-    inline void SetCachedHTTPMethods(const Aws::String& value) { m_cachedHTTPMethodsHasBeenSet = true; m_cachedHTTPMethods = value; }
-    inline void SetCachedHTTPMethods(Aws::String&& value) { m_cachedHTTPMethodsHasBeenSet = true; m_cachedHTTPMethods = std::move(value); }
-    inline void SetCachedHTTPMethods(const char* value) { m_cachedHTTPMethodsHasBeenSet = true; m_cachedHTTPMethods.assign(value); }
-    inline CacheSettings& WithCachedHTTPMethods(const Aws::String& value) { SetCachedHTTPMethods(value); return *this;}
-    inline CacheSettings& WithCachedHTTPMethods(Aws::String&& value) { SetCachedHTTPMethods(std::move(value)); return *this;}
-    inline CacheSettings& WithCachedHTTPMethods(const char* value) { SetCachedHTTPMethods(value); return *this;}
+    template<typename CachedHTTPMethodsT = Aws::String>
+    void SetCachedHTTPMethods(CachedHTTPMethodsT&& value) { m_cachedHTTPMethodsHasBeenSet = true; m_cachedHTTPMethods = std::forward<CachedHTTPMethodsT>(value); }
+    template<typename CachedHTTPMethodsT = Aws::String>
+    CacheSettings& WithCachedHTTPMethods(CachedHTTPMethodsT&& value) { SetCachedHTTPMethods(std::forward<CachedHTTPMethodsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,12 +133,12 @@ namespace Model
      * <p>An object that describes the cookies that are forwarded to the origin. Your
      * content is cached based on the cookies that are forwarded.</p>
      */
-    inline const CookieObject& GetForwardedCookies() const{ return m_forwardedCookies; }
+    inline const CookieObject& GetForwardedCookies() const { return m_forwardedCookies; }
     inline bool ForwardedCookiesHasBeenSet() const { return m_forwardedCookiesHasBeenSet; }
-    inline void SetForwardedCookies(const CookieObject& value) { m_forwardedCookiesHasBeenSet = true; m_forwardedCookies = value; }
-    inline void SetForwardedCookies(CookieObject&& value) { m_forwardedCookiesHasBeenSet = true; m_forwardedCookies = std::move(value); }
-    inline CacheSettings& WithForwardedCookies(const CookieObject& value) { SetForwardedCookies(value); return *this;}
-    inline CacheSettings& WithForwardedCookies(CookieObject&& value) { SetForwardedCookies(std::move(value)); return *this;}
+    template<typename ForwardedCookiesT = CookieObject>
+    void SetForwardedCookies(ForwardedCookiesT&& value) { m_forwardedCookiesHasBeenSet = true; m_forwardedCookies = std::forward<ForwardedCookiesT>(value); }
+    template<typename ForwardedCookiesT = CookieObject>
+    CacheSettings& WithForwardedCookies(ForwardedCookiesT&& value) { SetForwardedCookies(std::forward<ForwardedCookiesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -150,12 +146,12 @@ namespace Model
      * <p>An object that describes the headers that are forwarded to the origin. Your
      * content is cached based on the headers that are forwarded.</p>
      */
-    inline const HeaderObject& GetForwardedHeaders() const{ return m_forwardedHeaders; }
+    inline const HeaderObject& GetForwardedHeaders() const { return m_forwardedHeaders; }
     inline bool ForwardedHeadersHasBeenSet() const { return m_forwardedHeadersHasBeenSet; }
-    inline void SetForwardedHeaders(const HeaderObject& value) { m_forwardedHeadersHasBeenSet = true; m_forwardedHeaders = value; }
-    inline void SetForwardedHeaders(HeaderObject&& value) { m_forwardedHeadersHasBeenSet = true; m_forwardedHeaders = std::move(value); }
-    inline CacheSettings& WithForwardedHeaders(const HeaderObject& value) { SetForwardedHeaders(value); return *this;}
-    inline CacheSettings& WithForwardedHeaders(HeaderObject&& value) { SetForwardedHeaders(std::move(value)); return *this;}
+    template<typename ForwardedHeadersT = HeaderObject>
+    void SetForwardedHeaders(ForwardedHeadersT&& value) { m_forwardedHeadersHasBeenSet = true; m_forwardedHeaders = std::forward<ForwardedHeadersT>(value); }
+    template<typename ForwardedHeadersT = HeaderObject>
+    CacheSettings& WithForwardedHeaders(ForwardedHeadersT&& value) { SetForwardedHeaders(std::forward<ForwardedHeadersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,22 +159,22 @@ namespace Model
      * <p>An object that describes the query strings that are forwarded to the origin.
      * Your content is cached based on the query strings that are forwarded.</p>
      */
-    inline const QueryStringObject& GetForwardedQueryStrings() const{ return m_forwardedQueryStrings; }
+    inline const QueryStringObject& GetForwardedQueryStrings() const { return m_forwardedQueryStrings; }
     inline bool ForwardedQueryStringsHasBeenSet() const { return m_forwardedQueryStringsHasBeenSet; }
-    inline void SetForwardedQueryStrings(const QueryStringObject& value) { m_forwardedQueryStringsHasBeenSet = true; m_forwardedQueryStrings = value; }
-    inline void SetForwardedQueryStrings(QueryStringObject&& value) { m_forwardedQueryStringsHasBeenSet = true; m_forwardedQueryStrings = std::move(value); }
-    inline CacheSettings& WithForwardedQueryStrings(const QueryStringObject& value) { SetForwardedQueryStrings(value); return *this;}
-    inline CacheSettings& WithForwardedQueryStrings(QueryStringObject&& value) { SetForwardedQueryStrings(std::move(value)); return *this;}
+    template<typename ForwardedQueryStringsT = QueryStringObject>
+    void SetForwardedQueryStrings(ForwardedQueryStringsT&& value) { m_forwardedQueryStringsHasBeenSet = true; m_forwardedQueryStrings = std::forward<ForwardedQueryStringsT>(value); }
+    template<typename ForwardedQueryStringsT = QueryStringObject>
+    CacheSettings& WithForwardedQueryStrings(ForwardedQueryStringsT&& value) { SetForwardedQueryStrings(std::forward<ForwardedQueryStringsT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_defaultTTL;
+    long long m_defaultTTL{0};
     bool m_defaultTTLHasBeenSet = false;
 
-    long long m_minimumTTL;
+    long long m_minimumTTL{0};
     bool m_minimumTTLHasBeenSet = false;
 
-    long long m_maximumTTL;
+    long long m_maximumTTL{0};
     bool m_maximumTTLHasBeenSet = false;
 
     Aws::String m_allowedHTTPMethods;

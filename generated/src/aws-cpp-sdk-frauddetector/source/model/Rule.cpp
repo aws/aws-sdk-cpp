@@ -18,15 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-Rule::Rule() : 
-    m_detectorIdHasBeenSet(false),
-    m_ruleIdHasBeenSet(false),
-    m_ruleVersionHasBeenSet(false)
-{
-}
-
 Rule::Rule(JsonView jsonValue)
-  : Rule()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Rule& Rule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("detectorId"))
   {
     m_detectorId = jsonValue.GetString("detectorId");
-
     m_detectorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleId"))
   {
     m_ruleId = jsonValue.GetString("ruleId");
-
     m_ruleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleVersion"))
   {
     m_ruleVersion = jsonValue.GetString("ruleVersion");
-
     m_ruleVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::ResourceGroups::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GroupResourcesRequest::GroupResourcesRequest() : 
-    m_groupHasBeenSet(false),
-    m_resourceArnsHasBeenSet(false)
-{
-}
-
 Aws::String GroupResourcesRequest::SerializePayload() const
 {
   JsonValue payload;

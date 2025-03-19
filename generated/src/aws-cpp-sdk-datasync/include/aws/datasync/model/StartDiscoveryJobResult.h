@@ -27,7 +27,7 @@ namespace Model
   class StartDiscoveryJobResult
   {
   public:
-    AWS_DATASYNC_API StartDiscoveryJobResult();
+    AWS_DATASYNC_API StartDiscoveryJobResult() = default;
     AWS_DATASYNC_API StartDiscoveryJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATASYNC_API StartDiscoveryJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ARN of the discovery job that you started.</p>
      */
-    inline const Aws::String& GetDiscoveryJobArn() const{ return m_discoveryJobArn; }
-    inline void SetDiscoveryJobArn(const Aws::String& value) { m_discoveryJobArn = value; }
-    inline void SetDiscoveryJobArn(Aws::String&& value) { m_discoveryJobArn = std::move(value); }
-    inline void SetDiscoveryJobArn(const char* value) { m_discoveryJobArn.assign(value); }
-    inline StartDiscoveryJobResult& WithDiscoveryJobArn(const Aws::String& value) { SetDiscoveryJobArn(value); return *this;}
-    inline StartDiscoveryJobResult& WithDiscoveryJobArn(Aws::String&& value) { SetDiscoveryJobArn(std::move(value)); return *this;}
-    inline StartDiscoveryJobResult& WithDiscoveryJobArn(const char* value) { SetDiscoveryJobArn(value); return *this;}
+    inline const Aws::String& GetDiscoveryJobArn() const { return m_discoveryJobArn; }
+    template<typename DiscoveryJobArnT = Aws::String>
+    void SetDiscoveryJobArn(DiscoveryJobArnT&& value) { m_discoveryJobArnHasBeenSet = true; m_discoveryJobArn = std::forward<DiscoveryJobArnT>(value); }
+    template<typename DiscoveryJobArnT = Aws::String>
+    StartDiscoveryJobResult& WithDiscoveryJobArn(DiscoveryJobArnT&& value) { SetDiscoveryJobArn(std::forward<DiscoveryJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartDiscoveryJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartDiscoveryJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartDiscoveryJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartDiscoveryJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_discoveryJobArn;
+    bool m_discoveryJobArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

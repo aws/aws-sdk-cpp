@@ -30,7 +30,7 @@ namespace Model
   class GetMLTaskRunResult
   {
   public:
-    AWS_GLUE_API GetMLTaskRunResult();
+    AWS_GLUE_API GetMLTaskRunResult() = default;
     AWS_GLUE_API GetMLTaskRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API GetMLTaskRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,151 +39,150 @@ namespace Model
     /**
      * <p>The unique identifier of the task run.</p>
      */
-    inline const Aws::String& GetTransformId() const{ return m_transformId; }
-    inline void SetTransformId(const Aws::String& value) { m_transformId = value; }
-    inline void SetTransformId(Aws::String&& value) { m_transformId = std::move(value); }
-    inline void SetTransformId(const char* value) { m_transformId.assign(value); }
-    inline GetMLTaskRunResult& WithTransformId(const Aws::String& value) { SetTransformId(value); return *this;}
-    inline GetMLTaskRunResult& WithTransformId(Aws::String&& value) { SetTransformId(std::move(value)); return *this;}
-    inline GetMLTaskRunResult& WithTransformId(const char* value) { SetTransformId(value); return *this;}
+    inline const Aws::String& GetTransformId() const { return m_transformId; }
+    template<typename TransformIdT = Aws::String>
+    void SetTransformId(TransformIdT&& value) { m_transformIdHasBeenSet = true; m_transformId = std::forward<TransformIdT>(value); }
+    template<typename TransformIdT = Aws::String>
+    GetMLTaskRunResult& WithTransformId(TransformIdT&& value) { SetTransformId(std::forward<TransformIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique run identifier associated with this run.</p>
      */
-    inline const Aws::String& GetTaskRunId() const{ return m_taskRunId; }
-    inline void SetTaskRunId(const Aws::String& value) { m_taskRunId = value; }
-    inline void SetTaskRunId(Aws::String&& value) { m_taskRunId = std::move(value); }
-    inline void SetTaskRunId(const char* value) { m_taskRunId.assign(value); }
-    inline GetMLTaskRunResult& WithTaskRunId(const Aws::String& value) { SetTaskRunId(value); return *this;}
-    inline GetMLTaskRunResult& WithTaskRunId(Aws::String&& value) { SetTaskRunId(std::move(value)); return *this;}
-    inline GetMLTaskRunResult& WithTaskRunId(const char* value) { SetTaskRunId(value); return *this;}
+    inline const Aws::String& GetTaskRunId() const { return m_taskRunId; }
+    template<typename TaskRunIdT = Aws::String>
+    void SetTaskRunId(TaskRunIdT&& value) { m_taskRunIdHasBeenSet = true; m_taskRunId = std::forward<TaskRunIdT>(value); }
+    template<typename TaskRunIdT = Aws::String>
+    GetMLTaskRunResult& WithTaskRunId(TaskRunIdT&& value) { SetTaskRunId(std::forward<TaskRunIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status for this task run.</p>
      */
-    inline const TaskStatusType& GetStatus() const{ return m_status; }
-    inline void SetStatus(const TaskStatusType& value) { m_status = value; }
-    inline void SetStatus(TaskStatusType&& value) { m_status = std::move(value); }
-    inline GetMLTaskRunResult& WithStatus(const TaskStatusType& value) { SetStatus(value); return *this;}
-    inline GetMLTaskRunResult& WithStatus(TaskStatusType&& value) { SetStatus(std::move(value)); return *this;}
+    inline TaskStatusType GetStatus() const { return m_status; }
+    inline void SetStatus(TaskStatusType value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetMLTaskRunResult& WithStatus(TaskStatusType value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The names of the log groups that are associated with the task run.</p>
      */
-    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupName = value; }
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupName = std::move(value); }
-    inline void SetLogGroupName(const char* value) { m_logGroupName.assign(value); }
-    inline GetMLTaskRunResult& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-    inline GetMLTaskRunResult& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-    inline GetMLTaskRunResult& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+    inline const Aws::String& GetLogGroupName() const { return m_logGroupName; }
+    template<typename LogGroupNameT = Aws::String>
+    void SetLogGroupName(LogGroupNameT&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::forward<LogGroupNameT>(value); }
+    template<typename LogGroupNameT = Aws::String>
+    GetMLTaskRunResult& WithLogGroupName(LogGroupNameT&& value) { SetLogGroupName(std::forward<LogGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of properties that are associated with the task run.</p>
      */
-    inline const TaskRunProperties& GetProperties() const{ return m_properties; }
-    inline void SetProperties(const TaskRunProperties& value) { m_properties = value; }
-    inline void SetProperties(TaskRunProperties&& value) { m_properties = std::move(value); }
-    inline GetMLTaskRunResult& WithProperties(const TaskRunProperties& value) { SetProperties(value); return *this;}
-    inline GetMLTaskRunResult& WithProperties(TaskRunProperties&& value) { SetProperties(std::move(value)); return *this;}
+    inline const TaskRunProperties& GetProperties() const { return m_properties; }
+    template<typename PropertiesT = TaskRunProperties>
+    void SetProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties = std::forward<PropertiesT>(value); }
+    template<typename PropertiesT = TaskRunProperties>
+    GetMLTaskRunResult& WithProperties(PropertiesT&& value) { SetProperties(std::forward<PropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error strings that are associated with the task run.</p>
      */
-    inline const Aws::String& GetErrorString() const{ return m_errorString; }
-    inline void SetErrorString(const Aws::String& value) { m_errorString = value; }
-    inline void SetErrorString(Aws::String&& value) { m_errorString = std::move(value); }
-    inline void SetErrorString(const char* value) { m_errorString.assign(value); }
-    inline GetMLTaskRunResult& WithErrorString(const Aws::String& value) { SetErrorString(value); return *this;}
-    inline GetMLTaskRunResult& WithErrorString(Aws::String&& value) { SetErrorString(std::move(value)); return *this;}
-    inline GetMLTaskRunResult& WithErrorString(const char* value) { SetErrorString(value); return *this;}
+    inline const Aws::String& GetErrorString() const { return m_errorString; }
+    template<typename ErrorStringT = Aws::String>
+    void SetErrorString(ErrorStringT&& value) { m_errorStringHasBeenSet = true; m_errorString = std::forward<ErrorStringT>(value); }
+    template<typename ErrorStringT = Aws::String>
+    GetMLTaskRunResult& WithErrorString(ErrorStringT&& value) { SetErrorString(std::forward<ErrorStringT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when this task run started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartedOn() const{ return m_startedOn; }
-    inline void SetStartedOn(const Aws::Utils::DateTime& value) { m_startedOn = value; }
-    inline void SetStartedOn(Aws::Utils::DateTime&& value) { m_startedOn = std::move(value); }
-    inline GetMLTaskRunResult& WithStartedOn(const Aws::Utils::DateTime& value) { SetStartedOn(value); return *this;}
-    inline GetMLTaskRunResult& WithStartedOn(Aws::Utils::DateTime&& value) { SetStartedOn(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartedOn() const { return m_startedOn; }
+    template<typename StartedOnT = Aws::Utils::DateTime>
+    void SetStartedOn(StartedOnT&& value) { m_startedOnHasBeenSet = true; m_startedOn = std::forward<StartedOnT>(value); }
+    template<typename StartedOnT = Aws::Utils::DateTime>
+    GetMLTaskRunResult& WithStartedOn(StartedOnT&& value) { SetStartedOn(std::forward<StartedOnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when this task run was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedOn() const{ return m_lastModifiedOn; }
-    inline void SetLastModifiedOn(const Aws::Utils::DateTime& value) { m_lastModifiedOn = value; }
-    inline void SetLastModifiedOn(Aws::Utils::DateTime&& value) { m_lastModifiedOn = std::move(value); }
-    inline GetMLTaskRunResult& WithLastModifiedOn(const Aws::Utils::DateTime& value) { SetLastModifiedOn(value); return *this;}
-    inline GetMLTaskRunResult& WithLastModifiedOn(Aws::Utils::DateTime&& value) { SetLastModifiedOn(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedOn() const { return m_lastModifiedOn; }
+    template<typename LastModifiedOnT = Aws::Utils::DateTime>
+    void SetLastModifiedOn(LastModifiedOnT&& value) { m_lastModifiedOnHasBeenSet = true; m_lastModifiedOn = std::forward<LastModifiedOnT>(value); }
+    template<typename LastModifiedOnT = Aws::Utils::DateTime>
+    GetMLTaskRunResult& WithLastModifiedOn(LastModifiedOnT&& value) { SetLastModifiedOn(std::forward<LastModifiedOnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when this task run was completed.</p>
      */
-    inline const Aws::Utils::DateTime& GetCompletedOn() const{ return m_completedOn; }
-    inline void SetCompletedOn(const Aws::Utils::DateTime& value) { m_completedOn = value; }
-    inline void SetCompletedOn(Aws::Utils::DateTime&& value) { m_completedOn = std::move(value); }
-    inline GetMLTaskRunResult& WithCompletedOn(const Aws::Utils::DateTime& value) { SetCompletedOn(value); return *this;}
-    inline GetMLTaskRunResult& WithCompletedOn(Aws::Utils::DateTime&& value) { SetCompletedOn(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCompletedOn() const { return m_completedOn; }
+    template<typename CompletedOnT = Aws::Utils::DateTime>
+    void SetCompletedOn(CompletedOnT&& value) { m_completedOnHasBeenSet = true; m_completedOn = std::forward<CompletedOnT>(value); }
+    template<typename CompletedOnT = Aws::Utils::DateTime>
+    GetMLTaskRunResult& WithCompletedOn(CompletedOnT&& value) { SetCompletedOn(std::forward<CompletedOnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The amount of time (in seconds) that the task run consumed resources.</p>
      */
-    inline int GetExecutionTime() const{ return m_executionTime; }
-    inline void SetExecutionTime(int value) { m_executionTime = value; }
+    inline int GetExecutionTime() const { return m_executionTime; }
+    inline void SetExecutionTime(int value) { m_executionTimeHasBeenSet = true; m_executionTime = value; }
     inline GetMLTaskRunResult& WithExecutionTime(int value) { SetExecutionTime(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetMLTaskRunResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetMLTaskRunResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetMLTaskRunResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetMLTaskRunResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_transformId;
+    bool m_transformIdHasBeenSet = false;
 
     Aws::String m_taskRunId;
+    bool m_taskRunIdHasBeenSet = false;
 
-    TaskStatusType m_status;
+    TaskStatusType m_status{TaskStatusType::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_logGroupName;
+    bool m_logGroupNameHasBeenSet = false;
 
     TaskRunProperties m_properties;
+    bool m_propertiesHasBeenSet = false;
 
     Aws::String m_errorString;
+    bool m_errorStringHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startedOn;
+    Aws::Utils::DateTime m_startedOn{};
+    bool m_startedOnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedOn;
+    Aws::Utils::DateTime m_lastModifiedOn{};
+    bool m_lastModifiedOnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_completedOn;
+    Aws::Utils::DateTime m_completedOn{};
+    bool m_completedOnHasBeenSet = false;
 
-    int m_executionTime;
+    int m_executionTime{0};
+    bool m_executionTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

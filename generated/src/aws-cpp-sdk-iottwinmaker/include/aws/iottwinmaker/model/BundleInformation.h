@@ -33,7 +33,7 @@ namespace Model
   class BundleInformation
   {
   public:
-    AWS_IOTTWINMAKER_API BundleInformation();
+    AWS_IOTTWINMAKER_API BundleInformation() = default;
     AWS_IOTTWINMAKER_API BundleInformation(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API BundleInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,34 +43,31 @@ namespace Model
     /**
      * <p>The bundle names.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetBundleNames() const{ return m_bundleNames; }
+    inline const Aws::Vector<Aws::String>& GetBundleNames() const { return m_bundleNames; }
     inline bool BundleNamesHasBeenSet() const { return m_bundleNamesHasBeenSet; }
-    inline void SetBundleNames(const Aws::Vector<Aws::String>& value) { m_bundleNamesHasBeenSet = true; m_bundleNames = value; }
-    inline void SetBundleNames(Aws::Vector<Aws::String>&& value) { m_bundleNamesHasBeenSet = true; m_bundleNames = std::move(value); }
-    inline BundleInformation& WithBundleNames(const Aws::Vector<Aws::String>& value) { SetBundleNames(value); return *this;}
-    inline BundleInformation& WithBundleNames(Aws::Vector<Aws::String>&& value) { SetBundleNames(std::move(value)); return *this;}
-    inline BundleInformation& AddBundleNames(const Aws::String& value) { m_bundleNamesHasBeenSet = true; m_bundleNames.push_back(value); return *this; }
-    inline BundleInformation& AddBundleNames(Aws::String&& value) { m_bundleNamesHasBeenSet = true; m_bundleNames.push_back(std::move(value)); return *this; }
-    inline BundleInformation& AddBundleNames(const char* value) { m_bundleNamesHasBeenSet = true; m_bundleNames.push_back(value); return *this; }
+    template<typename BundleNamesT = Aws::Vector<Aws::String>>
+    void SetBundleNames(BundleNamesT&& value) { m_bundleNamesHasBeenSet = true; m_bundleNames = std::forward<BundleNamesT>(value); }
+    template<typename BundleNamesT = Aws::Vector<Aws::String>>
+    BundleInformation& WithBundleNames(BundleNamesT&& value) { SetBundleNames(std::forward<BundleNamesT>(value)); return *this;}
+    template<typename BundleNamesT = Aws::String>
+    BundleInformation& AddBundleNames(BundleNamesT&& value) { m_bundleNamesHasBeenSet = true; m_bundleNames.emplace_back(std::forward<BundleNamesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pricing tier.</p>
      */
-    inline const PricingTier& GetPricingTier() const{ return m_pricingTier; }
+    inline PricingTier GetPricingTier() const { return m_pricingTier; }
     inline bool PricingTierHasBeenSet() const { return m_pricingTierHasBeenSet; }
-    inline void SetPricingTier(const PricingTier& value) { m_pricingTierHasBeenSet = true; m_pricingTier = value; }
-    inline void SetPricingTier(PricingTier&& value) { m_pricingTierHasBeenSet = true; m_pricingTier = std::move(value); }
-    inline BundleInformation& WithPricingTier(const PricingTier& value) { SetPricingTier(value); return *this;}
-    inline BundleInformation& WithPricingTier(PricingTier&& value) { SetPricingTier(std::move(value)); return *this;}
+    inline void SetPricingTier(PricingTier value) { m_pricingTierHasBeenSet = true; m_pricingTier = value; }
+    inline BundleInformation& WithPricingTier(PricingTier value) { SetPricingTier(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_bundleNames;
     bool m_bundleNamesHasBeenSet = false;
 
-    PricingTier m_pricingTier;
+    PricingTier m_pricingTier{PricingTier::NOT_SET};
     bool m_pricingTierHasBeenSet = false;
   };
 

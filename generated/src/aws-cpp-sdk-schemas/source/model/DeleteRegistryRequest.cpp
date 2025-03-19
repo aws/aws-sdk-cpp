@@ -12,11 +12,6 @@ using namespace Aws::Schemas::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRegistryRequest::DeleteRegistryRequest() : 
-    m_registryNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRegistryRequest::SerializePayload() const
 {
   return {};

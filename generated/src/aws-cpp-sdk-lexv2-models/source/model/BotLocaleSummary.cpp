@@ -18,19 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-BotLocaleSummary::BotLocaleSummary() : 
-    m_localeIdHasBeenSet(false),
-    m_localeNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_botLocaleStatus(BotLocaleStatus::NOT_SET),
-    m_botLocaleStatusHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_lastBuildSubmittedDateTimeHasBeenSet(false)
-{
-}
-
 BotLocaleSummary::BotLocaleSummary(JsonView jsonValue)
-  : BotLocaleSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ BotLocaleSummary& BotLocaleSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("localeId"))
   {
     m_localeId = jsonValue.GetString("localeId");
-
     m_localeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localeName"))
   {
     m_localeName = jsonValue.GetString("localeName");
-
     m_localeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botLocaleStatus"))
   {
     m_botLocaleStatus = BotLocaleStatusMapper::GetBotLocaleStatusForName(jsonValue.GetString("botLocaleStatus"));
-
     m_botLocaleStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastBuildSubmittedDateTime"))
   {
     m_lastBuildSubmittedDateTime = jsonValue.GetDouble("lastBuildSubmittedDateTime");
-
     m_lastBuildSubmittedDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

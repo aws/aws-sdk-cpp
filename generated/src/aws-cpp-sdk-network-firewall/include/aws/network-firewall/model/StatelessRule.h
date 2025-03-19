@@ -32,7 +32,7 @@ namespace Model
   class StatelessRule
   {
   public:
-    AWS_NETWORKFIREWALL_API StatelessRule();
+    AWS_NETWORKFIREWALL_API StatelessRule() = default;
     AWS_NETWORKFIREWALL_API StatelessRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API StatelessRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Defines the stateless 5-tuple packet inspection criteria and the action to
      * take on a packet that matches the criteria. </p>
      */
-    inline const RuleDefinition& GetRuleDefinition() const{ return m_ruleDefinition; }
+    inline const RuleDefinition& GetRuleDefinition() const { return m_ruleDefinition; }
     inline bool RuleDefinitionHasBeenSet() const { return m_ruleDefinitionHasBeenSet; }
-    inline void SetRuleDefinition(const RuleDefinition& value) { m_ruleDefinitionHasBeenSet = true; m_ruleDefinition = value; }
-    inline void SetRuleDefinition(RuleDefinition&& value) { m_ruleDefinitionHasBeenSet = true; m_ruleDefinition = std::move(value); }
-    inline StatelessRule& WithRuleDefinition(const RuleDefinition& value) { SetRuleDefinition(value); return *this;}
-    inline StatelessRule& WithRuleDefinition(RuleDefinition&& value) { SetRuleDefinition(std::move(value)); return *this;}
+    template<typename RuleDefinitionT = RuleDefinition>
+    void SetRuleDefinition(RuleDefinitionT&& value) { m_ruleDefinitionHasBeenSet = true; m_ruleDefinition = std::forward<RuleDefinitionT>(value); }
+    template<typename RuleDefinitionT = RuleDefinition>
+    StatelessRule& WithRuleDefinition(RuleDefinitionT&& value) { SetRuleDefinition(std::forward<RuleDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,7 +66,7 @@ namespace Model
      * later, number them so there's a wide range in between, for example use 100, 200,
      * and so on. </p>
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline StatelessRule& WithPriority(int value) { SetPriority(value); return *this;}
@@ -76,7 +76,7 @@ namespace Model
     RuleDefinition m_ruleDefinition;
     bool m_ruleDefinitionHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
   };
 

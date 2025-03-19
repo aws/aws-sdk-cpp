@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartFlowResult::StartFlowResult() : 
-    m_flowStatus(FlowStatus::NOT_SET)
-{
-}
-
 StartFlowResult::StartFlowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StartFlowResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ StartFlowResult& StartFlowResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("flowArn"))
   {
     m_flowArn = jsonValue.GetString("flowArn");
-
+    m_flowArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("flowStatus"))
   {
     m_flowStatus = FlowStatusMapper::GetFlowStatusForName(jsonValue.GetString("flowStatus"));
-
+    m_flowStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionId"))
   {
     m_executionId = jsonValue.GetString("executionId");
-
+    m_executionIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

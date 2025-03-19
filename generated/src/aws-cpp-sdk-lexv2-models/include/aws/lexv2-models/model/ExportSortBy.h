@@ -33,7 +33,7 @@ namespace Model
   class ExportSortBy
   {
   public:
-    AWS_LEXMODELSV2_API ExportSortBy();
+    AWS_LEXMODELSV2_API ExportSortBy() = default;
     AWS_LEXMODELSV2_API ExportSortBy(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API ExportSortBy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,27 @@ namespace Model
     /**
      * <p>The export field to use for sorting.</p>
      */
-    inline const ExportSortAttribute& GetAttribute() const{ return m_attribute; }
+    inline ExportSortAttribute GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const ExportSortAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(ExportSortAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline ExportSortBy& WithAttribute(const ExportSortAttribute& value) { SetAttribute(value); return *this;}
-    inline ExportSortBy& WithAttribute(ExportSortAttribute&& value) { SetAttribute(std::move(value)); return *this;}
+    inline void SetAttribute(ExportSortAttribute value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline ExportSortBy& WithAttribute(ExportSortAttribute value) { SetAttribute(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The order to sort the list.</p>
      */
-    inline const SortOrder& GetOrder() const{ return m_order; }
+    inline SortOrder GetOrder() const { return m_order; }
     inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
-    inline void SetOrder(const SortOrder& value) { m_orderHasBeenSet = true; m_order = value; }
-    inline void SetOrder(SortOrder&& value) { m_orderHasBeenSet = true; m_order = std::move(value); }
-    inline ExportSortBy& WithOrder(const SortOrder& value) { SetOrder(value); return *this;}
-    inline ExportSortBy& WithOrder(SortOrder&& value) { SetOrder(std::move(value)); return *this;}
+    inline void SetOrder(SortOrder value) { m_orderHasBeenSet = true; m_order = value; }
+    inline ExportSortBy& WithOrder(SortOrder value) { SetOrder(value); return *this;}
     ///@}
   private:
 
-    ExportSortAttribute m_attribute;
+    ExportSortAttribute m_attribute{ExportSortAttribute::NOT_SET};
     bool m_attributeHasBeenSet = false;
 
-    SortOrder m_order;
+    SortOrder m_order{SortOrder::NOT_SET};
     bool m_orderHasBeenSet = false;
   };
 

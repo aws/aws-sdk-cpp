@@ -12,11 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisableAWSServiceAccessRequest::DisableAWSServiceAccessRequest() : 
-    m_servicePrincipalHasBeenSet(false)
-{
-}
-
 Aws::String DisableAWSServiceAccessRequest::SerializePayload() const
 {
   JsonValue payload;

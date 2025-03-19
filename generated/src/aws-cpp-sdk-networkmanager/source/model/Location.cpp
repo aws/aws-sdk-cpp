@@ -18,15 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-Location::Location() : 
-    m_addressHasBeenSet(false),
-    m_latitudeHasBeenSet(false),
-    m_longitudeHasBeenSet(false)
-{
-}
-
 Location::Location(JsonView jsonValue)
-  : Location()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Location& Location::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Address"))
   {
     m_address = jsonValue.GetString("Address");
-
     m_addressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Latitude"))
   {
     m_latitude = jsonValue.GetString("Latitude");
-
     m_latitudeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Longitude"))
   {
     m_longitude = jsonValue.GetString("Longitude");
-
     m_longitudeHasBeenSet = true;
   }
-
   return *this;
 }
 

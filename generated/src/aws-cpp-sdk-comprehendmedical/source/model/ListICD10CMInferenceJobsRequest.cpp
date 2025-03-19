@@ -12,14 +12,6 @@ using namespace Aws::ComprehendMedical::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListICD10CMInferenceJobsRequest::ListICD10CMInferenceJobsRequest() : 
-    m_filterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListICD10CMInferenceJobsRequest::SerializePayload() const
 {
   JsonValue payload;

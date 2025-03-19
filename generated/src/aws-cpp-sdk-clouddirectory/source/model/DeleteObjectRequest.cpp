@@ -13,12 +13,6 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteObjectRequest::DeleteObjectRequest() : 
-    m_directoryArnHasBeenSet(false),
-    m_objectReferenceHasBeenSet(false)
-{
-}
-
 Aws::String DeleteObjectRequest::SerializePayload() const
 {
   JsonValue payload;

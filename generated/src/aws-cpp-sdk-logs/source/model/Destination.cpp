@@ -18,19 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-Destination::Destination() : 
-    m_destinationNameHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_accessPolicyHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_creationTime(0),
-    m_creationTimeHasBeenSet(false)
-{
-}
-
 Destination::Destination(JsonView jsonValue)
-  : Destination()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ Destination& Destination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("destinationName"))
   {
     m_destinationName = jsonValue.GetString("destinationName");
-
     m_destinationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetArn"))
   {
     m_targetArn = jsonValue.GetString("targetArn");
-
     m_targetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accessPolicy"))
   {
     m_accessPolicy = jsonValue.GetString("accessPolicy");
-
     m_accessPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetInt64("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

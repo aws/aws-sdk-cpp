@@ -34,7 +34,7 @@ namespace Model
   class AwsS3BucketWebsiteConfiguration
   {
   public:
-    AWS_SECURITYHUB_API AwsS3BucketWebsiteConfiguration();
+    AWS_SECURITYHUB_API AwsS3BucketWebsiteConfiguration() = default;
     AWS_SECURITYHUB_API AwsS3BucketWebsiteConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsS3BucketWebsiteConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,54 +44,50 @@ namespace Model
     /**
      * <p>The name of the error document for the website.</p>
      */
-    inline const Aws::String& GetErrorDocument() const{ return m_errorDocument; }
+    inline const Aws::String& GetErrorDocument() const { return m_errorDocument; }
     inline bool ErrorDocumentHasBeenSet() const { return m_errorDocumentHasBeenSet; }
-    inline void SetErrorDocument(const Aws::String& value) { m_errorDocumentHasBeenSet = true; m_errorDocument = value; }
-    inline void SetErrorDocument(Aws::String&& value) { m_errorDocumentHasBeenSet = true; m_errorDocument = std::move(value); }
-    inline void SetErrorDocument(const char* value) { m_errorDocumentHasBeenSet = true; m_errorDocument.assign(value); }
-    inline AwsS3BucketWebsiteConfiguration& WithErrorDocument(const Aws::String& value) { SetErrorDocument(value); return *this;}
-    inline AwsS3BucketWebsiteConfiguration& WithErrorDocument(Aws::String&& value) { SetErrorDocument(std::move(value)); return *this;}
-    inline AwsS3BucketWebsiteConfiguration& WithErrorDocument(const char* value) { SetErrorDocument(value); return *this;}
+    template<typename ErrorDocumentT = Aws::String>
+    void SetErrorDocument(ErrorDocumentT&& value) { m_errorDocumentHasBeenSet = true; m_errorDocument = std::forward<ErrorDocumentT>(value); }
+    template<typename ErrorDocumentT = Aws::String>
+    AwsS3BucketWebsiteConfiguration& WithErrorDocument(ErrorDocumentT&& value) { SetErrorDocument(std::forward<ErrorDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the index document for the website.</p>
      */
-    inline const Aws::String& GetIndexDocumentSuffix() const{ return m_indexDocumentSuffix; }
+    inline const Aws::String& GetIndexDocumentSuffix() const { return m_indexDocumentSuffix; }
     inline bool IndexDocumentSuffixHasBeenSet() const { return m_indexDocumentSuffixHasBeenSet; }
-    inline void SetIndexDocumentSuffix(const Aws::String& value) { m_indexDocumentSuffixHasBeenSet = true; m_indexDocumentSuffix = value; }
-    inline void SetIndexDocumentSuffix(Aws::String&& value) { m_indexDocumentSuffixHasBeenSet = true; m_indexDocumentSuffix = std::move(value); }
-    inline void SetIndexDocumentSuffix(const char* value) { m_indexDocumentSuffixHasBeenSet = true; m_indexDocumentSuffix.assign(value); }
-    inline AwsS3BucketWebsiteConfiguration& WithIndexDocumentSuffix(const Aws::String& value) { SetIndexDocumentSuffix(value); return *this;}
-    inline AwsS3BucketWebsiteConfiguration& WithIndexDocumentSuffix(Aws::String&& value) { SetIndexDocumentSuffix(std::move(value)); return *this;}
-    inline AwsS3BucketWebsiteConfiguration& WithIndexDocumentSuffix(const char* value) { SetIndexDocumentSuffix(value); return *this;}
+    template<typename IndexDocumentSuffixT = Aws::String>
+    void SetIndexDocumentSuffix(IndexDocumentSuffixT&& value) { m_indexDocumentSuffixHasBeenSet = true; m_indexDocumentSuffix = std::forward<IndexDocumentSuffixT>(value); }
+    template<typename IndexDocumentSuffixT = Aws::String>
+    AwsS3BucketWebsiteConfiguration& WithIndexDocumentSuffix(IndexDocumentSuffixT&& value) { SetIndexDocumentSuffix(std::forward<IndexDocumentSuffixT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The redirect behavior for requests to the website.</p>
      */
-    inline const AwsS3BucketWebsiteConfigurationRedirectTo& GetRedirectAllRequestsTo() const{ return m_redirectAllRequestsTo; }
+    inline const AwsS3BucketWebsiteConfigurationRedirectTo& GetRedirectAllRequestsTo() const { return m_redirectAllRequestsTo; }
     inline bool RedirectAllRequestsToHasBeenSet() const { return m_redirectAllRequestsToHasBeenSet; }
-    inline void SetRedirectAllRequestsTo(const AwsS3BucketWebsiteConfigurationRedirectTo& value) { m_redirectAllRequestsToHasBeenSet = true; m_redirectAllRequestsTo = value; }
-    inline void SetRedirectAllRequestsTo(AwsS3BucketWebsiteConfigurationRedirectTo&& value) { m_redirectAllRequestsToHasBeenSet = true; m_redirectAllRequestsTo = std::move(value); }
-    inline AwsS3BucketWebsiteConfiguration& WithRedirectAllRequestsTo(const AwsS3BucketWebsiteConfigurationRedirectTo& value) { SetRedirectAllRequestsTo(value); return *this;}
-    inline AwsS3BucketWebsiteConfiguration& WithRedirectAllRequestsTo(AwsS3BucketWebsiteConfigurationRedirectTo&& value) { SetRedirectAllRequestsTo(std::move(value)); return *this;}
+    template<typename RedirectAllRequestsToT = AwsS3BucketWebsiteConfigurationRedirectTo>
+    void SetRedirectAllRequestsTo(RedirectAllRequestsToT&& value) { m_redirectAllRequestsToHasBeenSet = true; m_redirectAllRequestsTo = std::forward<RedirectAllRequestsToT>(value); }
+    template<typename RedirectAllRequestsToT = AwsS3BucketWebsiteConfigurationRedirectTo>
+    AwsS3BucketWebsiteConfiguration& WithRedirectAllRequestsTo(RedirectAllRequestsToT&& value) { SetRedirectAllRequestsTo(std::forward<RedirectAllRequestsToT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The rules for applying redirects for requests to the website.</p>
      */
-    inline const Aws::Vector<AwsS3BucketWebsiteConfigurationRoutingRule>& GetRoutingRules() const{ return m_routingRules; }
+    inline const Aws::Vector<AwsS3BucketWebsiteConfigurationRoutingRule>& GetRoutingRules() const { return m_routingRules; }
     inline bool RoutingRulesHasBeenSet() const { return m_routingRulesHasBeenSet; }
-    inline void SetRoutingRules(const Aws::Vector<AwsS3BucketWebsiteConfigurationRoutingRule>& value) { m_routingRulesHasBeenSet = true; m_routingRules = value; }
-    inline void SetRoutingRules(Aws::Vector<AwsS3BucketWebsiteConfigurationRoutingRule>&& value) { m_routingRulesHasBeenSet = true; m_routingRules = std::move(value); }
-    inline AwsS3BucketWebsiteConfiguration& WithRoutingRules(const Aws::Vector<AwsS3BucketWebsiteConfigurationRoutingRule>& value) { SetRoutingRules(value); return *this;}
-    inline AwsS3BucketWebsiteConfiguration& WithRoutingRules(Aws::Vector<AwsS3BucketWebsiteConfigurationRoutingRule>&& value) { SetRoutingRules(std::move(value)); return *this;}
-    inline AwsS3BucketWebsiteConfiguration& AddRoutingRules(const AwsS3BucketWebsiteConfigurationRoutingRule& value) { m_routingRulesHasBeenSet = true; m_routingRules.push_back(value); return *this; }
-    inline AwsS3BucketWebsiteConfiguration& AddRoutingRules(AwsS3BucketWebsiteConfigurationRoutingRule&& value) { m_routingRulesHasBeenSet = true; m_routingRules.push_back(std::move(value)); return *this; }
+    template<typename RoutingRulesT = Aws::Vector<AwsS3BucketWebsiteConfigurationRoutingRule>>
+    void SetRoutingRules(RoutingRulesT&& value) { m_routingRulesHasBeenSet = true; m_routingRules = std::forward<RoutingRulesT>(value); }
+    template<typename RoutingRulesT = Aws::Vector<AwsS3BucketWebsiteConfigurationRoutingRule>>
+    AwsS3BucketWebsiteConfiguration& WithRoutingRules(RoutingRulesT&& value) { SetRoutingRules(std::forward<RoutingRulesT>(value)); return *this;}
+    template<typename RoutingRulesT = AwsS3BucketWebsiteConfigurationRoutingRule>
+    AwsS3BucketWebsiteConfiguration& AddRoutingRules(RoutingRulesT&& value) { m_routingRulesHasBeenSet = true; m_routingRules.emplace_back(std::forward<RoutingRulesT>(value)); return *this; }
     ///@}
   private:
 

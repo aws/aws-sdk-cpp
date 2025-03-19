@@ -15,29 +15,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketPolicyResult::GetBucketPolicyResult()
-{
-}
-
-GetBucketPolicyResult::GetBucketPolicyResult(GetBucketPolicyResult&& toMove) : 
-    m_policy(std::move(toMove.m_policy)),
-    m_requestId(std::move(toMove.m_requestId))
-{
-}
-
-GetBucketPolicyResult& GetBucketPolicyResult::operator=(GetBucketPolicyResult&& toMove)
-{
-   if(this == &toMove)
-   {
-      return *this;
-   }
-
-   m_policy = std::move(toMove.m_policy);
-   m_requestId = std::move(toMove.m_requestId);
-
-   return *this;
-}
-
 GetBucketPolicyResult::GetBucketPolicyResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   *this = std::move(result);
@@ -46,12 +23,14 @@ GetBucketPolicyResult::GetBucketPolicyResult(Aws::AmazonWebServiceResult<Respons
 GetBucketPolicyResult& GetBucketPolicyResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_policy = result.TakeOwnershipOfPayload();
+  m_policyHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amz-request-id");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
    return *this;

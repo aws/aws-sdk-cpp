@@ -12,12 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeInsightRequest::DescribeInsightRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DescribeInsightRequest::SerializePayload() const
 {
   return {};

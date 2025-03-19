@@ -19,16 +19,7 @@ namespace APIGateway
 namespace Model
 {
 
-BasePathMapping::BasePathMapping() : 
-    m_basePathHasBeenSet(false),
-    m_restApiIdHasBeenSet(false),
-    m_stageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 BasePathMapping::BasePathMapping(JsonView jsonValue)
-  : BasePathMapping()
 {
   *this = jsonValue;
 }
@@ -38,24 +29,18 @@ BasePathMapping& BasePathMapping::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("basePath"))
   {
     m_basePath = jsonValue.GetString("basePath");
-
     m_basePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("restApiId"))
   {
     m_restApiId = jsonValue.GetString("restApiId");
-
     m_restApiIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stage"))
   {
     m_stage = jsonValue.GetString("stage");
-
     m_stageHasBeenSet = true;
   }
-
   return *this;
 }
 

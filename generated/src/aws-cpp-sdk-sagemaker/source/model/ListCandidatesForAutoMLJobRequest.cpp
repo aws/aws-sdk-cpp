@@ -12,21 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListCandidatesForAutoMLJobRequest::ListCandidatesForAutoMLJobRequest() : 
-    m_autoMLJobNameHasBeenSet(false),
-    m_statusEquals(CandidateStatus::NOT_SET),
-    m_statusEqualsHasBeenSet(false),
-    m_candidateNameEqualsHasBeenSet(false),
-    m_sortOrder(AutoMLSortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_sortBy(CandidateSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListCandidatesForAutoMLJobRequest::SerializePayload() const
 {
   JsonValue payload;

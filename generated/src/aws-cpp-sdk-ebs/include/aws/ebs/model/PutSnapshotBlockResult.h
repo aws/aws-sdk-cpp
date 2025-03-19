@@ -28,7 +28,7 @@ namespace Model
   class PutSnapshotBlockResult
   {
   public:
-    AWS_EBS_API PutSnapshotBlockResult();
+    AWS_EBS_API PutSnapshotBlockResult() = default;
     AWS_EBS_API PutSnapshotBlockResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EBS_API PutSnapshotBlockResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,40 @@ namespace Model
     /**
      * <p>The SHA256 checksum generated for the block data by Amazon EBS.</p>
      */
-    inline const Aws::String& GetChecksum() const{ return m_checksum; }
-    inline void SetChecksum(const Aws::String& value) { m_checksum = value; }
-    inline void SetChecksum(Aws::String&& value) { m_checksum = std::move(value); }
-    inline void SetChecksum(const char* value) { m_checksum.assign(value); }
-    inline PutSnapshotBlockResult& WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
-    inline PutSnapshotBlockResult& WithChecksum(Aws::String&& value) { SetChecksum(std::move(value)); return *this;}
-    inline PutSnapshotBlockResult& WithChecksum(const char* value) { SetChecksum(value); return *this;}
+    inline const Aws::String& GetChecksum() const { return m_checksum; }
+    template<typename ChecksumT = Aws::String>
+    void SetChecksum(ChecksumT&& value) { m_checksumHasBeenSet = true; m_checksum = std::forward<ChecksumT>(value); }
+    template<typename ChecksumT = Aws::String>
+    PutSnapshotBlockResult& WithChecksum(ChecksumT&& value) { SetChecksum(std::forward<ChecksumT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The algorithm used by Amazon EBS to generate the checksum.</p>
      */
-    inline const ChecksumAlgorithm& GetChecksumAlgorithm() const{ return m_checksumAlgorithm; }
-    inline void SetChecksumAlgorithm(const ChecksumAlgorithm& value) { m_checksumAlgorithm = value; }
-    inline void SetChecksumAlgorithm(ChecksumAlgorithm&& value) { m_checksumAlgorithm = std::move(value); }
-    inline PutSnapshotBlockResult& WithChecksumAlgorithm(const ChecksumAlgorithm& value) { SetChecksumAlgorithm(value); return *this;}
-    inline PutSnapshotBlockResult& WithChecksumAlgorithm(ChecksumAlgorithm&& value) { SetChecksumAlgorithm(std::move(value)); return *this;}
+    inline ChecksumAlgorithm GetChecksumAlgorithm() const { return m_checksumAlgorithm; }
+    inline void SetChecksumAlgorithm(ChecksumAlgorithm value) { m_checksumAlgorithmHasBeenSet = true; m_checksumAlgorithm = value; }
+    inline PutSnapshotBlockResult& WithChecksumAlgorithm(ChecksumAlgorithm value) { SetChecksumAlgorithm(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutSnapshotBlockResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutSnapshotBlockResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutSnapshotBlockResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutSnapshotBlockResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_checksum;
+    bool m_checksumHasBeenSet = false;
 
-    ChecksumAlgorithm m_checksumAlgorithm;
+    ChecksumAlgorithm m_checksumAlgorithm{ChecksumAlgorithm::NOT_SET};
+    bool m_checksumAlgorithmHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

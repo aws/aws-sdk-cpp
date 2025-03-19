@@ -18,15 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteZone::RouteZone() : 
-    m_category(RouteZoneCategory::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 RouteZone::RouteZone(JsonView jsonValue)
-  : RouteZone()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RouteZone& RouteZone::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Category"))
   {
     m_category = RouteZoneCategoryMapper::GetRouteZoneCategoryForName(jsonValue.GetString("Category"));
-
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

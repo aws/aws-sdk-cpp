@@ -25,7 +25,7 @@ namespace Model
   class DeletePackageRequest : public OpenSearchServiceRequest
   {
   public:
-    AWS_OPENSEARCHSERVICE_API DeletePackageRequest();
+    AWS_OPENSEARCHSERVICE_API DeletePackageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The internal ID of the package you want to delete. Use
      * <code>DescribePackages</code> to find this value.</p>
      */
-    inline const Aws::String& GetPackageID() const{ return m_packageID; }
+    inline const Aws::String& GetPackageID() const { return m_packageID; }
     inline bool PackageIDHasBeenSet() const { return m_packageIDHasBeenSet; }
-    inline void SetPackageID(const Aws::String& value) { m_packageIDHasBeenSet = true; m_packageID = value; }
-    inline void SetPackageID(Aws::String&& value) { m_packageIDHasBeenSet = true; m_packageID = std::move(value); }
-    inline void SetPackageID(const char* value) { m_packageIDHasBeenSet = true; m_packageID.assign(value); }
-    inline DeletePackageRequest& WithPackageID(const Aws::String& value) { SetPackageID(value); return *this;}
-    inline DeletePackageRequest& WithPackageID(Aws::String&& value) { SetPackageID(std::move(value)); return *this;}
-    inline DeletePackageRequest& WithPackageID(const char* value) { SetPackageID(value); return *this;}
+    template<typename PackageIDT = Aws::String>
+    void SetPackageID(PackageIDT&& value) { m_packageIDHasBeenSet = true; m_packageID = std::forward<PackageIDT>(value); }
+    template<typename PackageIDT = Aws::String>
+    DeletePackageRequest& WithPackageID(PackageIDT&& value) { SetPackageID(std::forward<PackageIDT>(value)); return *this;}
     ///@}
   private:
 

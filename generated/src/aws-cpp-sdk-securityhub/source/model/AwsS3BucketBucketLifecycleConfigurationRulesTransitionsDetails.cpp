@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails() : 
-    m_dateHasBeenSet(false),
-    m_days(0),
-    m_daysHasBeenSet(false),
-    m_storageClassHasBeenSet(false)
-{
-}
-
 AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails::AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails(JsonView jsonValue)
-  : AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AwsS3BucketBucketLifecycleConfigurationRulesTransitionsDetails& AwsS3BucketBucke
   if(jsonValue.ValueExists("Date"))
   {
     m_date = jsonValue.GetString("Date");
-
     m_dateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Days"))
   {
     m_days = jsonValue.GetInteger("Days");
-
     m_daysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageClass"))
   {
     m_storageClass = jsonValue.GetString("StorageClass");
-
     m_storageClassHasBeenSet = true;
   }
-
   return *this;
 }
 

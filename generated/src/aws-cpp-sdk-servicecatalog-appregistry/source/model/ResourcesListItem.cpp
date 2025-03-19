@@ -18,16 +18,7 @@ namespace AppRegistry
 namespace Model
 {
 
-ResourcesListItem::ResourcesListItem() : 
-    m_resourceArnHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 ResourcesListItem::ResourcesListItem(JsonView jsonValue)
-  : ResourcesListItem()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ResourcesListItem& ResourcesListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resourceArn"))
   {
     m_resourceArn = jsonValue.GetString("resourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = jsonValue.GetString("resourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

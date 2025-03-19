@@ -31,7 +31,7 @@ namespace Model
   class Ip
   {
   public:
-    AWS_IOTWIRELESS_API Ip();
+    AWS_IOTWIRELESS_API Ip() = default;
     AWS_IOTWIRELESS_API Ip(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Ip& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>IP address information.</p>
      */
-    inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+    inline const Aws::String& GetIpAddress() const { return m_ipAddress; }
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
-    inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
-    inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
-    inline Ip& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
-    inline Ip& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
-    inline Ip& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+    template<typename IpAddressT = Aws::String>
+    void SetIpAddress(IpAddressT&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::forward<IpAddressT>(value); }
+    template<typename IpAddressT = Aws::String>
+    Ip& WithIpAddress(IpAddressT&& value) { SetIpAddress(std::forward<IpAddressT>(value)); return *this;}
     ///@}
   private:
 

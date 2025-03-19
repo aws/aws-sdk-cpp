@@ -37,7 +37,7 @@ namespace Model
   class VpcIngressConnection
   {
   public:
-    AWS_APPRUNNER_API VpcIngressConnection();
+    AWS_APPRUNNER_API VpcIngressConnection() = default;
     AWS_APPRUNNER_API VpcIngressConnection(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API VpcIngressConnection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,28 +47,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the VPC Ingress Connection. </p>
      */
-    inline const Aws::String& GetVpcIngressConnectionArn() const{ return m_vpcIngressConnectionArn; }
+    inline const Aws::String& GetVpcIngressConnectionArn() const { return m_vpcIngressConnectionArn; }
     inline bool VpcIngressConnectionArnHasBeenSet() const { return m_vpcIngressConnectionArnHasBeenSet; }
-    inline void SetVpcIngressConnectionArn(const Aws::String& value) { m_vpcIngressConnectionArnHasBeenSet = true; m_vpcIngressConnectionArn = value; }
-    inline void SetVpcIngressConnectionArn(Aws::String&& value) { m_vpcIngressConnectionArnHasBeenSet = true; m_vpcIngressConnectionArn = std::move(value); }
-    inline void SetVpcIngressConnectionArn(const char* value) { m_vpcIngressConnectionArnHasBeenSet = true; m_vpcIngressConnectionArn.assign(value); }
-    inline VpcIngressConnection& WithVpcIngressConnectionArn(const Aws::String& value) { SetVpcIngressConnectionArn(value); return *this;}
-    inline VpcIngressConnection& WithVpcIngressConnectionArn(Aws::String&& value) { SetVpcIngressConnectionArn(std::move(value)); return *this;}
-    inline VpcIngressConnection& WithVpcIngressConnectionArn(const char* value) { SetVpcIngressConnectionArn(value); return *this;}
+    template<typename VpcIngressConnectionArnT = Aws::String>
+    void SetVpcIngressConnectionArn(VpcIngressConnectionArnT&& value) { m_vpcIngressConnectionArnHasBeenSet = true; m_vpcIngressConnectionArn = std::forward<VpcIngressConnectionArnT>(value); }
+    template<typename VpcIngressConnectionArnT = Aws::String>
+    VpcIngressConnection& WithVpcIngressConnectionArn(VpcIngressConnectionArnT&& value) { SetVpcIngressConnectionArn(std::forward<VpcIngressConnectionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The customer-provided VPC Ingress Connection name.</p>
      */
-    inline const Aws::String& GetVpcIngressConnectionName() const{ return m_vpcIngressConnectionName; }
+    inline const Aws::String& GetVpcIngressConnectionName() const { return m_vpcIngressConnectionName; }
     inline bool VpcIngressConnectionNameHasBeenSet() const { return m_vpcIngressConnectionNameHasBeenSet; }
-    inline void SetVpcIngressConnectionName(const Aws::String& value) { m_vpcIngressConnectionNameHasBeenSet = true; m_vpcIngressConnectionName = value; }
-    inline void SetVpcIngressConnectionName(Aws::String&& value) { m_vpcIngressConnectionNameHasBeenSet = true; m_vpcIngressConnectionName = std::move(value); }
-    inline void SetVpcIngressConnectionName(const char* value) { m_vpcIngressConnectionNameHasBeenSet = true; m_vpcIngressConnectionName.assign(value); }
-    inline VpcIngressConnection& WithVpcIngressConnectionName(const Aws::String& value) { SetVpcIngressConnectionName(value); return *this;}
-    inline VpcIngressConnection& WithVpcIngressConnectionName(Aws::String&& value) { SetVpcIngressConnectionName(std::move(value)); return *this;}
-    inline VpcIngressConnection& WithVpcIngressConnectionName(const char* value) { SetVpcIngressConnectionName(value); return *this;}
+    template<typename VpcIngressConnectionNameT = Aws::String>
+    void SetVpcIngressConnectionName(VpcIngressConnectionNameT&& value) { m_vpcIngressConnectionNameHasBeenSet = true; m_vpcIngressConnectionName = std::forward<VpcIngressConnectionNameT>(value); }
+    template<typename VpcIngressConnectionNameT = Aws::String>
+    VpcIngressConnection& WithVpcIngressConnectionName(VpcIngressConnectionNameT&& value) { SetVpcIngressConnectionName(std::forward<VpcIngressConnectionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +72,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the service associated with the VPC Ingress
      * Connection. </p>
      */
-    inline const Aws::String& GetServiceArn() const{ return m_serviceArn; }
+    inline const Aws::String& GetServiceArn() const { return m_serviceArn; }
     inline bool ServiceArnHasBeenSet() const { return m_serviceArnHasBeenSet; }
-    inline void SetServiceArn(const Aws::String& value) { m_serviceArnHasBeenSet = true; m_serviceArn = value; }
-    inline void SetServiceArn(Aws::String&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::move(value); }
-    inline void SetServiceArn(const char* value) { m_serviceArnHasBeenSet = true; m_serviceArn.assign(value); }
-    inline VpcIngressConnection& WithServiceArn(const Aws::String& value) { SetServiceArn(value); return *this;}
-    inline VpcIngressConnection& WithServiceArn(Aws::String&& value) { SetServiceArn(std::move(value)); return *this;}
-    inline VpcIngressConnection& WithServiceArn(const char* value) { SetServiceArn(value); return *this;}
+    template<typename ServiceArnT = Aws::String>
+    void SetServiceArn(ServiceArnT&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::forward<ServiceArnT>(value); }
+    template<typename ServiceArnT = Aws::String>
+    VpcIngressConnection& WithServiceArn(ServiceArnT&& value) { SetServiceArn(std::forward<ServiceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,40 +89,34 @@ namespace Model
      * <code>FAILED_UPDATE</code>, <code>FAILED_DELETION</code>, and
      * <code>DELETED</code>.. </p>
      */
-    inline const VpcIngressConnectionStatus& GetStatus() const{ return m_status; }
+    inline VpcIngressConnectionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const VpcIngressConnectionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(VpcIngressConnectionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline VpcIngressConnection& WithStatus(const VpcIngressConnectionStatus& value) { SetStatus(value); return *this;}
-    inline VpcIngressConnection& WithStatus(VpcIngressConnectionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(VpcIngressConnectionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline VpcIngressConnection& WithStatus(VpcIngressConnectionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Account Id you use to create the VPC Ingress Connection resource.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline VpcIngressConnection& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline VpcIngressConnection& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline VpcIngressConnection& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    VpcIngressConnection& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The domain name associated with the VPC Ingress Connection resource.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline VpcIngressConnection& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline VpcIngressConnection& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline VpcIngressConnection& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    VpcIngressConnection& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,12 +124,12 @@ namespace Model
      * <p>Specifications for the customer’s VPC and related PrivateLink VPC endpoint
      * that are used to associate with the VPC Ingress Connection resource.</p>
      */
-    inline const IngressVpcConfiguration& GetIngressVpcConfiguration() const{ return m_ingressVpcConfiguration; }
+    inline const IngressVpcConfiguration& GetIngressVpcConfiguration() const { return m_ingressVpcConfiguration; }
     inline bool IngressVpcConfigurationHasBeenSet() const { return m_ingressVpcConfigurationHasBeenSet; }
-    inline void SetIngressVpcConfiguration(const IngressVpcConfiguration& value) { m_ingressVpcConfigurationHasBeenSet = true; m_ingressVpcConfiguration = value; }
-    inline void SetIngressVpcConfiguration(IngressVpcConfiguration&& value) { m_ingressVpcConfigurationHasBeenSet = true; m_ingressVpcConfiguration = std::move(value); }
-    inline VpcIngressConnection& WithIngressVpcConfiguration(const IngressVpcConfiguration& value) { SetIngressVpcConfiguration(value); return *this;}
-    inline VpcIngressConnection& WithIngressVpcConfiguration(IngressVpcConfiguration&& value) { SetIngressVpcConfiguration(std::move(value)); return *this;}
+    template<typename IngressVpcConfigurationT = IngressVpcConfiguration>
+    void SetIngressVpcConfiguration(IngressVpcConfigurationT&& value) { m_ingressVpcConfigurationHasBeenSet = true; m_ingressVpcConfiguration = std::forward<IngressVpcConfigurationT>(value); }
+    template<typename IngressVpcConfigurationT = IngressVpcConfiguration>
+    VpcIngressConnection& WithIngressVpcConfiguration(IngressVpcConfigurationT&& value) { SetIngressVpcConfiguration(std::forward<IngressVpcConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -150,12 +138,12 @@ namespace Model
      * stamp format.</p> <ul> <li> <p> Type: Timestamp </p> </li> <li> <p> Required:
      * Yes </p> </li> </ul>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline VpcIngressConnection& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline VpcIngressConnection& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    VpcIngressConnection& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -164,12 +152,12 @@ namespace Model
      * format.</p> <ul> <li> <p> Type: Timestamp </p> </li> <li> <p> Required: No </p>
      * </li> </ul>
      */
-    inline const Aws::Utils::DateTime& GetDeletedAt() const{ return m_deletedAt; }
+    inline const Aws::Utils::DateTime& GetDeletedAt() const { return m_deletedAt; }
     inline bool DeletedAtHasBeenSet() const { return m_deletedAtHasBeenSet; }
-    inline void SetDeletedAt(const Aws::Utils::DateTime& value) { m_deletedAtHasBeenSet = true; m_deletedAt = value; }
-    inline void SetDeletedAt(Aws::Utils::DateTime&& value) { m_deletedAtHasBeenSet = true; m_deletedAt = std::move(value); }
-    inline VpcIngressConnection& WithDeletedAt(const Aws::Utils::DateTime& value) { SetDeletedAt(value); return *this;}
-    inline VpcIngressConnection& WithDeletedAt(Aws::Utils::DateTime&& value) { SetDeletedAt(std::move(value)); return *this;}
+    template<typename DeletedAtT = Aws::Utils::DateTime>
+    void SetDeletedAt(DeletedAtT&& value) { m_deletedAtHasBeenSet = true; m_deletedAt = std::forward<DeletedAtT>(value); }
+    template<typename DeletedAtT = Aws::Utils::DateTime>
+    VpcIngressConnection& WithDeletedAt(DeletedAtT&& value) { SetDeletedAt(std::forward<DeletedAtT>(value)); return *this;}
     ///@}
   private:
 
@@ -182,7 +170,7 @@ namespace Model
     Aws::String m_serviceArn;
     bool m_serviceArnHasBeenSet = false;
 
-    VpcIngressConnectionStatus m_status;
+    VpcIngressConnectionStatus m_status{VpcIngressConnectionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_accountId;
@@ -194,10 +182,10 @@ namespace Model
     IngressVpcConfiguration m_ingressVpcConfiguration;
     bool m_ingressVpcConfigurationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_deletedAt;
+    Aws::Utils::DateTime m_deletedAt{};
     bool m_deletedAtHasBeenSet = false;
   };
 

@@ -21,7 +21,7 @@ namespace Model
   class DescribeSecurityPolicyRequest : public TransferRequest
   {
   public:
-    AWS_TRANSFER_API DescribeSecurityPolicyRequest();
+    AWS_TRANSFER_API DescribeSecurityPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>Specify the text name of the security policy for which you want the
      * details.</p>
      */
-    inline const Aws::String& GetSecurityPolicyName() const{ return m_securityPolicyName; }
+    inline const Aws::String& GetSecurityPolicyName() const { return m_securityPolicyName; }
     inline bool SecurityPolicyNameHasBeenSet() const { return m_securityPolicyNameHasBeenSet; }
-    inline void SetSecurityPolicyName(const Aws::String& value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName = value; }
-    inline void SetSecurityPolicyName(Aws::String&& value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName = std::move(value); }
-    inline void SetSecurityPolicyName(const char* value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName.assign(value); }
-    inline DescribeSecurityPolicyRequest& WithSecurityPolicyName(const Aws::String& value) { SetSecurityPolicyName(value); return *this;}
-    inline DescribeSecurityPolicyRequest& WithSecurityPolicyName(Aws::String&& value) { SetSecurityPolicyName(std::move(value)); return *this;}
-    inline DescribeSecurityPolicyRequest& WithSecurityPolicyName(const char* value) { SetSecurityPolicyName(value); return *this;}
+    template<typename SecurityPolicyNameT = Aws::String>
+    void SetSecurityPolicyName(SecurityPolicyNameT&& value) { m_securityPolicyNameHasBeenSet = true; m_securityPolicyName = std::forward<SecurityPolicyNameT>(value); }
+    template<typename SecurityPolicyNameT = Aws::String>
+    DescribeSecurityPolicyRequest& WithSecurityPolicyName(SecurityPolicyNameT&& value) { SetSecurityPolicyName(std::forward<SecurityPolicyNameT>(value)); return *this;}
     ///@}
   private:
 

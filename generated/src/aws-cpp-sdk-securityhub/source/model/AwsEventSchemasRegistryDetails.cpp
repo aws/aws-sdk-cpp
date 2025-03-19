@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEventSchemasRegistryDetails::AwsEventSchemasRegistryDetails() : 
-    m_descriptionHasBeenSet(false),
-    m_registryArnHasBeenSet(false),
-    m_registryNameHasBeenSet(false)
-{
-}
-
 AwsEventSchemasRegistryDetails::AwsEventSchemasRegistryDetails(JsonView jsonValue)
-  : AwsEventSchemasRegistryDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AwsEventSchemasRegistryDetails& AwsEventSchemasRegistryDetails::operator =(JsonV
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistryArn"))
   {
     m_registryArn = jsonValue.GetString("RegistryArn");
-
     m_registryArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistryName"))
   {
     m_registryName = jsonValue.GetString("RegistryName");
-
     m_registryNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,19 +18,7 @@ namespace deadline
 namespace Model
 {
 
-ManifestProperties::ManifestProperties() : 
-    m_fileSystemLocationNameHasBeenSet(false),
-    m_rootPathHasBeenSet(false),
-    m_rootPathFormat(PathFormat::NOT_SET),
-    m_rootPathFormatHasBeenSet(false),
-    m_outputRelativeDirectoriesHasBeenSet(false),
-    m_inputManifestPathHasBeenSet(false),
-    m_inputManifestHashHasBeenSet(false)
-{
-}
-
 ManifestProperties::ManifestProperties(JsonView jsonValue)
-  : ManifestProperties()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ ManifestProperties& ManifestProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fileSystemLocationName"))
   {
     m_fileSystemLocationName = jsonValue.GetString("fileSystemLocationName");
-
     m_fileSystemLocationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rootPath"))
   {
     m_rootPath = jsonValue.GetString("rootPath");
-
     m_rootPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rootPathFormat"))
   {
     m_rootPathFormat = PathFormatMapper::GetPathFormatForName(jsonValue.GetString("rootPathFormat"));
-
     m_rootPathFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputRelativeDirectories"))
   {
     Aws::Utils::Array<JsonView> outputRelativeDirectoriesJsonList = jsonValue.GetArray("outputRelativeDirectories");
@@ -67,21 +49,16 @@ ManifestProperties& ManifestProperties::operator =(JsonView jsonValue)
     }
     m_outputRelativeDirectoriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputManifestPath"))
   {
     m_inputManifestPath = jsonValue.GetString("inputManifestPath");
-
     m_inputManifestPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputManifestHash"))
   {
     m_inputManifestHash = jsonValue.GetString("inputManifestHash");
-
     m_inputManifestHashHasBeenSet = true;
   }
-
   return *this;
 }
 

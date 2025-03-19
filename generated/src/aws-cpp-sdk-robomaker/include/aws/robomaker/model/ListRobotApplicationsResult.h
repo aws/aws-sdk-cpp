@@ -29,7 +29,7 @@ namespace Model
   class ListRobotApplicationsResult
   {
   public:
-    AWS_ROBOMAKER_API ListRobotApplicationsResult();
+    AWS_ROBOMAKER_API ListRobotApplicationsResult() = default;
     AWS_ROBOMAKER_API ListRobotApplicationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROBOMAKER_API ListRobotApplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A list of robot application summaries that meet the criteria of the
      * request.</p>
      */
-    inline const Aws::Vector<RobotApplicationSummary>& GetRobotApplicationSummaries() const{ return m_robotApplicationSummaries; }
-    inline void SetRobotApplicationSummaries(const Aws::Vector<RobotApplicationSummary>& value) { m_robotApplicationSummaries = value; }
-    inline void SetRobotApplicationSummaries(Aws::Vector<RobotApplicationSummary>&& value) { m_robotApplicationSummaries = std::move(value); }
-    inline ListRobotApplicationsResult& WithRobotApplicationSummaries(const Aws::Vector<RobotApplicationSummary>& value) { SetRobotApplicationSummaries(value); return *this;}
-    inline ListRobotApplicationsResult& WithRobotApplicationSummaries(Aws::Vector<RobotApplicationSummary>&& value) { SetRobotApplicationSummaries(std::move(value)); return *this;}
-    inline ListRobotApplicationsResult& AddRobotApplicationSummaries(const RobotApplicationSummary& value) { m_robotApplicationSummaries.push_back(value); return *this; }
-    inline ListRobotApplicationsResult& AddRobotApplicationSummaries(RobotApplicationSummary&& value) { m_robotApplicationSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RobotApplicationSummary>& GetRobotApplicationSummaries() const { return m_robotApplicationSummaries; }
+    template<typename RobotApplicationSummariesT = Aws::Vector<RobotApplicationSummary>>
+    void SetRobotApplicationSummaries(RobotApplicationSummariesT&& value) { m_robotApplicationSummariesHasBeenSet = true; m_robotApplicationSummaries = std::forward<RobotApplicationSummariesT>(value); }
+    template<typename RobotApplicationSummariesT = Aws::Vector<RobotApplicationSummary>>
+    ListRobotApplicationsResult& WithRobotApplicationSummaries(RobotApplicationSummariesT&& value) { SetRobotApplicationSummaries(std::forward<RobotApplicationSummariesT>(value)); return *this;}
+    template<typename RobotApplicationSummariesT = RobotApplicationSummary>
+    ListRobotApplicationsResult& AddRobotApplicationSummaries(RobotApplicationSummariesT&& value) { m_robotApplicationSummariesHasBeenSet = true; m_robotApplicationSummaries.emplace_back(std::forward<RobotApplicationSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,32 +57,31 @@ namespace Model
      * object's <code>nextToken</code> parameter. If there are no remaining results,
      * the previous response object's NextToken parameter is set to null. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListRobotApplicationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRobotApplicationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRobotApplicationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRobotApplicationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListRobotApplicationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListRobotApplicationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListRobotApplicationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListRobotApplicationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<RobotApplicationSummary> m_robotApplicationSummaries;
+    bool m_robotApplicationSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

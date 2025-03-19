@@ -22,7 +22,7 @@ namespace Model
   class UpdateLoadBalancerAttributeRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API UpdateLoadBalancerAttributeRequest();
+    AWS_LIGHTSAIL_API UpdateLoadBalancerAttributeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,26 +40,22 @@ namespace Model
      * <p>The name of the load balancer that you want to modify
      * (<code>my-load-balancer</code>.</p>
      */
-    inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
+    inline const Aws::String& GetLoadBalancerName() const { return m_loadBalancerName; }
     inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
-    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
-    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::move(value); }
-    inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
-    inline UpdateLoadBalancerAttributeRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
-    inline UpdateLoadBalancerAttributeRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(std::move(value)); return *this;}
-    inline UpdateLoadBalancerAttributeRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
+    template<typename LoadBalancerNameT = Aws::String>
+    void SetLoadBalancerName(LoadBalancerNameT&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::forward<LoadBalancerNameT>(value); }
+    template<typename LoadBalancerNameT = Aws::String>
+    UpdateLoadBalancerAttributeRequest& WithLoadBalancerName(LoadBalancerNameT&& value) { SetLoadBalancerName(std::forward<LoadBalancerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the attribute you want to update.</p>
      */
-    inline const LoadBalancerAttributeName& GetAttributeName() const{ return m_attributeName; }
+    inline LoadBalancerAttributeName GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const LoadBalancerAttributeName& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(LoadBalancerAttributeName&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline UpdateLoadBalancerAttributeRequest& WithAttributeName(const LoadBalancerAttributeName& value) { SetAttributeName(value); return *this;}
-    inline UpdateLoadBalancerAttributeRequest& WithAttributeName(LoadBalancerAttributeName&& value) { SetAttributeName(std::move(value)); return *this;}
+    inline void SetAttributeName(LoadBalancerAttributeName value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
+    inline UpdateLoadBalancerAttributeRequest& WithAttributeName(LoadBalancerAttributeName value) { SetAttributeName(value); return *this;}
     ///@}
 
     ///@{
@@ -89,21 +85,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetLoadBalancerTlsPolicies.html">GetLoadBalancerTlsPolicies</a>
      * action to get a list of TLS policy names that you can specify.</p> </li> </ul>
      */
-    inline const Aws::String& GetAttributeValue() const{ return m_attributeValue; }
+    inline const Aws::String& GetAttributeValue() const { return m_attributeValue; }
     inline bool AttributeValueHasBeenSet() const { return m_attributeValueHasBeenSet; }
-    inline void SetAttributeValue(const Aws::String& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
-    inline void SetAttributeValue(Aws::String&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::move(value); }
-    inline void SetAttributeValue(const char* value) { m_attributeValueHasBeenSet = true; m_attributeValue.assign(value); }
-    inline UpdateLoadBalancerAttributeRequest& WithAttributeValue(const Aws::String& value) { SetAttributeValue(value); return *this;}
-    inline UpdateLoadBalancerAttributeRequest& WithAttributeValue(Aws::String&& value) { SetAttributeValue(std::move(value)); return *this;}
-    inline UpdateLoadBalancerAttributeRequest& WithAttributeValue(const char* value) { SetAttributeValue(value); return *this;}
+    template<typename AttributeValueT = Aws::String>
+    void SetAttributeValue(AttributeValueT&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::forward<AttributeValueT>(value); }
+    template<typename AttributeValueT = Aws::String>
+    UpdateLoadBalancerAttributeRequest& WithAttributeValue(AttributeValueT&& value) { SetAttributeValue(std::forward<AttributeValueT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_loadBalancerName;
     bool m_loadBalancerNameHasBeenSet = false;
 
-    LoadBalancerAttributeName m_attributeName;
+    LoadBalancerAttributeName m_attributeName{LoadBalancerAttributeName::NOT_SET};
     bool m_attributeNameHasBeenSet = false;
 
     Aws::String m_attributeValue;

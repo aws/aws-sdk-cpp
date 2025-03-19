@@ -18,15 +18,7 @@ namespace finspace
 namespace Model
 {
 
-CodeConfiguration::CodeConfiguration() : 
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyHasBeenSet(false),
-    m_s3ObjectVersionHasBeenSet(false)
-{
-}
-
 CodeConfiguration::CodeConfiguration(JsonView jsonValue)
-  : CodeConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CodeConfiguration& CodeConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Bucket"))
   {
     m_s3Bucket = jsonValue.GetString("s3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Key"))
   {
     m_s3Key = jsonValue.GetString("s3Key");
-
     m_s3KeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3ObjectVersion"))
   {
     m_s3ObjectVersion = jsonValue.GetString("s3ObjectVersion");
-
     m_s3ObjectVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

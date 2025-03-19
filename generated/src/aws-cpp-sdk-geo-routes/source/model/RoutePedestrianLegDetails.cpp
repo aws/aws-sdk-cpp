@@ -18,19 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RoutePedestrianLegDetails::RoutePedestrianLegDetails() : 
-    m_arrivalHasBeenSet(false),
-    m_departureHasBeenSet(false),
-    m_noticesHasBeenSet(false),
-    m_passThroughWaypointsHasBeenSet(false),
-    m_spansHasBeenSet(false),
-    m_summaryHasBeenSet(false),
-    m_travelStepsHasBeenSet(false)
-{
-}
-
 RoutePedestrianLegDetails::RoutePedestrianLegDetails(JsonView jsonValue)
-  : RoutePedestrianLegDetails()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ RoutePedestrianLegDetails& RoutePedestrianLegDetails::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Arrival"))
   {
     m_arrival = jsonValue.GetObject("Arrival");
-
     m_arrivalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Departure"))
   {
     m_departure = jsonValue.GetObject("Departure");
-
     m_departureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Notices"))
   {
     Aws::Utils::Array<JsonView> noticesJsonList = jsonValue.GetArray("Notices");
@@ -60,7 +44,6 @@ RoutePedestrianLegDetails& RoutePedestrianLegDetails::operator =(JsonView jsonVa
     }
     m_noticesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PassThroughWaypoints"))
   {
     Aws::Utils::Array<JsonView> passThroughWaypointsJsonList = jsonValue.GetArray("PassThroughWaypoints");
@@ -70,7 +53,6 @@ RoutePedestrianLegDetails& RoutePedestrianLegDetails::operator =(JsonView jsonVa
     }
     m_passThroughWaypointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Spans"))
   {
     Aws::Utils::Array<JsonView> spansJsonList = jsonValue.GetArray("Spans");
@@ -80,14 +62,11 @@ RoutePedestrianLegDetails& RoutePedestrianLegDetails::operator =(JsonView jsonVa
     }
     m_spansHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Summary"))
   {
     m_summary = jsonValue.GetObject("Summary");
-
     m_summaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TravelSteps"))
   {
     Aws::Utils::Array<JsonView> travelStepsJsonList = jsonValue.GetArray("TravelSteps");
@@ -97,7 +76,6 @@ RoutePedestrianLegDetails& RoutePedestrianLegDetails::operator =(JsonView jsonVa
     }
     m_travelStepsHasBeenSet = true;
   }
-
   return *this;
 }
 

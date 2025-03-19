@@ -10,15 +10,6 @@
 using namespace Aws::EC2Protocol::Model;
 using namespace Aws::Utils;
 
-QueryListsRequest::QueryListsRequest() : 
-    m_listArgHasBeenSet(false),
-    m_complexListArgHasBeenSet(false),
-    m_listArgWithXmlNameMemberHasBeenSet(false),
-    m_listArgWithXmlNameHasBeenSet(false),
-    m_nestedWithListHasBeenSet(false)
-{
-}
-
 Aws::String QueryListsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

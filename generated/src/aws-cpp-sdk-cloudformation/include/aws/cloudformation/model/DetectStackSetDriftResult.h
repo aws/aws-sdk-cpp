@@ -28,7 +28,7 @@ namespace Model
   class DetectStackSetDriftResult
   {
   public:
-    AWS_CLOUDFORMATION_API DetectStackSetDriftResult();
+    AWS_CLOUDFORMATION_API DetectStackSetDriftResult() = default;
     AWS_CLOUDFORMATION_API DetectStackSetDriftResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFORMATION_API DetectStackSetDriftResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,28 +39,28 @@ namespace Model
      * operation ID with <a>DescribeStackSetOperation</a> to monitor the progress of
      * the drift detection operation.</p>
      */
-    inline const Aws::String& GetOperationId() const{ return m_operationId; }
-    inline void SetOperationId(const Aws::String& value) { m_operationId = value; }
-    inline void SetOperationId(Aws::String&& value) { m_operationId = std::move(value); }
-    inline void SetOperationId(const char* value) { m_operationId.assign(value); }
-    inline DetectStackSetDriftResult& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
-    inline DetectStackSetDriftResult& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
-    inline DetectStackSetDriftResult& WithOperationId(const char* value) { SetOperationId(value); return *this;}
+    inline const Aws::String& GetOperationId() const { return m_operationId; }
+    template<typename OperationIdT = Aws::String>
+    void SetOperationId(OperationIdT&& value) { m_operationIdHasBeenSet = true; m_operationId = std::forward<OperationIdT>(value); }
+    template<typename OperationIdT = Aws::String>
+    DetectStackSetDriftResult& WithOperationId(OperationIdT&& value) { SetOperationId(std::forward<OperationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DetectStackSetDriftResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DetectStackSetDriftResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DetectStackSetDriftResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_operationId;
+    bool m_operationIdHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

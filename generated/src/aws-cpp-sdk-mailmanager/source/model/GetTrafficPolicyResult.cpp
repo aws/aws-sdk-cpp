@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTrafficPolicyResult::GetTrafficPolicyResult() : 
-    m_defaultAction(AcceptAction::NOT_SET),
-    m_maxMessageSizeBytes(0)
-{
-}
-
 GetTrafficPolicyResult::GetTrafficPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetTrafficPolicyResult()
 {
   *this = result;
 }
@@ -35,27 +28,23 @@ GetTrafficPolicyResult& GetTrafficPolicyResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
+    m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultAction"))
   {
     m_defaultAction = AcceptActionMapper::GetAcceptActionForName(jsonValue.GetString("DefaultAction"));
-
+    m_defaultActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTimestamp"))
   {
     m_lastUpdatedTimestamp = jsonValue.GetDouble("LastUpdatedTimestamp");
-
+    m_lastUpdatedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxMessageSizeBytes"))
   {
     m_maxMessageSizeBytes = jsonValue.GetInteger("MaxMessageSizeBytes");
-
+    m_maxMessageSizeBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyStatements"))
   {
     Aws::Utils::Array<JsonView> policyStatementsJsonList = jsonValue.GetArray("PolicyStatements");
@@ -63,32 +52,30 @@ GetTrafficPolicyResult& GetTrafficPolicyResult::operator =(const Aws::AmazonWebS
     {
       m_policyStatements.push_back(policyStatementsJsonList[policyStatementsIndex].AsObject());
     }
+    m_policyStatementsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrafficPolicyArn"))
   {
     m_trafficPolicyArn = jsonValue.GetString("TrafficPolicyArn");
-
+    m_trafficPolicyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrafficPolicyId"))
   {
     m_trafficPolicyId = jsonValue.GetString("TrafficPolicyId");
-
+    m_trafficPolicyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrafficPolicyName"))
   {
     m_trafficPolicyName = jsonValue.GetString("TrafficPolicyName");
-
+    m_trafficPolicyNameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

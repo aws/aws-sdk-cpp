@@ -35,7 +35,7 @@ namespace Model
   class BooleanCondition
   {
   public:
-    AWS_CONNECTCASES_API BooleanCondition();
+    AWS_CONNECTCASES_API BooleanCondition() = default;
     AWS_CONNECTCASES_API BooleanCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API BooleanCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,24 +45,24 @@ namespace Model
     /**
      * <p>Tests that operandOne is equal to operandTwo.</p>
      */
-    inline const BooleanOperands& GetEqualTo() const{ return m_equalTo; }
+    inline const BooleanOperands& GetEqualTo() const { return m_equalTo; }
     inline bool EqualToHasBeenSet() const { return m_equalToHasBeenSet; }
-    inline void SetEqualTo(const BooleanOperands& value) { m_equalToHasBeenSet = true; m_equalTo = value; }
-    inline void SetEqualTo(BooleanOperands&& value) { m_equalToHasBeenSet = true; m_equalTo = std::move(value); }
-    inline BooleanCondition& WithEqualTo(const BooleanOperands& value) { SetEqualTo(value); return *this;}
-    inline BooleanCondition& WithEqualTo(BooleanOperands&& value) { SetEqualTo(std::move(value)); return *this;}
+    template<typename EqualToT = BooleanOperands>
+    void SetEqualTo(EqualToT&& value) { m_equalToHasBeenSet = true; m_equalTo = std::forward<EqualToT>(value); }
+    template<typename EqualToT = BooleanOperands>
+    BooleanCondition& WithEqualTo(EqualToT&& value) { SetEqualTo(std::forward<EqualToT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Tests that operandOne is not equal to operandTwo.</p>
      */
-    inline const BooleanOperands& GetNotEqualTo() const{ return m_notEqualTo; }
+    inline const BooleanOperands& GetNotEqualTo() const { return m_notEqualTo; }
     inline bool NotEqualToHasBeenSet() const { return m_notEqualToHasBeenSet; }
-    inline void SetNotEqualTo(const BooleanOperands& value) { m_notEqualToHasBeenSet = true; m_notEqualTo = value; }
-    inline void SetNotEqualTo(BooleanOperands&& value) { m_notEqualToHasBeenSet = true; m_notEqualTo = std::move(value); }
-    inline BooleanCondition& WithNotEqualTo(const BooleanOperands& value) { SetNotEqualTo(value); return *this;}
-    inline BooleanCondition& WithNotEqualTo(BooleanOperands&& value) { SetNotEqualTo(std::move(value)); return *this;}
+    template<typename NotEqualToT = BooleanOperands>
+    void SetNotEqualTo(NotEqualToT&& value) { m_notEqualToHasBeenSet = true; m_notEqualTo = std::forward<NotEqualToT>(value); }
+    template<typename NotEqualToT = BooleanOperands>
+    BooleanCondition& WithNotEqualTo(NotEqualToT&& value) { SetNotEqualTo(std::forward<NotEqualToT>(value)); return *this;}
     ///@}
   private:
 

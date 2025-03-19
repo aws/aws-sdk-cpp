@@ -10,16 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DescribeDBProxyEndpointsRequest::DescribeDBProxyEndpointsRequest() : 
-    m_dBProxyNameHasBeenSet(false),
-    m_dBProxyEndpointNameHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDBProxyEndpointsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

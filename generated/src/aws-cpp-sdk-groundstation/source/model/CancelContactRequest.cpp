@@ -12,11 +12,6 @@ using namespace Aws::GroundStation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelContactRequest::CancelContactRequest() : 
-    m_contactIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelContactRequest::SerializePayload() const
 {
   return {};

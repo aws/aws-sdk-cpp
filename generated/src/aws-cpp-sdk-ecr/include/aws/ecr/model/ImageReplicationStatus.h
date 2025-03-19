@@ -33,7 +33,7 @@ namespace Model
   class ImageReplicationStatus
   {
   public:
-    AWS_ECR_API ImageReplicationStatus();
+    AWS_ECR_API ImageReplicationStatus() = default;
     AWS_ECR_API ImageReplicationStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API ImageReplicationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The destination Region for the image replication.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline ImageReplicationStatus& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline ImageReplicationStatus& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline ImageReplicationStatus& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    ImageReplicationStatus& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,40 +56,34 @@ namespace Model
      * <p>The Amazon Web Services account ID associated with the registry to which the
      * image belongs.</p>
      */
-    inline const Aws::String& GetRegistryId() const{ return m_registryId; }
+    inline const Aws::String& GetRegistryId() const { return m_registryId; }
     inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
-    inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
-    inline void SetRegistryId(Aws::String&& value) { m_registryIdHasBeenSet = true; m_registryId = std::move(value); }
-    inline void SetRegistryId(const char* value) { m_registryIdHasBeenSet = true; m_registryId.assign(value); }
-    inline ImageReplicationStatus& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
-    inline ImageReplicationStatus& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
-    inline ImageReplicationStatus& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
+    template<typename RegistryIdT = Aws::String>
+    void SetRegistryId(RegistryIdT&& value) { m_registryIdHasBeenSet = true; m_registryId = std::forward<RegistryIdT>(value); }
+    template<typename RegistryIdT = Aws::String>
+    ImageReplicationStatus& WithRegistryId(RegistryIdT&& value) { SetRegistryId(std::forward<RegistryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The image replication status.</p>
      */
-    inline const ReplicationStatus& GetStatus() const{ return m_status; }
+    inline ReplicationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ReplicationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ReplicationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ImageReplicationStatus& WithStatus(const ReplicationStatus& value) { SetStatus(value); return *this;}
-    inline ImageReplicationStatus& WithStatus(ReplicationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ReplicationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ImageReplicationStatus& WithStatus(ReplicationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The failure code for a replication that has failed.</p>
      */
-    inline const Aws::String& GetFailureCode() const{ return m_failureCode; }
+    inline const Aws::String& GetFailureCode() const { return m_failureCode; }
     inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
-    inline void SetFailureCode(const Aws::String& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
-    inline void SetFailureCode(Aws::String&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
-    inline void SetFailureCode(const char* value) { m_failureCodeHasBeenSet = true; m_failureCode.assign(value); }
-    inline ImageReplicationStatus& WithFailureCode(const Aws::String& value) { SetFailureCode(value); return *this;}
-    inline ImageReplicationStatus& WithFailureCode(Aws::String&& value) { SetFailureCode(std::move(value)); return *this;}
-    inline ImageReplicationStatus& WithFailureCode(const char* value) { SetFailureCode(value); return *this;}
+    template<typename FailureCodeT = Aws::String>
+    void SetFailureCode(FailureCodeT&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::forward<FailureCodeT>(value); }
+    template<typename FailureCodeT = Aws::String>
+    ImageReplicationStatus& WithFailureCode(FailureCodeT&& value) { SetFailureCode(std::forward<FailureCodeT>(value)); return *this;}
     ///@}
   private:
 
@@ -101,7 +93,7 @@ namespace Model
     Aws::String m_registryId;
     bool m_registryIdHasBeenSet = false;
 
-    ReplicationStatus m_status;
+    ReplicationStatus m_status{ReplicationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_failureCode;

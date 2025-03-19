@@ -21,7 +21,7 @@ namespace Model
   class DeleteTrafficMirrorSessionRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DeleteTrafficMirrorSessionRequest();
+    AWS_EC2_API DeleteTrafficMirrorSessionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The ID of the Traffic Mirror session.</p>
      */
-    inline const Aws::String& GetTrafficMirrorSessionId() const{ return m_trafficMirrorSessionId; }
+    inline const Aws::String& GetTrafficMirrorSessionId() const { return m_trafficMirrorSessionId; }
     inline bool TrafficMirrorSessionIdHasBeenSet() const { return m_trafficMirrorSessionIdHasBeenSet; }
-    inline void SetTrafficMirrorSessionId(const Aws::String& value) { m_trafficMirrorSessionIdHasBeenSet = true; m_trafficMirrorSessionId = value; }
-    inline void SetTrafficMirrorSessionId(Aws::String&& value) { m_trafficMirrorSessionIdHasBeenSet = true; m_trafficMirrorSessionId = std::move(value); }
-    inline void SetTrafficMirrorSessionId(const char* value) { m_trafficMirrorSessionIdHasBeenSet = true; m_trafficMirrorSessionId.assign(value); }
-    inline DeleteTrafficMirrorSessionRequest& WithTrafficMirrorSessionId(const Aws::String& value) { SetTrafficMirrorSessionId(value); return *this;}
-    inline DeleteTrafficMirrorSessionRequest& WithTrafficMirrorSessionId(Aws::String&& value) { SetTrafficMirrorSessionId(std::move(value)); return *this;}
-    inline DeleteTrafficMirrorSessionRequest& WithTrafficMirrorSessionId(const char* value) { SetTrafficMirrorSessionId(value); return *this;}
+    template<typename TrafficMirrorSessionIdT = Aws::String>
+    void SetTrafficMirrorSessionId(TrafficMirrorSessionIdT&& value) { m_trafficMirrorSessionIdHasBeenSet = true; m_trafficMirrorSessionId = std::forward<TrafficMirrorSessionIdT>(value); }
+    template<typename TrafficMirrorSessionIdT = Aws::String>
+    DeleteTrafficMirrorSessionRequest& WithTrafficMirrorSessionId(TrafficMirrorSessionIdT&& value) { SetTrafficMirrorSessionId(std::forward<TrafficMirrorSessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DeleteTrafficMirrorSessionRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_trafficMirrorSessionId;
     bool m_trafficMirrorSessionIdHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

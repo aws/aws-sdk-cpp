@@ -12,14 +12,6 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateUserAccessLoggingSettingsRequest::UpdateUserAccessLoggingSettingsRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_kinesisStreamArnHasBeenSet(false),
-    m_userAccessLoggingSettingsArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdateUserAccessLoggingSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

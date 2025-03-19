@@ -22,7 +22,7 @@ namespace Model
   class UpdateContactScheduleRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API UpdateContactScheduleRequest();
+    AWS_CONNECT_API UpdateContactScheduleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline UpdateContactScheduleRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline UpdateContactScheduleRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline UpdateContactScheduleRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    UpdateContactScheduleRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the contact.</p>
      */
-    inline const Aws::String& GetContactId() const{ return m_contactId; }
+    inline const Aws::String& GetContactId() const { return m_contactId; }
     inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
-    inline void SetContactId(const Aws::String& value) { m_contactIdHasBeenSet = true; m_contactId = value; }
-    inline void SetContactId(Aws::String&& value) { m_contactIdHasBeenSet = true; m_contactId = std::move(value); }
-    inline void SetContactId(const char* value) { m_contactIdHasBeenSet = true; m_contactId.assign(value); }
-    inline UpdateContactScheduleRequest& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
-    inline UpdateContactScheduleRequest& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
-    inline UpdateContactScheduleRequest& WithContactId(const char* value) { SetContactId(value); return *this;}
+    template<typename ContactIdT = Aws::String>
+    void SetContactId(ContactIdT&& value) { m_contactIdHasBeenSet = true; m_contactId = std::forward<ContactIdT>(value); }
+    template<typename ContactIdT = Aws::String>
+    UpdateContactScheduleRequest& WithContactId(ContactIdT&& value) { SetContactId(std::forward<ContactIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,12 +65,12 @@ namespace Model
      * inbound flow. The scheduled time cannot be in the past. It must be within up to
      * 6 days in future. </p>
      */
-    inline const Aws::Utils::DateTime& GetScheduledTime() const{ return m_scheduledTime; }
+    inline const Aws::Utils::DateTime& GetScheduledTime() const { return m_scheduledTime; }
     inline bool ScheduledTimeHasBeenSet() const { return m_scheduledTimeHasBeenSet; }
-    inline void SetScheduledTime(const Aws::Utils::DateTime& value) { m_scheduledTimeHasBeenSet = true; m_scheduledTime = value; }
-    inline void SetScheduledTime(Aws::Utils::DateTime&& value) { m_scheduledTimeHasBeenSet = true; m_scheduledTime = std::move(value); }
-    inline UpdateContactScheduleRequest& WithScheduledTime(const Aws::Utils::DateTime& value) { SetScheduledTime(value); return *this;}
-    inline UpdateContactScheduleRequest& WithScheduledTime(Aws::Utils::DateTime&& value) { SetScheduledTime(std::move(value)); return *this;}
+    template<typename ScheduledTimeT = Aws::Utils::DateTime>
+    void SetScheduledTime(ScheduledTimeT&& value) { m_scheduledTimeHasBeenSet = true; m_scheduledTime = std::forward<ScheduledTimeT>(value); }
+    template<typename ScheduledTimeT = Aws::Utils::DateTime>
+    UpdateContactScheduleRequest& WithScheduledTime(ScheduledTimeT&& value) { SetScheduledTime(std::forward<ScheduledTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -84,7 +80,7 @@ namespace Model
     Aws::String m_contactId;
     bool m_contactIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_scheduledTime;
+    Aws::Utils::DateTime m_scheduledTime{};
     bool m_scheduledTimeHasBeenSet = false;
   };
 

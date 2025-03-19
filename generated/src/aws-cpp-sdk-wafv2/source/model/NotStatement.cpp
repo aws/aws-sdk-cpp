@@ -19,33 +19,18 @@ namespace WAFV2
 namespace Model
 {
 
-NotStatement::NotStatement() : 
-    m_statementHasBeenSet(false)
-{
-}
-
 NotStatement::NotStatement(JsonView jsonValue)
-  : NotStatement()
 {
   *this = jsonValue;
 }
-
-const Statement& NotStatement::GetStatement() const{ return *m_statement; }
-bool NotStatement::StatementHasBeenSet() const { return m_statementHasBeenSet; }
-void NotStatement::SetStatement(const Statement& value) { m_statementHasBeenSet = true; m_statement = Aws::MakeShared<Statement>("NotStatement", value); }
-void NotStatement::SetStatement(Statement&& value) { m_statementHasBeenSet = true; m_statement = Aws::MakeShared<Statement>("NotStatement", std::move(value)); }
-NotStatement& NotStatement::WithStatement(const Statement& value) { SetStatement(value); return *this;}
-NotStatement& NotStatement::WithStatement(Statement&& value) { SetStatement(std::move(value)); return *this;}
 
 NotStatement& NotStatement::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Statement"))
   {
     m_statement = Aws::MakeShared<Statement>("NotStatement", jsonValue.GetObject("Statement"));
-
     m_statementHasBeenSet = true;
   }
-
   return *this;
 }
 

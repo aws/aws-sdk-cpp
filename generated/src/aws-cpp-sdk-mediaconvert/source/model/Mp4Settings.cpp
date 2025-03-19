@@ -18,23 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-Mp4Settings::Mp4Settings() : 
-    m_audioDuration(CmfcAudioDuration::NOT_SET),
-    m_audioDurationHasBeenSet(false),
-    m_cslgAtom(Mp4CslgAtom::NOT_SET),
-    m_cslgAtomHasBeenSet(false),
-    m_cttsVersion(0),
-    m_cttsVersionHasBeenSet(false),
-    m_freeSpaceBox(Mp4FreeSpaceBox::NOT_SET),
-    m_freeSpaceBoxHasBeenSet(false),
-    m_moovPlacement(Mp4MoovPlacement::NOT_SET),
-    m_moovPlacementHasBeenSet(false),
-    m_mp4MajorBrandHasBeenSet(false)
-{
-}
-
 Mp4Settings::Mp4Settings(JsonView jsonValue)
-  : Mp4Settings()
 {
   *this = jsonValue;
 }
@@ -44,45 +28,33 @@ Mp4Settings& Mp4Settings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("audioDuration"))
   {
     m_audioDuration = CmfcAudioDurationMapper::GetCmfcAudioDurationForName(jsonValue.GetString("audioDuration"));
-
     m_audioDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cslgAtom"))
   {
     m_cslgAtom = Mp4CslgAtomMapper::GetMp4CslgAtomForName(jsonValue.GetString("cslgAtom"));
-
     m_cslgAtomHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cttsVersion"))
   {
     m_cttsVersion = jsonValue.GetInteger("cttsVersion");
-
     m_cttsVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("freeSpaceBox"))
   {
     m_freeSpaceBox = Mp4FreeSpaceBoxMapper::GetMp4FreeSpaceBoxForName(jsonValue.GetString("freeSpaceBox"));
-
     m_freeSpaceBoxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("moovPlacement"))
   {
     m_moovPlacement = Mp4MoovPlacementMapper::GetMp4MoovPlacementForName(jsonValue.GetString("moovPlacement"));
-
     m_moovPlacementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mp4MajorBrand"))
   {
     m_mp4MajorBrand = jsonValue.GetString("mp4MajorBrand");
-
     m_mp4MajorBrandHasBeenSet = true;
   }
-
   return *this;
 }
 

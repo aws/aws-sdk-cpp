@@ -12,11 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDocumentClassifierRequest::DeleteDocumentClassifierRequest() : 
-    m_documentClassifierArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDocumentClassifierRequest::SerializePayload() const
 {
   JsonValue payload;

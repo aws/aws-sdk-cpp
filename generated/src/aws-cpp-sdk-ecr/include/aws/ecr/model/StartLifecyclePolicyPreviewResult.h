@@ -28,7 +28,7 @@ namespace Model
   class StartLifecyclePolicyPreviewResult
   {
   public:
-    AWS_ECR_API StartLifecyclePolicyPreviewResult();
+    AWS_ECR_API StartLifecyclePolicyPreviewResult() = default;
     AWS_ECR_API StartLifecyclePolicyPreviewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECR_API StartLifecyclePolicyPreviewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,73 +37,68 @@ namespace Model
     /**
      * <p>The registry ID associated with the request.</p>
      */
-    inline const Aws::String& GetRegistryId() const{ return m_registryId; }
-    inline void SetRegistryId(const Aws::String& value) { m_registryId = value; }
-    inline void SetRegistryId(Aws::String&& value) { m_registryId = std::move(value); }
-    inline void SetRegistryId(const char* value) { m_registryId.assign(value); }
-    inline StartLifecyclePolicyPreviewResult& WithRegistryId(const Aws::String& value) { SetRegistryId(value); return *this;}
-    inline StartLifecyclePolicyPreviewResult& WithRegistryId(Aws::String&& value) { SetRegistryId(std::move(value)); return *this;}
-    inline StartLifecyclePolicyPreviewResult& WithRegistryId(const char* value) { SetRegistryId(value); return *this;}
+    inline const Aws::String& GetRegistryId() const { return m_registryId; }
+    template<typename RegistryIdT = Aws::String>
+    void SetRegistryId(RegistryIdT&& value) { m_registryIdHasBeenSet = true; m_registryId = std::forward<RegistryIdT>(value); }
+    template<typename RegistryIdT = Aws::String>
+    StartLifecyclePolicyPreviewResult& WithRegistryId(RegistryIdT&& value) { SetRegistryId(std::forward<RegistryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The repository name associated with the request.</p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryName.assign(value); }
-    inline StartLifecyclePolicyPreviewResult& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline StartLifecyclePolicyPreviewResult& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline StartLifecyclePolicyPreviewResult& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    StartLifecyclePolicyPreviewResult& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The JSON repository policy text.</p>
      */
-    inline const Aws::String& GetLifecyclePolicyText() const{ return m_lifecyclePolicyText; }
-    inline void SetLifecyclePolicyText(const Aws::String& value) { m_lifecyclePolicyText = value; }
-    inline void SetLifecyclePolicyText(Aws::String&& value) { m_lifecyclePolicyText = std::move(value); }
-    inline void SetLifecyclePolicyText(const char* value) { m_lifecyclePolicyText.assign(value); }
-    inline StartLifecyclePolicyPreviewResult& WithLifecyclePolicyText(const Aws::String& value) { SetLifecyclePolicyText(value); return *this;}
-    inline StartLifecyclePolicyPreviewResult& WithLifecyclePolicyText(Aws::String&& value) { SetLifecyclePolicyText(std::move(value)); return *this;}
-    inline StartLifecyclePolicyPreviewResult& WithLifecyclePolicyText(const char* value) { SetLifecyclePolicyText(value); return *this;}
+    inline const Aws::String& GetLifecyclePolicyText() const { return m_lifecyclePolicyText; }
+    template<typename LifecyclePolicyTextT = Aws::String>
+    void SetLifecyclePolicyText(LifecyclePolicyTextT&& value) { m_lifecyclePolicyTextHasBeenSet = true; m_lifecyclePolicyText = std::forward<LifecyclePolicyTextT>(value); }
+    template<typename LifecyclePolicyTextT = Aws::String>
+    StartLifecyclePolicyPreviewResult& WithLifecyclePolicyText(LifecyclePolicyTextT&& value) { SetLifecyclePolicyText(std::forward<LifecyclePolicyTextT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the lifecycle policy preview request.</p>
      */
-    inline const LifecyclePolicyPreviewStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const LifecyclePolicyPreviewStatus& value) { m_status = value; }
-    inline void SetStatus(LifecyclePolicyPreviewStatus&& value) { m_status = std::move(value); }
-    inline StartLifecyclePolicyPreviewResult& WithStatus(const LifecyclePolicyPreviewStatus& value) { SetStatus(value); return *this;}
-    inline StartLifecyclePolicyPreviewResult& WithStatus(LifecyclePolicyPreviewStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline LifecyclePolicyPreviewStatus GetStatus() const { return m_status; }
+    inline void SetStatus(LifecyclePolicyPreviewStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline StartLifecyclePolicyPreviewResult& WithStatus(LifecyclePolicyPreviewStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartLifecyclePolicyPreviewResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartLifecyclePolicyPreviewResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartLifecyclePolicyPreviewResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartLifecyclePolicyPreviewResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_registryId;
+    bool m_registryIdHasBeenSet = false;
 
     Aws::String m_repositoryName;
+    bool m_repositoryNameHasBeenSet = false;
 
     Aws::String m_lifecyclePolicyText;
+    bool m_lifecyclePolicyTextHasBeenSet = false;
 
-    LifecyclePolicyPreviewStatus m_status;
+    LifecyclePolicyPreviewStatus m_status{LifecyclePolicyPreviewStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

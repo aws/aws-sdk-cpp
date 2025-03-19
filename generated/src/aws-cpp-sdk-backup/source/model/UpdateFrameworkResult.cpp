@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateFrameworkResult::UpdateFrameworkResult()
-{
-}
-
 UpdateFrameworkResult::UpdateFrameworkResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ UpdateFrameworkResult& UpdateFrameworkResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("FrameworkName"))
   {
     m_frameworkName = jsonValue.GetString("FrameworkName");
-
+    m_frameworkNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FrameworkArn"))
   {
     m_frameworkArn = jsonValue.GetString("FrameworkArn");
-
+    m_frameworkArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

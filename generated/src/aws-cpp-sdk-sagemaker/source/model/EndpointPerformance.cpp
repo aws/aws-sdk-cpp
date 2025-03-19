@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-EndpointPerformance::EndpointPerformance() : 
-    m_metricsHasBeenSet(false),
-    m_endpointInfoHasBeenSet(false)
-{
-}
-
 EndpointPerformance::EndpointPerformance(JsonView jsonValue)
-  : EndpointPerformance()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EndpointPerformance& EndpointPerformance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Metrics"))
   {
     m_metrics = jsonValue.GetObject("Metrics");
-
     m_metricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointInfo"))
   {
     m_endpointInfo = jsonValue.GetObject("EndpointInfo");
-
     m_endpointInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -13,16 +13,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetectEntitiesRequest::DetectEntitiesRequest() : 
-    m_textHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_endpointArnHasBeenSet(false),
-    m_bytesHasBeenSet(false),
-    m_documentReaderConfigHasBeenSet(false)
-{
-}
-
 Aws::String DetectEntitiesRequest::SerializePayload() const
 {
   JsonValue payload;

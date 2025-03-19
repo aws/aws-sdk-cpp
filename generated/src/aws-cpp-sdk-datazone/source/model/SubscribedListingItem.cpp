@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-SubscribedListingItem::SubscribedListingItem() : 
-    m_assetListingHasBeenSet(false),
-    m_productListingHasBeenSet(false)
-{
-}
-
 SubscribedListingItem::SubscribedListingItem(JsonView jsonValue)
-  : SubscribedListingItem()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SubscribedListingItem& SubscribedListingItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("assetListing"))
   {
     m_assetListing = jsonValue.GetObject("assetListing");
-
     m_assetListingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("productListing"))
   {
     m_productListing = jsonValue.GetObject("productListing");
-
     m_productListingHasBeenSet = true;
   }
-
   return *this;
 }
 

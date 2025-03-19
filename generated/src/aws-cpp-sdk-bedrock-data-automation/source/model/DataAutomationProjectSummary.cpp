@@ -18,17 +18,7 @@ namespace BedrockDataAutomation
 namespace Model
 {
 
-DataAutomationProjectSummary::DataAutomationProjectSummary() : 
-    m_projectArnHasBeenSet(false),
-    m_projectStage(DataAutomationProjectStage::NOT_SET),
-    m_projectStageHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
-{
-}
-
 DataAutomationProjectSummary::DataAutomationProjectSummary(JsonView jsonValue)
-  : DataAutomationProjectSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ DataAutomationProjectSummary& DataAutomationProjectSummary::operator =(JsonView 
   if(jsonValue.ValueExists("projectArn"))
   {
     m_projectArn = jsonValue.GetString("projectArn");
-
     m_projectArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectStage"))
   {
     m_projectStage = DataAutomationProjectStageMapper::GetDataAutomationProjectStageForName(jsonValue.GetString("projectStage"));
-
     m_projectStageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectName"))
   {
     m_projectName = jsonValue.GetString("projectName");
-
     m_projectNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

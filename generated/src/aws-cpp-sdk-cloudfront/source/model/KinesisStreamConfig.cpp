@@ -20,14 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-KinesisStreamConfig::KinesisStreamConfig() : 
-    m_roleARNHasBeenSet(false),
-    m_streamARNHasBeenSet(false)
-{
-}
-
 KinesisStreamConfig::KinesisStreamConfig(const XmlNode& xmlNode)
-  : KinesisStreamConfig()
 {
   *this = xmlNode;
 }

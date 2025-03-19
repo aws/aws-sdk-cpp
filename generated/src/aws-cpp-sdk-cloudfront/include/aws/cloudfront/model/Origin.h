@@ -50,7 +50,7 @@ namespace Model
   class Origin
   {
   public:
-    AWS_CLOUDFRONT_API Origin();
+    AWS_CLOUDFRONT_API Origin() = default;
     AWS_CLOUDFRONT_API Origin(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API Origin& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -63,14 +63,12 @@ namespace Model
      * distribution.</p> <p>Use this value to specify the <code>TargetOriginId</code>
      * in a <code>CacheBehavior</code> or <code>DefaultCacheBehavior</code>.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Origin& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Origin& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Origin& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Origin& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +77,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesDomainName">Origin
      * Domain Name</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline Origin& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline Origin& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline Origin& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    Origin& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +92,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginPath">Origin
      * Path</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetOriginPath() const{ return m_originPath; }
+    inline const Aws::String& GetOriginPath() const { return m_originPath; }
     inline bool OriginPathHasBeenSet() const { return m_originPathHasBeenSet; }
-    inline void SetOriginPath(const Aws::String& value) { m_originPathHasBeenSet = true; m_originPath = value; }
-    inline void SetOriginPath(Aws::String&& value) { m_originPathHasBeenSet = true; m_originPath = std::move(value); }
-    inline void SetOriginPath(const char* value) { m_originPathHasBeenSet = true; m_originPath.assign(value); }
-    inline Origin& WithOriginPath(const Aws::String& value) { SetOriginPath(value); return *this;}
-    inline Origin& WithOriginPath(Aws::String&& value) { SetOriginPath(std::move(value)); return *this;}
-    inline Origin& WithOriginPath(const char* value) { SetOriginPath(value); return *this;}
+    template<typename OriginPathT = Aws::String>
+    void SetOriginPath(OriginPathT&& value) { m_originPathHasBeenSet = true; m_originPath = std::forward<OriginPathT>(value); }
+    template<typename OriginPathT = Aws::String>
+    Origin& WithOriginPath(OriginPathT&& value) { SetOriginPath(std::forward<OriginPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,12 +108,12 @@ namespace Model
      * Custom Headers to Origin Requests</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>
      */
-    inline const CustomHeaders& GetCustomHeaders() const{ return m_customHeaders; }
+    inline const CustomHeaders& GetCustomHeaders() const { return m_customHeaders; }
     inline bool CustomHeadersHasBeenSet() const { return m_customHeadersHasBeenSet; }
-    inline void SetCustomHeaders(const CustomHeaders& value) { m_customHeadersHasBeenSet = true; m_customHeaders = value; }
-    inline void SetCustomHeaders(CustomHeaders&& value) { m_customHeadersHasBeenSet = true; m_customHeaders = std::move(value); }
-    inline Origin& WithCustomHeaders(const CustomHeaders& value) { SetCustomHeaders(value); return *this;}
-    inline Origin& WithCustomHeaders(CustomHeaders&& value) { SetCustomHeaders(std::move(value)); return *this;}
+    template<typename CustomHeadersT = CustomHeaders>
+    void SetCustomHeaders(CustomHeadersT&& value) { m_customHeadersHasBeenSet = true; m_customHeaders = std::forward<CustomHeadersT>(value); }
+    template<typename CustomHeadersT = CustomHeaders>
+    Origin& WithCustomHeaders(CustomHeadersT&& value) { SetCustomHeaders(std::forward<CustomHeadersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,12 +123,12 @@ namespace Model
      * including an Amazon S3 bucket that is configured with static website hosting,
      * use the <code>CustomOriginConfig</code> type instead.</p>
      */
-    inline const S3OriginConfig& GetS3OriginConfig() const{ return m_s3OriginConfig; }
+    inline const S3OriginConfig& GetS3OriginConfig() const { return m_s3OriginConfig; }
     inline bool S3OriginConfigHasBeenSet() const { return m_s3OriginConfigHasBeenSet; }
-    inline void SetS3OriginConfig(const S3OriginConfig& value) { m_s3OriginConfigHasBeenSet = true; m_s3OriginConfig = value; }
-    inline void SetS3OriginConfig(S3OriginConfig&& value) { m_s3OriginConfigHasBeenSet = true; m_s3OriginConfig = std::move(value); }
-    inline Origin& WithS3OriginConfig(const S3OriginConfig& value) { SetS3OriginConfig(value); return *this;}
-    inline Origin& WithS3OriginConfig(S3OriginConfig&& value) { SetS3OriginConfig(std::move(value)); return *this;}
+    template<typename S3OriginConfigT = S3OriginConfig>
+    void SetS3OriginConfig(S3OriginConfigT&& value) { m_s3OriginConfigHasBeenSet = true; m_s3OriginConfig = std::forward<S3OriginConfigT>(value); }
+    template<typename S3OriginConfigT = S3OriginConfig>
+    Origin& WithS3OriginConfig(S3OriginConfigT&& value) { SetS3OriginConfig(std::forward<S3OriginConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,24 +138,24 @@ namespace Model
      * use this type. If the Amazon S3 bucket is not configured with static website
      * hosting, use the <code>S3OriginConfig</code> type instead.</p>
      */
-    inline const CustomOriginConfig& GetCustomOriginConfig() const{ return m_customOriginConfig; }
+    inline const CustomOriginConfig& GetCustomOriginConfig() const { return m_customOriginConfig; }
     inline bool CustomOriginConfigHasBeenSet() const { return m_customOriginConfigHasBeenSet; }
-    inline void SetCustomOriginConfig(const CustomOriginConfig& value) { m_customOriginConfigHasBeenSet = true; m_customOriginConfig = value; }
-    inline void SetCustomOriginConfig(CustomOriginConfig&& value) { m_customOriginConfigHasBeenSet = true; m_customOriginConfig = std::move(value); }
-    inline Origin& WithCustomOriginConfig(const CustomOriginConfig& value) { SetCustomOriginConfig(value); return *this;}
-    inline Origin& WithCustomOriginConfig(CustomOriginConfig&& value) { SetCustomOriginConfig(std::move(value)); return *this;}
+    template<typename CustomOriginConfigT = CustomOriginConfig>
+    void SetCustomOriginConfig(CustomOriginConfigT&& value) { m_customOriginConfigHasBeenSet = true; m_customOriginConfig = std::forward<CustomOriginConfigT>(value); }
+    template<typename CustomOriginConfigT = CustomOriginConfig>
+    Origin& WithCustomOriginConfig(CustomOriginConfigT&& value) { SetCustomOriginConfig(std::forward<CustomOriginConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The VPC origin configuration.</p>
      */
-    inline const VpcOriginConfig& GetVpcOriginConfig() const{ return m_vpcOriginConfig; }
+    inline const VpcOriginConfig& GetVpcOriginConfig() const { return m_vpcOriginConfig; }
     inline bool VpcOriginConfigHasBeenSet() const { return m_vpcOriginConfigHasBeenSet; }
-    inline void SetVpcOriginConfig(const VpcOriginConfig& value) { m_vpcOriginConfigHasBeenSet = true; m_vpcOriginConfig = value; }
-    inline void SetVpcOriginConfig(VpcOriginConfig&& value) { m_vpcOriginConfigHasBeenSet = true; m_vpcOriginConfig = std::move(value); }
-    inline Origin& WithVpcOriginConfig(const VpcOriginConfig& value) { SetVpcOriginConfig(value); return *this;}
-    inline Origin& WithVpcOriginConfig(VpcOriginConfig&& value) { SetVpcOriginConfig(std::move(value)); return *this;}
+    template<typename VpcOriginConfigT = VpcOriginConfig>
+    void SetVpcOriginConfig(VpcOriginConfigT&& value) { m_vpcOriginConfigHasBeenSet = true; m_vpcOriginConfig = std::forward<VpcOriginConfigT>(value); }
+    template<typename VpcOriginConfigT = VpcOriginConfig>
+    Origin& WithVpcOriginConfig(VpcOriginConfigT&& value) { SetVpcOriginConfig(std::forward<VpcOriginConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -177,7 +171,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-attempts">Origin
      * Connection Attempts</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
-    inline int GetConnectionAttempts() const{ return m_connectionAttempts; }
+    inline int GetConnectionAttempts() const { return m_connectionAttempts; }
     inline bool ConnectionAttemptsHasBeenSet() const { return m_connectionAttemptsHasBeenSet; }
     inline void SetConnectionAttempts(int value) { m_connectionAttemptsHasBeenSet = true; m_connectionAttempts = value; }
     inline Origin& WithConnectionAttempts(int value) { SetConnectionAttempts(value); return *this;}
@@ -192,7 +186,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#origin-connection-timeout">Origin
      * Connection Timeout</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
-    inline int GetConnectionTimeout() const{ return m_connectionTimeout; }
+    inline int GetConnectionTimeout() const { return m_connectionTimeout; }
     inline bool ConnectionTimeoutHasBeenSet() const { return m_connectionTimeoutHasBeenSet; }
     inline void SetConnectionTimeout(int value) { m_connectionTimeoutHasBeenSet = true; m_connectionTimeout = value; }
     inline Origin& WithConnectionTimeout(int value) { SetConnectionTimeout(value); return *this;}
@@ -205,12 +199,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/origin-shield.html">Using
      * Origin Shield</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
-    inline const OriginShield& GetOriginShield() const{ return m_originShield; }
+    inline const OriginShield& GetOriginShield() const { return m_originShield; }
     inline bool OriginShieldHasBeenSet() const { return m_originShieldHasBeenSet; }
-    inline void SetOriginShield(const OriginShield& value) { m_originShieldHasBeenSet = true; m_originShield = value; }
-    inline void SetOriginShield(OriginShield&& value) { m_originShieldHasBeenSet = true; m_originShield = std::move(value); }
-    inline Origin& WithOriginShield(const OriginShield& value) { SetOriginShield(value); return *this;}
-    inline Origin& WithOriginShield(OriginShield&& value) { SetOriginShield(std::move(value)); return *this;}
+    template<typename OriginShieldT = OriginShield>
+    void SetOriginShield(OriginShieldT&& value) { m_originShieldHasBeenSet = true; m_originShield = std::forward<OriginShieldT>(value); }
+    template<typename OriginShieldT = OriginShield>
+    Origin& WithOriginShield(OriginShieldT&& value) { SetOriginShield(std::forward<OriginShieldT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -221,14 +215,12 @@ namespace Model
      * access to an Amazon S3 origin</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetOriginAccessControlId() const{ return m_originAccessControlId; }
+    inline const Aws::String& GetOriginAccessControlId() const { return m_originAccessControlId; }
     inline bool OriginAccessControlIdHasBeenSet() const { return m_originAccessControlIdHasBeenSet; }
-    inline void SetOriginAccessControlId(const Aws::String& value) { m_originAccessControlIdHasBeenSet = true; m_originAccessControlId = value; }
-    inline void SetOriginAccessControlId(Aws::String&& value) { m_originAccessControlIdHasBeenSet = true; m_originAccessControlId = std::move(value); }
-    inline void SetOriginAccessControlId(const char* value) { m_originAccessControlIdHasBeenSet = true; m_originAccessControlId.assign(value); }
-    inline Origin& WithOriginAccessControlId(const Aws::String& value) { SetOriginAccessControlId(value); return *this;}
-    inline Origin& WithOriginAccessControlId(Aws::String&& value) { SetOriginAccessControlId(std::move(value)); return *this;}
-    inline Origin& WithOriginAccessControlId(const char* value) { SetOriginAccessControlId(value); return *this;}
+    template<typename OriginAccessControlIdT = Aws::String>
+    void SetOriginAccessControlId(OriginAccessControlIdT&& value) { m_originAccessControlIdHasBeenSet = true; m_originAccessControlId = std::forward<OriginAccessControlIdT>(value); }
+    template<typename OriginAccessControlIdT = Aws::String>
+    Origin& WithOriginAccessControlId(OriginAccessControlIdT&& value) { SetOriginAccessControlId(std::forward<OriginAccessControlIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -253,10 +245,10 @@ namespace Model
     VpcOriginConfig m_vpcOriginConfig;
     bool m_vpcOriginConfigHasBeenSet = false;
 
-    int m_connectionAttempts;
+    int m_connectionAttempts{0};
     bool m_connectionAttemptsHasBeenSet = false;
 
-    int m_connectionTimeout;
+    int m_connectionTimeout{0};
     bool m_connectionTimeoutHasBeenSet = false;
 
     OriginShield m_originShield;

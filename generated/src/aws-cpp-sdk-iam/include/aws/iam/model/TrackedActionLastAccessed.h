@@ -34,7 +34,7 @@ namespace Model
   class TrackedActionLastAccessed
   {
   public:
-    AWS_IAM_API TrackedActionLastAccessed();
+    AWS_IAM_API TrackedActionLastAccessed() = default;
     AWS_IAM_API TrackedActionLastAccessed(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_IAM_API TrackedActionLastAccessed& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,26 +47,22 @@ namespace Model
      * <p>The name of the tracked action to which access was attempted. Tracked actions
      * are actions that report activity to IAM.</p>
      */
-    inline const Aws::String& GetActionName() const{ return m_actionName; }
+    inline const Aws::String& GetActionName() const { return m_actionName; }
     inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
-    inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
-    inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
-    inline void SetActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.assign(value); }
-    inline TrackedActionLastAccessed& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
-    inline TrackedActionLastAccessed& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
-    inline TrackedActionLastAccessed& WithActionName(const char* value) { SetActionName(value); return *this;}
+    template<typename ActionNameT = Aws::String>
+    void SetActionName(ActionNameT&& value) { m_actionNameHasBeenSet = true; m_actionName = std::forward<ActionNameT>(value); }
+    template<typename ActionNameT = Aws::String>
+    TrackedActionLastAccessed& WithActionName(ActionNameT&& value) { SetActionName(std::forward<ActionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetLastAccessedEntity() const{ return m_lastAccessedEntity; }
+    inline const Aws::String& GetLastAccessedEntity() const { return m_lastAccessedEntity; }
     inline bool LastAccessedEntityHasBeenSet() const { return m_lastAccessedEntityHasBeenSet; }
-    inline void SetLastAccessedEntity(const Aws::String& value) { m_lastAccessedEntityHasBeenSet = true; m_lastAccessedEntity = value; }
-    inline void SetLastAccessedEntity(Aws::String&& value) { m_lastAccessedEntityHasBeenSet = true; m_lastAccessedEntity = std::move(value); }
-    inline void SetLastAccessedEntity(const char* value) { m_lastAccessedEntityHasBeenSet = true; m_lastAccessedEntity.assign(value); }
-    inline TrackedActionLastAccessed& WithLastAccessedEntity(const Aws::String& value) { SetLastAccessedEntity(value); return *this;}
-    inline TrackedActionLastAccessed& WithLastAccessedEntity(Aws::String&& value) { SetLastAccessedEntity(std::move(value)); return *this;}
-    inline TrackedActionLastAccessed& WithLastAccessedEntity(const char* value) { SetLastAccessedEntity(value); return *this;}
+    template<typename LastAccessedEntityT = Aws::String>
+    void SetLastAccessedEntity(LastAccessedEntityT&& value) { m_lastAccessedEntityHasBeenSet = true; m_lastAccessedEntity = std::forward<LastAccessedEntityT>(value); }
+    template<typename LastAccessedEntityT = Aws::String>
+    TrackedActionLastAccessed& WithLastAccessedEntity(LastAccessedEntityT&& value) { SetLastAccessedEntity(std::forward<LastAccessedEntityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +75,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastAccessedTime() const{ return m_lastAccessedTime; }
+    inline const Aws::Utils::DateTime& GetLastAccessedTime() const { return m_lastAccessedTime; }
     inline bool LastAccessedTimeHasBeenSet() const { return m_lastAccessedTimeHasBeenSet; }
-    inline void SetLastAccessedTime(const Aws::Utils::DateTime& value) { m_lastAccessedTimeHasBeenSet = true; m_lastAccessedTime = value; }
-    inline void SetLastAccessedTime(Aws::Utils::DateTime&& value) { m_lastAccessedTimeHasBeenSet = true; m_lastAccessedTime = std::move(value); }
-    inline TrackedActionLastAccessed& WithLastAccessedTime(const Aws::Utils::DateTime& value) { SetLastAccessedTime(value); return *this;}
-    inline TrackedActionLastAccessed& WithLastAccessedTime(Aws::Utils::DateTime&& value) { SetLastAccessedTime(std::move(value)); return *this;}
+    template<typename LastAccessedTimeT = Aws::Utils::DateTime>
+    void SetLastAccessedTime(LastAccessedTimeT&& value) { m_lastAccessedTimeHasBeenSet = true; m_lastAccessedTime = std::forward<LastAccessedTimeT>(value); }
+    template<typename LastAccessedTimeT = Aws::Utils::DateTime>
+    TrackedActionLastAccessed& WithLastAccessedTime(LastAccessedTimeT&& value) { SetLastAccessedTime(std::forward<LastAccessedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +92,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#service-last-accessed-reporting-period">tracking
      * period</a>.</p>
      */
-    inline const Aws::String& GetLastAccessedRegion() const{ return m_lastAccessedRegion; }
+    inline const Aws::String& GetLastAccessedRegion() const { return m_lastAccessedRegion; }
     inline bool LastAccessedRegionHasBeenSet() const { return m_lastAccessedRegionHasBeenSet; }
-    inline void SetLastAccessedRegion(const Aws::String& value) { m_lastAccessedRegionHasBeenSet = true; m_lastAccessedRegion = value; }
-    inline void SetLastAccessedRegion(Aws::String&& value) { m_lastAccessedRegionHasBeenSet = true; m_lastAccessedRegion = std::move(value); }
-    inline void SetLastAccessedRegion(const char* value) { m_lastAccessedRegionHasBeenSet = true; m_lastAccessedRegion.assign(value); }
-    inline TrackedActionLastAccessed& WithLastAccessedRegion(const Aws::String& value) { SetLastAccessedRegion(value); return *this;}
-    inline TrackedActionLastAccessed& WithLastAccessedRegion(Aws::String&& value) { SetLastAccessedRegion(std::move(value)); return *this;}
-    inline TrackedActionLastAccessed& WithLastAccessedRegion(const char* value) { SetLastAccessedRegion(value); return *this;}
+    template<typename LastAccessedRegionT = Aws::String>
+    void SetLastAccessedRegion(LastAccessedRegionT&& value) { m_lastAccessedRegionHasBeenSet = true; m_lastAccessedRegion = std::forward<LastAccessedRegionT>(value); }
+    template<typename LastAccessedRegionT = Aws::String>
+    TrackedActionLastAccessed& WithLastAccessedRegion(LastAccessedRegionT&& value) { SetLastAccessedRegion(std::forward<LastAccessedRegionT>(value)); return *this;}
     ///@}
   private:
 
@@ -113,7 +107,7 @@ namespace Model
     Aws::String m_lastAccessedEntity;
     bool m_lastAccessedEntityHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastAccessedTime;
+    Aws::Utils::DateTime m_lastAccessedTime{};
     bool m_lastAccessedTimeHasBeenSet = false;
 
     Aws::String m_lastAccessedRegion;

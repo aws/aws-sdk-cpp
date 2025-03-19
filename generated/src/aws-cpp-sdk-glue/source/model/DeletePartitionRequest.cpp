@@ -12,14 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePartitionRequest::DeletePartitionRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_partitionValuesHasBeenSet(false)
-{
-}
-
 Aws::String DeletePartitionRequest::SerializePayload() const
 {
   JsonValue payload;

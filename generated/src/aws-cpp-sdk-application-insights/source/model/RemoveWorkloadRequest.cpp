@@ -12,13 +12,6 @@ using namespace Aws::ApplicationInsights::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveWorkloadRequest::RemoveWorkloadRequest() : 
-    m_resourceGroupNameHasBeenSet(false),
-    m_componentNameHasBeenSet(false),
-    m_workloadIdHasBeenSet(false)
-{
-}
-
 Aws::String RemoveWorkloadRequest::SerializePayload() const
 {
   JsonValue payload;

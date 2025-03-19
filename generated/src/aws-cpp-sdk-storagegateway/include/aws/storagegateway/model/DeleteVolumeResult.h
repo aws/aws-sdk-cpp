@@ -33,7 +33,7 @@ namespace Model
   class DeleteVolumeResult
   {
   public:
-    AWS_STORAGEGATEWAY_API DeleteVolumeResult();
+    AWS_STORAGEGATEWAY_API DeleteVolumeResult() = default;
     AWS_STORAGEGATEWAY_API DeleteVolumeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_STORAGEGATEWAY_API DeleteVolumeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,30 +43,28 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the storage volume that was deleted. It is
      * the same ARN you provided in the request.</p>
      */
-    inline const Aws::String& GetVolumeARN() const{ return m_volumeARN; }
-    inline void SetVolumeARN(const Aws::String& value) { m_volumeARN = value; }
-    inline void SetVolumeARN(Aws::String&& value) { m_volumeARN = std::move(value); }
-    inline void SetVolumeARN(const char* value) { m_volumeARN.assign(value); }
-    inline DeleteVolumeResult& WithVolumeARN(const Aws::String& value) { SetVolumeARN(value); return *this;}
-    inline DeleteVolumeResult& WithVolumeARN(Aws::String&& value) { SetVolumeARN(std::move(value)); return *this;}
-    inline DeleteVolumeResult& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
+    inline const Aws::String& GetVolumeARN() const { return m_volumeARN; }
+    template<typename VolumeARNT = Aws::String>
+    void SetVolumeARN(VolumeARNT&& value) { m_volumeARNHasBeenSet = true; m_volumeARN = std::forward<VolumeARNT>(value); }
+    template<typename VolumeARNT = Aws::String>
+    DeleteVolumeResult& WithVolumeARN(VolumeARNT&& value) { SetVolumeARN(std::forward<VolumeARNT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteVolumeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteVolumeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteVolumeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteVolumeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_volumeARN;
+    bool m_volumeARNHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

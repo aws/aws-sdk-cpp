@@ -18,15 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-ListedConnector::ListedConnector() : 
-    m_arnHasBeenSet(false),
-    m_connectorIdHasBeenSet(false),
-    m_urlHasBeenSet(false)
-{
-}
-
 ListedConnector::ListedConnector(JsonView jsonValue)
-  : ListedConnector()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ListedConnector& ListedConnector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectorId"))
   {
     m_connectorId = jsonValue.GetString("ConnectorId");
-
     m_connectorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetString("Url");
-
     m_urlHasBeenSet = true;
   }
-
   return *this;
 }
 

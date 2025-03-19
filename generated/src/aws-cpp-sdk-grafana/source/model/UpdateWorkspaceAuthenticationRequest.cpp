@@ -12,13 +12,6 @@ using namespace Aws::ManagedGrafana::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateWorkspaceAuthenticationRequest::UpdateWorkspaceAuthenticationRequest() : 
-    m_authenticationProvidersHasBeenSet(false),
-    m_samlConfigurationHasBeenSet(false),
-    m_workspaceIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateWorkspaceAuthenticationRequest::SerializePayload() const
 {
   JsonValue payload;

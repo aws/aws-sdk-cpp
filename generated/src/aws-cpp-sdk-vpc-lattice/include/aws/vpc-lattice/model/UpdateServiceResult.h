@@ -28,7 +28,7 @@ namespace Model
   class UpdateServiceResult
   {
   public:
-    AWS_VPCLATTICE_API UpdateServiceResult();
+    AWS_VPCLATTICE_API UpdateServiceResult() = default;
     AWS_VPCLATTICE_API UpdateServiceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_VPCLATTICE_API UpdateServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,103 +37,96 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the service.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline UpdateServiceResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateServiceResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateServiceResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateServiceResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of IAM policy.</p>
      */
-    inline const AuthType& GetAuthType() const{ return m_authType; }
-    inline void SetAuthType(const AuthType& value) { m_authType = value; }
-    inline void SetAuthType(AuthType&& value) { m_authType = std::move(value); }
-    inline UpdateServiceResult& WithAuthType(const AuthType& value) { SetAuthType(value); return *this;}
-    inline UpdateServiceResult& WithAuthType(AuthType&& value) { SetAuthType(std::move(value)); return *this;}
+    inline AuthType GetAuthType() const { return m_authType; }
+    inline void SetAuthType(AuthType value) { m_authTypeHasBeenSet = true; m_authType = value; }
+    inline UpdateServiceResult& WithAuthType(AuthType value) { SetAuthType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the certificate.</p>
      */
-    inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
-    inline void SetCertificateArn(const Aws::String& value) { m_certificateArn = value; }
-    inline void SetCertificateArn(Aws::String&& value) { m_certificateArn = std::move(value); }
-    inline void SetCertificateArn(const char* value) { m_certificateArn.assign(value); }
-    inline UpdateServiceResult& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
-    inline UpdateServiceResult& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
-    inline UpdateServiceResult& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+    inline const Aws::String& GetCertificateArn() const { return m_certificateArn; }
+    template<typename CertificateArnT = Aws::String>
+    void SetCertificateArn(CertificateArnT&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::forward<CertificateArnT>(value); }
+    template<typename CertificateArnT = Aws::String>
+    UpdateServiceResult& WithCertificateArn(CertificateArnT&& value) { SetCertificateArn(std::forward<CertificateArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The custom domain name of the service.</p>
      */
-    inline const Aws::String& GetCustomDomainName() const{ return m_customDomainName; }
-    inline void SetCustomDomainName(const Aws::String& value) { m_customDomainName = value; }
-    inline void SetCustomDomainName(Aws::String&& value) { m_customDomainName = std::move(value); }
-    inline void SetCustomDomainName(const char* value) { m_customDomainName.assign(value); }
-    inline UpdateServiceResult& WithCustomDomainName(const Aws::String& value) { SetCustomDomainName(value); return *this;}
-    inline UpdateServiceResult& WithCustomDomainName(Aws::String&& value) { SetCustomDomainName(std::move(value)); return *this;}
-    inline UpdateServiceResult& WithCustomDomainName(const char* value) { SetCustomDomainName(value); return *this;}
+    inline const Aws::String& GetCustomDomainName() const { return m_customDomainName; }
+    template<typename CustomDomainNameT = Aws::String>
+    void SetCustomDomainName(CustomDomainNameT&& value) { m_customDomainNameHasBeenSet = true; m_customDomainName = std::forward<CustomDomainNameT>(value); }
+    template<typename CustomDomainNameT = Aws::String>
+    UpdateServiceResult& WithCustomDomainName(CustomDomainNameT&& value) { SetCustomDomainName(std::forward<CustomDomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the service.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline UpdateServiceResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateServiceResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateServiceResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateServiceResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the service.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline UpdateServiceResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateServiceResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateServiceResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateServiceResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateServiceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateServiceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateServiceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateServiceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
-    AuthType m_authType;
+    AuthType m_authType{AuthType::NOT_SET};
+    bool m_authTypeHasBeenSet = false;
 
     Aws::String m_certificateArn;
+    bool m_certificateArnHasBeenSet = false;
 
     Aws::String m_customDomainName;
+    bool m_customDomainNameHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

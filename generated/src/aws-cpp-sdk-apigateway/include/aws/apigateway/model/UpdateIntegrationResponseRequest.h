@@ -27,7 +27,7 @@ namespace Model
   class UpdateIntegrationResponseRequest : public APIGatewayRequest
   {
   public:
-    AWS_APIGATEWAY_API UpdateIntegrationResponseRequest();
+    AWS_APIGATEWAY_API UpdateIntegrationResponseRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,56 +42,48 @@ namespace Model
     /**
      * <p>The string identifier of the associated RestApi.</p>
      */
-    inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
+    inline const Aws::String& GetRestApiId() const { return m_restApiId; }
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
-    inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
-    inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
-    inline UpdateIntegrationResponseRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
-    inline UpdateIntegrationResponseRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
-    inline UpdateIntegrationResponseRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+    template<typename RestApiIdT = Aws::String>
+    void SetRestApiId(RestApiIdT&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::forward<RestApiIdT>(value); }
+    template<typename RestApiIdT = Aws::String>
+    UpdateIntegrationResponseRequest& WithRestApiId(RestApiIdT&& value) { SetRestApiId(std::forward<RestApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies an update integration response request's resource identifier.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline UpdateIntegrationResponseRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline UpdateIntegrationResponseRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline UpdateIntegrationResponseRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    UpdateIntegrationResponseRequest& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies an update integration response request's HTTP method.</p>
      */
-    inline const Aws::String& GetHttpMethod() const{ return m_httpMethod; }
+    inline const Aws::String& GetHttpMethod() const { return m_httpMethod; }
     inline bool HttpMethodHasBeenSet() const { return m_httpMethodHasBeenSet; }
-    inline void SetHttpMethod(const Aws::String& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
-    inline void SetHttpMethod(Aws::String&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = std::move(value); }
-    inline void SetHttpMethod(const char* value) { m_httpMethodHasBeenSet = true; m_httpMethod.assign(value); }
-    inline UpdateIntegrationResponseRequest& WithHttpMethod(const Aws::String& value) { SetHttpMethod(value); return *this;}
-    inline UpdateIntegrationResponseRequest& WithHttpMethod(Aws::String&& value) { SetHttpMethod(std::move(value)); return *this;}
-    inline UpdateIntegrationResponseRequest& WithHttpMethod(const char* value) { SetHttpMethod(value); return *this;}
+    template<typename HttpMethodT = Aws::String>
+    void SetHttpMethod(HttpMethodT&& value) { m_httpMethodHasBeenSet = true; m_httpMethod = std::forward<HttpMethodT>(value); }
+    template<typename HttpMethodT = Aws::String>
+    UpdateIntegrationResponseRequest& WithHttpMethod(HttpMethodT&& value) { SetHttpMethod(std::forward<HttpMethodT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies an update integration response request's status code.</p>
      */
-    inline const Aws::String& GetStatusCode() const{ return m_statusCode; }
+    inline const Aws::String& GetStatusCode() const { return m_statusCode; }
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-    inline void SetStatusCode(const Aws::String& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
-    inline void SetStatusCode(Aws::String&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
-    inline void SetStatusCode(const char* value) { m_statusCodeHasBeenSet = true; m_statusCode.assign(value); }
-    inline UpdateIntegrationResponseRequest& WithStatusCode(const Aws::String& value) { SetStatusCode(value); return *this;}
-    inline UpdateIntegrationResponseRequest& WithStatusCode(Aws::String&& value) { SetStatusCode(std::move(value)); return *this;}
-    inline UpdateIntegrationResponseRequest& WithStatusCode(const char* value) { SetStatusCode(value); return *this;}
+    template<typename StatusCodeT = Aws::String>
+    void SetStatusCode(StatusCodeT&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::forward<StatusCodeT>(value); }
+    template<typename StatusCodeT = Aws::String>
+    UpdateIntegrationResponseRequest& WithStatusCode(StatusCodeT&& value) { SetStatusCode(std::forward<StatusCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,14 +92,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/apigateway/latest/api/patch-operations.html">Patch
      * Operations</a>.</p>
      */
-    inline const Aws::Vector<PatchOperation>& GetPatchOperations() const{ return m_patchOperations; }
+    inline const Aws::Vector<PatchOperation>& GetPatchOperations() const { return m_patchOperations; }
     inline bool PatchOperationsHasBeenSet() const { return m_patchOperationsHasBeenSet; }
-    inline void SetPatchOperations(const Aws::Vector<PatchOperation>& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = value; }
-    inline void SetPatchOperations(Aws::Vector<PatchOperation>&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = std::move(value); }
-    inline UpdateIntegrationResponseRequest& WithPatchOperations(const Aws::Vector<PatchOperation>& value) { SetPatchOperations(value); return *this;}
-    inline UpdateIntegrationResponseRequest& WithPatchOperations(Aws::Vector<PatchOperation>&& value) { SetPatchOperations(std::move(value)); return *this;}
-    inline UpdateIntegrationResponseRequest& AddPatchOperations(const PatchOperation& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(value); return *this; }
-    inline UpdateIntegrationResponseRequest& AddPatchOperations(PatchOperation&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.push_back(std::move(value)); return *this; }
+    template<typename PatchOperationsT = Aws::Vector<PatchOperation>>
+    void SetPatchOperations(PatchOperationsT&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations = std::forward<PatchOperationsT>(value); }
+    template<typename PatchOperationsT = Aws::Vector<PatchOperation>>
+    UpdateIntegrationResponseRequest& WithPatchOperations(PatchOperationsT&& value) { SetPatchOperations(std::forward<PatchOperationsT>(value)); return *this;}
+    template<typename PatchOperationsT = PatchOperation>
+    UpdateIntegrationResponseRequest& AddPatchOperations(PatchOperationsT&& value) { m_patchOperationsHasBeenSet = true; m_patchOperations.emplace_back(std::forward<PatchOperationsT>(value)); return *this; }
     ///@}
   private:
 

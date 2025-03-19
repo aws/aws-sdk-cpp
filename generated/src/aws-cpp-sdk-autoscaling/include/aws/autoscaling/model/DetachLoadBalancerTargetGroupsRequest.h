@@ -22,7 +22,7 @@ namespace Model
   class DetachLoadBalancerTargetGroupsRequest : public AutoScalingRequest
   {
   public:
-    AWS_AUTOSCALING_API DetachLoadBalancerTargetGroupsRequest();
+    AWS_AUTOSCALING_API DetachLoadBalancerTargetGroupsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
-    inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+    inline const Aws::String& GetAutoScalingGroupName() const { return m_autoScalingGroupName; }
     inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
-    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
-    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
-    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
-    inline DetachLoadBalancerTargetGroupsRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
-    inline DetachLoadBalancerTargetGroupsRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
-    inline DetachLoadBalancerTargetGroupsRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+    template<typename AutoScalingGroupNameT = Aws::String>
+    void SetAutoScalingGroupName(AutoScalingGroupNameT&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::forward<AutoScalingGroupNameT>(value); }
+    template<typename AutoScalingGroupNameT = Aws::String>
+    DetachLoadBalancerTargetGroupsRequest& WithAutoScalingGroupName(AutoScalingGroupNameT&& value) { SetAutoScalingGroupName(std::forward<AutoScalingGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,15 +54,14 @@ namespace Model
      * <p>The Amazon Resource Names (ARN) of the target groups. You can specify up to
      * 10 target groups.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTargetGroupARNs() const{ return m_targetGroupARNs; }
+    inline const Aws::Vector<Aws::String>& GetTargetGroupARNs() const { return m_targetGroupARNs; }
     inline bool TargetGroupARNsHasBeenSet() const { return m_targetGroupARNsHasBeenSet; }
-    inline void SetTargetGroupARNs(const Aws::Vector<Aws::String>& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs = value; }
-    inline void SetTargetGroupARNs(Aws::Vector<Aws::String>&& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs = std::move(value); }
-    inline DetachLoadBalancerTargetGroupsRequest& WithTargetGroupARNs(const Aws::Vector<Aws::String>& value) { SetTargetGroupARNs(value); return *this;}
-    inline DetachLoadBalancerTargetGroupsRequest& WithTargetGroupARNs(Aws::Vector<Aws::String>&& value) { SetTargetGroupARNs(std::move(value)); return *this;}
-    inline DetachLoadBalancerTargetGroupsRequest& AddTargetGroupARNs(const Aws::String& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs.push_back(value); return *this; }
-    inline DetachLoadBalancerTargetGroupsRequest& AddTargetGroupARNs(Aws::String&& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs.push_back(std::move(value)); return *this; }
-    inline DetachLoadBalancerTargetGroupsRequest& AddTargetGroupARNs(const char* value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs.push_back(value); return *this; }
+    template<typename TargetGroupARNsT = Aws::Vector<Aws::String>>
+    void SetTargetGroupARNs(TargetGroupARNsT&& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs = std::forward<TargetGroupARNsT>(value); }
+    template<typename TargetGroupARNsT = Aws::Vector<Aws::String>>
+    DetachLoadBalancerTargetGroupsRequest& WithTargetGroupARNs(TargetGroupARNsT&& value) { SetTargetGroupARNs(std::forward<TargetGroupARNsT>(value)); return *this;}
+    template<typename TargetGroupARNsT = Aws::String>
+    DetachLoadBalancerTargetGroupsRequest& AddTargetGroupARNs(TargetGroupARNsT&& value) { m_targetGroupARNsHasBeenSet = true; m_targetGroupARNs.emplace_back(std::forward<TargetGroupARNsT>(value)); return *this; }
     ///@}
   private:
 

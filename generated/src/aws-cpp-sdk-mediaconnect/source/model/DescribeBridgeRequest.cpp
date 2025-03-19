@@ -12,11 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeBridgeRequest::DescribeBridgeRequest() : 
-    m_bridgeArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeBridgeRequest::SerializePayload() const
 {
   return {};

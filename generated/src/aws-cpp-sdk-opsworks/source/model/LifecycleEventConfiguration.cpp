@@ -18,13 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-LifecycleEventConfiguration::LifecycleEventConfiguration() : 
-    m_shutdownHasBeenSet(false)
-{
-}
-
 LifecycleEventConfiguration::LifecycleEventConfiguration(JsonView jsonValue)
-  : LifecycleEventConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LifecycleEventConfiguration& LifecycleEventConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("Shutdown"))
   {
     m_shutdown = jsonValue.GetObject("Shutdown");
-
     m_shutdownHasBeenSet = true;
   }
-
   return *this;
 }
 

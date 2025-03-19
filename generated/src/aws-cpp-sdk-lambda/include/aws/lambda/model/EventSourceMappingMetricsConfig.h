@@ -34,7 +34,7 @@ namespace Model
   class EventSourceMappingMetricsConfig
   {
   public:
-    AWS_LAMBDA_API EventSourceMappingMetricsConfig();
+    AWS_LAMBDA_API EventSourceMappingMetricsConfig() = default;
     AWS_LAMBDA_API EventSourceMappingMetricsConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API EventSourceMappingMetricsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">
      * Event source mapping metrics</a>. </p>
      */
-    inline const Aws::Vector<EventSourceMappingMetric>& GetMetrics() const{ return m_metrics; }
+    inline const Aws::Vector<EventSourceMappingMetric>& GetMetrics() const { return m_metrics; }
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
-    inline void SetMetrics(const Aws::Vector<EventSourceMappingMetric>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
-    inline void SetMetrics(Aws::Vector<EventSourceMappingMetric>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
-    inline EventSourceMappingMetricsConfig& WithMetrics(const Aws::Vector<EventSourceMappingMetric>& value) { SetMetrics(value); return *this;}
-    inline EventSourceMappingMetricsConfig& WithMetrics(Aws::Vector<EventSourceMappingMetric>&& value) { SetMetrics(std::move(value)); return *this;}
-    inline EventSourceMappingMetricsConfig& AddMetrics(const EventSourceMappingMetric& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
-    inline EventSourceMappingMetricsConfig& AddMetrics(EventSourceMappingMetric&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(std::move(value)); return *this; }
+    template<typename MetricsT = Aws::Vector<EventSourceMappingMetric>>
+    void SetMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics = std::forward<MetricsT>(value); }
+    template<typename MetricsT = Aws::Vector<EventSourceMappingMetric>>
+    EventSourceMappingMetricsConfig& WithMetrics(MetricsT&& value) { SetMetrics(std::forward<MetricsT>(value)); return *this;}
+    inline EventSourceMappingMetricsConfig& AddMetrics(EventSourceMappingMetric value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
     ///@}
   private:
 

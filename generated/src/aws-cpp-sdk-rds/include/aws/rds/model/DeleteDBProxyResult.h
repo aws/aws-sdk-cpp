@@ -28,7 +28,7 @@ namespace Model
   class DeleteDBProxyResult
   {
   public:
-    AWS_RDS_API DeleteDBProxyResult();
+    AWS_RDS_API DeleteDBProxyResult() = default;
     AWS_RDS_API DeleteDBProxyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RDS_API DeleteDBProxyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,26 +38,28 @@ namespace Model
      * <p>The data structure representing the details of the DB proxy that you
      * delete.</p>
      */
-    inline const DBProxy& GetDBProxy() const{ return m_dBProxy; }
-    inline void SetDBProxy(const DBProxy& value) { m_dBProxy = value; }
-    inline void SetDBProxy(DBProxy&& value) { m_dBProxy = std::move(value); }
-    inline DeleteDBProxyResult& WithDBProxy(const DBProxy& value) { SetDBProxy(value); return *this;}
-    inline DeleteDBProxyResult& WithDBProxy(DBProxy&& value) { SetDBProxy(std::move(value)); return *this;}
+    inline const DBProxy& GetDBProxy() const { return m_dBProxy; }
+    template<typename DBProxyT = DBProxy>
+    void SetDBProxy(DBProxyT&& value) { m_dBProxyHasBeenSet = true; m_dBProxy = std::forward<DBProxyT>(value); }
+    template<typename DBProxyT = DBProxy>
+    DeleteDBProxyResult& WithDBProxy(DBProxyT&& value) { SetDBProxy(std::forward<DBProxyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeleteDBProxyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeleteDBProxyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeleteDBProxyResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     DBProxy m_dBProxy;
+    bool m_dBProxyHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,16 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-AccountDetails::AccountDetails() : 
-    m_accountIdHasBeenSet(false),
-    m_accountMetaDataHasBeenSet(false),
-    m_taxInheritanceDetailsHasBeenSet(false),
-    m_taxRegistrationHasBeenSet(false)
-{
-}
-
 AccountDetails::AccountDetails(JsonView jsonValue)
-  : AccountDetails()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AccountDetails& AccountDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountMetaData"))
   {
     m_accountMetaData = jsonValue.GetObject("accountMetaData");
-
     m_accountMetaDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taxInheritanceDetails"))
   {
     m_taxInheritanceDetails = jsonValue.GetObject("taxInheritanceDetails");
-
     m_taxInheritanceDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taxRegistration"))
   {
     m_taxRegistration = jsonValue.GetObject("taxRegistration");
-
     m_taxRegistrationHasBeenSet = true;
   }
-
   return *this;
 }
 

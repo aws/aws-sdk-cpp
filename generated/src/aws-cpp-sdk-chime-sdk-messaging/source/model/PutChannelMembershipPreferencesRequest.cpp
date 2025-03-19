@@ -13,14 +13,6 @@ using namespace Aws::ChimeSDKMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutChannelMembershipPreferencesRequest::PutChannelMembershipPreferencesRequest() : 
-    m_channelArnHasBeenSet(false),
-    m_memberArnHasBeenSet(false),
-    m_chimeBearerHasBeenSet(false),
-    m_preferencesHasBeenSet(false)
-{
-}
-
 Aws::String PutChannelMembershipPreferencesRequest::SerializePayload() const
 {
   JsonValue payload;

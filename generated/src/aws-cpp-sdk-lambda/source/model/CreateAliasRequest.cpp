@@ -12,15 +12,6 @@ using namespace Aws::Lambda::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAliasRequest::CreateAliasRequest() : 
-    m_functionNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_functionVersionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_routingConfigHasBeenSet(false)
-{
-}
-
 Aws::String CreateAliasRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class FieldSortOptions
   {
   public:
-    AWS_QUICKSIGHT_API FieldSortOptions();
+    AWS_QUICKSIGHT_API FieldSortOptions() = default;
     AWS_QUICKSIGHT_API FieldSortOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API FieldSortOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The sort configuration for a field in a field well.</p>
      */
-    inline const FieldSort& GetFieldSort() const{ return m_fieldSort; }
+    inline const FieldSort& GetFieldSort() const { return m_fieldSort; }
     inline bool FieldSortHasBeenSet() const { return m_fieldSortHasBeenSet; }
-    inline void SetFieldSort(const FieldSort& value) { m_fieldSortHasBeenSet = true; m_fieldSort = value; }
-    inline void SetFieldSort(FieldSort&& value) { m_fieldSortHasBeenSet = true; m_fieldSort = std::move(value); }
-    inline FieldSortOptions& WithFieldSort(const FieldSort& value) { SetFieldSort(value); return *this;}
-    inline FieldSortOptions& WithFieldSort(FieldSort&& value) { SetFieldSort(std::move(value)); return *this;}
+    template<typename FieldSortT = FieldSort>
+    void SetFieldSort(FieldSortT&& value) { m_fieldSortHasBeenSet = true; m_fieldSort = std::forward<FieldSortT>(value); }
+    template<typename FieldSortT = FieldSort>
+    FieldSortOptions& WithFieldSort(FieldSortT&& value) { SetFieldSort(std::forward<FieldSortT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sort configuration for a column that is not used in a field well.</p>
      */
-    inline const ColumnSort& GetColumnSort() const{ return m_columnSort; }
+    inline const ColumnSort& GetColumnSort() const { return m_columnSort; }
     inline bool ColumnSortHasBeenSet() const { return m_columnSortHasBeenSet; }
-    inline void SetColumnSort(const ColumnSort& value) { m_columnSortHasBeenSet = true; m_columnSort = value; }
-    inline void SetColumnSort(ColumnSort&& value) { m_columnSortHasBeenSet = true; m_columnSort = std::move(value); }
-    inline FieldSortOptions& WithColumnSort(const ColumnSort& value) { SetColumnSort(value); return *this;}
-    inline FieldSortOptions& WithColumnSort(ColumnSort&& value) { SetColumnSort(std::move(value)); return *this;}
+    template<typename ColumnSortT = ColumnSort>
+    void SetColumnSort(ColumnSortT&& value) { m_columnSortHasBeenSet = true; m_columnSort = std::forward<ColumnSortT>(value); }
+    template<typename ColumnSortT = ColumnSort>
+    FieldSortOptions& WithColumnSort(ColumnSortT&& value) { SetColumnSort(std::forward<ColumnSortT>(value)); return *this;}
     ///@}
   private:
 

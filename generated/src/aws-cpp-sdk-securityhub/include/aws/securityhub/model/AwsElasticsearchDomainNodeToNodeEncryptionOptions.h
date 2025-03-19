@@ -30,7 +30,7 @@ namespace Model
   class AwsElasticsearchDomainNodeToNodeEncryptionOptions
   {
   public:
-    AWS_SECURITYHUB_API AwsElasticsearchDomainNodeToNodeEncryptionOptions();
+    AWS_SECURITYHUB_API AwsElasticsearchDomainNodeToNodeEncryptionOptions() = default;
     AWS_SECURITYHUB_API AwsElasticsearchDomainNodeToNodeEncryptionOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsElasticsearchDomainNodeToNodeEncryptionOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>Whether node-to-node encryption is enabled.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline AwsElasticsearchDomainNodeToNodeEncryptionOptions& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

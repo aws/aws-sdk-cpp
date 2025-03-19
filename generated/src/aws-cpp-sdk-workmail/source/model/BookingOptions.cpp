@@ -18,18 +18,7 @@ namespace WorkMail
 namespace Model
 {
 
-BookingOptions::BookingOptions() : 
-    m_autoAcceptRequests(false),
-    m_autoAcceptRequestsHasBeenSet(false),
-    m_autoDeclineRecurringRequests(false),
-    m_autoDeclineRecurringRequestsHasBeenSet(false),
-    m_autoDeclineConflictingRequests(false),
-    m_autoDeclineConflictingRequestsHasBeenSet(false)
-{
-}
-
 BookingOptions::BookingOptions(JsonView jsonValue)
-  : BookingOptions()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ BookingOptions& BookingOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AutoAcceptRequests"))
   {
     m_autoAcceptRequests = jsonValue.GetBool("AutoAcceptRequests");
-
     m_autoAcceptRequestsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoDeclineRecurringRequests"))
   {
     m_autoDeclineRecurringRequests = jsonValue.GetBool("AutoDeclineRecurringRequests");
-
     m_autoDeclineRecurringRequestsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoDeclineConflictingRequests"))
   {
     m_autoDeclineConflictingRequests = jsonValue.GetBool("AutoDeclineConflictingRequests");
-
     m_autoDeclineConflictingRequestsHasBeenSet = true;
   }
-
   return *this;
 }
 

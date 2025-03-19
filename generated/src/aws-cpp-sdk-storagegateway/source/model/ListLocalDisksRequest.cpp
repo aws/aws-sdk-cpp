@@ -12,11 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListLocalDisksRequest::ListLocalDisksRequest() : 
-    m_gatewayARNHasBeenSet(false)
-{
-}
-
 Aws::String ListLocalDisksRequest::SerializePayload() const
 {
   JsonValue payload;

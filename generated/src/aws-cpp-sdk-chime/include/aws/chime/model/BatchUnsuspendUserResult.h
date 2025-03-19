@@ -29,7 +29,7 @@ namespace Model
   class BatchUnsuspendUserResult
   {
   public:
-    AWS_CHIME_API BatchUnsuspendUserResult();
+    AWS_CHIME_API BatchUnsuspendUserResult() = default;
     AWS_CHIME_API BatchUnsuspendUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIME_API BatchUnsuspendUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,30 +40,30 @@ namespace Model
      * in the request, a list of the user IDs is returned, along with error codes and
      * error messages.</p>
      */
-    inline const Aws::Vector<UserError>& GetUserErrors() const{ return m_userErrors; }
-    inline void SetUserErrors(const Aws::Vector<UserError>& value) { m_userErrors = value; }
-    inline void SetUserErrors(Aws::Vector<UserError>&& value) { m_userErrors = std::move(value); }
-    inline BatchUnsuspendUserResult& WithUserErrors(const Aws::Vector<UserError>& value) { SetUserErrors(value); return *this;}
-    inline BatchUnsuspendUserResult& WithUserErrors(Aws::Vector<UserError>&& value) { SetUserErrors(std::move(value)); return *this;}
-    inline BatchUnsuspendUserResult& AddUserErrors(const UserError& value) { m_userErrors.push_back(value); return *this; }
-    inline BatchUnsuspendUserResult& AddUserErrors(UserError&& value) { m_userErrors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<UserError>& GetUserErrors() const { return m_userErrors; }
+    template<typename UserErrorsT = Aws::Vector<UserError>>
+    void SetUserErrors(UserErrorsT&& value) { m_userErrorsHasBeenSet = true; m_userErrors = std::forward<UserErrorsT>(value); }
+    template<typename UserErrorsT = Aws::Vector<UserError>>
+    BatchUnsuspendUserResult& WithUserErrors(UserErrorsT&& value) { SetUserErrors(std::forward<UserErrorsT>(value)); return *this;}
+    template<typename UserErrorsT = UserError>
+    BatchUnsuspendUserResult& AddUserErrors(UserErrorsT&& value) { m_userErrorsHasBeenSet = true; m_userErrors.emplace_back(std::forward<UserErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchUnsuspendUserResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchUnsuspendUserResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchUnsuspendUserResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchUnsuspendUserResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<UserError> m_userErrors;
+    bool m_userErrorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

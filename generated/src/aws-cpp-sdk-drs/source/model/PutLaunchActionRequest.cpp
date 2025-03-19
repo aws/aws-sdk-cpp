@@ -12,25 +12,6 @@ using namespace Aws::drs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutLaunchActionRequest::PutLaunchActionRequest() : 
-    m_actionCodeHasBeenSet(false),
-    m_actionIdHasBeenSet(false),
-    m_actionVersionHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false),
-    m_category(LaunchActionCategory::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_optional(false),
-    m_optionalHasBeenSet(false),
-    m_order(0),
-    m_orderHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
-{
-}
-
 Aws::String PutLaunchActionRequest::SerializePayload() const
 {
   JsonValue payload;

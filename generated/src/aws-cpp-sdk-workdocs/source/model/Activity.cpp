@@ -18,23 +18,7 @@ namespace WorkDocs
 namespace Model
 {
 
-Activity::Activity() : 
-    m_type(ActivityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_timeStampHasBeenSet(false),
-    m_isIndirectActivity(false),
-    m_isIndirectActivityHasBeenSet(false),
-    m_organizationIdHasBeenSet(false),
-    m_initiatorHasBeenSet(false),
-    m_participantsHasBeenSet(false),
-    m_resourceMetadataHasBeenSet(false),
-    m_originalParentHasBeenSet(false),
-    m_commentMetadataHasBeenSet(false)
-{
-}
-
 Activity::Activity(JsonView jsonValue)
-  : Activity()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ Activity& Activity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ActivityTypeMapper::GetActivityTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeStamp"))
   {
     m_timeStamp = jsonValue.GetDouble("TimeStamp");
-
     m_timeStampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsIndirectActivity"))
   {
     m_isIndirectActivity = jsonValue.GetBool("IsIndirectActivity");
-
     m_isIndirectActivityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationId"))
   {
     m_organizationId = jsonValue.GetString("OrganizationId");
-
     m_organizationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Initiator"))
   {
     m_initiator = jsonValue.GetObject("Initiator");
-
     m_initiatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Participants"))
   {
     m_participants = jsonValue.GetObject("Participants");
-
     m_participantsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceMetadata"))
   {
     m_resourceMetadata = jsonValue.GetObject("ResourceMetadata");
-
     m_resourceMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OriginalParent"))
   {
     m_originalParent = jsonValue.GetObject("OriginalParent");
-
     m_originalParentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CommentMetadata"))
   {
     m_commentMetadata = jsonValue.GetObject("CommentMetadata");
-
     m_commentMetadataHasBeenSet = true;
   }
-
   return *this;
 }
 

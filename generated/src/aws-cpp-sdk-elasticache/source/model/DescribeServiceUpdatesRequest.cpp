@@ -10,15 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-DescribeServiceUpdatesRequest::DescribeServiceUpdatesRequest() : 
-    m_serviceUpdateNameHasBeenSet(false),
-    m_serviceUpdateStatusHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeServiceUpdatesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

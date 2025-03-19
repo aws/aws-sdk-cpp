@@ -25,7 +25,7 @@ namespace Model
   class PutScalingPolicyRequest : public AutoScalingRequest
   {
   public:
-    AWS_AUTOSCALING_API PutScalingPolicyRequest();
+    AWS_AUTOSCALING_API PutScalingPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
-    inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+    inline const Aws::String& GetAutoScalingGroupName() const { return m_autoScalingGroupName; }
     inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
-    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
-    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
-    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
-    inline PutScalingPolicyRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
-    inline PutScalingPolicyRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
-    inline PutScalingPolicyRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+    template<typename AutoScalingGroupNameT = Aws::String>
+    void SetAutoScalingGroupName(AutoScalingGroupNameT&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::forward<AutoScalingGroupNameT>(value); }
+    template<typename AutoScalingGroupNameT = Aws::String>
+    PutScalingPolicyRequest& WithAutoScalingGroupName(AutoScalingGroupNameT&& value) { SetAutoScalingGroupName(std::forward<AutoScalingGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the policy.</p>
      */
-    inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+    inline const Aws::String& GetPolicyName() const { return m_policyName; }
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-    inline PutScalingPolicyRequest& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-    inline PutScalingPolicyRequest& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-    inline PutScalingPolicyRequest& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    template<typename PolicyNameT = Aws::String>
+    void SetPolicyName(PolicyNameT&& value) { m_policyNameHasBeenSet = true; m_policyName = std::forward<PolicyNameT>(value); }
+    template<typename PolicyNameT = Aws::String>
+    PutScalingPolicyRequest& WithPolicyName(PolicyNameT&& value) { SetPolicyName(std::forward<PolicyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * </p> </li> <li> <p> <code>SimpleScaling</code> (default)</p> </li> <li> <p>
      * <code>PredictiveScaling</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetPolicyType() const{ return m_policyType; }
+    inline const Aws::String& GetPolicyType() const { return m_policyType; }
     inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
-    inline void SetPolicyType(const Aws::String& value) { m_policyTypeHasBeenSet = true; m_policyType = value; }
-    inline void SetPolicyType(Aws::String&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::move(value); }
-    inline void SetPolicyType(const char* value) { m_policyTypeHasBeenSet = true; m_policyType.assign(value); }
-    inline PutScalingPolicyRequest& WithPolicyType(const Aws::String& value) { SetPolicyType(value); return *this;}
-    inline PutScalingPolicyRequest& WithPolicyType(Aws::String&& value) { SetPolicyType(std::move(value)); return *this;}
-    inline PutScalingPolicyRequest& WithPolicyType(const char* value) { SetPolicyType(value); return *this;}
+    template<typename PolicyTypeT = Aws::String>
+    void SetPolicyType(PolicyTypeT&& value) { m_policyTypeHasBeenSet = true; m_policyType = std::forward<PolicyTypeT>(value); }
+    template<typename PolicyTypeT = Aws::String>
+    PutScalingPolicyRequest& WithPolicyType(PolicyTypeT&& value) { SetPolicyType(std::forward<PolicyTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +89,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">Scaling
      * adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
      */
-    inline const Aws::String& GetAdjustmentType() const{ return m_adjustmentType; }
+    inline const Aws::String& GetAdjustmentType() const { return m_adjustmentType; }
     inline bool AdjustmentTypeHasBeenSet() const { return m_adjustmentTypeHasBeenSet; }
-    inline void SetAdjustmentType(const Aws::String& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = value; }
-    inline void SetAdjustmentType(Aws::String&& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = std::move(value); }
-    inline void SetAdjustmentType(const char* value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType.assign(value); }
-    inline PutScalingPolicyRequest& WithAdjustmentType(const Aws::String& value) { SetAdjustmentType(value); return *this;}
-    inline PutScalingPolicyRequest& WithAdjustmentType(Aws::String&& value) { SetAdjustmentType(std::move(value)); return *this;}
-    inline PutScalingPolicyRequest& WithAdjustmentType(const char* value) { SetAdjustmentType(value); return *this;}
+    template<typename AdjustmentTypeT = Aws::String>
+    void SetAdjustmentType(AdjustmentTypeT&& value) { m_adjustmentTypeHasBeenSet = true; m_adjustmentType = std::forward<AdjustmentTypeT>(value); }
+    template<typename AdjustmentTypeT = Aws::String>
+    PutScalingPolicyRequest& WithAdjustmentType(AdjustmentTypeT&& value) { SetAdjustmentType(std::forward<AdjustmentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,7 +102,7 @@ namespace Model
      * <p>Available for backward compatibility. Use <code>MinAdjustmentMagnitude</code>
      * instead.</p>
      */
-    inline int GetMinAdjustmentStep() const{ return m_minAdjustmentStep; }
+    inline int GetMinAdjustmentStep() const { return m_minAdjustmentStep; }
     inline bool MinAdjustmentStepHasBeenSet() const { return m_minAdjustmentStepHasBeenSet; }
     inline void SetMinAdjustmentStep(int value) { m_minAdjustmentStepHasBeenSet = true; m_minAdjustmentStep = value; }
     inline PutScalingPolicyRequest& WithMinAdjustmentStep(int value) { SetMinAdjustmentStep(value); return *this;}
@@ -133,7 +125,7 @@ namespace Model
      * <code>MinAdjustmentMagnitude</code> to a value that is at least as large as your
      * largest instance weight.</p> 
      */
-    inline int GetMinAdjustmentMagnitude() const{ return m_minAdjustmentMagnitude; }
+    inline int GetMinAdjustmentMagnitude() const { return m_minAdjustmentMagnitude; }
     inline bool MinAdjustmentMagnitudeHasBeenSet() const { return m_minAdjustmentMagnitudeHasBeenSet; }
     inline void SetMinAdjustmentMagnitude(int value) { m_minAdjustmentMagnitudeHasBeenSet = true; m_minAdjustmentMagnitude = value; }
     inline PutScalingPolicyRequest& WithMinAdjustmentMagnitude(int value) { SetMinAdjustmentMagnitude(value); return *this;}
@@ -147,7 +139,7 @@ namespace Model
      * value.</p> <p>Required if the policy type is <code>SimpleScaling</code>. (Not
      * used with any other policy type.) </p>
      */
-    inline int GetScalingAdjustment() const{ return m_scalingAdjustment; }
+    inline int GetScalingAdjustment() const { return m_scalingAdjustment; }
     inline bool ScalingAdjustmentHasBeenSet() const { return m_scalingAdjustmentHasBeenSet; }
     inline void SetScalingAdjustment(int value) { m_scalingAdjustmentHasBeenSet = true; m_scalingAdjustment = value; }
     inline PutScalingPolicyRequest& WithScalingAdjustment(int value) { SetScalingAdjustment(value); return *this;}
@@ -163,7 +155,7 @@ namespace Model
      * cooldowns for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User
      * Guide</i>.</p> <p>Default: None</p>
      */
-    inline int GetCooldown() const{ return m_cooldown; }
+    inline int GetCooldown() const { return m_cooldown; }
     inline bool CooldownHasBeenSet() const { return m_cooldownHasBeenSet; }
     inline void SetCooldown(int value) { m_cooldownHasBeenSet = true; m_cooldown = value; }
     inline PutScalingPolicyRequest& WithCooldown(int value) { SetCooldown(value); return *this;}
@@ -176,14 +168,12 @@ namespace Model
      * aggregation type is null, the value is treated as <code>Average</code>.</p>
      * <p>Valid only if the policy type is <code>StepScaling</code>.</p>
      */
-    inline const Aws::String& GetMetricAggregationType() const{ return m_metricAggregationType; }
+    inline const Aws::String& GetMetricAggregationType() const { return m_metricAggregationType; }
     inline bool MetricAggregationTypeHasBeenSet() const { return m_metricAggregationTypeHasBeenSet; }
-    inline void SetMetricAggregationType(const Aws::String& value) { m_metricAggregationTypeHasBeenSet = true; m_metricAggregationType = value; }
-    inline void SetMetricAggregationType(Aws::String&& value) { m_metricAggregationTypeHasBeenSet = true; m_metricAggregationType = std::move(value); }
-    inline void SetMetricAggregationType(const char* value) { m_metricAggregationTypeHasBeenSet = true; m_metricAggregationType.assign(value); }
-    inline PutScalingPolicyRequest& WithMetricAggregationType(const Aws::String& value) { SetMetricAggregationType(value); return *this;}
-    inline PutScalingPolicyRequest& WithMetricAggregationType(Aws::String&& value) { SetMetricAggregationType(std::move(value)); return *this;}
-    inline PutScalingPolicyRequest& WithMetricAggregationType(const char* value) { SetMetricAggregationType(value); return *this;}
+    template<typename MetricAggregationTypeT = Aws::String>
+    void SetMetricAggregationType(MetricAggregationTypeT&& value) { m_metricAggregationTypeHasBeenSet = true; m_metricAggregationType = std::forward<MetricAggregationTypeT>(value); }
+    template<typename MetricAggregationTypeT = Aws::String>
+    PutScalingPolicyRequest& WithMetricAggregationType(MetricAggregationTypeT&& value) { SetMetricAggregationType(std::forward<MetricAggregationTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -192,14 +182,14 @@ namespace Model
      * breach.</p> <p>Required if the policy type is <code>StepScaling</code>. (Not
      * used with any other policy type.) </p>
      */
-    inline const Aws::Vector<StepAdjustment>& GetStepAdjustments() const{ return m_stepAdjustments; }
+    inline const Aws::Vector<StepAdjustment>& GetStepAdjustments() const { return m_stepAdjustments; }
     inline bool StepAdjustmentsHasBeenSet() const { return m_stepAdjustmentsHasBeenSet; }
-    inline void SetStepAdjustments(const Aws::Vector<StepAdjustment>& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments = value; }
-    inline void SetStepAdjustments(Aws::Vector<StepAdjustment>&& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments = std::move(value); }
-    inline PutScalingPolicyRequest& WithStepAdjustments(const Aws::Vector<StepAdjustment>& value) { SetStepAdjustments(value); return *this;}
-    inline PutScalingPolicyRequest& WithStepAdjustments(Aws::Vector<StepAdjustment>&& value) { SetStepAdjustments(std::move(value)); return *this;}
-    inline PutScalingPolicyRequest& AddStepAdjustments(const StepAdjustment& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments.push_back(value); return *this; }
-    inline PutScalingPolicyRequest& AddStepAdjustments(StepAdjustment&& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments.push_back(std::move(value)); return *this; }
+    template<typename StepAdjustmentsT = Aws::Vector<StepAdjustment>>
+    void SetStepAdjustments(StepAdjustmentsT&& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments = std::forward<StepAdjustmentsT>(value); }
+    template<typename StepAdjustmentsT = Aws::Vector<StepAdjustment>>
+    PutScalingPolicyRequest& WithStepAdjustments(StepAdjustmentsT&& value) { SetStepAdjustments(std::forward<StepAdjustmentsT>(value)); return *this;}
+    template<typename StepAdjustmentsT = StepAdjustment>
+    PutScalingPolicyRequest& AddStepAdjustments(StepAdjustmentsT&& value) { m_stepAdjustmentsHasBeenSet = true; m_stepAdjustments.emplace_back(std::forward<StepAdjustmentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -215,7 +205,7 @@ namespace Model
      * null, then <code>EstimatedInstanceWarmup</code> falls back to the value of
      * default cooldown.</p> 
      */
-    inline int GetEstimatedInstanceWarmup() const{ return m_estimatedInstanceWarmup; }
+    inline int GetEstimatedInstanceWarmup() const { return m_estimatedInstanceWarmup; }
     inline bool EstimatedInstanceWarmupHasBeenSet() const { return m_estimatedInstanceWarmupHasBeenSet; }
     inline void SetEstimatedInstanceWarmup(int value) { m_estimatedInstanceWarmupHasBeenSet = true; m_estimatedInstanceWarmup = value; }
     inline PutScalingPolicyRequest& WithEstimatedInstanceWarmup(int value) { SetEstimatedInstanceWarmup(value); return *this;}
@@ -236,12 +226,12 @@ namespace Model
      * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>Required if the
      * policy type is <code>TargetTrackingScaling</code>.</p>
      */
-    inline const TargetTrackingConfiguration& GetTargetTrackingConfiguration() const{ return m_targetTrackingConfiguration; }
+    inline const TargetTrackingConfiguration& GetTargetTrackingConfiguration() const { return m_targetTrackingConfiguration; }
     inline bool TargetTrackingConfigurationHasBeenSet() const { return m_targetTrackingConfigurationHasBeenSet; }
-    inline void SetTargetTrackingConfiguration(const TargetTrackingConfiguration& value) { m_targetTrackingConfigurationHasBeenSet = true; m_targetTrackingConfiguration = value; }
-    inline void SetTargetTrackingConfiguration(TargetTrackingConfiguration&& value) { m_targetTrackingConfigurationHasBeenSet = true; m_targetTrackingConfiguration = std::move(value); }
-    inline PutScalingPolicyRequest& WithTargetTrackingConfiguration(const TargetTrackingConfiguration& value) { SetTargetTrackingConfiguration(value); return *this;}
-    inline PutScalingPolicyRequest& WithTargetTrackingConfiguration(TargetTrackingConfiguration&& value) { SetTargetTrackingConfiguration(std::move(value)); return *this;}
+    template<typename TargetTrackingConfigurationT = TargetTrackingConfiguration>
+    void SetTargetTrackingConfiguration(TargetTrackingConfigurationT&& value) { m_targetTrackingConfigurationHasBeenSet = true; m_targetTrackingConfiguration = std::forward<TargetTrackingConfigurationT>(value); }
+    template<typename TargetTrackingConfigurationT = TargetTrackingConfiguration>
+    PutScalingPolicyRequest& WithTargetTrackingConfiguration(TargetTrackingConfigurationT&& value) { SetTargetTrackingConfiguration(std::forward<TargetTrackingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -252,7 +242,7 @@ namespace Model
      * a scaling policy for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling
      * User Guide</i>.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline PutScalingPolicyRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -267,12 +257,12 @@ namespace Model
      * in the <i>Amazon EC2 Auto Scaling API Reference</i>.</p> <p>Required if the
      * policy type is <code>PredictiveScaling</code>.</p>
      */
-    inline const PredictiveScalingConfiguration& GetPredictiveScalingConfiguration() const{ return m_predictiveScalingConfiguration; }
+    inline const PredictiveScalingConfiguration& GetPredictiveScalingConfiguration() const { return m_predictiveScalingConfiguration; }
     inline bool PredictiveScalingConfigurationHasBeenSet() const { return m_predictiveScalingConfigurationHasBeenSet; }
-    inline void SetPredictiveScalingConfiguration(const PredictiveScalingConfiguration& value) { m_predictiveScalingConfigurationHasBeenSet = true; m_predictiveScalingConfiguration = value; }
-    inline void SetPredictiveScalingConfiguration(PredictiveScalingConfiguration&& value) { m_predictiveScalingConfigurationHasBeenSet = true; m_predictiveScalingConfiguration = std::move(value); }
-    inline PutScalingPolicyRequest& WithPredictiveScalingConfiguration(const PredictiveScalingConfiguration& value) { SetPredictiveScalingConfiguration(value); return *this;}
-    inline PutScalingPolicyRequest& WithPredictiveScalingConfiguration(PredictiveScalingConfiguration&& value) { SetPredictiveScalingConfiguration(std::move(value)); return *this;}
+    template<typename PredictiveScalingConfigurationT = PredictiveScalingConfiguration>
+    void SetPredictiveScalingConfiguration(PredictiveScalingConfigurationT&& value) { m_predictiveScalingConfigurationHasBeenSet = true; m_predictiveScalingConfiguration = std::forward<PredictiveScalingConfigurationT>(value); }
+    template<typename PredictiveScalingConfigurationT = PredictiveScalingConfiguration>
+    PutScalingPolicyRequest& WithPredictiveScalingConfiguration(PredictiveScalingConfigurationT&& value) { SetPredictiveScalingConfiguration(std::forward<PredictiveScalingConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -288,16 +278,16 @@ namespace Model
     Aws::String m_adjustmentType;
     bool m_adjustmentTypeHasBeenSet = false;
 
-    int m_minAdjustmentStep;
+    int m_minAdjustmentStep{0};
     bool m_minAdjustmentStepHasBeenSet = false;
 
-    int m_minAdjustmentMagnitude;
+    int m_minAdjustmentMagnitude{0};
     bool m_minAdjustmentMagnitudeHasBeenSet = false;
 
-    int m_scalingAdjustment;
+    int m_scalingAdjustment{0};
     bool m_scalingAdjustmentHasBeenSet = false;
 
-    int m_cooldown;
+    int m_cooldown{0};
     bool m_cooldownHasBeenSet = false;
 
     Aws::String m_metricAggregationType;
@@ -306,13 +296,13 @@ namespace Model
     Aws::Vector<StepAdjustment> m_stepAdjustments;
     bool m_stepAdjustmentsHasBeenSet = false;
 
-    int m_estimatedInstanceWarmup;
+    int m_estimatedInstanceWarmup{0};
     bool m_estimatedInstanceWarmupHasBeenSet = false;
 
     TargetTrackingConfiguration m_targetTrackingConfiguration;
     bool m_targetTrackingConfigurationHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     PredictiveScalingConfiguration m_predictiveScalingConfiguration;

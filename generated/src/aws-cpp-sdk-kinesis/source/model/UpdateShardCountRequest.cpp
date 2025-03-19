@@ -12,16 +12,6 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateShardCountRequest::UpdateShardCountRequest() : 
-    m_streamNameHasBeenSet(false),
-    m_targetShardCount(0),
-    m_targetShardCountHasBeenSet(false),
-    m_scalingType(ScalingType::NOT_SET),
-    m_scalingTypeHasBeenSet(false),
-    m_streamARNHasBeenSet(false)
-{
-}
-
 Aws::String UpdateShardCountRequest::SerializePayload() const
 {
   JsonValue payload;

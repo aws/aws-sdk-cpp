@@ -22,7 +22,7 @@ namespace Model
   class AssociateDiscoveredResourceRequest : public MigrationHubRequest
   {
   public:
-    AWS_MIGRATIONHUB_API AssociateDiscoveredResourceRequest();
+    AWS_MIGRATIONHUB_API AssociateDiscoveredResourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The name of the ProgressUpdateStream.</p>
      */
-    inline const Aws::String& GetProgressUpdateStream() const{ return m_progressUpdateStream; }
+    inline const Aws::String& GetProgressUpdateStream() const { return m_progressUpdateStream; }
     inline bool ProgressUpdateStreamHasBeenSet() const { return m_progressUpdateStreamHasBeenSet; }
-    inline void SetProgressUpdateStream(const Aws::String& value) { m_progressUpdateStreamHasBeenSet = true; m_progressUpdateStream = value; }
-    inline void SetProgressUpdateStream(Aws::String&& value) { m_progressUpdateStreamHasBeenSet = true; m_progressUpdateStream = std::move(value); }
-    inline void SetProgressUpdateStream(const char* value) { m_progressUpdateStreamHasBeenSet = true; m_progressUpdateStream.assign(value); }
-    inline AssociateDiscoveredResourceRequest& WithProgressUpdateStream(const Aws::String& value) { SetProgressUpdateStream(value); return *this;}
-    inline AssociateDiscoveredResourceRequest& WithProgressUpdateStream(Aws::String&& value) { SetProgressUpdateStream(std::move(value)); return *this;}
-    inline AssociateDiscoveredResourceRequest& WithProgressUpdateStream(const char* value) { SetProgressUpdateStream(value); return *this;}
+    template<typename ProgressUpdateStreamT = Aws::String>
+    void SetProgressUpdateStream(ProgressUpdateStreamT&& value) { m_progressUpdateStreamHasBeenSet = true; m_progressUpdateStream = std::forward<ProgressUpdateStreamT>(value); }
+    template<typename ProgressUpdateStreamT = Aws::String>
+    AssociateDiscoveredResourceRequest& WithProgressUpdateStream(ProgressUpdateStreamT&& value) { SetProgressUpdateStream(std::forward<ProgressUpdateStreamT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,26 +52,24 @@ namespace Model
      * <p>The identifier given to the MigrationTask. <i>Do not store personal data in
      * this field.</i> </p>
      */
-    inline const Aws::String& GetMigrationTaskName() const{ return m_migrationTaskName; }
+    inline const Aws::String& GetMigrationTaskName() const { return m_migrationTaskName; }
     inline bool MigrationTaskNameHasBeenSet() const { return m_migrationTaskNameHasBeenSet; }
-    inline void SetMigrationTaskName(const Aws::String& value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName = value; }
-    inline void SetMigrationTaskName(Aws::String&& value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName = std::move(value); }
-    inline void SetMigrationTaskName(const char* value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName.assign(value); }
-    inline AssociateDiscoveredResourceRequest& WithMigrationTaskName(const Aws::String& value) { SetMigrationTaskName(value); return *this;}
-    inline AssociateDiscoveredResourceRequest& WithMigrationTaskName(Aws::String&& value) { SetMigrationTaskName(std::move(value)); return *this;}
-    inline AssociateDiscoveredResourceRequest& WithMigrationTaskName(const char* value) { SetMigrationTaskName(value); return *this;}
+    template<typename MigrationTaskNameT = Aws::String>
+    void SetMigrationTaskName(MigrationTaskNameT&& value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName = std::forward<MigrationTaskNameT>(value); }
+    template<typename MigrationTaskNameT = Aws::String>
+    AssociateDiscoveredResourceRequest& WithMigrationTaskName(MigrationTaskNameT&& value) { SetMigrationTaskName(std::forward<MigrationTaskNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Object representing a Resource.</p>
      */
-    inline const DiscoveredResource& GetDiscoveredResource() const{ return m_discoveredResource; }
+    inline const DiscoveredResource& GetDiscoveredResource() const { return m_discoveredResource; }
     inline bool DiscoveredResourceHasBeenSet() const { return m_discoveredResourceHasBeenSet; }
-    inline void SetDiscoveredResource(const DiscoveredResource& value) { m_discoveredResourceHasBeenSet = true; m_discoveredResource = value; }
-    inline void SetDiscoveredResource(DiscoveredResource&& value) { m_discoveredResourceHasBeenSet = true; m_discoveredResource = std::move(value); }
-    inline AssociateDiscoveredResourceRequest& WithDiscoveredResource(const DiscoveredResource& value) { SetDiscoveredResource(value); return *this;}
-    inline AssociateDiscoveredResourceRequest& WithDiscoveredResource(DiscoveredResource&& value) { SetDiscoveredResource(std::move(value)); return *this;}
+    template<typename DiscoveredResourceT = DiscoveredResource>
+    void SetDiscoveredResource(DiscoveredResourceT&& value) { m_discoveredResourceHasBeenSet = true; m_discoveredResource = std::forward<DiscoveredResourceT>(value); }
+    template<typename DiscoveredResourceT = DiscoveredResource>
+    AssociateDiscoveredResourceRequest& WithDiscoveredResource(DiscoveredResourceT&& value) { SetDiscoveredResource(std::forward<DiscoveredResourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,7 +77,7 @@ namespace Model
      * <p>Optional boolean flag to indicate whether any effect should take place. Used
      * to test if the caller has permission to make the call.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline AssociateDiscoveredResourceRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -97,7 +93,7 @@ namespace Model
     DiscoveredResource m_discoveredResource;
     bool m_discoveredResourceHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

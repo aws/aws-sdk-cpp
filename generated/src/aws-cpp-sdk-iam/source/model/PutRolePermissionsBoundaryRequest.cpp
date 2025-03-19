@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-PutRolePermissionsBoundaryRequest::PutRolePermissionsBoundaryRequest() : 
-    m_roleNameHasBeenSet(false),
-    m_permissionsBoundaryHasBeenSet(false)
-{
-}
-
 Aws::String PutRolePermissionsBoundaryRequest::SerializePayload() const
 {
   Aws::StringStream ss;

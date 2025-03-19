@@ -18,14 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-KMSAccessDeniedException::KMSAccessDeniedException() : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 KMSAccessDeniedException::KMSAccessDeniedException(JsonView jsonValue)
-  : KMSAccessDeniedException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ KMSAccessDeniedException& KMSAccessDeniedException::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

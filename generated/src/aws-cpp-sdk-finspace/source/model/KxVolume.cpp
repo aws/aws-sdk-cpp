@@ -18,24 +18,7 @@ namespace finspace
 namespace Model
 {
 
-KxVolume::KxVolume() : 
-    m_volumeNameHasBeenSet(false),
-    m_volumeType(KxVolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false),
-    m_status(KxVolumeStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_azMode(KxAzMode::NOT_SET),
-    m_azModeHasBeenSet(false),
-    m_availabilityZoneIdsHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_lastModifiedTimestampHasBeenSet(false)
-{
-}
-
 KxVolume::KxVolume(JsonView jsonValue)
-  : KxVolume()
 {
   *this = jsonValue;
 }
@@ -45,45 +28,33 @@ KxVolume& KxVolume::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("volumeName"))
   {
     m_volumeName = jsonValue.GetString("volumeName");
-
     m_volumeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumeType"))
   {
     m_volumeType = KxVolumeTypeMapper::GetKxVolumeTypeForName(jsonValue.GetString("volumeType"));
-
     m_volumeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = KxVolumeStatusMapper::GetKxVolumeStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("azMode"))
   {
     m_azMode = KxAzModeMapper::GetKxAzModeForName(jsonValue.GetString("azMode"));
-
     m_azModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("availabilityZoneIds"))
   {
     Aws::Utils::Array<JsonView> availabilityZoneIdsJsonList = jsonValue.GetArray("availabilityZoneIds");
@@ -93,21 +64,16 @@ KxVolume& KxVolume::operator =(JsonView jsonValue)
     }
     m_availabilityZoneIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("createdTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTimestamp"))
   {
     m_lastModifiedTimestamp = jsonValue.GetDouble("lastModifiedTimestamp");
-
     m_lastModifiedTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

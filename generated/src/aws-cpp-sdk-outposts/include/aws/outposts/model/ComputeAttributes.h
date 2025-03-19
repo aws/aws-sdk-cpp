@@ -34,7 +34,7 @@ namespace Model
   class ComputeAttributes
   {
   public:
-    AWS_OUTPOSTS_API ComputeAttributes();
+    AWS_OUTPOSTS_API ComputeAttributes() = default;
     AWS_OUTPOSTS_API ComputeAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_OUTPOSTS_API ComputeAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p> The host ID of the Dedicated Host on the asset. </p>
      */
-    inline const Aws::String& GetHostId() const{ return m_hostId; }
+    inline const Aws::String& GetHostId() const { return m_hostId; }
     inline bool HostIdHasBeenSet() const { return m_hostIdHasBeenSet; }
-    inline void SetHostId(const Aws::String& value) { m_hostIdHasBeenSet = true; m_hostId = value; }
-    inline void SetHostId(Aws::String&& value) { m_hostIdHasBeenSet = true; m_hostId = std::move(value); }
-    inline void SetHostId(const char* value) { m_hostIdHasBeenSet = true; m_hostId.assign(value); }
-    inline ComputeAttributes& WithHostId(const Aws::String& value) { SetHostId(value); return *this;}
-    inline ComputeAttributes& WithHostId(Aws::String&& value) { SetHostId(std::move(value)); return *this;}
-    inline ComputeAttributes& WithHostId(const char* value) { SetHostId(value); return *this;}
+    template<typename HostIdT = Aws::String>
+    void SetHostId(HostIdT&& value) { m_hostIdHasBeenSet = true; m_hostId = std::forward<HostIdT>(value); }
+    template<typename HostIdT = Aws::String>
+    ComputeAttributes& WithHostId(HostIdT&& value) { SetHostId(std::forward<HostIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +62,10 @@ namespace Model
      * new compute resources is reduced. Amazon Web Services sends notifications for
      * resources that must be stopped before the asset can be replaced.</p> </li> </ul>
      */
-    inline const ComputeAssetState& GetState() const{ return m_state; }
+    inline ComputeAssetState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ComputeAssetState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ComputeAssetState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline ComputeAttributes& WithState(const ComputeAssetState& value) { SetState(value); return *this;}
-    inline ComputeAttributes& WithState(ComputeAssetState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(ComputeAssetState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline ComputeAttributes& WithState(ComputeAssetState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -77,15 +73,14 @@ namespace Model
      * <p>A list of the names of instance families that are currently associated with a
      * given asset.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInstanceFamilies() const{ return m_instanceFamilies; }
+    inline const Aws::Vector<Aws::String>& GetInstanceFamilies() const { return m_instanceFamilies; }
     inline bool InstanceFamiliesHasBeenSet() const { return m_instanceFamiliesHasBeenSet; }
-    inline void SetInstanceFamilies(const Aws::Vector<Aws::String>& value) { m_instanceFamiliesHasBeenSet = true; m_instanceFamilies = value; }
-    inline void SetInstanceFamilies(Aws::Vector<Aws::String>&& value) { m_instanceFamiliesHasBeenSet = true; m_instanceFamilies = std::move(value); }
-    inline ComputeAttributes& WithInstanceFamilies(const Aws::Vector<Aws::String>& value) { SetInstanceFamilies(value); return *this;}
-    inline ComputeAttributes& WithInstanceFamilies(Aws::Vector<Aws::String>&& value) { SetInstanceFamilies(std::move(value)); return *this;}
-    inline ComputeAttributes& AddInstanceFamilies(const Aws::String& value) { m_instanceFamiliesHasBeenSet = true; m_instanceFamilies.push_back(value); return *this; }
-    inline ComputeAttributes& AddInstanceFamilies(Aws::String&& value) { m_instanceFamiliesHasBeenSet = true; m_instanceFamilies.push_back(std::move(value)); return *this; }
-    inline ComputeAttributes& AddInstanceFamilies(const char* value) { m_instanceFamiliesHasBeenSet = true; m_instanceFamilies.push_back(value); return *this; }
+    template<typename InstanceFamiliesT = Aws::Vector<Aws::String>>
+    void SetInstanceFamilies(InstanceFamiliesT&& value) { m_instanceFamiliesHasBeenSet = true; m_instanceFamilies = std::forward<InstanceFamiliesT>(value); }
+    template<typename InstanceFamiliesT = Aws::Vector<Aws::String>>
+    ComputeAttributes& WithInstanceFamilies(InstanceFamiliesT&& value) { SetInstanceFamilies(std::forward<InstanceFamiliesT>(value)); return *this;}
+    template<typename InstanceFamiliesT = Aws::String>
+    ComputeAttributes& AddInstanceFamilies(InstanceFamiliesT&& value) { m_instanceFamiliesHasBeenSet = true; m_instanceFamilies.emplace_back(std::forward<InstanceFamiliesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -93,21 +88,21 @@ namespace Model
      * <p>The instance type capacities configured for this asset. This can be changed
      * through a capacity task.</p>
      */
-    inline const Aws::Vector<AssetInstanceTypeCapacity>& GetInstanceTypeCapacities() const{ return m_instanceTypeCapacities; }
+    inline const Aws::Vector<AssetInstanceTypeCapacity>& GetInstanceTypeCapacities() const { return m_instanceTypeCapacities; }
     inline bool InstanceTypeCapacitiesHasBeenSet() const { return m_instanceTypeCapacitiesHasBeenSet; }
-    inline void SetInstanceTypeCapacities(const Aws::Vector<AssetInstanceTypeCapacity>& value) { m_instanceTypeCapacitiesHasBeenSet = true; m_instanceTypeCapacities = value; }
-    inline void SetInstanceTypeCapacities(Aws::Vector<AssetInstanceTypeCapacity>&& value) { m_instanceTypeCapacitiesHasBeenSet = true; m_instanceTypeCapacities = std::move(value); }
-    inline ComputeAttributes& WithInstanceTypeCapacities(const Aws::Vector<AssetInstanceTypeCapacity>& value) { SetInstanceTypeCapacities(value); return *this;}
-    inline ComputeAttributes& WithInstanceTypeCapacities(Aws::Vector<AssetInstanceTypeCapacity>&& value) { SetInstanceTypeCapacities(std::move(value)); return *this;}
-    inline ComputeAttributes& AddInstanceTypeCapacities(const AssetInstanceTypeCapacity& value) { m_instanceTypeCapacitiesHasBeenSet = true; m_instanceTypeCapacities.push_back(value); return *this; }
-    inline ComputeAttributes& AddInstanceTypeCapacities(AssetInstanceTypeCapacity&& value) { m_instanceTypeCapacitiesHasBeenSet = true; m_instanceTypeCapacities.push_back(std::move(value)); return *this; }
+    template<typename InstanceTypeCapacitiesT = Aws::Vector<AssetInstanceTypeCapacity>>
+    void SetInstanceTypeCapacities(InstanceTypeCapacitiesT&& value) { m_instanceTypeCapacitiesHasBeenSet = true; m_instanceTypeCapacities = std::forward<InstanceTypeCapacitiesT>(value); }
+    template<typename InstanceTypeCapacitiesT = Aws::Vector<AssetInstanceTypeCapacity>>
+    ComputeAttributes& WithInstanceTypeCapacities(InstanceTypeCapacitiesT&& value) { SetInstanceTypeCapacities(std::forward<InstanceTypeCapacitiesT>(value)); return *this;}
+    template<typename InstanceTypeCapacitiesT = AssetInstanceTypeCapacity>
+    ComputeAttributes& AddInstanceTypeCapacities(InstanceTypeCapacitiesT&& value) { m_instanceTypeCapacitiesHasBeenSet = true; m_instanceTypeCapacities.emplace_back(std::forward<InstanceTypeCapacitiesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of vCPUs possible for the specified asset.</p>
      */
-    inline int GetMaxVcpus() const{ return m_maxVcpus; }
+    inline int GetMaxVcpus() const { return m_maxVcpus; }
     inline bool MaxVcpusHasBeenSet() const { return m_maxVcpusHasBeenSet; }
     inline void SetMaxVcpus(int value) { m_maxVcpusHasBeenSet = true; m_maxVcpus = value; }
     inline ComputeAttributes& WithMaxVcpus(int value) { SetMaxVcpus(value); return *this;}
@@ -117,7 +112,7 @@ namespace Model
     Aws::String m_hostId;
     bool m_hostIdHasBeenSet = false;
 
-    ComputeAssetState m_state;
+    ComputeAssetState m_state{ComputeAssetState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_instanceFamilies;
@@ -126,7 +121,7 @@ namespace Model
     Aws::Vector<AssetInstanceTypeCapacity> m_instanceTypeCapacities;
     bool m_instanceTypeCapacitiesHasBeenSet = false;
 
-    int m_maxVcpus;
+    int m_maxVcpus{0};
     bool m_maxVcpusHasBeenSet = false;
   };
 

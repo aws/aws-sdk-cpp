@@ -28,35 +28,35 @@ namespace Model
   class RetryBuildBatchResult
   {
   public:
-    AWS_CODEBUILD_API RetryBuildBatchResult();
+    AWS_CODEBUILD_API RetryBuildBatchResult() = default;
     AWS_CODEBUILD_API RetryBuildBatchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEBUILD_API RetryBuildBatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const BuildBatch& GetBuildBatch() const{ return m_buildBatch; }
-    inline void SetBuildBatch(const BuildBatch& value) { m_buildBatch = value; }
-    inline void SetBuildBatch(BuildBatch&& value) { m_buildBatch = std::move(value); }
-    inline RetryBuildBatchResult& WithBuildBatch(const BuildBatch& value) { SetBuildBatch(value); return *this;}
-    inline RetryBuildBatchResult& WithBuildBatch(BuildBatch&& value) { SetBuildBatch(std::move(value)); return *this;}
+    inline const BuildBatch& GetBuildBatch() const { return m_buildBatch; }
+    template<typename BuildBatchT = BuildBatch>
+    void SetBuildBatch(BuildBatchT&& value) { m_buildBatchHasBeenSet = true; m_buildBatch = std::forward<BuildBatchT>(value); }
+    template<typename BuildBatchT = BuildBatch>
+    RetryBuildBatchResult& WithBuildBatch(BuildBatchT&& value) { SetBuildBatch(std::forward<BuildBatchT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RetryBuildBatchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RetryBuildBatchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RetryBuildBatchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RetryBuildBatchResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     BuildBatch m_buildBatch;
+    bool m_buildBatchHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

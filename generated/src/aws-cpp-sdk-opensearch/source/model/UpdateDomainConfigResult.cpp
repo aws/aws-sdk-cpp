@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateDomainConfigResult::UpdateDomainConfigResult()
-{
-}
-
 UpdateDomainConfigResult::UpdateDomainConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ UpdateDomainConfigResult& UpdateDomainConfigResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("DomainConfig"))
   {
     m_domainConfig = jsonValue.GetObject("DomainConfig");
-
+    m_domainConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DryRunResults"))
   {
     m_dryRunResults = jsonValue.GetObject("DryRunResults");
-
+    m_dryRunResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DryRunProgressStatus"))
   {
     m_dryRunProgressStatus = jsonValue.GetObject("DryRunProgressStatus");
-
+    m_dryRunProgressStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

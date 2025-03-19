@@ -18,13 +18,7 @@ namespace FSx
 namespace Model
 {
 
-AdministrativeActionFailureDetails::AdministrativeActionFailureDetails() : 
-    m_messageHasBeenSet(false)
-{
-}
-
 AdministrativeActionFailureDetails::AdministrativeActionFailureDetails(JsonView jsonValue)
-  : AdministrativeActionFailureDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AdministrativeActionFailureDetails& AdministrativeActionFailureDetails::operator
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -19,18 +19,7 @@ namespace WorkSpacesWeb
 namespace Model
 {
 
-Certificate::Certificate() : 
-    m_bodyHasBeenSet(false),
-    m_issuerHasBeenSet(false),
-    m_notValidAfterHasBeenSet(false),
-    m_notValidBeforeHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_thumbprintHasBeenSet(false)
-{
-}
-
 Certificate::Certificate(JsonView jsonValue)
-  : Certificate()
 {
   *this = jsonValue;
 }
@@ -42,42 +31,31 @@ Certificate& Certificate::operator =(JsonView jsonValue)
     m_body = HashingUtils::Base64Decode(jsonValue.GetString("body"));
     m_bodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("issuer"))
   {
     m_issuer = jsonValue.GetString("issuer");
-
     m_issuerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notValidAfter"))
   {
     m_notValidAfter = jsonValue.GetDouble("notValidAfter");
-
     m_notValidAfterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notValidBefore"))
   {
     m_notValidBefore = jsonValue.GetDouble("notValidBefore");
-
     m_notValidBeforeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subject"))
   {
     m_subject = jsonValue.GetString("subject");
-
     m_subjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thumbprint"))
   {
     m_thumbprint = jsonValue.GetString("thumbprint");
-
     m_thumbprintHasBeenSet = true;
   }
-
   return *this;
 }
 

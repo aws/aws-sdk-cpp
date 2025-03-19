@@ -18,14 +18,7 @@ namespace EventBridge
 namespace Model
 {
 
-ReplicationConfig::ReplicationConfig() : 
-    m_state(ReplicationState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 ReplicationConfig::ReplicationConfig(JsonView jsonValue)
-  : ReplicationConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ReplicationConfig& ReplicationConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("State"))
   {
     m_state = ReplicationStateMapper::GetReplicationStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

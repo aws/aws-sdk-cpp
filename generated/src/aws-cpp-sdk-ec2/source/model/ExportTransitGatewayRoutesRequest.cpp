@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ExportTransitGatewayRoutesRequest::ExportTransitGatewayRoutesRequest() : 
-    m_transitGatewayRouteTableIdHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_s3BucketHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ExportTransitGatewayRoutesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

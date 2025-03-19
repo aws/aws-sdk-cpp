@@ -21,7 +21,7 @@ namespace Model
   class DescribeBotResourceGenerationRequest : public LexModelsV2Request
   {
   public:
-    AWS_LEXMODELSV2_API DescribeBotResourceGenerationRequest();
+    AWS_LEXMODELSV2_API DescribeBotResourceGenerationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,42 +37,36 @@ namespace Model
      * <p>The unique identifier of the bot for which to return the generation
      * details.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
+    inline const Aws::String& GetBotId() const { return m_botId; }
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
-    inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
-    inline DescribeBotResourceGenerationRequest& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline DescribeBotResourceGenerationRequest& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline DescribeBotResourceGenerationRequest& WithBotId(const char* value) { SetBotId(value); return *this;}
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    DescribeBotResourceGenerationRequest& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the bot for which to return the generation details.</p>
      */
-    inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
+    inline const Aws::String& GetBotVersion() const { return m_botVersion; }
     inline bool BotVersionHasBeenSet() const { return m_botVersionHasBeenSet; }
-    inline void SetBotVersion(const Aws::String& value) { m_botVersionHasBeenSet = true; m_botVersion = value; }
-    inline void SetBotVersion(Aws::String&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::move(value); }
-    inline void SetBotVersion(const char* value) { m_botVersionHasBeenSet = true; m_botVersion.assign(value); }
-    inline DescribeBotResourceGenerationRequest& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
-    inline DescribeBotResourceGenerationRequest& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
-    inline DescribeBotResourceGenerationRequest& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
+    template<typename BotVersionT = Aws::String>
+    void SetBotVersion(BotVersionT&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::forward<BotVersionT>(value); }
+    template<typename BotVersionT = Aws::String>
+    DescribeBotResourceGenerationRequest& WithBotVersion(BotVersionT&& value) { SetBotVersion(std::forward<BotVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The locale of the bot for which to return the generation details.</p>
      */
-    inline const Aws::String& GetLocaleId() const{ return m_localeId; }
+    inline const Aws::String& GetLocaleId() const { return m_localeId; }
     inline bool LocaleIdHasBeenSet() const { return m_localeIdHasBeenSet; }
-    inline void SetLocaleId(const Aws::String& value) { m_localeIdHasBeenSet = true; m_localeId = value; }
-    inline void SetLocaleId(Aws::String&& value) { m_localeIdHasBeenSet = true; m_localeId = std::move(value); }
-    inline void SetLocaleId(const char* value) { m_localeIdHasBeenSet = true; m_localeId.assign(value); }
-    inline DescribeBotResourceGenerationRequest& WithLocaleId(const Aws::String& value) { SetLocaleId(value); return *this;}
-    inline DescribeBotResourceGenerationRequest& WithLocaleId(Aws::String&& value) { SetLocaleId(std::move(value)); return *this;}
-    inline DescribeBotResourceGenerationRequest& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
+    template<typename LocaleIdT = Aws::String>
+    void SetLocaleId(LocaleIdT&& value) { m_localeIdHasBeenSet = true; m_localeId = std::forward<LocaleIdT>(value); }
+    template<typename LocaleIdT = Aws::String>
+    DescribeBotResourceGenerationRequest& WithLocaleId(LocaleIdT&& value) { SetLocaleId(std::forward<LocaleIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +74,12 @@ namespace Model
      * <p>The unique identifier of the generation request for which to return the
      * generation details.</p>
      */
-    inline const Aws::String& GetGenerationId() const{ return m_generationId; }
+    inline const Aws::String& GetGenerationId() const { return m_generationId; }
     inline bool GenerationIdHasBeenSet() const { return m_generationIdHasBeenSet; }
-    inline void SetGenerationId(const Aws::String& value) { m_generationIdHasBeenSet = true; m_generationId = value; }
-    inline void SetGenerationId(Aws::String&& value) { m_generationIdHasBeenSet = true; m_generationId = std::move(value); }
-    inline void SetGenerationId(const char* value) { m_generationIdHasBeenSet = true; m_generationId.assign(value); }
-    inline DescribeBotResourceGenerationRequest& WithGenerationId(const Aws::String& value) { SetGenerationId(value); return *this;}
-    inline DescribeBotResourceGenerationRequest& WithGenerationId(Aws::String&& value) { SetGenerationId(std::move(value)); return *this;}
-    inline DescribeBotResourceGenerationRequest& WithGenerationId(const char* value) { SetGenerationId(value); return *this;}
+    template<typename GenerationIdT = Aws::String>
+    void SetGenerationId(GenerationIdT&& value) { m_generationIdHasBeenSet = true; m_generationId = std::forward<GenerationIdT>(value); }
+    template<typename GenerationIdT = Aws::String>
+    DescribeBotResourceGenerationRequest& WithGenerationId(GenerationIdT&& value) { SetGenerationId(std::forward<GenerationIdT>(value)); return *this;}
     ///@}
   private:
 

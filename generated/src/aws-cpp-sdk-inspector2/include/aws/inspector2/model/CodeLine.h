@@ -32,7 +32,7 @@ namespace Model
   class CodeLine
   {
   public:
-    AWS_INSPECTOR2_API CodeLine();
+    AWS_INSPECTOR2_API CodeLine() = default;
     AWS_INSPECTOR2_API CodeLine(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API CodeLine& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The content of a line of code</p>
      */
-    inline const Aws::String& GetContent() const{ return m_content; }
+    inline const Aws::String& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
-    inline CodeLine& WithContent(const Aws::String& value) { SetContent(value); return *this;}
-    inline CodeLine& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
-    inline CodeLine& WithContent(const char* value) { SetContent(value); return *this;}
+    template<typename ContentT = Aws::String>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::String>
+    CodeLine& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The line number that a section of code is located at.</p>
      */
-    inline int GetLineNumber() const{ return m_lineNumber; }
+    inline int GetLineNumber() const { return m_lineNumber; }
     inline bool LineNumberHasBeenSet() const { return m_lineNumberHasBeenSet; }
     inline void SetLineNumber(int value) { m_lineNumberHasBeenSet = true; m_lineNumber = value; }
     inline CodeLine& WithLineNumber(int value) { SetLineNumber(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     Aws::String m_content;
     bool m_contentHasBeenSet = false;
 
-    int m_lineNumber;
+    int m_lineNumber{0};
     bool m_lineNumberHasBeenSet = false;
   };
 

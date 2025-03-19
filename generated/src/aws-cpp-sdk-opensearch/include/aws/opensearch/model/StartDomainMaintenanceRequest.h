@@ -26,7 +26,7 @@ namespace Model
   class StartDomainMaintenanceRequest : public OpenSearchServiceRequest
   {
   public:
-    AWS_OPENSEARCHSERVICE_API StartDomainMaintenanceRequest();
+    AWS_OPENSEARCHSERVICE_API StartDomainMaintenanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,47 +41,41 @@ namespace Model
     /**
      * <p>The name of the domain.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline StartDomainMaintenanceRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline StartDomainMaintenanceRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline StartDomainMaintenanceRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    StartDomainMaintenanceRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the action.</p>
      */
-    inline const MaintenanceType& GetAction() const{ return m_action; }
+    inline MaintenanceType GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const MaintenanceType& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(MaintenanceType&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline StartDomainMaintenanceRequest& WithAction(const MaintenanceType& value) { SetAction(value); return *this;}
-    inline StartDomainMaintenanceRequest& WithAction(MaintenanceType&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(MaintenanceType value) { m_actionHasBeenSet = true; m_action = value; }
+    inline StartDomainMaintenanceRequest& WithAction(MaintenanceType value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the data node.</p>
      */
-    inline const Aws::String& GetNodeId() const{ return m_nodeId; }
+    inline const Aws::String& GetNodeId() const { return m_nodeId; }
     inline bool NodeIdHasBeenSet() const { return m_nodeIdHasBeenSet; }
-    inline void SetNodeId(const Aws::String& value) { m_nodeIdHasBeenSet = true; m_nodeId = value; }
-    inline void SetNodeId(Aws::String&& value) { m_nodeIdHasBeenSet = true; m_nodeId = std::move(value); }
-    inline void SetNodeId(const char* value) { m_nodeIdHasBeenSet = true; m_nodeId.assign(value); }
-    inline StartDomainMaintenanceRequest& WithNodeId(const Aws::String& value) { SetNodeId(value); return *this;}
-    inline StartDomainMaintenanceRequest& WithNodeId(Aws::String&& value) { SetNodeId(std::move(value)); return *this;}
-    inline StartDomainMaintenanceRequest& WithNodeId(const char* value) { SetNodeId(value); return *this;}
+    template<typename NodeIdT = Aws::String>
+    void SetNodeId(NodeIdT&& value) { m_nodeIdHasBeenSet = true; m_nodeId = std::forward<NodeIdT>(value); }
+    template<typename NodeIdT = Aws::String>
+    StartDomainMaintenanceRequest& WithNodeId(NodeIdT&& value) { SetNodeId(std::forward<NodeIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet = false;
 
-    MaintenanceType m_action;
+    MaintenanceType m_action{MaintenanceType::NOT_SET};
     bool m_actionHasBeenSet = false;
 
     Aws::String m_nodeId;

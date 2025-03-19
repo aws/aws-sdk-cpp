@@ -18,16 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-EncryptionDecryptionAttributes::EncryptionDecryptionAttributes() : 
-    m_symmetricHasBeenSet(false),
-    m_asymmetricHasBeenSet(false),
-    m_dukptHasBeenSet(false),
-    m_emvHasBeenSet(false)
-{
-}
-
 EncryptionDecryptionAttributes::EncryptionDecryptionAttributes(JsonView jsonValue)
-  : EncryptionDecryptionAttributes()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ EncryptionDecryptionAttributes& EncryptionDecryptionAttributes::operator =(JsonV
   if(jsonValue.ValueExists("Symmetric"))
   {
     m_symmetric = jsonValue.GetObject("Symmetric");
-
     m_symmetricHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Asymmetric"))
   {
     m_asymmetric = jsonValue.GetObject("Asymmetric");
-
     m_asymmetricHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Dukpt"))
   {
     m_dukpt = jsonValue.GetObject("Dukpt");
-
     m_dukptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Emv"))
   {
     m_emv = jsonValue.GetObject("Emv");
-
     m_emvHasBeenSet = true;
   }
-
   return *this;
 }
 

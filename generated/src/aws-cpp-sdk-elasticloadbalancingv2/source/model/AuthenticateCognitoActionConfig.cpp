@@ -20,22 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-AuthenticateCognitoActionConfig::AuthenticateCognitoActionConfig() : 
-    m_userPoolArnHasBeenSet(false),
-    m_userPoolClientIdHasBeenSet(false),
-    m_userPoolDomainHasBeenSet(false),
-    m_sessionCookieNameHasBeenSet(false),
-    m_scopeHasBeenSet(false),
-    m_sessionTimeout(0),
-    m_sessionTimeoutHasBeenSet(false),
-    m_authenticationRequestExtraParamsHasBeenSet(false),
-    m_onUnauthenticatedRequest(AuthenticateCognitoActionConditionalBehaviorEnum::NOT_SET),
-    m_onUnauthenticatedRequestHasBeenSet(false)
-{
-}
-
 AuthenticateCognitoActionConfig::AuthenticateCognitoActionConfig(const XmlNode& xmlNode)
-  : AuthenticateCognitoActionConfig()
 {
   *this = xmlNode;
 }
@@ -87,6 +72,7 @@ AuthenticateCognitoActionConfig& AuthenticateCognitoActionConfig::operator =(con
     if(!authenticationRequestExtraParamsNode.IsNull())
     {
       XmlNode authenticationRequestExtraParamsEntry = authenticationRequestExtraParamsNode.FirstChild("entry");
+      m_authenticationRequestExtraParamsHasBeenSet = !authenticationRequestExtraParamsEntry.IsNull();
       while(!authenticationRequestExtraParamsEntry.IsNull())
       {
         XmlNode keyNode = authenticationRequestExtraParamsEntry.FirstChild("key");
@@ -101,7 +87,7 @@ AuthenticateCognitoActionConfig& AuthenticateCognitoActionConfig::operator =(con
     XmlNode onUnauthenticatedRequestNode = resultNode.FirstChild("OnUnauthenticatedRequest");
     if(!onUnauthenticatedRequestNode.IsNull())
     {
-      m_onUnauthenticatedRequest = AuthenticateCognitoActionConditionalBehaviorEnumMapper::GetAuthenticateCognitoActionConditionalBehaviorEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(onUnauthenticatedRequestNode.GetText()).c_str()).c_str());
+      m_onUnauthenticatedRequest = AuthenticateCognitoActionConditionalBehaviorEnumMapper::GetAuthenticateCognitoActionConditionalBehaviorEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(onUnauthenticatedRequestNode.GetText()).c_str()));
       m_onUnauthenticatedRequestHasBeenSet = true;
     }
   }

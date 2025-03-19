@@ -41,7 +41,7 @@ namespace Model
   class Scope
   {
   public:
-    AWS_AUDITMANAGER_API Scope();
+    AWS_AUDITMANAGER_API Scope() = default;
     AWS_AUDITMANAGER_API Scope(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API Scope& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,14 @@ namespace Model
      * <p> The Amazon Web Services accounts that are included in the scope of the
      * assessment. </p>
      */
-    inline const Aws::Vector<AWSAccount>& GetAwsAccounts() const{ return m_awsAccounts; }
+    inline const Aws::Vector<AWSAccount>& GetAwsAccounts() const { return m_awsAccounts; }
     inline bool AwsAccountsHasBeenSet() const { return m_awsAccountsHasBeenSet; }
-    inline void SetAwsAccounts(const Aws::Vector<AWSAccount>& value) { m_awsAccountsHasBeenSet = true; m_awsAccounts = value; }
-    inline void SetAwsAccounts(Aws::Vector<AWSAccount>&& value) { m_awsAccountsHasBeenSet = true; m_awsAccounts = std::move(value); }
-    inline Scope& WithAwsAccounts(const Aws::Vector<AWSAccount>& value) { SetAwsAccounts(value); return *this;}
-    inline Scope& WithAwsAccounts(Aws::Vector<AWSAccount>&& value) { SetAwsAccounts(std::move(value)); return *this;}
-    inline Scope& AddAwsAccounts(const AWSAccount& value) { m_awsAccountsHasBeenSet = true; m_awsAccounts.push_back(value); return *this; }
-    inline Scope& AddAwsAccounts(AWSAccount&& value) { m_awsAccountsHasBeenSet = true; m_awsAccounts.push_back(std::move(value)); return *this; }
+    template<typename AwsAccountsT = Aws::Vector<AWSAccount>>
+    void SetAwsAccounts(AwsAccountsT&& value) { m_awsAccountsHasBeenSet = true; m_awsAccounts = std::forward<AwsAccountsT>(value); }
+    template<typename AwsAccountsT = Aws::Vector<AWSAccount>>
+    Scope& WithAwsAccounts(AwsAccountsT&& value) { SetAwsAccounts(std::forward<AwsAccountsT>(value)); return *this;}
+    template<typename AwsAccountsT = AWSAccount>
+    Scope& AddAwsAccounts(AwsAccountsT&& value) { m_awsAccountsHasBeenSet = true; m_awsAccounts.emplace_back(std::forward<AwsAccountsT>(value)); return *this; }
     ///@}
   private:
 

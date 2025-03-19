@@ -28,7 +28,7 @@ namespace Model
   class GetDeliverySourceResult
   {
   public:
-    AWS_CLOUDWATCHLOGS_API GetDeliverySourceResult();
+    AWS_CLOUDWATCHLOGS_API GetDeliverySourceResult() = default;
     AWS_CLOUDWATCHLOGS_API GetDeliverySourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHLOGS_API GetDeliverySourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>A structure containing information about the delivery source.</p>
      */
-    inline const DeliverySource& GetDeliverySource() const{ return m_deliverySource; }
-    inline void SetDeliverySource(const DeliverySource& value) { m_deliverySource = value; }
-    inline void SetDeliverySource(DeliverySource&& value) { m_deliverySource = std::move(value); }
-    inline GetDeliverySourceResult& WithDeliverySource(const DeliverySource& value) { SetDeliverySource(value); return *this;}
-    inline GetDeliverySourceResult& WithDeliverySource(DeliverySource&& value) { SetDeliverySource(std::move(value)); return *this;}
+    inline const DeliverySource& GetDeliverySource() const { return m_deliverySource; }
+    template<typename DeliverySourceT = DeliverySource>
+    void SetDeliverySource(DeliverySourceT&& value) { m_deliverySourceHasBeenSet = true; m_deliverySource = std::forward<DeliverySourceT>(value); }
+    template<typename DeliverySourceT = DeliverySource>
+    GetDeliverySourceResult& WithDeliverySource(DeliverySourceT&& value) { SetDeliverySource(std::forward<DeliverySourceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDeliverySourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDeliverySourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDeliverySourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDeliverySourceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DeliverySource m_deliverySource;
+    bool m_deliverySourceHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

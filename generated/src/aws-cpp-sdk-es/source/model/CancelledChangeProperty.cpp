@@ -18,15 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-CancelledChangeProperty::CancelledChangeProperty() : 
-    m_propertyNameHasBeenSet(false),
-    m_cancelledValueHasBeenSet(false),
-    m_activeValueHasBeenSet(false)
-{
-}
-
 CancelledChangeProperty::CancelledChangeProperty(JsonView jsonValue)
-  : CancelledChangeProperty()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CancelledChangeProperty& CancelledChangeProperty::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PropertyName"))
   {
     m_propertyName = jsonValue.GetString("PropertyName");
-
     m_propertyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CancelledValue"))
   {
     m_cancelledValue = jsonValue.GetString("CancelledValue");
-
     m_cancelledValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActiveValue"))
   {
     m_activeValue = jsonValue.GetString("ActiveValue");
-
     m_activeValueHasBeenSet = true;
   }
-
   return *this;
 }
 

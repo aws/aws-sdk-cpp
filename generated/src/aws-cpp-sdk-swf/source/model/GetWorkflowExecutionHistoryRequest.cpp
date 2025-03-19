@@ -12,17 +12,6 @@ using namespace Aws::SWF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetWorkflowExecutionHistoryRequest::GetWorkflowExecutionHistoryRequest() : 
-    m_domainHasBeenSet(false),
-    m_executionHasBeenSet(false),
-    m_nextPageTokenHasBeenSet(false),
-    m_maximumPageSize(0),
-    m_maximumPageSizeHasBeenSet(false),
-    m_reverseOrder(false),
-    m_reverseOrderHasBeenSet(false)
-{
-}
-
 Aws::String GetWorkflowExecutionHistoryRequest::SerializePayload() const
 {
   JsonValue payload;

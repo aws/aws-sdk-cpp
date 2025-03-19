@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeGlobalSettingsResult::DescribeGlobalSettingsResult()
-{
-}
-
 DescribeGlobalSettingsResult::DescribeGlobalSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ DescribeGlobalSettingsResult& DescribeGlobalSettingsResult::operator =(const Aws
     {
       m_globalSettings[globalSettingsItem.first] = globalSettingsItem.second.AsString();
     }
+    m_globalSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("LastUpdateTime");
-
+    m_lastUpdateTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

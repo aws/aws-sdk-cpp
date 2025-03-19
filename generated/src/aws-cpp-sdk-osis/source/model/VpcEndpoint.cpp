@@ -18,15 +18,7 @@ namespace OSIS
 namespace Model
 {
 
-VpcEndpoint::VpcEndpoint() : 
-    m_vpcEndpointIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_vpcOptionsHasBeenSet(false)
-{
-}
-
 VpcEndpoint::VpcEndpoint(JsonView jsonValue)
-  : VpcEndpoint()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ VpcEndpoint& VpcEndpoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VpcEndpointId"))
   {
     m_vpcEndpointId = jsonValue.GetString("VpcEndpointId");
-
     m_vpcEndpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcOptions"))
   {
     m_vpcOptions = jsonValue.GetObject("VpcOptions");
-
     m_vpcOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

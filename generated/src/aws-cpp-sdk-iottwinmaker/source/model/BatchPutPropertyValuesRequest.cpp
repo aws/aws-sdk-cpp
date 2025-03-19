@@ -12,12 +12,6 @@ using namespace Aws::IoTTwinMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchPutPropertyValuesRequest::BatchPutPropertyValuesRequest() : 
-    m_workspaceIdHasBeenSet(false),
-    m_entriesHasBeenSet(false)
-{
-}
-
 Aws::String BatchPutPropertyValuesRequest::SerializePayload() const
 {
   JsonValue payload;

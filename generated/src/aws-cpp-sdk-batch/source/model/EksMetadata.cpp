@@ -18,15 +18,7 @@ namespace Batch
 namespace Model
 {
 
-EksMetadata::EksMetadata() : 
-    m_labelsHasBeenSet(false),
-    m_annotationsHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
-{
-}
-
 EksMetadata::EksMetadata(JsonView jsonValue)
-  : EksMetadata()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ EksMetadata& EksMetadata::operator =(JsonView jsonValue)
     }
     m_labelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("annotations"))
   {
     Aws::Map<Aws::String, JsonView> annotationsJsonMap = jsonValue.GetObject("annotations").GetAllObjects();
@@ -52,14 +43,11 @@ EksMetadata& EksMetadata::operator =(JsonView jsonValue)
     }
     m_annotationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespace"))
   {
     m_namespace = jsonValue.GetString("namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   return *this;
 }
 

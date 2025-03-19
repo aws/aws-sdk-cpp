@@ -18,17 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-GuardrailPiiEntityFilter::GuardrailPiiEntityFilter() : 
-    m_matchHasBeenSet(false),
-    m_type(GuardrailPiiEntityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_action(GuardrailSensitiveInformationPolicyAction::NOT_SET),
-    m_actionHasBeenSet(false)
-{
-}
-
 GuardrailPiiEntityFilter::GuardrailPiiEntityFilter(JsonView jsonValue)
-  : GuardrailPiiEntityFilter()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ GuardrailPiiEntityFilter& GuardrailPiiEntityFilter::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("match"))
   {
     m_match = jsonValue.GetString("match");
-
     m_matchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = GuardrailPiiEntityTypeMapper::GetGuardrailPiiEntityTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("action"))
   {
     m_action = GuardrailSensitiveInformationPolicyActionMapper::GetGuardrailSensitiveInformationPolicyActionForName(jsonValue.GetString("action"));
-
     m_actionHasBeenSet = true;
   }
-
   return *this;
 }
 

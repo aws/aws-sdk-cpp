@@ -34,7 +34,7 @@ namespace Model
   class ConnectionTypeBrief
   {
   public:
-    AWS_GLUE_API ConnectionTypeBrief();
+    AWS_GLUE_API ConnectionTypeBrief() = default;
     AWS_GLUE_API ConnectionTypeBrief(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API ConnectionTypeBrief& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,22 @@ namespace Model
     /**
      * <p>The name of the connection type.</p>
      */
-    inline const ConnectionType& GetConnectionType() const{ return m_connectionType; }
+    inline ConnectionType GetConnectionType() const { return m_connectionType; }
     inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
-    inline void SetConnectionType(const ConnectionType& value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
-    inline void SetConnectionType(ConnectionType&& value) { m_connectionTypeHasBeenSet = true; m_connectionType = std::move(value); }
-    inline ConnectionTypeBrief& WithConnectionType(const ConnectionType& value) { SetConnectionType(value); return *this;}
-    inline ConnectionTypeBrief& WithConnectionType(ConnectionType&& value) { SetConnectionType(std::move(value)); return *this;}
+    inline void SetConnectionType(ConnectionType value) { m_connectionTypeHasBeenSet = true; m_connectionType = value; }
+    inline ConnectionTypeBrief& WithConnectionType(ConnectionType value) { SetConnectionType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the connection type.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ConnectionTypeBrief& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ConnectionTypeBrief& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ConnectionTypeBrief& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ConnectionTypeBrief& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,16 +67,16 @@ namespace Model
      * <p>The supported authentication types, data interface types (compute
      * environments), and data operations of the connector.</p>
      */
-    inline const Capabilities& GetCapabilities() const{ return m_capabilities; }
+    inline const Capabilities& GetCapabilities() const { return m_capabilities; }
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
-    inline void SetCapabilities(const Capabilities& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
-    inline void SetCapabilities(Capabilities&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
-    inline ConnectionTypeBrief& WithCapabilities(const Capabilities& value) { SetCapabilities(value); return *this;}
-    inline ConnectionTypeBrief& WithCapabilities(Capabilities&& value) { SetCapabilities(std::move(value)); return *this;}
+    template<typename CapabilitiesT = Capabilities>
+    void SetCapabilities(CapabilitiesT&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::forward<CapabilitiesT>(value); }
+    template<typename CapabilitiesT = Capabilities>
+    ConnectionTypeBrief& WithCapabilities(CapabilitiesT&& value) { SetCapabilities(std::forward<CapabilitiesT>(value)); return *this;}
     ///@}
   private:
 
-    ConnectionType m_connectionType;
+    ConnectionType m_connectionType{ConnectionType::NOT_SET};
     bool m_connectionTypeHasBeenSet = false;
 
     Aws::String m_description;

@@ -30,7 +30,7 @@ namespace Model
   class CloudMaskingConfigInput
   {
   public:
-    AWS_SAGEMAKERGEOSPATIAL_API CloudMaskingConfigInput();
+    AWS_SAGEMAKERGEOSPATIAL_API CloudMaskingConfigInput() = default;
     AWS_SAGEMAKERGEOSPATIAL_API CloudMaskingConfigInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API CloudMaskingConfigInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;

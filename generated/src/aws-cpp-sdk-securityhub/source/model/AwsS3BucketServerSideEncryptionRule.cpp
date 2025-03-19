@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsS3BucketServerSideEncryptionRule::AwsS3BucketServerSideEncryptionRule() : 
-    m_applyServerSideEncryptionByDefaultHasBeenSet(false)
-{
-}
-
 AwsS3BucketServerSideEncryptionRule::AwsS3BucketServerSideEncryptionRule(JsonView jsonValue)
-  : AwsS3BucketServerSideEncryptionRule()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsS3BucketServerSideEncryptionRule& AwsS3BucketServerSideEncryptionRule::operat
   if(jsonValue.ValueExists("ApplyServerSideEncryptionByDefault"))
   {
     m_applyServerSideEncryptionByDefault = jsonValue.GetObject("ApplyServerSideEncryptionByDefault");
-
     m_applyServerSideEncryptionByDefaultHasBeenSet = true;
   }
-
   return *this;
 }
 

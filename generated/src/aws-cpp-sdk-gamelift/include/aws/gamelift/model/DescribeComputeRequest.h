@@ -21,7 +21,7 @@ namespace Model
   class DescribeComputeRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API DescribeComputeRequest();
+    AWS_GAMELIFT_API DescribeComputeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>A unique identifier for the fleet that the compute belongs to. You can use
      * either the fleet ID or ARN value.</p>
      */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+    inline const Aws::String& GetFleetId() const { return m_fleetId; }
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-    inline DescribeComputeRequest& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline DescribeComputeRequest& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline DescribeComputeRequest& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    template<typename FleetIdT = Aws::String>
+    void SetFleetId(FleetIdT&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::forward<FleetIdT>(value); }
+    template<typename FleetIdT = Aws::String>
+    DescribeComputeRequest& WithFleetId(FleetIdT&& value) { SetFleetId(std::forward<FleetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * an Anywhere fleet compute, use the registered compute name. For an EC2 fleet
      * instance, use the instance ID. </p>
      */
-    inline const Aws::String& GetComputeName() const{ return m_computeName; }
+    inline const Aws::String& GetComputeName() const { return m_computeName; }
     inline bool ComputeNameHasBeenSet() const { return m_computeNameHasBeenSet; }
-    inline void SetComputeName(const Aws::String& value) { m_computeNameHasBeenSet = true; m_computeName = value; }
-    inline void SetComputeName(Aws::String&& value) { m_computeNameHasBeenSet = true; m_computeName = std::move(value); }
-    inline void SetComputeName(const char* value) { m_computeNameHasBeenSet = true; m_computeName.assign(value); }
-    inline DescribeComputeRequest& WithComputeName(const Aws::String& value) { SetComputeName(value); return *this;}
-    inline DescribeComputeRequest& WithComputeName(Aws::String&& value) { SetComputeName(std::move(value)); return *this;}
-    inline DescribeComputeRequest& WithComputeName(const char* value) { SetComputeName(value); return *this;}
+    template<typename ComputeNameT = Aws::String>
+    void SetComputeName(ComputeNameT&& value) { m_computeNameHasBeenSet = true; m_computeName = std::forward<ComputeNameT>(value); }
+    template<typename ComputeNameT = Aws::String>
+    DescribeComputeRequest& WithComputeName(ComputeNameT&& value) { SetComputeName(std::forward<ComputeNameT>(value)); return *this;}
     ///@}
   private:
 

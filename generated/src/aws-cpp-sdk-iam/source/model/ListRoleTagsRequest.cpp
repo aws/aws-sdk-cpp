@@ -10,14 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-ListRoleTagsRequest::ListRoleTagsRequest() : 
-    m_roleNameHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false)
-{
-}
-
 Aws::String ListRoleTagsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

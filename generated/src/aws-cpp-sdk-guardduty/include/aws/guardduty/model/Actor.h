@@ -34,7 +34,7 @@ namespace Model
   class Actor
   {
   public:
-    AWS_GUARDDUTY_API Actor();
+    AWS_GUARDDUTY_API Actor() = default;
     AWS_GUARDDUTY_API Actor(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Actor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,38 +44,36 @@ namespace Model
     /**
      * <p>ID of the threat actor.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Actor& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Actor& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Actor& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Actor& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains information about the user credentials used by the threat actor.</p>
      */
-    inline const User& GetUser() const{ return m_user; }
+    inline const User& GetUser() const { return m_user; }
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
-    inline void SetUser(const User& value) { m_userHasBeenSet = true; m_user = value; }
-    inline void SetUser(User&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
-    inline Actor& WithUser(const User& value) { SetUser(value); return *this;}
-    inline Actor& WithUser(User&& value) { SetUser(std::move(value)); return *this;}
+    template<typename UserT = User>
+    void SetUser(UserT&& value) { m_userHasBeenSet = true; m_user = std::forward<UserT>(value); }
+    template<typename UserT = User>
+    Actor& WithUser(UserT&& value) { SetUser(std::forward<UserT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains information about the user session where the activity initiated.</p>
      */
-    inline const Session& GetSession() const{ return m_session; }
+    inline const Session& GetSession() const { return m_session; }
     inline bool SessionHasBeenSet() const { return m_sessionHasBeenSet; }
-    inline void SetSession(const Session& value) { m_sessionHasBeenSet = true; m_session = value; }
-    inline void SetSession(Session&& value) { m_sessionHasBeenSet = true; m_session = std::move(value); }
-    inline Actor& WithSession(const Session& value) { SetSession(value); return *this;}
-    inline Actor& WithSession(Session&& value) { SetSession(std::move(value)); return *this;}
+    template<typename SessionT = Session>
+    void SetSession(SessionT&& value) { m_sessionHasBeenSet = true; m_session = std::forward<SessionT>(value); }
+    template<typename SessionT = Session>
+    Actor& WithSession(SessionT&& value) { SetSession(std::forward<SessionT>(value)); return *this;}
     ///@}
   private:
 

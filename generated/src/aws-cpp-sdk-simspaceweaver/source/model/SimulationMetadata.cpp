@@ -18,19 +18,7 @@ namespace SimSpaceWeaver
 namespace Model
 {
 
-SimulationMetadata::SimulationMetadata() : 
-    m_arnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(SimulationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_targetStatus(SimulationTargetStatus::NOT_SET),
-    m_targetStatusHasBeenSet(false)
-{
-}
-
 SimulationMetadata::SimulationMetadata(JsonView jsonValue)
-  : SimulationMetadata()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ SimulationMetadata& SimulationMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = SimulationStatusMapper::GetSimulationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetStatus"))
   {
     m_targetStatus = SimulationTargetStatusMapper::GetSimulationTargetStatusForName(jsonValue.GetString("TargetStatus"));
-
     m_targetStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

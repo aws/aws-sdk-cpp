@@ -18,14 +18,7 @@ namespace IoT
 namespace Model
 {
 
-UpdateCACertificateParams::UpdateCACertificateParams() : 
-    m_action(CACertificateUpdateAction::NOT_SET),
-    m_actionHasBeenSet(false)
-{
-}
-
 UpdateCACertificateParams::UpdateCACertificateParams(JsonView jsonValue)
-  : UpdateCACertificateParams()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ UpdateCACertificateParams& UpdateCACertificateParams::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("action"))
   {
     m_action = CACertificateUpdateActionMapper::GetCACertificateUpdateActionForName(jsonValue.GetString("action"));
-
     m_actionHasBeenSet = true;
   }
-
   return *this;
 }
 

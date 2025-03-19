@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-SparkGlueArgs::SparkGlueArgs() : 
-    m_connectionHasBeenSet(false)
-{
-}
-
 SparkGlueArgs::SparkGlueArgs(JsonView jsonValue)
-  : SparkGlueArgs()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SparkGlueArgs& SparkGlueArgs::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("connection"))
   {
     m_connection = jsonValue.GetString("connection");
-
     m_connectionHasBeenSet = true;
   }
-
   return *this;
 }
 

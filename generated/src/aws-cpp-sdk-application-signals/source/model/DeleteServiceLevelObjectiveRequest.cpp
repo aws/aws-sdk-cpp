@@ -12,11 +12,6 @@ using namespace Aws::ApplicationSignals::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteServiceLevelObjectiveRequest::DeleteServiceLevelObjectiveRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteServiceLevelObjectiveRequest::SerializePayload() const
 {
   return {};

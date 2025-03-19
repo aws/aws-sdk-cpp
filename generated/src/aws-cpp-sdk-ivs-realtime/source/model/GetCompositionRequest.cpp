@@ -12,11 +12,6 @@ using namespace Aws::ivsrealtime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCompositionRequest::GetCompositionRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String GetCompositionRequest::SerializePayload() const
 {
   JsonValue payload;

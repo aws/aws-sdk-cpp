@@ -12,14 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateGroupRequest::CreateGroupRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_hiddenFromGlobalAddressList(false),
-    m_hiddenFromGlobalAddressListHasBeenSet(false)
-{
-}
-
 Aws::String CreateGroupRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -25,7 +25,7 @@ namespace Model
   class ListTemplatesRequest : public PcaConnectorAdRequest
   {
   public:
-    AWS_PCACONNECTORAD_API ListTemplatesRequest();
+    AWS_PCACONNECTORAD_API ListTemplatesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that was returned when you called <a
      * href="https://docs.aws.amazon.com/pca-connector-ad/latest/APIReference/API_CreateConnector.html">CreateConnector</a>.</p>
      */
-    inline const Aws::String& GetConnectorArn() const{ return m_connectorArn; }
+    inline const Aws::String& GetConnectorArn() const { return m_connectorArn; }
     inline bool ConnectorArnHasBeenSet() const { return m_connectorArnHasBeenSet; }
-    inline void SetConnectorArn(const Aws::String& value) { m_connectorArnHasBeenSet = true; m_connectorArn = value; }
-    inline void SetConnectorArn(Aws::String&& value) { m_connectorArnHasBeenSet = true; m_connectorArn = std::move(value); }
-    inline void SetConnectorArn(const char* value) { m_connectorArnHasBeenSet = true; m_connectorArn.assign(value); }
-    inline ListTemplatesRequest& WithConnectorArn(const Aws::String& value) { SetConnectorArn(value); return *this;}
-    inline ListTemplatesRequest& WithConnectorArn(Aws::String&& value) { SetConnectorArn(std::move(value)); return *this;}
-    inline ListTemplatesRequest& WithConnectorArn(const char* value) { SetConnectorArn(value); return *this;}
+    template<typename ConnectorArnT = Aws::String>
+    void SetConnectorArn(ConnectorArnT&& value) { m_connectorArnHasBeenSet = true; m_connectorArn = std::forward<ConnectorArnT>(value); }
+    template<typename ConnectorArnT = Aws::String>
+    ListTemplatesRequest& WithConnectorArn(ConnectorArnT&& value) { SetConnectorArn(std::forward<ConnectorArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * response. Use this <code>NextToken</code> value in a subsequent request to
      * retrieve additional items.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListTemplatesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -73,21 +71,19 @@ namespace Model
      * receive a response with truncated results. Set it to the value of the
      * <code>NextToken</code> parameter from the response you just received.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListTemplatesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTemplatesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTemplatesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTemplatesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_connectorArn;
     bool m_connectorArnHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

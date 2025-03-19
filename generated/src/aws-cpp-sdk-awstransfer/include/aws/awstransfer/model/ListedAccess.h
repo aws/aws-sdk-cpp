@@ -33,7 +33,7 @@ namespace Model
   class ListedAccess
   {
   public:
-    AWS_TRANSFER_API ListedAccess();
+    AWS_TRANSFER_API ListedAccess() = default;
     AWS_TRANSFER_API ListedAccess(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API ListedAccess& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * <code>HomeDirectory</code> parameter is only used if
      * <code>HomeDirectoryType</code> is set to <code>PATH</code>.</p> 
      */
-    inline const Aws::String& GetHomeDirectory() const{ return m_homeDirectory; }
+    inline const Aws::String& GetHomeDirectory() const { return m_homeDirectory; }
     inline bool HomeDirectoryHasBeenSet() const { return m_homeDirectoryHasBeenSet; }
-    inline void SetHomeDirectory(const Aws::String& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = value; }
-    inline void SetHomeDirectory(Aws::String&& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = std::move(value); }
-    inline void SetHomeDirectory(const char* value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory.assign(value); }
-    inline ListedAccess& WithHomeDirectory(const Aws::String& value) { SetHomeDirectory(value); return *this;}
-    inline ListedAccess& WithHomeDirectory(Aws::String&& value) { SetHomeDirectory(std::move(value)); return *this;}
-    inline ListedAccess& WithHomeDirectory(const char* value) { SetHomeDirectory(value); return *this;}
+    template<typename HomeDirectoryT = Aws::String>
+    void SetHomeDirectory(HomeDirectoryT&& value) { m_homeDirectoryHasBeenSet = true; m_homeDirectory = std::forward<HomeDirectoryT>(value); }
+    template<typename HomeDirectoryT = Aws::String>
+    ListedAccess& WithHomeDirectory(HomeDirectoryT&& value) { SetHomeDirectory(std::forward<HomeDirectoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +71,10 @@ namespace Model
      * <code>HomeDirectory</code> and <code>HomeDirectoryMappings</code> in your
      * template.</p> 
      */
-    inline const HomeDirectoryType& GetHomeDirectoryType() const{ return m_homeDirectoryType; }
+    inline HomeDirectoryType GetHomeDirectoryType() const { return m_homeDirectoryType; }
     inline bool HomeDirectoryTypeHasBeenSet() const { return m_homeDirectoryTypeHasBeenSet; }
-    inline void SetHomeDirectoryType(const HomeDirectoryType& value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = value; }
-    inline void SetHomeDirectoryType(HomeDirectoryType&& value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = std::move(value); }
-    inline ListedAccess& WithHomeDirectoryType(const HomeDirectoryType& value) { SetHomeDirectoryType(value); return *this;}
-    inline ListedAccess& WithHomeDirectoryType(HomeDirectoryType&& value) { SetHomeDirectoryType(std::move(value)); return *this;}
+    inline void SetHomeDirectoryType(HomeDirectoryType value) { m_homeDirectoryTypeHasBeenSet = true; m_homeDirectoryType = value; }
+    inline ListedAccess& WithHomeDirectoryType(HomeDirectoryType value) { SetHomeDirectoryType(value); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +87,12 @@ namespace Model
      * trust relationship that allows the server to access your resources when
      * servicing your users' transfer requests.</p>
      */
-    inline const Aws::String& GetRole() const{ return m_role; }
+    inline const Aws::String& GetRole() const { return m_role; }
     inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
-    inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
-    inline void SetRole(Aws::String&& value) { m_roleHasBeenSet = true; m_role = std::move(value); }
-    inline void SetRole(const char* value) { m_roleHasBeenSet = true; m_role.assign(value); }
-    inline ListedAccess& WithRole(const Aws::String& value) { SetRole(value); return *this;}
-    inline ListedAccess& WithRole(Aws::String&& value) { SetRole(std::move(value)); return *this;}
-    inline ListedAccess& WithRole(const char* value) { SetRole(value); return *this;}
+    template<typename RoleT = Aws::String>
+    void SetRole(RoleT&& value) { m_roleHasBeenSet = true; m_role = std::forward<RoleT>(value); }
+    template<typename RoleT = Aws::String>
+    ListedAccess& WithRole(RoleT&& value) { SetRole(std::forward<RoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,21 +109,19 @@ namespace Model
      * consisting of uppercase and lowercase alphanumeric characters with no spaces.
      * You can also include underscores or any of the following characters: =,.@:/-</p>
      */
-    inline const Aws::String& GetExternalId() const{ return m_externalId; }
+    inline const Aws::String& GetExternalId() const { return m_externalId; }
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
-    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
-    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
-    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
-    inline ListedAccess& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
-    inline ListedAccess& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
-    inline ListedAccess& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+    template<typename ExternalIdT = Aws::String>
+    void SetExternalId(ExternalIdT&& value) { m_externalIdHasBeenSet = true; m_externalId = std::forward<ExternalIdT>(value); }
+    template<typename ExternalIdT = Aws::String>
+    ListedAccess& WithExternalId(ExternalIdT&& value) { SetExternalId(std::forward<ExternalIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_homeDirectory;
     bool m_homeDirectoryHasBeenSet = false;
 
-    HomeDirectoryType m_homeDirectoryType;
+    HomeDirectoryType m_homeDirectoryType{HomeDirectoryType::NOT_SET};
     bool m_homeDirectoryTypeHasBeenSet = false;
 
     Aws::String m_role;

@@ -12,11 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetSecurityControlsRequest::BatchGetSecurityControlsRequest() : 
-    m_securityControlIdsHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetSecurityControlsRequest::SerializePayload() const
 {
   JsonValue payload;

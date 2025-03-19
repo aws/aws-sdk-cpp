@@ -20,121 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DBCluster::DBCluster() : 
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_backupRetentionPeriod(0),
-    m_backupRetentionPeriodHasBeenSet(false),
-    m_characterSetNameHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_dBClusterParameterGroupHasBeenSet(false),
-    m_dBSubnetGroupHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_automaticRestartTimeHasBeenSet(false),
-    m_percentProgressHasBeenSet(false),
-    m_earliestRestorableTimeHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_readerEndpointHasBeenSet(false),
-    m_customEndpointsHasBeenSet(false),
-    m_multiAZ(false),
-    m_multiAZHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_latestRestorableTimeHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_masterUsernameHasBeenSet(false),
-    m_dBClusterOptionGroupMembershipsHasBeenSet(false),
-    m_preferredBackupWindowHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_replicationSourceIdentifierHasBeenSet(false),
-    m_readReplicaIdentifiersHasBeenSet(false),
-    m_statusInfosHasBeenSet(false),
-    m_dBClusterMembersHasBeenSet(false),
-    m_vpcSecurityGroupsHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false),
-    m_storageEncrypted(false),
-    m_storageEncryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_dbClusterResourceIdHasBeenSet(false),
-    m_dBClusterArnHasBeenSet(false),
-    m_associatedRolesHasBeenSet(false),
-    m_iAMDatabaseAuthenticationEnabled(false),
-    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
-    m_cloneGroupIdHasBeenSet(false),
-    m_clusterCreateTimeHasBeenSet(false),
-    m_earliestBacktrackTimeHasBeenSet(false),
-    m_backtrackWindow(0),
-    m_backtrackWindowHasBeenSet(false),
-    m_backtrackConsumedChangeRecords(0),
-    m_backtrackConsumedChangeRecordsHasBeenSet(false),
-    m_enabledCloudwatchLogsExportsHasBeenSet(false),
-    m_capacity(0),
-    m_capacityHasBeenSet(false),
-    m_engineModeHasBeenSet(false),
-    m_scalingConfigurationInfoHasBeenSet(false),
-    m_rdsCustomClusterConfigurationHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false),
-    m_httpEndpointEnabled(false),
-    m_httpEndpointEnabledHasBeenSet(false),
-    m_activityStreamMode(ActivityStreamMode::NOT_SET),
-    m_activityStreamModeHasBeenSet(false),
-    m_activityStreamStatus(ActivityStreamStatus::NOT_SET),
-    m_activityStreamStatusHasBeenSet(false),
-    m_activityStreamKmsKeyIdHasBeenSet(false),
-    m_activityStreamKinesisStreamNameHasBeenSet(false),
-    m_copyTagsToSnapshot(false),
-    m_copyTagsToSnapshotHasBeenSet(false),
-    m_crossAccountClone(false),
-    m_crossAccountCloneHasBeenSet(false),
-    m_domainMembershipsHasBeenSet(false),
-    m_tagListHasBeenSet(false),
-    m_globalWriteForwardingStatus(WriteForwardingStatus::NOT_SET),
-    m_globalWriteForwardingStatusHasBeenSet(false),
-    m_globalWriteForwardingRequested(false),
-    m_globalWriteForwardingRequestedHasBeenSet(false),
-    m_pendingModifiedValuesHasBeenSet(false),
-    m_dBClusterInstanceClassHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false),
-    m_monitoringInterval(0),
-    m_monitoringIntervalHasBeenSet(false),
-    m_monitoringRoleArnHasBeenSet(false),
-    m_databaseInsightsMode(DatabaseInsightsMode::NOT_SET),
-    m_databaseInsightsModeHasBeenSet(false),
-    m_performanceInsightsEnabled(false),
-    m_performanceInsightsEnabledHasBeenSet(false),
-    m_performanceInsightsKMSKeyIdHasBeenSet(false),
-    m_performanceInsightsRetentionPeriod(0),
-    m_performanceInsightsRetentionPeriodHasBeenSet(false),
-    m_serverlessV2ScalingConfigurationHasBeenSet(false),
-    m_networkTypeHasBeenSet(false),
-    m_dBSystemIdHasBeenSet(false),
-    m_masterUserSecretHasBeenSet(false),
-    m_iOOptimizedNextAllowedModificationTimeHasBeenSet(false),
-    m_localWriteForwardingStatus(LocalWriteForwardingStatus::NOT_SET),
-    m_localWriteForwardingStatusHasBeenSet(false),
-    m_awsBackupRecoveryPointArnHasBeenSet(false),
-    m_limitlessDatabaseHasBeenSet(false),
-    m_storageThroughput(0),
-    m_storageThroughputHasBeenSet(false),
-    m_clusterScalabilityType(ClusterScalabilityType::NOT_SET),
-    m_clusterScalabilityTypeHasBeenSet(false),
-    m_certificateDetailsHasBeenSet(false),
-    m_engineLifecycleSupportHasBeenSet(false)
-{
-}
-
 DBCluster::DBCluster(const XmlNode& xmlNode)
-  : DBCluster()
 {
   *this = xmlNode;
 }
@@ -155,6 +41,7 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     if(!availabilityZonesNode.IsNull())
     {
       XmlNode availabilityZonesMember = availabilityZonesNode.FirstChild("AvailabilityZone");
+      m_availabilityZonesHasBeenSet = !availabilityZonesMember.IsNull();
       while(!availabilityZonesMember.IsNull())
       {
         m_availabilityZones.push_back(availabilityZonesMember.GetText());
@@ -239,6 +126,7 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     if(!customEndpointsNode.IsNull())
     {
       XmlNode customEndpointsMember = customEndpointsNode.FirstChild("member");
+      m_customEndpointsHasBeenSet = !customEndpointsMember.IsNull();
       while(!customEndpointsMember.IsNull())
       {
         m_customEndpoints.push_back(customEndpointsMember.GetText());
@@ -287,6 +175,7 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     if(!dBClusterOptionGroupMembershipsNode.IsNull())
     {
       XmlNode dBClusterOptionGroupMembershipsMember = dBClusterOptionGroupMembershipsNode.FirstChild("DBClusterOptionGroup");
+      m_dBClusterOptionGroupMembershipsHasBeenSet = !dBClusterOptionGroupMembershipsMember.IsNull();
       while(!dBClusterOptionGroupMembershipsMember.IsNull())
       {
         m_dBClusterOptionGroupMemberships.push_back(dBClusterOptionGroupMembershipsMember);
@@ -317,6 +206,7 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     if(!readReplicaIdentifiersNode.IsNull())
     {
       XmlNode readReplicaIdentifiersMember = readReplicaIdentifiersNode.FirstChild("ReadReplicaIdentifier");
+      m_readReplicaIdentifiersHasBeenSet = !readReplicaIdentifiersMember.IsNull();
       while(!readReplicaIdentifiersMember.IsNull())
       {
         m_readReplicaIdentifiers.push_back(readReplicaIdentifiersMember.GetText());
@@ -329,6 +219,7 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     if(!statusInfosNode.IsNull())
     {
       XmlNode statusInfosMember = statusInfosNode.FirstChild("DBClusterStatusInfo");
+      m_statusInfosHasBeenSet = !statusInfosMember.IsNull();
       while(!statusInfosMember.IsNull())
       {
         m_statusInfos.push_back(statusInfosMember);
@@ -341,6 +232,7 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     if(!dBClusterMembersNode.IsNull())
     {
       XmlNode dBClusterMembersMember = dBClusterMembersNode.FirstChild("DBClusterMember");
+      m_dBClusterMembersHasBeenSet = !dBClusterMembersMember.IsNull();
       while(!dBClusterMembersMember.IsNull())
       {
         m_dBClusterMembers.push_back(dBClusterMembersMember);
@@ -353,6 +245,7 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     if(!vpcSecurityGroupsNode.IsNull())
     {
       XmlNode vpcSecurityGroupsMember = vpcSecurityGroupsNode.FirstChild("VpcSecurityGroupMembership");
+      m_vpcSecurityGroupsHasBeenSet = !vpcSecurityGroupsMember.IsNull();
       while(!vpcSecurityGroupsMember.IsNull())
       {
         m_vpcSecurityGroups.push_back(vpcSecurityGroupsMember);
@@ -395,6 +288,7 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     if(!associatedRolesNode.IsNull())
     {
       XmlNode associatedRolesMember = associatedRolesNode.FirstChild("DBClusterRole");
+      m_associatedRolesHasBeenSet = !associatedRolesMember.IsNull();
       while(!associatedRolesMember.IsNull())
       {
         m_associatedRoles.push_back(associatedRolesMember);
@@ -443,6 +337,7 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     if(!enabledCloudwatchLogsExportsNode.IsNull())
     {
       XmlNode enabledCloudwatchLogsExportsMember = enabledCloudwatchLogsExportsNode.FirstChild("member");
+      m_enabledCloudwatchLogsExportsHasBeenSet = !enabledCloudwatchLogsExportsMember.IsNull();
       while(!enabledCloudwatchLogsExportsMember.IsNull())
       {
         m_enabledCloudwatchLogsExports.push_back(enabledCloudwatchLogsExportsMember.GetText());
@@ -490,13 +385,13 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     XmlNode activityStreamModeNode = resultNode.FirstChild("ActivityStreamMode");
     if(!activityStreamModeNode.IsNull())
     {
-      m_activityStreamMode = ActivityStreamModeMapper::GetActivityStreamModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(activityStreamModeNode.GetText()).c_str()).c_str());
+      m_activityStreamMode = ActivityStreamModeMapper::GetActivityStreamModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(activityStreamModeNode.GetText()).c_str()));
       m_activityStreamModeHasBeenSet = true;
     }
     XmlNode activityStreamStatusNode = resultNode.FirstChild("ActivityStreamStatus");
     if(!activityStreamStatusNode.IsNull())
     {
-      m_activityStreamStatus = ActivityStreamStatusMapper::GetActivityStreamStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(activityStreamStatusNode.GetText()).c_str()).c_str());
+      m_activityStreamStatus = ActivityStreamStatusMapper::GetActivityStreamStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(activityStreamStatusNode.GetText()).c_str()));
       m_activityStreamStatusHasBeenSet = true;
     }
     XmlNode activityStreamKmsKeyIdNode = resultNode.FirstChild("ActivityStreamKmsKeyId");
@@ -527,6 +422,7 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     if(!domainMembershipsNode.IsNull())
     {
       XmlNode domainMembershipsMember = domainMembershipsNode.FirstChild("DomainMembership");
+      m_domainMembershipsHasBeenSet = !domainMembershipsMember.IsNull();
       while(!domainMembershipsMember.IsNull())
       {
         m_domainMemberships.push_back(domainMembershipsMember);
@@ -539,6 +435,7 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     if(!tagListNode.IsNull())
     {
       XmlNode tagListMember = tagListNode.FirstChild("Tag");
+      m_tagListHasBeenSet = !tagListMember.IsNull();
       while(!tagListMember.IsNull())
       {
         m_tagList.push_back(tagListMember);
@@ -550,7 +447,7 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     XmlNode globalWriteForwardingStatusNode = resultNode.FirstChild("GlobalWriteForwardingStatus");
     if(!globalWriteForwardingStatusNode.IsNull())
     {
-      m_globalWriteForwardingStatus = WriteForwardingStatusMapper::GetWriteForwardingStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(globalWriteForwardingStatusNode.GetText()).c_str()).c_str());
+      m_globalWriteForwardingStatus = WriteForwardingStatusMapper::GetWriteForwardingStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(globalWriteForwardingStatusNode.GetText()).c_str()));
       m_globalWriteForwardingStatusHasBeenSet = true;
     }
     XmlNode globalWriteForwardingRequestedNode = resultNode.FirstChild("GlobalWriteForwardingRequested");
@@ -610,7 +507,7 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     XmlNode databaseInsightsModeNode = resultNode.FirstChild("DatabaseInsightsMode");
     if(!databaseInsightsModeNode.IsNull())
     {
-      m_databaseInsightsMode = DatabaseInsightsModeMapper::GetDatabaseInsightsModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(databaseInsightsModeNode.GetText()).c_str()).c_str());
+      m_databaseInsightsMode = DatabaseInsightsModeMapper::GetDatabaseInsightsModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(databaseInsightsModeNode.GetText()).c_str()));
       m_databaseInsightsModeHasBeenSet = true;
     }
     XmlNode performanceInsightsEnabledNode = resultNode.FirstChild("PerformanceInsightsEnabled");
@@ -664,7 +561,7 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     XmlNode localWriteForwardingStatusNode = resultNode.FirstChild("LocalWriteForwardingStatus");
     if(!localWriteForwardingStatusNode.IsNull())
     {
-      m_localWriteForwardingStatus = LocalWriteForwardingStatusMapper::GetLocalWriteForwardingStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(localWriteForwardingStatusNode.GetText()).c_str()).c_str());
+      m_localWriteForwardingStatus = LocalWriteForwardingStatusMapper::GetLocalWriteForwardingStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(localWriteForwardingStatusNode.GetText()).c_str()));
       m_localWriteForwardingStatusHasBeenSet = true;
     }
     XmlNode awsBackupRecoveryPointArnNode = resultNode.FirstChild("AwsBackupRecoveryPointArn");
@@ -688,7 +585,7 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
     XmlNode clusterScalabilityTypeNode = resultNode.FirstChild("ClusterScalabilityType");
     if(!clusterScalabilityTypeNode.IsNull())
     {
-      m_clusterScalabilityType = ClusterScalabilityTypeMapper::GetClusterScalabilityTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(clusterScalabilityTypeNode.GetText()).c_str()).c_str());
+      m_clusterScalabilityType = ClusterScalabilityTypeMapper::GetClusterScalabilityTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(clusterScalabilityTypeNode.GetText()).c_str()));
       m_clusterScalabilityTypeHasBeenSet = true;
     }
     XmlNode certificateDetailsNode = resultNode.FirstChild("CertificateDetails");

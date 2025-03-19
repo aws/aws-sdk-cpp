@@ -33,7 +33,7 @@ namespace Model
   class SemtechGnssConfiguration
   {
   public:
-    AWS_IOTWIRELESS_API SemtechGnssConfiguration();
+    AWS_IOTWIRELESS_API SemtechGnssConfiguration() = default;
     AWS_IOTWIRELESS_API SemtechGnssConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API SemtechGnssConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,27 @@ namespace Model
     /**
      * <p>The status indicating whether the solver is enabled.</p>
      */
-    inline const PositionConfigurationStatus& GetStatus() const{ return m_status; }
+    inline PositionConfigurationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const PositionConfigurationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(PositionConfigurationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline SemtechGnssConfiguration& WithStatus(const PositionConfigurationStatus& value) { SetStatus(value); return *this;}
-    inline SemtechGnssConfiguration& WithStatus(PositionConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(PositionConfigurationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline SemtechGnssConfiguration& WithStatus(PositionConfigurationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether forward error correction is enabled.</p>
      */
-    inline const PositionConfigurationFec& GetFec() const{ return m_fec; }
+    inline PositionConfigurationFec GetFec() const { return m_fec; }
     inline bool FecHasBeenSet() const { return m_fecHasBeenSet; }
-    inline void SetFec(const PositionConfigurationFec& value) { m_fecHasBeenSet = true; m_fec = value; }
-    inline void SetFec(PositionConfigurationFec&& value) { m_fecHasBeenSet = true; m_fec = std::move(value); }
-    inline SemtechGnssConfiguration& WithFec(const PositionConfigurationFec& value) { SetFec(value); return *this;}
-    inline SemtechGnssConfiguration& WithFec(PositionConfigurationFec&& value) { SetFec(std::move(value)); return *this;}
+    inline void SetFec(PositionConfigurationFec value) { m_fecHasBeenSet = true; m_fec = value; }
+    inline SemtechGnssConfiguration& WithFec(PositionConfigurationFec value) { SetFec(value); return *this;}
     ///@}
   private:
 
-    PositionConfigurationStatus m_status;
+    PositionConfigurationStatus m_status{PositionConfigurationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    PositionConfigurationFec m_fec;
+    PositionConfigurationFec m_fec{PositionConfigurationFec::NOT_SET};
     bool m_fecHasBeenSet = false;
   };
 

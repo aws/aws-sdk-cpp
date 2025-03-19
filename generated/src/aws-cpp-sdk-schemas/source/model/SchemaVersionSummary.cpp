@@ -18,17 +18,7 @@ namespace Schemas
 namespace Model
 {
 
-SchemaVersionSummary::SchemaVersionSummary() : 
-    m_schemaArnHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 SchemaVersionSummary::SchemaVersionSummary(JsonView jsonValue)
-  : SchemaVersionSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ SchemaVersionSummary& SchemaVersionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SchemaArn"))
   {
     m_schemaArn = jsonValue.GetString("SchemaArn");
-
     m_schemaArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaName"))
   {
     m_schemaName = jsonValue.GetString("SchemaName");
-
     m_schemaNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaVersion"))
   {
     m_schemaVersion = jsonValue.GetString("SchemaVersion");
-
     m_schemaVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = TypeMapper::GetTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeTransformJobRequest::DescribeTransformJobRequest() : 
-    m_transformJobNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTransformJobRequest::SerializePayload() const
 {
   JsonValue payload;

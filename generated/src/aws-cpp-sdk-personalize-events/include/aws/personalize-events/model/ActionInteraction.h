@@ -34,7 +34,7 @@ namespace Model
   class ActionInteraction
   {
   public:
-    AWS_PERSONALIZEEVENTS_API ActionInteraction();
+    AWS_PERSONALIZEEVENTS_API ActionInteraction() = default;
     AWS_PERSONALIZEEVENTS_API ActionInteraction(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZEEVENTS_API ActionInteraction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZEEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The ID of the action the user interacted with. This corresponds to the
      * <code>ACTION_ID</code> field of the Action interaction schema.</p>
      */
-    inline const Aws::String& GetActionId() const{ return m_actionId; }
+    inline const Aws::String& GetActionId() const { return m_actionId; }
     inline bool ActionIdHasBeenSet() const { return m_actionIdHasBeenSet; }
-    inline void SetActionId(const Aws::String& value) { m_actionIdHasBeenSet = true; m_actionId = value; }
-    inline void SetActionId(Aws::String&& value) { m_actionIdHasBeenSet = true; m_actionId = std::move(value); }
-    inline void SetActionId(const char* value) { m_actionIdHasBeenSet = true; m_actionId.assign(value); }
-    inline ActionInteraction& WithActionId(const Aws::String& value) { SetActionId(value); return *this;}
-    inline ActionInteraction& WithActionId(Aws::String&& value) { SetActionId(std::move(value)); return *this;}
-    inline ActionInteraction& WithActionId(const char* value) { SetActionId(value); return *this;}
+    template<typename ActionIdT = Aws::String>
+    void SetActionId(ActionIdT&& value) { m_actionIdHasBeenSet = true; m_actionId = std::forward<ActionIdT>(value); }
+    template<typename ActionIdT = Aws::String>
+    ActionInteraction& WithActionId(ActionIdT&& value) { SetActionId(std::forward<ActionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>The ID of the user who interacted with the action. This corresponds to the
      * <code>USER_ID</code> field of the Action interaction schema.</p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline ActionInteraction& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline ActionInteraction& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline ActionInteraction& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    ActionInteraction& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +72,12 @@ namespace Model
      * <code>sessionId</code> when a user first visits your website or uses your
      * application. </p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline ActionInteraction& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline ActionInteraction& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline ActionInteraction& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    ActionInteraction& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,12 +85,12 @@ namespace Model
      * <p>The timestamp for when the action interaction event occurred. Timestamps must
      * be in Unix epoch time format, in seconds.</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline ActionInteraction& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline ActionInteraction& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    ActionInteraction& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,14 +101,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/personalize/latest/dg/action-interaction-event-type-data.html">Event
      * type data</a>. </p>
      */
-    inline const Aws::String& GetEventType() const{ return m_eventType; }
+    inline const Aws::String& GetEventType() const { return m_eventType; }
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-    inline void SetEventType(const Aws::String& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
-    inline void SetEventType(Aws::String&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
-    inline void SetEventType(const char* value) { m_eventTypeHasBeenSet = true; m_eventType.assign(value); }
-    inline ActionInteraction& WithEventType(const Aws::String& value) { SetEventType(value); return *this;}
-    inline ActionInteraction& WithEventType(Aws::String&& value) { SetEventType(std::move(value)); return *this;}
-    inline ActionInteraction& WithEventType(const char* value) { SetEventType(value); return *this;}
+    template<typename EventTypeT = Aws::String>
+    void SetEventType(EventTypeT&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::forward<EventTypeT>(value); }
+    template<typename EventTypeT = Aws::String>
+    ActionInteraction& WithEventType(EventTypeT&& value) { SetEventType(std::forward<EventTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,14 +117,12 @@ namespace Model
      * events. Any subsequent events after the first with the same event ID are not
      * used in model training.</p>
      */
-    inline const Aws::String& GetEventId() const{ return m_eventId; }
+    inline const Aws::String& GetEventId() const { return m_eventId; }
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
-    inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
-    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
-    inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
-    inline ActionInteraction& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
-    inline ActionInteraction& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
-    inline ActionInteraction& WithEventId(const char* value) { SetEventId(value); return *this;}
+    template<typename EventIdT = Aws::String>
+    void SetEventId(EventIdT&& value) { m_eventIdHasBeenSet = true; m_eventId = std::forward<EventIdT>(value); }
+    template<typename EventIdT = Aws::String>
+    ActionInteraction& WithEventId(EventIdT&& value) { SetEventId(std::forward<EventIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,14 +130,12 @@ namespace Model
      * <p>The ID of the list of recommendations that contains the action the user
      * interacted with.</p>
      */
-    inline const Aws::String& GetRecommendationId() const{ return m_recommendationId; }
+    inline const Aws::String& GetRecommendationId() const { return m_recommendationId; }
     inline bool RecommendationIdHasBeenSet() const { return m_recommendationIdHasBeenSet; }
-    inline void SetRecommendationId(const Aws::String& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = value; }
-    inline void SetRecommendationId(Aws::String&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::move(value); }
-    inline void SetRecommendationId(const char* value) { m_recommendationIdHasBeenSet = true; m_recommendationId.assign(value); }
-    inline ActionInteraction& WithRecommendationId(const Aws::String& value) { SetRecommendationId(value); return *this;}
-    inline ActionInteraction& WithRecommendationId(Aws::String&& value) { SetRecommendationId(std::move(value)); return *this;}
-    inline ActionInteraction& WithRecommendationId(const char* value) { SetRecommendationId(value); return *this;}
+    template<typename RecommendationIdT = Aws::String>
+    void SetRecommendationId(RecommendationIdT&& value) { m_recommendationIdHasBeenSet = true; m_recommendationId = std::forward<RecommendationIdT>(value); }
+    template<typename RecommendationIdT = Aws::String>
+    ActionInteraction& WithRecommendationId(RecommendationIdT&& value) { SetRecommendationId(std::forward<RecommendationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,15 +146,14 @@ namespace Model
      * Instead, record multiple events for each action and use the <code>Viewed</code>
      * event type. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetImpression() const{ return m_impression; }
+    inline const Aws::Vector<Aws::String>& GetImpression() const { return m_impression; }
     inline bool ImpressionHasBeenSet() const { return m_impressionHasBeenSet; }
-    inline void SetImpression(const Aws::Vector<Aws::String>& value) { m_impressionHasBeenSet = true; m_impression = value; }
-    inline void SetImpression(Aws::Vector<Aws::String>&& value) { m_impressionHasBeenSet = true; m_impression = std::move(value); }
-    inline ActionInteraction& WithImpression(const Aws::Vector<Aws::String>& value) { SetImpression(value); return *this;}
-    inline ActionInteraction& WithImpression(Aws::Vector<Aws::String>&& value) { SetImpression(std::move(value)); return *this;}
-    inline ActionInteraction& AddImpression(const Aws::String& value) { m_impressionHasBeenSet = true; m_impression.push_back(value); return *this; }
-    inline ActionInteraction& AddImpression(Aws::String&& value) { m_impressionHasBeenSet = true; m_impression.push_back(std::move(value)); return *this; }
-    inline ActionInteraction& AddImpression(const char* value) { m_impressionHasBeenSet = true; m_impression.push_back(value); return *this; }
+    template<typename ImpressionT = Aws::Vector<Aws::String>>
+    void SetImpression(ImpressionT&& value) { m_impressionHasBeenSet = true; m_impression = std::forward<ImpressionT>(value); }
+    template<typename ImpressionT = Aws::Vector<Aws::String>>
+    ActionInteraction& WithImpression(ImpressionT&& value) { SetImpression(std::forward<ImpressionT>(value)); return *this;}
+    template<typename ImpressionT = Aws::String>
+    ActionInteraction& AddImpression(ImpressionT&& value) { m_impressionHasBeenSet = true; m_impression.emplace_back(std::forward<ImpressionT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -183,14 +170,12 @@ namespace Model
      * <li> <p> sessionId </p> </li> <li> <p>eventType</p> </li> <li> <p>timestamp</p>
      * </li> <li> <p>recommendationId</p> </li> <li> <p>impression</p> </li> </ul>
      */
-    inline const Aws::String& GetProperties() const{ return m_properties; }
+    inline const Aws::String& GetProperties() const { return m_properties; }
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
-    inline void SetProperties(const Aws::String& value) { m_propertiesHasBeenSet = true; m_properties = value; }
-    inline void SetProperties(Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
-    inline void SetProperties(const char* value) { m_propertiesHasBeenSet = true; m_properties.assign(value); }
-    inline ActionInteraction& WithProperties(const Aws::String& value) { SetProperties(value); return *this;}
-    inline ActionInteraction& WithProperties(Aws::String&& value) { SetProperties(std::move(value)); return *this;}
-    inline ActionInteraction& WithProperties(const char* value) { SetProperties(value); return *this;}
+    template<typename PropertiesT = Aws::String>
+    void SetProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties = std::forward<PropertiesT>(value); }
+    template<typename PropertiesT = Aws::String>
+    ActionInteraction& WithProperties(PropertiesT&& value) { SetProperties(std::forward<PropertiesT>(value)); return *this;}
     ///@}
   private:
 
@@ -203,7 +188,7 @@ namespace Model
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
 
     Aws::String m_eventType;

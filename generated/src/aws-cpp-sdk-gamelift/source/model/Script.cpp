@@ -18,20 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-Script::Script() : 
-    m_scriptIdHasBeenSet(false),
-    m_scriptArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_sizeOnDisk(0),
-    m_sizeOnDiskHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_storageLocationHasBeenSet(false)
-{
-}
-
 Script::Script(JsonView jsonValue)
-  : Script()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ Script& Script::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ScriptId"))
   {
     m_scriptId = jsonValue.GetString("ScriptId");
-
     m_scriptIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScriptArn"))
   {
     m_scriptArn = jsonValue.GetString("ScriptArn");
-
     m_scriptArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SizeOnDisk"))
   {
     m_sizeOnDisk = jsonValue.GetInt64("SizeOnDisk");
-
     m_sizeOnDiskHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageLocation"))
   {
     m_storageLocation = jsonValue.GetObject("StorageLocation");
-
     m_storageLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

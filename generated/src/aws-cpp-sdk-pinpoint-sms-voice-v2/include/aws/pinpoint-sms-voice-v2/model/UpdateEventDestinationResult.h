@@ -28,7 +28,7 @@ namespace Model
   class UpdateEventDestinationResult
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API UpdateEventDestinationResult();
+    AWS_PINPOINTSMSVOICEV2_API UpdateEventDestinationResult() = default;
     AWS_PINPOINTSMSVOICEV2_API UpdateEventDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTSMSVOICEV2_API UpdateEventDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,26 +37,22 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the ConfigurationSet that was updated.</p>
      */
-    inline const Aws::String& GetConfigurationSetArn() const{ return m_configurationSetArn; }
-    inline void SetConfigurationSetArn(const Aws::String& value) { m_configurationSetArn = value; }
-    inline void SetConfigurationSetArn(Aws::String&& value) { m_configurationSetArn = std::move(value); }
-    inline void SetConfigurationSetArn(const char* value) { m_configurationSetArn.assign(value); }
-    inline UpdateEventDestinationResult& WithConfigurationSetArn(const Aws::String& value) { SetConfigurationSetArn(value); return *this;}
-    inline UpdateEventDestinationResult& WithConfigurationSetArn(Aws::String&& value) { SetConfigurationSetArn(std::move(value)); return *this;}
-    inline UpdateEventDestinationResult& WithConfigurationSetArn(const char* value) { SetConfigurationSetArn(value); return *this;}
+    inline const Aws::String& GetConfigurationSetArn() const { return m_configurationSetArn; }
+    template<typename ConfigurationSetArnT = Aws::String>
+    void SetConfigurationSetArn(ConfigurationSetArnT&& value) { m_configurationSetArnHasBeenSet = true; m_configurationSetArn = std::forward<ConfigurationSetArnT>(value); }
+    template<typename ConfigurationSetArnT = Aws::String>
+    UpdateEventDestinationResult& WithConfigurationSetArn(ConfigurationSetArnT&& value) { SetConfigurationSetArn(std::forward<ConfigurationSetArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the configuration set.</p>
      */
-    inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
-    inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetName = value; }
-    inline void SetConfigurationSetName(Aws::String&& value) { m_configurationSetName = std::move(value); }
-    inline void SetConfigurationSetName(const char* value) { m_configurationSetName.assign(value); }
-    inline UpdateEventDestinationResult& WithConfigurationSetName(const Aws::String& value) { SetConfigurationSetName(value); return *this;}
-    inline UpdateEventDestinationResult& WithConfigurationSetName(Aws::String&& value) { SetConfigurationSetName(std::move(value)); return *this;}
-    inline UpdateEventDestinationResult& WithConfigurationSetName(const char* value) { SetConfigurationSetName(value); return *this;}
+    inline const Aws::String& GetConfigurationSetName() const { return m_configurationSetName; }
+    template<typename ConfigurationSetNameT = Aws::String>
+    void SetConfigurationSetName(ConfigurationSetNameT&& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = std::forward<ConfigurationSetNameT>(value); }
+    template<typename ConfigurationSetNameT = Aws::String>
+    UpdateEventDestinationResult& WithConfigurationSetName(ConfigurationSetNameT&& value) { SetConfigurationSetName(std::forward<ConfigurationSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,32 +60,34 @@ namespace Model
      * <p>An EventDestination object containing the details of where events will be
      * logged. </p>
      */
-    inline const EventDestination& GetEventDestination() const{ return m_eventDestination; }
-    inline void SetEventDestination(const EventDestination& value) { m_eventDestination = value; }
-    inline void SetEventDestination(EventDestination&& value) { m_eventDestination = std::move(value); }
-    inline UpdateEventDestinationResult& WithEventDestination(const EventDestination& value) { SetEventDestination(value); return *this;}
-    inline UpdateEventDestinationResult& WithEventDestination(EventDestination&& value) { SetEventDestination(std::move(value)); return *this;}
+    inline const EventDestination& GetEventDestination() const { return m_eventDestination; }
+    template<typename EventDestinationT = EventDestination>
+    void SetEventDestination(EventDestinationT&& value) { m_eventDestinationHasBeenSet = true; m_eventDestination = std::forward<EventDestinationT>(value); }
+    template<typename EventDestinationT = EventDestination>
+    UpdateEventDestinationResult& WithEventDestination(EventDestinationT&& value) { SetEventDestination(std::forward<EventDestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateEventDestinationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateEventDestinationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateEventDestinationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateEventDestinationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_configurationSetArn;
+    bool m_configurationSetArnHasBeenSet = false;
 
     Aws::String m_configurationSetName;
+    bool m_configurationSetNameHasBeenSet = false;
 
     EventDestination m_eventDestination;
+    bool m_eventDestinationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

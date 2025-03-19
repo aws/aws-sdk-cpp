@@ -12,14 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateInferenceComponentRequest::UpdateInferenceComponentRequest() : 
-    m_inferenceComponentNameHasBeenSet(false),
-    m_specificationHasBeenSet(false),
-    m_runtimeConfigHasBeenSet(false),
-    m_deploymentConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateInferenceComponentRequest::SerializePayload() const
 {
   JsonValue payload;

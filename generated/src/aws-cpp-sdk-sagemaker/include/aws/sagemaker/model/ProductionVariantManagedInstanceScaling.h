@@ -33,7 +33,7 @@ namespace Model
   class ProductionVariantManagedInstanceScaling
   {
   public:
-    AWS_SAGEMAKER_API ProductionVariantManagedInstanceScaling();
+    AWS_SAGEMAKER_API ProductionVariantManagedInstanceScaling() = default;
     AWS_SAGEMAKER_API ProductionVariantManagedInstanceScaling(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ProductionVariantManagedInstanceScaling& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>Indicates whether managed instance scaling is enabled.</p>
      */
-    inline const ManagedInstanceScalingStatus& GetStatus() const{ return m_status; }
+    inline ManagedInstanceScalingStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ManagedInstanceScalingStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ManagedInstanceScalingStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ProductionVariantManagedInstanceScaling& WithStatus(const ManagedInstanceScalingStatus& value) { SetStatus(value); return *this;}
-    inline ProductionVariantManagedInstanceScaling& WithStatus(ManagedInstanceScalingStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ManagedInstanceScalingStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ProductionVariantManagedInstanceScaling& WithStatus(ManagedInstanceScalingStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -56,7 +54,7 @@ namespace Model
      * <p>The minimum number of instances that the endpoint must retain when it scales
      * down to accommodate a decrease in traffic.</p>
      */
-    inline int GetMinInstanceCount() const{ return m_minInstanceCount; }
+    inline int GetMinInstanceCount() const { return m_minInstanceCount; }
     inline bool MinInstanceCountHasBeenSet() const { return m_minInstanceCountHasBeenSet; }
     inline void SetMinInstanceCount(int value) { m_minInstanceCountHasBeenSet = true; m_minInstanceCount = value; }
     inline ProductionVariantManagedInstanceScaling& WithMinInstanceCount(int value) { SetMinInstanceCount(value); return *this;}
@@ -67,20 +65,20 @@ namespace Model
      * <p>The maximum number of instances that the endpoint can provision when it
      * scales up to accommodate an increase in traffic.</p>
      */
-    inline int GetMaxInstanceCount() const{ return m_maxInstanceCount; }
+    inline int GetMaxInstanceCount() const { return m_maxInstanceCount; }
     inline bool MaxInstanceCountHasBeenSet() const { return m_maxInstanceCountHasBeenSet; }
     inline void SetMaxInstanceCount(int value) { m_maxInstanceCountHasBeenSet = true; m_maxInstanceCount = value; }
     inline ProductionVariantManagedInstanceScaling& WithMaxInstanceCount(int value) { SetMaxInstanceCount(value); return *this;}
     ///@}
   private:
 
-    ManagedInstanceScalingStatus m_status;
+    ManagedInstanceScalingStatus m_status{ManagedInstanceScalingStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    int m_minInstanceCount;
+    int m_minInstanceCount{0};
     bool m_minInstanceCountHasBeenSet = false;
 
-    int m_maxInstanceCount;
+    int m_maxInstanceCount{0};
     bool m_maxInstanceCountHasBeenSet = false;
   };
 

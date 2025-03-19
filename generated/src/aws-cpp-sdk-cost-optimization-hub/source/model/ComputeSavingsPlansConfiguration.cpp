@@ -18,16 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-ComputeSavingsPlansConfiguration::ComputeSavingsPlansConfiguration() : 
-    m_accountScopeHasBeenSet(false),
-    m_termHasBeenSet(false),
-    m_paymentOptionHasBeenSet(false),
-    m_hourlyCommitmentHasBeenSet(false)
-{
-}
-
 ComputeSavingsPlansConfiguration::ComputeSavingsPlansConfiguration(JsonView jsonValue)
-  : ComputeSavingsPlansConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ComputeSavingsPlansConfiguration& ComputeSavingsPlansConfiguration::operator =(J
   if(jsonValue.ValueExists("accountScope"))
   {
     m_accountScope = jsonValue.GetString("accountScope");
-
     m_accountScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("term"))
   {
     m_term = jsonValue.GetString("term");
-
     m_termHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("paymentOption"))
   {
     m_paymentOption = jsonValue.GetString("paymentOption");
-
     m_paymentOptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hourlyCommitment"))
   {
     m_hourlyCommitment = jsonValue.GetString("hourlyCommitment");
-
     m_hourlyCommitmentHasBeenSet = true;
   }
-
   return *this;
 }
 

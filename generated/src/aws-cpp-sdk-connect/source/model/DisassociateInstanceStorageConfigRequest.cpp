@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DisassociateInstanceStorageConfigRequest::DisassociateInstanceStorageConfigRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_resourceType(InstanceStorageResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String DisassociateInstanceStorageConfigRequest::SerializePayload() const
 {
   return {};

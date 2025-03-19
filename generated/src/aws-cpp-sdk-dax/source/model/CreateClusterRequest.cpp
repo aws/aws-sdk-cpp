@@ -12,26 +12,6 @@ using namespace Aws::DAX::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateClusterRequest::CreateClusterRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_replicationFactor(0),
-    m_replicationFactorHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_subnetGroupNameHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_notificationTopicArnHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_parameterGroupNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_sSESpecificationHasBeenSet(false),
-    m_clusterEndpointEncryptionType(ClusterEndpointEncryptionType::NOT_SET),
-    m_clusterEndpointEncryptionTypeHasBeenSet(false)
-{
-}
-
 Aws::String CreateClusterRequest::SerializePayload() const
 {
   JsonValue payload;

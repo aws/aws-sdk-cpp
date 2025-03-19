@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FontSize::FontSize() : 
-    m_relative(RelativeFontSize::NOT_SET),
-    m_relativeHasBeenSet(false),
-    m_absoluteHasBeenSet(false)
-{
-}
-
 FontSize::FontSize(JsonView jsonValue)
-  : FontSize()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ FontSize& FontSize::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Relative"))
   {
     m_relative = RelativeFontSizeMapper::GetRelativeFontSizeForName(jsonValue.GetString("Relative"));
-
     m_relativeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Absolute"))
   {
     m_absolute = jsonValue.GetString("Absolute");
-
     m_absoluteHasBeenSet = true;
   }
-
   return *this;
 }
 

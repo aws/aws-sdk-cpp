@@ -18,15 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-MongoDbAtlasFieldMapping::MongoDbAtlasFieldMapping() : 
-    m_metadataFieldHasBeenSet(false),
-    m_textFieldHasBeenSet(false),
-    m_vectorFieldHasBeenSet(false)
-{
-}
-
 MongoDbAtlasFieldMapping::MongoDbAtlasFieldMapping(JsonView jsonValue)
-  : MongoDbAtlasFieldMapping()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ MongoDbAtlasFieldMapping& MongoDbAtlasFieldMapping::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("metadataField"))
   {
     m_metadataField = jsonValue.GetString("metadataField");
-
     m_metadataFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("textField"))
   {
     m_textField = jsonValue.GetString("textField");
-
     m_textFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vectorField"))
   {
     m_vectorField = jsonValue.GetString("vectorField");
-
     m_vectorFieldHasBeenSet = true;
   }
-
   return *this;
 }
 

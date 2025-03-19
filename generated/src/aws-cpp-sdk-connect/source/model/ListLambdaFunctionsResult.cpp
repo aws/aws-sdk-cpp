@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListLambdaFunctionsResult::ListLambdaFunctionsResult()
-{
-}
-
 ListLambdaFunctionsResult::ListLambdaFunctionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListLambdaFunctionsResult& ListLambdaFunctionsResult::operator =(const Aws::Amaz
     {
       m_lambdaFunctions.push_back(lambdaFunctionsJsonList[lambdaFunctionsIndex].AsString());
     }
+    m_lambdaFunctionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -31,7 +31,7 @@ namespace Model
   class BatchDescribeTypeConfigurationsResult
   {
   public:
-    AWS_CLOUDFORMATION_API BatchDescribeTypeConfigurationsResult();
+    AWS_CLOUDFORMATION_API BatchDescribeTypeConfigurationsResult() = default;
     AWS_CLOUDFORMATION_API BatchDescribeTypeConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFORMATION_API BatchDescribeTypeConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -41,13 +41,13 @@ namespace Model
      * <p>A list of information concerning any errors generated during the setting of
      * the specified configurations.</p>
      */
-    inline const Aws::Vector<BatchDescribeTypeConfigurationsError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<BatchDescribeTypeConfigurationsError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchDescribeTypeConfigurationsError>&& value) { m_errors = std::move(value); }
-    inline BatchDescribeTypeConfigurationsResult& WithErrors(const Aws::Vector<BatchDescribeTypeConfigurationsError>& value) { SetErrors(value); return *this;}
-    inline BatchDescribeTypeConfigurationsResult& WithErrors(Aws::Vector<BatchDescribeTypeConfigurationsError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchDescribeTypeConfigurationsResult& AddErrors(const BatchDescribeTypeConfigurationsError& value) { m_errors.push_back(value); return *this; }
-    inline BatchDescribeTypeConfigurationsResult& AddErrors(BatchDescribeTypeConfigurationsError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchDescribeTypeConfigurationsError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchDescribeTypeConfigurationsError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchDescribeTypeConfigurationsError>>
+    BatchDescribeTypeConfigurationsResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchDescribeTypeConfigurationsError>
+    BatchDescribeTypeConfigurationsResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,13 +55,13 @@ namespace Model
      * <p>A list of any of the specified extension configurations that CloudFormation
      * could not process for any reason.</p>
      */
-    inline const Aws::Vector<TypeConfigurationIdentifier>& GetUnprocessedTypeConfigurations() const{ return m_unprocessedTypeConfigurations; }
-    inline void SetUnprocessedTypeConfigurations(const Aws::Vector<TypeConfigurationIdentifier>& value) { m_unprocessedTypeConfigurations = value; }
-    inline void SetUnprocessedTypeConfigurations(Aws::Vector<TypeConfigurationIdentifier>&& value) { m_unprocessedTypeConfigurations = std::move(value); }
-    inline BatchDescribeTypeConfigurationsResult& WithUnprocessedTypeConfigurations(const Aws::Vector<TypeConfigurationIdentifier>& value) { SetUnprocessedTypeConfigurations(value); return *this;}
-    inline BatchDescribeTypeConfigurationsResult& WithUnprocessedTypeConfigurations(Aws::Vector<TypeConfigurationIdentifier>&& value) { SetUnprocessedTypeConfigurations(std::move(value)); return *this;}
-    inline BatchDescribeTypeConfigurationsResult& AddUnprocessedTypeConfigurations(const TypeConfigurationIdentifier& value) { m_unprocessedTypeConfigurations.push_back(value); return *this; }
-    inline BatchDescribeTypeConfigurationsResult& AddUnprocessedTypeConfigurations(TypeConfigurationIdentifier&& value) { m_unprocessedTypeConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TypeConfigurationIdentifier>& GetUnprocessedTypeConfigurations() const { return m_unprocessedTypeConfigurations; }
+    template<typename UnprocessedTypeConfigurationsT = Aws::Vector<TypeConfigurationIdentifier>>
+    void SetUnprocessedTypeConfigurations(UnprocessedTypeConfigurationsT&& value) { m_unprocessedTypeConfigurationsHasBeenSet = true; m_unprocessedTypeConfigurations = std::forward<UnprocessedTypeConfigurationsT>(value); }
+    template<typename UnprocessedTypeConfigurationsT = Aws::Vector<TypeConfigurationIdentifier>>
+    BatchDescribeTypeConfigurationsResult& WithUnprocessedTypeConfigurations(UnprocessedTypeConfigurationsT&& value) { SetUnprocessedTypeConfigurations(std::forward<UnprocessedTypeConfigurationsT>(value)); return *this;}
+    template<typename UnprocessedTypeConfigurationsT = TypeConfigurationIdentifier>
+    BatchDescribeTypeConfigurationsResult& AddUnprocessedTypeConfigurations(UnprocessedTypeConfigurationsT&& value) { m_unprocessedTypeConfigurationsHasBeenSet = true; m_unprocessedTypeConfigurations.emplace_back(std::forward<UnprocessedTypeConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -69,32 +69,36 @@ namespace Model
      * <p>A list of any of the specified extension configurations from the
      * CloudFormation registry.</p>
      */
-    inline const Aws::Vector<TypeConfigurationDetails>& GetTypeConfigurations() const{ return m_typeConfigurations; }
-    inline void SetTypeConfigurations(const Aws::Vector<TypeConfigurationDetails>& value) { m_typeConfigurations = value; }
-    inline void SetTypeConfigurations(Aws::Vector<TypeConfigurationDetails>&& value) { m_typeConfigurations = std::move(value); }
-    inline BatchDescribeTypeConfigurationsResult& WithTypeConfigurations(const Aws::Vector<TypeConfigurationDetails>& value) { SetTypeConfigurations(value); return *this;}
-    inline BatchDescribeTypeConfigurationsResult& WithTypeConfigurations(Aws::Vector<TypeConfigurationDetails>&& value) { SetTypeConfigurations(std::move(value)); return *this;}
-    inline BatchDescribeTypeConfigurationsResult& AddTypeConfigurations(const TypeConfigurationDetails& value) { m_typeConfigurations.push_back(value); return *this; }
-    inline BatchDescribeTypeConfigurationsResult& AddTypeConfigurations(TypeConfigurationDetails&& value) { m_typeConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TypeConfigurationDetails>& GetTypeConfigurations() const { return m_typeConfigurations; }
+    template<typename TypeConfigurationsT = Aws::Vector<TypeConfigurationDetails>>
+    void SetTypeConfigurations(TypeConfigurationsT&& value) { m_typeConfigurationsHasBeenSet = true; m_typeConfigurations = std::forward<TypeConfigurationsT>(value); }
+    template<typename TypeConfigurationsT = Aws::Vector<TypeConfigurationDetails>>
+    BatchDescribeTypeConfigurationsResult& WithTypeConfigurations(TypeConfigurationsT&& value) { SetTypeConfigurations(std::forward<TypeConfigurationsT>(value)); return *this;}
+    template<typename TypeConfigurationsT = TypeConfigurationDetails>
+    BatchDescribeTypeConfigurationsResult& AddTypeConfigurations(TypeConfigurationsT&& value) { m_typeConfigurationsHasBeenSet = true; m_typeConfigurations.emplace_back(std::forward<TypeConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline BatchDescribeTypeConfigurationsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline BatchDescribeTypeConfigurationsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    BatchDescribeTypeConfigurationsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchDescribeTypeConfigurationsError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::Vector<TypeConfigurationIdentifier> m_unprocessedTypeConfigurations;
+    bool m_unprocessedTypeConfigurationsHasBeenSet = false;
 
     Aws::Vector<TypeConfigurationDetails> m_typeConfigurations;
+    bool m_typeConfigurationsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

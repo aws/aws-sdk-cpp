@@ -18,16 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-Topic::Topic() : 
-    m_resourceHasBeenSet(false),
-    m_role(NotificationRole::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_subjectHasBeenSet(false)
-{
-}
-
 Topic::Topic(JsonView jsonValue)
-  : Topic()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Topic& Topic::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetObject("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("role"))
   {
     m_role = NotificationRoleMapper::GetNotificationRoleForName(jsonValue.GetString("role"));
-
     m_roleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subject"))
   {
     m_subject = jsonValue.GetString("subject");
-
     m_subjectHasBeenSet = true;
   }
-
   return *this;
 }
 

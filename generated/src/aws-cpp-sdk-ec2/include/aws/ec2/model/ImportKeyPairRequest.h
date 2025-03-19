@@ -24,7 +24,7 @@ namespace Model
   class ImportKeyPairRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ImportKeyPairRequest();
+    AWS_EC2_API ImportKeyPairRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>The tags to apply to the imported key pair.</p>
      */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline ImportKeyPairRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline ImportKeyPairRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline ImportKeyPairRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline ImportKeyPairRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    void SetTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::forward<TagSpecificationsT>(value); }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    ImportKeyPairRequest& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
+    template<typename TagSpecificationsT = TagSpecification>
+    ImportKeyPairRequest& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,7 +60,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline ImportKeyPairRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -70,39 +70,37 @@ namespace Model
     /**
      * <p>A unique name for the key pair.</p>
      */
-    inline const Aws::String& GetKeyName() const{ return m_keyName; }
+    inline const Aws::String& GetKeyName() const { return m_keyName; }
     inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
-    inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
-    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
-    inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
-    inline ImportKeyPairRequest& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
-    inline ImportKeyPairRequest& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
-    inline ImportKeyPairRequest& WithKeyName(const char* value) { SetKeyName(value); return *this;}
+    template<typename KeyNameT = Aws::String>
+    void SetKeyName(KeyNameT&& value) { m_keyNameHasBeenSet = true; m_keyName = std::forward<KeyNameT>(value); }
+    template<typename KeyNameT = Aws::String>
+    ImportKeyPairRequest& WithKeyName(KeyNameT&& value) { SetKeyName(std::forward<KeyNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The public key.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetPublicKeyMaterial() const{ return m_publicKeyMaterial; }
+    inline const Aws::Utils::ByteBuffer& GetPublicKeyMaterial() const { return m_publicKeyMaterial; }
     inline bool PublicKeyMaterialHasBeenSet() const { return m_publicKeyMaterialHasBeenSet; }
-    inline void SetPublicKeyMaterial(const Aws::Utils::ByteBuffer& value) { m_publicKeyMaterialHasBeenSet = true; m_publicKeyMaterial = value; }
-    inline void SetPublicKeyMaterial(Aws::Utils::ByteBuffer&& value) { m_publicKeyMaterialHasBeenSet = true; m_publicKeyMaterial = std::move(value); }
-    inline ImportKeyPairRequest& WithPublicKeyMaterial(const Aws::Utils::ByteBuffer& value) { SetPublicKeyMaterial(value); return *this;}
-    inline ImportKeyPairRequest& WithPublicKeyMaterial(Aws::Utils::ByteBuffer&& value) { SetPublicKeyMaterial(std::move(value)); return *this;}
+    template<typename PublicKeyMaterialT = Aws::Utils::ByteBuffer>
+    void SetPublicKeyMaterial(PublicKeyMaterialT&& value) { m_publicKeyMaterialHasBeenSet = true; m_publicKeyMaterial = std::forward<PublicKeyMaterialT>(value); }
+    template<typename PublicKeyMaterialT = Aws::Utils::ByteBuffer>
+    ImportKeyPairRequest& WithPublicKeyMaterial(PublicKeyMaterialT&& value) { SetPublicKeyMaterial(std::forward<PublicKeyMaterialT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_keyName;
     bool m_keyNameHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_publicKeyMaterial;
+    Aws::Utils::ByteBuffer m_publicKeyMaterial{};
     bool m_publicKeyMaterialHasBeenSet = false;
   };
 

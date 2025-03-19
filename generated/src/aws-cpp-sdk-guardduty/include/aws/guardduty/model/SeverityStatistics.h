@@ -32,7 +32,7 @@ namespace Model
   class SeverityStatistics
   {
   public:
-    AWS_GUARDDUTY_API SeverityStatistics();
+    AWS_GUARDDUTY_API SeverityStatistics() = default;
     AWS_GUARDDUTY_API SeverityStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API SeverityStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,19 +43,19 @@ namespace Model
      * <p>The timestamp at which a finding type for a specific severity was last
      * generated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastGeneratedAt() const{ return m_lastGeneratedAt; }
+    inline const Aws::Utils::DateTime& GetLastGeneratedAt() const { return m_lastGeneratedAt; }
     inline bool LastGeneratedAtHasBeenSet() const { return m_lastGeneratedAtHasBeenSet; }
-    inline void SetLastGeneratedAt(const Aws::Utils::DateTime& value) { m_lastGeneratedAtHasBeenSet = true; m_lastGeneratedAt = value; }
-    inline void SetLastGeneratedAt(Aws::Utils::DateTime&& value) { m_lastGeneratedAtHasBeenSet = true; m_lastGeneratedAt = std::move(value); }
-    inline SeverityStatistics& WithLastGeneratedAt(const Aws::Utils::DateTime& value) { SetLastGeneratedAt(value); return *this;}
-    inline SeverityStatistics& WithLastGeneratedAt(Aws::Utils::DateTime&& value) { SetLastGeneratedAt(std::move(value)); return *this;}
+    template<typename LastGeneratedAtT = Aws::Utils::DateTime>
+    void SetLastGeneratedAt(LastGeneratedAtT&& value) { m_lastGeneratedAtHasBeenSet = true; m_lastGeneratedAt = std::forward<LastGeneratedAtT>(value); }
+    template<typename LastGeneratedAtT = Aws::Utils::DateTime>
+    SeverityStatistics& WithLastGeneratedAt(LastGeneratedAtT&& value) { SetLastGeneratedAt(std::forward<LastGeneratedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The severity level associated with each finding type.</p>
      */
-    inline double GetSeverity() const{ return m_severity; }
+    inline double GetSeverity() const { return m_severity; }
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
     inline void SetSeverity(double value) { m_severityHasBeenSet = true; m_severity = value; }
     inline SeverityStatistics& WithSeverity(double value) { SetSeverity(value); return *this;}
@@ -65,20 +65,20 @@ namespace Model
     /**
      * <p>The total number of findings associated with this severity.</p>
      */
-    inline int GetTotalFindings() const{ return m_totalFindings; }
+    inline int GetTotalFindings() const { return m_totalFindings; }
     inline bool TotalFindingsHasBeenSet() const { return m_totalFindingsHasBeenSet; }
     inline void SetTotalFindings(int value) { m_totalFindingsHasBeenSet = true; m_totalFindings = value; }
     inline SeverityStatistics& WithTotalFindings(int value) { SetTotalFindings(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_lastGeneratedAt;
+    Aws::Utils::DateTime m_lastGeneratedAt{};
     bool m_lastGeneratedAtHasBeenSet = false;
 
-    double m_severity;
+    double m_severity{0.0};
     bool m_severityHasBeenSet = false;
 
-    int m_totalFindings;
+    int m_totalFindings{0};
     bool m_totalFindingsHasBeenSet = false;
   };
 

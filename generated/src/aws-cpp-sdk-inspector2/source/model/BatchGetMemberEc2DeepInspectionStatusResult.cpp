@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetMemberEc2DeepInspectionStatusResult::BatchGetMemberEc2DeepInspectionStatusResult()
-{
-}
-
 BatchGetMemberEc2DeepInspectionStatusResult::BatchGetMemberEc2DeepInspectionStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetMemberEc2DeepInspectionStatusResult& BatchGetMemberEc2DeepInspectionStat
     {
       m_accountIds.push_back(accountIdsJsonList[accountIdsIndex].AsObject());
     }
+    m_accountIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failedAccountIds"))
   {
     Aws::Utils::Array<JsonView> failedAccountIdsJsonList = jsonValue.GetArray("failedAccountIds");
@@ -45,14 +41,15 @@ BatchGetMemberEc2DeepInspectionStatusResult& BatchGetMemberEc2DeepInspectionStat
     {
       m_failedAccountIds.push_back(failedAccountIdsJsonList[failedAccountIdsIndex].AsObject());
     }
+    m_failedAccountIdsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

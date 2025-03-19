@@ -22,7 +22,7 @@ namespace Model
   class ResetConnectorMetadataCacheRequest : public AppflowRequest
   {
   public:
-    AWS_APPFLOW_API ResetConnectorMetadataCacheRequest();
+    AWS_APPFLOW_API ResetConnectorMetadataCacheRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other
      * connector, you must include this parameter in your request.</p>
      */
-    inline const Aws::String& GetConnectorProfileName() const{ return m_connectorProfileName; }
+    inline const Aws::String& GetConnectorProfileName() const { return m_connectorProfileName; }
     inline bool ConnectorProfileNameHasBeenSet() const { return m_connectorProfileNameHasBeenSet; }
-    inline void SetConnectorProfileName(const Aws::String& value) { m_connectorProfileNameHasBeenSet = true; m_connectorProfileName = value; }
-    inline void SetConnectorProfileName(Aws::String&& value) { m_connectorProfileNameHasBeenSet = true; m_connectorProfileName = std::move(value); }
-    inline void SetConnectorProfileName(const char* value) { m_connectorProfileNameHasBeenSet = true; m_connectorProfileName.assign(value); }
-    inline ResetConnectorMetadataCacheRequest& WithConnectorProfileName(const Aws::String& value) { SetConnectorProfileName(value); return *this;}
-    inline ResetConnectorMetadataCacheRequest& WithConnectorProfileName(Aws::String&& value) { SetConnectorProfileName(std::move(value)); return *this;}
-    inline ResetConnectorMetadataCacheRequest& WithConnectorProfileName(const char* value) { SetConnectorProfileName(value); return *this;}
+    template<typename ConnectorProfileNameT = Aws::String>
+    void SetConnectorProfileName(ConnectorProfileNameT&& value) { m_connectorProfileNameHasBeenSet = true; m_connectorProfileName = std::forward<ConnectorProfileNameT>(value); }
+    template<typename ConnectorProfileNameT = Aws::String>
+    ResetConnectorMetadataCacheRequest& WithConnectorProfileName(ConnectorProfileNameT&& value) { SetConnectorProfileName(std::forward<ConnectorProfileNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,10 @@ namespace Model
      * Metrics, Amazon S3, or Upsolver. If you're resetting the cache for any other
      * connector, you can omit this parameter from your request. </p>
      */
-    inline const ConnectorType& GetConnectorType() const{ return m_connectorType; }
+    inline ConnectorType GetConnectorType() const { return m_connectorType; }
     inline bool ConnectorTypeHasBeenSet() const { return m_connectorTypeHasBeenSet; }
-    inline void SetConnectorType(const ConnectorType& value) { m_connectorTypeHasBeenSet = true; m_connectorType = value; }
-    inline void SetConnectorType(ConnectorType&& value) { m_connectorTypeHasBeenSet = true; m_connectorType = std::move(value); }
-    inline ResetConnectorMetadataCacheRequest& WithConnectorType(const ConnectorType& value) { SetConnectorType(value); return *this;}
-    inline ResetConnectorMetadataCacheRequest& WithConnectorType(ConnectorType&& value) { SetConnectorType(std::move(value)); return *this;}
+    inline void SetConnectorType(ConnectorType value) { m_connectorTypeHasBeenSet = true; m_connectorType = value; }
+    inline ResetConnectorMetadataCacheRequest& WithConnectorType(ConnectorType value) { SetConnectorType(value); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * request, Amazon AppFlow only resets cached metadata about entity names, not
      * entity details.</p>
      */
-    inline const Aws::String& GetConnectorEntityName() const{ return m_connectorEntityName; }
+    inline const Aws::String& GetConnectorEntityName() const { return m_connectorEntityName; }
     inline bool ConnectorEntityNameHasBeenSet() const { return m_connectorEntityNameHasBeenSet; }
-    inline void SetConnectorEntityName(const Aws::String& value) { m_connectorEntityNameHasBeenSet = true; m_connectorEntityName = value; }
-    inline void SetConnectorEntityName(Aws::String&& value) { m_connectorEntityNameHasBeenSet = true; m_connectorEntityName = std::move(value); }
-    inline void SetConnectorEntityName(const char* value) { m_connectorEntityNameHasBeenSet = true; m_connectorEntityName.assign(value); }
-    inline ResetConnectorMetadataCacheRequest& WithConnectorEntityName(const Aws::String& value) { SetConnectorEntityName(value); return *this;}
-    inline ResetConnectorMetadataCacheRequest& WithConnectorEntityName(Aws::String&& value) { SetConnectorEntityName(std::move(value)); return *this;}
-    inline ResetConnectorMetadataCacheRequest& WithConnectorEntityName(const char* value) { SetConnectorEntityName(value); return *this;}
+    template<typename ConnectorEntityNameT = Aws::String>
+    void SetConnectorEntityName(ConnectorEntityNameT&& value) { m_connectorEntityNameHasBeenSet = true; m_connectorEntityName = std::forward<ConnectorEntityNameT>(value); }
+    template<typename ConnectorEntityNameT = Aws::String>
+    ResetConnectorMetadataCacheRequest& WithConnectorEntityName(ConnectorEntityNameT&& value) { SetConnectorEntityName(std::forward<ConnectorEntityNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,14 +91,12 @@ namespace Model
      * for the entitiesPath parameter. Amazon AppFlow will return a list of the child
      * entities for that parent.</p>
      */
-    inline const Aws::String& GetEntitiesPath() const{ return m_entitiesPath; }
+    inline const Aws::String& GetEntitiesPath() const { return m_entitiesPath; }
     inline bool EntitiesPathHasBeenSet() const { return m_entitiesPathHasBeenSet; }
-    inline void SetEntitiesPath(const Aws::String& value) { m_entitiesPathHasBeenSet = true; m_entitiesPath = value; }
-    inline void SetEntitiesPath(Aws::String&& value) { m_entitiesPathHasBeenSet = true; m_entitiesPath = std::move(value); }
-    inline void SetEntitiesPath(const char* value) { m_entitiesPathHasBeenSet = true; m_entitiesPath.assign(value); }
-    inline ResetConnectorMetadataCacheRequest& WithEntitiesPath(const Aws::String& value) { SetEntitiesPath(value); return *this;}
-    inline ResetConnectorMetadataCacheRequest& WithEntitiesPath(Aws::String&& value) { SetEntitiesPath(std::move(value)); return *this;}
-    inline ResetConnectorMetadataCacheRequest& WithEntitiesPath(const char* value) { SetEntitiesPath(value); return *this;}
+    template<typename EntitiesPathT = Aws::String>
+    void SetEntitiesPath(EntitiesPathT&& value) { m_entitiesPathHasBeenSet = true; m_entitiesPath = std::forward<EntitiesPathT>(value); }
+    template<typename EntitiesPathT = Aws::String>
+    ResetConnectorMetadataCacheRequest& WithEntitiesPath(EntitiesPathT&& value) { SetEntitiesPath(std::forward<EntitiesPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,21 +112,19 @@ namespace Model
      * version that you specified in a connector profile, use the
      * DescribeConnectorProfiles action.</p>
      */
-    inline const Aws::String& GetApiVersion() const{ return m_apiVersion; }
+    inline const Aws::String& GetApiVersion() const { return m_apiVersion; }
     inline bool ApiVersionHasBeenSet() const { return m_apiVersionHasBeenSet; }
-    inline void SetApiVersion(const Aws::String& value) { m_apiVersionHasBeenSet = true; m_apiVersion = value; }
-    inline void SetApiVersion(Aws::String&& value) { m_apiVersionHasBeenSet = true; m_apiVersion = std::move(value); }
-    inline void SetApiVersion(const char* value) { m_apiVersionHasBeenSet = true; m_apiVersion.assign(value); }
-    inline ResetConnectorMetadataCacheRequest& WithApiVersion(const Aws::String& value) { SetApiVersion(value); return *this;}
-    inline ResetConnectorMetadataCacheRequest& WithApiVersion(Aws::String&& value) { SetApiVersion(std::move(value)); return *this;}
-    inline ResetConnectorMetadataCacheRequest& WithApiVersion(const char* value) { SetApiVersion(value); return *this;}
+    template<typename ApiVersionT = Aws::String>
+    void SetApiVersion(ApiVersionT&& value) { m_apiVersionHasBeenSet = true; m_apiVersion = std::forward<ApiVersionT>(value); }
+    template<typename ApiVersionT = Aws::String>
+    ResetConnectorMetadataCacheRequest& WithApiVersion(ApiVersionT&& value) { SetApiVersion(std::forward<ApiVersionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_connectorProfileName;
     bool m_connectorProfileNameHasBeenSet = false;
 
-    ConnectorType m_connectorType;
+    ConnectorType m_connectorType{ConnectorType::NOT_SET};
     bool m_connectorTypeHasBeenSet = false;
 
     Aws::String m_connectorEntityName;

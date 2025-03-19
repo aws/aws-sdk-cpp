@@ -27,7 +27,7 @@ namespace Model
   class PutComponentPolicyResult
   {
   public:
-    AWS_IMAGEBUILDER_API PutComponentPolicyResult();
+    AWS_IMAGEBUILDER_API PutComponentPolicyResult() = default;
     AWS_IMAGEBUILDER_API PutComponentPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IMAGEBUILDER_API PutComponentPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>The request ID that uniquely identifies this request.</p>
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutComponentPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutComponentPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutComponentPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutComponentPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,19 +48,19 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the component that this policy was applied
      * to.</p>
      */
-    inline const Aws::String& GetComponentArn() const{ return m_componentArn; }
-    inline void SetComponentArn(const Aws::String& value) { m_componentArn = value; }
-    inline void SetComponentArn(Aws::String&& value) { m_componentArn = std::move(value); }
-    inline void SetComponentArn(const char* value) { m_componentArn.assign(value); }
-    inline PutComponentPolicyResult& WithComponentArn(const Aws::String& value) { SetComponentArn(value); return *this;}
-    inline PutComponentPolicyResult& WithComponentArn(Aws::String&& value) { SetComponentArn(std::move(value)); return *this;}
-    inline PutComponentPolicyResult& WithComponentArn(const char* value) { SetComponentArn(value); return *this;}
+    inline const Aws::String& GetComponentArn() const { return m_componentArn; }
+    template<typename ComponentArnT = Aws::String>
+    void SetComponentArn(ComponentArnT&& value) { m_componentArnHasBeenSet = true; m_componentArn = std::forward<ComponentArnT>(value); }
+    template<typename ComponentArnT = Aws::String>
+    PutComponentPolicyResult& WithComponentArn(ComponentArnT&& value) { SetComponentArn(std::forward<ComponentArnT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_componentArn;
+    bool m_componentArnHasBeenSet = false;
   };
 
 } // namespace Model

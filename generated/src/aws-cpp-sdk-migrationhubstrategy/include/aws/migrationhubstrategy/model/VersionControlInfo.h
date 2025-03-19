@@ -33,7 +33,7 @@ namespace Model
   class VersionControlInfo
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API VersionControlInfo();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API VersionControlInfo() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API VersionControlInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API VersionControlInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p>The time when the version control system was last configured.</p>
      */
-    inline const Aws::String& GetVersionControlConfigurationTimeStamp() const{ return m_versionControlConfigurationTimeStamp; }
+    inline const Aws::String& GetVersionControlConfigurationTimeStamp() const { return m_versionControlConfigurationTimeStamp; }
     inline bool VersionControlConfigurationTimeStampHasBeenSet() const { return m_versionControlConfigurationTimeStampHasBeenSet; }
-    inline void SetVersionControlConfigurationTimeStamp(const Aws::String& value) { m_versionControlConfigurationTimeStampHasBeenSet = true; m_versionControlConfigurationTimeStamp = value; }
-    inline void SetVersionControlConfigurationTimeStamp(Aws::String&& value) { m_versionControlConfigurationTimeStampHasBeenSet = true; m_versionControlConfigurationTimeStamp = std::move(value); }
-    inline void SetVersionControlConfigurationTimeStamp(const char* value) { m_versionControlConfigurationTimeStampHasBeenSet = true; m_versionControlConfigurationTimeStamp.assign(value); }
-    inline VersionControlInfo& WithVersionControlConfigurationTimeStamp(const Aws::String& value) { SetVersionControlConfigurationTimeStamp(value); return *this;}
-    inline VersionControlInfo& WithVersionControlConfigurationTimeStamp(Aws::String&& value) { SetVersionControlConfigurationTimeStamp(std::move(value)); return *this;}
-    inline VersionControlInfo& WithVersionControlConfigurationTimeStamp(const char* value) { SetVersionControlConfigurationTimeStamp(value); return *this;}
+    template<typename VersionControlConfigurationTimeStampT = Aws::String>
+    void SetVersionControlConfigurationTimeStamp(VersionControlConfigurationTimeStampT&& value) { m_versionControlConfigurationTimeStampHasBeenSet = true; m_versionControlConfigurationTimeStamp = std::forward<VersionControlConfigurationTimeStampT>(value); }
+    template<typename VersionControlConfigurationTimeStampT = Aws::String>
+    VersionControlInfo& WithVersionControlConfigurationTimeStamp(VersionControlConfigurationTimeStampT&& value) { SetVersionControlConfigurationTimeStamp(std::forward<VersionControlConfigurationTimeStampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of version control.</p>
      */
-    inline const VersionControlType& GetVersionControlType() const{ return m_versionControlType; }
+    inline VersionControlType GetVersionControlType() const { return m_versionControlType; }
     inline bool VersionControlTypeHasBeenSet() const { return m_versionControlTypeHasBeenSet; }
-    inline void SetVersionControlType(const VersionControlType& value) { m_versionControlTypeHasBeenSet = true; m_versionControlType = value; }
-    inline void SetVersionControlType(VersionControlType&& value) { m_versionControlTypeHasBeenSet = true; m_versionControlType = std::move(value); }
-    inline VersionControlInfo& WithVersionControlType(const VersionControlType& value) { SetVersionControlType(value); return *this;}
-    inline VersionControlInfo& WithVersionControlType(VersionControlType&& value) { SetVersionControlType(std::move(value)); return *this;}
+    inline void SetVersionControlType(VersionControlType value) { m_versionControlTypeHasBeenSet = true; m_versionControlType = value; }
+    inline VersionControlInfo& WithVersionControlType(VersionControlType value) { SetVersionControlType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_versionControlConfigurationTimeStamp;
     bool m_versionControlConfigurationTimeStampHasBeenSet = false;
 
-    VersionControlType m_versionControlType;
+    VersionControlType m_versionControlType{VersionControlType::NOT_SET};
     bool m_versionControlTypeHasBeenSet = false;
   };
 

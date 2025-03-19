@@ -35,7 +35,7 @@ namespace Model
   class EvaluatorModelConfig
   {
   public:
-    AWS_BEDROCK_API EvaluatorModelConfig();
+    AWS_BEDROCK_API EvaluatorModelConfig() = default;
     AWS_BEDROCK_API EvaluatorModelConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API EvaluatorModelConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,14 @@ namespace Model
      * evaluation job that use a model as judge. This model computes all evaluation
      * related metrics.</p>
      */
-    inline const Aws::Vector<BedrockEvaluatorModel>& GetBedrockEvaluatorModels() const{ return m_bedrockEvaluatorModels; }
+    inline const Aws::Vector<BedrockEvaluatorModel>& GetBedrockEvaluatorModels() const { return m_bedrockEvaluatorModels; }
     inline bool BedrockEvaluatorModelsHasBeenSet() const { return m_bedrockEvaluatorModelsHasBeenSet; }
-    inline void SetBedrockEvaluatorModels(const Aws::Vector<BedrockEvaluatorModel>& value) { m_bedrockEvaluatorModelsHasBeenSet = true; m_bedrockEvaluatorModels = value; }
-    inline void SetBedrockEvaluatorModels(Aws::Vector<BedrockEvaluatorModel>&& value) { m_bedrockEvaluatorModelsHasBeenSet = true; m_bedrockEvaluatorModels = std::move(value); }
-    inline EvaluatorModelConfig& WithBedrockEvaluatorModels(const Aws::Vector<BedrockEvaluatorModel>& value) { SetBedrockEvaluatorModels(value); return *this;}
-    inline EvaluatorModelConfig& WithBedrockEvaluatorModels(Aws::Vector<BedrockEvaluatorModel>&& value) { SetBedrockEvaluatorModels(std::move(value)); return *this;}
-    inline EvaluatorModelConfig& AddBedrockEvaluatorModels(const BedrockEvaluatorModel& value) { m_bedrockEvaluatorModelsHasBeenSet = true; m_bedrockEvaluatorModels.push_back(value); return *this; }
-    inline EvaluatorModelConfig& AddBedrockEvaluatorModels(BedrockEvaluatorModel&& value) { m_bedrockEvaluatorModelsHasBeenSet = true; m_bedrockEvaluatorModels.push_back(std::move(value)); return *this; }
+    template<typename BedrockEvaluatorModelsT = Aws::Vector<BedrockEvaluatorModel>>
+    void SetBedrockEvaluatorModels(BedrockEvaluatorModelsT&& value) { m_bedrockEvaluatorModelsHasBeenSet = true; m_bedrockEvaluatorModels = std::forward<BedrockEvaluatorModelsT>(value); }
+    template<typename BedrockEvaluatorModelsT = Aws::Vector<BedrockEvaluatorModel>>
+    EvaluatorModelConfig& WithBedrockEvaluatorModels(BedrockEvaluatorModelsT&& value) { SetBedrockEvaluatorModels(std::forward<BedrockEvaluatorModelsT>(value)); return *this;}
+    template<typename BedrockEvaluatorModelsT = BedrockEvaluatorModel>
+    EvaluatorModelConfig& AddBedrockEvaluatorModels(BedrockEvaluatorModelsT&& value) { m_bedrockEvaluatorModelsHasBeenSet = true; m_bedrockEvaluatorModels.emplace_back(std::forward<BedrockEvaluatorModelsT>(value)); return *this; }
     ///@}
   private:
 

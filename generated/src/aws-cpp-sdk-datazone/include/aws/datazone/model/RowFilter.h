@@ -32,7 +32,7 @@ namespace Model
   class RowFilter
   {
   public:
-    AWS_DATAZONE_API RowFilter();
+    AWS_DATAZONE_API RowFilter() = default;
     AWS_DATAZONE_API RowFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API RowFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,40 +42,40 @@ namespace Model
     /**
      * <p>The 'and' clause of the row filter.</p>
      */
-    inline const Aws::Vector<RowFilter>& GetAnd() const{ return m_and; }
+    inline const Aws::Vector<RowFilter>& GetAnd() const { return m_and; }
     inline bool AndHasBeenSet() const { return m_andHasBeenSet; }
-    inline void SetAnd(const Aws::Vector<RowFilter>& value) { m_andHasBeenSet = true; m_and = value; }
-    inline void SetAnd(Aws::Vector<RowFilter>&& value) { m_andHasBeenSet = true; m_and = std::move(value); }
-    inline RowFilter& WithAnd(const Aws::Vector<RowFilter>& value) { SetAnd(value); return *this;}
-    inline RowFilter& WithAnd(Aws::Vector<RowFilter>&& value) { SetAnd(std::move(value)); return *this;}
-    inline RowFilter& AddAnd(const RowFilter& value) { m_andHasBeenSet = true; m_and.push_back(value); return *this; }
-    inline RowFilter& AddAnd(RowFilter&& value) { m_andHasBeenSet = true; m_and.push_back(std::move(value)); return *this; }
+    template<typename AndT = Aws::Vector<RowFilter>>
+    void SetAnd(AndT&& value) { m_andHasBeenSet = true; m_and = std::forward<AndT>(value); }
+    template<typename AndT = Aws::Vector<RowFilter>>
+    RowFilter& WithAnd(AndT&& value) { SetAnd(std::forward<AndT>(value)); return *this;}
+    template<typename AndT = RowFilter>
+    RowFilter& AddAnd(AndT&& value) { m_andHasBeenSet = true; m_and.emplace_back(std::forward<AndT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The expression of the row filter.</p>
      */
-    inline const RowFilterExpression& GetExpression() const{ return m_expression; }
+    inline const RowFilterExpression& GetExpression() const { return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    inline void SetExpression(const RowFilterExpression& value) { m_expressionHasBeenSet = true; m_expression = value; }
-    inline void SetExpression(RowFilterExpression&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-    inline RowFilter& WithExpression(const RowFilterExpression& value) { SetExpression(value); return *this;}
-    inline RowFilter& WithExpression(RowFilterExpression&& value) { SetExpression(std::move(value)); return *this;}
+    template<typename ExpressionT = RowFilterExpression>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = RowFilterExpression>
+    RowFilter& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The 'or' clause of the row filter.</p>
      */
-    inline const Aws::Vector<RowFilter>& GetOr() const{ return m_or; }
+    inline const Aws::Vector<RowFilter>& GetOr() const { return m_or; }
     inline bool OrHasBeenSet() const { return m_orHasBeenSet; }
-    inline void SetOr(const Aws::Vector<RowFilter>& value) { m_orHasBeenSet = true; m_or = value; }
-    inline void SetOr(Aws::Vector<RowFilter>&& value) { m_orHasBeenSet = true; m_or = std::move(value); }
-    inline RowFilter& WithOr(const Aws::Vector<RowFilter>& value) { SetOr(value); return *this;}
-    inline RowFilter& WithOr(Aws::Vector<RowFilter>&& value) { SetOr(std::move(value)); return *this;}
-    inline RowFilter& AddOr(const RowFilter& value) { m_orHasBeenSet = true; m_or.push_back(value); return *this; }
-    inline RowFilter& AddOr(RowFilter&& value) { m_orHasBeenSet = true; m_or.push_back(std::move(value)); return *this; }
+    template<typename OrT = Aws::Vector<RowFilter>>
+    void SetOr(OrT&& value) { m_orHasBeenSet = true; m_or = std::forward<OrT>(value); }
+    template<typename OrT = Aws::Vector<RowFilter>>
+    RowFilter& WithOr(OrT&& value) { SetOr(std::forward<OrT>(value)); return *this;}
+    template<typename OrT = RowFilter>
+    RowFilter& AddOr(OrT&& value) { m_orHasBeenSet = true; m_or.emplace_back(std::forward<OrT>(value)); return *this; }
     ///@}
   private:
 

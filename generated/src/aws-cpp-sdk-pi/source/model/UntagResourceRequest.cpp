@@ -12,14 +12,6 @@ using namespace Aws::PI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UntagResourceRequest::UntagResourceRequest() : 
-    m_serviceType(ServiceType::NOT_SET),
-    m_serviceTypeHasBeenSet(false),
-    m_resourceARNHasBeenSet(false),
-    m_tagKeysHasBeenSet(false)
-{
-}
-
 Aws::String UntagResourceRequest::SerializePayload() const
 {
   JsonValue payload;

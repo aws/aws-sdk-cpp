@@ -18,14 +18,7 @@ namespace LexRuntimeV2
 namespace Model
 {
 
-TextResponseEvent::TextResponseEvent() : 
-    m_messagesHasBeenSet(false),
-    m_eventIdHasBeenSet(false)
-{
-}
-
 TextResponseEvent::TextResponseEvent(JsonView jsonValue)
-  : TextResponseEvent()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ TextResponseEvent& TextResponseEvent::operator =(JsonView jsonValue)
     }
     m_messagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventId"))
   {
     m_eventId = jsonValue.GetString("eventId");
-
     m_eventIdHasBeenSet = true;
   }
-
   return *this;
 }
 

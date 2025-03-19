@@ -16,44 +16,7 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetLineageEventResult::GetLineageEventResult() : 
-    m_processingStatus(LineageEventProcessingStatus::NOT_SET)
-{
-}
-
-GetLineageEventResult::GetLineageEventResult(GetLineageEventResult&& toMove) : 
-    m_createdAt(std::move(toMove.m_createdAt)),
-    m_createdBy(std::move(toMove.m_createdBy)),
-    m_domainId(std::move(toMove.m_domainId)),
-    m_event(std::move(toMove.m_event)),
-    m_eventTime(std::move(toMove.m_eventTime)),
-    m_id(std::move(toMove.m_id)),
-    m_processingStatus(toMove.m_processingStatus),
-    m_requestId(std::move(toMove.m_requestId))
-{
-}
-
-GetLineageEventResult& GetLineageEventResult::operator=(GetLineageEventResult&& toMove)
-{
-   if(this == &toMove)
-   {
-      return *this;
-   }
-
-   m_createdAt = std::move(toMove.m_createdAt);
-   m_createdBy = std::move(toMove.m_createdBy);
-   m_domainId = std::move(toMove.m_domainId);
-   m_event = std::move(toMove.m_event);
-   m_eventTime = std::move(toMove.m_eventTime);
-   m_id = std::move(toMove.m_id);
-   m_processingStatus = toMove.m_processingStatus;
-   m_requestId = std::move(toMove.m_requestId);
-
-   return *this;
-}
-
 GetLineageEventResult::GetLineageEventResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
-  : GetLineageEventResult()
 {
   *this = std::move(result);
 }
@@ -61,6 +24,7 @@ GetLineageEventResult::GetLineageEventResult(Aws::AmazonWebServiceResult<Respons
 GetLineageEventResult& GetLineageEventResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_event = result.TakeOwnershipOfPayload();
+  m_eventHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& createdAtIter = headers.find("created-at");
@@ -71,18 +35,21 @@ GetLineageEventResult& GetLineageEventResult::operator =(Aws::AmazonWebServiceRe
     {
       AWS_LOGSTREAM_WARN("DataZone::GetLineageEventResult", "Failed to parse createdAt header as an RFC822 timestamp: " << createdAtIter->second.c_str());
     }
+    m_createdAtHasBeenSet = true;
   }
 
   const auto& createdByIter = headers.find("created-by");
   if(createdByIter != headers.end())
   {
     m_createdBy = createdByIter->second;
+    m_createdByHasBeenSet = true;
   }
 
   const auto& domainIdIter = headers.find("domain-id");
   if(domainIdIter != headers.end())
   {
     m_domainId = domainIdIter->second;
+    m_domainIdHasBeenSet = true;
   }
 
   const auto& eventTimeIter = headers.find("event-time");
@@ -93,24 +60,28 @@ GetLineageEventResult& GetLineageEventResult::operator =(Aws::AmazonWebServiceRe
     {
       AWS_LOGSTREAM_WARN("DataZone::GetLineageEventResult", "Failed to parse eventTime header as an RFC822 timestamp: " << eventTimeIter->second.c_str());
     }
+    m_eventTimeHasBeenSet = true;
   }
 
   const auto& idIter = headers.find("id");
   if(idIter != headers.end())
   {
     m_id = idIter->second;
+    m_idHasBeenSet = true;
   }
 
   const auto& processingStatusIter = headers.find("processing-status");
   if(processingStatusIter != headers.end())
   {
     m_processingStatus = LineageEventProcessingStatusMapper::GetLineageEventProcessingStatusForName(processingStatusIter->second);
+    m_processingStatusHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
    return *this;

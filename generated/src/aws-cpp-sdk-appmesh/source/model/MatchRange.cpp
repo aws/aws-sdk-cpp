@@ -18,16 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-MatchRange::MatchRange() : 
-    m_end(0),
-    m_endHasBeenSet(false),
-    m_start(0),
-    m_startHasBeenSet(false)
-{
-}
-
 MatchRange::MatchRange(JsonView jsonValue)
-  : MatchRange()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ MatchRange& MatchRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("end"))
   {
     m_end = jsonValue.GetInt64("end");
-
     m_endHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("start"))
   {
     m_start = jsonValue.GetInt64("start");
-
     m_startHasBeenSet = true;
   }
-
   return *this;
 }
 

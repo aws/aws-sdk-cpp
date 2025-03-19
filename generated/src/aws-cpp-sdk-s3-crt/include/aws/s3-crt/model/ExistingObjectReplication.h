@@ -35,7 +35,7 @@ namespace Model
   class ExistingObjectReplication
   {
   public:
-    AWS_S3CRT_API ExistingObjectReplication();
+    AWS_S3CRT_API ExistingObjectReplication() = default;
     AWS_S3CRT_API ExistingObjectReplication(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API ExistingObjectReplication& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,16 +46,14 @@ namespace Model
     /**
      * <p>Specifies whether Amazon S3 replicates existing source bucket objects. </p>
      */
-    inline const ExistingObjectReplicationStatus& GetStatus() const{ return m_status; }
+    inline ExistingObjectReplicationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ExistingObjectReplicationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ExistingObjectReplicationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ExistingObjectReplication& WithStatus(const ExistingObjectReplicationStatus& value) { SetStatus(value); return *this;}
-    inline ExistingObjectReplication& WithStatus(ExistingObjectReplicationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ExistingObjectReplicationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ExistingObjectReplication& WithStatus(ExistingObjectReplicationStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    ExistingObjectReplicationStatus m_status;
+    ExistingObjectReplicationStatus m_status{ExistingObjectReplicationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

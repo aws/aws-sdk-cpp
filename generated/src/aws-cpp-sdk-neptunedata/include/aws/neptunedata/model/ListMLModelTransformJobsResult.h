@@ -28,7 +28,7 @@ namespace Model
   class ListMLModelTransformJobsResult
   {
   public:
-    AWS_NEPTUNEDATA_API ListMLModelTransformJobsResult();
+    AWS_NEPTUNEDATA_API ListMLModelTransformJobsResult() = default;
     AWS_NEPTUNEDATA_API ListMLModelTransformJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NEPTUNEDATA_API ListMLModelTransformJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,31 +37,30 @@ namespace Model
     /**
      * <p>A page from the list of model transform IDs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIds() const{ return m_ids; }
-    inline void SetIds(const Aws::Vector<Aws::String>& value) { m_ids = value; }
-    inline void SetIds(Aws::Vector<Aws::String>&& value) { m_ids = std::move(value); }
-    inline ListMLModelTransformJobsResult& WithIds(const Aws::Vector<Aws::String>& value) { SetIds(value); return *this;}
-    inline ListMLModelTransformJobsResult& WithIds(Aws::Vector<Aws::String>&& value) { SetIds(std::move(value)); return *this;}
-    inline ListMLModelTransformJobsResult& AddIds(const Aws::String& value) { m_ids.push_back(value); return *this; }
-    inline ListMLModelTransformJobsResult& AddIds(Aws::String&& value) { m_ids.push_back(std::move(value)); return *this; }
-    inline ListMLModelTransformJobsResult& AddIds(const char* value) { m_ids.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetIds() const { return m_ids; }
+    template<typename IdsT = Aws::Vector<Aws::String>>
+    void SetIds(IdsT&& value) { m_idsHasBeenSet = true; m_ids = std::forward<IdsT>(value); }
+    template<typename IdsT = Aws::Vector<Aws::String>>
+    ListMLModelTransformJobsResult& WithIds(IdsT&& value) { SetIds(std::forward<IdsT>(value)); return *this;}
+    template<typename IdsT = Aws::String>
+    ListMLModelTransformJobsResult& AddIds(IdsT&& value) { m_idsHasBeenSet = true; m_ids.emplace_back(std::forward<IdsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListMLModelTransformJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListMLModelTransformJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListMLModelTransformJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListMLModelTransformJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_ids;
+    bool m_idsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

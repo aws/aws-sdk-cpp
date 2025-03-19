@@ -18,18 +18,7 @@ namespace Athena
 namespace Model
 {
 
-NamedQuery::NamedQuery() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_namedQueryIdHasBeenSet(false),
-    m_workGroupHasBeenSet(false)
-{
-}
-
 NamedQuery::NamedQuery(JsonView jsonValue)
-  : NamedQuery()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ NamedQuery& NamedQuery::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Database"))
   {
     m_database = jsonValue.GetString("Database");
-
     m_databaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryString"))
   {
     m_queryString = jsonValue.GetString("QueryString");
-
     m_queryStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NamedQueryId"))
   {
     m_namedQueryId = jsonValue.GetString("NamedQueryId");
-
     m_namedQueryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkGroup"))
   {
     m_workGroup = jsonValue.GetString("WorkGroup");
-
     m_workGroupHasBeenSet = true;
   }
-
   return *this;
 }
 

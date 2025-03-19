@@ -18,14 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-RelatedDeployments::RelatedDeployments() : 
-    m_autoUpdateOutdatedInstancesRootDeploymentIdHasBeenSet(false),
-    m_autoUpdateOutdatedInstancesDeploymentIdsHasBeenSet(false)
-{
-}
-
 RelatedDeployments::RelatedDeployments(JsonView jsonValue)
-  : RelatedDeployments()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RelatedDeployments& RelatedDeployments::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("autoUpdateOutdatedInstancesRootDeploymentId"))
   {
     m_autoUpdateOutdatedInstancesRootDeploymentId = jsonValue.GetString("autoUpdateOutdatedInstancesRootDeploymentId");
-
     m_autoUpdateOutdatedInstancesRootDeploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoUpdateOutdatedInstancesDeploymentIds"))
   {
     Aws::Utils::Array<JsonView> autoUpdateOutdatedInstancesDeploymentIdsJsonList = jsonValue.GetArray("autoUpdateOutdatedInstancesDeploymentIds");
@@ -48,7 +39,6 @@ RelatedDeployments& RelatedDeployments::operator =(JsonView jsonValue)
     }
     m_autoUpdateOutdatedInstancesDeploymentIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

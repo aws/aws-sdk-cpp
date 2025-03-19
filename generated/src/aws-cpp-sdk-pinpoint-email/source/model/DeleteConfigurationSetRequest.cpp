@@ -12,11 +12,6 @@ using namespace Aws::PinpointEmail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteConfigurationSetRequest::DeleteConfigurationSetRequest() : 
-    m_configurationSetNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteConfigurationSetRequest::SerializePayload() const
 {
   return {};

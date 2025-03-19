@@ -30,7 +30,7 @@ namespace Model
   class DescribeDBProxyEndpointsResult
   {
   public:
-    AWS_RDS_API DescribeDBProxyEndpointsResult();
+    AWS_RDS_API DescribeDBProxyEndpointsResult() = default;
     AWS_RDS_API DescribeDBProxyEndpointsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RDS_API DescribeDBProxyEndpointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>The list of <code>ProxyEndpoint</code> objects returned by the API
      * operation.</p>
      */
-    inline const Aws::Vector<DBProxyEndpoint>& GetDBProxyEndpoints() const{ return m_dBProxyEndpoints; }
-    inline void SetDBProxyEndpoints(const Aws::Vector<DBProxyEndpoint>& value) { m_dBProxyEndpoints = value; }
-    inline void SetDBProxyEndpoints(Aws::Vector<DBProxyEndpoint>&& value) { m_dBProxyEndpoints = std::move(value); }
-    inline DescribeDBProxyEndpointsResult& WithDBProxyEndpoints(const Aws::Vector<DBProxyEndpoint>& value) { SetDBProxyEndpoints(value); return *this;}
-    inline DescribeDBProxyEndpointsResult& WithDBProxyEndpoints(Aws::Vector<DBProxyEndpoint>&& value) { SetDBProxyEndpoints(std::move(value)); return *this;}
-    inline DescribeDBProxyEndpointsResult& AddDBProxyEndpoints(const DBProxyEndpoint& value) { m_dBProxyEndpoints.push_back(value); return *this; }
-    inline DescribeDBProxyEndpointsResult& AddDBProxyEndpoints(DBProxyEndpoint&& value) { m_dBProxyEndpoints.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DBProxyEndpoint>& GetDBProxyEndpoints() const { return m_dBProxyEndpoints; }
+    template<typename DBProxyEndpointsT = Aws::Vector<DBProxyEndpoint>>
+    void SetDBProxyEndpoints(DBProxyEndpointsT&& value) { m_dBProxyEndpointsHasBeenSet = true; m_dBProxyEndpoints = std::forward<DBProxyEndpointsT>(value); }
+    template<typename DBProxyEndpointsT = Aws::Vector<DBProxyEndpoint>>
+    DescribeDBProxyEndpointsResult& WithDBProxyEndpoints(DBProxyEndpointsT&& value) { SetDBProxyEndpoints(std::forward<DBProxyEndpointsT>(value)); return *this;}
+    template<typename DBProxyEndpointsT = DBProxyEndpoint>
+    DescribeDBProxyEndpointsResult& AddDBProxyEndpoints(DBProxyEndpointsT&& value) { m_dBProxyEndpointsHasBeenSet = true; m_dBProxyEndpoints.emplace_back(std::forward<DBProxyEndpointsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,30 +55,31 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeDBProxyEndpointsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeDBProxyEndpointsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeDBProxyEndpointsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeDBProxyEndpointsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeDBProxyEndpointsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeDBProxyEndpointsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeDBProxyEndpointsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DBProxyEndpoint> m_dBProxyEndpoints;
+    bool m_dBProxyEndpointsHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

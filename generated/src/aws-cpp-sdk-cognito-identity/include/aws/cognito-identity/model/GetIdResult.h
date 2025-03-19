@@ -32,7 +32,7 @@ namespace Model
   class GetIdResult
   {
   public:
-    AWS_COGNITOIDENTITY_API GetIdResult();
+    AWS_COGNITOIDENTITY_API GetIdResult() = default;
     AWS_COGNITOIDENTITY_API GetIdResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOIDENTITY_API GetIdResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,30 +41,28 @@ namespace Model
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
-    inline const Aws::String& GetIdentityId() const{ return m_identityId; }
-    inline void SetIdentityId(const Aws::String& value) { m_identityId = value; }
-    inline void SetIdentityId(Aws::String&& value) { m_identityId = std::move(value); }
-    inline void SetIdentityId(const char* value) { m_identityId.assign(value); }
-    inline GetIdResult& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
-    inline GetIdResult& WithIdentityId(Aws::String&& value) { SetIdentityId(std::move(value)); return *this;}
-    inline GetIdResult& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
+    inline const Aws::String& GetIdentityId() const { return m_identityId; }
+    template<typename IdentityIdT = Aws::String>
+    void SetIdentityId(IdentityIdT&& value) { m_identityIdHasBeenSet = true; m_identityId = std::forward<IdentityIdT>(value); }
+    template<typename IdentityIdT = Aws::String>
+    GetIdResult& WithIdentityId(IdentityIdT&& value) { SetIdentityId(std::forward<IdentityIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetIdResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetIdResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetIdResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetIdResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_identityId;
+    bool m_identityIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

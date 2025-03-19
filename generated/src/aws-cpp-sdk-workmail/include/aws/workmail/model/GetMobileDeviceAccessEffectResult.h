@@ -30,7 +30,7 @@ namespace Model
   class GetMobileDeviceAccessEffectResult
   {
   public:
-    AWS_WORKMAIL_API GetMobileDeviceAccessEffectResult();
+    AWS_WORKMAIL_API GetMobileDeviceAccessEffectResult() = default;
     AWS_WORKMAIL_API GetMobileDeviceAccessEffectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKMAIL_API GetMobileDeviceAccessEffectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,11 +41,9 @@ namespace Model
      * after evaluating mobile device access rules in the WorkMail organization for the
      * simulated user parameters.</p>
      */
-    inline const MobileDeviceAccessRuleEffect& GetEffect() const{ return m_effect; }
-    inline void SetEffect(const MobileDeviceAccessRuleEffect& value) { m_effect = value; }
-    inline void SetEffect(MobileDeviceAccessRuleEffect&& value) { m_effect = std::move(value); }
-    inline GetMobileDeviceAccessEffectResult& WithEffect(const MobileDeviceAccessRuleEffect& value) { SetEffect(value); return *this;}
-    inline GetMobileDeviceAccessEffectResult& WithEffect(MobileDeviceAccessRuleEffect&& value) { SetEffect(std::move(value)); return *this;}
+    inline MobileDeviceAccessRuleEffect GetEffect() const { return m_effect; }
+    inline void SetEffect(MobileDeviceAccessRuleEffect value) { m_effectHasBeenSet = true; m_effect = value; }
+    inline GetMobileDeviceAccessEffectResult& WithEffect(MobileDeviceAccessRuleEffect value) { SetEffect(value); return *this;}
     ///@}
 
     ///@{
@@ -53,32 +51,33 @@ namespace Model
      * <p>A list of the rules which matched the simulated user input and produced the
      * effect.</p>
      */
-    inline const Aws::Vector<MobileDeviceAccessMatchedRule>& GetMatchedRules() const{ return m_matchedRules; }
-    inline void SetMatchedRules(const Aws::Vector<MobileDeviceAccessMatchedRule>& value) { m_matchedRules = value; }
-    inline void SetMatchedRules(Aws::Vector<MobileDeviceAccessMatchedRule>&& value) { m_matchedRules = std::move(value); }
-    inline GetMobileDeviceAccessEffectResult& WithMatchedRules(const Aws::Vector<MobileDeviceAccessMatchedRule>& value) { SetMatchedRules(value); return *this;}
-    inline GetMobileDeviceAccessEffectResult& WithMatchedRules(Aws::Vector<MobileDeviceAccessMatchedRule>&& value) { SetMatchedRules(std::move(value)); return *this;}
-    inline GetMobileDeviceAccessEffectResult& AddMatchedRules(const MobileDeviceAccessMatchedRule& value) { m_matchedRules.push_back(value); return *this; }
-    inline GetMobileDeviceAccessEffectResult& AddMatchedRules(MobileDeviceAccessMatchedRule&& value) { m_matchedRules.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MobileDeviceAccessMatchedRule>& GetMatchedRules() const { return m_matchedRules; }
+    template<typename MatchedRulesT = Aws::Vector<MobileDeviceAccessMatchedRule>>
+    void SetMatchedRules(MatchedRulesT&& value) { m_matchedRulesHasBeenSet = true; m_matchedRules = std::forward<MatchedRulesT>(value); }
+    template<typename MatchedRulesT = Aws::Vector<MobileDeviceAccessMatchedRule>>
+    GetMobileDeviceAccessEffectResult& WithMatchedRules(MatchedRulesT&& value) { SetMatchedRules(std::forward<MatchedRulesT>(value)); return *this;}
+    template<typename MatchedRulesT = MobileDeviceAccessMatchedRule>
+    GetMobileDeviceAccessEffectResult& AddMatchedRules(MatchedRulesT&& value) { m_matchedRulesHasBeenSet = true; m_matchedRules.emplace_back(std::forward<MatchedRulesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetMobileDeviceAccessEffectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetMobileDeviceAccessEffectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetMobileDeviceAccessEffectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetMobileDeviceAccessEffectResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    MobileDeviceAccessRuleEffect m_effect;
+    MobileDeviceAccessRuleEffect m_effect{MobileDeviceAccessRuleEffect::NOT_SET};
+    bool m_effectHasBeenSet = false;
 
     Aws::Vector<MobileDeviceAccessMatchedRule> m_matchedRules;
+    bool m_matchedRulesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

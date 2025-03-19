@@ -38,7 +38,7 @@ namespace Model
   class CreateDashManifestConfiguration
   {
   public:
-    AWS_MEDIAPACKAGEV2_API CreateDashManifestConfiguration();
+    AWS_MEDIAPACKAGEV2_API CreateDashManifestConfiguration() = default;
     AWS_MEDIAPACKAGEV2_API CreateDashManifestConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API CreateDashManifestConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,21 +49,19 @@ namespace Model
      * <p>A short string that's appended to the endpoint URL. The child manifest name
      * creates a unique path to this endpoint.</p>
      */
-    inline const Aws::String& GetManifestName() const{ return m_manifestName; }
+    inline const Aws::String& GetManifestName() const { return m_manifestName; }
     inline bool ManifestNameHasBeenSet() const { return m_manifestNameHasBeenSet; }
-    inline void SetManifestName(const Aws::String& value) { m_manifestNameHasBeenSet = true; m_manifestName = value; }
-    inline void SetManifestName(Aws::String&& value) { m_manifestNameHasBeenSet = true; m_manifestName = std::move(value); }
-    inline void SetManifestName(const char* value) { m_manifestNameHasBeenSet = true; m_manifestName.assign(value); }
-    inline CreateDashManifestConfiguration& WithManifestName(const Aws::String& value) { SetManifestName(value); return *this;}
-    inline CreateDashManifestConfiguration& WithManifestName(Aws::String&& value) { SetManifestName(std::move(value)); return *this;}
-    inline CreateDashManifestConfiguration& WithManifestName(const char* value) { SetManifestName(value); return *this;}
+    template<typename ManifestNameT = Aws::String>
+    void SetManifestName(ManifestNameT&& value) { m_manifestNameHasBeenSet = true; m_manifestName = std::forward<ManifestNameT>(value); }
+    template<typename ManifestNameT = Aws::String>
+    CreateDashManifestConfiguration& WithManifestName(ManifestNameT&& value) { SetManifestName(std::forward<ManifestNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The total duration (in seconds) of the manifest's content.</p>
      */
-    inline int GetManifestWindowSeconds() const{ return m_manifestWindowSeconds; }
+    inline int GetManifestWindowSeconds() const { return m_manifestWindowSeconds; }
     inline bool ManifestWindowSecondsHasBeenSet() const { return m_manifestWindowSecondsHasBeenSet; }
     inline void SetManifestWindowSeconds(int value) { m_manifestWindowSecondsHasBeenSet = true; m_manifestWindowSeconds = value; }
     inline CreateDashManifestConfiguration& WithManifestWindowSeconds(int value) { SetManifestWindowSeconds(value); return *this;}
@@ -71,12 +69,12 @@ namespace Model
 
     ///@{
     
-    inline const FilterConfiguration& GetFilterConfiguration() const{ return m_filterConfiguration; }
+    inline const FilterConfiguration& GetFilterConfiguration() const { return m_filterConfiguration; }
     inline bool FilterConfigurationHasBeenSet() const { return m_filterConfigurationHasBeenSet; }
-    inline void SetFilterConfiguration(const FilterConfiguration& value) { m_filterConfigurationHasBeenSet = true; m_filterConfiguration = value; }
-    inline void SetFilterConfiguration(FilterConfiguration&& value) { m_filterConfigurationHasBeenSet = true; m_filterConfiguration = std::move(value); }
-    inline CreateDashManifestConfiguration& WithFilterConfiguration(const FilterConfiguration& value) { SetFilterConfiguration(value); return *this;}
-    inline CreateDashManifestConfiguration& WithFilterConfiguration(FilterConfiguration&& value) { SetFilterConfiguration(std::move(value)); return *this;}
+    template<typename FilterConfigurationT = FilterConfiguration>
+    void SetFilterConfiguration(FilterConfigurationT&& value) { m_filterConfigurationHasBeenSet = true; m_filterConfiguration = std::forward<FilterConfigurationT>(value); }
+    template<typename FilterConfigurationT = FilterConfiguration>
+    CreateDashManifestConfiguration& WithFilterConfiguration(FilterConfigurationT&& value) { SetFilterConfiguration(std::forward<FilterConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,7 +82,7 @@ namespace Model
      * <p>Minimum amount of time (in seconds) that the player should wait before
      * requesting updates to the manifest.</p>
      */
-    inline int GetMinUpdatePeriodSeconds() const{ return m_minUpdatePeriodSeconds; }
+    inline int GetMinUpdatePeriodSeconds() const { return m_minUpdatePeriodSeconds; }
     inline bool MinUpdatePeriodSecondsHasBeenSet() const { return m_minUpdatePeriodSecondsHasBeenSet; }
     inline void SetMinUpdatePeriodSeconds(int value) { m_minUpdatePeriodSecondsHasBeenSet = true; m_minUpdatePeriodSeconds = value; }
     inline CreateDashManifestConfiguration& WithMinUpdatePeriodSeconds(int value) { SetMinUpdatePeriodSeconds(value); return *this;}
@@ -95,7 +93,7 @@ namespace Model
      * <p>Minimum amount of content (in seconds) that a player must keep available in
      * the buffer.</p>
      */
-    inline int GetMinBufferTimeSeconds() const{ return m_minBufferTimeSeconds; }
+    inline int GetMinBufferTimeSeconds() const { return m_minBufferTimeSeconds; }
     inline bool MinBufferTimeSecondsHasBeenSet() const { return m_minBufferTimeSecondsHasBeenSet; }
     inline void SetMinBufferTimeSeconds(int value) { m_minBufferTimeSecondsHasBeenSet = true; m_minBufferTimeSeconds = value; }
     inline CreateDashManifestConfiguration& WithMinBufferTimeSeconds(int value) { SetMinBufferTimeSeconds(value); return *this;}
@@ -106,7 +104,7 @@ namespace Model
      * <p>The amount of time (in seconds) that the player should be from the end of the
      * manifest.</p>
      */
-    inline int GetSuggestedPresentationDelaySeconds() const{ return m_suggestedPresentationDelaySeconds; }
+    inline int GetSuggestedPresentationDelaySeconds() const { return m_suggestedPresentationDelaySeconds; }
     inline bool SuggestedPresentationDelaySecondsHasBeenSet() const { return m_suggestedPresentationDelaySecondsHasBeenSet; }
     inline void SetSuggestedPresentationDelaySeconds(int value) { m_suggestedPresentationDelaySecondsHasBeenSet = true; m_suggestedPresentationDelaySeconds = value; }
     inline CreateDashManifestConfiguration& WithSuggestedPresentationDelaySeconds(int value) { SetSuggestedPresentationDelaySeconds(value); return *this;}
@@ -123,12 +121,10 @@ namespace Model
      * number of the segment. A full <code>SegmentTimeline</code> object is presented
      * in each <code>SegmentTemplate</code>.</p> </li> </ul>
      */
-    inline const DashSegmentTemplateFormat& GetSegmentTemplateFormat() const{ return m_segmentTemplateFormat; }
+    inline DashSegmentTemplateFormat GetSegmentTemplateFormat() const { return m_segmentTemplateFormat; }
     inline bool SegmentTemplateFormatHasBeenSet() const { return m_segmentTemplateFormatHasBeenSet; }
-    inline void SetSegmentTemplateFormat(const DashSegmentTemplateFormat& value) { m_segmentTemplateFormatHasBeenSet = true; m_segmentTemplateFormat = value; }
-    inline void SetSegmentTemplateFormat(DashSegmentTemplateFormat&& value) { m_segmentTemplateFormatHasBeenSet = true; m_segmentTemplateFormat = std::move(value); }
-    inline CreateDashManifestConfiguration& WithSegmentTemplateFormat(const DashSegmentTemplateFormat& value) { SetSegmentTemplateFormat(value); return *this;}
-    inline CreateDashManifestConfiguration& WithSegmentTemplateFormat(DashSegmentTemplateFormat&& value) { SetSegmentTemplateFormat(std::move(value)); return *this;}
+    inline void SetSegmentTemplateFormat(DashSegmentTemplateFormat value) { m_segmentTemplateFormatHasBeenSet = true; m_segmentTemplateFormat = value; }
+    inline CreateDashManifestConfiguration& WithSegmentTemplateFormat(DashSegmentTemplateFormat value) { SetSegmentTemplateFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -142,38 +138,35 @@ namespace Model
      * href="https://docs.aws.amazon.com/mediapackage/latest/userguide/multi-period.html">Multi-period
      * DASH in AWS Elemental MediaPackage</a>.</p>
      */
-    inline const Aws::Vector<DashPeriodTrigger>& GetPeriodTriggers() const{ return m_periodTriggers; }
+    inline const Aws::Vector<DashPeriodTrigger>& GetPeriodTriggers() const { return m_periodTriggers; }
     inline bool PeriodTriggersHasBeenSet() const { return m_periodTriggersHasBeenSet; }
-    inline void SetPeriodTriggers(const Aws::Vector<DashPeriodTrigger>& value) { m_periodTriggersHasBeenSet = true; m_periodTriggers = value; }
-    inline void SetPeriodTriggers(Aws::Vector<DashPeriodTrigger>&& value) { m_periodTriggersHasBeenSet = true; m_periodTriggers = std::move(value); }
-    inline CreateDashManifestConfiguration& WithPeriodTriggers(const Aws::Vector<DashPeriodTrigger>& value) { SetPeriodTriggers(value); return *this;}
-    inline CreateDashManifestConfiguration& WithPeriodTriggers(Aws::Vector<DashPeriodTrigger>&& value) { SetPeriodTriggers(std::move(value)); return *this;}
-    inline CreateDashManifestConfiguration& AddPeriodTriggers(const DashPeriodTrigger& value) { m_periodTriggersHasBeenSet = true; m_periodTriggers.push_back(value); return *this; }
-    inline CreateDashManifestConfiguration& AddPeriodTriggers(DashPeriodTrigger&& value) { m_periodTriggersHasBeenSet = true; m_periodTriggers.push_back(std::move(value)); return *this; }
+    template<typename PeriodTriggersT = Aws::Vector<DashPeriodTrigger>>
+    void SetPeriodTriggers(PeriodTriggersT&& value) { m_periodTriggersHasBeenSet = true; m_periodTriggers = std::forward<PeriodTriggersT>(value); }
+    template<typename PeriodTriggersT = Aws::Vector<DashPeriodTrigger>>
+    CreateDashManifestConfiguration& WithPeriodTriggers(PeriodTriggersT&& value) { SetPeriodTriggers(std::forward<PeriodTriggersT>(value)); return *this;}
+    inline CreateDashManifestConfiguration& AddPeriodTriggers(DashPeriodTrigger value) { m_periodTriggersHasBeenSet = true; m_periodTriggers.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The SCTE configuration.</p>
      */
-    inline const ScteDash& GetScteDash() const{ return m_scteDash; }
+    inline const ScteDash& GetScteDash() const { return m_scteDash; }
     inline bool ScteDashHasBeenSet() const { return m_scteDashHasBeenSet; }
-    inline void SetScteDash(const ScteDash& value) { m_scteDashHasBeenSet = true; m_scteDash = value; }
-    inline void SetScteDash(ScteDash&& value) { m_scteDashHasBeenSet = true; m_scteDash = std::move(value); }
-    inline CreateDashManifestConfiguration& WithScteDash(const ScteDash& value) { SetScteDash(value); return *this;}
-    inline CreateDashManifestConfiguration& WithScteDash(ScteDash&& value) { SetScteDash(std::move(value)); return *this;}
+    template<typename ScteDashT = ScteDash>
+    void SetScteDash(ScteDashT&& value) { m_scteDashHasBeenSet = true; m_scteDash = std::forward<ScteDashT>(value); }
+    template<typename ScteDashT = ScteDash>
+    CreateDashManifestConfiguration& WithScteDash(ScteDashT&& value) { SetScteDash(std::forward<ScteDashT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Determines how the DASH manifest signals the DRM content.</p>
      */
-    inline const DashDrmSignaling& GetDrmSignaling() const{ return m_drmSignaling; }
+    inline DashDrmSignaling GetDrmSignaling() const { return m_drmSignaling; }
     inline bool DrmSignalingHasBeenSet() const { return m_drmSignalingHasBeenSet; }
-    inline void SetDrmSignaling(const DashDrmSignaling& value) { m_drmSignalingHasBeenSet = true; m_drmSignaling = value; }
-    inline void SetDrmSignaling(DashDrmSignaling&& value) { m_drmSignalingHasBeenSet = true; m_drmSignaling = std::move(value); }
-    inline CreateDashManifestConfiguration& WithDrmSignaling(const DashDrmSignaling& value) { SetDrmSignaling(value); return *this;}
-    inline CreateDashManifestConfiguration& WithDrmSignaling(DashDrmSignaling&& value) { SetDrmSignaling(std::move(value)); return *this;}
+    inline void SetDrmSignaling(DashDrmSignaling value) { m_drmSignalingHasBeenSet = true; m_drmSignaling = value; }
+    inline CreateDashManifestConfiguration& WithDrmSignaling(DashDrmSignaling value) { SetDrmSignaling(value); return *this;}
     ///@}
 
     ///@{
@@ -181,34 +174,34 @@ namespace Model
      * <p>Determines the type of UTC timing included in the DASH Media Presentation
      * Description (MPD).</p>
      */
-    inline const DashUtcTiming& GetUtcTiming() const{ return m_utcTiming; }
+    inline const DashUtcTiming& GetUtcTiming() const { return m_utcTiming; }
     inline bool UtcTimingHasBeenSet() const { return m_utcTimingHasBeenSet; }
-    inline void SetUtcTiming(const DashUtcTiming& value) { m_utcTimingHasBeenSet = true; m_utcTiming = value; }
-    inline void SetUtcTiming(DashUtcTiming&& value) { m_utcTimingHasBeenSet = true; m_utcTiming = std::move(value); }
-    inline CreateDashManifestConfiguration& WithUtcTiming(const DashUtcTiming& value) { SetUtcTiming(value); return *this;}
-    inline CreateDashManifestConfiguration& WithUtcTiming(DashUtcTiming&& value) { SetUtcTiming(std::move(value)); return *this;}
+    template<typename UtcTimingT = DashUtcTiming>
+    void SetUtcTiming(UtcTimingT&& value) { m_utcTimingHasBeenSet = true; m_utcTiming = std::forward<UtcTimingT>(value); }
+    template<typename UtcTimingT = DashUtcTiming>
+    CreateDashManifestConfiguration& WithUtcTiming(UtcTimingT&& value) { SetUtcTiming(std::forward<UtcTimingT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_manifestName;
     bool m_manifestNameHasBeenSet = false;
 
-    int m_manifestWindowSeconds;
+    int m_manifestWindowSeconds{0};
     bool m_manifestWindowSecondsHasBeenSet = false;
 
     FilterConfiguration m_filterConfiguration;
     bool m_filterConfigurationHasBeenSet = false;
 
-    int m_minUpdatePeriodSeconds;
+    int m_minUpdatePeriodSeconds{0};
     bool m_minUpdatePeriodSecondsHasBeenSet = false;
 
-    int m_minBufferTimeSeconds;
+    int m_minBufferTimeSeconds{0};
     bool m_minBufferTimeSecondsHasBeenSet = false;
 
-    int m_suggestedPresentationDelaySeconds;
+    int m_suggestedPresentationDelaySeconds{0};
     bool m_suggestedPresentationDelaySecondsHasBeenSet = false;
 
-    DashSegmentTemplateFormat m_segmentTemplateFormat;
+    DashSegmentTemplateFormat m_segmentTemplateFormat{DashSegmentTemplateFormat::NOT_SET};
     bool m_segmentTemplateFormatHasBeenSet = false;
 
     Aws::Vector<DashPeriodTrigger> m_periodTriggers;
@@ -217,7 +210,7 @@ namespace Model
     ScteDash m_scteDash;
     bool m_scteDashHasBeenSet = false;
 
-    DashDrmSignaling m_drmSignaling;
+    DashDrmSignaling m_drmSignaling{DashDrmSignaling::NOT_SET};
     bool m_drmSignalingHasBeenSet = false;
 
     DashUtcTiming m_utcTiming;

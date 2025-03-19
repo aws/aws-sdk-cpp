@@ -27,7 +27,7 @@ namespace Model
   class DescribeAppVersionTemplateResult
   {
   public:
-    AWS_RESILIENCEHUB_API DescribeAppVersionTemplateResult();
+    AWS_RESILIENCEHUB_API DescribeAppVersionTemplateResult() = default;
     AWS_RESILIENCEHUB_API DescribeAppVersionTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESILIENCEHUB_API DescribeAppVersionTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,13 +42,11 @@ namespace Model
      * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i> guide.</p>
      */
-    inline const Aws::String& GetAppArn() const{ return m_appArn; }
-    inline void SetAppArn(const Aws::String& value) { m_appArn = value; }
-    inline void SetAppArn(Aws::String&& value) { m_appArn = std::move(value); }
-    inline void SetAppArn(const char* value) { m_appArn.assign(value); }
-    inline DescribeAppVersionTemplateResult& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
-    inline DescribeAppVersionTemplateResult& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
-    inline DescribeAppVersionTemplateResult& WithAppArn(const char* value) { SetAppArn(value); return *this;}
+    inline const Aws::String& GetAppArn() const { return m_appArn; }
+    template<typename AppArnT = Aws::String>
+    void SetAppArn(AppArnT&& value) { m_appArnHasBeenSet = true; m_appArn = std::forward<AppArnT>(value); }
+    template<typename AppArnT = Aws::String>
+    DescribeAppVersionTemplateResult& WithAppArn(AppArnT&& value) { SetAppArn(std::forward<AppArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,47 +138,45 @@ namespace Model
      * </p> <p>Value: <code>"[{"region":"&lt;REGION&gt;",
      * "accounts":[{"id":"&lt;ACCOUNT_ID&gt;"}]}]"</code> </p>  </li> </ul>
      */
-    inline const Aws::String& GetAppTemplateBody() const{ return m_appTemplateBody; }
-    inline void SetAppTemplateBody(const Aws::String& value) { m_appTemplateBody = value; }
-    inline void SetAppTemplateBody(Aws::String&& value) { m_appTemplateBody = std::move(value); }
-    inline void SetAppTemplateBody(const char* value) { m_appTemplateBody.assign(value); }
-    inline DescribeAppVersionTemplateResult& WithAppTemplateBody(const Aws::String& value) { SetAppTemplateBody(value); return *this;}
-    inline DescribeAppVersionTemplateResult& WithAppTemplateBody(Aws::String&& value) { SetAppTemplateBody(std::move(value)); return *this;}
-    inline DescribeAppVersionTemplateResult& WithAppTemplateBody(const char* value) { SetAppTemplateBody(value); return *this;}
+    inline const Aws::String& GetAppTemplateBody() const { return m_appTemplateBody; }
+    template<typename AppTemplateBodyT = Aws::String>
+    void SetAppTemplateBody(AppTemplateBodyT&& value) { m_appTemplateBodyHasBeenSet = true; m_appTemplateBody = std::forward<AppTemplateBodyT>(value); }
+    template<typename AppTemplateBodyT = Aws::String>
+    DescribeAppVersionTemplateResult& WithAppTemplateBody(AppTemplateBodyT&& value) { SetAppTemplateBody(std::forward<AppTemplateBodyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the application.</p>
      */
-    inline const Aws::String& GetAppVersion() const{ return m_appVersion; }
-    inline void SetAppVersion(const Aws::String& value) { m_appVersion = value; }
-    inline void SetAppVersion(Aws::String&& value) { m_appVersion = std::move(value); }
-    inline void SetAppVersion(const char* value) { m_appVersion.assign(value); }
-    inline DescribeAppVersionTemplateResult& WithAppVersion(const Aws::String& value) { SetAppVersion(value); return *this;}
-    inline DescribeAppVersionTemplateResult& WithAppVersion(Aws::String&& value) { SetAppVersion(std::move(value)); return *this;}
-    inline DescribeAppVersionTemplateResult& WithAppVersion(const char* value) { SetAppVersion(value); return *this;}
+    inline const Aws::String& GetAppVersion() const { return m_appVersion; }
+    template<typename AppVersionT = Aws::String>
+    void SetAppVersion(AppVersionT&& value) { m_appVersionHasBeenSet = true; m_appVersion = std::forward<AppVersionT>(value); }
+    template<typename AppVersionT = Aws::String>
+    DescribeAppVersionTemplateResult& WithAppVersion(AppVersionT&& value) { SetAppVersion(std::forward<AppVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAppVersionTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAppVersionTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAppVersionTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAppVersionTemplateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_appArn;
+    bool m_appArnHasBeenSet = false;
 
     Aws::String m_appTemplateBody;
+    bool m_appTemplateBodyHasBeenSet = false;
 
     Aws::String m_appVersion;
+    bool m_appVersionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

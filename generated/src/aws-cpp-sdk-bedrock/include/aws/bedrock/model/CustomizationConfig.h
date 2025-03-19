@@ -31,7 +31,7 @@ namespace Model
   class CustomizationConfig
   {
   public:
-    AWS_BEDROCK_API CustomizationConfig();
+    AWS_BEDROCK_API CustomizationConfig() = default;
     AWS_BEDROCK_API CustomizationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API CustomizationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The distillation configuration for the custom model.</p>
      */
-    inline const DistillationConfig& GetDistillationConfig() const{ return m_distillationConfig; }
+    inline const DistillationConfig& GetDistillationConfig() const { return m_distillationConfig; }
     inline bool DistillationConfigHasBeenSet() const { return m_distillationConfigHasBeenSet; }
-    inline void SetDistillationConfig(const DistillationConfig& value) { m_distillationConfigHasBeenSet = true; m_distillationConfig = value; }
-    inline void SetDistillationConfig(DistillationConfig&& value) { m_distillationConfigHasBeenSet = true; m_distillationConfig = std::move(value); }
-    inline CustomizationConfig& WithDistillationConfig(const DistillationConfig& value) { SetDistillationConfig(value); return *this;}
-    inline CustomizationConfig& WithDistillationConfig(DistillationConfig&& value) { SetDistillationConfig(std::move(value)); return *this;}
+    template<typename DistillationConfigT = DistillationConfig>
+    void SetDistillationConfig(DistillationConfigT&& value) { m_distillationConfigHasBeenSet = true; m_distillationConfig = std::forward<DistillationConfigT>(value); }
+    template<typename DistillationConfigT = DistillationConfig>
+    CustomizationConfig& WithDistillationConfig(DistillationConfigT&& value) { SetDistillationConfig(std::forward<DistillationConfigT>(value)); return *this;}
     ///@}
   private:
 

@@ -21,7 +21,7 @@ namespace Model
   class RebootDBShardGroupRequest : public RDSRequest
   {
   public:
-    AWS_RDS_API RebootDBShardGroupRequest();
+    AWS_RDS_API RebootDBShardGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The name of the DB shard group to reboot.</p>
      */
-    inline const Aws::String& GetDBShardGroupIdentifier() const{ return m_dBShardGroupIdentifier; }
+    inline const Aws::String& GetDBShardGroupIdentifier() const { return m_dBShardGroupIdentifier; }
     inline bool DBShardGroupIdentifierHasBeenSet() const { return m_dBShardGroupIdentifierHasBeenSet; }
-    inline void SetDBShardGroupIdentifier(const Aws::String& value) { m_dBShardGroupIdentifierHasBeenSet = true; m_dBShardGroupIdentifier = value; }
-    inline void SetDBShardGroupIdentifier(Aws::String&& value) { m_dBShardGroupIdentifierHasBeenSet = true; m_dBShardGroupIdentifier = std::move(value); }
-    inline void SetDBShardGroupIdentifier(const char* value) { m_dBShardGroupIdentifierHasBeenSet = true; m_dBShardGroupIdentifier.assign(value); }
-    inline RebootDBShardGroupRequest& WithDBShardGroupIdentifier(const Aws::String& value) { SetDBShardGroupIdentifier(value); return *this;}
-    inline RebootDBShardGroupRequest& WithDBShardGroupIdentifier(Aws::String&& value) { SetDBShardGroupIdentifier(std::move(value)); return *this;}
-    inline RebootDBShardGroupRequest& WithDBShardGroupIdentifier(const char* value) { SetDBShardGroupIdentifier(value); return *this;}
+    template<typename DBShardGroupIdentifierT = Aws::String>
+    void SetDBShardGroupIdentifier(DBShardGroupIdentifierT&& value) { m_dBShardGroupIdentifierHasBeenSet = true; m_dBShardGroupIdentifier = std::forward<DBShardGroupIdentifierT>(value); }
+    template<typename DBShardGroupIdentifierT = Aws::String>
+    RebootDBShardGroupRequest& WithDBShardGroupIdentifier(DBShardGroupIdentifierT&& value) { SetDBShardGroupIdentifier(std::forward<DBShardGroupIdentifierT>(value)); return *this;}
     ///@}
   private:
 

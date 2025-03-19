@@ -12,19 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateIngressPointRequest::CreateIngressPointRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_ingressPointConfigurationHasBeenSet(false),
-    m_ingressPointNameHasBeenSet(false),
-    m_ruleSetIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_trafficPolicyIdHasBeenSet(false),
-    m_type(IngressPointType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String CreateIngressPointRequest::SerializePayload() const
 {
   JsonValue payload;

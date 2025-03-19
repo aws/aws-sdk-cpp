@@ -36,7 +36,7 @@ namespace Model
   class CreateEventSourceMappingRequest : public LambdaRequest
   {
   public:
-    AWS_LAMBDA_API CreateEventSourceMappingRequest();
+    AWS_LAMBDA_API CreateEventSourceMappingRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -60,14 +60,12 @@ namespace Model
      * broker.</p> </li> <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB
      * change stream.</p> </li> </ul>
      */
-    inline const Aws::String& GetEventSourceArn() const{ return m_eventSourceArn; }
+    inline const Aws::String& GetEventSourceArn() const { return m_eventSourceArn; }
     inline bool EventSourceArnHasBeenSet() const { return m_eventSourceArnHasBeenSet; }
-    inline void SetEventSourceArn(const Aws::String& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = value; }
-    inline void SetEventSourceArn(Aws::String&& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = std::move(value); }
-    inline void SetEventSourceArn(const char* value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn.assign(value); }
-    inline CreateEventSourceMappingRequest& WithEventSourceArn(const Aws::String& value) { SetEventSourceArn(value); return *this;}
-    inline CreateEventSourceMappingRequest& WithEventSourceArn(Aws::String&& value) { SetEventSourceArn(std::move(value)); return *this;}
-    inline CreateEventSourceMappingRequest& WithEventSourceArn(const char* value) { SetEventSourceArn(value); return *this;}
+    template<typename EventSourceArnT = Aws::String>
+    void SetEventSourceArn(EventSourceArnT&& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = std::forward<EventSourceArnT>(value); }
+    template<typename EventSourceArnT = Aws::String>
+    CreateEventSourceMappingRequest& WithEventSourceArn(EventSourceArnT&& value) { SetEventSourceArn(std::forward<EventSourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +81,12 @@ namespace Model
      * constraint applies only to the full ARN. If you specify only the function name,
      * it's limited to 64 characters in length.</p>
      */
-    inline const Aws::String& GetFunctionName() const{ return m_functionName; }
+    inline const Aws::String& GetFunctionName() const { return m_functionName; }
     inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
-    inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
-    inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
-    inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
-    inline CreateEventSourceMappingRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
-    inline CreateEventSourceMappingRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
-    inline CreateEventSourceMappingRequest& WithFunctionName(const char* value) { SetFunctionName(value); return *this;}
+    template<typename FunctionNameT = Aws::String>
+    void SetFunctionName(FunctionNameT&& value) { m_functionNameHasBeenSet = true; m_functionName = std::forward<FunctionNameT>(value); }
+    template<typename FunctionNameT = Aws::String>
+    CreateEventSourceMappingRequest& WithFunctionName(FunctionNameT&& value) { SetFunctionName(std::forward<FunctionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,7 +94,7 @@ namespace Model
      * <p>When true, the event source mapping is active. When false, Lambda pauses
      * polling and invocation.</p> <p>Default: True</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline CreateEventSourceMappingRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -119,7 +115,7 @@ namespace Model
      * Default 100. Max 10,000.</p> </li> <li> <p> <b>DocumentDB</b> – Default 100. Max
      * 10,000.</p> </li> </ul>
      */
-    inline int GetBatchSize() const{ return m_batchSize; }
+    inline int GetBatchSize() const { return m_batchSize; }
     inline bool BatchSizeHasBeenSet() const { return m_batchSizeHasBeenSet; }
     inline void SetBatchSize(int value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
     inline CreateEventSourceMappingRequest& WithBatchSize(int value) { SetBatchSize(value); return *this;}
@@ -132,12 +128,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventfiltering.html">Lambda
      * event filtering</a>.</p>
      */
-    inline const FilterCriteria& GetFilterCriteria() const{ return m_filterCriteria; }
+    inline const FilterCriteria& GetFilterCriteria() const { return m_filterCriteria; }
     inline bool FilterCriteriaHasBeenSet() const { return m_filterCriteriaHasBeenSet; }
-    inline void SetFilterCriteria(const FilterCriteria& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = value; }
-    inline void SetFilterCriteria(FilterCriteria&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::move(value); }
-    inline CreateEventSourceMappingRequest& WithFilterCriteria(const FilterCriteria& value) { SetFilterCriteria(value); return *this;}
-    inline CreateEventSourceMappingRequest& WithFilterCriteria(FilterCriteria&& value) { SetFilterCriteria(std::move(value)); return *this;}
+    template<typename FilterCriteriaT = FilterCriteria>
+    void SetFilterCriteria(FilterCriteriaT&& value) { m_filterCriteriaHasBeenSet = true; m_filterCriteria = std::forward<FilterCriteriaT>(value); }
+    template<typename FilterCriteriaT = FilterCriteria>
+    CreateEventSourceMappingRequest& WithFilterCriteria(FilterCriteriaT&& value) { SetFilterCriteria(std::forward<FilterCriteriaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -156,7 +152,7 @@ namespace Model
      * sources, when you set <code>BatchSize</code> to a value greater than 10, you
      * must set <code>MaximumBatchingWindowInSeconds</code> to at least 1.</p>
      */
-    inline int GetMaximumBatchingWindowInSeconds() const{ return m_maximumBatchingWindowInSeconds; }
+    inline int GetMaximumBatchingWindowInSeconds() const { return m_maximumBatchingWindowInSeconds; }
     inline bool MaximumBatchingWindowInSecondsHasBeenSet() const { return m_maximumBatchingWindowInSecondsHasBeenSet; }
     inline void SetMaximumBatchingWindowInSeconds(int value) { m_maximumBatchingWindowInSecondsHasBeenSet = true; m_maximumBatchingWindowInSeconds = value; }
     inline CreateEventSourceMappingRequest& WithMaximumBatchingWindowInSeconds(int value) { SetMaximumBatchingWindowInSeconds(value); return *this;}
@@ -167,7 +163,7 @@ namespace Model
      * <p>(Kinesis and DynamoDB Streams only) The number of batches to process from
      * each shard concurrently.</p>
      */
-    inline int GetParallelizationFactor() const{ return m_parallelizationFactor; }
+    inline int GetParallelizationFactor() const { return m_parallelizationFactor; }
     inline bool ParallelizationFactorHasBeenSet() const { return m_parallelizationFactorHasBeenSet; }
     inline void SetParallelizationFactor(int value) { m_parallelizationFactorHasBeenSet = true; m_parallelizationFactor = value; }
     inline CreateEventSourceMappingRequest& WithParallelizationFactor(int value) { SetParallelizationFactor(value); return *this;}
@@ -180,12 +176,10 @@ namespace Model
      * supported only for Amazon Kinesis streams, Amazon DocumentDB, Amazon MSK, and
      * self-managed Apache Kafka.</p>
      */
-    inline const EventSourcePosition& GetStartingPosition() const{ return m_startingPosition; }
+    inline EventSourcePosition GetStartingPosition() const { return m_startingPosition; }
     inline bool StartingPositionHasBeenSet() const { return m_startingPositionHasBeenSet; }
-    inline void SetStartingPosition(const EventSourcePosition& value) { m_startingPositionHasBeenSet = true; m_startingPosition = value; }
-    inline void SetStartingPosition(EventSourcePosition&& value) { m_startingPositionHasBeenSet = true; m_startingPosition = std::move(value); }
-    inline CreateEventSourceMappingRequest& WithStartingPosition(const EventSourcePosition& value) { SetStartingPosition(value); return *this;}
-    inline CreateEventSourceMappingRequest& WithStartingPosition(EventSourcePosition&& value) { SetStartingPosition(std::move(value)); return *this;}
+    inline void SetStartingPosition(EventSourcePosition value) { m_startingPositionHasBeenSet = true; m_startingPosition = value; }
+    inline CreateEventSourceMappingRequest& WithStartingPosition(EventSourcePosition value) { SetStartingPosition(value); return *this;}
     ///@}
 
     ///@{
@@ -194,12 +188,12 @@ namespace Model
      * from which to start reading. <code>StartingPositionTimestamp</code> cannot be in
      * the future.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartingPositionTimestamp() const{ return m_startingPositionTimestamp; }
+    inline const Aws::Utils::DateTime& GetStartingPositionTimestamp() const { return m_startingPositionTimestamp; }
     inline bool StartingPositionTimestampHasBeenSet() const { return m_startingPositionTimestampHasBeenSet; }
-    inline void SetStartingPositionTimestamp(const Aws::Utils::DateTime& value) { m_startingPositionTimestampHasBeenSet = true; m_startingPositionTimestamp = value; }
-    inline void SetStartingPositionTimestamp(Aws::Utils::DateTime&& value) { m_startingPositionTimestampHasBeenSet = true; m_startingPositionTimestamp = std::move(value); }
-    inline CreateEventSourceMappingRequest& WithStartingPositionTimestamp(const Aws::Utils::DateTime& value) { SetStartingPositionTimestamp(value); return *this;}
-    inline CreateEventSourceMappingRequest& WithStartingPositionTimestamp(Aws::Utils::DateTime&& value) { SetStartingPositionTimestamp(std::move(value)); return *this;}
+    template<typename StartingPositionTimestampT = Aws::Utils::DateTime>
+    void SetStartingPositionTimestamp(StartingPositionTimestampT&& value) { m_startingPositionTimestampHasBeenSet = true; m_startingPositionTimestamp = std::forward<StartingPositionTimestampT>(value); }
+    template<typename StartingPositionTimestampT = Aws::Utils::DateTime>
+    CreateEventSourceMappingRequest& WithStartingPositionTimestamp(StartingPositionTimestampT&& value) { SetStartingPositionTimestamp(std::forward<StartingPositionTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -208,12 +202,12 @@ namespace Model
      * configuration object that specifies the destination of an event after Lambda
      * processes it.</p>
      */
-    inline const DestinationConfig& GetDestinationConfig() const{ return m_destinationConfig; }
+    inline const DestinationConfig& GetDestinationConfig() const { return m_destinationConfig; }
     inline bool DestinationConfigHasBeenSet() const { return m_destinationConfigHasBeenSet; }
-    inline void SetDestinationConfig(const DestinationConfig& value) { m_destinationConfigHasBeenSet = true; m_destinationConfig = value; }
-    inline void SetDestinationConfig(DestinationConfig&& value) { m_destinationConfigHasBeenSet = true; m_destinationConfig = std::move(value); }
-    inline CreateEventSourceMappingRequest& WithDestinationConfig(const DestinationConfig& value) { SetDestinationConfig(value); return *this;}
-    inline CreateEventSourceMappingRequest& WithDestinationConfig(DestinationConfig&& value) { SetDestinationConfig(std::move(value)); return *this;}
+    template<typename DestinationConfigT = DestinationConfig>
+    void SetDestinationConfig(DestinationConfigT&& value) { m_destinationConfigHasBeenSet = true; m_destinationConfig = std::forward<DestinationConfigT>(value); }
+    template<typename DestinationConfigT = DestinationConfig>
+    CreateEventSourceMappingRequest& WithDestinationConfig(DestinationConfigT&& value) { SetDestinationConfig(std::forward<DestinationConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -221,7 +215,7 @@ namespace Model
      * <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified
      * age. The default value is infinite (-1).</p>
      */
-    inline int GetMaximumRecordAgeInSeconds() const{ return m_maximumRecordAgeInSeconds; }
+    inline int GetMaximumRecordAgeInSeconds() const { return m_maximumRecordAgeInSeconds; }
     inline bool MaximumRecordAgeInSecondsHasBeenSet() const { return m_maximumRecordAgeInSecondsHasBeenSet; }
     inline void SetMaximumRecordAgeInSeconds(int value) { m_maximumRecordAgeInSecondsHasBeenSet = true; m_maximumRecordAgeInSeconds = value; }
     inline CreateEventSourceMappingRequest& WithMaximumRecordAgeInSeconds(int value) { SetMaximumRecordAgeInSeconds(value); return *this;}
@@ -232,7 +226,7 @@ namespace Model
      * <p>(Kinesis and DynamoDB Streams only) If the function returns an error, split
      * the batch in two and retry.</p>
      */
-    inline bool GetBisectBatchOnFunctionError() const{ return m_bisectBatchOnFunctionError; }
+    inline bool GetBisectBatchOnFunctionError() const { return m_bisectBatchOnFunctionError; }
     inline bool BisectBatchOnFunctionErrorHasBeenSet() const { return m_bisectBatchOnFunctionErrorHasBeenSet; }
     inline void SetBisectBatchOnFunctionError(bool value) { m_bisectBatchOnFunctionErrorHasBeenSet = true; m_bisectBatchOnFunctionError = value; }
     inline CreateEventSourceMappingRequest& WithBisectBatchOnFunctionError(bool value) { SetBisectBatchOnFunctionError(value); return *this;}
@@ -244,7 +238,7 @@ namespace Model
      * number of retries. The default value is infinite (-1). When set to infinite
      * (-1), failed records are retried until the record expires.</p>
      */
-    inline int GetMaximumRetryAttempts() const{ return m_maximumRetryAttempts; }
+    inline int GetMaximumRetryAttempts() const { return m_maximumRetryAttempts; }
     inline bool MaximumRetryAttemptsHasBeenSet() const { return m_maximumRetryAttemptsHasBeenSet; }
     inline void SetMaximumRetryAttempts(int value) { m_maximumRetryAttemptsHasBeenSet = true; m_maximumRetryAttempts = value; }
     inline CreateEventSourceMappingRequest& WithMaximumRetryAttempts(int value) { SetMaximumRetryAttempts(value); return *this;}
@@ -254,19 +248,16 @@ namespace Model
     /**
      * <p>A list of tags to apply to the event source mapping.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateEventSourceMappingRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateEventSourceMappingRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateEventSourceMappingRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateEventSourceMappingRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateEventSourceMappingRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateEventSourceMappingRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateEventSourceMappingRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateEventSourceMappingRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateEventSourceMappingRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateEventSourceMappingRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateEventSourceMappingRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -275,7 +266,7 @@ namespace Model
      * window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds
      * indicates no tumbling window.</p>
      */
-    inline int GetTumblingWindowInSeconds() const{ return m_tumblingWindowInSeconds; }
+    inline int GetTumblingWindowInSeconds() const { return m_tumblingWindowInSeconds; }
     inline bool TumblingWindowInSecondsHasBeenSet() const { return m_tumblingWindowInSecondsHasBeenSet; }
     inline void SetTumblingWindowInSeconds(int value) { m_tumblingWindowInSecondsHasBeenSet = true; m_tumblingWindowInSeconds = value; }
     inline CreateEventSourceMappingRequest& WithTumblingWindowInSeconds(int value) { SetTumblingWindowInSeconds(value); return *this;}
@@ -285,30 +276,28 @@ namespace Model
     /**
      * <p>The name of the Kafka topic.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTopics() const{ return m_topics; }
+    inline const Aws::Vector<Aws::String>& GetTopics() const { return m_topics; }
     inline bool TopicsHasBeenSet() const { return m_topicsHasBeenSet; }
-    inline void SetTopics(const Aws::Vector<Aws::String>& value) { m_topicsHasBeenSet = true; m_topics = value; }
-    inline void SetTopics(Aws::Vector<Aws::String>&& value) { m_topicsHasBeenSet = true; m_topics = std::move(value); }
-    inline CreateEventSourceMappingRequest& WithTopics(const Aws::Vector<Aws::String>& value) { SetTopics(value); return *this;}
-    inline CreateEventSourceMappingRequest& WithTopics(Aws::Vector<Aws::String>&& value) { SetTopics(std::move(value)); return *this;}
-    inline CreateEventSourceMappingRequest& AddTopics(const Aws::String& value) { m_topicsHasBeenSet = true; m_topics.push_back(value); return *this; }
-    inline CreateEventSourceMappingRequest& AddTopics(Aws::String&& value) { m_topicsHasBeenSet = true; m_topics.push_back(std::move(value)); return *this; }
-    inline CreateEventSourceMappingRequest& AddTopics(const char* value) { m_topicsHasBeenSet = true; m_topics.push_back(value); return *this; }
+    template<typename TopicsT = Aws::Vector<Aws::String>>
+    void SetTopics(TopicsT&& value) { m_topicsHasBeenSet = true; m_topics = std::forward<TopicsT>(value); }
+    template<typename TopicsT = Aws::Vector<Aws::String>>
+    CreateEventSourceMappingRequest& WithTopics(TopicsT&& value) { SetTopics(std::forward<TopicsT>(value)); return *this;}
+    template<typename TopicsT = Aws::String>
+    CreateEventSourceMappingRequest& AddTopics(TopicsT&& value) { m_topicsHasBeenSet = true; m_topics.emplace_back(std::forward<TopicsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> (MQ) The name of the Amazon MQ broker destination queue to consume. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetQueues() const{ return m_queues; }
+    inline const Aws::Vector<Aws::String>& GetQueues() const { return m_queues; }
     inline bool QueuesHasBeenSet() const { return m_queuesHasBeenSet; }
-    inline void SetQueues(const Aws::Vector<Aws::String>& value) { m_queuesHasBeenSet = true; m_queues = value; }
-    inline void SetQueues(Aws::Vector<Aws::String>&& value) { m_queuesHasBeenSet = true; m_queues = std::move(value); }
-    inline CreateEventSourceMappingRequest& WithQueues(const Aws::Vector<Aws::String>& value) { SetQueues(value); return *this;}
-    inline CreateEventSourceMappingRequest& WithQueues(Aws::Vector<Aws::String>&& value) { SetQueues(std::move(value)); return *this;}
-    inline CreateEventSourceMappingRequest& AddQueues(const Aws::String& value) { m_queuesHasBeenSet = true; m_queues.push_back(value); return *this; }
-    inline CreateEventSourceMappingRequest& AddQueues(Aws::String&& value) { m_queuesHasBeenSet = true; m_queues.push_back(std::move(value)); return *this; }
-    inline CreateEventSourceMappingRequest& AddQueues(const char* value) { m_queuesHasBeenSet = true; m_queues.push_back(value); return *this; }
+    template<typename QueuesT = Aws::Vector<Aws::String>>
+    void SetQueues(QueuesT&& value) { m_queuesHasBeenSet = true; m_queues = std::forward<QueuesT>(value); }
+    template<typename QueuesT = Aws::Vector<Aws::String>>
+    CreateEventSourceMappingRequest& WithQueues(QueuesT&& value) { SetQueues(std::forward<QueuesT>(value)); return *this;}
+    template<typename QueuesT = Aws::String>
+    CreateEventSourceMappingRequest& AddQueues(QueuesT&& value) { m_queuesHasBeenSet = true; m_queues.emplace_back(std::forward<QueuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -316,26 +305,26 @@ namespace Model
      * <p>An array of authentication protocols or VPC components required to secure
      * your event source.</p>
      */
-    inline const Aws::Vector<SourceAccessConfiguration>& GetSourceAccessConfigurations() const{ return m_sourceAccessConfigurations; }
+    inline const Aws::Vector<SourceAccessConfiguration>& GetSourceAccessConfigurations() const { return m_sourceAccessConfigurations; }
     inline bool SourceAccessConfigurationsHasBeenSet() const { return m_sourceAccessConfigurationsHasBeenSet; }
-    inline void SetSourceAccessConfigurations(const Aws::Vector<SourceAccessConfiguration>& value) { m_sourceAccessConfigurationsHasBeenSet = true; m_sourceAccessConfigurations = value; }
-    inline void SetSourceAccessConfigurations(Aws::Vector<SourceAccessConfiguration>&& value) { m_sourceAccessConfigurationsHasBeenSet = true; m_sourceAccessConfigurations = std::move(value); }
-    inline CreateEventSourceMappingRequest& WithSourceAccessConfigurations(const Aws::Vector<SourceAccessConfiguration>& value) { SetSourceAccessConfigurations(value); return *this;}
-    inline CreateEventSourceMappingRequest& WithSourceAccessConfigurations(Aws::Vector<SourceAccessConfiguration>&& value) { SetSourceAccessConfigurations(std::move(value)); return *this;}
-    inline CreateEventSourceMappingRequest& AddSourceAccessConfigurations(const SourceAccessConfiguration& value) { m_sourceAccessConfigurationsHasBeenSet = true; m_sourceAccessConfigurations.push_back(value); return *this; }
-    inline CreateEventSourceMappingRequest& AddSourceAccessConfigurations(SourceAccessConfiguration&& value) { m_sourceAccessConfigurationsHasBeenSet = true; m_sourceAccessConfigurations.push_back(std::move(value)); return *this; }
+    template<typename SourceAccessConfigurationsT = Aws::Vector<SourceAccessConfiguration>>
+    void SetSourceAccessConfigurations(SourceAccessConfigurationsT&& value) { m_sourceAccessConfigurationsHasBeenSet = true; m_sourceAccessConfigurations = std::forward<SourceAccessConfigurationsT>(value); }
+    template<typename SourceAccessConfigurationsT = Aws::Vector<SourceAccessConfiguration>>
+    CreateEventSourceMappingRequest& WithSourceAccessConfigurations(SourceAccessConfigurationsT&& value) { SetSourceAccessConfigurations(std::forward<SourceAccessConfigurationsT>(value)); return *this;}
+    template<typename SourceAccessConfigurationsT = SourceAccessConfiguration>
+    CreateEventSourceMappingRequest& AddSourceAccessConfigurations(SourceAccessConfigurationsT&& value) { m_sourceAccessConfigurationsHasBeenSet = true; m_sourceAccessConfigurations.emplace_back(std::forward<SourceAccessConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The self-managed Apache Kafka cluster to receive records from.</p>
      */
-    inline const SelfManagedEventSource& GetSelfManagedEventSource() const{ return m_selfManagedEventSource; }
+    inline const SelfManagedEventSource& GetSelfManagedEventSource() const { return m_selfManagedEventSource; }
     inline bool SelfManagedEventSourceHasBeenSet() const { return m_selfManagedEventSourceHasBeenSet; }
-    inline void SetSelfManagedEventSource(const SelfManagedEventSource& value) { m_selfManagedEventSourceHasBeenSet = true; m_selfManagedEventSource = value; }
-    inline void SetSelfManagedEventSource(SelfManagedEventSource&& value) { m_selfManagedEventSourceHasBeenSet = true; m_selfManagedEventSource = std::move(value); }
-    inline CreateEventSourceMappingRequest& WithSelfManagedEventSource(const SelfManagedEventSource& value) { SetSelfManagedEventSource(value); return *this;}
-    inline CreateEventSourceMappingRequest& WithSelfManagedEventSource(SelfManagedEventSource&& value) { SetSelfManagedEventSource(std::move(value)); return *this;}
+    template<typename SelfManagedEventSourceT = SelfManagedEventSource>
+    void SetSelfManagedEventSource(SelfManagedEventSourceT&& value) { m_selfManagedEventSourceHasBeenSet = true; m_selfManagedEventSource = std::forward<SelfManagedEventSourceT>(value); }
+    template<typename SelfManagedEventSourceT = SelfManagedEventSource>
+    CreateEventSourceMappingRequest& WithSelfManagedEventSource(SelfManagedEventSourceT&& value) { SetSelfManagedEventSource(std::forward<SelfManagedEventSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -343,14 +332,13 @@ namespace Model
      * <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type
      * enums applied to the event source mapping.</p>
      */
-    inline const Aws::Vector<FunctionResponseType>& GetFunctionResponseTypes() const{ return m_functionResponseTypes; }
+    inline const Aws::Vector<FunctionResponseType>& GetFunctionResponseTypes() const { return m_functionResponseTypes; }
     inline bool FunctionResponseTypesHasBeenSet() const { return m_functionResponseTypesHasBeenSet; }
-    inline void SetFunctionResponseTypes(const Aws::Vector<FunctionResponseType>& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes = value; }
-    inline void SetFunctionResponseTypes(Aws::Vector<FunctionResponseType>&& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes = std::move(value); }
-    inline CreateEventSourceMappingRequest& WithFunctionResponseTypes(const Aws::Vector<FunctionResponseType>& value) { SetFunctionResponseTypes(value); return *this;}
-    inline CreateEventSourceMappingRequest& WithFunctionResponseTypes(Aws::Vector<FunctionResponseType>&& value) { SetFunctionResponseTypes(std::move(value)); return *this;}
-    inline CreateEventSourceMappingRequest& AddFunctionResponseTypes(const FunctionResponseType& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes.push_back(value); return *this; }
-    inline CreateEventSourceMappingRequest& AddFunctionResponseTypes(FunctionResponseType&& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes.push_back(std::move(value)); return *this; }
+    template<typename FunctionResponseTypesT = Aws::Vector<FunctionResponseType>>
+    void SetFunctionResponseTypes(FunctionResponseTypesT&& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes = std::forward<FunctionResponseTypesT>(value); }
+    template<typename FunctionResponseTypesT = Aws::Vector<FunctionResponseType>>
+    CreateEventSourceMappingRequest& WithFunctionResponseTypes(FunctionResponseTypesT&& value) { SetFunctionResponseTypes(std::forward<FunctionResponseTypesT>(value)); return *this;}
+    inline CreateEventSourceMappingRequest& AddFunctionResponseTypes(FunctionResponseType value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -358,12 +346,12 @@ namespace Model
      * <p>Specific configuration settings for an Amazon Managed Streaming for Apache
      * Kafka (Amazon MSK) event source.</p>
      */
-    inline const AmazonManagedKafkaEventSourceConfig& GetAmazonManagedKafkaEventSourceConfig() const{ return m_amazonManagedKafkaEventSourceConfig; }
+    inline const AmazonManagedKafkaEventSourceConfig& GetAmazonManagedKafkaEventSourceConfig() const { return m_amazonManagedKafkaEventSourceConfig; }
     inline bool AmazonManagedKafkaEventSourceConfigHasBeenSet() const { return m_amazonManagedKafkaEventSourceConfigHasBeenSet; }
-    inline void SetAmazonManagedKafkaEventSourceConfig(const AmazonManagedKafkaEventSourceConfig& value) { m_amazonManagedKafkaEventSourceConfigHasBeenSet = true; m_amazonManagedKafkaEventSourceConfig = value; }
-    inline void SetAmazonManagedKafkaEventSourceConfig(AmazonManagedKafkaEventSourceConfig&& value) { m_amazonManagedKafkaEventSourceConfigHasBeenSet = true; m_amazonManagedKafkaEventSourceConfig = std::move(value); }
-    inline CreateEventSourceMappingRequest& WithAmazonManagedKafkaEventSourceConfig(const AmazonManagedKafkaEventSourceConfig& value) { SetAmazonManagedKafkaEventSourceConfig(value); return *this;}
-    inline CreateEventSourceMappingRequest& WithAmazonManagedKafkaEventSourceConfig(AmazonManagedKafkaEventSourceConfig&& value) { SetAmazonManagedKafkaEventSourceConfig(std::move(value)); return *this;}
+    template<typename AmazonManagedKafkaEventSourceConfigT = AmazonManagedKafkaEventSourceConfig>
+    void SetAmazonManagedKafkaEventSourceConfig(AmazonManagedKafkaEventSourceConfigT&& value) { m_amazonManagedKafkaEventSourceConfigHasBeenSet = true; m_amazonManagedKafkaEventSourceConfig = std::forward<AmazonManagedKafkaEventSourceConfigT>(value); }
+    template<typename AmazonManagedKafkaEventSourceConfigT = AmazonManagedKafkaEventSourceConfig>
+    CreateEventSourceMappingRequest& WithAmazonManagedKafkaEventSourceConfig(AmazonManagedKafkaEventSourceConfigT&& value) { SetAmazonManagedKafkaEventSourceConfig(std::forward<AmazonManagedKafkaEventSourceConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -371,12 +359,12 @@ namespace Model
      * <p>Specific configuration settings for a self-managed Apache Kafka event
      * source.</p>
      */
-    inline const SelfManagedKafkaEventSourceConfig& GetSelfManagedKafkaEventSourceConfig() const{ return m_selfManagedKafkaEventSourceConfig; }
+    inline const SelfManagedKafkaEventSourceConfig& GetSelfManagedKafkaEventSourceConfig() const { return m_selfManagedKafkaEventSourceConfig; }
     inline bool SelfManagedKafkaEventSourceConfigHasBeenSet() const { return m_selfManagedKafkaEventSourceConfigHasBeenSet; }
-    inline void SetSelfManagedKafkaEventSourceConfig(const SelfManagedKafkaEventSourceConfig& value) { m_selfManagedKafkaEventSourceConfigHasBeenSet = true; m_selfManagedKafkaEventSourceConfig = value; }
-    inline void SetSelfManagedKafkaEventSourceConfig(SelfManagedKafkaEventSourceConfig&& value) { m_selfManagedKafkaEventSourceConfigHasBeenSet = true; m_selfManagedKafkaEventSourceConfig = std::move(value); }
-    inline CreateEventSourceMappingRequest& WithSelfManagedKafkaEventSourceConfig(const SelfManagedKafkaEventSourceConfig& value) { SetSelfManagedKafkaEventSourceConfig(value); return *this;}
-    inline CreateEventSourceMappingRequest& WithSelfManagedKafkaEventSourceConfig(SelfManagedKafkaEventSourceConfig&& value) { SetSelfManagedKafkaEventSourceConfig(std::move(value)); return *this;}
+    template<typename SelfManagedKafkaEventSourceConfigT = SelfManagedKafkaEventSourceConfig>
+    void SetSelfManagedKafkaEventSourceConfig(SelfManagedKafkaEventSourceConfigT&& value) { m_selfManagedKafkaEventSourceConfigHasBeenSet = true; m_selfManagedKafkaEventSourceConfig = std::forward<SelfManagedKafkaEventSourceConfigT>(value); }
+    template<typename SelfManagedKafkaEventSourceConfigT = SelfManagedKafkaEventSourceConfig>
+    CreateEventSourceMappingRequest& WithSelfManagedKafkaEventSourceConfig(SelfManagedKafkaEventSourceConfigT&& value) { SetSelfManagedKafkaEventSourceConfig(std::forward<SelfManagedKafkaEventSourceConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -386,24 +374,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html#events-sqs-max-concurrency">Configuring
      * maximum concurrency for Amazon SQS event sources</a>.</p>
      */
-    inline const ScalingConfig& GetScalingConfig() const{ return m_scalingConfig; }
+    inline const ScalingConfig& GetScalingConfig() const { return m_scalingConfig; }
     inline bool ScalingConfigHasBeenSet() const { return m_scalingConfigHasBeenSet; }
-    inline void SetScalingConfig(const ScalingConfig& value) { m_scalingConfigHasBeenSet = true; m_scalingConfig = value; }
-    inline void SetScalingConfig(ScalingConfig&& value) { m_scalingConfigHasBeenSet = true; m_scalingConfig = std::move(value); }
-    inline CreateEventSourceMappingRequest& WithScalingConfig(const ScalingConfig& value) { SetScalingConfig(value); return *this;}
-    inline CreateEventSourceMappingRequest& WithScalingConfig(ScalingConfig&& value) { SetScalingConfig(std::move(value)); return *this;}
+    template<typename ScalingConfigT = ScalingConfig>
+    void SetScalingConfig(ScalingConfigT&& value) { m_scalingConfigHasBeenSet = true; m_scalingConfig = std::forward<ScalingConfigT>(value); }
+    template<typename ScalingConfigT = ScalingConfig>
+    CreateEventSourceMappingRequest& WithScalingConfig(ScalingConfigT&& value) { SetScalingConfig(std::forward<ScalingConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specific configuration settings for a DocumentDB event source.</p>
      */
-    inline const DocumentDBEventSourceConfig& GetDocumentDBEventSourceConfig() const{ return m_documentDBEventSourceConfig; }
+    inline const DocumentDBEventSourceConfig& GetDocumentDBEventSourceConfig() const { return m_documentDBEventSourceConfig; }
     inline bool DocumentDBEventSourceConfigHasBeenSet() const { return m_documentDBEventSourceConfigHasBeenSet; }
-    inline void SetDocumentDBEventSourceConfig(const DocumentDBEventSourceConfig& value) { m_documentDBEventSourceConfigHasBeenSet = true; m_documentDBEventSourceConfig = value; }
-    inline void SetDocumentDBEventSourceConfig(DocumentDBEventSourceConfig&& value) { m_documentDBEventSourceConfigHasBeenSet = true; m_documentDBEventSourceConfig = std::move(value); }
-    inline CreateEventSourceMappingRequest& WithDocumentDBEventSourceConfig(const DocumentDBEventSourceConfig& value) { SetDocumentDBEventSourceConfig(value); return *this;}
-    inline CreateEventSourceMappingRequest& WithDocumentDBEventSourceConfig(DocumentDBEventSourceConfig&& value) { SetDocumentDBEventSourceConfig(std::move(value)); return *this;}
+    template<typename DocumentDBEventSourceConfigT = DocumentDBEventSourceConfig>
+    void SetDocumentDBEventSourceConfig(DocumentDBEventSourceConfigT&& value) { m_documentDBEventSourceConfigHasBeenSet = true; m_documentDBEventSourceConfig = std::forward<DocumentDBEventSourceConfigT>(value); }
+    template<typename DocumentDBEventSourceConfigT = DocumentDBEventSourceConfig>
+    CreateEventSourceMappingRequest& WithDocumentDBEventSourceConfig(DocumentDBEventSourceConfigT&& value) { SetDocumentDBEventSourceConfig(std::forward<DocumentDBEventSourceConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -414,14 +402,12 @@ namespace Model
      * criteria</a>. By default, Lambda does not encrypt your filter criteria object.
      * Specify this property to encrypt data using your own customer managed key. </p>
      */
-    inline const Aws::String& GetKMSKeyArn() const{ return m_kMSKeyArn; }
+    inline const Aws::String& GetKMSKeyArn() const { return m_kMSKeyArn; }
     inline bool KMSKeyArnHasBeenSet() const { return m_kMSKeyArnHasBeenSet; }
-    inline void SetKMSKeyArn(const Aws::String& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = value; }
-    inline void SetKMSKeyArn(Aws::String&& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = std::move(value); }
-    inline void SetKMSKeyArn(const char* value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn.assign(value); }
-    inline CreateEventSourceMappingRequest& WithKMSKeyArn(const Aws::String& value) { SetKMSKeyArn(value); return *this;}
-    inline CreateEventSourceMappingRequest& WithKMSKeyArn(Aws::String&& value) { SetKMSKeyArn(std::move(value)); return *this;}
-    inline CreateEventSourceMappingRequest& WithKMSKeyArn(const char* value) { SetKMSKeyArn(value); return *this;}
+    template<typename KMSKeyArnT = Aws::String>
+    void SetKMSKeyArn(KMSKeyArnT&& value) { m_kMSKeyArnHasBeenSet = true; m_kMSKeyArn = std::forward<KMSKeyArnT>(value); }
+    template<typename KMSKeyArnT = Aws::String>
+    CreateEventSourceMappingRequest& WithKMSKeyArn(KMSKeyArnT&& value) { SetKMSKeyArn(std::forward<KMSKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -430,12 +416,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-metrics-types.html#event-source-mapping-metrics">Event
      * source mapping metrics</a>.</p>
      */
-    inline const EventSourceMappingMetricsConfig& GetMetricsConfig() const{ return m_metricsConfig; }
+    inline const EventSourceMappingMetricsConfig& GetMetricsConfig() const { return m_metricsConfig; }
     inline bool MetricsConfigHasBeenSet() const { return m_metricsConfigHasBeenSet; }
-    inline void SetMetricsConfig(const EventSourceMappingMetricsConfig& value) { m_metricsConfigHasBeenSet = true; m_metricsConfig = value; }
-    inline void SetMetricsConfig(EventSourceMappingMetricsConfig&& value) { m_metricsConfigHasBeenSet = true; m_metricsConfig = std::move(value); }
-    inline CreateEventSourceMappingRequest& WithMetricsConfig(const EventSourceMappingMetricsConfig& value) { SetMetricsConfig(value); return *this;}
-    inline CreateEventSourceMappingRequest& WithMetricsConfig(EventSourceMappingMetricsConfig&& value) { SetMetricsConfig(std::move(value)); return *this;}
+    template<typename MetricsConfigT = EventSourceMappingMetricsConfig>
+    void SetMetricsConfig(MetricsConfigT&& value) { m_metricsConfigHasBeenSet = true; m_metricsConfig = std::forward<MetricsConfigT>(value); }
+    template<typename MetricsConfigT = EventSourceMappingMetricsConfig>
+    CreateEventSourceMappingRequest& WithMetricsConfig(MetricsConfigT&& value) { SetMetricsConfig(std::forward<MetricsConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -445,12 +431,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-eventsourcemapping.html#invocation-eventsourcemapping-provisioned-mode">Provisioned
      * Mode</a>.</p>
      */
-    inline const ProvisionedPollerConfig& GetProvisionedPollerConfig() const{ return m_provisionedPollerConfig; }
+    inline const ProvisionedPollerConfig& GetProvisionedPollerConfig() const { return m_provisionedPollerConfig; }
     inline bool ProvisionedPollerConfigHasBeenSet() const { return m_provisionedPollerConfigHasBeenSet; }
-    inline void SetProvisionedPollerConfig(const ProvisionedPollerConfig& value) { m_provisionedPollerConfigHasBeenSet = true; m_provisionedPollerConfig = value; }
-    inline void SetProvisionedPollerConfig(ProvisionedPollerConfig&& value) { m_provisionedPollerConfigHasBeenSet = true; m_provisionedPollerConfig = std::move(value); }
-    inline CreateEventSourceMappingRequest& WithProvisionedPollerConfig(const ProvisionedPollerConfig& value) { SetProvisionedPollerConfig(value); return *this;}
-    inline CreateEventSourceMappingRequest& WithProvisionedPollerConfig(ProvisionedPollerConfig&& value) { SetProvisionedPollerConfig(std::move(value)); return *this;}
+    template<typename ProvisionedPollerConfigT = ProvisionedPollerConfig>
+    void SetProvisionedPollerConfig(ProvisionedPollerConfigT&& value) { m_provisionedPollerConfigHasBeenSet = true; m_provisionedPollerConfig = std::forward<ProvisionedPollerConfigT>(value); }
+    template<typename ProvisionedPollerConfigT = ProvisionedPollerConfig>
+    CreateEventSourceMappingRequest& WithProvisionedPollerConfig(ProvisionedPollerConfigT&& value) { SetProvisionedPollerConfig(std::forward<ProvisionedPollerConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -460,43 +446,43 @@ namespace Model
     Aws::String m_functionName;
     bool m_functionNameHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
-    int m_batchSize;
+    int m_batchSize{0};
     bool m_batchSizeHasBeenSet = false;
 
     FilterCriteria m_filterCriteria;
     bool m_filterCriteriaHasBeenSet = false;
 
-    int m_maximumBatchingWindowInSeconds;
+    int m_maximumBatchingWindowInSeconds{0};
     bool m_maximumBatchingWindowInSecondsHasBeenSet = false;
 
-    int m_parallelizationFactor;
+    int m_parallelizationFactor{0};
     bool m_parallelizationFactorHasBeenSet = false;
 
-    EventSourcePosition m_startingPosition;
+    EventSourcePosition m_startingPosition{EventSourcePosition::NOT_SET};
     bool m_startingPositionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startingPositionTimestamp;
+    Aws::Utils::DateTime m_startingPositionTimestamp{};
     bool m_startingPositionTimestampHasBeenSet = false;
 
     DestinationConfig m_destinationConfig;
     bool m_destinationConfigHasBeenSet = false;
 
-    int m_maximumRecordAgeInSeconds;
+    int m_maximumRecordAgeInSeconds{0};
     bool m_maximumRecordAgeInSecondsHasBeenSet = false;
 
-    bool m_bisectBatchOnFunctionError;
+    bool m_bisectBatchOnFunctionError{false};
     bool m_bisectBatchOnFunctionErrorHasBeenSet = false;
 
-    int m_maximumRetryAttempts;
+    int m_maximumRetryAttempts{0};
     bool m_maximumRetryAttemptsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    int m_tumblingWindowInSeconds;
+    int m_tumblingWindowInSeconds{0};
     bool m_tumblingWindowInSecondsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_topics;

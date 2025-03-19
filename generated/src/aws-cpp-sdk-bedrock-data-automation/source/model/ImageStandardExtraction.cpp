@@ -18,14 +18,7 @@ namespace BedrockDataAutomation
 namespace Model
 {
 
-ImageStandardExtraction::ImageStandardExtraction() : 
-    m_categoryHasBeenSet(false),
-    m_boundingBoxHasBeenSet(false)
-{
-}
-
 ImageStandardExtraction::ImageStandardExtraction(JsonView jsonValue)
-  : ImageStandardExtraction()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ImageStandardExtraction& ImageStandardExtraction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("category"))
   {
     m_category = jsonValue.GetObject("category");
-
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("boundingBox"))
   {
     m_boundingBox = jsonValue.GetObject("boundingBox");
-
     m_boundingBoxHasBeenSet = true;
   }
-
   return *this;
 }
 

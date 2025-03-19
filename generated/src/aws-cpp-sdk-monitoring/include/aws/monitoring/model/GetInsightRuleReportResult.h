@@ -31,7 +31,7 @@ namespace Model
   class GetInsightRuleReportResult
   {
   public:
-    AWS_CLOUDWATCH_API GetInsightRuleReportResult();
+    AWS_CLOUDWATCH_API GetInsightRuleReportResult() = default;
     AWS_CLOUDWATCH_API GetInsightRuleReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDWATCH_API GetInsightRuleReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -43,27 +43,24 @@ namespace Model
      * key, then each unique combination of values for the keys is counted as a unique
      * contributor.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetKeyLabels() const{ return m_keyLabels; }
-    inline void SetKeyLabels(const Aws::Vector<Aws::String>& value) { m_keyLabels = value; }
-    inline void SetKeyLabels(Aws::Vector<Aws::String>&& value) { m_keyLabels = std::move(value); }
-    inline GetInsightRuleReportResult& WithKeyLabels(const Aws::Vector<Aws::String>& value) { SetKeyLabels(value); return *this;}
-    inline GetInsightRuleReportResult& WithKeyLabels(Aws::Vector<Aws::String>&& value) { SetKeyLabels(std::move(value)); return *this;}
-    inline GetInsightRuleReportResult& AddKeyLabels(const Aws::String& value) { m_keyLabels.push_back(value); return *this; }
-    inline GetInsightRuleReportResult& AddKeyLabels(Aws::String&& value) { m_keyLabels.push_back(std::move(value)); return *this; }
-    inline GetInsightRuleReportResult& AddKeyLabels(const char* value) { m_keyLabels.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetKeyLabels() const { return m_keyLabels; }
+    template<typename KeyLabelsT = Aws::Vector<Aws::String>>
+    void SetKeyLabels(KeyLabelsT&& value) { m_keyLabelsHasBeenSet = true; m_keyLabels = std::forward<KeyLabelsT>(value); }
+    template<typename KeyLabelsT = Aws::Vector<Aws::String>>
+    GetInsightRuleReportResult& WithKeyLabels(KeyLabelsT&& value) { SetKeyLabels(std::forward<KeyLabelsT>(value)); return *this;}
+    template<typename KeyLabelsT = Aws::String>
+    GetInsightRuleReportResult& AddKeyLabels(KeyLabelsT&& value) { m_keyLabelsHasBeenSet = true; m_keyLabels.emplace_back(std::forward<KeyLabelsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether this rule aggregates contributor data by COUNT or SUM.</p>
      */
-    inline const Aws::String& GetAggregationStatistic() const{ return m_aggregationStatistic; }
-    inline void SetAggregationStatistic(const Aws::String& value) { m_aggregationStatistic = value; }
-    inline void SetAggregationStatistic(Aws::String&& value) { m_aggregationStatistic = std::move(value); }
-    inline void SetAggregationStatistic(const char* value) { m_aggregationStatistic.assign(value); }
-    inline GetInsightRuleReportResult& WithAggregationStatistic(const Aws::String& value) { SetAggregationStatistic(value); return *this;}
-    inline GetInsightRuleReportResult& WithAggregationStatistic(Aws::String&& value) { SetAggregationStatistic(std::move(value)); return *this;}
-    inline GetInsightRuleReportResult& WithAggregationStatistic(const char* value) { SetAggregationStatistic(value); return *this;}
+    inline const Aws::String& GetAggregationStatistic() const { return m_aggregationStatistic; }
+    template<typename AggregationStatisticT = Aws::String>
+    void SetAggregationStatistic(AggregationStatisticT&& value) { m_aggregationStatisticHasBeenSet = true; m_aggregationStatistic = std::forward<AggregationStatisticT>(value); }
+    template<typename AggregationStatisticT = Aws::String>
+    GetInsightRuleReportResult& WithAggregationStatistic(AggregationStatisticT&& value) { SetAggregationStatistic(std::forward<AggregationStatisticT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,8 +68,8 @@ namespace Model
      * <p>The sum of the values from all individual contributors that match the
      * rule.</p>
      */
-    inline double GetAggregateValue() const{ return m_aggregateValue; }
-    inline void SetAggregateValue(double value) { m_aggregateValue = value; }
+    inline double GetAggregateValue() const { return m_aggregateValue; }
+    inline void SetAggregateValue(double value) { m_aggregateValueHasBeenSet = true; m_aggregateValue = value; }
     inline GetInsightRuleReportResult& WithAggregateValue(double value) { SetAggregateValue(value); return *this;}
     ///@}
 
@@ -81,8 +78,8 @@ namespace Model
      * <p>An approximate count of the unique contributors found by this rule in this
      * time period.</p>
      */
-    inline long long GetApproximateUniqueCount() const{ return m_approximateUniqueCount; }
-    inline void SetApproximateUniqueCount(long long value) { m_approximateUniqueCount = value; }
+    inline long long GetApproximateUniqueCount() const { return m_approximateUniqueCount; }
+    inline void SetApproximateUniqueCount(long long value) { m_approximateUniqueCountHasBeenSet = true; m_approximateUniqueCount = value; }
     inline GetInsightRuleReportResult& WithApproximateUniqueCount(long long value) { SetApproximateUniqueCount(value); return *this;}
     ///@}
 
@@ -92,13 +89,13 @@ namespace Model
      * If the rule contains multiple keys, each combination of values for the keys
      * counts as a unique contributor.</p>
      */
-    inline const Aws::Vector<InsightRuleContributor>& GetContributors() const{ return m_contributors; }
-    inline void SetContributors(const Aws::Vector<InsightRuleContributor>& value) { m_contributors = value; }
-    inline void SetContributors(Aws::Vector<InsightRuleContributor>&& value) { m_contributors = std::move(value); }
-    inline GetInsightRuleReportResult& WithContributors(const Aws::Vector<InsightRuleContributor>& value) { SetContributors(value); return *this;}
-    inline GetInsightRuleReportResult& WithContributors(Aws::Vector<InsightRuleContributor>&& value) { SetContributors(std::move(value)); return *this;}
-    inline GetInsightRuleReportResult& AddContributors(const InsightRuleContributor& value) { m_contributors.push_back(value); return *this; }
-    inline GetInsightRuleReportResult& AddContributors(InsightRuleContributor&& value) { m_contributors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InsightRuleContributor>& GetContributors() const { return m_contributors; }
+    template<typename ContributorsT = Aws::Vector<InsightRuleContributor>>
+    void SetContributors(ContributorsT&& value) { m_contributorsHasBeenSet = true; m_contributors = std::forward<ContributorsT>(value); }
+    template<typename ContributorsT = Aws::Vector<InsightRuleContributor>>
+    GetInsightRuleReportResult& WithContributors(ContributorsT&& value) { SetContributors(std::forward<ContributorsT>(value)); return *this;}
+    template<typename ContributorsT = InsightRuleContributor>
+    GetInsightRuleReportResult& AddContributors(ContributorsT&& value) { m_contributorsHasBeenSet = true; m_contributors.emplace_back(std::forward<ContributorsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -106,38 +103,45 @@ namespace Model
      * <p>A time series of metric data points that matches the time period in the rule
      * request.</p>
      */
-    inline const Aws::Vector<InsightRuleMetricDatapoint>& GetMetricDatapoints() const{ return m_metricDatapoints; }
-    inline void SetMetricDatapoints(const Aws::Vector<InsightRuleMetricDatapoint>& value) { m_metricDatapoints = value; }
-    inline void SetMetricDatapoints(Aws::Vector<InsightRuleMetricDatapoint>&& value) { m_metricDatapoints = std::move(value); }
-    inline GetInsightRuleReportResult& WithMetricDatapoints(const Aws::Vector<InsightRuleMetricDatapoint>& value) { SetMetricDatapoints(value); return *this;}
-    inline GetInsightRuleReportResult& WithMetricDatapoints(Aws::Vector<InsightRuleMetricDatapoint>&& value) { SetMetricDatapoints(std::move(value)); return *this;}
-    inline GetInsightRuleReportResult& AddMetricDatapoints(const InsightRuleMetricDatapoint& value) { m_metricDatapoints.push_back(value); return *this; }
-    inline GetInsightRuleReportResult& AddMetricDatapoints(InsightRuleMetricDatapoint&& value) { m_metricDatapoints.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InsightRuleMetricDatapoint>& GetMetricDatapoints() const { return m_metricDatapoints; }
+    template<typename MetricDatapointsT = Aws::Vector<InsightRuleMetricDatapoint>>
+    void SetMetricDatapoints(MetricDatapointsT&& value) { m_metricDatapointsHasBeenSet = true; m_metricDatapoints = std::forward<MetricDatapointsT>(value); }
+    template<typename MetricDatapointsT = Aws::Vector<InsightRuleMetricDatapoint>>
+    GetInsightRuleReportResult& WithMetricDatapoints(MetricDatapointsT&& value) { SetMetricDatapoints(std::forward<MetricDatapointsT>(value)); return *this;}
+    template<typename MetricDatapointsT = InsightRuleMetricDatapoint>
+    GetInsightRuleReportResult& AddMetricDatapoints(MetricDatapointsT&& value) { m_metricDatapointsHasBeenSet = true; m_metricDatapoints.emplace_back(std::forward<MetricDatapointsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetInsightRuleReportResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetInsightRuleReportResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetInsightRuleReportResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_keyLabels;
+    bool m_keyLabelsHasBeenSet = false;
 
     Aws::String m_aggregationStatistic;
+    bool m_aggregationStatisticHasBeenSet = false;
 
-    double m_aggregateValue;
+    double m_aggregateValue{0.0};
+    bool m_aggregateValueHasBeenSet = false;
 
-    long long m_approximateUniqueCount;
+    long long m_approximateUniqueCount{0};
+    bool m_approximateUniqueCountHasBeenSet = false;
 
     Aws::Vector<InsightRuleContributor> m_contributors;
+    bool m_contributorsHasBeenSet = false;
 
     Aws::Vector<InsightRuleMetricDatapoint> m_metricDatapoints;
+    bool m_metricDatapointsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

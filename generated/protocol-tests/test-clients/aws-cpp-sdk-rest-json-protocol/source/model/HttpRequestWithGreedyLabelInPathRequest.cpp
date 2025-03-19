@@ -12,12 +12,6 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-HttpRequestWithGreedyLabelInPathRequest::HttpRequestWithGreedyLabelInPathRequest() : 
-    m_fooHasBeenSet(false),
-    m_bazHasBeenSet(false)
-{
-}
-
 Aws::String HttpRequestWithGreedyLabelInPathRequest::SerializePayload() const
 {
   return {};

@@ -12,14 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartThingRegistrationTaskRequest::StartThingRegistrationTaskRequest() : 
-    m_templateBodyHasBeenSet(false),
-    m_inputFileBucketHasBeenSet(false),
-    m_inputFileKeyHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 Aws::String StartThingRegistrationTaskRequest::SerializePayload() const
 {
   JsonValue payload;

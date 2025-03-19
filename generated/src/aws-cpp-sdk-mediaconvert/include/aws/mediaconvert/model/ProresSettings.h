@@ -39,7 +39,7 @@ namespace Model
   class ProresSettings
   {
   public:
-    AWS_MEDIACONVERT_API ProresSettings();
+    AWS_MEDIACONVERT_API ProresSettings() = default;
     AWS_MEDIACONVERT_API ProresSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API ProresSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,24 +57,20 @@ namespace Model
      * Preserve 4:4:4 sampling, you cannot include any of the following Preprocessors:
      * Dolby Vision, HDR10+, or Noise reducer.
      */
-    inline const ProresChromaSampling& GetChromaSampling() const{ return m_chromaSampling; }
+    inline ProresChromaSampling GetChromaSampling() const { return m_chromaSampling; }
     inline bool ChromaSamplingHasBeenSet() const { return m_chromaSamplingHasBeenSet; }
-    inline void SetChromaSampling(const ProresChromaSampling& value) { m_chromaSamplingHasBeenSet = true; m_chromaSampling = value; }
-    inline void SetChromaSampling(ProresChromaSampling&& value) { m_chromaSamplingHasBeenSet = true; m_chromaSampling = std::move(value); }
-    inline ProresSettings& WithChromaSampling(const ProresChromaSampling& value) { SetChromaSampling(value); return *this;}
-    inline ProresSettings& WithChromaSampling(ProresChromaSampling&& value) { SetChromaSampling(std::move(value)); return *this;}
+    inline void SetChromaSampling(ProresChromaSampling value) { m_chromaSamplingHasBeenSet = true; m_chromaSampling = value; }
+    inline ProresSettings& WithChromaSampling(ProresChromaSampling value) { SetChromaSampling(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Use Profile to specify the type of Apple ProRes codec to use for this output.
      */
-    inline const ProresCodecProfile& GetCodecProfile() const{ return m_codecProfile; }
+    inline ProresCodecProfile GetCodecProfile() const { return m_codecProfile; }
     inline bool CodecProfileHasBeenSet() const { return m_codecProfileHasBeenSet; }
-    inline void SetCodecProfile(const ProresCodecProfile& value) { m_codecProfileHasBeenSet = true; m_codecProfile = value; }
-    inline void SetCodecProfile(ProresCodecProfile&& value) { m_codecProfileHasBeenSet = true; m_codecProfile = std::move(value); }
-    inline ProresSettings& WithCodecProfile(const ProresCodecProfile& value) { SetCodecProfile(value); return *this;}
-    inline ProresSettings& WithCodecProfile(ProresCodecProfile&& value) { SetCodecProfile(std::move(value)); return *this;}
+    inline void SetCodecProfile(ProresCodecProfile value) { m_codecProfileHasBeenSet = true; m_codecProfile = value; }
+    inline ProresSettings& WithCodecProfile(ProresCodecProfile value) { SetCodecProfile(value); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +82,10 @@ namespace Model
      * dropdown list are decimal approximations of fractions. If you choose Custom,
      * specify your frame rate as a fraction.
      */
-    inline const ProresFramerateControl& GetFramerateControl() const{ return m_framerateControl; }
+    inline ProresFramerateControl GetFramerateControl() const { return m_framerateControl; }
     inline bool FramerateControlHasBeenSet() const { return m_framerateControlHasBeenSet; }
-    inline void SetFramerateControl(const ProresFramerateControl& value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
-    inline void SetFramerateControl(ProresFramerateControl&& value) { m_framerateControlHasBeenSet = true; m_framerateControl = std::move(value); }
-    inline ProresSettings& WithFramerateControl(const ProresFramerateControl& value) { SetFramerateControl(value); return *this;}
-    inline ProresSettings& WithFramerateControl(ProresFramerateControl&& value) { SetFramerateControl(std::move(value)); return *this;}
+    inline void SetFramerateControl(ProresFramerateControl value) { m_framerateControlHasBeenSet = true; m_framerateControl = value; }
+    inline ProresSettings& WithFramerateControl(ProresFramerateControl value) { SetFramerateControl(value); return *this;}
     ///@}
 
     ///@{
@@ -113,12 +107,10 @@ namespace Model
      * duration of your output will become shorter at higher frame rates and longer at
      * lower frame rates.
      */
-    inline const ProresFramerateConversionAlgorithm& GetFramerateConversionAlgorithm() const{ return m_framerateConversionAlgorithm; }
+    inline ProresFramerateConversionAlgorithm GetFramerateConversionAlgorithm() const { return m_framerateConversionAlgorithm; }
     inline bool FramerateConversionAlgorithmHasBeenSet() const { return m_framerateConversionAlgorithmHasBeenSet; }
-    inline void SetFramerateConversionAlgorithm(const ProresFramerateConversionAlgorithm& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
-    inline void SetFramerateConversionAlgorithm(ProresFramerateConversionAlgorithm&& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = std::move(value); }
-    inline ProresSettings& WithFramerateConversionAlgorithm(const ProresFramerateConversionAlgorithm& value) { SetFramerateConversionAlgorithm(value); return *this;}
-    inline ProresSettings& WithFramerateConversionAlgorithm(ProresFramerateConversionAlgorithm&& value) { SetFramerateConversionAlgorithm(std::move(value)); return *this;}
+    inline void SetFramerateConversionAlgorithm(ProresFramerateConversionAlgorithm value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
+    inline ProresSettings& WithFramerateConversionAlgorithm(ProresFramerateConversionAlgorithm value) { SetFramerateConversionAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -130,7 +122,7 @@ namespace Model
      * console for transcode jobs that use frame rate conversion, provide the value as
      * a decimal number for Framerate. In this example, specify 23.976.
      */
-    inline int GetFramerateDenominator() const{ return m_framerateDenominator; }
+    inline int GetFramerateDenominator() const { return m_framerateDenominator; }
     inline bool FramerateDenominatorHasBeenSet() const { return m_framerateDenominatorHasBeenSet; }
     inline void SetFramerateDenominator(int value) { m_framerateDenominatorHasBeenSet = true; m_framerateDenominator = value; }
     inline ProresSettings& WithFramerateDenominator(int value) { SetFramerateDenominator(value); return *this;}
@@ -145,7 +137,7 @@ namespace Model
      * transcode jobs that use frame rate conversion, provide the value as a decimal
      * number for Framerate. In this example, specify 23.976.
      */
-    inline int GetFramerateNumerator() const{ return m_framerateNumerator; }
+    inline int GetFramerateNumerator() const { return m_framerateNumerator; }
     inline bool FramerateNumeratorHasBeenSet() const { return m_framerateNumeratorHasBeenSet; }
     inline void SetFramerateNumerator(int value) { m_framerateNumeratorHasBeenSet = true; m_framerateNumerator = value; }
     inline ProresSettings& WithFramerateNumerator(int value) { SetFramerateNumerator(value); return *this;}
@@ -164,12 +156,10 @@ namespace Model
      * the source. If the source is progressive, the output will be interlaced with top
      * field bottom field first, depending on which of the Follow options you choose.
      */
-    inline const ProresInterlaceMode& GetInterlaceMode() const{ return m_interlaceMode; }
+    inline ProresInterlaceMode GetInterlaceMode() const { return m_interlaceMode; }
     inline bool InterlaceModeHasBeenSet() const { return m_interlaceModeHasBeenSet; }
-    inline void SetInterlaceMode(const ProresInterlaceMode& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = value; }
-    inline void SetInterlaceMode(ProresInterlaceMode&& value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = std::move(value); }
-    inline ProresSettings& WithInterlaceMode(const ProresInterlaceMode& value) { SetInterlaceMode(value); return *this;}
-    inline ProresSettings& WithInterlaceMode(ProresInterlaceMode&& value) { SetInterlaceMode(std::move(value)); return *this;}
+    inline void SetInterlaceMode(ProresInterlaceMode value) { m_interlaceModeHasBeenSet = true; m_interlaceMode = value; }
+    inline ProresSettings& WithInterlaceMode(ProresInterlaceMode value) { SetInterlaceMode(value); return *this;}
     ///@}
 
     ///@{
@@ -180,12 +170,10 @@ namespace Model
      * Follow source. When you choose SPECIFIED for this setting, you must also specify
      * values for the parNumerator and parDenominator settings.
      */
-    inline const ProresParControl& GetParControl() const{ return m_parControl; }
+    inline ProresParControl GetParControl() const { return m_parControl; }
     inline bool ParControlHasBeenSet() const { return m_parControlHasBeenSet; }
-    inline void SetParControl(const ProresParControl& value) { m_parControlHasBeenSet = true; m_parControl = value; }
-    inline void SetParControl(ProresParControl&& value) { m_parControlHasBeenSet = true; m_parControl = std::move(value); }
-    inline ProresSettings& WithParControl(const ProresParControl& value) { SetParControl(value); return *this;}
-    inline ProresSettings& WithParControl(ProresParControl&& value) { SetParControl(std::move(value)); return *this;}
+    inline void SetParControl(ProresParControl value) { m_parControlHasBeenSet = true; m_parControl = value; }
+    inline ProresSettings& WithParControl(ProresParControl value) { SetParControl(value); return *this;}
     ///@}
 
     ///@{
@@ -196,7 +184,7 @@ namespace Model
      * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
      * specify the ratio 40:33. In this example, the value for parDenominator is 33.
      */
-    inline int GetParDenominator() const{ return m_parDenominator; }
+    inline int GetParDenominator() const { return m_parDenominator; }
     inline bool ParDenominatorHasBeenSet() const { return m_parDenominatorHasBeenSet; }
     inline void SetParDenominator(int value) { m_parDenominatorHasBeenSet = true; m_parDenominator = value; }
     inline ProresSettings& WithParDenominator(int value) { SetParDenominator(value); return *this;}
@@ -210,7 +198,7 @@ namespace Model
      * your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would
      * specify the ratio 40:33. In this example, the value for parNumerator is 40.
      */
-    inline int GetParNumerator() const{ return m_parNumerator; }
+    inline int GetParNumerator() const { return m_parNumerator; }
     inline bool ParNumeratorHasBeenSet() const { return m_parNumeratorHasBeenSet; }
     inline void SetParNumerator(int value) { m_parNumeratorHasBeenSet = true; m_parNumerator = value; }
     inline ProresSettings& WithParNumerator(int value) { SetParNumerator(value); return *this;}
@@ -231,12 +219,10 @@ namespace Model
      * use optimized interlacing for hard telecine outputs. You must also set Interlace
      * mode to a value other than Progressive.
      */
-    inline const ProresScanTypeConversionMode& GetScanTypeConversionMode() const{ return m_scanTypeConversionMode; }
+    inline ProresScanTypeConversionMode GetScanTypeConversionMode() const { return m_scanTypeConversionMode; }
     inline bool ScanTypeConversionModeHasBeenSet() const { return m_scanTypeConversionModeHasBeenSet; }
-    inline void SetScanTypeConversionMode(const ProresScanTypeConversionMode& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = value; }
-    inline void SetScanTypeConversionMode(ProresScanTypeConversionMode&& value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = std::move(value); }
-    inline ProresSettings& WithScanTypeConversionMode(const ProresScanTypeConversionMode& value) { SetScanTypeConversionMode(value); return *this;}
-    inline ProresSettings& WithScanTypeConversionMode(ProresScanTypeConversionMode&& value) { SetScanTypeConversionMode(std::move(value)); return *this;}
+    inline void SetScanTypeConversionMode(ProresScanTypeConversionMode value) { m_scanTypeConversionModeHasBeenSet = true; m_scanTypeConversionMode = value; }
+    inline ProresSettings& WithScanTypeConversionMode(ProresScanTypeConversionMode value) { SetScanTypeConversionMode(value); return *this;}
     ///@}
 
     ///@{
@@ -248,12 +234,10 @@ namespace Model
      * slightly reduce the duration of your video. Required settings: You must also set
      * Framerate to 25.
      */
-    inline const ProresSlowPal& GetSlowPal() const{ return m_slowPal; }
+    inline ProresSlowPal GetSlowPal() const { return m_slowPal; }
     inline bool SlowPalHasBeenSet() const { return m_slowPalHasBeenSet; }
-    inline void SetSlowPal(const ProresSlowPal& value) { m_slowPalHasBeenSet = true; m_slowPal = value; }
-    inline void SetSlowPal(ProresSlowPal&& value) { m_slowPalHasBeenSet = true; m_slowPal = std::move(value); }
-    inline ProresSettings& WithSlowPal(const ProresSlowPal& value) { SetSlowPal(value); return *this;}
-    inline ProresSettings& WithSlowPal(ProresSlowPal&& value) { SetSlowPal(std::move(value)); return *this;}
+    inline void SetSlowPal(ProresSlowPal value) { m_slowPalHasBeenSet = true; m_slowPal = value; }
+    inline ProresSettings& WithSlowPal(ProresSlowPal value) { SetSlowPal(value); return *this;}
     ///@}
 
     ///@{
@@ -264,52 +248,50 @@ namespace Model
      * MediaConvert does a standard frame rate conversion to 29.97 without doing
      * anything with the field polarity to create a smoother picture.
      */
-    inline const ProresTelecine& GetTelecine() const{ return m_telecine; }
+    inline ProresTelecine GetTelecine() const { return m_telecine; }
     inline bool TelecineHasBeenSet() const { return m_telecineHasBeenSet; }
-    inline void SetTelecine(const ProresTelecine& value) { m_telecineHasBeenSet = true; m_telecine = value; }
-    inline void SetTelecine(ProresTelecine&& value) { m_telecineHasBeenSet = true; m_telecine = std::move(value); }
-    inline ProresSettings& WithTelecine(const ProresTelecine& value) { SetTelecine(value); return *this;}
-    inline ProresSettings& WithTelecine(ProresTelecine&& value) { SetTelecine(std::move(value)); return *this;}
+    inline void SetTelecine(ProresTelecine value) { m_telecineHasBeenSet = true; m_telecine = value; }
+    inline ProresSettings& WithTelecine(ProresTelecine value) { SetTelecine(value); return *this;}
     ///@}
   private:
 
-    ProresChromaSampling m_chromaSampling;
+    ProresChromaSampling m_chromaSampling{ProresChromaSampling::NOT_SET};
     bool m_chromaSamplingHasBeenSet = false;
 
-    ProresCodecProfile m_codecProfile;
+    ProresCodecProfile m_codecProfile{ProresCodecProfile::NOT_SET};
     bool m_codecProfileHasBeenSet = false;
 
-    ProresFramerateControl m_framerateControl;
+    ProresFramerateControl m_framerateControl{ProresFramerateControl::NOT_SET};
     bool m_framerateControlHasBeenSet = false;
 
-    ProresFramerateConversionAlgorithm m_framerateConversionAlgorithm;
+    ProresFramerateConversionAlgorithm m_framerateConversionAlgorithm{ProresFramerateConversionAlgorithm::NOT_SET};
     bool m_framerateConversionAlgorithmHasBeenSet = false;
 
-    int m_framerateDenominator;
+    int m_framerateDenominator{0};
     bool m_framerateDenominatorHasBeenSet = false;
 
-    int m_framerateNumerator;
+    int m_framerateNumerator{0};
     bool m_framerateNumeratorHasBeenSet = false;
 
-    ProresInterlaceMode m_interlaceMode;
+    ProresInterlaceMode m_interlaceMode{ProresInterlaceMode::NOT_SET};
     bool m_interlaceModeHasBeenSet = false;
 
-    ProresParControl m_parControl;
+    ProresParControl m_parControl{ProresParControl::NOT_SET};
     bool m_parControlHasBeenSet = false;
 
-    int m_parDenominator;
+    int m_parDenominator{0};
     bool m_parDenominatorHasBeenSet = false;
 
-    int m_parNumerator;
+    int m_parNumerator{0};
     bool m_parNumeratorHasBeenSet = false;
 
-    ProresScanTypeConversionMode m_scanTypeConversionMode;
+    ProresScanTypeConversionMode m_scanTypeConversionMode{ProresScanTypeConversionMode::NOT_SET};
     bool m_scanTypeConversionModeHasBeenSet = false;
 
-    ProresSlowPal m_slowPal;
+    ProresSlowPal m_slowPal{ProresSlowPal::NOT_SET};
     bool m_slowPalHasBeenSet = false;
 
-    ProresTelecine m_telecine;
+    ProresTelecine m_telecine{ProresTelecine::NOT_SET};
     bool m_telecineHasBeenSet = false;
   };
 

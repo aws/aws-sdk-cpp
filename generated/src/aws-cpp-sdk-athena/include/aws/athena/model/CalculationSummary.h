@@ -32,7 +32,7 @@ namespace Model
   class CalculationSummary
   {
   public:
-    AWS_ATHENA_API CalculationSummary();
+    AWS_ATHENA_API CalculationSummary() = default;
     AWS_ATHENA_API CalculationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API CalculationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,40 +42,36 @@ namespace Model
     /**
      * <p>The calculation execution UUID.</p>
      */
-    inline const Aws::String& GetCalculationExecutionId() const{ return m_calculationExecutionId; }
+    inline const Aws::String& GetCalculationExecutionId() const { return m_calculationExecutionId; }
     inline bool CalculationExecutionIdHasBeenSet() const { return m_calculationExecutionIdHasBeenSet; }
-    inline void SetCalculationExecutionId(const Aws::String& value) { m_calculationExecutionIdHasBeenSet = true; m_calculationExecutionId = value; }
-    inline void SetCalculationExecutionId(Aws::String&& value) { m_calculationExecutionIdHasBeenSet = true; m_calculationExecutionId = std::move(value); }
-    inline void SetCalculationExecutionId(const char* value) { m_calculationExecutionIdHasBeenSet = true; m_calculationExecutionId.assign(value); }
-    inline CalculationSummary& WithCalculationExecutionId(const Aws::String& value) { SetCalculationExecutionId(value); return *this;}
-    inline CalculationSummary& WithCalculationExecutionId(Aws::String&& value) { SetCalculationExecutionId(std::move(value)); return *this;}
-    inline CalculationSummary& WithCalculationExecutionId(const char* value) { SetCalculationExecutionId(value); return *this;}
+    template<typename CalculationExecutionIdT = Aws::String>
+    void SetCalculationExecutionId(CalculationExecutionIdT&& value) { m_calculationExecutionIdHasBeenSet = true; m_calculationExecutionId = std::forward<CalculationExecutionIdT>(value); }
+    template<typename CalculationExecutionIdT = Aws::String>
+    CalculationSummary& WithCalculationExecutionId(CalculationExecutionIdT&& value) { SetCalculationExecutionId(std::forward<CalculationExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the calculation.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CalculationSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CalculationSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CalculationSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CalculationSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains information about the status of the calculation.</p>
      */
-    inline const CalculationStatus& GetStatus() const{ return m_status; }
+    inline const CalculationStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const CalculationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(CalculationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline CalculationSummary& WithStatus(const CalculationStatus& value) { SetStatus(value); return *this;}
-    inline CalculationSummary& WithStatus(CalculationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = CalculationStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = CalculationStatus>
+    CalculationSummary& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

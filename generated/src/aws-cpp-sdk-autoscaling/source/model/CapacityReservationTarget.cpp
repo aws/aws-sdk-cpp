@@ -20,14 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-CapacityReservationTarget::CapacityReservationTarget() : 
-    m_capacityReservationIdsHasBeenSet(false),
-    m_capacityReservationResourceGroupArnsHasBeenSet(false)
-{
-}
-
 CapacityReservationTarget::CapacityReservationTarget(const XmlNode& xmlNode)
-  : CapacityReservationTarget()
 {
   *this = xmlNode;
 }
@@ -42,6 +35,7 @@ CapacityReservationTarget& CapacityReservationTarget::operator =(const XmlNode& 
     if(!capacityReservationIdsNode.IsNull())
     {
       XmlNode capacityReservationIdsMember = capacityReservationIdsNode.FirstChild("member");
+      m_capacityReservationIdsHasBeenSet = !capacityReservationIdsMember.IsNull();
       while(!capacityReservationIdsMember.IsNull())
       {
         m_capacityReservationIds.push_back(capacityReservationIdsMember.GetText());
@@ -54,6 +48,7 @@ CapacityReservationTarget& CapacityReservationTarget::operator =(const XmlNode& 
     if(!capacityReservationResourceGroupArnsNode.IsNull())
     {
       XmlNode capacityReservationResourceGroupArnsMember = capacityReservationResourceGroupArnsNode.FirstChild("member");
+      m_capacityReservationResourceGroupArnsHasBeenSet = !capacityReservationResourceGroupArnsMember.IsNull();
       while(!capacityReservationResourceGroupArnsMember.IsNull())
       {
         m_capacityReservationResourceGroupArns.push_back(capacityReservationResourceGroupArnsMember.GetText());

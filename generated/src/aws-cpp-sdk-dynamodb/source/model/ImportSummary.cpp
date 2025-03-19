@@ -18,22 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-ImportSummary::ImportSummary() : 
-    m_importArnHasBeenSet(false),
-    m_importStatus(ImportStatus::NOT_SET),
-    m_importStatusHasBeenSet(false),
-    m_tableArnHasBeenSet(false),
-    m_s3BucketSourceHasBeenSet(false),
-    m_cloudWatchLogGroupArnHasBeenSet(false),
-    m_inputFormat(InputFormat::NOT_SET),
-    m_inputFormatHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 ImportSummary::ImportSummary(JsonView jsonValue)
-  : ImportSummary()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ ImportSummary& ImportSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ImportArn"))
   {
     m_importArn = jsonValue.GetString("ImportArn");
-
     m_importArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImportStatus"))
   {
     m_importStatus = ImportStatusMapper::GetImportStatusForName(jsonValue.GetString("ImportStatus"));
-
     m_importStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableArn"))
   {
     m_tableArn = jsonValue.GetString("TableArn");
-
     m_tableArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3BucketSource"))
   {
     m_s3BucketSource = jsonValue.GetObject("S3BucketSource");
-
     m_s3BucketSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchLogGroupArn"))
   {
     m_cloudWatchLogGroupArn = jsonValue.GetString("CloudWatchLogGroupArn");
-
     m_cloudWatchLogGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputFormat"))
   {
     m_inputFormat = InputFormatMapper::GetInputFormatForName(jsonValue.GetString("InputFormat"));
-
     m_inputFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

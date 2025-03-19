@@ -12,10 +12,6 @@ using namespace Aws::chatbot::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAccountPreferencesRequest::GetAccountPreferencesRequest()
-{
-}
-
 Aws::String GetAccountPreferencesRequest::SerializePayload() const
 {
   return {};

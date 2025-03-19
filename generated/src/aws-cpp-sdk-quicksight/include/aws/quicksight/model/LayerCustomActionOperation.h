@@ -36,7 +36,7 @@ namespace Model
   class LayerCustomActionOperation
   {
   public:
-    AWS_QUICKSIGHT_API LayerCustomActionOperation();
+    AWS_QUICKSIGHT_API LayerCustomActionOperation() = default;
     AWS_QUICKSIGHT_API LayerCustomActionOperation(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API LayerCustomActionOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,42 +44,42 @@ namespace Model
 
     ///@{
     
-    inline const CustomActionFilterOperation& GetFilterOperation() const{ return m_filterOperation; }
+    inline const CustomActionFilterOperation& GetFilterOperation() const { return m_filterOperation; }
     inline bool FilterOperationHasBeenSet() const { return m_filterOperationHasBeenSet; }
-    inline void SetFilterOperation(const CustomActionFilterOperation& value) { m_filterOperationHasBeenSet = true; m_filterOperation = value; }
-    inline void SetFilterOperation(CustomActionFilterOperation&& value) { m_filterOperationHasBeenSet = true; m_filterOperation = std::move(value); }
-    inline LayerCustomActionOperation& WithFilterOperation(const CustomActionFilterOperation& value) { SetFilterOperation(value); return *this;}
-    inline LayerCustomActionOperation& WithFilterOperation(CustomActionFilterOperation&& value) { SetFilterOperation(std::move(value)); return *this;}
+    template<typename FilterOperationT = CustomActionFilterOperation>
+    void SetFilterOperation(FilterOperationT&& value) { m_filterOperationHasBeenSet = true; m_filterOperation = std::forward<FilterOperationT>(value); }
+    template<typename FilterOperationT = CustomActionFilterOperation>
+    LayerCustomActionOperation& WithFilterOperation(FilterOperationT&& value) { SetFilterOperation(std::forward<FilterOperationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CustomActionNavigationOperation& GetNavigationOperation() const{ return m_navigationOperation; }
+    inline const CustomActionNavigationOperation& GetNavigationOperation() const { return m_navigationOperation; }
     inline bool NavigationOperationHasBeenSet() const { return m_navigationOperationHasBeenSet; }
-    inline void SetNavigationOperation(const CustomActionNavigationOperation& value) { m_navigationOperationHasBeenSet = true; m_navigationOperation = value; }
-    inline void SetNavigationOperation(CustomActionNavigationOperation&& value) { m_navigationOperationHasBeenSet = true; m_navigationOperation = std::move(value); }
-    inline LayerCustomActionOperation& WithNavigationOperation(const CustomActionNavigationOperation& value) { SetNavigationOperation(value); return *this;}
-    inline LayerCustomActionOperation& WithNavigationOperation(CustomActionNavigationOperation&& value) { SetNavigationOperation(std::move(value)); return *this;}
+    template<typename NavigationOperationT = CustomActionNavigationOperation>
+    void SetNavigationOperation(NavigationOperationT&& value) { m_navigationOperationHasBeenSet = true; m_navigationOperation = std::forward<NavigationOperationT>(value); }
+    template<typename NavigationOperationT = CustomActionNavigationOperation>
+    LayerCustomActionOperation& WithNavigationOperation(NavigationOperationT&& value) { SetNavigationOperation(std::forward<NavigationOperationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CustomActionURLOperation& GetURLOperation() const{ return m_uRLOperation; }
+    inline const CustomActionURLOperation& GetURLOperation() const { return m_uRLOperation; }
     inline bool URLOperationHasBeenSet() const { return m_uRLOperationHasBeenSet; }
-    inline void SetURLOperation(const CustomActionURLOperation& value) { m_uRLOperationHasBeenSet = true; m_uRLOperation = value; }
-    inline void SetURLOperation(CustomActionURLOperation&& value) { m_uRLOperationHasBeenSet = true; m_uRLOperation = std::move(value); }
-    inline LayerCustomActionOperation& WithURLOperation(const CustomActionURLOperation& value) { SetURLOperation(value); return *this;}
-    inline LayerCustomActionOperation& WithURLOperation(CustomActionURLOperation&& value) { SetURLOperation(std::move(value)); return *this;}
+    template<typename URLOperationT = CustomActionURLOperation>
+    void SetURLOperation(URLOperationT&& value) { m_uRLOperationHasBeenSet = true; m_uRLOperation = std::forward<URLOperationT>(value); }
+    template<typename URLOperationT = CustomActionURLOperation>
+    LayerCustomActionOperation& WithURLOperation(URLOperationT&& value) { SetURLOperation(std::forward<URLOperationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CustomActionSetParametersOperation& GetSetParametersOperation() const{ return m_setParametersOperation; }
+    inline const CustomActionSetParametersOperation& GetSetParametersOperation() const { return m_setParametersOperation; }
     inline bool SetParametersOperationHasBeenSet() const { return m_setParametersOperationHasBeenSet; }
-    inline void SetSetParametersOperation(const CustomActionSetParametersOperation& value) { m_setParametersOperationHasBeenSet = true; m_setParametersOperation = value; }
-    inline void SetSetParametersOperation(CustomActionSetParametersOperation&& value) { m_setParametersOperationHasBeenSet = true; m_setParametersOperation = std::move(value); }
-    inline LayerCustomActionOperation& WithSetParametersOperation(const CustomActionSetParametersOperation& value) { SetSetParametersOperation(value); return *this;}
-    inline LayerCustomActionOperation& WithSetParametersOperation(CustomActionSetParametersOperation&& value) { SetSetParametersOperation(std::move(value)); return *this;}
+    template<typename SetParametersOperationT = CustomActionSetParametersOperation>
+    void SetSetParametersOperation(SetParametersOperationT&& value) { m_setParametersOperationHasBeenSet = true; m_setParametersOperation = std::forward<SetParametersOperationT>(value); }
+    template<typename SetParametersOperationT = CustomActionSetParametersOperation>
+    LayerCustomActionOperation& WithSetParametersOperation(SetParametersOperationT&& value) { SetSetParametersOperation(std::forward<SetParametersOperationT>(value)); return *this;}
     ///@}
   private:
 

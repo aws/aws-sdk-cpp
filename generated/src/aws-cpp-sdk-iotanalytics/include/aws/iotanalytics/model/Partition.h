@@ -32,7 +32,7 @@ namespace Model
   class Partition
   {
   public:
-    AWS_IOTANALYTICS_API Partition();
+    AWS_IOTANALYTICS_API Partition() = default;
     AWS_IOTANALYTICS_API Partition(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Partition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p> The name of the attribute that defines a partition dimension. </p>
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline Partition& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline Partition& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline Partition& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    Partition& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,18 +18,7 @@ namespace OSIS
 namespace Model
 {
 
-PipelineBlueprint::PipelineBlueprint() : 
-    m_blueprintNameHasBeenSet(false),
-    m_pipelineConfigurationBodyHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_displayDescriptionHasBeenSet(false),
-    m_serviceHasBeenSet(false),
-    m_useCaseHasBeenSet(false)
-{
-}
-
 PipelineBlueprint::PipelineBlueprint(JsonView jsonValue)
-  : PipelineBlueprint()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ PipelineBlueprint& PipelineBlueprint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BlueprintName"))
   {
     m_blueprintName = jsonValue.GetString("BlueprintName");
-
     m_blueprintNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PipelineConfigurationBody"))
   {
     m_pipelineConfigurationBody = jsonValue.GetString("PipelineConfigurationBody");
-
     m_pipelineConfigurationBodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayDescription"))
   {
     m_displayDescription = jsonValue.GetString("DisplayDescription");
-
     m_displayDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Service"))
   {
     m_service = jsonValue.GetString("Service");
-
     m_serviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UseCase"))
   {
     m_useCase = jsonValue.GetString("UseCase");
-
     m_useCaseHasBeenSet = true;
   }
-
   return *this;
 }
 

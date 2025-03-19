@@ -14,11 +14,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateVpcOrigin2020_05_31Request::CreateVpcOrigin2020_05_31Request() : 
-    m_vpcOriginEndpointConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
 
 Aws::String CreateVpcOrigin2020_05_31Request::SerializePayload() const
 {

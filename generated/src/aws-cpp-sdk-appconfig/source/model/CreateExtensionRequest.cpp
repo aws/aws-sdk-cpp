@@ -13,17 +13,6 @@ using namespace Aws::AppConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateExtensionRequest::CreateExtensionRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_latestVersionNumber(0),
-    m_latestVersionNumberHasBeenSet(false)
-{
-}
-
 Aws::String CreateExtensionRequest::SerializePayload() const
 {
   JsonValue payload;

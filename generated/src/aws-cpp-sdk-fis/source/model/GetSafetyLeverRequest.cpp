@@ -12,11 +12,6 @@ using namespace Aws::FIS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSafetyLeverRequest::GetSafetyLeverRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetSafetyLeverRequest::SerializePayload() const
 {
   return {};

@@ -18,13 +18,7 @@ namespace Glue
 namespace Model
 {
 
-GlueSchema::GlueSchema() : 
-    m_columnsHasBeenSet(false)
-{
-}
-
 GlueSchema::GlueSchema(JsonView jsonValue)
-  : GlueSchema()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ GlueSchema& GlueSchema::operator =(JsonView jsonValue)
     }
     m_columnsHasBeenSet = true;
   }
-
   return *this;
 }
 

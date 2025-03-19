@@ -31,7 +31,7 @@ namespace Model
   class Option
   {
   public:
-    AWS_GLUE_API Option();
+    AWS_GLUE_API Option() = default;
     AWS_GLUE_API Option(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Option& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,42 +41,36 @@ namespace Model
     /**
      * <p>Specifies the value of the option.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline Option& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline Option& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline Option& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    Option& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the label of the option.</p>
      */
-    inline const Aws::String& GetLabel() const{ return m_label; }
+    inline const Aws::String& GetLabel() const { return m_label; }
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
-    inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
-    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
-    inline void SetLabel(const char* value) { m_labelHasBeenSet = true; m_label.assign(value); }
-    inline Option& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
-    inline Option& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
-    inline Option& WithLabel(const char* value) { SetLabel(value); return *this;}
+    template<typename LabelT = Aws::String>
+    void SetLabel(LabelT&& value) { m_labelHasBeenSet = true; m_label = std::forward<LabelT>(value); }
+    template<typename LabelT = Aws::String>
+    Option& WithLabel(LabelT&& value) { SetLabel(std::forward<LabelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the description of the option.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Option& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Option& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Option& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Option& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 

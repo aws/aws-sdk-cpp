@@ -12,20 +12,6 @@ using namespace Aws::BedrockAgent::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDataSourceRequest::CreateDataSourceRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_dataDeletionPolicy(DataDeletionPolicy::NOT_SET),
-    m_dataDeletionPolicyHasBeenSet(false),
-    m_dataSourceConfigurationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_serverSideEncryptionConfigurationHasBeenSet(false),
-    m_vectorIngestionConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateDataSourceRequest::SerializePayload() const
 {
   JsonValue payload;

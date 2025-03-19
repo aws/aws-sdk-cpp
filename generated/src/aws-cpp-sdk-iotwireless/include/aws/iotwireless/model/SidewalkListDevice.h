@@ -34,7 +34,7 @@ namespace Model
   class SidewalkListDevice
   {
   public:
-    AWS_IOTWIRELESS_API SidewalkListDevice();
+    AWS_IOTWIRELESS_API SidewalkListDevice() = default;
     AWS_IOTWIRELESS_API SidewalkListDevice(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API SidewalkListDevice& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,82 +44,72 @@ namespace Model
     /**
      * <p>The Sidewalk Amazon ID.</p>
      */
-    inline const Aws::String& GetAmazonId() const{ return m_amazonId; }
+    inline const Aws::String& GetAmazonId() const { return m_amazonId; }
     inline bool AmazonIdHasBeenSet() const { return m_amazonIdHasBeenSet; }
-    inline void SetAmazonId(const Aws::String& value) { m_amazonIdHasBeenSet = true; m_amazonId = value; }
-    inline void SetAmazonId(Aws::String&& value) { m_amazonIdHasBeenSet = true; m_amazonId = std::move(value); }
-    inline void SetAmazonId(const char* value) { m_amazonIdHasBeenSet = true; m_amazonId.assign(value); }
-    inline SidewalkListDevice& WithAmazonId(const Aws::String& value) { SetAmazonId(value); return *this;}
-    inline SidewalkListDevice& WithAmazonId(Aws::String&& value) { SetAmazonId(std::move(value)); return *this;}
-    inline SidewalkListDevice& WithAmazonId(const char* value) { SetAmazonId(value); return *this;}
+    template<typename AmazonIdT = Aws::String>
+    void SetAmazonId(AmazonIdT&& value) { m_amazonIdHasBeenSet = true; m_amazonId = std::forward<AmazonIdT>(value); }
+    template<typename AmazonIdT = Aws::String>
+    SidewalkListDevice& WithAmazonId(AmazonIdT&& value) { SetAmazonId(std::forward<AmazonIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sidewalk device identification.</p>
      */
-    inline const Aws::String& GetSidewalkId() const{ return m_sidewalkId; }
+    inline const Aws::String& GetSidewalkId() const { return m_sidewalkId; }
     inline bool SidewalkIdHasBeenSet() const { return m_sidewalkIdHasBeenSet; }
-    inline void SetSidewalkId(const Aws::String& value) { m_sidewalkIdHasBeenSet = true; m_sidewalkId = value; }
-    inline void SetSidewalkId(Aws::String&& value) { m_sidewalkIdHasBeenSet = true; m_sidewalkId = std::move(value); }
-    inline void SetSidewalkId(const char* value) { m_sidewalkIdHasBeenSet = true; m_sidewalkId.assign(value); }
-    inline SidewalkListDevice& WithSidewalkId(const Aws::String& value) { SetSidewalkId(value); return *this;}
-    inline SidewalkListDevice& WithSidewalkId(Aws::String&& value) { SetSidewalkId(std::move(value)); return *this;}
-    inline SidewalkListDevice& WithSidewalkId(const char* value) { SetSidewalkId(value); return *this;}
+    template<typename SidewalkIdT = Aws::String>
+    void SetSidewalkId(SidewalkIdT&& value) { m_sidewalkIdHasBeenSet = true; m_sidewalkId = std::forward<SidewalkIdT>(value); }
+    template<typename SidewalkIdT = Aws::String>
+    SidewalkListDevice& WithSidewalkId(SidewalkIdT&& value) { SetSidewalkId(std::forward<SidewalkIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Sidewalk manufacturing series number.</p>
      */
-    inline const Aws::String& GetSidewalkManufacturingSn() const{ return m_sidewalkManufacturingSn; }
+    inline const Aws::String& GetSidewalkManufacturingSn() const { return m_sidewalkManufacturingSn; }
     inline bool SidewalkManufacturingSnHasBeenSet() const { return m_sidewalkManufacturingSnHasBeenSet; }
-    inline void SetSidewalkManufacturingSn(const Aws::String& value) { m_sidewalkManufacturingSnHasBeenSet = true; m_sidewalkManufacturingSn = value; }
-    inline void SetSidewalkManufacturingSn(Aws::String&& value) { m_sidewalkManufacturingSnHasBeenSet = true; m_sidewalkManufacturingSn = std::move(value); }
-    inline void SetSidewalkManufacturingSn(const char* value) { m_sidewalkManufacturingSnHasBeenSet = true; m_sidewalkManufacturingSn.assign(value); }
-    inline SidewalkListDevice& WithSidewalkManufacturingSn(const Aws::String& value) { SetSidewalkManufacturingSn(value); return *this;}
-    inline SidewalkListDevice& WithSidewalkManufacturingSn(Aws::String&& value) { SetSidewalkManufacturingSn(std::move(value)); return *this;}
-    inline SidewalkListDevice& WithSidewalkManufacturingSn(const char* value) { SetSidewalkManufacturingSn(value); return *this;}
+    template<typename SidewalkManufacturingSnT = Aws::String>
+    void SetSidewalkManufacturingSn(SidewalkManufacturingSnT&& value) { m_sidewalkManufacturingSnHasBeenSet = true; m_sidewalkManufacturingSn = std::forward<SidewalkManufacturingSnT>(value); }
+    template<typename SidewalkManufacturingSnT = Aws::String>
+    SidewalkListDevice& WithSidewalkManufacturingSn(SidewalkManufacturingSnT&& value) { SetSidewalkManufacturingSn(std::forward<SidewalkManufacturingSnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sidewalk device certificates for Ed25519 and P256r1.</p>
      */
-    inline const Aws::Vector<CertificateList>& GetDeviceCertificates() const{ return m_deviceCertificates; }
+    inline const Aws::Vector<CertificateList>& GetDeviceCertificates() const { return m_deviceCertificates; }
     inline bool DeviceCertificatesHasBeenSet() const { return m_deviceCertificatesHasBeenSet; }
-    inline void SetDeviceCertificates(const Aws::Vector<CertificateList>& value) { m_deviceCertificatesHasBeenSet = true; m_deviceCertificates = value; }
-    inline void SetDeviceCertificates(Aws::Vector<CertificateList>&& value) { m_deviceCertificatesHasBeenSet = true; m_deviceCertificates = std::move(value); }
-    inline SidewalkListDevice& WithDeviceCertificates(const Aws::Vector<CertificateList>& value) { SetDeviceCertificates(value); return *this;}
-    inline SidewalkListDevice& WithDeviceCertificates(Aws::Vector<CertificateList>&& value) { SetDeviceCertificates(std::move(value)); return *this;}
-    inline SidewalkListDevice& AddDeviceCertificates(const CertificateList& value) { m_deviceCertificatesHasBeenSet = true; m_deviceCertificates.push_back(value); return *this; }
-    inline SidewalkListDevice& AddDeviceCertificates(CertificateList&& value) { m_deviceCertificatesHasBeenSet = true; m_deviceCertificates.push_back(std::move(value)); return *this; }
+    template<typename DeviceCertificatesT = Aws::Vector<CertificateList>>
+    void SetDeviceCertificates(DeviceCertificatesT&& value) { m_deviceCertificatesHasBeenSet = true; m_deviceCertificates = std::forward<DeviceCertificatesT>(value); }
+    template<typename DeviceCertificatesT = Aws::Vector<CertificateList>>
+    SidewalkListDevice& WithDeviceCertificates(DeviceCertificatesT&& value) { SetDeviceCertificates(std::forward<DeviceCertificatesT>(value)); return *this;}
+    template<typename DeviceCertificatesT = CertificateList>
+    SidewalkListDevice& AddDeviceCertificates(DeviceCertificatesT&& value) { m_deviceCertificatesHasBeenSet = true; m_deviceCertificates.emplace_back(std::forward<DeviceCertificatesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Sidewalk object used by list functions.</p>
      */
-    inline const Aws::String& GetDeviceProfileId() const{ return m_deviceProfileId; }
+    inline const Aws::String& GetDeviceProfileId() const { return m_deviceProfileId; }
     inline bool DeviceProfileIdHasBeenSet() const { return m_deviceProfileIdHasBeenSet; }
-    inline void SetDeviceProfileId(const Aws::String& value) { m_deviceProfileIdHasBeenSet = true; m_deviceProfileId = value; }
-    inline void SetDeviceProfileId(Aws::String&& value) { m_deviceProfileIdHasBeenSet = true; m_deviceProfileId = std::move(value); }
-    inline void SetDeviceProfileId(const char* value) { m_deviceProfileIdHasBeenSet = true; m_deviceProfileId.assign(value); }
-    inline SidewalkListDevice& WithDeviceProfileId(const Aws::String& value) { SetDeviceProfileId(value); return *this;}
-    inline SidewalkListDevice& WithDeviceProfileId(Aws::String&& value) { SetDeviceProfileId(std::move(value)); return *this;}
-    inline SidewalkListDevice& WithDeviceProfileId(const char* value) { SetDeviceProfileId(value); return *this;}
+    template<typename DeviceProfileIdT = Aws::String>
+    void SetDeviceProfileId(DeviceProfileIdT&& value) { m_deviceProfileIdHasBeenSet = true; m_deviceProfileId = std::forward<DeviceProfileIdT>(value); }
+    template<typename DeviceProfileIdT = Aws::String>
+    SidewalkListDevice& WithDeviceProfileId(DeviceProfileIdT&& value) { SetDeviceProfileId(std::forward<DeviceProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the Sidewalk devices, such as provisioned or registered.</p>
      */
-    inline const WirelessDeviceSidewalkStatus& GetStatus() const{ return m_status; }
+    inline WirelessDeviceSidewalkStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const WirelessDeviceSidewalkStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(WirelessDeviceSidewalkStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline SidewalkListDevice& WithStatus(const WirelessDeviceSidewalkStatus& value) { SetStatus(value); return *this;}
-    inline SidewalkListDevice& WithStatus(WirelessDeviceSidewalkStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(WirelessDeviceSidewalkStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline SidewalkListDevice& WithStatus(WirelessDeviceSidewalkStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -138,7 +128,7 @@ namespace Model
     Aws::String m_deviceProfileId;
     bool m_deviceProfileIdHasBeenSet = false;
 
-    WirelessDeviceSidewalkStatus m_status;
+    WirelessDeviceSidewalkStatus m_status{WirelessDeviceSidewalkStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

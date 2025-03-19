@@ -18,15 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-ProductCodeListItem::ProductCodeListItem() : 
-    m_productCodeIdHasBeenSet(false),
-    m_productCodeType(ProductCodeType::NOT_SET),
-    m_productCodeTypeHasBeenSet(false)
-{
-}
-
 ProductCodeListItem::ProductCodeListItem(JsonView jsonValue)
-  : ProductCodeListItem()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ProductCodeListItem& ProductCodeListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("productCodeId"))
   {
     m_productCodeId = jsonValue.GetString("productCodeId");
-
     m_productCodeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("productCodeType"))
   {
     m_productCodeType = ProductCodeTypeMapper::GetProductCodeTypeForName(jsonValue.GetString("productCodeType"));
-
     m_productCodeTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

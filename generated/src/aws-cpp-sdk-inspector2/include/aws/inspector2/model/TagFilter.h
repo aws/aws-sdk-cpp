@@ -32,7 +32,7 @@ namespace Model
   class TagFilter
   {
   public:
-    AWS_INSPECTOR2_API TagFilter();
+    AWS_INSPECTOR2_API TagFilter() = default;
     AWS_INSPECTOR2_API TagFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API TagFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,44 +42,38 @@ namespace Model
     /**
      * <p>The tag filter comparison value.</p>
      */
-    inline const TagComparison& GetComparison() const{ return m_comparison; }
+    inline TagComparison GetComparison() const { return m_comparison; }
     inline bool ComparisonHasBeenSet() const { return m_comparisonHasBeenSet; }
-    inline void SetComparison(const TagComparison& value) { m_comparisonHasBeenSet = true; m_comparison = value; }
-    inline void SetComparison(TagComparison&& value) { m_comparisonHasBeenSet = true; m_comparison = std::move(value); }
-    inline TagFilter& WithComparison(const TagComparison& value) { SetComparison(value); return *this;}
-    inline TagFilter& WithComparison(TagComparison&& value) { SetComparison(std::move(value)); return *this;}
+    inline void SetComparison(TagComparison value) { m_comparisonHasBeenSet = true; m_comparison = value; }
+    inline TagFilter& WithComparison(TagComparison value) { SetComparison(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tag filter key.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline TagFilter& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline TagFilter& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline TagFilter& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    TagFilter& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tag filter value.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline TagFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline TagFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline TagFilter& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    TagFilter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    TagComparison m_comparison;
+    TagComparison m_comparison{TagComparison::NOT_SET};
     bool m_comparisonHasBeenSet = false;
 
     Aws::String m_key;

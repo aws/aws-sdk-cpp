@@ -33,7 +33,7 @@ namespace Model
   class LocalTimeZoneConfig
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API LocalTimeZoneConfig();
+    AWS_CONNECTCAMPAIGNSV2_API LocalTimeZoneConfig() = default;
     AWS_CONNECTCAMPAIGNSV2_API LocalTimeZoneConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API LocalTimeZoneConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,26 +41,23 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetDefaultTimeZone() const{ return m_defaultTimeZone; }
+    inline const Aws::String& GetDefaultTimeZone() const { return m_defaultTimeZone; }
     inline bool DefaultTimeZoneHasBeenSet() const { return m_defaultTimeZoneHasBeenSet; }
-    inline void SetDefaultTimeZone(const Aws::String& value) { m_defaultTimeZoneHasBeenSet = true; m_defaultTimeZone = value; }
-    inline void SetDefaultTimeZone(Aws::String&& value) { m_defaultTimeZoneHasBeenSet = true; m_defaultTimeZone = std::move(value); }
-    inline void SetDefaultTimeZone(const char* value) { m_defaultTimeZoneHasBeenSet = true; m_defaultTimeZone.assign(value); }
-    inline LocalTimeZoneConfig& WithDefaultTimeZone(const Aws::String& value) { SetDefaultTimeZone(value); return *this;}
-    inline LocalTimeZoneConfig& WithDefaultTimeZone(Aws::String&& value) { SetDefaultTimeZone(std::move(value)); return *this;}
-    inline LocalTimeZoneConfig& WithDefaultTimeZone(const char* value) { SetDefaultTimeZone(value); return *this;}
+    template<typename DefaultTimeZoneT = Aws::String>
+    void SetDefaultTimeZone(DefaultTimeZoneT&& value) { m_defaultTimeZoneHasBeenSet = true; m_defaultTimeZone = std::forward<DefaultTimeZoneT>(value); }
+    template<typename DefaultTimeZoneT = Aws::String>
+    LocalTimeZoneConfig& WithDefaultTimeZone(DefaultTimeZoneT&& value) { SetDefaultTimeZone(std::forward<DefaultTimeZoneT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<LocalTimeZoneDetectionType>& GetLocalTimeZoneDetection() const{ return m_localTimeZoneDetection; }
+    inline const Aws::Vector<LocalTimeZoneDetectionType>& GetLocalTimeZoneDetection() const { return m_localTimeZoneDetection; }
     inline bool LocalTimeZoneDetectionHasBeenSet() const { return m_localTimeZoneDetectionHasBeenSet; }
-    inline void SetLocalTimeZoneDetection(const Aws::Vector<LocalTimeZoneDetectionType>& value) { m_localTimeZoneDetectionHasBeenSet = true; m_localTimeZoneDetection = value; }
-    inline void SetLocalTimeZoneDetection(Aws::Vector<LocalTimeZoneDetectionType>&& value) { m_localTimeZoneDetectionHasBeenSet = true; m_localTimeZoneDetection = std::move(value); }
-    inline LocalTimeZoneConfig& WithLocalTimeZoneDetection(const Aws::Vector<LocalTimeZoneDetectionType>& value) { SetLocalTimeZoneDetection(value); return *this;}
-    inline LocalTimeZoneConfig& WithLocalTimeZoneDetection(Aws::Vector<LocalTimeZoneDetectionType>&& value) { SetLocalTimeZoneDetection(std::move(value)); return *this;}
-    inline LocalTimeZoneConfig& AddLocalTimeZoneDetection(const LocalTimeZoneDetectionType& value) { m_localTimeZoneDetectionHasBeenSet = true; m_localTimeZoneDetection.push_back(value); return *this; }
-    inline LocalTimeZoneConfig& AddLocalTimeZoneDetection(LocalTimeZoneDetectionType&& value) { m_localTimeZoneDetectionHasBeenSet = true; m_localTimeZoneDetection.push_back(std::move(value)); return *this; }
+    template<typename LocalTimeZoneDetectionT = Aws::Vector<LocalTimeZoneDetectionType>>
+    void SetLocalTimeZoneDetection(LocalTimeZoneDetectionT&& value) { m_localTimeZoneDetectionHasBeenSet = true; m_localTimeZoneDetection = std::forward<LocalTimeZoneDetectionT>(value); }
+    template<typename LocalTimeZoneDetectionT = Aws::Vector<LocalTimeZoneDetectionType>>
+    LocalTimeZoneConfig& WithLocalTimeZoneDetection(LocalTimeZoneDetectionT&& value) { SetLocalTimeZoneDetection(std::forward<LocalTimeZoneDetectionT>(value)); return *this;}
+    inline LocalTimeZoneConfig& AddLocalTimeZoneDetection(LocalTimeZoneDetectionType value) { m_localTimeZoneDetectionHasBeenSet = true; m_localTimeZoneDetection.push_back(value); return *this; }
     ///@}
   private:
 

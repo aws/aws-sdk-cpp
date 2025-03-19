@@ -41,7 +41,7 @@ namespace Model
   class ProtectedQuery
   {
   public:
-    AWS_CLEANROOMS_API ProtectedQuery();
+    AWS_CLEANROOMS_API ProtectedQuery() = default;
     AWS_CLEANROOMS_API ProtectedQuery(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ProtectedQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,126 +51,118 @@ namespace Model
     /**
      * <p>The identifier for a protected query instance.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ProtectedQuery& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ProtectedQuery& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ProtectedQuery& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ProtectedQuery& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier for the membership.</p>
      */
-    inline const Aws::String& GetMembershipId() const{ return m_membershipId; }
+    inline const Aws::String& GetMembershipId() const { return m_membershipId; }
     inline bool MembershipIdHasBeenSet() const { return m_membershipIdHasBeenSet; }
-    inline void SetMembershipId(const Aws::String& value) { m_membershipIdHasBeenSet = true; m_membershipId = value; }
-    inline void SetMembershipId(Aws::String&& value) { m_membershipIdHasBeenSet = true; m_membershipId = std::move(value); }
-    inline void SetMembershipId(const char* value) { m_membershipIdHasBeenSet = true; m_membershipId.assign(value); }
-    inline ProtectedQuery& WithMembershipId(const Aws::String& value) { SetMembershipId(value); return *this;}
-    inline ProtectedQuery& WithMembershipId(Aws::String&& value) { SetMembershipId(std::move(value)); return *this;}
-    inline ProtectedQuery& WithMembershipId(const char* value) { SetMembershipId(value); return *this;}
+    template<typename MembershipIdT = Aws::String>
+    void SetMembershipId(MembershipIdT&& value) { m_membershipIdHasBeenSet = true; m_membershipId = std::forward<MembershipIdT>(value); }
+    template<typename MembershipIdT = Aws::String>
+    ProtectedQuery& WithMembershipId(MembershipIdT&& value) { SetMembershipId(std::forward<MembershipIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the membership.</p>
      */
-    inline const Aws::String& GetMembershipArn() const{ return m_membershipArn; }
+    inline const Aws::String& GetMembershipArn() const { return m_membershipArn; }
     inline bool MembershipArnHasBeenSet() const { return m_membershipArnHasBeenSet; }
-    inline void SetMembershipArn(const Aws::String& value) { m_membershipArnHasBeenSet = true; m_membershipArn = value; }
-    inline void SetMembershipArn(Aws::String&& value) { m_membershipArnHasBeenSet = true; m_membershipArn = std::move(value); }
-    inline void SetMembershipArn(const char* value) { m_membershipArnHasBeenSet = true; m_membershipArn.assign(value); }
-    inline ProtectedQuery& WithMembershipArn(const Aws::String& value) { SetMembershipArn(value); return *this;}
-    inline ProtectedQuery& WithMembershipArn(Aws::String&& value) { SetMembershipArn(std::move(value)); return *this;}
-    inline ProtectedQuery& WithMembershipArn(const char* value) { SetMembershipArn(value); return *this;}
+    template<typename MembershipArnT = Aws::String>
+    void SetMembershipArn(MembershipArnT&& value) { m_membershipArnHasBeenSet = true; m_membershipArn = std::forward<MembershipArnT>(value); }
+    template<typename MembershipArnT = Aws::String>
+    ProtectedQuery& WithMembershipArn(MembershipArnT&& value) { SetMembershipArn(std::forward<MembershipArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the protected query was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
-    inline ProtectedQuery& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline ProtectedQuery& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    ProtectedQuery& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The protected query SQL parameters.</p>
      */
-    inline const ProtectedQuerySQLParameters& GetSqlParameters() const{ return m_sqlParameters; }
+    inline const ProtectedQuerySQLParameters& GetSqlParameters() const { return m_sqlParameters; }
     inline bool SqlParametersHasBeenSet() const { return m_sqlParametersHasBeenSet; }
-    inline void SetSqlParameters(const ProtectedQuerySQLParameters& value) { m_sqlParametersHasBeenSet = true; m_sqlParameters = value; }
-    inline void SetSqlParameters(ProtectedQuerySQLParameters&& value) { m_sqlParametersHasBeenSet = true; m_sqlParameters = std::move(value); }
-    inline ProtectedQuery& WithSqlParameters(const ProtectedQuerySQLParameters& value) { SetSqlParameters(value); return *this;}
-    inline ProtectedQuery& WithSqlParameters(ProtectedQuerySQLParameters&& value) { SetSqlParameters(std::move(value)); return *this;}
+    template<typename SqlParametersT = ProtectedQuerySQLParameters>
+    void SetSqlParameters(SqlParametersT&& value) { m_sqlParametersHasBeenSet = true; m_sqlParameters = std::forward<SqlParametersT>(value); }
+    template<typename SqlParametersT = ProtectedQuerySQLParameters>
+    ProtectedQuery& WithSqlParameters(SqlParametersT&& value) { SetSqlParameters(std::forward<SqlParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the query.</p>
      */
-    inline const ProtectedQueryStatus& GetStatus() const{ return m_status; }
+    inline ProtectedQueryStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ProtectedQueryStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ProtectedQueryStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ProtectedQuery& WithStatus(const ProtectedQueryStatus& value) { SetStatus(value); return *this;}
-    inline ProtectedQuery& WithStatus(ProtectedQueryStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ProtectedQueryStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ProtectedQuery& WithStatus(ProtectedQueryStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains any details needed to write the query results.</p>
      */
-    inline const ProtectedQueryResultConfiguration& GetResultConfiguration() const{ return m_resultConfiguration; }
+    inline const ProtectedQueryResultConfiguration& GetResultConfiguration() const { return m_resultConfiguration; }
     inline bool ResultConfigurationHasBeenSet() const { return m_resultConfigurationHasBeenSet; }
-    inline void SetResultConfiguration(const ProtectedQueryResultConfiguration& value) { m_resultConfigurationHasBeenSet = true; m_resultConfiguration = value; }
-    inline void SetResultConfiguration(ProtectedQueryResultConfiguration&& value) { m_resultConfigurationHasBeenSet = true; m_resultConfiguration = std::move(value); }
-    inline ProtectedQuery& WithResultConfiguration(const ProtectedQueryResultConfiguration& value) { SetResultConfiguration(value); return *this;}
-    inline ProtectedQuery& WithResultConfiguration(ProtectedQueryResultConfiguration&& value) { SetResultConfiguration(std::move(value)); return *this;}
+    template<typename ResultConfigurationT = ProtectedQueryResultConfiguration>
+    void SetResultConfiguration(ResultConfigurationT&& value) { m_resultConfigurationHasBeenSet = true; m_resultConfiguration = std::forward<ResultConfigurationT>(value); }
+    template<typename ResultConfigurationT = ProtectedQueryResultConfiguration>
+    ProtectedQuery& WithResultConfiguration(ResultConfigurationT&& value) { SetResultConfiguration(std::forward<ResultConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Statistics about protected query execution.</p>
      */
-    inline const ProtectedQueryStatistics& GetStatistics() const{ return m_statistics; }
+    inline const ProtectedQueryStatistics& GetStatistics() const { return m_statistics; }
     inline bool StatisticsHasBeenSet() const { return m_statisticsHasBeenSet; }
-    inline void SetStatistics(const ProtectedQueryStatistics& value) { m_statisticsHasBeenSet = true; m_statistics = value; }
-    inline void SetStatistics(ProtectedQueryStatistics&& value) { m_statisticsHasBeenSet = true; m_statistics = std::move(value); }
-    inline ProtectedQuery& WithStatistics(const ProtectedQueryStatistics& value) { SetStatistics(value); return *this;}
-    inline ProtectedQuery& WithStatistics(ProtectedQueryStatistics&& value) { SetStatistics(std::move(value)); return *this;}
+    template<typename StatisticsT = ProtectedQueryStatistics>
+    void SetStatistics(StatisticsT&& value) { m_statisticsHasBeenSet = true; m_statistics = std::forward<StatisticsT>(value); }
+    template<typename StatisticsT = ProtectedQueryStatistics>
+    ProtectedQuery& WithStatistics(StatisticsT&& value) { SetStatistics(std::forward<StatisticsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The result of the protected query.</p>
      */
-    inline const ProtectedQueryResult& GetResult() const{ return m_result; }
+    inline const ProtectedQueryResult& GetResult() const { return m_result; }
     inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
-    inline void SetResult(const ProtectedQueryResult& value) { m_resultHasBeenSet = true; m_result = value; }
-    inline void SetResult(ProtectedQueryResult&& value) { m_resultHasBeenSet = true; m_result = std::move(value); }
-    inline ProtectedQuery& WithResult(const ProtectedQueryResult& value) { SetResult(value); return *this;}
-    inline ProtectedQuery& WithResult(ProtectedQueryResult&& value) { SetResult(std::move(value)); return *this;}
+    template<typename ResultT = ProtectedQueryResult>
+    void SetResult(ResultT&& value) { m_resultHasBeenSet = true; m_result = std::forward<ResultT>(value); }
+    template<typename ResultT = ProtectedQueryResult>
+    ProtectedQuery& WithResult(ResultT&& value) { SetResult(std::forward<ResultT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An error thrown by the protected query.</p>
      */
-    inline const ProtectedQueryError& GetError() const{ return m_error; }
+    inline const ProtectedQueryError& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const ProtectedQueryError& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(ProtectedQueryError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline ProtectedQuery& WithError(const ProtectedQueryError& value) { SetError(value); return *this;}
-    inline ProtectedQuery& WithError(ProtectedQueryError&& value) { SetError(std::move(value)); return *this;}
+    template<typename ErrorT = ProtectedQueryError>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = ProtectedQueryError>
+    ProtectedQuery& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -178,24 +170,24 @@ namespace Model
      * <p>The sensitivity parameters of the differential privacy results of the
      * protected query.</p>
      */
-    inline const DifferentialPrivacyParameters& GetDifferentialPrivacy() const{ return m_differentialPrivacy; }
+    inline const DifferentialPrivacyParameters& GetDifferentialPrivacy() const { return m_differentialPrivacy; }
     inline bool DifferentialPrivacyHasBeenSet() const { return m_differentialPrivacyHasBeenSet; }
-    inline void SetDifferentialPrivacy(const DifferentialPrivacyParameters& value) { m_differentialPrivacyHasBeenSet = true; m_differentialPrivacy = value; }
-    inline void SetDifferentialPrivacy(DifferentialPrivacyParameters&& value) { m_differentialPrivacyHasBeenSet = true; m_differentialPrivacy = std::move(value); }
-    inline ProtectedQuery& WithDifferentialPrivacy(const DifferentialPrivacyParameters& value) { SetDifferentialPrivacy(value); return *this;}
-    inline ProtectedQuery& WithDifferentialPrivacy(DifferentialPrivacyParameters&& value) { SetDifferentialPrivacy(std::move(value)); return *this;}
+    template<typename DifferentialPrivacyT = DifferentialPrivacyParameters>
+    void SetDifferentialPrivacy(DifferentialPrivacyT&& value) { m_differentialPrivacyHasBeenSet = true; m_differentialPrivacy = std::forward<DifferentialPrivacyT>(value); }
+    template<typename DifferentialPrivacyT = DifferentialPrivacyParameters>
+    ProtectedQuery& WithDifferentialPrivacy(DifferentialPrivacyT&& value) { SetDifferentialPrivacy(std::forward<DifferentialPrivacyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The compute configuration for the protected query.</p>
      */
-    inline const ComputeConfiguration& GetComputeConfiguration() const{ return m_computeConfiguration; }
+    inline const ComputeConfiguration& GetComputeConfiguration() const { return m_computeConfiguration; }
     inline bool ComputeConfigurationHasBeenSet() const { return m_computeConfigurationHasBeenSet; }
-    inline void SetComputeConfiguration(const ComputeConfiguration& value) { m_computeConfigurationHasBeenSet = true; m_computeConfiguration = value; }
-    inline void SetComputeConfiguration(ComputeConfiguration&& value) { m_computeConfigurationHasBeenSet = true; m_computeConfiguration = std::move(value); }
-    inline ProtectedQuery& WithComputeConfiguration(const ComputeConfiguration& value) { SetComputeConfiguration(value); return *this;}
-    inline ProtectedQuery& WithComputeConfiguration(ComputeConfiguration&& value) { SetComputeConfiguration(std::move(value)); return *this;}
+    template<typename ComputeConfigurationT = ComputeConfiguration>
+    void SetComputeConfiguration(ComputeConfigurationT&& value) { m_computeConfigurationHasBeenSet = true; m_computeConfiguration = std::forward<ComputeConfigurationT>(value); }
+    template<typename ComputeConfigurationT = ComputeConfiguration>
+    ProtectedQuery& WithComputeConfiguration(ComputeConfigurationT&& value) { SetComputeConfiguration(std::forward<ComputeConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -208,13 +200,13 @@ namespace Model
     Aws::String m_membershipArn;
     bool m_membershipArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::Utils::DateTime m_createTime{};
     bool m_createTimeHasBeenSet = false;
 
     ProtectedQuerySQLParameters m_sqlParameters;
     bool m_sqlParametersHasBeenSet = false;
 
-    ProtectedQueryStatus m_status;
+    ProtectedQueryStatus m_status{ProtectedQueryStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     ProtectedQueryResultConfiguration m_resultConfiguration;

@@ -18,16 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-QuestionMetric::QuestionMetric() : 
-    m_questionIdHasBeenSet(false),
-    m_risk(Risk::NOT_SET),
-    m_riskHasBeenSet(false),
-    m_bestPracticesHasBeenSet(false)
-{
-}
-
 QuestionMetric::QuestionMetric(JsonView jsonValue)
-  : QuestionMetric()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ QuestionMetric& QuestionMetric::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("QuestionId"))
   {
     m_questionId = jsonValue.GetString("QuestionId");
-
     m_questionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Risk"))
   {
     m_risk = RiskMapper::GetRiskForName(jsonValue.GetString("Risk"));
-
     m_riskHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BestPractices"))
   {
     Aws::Utils::Array<JsonView> bestPracticesJsonList = jsonValue.GetArray("BestPractices");
@@ -57,7 +44,6 @@ QuestionMetric& QuestionMetric::operator =(JsonView jsonValue)
     }
     m_bestPracticesHasBeenSet = true;
   }
-
   return *this;
 }
 

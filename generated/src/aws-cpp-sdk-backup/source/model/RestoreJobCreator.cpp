@@ -18,13 +18,7 @@ namespace Backup
 namespace Model
 {
 
-RestoreJobCreator::RestoreJobCreator() : 
-    m_restoreTestingPlanArnHasBeenSet(false)
-{
-}
-
 RestoreJobCreator::RestoreJobCreator(JsonView jsonValue)
-  : RestoreJobCreator()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RestoreJobCreator& RestoreJobCreator::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RestoreTestingPlanArn"))
   {
     m_restoreTestingPlanArn = jsonValue.GetString("RestoreTestingPlanArn");
-
     m_restoreTestingPlanArnHasBeenSet = true;
   }
-
   return *this;
 }
 

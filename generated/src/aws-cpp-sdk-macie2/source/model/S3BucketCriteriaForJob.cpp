@@ -18,14 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-S3BucketCriteriaForJob::S3BucketCriteriaForJob() : 
-    m_excludesHasBeenSet(false),
-    m_includesHasBeenSet(false)
-{
-}
-
 S3BucketCriteriaForJob::S3BucketCriteriaForJob(JsonView jsonValue)
-  : S3BucketCriteriaForJob()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3BucketCriteriaForJob& S3BucketCriteriaForJob::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("excludes"))
   {
     m_excludes = jsonValue.GetObject("excludes");
-
     m_excludesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("includes"))
   {
     m_includes = jsonValue.GetObject("includes");
-
     m_includesHasBeenSet = true;
   }
-
   return *this;
 }
 

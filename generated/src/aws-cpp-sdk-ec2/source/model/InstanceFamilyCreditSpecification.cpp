@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceFamilyCreditSpecification::InstanceFamilyCreditSpecification() : 
-    m_instanceFamily(UnlimitedSupportedInstanceFamily::NOT_SET),
-    m_instanceFamilyHasBeenSet(false),
-    m_cpuCreditsHasBeenSet(false)
-{
-}
-
 InstanceFamilyCreditSpecification::InstanceFamilyCreditSpecification(const XmlNode& xmlNode)
-  : InstanceFamilyCreditSpecification()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ InstanceFamilyCreditSpecification& InstanceFamilyCreditSpecification::operator =
     XmlNode instanceFamilyNode = resultNode.FirstChild("instanceFamily");
     if(!instanceFamilyNode.IsNull())
     {
-      m_instanceFamily = UnlimitedSupportedInstanceFamilyMapper::GetUnlimitedSupportedInstanceFamilyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceFamilyNode.GetText()).c_str()).c_str());
+      m_instanceFamily = UnlimitedSupportedInstanceFamilyMapper::GetUnlimitedSupportedInstanceFamilyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceFamilyNode.GetText()).c_str()));
       m_instanceFamilyHasBeenSet = true;
     }
     XmlNode cpuCreditsNode = resultNode.FirstChild("cpuCredits");

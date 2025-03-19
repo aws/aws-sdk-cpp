@@ -12,15 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLegalHoldRequest::CreateLegalHoldRequest() : 
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idempotencyTokenHasBeenSet(false),
-    m_recoveryPointSelectionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateLegalHoldRequest::SerializePayload() const
 {
   JsonValue payload;

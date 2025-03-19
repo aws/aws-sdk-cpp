@@ -21,7 +21,7 @@ namespace Model
   class DeleteHumanLoopRequest : public AugmentedAIRuntimeRequest
   {
   public:
-    AWS_AUGMENTEDAIRUNTIME_API DeleteHumanLoopRequest();
+    AWS_AUGMENTEDAIRUNTIME_API DeleteHumanLoopRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The name of the human loop that you want to delete.</p>
      */
-    inline const Aws::String& GetHumanLoopName() const{ return m_humanLoopName; }
+    inline const Aws::String& GetHumanLoopName() const { return m_humanLoopName; }
     inline bool HumanLoopNameHasBeenSet() const { return m_humanLoopNameHasBeenSet; }
-    inline void SetHumanLoopName(const Aws::String& value) { m_humanLoopNameHasBeenSet = true; m_humanLoopName = value; }
-    inline void SetHumanLoopName(Aws::String&& value) { m_humanLoopNameHasBeenSet = true; m_humanLoopName = std::move(value); }
-    inline void SetHumanLoopName(const char* value) { m_humanLoopNameHasBeenSet = true; m_humanLoopName.assign(value); }
-    inline DeleteHumanLoopRequest& WithHumanLoopName(const Aws::String& value) { SetHumanLoopName(value); return *this;}
-    inline DeleteHumanLoopRequest& WithHumanLoopName(Aws::String&& value) { SetHumanLoopName(std::move(value)); return *this;}
-    inline DeleteHumanLoopRequest& WithHumanLoopName(const char* value) { SetHumanLoopName(value); return *this;}
+    template<typename HumanLoopNameT = Aws::String>
+    void SetHumanLoopName(HumanLoopNameT&& value) { m_humanLoopNameHasBeenSet = true; m_humanLoopName = std::forward<HumanLoopNameT>(value); }
+    template<typename HumanLoopNameT = Aws::String>
+    DeleteHumanLoopRequest& WithHumanLoopName(HumanLoopNameT&& value) { SetHumanLoopName(std::forward<HumanLoopNameT>(value)); return *this;}
     ///@}
   private:
 

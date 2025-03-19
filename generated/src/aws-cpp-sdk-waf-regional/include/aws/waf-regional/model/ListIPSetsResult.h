@@ -29,7 +29,7 @@ namespace Model
   class ListIPSetsResult
   {
   public:
-    AWS_WAFREGIONAL_API ListIPSetsResult();
+    AWS_WAFREGIONAL_API ListIPSetsResult() = default;
     AWS_WAFREGIONAL_API ListIPSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WAFREGIONAL_API ListIPSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,45 +40,44 @@ namespace Model
      * <code>ListIPSets</code> request, and in the next request use the
      * <code>NextMarker</code> response value as the <code>NextMarker</code> value.</p>
      */
-    inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
-    inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
-    inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
-    inline ListIPSetsResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-    inline ListIPSetsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-    inline ListIPSetsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
+    template<typename NextMarkerT = Aws::String>
+    void SetNextMarker(NextMarkerT&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::forward<NextMarkerT>(value); }
+    template<typename NextMarkerT = Aws::String>
+    ListIPSetsResult& WithNextMarker(NextMarkerT&& value) { SetNextMarker(std::forward<NextMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of <a>IPSetSummary</a> objects.</p>
      */
-    inline const Aws::Vector<IPSetSummary>& GetIPSets() const{ return m_iPSets; }
-    inline void SetIPSets(const Aws::Vector<IPSetSummary>& value) { m_iPSets = value; }
-    inline void SetIPSets(Aws::Vector<IPSetSummary>&& value) { m_iPSets = std::move(value); }
-    inline ListIPSetsResult& WithIPSets(const Aws::Vector<IPSetSummary>& value) { SetIPSets(value); return *this;}
-    inline ListIPSetsResult& WithIPSets(Aws::Vector<IPSetSummary>&& value) { SetIPSets(std::move(value)); return *this;}
-    inline ListIPSetsResult& AddIPSets(const IPSetSummary& value) { m_iPSets.push_back(value); return *this; }
-    inline ListIPSetsResult& AddIPSets(IPSetSummary&& value) { m_iPSets.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<IPSetSummary>& GetIPSets() const { return m_iPSets; }
+    template<typename IPSetsT = Aws::Vector<IPSetSummary>>
+    void SetIPSets(IPSetsT&& value) { m_iPSetsHasBeenSet = true; m_iPSets = std::forward<IPSetsT>(value); }
+    template<typename IPSetsT = Aws::Vector<IPSetSummary>>
+    ListIPSetsResult& WithIPSets(IPSetsT&& value) { SetIPSets(std::forward<IPSetsT>(value)); return *this;}
+    template<typename IPSetsT = IPSetSummary>
+    ListIPSetsResult& AddIPSets(IPSetsT&& value) { m_iPSetsHasBeenSet = true; m_iPSets.emplace_back(std::forward<IPSetsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListIPSetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListIPSetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListIPSetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListIPSetsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextMarker;
+    bool m_nextMarkerHasBeenSet = false;
 
     Aws::Vector<IPSetSummary> m_iPSets;
+    bool m_iPSetsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

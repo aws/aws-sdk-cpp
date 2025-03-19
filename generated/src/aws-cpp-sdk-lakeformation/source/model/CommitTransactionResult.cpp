@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CommitTransactionResult::CommitTransactionResult() : 
-    m_transactionStatus(TransactionStatus::NOT_SET)
-{
-}
-
 CommitTransactionResult::CommitTransactionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CommitTransactionResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ CommitTransactionResult& CommitTransactionResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("TransactionStatus"))
   {
     m_transactionStatus = TransactionStatusMapper::GetTransactionStatusForName(jsonValue.GetString("TransactionStatus"));
-
+    m_transactionStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

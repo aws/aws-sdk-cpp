@@ -23,7 +23,7 @@ namespace Model
   class AddAttachmentsToSetRequest : public SupportRequest
   {
   public:
-    AWS_SUPPORT_API AddAttachmentsToSetRequest();
+    AWS_SUPPORT_API AddAttachmentsToSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * the response. If an <code>attachmentSetId</code> is specified, the attachments
      * are added to the specified set, if it exists.</p>
      */
-    inline const Aws::String& GetAttachmentSetId() const{ return m_attachmentSetId; }
+    inline const Aws::String& GetAttachmentSetId() const { return m_attachmentSetId; }
     inline bool AttachmentSetIdHasBeenSet() const { return m_attachmentSetIdHasBeenSet; }
-    inline void SetAttachmentSetId(const Aws::String& value) { m_attachmentSetIdHasBeenSet = true; m_attachmentSetId = value; }
-    inline void SetAttachmentSetId(Aws::String&& value) { m_attachmentSetIdHasBeenSet = true; m_attachmentSetId = std::move(value); }
-    inline void SetAttachmentSetId(const char* value) { m_attachmentSetIdHasBeenSet = true; m_attachmentSetId.assign(value); }
-    inline AddAttachmentsToSetRequest& WithAttachmentSetId(const Aws::String& value) { SetAttachmentSetId(value); return *this;}
-    inline AddAttachmentsToSetRequest& WithAttachmentSetId(Aws::String&& value) { SetAttachmentSetId(std::move(value)); return *this;}
-    inline AddAttachmentsToSetRequest& WithAttachmentSetId(const char* value) { SetAttachmentSetId(value); return *this;}
+    template<typename AttachmentSetIdT = Aws::String>
+    void SetAttachmentSetId(AttachmentSetIdT&& value) { m_attachmentSetIdHasBeenSet = true; m_attachmentSetId = std::forward<AttachmentSetIdT>(value); }
+    template<typename AttachmentSetIdT = Aws::String>
+    AddAttachmentsToSetRequest& WithAttachmentSetId(AttachmentSetIdT&& value) { SetAttachmentSetId(std::forward<AttachmentSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,14 @@ namespace Model
      * base64-encoded string. The value for <code>fileName</code> is the name of the
      * attachment, such as <code>troubleshoot-screenshot.png</code>.</p>
      */
-    inline const Aws::Vector<Attachment>& GetAttachments() const{ return m_attachments; }
+    inline const Aws::Vector<Attachment>& GetAttachments() const { return m_attachments; }
     inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
-    inline void SetAttachments(const Aws::Vector<Attachment>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
-    inline void SetAttachments(Aws::Vector<Attachment>&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
-    inline AddAttachmentsToSetRequest& WithAttachments(const Aws::Vector<Attachment>& value) { SetAttachments(value); return *this;}
-    inline AddAttachmentsToSetRequest& WithAttachments(Aws::Vector<Attachment>&& value) { SetAttachments(std::move(value)); return *this;}
-    inline AddAttachmentsToSetRequest& AddAttachments(const Attachment& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(value); return *this; }
-    inline AddAttachmentsToSetRequest& AddAttachments(Attachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
+    template<typename AttachmentsT = Aws::Vector<Attachment>>
+    void SetAttachments(AttachmentsT&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::forward<AttachmentsT>(value); }
+    template<typename AttachmentsT = Aws::Vector<Attachment>>
+    AddAttachmentsToSetRequest& WithAttachments(AttachmentsT&& value) { SetAttachments(std::forward<AttachmentsT>(value)); return *this;}
+    template<typename AttachmentsT = Attachment>
+    AddAttachmentsToSetRequest& AddAttachments(AttachmentsT&& value) { m_attachmentsHasBeenSet = true; m_attachments.emplace_back(std::forward<AttachmentsT>(value)); return *this; }
     ///@}
   private:
 

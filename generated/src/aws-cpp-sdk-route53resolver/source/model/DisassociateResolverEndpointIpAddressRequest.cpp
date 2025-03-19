@@ -12,12 +12,6 @@ using namespace Aws::Route53Resolver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateResolverEndpointIpAddressRequest::DisassociateResolverEndpointIpAddressRequest() : 
-    m_resolverEndpointIdHasBeenSet(false),
-    m_ipAddressHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateResolverEndpointIpAddressRequest::SerializePayload() const
 {
   JsonValue payload;

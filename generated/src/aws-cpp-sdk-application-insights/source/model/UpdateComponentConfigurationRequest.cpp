@@ -12,19 +12,6 @@ using namespace Aws::ApplicationInsights::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateComponentConfigurationRequest::UpdateComponentConfigurationRequest() : 
-    m_resourceGroupNameHasBeenSet(false),
-    m_componentNameHasBeenSet(false),
-    m_monitor(false),
-    m_monitorHasBeenSet(false),
-    m_tier(Tier::NOT_SET),
-    m_tierHasBeenSet(false),
-    m_componentConfigurationHasBeenSet(false),
-    m_autoConfigEnabled(false),
-    m_autoConfigEnabledHasBeenSet(false)
-{
-}
-
 Aws::String UpdateComponentConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

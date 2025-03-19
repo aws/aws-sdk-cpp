@@ -12,11 +12,6 @@ using namespace Aws::Invoicing::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteInvoiceUnitRequest::DeleteInvoiceUnitRequest() : 
-    m_invoiceUnitArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteInvoiceUnitRequest::SerializePayload() const
 {
   JsonValue payload;

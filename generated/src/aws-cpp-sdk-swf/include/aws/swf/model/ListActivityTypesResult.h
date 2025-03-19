@@ -35,7 +35,7 @@ namespace Model
   class ListActivityTypesResult
   {
   public:
-    AWS_SWF_API ListActivityTypesResult();
+    AWS_SWF_API ListActivityTypesResult() = default;
     AWS_SWF_API ListActivityTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SWF_API ListActivityTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,13 +44,13 @@ namespace Model
     /**
      * <p>List of activity type information.</p>
      */
-    inline const Aws::Vector<ActivityTypeInfo>& GetTypeInfos() const{ return m_typeInfos; }
-    inline void SetTypeInfos(const Aws::Vector<ActivityTypeInfo>& value) { m_typeInfos = value; }
-    inline void SetTypeInfos(Aws::Vector<ActivityTypeInfo>&& value) { m_typeInfos = std::move(value); }
-    inline ListActivityTypesResult& WithTypeInfos(const Aws::Vector<ActivityTypeInfo>& value) { SetTypeInfos(value); return *this;}
-    inline ListActivityTypesResult& WithTypeInfos(Aws::Vector<ActivityTypeInfo>&& value) { SetTypeInfos(std::move(value)); return *this;}
-    inline ListActivityTypesResult& AddTypeInfos(const ActivityTypeInfo& value) { m_typeInfos.push_back(value); return *this; }
-    inline ListActivityTypesResult& AddTypeInfos(ActivityTypeInfo&& value) { m_typeInfos.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ActivityTypeInfo>& GetTypeInfos() const { return m_typeInfos; }
+    template<typename TypeInfosT = Aws::Vector<ActivityTypeInfo>>
+    void SetTypeInfos(TypeInfosT&& value) { m_typeInfosHasBeenSet = true; m_typeInfos = std::forward<TypeInfosT>(value); }
+    template<typename TypeInfosT = Aws::Vector<ActivityTypeInfo>>
+    ListActivityTypesResult& WithTypeInfos(TypeInfosT&& value) { SetTypeInfos(std::forward<TypeInfosT>(value)); return *this;}
+    template<typename TypeInfosT = ActivityTypeInfo>
+    ListActivityTypesResult& AddTypeInfos(TypeInfosT&& value) { m_typeInfosHasBeenSet = true; m_typeInfos.emplace_back(std::forward<TypeInfosT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,32 +61,31 @@ namespace Model
      * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
      * determines how many results can be returned in a single call.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-    inline ListActivityTypesResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline ListActivityTypesResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline ListActivityTypesResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    ListActivityTypesResult& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListActivityTypesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListActivityTypesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListActivityTypesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListActivityTypesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ActivityTypeInfo> m_typeInfos;
+    bool m_typeInfosHasBeenSet = false;
 
     Aws::String m_nextPageToken;
+    bool m_nextPageTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,14 +12,6 @@ using namespace Aws::MigrationHubConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateHomeRegionControlRequest::CreateHomeRegionControlRequest() : 
-    m_homeRegionHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateHomeRegionControlRequest::SerializePayload() const
 {
   JsonValue payload;

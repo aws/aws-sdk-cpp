@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-PostProcessingParsedResponse::PostProcessingParsedResponse() : 
-    m_textHasBeenSet(false)
-{
-}
-
 PostProcessingParsedResponse::PostProcessingParsedResponse(JsonView jsonValue)
-  : PostProcessingParsedResponse()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PostProcessingParsedResponse& PostProcessingParsedResponse::operator =(JsonView 
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteDataLakeDatasetResult::DeleteDataLakeDatasetResult()
-{
-}
-
 DeleteDataLakeDatasetResult::DeleteDataLakeDatasetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ DeleteDataLakeDatasetResult& DeleteDataLakeDatasetResult::operator =(const Aws::
   if(jsonValue.ValueExists("instanceId"))
   {
     m_instanceId = jsonValue.GetString("instanceId");
-
+    m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespace"))
   {
     m_namespace = jsonValue.GetString("namespace");
-
+    m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,29 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-FeatureGroup::FeatureGroup() : 
-    m_featureGroupArnHasBeenSet(false),
-    m_featureGroupNameHasBeenSet(false),
-    m_recordIdentifierFeatureNameHasBeenSet(false),
-    m_eventTimeFeatureNameHasBeenSet(false),
-    m_featureDefinitionsHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_onlineStoreConfigHasBeenSet(false),
-    m_offlineStoreConfigHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_featureGroupStatus(FeatureGroupStatus::NOT_SET),
-    m_featureGroupStatusHasBeenSet(false),
-    m_offlineStoreStatusHasBeenSet(false),
-    m_lastUpdateStatusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 FeatureGroup::FeatureGroup(JsonView jsonValue)
-  : FeatureGroup()
 {
   *this = jsonValue;
 }
@@ -50,31 +28,23 @@ FeatureGroup& FeatureGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FeatureGroupArn"))
   {
     m_featureGroupArn = jsonValue.GetString("FeatureGroupArn");
-
     m_featureGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeatureGroupName"))
   {
     m_featureGroupName = jsonValue.GetString("FeatureGroupName");
-
     m_featureGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordIdentifierFeatureName"))
   {
     m_recordIdentifierFeatureName = jsonValue.GetString("RecordIdentifierFeatureName");
-
     m_recordIdentifierFeatureNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventTimeFeatureName"))
   {
     m_eventTimeFeatureName = jsonValue.GetString("EventTimeFeatureName");
-
     m_eventTimeFeatureNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeatureDefinitions"))
   {
     Aws::Utils::Array<JsonView> featureDefinitionsJsonList = jsonValue.GetArray("FeatureDefinitions");
@@ -84,77 +54,56 @@ FeatureGroup& FeatureGroup::operator =(JsonView jsonValue)
     }
     m_featureDefinitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnlineStoreConfig"))
   {
     m_onlineStoreConfig = jsonValue.GetObject("OnlineStoreConfig");
-
     m_onlineStoreConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OfflineStoreConfig"))
   {
     m_offlineStoreConfig = jsonValue.GetObject("OfflineStoreConfig");
-
     m_offlineStoreConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeatureGroupStatus"))
   {
     m_featureGroupStatus = FeatureGroupStatusMapper::GetFeatureGroupStatusForName(jsonValue.GetString("FeatureGroupStatus"));
-
     m_featureGroupStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OfflineStoreStatus"))
   {
     m_offlineStoreStatus = jsonValue.GetObject("OfflineStoreStatus");
-
     m_offlineStoreStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdateStatus"))
   {
     m_lastUpdateStatus = jsonValue.GetObject("LastUpdateStatus");
-
     m_lastUpdateStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -164,7 +113,6 @@ FeatureGroup& FeatureGroup::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

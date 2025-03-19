@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-LineageGroupSummary::LineageGroupSummary() : 
-    m_lineageGroupArnHasBeenSet(false),
-    m_lineageGroupNameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 LineageGroupSummary::LineageGroupSummary(JsonView jsonValue)
-  : LineageGroupSummary()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ LineageGroupSummary& LineageGroupSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LineageGroupArn"))
   {
     m_lineageGroupArn = jsonValue.GetString("LineageGroupArn");
-
     m_lineageGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LineageGroupName"))
   {
     m_lineageGroupName = jsonValue.GetString("LineageGroupName");
-
     m_lineageGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

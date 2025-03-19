@@ -12,11 +12,6 @@ using namespace Aws::MediaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopFlowRequest::StopFlowRequest() : 
-    m_flowArnHasBeenSet(false)
-{
-}
-
 Aws::String StopFlowRequest::SerializePayload() const
 {
   return {};

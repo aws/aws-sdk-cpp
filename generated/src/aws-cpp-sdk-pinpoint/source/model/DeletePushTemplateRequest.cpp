@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeletePushTemplateRequest::DeletePushTemplateRequest() : 
-    m_templateNameHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 Aws::String DeletePushTemplateRequest::SerializePayload() const
 {
   return {};

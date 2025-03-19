@@ -20,17 +20,7 @@ namespace SES
 namespace Model
 {
 
-IdentityMailFromDomainAttributes::IdentityMailFromDomainAttributes() : 
-    m_mailFromDomainHasBeenSet(false),
-    m_mailFromDomainStatus(CustomMailFromStatus::NOT_SET),
-    m_mailFromDomainStatusHasBeenSet(false),
-    m_behaviorOnMXFailure(BehaviorOnMXFailure::NOT_SET),
-    m_behaviorOnMXFailureHasBeenSet(false)
-{
-}
-
 IdentityMailFromDomainAttributes::IdentityMailFromDomainAttributes(const XmlNode& xmlNode)
-  : IdentityMailFromDomainAttributes()
 {
   *this = xmlNode;
 }
@@ -50,13 +40,13 @@ IdentityMailFromDomainAttributes& IdentityMailFromDomainAttributes::operator =(c
     XmlNode mailFromDomainStatusNode = resultNode.FirstChild("MailFromDomainStatus");
     if(!mailFromDomainStatusNode.IsNull())
     {
-      m_mailFromDomainStatus = CustomMailFromStatusMapper::GetCustomMailFromStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(mailFromDomainStatusNode.GetText()).c_str()).c_str());
+      m_mailFromDomainStatus = CustomMailFromStatusMapper::GetCustomMailFromStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(mailFromDomainStatusNode.GetText()).c_str()));
       m_mailFromDomainStatusHasBeenSet = true;
     }
     XmlNode behaviorOnMXFailureNode = resultNode.FirstChild("BehaviorOnMXFailure");
     if(!behaviorOnMXFailureNode.IsNull())
     {
-      m_behaviorOnMXFailure = BehaviorOnMXFailureMapper::GetBehaviorOnMXFailureForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(behaviorOnMXFailureNode.GetText()).c_str()).c_str());
+      m_behaviorOnMXFailure = BehaviorOnMXFailureMapper::GetBehaviorOnMXFailureForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(behaviorOnMXFailureNode.GetText()).c_str()));
       m_behaviorOnMXFailureHasBeenSet = true;
     }
   }

@@ -39,7 +39,7 @@ namespace Model
   class LoadBalancerInfo
   {
   public:
-    AWS_CODEDEPLOY_API LoadBalancerInfo();
+    AWS_CODEDEPLOY_API LoadBalancerInfo() = default;
     AWS_CODEDEPLOY_API LoadBalancerInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API LoadBalancerInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,14 +54,14 @@ namespace Model
      * or Network Load Balancers, use the <code>targetGroupInfoList</code> array
      * instead of this one.</p> 
      */
-    inline const Aws::Vector<ELBInfo>& GetElbInfoList() const{ return m_elbInfoList; }
+    inline const Aws::Vector<ELBInfo>& GetElbInfoList() const { return m_elbInfoList; }
     inline bool ElbInfoListHasBeenSet() const { return m_elbInfoListHasBeenSet; }
-    inline void SetElbInfoList(const Aws::Vector<ELBInfo>& value) { m_elbInfoListHasBeenSet = true; m_elbInfoList = value; }
-    inline void SetElbInfoList(Aws::Vector<ELBInfo>&& value) { m_elbInfoListHasBeenSet = true; m_elbInfoList = std::move(value); }
-    inline LoadBalancerInfo& WithElbInfoList(const Aws::Vector<ELBInfo>& value) { SetElbInfoList(value); return *this;}
-    inline LoadBalancerInfo& WithElbInfoList(Aws::Vector<ELBInfo>&& value) { SetElbInfoList(std::move(value)); return *this;}
-    inline LoadBalancerInfo& AddElbInfoList(const ELBInfo& value) { m_elbInfoListHasBeenSet = true; m_elbInfoList.push_back(value); return *this; }
-    inline LoadBalancerInfo& AddElbInfoList(ELBInfo&& value) { m_elbInfoListHasBeenSet = true; m_elbInfoList.push_back(std::move(value)); return *this; }
+    template<typename ElbInfoListT = Aws::Vector<ELBInfo>>
+    void SetElbInfoList(ElbInfoListT&& value) { m_elbInfoListHasBeenSet = true; m_elbInfoList = std::forward<ElbInfoListT>(value); }
+    template<typename ElbInfoListT = Aws::Vector<ELBInfo>>
+    LoadBalancerInfo& WithElbInfoList(ElbInfoListT&& value) { SetElbInfoList(std::forward<ElbInfoListT>(value)); return *this;}
+    template<typename ElbInfoListT = ELBInfo>
+    LoadBalancerInfo& AddElbInfoList(ElbInfoListT&& value) { m_elbInfoListHasBeenSet = true; m_elbInfoList.emplace_back(std::forward<ElbInfoListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,14 +73,14 @@ namespace Model
      *   <p>If you're using Classic Load Balancers, use the
      * <code>elbInfoList</code> array instead of this one.</p> 
      */
-    inline const Aws::Vector<TargetGroupInfo>& GetTargetGroupInfoList() const{ return m_targetGroupInfoList; }
+    inline const Aws::Vector<TargetGroupInfo>& GetTargetGroupInfoList() const { return m_targetGroupInfoList; }
     inline bool TargetGroupInfoListHasBeenSet() const { return m_targetGroupInfoListHasBeenSet; }
-    inline void SetTargetGroupInfoList(const Aws::Vector<TargetGroupInfo>& value) { m_targetGroupInfoListHasBeenSet = true; m_targetGroupInfoList = value; }
-    inline void SetTargetGroupInfoList(Aws::Vector<TargetGroupInfo>&& value) { m_targetGroupInfoListHasBeenSet = true; m_targetGroupInfoList = std::move(value); }
-    inline LoadBalancerInfo& WithTargetGroupInfoList(const Aws::Vector<TargetGroupInfo>& value) { SetTargetGroupInfoList(value); return *this;}
-    inline LoadBalancerInfo& WithTargetGroupInfoList(Aws::Vector<TargetGroupInfo>&& value) { SetTargetGroupInfoList(std::move(value)); return *this;}
-    inline LoadBalancerInfo& AddTargetGroupInfoList(const TargetGroupInfo& value) { m_targetGroupInfoListHasBeenSet = true; m_targetGroupInfoList.push_back(value); return *this; }
-    inline LoadBalancerInfo& AddTargetGroupInfoList(TargetGroupInfo&& value) { m_targetGroupInfoListHasBeenSet = true; m_targetGroupInfoList.push_back(std::move(value)); return *this; }
+    template<typename TargetGroupInfoListT = Aws::Vector<TargetGroupInfo>>
+    void SetTargetGroupInfoList(TargetGroupInfoListT&& value) { m_targetGroupInfoListHasBeenSet = true; m_targetGroupInfoList = std::forward<TargetGroupInfoListT>(value); }
+    template<typename TargetGroupInfoListT = Aws::Vector<TargetGroupInfo>>
+    LoadBalancerInfo& WithTargetGroupInfoList(TargetGroupInfoListT&& value) { SetTargetGroupInfoList(std::forward<TargetGroupInfoListT>(value)); return *this;}
+    template<typename TargetGroupInfoListT = TargetGroupInfo>
+    LoadBalancerInfo& AddTargetGroupInfoList(TargetGroupInfoListT&& value) { m_targetGroupInfoListHasBeenSet = true; m_targetGroupInfoList.emplace_back(std::forward<TargetGroupInfoListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -88,14 +88,14 @@ namespace Model
      * <p> The target group pair information. This is an array of
      * <code>TargeGroupPairInfo</code> objects with a maximum size of one. </p>
      */
-    inline const Aws::Vector<TargetGroupPairInfo>& GetTargetGroupPairInfoList() const{ return m_targetGroupPairInfoList; }
+    inline const Aws::Vector<TargetGroupPairInfo>& GetTargetGroupPairInfoList() const { return m_targetGroupPairInfoList; }
     inline bool TargetGroupPairInfoListHasBeenSet() const { return m_targetGroupPairInfoListHasBeenSet; }
-    inline void SetTargetGroupPairInfoList(const Aws::Vector<TargetGroupPairInfo>& value) { m_targetGroupPairInfoListHasBeenSet = true; m_targetGroupPairInfoList = value; }
-    inline void SetTargetGroupPairInfoList(Aws::Vector<TargetGroupPairInfo>&& value) { m_targetGroupPairInfoListHasBeenSet = true; m_targetGroupPairInfoList = std::move(value); }
-    inline LoadBalancerInfo& WithTargetGroupPairInfoList(const Aws::Vector<TargetGroupPairInfo>& value) { SetTargetGroupPairInfoList(value); return *this;}
-    inline LoadBalancerInfo& WithTargetGroupPairInfoList(Aws::Vector<TargetGroupPairInfo>&& value) { SetTargetGroupPairInfoList(std::move(value)); return *this;}
-    inline LoadBalancerInfo& AddTargetGroupPairInfoList(const TargetGroupPairInfo& value) { m_targetGroupPairInfoListHasBeenSet = true; m_targetGroupPairInfoList.push_back(value); return *this; }
-    inline LoadBalancerInfo& AddTargetGroupPairInfoList(TargetGroupPairInfo&& value) { m_targetGroupPairInfoListHasBeenSet = true; m_targetGroupPairInfoList.push_back(std::move(value)); return *this; }
+    template<typename TargetGroupPairInfoListT = Aws::Vector<TargetGroupPairInfo>>
+    void SetTargetGroupPairInfoList(TargetGroupPairInfoListT&& value) { m_targetGroupPairInfoListHasBeenSet = true; m_targetGroupPairInfoList = std::forward<TargetGroupPairInfoListT>(value); }
+    template<typename TargetGroupPairInfoListT = Aws::Vector<TargetGroupPairInfo>>
+    LoadBalancerInfo& WithTargetGroupPairInfoList(TargetGroupPairInfoListT&& value) { SetTargetGroupPairInfoList(std::forward<TargetGroupPairInfoListT>(value)); return *this;}
+    template<typename TargetGroupPairInfoListT = TargetGroupPairInfo>
+    LoadBalancerInfo& AddTargetGroupPairInfoList(TargetGroupPairInfoListT&& value) { m_targetGroupPairInfoListHasBeenSet = true; m_targetGroupPairInfoList.emplace_back(std::forward<TargetGroupPairInfoListT>(value)); return *this; }
     ///@}
   private:
 

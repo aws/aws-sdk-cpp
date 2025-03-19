@@ -31,7 +31,7 @@ namespace Model
   class DetectedJsonFormatDescriptor
   {
   public:
-    AWS_LOOKOUTMETRICS_API DetectedJsonFormatDescriptor();
+    AWS_LOOKOUTMETRICS_API DetectedJsonFormatDescriptor() = default;
     AWS_LOOKOUTMETRICS_API DetectedJsonFormatDescriptor(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API DetectedJsonFormatDescriptor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,24 +41,24 @@ namespace Model
     /**
      * <p>The format's file compression.</p>
      */
-    inline const DetectedField& GetFileCompression() const{ return m_fileCompression; }
+    inline const DetectedField& GetFileCompression() const { return m_fileCompression; }
     inline bool FileCompressionHasBeenSet() const { return m_fileCompressionHasBeenSet; }
-    inline void SetFileCompression(const DetectedField& value) { m_fileCompressionHasBeenSet = true; m_fileCompression = value; }
-    inline void SetFileCompression(DetectedField&& value) { m_fileCompressionHasBeenSet = true; m_fileCompression = std::move(value); }
-    inline DetectedJsonFormatDescriptor& WithFileCompression(const DetectedField& value) { SetFileCompression(value); return *this;}
-    inline DetectedJsonFormatDescriptor& WithFileCompression(DetectedField&& value) { SetFileCompression(std::move(value)); return *this;}
+    template<typename FileCompressionT = DetectedField>
+    void SetFileCompression(FileCompressionT&& value) { m_fileCompressionHasBeenSet = true; m_fileCompression = std::forward<FileCompressionT>(value); }
+    template<typename FileCompressionT = DetectedField>
+    DetectedJsonFormatDescriptor& WithFileCompression(FileCompressionT&& value) { SetFileCompression(std::forward<FileCompressionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format's character set.</p>
      */
-    inline const DetectedField& GetCharset() const{ return m_charset; }
+    inline const DetectedField& GetCharset() const { return m_charset; }
     inline bool CharsetHasBeenSet() const { return m_charsetHasBeenSet; }
-    inline void SetCharset(const DetectedField& value) { m_charsetHasBeenSet = true; m_charset = value; }
-    inline void SetCharset(DetectedField&& value) { m_charsetHasBeenSet = true; m_charset = std::move(value); }
-    inline DetectedJsonFormatDescriptor& WithCharset(const DetectedField& value) { SetCharset(value); return *this;}
-    inline DetectedJsonFormatDescriptor& WithCharset(DetectedField&& value) { SetCharset(std::move(value)); return *this;}
+    template<typename CharsetT = DetectedField>
+    void SetCharset(CharsetT&& value) { m_charsetHasBeenSet = true; m_charset = std::forward<CharsetT>(value); }
+    template<typename CharsetT = DetectedField>
+    DetectedJsonFormatDescriptor& WithCharset(CharsetT&& value) { SetCharset(std::forward<CharsetT>(value)); return *this;}
     ///@}
   private:
 

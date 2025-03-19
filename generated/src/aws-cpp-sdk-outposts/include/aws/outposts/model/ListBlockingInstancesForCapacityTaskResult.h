@@ -29,7 +29,7 @@ namespace Model
   class ListBlockingInstancesForCapacityTaskResult
   {
   public:
-    AWS_OUTPOSTS_API ListBlockingInstancesForCapacityTaskResult();
+    AWS_OUTPOSTS_API ListBlockingInstancesForCapacityTaskResult() = default;
     AWS_OUTPOSTS_API ListBlockingInstancesForCapacityTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OUTPOSTS_API ListBlockingInstancesForCapacityTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,43 +40,42 @@ namespace Model
      * more of these instances can free up the capacity needed to run the capacity
      * task.</p>
      */
-    inline const Aws::Vector<BlockingInstance>& GetBlockingInstances() const{ return m_blockingInstances; }
-    inline void SetBlockingInstances(const Aws::Vector<BlockingInstance>& value) { m_blockingInstances = value; }
-    inline void SetBlockingInstances(Aws::Vector<BlockingInstance>&& value) { m_blockingInstances = std::move(value); }
-    inline ListBlockingInstancesForCapacityTaskResult& WithBlockingInstances(const Aws::Vector<BlockingInstance>& value) { SetBlockingInstances(value); return *this;}
-    inline ListBlockingInstancesForCapacityTaskResult& WithBlockingInstances(Aws::Vector<BlockingInstance>&& value) { SetBlockingInstances(std::move(value)); return *this;}
-    inline ListBlockingInstancesForCapacityTaskResult& AddBlockingInstances(const BlockingInstance& value) { m_blockingInstances.push_back(value); return *this; }
-    inline ListBlockingInstancesForCapacityTaskResult& AddBlockingInstances(BlockingInstance&& value) { m_blockingInstances.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BlockingInstance>& GetBlockingInstances() const { return m_blockingInstances; }
+    template<typename BlockingInstancesT = Aws::Vector<BlockingInstance>>
+    void SetBlockingInstances(BlockingInstancesT&& value) { m_blockingInstancesHasBeenSet = true; m_blockingInstances = std::forward<BlockingInstancesT>(value); }
+    template<typename BlockingInstancesT = Aws::Vector<BlockingInstance>>
+    ListBlockingInstancesForCapacityTaskResult& WithBlockingInstances(BlockingInstancesT&& value) { SetBlockingInstances(std::forward<BlockingInstancesT>(value)); return *this;}
+    template<typename BlockingInstancesT = BlockingInstance>
+    ListBlockingInstancesForCapacityTaskResult& AddBlockingInstances(BlockingInstancesT&& value) { m_blockingInstancesHasBeenSet = true; m_blockingInstances.emplace_back(std::forward<BlockingInstancesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListBlockingInstancesForCapacityTaskResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListBlockingInstancesForCapacityTaskResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListBlockingInstancesForCapacityTaskResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListBlockingInstancesForCapacityTaskResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListBlockingInstancesForCapacityTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListBlockingInstancesForCapacityTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListBlockingInstancesForCapacityTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListBlockingInstancesForCapacityTaskResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BlockingInstance> m_blockingInstances;
+    bool m_blockingInstancesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

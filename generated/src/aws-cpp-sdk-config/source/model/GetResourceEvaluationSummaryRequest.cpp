@@ -12,11 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetResourceEvaluationSummaryRequest::GetResourceEvaluationSummaryRequest() : 
-    m_resourceEvaluationIdHasBeenSet(false)
-{
-}
-
 Aws::String GetResourceEvaluationSummaryRequest::SerializePayload() const
 {
   JsonValue payload;

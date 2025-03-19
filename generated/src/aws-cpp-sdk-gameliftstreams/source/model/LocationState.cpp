@@ -18,25 +18,7 @@ namespace GameLiftStreams
 namespace Model
 {
 
-LocationState::LocationState() : 
-    m_allocatedCapacity(0),
-    m_allocatedCapacityHasBeenSet(false),
-    m_alwaysOnCapacity(0),
-    m_alwaysOnCapacityHasBeenSet(false),
-    m_idleCapacity(0),
-    m_idleCapacityHasBeenSet(false),
-    m_locationNameHasBeenSet(false),
-    m_onDemandCapacity(0),
-    m_onDemandCapacityHasBeenSet(false),
-    m_requestedCapacity(0),
-    m_requestedCapacityHasBeenSet(false),
-    m_status(StreamGroupLocationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 LocationState::LocationState(JsonView jsonValue)
-  : LocationState()
 {
   *this = jsonValue;
 }
@@ -46,52 +28,38 @@ LocationState& LocationState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AllocatedCapacity"))
   {
     m_allocatedCapacity = jsonValue.GetInteger("AllocatedCapacity");
-
     m_allocatedCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlwaysOnCapacity"))
   {
     m_alwaysOnCapacity = jsonValue.GetInteger("AlwaysOnCapacity");
-
     m_alwaysOnCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdleCapacity"))
   {
     m_idleCapacity = jsonValue.GetInteger("IdleCapacity");
-
     m_idleCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocationName"))
   {
     m_locationName = jsonValue.GetString("LocationName");
-
     m_locationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnDemandCapacity"))
   {
     m_onDemandCapacity = jsonValue.GetInteger("OnDemandCapacity");
-
     m_onDemandCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestedCapacity"))
   {
     m_requestedCapacity = jsonValue.GetInteger("RequestedCapacity");
-
     m_requestedCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = StreamGroupLocationStatusMapper::GetStreamGroupLocationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace FMS
 namespace Model
 {
 
-WebACLHasOutOfScopeResourcesViolation::WebACLHasOutOfScopeResourcesViolation() : 
-    m_webACLArnHasBeenSet(false),
-    m_outOfScopeResourceListHasBeenSet(false)
-{
-}
-
 WebACLHasOutOfScopeResourcesViolation::WebACLHasOutOfScopeResourcesViolation(JsonView jsonValue)
-  : WebACLHasOutOfScopeResourcesViolation()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ WebACLHasOutOfScopeResourcesViolation& WebACLHasOutOfScopeResourcesViolation::op
   if(jsonValue.ValueExists("WebACLArn"))
   {
     m_webACLArn = jsonValue.GetString("WebACLArn");
-
     m_webACLArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutOfScopeResourceList"))
   {
     Aws::Utils::Array<JsonView> outOfScopeResourceListJsonList = jsonValue.GetArray("OutOfScopeResourceList");
@@ -48,7 +39,6 @@ WebACLHasOutOfScopeResourcesViolation& WebACLHasOutOfScopeResourcesViolation::op
     }
     m_outOfScopeResourceListHasBeenSet = true;
   }
-
   return *this;
 }
 

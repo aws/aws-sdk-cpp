@@ -18,16 +18,7 @@ namespace WorkMail
 namespace Model
 {
 
-PersonalAccessTokenConfiguration::PersonalAccessTokenConfiguration() : 
-    m_status(PersonalAccessTokenConfigurationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lifetimeInDays(0),
-    m_lifetimeInDaysHasBeenSet(false)
-{
-}
-
 PersonalAccessTokenConfiguration::PersonalAccessTokenConfiguration(JsonView jsonValue)
-  : PersonalAccessTokenConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ PersonalAccessTokenConfiguration& PersonalAccessTokenConfiguration::operator =(J
   if(jsonValue.ValueExists("Status"))
   {
     m_status = PersonalAccessTokenConfigurationStatusMapper::GetPersonalAccessTokenConfigurationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LifetimeInDays"))
   {
     m_lifetimeInDays = jsonValue.GetInteger("LifetimeInDays");
-
     m_lifetimeInDaysHasBeenSet = true;
   }
-
   return *this;
 }
 

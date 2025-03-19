@@ -28,7 +28,7 @@ namespace Model
   class DeleteResolverQueryLogConfigResult
   {
   public:
-    AWS_ROUTE53RESOLVER_API DeleteResolverQueryLogConfigResult();
+    AWS_ROUTE53RESOLVER_API DeleteResolverQueryLogConfigResult() = default;
     AWS_ROUTE53RESOLVER_API DeleteResolverQueryLogConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53RESOLVER_API DeleteResolverQueryLogConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Information about the query logging configuration that you deleted, including
      * the status of the request.</p>
      */
-    inline const ResolverQueryLogConfig& GetResolverQueryLogConfig() const{ return m_resolverQueryLogConfig; }
-    inline void SetResolverQueryLogConfig(const ResolverQueryLogConfig& value) { m_resolverQueryLogConfig = value; }
-    inline void SetResolverQueryLogConfig(ResolverQueryLogConfig&& value) { m_resolverQueryLogConfig = std::move(value); }
-    inline DeleteResolverQueryLogConfigResult& WithResolverQueryLogConfig(const ResolverQueryLogConfig& value) { SetResolverQueryLogConfig(value); return *this;}
-    inline DeleteResolverQueryLogConfigResult& WithResolverQueryLogConfig(ResolverQueryLogConfig&& value) { SetResolverQueryLogConfig(std::move(value)); return *this;}
+    inline const ResolverQueryLogConfig& GetResolverQueryLogConfig() const { return m_resolverQueryLogConfig; }
+    template<typename ResolverQueryLogConfigT = ResolverQueryLogConfig>
+    void SetResolverQueryLogConfig(ResolverQueryLogConfigT&& value) { m_resolverQueryLogConfigHasBeenSet = true; m_resolverQueryLogConfig = std::forward<ResolverQueryLogConfigT>(value); }
+    template<typename ResolverQueryLogConfigT = ResolverQueryLogConfig>
+    DeleteResolverQueryLogConfigResult& WithResolverQueryLogConfig(ResolverQueryLogConfigT&& value) { SetResolverQueryLogConfig(std::forward<ResolverQueryLogConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteResolverQueryLogConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteResolverQueryLogConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteResolverQueryLogConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteResolverQueryLogConfigResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ResolverQueryLogConfig m_resolverQueryLogConfig;
+    bool m_resolverQueryLogConfigHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

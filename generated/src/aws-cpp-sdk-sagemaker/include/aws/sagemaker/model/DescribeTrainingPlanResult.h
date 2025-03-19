@@ -32,7 +32,7 @@ namespace Model
   class DescribeTrainingPlanResult
   {
   public:
-    AWS_SAGEMAKER_API DescribeTrainingPlanResult();
+    AWS_SAGEMAKER_API DescribeTrainingPlanResult() = default;
     AWS_SAGEMAKER_API DescribeTrainingPlanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API DescribeTrainingPlanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,26 +41,22 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN); of the training plan.</p>
      */
-    inline const Aws::String& GetTrainingPlanArn() const{ return m_trainingPlanArn; }
-    inline void SetTrainingPlanArn(const Aws::String& value) { m_trainingPlanArn = value; }
-    inline void SetTrainingPlanArn(Aws::String&& value) { m_trainingPlanArn = std::move(value); }
-    inline void SetTrainingPlanArn(const char* value) { m_trainingPlanArn.assign(value); }
-    inline DescribeTrainingPlanResult& WithTrainingPlanArn(const Aws::String& value) { SetTrainingPlanArn(value); return *this;}
-    inline DescribeTrainingPlanResult& WithTrainingPlanArn(Aws::String&& value) { SetTrainingPlanArn(std::move(value)); return *this;}
-    inline DescribeTrainingPlanResult& WithTrainingPlanArn(const char* value) { SetTrainingPlanArn(value); return *this;}
+    inline const Aws::String& GetTrainingPlanArn() const { return m_trainingPlanArn; }
+    template<typename TrainingPlanArnT = Aws::String>
+    void SetTrainingPlanArn(TrainingPlanArnT&& value) { m_trainingPlanArnHasBeenSet = true; m_trainingPlanArn = std::forward<TrainingPlanArnT>(value); }
+    template<typename TrainingPlanArnT = Aws::String>
+    DescribeTrainingPlanResult& WithTrainingPlanArn(TrainingPlanArnT&& value) { SetTrainingPlanArn(std::forward<TrainingPlanArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the training plan.</p>
      */
-    inline const Aws::String& GetTrainingPlanName() const{ return m_trainingPlanName; }
-    inline void SetTrainingPlanName(const Aws::String& value) { m_trainingPlanName = value; }
-    inline void SetTrainingPlanName(Aws::String&& value) { m_trainingPlanName = std::move(value); }
-    inline void SetTrainingPlanName(const char* value) { m_trainingPlanName.assign(value); }
-    inline DescribeTrainingPlanResult& WithTrainingPlanName(const Aws::String& value) { SetTrainingPlanName(value); return *this;}
-    inline DescribeTrainingPlanResult& WithTrainingPlanName(Aws::String&& value) { SetTrainingPlanName(std::move(value)); return *this;}
-    inline DescribeTrainingPlanResult& WithTrainingPlanName(const char* value) { SetTrainingPlanName(value); return *this;}
+    inline const Aws::String& GetTrainingPlanName() const { return m_trainingPlanName; }
+    template<typename TrainingPlanNameT = Aws::String>
+    void SetTrainingPlanName(TrainingPlanNameT&& value) { m_trainingPlanNameHasBeenSet = true; m_trainingPlanName = std::forward<TrainingPlanNameT>(value); }
+    template<typename TrainingPlanNameT = Aws::String>
+    DescribeTrainingPlanResult& WithTrainingPlanName(TrainingPlanNameT&& value) { SetTrainingPlanName(std::forward<TrainingPlanNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,11 +67,9 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingPlanSummary.html">TrainingPlanSummary</a>
      * </code> object.</p>
      */
-    inline const TrainingPlanStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const TrainingPlanStatus& value) { m_status = value; }
-    inline void SetStatus(TrainingPlanStatus&& value) { m_status = std::move(value); }
-    inline DescribeTrainingPlanResult& WithStatus(const TrainingPlanStatus& value) { SetStatus(value); return *this;}
-    inline DescribeTrainingPlanResult& WithStatus(TrainingPlanStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline TrainingPlanStatus GetStatus() const { return m_status; }
+    inline void SetStatus(TrainingPlanStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeTrainingPlanResult& WithStatus(TrainingPlanStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -83,21 +77,19 @@ namespace Model
      * <p>A message providing additional information about the current status of the
      * training plan.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
-    inline DescribeTrainingPlanResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline DescribeTrainingPlanResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline DescribeTrainingPlanResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    DescribeTrainingPlanResult& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of whole hours in the total duration for this training plan.</p>
      */
-    inline long long GetDurationHours() const{ return m_durationHours; }
-    inline void SetDurationHours(long long value) { m_durationHours = value; }
+    inline long long GetDurationHours() const { return m_durationHours; }
+    inline void SetDurationHours(long long value) { m_durationHoursHasBeenSet = true; m_durationHours = value; }
     inline DescribeTrainingPlanResult& WithDurationHours(long long value) { SetDurationHours(value); return *this;}
     ///@}
 
@@ -106,8 +98,8 @@ namespace Model
      * <p>The additional minutes beyond whole hours in the total duration for this
      * training plan.</p>
      */
-    inline long long GetDurationMinutes() const{ return m_durationMinutes; }
-    inline void SetDurationMinutes(long long value) { m_durationMinutes = value; }
+    inline long long GetDurationMinutes() const { return m_durationMinutes; }
+    inline void SetDurationMinutes(long long value) { m_durationMinutesHasBeenSet = true; m_durationMinutes = value; }
     inline DescribeTrainingPlanResult& WithDurationMinutes(long long value) { SetDurationMinutes(value); return *this;}
     ///@}
 
@@ -115,56 +107,52 @@ namespace Model
     /**
      * <p>The start time of the training plan.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
-    inline DescribeTrainingPlanResult& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline DescribeTrainingPlanResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    DescribeTrainingPlanResult& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The end time of the training plan.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTime = std::move(value); }
-    inline DescribeTrainingPlanResult& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline DescribeTrainingPlanResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    DescribeTrainingPlanResult& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The upfront fee for the training plan.</p>
      */
-    inline const Aws::String& GetUpfrontFee() const{ return m_upfrontFee; }
-    inline void SetUpfrontFee(const Aws::String& value) { m_upfrontFee = value; }
-    inline void SetUpfrontFee(Aws::String&& value) { m_upfrontFee = std::move(value); }
-    inline void SetUpfrontFee(const char* value) { m_upfrontFee.assign(value); }
-    inline DescribeTrainingPlanResult& WithUpfrontFee(const Aws::String& value) { SetUpfrontFee(value); return *this;}
-    inline DescribeTrainingPlanResult& WithUpfrontFee(Aws::String&& value) { SetUpfrontFee(std::move(value)); return *this;}
-    inline DescribeTrainingPlanResult& WithUpfrontFee(const char* value) { SetUpfrontFee(value); return *this;}
+    inline const Aws::String& GetUpfrontFee() const { return m_upfrontFee; }
+    template<typename UpfrontFeeT = Aws::String>
+    void SetUpfrontFee(UpfrontFeeT&& value) { m_upfrontFeeHasBeenSet = true; m_upfrontFee = std::forward<UpfrontFeeT>(value); }
+    template<typename UpfrontFeeT = Aws::String>
+    DescribeTrainingPlanResult& WithUpfrontFee(UpfrontFeeT&& value) { SetUpfrontFee(std::forward<UpfrontFeeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The currency code for the upfront fee (e.g., USD).</p>
      */
-    inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
-    inline void SetCurrencyCode(const Aws::String& value) { m_currencyCode = value; }
-    inline void SetCurrencyCode(Aws::String&& value) { m_currencyCode = std::move(value); }
-    inline void SetCurrencyCode(const char* value) { m_currencyCode.assign(value); }
-    inline DescribeTrainingPlanResult& WithCurrencyCode(const Aws::String& value) { SetCurrencyCode(value); return *this;}
-    inline DescribeTrainingPlanResult& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(std::move(value)); return *this;}
-    inline DescribeTrainingPlanResult& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
+    inline const Aws::String& GetCurrencyCode() const { return m_currencyCode; }
+    template<typename CurrencyCodeT = Aws::String>
+    void SetCurrencyCode(CurrencyCodeT&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::forward<CurrencyCodeT>(value); }
+    template<typename CurrencyCodeT = Aws::String>
+    DescribeTrainingPlanResult& WithCurrencyCode(CurrencyCodeT&& value) { SetCurrencyCode(std::forward<CurrencyCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The total number of instances reserved in this training plan.</p>
      */
-    inline int GetTotalInstanceCount() const{ return m_totalInstanceCount; }
-    inline void SetTotalInstanceCount(int value) { m_totalInstanceCount = value; }
+    inline int GetTotalInstanceCount() const { return m_totalInstanceCount; }
+    inline void SetTotalInstanceCount(int value) { m_totalInstanceCountHasBeenSet = true; m_totalInstanceCount = value; }
     inline DescribeTrainingPlanResult& WithTotalInstanceCount(int value) { SetTotalInstanceCount(value); return *this;}
     ///@}
 
@@ -173,8 +161,8 @@ namespace Model
      * <p>The number of instances currently available for use in this training
      * plan.</p>
      */
-    inline int GetAvailableInstanceCount() const{ return m_availableInstanceCount; }
-    inline void SetAvailableInstanceCount(int value) { m_availableInstanceCount = value; }
+    inline int GetAvailableInstanceCount() const { return m_availableInstanceCount; }
+    inline void SetAvailableInstanceCount(int value) { m_availableInstanceCountHasBeenSet = true; m_availableInstanceCount = value; }
     inline DescribeTrainingPlanResult& WithAvailableInstanceCount(int value) { SetAvailableInstanceCount(value); return *this;}
     ///@}
 
@@ -182,8 +170,8 @@ namespace Model
     /**
      * <p>The number of instances currently in use from this training plan.</p>
      */
-    inline int GetInUseInstanceCount() const{ return m_inUseInstanceCount; }
-    inline void SetInUseInstanceCount(int value) { m_inUseInstanceCount = value; }
+    inline int GetInUseInstanceCount() const { return m_inUseInstanceCount; }
+    inline void SetInUseInstanceCount(int value) { m_inUseInstanceCountHasBeenSet = true; m_inUseInstanceCount = value; }
     inline DescribeTrainingPlanResult& WithInUseInstanceCount(int value) { SetInUseInstanceCount(value); return *this;}
     ///@}
 
@@ -196,13 +184,12 @@ namespace Model
      * plan for HyperPod clusters can be used exclusively to provide compute resources
      * to a cluster's instance group.</p> </li> </ul>
      */
-    inline const Aws::Vector<SageMakerResourceName>& GetTargetResources() const{ return m_targetResources; }
-    inline void SetTargetResources(const Aws::Vector<SageMakerResourceName>& value) { m_targetResources = value; }
-    inline void SetTargetResources(Aws::Vector<SageMakerResourceName>&& value) { m_targetResources = std::move(value); }
-    inline DescribeTrainingPlanResult& WithTargetResources(const Aws::Vector<SageMakerResourceName>& value) { SetTargetResources(value); return *this;}
-    inline DescribeTrainingPlanResult& WithTargetResources(Aws::Vector<SageMakerResourceName>&& value) { SetTargetResources(std::move(value)); return *this;}
-    inline DescribeTrainingPlanResult& AddTargetResources(const SageMakerResourceName& value) { m_targetResources.push_back(value); return *this; }
-    inline DescribeTrainingPlanResult& AddTargetResources(SageMakerResourceName&& value) { m_targetResources.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SageMakerResourceName>& GetTargetResources() const { return m_targetResources; }
+    template<typename TargetResourcesT = Aws::Vector<SageMakerResourceName>>
+    void SetTargetResources(TargetResourcesT&& value) { m_targetResourcesHasBeenSet = true; m_targetResources = std::forward<TargetResourcesT>(value); }
+    template<typename TargetResourcesT = Aws::Vector<SageMakerResourceName>>
+    DescribeTrainingPlanResult& WithTargetResources(TargetResourcesT&& value) { SetTargetResources(std::forward<TargetResourcesT>(value)); return *this;}
+    inline DescribeTrainingPlanResult& AddTargetResources(SageMakerResourceName value) { m_targetResourcesHasBeenSet = true; m_targetResources.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -210,58 +197,72 @@ namespace Model
      * <p>The list of Reserved Capacity providing the underlying compute resources of
      * the plan. </p>
      */
-    inline const Aws::Vector<ReservedCapacitySummary>& GetReservedCapacitySummaries() const{ return m_reservedCapacitySummaries; }
-    inline void SetReservedCapacitySummaries(const Aws::Vector<ReservedCapacitySummary>& value) { m_reservedCapacitySummaries = value; }
-    inline void SetReservedCapacitySummaries(Aws::Vector<ReservedCapacitySummary>&& value) { m_reservedCapacitySummaries = std::move(value); }
-    inline DescribeTrainingPlanResult& WithReservedCapacitySummaries(const Aws::Vector<ReservedCapacitySummary>& value) { SetReservedCapacitySummaries(value); return *this;}
-    inline DescribeTrainingPlanResult& WithReservedCapacitySummaries(Aws::Vector<ReservedCapacitySummary>&& value) { SetReservedCapacitySummaries(std::move(value)); return *this;}
-    inline DescribeTrainingPlanResult& AddReservedCapacitySummaries(const ReservedCapacitySummary& value) { m_reservedCapacitySummaries.push_back(value); return *this; }
-    inline DescribeTrainingPlanResult& AddReservedCapacitySummaries(ReservedCapacitySummary&& value) { m_reservedCapacitySummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReservedCapacitySummary>& GetReservedCapacitySummaries() const { return m_reservedCapacitySummaries; }
+    template<typename ReservedCapacitySummariesT = Aws::Vector<ReservedCapacitySummary>>
+    void SetReservedCapacitySummaries(ReservedCapacitySummariesT&& value) { m_reservedCapacitySummariesHasBeenSet = true; m_reservedCapacitySummaries = std::forward<ReservedCapacitySummariesT>(value); }
+    template<typename ReservedCapacitySummariesT = Aws::Vector<ReservedCapacitySummary>>
+    DescribeTrainingPlanResult& WithReservedCapacitySummaries(ReservedCapacitySummariesT&& value) { SetReservedCapacitySummaries(std::forward<ReservedCapacitySummariesT>(value)); return *this;}
+    template<typename ReservedCapacitySummariesT = ReservedCapacitySummary>
+    DescribeTrainingPlanResult& AddReservedCapacitySummaries(ReservedCapacitySummariesT&& value) { m_reservedCapacitySummariesHasBeenSet = true; m_reservedCapacitySummaries.emplace_back(std::forward<ReservedCapacitySummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeTrainingPlanResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeTrainingPlanResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeTrainingPlanResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeTrainingPlanResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_trainingPlanArn;
+    bool m_trainingPlanArnHasBeenSet = false;
 
     Aws::String m_trainingPlanName;
+    bool m_trainingPlanNameHasBeenSet = false;
 
-    TrainingPlanStatus m_status;
+    TrainingPlanStatus m_status{TrainingPlanStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet = false;
 
-    long long m_durationHours;
+    long long m_durationHours{0};
+    bool m_durationHoursHasBeenSet = false;
 
-    long long m_durationMinutes;
+    long long m_durationMinutes{0};
+    bool m_durationMinutesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
+    bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_upfrontFee;
+    bool m_upfrontFeeHasBeenSet = false;
 
     Aws::String m_currencyCode;
+    bool m_currencyCodeHasBeenSet = false;
 
-    int m_totalInstanceCount;
+    int m_totalInstanceCount{0};
+    bool m_totalInstanceCountHasBeenSet = false;
 
-    int m_availableInstanceCount;
+    int m_availableInstanceCount{0};
+    bool m_availableInstanceCountHasBeenSet = false;
 
-    int m_inUseInstanceCount;
+    int m_inUseInstanceCount{0};
+    bool m_inUseInstanceCountHasBeenSet = false;
 
     Aws::Vector<SageMakerResourceName> m_targetResources;
+    bool m_targetResourcesHasBeenSet = false;
 
     Aws::Vector<ReservedCapacitySummary> m_reservedCapacitySummaries;
+    bool m_reservedCapacitySummariesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

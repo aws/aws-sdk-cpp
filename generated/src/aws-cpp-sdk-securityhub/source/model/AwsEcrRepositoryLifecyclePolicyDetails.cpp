@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcrRepositoryLifecyclePolicyDetails::AwsEcrRepositoryLifecyclePolicyDetails() : 
-    m_lifecyclePolicyTextHasBeenSet(false),
-    m_registryIdHasBeenSet(false)
-{
-}
-
 AwsEcrRepositoryLifecyclePolicyDetails::AwsEcrRepositoryLifecyclePolicyDetails(JsonView jsonValue)
-  : AwsEcrRepositoryLifecyclePolicyDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsEcrRepositoryLifecyclePolicyDetails& AwsEcrRepositoryLifecyclePolicyDetails::
   if(jsonValue.ValueExists("LifecyclePolicyText"))
   {
     m_lifecyclePolicyText = jsonValue.GetString("LifecyclePolicyText");
-
     m_lifecyclePolicyTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistryId"))
   {
     m_registryId = jsonValue.GetString("RegistryId");
-
     m_registryIdHasBeenSet = true;
   }
-
   return *this;
 }
 

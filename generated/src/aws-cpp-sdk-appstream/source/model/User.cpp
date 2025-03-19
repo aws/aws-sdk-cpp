@@ -18,22 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-User::User() : 
-    m_arnHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_firstNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_authenticationType(AuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false)
-{
-}
-
 User::User(JsonView jsonValue)
-  : User()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ User& User::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserName"))
   {
     m_userName = jsonValue.GetString("UserName");
-
     m_userNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirstName"))
   {
     m_firstName = jsonValue.GetString("FirstName");
-
     m_firstNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastName"))
   {
     m_lastName = jsonValue.GetString("LastName");
-
     m_lastNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthenticationType"))
   {
     m_authenticationType = AuthenticationTypeMapper::GetAuthenticationTypeForName(jsonValue.GetString("AuthenticationType"));
-
     m_authenticationTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

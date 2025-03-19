@@ -33,7 +33,7 @@ namespace Model
   class Asset
   {
   public:
-    AWS_REKOGNITION_API Asset();
+    AWS_REKOGNITION_API Asset() = default;
     AWS_REKOGNITION_API Asset(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Asset& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
 
     ///@{
     
-    inline const GroundTruthManifest& GetGroundTruthManifest() const{ return m_groundTruthManifest; }
+    inline const GroundTruthManifest& GetGroundTruthManifest() const { return m_groundTruthManifest; }
     inline bool GroundTruthManifestHasBeenSet() const { return m_groundTruthManifestHasBeenSet; }
-    inline void SetGroundTruthManifest(const GroundTruthManifest& value) { m_groundTruthManifestHasBeenSet = true; m_groundTruthManifest = value; }
-    inline void SetGroundTruthManifest(GroundTruthManifest&& value) { m_groundTruthManifestHasBeenSet = true; m_groundTruthManifest = std::move(value); }
-    inline Asset& WithGroundTruthManifest(const GroundTruthManifest& value) { SetGroundTruthManifest(value); return *this;}
-    inline Asset& WithGroundTruthManifest(GroundTruthManifest&& value) { SetGroundTruthManifest(std::move(value)); return *this;}
+    template<typename GroundTruthManifestT = GroundTruthManifest>
+    void SetGroundTruthManifest(GroundTruthManifestT&& value) { m_groundTruthManifestHasBeenSet = true; m_groundTruthManifest = std::forward<GroundTruthManifestT>(value); }
+    template<typename GroundTruthManifestT = GroundTruthManifest>
+    Asset& WithGroundTruthManifest(GroundTruthManifestT&& value) { SetGroundTruthManifest(std::forward<GroundTruthManifestT>(value)); return *this;}
     ///@}
   private:
 

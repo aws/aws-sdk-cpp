@@ -18,19 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-KnowledgeBaseDocumentDetail::KnowledgeBaseDocumentDetail() : 
-    m_dataSourceIdHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_status(DocumentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 KnowledgeBaseDocumentDetail::KnowledgeBaseDocumentDetail(JsonView jsonValue)
-  : KnowledgeBaseDocumentDetail()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ KnowledgeBaseDocumentDetail& KnowledgeBaseDocumentDetail::operator =(JsonView js
   if(jsonValue.ValueExists("dataSourceId"))
   {
     m_dataSourceId = jsonValue.GetString("dataSourceId");
-
     m_dataSourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetObject("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("knowledgeBaseId"))
   {
     m_knowledgeBaseId = jsonValue.GetString("knowledgeBaseId");
-
     m_knowledgeBaseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DocumentStatusMapper::GetDocumentStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

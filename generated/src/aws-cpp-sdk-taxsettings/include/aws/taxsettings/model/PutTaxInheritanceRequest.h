@@ -21,7 +21,7 @@ namespace Model
   class PutTaxInheritanceRequest : public TaxSettingsRequest
   {
   public:
-    AWS_TAXSETTINGS_API PutTaxInheritanceRequest();
+    AWS_TAXSETTINGS_API PutTaxInheritanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,16 +36,14 @@ namespace Model
     /**
      * <p>The tax inheritance status. </p>
      */
-    inline const HeritageStatus& GetHeritageStatus() const{ return m_heritageStatus; }
+    inline HeritageStatus GetHeritageStatus() const { return m_heritageStatus; }
     inline bool HeritageStatusHasBeenSet() const { return m_heritageStatusHasBeenSet; }
-    inline void SetHeritageStatus(const HeritageStatus& value) { m_heritageStatusHasBeenSet = true; m_heritageStatus = value; }
-    inline void SetHeritageStatus(HeritageStatus&& value) { m_heritageStatusHasBeenSet = true; m_heritageStatus = std::move(value); }
-    inline PutTaxInheritanceRequest& WithHeritageStatus(const HeritageStatus& value) { SetHeritageStatus(value); return *this;}
-    inline PutTaxInheritanceRequest& WithHeritageStatus(HeritageStatus&& value) { SetHeritageStatus(std::move(value)); return *this;}
+    inline void SetHeritageStatus(HeritageStatus value) { m_heritageStatusHasBeenSet = true; m_heritageStatus = value; }
+    inline PutTaxInheritanceRequest& WithHeritageStatus(HeritageStatus value) { SetHeritageStatus(value); return *this;}
     ///@}
   private:
 
-    HeritageStatus m_heritageStatus;
+    HeritageStatus m_heritageStatus{HeritageStatus::NOT_SET};
     bool m_heritageStatusHasBeenSet = false;
   };
 

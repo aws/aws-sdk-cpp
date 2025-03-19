@@ -12,13 +12,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateBrokerStorageRequest::UpdateBrokerStorageRequest() : 
-    m_clusterArnHasBeenSet(false),
-    m_currentVersionHasBeenSet(false),
-    m_targetBrokerEBSVolumeInfoHasBeenSet(false)
-{
-}
-
 Aws::String UpdateBrokerStorageRequest::SerializePayload() const
 {
   JsonValue payload;

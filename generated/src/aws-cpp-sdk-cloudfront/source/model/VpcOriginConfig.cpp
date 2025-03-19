@@ -20,17 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-VpcOriginConfig::VpcOriginConfig() : 
-    m_vpcOriginIdHasBeenSet(false),
-    m_originReadTimeout(0),
-    m_originReadTimeoutHasBeenSet(false),
-    m_originKeepaliveTimeout(0),
-    m_originKeepaliveTimeoutHasBeenSet(false)
-{
-}
-
 VpcOriginConfig::VpcOriginConfig(const XmlNode& xmlNode)
-  : VpcOriginConfig()
 {
   *this = xmlNode;
 }

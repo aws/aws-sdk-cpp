@@ -27,7 +27,7 @@ namespace Model
   class GetSuiteRunReportResult
   {
   public:
-    AWS_IOTDEVICEADVISOR_API GetSuiteRunReportResult();
+    AWS_IOTDEVICEADVISOR_API GetSuiteRunReportResult() = default;
     AWS_IOTDEVICEADVISOR_API GetSuiteRunReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTDEVICEADVISOR_API GetSuiteRunReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>Download URL of the qualification report.</p>
      */
-    inline const Aws::String& GetQualificationReportDownloadUrl() const{ return m_qualificationReportDownloadUrl; }
-    inline void SetQualificationReportDownloadUrl(const Aws::String& value) { m_qualificationReportDownloadUrl = value; }
-    inline void SetQualificationReportDownloadUrl(Aws::String&& value) { m_qualificationReportDownloadUrl = std::move(value); }
-    inline void SetQualificationReportDownloadUrl(const char* value) { m_qualificationReportDownloadUrl.assign(value); }
-    inline GetSuiteRunReportResult& WithQualificationReportDownloadUrl(const Aws::String& value) { SetQualificationReportDownloadUrl(value); return *this;}
-    inline GetSuiteRunReportResult& WithQualificationReportDownloadUrl(Aws::String&& value) { SetQualificationReportDownloadUrl(std::move(value)); return *this;}
-    inline GetSuiteRunReportResult& WithQualificationReportDownloadUrl(const char* value) { SetQualificationReportDownloadUrl(value); return *this;}
+    inline const Aws::String& GetQualificationReportDownloadUrl() const { return m_qualificationReportDownloadUrl; }
+    template<typename QualificationReportDownloadUrlT = Aws::String>
+    void SetQualificationReportDownloadUrl(QualificationReportDownloadUrlT&& value) { m_qualificationReportDownloadUrlHasBeenSet = true; m_qualificationReportDownloadUrl = std::forward<QualificationReportDownloadUrlT>(value); }
+    template<typename QualificationReportDownloadUrlT = Aws::String>
+    GetSuiteRunReportResult& WithQualificationReportDownloadUrl(QualificationReportDownloadUrlT&& value) { SetQualificationReportDownloadUrl(std::forward<QualificationReportDownloadUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSuiteRunReportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSuiteRunReportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSuiteRunReportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSuiteRunReportResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_qualificationReportDownloadUrl;
+    bool m_qualificationReportDownloadUrlHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ namespace Model
   class CommonControlFilter
   {
   public:
-    AWS_CONTROLCATALOG_API CommonControlFilter();
+    AWS_CONTROLCATALOG_API CommonControlFilter() = default;
     AWS_CONTROLCATALOG_API CommonControlFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONTROLCATALOG_API CommonControlFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONTROLCATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * parameter to specify one objective ARN at a time. Passing multiple ARNs in the
      * <code>CommonControlFilter</code> isn’t currently supported.</p>
      */
-    inline const Aws::Vector<ObjectiveResourceFilter>& GetObjectives() const{ return m_objectives; }
+    inline const Aws::Vector<ObjectiveResourceFilter>& GetObjectives() const { return m_objectives; }
     inline bool ObjectivesHasBeenSet() const { return m_objectivesHasBeenSet; }
-    inline void SetObjectives(const Aws::Vector<ObjectiveResourceFilter>& value) { m_objectivesHasBeenSet = true; m_objectives = value; }
-    inline void SetObjectives(Aws::Vector<ObjectiveResourceFilter>&& value) { m_objectivesHasBeenSet = true; m_objectives = std::move(value); }
-    inline CommonControlFilter& WithObjectives(const Aws::Vector<ObjectiveResourceFilter>& value) { SetObjectives(value); return *this;}
-    inline CommonControlFilter& WithObjectives(Aws::Vector<ObjectiveResourceFilter>&& value) { SetObjectives(std::move(value)); return *this;}
-    inline CommonControlFilter& AddObjectives(const ObjectiveResourceFilter& value) { m_objectivesHasBeenSet = true; m_objectives.push_back(value); return *this; }
-    inline CommonControlFilter& AddObjectives(ObjectiveResourceFilter&& value) { m_objectivesHasBeenSet = true; m_objectives.push_back(std::move(value)); return *this; }
+    template<typename ObjectivesT = Aws::Vector<ObjectiveResourceFilter>>
+    void SetObjectives(ObjectivesT&& value) { m_objectivesHasBeenSet = true; m_objectives = std::forward<ObjectivesT>(value); }
+    template<typename ObjectivesT = Aws::Vector<ObjectiveResourceFilter>>
+    CommonControlFilter& WithObjectives(ObjectivesT&& value) { SetObjectives(std::forward<ObjectivesT>(value)); return *this;}
+    template<typename ObjectivesT = ObjectiveResourceFilter>
+    CommonControlFilter& AddObjectives(ObjectivesT&& value) { m_objectivesHasBeenSet = true; m_objectives.emplace_back(std::forward<ObjectivesT>(value)); return *this; }
     ///@}
   private:
 

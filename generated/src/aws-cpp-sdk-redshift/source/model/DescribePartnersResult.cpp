@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribePartnersResult::DescribePartnersResult()
-{
-}
-
 DescribePartnersResult::DescribePartnersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ DescribePartnersResult& DescribePartnersResult::operator =(const Aws::AmazonWebS
     if(!partnerIntegrationInfoListNode.IsNull())
     {
       XmlNode partnerIntegrationInfoListMember = partnerIntegrationInfoListNode.FirstChild("PartnerIntegrationInfo");
+      m_partnerIntegrationInfoListHasBeenSet = !partnerIntegrationInfoListMember.IsNull();
       while(!partnerIntegrationInfoListMember.IsNull())
       {
         m_partnerIntegrationInfoList.push_back(partnerIntegrationInfoListMember);
         partnerIntegrationInfoListMember = partnerIntegrationInfoListMember.NextNode("PartnerIntegrationInfo");
       }
 
+      m_partnerIntegrationInfoListHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribePartnersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -18,15 +18,7 @@ namespace ServiceDiscovery
 namespace Model
 {
 
-OperationSummary::OperationSummary() : 
-    m_idHasBeenSet(false),
-    m_status(OperationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 OperationSummary::OperationSummary(JsonView jsonValue)
-  : OperationSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ OperationSummary& OperationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = OperationStatusMapper::GetOperationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

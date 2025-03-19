@@ -21,7 +21,7 @@ namespace Model
   class DisableControlRequest : public ControlTowerRequest
   {
   public:
-    AWS_CONTROLTOWER_API DisableControlRequest();
+    AWS_CONTROLTOWER_API DisableControlRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
      * overview page</a>.</p>
      */
-    inline const Aws::String& GetControlIdentifier() const{ return m_controlIdentifier; }
+    inline const Aws::String& GetControlIdentifier() const { return m_controlIdentifier; }
     inline bool ControlIdentifierHasBeenSet() const { return m_controlIdentifierHasBeenSet; }
-    inline void SetControlIdentifier(const Aws::String& value) { m_controlIdentifierHasBeenSet = true; m_controlIdentifier = value; }
-    inline void SetControlIdentifier(Aws::String&& value) { m_controlIdentifierHasBeenSet = true; m_controlIdentifier = std::move(value); }
-    inline void SetControlIdentifier(const char* value) { m_controlIdentifierHasBeenSet = true; m_controlIdentifier.assign(value); }
-    inline DisableControlRequest& WithControlIdentifier(const Aws::String& value) { SetControlIdentifier(value); return *this;}
-    inline DisableControlRequest& WithControlIdentifier(Aws::String&& value) { SetControlIdentifier(std::move(value)); return *this;}
-    inline DisableControlRequest& WithControlIdentifier(const char* value) { SetControlIdentifier(value); return *this;}
+    template<typename ControlIdentifierT = Aws::String>
+    void SetControlIdentifier(ControlIdentifierT&& value) { m_controlIdentifierHasBeenSet = true; m_controlIdentifier = std::forward<ControlIdentifierT>(value); }
+    template<typename ControlIdentifierT = Aws::String>
+    DisableControlRequest& WithControlIdentifier(ControlIdentifierT&& value) { SetControlIdentifier(std::forward<ControlIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/controltower/latest/APIReference/Welcome.html">the
      * overview page</a>.</p>
      */
-    inline const Aws::String& GetTargetIdentifier() const{ return m_targetIdentifier; }
+    inline const Aws::String& GetTargetIdentifier() const { return m_targetIdentifier; }
     inline bool TargetIdentifierHasBeenSet() const { return m_targetIdentifierHasBeenSet; }
-    inline void SetTargetIdentifier(const Aws::String& value) { m_targetIdentifierHasBeenSet = true; m_targetIdentifier = value; }
-    inline void SetTargetIdentifier(Aws::String&& value) { m_targetIdentifierHasBeenSet = true; m_targetIdentifier = std::move(value); }
-    inline void SetTargetIdentifier(const char* value) { m_targetIdentifierHasBeenSet = true; m_targetIdentifier.assign(value); }
-    inline DisableControlRequest& WithTargetIdentifier(const Aws::String& value) { SetTargetIdentifier(value); return *this;}
-    inline DisableControlRequest& WithTargetIdentifier(Aws::String&& value) { SetTargetIdentifier(std::move(value)); return *this;}
-    inline DisableControlRequest& WithTargetIdentifier(const char* value) { SetTargetIdentifier(value); return *this;}
+    template<typename TargetIdentifierT = Aws::String>
+    void SetTargetIdentifier(TargetIdentifierT&& value) { m_targetIdentifierHasBeenSet = true; m_targetIdentifier = std::forward<TargetIdentifierT>(value); }
+    template<typename TargetIdentifierT = Aws::String>
+    DisableControlRequest& WithTargetIdentifier(TargetIdentifierT&& value) { SetTargetIdentifier(std::forward<TargetIdentifierT>(value)); return *this;}
     ///@}
   private:
 

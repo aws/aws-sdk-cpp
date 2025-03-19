@@ -18,16 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-UserDefined::UserDefined() : 
-    m_unit(Unit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 UserDefined::UserDefined(JsonView jsonValue)
-  : UserDefined()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ UserDefined& UserDefined::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Unit"))
   {
     m_unit = UnitMapper::GetUnitForName(jsonValue.GetString("Unit"));
-
     m_unitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetDouble("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

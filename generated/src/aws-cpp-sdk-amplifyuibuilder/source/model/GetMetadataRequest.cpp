@@ -12,12 +12,6 @@ using namespace Aws::AmplifyUIBuilder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMetadataRequest::GetMetadataRequest() : 
-    m_appIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false)
-{
-}
-
 Aws::String GetMetadataRequest::SerializePayload() const
 {
   return {};

@@ -33,7 +33,7 @@ namespace Model
   class DeliveryStreamEncryptionConfigurationInput
   {
   public:
-    AWS_FIREHOSE_API DeliveryStreamEncryptionConfigurationInput();
+    AWS_FIREHOSE_API DeliveryStreamEncryptionConfigurationInput() = default;
     AWS_FIREHOSE_API DeliveryStreamEncryptionConfigurationInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API DeliveryStreamEncryptionConfigurationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <code>KeyType</code> to <code>Amazon Web Services_OWNED_CMK</code>, Firehose
      * uses a service-account CMK.</p>
      */
-    inline const Aws::String& GetKeyARN() const{ return m_keyARN; }
+    inline const Aws::String& GetKeyARN() const { return m_keyARN; }
     inline bool KeyARNHasBeenSet() const { return m_keyARNHasBeenSet; }
-    inline void SetKeyARN(const Aws::String& value) { m_keyARNHasBeenSet = true; m_keyARN = value; }
-    inline void SetKeyARN(Aws::String&& value) { m_keyARNHasBeenSet = true; m_keyARN = std::move(value); }
-    inline void SetKeyARN(const char* value) { m_keyARNHasBeenSet = true; m_keyARN.assign(value); }
-    inline DeliveryStreamEncryptionConfigurationInput& WithKeyARN(const Aws::String& value) { SetKeyARN(value); return *this;}
-    inline DeliveryStreamEncryptionConfigurationInput& WithKeyARN(Aws::String&& value) { SetKeyARN(std::move(value)); return *this;}
-    inline DeliveryStreamEncryptionConfigurationInput& WithKeyARN(const char* value) { SetKeyARN(value); return *this;}
+    template<typename KeyARNT = Aws::String>
+    void SetKeyARN(KeyARNT&& value) { m_keyARNHasBeenSet = true; m_keyARN = std::forward<KeyARNT>(value); }
+    template<typename KeyARNT = Aws::String>
+    DeliveryStreamEncryptionConfigurationInput& WithKeyARN(KeyARNT&& value) { SetKeyARN(std::forward<KeyARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,19 +79,17 @@ namespace Model
      * Symmetric and Asymmetric CMKs</a> in the Amazon Web Services Key Management
      * Service developer guide.</p> 
      */
-    inline const KeyType& GetKeyType() const{ return m_keyType; }
+    inline KeyType GetKeyType() const { return m_keyType; }
     inline bool KeyTypeHasBeenSet() const { return m_keyTypeHasBeenSet; }
-    inline void SetKeyType(const KeyType& value) { m_keyTypeHasBeenSet = true; m_keyType = value; }
-    inline void SetKeyType(KeyType&& value) { m_keyTypeHasBeenSet = true; m_keyType = std::move(value); }
-    inline DeliveryStreamEncryptionConfigurationInput& WithKeyType(const KeyType& value) { SetKeyType(value); return *this;}
-    inline DeliveryStreamEncryptionConfigurationInput& WithKeyType(KeyType&& value) { SetKeyType(std::move(value)); return *this;}
+    inline void SetKeyType(KeyType value) { m_keyTypeHasBeenSet = true; m_keyType = value; }
+    inline DeliveryStreamEncryptionConfigurationInput& WithKeyType(KeyType value) { SetKeyType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_keyARN;
     bool m_keyARNHasBeenSet = false;
 
-    KeyType m_keyType;
+    KeyType m_keyType{KeyType::NOT_SET};
     bool m_keyTypeHasBeenSet = false;
   };
 

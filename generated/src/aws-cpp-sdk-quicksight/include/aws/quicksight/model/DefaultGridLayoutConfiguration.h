@@ -32,7 +32,7 @@ namespace Model
   class DefaultGridLayoutConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API DefaultGridLayoutConfiguration();
+    AWS_QUICKSIGHT_API DefaultGridLayoutConfiguration() = default;
     AWS_QUICKSIGHT_API DefaultGridLayoutConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DefaultGridLayoutConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Determines the screen canvas size options for a grid layout.</p>
      */
-    inline const GridLayoutCanvasSizeOptions& GetCanvasSizeOptions() const{ return m_canvasSizeOptions; }
+    inline const GridLayoutCanvasSizeOptions& GetCanvasSizeOptions() const { return m_canvasSizeOptions; }
     inline bool CanvasSizeOptionsHasBeenSet() const { return m_canvasSizeOptionsHasBeenSet; }
-    inline void SetCanvasSizeOptions(const GridLayoutCanvasSizeOptions& value) { m_canvasSizeOptionsHasBeenSet = true; m_canvasSizeOptions = value; }
-    inline void SetCanvasSizeOptions(GridLayoutCanvasSizeOptions&& value) { m_canvasSizeOptionsHasBeenSet = true; m_canvasSizeOptions = std::move(value); }
-    inline DefaultGridLayoutConfiguration& WithCanvasSizeOptions(const GridLayoutCanvasSizeOptions& value) { SetCanvasSizeOptions(value); return *this;}
-    inline DefaultGridLayoutConfiguration& WithCanvasSizeOptions(GridLayoutCanvasSizeOptions&& value) { SetCanvasSizeOptions(std::move(value)); return *this;}
+    template<typename CanvasSizeOptionsT = GridLayoutCanvasSizeOptions>
+    void SetCanvasSizeOptions(CanvasSizeOptionsT&& value) { m_canvasSizeOptionsHasBeenSet = true; m_canvasSizeOptions = std::forward<CanvasSizeOptionsT>(value); }
+    template<typename CanvasSizeOptionsT = GridLayoutCanvasSizeOptions>
+    DefaultGridLayoutConfiguration& WithCanvasSizeOptions(CanvasSizeOptionsT&& value) { SetCanvasSizeOptions(std::forward<CanvasSizeOptionsT>(value)); return *this;}
     ///@}
   private:
 

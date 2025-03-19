@@ -12,15 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetApproximateUsageRecordsRequest::GetApproximateUsageRecordsRequest() : 
-    m_granularity(Granularity::NOT_SET),
-    m_granularityHasBeenSet(false),
-    m_servicesHasBeenSet(false),
-    m_approximationDimension(ApproximationDimension::NOT_SET),
-    m_approximationDimensionHasBeenSet(false)
-{
-}
-
 Aws::String GetApproximateUsageRecordsRequest::SerializePayload() const
 {
   JsonValue payload;

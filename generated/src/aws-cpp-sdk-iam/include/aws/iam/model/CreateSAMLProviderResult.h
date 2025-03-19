@@ -36,7 +36,7 @@ namespace Model
   class CreateSAMLProviderResult
   {
   public:
-    AWS_IAM_API CreateSAMLProviderResult();
+    AWS_IAM_API CreateSAMLProviderResult() = default;
     AWS_IAM_API CreateSAMLProviderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_IAM_API CreateSAMLProviderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -45,13 +45,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the new SAML provider resource in IAM.</p>
      */
-    inline const Aws::String& GetSAMLProviderArn() const{ return m_sAMLProviderArn; }
-    inline void SetSAMLProviderArn(const Aws::String& value) { m_sAMLProviderArn = value; }
-    inline void SetSAMLProviderArn(Aws::String&& value) { m_sAMLProviderArn = std::move(value); }
-    inline void SetSAMLProviderArn(const char* value) { m_sAMLProviderArn.assign(value); }
-    inline CreateSAMLProviderResult& WithSAMLProviderArn(const Aws::String& value) { SetSAMLProviderArn(value); return *this;}
-    inline CreateSAMLProviderResult& WithSAMLProviderArn(Aws::String&& value) { SetSAMLProviderArn(std::move(value)); return *this;}
-    inline CreateSAMLProviderResult& WithSAMLProviderArn(const char* value) { SetSAMLProviderArn(value); return *this;}
+    inline const Aws::String& GetSAMLProviderArn() const { return m_sAMLProviderArn; }
+    template<typename SAMLProviderArnT = Aws::String>
+    void SetSAMLProviderArn(SAMLProviderArnT&& value) { m_sAMLProviderArnHasBeenSet = true; m_sAMLProviderArn = std::forward<SAMLProviderArnT>(value); }
+    template<typename SAMLProviderArnT = Aws::String>
+    CreateSAMLProviderResult& WithSAMLProviderArn(SAMLProviderArnT&& value) { SetSAMLProviderArn(std::forward<SAMLProviderArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,30 +59,33 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
      * resources</a> in the <i>IAM User Guide</i>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
-    inline CreateSAMLProviderResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateSAMLProviderResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateSAMLProviderResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
-    inline CreateSAMLProviderResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateSAMLProviderResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateSAMLProviderResult& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateSAMLProviderResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateSAMLProviderResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateSAMLProviderResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_sAMLProviderArn;
+    bool m_sAMLProviderArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

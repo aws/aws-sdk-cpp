@@ -28,7 +28,7 @@ namespace Model
   class GetRelationalDatabaseMasterUserPasswordResult
   {
   public:
-    AWS_LIGHTSAIL_API GetRelationalDatabaseMasterUserPasswordResult();
+    AWS_LIGHTSAIL_API GetRelationalDatabaseMasterUserPasswordResult() = default;
     AWS_LIGHTSAIL_API GetRelationalDatabaseMasterUserPasswordResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetRelationalDatabaseMasterUserPasswordResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,13 +37,11 @@ namespace Model
     /**
      * <p>The master user password for the <code>password version</code> specified.</p>
      */
-    inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
-    inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPassword = value; }
-    inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPassword = std::move(value); }
-    inline void SetMasterUserPassword(const char* value) { m_masterUserPassword.assign(value); }
-    inline GetRelationalDatabaseMasterUserPasswordResult& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
-    inline GetRelationalDatabaseMasterUserPasswordResult& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
-    inline GetRelationalDatabaseMasterUserPasswordResult& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
+    inline const Aws::String& GetMasterUserPassword() const { return m_masterUserPassword; }
+    template<typename MasterUserPasswordT = Aws::String>
+    void SetMasterUserPassword(MasterUserPasswordT&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::forward<MasterUserPasswordT>(value); }
+    template<typename MasterUserPasswordT = Aws::String>
+    GetRelationalDatabaseMasterUserPasswordResult& WithMasterUserPassword(MasterUserPasswordT&& value) { SetMasterUserPassword(std::forward<MasterUserPasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,30 +49,31 @@ namespace Model
      * <p>The timestamp when the specified version of the master user password was
      * created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline GetRelationalDatabaseMasterUserPasswordResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetRelationalDatabaseMasterUserPasswordResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetRelationalDatabaseMasterUserPasswordResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRelationalDatabaseMasterUserPasswordResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRelationalDatabaseMasterUserPasswordResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRelationalDatabaseMasterUserPasswordResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRelationalDatabaseMasterUserPasswordResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_masterUserPassword;
+    bool m_masterUserPasswordHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

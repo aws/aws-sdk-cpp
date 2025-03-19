@@ -18,18 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-GameSessionConnectionInfo::GameSessionConnectionInfo() : 
-    m_gameSessionArnHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_dnsNameHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_matchedPlayerSessionsHasBeenSet(false)
-{
-}
-
 GameSessionConnectionInfo::GameSessionConnectionInfo(JsonView jsonValue)
-  : GameSessionConnectionInfo()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ GameSessionConnectionInfo& GameSessionConnectionInfo::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("GameSessionArn"))
   {
     m_gameSessionArn = jsonValue.GetString("GameSessionArn");
-
     m_gameSessionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpAddress"))
   {
     m_ipAddress = jsonValue.GetString("IpAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsName"))
   {
     m_dnsName = jsonValue.GetString("DnsName");
-
     m_dnsNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MatchedPlayerSessions"))
   {
     Aws::Utils::Array<JsonView> matchedPlayerSessionsJsonList = jsonValue.GetArray("MatchedPlayerSessions");
@@ -73,7 +54,6 @@ GameSessionConnectionInfo& GameSessionConnectionInfo::operator =(JsonView jsonVa
     }
     m_matchedPlayerSessionsHasBeenSet = true;
   }
-
   return *this;
 }
 

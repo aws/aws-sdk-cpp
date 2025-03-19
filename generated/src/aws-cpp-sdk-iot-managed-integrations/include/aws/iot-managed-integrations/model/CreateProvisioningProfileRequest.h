@@ -24,7 +24,7 @@ namespace Model
   class CreateProvisioningProfileRequest : public IoTManagedIntegrationsRequest
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API CreateProvisioningProfileRequest();
+    AWS_IOTMANAGEDINTEGRATIONS_API CreateProvisioningProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,40 +40,34 @@ namespace Model
      * <p>The type of provisioning workflow the device uses for onboarding to IoT
      * managed integrations.</p>
      */
-    inline const ProvisioningType& GetProvisioningType() const{ return m_provisioningType; }
+    inline ProvisioningType GetProvisioningType() const { return m_provisioningType; }
     inline bool ProvisioningTypeHasBeenSet() const { return m_provisioningTypeHasBeenSet; }
-    inline void SetProvisioningType(const ProvisioningType& value) { m_provisioningTypeHasBeenSet = true; m_provisioningType = value; }
-    inline void SetProvisioningType(ProvisioningType&& value) { m_provisioningTypeHasBeenSet = true; m_provisioningType = std::move(value); }
-    inline CreateProvisioningProfileRequest& WithProvisioningType(const ProvisioningType& value) { SetProvisioningType(value); return *this;}
-    inline CreateProvisioningProfileRequest& WithProvisioningType(ProvisioningType&& value) { SetProvisioningType(std::move(value)); return *this;}
+    inline void SetProvisioningType(ProvisioningType value) { m_provisioningTypeHasBeenSet = true; m_provisioningType = value; }
+    inline CreateProvisioningProfileRequest& WithProvisioningType(ProvisioningType value) { SetProvisioningType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The id of the certificate authority (CA) certificate.</p>
      */
-    inline const Aws::String& GetCaCertificate() const{ return m_caCertificate; }
+    inline const Aws::String& GetCaCertificate() const { return m_caCertificate; }
     inline bool CaCertificateHasBeenSet() const { return m_caCertificateHasBeenSet; }
-    inline void SetCaCertificate(const Aws::String& value) { m_caCertificateHasBeenSet = true; m_caCertificate = value; }
-    inline void SetCaCertificate(Aws::String&& value) { m_caCertificateHasBeenSet = true; m_caCertificate = std::move(value); }
-    inline void SetCaCertificate(const char* value) { m_caCertificateHasBeenSet = true; m_caCertificate.assign(value); }
-    inline CreateProvisioningProfileRequest& WithCaCertificate(const Aws::String& value) { SetCaCertificate(value); return *this;}
-    inline CreateProvisioningProfileRequest& WithCaCertificate(Aws::String&& value) { SetCaCertificate(std::move(value)); return *this;}
-    inline CreateProvisioningProfileRequest& WithCaCertificate(const char* value) { SetCaCertificate(value); return *this;}
+    template<typename CaCertificateT = Aws::String>
+    void SetCaCertificate(CaCertificateT&& value) { m_caCertificateHasBeenSet = true; m_caCertificate = std::forward<CaCertificateT>(value); }
+    template<typename CaCertificateT = Aws::String>
+    CreateProvisioningProfileRequest& WithCaCertificate(CaCertificateT&& value) { SetCaCertificate(std::forward<CaCertificateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the provisioning template.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateProvisioningProfileRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateProvisioningProfileRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateProvisioningProfileRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateProvisioningProfileRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +76,12 @@ namespace Model
      * initially using the same client token and parameters, then the retry attempt
      * will succeed without performing any further actions.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateProvisioningProfileRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateProvisioningProfileRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateProvisioningProfileRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateProvisioningProfileRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,23 +89,20 @@ namespace Model
      * <p>A set of key/value pairs that are used to manage the provisioning
      * profile.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateProvisioningProfileRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateProvisioningProfileRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateProvisioningProfileRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateProvisioningProfileRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateProvisioningProfileRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateProvisioningProfileRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateProvisioningProfileRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateProvisioningProfileRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateProvisioningProfileRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateProvisioningProfileRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateProvisioningProfileRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
-    ProvisioningType m_provisioningType;
+    ProvisioningType m_provisioningType{ProvisioningType::NOT_SET};
     bool m_provisioningTypeHasBeenSet = false;
 
     Aws::String m_caCertificate;

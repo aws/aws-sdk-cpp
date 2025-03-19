@@ -18,35 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ContainerInstance::ContainerInstance() : 
-    m_containerInstanceArnHasBeenSet(false),
-    m_ec2InstanceIdHasBeenSet(false),
-    m_capacityProviderNameHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_versionInfoHasBeenSet(false),
-    m_remainingResourcesHasBeenSet(false),
-    m_registeredResourcesHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_agentConnected(false),
-    m_agentConnectedHasBeenSet(false),
-    m_runningTasksCount(0),
-    m_runningTasksCountHasBeenSet(false),
-    m_pendingTasksCount(0),
-    m_pendingTasksCountHasBeenSet(false),
-    m_agentUpdateStatus(AgentUpdateStatus::NOT_SET),
-    m_agentUpdateStatusHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_registeredAtHasBeenSet(false),
-    m_attachmentsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_healthStatusHasBeenSet(false)
-{
-}
-
 ContainerInstance::ContainerInstance(JsonView jsonValue)
-  : ContainerInstance()
 {
   *this = jsonValue;
 }
@@ -56,38 +28,28 @@ ContainerInstance& ContainerInstance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("containerInstanceArn"))
   {
     m_containerInstanceArn = jsonValue.GetString("containerInstanceArn");
-
     m_containerInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ec2InstanceId"))
   {
     m_ec2InstanceId = jsonValue.GetString("ec2InstanceId");
-
     m_ec2InstanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("capacityProviderName"))
   {
     m_capacityProviderName = jsonValue.GetString("capacityProviderName");
-
     m_capacityProviderNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetInt64("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionInfo"))
   {
     m_versionInfo = jsonValue.GetObject("versionInfo");
-
     m_versionInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remainingResources"))
   {
     Aws::Utils::Array<JsonView> remainingResourcesJsonList = jsonValue.GetArray("remainingResources");
@@ -97,7 +59,6 @@ ContainerInstance& ContainerInstance::operator =(JsonView jsonValue)
     }
     m_remainingResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registeredResources"))
   {
     Aws::Utils::Array<JsonView> registeredResourcesJsonList = jsonValue.GetArray("registeredResources");
@@ -107,49 +68,36 @@ ContainerInstance& ContainerInstance::operator =(JsonView jsonValue)
     }
     m_registeredResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentConnected"))
   {
     m_agentConnected = jsonValue.GetBool("agentConnected");
-
     m_agentConnectedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runningTasksCount"))
   {
     m_runningTasksCount = jsonValue.GetInteger("runningTasksCount");
-
     m_runningTasksCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pendingTasksCount"))
   {
     m_pendingTasksCount = jsonValue.GetInteger("pendingTasksCount");
-
     m_pendingTasksCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentUpdateStatus"))
   {
     m_agentUpdateStatus = AgentUpdateStatusMapper::GetAgentUpdateStatusForName(jsonValue.GetString("agentUpdateStatus"));
-
     m_agentUpdateStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("attributes");
@@ -159,14 +107,11 @@ ContainerInstance& ContainerInstance::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registeredAt"))
   {
     m_registeredAt = jsonValue.GetDouble("registeredAt");
-
     m_registeredAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attachments"))
   {
     Aws::Utils::Array<JsonView> attachmentsJsonList = jsonValue.GetArray("attachments");
@@ -176,7 +121,6 @@ ContainerInstance& ContainerInstance::operator =(JsonView jsonValue)
     }
     m_attachmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -186,14 +130,11 @@ ContainerInstance& ContainerInstance::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("healthStatus"))
   {
     m_healthStatus = jsonValue.GetObject("healthStatus");
-
     m_healthStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

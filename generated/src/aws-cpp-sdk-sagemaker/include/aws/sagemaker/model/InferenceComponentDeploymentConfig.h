@@ -34,7 +34,7 @@ namespace Model
   class InferenceComponentDeploymentConfig
   {
   public:
-    AWS_SAGEMAKER_API InferenceComponentDeploymentConfig();
+    AWS_SAGEMAKER_API InferenceComponentDeploymentConfig() = default;
     AWS_SAGEMAKER_API InferenceComponentDeploymentConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API InferenceComponentDeploymentConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,22 +45,22 @@ namespace Model
      * <p>Specifies a rolling deployment strategy for updating a SageMaker AI
      * endpoint.</p>
      */
-    inline const InferenceComponentRollingUpdatePolicy& GetRollingUpdatePolicy() const{ return m_rollingUpdatePolicy; }
+    inline const InferenceComponentRollingUpdatePolicy& GetRollingUpdatePolicy() const { return m_rollingUpdatePolicy; }
     inline bool RollingUpdatePolicyHasBeenSet() const { return m_rollingUpdatePolicyHasBeenSet; }
-    inline void SetRollingUpdatePolicy(const InferenceComponentRollingUpdatePolicy& value) { m_rollingUpdatePolicyHasBeenSet = true; m_rollingUpdatePolicy = value; }
-    inline void SetRollingUpdatePolicy(InferenceComponentRollingUpdatePolicy&& value) { m_rollingUpdatePolicyHasBeenSet = true; m_rollingUpdatePolicy = std::move(value); }
-    inline InferenceComponentDeploymentConfig& WithRollingUpdatePolicy(const InferenceComponentRollingUpdatePolicy& value) { SetRollingUpdatePolicy(value); return *this;}
-    inline InferenceComponentDeploymentConfig& WithRollingUpdatePolicy(InferenceComponentRollingUpdatePolicy&& value) { SetRollingUpdatePolicy(std::move(value)); return *this;}
+    template<typename RollingUpdatePolicyT = InferenceComponentRollingUpdatePolicy>
+    void SetRollingUpdatePolicy(RollingUpdatePolicyT&& value) { m_rollingUpdatePolicyHasBeenSet = true; m_rollingUpdatePolicy = std::forward<RollingUpdatePolicyT>(value); }
+    template<typename RollingUpdatePolicyT = InferenceComponentRollingUpdatePolicy>
+    InferenceComponentDeploymentConfig& WithRollingUpdatePolicy(RollingUpdatePolicyT&& value) { SetRollingUpdatePolicy(std::forward<RollingUpdatePolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const AutoRollbackConfig& GetAutoRollbackConfiguration() const{ return m_autoRollbackConfiguration; }
+    inline const AutoRollbackConfig& GetAutoRollbackConfiguration() const { return m_autoRollbackConfiguration; }
     inline bool AutoRollbackConfigurationHasBeenSet() const { return m_autoRollbackConfigurationHasBeenSet; }
-    inline void SetAutoRollbackConfiguration(const AutoRollbackConfig& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = value; }
-    inline void SetAutoRollbackConfiguration(AutoRollbackConfig&& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = std::move(value); }
-    inline InferenceComponentDeploymentConfig& WithAutoRollbackConfiguration(const AutoRollbackConfig& value) { SetAutoRollbackConfiguration(value); return *this;}
-    inline InferenceComponentDeploymentConfig& WithAutoRollbackConfiguration(AutoRollbackConfig&& value) { SetAutoRollbackConfiguration(std::move(value)); return *this;}
+    template<typename AutoRollbackConfigurationT = AutoRollbackConfig>
+    void SetAutoRollbackConfiguration(AutoRollbackConfigurationT&& value) { m_autoRollbackConfigurationHasBeenSet = true; m_autoRollbackConfiguration = std::forward<AutoRollbackConfigurationT>(value); }
+    template<typename AutoRollbackConfigurationT = AutoRollbackConfig>
+    InferenceComponentDeploymentConfig& WithAutoRollbackConfiguration(AutoRollbackConfigurationT&& value) { SetAutoRollbackConfiguration(std::forward<AutoRollbackConfigurationT>(value)); return *this;}
     ///@}
   private:
 

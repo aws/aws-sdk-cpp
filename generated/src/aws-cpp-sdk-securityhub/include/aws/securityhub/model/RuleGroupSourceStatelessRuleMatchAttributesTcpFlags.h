@@ -32,7 +32,7 @@ namespace Model
   class RuleGroupSourceStatelessRuleMatchAttributesTcpFlags
   {
   public:
-    AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleMatchAttributesTcpFlags();
+    AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleMatchAttributesTcpFlags() = default;
     AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleMatchAttributesTcpFlags(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API RuleGroupSourceStatelessRuleMatchAttributesTcpFlags& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,15 +44,14 @@ namespace Model
      * order for the packet to match. Flags that are listed must be set. Flags that are
      * not listed must not be set.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFlags() const{ return m_flags; }
+    inline const Aws::Vector<Aws::String>& GetFlags() const { return m_flags; }
     inline bool FlagsHasBeenSet() const { return m_flagsHasBeenSet; }
-    inline void SetFlags(const Aws::Vector<Aws::String>& value) { m_flagsHasBeenSet = true; m_flags = value; }
-    inline void SetFlags(Aws::Vector<Aws::String>&& value) { m_flagsHasBeenSet = true; m_flags = std::move(value); }
-    inline RuleGroupSourceStatelessRuleMatchAttributesTcpFlags& WithFlags(const Aws::Vector<Aws::String>& value) { SetFlags(value); return *this;}
-    inline RuleGroupSourceStatelessRuleMatchAttributesTcpFlags& WithFlags(Aws::Vector<Aws::String>&& value) { SetFlags(std::move(value)); return *this;}
-    inline RuleGroupSourceStatelessRuleMatchAttributesTcpFlags& AddFlags(const Aws::String& value) { m_flagsHasBeenSet = true; m_flags.push_back(value); return *this; }
-    inline RuleGroupSourceStatelessRuleMatchAttributesTcpFlags& AddFlags(Aws::String&& value) { m_flagsHasBeenSet = true; m_flags.push_back(std::move(value)); return *this; }
-    inline RuleGroupSourceStatelessRuleMatchAttributesTcpFlags& AddFlags(const char* value) { m_flagsHasBeenSet = true; m_flags.push_back(value); return *this; }
+    template<typename FlagsT = Aws::Vector<Aws::String>>
+    void SetFlags(FlagsT&& value) { m_flagsHasBeenSet = true; m_flags = std::forward<FlagsT>(value); }
+    template<typename FlagsT = Aws::Vector<Aws::String>>
+    RuleGroupSourceStatelessRuleMatchAttributesTcpFlags& WithFlags(FlagsT&& value) { SetFlags(std::forward<FlagsT>(value)); return *this;}
+    template<typename FlagsT = Aws::String>
+    RuleGroupSourceStatelessRuleMatchAttributesTcpFlags& AddFlags(FlagsT&& value) { m_flagsHasBeenSet = true; m_flags.emplace_back(std::forward<FlagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,15 +59,14 @@ namespace Model
      * <p>The set of flags to consider in the inspection. If not specified, then all
      * flags are inspected.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetMasks() const{ return m_masks; }
+    inline const Aws::Vector<Aws::String>& GetMasks() const { return m_masks; }
     inline bool MasksHasBeenSet() const { return m_masksHasBeenSet; }
-    inline void SetMasks(const Aws::Vector<Aws::String>& value) { m_masksHasBeenSet = true; m_masks = value; }
-    inline void SetMasks(Aws::Vector<Aws::String>&& value) { m_masksHasBeenSet = true; m_masks = std::move(value); }
-    inline RuleGroupSourceStatelessRuleMatchAttributesTcpFlags& WithMasks(const Aws::Vector<Aws::String>& value) { SetMasks(value); return *this;}
-    inline RuleGroupSourceStatelessRuleMatchAttributesTcpFlags& WithMasks(Aws::Vector<Aws::String>&& value) { SetMasks(std::move(value)); return *this;}
-    inline RuleGroupSourceStatelessRuleMatchAttributesTcpFlags& AddMasks(const Aws::String& value) { m_masksHasBeenSet = true; m_masks.push_back(value); return *this; }
-    inline RuleGroupSourceStatelessRuleMatchAttributesTcpFlags& AddMasks(Aws::String&& value) { m_masksHasBeenSet = true; m_masks.push_back(std::move(value)); return *this; }
-    inline RuleGroupSourceStatelessRuleMatchAttributesTcpFlags& AddMasks(const char* value) { m_masksHasBeenSet = true; m_masks.push_back(value); return *this; }
+    template<typename MasksT = Aws::Vector<Aws::String>>
+    void SetMasks(MasksT&& value) { m_masksHasBeenSet = true; m_masks = std::forward<MasksT>(value); }
+    template<typename MasksT = Aws::Vector<Aws::String>>
+    RuleGroupSourceStatelessRuleMatchAttributesTcpFlags& WithMasks(MasksT&& value) { SetMasks(std::forward<MasksT>(value)); return *this;}
+    template<typename MasksT = Aws::String>
+    RuleGroupSourceStatelessRuleMatchAttributesTcpFlags& AddMasks(MasksT&& value) { m_masksHasBeenSet = true; m_masks.emplace_back(std::forward<MasksT>(value)); return *this; }
     ///@}
   private:
 

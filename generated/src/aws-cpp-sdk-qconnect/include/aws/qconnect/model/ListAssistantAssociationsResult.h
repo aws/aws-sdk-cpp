@@ -29,7 +29,7 @@ namespace Model
   class ListAssistantAssociationsResult
   {
   public:
-    AWS_QCONNECT_API ListAssistantAssociationsResult();
+    AWS_QCONNECT_API ListAssistantAssociationsResult() = default;
     AWS_QCONNECT_API ListAssistantAssociationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QCONNECT_API ListAssistantAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Summary information about assistant associations.</p>
      */
-    inline const Aws::Vector<AssistantAssociationSummary>& GetAssistantAssociationSummaries() const{ return m_assistantAssociationSummaries; }
-    inline void SetAssistantAssociationSummaries(const Aws::Vector<AssistantAssociationSummary>& value) { m_assistantAssociationSummaries = value; }
-    inline void SetAssistantAssociationSummaries(Aws::Vector<AssistantAssociationSummary>&& value) { m_assistantAssociationSummaries = std::move(value); }
-    inline ListAssistantAssociationsResult& WithAssistantAssociationSummaries(const Aws::Vector<AssistantAssociationSummary>& value) { SetAssistantAssociationSummaries(value); return *this;}
-    inline ListAssistantAssociationsResult& WithAssistantAssociationSummaries(Aws::Vector<AssistantAssociationSummary>&& value) { SetAssistantAssociationSummaries(std::move(value)); return *this;}
-    inline ListAssistantAssociationsResult& AddAssistantAssociationSummaries(const AssistantAssociationSummary& value) { m_assistantAssociationSummaries.push_back(value); return *this; }
-    inline ListAssistantAssociationsResult& AddAssistantAssociationSummaries(AssistantAssociationSummary&& value) { m_assistantAssociationSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AssistantAssociationSummary>& GetAssistantAssociationSummaries() const { return m_assistantAssociationSummaries; }
+    template<typename AssistantAssociationSummariesT = Aws::Vector<AssistantAssociationSummary>>
+    void SetAssistantAssociationSummaries(AssistantAssociationSummariesT&& value) { m_assistantAssociationSummariesHasBeenSet = true; m_assistantAssociationSummaries = std::forward<AssistantAssociationSummariesT>(value); }
+    template<typename AssistantAssociationSummariesT = Aws::Vector<AssistantAssociationSummary>>
+    ListAssistantAssociationsResult& WithAssistantAssociationSummaries(AssistantAssociationSummariesT&& value) { SetAssistantAssociationSummaries(std::forward<AssistantAssociationSummariesT>(value)); return *this;}
+    template<typename AssistantAssociationSummariesT = AssistantAssociationSummary>
+    ListAssistantAssociationsResult& AddAssistantAssociationSummaries(AssistantAssociationSummariesT&& value) { m_assistantAssociationSummariesHasBeenSet = true; m_assistantAssociationSummaries.emplace_back(std::forward<AssistantAssociationSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>If there are additional results, this is the token for the next set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAssistantAssociationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAssistantAssociationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAssistantAssociationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAssistantAssociationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAssistantAssociationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAssistantAssociationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAssistantAssociationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAssistantAssociationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AssistantAssociationSummary> m_assistantAssociationSummaries;
+    bool m_assistantAssociationSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetIntegrationResponseResult::GetIntegrationResponseResult() : 
-    m_contentHandlingStrategy(ContentHandlingStrategy::NOT_SET)
-{
-}
-
 GetIntegrationResponseResult::GetIntegrationResponseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetIntegrationResponseResult()
 {
   *this = result;
 }
@@ -34,21 +28,18 @@ GetIntegrationResponseResult& GetIntegrationResponseResult::operator =(const Aws
   if(jsonValue.ValueExists("contentHandlingStrategy"))
   {
     m_contentHandlingStrategy = ContentHandlingStrategyMapper::GetContentHandlingStrategyForName(jsonValue.GetString("contentHandlingStrategy"));
-
+    m_contentHandlingStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("integrationResponseId"))
   {
     m_integrationResponseId = jsonValue.GetString("integrationResponseId");
-
+    m_integrationResponseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("integrationResponseKey"))
   {
     m_integrationResponseKey = jsonValue.GetString("integrationResponseKey");
-
+    m_integrationResponseKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseParameters"))
   {
     Aws::Map<Aws::String, JsonView> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
@@ -56,8 +47,8 @@ GetIntegrationResponseResult& GetIntegrationResponseResult::operator =(const Aws
     {
       m_responseParameters[responseParametersItem.first] = responseParametersItem.second.AsString();
     }
+    m_responseParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseTemplates"))
   {
     Aws::Map<Aws::String, JsonView> responseTemplatesJsonMap = jsonValue.GetObject("responseTemplates").GetAllObjects();
@@ -65,20 +56,20 @@ GetIntegrationResponseResult& GetIntegrationResponseResult::operator =(const Aws
     {
       m_responseTemplates[responseTemplatesItem.first] = responseTemplatesItem.second.AsString();
     }
+    m_responseTemplatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateSelectionExpression"))
   {
     m_templateSelectionExpression = jsonValue.GetString("templateSelectionExpression");
-
+    m_templateSelectionExpressionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

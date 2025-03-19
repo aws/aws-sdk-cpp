@@ -10,11 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-PromoteReadReplicaDBClusterRequest::PromoteReadReplicaDBClusterRequest() : 
-    m_dBClusterIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String PromoteReadReplicaDBClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

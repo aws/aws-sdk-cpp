@@ -12,15 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateStreamRequest::CreateStreamRequest() : 
-    m_streamIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_filesHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateStreamRequest::SerializePayload() const
 {
   JsonValue payload;

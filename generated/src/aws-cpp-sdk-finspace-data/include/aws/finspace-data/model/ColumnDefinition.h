@@ -33,7 +33,7 @@ namespace Model
   class ColumnDefinition
   {
   public:
-    AWS_FINSPACEDATA_API ColumnDefinition();
+    AWS_FINSPACEDATA_API ColumnDefinition() = default;
     AWS_FINSPACEDATA_API ColumnDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACEDATA_API ColumnDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,44 +51,38 @@ namespace Model
      * <code>BOOLEAN</code> – A boolean data type.</p> <p> <code>BINARY</code> – A
      * binary data type.</p> </li> </ul>
      */
-    inline const ColumnDataType& GetDataType() const{ return m_dataType; }
+    inline ColumnDataType GetDataType() const { return m_dataType; }
     inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
-    inline void SetDataType(const ColumnDataType& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
-    inline void SetDataType(ColumnDataType&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
-    inline ColumnDefinition& WithDataType(const ColumnDataType& value) { SetDataType(value); return *this;}
-    inline ColumnDefinition& WithDataType(ColumnDataType&& value) { SetDataType(std::move(value)); return *this;}
+    inline void SetDataType(ColumnDataType value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
+    inline ColumnDefinition& WithDataType(ColumnDataType value) { SetDataType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of a column.</p>
      */
-    inline const Aws::String& GetColumnName() const{ return m_columnName; }
+    inline const Aws::String& GetColumnName() const { return m_columnName; }
     inline bool ColumnNameHasBeenSet() const { return m_columnNameHasBeenSet; }
-    inline void SetColumnName(const Aws::String& value) { m_columnNameHasBeenSet = true; m_columnName = value; }
-    inline void SetColumnName(Aws::String&& value) { m_columnNameHasBeenSet = true; m_columnName = std::move(value); }
-    inline void SetColumnName(const char* value) { m_columnNameHasBeenSet = true; m_columnName.assign(value); }
-    inline ColumnDefinition& WithColumnName(const Aws::String& value) { SetColumnName(value); return *this;}
-    inline ColumnDefinition& WithColumnName(Aws::String&& value) { SetColumnName(std::move(value)); return *this;}
-    inline ColumnDefinition& WithColumnName(const char* value) { SetColumnName(value); return *this;}
+    template<typename ColumnNameT = Aws::String>
+    void SetColumnName(ColumnNameT&& value) { m_columnNameHasBeenSet = true; m_columnName = std::forward<ColumnNameT>(value); }
+    template<typename ColumnNameT = Aws::String>
+    ColumnDefinition& WithColumnName(ColumnNameT&& value) { SetColumnName(std::forward<ColumnNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Description for a column.</p>
      */
-    inline const Aws::String& GetColumnDescription() const{ return m_columnDescription; }
+    inline const Aws::String& GetColumnDescription() const { return m_columnDescription; }
     inline bool ColumnDescriptionHasBeenSet() const { return m_columnDescriptionHasBeenSet; }
-    inline void SetColumnDescription(const Aws::String& value) { m_columnDescriptionHasBeenSet = true; m_columnDescription = value; }
-    inline void SetColumnDescription(Aws::String&& value) { m_columnDescriptionHasBeenSet = true; m_columnDescription = std::move(value); }
-    inline void SetColumnDescription(const char* value) { m_columnDescriptionHasBeenSet = true; m_columnDescription.assign(value); }
-    inline ColumnDefinition& WithColumnDescription(const Aws::String& value) { SetColumnDescription(value); return *this;}
-    inline ColumnDefinition& WithColumnDescription(Aws::String&& value) { SetColumnDescription(std::move(value)); return *this;}
-    inline ColumnDefinition& WithColumnDescription(const char* value) { SetColumnDescription(value); return *this;}
+    template<typename ColumnDescriptionT = Aws::String>
+    void SetColumnDescription(ColumnDescriptionT&& value) { m_columnDescriptionHasBeenSet = true; m_columnDescription = std::forward<ColumnDescriptionT>(value); }
+    template<typename ColumnDescriptionT = Aws::String>
+    ColumnDefinition& WithColumnDescription(ColumnDescriptionT&& value) { SetColumnDescription(std::forward<ColumnDescriptionT>(value)); return *this;}
     ///@}
   private:
 
-    ColumnDataType m_dataType;
+    ColumnDataType m_dataType{ColumnDataType::NOT_SET};
     bool m_dataTypeHasBeenSet = false;
 
     Aws::String m_columnName;

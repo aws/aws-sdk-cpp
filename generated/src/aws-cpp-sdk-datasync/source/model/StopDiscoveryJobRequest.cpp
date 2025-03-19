@@ -12,11 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopDiscoveryJobRequest::StopDiscoveryJobRequest() : 
-    m_discoveryJobArnHasBeenSet(false)
-{
-}
-
 Aws::String StopDiscoveryJobRequest::SerializePayload() const
 {
   JsonValue payload;

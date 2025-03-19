@@ -12,14 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetCalculatedAttributeForProfileRequest::BatchGetCalculatedAttributeForProfileRequest() : 
-    m_calculatedAttributeNameHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_profileIdsHasBeenSet(false),
-    m_conditionOverridesHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetCalculatedAttributeForProfileRequest::SerializePayload() const
 {
   JsonValue payload;

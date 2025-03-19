@@ -34,7 +34,7 @@ namespace Model
   class OpenHours
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API OpenHours();
+    AWS_CONNECTCAMPAIGNSV2_API OpenHours() = default;
     AWS_CONNECTCAMPAIGNSV2_API OpenHours(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API OpenHours& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,15 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Map<DayOfWeek, Aws::Vector<TimeRange>>& GetDailyHours() const{ return m_dailyHours; }
+    inline const Aws::Map<DayOfWeek, Aws::Vector<TimeRange>>& GetDailyHours() const { return m_dailyHours; }
     inline bool DailyHoursHasBeenSet() const { return m_dailyHoursHasBeenSet; }
-    inline void SetDailyHours(const Aws::Map<DayOfWeek, Aws::Vector<TimeRange>>& value) { m_dailyHoursHasBeenSet = true; m_dailyHours = value; }
-    inline void SetDailyHours(Aws::Map<DayOfWeek, Aws::Vector<TimeRange>>&& value) { m_dailyHoursHasBeenSet = true; m_dailyHours = std::move(value); }
-    inline OpenHours& WithDailyHours(const Aws::Map<DayOfWeek, Aws::Vector<TimeRange>>& value) { SetDailyHours(value); return *this;}
-    inline OpenHours& WithDailyHours(Aws::Map<DayOfWeek, Aws::Vector<TimeRange>>&& value) { SetDailyHours(std::move(value)); return *this;}
-    inline OpenHours& AddDailyHours(const DayOfWeek& key, const Aws::Vector<TimeRange>& value) { m_dailyHoursHasBeenSet = true; m_dailyHours.emplace(key, value); return *this; }
-    inline OpenHours& AddDailyHours(DayOfWeek&& key, const Aws::Vector<TimeRange>& value) { m_dailyHoursHasBeenSet = true; m_dailyHours.emplace(std::move(key), value); return *this; }
-    inline OpenHours& AddDailyHours(const DayOfWeek& key, Aws::Vector<TimeRange>&& value) { m_dailyHoursHasBeenSet = true; m_dailyHours.emplace(key, std::move(value)); return *this; }
-    inline OpenHours& AddDailyHours(DayOfWeek&& key, Aws::Vector<TimeRange>&& value) { m_dailyHoursHasBeenSet = true; m_dailyHours.emplace(std::move(key), std::move(value)); return *this; }
+    template<typename DailyHoursT = Aws::Map<DayOfWeek, Aws::Vector<TimeRange>>>
+    void SetDailyHours(DailyHoursT&& value) { m_dailyHoursHasBeenSet = true; m_dailyHours = std::forward<DailyHoursT>(value); }
+    template<typename DailyHoursT = Aws::Map<DayOfWeek, Aws::Vector<TimeRange>>>
+    OpenHours& WithDailyHours(DailyHoursT&& value) { SetDailyHours(std::forward<DailyHoursT>(value)); return *this;}
+    inline OpenHours& AddDailyHours(DayOfWeek key, Aws::Vector<TimeRange> value) {
+      m_dailyHoursHasBeenSet = true; m_dailyHours.emplace(key, value); return *this;
+    }
     ///@}
   private:
 

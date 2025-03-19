@@ -34,7 +34,7 @@ namespace Model
   class SecurityPolicyDetail
   {
   public:
-    AWS_OPENSEARCHSERVERLESS_API SecurityPolicyDetail();
+    AWS_OPENSEARCHSERVERLESS_API SecurityPolicyDetail() = default;
     AWS_OPENSEARCHSERVERLESS_API SecurityPolicyDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVERLESS_API SecurityPolicyDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,73 +44,65 @@ namespace Model
     /**
      * <p>The type of security policy.</p>
      */
-    inline const SecurityPolicyType& GetType() const{ return m_type; }
+    inline SecurityPolicyType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SecurityPolicyType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SecurityPolicyType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline SecurityPolicyDetail& WithType(const SecurityPolicyType& value) { SetType(value); return *this;}
-    inline SecurityPolicyDetail& WithType(SecurityPolicyType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SecurityPolicyType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline SecurityPolicyDetail& WithType(SecurityPolicyType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the policy.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SecurityPolicyDetail& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SecurityPolicyDetail& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SecurityPolicyDetail& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SecurityPolicyDetail& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the policy.</p>
      */
-    inline const Aws::String& GetPolicyVersion() const{ return m_policyVersion; }
+    inline const Aws::String& GetPolicyVersion() const { return m_policyVersion; }
     inline bool PolicyVersionHasBeenSet() const { return m_policyVersionHasBeenSet; }
-    inline void SetPolicyVersion(const Aws::String& value) { m_policyVersionHasBeenSet = true; m_policyVersion = value; }
-    inline void SetPolicyVersion(Aws::String&& value) { m_policyVersionHasBeenSet = true; m_policyVersion = std::move(value); }
-    inline void SetPolicyVersion(const char* value) { m_policyVersionHasBeenSet = true; m_policyVersion.assign(value); }
-    inline SecurityPolicyDetail& WithPolicyVersion(const Aws::String& value) { SetPolicyVersion(value); return *this;}
-    inline SecurityPolicyDetail& WithPolicyVersion(Aws::String&& value) { SetPolicyVersion(std::move(value)); return *this;}
-    inline SecurityPolicyDetail& WithPolicyVersion(const char* value) { SetPolicyVersion(value); return *this;}
+    template<typename PolicyVersionT = Aws::String>
+    void SetPolicyVersion(PolicyVersionT&& value) { m_policyVersionHasBeenSet = true; m_policyVersion = std::forward<PolicyVersionT>(value); }
+    template<typename PolicyVersionT = Aws::String>
+    SecurityPolicyDetail& WithPolicyVersion(PolicyVersionT&& value) { SetPolicyVersion(std::forward<PolicyVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the security policy.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline SecurityPolicyDetail& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline SecurityPolicyDetail& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline SecurityPolicyDetail& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    SecurityPolicyDetail& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The JSON policy document without any whitespaces.</p>
      */
-    inline Aws::Utils::DocumentView GetPolicy() const{ return m_policy; }
+    inline Aws::Utils::DocumentView GetPolicy() const { return m_policy; }
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-    inline void SetPolicy(const Aws::Utils::Document& value) { m_policyHasBeenSet = true; m_policy = value; }
-    inline void SetPolicy(Aws::Utils::Document&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-    inline SecurityPolicyDetail& WithPolicy(const Aws::Utils::Document& value) { SetPolicy(value); return *this;}
-    inline SecurityPolicyDetail& WithPolicy(Aws::Utils::Document&& value) { SetPolicy(std::move(value)); return *this;}
+    template<typename PolicyT = Aws::Utils::Document>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Aws::Utils::Document>
+    SecurityPolicyDetail& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date the policy was created.</p>
      */
-    inline long long GetCreatedDate() const{ return m_createdDate; }
+    inline long long GetCreatedDate() const { return m_createdDate; }
     inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
     inline void SetCreatedDate(long long value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
     inline SecurityPolicyDetail& WithCreatedDate(long long value) { SetCreatedDate(value); return *this;}
@@ -120,14 +112,14 @@ namespace Model
     /**
      * <p>The timestamp of when the policy was last modified.</p>
      */
-    inline long long GetLastModifiedDate() const{ return m_lastModifiedDate; }
+    inline long long GetLastModifiedDate() const { return m_lastModifiedDate; }
     inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
     inline void SetLastModifiedDate(long long value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
     inline SecurityPolicyDetail& WithLastModifiedDate(long long value) { SetLastModifiedDate(value); return *this;}
     ///@}
   private:
 
-    SecurityPolicyType m_type;
+    SecurityPolicyType m_type{SecurityPolicyType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
@@ -142,10 +134,10 @@ namespace Model
     Aws::Utils::Document m_policy;
     bool m_policyHasBeenSet = false;
 
-    long long m_createdDate;
+    long long m_createdDate{0};
     bool m_createdDateHasBeenSet = false;
 
-    long long m_lastModifiedDate;
+    long long m_lastModifiedDate{0};
     bool m_lastModifiedDateHasBeenSet = false;
   };
 

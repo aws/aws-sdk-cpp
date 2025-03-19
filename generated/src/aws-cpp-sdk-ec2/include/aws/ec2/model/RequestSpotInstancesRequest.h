@@ -31,7 +31,7 @@ namespace Model
   class RequestSpotInstancesRequest : public EC2Request
   {
   public:
-    AWS_EC2_API RequestSpotInstancesRequest();
+    AWS_EC2_API RequestSpotInstancesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,12 +50,12 @@ namespace Model
     /**
      * <p>The launch specification.</p>
      */
-    inline const RequestSpotLaunchSpecification& GetLaunchSpecification() const{ return m_launchSpecification; }
+    inline const RequestSpotLaunchSpecification& GetLaunchSpecification() const { return m_launchSpecification; }
     inline bool LaunchSpecificationHasBeenSet() const { return m_launchSpecificationHasBeenSet; }
-    inline void SetLaunchSpecification(const RequestSpotLaunchSpecification& value) { m_launchSpecificationHasBeenSet = true; m_launchSpecification = value; }
-    inline void SetLaunchSpecification(RequestSpotLaunchSpecification&& value) { m_launchSpecificationHasBeenSet = true; m_launchSpecification = std::move(value); }
-    inline RequestSpotInstancesRequest& WithLaunchSpecification(const RequestSpotLaunchSpecification& value) { SetLaunchSpecification(value); return *this;}
-    inline RequestSpotInstancesRequest& WithLaunchSpecification(RequestSpotLaunchSpecification&& value) { SetLaunchSpecification(std::move(value)); return *this;}
+    template<typename LaunchSpecificationT = RequestSpotLaunchSpecification>
+    void SetLaunchSpecification(LaunchSpecificationT&& value) { m_launchSpecificationHasBeenSet = true; m_launchSpecification = std::forward<LaunchSpecificationT>(value); }
+    template<typename LaunchSpecificationT = RequestSpotLaunchSpecification>
+    RequestSpotInstancesRequest& WithLaunchSpecification(LaunchSpecificationT&& value) { SetLaunchSpecification(std::forward<LaunchSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +67,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
      * </p>
      */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline RequestSpotInstancesRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline RequestSpotInstancesRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline RequestSpotInstancesRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline RequestSpotInstancesRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    void SetTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::forward<TagSpecificationsT>(value); }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    RequestSpotInstancesRequest& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
+    template<typename TagSpecificationsT = TagSpecification>
+    RequestSpotInstancesRequest& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -82,12 +82,10 @@ namespace Model
      * <p>The behavior when a Spot Instance is interrupted. The default is
      * <code>terminate</code>.</p>
      */
-    inline const InstanceInterruptionBehavior& GetInstanceInterruptionBehavior() const{ return m_instanceInterruptionBehavior; }
+    inline InstanceInterruptionBehavior GetInstanceInterruptionBehavior() const { return m_instanceInterruptionBehavior; }
     inline bool InstanceInterruptionBehaviorHasBeenSet() const { return m_instanceInterruptionBehaviorHasBeenSet; }
-    inline void SetInstanceInterruptionBehavior(const InstanceInterruptionBehavior& value) { m_instanceInterruptionBehaviorHasBeenSet = true; m_instanceInterruptionBehavior = value; }
-    inline void SetInstanceInterruptionBehavior(InstanceInterruptionBehavior&& value) { m_instanceInterruptionBehaviorHasBeenSet = true; m_instanceInterruptionBehavior = std::move(value); }
-    inline RequestSpotInstancesRequest& WithInstanceInterruptionBehavior(const InstanceInterruptionBehavior& value) { SetInstanceInterruptionBehavior(value); return *this;}
-    inline RequestSpotInstancesRequest& WithInstanceInterruptionBehavior(InstanceInterruptionBehavior&& value) { SetInstanceInterruptionBehavior(std::move(value)); return *this;}
+    inline void SetInstanceInterruptionBehavior(InstanceInterruptionBehavior value) { m_instanceInterruptionBehaviorHasBeenSet = true; m_instanceInterruptionBehavior = value; }
+    inline RequestSpotInstancesRequest& WithInstanceInterruptionBehavior(InstanceInterruptionBehavior value) { SetInstanceInterruptionBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -97,7 +95,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline RequestSpotInstancesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -112,14 +110,12 @@ namespace Model
      * instances will be interrupted more frequently than if you do not specify this
      * parameter.</p> 
      */
-    inline const Aws::String& GetSpotPrice() const{ return m_spotPrice; }
+    inline const Aws::String& GetSpotPrice() const { return m_spotPrice; }
     inline bool SpotPriceHasBeenSet() const { return m_spotPriceHasBeenSet; }
-    inline void SetSpotPrice(const Aws::String& value) { m_spotPriceHasBeenSet = true; m_spotPrice = value; }
-    inline void SetSpotPrice(Aws::String&& value) { m_spotPriceHasBeenSet = true; m_spotPrice = std::move(value); }
-    inline void SetSpotPrice(const char* value) { m_spotPriceHasBeenSet = true; m_spotPrice.assign(value); }
-    inline RequestSpotInstancesRequest& WithSpotPrice(const Aws::String& value) { SetSpotPrice(value); return *this;}
-    inline RequestSpotInstancesRequest& WithSpotPrice(Aws::String&& value) { SetSpotPrice(std::move(value)); return *this;}
-    inline RequestSpotInstancesRequest& WithSpotPrice(const char* value) { SetSpotPrice(value); return *this;}
+    template<typename SpotPriceT = Aws::String>
+    void SetSpotPrice(SpotPriceT&& value) { m_spotPriceHasBeenSet = true; m_spotPrice = std::forward<SpotPriceT>(value); }
+    template<typename SpotPriceT = Aws::String>
+    RequestSpotInstancesRequest& WithSpotPrice(SpotPriceT&& value) { SetSpotPrice(std::forward<SpotPriceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,21 +126,19 @@ namespace Model
      * idempotency in Amazon EC2 API requests</a> in the <i>Amazon EC2 User
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline RequestSpotInstancesRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline RequestSpotInstancesRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline RequestSpotInstancesRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    RequestSpotInstancesRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of Spot Instances to launch.</p> <p>Default: 1</p>
      */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const { return m_instanceCount; }
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
     inline RequestSpotInstancesRequest& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
@@ -154,12 +148,10 @@ namespace Model
     /**
      * <p>The Spot Instance request type.</p> <p>Default: <code>one-time</code> </p>
      */
-    inline const SpotInstanceType& GetType() const{ return m_type; }
+    inline SpotInstanceType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SpotInstanceType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SpotInstanceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline RequestSpotInstancesRequest& WithType(const SpotInstanceType& value) { SetType(value); return *this;}
-    inline RequestSpotInstancesRequest& WithType(SpotInstanceType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SpotInstanceType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RequestSpotInstancesRequest& WithType(SpotInstanceType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -172,12 +164,12 @@ namespace Model
      * be equal to the current date and time. You must specify a start date and time
      * that occurs after the current date and time.</p>
      */
-    inline const Aws::Utils::DateTime& GetValidFrom() const{ return m_validFrom; }
+    inline const Aws::Utils::DateTime& GetValidFrom() const { return m_validFrom; }
     inline bool ValidFromHasBeenSet() const { return m_validFromHasBeenSet; }
-    inline void SetValidFrom(const Aws::Utils::DateTime& value) { m_validFromHasBeenSet = true; m_validFrom = value; }
-    inline void SetValidFrom(Aws::Utils::DateTime&& value) { m_validFromHasBeenSet = true; m_validFrom = std::move(value); }
-    inline RequestSpotInstancesRequest& WithValidFrom(const Aws::Utils::DateTime& value) { SetValidFrom(value); return *this;}
-    inline RequestSpotInstancesRequest& WithValidFrom(Aws::Utils::DateTime&& value) { SetValidFrom(std::move(value)); return *this;}
+    template<typename ValidFromT = Aws::Utils::DateTime>
+    void SetValidFrom(ValidFromT&& value) { m_validFromHasBeenSet = true; m_validFrom = std::forward<ValidFromT>(value); }
+    template<typename ValidFromT = Aws::Utils::DateTime>
+    RequestSpotInstancesRequest& WithValidFrom(ValidFromT&& value) { SetValidFrom(std::forward<ValidFromT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -191,12 +183,12 @@ namespace Model
      * the <code>ValidUntil</code> date and time is reached. By default, the request is
      * valid for 7 days from the date the request was created.</p> </li> </ul>
      */
-    inline const Aws::Utils::DateTime& GetValidUntil() const{ return m_validUntil; }
+    inline const Aws::Utils::DateTime& GetValidUntil() const { return m_validUntil; }
     inline bool ValidUntilHasBeenSet() const { return m_validUntilHasBeenSet; }
-    inline void SetValidUntil(const Aws::Utils::DateTime& value) { m_validUntilHasBeenSet = true; m_validUntil = value; }
-    inline void SetValidUntil(Aws::Utils::DateTime&& value) { m_validUntilHasBeenSet = true; m_validUntil = std::move(value); }
-    inline RequestSpotInstancesRequest& WithValidUntil(const Aws::Utils::DateTime& value) { SetValidUntil(value); return *this;}
-    inline RequestSpotInstancesRequest& WithValidUntil(Aws::Utils::DateTime&& value) { SetValidUntil(std::move(value)); return *this;}
+    template<typename ValidUntilT = Aws::Utils::DateTime>
+    void SetValidUntil(ValidUntilT&& value) { m_validUntilHasBeenSet = true; m_validUntil = std::forward<ValidUntilT>(value); }
+    template<typename ValidUntilT = Aws::Utils::DateTime>
+    RequestSpotInstancesRequest& WithValidUntil(ValidUntilT&& value) { SetValidUntil(std::forward<ValidUntilT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -205,14 +197,12 @@ namespace Model
      * together and terminate together.</p> <p>Default: Instances are launched and
      * terminated individually</p>
      */
-    inline const Aws::String& GetLaunchGroup() const{ return m_launchGroup; }
+    inline const Aws::String& GetLaunchGroup() const { return m_launchGroup; }
     inline bool LaunchGroupHasBeenSet() const { return m_launchGroupHasBeenSet; }
-    inline void SetLaunchGroup(const Aws::String& value) { m_launchGroupHasBeenSet = true; m_launchGroup = value; }
-    inline void SetLaunchGroup(Aws::String&& value) { m_launchGroupHasBeenSet = true; m_launchGroup = std::move(value); }
-    inline void SetLaunchGroup(const char* value) { m_launchGroupHasBeenSet = true; m_launchGroup.assign(value); }
-    inline RequestSpotInstancesRequest& WithLaunchGroup(const Aws::String& value) { SetLaunchGroup(value); return *this;}
-    inline RequestSpotInstancesRequest& WithLaunchGroup(Aws::String&& value) { SetLaunchGroup(std::move(value)); return *this;}
-    inline RequestSpotInstancesRequest& WithLaunchGroup(const char* value) { SetLaunchGroup(value); return *this;}
+    template<typename LaunchGroupT = Aws::String>
+    void SetLaunchGroup(LaunchGroupT&& value) { m_launchGroupHasBeenSet = true; m_launchGroup = std::forward<LaunchGroupT>(value); }
+    template<typename LaunchGroupT = Aws::String>
+    RequestSpotInstancesRequest& WithLaunchGroup(LaunchGroupT&& value) { SetLaunchGroup(std::forward<LaunchGroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -234,21 +224,19 @@ namespace Model
      * the same Availability Zone group.</p> <p>Default: Instances are launched in any
      * available Availability Zone.</p>
      */
-    inline const Aws::String& GetAvailabilityZoneGroup() const{ return m_availabilityZoneGroup; }
+    inline const Aws::String& GetAvailabilityZoneGroup() const { return m_availabilityZoneGroup; }
     inline bool AvailabilityZoneGroupHasBeenSet() const { return m_availabilityZoneGroupHasBeenSet; }
-    inline void SetAvailabilityZoneGroup(const Aws::String& value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup = value; }
-    inline void SetAvailabilityZoneGroup(Aws::String&& value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup = std::move(value); }
-    inline void SetAvailabilityZoneGroup(const char* value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup.assign(value); }
-    inline RequestSpotInstancesRequest& WithAvailabilityZoneGroup(const Aws::String& value) { SetAvailabilityZoneGroup(value); return *this;}
-    inline RequestSpotInstancesRequest& WithAvailabilityZoneGroup(Aws::String&& value) { SetAvailabilityZoneGroup(std::move(value)); return *this;}
-    inline RequestSpotInstancesRequest& WithAvailabilityZoneGroup(const char* value) { SetAvailabilityZoneGroup(value); return *this;}
+    template<typename AvailabilityZoneGroupT = Aws::String>
+    void SetAvailabilityZoneGroup(AvailabilityZoneGroupT&& value) { m_availabilityZoneGroupHasBeenSet = true; m_availabilityZoneGroup = std::forward<AvailabilityZoneGroupT>(value); }
+    template<typename AvailabilityZoneGroupT = Aws::String>
+    RequestSpotInstancesRequest& WithAvailabilityZoneGroup(AvailabilityZoneGroupT&& value) { SetAvailabilityZoneGroup(std::forward<AvailabilityZoneGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Deprecated.</p>
      */
-    inline int GetBlockDurationMinutes() const{ return m_blockDurationMinutes; }
+    inline int GetBlockDurationMinutes() const { return m_blockDurationMinutes; }
     inline bool BlockDurationMinutesHasBeenSet() const { return m_blockDurationMinutesHasBeenSet; }
     inline void SetBlockDurationMinutes(int value) { m_blockDurationMinutesHasBeenSet = true; m_blockDurationMinutes = value; }
     inline RequestSpotInstancesRequest& WithBlockDurationMinutes(int value) { SetBlockDurationMinutes(value); return *this;}
@@ -261,10 +249,10 @@ namespace Model
     Aws::Vector<TagSpecification> m_tagSpecifications;
     bool m_tagSpecificationsHasBeenSet = false;
 
-    InstanceInterruptionBehavior m_instanceInterruptionBehavior;
+    InstanceInterruptionBehavior m_instanceInterruptionBehavior{InstanceInterruptionBehavior::NOT_SET};
     bool m_instanceInterruptionBehaviorHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_spotPrice;
@@ -273,16 +261,16 @@ namespace Model
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    int m_instanceCount;
+    int m_instanceCount{0};
     bool m_instanceCountHasBeenSet = false;
 
-    SpotInstanceType m_type;
+    SpotInstanceType m_type{SpotInstanceType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_validFrom;
+    Aws::Utils::DateTime m_validFrom{};
     bool m_validFromHasBeenSet = false;
 
-    Aws::Utils::DateTime m_validUntil;
+    Aws::Utils::DateTime m_validUntil{};
     bool m_validUntilHasBeenSet = false;
 
     Aws::String m_launchGroup;
@@ -291,7 +279,7 @@ namespace Model
     Aws::String m_availabilityZoneGroup;
     bool m_availabilityZoneGroupHasBeenSet = false;
 
-    int m_blockDurationMinutes;
+    int m_blockDurationMinutes{0};
     bool m_blockDurationMinutesHasBeenSet = false;
   };
 

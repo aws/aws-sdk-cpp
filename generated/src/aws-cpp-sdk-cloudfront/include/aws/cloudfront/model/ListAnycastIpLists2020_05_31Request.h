@@ -25,7 +25,7 @@ namespace Model
   class ListAnycastIpLists2020_05_31Request : public CloudFrontRequest
   {
   public:
-    AWS_CLOUDFRONT_API ListAnycastIpLists2020_05_31Request();
+    AWS_CLOUDFRONT_API ListAnycastIpLists2020_05_31Request() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * get the next page of the list, set this field's value to the value of
      * <code>NextMarker</code> from the current page's response.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline ListAnycastIpLists2020_05_31Request& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListAnycastIpLists2020_05_31Request& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListAnycastIpLists2020_05_31Request& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListAnycastIpLists2020_05_31Request& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * <p>The maximum number of Anycast static IP lists that you want returned in the
      * response.</p>
      */
-    inline int GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
     inline ListAnycastIpLists2020_05_31Request& WithMaxItems(int value) { SetMaxItems(value); return *this;}
@@ -70,7 +68,7 @@ namespace Model
     Aws::String m_marker;
     bool m_markerHasBeenSet = false;
 
-    int m_maxItems;
+    int m_maxItems{0};
     bool m_maxItemsHasBeenSet = false;
   };
 

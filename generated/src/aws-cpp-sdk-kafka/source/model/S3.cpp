@@ -18,16 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-S3::S3() : 
-    m_bucketHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_prefixHasBeenSet(false)
-{
-}
-
 S3::S3(JsonView jsonValue)
-  : S3()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ S3& S3::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucket"))
   {
     m_bucket = jsonValue.GetString("bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prefix"))
   {
     m_prefix = jsonValue.GetString("prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   return *this;
 }
 

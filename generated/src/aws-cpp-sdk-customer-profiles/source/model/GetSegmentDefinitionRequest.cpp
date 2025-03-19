@@ -12,12 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSegmentDefinitionRequest::GetSegmentDefinitionRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_segmentDefinitionNameHasBeenSet(false)
-{
-}
-
 Aws::String GetSegmentDefinitionRequest::SerializePayload() const
 {
   return {};

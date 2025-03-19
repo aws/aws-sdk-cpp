@@ -32,7 +32,7 @@ namespace Model
   class WorkflowMetrics
   {
   public:
-    AWS_CUSTOMERPROFILES_API WorkflowMetrics();
+    AWS_CUSTOMERPROFILES_API WorkflowMetrics() = default;
     AWS_CUSTOMERPROFILES_API WorkflowMetrics(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API WorkflowMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Workflow execution metrics for <code>APPFLOW_INTEGRATION</code> workflow.</p>
      */
-    inline const AppflowIntegrationWorkflowMetrics& GetAppflowIntegration() const{ return m_appflowIntegration; }
+    inline const AppflowIntegrationWorkflowMetrics& GetAppflowIntegration() const { return m_appflowIntegration; }
     inline bool AppflowIntegrationHasBeenSet() const { return m_appflowIntegrationHasBeenSet; }
-    inline void SetAppflowIntegration(const AppflowIntegrationWorkflowMetrics& value) { m_appflowIntegrationHasBeenSet = true; m_appflowIntegration = value; }
-    inline void SetAppflowIntegration(AppflowIntegrationWorkflowMetrics&& value) { m_appflowIntegrationHasBeenSet = true; m_appflowIntegration = std::move(value); }
-    inline WorkflowMetrics& WithAppflowIntegration(const AppflowIntegrationWorkflowMetrics& value) { SetAppflowIntegration(value); return *this;}
-    inline WorkflowMetrics& WithAppflowIntegration(AppflowIntegrationWorkflowMetrics&& value) { SetAppflowIntegration(std::move(value)); return *this;}
+    template<typename AppflowIntegrationT = AppflowIntegrationWorkflowMetrics>
+    void SetAppflowIntegration(AppflowIntegrationT&& value) { m_appflowIntegrationHasBeenSet = true; m_appflowIntegration = std::forward<AppflowIntegrationT>(value); }
+    template<typename AppflowIntegrationT = AppflowIntegrationWorkflowMetrics>
+    WorkflowMetrics& WithAppflowIntegration(AppflowIntegrationT&& value) { SetAppflowIntegration(std::forward<AppflowIntegrationT>(value)); return *this;}
     ///@}
   private:
 

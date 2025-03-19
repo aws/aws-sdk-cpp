@@ -18,32 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-EntityRecognizerProperties::EntityRecognizerProperties() : 
-    m_entityRecognizerArnHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_status(ModelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_submitTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_trainingStartTimeHasBeenSet(false),
-    m_trainingEndTimeHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false),
-    m_recognizerMetadataHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_volumeKmsKeyIdHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_modelKmsKeyIdHasBeenSet(false),
-    m_versionNameHasBeenSet(false),
-    m_sourceModelArnHasBeenSet(false),
-    m_flywheelArnHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false)
-{
-}
-
 EntityRecognizerProperties::EntityRecognizerProperties(JsonView jsonValue)
-  : EntityRecognizerProperties()
 {
   *this = jsonValue;
 }
@@ -53,129 +28,93 @@ EntityRecognizerProperties& EntityRecognizerProperties::operator =(JsonView json
   if(jsonValue.ValueExists("EntityRecognizerArn"))
   {
     m_entityRecognizerArn = jsonValue.GetString("EntityRecognizerArn");
-
     m_entityRecognizerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LanguageCode"))
   {
     m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("LanguageCode"));
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ModelStatusMapper::GetModelStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubmitTime"))
   {
     m_submitTime = jsonValue.GetDouble("SubmitTime");
-
     m_submitTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingStartTime"))
   {
     m_trainingStartTime = jsonValue.GetDouble("TrainingStartTime");
-
     m_trainingStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingEndTime"))
   {
     m_trainingEndTime = jsonValue.GetDouble("TrainingEndTime");
-
     m_trainingEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputDataConfig"))
   {
     m_inputDataConfig = jsonValue.GetObject("InputDataConfig");
-
     m_inputDataConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecognizerMetadata"))
   {
     m_recognizerMetadata = jsonValue.GetObject("RecognizerMetadata");
-
     m_recognizerMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataAccessRoleArn"))
   {
     m_dataAccessRoleArn = jsonValue.GetString("DataAccessRoleArn");
-
     m_dataAccessRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeKmsKeyId"))
   {
     m_volumeKmsKeyId = jsonValue.GetString("VolumeKmsKeyId");
-
     m_volumeKmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("VpcConfig");
-
     m_vpcConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelKmsKeyId"))
   {
     m_modelKmsKeyId = jsonValue.GetString("ModelKmsKeyId");
-
     m_modelKmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionName"))
   {
     m_versionName = jsonValue.GetString("VersionName");
-
     m_versionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceModelArn"))
   {
     m_sourceModelArn = jsonValue.GetString("SourceModelArn");
-
     m_sourceModelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FlywheelArn"))
   {
     m_flywheelArn = jsonValue.GetString("FlywheelArn");
-
     m_flywheelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputDataConfig"))
   {
     m_outputDataConfig = jsonValue.GetObject("OutputDataConfig");
-
     m_outputDataConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

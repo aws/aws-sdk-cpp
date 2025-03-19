@@ -18,14 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-FindingSourceDetail::FindingSourceDetail() : 
-    m_accessPointArnHasBeenSet(false),
-    m_accessPointAccountHasBeenSet(false)
-{
-}
-
 FindingSourceDetail::FindingSourceDetail(JsonView jsonValue)
-  : FindingSourceDetail()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FindingSourceDetail& FindingSourceDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accessPointArn"))
   {
     m_accessPointArn = jsonValue.GetString("accessPointArn");
-
     m_accessPointArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accessPointAccount"))
   {
     m_accessPointAccount = jsonValue.GetString("accessPointAccount");
-
     m_accessPointAccountHasBeenSet = true;
   }
-
   return *this;
 }
 

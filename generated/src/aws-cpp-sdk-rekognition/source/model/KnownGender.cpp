@@ -18,14 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-KnownGender::KnownGender() : 
-    m_type(KnownGenderType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 KnownGender::KnownGender(JsonView jsonValue)
-  : KnownGender()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ KnownGender& KnownGender::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = KnownGenderTypeMapper::GetKnownGenderTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

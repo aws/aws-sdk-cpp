@@ -31,7 +31,7 @@ namespace Model
   class WisdomInfo
   {
   public:
-    AWS_CONNECT_API WisdomInfo();
+    AWS_CONNECT_API WisdomInfo() = default;
     AWS_CONNECT_API WisdomInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API WisdomInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Wisdom session.</p>
      */
-    inline const Aws::String& GetSessionArn() const{ return m_sessionArn; }
+    inline const Aws::String& GetSessionArn() const { return m_sessionArn; }
     inline bool SessionArnHasBeenSet() const { return m_sessionArnHasBeenSet; }
-    inline void SetSessionArn(const Aws::String& value) { m_sessionArnHasBeenSet = true; m_sessionArn = value; }
-    inline void SetSessionArn(Aws::String&& value) { m_sessionArnHasBeenSet = true; m_sessionArn = std::move(value); }
-    inline void SetSessionArn(const char* value) { m_sessionArnHasBeenSet = true; m_sessionArn.assign(value); }
-    inline WisdomInfo& WithSessionArn(const Aws::String& value) { SetSessionArn(value); return *this;}
-    inline WisdomInfo& WithSessionArn(Aws::String&& value) { SetSessionArn(std::move(value)); return *this;}
-    inline WisdomInfo& WithSessionArn(const char* value) { SetSessionArn(value); return *this;}
+    template<typename SessionArnT = Aws::String>
+    void SetSessionArn(SessionArnT&& value) { m_sessionArnHasBeenSet = true; m_sessionArn = std::forward<SessionArnT>(value); }
+    template<typename SessionArnT = Aws::String>
+    WisdomInfo& WithSessionArn(SessionArnT&& value) { SetSessionArn(std::forward<SessionArnT>(value)); return *this;}
     ///@}
   private:
 

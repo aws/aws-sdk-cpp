@@ -18,15 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-SyncResourceStatus::SyncResourceStatus() : 
-    m_state(SyncResourceState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 SyncResourceStatus::SyncResourceStatus(JsonView jsonValue)
-  : SyncResourceStatus()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SyncResourceStatus& SyncResourceStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("state"))
   {
     m_state = SyncResourceStateMapper::GetSyncResourceStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetObject("error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

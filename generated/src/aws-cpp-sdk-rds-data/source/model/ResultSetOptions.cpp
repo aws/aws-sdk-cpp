@@ -18,16 +18,7 @@ namespace RDSDataService
 namespace Model
 {
 
-ResultSetOptions::ResultSetOptions() : 
-    m_decimalReturnType(DecimalReturnType::NOT_SET),
-    m_decimalReturnTypeHasBeenSet(false),
-    m_longReturnType(LongReturnType::NOT_SET),
-    m_longReturnTypeHasBeenSet(false)
-{
-}
-
 ResultSetOptions::ResultSetOptions(JsonView jsonValue)
-  : ResultSetOptions()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ResultSetOptions& ResultSetOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("decimalReturnType"))
   {
     m_decimalReturnType = DecimalReturnTypeMapper::GetDecimalReturnTypeForName(jsonValue.GetString("decimalReturnType"));
-
     m_decimalReturnTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("longReturnType"))
   {
     m_longReturnType = LongReturnTypeMapper::GetLongReturnTypeForName(jsonValue.GetString("longReturnType"));
-
     m_longReturnTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

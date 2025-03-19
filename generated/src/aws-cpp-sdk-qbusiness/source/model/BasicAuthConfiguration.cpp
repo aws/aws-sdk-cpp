@@ -18,14 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-BasicAuthConfiguration::BasicAuthConfiguration() : 
-    m_secretArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 BasicAuthConfiguration::BasicAuthConfiguration(JsonView jsonValue)
-  : BasicAuthConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BasicAuthConfiguration& BasicAuthConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("secretArn"))
   {
     m_secretArn = jsonValue.GetString("secretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

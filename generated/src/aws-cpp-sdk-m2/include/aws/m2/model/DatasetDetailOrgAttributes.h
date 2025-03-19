@@ -36,7 +36,7 @@ namespace Model
   class DatasetDetailOrgAttributes
   {
   public:
-    AWS_MAINFRAMEMODERNIZATION_API DatasetDetailOrgAttributes();
+    AWS_MAINFRAMEMODERNIZATION_API DatasetDetailOrgAttributes() = default;
     AWS_MAINFRAMEMODERNIZATION_API DatasetDetailOrgAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API DatasetDetailOrgAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,48 +46,48 @@ namespace Model
     /**
      * <p>The generation data group of the data set.</p>
      */
-    inline const GdgDetailAttributes& GetGdg() const{ return m_gdg; }
+    inline const GdgDetailAttributes& GetGdg() const { return m_gdg; }
     inline bool GdgHasBeenSet() const { return m_gdgHasBeenSet; }
-    inline void SetGdg(const GdgDetailAttributes& value) { m_gdgHasBeenSet = true; m_gdg = value; }
-    inline void SetGdg(GdgDetailAttributes&& value) { m_gdgHasBeenSet = true; m_gdg = std::move(value); }
-    inline DatasetDetailOrgAttributes& WithGdg(const GdgDetailAttributes& value) { SetGdg(value); return *this;}
-    inline DatasetDetailOrgAttributes& WithGdg(GdgDetailAttributes&& value) { SetGdg(std::move(value)); return *this;}
+    template<typename GdgT = GdgDetailAttributes>
+    void SetGdg(GdgT&& value) { m_gdgHasBeenSet = true; m_gdg = std::forward<GdgT>(value); }
+    template<typename GdgT = GdgDetailAttributes>
+    DatasetDetailOrgAttributes& WithGdg(GdgT&& value) { SetGdg(std::forward<GdgT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The details of a PO type data set.</p>
      */
-    inline const PoDetailAttributes& GetPo() const{ return m_po; }
+    inline const PoDetailAttributes& GetPo() const { return m_po; }
     inline bool PoHasBeenSet() const { return m_poHasBeenSet; }
-    inline void SetPo(const PoDetailAttributes& value) { m_poHasBeenSet = true; m_po = value; }
-    inline void SetPo(PoDetailAttributes&& value) { m_poHasBeenSet = true; m_po = std::move(value); }
-    inline DatasetDetailOrgAttributes& WithPo(const PoDetailAttributes& value) { SetPo(value); return *this;}
-    inline DatasetDetailOrgAttributes& WithPo(PoDetailAttributes&& value) { SetPo(std::move(value)); return *this;}
+    template<typename PoT = PoDetailAttributes>
+    void SetPo(PoT&& value) { m_poHasBeenSet = true; m_po = std::forward<PoT>(value); }
+    template<typename PoT = PoDetailAttributes>
+    DatasetDetailOrgAttributes& WithPo(PoT&& value) { SetPo(std::forward<PoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The details of a PS type data set.</p>
      */
-    inline const PsDetailAttributes& GetPs() const{ return m_ps; }
+    inline const PsDetailAttributes& GetPs() const { return m_ps; }
     inline bool PsHasBeenSet() const { return m_psHasBeenSet; }
-    inline void SetPs(const PsDetailAttributes& value) { m_psHasBeenSet = true; m_ps = value; }
-    inline void SetPs(PsDetailAttributes&& value) { m_psHasBeenSet = true; m_ps = std::move(value); }
-    inline DatasetDetailOrgAttributes& WithPs(const PsDetailAttributes& value) { SetPs(value); return *this;}
-    inline DatasetDetailOrgAttributes& WithPs(PsDetailAttributes&& value) { SetPs(std::move(value)); return *this;}
+    template<typename PsT = PsDetailAttributes>
+    void SetPs(PsT&& value) { m_psHasBeenSet = true; m_ps = std::forward<PsT>(value); }
+    template<typename PsT = PsDetailAttributes>
+    DatasetDetailOrgAttributes& WithPs(PsT&& value) { SetPs(std::forward<PsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The details of a VSAM data set.</p>
      */
-    inline const VsamDetailAttributes& GetVsam() const{ return m_vsam; }
+    inline const VsamDetailAttributes& GetVsam() const { return m_vsam; }
     inline bool VsamHasBeenSet() const { return m_vsamHasBeenSet; }
-    inline void SetVsam(const VsamDetailAttributes& value) { m_vsamHasBeenSet = true; m_vsam = value; }
-    inline void SetVsam(VsamDetailAttributes&& value) { m_vsamHasBeenSet = true; m_vsam = std::move(value); }
-    inline DatasetDetailOrgAttributes& WithVsam(const VsamDetailAttributes& value) { SetVsam(value); return *this;}
-    inline DatasetDetailOrgAttributes& WithVsam(VsamDetailAttributes&& value) { SetVsam(std::move(value)); return *this;}
+    template<typename VsamT = VsamDetailAttributes>
+    void SetVsam(VsamT&& value) { m_vsamHasBeenSet = true; m_vsam = std::forward<VsamT>(value); }
+    template<typename VsamT = VsamDetailAttributes>
+    DatasetDetailOrgAttributes& WithVsam(VsamT&& value) { SetVsam(std::forward<VsamT>(value)); return *this;}
     ///@}
   private:
 

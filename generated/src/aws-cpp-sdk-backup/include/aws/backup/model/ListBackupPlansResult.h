@@ -29,7 +29,7 @@ namespace Model
   class ListBackupPlansResult
   {
   public:
-    AWS_BACKUP_API ListBackupPlansResult();
+    AWS_BACKUP_API ListBackupPlansResult() = default;
     AWS_BACKUP_API ListBackupPlansResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUP_API ListBackupPlansResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,45 +41,44 @@ namespace Model
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListBackupPlansResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListBackupPlansResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListBackupPlansResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListBackupPlansResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the backup plans.</p>
      */
-    inline const Aws::Vector<BackupPlansListMember>& GetBackupPlansList() const{ return m_backupPlansList; }
-    inline void SetBackupPlansList(const Aws::Vector<BackupPlansListMember>& value) { m_backupPlansList = value; }
-    inline void SetBackupPlansList(Aws::Vector<BackupPlansListMember>&& value) { m_backupPlansList = std::move(value); }
-    inline ListBackupPlansResult& WithBackupPlansList(const Aws::Vector<BackupPlansListMember>& value) { SetBackupPlansList(value); return *this;}
-    inline ListBackupPlansResult& WithBackupPlansList(Aws::Vector<BackupPlansListMember>&& value) { SetBackupPlansList(std::move(value)); return *this;}
-    inline ListBackupPlansResult& AddBackupPlansList(const BackupPlansListMember& value) { m_backupPlansList.push_back(value); return *this; }
-    inline ListBackupPlansResult& AddBackupPlansList(BackupPlansListMember&& value) { m_backupPlansList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BackupPlansListMember>& GetBackupPlansList() const { return m_backupPlansList; }
+    template<typename BackupPlansListT = Aws::Vector<BackupPlansListMember>>
+    void SetBackupPlansList(BackupPlansListT&& value) { m_backupPlansListHasBeenSet = true; m_backupPlansList = std::forward<BackupPlansListT>(value); }
+    template<typename BackupPlansListT = Aws::Vector<BackupPlansListMember>>
+    ListBackupPlansResult& WithBackupPlansList(BackupPlansListT&& value) { SetBackupPlansList(std::forward<BackupPlansListT>(value)); return *this;}
+    template<typename BackupPlansListT = BackupPlansListMember>
+    ListBackupPlansResult& AddBackupPlansList(BackupPlansListT&& value) { m_backupPlansListHasBeenSet = true; m_backupPlansList.emplace_back(std::forward<BackupPlansListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListBackupPlansResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListBackupPlansResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListBackupPlansResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListBackupPlansResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<BackupPlansListMember> m_backupPlansList;
+    bool m_backupPlansListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

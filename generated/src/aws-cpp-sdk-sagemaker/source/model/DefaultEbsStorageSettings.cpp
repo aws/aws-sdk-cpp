@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DefaultEbsStorageSettings::DefaultEbsStorageSettings() : 
-    m_defaultEbsVolumeSizeInGb(0),
-    m_defaultEbsVolumeSizeInGbHasBeenSet(false),
-    m_maximumEbsVolumeSizeInGb(0),
-    m_maximumEbsVolumeSizeInGbHasBeenSet(false)
-{
-}
-
 DefaultEbsStorageSettings::DefaultEbsStorageSettings(JsonView jsonValue)
-  : DefaultEbsStorageSettings()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ DefaultEbsStorageSettings& DefaultEbsStorageSettings::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("DefaultEbsVolumeSizeInGb"))
   {
     m_defaultEbsVolumeSizeInGb = jsonValue.GetInteger("DefaultEbsVolumeSizeInGb");
-
     m_defaultEbsVolumeSizeInGbHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumEbsVolumeSizeInGb"))
   {
     m_maximumEbsVolumeSizeInGb = jsonValue.GetInteger("MaximumEbsVolumeSizeInGb");
-
     m_maximumEbsVolumeSizeInGbHasBeenSet = true;
   }
-
   return *this;
 }
 

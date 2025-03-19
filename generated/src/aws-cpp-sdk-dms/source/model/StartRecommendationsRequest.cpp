@@ -12,12 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartRecommendationsRequest::StartRecommendationsRequest() : 
-    m_databaseIdHasBeenSet(false),
-    m_settingsHasBeenSet(false)
-{
-}
-
 Aws::String StartRecommendationsRequest::SerializePayload() const
 {
   JsonValue payload;

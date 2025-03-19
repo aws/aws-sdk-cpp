@@ -32,7 +32,7 @@ namespace Model
   class PortForwardingConfig
   {
   public:
-    AWS_ROBOMAKER_API PortForwardingConfig();
+    AWS_ROBOMAKER_API PortForwardingConfig() = default;
     AWS_ROBOMAKER_API PortForwardingConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API PortForwardingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>The port mappings for the configuration.</p>
      */
-    inline const Aws::Vector<PortMapping>& GetPortMappings() const{ return m_portMappings; }
+    inline const Aws::Vector<PortMapping>& GetPortMappings() const { return m_portMappings; }
     inline bool PortMappingsHasBeenSet() const { return m_portMappingsHasBeenSet; }
-    inline void SetPortMappings(const Aws::Vector<PortMapping>& value) { m_portMappingsHasBeenSet = true; m_portMappings = value; }
-    inline void SetPortMappings(Aws::Vector<PortMapping>&& value) { m_portMappingsHasBeenSet = true; m_portMappings = std::move(value); }
-    inline PortForwardingConfig& WithPortMappings(const Aws::Vector<PortMapping>& value) { SetPortMappings(value); return *this;}
-    inline PortForwardingConfig& WithPortMappings(Aws::Vector<PortMapping>&& value) { SetPortMappings(std::move(value)); return *this;}
-    inline PortForwardingConfig& AddPortMappings(const PortMapping& value) { m_portMappingsHasBeenSet = true; m_portMappings.push_back(value); return *this; }
-    inline PortForwardingConfig& AddPortMappings(PortMapping&& value) { m_portMappingsHasBeenSet = true; m_portMappings.push_back(std::move(value)); return *this; }
+    template<typename PortMappingsT = Aws::Vector<PortMapping>>
+    void SetPortMappings(PortMappingsT&& value) { m_portMappingsHasBeenSet = true; m_portMappings = std::forward<PortMappingsT>(value); }
+    template<typename PortMappingsT = Aws::Vector<PortMapping>>
+    PortForwardingConfig& WithPortMappings(PortMappingsT&& value) { SetPortMappings(std::forward<PortMappingsT>(value)); return *this;}
+    template<typename PortMappingsT = PortMapping>
+    PortForwardingConfig& AddPortMappings(PortMappingsT&& value) { m_portMappingsHasBeenSet = true; m_portMappings.emplace_back(std::forward<PortMappingsT>(value)); return *this; }
     ///@}
   private:
 

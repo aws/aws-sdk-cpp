@@ -31,7 +31,7 @@ namespace Model
   class PerformanceConfiguration
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API PerformanceConfiguration();
+    AWS_BEDROCKAGENTRUNTIME_API PerformanceConfiguration() = default;
     AWS_BEDROCKAGENTRUNTIME_API PerformanceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API PerformanceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
      * <p>To use a latency-optimized version of the model, set to
      * <code>optimized</code>.</p>
      */
-    inline const PerformanceConfigLatency& GetLatency() const{ return m_latency; }
+    inline PerformanceConfigLatency GetLatency() const { return m_latency; }
     inline bool LatencyHasBeenSet() const { return m_latencyHasBeenSet; }
-    inline void SetLatency(const PerformanceConfigLatency& value) { m_latencyHasBeenSet = true; m_latency = value; }
-    inline void SetLatency(PerformanceConfigLatency&& value) { m_latencyHasBeenSet = true; m_latency = std::move(value); }
-    inline PerformanceConfiguration& WithLatency(const PerformanceConfigLatency& value) { SetLatency(value); return *this;}
-    inline PerformanceConfiguration& WithLatency(PerformanceConfigLatency&& value) { SetLatency(std::move(value)); return *this;}
+    inline void SetLatency(PerformanceConfigLatency value) { m_latencyHasBeenSet = true; m_latency = value; }
+    inline PerformanceConfiguration& WithLatency(PerformanceConfigLatency value) { SetLatency(value); return *this;}
     ///@}
   private:
 
-    PerformanceConfigLatency m_latency;
+    PerformanceConfigLatency m_latency{PerformanceConfigLatency::NOT_SET};
     bool m_latencyHasBeenSet = false;
   };
 

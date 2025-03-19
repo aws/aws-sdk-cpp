@@ -12,11 +12,6 @@ using namespace Aws::ElasticTranscoder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ReadPipelineRequest::ReadPipelineRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String ReadPipelineRequest::SerializePayload() const
 {
   return {};

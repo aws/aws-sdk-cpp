@@ -45,7 +45,7 @@ namespace Model
   class DocumentDescription
   {
   public:
-    AWS_SSM_API DocumentDescription();
+    AWS_SSM_API DocumentDescription() = default;
     AWS_SSM_API DocumentDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API DocumentDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,14 +55,12 @@ namespace Model
     /**
      * <p>The SHA1 hash of the document, which you can use for verification.</p>
      */
-    inline const Aws::String& GetSha1() const{ return m_sha1; }
+    inline const Aws::String& GetSha1() const { return m_sha1; }
     inline bool Sha1HasBeenSet() const { return m_sha1HasBeenSet; }
-    inline void SetSha1(const Aws::String& value) { m_sha1HasBeenSet = true; m_sha1 = value; }
-    inline void SetSha1(Aws::String&& value) { m_sha1HasBeenSet = true; m_sha1 = std::move(value); }
-    inline void SetSha1(const char* value) { m_sha1HasBeenSet = true; m_sha1.assign(value); }
-    inline DocumentDescription& WithSha1(const Aws::String& value) { SetSha1(value); return *this;}
-    inline DocumentDescription& WithSha1(Aws::String&& value) { SetSha1(std::move(value)); return *this;}
-    inline DocumentDescription& WithSha1(const char* value) { SetSha1(value); return *this;}
+    template<typename Sha1T = Aws::String>
+    void SetSha1(Sha1T&& value) { m_sha1HasBeenSet = true; m_sha1 = std::forward<Sha1T>(value); }
+    template<typename Sha1T = Aws::String>
+    DocumentDescription& WithSha1(Sha1T&& value) { SetSha1(std::forward<Sha1T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
      * </p>  <p>Sha1 hashes have been deprecated.</p> 
      */
-    inline const Aws::String& GetHash() const{ return m_hash; }
+    inline const Aws::String& GetHash() const { return m_hash; }
     inline bool HashHasBeenSet() const { return m_hashHasBeenSet; }
-    inline void SetHash(const Aws::String& value) { m_hashHasBeenSet = true; m_hash = value; }
-    inline void SetHash(Aws::String&& value) { m_hashHasBeenSet = true; m_hash = std::move(value); }
-    inline void SetHash(const char* value) { m_hashHasBeenSet = true; m_hash.assign(value); }
-    inline DocumentDescription& WithHash(const Aws::String& value) { SetHash(value); return *this;}
-    inline DocumentDescription& WithHash(Aws::String&& value) { SetHash(std::move(value)); return *this;}
-    inline DocumentDescription& WithHash(const char* value) { SetHash(value); return *this;}
+    template<typename HashT = Aws::String>
+    void SetHash(HashT&& value) { m_hashHasBeenSet = true; m_hash = std::forward<HashT>(value); }
+    template<typename HashT = Aws::String>
+    DocumentDescription& WithHash(HashT&& value) { SetHash(std::forward<HashT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,26 +81,22 @@ namespace Model
      * <p>The hash type of the document. Valid values include <code>Sha256</code> or
      * <code>Sha1</code>.</p>  <p>Sha1 hashes have been deprecated.</p> 
      */
-    inline const DocumentHashType& GetHashType() const{ return m_hashType; }
+    inline DocumentHashType GetHashType() const { return m_hashType; }
     inline bool HashTypeHasBeenSet() const { return m_hashTypeHasBeenSet; }
-    inline void SetHashType(const DocumentHashType& value) { m_hashTypeHasBeenSet = true; m_hashType = value; }
-    inline void SetHashType(DocumentHashType&& value) { m_hashTypeHasBeenSet = true; m_hashType = std::move(value); }
-    inline DocumentDescription& WithHashType(const DocumentHashType& value) { SetHashType(value); return *this;}
-    inline DocumentDescription& WithHashType(DocumentHashType&& value) { SetHashType(std::move(value)); return *this;}
+    inline void SetHashType(DocumentHashType value) { m_hashTypeHasBeenSet = true; m_hashType = value; }
+    inline DocumentDescription& WithHashType(DocumentHashType value) { SetHashType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the SSM document.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DocumentDescription& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DocumentDescription& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DocumentDescription& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DocumentDescription& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,66 +105,58 @@ namespace Model
      * of the document. If you want to update this value, see
      * <a>UpdateDocument</a>.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline DocumentDescription& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline DocumentDescription& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline DocumentDescription& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    DocumentDescription& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the artifact associated with the document.</p>
      */
-    inline const Aws::String& GetVersionName() const{ return m_versionName; }
+    inline const Aws::String& GetVersionName() const { return m_versionName; }
     inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
-    inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
-    inline void SetVersionName(Aws::String&& value) { m_versionNameHasBeenSet = true; m_versionName = std::move(value); }
-    inline void SetVersionName(const char* value) { m_versionNameHasBeenSet = true; m_versionName.assign(value); }
-    inline DocumentDescription& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
-    inline DocumentDescription& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
-    inline DocumentDescription& WithVersionName(const char* value) { SetVersionName(value); return *this;}
+    template<typename VersionNameT = Aws::String>
+    void SetVersionName(VersionNameT&& value) { m_versionNameHasBeenSet = true; m_versionName = std::forward<VersionNameT>(value); }
+    template<typename VersionNameT = Aws::String>
+    DocumentDescription& WithVersionName(VersionNameT&& value) { SetVersionName(std::forward<VersionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services user that created the document.</p>
      */
-    inline const Aws::String& GetOwner() const{ return m_owner; }
+    inline const Aws::String& GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
-    inline DocumentDescription& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
-    inline DocumentDescription& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
-    inline DocumentDescription& WithOwner(const char* value) { SetOwner(value); return *this;}
+    template<typename OwnerT = Aws::String>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = Aws::String>
+    DocumentDescription& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date when the document was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
+    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
     inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
-    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
-    inline DocumentDescription& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
-    inline DocumentDescription& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    DocumentDescription& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the SSM document.</p>
      */
-    inline const DocumentStatus& GetStatus() const{ return m_status; }
+    inline DocumentStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DocumentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DocumentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline DocumentDescription& WithStatus(const DocumentStatus& value) { SetStatus(value); return *this;}
-    inline DocumentDescription& WithStatus(DocumentStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(DocumentStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DocumentDescription& WithStatus(DocumentStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -182,56 +166,50 @@ namespace Model
      * explained by the <code>StatusInformation</code> message, "The specified S3
      * bucket doesn't exist. Verify that the URL of the S3 bucket is correct."</p>
      */
-    inline const Aws::String& GetStatusInformation() const{ return m_statusInformation; }
+    inline const Aws::String& GetStatusInformation() const { return m_statusInformation; }
     inline bool StatusInformationHasBeenSet() const { return m_statusInformationHasBeenSet; }
-    inline void SetStatusInformation(const Aws::String& value) { m_statusInformationHasBeenSet = true; m_statusInformation = value; }
-    inline void SetStatusInformation(Aws::String&& value) { m_statusInformationHasBeenSet = true; m_statusInformation = std::move(value); }
-    inline void SetStatusInformation(const char* value) { m_statusInformationHasBeenSet = true; m_statusInformation.assign(value); }
-    inline DocumentDescription& WithStatusInformation(const Aws::String& value) { SetStatusInformation(value); return *this;}
-    inline DocumentDescription& WithStatusInformation(Aws::String&& value) { SetStatusInformation(std::move(value)); return *this;}
-    inline DocumentDescription& WithStatusInformation(const char* value) { SetStatusInformation(value); return *this;}
+    template<typename StatusInformationT = Aws::String>
+    void SetStatusInformation(StatusInformationT&& value) { m_statusInformationHasBeenSet = true; m_statusInformation = std::forward<StatusInformationT>(value); }
+    template<typename StatusInformationT = Aws::String>
+    DocumentDescription& WithStatusInformation(StatusInformationT&& value) { SetStatusInformation(std::forward<StatusInformationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The document version.</p>
      */
-    inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
+    inline const Aws::String& GetDocumentVersion() const { return m_documentVersion; }
     inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
-    inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
-    inline void SetDocumentVersion(Aws::String&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::move(value); }
-    inline void SetDocumentVersion(const char* value) { m_documentVersionHasBeenSet = true; m_documentVersion.assign(value); }
-    inline DocumentDescription& WithDocumentVersion(const Aws::String& value) { SetDocumentVersion(value); return *this;}
-    inline DocumentDescription& WithDocumentVersion(Aws::String&& value) { SetDocumentVersion(std::move(value)); return *this;}
-    inline DocumentDescription& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+    template<typename DocumentVersionT = Aws::String>
+    void SetDocumentVersion(DocumentVersionT&& value) { m_documentVersionHasBeenSet = true; m_documentVersion = std::forward<DocumentVersionT>(value); }
+    template<typename DocumentVersionT = Aws::String>
+    DocumentDescription& WithDocumentVersion(DocumentVersionT&& value) { SetDocumentVersion(std::forward<DocumentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the document. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline DocumentDescription& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DocumentDescription& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DocumentDescription& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DocumentDescription& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the parameters for a document.</p>
      */
-    inline const Aws::Vector<DocumentParameter>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Vector<DocumentParameter>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Vector<DocumentParameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Vector<DocumentParameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline DocumentDescription& WithParameters(const Aws::Vector<DocumentParameter>& value) { SetParameters(value); return *this;}
-    inline DocumentDescription& WithParameters(Aws::Vector<DocumentParameter>&& value) { SetParameters(std::move(value)); return *this;}
-    inline DocumentDescription& AddParameters(const DocumentParameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
-    inline DocumentDescription& AddParameters(DocumentParameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
+    template<typename ParametersT = Aws::Vector<DocumentParameter>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Vector<DocumentParameter>>
+    DocumentDescription& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersT = DocumentParameter>
+    DocumentDescription& AddParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters.emplace_back(std::forward<ParametersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -239,80 +217,69 @@ namespace Model
      * <p>The list of operating system (OS) platforms compatible with this SSM
      * document. </p>
      */
-    inline const Aws::Vector<PlatformType>& GetPlatformTypes() const{ return m_platformTypes; }
+    inline const Aws::Vector<PlatformType>& GetPlatformTypes() const { return m_platformTypes; }
     inline bool PlatformTypesHasBeenSet() const { return m_platformTypesHasBeenSet; }
-    inline void SetPlatformTypes(const Aws::Vector<PlatformType>& value) { m_platformTypesHasBeenSet = true; m_platformTypes = value; }
-    inline void SetPlatformTypes(Aws::Vector<PlatformType>&& value) { m_platformTypesHasBeenSet = true; m_platformTypes = std::move(value); }
-    inline DocumentDescription& WithPlatformTypes(const Aws::Vector<PlatformType>& value) { SetPlatformTypes(value); return *this;}
-    inline DocumentDescription& WithPlatformTypes(Aws::Vector<PlatformType>&& value) { SetPlatformTypes(std::move(value)); return *this;}
-    inline DocumentDescription& AddPlatformTypes(const PlatformType& value) { m_platformTypesHasBeenSet = true; m_platformTypes.push_back(value); return *this; }
-    inline DocumentDescription& AddPlatformTypes(PlatformType&& value) { m_platformTypesHasBeenSet = true; m_platformTypes.push_back(std::move(value)); return *this; }
+    template<typename PlatformTypesT = Aws::Vector<PlatformType>>
+    void SetPlatformTypes(PlatformTypesT&& value) { m_platformTypesHasBeenSet = true; m_platformTypes = std::forward<PlatformTypesT>(value); }
+    template<typename PlatformTypesT = Aws::Vector<PlatformType>>
+    DocumentDescription& WithPlatformTypes(PlatformTypesT&& value) { SetPlatformTypes(std::forward<PlatformTypesT>(value)); return *this;}
+    inline DocumentDescription& AddPlatformTypes(PlatformType value) { m_platformTypesHasBeenSet = true; m_platformTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The type of document.</p>
      */
-    inline const DocumentType& GetDocumentType() const{ return m_documentType; }
+    inline DocumentType GetDocumentType() const { return m_documentType; }
     inline bool DocumentTypeHasBeenSet() const { return m_documentTypeHasBeenSet; }
-    inline void SetDocumentType(const DocumentType& value) { m_documentTypeHasBeenSet = true; m_documentType = value; }
-    inline void SetDocumentType(DocumentType&& value) { m_documentTypeHasBeenSet = true; m_documentType = std::move(value); }
-    inline DocumentDescription& WithDocumentType(const DocumentType& value) { SetDocumentType(value); return *this;}
-    inline DocumentDescription& WithDocumentType(DocumentType&& value) { SetDocumentType(std::move(value)); return *this;}
+    inline void SetDocumentType(DocumentType value) { m_documentTypeHasBeenSet = true; m_documentType = value; }
+    inline DocumentDescription& WithDocumentType(DocumentType value) { SetDocumentType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The schema version.</p>
      */
-    inline const Aws::String& GetSchemaVersion() const{ return m_schemaVersion; }
+    inline const Aws::String& GetSchemaVersion() const { return m_schemaVersion; }
     inline bool SchemaVersionHasBeenSet() const { return m_schemaVersionHasBeenSet; }
-    inline void SetSchemaVersion(const Aws::String& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = value; }
-    inline void SetSchemaVersion(Aws::String&& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = std::move(value); }
-    inline void SetSchemaVersion(const char* value) { m_schemaVersionHasBeenSet = true; m_schemaVersion.assign(value); }
-    inline DocumentDescription& WithSchemaVersion(const Aws::String& value) { SetSchemaVersion(value); return *this;}
-    inline DocumentDescription& WithSchemaVersion(Aws::String&& value) { SetSchemaVersion(std::move(value)); return *this;}
-    inline DocumentDescription& WithSchemaVersion(const char* value) { SetSchemaVersion(value); return *this;}
+    template<typename SchemaVersionT = Aws::String>
+    void SetSchemaVersion(SchemaVersionT&& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = std::forward<SchemaVersionT>(value); }
+    template<typename SchemaVersionT = Aws::String>
+    DocumentDescription& WithSchemaVersion(SchemaVersionT&& value) { SetSchemaVersion(std::forward<SchemaVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The latest version of the document.</p>
      */
-    inline const Aws::String& GetLatestVersion() const{ return m_latestVersion; }
+    inline const Aws::String& GetLatestVersion() const { return m_latestVersion; }
     inline bool LatestVersionHasBeenSet() const { return m_latestVersionHasBeenSet; }
-    inline void SetLatestVersion(const Aws::String& value) { m_latestVersionHasBeenSet = true; m_latestVersion = value; }
-    inline void SetLatestVersion(Aws::String&& value) { m_latestVersionHasBeenSet = true; m_latestVersion = std::move(value); }
-    inline void SetLatestVersion(const char* value) { m_latestVersionHasBeenSet = true; m_latestVersion.assign(value); }
-    inline DocumentDescription& WithLatestVersion(const Aws::String& value) { SetLatestVersion(value); return *this;}
-    inline DocumentDescription& WithLatestVersion(Aws::String&& value) { SetLatestVersion(std::move(value)); return *this;}
-    inline DocumentDescription& WithLatestVersion(const char* value) { SetLatestVersion(value); return *this;}
+    template<typename LatestVersionT = Aws::String>
+    void SetLatestVersion(LatestVersionT&& value) { m_latestVersionHasBeenSet = true; m_latestVersion = std::forward<LatestVersionT>(value); }
+    template<typename LatestVersionT = Aws::String>
+    DocumentDescription& WithLatestVersion(LatestVersionT&& value) { SetLatestVersion(std::forward<LatestVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The default version.</p>
      */
-    inline const Aws::String& GetDefaultVersion() const{ return m_defaultVersion; }
+    inline const Aws::String& GetDefaultVersion() const { return m_defaultVersion; }
     inline bool DefaultVersionHasBeenSet() const { return m_defaultVersionHasBeenSet; }
-    inline void SetDefaultVersion(const Aws::String& value) { m_defaultVersionHasBeenSet = true; m_defaultVersion = value; }
-    inline void SetDefaultVersion(Aws::String&& value) { m_defaultVersionHasBeenSet = true; m_defaultVersion = std::move(value); }
-    inline void SetDefaultVersion(const char* value) { m_defaultVersionHasBeenSet = true; m_defaultVersion.assign(value); }
-    inline DocumentDescription& WithDefaultVersion(const Aws::String& value) { SetDefaultVersion(value); return *this;}
-    inline DocumentDescription& WithDefaultVersion(Aws::String&& value) { SetDefaultVersion(std::move(value)); return *this;}
-    inline DocumentDescription& WithDefaultVersion(const char* value) { SetDefaultVersion(value); return *this;}
+    template<typename DefaultVersionT = Aws::String>
+    void SetDefaultVersion(DefaultVersionT&& value) { m_defaultVersionHasBeenSet = true; m_defaultVersion = std::forward<DefaultVersionT>(value); }
+    template<typename DefaultVersionT = Aws::String>
+    DocumentDescription& WithDefaultVersion(DefaultVersionT&& value) { SetDefaultVersion(std::forward<DefaultVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The document format, either JSON or YAML.</p>
      */
-    inline const DocumentFormat& GetDocumentFormat() const{ return m_documentFormat; }
+    inline DocumentFormat GetDocumentFormat() const { return m_documentFormat; }
     inline bool DocumentFormatHasBeenSet() const { return m_documentFormatHasBeenSet; }
-    inline void SetDocumentFormat(const DocumentFormat& value) { m_documentFormatHasBeenSet = true; m_documentFormat = value; }
-    inline void SetDocumentFormat(DocumentFormat&& value) { m_documentFormatHasBeenSet = true; m_documentFormat = std::move(value); }
-    inline DocumentDescription& WithDocumentFormat(const DocumentFormat& value) { SetDocumentFormat(value); return *this;}
-    inline DocumentDescription& WithDocumentFormat(DocumentFormat&& value) { SetDocumentFormat(std::move(value)); return *this;}
+    inline void SetDocumentFormat(DocumentFormat value) { m_documentFormatHasBeenSet = true; m_documentFormat = value; }
+    inline DocumentDescription& WithDocumentFormat(DocumentFormat value) { SetDocumentFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -324,28 +291,26 @@ namespace Model
      * Web Services resource and property types reference</a> in the <i>CloudFormation
      * User Guide</i>. </p>
      */
-    inline const Aws::String& GetTargetType() const{ return m_targetType; }
+    inline const Aws::String& GetTargetType() const { return m_targetType; }
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
-    inline void SetTargetType(const Aws::String& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
-    inline void SetTargetType(Aws::String&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
-    inline void SetTargetType(const char* value) { m_targetTypeHasBeenSet = true; m_targetType.assign(value); }
-    inline DocumentDescription& WithTargetType(const Aws::String& value) { SetTargetType(value); return *this;}
-    inline DocumentDescription& WithTargetType(Aws::String&& value) { SetTargetType(std::move(value)); return *this;}
-    inline DocumentDescription& WithTargetType(const char* value) { SetTargetType(value); return *this;}
+    template<typename TargetTypeT = Aws::String>
+    void SetTargetType(TargetTypeT&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::forward<TargetTypeT>(value); }
+    template<typename TargetTypeT = Aws::String>
+    DocumentDescription& WithTargetType(TargetTypeT&& value) { SetTargetType(std::forward<TargetTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags, or metadata, that have been applied to the document.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline DocumentDescription& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline DocumentDescription& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline DocumentDescription& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline DocumentDescription& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    DocumentDescription& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    DocumentDescription& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -353,14 +318,14 @@ namespace Model
      * <p>Details about the document attachments, including names, locations, sizes,
      * and so on.</p>
      */
-    inline const Aws::Vector<AttachmentInformation>& GetAttachmentsInformation() const{ return m_attachmentsInformation; }
+    inline const Aws::Vector<AttachmentInformation>& GetAttachmentsInformation() const { return m_attachmentsInformation; }
     inline bool AttachmentsInformationHasBeenSet() const { return m_attachmentsInformationHasBeenSet; }
-    inline void SetAttachmentsInformation(const Aws::Vector<AttachmentInformation>& value) { m_attachmentsInformationHasBeenSet = true; m_attachmentsInformation = value; }
-    inline void SetAttachmentsInformation(Aws::Vector<AttachmentInformation>&& value) { m_attachmentsInformationHasBeenSet = true; m_attachmentsInformation = std::move(value); }
-    inline DocumentDescription& WithAttachmentsInformation(const Aws::Vector<AttachmentInformation>& value) { SetAttachmentsInformation(value); return *this;}
-    inline DocumentDescription& WithAttachmentsInformation(Aws::Vector<AttachmentInformation>&& value) { SetAttachmentsInformation(std::move(value)); return *this;}
-    inline DocumentDescription& AddAttachmentsInformation(const AttachmentInformation& value) { m_attachmentsInformationHasBeenSet = true; m_attachmentsInformation.push_back(value); return *this; }
-    inline DocumentDescription& AddAttachmentsInformation(AttachmentInformation&& value) { m_attachmentsInformationHasBeenSet = true; m_attachmentsInformation.push_back(std::move(value)); return *this; }
+    template<typename AttachmentsInformationT = Aws::Vector<AttachmentInformation>>
+    void SetAttachmentsInformation(AttachmentsInformationT&& value) { m_attachmentsInformationHasBeenSet = true; m_attachmentsInformation = std::forward<AttachmentsInformationT>(value); }
+    template<typename AttachmentsInformationT = Aws::Vector<AttachmentInformation>>
+    DocumentDescription& WithAttachmentsInformation(AttachmentsInformationT&& value) { SetAttachmentsInformation(std::forward<AttachmentsInformationT>(value)); return *this;}
+    template<typename AttachmentsInformationT = AttachmentInformation>
+    DocumentDescription& AddAttachmentsInformation(AttachmentsInformationT&& value) { m_attachmentsInformationHasBeenSet = true; m_attachmentsInformation.emplace_back(std::forward<AttachmentsInformationT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -369,42 +334,40 @@ namespace Model
      * <code>ApplicationConfiguration</code> document requires an
      * <code>ApplicationConfigurationSchema</code> document.</p>
      */
-    inline const Aws::Vector<DocumentRequires>& GetRequires() const{ return m_requires; }
+    inline const Aws::Vector<DocumentRequires>& GetRequires() const { return m_requires; }
     inline bool RequiresHasBeenSet() const { return m_requiresHasBeenSet; }
-    inline void SetRequires(const Aws::Vector<DocumentRequires>& value) { m_requiresHasBeenSet = true; m_requires = value; }
-    inline void SetRequires(Aws::Vector<DocumentRequires>&& value) { m_requiresHasBeenSet = true; m_requires = std::move(value); }
-    inline DocumentDescription& WithRequires(const Aws::Vector<DocumentRequires>& value) { SetRequires(value); return *this;}
-    inline DocumentDescription& WithRequires(Aws::Vector<DocumentRequires>&& value) { SetRequires(std::move(value)); return *this;}
-    inline DocumentDescription& AddRequires(const DocumentRequires& value) { m_requiresHasBeenSet = true; m_requires.push_back(value); return *this; }
-    inline DocumentDescription& AddRequires(DocumentRequires&& value) { m_requiresHasBeenSet = true; m_requires.push_back(std::move(value)); return *this; }
+    template<typename RequiresT = Aws::Vector<DocumentRequires>>
+    void SetRequires(RequiresT&& value) { m_requiresHasBeenSet = true; m_requires = std::forward<RequiresT>(value); }
+    template<typename RequiresT = Aws::Vector<DocumentRequires>>
+    DocumentDescription& WithRequires(RequiresT&& value) { SetRequires(std::forward<RequiresT>(value)); return *this;}
+    template<typename RequiresT = DocumentRequires>
+    DocumentDescription& AddRequires(RequiresT&& value) { m_requiresHasBeenSet = true; m_requires.emplace_back(std::forward<RequiresT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The user in your organization who created the document.</p>
      */
-    inline const Aws::String& GetAuthor() const{ return m_author; }
+    inline const Aws::String& GetAuthor() const { return m_author; }
     inline bool AuthorHasBeenSet() const { return m_authorHasBeenSet; }
-    inline void SetAuthor(const Aws::String& value) { m_authorHasBeenSet = true; m_author = value; }
-    inline void SetAuthor(Aws::String&& value) { m_authorHasBeenSet = true; m_author = std::move(value); }
-    inline void SetAuthor(const char* value) { m_authorHasBeenSet = true; m_author.assign(value); }
-    inline DocumentDescription& WithAuthor(const Aws::String& value) { SetAuthor(value); return *this;}
-    inline DocumentDescription& WithAuthor(Aws::String&& value) { SetAuthor(std::move(value)); return *this;}
-    inline DocumentDescription& WithAuthor(const char* value) { SetAuthor(value); return *this;}
+    template<typename AuthorT = Aws::String>
+    void SetAuthor(AuthorT&& value) { m_authorHasBeenSet = true; m_author = std::forward<AuthorT>(value); }
+    template<typename AuthorT = Aws::String>
+    DocumentDescription& WithAuthor(AuthorT&& value) { SetAuthor(std::forward<AuthorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about the review of a document.</p>
      */
-    inline const Aws::Vector<ReviewInformation>& GetReviewInformation() const{ return m_reviewInformation; }
+    inline const Aws::Vector<ReviewInformation>& GetReviewInformation() const { return m_reviewInformation; }
     inline bool ReviewInformationHasBeenSet() const { return m_reviewInformationHasBeenSet; }
-    inline void SetReviewInformation(const Aws::Vector<ReviewInformation>& value) { m_reviewInformationHasBeenSet = true; m_reviewInformation = value; }
-    inline void SetReviewInformation(Aws::Vector<ReviewInformation>&& value) { m_reviewInformationHasBeenSet = true; m_reviewInformation = std::move(value); }
-    inline DocumentDescription& WithReviewInformation(const Aws::Vector<ReviewInformation>& value) { SetReviewInformation(value); return *this;}
-    inline DocumentDescription& WithReviewInformation(Aws::Vector<ReviewInformation>&& value) { SetReviewInformation(std::move(value)); return *this;}
-    inline DocumentDescription& AddReviewInformation(const ReviewInformation& value) { m_reviewInformationHasBeenSet = true; m_reviewInformation.push_back(value); return *this; }
-    inline DocumentDescription& AddReviewInformation(ReviewInformation&& value) { m_reviewInformationHasBeenSet = true; m_reviewInformation.push_back(std::move(value)); return *this; }
+    template<typename ReviewInformationT = Aws::Vector<ReviewInformation>>
+    void SetReviewInformation(ReviewInformationT&& value) { m_reviewInformationHasBeenSet = true; m_reviewInformation = std::forward<ReviewInformationT>(value); }
+    template<typename ReviewInformationT = Aws::Vector<ReviewInformation>>
+    DocumentDescription& WithReviewInformation(ReviewInformationT&& value) { SetReviewInformation(std::forward<ReviewInformationT>(value)); return *this;}
+    template<typename ReviewInformationT = ReviewInformation>
+    DocumentDescription& AddReviewInformation(ReviewInformationT&& value) { m_reviewInformationHasBeenSet = true; m_reviewInformation.emplace_back(std::forward<ReviewInformationT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -412,40 +375,34 @@ namespace Model
      * <p>The version of the document currently approved for use in the
      * organization.</p>
      */
-    inline const Aws::String& GetApprovedVersion() const{ return m_approvedVersion; }
+    inline const Aws::String& GetApprovedVersion() const { return m_approvedVersion; }
     inline bool ApprovedVersionHasBeenSet() const { return m_approvedVersionHasBeenSet; }
-    inline void SetApprovedVersion(const Aws::String& value) { m_approvedVersionHasBeenSet = true; m_approvedVersion = value; }
-    inline void SetApprovedVersion(Aws::String&& value) { m_approvedVersionHasBeenSet = true; m_approvedVersion = std::move(value); }
-    inline void SetApprovedVersion(const char* value) { m_approvedVersionHasBeenSet = true; m_approvedVersion.assign(value); }
-    inline DocumentDescription& WithApprovedVersion(const Aws::String& value) { SetApprovedVersion(value); return *this;}
-    inline DocumentDescription& WithApprovedVersion(Aws::String&& value) { SetApprovedVersion(std::move(value)); return *this;}
-    inline DocumentDescription& WithApprovedVersion(const char* value) { SetApprovedVersion(value); return *this;}
+    template<typename ApprovedVersionT = Aws::String>
+    void SetApprovedVersion(ApprovedVersionT&& value) { m_approvedVersionHasBeenSet = true; m_approvedVersion = std::forward<ApprovedVersionT>(value); }
+    template<typename ApprovedVersionT = Aws::String>
+    DocumentDescription& WithApprovedVersion(ApprovedVersionT&& value) { SetApprovedVersion(std::forward<ApprovedVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the document that is currently under review.</p>
      */
-    inline const Aws::String& GetPendingReviewVersion() const{ return m_pendingReviewVersion; }
+    inline const Aws::String& GetPendingReviewVersion() const { return m_pendingReviewVersion; }
     inline bool PendingReviewVersionHasBeenSet() const { return m_pendingReviewVersionHasBeenSet; }
-    inline void SetPendingReviewVersion(const Aws::String& value) { m_pendingReviewVersionHasBeenSet = true; m_pendingReviewVersion = value; }
-    inline void SetPendingReviewVersion(Aws::String&& value) { m_pendingReviewVersionHasBeenSet = true; m_pendingReviewVersion = std::move(value); }
-    inline void SetPendingReviewVersion(const char* value) { m_pendingReviewVersionHasBeenSet = true; m_pendingReviewVersion.assign(value); }
-    inline DocumentDescription& WithPendingReviewVersion(const Aws::String& value) { SetPendingReviewVersion(value); return *this;}
-    inline DocumentDescription& WithPendingReviewVersion(Aws::String&& value) { SetPendingReviewVersion(std::move(value)); return *this;}
-    inline DocumentDescription& WithPendingReviewVersion(const char* value) { SetPendingReviewVersion(value); return *this;}
+    template<typename PendingReviewVersionT = Aws::String>
+    void SetPendingReviewVersion(PendingReviewVersionT&& value) { m_pendingReviewVersionHasBeenSet = true; m_pendingReviewVersion = std::forward<PendingReviewVersionT>(value); }
+    template<typename PendingReviewVersionT = Aws::String>
+    DocumentDescription& WithPendingReviewVersion(PendingReviewVersionT&& value) { SetPendingReviewVersion(std::forward<PendingReviewVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the review.</p>
      */
-    inline const ReviewStatus& GetReviewStatus() const{ return m_reviewStatus; }
+    inline ReviewStatus GetReviewStatus() const { return m_reviewStatus; }
     inline bool ReviewStatusHasBeenSet() const { return m_reviewStatusHasBeenSet; }
-    inline void SetReviewStatus(const ReviewStatus& value) { m_reviewStatusHasBeenSet = true; m_reviewStatus = value; }
-    inline void SetReviewStatus(ReviewStatus&& value) { m_reviewStatusHasBeenSet = true; m_reviewStatus = std::move(value); }
-    inline DocumentDescription& WithReviewStatus(const ReviewStatus& value) { SetReviewStatus(value); return *this;}
-    inline DocumentDescription& WithReviewStatus(ReviewStatus&& value) { SetReviewStatus(std::move(value)); return *this;}
+    inline void SetReviewStatus(ReviewStatus value) { m_reviewStatusHasBeenSet = true; m_reviewStatus = value; }
+    inline DocumentDescription& WithReviewStatus(ReviewStatus value) { SetReviewStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -453,30 +410,28 @@ namespace Model
      * <p>The classification of a document to help you identify and categorize its
      * use.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCategory() const{ return m_category; }
+    inline const Aws::Vector<Aws::String>& GetCategory() const { return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    inline void SetCategory(const Aws::Vector<Aws::String>& value) { m_categoryHasBeenSet = true; m_category = value; }
-    inline void SetCategory(Aws::Vector<Aws::String>&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-    inline DocumentDescription& WithCategory(const Aws::Vector<Aws::String>& value) { SetCategory(value); return *this;}
-    inline DocumentDescription& WithCategory(Aws::Vector<Aws::String>&& value) { SetCategory(std::move(value)); return *this;}
-    inline DocumentDescription& AddCategory(const Aws::String& value) { m_categoryHasBeenSet = true; m_category.push_back(value); return *this; }
-    inline DocumentDescription& AddCategory(Aws::String&& value) { m_categoryHasBeenSet = true; m_category.push_back(std::move(value)); return *this; }
-    inline DocumentDescription& AddCategory(const char* value) { m_categoryHasBeenSet = true; m_category.push_back(value); return *this; }
+    template<typename CategoryT = Aws::Vector<Aws::String>>
+    void SetCategory(CategoryT&& value) { m_categoryHasBeenSet = true; m_category = std::forward<CategoryT>(value); }
+    template<typename CategoryT = Aws::Vector<Aws::String>>
+    DocumentDescription& WithCategory(CategoryT&& value) { SetCategory(std::forward<CategoryT>(value)); return *this;}
+    template<typename CategoryT = Aws::String>
+    DocumentDescription& AddCategory(CategoryT&& value) { m_categoryHasBeenSet = true; m_category.emplace_back(std::forward<CategoryT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The value that identifies a document's category.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCategoryEnum() const{ return m_categoryEnum; }
+    inline const Aws::Vector<Aws::String>& GetCategoryEnum() const { return m_categoryEnum; }
     inline bool CategoryEnumHasBeenSet() const { return m_categoryEnumHasBeenSet; }
-    inline void SetCategoryEnum(const Aws::Vector<Aws::String>& value) { m_categoryEnumHasBeenSet = true; m_categoryEnum = value; }
-    inline void SetCategoryEnum(Aws::Vector<Aws::String>&& value) { m_categoryEnumHasBeenSet = true; m_categoryEnum = std::move(value); }
-    inline DocumentDescription& WithCategoryEnum(const Aws::Vector<Aws::String>& value) { SetCategoryEnum(value); return *this;}
-    inline DocumentDescription& WithCategoryEnum(Aws::Vector<Aws::String>&& value) { SetCategoryEnum(std::move(value)); return *this;}
-    inline DocumentDescription& AddCategoryEnum(const Aws::String& value) { m_categoryEnumHasBeenSet = true; m_categoryEnum.push_back(value); return *this; }
-    inline DocumentDescription& AddCategoryEnum(Aws::String&& value) { m_categoryEnumHasBeenSet = true; m_categoryEnum.push_back(std::move(value)); return *this; }
-    inline DocumentDescription& AddCategoryEnum(const char* value) { m_categoryEnumHasBeenSet = true; m_categoryEnum.push_back(value); return *this; }
+    template<typename CategoryEnumT = Aws::Vector<Aws::String>>
+    void SetCategoryEnum(CategoryEnumT&& value) { m_categoryEnumHasBeenSet = true; m_categoryEnum = std::forward<CategoryEnumT>(value); }
+    template<typename CategoryEnumT = Aws::Vector<Aws::String>>
+    DocumentDescription& WithCategoryEnum(CategoryEnumT&& value) { SetCategoryEnum(std::forward<CategoryEnumT>(value)); return *this;}
+    template<typename CategoryEnumT = Aws::String>
+    DocumentDescription& AddCategoryEnum(CategoryEnumT&& value) { m_categoryEnumHasBeenSet = true; m_categoryEnum.emplace_back(std::forward<CategoryEnumT>(value)); return *this; }
     ///@}
   private:
 
@@ -486,7 +441,7 @@ namespace Model
     Aws::String m_hash;
     bool m_hashHasBeenSet = false;
 
-    DocumentHashType m_hashType;
+    DocumentHashType m_hashType{DocumentHashType::NOT_SET};
     bool m_hashTypeHasBeenSet = false;
 
     Aws::String m_name;
@@ -501,10 +456,10 @@ namespace Model
     Aws::String m_owner;
     bool m_ownerHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdDate;
+    Aws::Utils::DateTime m_createdDate{};
     bool m_createdDateHasBeenSet = false;
 
-    DocumentStatus m_status;
+    DocumentStatus m_status{DocumentStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusInformation;
@@ -522,7 +477,7 @@ namespace Model
     Aws::Vector<PlatformType> m_platformTypes;
     bool m_platformTypesHasBeenSet = false;
 
-    DocumentType m_documentType;
+    DocumentType m_documentType{DocumentType::NOT_SET};
     bool m_documentTypeHasBeenSet = false;
 
     Aws::String m_schemaVersion;
@@ -534,7 +489,7 @@ namespace Model
     Aws::String m_defaultVersion;
     bool m_defaultVersionHasBeenSet = false;
 
-    DocumentFormat m_documentFormat;
+    DocumentFormat m_documentFormat{DocumentFormat::NOT_SET};
     bool m_documentFormatHasBeenSet = false;
 
     Aws::String m_targetType;
@@ -561,7 +516,7 @@ namespace Model
     Aws::String m_pendingReviewVersion;
     bool m_pendingReviewVersionHasBeenSet = false;
 
-    ReviewStatus m_reviewStatus;
+    ReviewStatus m_reviewStatus{ReviewStatus::NOT_SET};
     bool m_reviewStatusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_category;

@@ -33,7 +33,7 @@ namespace Model
   class ProgressDetail
   {
   public:
-    AWS_ROBOMAKER_API ProgressDetail();
+    AWS_ROBOMAKER_API ProgressDetail() = default;
     AWS_ROBOMAKER_API ProgressDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API ProgressDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,10 @@ namespace Model
      * <p>Executing post-launch script(s) if provided.</p> </dd> <dt>Finished</dt> <dd>
      * <p>Deployment is complete.</p> </dd> </dl>
      */
-    inline const RobotDeploymentStep& GetCurrentProgress() const{ return m_currentProgress; }
+    inline RobotDeploymentStep GetCurrentProgress() const { return m_currentProgress; }
     inline bool CurrentProgressHasBeenSet() const { return m_currentProgressHasBeenSet; }
-    inline void SetCurrentProgress(const RobotDeploymentStep& value) { m_currentProgressHasBeenSet = true; m_currentProgress = value; }
-    inline void SetCurrentProgress(RobotDeploymentStep&& value) { m_currentProgressHasBeenSet = true; m_currentProgress = std::move(value); }
-    inline ProgressDetail& WithCurrentProgress(const RobotDeploymentStep& value) { SetCurrentProgress(value); return *this;}
-    inline ProgressDetail& WithCurrentProgress(RobotDeploymentStep&& value) { SetCurrentProgress(std::move(value)); return *this;}
+    inline void SetCurrentProgress(RobotDeploymentStep value) { m_currentProgressHasBeenSet = true; m_currentProgress = value; }
+    inline ProgressDetail& WithCurrentProgress(RobotDeploymentStep value) { SetCurrentProgress(value); return *this;}
     ///@}
 
     ///@{
@@ -63,7 +61,7 @@ namespace Model
      * <code>Downloading/Extracting</code> step of the deployment. It is empty for
      * other steps.</p>
      */
-    inline double GetPercentDone() const{ return m_percentDone; }
+    inline double GetPercentDone() const { return m_percentDone; }
     inline bool PercentDoneHasBeenSet() const { return m_percentDoneHasBeenSet; }
     inline void SetPercentDone(double value) { m_percentDoneHasBeenSet = true; m_percentDone = value; }
     inline ProgressDetail& WithPercentDone(double value) { SetPercentDone(value); return *this;}
@@ -75,7 +73,7 @@ namespace Model
      * only applies to the <code>Downloading/Extracting</code> step of the deployment.
      * It is empty for other steps.</p>
      */
-    inline int GetEstimatedTimeRemainingSeconds() const{ return m_estimatedTimeRemainingSeconds; }
+    inline int GetEstimatedTimeRemainingSeconds() const { return m_estimatedTimeRemainingSeconds; }
     inline bool EstimatedTimeRemainingSecondsHasBeenSet() const { return m_estimatedTimeRemainingSecondsHasBeenSet; }
     inline void SetEstimatedTimeRemainingSeconds(int value) { m_estimatedTimeRemainingSecondsHasBeenSet = true; m_estimatedTimeRemainingSeconds = value; }
     inline ProgressDetail& WithEstimatedTimeRemainingSeconds(int value) { SetEstimatedTimeRemainingSeconds(value); return *this;}
@@ -85,24 +83,22 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the deployment job.</p>
      */
-    inline const Aws::String& GetTargetResource() const{ return m_targetResource; }
+    inline const Aws::String& GetTargetResource() const { return m_targetResource; }
     inline bool TargetResourceHasBeenSet() const { return m_targetResourceHasBeenSet; }
-    inline void SetTargetResource(const Aws::String& value) { m_targetResourceHasBeenSet = true; m_targetResource = value; }
-    inline void SetTargetResource(Aws::String&& value) { m_targetResourceHasBeenSet = true; m_targetResource = std::move(value); }
-    inline void SetTargetResource(const char* value) { m_targetResourceHasBeenSet = true; m_targetResource.assign(value); }
-    inline ProgressDetail& WithTargetResource(const Aws::String& value) { SetTargetResource(value); return *this;}
-    inline ProgressDetail& WithTargetResource(Aws::String&& value) { SetTargetResource(std::move(value)); return *this;}
-    inline ProgressDetail& WithTargetResource(const char* value) { SetTargetResource(value); return *this;}
+    template<typename TargetResourceT = Aws::String>
+    void SetTargetResource(TargetResourceT&& value) { m_targetResourceHasBeenSet = true; m_targetResource = std::forward<TargetResourceT>(value); }
+    template<typename TargetResourceT = Aws::String>
+    ProgressDetail& WithTargetResource(TargetResourceT&& value) { SetTargetResource(std::forward<TargetResourceT>(value)); return *this;}
     ///@}
   private:
 
-    RobotDeploymentStep m_currentProgress;
+    RobotDeploymentStep m_currentProgress{RobotDeploymentStep::NOT_SET};
     bool m_currentProgressHasBeenSet = false;
 
-    double m_percentDone;
+    double m_percentDone{0.0};
     bool m_percentDoneHasBeenSet = false;
 
-    int m_estimatedTimeRemainingSeconds;
+    int m_estimatedTimeRemainingSeconds{0};
     bool m_estimatedTimeRemainingSecondsHasBeenSet = false;
 
     Aws::String m_targetResource;

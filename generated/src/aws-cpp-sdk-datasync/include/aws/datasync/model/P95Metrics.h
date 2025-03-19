@@ -34,7 +34,7 @@ namespace Model
   class P95Metrics
   {
   public:
-    AWS_DATASYNC_API P95Metrics();
+    AWS_DATASYNC_API P95Metrics() = default;
     AWS_DATASYNC_API P95Metrics(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API P95Metrics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>The IOPS peaks for an on-premises storage system resource. Each data point
      * represents the 95th percentile peak value during a 1-hour interval.</p>
      */
-    inline const IOPS& GetIOPS() const{ return m_iOPS; }
+    inline const IOPS& GetIOPS() const { return m_iOPS; }
     inline bool IOPSHasBeenSet() const { return m_iOPSHasBeenSet; }
-    inline void SetIOPS(const IOPS& value) { m_iOPSHasBeenSet = true; m_iOPS = value; }
-    inline void SetIOPS(IOPS&& value) { m_iOPSHasBeenSet = true; m_iOPS = std::move(value); }
-    inline P95Metrics& WithIOPS(const IOPS& value) { SetIOPS(value); return *this;}
-    inline P95Metrics& WithIOPS(IOPS&& value) { SetIOPS(std::move(value)); return *this;}
+    template<typename IOPST = IOPS>
+    void SetIOPS(IOPST&& value) { m_iOPSHasBeenSet = true; m_iOPS = std::forward<IOPST>(value); }
+    template<typename IOPST = IOPS>
+    P95Metrics& WithIOPS(IOPST&& value) { SetIOPS(std::forward<IOPST>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +58,12 @@ namespace Model
      * <p>The throughput peaks for an on-premises storage system resource. Each data
      * point represents the 95th percentile peak value during a 1-hour interval.</p>
      */
-    inline const Throughput& GetThroughput() const{ return m_throughput; }
+    inline const Throughput& GetThroughput() const { return m_throughput; }
     inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }
-    inline void SetThroughput(const Throughput& value) { m_throughputHasBeenSet = true; m_throughput = value; }
-    inline void SetThroughput(Throughput&& value) { m_throughputHasBeenSet = true; m_throughput = std::move(value); }
-    inline P95Metrics& WithThroughput(const Throughput& value) { SetThroughput(value); return *this;}
-    inline P95Metrics& WithThroughput(Throughput&& value) { SetThroughput(std::move(value)); return *this;}
+    template<typename ThroughputT = Throughput>
+    void SetThroughput(ThroughputT&& value) { m_throughputHasBeenSet = true; m_throughput = std::forward<ThroughputT>(value); }
+    template<typename ThroughputT = Throughput>
+    P95Metrics& WithThroughput(ThroughputT&& value) { SetThroughput(std::forward<ThroughputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +71,12 @@ namespace Model
      * <p>The latency peaks for an on-premises storage system resource. Each data point
      * represents the 95th percentile peak value during a 1-hour interval.</p>
      */
-    inline const Latency& GetLatency() const{ return m_latency; }
+    inline const Latency& GetLatency() const { return m_latency; }
     inline bool LatencyHasBeenSet() const { return m_latencyHasBeenSet; }
-    inline void SetLatency(const Latency& value) { m_latencyHasBeenSet = true; m_latency = value; }
-    inline void SetLatency(Latency&& value) { m_latencyHasBeenSet = true; m_latency = std::move(value); }
-    inline P95Metrics& WithLatency(const Latency& value) { SetLatency(value); return *this;}
-    inline P95Metrics& WithLatency(Latency&& value) { SetLatency(std::move(value)); return *this;}
+    template<typename LatencyT = Latency>
+    void SetLatency(LatencyT&& value) { m_latencyHasBeenSet = true; m_latency = std::forward<LatencyT>(value); }
+    template<typename LatencyT = Latency>
+    P95Metrics& WithLatency(LatencyT&& value) { SetLatency(std::forward<LatencyT>(value)); return *this;}
     ///@}
   private:
 

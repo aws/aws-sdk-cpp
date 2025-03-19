@@ -12,12 +12,6 @@ using namespace Aws::WorkMailMessageFlow::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutRawMessageContentRequest::PutRawMessageContentRequest() : 
-    m_messageIdHasBeenSet(false),
-    m_contentHasBeenSet(false)
-{
-}
-
 Aws::String PutRawMessageContentRequest::SerializePayload() const
 {
   JsonValue payload;

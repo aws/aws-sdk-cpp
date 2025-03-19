@@ -24,7 +24,7 @@ namespace Model
   class CreateWorkflowRequest : public TransferRequest
   {
   public:
-    AWS_TRANSFER_API CreateWorkflowRequest();
+    AWS_TRANSFER_API CreateWorkflowRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>A textual description for the workflow.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateWorkflowRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateWorkflowRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateWorkflowRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateWorkflowRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,14 @@ namespace Model
      *  <p> For file location, you specify either the Amazon S3 bucket and key,
      * or the Amazon EFS file system ID and path. </p>
      */
-    inline const Aws::Vector<WorkflowStep>& GetSteps() const{ return m_steps; }
+    inline const Aws::Vector<WorkflowStep>& GetSteps() const { return m_steps; }
     inline bool StepsHasBeenSet() const { return m_stepsHasBeenSet; }
-    inline void SetSteps(const Aws::Vector<WorkflowStep>& value) { m_stepsHasBeenSet = true; m_steps = value; }
-    inline void SetSteps(Aws::Vector<WorkflowStep>&& value) { m_stepsHasBeenSet = true; m_steps = std::move(value); }
-    inline CreateWorkflowRequest& WithSteps(const Aws::Vector<WorkflowStep>& value) { SetSteps(value); return *this;}
-    inline CreateWorkflowRequest& WithSteps(Aws::Vector<WorkflowStep>&& value) { SetSteps(std::move(value)); return *this;}
-    inline CreateWorkflowRequest& AddSteps(const WorkflowStep& value) { m_stepsHasBeenSet = true; m_steps.push_back(value); return *this; }
-    inline CreateWorkflowRequest& AddSteps(WorkflowStep&& value) { m_stepsHasBeenSet = true; m_steps.push_back(std::move(value)); return *this; }
+    template<typename StepsT = Aws::Vector<WorkflowStep>>
+    void SetSteps(StepsT&& value) { m_stepsHasBeenSet = true; m_steps = std::forward<StepsT>(value); }
+    template<typename StepsT = Aws::Vector<WorkflowStep>>
+    CreateWorkflowRequest& WithSteps(StepsT&& value) { SetSteps(std::forward<StepsT>(value)); return *this;}
+    template<typename StepsT = WorkflowStep>
+    CreateWorkflowRequest& AddSteps(StepsT&& value) { m_stepsHasBeenSet = true; m_steps.emplace_back(std::forward<StepsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -83,14 +81,14 @@ namespace Model
      * exception steps. Additionally, if the Lambda does not send <code>SUCCESS</code>
      * before it times out, the exception steps are executed.</p> 
      */
-    inline const Aws::Vector<WorkflowStep>& GetOnExceptionSteps() const{ return m_onExceptionSteps; }
+    inline const Aws::Vector<WorkflowStep>& GetOnExceptionSteps() const { return m_onExceptionSteps; }
     inline bool OnExceptionStepsHasBeenSet() const { return m_onExceptionStepsHasBeenSet; }
-    inline void SetOnExceptionSteps(const Aws::Vector<WorkflowStep>& value) { m_onExceptionStepsHasBeenSet = true; m_onExceptionSteps = value; }
-    inline void SetOnExceptionSteps(Aws::Vector<WorkflowStep>&& value) { m_onExceptionStepsHasBeenSet = true; m_onExceptionSteps = std::move(value); }
-    inline CreateWorkflowRequest& WithOnExceptionSteps(const Aws::Vector<WorkflowStep>& value) { SetOnExceptionSteps(value); return *this;}
-    inline CreateWorkflowRequest& WithOnExceptionSteps(Aws::Vector<WorkflowStep>&& value) { SetOnExceptionSteps(std::move(value)); return *this;}
-    inline CreateWorkflowRequest& AddOnExceptionSteps(const WorkflowStep& value) { m_onExceptionStepsHasBeenSet = true; m_onExceptionSteps.push_back(value); return *this; }
-    inline CreateWorkflowRequest& AddOnExceptionSteps(WorkflowStep&& value) { m_onExceptionStepsHasBeenSet = true; m_onExceptionSteps.push_back(std::move(value)); return *this; }
+    template<typename OnExceptionStepsT = Aws::Vector<WorkflowStep>>
+    void SetOnExceptionSteps(OnExceptionStepsT&& value) { m_onExceptionStepsHasBeenSet = true; m_onExceptionSteps = std::forward<OnExceptionStepsT>(value); }
+    template<typename OnExceptionStepsT = Aws::Vector<WorkflowStep>>
+    CreateWorkflowRequest& WithOnExceptionSteps(OnExceptionStepsT&& value) { SetOnExceptionSteps(std::forward<OnExceptionStepsT>(value)); return *this;}
+    template<typename OnExceptionStepsT = WorkflowStep>
+    CreateWorkflowRequest& AddOnExceptionSteps(OnExceptionStepsT&& value) { m_onExceptionStepsHasBeenSet = true; m_onExceptionSteps.emplace_back(std::forward<OnExceptionStepsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -98,14 +96,14 @@ namespace Model
      * <p>Key-value pairs that can be used to group and search for workflows. Tags are
      * metadata attached to workflows for any purpose.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateWorkflowRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateWorkflowRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateWorkflowRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateWorkflowRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateWorkflowRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateWorkflowRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

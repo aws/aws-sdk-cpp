@@ -40,7 +40,7 @@ namespace Model
   class FieldToMatch
   {
   public:
-    AWS_WAF_API FieldToMatch();
+    AWS_WAF_API FieldToMatch() = default;
     AWS_WAF_API FieldToMatch(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API FieldToMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -77,12 +77,10 @@ namespace Model
      * within the query for the value or regex pattern that you specify in
      * <code>TargetString</code>.</p> </li> </ul>
      */
-    inline const MatchFieldType& GetType() const{ return m_type; }
+    inline MatchFieldType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const MatchFieldType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(MatchFieldType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline FieldToMatch& WithType(const MatchFieldType& value) { SetType(value); return *this;}
-    inline FieldToMatch& WithType(MatchFieldType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(MatchFieldType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline FieldToMatch& WithType(MatchFieldType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -96,18 +94,16 @@ namespace Model
      * case sensitive.</p> <p>If the value of <code>Type</code> is any other value,
      * omit <code>Data</code>.</p>
      */
-    inline const Aws::String& GetData() const{ return m_data; }
+    inline const Aws::String& GetData() const { return m_data; }
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    inline void SetData(const Aws::String& value) { m_dataHasBeenSet = true; m_data = value; }
-    inline void SetData(Aws::String&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-    inline void SetData(const char* value) { m_dataHasBeenSet = true; m_data.assign(value); }
-    inline FieldToMatch& WithData(const Aws::String& value) { SetData(value); return *this;}
-    inline FieldToMatch& WithData(Aws::String&& value) { SetData(std::move(value)); return *this;}
-    inline FieldToMatch& WithData(const char* value) { SetData(value); return *this;}
+    template<typename DataT = Aws::String>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = Aws::String>
+    FieldToMatch& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
     ///@}
   private:
 
-    MatchFieldType m_type;
+    MatchFieldType m_type{MatchFieldType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_data;

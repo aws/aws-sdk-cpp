@@ -18,13 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-CodegenGenericDataNonModel::CodegenGenericDataNonModel() : 
-    m_fieldsHasBeenSet(false)
-{
-}
-
 CodegenGenericDataNonModel::CodegenGenericDataNonModel(JsonView jsonValue)
-  : CodegenGenericDataNonModel()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ CodegenGenericDataNonModel& CodegenGenericDataNonModel::operator =(JsonView json
     }
     m_fieldsHasBeenSet = true;
   }
-
   return *this;
 }
 

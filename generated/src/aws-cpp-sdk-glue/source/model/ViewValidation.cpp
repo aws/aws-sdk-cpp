@@ -18,20 +18,7 @@ namespace Glue
 namespace Model
 {
 
-ViewValidation::ViewValidation() : 
-    m_dialect(ViewDialect::NOT_SET),
-    m_dialectHasBeenSet(false),
-    m_dialectVersionHasBeenSet(false),
-    m_viewValidationTextHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_state(ResourceState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 ViewValidation::ViewValidation(JsonView jsonValue)
-  : ViewValidation()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ ViewValidation& ViewValidation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Dialect"))
   {
     m_dialect = ViewDialectMapper::GetViewDialectForName(jsonValue.GetString("Dialect"));
-
     m_dialectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DialectVersion"))
   {
     m_dialectVersion = jsonValue.GetString("DialectVersion");
-
     m_dialectVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ViewValidationText"))
   {
     m_viewValidationText = jsonValue.GetString("ViewValidationText");
-
     m_viewValidationTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateTime"))
   {
     m_updateTime = jsonValue.GetDouble("UpdateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = ResourceStateMapper::GetResourceStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Error"))
   {
     m_error = jsonValue.GetObject("Error");
-
     m_errorHasBeenSet = true;
   }
-
   return *this;
 }
 

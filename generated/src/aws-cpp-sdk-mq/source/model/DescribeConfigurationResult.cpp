@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeConfigurationResult::DescribeConfigurationResult() : 
-    m_authenticationStrategy(AuthenticationStrategy::NOT_SET),
-    m_engineType(EngineType::NOT_SET)
-{
-}
-
 DescribeConfigurationResult::DescribeConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeConfigurationResult()
 {
   *this = result;
 }
@@ -35,57 +28,48 @@ DescribeConfigurationResult& DescribeConfigurationResult::operator =(const Aws::
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authenticationStrategy"))
   {
     m_authenticationStrategy = AuthenticationStrategyMapper::GetAuthenticationStrategyForName(jsonValue.GetString("authenticationStrategy"));
-
+    m_authenticationStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("created"))
   {
     m_created = jsonValue.GetString("created");
-
+    m_createdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("engineType"))
   {
     m_engineType = EngineTypeMapper::GetEngineTypeForName(jsonValue.GetString("engineType"));
-
+    m_engineTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("engineVersion"))
   {
     m_engineVersion = jsonValue.GetString("engineVersion");
-
+    m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestRevision"))
   {
     m_latestRevision = jsonValue.GetObject("latestRevision");
-
+    m_latestRevisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -93,14 +77,15 @@ DescribeConfigurationResult& DescribeConfigurationResult::operator =(const Aws::
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

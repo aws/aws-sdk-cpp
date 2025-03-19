@@ -25,7 +25,7 @@ namespace Model
   class GetDistributionConfigurationRequest : public ImagebuilderRequest
   {
   public:
-    AWS_IMAGEBUILDER_API GetDistributionConfigurationRequest();
+    AWS_IMAGEBUILDER_API GetDistributionConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the distribution configuration that you
      * want to retrieve.</p>
      */
-    inline const Aws::String& GetDistributionConfigurationArn() const{ return m_distributionConfigurationArn; }
+    inline const Aws::String& GetDistributionConfigurationArn() const { return m_distributionConfigurationArn; }
     inline bool DistributionConfigurationArnHasBeenSet() const { return m_distributionConfigurationArnHasBeenSet; }
-    inline void SetDistributionConfigurationArn(const Aws::String& value) { m_distributionConfigurationArnHasBeenSet = true; m_distributionConfigurationArn = value; }
-    inline void SetDistributionConfigurationArn(Aws::String&& value) { m_distributionConfigurationArnHasBeenSet = true; m_distributionConfigurationArn = std::move(value); }
-    inline void SetDistributionConfigurationArn(const char* value) { m_distributionConfigurationArnHasBeenSet = true; m_distributionConfigurationArn.assign(value); }
-    inline GetDistributionConfigurationRequest& WithDistributionConfigurationArn(const Aws::String& value) { SetDistributionConfigurationArn(value); return *this;}
-    inline GetDistributionConfigurationRequest& WithDistributionConfigurationArn(Aws::String&& value) { SetDistributionConfigurationArn(std::move(value)); return *this;}
-    inline GetDistributionConfigurationRequest& WithDistributionConfigurationArn(const char* value) { SetDistributionConfigurationArn(value); return *this;}
+    template<typename DistributionConfigurationArnT = Aws::String>
+    void SetDistributionConfigurationArn(DistributionConfigurationArnT&& value) { m_distributionConfigurationArnHasBeenSet = true; m_distributionConfigurationArn = std::forward<DistributionConfigurationArnT>(value); }
+    template<typename DistributionConfigurationArnT = Aws::String>
+    GetDistributionConfigurationRequest& WithDistributionConfigurationArn(DistributionConfigurationArnT&& value) { SetDistributionConfigurationArn(std::forward<DistributionConfigurationArnT>(value)); return *this;}
     ///@}
   private:
 

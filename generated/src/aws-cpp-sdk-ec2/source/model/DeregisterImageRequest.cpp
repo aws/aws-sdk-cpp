@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeregisterImageRequest::DeregisterImageRequest() : 
-    m_imageIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterImageRequest::SerializePayload() const
 {
   Aws::StringStream ss;

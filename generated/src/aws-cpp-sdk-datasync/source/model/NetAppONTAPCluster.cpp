@@ -18,32 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-NetAppONTAPCluster::NetAppONTAPCluster() : 
-    m_cifsShareCount(0),
-    m_cifsShareCountHasBeenSet(false),
-    m_nfsExportedVolumes(0),
-    m_nfsExportedVolumesHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_maxP95PerformanceHasBeenSet(false),
-    m_clusterBlockStorageSize(0),
-    m_clusterBlockStorageSizeHasBeenSet(false),
-    m_clusterBlockStorageUsed(0),
-    m_clusterBlockStorageUsedHasBeenSet(false),
-    m_clusterBlockStorageLogicalUsed(0),
-    m_clusterBlockStorageLogicalUsedHasBeenSet(false),
-    m_recommendationsHasBeenSet(false),
-    m_recommendationStatus(RecommendationStatus::NOT_SET),
-    m_recommendationStatusHasBeenSet(false),
-    m_lunCount(0),
-    m_lunCountHasBeenSet(false),
-    m_clusterCloudStorageUsed(0),
-    m_clusterCloudStorageUsedHasBeenSet(false)
-{
-}
-
 NetAppONTAPCluster::NetAppONTAPCluster(JsonView jsonValue)
-  : NetAppONTAPCluster()
 {
   *this = jsonValue;
 }
@@ -53,59 +28,43 @@ NetAppONTAPCluster& NetAppONTAPCluster::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CifsShareCount"))
   {
     m_cifsShareCount = jsonValue.GetInt64("CifsShareCount");
-
     m_cifsShareCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NfsExportedVolumes"))
   {
     m_nfsExportedVolumes = jsonValue.GetInt64("NfsExportedVolumes");
-
     m_nfsExportedVolumesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterName"))
   {
     m_clusterName = jsonValue.GetString("ClusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxP95Performance"))
   {
     m_maxP95Performance = jsonValue.GetObject("MaxP95Performance");
-
     m_maxP95PerformanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterBlockStorageSize"))
   {
     m_clusterBlockStorageSize = jsonValue.GetInt64("ClusterBlockStorageSize");
-
     m_clusterBlockStorageSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterBlockStorageUsed"))
   {
     m_clusterBlockStorageUsed = jsonValue.GetInt64("ClusterBlockStorageUsed");
-
     m_clusterBlockStorageUsedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterBlockStorageLogicalUsed"))
   {
     m_clusterBlockStorageLogicalUsed = jsonValue.GetInt64("ClusterBlockStorageLogicalUsed");
-
     m_clusterBlockStorageLogicalUsedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Recommendations"))
   {
     Aws::Utils::Array<JsonView> recommendationsJsonList = jsonValue.GetArray("Recommendations");
@@ -115,28 +74,21 @@ NetAppONTAPCluster& NetAppONTAPCluster::operator =(JsonView jsonValue)
     }
     m_recommendationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecommendationStatus"))
   {
     m_recommendationStatus = RecommendationStatusMapper::GetRecommendationStatusForName(jsonValue.GetString("RecommendationStatus"));
-
     m_recommendationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LunCount"))
   {
     m_lunCount = jsonValue.GetInt64("LunCount");
-
     m_lunCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterCloudStorageUsed"))
   {
     m_clusterCloudStorageUsed = jsonValue.GetInt64("ClusterCloudStorageUsed");
-
     m_clusterCloudStorageUsedHasBeenSet = true;
   }
-
   return *this;
 }
 

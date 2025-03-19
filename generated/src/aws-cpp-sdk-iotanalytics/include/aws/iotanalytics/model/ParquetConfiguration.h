@@ -32,7 +32,7 @@ namespace Model
   class ParquetConfiguration
   {
   public:
-    AWS_IOTANALYTICS_API ParquetConfiguration();
+    AWS_IOTANALYTICS_API ParquetConfiguration() = default;
     AWS_IOTANALYTICS_API ParquetConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API ParquetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Information needed to define a schema.</p>
      */
-    inline const SchemaDefinition& GetSchemaDefinition() const{ return m_schemaDefinition; }
+    inline const SchemaDefinition& GetSchemaDefinition() const { return m_schemaDefinition; }
     inline bool SchemaDefinitionHasBeenSet() const { return m_schemaDefinitionHasBeenSet; }
-    inline void SetSchemaDefinition(const SchemaDefinition& value) { m_schemaDefinitionHasBeenSet = true; m_schemaDefinition = value; }
-    inline void SetSchemaDefinition(SchemaDefinition&& value) { m_schemaDefinitionHasBeenSet = true; m_schemaDefinition = std::move(value); }
-    inline ParquetConfiguration& WithSchemaDefinition(const SchemaDefinition& value) { SetSchemaDefinition(value); return *this;}
-    inline ParquetConfiguration& WithSchemaDefinition(SchemaDefinition&& value) { SetSchemaDefinition(std::move(value)); return *this;}
+    template<typename SchemaDefinitionT = SchemaDefinition>
+    void SetSchemaDefinition(SchemaDefinitionT&& value) { m_schemaDefinitionHasBeenSet = true; m_schemaDefinition = std::forward<SchemaDefinitionT>(value); }
+    template<typename SchemaDefinitionT = SchemaDefinition>
+    ParquetConfiguration& WithSchemaDefinition(SchemaDefinitionT&& value) { SetSchemaDefinition(std::forward<SchemaDefinitionT>(value)); return *this;}
     ///@}
   private:
 

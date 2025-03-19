@@ -33,7 +33,7 @@ namespace Model
   class OnPremiseConfiguration
   {
   public:
-    AWS_KENDRA_API OnPremiseConfiguration();
+    AWS_KENDRA_API OnPremiseConfiguration() = default;
     AWS_KENDRA_API OnPremiseConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API OnPremiseConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The GitHub host URL or API endpoint URL. For example,
      * <i>https://on-prem-host-url/api/v3/</i> </p>
      */
-    inline const Aws::String& GetHostUrl() const{ return m_hostUrl; }
+    inline const Aws::String& GetHostUrl() const { return m_hostUrl; }
     inline bool HostUrlHasBeenSet() const { return m_hostUrlHasBeenSet; }
-    inline void SetHostUrl(const Aws::String& value) { m_hostUrlHasBeenSet = true; m_hostUrl = value; }
-    inline void SetHostUrl(Aws::String&& value) { m_hostUrlHasBeenSet = true; m_hostUrl = std::move(value); }
-    inline void SetHostUrl(const char* value) { m_hostUrlHasBeenSet = true; m_hostUrl.assign(value); }
-    inline OnPremiseConfiguration& WithHostUrl(const Aws::String& value) { SetHostUrl(value); return *this;}
-    inline OnPremiseConfiguration& WithHostUrl(Aws::String&& value) { SetHostUrl(std::move(value)); return *this;}
-    inline OnPremiseConfiguration& WithHostUrl(const char* value) { SetHostUrl(value); return *this;}
+    template<typename HostUrlT = Aws::String>
+    void SetHostUrl(HostUrlT&& value) { m_hostUrlHasBeenSet = true; m_hostUrl = std::forward<HostUrlT>(value); }
+    template<typename HostUrlT = Aws::String>
+    OnPremiseConfiguration& WithHostUrl(HostUrlT&& value) { SetHostUrl(std::forward<HostUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * into GitHub desktop and selecting <b>Your organizations</b> under your profile
      * picture dropdown.</p>
      */
-    inline const Aws::String& GetOrganizationName() const{ return m_organizationName; }
+    inline const Aws::String& GetOrganizationName() const { return m_organizationName; }
     inline bool OrganizationNameHasBeenSet() const { return m_organizationNameHasBeenSet; }
-    inline void SetOrganizationName(const Aws::String& value) { m_organizationNameHasBeenSet = true; m_organizationName = value; }
-    inline void SetOrganizationName(Aws::String&& value) { m_organizationNameHasBeenSet = true; m_organizationName = std::move(value); }
-    inline void SetOrganizationName(const char* value) { m_organizationNameHasBeenSet = true; m_organizationName.assign(value); }
-    inline OnPremiseConfiguration& WithOrganizationName(const Aws::String& value) { SetOrganizationName(value); return *this;}
-    inline OnPremiseConfiguration& WithOrganizationName(Aws::String&& value) { SetOrganizationName(std::move(value)); return *this;}
-    inline OnPremiseConfiguration& WithOrganizationName(const char* value) { SetOrganizationName(value); return *this;}
+    template<typename OrganizationNameT = Aws::String>
+    void SetOrganizationName(OrganizationNameT&& value) { m_organizationNameHasBeenSet = true; m_organizationName = std::forward<OrganizationNameT>(value); }
+    template<typename OrganizationNameT = Aws::String>
+    OnPremiseConfiguration& WithOrganizationName(OrganizationNameT&& value) { SetOrganizationName(std::forward<OrganizationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,12 +76,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
      * and sign an X509 certificate</a>.</p>
      */
-    inline const S3Path& GetSslCertificateS3Path() const{ return m_sslCertificateS3Path; }
+    inline const S3Path& GetSslCertificateS3Path() const { return m_sslCertificateS3Path; }
     inline bool SslCertificateS3PathHasBeenSet() const { return m_sslCertificateS3PathHasBeenSet; }
-    inline void SetSslCertificateS3Path(const S3Path& value) { m_sslCertificateS3PathHasBeenSet = true; m_sslCertificateS3Path = value; }
-    inline void SetSslCertificateS3Path(S3Path&& value) { m_sslCertificateS3PathHasBeenSet = true; m_sslCertificateS3Path = std::move(value); }
-    inline OnPremiseConfiguration& WithSslCertificateS3Path(const S3Path& value) { SetSslCertificateS3Path(value); return *this;}
-    inline OnPremiseConfiguration& WithSslCertificateS3Path(S3Path&& value) { SetSslCertificateS3Path(std::move(value)); return *this;}
+    template<typename SslCertificateS3PathT = S3Path>
+    void SetSslCertificateS3Path(SslCertificateS3PathT&& value) { m_sslCertificateS3PathHasBeenSet = true; m_sslCertificateS3Path = std::forward<SslCertificateS3PathT>(value); }
+    template<typename SslCertificateS3PathT = S3Path>
+    OnPremiseConfiguration& WithSslCertificateS3Path(SslCertificateS3PathT&& value) { SetSslCertificateS3Path(std::forward<SslCertificateS3PathT>(value)); return *this;}
     ///@}
   private:
 

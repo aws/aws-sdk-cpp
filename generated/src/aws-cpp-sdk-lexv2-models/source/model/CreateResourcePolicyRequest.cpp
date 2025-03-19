@@ -12,12 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateResourcePolicyRequest::CreateResourcePolicyRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_policyHasBeenSet(false)
-{
-}
-
 Aws::String CreateResourcePolicyRequest::SerializePayload() const
 {
   JsonValue payload;

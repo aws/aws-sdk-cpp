@@ -10,10 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-ListOpenIDConnectProvidersRequest::ListOpenIDConnectProvidersRequest()
-{
-}
-
 Aws::String ListOpenIDConnectProvidersRequest::SerializePayload() const
 {
   Aws::StringStream ss;

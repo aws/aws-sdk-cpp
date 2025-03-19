@@ -33,7 +33,7 @@ namespace Model
   class SocialProviderSettings
   {
   public:
-    AWS_AMPLIFYBACKEND_API SocialProviderSettings();
+    AWS_AMPLIFYBACKEND_API SocialProviderSettings() = default;
     AWS_AMPLIFYBACKEND_API SocialProviderSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API SocialProviderSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,42 +41,42 @@ namespace Model
 
     ///@{
     
-    inline const BackendAuthSocialProviderConfig& GetFacebook() const{ return m_facebook; }
+    inline const BackendAuthSocialProviderConfig& GetFacebook() const { return m_facebook; }
     inline bool FacebookHasBeenSet() const { return m_facebookHasBeenSet; }
-    inline void SetFacebook(const BackendAuthSocialProviderConfig& value) { m_facebookHasBeenSet = true; m_facebook = value; }
-    inline void SetFacebook(BackendAuthSocialProviderConfig&& value) { m_facebookHasBeenSet = true; m_facebook = std::move(value); }
-    inline SocialProviderSettings& WithFacebook(const BackendAuthSocialProviderConfig& value) { SetFacebook(value); return *this;}
-    inline SocialProviderSettings& WithFacebook(BackendAuthSocialProviderConfig&& value) { SetFacebook(std::move(value)); return *this;}
+    template<typename FacebookT = BackendAuthSocialProviderConfig>
+    void SetFacebook(FacebookT&& value) { m_facebookHasBeenSet = true; m_facebook = std::forward<FacebookT>(value); }
+    template<typename FacebookT = BackendAuthSocialProviderConfig>
+    SocialProviderSettings& WithFacebook(FacebookT&& value) { SetFacebook(std::forward<FacebookT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const BackendAuthSocialProviderConfig& GetGoogle() const{ return m_google; }
+    inline const BackendAuthSocialProviderConfig& GetGoogle() const { return m_google; }
     inline bool GoogleHasBeenSet() const { return m_googleHasBeenSet; }
-    inline void SetGoogle(const BackendAuthSocialProviderConfig& value) { m_googleHasBeenSet = true; m_google = value; }
-    inline void SetGoogle(BackendAuthSocialProviderConfig&& value) { m_googleHasBeenSet = true; m_google = std::move(value); }
-    inline SocialProviderSettings& WithGoogle(const BackendAuthSocialProviderConfig& value) { SetGoogle(value); return *this;}
-    inline SocialProviderSettings& WithGoogle(BackendAuthSocialProviderConfig&& value) { SetGoogle(std::move(value)); return *this;}
+    template<typename GoogleT = BackendAuthSocialProviderConfig>
+    void SetGoogle(GoogleT&& value) { m_googleHasBeenSet = true; m_google = std::forward<GoogleT>(value); }
+    template<typename GoogleT = BackendAuthSocialProviderConfig>
+    SocialProviderSettings& WithGoogle(GoogleT&& value) { SetGoogle(std::forward<GoogleT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const BackendAuthSocialProviderConfig& GetLoginWithAmazon() const{ return m_loginWithAmazon; }
+    inline const BackendAuthSocialProviderConfig& GetLoginWithAmazon() const { return m_loginWithAmazon; }
     inline bool LoginWithAmazonHasBeenSet() const { return m_loginWithAmazonHasBeenSet; }
-    inline void SetLoginWithAmazon(const BackendAuthSocialProviderConfig& value) { m_loginWithAmazonHasBeenSet = true; m_loginWithAmazon = value; }
-    inline void SetLoginWithAmazon(BackendAuthSocialProviderConfig&& value) { m_loginWithAmazonHasBeenSet = true; m_loginWithAmazon = std::move(value); }
-    inline SocialProviderSettings& WithLoginWithAmazon(const BackendAuthSocialProviderConfig& value) { SetLoginWithAmazon(value); return *this;}
-    inline SocialProviderSettings& WithLoginWithAmazon(BackendAuthSocialProviderConfig&& value) { SetLoginWithAmazon(std::move(value)); return *this;}
+    template<typename LoginWithAmazonT = BackendAuthSocialProviderConfig>
+    void SetLoginWithAmazon(LoginWithAmazonT&& value) { m_loginWithAmazonHasBeenSet = true; m_loginWithAmazon = std::forward<LoginWithAmazonT>(value); }
+    template<typename LoginWithAmazonT = BackendAuthSocialProviderConfig>
+    SocialProviderSettings& WithLoginWithAmazon(LoginWithAmazonT&& value) { SetLoginWithAmazon(std::forward<LoginWithAmazonT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const BackendAuthAppleProviderConfig& GetSignInWithApple() const{ return m_signInWithApple; }
+    inline const BackendAuthAppleProviderConfig& GetSignInWithApple() const { return m_signInWithApple; }
     inline bool SignInWithAppleHasBeenSet() const { return m_signInWithAppleHasBeenSet; }
-    inline void SetSignInWithApple(const BackendAuthAppleProviderConfig& value) { m_signInWithAppleHasBeenSet = true; m_signInWithApple = value; }
-    inline void SetSignInWithApple(BackendAuthAppleProviderConfig&& value) { m_signInWithAppleHasBeenSet = true; m_signInWithApple = std::move(value); }
-    inline SocialProviderSettings& WithSignInWithApple(const BackendAuthAppleProviderConfig& value) { SetSignInWithApple(value); return *this;}
-    inline SocialProviderSettings& WithSignInWithApple(BackendAuthAppleProviderConfig&& value) { SetSignInWithApple(std::move(value)); return *this;}
+    template<typename SignInWithAppleT = BackendAuthAppleProviderConfig>
+    void SetSignInWithApple(SignInWithAppleT&& value) { m_signInWithAppleHasBeenSet = true; m_signInWithApple = std::forward<SignInWithAppleT>(value); }
+    template<typename SignInWithAppleT = BackendAuthAppleProviderConfig>
+    SocialProviderSettings& WithSignInWithApple(SignInWithAppleT&& value) { SetSignInWithApple(std::forward<SignInWithAppleT>(value)); return *this;}
     ///@}
   private:
 

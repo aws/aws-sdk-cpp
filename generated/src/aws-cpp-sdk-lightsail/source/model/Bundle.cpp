@@ -18,33 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-Bundle::Bundle() : 
-    m_price(0.0),
-    m_priceHasBeenSet(false),
-    m_cpuCount(0),
-    m_cpuCountHasBeenSet(false),
-    m_diskSizeInGb(0),
-    m_diskSizeInGbHasBeenSet(false),
-    m_bundleIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_isActive(false),
-    m_isActiveHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_power(0),
-    m_powerHasBeenSet(false),
-    m_ramSizeInGb(0.0),
-    m_ramSizeInGbHasBeenSet(false),
-    m_transferPerMonthInGb(0),
-    m_transferPerMonthInGbHasBeenSet(false),
-    m_supportedPlatformsHasBeenSet(false),
-    m_supportedAppCategoriesHasBeenSet(false),
-    m_publicIpv4AddressCount(0),
-    m_publicIpv4AddressCountHasBeenSet(false)
-{
-}
-
 Bundle::Bundle(JsonView jsonValue)
-  : Bundle()
 {
   *this = jsonValue;
 }
@@ -54,73 +28,53 @@ Bundle& Bundle::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("price"))
   {
     m_price = jsonValue.GetDouble("price");
-
     m_priceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cpuCount"))
   {
     m_cpuCount = jsonValue.GetInteger("cpuCount");
-
     m_cpuCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("diskSizeInGb"))
   {
     m_diskSizeInGb = jsonValue.GetInteger("diskSizeInGb");
-
     m_diskSizeInGbHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bundleId"))
   {
     m_bundleId = jsonValue.GetString("bundleId");
-
     m_bundleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = jsonValue.GetString("instanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isActive"))
   {
     m_isActive = jsonValue.GetBool("isActive");
-
     m_isActiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("power"))
   {
     m_power = jsonValue.GetInteger("power");
-
     m_powerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ramSizeInGb"))
   {
     m_ramSizeInGb = jsonValue.GetDouble("ramSizeInGb");
-
     m_ramSizeInGbHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transferPerMonthInGb"))
   {
     m_transferPerMonthInGb = jsonValue.GetInteger("transferPerMonthInGb");
-
     m_transferPerMonthInGbHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportedPlatforms"))
   {
     Aws::Utils::Array<JsonView> supportedPlatformsJsonList = jsonValue.GetArray("supportedPlatforms");
@@ -130,7 +84,6 @@ Bundle& Bundle::operator =(JsonView jsonValue)
     }
     m_supportedPlatformsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportedAppCategories"))
   {
     Aws::Utils::Array<JsonView> supportedAppCategoriesJsonList = jsonValue.GetArray("supportedAppCategories");
@@ -140,14 +93,11 @@ Bundle& Bundle::operator =(JsonView jsonValue)
     }
     m_supportedAppCategoriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicIpv4AddressCount"))
   {
     m_publicIpv4AddressCount = jsonValue.GetInteger("publicIpv4AddressCount");
-
     m_publicIpv4AddressCountHasBeenSet = true;
   }
-
   return *this;
 }
 

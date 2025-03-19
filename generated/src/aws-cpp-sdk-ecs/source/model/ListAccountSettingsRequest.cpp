@@ -12,19 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAccountSettingsRequest::ListAccountSettingsRequest() : 
-    m_name(SettingName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_principalArnHasBeenSet(false),
-    m_effectiveSettings(false),
-    m_effectiveSettingsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListAccountSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeComponentResult::DescribeComponentResult()
-{
-}
-
 DescribeComponentResult::DescribeComponentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeComponentResult& DescribeComponentResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("ApplicationComponent"))
   {
     m_applicationComponent = jsonValue.GetObject("ApplicationComponent");
-
+    m_applicationComponentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceList"))
   {
     Aws::Utils::Array<JsonView> resourceListJsonList = jsonValue.GetArray("ResourceList");
@@ -42,14 +37,15 @@ DescribeComponentResult& DescribeComponentResult::operator =(const Aws::AmazonWe
     {
       m_resourceList.push_back(resourceListJsonList[resourceListIndex].AsString());
     }
+    m_resourceListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

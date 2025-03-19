@@ -18,20 +18,7 @@ namespace IVS
 namespace Model
 {
 
-AudioConfiguration::AudioConfiguration() : 
-    m_channels(0),
-    m_channelsHasBeenSet(false),
-    m_codecHasBeenSet(false),
-    m_sampleRate(0),
-    m_sampleRateHasBeenSet(false),
-    m_targetBitrate(0),
-    m_targetBitrateHasBeenSet(false),
-    m_trackHasBeenSet(false)
-{
-}
-
 AudioConfiguration::AudioConfiguration(JsonView jsonValue)
-  : AudioConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ AudioConfiguration& AudioConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("channels"))
   {
     m_channels = jsonValue.GetInt64("channels");
-
     m_channelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("codec"))
   {
     m_codec = jsonValue.GetString("codec");
-
     m_codecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sampleRate"))
   {
     m_sampleRate = jsonValue.GetInt64("sampleRate");
-
     m_sampleRateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetBitrate"))
   {
     m_targetBitrate = jsonValue.GetInt64("targetBitrate");
-
     m_targetBitrateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("track"))
   {
     m_track = jsonValue.GetString("track");
-
     m_trackHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class ElasticInferenceAcceleratorAssociation
   {
   public:
-    AWS_EC2_API ElasticInferenceAcceleratorAssociation();
+    AWS_EC2_API ElasticInferenceAcceleratorAssociation() = default;
     AWS_EC2_API ElasticInferenceAcceleratorAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ElasticInferenceAcceleratorAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,42 +46,36 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (ARN) of the elastic inference accelerator. </p>
      */
-    inline const Aws::String& GetElasticInferenceAcceleratorArn() const{ return m_elasticInferenceAcceleratorArn; }
+    inline const Aws::String& GetElasticInferenceAcceleratorArn() const { return m_elasticInferenceAcceleratorArn; }
     inline bool ElasticInferenceAcceleratorArnHasBeenSet() const { return m_elasticInferenceAcceleratorArnHasBeenSet; }
-    inline void SetElasticInferenceAcceleratorArn(const Aws::String& value) { m_elasticInferenceAcceleratorArnHasBeenSet = true; m_elasticInferenceAcceleratorArn = value; }
-    inline void SetElasticInferenceAcceleratorArn(Aws::String&& value) { m_elasticInferenceAcceleratorArnHasBeenSet = true; m_elasticInferenceAcceleratorArn = std::move(value); }
-    inline void SetElasticInferenceAcceleratorArn(const char* value) { m_elasticInferenceAcceleratorArnHasBeenSet = true; m_elasticInferenceAcceleratorArn.assign(value); }
-    inline ElasticInferenceAcceleratorAssociation& WithElasticInferenceAcceleratorArn(const Aws::String& value) { SetElasticInferenceAcceleratorArn(value); return *this;}
-    inline ElasticInferenceAcceleratorAssociation& WithElasticInferenceAcceleratorArn(Aws::String&& value) { SetElasticInferenceAcceleratorArn(std::move(value)); return *this;}
-    inline ElasticInferenceAcceleratorAssociation& WithElasticInferenceAcceleratorArn(const char* value) { SetElasticInferenceAcceleratorArn(value); return *this;}
+    template<typename ElasticInferenceAcceleratorArnT = Aws::String>
+    void SetElasticInferenceAcceleratorArn(ElasticInferenceAcceleratorArnT&& value) { m_elasticInferenceAcceleratorArnHasBeenSet = true; m_elasticInferenceAcceleratorArn = std::forward<ElasticInferenceAcceleratorArnT>(value); }
+    template<typename ElasticInferenceAcceleratorArnT = Aws::String>
+    ElasticInferenceAcceleratorAssociation& WithElasticInferenceAcceleratorArn(ElasticInferenceAcceleratorArnT&& value) { SetElasticInferenceAcceleratorArn(std::forward<ElasticInferenceAcceleratorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The ID of the association. </p>
      */
-    inline const Aws::String& GetElasticInferenceAcceleratorAssociationId() const{ return m_elasticInferenceAcceleratorAssociationId; }
+    inline const Aws::String& GetElasticInferenceAcceleratorAssociationId() const { return m_elasticInferenceAcceleratorAssociationId; }
     inline bool ElasticInferenceAcceleratorAssociationIdHasBeenSet() const { return m_elasticInferenceAcceleratorAssociationIdHasBeenSet; }
-    inline void SetElasticInferenceAcceleratorAssociationId(const Aws::String& value) { m_elasticInferenceAcceleratorAssociationIdHasBeenSet = true; m_elasticInferenceAcceleratorAssociationId = value; }
-    inline void SetElasticInferenceAcceleratorAssociationId(Aws::String&& value) { m_elasticInferenceAcceleratorAssociationIdHasBeenSet = true; m_elasticInferenceAcceleratorAssociationId = std::move(value); }
-    inline void SetElasticInferenceAcceleratorAssociationId(const char* value) { m_elasticInferenceAcceleratorAssociationIdHasBeenSet = true; m_elasticInferenceAcceleratorAssociationId.assign(value); }
-    inline ElasticInferenceAcceleratorAssociation& WithElasticInferenceAcceleratorAssociationId(const Aws::String& value) { SetElasticInferenceAcceleratorAssociationId(value); return *this;}
-    inline ElasticInferenceAcceleratorAssociation& WithElasticInferenceAcceleratorAssociationId(Aws::String&& value) { SetElasticInferenceAcceleratorAssociationId(std::move(value)); return *this;}
-    inline ElasticInferenceAcceleratorAssociation& WithElasticInferenceAcceleratorAssociationId(const char* value) { SetElasticInferenceAcceleratorAssociationId(value); return *this;}
+    template<typename ElasticInferenceAcceleratorAssociationIdT = Aws::String>
+    void SetElasticInferenceAcceleratorAssociationId(ElasticInferenceAcceleratorAssociationIdT&& value) { m_elasticInferenceAcceleratorAssociationIdHasBeenSet = true; m_elasticInferenceAcceleratorAssociationId = std::forward<ElasticInferenceAcceleratorAssociationIdT>(value); }
+    template<typename ElasticInferenceAcceleratorAssociationIdT = Aws::String>
+    ElasticInferenceAcceleratorAssociation& WithElasticInferenceAcceleratorAssociationId(ElasticInferenceAcceleratorAssociationIdT&& value) { SetElasticInferenceAcceleratorAssociationId(std::forward<ElasticInferenceAcceleratorAssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The state of the elastic inference accelerator. </p>
      */
-    inline const Aws::String& GetElasticInferenceAcceleratorAssociationState() const{ return m_elasticInferenceAcceleratorAssociationState; }
+    inline const Aws::String& GetElasticInferenceAcceleratorAssociationState() const { return m_elasticInferenceAcceleratorAssociationState; }
     inline bool ElasticInferenceAcceleratorAssociationStateHasBeenSet() const { return m_elasticInferenceAcceleratorAssociationStateHasBeenSet; }
-    inline void SetElasticInferenceAcceleratorAssociationState(const Aws::String& value) { m_elasticInferenceAcceleratorAssociationStateHasBeenSet = true; m_elasticInferenceAcceleratorAssociationState = value; }
-    inline void SetElasticInferenceAcceleratorAssociationState(Aws::String&& value) { m_elasticInferenceAcceleratorAssociationStateHasBeenSet = true; m_elasticInferenceAcceleratorAssociationState = std::move(value); }
-    inline void SetElasticInferenceAcceleratorAssociationState(const char* value) { m_elasticInferenceAcceleratorAssociationStateHasBeenSet = true; m_elasticInferenceAcceleratorAssociationState.assign(value); }
-    inline ElasticInferenceAcceleratorAssociation& WithElasticInferenceAcceleratorAssociationState(const Aws::String& value) { SetElasticInferenceAcceleratorAssociationState(value); return *this;}
-    inline ElasticInferenceAcceleratorAssociation& WithElasticInferenceAcceleratorAssociationState(Aws::String&& value) { SetElasticInferenceAcceleratorAssociationState(std::move(value)); return *this;}
-    inline ElasticInferenceAcceleratorAssociation& WithElasticInferenceAcceleratorAssociationState(const char* value) { SetElasticInferenceAcceleratorAssociationState(value); return *this;}
+    template<typename ElasticInferenceAcceleratorAssociationStateT = Aws::String>
+    void SetElasticInferenceAcceleratorAssociationState(ElasticInferenceAcceleratorAssociationStateT&& value) { m_elasticInferenceAcceleratorAssociationStateHasBeenSet = true; m_elasticInferenceAcceleratorAssociationState = std::forward<ElasticInferenceAcceleratorAssociationStateT>(value); }
+    template<typename ElasticInferenceAcceleratorAssociationStateT = Aws::String>
+    ElasticInferenceAcceleratorAssociation& WithElasticInferenceAcceleratorAssociationState(ElasticInferenceAcceleratorAssociationStateT&& value) { SetElasticInferenceAcceleratorAssociationState(std::forward<ElasticInferenceAcceleratorAssociationStateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +83,12 @@ namespace Model
      * <p> The time at which the elastic inference accelerator is associated with an
      * instance. </p>
      */
-    inline const Aws::Utils::DateTime& GetElasticInferenceAcceleratorAssociationTime() const{ return m_elasticInferenceAcceleratorAssociationTime; }
+    inline const Aws::Utils::DateTime& GetElasticInferenceAcceleratorAssociationTime() const { return m_elasticInferenceAcceleratorAssociationTime; }
     inline bool ElasticInferenceAcceleratorAssociationTimeHasBeenSet() const { return m_elasticInferenceAcceleratorAssociationTimeHasBeenSet; }
-    inline void SetElasticInferenceAcceleratorAssociationTime(const Aws::Utils::DateTime& value) { m_elasticInferenceAcceleratorAssociationTimeHasBeenSet = true; m_elasticInferenceAcceleratorAssociationTime = value; }
-    inline void SetElasticInferenceAcceleratorAssociationTime(Aws::Utils::DateTime&& value) { m_elasticInferenceAcceleratorAssociationTimeHasBeenSet = true; m_elasticInferenceAcceleratorAssociationTime = std::move(value); }
-    inline ElasticInferenceAcceleratorAssociation& WithElasticInferenceAcceleratorAssociationTime(const Aws::Utils::DateTime& value) { SetElasticInferenceAcceleratorAssociationTime(value); return *this;}
-    inline ElasticInferenceAcceleratorAssociation& WithElasticInferenceAcceleratorAssociationTime(Aws::Utils::DateTime&& value) { SetElasticInferenceAcceleratorAssociationTime(std::move(value)); return *this;}
+    template<typename ElasticInferenceAcceleratorAssociationTimeT = Aws::Utils::DateTime>
+    void SetElasticInferenceAcceleratorAssociationTime(ElasticInferenceAcceleratorAssociationTimeT&& value) { m_elasticInferenceAcceleratorAssociationTimeHasBeenSet = true; m_elasticInferenceAcceleratorAssociationTime = std::forward<ElasticInferenceAcceleratorAssociationTimeT>(value); }
+    template<typename ElasticInferenceAcceleratorAssociationTimeT = Aws::Utils::DateTime>
+    ElasticInferenceAcceleratorAssociation& WithElasticInferenceAcceleratorAssociationTime(ElasticInferenceAcceleratorAssociationTimeT&& value) { SetElasticInferenceAcceleratorAssociationTime(std::forward<ElasticInferenceAcceleratorAssociationTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -107,7 +101,7 @@ namespace Model
     Aws::String m_elasticInferenceAcceleratorAssociationState;
     bool m_elasticInferenceAcceleratorAssociationStateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_elasticInferenceAcceleratorAssociationTime;
+    Aws::Utils::DateTime m_elasticInferenceAcceleratorAssociationTime{};
     bool m_elasticInferenceAcceleratorAssociationTimeHasBeenSet = false;
   };
 

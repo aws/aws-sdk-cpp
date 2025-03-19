@@ -34,7 +34,7 @@ namespace Model
   class Metric
   {
   public:
-    AWS_RDS_API Metric();
+    AWS_RDS_API Metric() = default;
     AWS_RDS_API Metric(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API Metric& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,28 +46,26 @@ namespace Model
     /**
      * <p>The name of a metric.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Metric& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Metric& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Metric& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Metric& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of metric references (thresholds).</p>
      */
-    inline const Aws::Vector<MetricReference>& GetReferences() const{ return m_references; }
+    inline const Aws::Vector<MetricReference>& GetReferences() const { return m_references; }
     inline bool ReferencesHasBeenSet() const { return m_referencesHasBeenSet; }
-    inline void SetReferences(const Aws::Vector<MetricReference>& value) { m_referencesHasBeenSet = true; m_references = value; }
-    inline void SetReferences(Aws::Vector<MetricReference>&& value) { m_referencesHasBeenSet = true; m_references = std::move(value); }
-    inline Metric& WithReferences(const Aws::Vector<MetricReference>& value) { SetReferences(value); return *this;}
-    inline Metric& WithReferences(Aws::Vector<MetricReference>&& value) { SetReferences(std::move(value)); return *this;}
-    inline Metric& AddReferences(const MetricReference& value) { m_referencesHasBeenSet = true; m_references.push_back(value); return *this; }
-    inline Metric& AddReferences(MetricReference&& value) { m_referencesHasBeenSet = true; m_references.push_back(std::move(value)); return *this; }
+    template<typename ReferencesT = Aws::Vector<MetricReference>>
+    void SetReferences(ReferencesT&& value) { m_referencesHasBeenSet = true; m_references = std::forward<ReferencesT>(value); }
+    template<typename ReferencesT = Aws::Vector<MetricReference>>
+    Metric& WithReferences(ReferencesT&& value) { SetReferences(std::forward<ReferencesT>(value)); return *this;}
+    template<typename ReferencesT = MetricReference>
+    Metric& AddReferences(ReferencesT&& value) { m_referencesHasBeenSet = true; m_references.emplace_back(std::forward<ReferencesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -75,26 +73,24 @@ namespace Model
      * <p>The details of different statistics for a metric. The description might
      * contain markdown.</p>
      */
-    inline const Aws::String& GetStatisticsDetails() const{ return m_statisticsDetails; }
+    inline const Aws::String& GetStatisticsDetails() const { return m_statisticsDetails; }
     inline bool StatisticsDetailsHasBeenSet() const { return m_statisticsDetailsHasBeenSet; }
-    inline void SetStatisticsDetails(const Aws::String& value) { m_statisticsDetailsHasBeenSet = true; m_statisticsDetails = value; }
-    inline void SetStatisticsDetails(Aws::String&& value) { m_statisticsDetailsHasBeenSet = true; m_statisticsDetails = std::move(value); }
-    inline void SetStatisticsDetails(const char* value) { m_statisticsDetailsHasBeenSet = true; m_statisticsDetails.assign(value); }
-    inline Metric& WithStatisticsDetails(const Aws::String& value) { SetStatisticsDetails(value); return *this;}
-    inline Metric& WithStatisticsDetails(Aws::String&& value) { SetStatisticsDetails(std::move(value)); return *this;}
-    inline Metric& WithStatisticsDetails(const char* value) { SetStatisticsDetails(value); return *this;}
+    template<typename StatisticsDetailsT = Aws::String>
+    void SetStatisticsDetails(StatisticsDetailsT&& value) { m_statisticsDetailsHasBeenSet = true; m_statisticsDetails = std::forward<StatisticsDetailsT>(value); }
+    template<typename StatisticsDetailsT = Aws::String>
+    Metric& WithStatisticsDetails(StatisticsDetailsT&& value) { SetStatisticsDetails(std::forward<StatisticsDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The query to retrieve metric data points.</p>
      */
-    inline const MetricQuery& GetMetricQuery() const{ return m_metricQuery; }
+    inline const MetricQuery& GetMetricQuery() const { return m_metricQuery; }
     inline bool MetricQueryHasBeenSet() const { return m_metricQueryHasBeenSet; }
-    inline void SetMetricQuery(const MetricQuery& value) { m_metricQueryHasBeenSet = true; m_metricQuery = value; }
-    inline void SetMetricQuery(MetricQuery&& value) { m_metricQueryHasBeenSet = true; m_metricQuery = std::move(value); }
-    inline Metric& WithMetricQuery(const MetricQuery& value) { SetMetricQuery(value); return *this;}
-    inline Metric& WithMetricQuery(MetricQuery&& value) { SetMetricQuery(std::move(value)); return *this;}
+    template<typename MetricQueryT = MetricQuery>
+    void SetMetricQuery(MetricQueryT&& value) { m_metricQueryHasBeenSet = true; m_metricQuery = std::forward<MetricQueryT>(value); }
+    template<typename MetricQueryT = MetricQuery>
+    Metric& WithMetricQuery(MetricQueryT&& value) { SetMetricQuery(std::forward<MetricQueryT>(value)); return *this;}
     ///@}
   private:
 

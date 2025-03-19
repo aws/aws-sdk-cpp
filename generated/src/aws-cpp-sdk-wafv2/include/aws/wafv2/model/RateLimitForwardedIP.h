@@ -43,7 +43,7 @@ namespace Model
   class RateLimitForwardedIP
   {
   public:
-    AWS_WAFV2_API RateLimitForwardedIP();
+    AWS_WAFV2_API RateLimitForwardedIP() = default;
     AWS_WAFV2_API RateLimitForwardedIP(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API RateLimitForwardedIP& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;

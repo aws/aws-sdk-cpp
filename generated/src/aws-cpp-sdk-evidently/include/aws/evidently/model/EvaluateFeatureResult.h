@@ -28,7 +28,7 @@ namespace Model
   class EvaluateFeatureResult
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API EvaluateFeatureResult();
+    AWS_CLOUDWATCHEVIDENTLY_API EvaluateFeatureResult() = default;
     AWS_CLOUDWATCHEVIDENTLY_API EvaluateFeatureResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHEVIDENTLY_API EvaluateFeatureResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
      * <p>If this user was assigned to a launch or experiment, this field lists the
      * launch or experiment name.</p>
      */
-    inline const Aws::String& GetDetails() const{ return m_details; }
-    inline void SetDetails(const Aws::String& value) { m_details = value; }
-    inline void SetDetails(Aws::String&& value) { m_details = std::move(value); }
-    inline void SetDetails(const char* value) { m_details.assign(value); }
-    inline EvaluateFeatureResult& WithDetails(const Aws::String& value) { SetDetails(value); return *this;}
-    inline EvaluateFeatureResult& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
-    inline EvaluateFeatureResult& WithDetails(const char* value) { SetDetails(value); return *this;}
+    inline const Aws::String& GetDetails() const { return m_details; }
+    template<typename DetailsT = Aws::String>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = Aws::String>
+    EvaluateFeatureResult& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,13 +54,11 @@ namespace Model
      * was enrolled in an experiment; or <code>ENTITY_OVERRIDES_MATCH</code>, if the
      * user's <code>entityId</code> matches an override rule.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
-    inline void SetReason(const Aws::String& value) { m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reason.assign(value); }
-    inline EvaluateFeatureResult& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline EvaluateFeatureResult& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline EvaluateFeatureResult& WithReason(const char* value) { SetReason(value); return *this;}
+    inline const Aws::String& GetReason() const { return m_reason; }
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    EvaluateFeatureResult& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,47 +66,48 @@ namespace Model
      * <p>The value assigned to this variation to differentiate it from the other
      * variations of this feature.</p>
      */
-    inline const VariableValue& GetValue() const{ return m_value; }
-    inline void SetValue(const VariableValue& value) { m_value = value; }
-    inline void SetValue(VariableValue&& value) { m_value = std::move(value); }
-    inline EvaluateFeatureResult& WithValue(const VariableValue& value) { SetValue(value); return *this;}
-    inline EvaluateFeatureResult& WithValue(VariableValue&& value) { SetValue(std::move(value)); return *this;}
+    inline const VariableValue& GetValue() const { return m_value; }
+    template<typename ValueT = VariableValue>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = VariableValue>
+    EvaluateFeatureResult& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the variation that was served to the user session.</p>
      */
-    inline const Aws::String& GetVariation() const{ return m_variation; }
-    inline void SetVariation(const Aws::String& value) { m_variation = value; }
-    inline void SetVariation(Aws::String&& value) { m_variation = std::move(value); }
-    inline void SetVariation(const char* value) { m_variation.assign(value); }
-    inline EvaluateFeatureResult& WithVariation(const Aws::String& value) { SetVariation(value); return *this;}
-    inline EvaluateFeatureResult& WithVariation(Aws::String&& value) { SetVariation(std::move(value)); return *this;}
-    inline EvaluateFeatureResult& WithVariation(const char* value) { SetVariation(value); return *this;}
+    inline const Aws::String& GetVariation() const { return m_variation; }
+    template<typename VariationT = Aws::String>
+    void SetVariation(VariationT&& value) { m_variationHasBeenSet = true; m_variation = std::forward<VariationT>(value); }
+    template<typename VariationT = Aws::String>
+    EvaluateFeatureResult& WithVariation(VariationT&& value) { SetVariation(std::forward<VariationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline EvaluateFeatureResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline EvaluateFeatureResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline EvaluateFeatureResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    EvaluateFeatureResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_details;
+    bool m_detailsHasBeenSet = false;
 
     Aws::String m_reason;
+    bool m_reasonHasBeenSet = false;
 
     VariableValue m_value;
+    bool m_valueHasBeenSet = false;
 
     Aws::String m_variation;
+    bool m_variationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,14 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateNetworkRequest::UpdateNetworkRequest() : 
-    m_ipPoolsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_networkIdHasBeenSet(false),
-    m_routesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateNetworkRequest::SerializePayload() const
 {
   JsonValue payload;

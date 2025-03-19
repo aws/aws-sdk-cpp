@@ -12,15 +12,6 @@ using namespace Aws::IoTSiteWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateProjectRequest::UpdateProjectRequest() : 
-    m_projectIdHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_projectDescriptionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String UpdateProjectRequest::SerializePayload() const
 {
   JsonValue payload;

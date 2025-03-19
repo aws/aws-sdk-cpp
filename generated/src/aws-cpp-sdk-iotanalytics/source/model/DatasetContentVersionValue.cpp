@@ -18,13 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-DatasetContentVersionValue::DatasetContentVersionValue() : 
-    m_datasetNameHasBeenSet(false)
-{
-}
-
 DatasetContentVersionValue::DatasetContentVersionValue(JsonView jsonValue)
-  : DatasetContentVersionValue()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DatasetContentVersionValue& DatasetContentVersionValue::operator =(JsonView json
   if(jsonValue.ValueExists("datasetName"))
   {
     m_datasetName = jsonValue.GetString("datasetName");
-
     m_datasetNameHasBeenSet = true;
   }
-
   return *this;
 }
 

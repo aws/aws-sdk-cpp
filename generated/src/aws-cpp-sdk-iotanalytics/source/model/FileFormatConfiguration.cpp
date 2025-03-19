@@ -18,14 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-FileFormatConfiguration::FileFormatConfiguration() : 
-    m_jsonConfigurationHasBeenSet(false),
-    m_parquetConfigurationHasBeenSet(false)
-{
-}
-
 FileFormatConfiguration::FileFormatConfiguration(JsonView jsonValue)
-  : FileFormatConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FileFormatConfiguration& FileFormatConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jsonConfiguration"))
   {
     m_jsonConfiguration = jsonValue.GetObject("jsonConfiguration");
-
     m_jsonConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parquetConfiguration"))
   {
     m_parquetConfiguration = jsonValue.GetObject("parquetConfiguration");
-
     m_parquetConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

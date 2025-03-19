@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-ConnectorDataTarget::ConnectorDataTarget() : 
-    m_nameHasBeenSet(false),
-    m_connectionTypeHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_inputsHasBeenSet(false)
-{
-}
-
 ConnectorDataTarget::ConnectorDataTarget(JsonView jsonValue)
-  : ConnectorDataTarget()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ConnectorDataTarget& ConnectorDataTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionType"))
   {
     m_connectionType = jsonValue.GetString("ConnectionType");
-
     m_connectionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Data"))
   {
     Aws::Map<Aws::String, JsonView> dataJsonMap = jsonValue.GetObject("Data").GetAllObjects();
@@ -57,7 +44,6 @@ ConnectorDataTarget& ConnectorDataTarget::operator =(JsonView jsonValue)
     }
     m_dataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Inputs"))
   {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
@@ -67,7 +53,6 @@ ConnectorDataTarget& ConnectorDataTarget::operator =(JsonView jsonValue)
     }
     m_inputsHasBeenSet = true;
   }
-
   return *this;
 }
 

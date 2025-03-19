@@ -12,13 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteIntegrationRequest::DeleteIntegrationRequest() : 
-    m_integrationNameHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIntegrationRequest::SerializePayload() const
 {
   JsonValue payload;

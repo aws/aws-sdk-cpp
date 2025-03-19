@@ -29,7 +29,7 @@ namespace Model
   class ListGraphsResult
   {
   public:
-    AWS_DETECTIVE_API ListGraphsResult();
+    AWS_DETECTIVE_API ListGraphsResult() = default;
     AWS_DETECTIVE_API ListGraphsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DETECTIVE_API ListGraphsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A list of behavior graphs that the account is an administrator account
      * for.</p>
      */
-    inline const Aws::Vector<Graph>& GetGraphList() const{ return m_graphList; }
-    inline void SetGraphList(const Aws::Vector<Graph>& value) { m_graphList = value; }
-    inline void SetGraphList(Aws::Vector<Graph>&& value) { m_graphList = std::move(value); }
-    inline ListGraphsResult& WithGraphList(const Aws::Vector<Graph>& value) { SetGraphList(value); return *this;}
-    inline ListGraphsResult& WithGraphList(Aws::Vector<Graph>&& value) { SetGraphList(std::move(value)); return *this;}
-    inline ListGraphsResult& AddGraphList(const Graph& value) { m_graphList.push_back(value); return *this; }
-    inline ListGraphsResult& AddGraphList(Graph&& value) { m_graphList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Graph>& GetGraphList() const { return m_graphList; }
+    template<typename GraphListT = Aws::Vector<Graph>>
+    void SetGraphList(GraphListT&& value) { m_graphListHasBeenSet = true; m_graphList = std::forward<GraphListT>(value); }
+    template<typename GraphListT = Aws::Vector<Graph>>
+    ListGraphsResult& WithGraphList(GraphListT&& value) { SetGraphList(std::forward<GraphListT>(value)); return *this;}
+    template<typename GraphListT = Graph>
+    ListGraphsResult& AddGraphList(GraphListT&& value) { m_graphListHasBeenSet = true; m_graphList.emplace_back(std::forward<GraphListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>If there are more behavior graphs remaining in the results, then this is the
      * pagination token to use to request the next page of behavior graphs.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListGraphsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListGraphsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListGraphsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListGraphsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListGraphsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListGraphsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListGraphsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListGraphsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Graph> m_graphList;
+    bool m_graphListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

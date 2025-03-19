@@ -12,14 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetJobRunRequest::GetJobRunRequest() : 
-    m_jobNameHasBeenSet(false),
-    m_runIdHasBeenSet(false),
-    m_predecessorsIncluded(false),
-    m_predecessorsIncludedHasBeenSet(false)
-{
-}
-
 Aws::String GetJobRunRequest::SerializePayload() const
 {
   JsonValue payload;

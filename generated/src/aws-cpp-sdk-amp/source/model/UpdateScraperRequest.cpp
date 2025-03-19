@@ -12,17 +12,6 @@ using namespace Aws::PrometheusService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateScraperRequest::UpdateScraperRequest() : 
-    m_aliasHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_destinationHasBeenSet(false),
-    m_roleConfigurationHasBeenSet(false),
-    m_scrapeConfigurationHasBeenSet(false),
-    m_scraperIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateScraperRequest::SerializePayload() const
 {
   JsonValue payload;

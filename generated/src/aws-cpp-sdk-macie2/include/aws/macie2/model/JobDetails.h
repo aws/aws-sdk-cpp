@@ -36,7 +36,7 @@ namespace Model
   class JobDetails
   {
   public:
-    AWS_MACIE2_API JobDetails();
+    AWS_MACIE2_API JobDetails() = default;
     AWS_MACIE2_API JobDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API JobDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,12 +57,10 @@ namespace Model
      * <li><p>UNKNOWN - An exception occurred when Amazon Macie attempted to retrieve
      * job data for the bucket.</p></li></ul>
      */
-    inline const IsDefinedInJob& GetIsDefinedInJob() const{ return m_isDefinedInJob; }
+    inline IsDefinedInJob GetIsDefinedInJob() const { return m_isDefinedInJob; }
     inline bool IsDefinedInJobHasBeenSet() const { return m_isDefinedInJobHasBeenSet; }
-    inline void SetIsDefinedInJob(const IsDefinedInJob& value) { m_isDefinedInJobHasBeenSet = true; m_isDefinedInJob = value; }
-    inline void SetIsDefinedInJob(IsDefinedInJob&& value) { m_isDefinedInJobHasBeenSet = true; m_isDefinedInJob = std::move(value); }
-    inline JobDetails& WithIsDefinedInJob(const IsDefinedInJob& value) { SetIsDefinedInJob(value); return *this;}
-    inline JobDetails& WithIsDefinedInJob(IsDefinedInJob&& value) { SetIsDefinedInJob(std::move(value)); return *this;}
+    inline void SetIsDefinedInJob(IsDefinedInJob value) { m_isDefinedInJobHasBeenSet = true; m_isDefinedInJob = value; }
+    inline JobDetails& WithIsDefinedInJob(IsDefinedInJob value) { SetIsDefinedInJob(value); return *this;}
     ///@}
 
     ///@{
@@ -80,12 +78,10 @@ namespace Model
      * CANCELLED.</p></li> <li><p>UNKNOWN - An exception occurred when Amazon Macie
      * attempted to retrieve job data for the bucket.</p></li></ul>
      */
-    inline const IsMonitoredByJob& GetIsMonitoredByJob() const{ return m_isMonitoredByJob; }
+    inline IsMonitoredByJob GetIsMonitoredByJob() const { return m_isMonitoredByJob; }
     inline bool IsMonitoredByJobHasBeenSet() const { return m_isMonitoredByJobHasBeenSet; }
-    inline void SetIsMonitoredByJob(const IsMonitoredByJob& value) { m_isMonitoredByJobHasBeenSet = true; m_isMonitoredByJob = value; }
-    inline void SetIsMonitoredByJob(IsMonitoredByJob&& value) { m_isMonitoredByJobHasBeenSet = true; m_isMonitoredByJob = std::move(value); }
-    inline JobDetails& WithIsMonitoredByJob(const IsMonitoredByJob& value) { SetIsMonitoredByJob(value); return *this;}
-    inline JobDetails& WithIsMonitoredByJob(IsMonitoredByJob&& value) { SetIsMonitoredByJob(std::move(value)); return *this;}
+    inline void SetIsMonitoredByJob(IsMonitoredByJob value) { m_isMonitoredByJobHasBeenSet = true; m_isMonitoredByJob = value; }
+    inline JobDetails& WithIsMonitoredByJob(IsMonitoredByJob value) { SetIsMonitoredByJob(value); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +91,12 @@ namespace Model
      * only run of a one-time job.</p> <p>This value is typically null if the value for
      * the isDefinedInJob property is FALSE or UNKNOWN.</p>
      */
-    inline const Aws::String& GetLastJobId() const{ return m_lastJobId; }
+    inline const Aws::String& GetLastJobId() const { return m_lastJobId; }
     inline bool LastJobIdHasBeenSet() const { return m_lastJobIdHasBeenSet; }
-    inline void SetLastJobId(const Aws::String& value) { m_lastJobIdHasBeenSet = true; m_lastJobId = value; }
-    inline void SetLastJobId(Aws::String&& value) { m_lastJobIdHasBeenSet = true; m_lastJobId = std::move(value); }
-    inline void SetLastJobId(const char* value) { m_lastJobIdHasBeenSet = true; m_lastJobId.assign(value); }
-    inline JobDetails& WithLastJobId(const Aws::String& value) { SetLastJobId(value); return *this;}
-    inline JobDetails& WithLastJobId(Aws::String&& value) { SetLastJobId(std::move(value)); return *this;}
-    inline JobDetails& WithLastJobId(const char* value) { SetLastJobId(value); return *this;}
+    template<typename LastJobIdT = Aws::String>
+    void SetLastJobId(LastJobIdT&& value) { m_lastJobIdHasBeenSet = true; m_lastJobId = std::forward<LastJobIdT>(value); }
+    template<typename LastJobIdT = Aws::String>
+    JobDetails& WithLastJobId(LastJobIdT&& value) { SetLastJobId(std::forward<LastJobIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,25 +106,25 @@ namespace Model
      * the most recent run started.</p> <p>This value is typically null if the value
      * for the isDefinedInJob property is FALSE or UNKNOWN.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastJobRunTime() const{ return m_lastJobRunTime; }
+    inline const Aws::Utils::DateTime& GetLastJobRunTime() const { return m_lastJobRunTime; }
     inline bool LastJobRunTimeHasBeenSet() const { return m_lastJobRunTimeHasBeenSet; }
-    inline void SetLastJobRunTime(const Aws::Utils::DateTime& value) { m_lastJobRunTimeHasBeenSet = true; m_lastJobRunTime = value; }
-    inline void SetLastJobRunTime(Aws::Utils::DateTime&& value) { m_lastJobRunTimeHasBeenSet = true; m_lastJobRunTime = std::move(value); }
-    inline JobDetails& WithLastJobRunTime(const Aws::Utils::DateTime& value) { SetLastJobRunTime(value); return *this;}
-    inline JobDetails& WithLastJobRunTime(Aws::Utils::DateTime&& value) { SetLastJobRunTime(std::move(value)); return *this;}
+    template<typename LastJobRunTimeT = Aws::Utils::DateTime>
+    void SetLastJobRunTime(LastJobRunTimeT&& value) { m_lastJobRunTimeHasBeenSet = true; m_lastJobRunTime = std::forward<LastJobRunTimeT>(value); }
+    template<typename LastJobRunTimeT = Aws::Utils::DateTime>
+    JobDetails& WithLastJobRunTime(LastJobRunTimeT&& value) { SetLastJobRunTime(std::forward<LastJobRunTimeT>(value)); return *this;}
     ///@}
   private:
 
-    IsDefinedInJob m_isDefinedInJob;
+    IsDefinedInJob m_isDefinedInJob{IsDefinedInJob::NOT_SET};
     bool m_isDefinedInJobHasBeenSet = false;
 
-    IsMonitoredByJob m_isMonitoredByJob;
+    IsMonitoredByJob m_isMonitoredByJob{IsMonitoredByJob::NOT_SET};
     bool m_isMonitoredByJobHasBeenSet = false;
 
     Aws::String m_lastJobId;
     bool m_lastJobIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastJobRunTime;
+    Aws::Utils::DateTime m_lastJobRunTime{};
     bool m_lastJobRunTimeHasBeenSet = false;
   };
 

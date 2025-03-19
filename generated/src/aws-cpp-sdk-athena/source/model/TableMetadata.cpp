@@ -18,19 +18,7 @@ namespace Athena
 namespace Model
 {
 
-TableMetadata::TableMetadata() : 
-    m_nameHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_lastAccessTimeHasBeenSet(false),
-    m_tableTypeHasBeenSet(false),
-    m_columnsHasBeenSet(false),
-    m_partitionKeysHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 TableMetadata::TableMetadata(JsonView jsonValue)
-  : TableMetadata()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ TableMetadata& TableMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTime"))
   {
     m_createTime = jsonValue.GetDouble("CreateTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastAccessTime"))
   {
     m_lastAccessTime = jsonValue.GetDouble("LastAccessTime");
-
     m_lastAccessTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableType"))
   {
     m_tableType = jsonValue.GetString("TableType");
-
     m_tableTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Columns"))
   {
     Aws::Utils::Array<JsonView> columnsJsonList = jsonValue.GetArray("Columns");
@@ -74,7 +54,6 @@ TableMetadata& TableMetadata::operator =(JsonView jsonValue)
     }
     m_columnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PartitionKeys"))
   {
     Aws::Utils::Array<JsonView> partitionKeysJsonList = jsonValue.GetArray("PartitionKeys");
@@ -84,7 +63,6 @@ TableMetadata& TableMetadata::operator =(JsonView jsonValue)
     }
     m_partitionKeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -94,7 +72,6 @@ TableMetadata& TableMetadata::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

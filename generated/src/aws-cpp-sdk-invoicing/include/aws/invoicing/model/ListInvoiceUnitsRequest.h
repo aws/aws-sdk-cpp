@@ -23,7 +23,7 @@ namespace Model
   class ListInvoiceUnitsRequest : public InvoicingRequest
   {
   public:
-    AWS_INVOICING_API ListInvoiceUnitsRequest();
+    AWS_INVOICING_API ListInvoiceUnitsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,12 +43,12 @@ namespace Model
      * Supported filter types are <code>InvoiceReceivers</code>, <code>Names</code>,
      * and <code>Accounts</code>. </p>
      */
-    inline const Filters& GetFilters() const{ return m_filters; }
+    inline const Filters& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Filters& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Filters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListInvoiceUnitsRequest& WithFilters(const Filters& value) { SetFilters(value); return *this;}
-    inline ListInvoiceUnitsRequest& WithFilters(Filters&& value) { SetFilters(std::move(value)); return *this;}
+    template<typename FiltersT = Filters>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Filters>
+    ListInvoiceUnitsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,21 +56,19 @@ namespace Model
      * <p>The next token used to indicate where the returned list should start from.
      * </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListInvoiceUnitsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListInvoiceUnitsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListInvoiceUnitsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListInvoiceUnitsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of invoice units that can be returned. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListInvoiceUnitsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -83,12 +81,12 @@ namespace Model
      * it was deleted. If an <code>AsOf</code> is not provided, the default value is
      * the current time. </p>
      */
-    inline const Aws::Utils::DateTime& GetAsOf() const{ return m_asOf; }
+    inline const Aws::Utils::DateTime& GetAsOf() const { return m_asOf; }
     inline bool AsOfHasBeenSet() const { return m_asOfHasBeenSet; }
-    inline void SetAsOf(const Aws::Utils::DateTime& value) { m_asOfHasBeenSet = true; m_asOf = value; }
-    inline void SetAsOf(Aws::Utils::DateTime&& value) { m_asOfHasBeenSet = true; m_asOf = std::move(value); }
-    inline ListInvoiceUnitsRequest& WithAsOf(const Aws::Utils::DateTime& value) { SetAsOf(value); return *this;}
-    inline ListInvoiceUnitsRequest& WithAsOf(Aws::Utils::DateTime&& value) { SetAsOf(std::move(value)); return *this;}
+    template<typename AsOfT = Aws::Utils::DateTime>
+    void SetAsOf(AsOfT&& value) { m_asOfHasBeenSet = true; m_asOf = std::forward<AsOfT>(value); }
+    template<typename AsOfT = Aws::Utils::DateTime>
+    ListInvoiceUnitsRequest& WithAsOf(AsOfT&& value) { SetAsOf(std::forward<AsOfT>(value)); return *this;}
     ///@}
   private:
 
@@ -98,10 +96,10 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_asOf;
+    Aws::Utils::DateTime m_asOf{};
     bool m_asOfHasBeenSet = false;
   };
 

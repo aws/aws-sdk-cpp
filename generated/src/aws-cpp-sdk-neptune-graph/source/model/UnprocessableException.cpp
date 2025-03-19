@@ -18,15 +18,7 @@ namespace NeptuneGraph
 namespace Model
 {
 
-UnprocessableException::UnprocessableException() : 
-    m_messageHasBeenSet(false),
-    m_reason(UnprocessableExceptionReason::NOT_SET),
-    m_reasonHasBeenSet(false)
-{
-}
-
 UnprocessableException::UnprocessableException(JsonView jsonValue)
-  : UnprocessableException()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ UnprocessableException& UnprocessableException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = UnprocessableExceptionReasonMapper::GetUnprocessableExceptionReasonForName(jsonValue.GetString("reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

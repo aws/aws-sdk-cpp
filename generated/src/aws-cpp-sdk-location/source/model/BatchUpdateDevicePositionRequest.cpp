@@ -12,12 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchUpdateDevicePositionRequest::BatchUpdateDevicePositionRequest() : 
-    m_trackerNameHasBeenSet(false),
-    m_updatesHasBeenSet(false)
-{
-}
-
 Aws::String BatchUpdateDevicePositionRequest::SerializePayload() const
 {
   JsonValue payload;

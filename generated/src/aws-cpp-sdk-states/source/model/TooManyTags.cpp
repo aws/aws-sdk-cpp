@@ -18,14 +18,7 @@ namespace SFN
 namespace Model
 {
 
-TooManyTags::TooManyTags() : 
-    m_messageHasBeenSet(false),
-    m_resourceNameHasBeenSet(false)
-{
-}
-
 TooManyTags::TooManyTags(JsonView jsonValue)
-  : TooManyTags()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TooManyTags& TooManyTags::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceName"))
   {
     m_resourceName = jsonValue.GetString("resourceName");
-
     m_resourceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

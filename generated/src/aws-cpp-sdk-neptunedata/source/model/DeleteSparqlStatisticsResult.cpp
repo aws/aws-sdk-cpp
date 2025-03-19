@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteSparqlStatisticsResult::DeleteSparqlStatisticsResult() : 
-    m_statusCode(0)
-{
-}
-
 DeleteSparqlStatisticsResult::DeleteSparqlStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteSparqlStatisticsResult()
 {
   *this = result;
 }
@@ -34,25 +28,24 @@ DeleteSparqlStatisticsResult& DeleteSparqlStatisticsResult::operator =(const Aws
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("payload"))
   {
     m_payload = jsonValue.GetObject("payload");
-
+    m_payloadHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_statusCode = static_cast<int>(result.GetResponseCode());
-
+  m_statusCodeHasBeenSet = true;
   return *this;
 }

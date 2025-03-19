@@ -12,13 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteInstanceRequest::DeleteInstanceRequest() : 
-    m_instanceNameHasBeenSet(false),
-    m_forceDeleteAddOns(false),
-    m_forceDeleteAddOnsHasBeenSet(false)
-{
-}
-
 Aws::String DeleteInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -34,7 +34,7 @@ namespace Model
   class PropertyRequest
   {
   public:
-    AWS_IOTTWINMAKER_API PropertyRequest();
+    AWS_IOTTWINMAKER_API PropertyRequest() = default;
     AWS_IOTTWINMAKER_API PropertyRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API PropertyRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,36 +44,34 @@ namespace Model
     /**
      * <p>An object that specifies information about a property.</p>
      */
-    inline const PropertyDefinitionRequest& GetDefinition() const{ return m_definition; }
+    inline const PropertyDefinitionRequest& GetDefinition() const { return m_definition; }
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-    inline void SetDefinition(const PropertyDefinitionRequest& value) { m_definitionHasBeenSet = true; m_definition = value; }
-    inline void SetDefinition(PropertyDefinitionRequest&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
-    inline PropertyRequest& WithDefinition(const PropertyDefinitionRequest& value) { SetDefinition(value); return *this;}
-    inline PropertyRequest& WithDefinition(PropertyDefinitionRequest&& value) { SetDefinition(std::move(value)); return *this;}
+    template<typename DefinitionT = PropertyDefinitionRequest>
+    void SetDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition = std::forward<DefinitionT>(value); }
+    template<typename DefinitionT = PropertyDefinitionRequest>
+    PropertyRequest& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the property.</p>
      */
-    inline const DataValue& GetValue() const{ return m_value; }
+    inline const DataValue& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const DataValue& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(DataValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline PropertyRequest& WithValue(const DataValue& value) { SetValue(value); return *this;}
-    inline PropertyRequest& WithValue(DataValue&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = DataValue>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = DataValue>
+    PropertyRequest& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The update type of the update property request.</p>
      */
-    inline const PropertyUpdateType& GetUpdateType() const{ return m_updateType; }
+    inline PropertyUpdateType GetUpdateType() const { return m_updateType; }
     inline bool UpdateTypeHasBeenSet() const { return m_updateTypeHasBeenSet; }
-    inline void SetUpdateType(const PropertyUpdateType& value) { m_updateTypeHasBeenSet = true; m_updateType = value; }
-    inline void SetUpdateType(PropertyUpdateType&& value) { m_updateTypeHasBeenSet = true; m_updateType = std::move(value); }
-    inline PropertyRequest& WithUpdateType(const PropertyUpdateType& value) { SetUpdateType(value); return *this;}
-    inline PropertyRequest& WithUpdateType(PropertyUpdateType&& value) { SetUpdateType(std::move(value)); return *this;}
+    inline void SetUpdateType(PropertyUpdateType value) { m_updateTypeHasBeenSet = true; m_updateType = value; }
+    inline PropertyRequest& WithUpdateType(PropertyUpdateType value) { SetUpdateType(value); return *this;}
     ///@}
   private:
 
@@ -83,7 +81,7 @@ namespace Model
     DataValue m_value;
     bool m_valueHasBeenSet = false;
 
-    PropertyUpdateType m_updateType;
+    PropertyUpdateType m_updateType{PropertyUpdateType::NOT_SET};
     bool m_updateTypeHasBeenSet = false;
   };
 

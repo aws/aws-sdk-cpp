@@ -18,27 +18,7 @@ namespace Kinesis
 namespace Model
 {
 
-StreamDescription::StreamDescription() : 
-    m_streamNameHasBeenSet(false),
-    m_streamARNHasBeenSet(false),
-    m_streamStatus(StreamStatus::NOT_SET),
-    m_streamStatusHasBeenSet(false),
-    m_streamModeDetailsHasBeenSet(false),
-    m_shardsHasBeenSet(false),
-    m_hasMoreShards(false),
-    m_hasMoreShardsHasBeenSet(false),
-    m_retentionPeriodHours(0),
-    m_retentionPeriodHoursHasBeenSet(false),
-    m_streamCreationTimestampHasBeenSet(false),
-    m_enhancedMonitoringHasBeenSet(false),
-    m_encryptionType(EncryptionType::NOT_SET),
-    m_encryptionTypeHasBeenSet(false),
-    m_keyIdHasBeenSet(false)
-{
-}
-
 StreamDescription::StreamDescription(JsonView jsonValue)
-  : StreamDescription()
 {
   *this = jsonValue;
 }
@@ -48,31 +28,23 @@ StreamDescription& StreamDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StreamName"))
   {
     m_streamName = jsonValue.GetString("StreamName");
-
     m_streamNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamARN"))
   {
     m_streamARN = jsonValue.GetString("StreamARN");
-
     m_streamARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamStatus"))
   {
     m_streamStatus = StreamStatusMapper::GetStreamStatusForName(jsonValue.GetString("StreamStatus"));
-
     m_streamStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamModeDetails"))
   {
     m_streamModeDetails = jsonValue.GetObject("StreamModeDetails");
-
     m_streamModeDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Shards"))
   {
     Aws::Utils::Array<JsonView> shardsJsonList = jsonValue.GetArray("Shards");
@@ -82,28 +54,21 @@ StreamDescription& StreamDescription::operator =(JsonView jsonValue)
     }
     m_shardsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HasMoreShards"))
   {
     m_hasMoreShards = jsonValue.GetBool("HasMoreShards");
-
     m_hasMoreShardsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetentionPeriodHours"))
   {
     m_retentionPeriodHours = jsonValue.GetInteger("RetentionPeriodHours");
-
     m_retentionPeriodHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamCreationTimestamp"))
   {
     m_streamCreationTimestamp = jsonValue.GetDouble("StreamCreationTimestamp");
-
     m_streamCreationTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnhancedMonitoring"))
   {
     Aws::Utils::Array<JsonView> enhancedMonitoringJsonList = jsonValue.GetArray("EnhancedMonitoring");
@@ -113,21 +78,16 @@ StreamDescription& StreamDescription::operator =(JsonView jsonValue)
     }
     m_enhancedMonitoringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionType"))
   {
     m_encryptionType = EncryptionTypeMapper::GetEncryptionTypeForName(jsonValue.GetString("EncryptionType"));
-
     m_encryptionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyId"))
   {
     m_keyId = jsonValue.GetString("KeyId");
-
     m_keyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

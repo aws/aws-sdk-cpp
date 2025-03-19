@@ -18,14 +18,7 @@ namespace BedrockDataAutomation
 namespace Model
 {
 
-ValidationException::ValidationException() : 
-    m_messageHasBeenSet(false),
-    m_fieldListHasBeenSet(false)
-{
-}
-
 ValidationException::ValidationException(JsonView jsonValue)
-  : ValidationException()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ValidationException& ValidationException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fieldList"))
   {
     Aws::Utils::Array<JsonView> fieldListJsonList = jsonValue.GetArray("fieldList");
@@ -48,7 +39,6 @@ ValidationException& ValidationException::operator =(JsonView jsonValue)
     }
     m_fieldListHasBeenSet = true;
   }
-
   return *this;
 }
 

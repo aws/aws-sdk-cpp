@@ -18,16 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-CustomizableMetricParameters::CustomizableMetricParameters() : 
-    m_threshold(CustomizableMetricThreshold::NOT_SET),
-    m_thresholdHasBeenSet(false),
-    m_headroom(CustomizableMetricHeadroom::NOT_SET),
-    m_headroomHasBeenSet(false)
-{
-}
-
 CustomizableMetricParameters::CustomizableMetricParameters(JsonView jsonValue)
-  : CustomizableMetricParameters()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CustomizableMetricParameters& CustomizableMetricParameters::operator =(JsonView 
   if(jsonValue.ValueExists("threshold"))
   {
     m_threshold = CustomizableMetricThresholdMapper::GetCustomizableMetricThresholdForName(jsonValue.GetString("threshold"));
-
     m_thresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("headroom"))
   {
     m_headroom = CustomizableMetricHeadroomMapper::GetCustomizableMetricHeadroomForName(jsonValue.GetString("headroom"));
-
     m_headroomHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeChimeWebhookConfigurationsResult::DescribeChimeWebhookConfigurationsResult()
-{
-}
-
 DescribeChimeWebhookConfigurationsResult::DescribeChimeWebhookConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeChimeWebhookConfigurationsResult& DescribeChimeWebhookConfigurationsResu
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WebhookConfigurations"))
   {
     Aws::Utils::Array<JsonView> webhookConfigurationsJsonList = jsonValue.GetArray("WebhookConfigurations");
@@ -42,14 +37,15 @@ DescribeChimeWebhookConfigurationsResult& DescribeChimeWebhookConfigurationsResu
     {
       m_webhookConfigurations.push_back(webhookConfigurationsJsonList[webhookConfigurationsIndex].AsObject());
     }
+    m_webhookConfigurationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

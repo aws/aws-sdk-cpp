@@ -18,15 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-ArchivalSummary::ArchivalSummary() : 
-    m_archivalDateTimeHasBeenSet(false),
-    m_archivalReasonHasBeenSet(false),
-    m_archivalBackupArnHasBeenSet(false)
-{
-}
-
 ArchivalSummary::ArchivalSummary(JsonView jsonValue)
-  : ArchivalSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ArchivalSummary& ArchivalSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ArchivalDateTime"))
   {
     m_archivalDateTime = jsonValue.GetDouble("ArchivalDateTime");
-
     m_archivalDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ArchivalReason"))
   {
     m_archivalReason = jsonValue.GetString("ArchivalReason");
-
     m_archivalReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ArchivalBackupArn"))
   {
     m_archivalBackupArn = jsonValue.GetString("ArchivalBackupArn");
-
     m_archivalBackupArnHasBeenSet = true;
   }
-
   return *this;
 }
 

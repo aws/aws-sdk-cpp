@@ -18,17 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-ResourceSnapshotJobSummary::ResourceSnapshotJobSummary() : 
-    m_arnHasBeenSet(false),
-    m_engagementIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_status(ResourceSnapshotJobStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ResourceSnapshotJobSummary::ResourceSnapshotJobSummary(JsonView jsonValue)
-  : ResourceSnapshotJobSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ResourceSnapshotJobSummary& ResourceSnapshotJobSummary::operator =(JsonView json
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngagementId"))
   {
     m_engagementId = jsonValue.GetString("EngagementId");
-
     m_engagementIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ResourceSnapshotJobStatusMapper::GetResourceSnapshotJobStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,20 +18,7 @@ namespace LaunchWizard
 namespace Model
 {
 
-WorkloadData::WorkloadData() : 
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_documentationUrlHasBeenSet(false),
-    m_iconUrlHasBeenSet(false),
-    m_status(WorkloadStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_workloadNameHasBeenSet(false)
-{
-}
-
 WorkloadData::WorkloadData(JsonView jsonValue)
-  : WorkloadData()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ WorkloadData& WorkloadData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("documentationUrl"))
   {
     m_documentationUrl = jsonValue.GetString("documentationUrl");
-
     m_documentationUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iconUrl"))
   {
     m_iconUrl = jsonValue.GetString("iconUrl");
-
     m_iconUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = WorkloadStatusMapper::GetWorkloadStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workloadName"))
   {
     m_workloadName = jsonValue.GetString("workloadName");
-
     m_workloadNameHasBeenSet = true;
   }
-
   return *this;
 }
 

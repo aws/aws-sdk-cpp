@@ -21,13 +21,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-InvokeFlowInitialResponse::InvokeFlowInitialResponse() : 
-    m_executionIdHasBeenSet(false)
-{
-}
-
 InvokeFlowInitialResponse::InvokeFlowInitialResponse(JsonView jsonValue)
-  : InvokeFlowInitialResponse()
 {
   *this = jsonValue;
 }
@@ -44,6 +38,7 @@ InvokeFlowInitialResponse::InvokeFlowInitialResponse(const Http::HeaderValueColl
   if(executionIdIter != headers.end())
   {
     m_executionId = executionIdIter->second;
+    m_executionIdHasBeenSet = true;
   }
 
 }

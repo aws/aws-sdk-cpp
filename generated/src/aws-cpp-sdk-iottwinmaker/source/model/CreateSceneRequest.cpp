@@ -12,17 +12,6 @@ using namespace Aws::IoTTwinMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSceneRequest::CreateSceneRequest() : 
-    m_workspaceIdHasBeenSet(false),
-    m_sceneIdHasBeenSet(false),
-    m_contentLocationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_sceneMetadataHasBeenSet(false)
-{
-}
-
 Aws::String CreateSceneRequest::SerializePayload() const
 {
   JsonValue payload;

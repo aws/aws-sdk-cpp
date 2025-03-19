@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2VpnConnectionRoutesDetails::AwsEc2VpnConnectionRoutesDetails() : 
-    m_destinationCidrBlockHasBeenSet(false),
-    m_stateHasBeenSet(false)
-{
-}
-
 AwsEc2VpnConnectionRoutesDetails::AwsEc2VpnConnectionRoutesDetails(JsonView jsonValue)
-  : AwsEc2VpnConnectionRoutesDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsEc2VpnConnectionRoutesDetails& AwsEc2VpnConnectionRoutesDetails::operator =(J
   if(jsonValue.ValueExists("DestinationCidrBlock"))
   {
     m_destinationCidrBlock = jsonValue.GetString("DestinationCidrBlock");
-
     m_destinationCidrBlockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetString("State");
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

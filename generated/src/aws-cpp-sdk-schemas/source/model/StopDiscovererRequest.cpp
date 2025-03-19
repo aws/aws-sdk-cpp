@@ -12,11 +12,6 @@ using namespace Aws::Schemas::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopDiscovererRequest::StopDiscovererRequest() : 
-    m_discovererIdHasBeenSet(false)
-{
-}
-
 Aws::String StopDiscovererRequest::SerializePayload() const
 {
   return {};

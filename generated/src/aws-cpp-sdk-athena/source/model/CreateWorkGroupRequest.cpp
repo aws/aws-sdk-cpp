@@ -12,14 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWorkGroupRequest::CreateWorkGroupRequest() : 
-    m_nameHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateWorkGroupRequest::SerializePayload() const
 {
   JsonValue payload;

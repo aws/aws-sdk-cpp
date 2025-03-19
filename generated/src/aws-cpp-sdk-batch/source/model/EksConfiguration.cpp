@@ -18,14 +18,7 @@ namespace Batch
 namespace Model
 {
 
-EksConfiguration::EksConfiguration() : 
-    m_eksClusterArnHasBeenSet(false),
-    m_kubernetesNamespaceHasBeenSet(false)
-{
-}
-
 EksConfiguration::EksConfiguration(JsonView jsonValue)
-  : EksConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EksConfiguration& EksConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eksClusterArn"))
   {
     m_eksClusterArn = jsonValue.GetString("eksClusterArn");
-
     m_eksClusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kubernetesNamespace"))
   {
     m_kubernetesNamespace = jsonValue.GetString("kubernetesNamespace");
-
     m_kubernetesNamespaceHasBeenSet = true;
   }
-
   return *this;
 }
 

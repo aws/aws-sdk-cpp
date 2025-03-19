@@ -18,21 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-ActionParameters::ActionParameters() : 
-    m_typeHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_anchorHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_globalHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_fieldsHasBeenSet(false),
-    m_stateHasBeenSet(false)
-{
-}
-
 ActionParameters::ActionParameters(JsonView jsonValue)
-  : ActionParameters()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ ActionParameters& ActionParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetObject("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetObject("url");
-
     m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("anchor"))
   {
     m_anchor = jsonValue.GetObject("anchor");
-
     m_anchorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("target"))
   {
     m_target = jsonValue.GetObject("target");
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("global"))
   {
     m_global = jsonValue.GetObject("global");
-
     m_globalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("model"))
   {
     m_model = jsonValue.GetString("model");
-
     m_modelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetObject("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fields"))
   {
     Aws::Map<Aws::String, JsonView> fieldsJsonMap = jsonValue.GetObject("fields").GetAllObjects();
@@ -97,14 +69,11 @@ ActionParameters& ActionParameters::operator =(JsonView jsonValue)
     }
     m_fieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetObject("state");
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

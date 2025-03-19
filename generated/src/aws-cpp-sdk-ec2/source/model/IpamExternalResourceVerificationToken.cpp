@@ -20,25 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpamExternalResourceVerificationToken::IpamExternalResourceVerificationToken() : 
-    m_ipamExternalResourceVerificationTokenIdHasBeenSet(false),
-    m_ipamExternalResourceVerificationTokenArnHasBeenSet(false),
-    m_ipamIdHasBeenSet(false),
-    m_ipamArnHasBeenSet(false),
-    m_ipamRegionHasBeenSet(false),
-    m_tokenValueHasBeenSet(false),
-    m_tokenNameHasBeenSet(false),
-    m_notAfterHasBeenSet(false),
-    m_status(TokenState::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_state(IpamExternalResourceVerificationTokenState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 IpamExternalResourceVerificationToken::IpamExternalResourceVerificationToken(const XmlNode& xmlNode)
-  : IpamExternalResourceVerificationToken()
 {
   *this = xmlNode;
 }
@@ -100,13 +82,14 @@ IpamExternalResourceVerificationToken& IpamExternalResourceVerificationToken::op
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = TokenStateMapper::GetTokenStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = TokenStateMapper::GetTokenStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -118,7 +101,7 @@ IpamExternalResourceVerificationToken& IpamExternalResourceVerificationToken::op
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = IpamExternalResourceVerificationTokenStateMapper::GetIpamExternalResourceVerificationTokenStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = IpamExternalResourceVerificationTokenStateMapper::GetIpamExternalResourceVerificationTokenStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
   }

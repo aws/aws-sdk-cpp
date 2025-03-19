@@ -18,16 +18,7 @@ namespace FMS
 namespace Model
 {
 
-NetworkFirewallBlackHoleRouteDetectedViolation::NetworkFirewallBlackHoleRouteDetectedViolation() : 
-    m_violationTargetHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_violatingRoutesHasBeenSet(false)
-{
-}
-
 NetworkFirewallBlackHoleRouteDetectedViolation::NetworkFirewallBlackHoleRouteDetectedViolation(JsonView jsonValue)
-  : NetworkFirewallBlackHoleRouteDetectedViolation()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ NetworkFirewallBlackHoleRouteDetectedViolation& NetworkFirewallBlackHoleRouteDet
   if(jsonValue.ValueExists("ViolationTarget"))
   {
     m_violationTarget = jsonValue.GetString("ViolationTarget");
-
     m_violationTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RouteTableId"))
   {
     m_routeTableId = jsonValue.GetString("RouteTableId");
-
     m_routeTableIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ViolatingRoutes"))
   {
     Aws::Utils::Array<JsonView> violatingRoutesJsonList = jsonValue.GetArray("ViolatingRoutes");
@@ -64,7 +49,6 @@ NetworkFirewallBlackHoleRouteDetectedViolation& NetworkFirewallBlackHoleRouteDet
     }
     m_violatingRoutesHasBeenSet = true;
   }
-
   return *this;
 }
 

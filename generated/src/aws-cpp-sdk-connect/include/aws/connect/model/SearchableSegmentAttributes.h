@@ -34,7 +34,7 @@ namespace Model
   class SearchableSegmentAttributes
   {
   public:
-    AWS_CONNECT_API SearchableSegmentAttributes();
+    AWS_CONNECT_API SearchableSegmentAttributes() = default;
     AWS_CONNECT_API SearchableSegmentAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API SearchableSegmentAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
     /**
      * <p>The list of criteria based on searchable segment attributes.</p>
      */
-    inline const Aws::Vector<SearchableSegmentAttributesCriteria>& GetCriteria() const{ return m_criteria; }
+    inline const Aws::Vector<SearchableSegmentAttributesCriteria>& GetCriteria() const { return m_criteria; }
     inline bool CriteriaHasBeenSet() const { return m_criteriaHasBeenSet; }
-    inline void SetCriteria(const Aws::Vector<SearchableSegmentAttributesCriteria>& value) { m_criteriaHasBeenSet = true; m_criteria = value; }
-    inline void SetCriteria(Aws::Vector<SearchableSegmentAttributesCriteria>&& value) { m_criteriaHasBeenSet = true; m_criteria = std::move(value); }
-    inline SearchableSegmentAttributes& WithCriteria(const Aws::Vector<SearchableSegmentAttributesCriteria>& value) { SetCriteria(value); return *this;}
-    inline SearchableSegmentAttributes& WithCriteria(Aws::Vector<SearchableSegmentAttributesCriteria>&& value) { SetCriteria(std::move(value)); return *this;}
-    inline SearchableSegmentAttributes& AddCriteria(const SearchableSegmentAttributesCriteria& value) { m_criteriaHasBeenSet = true; m_criteria.push_back(value); return *this; }
-    inline SearchableSegmentAttributes& AddCriteria(SearchableSegmentAttributesCriteria&& value) { m_criteriaHasBeenSet = true; m_criteria.push_back(std::move(value)); return *this; }
+    template<typename CriteriaT = Aws::Vector<SearchableSegmentAttributesCriteria>>
+    void SetCriteria(CriteriaT&& value) { m_criteriaHasBeenSet = true; m_criteria = std::forward<CriteriaT>(value); }
+    template<typename CriteriaT = Aws::Vector<SearchableSegmentAttributesCriteria>>
+    SearchableSegmentAttributes& WithCriteria(CriteriaT&& value) { SetCriteria(std::forward<CriteriaT>(value)); return *this;}
+    template<typename CriteriaT = SearchableSegmentAttributesCriteria>
+    SearchableSegmentAttributes& AddCriteria(CriteriaT&& value) { m_criteriaHasBeenSet = true; m_criteria.emplace_back(std::forward<CriteriaT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,19 +59,17 @@ namespace Model
      * <p>The match type combining search criteria using multiple searchable segment
      * attributes.</p>
      */
-    inline const SearchContactsMatchType& GetMatchType() const{ return m_matchType; }
+    inline SearchContactsMatchType GetMatchType() const { return m_matchType; }
     inline bool MatchTypeHasBeenSet() const { return m_matchTypeHasBeenSet; }
-    inline void SetMatchType(const SearchContactsMatchType& value) { m_matchTypeHasBeenSet = true; m_matchType = value; }
-    inline void SetMatchType(SearchContactsMatchType&& value) { m_matchTypeHasBeenSet = true; m_matchType = std::move(value); }
-    inline SearchableSegmentAttributes& WithMatchType(const SearchContactsMatchType& value) { SetMatchType(value); return *this;}
-    inline SearchableSegmentAttributes& WithMatchType(SearchContactsMatchType&& value) { SetMatchType(std::move(value)); return *this;}
+    inline void SetMatchType(SearchContactsMatchType value) { m_matchTypeHasBeenSet = true; m_matchType = value; }
+    inline SearchableSegmentAttributes& WithMatchType(SearchContactsMatchType value) { SetMatchType(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<SearchableSegmentAttributesCriteria> m_criteria;
     bool m_criteriaHasBeenSet = false;
 
-    SearchContactsMatchType m_matchType;
+    SearchContactsMatchType m_matchType{SearchContactsMatchType::NOT_SET};
     bool m_matchTypeHasBeenSet = false;
   };
 

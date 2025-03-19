@@ -12,12 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTagsRequest::DeleteTagsRequest() : 
-    m_resourceIdHasBeenSet(false),
-    m_tagKeysHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTagsRequest::SerializePayload() const
 {
   JsonValue payload;

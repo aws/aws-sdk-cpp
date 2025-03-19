@@ -29,7 +29,7 @@ namespace Model
   class ListPromptsResult
   {
   public:
-    AWS_BEDROCKAGENT_API ListPromptsResult();
+    AWS_BEDROCKAGENT_API ListPromptsResult() = default;
     AWS_BEDROCKAGENT_API ListPromptsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKAGENT_API ListPromptsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,11 @@ namespace Model
      * value provided in the request, use this token when making another request in the
      * <code>nextToken</code> field to return the next batch of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListPromptsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPromptsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPromptsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPromptsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,32 +52,33 @@ namespace Model
      * <p>A list, each member of which contains information about a prompt using Prompt
      * management.</p>
      */
-    inline const Aws::Vector<PromptSummary>& GetPromptSummaries() const{ return m_promptSummaries; }
-    inline void SetPromptSummaries(const Aws::Vector<PromptSummary>& value) { m_promptSummaries = value; }
-    inline void SetPromptSummaries(Aws::Vector<PromptSummary>&& value) { m_promptSummaries = std::move(value); }
-    inline ListPromptsResult& WithPromptSummaries(const Aws::Vector<PromptSummary>& value) { SetPromptSummaries(value); return *this;}
-    inline ListPromptsResult& WithPromptSummaries(Aws::Vector<PromptSummary>&& value) { SetPromptSummaries(std::move(value)); return *this;}
-    inline ListPromptsResult& AddPromptSummaries(const PromptSummary& value) { m_promptSummaries.push_back(value); return *this; }
-    inline ListPromptsResult& AddPromptSummaries(PromptSummary&& value) { m_promptSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PromptSummary>& GetPromptSummaries() const { return m_promptSummaries; }
+    template<typename PromptSummariesT = Aws::Vector<PromptSummary>>
+    void SetPromptSummaries(PromptSummariesT&& value) { m_promptSummariesHasBeenSet = true; m_promptSummaries = std::forward<PromptSummariesT>(value); }
+    template<typename PromptSummariesT = Aws::Vector<PromptSummary>>
+    ListPromptsResult& WithPromptSummaries(PromptSummariesT&& value) { SetPromptSummaries(std::forward<PromptSummariesT>(value)); return *this;}
+    template<typename PromptSummariesT = PromptSummary>
+    ListPromptsResult& AddPromptSummaries(PromptSummariesT&& value) { m_promptSummariesHasBeenSet = true; m_promptSummaries.emplace_back(std::forward<PromptSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListPromptsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListPromptsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListPromptsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListPromptsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<PromptSummary> m_promptSummaries;
+    bool m_promptSummariesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

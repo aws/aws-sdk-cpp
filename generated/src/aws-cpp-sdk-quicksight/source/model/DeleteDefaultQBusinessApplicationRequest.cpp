@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteDefaultQBusinessApplicationRequest::DeleteDefaultQBusinessApplicationRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDefaultQBusinessApplicationRequest::SerializePayload() const
 {
   return {};

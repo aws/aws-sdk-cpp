@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StopModelResult::StopModelResult() : 
-    m_status(ModelHostingStatus::NOT_SET)
-{
-}
-
 StopModelResult::StopModelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StopModelResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ StopModelResult& StopModelResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ModelHostingStatusMapper::GetModelHostingStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

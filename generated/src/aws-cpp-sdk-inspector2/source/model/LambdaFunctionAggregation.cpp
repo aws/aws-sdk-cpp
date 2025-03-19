@@ -18,20 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-LambdaFunctionAggregation::LambdaFunctionAggregation() : 
-    m_functionNamesHasBeenSet(false),
-    m_functionTagsHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false),
-    m_runtimesHasBeenSet(false),
-    m_sortBy(LambdaFunctionSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 LambdaFunctionAggregation::LambdaFunctionAggregation(JsonView jsonValue)
-  : LambdaFunctionAggregation()
 {
   *this = jsonValue;
 }
@@ -47,7 +34,6 @@ LambdaFunctionAggregation& LambdaFunctionAggregation::operator =(JsonView jsonVa
     }
     m_functionNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("functionTags"))
   {
     Aws::Utils::Array<JsonView> functionTagsJsonList = jsonValue.GetArray("functionTags");
@@ -57,7 +43,6 @@ LambdaFunctionAggregation& LambdaFunctionAggregation::operator =(JsonView jsonVa
     }
     m_functionTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceIds"))
   {
     Aws::Utils::Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("resourceIds");
@@ -67,7 +52,6 @@ LambdaFunctionAggregation& LambdaFunctionAggregation::operator =(JsonView jsonVa
     }
     m_resourceIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runtimes"))
   {
     Aws::Utils::Array<JsonView> runtimesJsonList = jsonValue.GetArray("runtimes");
@@ -77,21 +61,16 @@ LambdaFunctionAggregation& LambdaFunctionAggregation::operator =(JsonView jsonVa
     }
     m_runtimesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sortBy"))
   {
     m_sortBy = LambdaFunctionSortByMapper::GetLambdaFunctionSortByForName(jsonValue.GetString("sortBy"));
-
     m_sortByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sortOrder"))
   {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
-
     m_sortOrderHasBeenSet = true;
   }
-
   return *this;
 }
 

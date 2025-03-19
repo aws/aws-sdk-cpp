@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CancelChangeSetRequest::CancelChangeSetRequest() : 
-    m_catalogHasBeenSet(false),
-    m_changeSetIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelChangeSetRequest::SerializePayload() const
 {
   return {};

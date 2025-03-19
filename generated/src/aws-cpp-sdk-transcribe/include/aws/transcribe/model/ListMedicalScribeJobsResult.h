@@ -30,7 +30,7 @@ namespace Model
   class ListMedicalScribeJobsResult
   {
   public:
-    AWS_TRANSCRIBESERVICE_API ListMedicalScribeJobsResult();
+    AWS_TRANSCRIBESERVICE_API ListMedicalScribeJobsResult() = default;
     AWS_TRANSCRIBESERVICE_API ListMedicalScribeJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSCRIBESERVICE_API ListMedicalScribeJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,11 +40,9 @@ namespace Model
      * <p>Lists all Medical Scribe jobs that have the status specified in your request.
      * Jobs are ordered by creation date, with the newest job first.</p>
      */
-    inline const MedicalScribeJobStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const MedicalScribeJobStatus& value) { m_status = value; }
-    inline void SetStatus(MedicalScribeJobStatus&& value) { m_status = std::move(value); }
-    inline ListMedicalScribeJobsResult& WithStatus(const MedicalScribeJobStatus& value) { SetStatus(value); return *this;}
-    inline ListMedicalScribeJobsResult& WithStatus(MedicalScribeJobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline MedicalScribeJobStatus GetStatus() const { return m_status; }
+    inline void SetStatus(MedicalScribeJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ListMedicalScribeJobsResult& WithStatus(MedicalScribeJobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -55,47 +53,47 @@ namespace Model
      * then run your request again including <code>NextToken</code> with the value of
      * the copied string. Repeat as needed to view all your results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListMedicalScribeJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMedicalScribeJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMedicalScribeJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMedicalScribeJobsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides a summary of information about each result.</p>
      */
-    inline const Aws::Vector<MedicalScribeJobSummary>& GetMedicalScribeJobSummaries() const{ return m_medicalScribeJobSummaries; }
-    inline void SetMedicalScribeJobSummaries(const Aws::Vector<MedicalScribeJobSummary>& value) { m_medicalScribeJobSummaries = value; }
-    inline void SetMedicalScribeJobSummaries(Aws::Vector<MedicalScribeJobSummary>&& value) { m_medicalScribeJobSummaries = std::move(value); }
-    inline ListMedicalScribeJobsResult& WithMedicalScribeJobSummaries(const Aws::Vector<MedicalScribeJobSummary>& value) { SetMedicalScribeJobSummaries(value); return *this;}
-    inline ListMedicalScribeJobsResult& WithMedicalScribeJobSummaries(Aws::Vector<MedicalScribeJobSummary>&& value) { SetMedicalScribeJobSummaries(std::move(value)); return *this;}
-    inline ListMedicalScribeJobsResult& AddMedicalScribeJobSummaries(const MedicalScribeJobSummary& value) { m_medicalScribeJobSummaries.push_back(value); return *this; }
-    inline ListMedicalScribeJobsResult& AddMedicalScribeJobSummaries(MedicalScribeJobSummary&& value) { m_medicalScribeJobSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MedicalScribeJobSummary>& GetMedicalScribeJobSummaries() const { return m_medicalScribeJobSummaries; }
+    template<typename MedicalScribeJobSummariesT = Aws::Vector<MedicalScribeJobSummary>>
+    void SetMedicalScribeJobSummaries(MedicalScribeJobSummariesT&& value) { m_medicalScribeJobSummariesHasBeenSet = true; m_medicalScribeJobSummaries = std::forward<MedicalScribeJobSummariesT>(value); }
+    template<typename MedicalScribeJobSummariesT = Aws::Vector<MedicalScribeJobSummary>>
+    ListMedicalScribeJobsResult& WithMedicalScribeJobSummaries(MedicalScribeJobSummariesT&& value) { SetMedicalScribeJobSummaries(std::forward<MedicalScribeJobSummariesT>(value)); return *this;}
+    template<typename MedicalScribeJobSummariesT = MedicalScribeJobSummary>
+    ListMedicalScribeJobsResult& AddMedicalScribeJobSummaries(MedicalScribeJobSummariesT&& value) { m_medicalScribeJobSummariesHasBeenSet = true; m_medicalScribeJobSummaries.emplace_back(std::forward<MedicalScribeJobSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListMedicalScribeJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListMedicalScribeJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListMedicalScribeJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListMedicalScribeJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    MedicalScribeJobStatus m_status;
+    MedicalScribeJobStatus m_status{MedicalScribeJobStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<MedicalScribeJobSummary> m_medicalScribeJobSummaries;
+    bool m_medicalScribeJobSummariesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

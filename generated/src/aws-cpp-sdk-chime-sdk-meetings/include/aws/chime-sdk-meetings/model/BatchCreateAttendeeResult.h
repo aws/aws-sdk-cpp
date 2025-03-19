@@ -30,7 +30,7 @@ namespace Model
   class BatchCreateAttendeeResult
   {
   public:
-    AWS_CHIMESDKMEETINGS_API BatchCreateAttendeeResult();
+    AWS_CHIMESDKMEETINGS_API BatchCreateAttendeeResult() = default;
     AWS_CHIMESDKMEETINGS_API BatchCreateAttendeeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKMEETINGS_API BatchCreateAttendeeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>The attendee information, including attendees' IDs and join tokens.</p>
      */
-    inline const Aws::Vector<Attendee>& GetAttendees() const{ return m_attendees; }
-    inline void SetAttendees(const Aws::Vector<Attendee>& value) { m_attendees = value; }
-    inline void SetAttendees(Aws::Vector<Attendee>&& value) { m_attendees = std::move(value); }
-    inline BatchCreateAttendeeResult& WithAttendees(const Aws::Vector<Attendee>& value) { SetAttendees(value); return *this;}
-    inline BatchCreateAttendeeResult& WithAttendees(Aws::Vector<Attendee>&& value) { SetAttendees(std::move(value)); return *this;}
-    inline BatchCreateAttendeeResult& AddAttendees(const Attendee& value) { m_attendees.push_back(value); return *this; }
-    inline BatchCreateAttendeeResult& AddAttendees(Attendee&& value) { m_attendees.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Attendee>& GetAttendees() const { return m_attendees; }
+    template<typename AttendeesT = Aws::Vector<Attendee>>
+    void SetAttendees(AttendeesT&& value) { m_attendeesHasBeenSet = true; m_attendees = std::forward<AttendeesT>(value); }
+    template<typename AttendeesT = Aws::Vector<Attendee>>
+    BatchCreateAttendeeResult& WithAttendees(AttendeesT&& value) { SetAttendees(std::forward<AttendeesT>(value)); return *this;}
+    template<typename AttendeesT = Attendee>
+    BatchCreateAttendeeResult& AddAttendees(AttendeesT&& value) { m_attendeesHasBeenSet = true; m_attendees.emplace_back(std::forward<AttendeesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,33 @@ namespace Model
      * <p>If the action fails for one or more of the attendees in the request, a list
      * of the attendees is returned, along with error codes and error messages.</p>
      */
-    inline const Aws::Vector<CreateAttendeeError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<CreateAttendeeError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<CreateAttendeeError>&& value) { m_errors = std::move(value); }
-    inline BatchCreateAttendeeResult& WithErrors(const Aws::Vector<CreateAttendeeError>& value) { SetErrors(value); return *this;}
-    inline BatchCreateAttendeeResult& WithErrors(Aws::Vector<CreateAttendeeError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchCreateAttendeeResult& AddErrors(const CreateAttendeeError& value) { m_errors.push_back(value); return *this; }
-    inline BatchCreateAttendeeResult& AddErrors(CreateAttendeeError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CreateAttendeeError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<CreateAttendeeError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<CreateAttendeeError>>
+    BatchCreateAttendeeResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = CreateAttendeeError>
+    BatchCreateAttendeeResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchCreateAttendeeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchCreateAttendeeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchCreateAttendeeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchCreateAttendeeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Attendee> m_attendees;
+    bool m_attendeesHasBeenSet = false;
 
     Aws::Vector<CreateAttendeeError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

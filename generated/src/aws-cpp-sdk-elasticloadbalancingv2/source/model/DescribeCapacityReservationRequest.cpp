@@ -10,11 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-DescribeCapacityReservationRequest::DescribeCapacityReservationRequest() : 
-    m_loadBalancerArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCapacityReservationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

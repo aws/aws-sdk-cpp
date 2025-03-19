@@ -12,16 +12,6 @@ using namespace Aws::WorkDocs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateNotificationSubscriptionRequest::CreateNotificationSubscriptionRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_protocol(SubscriptionProtocolType::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_subscriptionType(SubscriptionType::NOT_SET),
-    m_subscriptionTypeHasBeenSet(false)
-{
-}
-
 Aws::String CreateNotificationSubscriptionRequest::SerializePayload() const
 {
   JsonValue payload;

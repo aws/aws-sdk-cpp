@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ExportImageTask::ExportImageTask() : 
-    m_descriptionHasBeenSet(false),
-    m_exportImageTaskIdHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_progressHasBeenSet(false),
-    m_s3ExportLocationHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ExportImageTask::ExportImageTask(const XmlNode& xmlNode)
-  : ExportImageTask()
 {
   *this = xmlNode;
 }
@@ -90,6 +77,7 @@ ExportImageTask& ExportImageTask::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

@@ -18,24 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-RowFilterExpression::RowFilterExpression() : 
-    m_equalToHasBeenSet(false),
-    m_greaterThanHasBeenSet(false),
-    m_greaterThanOrEqualToHasBeenSet(false),
-    m_inHasBeenSet(false),
-    m_isNotNullHasBeenSet(false),
-    m_isNullHasBeenSet(false),
-    m_lessThanHasBeenSet(false),
-    m_lessThanOrEqualToHasBeenSet(false),
-    m_likeHasBeenSet(false),
-    m_notEqualToHasBeenSet(false),
-    m_notInHasBeenSet(false),
-    m_notLikeHasBeenSet(false)
-{
-}
-
 RowFilterExpression::RowFilterExpression(JsonView jsonValue)
-  : RowFilterExpression()
 {
   *this = jsonValue;
 }
@@ -45,87 +28,63 @@ RowFilterExpression& RowFilterExpression::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("equalTo"))
   {
     m_equalTo = jsonValue.GetObject("equalTo");
-
     m_equalToHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("greaterThan"))
   {
     m_greaterThan = jsonValue.GetObject("greaterThan");
-
     m_greaterThanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("greaterThanOrEqualTo"))
   {
     m_greaterThanOrEqualTo = jsonValue.GetObject("greaterThanOrEqualTo");
-
     m_greaterThanOrEqualToHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("in"))
   {
     m_in = jsonValue.GetObject("in");
-
     m_inHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isNotNull"))
   {
     m_isNotNull = jsonValue.GetObject("isNotNull");
-
     m_isNotNullHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isNull"))
   {
     m_isNull = jsonValue.GetObject("isNull");
-
     m_isNullHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lessThan"))
   {
     m_lessThan = jsonValue.GetObject("lessThan");
-
     m_lessThanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lessThanOrEqualTo"))
   {
     m_lessThanOrEqualTo = jsonValue.GetObject("lessThanOrEqualTo");
-
     m_lessThanOrEqualToHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("like"))
   {
     m_like = jsonValue.GetObject("like");
-
     m_likeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notEqualTo"))
   {
     m_notEqualTo = jsonValue.GetObject("notEqualTo");
-
     m_notEqualToHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notIn"))
   {
     m_notIn = jsonValue.GetObject("notIn");
-
     m_notInHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notLike"))
   {
     m_notLike = jsonValue.GetObject("notLike");
-
     m_notLikeHasBeenSet = true;
   }
-
   return *this;
 }
 

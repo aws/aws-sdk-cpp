@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-VisualSubtitleLabelOptions::VisualSubtitleLabelOptions() : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_formatTextHasBeenSet(false)
-{
-}
-
 VisualSubtitleLabelOptions::VisualSubtitleLabelOptions(JsonView jsonValue)
-  : VisualSubtitleLabelOptions()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ VisualSubtitleLabelOptions& VisualSubtitleLabelOptions::operator =(JsonView json
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FormatText"))
   {
     m_formatText = jsonValue.GetObject("FormatText");
-
     m_formatTextHasBeenSet = true;
   }
-
   return *this;
 }
 

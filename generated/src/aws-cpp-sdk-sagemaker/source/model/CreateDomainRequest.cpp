@@ -12,26 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDomainRequest::CreateDomainRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_authMode(AuthMode::NOT_SET),
-    m_authModeHasBeenSet(false),
-    m_defaultUserSettingsHasBeenSet(false),
-    m_domainSettingsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_appNetworkAccessType(AppNetworkAccessType::NOT_SET),
-    m_appNetworkAccessTypeHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_appSecurityGroupManagement(AppSecurityGroupManagement::NOT_SET),
-    m_appSecurityGroupManagementHasBeenSet(false),
-    m_tagPropagation(TagPropagation::NOT_SET),
-    m_tagPropagationHasBeenSet(false),
-    m_defaultSpaceSettingsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDomainRequest::SerializePayload() const
 {
   JsonValue payload;

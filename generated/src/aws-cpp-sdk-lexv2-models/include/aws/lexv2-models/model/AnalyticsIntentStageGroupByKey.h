@@ -33,7 +33,7 @@ namespace Model
   class AnalyticsIntentStageGroupByKey
   {
   public:
-    AWS_LEXMODELSV2_API AnalyticsIntentStageGroupByKey();
+    AWS_LEXMODELSV2_API AnalyticsIntentStageGroupByKey() = default;
     AWS_LEXMODELSV2_API AnalyticsIntentStageGroupByKey(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API AnalyticsIntentStageGroupByKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>A category by which the intent stage analytics were grouped.</p>
      */
-    inline const AnalyticsIntentStageField& GetName() const{ return m_name; }
+    inline AnalyticsIntentStageField GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const AnalyticsIntentStageField& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(AnalyticsIntentStageField&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline AnalyticsIntentStageGroupByKey& WithName(const AnalyticsIntentStageField& value) { SetName(value); return *this;}
-    inline AnalyticsIntentStageGroupByKey& WithName(AnalyticsIntentStageField&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(AnalyticsIntentStageField value) { m_nameHasBeenSet = true; m_name = value; }
+    inline AnalyticsIntentStageGroupByKey& WithName(AnalyticsIntentStageField value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -56,18 +54,16 @@ namespace Model
      * <p>A member of the category by which the intent stage analytics were
      * grouped.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline AnalyticsIntentStageGroupByKey& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline AnalyticsIntentStageGroupByKey& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline AnalyticsIntentStageGroupByKey& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    AnalyticsIntentStageGroupByKey& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    AnalyticsIntentStageField m_name;
+    AnalyticsIntentStageField m_name{AnalyticsIntentStageField::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_value;

@@ -12,20 +12,6 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateChannelRequest::CreateChannelRequest() : 
-    m_channelNameHasBeenSet(false),
-    m_fillerSlateHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_playbackMode(PlaybackMode::NOT_SET),
-    m_playbackModeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_tier(Tier::NOT_SET),
-    m_tierHasBeenSet(false),
-    m_timeShiftConfigurationHasBeenSet(false),
-    m_audiencesHasBeenSet(false)
-{
-}
-
 Aws::String CreateChannelRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -21,7 +21,7 @@ namespace Model
   class SendSerialConsoleSSHPublicKeyRequest : public EC2InstanceConnectRequest
   {
   public:
-    AWS_EC2INSTANCECONNECT_API SendSerialConsoleSSHPublicKeyRequest();
+    AWS_EC2INSTANCECONNECT_API SendSerialConsoleSSHPublicKeyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID of the EC2 instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline SendSerialConsoleSSHPublicKeyRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline SendSerialConsoleSSHPublicKeyRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline SendSerialConsoleSSHPublicKeyRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    SendSerialConsoleSSHPublicKeyRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,7 +51,7 @@ namespace Model
      * <p>The serial port of the EC2 instance. Currently only port 0 is supported.</p>
      * <p>Default: 0</p>
      */
-    inline int GetSerialPort() const{ return m_serialPort; }
+    inline int GetSerialPort() const { return m_serialPort; }
     inline bool SerialPortHasBeenSet() const { return m_serialPortHasBeenSet; }
     inline void SetSerialPort(int value) { m_serialPortHasBeenSet = true; m_serialPort = value; }
     inline SendSerialConsoleSSHPublicKeyRequest& WithSerialPort(int value) { SetSerialPort(value); return *this;}
@@ -66,21 +64,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-key-pairs.html#how-to-generate-your-own-key-and-import-it-to-aws">Requirements
      * for key pairs</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
-    inline const Aws::String& GetSSHPublicKey() const{ return m_sSHPublicKey; }
+    inline const Aws::String& GetSSHPublicKey() const { return m_sSHPublicKey; }
     inline bool SSHPublicKeyHasBeenSet() const { return m_sSHPublicKeyHasBeenSet; }
-    inline void SetSSHPublicKey(const Aws::String& value) { m_sSHPublicKeyHasBeenSet = true; m_sSHPublicKey = value; }
-    inline void SetSSHPublicKey(Aws::String&& value) { m_sSHPublicKeyHasBeenSet = true; m_sSHPublicKey = std::move(value); }
-    inline void SetSSHPublicKey(const char* value) { m_sSHPublicKeyHasBeenSet = true; m_sSHPublicKey.assign(value); }
-    inline SendSerialConsoleSSHPublicKeyRequest& WithSSHPublicKey(const Aws::String& value) { SetSSHPublicKey(value); return *this;}
-    inline SendSerialConsoleSSHPublicKeyRequest& WithSSHPublicKey(Aws::String&& value) { SetSSHPublicKey(std::move(value)); return *this;}
-    inline SendSerialConsoleSSHPublicKeyRequest& WithSSHPublicKey(const char* value) { SetSSHPublicKey(value); return *this;}
+    template<typename SSHPublicKeyT = Aws::String>
+    void SetSSHPublicKey(SSHPublicKeyT&& value) { m_sSHPublicKeyHasBeenSet = true; m_sSHPublicKey = std::forward<SSHPublicKeyT>(value); }
+    template<typename SSHPublicKeyT = Aws::String>
+    SendSerialConsoleSSHPublicKeyRequest& WithSSHPublicKey(SSHPublicKeyT&& value) { SetSSHPublicKey(std::forward<SSHPublicKeyT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_instanceId;
     bool m_instanceIdHasBeenSet = false;
 
-    int m_serialPort;
+    int m_serialPort{0};
     bool m_serialPortHasBeenSet = false;
 
     Aws::String m_sSHPublicKey;

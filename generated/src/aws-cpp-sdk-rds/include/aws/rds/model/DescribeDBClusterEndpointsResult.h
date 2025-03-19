@@ -30,7 +30,7 @@ namespace Model
   class DescribeDBClusterEndpointsResult
   {
   public:
-    AWS_RDS_API DescribeDBClusterEndpointsResult();
+    AWS_RDS_API DescribeDBClusterEndpointsResult() = default;
     AWS_RDS_API DescribeDBClusterEndpointsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RDS_API DescribeDBClusterEndpointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -42,13 +42,11 @@ namespace Model
      * the response includes only records beyond the marker, up to the value specified
      * by <code>MaxRecords</code>.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeDBClusterEndpointsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeDBClusterEndpointsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeDBClusterEndpointsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeDBClusterEndpointsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,30 +54,33 @@ namespace Model
      * <p>Contains the details of the endpoints associated with the cluster and
      * matching any filter conditions.</p>
      */
-    inline const Aws::Vector<DBClusterEndpoint>& GetDBClusterEndpoints() const{ return m_dBClusterEndpoints; }
-    inline void SetDBClusterEndpoints(const Aws::Vector<DBClusterEndpoint>& value) { m_dBClusterEndpoints = value; }
-    inline void SetDBClusterEndpoints(Aws::Vector<DBClusterEndpoint>&& value) { m_dBClusterEndpoints = std::move(value); }
-    inline DescribeDBClusterEndpointsResult& WithDBClusterEndpoints(const Aws::Vector<DBClusterEndpoint>& value) { SetDBClusterEndpoints(value); return *this;}
-    inline DescribeDBClusterEndpointsResult& WithDBClusterEndpoints(Aws::Vector<DBClusterEndpoint>&& value) { SetDBClusterEndpoints(std::move(value)); return *this;}
-    inline DescribeDBClusterEndpointsResult& AddDBClusterEndpoints(const DBClusterEndpoint& value) { m_dBClusterEndpoints.push_back(value); return *this; }
-    inline DescribeDBClusterEndpointsResult& AddDBClusterEndpoints(DBClusterEndpoint&& value) { m_dBClusterEndpoints.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DBClusterEndpoint>& GetDBClusterEndpoints() const { return m_dBClusterEndpoints; }
+    template<typename DBClusterEndpointsT = Aws::Vector<DBClusterEndpoint>>
+    void SetDBClusterEndpoints(DBClusterEndpointsT&& value) { m_dBClusterEndpointsHasBeenSet = true; m_dBClusterEndpoints = std::forward<DBClusterEndpointsT>(value); }
+    template<typename DBClusterEndpointsT = Aws::Vector<DBClusterEndpoint>>
+    DescribeDBClusterEndpointsResult& WithDBClusterEndpoints(DBClusterEndpointsT&& value) { SetDBClusterEndpoints(std::forward<DBClusterEndpointsT>(value)); return *this;}
+    template<typename DBClusterEndpointsT = DBClusterEndpoint>
+    DescribeDBClusterEndpointsResult& AddDBClusterEndpoints(DBClusterEndpointsT&& value) { m_dBClusterEndpointsHasBeenSet = true; m_dBClusterEndpoints.emplace_back(std::forward<DBClusterEndpointsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeDBClusterEndpointsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeDBClusterEndpointsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeDBClusterEndpointsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::Vector<DBClusterEndpoint> m_dBClusterEndpoints;
+    bool m_dBClusterEndpointsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

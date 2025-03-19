@@ -12,13 +12,6 @@ using namespace Aws::IoTManagedIntegrations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutDefaultEncryptionConfigurationRequest::PutDefaultEncryptionConfigurationRequest() : 
-    m_encryptionType(EncryptionType::NOT_SET),
-    m_encryptionTypeHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
-{
-}
-
 Aws::String PutDefaultEncryptionConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

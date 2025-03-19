@@ -18,25 +18,7 @@ namespace MigrationHubOrchestrator
 namespace Model
 {
 
-MigrationWorkflowSummary::MigrationWorkflowSummary() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_templateIdHasBeenSet(false),
-    m_adsApplicationConfigurationNameHasBeenSet(false),
-    m_status(MigrationWorkflowStatusEnum::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_completedSteps(0),
-    m_completedStepsHasBeenSet(false),
-    m_totalSteps(0),
-    m_totalStepsHasBeenSet(false)
-{
-}
-
 MigrationWorkflowSummary::MigrationWorkflowSummary(JsonView jsonValue)
-  : MigrationWorkflowSummary()
 {
   *this = jsonValue;
 }
@@ -46,73 +28,53 @@ MigrationWorkflowSummary& MigrationWorkflowSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateId"))
   {
     m_templateId = jsonValue.GetString("templateId");
-
     m_templateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("adsApplicationConfigurationName"))
   {
     m_adsApplicationConfigurationName = jsonValue.GetString("adsApplicationConfigurationName");
-
     m_adsApplicationConfigurationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = MigrationWorkflowStatusEnumMapper::GetMigrationWorkflowStatusEnumForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("completedSteps"))
   {
     m_completedSteps = jsonValue.GetInteger("completedSteps");
-
     m_completedStepsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalSteps"))
   {
     m_totalSteps = jsonValue.GetInteger("totalSteps");
-
     m_totalStepsHasBeenSet = true;
   }
-
   return *this;
 }
 

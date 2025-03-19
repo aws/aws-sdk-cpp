@@ -18,16 +18,7 @@ namespace Budgets
 namespace Model
 {
 
-HistoricalOptions::HistoricalOptions() : 
-    m_budgetAdjustmentPeriod(0),
-    m_budgetAdjustmentPeriodHasBeenSet(false),
-    m_lookBackAvailablePeriods(0),
-    m_lookBackAvailablePeriodsHasBeenSet(false)
-{
-}
-
 HistoricalOptions::HistoricalOptions(JsonView jsonValue)
-  : HistoricalOptions()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ HistoricalOptions& HistoricalOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BudgetAdjustmentPeriod"))
   {
     m_budgetAdjustmentPeriod = jsonValue.GetInteger("BudgetAdjustmentPeriod");
-
     m_budgetAdjustmentPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LookBackAvailablePeriods"))
   {
     m_lookBackAvailablePeriods = jsonValue.GetInteger("LookBackAvailablePeriods");
-
     m_lookBackAvailablePeriodsHasBeenSet = true;
   }
-
   return *this;
 }
 

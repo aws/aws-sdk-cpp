@@ -18,15 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-RouteTableIdentifier::RouteTableIdentifier() : 
-    m_transitGatewayRouteTableArnHasBeenSet(false),
-    m_coreNetworkSegmentEdgeHasBeenSet(false),
-    m_coreNetworkNetworkFunctionGroupHasBeenSet(false)
-{
-}
-
 RouteTableIdentifier::RouteTableIdentifier(JsonView jsonValue)
-  : RouteTableIdentifier()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ RouteTableIdentifier& RouteTableIdentifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TransitGatewayRouteTableArn"))
   {
     m_transitGatewayRouteTableArn = jsonValue.GetString("TransitGatewayRouteTableArn");
-
     m_transitGatewayRouteTableArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CoreNetworkSegmentEdge"))
   {
     m_coreNetworkSegmentEdge = jsonValue.GetObject("CoreNetworkSegmentEdge");
-
     m_coreNetworkSegmentEdgeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CoreNetworkNetworkFunctionGroup"))
   {
     m_coreNetworkNetworkFunctionGroup = jsonValue.GetObject("CoreNetworkNetworkFunctionGroup");
-
     m_coreNetworkNetworkFunctionGroupHasBeenSet = true;
   }
-
   return *this;
 }
 

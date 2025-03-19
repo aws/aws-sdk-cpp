@@ -21,7 +21,7 @@ namespace Model
   class DeleteIntegrationRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API DeleteIntegrationRequest();
+    AWS_GLUE_API DeleteIntegrationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the integration.</p>
      */
-    inline const Aws::String& GetIntegrationIdentifier() const{ return m_integrationIdentifier; }
+    inline const Aws::String& GetIntegrationIdentifier() const { return m_integrationIdentifier; }
     inline bool IntegrationIdentifierHasBeenSet() const { return m_integrationIdentifierHasBeenSet; }
-    inline void SetIntegrationIdentifier(const Aws::String& value) { m_integrationIdentifierHasBeenSet = true; m_integrationIdentifier = value; }
-    inline void SetIntegrationIdentifier(Aws::String&& value) { m_integrationIdentifierHasBeenSet = true; m_integrationIdentifier = std::move(value); }
-    inline void SetIntegrationIdentifier(const char* value) { m_integrationIdentifierHasBeenSet = true; m_integrationIdentifier.assign(value); }
-    inline DeleteIntegrationRequest& WithIntegrationIdentifier(const Aws::String& value) { SetIntegrationIdentifier(value); return *this;}
-    inline DeleteIntegrationRequest& WithIntegrationIdentifier(Aws::String&& value) { SetIntegrationIdentifier(std::move(value)); return *this;}
-    inline DeleteIntegrationRequest& WithIntegrationIdentifier(const char* value) { SetIntegrationIdentifier(value); return *this;}
+    template<typename IntegrationIdentifierT = Aws::String>
+    void SetIntegrationIdentifier(IntegrationIdentifierT&& value) { m_integrationIdentifierHasBeenSet = true; m_integrationIdentifier = std::forward<IntegrationIdentifierT>(value); }
+    template<typename IntegrationIdentifierT = Aws::String>
+    DeleteIntegrationRequest& WithIntegrationIdentifier(IntegrationIdentifierT&& value) { SetIntegrationIdentifier(std::forward<IntegrationIdentifierT>(value)); return *this;}
     ///@}
   private:
 

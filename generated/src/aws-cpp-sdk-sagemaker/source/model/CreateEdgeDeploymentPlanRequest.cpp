@@ -12,15 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEdgeDeploymentPlanRequest::CreateEdgeDeploymentPlanRequest() : 
-    m_edgeDeploymentPlanNameHasBeenSet(false),
-    m_modelConfigsHasBeenSet(false),
-    m_deviceFleetNameHasBeenSet(false),
-    m_stagesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateEdgeDeploymentPlanRequest::SerializePayload() const
 {
   JsonValue payload;

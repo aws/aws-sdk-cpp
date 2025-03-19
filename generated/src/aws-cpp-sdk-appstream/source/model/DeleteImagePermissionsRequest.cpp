@@ -12,12 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteImagePermissionsRequest::DeleteImagePermissionsRequest() : 
-    m_nameHasBeenSet(false),
-    m_sharedAccountIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteImagePermissionsRequest::SerializePayload() const
 {
   JsonValue payload;

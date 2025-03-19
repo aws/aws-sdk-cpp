@@ -30,7 +30,7 @@ namespace Model
   class GeoLocation
   {
   public:
-    AWS_SECURITYHUB_API GeoLocation();
+    AWS_SECURITYHUB_API GeoLocation() = default;
     AWS_SECURITYHUB_API GeoLocation(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API GeoLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The longitude of the location.</p>
      */
-    inline double GetLon() const{ return m_lon; }
+    inline double GetLon() const { return m_lon; }
     inline bool LonHasBeenSet() const { return m_lonHasBeenSet; }
     inline void SetLon(double value) { m_lonHasBeenSet = true; m_lon = value; }
     inline GeoLocation& WithLon(double value) { SetLon(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>The latitude of the location.</p>
      */
-    inline double GetLat() const{ return m_lat; }
+    inline double GetLat() const { return m_lat; }
     inline bool LatHasBeenSet() const { return m_latHasBeenSet; }
     inline void SetLat(double value) { m_latHasBeenSet = true; m_lat = value; }
     inline GeoLocation& WithLat(double value) { SetLat(value); return *this;}
     ///@}
   private:
 
-    double m_lon;
+    double m_lon{0.0};
     bool m_lonHasBeenSet = false;
 
-    double m_lat;
+    double m_lat{0.0};
     bool m_latHasBeenSet = false;
   };
 

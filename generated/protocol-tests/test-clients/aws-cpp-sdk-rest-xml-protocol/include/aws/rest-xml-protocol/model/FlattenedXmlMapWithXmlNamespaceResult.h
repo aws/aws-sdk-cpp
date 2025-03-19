@@ -28,42 +28,39 @@ namespace Model
   class FlattenedXmlMapWithXmlNamespaceResult
   {
   public:
-    AWS_RESTXMLPROTOCOL_API FlattenedXmlMapWithXmlNamespaceResult();
+    AWS_RESTXMLPROTOCOL_API FlattenedXmlMapWithXmlNamespaceResult() = default;
     AWS_RESTXMLPROTOCOL_API FlattenedXmlMapWithXmlNamespaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RESTXMLPROTOCOL_API FlattenedXmlMapWithXmlNamespaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetMyMap() const{ return m_myMap; }
-    inline void SetMyMap(const Aws::Map<Aws::String, Aws::String>& value) { m_myMap = value; }
-    inline void SetMyMap(Aws::Map<Aws::String, Aws::String>&& value) { m_myMap = std::move(value); }
-    inline FlattenedXmlMapWithXmlNamespaceResult& WithMyMap(const Aws::Map<Aws::String, Aws::String>& value) { SetMyMap(value); return *this;}
-    inline FlattenedXmlMapWithXmlNamespaceResult& WithMyMap(Aws::Map<Aws::String, Aws::String>&& value) { SetMyMap(std::move(value)); return *this;}
-    inline FlattenedXmlMapWithXmlNamespaceResult& AddMyMap(const Aws::String& key, const Aws::String& value) { m_myMap.emplace(key, value); return *this; }
-    inline FlattenedXmlMapWithXmlNamespaceResult& AddMyMap(Aws::String&& key, const Aws::String& value) { m_myMap.emplace(std::move(key), value); return *this; }
-    inline FlattenedXmlMapWithXmlNamespaceResult& AddMyMap(const Aws::String& key, Aws::String&& value) { m_myMap.emplace(key, std::move(value)); return *this; }
-    inline FlattenedXmlMapWithXmlNamespaceResult& AddMyMap(Aws::String&& key, Aws::String&& value) { m_myMap.emplace(std::move(key), std::move(value)); return *this; }
-    inline FlattenedXmlMapWithXmlNamespaceResult& AddMyMap(const char* key, Aws::String&& value) { m_myMap.emplace(key, std::move(value)); return *this; }
-    inline FlattenedXmlMapWithXmlNamespaceResult& AddMyMap(Aws::String&& key, const char* value) { m_myMap.emplace(std::move(key), value); return *this; }
-    inline FlattenedXmlMapWithXmlNamespaceResult& AddMyMap(const char* key, const char* value) { m_myMap.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetMyMap() const { return m_myMap; }
+    template<typename MyMapT = Aws::Map<Aws::String, Aws::String>>
+    void SetMyMap(MyMapT&& value) { m_myMapHasBeenSet = true; m_myMap = std::forward<MyMapT>(value); }
+    template<typename MyMapT = Aws::Map<Aws::String, Aws::String>>
+    FlattenedXmlMapWithXmlNamespaceResult& WithMyMap(MyMapT&& value) { SetMyMap(std::forward<MyMapT>(value)); return *this;}
+    template<typename MyMapKeyT = Aws::String, typename MyMapValueT = Aws::String>
+    FlattenedXmlMapWithXmlNamespaceResult& AddMyMap(MyMapKeyT&& key, MyMapValueT&& value) {
+      m_myMapHasBeenSet = true; m_myMap.emplace(std::forward<MyMapKeyT>(key), std::forward<MyMapValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline FlattenedXmlMapWithXmlNamespaceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline FlattenedXmlMapWithXmlNamespaceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline FlattenedXmlMapWithXmlNamespaceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    FlattenedXmlMapWithXmlNamespaceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_myMap;
+    bool m_myMapHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

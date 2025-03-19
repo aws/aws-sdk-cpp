@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ValidateFlowDefinitionResult::ValidateFlowDefinitionResult()
-{
-}
-
 ValidateFlowDefinitionResult::ValidateFlowDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ ValidateFlowDefinitionResult& ValidateFlowDefinitionResult::operator =(const Aws
     {
       m_validations.push_back(validationsJsonList[validationsIndex].AsObject());
     }
+    m_validationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

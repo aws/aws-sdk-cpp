@@ -28,7 +28,7 @@ namespace Model
   class DescribeConnectorResult
   {
   public:
-    AWS_APPFLOW_API DescribeConnectorResult();
+    AWS_APPFLOW_API DescribeConnectorResult() = default;
     AWS_APPFLOW_API DescribeConnectorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPFLOW_API DescribeConnectorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Configuration info of all the connectors that the user requested.</p>
      */
-    inline const ConnectorConfiguration& GetConnectorConfiguration() const{ return m_connectorConfiguration; }
-    inline void SetConnectorConfiguration(const ConnectorConfiguration& value) { m_connectorConfiguration = value; }
-    inline void SetConnectorConfiguration(ConnectorConfiguration&& value) { m_connectorConfiguration = std::move(value); }
-    inline DescribeConnectorResult& WithConnectorConfiguration(const ConnectorConfiguration& value) { SetConnectorConfiguration(value); return *this;}
-    inline DescribeConnectorResult& WithConnectorConfiguration(ConnectorConfiguration&& value) { SetConnectorConfiguration(std::move(value)); return *this;}
+    inline const ConnectorConfiguration& GetConnectorConfiguration() const { return m_connectorConfiguration; }
+    template<typename ConnectorConfigurationT = ConnectorConfiguration>
+    void SetConnectorConfiguration(ConnectorConfigurationT&& value) { m_connectorConfigurationHasBeenSet = true; m_connectorConfiguration = std::forward<ConnectorConfigurationT>(value); }
+    template<typename ConnectorConfigurationT = ConnectorConfiguration>
+    DescribeConnectorResult& WithConnectorConfiguration(ConnectorConfigurationT&& value) { SetConnectorConfiguration(std::forward<ConnectorConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeConnectorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeConnectorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeConnectorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeConnectorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ConnectorConfiguration m_connectorConfiguration;
+    bool m_connectorConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,17 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateIdentityProviderRequest::CreateIdentityProviderRequest() : 
-    m_userPoolIdHasBeenSet(false),
-    m_providerNameHasBeenSet(false),
-    m_providerType(IdentityProviderTypeType::NOT_SET),
-    m_providerTypeHasBeenSet(false),
-    m_providerDetailsHasBeenSet(false),
-    m_attributeMappingHasBeenSet(false),
-    m_idpIdentifiersHasBeenSet(false)
-{
-}
-
 Aws::String CreateIdentityProviderRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -22,7 +22,7 @@ namespace Model
   class CreateEventActionRequest : public DataExchangeRequest
   {
   public:
-    AWS_DATAEXCHANGE_API CreateEventActionRequest();
+    AWS_DATAEXCHANGE_API CreateEventActionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,24 +37,24 @@ namespace Model
     /**
      * <p>What occurs after a certain event.</p>
      */
-    inline const Action& GetAction() const{ return m_action; }
+    inline const Action& GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const Action& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(Action&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline CreateEventActionRequest& WithAction(const Action& value) { SetAction(value); return *this;}
-    inline CreateEventActionRequest& WithAction(Action&& value) { SetAction(std::move(value)); return *this;}
+    template<typename ActionT = Action>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = Action>
+    CreateEventActionRequest& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>What occurs to start an action.</p>
      */
-    inline const Event& GetEvent() const{ return m_event; }
+    inline const Event& GetEvent() const { return m_event; }
     inline bool EventHasBeenSet() const { return m_eventHasBeenSet; }
-    inline void SetEvent(const Event& value) { m_eventHasBeenSet = true; m_event = value; }
-    inline void SetEvent(Event&& value) { m_eventHasBeenSet = true; m_event = std::move(value); }
-    inline CreateEventActionRequest& WithEvent(const Event& value) { SetEvent(value); return *this;}
-    inline CreateEventActionRequest& WithEvent(Event&& value) { SetEvent(std::move(value)); return *this;}
+    template<typename EventT = Event>
+    void SetEvent(EventT&& value) { m_eventHasBeenSet = true; m_event = std::forward<EventT>(value); }
+    template<typename EventT = Event>
+    CreateEventActionRequest& WithEvent(EventT&& value) { SetEvent(std::forward<EventT>(value)); return *this;}
     ///@}
   private:
 

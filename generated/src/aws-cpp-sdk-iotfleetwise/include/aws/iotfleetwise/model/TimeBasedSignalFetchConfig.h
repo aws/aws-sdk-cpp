@@ -30,7 +30,7 @@ namespace Model
   class TimeBasedSignalFetchConfig
   {
   public:
-    AWS_IOTFLEETWISE_API TimeBasedSignalFetchConfig();
+    AWS_IOTFLEETWISE_API TimeBasedSignalFetchConfig() = default;
     AWS_IOTFLEETWISE_API TimeBasedSignalFetchConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API TimeBasedSignalFetchConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>The frequency with which the signal fetch will be executed.</p>
      */
-    inline long long GetExecutionFrequencyMs() const{ return m_executionFrequencyMs; }
+    inline long long GetExecutionFrequencyMs() const { return m_executionFrequencyMs; }
     inline bool ExecutionFrequencyMsHasBeenSet() const { return m_executionFrequencyMsHasBeenSet; }
     inline void SetExecutionFrequencyMs(long long value) { m_executionFrequencyMsHasBeenSet = true; m_executionFrequencyMs = value; }
     inline TimeBasedSignalFetchConfig& WithExecutionFrequencyMs(long long value) { SetExecutionFrequencyMs(value); return *this;}
     ///@}
   private:
 
-    long long m_executionFrequencyMs;
+    long long m_executionFrequencyMs{0};
     bool m_executionFrequencyMsHasBeenSet = false;
   };
 

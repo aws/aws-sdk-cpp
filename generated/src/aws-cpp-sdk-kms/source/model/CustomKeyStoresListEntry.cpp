@@ -18,24 +18,7 @@ namespace KMS
 namespace Model
 {
 
-CustomKeyStoresListEntry::CustomKeyStoresListEntry() : 
-    m_customKeyStoreIdHasBeenSet(false),
-    m_customKeyStoreNameHasBeenSet(false),
-    m_cloudHsmClusterIdHasBeenSet(false),
-    m_trustAnchorCertificateHasBeenSet(false),
-    m_connectionState(ConnectionStateType::NOT_SET),
-    m_connectionStateHasBeenSet(false),
-    m_connectionErrorCode(ConnectionErrorCodeType::NOT_SET),
-    m_connectionErrorCodeHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_customKeyStoreType(CustomKeyStoreType::NOT_SET),
-    m_customKeyStoreTypeHasBeenSet(false),
-    m_xksProxyConfigurationHasBeenSet(false)
-{
-}
-
 CustomKeyStoresListEntry::CustomKeyStoresListEntry(JsonView jsonValue)
-  : CustomKeyStoresListEntry()
 {
   *this = jsonValue;
 }
@@ -45,66 +28,48 @@ CustomKeyStoresListEntry& CustomKeyStoresListEntry::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("CustomKeyStoreId"))
   {
     m_customKeyStoreId = jsonValue.GetString("CustomKeyStoreId");
-
     m_customKeyStoreIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomKeyStoreName"))
   {
     m_customKeyStoreName = jsonValue.GetString("CustomKeyStoreName");
-
     m_customKeyStoreNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudHsmClusterId"))
   {
     m_cloudHsmClusterId = jsonValue.GetString("CloudHsmClusterId");
-
     m_cloudHsmClusterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrustAnchorCertificate"))
   {
     m_trustAnchorCertificate = jsonValue.GetString("TrustAnchorCertificate");
-
     m_trustAnchorCertificateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionState"))
   {
     m_connectionState = ConnectionStateTypeMapper::GetConnectionStateTypeForName(jsonValue.GetString("ConnectionState"));
-
     m_connectionStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionErrorCode"))
   {
     m_connectionErrorCode = ConnectionErrorCodeTypeMapper::GetConnectionErrorCodeTypeForName(jsonValue.GetString("ConnectionErrorCode"));
-
     m_connectionErrorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomKeyStoreType"))
   {
     m_customKeyStoreType = CustomKeyStoreTypeMapper::GetCustomKeyStoreTypeForName(jsonValue.GetString("CustomKeyStoreType"));
-
     m_customKeyStoreTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("XksProxyConfiguration"))
   {
     m_xksProxyConfiguration = jsonValue.GetObject("XksProxyConfiguration");
-
     m_xksProxyConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

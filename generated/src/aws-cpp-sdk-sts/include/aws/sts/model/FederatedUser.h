@@ -32,7 +32,7 @@ namespace Model
   class FederatedUser
   {
   public:
-    AWS_STS_API FederatedUser();
+    AWS_STS_API FederatedUser() = default;
     AWS_STS_API FederatedUser(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_STS_API FederatedUser& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,12 @@ namespace Model
      * <p>The string that identifies the federated user associated with the
      * credentials, similar to the unique ID of an IAM user.</p>
      */
-    inline const Aws::String& GetFederatedUserId() const{ return m_federatedUserId; }
+    inline const Aws::String& GetFederatedUserId() const { return m_federatedUserId; }
     inline bool FederatedUserIdHasBeenSet() const { return m_federatedUserIdHasBeenSet; }
-    inline void SetFederatedUserId(const Aws::String& value) { m_federatedUserIdHasBeenSet = true; m_federatedUserId = value; }
-    inline void SetFederatedUserId(Aws::String&& value) { m_federatedUserIdHasBeenSet = true; m_federatedUserId = std::move(value); }
-    inline void SetFederatedUserId(const char* value) { m_federatedUserIdHasBeenSet = true; m_federatedUserId.assign(value); }
-    inline FederatedUser& WithFederatedUserId(const Aws::String& value) { SetFederatedUserId(value); return *this;}
-    inline FederatedUser& WithFederatedUserId(Aws::String&& value) { SetFederatedUserId(std::move(value)); return *this;}
-    inline FederatedUser& WithFederatedUserId(const char* value) { SetFederatedUserId(value); return *this;}
+    template<typename FederatedUserIdT = Aws::String>
+    void SetFederatedUserId(FederatedUserIdT&& value) { m_federatedUserIdHasBeenSet = true; m_federatedUserId = std::forward<FederatedUserIdT>(value); }
+    template<typename FederatedUserIdT = Aws::String>
+    FederatedUser& WithFederatedUserId(FederatedUserIdT&& value) { SetFederatedUserId(std::forward<FederatedUserIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>. </p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline FederatedUser& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline FederatedUser& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline FederatedUser& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    FederatedUser& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
   private:
 

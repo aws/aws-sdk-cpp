@@ -35,7 +35,7 @@ namespace Model
   class MigrationAlert
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API MigrationAlert();
+    AWS_LEXMODELBUILDINGSERVICE_API MigrationAlert() = default;
     AWS_LEXMODELBUILDINGSERVICE_API MigrationAlert(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API MigrationAlert& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,41 +49,36 @@ namespace Model
      * an issue with the migration that requires manual changes to the new Amazon Lex
      * V2 bot. The migration continues.</p> </li> </ul>
      */
-    inline const MigrationAlertType& GetType() const{ return m_type; }
+    inline MigrationAlertType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const MigrationAlertType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(MigrationAlertType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline MigrationAlert& WithType(const MigrationAlertType& value) { SetType(value); return *this;}
-    inline MigrationAlert& WithType(MigrationAlertType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(MigrationAlertType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline MigrationAlert& WithType(MigrationAlertType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message that describes why the alert was issued.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline MigrationAlert& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline MigrationAlert& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline MigrationAlert& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    MigrationAlert& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Additional details about the alert.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDetails() const{ return m_details; }
+    inline const Aws::Vector<Aws::String>& GetDetails() const { return m_details; }
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-    inline void SetDetails(const Aws::Vector<Aws::String>& value) { m_detailsHasBeenSet = true; m_details = value; }
-    inline void SetDetails(Aws::Vector<Aws::String>&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-    inline MigrationAlert& WithDetails(const Aws::Vector<Aws::String>& value) { SetDetails(value); return *this;}
-    inline MigrationAlert& WithDetails(Aws::Vector<Aws::String>&& value) { SetDetails(std::move(value)); return *this;}
-    inline MigrationAlert& AddDetails(const Aws::String& value) { m_detailsHasBeenSet = true; m_details.push_back(value); return *this; }
-    inline MigrationAlert& AddDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details.push_back(std::move(value)); return *this; }
-    inline MigrationAlert& AddDetails(const char* value) { m_detailsHasBeenSet = true; m_details.push_back(value); return *this; }
+    template<typename DetailsT = Aws::Vector<Aws::String>>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = Aws::Vector<Aws::String>>
+    MigrationAlert& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
+    template<typename DetailsT = Aws::String>
+    MigrationAlert& AddDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details.emplace_back(std::forward<DetailsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -91,19 +86,18 @@ namespace Model
      * <p>A link to the Amazon Lex documentation that describes how to resolve the
      * alert.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetReferenceURLs() const{ return m_referenceURLs; }
+    inline const Aws::Vector<Aws::String>& GetReferenceURLs() const { return m_referenceURLs; }
     inline bool ReferenceURLsHasBeenSet() const { return m_referenceURLsHasBeenSet; }
-    inline void SetReferenceURLs(const Aws::Vector<Aws::String>& value) { m_referenceURLsHasBeenSet = true; m_referenceURLs = value; }
-    inline void SetReferenceURLs(Aws::Vector<Aws::String>&& value) { m_referenceURLsHasBeenSet = true; m_referenceURLs = std::move(value); }
-    inline MigrationAlert& WithReferenceURLs(const Aws::Vector<Aws::String>& value) { SetReferenceURLs(value); return *this;}
-    inline MigrationAlert& WithReferenceURLs(Aws::Vector<Aws::String>&& value) { SetReferenceURLs(std::move(value)); return *this;}
-    inline MigrationAlert& AddReferenceURLs(const Aws::String& value) { m_referenceURLsHasBeenSet = true; m_referenceURLs.push_back(value); return *this; }
-    inline MigrationAlert& AddReferenceURLs(Aws::String&& value) { m_referenceURLsHasBeenSet = true; m_referenceURLs.push_back(std::move(value)); return *this; }
-    inline MigrationAlert& AddReferenceURLs(const char* value) { m_referenceURLsHasBeenSet = true; m_referenceURLs.push_back(value); return *this; }
+    template<typename ReferenceURLsT = Aws::Vector<Aws::String>>
+    void SetReferenceURLs(ReferenceURLsT&& value) { m_referenceURLsHasBeenSet = true; m_referenceURLs = std::forward<ReferenceURLsT>(value); }
+    template<typename ReferenceURLsT = Aws::Vector<Aws::String>>
+    MigrationAlert& WithReferenceURLs(ReferenceURLsT&& value) { SetReferenceURLs(std::forward<ReferenceURLsT>(value)); return *this;}
+    template<typename ReferenceURLsT = Aws::String>
+    MigrationAlert& AddReferenceURLs(ReferenceURLsT&& value) { m_referenceURLsHasBeenSet = true; m_referenceURLs.emplace_back(std::forward<ReferenceURLsT>(value)); return *this; }
     ///@}
   private:
 
-    MigrationAlertType m_type;
+    MigrationAlertType m_type{MigrationAlertType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_message;

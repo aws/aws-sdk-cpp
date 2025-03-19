@@ -36,7 +36,7 @@ namespace Model
   class DescribeTrustedAdvisorCheckRefreshStatusesResult
   {
   public:
-    AWS_SUPPORT_API DescribeTrustedAdvisorCheckRefreshStatusesResult();
+    AWS_SUPPORT_API DescribeTrustedAdvisorCheckRefreshStatusesResult() = default;
     AWS_SUPPORT_API DescribeTrustedAdvisorCheckRefreshStatusesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SUPPORT_API DescribeTrustedAdvisorCheckRefreshStatusesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,30 +45,30 @@ namespace Model
     /**
      * <p>The refresh status of the specified Trusted Advisor checks.</p>
      */
-    inline const Aws::Vector<TrustedAdvisorCheckRefreshStatus>& GetStatuses() const{ return m_statuses; }
-    inline void SetStatuses(const Aws::Vector<TrustedAdvisorCheckRefreshStatus>& value) { m_statuses = value; }
-    inline void SetStatuses(Aws::Vector<TrustedAdvisorCheckRefreshStatus>&& value) { m_statuses = std::move(value); }
-    inline DescribeTrustedAdvisorCheckRefreshStatusesResult& WithStatuses(const Aws::Vector<TrustedAdvisorCheckRefreshStatus>& value) { SetStatuses(value); return *this;}
-    inline DescribeTrustedAdvisorCheckRefreshStatusesResult& WithStatuses(Aws::Vector<TrustedAdvisorCheckRefreshStatus>&& value) { SetStatuses(std::move(value)); return *this;}
-    inline DescribeTrustedAdvisorCheckRefreshStatusesResult& AddStatuses(const TrustedAdvisorCheckRefreshStatus& value) { m_statuses.push_back(value); return *this; }
-    inline DescribeTrustedAdvisorCheckRefreshStatusesResult& AddStatuses(TrustedAdvisorCheckRefreshStatus&& value) { m_statuses.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TrustedAdvisorCheckRefreshStatus>& GetStatuses() const { return m_statuses; }
+    template<typename StatusesT = Aws::Vector<TrustedAdvisorCheckRefreshStatus>>
+    void SetStatuses(StatusesT&& value) { m_statusesHasBeenSet = true; m_statuses = std::forward<StatusesT>(value); }
+    template<typename StatusesT = Aws::Vector<TrustedAdvisorCheckRefreshStatus>>
+    DescribeTrustedAdvisorCheckRefreshStatusesResult& WithStatuses(StatusesT&& value) { SetStatuses(std::forward<StatusesT>(value)); return *this;}
+    template<typename StatusesT = TrustedAdvisorCheckRefreshStatus>
+    DescribeTrustedAdvisorCheckRefreshStatusesResult& AddStatuses(StatusesT&& value) { m_statusesHasBeenSet = true; m_statuses.emplace_back(std::forward<StatusesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeTrustedAdvisorCheckRefreshStatusesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeTrustedAdvisorCheckRefreshStatusesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeTrustedAdvisorCheckRefreshStatusesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeTrustedAdvisorCheckRefreshStatusesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TrustedAdvisorCheckRefreshStatus> m_statuses;
+    bool m_statusesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

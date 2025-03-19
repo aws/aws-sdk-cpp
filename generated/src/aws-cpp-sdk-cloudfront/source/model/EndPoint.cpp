@@ -20,14 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-EndPoint::EndPoint() : 
-    m_streamTypeHasBeenSet(false),
-    m_kinesisStreamConfigHasBeenSet(false)
-{
-}
-
 EndPoint::EndPoint(const XmlNode& xmlNode)
-  : EndPoint()
 {
   *this = xmlNode;
 }

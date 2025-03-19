@@ -29,7 +29,7 @@ namespace Model
   class ListClustersResult
   {
   public:
-    AWS_DOCDBELASTIC_API ListClustersResult();
+    AWS_DOCDBELASTIC_API ListClustersResult() = default;
     AWS_DOCDBELASTIC_API ListClustersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DOCDBELASTIC_API ListClustersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of Amazon DocumentDB elastic clusters.</p>
      */
-    inline const Aws::Vector<ClusterInList>& GetClusters() const{ return m_clusters; }
-    inline void SetClusters(const Aws::Vector<ClusterInList>& value) { m_clusters = value; }
-    inline void SetClusters(Aws::Vector<ClusterInList>&& value) { m_clusters = std::move(value); }
-    inline ListClustersResult& WithClusters(const Aws::Vector<ClusterInList>& value) { SetClusters(value); return *this;}
-    inline ListClustersResult& WithClusters(Aws::Vector<ClusterInList>&& value) { SetClusters(std::move(value)); return *this;}
-    inline ListClustersResult& AddClusters(const ClusterInList& value) { m_clusters.push_back(value); return *this; }
-    inline ListClustersResult& AddClusters(ClusterInList&& value) { m_clusters.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ClusterInList>& GetClusters() const { return m_clusters; }
+    template<typename ClustersT = Aws::Vector<ClusterInList>>
+    void SetClusters(ClustersT&& value) { m_clustersHasBeenSet = true; m_clusters = std::forward<ClustersT>(value); }
+    template<typename ClustersT = Aws::Vector<ClusterInList>>
+    ListClustersResult& WithClusters(ClustersT&& value) { SetClusters(std::forward<ClustersT>(value)); return *this;}
+    template<typename ClustersT = ClusterInList>
+    ListClustersResult& AddClusters(ClustersT&& value) { m_clustersHasBeenSet = true; m_clusters.emplace_back(std::forward<ClustersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,31 @@ namespace Model
      * specified by <code>max-results</code>.</p> <p>If there is no more data in the
      * responce, the <code>nextToken</code> will not be returned.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListClustersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListClustersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListClustersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListClustersResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListClustersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListClustersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListClustersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListClustersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ClusterInList> m_clusters;
+    bool m_clustersHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

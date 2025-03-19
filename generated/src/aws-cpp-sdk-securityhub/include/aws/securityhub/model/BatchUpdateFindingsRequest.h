@@ -29,7 +29,7 @@ namespace Model
   class BatchUpdateFindingsRequest : public SecurityHubRequest
   {
   public:
-    AWS_SECURITYHUB_API BatchUpdateFindingsRequest();
+    AWS_SECURITYHUB_API BatchUpdateFindingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,36 +46,36 @@ namespace Model
      * to update up to 100 findings at a time.</p> <p>For each finding, the list
      * provides the finding identifier and the ARN of the finding provider.</p>
      */
-    inline const Aws::Vector<AwsSecurityFindingIdentifier>& GetFindingIdentifiers() const{ return m_findingIdentifiers; }
+    inline const Aws::Vector<AwsSecurityFindingIdentifier>& GetFindingIdentifiers() const { return m_findingIdentifiers; }
     inline bool FindingIdentifiersHasBeenSet() const { return m_findingIdentifiersHasBeenSet; }
-    inline void SetFindingIdentifiers(const Aws::Vector<AwsSecurityFindingIdentifier>& value) { m_findingIdentifiersHasBeenSet = true; m_findingIdentifiers = value; }
-    inline void SetFindingIdentifiers(Aws::Vector<AwsSecurityFindingIdentifier>&& value) { m_findingIdentifiersHasBeenSet = true; m_findingIdentifiers = std::move(value); }
-    inline BatchUpdateFindingsRequest& WithFindingIdentifiers(const Aws::Vector<AwsSecurityFindingIdentifier>& value) { SetFindingIdentifiers(value); return *this;}
-    inline BatchUpdateFindingsRequest& WithFindingIdentifiers(Aws::Vector<AwsSecurityFindingIdentifier>&& value) { SetFindingIdentifiers(std::move(value)); return *this;}
-    inline BatchUpdateFindingsRequest& AddFindingIdentifiers(const AwsSecurityFindingIdentifier& value) { m_findingIdentifiersHasBeenSet = true; m_findingIdentifiers.push_back(value); return *this; }
-    inline BatchUpdateFindingsRequest& AddFindingIdentifiers(AwsSecurityFindingIdentifier&& value) { m_findingIdentifiersHasBeenSet = true; m_findingIdentifiers.push_back(std::move(value)); return *this; }
+    template<typename FindingIdentifiersT = Aws::Vector<AwsSecurityFindingIdentifier>>
+    void SetFindingIdentifiers(FindingIdentifiersT&& value) { m_findingIdentifiersHasBeenSet = true; m_findingIdentifiers = std::forward<FindingIdentifiersT>(value); }
+    template<typename FindingIdentifiersT = Aws::Vector<AwsSecurityFindingIdentifier>>
+    BatchUpdateFindingsRequest& WithFindingIdentifiers(FindingIdentifiersT&& value) { SetFindingIdentifiers(std::forward<FindingIdentifiersT>(value)); return *this;}
+    template<typename FindingIdentifiersT = AwsSecurityFindingIdentifier>
+    BatchUpdateFindingsRequest& AddFindingIdentifiers(FindingIdentifiersT&& value) { m_findingIdentifiersHasBeenSet = true; m_findingIdentifiers.emplace_back(std::forward<FindingIdentifiersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const NoteUpdate& GetNote() const{ return m_note; }
+    inline const NoteUpdate& GetNote() const { return m_note; }
     inline bool NoteHasBeenSet() const { return m_noteHasBeenSet; }
-    inline void SetNote(const NoteUpdate& value) { m_noteHasBeenSet = true; m_note = value; }
-    inline void SetNote(NoteUpdate&& value) { m_noteHasBeenSet = true; m_note = std::move(value); }
-    inline BatchUpdateFindingsRequest& WithNote(const NoteUpdate& value) { SetNote(value); return *this;}
-    inline BatchUpdateFindingsRequest& WithNote(NoteUpdate&& value) { SetNote(std::move(value)); return *this;}
+    template<typename NoteT = NoteUpdate>
+    void SetNote(NoteT&& value) { m_noteHasBeenSet = true; m_note = std::forward<NoteT>(value); }
+    template<typename NoteT = NoteUpdate>
+    BatchUpdateFindingsRequest& WithNote(NoteT&& value) { SetNote(std::forward<NoteT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Used to update the finding severity.</p>
      */
-    inline const SeverityUpdate& GetSeverity() const{ return m_severity; }
+    inline const SeverityUpdate& GetSeverity() const { return m_severity; }
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
-    inline void SetSeverity(const SeverityUpdate& value) { m_severityHasBeenSet = true; m_severity = value; }
-    inline void SetSeverity(SeverityUpdate&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
-    inline BatchUpdateFindingsRequest& WithSeverity(const SeverityUpdate& value) { SetSeverity(value); return *this;}
-    inline BatchUpdateFindingsRequest& WithSeverity(SeverityUpdate&& value) { SetSeverity(std::move(value)); return *this;}
+    template<typename SeverityT = SeverityUpdate>
+    void SetSeverity(SeverityT&& value) { m_severityHasBeenSet = true; m_severity = std::forward<SeverityT>(value); }
+    template<typename SeverityT = SeverityUpdate>
+    BatchUpdateFindingsRequest& WithSeverity(SeverityT&& value) { SetSeverity(std::forward<SeverityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +89,10 @@ namespace Model
      * case of <code>TRUE_POSITIVE</code> where the finding doesn't pose any threat, is
      * expected, or both</p> </li> </ul>
      */
-    inline const VerificationState& GetVerificationState() const{ return m_verificationState; }
+    inline VerificationState GetVerificationState() const { return m_verificationState; }
     inline bool VerificationStateHasBeenSet() const { return m_verificationStateHasBeenSet; }
-    inline void SetVerificationState(const VerificationState& value) { m_verificationStateHasBeenSet = true; m_verificationState = value; }
-    inline void SetVerificationState(VerificationState&& value) { m_verificationStateHasBeenSet = true; m_verificationState = std::move(value); }
-    inline BatchUpdateFindingsRequest& WithVerificationState(const VerificationState& value) { SetVerificationState(value); return *this;}
-    inline BatchUpdateFindingsRequest& WithVerificationState(VerificationState&& value) { SetVerificationState(std::move(value)); return *this;}
+    inline void SetVerificationState(VerificationState value) { m_verificationStateHasBeenSet = true; m_verificationState = value; }
+    inline BatchUpdateFindingsRequest& WithVerificationState(VerificationState value) { SetVerificationState(value); return *this;}
     ///@}
 
     ///@{
@@ -105,7 +103,7 @@ namespace Model
      * ratio scale, where 0 means zero percent confidence and 100 means 100 percent
      * confidence.</p>
      */
-    inline int GetConfidence() const{ return m_confidence; }
+    inline int GetConfidence() const { return m_confidence; }
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
     inline void SetConfidence(int value) { m_confidenceHasBeenSet = true; m_confidence = value; }
     inline BatchUpdateFindingsRequest& WithConfidence(int value) { SetConfidence(value); return *this;}
@@ -118,7 +116,7 @@ namespace Model
      * resources have no criticality, and a score of 100 is reserved for the most
      * critical resources. </p>
      */
-    inline int GetCriticality() const{ return m_criticality; }
+    inline int GetCriticality() const { return m_criticality; }
     inline bool CriticalityHasBeenSet() const { return m_criticalityHasBeenSet; }
     inline void SetCriticality(int value) { m_criticalityHasBeenSet = true; m_criticality = value; }
     inline BatchUpdateFindingsRequest& WithCriticality(int value) { SetCriticality(value); return *this;}
@@ -132,15 +130,14 @@ namespace Model
      * <p>Effects</p> </li> <li> <p>Unusual Behaviors</p> </li> <li> <p>Sensitive Data
      * Identifications </p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetTypes() const{ return m_types; }
+    inline const Aws::Vector<Aws::String>& GetTypes() const { return m_types; }
     inline bool TypesHasBeenSet() const { return m_typesHasBeenSet; }
-    inline void SetTypes(const Aws::Vector<Aws::String>& value) { m_typesHasBeenSet = true; m_types = value; }
-    inline void SetTypes(Aws::Vector<Aws::String>&& value) { m_typesHasBeenSet = true; m_types = std::move(value); }
-    inline BatchUpdateFindingsRequest& WithTypes(const Aws::Vector<Aws::String>& value) { SetTypes(value); return *this;}
-    inline BatchUpdateFindingsRequest& WithTypes(Aws::Vector<Aws::String>&& value) { SetTypes(std::move(value)); return *this;}
-    inline BatchUpdateFindingsRequest& AddTypes(const Aws::String& value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
-    inline BatchUpdateFindingsRequest& AddTypes(Aws::String&& value) { m_typesHasBeenSet = true; m_types.push_back(std::move(value)); return *this; }
-    inline BatchUpdateFindingsRequest& AddTypes(const char* value) { m_typesHasBeenSet = true; m_types.push_back(value); return *this; }
+    template<typename TypesT = Aws::Vector<Aws::String>>
+    void SetTypes(TypesT&& value) { m_typesHasBeenSet = true; m_types = std::forward<TypesT>(value); }
+    template<typename TypesT = Aws::Vector<Aws::String>>
+    BatchUpdateFindingsRequest& WithTypes(TypesT&& value) { SetTypes(std::forward<TypesT>(value)); return *this;}
+    template<typename TypesT = Aws::String>
+    BatchUpdateFindingsRequest& AddTypes(TypesT&& value) { m_typesHasBeenSet = true; m_types.emplace_back(std::forward<TypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -148,19 +145,16 @@ namespace Model
      * <p>A list of name/value string pairs associated with the finding. These are
      * custom, user-defined fields added to a finding.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetUserDefinedFields() const{ return m_userDefinedFields; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetUserDefinedFields() const { return m_userDefinedFields; }
     inline bool UserDefinedFieldsHasBeenSet() const { return m_userDefinedFieldsHasBeenSet; }
-    inline void SetUserDefinedFields(const Aws::Map<Aws::String, Aws::String>& value) { m_userDefinedFieldsHasBeenSet = true; m_userDefinedFields = value; }
-    inline void SetUserDefinedFields(Aws::Map<Aws::String, Aws::String>&& value) { m_userDefinedFieldsHasBeenSet = true; m_userDefinedFields = std::move(value); }
-    inline BatchUpdateFindingsRequest& WithUserDefinedFields(const Aws::Map<Aws::String, Aws::String>& value) { SetUserDefinedFields(value); return *this;}
-    inline BatchUpdateFindingsRequest& WithUserDefinedFields(Aws::Map<Aws::String, Aws::String>&& value) { SetUserDefinedFields(std::move(value)); return *this;}
-    inline BatchUpdateFindingsRequest& AddUserDefinedFields(const Aws::String& key, const Aws::String& value) { m_userDefinedFieldsHasBeenSet = true; m_userDefinedFields.emplace(key, value); return *this; }
-    inline BatchUpdateFindingsRequest& AddUserDefinedFields(Aws::String&& key, const Aws::String& value) { m_userDefinedFieldsHasBeenSet = true; m_userDefinedFields.emplace(std::move(key), value); return *this; }
-    inline BatchUpdateFindingsRequest& AddUserDefinedFields(const Aws::String& key, Aws::String&& value) { m_userDefinedFieldsHasBeenSet = true; m_userDefinedFields.emplace(key, std::move(value)); return *this; }
-    inline BatchUpdateFindingsRequest& AddUserDefinedFields(Aws::String&& key, Aws::String&& value) { m_userDefinedFieldsHasBeenSet = true; m_userDefinedFields.emplace(std::move(key), std::move(value)); return *this; }
-    inline BatchUpdateFindingsRequest& AddUserDefinedFields(const char* key, Aws::String&& value) { m_userDefinedFieldsHasBeenSet = true; m_userDefinedFields.emplace(key, std::move(value)); return *this; }
-    inline BatchUpdateFindingsRequest& AddUserDefinedFields(Aws::String&& key, const char* value) { m_userDefinedFieldsHasBeenSet = true; m_userDefinedFields.emplace(std::move(key), value); return *this; }
-    inline BatchUpdateFindingsRequest& AddUserDefinedFields(const char* key, const char* value) { m_userDefinedFieldsHasBeenSet = true; m_userDefinedFields.emplace(key, value); return *this; }
+    template<typename UserDefinedFieldsT = Aws::Map<Aws::String, Aws::String>>
+    void SetUserDefinedFields(UserDefinedFieldsT&& value) { m_userDefinedFieldsHasBeenSet = true; m_userDefinedFields = std::forward<UserDefinedFieldsT>(value); }
+    template<typename UserDefinedFieldsT = Aws::Map<Aws::String, Aws::String>>
+    BatchUpdateFindingsRequest& WithUserDefinedFields(UserDefinedFieldsT&& value) { SetUserDefinedFields(std::forward<UserDefinedFieldsT>(value)); return *this;}
+    template<typename UserDefinedFieldsKeyT = Aws::String, typename UserDefinedFieldsValueT = Aws::String>
+    BatchUpdateFindingsRequest& AddUserDefinedFields(UserDefinedFieldsKeyT&& key, UserDefinedFieldsValueT&& value) {
+      m_userDefinedFieldsHasBeenSet = true; m_userDefinedFields.emplace(std::forward<UserDefinedFieldsKeyT>(key), std::forward<UserDefinedFieldsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -168,26 +162,26 @@ namespace Model
      * <p>Used to update the workflow status of a finding.</p> <p>The workflow status
      * indicates the progress of the investigation into the finding. </p>
      */
-    inline const WorkflowUpdate& GetWorkflow() const{ return m_workflow; }
+    inline const WorkflowUpdate& GetWorkflow() const { return m_workflow; }
     inline bool WorkflowHasBeenSet() const { return m_workflowHasBeenSet; }
-    inline void SetWorkflow(const WorkflowUpdate& value) { m_workflowHasBeenSet = true; m_workflow = value; }
-    inline void SetWorkflow(WorkflowUpdate&& value) { m_workflowHasBeenSet = true; m_workflow = std::move(value); }
-    inline BatchUpdateFindingsRequest& WithWorkflow(const WorkflowUpdate& value) { SetWorkflow(value); return *this;}
-    inline BatchUpdateFindingsRequest& WithWorkflow(WorkflowUpdate&& value) { SetWorkflow(std::move(value)); return *this;}
+    template<typename WorkflowT = WorkflowUpdate>
+    void SetWorkflow(WorkflowT&& value) { m_workflowHasBeenSet = true; m_workflow = std::forward<WorkflowT>(value); }
+    template<typename WorkflowT = WorkflowUpdate>
+    BatchUpdateFindingsRequest& WithWorkflow(WorkflowT&& value) { SetWorkflow(std::forward<WorkflowT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of findings that are related to the updated findings.</p>
      */
-    inline const Aws::Vector<RelatedFinding>& GetRelatedFindings() const{ return m_relatedFindings; }
+    inline const Aws::Vector<RelatedFinding>& GetRelatedFindings() const { return m_relatedFindings; }
     inline bool RelatedFindingsHasBeenSet() const { return m_relatedFindingsHasBeenSet; }
-    inline void SetRelatedFindings(const Aws::Vector<RelatedFinding>& value) { m_relatedFindingsHasBeenSet = true; m_relatedFindings = value; }
-    inline void SetRelatedFindings(Aws::Vector<RelatedFinding>&& value) { m_relatedFindingsHasBeenSet = true; m_relatedFindings = std::move(value); }
-    inline BatchUpdateFindingsRequest& WithRelatedFindings(const Aws::Vector<RelatedFinding>& value) { SetRelatedFindings(value); return *this;}
-    inline BatchUpdateFindingsRequest& WithRelatedFindings(Aws::Vector<RelatedFinding>&& value) { SetRelatedFindings(std::move(value)); return *this;}
-    inline BatchUpdateFindingsRequest& AddRelatedFindings(const RelatedFinding& value) { m_relatedFindingsHasBeenSet = true; m_relatedFindings.push_back(value); return *this; }
-    inline BatchUpdateFindingsRequest& AddRelatedFindings(RelatedFinding&& value) { m_relatedFindingsHasBeenSet = true; m_relatedFindings.push_back(std::move(value)); return *this; }
+    template<typename RelatedFindingsT = Aws::Vector<RelatedFinding>>
+    void SetRelatedFindings(RelatedFindingsT&& value) { m_relatedFindingsHasBeenSet = true; m_relatedFindings = std::forward<RelatedFindingsT>(value); }
+    template<typename RelatedFindingsT = Aws::Vector<RelatedFinding>>
+    BatchUpdateFindingsRequest& WithRelatedFindings(RelatedFindingsT&& value) { SetRelatedFindings(std::forward<RelatedFindingsT>(value)); return *this;}
+    template<typename RelatedFindingsT = RelatedFinding>
+    BatchUpdateFindingsRequest& AddRelatedFindings(RelatedFindingsT&& value) { m_relatedFindingsHasBeenSet = true; m_relatedFindings.emplace_back(std::forward<RelatedFindingsT>(value)); return *this; }
     ///@}
   private:
 
@@ -200,13 +194,13 @@ namespace Model
     SeverityUpdate m_severity;
     bool m_severityHasBeenSet = false;
 
-    VerificationState m_verificationState;
+    VerificationState m_verificationState{VerificationState::NOT_SET};
     bool m_verificationStateHasBeenSet = false;
 
-    int m_confidence;
+    int m_confidence{0};
     bool m_confidenceHasBeenSet = false;
 
-    int m_criticality;
+    int m_criticality{0};
     bool m_criticalityHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_types;

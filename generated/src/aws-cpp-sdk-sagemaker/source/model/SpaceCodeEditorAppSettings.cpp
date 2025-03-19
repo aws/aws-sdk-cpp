@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-SpaceCodeEditorAppSettings::SpaceCodeEditorAppSettings() : 
-    m_defaultResourceSpecHasBeenSet(false),
-    m_appLifecycleManagementHasBeenSet(false)
-{
-}
-
 SpaceCodeEditorAppSettings::SpaceCodeEditorAppSettings(JsonView jsonValue)
-  : SpaceCodeEditorAppSettings()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SpaceCodeEditorAppSettings& SpaceCodeEditorAppSettings::operator =(JsonView json
   if(jsonValue.ValueExists("DefaultResourceSpec"))
   {
     m_defaultResourceSpec = jsonValue.GetObject("DefaultResourceSpec");
-
     m_defaultResourceSpecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppLifecycleManagement"))
   {
     m_appLifecycleManagement = jsonValue.GetObject("AppLifecycleManagement");
-
     m_appLifecycleManagementHasBeenSet = true;
   }
-
   return *this;
 }
 

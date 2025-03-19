@@ -39,7 +39,7 @@ namespace Model
   class ServiceDeploymentCircuitBreaker
   {
   public:
-    AWS_ECS_API ServiceDeploymentCircuitBreaker();
+    AWS_ECS_API ServiceDeploymentCircuitBreaker() = default;
     AWS_ECS_API ServiceDeploymentCircuitBreaker(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API ServiceDeploymentCircuitBreaker& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,10 @@ namespace Model
      * <p>The circuit breaker status. Amazon ECS is not using the circuit breaker for
      * service deployment failures when the status is <code>DISABLED</code>.</p>
      */
-    inline const ServiceDeploymentRollbackMonitorsStatus& GetStatus() const{ return m_status; }
+    inline ServiceDeploymentRollbackMonitorsStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ServiceDeploymentRollbackMonitorsStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ServiceDeploymentRollbackMonitorsStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ServiceDeploymentCircuitBreaker& WithStatus(const ServiceDeploymentRollbackMonitorsStatus& value) { SetStatus(value); return *this;}
-    inline ServiceDeploymentCircuitBreaker& WithStatus(ServiceDeploymentRollbackMonitorsStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ServiceDeploymentRollbackMonitorsStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ServiceDeploymentCircuitBreaker& WithStatus(ServiceDeploymentRollbackMonitorsStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -63,7 +61,7 @@ namespace Model
      * <p>The number of times the circuit breaker detected a service deploymeny
      * failure.</p>
      */
-    inline int GetFailureCount() const{ return m_failureCount; }
+    inline int GetFailureCount() const { return m_failureCount; }
     inline bool FailureCountHasBeenSet() const { return m_failureCountHasBeenSet; }
     inline void SetFailureCount(int value) { m_failureCountHasBeenSet = true; m_failureCount = value; }
     inline ServiceDeploymentCircuitBreaker& WithFailureCount(int value) { SetFailureCount(value); return *this;}
@@ -78,20 +76,20 @@ namespace Model
      * of 200. and uses the values in the following formula to determine the deployment
      * failure.</p> <p> <code>0.5 * desired task count</code> </p>
      */
-    inline int GetThreshold() const{ return m_threshold; }
+    inline int GetThreshold() const { return m_threshold; }
     inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
     inline void SetThreshold(int value) { m_thresholdHasBeenSet = true; m_threshold = value; }
     inline ServiceDeploymentCircuitBreaker& WithThreshold(int value) { SetThreshold(value); return *this;}
     ///@}
   private:
 
-    ServiceDeploymentRollbackMonitorsStatus m_status;
+    ServiceDeploymentRollbackMonitorsStatus m_status{ServiceDeploymentRollbackMonitorsStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    int m_failureCount;
+    int m_failureCount{0};
     bool m_failureCountHasBeenSet = false;
 
-    int m_threshold;
+    int m_threshold{0};
     bool m_thresholdHasBeenSet = false;
   };
 

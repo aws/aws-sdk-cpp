@@ -18,20 +18,7 @@ namespace Backup
 namespace Model
 {
 
-ReportJob::ReportJob() : 
-    m_reportJobIdHasBeenSet(false),
-    m_reportPlanArnHasBeenSet(false),
-    m_reportTemplateHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_reportDestinationHasBeenSet(false)
-{
-}
-
 ReportJob::ReportJob(JsonView jsonValue)
-  : ReportJob()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ ReportJob& ReportJob::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReportJobId"))
   {
     m_reportJobId = jsonValue.GetString("ReportJobId");
-
     m_reportJobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReportPlanArn"))
   {
     m_reportPlanArn = jsonValue.GetString("ReportPlanArn");
-
     m_reportPlanArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReportTemplate"))
   {
     m_reportTemplate = jsonValue.GetString("ReportTemplate");
-
     m_reportTemplateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletionTime"))
   {
     m_completionTime = jsonValue.GetDouble("CompletionTime");
-
     m_completionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReportDestination"))
   {
     m_reportDestination = jsonValue.GetObject("ReportDestination");
-
     m_reportDestinationHasBeenSet = true;
   }
-
   return *this;
 }
 

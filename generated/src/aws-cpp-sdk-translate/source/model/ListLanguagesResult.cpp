@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListLanguagesResult::ListLanguagesResult() : 
-    m_displayLanguageCode(DisplayLanguageCode::NOT_SET)
-{
-}
-
 ListLanguagesResult::ListLanguagesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListLanguagesResult()
 {
   *this = result;
 }
@@ -38,26 +32,25 @@ ListLanguagesResult& ListLanguagesResult::operator =(const Aws::AmazonWebService
     {
       m_languages.push_back(languagesJsonList[languagesIndex].AsObject());
     }
+    m_languagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayLanguageCode"))
   {
     m_displayLanguageCode = DisplayLanguageCodeMapper::GetDisplayLanguageCodeForName(jsonValue.GetString("DisplayLanguageCode"));
-
+    m_displayLanguageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

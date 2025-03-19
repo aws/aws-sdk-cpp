@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateFunctionUrlConfigResult::UpdateFunctionUrlConfigResult() : 
-    m_authType(FunctionUrlAuthType::NOT_SET),
-    m_invokeMode(InvokeMode::NOT_SET)
-{
-}
-
 UpdateFunctionUrlConfigResult::UpdateFunctionUrlConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateFunctionUrlConfigResult()
 {
   *this = result;
 }
@@ -35,51 +28,45 @@ UpdateFunctionUrlConfigResult& UpdateFunctionUrlConfigResult::operator =(const A
   if(jsonValue.ValueExists("FunctionUrl"))
   {
     m_functionUrl = jsonValue.GetString("FunctionUrl");
-
+    m_functionUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FunctionArn"))
   {
     m_functionArn = jsonValue.GetString("FunctionArn");
-
+    m_functionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthType"))
   {
     m_authType = FunctionUrlAuthTypeMapper::GetFunctionUrlAuthTypeForName(jsonValue.GetString("AuthType"));
-
+    m_authTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Cors"))
   {
     m_cors = jsonValue.GetObject("Cors");
-
+    m_corsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetString("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetString("LastModifiedTime");
-
+    m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvokeMode"))
   {
     m_invokeMode = InvokeModeMapper::GetInvokeModeForName(jsonValue.GetString("InvokeMode"));
-
+    m_invokeModeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -31,7 +31,7 @@ namespace Model
   class CreateVehicleResponseItem
   {
   public:
-    AWS_IOTFLEETWISE_API CreateVehicleResponseItem();
+    AWS_IOTFLEETWISE_API CreateVehicleResponseItem() = default;
     AWS_IOTFLEETWISE_API CreateVehicleResponseItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API CreateVehicleResponseItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,42 +41,36 @@ namespace Model
     /**
      * <p>The unique ID of the vehicle to create.</p>
      */
-    inline const Aws::String& GetVehicleName() const{ return m_vehicleName; }
+    inline const Aws::String& GetVehicleName() const { return m_vehicleName; }
     inline bool VehicleNameHasBeenSet() const { return m_vehicleNameHasBeenSet; }
-    inline void SetVehicleName(const Aws::String& value) { m_vehicleNameHasBeenSet = true; m_vehicleName = value; }
-    inline void SetVehicleName(Aws::String&& value) { m_vehicleNameHasBeenSet = true; m_vehicleName = std::move(value); }
-    inline void SetVehicleName(const char* value) { m_vehicleNameHasBeenSet = true; m_vehicleName.assign(value); }
-    inline CreateVehicleResponseItem& WithVehicleName(const Aws::String& value) { SetVehicleName(value); return *this;}
-    inline CreateVehicleResponseItem& WithVehicleName(Aws::String&& value) { SetVehicleName(std::move(value)); return *this;}
-    inline CreateVehicleResponseItem& WithVehicleName(const char* value) { SetVehicleName(value); return *this;}
+    template<typename VehicleNameT = Aws::String>
+    void SetVehicleName(VehicleNameT&& value) { m_vehicleNameHasBeenSet = true; m_vehicleName = std::forward<VehicleNameT>(value); }
+    template<typename VehicleNameT = Aws::String>
+    CreateVehicleResponseItem& WithVehicleName(VehicleNameT&& value) { SetVehicleName(std::forward<VehicleNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the created vehicle.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline CreateVehicleResponseItem& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline CreateVehicleResponseItem& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline CreateVehicleResponseItem& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    CreateVehicleResponseItem& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of a created or validated Amazon Web Services IoT thing.</p>
      */
-    inline const Aws::String& GetThingArn() const{ return m_thingArn; }
+    inline const Aws::String& GetThingArn() const { return m_thingArn; }
     inline bool ThingArnHasBeenSet() const { return m_thingArnHasBeenSet; }
-    inline void SetThingArn(const Aws::String& value) { m_thingArnHasBeenSet = true; m_thingArn = value; }
-    inline void SetThingArn(Aws::String&& value) { m_thingArnHasBeenSet = true; m_thingArn = std::move(value); }
-    inline void SetThingArn(const char* value) { m_thingArnHasBeenSet = true; m_thingArn.assign(value); }
-    inline CreateVehicleResponseItem& WithThingArn(const Aws::String& value) { SetThingArn(value); return *this;}
-    inline CreateVehicleResponseItem& WithThingArn(Aws::String&& value) { SetThingArn(std::move(value)); return *this;}
-    inline CreateVehicleResponseItem& WithThingArn(const char* value) { SetThingArn(value); return *this;}
+    template<typename ThingArnT = Aws::String>
+    void SetThingArn(ThingArnT&& value) { m_thingArnHasBeenSet = true; m_thingArn = std::forward<ThingArnT>(value); }
+    template<typename ThingArnT = Aws::String>
+    CreateVehicleResponseItem& WithThingArn(ThingArnT&& value) { SetThingArn(std::forward<ThingArnT>(value)); return *this;}
     ///@}
   private:
 

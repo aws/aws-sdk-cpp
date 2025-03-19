@@ -28,7 +28,7 @@ namespace Model
   class DeleteAgentResult
   {
   public:
-    AWS_BEDROCKAGENT_API DeleteAgentResult();
+    AWS_BEDROCKAGENT_API DeleteAgentResult() = default;
     AWS_BEDROCKAGENT_API DeleteAgentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKAGENT_API DeleteAgentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,40 @@ namespace Model
     /**
      * <p>The unique identifier of the agent that was deleted.</p>
      */
-    inline const Aws::String& GetAgentId() const{ return m_agentId; }
-    inline void SetAgentId(const Aws::String& value) { m_agentId = value; }
-    inline void SetAgentId(Aws::String&& value) { m_agentId = std::move(value); }
-    inline void SetAgentId(const char* value) { m_agentId.assign(value); }
-    inline DeleteAgentResult& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
-    inline DeleteAgentResult& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
-    inline DeleteAgentResult& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    inline const Aws::String& GetAgentId() const { return m_agentId; }
+    template<typename AgentIdT = Aws::String>
+    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
+    template<typename AgentIdT = Aws::String>
+    DeleteAgentResult& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the agent.</p>
      */
-    inline const AgentStatus& GetAgentStatus() const{ return m_agentStatus; }
-    inline void SetAgentStatus(const AgentStatus& value) { m_agentStatus = value; }
-    inline void SetAgentStatus(AgentStatus&& value) { m_agentStatus = std::move(value); }
-    inline DeleteAgentResult& WithAgentStatus(const AgentStatus& value) { SetAgentStatus(value); return *this;}
-    inline DeleteAgentResult& WithAgentStatus(AgentStatus&& value) { SetAgentStatus(std::move(value)); return *this;}
+    inline AgentStatus GetAgentStatus() const { return m_agentStatus; }
+    inline void SetAgentStatus(AgentStatus value) { m_agentStatusHasBeenSet = true; m_agentStatus = value; }
+    inline DeleteAgentResult& WithAgentStatus(AgentStatus value) { SetAgentStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteAgentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteAgentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteAgentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteAgentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_agentId;
+    bool m_agentIdHasBeenSet = false;
 
-    AgentStatus m_agentStatus;
+    AgentStatus m_agentStatus{AgentStatus::NOT_SET};
+    bool m_agentStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

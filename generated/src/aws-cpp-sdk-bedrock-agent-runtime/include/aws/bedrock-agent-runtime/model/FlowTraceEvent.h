@@ -35,7 +35,7 @@ namespace Model
   class FlowTraceEvent
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API FlowTraceEvent();
+    AWS_BEDROCKAGENTRUNTIME_API FlowTraceEvent() = default;
     AWS_BEDROCKAGENTRUNTIME_API FlowTraceEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API FlowTraceEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * <p>The trace object containing information about an input or output for a node
      * in the flow.</p>
      */
-    inline const FlowTrace& GetTrace() const{ return m_trace; }
+    inline const FlowTrace& GetTrace() const { return m_trace; }
     inline bool TraceHasBeenSet() const { return m_traceHasBeenSet; }
-    inline void SetTrace(const FlowTrace& value) { m_traceHasBeenSet = true; m_trace = value; }
-    inline void SetTrace(FlowTrace&& value) { m_traceHasBeenSet = true; m_trace = std::move(value); }
-    inline FlowTraceEvent& WithTrace(const FlowTrace& value) { SetTrace(value); return *this;}
-    inline FlowTraceEvent& WithTrace(FlowTrace&& value) { SetTrace(std::move(value)); return *this;}
+    template<typename TraceT = FlowTrace>
+    void SetTrace(TraceT&& value) { m_traceHasBeenSet = true; m_trace = std::forward<TraceT>(value); }
+    template<typename TraceT = FlowTrace>
+    FlowTraceEvent& WithTrace(TraceT&& value) { SetTrace(std::forward<TraceT>(value)); return *this;}
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class ReportConfigurationS3OutputInput
   {
   public:
-    AWS_FIS_API ReportConfigurationS3OutputInput();
+    AWS_FIS_API ReportConfigurationS3OutputInput() = default;
     AWS_FIS_API ReportConfigurationS3OutputInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API ReportConfigurationS3OutputInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of the S3 bucket where the experiment report will be stored.</p>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline ReportConfigurationS3OutputInput& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline ReportConfigurationS3OutputInput& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline ReportConfigurationS3OutputInput& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    ReportConfigurationS3OutputInput& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The prefix of the S3 bucket where the experiment report will be stored.</p>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline ReportConfigurationS3OutputInput& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline ReportConfigurationS3OutputInput& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline ReportConfigurationS3OutputInput& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    ReportConfigurationS3OutputInput& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
   private:
 

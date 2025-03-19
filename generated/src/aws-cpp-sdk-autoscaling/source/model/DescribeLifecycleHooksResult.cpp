@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLifecycleHooksResult::DescribeLifecycleHooksResult()
-{
-}
-
 DescribeLifecycleHooksResult::DescribeLifecycleHooksResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ DescribeLifecycleHooksResult& DescribeLifecycleHooksResult::operator =(const Aws
     if(!lifecycleHooksNode.IsNull())
     {
       XmlNode lifecycleHooksMember = lifecycleHooksNode.FirstChild("member");
+      m_lifecycleHooksHasBeenSet = !lifecycleHooksMember.IsNull();
       while(!lifecycleHooksMember.IsNull())
       {
         m_lifecycleHooks.push_back(lifecycleHooksMember);
         lifecycleHooksMember = lifecycleHooksMember.NextNode("member");
       }
 
+      m_lifecycleHooksHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::DescribeLifecycleHooksResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

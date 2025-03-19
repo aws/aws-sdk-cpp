@@ -28,7 +28,7 @@ namespace Model
   class GetEncoderConfigurationResult
   {
   public:
-    AWS_IVSREALTIME_API GetEncoderConfigurationResult();
+    AWS_IVSREALTIME_API GetEncoderConfigurationResult() = default;
     AWS_IVSREALTIME_API GetEncoderConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IVSREALTIME_API GetEncoderConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The EncoderConfiguration that was returned.</p>
      */
-    inline const EncoderConfiguration& GetEncoderConfiguration() const{ return m_encoderConfiguration; }
-    inline void SetEncoderConfiguration(const EncoderConfiguration& value) { m_encoderConfiguration = value; }
-    inline void SetEncoderConfiguration(EncoderConfiguration&& value) { m_encoderConfiguration = std::move(value); }
-    inline GetEncoderConfigurationResult& WithEncoderConfiguration(const EncoderConfiguration& value) { SetEncoderConfiguration(value); return *this;}
-    inline GetEncoderConfigurationResult& WithEncoderConfiguration(EncoderConfiguration&& value) { SetEncoderConfiguration(std::move(value)); return *this;}
+    inline const EncoderConfiguration& GetEncoderConfiguration() const { return m_encoderConfiguration; }
+    template<typename EncoderConfigurationT = EncoderConfiguration>
+    void SetEncoderConfiguration(EncoderConfigurationT&& value) { m_encoderConfigurationHasBeenSet = true; m_encoderConfiguration = std::forward<EncoderConfigurationT>(value); }
+    template<typename EncoderConfigurationT = EncoderConfiguration>
+    GetEncoderConfigurationResult& WithEncoderConfiguration(EncoderConfigurationT&& value) { SetEncoderConfiguration(std::forward<EncoderConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetEncoderConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetEncoderConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetEncoderConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetEncoderConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     EncoderConfiguration m_encoderConfiguration;
+    bool m_encoderConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

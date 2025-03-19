@@ -18,14 +18,7 @@ namespace MigrationHub
 namespace Model
 {
 
-DiscoveredResource::DiscoveredResource() : 
-    m_configurationIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 DiscoveredResource::DiscoveredResource(JsonView jsonValue)
-  : DiscoveredResource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DiscoveredResource& DiscoveredResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConfigurationId"))
   {
     m_configurationId = jsonValue.GetString("ConfigurationId");
-
     m_configurationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

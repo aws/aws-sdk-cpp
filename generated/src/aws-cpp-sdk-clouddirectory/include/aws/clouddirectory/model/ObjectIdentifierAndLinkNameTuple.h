@@ -31,7 +31,7 @@ namespace Model
   class ObjectIdentifierAndLinkNameTuple
   {
   public:
-    AWS_CLOUDDIRECTORY_API ObjectIdentifierAndLinkNameTuple();
+    AWS_CLOUDDIRECTORY_API ObjectIdentifierAndLinkNameTuple() = default;
     AWS_CLOUDDIRECTORY_API ObjectIdentifierAndLinkNameTuple(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API ObjectIdentifierAndLinkNameTuple& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The ID that is associated with the object.</p>
      */
-    inline const Aws::String& GetObjectIdentifier() const{ return m_objectIdentifier; }
+    inline const Aws::String& GetObjectIdentifier() const { return m_objectIdentifier; }
     inline bool ObjectIdentifierHasBeenSet() const { return m_objectIdentifierHasBeenSet; }
-    inline void SetObjectIdentifier(const Aws::String& value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier = value; }
-    inline void SetObjectIdentifier(Aws::String&& value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier = std::move(value); }
-    inline void SetObjectIdentifier(const char* value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier.assign(value); }
-    inline ObjectIdentifierAndLinkNameTuple& WithObjectIdentifier(const Aws::String& value) { SetObjectIdentifier(value); return *this;}
-    inline ObjectIdentifierAndLinkNameTuple& WithObjectIdentifier(Aws::String&& value) { SetObjectIdentifier(std::move(value)); return *this;}
-    inline ObjectIdentifierAndLinkNameTuple& WithObjectIdentifier(const char* value) { SetObjectIdentifier(value); return *this;}
+    template<typename ObjectIdentifierT = Aws::String>
+    void SetObjectIdentifier(ObjectIdentifierT&& value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier = std::forward<ObjectIdentifierT>(value); }
+    template<typename ObjectIdentifierT = Aws::String>
+    ObjectIdentifierAndLinkNameTuple& WithObjectIdentifier(ObjectIdentifierT&& value) { SetObjectIdentifier(std::forward<ObjectIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the link between the parent and the child object.</p>
      */
-    inline const Aws::String& GetLinkName() const{ return m_linkName; }
+    inline const Aws::String& GetLinkName() const { return m_linkName; }
     inline bool LinkNameHasBeenSet() const { return m_linkNameHasBeenSet; }
-    inline void SetLinkName(const Aws::String& value) { m_linkNameHasBeenSet = true; m_linkName = value; }
-    inline void SetLinkName(Aws::String&& value) { m_linkNameHasBeenSet = true; m_linkName = std::move(value); }
-    inline void SetLinkName(const char* value) { m_linkNameHasBeenSet = true; m_linkName.assign(value); }
-    inline ObjectIdentifierAndLinkNameTuple& WithLinkName(const Aws::String& value) { SetLinkName(value); return *this;}
-    inline ObjectIdentifierAndLinkNameTuple& WithLinkName(Aws::String&& value) { SetLinkName(std::move(value)); return *this;}
-    inline ObjectIdentifierAndLinkNameTuple& WithLinkName(const char* value) { SetLinkName(value); return *this;}
+    template<typename LinkNameT = Aws::String>
+    void SetLinkName(LinkNameT&& value) { m_linkNameHasBeenSet = true; m_linkName = std::forward<LinkNameT>(value); }
+    template<typename LinkNameT = Aws::String>
+    ObjectIdentifierAndLinkNameTuple& WithLinkName(LinkNameT&& value) { SetLinkName(std::forward<LinkNameT>(value)); return *this;}
     ///@}
   private:
 

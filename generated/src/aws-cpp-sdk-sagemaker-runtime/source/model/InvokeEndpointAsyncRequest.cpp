@@ -13,20 +13,6 @@ using namespace Aws::SageMakerRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-InvokeEndpointAsyncRequest::InvokeEndpointAsyncRequest() : 
-    m_endpointNameHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_acceptHasBeenSet(false),
-    m_customAttributesHasBeenSet(false),
-    m_inferenceIdHasBeenSet(false),
-    m_inputLocationHasBeenSet(false),
-    m_requestTTLSeconds(0),
-    m_requestTTLSecondsHasBeenSet(false),
-    m_invocationTimeoutSeconds(0),
-    m_invocationTimeoutSecondsHasBeenSet(false)
-{
-}
-
 Aws::String InvokeEndpointAsyncRequest::SerializePayload() const
 {
   return {};

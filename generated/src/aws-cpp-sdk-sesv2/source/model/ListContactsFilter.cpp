@@ -18,15 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-ListContactsFilter::ListContactsFilter() : 
-    m_filteredStatus(SubscriptionStatus::NOT_SET),
-    m_filteredStatusHasBeenSet(false),
-    m_topicFilterHasBeenSet(false)
-{
-}
-
 ListContactsFilter::ListContactsFilter(JsonView jsonValue)
-  : ListContactsFilter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ListContactsFilter& ListContactsFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FilteredStatus"))
   {
     m_filteredStatus = SubscriptionStatusMapper::GetSubscriptionStatusForName(jsonValue.GetString("FilteredStatus"));
-
     m_filteredStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TopicFilter"))
   {
     m_topicFilter = jsonValue.GetObject("TopicFilter");
-
     m_topicFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

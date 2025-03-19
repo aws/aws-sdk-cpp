@@ -18,19 +18,7 @@ namespace LaunchWizard
 namespace Model
 {
 
-DeploymentDataSummary::DeploymentDataSummary() : 
-    m_createdAtHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_patternNameHasBeenSet(false),
-    m_status(DeploymentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_workloadNameHasBeenSet(false)
-{
-}
-
 DeploymentDataSummary::DeploymentDataSummary(JsonView jsonValue)
-  : DeploymentDataSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ DeploymentDataSummary& DeploymentDataSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("patternName"))
   {
     m_patternName = jsonValue.GetString("patternName");
-
     m_patternNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DeploymentStatusMapper::GetDeploymentStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workloadName"))
   {
     m_workloadName = jsonValue.GetString("workloadName");
-
     m_workloadNameHasBeenSet = true;
   }
-
   return *this;
 }
 

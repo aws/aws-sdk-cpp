@@ -25,7 +25,7 @@ namespace Model
   class AssociateDataProtectionSettingsRequest : public WorkSpacesWebRequest
   {
   public:
-    AWS_WORKSPACESWEB_API AssociateDataProtectionSettingsRequest();
+    AWS_WORKSPACESWEB_API AssociateDataProtectionSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The ARN of the data protection settings.</p>
      */
-    inline const Aws::String& GetDataProtectionSettingsArn() const{ return m_dataProtectionSettingsArn; }
+    inline const Aws::String& GetDataProtectionSettingsArn() const { return m_dataProtectionSettingsArn; }
     inline bool DataProtectionSettingsArnHasBeenSet() const { return m_dataProtectionSettingsArnHasBeenSet; }
-    inline void SetDataProtectionSettingsArn(const Aws::String& value) { m_dataProtectionSettingsArnHasBeenSet = true; m_dataProtectionSettingsArn = value; }
-    inline void SetDataProtectionSettingsArn(Aws::String&& value) { m_dataProtectionSettingsArnHasBeenSet = true; m_dataProtectionSettingsArn = std::move(value); }
-    inline void SetDataProtectionSettingsArn(const char* value) { m_dataProtectionSettingsArnHasBeenSet = true; m_dataProtectionSettingsArn.assign(value); }
-    inline AssociateDataProtectionSettingsRequest& WithDataProtectionSettingsArn(const Aws::String& value) { SetDataProtectionSettingsArn(value); return *this;}
-    inline AssociateDataProtectionSettingsRequest& WithDataProtectionSettingsArn(Aws::String&& value) { SetDataProtectionSettingsArn(std::move(value)); return *this;}
-    inline AssociateDataProtectionSettingsRequest& WithDataProtectionSettingsArn(const char* value) { SetDataProtectionSettingsArn(value); return *this;}
+    template<typename DataProtectionSettingsArnT = Aws::String>
+    void SetDataProtectionSettingsArn(DataProtectionSettingsArnT&& value) { m_dataProtectionSettingsArnHasBeenSet = true; m_dataProtectionSettingsArn = std::forward<DataProtectionSettingsArnT>(value); }
+    template<typename DataProtectionSettingsArnT = Aws::String>
+    AssociateDataProtectionSettingsRequest& WithDataProtectionSettingsArn(DataProtectionSettingsArnT&& value) { SetDataProtectionSettingsArn(std::forward<DataProtectionSettingsArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the web portal.</p>
      */
-    inline const Aws::String& GetPortalArn() const{ return m_portalArn; }
+    inline const Aws::String& GetPortalArn() const { return m_portalArn; }
     inline bool PortalArnHasBeenSet() const { return m_portalArnHasBeenSet; }
-    inline void SetPortalArn(const Aws::String& value) { m_portalArnHasBeenSet = true; m_portalArn = value; }
-    inline void SetPortalArn(Aws::String&& value) { m_portalArnHasBeenSet = true; m_portalArn = std::move(value); }
-    inline void SetPortalArn(const char* value) { m_portalArnHasBeenSet = true; m_portalArn.assign(value); }
-    inline AssociateDataProtectionSettingsRequest& WithPortalArn(const Aws::String& value) { SetPortalArn(value); return *this;}
-    inline AssociateDataProtectionSettingsRequest& WithPortalArn(Aws::String&& value) { SetPortalArn(std::move(value)); return *this;}
-    inline AssociateDataProtectionSettingsRequest& WithPortalArn(const char* value) { SetPortalArn(value); return *this;}
+    template<typename PortalArnT = Aws::String>
+    void SetPortalArn(PortalArnT&& value) { m_portalArnHasBeenSet = true; m_portalArn = std::forward<PortalArnT>(value); }
+    template<typename PortalArnT = Aws::String>
+    AssociateDataProtectionSettingsRequest& WithPortalArn(PortalArnT&& value) { SetPortalArn(std::forward<PortalArnT>(value)); return *this;}
     ///@}
   private:
 

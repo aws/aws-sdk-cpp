@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-HistoricalMetricData::HistoricalMetricData() : 
-    m_metricHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 HistoricalMetricData::HistoricalMetricData(JsonView jsonValue)
-  : HistoricalMetricData()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ HistoricalMetricData& HistoricalMetricData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Metric"))
   {
     m_metric = jsonValue.GetObject("Metric");
-
     m_metricHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetDouble("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

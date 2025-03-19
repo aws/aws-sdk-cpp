@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDBClusterParameterGroupsResult::DescribeDBClusterParameterGroupsResult()
-{
-}
-
 DescribeDBClusterParameterGroupsResult::DescribeDBClusterParameterGroupsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeDBClusterParameterGroupsResult& DescribeDBClusterParameterGroupsResult::
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode dBClusterParameterGroupsNode = resultNode.FirstChild("DBClusterParameterGroups");
     if(!dBClusterParameterGroupsNode.IsNull())
     {
       XmlNode dBClusterParameterGroupsMember = dBClusterParameterGroupsNode.FirstChild("DBClusterParameterGroup");
+      m_dBClusterParameterGroupsHasBeenSet = !dBClusterParameterGroupsMember.IsNull();
       while(!dBClusterParameterGroupsMember.IsNull())
       {
         m_dBClusterParameterGroups.push_back(dBClusterParameterGroupsMember);
         dBClusterParameterGroupsMember = dBClusterParameterGroupsMember.NextNode("DBClusterParameterGroup");
       }
 
+      m_dBClusterParameterGroupsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeDBClusterParameterGroupsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

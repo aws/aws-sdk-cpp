@@ -24,7 +24,7 @@ namespace Model
   class BatchIsAuthorizedWithTokenRequest : public VerifiedPermissionsRequest
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API BatchIsAuthorizedWithTokenRequest();
+    AWS_VERIFIEDPERMISSIONS_API BatchIsAuthorizedWithTokenRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>Specifies the ID of the policy store. Policies in this policy store will be
      * used to make an authorization decision for the input.</p>
      */
-    inline const Aws::String& GetPolicyStoreId() const{ return m_policyStoreId; }
+    inline const Aws::String& GetPolicyStoreId() const { return m_policyStoreId; }
     inline bool PolicyStoreIdHasBeenSet() const { return m_policyStoreIdHasBeenSet; }
-    inline void SetPolicyStoreId(const Aws::String& value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId = value; }
-    inline void SetPolicyStoreId(Aws::String&& value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId = std::move(value); }
-    inline void SetPolicyStoreId(const char* value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId.assign(value); }
-    inline BatchIsAuthorizedWithTokenRequest& WithPolicyStoreId(const Aws::String& value) { SetPolicyStoreId(value); return *this;}
-    inline BatchIsAuthorizedWithTokenRequest& WithPolicyStoreId(Aws::String&& value) { SetPolicyStoreId(std::move(value)); return *this;}
-    inline BatchIsAuthorizedWithTokenRequest& WithPolicyStoreId(const char* value) { SetPolicyStoreId(value); return *this;}
+    template<typename PolicyStoreIdT = Aws::String>
+    void SetPolicyStoreId(PolicyStoreIdT&& value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId = std::forward<PolicyStoreIdT>(value); }
+    template<typename PolicyStoreIdT = Aws::String>
+    BatchIsAuthorizedWithTokenRequest& WithPolicyStoreId(PolicyStoreIdT&& value) { SetPolicyStoreId(std::forward<PolicyStoreIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * an ID token. Verified Permissions returns an error if the <code>token_use</code>
      * claim in the submitted token isn't <code>id</code>.</p>
      */
-    inline const Aws::String& GetIdentityToken() const{ return m_identityToken; }
+    inline const Aws::String& GetIdentityToken() const { return m_identityToken; }
     inline bool IdentityTokenHasBeenSet() const { return m_identityTokenHasBeenSet; }
-    inline void SetIdentityToken(const Aws::String& value) { m_identityTokenHasBeenSet = true; m_identityToken = value; }
-    inline void SetIdentityToken(Aws::String&& value) { m_identityTokenHasBeenSet = true; m_identityToken = std::move(value); }
-    inline void SetIdentityToken(const char* value) { m_identityTokenHasBeenSet = true; m_identityToken.assign(value); }
-    inline BatchIsAuthorizedWithTokenRequest& WithIdentityToken(const Aws::String& value) { SetIdentityToken(value); return *this;}
-    inline BatchIsAuthorizedWithTokenRequest& WithIdentityToken(Aws::String&& value) { SetIdentityToken(std::move(value)); return *this;}
-    inline BatchIsAuthorizedWithTokenRequest& WithIdentityToken(const char* value) { SetIdentityToken(value); return *this;}
+    template<typename IdentityTokenT = Aws::String>
+    void SetIdentityToken(IdentityTokenT&& value) { m_identityTokenHasBeenSet = true; m_identityToken = std::forward<IdentityTokenT>(value); }
+    template<typename IdentityTokenT = Aws::String>
+    BatchIsAuthorizedWithTokenRequest& WithIdentityToken(IdentityTokenT&& value) { SetIdentityToken(std::forward<IdentityTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,12 @@ namespace Model
      * <code>token_use</code> claim in the submitted token isn't
      * <code>access</code>.</p>
      */
-    inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
+    inline const Aws::String& GetAccessToken() const { return m_accessToken; }
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
-    inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
-    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
-    inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
-    inline BatchIsAuthorizedWithTokenRequest& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
-    inline BatchIsAuthorizedWithTokenRequest& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
-    inline BatchIsAuthorizedWithTokenRequest& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
+    template<typename AccessTokenT = Aws::String>
+    void SetAccessToken(AccessTokenT&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::forward<AccessTokenT>(value); }
+    template<typename AccessTokenT = Aws::String>
+    BatchIsAuthorizedWithTokenRequest& WithAccessToken(AccessTokenT&& value) { SetAccessToken(std::forward<AccessTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,12 +98,12 @@ namespace Model
      * entities, you can include only their <code>Identifier</code> and
      * <code>EntityType</code>. </p> </li> </ul> 
      */
-    inline const EntitiesDefinition& GetEntities() const{ return m_entities; }
+    inline const EntitiesDefinition& GetEntities() const { return m_entities; }
     inline bool EntitiesHasBeenSet() const { return m_entitiesHasBeenSet; }
-    inline void SetEntities(const EntitiesDefinition& value) { m_entitiesHasBeenSet = true; m_entities = value; }
-    inline void SetEntities(EntitiesDefinition&& value) { m_entitiesHasBeenSet = true; m_entities = std::move(value); }
-    inline BatchIsAuthorizedWithTokenRequest& WithEntities(const EntitiesDefinition& value) { SetEntities(value); return *this;}
-    inline BatchIsAuthorizedWithTokenRequest& WithEntities(EntitiesDefinition&& value) { SetEntities(std::move(value)); return *this;}
+    template<typename EntitiesT = EntitiesDefinition>
+    void SetEntities(EntitiesT&& value) { m_entitiesHasBeenSet = true; m_entities = std::forward<EntitiesT>(value); }
+    template<typename EntitiesT = EntitiesDefinition>
+    BatchIsAuthorizedWithTokenRequest& WithEntities(EntitiesT&& value) { SetEntities(std::forward<EntitiesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,14 +111,14 @@ namespace Model
      * <p>An array of up to 30 requests that you want Verified Permissions to
      * evaluate.</p>
      */
-    inline const Aws::Vector<BatchIsAuthorizedWithTokenInputItem>& GetRequests() const{ return m_requests; }
+    inline const Aws::Vector<BatchIsAuthorizedWithTokenInputItem>& GetRequests() const { return m_requests; }
     inline bool RequestsHasBeenSet() const { return m_requestsHasBeenSet; }
-    inline void SetRequests(const Aws::Vector<BatchIsAuthorizedWithTokenInputItem>& value) { m_requestsHasBeenSet = true; m_requests = value; }
-    inline void SetRequests(Aws::Vector<BatchIsAuthorizedWithTokenInputItem>&& value) { m_requestsHasBeenSet = true; m_requests = std::move(value); }
-    inline BatchIsAuthorizedWithTokenRequest& WithRequests(const Aws::Vector<BatchIsAuthorizedWithTokenInputItem>& value) { SetRequests(value); return *this;}
-    inline BatchIsAuthorizedWithTokenRequest& WithRequests(Aws::Vector<BatchIsAuthorizedWithTokenInputItem>&& value) { SetRequests(std::move(value)); return *this;}
-    inline BatchIsAuthorizedWithTokenRequest& AddRequests(const BatchIsAuthorizedWithTokenInputItem& value) { m_requestsHasBeenSet = true; m_requests.push_back(value); return *this; }
-    inline BatchIsAuthorizedWithTokenRequest& AddRequests(BatchIsAuthorizedWithTokenInputItem&& value) { m_requestsHasBeenSet = true; m_requests.push_back(std::move(value)); return *this; }
+    template<typename RequestsT = Aws::Vector<BatchIsAuthorizedWithTokenInputItem>>
+    void SetRequests(RequestsT&& value) { m_requestsHasBeenSet = true; m_requests = std::forward<RequestsT>(value); }
+    template<typename RequestsT = Aws::Vector<BatchIsAuthorizedWithTokenInputItem>>
+    BatchIsAuthorizedWithTokenRequest& WithRequests(RequestsT&& value) { SetRequests(std::forward<RequestsT>(value)); return *this;}
+    template<typename RequestsT = BatchIsAuthorizedWithTokenInputItem>
+    BatchIsAuthorizedWithTokenRequest& AddRequests(RequestsT&& value) { m_requestsHasBeenSet = true; m_requests.emplace_back(std::forward<RequestsT>(value)); return *this; }
     ///@}
   private:
 

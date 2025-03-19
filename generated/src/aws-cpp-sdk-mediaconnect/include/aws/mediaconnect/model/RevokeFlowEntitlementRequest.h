@@ -21,7 +21,7 @@ namespace Model
   class RevokeFlowEntitlementRequest : public MediaConnectRequest
   {
   public:
-    AWS_MEDIACONNECT_API RevokeFlowEntitlementRequest();
+    AWS_MEDIACONNECT_API RevokeFlowEntitlementRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * The ARN of the entitlement that you want to revoke.
      */
-    inline const Aws::String& GetEntitlementArn() const{ return m_entitlementArn; }
+    inline const Aws::String& GetEntitlementArn() const { return m_entitlementArn; }
     inline bool EntitlementArnHasBeenSet() const { return m_entitlementArnHasBeenSet; }
-    inline void SetEntitlementArn(const Aws::String& value) { m_entitlementArnHasBeenSet = true; m_entitlementArn = value; }
-    inline void SetEntitlementArn(Aws::String&& value) { m_entitlementArnHasBeenSet = true; m_entitlementArn = std::move(value); }
-    inline void SetEntitlementArn(const char* value) { m_entitlementArnHasBeenSet = true; m_entitlementArn.assign(value); }
-    inline RevokeFlowEntitlementRequest& WithEntitlementArn(const Aws::String& value) { SetEntitlementArn(value); return *this;}
-    inline RevokeFlowEntitlementRequest& WithEntitlementArn(Aws::String&& value) { SetEntitlementArn(std::move(value)); return *this;}
-    inline RevokeFlowEntitlementRequest& WithEntitlementArn(const char* value) { SetEntitlementArn(value); return *this;}
+    template<typename EntitlementArnT = Aws::String>
+    void SetEntitlementArn(EntitlementArnT&& value) { m_entitlementArnHasBeenSet = true; m_entitlementArn = std::forward<EntitlementArnT>(value); }
+    template<typename EntitlementArnT = Aws::String>
+    RevokeFlowEntitlementRequest& WithEntitlementArn(EntitlementArnT&& value) { SetEntitlementArn(std::forward<EntitlementArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The flow that you want to revoke an entitlement from.
      */
-    inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
+    inline const Aws::String& GetFlowArn() const { return m_flowArn; }
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
-    inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
-    inline void SetFlowArn(Aws::String&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::move(value); }
-    inline void SetFlowArn(const char* value) { m_flowArnHasBeenSet = true; m_flowArn.assign(value); }
-    inline RevokeFlowEntitlementRequest& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
-    inline RevokeFlowEntitlementRequest& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
-    inline RevokeFlowEntitlementRequest& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
+    template<typename FlowArnT = Aws::String>
+    void SetFlowArn(FlowArnT&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::forward<FlowArnT>(value); }
+    template<typename FlowArnT = Aws::String>
+    RevokeFlowEntitlementRequest& WithFlowArn(FlowArnT&& value) { SetFlowArn(std::forward<FlowArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -37,7 +37,7 @@ namespace Model
   class BackupPlanInput
   {
   public:
-    AWS_BACKUP_API BackupPlanInput();
+    AWS_BACKUP_API BackupPlanInput() = default;
     AWS_BACKUP_API BackupPlanInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API BackupPlanInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * <p>The display name of a backup plan. Must contain 1 to 50 alphanumeric or '-_.'
      * characters.</p>
      */
-    inline const Aws::String& GetBackupPlanName() const{ return m_backupPlanName; }
+    inline const Aws::String& GetBackupPlanName() const { return m_backupPlanName; }
     inline bool BackupPlanNameHasBeenSet() const { return m_backupPlanNameHasBeenSet; }
-    inline void SetBackupPlanName(const Aws::String& value) { m_backupPlanNameHasBeenSet = true; m_backupPlanName = value; }
-    inline void SetBackupPlanName(Aws::String&& value) { m_backupPlanNameHasBeenSet = true; m_backupPlanName = std::move(value); }
-    inline void SetBackupPlanName(const char* value) { m_backupPlanNameHasBeenSet = true; m_backupPlanName.assign(value); }
-    inline BackupPlanInput& WithBackupPlanName(const Aws::String& value) { SetBackupPlanName(value); return *this;}
-    inline BackupPlanInput& WithBackupPlanName(Aws::String&& value) { SetBackupPlanName(std::move(value)); return *this;}
-    inline BackupPlanInput& WithBackupPlanName(const char* value) { SetBackupPlanName(value); return *this;}
+    template<typename BackupPlanNameT = Aws::String>
+    void SetBackupPlanName(BackupPlanNameT&& value) { m_backupPlanNameHasBeenSet = true; m_backupPlanName = std::forward<BackupPlanNameT>(value); }
+    template<typename BackupPlanNameT = Aws::String>
+    BackupPlanInput& WithBackupPlanName(BackupPlanNameT&& value) { SetBackupPlanName(std::forward<BackupPlanNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,14 @@ namespace Model
      * <p>An array of <code>BackupRule</code> objects, each of which specifies a
      * scheduled task that is used to back up a selection of resources.</p>
      */
-    inline const Aws::Vector<BackupRuleInput>& GetRules() const{ return m_rules; }
+    inline const Aws::Vector<BackupRuleInput>& GetRules() const { return m_rules; }
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    inline void SetRules(const Aws::Vector<BackupRuleInput>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-    inline void SetRules(Aws::Vector<BackupRuleInput>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-    inline BackupPlanInput& WithRules(const Aws::Vector<BackupRuleInput>& value) { SetRules(value); return *this;}
-    inline BackupPlanInput& WithRules(Aws::Vector<BackupRuleInput>&& value) { SetRules(std::move(value)); return *this;}
-    inline BackupPlanInput& AddRules(const BackupRuleInput& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-    inline BackupPlanInput& AddRules(BackupRuleInput&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    template<typename RulesT = Aws::Vector<BackupRuleInput>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<BackupRuleInput>>
+    BackupPlanInput& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = BackupRuleInput>
+    BackupPlanInput& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -79,14 +77,14 @@ namespace Model
      * settings are only available for Windows Volume Shadow Copy Service (VSS) backup
      * jobs.</p>
      */
-    inline const Aws::Vector<AdvancedBackupSetting>& GetAdvancedBackupSettings() const{ return m_advancedBackupSettings; }
+    inline const Aws::Vector<AdvancedBackupSetting>& GetAdvancedBackupSettings() const { return m_advancedBackupSettings; }
     inline bool AdvancedBackupSettingsHasBeenSet() const { return m_advancedBackupSettingsHasBeenSet; }
-    inline void SetAdvancedBackupSettings(const Aws::Vector<AdvancedBackupSetting>& value) { m_advancedBackupSettingsHasBeenSet = true; m_advancedBackupSettings = value; }
-    inline void SetAdvancedBackupSettings(Aws::Vector<AdvancedBackupSetting>&& value) { m_advancedBackupSettingsHasBeenSet = true; m_advancedBackupSettings = std::move(value); }
-    inline BackupPlanInput& WithAdvancedBackupSettings(const Aws::Vector<AdvancedBackupSetting>& value) { SetAdvancedBackupSettings(value); return *this;}
-    inline BackupPlanInput& WithAdvancedBackupSettings(Aws::Vector<AdvancedBackupSetting>&& value) { SetAdvancedBackupSettings(std::move(value)); return *this;}
-    inline BackupPlanInput& AddAdvancedBackupSettings(const AdvancedBackupSetting& value) { m_advancedBackupSettingsHasBeenSet = true; m_advancedBackupSettings.push_back(value); return *this; }
-    inline BackupPlanInput& AddAdvancedBackupSettings(AdvancedBackupSetting&& value) { m_advancedBackupSettingsHasBeenSet = true; m_advancedBackupSettings.push_back(std::move(value)); return *this; }
+    template<typename AdvancedBackupSettingsT = Aws::Vector<AdvancedBackupSetting>>
+    void SetAdvancedBackupSettings(AdvancedBackupSettingsT&& value) { m_advancedBackupSettingsHasBeenSet = true; m_advancedBackupSettings = std::forward<AdvancedBackupSettingsT>(value); }
+    template<typename AdvancedBackupSettingsT = Aws::Vector<AdvancedBackupSetting>>
+    BackupPlanInput& WithAdvancedBackupSettings(AdvancedBackupSettingsT&& value) { SetAdvancedBackupSettings(std::forward<AdvancedBackupSettingsT>(value)); return *this;}
+    template<typename AdvancedBackupSettingsT = AdvancedBackupSetting>
+    BackupPlanInput& AddAdvancedBackupSettings(AdvancedBackupSettingsT&& value) { m_advancedBackupSettingsHasBeenSet = true; m_advancedBackupSettings.emplace_back(std::forward<AdvancedBackupSettingsT>(value)); return *this; }
     ///@}
   private:
 

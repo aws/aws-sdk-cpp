@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMLModelTransformJobResult::GetMLModelTransformJobResult()
-{
-}
-
 GetMLModelTransformJobResult::GetMLModelTransformJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,23 @@ GetMLModelTransformJobResult& GetMLModelTransformJobResult::operator =(const Aws
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("baseProcessingJob"))
   {
     m_baseProcessingJob = jsonValue.GetObject("baseProcessingJob");
-
+    m_baseProcessingJobHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remoteModelTransformJob"))
   {
     m_remoteModelTransformJob = jsonValue.GetObject("remoteModelTransformJob");
-
+    m_remoteModelTransformJobHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("models"))
   {
     Aws::Utils::Array<JsonView> modelsJsonList = jsonValue.GetArray("models");
@@ -60,14 +52,15 @@ GetMLModelTransformJobResult& GetMLModelTransformJobResult::operator =(const Aws
     {
       m_models.push_back(modelsJsonList[modelsIndex].AsObject());
     }
+    m_modelsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

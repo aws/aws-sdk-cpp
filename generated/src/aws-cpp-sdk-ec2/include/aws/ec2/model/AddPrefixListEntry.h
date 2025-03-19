@@ -31,7 +31,7 @@ namespace Model
   class AddPrefixListEntry
   {
   public:
-    AWS_EC2_API AddPrefixListEntry();
+    AWS_EC2_API AddPrefixListEntry() = default;
     AWS_EC2_API AddPrefixListEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API AddPrefixListEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The CIDR block.</p>
      */
-    inline const Aws::String& GetCidr() const{ return m_cidr; }
+    inline const Aws::String& GetCidr() const { return m_cidr; }
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-    inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
-    inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
-    inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
-    inline AddPrefixListEntry& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
-    inline AddPrefixListEntry& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
-    inline AddPrefixListEntry& WithCidr(const char* value) { SetCidr(value); return *this;}
+    template<typename CidrT = Aws::String>
+    void SetCidr(CidrT&& value) { m_cidrHasBeenSet = true; m_cidr = std::forward<CidrT>(value); }
+    template<typename CidrT = Aws::String>
+    AddPrefixListEntry& WithCidr(CidrT&& value) { SetCidr(std::forward<CidrT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>A description for the entry.</p> <p>Constraints: Up to 255 characters in
      * length.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline AddPrefixListEntry& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline AddPrefixListEntry& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline AddPrefixListEntry& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    AddPrefixListEntry& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 

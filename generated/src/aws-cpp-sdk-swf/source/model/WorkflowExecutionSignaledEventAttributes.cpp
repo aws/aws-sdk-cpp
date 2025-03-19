@@ -18,17 +18,7 @@ namespace SWF
 namespace Model
 {
 
-WorkflowExecutionSignaledEventAttributes::WorkflowExecutionSignaledEventAttributes() : 
-    m_signalNameHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_externalWorkflowExecutionHasBeenSet(false),
-    m_externalInitiatedEventId(0),
-    m_externalInitiatedEventIdHasBeenSet(false)
-{
-}
-
 WorkflowExecutionSignaledEventAttributes::WorkflowExecutionSignaledEventAttributes(JsonView jsonValue)
-  : WorkflowExecutionSignaledEventAttributes()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ WorkflowExecutionSignaledEventAttributes& WorkflowExecutionSignaledEventAttribut
   if(jsonValue.ValueExists("signalName"))
   {
     m_signalName = jsonValue.GetString("signalName");
-
     m_signalNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("input"))
   {
     m_input = jsonValue.GetString("input");
-
     m_inputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalWorkflowExecution"))
   {
     m_externalWorkflowExecution = jsonValue.GetObject("externalWorkflowExecution");
-
     m_externalWorkflowExecutionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalInitiatedEventId"))
   {
     m_externalInitiatedEventId = jsonValue.GetInt64("externalInitiatedEventId");
-
     m_externalInitiatedEventIdHasBeenSet = true;
   }
-
   return *this;
 }
 

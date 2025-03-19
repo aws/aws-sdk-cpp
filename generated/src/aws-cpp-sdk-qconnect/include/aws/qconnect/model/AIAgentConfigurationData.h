@@ -33,7 +33,7 @@ namespace Model
   class AIAgentConfigurationData
   {
   public:
-    AWS_QCONNECT_API AIAgentConfigurationData();
+    AWS_QCONNECT_API AIAgentConfigurationData() = default;
     AWS_QCONNECT_API AIAgentConfigurationData(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API AIAgentConfigurationData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The ID of the AI Agent to be configured.</p>
      */
-    inline const Aws::String& GetAiAgentId() const{ return m_aiAgentId; }
+    inline const Aws::String& GetAiAgentId() const { return m_aiAgentId; }
     inline bool AiAgentIdHasBeenSet() const { return m_aiAgentIdHasBeenSet; }
-    inline void SetAiAgentId(const Aws::String& value) { m_aiAgentIdHasBeenSet = true; m_aiAgentId = value; }
-    inline void SetAiAgentId(Aws::String&& value) { m_aiAgentIdHasBeenSet = true; m_aiAgentId = std::move(value); }
-    inline void SetAiAgentId(const char* value) { m_aiAgentIdHasBeenSet = true; m_aiAgentId.assign(value); }
-    inline AIAgentConfigurationData& WithAiAgentId(const Aws::String& value) { SetAiAgentId(value); return *this;}
-    inline AIAgentConfigurationData& WithAiAgentId(Aws::String&& value) { SetAiAgentId(std::move(value)); return *this;}
-    inline AIAgentConfigurationData& WithAiAgentId(const char* value) { SetAiAgentId(value); return *this;}
+    template<typename AiAgentIdT = Aws::String>
+    void SetAiAgentId(AiAgentIdT&& value) { m_aiAgentIdHasBeenSet = true; m_aiAgentId = std::forward<AiAgentIdT>(value); }
+    template<typename AiAgentIdT = Aws::String>
+    AIAgentConfigurationData& WithAiAgentId(AiAgentIdT&& value) { SetAiAgentId(std::forward<AiAgentIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,19 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-DolbyVision::DolbyVision() : 
-    m_l6MetadataHasBeenSet(false),
-    m_l6Mode(DolbyVisionLevel6Mode::NOT_SET),
-    m_l6ModeHasBeenSet(false),
-    m_mapping(DolbyVisionMapping::NOT_SET),
-    m_mappingHasBeenSet(false),
-    m_profile(DolbyVisionProfile::NOT_SET),
-    m_profileHasBeenSet(false)
-{
-}
-
 DolbyVision::DolbyVision(JsonView jsonValue)
-  : DolbyVision()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ DolbyVision& DolbyVision::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("l6Metadata"))
   {
     m_l6Metadata = jsonValue.GetObject("l6Metadata");
-
     m_l6MetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("l6Mode"))
   {
     m_l6Mode = DolbyVisionLevel6ModeMapper::GetDolbyVisionLevel6ModeForName(jsonValue.GetString("l6Mode"));
-
     m_l6ModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mapping"))
   {
     m_mapping = DolbyVisionMappingMapper::GetDolbyVisionMappingForName(jsonValue.GetString("mapping"));
-
     m_mappingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profile"))
   {
     m_profile = DolbyVisionProfileMapper::GetDolbyVisionProfileForName(jsonValue.GetString("profile"));
-
     m_profileHasBeenSet = true;
   }
-
   return *this;
 }
 

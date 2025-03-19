@@ -19,15 +19,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-CodeContentUpdate::CodeContentUpdate() : 
-    m_textContentUpdateHasBeenSet(false),
-    m_zipFileContentUpdateHasBeenSet(false),
-    m_s3ContentLocationUpdateHasBeenSet(false)
-{
-}
-
 CodeContentUpdate::CodeContentUpdate(JsonView jsonValue)
-  : CodeContentUpdate()
 {
   *this = jsonValue;
 }
@@ -37,23 +29,18 @@ CodeContentUpdate& CodeContentUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TextContentUpdate"))
   {
     m_textContentUpdate = jsonValue.GetString("TextContentUpdate");
-
     m_textContentUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ZipFileContentUpdate"))
   {
     m_zipFileContentUpdate = HashingUtils::Base64Decode(jsonValue.GetString("ZipFileContentUpdate"));
     m_zipFileContentUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3ContentLocationUpdate"))
   {
     m_s3ContentLocationUpdate = jsonValue.GetObject("S3ContentLocationUpdate");
-
     m_s3ContentLocationUpdateHasBeenSet = true;
   }
-
   return *this;
 }
 

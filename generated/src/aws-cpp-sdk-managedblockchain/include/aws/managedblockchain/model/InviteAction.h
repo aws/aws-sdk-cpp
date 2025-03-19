@@ -34,7 +34,7 @@ namespace Model
   class InviteAction
   {
   public:
-    AWS_MANAGEDBLOCKCHAIN_API InviteAction();
+    AWS_MANAGEDBLOCKCHAIN_API InviteAction() = default;
     AWS_MANAGEDBLOCKCHAIN_API InviteAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API InviteAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The Amazon Web Services account ID to invite.</p>
      */
-    inline const Aws::String& GetPrincipal() const{ return m_principal; }
+    inline const Aws::String& GetPrincipal() const { return m_principal; }
     inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
-    inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
-    inline void SetPrincipal(Aws::String&& value) { m_principalHasBeenSet = true; m_principal = std::move(value); }
-    inline void SetPrincipal(const char* value) { m_principalHasBeenSet = true; m_principal.assign(value); }
-    inline InviteAction& WithPrincipal(const Aws::String& value) { SetPrincipal(value); return *this;}
-    inline InviteAction& WithPrincipal(Aws::String&& value) { SetPrincipal(std::move(value)); return *this;}
-    inline InviteAction& WithPrincipal(const char* value) { SetPrincipal(value); return *this;}
+    template<typename PrincipalT = Aws::String>
+    void SetPrincipal(PrincipalT&& value) { m_principalHasBeenSet = true; m_principal = std::forward<PrincipalT>(value); }
+    template<typename PrincipalT = Aws::String>
+    InviteAction& WithPrincipal(PrincipalT&& value) { SetPrincipal(std::forward<PrincipalT>(value)); return *this;}
     ///@}
   private:
 

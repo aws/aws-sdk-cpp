@@ -33,7 +33,7 @@ namespace Model
   class OriginRequestPolicyQueryStringsConfig
   {
   public:
-    AWS_CLOUDFRONT_API OriginRequestPolicyQueryStringsConfig();
+    AWS_CLOUDFRONT_API OriginRequestPolicyQueryStringsConfig() = default;
     AWS_CLOUDFRONT_API OriginRequestPolicyQueryStringsConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API OriginRequestPolicyQueryStringsConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -57,12 +57,10 @@ namespace Model
      * <b>except</b> </i> for those listed in the <code>QueryStringNames</code> type,
      * which are not included.</p> </li> </ul>
      */
-    inline const OriginRequestPolicyQueryStringBehavior& GetQueryStringBehavior() const{ return m_queryStringBehavior; }
+    inline OriginRequestPolicyQueryStringBehavior GetQueryStringBehavior() const { return m_queryStringBehavior; }
     inline bool QueryStringBehaviorHasBeenSet() const { return m_queryStringBehaviorHasBeenSet; }
-    inline void SetQueryStringBehavior(const OriginRequestPolicyQueryStringBehavior& value) { m_queryStringBehaviorHasBeenSet = true; m_queryStringBehavior = value; }
-    inline void SetQueryStringBehavior(OriginRequestPolicyQueryStringBehavior&& value) { m_queryStringBehaviorHasBeenSet = true; m_queryStringBehavior = std::move(value); }
-    inline OriginRequestPolicyQueryStringsConfig& WithQueryStringBehavior(const OriginRequestPolicyQueryStringBehavior& value) { SetQueryStringBehavior(value); return *this;}
-    inline OriginRequestPolicyQueryStringsConfig& WithQueryStringBehavior(OriginRequestPolicyQueryStringBehavior&& value) { SetQueryStringBehavior(std::move(value)); return *this;}
+    inline void SetQueryStringBehavior(OriginRequestPolicyQueryStringBehavior value) { m_queryStringBehaviorHasBeenSet = true; m_queryStringBehavior = value; }
+    inline OriginRequestPolicyQueryStringsConfig& WithQueryStringBehavior(OriginRequestPolicyQueryStringBehavior value) { SetQueryStringBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -76,16 +74,16 @@ namespace Model
      * or <code>allExcept</code> (the listed query strings <i> <b>are not</b> </i>
      * included, but all other query strings are).</p>
      */
-    inline const QueryStringNames& GetQueryStrings() const{ return m_queryStrings; }
+    inline const QueryStringNames& GetQueryStrings() const { return m_queryStrings; }
     inline bool QueryStringsHasBeenSet() const { return m_queryStringsHasBeenSet; }
-    inline void SetQueryStrings(const QueryStringNames& value) { m_queryStringsHasBeenSet = true; m_queryStrings = value; }
-    inline void SetQueryStrings(QueryStringNames&& value) { m_queryStringsHasBeenSet = true; m_queryStrings = std::move(value); }
-    inline OriginRequestPolicyQueryStringsConfig& WithQueryStrings(const QueryStringNames& value) { SetQueryStrings(value); return *this;}
-    inline OriginRequestPolicyQueryStringsConfig& WithQueryStrings(QueryStringNames&& value) { SetQueryStrings(std::move(value)); return *this;}
+    template<typename QueryStringsT = QueryStringNames>
+    void SetQueryStrings(QueryStringsT&& value) { m_queryStringsHasBeenSet = true; m_queryStrings = std::forward<QueryStringsT>(value); }
+    template<typename QueryStringsT = QueryStringNames>
+    OriginRequestPolicyQueryStringsConfig& WithQueryStrings(QueryStringsT&& value) { SetQueryStrings(std::forward<QueryStringsT>(value)); return *this;}
     ///@}
   private:
 
-    OriginRequestPolicyQueryStringBehavior m_queryStringBehavior;
+    OriginRequestPolicyQueryStringBehavior m_queryStringBehavior{OriginRequestPolicyQueryStringBehavior::NOT_SET};
     bool m_queryStringBehaviorHasBeenSet = false;
 
     QueryStringNames m_queryStrings;

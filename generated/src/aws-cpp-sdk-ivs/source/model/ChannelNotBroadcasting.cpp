@@ -18,13 +18,7 @@ namespace IVS
 namespace Model
 {
 
-ChannelNotBroadcasting::ChannelNotBroadcasting() : 
-    m_exceptionMessageHasBeenSet(false)
-{
-}
-
 ChannelNotBroadcasting::ChannelNotBroadcasting(JsonView jsonValue)
-  : ChannelNotBroadcasting()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ChannelNotBroadcasting& ChannelNotBroadcasting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("exceptionMessage"))
   {
     m_exceptionMessage = jsonValue.GetString("exceptionMessage");
-
     m_exceptionMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

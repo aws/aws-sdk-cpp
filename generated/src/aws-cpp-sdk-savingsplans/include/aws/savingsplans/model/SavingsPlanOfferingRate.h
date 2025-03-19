@@ -37,7 +37,7 @@ namespace Model
   class SavingsPlanOfferingRate
   {
   public:
-    AWS_SAVINGSPLANS_API SavingsPlanOfferingRate();
+    AWS_SAVINGSPLANS_API SavingsPlanOfferingRate() = default;
     AWS_SAVINGSPLANS_API SavingsPlanOfferingRate(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAVINGSPLANS_API SavingsPlanOfferingRate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAVINGSPLANS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,76 +47,66 @@ namespace Model
     /**
      * <p>The Savings Plan offering.</p>
      */
-    inline const ParentSavingsPlanOffering& GetSavingsPlanOffering() const{ return m_savingsPlanOffering; }
+    inline const ParentSavingsPlanOffering& GetSavingsPlanOffering() const { return m_savingsPlanOffering; }
     inline bool SavingsPlanOfferingHasBeenSet() const { return m_savingsPlanOfferingHasBeenSet; }
-    inline void SetSavingsPlanOffering(const ParentSavingsPlanOffering& value) { m_savingsPlanOfferingHasBeenSet = true; m_savingsPlanOffering = value; }
-    inline void SetSavingsPlanOffering(ParentSavingsPlanOffering&& value) { m_savingsPlanOfferingHasBeenSet = true; m_savingsPlanOffering = std::move(value); }
-    inline SavingsPlanOfferingRate& WithSavingsPlanOffering(const ParentSavingsPlanOffering& value) { SetSavingsPlanOffering(value); return *this;}
-    inline SavingsPlanOfferingRate& WithSavingsPlanOffering(ParentSavingsPlanOffering&& value) { SetSavingsPlanOffering(std::move(value)); return *this;}
+    template<typename SavingsPlanOfferingT = ParentSavingsPlanOffering>
+    void SetSavingsPlanOffering(SavingsPlanOfferingT&& value) { m_savingsPlanOfferingHasBeenSet = true; m_savingsPlanOffering = std::forward<SavingsPlanOfferingT>(value); }
+    template<typename SavingsPlanOfferingT = ParentSavingsPlanOffering>
+    SavingsPlanOfferingRate& WithSavingsPlanOffering(SavingsPlanOfferingT&& value) { SetSavingsPlanOffering(std::forward<SavingsPlanOfferingT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Savings Plan rate.</p>
      */
-    inline const Aws::String& GetRate() const{ return m_rate; }
+    inline const Aws::String& GetRate() const { return m_rate; }
     inline bool RateHasBeenSet() const { return m_rateHasBeenSet; }
-    inline void SetRate(const Aws::String& value) { m_rateHasBeenSet = true; m_rate = value; }
-    inline void SetRate(Aws::String&& value) { m_rateHasBeenSet = true; m_rate = std::move(value); }
-    inline void SetRate(const char* value) { m_rateHasBeenSet = true; m_rate.assign(value); }
-    inline SavingsPlanOfferingRate& WithRate(const Aws::String& value) { SetRate(value); return *this;}
-    inline SavingsPlanOfferingRate& WithRate(Aws::String&& value) { SetRate(std::move(value)); return *this;}
-    inline SavingsPlanOfferingRate& WithRate(const char* value) { SetRate(value); return *this;}
+    template<typename RateT = Aws::String>
+    void SetRate(RateT&& value) { m_rateHasBeenSet = true; m_rate = std::forward<RateT>(value); }
+    template<typename RateT = Aws::String>
+    SavingsPlanOfferingRate& WithRate(RateT&& value) { SetRate(std::forward<RateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unit.</p>
      */
-    inline const SavingsPlanRateUnit& GetUnit() const{ return m_unit; }
+    inline SavingsPlanRateUnit GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const SavingsPlanRateUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(SavingsPlanRateUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline SavingsPlanOfferingRate& WithUnit(const SavingsPlanRateUnit& value) { SetUnit(value); return *this;}
-    inline SavingsPlanOfferingRate& WithUnit(SavingsPlanRateUnit&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(SavingsPlanRateUnit value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline SavingsPlanOfferingRate& WithUnit(SavingsPlanRateUnit value) { SetUnit(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The product type.</p>
      */
-    inline const SavingsPlanProductType& GetProductType() const{ return m_productType; }
+    inline SavingsPlanProductType GetProductType() const { return m_productType; }
     inline bool ProductTypeHasBeenSet() const { return m_productTypeHasBeenSet; }
-    inline void SetProductType(const SavingsPlanProductType& value) { m_productTypeHasBeenSet = true; m_productType = value; }
-    inline void SetProductType(SavingsPlanProductType&& value) { m_productTypeHasBeenSet = true; m_productType = std::move(value); }
-    inline SavingsPlanOfferingRate& WithProductType(const SavingsPlanProductType& value) { SetProductType(value); return *this;}
-    inline SavingsPlanOfferingRate& WithProductType(SavingsPlanProductType&& value) { SetProductType(std::move(value)); return *this;}
+    inline void SetProductType(SavingsPlanProductType value) { m_productTypeHasBeenSet = true; m_productType = value; }
+    inline SavingsPlanOfferingRate& WithProductType(SavingsPlanProductType value) { SetProductType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The service.</p>
      */
-    inline const SavingsPlanRateServiceCode& GetServiceCode() const{ return m_serviceCode; }
+    inline SavingsPlanRateServiceCode GetServiceCode() const { return m_serviceCode; }
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
-    inline void SetServiceCode(const SavingsPlanRateServiceCode& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
-    inline void SetServiceCode(SavingsPlanRateServiceCode&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
-    inline SavingsPlanOfferingRate& WithServiceCode(const SavingsPlanRateServiceCode& value) { SetServiceCode(value); return *this;}
-    inline SavingsPlanOfferingRate& WithServiceCode(SavingsPlanRateServiceCode&& value) { SetServiceCode(std::move(value)); return *this;}
+    inline void SetServiceCode(SavingsPlanRateServiceCode value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
+    inline SavingsPlanOfferingRate& WithServiceCode(SavingsPlanRateServiceCode value) { SetServiceCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The usage details of the line item in the billing report.</p>
      */
-    inline const Aws::String& GetUsageType() const{ return m_usageType; }
+    inline const Aws::String& GetUsageType() const { return m_usageType; }
     inline bool UsageTypeHasBeenSet() const { return m_usageTypeHasBeenSet; }
-    inline void SetUsageType(const Aws::String& value) { m_usageTypeHasBeenSet = true; m_usageType = value; }
-    inline void SetUsageType(Aws::String&& value) { m_usageTypeHasBeenSet = true; m_usageType = std::move(value); }
-    inline void SetUsageType(const char* value) { m_usageTypeHasBeenSet = true; m_usageType.assign(value); }
-    inline SavingsPlanOfferingRate& WithUsageType(const Aws::String& value) { SetUsageType(value); return *this;}
-    inline SavingsPlanOfferingRate& WithUsageType(Aws::String&& value) { SetUsageType(std::move(value)); return *this;}
-    inline SavingsPlanOfferingRate& WithUsageType(const char* value) { SetUsageType(value); return *this;}
+    template<typename UsageTypeT = Aws::String>
+    void SetUsageType(UsageTypeT&& value) { m_usageTypeHasBeenSet = true; m_usageType = std::forward<UsageTypeT>(value); }
+    template<typename UsageTypeT = Aws::String>
+    SavingsPlanOfferingRate& WithUsageType(UsageTypeT&& value) { SetUsageType(std::forward<UsageTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,28 +114,26 @@ namespace Model
      * <p>The specific Amazon Web Services operation for the line item in the billing
      * report.</p>
      */
-    inline const Aws::String& GetOperation() const{ return m_operation; }
+    inline const Aws::String& GetOperation() const { return m_operation; }
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
-    inline void SetOperation(const Aws::String& value) { m_operationHasBeenSet = true; m_operation = value; }
-    inline void SetOperation(Aws::String&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
-    inline void SetOperation(const char* value) { m_operationHasBeenSet = true; m_operation.assign(value); }
-    inline SavingsPlanOfferingRate& WithOperation(const Aws::String& value) { SetOperation(value); return *this;}
-    inline SavingsPlanOfferingRate& WithOperation(Aws::String&& value) { SetOperation(std::move(value)); return *this;}
-    inline SavingsPlanOfferingRate& WithOperation(const char* value) { SetOperation(value); return *this;}
+    template<typename OperationT = Aws::String>
+    void SetOperation(OperationT&& value) { m_operationHasBeenSet = true; m_operation = std::forward<OperationT>(value); }
+    template<typename OperationT = Aws::String>
+    SavingsPlanOfferingRate& WithOperation(OperationT&& value) { SetOperation(std::forward<OperationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The properties.</p>
      */
-    inline const Aws::Vector<SavingsPlanOfferingRateProperty>& GetProperties() const{ return m_properties; }
+    inline const Aws::Vector<SavingsPlanOfferingRateProperty>& GetProperties() const { return m_properties; }
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
-    inline void SetProperties(const Aws::Vector<SavingsPlanOfferingRateProperty>& value) { m_propertiesHasBeenSet = true; m_properties = value; }
-    inline void SetProperties(Aws::Vector<SavingsPlanOfferingRateProperty>&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
-    inline SavingsPlanOfferingRate& WithProperties(const Aws::Vector<SavingsPlanOfferingRateProperty>& value) { SetProperties(value); return *this;}
-    inline SavingsPlanOfferingRate& WithProperties(Aws::Vector<SavingsPlanOfferingRateProperty>&& value) { SetProperties(std::move(value)); return *this;}
-    inline SavingsPlanOfferingRate& AddProperties(const SavingsPlanOfferingRateProperty& value) { m_propertiesHasBeenSet = true; m_properties.push_back(value); return *this; }
-    inline SavingsPlanOfferingRate& AddProperties(SavingsPlanOfferingRateProperty&& value) { m_propertiesHasBeenSet = true; m_properties.push_back(std::move(value)); return *this; }
+    template<typename PropertiesT = Aws::Vector<SavingsPlanOfferingRateProperty>>
+    void SetProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties = std::forward<PropertiesT>(value); }
+    template<typename PropertiesT = Aws::Vector<SavingsPlanOfferingRateProperty>>
+    SavingsPlanOfferingRate& WithProperties(PropertiesT&& value) { SetProperties(std::forward<PropertiesT>(value)); return *this;}
+    template<typename PropertiesT = SavingsPlanOfferingRateProperty>
+    SavingsPlanOfferingRate& AddProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties.emplace_back(std::forward<PropertiesT>(value)); return *this; }
     ///@}
   private:
 
@@ -155,13 +143,13 @@ namespace Model
     Aws::String m_rate;
     bool m_rateHasBeenSet = false;
 
-    SavingsPlanRateUnit m_unit;
+    SavingsPlanRateUnit m_unit{SavingsPlanRateUnit::NOT_SET};
     bool m_unitHasBeenSet = false;
 
-    SavingsPlanProductType m_productType;
+    SavingsPlanProductType m_productType{SavingsPlanProductType::NOT_SET};
     bool m_productTypeHasBeenSet = false;
 
-    SavingsPlanRateServiceCode m_serviceCode;
+    SavingsPlanRateServiceCode m_serviceCode{SavingsPlanRateServiceCode::NOT_SET};
     bool m_serviceCodeHasBeenSet = false;
 
     Aws::String m_usageType;

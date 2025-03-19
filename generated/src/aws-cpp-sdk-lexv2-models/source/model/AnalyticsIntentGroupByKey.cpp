@@ -18,15 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-AnalyticsIntentGroupByKey::AnalyticsIntentGroupByKey() : 
-    m_name(AnalyticsIntentField::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 AnalyticsIntentGroupByKey::AnalyticsIntentGroupByKey(JsonView jsonValue)
-  : AnalyticsIntentGroupByKey()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AnalyticsIntentGroupByKey& AnalyticsIntentGroupByKey::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("name"))
   {
     m_name = AnalyticsIntentFieldMapper::GetAnalyticsIntentFieldForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

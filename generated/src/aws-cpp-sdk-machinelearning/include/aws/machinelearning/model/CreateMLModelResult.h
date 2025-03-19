@@ -36,7 +36,7 @@ namespace Model
   class CreateMLModelResult
   {
   public:
-    AWS_MACHINELEARNING_API CreateMLModelResult();
+    AWS_MACHINELEARNING_API CreateMLModelResult() = default;
     AWS_MACHINELEARNING_API CreateMLModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MACHINELEARNING_API CreateMLModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -47,30 +47,28 @@ namespace Model
      * value should be identical to the value of the <code>MLModelId</code> in the
      * request. </p>
      */
-    inline const Aws::String& GetMLModelId() const{ return m_mLModelId; }
-    inline void SetMLModelId(const Aws::String& value) { m_mLModelId = value; }
-    inline void SetMLModelId(Aws::String&& value) { m_mLModelId = std::move(value); }
-    inline void SetMLModelId(const char* value) { m_mLModelId.assign(value); }
-    inline CreateMLModelResult& WithMLModelId(const Aws::String& value) { SetMLModelId(value); return *this;}
-    inline CreateMLModelResult& WithMLModelId(Aws::String&& value) { SetMLModelId(std::move(value)); return *this;}
-    inline CreateMLModelResult& WithMLModelId(const char* value) { SetMLModelId(value); return *this;}
+    inline const Aws::String& GetMLModelId() const { return m_mLModelId; }
+    template<typename MLModelIdT = Aws::String>
+    void SetMLModelId(MLModelIdT&& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = std::forward<MLModelIdT>(value); }
+    template<typename MLModelIdT = Aws::String>
+    CreateMLModelResult& WithMLModelId(MLModelIdT&& value) { SetMLModelId(std::forward<MLModelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateMLModelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateMLModelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateMLModelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateMLModelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_mLModelId;
+    bool m_mLModelIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

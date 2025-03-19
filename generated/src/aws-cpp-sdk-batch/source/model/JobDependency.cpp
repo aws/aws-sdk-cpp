@@ -18,15 +18,7 @@ namespace Batch
 namespace Model
 {
 
-JobDependency::JobDependency() : 
-    m_jobIdHasBeenSet(false),
-    m_type(ArrayJobDependency::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 JobDependency::JobDependency(JsonView jsonValue)
-  : JobDependency()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ JobDependency& JobDependency::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = ArrayJobDependencyMapper::GetArrayJobDependencyForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

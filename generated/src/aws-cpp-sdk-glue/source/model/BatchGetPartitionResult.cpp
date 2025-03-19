@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetPartitionResult::BatchGetPartitionResult()
-{
-}
-
 BatchGetPartitionResult::BatchGetPartitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetPartitionResult& BatchGetPartitionResult::operator =(const Aws::AmazonWe
     {
       m_partitions.push_back(partitionsJsonList[partitionsIndex].AsObject());
     }
+    m_partitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnprocessedKeys"))
   {
     Aws::Utils::Array<JsonView> unprocessedKeysJsonList = jsonValue.GetArray("UnprocessedKeys");
@@ -45,14 +41,15 @@ BatchGetPartitionResult& BatchGetPartitionResult::operator =(const Aws::AmazonWe
     {
       m_unprocessedKeys.push_back(unprocessedKeysJsonList[unprocessedKeysIndex].AsObject());
     }
+    m_unprocessedKeysHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

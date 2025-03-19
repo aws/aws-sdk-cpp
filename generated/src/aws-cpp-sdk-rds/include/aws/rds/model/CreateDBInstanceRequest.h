@@ -28,7 +28,7 @@ namespace Model
   class CreateDBInstanceRequest : public RDSRequest
   {
   public:
-    AWS_RDS_API CreateDBInstanceRequest();
+    AWS_RDS_API CreateDBInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -104,14 +104,12 @@ namespace Model
      * reserved by the specified database engine.</p> </li> </ul> </dd> <dt>RDS for SQL
      * Server</dt> <dd> <p>Not applicable. Must be null.</p> </dd> </dl>
      */
-    inline const Aws::String& GetDBName() const{ return m_dBName; }
+    inline const Aws::String& GetDBName() const { return m_dBName; }
     inline bool DBNameHasBeenSet() const { return m_dBNameHasBeenSet; }
-    inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
-    inline void SetDBName(Aws::String&& value) { m_dBNameHasBeenSet = true; m_dBName = std::move(value); }
-    inline void SetDBName(const char* value) { m_dBNameHasBeenSet = true; m_dBName.assign(value); }
-    inline CreateDBInstanceRequest& WithDBName(const Aws::String& value) { SetDBName(value); return *this;}
-    inline CreateDBInstanceRequest& WithDBName(Aws::String&& value) { SetDBName(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithDBName(const char* value) { SetDBName(value); return *this;}
+    template<typename DBNameT = Aws::String>
+    void SetDBName(DBNameT&& value) { m_dBNameHasBeenSet = true; m_dBName = std::forward<DBNameT>(value); }
+    template<typename DBNameT = Aws::String>
+    CreateDBInstanceRequest& WithDBName(DBNameT&& value) { SetDBName(std::forward<DBNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,14 +120,12 @@ namespace Model
      * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
      * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
-    inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
+    inline const Aws::String& GetDBInstanceIdentifier() const { return m_dBInstanceIdentifier; }
     inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
-    inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
-    inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
-    inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
-    inline CreateDBInstanceRequest& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
-    inline CreateDBInstanceRequest& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
+    template<typename DBInstanceIdentifierT = Aws::String>
+    void SetDBInstanceIdentifier(DBInstanceIdentifierT&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::forward<DBInstanceIdentifierT>(value); }
+    template<typename DBInstanceIdentifierT = Aws::String>
+    CreateDBInstanceRequest& WithDBInstanceIdentifier(DBInstanceIdentifierT&& value) { SetDBInstanceIdentifier(std::forward<DBInstanceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -181,7 +177,7 @@ namespace Model
      * integer from 20 to 1024.</p> </li> <li> <p>Web and Express editions: Must be an
      * integer from 20 to 1024.</p> </li> </ul> </li> </ul> </dd> </dl>
      */
-    inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
+    inline int GetAllocatedStorage() const { return m_allocatedStorage; }
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
     inline CreateDBInstanceRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
@@ -198,14 +194,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.DBInstanceClass.html">Aurora
      * DB instance classes</a> in the <i>Amazon Aurora User Guide</i>.</p>
      */
-    inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
+    inline const Aws::String& GetDBInstanceClass() const { return m_dBInstanceClass; }
     inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
-    inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
-    inline void SetDBInstanceClass(Aws::String&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::move(value); }
-    inline void SetDBInstanceClass(const char* value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass.assign(value); }
-    inline CreateDBInstanceRequest& WithDBInstanceClass(const Aws::String& value) { SetDBInstanceClass(value); return *this;}
-    inline CreateDBInstanceRequest& WithDBInstanceClass(Aws::String&& value) { SetDBInstanceClass(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithDBInstanceClass(const char* value) { SetDBInstanceClass(value); return *this;}
+    template<typename DBInstanceClassT = Aws::String>
+    void SetDBInstanceClass(DBInstanceClassT&& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = std::forward<DBInstanceClassT>(value); }
+    template<typename DBInstanceClassT = Aws::String>
+    CreateDBInstanceRequest& WithDBInstanceClass(DBInstanceClassT&& value) { SetDBInstanceClass(std::forward<DBInstanceClassT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -234,14 +228,12 @@ namespace Model
      * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
      * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetEngine() const{ return m_engine; }
+    inline const Aws::String& GetEngine() const { return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
-    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
-    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
-    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
-    inline CreateDBInstanceRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
-    inline CreateDBInstanceRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
+    template<typename EngineT = Aws::String>
+    void SetEngine(EngineT&& value) { m_engineHasBeenSet = true; m_engine = std::forward<EngineT>(value); }
+    template<typename EngineT = Aws::String>
+    CreateDBInstanceRequest& WithEngine(EngineT&& value) { SetEngine(std::forward<EngineT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -253,14 +245,12 @@ namespace Model
      * underscores.</p> </li> <li> <p>First character must be a letter.</p> </li> <li>
      * <p>Can't be a reserved word for the chosen database engine.</p> </li> </ul>
      */
-    inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
+    inline const Aws::String& GetMasterUsername() const { return m_masterUsername; }
     inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
-    inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
-    inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
-    inline void SetMasterUsername(const char* value) { m_masterUsernameHasBeenSet = true; m_masterUsername.assign(value); }
-    inline CreateDBInstanceRequest& WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
-    inline CreateDBInstanceRequest& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
+    template<typename MasterUsernameT = Aws::String>
+    void SetMasterUsername(MasterUsernameT&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::forward<MasterUsernameT>(value); }
+    template<typename MasterUsernameT = Aws::String>
+    CreateDBInstanceRequest& WithMasterUsername(MasterUsernameT&& value) { SetMasterUsername(std::forward<MasterUsernameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -279,14 +269,12 @@ namespace Model
      * from 8 to 30 characters.</p> </li> <li> <p>RDS for PostgreSQL - Must contain
      * from 8 to 128 characters.</p> </li> </ul>
      */
-    inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
+    inline const Aws::String& GetMasterUserPassword() const { return m_masterUserPassword; }
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
-    inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
-    inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
-    inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
-    inline CreateDBInstanceRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
-    inline CreateDBInstanceRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
+    template<typename MasterUserPasswordT = Aws::String>
+    void SetMasterUserPassword(MasterUserPasswordT&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::forward<MasterUserPasswordT>(value); }
+    template<typename MasterUserPasswordT = Aws::String>
+    CreateDBInstanceRequest& WithMasterUserPassword(MasterUserPasswordT&& value) { SetMasterUserPassword(std::forward<MasterUserPasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -296,15 +284,14 @@ namespace Model
      * create new DB instances. Use the <code>VpcSecurityGroupIds</code> setting
      * instead.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDBSecurityGroups() const{ return m_dBSecurityGroups; }
+    inline const Aws::Vector<Aws::String>& GetDBSecurityGroups() const { return m_dBSecurityGroups; }
     inline bool DBSecurityGroupsHasBeenSet() const { return m_dBSecurityGroupsHasBeenSet; }
-    inline void SetDBSecurityGroups(const Aws::Vector<Aws::String>& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups = value; }
-    inline void SetDBSecurityGroups(Aws::Vector<Aws::String>&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups = std::move(value); }
-    inline CreateDBInstanceRequest& WithDBSecurityGroups(const Aws::Vector<Aws::String>& value) { SetDBSecurityGroups(value); return *this;}
-    inline CreateDBInstanceRequest& WithDBSecurityGroups(Aws::Vector<Aws::String>&& value) { SetDBSecurityGroups(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& AddDBSecurityGroups(const Aws::String& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(value); return *this; }
-    inline CreateDBInstanceRequest& AddDBSecurityGroups(Aws::String&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(std::move(value)); return *this; }
-    inline CreateDBInstanceRequest& AddDBSecurityGroups(const char* value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.push_back(value); return *this; }
+    template<typename DBSecurityGroupsT = Aws::Vector<Aws::String>>
+    void SetDBSecurityGroups(DBSecurityGroupsT&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups = std::forward<DBSecurityGroupsT>(value); }
+    template<typename DBSecurityGroupsT = Aws::Vector<Aws::String>>
+    CreateDBInstanceRequest& WithDBSecurityGroups(DBSecurityGroupsT&& value) { SetDBSecurityGroups(std::forward<DBSecurityGroupsT>(value)); return *this;}
+    template<typename DBSecurityGroupsT = Aws::String>
+    CreateDBInstanceRequest& AddDBSecurityGroups(DBSecurityGroupsT&& value) { m_dBSecurityGroupsHasBeenSet = true; m_dBSecurityGroups.emplace_back(std::forward<DBSecurityGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -315,15 +302,14 @@ namespace Model
      * <p>Default: The default EC2 VPC security group for the DB subnet group's
      * VPC.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const { return m_vpcSecurityGroupIds; }
     inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }
-    inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
-    inline void SetVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::move(value); }
-    inline CreateDBInstanceRequest& WithVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetVpcSecurityGroupIds(value); return *this;}
-    inline CreateDBInstanceRequest& WithVpcSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetVpcSecurityGroupIds(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& AddVpcSecurityGroupIds(const Aws::String& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
-    inline CreateDBInstanceRequest& AddVpcSecurityGroupIds(Aws::String&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(std::move(value)); return *this; }
-    inline CreateDBInstanceRequest& AddVpcSecurityGroupIds(const char* value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.push_back(value); return *this; }
+    template<typename VpcSecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = std::forward<VpcSecurityGroupIdsT>(value); }
+    template<typename VpcSecurityGroupIdsT = Aws::Vector<Aws::String>>
+    CreateDBInstanceRequest& WithVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { SetVpcSecurityGroupIds(std::forward<VpcSecurityGroupIdsT>(value)); return *this;}
+    template<typename VpcSecurityGroupIdsT = Aws::String>
+    CreateDBInstanceRequest& AddVpcSecurityGroupIds(VpcSecurityGroupIdsT&& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds.emplace_back(std::forward<VpcSecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -342,14 +328,12 @@ namespace Model
      * Services Region as the current endpoint.</p> </li> </ul> <p>Example:
      * <code>us-east-1d</code> </p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-    inline CreateDBInstanceRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline CreateDBInstanceRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    CreateDBInstanceRequest& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -358,14 +342,12 @@ namespace Model
      * <ul> <li> <p>Must match the name of an existing DB subnet group.</p> </li> </ul>
      * <p>Example: <code>mydbsubnetgroup</code> </p>
      */
-    inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
+    inline const Aws::String& GetDBSubnetGroupName() const { return m_dBSubnetGroupName; }
     inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
-    inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
-    inline void SetDBSubnetGroupName(Aws::String&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::move(value); }
-    inline void SetDBSubnetGroupName(const char* value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName.assign(value); }
-    inline CreateDBInstanceRequest& WithDBSubnetGroupName(const Aws::String& value) { SetDBSubnetGroupName(value); return *this;}
-    inline CreateDBInstanceRequest& WithDBSubnetGroupName(Aws::String&& value) { SetDBSubnetGroupName(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithDBSubnetGroupName(const char* value) { SetDBSubnetGroupName(value); return *this;}
+    template<typename DBSubnetGroupNameT = Aws::String>
+    void SetDBSubnetGroupName(DBSubnetGroupNameT&& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = std::forward<DBSubnetGroupNameT>(value); }
+    template<typename DBSubnetGroupNameT = Aws::String>
+    CreateDBInstanceRequest& WithDBSubnetGroupName(DBSubnetGroupNameT&& value) { SetDBSubnetGroupName(std::forward<DBSubnetGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -383,14 +365,12 @@ namespace Model
      * the preferred backup window.</p> </li> <li> <p>Must be at least 30 minutes.</p>
      * </li> </ul>
      */
-    inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
+    inline const Aws::String& GetPreferredMaintenanceWindow() const { return m_preferredMaintenanceWindow; }
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
-    inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
-    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
-    inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
-    inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
-    inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
+    template<typename PreferredMaintenanceWindowT = Aws::String>
+    void SetPreferredMaintenanceWindow(PreferredMaintenanceWindowT&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::forward<PreferredMaintenanceWindowT>(value); }
+    template<typename PreferredMaintenanceWindowT = Aws::String>
+    CreateDBInstanceRequest& WithPreferredMaintenanceWindow(PreferredMaintenanceWindowT&& value) { SetPreferredMaintenanceWindow(std::forward<PreferredMaintenanceWindowT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -403,14 +383,12 @@ namespace Model
      * letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive
      * hyphens.</p> </li> </ul>
      */
-    inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
+    inline const Aws::String& GetDBParameterGroupName() const { return m_dBParameterGroupName; }
     inline bool DBParameterGroupNameHasBeenSet() const { return m_dBParameterGroupNameHasBeenSet; }
-    inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
-    inline void SetDBParameterGroupName(Aws::String&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = std::move(value); }
-    inline void SetDBParameterGroupName(const char* value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName.assign(value); }
-    inline CreateDBInstanceRequest& WithDBParameterGroupName(const Aws::String& value) { SetDBParameterGroupName(value); return *this;}
-    inline CreateDBInstanceRequest& WithDBParameterGroupName(Aws::String&& value) { SetDBParameterGroupName(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithDBParameterGroupName(const char* value) { SetDBParameterGroupName(value); return *this;}
+    template<typename DBParameterGroupNameT = Aws::String>
+    void SetDBParameterGroupName(DBParameterGroupNameT&& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = std::forward<DBParameterGroupNameT>(value); }
+    template<typename DBParameterGroupNameT = Aws::String>
+    CreateDBInstanceRequest& WithDBParameterGroupName(DBParameterGroupNameT&& value) { SetDBParameterGroupName(std::forward<DBParameterGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -425,7 +403,7 @@ namespace Model
      * <li> <p>Can't be set to 0 for an RDS Custom for Oracle DB instance.</p> </li>
      * </ul>
      */
-    inline int GetBackupRetentionPeriod() const{ return m_backupRetentionPeriod; }
+    inline int GetBackupRetentionPeriod() const { return m_backupRetentionPeriod; }
     inline bool BackupRetentionPeriodHasBeenSet() const { return m_backupRetentionPeriodHasBeenSet; }
     inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
     inline CreateDBInstanceRequest& WithBackupRetentionPeriod(int value) { SetBackupRetentionPeriod(value); return *this;}
@@ -446,14 +424,12 @@ namespace Model
      * preferred maintenance window.</p> </li> <li> <p>Must be at least 30 minutes.</p>
      * </li> </ul>
      */
-    inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
+    inline const Aws::String& GetPreferredBackupWindow() const { return m_preferredBackupWindow; }
     inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
-    inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
-    inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
-    inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
-    inline CreateDBInstanceRequest& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
-    inline CreateDBInstanceRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
+    template<typename PreferredBackupWindowT = Aws::String>
+    void SetPreferredBackupWindow(PreferredBackupWindowT&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::forward<PreferredBackupWindowT>(value); }
+    template<typename PreferredBackupWindowT = Aws::String>
+    CreateDBInstanceRequest& WithPreferredBackupWindow(PreferredBackupWindowT&& value) { SetPreferredBackupWindow(std::forward<PreferredBackupWindowT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -470,7 +446,7 @@ namespace Model
      * <code>1434</code>, <code>3260</code>, <code>3343</code>, <code>3389</code>,
      * <code>47001</code>, or <code>49152-49156</code>.</p> </li> </ul>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline CreateDBInstanceRequest& WithPort(int value) { SetPort(value); return *this;}
@@ -484,7 +460,7 @@ namespace Model
      * <ul> <li> <p>Amazon Aurora (DB instance Availability Zones (AZs) are managed by
      * the DB cluster.)</p> </li> <li> <p>RDS Custom</p> </li> </ul>
      */
-    inline bool GetMultiAZ() const{ return m_multiAZ; }
+    inline bool GetMultiAZ() const { return m_multiAZ; }
     inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
     inline CreateDBInstanceRequest& WithMultiAZ(bool value) { SetMultiAZ(value); return *this;}
@@ -528,14 +504,12 @@ namespace Model
      * RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User
      * Guide</i>.</p> </dd> </dl>
      */
-    inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+    inline const Aws::String& GetEngineVersion() const { return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
-    inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
-    inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
-    inline CreateDBInstanceRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
-    inline CreateDBInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+    template<typename EngineVersionT = Aws::String>
+    void SetEngineVersion(EngineVersionT&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::forward<EngineVersionT>(value); }
+    template<typename EngineVersionT = Aws::String>
+    CreateDBInstanceRequest& WithEngineVersion(EngineVersionT&& value) { SetEngineVersion(std::forward<EngineVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -545,7 +519,7 @@ namespace Model
      * applied automatically.</p> <p>If you create an RDS Custom DB instance, you must
      * set <code>AutoMinorVersionUpgrade</code> to <code>false</code>.</p>
      */
-    inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
+    inline bool GetAutoMinorVersionUpgrade() const { return m_autoMinorVersionUpgrade; }
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
     inline CreateDBInstanceRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
@@ -571,14 +545,12 @@ namespace Model
      * <code>bring-your-own-license | license-included</code> </p> </li> <li> <p>RDS
      * for PostgreSQL - <code>postgresql-license</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
+    inline const Aws::String& GetLicenseModel() const { return m_licenseModel; }
     inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
-    inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
-    inline void SetLicenseModel(Aws::String&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = std::move(value); }
-    inline void SetLicenseModel(const char* value) { m_licenseModelHasBeenSet = true; m_licenseModel.assign(value); }
-    inline CreateDBInstanceRequest& WithLicenseModel(const Aws::String& value) { SetLicenseModel(value); return *this;}
-    inline CreateDBInstanceRequest& WithLicenseModel(Aws::String&& value) { SetLicenseModel(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithLicenseModel(const char* value) { SetLicenseModel(value); return *this;}
+    template<typename LicenseModelT = Aws::String>
+    void SetLicenseModel(LicenseModelT&& value) { m_licenseModelHasBeenSet = true; m_licenseModel = std::forward<LicenseModelT>(value); }
+    template<typename LicenseModelT = Aws::String>
+    CreateDBInstanceRequest& WithLicenseModel(LicenseModelT&& value) { SetLicenseModel(std::forward<LicenseModelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -595,7 +567,7 @@ namespace Model
      * Must be a multiple between 1 and 50 of the storage amount for the DB
      * instance.</p> </li> </ul>
      */
-    inline int GetIops() const{ return m_iops; }
+    inline int GetIops() const { return m_iops; }
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
     inline CreateDBInstanceRequest& WithIops(int value) { SetIops(value); return *this;}
@@ -609,14 +581,12 @@ namespace Model
      * after it is associated with a DB instance.</p> <p>This setting doesn't apply to
      * Amazon Aurora or RDS Custom DB instances.</p>
      */
-    inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
+    inline const Aws::String& GetOptionGroupName() const { return m_optionGroupName; }
     inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
-    inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
-    inline void SetOptionGroupName(Aws::String&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::move(value); }
-    inline void SetOptionGroupName(const char* value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName.assign(value); }
-    inline CreateDBInstanceRequest& WithOptionGroupName(const Aws::String& value) { SetOptionGroupName(value); return *this;}
-    inline CreateDBInstanceRequest& WithOptionGroupName(Aws::String&& value) { SetOptionGroupName(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithOptionGroupName(const char* value) { SetOptionGroupName(value); return *this;}
+    template<typename OptionGroupNameT = Aws::String>
+    void SetOptionGroupName(OptionGroupNameT&& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = std::forward<OptionGroupNameT>(value); }
+    template<typename OptionGroupNameT = Aws::String>
+    CreateDBInstanceRequest& WithOptionGroupName(OptionGroupNameT&& value) { SetOptionGroupName(std::forward<OptionGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -629,14 +599,12 @@ namespace Model
      * need to change the character set, you can change it on the database itself.</p>
      * </li> </ul>
      */
-    inline const Aws::String& GetCharacterSetName() const{ return m_characterSetName; }
+    inline const Aws::String& GetCharacterSetName() const { return m_characterSetName; }
     inline bool CharacterSetNameHasBeenSet() const { return m_characterSetNameHasBeenSet; }
-    inline void SetCharacterSetName(const Aws::String& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = value; }
-    inline void SetCharacterSetName(Aws::String&& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = std::move(value); }
-    inline void SetCharacterSetName(const char* value) { m_characterSetNameHasBeenSet = true; m_characterSetName.assign(value); }
-    inline CreateDBInstanceRequest& WithCharacterSetName(const Aws::String& value) { SetCharacterSetName(value); return *this;}
-    inline CreateDBInstanceRequest& WithCharacterSetName(Aws::String&& value) { SetCharacterSetName(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithCharacterSetName(const char* value) { SetCharacterSetName(value); return *this;}
+    template<typename CharacterSetNameT = Aws::String>
+    void SetCharacterSetName(CharacterSetNameT&& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = std::forward<CharacterSetNameT>(value); }
+    template<typename CharacterSetNameT = Aws::String>
+    CreateDBInstanceRequest& WithCharacterSetName(CharacterSetNameT&& value) { SetCharacterSetName(std::forward<CharacterSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -644,14 +612,12 @@ namespace Model
      * <p>The name of the NCHAR character set for the Oracle DB instance.</p> <p>This
      * setting doesn't apply to RDS Custom DB instances.</p>
      */
-    inline const Aws::String& GetNcharCharacterSetName() const{ return m_ncharCharacterSetName; }
+    inline const Aws::String& GetNcharCharacterSetName() const { return m_ncharCharacterSetName; }
     inline bool NcharCharacterSetNameHasBeenSet() const { return m_ncharCharacterSetNameHasBeenSet; }
-    inline void SetNcharCharacterSetName(const Aws::String& value) { m_ncharCharacterSetNameHasBeenSet = true; m_ncharCharacterSetName = value; }
-    inline void SetNcharCharacterSetName(Aws::String&& value) { m_ncharCharacterSetNameHasBeenSet = true; m_ncharCharacterSetName = std::move(value); }
-    inline void SetNcharCharacterSetName(const char* value) { m_ncharCharacterSetNameHasBeenSet = true; m_ncharCharacterSetName.assign(value); }
-    inline CreateDBInstanceRequest& WithNcharCharacterSetName(const Aws::String& value) { SetNcharCharacterSetName(value); return *this;}
-    inline CreateDBInstanceRequest& WithNcharCharacterSetName(Aws::String&& value) { SetNcharCharacterSetName(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithNcharCharacterSetName(const char* value) { SetNcharCharacterSetName(value); return *this;}
+    template<typename NcharCharacterSetNameT = Aws::String>
+    void SetNcharCharacterSetName(NcharCharacterSetNameT&& value) { m_ncharCharacterSetNameHasBeenSet = true; m_ncharCharacterSetName = std::forward<NcharCharacterSetNameT>(value); }
+    template<typename NcharCharacterSetNameT = Aws::String>
+    CreateDBInstanceRequest& WithNcharCharacterSetName(NcharCharacterSetNameT&& value) { SetNcharCharacterSetName(std::forward<NcharCharacterSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -679,7 +645,7 @@ namespace Model
      * part of a VPC that has an internet gateway attached to it, the DB instance is
      * public.</p> </li> </ul>
      */
-    inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
+    inline bool GetPubliclyAccessible() const { return m_publiclyAccessible; }
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
     inline CreateDBInstanceRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
@@ -689,14 +655,14 @@ namespace Model
     /**
      * <p>Tags to assign to the DB instance.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateDBInstanceRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateDBInstanceRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateDBInstanceRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateDBInstanceRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateDBInstanceRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -704,14 +670,12 @@ namespace Model
      * <p>The identifier of the DB cluster that this DB instance will belong to.</p>
      * <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
-    inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
+    inline const Aws::String& GetDBClusterIdentifier() const { return m_dBClusterIdentifier; }
     inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
-    inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
-    inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
-    inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
-    inline CreateDBInstanceRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
-    inline CreateDBInstanceRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
+    template<typename DBClusterIdentifierT = Aws::String>
+    void SetDBClusterIdentifier(DBClusterIdentifierT&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::forward<DBClusterIdentifierT>(value); }
+    template<typename DBClusterIdentifierT = Aws::String>
+    CreateDBInstanceRequest& WithDBClusterIdentifier(DBClusterIdentifierT&& value) { SetDBClusterIdentifier(std::forward<DBClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -724,14 +688,12 @@ namespace Model
      * <code>io1</code>, if the <code>Iops</code> parameter is specified. Otherwise,
      * <code>gp3</code>.</p>
      */
-    inline const Aws::String& GetStorageType() const{ return m_storageType; }
+    inline const Aws::String& GetStorageType() const { return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
-    inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
-    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
-    inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
-    inline CreateDBInstanceRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
-    inline CreateDBInstanceRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
+    template<typename StorageTypeT = Aws::String>
+    void SetStorageType(StorageTypeT&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::forward<StorageTypeT>(value); }
+    template<typename StorageTypeT = Aws::String>
+    CreateDBInstanceRequest& WithStorageType(StorageTypeT&& value) { SetStorageType(std::forward<StorageTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -740,14 +702,12 @@ namespace Model
      * encryption.</p> <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB
      * instances.</p>
      */
-    inline const Aws::String& GetTdeCredentialArn() const{ return m_tdeCredentialArn; }
+    inline const Aws::String& GetTdeCredentialArn() const { return m_tdeCredentialArn; }
     inline bool TdeCredentialArnHasBeenSet() const { return m_tdeCredentialArnHasBeenSet; }
-    inline void SetTdeCredentialArn(const Aws::String& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = value; }
-    inline void SetTdeCredentialArn(Aws::String&& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = std::move(value); }
-    inline void SetTdeCredentialArn(const char* value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn.assign(value); }
-    inline CreateDBInstanceRequest& WithTdeCredentialArn(const Aws::String& value) { SetTdeCredentialArn(value); return *this;}
-    inline CreateDBInstanceRequest& WithTdeCredentialArn(Aws::String&& value) { SetTdeCredentialArn(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithTdeCredentialArn(const char* value) { SetTdeCredentialArn(value); return *this;}
+    template<typename TdeCredentialArnT = Aws::String>
+    void SetTdeCredentialArn(TdeCredentialArnT&& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = std::forward<TdeCredentialArnT>(value); }
+    template<typename TdeCredentialArnT = Aws::String>
+    CreateDBInstanceRequest& WithTdeCredentialArn(TdeCredentialArnT&& value) { SetTdeCredentialArn(std::forward<TdeCredentialArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -755,14 +715,12 @@ namespace Model
      * <p>The password for the given ARN from the key store in order to access the
      * device.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
-    inline const Aws::String& GetTdeCredentialPassword() const{ return m_tdeCredentialPassword; }
+    inline const Aws::String& GetTdeCredentialPassword() const { return m_tdeCredentialPassword; }
     inline bool TdeCredentialPasswordHasBeenSet() const { return m_tdeCredentialPasswordHasBeenSet; }
-    inline void SetTdeCredentialPassword(const Aws::String& value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword = value; }
-    inline void SetTdeCredentialPassword(Aws::String&& value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword = std::move(value); }
-    inline void SetTdeCredentialPassword(const char* value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword.assign(value); }
-    inline CreateDBInstanceRequest& WithTdeCredentialPassword(const Aws::String& value) { SetTdeCredentialPassword(value); return *this;}
-    inline CreateDBInstanceRequest& WithTdeCredentialPassword(Aws::String&& value) { SetTdeCredentialPassword(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithTdeCredentialPassword(const char* value) { SetTdeCredentialPassword(value); return *this;}
+    template<typename TdeCredentialPasswordT = Aws::String>
+    void SetTdeCredentialPassword(TdeCredentialPasswordT&& value) { m_tdeCredentialPasswordHasBeenSet = true; m_tdeCredentialPassword = std::forward<TdeCredentialPasswordT>(value); }
+    template<typename TdeCredentialPasswordT = Aws::String>
+    CreateDBInstanceRequest& WithTdeCredentialPassword(TdeCredentialPasswordT&& value) { SetTdeCredentialPassword(std::forward<TdeCredentialPasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -773,7 +731,7 @@ namespace Model
      * doesn't apply to Amazon Aurora DB instances. The encryption for DB instances is
      * managed by the DB cluster.</p>
      */
-    inline bool GetStorageEncrypted() const{ return m_storageEncrypted; }
+    inline bool GetStorageEncrypted() const { return m_storageEncrypted; }
     inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
     inline void SetStorageEncrypted(bool value) { m_storageEncryptedHasBeenSet = true; m_storageEncrypted = value; }
     inline CreateDBInstanceRequest& WithStorageEncrypted(bool value) { SetStorageEncrypted(value); return *this;}
@@ -797,14 +755,12 @@ namespace Model
      * engine uses the default KMS key. However, RDS Custom doesn't use the default key
      * when this parameter is empty. You must explicitly specify a key.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline CreateDBInstanceRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline CreateDBInstanceRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    CreateDBInstanceRequest& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -818,14 +774,12 @@ namespace Model
      * Aurora (The domain is managed by the DB cluster.)</p> </li> <li> <p>RDS
      * Custom</p> </li> </ul>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline CreateDBInstanceRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline CreateDBInstanceRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    CreateDBInstanceRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -834,14 +788,12 @@ namespace Model
      * <p>Constraints:</p> <ul> <li> <p>Can't be longer than 64 characters.</p> </li>
      * </ul> <p>Example: <code>mymanagedADtest.mymanagedAD.mydomain</code> </p>
      */
-    inline const Aws::String& GetDomainFqdn() const{ return m_domainFqdn; }
+    inline const Aws::String& GetDomainFqdn() const { return m_domainFqdn; }
     inline bool DomainFqdnHasBeenSet() const { return m_domainFqdnHasBeenSet; }
-    inline void SetDomainFqdn(const Aws::String& value) { m_domainFqdnHasBeenSet = true; m_domainFqdn = value; }
-    inline void SetDomainFqdn(Aws::String&& value) { m_domainFqdnHasBeenSet = true; m_domainFqdn = std::move(value); }
-    inline void SetDomainFqdn(const char* value) { m_domainFqdnHasBeenSet = true; m_domainFqdn.assign(value); }
-    inline CreateDBInstanceRequest& WithDomainFqdn(const Aws::String& value) { SetDomainFqdn(value); return *this;}
-    inline CreateDBInstanceRequest& WithDomainFqdn(Aws::String&& value) { SetDomainFqdn(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithDomainFqdn(const char* value) { SetDomainFqdn(value); return *this;}
+    template<typename DomainFqdnT = Aws::String>
+    void SetDomainFqdn(DomainFqdnT&& value) { m_domainFqdnHasBeenSet = true; m_domainFqdn = std::forward<DomainFqdnT>(value); }
+    template<typename DomainFqdnT = Aws::String>
+    CreateDBInstanceRequest& WithDomainFqdn(DomainFqdnT&& value) { SetDomainFqdn(std::forward<DomainFqdnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -852,14 +804,12 @@ namespace Model
      * <code>OU=mymanagedADtestOU,DC=mymanagedADtest,DC=mymanagedAD,DC=mydomain</code>
      * </p>
      */
-    inline const Aws::String& GetDomainOu() const{ return m_domainOu; }
+    inline const Aws::String& GetDomainOu() const { return m_domainOu; }
     inline bool DomainOuHasBeenSet() const { return m_domainOuHasBeenSet; }
-    inline void SetDomainOu(const Aws::String& value) { m_domainOuHasBeenSet = true; m_domainOu = value; }
-    inline void SetDomainOu(Aws::String&& value) { m_domainOuHasBeenSet = true; m_domainOu = std::move(value); }
-    inline void SetDomainOu(const char* value) { m_domainOuHasBeenSet = true; m_domainOu.assign(value); }
-    inline CreateDBInstanceRequest& WithDomainOu(const Aws::String& value) { SetDomainOu(value); return *this;}
-    inline CreateDBInstanceRequest& WithDomainOu(Aws::String&& value) { SetDomainOu(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithDomainOu(const char* value) { SetDomainOu(value); return *this;}
+    template<typename DomainOuT = Aws::String>
+    void SetDomainOu(DomainOuT&& value) { m_domainOuHasBeenSet = true; m_domainOu = std::forward<DomainOuT>(value); }
+    template<typename DomainOuT = Aws::String>
+    CreateDBInstanceRequest& WithDomainOu(DomainOuT&& value) { SetDomainOu(std::forward<DomainOuT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -869,14 +819,12 @@ namespace Model
      * <code>arn:aws:secretsmanager:region:account-number:secret:myselfmanagedADtestsecret-123456</code>
      * </p>
      */
-    inline const Aws::String& GetDomainAuthSecretArn() const{ return m_domainAuthSecretArn; }
+    inline const Aws::String& GetDomainAuthSecretArn() const { return m_domainAuthSecretArn; }
     inline bool DomainAuthSecretArnHasBeenSet() const { return m_domainAuthSecretArnHasBeenSet; }
-    inline void SetDomainAuthSecretArn(const Aws::String& value) { m_domainAuthSecretArnHasBeenSet = true; m_domainAuthSecretArn = value; }
-    inline void SetDomainAuthSecretArn(Aws::String&& value) { m_domainAuthSecretArnHasBeenSet = true; m_domainAuthSecretArn = std::move(value); }
-    inline void SetDomainAuthSecretArn(const char* value) { m_domainAuthSecretArnHasBeenSet = true; m_domainAuthSecretArn.assign(value); }
-    inline CreateDBInstanceRequest& WithDomainAuthSecretArn(const Aws::String& value) { SetDomainAuthSecretArn(value); return *this;}
-    inline CreateDBInstanceRequest& WithDomainAuthSecretArn(Aws::String&& value) { SetDomainAuthSecretArn(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithDomainAuthSecretArn(const char* value) { SetDomainAuthSecretArn(value); return *this;}
+    template<typename DomainAuthSecretArnT = Aws::String>
+    void SetDomainAuthSecretArn(DomainAuthSecretArnT&& value) { m_domainAuthSecretArnHasBeenSet = true; m_domainAuthSecretArn = std::forward<DomainAuthSecretArnT>(value); }
+    template<typename DomainAuthSecretArnT = Aws::String>
+    CreateDBInstanceRequest& WithDomainAuthSecretArn(DomainAuthSecretArnT&& value) { SetDomainAuthSecretArn(std::forward<DomainAuthSecretArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -887,15 +835,14 @@ namespace Model
      * the primary domain controller for both entries in the list.</p> </li> </ul>
      * <p>Example: <code>123.124.125.126,234.235.236.237</code> </p>
      */
-    inline const Aws::Vector<Aws::String>& GetDomainDnsIps() const{ return m_domainDnsIps; }
+    inline const Aws::Vector<Aws::String>& GetDomainDnsIps() const { return m_domainDnsIps; }
     inline bool DomainDnsIpsHasBeenSet() const { return m_domainDnsIpsHasBeenSet; }
-    inline void SetDomainDnsIps(const Aws::Vector<Aws::String>& value) { m_domainDnsIpsHasBeenSet = true; m_domainDnsIps = value; }
-    inline void SetDomainDnsIps(Aws::Vector<Aws::String>&& value) { m_domainDnsIpsHasBeenSet = true; m_domainDnsIps = std::move(value); }
-    inline CreateDBInstanceRequest& WithDomainDnsIps(const Aws::Vector<Aws::String>& value) { SetDomainDnsIps(value); return *this;}
-    inline CreateDBInstanceRequest& WithDomainDnsIps(Aws::Vector<Aws::String>&& value) { SetDomainDnsIps(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& AddDomainDnsIps(const Aws::String& value) { m_domainDnsIpsHasBeenSet = true; m_domainDnsIps.push_back(value); return *this; }
-    inline CreateDBInstanceRequest& AddDomainDnsIps(Aws::String&& value) { m_domainDnsIpsHasBeenSet = true; m_domainDnsIps.push_back(std::move(value)); return *this; }
-    inline CreateDBInstanceRequest& AddDomainDnsIps(const char* value) { m_domainDnsIpsHasBeenSet = true; m_domainDnsIps.push_back(value); return *this; }
+    template<typename DomainDnsIpsT = Aws::Vector<Aws::String>>
+    void SetDomainDnsIps(DomainDnsIpsT&& value) { m_domainDnsIpsHasBeenSet = true; m_domainDnsIps = std::forward<DomainDnsIpsT>(value); }
+    template<typename DomainDnsIpsT = Aws::Vector<Aws::String>>
+    CreateDBInstanceRequest& WithDomainDnsIps(DomainDnsIpsT&& value) { SetDomainDnsIps(std::forward<DomainDnsIpsT>(value)); return *this;}
+    template<typename DomainDnsIpsT = Aws::String>
+    CreateDBInstanceRequest& AddDomainDnsIps(DomainDnsIpsT&& value) { m_domainDnsIpsHasBeenSet = true; m_domainDnsIps.emplace_back(std::forward<DomainDnsIpsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -906,7 +853,7 @@ namespace Model
      * cluster. Setting this value for an Aurora DB instance has no effect on the DB
      * cluster setting.</p>
      */
-    inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
+    inline bool GetCopyTagsToSnapshot() const { return m_copyTagsToSnapshot; }
     inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
     inline CreateDBInstanceRequest& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
@@ -922,7 +869,7 @@ namespace Model
      * instances.</p> <p>Valid Values: <code>0 | 1 | 5 | 10 | 15 | 30 | 60</code> </p>
      * <p>Default: <code>0</code> </p>
      */
-    inline int GetMonitoringInterval() const{ return m_monitoringInterval; }
+    inline int GetMonitoringInterval() const { return m_monitoringInterval; }
     inline bool MonitoringIntervalHasBeenSet() const { return m_monitoringIntervalHasBeenSet; }
     inline void SetMonitoringInterval(int value) { m_monitoringIntervalHasBeenSet = true; m_monitoringInterval = value; }
     inline CreateDBInstanceRequest& WithMonitoringInterval(int value) { SetMonitoringInterval(value); return *this;}
@@ -940,14 +887,12 @@ namespace Model
      * <code>0</code>, then you must supply a <code>MonitoringRoleArn</code> value.</p>
      * <p>This setting doesn't apply to RDS Custom DB instances.</p>
      */
-    inline const Aws::String& GetMonitoringRoleArn() const{ return m_monitoringRoleArn; }
+    inline const Aws::String& GetMonitoringRoleArn() const { return m_monitoringRoleArn; }
     inline bool MonitoringRoleArnHasBeenSet() const { return m_monitoringRoleArnHasBeenSet; }
-    inline void SetMonitoringRoleArn(const Aws::String& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = value; }
-    inline void SetMonitoringRoleArn(Aws::String&& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = std::move(value); }
-    inline void SetMonitoringRoleArn(const char* value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn.assign(value); }
-    inline CreateDBInstanceRequest& WithMonitoringRoleArn(const Aws::String& value) { SetMonitoringRoleArn(value); return *this;}
-    inline CreateDBInstanceRequest& WithMonitoringRoleArn(Aws::String&& value) { SetMonitoringRoleArn(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithMonitoringRoleArn(const char* value) { SetMonitoringRoleArn(value); return *this;}
+    template<typename MonitoringRoleArnT = Aws::String>
+    void SetMonitoringRoleArn(MonitoringRoleArnT&& value) { m_monitoringRoleArnHasBeenSet = true; m_monitoringRoleArn = std::forward<MonitoringRoleArnT>(value); }
+    template<typename MonitoringRoleArnT = Aws::String>
+    CreateDBInstanceRequest& WithMonitoringRoleArn(MonitoringRoleArnT&& value) { SetMonitoringRoleArn(std::forward<MonitoringRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -957,14 +902,12 @@ namespace Model
      * <ul> <li> <p>Amazon Aurora (The domain is managed by the DB cluster.)</p> </li>
      * <li> <p>RDS Custom</p> </li> </ul>
      */
-    inline const Aws::String& GetDomainIAMRoleName() const{ return m_domainIAMRoleName; }
+    inline const Aws::String& GetDomainIAMRoleName() const { return m_domainIAMRoleName; }
     inline bool DomainIAMRoleNameHasBeenSet() const { return m_domainIAMRoleNameHasBeenSet; }
-    inline void SetDomainIAMRoleName(const Aws::String& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
-    inline void SetDomainIAMRoleName(Aws::String&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = std::move(value); }
-    inline void SetDomainIAMRoleName(const char* value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName.assign(value); }
-    inline CreateDBInstanceRequest& WithDomainIAMRoleName(const Aws::String& value) { SetDomainIAMRoleName(value); return *this;}
-    inline CreateDBInstanceRequest& WithDomainIAMRoleName(Aws::String&& value) { SetDomainIAMRoleName(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithDomainIAMRoleName(const char* value) { SetDomainIAMRoleName(value); return *this;}
+    template<typename DomainIAMRoleNameT = Aws::String>
+    void SetDomainIAMRoleName(DomainIAMRoleNameT&& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = std::forward<DomainIAMRoleNameT>(value); }
+    template<typename DomainIAMRoleNameT = Aws::String>
+    CreateDBInstanceRequest& WithDomainIAMRoleName(DomainIAMRoleNameT&& value) { SetDomainIAMRoleName(std::forward<DomainIAMRoleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -977,7 +920,7 @@ namespace Model
      * Guide</i>.</p> <p>This setting doesn't apply to RDS Custom DB instances.</p>
      * <p>Default: <code>1</code> </p> <p>Valid Values: <code>0 - 15</code> </p>
      */
-    inline int GetPromotionTier() const{ return m_promotionTier; }
+    inline int GetPromotionTier() const { return m_promotionTier; }
     inline bool PromotionTierHasBeenSet() const { return m_promotionTierHasBeenSet; }
     inline void SetPromotionTier(int value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
     inline CreateDBInstanceRequest& WithPromotionTier(int value) { SetPromotionTier(value); return *this;}
@@ -992,14 +935,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.TimeZone">RDS
      * for SQL Server</a>.</p>
      */
-    inline const Aws::String& GetTimezone() const{ return m_timezone; }
+    inline const Aws::String& GetTimezone() const { return m_timezone; }
     inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
-    inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
-    inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = std::move(value); }
-    inline void SetTimezone(const char* value) { m_timezoneHasBeenSet = true; m_timezone.assign(value); }
-    inline CreateDBInstanceRequest& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
-    inline CreateDBInstanceRequest& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithTimezone(const char* value) { SetTimezone(value); return *this;}
+    template<typename TimezoneT = Aws::String>
+    void SetTimezone(TimezoneT&& value) { m_timezoneHasBeenSet = true; m_timezone = std::forward<TimezoneT>(value); }
+    template<typename TimezoneT = Aws::String>
+    CreateDBInstanceRequest& WithTimezone(TimezoneT&& value) { SetTimezone(std::forward<TimezoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -1014,7 +955,7 @@ namespace Model
      * accounts to database accounts is managed by the DB cluster.)</p> </li> <li>
      * <p>RDS Custom</p> </li> </ul>
      */
-    inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
+    inline bool GetEnableIAMDatabaseAuthentication() const { return m_enableIAMDatabaseAuthentication; }
     inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
     inline CreateDBInstanceRequest& WithEnableIAMDatabaseAuthentication(bool value) { SetEnableIAMDatabaseAuthentication(value); return *this;}
@@ -1026,12 +967,10 @@ namespace Model
      * <p>Aurora DB instances inherit this value from the DB cluster, so you can't
      * change this value.</p> 
      */
-    inline const DatabaseInsightsMode& GetDatabaseInsightsMode() const{ return m_databaseInsightsMode; }
+    inline DatabaseInsightsMode GetDatabaseInsightsMode() const { return m_databaseInsightsMode; }
     inline bool DatabaseInsightsModeHasBeenSet() const { return m_databaseInsightsModeHasBeenSet; }
-    inline void SetDatabaseInsightsMode(const DatabaseInsightsMode& value) { m_databaseInsightsModeHasBeenSet = true; m_databaseInsightsMode = value; }
-    inline void SetDatabaseInsightsMode(DatabaseInsightsMode&& value) { m_databaseInsightsModeHasBeenSet = true; m_databaseInsightsMode = std::move(value); }
-    inline CreateDBInstanceRequest& WithDatabaseInsightsMode(const DatabaseInsightsMode& value) { SetDatabaseInsightsMode(value); return *this;}
-    inline CreateDBInstanceRequest& WithDatabaseInsightsMode(DatabaseInsightsMode&& value) { SetDatabaseInsightsMode(std::move(value)); return *this;}
+    inline void SetDatabaseInsightsMode(DatabaseInsightsMode value) { m_databaseInsightsModeHasBeenSet = true; m_databaseInsightsMode = value; }
+    inline CreateDBInstanceRequest& WithDatabaseInsightsMode(DatabaseInsightsMode value) { SetDatabaseInsightsMode(value); return *this;}
     ///@}
 
     ///@{
@@ -1042,7 +981,7 @@ namespace Model
      * Amazon Performance Insights</a> in the <i>Amazon RDS User Guide</i>.</p> <p>This
      * setting doesn't apply to RDS Custom DB instances.</p>
      */
-    inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
+    inline bool GetEnablePerformanceInsights() const { return m_enablePerformanceInsights; }
     inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
     inline void SetEnablePerformanceInsights(bool value) { m_enablePerformanceInsightsHasBeenSet = true; m_enablePerformanceInsights = value; }
     inline CreateDBInstanceRequest& WithEnablePerformanceInsights(bool value) { SetEnablePerformanceInsights(value); return *this;}
@@ -1059,14 +998,12 @@ namespace Model
      * each Amazon Web Services Region.</p> <p>This setting doesn't apply to RDS Custom
      * DB instances.</p>
      */
-    inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
+    inline const Aws::String& GetPerformanceInsightsKMSKeyId() const { return m_performanceInsightsKMSKeyId; }
     inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
-    inline void SetPerformanceInsightsKMSKeyId(const Aws::String& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = value; }
-    inline void SetPerformanceInsightsKMSKeyId(Aws::String&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::move(value); }
-    inline void SetPerformanceInsightsKMSKeyId(const char* value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId.assign(value); }
-    inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const Aws::String& value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
-    inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(Aws::String&& value) { SetPerformanceInsightsKMSKeyId(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(const char* value) { SetPerformanceInsightsKMSKeyId(value); return *this;}
+    template<typename PerformanceInsightsKMSKeyIdT = Aws::String>
+    void SetPerformanceInsightsKMSKeyId(PerformanceInsightsKMSKeyIdT&& value) { m_performanceInsightsKMSKeyIdHasBeenSet = true; m_performanceInsightsKMSKeyId = std::forward<PerformanceInsightsKMSKeyIdT>(value); }
+    template<typename PerformanceInsightsKMSKeyIdT = Aws::String>
+    CreateDBInstanceRequest& WithPerformanceInsightsKMSKeyId(PerformanceInsightsKMSKeyIdT&& value) { SetPerformanceInsightsKMSKeyId(std::forward<PerformanceInsightsKMSKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -1080,7 +1017,7 @@ namespace Model
      * <p>If you specify a retention period that isn't valid, such as <code>94</code>,
      * Amazon RDS returns an error.</p>
      */
-    inline int GetPerformanceInsightsRetentionPeriod() const{ return m_performanceInsightsRetentionPeriod; }
+    inline int GetPerformanceInsightsRetentionPeriod() const { return m_performanceInsightsRetentionPeriod; }
     inline bool PerformanceInsightsRetentionPeriodHasBeenSet() const { return m_performanceInsightsRetentionPeriodHasBeenSet; }
     inline void SetPerformanceInsightsRetentionPeriod(int value) { m_performanceInsightsRetentionPeriodHasBeenSet = true; m_performanceInsightsRetentionPeriod = value; }
     inline CreateDBInstanceRequest& WithPerformanceInsightsRetentionPeriod(int value) { SetPerformanceInsightsRetentionPeriod(value); return *this;}
@@ -1104,15 +1041,14 @@ namespace Model
      * | listener | trace | oemagent</code> </p> </li> <li> <p>RDS for PostgreSQL -
      * <code>postgresql | upgrade | iam-db-auth-error</code> </p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
+    inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const { return m_enableCloudwatchLogsExports; }
     inline bool EnableCloudwatchLogsExportsHasBeenSet() const { return m_enableCloudwatchLogsExportsHasBeenSet; }
-    inline void SetEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = value; }
-    inline void SetEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = std::move(value); }
-    inline CreateDBInstanceRequest& WithEnableCloudwatchLogsExports(const Aws::Vector<Aws::String>& value) { SetEnableCloudwatchLogsExports(value); return *this;}
-    inline CreateDBInstanceRequest& WithEnableCloudwatchLogsExports(Aws::Vector<Aws::String>&& value) { SetEnableCloudwatchLogsExports(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& AddEnableCloudwatchLogsExports(const Aws::String& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
-    inline CreateDBInstanceRequest& AddEnableCloudwatchLogsExports(Aws::String&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(std::move(value)); return *this; }
-    inline CreateDBInstanceRequest& AddEnableCloudwatchLogsExports(const char* value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.push_back(value); return *this; }
+    template<typename EnableCloudwatchLogsExportsT = Aws::Vector<Aws::String>>
+    void SetEnableCloudwatchLogsExports(EnableCloudwatchLogsExportsT&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports = std::forward<EnableCloudwatchLogsExportsT>(value); }
+    template<typename EnableCloudwatchLogsExportsT = Aws::Vector<Aws::String>>
+    CreateDBInstanceRequest& WithEnableCloudwatchLogsExports(EnableCloudwatchLogsExportsT&& value) { SetEnableCloudwatchLogsExports(std::forward<EnableCloudwatchLogsExportsT>(value)); return *this;}
+    template<typename EnableCloudwatchLogsExportsT = Aws::String>
+    CreateDBInstanceRequest& AddEnableCloudwatchLogsExports(EnableCloudwatchLogsExportsT&& value) { m_enableCloudwatchLogsExportsHasBeenSet = true; m_enableCloudwatchLogsExports.emplace_back(std::forward<EnableCloudwatchLogsExportsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -1121,14 +1057,14 @@ namespace Model
      * instance class of the DB instance.</p> <p>This setting doesn't apply to Amazon
      * Aurora or RDS Custom DB instances.</p>
      */
-    inline const Aws::Vector<ProcessorFeature>& GetProcessorFeatures() const{ return m_processorFeatures; }
+    inline const Aws::Vector<ProcessorFeature>& GetProcessorFeatures() const { return m_processorFeatures; }
     inline bool ProcessorFeaturesHasBeenSet() const { return m_processorFeaturesHasBeenSet; }
-    inline void SetProcessorFeatures(const Aws::Vector<ProcessorFeature>& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures = value; }
-    inline void SetProcessorFeatures(Aws::Vector<ProcessorFeature>&& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures = std::move(value); }
-    inline CreateDBInstanceRequest& WithProcessorFeatures(const Aws::Vector<ProcessorFeature>& value) { SetProcessorFeatures(value); return *this;}
-    inline CreateDBInstanceRequest& WithProcessorFeatures(Aws::Vector<ProcessorFeature>&& value) { SetProcessorFeatures(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& AddProcessorFeatures(const ProcessorFeature& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures.push_back(value); return *this; }
-    inline CreateDBInstanceRequest& AddProcessorFeatures(ProcessorFeature&& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures.push_back(std::move(value)); return *this; }
+    template<typename ProcessorFeaturesT = Aws::Vector<ProcessorFeature>>
+    void SetProcessorFeatures(ProcessorFeaturesT&& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures = std::forward<ProcessorFeaturesT>(value); }
+    template<typename ProcessorFeaturesT = Aws::Vector<ProcessorFeature>>
+    CreateDBInstanceRequest& WithProcessorFeatures(ProcessorFeaturesT&& value) { SetProcessorFeatures(std::forward<ProcessorFeaturesT>(value)); return *this;}
+    template<typename ProcessorFeaturesT = ProcessorFeature>
+    CreateDBInstanceRequest& AddProcessorFeatures(ProcessorFeaturesT&& value) { m_processorFeaturesHasBeenSet = true; m_processorFeatures.emplace_back(std::forward<ProcessorFeaturesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -1143,7 +1079,7 @@ namespace Model
      * cluster can be deleted even when deletion protection is enabled for the DB
      * cluster.</p>
      */
-    inline bool GetDeletionProtection() const{ return m_deletionProtection; }
+    inline bool GetDeletionProtection() const { return m_deletionProtection; }
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
     inline CreateDBInstanceRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
@@ -1160,7 +1096,7 @@ namespace Model
      * DB instances:</p> <ul> <li> <p>Amazon Aurora (Storage is managed by the DB
      * cluster.)</p> </li> <li> <p>RDS Custom</p> </li> </ul>
      */
-    inline int GetMaxAllocatedStorage() const{ return m_maxAllocatedStorage; }
+    inline int GetMaxAllocatedStorage() const { return m_maxAllocatedStorage; }
     inline bool MaxAllocatedStorageHasBeenSet() const { return m_maxAllocatedStorageHasBeenSet; }
     inline void SetMaxAllocatedStorage(int value) { m_maxAllocatedStorageHasBeenSet = true; m_maxAllocatedStorage = value; }
     inline CreateDBInstanceRequest& WithMaxAllocatedStorage(int value) { SetMaxAllocatedStorage(value); return *this;}
@@ -1180,7 +1116,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/outposts/latest/userguide/routing.html#ip-addressing">Customer-owned
      * IP addresses</a> in the <i>Amazon Web Services Outposts User Guide</i>.</p>
      */
-    inline bool GetEnableCustomerOwnedIp() const{ return m_enableCustomerOwnedIp; }
+    inline bool GetEnableCustomerOwnedIp() const { return m_enableCustomerOwnedIp; }
     inline bool EnableCustomerOwnedIpHasBeenSet() const { return m_enableCustomerOwnedIpHasBeenSet; }
     inline void SetEnableCustomerOwnedIp(bool value) { m_enableCustomerOwnedIpHasBeenSet = true; m_enableCustomerOwnedIp = value; }
     inline CreateDBInstanceRequest& WithEnableCustomerOwnedIp(bool value) { SetEnableCustomerOwnedIp(value); return *this;}
@@ -1198,14 +1134,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/custom-setup-orcl.html#custom-setup-orcl.iam-vpc">
      * Configure IAM and your VPC</a> in the <i>Amazon RDS User Guide</i>.</p>
      */
-    inline const Aws::String& GetCustomIamInstanceProfile() const{ return m_customIamInstanceProfile; }
+    inline const Aws::String& GetCustomIamInstanceProfile() const { return m_customIamInstanceProfile; }
     inline bool CustomIamInstanceProfileHasBeenSet() const { return m_customIamInstanceProfileHasBeenSet; }
-    inline void SetCustomIamInstanceProfile(const Aws::String& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = value; }
-    inline void SetCustomIamInstanceProfile(Aws::String&& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = std::move(value); }
-    inline void SetCustomIamInstanceProfile(const char* value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile.assign(value); }
-    inline CreateDBInstanceRequest& WithCustomIamInstanceProfile(const Aws::String& value) { SetCustomIamInstanceProfile(value); return *this;}
-    inline CreateDBInstanceRequest& WithCustomIamInstanceProfile(Aws::String&& value) { SetCustomIamInstanceProfile(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithCustomIamInstanceProfile(const char* value) { SetCustomIamInstanceProfile(value); return *this;}
+    template<typename CustomIamInstanceProfileT = Aws::String>
+    void SetCustomIamInstanceProfile(CustomIamInstanceProfileT&& value) { m_customIamInstanceProfileHasBeenSet = true; m_customIamInstanceProfile = std::forward<CustomIamInstanceProfileT>(value); }
+    template<typename CustomIamInstanceProfileT = Aws::String>
+    CreateDBInstanceRequest& WithCustomIamInstanceProfile(CustomIamInstanceProfileT&& value) { SetCustomIamInstanceProfile(std::forward<CustomIamInstanceProfileT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -1219,14 +1153,12 @@ namespace Model
      * with Amazon RDS on Amazon Web Services Outposts</a> in the <i>Amazon RDS User
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetBackupTarget() const{ return m_backupTarget; }
+    inline const Aws::String& GetBackupTarget() const { return m_backupTarget; }
     inline bool BackupTargetHasBeenSet() const { return m_backupTargetHasBeenSet; }
-    inline void SetBackupTarget(const Aws::String& value) { m_backupTargetHasBeenSet = true; m_backupTarget = value; }
-    inline void SetBackupTarget(Aws::String&& value) { m_backupTargetHasBeenSet = true; m_backupTarget = std::move(value); }
-    inline void SetBackupTarget(const char* value) { m_backupTargetHasBeenSet = true; m_backupTarget.assign(value); }
-    inline CreateDBInstanceRequest& WithBackupTarget(const Aws::String& value) { SetBackupTarget(value); return *this;}
-    inline CreateDBInstanceRequest& WithBackupTarget(Aws::String&& value) { SetBackupTarget(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithBackupTarget(const char* value) { SetBackupTarget(value); return *this;}
+    template<typename BackupTargetT = Aws::String>
+    void SetBackupTarget(BackupTargetT&& value) { m_backupTargetHasBeenSet = true; m_backupTarget = std::forward<BackupTargetT>(value); }
+    template<typename BackupTargetT = Aws::String>
+    CreateDBInstanceRequest& WithBackupTarget(BackupTargetT&& value) { SetBackupTarget(std::forward<BackupTargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -1239,14 +1171,12 @@ namespace Model
      * Working with a DB instance in a VPC</a> in the <i>Amazon RDS User Guide.</i>
      * </p> <p>Valid Values: <code>IPV4 | DUAL</code> </p>
      */
-    inline const Aws::String& GetNetworkType() const{ return m_networkType; }
+    inline const Aws::String& GetNetworkType() const { return m_networkType; }
     inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
-    inline void SetNetworkType(const Aws::String& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
-    inline void SetNetworkType(Aws::String&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
-    inline void SetNetworkType(const char* value) { m_networkTypeHasBeenSet = true; m_networkType.assign(value); }
-    inline CreateDBInstanceRequest& WithNetworkType(const Aws::String& value) { SetNetworkType(value); return *this;}
-    inline CreateDBInstanceRequest& WithNetworkType(Aws::String&& value) { SetNetworkType(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithNetworkType(const char* value) { SetNetworkType(value); return *this;}
+    template<typename NetworkTypeT = Aws::String>
+    void SetNetworkType(NetworkTypeT&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::forward<NetworkTypeT>(value); }
+    template<typename NetworkTypeT = Aws::String>
+    CreateDBInstanceRequest& WithNetworkType(NetworkTypeT&& value) { SetNetworkType(std::forward<NetworkTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -1256,7 +1186,7 @@ namespace Model
      * type.</p> <p>This setting doesn't apply to Amazon Aurora or RDS Custom DB
      * instances.</p>
      */
-    inline int GetStorageThroughput() const{ return m_storageThroughput; }
+    inline int GetStorageThroughput() const { return m_storageThroughput; }
     inline bool StorageThroughputHasBeenSet() const { return m_storageThroughputHasBeenSet; }
     inline void SetStorageThroughput(int value) { m_storageThroughputHasBeenSet = true; m_storageThroughput = value; }
     inline CreateDBInstanceRequest& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
@@ -1272,7 +1202,7 @@ namespace Model
      * user password with Amazon Web Services Secrets Manager if
      * <code>MasterUserPassword</code> is specified.</p> </li> </ul>
      */
-    inline bool GetManageMasterUserPassword() const{ return m_manageMasterUserPassword; }
+    inline bool GetManageMasterUserPassword() const { return m_manageMasterUserPassword; }
     inline bool ManageMasterUserPasswordHasBeenSet() const { return m_manageMasterUserPasswordHasBeenSet; }
     inline void SetManageMasterUserPassword(bool value) { m_manageMasterUserPasswordHasBeenSet = true; m_manageMasterUserPassword = value; }
     inline CreateDBInstanceRequest& WithManageMasterUserPassword(bool value) { SetManageMasterUserPassword(value); return *this;}
@@ -1295,14 +1225,12 @@ namespace Model
      * Web Services account has a different default KMS key for each Amazon Web
      * Services Region.</p>
      */
-    inline const Aws::String& GetMasterUserSecretKmsKeyId() const{ return m_masterUserSecretKmsKeyId; }
+    inline const Aws::String& GetMasterUserSecretKmsKeyId() const { return m_masterUserSecretKmsKeyId; }
     inline bool MasterUserSecretKmsKeyIdHasBeenSet() const { return m_masterUserSecretKmsKeyIdHasBeenSet; }
-    inline void SetMasterUserSecretKmsKeyId(const Aws::String& value) { m_masterUserSecretKmsKeyIdHasBeenSet = true; m_masterUserSecretKmsKeyId = value; }
-    inline void SetMasterUserSecretKmsKeyId(Aws::String&& value) { m_masterUserSecretKmsKeyIdHasBeenSet = true; m_masterUserSecretKmsKeyId = std::move(value); }
-    inline void SetMasterUserSecretKmsKeyId(const char* value) { m_masterUserSecretKmsKeyIdHasBeenSet = true; m_masterUserSecretKmsKeyId.assign(value); }
-    inline CreateDBInstanceRequest& WithMasterUserSecretKmsKeyId(const Aws::String& value) { SetMasterUserSecretKmsKeyId(value); return *this;}
-    inline CreateDBInstanceRequest& WithMasterUserSecretKmsKeyId(Aws::String&& value) { SetMasterUserSecretKmsKeyId(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithMasterUserSecretKmsKeyId(const char* value) { SetMasterUserSecretKmsKeyId(value); return *this;}
+    template<typename MasterUserSecretKmsKeyIdT = Aws::String>
+    void SetMasterUserSecretKmsKeyId(MasterUserSecretKmsKeyIdT&& value) { m_masterUserSecretKmsKeyIdHasBeenSet = true; m_masterUserSecretKmsKeyId = std::forward<MasterUserSecretKmsKeyIdT>(value); }
+    template<typename MasterUserSecretKmsKeyIdT = Aws::String>
+    CreateDBInstanceRequest& WithMasterUserSecretKmsKeyId(MasterUserSecretKmsKeyIdT&& value) { SetMasterUserSecretKmsKeyId(std::forward<MasterUserSecretKmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -1317,14 +1245,12 @@ namespace Model
      * Using SSL/TLS to encrypt a connection to a DB cluster</a> in the <i>Amazon
      * Aurora User Guide</i>.</p>
      */
-    inline const Aws::String& GetCACertificateIdentifier() const{ return m_cACertificateIdentifier; }
+    inline const Aws::String& GetCACertificateIdentifier() const { return m_cACertificateIdentifier; }
     inline bool CACertificateIdentifierHasBeenSet() const { return m_cACertificateIdentifierHasBeenSet; }
-    inline void SetCACertificateIdentifier(const Aws::String& value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier = value; }
-    inline void SetCACertificateIdentifier(Aws::String&& value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier = std::move(value); }
-    inline void SetCACertificateIdentifier(const char* value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier.assign(value); }
-    inline CreateDBInstanceRequest& WithCACertificateIdentifier(const Aws::String& value) { SetCACertificateIdentifier(value); return *this;}
-    inline CreateDBInstanceRequest& WithCACertificateIdentifier(Aws::String&& value) { SetCACertificateIdentifier(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithCACertificateIdentifier(const char* value) { SetCACertificateIdentifier(value); return *this;}
+    template<typename CACertificateIdentifierT = Aws::String>
+    void SetCACertificateIdentifier(CACertificateIdentifierT&& value) { m_cACertificateIdentifierHasBeenSet = true; m_cACertificateIdentifier = std::forward<CACertificateIdentifierT>(value); }
+    template<typename CACertificateIdentifierT = Aws::String>
+    CreateDBInstanceRequest& WithCACertificateIdentifier(CACertificateIdentifierT&& value) { SetCACertificateIdentifier(std::forward<CACertificateIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -1335,14 +1261,12 @@ namespace Model
      * background processes. If you don't specify a SID, the value defaults to
      * <code>RDSCDB</code>. The Oracle SID is also the name of your CDB.</p>
      */
-    inline const Aws::String& GetDBSystemId() const{ return m_dBSystemId; }
+    inline const Aws::String& GetDBSystemId() const { return m_dBSystemId; }
     inline bool DBSystemIdHasBeenSet() const { return m_dBSystemIdHasBeenSet; }
-    inline void SetDBSystemId(const Aws::String& value) { m_dBSystemIdHasBeenSet = true; m_dBSystemId = value; }
-    inline void SetDBSystemId(Aws::String&& value) { m_dBSystemIdHasBeenSet = true; m_dBSystemId = std::move(value); }
-    inline void SetDBSystemId(const char* value) { m_dBSystemIdHasBeenSet = true; m_dBSystemId.assign(value); }
-    inline CreateDBInstanceRequest& WithDBSystemId(const Aws::String& value) { SetDBSystemId(value); return *this;}
-    inline CreateDBInstanceRequest& WithDBSystemId(Aws::String&& value) { SetDBSystemId(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithDBSystemId(const char* value) { SetDBSystemId(value); return *this;}
+    template<typename DBSystemIdT = Aws::String>
+    void SetDBSystemId(DBSystemIdT&& value) { m_dBSystemIdHasBeenSet = true; m_dBSystemId = std::forward<DBSystemIdT>(value); }
+    template<typename DBSystemIdT = Aws::String>
+    CreateDBInstanceRequest& WithDBSystemId(DBSystemIdT&& value) { SetDBSystemId(std::forward<DBSystemIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -1350,7 +1274,7 @@ namespace Model
      * <p>Indicates whether the DB instance has a dedicated log volume (DLV)
      * enabled.</p>
      */
-    inline bool GetDedicatedLogVolume() const{ return m_dedicatedLogVolume; }
+    inline bool GetDedicatedLogVolume() const { return m_dedicatedLogVolume; }
     inline bool DedicatedLogVolumeHasBeenSet() const { return m_dedicatedLogVolumeHasBeenSet; }
     inline void SetDedicatedLogVolume(bool value) { m_dedicatedLogVolumeHasBeenSet = true; m_dedicatedLogVolume = value; }
     inline CreateDBInstanceRequest& WithDedicatedLogVolume(bool value) { SetDedicatedLogVolume(value); return *this;}
@@ -1368,7 +1292,7 @@ namespace Model
      * can't later modify this DB instance to use the single-tenant configuration.</p>
      * </li> </ul>
      */
-    inline bool GetMultiTenant() const{ return m_multiTenant; }
+    inline bool GetMultiTenant() const { return m_multiTenant; }
     inline bool MultiTenantHasBeenSet() const { return m_multiTenantHasBeenSet; }
     inline void SetMultiTenant(bool value) { m_multiTenantHasBeenSet = true; m_multiTenant = value; }
     inline CreateDBInstanceRequest& WithMultiTenant(bool value) { SetMultiTenant(value); return *this;}
@@ -1394,14 +1318,12 @@ namespace Model
      * open-source-rds-extended-support-disabled</code> </p> <p>Default:
      * <code>open-source-rds-extended-support</code> </p>
      */
-    inline const Aws::String& GetEngineLifecycleSupport() const{ return m_engineLifecycleSupport; }
+    inline const Aws::String& GetEngineLifecycleSupport() const { return m_engineLifecycleSupport; }
     inline bool EngineLifecycleSupportHasBeenSet() const { return m_engineLifecycleSupportHasBeenSet; }
-    inline void SetEngineLifecycleSupport(const Aws::String& value) { m_engineLifecycleSupportHasBeenSet = true; m_engineLifecycleSupport = value; }
-    inline void SetEngineLifecycleSupport(Aws::String&& value) { m_engineLifecycleSupportHasBeenSet = true; m_engineLifecycleSupport = std::move(value); }
-    inline void SetEngineLifecycleSupport(const char* value) { m_engineLifecycleSupportHasBeenSet = true; m_engineLifecycleSupport.assign(value); }
-    inline CreateDBInstanceRequest& WithEngineLifecycleSupport(const Aws::String& value) { SetEngineLifecycleSupport(value); return *this;}
-    inline CreateDBInstanceRequest& WithEngineLifecycleSupport(Aws::String&& value) { SetEngineLifecycleSupport(std::move(value)); return *this;}
-    inline CreateDBInstanceRequest& WithEngineLifecycleSupport(const char* value) { SetEngineLifecycleSupport(value); return *this;}
+    template<typename EngineLifecycleSupportT = Aws::String>
+    void SetEngineLifecycleSupport(EngineLifecycleSupportT&& value) { m_engineLifecycleSupportHasBeenSet = true; m_engineLifecycleSupport = std::forward<EngineLifecycleSupportT>(value); }
+    template<typename EngineLifecycleSupportT = Aws::String>
+    CreateDBInstanceRequest& WithEngineLifecycleSupport(EngineLifecycleSupportT&& value) { SetEngineLifecycleSupport(std::forward<EngineLifecycleSupportT>(value)); return *this;}
     ///@}
   private:
 
@@ -1411,7 +1333,7 @@ namespace Model
     Aws::String m_dBInstanceIdentifier;
     bool m_dBInstanceIdentifierHasBeenSet = false;
 
-    int m_allocatedStorage;
+    int m_allocatedStorage{0};
     bool m_allocatedStorageHasBeenSet = false;
 
     Aws::String m_dBInstanceClass;
@@ -1444,28 +1366,28 @@ namespace Model
     Aws::String m_dBParameterGroupName;
     bool m_dBParameterGroupNameHasBeenSet = false;
 
-    int m_backupRetentionPeriod;
+    int m_backupRetentionPeriod{0};
     bool m_backupRetentionPeriodHasBeenSet = false;
 
     Aws::String m_preferredBackupWindow;
     bool m_preferredBackupWindowHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
-    bool m_multiAZ;
+    bool m_multiAZ{false};
     bool m_multiAZHasBeenSet = false;
 
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet = false;
 
-    bool m_autoMinorVersionUpgrade;
+    bool m_autoMinorVersionUpgrade{false};
     bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     Aws::String m_licenseModel;
     bool m_licenseModelHasBeenSet = false;
 
-    int m_iops;
+    int m_iops{0};
     bool m_iopsHasBeenSet = false;
 
     Aws::String m_optionGroupName;
@@ -1477,7 +1399,7 @@ namespace Model
     Aws::String m_ncharCharacterSetName;
     bool m_ncharCharacterSetNameHasBeenSet = false;
 
-    bool m_publiclyAccessible;
+    bool m_publiclyAccessible{false};
     bool m_publiclyAccessibleHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
@@ -1495,7 +1417,7 @@ namespace Model
     Aws::String m_tdeCredentialPassword;
     bool m_tdeCredentialPasswordHasBeenSet = false;
 
-    bool m_storageEncrypted;
+    bool m_storageEncrypted{false};
     bool m_storageEncryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
@@ -1516,10 +1438,10 @@ namespace Model
     Aws::Vector<Aws::String> m_domainDnsIps;
     bool m_domainDnsIpsHasBeenSet = false;
 
-    bool m_copyTagsToSnapshot;
+    bool m_copyTagsToSnapshot{false};
     bool m_copyTagsToSnapshotHasBeenSet = false;
 
-    int m_monitoringInterval;
+    int m_monitoringInterval{0};
     bool m_monitoringIntervalHasBeenSet = false;
 
     Aws::String m_monitoringRoleArn;
@@ -1528,25 +1450,25 @@ namespace Model
     Aws::String m_domainIAMRoleName;
     bool m_domainIAMRoleNameHasBeenSet = false;
 
-    int m_promotionTier;
+    int m_promotionTier{0};
     bool m_promotionTierHasBeenSet = false;
 
     Aws::String m_timezone;
     bool m_timezoneHasBeenSet = false;
 
-    bool m_enableIAMDatabaseAuthentication;
+    bool m_enableIAMDatabaseAuthentication{false};
     bool m_enableIAMDatabaseAuthenticationHasBeenSet = false;
 
-    DatabaseInsightsMode m_databaseInsightsMode;
+    DatabaseInsightsMode m_databaseInsightsMode{DatabaseInsightsMode::NOT_SET};
     bool m_databaseInsightsModeHasBeenSet = false;
 
-    bool m_enablePerformanceInsights;
+    bool m_enablePerformanceInsights{false};
     bool m_enablePerformanceInsightsHasBeenSet = false;
 
     Aws::String m_performanceInsightsKMSKeyId;
     bool m_performanceInsightsKMSKeyIdHasBeenSet = false;
 
-    int m_performanceInsightsRetentionPeriod;
+    int m_performanceInsightsRetentionPeriod{0};
     bool m_performanceInsightsRetentionPeriodHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_enableCloudwatchLogsExports;
@@ -1555,13 +1477,13 @@ namespace Model
     Aws::Vector<ProcessorFeature> m_processorFeatures;
     bool m_processorFeaturesHasBeenSet = false;
 
-    bool m_deletionProtection;
+    bool m_deletionProtection{false};
     bool m_deletionProtectionHasBeenSet = false;
 
-    int m_maxAllocatedStorage;
+    int m_maxAllocatedStorage{0};
     bool m_maxAllocatedStorageHasBeenSet = false;
 
-    bool m_enableCustomerOwnedIp;
+    bool m_enableCustomerOwnedIp{false};
     bool m_enableCustomerOwnedIpHasBeenSet = false;
 
     Aws::String m_customIamInstanceProfile;
@@ -1573,10 +1495,10 @@ namespace Model
     Aws::String m_networkType;
     bool m_networkTypeHasBeenSet = false;
 
-    int m_storageThroughput;
+    int m_storageThroughput{0};
     bool m_storageThroughputHasBeenSet = false;
 
-    bool m_manageMasterUserPassword;
+    bool m_manageMasterUserPassword{false};
     bool m_manageMasterUserPasswordHasBeenSet = false;
 
     Aws::String m_masterUserSecretKmsKeyId;
@@ -1588,10 +1510,10 @@ namespace Model
     Aws::String m_dBSystemId;
     bool m_dBSystemIdHasBeenSet = false;
 
-    bool m_dedicatedLogVolume;
+    bool m_dedicatedLogVolume{false};
     bool m_dedicatedLogVolumeHasBeenSet = false;
 
-    bool m_multiTenant;
+    bool m_multiTenant{false};
     bool m_multiTenantHasBeenSet = false;
 
     Aws::String m_engineLifecycleSupport;

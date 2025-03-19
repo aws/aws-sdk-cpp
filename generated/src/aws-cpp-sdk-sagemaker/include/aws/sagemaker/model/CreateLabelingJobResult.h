@@ -27,7 +27,7 @@ namespace Model
   class CreateLabelingJobResult
   {
   public:
-    AWS_SAGEMAKER_API CreateLabelingJobResult();
+    AWS_SAGEMAKER_API CreateLabelingJobResult() = default;
     AWS_SAGEMAKER_API CreateLabelingJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API CreateLabelingJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the labeling job. You use this ARN to
      * identify the labeling job.</p>
      */
-    inline const Aws::String& GetLabelingJobArn() const{ return m_labelingJobArn; }
-    inline void SetLabelingJobArn(const Aws::String& value) { m_labelingJobArn = value; }
-    inline void SetLabelingJobArn(Aws::String&& value) { m_labelingJobArn = std::move(value); }
-    inline void SetLabelingJobArn(const char* value) { m_labelingJobArn.assign(value); }
-    inline CreateLabelingJobResult& WithLabelingJobArn(const Aws::String& value) { SetLabelingJobArn(value); return *this;}
-    inline CreateLabelingJobResult& WithLabelingJobArn(Aws::String&& value) { SetLabelingJobArn(std::move(value)); return *this;}
-    inline CreateLabelingJobResult& WithLabelingJobArn(const char* value) { SetLabelingJobArn(value); return *this;}
+    inline const Aws::String& GetLabelingJobArn() const { return m_labelingJobArn; }
+    template<typename LabelingJobArnT = Aws::String>
+    void SetLabelingJobArn(LabelingJobArnT&& value) { m_labelingJobArnHasBeenSet = true; m_labelingJobArn = std::forward<LabelingJobArnT>(value); }
+    template<typename LabelingJobArnT = Aws::String>
+    CreateLabelingJobResult& WithLabelingJobArn(LabelingJobArnT&& value) { SetLabelingJobArn(std::forward<LabelingJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateLabelingJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateLabelingJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateLabelingJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateLabelingJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_labelingJobArn;
+    bool m_labelingJobArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

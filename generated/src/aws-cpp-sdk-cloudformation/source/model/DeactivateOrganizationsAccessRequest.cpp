@@ -10,10 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-DeactivateOrganizationsAccessRequest::DeactivateOrganizationsAccessRequest()
-{
-}
-
 Aws::String DeactivateOrganizationsAccessRequest::SerializePayload() const
 {
   Aws::StringStream ss;

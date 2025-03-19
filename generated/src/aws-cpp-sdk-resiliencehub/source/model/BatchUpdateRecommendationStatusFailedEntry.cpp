@@ -18,14 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-BatchUpdateRecommendationStatusFailedEntry::BatchUpdateRecommendationStatusFailedEntry() : 
-    m_entryIdHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 BatchUpdateRecommendationStatusFailedEntry::BatchUpdateRecommendationStatusFailedEntry(JsonView jsonValue)
-  : BatchUpdateRecommendationStatusFailedEntry()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BatchUpdateRecommendationStatusFailedEntry& BatchUpdateRecommendationStatusFaile
   if(jsonValue.ValueExists("entryId"))
   {
     m_entryId = jsonValue.GetString("entryId");
-
     m_entryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

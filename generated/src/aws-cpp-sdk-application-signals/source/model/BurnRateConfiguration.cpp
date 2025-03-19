@@ -18,14 +18,7 @@ namespace ApplicationSignals
 namespace Model
 {
 
-BurnRateConfiguration::BurnRateConfiguration() : 
-    m_lookBackWindowMinutes(0),
-    m_lookBackWindowMinutesHasBeenSet(false)
-{
-}
-
 BurnRateConfiguration::BurnRateConfiguration(JsonView jsonValue)
-  : BurnRateConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ BurnRateConfiguration& BurnRateConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LookBackWindowMinutes"))
   {
     m_lookBackWindowMinutes = jsonValue.GetInteger("LookBackWindowMinutes");
-
     m_lookBackWindowMinutesHasBeenSet = true;
   }
-
   return *this;
 }
 

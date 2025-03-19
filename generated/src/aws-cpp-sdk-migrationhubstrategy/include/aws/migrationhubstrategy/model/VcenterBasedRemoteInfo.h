@@ -32,7 +32,7 @@ namespace Model
   class VcenterBasedRemoteInfo
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API VcenterBasedRemoteInfo();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API VcenterBasedRemoteInfo() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API VcenterBasedRemoteInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API VcenterBasedRemoteInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,30 +42,26 @@ namespace Model
     /**
      * <p>The type of the operating system.</p>
      */
-    inline const OSType& GetOsType() const{ return m_osType; }
+    inline OSType GetOsType() const { return m_osType; }
     inline bool OsTypeHasBeenSet() const { return m_osTypeHasBeenSet; }
-    inline void SetOsType(const OSType& value) { m_osTypeHasBeenSet = true; m_osType = value; }
-    inline void SetOsType(OSType&& value) { m_osTypeHasBeenSet = true; m_osType = std::move(value); }
-    inline VcenterBasedRemoteInfo& WithOsType(const OSType& value) { SetOsType(value); return *this;}
-    inline VcenterBasedRemoteInfo& WithOsType(OSType&& value) { SetOsType(std::move(value)); return *this;}
+    inline void SetOsType(OSType value) { m_osTypeHasBeenSet = true; m_osType = value; }
+    inline VcenterBasedRemoteInfo& WithOsType(OSType value) { SetOsType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the remote server based on vCenter was last configured.</p>
      */
-    inline const Aws::String& GetVcenterConfigurationTimeStamp() const{ return m_vcenterConfigurationTimeStamp; }
+    inline const Aws::String& GetVcenterConfigurationTimeStamp() const { return m_vcenterConfigurationTimeStamp; }
     inline bool VcenterConfigurationTimeStampHasBeenSet() const { return m_vcenterConfigurationTimeStampHasBeenSet; }
-    inline void SetVcenterConfigurationTimeStamp(const Aws::String& value) { m_vcenterConfigurationTimeStampHasBeenSet = true; m_vcenterConfigurationTimeStamp = value; }
-    inline void SetVcenterConfigurationTimeStamp(Aws::String&& value) { m_vcenterConfigurationTimeStampHasBeenSet = true; m_vcenterConfigurationTimeStamp = std::move(value); }
-    inline void SetVcenterConfigurationTimeStamp(const char* value) { m_vcenterConfigurationTimeStampHasBeenSet = true; m_vcenterConfigurationTimeStamp.assign(value); }
-    inline VcenterBasedRemoteInfo& WithVcenterConfigurationTimeStamp(const Aws::String& value) { SetVcenterConfigurationTimeStamp(value); return *this;}
-    inline VcenterBasedRemoteInfo& WithVcenterConfigurationTimeStamp(Aws::String&& value) { SetVcenterConfigurationTimeStamp(std::move(value)); return *this;}
-    inline VcenterBasedRemoteInfo& WithVcenterConfigurationTimeStamp(const char* value) { SetVcenterConfigurationTimeStamp(value); return *this;}
+    template<typename VcenterConfigurationTimeStampT = Aws::String>
+    void SetVcenterConfigurationTimeStamp(VcenterConfigurationTimeStampT&& value) { m_vcenterConfigurationTimeStampHasBeenSet = true; m_vcenterConfigurationTimeStamp = std::forward<VcenterConfigurationTimeStampT>(value); }
+    template<typename VcenterConfigurationTimeStampT = Aws::String>
+    VcenterBasedRemoteInfo& WithVcenterConfigurationTimeStamp(VcenterConfigurationTimeStampT&& value) { SetVcenterConfigurationTimeStamp(std::forward<VcenterConfigurationTimeStampT>(value)); return *this;}
     ///@}
   private:
 
-    OSType m_osType;
+    OSType m_osType{OSType::NOT_SET};
     bool m_osTypeHasBeenSet = false;
 
     Aws::String m_vcenterConfigurationTimeStamp;

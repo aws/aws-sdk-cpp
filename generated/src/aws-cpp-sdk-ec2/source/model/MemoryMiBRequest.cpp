@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-MemoryMiBRequest::MemoryMiBRequest() : 
-    m_min(0),
-    m_minHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false)
-{
-}
-
 MemoryMiBRequest::MemoryMiBRequest(const XmlNode& xmlNode)
-  : MemoryMiBRequest()
 {
   *this = xmlNode;
 }

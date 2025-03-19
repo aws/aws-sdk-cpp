@@ -33,7 +33,7 @@ namespace Model
   class CandidateGenerationConfig
   {
   public:
-    AWS_SAGEMAKER_API CandidateGenerationConfig();
+    AWS_SAGEMAKER_API CandidateGenerationConfig() = default;
     AWS_SAGEMAKER_API CandidateGenerationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API CandidateGenerationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -81,14 +81,14 @@ namespace Model
      * <code>CandidateGenerationConfig</code> uses the full set of algorithms for
      * time-series forecasting.</p> </li> </ul> </li> </ul>
      */
-    inline const Aws::Vector<AutoMLAlgorithmConfig>& GetAlgorithmsConfig() const{ return m_algorithmsConfig; }
+    inline const Aws::Vector<AutoMLAlgorithmConfig>& GetAlgorithmsConfig() const { return m_algorithmsConfig; }
     inline bool AlgorithmsConfigHasBeenSet() const { return m_algorithmsConfigHasBeenSet; }
-    inline void SetAlgorithmsConfig(const Aws::Vector<AutoMLAlgorithmConfig>& value) { m_algorithmsConfigHasBeenSet = true; m_algorithmsConfig = value; }
-    inline void SetAlgorithmsConfig(Aws::Vector<AutoMLAlgorithmConfig>&& value) { m_algorithmsConfigHasBeenSet = true; m_algorithmsConfig = std::move(value); }
-    inline CandidateGenerationConfig& WithAlgorithmsConfig(const Aws::Vector<AutoMLAlgorithmConfig>& value) { SetAlgorithmsConfig(value); return *this;}
-    inline CandidateGenerationConfig& WithAlgorithmsConfig(Aws::Vector<AutoMLAlgorithmConfig>&& value) { SetAlgorithmsConfig(std::move(value)); return *this;}
-    inline CandidateGenerationConfig& AddAlgorithmsConfig(const AutoMLAlgorithmConfig& value) { m_algorithmsConfigHasBeenSet = true; m_algorithmsConfig.push_back(value); return *this; }
-    inline CandidateGenerationConfig& AddAlgorithmsConfig(AutoMLAlgorithmConfig&& value) { m_algorithmsConfigHasBeenSet = true; m_algorithmsConfig.push_back(std::move(value)); return *this; }
+    template<typename AlgorithmsConfigT = Aws::Vector<AutoMLAlgorithmConfig>>
+    void SetAlgorithmsConfig(AlgorithmsConfigT&& value) { m_algorithmsConfigHasBeenSet = true; m_algorithmsConfig = std::forward<AlgorithmsConfigT>(value); }
+    template<typename AlgorithmsConfigT = Aws::Vector<AutoMLAlgorithmConfig>>
+    CandidateGenerationConfig& WithAlgorithmsConfig(AlgorithmsConfigT&& value) { SetAlgorithmsConfig(std::forward<AlgorithmsConfigT>(value)); return *this;}
+    template<typename AlgorithmsConfigT = AutoMLAlgorithmConfig>
+    CandidateGenerationConfig& AddAlgorithmsConfig(AlgorithmsConfigT&& value) { m_algorithmsConfigHasBeenSet = true; m_algorithmsConfig.emplace_back(std::forward<AlgorithmsConfigT>(value)); return *this; }
     ///@}
   private:
 

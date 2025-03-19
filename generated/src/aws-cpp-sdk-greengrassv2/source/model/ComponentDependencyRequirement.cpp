@@ -18,15 +18,7 @@ namespace GreengrassV2
 namespace Model
 {
 
-ComponentDependencyRequirement::ComponentDependencyRequirement() : 
-    m_versionRequirementHasBeenSet(false),
-    m_dependencyType(ComponentDependencyType::NOT_SET),
-    m_dependencyTypeHasBeenSet(false)
-{
-}
-
 ComponentDependencyRequirement::ComponentDependencyRequirement(JsonView jsonValue)
-  : ComponentDependencyRequirement()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ComponentDependencyRequirement& ComponentDependencyRequirement::operator =(JsonV
   if(jsonValue.ValueExists("versionRequirement"))
   {
     m_versionRequirement = jsonValue.GetString("versionRequirement");
-
     m_versionRequirementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dependencyType"))
   {
     m_dependencyType = ComponentDependencyTypeMapper::GetComponentDependencyTypeForName(jsonValue.GetString("dependencyType"));
-
     m_dependencyTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

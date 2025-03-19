@@ -12,14 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetModelVersionRequest::GetModelVersionRequest() : 
-    m_modelIdHasBeenSet(false),
-    m_modelType(ModelTypeEnum::NOT_SET),
-    m_modelTypeHasBeenSet(false),
-    m_modelVersionNumberHasBeenSet(false)
-{
-}
-
 Aws::String GetModelVersionRequest::SerializePayload() const
 {
   JsonValue payload;

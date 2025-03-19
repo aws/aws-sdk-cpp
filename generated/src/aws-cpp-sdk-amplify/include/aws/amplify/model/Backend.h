@@ -34,7 +34,7 @@ namespace Model
   class Backend
   {
   public:
-    AWS_AMPLIFY_API Backend();
+    AWS_AMPLIFY_API Backend() = default;
     AWS_AMPLIFY_API Backend(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFY_API Backend& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the CloudFormation stack.</p>
      */
-    inline const Aws::String& GetStackArn() const{ return m_stackArn; }
+    inline const Aws::String& GetStackArn() const { return m_stackArn; }
     inline bool StackArnHasBeenSet() const { return m_stackArnHasBeenSet; }
-    inline void SetStackArn(const Aws::String& value) { m_stackArnHasBeenSet = true; m_stackArn = value; }
-    inline void SetStackArn(Aws::String&& value) { m_stackArnHasBeenSet = true; m_stackArn = std::move(value); }
-    inline void SetStackArn(const char* value) { m_stackArnHasBeenSet = true; m_stackArn.assign(value); }
-    inline Backend& WithStackArn(const Aws::String& value) { SetStackArn(value); return *this;}
-    inline Backend& WithStackArn(Aws::String&& value) { SetStackArn(std::move(value)); return *this;}
-    inline Backend& WithStackArn(const char* value) { SetStackArn(value); return *this;}
+    template<typename StackArnT = Aws::String>
+    void SetStackArn(StackArnT&& value) { m_stackArnHasBeenSet = true; m_stackArn = std::forward<StackArnT>(value); }
+    template<typename StackArnT = Aws::String>
+    Backend& WithStackArn(StackArnT&& value) { SetStackArn(std::forward<StackArnT>(value)); return *this;}
     ///@}
   private:
 

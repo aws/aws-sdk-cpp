@@ -12,13 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateQPersonalizationConfigurationRequest::UpdateQPersonalizationConfigurationRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_personalizationMode(PersonalizationMode::NOT_SET),
-    m_personalizationModeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateQPersonalizationConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -22,7 +22,7 @@ namespace Model
   class PutManagedInsightRulesRequest : public CloudWatchRequest
   {
   public:
-    AWS_CLOUDWATCH_API PutManagedInsightRulesRequest();
+    AWS_CLOUDWATCH_API PutManagedInsightRulesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,14 @@ namespace Model
     /**
      * <p> A list of <code>ManagedRules</code> to enable. </p>
      */
-    inline const Aws::Vector<ManagedRule>& GetManagedRules() const{ return m_managedRules; }
+    inline const Aws::Vector<ManagedRule>& GetManagedRules() const { return m_managedRules; }
     inline bool ManagedRulesHasBeenSet() const { return m_managedRulesHasBeenSet; }
-    inline void SetManagedRules(const Aws::Vector<ManagedRule>& value) { m_managedRulesHasBeenSet = true; m_managedRules = value; }
-    inline void SetManagedRules(Aws::Vector<ManagedRule>&& value) { m_managedRulesHasBeenSet = true; m_managedRules = std::move(value); }
-    inline PutManagedInsightRulesRequest& WithManagedRules(const Aws::Vector<ManagedRule>& value) { SetManagedRules(value); return *this;}
-    inline PutManagedInsightRulesRequest& WithManagedRules(Aws::Vector<ManagedRule>&& value) { SetManagedRules(std::move(value)); return *this;}
-    inline PutManagedInsightRulesRequest& AddManagedRules(const ManagedRule& value) { m_managedRulesHasBeenSet = true; m_managedRules.push_back(value); return *this; }
-    inline PutManagedInsightRulesRequest& AddManagedRules(ManagedRule&& value) { m_managedRulesHasBeenSet = true; m_managedRules.push_back(std::move(value)); return *this; }
+    template<typename ManagedRulesT = Aws::Vector<ManagedRule>>
+    void SetManagedRules(ManagedRulesT&& value) { m_managedRulesHasBeenSet = true; m_managedRules = std::forward<ManagedRulesT>(value); }
+    template<typename ManagedRulesT = Aws::Vector<ManagedRule>>
+    PutManagedInsightRulesRequest& WithManagedRules(ManagedRulesT&& value) { SetManagedRules(std::forward<ManagedRulesT>(value)); return *this;}
+    template<typename ManagedRulesT = ManagedRule>
+    PutManagedInsightRulesRequest& AddManagedRules(ManagedRulesT&& value) { m_managedRulesHasBeenSet = true; m_managedRules.emplace_back(std::forward<ManagedRulesT>(value)); return *this; }
     ///@}
   private:
 

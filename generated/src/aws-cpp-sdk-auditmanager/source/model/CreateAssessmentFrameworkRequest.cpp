@@ -12,15 +12,6 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAssessmentFrameworkRequest::CreateAssessmentFrameworkRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_complianceTypeHasBeenSet(false),
-    m_controlSetsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateAssessmentFrameworkRequest::SerializePayload() const
 {
   JsonValue payload;

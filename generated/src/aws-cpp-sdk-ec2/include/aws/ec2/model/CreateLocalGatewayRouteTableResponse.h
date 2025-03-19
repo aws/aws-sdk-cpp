@@ -28,7 +28,7 @@ namespace Model
   class CreateLocalGatewayRouteTableResponse
   {
   public:
-    AWS_EC2_API CreateLocalGatewayRouteTableResponse();
+    AWS_EC2_API CreateLocalGatewayRouteTableResponse() = default;
     AWS_EC2_API CreateLocalGatewayRouteTableResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API CreateLocalGatewayRouteTableResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the local gateway route table.</p>
      */
-    inline const LocalGatewayRouteTable& GetLocalGatewayRouteTable() const{ return m_localGatewayRouteTable; }
-    inline void SetLocalGatewayRouteTable(const LocalGatewayRouteTable& value) { m_localGatewayRouteTable = value; }
-    inline void SetLocalGatewayRouteTable(LocalGatewayRouteTable&& value) { m_localGatewayRouteTable = std::move(value); }
-    inline CreateLocalGatewayRouteTableResponse& WithLocalGatewayRouteTable(const LocalGatewayRouteTable& value) { SetLocalGatewayRouteTable(value); return *this;}
-    inline CreateLocalGatewayRouteTableResponse& WithLocalGatewayRouteTable(LocalGatewayRouteTable&& value) { SetLocalGatewayRouteTable(std::move(value)); return *this;}
+    inline const LocalGatewayRouteTable& GetLocalGatewayRouteTable() const { return m_localGatewayRouteTable; }
+    template<typename LocalGatewayRouteTableT = LocalGatewayRouteTable>
+    void SetLocalGatewayRouteTable(LocalGatewayRouteTableT&& value) { m_localGatewayRouteTableHasBeenSet = true; m_localGatewayRouteTable = std::forward<LocalGatewayRouteTableT>(value); }
+    template<typename LocalGatewayRouteTableT = LocalGatewayRouteTable>
+    CreateLocalGatewayRouteTableResponse& WithLocalGatewayRouteTable(LocalGatewayRouteTableT&& value) { SetLocalGatewayRouteTable(std::forward<LocalGatewayRouteTableT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateLocalGatewayRouteTableResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateLocalGatewayRouteTableResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateLocalGatewayRouteTableResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     LocalGatewayRouteTable m_localGatewayRouteTable;
+    bool m_localGatewayRouteTableHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -10,12 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-GetIdentityPoliciesRequest::GetIdentityPoliciesRequest() : 
-    m_identityHasBeenSet(false),
-    m_policyNamesHasBeenSet(false)
-{
-}
-
 Aws::String GetIdentityPoliciesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

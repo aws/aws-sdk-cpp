@@ -18,19 +18,7 @@ namespace NetworkMonitor
 namespace Model
 {
 
-MonitorSummary::MonitorSummary() : 
-    m_monitorArnHasBeenSet(false),
-    m_monitorNameHasBeenSet(false),
-    m_state(MonitorState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_aggregationPeriod(0),
-    m_aggregationPeriodHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 MonitorSummary::MonitorSummary(JsonView jsonValue)
-  : MonitorSummary()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ MonitorSummary& MonitorSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("monitorArn"))
   {
     m_monitorArn = jsonValue.GetString("monitorArn");
-
     m_monitorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("monitorName"))
   {
     m_monitorName = jsonValue.GetString("monitorName");
-
     m_monitorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = MonitorStateMapper::GetMonitorStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregationPeriod"))
   {
     m_aggregationPeriod = jsonValue.GetInt64("aggregationPeriod");
-
     m_aggregationPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -74,7 +54,6 @@ MonitorSummary& MonitorSummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,23 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-GetObjectAttributesParts::GetObjectAttributesParts() : 
-    m_totalPartsCount(0),
-    m_totalPartsCountHasBeenSet(false),
-    m_partNumberMarker(0),
-    m_partNumberMarkerHasBeenSet(false),
-    m_nextPartNumberMarker(0),
-    m_nextPartNumberMarkerHasBeenSet(false),
-    m_maxParts(0),
-    m_maxPartsHasBeenSet(false),
-    m_isTruncated(false),
-    m_isTruncatedHasBeenSet(false),
-    m_partsHasBeenSet(false)
-{
-}
-
 GetObjectAttributesParts::GetObjectAttributesParts(const XmlNode& xmlNode)
-  : GetObjectAttributesParts()
 {
   *this = xmlNode;
 }
@@ -81,6 +65,7 @@ GetObjectAttributesParts& GetObjectAttributesParts::operator =(const XmlNode& xm
     if(!partsNode.IsNull())
     {
       XmlNode partMember = partsNode;
+      m_partsHasBeenSet = !partMember.IsNull();
       while(!partMember.IsNull())
       {
         m_parts.push_back(partMember);

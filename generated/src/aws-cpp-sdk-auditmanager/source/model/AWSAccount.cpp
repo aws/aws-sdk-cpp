@@ -18,15 +18,7 @@ namespace AuditManager
 namespace Model
 {
 
-AWSAccount::AWSAccount() : 
-    m_idHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 AWSAccount::AWSAccount(JsonView jsonValue)
-  : AWSAccount()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AWSAccount& AWSAccount::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("emailAddress"))
   {
     m_emailAddress = jsonValue.GetString("emailAddress");
-
     m_emailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

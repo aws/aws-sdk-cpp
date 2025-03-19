@@ -22,10 +22,9 @@ namespace Model
   class GetFunction2020_05_31Result
   {
   public:
-    AWS_CLOUDFRONT_API GetFunction2020_05_31Result();
-    //We have to define these because Microsoft doesn't auto generate them
-    AWS_CLOUDFRONT_API GetFunction2020_05_31Result(GetFunction2020_05_31Result&&);
-    AWS_CLOUDFRONT_API GetFunction2020_05_31Result& operator=(GetFunction2020_05_31Result&&);
+    AWS_CLOUDFRONT_API GetFunction2020_05_31Result() = default;
+    AWS_CLOUDFRONT_API GetFunction2020_05_31Result(GetFunction2020_05_31Result&&) = default;
+    AWS_CLOUDFRONT_API GetFunction2020_05_31Result& operator=(GetFunction2020_05_31Result&&) = default;
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetFunction2020_05_31Result(const GetFunction2020_05_31Result&) = delete;
@@ -51,47 +50,45 @@ namespace Model
      * <p>The version identifier for the current version of the CloudFront
      * function.</p>
      */
-    inline const Aws::String& GetETag() const{ return m_eTag; }
-    inline void SetETag(const Aws::String& value) { m_eTag = value; }
-    inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
-    inline void SetETag(const char* value) { m_eTag.assign(value); }
-    inline GetFunction2020_05_31Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-    inline GetFunction2020_05_31Result& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-    inline GetFunction2020_05_31Result& WithETag(const char* value) { SetETag(value); return *this;}
+    inline const Aws::String& GetETag() const { return m_eTag; }
+    template<typename ETagT = Aws::String>
+    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
+    template<typename ETagT = Aws::String>
+    GetFunction2020_05_31Result& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The content type (media type) of the response.</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
-    inline void SetContentType(const Aws::String& value) { m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentType.assign(value); }
-    inline GetFunction2020_05_31Result& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline GetFunction2020_05_31Result& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline GetFunction2020_05_31Result& WithContentType(const char* value) { SetContentType(value); return *this;}
+    inline const Aws::String& GetContentType() const { return m_contentType; }
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    GetFunction2020_05_31Result& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetFunction2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetFunction2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetFunction2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetFunction2020_05_31Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::Stream::ResponseStream m_functionCode;
+    Aws::Utils::Stream::ResponseStream m_functionCode{};
+    bool m_functionCodeHasBeenSet = false;
 
     Aws::String m_eTag;
+    bool m_eTagHasBeenSet = false;
 
     Aws::String m_contentType;
+    bool m_contentTypeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

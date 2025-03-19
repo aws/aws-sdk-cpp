@@ -18,39 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TopicIRFilterOption::TopicIRFilterOption() : 
-    m_filterType(TopicIRFilterType::NOT_SET),
-    m_filterTypeHasBeenSet(false),
-    m_filterClass(FilterClass::NOT_SET),
-    m_filterClassHasBeenSet(false),
-    m_operandFieldHasBeenSet(false),
-    m_function(TopicIRFilterFunction::NOT_SET),
-    m_functionHasBeenSet(false),
-    m_constantHasBeenSet(false),
-    m_inverse(false),
-    m_inverseHasBeenSet(false),
-    m_nullFilter(NullFilterOption::NOT_SET),
-    m_nullFilterHasBeenSet(false),
-    m_aggregation(AggType::NOT_SET),
-    m_aggregationHasBeenSet(false),
-    m_aggregationFunctionParametersHasBeenSet(false),
-    m_aggregationPartitionByHasBeenSet(false),
-    m_rangeHasBeenSet(false),
-    m_inclusive(false),
-    m_inclusiveHasBeenSet(false),
-    m_timeGranularity(TimeGranularity::NOT_SET),
-    m_timeGranularityHasBeenSet(false),
-    m_lastNextOffsetHasBeenSet(false),
-    m_aggMetricsHasBeenSet(false),
-    m_topBottomLimitHasBeenSet(false),
-    m_sortDirection(TopicSortDirection::NOT_SET),
-    m_sortDirectionHasBeenSet(false),
-    m_anchorHasBeenSet(false)
-{
-}
-
 TopicIRFilterOption::TopicIRFilterOption(JsonView jsonValue)
-  : TopicIRFilterOption()
 {
   *this = jsonValue;
 }
@@ -60,59 +28,43 @@ TopicIRFilterOption& TopicIRFilterOption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FilterType"))
   {
     m_filterType = TopicIRFilterTypeMapper::GetTopicIRFilterTypeForName(jsonValue.GetString("FilterType"));
-
     m_filterTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FilterClass"))
   {
     m_filterClass = FilterClassMapper::GetFilterClassForName(jsonValue.GetString("FilterClass"));
-
     m_filterClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperandField"))
   {
     m_operandField = jsonValue.GetObject("OperandField");
-
     m_operandFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Function"))
   {
     m_function = TopicIRFilterFunctionMapper::GetTopicIRFilterFunctionForName(jsonValue.GetString("Function"));
-
     m_functionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Constant"))
   {
     m_constant = jsonValue.GetObject("Constant");
-
     m_constantHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Inverse"))
   {
     m_inverse = jsonValue.GetBool("Inverse");
-
     m_inverseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NullFilter"))
   {
     m_nullFilter = NullFilterOptionMapper::GetNullFilterOptionForName(jsonValue.GetString("NullFilter"));
-
     m_nullFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Aggregation"))
   {
     m_aggregation = AggTypeMapper::GetAggTypeForName(jsonValue.GetString("Aggregation"));
-
     m_aggregationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AggregationFunctionParameters"))
   {
     Aws::Map<Aws::String, JsonView> aggregationFunctionParametersJsonMap = jsonValue.GetObject("AggregationFunctionParameters").GetAllObjects();
@@ -122,7 +74,6 @@ TopicIRFilterOption& TopicIRFilterOption::operator =(JsonView jsonValue)
     }
     m_aggregationFunctionParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AggregationPartitionBy"))
   {
     Aws::Utils::Array<JsonView> aggregationPartitionByJsonList = jsonValue.GetArray("AggregationPartitionBy");
@@ -132,35 +83,26 @@ TopicIRFilterOption& TopicIRFilterOption::operator =(JsonView jsonValue)
     }
     m_aggregationPartitionByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Range"))
   {
     m_range = jsonValue.GetObject("Range");
-
     m_rangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Inclusive"))
   {
     m_inclusive = jsonValue.GetBool("Inclusive");
-
     m_inclusiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeGranularity"))
   {
     m_timeGranularity = TimeGranularityMapper::GetTimeGranularityForName(jsonValue.GetString("TimeGranularity"));
-
     m_timeGranularityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastNextOffset"))
   {
     m_lastNextOffset = jsonValue.GetObject("LastNextOffset");
-
     m_lastNextOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AggMetrics"))
   {
     Aws::Utils::Array<JsonView> aggMetricsJsonList = jsonValue.GetArray("AggMetrics");
@@ -170,28 +112,21 @@ TopicIRFilterOption& TopicIRFilterOption::operator =(JsonView jsonValue)
     }
     m_aggMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TopBottomLimit"))
   {
     m_topBottomLimit = jsonValue.GetObject("TopBottomLimit");
-
     m_topBottomLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortDirection"))
   {
     m_sortDirection = TopicSortDirectionMapper::GetTopicSortDirectionForName(jsonValue.GetString("SortDirection"));
-
     m_sortDirectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Anchor"))
   {
     m_anchor = jsonValue.GetObject("Anchor");
-
     m_anchorHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::AppFabric::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetIngestionRequest::GetIngestionRequest() : 
-    m_appBundleIdentifierHasBeenSet(false),
-    m_ingestionIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetIngestionRequest::SerializePayload() const
 {
   return {};

@@ -32,7 +32,7 @@ namespace Model
   class Integration
   {
   public:
-    AWS_SSMINCIDENTS_API Integration();
+    AWS_SSMINCIDENTS_API Integration() = default;
     AWS_SSMINCIDENTS_API Integration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMINCIDENTS_API Integration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Information about the PagerDuty service where the response plan creates an
      * incident.</p>
      */
-    inline const PagerDutyConfiguration& GetPagerDutyConfiguration() const{ return m_pagerDutyConfiguration; }
+    inline const PagerDutyConfiguration& GetPagerDutyConfiguration() const { return m_pagerDutyConfiguration; }
     inline bool PagerDutyConfigurationHasBeenSet() const { return m_pagerDutyConfigurationHasBeenSet; }
-    inline void SetPagerDutyConfiguration(const PagerDutyConfiguration& value) { m_pagerDutyConfigurationHasBeenSet = true; m_pagerDutyConfiguration = value; }
-    inline void SetPagerDutyConfiguration(PagerDutyConfiguration&& value) { m_pagerDutyConfigurationHasBeenSet = true; m_pagerDutyConfiguration = std::move(value); }
-    inline Integration& WithPagerDutyConfiguration(const PagerDutyConfiguration& value) { SetPagerDutyConfiguration(value); return *this;}
-    inline Integration& WithPagerDutyConfiguration(PagerDutyConfiguration&& value) { SetPagerDutyConfiguration(std::move(value)); return *this;}
+    template<typename PagerDutyConfigurationT = PagerDutyConfiguration>
+    void SetPagerDutyConfiguration(PagerDutyConfigurationT&& value) { m_pagerDutyConfigurationHasBeenSet = true; m_pagerDutyConfiguration = std::forward<PagerDutyConfigurationT>(value); }
+    template<typename PagerDutyConfigurationT = PagerDutyConfiguration>
+    Integration& WithPagerDutyConfiguration(PagerDutyConfigurationT&& value) { SetPagerDutyConfiguration(std::forward<PagerDutyConfigurationT>(value)); return *this;}
     ///@}
   private:
 

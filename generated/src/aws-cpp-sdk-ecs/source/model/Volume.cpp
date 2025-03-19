@@ -18,19 +18,7 @@ namespace ECS
 namespace Model
 {
 
-Volume::Volume() : 
-    m_nameHasBeenSet(false),
-    m_hostHasBeenSet(false),
-    m_dockerVolumeConfigurationHasBeenSet(false),
-    m_efsVolumeConfigurationHasBeenSet(false),
-    m_fsxWindowsFileServerVolumeConfigurationHasBeenSet(false),
-    m_configuredAtLaunch(false),
-    m_configuredAtLaunchHasBeenSet(false)
-{
-}
-
 Volume::Volume(JsonView jsonValue)
-  : Volume()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ Volume& Volume::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("host"))
   {
     m_host = jsonValue.GetObject("host");
-
     m_hostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dockerVolumeConfiguration"))
   {
     m_dockerVolumeConfiguration = jsonValue.GetObject("dockerVolumeConfiguration");
-
     m_dockerVolumeConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("efsVolumeConfiguration"))
   {
     m_efsVolumeConfiguration = jsonValue.GetObject("efsVolumeConfiguration");
-
     m_efsVolumeConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fsxWindowsFileServerVolumeConfiguration"))
   {
     m_fsxWindowsFileServerVolumeConfiguration = jsonValue.GetObject("fsxWindowsFileServerVolumeConfiguration");
-
     m_fsxWindowsFileServerVolumeConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configuredAtLaunch"))
   {
     m_configuredAtLaunch = jsonValue.GetBool("configuredAtLaunch");
-
     m_configuredAtLaunchHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,14 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportHostKeyRequest::ImportHostKeyRequest() : 
-    m_serverIdHasBeenSet(false),
-    m_hostKeyBodyHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String ImportHostKeyRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutEvaluationsResult::PutEvaluationsResult()
-{
-}
-
 PutEvaluationsResult::PutEvaluationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ PutEvaluationsResult& PutEvaluationsResult::operator =(const Aws::AmazonWebServi
     {
       m_failedEvaluations.push_back(failedEvaluationsJsonList[failedEvaluationsIndex].AsObject());
     }
+    m_failedEvaluationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

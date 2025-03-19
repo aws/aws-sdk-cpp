@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAnnotationImportJobsRequest::ListAnnotationImportJobsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_idsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_filterHasBeenSet(false)
-{
-}
-
 Aws::String ListAnnotationImportJobsRequest::SerializePayload() const
 {
   JsonValue payload;

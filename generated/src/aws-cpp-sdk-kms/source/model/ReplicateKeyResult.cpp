@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ReplicateKeyResult::ReplicateKeyResult()
-{
-}
-
 ReplicateKeyResult::ReplicateKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ ReplicateKeyResult& ReplicateKeyResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("ReplicaKeyMetadata"))
   {
     m_replicaKeyMetadata = jsonValue.GetObject("ReplicaKeyMetadata");
-
+    m_replicaKeyMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicaPolicy"))
   {
     m_replicaPolicy = jsonValue.GetString("ReplicaPolicy");
-
+    m_replicaPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicaTags"))
   {
     Aws::Utils::Array<JsonView> replicaTagsJsonList = jsonValue.GetArray("ReplicaTags");
@@ -48,14 +42,15 @@ ReplicateKeyResult& ReplicateKeyResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_replicaTags.push_back(replicaTagsJsonList[replicaTagsIndex].AsObject());
     }
+    m_replicaTagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

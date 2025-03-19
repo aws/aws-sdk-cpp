@@ -18,20 +18,7 @@ namespace CodeConnections
 namespace Model
 {
 
-Connection::Connection() : 
-    m_connectionNameHasBeenSet(false),
-    m_connectionArnHasBeenSet(false),
-    m_providerType(ProviderType::NOT_SET),
-    m_providerTypeHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false),
-    m_connectionStatus(ConnectionStatus::NOT_SET),
-    m_connectionStatusHasBeenSet(false),
-    m_hostArnHasBeenSet(false)
-{
-}
-
 Connection::Connection(JsonView jsonValue)
-  : Connection()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ Connection& Connection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConnectionName"))
   {
     m_connectionName = jsonValue.GetString("ConnectionName");
-
     m_connectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionArn"))
   {
     m_connectionArn = jsonValue.GetString("ConnectionArn");
-
     m_connectionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProviderType"))
   {
     m_providerType = ProviderTypeMapper::GetProviderTypeForName(jsonValue.GetString("ProviderType"));
-
     m_providerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerAccountId"))
   {
     m_ownerAccountId = jsonValue.GetString("OwnerAccountId");
-
     m_ownerAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionStatus"))
   {
     m_connectionStatus = ConnectionStatusMapper::GetConnectionStatusForName(jsonValue.GetString("ConnectionStatus"));
-
     m_connectionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HostArn"))
   {
     m_hostArn = jsonValue.GetString("HostArn");
-
     m_hostArnHasBeenSet = true;
   }
-
   return *this;
 }
 

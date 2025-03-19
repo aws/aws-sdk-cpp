@@ -18,16 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-CostCategoryProcessingStatus::CostCategoryProcessingStatus() : 
-    m_component(CostCategoryStatusComponent::NOT_SET),
-    m_componentHasBeenSet(false),
-    m_status(CostCategoryStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 CostCategoryProcessingStatus::CostCategoryProcessingStatus(JsonView jsonValue)
-  : CostCategoryProcessingStatus()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CostCategoryProcessingStatus& CostCategoryProcessingStatus::operator =(JsonView 
   if(jsonValue.ValueExists("Component"))
   {
     m_component = CostCategoryStatusComponentMapper::GetCostCategoryStatusComponentForName(jsonValue.GetString("Component"));
-
     m_componentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = CostCategoryStatusMapper::GetCostCategoryStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

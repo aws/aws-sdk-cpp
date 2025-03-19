@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeIdentityIdFormatResponse::DescribeIdentityIdFormatResponse()
-{
-}
-
 DescribeIdentityIdFormatResponse::DescribeIdentityIdFormatResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ DescribeIdentityIdFormatResponse& DescribeIdentityIdFormatResponse::operator =(c
     if(!statusesNode.IsNull())
     {
       XmlNode statusesMember = statusesNode.FirstChild("item");
+      m_statusesHasBeenSet = !statusesMember.IsNull();
       while(!statusesMember.IsNull())
       {
         m_statuses.push_back(statusesMember);
         statusesMember = statusesMember.NextNode("item");
       }
 
+      m_statusesHasBeenSet = true;
     }
   }
 
@@ -56,6 +54,7 @@ DescribeIdentityIdFormatResponse& DescribeIdentityIdFormatResponse::operator =(c
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeIdentityIdFormatResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

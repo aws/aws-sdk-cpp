@@ -29,7 +29,7 @@ namespace Model
   class ListBrokersResult
   {
   public:
-    AWS_MQ_API ListBrokersResult();
+    AWS_MQ_API ListBrokersResult() = default;
     AWS_MQ_API ListBrokersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MQ_API ListBrokersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of information about all brokers.</p>
      */
-    inline const Aws::Vector<BrokerSummary>& GetBrokerSummaries() const{ return m_brokerSummaries; }
-    inline void SetBrokerSummaries(const Aws::Vector<BrokerSummary>& value) { m_brokerSummaries = value; }
-    inline void SetBrokerSummaries(Aws::Vector<BrokerSummary>&& value) { m_brokerSummaries = std::move(value); }
-    inline ListBrokersResult& WithBrokerSummaries(const Aws::Vector<BrokerSummary>& value) { SetBrokerSummaries(value); return *this;}
-    inline ListBrokersResult& WithBrokerSummaries(Aws::Vector<BrokerSummary>&& value) { SetBrokerSummaries(std::move(value)); return *this;}
-    inline ListBrokersResult& AddBrokerSummaries(const BrokerSummary& value) { m_brokerSummaries.push_back(value); return *this; }
-    inline ListBrokersResult& AddBrokerSummaries(BrokerSummary&& value) { m_brokerSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BrokerSummary>& GetBrokerSummaries() const { return m_brokerSummaries; }
+    template<typename BrokerSummariesT = Aws::Vector<BrokerSummary>>
+    void SetBrokerSummaries(BrokerSummariesT&& value) { m_brokerSummariesHasBeenSet = true; m_brokerSummaries = std::forward<BrokerSummariesT>(value); }
+    template<typename BrokerSummariesT = Aws::Vector<BrokerSummary>>
+    ListBrokersResult& WithBrokerSummaries(BrokerSummariesT&& value) { SetBrokerSummaries(std::forward<BrokerSummariesT>(value)); return *this;}
+    template<typename BrokerSummariesT = BrokerSummary>
+    ListBrokersResult& AddBrokerSummaries(BrokerSummariesT&& value) { m_brokerSummariesHasBeenSet = true; m_brokerSummaries.emplace_back(std::forward<BrokerSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token that specifies the next page of results Amazon MQ should return. To
      * request the first page, leave nextToken empty.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListBrokersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListBrokersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListBrokersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListBrokersResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListBrokersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListBrokersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListBrokersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListBrokersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BrokerSummary> m_brokerSummaries;
+    bool m_brokerSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,22 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCachediSCSIVolumeRequest::CreateCachediSCSIVolumeRequest() : 
-    m_gatewayARNHasBeenSet(false),
-    m_volumeSizeInBytes(0),
-    m_volumeSizeInBytesHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_targetNameHasBeenSet(false),
-    m_sourceVolumeARNHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_kMSEncrypted(false),
-    m_kMSEncryptedHasBeenSet(false),
-    m_kMSKeyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateCachediSCSIVolumeRequest::SerializePayload() const
 {
   JsonValue payload;

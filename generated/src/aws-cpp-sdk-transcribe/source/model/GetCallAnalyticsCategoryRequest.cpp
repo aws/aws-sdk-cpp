@@ -12,11 +12,6 @@ using namespace Aws::TranscribeService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCallAnalyticsCategoryRequest::GetCallAnalyticsCategoryRequest() : 
-    m_categoryNameHasBeenSet(false)
-{
-}
-
 Aws::String GetCallAnalyticsCategoryRequest::SerializePayload() const
 {
   JsonValue payload;

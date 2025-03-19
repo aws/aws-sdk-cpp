@@ -18,32 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-ProvisionedProductAttribute::ProvisionedProductAttribute() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_status(ProvisionedProductStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_idempotencyTokenHasBeenSet(false),
-    m_lastRecordIdHasBeenSet(false),
-    m_lastProvisioningRecordIdHasBeenSet(false),
-    m_lastSuccessfulProvisioningRecordIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_physicalIdHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_productNameHasBeenSet(false),
-    m_provisioningArtifactIdHasBeenSet(false),
-    m_provisioningArtifactNameHasBeenSet(false),
-    m_userArnHasBeenSet(false),
-    m_userArnSessionHasBeenSet(false)
-{
-}
-
 ProvisionedProductAttribute::ProvisionedProductAttribute(JsonView jsonValue)
-  : ProvisionedProductAttribute()
 {
   *this = jsonValue;
 }
@@ -53,80 +28,58 @@ ProvisionedProductAttribute& ProvisionedProductAttribute::operator =(JsonView js
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ProvisionedProductStatusMapper::GetProvisionedProductStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdempotencyToken"))
   {
     m_idempotencyToken = jsonValue.GetString("IdempotencyToken");
-
     m_idempotencyTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastRecordId"))
   {
     m_lastRecordId = jsonValue.GetString("LastRecordId");
-
     m_lastRecordIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastProvisioningRecordId"))
   {
     m_lastProvisioningRecordId = jsonValue.GetString("LastProvisioningRecordId");
-
     m_lastProvisioningRecordIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastSuccessfulProvisioningRecordId"))
   {
     m_lastSuccessfulProvisioningRecordId = jsonValue.GetString("LastSuccessfulProvisioningRecordId");
-
     m_lastSuccessfulProvisioningRecordIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -136,56 +89,41 @@ ProvisionedProductAttribute& ProvisionedProductAttribute::operator =(JsonView js
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhysicalId"))
   {
     m_physicalId = jsonValue.GetString("PhysicalId");
-
     m_physicalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductId"))
   {
     m_productId = jsonValue.GetString("ProductId");
-
     m_productIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductName"))
   {
     m_productName = jsonValue.GetString("ProductName");
-
     m_productNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisioningArtifactId"))
   {
     m_provisioningArtifactId = jsonValue.GetString("ProvisioningArtifactId");
-
     m_provisioningArtifactIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisioningArtifactName"))
   {
     m_provisioningArtifactName = jsonValue.GetString("ProvisioningArtifactName");
-
     m_provisioningArtifactNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserArn"))
   {
     m_userArn = jsonValue.GetString("UserArn");
-
     m_userArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserArnSession"))
   {
     m_userArnSession = jsonValue.GetString("UserArnSession");
-
     m_userArnSessionHasBeenSet = true;
   }
-
   return *this;
 }
 

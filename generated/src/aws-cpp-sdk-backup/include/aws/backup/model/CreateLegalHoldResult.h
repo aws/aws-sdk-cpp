@@ -30,7 +30,7 @@ namespace Model
   class CreateLegalHoldResult
   {
   public:
-    AWS_BACKUP_API CreateLegalHoldResult();
+    AWS_BACKUP_API CreateLegalHoldResult() = default;
     AWS_BACKUP_API CreateLegalHoldResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUP_API CreateLegalHoldResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,74 +39,64 @@ namespace Model
     /**
      * <p>The title of the legal hold.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
-    inline void SetTitle(const Aws::String& value) { m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_title.assign(value); }
-    inline CreateLegalHoldResult& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline CreateLegalHoldResult& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline CreateLegalHoldResult& WithTitle(const char* value) { SetTitle(value); return *this;}
+    inline const Aws::String& GetTitle() const { return m_title; }
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    CreateLegalHoldResult& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the legal hold.</p>
      */
-    inline const LegalHoldStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const LegalHoldStatus& value) { m_status = value; }
-    inline void SetStatus(LegalHoldStatus&& value) { m_status = std::move(value); }
-    inline CreateLegalHoldResult& WithStatus(const LegalHoldStatus& value) { SetStatus(value); return *this;}
-    inline CreateLegalHoldResult& WithStatus(LegalHoldStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline LegalHoldStatus GetStatus() const { return m_status; }
+    inline void SetStatus(LegalHoldStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CreateLegalHoldResult& WithStatus(LegalHoldStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the legal hold.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline CreateLegalHoldResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateLegalHoldResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateLegalHoldResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateLegalHoldResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the legal hold.</p>
      */
-    inline const Aws::String& GetLegalHoldId() const{ return m_legalHoldId; }
-    inline void SetLegalHoldId(const Aws::String& value) { m_legalHoldId = value; }
-    inline void SetLegalHoldId(Aws::String&& value) { m_legalHoldId = std::move(value); }
-    inline void SetLegalHoldId(const char* value) { m_legalHoldId.assign(value); }
-    inline CreateLegalHoldResult& WithLegalHoldId(const Aws::String& value) { SetLegalHoldId(value); return *this;}
-    inline CreateLegalHoldResult& WithLegalHoldId(Aws::String&& value) { SetLegalHoldId(std::move(value)); return *this;}
-    inline CreateLegalHoldResult& WithLegalHoldId(const char* value) { SetLegalHoldId(value); return *this;}
+    inline const Aws::String& GetLegalHoldId() const { return m_legalHoldId; }
+    template<typename LegalHoldIdT = Aws::String>
+    void SetLegalHoldId(LegalHoldIdT&& value) { m_legalHoldIdHasBeenSet = true; m_legalHoldId = std::forward<LegalHoldIdT>(value); }
+    template<typename LegalHoldIdT = Aws::String>
+    CreateLegalHoldResult& WithLegalHoldId(LegalHoldIdT&& value) { SetLegalHoldId(std::forward<LegalHoldIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the legal hold.</p>
      */
-    inline const Aws::String& GetLegalHoldArn() const{ return m_legalHoldArn; }
-    inline void SetLegalHoldArn(const Aws::String& value) { m_legalHoldArn = value; }
-    inline void SetLegalHoldArn(Aws::String&& value) { m_legalHoldArn = std::move(value); }
-    inline void SetLegalHoldArn(const char* value) { m_legalHoldArn.assign(value); }
-    inline CreateLegalHoldResult& WithLegalHoldArn(const Aws::String& value) { SetLegalHoldArn(value); return *this;}
-    inline CreateLegalHoldResult& WithLegalHoldArn(Aws::String&& value) { SetLegalHoldArn(std::move(value)); return *this;}
-    inline CreateLegalHoldResult& WithLegalHoldArn(const char* value) { SetLegalHoldArn(value); return *this;}
+    inline const Aws::String& GetLegalHoldArn() const { return m_legalHoldArn; }
+    template<typename LegalHoldArnT = Aws::String>
+    void SetLegalHoldArn(LegalHoldArnT&& value) { m_legalHoldArnHasBeenSet = true; m_legalHoldArn = std::forward<LegalHoldArnT>(value); }
+    template<typename LegalHoldArnT = Aws::String>
+    CreateLegalHoldResult& WithLegalHoldArn(LegalHoldArnT&& value) { SetLegalHoldArn(std::forward<LegalHoldArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the legal hold was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDate = std::move(value); }
-    inline CreateLegalHoldResult& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline CreateLegalHoldResult& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    CreateLegalHoldResult& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,40 +104,46 @@ namespace Model
      * <p>The criteria to assign to a set of resources, such as resource types or
      * backup vaults.</p>
      */
-    inline const RecoveryPointSelection& GetRecoveryPointSelection() const{ return m_recoveryPointSelection; }
-    inline void SetRecoveryPointSelection(const RecoveryPointSelection& value) { m_recoveryPointSelection = value; }
-    inline void SetRecoveryPointSelection(RecoveryPointSelection&& value) { m_recoveryPointSelection = std::move(value); }
-    inline CreateLegalHoldResult& WithRecoveryPointSelection(const RecoveryPointSelection& value) { SetRecoveryPointSelection(value); return *this;}
-    inline CreateLegalHoldResult& WithRecoveryPointSelection(RecoveryPointSelection&& value) { SetRecoveryPointSelection(std::move(value)); return *this;}
+    inline const RecoveryPointSelection& GetRecoveryPointSelection() const { return m_recoveryPointSelection; }
+    template<typename RecoveryPointSelectionT = RecoveryPointSelection>
+    void SetRecoveryPointSelection(RecoveryPointSelectionT&& value) { m_recoveryPointSelectionHasBeenSet = true; m_recoveryPointSelection = std::forward<RecoveryPointSelectionT>(value); }
+    template<typename RecoveryPointSelectionT = RecoveryPointSelection>
+    CreateLegalHoldResult& WithRecoveryPointSelection(RecoveryPointSelectionT&& value) { SetRecoveryPointSelection(std::forward<RecoveryPointSelectionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateLegalHoldResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateLegalHoldResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateLegalHoldResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateLegalHoldResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_title;
+    bool m_titleHasBeenSet = false;
 
-    LegalHoldStatus m_status;
+    LegalHoldStatus m_status{LegalHoldStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_legalHoldId;
+    bool m_legalHoldIdHasBeenSet = false;
 
     Aws::String m_legalHoldArn;
+    bool m_legalHoldArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
+    bool m_creationDateHasBeenSet = false;
 
     RecoveryPointSelection m_recoveryPointSelection;
+    bool m_recoveryPointSelectionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

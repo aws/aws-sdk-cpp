@@ -18,15 +18,7 @@ namespace BCMDataExports
 namespace Model
 {
 
-Table::Table() : 
-    m_descriptionHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_tablePropertiesHasBeenSet(false)
-{
-}
-
 Table::Table(JsonView jsonValue)
-  : Table()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Table& Table::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableProperties"))
   {
     Aws::Utils::Array<JsonView> tablePropertiesJsonList = jsonValue.GetArray("TableProperties");
@@ -56,7 +44,6 @@ Table& Table::operator =(JsonView jsonValue)
     }
     m_tablePropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

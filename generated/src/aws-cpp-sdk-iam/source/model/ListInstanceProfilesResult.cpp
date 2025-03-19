@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListInstanceProfilesResult::ListInstanceProfilesResult() : 
-    m_isTruncated(false)
-{
-}
-
 ListInstanceProfilesResult::ListInstanceProfilesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ListInstanceProfilesResult()
 {
   *this = result;
 }
@@ -44,28 +38,33 @@ ListInstanceProfilesResult& ListInstanceProfilesResult::operator =(const Aws::Am
     if(!instanceProfilesNode.IsNull())
     {
       XmlNode instanceProfilesMember = instanceProfilesNode.FirstChild("member");
+      m_instanceProfilesHasBeenSet = !instanceProfilesMember.IsNull();
       while(!instanceProfilesMember.IsNull())
       {
         m_instanceProfiles.push_back(instanceProfilesMember);
         instanceProfilesMember = instanceProfilesMember.NextNode("member");
       }
 
+      m_instanceProfilesHasBeenSet = true;
     }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
     if(!isTruncatedNode.IsNull())
     {
       m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
+      m_isTruncatedHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::ListInstanceProfilesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

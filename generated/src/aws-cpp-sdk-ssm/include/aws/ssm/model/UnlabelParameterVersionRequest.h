@@ -22,7 +22,7 @@ namespace Model
   class UnlabelParameterVersionRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API UnlabelParameterVersionRequest();
+    AWS_SSM_API UnlabelParameterVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * labels.</p>  <p>You can't enter the Amazon Resource Name (ARN) for a
      * parameter, only the parameter name itself.</p> 
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UnlabelParameterVersionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UnlabelParameterVersionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UnlabelParameterVersionRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UnlabelParameterVersionRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,7 +54,7 @@ namespace Model
      * <p>The specific version of the parameter which you want to delete one or more
      * labels from. If it isn't present, the call will fail.</p>
      */
-    inline long long GetParameterVersion() const{ return m_parameterVersion; }
+    inline long long GetParameterVersion() const { return m_parameterVersion; }
     inline bool ParameterVersionHasBeenSet() const { return m_parameterVersionHasBeenSet; }
     inline void SetParameterVersion(long long value) { m_parameterVersionHasBeenSet = true; m_parameterVersion = value; }
     inline UnlabelParameterVersionRequest& WithParameterVersion(long long value) { SetParameterVersion(value); return *this;}
@@ -66,22 +64,21 @@ namespace Model
     /**
      * <p>One or more labels to delete from the specified parameter version.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLabels() const{ return m_labels; }
+    inline const Aws::Vector<Aws::String>& GetLabels() const { return m_labels; }
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
-    inline void SetLabels(const Aws::Vector<Aws::String>& value) { m_labelsHasBeenSet = true; m_labels = value; }
-    inline void SetLabels(Aws::Vector<Aws::String>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
-    inline UnlabelParameterVersionRequest& WithLabels(const Aws::Vector<Aws::String>& value) { SetLabels(value); return *this;}
-    inline UnlabelParameterVersionRequest& WithLabels(Aws::Vector<Aws::String>&& value) { SetLabels(std::move(value)); return *this;}
-    inline UnlabelParameterVersionRequest& AddLabels(const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
-    inline UnlabelParameterVersionRequest& AddLabels(Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.push_back(std::move(value)); return *this; }
-    inline UnlabelParameterVersionRequest& AddLabels(const char* value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
+    template<typename LabelsT = Aws::Vector<Aws::String>>
+    void SetLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels = std::forward<LabelsT>(value); }
+    template<typename LabelsT = Aws::Vector<Aws::String>>
+    UnlabelParameterVersionRequest& WithLabels(LabelsT&& value) { SetLabels(std::forward<LabelsT>(value)); return *this;}
+    template<typename LabelsT = Aws::String>
+    UnlabelParameterVersionRequest& AddLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels.emplace_back(std::forward<LabelsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    long long m_parameterVersion;
+    long long m_parameterVersion{0};
     bool m_parameterVersionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_labels;

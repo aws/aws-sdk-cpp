@@ -18,14 +18,7 @@ namespace SSM
 namespace Model
 {
 
-OpsEntity::OpsEntity() : 
-    m_idHasBeenSet(false),
-    m_dataHasBeenSet(false)
-{
-}
-
 OpsEntity::OpsEntity(JsonView jsonValue)
-  : OpsEntity()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ OpsEntity& OpsEntity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Data"))
   {
     Aws::Map<Aws::String, JsonView> dataJsonMap = jsonValue.GetObject("Data").GetAllObjects();
@@ -48,7 +39,6 @@ OpsEntity& OpsEntity::operator =(JsonView jsonValue)
     }
     m_dataHasBeenSet = true;
   }
-
   return *this;
 }
 

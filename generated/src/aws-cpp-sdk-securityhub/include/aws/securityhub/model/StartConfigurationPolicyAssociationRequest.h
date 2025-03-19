@@ -22,7 +22,7 @@ namespace Model
   class StartConfigurationPolicyAssociationRequest : public SecurityHubRequest
   {
   public:
-    AWS_SECURITYHUB_API StartConfigurationPolicyAssociationRequest();
+    AWS_SECURITYHUB_API StartConfigurationPolicyAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * unique identifier (UUID) of a configuration policy, or a value of
      * <code>SELF_MANAGED_SECURITY_HUB</code> for a self-managed configuration. </p>
      */
-    inline const Aws::String& GetConfigurationPolicyIdentifier() const{ return m_configurationPolicyIdentifier; }
+    inline const Aws::String& GetConfigurationPolicyIdentifier() const { return m_configurationPolicyIdentifier; }
     inline bool ConfigurationPolicyIdentifierHasBeenSet() const { return m_configurationPolicyIdentifierHasBeenSet; }
-    inline void SetConfigurationPolicyIdentifier(const Aws::String& value) { m_configurationPolicyIdentifierHasBeenSet = true; m_configurationPolicyIdentifier = value; }
-    inline void SetConfigurationPolicyIdentifier(Aws::String&& value) { m_configurationPolicyIdentifierHasBeenSet = true; m_configurationPolicyIdentifier = std::move(value); }
-    inline void SetConfigurationPolicyIdentifier(const char* value) { m_configurationPolicyIdentifierHasBeenSet = true; m_configurationPolicyIdentifier.assign(value); }
-    inline StartConfigurationPolicyAssociationRequest& WithConfigurationPolicyIdentifier(const Aws::String& value) { SetConfigurationPolicyIdentifier(value); return *this;}
-    inline StartConfigurationPolicyAssociationRequest& WithConfigurationPolicyIdentifier(Aws::String&& value) { SetConfigurationPolicyIdentifier(std::move(value)); return *this;}
-    inline StartConfigurationPolicyAssociationRequest& WithConfigurationPolicyIdentifier(const char* value) { SetConfigurationPolicyIdentifier(value); return *this;}
+    template<typename ConfigurationPolicyIdentifierT = Aws::String>
+    void SetConfigurationPolicyIdentifier(ConfigurationPolicyIdentifierT&& value) { m_configurationPolicyIdentifierHasBeenSet = true; m_configurationPolicyIdentifier = std::forward<ConfigurationPolicyIdentifierT>(value); }
+    template<typename ConfigurationPolicyIdentifierT = Aws::String>
+    StartConfigurationPolicyAssociationRequest& WithConfigurationPolicyIdentifier(ConfigurationPolicyIdentifierT&& value) { SetConfigurationPolicyIdentifier(std::forward<ConfigurationPolicyIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,12 +52,12 @@ namespace Model
      * <p> The identifier of the target account, organizational unit, or the root to
      * associate with the specified configuration. </p>
      */
-    inline const Target& GetTarget() const{ return m_target; }
+    inline const Target& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const Target& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(Target&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline StartConfigurationPolicyAssociationRequest& WithTarget(const Target& value) { SetTarget(value); return *this;}
-    inline StartConfigurationPolicyAssociationRequest& WithTarget(Target&& value) { SetTarget(std::move(value)); return *this;}
+    template<typename TargetT = Target>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = Target>
+    StartConfigurationPolicyAssociationRequest& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
   private:
 

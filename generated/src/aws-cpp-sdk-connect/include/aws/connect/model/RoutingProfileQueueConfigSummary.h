@@ -33,7 +33,7 @@ namespace Model
   class RoutingProfileQueueConfigSummary
   {
   public:
-    AWS_CONNECT_API RoutingProfileQueueConfigSummary();
+    AWS_CONNECT_API RoutingProfileQueueConfigSummary() = default;
     AWS_CONNECT_API RoutingProfileQueueConfigSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API RoutingProfileQueueConfigSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,42 +43,36 @@ namespace Model
     /**
      * <p>The identifier for the queue.</p>
      */
-    inline const Aws::String& GetQueueId() const{ return m_queueId; }
+    inline const Aws::String& GetQueueId() const { return m_queueId; }
     inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
-    inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
-    inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
-    inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
-    inline RoutingProfileQueueConfigSummary& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
-    inline RoutingProfileQueueConfigSummary& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
-    inline RoutingProfileQueueConfigSummary& WithQueueId(const char* value) { SetQueueId(value); return *this;}
+    template<typename QueueIdT = Aws::String>
+    void SetQueueId(QueueIdT&& value) { m_queueIdHasBeenSet = true; m_queueId = std::forward<QueueIdT>(value); }
+    template<typename QueueIdT = Aws::String>
+    RoutingProfileQueueConfigSummary& WithQueueId(QueueIdT&& value) { SetQueueId(std::forward<QueueIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the queue.</p>
      */
-    inline const Aws::String& GetQueueArn() const{ return m_queueArn; }
+    inline const Aws::String& GetQueueArn() const { return m_queueArn; }
     inline bool QueueArnHasBeenSet() const { return m_queueArnHasBeenSet; }
-    inline void SetQueueArn(const Aws::String& value) { m_queueArnHasBeenSet = true; m_queueArn = value; }
-    inline void SetQueueArn(Aws::String&& value) { m_queueArnHasBeenSet = true; m_queueArn = std::move(value); }
-    inline void SetQueueArn(const char* value) { m_queueArnHasBeenSet = true; m_queueArn.assign(value); }
-    inline RoutingProfileQueueConfigSummary& WithQueueArn(const Aws::String& value) { SetQueueArn(value); return *this;}
-    inline RoutingProfileQueueConfigSummary& WithQueueArn(Aws::String&& value) { SetQueueArn(std::move(value)); return *this;}
-    inline RoutingProfileQueueConfigSummary& WithQueueArn(const char* value) { SetQueueArn(value); return *this;}
+    template<typename QueueArnT = Aws::String>
+    void SetQueueArn(QueueArnT&& value) { m_queueArnHasBeenSet = true; m_queueArn = std::forward<QueueArnT>(value); }
+    template<typename QueueArnT = Aws::String>
+    RoutingProfileQueueConfigSummary& WithQueueArn(QueueArnT&& value) { SetQueueArn(std::forward<QueueArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the queue.</p>
      */
-    inline const Aws::String& GetQueueName() const{ return m_queueName; }
+    inline const Aws::String& GetQueueName() const { return m_queueName; }
     inline bool QueueNameHasBeenSet() const { return m_queueNameHasBeenSet; }
-    inline void SetQueueName(const Aws::String& value) { m_queueNameHasBeenSet = true; m_queueName = value; }
-    inline void SetQueueName(Aws::String&& value) { m_queueNameHasBeenSet = true; m_queueName = std::move(value); }
-    inline void SetQueueName(const char* value) { m_queueNameHasBeenSet = true; m_queueName.assign(value); }
-    inline RoutingProfileQueueConfigSummary& WithQueueName(const Aws::String& value) { SetQueueName(value); return *this;}
-    inline RoutingProfileQueueConfigSummary& WithQueueName(Aws::String&& value) { SetQueueName(std::move(value)); return *this;}
-    inline RoutingProfileQueueConfigSummary& WithQueueName(const char* value) { SetQueueName(value); return *this;}
+    template<typename QueueNameT = Aws::String>
+    void SetQueueName(QueueNameT&& value) { m_queueNameHasBeenSet = true; m_queueName = std::forward<QueueNameT>(value); }
+    template<typename QueueNameT = Aws::String>
+    RoutingProfileQueueConfigSummary& WithQueueName(QueueNameT&& value) { SetQueueName(std::forward<QueueNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,7 +82,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues:
      * priority and delay</a>.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline RoutingProfileQueueConfigSummary& WithPriority(int value) { SetPriority(value); return *this;}
@@ -101,7 +95,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing-profiles-priority.html">Queues:
      * priority and delay</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
      */
-    inline int GetDelay() const{ return m_delay; }
+    inline int GetDelay() const { return m_delay; }
     inline bool DelayHasBeenSet() const { return m_delayHasBeenSet; }
     inline void SetDelay(int value) { m_delayHasBeenSet = true; m_delay = value; }
     inline RoutingProfileQueueConfigSummary& WithDelay(int value) { SetDelay(value); return *this;}
@@ -111,12 +105,10 @@ namespace Model
     /**
      * <p>The channels this queue supports.</p>
      */
-    inline const Channel& GetChannel() const{ return m_channel; }
+    inline Channel GetChannel() const { return m_channel; }
     inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
-    inline void SetChannel(const Channel& value) { m_channelHasBeenSet = true; m_channel = value; }
-    inline void SetChannel(Channel&& value) { m_channelHasBeenSet = true; m_channel = std::move(value); }
-    inline RoutingProfileQueueConfigSummary& WithChannel(const Channel& value) { SetChannel(value); return *this;}
-    inline RoutingProfileQueueConfigSummary& WithChannel(Channel&& value) { SetChannel(std::move(value)); return *this;}
+    inline void SetChannel(Channel value) { m_channelHasBeenSet = true; m_channel = value; }
+    inline RoutingProfileQueueConfigSummary& WithChannel(Channel value) { SetChannel(value); return *this;}
     ///@}
   private:
 
@@ -129,13 +121,13 @@ namespace Model
     Aws::String m_queueName;
     bool m_queueNameHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
 
-    int m_delay;
+    int m_delay{0};
     bool m_delayHasBeenSet = false;
 
-    Channel m_channel;
+    Channel m_channel{Channel::NOT_SET};
     bool m_channelHasBeenSet = false;
   };
 

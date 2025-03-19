@@ -36,7 +36,7 @@ namespace Model
   class DescribeIdentityPoolResult
   {
   public:
-    AWS_COGNITOIDENTITY_API DescribeIdentityPoolResult();
+    AWS_COGNITOIDENTITY_API DescribeIdentityPoolResult() = default;
     AWS_COGNITOIDENTITY_API DescribeIdentityPoolResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOIDENTITY_API DescribeIdentityPoolResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,34 +45,30 @@ namespace Model
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
-    inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
-    inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolId = value; }
-    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolId = std::move(value); }
-    inline void SetIdentityPoolId(const char* value) { m_identityPoolId.assign(value); }
-    inline DescribeIdentityPoolResult& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
-    inline DescribeIdentityPoolResult& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(std::move(value)); return *this;}
-    inline DescribeIdentityPoolResult& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
+    inline const Aws::String& GetIdentityPoolId() const { return m_identityPoolId; }
+    template<typename IdentityPoolIdT = Aws::String>
+    void SetIdentityPoolId(IdentityPoolIdT&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = std::forward<IdentityPoolIdT>(value); }
+    template<typename IdentityPoolIdT = Aws::String>
+    DescribeIdentityPoolResult& WithIdentityPoolId(IdentityPoolIdT&& value) { SetIdentityPoolId(std::forward<IdentityPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A string that you provide.</p>
      */
-    inline const Aws::String& GetIdentityPoolName() const{ return m_identityPoolName; }
-    inline void SetIdentityPoolName(const Aws::String& value) { m_identityPoolName = value; }
-    inline void SetIdentityPoolName(Aws::String&& value) { m_identityPoolName = std::move(value); }
-    inline void SetIdentityPoolName(const char* value) { m_identityPoolName.assign(value); }
-    inline DescribeIdentityPoolResult& WithIdentityPoolName(const Aws::String& value) { SetIdentityPoolName(value); return *this;}
-    inline DescribeIdentityPoolResult& WithIdentityPoolName(Aws::String&& value) { SetIdentityPoolName(std::move(value)); return *this;}
-    inline DescribeIdentityPoolResult& WithIdentityPoolName(const char* value) { SetIdentityPoolName(value); return *this;}
+    inline const Aws::String& GetIdentityPoolName() const { return m_identityPoolName; }
+    template<typename IdentityPoolNameT = Aws::String>
+    void SetIdentityPoolName(IdentityPoolNameT&& value) { m_identityPoolNameHasBeenSet = true; m_identityPoolName = std::forward<IdentityPoolNameT>(value); }
+    template<typename IdentityPoolNameT = Aws::String>
+    DescribeIdentityPoolResult& WithIdentityPoolName(IdentityPoolNameT&& value) { SetIdentityPoolName(std::forward<IdentityPoolNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>TRUE if the identity pool supports unauthenticated logins.</p>
      */
-    inline bool GetAllowUnauthenticatedIdentities() const{ return m_allowUnauthenticatedIdentities; }
-    inline void SetAllowUnauthenticatedIdentities(bool value) { m_allowUnauthenticatedIdentities = value; }
+    inline bool GetAllowUnauthenticatedIdentities() const { return m_allowUnauthenticatedIdentities; }
+    inline void SetAllowUnauthenticatedIdentities(bool value) { m_allowUnauthenticatedIdentitiesHasBeenSet = true; m_allowUnauthenticatedIdentities = value; }
     inline DescribeIdentityPoolResult& WithAllowUnauthenticatedIdentities(bool value) { SetAllowUnauthenticatedIdentities(value); return *this;}
     ///@}
 
@@ -84,8 +80,8 @@ namespace Model
      * Pools (Federated Identities) Authentication Flow</a> in the <i>Amazon Cognito
      * Developer Guide</i>.</p>
      */
-    inline bool GetAllowClassicFlow() const{ return m_allowClassicFlow; }
-    inline void SetAllowClassicFlow(bool value) { m_allowClassicFlow = value; }
+    inline bool GetAllowClassicFlow() const { return m_allowClassicFlow; }
+    inline void SetAllowClassicFlow(bool value) { m_allowClassicFlowHasBeenSet = true; m_allowClassicFlow = value; }
     inline DescribeIdentityPoolResult& WithAllowClassicFlow(bool value) { SetAllowClassicFlow(value); return *this;}
     ///@}
 
@@ -93,58 +89,52 @@ namespace Model
     /**
      * <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetSupportedLoginProviders() const{ return m_supportedLoginProviders; }
-    inline void SetSupportedLoginProviders(const Aws::Map<Aws::String, Aws::String>& value) { m_supportedLoginProviders = value; }
-    inline void SetSupportedLoginProviders(Aws::Map<Aws::String, Aws::String>&& value) { m_supportedLoginProviders = std::move(value); }
-    inline DescribeIdentityPoolResult& WithSupportedLoginProviders(const Aws::Map<Aws::String, Aws::String>& value) { SetSupportedLoginProviders(value); return *this;}
-    inline DescribeIdentityPoolResult& WithSupportedLoginProviders(Aws::Map<Aws::String, Aws::String>&& value) { SetSupportedLoginProviders(std::move(value)); return *this;}
-    inline DescribeIdentityPoolResult& AddSupportedLoginProviders(const Aws::String& key, const Aws::String& value) { m_supportedLoginProviders.emplace(key, value); return *this; }
-    inline DescribeIdentityPoolResult& AddSupportedLoginProviders(Aws::String&& key, const Aws::String& value) { m_supportedLoginProviders.emplace(std::move(key), value); return *this; }
-    inline DescribeIdentityPoolResult& AddSupportedLoginProviders(const Aws::String& key, Aws::String&& value) { m_supportedLoginProviders.emplace(key, std::move(value)); return *this; }
-    inline DescribeIdentityPoolResult& AddSupportedLoginProviders(Aws::String&& key, Aws::String&& value) { m_supportedLoginProviders.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeIdentityPoolResult& AddSupportedLoginProviders(const char* key, Aws::String&& value) { m_supportedLoginProviders.emplace(key, std::move(value)); return *this; }
-    inline DescribeIdentityPoolResult& AddSupportedLoginProviders(Aws::String&& key, const char* value) { m_supportedLoginProviders.emplace(std::move(key), value); return *this; }
-    inline DescribeIdentityPoolResult& AddSupportedLoginProviders(const char* key, const char* value) { m_supportedLoginProviders.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetSupportedLoginProviders() const { return m_supportedLoginProviders; }
+    template<typename SupportedLoginProvidersT = Aws::Map<Aws::String, Aws::String>>
+    void SetSupportedLoginProviders(SupportedLoginProvidersT&& value) { m_supportedLoginProvidersHasBeenSet = true; m_supportedLoginProviders = std::forward<SupportedLoginProvidersT>(value); }
+    template<typename SupportedLoginProvidersT = Aws::Map<Aws::String, Aws::String>>
+    DescribeIdentityPoolResult& WithSupportedLoginProviders(SupportedLoginProvidersT&& value) { SetSupportedLoginProviders(std::forward<SupportedLoginProvidersT>(value)); return *this;}
+    template<typename SupportedLoginProvidersKeyT = Aws::String, typename SupportedLoginProvidersValueT = Aws::String>
+    DescribeIdentityPoolResult& AddSupportedLoginProviders(SupportedLoginProvidersKeyT&& key, SupportedLoginProvidersValueT&& value) {
+      m_supportedLoginProvidersHasBeenSet = true; m_supportedLoginProviders.emplace(std::forward<SupportedLoginProvidersKeyT>(key), std::forward<SupportedLoginProvidersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The "domain" by which Cognito will refer to your users.</p>
      */
-    inline const Aws::String& GetDeveloperProviderName() const{ return m_developerProviderName; }
-    inline void SetDeveloperProviderName(const Aws::String& value) { m_developerProviderName = value; }
-    inline void SetDeveloperProviderName(Aws::String&& value) { m_developerProviderName = std::move(value); }
-    inline void SetDeveloperProviderName(const char* value) { m_developerProviderName.assign(value); }
-    inline DescribeIdentityPoolResult& WithDeveloperProviderName(const Aws::String& value) { SetDeveloperProviderName(value); return *this;}
-    inline DescribeIdentityPoolResult& WithDeveloperProviderName(Aws::String&& value) { SetDeveloperProviderName(std::move(value)); return *this;}
-    inline DescribeIdentityPoolResult& WithDeveloperProviderName(const char* value) { SetDeveloperProviderName(value); return *this;}
+    inline const Aws::String& GetDeveloperProviderName() const { return m_developerProviderName; }
+    template<typename DeveloperProviderNameT = Aws::String>
+    void SetDeveloperProviderName(DeveloperProviderNameT&& value) { m_developerProviderNameHasBeenSet = true; m_developerProviderName = std::forward<DeveloperProviderNameT>(value); }
+    template<typename DeveloperProviderNameT = Aws::String>
+    DescribeIdentityPoolResult& WithDeveloperProviderName(DeveloperProviderNameT&& value) { SetDeveloperProviderName(std::forward<DeveloperProviderNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARNs of the OpenID Connect providers.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetOpenIdConnectProviderARNs() const{ return m_openIdConnectProviderARNs; }
-    inline void SetOpenIdConnectProviderARNs(const Aws::Vector<Aws::String>& value) { m_openIdConnectProviderARNs = value; }
-    inline void SetOpenIdConnectProviderARNs(Aws::Vector<Aws::String>&& value) { m_openIdConnectProviderARNs = std::move(value); }
-    inline DescribeIdentityPoolResult& WithOpenIdConnectProviderARNs(const Aws::Vector<Aws::String>& value) { SetOpenIdConnectProviderARNs(value); return *this;}
-    inline DescribeIdentityPoolResult& WithOpenIdConnectProviderARNs(Aws::Vector<Aws::String>&& value) { SetOpenIdConnectProviderARNs(std::move(value)); return *this;}
-    inline DescribeIdentityPoolResult& AddOpenIdConnectProviderARNs(const Aws::String& value) { m_openIdConnectProviderARNs.push_back(value); return *this; }
-    inline DescribeIdentityPoolResult& AddOpenIdConnectProviderARNs(Aws::String&& value) { m_openIdConnectProviderARNs.push_back(std::move(value)); return *this; }
-    inline DescribeIdentityPoolResult& AddOpenIdConnectProviderARNs(const char* value) { m_openIdConnectProviderARNs.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetOpenIdConnectProviderARNs() const { return m_openIdConnectProviderARNs; }
+    template<typename OpenIdConnectProviderARNsT = Aws::Vector<Aws::String>>
+    void SetOpenIdConnectProviderARNs(OpenIdConnectProviderARNsT&& value) { m_openIdConnectProviderARNsHasBeenSet = true; m_openIdConnectProviderARNs = std::forward<OpenIdConnectProviderARNsT>(value); }
+    template<typename OpenIdConnectProviderARNsT = Aws::Vector<Aws::String>>
+    DescribeIdentityPoolResult& WithOpenIdConnectProviderARNs(OpenIdConnectProviderARNsT&& value) { SetOpenIdConnectProviderARNs(std::forward<OpenIdConnectProviderARNsT>(value)); return *this;}
+    template<typename OpenIdConnectProviderARNsT = Aws::String>
+    DescribeIdentityPoolResult& AddOpenIdConnectProviderARNs(OpenIdConnectProviderARNsT&& value) { m_openIdConnectProviderARNsHasBeenSet = true; m_openIdConnectProviderARNs.emplace_back(std::forward<OpenIdConnectProviderARNsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list representing an Amazon Cognito user pool and its client ID.</p>
      */
-    inline const Aws::Vector<CognitoIdentityProvider>& GetCognitoIdentityProviders() const{ return m_cognitoIdentityProviders; }
-    inline void SetCognitoIdentityProviders(const Aws::Vector<CognitoIdentityProvider>& value) { m_cognitoIdentityProviders = value; }
-    inline void SetCognitoIdentityProviders(Aws::Vector<CognitoIdentityProvider>&& value) { m_cognitoIdentityProviders = std::move(value); }
-    inline DescribeIdentityPoolResult& WithCognitoIdentityProviders(const Aws::Vector<CognitoIdentityProvider>& value) { SetCognitoIdentityProviders(value); return *this;}
-    inline DescribeIdentityPoolResult& WithCognitoIdentityProviders(Aws::Vector<CognitoIdentityProvider>&& value) { SetCognitoIdentityProviders(std::move(value)); return *this;}
-    inline DescribeIdentityPoolResult& AddCognitoIdentityProviders(const CognitoIdentityProvider& value) { m_cognitoIdentityProviders.push_back(value); return *this; }
-    inline DescribeIdentityPoolResult& AddCognitoIdentityProviders(CognitoIdentityProvider&& value) { m_cognitoIdentityProviders.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CognitoIdentityProvider>& GetCognitoIdentityProviders() const { return m_cognitoIdentityProviders; }
+    template<typename CognitoIdentityProvidersT = Aws::Vector<CognitoIdentityProvider>>
+    void SetCognitoIdentityProviders(CognitoIdentityProvidersT&& value) { m_cognitoIdentityProvidersHasBeenSet = true; m_cognitoIdentityProviders = std::forward<CognitoIdentityProvidersT>(value); }
+    template<typename CognitoIdentityProvidersT = Aws::Vector<CognitoIdentityProvider>>
+    DescribeIdentityPoolResult& WithCognitoIdentityProviders(CognitoIdentityProvidersT&& value) { SetCognitoIdentityProviders(std::forward<CognitoIdentityProvidersT>(value)); return *this;}
+    template<typename CognitoIdentityProvidersT = CognitoIdentityProvider>
+    DescribeIdentityPoolResult& AddCognitoIdentityProviders(CognitoIdentityProvidersT&& value) { m_cognitoIdentityProvidersHasBeenSet = true; m_cognitoIdentityProviders.emplace_back(std::forward<CognitoIdentityProvidersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -152,14 +142,13 @@ namespace Model
      * <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your
      * identity pool.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSamlProviderARNs() const{ return m_samlProviderARNs; }
-    inline void SetSamlProviderARNs(const Aws::Vector<Aws::String>& value) { m_samlProviderARNs = value; }
-    inline void SetSamlProviderARNs(Aws::Vector<Aws::String>&& value) { m_samlProviderARNs = std::move(value); }
-    inline DescribeIdentityPoolResult& WithSamlProviderARNs(const Aws::Vector<Aws::String>& value) { SetSamlProviderARNs(value); return *this;}
-    inline DescribeIdentityPoolResult& WithSamlProviderARNs(Aws::Vector<Aws::String>&& value) { SetSamlProviderARNs(std::move(value)); return *this;}
-    inline DescribeIdentityPoolResult& AddSamlProviderARNs(const Aws::String& value) { m_samlProviderARNs.push_back(value); return *this; }
-    inline DescribeIdentityPoolResult& AddSamlProviderARNs(Aws::String&& value) { m_samlProviderARNs.push_back(std::move(value)); return *this; }
-    inline DescribeIdentityPoolResult& AddSamlProviderARNs(const char* value) { m_samlProviderARNs.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetSamlProviderARNs() const { return m_samlProviderARNs; }
+    template<typename SamlProviderARNsT = Aws::Vector<Aws::String>>
+    void SetSamlProviderARNs(SamlProviderARNsT&& value) { m_samlProviderARNsHasBeenSet = true; m_samlProviderARNs = std::forward<SamlProviderARNsT>(value); }
+    template<typename SamlProviderARNsT = Aws::Vector<Aws::String>>
+    DescribeIdentityPoolResult& WithSamlProviderARNs(SamlProviderARNsT&& value) { SetSamlProviderARNs(std::forward<SamlProviderARNsT>(value)); return *this;}
+    template<typename SamlProviderARNsT = Aws::String>
+    DescribeIdentityPoolResult& AddSamlProviderARNs(SamlProviderARNsT&& value) { m_samlProviderARNsHasBeenSet = true; m_samlProviderARNs.emplace_back(std::forward<SamlProviderARNsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -168,53 +157,59 @@ namespace Model
      * can apply to identity pools to categorize and manage them in different ways,
      * such as by purpose, owner, environment, or other criteria.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetIdentityPoolTags() const{ return m_identityPoolTags; }
-    inline void SetIdentityPoolTags(const Aws::Map<Aws::String, Aws::String>& value) { m_identityPoolTags = value; }
-    inline void SetIdentityPoolTags(Aws::Map<Aws::String, Aws::String>&& value) { m_identityPoolTags = std::move(value); }
-    inline DescribeIdentityPoolResult& WithIdentityPoolTags(const Aws::Map<Aws::String, Aws::String>& value) { SetIdentityPoolTags(value); return *this;}
-    inline DescribeIdentityPoolResult& WithIdentityPoolTags(Aws::Map<Aws::String, Aws::String>&& value) { SetIdentityPoolTags(std::move(value)); return *this;}
-    inline DescribeIdentityPoolResult& AddIdentityPoolTags(const Aws::String& key, const Aws::String& value) { m_identityPoolTags.emplace(key, value); return *this; }
-    inline DescribeIdentityPoolResult& AddIdentityPoolTags(Aws::String&& key, const Aws::String& value) { m_identityPoolTags.emplace(std::move(key), value); return *this; }
-    inline DescribeIdentityPoolResult& AddIdentityPoolTags(const Aws::String& key, Aws::String&& value) { m_identityPoolTags.emplace(key, std::move(value)); return *this; }
-    inline DescribeIdentityPoolResult& AddIdentityPoolTags(Aws::String&& key, Aws::String&& value) { m_identityPoolTags.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeIdentityPoolResult& AddIdentityPoolTags(const char* key, Aws::String&& value) { m_identityPoolTags.emplace(key, std::move(value)); return *this; }
-    inline DescribeIdentityPoolResult& AddIdentityPoolTags(Aws::String&& key, const char* value) { m_identityPoolTags.emplace(std::move(key), value); return *this; }
-    inline DescribeIdentityPoolResult& AddIdentityPoolTags(const char* key, const char* value) { m_identityPoolTags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetIdentityPoolTags() const { return m_identityPoolTags; }
+    template<typename IdentityPoolTagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetIdentityPoolTags(IdentityPoolTagsT&& value) { m_identityPoolTagsHasBeenSet = true; m_identityPoolTags = std::forward<IdentityPoolTagsT>(value); }
+    template<typename IdentityPoolTagsT = Aws::Map<Aws::String, Aws::String>>
+    DescribeIdentityPoolResult& WithIdentityPoolTags(IdentityPoolTagsT&& value) { SetIdentityPoolTags(std::forward<IdentityPoolTagsT>(value)); return *this;}
+    template<typename IdentityPoolTagsKeyT = Aws::String, typename IdentityPoolTagsValueT = Aws::String>
+    DescribeIdentityPoolResult& AddIdentityPoolTags(IdentityPoolTagsKeyT&& key, IdentityPoolTagsValueT&& value) {
+      m_identityPoolTagsHasBeenSet = true; m_identityPoolTags.emplace(std::forward<IdentityPoolTagsKeyT>(key), std::forward<IdentityPoolTagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeIdentityPoolResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeIdentityPoolResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeIdentityPoolResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeIdentityPoolResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_identityPoolId;
+    bool m_identityPoolIdHasBeenSet = false;
 
     Aws::String m_identityPoolName;
+    bool m_identityPoolNameHasBeenSet = false;
 
-    bool m_allowUnauthenticatedIdentities;
+    bool m_allowUnauthenticatedIdentities{false};
+    bool m_allowUnauthenticatedIdentitiesHasBeenSet = false;
 
-    bool m_allowClassicFlow;
+    bool m_allowClassicFlow{false};
+    bool m_allowClassicFlowHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_supportedLoginProviders;
+    bool m_supportedLoginProvidersHasBeenSet = false;
 
     Aws::String m_developerProviderName;
+    bool m_developerProviderNameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_openIdConnectProviderARNs;
+    bool m_openIdConnectProviderARNsHasBeenSet = false;
 
     Aws::Vector<CognitoIdentityProvider> m_cognitoIdentityProviders;
+    bool m_cognitoIdentityProvidersHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_samlProviderARNs;
+    bool m_samlProviderARNsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_identityPoolTags;
+    bool m_identityPoolTagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

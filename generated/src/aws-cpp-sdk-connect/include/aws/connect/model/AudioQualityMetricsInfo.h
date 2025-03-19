@@ -33,7 +33,7 @@ namespace Model
   class AudioQualityMetricsInfo
   {
   public:
-    AWS_CONNECT_API AudioQualityMetricsInfo();
+    AWS_CONNECT_API AudioQualityMetricsInfo() = default;
     AWS_CONNECT_API AudioQualityMetricsInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API AudioQualityMetricsInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>Number measuring the estimated quality of the media connection.</p>
      */
-    inline double GetQualityScore() const{ return m_qualityScore; }
+    inline double GetQualityScore() const { return m_qualityScore; }
     inline bool QualityScoreHasBeenSet() const { return m_qualityScoreHasBeenSet; }
     inline void SetQualityScore(double value) { m_qualityScoreHasBeenSet = true; m_qualityScore = value; }
     inline AudioQualityMetricsInfo& WithQualityScore(double value) { SetQualityScore(value); return *this;}
@@ -56,19 +56,18 @@ namespace Model
      * is empty.</p> <p>Valid values: <code>HighPacketLoss</code> |
      * <code>HighRoundTripTime</code> | <code>HighJitterBuffer</code> </p>
      */
-    inline const Aws::Vector<Aws::String>& GetPotentialQualityIssues() const{ return m_potentialQualityIssues; }
+    inline const Aws::Vector<Aws::String>& GetPotentialQualityIssues() const { return m_potentialQualityIssues; }
     inline bool PotentialQualityIssuesHasBeenSet() const { return m_potentialQualityIssuesHasBeenSet; }
-    inline void SetPotentialQualityIssues(const Aws::Vector<Aws::String>& value) { m_potentialQualityIssuesHasBeenSet = true; m_potentialQualityIssues = value; }
-    inline void SetPotentialQualityIssues(Aws::Vector<Aws::String>&& value) { m_potentialQualityIssuesHasBeenSet = true; m_potentialQualityIssues = std::move(value); }
-    inline AudioQualityMetricsInfo& WithPotentialQualityIssues(const Aws::Vector<Aws::String>& value) { SetPotentialQualityIssues(value); return *this;}
-    inline AudioQualityMetricsInfo& WithPotentialQualityIssues(Aws::Vector<Aws::String>&& value) { SetPotentialQualityIssues(std::move(value)); return *this;}
-    inline AudioQualityMetricsInfo& AddPotentialQualityIssues(const Aws::String& value) { m_potentialQualityIssuesHasBeenSet = true; m_potentialQualityIssues.push_back(value); return *this; }
-    inline AudioQualityMetricsInfo& AddPotentialQualityIssues(Aws::String&& value) { m_potentialQualityIssuesHasBeenSet = true; m_potentialQualityIssues.push_back(std::move(value)); return *this; }
-    inline AudioQualityMetricsInfo& AddPotentialQualityIssues(const char* value) { m_potentialQualityIssuesHasBeenSet = true; m_potentialQualityIssues.push_back(value); return *this; }
+    template<typename PotentialQualityIssuesT = Aws::Vector<Aws::String>>
+    void SetPotentialQualityIssues(PotentialQualityIssuesT&& value) { m_potentialQualityIssuesHasBeenSet = true; m_potentialQualityIssues = std::forward<PotentialQualityIssuesT>(value); }
+    template<typename PotentialQualityIssuesT = Aws::Vector<Aws::String>>
+    AudioQualityMetricsInfo& WithPotentialQualityIssues(PotentialQualityIssuesT&& value) { SetPotentialQualityIssues(std::forward<PotentialQualityIssuesT>(value)); return *this;}
+    template<typename PotentialQualityIssuesT = Aws::String>
+    AudioQualityMetricsInfo& AddPotentialQualityIssues(PotentialQualityIssuesT&& value) { m_potentialQualityIssuesHasBeenSet = true; m_potentialQualityIssues.emplace_back(std::forward<PotentialQualityIssuesT>(value)); return *this; }
     ///@}
   private:
 
-    double m_qualityScore;
+    double m_qualityScore{0.0};
     bool m_qualityScoreHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_potentialQualityIssues;

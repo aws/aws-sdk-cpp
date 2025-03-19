@@ -18,19 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-VoiceToneAnalysisTask::VoiceToneAnalysisTask() : 
-    m_voiceToneAnalysisTaskIdHasBeenSet(false),
-    m_voiceToneAnalysisTaskStatusHasBeenSet(false),
-    m_callDetailsHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false),
-    m_startedTimestampHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 VoiceToneAnalysisTask::VoiceToneAnalysisTask(JsonView jsonValue)
-  : VoiceToneAnalysisTask()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ VoiceToneAnalysisTask& VoiceToneAnalysisTask::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VoiceToneAnalysisTaskId"))
   {
     m_voiceToneAnalysisTaskId = jsonValue.GetString("VoiceToneAnalysisTaskId");
-
     m_voiceToneAnalysisTaskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VoiceToneAnalysisTaskStatus"))
   {
     m_voiceToneAnalysisTaskStatus = jsonValue.GetString("VoiceToneAnalysisTaskStatus");
-
     m_voiceToneAnalysisTaskStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CallDetails"))
   {
     m_callDetails = jsonValue.GetObject("CallDetails");
-
     m_callDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetString("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedTimestamp"))
   {
     m_updatedTimestamp = jsonValue.GetString("UpdatedTimestamp");
-
     m_updatedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedTimestamp"))
   {
     m_startedTimestamp = jsonValue.GetString("StartedTimestamp");
-
     m_startedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

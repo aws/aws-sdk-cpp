@@ -33,7 +33,7 @@ namespace Model
   class UserPoolPolicyType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API UserPoolPolicyType();
+    AWS_COGNITOIDENTITYPROVIDER_API UserPoolPolicyType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API UserPoolPolicyType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API UserPoolPolicyType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
      * <p>The password policy settings for a user pool, including complexity, history,
      * and length requirements.</p>
      */
-    inline const PasswordPolicyType& GetPasswordPolicy() const{ return m_passwordPolicy; }
+    inline const PasswordPolicyType& GetPasswordPolicy() const { return m_passwordPolicy; }
     inline bool PasswordPolicyHasBeenSet() const { return m_passwordPolicyHasBeenSet; }
-    inline void SetPasswordPolicy(const PasswordPolicyType& value) { m_passwordPolicyHasBeenSet = true; m_passwordPolicy = value; }
-    inline void SetPasswordPolicy(PasswordPolicyType&& value) { m_passwordPolicyHasBeenSet = true; m_passwordPolicy = std::move(value); }
-    inline UserPoolPolicyType& WithPasswordPolicy(const PasswordPolicyType& value) { SetPasswordPolicy(value); return *this;}
-    inline UserPoolPolicyType& WithPasswordPolicy(PasswordPolicyType&& value) { SetPasswordPolicy(std::move(value)); return *this;}
+    template<typename PasswordPolicyT = PasswordPolicyType>
+    void SetPasswordPolicy(PasswordPolicyT&& value) { m_passwordPolicyHasBeenSet = true; m_passwordPolicy = std::forward<PasswordPolicyT>(value); }
+    template<typename PasswordPolicyT = PasswordPolicyType>
+    UserPoolPolicyType& WithPasswordPolicy(PasswordPolicyT&& value) { SetPasswordPolicy(std::forward<PasswordPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The policy for allowed types of authentication in a user pool.</p>
      */
-    inline const SignInPolicyType& GetSignInPolicy() const{ return m_signInPolicy; }
+    inline const SignInPolicyType& GetSignInPolicy() const { return m_signInPolicy; }
     inline bool SignInPolicyHasBeenSet() const { return m_signInPolicyHasBeenSet; }
-    inline void SetSignInPolicy(const SignInPolicyType& value) { m_signInPolicyHasBeenSet = true; m_signInPolicy = value; }
-    inline void SetSignInPolicy(SignInPolicyType&& value) { m_signInPolicyHasBeenSet = true; m_signInPolicy = std::move(value); }
-    inline UserPoolPolicyType& WithSignInPolicy(const SignInPolicyType& value) { SetSignInPolicy(value); return *this;}
-    inline UserPoolPolicyType& WithSignInPolicy(SignInPolicyType&& value) { SetSignInPolicy(std::move(value)); return *this;}
+    template<typename SignInPolicyT = SignInPolicyType>
+    void SetSignInPolicy(SignInPolicyT&& value) { m_signInPolicyHasBeenSet = true; m_signInPolicy = std::forward<SignInPolicyT>(value); }
+    template<typename SignInPolicyT = SignInPolicyType>
+    UserPoolPolicyType& WithSignInPolicy(SignInPolicyT&& value) { SetSignInPolicy(std::forward<SignInPolicyT>(value)); return *this;}
     ///@}
   private:
 

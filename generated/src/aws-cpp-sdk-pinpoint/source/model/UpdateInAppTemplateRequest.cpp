@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdateInAppTemplateRequest::UpdateInAppTemplateRequest() : 
-    m_createNewVersion(false),
-    m_createNewVersionHasBeenSet(false),
-    m_inAppTemplateRequestHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateInAppTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

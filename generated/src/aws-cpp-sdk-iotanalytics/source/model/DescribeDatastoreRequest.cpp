@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeDatastoreRequest::DescribeDatastoreRequest() : 
-    m_datastoreNameHasBeenSet(false),
-    m_includeStatistics(false),
-    m_includeStatisticsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDatastoreRequest::SerializePayload() const
 {
   return {};

@@ -33,7 +33,7 @@ namespace Model
   class TablePinnedFieldOptions
   {
   public:
-    AWS_QUICKSIGHT_API TablePinnedFieldOptions();
+    AWS_QUICKSIGHT_API TablePinnedFieldOptions() = default;
     AWS_QUICKSIGHT_API TablePinnedFieldOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TablePinnedFieldOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,15 +43,14 @@ namespace Model
     /**
      * <p>A list of columns to be pinned to the left of a table visual.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPinnedLeftFields() const{ return m_pinnedLeftFields; }
+    inline const Aws::Vector<Aws::String>& GetPinnedLeftFields() const { return m_pinnedLeftFields; }
     inline bool PinnedLeftFieldsHasBeenSet() const { return m_pinnedLeftFieldsHasBeenSet; }
-    inline void SetPinnedLeftFields(const Aws::Vector<Aws::String>& value) { m_pinnedLeftFieldsHasBeenSet = true; m_pinnedLeftFields = value; }
-    inline void SetPinnedLeftFields(Aws::Vector<Aws::String>&& value) { m_pinnedLeftFieldsHasBeenSet = true; m_pinnedLeftFields = std::move(value); }
-    inline TablePinnedFieldOptions& WithPinnedLeftFields(const Aws::Vector<Aws::String>& value) { SetPinnedLeftFields(value); return *this;}
-    inline TablePinnedFieldOptions& WithPinnedLeftFields(Aws::Vector<Aws::String>&& value) { SetPinnedLeftFields(std::move(value)); return *this;}
-    inline TablePinnedFieldOptions& AddPinnedLeftFields(const Aws::String& value) { m_pinnedLeftFieldsHasBeenSet = true; m_pinnedLeftFields.push_back(value); return *this; }
-    inline TablePinnedFieldOptions& AddPinnedLeftFields(Aws::String&& value) { m_pinnedLeftFieldsHasBeenSet = true; m_pinnedLeftFields.push_back(std::move(value)); return *this; }
-    inline TablePinnedFieldOptions& AddPinnedLeftFields(const char* value) { m_pinnedLeftFieldsHasBeenSet = true; m_pinnedLeftFields.push_back(value); return *this; }
+    template<typename PinnedLeftFieldsT = Aws::Vector<Aws::String>>
+    void SetPinnedLeftFields(PinnedLeftFieldsT&& value) { m_pinnedLeftFieldsHasBeenSet = true; m_pinnedLeftFields = std::forward<PinnedLeftFieldsT>(value); }
+    template<typename PinnedLeftFieldsT = Aws::Vector<Aws::String>>
+    TablePinnedFieldOptions& WithPinnedLeftFields(PinnedLeftFieldsT&& value) { SetPinnedLeftFields(std::forward<PinnedLeftFieldsT>(value)); return *this;}
+    template<typename PinnedLeftFieldsT = Aws::String>
+    TablePinnedFieldOptions& AddPinnedLeftFields(PinnedLeftFieldsT&& value) { m_pinnedLeftFieldsHasBeenSet = true; m_pinnedLeftFields.emplace_back(std::forward<PinnedLeftFieldsT>(value)); return *this; }
     ///@}
   private:
 

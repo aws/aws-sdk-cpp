@@ -26,7 +26,7 @@ namespace Model
   class GetResourceMetricsRequest : public PIRequest
   {
   public:
-    AWS_PI_API GetResourceMetricsRequest();
+    AWS_PI_API GetResourceMetricsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,12 +45,10 @@ namespace Model
      * metrics. Valid values are as follows:</p> <ul> <li> <p> <code>RDS</code> </p>
      * </li> <li> <p> <code>DOCDB</code> </p> </li> </ul>
      */
-    inline const ServiceType& GetServiceType() const{ return m_serviceType; }
+    inline ServiceType GetServiceType() const { return m_serviceType; }
     inline bool ServiceTypeHasBeenSet() const { return m_serviceTypeHasBeenSet; }
-    inline void SetServiceType(const ServiceType& value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
-    inline void SetServiceType(ServiceType&& value) { m_serviceTypeHasBeenSet = true; m_serviceType = std::move(value); }
-    inline GetResourceMetricsRequest& WithServiceType(const ServiceType& value) { SetServiceType(value); return *this;}
-    inline GetResourceMetricsRequest& WithServiceType(ServiceType&& value) { SetServiceType(std::move(value)); return *this;}
+    inline void SetServiceType(ServiceType value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
+    inline GetResourceMetricsRequest& WithServiceType(ServiceType value) { SetServiceType(value); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * specify its <code>DbiResourceId</code> value. For example, specify
      * <code>db-ABCDEFGHIJKLMNOPQRSTU1VW2X</code>.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline GetResourceMetricsRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline GetResourceMetricsRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline GetResourceMetricsRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    GetResourceMetricsRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +79,14 @@ namespace Model
      * <code>.avg</code>, <code>.min</code>, <code>.max</code>, and
      * <code>.sum</code>.</p>
      */
-    inline const Aws::Vector<MetricQuery>& GetMetricQueries() const{ return m_metricQueries; }
+    inline const Aws::Vector<MetricQuery>& GetMetricQueries() const { return m_metricQueries; }
     inline bool MetricQueriesHasBeenSet() const { return m_metricQueriesHasBeenSet; }
-    inline void SetMetricQueries(const Aws::Vector<MetricQuery>& value) { m_metricQueriesHasBeenSet = true; m_metricQueries = value; }
-    inline void SetMetricQueries(Aws::Vector<MetricQuery>&& value) { m_metricQueriesHasBeenSet = true; m_metricQueries = std::move(value); }
-    inline GetResourceMetricsRequest& WithMetricQueries(const Aws::Vector<MetricQuery>& value) { SetMetricQueries(value); return *this;}
-    inline GetResourceMetricsRequest& WithMetricQueries(Aws::Vector<MetricQuery>&& value) { SetMetricQueries(std::move(value)); return *this;}
-    inline GetResourceMetricsRequest& AddMetricQueries(const MetricQuery& value) { m_metricQueriesHasBeenSet = true; m_metricQueries.push_back(value); return *this; }
-    inline GetResourceMetricsRequest& AddMetricQueries(MetricQuery&& value) { m_metricQueriesHasBeenSet = true; m_metricQueries.push_back(std::move(value)); return *this; }
+    template<typename MetricQueriesT = Aws::Vector<MetricQuery>>
+    void SetMetricQueries(MetricQueriesT&& value) { m_metricQueriesHasBeenSet = true; m_metricQueries = std::forward<MetricQueriesT>(value); }
+    template<typename MetricQueriesT = Aws::Vector<MetricQuery>>
+    GetResourceMetricsRequest& WithMetricQueries(MetricQueriesT&& value) { SetMetricQueries(std::forward<MetricQueriesT>(value)); return *this;}
+    template<typename MetricQueriesT = MetricQuery>
+    GetResourceMetricsRequest& AddMetricQueries(MetricQueriesT&& value) { m_metricQueriesHasBeenSet = true; m_metricQueries.emplace_back(std::forward<MetricQueriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -103,12 +99,12 @@ namespace Model
      * <code>StartTime</code>.</p> <p>The value for <code>StartTime</code> must be
      * earlier than the value for <code>EndTime</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline GetResourceMetricsRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline GetResourceMetricsRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    GetResourceMetricsRequest& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,12 +115,12 @@ namespace Model
      * <code>EndTime</code> must be later than the value for
      * <code>StartTime</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline GetResourceMetricsRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline GetResourceMetricsRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    GetResourceMetricsRequest& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,7 +135,7 @@ namespace Model
      * value for you, with a goal of returning roughly 100-200 data points in the
      * response.</p>
      */
-    inline int GetPeriodInSeconds() const{ return m_periodInSeconds; }
+    inline int GetPeriodInSeconds() const { return m_periodInSeconds; }
     inline bool PeriodInSecondsHasBeenSet() const { return m_periodInSecondsHasBeenSet; }
     inline void SetPeriodInSeconds(int value) { m_periodInSecondsHasBeenSet = true; m_periodInSeconds = value; }
     inline GetResourceMetricsRequest& WithPeriodInSeconds(int value) { SetPeriodInSeconds(value); return *this;}
@@ -149,7 +145,7 @@ namespace Model
     /**
      * <p>The maximum number of items to return in the response.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetResourceMetricsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -161,14 +157,12 @@ namespace Model
      * parameter is specified, the response includes only records beyond the token, up
      * to the value specified by <code>MaxRecords</code>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetResourceMetricsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetResourceMetricsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetResourceMetricsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetResourceMetricsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -176,16 +170,14 @@ namespace Model
      * <p>The returned timestamp which is the start or end time of the time periods.
      * The default value is <code>END_TIME</code>.</p>
      */
-    inline const PeriodAlignment& GetPeriodAlignment() const{ return m_periodAlignment; }
+    inline PeriodAlignment GetPeriodAlignment() const { return m_periodAlignment; }
     inline bool PeriodAlignmentHasBeenSet() const { return m_periodAlignmentHasBeenSet; }
-    inline void SetPeriodAlignment(const PeriodAlignment& value) { m_periodAlignmentHasBeenSet = true; m_periodAlignment = value; }
-    inline void SetPeriodAlignment(PeriodAlignment&& value) { m_periodAlignmentHasBeenSet = true; m_periodAlignment = std::move(value); }
-    inline GetResourceMetricsRequest& WithPeriodAlignment(const PeriodAlignment& value) { SetPeriodAlignment(value); return *this;}
-    inline GetResourceMetricsRequest& WithPeriodAlignment(PeriodAlignment&& value) { SetPeriodAlignment(std::move(value)); return *this;}
+    inline void SetPeriodAlignment(PeriodAlignment value) { m_periodAlignmentHasBeenSet = true; m_periodAlignment = value; }
+    inline GetResourceMetricsRequest& WithPeriodAlignment(PeriodAlignment value) { SetPeriodAlignment(value); return *this;}
     ///@}
   private:
 
-    ServiceType m_serviceType;
+    ServiceType m_serviceType{ServiceType::NOT_SET};
     bool m_serviceTypeHasBeenSet = false;
 
     Aws::String m_identifier;
@@ -194,22 +186,22 @@ namespace Model
     Aws::Vector<MetricQuery> m_metricQueries;
     bool m_metricQueriesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
-    int m_periodInSeconds;
+    int m_periodInSeconds{0};
     bool m_periodInSecondsHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    PeriodAlignment m_periodAlignment;
+    PeriodAlignment m_periodAlignment{PeriodAlignment::NOT_SET};
     bool m_periodAlignmentHasBeenSet = false;
   };
 

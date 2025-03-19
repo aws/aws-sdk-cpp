@@ -12,19 +12,6 @@ using namespace Aws::BedrockAgent::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDataSourceRequest::UpdateDataSourceRequest() : 
-    m_dataDeletionPolicy(DataDeletionPolicy::NOT_SET),
-    m_dataDeletionPolicyHasBeenSet(false),
-    m_dataSourceConfigurationHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_serverSideEncryptionConfigurationHasBeenSet(false),
-    m_vectorIngestionConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDataSourceRequest::SerializePayload() const
 {
   JsonValue payload;

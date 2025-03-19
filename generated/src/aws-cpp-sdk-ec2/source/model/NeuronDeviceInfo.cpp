@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NeuronDeviceInfo::NeuronDeviceInfo() : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_coreInfoHasBeenSet(false),
-    m_memoryInfoHasBeenSet(false)
-{
-}
-
 NeuronDeviceInfo::NeuronDeviceInfo(const XmlNode& xmlNode)
-  : NeuronDeviceInfo()
 {
   *this = xmlNode;
 }

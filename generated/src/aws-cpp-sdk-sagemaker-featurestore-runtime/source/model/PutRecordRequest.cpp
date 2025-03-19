@@ -12,14 +12,6 @@ using namespace Aws::SageMakerFeatureStoreRuntime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutRecordRequest::PutRecordRequest() : 
-    m_featureGroupNameHasBeenSet(false),
-    m_recordHasBeenSet(false),
-    m_targetStoresHasBeenSet(false),
-    m_ttlDurationHasBeenSet(false)
-{
-}
-
 Aws::String PutRecordRequest::SerializePayload() const
 {
   JsonValue payload;

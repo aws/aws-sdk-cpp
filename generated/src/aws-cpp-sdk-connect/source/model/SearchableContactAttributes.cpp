@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-SearchableContactAttributes::SearchableContactAttributes() : 
-    m_criteriaHasBeenSet(false),
-    m_matchType(SearchContactsMatchType::NOT_SET),
-    m_matchTypeHasBeenSet(false)
-{
-}
-
 SearchableContactAttributes::SearchableContactAttributes(JsonView jsonValue)
-  : SearchableContactAttributes()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ SearchableContactAttributes& SearchableContactAttributes::operator =(JsonView js
     }
     m_criteriaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MatchType"))
   {
     m_matchType = SearchContactsMatchTypeMapper::GetSearchContactsMatchTypeForName(jsonValue.GetString("MatchType"));
-
     m_matchTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

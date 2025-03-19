@@ -22,7 +22,7 @@ namespace Model
   class FilterLogEventsRequest : public CloudWatchLogsRequest
   {
   public:
-    AWS_CLOUDWATCHLOGS_API FilterLogEventsRequest();
+    AWS_CLOUDWATCHLOGS_API FilterLogEventsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
      * 
      */
-    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+    inline const Aws::String& GetLogGroupName() const { return m_logGroupName; }
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-    inline FilterLogEventsRequest& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-    inline FilterLogEventsRequest& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-    inline FilterLogEventsRequest& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+    template<typename LogGroupNameT = Aws::String>
+    void SetLogGroupName(LogGroupNameT&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::forward<LogGroupNameT>(value); }
+    template<typename LogGroupNameT = Aws::String>
+    FilterLogEventsRequest& WithLogGroupName(LogGroupNameT&& value) { SetLogGroupName(std::forward<LogGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <code>logGroupIdentifier</code> or <code>logGroupName</code>, but not both. </p>
      * 
      */
-    inline const Aws::String& GetLogGroupIdentifier() const{ return m_logGroupIdentifier; }
+    inline const Aws::String& GetLogGroupIdentifier() const { return m_logGroupIdentifier; }
     inline bool LogGroupIdentifierHasBeenSet() const { return m_logGroupIdentifierHasBeenSet; }
-    inline void SetLogGroupIdentifier(const Aws::String& value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier = value; }
-    inline void SetLogGroupIdentifier(Aws::String&& value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier = std::move(value); }
-    inline void SetLogGroupIdentifier(const char* value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier.assign(value); }
-    inline FilterLogEventsRequest& WithLogGroupIdentifier(const Aws::String& value) { SetLogGroupIdentifier(value); return *this;}
-    inline FilterLogEventsRequest& WithLogGroupIdentifier(Aws::String&& value) { SetLogGroupIdentifier(std::move(value)); return *this;}
-    inline FilterLogEventsRequest& WithLogGroupIdentifier(const char* value) { SetLogGroupIdentifier(value); return *this;}
+    template<typename LogGroupIdentifierT = Aws::String>
+    void SetLogGroupIdentifier(LogGroupIdentifierT&& value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier = std::forward<LogGroupIdentifierT>(value); }
+    template<typename LogGroupIdentifierT = Aws::String>
+    FilterLogEventsRequest& WithLogGroupIdentifier(LogGroupIdentifierT&& value) { SetLogGroupIdentifier(std::forward<LogGroupIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,15 +72,14 @@ namespace Model
      * <code>logStreamNamePrefix</code>, the action returns an
      * <code>InvalidParameterException</code> error.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLogStreamNames() const{ return m_logStreamNames; }
+    inline const Aws::Vector<Aws::String>& GetLogStreamNames() const { return m_logStreamNames; }
     inline bool LogStreamNamesHasBeenSet() const { return m_logStreamNamesHasBeenSet; }
-    inline void SetLogStreamNames(const Aws::Vector<Aws::String>& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames = value; }
-    inline void SetLogStreamNames(Aws::Vector<Aws::String>&& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames = std::move(value); }
-    inline FilterLogEventsRequest& WithLogStreamNames(const Aws::Vector<Aws::String>& value) { SetLogStreamNames(value); return *this;}
-    inline FilterLogEventsRequest& WithLogStreamNames(Aws::Vector<Aws::String>&& value) { SetLogStreamNames(std::move(value)); return *this;}
-    inline FilterLogEventsRequest& AddLogStreamNames(const Aws::String& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames.push_back(value); return *this; }
-    inline FilterLogEventsRequest& AddLogStreamNames(Aws::String&& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames.push_back(std::move(value)); return *this; }
-    inline FilterLogEventsRequest& AddLogStreamNames(const char* value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames.push_back(value); return *this; }
+    template<typename LogStreamNamesT = Aws::Vector<Aws::String>>
+    void SetLogStreamNames(LogStreamNamesT&& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames = std::forward<LogStreamNamesT>(value); }
+    template<typename LogStreamNamesT = Aws::Vector<Aws::String>>
+    FilterLogEventsRequest& WithLogStreamNames(LogStreamNamesT&& value) { SetLogStreamNames(std::forward<LogStreamNamesT>(value)); return *this;}
+    template<typename LogStreamNamesT = Aws::String>
+    FilterLogEventsRequest& AddLogStreamNames(LogStreamNamesT&& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames.emplace_back(std::forward<LogStreamNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -94,14 +89,12 @@ namespace Model
      * <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, the action
      * returns an <code>InvalidParameterException</code> error.</p>
      */
-    inline const Aws::String& GetLogStreamNamePrefix() const{ return m_logStreamNamePrefix; }
+    inline const Aws::String& GetLogStreamNamePrefix() const { return m_logStreamNamePrefix; }
     inline bool LogStreamNamePrefixHasBeenSet() const { return m_logStreamNamePrefixHasBeenSet; }
-    inline void SetLogStreamNamePrefix(const Aws::String& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = value; }
-    inline void SetLogStreamNamePrefix(Aws::String&& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = std::move(value); }
-    inline void SetLogStreamNamePrefix(const char* value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix.assign(value); }
-    inline FilterLogEventsRequest& WithLogStreamNamePrefix(const Aws::String& value) { SetLogStreamNamePrefix(value); return *this;}
-    inline FilterLogEventsRequest& WithLogStreamNamePrefix(Aws::String&& value) { SetLogStreamNamePrefix(std::move(value)); return *this;}
-    inline FilterLogEventsRequest& WithLogStreamNamePrefix(const char* value) { SetLogStreamNamePrefix(value); return *this;}
+    template<typename LogStreamNamePrefixT = Aws::String>
+    void SetLogStreamNamePrefix(LogStreamNamePrefixT&& value) { m_logStreamNamePrefixHasBeenSet = true; m_logStreamNamePrefix = std::forward<LogStreamNamePrefixT>(value); }
+    template<typename LogStreamNamePrefixT = Aws::String>
+    FilterLogEventsRequest& WithLogStreamNamePrefix(LogStreamNamePrefixT&& value) { SetLogStreamNamePrefix(std::forward<LogStreamNamePrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,7 +103,7 @@ namespace Model
      * <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp before this time
      * are not returned.</p>
      */
-    inline long long GetStartTime() const{ return m_startTime; }
+    inline long long GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
     inline void SetStartTime(long long value) { m_startTimeHasBeenSet = true; m_startTime = value; }
     inline FilterLogEventsRequest& WithStartTime(long long value) { SetStartTime(value); return *this;}
@@ -122,7 +115,7 @@ namespace Model
      * <code>Jan 1, 1970 00:00:00 UTC</code>. Events with a timestamp later than this
      * time are not returned.</p>
      */
-    inline long long GetEndTime() const{ return m_endTime; }
+    inline long long GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
     inline void SetEndTime(long long value) { m_endTimeHasBeenSet = true; m_endTime = value; }
     inline FilterLogEventsRequest& WithEndTime(long long value) { SetEndTime(value); return *this;}
@@ -134,14 +127,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
      * and Pattern Syntax</a>.</p> <p>If not provided, all the events are matched.</p>
      */
-    inline const Aws::String& GetFilterPattern() const{ return m_filterPattern; }
+    inline const Aws::String& GetFilterPattern() const { return m_filterPattern; }
     inline bool FilterPatternHasBeenSet() const { return m_filterPatternHasBeenSet; }
-    inline void SetFilterPattern(const Aws::String& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
-    inline void SetFilterPattern(Aws::String&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = std::move(value); }
-    inline void SetFilterPattern(const char* value) { m_filterPatternHasBeenSet = true; m_filterPattern.assign(value); }
-    inline FilterLogEventsRequest& WithFilterPattern(const Aws::String& value) { SetFilterPattern(value); return *this;}
-    inline FilterLogEventsRequest& WithFilterPattern(Aws::String&& value) { SetFilterPattern(std::move(value)); return *this;}
-    inline FilterLogEventsRequest& WithFilterPattern(const char* value) { SetFilterPattern(value); return *this;}
+    template<typename FilterPatternT = Aws::String>
+    void SetFilterPattern(FilterPatternT&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = std::forward<FilterPatternT>(value); }
+    template<typename FilterPatternT = Aws::String>
+    FilterLogEventsRequest& WithFilterPattern(FilterPatternT&& value) { SetFilterPattern(std::forward<FilterPatternT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,21 +140,19 @@ namespace Model
      * <p>The token for the next set of events to return. (You received this token from
      * a previous call.)</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline FilterLogEventsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline FilterLogEventsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline FilterLogEventsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    FilterLogEventsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of events to return. The default is 10,000 events.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline FilterLogEventsRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -176,7 +165,7 @@ namespace Model
      * operation with this parameter, you must be signed into an account with the
      * <code>logs:Unmask</code> permission.</p>
      */
-    inline bool GetUnmask() const{ return m_unmask; }
+    inline bool GetUnmask() const { return m_unmask; }
     inline bool UnmaskHasBeenSet() const { return m_unmaskHasBeenSet; }
     inline void SetUnmask(bool value) { m_unmaskHasBeenSet = true; m_unmask = value; }
     inline FilterLogEventsRequest& WithUnmask(bool value) { SetUnmask(value); return *this;}
@@ -195,10 +184,10 @@ namespace Model
     Aws::String m_logStreamNamePrefix;
     bool m_logStreamNamePrefixHasBeenSet = false;
 
-    long long m_startTime;
+    long long m_startTime{0};
     bool m_startTimeHasBeenSet = false;
 
-    long long m_endTime;
+    long long m_endTime{0};
     bool m_endTimeHasBeenSet = false;
 
     Aws::String m_filterPattern;
@@ -207,10 +196,10 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
-    bool m_unmask;
+    bool m_unmask{false};
     bool m_unmaskHasBeenSet = false;
   };
 

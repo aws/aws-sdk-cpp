@@ -12,14 +12,6 @@ using namespace Aws::Outposts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSiteRequest::UpdateSiteRequest() : 
-    m_siteIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_notesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSiteRequest::SerializePayload() const
 {
   JsonValue payload;

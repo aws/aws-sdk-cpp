@@ -32,7 +32,7 @@ namespace Model
   class AwsWafRegionalRuleGroupRulesActionDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsWafRegionalRuleGroupRulesActionDetails();
+    AWS_SECURITYHUB_API AwsWafRegionalRuleGroupRulesActionDetails() = default;
     AWS_SECURITYHUB_API AwsWafRegionalRuleGroupRulesActionDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsWafRegionalRuleGroupRulesActionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <code>SizeConstraintSet</code> objects that you want to add to a rule and, for
      * each object, indicates whether you want to negate the settings.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline AwsWafRegionalRuleGroupRulesActionDetails& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline AwsWafRegionalRuleGroupRulesActionDetails& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline AwsWafRegionalRuleGroupRulesActionDetails& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    AwsWafRegionalRuleGroupRulesActionDetails& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

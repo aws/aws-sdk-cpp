@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPipelineChangeProgressResult::GetPipelineChangeProgressResult()
-{
-}
-
 GetPipelineChangeProgressResult::GetPipelineChangeProgressResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ GetPipelineChangeProgressResult& GetPipelineChangeProgressResult::operator =(con
     {
       m_changeProgressStatuses.push_back(changeProgressStatusesJsonList[changeProgressStatusesIndex].AsObject());
     }
+    m_changeProgressStatusesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

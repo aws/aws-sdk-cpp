@@ -32,7 +32,7 @@ namespace Model
   class SuppressionListDestination
   {
   public:
-    AWS_SESV2_API SuppressionListDestination();
+    AWS_SESV2_API SuppressionListDestination() = default;
     AWS_SESV2_API SuppressionListDestination(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API SuppressionListDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,16 +45,14 @@ namespace Model
      * record already exists, it will override it with the new value.</p> </li> <li>
      * <p>DELETE: remove the addresses from the suppression list.</p> </li> </ul>
      */
-    inline const SuppressionListImportAction& GetSuppressionListImportAction() const{ return m_suppressionListImportAction; }
+    inline SuppressionListImportAction GetSuppressionListImportAction() const { return m_suppressionListImportAction; }
     inline bool SuppressionListImportActionHasBeenSet() const { return m_suppressionListImportActionHasBeenSet; }
-    inline void SetSuppressionListImportAction(const SuppressionListImportAction& value) { m_suppressionListImportActionHasBeenSet = true; m_suppressionListImportAction = value; }
-    inline void SetSuppressionListImportAction(SuppressionListImportAction&& value) { m_suppressionListImportActionHasBeenSet = true; m_suppressionListImportAction = std::move(value); }
-    inline SuppressionListDestination& WithSuppressionListImportAction(const SuppressionListImportAction& value) { SetSuppressionListImportAction(value); return *this;}
-    inline SuppressionListDestination& WithSuppressionListImportAction(SuppressionListImportAction&& value) { SetSuppressionListImportAction(std::move(value)); return *this;}
+    inline void SetSuppressionListImportAction(SuppressionListImportAction value) { m_suppressionListImportActionHasBeenSet = true; m_suppressionListImportAction = value; }
+    inline SuppressionListDestination& WithSuppressionListImportAction(SuppressionListImportAction value) { SetSuppressionListImportAction(value); return *this;}
     ///@}
   private:
 
-    SuppressionListImportAction m_suppressionListImportAction;
+    SuppressionListImportAction m_suppressionListImportAction{SuppressionListImportAction::NOT_SET};
     bool m_suppressionListImportActionHasBeenSet = false;
   };
 

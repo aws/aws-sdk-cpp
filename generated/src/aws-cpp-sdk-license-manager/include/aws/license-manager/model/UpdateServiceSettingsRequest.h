@@ -22,7 +22,7 @@ namespace Model
   class UpdateServiceSettingsRequest : public LicenseManagerRequest
   {
   public:
-    AWS_LICENSEMANAGER_API UpdateServiceSettingsRequest();
+    AWS_LICENSEMANAGER_API UpdateServiceSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of the Amazon S3 bucket where the License Manager
      * information is stored.</p>
      */
-    inline const Aws::String& GetS3BucketArn() const{ return m_s3BucketArn; }
+    inline const Aws::String& GetS3BucketArn() const { return m_s3BucketArn; }
     inline bool S3BucketArnHasBeenSet() const { return m_s3BucketArnHasBeenSet; }
-    inline void SetS3BucketArn(const Aws::String& value) { m_s3BucketArnHasBeenSet = true; m_s3BucketArn = value; }
-    inline void SetS3BucketArn(Aws::String&& value) { m_s3BucketArnHasBeenSet = true; m_s3BucketArn = std::move(value); }
-    inline void SetS3BucketArn(const char* value) { m_s3BucketArnHasBeenSet = true; m_s3BucketArn.assign(value); }
-    inline UpdateServiceSettingsRequest& WithS3BucketArn(const Aws::String& value) { SetS3BucketArn(value); return *this;}
-    inline UpdateServiceSettingsRequest& WithS3BucketArn(Aws::String&& value) { SetS3BucketArn(std::move(value)); return *this;}
-    inline UpdateServiceSettingsRequest& WithS3BucketArn(const char* value) { SetS3BucketArn(value); return *this;}
+    template<typename S3BucketArnT = Aws::String>
+    void SetS3BucketArn(S3BucketArnT&& value) { m_s3BucketArnHasBeenSet = true; m_s3BucketArn = std::forward<S3BucketArnT>(value); }
+    template<typename S3BucketArnT = Aws::String>
+    UpdateServiceSettingsRequest& WithS3BucketArn(S3BucketArnT&& value) { SetS3BucketArn(std::forward<S3BucketArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,33 +53,31 @@ namespace Model
      * <p>Amazon Resource Name (ARN) of the Amazon SNS topic used for License Manager
      * alerts.</p>
      */
-    inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
+    inline const Aws::String& GetSnsTopicArn() const { return m_snsTopicArn; }
     inline bool SnsTopicArnHasBeenSet() const { return m_snsTopicArnHasBeenSet; }
-    inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = value; }
-    inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::move(value); }
-    inline void SetSnsTopicArn(const char* value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn.assign(value); }
-    inline UpdateServiceSettingsRequest& WithSnsTopicArn(const Aws::String& value) { SetSnsTopicArn(value); return *this;}
-    inline UpdateServiceSettingsRequest& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(std::move(value)); return *this;}
-    inline UpdateServiceSettingsRequest& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
+    template<typename SnsTopicArnT = Aws::String>
+    void SetSnsTopicArn(SnsTopicArnT&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::forward<SnsTopicArnT>(value); }
+    template<typename SnsTopicArnT = Aws::String>
+    UpdateServiceSettingsRequest& WithSnsTopicArn(SnsTopicArnT&& value) { SetSnsTopicArn(std::forward<SnsTopicArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Enables integration with Organizations for cross-account discovery.</p>
      */
-    inline const OrganizationConfiguration& GetOrganizationConfiguration() const{ return m_organizationConfiguration; }
+    inline const OrganizationConfiguration& GetOrganizationConfiguration() const { return m_organizationConfiguration; }
     inline bool OrganizationConfigurationHasBeenSet() const { return m_organizationConfigurationHasBeenSet; }
-    inline void SetOrganizationConfiguration(const OrganizationConfiguration& value) { m_organizationConfigurationHasBeenSet = true; m_organizationConfiguration = value; }
-    inline void SetOrganizationConfiguration(OrganizationConfiguration&& value) { m_organizationConfigurationHasBeenSet = true; m_organizationConfiguration = std::move(value); }
-    inline UpdateServiceSettingsRequest& WithOrganizationConfiguration(const OrganizationConfiguration& value) { SetOrganizationConfiguration(value); return *this;}
-    inline UpdateServiceSettingsRequest& WithOrganizationConfiguration(OrganizationConfiguration&& value) { SetOrganizationConfiguration(std::move(value)); return *this;}
+    template<typename OrganizationConfigurationT = OrganizationConfiguration>
+    void SetOrganizationConfiguration(OrganizationConfigurationT&& value) { m_organizationConfigurationHasBeenSet = true; m_organizationConfiguration = std::forward<OrganizationConfigurationT>(value); }
+    template<typename OrganizationConfigurationT = OrganizationConfiguration>
+    UpdateServiceSettingsRequest& WithOrganizationConfiguration(OrganizationConfigurationT&& value) { SetOrganizationConfiguration(std::forward<OrganizationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Activates cross-account discovery.</p>
      */
-    inline bool GetEnableCrossAccountsDiscovery() const{ return m_enableCrossAccountsDiscovery; }
+    inline bool GetEnableCrossAccountsDiscovery() const { return m_enableCrossAccountsDiscovery; }
     inline bool EnableCrossAccountsDiscoveryHasBeenSet() const { return m_enableCrossAccountsDiscoveryHasBeenSet; }
     inline void SetEnableCrossAccountsDiscovery(bool value) { m_enableCrossAccountsDiscoveryHasBeenSet = true; m_enableCrossAccountsDiscovery = value; }
     inline UpdateServiceSettingsRequest& WithEnableCrossAccountsDiscovery(bool value) { SetEnableCrossAccountsDiscovery(value); return *this;}
@@ -97,7 +93,7 @@ namespace Model
     OrganizationConfiguration m_organizationConfiguration;
     bool m_organizationConfigurationHasBeenSet = false;
 
-    bool m_enableCrossAccountsDiscovery;
+    bool m_enableCrossAccountsDiscovery{false};
     bool m_enableCrossAccountsDiscoveryHasBeenSet = false;
   };
 

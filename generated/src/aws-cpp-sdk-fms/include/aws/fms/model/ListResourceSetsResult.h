@@ -29,7 +29,7 @@ namespace Model
   class ListResourceSetsResult
   {
   public:
-    AWS_FMS_API ListResourceSetsResult();
+    AWS_FMS_API ListResourceSetsResult() = default;
     AWS_FMS_API ListResourceSetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FMS_API ListResourceSetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>An array of <code>ResourceSetSummary</code> objects.</p>
      */
-    inline const Aws::Vector<ResourceSetSummary>& GetResourceSets() const{ return m_resourceSets; }
-    inline void SetResourceSets(const Aws::Vector<ResourceSetSummary>& value) { m_resourceSets = value; }
-    inline void SetResourceSets(Aws::Vector<ResourceSetSummary>&& value) { m_resourceSets = std::move(value); }
-    inline ListResourceSetsResult& WithResourceSets(const Aws::Vector<ResourceSetSummary>& value) { SetResourceSets(value); return *this;}
-    inline ListResourceSetsResult& WithResourceSets(Aws::Vector<ResourceSetSummary>&& value) { SetResourceSets(std::move(value)); return *this;}
-    inline ListResourceSetsResult& AddResourceSets(const ResourceSetSummary& value) { m_resourceSets.push_back(value); return *this; }
-    inline ListResourceSetsResult& AddResourceSets(ResourceSetSummary&& value) { m_resourceSets.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResourceSetSummary>& GetResourceSets() const { return m_resourceSets; }
+    template<typename ResourceSetsT = Aws::Vector<ResourceSetSummary>>
+    void SetResourceSets(ResourceSetsT&& value) { m_resourceSetsHasBeenSet = true; m_resourceSets = std::forward<ResourceSetsT>(value); }
+    template<typename ResourceSetsT = Aws::Vector<ResourceSetSummary>>
+    ListResourceSetsResult& WithResourceSets(ResourceSetsT&& value) { SetResourceSets(std::forward<ResourceSetsT>(value)); return *this;}
+    template<typename ResourceSetsT = ResourceSetSummary>
+    ListResourceSetsResult& AddResourceSets(ResourceSetsT&& value) { m_resourceSetsHasBeenSet = true; m_resourceSets.emplace_back(std::forward<ResourceSetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * response. To retrieve the next batch of objects, use the token returned from the
      * prior request in your next request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListResourceSetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListResourceSetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListResourceSetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListResourceSetsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListResourceSetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListResourceSetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListResourceSetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListResourceSetsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ResourceSetSummary> m_resourceSets;
+    bool m_resourceSetsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

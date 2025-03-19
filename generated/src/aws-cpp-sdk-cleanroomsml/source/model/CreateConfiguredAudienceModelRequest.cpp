@@ -12,21 +12,6 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateConfiguredAudienceModelRequest::CreateConfiguredAudienceModelRequest() : 
-    m_nameHasBeenSet(false),
-    m_audienceModelArnHasBeenSet(false),
-    m_outputConfigHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sharedAudienceMetricsHasBeenSet(false),
-    m_minMatchingSeedSize(0),
-    m_minMatchingSeedSizeHasBeenSet(false),
-    m_audienceSizeConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_childResourceTagOnCreatePolicy(TagOnCreatePolicy::NOT_SET),
-    m_childResourceTagOnCreatePolicyHasBeenSet(false)
-{
-}
-
 Aws::String CreateConfiguredAudienceModelRequest::SerializePayload() const
 {
   JsonValue payload;

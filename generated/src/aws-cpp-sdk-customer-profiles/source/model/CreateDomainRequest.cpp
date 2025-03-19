@@ -12,18 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDomainRequest::CreateDomainRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_defaultExpirationDays(0),
-    m_defaultExpirationDaysHasBeenSet(false),
-    m_defaultEncryptionKeyHasBeenSet(false),
-    m_deadLetterQueueUrlHasBeenSet(false),
-    m_matchingHasBeenSet(false),
-    m_ruleBasedMatchingHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDomainRequest::SerializePayload() const
 {
   JsonValue payload;

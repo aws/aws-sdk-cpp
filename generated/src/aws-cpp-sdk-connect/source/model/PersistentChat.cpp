@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-PersistentChat::PersistentChat() : 
-    m_rehydrationType(RehydrationType::NOT_SET),
-    m_rehydrationTypeHasBeenSet(false),
-    m_sourceContactIdHasBeenSet(false)
-{
-}
-
 PersistentChat::PersistentChat(JsonView jsonValue)
-  : PersistentChat()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PersistentChat& PersistentChat::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RehydrationType"))
   {
     m_rehydrationType = RehydrationTypeMapper::GetRehydrationTypeForName(jsonValue.GetString("RehydrationType"));
-
     m_rehydrationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceContactId"))
   {
     m_sourceContactId = jsonValue.GetString("SourceContactId");
-
     m_sourceContactIdHasBeenSet = true;
   }
-
   return *this;
 }
 

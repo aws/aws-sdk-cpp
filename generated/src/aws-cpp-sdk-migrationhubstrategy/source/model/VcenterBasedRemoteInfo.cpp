@@ -18,15 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-VcenterBasedRemoteInfo::VcenterBasedRemoteInfo() : 
-    m_osType(OSType::NOT_SET),
-    m_osTypeHasBeenSet(false),
-    m_vcenterConfigurationTimeStampHasBeenSet(false)
-{
-}
-
 VcenterBasedRemoteInfo::VcenterBasedRemoteInfo(JsonView jsonValue)
-  : VcenterBasedRemoteInfo()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ VcenterBasedRemoteInfo& VcenterBasedRemoteInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("osType"))
   {
     m_osType = OSTypeMapper::GetOSTypeForName(jsonValue.GetString("osType"));
-
     m_osTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vcenterConfigurationTimeStamp"))
   {
     m_vcenterConfigurationTimeStamp = jsonValue.GetString("vcenterConfigurationTimeStamp");
-
     m_vcenterConfigurationTimeStampHasBeenSet = true;
   }
-
   return *this;
 }
 

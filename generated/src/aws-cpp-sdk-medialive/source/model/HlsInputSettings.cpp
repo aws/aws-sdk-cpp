@@ -18,22 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-HlsInputSettings::HlsInputSettings() : 
-    m_bandwidth(0),
-    m_bandwidthHasBeenSet(false),
-    m_bufferSegments(0),
-    m_bufferSegmentsHasBeenSet(false),
-    m_retries(0),
-    m_retriesHasBeenSet(false),
-    m_retryInterval(0),
-    m_retryIntervalHasBeenSet(false),
-    m_scte35Source(HlsScte35SourceType::NOT_SET),
-    m_scte35SourceHasBeenSet(false)
-{
-}
-
 HlsInputSettings::HlsInputSettings(JsonView jsonValue)
-  : HlsInputSettings()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ HlsInputSettings& HlsInputSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bandwidth"))
   {
     m_bandwidth = jsonValue.GetInteger("bandwidth");
-
     m_bandwidthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bufferSegments"))
   {
     m_bufferSegments = jsonValue.GetInteger("bufferSegments");
-
     m_bufferSegmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retries"))
   {
     m_retries = jsonValue.GetInteger("retries");
-
     m_retriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retryInterval"))
   {
     m_retryInterval = jsonValue.GetInteger("retryInterval");
-
     m_retryIntervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scte35Source"))
   {
     m_scte35Source = HlsScte35SourceTypeMapper::GetHlsScte35SourceTypeForName(jsonValue.GetString("scte35Source"));
-
     m_scte35SourceHasBeenSet = true;
   }
-
   return *this;
 }
 

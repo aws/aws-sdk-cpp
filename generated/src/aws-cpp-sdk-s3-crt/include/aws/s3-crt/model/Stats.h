@@ -28,7 +28,7 @@ namespace Model
   class Stats
   {
   public:
-    AWS_S3CRT_API Stats();
+    AWS_S3CRT_API Stats() = default;
     AWS_S3CRT_API Stats(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API Stats& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>The total number of object bytes scanned.</p>
      */
-    inline long long GetBytesScanned() const{ return m_bytesScanned; }
+    inline long long GetBytesScanned() const { return m_bytesScanned; }
     inline bool BytesScannedHasBeenSet() const { return m_bytesScannedHasBeenSet; }
     inline void SetBytesScanned(long long value) { m_bytesScannedHasBeenSet = true; m_bytesScanned = value; }
     inline Stats& WithBytesScanned(long long value) { SetBytesScanned(value); return *this;}
@@ -49,7 +49,7 @@ namespace Model
     /**
      * <p>The total number of uncompressed object bytes processed.</p>
      */
-    inline long long GetBytesProcessed() const{ return m_bytesProcessed; }
+    inline long long GetBytesProcessed() const { return m_bytesProcessed; }
     inline bool BytesProcessedHasBeenSet() const { return m_bytesProcessedHasBeenSet; }
     inline void SetBytesProcessed(long long value) { m_bytesProcessedHasBeenSet = true; m_bytesProcessed = value; }
     inline Stats& WithBytesProcessed(long long value) { SetBytesProcessed(value); return *this;}
@@ -59,20 +59,20 @@ namespace Model
     /**
      * <p>The total number of bytes of records payload data returned.</p>
      */
-    inline long long GetBytesReturned() const{ return m_bytesReturned; }
+    inline long long GetBytesReturned() const { return m_bytesReturned; }
     inline bool BytesReturnedHasBeenSet() const { return m_bytesReturnedHasBeenSet; }
     inline void SetBytesReturned(long long value) { m_bytesReturnedHasBeenSet = true; m_bytesReturned = value; }
     inline Stats& WithBytesReturned(long long value) { SetBytesReturned(value); return *this;}
     ///@}
   private:
 
-    long long m_bytesScanned;
+    long long m_bytesScanned{0};
     bool m_bytesScannedHasBeenSet = false;
 
-    long long m_bytesProcessed;
+    long long m_bytesProcessed{0};
     bool m_bytesProcessedHasBeenSet = false;
 
-    long long m_bytesReturned;
+    long long m_bytesReturned{0};
     bool m_bytesReturnedHasBeenSet = false;
   };
 

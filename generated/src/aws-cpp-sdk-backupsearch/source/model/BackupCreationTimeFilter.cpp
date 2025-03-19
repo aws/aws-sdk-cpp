@@ -18,14 +18,7 @@ namespace BackupSearch
 namespace Model
 {
 
-BackupCreationTimeFilter::BackupCreationTimeFilter() : 
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false)
-{
-}
-
 BackupCreationTimeFilter::BackupCreationTimeFilter(JsonView jsonValue)
-  : BackupCreationTimeFilter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BackupCreationTimeFilter& BackupCreationTimeFilter::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("CreatedAfter"))
   {
     m_createdAfter = jsonValue.GetDouble("CreatedAfter");
-
     m_createdAfterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBefore"))
   {
     m_createdBefore = jsonValue.GetDouble("CreatedBefore");
-
     m_createdBeforeHasBeenSet = true;
   }
-
   return *this;
 }
 

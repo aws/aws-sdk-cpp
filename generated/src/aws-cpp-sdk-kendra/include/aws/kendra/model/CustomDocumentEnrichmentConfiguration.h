@@ -39,7 +39,7 @@ namespace Model
   class CustomDocumentEnrichmentConfiguration
   {
   public:
-    AWS_KENDRA_API CustomDocumentEnrichmentConfiguration();
+    AWS_KENDRA_API CustomDocumentEnrichmentConfiguration() = default;
     AWS_KENDRA_API CustomDocumentEnrichmentConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API CustomDocumentEnrichmentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,14 @@ namespace Model
      * <p>Configuration information to alter document attributes or metadata fields and
      * content when ingesting documents into Amazon Kendra.</p>
      */
-    inline const Aws::Vector<InlineCustomDocumentEnrichmentConfiguration>& GetInlineConfigurations() const{ return m_inlineConfigurations; }
+    inline const Aws::Vector<InlineCustomDocumentEnrichmentConfiguration>& GetInlineConfigurations() const { return m_inlineConfigurations; }
     inline bool InlineConfigurationsHasBeenSet() const { return m_inlineConfigurationsHasBeenSet; }
-    inline void SetInlineConfigurations(const Aws::Vector<InlineCustomDocumentEnrichmentConfiguration>& value) { m_inlineConfigurationsHasBeenSet = true; m_inlineConfigurations = value; }
-    inline void SetInlineConfigurations(Aws::Vector<InlineCustomDocumentEnrichmentConfiguration>&& value) { m_inlineConfigurationsHasBeenSet = true; m_inlineConfigurations = std::move(value); }
-    inline CustomDocumentEnrichmentConfiguration& WithInlineConfigurations(const Aws::Vector<InlineCustomDocumentEnrichmentConfiguration>& value) { SetInlineConfigurations(value); return *this;}
-    inline CustomDocumentEnrichmentConfiguration& WithInlineConfigurations(Aws::Vector<InlineCustomDocumentEnrichmentConfiguration>&& value) { SetInlineConfigurations(std::move(value)); return *this;}
-    inline CustomDocumentEnrichmentConfiguration& AddInlineConfigurations(const InlineCustomDocumentEnrichmentConfiguration& value) { m_inlineConfigurationsHasBeenSet = true; m_inlineConfigurations.push_back(value); return *this; }
-    inline CustomDocumentEnrichmentConfiguration& AddInlineConfigurations(InlineCustomDocumentEnrichmentConfiguration&& value) { m_inlineConfigurationsHasBeenSet = true; m_inlineConfigurations.push_back(std::move(value)); return *this; }
+    template<typename InlineConfigurationsT = Aws::Vector<InlineCustomDocumentEnrichmentConfiguration>>
+    void SetInlineConfigurations(InlineConfigurationsT&& value) { m_inlineConfigurationsHasBeenSet = true; m_inlineConfigurations = std::forward<InlineConfigurationsT>(value); }
+    template<typename InlineConfigurationsT = Aws::Vector<InlineCustomDocumentEnrichmentConfiguration>>
+    CustomDocumentEnrichmentConfiguration& WithInlineConfigurations(InlineConfigurationsT&& value) { SetInlineConfigurations(std::forward<InlineConfigurationsT>(value)); return *this;}
+    template<typename InlineConfigurationsT = InlineCustomDocumentEnrichmentConfiguration>
+    CustomDocumentEnrichmentConfiguration& AddInlineConfigurations(InlineConfigurationsT&& value) { m_inlineConfigurationsHasBeenSet = true; m_inlineConfigurations.emplace_back(std::forward<InlineConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -69,12 +69,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#advanced-data-manipulation">Advanced
      * data manipulation</a>.</p>
      */
-    inline const HookConfiguration& GetPreExtractionHookConfiguration() const{ return m_preExtractionHookConfiguration; }
+    inline const HookConfiguration& GetPreExtractionHookConfiguration() const { return m_preExtractionHookConfiguration; }
     inline bool PreExtractionHookConfigurationHasBeenSet() const { return m_preExtractionHookConfigurationHasBeenSet; }
-    inline void SetPreExtractionHookConfiguration(const HookConfiguration& value) { m_preExtractionHookConfigurationHasBeenSet = true; m_preExtractionHookConfiguration = value; }
-    inline void SetPreExtractionHookConfiguration(HookConfiguration&& value) { m_preExtractionHookConfigurationHasBeenSet = true; m_preExtractionHookConfiguration = std::move(value); }
-    inline CustomDocumentEnrichmentConfiguration& WithPreExtractionHookConfiguration(const HookConfiguration& value) { SetPreExtractionHookConfiguration(value); return *this;}
-    inline CustomDocumentEnrichmentConfiguration& WithPreExtractionHookConfiguration(HookConfiguration&& value) { SetPreExtractionHookConfiguration(std::move(value)); return *this;}
+    template<typename PreExtractionHookConfigurationT = HookConfiguration>
+    void SetPreExtractionHookConfiguration(PreExtractionHookConfigurationT&& value) { m_preExtractionHookConfigurationHasBeenSet = true; m_preExtractionHookConfiguration = std::forward<PreExtractionHookConfigurationT>(value); }
+    template<typename PreExtractionHookConfigurationT = HookConfiguration>
+    CustomDocumentEnrichmentConfiguration& WithPreExtractionHookConfiguration(PreExtractionHookConfigurationT&& value) { SetPreExtractionHookConfiguration(std::forward<PreExtractionHookConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +86,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/dg/custom-document-enrichment.html#advanced-data-manipulation">Advanced
      * data manipulation</a>.</p>
      */
-    inline const HookConfiguration& GetPostExtractionHookConfiguration() const{ return m_postExtractionHookConfiguration; }
+    inline const HookConfiguration& GetPostExtractionHookConfiguration() const { return m_postExtractionHookConfiguration; }
     inline bool PostExtractionHookConfigurationHasBeenSet() const { return m_postExtractionHookConfigurationHasBeenSet; }
-    inline void SetPostExtractionHookConfiguration(const HookConfiguration& value) { m_postExtractionHookConfigurationHasBeenSet = true; m_postExtractionHookConfiguration = value; }
-    inline void SetPostExtractionHookConfiguration(HookConfiguration&& value) { m_postExtractionHookConfigurationHasBeenSet = true; m_postExtractionHookConfiguration = std::move(value); }
-    inline CustomDocumentEnrichmentConfiguration& WithPostExtractionHookConfiguration(const HookConfiguration& value) { SetPostExtractionHookConfiguration(value); return *this;}
-    inline CustomDocumentEnrichmentConfiguration& WithPostExtractionHookConfiguration(HookConfiguration&& value) { SetPostExtractionHookConfiguration(std::move(value)); return *this;}
+    template<typename PostExtractionHookConfigurationT = HookConfiguration>
+    void SetPostExtractionHookConfiguration(PostExtractionHookConfigurationT&& value) { m_postExtractionHookConfigurationHasBeenSet = true; m_postExtractionHookConfiguration = std::forward<PostExtractionHookConfigurationT>(value); }
+    template<typename PostExtractionHookConfigurationT = HookConfiguration>
+    CustomDocumentEnrichmentConfiguration& WithPostExtractionHookConfiguration(PostExtractionHookConfigurationT&& value) { SetPostExtractionHookConfiguration(std::forward<PostExtractionHookConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +103,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">an IAM roles
      * for Amazon Kendra</a>.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline CustomDocumentEnrichmentConfiguration& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CustomDocumentEnrichmentConfiguration& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CustomDocumentEnrichmentConfiguration& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CustomDocumentEnrichmentConfiguration& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

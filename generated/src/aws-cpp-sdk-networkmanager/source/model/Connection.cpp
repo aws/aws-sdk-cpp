@@ -18,24 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-Connection::Connection() : 
-    m_connectionIdHasBeenSet(false),
-    m_connectionArnHasBeenSet(false),
-    m_globalNetworkIdHasBeenSet(false),
-    m_deviceIdHasBeenSet(false),
-    m_connectedDeviceIdHasBeenSet(false),
-    m_linkIdHasBeenSet(false),
-    m_connectedLinkIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_state(ConnectionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Connection::Connection(JsonView jsonValue)
-  : Connection()
 {
   *this = jsonValue;
 }
@@ -45,73 +28,53 @@ Connection& Connection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConnectionId"))
   {
     m_connectionId = jsonValue.GetString("ConnectionId");
-
     m_connectionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionArn"))
   {
     m_connectionArn = jsonValue.GetString("ConnectionArn");
-
     m_connectionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlobalNetworkId"))
   {
     m_globalNetworkId = jsonValue.GetString("GlobalNetworkId");
-
     m_globalNetworkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceId"))
   {
     m_deviceId = jsonValue.GetString("DeviceId");
-
     m_deviceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectedDeviceId"))
   {
     m_connectedDeviceId = jsonValue.GetString("ConnectedDeviceId");
-
     m_connectedDeviceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LinkId"))
   {
     m_linkId = jsonValue.GetString("LinkId");
-
     m_linkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectedLinkId"))
   {
     m_connectedLinkId = jsonValue.GetString("ConnectedLinkId");
-
     m_connectedLinkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = ConnectionStateMapper::GetConnectionStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -121,7 +84,6 @@ Connection& Connection::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

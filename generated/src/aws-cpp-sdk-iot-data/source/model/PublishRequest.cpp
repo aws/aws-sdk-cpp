@@ -17,22 +17,6 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 using namespace Aws;
 
-PublishRequest::PublishRequest() : 
-    m_topicHasBeenSet(false),
-    m_qos(0),
-    m_qosHasBeenSet(false),
-    m_retain(false),
-    m_retainHasBeenSet(false),
-    m_userPropertiesHasBeenSet(false),
-    m_payloadFormatIndicator(PayloadFormatIndicator::NOT_SET),
-    m_payloadFormatIndicatorHasBeenSet(false),
-    m_responseTopicHasBeenSet(false),
-    m_correlationDataHasBeenSet(false),
-    m_messageExpiry(0),
-    m_messageExpiryHasBeenSet(false)
-{
-}
-
 
 void PublishRequest::AddQueryStringParameters(URI& uri) const
 {

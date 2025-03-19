@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DeleteFleetErrorItem::DeleteFleetErrorItem() : 
-    m_errorHasBeenSet(false),
-    m_fleetIdHasBeenSet(false)
-{
-}
-
 DeleteFleetErrorItem::DeleteFleetErrorItem(const XmlNode& xmlNode)
-  : DeleteFleetErrorItem()
 {
   *this = xmlNode;
 }

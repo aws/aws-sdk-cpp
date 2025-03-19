@@ -10,20 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyIpamRequest::ModifyIpamRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_ipamIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_addOperatingRegionsHasBeenSet(false),
-    m_removeOperatingRegionsHasBeenSet(false),
-    m_tier(IpamTier::NOT_SET),
-    m_tierHasBeenSet(false),
-    m_enablePrivateGua(false),
-    m_enablePrivateGuaHasBeenSet(false)
-{
-}
-
 Aws::String ModifyIpamRequest::SerializePayload() const
 {
   Aws::StringStream ss;

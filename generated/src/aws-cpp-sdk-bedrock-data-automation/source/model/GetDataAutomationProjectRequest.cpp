@@ -12,13 +12,6 @@ using namespace Aws::BedrockDataAutomation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDataAutomationProjectRequest::GetDataAutomationProjectRequest() : 
-    m_projectArnHasBeenSet(false),
-    m_projectStage(DataAutomationProjectStage::NOT_SET),
-    m_projectStageHasBeenSet(false)
-{
-}
-
 Aws::String GetDataAutomationProjectRequest::SerializePayload() const
 {
   JsonValue payload;

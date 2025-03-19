@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateDataAutomationProjectResult::UpdateDataAutomationProjectResult() : 
-    m_projectStage(DataAutomationProjectStage::NOT_SET),
-    m_status(DataAutomationProjectStatus::NOT_SET)
-{
-}
-
 UpdateDataAutomationProjectResult::UpdateDataAutomationProjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateDataAutomationProjectResult()
 {
   *this = result;
 }
@@ -35,27 +28,25 @@ UpdateDataAutomationProjectResult& UpdateDataAutomationProjectResult::operator =
   if(jsonValue.ValueExists("projectArn"))
   {
     m_projectArn = jsonValue.GetString("projectArn");
-
+    m_projectArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectStage"))
   {
     m_projectStage = DataAutomationProjectStageMapper::GetDataAutomationProjectStageForName(jsonValue.GetString("projectStage"));
-
+    m_projectStageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DataAutomationProjectStatusMapper::GetDataAutomationProjectStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

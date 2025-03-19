@@ -12,21 +12,6 @@ using namespace Aws::WorkSpacesThinClient::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEnvironmentRequest::UpdateEnvironmentRequest() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_desktopArnHasBeenSet(false),
-    m_desktopEndpointHasBeenSet(false),
-    m_softwareSetUpdateSchedule(SoftwareSetUpdateSchedule::NOT_SET),
-    m_softwareSetUpdateScheduleHasBeenSet(false),
-    m_maintenanceWindowHasBeenSet(false),
-    m_softwareSetUpdateMode(SoftwareSetUpdateMode::NOT_SET),
-    m_softwareSetUpdateModeHasBeenSet(false),
-    m_desiredSoftwareSetIdHasBeenSet(false),
-    m_deviceCreationTagsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEnvironmentRequest::SerializePayload() const
 {
   JsonValue payload;

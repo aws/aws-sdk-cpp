@@ -18,19 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-RightsizingRecommendation::RightsizingRecommendation() : 
-    m_accountIdHasBeenSet(false),
-    m_currentInstanceHasBeenSet(false),
-    m_rightsizingType(RightsizingType::NOT_SET),
-    m_rightsizingTypeHasBeenSet(false),
-    m_modifyRecommendationDetailHasBeenSet(false),
-    m_terminateRecommendationDetailHasBeenSet(false),
-    m_findingReasonCodesHasBeenSet(false)
-{
-}
-
 RightsizingRecommendation::RightsizingRecommendation(JsonView jsonValue)
-  : RightsizingRecommendation()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ RightsizingRecommendation& RightsizingRecommendation::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentInstance"))
   {
     m_currentInstance = jsonValue.GetObject("CurrentInstance");
-
     m_currentInstanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RightsizingType"))
   {
     m_rightsizingType = RightsizingTypeMapper::GetRightsizingTypeForName(jsonValue.GetString("RightsizingType"));
-
     m_rightsizingTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModifyRecommendationDetail"))
   {
     m_modifyRecommendationDetail = jsonValue.GetObject("ModifyRecommendationDetail");
-
     m_modifyRecommendationDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TerminateRecommendationDetail"))
   {
     m_terminateRecommendationDetail = jsonValue.GetObject("TerminateRecommendationDetail");
-
     m_terminateRecommendationDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FindingReasonCodes"))
   {
     Aws::Utils::Array<JsonView> findingReasonCodesJsonList = jsonValue.GetArray("FindingReasonCodes");
@@ -81,7 +59,6 @@ RightsizingRecommendation& RightsizingRecommendation::operator =(JsonView jsonVa
     }
     m_findingReasonCodesHasBeenSet = true;
   }
-
   return *this;
 }
 

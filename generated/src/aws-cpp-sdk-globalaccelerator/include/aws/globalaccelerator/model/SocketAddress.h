@@ -31,7 +31,7 @@ namespace Model
   class SocketAddress
   {
   public:
-    AWS_GLOBALACCELERATOR_API SocketAddress();
+    AWS_GLOBALACCELERATOR_API SocketAddress() = default;
     AWS_GLOBALACCELERATOR_API SocketAddress(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLOBALACCELERATOR_API SocketAddress& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,21 +41,19 @@ namespace Model
     /**
      * <p>The IP address for the socket address.</p>
      */
-    inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+    inline const Aws::String& GetIpAddress() const { return m_ipAddress; }
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
-    inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
-    inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
-    inline SocketAddress& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
-    inline SocketAddress& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
-    inline SocketAddress& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+    template<typename IpAddressT = Aws::String>
+    void SetIpAddress(IpAddressT&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::forward<IpAddressT>(value); }
+    template<typename IpAddressT = Aws::String>
+    SocketAddress& WithIpAddress(IpAddressT&& value) { SetIpAddress(std::forward<IpAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The port for the socket address.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline SocketAddress& WithPort(int value) { SetPort(value); return *this;}
@@ -65,7 +63,7 @@ namespace Model
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
   };
 

@@ -34,7 +34,7 @@ namespace Model
   class OpsItemEventSummary
   {
   public:
-    AWS_SSM_API OpsItemEventSummary();
+    AWS_SSM_API OpsItemEventSummary() = default;
     AWS_SSM_API OpsItemEventSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API OpsItemEventSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,94 +44,84 @@ namespace Model
     /**
      * <p>The ID of the OpsItem.</p>
      */
-    inline const Aws::String& GetOpsItemId() const{ return m_opsItemId; }
+    inline const Aws::String& GetOpsItemId() const { return m_opsItemId; }
     inline bool OpsItemIdHasBeenSet() const { return m_opsItemIdHasBeenSet; }
-    inline void SetOpsItemId(const Aws::String& value) { m_opsItemIdHasBeenSet = true; m_opsItemId = value; }
-    inline void SetOpsItemId(Aws::String&& value) { m_opsItemIdHasBeenSet = true; m_opsItemId = std::move(value); }
-    inline void SetOpsItemId(const char* value) { m_opsItemIdHasBeenSet = true; m_opsItemId.assign(value); }
-    inline OpsItemEventSummary& WithOpsItemId(const Aws::String& value) { SetOpsItemId(value); return *this;}
-    inline OpsItemEventSummary& WithOpsItemId(Aws::String&& value) { SetOpsItemId(std::move(value)); return *this;}
-    inline OpsItemEventSummary& WithOpsItemId(const char* value) { SetOpsItemId(value); return *this;}
+    template<typename OpsItemIdT = Aws::String>
+    void SetOpsItemId(OpsItemIdT&& value) { m_opsItemIdHasBeenSet = true; m_opsItemId = std::forward<OpsItemIdT>(value); }
+    template<typename OpsItemIdT = Aws::String>
+    OpsItemEventSummary& WithOpsItemId(OpsItemIdT&& value) { SetOpsItemId(std::forward<OpsItemIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the OpsItem event.</p>
      */
-    inline const Aws::String& GetEventId() const{ return m_eventId; }
+    inline const Aws::String& GetEventId() const { return m_eventId; }
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
-    inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
-    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
-    inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
-    inline OpsItemEventSummary& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
-    inline OpsItemEventSummary& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
-    inline OpsItemEventSummary& WithEventId(const char* value) { SetEventId(value); return *this;}
+    template<typename EventIdT = Aws::String>
+    void SetEventId(EventIdT&& value) { m_eventIdHasBeenSet = true; m_eventId = std::forward<EventIdT>(value); }
+    template<typename EventIdT = Aws::String>
+    OpsItemEventSummary& WithEventId(EventIdT&& value) { SetEventId(std::forward<EventIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source of the OpsItem event.</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline OpsItemEventSummary& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline OpsItemEventSummary& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline OpsItemEventSummary& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    OpsItemEventSummary& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of information provided as a detail.</p>
      */
-    inline const Aws::String& GetDetailType() const{ return m_detailType; }
+    inline const Aws::String& GetDetailType() const { return m_detailType; }
     inline bool DetailTypeHasBeenSet() const { return m_detailTypeHasBeenSet; }
-    inline void SetDetailType(const Aws::String& value) { m_detailTypeHasBeenSet = true; m_detailType = value; }
-    inline void SetDetailType(Aws::String&& value) { m_detailTypeHasBeenSet = true; m_detailType = std::move(value); }
-    inline void SetDetailType(const char* value) { m_detailTypeHasBeenSet = true; m_detailType.assign(value); }
-    inline OpsItemEventSummary& WithDetailType(const Aws::String& value) { SetDetailType(value); return *this;}
-    inline OpsItemEventSummary& WithDetailType(Aws::String&& value) { SetDetailType(std::move(value)); return *this;}
-    inline OpsItemEventSummary& WithDetailType(const char* value) { SetDetailType(value); return *this;}
+    template<typename DetailTypeT = Aws::String>
+    void SetDetailType(DetailTypeT&& value) { m_detailTypeHasBeenSet = true; m_detailType = std::forward<DetailTypeT>(value); }
+    template<typename DetailTypeT = Aws::String>
+    OpsItemEventSummary& WithDetailType(DetailTypeT&& value) { SetDetailType(std::forward<DetailTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specific information about the OpsItem event.</p>
      */
-    inline const Aws::String& GetDetail() const{ return m_detail; }
+    inline const Aws::String& GetDetail() const { return m_detail; }
     inline bool DetailHasBeenSet() const { return m_detailHasBeenSet; }
-    inline void SetDetail(const Aws::String& value) { m_detailHasBeenSet = true; m_detail = value; }
-    inline void SetDetail(Aws::String&& value) { m_detailHasBeenSet = true; m_detail = std::move(value); }
-    inline void SetDetail(const char* value) { m_detailHasBeenSet = true; m_detail.assign(value); }
-    inline OpsItemEventSummary& WithDetail(const Aws::String& value) { SetDetail(value); return *this;}
-    inline OpsItemEventSummary& WithDetail(Aws::String&& value) { SetDetail(std::move(value)); return *this;}
-    inline OpsItemEventSummary& WithDetail(const char* value) { SetDetail(value); return *this;}
+    template<typename DetailT = Aws::String>
+    void SetDetail(DetailT&& value) { m_detailHasBeenSet = true; m_detail = std::forward<DetailT>(value); }
+    template<typename DetailT = Aws::String>
+    OpsItemEventSummary& WithDetail(DetailT&& value) { SetDetail(std::forward<DetailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the user or resource that created the OpsItem event.</p>
      */
-    inline const OpsItemIdentity& GetCreatedBy() const{ return m_createdBy; }
+    inline const OpsItemIdentity& GetCreatedBy() const { return m_createdBy; }
     inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
-    inline void SetCreatedBy(const OpsItemIdentity& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
-    inline void SetCreatedBy(OpsItemIdentity&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
-    inline OpsItemEventSummary& WithCreatedBy(const OpsItemIdentity& value) { SetCreatedBy(value); return *this;}
-    inline OpsItemEventSummary& WithCreatedBy(OpsItemIdentity&& value) { SetCreatedBy(std::move(value)); return *this;}
+    template<typename CreatedByT = OpsItemIdentity>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = OpsItemIdentity>
+    OpsItemEventSummary& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the OpsItem event was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-    inline OpsItemEventSummary& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-    inline OpsItemEventSummary& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    OpsItemEventSummary& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -153,7 +143,7 @@ namespace Model
     OpsItemIdentity m_createdBy;
     bool m_createdByHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTime;
+    Aws::Utils::DateTime m_createdTime{};
     bool m_createdTimeHasBeenSet = false;
   };
 

@@ -12,13 +12,6 @@ using namespace Aws::ACMPCA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePermissionRequest::DeletePermissionRequest() : 
-    m_certificateAuthorityArnHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_sourceAccountHasBeenSet(false)
-{
-}
-
 Aws::String DeletePermissionRequest::SerializePayload() const
 {
   JsonValue payload;

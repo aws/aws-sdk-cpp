@@ -34,7 +34,7 @@ namespace Model
   class SnapshotFileSheetSelection
   {
   public:
-    AWS_QUICKSIGHT_API SnapshotFileSheetSelection();
+    AWS_QUICKSIGHT_API SnapshotFileSheetSelection() = default;
     AWS_QUICKSIGHT_API SnapshotFileSheetSelection(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SnapshotFileSheetSelection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The sheet ID of the dashboard to generate the snapshot artifact from. This
      * value is required for CSV, Excel, and PDF format types.</p>
      */
-    inline const Aws::String& GetSheetId() const{ return m_sheetId; }
+    inline const Aws::String& GetSheetId() const { return m_sheetId; }
     inline bool SheetIdHasBeenSet() const { return m_sheetIdHasBeenSet; }
-    inline void SetSheetId(const Aws::String& value) { m_sheetIdHasBeenSet = true; m_sheetId = value; }
-    inline void SetSheetId(Aws::String&& value) { m_sheetIdHasBeenSet = true; m_sheetId = std::move(value); }
-    inline void SetSheetId(const char* value) { m_sheetIdHasBeenSet = true; m_sheetId.assign(value); }
-    inline SnapshotFileSheetSelection& WithSheetId(const Aws::String& value) { SetSheetId(value); return *this;}
-    inline SnapshotFileSheetSelection& WithSheetId(Aws::String&& value) { SetSheetId(std::move(value)); return *this;}
-    inline SnapshotFileSheetSelection& WithSheetId(const char* value) { SetSheetId(value); return *this;}
+    template<typename SheetIdT = Aws::String>
+    void SetSheetId(SheetIdT&& value) { m_sheetIdHasBeenSet = true; m_sheetId = std::forward<SheetIdT>(value); }
+    template<typename SheetIdT = Aws::String>
+    SnapshotFileSheetSelection& WithSheetId(SheetIdT&& value) { SetSheetId(std::forward<SheetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,12 +63,10 @@ namespace Model
      * snapshot. This value is required if the snapshot is a CSV or Excel workbook.</p>
      * </li> </ul>
      */
-    inline const SnapshotFileSheetSelectionScope& GetSelectionScope() const{ return m_selectionScope; }
+    inline SnapshotFileSheetSelectionScope GetSelectionScope() const { return m_selectionScope; }
     inline bool SelectionScopeHasBeenSet() const { return m_selectionScopeHasBeenSet; }
-    inline void SetSelectionScope(const SnapshotFileSheetSelectionScope& value) { m_selectionScopeHasBeenSet = true; m_selectionScope = value; }
-    inline void SetSelectionScope(SnapshotFileSheetSelectionScope&& value) { m_selectionScopeHasBeenSet = true; m_selectionScope = std::move(value); }
-    inline SnapshotFileSheetSelection& WithSelectionScope(const SnapshotFileSheetSelectionScope& value) { SetSelectionScope(value); return *this;}
-    inline SnapshotFileSheetSelection& WithSelectionScope(SnapshotFileSheetSelectionScope&& value) { SetSelectionScope(std::move(value)); return *this;}
+    inline void SetSelectionScope(SnapshotFileSheetSelectionScope value) { m_selectionScopeHasBeenSet = true; m_selectionScope = value; }
+    inline SnapshotFileSheetSelection& WithSelectionScope(SnapshotFileSheetSelectionScope value) { SetSelectionScope(value); return *this;}
     ///@}
 
     ///@{
@@ -82,22 +78,21 @@ namespace Model
      * you are generating an Excel workbook, the order of the visual IDs provided in
      * this structure determines the order of the worksheets in the Excel file. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetVisualIds() const{ return m_visualIds; }
+    inline const Aws::Vector<Aws::String>& GetVisualIds() const { return m_visualIds; }
     inline bool VisualIdsHasBeenSet() const { return m_visualIdsHasBeenSet; }
-    inline void SetVisualIds(const Aws::Vector<Aws::String>& value) { m_visualIdsHasBeenSet = true; m_visualIds = value; }
-    inline void SetVisualIds(Aws::Vector<Aws::String>&& value) { m_visualIdsHasBeenSet = true; m_visualIds = std::move(value); }
-    inline SnapshotFileSheetSelection& WithVisualIds(const Aws::Vector<Aws::String>& value) { SetVisualIds(value); return *this;}
-    inline SnapshotFileSheetSelection& WithVisualIds(Aws::Vector<Aws::String>&& value) { SetVisualIds(std::move(value)); return *this;}
-    inline SnapshotFileSheetSelection& AddVisualIds(const Aws::String& value) { m_visualIdsHasBeenSet = true; m_visualIds.push_back(value); return *this; }
-    inline SnapshotFileSheetSelection& AddVisualIds(Aws::String&& value) { m_visualIdsHasBeenSet = true; m_visualIds.push_back(std::move(value)); return *this; }
-    inline SnapshotFileSheetSelection& AddVisualIds(const char* value) { m_visualIdsHasBeenSet = true; m_visualIds.push_back(value); return *this; }
+    template<typename VisualIdsT = Aws::Vector<Aws::String>>
+    void SetVisualIds(VisualIdsT&& value) { m_visualIdsHasBeenSet = true; m_visualIds = std::forward<VisualIdsT>(value); }
+    template<typename VisualIdsT = Aws::Vector<Aws::String>>
+    SnapshotFileSheetSelection& WithVisualIds(VisualIdsT&& value) { SetVisualIds(std::forward<VisualIdsT>(value)); return *this;}
+    template<typename VisualIdsT = Aws::String>
+    SnapshotFileSheetSelection& AddVisualIds(VisualIdsT&& value) { m_visualIdsHasBeenSet = true; m_visualIds.emplace_back(std::forward<VisualIdsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_sheetId;
     bool m_sheetIdHasBeenSet = false;
 
-    SnapshotFileSheetSelectionScope m_selectionScope;
+    SnapshotFileSheetSelectionScope m_selectionScope{SnapshotFileSheetSelectionScope::NOT_SET};
     bool m_selectionScopeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_visualIds;

@@ -18,13 +18,7 @@ namespace IoT
 namespace Model
 {
 
-JobExecutionStatusDetails::JobExecutionStatusDetails() : 
-    m_detailsMapHasBeenSet(false)
-{
-}
-
 JobExecutionStatusDetails::JobExecutionStatusDetails(JsonView jsonValue)
-  : JobExecutionStatusDetails()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ JobExecutionStatusDetails& JobExecutionStatusDetails::operator =(JsonView jsonVa
     }
     m_detailsMapHasBeenSet = true;
   }
-
   return *this;
 }
 

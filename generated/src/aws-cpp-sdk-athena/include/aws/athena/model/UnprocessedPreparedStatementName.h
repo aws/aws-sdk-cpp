@@ -32,7 +32,7 @@ namespace Model
   class UnprocessedPreparedStatementName
   {
   public:
-    AWS_ATHENA_API UnprocessedPreparedStatementName();
+    AWS_ATHENA_API UnprocessedPreparedStatementName() = default;
     AWS_ATHENA_API UnprocessedPreparedStatementName(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API UnprocessedPreparedStatementName& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of a prepared statement that could not be returned due to an
      * error.</p>
      */
-    inline const Aws::String& GetStatementName() const{ return m_statementName; }
+    inline const Aws::String& GetStatementName() const { return m_statementName; }
     inline bool StatementNameHasBeenSet() const { return m_statementNameHasBeenSet; }
-    inline void SetStatementName(const Aws::String& value) { m_statementNameHasBeenSet = true; m_statementName = value; }
-    inline void SetStatementName(Aws::String&& value) { m_statementNameHasBeenSet = true; m_statementName = std::move(value); }
-    inline void SetStatementName(const char* value) { m_statementNameHasBeenSet = true; m_statementName.assign(value); }
-    inline UnprocessedPreparedStatementName& WithStatementName(const Aws::String& value) { SetStatementName(value); return *this;}
-    inline UnprocessedPreparedStatementName& WithStatementName(Aws::String&& value) { SetStatementName(std::move(value)); return *this;}
-    inline UnprocessedPreparedStatementName& WithStatementName(const char* value) { SetStatementName(value); return *this;}
+    template<typename StatementNameT = Aws::String>
+    void SetStatementName(StatementNameT&& value) { m_statementNameHasBeenSet = true; m_statementName = std::forward<StatementNameT>(value); }
+    template<typename StatementNameT = Aws::String>
+    UnprocessedPreparedStatementName& WithStatementName(StatementNameT&& value) { SetStatementName(std::forward<StatementNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The error code returned when the request for the prepared statement
      * failed.</p>
      */
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-    inline UnprocessedPreparedStatementName& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-    inline UnprocessedPreparedStatementName& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-    inline UnprocessedPreparedStatementName& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    template<typename ErrorCodeT = Aws::String>
+    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
+    template<typename ErrorCodeT = Aws::String>
+    UnprocessedPreparedStatementName& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +75,12 @@ namespace Model
      * does not have permission to access the workgroup that contains the prepared
      * statement.</p> </li> </ul>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline UnprocessedPreparedStatementName& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline UnprocessedPreparedStatementName& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline UnprocessedPreparedStatementName& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    UnprocessedPreparedStatementName& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
   private:
 

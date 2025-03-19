@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-StorageLensGroupLevelSelectionCriteria::StorageLensGroupLevelSelectionCriteria() : 
-    m_includeHasBeenSet(false),
-    m_excludeHasBeenSet(false)
-{
-}
-
 StorageLensGroupLevelSelectionCriteria::StorageLensGroupLevelSelectionCriteria(const XmlNode& xmlNode)
-  : StorageLensGroupLevelSelectionCriteria()
 {
   *this = xmlNode;
 }
@@ -42,6 +35,7 @@ StorageLensGroupLevelSelectionCriteria& StorageLensGroupLevelSelectionCriteria::
     if(!includeNode.IsNull())
     {
       XmlNode includeMember = includeNode.FirstChild("Arn");
+      m_includeHasBeenSet = !includeMember.IsNull();
       while(!includeMember.IsNull())
       {
         m_include.push_back(includeMember.GetText());
@@ -54,6 +48,7 @@ StorageLensGroupLevelSelectionCriteria& StorageLensGroupLevelSelectionCriteria::
     if(!excludeNode.IsNull())
     {
       XmlNode excludeMember = excludeNode.FirstChild("Arn");
+      m_excludeHasBeenSet = !excludeMember.IsNull();
       while(!excludeMember.IsNull())
       {
         m_exclude.push_back(excludeMember.GetText());

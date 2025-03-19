@@ -18,14 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-GuardrailCoverage::GuardrailCoverage() : 
-    m_textCharactersHasBeenSet(false),
-    m_imagesHasBeenSet(false)
-{
-}
-
 GuardrailCoverage::GuardrailCoverage(JsonView jsonValue)
-  : GuardrailCoverage()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ GuardrailCoverage& GuardrailCoverage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("textCharacters"))
   {
     m_textCharacters = jsonValue.GetObject("textCharacters");
-
     m_textCharactersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("images"))
   {
     m_images = jsonValue.GetObject("images");
-
     m_imagesHasBeenSet = true;
   }
-
   return *this;
 }
 

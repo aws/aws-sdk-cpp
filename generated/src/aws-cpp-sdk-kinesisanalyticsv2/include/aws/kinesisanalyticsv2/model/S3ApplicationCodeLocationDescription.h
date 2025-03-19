@@ -32,7 +32,7 @@ namespace Model
   class S3ApplicationCodeLocationDescription
   {
   public:
-    AWS_KINESISANALYTICSV2_API S3ApplicationCodeLocationDescription();
+    AWS_KINESISANALYTICSV2_API S3ApplicationCodeLocationDescription() = default;
     AWS_KINESISANALYTICSV2_API S3ApplicationCodeLocationDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API S3ApplicationCodeLocationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,42 +43,36 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the S3 bucket containing the application
      * code.</p>
      */
-    inline const Aws::String& GetBucketARN() const{ return m_bucketARN; }
+    inline const Aws::String& GetBucketARN() const { return m_bucketARN; }
     inline bool BucketARNHasBeenSet() const { return m_bucketARNHasBeenSet; }
-    inline void SetBucketARN(const Aws::String& value) { m_bucketARNHasBeenSet = true; m_bucketARN = value; }
-    inline void SetBucketARN(Aws::String&& value) { m_bucketARNHasBeenSet = true; m_bucketARN = std::move(value); }
-    inline void SetBucketARN(const char* value) { m_bucketARNHasBeenSet = true; m_bucketARN.assign(value); }
-    inline S3ApplicationCodeLocationDescription& WithBucketARN(const Aws::String& value) { SetBucketARN(value); return *this;}
-    inline S3ApplicationCodeLocationDescription& WithBucketARN(Aws::String&& value) { SetBucketARN(std::move(value)); return *this;}
-    inline S3ApplicationCodeLocationDescription& WithBucketARN(const char* value) { SetBucketARN(value); return *this;}
+    template<typename BucketARNT = Aws::String>
+    void SetBucketARN(BucketARNT&& value) { m_bucketARNHasBeenSet = true; m_bucketARN = std::forward<BucketARNT>(value); }
+    template<typename BucketARNT = Aws::String>
+    S3ApplicationCodeLocationDescription& WithBucketARN(BucketARNT&& value) { SetBucketARN(std::forward<BucketARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The file key for the object containing the application code.</p>
      */
-    inline const Aws::String& GetFileKey() const{ return m_fileKey; }
+    inline const Aws::String& GetFileKey() const { return m_fileKey; }
     inline bool FileKeyHasBeenSet() const { return m_fileKeyHasBeenSet; }
-    inline void SetFileKey(const Aws::String& value) { m_fileKeyHasBeenSet = true; m_fileKey = value; }
-    inline void SetFileKey(Aws::String&& value) { m_fileKeyHasBeenSet = true; m_fileKey = std::move(value); }
-    inline void SetFileKey(const char* value) { m_fileKeyHasBeenSet = true; m_fileKey.assign(value); }
-    inline S3ApplicationCodeLocationDescription& WithFileKey(const Aws::String& value) { SetFileKey(value); return *this;}
-    inline S3ApplicationCodeLocationDescription& WithFileKey(Aws::String&& value) { SetFileKey(std::move(value)); return *this;}
-    inline S3ApplicationCodeLocationDescription& WithFileKey(const char* value) { SetFileKey(value); return *this;}
+    template<typename FileKeyT = Aws::String>
+    void SetFileKey(FileKeyT&& value) { m_fileKeyHasBeenSet = true; m_fileKey = std::forward<FileKeyT>(value); }
+    template<typename FileKeyT = Aws::String>
+    S3ApplicationCodeLocationDescription& WithFileKey(FileKeyT&& value) { SetFileKey(std::forward<FileKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the object containing the application code.</p>
      */
-    inline const Aws::String& GetObjectVersion() const{ return m_objectVersion; }
+    inline const Aws::String& GetObjectVersion() const { return m_objectVersion; }
     inline bool ObjectVersionHasBeenSet() const { return m_objectVersionHasBeenSet; }
-    inline void SetObjectVersion(const Aws::String& value) { m_objectVersionHasBeenSet = true; m_objectVersion = value; }
-    inline void SetObjectVersion(Aws::String&& value) { m_objectVersionHasBeenSet = true; m_objectVersion = std::move(value); }
-    inline void SetObjectVersion(const char* value) { m_objectVersionHasBeenSet = true; m_objectVersion.assign(value); }
-    inline S3ApplicationCodeLocationDescription& WithObjectVersion(const Aws::String& value) { SetObjectVersion(value); return *this;}
-    inline S3ApplicationCodeLocationDescription& WithObjectVersion(Aws::String&& value) { SetObjectVersion(std::move(value)); return *this;}
-    inline S3ApplicationCodeLocationDescription& WithObjectVersion(const char* value) { SetObjectVersion(value); return *this;}
+    template<typename ObjectVersionT = Aws::String>
+    void SetObjectVersion(ObjectVersionT&& value) { m_objectVersionHasBeenSet = true; m_objectVersion = std::forward<ObjectVersionT>(value); }
+    template<typename ObjectVersionT = Aws::String>
+    S3ApplicationCodeLocationDescription& WithObjectVersion(ObjectVersionT&& value) { SetObjectVersion(std::forward<ObjectVersionT>(value)); return *this;}
     ///@}
   private:
 

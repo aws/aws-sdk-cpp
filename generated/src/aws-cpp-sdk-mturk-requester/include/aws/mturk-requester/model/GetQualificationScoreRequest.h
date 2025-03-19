@@ -21,7 +21,7 @@ namespace Model
   class GetQualificationScoreRequest : public MTurkRequest
   {
   public:
-    AWS_MTURK_API GetQualificationScoreRequest();
+    AWS_MTURK_API GetQualificationScoreRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The ID of the QualificationType.</p>
      */
-    inline const Aws::String& GetQualificationTypeId() const{ return m_qualificationTypeId; }
+    inline const Aws::String& GetQualificationTypeId() const { return m_qualificationTypeId; }
     inline bool QualificationTypeIdHasBeenSet() const { return m_qualificationTypeIdHasBeenSet; }
-    inline void SetQualificationTypeId(const Aws::String& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = value; }
-    inline void SetQualificationTypeId(Aws::String&& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = std::move(value); }
-    inline void SetQualificationTypeId(const char* value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId.assign(value); }
-    inline GetQualificationScoreRequest& WithQualificationTypeId(const Aws::String& value) { SetQualificationTypeId(value); return *this;}
-    inline GetQualificationScoreRequest& WithQualificationTypeId(Aws::String&& value) { SetQualificationTypeId(std::move(value)); return *this;}
-    inline GetQualificationScoreRequest& WithQualificationTypeId(const char* value) { SetQualificationTypeId(value); return *this;}
+    template<typename QualificationTypeIdT = Aws::String>
+    void SetQualificationTypeId(QualificationTypeIdT&& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = std::forward<QualificationTypeIdT>(value); }
+    template<typename QualificationTypeIdT = Aws::String>
+    GetQualificationScoreRequest& WithQualificationTypeId(QualificationTypeIdT&& value) { SetQualificationTypeId(std::forward<QualificationTypeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Worker whose Qualification is being updated.</p>
      */
-    inline const Aws::String& GetWorkerId() const{ return m_workerId; }
+    inline const Aws::String& GetWorkerId() const { return m_workerId; }
     inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
-    inline void SetWorkerId(const Aws::String& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
-    inline void SetWorkerId(Aws::String&& value) { m_workerIdHasBeenSet = true; m_workerId = std::move(value); }
-    inline void SetWorkerId(const char* value) { m_workerIdHasBeenSet = true; m_workerId.assign(value); }
-    inline GetQualificationScoreRequest& WithWorkerId(const Aws::String& value) { SetWorkerId(value); return *this;}
-    inline GetQualificationScoreRequest& WithWorkerId(Aws::String&& value) { SetWorkerId(std::move(value)); return *this;}
-    inline GetQualificationScoreRequest& WithWorkerId(const char* value) { SetWorkerId(value); return *this;}
+    template<typename WorkerIdT = Aws::String>
+    void SetWorkerId(WorkerIdT&& value) { m_workerIdHasBeenSet = true; m_workerId = std::forward<WorkerIdT>(value); }
+    template<typename WorkerIdT = Aws::String>
+    GetQualificationScoreRequest& WithWorkerId(WorkerIdT&& value) { SetWorkerId(std::forward<WorkerIdT>(value)); return *this;}
     ///@}
   private:
 

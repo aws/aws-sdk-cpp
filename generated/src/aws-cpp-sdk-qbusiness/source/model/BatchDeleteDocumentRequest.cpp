@@ -12,14 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDeleteDocumentRequest::BatchDeleteDocumentRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_indexIdHasBeenSet(false),
-    m_documentsHasBeenSet(false),
-    m_dataSourceSyncIdHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeleteDocumentRequest::SerializePayload() const
 {
   JsonValue payload;

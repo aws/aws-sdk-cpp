@@ -35,7 +35,7 @@ namespace Model
   class BatchCreateBillScenarioUsageModificationEntry
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API BatchCreateBillScenarioUsageModificationEntry();
+    AWS_BCMPRICINGCALCULATOR_API BatchCreateBillScenarioUsageModificationEntry() = default;
     AWS_BCMPRICINGCALCULATOR_API BatchCreateBillScenarioUsageModificationEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API BatchCreateBillScenarioUsageModificationEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,28 +48,24 @@ namespace Model
      * short abbreviation. For example, <code>AmazonEC2</code> and <code>AWSKMS</code>.
      * </p>
      */
-    inline const Aws::String& GetServiceCode() const{ return m_serviceCode; }
+    inline const Aws::String& GetServiceCode() const { return m_serviceCode; }
     inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
-    inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
-    inline void SetServiceCode(Aws::String&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::move(value); }
-    inline void SetServiceCode(const char* value) { m_serviceCodeHasBeenSet = true; m_serviceCode.assign(value); }
-    inline BatchCreateBillScenarioUsageModificationEntry& WithServiceCode(const Aws::String& value) { SetServiceCode(value); return *this;}
-    inline BatchCreateBillScenarioUsageModificationEntry& WithServiceCode(Aws::String&& value) { SetServiceCode(std::move(value)); return *this;}
-    inline BatchCreateBillScenarioUsageModificationEntry& WithServiceCode(const char* value) { SetServiceCode(value); return *this;}
+    template<typename ServiceCodeT = Aws::String>
+    void SetServiceCode(ServiceCodeT&& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = std::forward<ServiceCodeT>(value); }
+    template<typename ServiceCodeT = Aws::String>
+    BatchCreateBillScenarioUsageModificationEntry& WithServiceCode(ServiceCodeT&& value) { SetServiceCode(std::forward<ServiceCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Describes the usage details of the usage line item. </p>
      */
-    inline const Aws::String& GetUsageType() const{ return m_usageType; }
+    inline const Aws::String& GetUsageType() const { return m_usageType; }
     inline bool UsageTypeHasBeenSet() const { return m_usageTypeHasBeenSet; }
-    inline void SetUsageType(const Aws::String& value) { m_usageTypeHasBeenSet = true; m_usageType = value; }
-    inline void SetUsageType(Aws::String&& value) { m_usageTypeHasBeenSet = true; m_usageType = std::move(value); }
-    inline void SetUsageType(const char* value) { m_usageTypeHasBeenSet = true; m_usageType.assign(value); }
-    inline BatchCreateBillScenarioUsageModificationEntry& WithUsageType(const Aws::String& value) { SetUsageType(value); return *this;}
-    inline BatchCreateBillScenarioUsageModificationEntry& WithUsageType(Aws::String&& value) { SetUsageType(std::move(value)); return *this;}
-    inline BatchCreateBillScenarioUsageModificationEntry& WithUsageType(const char* value) { SetUsageType(value); return *this;}
+    template<typename UsageTypeT = Aws::String>
+    void SetUsageType(UsageTypeT&& value) { m_usageTypeHasBeenSet = true; m_usageType = std::forward<UsageTypeT>(value); }
+    template<typename UsageTypeT = Aws::String>
+    BatchCreateBillScenarioUsageModificationEntry& WithUsageType(UsageTypeT&& value) { SetUsageType(std::forward<UsageTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,28 +75,24 @@ namespace Model
      * example, <code>RunInstances</code> indicates the operation of an Amazon EC2
      * instance. </p>
      */
-    inline const Aws::String& GetOperation() const{ return m_operation; }
+    inline const Aws::String& GetOperation() const { return m_operation; }
     inline bool OperationHasBeenSet() const { return m_operationHasBeenSet; }
-    inline void SetOperation(const Aws::String& value) { m_operationHasBeenSet = true; m_operation = value; }
-    inline void SetOperation(Aws::String&& value) { m_operationHasBeenSet = true; m_operation = std::move(value); }
-    inline void SetOperation(const char* value) { m_operationHasBeenSet = true; m_operation.assign(value); }
-    inline BatchCreateBillScenarioUsageModificationEntry& WithOperation(const Aws::String& value) { SetOperation(value); return *this;}
-    inline BatchCreateBillScenarioUsageModificationEntry& WithOperation(Aws::String&& value) { SetOperation(std::move(value)); return *this;}
-    inline BatchCreateBillScenarioUsageModificationEntry& WithOperation(const char* value) { SetOperation(value); return *this;}
+    template<typename OperationT = Aws::String>
+    void SetOperation(OperationT&& value) { m_operationHasBeenSet = true; m_operation = std::forward<OperationT>(value); }
+    template<typename OperationT = Aws::String>
+    BatchCreateBillScenarioUsageModificationEntry& WithOperation(OperationT&& value) { SetOperation(std::forward<OperationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Availability Zone that this usage line uses. </p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-    inline BatchCreateBillScenarioUsageModificationEntry& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline BatchCreateBillScenarioUsageModificationEntry& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline BatchCreateBillScenarioUsageModificationEntry& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    BatchCreateBillScenarioUsageModificationEntry& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,28 +101,24 @@ namespace Model
      * valid string. This key is useful to identify errors associated with any usage
      * entry as any error is returned with this key. </p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline BatchCreateBillScenarioUsageModificationEntry& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline BatchCreateBillScenarioUsageModificationEntry& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline BatchCreateBillScenarioUsageModificationEntry& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    BatchCreateBillScenarioUsageModificationEntry& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> An optional group identifier for the usage modification. </p>
      */
-    inline const Aws::String& GetGroup() const{ return m_group; }
+    inline const Aws::String& GetGroup() const { return m_group; }
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-    inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
-    inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-    inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
-    inline BatchCreateBillScenarioUsageModificationEntry& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
-    inline BatchCreateBillScenarioUsageModificationEntry& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
-    inline BatchCreateBillScenarioUsageModificationEntry& WithGroup(const char* value) { SetGroup(value); return *this;}
+    template<typename GroupT = Aws::String>
+    void SetGroup(GroupT&& value) { m_groupHasBeenSet = true; m_group = std::forward<GroupT>(value); }
+    template<typename GroupT = Aws::String>
+    BatchCreateBillScenarioUsageModificationEntry& WithGroup(GroupT&& value) { SetGroup(std::forward<GroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,14 +126,12 @@ namespace Model
      * <p> The Amazon Web Services account ID to which this usage will be applied to.
      * </p>
      */
-    inline const Aws::String& GetUsageAccountId() const{ return m_usageAccountId; }
+    inline const Aws::String& GetUsageAccountId() const { return m_usageAccountId; }
     inline bool UsageAccountIdHasBeenSet() const { return m_usageAccountIdHasBeenSet; }
-    inline void SetUsageAccountId(const Aws::String& value) { m_usageAccountIdHasBeenSet = true; m_usageAccountId = value; }
-    inline void SetUsageAccountId(Aws::String&& value) { m_usageAccountIdHasBeenSet = true; m_usageAccountId = std::move(value); }
-    inline void SetUsageAccountId(const char* value) { m_usageAccountIdHasBeenSet = true; m_usageAccountId.assign(value); }
-    inline BatchCreateBillScenarioUsageModificationEntry& WithUsageAccountId(const Aws::String& value) { SetUsageAccountId(value); return *this;}
-    inline BatchCreateBillScenarioUsageModificationEntry& WithUsageAccountId(Aws::String&& value) { SetUsageAccountId(std::move(value)); return *this;}
-    inline BatchCreateBillScenarioUsageModificationEntry& WithUsageAccountId(const char* value) { SetUsageAccountId(value); return *this;}
+    template<typename UsageAccountIdT = Aws::String>
+    void SetUsageAccountId(UsageAccountIdT&& value) { m_usageAccountIdHasBeenSet = true; m_usageAccountId = std::forward<UsageAccountIdT>(value); }
+    template<typename UsageAccountIdT = Aws::String>
+    BatchCreateBillScenarioUsageModificationEntry& WithUsageAccountId(UsageAccountIdT&& value) { SetUsageAccountId(std::forward<UsageAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,26 +139,26 @@ namespace Model
      * <p> The amount of usage you want to create for the service use you are modeling.
      * </p>
      */
-    inline const Aws::Vector<UsageAmount>& GetAmounts() const{ return m_amounts; }
+    inline const Aws::Vector<UsageAmount>& GetAmounts() const { return m_amounts; }
     inline bool AmountsHasBeenSet() const { return m_amountsHasBeenSet; }
-    inline void SetAmounts(const Aws::Vector<UsageAmount>& value) { m_amountsHasBeenSet = true; m_amounts = value; }
-    inline void SetAmounts(Aws::Vector<UsageAmount>&& value) { m_amountsHasBeenSet = true; m_amounts = std::move(value); }
-    inline BatchCreateBillScenarioUsageModificationEntry& WithAmounts(const Aws::Vector<UsageAmount>& value) { SetAmounts(value); return *this;}
-    inline BatchCreateBillScenarioUsageModificationEntry& WithAmounts(Aws::Vector<UsageAmount>&& value) { SetAmounts(std::move(value)); return *this;}
-    inline BatchCreateBillScenarioUsageModificationEntry& AddAmounts(const UsageAmount& value) { m_amountsHasBeenSet = true; m_amounts.push_back(value); return *this; }
-    inline BatchCreateBillScenarioUsageModificationEntry& AddAmounts(UsageAmount&& value) { m_amountsHasBeenSet = true; m_amounts.push_back(std::move(value)); return *this; }
+    template<typename AmountsT = Aws::Vector<UsageAmount>>
+    void SetAmounts(AmountsT&& value) { m_amountsHasBeenSet = true; m_amounts = std::forward<AmountsT>(value); }
+    template<typename AmountsT = Aws::Vector<UsageAmount>>
+    BatchCreateBillScenarioUsageModificationEntry& WithAmounts(AmountsT&& value) { SetAmounts(std::forward<AmountsT>(value)); return *this;}
+    template<typename AmountsT = UsageAmount>
+    BatchCreateBillScenarioUsageModificationEntry& AddAmounts(AmountsT&& value) { m_amountsHasBeenSet = true; m_amounts.emplace_back(std::forward<AmountsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> Historical usage data associated with this modification, if available. </p>
      */
-    inline const HistoricalUsageEntity& GetHistoricalUsage() const{ return m_historicalUsage; }
+    inline const HistoricalUsageEntity& GetHistoricalUsage() const { return m_historicalUsage; }
     inline bool HistoricalUsageHasBeenSet() const { return m_historicalUsageHasBeenSet; }
-    inline void SetHistoricalUsage(const HistoricalUsageEntity& value) { m_historicalUsageHasBeenSet = true; m_historicalUsage = value; }
-    inline void SetHistoricalUsage(HistoricalUsageEntity&& value) { m_historicalUsageHasBeenSet = true; m_historicalUsage = std::move(value); }
-    inline BatchCreateBillScenarioUsageModificationEntry& WithHistoricalUsage(const HistoricalUsageEntity& value) { SetHistoricalUsage(value); return *this;}
-    inline BatchCreateBillScenarioUsageModificationEntry& WithHistoricalUsage(HistoricalUsageEntity&& value) { SetHistoricalUsage(std::move(value)); return *this;}
+    template<typename HistoricalUsageT = HistoricalUsageEntity>
+    void SetHistoricalUsage(HistoricalUsageT&& value) { m_historicalUsageHasBeenSet = true; m_historicalUsage = std::forward<HistoricalUsageT>(value); }
+    template<typename HistoricalUsageT = HistoricalUsageEntity>
+    BatchCreateBillScenarioUsageModificationEntry& WithHistoricalUsage(HistoricalUsageT&& value) { SetHistoricalUsage(std::forward<HistoricalUsageT>(value)); return *this;}
     ///@}
   private:
 

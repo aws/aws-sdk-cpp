@@ -33,7 +33,7 @@ namespace Model
   class LinkedService
   {
   public:
-    AWS_ROUTE53_API LinkedService();
+    AWS_ROUTE53_API LinkedService() = default;
     AWS_ROUTE53_API LinkedService(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ROUTE53_API LinkedService& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,14 +46,12 @@ namespace Model
      * service that created the resource. When a resource is created by another
      * service, you can't edit or delete it using Amazon Route 53. </p>
      */
-    inline const Aws::String& GetServicePrincipal() const{ return m_servicePrincipal; }
+    inline const Aws::String& GetServicePrincipal() const { return m_servicePrincipal; }
     inline bool ServicePrincipalHasBeenSet() const { return m_servicePrincipalHasBeenSet; }
-    inline void SetServicePrincipal(const Aws::String& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = value; }
-    inline void SetServicePrincipal(Aws::String&& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = std::move(value); }
-    inline void SetServicePrincipal(const char* value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal.assign(value); }
-    inline LinkedService& WithServicePrincipal(const Aws::String& value) { SetServicePrincipal(value); return *this;}
-    inline LinkedService& WithServicePrincipal(Aws::String&& value) { SetServicePrincipal(std::move(value)); return *this;}
-    inline LinkedService& WithServicePrincipal(const char* value) { SetServicePrincipal(value); return *this;}
+    template<typename ServicePrincipalT = Aws::String>
+    void SetServicePrincipal(ServicePrincipalT&& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = std::forward<ServicePrincipalT>(value); }
+    template<typename ServicePrincipalT = Aws::String>
+    LinkedService& WithServicePrincipal(ServicePrincipalT&& value) { SetServicePrincipal(std::forward<ServicePrincipalT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * is created by another service, you can't edit or delete it using Amazon Route
      * 53. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline LinkedService& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline LinkedService& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline LinkedService& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    LinkedService& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 

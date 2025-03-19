@@ -22,7 +22,7 @@ namespace Model
   class UpdateAuthenticationProfileRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API UpdateAuthenticationProfileRequest();
+    AWS_CONNECT_API UpdateAuthenticationProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
     /**
      * <p>A unique identifier for the authentication profile. </p>
      */
-    inline const Aws::String& GetAuthenticationProfileId() const{ return m_authenticationProfileId; }
+    inline const Aws::String& GetAuthenticationProfileId() const { return m_authenticationProfileId; }
     inline bool AuthenticationProfileIdHasBeenSet() const { return m_authenticationProfileIdHasBeenSet; }
-    inline void SetAuthenticationProfileId(const Aws::String& value) { m_authenticationProfileIdHasBeenSet = true; m_authenticationProfileId = value; }
-    inline void SetAuthenticationProfileId(Aws::String&& value) { m_authenticationProfileIdHasBeenSet = true; m_authenticationProfileId = std::move(value); }
-    inline void SetAuthenticationProfileId(const char* value) { m_authenticationProfileIdHasBeenSet = true; m_authenticationProfileId.assign(value); }
-    inline UpdateAuthenticationProfileRequest& WithAuthenticationProfileId(const Aws::String& value) { SetAuthenticationProfileId(value); return *this;}
-    inline UpdateAuthenticationProfileRequest& WithAuthenticationProfileId(Aws::String&& value) { SetAuthenticationProfileId(std::move(value)); return *this;}
-    inline UpdateAuthenticationProfileRequest& WithAuthenticationProfileId(const char* value) { SetAuthenticationProfileId(value); return *this;}
+    template<typename AuthenticationProfileIdT = Aws::String>
+    void SetAuthenticationProfileId(AuthenticationProfileIdT&& value) { m_authenticationProfileIdHasBeenSet = true; m_authenticationProfileId = std::forward<AuthenticationProfileIdT>(value); }
+    template<typename AuthenticationProfileIdT = Aws::String>
+    UpdateAuthenticationProfileRequest& WithAuthenticationProfileId(AuthenticationProfileIdT&& value) { SetAuthenticationProfileId(std::forward<AuthenticationProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,42 +51,36 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline UpdateAuthenticationProfileRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline UpdateAuthenticationProfileRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline UpdateAuthenticationProfileRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    UpdateAuthenticationProfileRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name for the authentication profile.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateAuthenticationProfileRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateAuthenticationProfileRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateAuthenticationProfileRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateAuthenticationProfileRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description for the authentication profile.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateAuthenticationProfileRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateAuthenticationProfileRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateAuthenticationProfileRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateAuthenticationProfileRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,15 +90,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure
      * session timeouts</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllowedIps() const{ return m_allowedIps; }
+    inline const Aws::Vector<Aws::String>& GetAllowedIps() const { return m_allowedIps; }
     inline bool AllowedIpsHasBeenSet() const { return m_allowedIpsHasBeenSet; }
-    inline void SetAllowedIps(const Aws::Vector<Aws::String>& value) { m_allowedIpsHasBeenSet = true; m_allowedIps = value; }
-    inline void SetAllowedIps(Aws::Vector<Aws::String>&& value) { m_allowedIpsHasBeenSet = true; m_allowedIps = std::move(value); }
-    inline UpdateAuthenticationProfileRequest& WithAllowedIps(const Aws::Vector<Aws::String>& value) { SetAllowedIps(value); return *this;}
-    inline UpdateAuthenticationProfileRequest& WithAllowedIps(Aws::Vector<Aws::String>&& value) { SetAllowedIps(std::move(value)); return *this;}
-    inline UpdateAuthenticationProfileRequest& AddAllowedIps(const Aws::String& value) { m_allowedIpsHasBeenSet = true; m_allowedIps.push_back(value); return *this; }
-    inline UpdateAuthenticationProfileRequest& AddAllowedIps(Aws::String&& value) { m_allowedIpsHasBeenSet = true; m_allowedIps.push_back(std::move(value)); return *this; }
-    inline UpdateAuthenticationProfileRequest& AddAllowedIps(const char* value) { m_allowedIpsHasBeenSet = true; m_allowedIps.push_back(value); return *this; }
+    template<typename AllowedIpsT = Aws::Vector<Aws::String>>
+    void SetAllowedIps(AllowedIpsT&& value) { m_allowedIpsHasBeenSet = true; m_allowedIps = std::forward<AllowedIpsT>(value); }
+    template<typename AllowedIpsT = Aws::Vector<Aws::String>>
+    UpdateAuthenticationProfileRequest& WithAllowedIps(AllowedIpsT&& value) { SetAllowedIps(std::forward<AllowedIpsT>(value)); return *this;}
+    template<typename AllowedIpsT = Aws::String>
+    UpdateAuthenticationProfileRequest& AddAllowedIps(AllowedIpsT&& value) { m_allowedIpsHasBeenSet = true; m_allowedIps.emplace_back(std::forward<AllowedIpsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -118,15 +109,14 @@ namespace Model
      * IP-based access control</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      */
-    inline const Aws::Vector<Aws::String>& GetBlockedIps() const{ return m_blockedIps; }
+    inline const Aws::Vector<Aws::String>& GetBlockedIps() const { return m_blockedIps; }
     inline bool BlockedIpsHasBeenSet() const { return m_blockedIpsHasBeenSet; }
-    inline void SetBlockedIps(const Aws::Vector<Aws::String>& value) { m_blockedIpsHasBeenSet = true; m_blockedIps = value; }
-    inline void SetBlockedIps(Aws::Vector<Aws::String>&& value) { m_blockedIpsHasBeenSet = true; m_blockedIps = std::move(value); }
-    inline UpdateAuthenticationProfileRequest& WithBlockedIps(const Aws::Vector<Aws::String>& value) { SetBlockedIps(value); return *this;}
-    inline UpdateAuthenticationProfileRequest& WithBlockedIps(Aws::Vector<Aws::String>&& value) { SetBlockedIps(std::move(value)); return *this;}
-    inline UpdateAuthenticationProfileRequest& AddBlockedIps(const Aws::String& value) { m_blockedIpsHasBeenSet = true; m_blockedIps.push_back(value); return *this; }
-    inline UpdateAuthenticationProfileRequest& AddBlockedIps(Aws::String&& value) { m_blockedIpsHasBeenSet = true; m_blockedIps.push_back(std::move(value)); return *this; }
-    inline UpdateAuthenticationProfileRequest& AddBlockedIps(const char* value) { m_blockedIpsHasBeenSet = true; m_blockedIps.push_back(value); return *this; }
+    template<typename BlockedIpsT = Aws::Vector<Aws::String>>
+    void SetBlockedIps(BlockedIpsT&& value) { m_blockedIpsHasBeenSet = true; m_blockedIps = std::forward<BlockedIpsT>(value); }
+    template<typename BlockedIpsT = Aws::Vector<Aws::String>>
+    UpdateAuthenticationProfileRequest& WithBlockedIps(BlockedIpsT&& value) { SetBlockedIps(std::forward<BlockedIpsT>(value)); return *this;}
+    template<typename BlockedIpsT = Aws::String>
+    UpdateAuthenticationProfileRequest& AddBlockedIps(BlockedIpsT&& value) { m_blockedIpsHasBeenSet = true; m_blockedIps.emplace_back(std::forward<BlockedIpsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -138,7 +128,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/authentication-profiles.html#configure-session-timeouts">Configure
      * session timeouts</a> in the <i>Amazon Connect Administrator Guide</i>. </p>
      */
-    inline int GetPeriodicSessionDuration() const{ return m_periodicSessionDuration; }
+    inline int GetPeriodicSessionDuration() const { return m_periodicSessionDuration; }
     inline bool PeriodicSessionDurationHasBeenSet() const { return m_periodicSessionDurationHasBeenSet; }
     inline void SetPeriodicSessionDuration(int value) { m_periodicSessionDurationHasBeenSet = true; m_periodicSessionDuration = value; }
     inline UpdateAuthenticationProfileRequest& WithPeriodicSessionDuration(int value) { SetPeriodicSessionDuration(value); return *this;}
@@ -163,7 +153,7 @@ namespace Model
     Aws::Vector<Aws::String> m_blockedIps;
     bool m_blockedIpsHasBeenSet = false;
 
-    int m_periodicSessionDuration;
+    int m_periodicSessionDuration{0};
     bool m_periodicSessionDurationHasBeenSet = false;
   };
 

@@ -32,7 +32,7 @@ namespace Model
   class TestSetGenerationDataSource
   {
   public:
-    AWS_LEXMODELSV2_API TestSetGenerationDataSource();
+    AWS_LEXMODELSV2_API TestSetGenerationDataSource() = default;
     AWS_LEXMODELSV2_API TestSetGenerationDataSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API TestSetGenerationDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Contains information about the bot from which the conversation logs are
      * sourced.</p>
      */
-    inline const ConversationLogsDataSource& GetConversationLogsDataSource() const{ return m_conversationLogsDataSource; }
+    inline const ConversationLogsDataSource& GetConversationLogsDataSource() const { return m_conversationLogsDataSource; }
     inline bool ConversationLogsDataSourceHasBeenSet() const { return m_conversationLogsDataSourceHasBeenSet; }
-    inline void SetConversationLogsDataSource(const ConversationLogsDataSource& value) { m_conversationLogsDataSourceHasBeenSet = true; m_conversationLogsDataSource = value; }
-    inline void SetConversationLogsDataSource(ConversationLogsDataSource&& value) { m_conversationLogsDataSourceHasBeenSet = true; m_conversationLogsDataSource = std::move(value); }
-    inline TestSetGenerationDataSource& WithConversationLogsDataSource(const ConversationLogsDataSource& value) { SetConversationLogsDataSource(value); return *this;}
-    inline TestSetGenerationDataSource& WithConversationLogsDataSource(ConversationLogsDataSource&& value) { SetConversationLogsDataSource(std::move(value)); return *this;}
+    template<typename ConversationLogsDataSourceT = ConversationLogsDataSource>
+    void SetConversationLogsDataSource(ConversationLogsDataSourceT&& value) { m_conversationLogsDataSourceHasBeenSet = true; m_conversationLogsDataSource = std::forward<ConversationLogsDataSourceT>(value); }
+    template<typename ConversationLogsDataSourceT = ConversationLogsDataSource>
+    TestSetGenerationDataSource& WithConversationLogsDataSource(ConversationLogsDataSourceT&& value) { SetConversationLogsDataSource(std::forward<ConversationLogsDataSourceT>(value)); return *this;}
     ///@}
   private:
 

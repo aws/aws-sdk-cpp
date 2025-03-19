@@ -25,7 +25,7 @@ namespace Model
   class DeleteAuthorizerRequest : public APIGatewayRequest
   {
   public:
-    AWS_APIGATEWAY_API DeleteAuthorizerRequest();
+    AWS_APIGATEWAY_API DeleteAuthorizerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
     /**
      * <p>The string identifier of the associated RestApi.</p>
      */
-    inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
+    inline const Aws::String& GetRestApiId() const { return m_restApiId; }
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
-    inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
-    inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
-    inline DeleteAuthorizerRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
-    inline DeleteAuthorizerRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
-    inline DeleteAuthorizerRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+    template<typename RestApiIdT = Aws::String>
+    void SetRestApiId(RestApiIdT&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::forward<RestApiIdT>(value); }
+    template<typename RestApiIdT = Aws::String>
+    DeleteAuthorizerRequest& WithRestApiId(RestApiIdT&& value) { SetRestApiId(std::forward<RestApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the Authorizer resource.</p>
      */
-    inline const Aws::String& GetAuthorizerId() const{ return m_authorizerId; }
+    inline const Aws::String& GetAuthorizerId() const { return m_authorizerId; }
     inline bool AuthorizerIdHasBeenSet() const { return m_authorizerIdHasBeenSet; }
-    inline void SetAuthorizerId(const Aws::String& value) { m_authorizerIdHasBeenSet = true; m_authorizerId = value; }
-    inline void SetAuthorizerId(Aws::String&& value) { m_authorizerIdHasBeenSet = true; m_authorizerId = std::move(value); }
-    inline void SetAuthorizerId(const char* value) { m_authorizerIdHasBeenSet = true; m_authorizerId.assign(value); }
-    inline DeleteAuthorizerRequest& WithAuthorizerId(const Aws::String& value) { SetAuthorizerId(value); return *this;}
-    inline DeleteAuthorizerRequest& WithAuthorizerId(Aws::String&& value) { SetAuthorizerId(std::move(value)); return *this;}
-    inline DeleteAuthorizerRequest& WithAuthorizerId(const char* value) { SetAuthorizerId(value); return *this;}
+    template<typename AuthorizerIdT = Aws::String>
+    void SetAuthorizerId(AuthorizerIdT&& value) { m_authorizerIdHasBeenSet = true; m_authorizerId = std::forward<AuthorizerIdT>(value); }
+    template<typename AuthorizerIdT = Aws::String>
+    DeleteAuthorizerRequest& WithAuthorizerId(AuthorizerIdT&& value) { SetAuthorizerId(std::forward<AuthorizerIdT>(value)); return *this;}
     ///@}
   private:
 

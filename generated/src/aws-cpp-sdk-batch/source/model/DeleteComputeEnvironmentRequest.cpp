@@ -12,11 +12,6 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteComputeEnvironmentRequest::DeleteComputeEnvironmentRequest() : 
-    m_computeEnvironmentHasBeenSet(false)
-{
-}
-
 Aws::String DeleteComputeEnvironmentRequest::SerializePayload() const
 {
   JsonValue payload;

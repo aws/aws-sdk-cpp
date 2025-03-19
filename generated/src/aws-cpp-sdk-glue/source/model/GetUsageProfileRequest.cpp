@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetUsageProfileRequest::GetUsageProfileRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetUsageProfileRequest::SerializePayload() const
 {
   JsonValue payload;

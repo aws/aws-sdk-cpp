@@ -21,7 +21,7 @@ namespace Model
   class ListResourcesInProtectionGroupRequest : public ShieldRequest
   {
   public:
-    AWS_SHIELD_API ListResourcesInProtectionGroupRequest();
+    AWS_SHIELD_API ListResourcesInProtectionGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * group in lists and to manage the protection group, for example to update,
      * delete, or describe it. </p>
      */
-    inline const Aws::String& GetProtectionGroupId() const{ return m_protectionGroupId; }
+    inline const Aws::String& GetProtectionGroupId() const { return m_protectionGroupId; }
     inline bool ProtectionGroupIdHasBeenSet() const { return m_protectionGroupIdHasBeenSet; }
-    inline void SetProtectionGroupId(const Aws::String& value) { m_protectionGroupIdHasBeenSet = true; m_protectionGroupId = value; }
-    inline void SetProtectionGroupId(Aws::String&& value) { m_protectionGroupIdHasBeenSet = true; m_protectionGroupId = std::move(value); }
-    inline void SetProtectionGroupId(const char* value) { m_protectionGroupIdHasBeenSet = true; m_protectionGroupId.assign(value); }
-    inline ListResourcesInProtectionGroupRequest& WithProtectionGroupId(const Aws::String& value) { SetProtectionGroupId(value); return *this;}
-    inline ListResourcesInProtectionGroupRequest& WithProtectionGroupId(Aws::String&& value) { SetProtectionGroupId(std::move(value)); return *this;}
-    inline ListResourcesInProtectionGroupRequest& WithProtectionGroupId(const char* value) { SetProtectionGroupId(value); return *this;}
+    template<typename ProtectionGroupIdT = Aws::String>
+    void SetProtectionGroupId(ProtectionGroupIdT&& value) { m_protectionGroupIdHasBeenSet = true; m_protectionGroupId = std::forward<ProtectionGroupIdT>(value); }
+    template<typename ProtectionGroupIdT = Aws::String>
+    ListResourcesInProtectionGroupRequest& WithProtectionGroupId(ProtectionGroupIdT&& value) { SetProtectionGroupId(std::forward<ProtectionGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * value.</p> <p>On your first call to a list operation, leave this setting
      * empty.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListResourcesInProtectionGroupRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListResourcesInProtectionGroupRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListResourcesInProtectionGroupRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListResourcesInProtectionGroupRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,7 +79,7 @@ namespace Model
      * remaining, Shield Advanced will always also return a <code>NextToken</code>
      * value in the response.</p> <p>The default setting is 20.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListResourcesInProtectionGroupRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -96,7 +92,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

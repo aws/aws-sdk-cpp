@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsLambdaFunctionTracingConfig::AwsLambdaFunctionTracingConfig() : 
-    m_modeHasBeenSet(false)
-{
-}
-
 AwsLambdaFunctionTracingConfig::AwsLambdaFunctionTracingConfig(JsonView jsonValue)
-  : AwsLambdaFunctionTracingConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsLambdaFunctionTracingConfig& AwsLambdaFunctionTracingConfig::operator =(JsonV
   if(jsonValue.ValueExists("Mode"))
   {
     m_mode = jsonValue.GetString("Mode");
-
     m_modeHasBeenSet = true;
   }
-
   return *this;
 }
 

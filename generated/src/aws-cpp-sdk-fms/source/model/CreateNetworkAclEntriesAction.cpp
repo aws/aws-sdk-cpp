@@ -18,17 +18,7 @@ namespace FMS
 namespace Model
 {
 
-CreateNetworkAclEntriesAction::CreateNetworkAclEntriesAction() : 
-    m_descriptionHasBeenSet(false),
-    m_networkAclIdHasBeenSet(false),
-    m_networkAclEntriesToBeCreatedHasBeenSet(false),
-    m_fMSCanRemediate(false),
-    m_fMSCanRemediateHasBeenSet(false)
-{
-}
-
 CreateNetworkAclEntriesAction::CreateNetworkAclEntriesAction(JsonView jsonValue)
-  : CreateNetworkAclEntriesAction()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ CreateNetworkAclEntriesAction& CreateNetworkAclEntriesAction::operator =(JsonVie
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkAclId"))
   {
     m_networkAclId = jsonValue.GetObject("NetworkAclId");
-
     m_networkAclIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkAclEntriesToBeCreated"))
   {
     Aws::Utils::Array<JsonView> networkAclEntriesToBeCreatedJsonList = jsonValue.GetArray("NetworkAclEntriesToBeCreated");
@@ -58,14 +44,11 @@ CreateNetworkAclEntriesAction& CreateNetworkAclEntriesAction::operator =(JsonVie
     }
     m_networkAclEntriesToBeCreatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FMSCanRemediate"))
   {
     m_fMSCanRemediate = jsonValue.GetBool("FMSCanRemediate");
-
     m_fMSCanRemediateHasBeenSet = true;
   }
-
   return *this;
 }
 

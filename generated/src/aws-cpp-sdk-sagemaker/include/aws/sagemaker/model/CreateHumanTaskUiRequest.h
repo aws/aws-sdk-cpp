@@ -24,7 +24,7 @@ namespace Model
   class CreateHumanTaskUiRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API CreateHumanTaskUiRequest();
+    AWS_SAGEMAKER_API CreateHumanTaskUiRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,24 +41,22 @@ namespace Model
     /**
      * <p>The name of the user interface you are creating.</p>
      */
-    inline const Aws::String& GetHumanTaskUiName() const{ return m_humanTaskUiName; }
+    inline const Aws::String& GetHumanTaskUiName() const { return m_humanTaskUiName; }
     inline bool HumanTaskUiNameHasBeenSet() const { return m_humanTaskUiNameHasBeenSet; }
-    inline void SetHumanTaskUiName(const Aws::String& value) { m_humanTaskUiNameHasBeenSet = true; m_humanTaskUiName = value; }
-    inline void SetHumanTaskUiName(Aws::String&& value) { m_humanTaskUiNameHasBeenSet = true; m_humanTaskUiName = std::move(value); }
-    inline void SetHumanTaskUiName(const char* value) { m_humanTaskUiNameHasBeenSet = true; m_humanTaskUiName.assign(value); }
-    inline CreateHumanTaskUiRequest& WithHumanTaskUiName(const Aws::String& value) { SetHumanTaskUiName(value); return *this;}
-    inline CreateHumanTaskUiRequest& WithHumanTaskUiName(Aws::String&& value) { SetHumanTaskUiName(std::move(value)); return *this;}
-    inline CreateHumanTaskUiRequest& WithHumanTaskUiName(const char* value) { SetHumanTaskUiName(value); return *this;}
+    template<typename HumanTaskUiNameT = Aws::String>
+    void SetHumanTaskUiName(HumanTaskUiNameT&& value) { m_humanTaskUiNameHasBeenSet = true; m_humanTaskUiName = std::forward<HumanTaskUiNameT>(value); }
+    template<typename HumanTaskUiNameT = Aws::String>
+    CreateHumanTaskUiRequest& WithHumanTaskUiName(HumanTaskUiNameT&& value) { SetHumanTaskUiName(std::forward<HumanTaskUiNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const UiTemplate& GetUiTemplate() const{ return m_uiTemplate; }
+    inline const UiTemplate& GetUiTemplate() const { return m_uiTemplate; }
     inline bool UiTemplateHasBeenSet() const { return m_uiTemplateHasBeenSet; }
-    inline void SetUiTemplate(const UiTemplate& value) { m_uiTemplateHasBeenSet = true; m_uiTemplate = value; }
-    inline void SetUiTemplate(UiTemplate&& value) { m_uiTemplateHasBeenSet = true; m_uiTemplate = std::move(value); }
-    inline CreateHumanTaskUiRequest& WithUiTemplate(const UiTemplate& value) { SetUiTemplate(value); return *this;}
-    inline CreateHumanTaskUiRequest& WithUiTemplate(UiTemplate&& value) { SetUiTemplate(std::move(value)); return *this;}
+    template<typename UiTemplateT = UiTemplate>
+    void SetUiTemplate(UiTemplateT&& value) { m_uiTemplateHasBeenSet = true; m_uiTemplate = std::forward<UiTemplateT>(value); }
+    template<typename UiTemplateT = UiTemplate>
+    CreateHumanTaskUiRequest& WithUiTemplate(UiTemplateT&& value) { SetUiTemplate(std::forward<UiTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,14 @@ namespace Model
      * organize a human review workflow user interface. Each tag consists of a key and
      * a value, both of which you define.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateHumanTaskUiRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateHumanTaskUiRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateHumanTaskUiRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateHumanTaskUiRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateHumanTaskUiRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateHumanTaskUiRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

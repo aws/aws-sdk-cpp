@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeExpressionsResult::DescribeExpressionsResult()
-{
-}
-
 DescribeExpressionsResult::DescribeExpressionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ DescribeExpressionsResult& DescribeExpressionsResult::operator =(const Aws::Amaz
     if(!expressionsNode.IsNull())
     {
       XmlNode expressionsMember = expressionsNode.FirstChild("member");
+      m_expressionsHasBeenSet = !expressionsMember.IsNull();
       while(!expressionsMember.IsNull())
       {
         m_expressions.push_back(expressionsMember);
         expressionsMember = expressionsMember.NextNode("member");
       }
 
+      m_expressionsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudSearch::Model::DescribeExpressionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

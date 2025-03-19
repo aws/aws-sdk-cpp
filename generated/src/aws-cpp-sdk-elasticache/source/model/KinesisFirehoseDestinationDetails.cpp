@@ -20,13 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-KinesisFirehoseDestinationDetails::KinesisFirehoseDestinationDetails() : 
-    m_deliveryStreamHasBeenSet(false)
-{
-}
-
 KinesisFirehoseDestinationDetails::KinesisFirehoseDestinationDetails(const XmlNode& xmlNode)
-  : KinesisFirehoseDestinationDetails()
 {
   *this = xmlNode;
 }

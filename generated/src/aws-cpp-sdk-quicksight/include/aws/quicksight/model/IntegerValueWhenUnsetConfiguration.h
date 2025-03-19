@@ -33,7 +33,7 @@ namespace Model
   class IntegerValueWhenUnsetConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API IntegerValueWhenUnsetConfiguration();
+    AWS_QUICKSIGHT_API IntegerValueWhenUnsetConfiguration() = default;
     AWS_QUICKSIGHT_API IntegerValueWhenUnsetConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API IntegerValueWhenUnsetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,29 +46,27 @@ namespace Model
      * value.</p> </li> <li> <p> <code>NULL</code>: The <code>NULL</code> value.</p>
      * </li> </ul>
      */
-    inline const ValueWhenUnsetOption& GetValueWhenUnsetOption() const{ return m_valueWhenUnsetOption; }
+    inline ValueWhenUnsetOption GetValueWhenUnsetOption() const { return m_valueWhenUnsetOption; }
     inline bool ValueWhenUnsetOptionHasBeenSet() const { return m_valueWhenUnsetOptionHasBeenSet; }
-    inline void SetValueWhenUnsetOption(const ValueWhenUnsetOption& value) { m_valueWhenUnsetOptionHasBeenSet = true; m_valueWhenUnsetOption = value; }
-    inline void SetValueWhenUnsetOption(ValueWhenUnsetOption&& value) { m_valueWhenUnsetOptionHasBeenSet = true; m_valueWhenUnsetOption = std::move(value); }
-    inline IntegerValueWhenUnsetConfiguration& WithValueWhenUnsetOption(const ValueWhenUnsetOption& value) { SetValueWhenUnsetOption(value); return *this;}
-    inline IntegerValueWhenUnsetConfiguration& WithValueWhenUnsetOption(ValueWhenUnsetOption&& value) { SetValueWhenUnsetOption(std::move(value)); return *this;}
+    inline void SetValueWhenUnsetOption(ValueWhenUnsetOption value) { m_valueWhenUnsetOptionHasBeenSet = true; m_valueWhenUnsetOption = value; }
+    inline IntegerValueWhenUnsetConfiguration& WithValueWhenUnsetOption(ValueWhenUnsetOption value) { SetValueWhenUnsetOption(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A custom value that's used when the value of a parameter isn't set.</p>
      */
-    inline long long GetCustomValue() const{ return m_customValue; }
+    inline long long GetCustomValue() const { return m_customValue; }
     inline bool CustomValueHasBeenSet() const { return m_customValueHasBeenSet; }
     inline void SetCustomValue(long long value) { m_customValueHasBeenSet = true; m_customValue = value; }
     inline IntegerValueWhenUnsetConfiguration& WithCustomValue(long long value) { SetCustomValue(value); return *this;}
     ///@}
   private:
 
-    ValueWhenUnsetOption m_valueWhenUnsetOption;
+    ValueWhenUnsetOption m_valueWhenUnsetOption{ValueWhenUnsetOption::NOT_SET};
     bool m_valueWhenUnsetOptionHasBeenSet = false;
 
-    long long m_customValue;
+    long long m_customValue{0};
     bool m_customValueHasBeenSet = false;
   };
 

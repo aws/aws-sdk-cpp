@@ -34,7 +34,7 @@ namespace Model
   class PodIdentityAssociation
   {
   public:
-    AWS_EKSAUTH_API PodIdentityAssociation();
+    AWS_EKSAUTH_API PodIdentityAssociation() = default;
     AWS_EKSAUTH_API PodIdentityAssociation(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKSAUTH_API PodIdentityAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKSAUTH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the EKS Pod Identity association.</p>
      */
-    inline const Aws::String& GetAssociationArn() const{ return m_associationArn; }
+    inline const Aws::String& GetAssociationArn() const { return m_associationArn; }
     inline bool AssociationArnHasBeenSet() const { return m_associationArnHasBeenSet; }
-    inline void SetAssociationArn(const Aws::String& value) { m_associationArnHasBeenSet = true; m_associationArn = value; }
-    inline void SetAssociationArn(Aws::String&& value) { m_associationArnHasBeenSet = true; m_associationArn = std::move(value); }
-    inline void SetAssociationArn(const char* value) { m_associationArnHasBeenSet = true; m_associationArn.assign(value); }
-    inline PodIdentityAssociation& WithAssociationArn(const Aws::String& value) { SetAssociationArn(value); return *this;}
-    inline PodIdentityAssociation& WithAssociationArn(Aws::String&& value) { SetAssociationArn(std::move(value)); return *this;}
-    inline PodIdentityAssociation& WithAssociationArn(const char* value) { SetAssociationArn(value); return *this;}
+    template<typename AssociationArnT = Aws::String>
+    void SetAssociationArn(AssociationArnT&& value) { m_associationArnHasBeenSet = true; m_associationArn = std::forward<AssociationArnT>(value); }
+    template<typename AssociationArnT = Aws::String>
+    PodIdentityAssociation& WithAssociationArn(AssociationArnT&& value) { SetAssociationArn(std::forward<AssociationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the association.</p>
      */
-    inline const Aws::String& GetAssociationId() const{ return m_associationId; }
+    inline const Aws::String& GetAssociationId() const { return m_associationId; }
     inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
-    inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
-    inline void SetAssociationId(Aws::String&& value) { m_associationIdHasBeenSet = true; m_associationId = std::move(value); }
-    inline void SetAssociationId(const char* value) { m_associationIdHasBeenSet = true; m_associationId.assign(value); }
-    inline PodIdentityAssociation& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
-    inline PodIdentityAssociation& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
-    inline PodIdentityAssociation& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+    template<typename AssociationIdT = Aws::String>
+    void SetAssociationId(AssociationIdT&& value) { m_associationIdHasBeenSet = true; m_associationId = std::forward<AssociationIdT>(value); }
+    template<typename AssociationIdT = Aws::String>
+    PodIdentityAssociation& WithAssociationId(AssociationIdT&& value) { SetAssociationId(std::forward<AssociationIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace KinesisAnalytics
 namespace Model
 {
 
-InputLambdaProcessorUpdate::InputLambdaProcessorUpdate() : 
-    m_resourceARNUpdateHasBeenSet(false),
-    m_roleARNUpdateHasBeenSet(false)
-{
-}
-
 InputLambdaProcessorUpdate::InputLambdaProcessorUpdate(JsonView jsonValue)
-  : InputLambdaProcessorUpdate()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InputLambdaProcessorUpdate& InputLambdaProcessorUpdate::operator =(JsonView json
   if(jsonValue.ValueExists("ResourceARNUpdate"))
   {
     m_resourceARNUpdate = jsonValue.GetString("ResourceARNUpdate");
-
     m_resourceARNUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleARNUpdate"))
   {
     m_roleARNUpdate = jsonValue.GetString("RoleARNUpdate");
-
     m_roleARNUpdateHasBeenSet = true;
   }
-
   return *this;
 }
 

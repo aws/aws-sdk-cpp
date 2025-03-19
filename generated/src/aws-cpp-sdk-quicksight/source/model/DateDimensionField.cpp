@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DateDimensionField::DateDimensionField() : 
-    m_fieldIdHasBeenSet(false),
-    m_columnHasBeenSet(false),
-    m_dateGranularity(TimeGranularity::NOT_SET),
-    m_dateGranularityHasBeenSet(false),
-    m_hierarchyIdHasBeenSet(false),
-    m_formatConfigurationHasBeenSet(false)
-{
-}
-
 DateDimensionField::DateDimensionField(JsonView jsonValue)
-  : DateDimensionField()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ DateDimensionField& DateDimensionField::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldId"))
   {
     m_fieldId = jsonValue.GetString("FieldId");
-
     m_fieldIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Column"))
   {
     m_column = jsonValue.GetObject("Column");
-
     m_columnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateGranularity"))
   {
     m_dateGranularity = TimeGranularityMapper::GetTimeGranularityForName(jsonValue.GetString("DateGranularity"));
-
     m_dateGranularityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HierarchyId"))
   {
     m_hierarchyId = jsonValue.GetString("HierarchyId");
-
     m_hierarchyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FormatConfiguration"))
   {
     m_formatConfiguration = jsonValue.GetObject("FormatConfiguration");
-
     m_formatConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

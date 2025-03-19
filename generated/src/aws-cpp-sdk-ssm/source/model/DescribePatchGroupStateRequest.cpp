@@ -12,11 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribePatchGroupStateRequest::DescribePatchGroupStateRequest() : 
-    m_patchGroupHasBeenSet(false)
-{
-}
-
 Aws::String DescribePatchGroupStateRequest::SerializePayload() const
 {
   JsonValue payload;

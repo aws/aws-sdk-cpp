@@ -31,7 +31,7 @@ namespace Model
   class IotAnalyticsAction
   {
   public:
-    AWS_IOT_API IotAnalyticsAction();
+    AWS_IOT_API IotAnalyticsAction() = default;
     AWS_IOT_API IotAnalyticsAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API IotAnalyticsAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
      * <p>(deprecated) The ARN of the IoT Analytics channel to which message data will
      * be sent.</p>
      */
-    inline const Aws::String& GetChannelArn() const{ return m_channelArn; }
+    inline const Aws::String& GetChannelArn() const { return m_channelArn; }
     inline bool ChannelArnHasBeenSet() const { return m_channelArnHasBeenSet; }
-    inline void SetChannelArn(const Aws::String& value) { m_channelArnHasBeenSet = true; m_channelArn = value; }
-    inline void SetChannelArn(Aws::String&& value) { m_channelArnHasBeenSet = true; m_channelArn = std::move(value); }
-    inline void SetChannelArn(const char* value) { m_channelArnHasBeenSet = true; m_channelArn.assign(value); }
-    inline IotAnalyticsAction& WithChannelArn(const Aws::String& value) { SetChannelArn(value); return *this;}
-    inline IotAnalyticsAction& WithChannelArn(Aws::String&& value) { SetChannelArn(std::move(value)); return *this;}
-    inline IotAnalyticsAction& WithChannelArn(const char* value) { SetChannelArn(value); return *this;}
+    template<typename ChannelArnT = Aws::String>
+    void SetChannelArn(ChannelArnT&& value) { m_channelArnHasBeenSet = true; m_channelArn = std::forward<ChannelArnT>(value); }
+    template<typename ChannelArnT = Aws::String>
+    IotAnalyticsAction& WithChannelArn(ChannelArnT&& value) { SetChannelArn(std::forward<ChannelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the IoT Analytics channel to which message data will be sent.</p>
      */
-    inline const Aws::String& GetChannelName() const{ return m_channelName; }
+    inline const Aws::String& GetChannelName() const { return m_channelName; }
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
-    inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
-    inline void SetChannelName(Aws::String&& value) { m_channelNameHasBeenSet = true; m_channelName = std::move(value); }
-    inline void SetChannelName(const char* value) { m_channelNameHasBeenSet = true; m_channelName.assign(value); }
-    inline IotAnalyticsAction& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
-    inline IotAnalyticsAction& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
-    inline IotAnalyticsAction& WithChannelName(const char* value) { SetChannelName(value); return *this;}
+    template<typename ChannelNameT = Aws::String>
+    void SetChannelName(ChannelNameT&& value) { m_channelNameHasBeenSet = true; m_channelName = std::forward<ChannelNameT>(value); }
+    template<typename ChannelNameT = Aws::String>
+    IotAnalyticsAction& WithChannelName(ChannelNameT&& value) { SetChannelName(std::forward<ChannelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,7 +72,7 @@ namespace Model
      * <code>BatchPutMessage</code> </a> to the IoT Analytics channel. The resulting
      * array can't have more than 100 messages.</p>
      */
-    inline bool GetBatchMode() const{ return m_batchMode; }
+    inline bool GetBatchMode() const { return m_batchMode; }
     inline bool BatchModeHasBeenSet() const { return m_batchModeHasBeenSet; }
     inline void SetBatchMode(bool value) { m_batchModeHasBeenSet = true; m_batchMode = value; }
     inline IotAnalyticsAction& WithBatchMode(bool value) { SetBatchMode(value); return *this;}
@@ -87,14 +83,12 @@ namespace Model
      * <p>The ARN of the role which has a policy that grants IoT Analytics permission
      * to send message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline IotAnalyticsAction& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline IotAnalyticsAction& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline IotAnalyticsAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    IotAnalyticsAction& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -104,7 +98,7 @@ namespace Model
     Aws::String m_channelName;
     bool m_channelNameHasBeenSet = false;
 
-    bool m_batchMode;
+    bool m_batchMode{false};
     bool m_batchModeHasBeenSet = false;
 
     Aws::String m_roleArn;

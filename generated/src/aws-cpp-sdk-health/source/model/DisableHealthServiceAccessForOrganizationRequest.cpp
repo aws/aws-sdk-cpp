@@ -12,10 +12,6 @@ using namespace Aws::Health::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisableHealthServiceAccessForOrganizationRequest::DisableHealthServiceAccessForOrganizationRequest()
-{
-}
-
 Aws::String DisableHealthServiceAccessForOrganizationRequest::SerializePayload() const
 {
   return "{}";

@@ -18,13 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-S3DestinationConfiguration::S3DestinationConfiguration() : 
-    m_locationHasBeenSet(false)
-{
-}
-
 S3DestinationConfiguration::S3DestinationConfiguration(JsonView jsonValue)
-  : S3DestinationConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ S3DestinationConfiguration& S3DestinationConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetString("location");
-
     m_locationHasBeenSet = true;
   }
-
   return *this;
 }
 

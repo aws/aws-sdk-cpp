@@ -20,24 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessInstanceUserTrustProviderClientConfiguration::VerifiedAccessInstanceUserTrustProviderClientConfiguration() : 
-    m_type(UserTrustProviderType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_scopesHasBeenSet(false),
-    m_issuerHasBeenSet(false),
-    m_authorizationEndpointHasBeenSet(false),
-    m_publicSigningKeyEndpointHasBeenSet(false),
-    m_tokenEndpointHasBeenSet(false),
-    m_userInfoEndpointHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false),
-    m_pkceEnabled(false),
-    m_pkceEnabledHasBeenSet(false)
-{
-}
-
 VerifiedAccessInstanceUserTrustProviderClientConfiguration::VerifiedAccessInstanceUserTrustProviderClientConfiguration(const XmlNode& xmlNode)
-  : VerifiedAccessInstanceUserTrustProviderClientConfiguration()
 {
   *this = xmlNode;
 }
@@ -51,7 +34,7 @@ VerifiedAccessInstanceUserTrustProviderClientConfiguration& VerifiedAccessInstan
     XmlNode typeNode = resultNode.FirstChild("type");
     if(!typeNode.IsNull())
     {
-      m_type = UserTrustProviderTypeMapper::GetUserTrustProviderTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = UserTrustProviderTypeMapper::GetUserTrustProviderTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode scopesNode = resultNode.FirstChild("scopes");

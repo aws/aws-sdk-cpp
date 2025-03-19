@@ -18,16 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-BatchCreateBillScenarioUsageModificationError::BatchCreateBillScenarioUsageModificationError() : 
-    m_keyHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_errorCode(BatchCreateBillScenarioUsageModificationErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false)
-{
-}
-
 BatchCreateBillScenarioUsageModificationError::BatchCreateBillScenarioUsageModificationError(JsonView jsonValue)
-  : BatchCreateBillScenarioUsageModificationError()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BatchCreateBillScenarioUsageModificationError& BatchCreateBillScenarioUsageModif
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = BatchCreateBillScenarioUsageModificationErrorCodeMapper::GetBatchCreateBillScenarioUsageModificationErrorCodeForName(jsonValue.GetString("errorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

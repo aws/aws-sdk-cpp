@@ -22,7 +22,7 @@ namespace Model
   class ListCustomLineItemsRequest : public BillingConductorRequest
   {
   public:
-    AWS_BILLINGCONDUCTOR_API ListCustomLineItemsRequest();
+    AWS_BILLINGCONDUCTOR_API ListCustomLineItemsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,21 +37,19 @@ namespace Model
     /**
      * <p> The preferred billing period to get custom line items (FFLIs). </p>
      */
-    inline const Aws::String& GetBillingPeriod() const{ return m_billingPeriod; }
+    inline const Aws::String& GetBillingPeriod() const { return m_billingPeriod; }
     inline bool BillingPeriodHasBeenSet() const { return m_billingPeriodHasBeenSet; }
-    inline void SetBillingPeriod(const Aws::String& value) { m_billingPeriodHasBeenSet = true; m_billingPeriod = value; }
-    inline void SetBillingPeriod(Aws::String&& value) { m_billingPeriodHasBeenSet = true; m_billingPeriod = std::move(value); }
-    inline void SetBillingPeriod(const char* value) { m_billingPeriodHasBeenSet = true; m_billingPeriod.assign(value); }
-    inline ListCustomLineItemsRequest& WithBillingPeriod(const Aws::String& value) { SetBillingPeriod(value); return *this;}
-    inline ListCustomLineItemsRequest& WithBillingPeriod(Aws::String&& value) { SetBillingPeriod(std::move(value)); return *this;}
-    inline ListCustomLineItemsRequest& WithBillingPeriod(const char* value) { SetBillingPeriod(value); return *this;}
+    template<typename BillingPeriodT = Aws::String>
+    void SetBillingPeriod(BillingPeriodT&& value) { m_billingPeriodHasBeenSet = true; m_billingPeriod = std::forward<BillingPeriodT>(value); }
+    template<typename BillingPeriodT = Aws::String>
+    ListCustomLineItemsRequest& WithBillingPeriod(BillingPeriodT&& value) { SetBillingPeriod(std::forward<BillingPeriodT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The maximum number of billing groups to retrieve. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListCustomLineItemsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -62,14 +60,12 @@ namespace Model
      * <p> The pagination token that's used on subsequent calls to get custom line
      * items (FFLIs). </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListCustomLineItemsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCustomLineItemsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCustomLineItemsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCustomLineItemsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,19 +74,19 @@ namespace Model
      * names and/or billing group Amazon Resource Names (ARNs) to retrieve FFLI
      * information.</p>
      */
-    inline const ListCustomLineItemsFilter& GetFilters() const{ return m_filters; }
+    inline const ListCustomLineItemsFilter& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const ListCustomLineItemsFilter& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(ListCustomLineItemsFilter&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListCustomLineItemsRequest& WithFilters(const ListCustomLineItemsFilter& value) { SetFilters(value); return *this;}
-    inline ListCustomLineItemsRequest& WithFilters(ListCustomLineItemsFilter&& value) { SetFilters(std::move(value)); return *this;}
+    template<typename FiltersT = ListCustomLineItemsFilter>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = ListCustomLineItemsFilter>
+    ListCustomLineItemsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_billingPeriod;
     bool m_billingPeriodHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

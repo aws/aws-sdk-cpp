@@ -27,7 +27,7 @@ namespace Model
   class UpdateNetworkRequest : public MediaLiveRequest
   {
   public:
-    AWS_MEDIALIVE_API UpdateNetworkRequest();
+    AWS_MEDIALIVE_API UpdateNetworkRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,14 @@ namespace Model
      * Bridge and NAT networks) and for output destinations (only in Bridge networks).
      * Each IpPoolUpdateRequest specifies one CIDR block.
      */
-    inline const Aws::Vector<IpPoolUpdateRequest>& GetIpPools() const{ return m_ipPools; }
+    inline const Aws::Vector<IpPoolUpdateRequest>& GetIpPools() const { return m_ipPools; }
     inline bool IpPoolsHasBeenSet() const { return m_ipPoolsHasBeenSet; }
-    inline void SetIpPools(const Aws::Vector<IpPoolUpdateRequest>& value) { m_ipPoolsHasBeenSet = true; m_ipPools = value; }
-    inline void SetIpPools(Aws::Vector<IpPoolUpdateRequest>&& value) { m_ipPoolsHasBeenSet = true; m_ipPools = std::move(value); }
-    inline UpdateNetworkRequest& WithIpPools(const Aws::Vector<IpPoolUpdateRequest>& value) { SetIpPools(value); return *this;}
-    inline UpdateNetworkRequest& WithIpPools(Aws::Vector<IpPoolUpdateRequest>&& value) { SetIpPools(std::move(value)); return *this;}
-    inline UpdateNetworkRequest& AddIpPools(const IpPoolUpdateRequest& value) { m_ipPoolsHasBeenSet = true; m_ipPools.push_back(value); return *this; }
-    inline UpdateNetworkRequest& AddIpPools(IpPoolUpdateRequest&& value) { m_ipPoolsHasBeenSet = true; m_ipPools.push_back(std::move(value)); return *this; }
+    template<typename IpPoolsT = Aws::Vector<IpPoolUpdateRequest>>
+    void SetIpPools(IpPoolsT&& value) { m_ipPoolsHasBeenSet = true; m_ipPools = std::forward<IpPoolsT>(value); }
+    template<typename IpPoolsT = Aws::Vector<IpPoolUpdateRequest>>
+    UpdateNetworkRequest& WithIpPools(IpPoolsT&& value) { SetIpPools(std::forward<IpPoolsT>(value)); return *this;}
+    template<typename IpPoolsT = IpPoolUpdateRequest>
+    UpdateNetworkRequest& AddIpPools(IpPoolsT&& value) { m_ipPoolsHasBeenSet = true; m_ipPools.emplace_back(std::forward<IpPoolsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,28 +62,24 @@ namespace Model
      * Include this parameter only if you want to change the name of the Network.
      * Specify a name that is unique in the AWS account. Names are case-sensitive.
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateNetworkRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateNetworkRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateNetworkRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateNetworkRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The ID of the network
      */
-    inline const Aws::String& GetNetworkId() const{ return m_networkId; }
+    inline const Aws::String& GetNetworkId() const { return m_networkId; }
     inline bool NetworkIdHasBeenSet() const { return m_networkIdHasBeenSet; }
-    inline void SetNetworkId(const Aws::String& value) { m_networkIdHasBeenSet = true; m_networkId = value; }
-    inline void SetNetworkId(Aws::String&& value) { m_networkIdHasBeenSet = true; m_networkId = std::move(value); }
-    inline void SetNetworkId(const char* value) { m_networkIdHasBeenSet = true; m_networkId.assign(value); }
-    inline UpdateNetworkRequest& WithNetworkId(const Aws::String& value) { SetNetworkId(value); return *this;}
-    inline UpdateNetworkRequest& WithNetworkId(Aws::String&& value) { SetNetworkId(std::move(value)); return *this;}
-    inline UpdateNetworkRequest& WithNetworkId(const char* value) { SetNetworkId(value); return *this;}
+    template<typename NetworkIdT = Aws::String>
+    void SetNetworkId(NetworkIdT&& value) { m_networkIdHasBeenSet = true; m_networkId = std::forward<NetworkIdT>(value); }
+    template<typename NetworkIdT = Aws::String>
+    UpdateNetworkRequest& WithNetworkId(NetworkIdT&& value) { SetNetworkId(std::forward<NetworkIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,14 +88,14 @@ namespace Model
      * An array of Routes that MediaLive Anywhere needs to know about in order to route
      * encoding traffic.
      */
-    inline const Aws::Vector<RouteUpdateRequest>& GetRoutes() const{ return m_routes; }
+    inline const Aws::Vector<RouteUpdateRequest>& GetRoutes() const { return m_routes; }
     inline bool RoutesHasBeenSet() const { return m_routesHasBeenSet; }
-    inline void SetRoutes(const Aws::Vector<RouteUpdateRequest>& value) { m_routesHasBeenSet = true; m_routes = value; }
-    inline void SetRoutes(Aws::Vector<RouteUpdateRequest>&& value) { m_routesHasBeenSet = true; m_routes = std::move(value); }
-    inline UpdateNetworkRequest& WithRoutes(const Aws::Vector<RouteUpdateRequest>& value) { SetRoutes(value); return *this;}
-    inline UpdateNetworkRequest& WithRoutes(Aws::Vector<RouteUpdateRequest>&& value) { SetRoutes(std::move(value)); return *this;}
-    inline UpdateNetworkRequest& AddRoutes(const RouteUpdateRequest& value) { m_routesHasBeenSet = true; m_routes.push_back(value); return *this; }
-    inline UpdateNetworkRequest& AddRoutes(RouteUpdateRequest&& value) { m_routesHasBeenSet = true; m_routes.push_back(std::move(value)); return *this; }
+    template<typename RoutesT = Aws::Vector<RouteUpdateRequest>>
+    void SetRoutes(RoutesT&& value) { m_routesHasBeenSet = true; m_routes = std::forward<RoutesT>(value); }
+    template<typename RoutesT = Aws::Vector<RouteUpdateRequest>>
+    UpdateNetworkRequest& WithRoutes(RoutesT&& value) { SetRoutes(std::forward<RoutesT>(value)); return *this;}
+    template<typename RoutesT = RouteUpdateRequest>
+    UpdateNetworkRequest& AddRoutes(RoutesT&& value) { m_routesHasBeenSet = true; m_routes.emplace_back(std::forward<RoutesT>(value)); return *this; }
     ///@}
   private:
 

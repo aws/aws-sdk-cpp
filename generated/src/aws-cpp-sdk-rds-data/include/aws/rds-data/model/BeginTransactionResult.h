@@ -33,7 +33,7 @@ namespace Model
   class BeginTransactionResult
   {
   public:
-    AWS_RDSDATASERVICE_API BeginTransactionResult();
+    AWS_RDSDATASERVICE_API BeginTransactionResult() = default;
     AWS_RDSDATASERVICE_API BeginTransactionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RDSDATASERVICE_API BeginTransactionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,30 +42,28 @@ namespace Model
     /**
      * <p>The transaction ID of the transaction started by the call.</p>
      */
-    inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
-    inline void SetTransactionId(const Aws::String& value) { m_transactionId = value; }
-    inline void SetTransactionId(Aws::String&& value) { m_transactionId = std::move(value); }
-    inline void SetTransactionId(const char* value) { m_transactionId.assign(value); }
-    inline BeginTransactionResult& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
-    inline BeginTransactionResult& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
-    inline BeginTransactionResult& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
+    inline const Aws::String& GetTransactionId() const { return m_transactionId; }
+    template<typename TransactionIdT = Aws::String>
+    void SetTransactionId(TransactionIdT&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::forward<TransactionIdT>(value); }
+    template<typename TransactionIdT = Aws::String>
+    BeginTransactionResult& WithTransactionId(TransactionIdT&& value) { SetTransactionId(std::forward<TransactionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BeginTransactionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BeginTransactionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BeginTransactionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BeginTransactionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_transactionId;
+    bool m_transactionIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

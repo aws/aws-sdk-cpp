@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RecursiveXmlShapesResult::RecursiveXmlShapesResult()
-{
-}
-
 RecursiveXmlShapesResult::RecursiveXmlShapesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ RecursiveXmlShapesResult& RecursiveXmlShapesResult::operator =(const Aws::Amazon
     if(!nestedNode.IsNull())
     {
       m_nested = nestedNode;
+      m_nestedHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::QueryProtocol::Model::RecursiveXmlShapesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

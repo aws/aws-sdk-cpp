@@ -18,14 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-S3Object::S3Object() : 
-    m_s3BucketHasBeenSet(false),
-    m_s3keyHasBeenSet(false)
-{
-}
-
 S3Object::S3Object(JsonView jsonValue)
-  : S3Object()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3Object& S3Object::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Bucket"))
   {
     m_s3Bucket = jsonValue.GetString("s3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3key"))
   {
     m_s3key = jsonValue.GetString("s3key");
-
     m_s3keyHasBeenSet = true;
   }
-
   return *this;
 }
 

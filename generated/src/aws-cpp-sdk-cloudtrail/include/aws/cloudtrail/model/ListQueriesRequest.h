@@ -23,7 +23,7 @@ namespace Model
   class ListQueriesRequest : public CloudTrailRequest
   {
   public:
-    AWS_CLOUDTRAIL_API ListQueriesRequest();
+    AWS_CLOUDTRAIL_API ListQueriesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,35 +41,31 @@ namespace Model
      * <p>The ARN (or the ID suffix of the ARN) of an event data store on which queries
      * were run.</p>
      */
-    inline const Aws::String& GetEventDataStore() const{ return m_eventDataStore; }
+    inline const Aws::String& GetEventDataStore() const { return m_eventDataStore; }
     inline bool EventDataStoreHasBeenSet() const { return m_eventDataStoreHasBeenSet; }
-    inline void SetEventDataStore(const Aws::String& value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore = value; }
-    inline void SetEventDataStore(Aws::String&& value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore = std::move(value); }
-    inline void SetEventDataStore(const char* value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore.assign(value); }
-    inline ListQueriesRequest& WithEventDataStore(const Aws::String& value) { SetEventDataStore(value); return *this;}
-    inline ListQueriesRequest& WithEventDataStore(Aws::String&& value) { SetEventDataStore(std::move(value)); return *this;}
-    inline ListQueriesRequest& WithEventDataStore(const char* value) { SetEventDataStore(value); return *this;}
+    template<typename EventDataStoreT = Aws::String>
+    void SetEventDataStore(EventDataStoreT&& value) { m_eventDataStoreHasBeenSet = true; m_eventDataStore = std::forward<EventDataStoreT>(value); }
+    template<typename EventDataStoreT = Aws::String>
+    ListQueriesRequest& WithEventDataStore(EventDataStoreT&& value) { SetEventDataStore(std::forward<EventDataStoreT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A token you can use to get the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListQueriesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListQueriesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListQueriesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListQueriesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of queries to show on a page.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListQueriesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -81,12 +77,12 @@ namespace Model
      * and limit its results to only those queries run within a specified time
      * period.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline ListQueriesRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline ListQueriesRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    ListQueriesRequest& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,12 +91,12 @@ namespace Model
      * and limit its results to only those queries run within a specified time
      * period.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline ListQueriesRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline ListQueriesRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    ListQueriesRequest& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -110,12 +106,10 @@ namespace Model
      * <code>FINISHED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or
      * <code>CANCELLED</code>.</p>
      */
-    inline const QueryStatus& GetQueryStatus() const{ return m_queryStatus; }
+    inline QueryStatus GetQueryStatus() const { return m_queryStatus; }
     inline bool QueryStatusHasBeenSet() const { return m_queryStatusHasBeenSet; }
-    inline void SetQueryStatus(const QueryStatus& value) { m_queryStatusHasBeenSet = true; m_queryStatus = value; }
-    inline void SetQueryStatus(QueryStatus&& value) { m_queryStatusHasBeenSet = true; m_queryStatus = std::move(value); }
-    inline ListQueriesRequest& WithQueryStatus(const QueryStatus& value) { SetQueryStatus(value); return *this;}
-    inline ListQueriesRequest& WithQueryStatus(QueryStatus&& value) { SetQueryStatus(std::move(value)); return *this;}
+    inline void SetQueryStatus(QueryStatus value) { m_queryStatusHasBeenSet = true; m_queryStatus = value; }
+    inline ListQueriesRequest& WithQueryStatus(QueryStatus value) { SetQueryStatus(value); return *this;}
     ///@}
   private:
 
@@ -125,16 +119,16 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
-    QueryStatus m_queryStatus;
+    QueryStatus m_queryStatus{QueryStatus::NOT_SET};
     bool m_queryStatusHasBeenSet = false;
   };
 

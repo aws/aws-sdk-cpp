@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateRequestValidatorResult::UpdateRequestValidatorResult() : 
-    m_validateRequestBody(false),
-    m_validateRequestParameters(false)
-{
-}
-
 UpdateRequestValidatorResult::UpdateRequestValidatorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateRequestValidatorResult()
 {
   *this = result;
 }
@@ -35,33 +28,30 @@ UpdateRequestValidatorResult& UpdateRequestValidatorResult::operator =(const Aws
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("validateRequestBody"))
   {
     m_validateRequestBody = jsonValue.GetBool("validateRequestBody");
-
+    m_validateRequestBodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("validateRequestParameters"))
   {
     m_validateRequestParameters = jsonValue.GetBool("validateRequestParameters");
-
+    m_validateRequestParametersHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

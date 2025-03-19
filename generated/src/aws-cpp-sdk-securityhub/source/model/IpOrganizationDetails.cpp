@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-IpOrganizationDetails::IpOrganizationDetails() : 
-    m_asn(0),
-    m_asnHasBeenSet(false),
-    m_asnOrgHasBeenSet(false),
-    m_ispHasBeenSet(false),
-    m_orgHasBeenSet(false)
-{
-}
-
 IpOrganizationDetails::IpOrganizationDetails(JsonView jsonValue)
-  : IpOrganizationDetails()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ IpOrganizationDetails& IpOrganizationDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Asn"))
   {
     m_asn = jsonValue.GetInteger("Asn");
-
     m_asnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AsnOrg"))
   {
     m_asnOrg = jsonValue.GetString("AsnOrg");
-
     m_asnOrgHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Isp"))
   {
     m_isp = jsonValue.GetString("Isp");
-
     m_ispHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Org"))
   {
     m_org = jsonValue.GetString("Org");
-
     m_orgHasBeenSet = true;
   }
-
   return *this;
 }
 

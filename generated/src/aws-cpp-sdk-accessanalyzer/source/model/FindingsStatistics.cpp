@@ -18,14 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-FindingsStatistics::FindingsStatistics() : 
-    m_externalAccessFindingsStatisticsHasBeenSet(false),
-    m_unusedAccessFindingsStatisticsHasBeenSet(false)
-{
-}
-
 FindingsStatistics::FindingsStatistics(JsonView jsonValue)
-  : FindingsStatistics()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FindingsStatistics& FindingsStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("externalAccessFindingsStatistics"))
   {
     m_externalAccessFindingsStatistics = jsonValue.GetObject("externalAccessFindingsStatistics");
-
     m_externalAccessFindingsStatisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unusedAccessFindingsStatistics"))
   {
     m_unusedAccessFindingsStatistics = jsonValue.GetObject("unusedAccessFindingsStatistics");
-
     m_unusedAccessFindingsStatisticsHasBeenSet = true;
   }
-
   return *this;
 }
 

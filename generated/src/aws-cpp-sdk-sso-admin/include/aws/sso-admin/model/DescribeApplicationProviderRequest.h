@@ -21,7 +21,7 @@ namespace Model
   class DescribeApplicationProviderRequest : public SSOAdminRequest
   {
   public:
-    AWS_SSOADMIN_API DescribeApplicationProviderRequest();
+    AWS_SSOADMIN_API DescribeApplicationProviderRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>Specifies the ARN of the application provider for which you want details.</p>
      */
-    inline const Aws::String& GetApplicationProviderArn() const{ return m_applicationProviderArn; }
+    inline const Aws::String& GetApplicationProviderArn() const { return m_applicationProviderArn; }
     inline bool ApplicationProviderArnHasBeenSet() const { return m_applicationProviderArnHasBeenSet; }
-    inline void SetApplicationProviderArn(const Aws::String& value) { m_applicationProviderArnHasBeenSet = true; m_applicationProviderArn = value; }
-    inline void SetApplicationProviderArn(Aws::String&& value) { m_applicationProviderArnHasBeenSet = true; m_applicationProviderArn = std::move(value); }
-    inline void SetApplicationProviderArn(const char* value) { m_applicationProviderArnHasBeenSet = true; m_applicationProviderArn.assign(value); }
-    inline DescribeApplicationProviderRequest& WithApplicationProviderArn(const Aws::String& value) { SetApplicationProviderArn(value); return *this;}
-    inline DescribeApplicationProviderRequest& WithApplicationProviderArn(Aws::String&& value) { SetApplicationProviderArn(std::move(value)); return *this;}
-    inline DescribeApplicationProviderRequest& WithApplicationProviderArn(const char* value) { SetApplicationProviderArn(value); return *this;}
+    template<typename ApplicationProviderArnT = Aws::String>
+    void SetApplicationProviderArn(ApplicationProviderArnT&& value) { m_applicationProviderArnHasBeenSet = true; m_applicationProviderArn = std::forward<ApplicationProviderArnT>(value); }
+    template<typename ApplicationProviderArnT = Aws::String>
+    DescribeApplicationProviderRequest& WithApplicationProviderArn(ApplicationProviderArnT&& value) { SetApplicationProviderArn(std::forward<ApplicationProviderArnT>(value)); return *this;}
     ///@}
   private:
 

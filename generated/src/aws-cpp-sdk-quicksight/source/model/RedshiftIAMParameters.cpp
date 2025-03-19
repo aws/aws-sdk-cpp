@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-RedshiftIAMParameters::RedshiftIAMParameters() : 
-    m_roleArnHasBeenSet(false),
-    m_databaseUserHasBeenSet(false),
-    m_databaseGroupsHasBeenSet(false),
-    m_autoCreateDatabaseUser(false),
-    m_autoCreateDatabaseUserHasBeenSet(false)
-{
-}
-
 RedshiftIAMParameters::RedshiftIAMParameters(JsonView jsonValue)
-  : RedshiftIAMParameters()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ RedshiftIAMParameters& RedshiftIAMParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseUser"))
   {
     m_databaseUser = jsonValue.GetString("DatabaseUser");
-
     m_databaseUserHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseGroups"))
   {
     Aws::Utils::Array<JsonView> databaseGroupsJsonList = jsonValue.GetArray("DatabaseGroups");
@@ -58,14 +44,11 @@ RedshiftIAMParameters& RedshiftIAMParameters::operator =(JsonView jsonValue)
     }
     m_databaseGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoCreateDatabaseUser"))
   {
     m_autoCreateDatabaseUser = jsonValue.GetBool("AutoCreateDatabaseUser");
-
     m_autoCreateDatabaseUserHasBeenSet = true;
   }
-
   return *this;
 }
 

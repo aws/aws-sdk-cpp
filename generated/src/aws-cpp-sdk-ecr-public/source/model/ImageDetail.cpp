@@ -18,21 +18,7 @@ namespace ECRPublic
 namespace Model
 {
 
-ImageDetail::ImageDetail() : 
-    m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_imageDigestHasBeenSet(false),
-    m_imageTagsHasBeenSet(false),
-    m_imageSizeInBytes(0),
-    m_imageSizeInBytesHasBeenSet(false),
-    m_imagePushedAtHasBeenSet(false),
-    m_imageManifestMediaTypeHasBeenSet(false),
-    m_artifactMediaTypeHasBeenSet(false)
-{
-}
-
 ImageDetail::ImageDetail(JsonView jsonValue)
-  : ImageDetail()
 {
   *this = jsonValue;
 }
@@ -42,24 +28,18 @@ ImageDetail& ImageDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("registryId"))
   {
     m_registryId = jsonValue.GetString("registryId");
-
     m_registryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageDigest"))
   {
     m_imageDigest = jsonValue.GetString("imageDigest");
-
     m_imageDigestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageTags"))
   {
     Aws::Utils::Array<JsonView> imageTagsJsonList = jsonValue.GetArray("imageTags");
@@ -69,35 +49,26 @@ ImageDetail& ImageDetail::operator =(JsonView jsonValue)
     }
     m_imageTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageSizeInBytes"))
   {
     m_imageSizeInBytes = jsonValue.GetInt64("imageSizeInBytes");
-
     m_imageSizeInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imagePushedAt"))
   {
     m_imagePushedAt = jsonValue.GetDouble("imagePushedAt");
-
     m_imagePushedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageManifestMediaType"))
   {
     m_imageManifestMediaType = jsonValue.GetString("imageManifestMediaType");
-
     m_imageManifestMediaTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("artifactMediaType"))
   {
     m_artifactMediaType = jsonValue.GetString("artifactMediaType");
-
     m_artifactMediaTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

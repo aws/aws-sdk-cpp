@@ -32,7 +32,7 @@ namespace Model
   class StreamChannelDefinition
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API StreamChannelDefinition();
+    AWS_CHIMESDKMEDIAPIPELINES_API StreamChannelDefinition() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API StreamChannelDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API StreamChannelDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The number of channels in a streaming channel.</p>
      */
-    inline int GetNumberOfChannels() const{ return m_numberOfChannels; }
+    inline int GetNumberOfChannels() const { return m_numberOfChannels; }
     inline bool NumberOfChannelsHasBeenSet() const { return m_numberOfChannelsHasBeenSet; }
     inline void SetNumberOfChannels(int value) { m_numberOfChannelsHasBeenSet = true; m_numberOfChannels = value; }
     inline StreamChannelDefinition& WithNumberOfChannels(int value) { SetNumberOfChannels(value); return *this;}
@@ -52,18 +52,18 @@ namespace Model
     /**
      * <p>The definitions of the channels in a streaming channel.</p>
      */
-    inline const Aws::Vector<ChannelDefinition>& GetChannelDefinitions() const{ return m_channelDefinitions; }
+    inline const Aws::Vector<ChannelDefinition>& GetChannelDefinitions() const { return m_channelDefinitions; }
     inline bool ChannelDefinitionsHasBeenSet() const { return m_channelDefinitionsHasBeenSet; }
-    inline void SetChannelDefinitions(const Aws::Vector<ChannelDefinition>& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions = value; }
-    inline void SetChannelDefinitions(Aws::Vector<ChannelDefinition>&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions = std::move(value); }
-    inline StreamChannelDefinition& WithChannelDefinitions(const Aws::Vector<ChannelDefinition>& value) { SetChannelDefinitions(value); return *this;}
-    inline StreamChannelDefinition& WithChannelDefinitions(Aws::Vector<ChannelDefinition>&& value) { SetChannelDefinitions(std::move(value)); return *this;}
-    inline StreamChannelDefinition& AddChannelDefinitions(const ChannelDefinition& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions.push_back(value); return *this; }
-    inline StreamChannelDefinition& AddChannelDefinitions(ChannelDefinition&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions.push_back(std::move(value)); return *this; }
+    template<typename ChannelDefinitionsT = Aws::Vector<ChannelDefinition>>
+    void SetChannelDefinitions(ChannelDefinitionsT&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions = std::forward<ChannelDefinitionsT>(value); }
+    template<typename ChannelDefinitionsT = Aws::Vector<ChannelDefinition>>
+    StreamChannelDefinition& WithChannelDefinitions(ChannelDefinitionsT&& value) { SetChannelDefinitions(std::forward<ChannelDefinitionsT>(value)); return *this;}
+    template<typename ChannelDefinitionsT = ChannelDefinition>
+    StreamChannelDefinition& AddChannelDefinitions(ChannelDefinitionsT&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions.emplace_back(std::forward<ChannelDefinitionsT>(value)); return *this; }
     ///@}
   private:
 
-    int m_numberOfChannels;
+    int m_numberOfChannels{0};
     bool m_numberOfChannelsHasBeenSet = false;
 
     Aws::Vector<ChannelDefinition> m_channelDefinitions;

@@ -18,18 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ParentStepDetails::ParentStepDetails() : 
-    m_stepExecutionIdHasBeenSet(false),
-    m_stepNameHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_iteration(0),
-    m_iterationHasBeenSet(false),
-    m_iteratorValueHasBeenSet(false)
-{
-}
-
 ParentStepDetails::ParentStepDetails(JsonView jsonValue)
-  : ParentStepDetails()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ParentStepDetails& ParentStepDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StepExecutionId"))
   {
     m_stepExecutionId = jsonValue.GetString("StepExecutionId");
-
     m_stepExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StepName"))
   {
     m_stepName = jsonValue.GetString("StepName");
-
     m_stepNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Action"))
   {
     m_action = jsonValue.GetString("Action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Iteration"))
   {
     m_iteration = jsonValue.GetInteger("Iteration");
-
     m_iterationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IteratorValue"))
   {
     m_iteratorValue = jsonValue.GetString("IteratorValue");
-
     m_iteratorValueHasBeenSet = true;
   }
-
   return *this;
 }
 

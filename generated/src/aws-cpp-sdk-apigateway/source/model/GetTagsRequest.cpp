@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetTagsRequest::GetTagsRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String GetTagsRequest::SerializePayload() const
 {
   return {};

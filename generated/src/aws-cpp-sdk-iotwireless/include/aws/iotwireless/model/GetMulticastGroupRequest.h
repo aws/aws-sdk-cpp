@@ -21,7 +21,7 @@ namespace Model
   class GetMulticastGroupRequest : public IoTWirelessRequest
   {
   public:
-    AWS_IOTWIRELESS_API GetMulticastGroupRequest();
+    AWS_IOTWIRELESS_API GetMulticastGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,14 +34,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline GetMulticastGroupRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetMulticastGroupRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetMulticastGroupRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetMulticastGroupRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
   private:
 

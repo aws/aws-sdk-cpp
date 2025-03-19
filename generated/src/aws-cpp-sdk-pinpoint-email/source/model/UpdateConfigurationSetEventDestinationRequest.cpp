@@ -12,13 +12,6 @@ using namespace Aws::PinpointEmail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateConfigurationSetEventDestinationRequest::UpdateConfigurationSetEventDestinationRequest() : 
-    m_configurationSetNameHasBeenSet(false),
-    m_eventDestinationNameHasBeenSet(false),
-    m_eventDestinationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateConfigurationSetEventDestinationRequest::SerializePayload() const
 {
   JsonValue payload;

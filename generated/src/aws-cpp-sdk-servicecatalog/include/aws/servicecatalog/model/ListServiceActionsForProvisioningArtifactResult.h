@@ -29,7 +29,7 @@ namespace Model
   class ListServiceActionsForProvisioningArtifactResult
   {
   public:
-    AWS_SERVICECATALOG_API ListServiceActionsForProvisioningArtifactResult();
+    AWS_SERVICECATALOG_API ListServiceActionsForProvisioningArtifactResult() = default;
     AWS_SERVICECATALOG_API ListServiceActionsForProvisioningArtifactResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVICECATALOG_API ListServiceActionsForProvisioningArtifactResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>An object containing information about the self-service actions associated
      * with the provisioning artifact.</p>
      */
-    inline const Aws::Vector<ServiceActionSummary>& GetServiceActionSummaries() const{ return m_serviceActionSummaries; }
-    inline void SetServiceActionSummaries(const Aws::Vector<ServiceActionSummary>& value) { m_serviceActionSummaries = value; }
-    inline void SetServiceActionSummaries(Aws::Vector<ServiceActionSummary>&& value) { m_serviceActionSummaries = std::move(value); }
-    inline ListServiceActionsForProvisioningArtifactResult& WithServiceActionSummaries(const Aws::Vector<ServiceActionSummary>& value) { SetServiceActionSummaries(value); return *this;}
-    inline ListServiceActionsForProvisioningArtifactResult& WithServiceActionSummaries(Aws::Vector<ServiceActionSummary>&& value) { SetServiceActionSummaries(std::move(value)); return *this;}
-    inline ListServiceActionsForProvisioningArtifactResult& AddServiceActionSummaries(const ServiceActionSummary& value) { m_serviceActionSummaries.push_back(value); return *this; }
-    inline ListServiceActionsForProvisioningArtifactResult& AddServiceActionSummaries(ServiceActionSummary&& value) { m_serviceActionSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ServiceActionSummary>& GetServiceActionSummaries() const { return m_serviceActionSummaries; }
+    template<typename ServiceActionSummariesT = Aws::Vector<ServiceActionSummary>>
+    void SetServiceActionSummaries(ServiceActionSummariesT&& value) { m_serviceActionSummariesHasBeenSet = true; m_serviceActionSummaries = std::forward<ServiceActionSummariesT>(value); }
+    template<typename ServiceActionSummariesT = Aws::Vector<ServiceActionSummary>>
+    ListServiceActionsForProvisioningArtifactResult& WithServiceActionSummaries(ServiceActionSummariesT&& value) { SetServiceActionSummaries(std::forward<ServiceActionSummariesT>(value)); return *this;}
+    template<typename ServiceActionSummariesT = ServiceActionSummary>
+    ListServiceActionsForProvisioningArtifactResult& AddServiceActionSummaries(ServiceActionSummariesT&& value) { m_serviceActionSummariesHasBeenSet = true; m_serviceActionSummaries.emplace_back(std::forward<ServiceActionSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>The page token to use to retrieve the next set of results. If there are no
      * additional results, this value is null.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-    inline ListServiceActionsForProvisioningArtifactResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline ListServiceActionsForProvisioningArtifactResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline ListServiceActionsForProvisioningArtifactResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    ListServiceActionsForProvisioningArtifactResult& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListServiceActionsForProvisioningArtifactResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListServiceActionsForProvisioningArtifactResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListServiceActionsForProvisioningArtifactResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListServiceActionsForProvisioningArtifactResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ServiceActionSummary> m_serviceActionSummaries;
+    bool m_serviceActionSummariesHasBeenSet = false;
 
     Aws::String m_nextPageToken;
+    bool m_nextPageTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

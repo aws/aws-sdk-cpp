@@ -32,7 +32,7 @@ namespace Model
   class Typography
   {
   public:
-    AWS_QUICKSIGHT_API Typography();
+    AWS_QUICKSIGHT_API Typography() = default;
     AWS_QUICKSIGHT_API Typography(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Typography& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>Determines the list of font families.</p>
      */
-    inline const Aws::Vector<Font>& GetFontFamilies() const{ return m_fontFamilies; }
+    inline const Aws::Vector<Font>& GetFontFamilies() const { return m_fontFamilies; }
     inline bool FontFamiliesHasBeenSet() const { return m_fontFamiliesHasBeenSet; }
-    inline void SetFontFamilies(const Aws::Vector<Font>& value) { m_fontFamiliesHasBeenSet = true; m_fontFamilies = value; }
-    inline void SetFontFamilies(Aws::Vector<Font>&& value) { m_fontFamiliesHasBeenSet = true; m_fontFamilies = std::move(value); }
-    inline Typography& WithFontFamilies(const Aws::Vector<Font>& value) { SetFontFamilies(value); return *this;}
-    inline Typography& WithFontFamilies(Aws::Vector<Font>&& value) { SetFontFamilies(std::move(value)); return *this;}
-    inline Typography& AddFontFamilies(const Font& value) { m_fontFamiliesHasBeenSet = true; m_fontFamilies.push_back(value); return *this; }
-    inline Typography& AddFontFamilies(Font&& value) { m_fontFamiliesHasBeenSet = true; m_fontFamilies.push_back(std::move(value)); return *this; }
+    template<typename FontFamiliesT = Aws::Vector<Font>>
+    void SetFontFamilies(FontFamiliesT&& value) { m_fontFamiliesHasBeenSet = true; m_fontFamilies = std::forward<FontFamiliesT>(value); }
+    template<typename FontFamiliesT = Aws::Vector<Font>>
+    Typography& WithFontFamilies(FontFamiliesT&& value) { SetFontFamilies(std::forward<FontFamiliesT>(value)); return *this;}
+    template<typename FontFamiliesT = Font>
+    Typography& AddFontFamilies(FontFamiliesT&& value) { m_fontFamiliesHasBeenSet = true; m_fontFamilies.emplace_back(std::forward<FontFamiliesT>(value)); return *this; }
     ///@}
   private:
 

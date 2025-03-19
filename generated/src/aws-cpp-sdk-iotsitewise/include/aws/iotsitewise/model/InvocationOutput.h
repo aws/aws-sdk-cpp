@@ -34,7 +34,7 @@ namespace Model
   class InvocationOutput
   {
   public:
-    AWS_IOTSITEWISE_API InvocationOutput();
+    AWS_IOTSITEWISE_API InvocationOutput() = default;
     AWS_IOTSITEWISE_API InvocationOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API InvocationOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The text message of the SiteWise Assistant's response.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline InvocationOutput& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline InvocationOutput& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline InvocationOutput& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    InvocationOutput& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,14 @@ namespace Model
      * <p>A list of citations, and related information for the SiteWise Assistant's
      * response.</p>
      */
-    inline const Aws::Vector<Citation>& GetCitations() const{ return m_citations; }
+    inline const Aws::Vector<Citation>& GetCitations() const { return m_citations; }
     inline bool CitationsHasBeenSet() const { return m_citationsHasBeenSet; }
-    inline void SetCitations(const Aws::Vector<Citation>& value) { m_citationsHasBeenSet = true; m_citations = value; }
-    inline void SetCitations(Aws::Vector<Citation>&& value) { m_citationsHasBeenSet = true; m_citations = std::move(value); }
-    inline InvocationOutput& WithCitations(const Aws::Vector<Citation>& value) { SetCitations(value); return *this;}
-    inline InvocationOutput& WithCitations(Aws::Vector<Citation>&& value) { SetCitations(std::move(value)); return *this;}
-    inline InvocationOutput& AddCitations(const Citation& value) { m_citationsHasBeenSet = true; m_citations.push_back(value); return *this; }
-    inline InvocationOutput& AddCitations(Citation&& value) { m_citationsHasBeenSet = true; m_citations.push_back(std::move(value)); return *this; }
+    template<typename CitationsT = Aws::Vector<Citation>>
+    void SetCitations(CitationsT&& value) { m_citationsHasBeenSet = true; m_citations = std::forward<CitationsT>(value); }
+    template<typename CitationsT = Aws::Vector<Citation>>
+    InvocationOutput& WithCitations(CitationsT&& value) { SetCitations(std::forward<CitationsT>(value)); return *this;}
+    template<typename CitationsT = Citation>
+    InvocationOutput& AddCitations(CitationsT&& value) { m_citationsHasBeenSet = true; m_citations.emplace_back(std::forward<CitationsT>(value)); return *this; }
     ///@}
   private:
 

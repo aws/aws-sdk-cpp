@@ -24,7 +24,7 @@ namespace Model
   class DeleteCACertificateRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API DeleteCACertificateRequest();
+    AWS_IOT_API DeleteCACertificateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>The ID of the certificate to delete. (The last part of the certificate ARN
      * contains the certificate ID.)</p>
      */
-    inline const Aws::String& GetCertificateId() const{ return m_certificateId; }
+    inline const Aws::String& GetCertificateId() const { return m_certificateId; }
     inline bool CertificateIdHasBeenSet() const { return m_certificateIdHasBeenSet; }
-    inline void SetCertificateId(const Aws::String& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
-    inline void SetCertificateId(Aws::String&& value) { m_certificateIdHasBeenSet = true; m_certificateId = std::move(value); }
-    inline void SetCertificateId(const char* value) { m_certificateIdHasBeenSet = true; m_certificateId.assign(value); }
-    inline DeleteCACertificateRequest& WithCertificateId(const Aws::String& value) { SetCertificateId(value); return *this;}
-    inline DeleteCACertificateRequest& WithCertificateId(Aws::String&& value) { SetCertificateId(std::move(value)); return *this;}
-    inline DeleteCACertificateRequest& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
+    template<typename CertificateIdT = Aws::String>
+    void SetCertificateId(CertificateIdT&& value) { m_certificateIdHasBeenSet = true; m_certificateId = std::forward<CertificateIdT>(value); }
+    template<typename CertificateIdT = Aws::String>
+    DeleteCACertificateRequest& WithCertificateId(CertificateIdT&& value) { SetCertificateId(std::forward<CertificateIdT>(value)); return *this;}
     ///@}
   private:
 

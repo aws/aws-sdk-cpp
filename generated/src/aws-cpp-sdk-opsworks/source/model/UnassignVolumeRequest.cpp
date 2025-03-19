@@ -12,11 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UnassignVolumeRequest::UnassignVolumeRequest() : 
-    m_volumeIdHasBeenSet(false)
-{
-}
-
 Aws::String UnassignVolumeRequest::SerializePayload() const
 {
   JsonValue payload;

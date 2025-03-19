@@ -34,7 +34,7 @@ namespace Model
   class Filter
   {
   public:
-    AWS_PIPES_API Filter();
+    AWS_PIPES_API Filter() = default;
     AWS_PIPES_API Filter(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Filter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The event pattern.</p>
      */
-    inline const Aws::String& GetPattern() const{ return m_pattern; }
+    inline const Aws::String& GetPattern() const { return m_pattern; }
     inline bool PatternHasBeenSet() const { return m_patternHasBeenSet; }
-    inline void SetPattern(const Aws::String& value) { m_patternHasBeenSet = true; m_pattern = value; }
-    inline void SetPattern(Aws::String&& value) { m_patternHasBeenSet = true; m_pattern = std::move(value); }
-    inline void SetPattern(const char* value) { m_patternHasBeenSet = true; m_pattern.assign(value); }
-    inline Filter& WithPattern(const Aws::String& value) { SetPattern(value); return *this;}
-    inline Filter& WithPattern(Aws::String&& value) { SetPattern(std::move(value)); return *this;}
-    inline Filter& WithPattern(const char* value) { SetPattern(value); return *this;}
+    template<typename PatternT = Aws::String>
+    void SetPattern(PatternT&& value) { m_patternHasBeenSet = true; m_pattern = std::forward<PatternT>(value); }
+    template<typename PatternT = Aws::String>
+    Filter& WithPattern(PatternT&& value) { SetPattern(std::forward<PatternT>(value)); return *this;}
     ///@}
   private:
 

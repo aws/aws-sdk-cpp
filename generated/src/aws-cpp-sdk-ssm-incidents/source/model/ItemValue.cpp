@@ -18,16 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-ItemValue::ItemValue() : 
-    m_arnHasBeenSet(false),
-    m_metricDefinitionHasBeenSet(false),
-    m_pagerDutyIncidentDetailHasBeenSet(false),
-    m_urlHasBeenSet(false)
-{
-}
-
 ItemValue::ItemValue(JsonView jsonValue)
-  : ItemValue()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ItemValue& ItemValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricDefinition"))
   {
     m_metricDefinition = jsonValue.GetString("metricDefinition");
-
     m_metricDefinitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pagerDutyIncidentDetail"))
   {
     m_pagerDutyIncidentDetail = jsonValue.GetObject("pagerDutyIncidentDetail");
-
     m_pagerDutyIncidentDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   return *this;
 }
 

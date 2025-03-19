@@ -17,11 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListStorageLensConfigurationsRequest::ListStorageLensConfigurationsRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
 
 Aws::String ListStorageLensConfigurationsRequest::SerializePayload() const
 {

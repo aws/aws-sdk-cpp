@@ -18,28 +18,7 @@ namespace signer
 namespace Model
 {
 
-SigningJob::SigningJob() : 
-    m_jobIdHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_signedObjectHasBeenSet(false),
-    m_signingMaterialHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_status(SigningStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_isRevoked(false),
-    m_isRevokedHasBeenSet(false),
-    m_profileNameHasBeenSet(false),
-    m_profileVersionHasBeenSet(false),
-    m_platformIdHasBeenSet(false),
-    m_platformDisplayNameHasBeenSet(false),
-    m_signatureExpiresAtHasBeenSet(false),
-    m_jobOwnerHasBeenSet(false),
-    m_jobInvokerHasBeenSet(false)
-{
-}
-
 SigningJob::SigningJob(JsonView jsonValue)
-  : SigningJob()
 {
   *this = jsonValue;
 }
@@ -49,101 +28,73 @@ SigningJob& SigningJob::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetObject("source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("signedObject"))
   {
     m_signedObject = jsonValue.GetObject("signedObject");
-
     m_signedObjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("signingMaterial"))
   {
     m_signingMaterial = jsonValue.GetObject("signingMaterial");
-
     m_signingMaterialHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = SigningStatusMapper::GetSigningStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isRevoked"))
   {
     m_isRevoked = jsonValue.GetBool("isRevoked");
-
     m_isRevokedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profileName"))
   {
     m_profileName = jsonValue.GetString("profileName");
-
     m_profileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profileVersion"))
   {
     m_profileVersion = jsonValue.GetString("profileVersion");
-
     m_profileVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platformId"))
   {
     m_platformId = jsonValue.GetString("platformId");
-
     m_platformIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platformDisplayName"))
   {
     m_platformDisplayName = jsonValue.GetString("platformDisplayName");
-
     m_platformDisplayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("signatureExpiresAt"))
   {
     m_signatureExpiresAt = jsonValue.GetDouble("signatureExpiresAt");
-
     m_signatureExpiresAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobOwner"))
   {
     m_jobOwner = jsonValue.GetString("jobOwner");
-
     m_jobOwnerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobInvoker"))
   {
     m_jobInvoker = jsonValue.GetString("jobInvoker");
-
     m_jobInvokerHasBeenSet = true;
   }
-
   return *this;
 }
 

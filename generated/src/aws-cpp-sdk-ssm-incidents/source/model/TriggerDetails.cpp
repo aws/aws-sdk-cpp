@@ -18,16 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-TriggerDetails::TriggerDetails() : 
-    m_rawDataHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_triggerArnHasBeenSet(false)
-{
-}
-
 TriggerDetails::TriggerDetails(JsonView jsonValue)
-  : TriggerDetails()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ TriggerDetails& TriggerDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("rawData"))
   {
     m_rawData = jsonValue.GetString("rawData");
-
     m_rawDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("triggerArn"))
   {
     m_triggerArn = jsonValue.GetString("triggerArn");
-
     m_triggerArnHasBeenSet = true;
   }
-
   return *this;
 }
 

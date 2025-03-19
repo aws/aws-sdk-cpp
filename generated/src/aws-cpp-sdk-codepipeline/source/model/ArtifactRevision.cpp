@@ -18,18 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ArtifactRevision::ArtifactRevision() : 
-    m_nameHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_revisionChangeIdentifierHasBeenSet(false),
-    m_revisionSummaryHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_revisionUrlHasBeenSet(false)
-{
-}
-
 ArtifactRevision::ArtifactRevision(JsonView jsonValue)
-  : ArtifactRevision()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ ArtifactRevision& ArtifactRevision::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revisionId"))
   {
     m_revisionId = jsonValue.GetString("revisionId");
-
     m_revisionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revisionChangeIdentifier"))
   {
     m_revisionChangeIdentifier = jsonValue.GetString("revisionChangeIdentifier");
-
     m_revisionChangeIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revisionSummary"))
   {
     m_revisionSummary = jsonValue.GetString("revisionSummary");
-
     m_revisionSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("created"))
   {
     m_created = jsonValue.GetDouble("created");
-
     m_createdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revisionUrl"))
   {
     m_revisionUrl = jsonValue.GetString("revisionUrl");
-
     m_revisionUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

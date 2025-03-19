@@ -15,19 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListIndexedRecoveryPointsRequest::ListIndexedRecoveryPointsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_sourceResourceArnHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false),
-    m_createdAfterHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_indexStatus(IndexStatus::NOT_SET),
-    m_indexStatusHasBeenSet(false)
-{
-}
-
 Aws::String ListIndexedRecoveryPointsRequest::SerializePayload() const
 {
   return {};

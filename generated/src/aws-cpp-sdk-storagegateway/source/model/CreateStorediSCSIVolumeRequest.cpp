@@ -12,21 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateStorediSCSIVolumeRequest::CreateStorediSCSIVolumeRequest() : 
-    m_gatewayARNHasBeenSet(false),
-    m_diskIdHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_preserveExistingData(false),
-    m_preserveExistingDataHasBeenSet(false),
-    m_targetNameHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_kMSEncrypted(false),
-    m_kMSEncryptedHasBeenSet(false),
-    m_kMSKeyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateStorediSCSIVolumeRequest::SerializePayload() const
 {
   JsonValue payload;

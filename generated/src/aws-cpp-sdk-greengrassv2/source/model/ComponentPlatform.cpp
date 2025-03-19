@@ -18,14 +18,7 @@ namespace GreengrassV2
 namespace Model
 {
 
-ComponentPlatform::ComponentPlatform() : 
-    m_nameHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 ComponentPlatform::ComponentPlatform(JsonView jsonValue)
-  : ComponentPlatform()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ComponentPlatform& ComponentPlatform::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
@@ -48,7 +39,6 @@ ComponentPlatform& ComponentPlatform::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   return *this;
 }
 

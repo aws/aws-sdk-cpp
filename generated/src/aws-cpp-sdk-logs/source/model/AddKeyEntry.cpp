@@ -18,16 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-AddKeyEntry::AddKeyEntry() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_overwriteIfExists(false),
-    m_overwriteIfExistsHasBeenSet(false)
-{
-}
-
 AddKeyEntry::AddKeyEntry(JsonView jsonValue)
-  : AddKeyEntry()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AddKeyEntry& AddKeyEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("overwriteIfExists"))
   {
     m_overwriteIfExists = jsonValue.GetBool("overwriteIfExists");
-
     m_overwriteIfExistsHasBeenSet = true;
   }
-
   return *this;
 }
 

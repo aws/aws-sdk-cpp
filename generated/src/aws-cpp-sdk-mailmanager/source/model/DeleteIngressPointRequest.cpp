@@ -12,11 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteIngressPointRequest::DeleteIngressPointRequest() : 
-    m_ingressPointIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteIngressPointRequest::SerializePayload() const
 {
   JsonValue payload;

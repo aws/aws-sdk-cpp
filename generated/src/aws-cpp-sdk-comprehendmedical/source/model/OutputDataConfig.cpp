@@ -18,14 +18,7 @@ namespace ComprehendMedical
 namespace Model
 {
 
-OutputDataConfig::OutputDataConfig() : 
-    m_s3BucketHasBeenSet(false),
-    m_s3KeyHasBeenSet(false)
-{
-}
-
 OutputDataConfig::OutputDataConfig(JsonView jsonValue)
-  : OutputDataConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OutputDataConfig& OutputDataConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Bucket"))
   {
     m_s3Bucket = jsonValue.GetString("S3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Key"))
   {
     m_s3Key = jsonValue.GetString("S3Key");
-
     m_s3KeyHasBeenSet = true;
   }
-
   return *this;
 }
 

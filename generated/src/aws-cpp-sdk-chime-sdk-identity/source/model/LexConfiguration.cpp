@@ -18,18 +18,7 @@ namespace ChimeSDKIdentity
 namespace Model
 {
 
-LexConfiguration::LexConfiguration() : 
-    m_respondsTo(RespondsTo::NOT_SET),
-    m_respondsToHasBeenSet(false),
-    m_invokedByHasBeenSet(false),
-    m_lexBotAliasArnHasBeenSet(false),
-    m_localeIdHasBeenSet(false),
-    m_welcomeIntentHasBeenSet(false)
-{
-}
-
 LexConfiguration::LexConfiguration(JsonView jsonValue)
-  : LexConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ LexConfiguration& LexConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RespondsTo"))
   {
     m_respondsTo = RespondsToMapper::GetRespondsToForName(jsonValue.GetString("RespondsTo"));
-
     m_respondsToHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvokedBy"))
   {
     m_invokedBy = jsonValue.GetObject("InvokedBy");
-
     m_invokedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LexBotAliasArn"))
   {
     m_lexBotAliasArn = jsonValue.GetString("LexBotAliasArn");
-
     m_lexBotAliasArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocaleId"))
   {
     m_localeId = jsonValue.GetString("LocaleId");
-
     m_localeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WelcomeIntent"))
   {
     m_welcomeIntent = jsonValue.GetString("WelcomeIntent");
-
     m_welcomeIntentHasBeenSet = true;
   }
-
   return *this;
 }
 

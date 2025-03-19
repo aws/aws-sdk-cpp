@@ -23,7 +23,7 @@ namespace Model
   class DescribeImagesRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DescribeImagesRequest();
+    AWS_EC2_API DescribeImagesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -52,30 +52,28 @@ namespace Model
      * returned. </p> </li> <li> <p>If you specify <code>all</code>, all public AMIs
      * are returned.</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetExecutableUsers() const{ return m_executableUsers; }
+    inline const Aws::Vector<Aws::String>& GetExecutableUsers() const { return m_executableUsers; }
     inline bool ExecutableUsersHasBeenSet() const { return m_executableUsersHasBeenSet; }
-    inline void SetExecutableUsers(const Aws::Vector<Aws::String>& value) { m_executableUsersHasBeenSet = true; m_executableUsers = value; }
-    inline void SetExecutableUsers(Aws::Vector<Aws::String>&& value) { m_executableUsersHasBeenSet = true; m_executableUsers = std::move(value); }
-    inline DescribeImagesRequest& WithExecutableUsers(const Aws::Vector<Aws::String>& value) { SetExecutableUsers(value); return *this;}
-    inline DescribeImagesRequest& WithExecutableUsers(Aws::Vector<Aws::String>&& value) { SetExecutableUsers(std::move(value)); return *this;}
-    inline DescribeImagesRequest& AddExecutableUsers(const Aws::String& value) { m_executableUsersHasBeenSet = true; m_executableUsers.push_back(value); return *this; }
-    inline DescribeImagesRequest& AddExecutableUsers(Aws::String&& value) { m_executableUsersHasBeenSet = true; m_executableUsers.push_back(std::move(value)); return *this; }
-    inline DescribeImagesRequest& AddExecutableUsers(const char* value) { m_executableUsersHasBeenSet = true; m_executableUsers.push_back(value); return *this; }
+    template<typename ExecutableUsersT = Aws::Vector<Aws::String>>
+    void SetExecutableUsers(ExecutableUsersT&& value) { m_executableUsersHasBeenSet = true; m_executableUsers = std::forward<ExecutableUsersT>(value); }
+    template<typename ExecutableUsersT = Aws::Vector<Aws::String>>
+    DescribeImagesRequest& WithExecutableUsers(ExecutableUsersT&& value) { SetExecutableUsers(std::forward<ExecutableUsersT>(value)); return *this;}
+    template<typename ExecutableUsersT = Aws::String>
+    DescribeImagesRequest& AddExecutableUsers(ExecutableUsersT&& value) { m_executableUsersHasBeenSet = true; m_executableUsers.emplace_back(std::forward<ExecutableUsersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The image IDs.</p> <p>Default: Describes all images available to you.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetImageIds() const{ return m_imageIds; }
+    inline const Aws::Vector<Aws::String>& GetImageIds() const { return m_imageIds; }
     inline bool ImageIdsHasBeenSet() const { return m_imageIdsHasBeenSet; }
-    inline void SetImageIds(const Aws::Vector<Aws::String>& value) { m_imageIdsHasBeenSet = true; m_imageIds = value; }
-    inline void SetImageIds(Aws::Vector<Aws::String>&& value) { m_imageIdsHasBeenSet = true; m_imageIds = std::move(value); }
-    inline DescribeImagesRequest& WithImageIds(const Aws::Vector<Aws::String>& value) { SetImageIds(value); return *this;}
-    inline DescribeImagesRequest& WithImageIds(Aws::Vector<Aws::String>&& value) { SetImageIds(std::move(value)); return *this;}
-    inline DescribeImagesRequest& AddImageIds(const Aws::String& value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(value); return *this; }
-    inline DescribeImagesRequest& AddImageIds(Aws::String&& value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(std::move(value)); return *this; }
-    inline DescribeImagesRequest& AddImageIds(const char* value) { m_imageIdsHasBeenSet = true; m_imageIds.push_back(value); return *this; }
+    template<typename ImageIdsT = Aws::Vector<Aws::String>>
+    void SetImageIds(ImageIdsT&& value) { m_imageIdsHasBeenSet = true; m_imageIds = std::forward<ImageIdsT>(value); }
+    template<typename ImageIdsT = Aws::Vector<Aws::String>>
+    DescribeImagesRequest& WithImageIds(ImageIdsT&& value) { SetImageIds(std::forward<ImageIdsT>(value)); return *this;}
+    template<typename ImageIdsT = Aws::String>
+    DescribeImagesRequest& AddImageIds(ImageIdsT&& value) { m_imageIdsHasBeenSet = true; m_imageIds.emplace_back(std::forward<ImageIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -86,15 +84,14 @@ namespace Model
      * <code>aws-marketplace</code>. If you omit this parameter, the results include
      * all images for which you have launch permissions, regardless of ownership.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetOwners() const{ return m_owners; }
+    inline const Aws::Vector<Aws::String>& GetOwners() const { return m_owners; }
     inline bool OwnersHasBeenSet() const { return m_ownersHasBeenSet; }
-    inline void SetOwners(const Aws::Vector<Aws::String>& value) { m_ownersHasBeenSet = true; m_owners = value; }
-    inline void SetOwners(Aws::Vector<Aws::String>&& value) { m_ownersHasBeenSet = true; m_owners = std::move(value); }
-    inline DescribeImagesRequest& WithOwners(const Aws::Vector<Aws::String>& value) { SetOwners(value); return *this;}
-    inline DescribeImagesRequest& WithOwners(Aws::Vector<Aws::String>&& value) { SetOwners(std::move(value)); return *this;}
-    inline DescribeImagesRequest& AddOwners(const Aws::String& value) { m_ownersHasBeenSet = true; m_owners.push_back(value); return *this; }
-    inline DescribeImagesRequest& AddOwners(Aws::String&& value) { m_ownersHasBeenSet = true; m_owners.push_back(std::move(value)); return *this; }
-    inline DescribeImagesRequest& AddOwners(const char* value) { m_ownersHasBeenSet = true; m_owners.push_back(value); return *this; }
+    template<typename OwnersT = Aws::Vector<Aws::String>>
+    void SetOwners(OwnersT&& value) { m_ownersHasBeenSet = true; m_owners = std::forward<OwnersT>(value); }
+    template<typename OwnersT = Aws::Vector<Aws::String>>
+    DescribeImagesRequest& WithOwners(OwnersT&& value) { SetOwners(std::forward<OwnersT>(value)); return *this;}
+    template<typename OwnersT = Aws::String>
+    DescribeImagesRequest& AddOwners(OwnersT&& value) { m_ownersHasBeenSet = true; m_owners.emplace_back(std::forward<OwnersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -104,7 +101,7 @@ namespace Model
      * deprecated AMIs appear in the response regardless of what you specify for this
      * parameter.</p> 
      */
-    inline bool GetIncludeDeprecated() const{ return m_includeDeprecated; }
+    inline bool GetIncludeDeprecated() const { return m_includeDeprecated; }
     inline bool IncludeDeprecatedHasBeenSet() const { return m_includeDeprecatedHasBeenSet; }
     inline void SetIncludeDeprecated(bool value) { m_includeDeprecatedHasBeenSet = true; m_includeDeprecated = value; }
     inline DescribeImagesRequest& WithIncludeDeprecated(bool value) { SetIncludeDeprecated(value); return *this;}
@@ -115,7 +112,7 @@ namespace Model
      * <p>Specifies whether to include disabled AMIs.</p> <p>Default: No disabled AMIs
      * are included in the response.</p>
      */
-    inline bool GetIncludeDisabled() const{ return m_includeDisabled; }
+    inline bool GetIncludeDisabled() const { return m_includeDisabled; }
     inline bool IncludeDisabledHasBeenSet() const { return m_includeDisabledHasBeenSet; }
     inline void SetIncludeDisabled(bool value) { m_includeDisabledHasBeenSet = true; m_includeDisabled = value; }
     inline DescribeImagesRequest& WithIncludeDisabled(bool value) { SetIncludeDisabled(value); return *this;}
@@ -128,7 +125,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeImagesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -139,14 +136,12 @@ namespace Model
      * <p>The token returned from a previous paginated request. Pagination continues
      * from the end of the items returned by the previous request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeImagesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeImagesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeImagesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeImagesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -156,7 +151,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DescribeImagesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -239,14 +234,14 @@ namespace Model
      * </li> <li> <p> <code>virtualization-type</code> - The virtualization type
      * (<code>paravirtual</code> | <code>hvm</code>).</p> </li> </ul>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeImagesRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeImagesRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeImagesRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeImagesRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    DescribeImagesRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    DescribeImagesRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
   private:
 
@@ -259,19 +254,19 @@ namespace Model
     Aws::Vector<Aws::String> m_owners;
     bool m_ownersHasBeenSet = false;
 
-    bool m_includeDeprecated;
+    bool m_includeDeprecated{false};
     bool m_includeDeprecatedHasBeenSet = false;
 
-    bool m_includeDisabled;
+    bool m_includeDisabled{false};
     bool m_includeDisabledHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Filter> m_filters;

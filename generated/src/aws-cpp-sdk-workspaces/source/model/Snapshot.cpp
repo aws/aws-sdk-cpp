@@ -18,13 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-Snapshot::Snapshot() : 
-    m_snapshotTimeHasBeenSet(false)
-{
-}
-
 Snapshot::Snapshot(JsonView jsonValue)
-  : Snapshot()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Snapshot& Snapshot::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SnapshotTime"))
   {
     m_snapshotTime = jsonValue.GetDouble("SnapshotTime");
-
     m_snapshotTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

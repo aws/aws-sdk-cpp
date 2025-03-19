@@ -33,7 +33,7 @@ namespace Model
   class ModelBiasAppSpecification
   {
   public:
-    AWS_SAGEMAKER_API ModelBiasAppSpecification();
+    AWS_SAGEMAKER_API ModelBiasAppSpecification() = default;
     AWS_SAGEMAKER_API ModelBiasAppSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ModelBiasAppSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The container image to be run by the model bias job.</p>
      */
-    inline const Aws::String& GetImageUri() const{ return m_imageUri; }
+    inline const Aws::String& GetImageUri() const { return m_imageUri; }
     inline bool ImageUriHasBeenSet() const { return m_imageUriHasBeenSet; }
-    inline void SetImageUri(const Aws::String& value) { m_imageUriHasBeenSet = true; m_imageUri = value; }
-    inline void SetImageUri(Aws::String&& value) { m_imageUriHasBeenSet = true; m_imageUri = std::move(value); }
-    inline void SetImageUri(const char* value) { m_imageUriHasBeenSet = true; m_imageUri.assign(value); }
-    inline ModelBiasAppSpecification& WithImageUri(const Aws::String& value) { SetImageUri(value); return *this;}
-    inline ModelBiasAppSpecification& WithImageUri(Aws::String&& value) { SetImageUri(std::move(value)); return *this;}
-    inline ModelBiasAppSpecification& WithImageUri(const char* value) { SetImageUri(value); return *this;}
+    template<typename ImageUriT = Aws::String>
+    void SetImageUri(ImageUriT&& value) { m_imageUriHasBeenSet = true; m_imageUri = std::forward<ImageUriT>(value); }
+    template<typename ImageUriT = Aws::String>
+    ModelBiasAppSpecification& WithImageUri(ImageUriT&& value) { SetImageUri(std::forward<ImageUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,33 +58,28 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/clarify-config-json-monitor-bias-parameters.html">Configure
      * bias parameters</a>.</p>
      */
-    inline const Aws::String& GetConfigUri() const{ return m_configUri; }
+    inline const Aws::String& GetConfigUri() const { return m_configUri; }
     inline bool ConfigUriHasBeenSet() const { return m_configUriHasBeenSet; }
-    inline void SetConfigUri(const Aws::String& value) { m_configUriHasBeenSet = true; m_configUri = value; }
-    inline void SetConfigUri(Aws::String&& value) { m_configUriHasBeenSet = true; m_configUri = std::move(value); }
-    inline void SetConfigUri(const char* value) { m_configUriHasBeenSet = true; m_configUri.assign(value); }
-    inline ModelBiasAppSpecification& WithConfigUri(const Aws::String& value) { SetConfigUri(value); return *this;}
-    inline ModelBiasAppSpecification& WithConfigUri(Aws::String&& value) { SetConfigUri(std::move(value)); return *this;}
-    inline ModelBiasAppSpecification& WithConfigUri(const char* value) { SetConfigUri(value); return *this;}
+    template<typename ConfigUriT = Aws::String>
+    void SetConfigUri(ConfigUriT&& value) { m_configUriHasBeenSet = true; m_configUri = std::forward<ConfigUriT>(value); }
+    template<typename ConfigUriT = Aws::String>
+    ModelBiasAppSpecification& WithConfigUri(ConfigUriT&& value) { SetConfigUri(std::forward<ConfigUriT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Sets the environment variables in the Docker container.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const{ return m_environment; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const { return m_environment; }
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
-    inline void SetEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { m_environmentHasBeenSet = true; m_environment = value; }
-    inline void SetEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
-    inline ModelBiasAppSpecification& WithEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironment(value); return *this;}
-    inline ModelBiasAppSpecification& WithEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironment(std::move(value)); return *this;}
-    inline ModelBiasAppSpecification& AddEnvironment(const Aws::String& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
-    inline ModelBiasAppSpecification& AddEnvironment(Aws::String&& key, const Aws::String& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
-    inline ModelBiasAppSpecification& AddEnvironment(const Aws::String& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
-    inline ModelBiasAppSpecification& AddEnvironment(Aws::String&& key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), std::move(value)); return *this; }
-    inline ModelBiasAppSpecification& AddEnvironment(const char* key, Aws::String&& value) { m_environmentHasBeenSet = true; m_environment.emplace(key, std::move(value)); return *this; }
-    inline ModelBiasAppSpecification& AddEnvironment(Aws::String&& key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(std::move(key), value); return *this; }
-    inline ModelBiasAppSpecification& AddEnvironment(const char* key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
+    template<typename EnvironmentT = Aws::Map<Aws::String, Aws::String>>
+    void SetEnvironment(EnvironmentT&& value) { m_environmentHasBeenSet = true; m_environment = std::forward<EnvironmentT>(value); }
+    template<typename EnvironmentT = Aws::Map<Aws::String, Aws::String>>
+    ModelBiasAppSpecification& WithEnvironment(EnvironmentT&& value) { SetEnvironment(std::forward<EnvironmentT>(value)); return *this;}
+    template<typename EnvironmentKeyT = Aws::String, typename EnvironmentValueT = Aws::String>
+    ModelBiasAppSpecification& AddEnvironment(EnvironmentKeyT&& key, EnvironmentValueT&& value) {
+      m_environmentHasBeenSet = true; m_environment.emplace(std::forward<EnvironmentKeyT>(key), std::forward<EnvironmentValueT>(value)); return *this;
+    }
     ///@}
   private:
 

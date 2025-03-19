@@ -30,7 +30,7 @@ namespace Model
   class ListOrganizationInsightsResult
   {
   public:
-    AWS_DEVOPSGURU_API ListOrganizationInsightsResult();
+    AWS_DEVOPSGURU_API ListOrganizationInsightsResult() = default;
     AWS_DEVOPSGURU_API ListOrganizationInsightsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEVOPSGURU_API ListOrganizationInsightsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>An integer that specifies the number of open proactive insights in your
      * Amazon Web Services account.</p>
      */
-    inline const Aws::Vector<ProactiveOrganizationInsightSummary>& GetProactiveInsights() const{ return m_proactiveInsights; }
-    inline void SetProactiveInsights(const Aws::Vector<ProactiveOrganizationInsightSummary>& value) { m_proactiveInsights = value; }
-    inline void SetProactiveInsights(Aws::Vector<ProactiveOrganizationInsightSummary>&& value) { m_proactiveInsights = std::move(value); }
-    inline ListOrganizationInsightsResult& WithProactiveInsights(const Aws::Vector<ProactiveOrganizationInsightSummary>& value) { SetProactiveInsights(value); return *this;}
-    inline ListOrganizationInsightsResult& WithProactiveInsights(Aws::Vector<ProactiveOrganizationInsightSummary>&& value) { SetProactiveInsights(std::move(value)); return *this;}
-    inline ListOrganizationInsightsResult& AddProactiveInsights(const ProactiveOrganizationInsightSummary& value) { m_proactiveInsights.push_back(value); return *this; }
-    inline ListOrganizationInsightsResult& AddProactiveInsights(ProactiveOrganizationInsightSummary&& value) { m_proactiveInsights.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ProactiveOrganizationInsightSummary>& GetProactiveInsights() const { return m_proactiveInsights; }
+    template<typename ProactiveInsightsT = Aws::Vector<ProactiveOrganizationInsightSummary>>
+    void SetProactiveInsights(ProactiveInsightsT&& value) { m_proactiveInsightsHasBeenSet = true; m_proactiveInsights = std::forward<ProactiveInsightsT>(value); }
+    template<typename ProactiveInsightsT = Aws::Vector<ProactiveOrganizationInsightSummary>>
+    ListOrganizationInsightsResult& WithProactiveInsights(ProactiveInsightsT&& value) { SetProactiveInsights(std::forward<ProactiveInsightsT>(value)); return *this;}
+    template<typename ProactiveInsightsT = ProactiveOrganizationInsightSummary>
+    ListOrganizationInsightsResult& AddProactiveInsights(ProactiveInsightsT&& value) { m_proactiveInsightsHasBeenSet = true; m_proactiveInsights.emplace_back(std::forward<ProactiveInsightsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,13 +54,13 @@ namespace Model
      * <p>An integer that specifies the number of open reactive insights in your Amazon
      * Web Services account.</p>
      */
-    inline const Aws::Vector<ReactiveOrganizationInsightSummary>& GetReactiveInsights() const{ return m_reactiveInsights; }
-    inline void SetReactiveInsights(const Aws::Vector<ReactiveOrganizationInsightSummary>& value) { m_reactiveInsights = value; }
-    inline void SetReactiveInsights(Aws::Vector<ReactiveOrganizationInsightSummary>&& value) { m_reactiveInsights = std::move(value); }
-    inline ListOrganizationInsightsResult& WithReactiveInsights(const Aws::Vector<ReactiveOrganizationInsightSummary>& value) { SetReactiveInsights(value); return *this;}
-    inline ListOrganizationInsightsResult& WithReactiveInsights(Aws::Vector<ReactiveOrganizationInsightSummary>&& value) { SetReactiveInsights(std::move(value)); return *this;}
-    inline ListOrganizationInsightsResult& AddReactiveInsights(const ReactiveOrganizationInsightSummary& value) { m_reactiveInsights.push_back(value); return *this; }
-    inline ListOrganizationInsightsResult& AddReactiveInsights(ReactiveOrganizationInsightSummary&& value) { m_reactiveInsights.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReactiveOrganizationInsightSummary>& GetReactiveInsights() const { return m_reactiveInsights; }
+    template<typename ReactiveInsightsT = Aws::Vector<ReactiveOrganizationInsightSummary>>
+    void SetReactiveInsights(ReactiveInsightsT&& value) { m_reactiveInsightsHasBeenSet = true; m_reactiveInsights = std::forward<ReactiveInsightsT>(value); }
+    template<typename ReactiveInsightsT = Aws::Vector<ReactiveOrganizationInsightSummary>>
+    ListOrganizationInsightsResult& WithReactiveInsights(ReactiveInsightsT&& value) { SetReactiveInsights(std::forward<ReactiveInsightsT>(value)); return *this;}
+    template<typename ReactiveInsightsT = ReactiveOrganizationInsightSummary>
+    ListOrganizationInsightsResult& AddReactiveInsights(ReactiveInsightsT&& value) { m_reactiveInsightsHasBeenSet = true; m_reactiveInsights.emplace_back(std::forward<ReactiveInsightsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -68,34 +68,34 @@ namespace Model
      * <p>The pagination token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListOrganizationInsightsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListOrganizationInsightsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListOrganizationInsightsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListOrganizationInsightsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListOrganizationInsightsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListOrganizationInsightsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListOrganizationInsightsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListOrganizationInsightsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ProactiveOrganizationInsightSummary> m_proactiveInsights;
+    bool m_proactiveInsightsHasBeenSet = false;
 
     Aws::Vector<ReactiveOrganizationInsightSummary> m_reactiveInsights;
+    bool m_reactiveInsightsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

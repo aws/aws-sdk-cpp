@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AnnotationConsolidationConfig::AnnotationConsolidationConfig() : 
-    m_annotationConsolidationLambdaArnHasBeenSet(false)
-{
-}
-
 AnnotationConsolidationConfig::AnnotationConsolidationConfig(JsonView jsonValue)
-  : AnnotationConsolidationConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AnnotationConsolidationConfig& AnnotationConsolidationConfig::operator =(JsonVie
   if(jsonValue.ValueExists("AnnotationConsolidationLambdaArn"))
   {
     m_annotationConsolidationLambdaArn = jsonValue.GetString("AnnotationConsolidationLambdaArn");
-
     m_annotationConsolidationLambdaArnHasBeenSet = true;
   }
-
   return *this;
 }
 

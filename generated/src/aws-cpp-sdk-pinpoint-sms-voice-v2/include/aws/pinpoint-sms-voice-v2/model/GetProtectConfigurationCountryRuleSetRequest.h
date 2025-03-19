@@ -22,7 +22,7 @@ namespace Model
   class GetProtectConfigurationCountryRuleSetRequest : public PinpointSMSVoiceV2Request
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API GetProtectConfigurationCountryRuleSetRequest();
+    AWS_PINPOINTSMSVOICEV2_API GetProtectConfigurationCountryRuleSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The unique identifier for the protect configuration.</p>
      */
-    inline const Aws::String& GetProtectConfigurationId() const{ return m_protectConfigurationId; }
+    inline const Aws::String& GetProtectConfigurationId() const { return m_protectConfigurationId; }
     inline bool ProtectConfigurationIdHasBeenSet() const { return m_protectConfigurationIdHasBeenSet; }
-    inline void SetProtectConfigurationId(const Aws::String& value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId = value; }
-    inline void SetProtectConfigurationId(Aws::String&& value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId = std::move(value); }
-    inline void SetProtectConfigurationId(const char* value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId.assign(value); }
-    inline GetProtectConfigurationCountryRuleSetRequest& WithProtectConfigurationId(const Aws::String& value) { SetProtectConfigurationId(value); return *this;}
-    inline GetProtectConfigurationCountryRuleSetRequest& WithProtectConfigurationId(Aws::String&& value) { SetProtectConfigurationId(std::move(value)); return *this;}
-    inline GetProtectConfigurationCountryRuleSetRequest& WithProtectConfigurationId(const char* value) { SetProtectConfigurationId(value); return *this;}
+    template<typename ProtectConfigurationIdT = Aws::String>
+    void SetProtectConfigurationId(ProtectConfigurationIdT&& value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId = std::forward<ProtectConfigurationIdT>(value); }
+    template<typename ProtectConfigurationIdT = Aws::String>
+    GetProtectConfigurationCountryRuleSetRequest& WithProtectConfigurationId(ProtectConfigurationIdT&& value) { SetProtectConfigurationId(std::forward<ProtectConfigurationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,19 +52,17 @@ namespace Model
      * <p>The capability type to return the CountryRuleSet for. Valid values are
      * <code>SMS</code>, <code>VOICE</code>, or <code>MMS</code>.</p>
      */
-    inline const NumberCapability& GetNumberCapability() const{ return m_numberCapability; }
+    inline NumberCapability GetNumberCapability() const { return m_numberCapability; }
     inline bool NumberCapabilityHasBeenSet() const { return m_numberCapabilityHasBeenSet; }
-    inline void SetNumberCapability(const NumberCapability& value) { m_numberCapabilityHasBeenSet = true; m_numberCapability = value; }
-    inline void SetNumberCapability(NumberCapability&& value) { m_numberCapabilityHasBeenSet = true; m_numberCapability = std::move(value); }
-    inline GetProtectConfigurationCountryRuleSetRequest& WithNumberCapability(const NumberCapability& value) { SetNumberCapability(value); return *this;}
-    inline GetProtectConfigurationCountryRuleSetRequest& WithNumberCapability(NumberCapability&& value) { SetNumberCapability(std::move(value)); return *this;}
+    inline void SetNumberCapability(NumberCapability value) { m_numberCapabilityHasBeenSet = true; m_numberCapability = value; }
+    inline GetProtectConfigurationCountryRuleSetRequest& WithNumberCapability(NumberCapability value) { SetNumberCapability(value); return *this;}
     ///@}
   private:
 
     Aws::String m_protectConfigurationId;
     bool m_protectConfigurationIdHasBeenSet = false;
 
-    NumberCapability m_numberCapability;
+    NumberCapability m_numberCapability{NumberCapability::NOT_SET};
     bool m_numberCapabilityHasBeenSet = false;
   };
 

@@ -32,7 +32,7 @@ namespace Model
   class UpdateBrokerRequest : public MQRequest
   {
   public:
-    AWS_MQ_API UpdateBrokerRequest();
+    AWS_MQ_API UpdateBrokerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,12 +48,10 @@ namespace Model
      * <p>Optional. The authentication strategy used to secure the broker. The default
      * is SIMPLE.</p>
      */
-    inline const AuthenticationStrategy& GetAuthenticationStrategy() const{ return m_authenticationStrategy; }
+    inline AuthenticationStrategy GetAuthenticationStrategy() const { return m_authenticationStrategy; }
     inline bool AuthenticationStrategyHasBeenSet() const { return m_authenticationStrategyHasBeenSet; }
-    inline void SetAuthenticationStrategy(const AuthenticationStrategy& value) { m_authenticationStrategyHasBeenSet = true; m_authenticationStrategy = value; }
-    inline void SetAuthenticationStrategy(AuthenticationStrategy&& value) { m_authenticationStrategyHasBeenSet = true; m_authenticationStrategy = std::move(value); }
-    inline UpdateBrokerRequest& WithAuthenticationStrategy(const AuthenticationStrategy& value) { SetAuthenticationStrategy(value); return *this;}
-    inline UpdateBrokerRequest& WithAuthenticationStrategy(AuthenticationStrategy&& value) { SetAuthenticationStrategy(std::move(value)); return *this;}
+    inline void SetAuthenticationStrategy(AuthenticationStrategy value) { m_authenticationStrategyHasBeenSet = true; m_authenticationStrategy = value; }
+    inline UpdateBrokerRequest& WithAuthenticationStrategy(AuthenticationStrategy value) { SetAuthenticationStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -64,7 +62,7 @@ namespace Model
      * be set to true for ActiveMQ brokers version 5.18 and above and for RabbitMQ
      * brokers version 3.13 and above.</p>
      */
-    inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
+    inline bool GetAutoMinorVersionUpgrade() const { return m_autoMinorVersionUpgrade; }
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
     inline UpdateBrokerRequest& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
@@ -74,26 +72,24 @@ namespace Model
     /**
      * <p>The unique ID that Amazon MQ generates for the broker.</p>
      */
-    inline const Aws::String& GetBrokerId() const{ return m_brokerId; }
+    inline const Aws::String& GetBrokerId() const { return m_brokerId; }
     inline bool BrokerIdHasBeenSet() const { return m_brokerIdHasBeenSet; }
-    inline void SetBrokerId(const Aws::String& value) { m_brokerIdHasBeenSet = true; m_brokerId = value; }
-    inline void SetBrokerId(Aws::String&& value) { m_brokerIdHasBeenSet = true; m_brokerId = std::move(value); }
-    inline void SetBrokerId(const char* value) { m_brokerIdHasBeenSet = true; m_brokerId.assign(value); }
-    inline UpdateBrokerRequest& WithBrokerId(const Aws::String& value) { SetBrokerId(value); return *this;}
-    inline UpdateBrokerRequest& WithBrokerId(Aws::String&& value) { SetBrokerId(std::move(value)); return *this;}
-    inline UpdateBrokerRequest& WithBrokerId(const char* value) { SetBrokerId(value); return *this;}
+    template<typename BrokerIdT = Aws::String>
+    void SetBrokerId(BrokerIdT&& value) { m_brokerIdHasBeenSet = true; m_brokerId = std::forward<BrokerIdT>(value); }
+    template<typename BrokerIdT = Aws::String>
+    UpdateBrokerRequest& WithBrokerId(BrokerIdT&& value) { SetBrokerId(std::forward<BrokerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of information about the configuration.</p>
      */
-    inline const ConfigurationId& GetConfiguration() const{ return m_configuration; }
+    inline const ConfigurationId& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const ConfigurationId& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(ConfigurationId&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline UpdateBrokerRequest& WithConfiguration(const ConfigurationId& value) { SetConfiguration(value); return *this;}
-    inline UpdateBrokerRequest& WithConfiguration(ConfigurationId&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = ConfigurationId>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = ConfigurationId>
+    UpdateBrokerRequest& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,14 +103,12 @@ namespace Model
      * 3.13 and above, you must have autoMinorVersionUpgrade set to true for the
      * broker.</p>
      */
-    inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+    inline const Aws::String& GetEngineVersion() const { return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
-    inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
-    inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
-    inline UpdateBrokerRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
-    inline UpdateBrokerRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
-    inline UpdateBrokerRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+    template<typename EngineVersionT = Aws::String>
+    void SetEngineVersion(EngineVersionT&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::forward<EngineVersionT>(value); }
+    template<typename EngineVersionT = Aws::String>
+    UpdateBrokerRequest& WithEngineVersion(EngineVersionT&& value) { SetEngineVersion(std::forward<EngineVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,14 +118,12 @@ namespace Model
      * href="https://docs.aws.amazon.com//amazon-mq/latest/developer-guide/broker.html#broker-instance-types">Broker
      * instance types</a>.</p>
      */
-    inline const Aws::String& GetHostInstanceType() const{ return m_hostInstanceType; }
+    inline const Aws::String& GetHostInstanceType() const { return m_hostInstanceType; }
     inline bool HostInstanceTypeHasBeenSet() const { return m_hostInstanceTypeHasBeenSet; }
-    inline void SetHostInstanceType(const Aws::String& value) { m_hostInstanceTypeHasBeenSet = true; m_hostInstanceType = value; }
-    inline void SetHostInstanceType(Aws::String&& value) { m_hostInstanceTypeHasBeenSet = true; m_hostInstanceType = std::move(value); }
-    inline void SetHostInstanceType(const char* value) { m_hostInstanceTypeHasBeenSet = true; m_hostInstanceType.assign(value); }
-    inline UpdateBrokerRequest& WithHostInstanceType(const Aws::String& value) { SetHostInstanceType(value); return *this;}
-    inline UpdateBrokerRequest& WithHostInstanceType(Aws::String&& value) { SetHostInstanceType(std::move(value)); return *this;}
-    inline UpdateBrokerRequest& WithHostInstanceType(const char* value) { SetHostInstanceType(value); return *this;}
+    template<typename HostInstanceTypeT = Aws::String>
+    void SetHostInstanceType(HostInstanceTypeT&& value) { m_hostInstanceTypeHasBeenSet = true; m_hostInstanceType = std::forward<HostInstanceTypeT>(value); }
+    template<typename HostInstanceTypeT = Aws::String>
+    UpdateBrokerRequest& WithHostInstanceType(HostInstanceTypeT&& value) { SetHostInstanceType(std::forward<HostInstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,36 +131,36 @@ namespace Model
      * <p>Optional. The metadata of the LDAP server used to authenticate and authorize
      * connections to the broker. Does not apply to RabbitMQ brokers.</p>
      */
-    inline const LdapServerMetadataInput& GetLdapServerMetadata() const{ return m_ldapServerMetadata; }
+    inline const LdapServerMetadataInput& GetLdapServerMetadata() const { return m_ldapServerMetadata; }
     inline bool LdapServerMetadataHasBeenSet() const { return m_ldapServerMetadataHasBeenSet; }
-    inline void SetLdapServerMetadata(const LdapServerMetadataInput& value) { m_ldapServerMetadataHasBeenSet = true; m_ldapServerMetadata = value; }
-    inline void SetLdapServerMetadata(LdapServerMetadataInput&& value) { m_ldapServerMetadataHasBeenSet = true; m_ldapServerMetadata = std::move(value); }
-    inline UpdateBrokerRequest& WithLdapServerMetadata(const LdapServerMetadataInput& value) { SetLdapServerMetadata(value); return *this;}
-    inline UpdateBrokerRequest& WithLdapServerMetadata(LdapServerMetadataInput&& value) { SetLdapServerMetadata(std::move(value)); return *this;}
+    template<typename LdapServerMetadataT = LdapServerMetadataInput>
+    void SetLdapServerMetadata(LdapServerMetadataT&& value) { m_ldapServerMetadataHasBeenSet = true; m_ldapServerMetadata = std::forward<LdapServerMetadataT>(value); }
+    template<typename LdapServerMetadataT = LdapServerMetadataInput>
+    UpdateBrokerRequest& WithLdapServerMetadata(LdapServerMetadataT&& value) { SetLdapServerMetadata(std::forward<LdapServerMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Enables Amazon CloudWatch logging for brokers.</p>
      */
-    inline const Logs& GetLogs() const{ return m_logs; }
+    inline const Logs& GetLogs() const { return m_logs; }
     inline bool LogsHasBeenSet() const { return m_logsHasBeenSet; }
-    inline void SetLogs(const Logs& value) { m_logsHasBeenSet = true; m_logs = value; }
-    inline void SetLogs(Logs&& value) { m_logsHasBeenSet = true; m_logs = std::move(value); }
-    inline UpdateBrokerRequest& WithLogs(const Logs& value) { SetLogs(value); return *this;}
-    inline UpdateBrokerRequest& WithLogs(Logs&& value) { SetLogs(std::move(value)); return *this;}
+    template<typename LogsT = Logs>
+    void SetLogs(LogsT&& value) { m_logsHasBeenSet = true; m_logs = std::forward<LogsT>(value); }
+    template<typename LogsT = Logs>
+    UpdateBrokerRequest& WithLogs(LogsT&& value) { SetLogs(std::forward<LogsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameters that determine the WeeklyStartTime.</p>
      */
-    inline const WeeklyStartTime& GetMaintenanceWindowStartTime() const{ return m_maintenanceWindowStartTime; }
+    inline const WeeklyStartTime& GetMaintenanceWindowStartTime() const { return m_maintenanceWindowStartTime; }
     inline bool MaintenanceWindowStartTimeHasBeenSet() const { return m_maintenanceWindowStartTimeHasBeenSet; }
-    inline void SetMaintenanceWindowStartTime(const WeeklyStartTime& value) { m_maintenanceWindowStartTimeHasBeenSet = true; m_maintenanceWindowStartTime = value; }
-    inline void SetMaintenanceWindowStartTime(WeeklyStartTime&& value) { m_maintenanceWindowStartTimeHasBeenSet = true; m_maintenanceWindowStartTime = std::move(value); }
-    inline UpdateBrokerRequest& WithMaintenanceWindowStartTime(const WeeklyStartTime& value) { SetMaintenanceWindowStartTime(value); return *this;}
-    inline UpdateBrokerRequest& WithMaintenanceWindowStartTime(WeeklyStartTime&& value) { SetMaintenanceWindowStartTime(std::move(value)); return *this;}
+    template<typename MaintenanceWindowStartTimeT = WeeklyStartTime>
+    void SetMaintenanceWindowStartTime(MaintenanceWindowStartTimeT&& value) { m_maintenanceWindowStartTimeHasBeenSet = true; m_maintenanceWindowStartTime = std::forward<MaintenanceWindowStartTimeT>(value); }
+    template<typename MaintenanceWindowStartTimeT = WeeklyStartTime>
+    UpdateBrokerRequest& WithMaintenanceWindowStartTime(MaintenanceWindowStartTimeT&& value) { SetMaintenanceWindowStartTime(std::forward<MaintenanceWindowStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -176,34 +168,31 @@ namespace Model
      * <p>The list of security groups (1 minimum, 5 maximum) that authorizes
      * connections to brokers.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroups() const { return m_securityGroups; }
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
-    inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
-    inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
-    inline UpdateBrokerRequest& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
-    inline UpdateBrokerRequest& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
-    inline UpdateBrokerRequest& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
-    inline UpdateBrokerRequest& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
-    inline UpdateBrokerRequest& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+    template<typename SecurityGroupsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroups(SecurityGroupsT&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::forward<SecurityGroupsT>(value); }
+    template<typename SecurityGroupsT = Aws::Vector<Aws::String>>
+    UpdateBrokerRequest& WithSecurityGroups(SecurityGroupsT&& value) { SetSecurityGroups(std::forward<SecurityGroupsT>(value)); return *this;}
+    template<typename SecurityGroupsT = Aws::String>
+    UpdateBrokerRequest& AddSecurityGroups(SecurityGroupsT&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.emplace_back(std::forward<SecurityGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Defines whether this broker is a part of a data replication pair.</p>
      */
-    inline const DataReplicationMode& GetDataReplicationMode() const{ return m_dataReplicationMode; }
+    inline DataReplicationMode GetDataReplicationMode() const { return m_dataReplicationMode; }
     inline bool DataReplicationModeHasBeenSet() const { return m_dataReplicationModeHasBeenSet; }
-    inline void SetDataReplicationMode(const DataReplicationMode& value) { m_dataReplicationModeHasBeenSet = true; m_dataReplicationMode = value; }
-    inline void SetDataReplicationMode(DataReplicationMode&& value) { m_dataReplicationModeHasBeenSet = true; m_dataReplicationMode = std::move(value); }
-    inline UpdateBrokerRequest& WithDataReplicationMode(const DataReplicationMode& value) { SetDataReplicationMode(value); return *this;}
-    inline UpdateBrokerRequest& WithDataReplicationMode(DataReplicationMode&& value) { SetDataReplicationMode(std::move(value)); return *this;}
+    inline void SetDataReplicationMode(DataReplicationMode value) { m_dataReplicationModeHasBeenSet = true; m_dataReplicationMode = value; }
+    inline UpdateBrokerRequest& WithDataReplicationMode(DataReplicationMode value) { SetDataReplicationMode(value); return *this;}
     ///@}
   private:
 
-    AuthenticationStrategy m_authenticationStrategy;
+    AuthenticationStrategy m_authenticationStrategy{AuthenticationStrategy::NOT_SET};
     bool m_authenticationStrategyHasBeenSet = false;
 
-    bool m_autoMinorVersionUpgrade;
+    bool m_autoMinorVersionUpgrade{false};
     bool m_autoMinorVersionUpgradeHasBeenSet = false;
 
     Aws::String m_brokerId;
@@ -230,7 +219,7 @@ namespace Model
     Aws::Vector<Aws::String> m_securityGroups;
     bool m_securityGroupsHasBeenSet = false;
 
-    DataReplicationMode m_dataReplicationMode;
+    DataReplicationMode m_dataReplicationMode{DataReplicationMode::NOT_SET};
     bool m_dataReplicationModeHasBeenSet = false;
   };
 

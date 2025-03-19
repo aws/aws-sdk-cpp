@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeleteGroupPolicyRequest::DeleteGroupPolicyRequest() : 
-    m_groupNameHasBeenSet(false),
-    m_policyNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteGroupPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,15 +18,7 @@ namespace DSQL
 namespace Model
 {
 
-LinkedClusterProperties::LinkedClusterProperties() : 
-    m_deletionProtectionEnabled(false),
-    m_deletionProtectionEnabledHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 LinkedClusterProperties::LinkedClusterProperties(JsonView jsonValue)
-  : LinkedClusterProperties()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ LinkedClusterProperties& LinkedClusterProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("deletionProtectionEnabled"))
   {
     m_deletionProtectionEnabled = jsonValue.GetBool("deletionProtectionEnabled");
-
     m_deletionProtectionEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -49,7 +39,6 @@ LinkedClusterProperties& LinkedClusterProperties::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

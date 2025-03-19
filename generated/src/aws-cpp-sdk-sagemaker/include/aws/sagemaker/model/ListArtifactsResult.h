@@ -29,7 +29,7 @@ namespace Model
   class ListArtifactsResult
   {
   public:
-    AWS_SAGEMAKER_API ListArtifactsResult();
+    AWS_SAGEMAKER_API ListArtifactsResult() = default;
     AWS_SAGEMAKER_API ListArtifactsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API ListArtifactsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A list of artifacts and their properties.</p>
      */
-    inline const Aws::Vector<ArtifactSummary>& GetArtifactSummaries() const{ return m_artifactSummaries; }
-    inline void SetArtifactSummaries(const Aws::Vector<ArtifactSummary>& value) { m_artifactSummaries = value; }
-    inline void SetArtifactSummaries(Aws::Vector<ArtifactSummary>&& value) { m_artifactSummaries = std::move(value); }
-    inline ListArtifactsResult& WithArtifactSummaries(const Aws::Vector<ArtifactSummary>& value) { SetArtifactSummaries(value); return *this;}
-    inline ListArtifactsResult& WithArtifactSummaries(Aws::Vector<ArtifactSummary>&& value) { SetArtifactSummaries(std::move(value)); return *this;}
-    inline ListArtifactsResult& AddArtifactSummaries(const ArtifactSummary& value) { m_artifactSummaries.push_back(value); return *this; }
-    inline ListArtifactsResult& AddArtifactSummaries(ArtifactSummary&& value) { m_artifactSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ArtifactSummary>& GetArtifactSummaries() const { return m_artifactSummaries; }
+    template<typename ArtifactSummariesT = Aws::Vector<ArtifactSummary>>
+    void SetArtifactSummaries(ArtifactSummariesT&& value) { m_artifactSummariesHasBeenSet = true; m_artifactSummaries = std::forward<ArtifactSummariesT>(value); }
+    template<typename ArtifactSummariesT = Aws::Vector<ArtifactSummary>>
+    ListArtifactsResult& WithArtifactSummaries(ArtifactSummariesT&& value) { SetArtifactSummaries(std::forward<ArtifactSummariesT>(value)); return *this;}
+    template<typename ArtifactSummariesT = ArtifactSummary>
+    ListArtifactsResult& AddArtifactSummaries(ArtifactSummariesT&& value) { m_artifactSummariesHasBeenSet = true; m_artifactSummaries.emplace_back(std::forward<ArtifactSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A token for getting the next set of artifacts, if there are any.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListArtifactsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListArtifactsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListArtifactsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListArtifactsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListArtifactsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListArtifactsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListArtifactsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListArtifactsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ArtifactSummary> m_artifactSummaries;
+    bool m_artifactSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

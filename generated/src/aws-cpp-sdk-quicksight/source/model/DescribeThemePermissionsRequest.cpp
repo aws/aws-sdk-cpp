@@ -12,12 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeThemePermissionsRequest::DescribeThemePermissionsRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_themeIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeThemePermissionsRequest::SerializePayload() const
 {
   return {};

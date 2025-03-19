@@ -18,13 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-OrchestrationConfiguration::OrchestrationConfiguration() : 
-    m_queryTransformationConfigurationHasBeenSet(false)
-{
-}
-
 OrchestrationConfiguration::OrchestrationConfiguration(JsonView jsonValue)
-  : OrchestrationConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OrchestrationConfiguration& OrchestrationConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("queryTransformationConfiguration"))
   {
     m_queryTransformationConfiguration = jsonValue.GetObject("queryTransformationConfiguration");
-
     m_queryTransformationConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

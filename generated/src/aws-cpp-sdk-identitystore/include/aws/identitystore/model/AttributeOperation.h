@@ -33,7 +33,7 @@ namespace Model
   class AttributeOperation
   {
   public:
-    AWS_IDENTITYSTORE_API AttributeOperation();
+    AWS_IDENTITYSTORE_API AttributeOperation() = default;
     AWS_IDENTITYSTORE_API AttributeOperation(Aws::Utils::Json::JsonView jsonValue);
     AWS_IDENTITYSTORE_API AttributeOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IDENTITYSTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>A string representation of the path to a given attribute or sub-attribute.
      * Supports JMESPath.</p>
      */
-    inline const Aws::String& GetAttributePath() const{ return m_attributePath; }
+    inline const Aws::String& GetAttributePath() const { return m_attributePath; }
     inline bool AttributePathHasBeenSet() const { return m_attributePathHasBeenSet; }
-    inline void SetAttributePath(const Aws::String& value) { m_attributePathHasBeenSet = true; m_attributePath = value; }
-    inline void SetAttributePath(Aws::String&& value) { m_attributePathHasBeenSet = true; m_attributePath = std::move(value); }
-    inline void SetAttributePath(const char* value) { m_attributePathHasBeenSet = true; m_attributePath.assign(value); }
-    inline AttributeOperation& WithAttributePath(const Aws::String& value) { SetAttributePath(value); return *this;}
-    inline AttributeOperation& WithAttributePath(Aws::String&& value) { SetAttributePath(std::move(value)); return *this;}
-    inline AttributeOperation& WithAttributePath(const char* value) { SetAttributePath(value); return *this;}
+    template<typename AttributePathT = Aws::String>
+    void SetAttributePath(AttributePathT&& value) { m_attributePathHasBeenSet = true; m_attributePath = std::forward<AttributePathT>(value); }
+    template<typename AttributePathT = Aws::String>
+    AttributeOperation& WithAttributePath(AttributePathT&& value) { SetAttributePath(std::forward<AttributePathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,12 @@ namespace Model
      * <p>The value of the attribute. This is a <code>Document</code> type. This type
      * is not supported by Java V1, Go V1, and older versions of the CLI.</p>
      */
-    inline Aws::Utils::DocumentView GetAttributeValue() const{ return m_attributeValue; }
+    inline Aws::Utils::DocumentView GetAttributeValue() const { return m_attributeValue; }
     inline bool AttributeValueHasBeenSet() const { return m_attributeValueHasBeenSet; }
-    inline void SetAttributeValue(const Aws::Utils::Document& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
-    inline void SetAttributeValue(Aws::Utils::Document&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::move(value); }
-    inline AttributeOperation& WithAttributeValue(const Aws::Utils::Document& value) { SetAttributeValue(value); return *this;}
-    inline AttributeOperation& WithAttributeValue(Aws::Utils::Document&& value) { SetAttributeValue(std::move(value)); return *this;}
+    template<typename AttributeValueT = Aws::Utils::Document>
+    void SetAttributeValue(AttributeValueT&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::forward<AttributeValueT>(value); }
+    template<typename AttributeValueT = Aws::Utils::Document>
+    AttributeOperation& WithAttributeValue(AttributeValueT&& value) { SetAttributeValue(std::forward<AttributeValueT>(value)); return *this;}
     ///@}
   private:
 

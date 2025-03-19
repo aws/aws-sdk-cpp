@@ -12,14 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateProfileShareRequest::CreateProfileShareRequest() : 
-    m_profileArnHasBeenSet(false),
-    m_sharedWithHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateProfileShareRequest::SerializePayload() const
 {
   JsonValue payload;

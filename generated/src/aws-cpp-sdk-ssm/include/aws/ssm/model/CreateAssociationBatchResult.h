@@ -30,7 +30,7 @@ namespace Model
   class CreateAssociationBatchResult
   {
   public:
-    AWS_SSM_API CreateAssociationBatchResult();
+    AWS_SSM_API CreateAssociationBatchResult() = default;
     AWS_SSM_API CreateAssociationBatchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSM_API CreateAssociationBatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,46 @@ namespace Model
     /**
      * <p>Information about the associations that succeeded.</p>
      */
-    inline const Aws::Vector<AssociationDescription>& GetSuccessful() const{ return m_successful; }
-    inline void SetSuccessful(const Aws::Vector<AssociationDescription>& value) { m_successful = value; }
-    inline void SetSuccessful(Aws::Vector<AssociationDescription>&& value) { m_successful = std::move(value); }
-    inline CreateAssociationBatchResult& WithSuccessful(const Aws::Vector<AssociationDescription>& value) { SetSuccessful(value); return *this;}
-    inline CreateAssociationBatchResult& WithSuccessful(Aws::Vector<AssociationDescription>&& value) { SetSuccessful(std::move(value)); return *this;}
-    inline CreateAssociationBatchResult& AddSuccessful(const AssociationDescription& value) { m_successful.push_back(value); return *this; }
-    inline CreateAssociationBatchResult& AddSuccessful(AssociationDescription&& value) { m_successful.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AssociationDescription>& GetSuccessful() const { return m_successful; }
+    template<typename SuccessfulT = Aws::Vector<AssociationDescription>>
+    void SetSuccessful(SuccessfulT&& value) { m_successfulHasBeenSet = true; m_successful = std::forward<SuccessfulT>(value); }
+    template<typename SuccessfulT = Aws::Vector<AssociationDescription>>
+    CreateAssociationBatchResult& WithSuccessful(SuccessfulT&& value) { SetSuccessful(std::forward<SuccessfulT>(value)); return *this;}
+    template<typename SuccessfulT = AssociationDescription>
+    CreateAssociationBatchResult& AddSuccessful(SuccessfulT&& value) { m_successfulHasBeenSet = true; m_successful.emplace_back(std::forward<SuccessfulT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Information about the associations that failed.</p>
      */
-    inline const Aws::Vector<FailedCreateAssociation>& GetFailed() const{ return m_failed; }
-    inline void SetFailed(const Aws::Vector<FailedCreateAssociation>& value) { m_failed = value; }
-    inline void SetFailed(Aws::Vector<FailedCreateAssociation>&& value) { m_failed = std::move(value); }
-    inline CreateAssociationBatchResult& WithFailed(const Aws::Vector<FailedCreateAssociation>& value) { SetFailed(value); return *this;}
-    inline CreateAssociationBatchResult& WithFailed(Aws::Vector<FailedCreateAssociation>&& value) { SetFailed(std::move(value)); return *this;}
-    inline CreateAssociationBatchResult& AddFailed(const FailedCreateAssociation& value) { m_failed.push_back(value); return *this; }
-    inline CreateAssociationBatchResult& AddFailed(FailedCreateAssociation&& value) { m_failed.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FailedCreateAssociation>& GetFailed() const { return m_failed; }
+    template<typename FailedT = Aws::Vector<FailedCreateAssociation>>
+    void SetFailed(FailedT&& value) { m_failedHasBeenSet = true; m_failed = std::forward<FailedT>(value); }
+    template<typename FailedT = Aws::Vector<FailedCreateAssociation>>
+    CreateAssociationBatchResult& WithFailed(FailedT&& value) { SetFailed(std::forward<FailedT>(value)); return *this;}
+    template<typename FailedT = FailedCreateAssociation>
+    CreateAssociationBatchResult& AddFailed(FailedT&& value) { m_failedHasBeenSet = true; m_failed.emplace_back(std::forward<FailedT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAssociationBatchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAssociationBatchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAssociationBatchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAssociationBatchResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AssociationDescription> m_successful;
+    bool m_successfulHasBeenSet = false;
 
     Aws::Vector<FailedCreateAssociation> m_failed;
+    bool m_failedHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

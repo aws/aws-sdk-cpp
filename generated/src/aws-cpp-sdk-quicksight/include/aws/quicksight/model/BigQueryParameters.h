@@ -32,7 +32,7 @@ namespace Model
   class BigQueryParameters
   {
   public:
-    AWS_QUICKSIGHT_API BigQueryParameters();
+    AWS_QUICKSIGHT_API BigQueryParameters() = default;
     AWS_QUICKSIGHT_API BigQueryParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API BigQueryParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The Google Cloud Platform project ID where your datasource was created.</p>
      */
-    inline const Aws::String& GetProjectId() const{ return m_projectId; }
+    inline const Aws::String& GetProjectId() const { return m_projectId; }
     inline bool ProjectIdHasBeenSet() const { return m_projectIdHasBeenSet; }
-    inline void SetProjectId(const Aws::String& value) { m_projectIdHasBeenSet = true; m_projectId = value; }
-    inline void SetProjectId(Aws::String&& value) { m_projectIdHasBeenSet = true; m_projectId = std::move(value); }
-    inline void SetProjectId(const char* value) { m_projectIdHasBeenSet = true; m_projectId.assign(value); }
-    inline BigQueryParameters& WithProjectId(const Aws::String& value) { SetProjectId(value); return *this;}
-    inline BigQueryParameters& WithProjectId(Aws::String&& value) { SetProjectId(std::move(value)); return *this;}
-    inline BigQueryParameters& WithProjectId(const char* value) { SetProjectId(value); return *this;}
+    template<typename ProjectIdT = Aws::String>
+    void SetProjectId(ProjectIdT&& value) { m_projectIdHasBeenSet = true; m_projectId = std::forward<ProjectIdT>(value); }
+    template<typename ProjectIdT = Aws::String>
+    BigQueryParameters& WithProjectId(ProjectIdT&& value) { SetProjectId(std::forward<ProjectIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The storage location where you create a Google BigQuery data source.</p>
      */
-    inline const Aws::String& GetDataSetRegion() const{ return m_dataSetRegion; }
+    inline const Aws::String& GetDataSetRegion() const { return m_dataSetRegion; }
     inline bool DataSetRegionHasBeenSet() const { return m_dataSetRegionHasBeenSet; }
-    inline void SetDataSetRegion(const Aws::String& value) { m_dataSetRegionHasBeenSet = true; m_dataSetRegion = value; }
-    inline void SetDataSetRegion(Aws::String&& value) { m_dataSetRegionHasBeenSet = true; m_dataSetRegion = std::move(value); }
-    inline void SetDataSetRegion(const char* value) { m_dataSetRegionHasBeenSet = true; m_dataSetRegion.assign(value); }
-    inline BigQueryParameters& WithDataSetRegion(const Aws::String& value) { SetDataSetRegion(value); return *this;}
-    inline BigQueryParameters& WithDataSetRegion(Aws::String&& value) { SetDataSetRegion(std::move(value)); return *this;}
-    inline BigQueryParameters& WithDataSetRegion(const char* value) { SetDataSetRegion(value); return *this;}
+    template<typename DataSetRegionT = Aws::String>
+    void SetDataSetRegion(DataSetRegionT&& value) { m_dataSetRegionHasBeenSet = true; m_dataSetRegion = std::forward<DataSetRegionT>(value); }
+    template<typename DataSetRegionT = Aws::String>
+    BigQueryParameters& WithDataSetRegion(DataSetRegionT&& value) { SetDataSetRegion(std::forward<DataSetRegionT>(value)); return *this;}
     ///@}
   private:
 

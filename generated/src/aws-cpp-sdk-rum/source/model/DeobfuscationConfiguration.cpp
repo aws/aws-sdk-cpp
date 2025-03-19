@@ -18,13 +18,7 @@ namespace CloudWatchRUM
 namespace Model
 {
 
-DeobfuscationConfiguration::DeobfuscationConfiguration() : 
-    m_javaScriptSourceMapsHasBeenSet(false)
-{
-}
-
 DeobfuscationConfiguration::DeobfuscationConfiguration(JsonView jsonValue)
-  : DeobfuscationConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DeobfuscationConfiguration& DeobfuscationConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("JavaScriptSourceMaps"))
   {
     m_javaScriptSourceMaps = jsonValue.GetObject("JavaScriptSourceMaps");
-
     m_javaScriptSourceMapsHasBeenSet = true;
   }
-
   return *this;
 }
 

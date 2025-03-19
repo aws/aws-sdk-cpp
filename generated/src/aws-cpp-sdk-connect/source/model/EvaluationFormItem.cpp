@@ -19,41 +19,23 @@ namespace Connect
 namespace Model
 {
 
-EvaluationFormItem::EvaluationFormItem() : 
-    m_sectionHasBeenSet(false),
-    m_questionHasBeenSet(false)
-{
-}
-
 EvaluationFormItem::EvaluationFormItem(JsonView jsonValue)
-  : EvaluationFormItem()
 {
   *this = jsonValue;
 }
-
-const EvaluationFormSection& EvaluationFormItem::GetSection() const{ return *m_section; }
-bool EvaluationFormItem::SectionHasBeenSet() const { return m_sectionHasBeenSet; }
-void EvaluationFormItem::SetSection(const EvaluationFormSection& value) { m_sectionHasBeenSet = true; m_section = Aws::MakeShared<EvaluationFormSection>("EvaluationFormItem", value); }
-void EvaluationFormItem::SetSection(EvaluationFormSection&& value) { m_sectionHasBeenSet = true; m_section = Aws::MakeShared<EvaluationFormSection>("EvaluationFormItem", std::move(value)); }
-EvaluationFormItem& EvaluationFormItem::WithSection(const EvaluationFormSection& value) { SetSection(value); return *this;}
-EvaluationFormItem& EvaluationFormItem::WithSection(EvaluationFormSection&& value) { SetSection(std::move(value)); return *this;}
 
 EvaluationFormItem& EvaluationFormItem::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("Section"))
   {
     m_section = Aws::MakeShared<EvaluationFormSection>("EvaluationFormItem", jsonValue.GetObject("Section"));
-
     m_sectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Question"))
   {
     m_question = jsonValue.GetObject("Question");
-
     m_questionHasBeenSet = true;
   }
-
   return *this;
 }
 

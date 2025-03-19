@@ -20,13 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-MultiRegionAccessPointsAsyncResponse::MultiRegionAccessPointsAsyncResponse() : 
-    m_regionsHasBeenSet(false)
-{
-}
-
 MultiRegionAccessPointsAsyncResponse::MultiRegionAccessPointsAsyncResponse(const XmlNode& xmlNode)
-  : MultiRegionAccessPointsAsyncResponse()
 {
   *this = xmlNode;
 }
@@ -41,6 +35,7 @@ MultiRegionAccessPointsAsyncResponse& MultiRegionAccessPointsAsyncResponse::oper
     if(!regionsNode.IsNull())
     {
       XmlNode regionsMember = regionsNode.FirstChild("Region");
+      m_regionsHasBeenSet = !regionsMember.IsNull();
       while(!regionsMember.IsNull())
       {
         m_regions.push_back(regionsMember);

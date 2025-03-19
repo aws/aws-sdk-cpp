@@ -12,18 +12,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListBackupsRequest::ListBackupsRequest() : 
-    m_tableNameHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_timeRangeLowerBoundHasBeenSet(false),
-    m_timeRangeUpperBoundHasBeenSet(false),
-    m_exclusiveStartBackupArnHasBeenSet(false),
-    m_backupType(BackupTypeFilter::NOT_SET),
-    m_backupTypeHasBeenSet(false)
-{
-}
-
 Aws::String ListBackupsRequest::SerializePayload() const
 {
   JsonValue payload;

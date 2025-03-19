@@ -18,10 +18,6 @@ namespace MediaLive
 namespace Model
 {
 
-SmpteTtDestinationSettings::SmpteTtDestinationSettings()
-{
-}
-
 SmpteTtDestinationSettings::SmpteTtDestinationSettings(JsonView jsonValue)
 {
   *this = jsonValue;

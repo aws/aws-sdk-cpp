@@ -10,23 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DescribeReservedDBInstancesRequest::DescribeReservedDBInstancesRequest() : 
-    m_reservedDBInstanceIdHasBeenSet(false),
-    m_reservedDBInstancesOfferingIdHasBeenSet(false),
-    m_dBInstanceClassHasBeenSet(false),
-    m_durationHasBeenSet(false),
-    m_productDescriptionHasBeenSet(false),
-    m_offeringTypeHasBeenSet(false),
-    m_multiAZ(false),
-    m_multiAZHasBeenSet(false),
-    m_leaseIdHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeReservedDBInstancesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

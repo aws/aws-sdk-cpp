@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-Filter::Filter() : 
-    m_attributeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 Filter::Filter(JsonView jsonValue)
-  : Filter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Filter& Filter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attribute"))
   {
     m_attribute = jsonValue.GetString("attribute");
-
     m_attributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

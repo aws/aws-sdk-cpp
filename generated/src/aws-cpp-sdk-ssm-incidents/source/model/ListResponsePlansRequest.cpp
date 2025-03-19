@@ -12,13 +12,6 @@ using namespace Aws::SSMIncidents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListResponsePlansRequest::ListResponsePlansRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListResponsePlansRequest::SerializePayload() const
 {
   JsonValue payload;

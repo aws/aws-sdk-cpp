@@ -33,7 +33,7 @@ namespace Model
   class ListRouteCalculatorsResponseEntry
   {
   public:
-    AWS_LOCATIONSERVICE_API ListRouteCalculatorsResponseEntry();
+    AWS_LOCATIONSERVICE_API ListRouteCalculatorsResponseEntry() = default;
     AWS_LOCATIONSERVICE_API ListRouteCalculatorsResponseEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API ListRouteCalculatorsResponseEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The name of the route calculator resource.</p>
      */
-    inline const Aws::String& GetCalculatorName() const{ return m_calculatorName; }
+    inline const Aws::String& GetCalculatorName() const { return m_calculatorName; }
     inline bool CalculatorNameHasBeenSet() const { return m_calculatorNameHasBeenSet; }
-    inline void SetCalculatorName(const Aws::String& value) { m_calculatorNameHasBeenSet = true; m_calculatorName = value; }
-    inline void SetCalculatorName(Aws::String&& value) { m_calculatorNameHasBeenSet = true; m_calculatorName = std::move(value); }
-    inline void SetCalculatorName(const char* value) { m_calculatorNameHasBeenSet = true; m_calculatorName.assign(value); }
-    inline ListRouteCalculatorsResponseEntry& WithCalculatorName(const Aws::String& value) { SetCalculatorName(value); return *this;}
-    inline ListRouteCalculatorsResponseEntry& WithCalculatorName(Aws::String&& value) { SetCalculatorName(std::move(value)); return *this;}
-    inline ListRouteCalculatorsResponseEntry& WithCalculatorName(const char* value) { SetCalculatorName(value); return *this;}
+    template<typename CalculatorNameT = Aws::String>
+    void SetCalculatorName(CalculatorNameT&& value) { m_calculatorNameHasBeenSet = true; m_calculatorName = std::forward<CalculatorNameT>(value); }
+    template<typename CalculatorNameT = Aws::String>
+    ListRouteCalculatorsResponseEntry& WithCalculatorName(CalculatorNameT&& value) { SetCalculatorName(std::forward<CalculatorNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The optional description of the route calculator resource.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ListRouteCalculatorsResponseEntry& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ListRouteCalculatorsResponseEntry& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ListRouteCalculatorsResponseEntry& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ListRouteCalculatorsResponseEntry& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +72,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/what-is-data-provider.html">Amazon
      * Location Service data providers</a>.</p>
      */
-    inline const Aws::String& GetDataSource() const{ return m_dataSource; }
+    inline const Aws::String& GetDataSource() const { return m_dataSource; }
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-    inline void SetDataSource(const Aws::String& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-    inline void SetDataSource(Aws::String&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-    inline void SetDataSource(const char* value) { m_dataSourceHasBeenSet = true; m_dataSource.assign(value); }
-    inline ListRouteCalculatorsResponseEntry& WithDataSource(const Aws::String& value) { SetDataSource(value); return *this;}
-    inline ListRouteCalculatorsResponseEntry& WithDataSource(Aws::String&& value) { SetDataSource(std::move(value)); return *this;}
-    inline ListRouteCalculatorsResponseEntry& WithDataSource(const char* value) { SetDataSource(value); return *this;}
+    template<typename DataSourceT = Aws::String>
+    void SetDataSource(DataSourceT&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::forward<DataSourceT>(value); }
+    template<typename DataSourceT = Aws::String>
+    ListRouteCalculatorsResponseEntry& WithDataSource(DataSourceT&& value) { SetDataSource(std::forward<DataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,12 +87,12 @@ namespace Model
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>For example,
      * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
-    inline ListRouteCalculatorsResponseEntry& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline ListRouteCalculatorsResponseEntry& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    ListRouteCalculatorsResponseEntry& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,12 +102,12 @@ namespace Model
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. </p> <ul> <li> <p>For example,
      * <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li> </ul>
      */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
+    inline const Aws::Utils::DateTime& GetUpdateTime() const { return m_updateTime; }
     inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::move(value); }
-    inline ListRouteCalculatorsResponseEntry& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-    inline ListRouteCalculatorsResponseEntry& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    void SetUpdateTime(UpdateTimeT&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::forward<UpdateTimeT>(value); }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    ListRouteCalculatorsResponseEntry& WithUpdateTime(UpdateTimeT&& value) { SetUpdateTime(std::forward<UpdateTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -126,10 +120,10 @@ namespace Model
     Aws::String m_dataSource;
     bool m_dataSourceHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::Utils::DateTime m_createTime{};
     bool m_createTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updateTime;
+    Aws::Utils::DateTime m_updateTime{};
     bool m_updateTimeHasBeenSet = false;
   };
 

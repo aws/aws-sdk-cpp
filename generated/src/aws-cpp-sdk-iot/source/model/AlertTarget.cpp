@@ -18,14 +18,7 @@ namespace IoT
 namespace Model
 {
 
-AlertTarget::AlertTarget() : 
-    m_alertTargetArnHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 AlertTarget::AlertTarget(JsonView jsonValue)
-  : AlertTarget()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AlertTarget& AlertTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("alertTargetArn"))
   {
     m_alertTargetArn = jsonValue.GetString("alertTargetArn");
-
     m_alertTargetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

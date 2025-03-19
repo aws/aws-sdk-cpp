@@ -39,7 +39,7 @@ namespace Model
   class TranslationSettings
   {
   public:
-    AWS_TRANSLATE_API TranslationSettings();
+    AWS_TRANSLATE_API TranslationSettings() = default;
     AWS_TRANSLATE_API TranslationSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSLATE_API TranslationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -60,12 +60,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-formality.html#customizing-translations-formality-languages">Supported
      * languages</a> in the Amazon Translate Developer Guide.</p>
      */
-    inline const Formality& GetFormality() const{ return m_formality; }
+    inline Formality GetFormality() const { return m_formality; }
     inline bool FormalityHasBeenSet() const { return m_formalityHasBeenSet; }
-    inline void SetFormality(const Formality& value) { m_formalityHasBeenSet = true; m_formality = value; }
-    inline void SetFormality(Formality&& value) { m_formalityHasBeenSet = true; m_formality = std::move(value); }
-    inline TranslationSettings& WithFormality(const Formality& value) { SetFormality(value); return *this;}
-    inline TranslationSettings& WithFormality(Formality&& value) { SetFormality(std::move(value)); return *this;}
+    inline void SetFormality(Formality value) { m_formalityHasBeenSet = true; m_formality = value; }
+    inline TranslationSettings& WithFormality(Formality value) { SetFormality(value); return *this;}
     ///@}
 
     ///@{
@@ -83,12 +81,10 @@ namespace Model
      * profanity masking. If any of the target languages don't support profanity
      * masking, the translation job won't mask profanity for any target language.</p>
      */
-    inline const Profanity& GetProfanity() const{ return m_profanity; }
+    inline Profanity GetProfanity() const { return m_profanity; }
     inline bool ProfanityHasBeenSet() const { return m_profanityHasBeenSet; }
-    inline void SetProfanity(const Profanity& value) { m_profanityHasBeenSet = true; m_profanity = value; }
-    inline void SetProfanity(Profanity&& value) { m_profanityHasBeenSet = true; m_profanity = std::move(value); }
-    inline TranslationSettings& WithProfanity(const Profanity& value) { SetProfanity(value); return *this;}
-    inline TranslationSettings& WithProfanity(Profanity&& value) { SetProfanity(std::move(value)); return *this;}
+    inline void SetProfanity(Profanity value) { m_profanityHasBeenSet = true; m_profanity = value; }
+    inline TranslationSettings& WithProfanity(Profanity value) { SetProfanity(value); return *this;}
     ///@}
 
     ///@{
@@ -102,22 +98,20 @@ namespace Model
      * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-brevity">Using
      * brevity</a> in the Amazon Translate Developer Guide.</p>
      */
-    inline const Brevity& GetBrevity() const{ return m_brevity; }
+    inline Brevity GetBrevity() const { return m_brevity; }
     inline bool BrevityHasBeenSet() const { return m_brevityHasBeenSet; }
-    inline void SetBrevity(const Brevity& value) { m_brevityHasBeenSet = true; m_brevity = value; }
-    inline void SetBrevity(Brevity&& value) { m_brevityHasBeenSet = true; m_brevity = std::move(value); }
-    inline TranslationSettings& WithBrevity(const Brevity& value) { SetBrevity(value); return *this;}
-    inline TranslationSettings& WithBrevity(Brevity&& value) { SetBrevity(std::move(value)); return *this;}
+    inline void SetBrevity(Brevity value) { m_brevityHasBeenSet = true; m_brevity = value; }
+    inline TranslationSettings& WithBrevity(Brevity value) { SetBrevity(value); return *this;}
     ///@}
   private:
 
-    Formality m_formality;
+    Formality m_formality{Formality::NOT_SET};
     bool m_formalityHasBeenSet = false;
 
-    Profanity m_profanity;
+    Profanity m_profanity{Profanity::NOT_SET};
     bool m_profanityHasBeenSet = false;
 
-    Brevity m_brevity;
+    Brevity m_brevity{Brevity::NOT_SET};
     bool m_brevityHasBeenSet = false;
   };
 

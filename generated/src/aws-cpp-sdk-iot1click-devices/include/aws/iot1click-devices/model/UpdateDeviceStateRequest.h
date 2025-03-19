@@ -21,7 +21,7 @@ namespace Model
   class UpdateDeviceStateRequest : public IoT1ClickDevicesServiceRequest
   {
   public:
-    AWS_IOT1CLICKDEVICESSERVICE_API UpdateDeviceStateRequest();
+    AWS_IOT1CLICKDEVICESSERVICE_API UpdateDeviceStateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The unique identifier of the device.</p>
      */
-    inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
+    inline const Aws::String& GetDeviceId() const { return m_deviceId; }
     inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
-    inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
-    inline void SetDeviceId(Aws::String&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::move(value); }
-    inline void SetDeviceId(const char* value) { m_deviceIdHasBeenSet = true; m_deviceId.assign(value); }
-    inline UpdateDeviceStateRequest& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-    inline UpdateDeviceStateRequest& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-    inline UpdateDeviceStateRequest& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
+    template<typename DeviceIdT = Aws::String>
+    void SetDeviceId(DeviceIdT&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::forward<DeviceIdT>(value); }
+    template<typename DeviceIdT = Aws::String>
+    UpdateDeviceStateRequest& WithDeviceId(DeviceIdT&& value) { SetDeviceId(std::forward<DeviceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,7 +49,7 @@ namespace Model
      * <p>If true, the device is enabled. If false, the device is
  disabled.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline UpdateDeviceStateRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -61,7 +59,7 @@ namespace Model
     Aws::String m_deviceId;
     bool m_deviceIdHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

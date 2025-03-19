@@ -31,7 +31,7 @@ namespace Model
   class RemovePrefixListEntry
   {
   public:
-    AWS_EC2_API RemovePrefixListEntry();
+    AWS_EC2_API RemovePrefixListEntry() = default;
     AWS_EC2_API RemovePrefixListEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API RemovePrefixListEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The CIDR block.</p>
      */
-    inline const Aws::String& GetCidr() const{ return m_cidr; }
+    inline const Aws::String& GetCidr() const { return m_cidr; }
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-    inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
-    inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
-    inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
-    inline RemovePrefixListEntry& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
-    inline RemovePrefixListEntry& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
-    inline RemovePrefixListEntry& WithCidr(const char* value) { SetCidr(value); return *this;}
+    template<typename CidrT = Aws::String>
+    void SetCidr(CidrT&& value) { m_cidrHasBeenSet = true; m_cidr = std::forward<CidrT>(value); }
+    template<typename CidrT = Aws::String>
+    RemovePrefixListEntry& WithCidr(CidrT&& value) { SetCidr(std::forward<CidrT>(value)); return *this;}
     ///@}
   private:
 

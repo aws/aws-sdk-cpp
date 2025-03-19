@@ -32,7 +32,7 @@ namespace Model
   class ActiveSpeakerOnlyConfiguration
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API ActiveSpeakerOnlyConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API ActiveSpeakerOnlyConfiguration() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API ActiveSpeakerOnlyConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API ActiveSpeakerOnlyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The position of the <code>ActiveSpeakerOnly</code> video tile.</p>
      */
-    inline const ActiveSpeakerPosition& GetActiveSpeakerPosition() const{ return m_activeSpeakerPosition; }
+    inline ActiveSpeakerPosition GetActiveSpeakerPosition() const { return m_activeSpeakerPosition; }
     inline bool ActiveSpeakerPositionHasBeenSet() const { return m_activeSpeakerPositionHasBeenSet; }
-    inline void SetActiveSpeakerPosition(const ActiveSpeakerPosition& value) { m_activeSpeakerPositionHasBeenSet = true; m_activeSpeakerPosition = value; }
-    inline void SetActiveSpeakerPosition(ActiveSpeakerPosition&& value) { m_activeSpeakerPositionHasBeenSet = true; m_activeSpeakerPosition = std::move(value); }
-    inline ActiveSpeakerOnlyConfiguration& WithActiveSpeakerPosition(const ActiveSpeakerPosition& value) { SetActiveSpeakerPosition(value); return *this;}
-    inline ActiveSpeakerOnlyConfiguration& WithActiveSpeakerPosition(ActiveSpeakerPosition&& value) { SetActiveSpeakerPosition(std::move(value)); return *this;}
+    inline void SetActiveSpeakerPosition(ActiveSpeakerPosition value) { m_activeSpeakerPositionHasBeenSet = true; m_activeSpeakerPosition = value; }
+    inline ActiveSpeakerOnlyConfiguration& WithActiveSpeakerPosition(ActiveSpeakerPosition value) { SetActiveSpeakerPosition(value); return *this;}
     ///@}
   private:
 
-    ActiveSpeakerPosition m_activeSpeakerPosition;
+    ActiveSpeakerPosition m_activeSpeakerPosition{ActiveSpeakerPosition::NOT_SET};
     bool m_activeSpeakerPositionHasBeenSet = false;
   };
 

@@ -12,12 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AcceptAdministratorInvitationRequest::AcceptAdministratorInvitationRequest() : 
-    m_administratorIdHasBeenSet(false),
-    m_invitationIdHasBeenSet(false)
-{
-}
-
 Aws::String AcceptAdministratorInvitationRequest::SerializePayload() const
 {
   JsonValue payload;

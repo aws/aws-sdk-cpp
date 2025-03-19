@@ -18,13 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-KinesisDataStreamSinkConfiguration::KinesisDataStreamSinkConfiguration() : 
-    m_insightsTargetHasBeenSet(false)
-{
-}
-
 KinesisDataStreamSinkConfiguration::KinesisDataStreamSinkConfiguration(JsonView jsonValue)
-  : KinesisDataStreamSinkConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ KinesisDataStreamSinkConfiguration& KinesisDataStreamSinkConfiguration::operator
   if(jsonValue.ValueExists("InsightsTarget"))
   {
     m_insightsTarget = jsonValue.GetString("InsightsTarget");
-
     m_insightsTargetHasBeenSet = true;
   }
-
   return *this;
 }
 

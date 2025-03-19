@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetRecoveryPointRestoreMetadataRequest::GetRecoveryPointRestoreMetadataRequest() : 
-    m_backupVaultNameHasBeenSet(false),
-    m_recoveryPointArnHasBeenSet(false),
-    m_backupVaultAccountIdHasBeenSet(false)
-{
-}
-
 Aws::String GetRecoveryPointRestoreMetadataRequest::SerializePayload() const
 {
   return {};

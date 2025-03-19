@@ -32,7 +32,7 @@ namespace Model
   class ScanCondition
   {
   public:
-    AWS_GUARDDUTY_API ScanCondition();
+    AWS_GUARDDUTY_API ScanCondition() = default;
     AWS_GUARDDUTY_API ScanCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API ScanCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
      * <p>Represents an <i>mapEqual</i> <b/> condition to be applied to a single field
      * when triggering for malware scan.</p>
      */
-    inline const Aws::Vector<ScanConditionPair>& GetMapEquals() const{ return m_mapEquals; }
+    inline const Aws::Vector<ScanConditionPair>& GetMapEquals() const { return m_mapEquals; }
     inline bool MapEqualsHasBeenSet() const { return m_mapEqualsHasBeenSet; }
-    inline void SetMapEquals(const Aws::Vector<ScanConditionPair>& value) { m_mapEqualsHasBeenSet = true; m_mapEquals = value; }
-    inline void SetMapEquals(Aws::Vector<ScanConditionPair>&& value) { m_mapEqualsHasBeenSet = true; m_mapEquals = std::move(value); }
-    inline ScanCondition& WithMapEquals(const Aws::Vector<ScanConditionPair>& value) { SetMapEquals(value); return *this;}
-    inline ScanCondition& WithMapEquals(Aws::Vector<ScanConditionPair>&& value) { SetMapEquals(std::move(value)); return *this;}
-    inline ScanCondition& AddMapEquals(const ScanConditionPair& value) { m_mapEqualsHasBeenSet = true; m_mapEquals.push_back(value); return *this; }
-    inline ScanCondition& AddMapEquals(ScanConditionPair&& value) { m_mapEqualsHasBeenSet = true; m_mapEquals.push_back(std::move(value)); return *this; }
+    template<typename MapEqualsT = Aws::Vector<ScanConditionPair>>
+    void SetMapEquals(MapEqualsT&& value) { m_mapEqualsHasBeenSet = true; m_mapEquals = std::forward<MapEqualsT>(value); }
+    template<typename MapEqualsT = Aws::Vector<ScanConditionPair>>
+    ScanCondition& WithMapEquals(MapEqualsT&& value) { SetMapEquals(std::forward<MapEqualsT>(value)); return *this;}
+    template<typename MapEqualsT = ScanConditionPair>
+    ScanCondition& AddMapEquals(MapEqualsT&& value) { m_mapEqualsHasBeenSet = true; m_mapEquals.emplace_back(std::forward<MapEqualsT>(value)); return *this; }
     ///@}
   private:
 

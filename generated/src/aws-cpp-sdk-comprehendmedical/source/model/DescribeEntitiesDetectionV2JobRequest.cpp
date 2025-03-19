@@ -12,11 +12,6 @@ using namespace Aws::ComprehendMedical::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeEntitiesDetectionV2JobRequest::DescribeEntitiesDetectionV2JobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEntitiesDetectionV2JobRequest::SerializePayload() const
 {
   JsonValue payload;

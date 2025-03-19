@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMatchingJobResult::GetMatchingJobResult() : 
-    m_status(JobStatus::NOT_SET)
-{
-}
-
 GetMatchingJobResult::GetMatchingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetMatchingJobResult()
 {
   *this = result;
 }
@@ -34,27 +28,23 @@ GetMatchingJobResult& GetMatchingJobResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");
-
+    m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorDetails"))
   {
     m_errorDetails = jsonValue.GetObject("errorDetails");
-
+    m_errorDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
+    m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metrics"))
   {
     m_metrics = jsonValue.GetObject("metrics");
-
+    m_metricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputSourceConfig"))
   {
     Aws::Utils::Array<JsonView> outputSourceConfigJsonList = jsonValue.GetArray("outputSourceConfig");
@@ -62,26 +52,25 @@ GetMatchingJobResult& GetMatchingJobResult::operator =(const Aws::AmazonWebServi
     {
       m_outputSourceConfig.push_back(outputSourceConfigJsonList[outputSourceConfigIndex].AsObject());
     }
+    m_outputSourceConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
+    m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

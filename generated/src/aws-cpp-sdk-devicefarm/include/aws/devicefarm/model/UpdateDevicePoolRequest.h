@@ -27,7 +27,7 @@ namespace Model
   class UpdateDevicePoolRequest : public DeviceFarmRequest
   {
   public:
-    AWS_DEVICEFARM_API UpdateDevicePoolRequest();
+    AWS_DEVICEFARM_API UpdateDevicePoolRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,42 +44,36 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Device Farm device pool to update.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline UpdateDevicePoolRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateDevicePoolRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateDevicePoolRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateDevicePoolRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A string that represents the name of the device pool to update.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateDevicePoolRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateDevicePoolRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateDevicePoolRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateDevicePoolRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the device pool to update.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateDevicePoolRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateDevicePoolRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateDevicePoolRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateDevicePoolRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +82,14 @@ namespace Model
      * optional. If you update rules for your request, the update replaces the existing
      * rules.</p>
      */
-    inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
+    inline const Aws::Vector<Rule>& GetRules() const { return m_rules; }
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    inline void SetRules(const Aws::Vector<Rule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-    inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-    inline UpdateDevicePoolRequest& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
-    inline UpdateDevicePoolRequest& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
-    inline UpdateDevicePoolRequest& AddRules(const Rule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-    inline UpdateDevicePoolRequest& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    template<typename RulesT = Aws::Vector<Rule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<Rule>>
+    UpdateDevicePoolRequest& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = Rule>
+    UpdateDevicePoolRequest& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -109,7 +103,7 @@ namespace Model
      * parameter in your request, you cannot use the <code>clearMaxDevices</code>
      * parameter in the same request.</p>
      */
-    inline int GetMaxDevices() const{ return m_maxDevices; }
+    inline int GetMaxDevices() const { return m_maxDevices; }
     inline bool MaxDevicesHasBeenSet() const { return m_maxDevicesHasBeenSet; }
     inline void SetMaxDevices(int value) { m_maxDevicesHasBeenSet = true; m_maxDevices = value; }
     inline UpdateDevicePoolRequest& WithMaxDevices(int value) { SetMaxDevices(value); return *this;}
@@ -125,7 +119,7 @@ namespace Model
      * <code>rules</code> parameter.</p> <p>If you use this parameter in your request,
      * you cannot use the <code>maxDevices</code> parameter in the same request.</p>
      */
-    inline bool GetClearMaxDevices() const{ return m_clearMaxDevices; }
+    inline bool GetClearMaxDevices() const { return m_clearMaxDevices; }
     inline bool ClearMaxDevicesHasBeenSet() const { return m_clearMaxDevicesHasBeenSet; }
     inline void SetClearMaxDevices(bool value) { m_clearMaxDevicesHasBeenSet = true; m_clearMaxDevices = value; }
     inline UpdateDevicePoolRequest& WithClearMaxDevices(bool value) { SetClearMaxDevices(value); return *this;}
@@ -144,10 +138,10 @@ namespace Model
     Aws::Vector<Rule> m_rules;
     bool m_rulesHasBeenSet = false;
 
-    int m_maxDevices;
+    int m_maxDevices{0};
     bool m_maxDevicesHasBeenSet = false;
 
-    bool m_clearMaxDevices;
+    bool m_clearMaxDevices{false};
     bool m_clearMaxDevicesHasBeenSet = false;
   };
 

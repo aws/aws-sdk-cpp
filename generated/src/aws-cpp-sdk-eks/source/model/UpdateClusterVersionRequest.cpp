@@ -12,14 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateClusterVersionRequest::UpdateClusterVersionRequest() : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String UpdateClusterVersionRequest::SerializePayload() const
 {
   JsonValue payload;

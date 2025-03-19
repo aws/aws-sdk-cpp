@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-Principal::Principal() : 
-    m_serviceHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 Principal::Principal(JsonView jsonValue)
-  : Principal()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Principal& Principal::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("service"))
   {
     m_service = jsonValue.GetString("service");
-
     m_serviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,29 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CapacityReservationFleet::CapacityReservationFleet() : 
-    m_capacityReservationFleetIdHasBeenSet(false),
-    m_capacityReservationFleetArnHasBeenSet(false),
-    m_state(CapacityReservationFleetState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_totalTargetCapacity(0),
-    m_totalTargetCapacityHasBeenSet(false),
-    m_totalFulfilledCapacity(0.0),
-    m_totalFulfilledCapacityHasBeenSet(false),
-    m_tenancy(FleetCapacityReservationTenancy::NOT_SET),
-    m_tenancyHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_instanceMatchCriteria(FleetInstanceMatchCriteria::NOT_SET),
-    m_instanceMatchCriteriaHasBeenSet(false),
-    m_allocationStrategyHasBeenSet(false),
-    m_instanceTypeSpecificationsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 CapacityReservationFleet::CapacityReservationFleet(const XmlNode& xmlNode)
-  : CapacityReservationFleet()
 {
   *this = xmlNode;
 }
@@ -68,7 +46,7 @@ CapacityReservationFleet& CapacityReservationFleet::operator =(const XmlNode& xm
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = CapacityReservationFleetStateMapper::GetCapacityReservationFleetStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = CapacityReservationFleetStateMapper::GetCapacityReservationFleetStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode totalTargetCapacityNode = resultNode.FirstChild("totalTargetCapacity");
@@ -86,7 +64,7 @@ CapacityReservationFleet& CapacityReservationFleet::operator =(const XmlNode& xm
     XmlNode tenancyNode = resultNode.FirstChild("tenancy");
     if(!tenancyNode.IsNull())
     {
-      m_tenancy = FleetCapacityReservationTenancyMapper::GetFleetCapacityReservationTenancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tenancyNode.GetText()).c_str()).c_str());
+      m_tenancy = FleetCapacityReservationTenancyMapper::GetFleetCapacityReservationTenancyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tenancyNode.GetText()).c_str()));
       m_tenancyHasBeenSet = true;
     }
     XmlNode endDateNode = resultNode.FirstChild("endDate");
@@ -104,7 +82,7 @@ CapacityReservationFleet& CapacityReservationFleet::operator =(const XmlNode& xm
     XmlNode instanceMatchCriteriaNode = resultNode.FirstChild("instanceMatchCriteria");
     if(!instanceMatchCriteriaNode.IsNull())
     {
-      m_instanceMatchCriteria = FleetInstanceMatchCriteriaMapper::GetFleetInstanceMatchCriteriaForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceMatchCriteriaNode.GetText()).c_str()).c_str());
+      m_instanceMatchCriteria = FleetInstanceMatchCriteriaMapper::GetFleetInstanceMatchCriteriaForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceMatchCriteriaNode.GetText()).c_str()));
       m_instanceMatchCriteriaHasBeenSet = true;
     }
     XmlNode allocationStrategyNode = resultNode.FirstChild("allocationStrategy");
@@ -117,6 +95,7 @@ CapacityReservationFleet& CapacityReservationFleet::operator =(const XmlNode& xm
     if(!instanceTypeSpecificationsNode.IsNull())
     {
       XmlNode instanceTypeSpecificationsMember = instanceTypeSpecificationsNode.FirstChild("item");
+      m_instanceTypeSpecificationsHasBeenSet = !instanceTypeSpecificationsMember.IsNull();
       while(!instanceTypeSpecificationsMember.IsNull())
       {
         m_instanceTypeSpecifications.push_back(instanceTypeSpecificationsMember);
@@ -129,6 +108,7 @@ CapacityReservationFleet& CapacityReservationFleet::operator =(const XmlNode& xm
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

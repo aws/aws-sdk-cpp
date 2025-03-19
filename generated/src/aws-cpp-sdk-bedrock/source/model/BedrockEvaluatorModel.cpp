@@ -18,13 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-BedrockEvaluatorModel::BedrockEvaluatorModel() : 
-    m_modelIdentifierHasBeenSet(false)
-{
-}
-
 BedrockEvaluatorModel::BedrockEvaluatorModel(JsonView jsonValue)
-  : BedrockEvaluatorModel()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BedrockEvaluatorModel& BedrockEvaluatorModel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("modelIdentifier"))
   {
     m_modelIdentifier = jsonValue.GetString("modelIdentifier");
-
     m_modelIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

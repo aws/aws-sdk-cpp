@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutDeploymentParameterResult::PutDeploymentParameterResult()
-{
-}
-
 PutDeploymentParameterResult::PutDeploymentParameterResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,18 @@ PutDeploymentParameterResult& PutDeploymentParameterResult::operator =(const Aws
   if(jsonValue.ValueExists("agreementId"))
   {
     m_agreementId = jsonValue.GetString("agreementId");
-
+    m_agreementIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentParameterId"))
   {
     m_deploymentParameterId = jsonValue.GetString("deploymentParameterId");
-
+    m_deploymentParameterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceArn"))
   {
     m_resourceArn = jsonValue.GetString("resourceArn");
-
+    m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -54,14 +47,15 @@ PutDeploymentParameterResult& PutDeploymentParameterResult::operator =(const Aws
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

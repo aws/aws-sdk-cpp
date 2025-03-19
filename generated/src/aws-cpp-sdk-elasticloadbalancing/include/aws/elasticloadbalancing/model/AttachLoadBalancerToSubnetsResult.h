@@ -35,7 +35,7 @@ namespace Model
   class AttachLoadBalancerToSubnetsResult
   {
   public:
-    AWS_ELASTICLOADBALANCING_API AttachLoadBalancerToSubnetsResult();
+    AWS_ELASTICLOADBALANCING_API AttachLoadBalancerToSubnetsResult() = default;
     AWS_ELASTICLOADBALANCING_API AttachLoadBalancerToSubnetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICLOADBALANCING_API AttachLoadBalancerToSubnetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,29 +44,30 @@ namespace Model
     /**
      * <p>The IDs of the subnets attached to the load balancer.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
-    inline void SetSubnets(const Aws::Vector<Aws::String>& value) { m_subnets = value; }
-    inline void SetSubnets(Aws::Vector<Aws::String>&& value) { m_subnets = std::move(value); }
-    inline AttachLoadBalancerToSubnetsResult& WithSubnets(const Aws::Vector<Aws::String>& value) { SetSubnets(value); return *this;}
-    inline AttachLoadBalancerToSubnetsResult& WithSubnets(Aws::Vector<Aws::String>&& value) { SetSubnets(std::move(value)); return *this;}
-    inline AttachLoadBalancerToSubnetsResult& AddSubnets(const Aws::String& value) { m_subnets.push_back(value); return *this; }
-    inline AttachLoadBalancerToSubnetsResult& AddSubnets(Aws::String&& value) { m_subnets.push_back(std::move(value)); return *this; }
-    inline AttachLoadBalancerToSubnetsResult& AddSubnets(const char* value) { m_subnets.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetSubnets() const { return m_subnets; }
+    template<typename SubnetsT = Aws::Vector<Aws::String>>
+    void SetSubnets(SubnetsT&& value) { m_subnetsHasBeenSet = true; m_subnets = std::forward<SubnetsT>(value); }
+    template<typename SubnetsT = Aws::Vector<Aws::String>>
+    AttachLoadBalancerToSubnetsResult& WithSubnets(SubnetsT&& value) { SetSubnets(std::forward<SubnetsT>(value)); return *this;}
+    template<typename SubnetsT = Aws::String>
+    AttachLoadBalancerToSubnetsResult& AddSubnets(SubnetsT&& value) { m_subnetsHasBeenSet = true; m_subnets.emplace_back(std::forward<SubnetsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline AttachLoadBalancerToSubnetsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline AttachLoadBalancerToSubnetsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    AttachLoadBalancerToSubnetsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_subnets;
+    bool m_subnetsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

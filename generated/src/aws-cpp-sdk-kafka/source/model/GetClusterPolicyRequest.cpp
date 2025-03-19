@@ -12,11 +12,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetClusterPolicyRequest::GetClusterPolicyRequest() : 
-    m_clusterArnHasBeenSet(false)
-{
-}
-
 Aws::String GetClusterPolicyRequest::SerializePayload() const
 {
   return {};

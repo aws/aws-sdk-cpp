@@ -15,42 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CalculateRoutesRequest::CalculateRoutesRequest() : 
-    m_allowHasBeenSet(false),
-    m_arrivalTimeHasBeenSet(false),
-    m_avoidHasBeenSet(false),
-    m_departNow(false),
-    m_departNowHasBeenSet(false),
-    m_departureTimeHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_destinationOptionsHasBeenSet(false),
-    m_driverHasBeenSet(false),
-    m_excludeHasBeenSet(false),
-    m_instructionsMeasurementSystem(MeasurementSystem::NOT_SET),
-    m_instructionsMeasurementSystemHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_languagesHasBeenSet(false),
-    m_legAdditionalFeaturesHasBeenSet(false),
-    m_legGeometryFormat(GeometryFormat::NOT_SET),
-    m_legGeometryFormatHasBeenSet(false),
-    m_maxAlternatives(0),
-    m_maxAlternativesHasBeenSet(false),
-    m_optimizeRoutingFor(RoutingObjective::NOT_SET),
-    m_optimizeRoutingForHasBeenSet(false),
-    m_originHasBeenSet(false),
-    m_originOptionsHasBeenSet(false),
-    m_spanAdditionalFeaturesHasBeenSet(false),
-    m_tollsHasBeenSet(false),
-    m_trafficHasBeenSet(false),
-    m_travelMode(RouteTravelMode::NOT_SET),
-    m_travelModeHasBeenSet(false),
-    m_travelModeOptionsHasBeenSet(false),
-    m_travelStepType(RouteTravelStepType::NOT_SET),
-    m_travelStepTypeHasBeenSet(false),
-    m_waypointsHasBeenSet(false)
-{
-}
-
 Aws::String CalculateRoutesRequest::SerializePayload() const
 {
   JsonValue payload;

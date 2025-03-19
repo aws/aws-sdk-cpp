@@ -10,17 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DescribeScheduledActionsRequest::DescribeScheduledActionsRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_scheduledActionNamesHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeScheduledActionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

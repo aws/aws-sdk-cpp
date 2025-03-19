@@ -10,11 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-DeleteRuleRequest::DeleteRuleRequest() : 
-    m_ruleArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRuleRequest::SerializePayload() const
 {
   Aws::StringStream ss;

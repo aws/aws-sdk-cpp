@@ -18,18 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-ConnectPeerConfiguration::ConnectPeerConfiguration() : 
-    m_coreNetworkAddressHasBeenSet(false),
-    m_peerAddressHasBeenSet(false),
-    m_insideCidrBlocksHasBeenSet(false),
-    m_protocol(TunnelProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_bgpConfigurationsHasBeenSet(false)
-{
-}
-
 ConnectPeerConfiguration::ConnectPeerConfiguration(JsonView jsonValue)
-  : ConnectPeerConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ ConnectPeerConfiguration& ConnectPeerConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("CoreNetworkAddress"))
   {
     m_coreNetworkAddress = jsonValue.GetString("CoreNetworkAddress");
-
     m_coreNetworkAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PeerAddress"))
   {
     m_peerAddress = jsonValue.GetString("PeerAddress");
-
     m_peerAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InsideCidrBlocks"))
   {
     Aws::Utils::Array<JsonView> insideCidrBlocksJsonList = jsonValue.GetArray("InsideCidrBlocks");
@@ -59,14 +44,11 @@ ConnectPeerConfiguration& ConnectPeerConfiguration::operator =(JsonView jsonValu
     }
     m_insideCidrBlocksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Protocol"))
   {
     m_protocol = TunnelProtocolMapper::GetTunnelProtocolForName(jsonValue.GetString("Protocol"));
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BgpConfigurations"))
   {
     Aws::Utils::Array<JsonView> bgpConfigurationsJsonList = jsonValue.GetArray("BgpConfigurations");
@@ -76,7 +58,6 @@ ConnectPeerConfiguration& ConnectPeerConfiguration::operator =(JsonView jsonValu
     }
     m_bgpConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

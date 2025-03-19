@@ -33,7 +33,7 @@ namespace Model
   class AbpV1_1
   {
   public:
-    AWS_IOTWIRELESS_API AbpV1_1();
+    AWS_IOTWIRELESS_API AbpV1_1() = default;
     AWS_IOTWIRELESS_API AbpV1_1(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API AbpV1_1& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,31 @@ namespace Model
     /**
      * <p>The DevAddr value.</p>
      */
-    inline const Aws::String& GetDevAddr() const{ return m_devAddr; }
+    inline const Aws::String& GetDevAddr() const { return m_devAddr; }
     inline bool DevAddrHasBeenSet() const { return m_devAddrHasBeenSet; }
-    inline void SetDevAddr(const Aws::String& value) { m_devAddrHasBeenSet = true; m_devAddr = value; }
-    inline void SetDevAddr(Aws::String&& value) { m_devAddrHasBeenSet = true; m_devAddr = std::move(value); }
-    inline void SetDevAddr(const char* value) { m_devAddrHasBeenSet = true; m_devAddr.assign(value); }
-    inline AbpV1_1& WithDevAddr(const Aws::String& value) { SetDevAddr(value); return *this;}
-    inline AbpV1_1& WithDevAddr(Aws::String&& value) { SetDevAddr(std::move(value)); return *this;}
-    inline AbpV1_1& WithDevAddr(const char* value) { SetDevAddr(value); return *this;}
+    template<typename DevAddrT = Aws::String>
+    void SetDevAddr(DevAddrT&& value) { m_devAddrHasBeenSet = true; m_devAddr = std::forward<DevAddrT>(value); }
+    template<typename DevAddrT = Aws::String>
+    AbpV1_1& WithDevAddr(DevAddrT&& value) { SetDevAddr(std::forward<DevAddrT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Session keys for ABP v1.1</p>
      */
-    inline const SessionKeysAbpV1_1& GetSessionKeys() const{ return m_sessionKeys; }
+    inline const SessionKeysAbpV1_1& GetSessionKeys() const { return m_sessionKeys; }
     inline bool SessionKeysHasBeenSet() const { return m_sessionKeysHasBeenSet; }
-    inline void SetSessionKeys(const SessionKeysAbpV1_1& value) { m_sessionKeysHasBeenSet = true; m_sessionKeys = value; }
-    inline void SetSessionKeys(SessionKeysAbpV1_1&& value) { m_sessionKeysHasBeenSet = true; m_sessionKeys = std::move(value); }
-    inline AbpV1_1& WithSessionKeys(const SessionKeysAbpV1_1& value) { SetSessionKeys(value); return *this;}
-    inline AbpV1_1& WithSessionKeys(SessionKeysAbpV1_1&& value) { SetSessionKeys(std::move(value)); return *this;}
+    template<typename SessionKeysT = SessionKeysAbpV1_1>
+    void SetSessionKeys(SessionKeysT&& value) { m_sessionKeysHasBeenSet = true; m_sessionKeys = std::forward<SessionKeysT>(value); }
+    template<typename SessionKeysT = SessionKeysAbpV1_1>
+    AbpV1_1& WithSessionKeys(SessionKeysT&& value) { SetSessionKeys(std::forward<SessionKeysT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The FCnt init value.</p>
      */
-    inline int GetFCntStart() const{ return m_fCntStart; }
+    inline int GetFCntStart() const { return m_fCntStart; }
     inline bool FCntStartHasBeenSet() const { return m_fCntStartHasBeenSet; }
     inline void SetFCntStart(int value) { m_fCntStartHasBeenSet = true; m_fCntStart = value; }
     inline AbpV1_1& WithFCntStart(int value) { SetFCntStart(value); return *this;}
@@ -82,7 +80,7 @@ namespace Model
     SessionKeysAbpV1_1 m_sessionKeys;
     bool m_sessionKeysHasBeenSet = false;
 
-    int m_fCntStart;
+    int m_fCntStart{0};
     bool m_fCntStartHasBeenSet = false;
   };
 

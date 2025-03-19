@@ -20,51 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-MetricAlarm::MetricAlarm() : 
-    m_alarmNameHasBeenSet(false),
-    m_alarmArnHasBeenSet(false),
-    m_alarmDescriptionHasBeenSet(false),
-    m_alarmConfigurationUpdatedTimestampHasBeenSet(false),
-    m_actionsEnabled(false),
-    m_actionsEnabledHasBeenSet(false),
-    m_oKActionsHasBeenSet(false),
-    m_alarmActionsHasBeenSet(false),
-    m_insufficientDataActionsHasBeenSet(false),
-    m_stateValue(StateValue::NOT_SET),
-    m_stateValueHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_stateReasonDataHasBeenSet(false),
-    m_stateUpdatedTimestampHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_statistic(Statistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_extendedStatisticHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_unit(StandardUnit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_evaluationPeriods(0),
-    m_evaluationPeriodsHasBeenSet(false),
-    m_datapointsToAlarm(0),
-    m_datapointsToAlarmHasBeenSet(false),
-    m_threshold(0.0),
-    m_thresholdHasBeenSet(false),
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_treatMissingDataHasBeenSet(false),
-    m_evaluateLowSampleCountPercentileHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_thresholdMetricIdHasBeenSet(false),
-    m_evaluationState(EvaluationState::NOT_SET),
-    m_evaluationStateHasBeenSet(false),
-    m_stateTransitionedTimestampHasBeenSet(false)
-{
-}
-
 MetricAlarm::MetricAlarm(const XmlNode& xmlNode)
-  : MetricAlarm()
 {
   *this = xmlNode;
 }
@@ -109,6 +65,7 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
     if(!oKActionsNode.IsNull())
     {
       XmlNode oKActionsMember = oKActionsNode.FirstChild("member");
+      m_oKActionsHasBeenSet = !oKActionsMember.IsNull();
       while(!oKActionsMember.IsNull())
       {
         m_oKActions.push_back(oKActionsMember.GetText());
@@ -121,6 +78,7 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
     if(!alarmActionsNode.IsNull())
     {
       XmlNode alarmActionsMember = alarmActionsNode.FirstChild("member");
+      m_alarmActionsHasBeenSet = !alarmActionsMember.IsNull();
       while(!alarmActionsMember.IsNull())
       {
         m_alarmActions.push_back(alarmActionsMember.GetText());
@@ -133,6 +91,7 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
     if(!insufficientDataActionsNode.IsNull())
     {
       XmlNode insufficientDataActionsMember = insufficientDataActionsNode.FirstChild("member");
+      m_insufficientDataActionsHasBeenSet = !insufficientDataActionsMember.IsNull();
       while(!insufficientDataActionsMember.IsNull())
       {
         m_insufficientDataActions.push_back(insufficientDataActionsMember.GetText());
@@ -144,7 +103,7 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
     XmlNode stateValueNode = resultNode.FirstChild("StateValue");
     if(!stateValueNode.IsNull())
     {
-      m_stateValue = StateValueMapper::GetStateValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateValueNode.GetText()).c_str()).c_str());
+      m_stateValue = StateValueMapper::GetStateValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateValueNode.GetText()).c_str()));
       m_stateValueHasBeenSet = true;
     }
     XmlNode stateReasonNode = resultNode.FirstChild("StateReason");
@@ -180,7 +139,7 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
     XmlNode statisticNode = resultNode.FirstChild("Statistic");
     if(!statisticNode.IsNull())
     {
-      m_statistic = StatisticMapper::GetStatisticForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statisticNode.GetText()).c_str()).c_str());
+      m_statistic = StatisticMapper::GetStatisticForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statisticNode.GetText()).c_str()));
       m_statisticHasBeenSet = true;
     }
     XmlNode extendedStatisticNode = resultNode.FirstChild("ExtendedStatistic");
@@ -193,6 +152,7 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
     if(!dimensionsNode.IsNull())
     {
       XmlNode dimensionsMember = dimensionsNode.FirstChild("member");
+      m_dimensionsHasBeenSet = !dimensionsMember.IsNull();
       while(!dimensionsMember.IsNull())
       {
         m_dimensions.push_back(dimensionsMember);
@@ -210,7 +170,7 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
     XmlNode unitNode = resultNode.FirstChild("Unit");
     if(!unitNode.IsNull())
     {
-      m_unit = StandardUnitMapper::GetStandardUnitForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText()).c_str()).c_str());
+      m_unit = StandardUnitMapper::GetStandardUnitForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText()).c_str()));
       m_unitHasBeenSet = true;
     }
     XmlNode evaluationPeriodsNode = resultNode.FirstChild("EvaluationPeriods");
@@ -234,7 +194,7 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
     XmlNode comparisonOperatorNode = resultNode.FirstChild("ComparisonOperator");
     if(!comparisonOperatorNode.IsNull())
     {
-      m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(comparisonOperatorNode.GetText()).c_str()).c_str());
+      m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(comparisonOperatorNode.GetText()).c_str()));
       m_comparisonOperatorHasBeenSet = true;
     }
     XmlNode treatMissingDataNode = resultNode.FirstChild("TreatMissingData");
@@ -253,6 +213,7 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
     if(!metricsNode.IsNull())
     {
       XmlNode metricsMember = metricsNode.FirstChild("member");
+      m_metricsHasBeenSet = !metricsMember.IsNull();
       while(!metricsMember.IsNull())
       {
         m_metrics.push_back(metricsMember);
@@ -270,7 +231,7 @@ MetricAlarm& MetricAlarm::operator =(const XmlNode& xmlNode)
     XmlNode evaluationStateNode = resultNode.FirstChild("EvaluationState");
     if(!evaluationStateNode.IsNull())
     {
-      m_evaluationState = EvaluationStateMapper::GetEvaluationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(evaluationStateNode.GetText()).c_str()).c_str());
+      m_evaluationState = EvaluationStateMapper::GetEvaluationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(evaluationStateNode.GetText()).c_str()));
       m_evaluationStateHasBeenSet = true;
     }
     XmlNode stateTransitionedTimestampNode = resultNode.FirstChild("StateTransitionedTimestamp");

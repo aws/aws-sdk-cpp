@@ -22,7 +22,7 @@ namespace Model
   class CreateBackupSelectionRequest : public BackupRequest
   {
   public:
-    AWS_BACKUP_API CreateBackupSelectionRequest();
+    AWS_BACKUP_API CreateBackupSelectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,26 +37,24 @@ namespace Model
     /**
      * <p>The ID of the backup plan.</p>
      */
-    inline const Aws::String& GetBackupPlanId() const{ return m_backupPlanId; }
+    inline const Aws::String& GetBackupPlanId() const { return m_backupPlanId; }
     inline bool BackupPlanIdHasBeenSet() const { return m_backupPlanIdHasBeenSet; }
-    inline void SetBackupPlanId(const Aws::String& value) { m_backupPlanIdHasBeenSet = true; m_backupPlanId = value; }
-    inline void SetBackupPlanId(Aws::String&& value) { m_backupPlanIdHasBeenSet = true; m_backupPlanId = std::move(value); }
-    inline void SetBackupPlanId(const char* value) { m_backupPlanIdHasBeenSet = true; m_backupPlanId.assign(value); }
-    inline CreateBackupSelectionRequest& WithBackupPlanId(const Aws::String& value) { SetBackupPlanId(value); return *this;}
-    inline CreateBackupSelectionRequest& WithBackupPlanId(Aws::String&& value) { SetBackupPlanId(std::move(value)); return *this;}
-    inline CreateBackupSelectionRequest& WithBackupPlanId(const char* value) { SetBackupPlanId(value); return *this;}
+    template<typename BackupPlanIdT = Aws::String>
+    void SetBackupPlanId(BackupPlanIdT&& value) { m_backupPlanIdHasBeenSet = true; m_backupPlanId = std::forward<BackupPlanIdT>(value); }
+    template<typename BackupPlanIdT = Aws::String>
+    CreateBackupSelectionRequest& WithBackupPlanId(BackupPlanIdT&& value) { SetBackupPlanId(std::forward<BackupPlanIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The body of a request to assign a set of resources to a backup plan.</p>
      */
-    inline const BackupSelection& GetBackupSelection() const{ return m_backupSelection; }
+    inline const BackupSelection& GetBackupSelection() const { return m_backupSelection; }
     inline bool BackupSelectionHasBeenSet() const { return m_backupSelectionHasBeenSet; }
-    inline void SetBackupSelection(const BackupSelection& value) { m_backupSelectionHasBeenSet = true; m_backupSelection = value; }
-    inline void SetBackupSelection(BackupSelection&& value) { m_backupSelectionHasBeenSet = true; m_backupSelection = std::move(value); }
-    inline CreateBackupSelectionRequest& WithBackupSelection(const BackupSelection& value) { SetBackupSelection(value); return *this;}
-    inline CreateBackupSelectionRequest& WithBackupSelection(BackupSelection&& value) { SetBackupSelection(std::move(value)); return *this;}
+    template<typename BackupSelectionT = BackupSelection>
+    void SetBackupSelection(BackupSelectionT&& value) { m_backupSelectionHasBeenSet = true; m_backupSelection = std::forward<BackupSelectionT>(value); }
+    template<typename BackupSelectionT = BackupSelection>
+    CreateBackupSelectionRequest& WithBackupSelection(BackupSelectionT&& value) { SetBackupSelection(std::forward<BackupSelectionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * optional.</p> <p>If used, this parameter must contain 1 to 50 alphanumeric or
      * '-_.' characters.</p>
      */
-    inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
+    inline const Aws::String& GetCreatorRequestId() const { return m_creatorRequestId; }
     inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
-    inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
-    inline void SetCreatorRequestId(Aws::String&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::move(value); }
-    inline void SetCreatorRequestId(const char* value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId.assign(value); }
-    inline CreateBackupSelectionRequest& WithCreatorRequestId(const Aws::String& value) { SetCreatorRequestId(value); return *this;}
-    inline CreateBackupSelectionRequest& WithCreatorRequestId(Aws::String&& value) { SetCreatorRequestId(std::move(value)); return *this;}
-    inline CreateBackupSelectionRequest& WithCreatorRequestId(const char* value) { SetCreatorRequestId(value); return *this;}
+    template<typename CreatorRequestIdT = Aws::String>
+    void SetCreatorRequestId(CreatorRequestIdT&& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = std::forward<CreatorRequestIdT>(value); }
+    template<typename CreatorRequestIdT = Aws::String>
+    CreateBackupSelectionRequest& WithCreatorRequestId(CreatorRequestIdT&& value) { SetCreatorRequestId(std::forward<CreatorRequestIdT>(value)); return *this;}
     ///@}
   private:
 

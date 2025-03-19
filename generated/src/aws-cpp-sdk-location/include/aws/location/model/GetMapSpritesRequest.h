@@ -25,7 +25,7 @@ namespace Model
   class GetMapSpritesRequest : public LocationServiceRequest
   {
   public:
-    AWS_LOCATIONSERVICE_API GetMapSpritesRequest();
+    AWS_LOCATIONSERVICE_API GetMapSpritesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The map resource associated with the sprite ﬁle.</p>
      */
-    inline const Aws::String& GetMapName() const{ return m_mapName; }
+    inline const Aws::String& GetMapName() const { return m_mapName; }
     inline bool MapNameHasBeenSet() const { return m_mapNameHasBeenSet; }
-    inline void SetMapName(const Aws::String& value) { m_mapNameHasBeenSet = true; m_mapName = value; }
-    inline void SetMapName(Aws::String&& value) { m_mapNameHasBeenSet = true; m_mapName = std::move(value); }
-    inline void SetMapName(const char* value) { m_mapNameHasBeenSet = true; m_mapName.assign(value); }
-    inline GetMapSpritesRequest& WithMapName(const Aws::String& value) { SetMapName(value); return *this;}
-    inline GetMapSpritesRequest& WithMapName(Aws::String&& value) { SetMapName(std::move(value)); return *this;}
-    inline GetMapSpritesRequest& WithMapName(const char* value) { SetMapName(value); return *this;}
+    template<typename MapNameT = Aws::String>
+    void SetMapName(MapNameT&& value) { m_mapNameHasBeenSet = true; m_mapName = std::forward<MapNameT>(value); }
+    template<typename MapNameT = Aws::String>
+    GetMapSpritesRequest& WithMapName(MapNameT&& value) { SetMapName(std::forward<MapNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * names:</p> <ul> <li> <p> <code>sprites.json</code> </p> </li> <li> <p>
      * <code>sprites@2x.json</code> for high pixel density displays</p> </li> </ul>
      */
-    inline const Aws::String& GetFileName() const{ return m_fileName; }
+    inline const Aws::String& GetFileName() const { return m_fileName; }
     inline bool FileNameHasBeenSet() const { return m_fileNameHasBeenSet; }
-    inline void SetFileName(const Aws::String& value) { m_fileNameHasBeenSet = true; m_fileName = value; }
-    inline void SetFileName(Aws::String&& value) { m_fileNameHasBeenSet = true; m_fileName = std::move(value); }
-    inline void SetFileName(const char* value) { m_fileNameHasBeenSet = true; m_fileName.assign(value); }
-    inline GetMapSpritesRequest& WithFileName(const Aws::String& value) { SetFileName(value); return *this;}
-    inline GetMapSpritesRequest& WithFileName(Aws::String&& value) { SetFileName(std::move(value)); return *this;}
-    inline GetMapSpritesRequest& WithFileName(const char* value) { SetFileName(value); return *this;}
+    template<typename FileNameT = Aws::String>
+    void SetFileName(FileNameT&& value) { m_fileNameHasBeenSet = true; m_fileName = std::forward<FileNameT>(value); }
+    template<typename FileNameT = Aws::String>
+    GetMapSpritesRequest& WithFileName(FileNameT&& value) { SetFileName(std::forward<FileNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
      * key</a> to authorize the request.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline GetMapSpritesRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline GetMapSpritesRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline GetMapSpritesRequest& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    GetMapSpritesRequest& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
   private:
 

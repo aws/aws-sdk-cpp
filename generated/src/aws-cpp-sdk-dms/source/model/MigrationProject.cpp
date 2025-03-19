@@ -18,22 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-MigrationProject::MigrationProject() : 
-    m_migrationProjectNameHasBeenSet(false),
-    m_migrationProjectArnHasBeenSet(false),
-    m_migrationProjectCreationTimeHasBeenSet(false),
-    m_sourceDataProviderDescriptorsHasBeenSet(false),
-    m_targetDataProviderDescriptorsHasBeenSet(false),
-    m_instanceProfileArnHasBeenSet(false),
-    m_instanceProfileNameHasBeenSet(false),
-    m_transformationRulesHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_schemaConversionApplicationAttributesHasBeenSet(false)
-{
-}
-
 MigrationProject::MigrationProject(JsonView jsonValue)
-  : MigrationProject()
 {
   *this = jsonValue;
 }
@@ -43,24 +28,18 @@ MigrationProject& MigrationProject::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MigrationProjectName"))
   {
     m_migrationProjectName = jsonValue.GetString("MigrationProjectName");
-
     m_migrationProjectNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MigrationProjectArn"))
   {
     m_migrationProjectArn = jsonValue.GetString("MigrationProjectArn");
-
     m_migrationProjectArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MigrationProjectCreationTime"))
   {
     m_migrationProjectCreationTime = jsonValue.GetString("MigrationProjectCreationTime");
-
     m_migrationProjectCreationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceDataProviderDescriptors"))
   {
     Aws::Utils::Array<JsonView> sourceDataProviderDescriptorsJsonList = jsonValue.GetArray("SourceDataProviderDescriptors");
@@ -70,7 +49,6 @@ MigrationProject& MigrationProject::operator =(JsonView jsonValue)
     }
     m_sourceDataProviderDescriptorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetDataProviderDescriptors"))
   {
     Aws::Utils::Array<JsonView> targetDataProviderDescriptorsJsonList = jsonValue.GetArray("TargetDataProviderDescriptors");
@@ -80,42 +58,31 @@ MigrationProject& MigrationProject::operator =(JsonView jsonValue)
     }
     m_targetDataProviderDescriptorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceProfileArn"))
   {
     m_instanceProfileArn = jsonValue.GetString("InstanceProfileArn");
-
     m_instanceProfileArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceProfileName"))
   {
     m_instanceProfileName = jsonValue.GetString("InstanceProfileName");
-
     m_instanceProfileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransformationRules"))
   {
     m_transformationRules = jsonValue.GetString("TransformationRules");
-
     m_transformationRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SchemaConversionApplicationAttributes"))
   {
     m_schemaConversionApplicationAttributes = jsonValue.GetObject("SchemaConversionApplicationAttributes");
-
     m_schemaConversionApplicationAttributesHasBeenSet = true;
   }
-
   return *this;
 }
 

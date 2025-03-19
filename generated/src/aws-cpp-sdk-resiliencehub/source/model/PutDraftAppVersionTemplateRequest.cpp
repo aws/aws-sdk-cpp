@@ -12,12 +12,6 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutDraftAppVersionTemplateRequest::PutDraftAppVersionTemplateRequest() : 
-    m_appArnHasBeenSet(false),
-    m_appTemplateBodyHasBeenSet(false)
-{
-}
-
 Aws::String PutDraftAppVersionTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

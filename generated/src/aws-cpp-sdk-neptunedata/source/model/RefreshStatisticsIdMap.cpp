@@ -18,13 +18,7 @@ namespace neptunedata
 namespace Model
 {
 
-RefreshStatisticsIdMap::RefreshStatisticsIdMap() : 
-    m_statisticsIdHasBeenSet(false)
-{
-}
-
 RefreshStatisticsIdMap::RefreshStatisticsIdMap(JsonView jsonValue)
-  : RefreshStatisticsIdMap()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RefreshStatisticsIdMap& RefreshStatisticsIdMap::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("statisticsId"))
   {
     m_statisticsId = jsonValue.GetString("statisticsId");
-
     m_statisticsIdHasBeenSet = true;
   }
-
   return *this;
 }
 

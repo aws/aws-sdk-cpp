@@ -33,7 +33,7 @@ namespace Model
   class AIGuardrailContextualGroundingPolicyConfig
   {
   public:
-    AWS_QCONNECT_API AIGuardrailContextualGroundingPolicyConfig();
+    AWS_QCONNECT_API AIGuardrailContextualGroundingPolicyConfig() = default;
     AWS_QCONNECT_API AIGuardrailContextualGroundingPolicyConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API AIGuardrailContextualGroundingPolicyConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>The filter configuration details for the AI Guardrails contextual grounding
      * policy.</p>
      */
-    inline const Aws::Vector<GuardrailContextualGroundingFilterConfig>& GetFiltersConfig() const{ return m_filtersConfig; }
+    inline const Aws::Vector<GuardrailContextualGroundingFilterConfig>& GetFiltersConfig() const { return m_filtersConfig; }
     inline bool FiltersConfigHasBeenSet() const { return m_filtersConfigHasBeenSet; }
-    inline void SetFiltersConfig(const Aws::Vector<GuardrailContextualGroundingFilterConfig>& value) { m_filtersConfigHasBeenSet = true; m_filtersConfig = value; }
-    inline void SetFiltersConfig(Aws::Vector<GuardrailContextualGroundingFilterConfig>&& value) { m_filtersConfigHasBeenSet = true; m_filtersConfig = std::move(value); }
-    inline AIGuardrailContextualGroundingPolicyConfig& WithFiltersConfig(const Aws::Vector<GuardrailContextualGroundingFilterConfig>& value) { SetFiltersConfig(value); return *this;}
-    inline AIGuardrailContextualGroundingPolicyConfig& WithFiltersConfig(Aws::Vector<GuardrailContextualGroundingFilterConfig>&& value) { SetFiltersConfig(std::move(value)); return *this;}
-    inline AIGuardrailContextualGroundingPolicyConfig& AddFiltersConfig(const GuardrailContextualGroundingFilterConfig& value) { m_filtersConfigHasBeenSet = true; m_filtersConfig.push_back(value); return *this; }
-    inline AIGuardrailContextualGroundingPolicyConfig& AddFiltersConfig(GuardrailContextualGroundingFilterConfig&& value) { m_filtersConfigHasBeenSet = true; m_filtersConfig.push_back(std::move(value)); return *this; }
+    template<typename FiltersConfigT = Aws::Vector<GuardrailContextualGroundingFilterConfig>>
+    void SetFiltersConfig(FiltersConfigT&& value) { m_filtersConfigHasBeenSet = true; m_filtersConfig = std::forward<FiltersConfigT>(value); }
+    template<typename FiltersConfigT = Aws::Vector<GuardrailContextualGroundingFilterConfig>>
+    AIGuardrailContextualGroundingPolicyConfig& WithFiltersConfig(FiltersConfigT&& value) { SetFiltersConfig(std::forward<FiltersConfigT>(value)); return *this;}
+    template<typename FiltersConfigT = GuardrailContextualGroundingFilterConfig>
+    AIGuardrailContextualGroundingPolicyConfig& AddFiltersConfig(FiltersConfigT&& value) { m_filtersConfigHasBeenSet = true; m_filtersConfig.emplace_back(std::forward<FiltersConfigT>(value)); return *this; }
     ///@}
   private:
 

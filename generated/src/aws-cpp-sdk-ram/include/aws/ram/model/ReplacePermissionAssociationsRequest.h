@@ -21,7 +21,7 @@ namespace Model
   class ReplacePermissionAssociationsRequest : public RAMRequest
   {
   public:
-    AWS_RAM_API ReplacePermissionAssociationsRequest();
+    AWS_RAM_API ReplacePermissionAssociationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of the managed permission that you want to replace.</p>
      */
-    inline const Aws::String& GetFromPermissionArn() const{ return m_fromPermissionArn; }
+    inline const Aws::String& GetFromPermissionArn() const { return m_fromPermissionArn; }
     inline bool FromPermissionArnHasBeenSet() const { return m_fromPermissionArnHasBeenSet; }
-    inline void SetFromPermissionArn(const Aws::String& value) { m_fromPermissionArnHasBeenSet = true; m_fromPermissionArn = value; }
-    inline void SetFromPermissionArn(Aws::String&& value) { m_fromPermissionArnHasBeenSet = true; m_fromPermissionArn = std::move(value); }
-    inline void SetFromPermissionArn(const char* value) { m_fromPermissionArnHasBeenSet = true; m_fromPermissionArn.assign(value); }
-    inline ReplacePermissionAssociationsRequest& WithFromPermissionArn(const Aws::String& value) { SetFromPermissionArn(value); return *this;}
-    inline ReplacePermissionAssociationsRequest& WithFromPermissionArn(Aws::String&& value) { SetFromPermissionArn(std::move(value)); return *this;}
-    inline ReplacePermissionAssociationsRequest& WithFromPermissionArn(const char* value) { SetFromPermissionArn(value); return *this;}
+    template<typename FromPermissionArnT = Aws::String>
+    void SetFromPermissionArn(FromPermissionArnT&& value) { m_fromPermissionArnHasBeenSet = true; m_fromPermissionArn = std::forward<FromPermissionArnT>(value); }
+    template<typename FromPermissionArnT = Aws::String>
+    ReplacePermissionAssociationsRequest& WithFromPermissionArn(FromPermissionArnT&& value) { SetFromPermissionArn(std::forward<FromPermissionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,7 +51,7 @@ namespace Model
      * <p>Specifies that you want to updated the permissions for only those resource
      * shares that use the specified version of the managed permission.</p>
      */
-    inline int GetFromPermissionVersion() const{ return m_fromPermissionVersion; }
+    inline int GetFromPermissionVersion() const { return m_fromPermissionVersion; }
     inline bool FromPermissionVersionHasBeenSet() const { return m_fromPermissionVersionHasBeenSet; }
     inline void SetFromPermissionVersion(int value) { m_fromPermissionVersionHasBeenSet = true; m_fromPermissionVersion = value; }
     inline ReplacePermissionAssociationsRequest& WithFromPermissionVersion(int value) { SetFromPermissionVersion(value); return *this;}
@@ -67,14 +65,12 @@ namespace Model
      * the version that is currently the default for the specified managed
      * permission.</p>
      */
-    inline const Aws::String& GetToPermissionArn() const{ return m_toPermissionArn; }
+    inline const Aws::String& GetToPermissionArn() const { return m_toPermissionArn; }
     inline bool ToPermissionArnHasBeenSet() const { return m_toPermissionArnHasBeenSet; }
-    inline void SetToPermissionArn(const Aws::String& value) { m_toPermissionArnHasBeenSet = true; m_toPermissionArn = value; }
-    inline void SetToPermissionArn(Aws::String&& value) { m_toPermissionArnHasBeenSet = true; m_toPermissionArn = std::move(value); }
-    inline void SetToPermissionArn(const char* value) { m_toPermissionArnHasBeenSet = true; m_toPermissionArn.assign(value); }
-    inline ReplacePermissionAssociationsRequest& WithToPermissionArn(const Aws::String& value) { SetToPermissionArn(value); return *this;}
-    inline ReplacePermissionAssociationsRequest& WithToPermissionArn(Aws::String&& value) { SetToPermissionArn(std::move(value)); return *this;}
-    inline ReplacePermissionAssociationsRequest& WithToPermissionArn(const char* value) { SetToPermissionArn(value); return *this;}
+    template<typename ToPermissionArnT = Aws::String>
+    void SetToPermissionArn(ToPermissionArnT&& value) { m_toPermissionArnHasBeenSet = true; m_toPermissionArn = std::forward<ToPermissionArnT>(value); }
+    template<typename ToPermissionArnT = Aws::String>
+    ReplacePermissionAssociationsRequest& WithToPermissionArn(ToPermissionArnT&& value) { SetToPermissionArn(std::forward<ToPermissionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,21 +86,19 @@ namespace Model
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
      * <code>IdempotentParameterMismatch</code> error.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline ReplacePermissionAssociationsRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline ReplacePermissionAssociationsRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline ReplacePermissionAssociationsRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    ReplacePermissionAssociationsRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_fromPermissionArn;
     bool m_fromPermissionArnHasBeenSet = false;
 
-    int m_fromPermissionVersion;
+    int m_fromPermissionVersion{0};
     bool m_fromPermissionVersionHasBeenSet = false;
 
     Aws::String m_toPermissionArn;

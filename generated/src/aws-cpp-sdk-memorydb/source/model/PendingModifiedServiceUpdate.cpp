@@ -18,15 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-PendingModifiedServiceUpdate::PendingModifiedServiceUpdate() : 
-    m_serviceUpdateNameHasBeenSet(false),
-    m_status(ServiceUpdateStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 PendingModifiedServiceUpdate::PendingModifiedServiceUpdate(JsonView jsonValue)
-  : PendingModifiedServiceUpdate()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PendingModifiedServiceUpdate& PendingModifiedServiceUpdate::operator =(JsonView 
   if(jsonValue.ValueExists("ServiceUpdateName"))
   {
     m_serviceUpdateName = jsonValue.GetString("ServiceUpdateName");
-
     m_serviceUpdateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ServiceUpdateStatusMapper::GetServiceUpdateStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

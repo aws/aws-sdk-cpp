@@ -12,11 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteProjectRequest::DeleteProjectRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteProjectRequest::SerializePayload() const
 {
   JsonValue payload;

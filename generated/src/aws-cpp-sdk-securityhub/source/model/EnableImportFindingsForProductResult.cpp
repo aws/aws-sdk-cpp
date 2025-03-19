@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-EnableImportFindingsForProductResult::EnableImportFindingsForProductResult()
-{
-}
-
 EnableImportFindingsForProductResult::EnableImportFindingsForProductResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ EnableImportFindingsForProductResult& EnableImportFindingsForProductResult::oper
   if(jsonValue.ValueExists("ProductSubscriptionArn"))
   {
     m_productSubscriptionArn = jsonValue.GetString("ProductSubscriptionArn");
-
+    m_productSubscriptionArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

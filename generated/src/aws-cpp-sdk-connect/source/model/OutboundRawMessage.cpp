@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-OutboundRawMessage::OutboundRawMessage() : 
-    m_subjectHasBeenSet(false),
-    m_bodyHasBeenSet(false),
-    m_contentTypeHasBeenSet(false)
-{
-}
-
 OutboundRawMessage::OutboundRawMessage(JsonView jsonValue)
-  : OutboundRawMessage()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ OutboundRawMessage& OutboundRawMessage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Subject"))
   {
     m_subject = jsonValue.GetString("Subject");
-
     m_subjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Body"))
   {
     m_body = jsonValue.GetString("Body");
-
     m_bodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentType"))
   {
     m_contentType = jsonValue.GetString("ContentType");
-
     m_contentTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

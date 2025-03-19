@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FailedKeyRegistrationEntry::FailedKeyRegistrationEntry() : 
-    m_keyArnHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_statusCode(0),
-    m_statusCodeHasBeenSet(false),
-    m_senderFault(false),
-    m_senderFaultHasBeenSet(false)
-{
-}
-
 FailedKeyRegistrationEntry::FailedKeyRegistrationEntry(JsonView jsonValue)
-  : FailedKeyRegistrationEntry()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ FailedKeyRegistrationEntry& FailedKeyRegistrationEntry::operator =(JsonView json
   if(jsonValue.ValueExists("KeyArn"))
   {
     m_keyArn = jsonValue.GetString("KeyArn");
-
     m_keyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusCode"))
   {
     m_statusCode = jsonValue.GetInteger("StatusCode");
-
     m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SenderFault"))
   {
     m_senderFault = jsonValue.GetBool("SenderFault");
-
     m_senderFaultHasBeenSet = true;
   }
-
   return *this;
 }
 

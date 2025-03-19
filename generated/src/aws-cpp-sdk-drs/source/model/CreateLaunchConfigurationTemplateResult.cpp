@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateLaunchConfigurationTemplateResult::CreateLaunchConfigurationTemplateResult()
-{
-}
-
 CreateLaunchConfigurationTemplateResult::CreateLaunchConfigurationTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateLaunchConfigurationTemplateResult& CreateLaunchConfigurationTemplateResult
   if(jsonValue.ValueExists("launchConfigurationTemplate"))
   {
     m_launchConfigurationTemplate = jsonValue.GetObject("launchConfigurationTemplate");
-
+    m_launchConfigurationTemplateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

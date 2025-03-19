@@ -18,15 +18,7 @@ namespace mgn
 namespace Model
 {
 
-DataReplicationInitiation::DataReplicationInitiation() : 
-    m_nextAttemptDateTimeHasBeenSet(false),
-    m_startDateTimeHasBeenSet(false),
-    m_stepsHasBeenSet(false)
-{
-}
-
 DataReplicationInitiation::DataReplicationInitiation(JsonView jsonValue)
-  : DataReplicationInitiation()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DataReplicationInitiation& DataReplicationInitiation::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("nextAttemptDateTime"))
   {
     m_nextAttemptDateTime = jsonValue.GetString("nextAttemptDateTime");
-
     m_nextAttemptDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startDateTime"))
   {
     m_startDateTime = jsonValue.GetString("startDateTime");
-
     m_startDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("steps"))
   {
     Aws::Utils::Array<JsonView> stepsJsonList = jsonValue.GetArray("steps");
@@ -56,7 +44,6 @@ DataReplicationInitiation& DataReplicationInitiation::operator =(JsonView jsonVa
     }
     m_stepsHasBeenSet = true;
   }
-
   return *this;
 }
 

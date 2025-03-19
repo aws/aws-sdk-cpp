@@ -23,7 +23,7 @@ namespace Model
   class EncryptDataRequest : public PaymentCryptographyDataRequest
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API EncryptDataRequest();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API EncryptDataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * wrapping key. Otherwise, it is the key identifier used to perform the
      * operation.</p>
      */
-    inline const Aws::String& GetKeyIdentifier() const{ return m_keyIdentifier; }
+    inline const Aws::String& GetKeyIdentifier() const { return m_keyIdentifier; }
     inline bool KeyIdentifierHasBeenSet() const { return m_keyIdentifierHasBeenSet; }
-    inline void SetKeyIdentifier(const Aws::String& value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier = value; }
-    inline void SetKeyIdentifier(Aws::String&& value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier = std::move(value); }
-    inline void SetKeyIdentifier(const char* value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier.assign(value); }
-    inline EncryptDataRequest& WithKeyIdentifier(const Aws::String& value) { SetKeyIdentifier(value); return *this;}
-    inline EncryptDataRequest& WithKeyIdentifier(Aws::String&& value) { SetKeyIdentifier(std::move(value)); return *this;}
-    inline EncryptDataRequest& WithKeyIdentifier(const char* value) { SetKeyIdentifier(value); return *this;}
+    template<typename KeyIdentifierT = Aws::String>
+    void SetKeyIdentifier(KeyIdentifierT&& value) { m_keyIdentifierHasBeenSet = true; m_keyIdentifier = std::forward<KeyIdentifierT>(value); }
+    template<typename KeyIdentifierT = Aws::String>
+    EncryptDataRequest& WithKeyIdentifier(KeyIdentifierT&& value) { SetKeyIdentifier(std::forward<KeyIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,26 +60,24 @@ namespace Model
      * data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>
      * 
      */
-    inline const Aws::String& GetPlainText() const{ return m_plainText; }
+    inline const Aws::String& GetPlainText() const { return m_plainText; }
     inline bool PlainTextHasBeenSet() const { return m_plainTextHasBeenSet; }
-    inline void SetPlainText(const Aws::String& value) { m_plainTextHasBeenSet = true; m_plainText = value; }
-    inline void SetPlainText(Aws::String&& value) { m_plainTextHasBeenSet = true; m_plainText = std::move(value); }
-    inline void SetPlainText(const char* value) { m_plainTextHasBeenSet = true; m_plainText.assign(value); }
-    inline EncryptDataRequest& WithPlainText(const Aws::String& value) { SetPlainText(value); return *this;}
-    inline EncryptDataRequest& WithPlainText(Aws::String&& value) { SetPlainText(std::move(value)); return *this;}
-    inline EncryptDataRequest& WithPlainText(const char* value) { SetPlainText(value); return *this;}
+    template<typename PlainTextT = Aws::String>
+    void SetPlainText(PlainTextT&& value) { m_plainTextHasBeenSet = true; m_plainText = std::forward<PlainTextT>(value); }
+    template<typename PlainTextT = Aws::String>
+    EncryptDataRequest& WithPlainText(PlainTextT&& value) { SetPlainText(std::forward<PlainTextT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The encryption key type and attributes for plaintext encryption.</p>
      */
-    inline const EncryptionDecryptionAttributes& GetEncryptionAttributes() const{ return m_encryptionAttributes; }
+    inline const EncryptionDecryptionAttributes& GetEncryptionAttributes() const { return m_encryptionAttributes; }
     inline bool EncryptionAttributesHasBeenSet() const { return m_encryptionAttributesHasBeenSet; }
-    inline void SetEncryptionAttributes(const EncryptionDecryptionAttributes& value) { m_encryptionAttributesHasBeenSet = true; m_encryptionAttributes = value; }
-    inline void SetEncryptionAttributes(EncryptionDecryptionAttributes&& value) { m_encryptionAttributesHasBeenSet = true; m_encryptionAttributes = std::move(value); }
-    inline EncryptDataRequest& WithEncryptionAttributes(const EncryptionDecryptionAttributes& value) { SetEncryptionAttributes(value); return *this;}
-    inline EncryptDataRequest& WithEncryptionAttributes(EncryptionDecryptionAttributes&& value) { SetEncryptionAttributes(std::move(value)); return *this;}
+    template<typename EncryptionAttributesT = EncryptionDecryptionAttributes>
+    void SetEncryptionAttributes(EncryptionAttributesT&& value) { m_encryptionAttributesHasBeenSet = true; m_encryptionAttributes = std::forward<EncryptionAttributesT>(value); }
+    template<typename EncryptionAttributesT = EncryptionDecryptionAttributes>
+    EncryptDataRequest& WithEncryptionAttributes(EncryptionAttributesT&& value) { SetEncryptionAttributes(std::forward<EncryptionAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +85,12 @@ namespace Model
      * <p>The WrappedKeyBlock containing the encryption key for plaintext
      * encryption.</p>
      */
-    inline const WrappedKey& GetWrappedKey() const{ return m_wrappedKey; }
+    inline const WrappedKey& GetWrappedKey() const { return m_wrappedKey; }
     inline bool WrappedKeyHasBeenSet() const { return m_wrappedKeyHasBeenSet; }
-    inline void SetWrappedKey(const WrappedKey& value) { m_wrappedKeyHasBeenSet = true; m_wrappedKey = value; }
-    inline void SetWrappedKey(WrappedKey&& value) { m_wrappedKeyHasBeenSet = true; m_wrappedKey = std::move(value); }
-    inline EncryptDataRequest& WithWrappedKey(const WrappedKey& value) { SetWrappedKey(value); return *this;}
-    inline EncryptDataRequest& WithWrappedKey(WrappedKey&& value) { SetWrappedKey(std::move(value)); return *this;}
+    template<typename WrappedKeyT = WrappedKey>
+    void SetWrappedKey(WrappedKeyT&& value) { m_wrappedKeyHasBeenSet = true; m_wrappedKey = std::forward<WrappedKeyT>(value); }
+    template<typename WrappedKeyT = WrappedKey>
+    EncryptDataRequest& WithWrappedKey(WrappedKeyT&& value) { SetWrappedKey(std::forward<WrappedKeyT>(value)); return *this;}
     ///@}
   private:
 

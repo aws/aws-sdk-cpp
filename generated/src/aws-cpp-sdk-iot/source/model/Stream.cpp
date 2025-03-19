@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-Stream::Stream() : 
-    m_streamIdHasBeenSet(false),
-    m_fileId(0),
-    m_fileIdHasBeenSet(false)
-{
-}
-
 Stream::Stream(JsonView jsonValue)
-  : Stream()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Stream& Stream::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("streamId"))
   {
     m_streamId = jsonValue.GetString("streamId");
-
     m_streamIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileId"))
   {
     m_fileId = jsonValue.GetInteger("fileId");
-
     m_fileIdHasBeenSet = true;
   }
-
   return *this;
 }
 

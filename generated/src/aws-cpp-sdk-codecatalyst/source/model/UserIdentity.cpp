@@ -18,17 +18,7 @@ namespace CodeCatalyst
 namespace Model
 {
 
-UserIdentity::UserIdentity() : 
-    m_userType(UserType::NOT_SET),
-    m_userTypeHasBeenSet(false),
-    m_principalIdHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false)
-{
-}
-
 UserIdentity::UserIdentity(JsonView jsonValue)
-  : UserIdentity()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ UserIdentity& UserIdentity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("userType"))
   {
     m_userType = UserTypeMapper::GetUserTypeForName(jsonValue.GetString("userType"));
-
     m_userTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principalId"))
   {
     m_principalId = jsonValue.GetString("principalId");
-
     m_principalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userName"))
   {
     m_userName = jsonValue.GetString("userName");
-
     m_userNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsAccountId"))
   {
     m_awsAccountId = jsonValue.GetString("awsAccountId");
-
     m_awsAccountIdHasBeenSet = true;
   }
-
   return *this;
 }
 

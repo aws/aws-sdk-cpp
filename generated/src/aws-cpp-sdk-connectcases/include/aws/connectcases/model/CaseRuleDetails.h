@@ -35,7 +35,7 @@ namespace Model
   class CaseRuleDetails
   {
   public:
-    AWS_CONNECTCASES_API CaseRuleDetails();
+    AWS_CONNECTCASES_API CaseRuleDetails() = default;
     AWS_CONNECTCASES_API CaseRuleDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API CaseRuleDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
     /**
      * <p>Required rule type, used to indicate whether a field is required.</p>
      */
-    inline const RequiredCaseRule& GetRequired() const{ return m_required; }
+    inline const RequiredCaseRule& GetRequired() const { return m_required; }
     inline bool RequiredHasBeenSet() const { return m_requiredHasBeenSet; }
-    inline void SetRequired(const RequiredCaseRule& value) { m_requiredHasBeenSet = true; m_required = value; }
-    inline void SetRequired(RequiredCaseRule&& value) { m_requiredHasBeenSet = true; m_required = std::move(value); }
-    inline CaseRuleDetails& WithRequired(const RequiredCaseRule& value) { SetRequired(value); return *this;}
-    inline CaseRuleDetails& WithRequired(RequiredCaseRule&& value) { SetRequired(std::move(value)); return *this;}
+    template<typename RequiredT = RequiredCaseRule>
+    void SetRequired(RequiredT&& value) { m_requiredHasBeenSet = true; m_required = std::forward<RequiredT>(value); }
+    template<typename RequiredT = RequiredCaseRule>
+    CaseRuleDetails& WithRequired(RequiredT&& value) { SetRequired(std::forward<RequiredT>(value)); return *this;}
     ///@}
   private:
 

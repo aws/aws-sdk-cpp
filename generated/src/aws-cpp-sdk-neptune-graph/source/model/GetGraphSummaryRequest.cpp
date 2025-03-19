@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetGraphSummaryRequest::GetGraphSummaryRequest() : 
-    m_graphIdentifierHasBeenSet(false),
-    m_mode(GraphSummaryMode::NOT_SET),
-    m_modeHasBeenSet(false)
-{
-}
-
 Aws::String GetGraphSummaryRequest::SerializePayload() const
 {
   return {};

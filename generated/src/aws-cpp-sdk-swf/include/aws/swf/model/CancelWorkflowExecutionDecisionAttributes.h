@@ -45,7 +45,7 @@ namespace Model
   class CancelWorkflowExecutionDecisionAttributes
   {
   public:
-    AWS_SWF_API CancelWorkflowExecutionDecisionAttributes();
+    AWS_SWF_API CancelWorkflowExecutionDecisionAttributes() = default;
     AWS_SWF_API CancelWorkflowExecutionDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API CancelWorkflowExecutionDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,14 +55,12 @@ namespace Model
     /**
      * <p> Details of the cancellation.</p>
      */
-    inline const Aws::String& GetDetails() const{ return m_details; }
+    inline const Aws::String& GetDetails() const { return m_details; }
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-    inline void SetDetails(const Aws::String& value) { m_detailsHasBeenSet = true; m_details = value; }
-    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-    inline void SetDetails(const char* value) { m_detailsHasBeenSet = true; m_details.assign(value); }
-    inline CancelWorkflowExecutionDecisionAttributes& WithDetails(const Aws::String& value) { SetDetails(value); return *this;}
-    inline CancelWorkflowExecutionDecisionAttributes& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
-    inline CancelWorkflowExecutionDecisionAttributes& WithDetails(const char* value) { SetDetails(value); return *this;}
+    template<typename DetailsT = Aws::String>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = Aws::String>
+    CancelWorkflowExecutionDecisionAttributes& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
     ///@}
   private:
 

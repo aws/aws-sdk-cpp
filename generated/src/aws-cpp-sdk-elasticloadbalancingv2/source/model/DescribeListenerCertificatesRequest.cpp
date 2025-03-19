@@ -10,14 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-DescribeListenerCertificatesRequest::DescribeListenerCertificatesRequest() : 
-    m_listenerArnHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeListenerCertificatesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -37,7 +37,7 @@ namespace Model
   class WebvttDestinationSettings
   {
   public:
-    AWS_MEDIACONVERT_API WebvttDestinationSettings();
+    AWS_MEDIACONVERT_API WebvttDestinationSettings() = default;
     AWS_MEDIACONVERT_API WebvttDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API WebvttDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,12 +59,10 @@ namespace Model
      * adaptation set for this track: <Role schemeIDUri="urn:mpeg:dash:role:2011"
      * value="subtitle"/>.
      */
-    inline const WebvttAccessibilitySubs& GetAccessibility() const{ return m_accessibility; }
+    inline WebvttAccessibilitySubs GetAccessibility() const { return m_accessibility; }
     inline bool AccessibilityHasBeenSet() const { return m_accessibilityHasBeenSet; }
-    inline void SetAccessibility(const WebvttAccessibilitySubs& value) { m_accessibilityHasBeenSet = true; m_accessibility = value; }
-    inline void SetAccessibility(WebvttAccessibilitySubs&& value) { m_accessibilityHasBeenSet = true; m_accessibility = std::move(value); }
-    inline WebvttDestinationSettings& WithAccessibility(const WebvttAccessibilitySubs& value) { SetAccessibility(value); return *this;}
-    inline WebvttDestinationSettings& WithAccessibility(WebvttAccessibilitySubs&& value) { SetAccessibility(std::move(value)); return *this;}
+    inline void SetAccessibility(WebvttAccessibilitySubs value) { m_accessibilityHasBeenSet = true; m_accessibility = value; }
+    inline WebvttDestinationSettings& WithAccessibility(WebvttAccessibilitySubs value) { SetAccessibility(value); return *this;}
     ///@}
 
     ///@{
@@ -83,19 +81,17 @@ namespace Model
      * positioning overlaps for certain players that expect a single single cue for any
      * given time range.
      */
-    inline const WebvttStylePassthrough& GetStylePassthrough() const{ return m_stylePassthrough; }
+    inline WebvttStylePassthrough GetStylePassthrough() const { return m_stylePassthrough; }
     inline bool StylePassthroughHasBeenSet() const { return m_stylePassthroughHasBeenSet; }
-    inline void SetStylePassthrough(const WebvttStylePassthrough& value) { m_stylePassthroughHasBeenSet = true; m_stylePassthrough = value; }
-    inline void SetStylePassthrough(WebvttStylePassthrough&& value) { m_stylePassthroughHasBeenSet = true; m_stylePassthrough = std::move(value); }
-    inline WebvttDestinationSettings& WithStylePassthrough(const WebvttStylePassthrough& value) { SetStylePassthrough(value); return *this;}
-    inline WebvttDestinationSettings& WithStylePassthrough(WebvttStylePassthrough&& value) { SetStylePassthrough(std::move(value)); return *this;}
+    inline void SetStylePassthrough(WebvttStylePassthrough value) { m_stylePassthroughHasBeenSet = true; m_stylePassthrough = value; }
+    inline WebvttDestinationSettings& WithStylePassthrough(WebvttStylePassthrough value) { SetStylePassthrough(value); return *this;}
     ///@}
   private:
 
-    WebvttAccessibilitySubs m_accessibility;
+    WebvttAccessibilitySubs m_accessibility{WebvttAccessibilitySubs::NOT_SET};
     bool m_accessibilityHasBeenSet = false;
 
-    WebvttStylePassthrough m_stylePassthrough;
+    WebvttStylePassthrough m_stylePassthrough{WebvttStylePassthrough::NOT_SET};
     bool m_stylePassthroughHasBeenSet = false;
   };
 

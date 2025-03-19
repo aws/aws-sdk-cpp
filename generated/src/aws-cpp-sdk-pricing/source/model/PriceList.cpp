@@ -18,16 +18,7 @@ namespace Pricing
 namespace Model
 {
 
-PriceList::PriceList() : 
-    m_priceListArnHasBeenSet(false),
-    m_regionCodeHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_fileFormatsHasBeenSet(false)
-{
-}
-
 PriceList::PriceList(JsonView jsonValue)
-  : PriceList()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ PriceList& PriceList::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PriceListArn"))
   {
     m_priceListArn = jsonValue.GetString("PriceListArn");
-
     m_priceListArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegionCode"))
   {
     m_regionCode = jsonValue.GetString("RegionCode");
-
     m_regionCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrencyCode"))
   {
     m_currencyCode = jsonValue.GetString("CurrencyCode");
-
     m_currencyCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileFormats"))
   {
     Aws::Utils::Array<JsonView> fileFormatsJsonList = jsonValue.GetArray("FileFormats");
@@ -64,7 +49,6 @@ PriceList& PriceList::operator =(JsonView jsonValue)
     }
     m_fileFormatsHasBeenSet = true;
   }
-
   return *this;
 }
 

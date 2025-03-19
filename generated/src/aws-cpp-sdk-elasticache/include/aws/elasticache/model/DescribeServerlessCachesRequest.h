@@ -21,7 +21,7 @@ namespace Model
   class DescribeServerlessCachesRequest : public ElastiCacheRequest
   {
   public:
-    AWS_ELASTICACHE_API DescribeServerlessCachesRequest();
+    AWS_ELASTICACHE_API DescribeServerlessCachesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The identifier for the serverless cache. If this parameter is specified, only
      * information about that specific serverless cache is returned. Default: NULL</p>
      */
-    inline const Aws::String& GetServerlessCacheName() const{ return m_serverlessCacheName; }
+    inline const Aws::String& GetServerlessCacheName() const { return m_serverlessCacheName; }
     inline bool ServerlessCacheNameHasBeenSet() const { return m_serverlessCacheNameHasBeenSet; }
-    inline void SetServerlessCacheName(const Aws::String& value) { m_serverlessCacheNameHasBeenSet = true; m_serverlessCacheName = value; }
-    inline void SetServerlessCacheName(Aws::String&& value) { m_serverlessCacheNameHasBeenSet = true; m_serverlessCacheName = std::move(value); }
-    inline void SetServerlessCacheName(const char* value) { m_serverlessCacheNameHasBeenSet = true; m_serverlessCacheName.assign(value); }
-    inline DescribeServerlessCachesRequest& WithServerlessCacheName(const Aws::String& value) { SetServerlessCacheName(value); return *this;}
-    inline DescribeServerlessCachesRequest& WithServerlessCacheName(Aws::String&& value) { SetServerlessCacheName(std::move(value)); return *this;}
-    inline DescribeServerlessCachesRequest& WithServerlessCacheName(const char* value) { SetServerlessCacheName(value); return *this;}
+    template<typename ServerlessCacheNameT = Aws::String>
+    void SetServerlessCacheName(ServerlessCacheNameT&& value) { m_serverlessCacheNameHasBeenSet = true; m_serverlessCacheName = std::forward<ServerlessCacheNameT>(value); }
+    template<typename ServerlessCacheNameT = Aws::String>
+    DescribeServerlessCachesRequest& WithServerlessCacheName(ServerlessCacheNameT&& value) { SetServerlessCacheName(std::forward<ServerlessCacheNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * specified max-records value, the next token is included in the response so that
      * remaining results can be retrieved. The default is 50.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeServerlessCachesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -70,21 +68,19 @@ namespace Model
      * includes only records beyond the marker, up to the value specified by
      * MaxResults.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeServerlessCachesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeServerlessCachesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeServerlessCachesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeServerlessCachesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_serverlessCacheName;
     bool m_serverlessCacheNameHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

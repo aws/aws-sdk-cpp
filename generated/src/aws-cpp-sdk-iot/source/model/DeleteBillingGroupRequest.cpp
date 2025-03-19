@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteBillingGroupRequest::DeleteBillingGroupRequest() : 
-    m_billingGroupNameHasBeenSet(false),
-    m_expectedVersion(0),
-    m_expectedVersionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteBillingGroupRequest::SerializePayload() const
 {
   return {};

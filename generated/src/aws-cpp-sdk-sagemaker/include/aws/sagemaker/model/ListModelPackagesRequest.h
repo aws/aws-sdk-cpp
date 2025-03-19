@@ -26,7 +26,7 @@ namespace Model
   class ListModelPackagesRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API ListModelPackagesRequest();
+    AWS_SAGEMAKER_API ListModelPackagesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,12 +44,12 @@ namespace Model
      * <p>A filter that returns only model packages created after the specified time
      * (timestamp).</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTimeAfter() const{ return m_creationTimeAfter; }
+    inline const Aws::Utils::DateTime& GetCreationTimeAfter() const { return m_creationTimeAfter; }
     inline bool CreationTimeAfterHasBeenSet() const { return m_creationTimeAfterHasBeenSet; }
-    inline void SetCreationTimeAfter(const Aws::Utils::DateTime& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = value; }
-    inline void SetCreationTimeAfter(Aws::Utils::DateTime&& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = std::move(value); }
-    inline ListModelPackagesRequest& WithCreationTimeAfter(const Aws::Utils::DateTime& value) { SetCreationTimeAfter(value); return *this;}
-    inline ListModelPackagesRequest& WithCreationTimeAfter(Aws::Utils::DateTime&& value) { SetCreationTimeAfter(std::move(value)); return *this;}
+    template<typename CreationTimeAfterT = Aws::Utils::DateTime>
+    void SetCreationTimeAfter(CreationTimeAfterT&& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = std::forward<CreationTimeAfterT>(value); }
+    template<typename CreationTimeAfterT = Aws::Utils::DateTime>
+    ListModelPackagesRequest& WithCreationTimeAfter(CreationTimeAfterT&& value) { SetCreationTimeAfter(std::forward<CreationTimeAfterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,19 +57,19 @@ namespace Model
      * <p>A filter that returns only model packages created before the specified time
      * (timestamp).</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTimeBefore() const{ return m_creationTimeBefore; }
+    inline const Aws::Utils::DateTime& GetCreationTimeBefore() const { return m_creationTimeBefore; }
     inline bool CreationTimeBeforeHasBeenSet() const { return m_creationTimeBeforeHasBeenSet; }
-    inline void SetCreationTimeBefore(const Aws::Utils::DateTime& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = value; }
-    inline void SetCreationTimeBefore(Aws::Utils::DateTime&& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = std::move(value); }
-    inline ListModelPackagesRequest& WithCreationTimeBefore(const Aws::Utils::DateTime& value) { SetCreationTimeBefore(value); return *this;}
-    inline ListModelPackagesRequest& WithCreationTimeBefore(Aws::Utils::DateTime&& value) { SetCreationTimeBefore(std::move(value)); return *this;}
+    template<typename CreationTimeBeforeT = Aws::Utils::DateTime>
+    void SetCreationTimeBefore(CreationTimeBeforeT&& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = std::forward<CreationTimeBeforeT>(value); }
+    template<typename CreationTimeBeforeT = Aws::Utils::DateTime>
+    ListModelPackagesRequest& WithCreationTimeBefore(CreationTimeBeforeT&& value) { SetCreationTimeBefore(std::forward<CreationTimeBeforeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of model packages to return in the response.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListModelPackagesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -80,14 +80,12 @@ namespace Model
      * <p>A string in the model package name. This filter returns only model packages
      * whose name contains the specified string.</p>
      */
-    inline const Aws::String& GetNameContains() const{ return m_nameContains; }
+    inline const Aws::String& GetNameContains() const { return m_nameContains; }
     inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
-    inline void SetNameContains(const Aws::String& value) { m_nameContainsHasBeenSet = true; m_nameContains = value; }
-    inline void SetNameContains(Aws::String&& value) { m_nameContainsHasBeenSet = true; m_nameContains = std::move(value); }
-    inline void SetNameContains(const char* value) { m_nameContainsHasBeenSet = true; m_nameContains.assign(value); }
-    inline ListModelPackagesRequest& WithNameContains(const Aws::String& value) { SetNameContains(value); return *this;}
-    inline ListModelPackagesRequest& WithNameContains(Aws::String&& value) { SetNameContains(std::move(value)); return *this;}
-    inline ListModelPackagesRequest& WithNameContains(const char* value) { SetNameContains(value); return *this;}
+    template<typename NameContainsT = Aws::String>
+    void SetNameContains(NameContainsT&& value) { m_nameContainsHasBeenSet = true; m_nameContains = std::forward<NameContainsT>(value); }
+    template<typename NameContainsT = Aws::String>
+    ListModelPackagesRequest& WithNameContains(NameContainsT&& value) { SetNameContains(std::forward<NameContainsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,12 +93,10 @@ namespace Model
      * <p>A filter that returns only the model packages with the specified approval
      * status.</p>
      */
-    inline const ModelApprovalStatus& GetModelApprovalStatus() const{ return m_modelApprovalStatus; }
+    inline ModelApprovalStatus GetModelApprovalStatus() const { return m_modelApprovalStatus; }
     inline bool ModelApprovalStatusHasBeenSet() const { return m_modelApprovalStatusHasBeenSet; }
-    inline void SetModelApprovalStatus(const ModelApprovalStatus& value) { m_modelApprovalStatusHasBeenSet = true; m_modelApprovalStatus = value; }
-    inline void SetModelApprovalStatus(ModelApprovalStatus&& value) { m_modelApprovalStatusHasBeenSet = true; m_modelApprovalStatus = std::move(value); }
-    inline ListModelPackagesRequest& WithModelApprovalStatus(const ModelApprovalStatus& value) { SetModelApprovalStatus(value); return *this;}
-    inline ListModelPackagesRequest& WithModelApprovalStatus(ModelApprovalStatus&& value) { SetModelApprovalStatus(std::move(value)); return *this;}
+    inline void SetModelApprovalStatus(ModelApprovalStatus value) { m_modelApprovalStatusHasBeenSet = true; m_modelApprovalStatus = value; }
+    inline ListModelPackagesRequest& WithModelApprovalStatus(ModelApprovalStatus value) { SetModelApprovalStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -108,14 +104,12 @@ namespace Model
      * <p>A filter that returns only model versions that belong to the specified model
      * group.</p>
      */
-    inline const Aws::String& GetModelPackageGroupName() const{ return m_modelPackageGroupName; }
+    inline const Aws::String& GetModelPackageGroupName() const { return m_modelPackageGroupName; }
     inline bool ModelPackageGroupNameHasBeenSet() const { return m_modelPackageGroupNameHasBeenSet; }
-    inline void SetModelPackageGroupName(const Aws::String& value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName = value; }
-    inline void SetModelPackageGroupName(Aws::String&& value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName = std::move(value); }
-    inline void SetModelPackageGroupName(const char* value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName.assign(value); }
-    inline ListModelPackagesRequest& WithModelPackageGroupName(const Aws::String& value) { SetModelPackageGroupName(value); return *this;}
-    inline ListModelPackagesRequest& WithModelPackageGroupName(Aws::String&& value) { SetModelPackageGroupName(std::move(value)); return *this;}
-    inline ListModelPackagesRequest& WithModelPackageGroupName(const char* value) { SetModelPackageGroupName(value); return *this;}
+    template<typename ModelPackageGroupNameT = Aws::String>
+    void SetModelPackageGroupName(ModelPackageGroupNameT&& value) { m_modelPackageGroupNameHasBeenSet = true; m_modelPackageGroupName = std::forward<ModelPackageGroupNameT>(value); }
+    template<typename ModelPackageGroupNameT = Aws::String>
+    ListModelPackagesRequest& WithModelPackageGroupName(ModelPackageGroupNameT&& value) { SetModelPackageGroupName(std::forward<ModelPackageGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,12 +121,10 @@ namespace Model
      * <code>VERSIONED</code> - List only versioned models.</p> </li> <li> <p>
      * <code>BOTH</code> - List both versioned and unversioned models.</p> </li> </ul>
      */
-    inline const ModelPackageType& GetModelPackageType() const{ return m_modelPackageType; }
+    inline ModelPackageType GetModelPackageType() const { return m_modelPackageType; }
     inline bool ModelPackageTypeHasBeenSet() const { return m_modelPackageTypeHasBeenSet; }
-    inline void SetModelPackageType(const ModelPackageType& value) { m_modelPackageTypeHasBeenSet = true; m_modelPackageType = value; }
-    inline void SetModelPackageType(ModelPackageType&& value) { m_modelPackageTypeHasBeenSet = true; m_modelPackageType = std::move(value); }
-    inline ListModelPackagesRequest& WithModelPackageType(const ModelPackageType& value) { SetModelPackageType(value); return *this;}
-    inline ListModelPackagesRequest& WithModelPackageType(ModelPackageType&& value) { SetModelPackageType(std::move(value)); return *this;}
+    inline void SetModelPackageType(ModelPackageType value) { m_modelPackageTypeHasBeenSet = true; m_modelPackageType = value; }
+    inline ListModelPackagesRequest& WithModelPackageType(ModelPackageType value) { SetModelPackageType(value); return *this;}
     ///@}
 
     ///@{
@@ -141,14 +133,12 @@ namespace Model
      * truncated, the response includes a <code>NextToken</code>. To retrieve the next
      * set of model packages, use the token in the next request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListModelPackagesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListModelPackagesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListModelPackagesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListModelPackagesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -156,55 +146,51 @@ namespace Model
      * <p>The parameter by which to sort the results. The default is
      * <code>CreationTime</code>.</p>
      */
-    inline const ModelPackageSortBy& GetSortBy() const{ return m_sortBy; }
+    inline ModelPackageSortBy GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const ModelPackageSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(ModelPackageSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListModelPackagesRequest& WithSortBy(const ModelPackageSortBy& value) { SetSortBy(value); return *this;}
-    inline ListModelPackagesRequest& WithSortBy(ModelPackageSortBy&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(ModelPackageSortBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline ListModelPackagesRequest& WithSortBy(ModelPackageSortBy value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sort order for the results. The default is <code>Ascending</code>.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListModelPackagesRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline ListModelPackagesRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListModelPackagesRequest& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_creationTimeAfter;
+    Aws::Utils::DateTime m_creationTimeAfter{};
     bool m_creationTimeAfterHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTimeBefore;
+    Aws::Utils::DateTime m_creationTimeBefore{};
     bool m_creationTimeBeforeHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nameContains;
     bool m_nameContainsHasBeenSet = false;
 
-    ModelApprovalStatus m_modelApprovalStatus;
+    ModelApprovalStatus m_modelApprovalStatus{ModelApprovalStatus::NOT_SET};
     bool m_modelApprovalStatusHasBeenSet = false;
 
     Aws::String m_modelPackageGroupName;
     bool m_modelPackageGroupNameHasBeenSet = false;
 
-    ModelPackageType m_modelPackageType;
+    ModelPackageType m_modelPackageType{ModelPackageType::NOT_SET};
     bool m_modelPackageTypeHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    ModelPackageSortBy m_sortBy;
+    ModelPackageSortBy m_sortBy{ModelPackageSortBy::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

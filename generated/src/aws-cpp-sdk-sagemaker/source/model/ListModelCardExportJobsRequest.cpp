@@ -12,25 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListModelCardExportJobsRequest::ListModelCardExportJobsRequest() : 
-    m_modelCardNameHasBeenSet(false),
-    m_modelCardVersion(0),
-    m_modelCardVersionHasBeenSet(false),
-    m_creationTimeAfterHasBeenSet(false),
-    m_creationTimeBeforeHasBeenSet(false),
-    m_modelCardExportJobNameContainsHasBeenSet(false),
-    m_statusEquals(ModelCardExportJobStatus::NOT_SET),
-    m_statusEqualsHasBeenSet(false),
-    m_sortBy(ModelCardExportJobSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(ModelCardExportJobSortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListModelCardExportJobsRequest::SerializePayload() const
 {
   JsonValue payload;

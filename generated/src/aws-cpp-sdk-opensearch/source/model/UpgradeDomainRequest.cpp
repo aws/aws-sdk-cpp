@@ -12,15 +12,6 @@ using namespace Aws::OpenSearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpgradeDomainRequest::UpgradeDomainRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_targetVersionHasBeenSet(false),
-    m_performCheckOnly(false),
-    m_performCheckOnlyHasBeenSet(false),
-    m_advancedOptionsHasBeenSet(false)
-{
-}
-
 Aws::String UpgradeDomainRequest::SerializePayload() const
 {
   JsonValue payload;

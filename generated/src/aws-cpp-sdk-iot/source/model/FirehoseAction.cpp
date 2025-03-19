@@ -18,17 +18,7 @@ namespace IoT
 namespace Model
 {
 
-FirehoseAction::FirehoseAction() : 
-    m_roleArnHasBeenSet(false),
-    m_deliveryStreamNameHasBeenSet(false),
-    m_separatorHasBeenSet(false),
-    m_batchMode(false),
-    m_batchModeHasBeenSet(false)
-{
-}
-
 FirehoseAction::FirehoseAction(JsonView jsonValue)
-  : FirehoseAction()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ FirehoseAction& FirehoseAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deliveryStreamName"))
   {
     m_deliveryStreamName = jsonValue.GetString("deliveryStreamName");
-
     m_deliveryStreamNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("separator"))
   {
     m_separator = jsonValue.GetString("separator");
-
     m_separatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("batchMode"))
   {
     m_batchMode = jsonValue.GetBool("batchMode");
-
     m_batchModeHasBeenSet = true;
   }
-
   return *this;
 }
 

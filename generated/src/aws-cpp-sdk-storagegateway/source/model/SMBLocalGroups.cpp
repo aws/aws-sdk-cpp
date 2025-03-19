@@ -18,13 +18,7 @@ namespace StorageGateway
 namespace Model
 {
 
-SMBLocalGroups::SMBLocalGroups() : 
-    m_gatewayAdminsHasBeenSet(false)
-{
-}
-
 SMBLocalGroups::SMBLocalGroups(JsonView jsonValue)
-  : SMBLocalGroups()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SMBLocalGroups& SMBLocalGroups::operator =(JsonView jsonValue)
     }
     m_gatewayAdminsHasBeenSet = true;
   }
-
   return *this;
 }
 

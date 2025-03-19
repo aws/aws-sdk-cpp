@@ -18,16 +18,7 @@ namespace drs
 namespace Model
 {
 
-SourceNetworkData::SourceNetworkData() : 
-    m_sourceNetworkIDHasBeenSet(false),
-    m_sourceVpcHasBeenSet(false),
-    m_stackNameHasBeenSet(false),
-    m_targetVpcHasBeenSet(false)
-{
-}
-
 SourceNetworkData::SourceNetworkData(JsonView jsonValue)
-  : SourceNetworkData()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ SourceNetworkData& SourceNetworkData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sourceNetworkID"))
   {
     m_sourceNetworkID = jsonValue.GetString("sourceNetworkID");
-
     m_sourceNetworkIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceVpc"))
   {
     m_sourceVpc = jsonValue.GetString("sourceVpc");
-
     m_sourceVpcHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stackName"))
   {
     m_stackName = jsonValue.GetString("stackName");
-
     m_stackNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetVpc"))
   {
     m_targetVpc = jsonValue.GetString("targetVpc");
-
     m_targetVpcHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAvailableManagedRuleGroupVersionsResult::ListAvailableManagedRuleGroupVersionsResult()
-{
-}
-
 ListAvailableManagedRuleGroupVersionsResult::ListAvailableManagedRuleGroupVersionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListAvailableManagedRuleGroupVersionsResult& ListAvailableManagedRuleGroupVersio
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
-
+    m_nextMarkerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Versions"))
   {
     Aws::Utils::Array<JsonView> versionsJsonList = jsonValue.GetArray("Versions");
@@ -42,20 +37,20 @@ ListAvailableManagedRuleGroupVersionsResult& ListAvailableManagedRuleGroupVersio
     {
       m_versions.push_back(versionsJsonList[versionsIndex].AsObject());
     }
+    m_versionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentDefaultVersion"))
   {
     m_currentDefaultVersion = jsonValue.GetString("CurrentDefaultVersion");
-
+    m_currentDefaultVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

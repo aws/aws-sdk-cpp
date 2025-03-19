@@ -19,7 +19,7 @@ namespace Model
   class InitializeServiceRequest : public MgnRequest
   {
   public:
-    AWS_MGN_API InitializeServiceRequest();
+    AWS_MGN_API InitializeServiceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

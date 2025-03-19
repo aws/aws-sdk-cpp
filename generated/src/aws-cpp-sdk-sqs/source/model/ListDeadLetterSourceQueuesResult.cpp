@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListDeadLetterSourceQueuesResult::ListDeadLetterSourceQueuesResult()
-{
-}
-
 ListDeadLetterSourceQueuesResult::ListDeadLetterSourceQueuesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,25 +32,26 @@ ListDeadLetterSourceQueuesResult& ListDeadLetterSourceQueuesResult::operator =(c
     {
       m_queueUrls.push_back(queueUrlsJsonList[queueUrlsIndex].AsString());
     }
+    m_queueUrlsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& responseMetadataIter = headers.find("x-amzn-requestid");
   if(responseMetadataIter != headers.end())
   {
+    m_responseMetadataHasBeenSet = true;
      // for backward compatibility for customers used to an old XML Client interface
      m_responseMetadata.SetRequestId(responseMetadataIter->second);
   }

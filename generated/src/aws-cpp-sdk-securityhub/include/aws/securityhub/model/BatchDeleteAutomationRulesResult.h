@@ -29,7 +29,7 @@ namespace Model
   class BatchDeleteAutomationRulesResult
   {
   public:
-    AWS_SECURITYHUB_API BatchDeleteAutomationRulesResult();
+    AWS_SECURITYHUB_API BatchDeleteAutomationRulesResult() = default;
     AWS_SECURITYHUB_API BatchDeleteAutomationRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECURITYHUB_API BatchDeleteAutomationRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,14 +38,13 @@ namespace Model
     /**
      * <p> A list of properly processed rule ARNs. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetProcessedAutomationRules() const{ return m_processedAutomationRules; }
-    inline void SetProcessedAutomationRules(const Aws::Vector<Aws::String>& value) { m_processedAutomationRules = value; }
-    inline void SetProcessedAutomationRules(Aws::Vector<Aws::String>&& value) { m_processedAutomationRules = std::move(value); }
-    inline BatchDeleteAutomationRulesResult& WithProcessedAutomationRules(const Aws::Vector<Aws::String>& value) { SetProcessedAutomationRules(value); return *this;}
-    inline BatchDeleteAutomationRulesResult& WithProcessedAutomationRules(Aws::Vector<Aws::String>&& value) { SetProcessedAutomationRules(std::move(value)); return *this;}
-    inline BatchDeleteAutomationRulesResult& AddProcessedAutomationRules(const Aws::String& value) { m_processedAutomationRules.push_back(value); return *this; }
-    inline BatchDeleteAutomationRulesResult& AddProcessedAutomationRules(Aws::String&& value) { m_processedAutomationRules.push_back(std::move(value)); return *this; }
-    inline BatchDeleteAutomationRulesResult& AddProcessedAutomationRules(const char* value) { m_processedAutomationRules.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetProcessedAutomationRules() const { return m_processedAutomationRules; }
+    template<typename ProcessedAutomationRulesT = Aws::Vector<Aws::String>>
+    void SetProcessedAutomationRules(ProcessedAutomationRulesT&& value) { m_processedAutomationRulesHasBeenSet = true; m_processedAutomationRules = std::forward<ProcessedAutomationRulesT>(value); }
+    template<typename ProcessedAutomationRulesT = Aws::Vector<Aws::String>>
+    BatchDeleteAutomationRulesResult& WithProcessedAutomationRules(ProcessedAutomationRulesT&& value) { SetProcessedAutomationRules(std::forward<ProcessedAutomationRulesT>(value)); return *this;}
+    template<typename ProcessedAutomationRulesT = Aws::String>
+    BatchDeleteAutomationRulesResult& AddProcessedAutomationRules(ProcessedAutomationRulesT&& value) { m_processedAutomationRulesHasBeenSet = true; m_processedAutomationRules.emplace_back(std::forward<ProcessedAutomationRulesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +53,33 @@ namespace Model
      * and <code>ErrorMessage</code>. This parameter tells you which automation rules
      * the request didn't delete and why. </p>
      */
-    inline const Aws::Vector<UnprocessedAutomationRule>& GetUnprocessedAutomationRules() const{ return m_unprocessedAutomationRules; }
-    inline void SetUnprocessedAutomationRules(const Aws::Vector<UnprocessedAutomationRule>& value) { m_unprocessedAutomationRules = value; }
-    inline void SetUnprocessedAutomationRules(Aws::Vector<UnprocessedAutomationRule>&& value) { m_unprocessedAutomationRules = std::move(value); }
-    inline BatchDeleteAutomationRulesResult& WithUnprocessedAutomationRules(const Aws::Vector<UnprocessedAutomationRule>& value) { SetUnprocessedAutomationRules(value); return *this;}
-    inline BatchDeleteAutomationRulesResult& WithUnprocessedAutomationRules(Aws::Vector<UnprocessedAutomationRule>&& value) { SetUnprocessedAutomationRules(std::move(value)); return *this;}
-    inline BatchDeleteAutomationRulesResult& AddUnprocessedAutomationRules(const UnprocessedAutomationRule& value) { m_unprocessedAutomationRules.push_back(value); return *this; }
-    inline BatchDeleteAutomationRulesResult& AddUnprocessedAutomationRules(UnprocessedAutomationRule&& value) { m_unprocessedAutomationRules.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<UnprocessedAutomationRule>& GetUnprocessedAutomationRules() const { return m_unprocessedAutomationRules; }
+    template<typename UnprocessedAutomationRulesT = Aws::Vector<UnprocessedAutomationRule>>
+    void SetUnprocessedAutomationRules(UnprocessedAutomationRulesT&& value) { m_unprocessedAutomationRulesHasBeenSet = true; m_unprocessedAutomationRules = std::forward<UnprocessedAutomationRulesT>(value); }
+    template<typename UnprocessedAutomationRulesT = Aws::Vector<UnprocessedAutomationRule>>
+    BatchDeleteAutomationRulesResult& WithUnprocessedAutomationRules(UnprocessedAutomationRulesT&& value) { SetUnprocessedAutomationRules(std::forward<UnprocessedAutomationRulesT>(value)); return *this;}
+    template<typename UnprocessedAutomationRulesT = UnprocessedAutomationRule>
+    BatchDeleteAutomationRulesResult& AddUnprocessedAutomationRules(UnprocessedAutomationRulesT&& value) { m_unprocessedAutomationRulesHasBeenSet = true; m_unprocessedAutomationRules.emplace_back(std::forward<UnprocessedAutomationRulesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchDeleteAutomationRulesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchDeleteAutomationRulesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchDeleteAutomationRulesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchDeleteAutomationRulesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_processedAutomationRules;
+    bool m_processedAutomationRulesHasBeenSet = false;
 
     Aws::Vector<UnprocessedAutomationRule> m_unprocessedAutomationRules;
+    bool m_unprocessedAutomationRulesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

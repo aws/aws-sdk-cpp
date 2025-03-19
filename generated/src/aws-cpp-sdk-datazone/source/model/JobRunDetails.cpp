@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-JobRunDetails::JobRunDetails() : 
-    m_lineageRunDetailsHasBeenSet(false)
-{
-}
-
 JobRunDetails::JobRunDetails(JsonView jsonValue)
-  : JobRunDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ JobRunDetails& JobRunDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("lineageRunDetails"))
   {
     m_lineageRunDetails = jsonValue.GetObject("lineageRunDetails");
-
     m_lineageRunDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,16 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ModifyDocumentPermissionRequest::ModifyDocumentPermissionRequest() : 
-    m_nameHasBeenSet(false),
-    m_permissionType(DocumentPermissionType::NOT_SET),
-    m_permissionTypeHasBeenSet(false),
-    m_accountIdsToAddHasBeenSet(false),
-    m_accountIdsToRemoveHasBeenSet(false),
-    m_sharedDocumentVersionHasBeenSet(false)
-{
-}
-
 Aws::String ModifyDocumentPermissionRequest::SerializePayload() const
 {
   JsonValue payload;

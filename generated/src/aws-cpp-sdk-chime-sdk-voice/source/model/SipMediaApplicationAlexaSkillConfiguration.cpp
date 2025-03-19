@@ -18,15 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-SipMediaApplicationAlexaSkillConfiguration::SipMediaApplicationAlexaSkillConfiguration() : 
-    m_alexaSkillStatus(AlexaSkillStatus::NOT_SET),
-    m_alexaSkillStatusHasBeenSet(false),
-    m_alexaSkillIdsHasBeenSet(false)
-{
-}
-
 SipMediaApplicationAlexaSkillConfiguration::SipMediaApplicationAlexaSkillConfiguration(JsonView jsonValue)
-  : SipMediaApplicationAlexaSkillConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ SipMediaApplicationAlexaSkillConfiguration& SipMediaApplicationAlexaSkillConfigu
   if(jsonValue.ValueExists("AlexaSkillStatus"))
   {
     m_alexaSkillStatus = AlexaSkillStatusMapper::GetAlexaSkillStatusForName(jsonValue.GetString("AlexaSkillStatus"));
-
     m_alexaSkillStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlexaSkillIds"))
   {
     Aws::Utils::Array<JsonView> alexaSkillIdsJsonList = jsonValue.GetArray("AlexaSkillIds");
@@ -49,7 +39,6 @@ SipMediaApplicationAlexaSkillConfiguration& SipMediaApplicationAlexaSkillConfigu
     }
     m_alexaSkillIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,24 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpamResourceDiscovery::IpamResourceDiscovery() : 
-    m_ownerIdHasBeenSet(false),
-    m_ipamResourceDiscoveryIdHasBeenSet(false),
-    m_ipamResourceDiscoveryArnHasBeenSet(false),
-    m_ipamResourceDiscoveryRegionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_operatingRegionsHasBeenSet(false),
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false),
-    m_state(IpamResourceDiscoveryState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_organizationalUnitExclusionsHasBeenSet(false)
-{
-}
-
 IpamResourceDiscovery::IpamResourceDiscovery(const XmlNode& xmlNode)
-  : IpamResourceDiscovery()
 {
   *this = xmlNode;
 }
@@ -82,6 +65,7 @@ IpamResourceDiscovery& IpamResourceDiscovery::operator =(const XmlNode& xmlNode)
     if(!operatingRegionsNode.IsNull())
     {
       XmlNode operatingRegionsMember = operatingRegionsNode.FirstChild("item");
+      m_operatingRegionsHasBeenSet = !operatingRegionsMember.IsNull();
       while(!operatingRegionsMember.IsNull())
       {
         m_operatingRegions.push_back(operatingRegionsMember);
@@ -99,13 +83,14 @@ IpamResourceDiscovery& IpamResourceDiscovery::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = IpamResourceDiscoveryStateMapper::GetIpamResourceDiscoveryStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = IpamResourceDiscoveryStateMapper::GetIpamResourceDiscoveryStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -118,6 +103,7 @@ IpamResourceDiscovery& IpamResourceDiscovery::operator =(const XmlNode& xmlNode)
     if(!organizationalUnitExclusionsNode.IsNull())
     {
       XmlNode organizationalUnitExclusionsMember = organizationalUnitExclusionsNode.FirstChild("item");
+      m_organizationalUnitExclusionsHasBeenSet = !organizationalUnitExclusionsMember.IsNull();
       while(!organizationalUnitExclusionsMember.IsNull())
       {
         m_organizationalUnitExclusions.push_back(organizationalUnitExclusionsMember);

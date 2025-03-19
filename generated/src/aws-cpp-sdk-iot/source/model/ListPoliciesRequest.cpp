@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListPoliciesRequest::ListPoliciesRequest() : 
-    m_markerHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false),
-    m_ascendingOrder(false),
-    m_ascendingOrderHasBeenSet(false)
-{
-}
-
 Aws::String ListPoliciesRequest::SerializePayload() const
 {
   return {};

@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-GeoLocation::GeoLocation() : 
-    m_lon(0.0),
-    m_lonHasBeenSet(false),
-    m_lat(0.0),
-    m_latHasBeenSet(false)
-{
-}
-
 GeoLocation::GeoLocation(JsonView jsonValue)
-  : GeoLocation()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ GeoLocation& GeoLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Lon"))
   {
     m_lon = jsonValue.GetDouble("Lon");
-
     m_lonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lat"))
   {
     m_lat = jsonValue.GetDouble("Lat");
-
     m_latHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace SFN
 namespace Model
 {
 
-InspectionDataResponse::InspectionDataResponse() : 
-    m_protocolHasBeenSet(false),
-    m_statusCodeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_headersHasBeenSet(false),
-    m_bodyHasBeenSet(false)
-{
-}
-
 InspectionDataResponse::InspectionDataResponse(JsonView jsonValue)
-  : InspectionDataResponse()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ InspectionDataResponse& InspectionDataResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("protocol"))
   {
     m_protocol = jsonValue.GetString("protocol");
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = jsonValue.GetString("statusCode");
-
     m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("headers"))
   {
     m_headers = jsonValue.GetString("headers");
-
     m_headersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("body"))
   {
     m_body = jsonValue.GetString("body");
-
     m_bodyHasBeenSet = true;
   }
-
   return *this;
 }
 

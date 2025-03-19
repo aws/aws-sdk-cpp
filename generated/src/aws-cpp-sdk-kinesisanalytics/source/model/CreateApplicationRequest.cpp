@@ -12,17 +12,6 @@ using namespace Aws::KinesisAnalytics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateApplicationRequest::CreateApplicationRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_applicationDescriptionHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false),
-    m_applicationCodeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMaintenanceWindowExecutionTaskResult::GetMaintenanceWindowExecutionTaskResult() : 
-    m_type(MaintenanceWindowTaskType::NOT_SET),
-    m_priority(0),
-    m_status(MaintenanceWindowExecutionStatus::NOT_SET)
-{
-}
-
 GetMaintenanceWindowExecutionTaskResult::GetMaintenanceWindowExecutionTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetMaintenanceWindowExecutionTaskResult()
 {
   *this = result;
 }
@@ -36,33 +28,28 @@ GetMaintenanceWindowExecutionTaskResult& GetMaintenanceWindowExecutionTaskResult
   if(jsonValue.ValueExists("WindowExecutionId"))
   {
     m_windowExecutionId = jsonValue.GetString("WindowExecutionId");
-
+    m_windowExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskExecutionId"))
   {
     m_taskExecutionId = jsonValue.GetString("TaskExecutionId");
-
+    m_taskExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskArn"))
   {
     m_taskArn = jsonValue.GetString("TaskArn");
-
+    m_taskArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceRole"))
   {
     m_serviceRole = jsonValue.GetString("ServiceRole");
-
+    m_serviceRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = MaintenanceWindowTaskTypeMapper::GetMaintenanceWindowTaskTypeForName(jsonValue.GetString("Type"));
-
+    m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskParameters"))
   {
     Aws::Utils::Array<JsonView> taskParametersJsonList = jsonValue.GetArray("TaskParameters");
@@ -76,56 +63,48 @@ GetMaintenanceWindowExecutionTaskResult& GetMaintenanceWindowExecutionTaskResult
       }
       m_taskParameters.push_back(std::move(maintenanceWindowTaskParametersMap));
     }
+    m_taskParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Priority"))
   {
     m_priority = jsonValue.GetInteger("Priority");
-
+    m_priorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxConcurrency"))
   {
     m_maxConcurrency = jsonValue.GetString("MaxConcurrency");
-
+    m_maxConcurrencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxErrors"))
   {
     m_maxErrors = jsonValue.GetString("MaxErrors");
-
+    m_maxErrorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = MaintenanceWindowExecutionStatusMapper::GetMaintenanceWindowExecutionStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusDetails"))
   {
     m_statusDetails = jsonValue.GetString("StatusDetails");
-
+    m_statusDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
+    m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
+    m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlarmConfiguration"))
   {
     m_alarmConfiguration = jsonValue.GetObject("AlarmConfiguration");
-
+    m_alarmConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TriggeredAlarms"))
   {
     Aws::Utils::Array<JsonView> triggeredAlarmsJsonList = jsonValue.GetArray("TriggeredAlarms");
@@ -133,14 +112,15 @@ GetMaintenanceWindowExecutionTaskResult& GetMaintenanceWindowExecutionTaskResult
     {
       m_triggeredAlarms.push_back(triggeredAlarmsJsonList[triggeredAlarmsIndex].AsObject());
     }
+    m_triggeredAlarmsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

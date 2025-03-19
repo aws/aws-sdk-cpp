@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDetectorResult::DescribeDetectorResult()
-{
-}
-
 DescribeDetectorResult::DescribeDetectorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeDetectorResult& DescribeDetectorResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("detectorId"))
   {
     m_detectorId = jsonValue.GetString("detectorId");
-
+    m_detectorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detectorVersionSummaries"))
   {
     Aws::Utils::Array<JsonView> detectorVersionSummariesJsonList = jsonValue.GetArray("detectorVersionSummaries");
@@ -42,26 +37,25 @@ DescribeDetectorResult& DescribeDetectorResult::operator =(const Aws::AmazonWebS
     {
       m_detectorVersionSummaries.push_back(detectorVersionSummariesJsonList[detectorVersionSummariesIndex].AsObject());
     }
+    m_detectorVersionSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,11 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribePortfolioShareStatusRequest::DescribePortfolioShareStatusRequest() : 
-    m_portfolioShareTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribePortfolioShareStatusRequest::SerializePayload() const
 {
   JsonValue payload;

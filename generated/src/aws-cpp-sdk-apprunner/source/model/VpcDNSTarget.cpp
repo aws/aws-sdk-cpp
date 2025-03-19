@@ -18,15 +18,7 @@ namespace AppRunner
 namespace Model
 {
 
-VpcDNSTarget::VpcDNSTarget() : 
-    m_vpcIngressConnectionArnHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false)
-{
-}
-
 VpcDNSTarget::VpcDNSTarget(JsonView jsonValue)
-  : VpcDNSTarget()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ VpcDNSTarget& VpcDNSTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VpcIngressConnectionArn"))
   {
     m_vpcIngressConnectionArn = jsonValue.GetString("VpcIngressConnectionArn");
-
     m_vpcIngressConnectionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   return *this;
 }
 

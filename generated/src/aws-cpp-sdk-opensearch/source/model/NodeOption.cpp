@@ -18,15 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-NodeOption::NodeOption() : 
-    m_nodeType(NodeOptionsNodeType::NOT_SET),
-    m_nodeTypeHasBeenSet(false),
-    m_nodeConfigHasBeenSet(false)
-{
-}
-
 NodeOption::NodeOption(JsonView jsonValue)
-  : NodeOption()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ NodeOption& NodeOption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NodeType"))
   {
     m_nodeType = NodeOptionsNodeTypeMapper::GetNodeOptionsNodeTypeForName(jsonValue.GetString("NodeType"));
-
     m_nodeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeConfig"))
   {
     m_nodeConfig = jsonValue.GetObject("NodeConfig");
-
     m_nodeConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

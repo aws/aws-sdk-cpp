@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateEphemerisResult::CreateEphemerisResult()
-{
-}
-
 CreateEphemerisResult::CreateEphemerisResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateEphemerisResult& CreateEphemerisResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("ephemerisId"))
   {
     m_ephemerisId = jsonValue.GetString("ephemerisId");
-
+    m_ephemerisIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

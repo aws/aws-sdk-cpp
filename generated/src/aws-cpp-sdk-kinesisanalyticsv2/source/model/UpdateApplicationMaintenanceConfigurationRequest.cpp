@@ -12,12 +12,6 @@ using namespace Aws::KinesisAnalyticsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateApplicationMaintenanceConfigurationRequest::UpdateApplicationMaintenanceConfigurationRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_applicationMaintenanceConfigurationUpdateHasBeenSet(false)
-{
-}
-
 Aws::String UpdateApplicationMaintenanceConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

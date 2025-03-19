@@ -33,7 +33,7 @@ namespace Model
   class SAMLOptionsOutput
   {
   public:
-    AWS_OPENSEARCHSERVICE_API SAMLOptionsOutput();
+    AWS_OPENSEARCHSERVICE_API SAMLOptionsOutput() = default;
     AWS_OPENSEARCHSERVICE_API SAMLOptionsOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API SAMLOptionsOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>True if SAML is enabled.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline SAMLOptionsOutput& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -53,54 +53,50 @@ namespace Model
     /**
      * <p>Describes the SAML identity provider's information.</p>
      */
-    inline const SAMLIdp& GetIdp() const{ return m_idp; }
+    inline const SAMLIdp& GetIdp() const { return m_idp; }
     inline bool IdpHasBeenSet() const { return m_idpHasBeenSet; }
-    inline void SetIdp(const SAMLIdp& value) { m_idpHasBeenSet = true; m_idp = value; }
-    inline void SetIdp(SAMLIdp&& value) { m_idpHasBeenSet = true; m_idp = std::move(value); }
-    inline SAMLOptionsOutput& WithIdp(const SAMLIdp& value) { SetIdp(value); return *this;}
-    inline SAMLOptionsOutput& WithIdp(SAMLIdp&& value) { SetIdp(std::move(value)); return *this;}
+    template<typename IdpT = SAMLIdp>
+    void SetIdp(IdpT&& value) { m_idpHasBeenSet = true; m_idp = std::forward<IdpT>(value); }
+    template<typename IdpT = SAMLIdp>
+    SAMLOptionsOutput& WithIdp(IdpT&& value) { SetIdp(std::forward<IdpT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The key used for matching the SAML subject attribute.</p>
      */
-    inline const Aws::String& GetSubjectKey() const{ return m_subjectKey; }
+    inline const Aws::String& GetSubjectKey() const { return m_subjectKey; }
     inline bool SubjectKeyHasBeenSet() const { return m_subjectKeyHasBeenSet; }
-    inline void SetSubjectKey(const Aws::String& value) { m_subjectKeyHasBeenSet = true; m_subjectKey = value; }
-    inline void SetSubjectKey(Aws::String&& value) { m_subjectKeyHasBeenSet = true; m_subjectKey = std::move(value); }
-    inline void SetSubjectKey(const char* value) { m_subjectKeyHasBeenSet = true; m_subjectKey.assign(value); }
-    inline SAMLOptionsOutput& WithSubjectKey(const Aws::String& value) { SetSubjectKey(value); return *this;}
-    inline SAMLOptionsOutput& WithSubjectKey(Aws::String&& value) { SetSubjectKey(std::move(value)); return *this;}
-    inline SAMLOptionsOutput& WithSubjectKey(const char* value) { SetSubjectKey(value); return *this;}
+    template<typename SubjectKeyT = Aws::String>
+    void SetSubjectKey(SubjectKeyT&& value) { m_subjectKeyHasBeenSet = true; m_subjectKey = std::forward<SubjectKeyT>(value); }
+    template<typename SubjectKeyT = Aws::String>
+    SAMLOptionsOutput& WithSubjectKey(SubjectKeyT&& value) { SetSubjectKey(std::forward<SubjectKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The key used for matching the SAML roles attribute.</p>
      */
-    inline const Aws::String& GetRolesKey() const{ return m_rolesKey; }
+    inline const Aws::String& GetRolesKey() const { return m_rolesKey; }
     inline bool RolesKeyHasBeenSet() const { return m_rolesKeyHasBeenSet; }
-    inline void SetRolesKey(const Aws::String& value) { m_rolesKeyHasBeenSet = true; m_rolesKey = value; }
-    inline void SetRolesKey(Aws::String&& value) { m_rolesKeyHasBeenSet = true; m_rolesKey = std::move(value); }
-    inline void SetRolesKey(const char* value) { m_rolesKeyHasBeenSet = true; m_rolesKey.assign(value); }
-    inline SAMLOptionsOutput& WithRolesKey(const Aws::String& value) { SetRolesKey(value); return *this;}
-    inline SAMLOptionsOutput& WithRolesKey(Aws::String&& value) { SetRolesKey(std::move(value)); return *this;}
-    inline SAMLOptionsOutput& WithRolesKey(const char* value) { SetRolesKey(value); return *this;}
+    template<typename RolesKeyT = Aws::String>
+    void SetRolesKey(RolesKeyT&& value) { m_rolesKeyHasBeenSet = true; m_rolesKey = std::forward<RolesKeyT>(value); }
+    template<typename RolesKeyT = Aws::String>
+    SAMLOptionsOutput& WithRolesKey(RolesKeyT&& value) { SetRolesKey(std::forward<RolesKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The duration, in minutes, after which a user session becomes inactive.</p>
      */
-    inline int GetSessionTimeoutMinutes() const{ return m_sessionTimeoutMinutes; }
+    inline int GetSessionTimeoutMinutes() const { return m_sessionTimeoutMinutes; }
     inline bool SessionTimeoutMinutesHasBeenSet() const { return m_sessionTimeoutMinutesHasBeenSet; }
     inline void SetSessionTimeoutMinutes(int value) { m_sessionTimeoutMinutesHasBeenSet = true; m_sessionTimeoutMinutes = value; }
     inline SAMLOptionsOutput& WithSessionTimeoutMinutes(int value) { SetSessionTimeoutMinutes(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     SAMLIdp m_idp;
@@ -112,7 +108,7 @@ namespace Model
     Aws::String m_rolesKey;
     bool m_rolesKeyHasBeenSet = false;
 
-    int m_sessionTimeoutMinutes;
+    int m_sessionTimeoutMinutes{0};
     bool m_sessionTimeoutMinutesHasBeenSet = false;
   };
 

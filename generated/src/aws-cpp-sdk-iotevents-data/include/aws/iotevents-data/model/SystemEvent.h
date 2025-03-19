@@ -32,7 +32,7 @@ namespace Model
   class SystemEvent
   {
   public:
-    AWS_IOTEVENTSDATA_API SystemEvent();
+    AWS_IOTEVENTSDATA_API SystemEvent() = default;
     AWS_IOTEVENTSDATA_API SystemEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTSDATA_API SystemEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,26 @@ namespace Model
      * <p>The event type. If the value is <code>STATE_CHANGE</code>, the event contains
      * information about alarm state changes.</p>
      */
-    inline const EventType& GetEventType() const{ return m_eventType; }
+    inline EventType GetEventType() const { return m_eventType; }
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-    inline void SetEventType(const EventType& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
-    inline void SetEventType(EventType&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
-    inline SystemEvent& WithEventType(const EventType& value) { SetEventType(value); return *this;}
-    inline SystemEvent& WithEventType(EventType&& value) { SetEventType(std::move(value)); return *this;}
+    inline void SetEventType(EventType value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
+    inline SystemEvent& WithEventType(EventType value) { SetEventType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains the configuration information of alarm state changes.</p>
      */
-    inline const StateChangeConfiguration& GetStateChangeConfiguration() const{ return m_stateChangeConfiguration; }
+    inline const StateChangeConfiguration& GetStateChangeConfiguration() const { return m_stateChangeConfiguration; }
     inline bool StateChangeConfigurationHasBeenSet() const { return m_stateChangeConfigurationHasBeenSet; }
-    inline void SetStateChangeConfiguration(const StateChangeConfiguration& value) { m_stateChangeConfigurationHasBeenSet = true; m_stateChangeConfiguration = value; }
-    inline void SetStateChangeConfiguration(StateChangeConfiguration&& value) { m_stateChangeConfigurationHasBeenSet = true; m_stateChangeConfiguration = std::move(value); }
-    inline SystemEvent& WithStateChangeConfiguration(const StateChangeConfiguration& value) { SetStateChangeConfiguration(value); return *this;}
-    inline SystemEvent& WithStateChangeConfiguration(StateChangeConfiguration&& value) { SetStateChangeConfiguration(std::move(value)); return *this;}
+    template<typename StateChangeConfigurationT = StateChangeConfiguration>
+    void SetStateChangeConfiguration(StateChangeConfigurationT&& value) { m_stateChangeConfigurationHasBeenSet = true; m_stateChangeConfiguration = std::forward<StateChangeConfigurationT>(value); }
+    template<typename StateChangeConfigurationT = StateChangeConfiguration>
+    SystemEvent& WithStateChangeConfiguration(StateChangeConfigurationT&& value) { SetStateChangeConfiguration(std::forward<StateChangeConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    EventType m_eventType;
+    EventType m_eventType{EventType::NOT_SET};
     bool m_eventTypeHasBeenSet = false;
 
     StateChangeConfiguration m_stateChangeConfiguration;

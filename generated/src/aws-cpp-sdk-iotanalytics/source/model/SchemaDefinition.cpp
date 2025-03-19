@@ -18,13 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-SchemaDefinition::SchemaDefinition() : 
-    m_columnsHasBeenSet(false)
-{
-}
-
 SchemaDefinition::SchemaDefinition(JsonView jsonValue)
-  : SchemaDefinition()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SchemaDefinition& SchemaDefinition::operator =(JsonView jsonValue)
     }
     m_columnsHasBeenSet = true;
   }
-
   return *this;
 }
 

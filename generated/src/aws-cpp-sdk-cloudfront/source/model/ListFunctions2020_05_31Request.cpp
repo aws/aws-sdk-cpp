@@ -17,13 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListFunctions2020_05_31Request::ListFunctions2020_05_31Request() : 
-    m_markerHasBeenSet(false),
-    m_maxItemsHasBeenSet(false),
-    m_stage(FunctionStage::NOT_SET),
-    m_stageHasBeenSet(false)
-{
-}
 
 Aws::String ListFunctions2020_05_31Request::SerializePayload() const
 {

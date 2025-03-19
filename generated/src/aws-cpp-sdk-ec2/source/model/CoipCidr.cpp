@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CoipCidr::CoipCidr() : 
-    m_cidrHasBeenSet(false),
-    m_coipPoolIdHasBeenSet(false),
-    m_localGatewayRouteTableIdHasBeenSet(false)
-{
-}
-
 CoipCidr::CoipCidr(const XmlNode& xmlNode)
-  : CoipCidr()
 {
   *this = xmlNode;
 }

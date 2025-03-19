@@ -18,16 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-ResourcePolicy::ResourcePolicy() : 
-    m_policyNameHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false),
-    m_lastUpdatedTime(0),
-    m_lastUpdatedTimeHasBeenSet(false)
-{
-}
-
 ResourcePolicy::ResourcePolicy(JsonView jsonValue)
-  : ResourcePolicy()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ResourcePolicy& ResourcePolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("policyName"))
   {
     m_policyName = jsonValue.GetString("policyName");
-
     m_policyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyDocument"))
   {
     m_policyDocument = jsonValue.GetString("policyDocument");
-
     m_policyDocumentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetInt64("lastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -27,7 +27,7 @@ namespace Model
   class CreateGameSessionQueueRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API CreateGameSessionQueueRequest();
+    AWS_GAMELIFT_API CreateGameSessionQueueRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * <p>A descriptive label that is associated with game session queue. Queue names
      * must be unique within each Region.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateGameSessionQueueRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateGameSessionQueueRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateGameSessionQueueRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateGameSessionQueueRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * remains in the queue. When a request exceeds this time, the game session
      * placement changes to a <code>TIMED_OUT</code> status.</p>
      */
-    inline int GetTimeoutInSeconds() const{ return m_timeoutInSeconds; }
+    inline int GetTimeoutInSeconds() const { return m_timeoutInSeconds; }
     inline bool TimeoutInSecondsHasBeenSet() const { return m_timeoutInSecondsHasBeenSet; }
     inline void SetTimeoutInSeconds(int value) { m_timeoutInSecondsHasBeenSet = true; m_timeoutInSeconds = value; }
     inline CreateGameSessionQueueRequest& WithTimeoutInSeconds(int value) { SetTimeoutInSeconds(value); return *this;}
@@ -74,14 +72,14 @@ namespace Model
      * relax the cap over time if Amazon GameLift can't make a placement. Policies are
      * evaluated in order starting with the lowest maximum latency value.</p>
      */
-    inline const Aws::Vector<PlayerLatencyPolicy>& GetPlayerLatencyPolicies() const{ return m_playerLatencyPolicies; }
+    inline const Aws::Vector<PlayerLatencyPolicy>& GetPlayerLatencyPolicies() const { return m_playerLatencyPolicies; }
     inline bool PlayerLatencyPoliciesHasBeenSet() const { return m_playerLatencyPoliciesHasBeenSet; }
-    inline void SetPlayerLatencyPolicies(const Aws::Vector<PlayerLatencyPolicy>& value) { m_playerLatencyPoliciesHasBeenSet = true; m_playerLatencyPolicies = value; }
-    inline void SetPlayerLatencyPolicies(Aws::Vector<PlayerLatencyPolicy>&& value) { m_playerLatencyPoliciesHasBeenSet = true; m_playerLatencyPolicies = std::move(value); }
-    inline CreateGameSessionQueueRequest& WithPlayerLatencyPolicies(const Aws::Vector<PlayerLatencyPolicy>& value) { SetPlayerLatencyPolicies(value); return *this;}
-    inline CreateGameSessionQueueRequest& WithPlayerLatencyPolicies(Aws::Vector<PlayerLatencyPolicy>&& value) { SetPlayerLatencyPolicies(std::move(value)); return *this;}
-    inline CreateGameSessionQueueRequest& AddPlayerLatencyPolicies(const PlayerLatencyPolicy& value) { m_playerLatencyPoliciesHasBeenSet = true; m_playerLatencyPolicies.push_back(value); return *this; }
-    inline CreateGameSessionQueueRequest& AddPlayerLatencyPolicies(PlayerLatencyPolicy&& value) { m_playerLatencyPoliciesHasBeenSet = true; m_playerLatencyPolicies.push_back(std::move(value)); return *this; }
+    template<typename PlayerLatencyPoliciesT = Aws::Vector<PlayerLatencyPolicy>>
+    void SetPlayerLatencyPolicies(PlayerLatencyPoliciesT&& value) { m_playerLatencyPoliciesHasBeenSet = true; m_playerLatencyPolicies = std::forward<PlayerLatencyPoliciesT>(value); }
+    template<typename PlayerLatencyPoliciesT = Aws::Vector<PlayerLatencyPolicy>>
+    CreateGameSessionQueueRequest& WithPlayerLatencyPolicies(PlayerLatencyPoliciesT&& value) { SetPlayerLatencyPolicies(std::forward<PlayerLatencyPoliciesT>(value)); return *this;}
+    template<typename PlayerLatencyPoliciesT = PlayerLatencyPolicy>
+    CreateGameSessionQueueRequest& AddPlayerLatencyPolicies(PlayerLatencyPoliciesT&& value) { m_playerLatencyPoliciesHasBeenSet = true; m_playerLatencyPolicies.emplace_back(std::forward<PlayerLatencyPoliciesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -91,14 +89,14 @@ namespace Model
      * fleet ARN or a fleet alias ARN, and are listed in order of placement
      * preference.</p>
      */
-    inline const Aws::Vector<GameSessionQueueDestination>& GetDestinations() const{ return m_destinations; }
+    inline const Aws::Vector<GameSessionQueueDestination>& GetDestinations() const { return m_destinations; }
     inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
-    inline void SetDestinations(const Aws::Vector<GameSessionQueueDestination>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
-    inline void SetDestinations(Aws::Vector<GameSessionQueueDestination>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
-    inline CreateGameSessionQueueRequest& WithDestinations(const Aws::Vector<GameSessionQueueDestination>& value) { SetDestinations(value); return *this;}
-    inline CreateGameSessionQueueRequest& WithDestinations(Aws::Vector<GameSessionQueueDestination>&& value) { SetDestinations(std::move(value)); return *this;}
-    inline CreateGameSessionQueueRequest& AddDestinations(const GameSessionQueueDestination& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
-    inline CreateGameSessionQueueRequest& AddDestinations(GameSessionQueueDestination&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
+    template<typename DestinationsT = Aws::Vector<GameSessionQueueDestination>>
+    void SetDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations = std::forward<DestinationsT>(value); }
+    template<typename DestinationsT = Aws::Vector<GameSessionQueueDestination>>
+    CreateGameSessionQueueRequest& WithDestinations(DestinationsT&& value) { SetDestinations(std::forward<DestinationsT>(value)); return *this;}
+    template<typename DestinationsT = GameSessionQueueDestination>
+    CreateGameSessionQueueRequest& AddDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations.emplace_back(std::forward<DestinationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -108,12 +106,12 @@ namespace Model
      * <code>us-west-2</code>. If this parameter is not set, game sessions can be
      * placed in any queue location. </p>
      */
-    inline const FilterConfiguration& GetFilterConfiguration() const{ return m_filterConfiguration; }
+    inline const FilterConfiguration& GetFilterConfiguration() const { return m_filterConfiguration; }
     inline bool FilterConfigurationHasBeenSet() const { return m_filterConfigurationHasBeenSet; }
-    inline void SetFilterConfiguration(const FilterConfiguration& value) { m_filterConfigurationHasBeenSet = true; m_filterConfiguration = value; }
-    inline void SetFilterConfiguration(FilterConfiguration&& value) { m_filterConfigurationHasBeenSet = true; m_filterConfiguration = std::move(value); }
-    inline CreateGameSessionQueueRequest& WithFilterConfiguration(const FilterConfiguration& value) { SetFilterConfiguration(value); return *this;}
-    inline CreateGameSessionQueueRequest& WithFilterConfiguration(FilterConfiguration&& value) { SetFilterConfiguration(std::move(value)); return *this;}
+    template<typename FilterConfigurationT = FilterConfiguration>
+    void SetFilterConfiguration(FilterConfigurationT&& value) { m_filterConfigurationHasBeenSet = true; m_filterConfiguration = std::forward<FilterConfigurationT>(value); }
+    template<typename FilterConfigurationT = FilterConfiguration>
+    CreateGameSessionQueueRequest& WithFilterConfiguration(FilterConfigurationT&& value) { SetFilterConfiguration(std::forward<FilterConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,12 +121,12 @@ namespace Model
      * prioritization process. Priority types that are not explicitly named will be
      * automatically applied at the end of the prioritization process. </p>
      */
-    inline const PriorityConfiguration& GetPriorityConfiguration() const{ return m_priorityConfiguration; }
+    inline const PriorityConfiguration& GetPriorityConfiguration() const { return m_priorityConfiguration; }
     inline bool PriorityConfigurationHasBeenSet() const { return m_priorityConfigurationHasBeenSet; }
-    inline void SetPriorityConfiguration(const PriorityConfiguration& value) { m_priorityConfigurationHasBeenSet = true; m_priorityConfiguration = value; }
-    inline void SetPriorityConfiguration(PriorityConfiguration&& value) { m_priorityConfigurationHasBeenSet = true; m_priorityConfiguration = std::move(value); }
-    inline CreateGameSessionQueueRequest& WithPriorityConfiguration(const PriorityConfiguration& value) { SetPriorityConfiguration(value); return *this;}
-    inline CreateGameSessionQueueRequest& WithPriorityConfiguration(PriorityConfiguration&& value) { SetPriorityConfiguration(std::move(value)); return *this;}
+    template<typename PriorityConfigurationT = PriorityConfiguration>
+    void SetPriorityConfiguration(PriorityConfigurationT&& value) { m_priorityConfigurationHasBeenSet = true; m_priorityConfiguration = std::forward<PriorityConfigurationT>(value); }
+    template<typename PriorityConfigurationT = PriorityConfiguration>
+    CreateGameSessionQueueRequest& WithPriorityConfiguration(PriorityConfigurationT&& value) { SetPriorityConfiguration(std::forward<PriorityConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,14 +134,12 @@ namespace Model
      * <p>Information to be added to all events that are related to this game session
      * queue.</p>
      */
-    inline const Aws::String& GetCustomEventData() const{ return m_customEventData; }
+    inline const Aws::String& GetCustomEventData() const { return m_customEventData; }
     inline bool CustomEventDataHasBeenSet() const { return m_customEventDataHasBeenSet; }
-    inline void SetCustomEventData(const Aws::String& value) { m_customEventDataHasBeenSet = true; m_customEventData = value; }
-    inline void SetCustomEventData(Aws::String&& value) { m_customEventDataHasBeenSet = true; m_customEventData = std::move(value); }
-    inline void SetCustomEventData(const char* value) { m_customEventDataHasBeenSet = true; m_customEventData.assign(value); }
-    inline CreateGameSessionQueueRequest& WithCustomEventData(const Aws::String& value) { SetCustomEventData(value); return *this;}
-    inline CreateGameSessionQueueRequest& WithCustomEventData(Aws::String&& value) { SetCustomEventData(std::move(value)); return *this;}
-    inline CreateGameSessionQueueRequest& WithCustomEventData(const char* value) { SetCustomEventData(value); return *this;}
+    template<typename CustomEventDataT = Aws::String>
+    void SetCustomEventData(CustomEventDataT&& value) { m_customEventDataHasBeenSet = true; m_customEventData = std::forward<CustomEventDataT>(value); }
+    template<typename CustomEventDataT = Aws::String>
+    CreateGameSessionQueueRequest& WithCustomEventData(CustomEventDataT&& value) { SetCustomEventData(std::forward<CustomEventDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,14 +149,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queue-notification.html">
      * Setting up notifications for game session placement</a>.</p>
      */
-    inline const Aws::String& GetNotificationTarget() const{ return m_notificationTarget; }
+    inline const Aws::String& GetNotificationTarget() const { return m_notificationTarget; }
     inline bool NotificationTargetHasBeenSet() const { return m_notificationTargetHasBeenSet; }
-    inline void SetNotificationTarget(const Aws::String& value) { m_notificationTargetHasBeenSet = true; m_notificationTarget = value; }
-    inline void SetNotificationTarget(Aws::String&& value) { m_notificationTargetHasBeenSet = true; m_notificationTarget = std::move(value); }
-    inline void SetNotificationTarget(const char* value) { m_notificationTargetHasBeenSet = true; m_notificationTarget.assign(value); }
-    inline CreateGameSessionQueueRequest& WithNotificationTarget(const Aws::String& value) { SetNotificationTarget(value); return *this;}
-    inline CreateGameSessionQueueRequest& WithNotificationTarget(Aws::String&& value) { SetNotificationTarget(std::move(value)); return *this;}
-    inline CreateGameSessionQueueRequest& WithNotificationTarget(const char* value) { SetNotificationTarget(value); return *this;}
+    template<typename NotificationTargetT = Aws::String>
+    void SetNotificationTarget(NotificationTargetT&& value) { m_notificationTargetHasBeenSet = true; m_notificationTarget = std::forward<NotificationTargetT>(value); }
+    template<typename NotificationTargetT = Aws::String>
+    CreateGameSessionQueueRequest& WithNotificationTarget(NotificationTargetT&& value) { SetNotificationTarget(std::forward<NotificationTargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -173,21 +167,21 @@ namespace Model
      * Amazon Web Services Resources</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateGameSessionQueueRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateGameSessionQueueRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateGameSessionQueueRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateGameSessionQueueRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateGameSessionQueueRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateGameSessionQueueRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_timeoutInSeconds;
+    int m_timeoutInSeconds{0};
     bool m_timeoutInSecondsHasBeenSet = false;
 
     Aws::Vector<PlayerLatencyPolicy> m_playerLatencyPolicies;

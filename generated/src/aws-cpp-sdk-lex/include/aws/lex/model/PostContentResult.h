@@ -24,10 +24,9 @@ namespace Model
   class PostContentResult
   {
   public:
-    AWS_LEXRUNTIMESERVICE_API PostContentResult();
-    //We have to define these because Microsoft doesn't auto generate them
-    AWS_LEXRUNTIMESERVICE_API PostContentResult(PostContentResult&&);
-    AWS_LEXRUNTIMESERVICE_API PostContentResult& operator=(PostContentResult&&);
+    AWS_LEXRUNTIMESERVICE_API PostContentResult() = default;
+    AWS_LEXRUNTIMESERVICE_API PostContentResult(PostContentResult&&) = default;
+    AWS_LEXRUNTIMESERVICE_API PostContentResult& operator=(PostContentResult&&) = default;
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     PostContentResult(const PostContentResult&) = delete;
@@ -44,26 +43,22 @@ namespace Model
      * <p>Content type as specified in the <code>Accept</code> HTTP header in the
      * request.</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
-    inline void SetContentType(const Aws::String& value) { m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentType.assign(value); }
-    inline PostContentResult& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline PostContentResult& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline PostContentResult& WithContentType(const char* value) { SetContentType(value); return *this;}
+    inline const Aws::String& GetContentType() const { return m_contentType; }
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    PostContentResult& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Current user intent that Amazon Lex is aware of.</p>
      */
-    inline const Aws::String& GetIntentName() const{ return m_intentName; }
-    inline void SetIntentName(const Aws::String& value) { m_intentName = value; }
-    inline void SetIntentName(Aws::String&& value) { m_intentName = std::move(value); }
-    inline void SetIntentName(const char* value) { m_intentName.assign(value); }
-    inline PostContentResult& WithIntentName(const Aws::String& value) { SetIntentName(value); return *this;}
-    inline PostContentResult& WithIntentName(Aws::String&& value) { SetIntentName(std::move(value)); return *this;}
-    inline PostContentResult& WithIntentName(const char* value) { SetIntentName(value); return *this;}
+    inline const Aws::String& GetIntentName() const { return m_intentName; }
+    template<typename IntentNameT = Aws::String>
+    void SetIntentName(IntentNameT&& value) { m_intentNameHasBeenSet = true; m_intentName = std::forward<IntentNameT>(value); }
+    template<typename IntentNameT = Aws::String>
+    PostContentResult& WithIntentName(IntentNameT&& value) { SetIntentName(std::forward<IntentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,13 +68,11 @@ namespace Model
      * 1.0.</p> <p>The score is a relative score, not an absolute score. The score may
      * change based on improvements to Amazon Lex. </p>
      */
-    inline const Aws::String& GetNluIntentConfidence() const{ return m_nluIntentConfidence; }
-    inline void SetNluIntentConfidence(const Aws::String& value) { m_nluIntentConfidence = value; }
-    inline void SetNluIntentConfidence(Aws::String&& value) { m_nluIntentConfidence = std::move(value); }
-    inline void SetNluIntentConfidence(const char* value) { m_nluIntentConfidence.assign(value); }
-    inline PostContentResult& WithNluIntentConfidence(const Aws::String& value) { SetNluIntentConfidence(value); return *this;}
-    inline PostContentResult& WithNluIntentConfidence(Aws::String&& value) { SetNluIntentConfidence(std::move(value)); return *this;}
-    inline PostContentResult& WithNluIntentConfidence(const char* value) { SetNluIntentConfidence(value); return *this;}
+    inline const Aws::String& GetNluIntentConfidence() const { return m_nluIntentConfidence; }
+    template<typename NluIntentConfidenceT = Aws::String>
+    void SetNluIntentConfidence(NluIntentConfidenceT&& value) { m_nluIntentConfidenceHasBeenSet = true; m_nluIntentConfidence = std::forward<NluIntentConfidenceT>(value); }
+    template<typename NluIntentConfidenceT = Aws::String>
+    PostContentResult& WithNluIntentConfidence(NluIntentConfidenceT&& value) { SetNluIntentConfidence(std::forward<NluIntentConfidenceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,13 +82,11 @@ namespace Model
      * Amazon Lex is that the intent matches the user's intent. The intents are sorted
      * by the confidence score.</p>
      */
-    inline const Aws::String& GetAlternativeIntents() const{ return m_alternativeIntents; }
-    inline void SetAlternativeIntents(const Aws::String& value) { m_alternativeIntents = value; }
-    inline void SetAlternativeIntents(Aws::String&& value) { m_alternativeIntents = std::move(value); }
-    inline void SetAlternativeIntents(const char* value) { m_alternativeIntents.assign(value); }
-    inline PostContentResult& WithAlternativeIntents(const Aws::String& value) { SetAlternativeIntents(value); return *this;}
-    inline PostContentResult& WithAlternativeIntents(Aws::String&& value) { SetAlternativeIntents(std::move(value)); return *this;}
-    inline PostContentResult& WithAlternativeIntents(const char* value) { SetAlternativeIntents(value); return *this;}
+    inline const Aws::String& GetAlternativeIntents() const { return m_alternativeIntents; }
+    template<typename AlternativeIntentsT = Aws::String>
+    void SetAlternativeIntents(AlternativeIntentsT&& value) { m_alternativeIntentsHasBeenSet = true; m_alternativeIntents = std::forward<AlternativeIntentsT>(value); }
+    template<typename AlternativeIntentsT = Aws::String>
+    PostContentResult& WithAlternativeIntents(AlternativeIntentsT&& value) { SetAlternativeIntents(std::forward<AlternativeIntentsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,13 +104,11 @@ namespace Model
      * <code>valueSelectionStrategy</code>, the default is
      * <code>ORIGINAL_VALUE</code>.</p>
      */
-    inline const Aws::String& GetSlots() const{ return m_slots; }
-    inline void SetSlots(const Aws::String& value) { m_slots = value; }
-    inline void SetSlots(Aws::String&& value) { m_slots = std::move(value); }
-    inline void SetSlots(const char* value) { m_slots.assign(value); }
-    inline PostContentResult& WithSlots(const Aws::String& value) { SetSlots(value); return *this;}
-    inline PostContentResult& WithSlots(Aws::String&& value) { SetSlots(std::move(value)); return *this;}
-    inline PostContentResult& WithSlots(const char* value) { SetSlots(value); return *this;}
+    inline const Aws::String& GetSlots() const { return m_slots; }
+    template<typename SlotsT = Aws::String>
+    void SetSlots(SlotsT&& value) { m_slotsHasBeenSet = true; m_slots = std::forward<SlotsT>(value); }
+    template<typename SlotsT = Aws::String>
+    PostContentResult& WithSlots(SlotsT&& value) { SetSlots(std::forward<SlotsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,13 +116,11 @@ namespace Model
      * <p> Map of key/value pairs representing the session-specific context
      * information. </p>
      */
-    inline const Aws::String& GetSessionAttributes() const{ return m_sessionAttributes; }
-    inline void SetSessionAttributes(const Aws::String& value) { m_sessionAttributes = value; }
-    inline void SetSessionAttributes(Aws::String&& value) { m_sessionAttributes = std::move(value); }
-    inline void SetSessionAttributes(const char* value) { m_sessionAttributes.assign(value); }
-    inline PostContentResult& WithSessionAttributes(const Aws::String& value) { SetSessionAttributes(value); return *this;}
-    inline PostContentResult& WithSessionAttributes(Aws::String&& value) { SetSessionAttributes(std::move(value)); return *this;}
-    inline PostContentResult& WithSessionAttributes(const char* value) { SetSessionAttributes(value); return *this;}
+    inline const Aws::String& GetSessionAttributes() const { return m_sessionAttributes; }
+    template<typename SessionAttributesT = Aws::String>
+    void SetSessionAttributes(SessionAttributesT&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes = std::forward<SessionAttributesT>(value); }
+    template<typename SessionAttributesT = Aws::String>
+    PostContentResult& WithSessionAttributes(SessionAttributesT&& value) { SetSessionAttributes(std::forward<SessionAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,13 +129,11 @@ namespace Model
      * send utterances to Amazon Comprehend for sentiment analysis, this field contains
      * the result of the analysis.</p>
      */
-    inline const Aws::String& GetSentimentResponse() const{ return m_sentimentResponse; }
-    inline void SetSentimentResponse(const Aws::String& value) { m_sentimentResponse = value; }
-    inline void SetSentimentResponse(Aws::String&& value) { m_sentimentResponse = std::move(value); }
-    inline void SetSentimentResponse(const char* value) { m_sentimentResponse.assign(value); }
-    inline PostContentResult& WithSentimentResponse(const Aws::String& value) { SetSentimentResponse(value); return *this;}
-    inline PostContentResult& WithSentimentResponse(Aws::String&& value) { SetSentimentResponse(std::move(value)); return *this;}
-    inline PostContentResult& WithSentimentResponse(const char* value) { SetSentimentResponse(value); return *this;}
+    inline const Aws::String& GetSentimentResponse() const { return m_sentimentResponse; }
+    template<typename SentimentResponseT = Aws::String>
+    void SetSentimentResponse(SentimentResponseT&& value) { m_sentimentResponseHasBeenSet = true; m_sentimentResponse = std::forward<SentimentResponseT>(value); }
+    template<typename SentimentResponseT = Aws::String>
+    PostContentResult& WithSentimentResponse(SentimentResponseT&& value) { SetSentimentResponse(std::forward<SentimentResponseT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -169,13 +154,11 @@ namespace Model
      * <code>encodedMessage</code> field is base-64 encoded. You must decode the field
      * before you can use the value.</p>
      */
-    inline const Aws::String& GetEncodedMessage() const{ return m_encodedMessage; }
-    inline void SetEncodedMessage(const Aws::String& value) { m_encodedMessage = value; }
-    inline void SetEncodedMessage(Aws::String&& value) { m_encodedMessage = std::move(value); }
-    inline void SetEncodedMessage(const char* value) { m_encodedMessage.assign(value); }
-    inline PostContentResult& WithEncodedMessage(const Aws::String& value) { SetEncodedMessage(value); return *this;}
-    inline PostContentResult& WithEncodedMessage(Aws::String&& value) { SetEncodedMessage(std::move(value)); return *this;}
-    inline PostContentResult& WithEncodedMessage(const char* value) { SetEncodedMessage(value); return *this;}
+    inline const Aws::String& GetEncodedMessage() const { return m_encodedMessage; }
+    template<typename EncodedMessageT = Aws::String>
+    void SetEncodedMessage(EncodedMessageT&& value) { m_encodedMessageHasBeenSet = true; m_encodedMessage = std::forward<EncodedMessageT>(value); }
+    template<typename EncodedMessageT = Aws::String>
+    PostContentResult& WithEncodedMessage(EncodedMessageT&& value) { SetEncodedMessage(std::forward<EncodedMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -189,11 +172,9 @@ namespace Model
      * groups that messages were assigned to when the intent was created.</p> </li>
      * </ul>
      */
-    inline const MessageFormatType& GetMessageFormat() const{ return m_messageFormat; }
-    inline void SetMessageFormat(const MessageFormatType& value) { m_messageFormat = value; }
-    inline void SetMessageFormat(MessageFormatType&& value) { m_messageFormat = std::move(value); }
-    inline PostContentResult& WithMessageFormat(const MessageFormatType& value) { SetMessageFormat(value); return *this;}
-    inline PostContentResult& WithMessageFormat(MessageFormatType&& value) { SetMessageFormat(std::move(value)); return *this;}
+    inline MessageFormatType GetMessageFormat() const { return m_messageFormat; }
+    inline void SetMessageFormat(MessageFormatType value) { m_messageFormatHasBeenSet = true; m_messageFormat = value; }
+    inline PostContentResult& WithMessageFormat(MessageFormatType value) { SetMessageFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -227,11 +208,9 @@ namespace Model
      * specific information), or if the Lambda function fails to fulfill the intent.
      * </p> </li> </ul>
      */
-    inline const DialogState& GetDialogState() const{ return m_dialogState; }
-    inline void SetDialogState(const DialogState& value) { m_dialogState = value; }
-    inline void SetDialogState(DialogState&& value) { m_dialogState = std::move(value); }
-    inline PostContentResult& WithDialogState(const DialogState& value) { SetDialogState(value); return *this;}
-    inline PostContentResult& WithDialogState(DialogState&& value) { SetDialogState(std::move(value)); return *this;}
+    inline DialogState GetDialogState() const { return m_dialogState; }
+    inline void SetDialogState(DialogState value) { m_dialogStateHasBeenSet = true; m_dialogState = value; }
+    inline PostContentResult& WithDialogState(DialogState value) { SetDialogState(value); return *this;}
     ///@}
 
     ///@{
@@ -239,13 +218,11 @@ namespace Model
      * <p> If the <code>dialogState</code> value is <code>ElicitSlot</code>, returns
      * the name of the slot for which Amazon Lex is eliciting a value. </p>
      */
-    inline const Aws::String& GetSlotToElicit() const{ return m_slotToElicit; }
-    inline void SetSlotToElicit(const Aws::String& value) { m_slotToElicit = value; }
-    inline void SetSlotToElicit(Aws::String&& value) { m_slotToElicit = std::move(value); }
-    inline void SetSlotToElicit(const char* value) { m_slotToElicit.assign(value); }
-    inline PostContentResult& WithSlotToElicit(const Aws::String& value) { SetSlotToElicit(value); return *this;}
-    inline PostContentResult& WithSlotToElicit(Aws::String&& value) { SetSlotToElicit(std::move(value)); return *this;}
-    inline PostContentResult& WithSlotToElicit(const char* value) { SetSlotToElicit(value); return *this;}
+    inline const Aws::String& GetSlotToElicit() const { return m_slotToElicit; }
+    template<typename SlotToElicitT = Aws::String>
+    void SetSlotToElicit(SlotToElicitT&& value) { m_slotToElicitHasBeenSet = true; m_slotToElicit = std::forward<SlotToElicitT>(value); }
+    template<typename SlotToElicitT = Aws::String>
+    PostContentResult& WithSlotToElicit(SlotToElicitT&& value) { SetSlotToElicit(std::forward<SlotToElicitT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -258,13 +235,11 @@ namespace Model
      * <code>encodedInputTranscript</code> field is base-64 encoded. You must decode
      * the field before you can use the value.</p>
      */
-    inline const Aws::String& GetEncodedInputTranscript() const{ return m_encodedInputTranscript; }
-    inline void SetEncodedInputTranscript(const Aws::String& value) { m_encodedInputTranscript = value; }
-    inline void SetEncodedInputTranscript(Aws::String&& value) { m_encodedInputTranscript = std::move(value); }
-    inline void SetEncodedInputTranscript(const char* value) { m_encodedInputTranscript.assign(value); }
-    inline PostContentResult& WithEncodedInputTranscript(const Aws::String& value) { SetEncodedInputTranscript(value); return *this;}
-    inline PostContentResult& WithEncodedInputTranscript(Aws::String&& value) { SetEncodedInputTranscript(std::move(value)); return *this;}
-    inline PostContentResult& WithEncodedInputTranscript(const char* value) { SetEncodedInputTranscript(value); return *this;}
+    inline const Aws::String& GetEncodedInputTranscript() const { return m_encodedInputTranscript; }
+    template<typename EncodedInputTranscriptT = Aws::String>
+    void SetEncodedInputTranscript(EncodedInputTranscriptT&& value) { m_encodedInputTranscriptHasBeenSet = true; m_encodedInputTranscript = std::forward<EncodedInputTranscriptT>(value); }
+    template<typename EncodedInputTranscriptT = Aws::String>
+    PostContentResult& WithEncodedInputTranscript(EncodedInputTranscriptT&& value) { SetEncodedInputTranscript(std::forward<EncodedInputTranscriptT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -288,26 +263,22 @@ namespace Model
      * information to help determine if one version of a bot is performing better than
      * another version.</p>
      */
-    inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
-    inline void SetBotVersion(const Aws::String& value) { m_botVersion = value; }
-    inline void SetBotVersion(Aws::String&& value) { m_botVersion = std::move(value); }
-    inline void SetBotVersion(const char* value) { m_botVersion.assign(value); }
-    inline PostContentResult& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
-    inline PostContentResult& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
-    inline PostContentResult& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
+    inline const Aws::String& GetBotVersion() const { return m_botVersion; }
+    template<typename BotVersionT = Aws::String>
+    void SetBotVersion(BotVersionT&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::forward<BotVersionT>(value); }
+    template<typename BotVersionT = Aws::String>
+    PostContentResult& WithBotVersion(BotVersionT&& value) { SetBotVersion(std::forward<BotVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the session.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionId.assign(value); }
-    inline PostContentResult& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline PostContentResult& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline PostContentResult& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    PostContentResult& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -318,60 +289,73 @@ namespace Model
      * a context to control the intents that can follow up an intent, or to modify the
      * operation of your application.</p>
      */
-    inline const Aws::String& GetActiveContexts() const{ return m_activeContexts; }
-    inline void SetActiveContexts(const Aws::String& value) { m_activeContexts = value; }
-    inline void SetActiveContexts(Aws::String&& value) { m_activeContexts = std::move(value); }
-    inline void SetActiveContexts(const char* value) { m_activeContexts.assign(value); }
-    inline PostContentResult& WithActiveContexts(const Aws::String& value) { SetActiveContexts(value); return *this;}
-    inline PostContentResult& WithActiveContexts(Aws::String&& value) { SetActiveContexts(std::move(value)); return *this;}
-    inline PostContentResult& WithActiveContexts(const char* value) { SetActiveContexts(value); return *this;}
+    inline const Aws::String& GetActiveContexts() const { return m_activeContexts; }
+    template<typename ActiveContextsT = Aws::String>
+    void SetActiveContexts(ActiveContextsT&& value) { m_activeContextsHasBeenSet = true; m_activeContexts = std::forward<ActiveContextsT>(value); }
+    template<typename ActiveContextsT = Aws::String>
+    PostContentResult& WithActiveContexts(ActiveContextsT&& value) { SetActiveContexts(std::forward<ActiveContextsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PostContentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PostContentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PostContentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PostContentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_contentType;
+    bool m_contentTypeHasBeenSet = false;
 
     Aws::String m_intentName;
+    bool m_intentNameHasBeenSet = false;
 
     Aws::String m_nluIntentConfidence;
+    bool m_nluIntentConfidenceHasBeenSet = false;
 
     Aws::String m_alternativeIntents;
+    bool m_alternativeIntentsHasBeenSet = false;
 
     Aws::String m_slots;
+    bool m_slotsHasBeenSet = false;
 
     Aws::String m_sessionAttributes;
+    bool m_sessionAttributesHasBeenSet = false;
 
     Aws::String m_sentimentResponse;
+    bool m_sentimentResponseHasBeenSet = false;
 
     Aws::String m_encodedMessage;
+    bool m_encodedMessageHasBeenSet = false;
 
-    MessageFormatType m_messageFormat;
+    MessageFormatType m_messageFormat{MessageFormatType::NOT_SET};
+    bool m_messageFormatHasBeenSet = false;
 
-    DialogState m_dialogState;
+    DialogState m_dialogState{DialogState::NOT_SET};
+    bool m_dialogStateHasBeenSet = false;
 
     Aws::String m_slotToElicit;
+    bool m_slotToElicitHasBeenSet = false;
 
     Aws::String m_encodedInputTranscript;
+    bool m_encodedInputTranscriptHasBeenSet = false;
 
-    Aws::Utils::Stream::ResponseStream m_audioStream;
+    Aws::Utils::Stream::ResponseStream m_audioStream{};
+    bool m_audioStreamHasBeenSet = false;
 
     Aws::String m_botVersion;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::String m_sessionId;
+    bool m_sessionIdHasBeenSet = false;
 
     Aws::String m_activeContexts;
+    bool m_activeContextsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

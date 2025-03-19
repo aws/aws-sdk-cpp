@@ -38,7 +38,7 @@ namespace Model
   class AutoScalingPolicyDescription
   {
   public:
-    AWS_EMR_API AutoScalingPolicyDescription();
+    AWS_EMR_API AutoScalingPolicyDescription() = default;
     AWS_EMR_API AutoScalingPolicyDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API AutoScalingPolicyDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
     /**
      * <p>The status of an automatic scaling policy. </p>
      */
-    inline const AutoScalingPolicyStatus& GetStatus() const{ return m_status; }
+    inline const AutoScalingPolicyStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const AutoScalingPolicyStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(AutoScalingPolicyStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AutoScalingPolicyDescription& WithStatus(const AutoScalingPolicyStatus& value) { SetStatus(value); return *this;}
-    inline AutoScalingPolicyDescription& WithStatus(AutoScalingPolicyStatus&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = AutoScalingPolicyStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = AutoScalingPolicyStatus>
+    AutoScalingPolicyDescription& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +62,12 @@ namespace Model
      * policy. Automatic scaling activity will not cause an instance group to grow
      * above or below these limits.</p>
      */
-    inline const ScalingConstraints& GetConstraints() const{ return m_constraints; }
+    inline const ScalingConstraints& GetConstraints() const { return m_constraints; }
     inline bool ConstraintsHasBeenSet() const { return m_constraintsHasBeenSet; }
-    inline void SetConstraints(const ScalingConstraints& value) { m_constraintsHasBeenSet = true; m_constraints = value; }
-    inline void SetConstraints(ScalingConstraints&& value) { m_constraintsHasBeenSet = true; m_constraints = std::move(value); }
-    inline AutoScalingPolicyDescription& WithConstraints(const ScalingConstraints& value) { SetConstraints(value); return *this;}
-    inline AutoScalingPolicyDescription& WithConstraints(ScalingConstraints&& value) { SetConstraints(std::move(value)); return *this;}
+    template<typename ConstraintsT = ScalingConstraints>
+    void SetConstraints(ConstraintsT&& value) { m_constraintsHasBeenSet = true; m_constraints = std::forward<ConstraintsT>(value); }
+    template<typename ConstraintsT = ScalingConstraints>
+    AutoScalingPolicyDescription& WithConstraints(ConstraintsT&& value) { SetConstraints(std::forward<ConstraintsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +75,14 @@ namespace Model
      * <p>The scale-in and scale-out rules that comprise the automatic scaling
      * policy.</p>
      */
-    inline const Aws::Vector<ScalingRule>& GetRules() const{ return m_rules; }
+    inline const Aws::Vector<ScalingRule>& GetRules() const { return m_rules; }
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    inline void SetRules(const Aws::Vector<ScalingRule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-    inline void SetRules(Aws::Vector<ScalingRule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-    inline AutoScalingPolicyDescription& WithRules(const Aws::Vector<ScalingRule>& value) { SetRules(value); return *this;}
-    inline AutoScalingPolicyDescription& WithRules(Aws::Vector<ScalingRule>&& value) { SetRules(std::move(value)); return *this;}
-    inline AutoScalingPolicyDescription& AddRules(const ScalingRule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-    inline AutoScalingPolicyDescription& AddRules(ScalingRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    template<typename RulesT = Aws::Vector<ScalingRule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<ScalingRule>>
+    AutoScalingPolicyDescription& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = ScalingRule>
+    AutoScalingPolicyDescription& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
   private:
 

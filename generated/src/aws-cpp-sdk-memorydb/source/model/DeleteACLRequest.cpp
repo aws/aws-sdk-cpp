@@ -12,11 +12,6 @@ using namespace Aws::MemoryDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteACLRequest::DeleteACLRequest() : 
-    m_aCLNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteACLRequest::SerializePayload() const
 {
   JsonValue payload;

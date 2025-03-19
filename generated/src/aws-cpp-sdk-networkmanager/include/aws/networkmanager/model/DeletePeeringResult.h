@@ -28,7 +28,7 @@ namespace Model
   class DeletePeeringResult
   {
   public:
-    AWS_NETWORKMANAGER_API DeletePeeringResult();
+    AWS_NETWORKMANAGER_API DeletePeeringResult() = default;
     AWS_NETWORKMANAGER_API DeletePeeringResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKMANAGER_API DeletePeeringResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about a deleted peering connection.</p>
      */
-    inline const Peering& GetPeering() const{ return m_peering; }
-    inline void SetPeering(const Peering& value) { m_peering = value; }
-    inline void SetPeering(Peering&& value) { m_peering = std::move(value); }
-    inline DeletePeeringResult& WithPeering(const Peering& value) { SetPeering(value); return *this;}
-    inline DeletePeeringResult& WithPeering(Peering&& value) { SetPeering(std::move(value)); return *this;}
+    inline const Peering& GetPeering() const { return m_peering; }
+    template<typename PeeringT = Peering>
+    void SetPeering(PeeringT&& value) { m_peeringHasBeenSet = true; m_peering = std::forward<PeeringT>(value); }
+    template<typename PeeringT = Peering>
+    DeletePeeringResult& WithPeering(PeeringT&& value) { SetPeering(std::forward<PeeringT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeletePeeringResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeletePeeringResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeletePeeringResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeletePeeringResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Peering m_peering;
+    bool m_peeringHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,7 +32,7 @@ namespace Model
   class RecommendationError
   {
   public:
-    AWS_ACCESSANALYZER_API RecommendationError();
+    AWS_ACCESSANALYZER_API RecommendationError() = default;
     AWS_ACCESSANALYZER_API RecommendationError(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API RecommendationError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The error code for a failed retrieval of a recommendation for a finding.</p>
      */
-    inline const Aws::String& GetCode() const{ return m_code; }
+    inline const Aws::String& GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-    inline RecommendationError& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-    inline RecommendationError& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-    inline RecommendationError& WithCode(const char* value) { SetCode(value); return *this;}
+    template<typename CodeT = Aws::String>
+    void SetCode(CodeT&& value) { m_codeHasBeenSet = true; m_code = std::forward<CodeT>(value); }
+    template<typename CodeT = Aws::String>
+    RecommendationError& WithCode(CodeT&& value) { SetCode(std::forward<CodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The error message for a failed retrieval of a recommendation for a
      * finding.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline RecommendationError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline RecommendationError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline RecommendationError& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    RecommendationError& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

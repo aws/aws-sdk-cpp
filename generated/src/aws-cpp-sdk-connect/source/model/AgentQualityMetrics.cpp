@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-AgentQualityMetrics::AgentQualityMetrics() : 
-    m_audioHasBeenSet(false)
-{
-}
-
 AgentQualityMetrics::AgentQualityMetrics(JsonView jsonValue)
-  : AgentQualityMetrics()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AgentQualityMetrics& AgentQualityMetrics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Audio"))
   {
     m_audio = jsonValue.GetObject("Audio");
-
     m_audioHasBeenSet = true;
   }
-
   return *this;
 }
 

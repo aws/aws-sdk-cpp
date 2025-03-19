@@ -21,7 +21,7 @@ namespace Model
   class GetRegisteredSubscriptionProviderRequest : public LicenseManagerLinuxSubscriptionsRequest
   {
   public:
-    AWS_LICENSEMANAGERLINUXSUBSCRIPTIONS_API GetRegisteredSubscriptionProviderRequest();
+    AWS_LICENSEMANAGERLINUXSUBSCRIPTIONS_API GetRegisteredSubscriptionProviderRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the BYOL registration resource to get
      * details for.</p>
      */
-    inline const Aws::String& GetSubscriptionProviderArn() const{ return m_subscriptionProviderArn; }
+    inline const Aws::String& GetSubscriptionProviderArn() const { return m_subscriptionProviderArn; }
     inline bool SubscriptionProviderArnHasBeenSet() const { return m_subscriptionProviderArnHasBeenSet; }
-    inline void SetSubscriptionProviderArn(const Aws::String& value) { m_subscriptionProviderArnHasBeenSet = true; m_subscriptionProviderArn = value; }
-    inline void SetSubscriptionProviderArn(Aws::String&& value) { m_subscriptionProviderArnHasBeenSet = true; m_subscriptionProviderArn = std::move(value); }
-    inline void SetSubscriptionProviderArn(const char* value) { m_subscriptionProviderArnHasBeenSet = true; m_subscriptionProviderArn.assign(value); }
-    inline GetRegisteredSubscriptionProviderRequest& WithSubscriptionProviderArn(const Aws::String& value) { SetSubscriptionProviderArn(value); return *this;}
-    inline GetRegisteredSubscriptionProviderRequest& WithSubscriptionProviderArn(Aws::String&& value) { SetSubscriptionProviderArn(std::move(value)); return *this;}
-    inline GetRegisteredSubscriptionProviderRequest& WithSubscriptionProviderArn(const char* value) { SetSubscriptionProviderArn(value); return *this;}
+    template<typename SubscriptionProviderArnT = Aws::String>
+    void SetSubscriptionProviderArn(SubscriptionProviderArnT&& value) { m_subscriptionProviderArnHasBeenSet = true; m_subscriptionProviderArn = std::forward<SubscriptionProviderArnT>(value); }
+    template<typename SubscriptionProviderArnT = Aws::String>
+    GetRegisteredSubscriptionProviderRequest& WithSubscriptionProviderArn(SubscriptionProviderArnT&& value) { SetSubscriptionProviderArn(std::forward<SubscriptionProviderArnT>(value)); return *this;}
     ///@}
   private:
 

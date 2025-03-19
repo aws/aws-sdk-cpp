@@ -34,7 +34,7 @@ namespace Model
   class DirectConnectGateway
   {
   public:
-    AWS_DIRECTCONNECT_API DirectConnectGateway();
+    AWS_DIRECTCONNECT_API DirectConnectGateway() = default;
     AWS_DIRECTCONNECT_API DirectConnectGateway(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTCONNECT_API DirectConnectGateway& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,35 +44,31 @@ namespace Model
     /**
      * <p>The ID of the Direct Connect gateway.</p>
      */
-    inline const Aws::String& GetDirectConnectGatewayId() const{ return m_directConnectGatewayId; }
+    inline const Aws::String& GetDirectConnectGatewayId() const { return m_directConnectGatewayId; }
     inline bool DirectConnectGatewayIdHasBeenSet() const { return m_directConnectGatewayIdHasBeenSet; }
-    inline void SetDirectConnectGatewayId(const Aws::String& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = value; }
-    inline void SetDirectConnectGatewayId(Aws::String&& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = std::move(value); }
-    inline void SetDirectConnectGatewayId(const char* value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId.assign(value); }
-    inline DirectConnectGateway& WithDirectConnectGatewayId(const Aws::String& value) { SetDirectConnectGatewayId(value); return *this;}
-    inline DirectConnectGateway& WithDirectConnectGatewayId(Aws::String&& value) { SetDirectConnectGatewayId(std::move(value)); return *this;}
-    inline DirectConnectGateway& WithDirectConnectGatewayId(const char* value) { SetDirectConnectGatewayId(value); return *this;}
+    template<typename DirectConnectGatewayIdT = Aws::String>
+    void SetDirectConnectGatewayId(DirectConnectGatewayIdT&& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = std::forward<DirectConnectGatewayIdT>(value); }
+    template<typename DirectConnectGatewayIdT = Aws::String>
+    DirectConnectGateway& WithDirectConnectGatewayId(DirectConnectGatewayIdT&& value) { SetDirectConnectGatewayId(std::forward<DirectConnectGatewayIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Direct Connect gateway.</p>
      */
-    inline const Aws::String& GetDirectConnectGatewayName() const{ return m_directConnectGatewayName; }
+    inline const Aws::String& GetDirectConnectGatewayName() const { return m_directConnectGatewayName; }
     inline bool DirectConnectGatewayNameHasBeenSet() const { return m_directConnectGatewayNameHasBeenSet; }
-    inline void SetDirectConnectGatewayName(const Aws::String& value) { m_directConnectGatewayNameHasBeenSet = true; m_directConnectGatewayName = value; }
-    inline void SetDirectConnectGatewayName(Aws::String&& value) { m_directConnectGatewayNameHasBeenSet = true; m_directConnectGatewayName = std::move(value); }
-    inline void SetDirectConnectGatewayName(const char* value) { m_directConnectGatewayNameHasBeenSet = true; m_directConnectGatewayName.assign(value); }
-    inline DirectConnectGateway& WithDirectConnectGatewayName(const Aws::String& value) { SetDirectConnectGatewayName(value); return *this;}
-    inline DirectConnectGateway& WithDirectConnectGatewayName(Aws::String&& value) { SetDirectConnectGatewayName(std::move(value)); return *this;}
-    inline DirectConnectGateway& WithDirectConnectGatewayName(const char* value) { SetDirectConnectGatewayName(value); return *this;}
+    template<typename DirectConnectGatewayNameT = Aws::String>
+    void SetDirectConnectGatewayName(DirectConnectGatewayNameT&& value) { m_directConnectGatewayNameHasBeenSet = true; m_directConnectGatewayName = std::forward<DirectConnectGatewayNameT>(value); }
+    template<typename DirectConnectGatewayNameT = Aws::String>
+    DirectConnectGateway& WithDirectConnectGatewayName(DirectConnectGatewayNameT&& value) { SetDirectConnectGatewayName(std::forward<DirectConnectGatewayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The autonomous system number (ASN) for the Amazon side of the connection.</p>
      */
-    inline long long GetAmazonSideAsn() const{ return m_amazonSideAsn; }
+    inline long long GetAmazonSideAsn() const { return m_amazonSideAsn; }
     inline bool AmazonSideAsnHasBeenSet() const { return m_amazonSideAsnHasBeenSet; }
     inline void SetAmazonSideAsn(long long value) { m_amazonSideAsnHasBeenSet = true; m_amazonSideAsn = value; }
     inline DirectConnectGateway& WithAmazonSideAsn(long long value) { SetAmazonSideAsn(value); return *this;}
@@ -83,14 +79,12 @@ namespace Model
      * <p>The ID of the Amazon Web Services account that owns the Direct Connect
      * gateway.</p>
      */
-    inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
+    inline const Aws::String& GetOwnerAccount() const { return m_ownerAccount; }
     inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
-    inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
-    inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::move(value); }
-    inline void SetOwnerAccount(const char* value) { m_ownerAccountHasBeenSet = true; m_ownerAccount.assign(value); }
-    inline DirectConnectGateway& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
-    inline DirectConnectGateway& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
-    inline DirectConnectGateway& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
+    template<typename OwnerAccountT = Aws::String>
+    void SetOwnerAccount(OwnerAccountT&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::forward<OwnerAccountT>(value); }
+    template<typename OwnerAccountT = Aws::String>
+    DirectConnectGateway& WithOwnerAccount(OwnerAccountT&& value) { SetOwnerAccount(std::forward<OwnerAccountT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,26 +97,22 @@ namespace Model
      * <a>DeleteDirectConnectGateway</a>.</p> </li> <li> <p> <code>deleted</code>: The
      * Direct Connect gateway is deleted and cannot pass traffic.</p> </li> </ul>
      */
-    inline const DirectConnectGatewayState& GetDirectConnectGatewayState() const{ return m_directConnectGatewayState; }
+    inline DirectConnectGatewayState GetDirectConnectGatewayState() const { return m_directConnectGatewayState; }
     inline bool DirectConnectGatewayStateHasBeenSet() const { return m_directConnectGatewayStateHasBeenSet; }
-    inline void SetDirectConnectGatewayState(const DirectConnectGatewayState& value) { m_directConnectGatewayStateHasBeenSet = true; m_directConnectGatewayState = value; }
-    inline void SetDirectConnectGatewayState(DirectConnectGatewayState&& value) { m_directConnectGatewayStateHasBeenSet = true; m_directConnectGatewayState = std::move(value); }
-    inline DirectConnectGateway& WithDirectConnectGatewayState(const DirectConnectGatewayState& value) { SetDirectConnectGatewayState(value); return *this;}
-    inline DirectConnectGateway& WithDirectConnectGatewayState(DirectConnectGatewayState&& value) { SetDirectConnectGatewayState(std::move(value)); return *this;}
+    inline void SetDirectConnectGatewayState(DirectConnectGatewayState value) { m_directConnectGatewayStateHasBeenSet = true; m_directConnectGatewayState = value; }
+    inline DirectConnectGateway& WithDirectConnectGatewayState(DirectConnectGatewayState value) { SetDirectConnectGatewayState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error message if the state of an object failed to advance.</p>
      */
-    inline const Aws::String& GetStateChangeError() const{ return m_stateChangeError; }
+    inline const Aws::String& GetStateChangeError() const { return m_stateChangeError; }
     inline bool StateChangeErrorHasBeenSet() const { return m_stateChangeErrorHasBeenSet; }
-    inline void SetStateChangeError(const Aws::String& value) { m_stateChangeErrorHasBeenSet = true; m_stateChangeError = value; }
-    inline void SetStateChangeError(Aws::String&& value) { m_stateChangeErrorHasBeenSet = true; m_stateChangeError = std::move(value); }
-    inline void SetStateChangeError(const char* value) { m_stateChangeErrorHasBeenSet = true; m_stateChangeError.assign(value); }
-    inline DirectConnectGateway& WithStateChangeError(const Aws::String& value) { SetStateChangeError(value); return *this;}
-    inline DirectConnectGateway& WithStateChangeError(Aws::String&& value) { SetStateChangeError(std::move(value)); return *this;}
-    inline DirectConnectGateway& WithStateChangeError(const char* value) { SetStateChangeError(value); return *this;}
+    template<typename StateChangeErrorT = Aws::String>
+    void SetStateChangeError(StateChangeErrorT&& value) { m_stateChangeErrorHasBeenSet = true; m_stateChangeError = std::forward<StateChangeErrorT>(value); }
+    template<typename StateChangeErrorT = Aws::String>
+    DirectConnectGateway& WithStateChangeError(StateChangeErrorT&& value) { SetStateChangeError(std::forward<StateChangeErrorT>(value)); return *this;}
     ///@}
   private:
 
@@ -132,13 +122,13 @@ namespace Model
     Aws::String m_directConnectGatewayName;
     bool m_directConnectGatewayNameHasBeenSet = false;
 
-    long long m_amazonSideAsn;
+    long long m_amazonSideAsn{0};
     bool m_amazonSideAsnHasBeenSet = false;
 
     Aws::String m_ownerAccount;
     bool m_ownerAccountHasBeenSet = false;
 
-    DirectConnectGatewayState m_directConnectGatewayState;
+    DirectConnectGatewayState m_directConnectGatewayState{DirectConnectGatewayState::NOT_SET};
     bool m_directConnectGatewayStateHasBeenSet = false;
 
     Aws::String m_stateChangeError;

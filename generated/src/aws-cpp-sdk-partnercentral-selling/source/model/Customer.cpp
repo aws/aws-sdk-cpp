@@ -18,14 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-Customer::Customer() : 
-    m_accountHasBeenSet(false),
-    m_contactsHasBeenSet(false)
-{
-}
-
 Customer::Customer(JsonView jsonValue)
-  : Customer()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ Customer& Customer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Account"))
   {
     m_account = jsonValue.GetObject("Account");
-
     m_accountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Contacts"))
   {
     Aws::Utils::Array<JsonView> contactsJsonList = jsonValue.GetArray("Contacts");
@@ -48,7 +39,6 @@ Customer& Customer::operator =(JsonView jsonValue)
     }
     m_contactsHasBeenSet = true;
   }
-
   return *this;
 }
 

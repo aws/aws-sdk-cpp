@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRestoreTestingInferredMetadataResult::GetRestoreTestingInferredMetadataResult()
-{
-}
-
 GetRestoreTestingInferredMetadataResult::GetRestoreTestingInferredMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ GetRestoreTestingInferredMetadataResult& GetRestoreTestingInferredMetadataResult
     {
       m_inferredMetadata[inferredMetadataItem.first] = inferredMetadataItem.second.AsString();
     }
+    m_inferredMetadataHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

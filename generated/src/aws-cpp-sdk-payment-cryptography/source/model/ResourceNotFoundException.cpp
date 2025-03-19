@@ -18,13 +18,7 @@ namespace PaymentCryptography
 namespace Model
 {
 
-ResourceNotFoundException::ResourceNotFoundException() : 
-    m_resourceIdHasBeenSet(false)
-{
-}
-
 ResourceNotFoundException::ResourceNotFoundException(JsonView jsonValue)
-  : ResourceNotFoundException()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ResourceNotFoundException& ResourceNotFoundException::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

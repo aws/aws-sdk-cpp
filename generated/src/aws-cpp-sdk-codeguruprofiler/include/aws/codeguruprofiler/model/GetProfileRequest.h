@@ -30,7 +30,7 @@ namespace Model
   class GetProfileRequest : public CodeGuruProfilerRequest
   {
   public:
-    AWS_CODEGURUPROFILER_API GetProfileRequest();
+    AWS_CODEGURUPROFILER_API GetProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -57,14 +57,12 @@ namespace Model
      * href=&quot;http://amzn.github.io/ion-docs/&quot;&gt;Amazon Ion&lt;/a&gt;.
      * &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code></pre>
      */
-    inline const Aws::String& GetAccept() const{ return m_accept; }
+    inline const Aws::String& GetAccept() const { return m_accept; }
     inline bool AcceptHasBeenSet() const { return m_acceptHasBeenSet; }
-    inline void SetAccept(const Aws::String& value) { m_acceptHasBeenSet = true; m_accept = value; }
-    inline void SetAccept(Aws::String&& value) { m_acceptHasBeenSet = true; m_accept = std::move(value); }
-    inline void SetAccept(const char* value) { m_acceptHasBeenSet = true; m_accept.assign(value); }
-    inline GetProfileRequest& WithAccept(const Aws::String& value) { SetAccept(value); return *this;}
-    inline GetProfileRequest& WithAccept(Aws::String&& value) { SetAccept(std::move(value)); return *this;}
-    inline GetProfileRequest& WithAccept(const char* value) { SetAccept(value); return *this;}
+    template<typename AcceptT = Aws::String>
+    void SetAccept(AcceptT&& value) { m_acceptHasBeenSet = true; m_accept = std::forward<AcceptT>(value); }
+    template<typename AcceptT = Aws::String>
+    GetProfileRequest& WithAccept(AcceptT&& value) { SetAccept(std::forward<AcceptT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +72,12 @@ namespace Model
      * 1:15:02 PM UTC. </p> <p> If you specify <code>endTime</code>, then you must also
      * specify <code>period</code> or <code>startTime</code>, but not both. </p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline GetProfileRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline GetProfileRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    GetProfileRequest& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,7 +89,7 @@ namespace Model
      * <code>maxDepth</code> is set to 2, then the aggregated profile contains
      * representations of methods <code>A</code> and <code>B</code>. </p>
      */
-    inline int GetMaxDepth() const{ return m_maxDepth; }
+    inline int GetMaxDepth() const { return m_maxDepth; }
     inline bool MaxDepthHasBeenSet() const { return m_maxDepthHasBeenSet; }
     inline void SetMaxDepth(int value) { m_maxDepthHasBeenSet = true; m_maxDepth = value; }
     inline GetProfileRequest& WithMaxDepth(int value) { SetMaxDepth(value); return *this;}
@@ -105,28 +103,24 @@ namespace Model
      * latest aggregated profile, specify only &lt;code&gt;period&lt;/code&gt;.
      * &lt;/p&gt; </code></pre>
      */
-    inline const Aws::String& GetPeriod() const{ return m_period; }
+    inline const Aws::String& GetPeriod() const { return m_period; }
     inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
-    inline void SetPeriod(const Aws::String& value) { m_periodHasBeenSet = true; m_period = value; }
-    inline void SetPeriod(Aws::String&& value) { m_periodHasBeenSet = true; m_period = std::move(value); }
-    inline void SetPeriod(const char* value) { m_periodHasBeenSet = true; m_period.assign(value); }
-    inline GetProfileRequest& WithPeriod(const Aws::String& value) { SetPeriod(value); return *this;}
-    inline GetProfileRequest& WithPeriod(Aws::String&& value) { SetPeriod(std::move(value)); return *this;}
-    inline GetProfileRequest& WithPeriod(const char* value) { SetPeriod(value); return *this;}
+    template<typename PeriodT = Aws::String>
+    void SetPeriod(PeriodT&& value) { m_periodHasBeenSet = true; m_period = std::forward<PeriodT>(value); }
+    template<typename PeriodT = Aws::String>
+    GetProfileRequest& WithPeriod(PeriodT&& value) { SetPeriod(std::forward<PeriodT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the profiling group to get.</p>
      */
-    inline const Aws::String& GetProfilingGroupName() const{ return m_profilingGroupName; }
+    inline const Aws::String& GetProfilingGroupName() const { return m_profilingGroupName; }
     inline bool ProfilingGroupNameHasBeenSet() const { return m_profilingGroupNameHasBeenSet; }
-    inline void SetProfilingGroupName(const Aws::String& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = value; }
-    inline void SetProfilingGroupName(Aws::String&& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = std::move(value); }
-    inline void SetProfilingGroupName(const char* value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName.assign(value); }
-    inline GetProfileRequest& WithProfilingGroupName(const Aws::String& value) { SetProfilingGroupName(value); return *this;}
-    inline GetProfileRequest& WithProfilingGroupName(Aws::String&& value) { SetProfilingGroupName(std::move(value)); return *this;}
-    inline GetProfileRequest& WithProfilingGroupName(const char* value) { SetProfilingGroupName(value); return *this;}
+    template<typename ProfilingGroupNameT = Aws::String>
+    void SetProfilingGroupName(ProfilingGroupNameT&& value) { m_profilingGroupNameHasBeenSet = true; m_profilingGroupName = std::forward<ProfilingGroupNameT>(value); }
+    template<typename ProfilingGroupNameT = Aws::String>
+    GetProfileRequest& WithProfilingGroupName(ProfilingGroupNameT&& value) { SetProfilingGroupName(std::forward<ProfilingGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,22 +132,22 @@ namespace Model
      * &lt;code&gt;period&lt;/code&gt; or &lt;code&gt;endTime&lt;/code&gt;, but not
      * both. &lt;/p&gt; </code></pre>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline GetProfileRequest& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline GetProfileRequest& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    GetProfileRequest& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_accept;
     bool m_acceptHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
-    int m_maxDepth;
+    int m_maxDepth{0};
     bool m_maxDepthHasBeenSet = false;
 
     Aws::String m_period;
@@ -162,7 +156,7 @@ namespace Model
     Aws::String m_profilingGroupName;
     bool m_profilingGroupNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
   };
 

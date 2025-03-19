@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PrefixListId::PrefixListId() : 
-    m_descriptionHasBeenSet(false),
-    m_prefixListIdHasBeenSet(false)
-{
-}
-
 PrefixListId::PrefixListId(const XmlNode& xmlNode)
-  : PrefixListId()
 {
   *this = xmlNode;
 }

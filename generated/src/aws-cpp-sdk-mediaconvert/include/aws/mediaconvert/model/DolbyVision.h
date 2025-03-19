@@ -35,7 +35,7 @@ namespace Model
   class DolbyVision
   {
   public:
-    AWS_MEDIACONVERT_API DolbyVision();
+    AWS_MEDIACONVERT_API DolbyVision() = default;
     AWS_MEDIACONVERT_API DolbyVision(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API DolbyVision& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * Use these settings when you set DolbyVisionLevel6Mode to SPECIFY to override the
      * MaxCLL and MaxFALL values in your input with new values.
      */
-    inline const DolbyVisionLevel6Metadata& GetL6Metadata() const{ return m_l6Metadata; }
+    inline const DolbyVisionLevel6Metadata& GetL6Metadata() const { return m_l6Metadata; }
     inline bool L6MetadataHasBeenSet() const { return m_l6MetadataHasBeenSet; }
-    inline void SetL6Metadata(const DolbyVisionLevel6Metadata& value) { m_l6MetadataHasBeenSet = true; m_l6Metadata = value; }
-    inline void SetL6Metadata(DolbyVisionLevel6Metadata&& value) { m_l6MetadataHasBeenSet = true; m_l6Metadata = std::move(value); }
-    inline DolbyVision& WithL6Metadata(const DolbyVisionLevel6Metadata& value) { SetL6Metadata(value); return *this;}
-    inline DolbyVision& WithL6Metadata(DolbyVisionLevel6Metadata&& value) { SetL6Metadata(std::move(value)); return *this;}
+    template<typename L6MetadataT = DolbyVisionLevel6Metadata>
+    void SetL6Metadata(L6MetadataT&& value) { m_l6MetadataHasBeenSet = true; m_l6Metadata = std::forward<L6MetadataT>(value); }
+    template<typename L6MetadataT = DolbyVisionLevel6Metadata>
+    DolbyVision& WithL6Metadata(L6MetadataT&& value) { SetL6Metadata(std::forward<L6MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +59,10 @@ namespace Model
      * Use Dolby Vision Mode to choose how the service will handle Dolby Vision MaxCLL
      * and MaxFALL properies.
      */
-    inline const DolbyVisionLevel6Mode& GetL6Mode() const{ return m_l6Mode; }
+    inline DolbyVisionLevel6Mode GetL6Mode() const { return m_l6Mode; }
     inline bool L6ModeHasBeenSet() const { return m_l6ModeHasBeenSet; }
-    inline void SetL6Mode(const DolbyVisionLevel6Mode& value) { m_l6ModeHasBeenSet = true; m_l6Mode = value; }
-    inline void SetL6Mode(DolbyVisionLevel6Mode&& value) { m_l6ModeHasBeenSet = true; m_l6Mode = std::move(value); }
-    inline DolbyVision& WithL6Mode(const DolbyVisionLevel6Mode& value) { SetL6Mode(value); return *this;}
-    inline DolbyVision& WithL6Mode(DolbyVisionLevel6Mode&& value) { SetL6Mode(std::move(value)); return *this;}
+    inline void SetL6Mode(DolbyVisionLevel6Mode value) { m_l6ModeHasBeenSet = true; m_l6Mode = value; }
+    inline DolbyVision& WithL6Mode(DolbyVisionLevel6Mode value) { SetL6Mode(value); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +77,10 @@ namespace Model
      * aware that creative intent might not be guaranteed with extreme 1,000 nits
      * trims.
      */
-    inline const DolbyVisionMapping& GetMapping() const{ return m_mapping; }
+    inline DolbyVisionMapping GetMapping() const { return m_mapping; }
     inline bool MappingHasBeenSet() const { return m_mappingHasBeenSet; }
-    inline void SetMapping(const DolbyVisionMapping& value) { m_mappingHasBeenSet = true; m_mapping = value; }
-    inline void SetMapping(DolbyVisionMapping&& value) { m_mappingHasBeenSet = true; m_mapping = std::move(value); }
-    inline DolbyVision& WithMapping(const DolbyVisionMapping& value) { SetMapping(value); return *this;}
-    inline DolbyVision& WithMapping(DolbyVisionMapping&& value) { SetMapping(std::move(value)); return *this;}
+    inline void SetMapping(DolbyVisionMapping value) { m_mappingHasBeenSet = true; m_mapping = value; }
+    inline DolbyVision& WithMapping(DolbyVisionMapping value) { SetMapping(value); return *this;}
     ///@}
 
     ///@{
@@ -95,25 +91,23 @@ namespace Model
      * frame-interleaved Dolby Vision metadata and HDR10 metadata in your output. Your
      * input must include Dolby Vision metadata.
      */
-    inline const DolbyVisionProfile& GetProfile() const{ return m_profile; }
+    inline DolbyVisionProfile GetProfile() const { return m_profile; }
     inline bool ProfileHasBeenSet() const { return m_profileHasBeenSet; }
-    inline void SetProfile(const DolbyVisionProfile& value) { m_profileHasBeenSet = true; m_profile = value; }
-    inline void SetProfile(DolbyVisionProfile&& value) { m_profileHasBeenSet = true; m_profile = std::move(value); }
-    inline DolbyVision& WithProfile(const DolbyVisionProfile& value) { SetProfile(value); return *this;}
-    inline DolbyVision& WithProfile(DolbyVisionProfile&& value) { SetProfile(std::move(value)); return *this;}
+    inline void SetProfile(DolbyVisionProfile value) { m_profileHasBeenSet = true; m_profile = value; }
+    inline DolbyVision& WithProfile(DolbyVisionProfile value) { SetProfile(value); return *this;}
     ///@}
   private:
 
     DolbyVisionLevel6Metadata m_l6Metadata;
     bool m_l6MetadataHasBeenSet = false;
 
-    DolbyVisionLevel6Mode m_l6Mode;
+    DolbyVisionLevel6Mode m_l6Mode{DolbyVisionLevel6Mode::NOT_SET};
     bool m_l6ModeHasBeenSet = false;
 
-    DolbyVisionMapping m_mapping;
+    DolbyVisionMapping m_mapping{DolbyVisionMapping::NOT_SET};
     bool m_mappingHasBeenSet = false;
 
-    DolbyVisionProfile m_profile;
+    DolbyVisionProfile m_profile{DolbyVisionProfile::NOT_SET};
     bool m_profileHasBeenSet = false;
   };
 

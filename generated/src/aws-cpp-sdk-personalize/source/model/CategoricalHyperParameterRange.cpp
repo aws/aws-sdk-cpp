@@ -18,14 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-CategoricalHyperParameterRange::CategoricalHyperParameterRange() : 
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 CategoricalHyperParameterRange::CategoricalHyperParameterRange(JsonView jsonValue)
-  : CategoricalHyperParameterRange()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CategoricalHyperParameterRange& CategoricalHyperParameterRange::operator =(JsonV
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -48,7 +39,6 @@ CategoricalHyperParameterRange& CategoricalHyperParameterRange::operator =(JsonV
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

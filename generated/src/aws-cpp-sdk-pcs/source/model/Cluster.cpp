@@ -18,26 +18,7 @@ namespace PCS
 namespace Model
 {
 
-Cluster::Cluster() : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_status(ClusterStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
-    m_schedulerHasBeenSet(false),
-    m_size(Size::NOT_SET),
-    m_sizeHasBeenSet(false),
-    m_slurmConfigurationHasBeenSet(false),
-    m_networkingHasBeenSet(false),
-    m_endpointsHasBeenSet(false),
-    m_errorInfoHasBeenSet(false)
-{
-}
-
 Cluster::Cluster(JsonView jsonValue)
-  : Cluster()
 {
   *this = jsonValue;
 }
@@ -47,73 +28,53 @@ Cluster& Cluster::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ClusterStatusMapper::GetClusterStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modifiedAt"))
   {
     m_modifiedAt = jsonValue.GetString("modifiedAt");
-
     m_modifiedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scheduler"))
   {
     m_scheduler = jsonValue.GetObject("scheduler");
-
     m_schedulerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("size"))
   {
     m_size = SizeMapper::GetSizeForName(jsonValue.GetString("size"));
-
     m_sizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slurmConfiguration"))
   {
     m_slurmConfiguration = jsonValue.GetObject("slurmConfiguration");
-
     m_slurmConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networking"))
   {
     m_networking = jsonValue.GetObject("networking");
-
     m_networkingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpoints"))
   {
     Aws::Utils::Array<JsonView> endpointsJsonList = jsonValue.GetArray("endpoints");
@@ -123,7 +84,6 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     }
     m_endpointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorInfo"))
   {
     Aws::Utils::Array<JsonView> errorInfoJsonList = jsonValue.GetArray("errorInfo");
@@ -133,7 +93,6 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     }
     m_errorInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

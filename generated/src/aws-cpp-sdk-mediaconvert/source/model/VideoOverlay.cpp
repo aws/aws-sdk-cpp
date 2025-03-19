@@ -18,19 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-VideoOverlay::VideoOverlay() : 
-    m_endTimecodeHasBeenSet(false),
-    m_initialPositionHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_playback(VideoOverlayPlayBackMode::NOT_SET),
-    m_playbackHasBeenSet(false),
-    m_startTimecodeHasBeenSet(false),
-    m_transitionsHasBeenSet(false)
-{
-}
-
 VideoOverlay::VideoOverlay(JsonView jsonValue)
-  : VideoOverlay()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ VideoOverlay& VideoOverlay::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("endTimecode"))
   {
     m_endTimecode = jsonValue.GetString("endTimecode");
-
     m_endTimecodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("initialPosition"))
   {
     m_initialPosition = jsonValue.GetObject("initialPosition");
-
     m_initialPositionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("input"))
   {
     m_input = jsonValue.GetObject("input");
-
     m_inputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("playback"))
   {
     m_playback = VideoOverlayPlayBackModeMapper::GetVideoOverlayPlayBackModeForName(jsonValue.GetString("playback"));
-
     m_playbackHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTimecode"))
   {
     m_startTimecode = jsonValue.GetString("startTimecode");
-
     m_startTimecodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transitions"))
   {
     Aws::Utils::Array<JsonView> transitionsJsonList = jsonValue.GetArray("transitions");
@@ -81,7 +59,6 @@ VideoOverlay& VideoOverlay::operator =(JsonView jsonValue)
     }
     m_transitionsHasBeenSet = true;
   }
-
   return *this;
 }
 

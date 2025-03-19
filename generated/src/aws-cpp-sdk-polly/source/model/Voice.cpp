@@ -18,22 +18,7 @@ namespace Polly
 namespace Model
 {
 
-Voice::Voice() : 
-    m_gender(Gender::NOT_SET),
-    m_genderHasBeenSet(false),
-    m_id(VoiceId::NOT_SET),
-    m_idHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_languageNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_additionalLanguageCodesHasBeenSet(false),
-    m_supportedEnginesHasBeenSet(false)
-{
-}
-
 Voice::Voice(JsonView jsonValue)
-  : Voice()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ Voice& Voice::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Gender"))
   {
     m_gender = GenderMapper::GetGenderForName(jsonValue.GetString("Gender"));
-
     m_genderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = VoiceIdMapper::GetVoiceIdForName(jsonValue.GetString("Id"));
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LanguageCode"))
   {
     m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("LanguageCode"));
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LanguageName"))
   {
     m_languageName = jsonValue.GetString("LanguageName");
-
     m_languageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalLanguageCodes"))
   {
     Aws::Utils::Array<JsonView> additionalLanguageCodesJsonList = jsonValue.GetArray("AdditionalLanguageCodes");
@@ -84,7 +59,6 @@ Voice& Voice::operator =(JsonView jsonValue)
     }
     m_additionalLanguageCodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportedEngines"))
   {
     Aws::Utils::Array<JsonView> supportedEnginesJsonList = jsonValue.GetArray("SupportedEngines");
@@ -94,7 +68,6 @@ Voice& Voice::operator =(JsonView jsonValue)
     }
     m_supportedEnginesHasBeenSet = true;
   }
-
   return *this;
 }
 

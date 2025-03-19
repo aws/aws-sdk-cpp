@@ -30,7 +30,7 @@ namespace Model
   class QueryStatistics
   {
   public:
-    AWS_CLOUDTRAIL_API QueryStatistics();
+    AWS_CLOUDTRAIL_API QueryStatistics() = default;
     AWS_CLOUDTRAIL_API QueryStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDTRAIL_API QueryStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The number of results returned.</p>
      */
-    inline int GetResultsCount() const{ return m_resultsCount; }
+    inline int GetResultsCount() const { return m_resultsCount; }
     inline bool ResultsCountHasBeenSet() const { return m_resultsCountHasBeenSet; }
     inline void SetResultsCount(int value) { m_resultsCountHasBeenSet = true; m_resultsCount = value; }
     inline QueryStatistics& WithResultsCount(int value) { SetResultsCount(value); return *this;}
@@ -50,7 +50,7 @@ namespace Model
     /**
      * <p>The total number of results returned by a query.</p>
      */
-    inline int GetTotalResultsCount() const{ return m_totalResultsCount; }
+    inline int GetTotalResultsCount() const { return m_totalResultsCount; }
     inline bool TotalResultsCountHasBeenSet() const { return m_totalResultsCountHasBeenSet; }
     inline void SetTotalResultsCount(int value) { m_totalResultsCountHasBeenSet = true; m_totalResultsCount = value; }
     inline QueryStatistics& WithTotalResultsCount(int value) { SetTotalResultsCount(value); return *this;}
@@ -62,20 +62,20 @@ namespace Model
      * matches the number of bytes for which your account is billed for the query,
      * unless the query is still running.</p>
      */
-    inline long long GetBytesScanned() const{ return m_bytesScanned; }
+    inline long long GetBytesScanned() const { return m_bytesScanned; }
     inline bool BytesScannedHasBeenSet() const { return m_bytesScannedHasBeenSet; }
     inline void SetBytesScanned(long long value) { m_bytesScannedHasBeenSet = true; m_bytesScanned = value; }
     inline QueryStatistics& WithBytesScanned(long long value) { SetBytesScanned(value); return *this;}
     ///@}
   private:
 
-    int m_resultsCount;
+    int m_resultsCount{0};
     bool m_resultsCountHasBeenSet = false;
 
-    int m_totalResultsCount;
+    int m_totalResultsCount{0};
     bool m_totalResultsCountHasBeenSet = false;
 
-    long long m_bytesScanned;
+    long long m_bytesScanned{0};
     bool m_bytesScannedHasBeenSet = false;
   };
 

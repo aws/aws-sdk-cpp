@@ -31,7 +31,7 @@ namespace Model
   class DBClusterOptionGroupStatus
   {
   public:
-    AWS_NEPTUNE_API DBClusterOptionGroupStatus();
+    AWS_NEPTUNE_API DBClusterOptionGroupStatus() = default;
     AWS_NEPTUNE_API DBClusterOptionGroupStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_NEPTUNE_API DBClusterOptionGroupStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>Not supported by Neptune.</p>
      */
-    inline const Aws::String& GetDBClusterOptionGroupName() const{ return m_dBClusterOptionGroupName; }
+    inline const Aws::String& GetDBClusterOptionGroupName() const { return m_dBClusterOptionGroupName; }
     inline bool DBClusterOptionGroupNameHasBeenSet() const { return m_dBClusterOptionGroupNameHasBeenSet; }
-    inline void SetDBClusterOptionGroupName(const Aws::String& value) { m_dBClusterOptionGroupNameHasBeenSet = true; m_dBClusterOptionGroupName = value; }
-    inline void SetDBClusterOptionGroupName(Aws::String&& value) { m_dBClusterOptionGroupNameHasBeenSet = true; m_dBClusterOptionGroupName = std::move(value); }
-    inline void SetDBClusterOptionGroupName(const char* value) { m_dBClusterOptionGroupNameHasBeenSet = true; m_dBClusterOptionGroupName.assign(value); }
-    inline DBClusterOptionGroupStatus& WithDBClusterOptionGroupName(const Aws::String& value) { SetDBClusterOptionGroupName(value); return *this;}
-    inline DBClusterOptionGroupStatus& WithDBClusterOptionGroupName(Aws::String&& value) { SetDBClusterOptionGroupName(std::move(value)); return *this;}
-    inline DBClusterOptionGroupStatus& WithDBClusterOptionGroupName(const char* value) { SetDBClusterOptionGroupName(value); return *this;}
+    template<typename DBClusterOptionGroupNameT = Aws::String>
+    void SetDBClusterOptionGroupName(DBClusterOptionGroupNameT&& value) { m_dBClusterOptionGroupNameHasBeenSet = true; m_dBClusterOptionGroupName = std::forward<DBClusterOptionGroupNameT>(value); }
+    template<typename DBClusterOptionGroupNameT = Aws::String>
+    DBClusterOptionGroupStatus& WithDBClusterOptionGroupName(DBClusterOptionGroupNameT&& value) { SetDBClusterOptionGroupName(std::forward<DBClusterOptionGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Not supported by Neptune.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline DBClusterOptionGroupStatus& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline DBClusterOptionGroupStatus& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline DBClusterOptionGroupStatus& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    DBClusterOptionGroupStatus& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

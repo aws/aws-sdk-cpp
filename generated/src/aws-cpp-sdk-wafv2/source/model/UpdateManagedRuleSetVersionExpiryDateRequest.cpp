@@ -12,17 +12,6 @@ using namespace Aws::WAFV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateManagedRuleSetVersionExpiryDateRequest::UpdateManagedRuleSetVersionExpiryDateRequest() : 
-    m_nameHasBeenSet(false),
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lockTokenHasBeenSet(false),
-    m_versionToExpireHasBeenSet(false),
-    m_expiryTimestampHasBeenSet(false)
-{
-}
-
 Aws::String UpdateManagedRuleSetVersionExpiryDateRequest::SerializePayload() const
 {
   JsonValue payload;

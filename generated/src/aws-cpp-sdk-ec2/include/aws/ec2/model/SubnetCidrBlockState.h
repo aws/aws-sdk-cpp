@@ -32,7 +32,7 @@ namespace Model
   class SubnetCidrBlockState
   {
   public:
-    AWS_EC2_API SubnetCidrBlockState();
+    AWS_EC2_API SubnetCidrBlockState() = default;
     AWS_EC2_API SubnetCidrBlockState(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API SubnetCidrBlockState& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,30 +44,26 @@ namespace Model
     /**
      * <p>The state of a CIDR block.</p>
      */
-    inline const SubnetCidrBlockStateCode& GetState() const{ return m_state; }
+    inline SubnetCidrBlockStateCode GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const SubnetCidrBlockStateCode& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(SubnetCidrBlockStateCode&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline SubnetCidrBlockState& WithState(const SubnetCidrBlockStateCode& value) { SetState(value); return *this;}
-    inline SubnetCidrBlockState& WithState(SubnetCidrBlockStateCode&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(SubnetCidrBlockStateCode value) { m_stateHasBeenSet = true; m_state = value; }
+    inline SubnetCidrBlockState& WithState(SubnetCidrBlockStateCode value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message about the status of the CIDR block, if applicable.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline SubnetCidrBlockState& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline SubnetCidrBlockState& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline SubnetCidrBlockState& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    SubnetCidrBlockState& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
   private:
 
-    SubnetCidrBlockStateCode m_state;
+    SubnetCidrBlockStateCode m_state{SubnetCidrBlockStateCode::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::String m_statusMessage;

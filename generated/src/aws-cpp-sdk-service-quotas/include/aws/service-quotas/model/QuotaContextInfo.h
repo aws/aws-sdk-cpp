@@ -33,7 +33,7 @@ namespace Model
   class QuotaContextInfo
   {
   public:
-    AWS_SERVICEQUOTAS_API QuotaContextInfo();
+    AWS_SERVICEQUOTAS_API QuotaContextInfo() = default;
     AWS_SERVICEQUOTAS_API QuotaContextInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEQUOTAS_API QuotaContextInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEQUOTAS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p>Specifies whether the quota applies to an Amazon Web Services account, or to
      * a resource.</p>
      */
-    inline const QuotaContextScope& GetContextScope() const{ return m_contextScope; }
+    inline QuotaContextScope GetContextScope() const { return m_contextScope; }
     inline bool ContextScopeHasBeenSet() const { return m_contextScopeHasBeenSet; }
-    inline void SetContextScope(const QuotaContextScope& value) { m_contextScopeHasBeenSet = true; m_contextScope = value; }
-    inline void SetContextScope(QuotaContextScope&& value) { m_contextScopeHasBeenSet = true; m_contextScope = std::move(value); }
-    inline QuotaContextInfo& WithContextScope(const QuotaContextScope& value) { SetContextScope(value); return *this;}
-    inline QuotaContextInfo& WithContextScope(QuotaContextScope&& value) { SetContextScope(std::move(value)); return *this;}
+    inline void SetContextScope(QuotaContextScope value) { m_contextScopeHasBeenSet = true; m_contextScope = value; }
+    inline QuotaContextInfo& WithContextScope(QuotaContextScope value) { SetContextScope(value); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>When the <code>ContextScope</code> is <code>RESOURCE</code>, then this
      * specifies the resource type of the specified resource.</p>
      */
-    inline const Aws::String& GetContextScopeType() const{ return m_contextScopeType; }
+    inline const Aws::String& GetContextScopeType() const { return m_contextScopeType; }
     inline bool ContextScopeTypeHasBeenSet() const { return m_contextScopeTypeHasBeenSet; }
-    inline void SetContextScopeType(const Aws::String& value) { m_contextScopeTypeHasBeenSet = true; m_contextScopeType = value; }
-    inline void SetContextScopeType(Aws::String&& value) { m_contextScopeTypeHasBeenSet = true; m_contextScopeType = std::move(value); }
-    inline void SetContextScopeType(const char* value) { m_contextScopeTypeHasBeenSet = true; m_contextScopeType.assign(value); }
-    inline QuotaContextInfo& WithContextScopeType(const Aws::String& value) { SetContextScopeType(value); return *this;}
-    inline QuotaContextInfo& WithContextScopeType(Aws::String&& value) { SetContextScopeType(std::move(value)); return *this;}
-    inline QuotaContextInfo& WithContextScopeType(const char* value) { SetContextScopeType(value); return *this;}
+    template<typename ContextScopeTypeT = Aws::String>
+    void SetContextScopeType(ContextScopeTypeT&& value) { m_contextScopeTypeHasBeenSet = true; m_contextScopeType = std::forward<ContextScopeTypeT>(value); }
+    template<typename ContextScopeTypeT = Aws::String>
+    QuotaContextInfo& WithContextScopeType(ContextScopeTypeT&& value) { SetContextScopeType(std::forward<ContextScopeTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,18 +69,16 @@ namespace Model
      * applies. The value in this field depends on the context scope associated with
      * the specified service quota.</p>
      */
-    inline const Aws::String& GetContextId() const{ return m_contextId; }
+    inline const Aws::String& GetContextId() const { return m_contextId; }
     inline bool ContextIdHasBeenSet() const { return m_contextIdHasBeenSet; }
-    inline void SetContextId(const Aws::String& value) { m_contextIdHasBeenSet = true; m_contextId = value; }
-    inline void SetContextId(Aws::String&& value) { m_contextIdHasBeenSet = true; m_contextId = std::move(value); }
-    inline void SetContextId(const char* value) { m_contextIdHasBeenSet = true; m_contextId.assign(value); }
-    inline QuotaContextInfo& WithContextId(const Aws::String& value) { SetContextId(value); return *this;}
-    inline QuotaContextInfo& WithContextId(Aws::String&& value) { SetContextId(std::move(value)); return *this;}
-    inline QuotaContextInfo& WithContextId(const char* value) { SetContextId(value); return *this;}
+    template<typename ContextIdT = Aws::String>
+    void SetContextId(ContextIdT&& value) { m_contextIdHasBeenSet = true; m_contextId = std::forward<ContextIdT>(value); }
+    template<typename ContextIdT = Aws::String>
+    QuotaContextInfo& WithContextId(ContextIdT&& value) { SetContextId(std::forward<ContextIdT>(value)); return *this;}
     ///@}
   private:
 
-    QuotaContextScope m_contextScope;
+    QuotaContextScope m_contextScope{QuotaContextScope::NOT_SET};
     bool m_contextScopeHasBeenSet = false;
 
     Aws::String m_contextScopeType;

@@ -18,15 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-GroupCount::GroupCount() : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_groupKeyHasBeenSet(false)
-{
-}
-
 GroupCount::GroupCount(JsonView jsonValue)
-  : GroupCount()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GroupCount& GroupCount::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetInt64("count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groupKey"))
   {
     m_groupKey = jsonValue.GetString("groupKey");
-
     m_groupKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

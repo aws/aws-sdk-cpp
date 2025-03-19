@@ -12,14 +12,6 @@ using namespace Aws::ACMPCA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTagsRequest::ListTagsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_certificateAuthorityArnHasBeenSet(false)
-{
-}
-
 Aws::String ListTagsRequest::SerializePayload() const
 {
   JsonValue payload;

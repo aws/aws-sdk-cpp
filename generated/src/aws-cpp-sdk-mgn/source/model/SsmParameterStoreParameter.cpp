@@ -18,15 +18,7 @@ namespace mgn
 namespace Model
 {
 
-SsmParameterStoreParameter::SsmParameterStoreParameter() : 
-    m_parameterNameHasBeenSet(false),
-    m_parameterType(SsmParameterStoreParameterType::NOT_SET),
-    m_parameterTypeHasBeenSet(false)
-{
-}
-
 SsmParameterStoreParameter::SsmParameterStoreParameter(JsonView jsonValue)
-  : SsmParameterStoreParameter()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SsmParameterStoreParameter& SsmParameterStoreParameter::operator =(JsonView json
   if(jsonValue.ValueExists("parameterName"))
   {
     m_parameterName = jsonValue.GetString("parameterName");
-
     m_parameterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameterType"))
   {
     m_parameterType = SsmParameterStoreParameterTypeMapper::GetSsmParameterStoreParameterTypeForName(jsonValue.GetString("parameterType"));
-
     m_parameterTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

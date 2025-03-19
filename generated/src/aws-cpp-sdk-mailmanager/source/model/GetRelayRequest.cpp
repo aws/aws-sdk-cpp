@@ -12,11 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRelayRequest::GetRelayRequest() : 
-    m_relayIdHasBeenSet(false)
-{
-}
-
 Aws::String GetRelayRequest::SerializePayload() const
 {
   JsonValue payload;

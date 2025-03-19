@@ -20,22 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-DataShareAssociation::DataShareAssociation() : 
-    m_consumerIdentifierHasBeenSet(false),
-    m_status(DataShareStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_consumerRegionHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_statusChangeDateHasBeenSet(false),
-    m_producerAllowedWrites(false),
-    m_producerAllowedWritesHasBeenSet(false),
-    m_consumerAcceptedWrites(false),
-    m_consumerAcceptedWritesHasBeenSet(false)
-{
-}
-
 DataShareAssociation::DataShareAssociation(const XmlNode& xmlNode)
-  : DataShareAssociation()
 {
   *this = xmlNode;
 }
@@ -55,7 +40,7 @@ DataShareAssociation& DataShareAssociation::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = DataShareStatusMapper::GetDataShareStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = DataShareStatusMapper::GetDataShareStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode consumerRegionNode = resultNode.FirstChild("ConsumerRegion");

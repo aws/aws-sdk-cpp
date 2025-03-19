@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-ConditionExpression::ConditionExpression() : 
-    m_conditionHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_targetColumnHasBeenSet(false)
-{
-}
-
 ConditionExpression::ConditionExpression(JsonView jsonValue)
-  : ConditionExpression()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ConditionExpression& ConditionExpression::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Condition"))
   {
     m_condition = jsonValue.GetString("Condition");
-
     m_conditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetColumn"))
   {
     m_targetColumn = jsonValue.GetString("TargetColumn");
-
     m_targetColumnHasBeenSet = true;
   }
-
   return *this;
 }
 

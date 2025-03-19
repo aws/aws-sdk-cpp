@@ -18,19 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-Distribution::Distribution() : 
-    m_regionHasBeenSet(false),
-    m_amiDistributionConfigurationHasBeenSet(false),
-    m_containerDistributionConfigurationHasBeenSet(false),
-    m_licenseConfigurationArnsHasBeenSet(false),
-    m_launchTemplateConfigurationsHasBeenSet(false),
-    m_s3ExportConfigurationHasBeenSet(false),
-    m_fastLaunchConfigurationsHasBeenSet(false)
-{
-}
-
 Distribution::Distribution(JsonView jsonValue)
-  : Distribution()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ Distribution& Distribution::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("amiDistributionConfiguration"))
   {
     m_amiDistributionConfiguration = jsonValue.GetObject("amiDistributionConfiguration");
-
     m_amiDistributionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerDistributionConfiguration"))
   {
     m_containerDistributionConfiguration = jsonValue.GetObject("containerDistributionConfiguration");
-
     m_containerDistributionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("licenseConfigurationArns"))
   {
     Aws::Utils::Array<JsonView> licenseConfigurationArnsJsonList = jsonValue.GetArray("licenseConfigurationArns");
@@ -67,7 +49,6 @@ Distribution& Distribution::operator =(JsonView jsonValue)
     }
     m_licenseConfigurationArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("launchTemplateConfigurations"))
   {
     Aws::Utils::Array<JsonView> launchTemplateConfigurationsJsonList = jsonValue.GetArray("launchTemplateConfigurations");
@@ -77,14 +58,11 @@ Distribution& Distribution::operator =(JsonView jsonValue)
     }
     m_launchTemplateConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3ExportConfiguration"))
   {
     m_s3ExportConfiguration = jsonValue.GetObject("s3ExportConfiguration");
-
     m_s3ExportConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fastLaunchConfigurations"))
   {
     Aws::Utils::Array<JsonView> fastLaunchConfigurationsJsonList = jsonValue.GetArray("fastLaunchConfigurations");
@@ -94,7 +72,6 @@ Distribution& Distribution::operator =(JsonView jsonValue)
     }
     m_fastLaunchConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

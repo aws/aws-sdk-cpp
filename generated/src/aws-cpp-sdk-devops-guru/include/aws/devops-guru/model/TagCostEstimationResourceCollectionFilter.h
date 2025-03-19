@@ -40,7 +40,7 @@ namespace Model
   class TagCostEstimationResourceCollectionFilter
   {
   public:
-    AWS_DEVOPSGURU_API TagCostEstimationResourceCollectionFilter();
+    AWS_DEVOPSGURU_API TagCostEstimationResourceCollectionFilter() = default;
     AWS_DEVOPSGURU_API TagCostEstimationResourceCollectionFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API TagCostEstimationResourceCollectionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -64,14 +64,12 @@ namespace Model
      * <code>Devops-Guru-production-application/RDS</code> or
      * <code>Devops-Guru-production-application/containers</code>.</p> 
      */
-    inline const Aws::String& GetAppBoundaryKey() const{ return m_appBoundaryKey; }
+    inline const Aws::String& GetAppBoundaryKey() const { return m_appBoundaryKey; }
     inline bool AppBoundaryKeyHasBeenSet() const { return m_appBoundaryKeyHasBeenSet; }
-    inline void SetAppBoundaryKey(const Aws::String& value) { m_appBoundaryKeyHasBeenSet = true; m_appBoundaryKey = value; }
-    inline void SetAppBoundaryKey(Aws::String&& value) { m_appBoundaryKeyHasBeenSet = true; m_appBoundaryKey = std::move(value); }
-    inline void SetAppBoundaryKey(const char* value) { m_appBoundaryKeyHasBeenSet = true; m_appBoundaryKey.assign(value); }
-    inline TagCostEstimationResourceCollectionFilter& WithAppBoundaryKey(const Aws::String& value) { SetAppBoundaryKey(value); return *this;}
-    inline TagCostEstimationResourceCollectionFilter& WithAppBoundaryKey(Aws::String&& value) { SetAppBoundaryKey(std::move(value)); return *this;}
-    inline TagCostEstimationResourceCollectionFilter& WithAppBoundaryKey(const char* value) { SetAppBoundaryKey(value); return *this;}
+    template<typename AppBoundaryKeyT = Aws::String>
+    void SetAppBoundaryKey(AppBoundaryKeyT&& value) { m_appBoundaryKeyHasBeenSet = true; m_appBoundaryKey = std::forward<AppBoundaryKeyT>(value); }
+    template<typename AppBoundaryKeyT = Aws::String>
+    TagCostEstimationResourceCollectionFilter& WithAppBoundaryKey(AppBoundaryKeyT&& value) { SetAppBoundaryKey(std::forward<AppBoundaryKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,15 +82,14 @@ namespace Model
      * <i>keys</i>, tag <i>values</i> are case-sensitive. You can specify a maximum of
      * 256 characters for a tag value.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTagValues() const{ return m_tagValues; }
+    inline const Aws::Vector<Aws::String>& GetTagValues() const { return m_tagValues; }
     inline bool TagValuesHasBeenSet() const { return m_tagValuesHasBeenSet; }
-    inline void SetTagValues(const Aws::Vector<Aws::String>& value) { m_tagValuesHasBeenSet = true; m_tagValues = value; }
-    inline void SetTagValues(Aws::Vector<Aws::String>&& value) { m_tagValuesHasBeenSet = true; m_tagValues = std::move(value); }
-    inline TagCostEstimationResourceCollectionFilter& WithTagValues(const Aws::Vector<Aws::String>& value) { SetTagValues(value); return *this;}
-    inline TagCostEstimationResourceCollectionFilter& WithTagValues(Aws::Vector<Aws::String>&& value) { SetTagValues(std::move(value)); return *this;}
-    inline TagCostEstimationResourceCollectionFilter& AddTagValues(const Aws::String& value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(value); return *this; }
-    inline TagCostEstimationResourceCollectionFilter& AddTagValues(Aws::String&& value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(std::move(value)); return *this; }
-    inline TagCostEstimationResourceCollectionFilter& AddTagValues(const char* value) { m_tagValuesHasBeenSet = true; m_tagValues.push_back(value); return *this; }
+    template<typename TagValuesT = Aws::Vector<Aws::String>>
+    void SetTagValues(TagValuesT&& value) { m_tagValuesHasBeenSet = true; m_tagValues = std::forward<TagValuesT>(value); }
+    template<typename TagValuesT = Aws::Vector<Aws::String>>
+    TagCostEstimationResourceCollectionFilter& WithTagValues(TagValuesT&& value) { SetTagValues(std::forward<TagValuesT>(value)); return *this;}
+    template<typename TagValuesT = Aws::String>
+    TagCostEstimationResourceCollectionFilter& AddTagValues(TagValuesT&& value) { m_tagValuesHasBeenSet = true; m_tagValues.emplace_back(std::forward<TagValuesT>(value)); return *this; }
     ///@}
   private:
 

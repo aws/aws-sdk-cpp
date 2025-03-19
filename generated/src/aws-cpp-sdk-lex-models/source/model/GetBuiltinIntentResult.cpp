@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBuiltinIntentResult::GetBuiltinIntentResult()
-{
-}
-
 GetBuiltinIntentResult::GetBuiltinIntentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetBuiltinIntentResult& GetBuiltinIntentResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("signature"))
   {
     m_signature = jsonValue.GetString("signature");
-
+    m_signatureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportedLocales"))
   {
     Aws::Utils::Array<JsonView> supportedLocalesJsonList = jsonValue.GetArray("supportedLocales");
@@ -42,8 +37,8 @@ GetBuiltinIntentResult& GetBuiltinIntentResult::operator =(const Aws::AmazonWebS
     {
       m_supportedLocales.push_back(LocaleMapper::GetLocaleForName(supportedLocalesJsonList[supportedLocalesIndex].AsString()));
     }
+    m_supportedLocalesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slots"))
   {
     Aws::Utils::Array<JsonView> slotsJsonList = jsonValue.GetArray("slots");
@@ -51,14 +46,15 @@ GetBuiltinIntentResult& GetBuiltinIntentResult::operator =(const Aws::AmazonWebS
     {
       m_slots.push_back(slotsJsonList[slotsIndex].AsObject());
     }
+    m_slotsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

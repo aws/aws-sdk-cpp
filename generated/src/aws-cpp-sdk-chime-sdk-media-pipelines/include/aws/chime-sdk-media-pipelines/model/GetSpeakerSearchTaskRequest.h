@@ -21,7 +21,7 @@ namespace Model
   class GetSpeakerSearchTaskRequest : public ChimeSDKMediaPipelinesRequest
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API GetSpeakerSearchTaskRequest();
+    AWS_CHIMESDKMEDIAPIPELINES_API GetSpeakerSearchTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,28 +37,24 @@ namespace Model
      * <p>The unique identifier of the resource to be updated. Valid values include the
      * ID and ARN of the media insights pipeline.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline GetSpeakerSearchTaskRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline GetSpeakerSearchTaskRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline GetSpeakerSearchTaskRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    GetSpeakerSearchTaskRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the speaker search task.</p>
      */
-    inline const Aws::String& GetSpeakerSearchTaskId() const{ return m_speakerSearchTaskId; }
+    inline const Aws::String& GetSpeakerSearchTaskId() const { return m_speakerSearchTaskId; }
     inline bool SpeakerSearchTaskIdHasBeenSet() const { return m_speakerSearchTaskIdHasBeenSet; }
-    inline void SetSpeakerSearchTaskId(const Aws::String& value) { m_speakerSearchTaskIdHasBeenSet = true; m_speakerSearchTaskId = value; }
-    inline void SetSpeakerSearchTaskId(Aws::String&& value) { m_speakerSearchTaskIdHasBeenSet = true; m_speakerSearchTaskId = std::move(value); }
-    inline void SetSpeakerSearchTaskId(const char* value) { m_speakerSearchTaskIdHasBeenSet = true; m_speakerSearchTaskId.assign(value); }
-    inline GetSpeakerSearchTaskRequest& WithSpeakerSearchTaskId(const Aws::String& value) { SetSpeakerSearchTaskId(value); return *this;}
-    inline GetSpeakerSearchTaskRequest& WithSpeakerSearchTaskId(Aws::String&& value) { SetSpeakerSearchTaskId(std::move(value)); return *this;}
-    inline GetSpeakerSearchTaskRequest& WithSpeakerSearchTaskId(const char* value) { SetSpeakerSearchTaskId(value); return *this;}
+    template<typename SpeakerSearchTaskIdT = Aws::String>
+    void SetSpeakerSearchTaskId(SpeakerSearchTaskIdT&& value) { m_speakerSearchTaskIdHasBeenSet = true; m_speakerSearchTaskId = std::forward<SpeakerSearchTaskIdT>(value); }
+    template<typename SpeakerSearchTaskIdT = Aws::String>
+    GetSpeakerSearchTaskRequest& WithSpeakerSearchTaskId(SpeakerSearchTaskIdT&& value) { SetSpeakerSearchTaskId(std::forward<SpeakerSearchTaskIdT>(value)); return *this;}
     ///@}
   private:
 

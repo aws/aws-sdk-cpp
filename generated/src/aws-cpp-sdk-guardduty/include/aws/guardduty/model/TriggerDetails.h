@@ -31,7 +31,7 @@ namespace Model
   class TriggerDetails
   {
   public:
-    AWS_GUARDDUTY_API TriggerDetails();
+    AWS_GUARDDUTY_API TriggerDetails() = default;
     AWS_GUARDDUTY_API TriggerDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API TriggerDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The ID of the GuardDuty finding that triggered the malware scan.</p>
      */
-    inline const Aws::String& GetGuardDutyFindingId() const{ return m_guardDutyFindingId; }
+    inline const Aws::String& GetGuardDutyFindingId() const { return m_guardDutyFindingId; }
     inline bool GuardDutyFindingIdHasBeenSet() const { return m_guardDutyFindingIdHasBeenSet; }
-    inline void SetGuardDutyFindingId(const Aws::String& value) { m_guardDutyFindingIdHasBeenSet = true; m_guardDutyFindingId = value; }
-    inline void SetGuardDutyFindingId(Aws::String&& value) { m_guardDutyFindingIdHasBeenSet = true; m_guardDutyFindingId = std::move(value); }
-    inline void SetGuardDutyFindingId(const char* value) { m_guardDutyFindingIdHasBeenSet = true; m_guardDutyFindingId.assign(value); }
-    inline TriggerDetails& WithGuardDutyFindingId(const Aws::String& value) { SetGuardDutyFindingId(value); return *this;}
-    inline TriggerDetails& WithGuardDutyFindingId(Aws::String&& value) { SetGuardDutyFindingId(std::move(value)); return *this;}
-    inline TriggerDetails& WithGuardDutyFindingId(const char* value) { SetGuardDutyFindingId(value); return *this;}
+    template<typename GuardDutyFindingIdT = Aws::String>
+    void SetGuardDutyFindingId(GuardDutyFindingIdT&& value) { m_guardDutyFindingIdHasBeenSet = true; m_guardDutyFindingId = std::forward<GuardDutyFindingIdT>(value); }
+    template<typename GuardDutyFindingIdT = Aws::String>
+    TriggerDetails& WithGuardDutyFindingId(GuardDutyFindingIdT&& value) { SetGuardDutyFindingId(std::forward<GuardDutyFindingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the scan trigger.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline TriggerDetails& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline TriggerDetails& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline TriggerDetails& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    TriggerDetails& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 

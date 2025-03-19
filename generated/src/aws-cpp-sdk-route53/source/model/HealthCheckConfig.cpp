@@ -20,40 +20,7 @@ namespace Route53
 namespace Model
 {
 
-HealthCheckConfig::HealthCheckConfig() : 
-    m_iPAddressHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_type(HealthCheckType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_resourcePathHasBeenSet(false),
-    m_fullyQualifiedDomainNameHasBeenSet(false),
-    m_searchStringHasBeenSet(false),
-    m_requestInterval(0),
-    m_requestIntervalHasBeenSet(false),
-    m_failureThreshold(0),
-    m_failureThresholdHasBeenSet(false),
-    m_measureLatency(false),
-    m_measureLatencyHasBeenSet(false),
-    m_inverted(false),
-    m_invertedHasBeenSet(false),
-    m_disabled(false),
-    m_disabledHasBeenSet(false),
-    m_healthThreshold(0),
-    m_healthThresholdHasBeenSet(false),
-    m_childHealthChecksHasBeenSet(false),
-    m_enableSNI(false),
-    m_enableSNIHasBeenSet(false),
-    m_regionsHasBeenSet(false),
-    m_alarmIdentifierHasBeenSet(false),
-    m_insufficientDataHealthStatus(InsufficientDataHealthStatus::NOT_SET),
-    m_insufficientDataHealthStatusHasBeenSet(false),
-    m_routingControlArnHasBeenSet(false)
-{
-}
-
 HealthCheckConfig::HealthCheckConfig(const XmlNode& xmlNode)
-  : HealthCheckConfig()
 {
   *this = xmlNode;
 }
@@ -79,7 +46,7 @@ HealthCheckConfig& HealthCheckConfig::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = HealthCheckTypeMapper::GetHealthCheckTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = HealthCheckTypeMapper::GetHealthCheckTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode resourcePathNode = resultNode.FirstChild("ResourcePath");
@@ -140,6 +107,7 @@ HealthCheckConfig& HealthCheckConfig::operator =(const XmlNode& xmlNode)
     if(!childHealthChecksNode.IsNull())
     {
       XmlNode childHealthChecksMember = childHealthChecksNode.FirstChild("ChildHealthCheck");
+      m_childHealthChecksHasBeenSet = !childHealthChecksMember.IsNull();
       while(!childHealthChecksMember.IsNull())
       {
         m_childHealthChecks.push_back(childHealthChecksMember.GetText());
@@ -158,6 +126,7 @@ HealthCheckConfig& HealthCheckConfig::operator =(const XmlNode& xmlNode)
     if(!regionsNode.IsNull())
     {
       XmlNode regionsMember = regionsNode.FirstChild("Region");
+      m_regionsHasBeenSet = !regionsMember.IsNull();
       while(!regionsMember.IsNull())
       {
         m_regions.push_back(HealthCheckRegionMapper::GetHealthCheckRegionForName(StringUtils::Trim(regionsMember.GetText().c_str())));
@@ -175,7 +144,7 @@ HealthCheckConfig& HealthCheckConfig::operator =(const XmlNode& xmlNode)
     XmlNode insufficientDataHealthStatusNode = resultNode.FirstChild("InsufficientDataHealthStatus");
     if(!insufficientDataHealthStatusNode.IsNull())
     {
-      m_insufficientDataHealthStatus = InsufficientDataHealthStatusMapper::GetInsufficientDataHealthStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(insufficientDataHealthStatusNode.GetText()).c_str()).c_str());
+      m_insufficientDataHealthStatus = InsufficientDataHealthStatusMapper::GetInsufficientDataHealthStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(insufficientDataHealthStatusNode.GetText()).c_str()));
       m_insufficientDataHealthStatusHasBeenSet = true;
     }
     XmlNode routingControlArnNode = resultNode.FirstChild("RoutingControlArn");

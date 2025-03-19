@@ -33,7 +33,7 @@ namespace Model
   class ExecutionTrigger
   {
   public:
-    AWS_CODEPIPELINE_API ExecutionTrigger();
+    AWS_CODEPIPELINE_API ExecutionTrigger() = default;
     AWS_CODEPIPELINE_API ExecutionTrigger(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API ExecutionTrigger& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p>The type of change-detection method, command, or user interaction that
      * started a pipeline execution.</p>
      */
-    inline const TriggerType& GetTriggerType() const{ return m_triggerType; }
+    inline TriggerType GetTriggerType() const { return m_triggerType; }
     inline bool TriggerTypeHasBeenSet() const { return m_triggerTypeHasBeenSet; }
-    inline void SetTriggerType(const TriggerType& value) { m_triggerTypeHasBeenSet = true; m_triggerType = value; }
-    inline void SetTriggerType(TriggerType&& value) { m_triggerTypeHasBeenSet = true; m_triggerType = std::move(value); }
-    inline ExecutionTrigger& WithTriggerType(const TriggerType& value) { SetTriggerType(value); return *this;}
-    inline ExecutionTrigger& WithTriggerType(TriggerType&& value) { SetTriggerType(std::move(value)); return *this;}
+    inline void SetTriggerType(TriggerType value) { m_triggerTypeHasBeenSet = true; m_triggerType = value; }
+    inline ExecutionTrigger& WithTriggerType(TriggerType value) { SetTriggerType(value); return *this;}
     ///@}
 
     ///@{
@@ -58,18 +56,16 @@ namespace Model
      * webhook ARN of the webhook that triggered the pipeline execution or the user ARN
      * for a user-initiated <code>start-pipeline-execution</code> CLI command.</p>
      */
-    inline const Aws::String& GetTriggerDetail() const{ return m_triggerDetail; }
+    inline const Aws::String& GetTriggerDetail() const { return m_triggerDetail; }
     inline bool TriggerDetailHasBeenSet() const { return m_triggerDetailHasBeenSet; }
-    inline void SetTriggerDetail(const Aws::String& value) { m_triggerDetailHasBeenSet = true; m_triggerDetail = value; }
-    inline void SetTriggerDetail(Aws::String&& value) { m_triggerDetailHasBeenSet = true; m_triggerDetail = std::move(value); }
-    inline void SetTriggerDetail(const char* value) { m_triggerDetailHasBeenSet = true; m_triggerDetail.assign(value); }
-    inline ExecutionTrigger& WithTriggerDetail(const Aws::String& value) { SetTriggerDetail(value); return *this;}
-    inline ExecutionTrigger& WithTriggerDetail(Aws::String&& value) { SetTriggerDetail(std::move(value)); return *this;}
-    inline ExecutionTrigger& WithTriggerDetail(const char* value) { SetTriggerDetail(value); return *this;}
+    template<typename TriggerDetailT = Aws::String>
+    void SetTriggerDetail(TriggerDetailT&& value) { m_triggerDetailHasBeenSet = true; m_triggerDetail = std::forward<TriggerDetailT>(value); }
+    template<typename TriggerDetailT = Aws::String>
+    ExecutionTrigger& WithTriggerDetail(TriggerDetailT&& value) { SetTriggerDetail(std::forward<TriggerDetailT>(value)); return *this;}
     ///@}
   private:
 
-    TriggerType m_triggerType;
+    TriggerType m_triggerType{TriggerType::NOT_SET};
     bool m_triggerTypeHasBeenSet = false;
 
     Aws::String m_triggerDetail;

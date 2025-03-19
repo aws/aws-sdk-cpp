@@ -27,7 +27,7 @@ namespace Model
   class CreateMetricAttributionResult
   {
   public:
-    AWS_PERSONALIZE_API CreateMetricAttributionResult();
+    AWS_PERSONALIZE_API CreateMetricAttributionResult() = default;
     AWS_PERSONALIZE_API CreateMetricAttributionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PERSONALIZE_API CreateMetricAttributionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the new metric attribution.</p>
      */
-    inline const Aws::String& GetMetricAttributionArn() const{ return m_metricAttributionArn; }
-    inline void SetMetricAttributionArn(const Aws::String& value) { m_metricAttributionArn = value; }
-    inline void SetMetricAttributionArn(Aws::String&& value) { m_metricAttributionArn = std::move(value); }
-    inline void SetMetricAttributionArn(const char* value) { m_metricAttributionArn.assign(value); }
-    inline CreateMetricAttributionResult& WithMetricAttributionArn(const Aws::String& value) { SetMetricAttributionArn(value); return *this;}
-    inline CreateMetricAttributionResult& WithMetricAttributionArn(Aws::String&& value) { SetMetricAttributionArn(std::move(value)); return *this;}
-    inline CreateMetricAttributionResult& WithMetricAttributionArn(const char* value) { SetMetricAttributionArn(value); return *this;}
+    inline const Aws::String& GetMetricAttributionArn() const { return m_metricAttributionArn; }
+    template<typename MetricAttributionArnT = Aws::String>
+    void SetMetricAttributionArn(MetricAttributionArnT&& value) { m_metricAttributionArnHasBeenSet = true; m_metricAttributionArn = std::forward<MetricAttributionArnT>(value); }
+    template<typename MetricAttributionArnT = Aws::String>
+    CreateMetricAttributionResult& WithMetricAttributionArn(MetricAttributionArnT&& value) { SetMetricAttributionArn(std::forward<MetricAttributionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateMetricAttributionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateMetricAttributionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateMetricAttributionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateMetricAttributionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_metricAttributionArn;
+    bool m_metricAttributionArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

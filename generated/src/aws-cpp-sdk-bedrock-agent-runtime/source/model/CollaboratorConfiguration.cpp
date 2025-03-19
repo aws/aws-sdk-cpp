@@ -18,17 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-CollaboratorConfiguration::CollaboratorConfiguration() : 
-    m_agentAliasArnHasBeenSet(false),
-    m_collaboratorInstructionHasBeenSet(false),
-    m_collaboratorNameHasBeenSet(false),
-    m_relayConversationHistory(RelayConversationHistory::NOT_SET),
-    m_relayConversationHistoryHasBeenSet(false)
-{
-}
-
 CollaboratorConfiguration::CollaboratorConfiguration(JsonView jsonValue)
-  : CollaboratorConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ CollaboratorConfiguration& CollaboratorConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("agentAliasArn"))
   {
     m_agentAliasArn = jsonValue.GetString("agentAliasArn");
-
     m_agentAliasArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collaboratorInstruction"))
   {
     m_collaboratorInstruction = jsonValue.GetString("collaboratorInstruction");
-
     m_collaboratorInstructionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collaboratorName"))
   {
     m_collaboratorName = jsonValue.GetString("collaboratorName");
-
     m_collaboratorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relayConversationHistory"))
   {
     m_relayConversationHistory = RelayConversationHistoryMapper::GetRelayConversationHistoryForName(jsonValue.GetString("relayConversationHistory"));
-
     m_relayConversationHistoryHasBeenSet = true;
   }
-
   return *this;
 }
 

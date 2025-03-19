@@ -35,7 +35,7 @@ namespace Model
   class PredictionExplanations
   {
   public:
-    AWS_FRAUDDETECTOR_API PredictionExplanations();
+    AWS_FRAUDDETECTOR_API PredictionExplanations() = default;
     AWS_FRAUDDETECTOR_API PredictionExplanations(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API PredictionExplanations& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
     /**
      * <p> The details of the event variable's impact on the prediction score. </p>
      */
-    inline const Aws::Vector<VariableImpactExplanation>& GetVariableImpactExplanations() const{ return m_variableImpactExplanations; }
+    inline const Aws::Vector<VariableImpactExplanation>& GetVariableImpactExplanations() const { return m_variableImpactExplanations; }
     inline bool VariableImpactExplanationsHasBeenSet() const { return m_variableImpactExplanationsHasBeenSet; }
-    inline void SetVariableImpactExplanations(const Aws::Vector<VariableImpactExplanation>& value) { m_variableImpactExplanationsHasBeenSet = true; m_variableImpactExplanations = value; }
-    inline void SetVariableImpactExplanations(Aws::Vector<VariableImpactExplanation>&& value) { m_variableImpactExplanationsHasBeenSet = true; m_variableImpactExplanations = std::move(value); }
-    inline PredictionExplanations& WithVariableImpactExplanations(const Aws::Vector<VariableImpactExplanation>& value) { SetVariableImpactExplanations(value); return *this;}
-    inline PredictionExplanations& WithVariableImpactExplanations(Aws::Vector<VariableImpactExplanation>&& value) { SetVariableImpactExplanations(std::move(value)); return *this;}
-    inline PredictionExplanations& AddVariableImpactExplanations(const VariableImpactExplanation& value) { m_variableImpactExplanationsHasBeenSet = true; m_variableImpactExplanations.push_back(value); return *this; }
-    inline PredictionExplanations& AddVariableImpactExplanations(VariableImpactExplanation&& value) { m_variableImpactExplanationsHasBeenSet = true; m_variableImpactExplanations.push_back(std::move(value)); return *this; }
+    template<typename VariableImpactExplanationsT = Aws::Vector<VariableImpactExplanation>>
+    void SetVariableImpactExplanations(VariableImpactExplanationsT&& value) { m_variableImpactExplanationsHasBeenSet = true; m_variableImpactExplanations = std::forward<VariableImpactExplanationsT>(value); }
+    template<typename VariableImpactExplanationsT = Aws::Vector<VariableImpactExplanation>>
+    PredictionExplanations& WithVariableImpactExplanations(VariableImpactExplanationsT&& value) { SetVariableImpactExplanations(std::forward<VariableImpactExplanationsT>(value)); return *this;}
+    template<typename VariableImpactExplanationsT = VariableImpactExplanation>
+    PredictionExplanations& AddVariableImpactExplanations(VariableImpactExplanationsT&& value) { m_variableImpactExplanationsHasBeenSet = true; m_variableImpactExplanations.emplace_back(std::forward<VariableImpactExplanationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -65,14 +65,14 @@ namespace Model
      * In this case, event variables used to derive the aggregated variables are
      * <code>IP address</code> and <code>user</code>.</p>
      */
-    inline const Aws::Vector<AggregatedVariablesImpactExplanation>& GetAggregatedVariablesImpactExplanations() const{ return m_aggregatedVariablesImpactExplanations; }
+    inline const Aws::Vector<AggregatedVariablesImpactExplanation>& GetAggregatedVariablesImpactExplanations() const { return m_aggregatedVariablesImpactExplanations; }
     inline bool AggregatedVariablesImpactExplanationsHasBeenSet() const { return m_aggregatedVariablesImpactExplanationsHasBeenSet; }
-    inline void SetAggregatedVariablesImpactExplanations(const Aws::Vector<AggregatedVariablesImpactExplanation>& value) { m_aggregatedVariablesImpactExplanationsHasBeenSet = true; m_aggregatedVariablesImpactExplanations = value; }
-    inline void SetAggregatedVariablesImpactExplanations(Aws::Vector<AggregatedVariablesImpactExplanation>&& value) { m_aggregatedVariablesImpactExplanationsHasBeenSet = true; m_aggregatedVariablesImpactExplanations = std::move(value); }
-    inline PredictionExplanations& WithAggregatedVariablesImpactExplanations(const Aws::Vector<AggregatedVariablesImpactExplanation>& value) { SetAggregatedVariablesImpactExplanations(value); return *this;}
-    inline PredictionExplanations& WithAggregatedVariablesImpactExplanations(Aws::Vector<AggregatedVariablesImpactExplanation>&& value) { SetAggregatedVariablesImpactExplanations(std::move(value)); return *this;}
-    inline PredictionExplanations& AddAggregatedVariablesImpactExplanations(const AggregatedVariablesImpactExplanation& value) { m_aggregatedVariablesImpactExplanationsHasBeenSet = true; m_aggregatedVariablesImpactExplanations.push_back(value); return *this; }
-    inline PredictionExplanations& AddAggregatedVariablesImpactExplanations(AggregatedVariablesImpactExplanation&& value) { m_aggregatedVariablesImpactExplanationsHasBeenSet = true; m_aggregatedVariablesImpactExplanations.push_back(std::move(value)); return *this; }
+    template<typename AggregatedVariablesImpactExplanationsT = Aws::Vector<AggregatedVariablesImpactExplanation>>
+    void SetAggregatedVariablesImpactExplanations(AggregatedVariablesImpactExplanationsT&& value) { m_aggregatedVariablesImpactExplanationsHasBeenSet = true; m_aggregatedVariablesImpactExplanations = std::forward<AggregatedVariablesImpactExplanationsT>(value); }
+    template<typename AggregatedVariablesImpactExplanationsT = Aws::Vector<AggregatedVariablesImpactExplanation>>
+    PredictionExplanations& WithAggregatedVariablesImpactExplanations(AggregatedVariablesImpactExplanationsT&& value) { SetAggregatedVariablesImpactExplanations(std::forward<AggregatedVariablesImpactExplanationsT>(value)); return *this;}
+    template<typename AggregatedVariablesImpactExplanationsT = AggregatedVariablesImpactExplanation>
+    PredictionExplanations& AddAggregatedVariablesImpactExplanations(AggregatedVariablesImpactExplanationsT&& value) { m_aggregatedVariablesImpactExplanationsHasBeenSet = true; m_aggregatedVariablesImpactExplanations.emplace_back(std::forward<AggregatedVariablesImpactExplanationsT>(value)); return *this; }
     ///@}
   private:
 

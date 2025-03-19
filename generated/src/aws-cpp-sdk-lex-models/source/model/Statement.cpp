@@ -18,14 +18,7 @@ namespace LexModelBuildingService
 namespace Model
 {
 
-Statement::Statement() : 
-    m_messagesHasBeenSet(false),
-    m_responseCardHasBeenSet(false)
-{
-}
-
 Statement::Statement(JsonView jsonValue)
-  : Statement()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ Statement& Statement::operator =(JsonView jsonValue)
     }
     m_messagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseCard"))
   {
     m_responseCard = jsonValue.GetString("responseCard");
-
     m_responseCardHasBeenSet = true;
   }
-
   return *this;
 }
 

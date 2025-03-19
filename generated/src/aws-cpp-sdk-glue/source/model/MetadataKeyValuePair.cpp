@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-MetadataKeyValuePair::MetadataKeyValuePair() : 
-    m_metadataKeyHasBeenSet(false),
-    m_metadataValueHasBeenSet(false)
-{
-}
-
 MetadataKeyValuePair::MetadataKeyValuePair(JsonView jsonValue)
-  : MetadataKeyValuePair()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MetadataKeyValuePair& MetadataKeyValuePair::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MetadataKey"))
   {
     m_metadataKey = jsonValue.GetString("MetadataKey");
-
     m_metadataKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetadataValue"))
   {
     m_metadataValue = jsonValue.GetString("MetadataValue");
-
     m_metadataValueHasBeenSet = true;
   }
-
   return *this;
 }
 

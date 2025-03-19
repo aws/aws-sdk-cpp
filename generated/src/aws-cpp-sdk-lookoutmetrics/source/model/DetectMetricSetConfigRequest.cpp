@@ -12,12 +12,6 @@ using namespace Aws::LookoutMetrics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetectMetricSetConfigRequest::DetectMetricSetConfigRequest() : 
-    m_anomalyDetectorArnHasBeenSet(false),
-    m_autoDetectionMetricSourceHasBeenSet(false)
-{
-}
-
 Aws::String DetectMetricSetConfigRequest::SerializePayload() const
 {
   JsonValue payload;

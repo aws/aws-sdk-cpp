@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeOrganizationConfigurationResult::DescribeOrganizationConfigurationResult() : 
-    m_maxAccountLimitReached(false)
-{
-}
-
 DescribeOrganizationConfigurationResult::DescribeOrganizationConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeOrganizationConfigurationResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ DescribeOrganizationConfigurationResult& DescribeOrganizationConfigurationResult
   if(jsonValue.ValueExists("autoEnable"))
   {
     m_autoEnable = jsonValue.GetObject("autoEnable");
-
+    m_autoEnableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxAccountLimitReached"))
   {
     m_maxAccountLimitReached = jsonValue.GetBool("maxAccountLimitReached");
-
+    m_maxAccountLimitReachedHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

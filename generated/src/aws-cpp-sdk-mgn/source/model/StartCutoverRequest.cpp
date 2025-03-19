@@ -12,13 +12,6 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartCutoverRequest::StartCutoverRequest() : 
-    m_accountIDHasBeenSet(false),
-    m_sourceServerIDsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartCutoverRequest::SerializePayload() const
 {
   JsonValue payload;

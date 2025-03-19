@@ -24,7 +24,7 @@ namespace Model
   class UnsubscribeRequest : public SNSRequest
   {
   public:
-    AWS_SNS_API UnsubscribeRequest();
+    AWS_SNS_API UnsubscribeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The ARN of the subscription to be deleted.</p>
      */
-    inline const Aws::String& GetSubscriptionArn() const{ return m_subscriptionArn; }
+    inline const Aws::String& GetSubscriptionArn() const { return m_subscriptionArn; }
     inline bool SubscriptionArnHasBeenSet() const { return m_subscriptionArnHasBeenSet; }
-    inline void SetSubscriptionArn(const Aws::String& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = value; }
-    inline void SetSubscriptionArn(Aws::String&& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = std::move(value); }
-    inline void SetSubscriptionArn(const char* value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn.assign(value); }
-    inline UnsubscribeRequest& WithSubscriptionArn(const Aws::String& value) { SetSubscriptionArn(value); return *this;}
-    inline UnsubscribeRequest& WithSubscriptionArn(Aws::String&& value) { SetSubscriptionArn(std::move(value)); return *this;}
-    inline UnsubscribeRequest& WithSubscriptionArn(const char* value) { SetSubscriptionArn(value); return *this;}
+    template<typename SubscriptionArnT = Aws::String>
+    void SetSubscriptionArn(SubscriptionArnT&& value) { m_subscriptionArnHasBeenSet = true; m_subscriptionArn = std::forward<SubscriptionArnT>(value); }
+    template<typename SubscriptionArnT = Aws::String>
+    UnsubscribeRequest& WithSubscriptionArn(SubscriptionArnT&& value) { SetSubscriptionArn(std::forward<SubscriptionArnT>(value)); return *this;}
     ///@}
   private:
 

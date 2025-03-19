@@ -29,7 +29,7 @@ namespace Model
   class GetConsoleOutputResponse
   {
   public:
-    AWS_EC2_API GetConsoleOutputResponse();
+    AWS_EC2_API GetConsoleOutputResponse() = default;
     AWS_EC2_API GetConsoleOutputResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API GetConsoleOutputResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,24 +38,22 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceId.assign(value); }
-    inline GetConsoleOutputResponse& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline GetConsoleOutputResponse& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline GetConsoleOutputResponse& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    GetConsoleOutputResponse& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the output was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestamp = std::move(value); }
-    inline GetConsoleOutputResponse& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline GetConsoleOutputResponse& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    GetConsoleOutputResponse& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,32 +61,34 @@ namespace Model
      * <p>The console output, base64-encoded. If you are using a command line tool, the
      * tool decodes the output for you.</p>
      */
-    inline const Aws::String& GetOutput() const{ return m_output; }
-    inline void SetOutput(const Aws::String& value) { m_output = value; }
-    inline void SetOutput(Aws::String&& value) { m_output = std::move(value); }
-    inline void SetOutput(const char* value) { m_output.assign(value); }
-    inline GetConsoleOutputResponse& WithOutput(const Aws::String& value) { SetOutput(value); return *this;}
-    inline GetConsoleOutputResponse& WithOutput(Aws::String&& value) { SetOutput(std::move(value)); return *this;}
-    inline GetConsoleOutputResponse& WithOutput(const char* value) { SetOutput(value); return *this;}
+    inline const Aws::String& GetOutput() const { return m_output; }
+    template<typename OutputT = Aws::String>
+    void SetOutput(OutputT&& value) { m_outputHasBeenSet = true; m_output = std::forward<OutputT>(value); }
+    template<typename OutputT = Aws::String>
+    GetConsoleOutputResponse& WithOutput(OutputT&& value) { SetOutput(std::forward<OutputT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetConsoleOutputResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetConsoleOutputResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetConsoleOutputResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
+    bool m_timestampHasBeenSet = false;
 
     Aws::String m_output;
+    bool m_outputHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

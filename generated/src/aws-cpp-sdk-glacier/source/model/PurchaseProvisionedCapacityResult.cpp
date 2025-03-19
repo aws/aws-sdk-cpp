@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PurchaseProvisionedCapacityResult::PurchaseProvisionedCapacityResult()
-{
-}
-
 PurchaseProvisionedCapacityResult::PurchaseProvisionedCapacityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -35,12 +31,14 @@ PurchaseProvisionedCapacityResult& PurchaseProvisionedCapacityResult::operator =
   if(capacityIdIter != headers.end())
   {
     m_capacityId = capacityIdIter->second;
+    m_capacityIdHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

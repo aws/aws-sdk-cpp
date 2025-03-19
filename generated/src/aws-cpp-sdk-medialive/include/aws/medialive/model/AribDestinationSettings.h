@@ -29,7 +29,7 @@ namespace Model
   class AribDestinationSettings
   {
   public:
-    AWS_MEDIALIVE_API AribDestinationSettings();
+    AWS_MEDIALIVE_API AribDestinationSettings() = default;
     AWS_MEDIALIVE_API AribDestinationSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API AribDestinationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;

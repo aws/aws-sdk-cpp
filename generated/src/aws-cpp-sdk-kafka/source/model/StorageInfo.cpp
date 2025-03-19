@@ -18,13 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-StorageInfo::StorageInfo() : 
-    m_ebsStorageInfoHasBeenSet(false)
-{
-}
-
 StorageInfo::StorageInfo(JsonView jsonValue)
-  : StorageInfo()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ StorageInfo& StorageInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ebsStorageInfo"))
   {
     m_ebsStorageInfo = jsonValue.GetObject("ebsStorageInfo");
-
     m_ebsStorageInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class BatchPutScheduledUpdateGroupActionResult
   {
   public:
-    AWS_AUTOSCALING_API BatchPutScheduledUpdateGroupActionResult();
+    AWS_AUTOSCALING_API BatchPutScheduledUpdateGroupActionResult() = default;
     AWS_AUTOSCALING_API BatchPutScheduledUpdateGroupActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_AUTOSCALING_API BatchPutScheduledUpdateGroupActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,28 +39,30 @@ namespace Model
      * <p>The names of the scheduled actions that could not be created or updated,
      * including an error message.</p>
      */
-    inline const Aws::Vector<FailedScheduledUpdateGroupActionRequest>& GetFailedScheduledUpdateGroupActions() const{ return m_failedScheduledUpdateGroupActions; }
-    inline void SetFailedScheduledUpdateGroupActions(const Aws::Vector<FailedScheduledUpdateGroupActionRequest>& value) { m_failedScheduledUpdateGroupActions = value; }
-    inline void SetFailedScheduledUpdateGroupActions(Aws::Vector<FailedScheduledUpdateGroupActionRequest>&& value) { m_failedScheduledUpdateGroupActions = std::move(value); }
-    inline BatchPutScheduledUpdateGroupActionResult& WithFailedScheduledUpdateGroupActions(const Aws::Vector<FailedScheduledUpdateGroupActionRequest>& value) { SetFailedScheduledUpdateGroupActions(value); return *this;}
-    inline BatchPutScheduledUpdateGroupActionResult& WithFailedScheduledUpdateGroupActions(Aws::Vector<FailedScheduledUpdateGroupActionRequest>&& value) { SetFailedScheduledUpdateGroupActions(std::move(value)); return *this;}
-    inline BatchPutScheduledUpdateGroupActionResult& AddFailedScheduledUpdateGroupActions(const FailedScheduledUpdateGroupActionRequest& value) { m_failedScheduledUpdateGroupActions.push_back(value); return *this; }
-    inline BatchPutScheduledUpdateGroupActionResult& AddFailedScheduledUpdateGroupActions(FailedScheduledUpdateGroupActionRequest&& value) { m_failedScheduledUpdateGroupActions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FailedScheduledUpdateGroupActionRequest>& GetFailedScheduledUpdateGroupActions() const { return m_failedScheduledUpdateGroupActions; }
+    template<typename FailedScheduledUpdateGroupActionsT = Aws::Vector<FailedScheduledUpdateGroupActionRequest>>
+    void SetFailedScheduledUpdateGroupActions(FailedScheduledUpdateGroupActionsT&& value) { m_failedScheduledUpdateGroupActionsHasBeenSet = true; m_failedScheduledUpdateGroupActions = std::forward<FailedScheduledUpdateGroupActionsT>(value); }
+    template<typename FailedScheduledUpdateGroupActionsT = Aws::Vector<FailedScheduledUpdateGroupActionRequest>>
+    BatchPutScheduledUpdateGroupActionResult& WithFailedScheduledUpdateGroupActions(FailedScheduledUpdateGroupActionsT&& value) { SetFailedScheduledUpdateGroupActions(std::forward<FailedScheduledUpdateGroupActionsT>(value)); return *this;}
+    template<typename FailedScheduledUpdateGroupActionsT = FailedScheduledUpdateGroupActionRequest>
+    BatchPutScheduledUpdateGroupActionResult& AddFailedScheduledUpdateGroupActions(FailedScheduledUpdateGroupActionsT&& value) { m_failedScheduledUpdateGroupActionsHasBeenSet = true; m_failedScheduledUpdateGroupActions.emplace_back(std::forward<FailedScheduledUpdateGroupActionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline BatchPutScheduledUpdateGroupActionResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline BatchPutScheduledUpdateGroupActionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    BatchPutScheduledUpdateGroupActionResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FailedScheduledUpdateGroupActionRequest> m_failedScheduledUpdateGroupActions;
+    bool m_failedScheduledUpdateGroupActionsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

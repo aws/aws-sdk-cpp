@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails() : 
-    m_ipv6AddressHasBeenSet(false)
-{
-}
-
 AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails::AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails(JsonView jsonValue)
-  : AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsEc2LaunchTemplateDataNetworkInterfaceSetIpv6AddressesDetails& AwsEc2LaunchTem
   if(jsonValue.ValueExists("Ipv6Address"))
   {
     m_ipv6Address = jsonValue.GetString("Ipv6Address");
-
     m_ipv6AddressHasBeenSet = true;
   }
-
   return *this;
 }
 

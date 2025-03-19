@@ -34,35 +34,35 @@ namespace Model
   class DeleteAppResult
   {
   public:
-    AWS_AMPLIFY_API DeleteAppResult();
+    AWS_AMPLIFY_API DeleteAppResult() = default;
     AWS_AMPLIFY_API DeleteAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AMPLIFY_API DeleteAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const App& GetApp() const{ return m_app; }
-    inline void SetApp(const App& value) { m_app = value; }
-    inline void SetApp(App&& value) { m_app = std::move(value); }
-    inline DeleteAppResult& WithApp(const App& value) { SetApp(value); return *this;}
-    inline DeleteAppResult& WithApp(App&& value) { SetApp(std::move(value)); return *this;}
+    inline const App& GetApp() const { return m_app; }
+    template<typename AppT = App>
+    void SetApp(AppT&& value) { m_appHasBeenSet = true; m_app = std::forward<AppT>(value); }
+    template<typename AppT = App>
+    DeleteAppResult& WithApp(AppT&& value) { SetApp(std::forward<AppT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteAppResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteAppResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteAppResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteAppResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     App m_app;
+    bool m_appHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

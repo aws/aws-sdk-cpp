@@ -32,7 +32,7 @@ namespace Model
   class Country
   {
   public:
-    AWS_GUARDDUTY_API Country();
+    AWS_GUARDDUTY_API Country() = default;
     AWS_GUARDDUTY_API Country(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Country& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The country code of the remote IP address.</p>
      */
-    inline const Aws::String& GetCountryCode() const{ return m_countryCode; }
+    inline const Aws::String& GetCountryCode() const { return m_countryCode; }
     inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
-    inline void SetCountryCode(const Aws::String& value) { m_countryCodeHasBeenSet = true; m_countryCode = value; }
-    inline void SetCountryCode(Aws::String&& value) { m_countryCodeHasBeenSet = true; m_countryCode = std::move(value); }
-    inline void SetCountryCode(const char* value) { m_countryCodeHasBeenSet = true; m_countryCode.assign(value); }
-    inline Country& WithCountryCode(const Aws::String& value) { SetCountryCode(value); return *this;}
-    inline Country& WithCountryCode(Aws::String&& value) { SetCountryCode(std::move(value)); return *this;}
-    inline Country& WithCountryCode(const char* value) { SetCountryCode(value); return *this;}
+    template<typename CountryCodeT = Aws::String>
+    void SetCountryCode(CountryCodeT&& value) { m_countryCodeHasBeenSet = true; m_countryCode = std::forward<CountryCodeT>(value); }
+    template<typename CountryCodeT = Aws::String>
+    Country& WithCountryCode(CountryCodeT&& value) { SetCountryCode(std::forward<CountryCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The country name of the remote IP address.</p>
      */
-    inline const Aws::String& GetCountryName() const{ return m_countryName; }
+    inline const Aws::String& GetCountryName() const { return m_countryName; }
     inline bool CountryNameHasBeenSet() const { return m_countryNameHasBeenSet; }
-    inline void SetCountryName(const Aws::String& value) { m_countryNameHasBeenSet = true; m_countryName = value; }
-    inline void SetCountryName(Aws::String&& value) { m_countryNameHasBeenSet = true; m_countryName = std::move(value); }
-    inline void SetCountryName(const char* value) { m_countryNameHasBeenSet = true; m_countryName.assign(value); }
-    inline Country& WithCountryName(const Aws::String& value) { SetCountryName(value); return *this;}
-    inline Country& WithCountryName(Aws::String&& value) { SetCountryName(std::move(value)); return *this;}
-    inline Country& WithCountryName(const char* value) { SetCountryName(value); return *this;}
+    template<typename CountryNameT = Aws::String>
+    void SetCountryName(CountryNameT&& value) { m_countryNameHasBeenSet = true; m_countryName = std::forward<CountryNameT>(value); }
+    template<typename CountryNameT = Aws::String>
+    Country& WithCountryName(CountryNameT&& value) { SetCountryName(std::forward<CountryNameT>(value)); return *this;}
     ///@}
   private:
 

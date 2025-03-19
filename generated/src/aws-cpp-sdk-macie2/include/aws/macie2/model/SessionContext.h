@@ -34,7 +34,7 @@ namespace Model
   class SessionContext
   {
   public:
-    AWS_MACIE2_API SessionContext();
+    AWS_MACIE2_API SessionContext() = default;
     AWS_MACIE2_API SessionContext(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API SessionContext& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,24 +46,24 @@ namespace Model
      * credentials were authenticated with a multi-factor authentication (MFA)
      * device.</p>
      */
-    inline const SessionContextAttributes& GetAttributes() const{ return m_attributes; }
+    inline const SessionContextAttributes& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const SessionContextAttributes& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(SessionContextAttributes&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline SessionContext& WithAttributes(const SessionContextAttributes& value) { SetAttributes(value); return *this;}
-    inline SessionContext& WithAttributes(SessionContextAttributes&& value) { SetAttributes(std::move(value)); return *this;}
+    template<typename AttributesT = SessionContextAttributes>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = SessionContextAttributes>
+    SessionContext& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source and type of credentials that were issued to the entity.</p>
      */
-    inline const SessionIssuer& GetSessionIssuer() const{ return m_sessionIssuer; }
+    inline const SessionIssuer& GetSessionIssuer() const { return m_sessionIssuer; }
     inline bool SessionIssuerHasBeenSet() const { return m_sessionIssuerHasBeenSet; }
-    inline void SetSessionIssuer(const SessionIssuer& value) { m_sessionIssuerHasBeenSet = true; m_sessionIssuer = value; }
-    inline void SetSessionIssuer(SessionIssuer&& value) { m_sessionIssuerHasBeenSet = true; m_sessionIssuer = std::move(value); }
-    inline SessionContext& WithSessionIssuer(const SessionIssuer& value) { SetSessionIssuer(value); return *this;}
-    inline SessionContext& WithSessionIssuer(SessionIssuer&& value) { SetSessionIssuer(std::move(value)); return *this;}
+    template<typename SessionIssuerT = SessionIssuer>
+    void SetSessionIssuer(SessionIssuerT&& value) { m_sessionIssuerHasBeenSet = true; m_sessionIssuer = std::forward<SessionIssuerT>(value); }
+    template<typename SessionIssuerT = SessionIssuer>
+    SessionContext& WithSessionIssuer(SessionIssuerT&& value) { SetSessionIssuer(std::forward<SessionIssuerT>(value)); return *this;}
     ///@}
   private:
 

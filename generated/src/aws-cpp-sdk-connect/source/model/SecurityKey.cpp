@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-SecurityKey::SecurityKey() : 
-    m_associationIdHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
-{
-}
-
 SecurityKey::SecurityKey(JsonView jsonValue)
-  : SecurityKey()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SecurityKey& SecurityKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AssociationId"))
   {
     m_associationId = jsonValue.GetString("AssociationId");
-
     m_associationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

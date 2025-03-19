@@ -21,7 +21,7 @@ namespace Model
   class DeleteWebAppCustomizationRequest : public TransferRequest
   {
   public:
-    AWS_TRANSFER_API DeleteWebAppCustomizationRequest();
+    AWS_TRANSFER_API DeleteWebAppCustomizationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>Provide the unique identifier for the web app that contains the
      * customizations that you are deleting.</p>
      */
-    inline const Aws::String& GetWebAppId() const{ return m_webAppId; }
+    inline const Aws::String& GetWebAppId() const { return m_webAppId; }
     inline bool WebAppIdHasBeenSet() const { return m_webAppIdHasBeenSet; }
-    inline void SetWebAppId(const Aws::String& value) { m_webAppIdHasBeenSet = true; m_webAppId = value; }
-    inline void SetWebAppId(Aws::String&& value) { m_webAppIdHasBeenSet = true; m_webAppId = std::move(value); }
-    inline void SetWebAppId(const char* value) { m_webAppIdHasBeenSet = true; m_webAppId.assign(value); }
-    inline DeleteWebAppCustomizationRequest& WithWebAppId(const Aws::String& value) { SetWebAppId(value); return *this;}
-    inline DeleteWebAppCustomizationRequest& WithWebAppId(Aws::String&& value) { SetWebAppId(std::move(value)); return *this;}
-    inline DeleteWebAppCustomizationRequest& WithWebAppId(const char* value) { SetWebAppId(value); return *this;}
+    template<typename WebAppIdT = Aws::String>
+    void SetWebAppId(WebAppIdT&& value) { m_webAppIdHasBeenSet = true; m_webAppId = std::forward<WebAppIdT>(value); }
+    template<typename WebAppIdT = Aws::String>
+    DeleteWebAppCustomizationRequest& WithWebAppId(WebAppIdT&& value) { SetWebAppId(std::forward<WebAppIdT>(value)); return *this;}
     ///@}
   private:
 

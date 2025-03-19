@@ -22,7 +22,7 @@ namespace Model
   class UpdateGroupProfileRequest : public DataZoneRequest
   {
   public:
-    AWS_DATAZONE_API UpdateGroupProfileRequest();
+    AWS_DATAZONE_API UpdateGroupProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,40 +38,34 @@ namespace Model
      * <p>The identifier of the Amazon DataZone domain in which a group profile is
      * updated.</p>
      */
-    inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
+    inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-    inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
-    inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
-    inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
-    inline UpdateGroupProfileRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
-    inline UpdateGroupProfileRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
-    inline UpdateGroupProfileRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
+    template<typename DomainIdentifierT = Aws::String>
+    void SetDomainIdentifier(DomainIdentifierT&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::forward<DomainIdentifierT>(value); }
+    template<typename DomainIdentifierT = Aws::String>
+    UpdateGroupProfileRequest& WithDomainIdentifier(DomainIdentifierT&& value) { SetDomainIdentifier(std::forward<DomainIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the group profile that is updated.</p>
      */
-    inline const Aws::String& GetGroupIdentifier() const{ return m_groupIdentifier; }
+    inline const Aws::String& GetGroupIdentifier() const { return m_groupIdentifier; }
     inline bool GroupIdentifierHasBeenSet() const { return m_groupIdentifierHasBeenSet; }
-    inline void SetGroupIdentifier(const Aws::String& value) { m_groupIdentifierHasBeenSet = true; m_groupIdentifier = value; }
-    inline void SetGroupIdentifier(Aws::String&& value) { m_groupIdentifierHasBeenSet = true; m_groupIdentifier = std::move(value); }
-    inline void SetGroupIdentifier(const char* value) { m_groupIdentifierHasBeenSet = true; m_groupIdentifier.assign(value); }
-    inline UpdateGroupProfileRequest& WithGroupIdentifier(const Aws::String& value) { SetGroupIdentifier(value); return *this;}
-    inline UpdateGroupProfileRequest& WithGroupIdentifier(Aws::String&& value) { SetGroupIdentifier(std::move(value)); return *this;}
-    inline UpdateGroupProfileRequest& WithGroupIdentifier(const char* value) { SetGroupIdentifier(value); return *this;}
+    template<typename GroupIdentifierT = Aws::String>
+    void SetGroupIdentifier(GroupIdentifierT&& value) { m_groupIdentifierHasBeenSet = true; m_groupIdentifier = std::forward<GroupIdentifierT>(value); }
+    template<typename GroupIdentifierT = Aws::String>
+    UpdateGroupProfileRequest& WithGroupIdentifier(GroupIdentifierT&& value) { SetGroupIdentifier(std::forward<GroupIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the group profile that is updated.</p>
      */
-    inline const GroupProfileStatus& GetStatus() const{ return m_status; }
+    inline GroupProfileStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const GroupProfileStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(GroupProfileStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline UpdateGroupProfileRequest& WithStatus(const GroupProfileStatus& value) { SetStatus(value); return *this;}
-    inline UpdateGroupProfileRequest& WithStatus(GroupProfileStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(GroupProfileStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateGroupProfileRequest& WithStatus(GroupProfileStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -81,7 +75,7 @@ namespace Model
     Aws::String m_groupIdentifier;
     bool m_groupIdentifierHasBeenSet = false;
 
-    GroupProfileStatus m_status;
+    GroupProfileStatus m_status{GroupProfileStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

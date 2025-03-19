@@ -18,16 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-SOARecord::SOARecord() : 
-    m_primaryNameServerHasBeenSet(false),
-    m_adminEmailHasBeenSet(false),
-    m_serialNumber(0),
-    m_serialNumberHasBeenSet(false)
-{
-}
-
 SOARecord::SOARecord(JsonView jsonValue)
-  : SOARecord()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SOARecord& SOARecord::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PrimaryNameServer"))
   {
     m_primaryNameServer = jsonValue.GetString("PrimaryNameServer");
-
     m_primaryNameServerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdminEmail"))
   {
     m_adminEmail = jsonValue.GetString("AdminEmail");
-
     m_adminEmailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SerialNumber"))
   {
     m_serialNumber = jsonValue.GetInt64("SerialNumber");
-
     m_serialNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

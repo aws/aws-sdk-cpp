@@ -18,13 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-DomainDetails::DomainDetails() : 
-    m_domainNameHasBeenSet(false)
-{
-}
-
 DomainDetails::DomainDetails(JsonView jsonValue)
-  : DomainDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DomainDetails& DomainDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("domainName"))
   {
     m_domainName = jsonValue.GetString("domainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   return *this;
 }
 

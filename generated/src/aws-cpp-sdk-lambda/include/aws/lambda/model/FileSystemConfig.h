@@ -33,7 +33,7 @@ namespace Model
   class FileSystemConfig
   {
   public:
-    AWS_LAMBDA_API FileSystemConfig();
+    AWS_LAMBDA_API FileSystemConfig() = default;
     AWS_LAMBDA_API FileSystemConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API FileSystemConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon EFS access point that provides
      * access to the file system.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline FileSystemConfig& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline FileSystemConfig& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline FileSystemConfig& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    FileSystemConfig& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The path where the function can access the file system, starting with
      * <code>/mnt/</code>.</p>
      */
-    inline const Aws::String& GetLocalMountPath() const{ return m_localMountPath; }
+    inline const Aws::String& GetLocalMountPath() const { return m_localMountPath; }
     inline bool LocalMountPathHasBeenSet() const { return m_localMountPathHasBeenSet; }
-    inline void SetLocalMountPath(const Aws::String& value) { m_localMountPathHasBeenSet = true; m_localMountPath = value; }
-    inline void SetLocalMountPath(Aws::String&& value) { m_localMountPathHasBeenSet = true; m_localMountPath = std::move(value); }
-    inline void SetLocalMountPath(const char* value) { m_localMountPathHasBeenSet = true; m_localMountPath.assign(value); }
-    inline FileSystemConfig& WithLocalMountPath(const Aws::String& value) { SetLocalMountPath(value); return *this;}
-    inline FileSystemConfig& WithLocalMountPath(Aws::String&& value) { SetLocalMountPath(std::move(value)); return *this;}
-    inline FileSystemConfig& WithLocalMountPath(const char* value) { SetLocalMountPath(value); return *this;}
+    template<typename LocalMountPathT = Aws::String>
+    void SetLocalMountPath(LocalMountPathT&& value) { m_localMountPathHasBeenSet = true; m_localMountPath = std::forward<LocalMountPathT>(value); }
+    template<typename LocalMountPathT = Aws::String>
+    FileSystemConfig& WithLocalMountPath(LocalMountPathT&& value) { SetLocalMountPath(std::forward<LocalMountPathT>(value)); return *this;}
     ///@}
   private:
 

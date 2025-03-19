@@ -33,48 +33,47 @@ namespace Model
   class UpdateLensReviewResult
   {
   public:
-    AWS_WELLARCHITECTED_API UpdateLensReviewResult();
+    AWS_WELLARCHITECTED_API UpdateLensReviewResult() = default;
     AWS_WELLARCHITECTED_API UpdateLensReviewResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WELLARCHITECTED_API UpdateLensReviewResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
-    inline void SetWorkloadId(const Aws::String& value) { m_workloadId = value; }
-    inline void SetWorkloadId(Aws::String&& value) { m_workloadId = std::move(value); }
-    inline void SetWorkloadId(const char* value) { m_workloadId.assign(value); }
-    inline UpdateLensReviewResult& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-    inline UpdateLensReviewResult& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-    inline UpdateLensReviewResult& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    inline const Aws::String& GetWorkloadId() const { return m_workloadId; }
+    template<typename WorkloadIdT = Aws::String>
+    void SetWorkloadId(WorkloadIdT&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::forward<WorkloadIdT>(value); }
+    template<typename WorkloadIdT = Aws::String>
+    UpdateLensReviewResult& WithWorkloadId(WorkloadIdT&& value) { SetWorkloadId(std::forward<WorkloadIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const LensReview& GetLensReview() const{ return m_lensReview; }
-    inline void SetLensReview(const LensReview& value) { m_lensReview = value; }
-    inline void SetLensReview(LensReview&& value) { m_lensReview = std::move(value); }
-    inline UpdateLensReviewResult& WithLensReview(const LensReview& value) { SetLensReview(value); return *this;}
-    inline UpdateLensReviewResult& WithLensReview(LensReview&& value) { SetLensReview(std::move(value)); return *this;}
+    inline const LensReview& GetLensReview() const { return m_lensReview; }
+    template<typename LensReviewT = LensReview>
+    void SetLensReview(LensReviewT&& value) { m_lensReviewHasBeenSet = true; m_lensReview = std::forward<LensReviewT>(value); }
+    template<typename LensReviewT = LensReview>
+    UpdateLensReviewResult& WithLensReview(LensReviewT&& value) { SetLensReview(std::forward<LensReviewT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateLensReviewResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateLensReviewResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateLensReviewResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateLensReviewResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_workloadId;
+    bool m_workloadIdHasBeenSet = false;
 
     LensReview m_lensReview;
+    bool m_lensReviewHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

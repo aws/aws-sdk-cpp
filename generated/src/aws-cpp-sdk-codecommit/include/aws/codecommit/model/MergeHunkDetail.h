@@ -32,7 +32,7 @@ namespace Model
   class MergeHunkDetail
   {
   public:
-    AWS_CODECOMMIT_API MergeHunkDetail();
+    AWS_CODECOMMIT_API MergeHunkDetail() = default;
     AWS_CODECOMMIT_API MergeHunkDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API MergeHunkDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The start position of the hunk in the merge result.</p>
      */
-    inline int GetStartLine() const{ return m_startLine; }
+    inline int GetStartLine() const { return m_startLine; }
     inline bool StartLineHasBeenSet() const { return m_startLineHasBeenSet; }
     inline void SetStartLine(int value) { m_startLineHasBeenSet = true; m_startLine = value; }
     inline MergeHunkDetail& WithStartLine(int value) { SetStartLine(value); return *this;}
@@ -52,7 +52,7 @@ namespace Model
     /**
      * <p>The end position of the hunk in the merge result.</p>
      */
-    inline int GetEndLine() const{ return m_endLine; }
+    inline int GetEndLine() const { return m_endLine; }
     inline bool EndLineHasBeenSet() const { return m_endLineHasBeenSet; }
     inline void SetEndLine(int value) { m_endLineHasBeenSet = true; m_endLine = value; }
     inline MergeHunkDetail& WithEndLine(int value) { SetEndLine(value); return *this;}
@@ -63,21 +63,19 @@ namespace Model
      * <p>The base-64 encoded content of the hunk merged region that might contain a
      * conflict.</p>
      */
-    inline const Aws::String& GetHunkContent() const{ return m_hunkContent; }
+    inline const Aws::String& GetHunkContent() const { return m_hunkContent; }
     inline bool HunkContentHasBeenSet() const { return m_hunkContentHasBeenSet; }
-    inline void SetHunkContent(const Aws::String& value) { m_hunkContentHasBeenSet = true; m_hunkContent = value; }
-    inline void SetHunkContent(Aws::String&& value) { m_hunkContentHasBeenSet = true; m_hunkContent = std::move(value); }
-    inline void SetHunkContent(const char* value) { m_hunkContentHasBeenSet = true; m_hunkContent.assign(value); }
-    inline MergeHunkDetail& WithHunkContent(const Aws::String& value) { SetHunkContent(value); return *this;}
-    inline MergeHunkDetail& WithHunkContent(Aws::String&& value) { SetHunkContent(std::move(value)); return *this;}
-    inline MergeHunkDetail& WithHunkContent(const char* value) { SetHunkContent(value); return *this;}
+    template<typename HunkContentT = Aws::String>
+    void SetHunkContent(HunkContentT&& value) { m_hunkContentHasBeenSet = true; m_hunkContent = std::forward<HunkContentT>(value); }
+    template<typename HunkContentT = Aws::String>
+    MergeHunkDetail& WithHunkContent(HunkContentT&& value) { SetHunkContent(std::forward<HunkContentT>(value)); return *this;}
     ///@}
   private:
 
-    int m_startLine;
+    int m_startLine{0};
     bool m_startLineHasBeenSet = false;
 
-    int m_endLine;
+    int m_endLine{0};
     bool m_endLineHasBeenSet = false;
 
     Aws::String m_hunkContent;

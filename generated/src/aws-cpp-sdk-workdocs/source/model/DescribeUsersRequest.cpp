@@ -15,24 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeUsersRequest::DescribeUsersRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_organizationIdHasBeenSet(false),
-    m_userIdsHasBeenSet(false),
-    m_queryHasBeenSet(false),
-    m_include(UserFilterType::NOT_SET),
-    m_includeHasBeenSet(false),
-    m_order(OrderType::NOT_SET),
-    m_orderHasBeenSet(false),
-    m_sort(UserSortType::NOT_SET),
-    m_sortHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_fieldsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeUsersRequest::SerializePayload() const
 {
   return {};

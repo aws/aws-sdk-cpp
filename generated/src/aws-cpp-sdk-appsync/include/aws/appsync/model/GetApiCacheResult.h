@@ -34,7 +34,7 @@ namespace Model
   class GetApiCacheResult
   {
   public:
-    AWS_APPSYNC_API GetApiCacheResult();
+    AWS_APPSYNC_API GetApiCacheResult() = default;
     AWS_APPSYNC_API GetApiCacheResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSYNC_API GetApiCacheResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>The <code>ApiCache</code> object.</p>
      */
-    inline const ApiCache& GetApiCache() const{ return m_apiCache; }
-    inline void SetApiCache(const ApiCache& value) { m_apiCache = value; }
-    inline void SetApiCache(ApiCache&& value) { m_apiCache = std::move(value); }
-    inline GetApiCacheResult& WithApiCache(const ApiCache& value) { SetApiCache(value); return *this;}
-    inline GetApiCacheResult& WithApiCache(ApiCache&& value) { SetApiCache(std::move(value)); return *this;}
+    inline const ApiCache& GetApiCache() const { return m_apiCache; }
+    template<typename ApiCacheT = ApiCache>
+    void SetApiCache(ApiCacheT&& value) { m_apiCacheHasBeenSet = true; m_apiCache = std::forward<ApiCacheT>(value); }
+    template<typename ApiCacheT = ApiCache>
+    GetApiCacheResult& WithApiCache(ApiCacheT&& value) { SetApiCache(std::forward<ApiCacheT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetApiCacheResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetApiCacheResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetApiCacheResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetApiCacheResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ApiCache m_apiCache;
+    bool m_apiCacheHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

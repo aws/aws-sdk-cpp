@@ -39,7 +39,7 @@ namespace Model
   class GetModelCustomizationJobResult
   {
   public:
-    AWS_BEDROCK_API GetModelCustomizationJobResult();
+    AWS_BEDROCK_API GetModelCustomizationJobResult() = default;
     AWS_BEDROCK_API GetModelCustomizationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCK_API GetModelCustomizationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -48,52 +48,44 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the customization job.</p>
      */
-    inline const Aws::String& GetJobArn() const{ return m_jobArn; }
-    inline void SetJobArn(const Aws::String& value) { m_jobArn = value; }
-    inline void SetJobArn(Aws::String&& value) { m_jobArn = std::move(value); }
-    inline void SetJobArn(const char* value) { m_jobArn.assign(value); }
-    inline GetModelCustomizationJobResult& WithJobArn(const Aws::String& value) { SetJobArn(value); return *this;}
-    inline GetModelCustomizationJobResult& WithJobArn(Aws::String&& value) { SetJobArn(std::move(value)); return *this;}
-    inline GetModelCustomizationJobResult& WithJobArn(const char* value) { SetJobArn(value); return *this;}
+    inline const Aws::String& GetJobArn() const { return m_jobArn; }
+    template<typename JobArnT = Aws::String>
+    void SetJobArn(JobArnT&& value) { m_jobArnHasBeenSet = true; m_jobArn = std::forward<JobArnT>(value); }
+    template<typename JobArnT = Aws::String>
+    GetModelCustomizationJobResult& WithJobArn(JobArnT&& value) { SetJobArn(std::forward<JobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the customization job.</p>
      */
-    inline const Aws::String& GetJobName() const{ return m_jobName; }
-    inline void SetJobName(const Aws::String& value) { m_jobName = value; }
-    inline void SetJobName(Aws::String&& value) { m_jobName = std::move(value); }
-    inline void SetJobName(const char* value) { m_jobName.assign(value); }
-    inline GetModelCustomizationJobResult& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
-    inline GetModelCustomizationJobResult& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
-    inline GetModelCustomizationJobResult& WithJobName(const char* value) { SetJobName(value); return *this;}
+    inline const Aws::String& GetJobName() const { return m_jobName; }
+    template<typename JobNameT = Aws::String>
+    void SetJobName(JobNameT&& value) { m_jobNameHasBeenSet = true; m_jobName = std::forward<JobNameT>(value); }
+    template<typename JobNameT = Aws::String>
+    GetModelCustomizationJobResult& WithJobName(JobNameT&& value) { SetJobName(std::forward<JobNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the output model.</p>
      */
-    inline const Aws::String& GetOutputModelName() const{ return m_outputModelName; }
-    inline void SetOutputModelName(const Aws::String& value) { m_outputModelName = value; }
-    inline void SetOutputModelName(Aws::String&& value) { m_outputModelName = std::move(value); }
-    inline void SetOutputModelName(const char* value) { m_outputModelName.assign(value); }
-    inline GetModelCustomizationJobResult& WithOutputModelName(const Aws::String& value) { SetOutputModelName(value); return *this;}
-    inline GetModelCustomizationJobResult& WithOutputModelName(Aws::String&& value) { SetOutputModelName(std::move(value)); return *this;}
-    inline GetModelCustomizationJobResult& WithOutputModelName(const char* value) { SetOutputModelName(value); return *this;}
+    inline const Aws::String& GetOutputModelName() const { return m_outputModelName; }
+    template<typename OutputModelNameT = Aws::String>
+    void SetOutputModelName(OutputModelNameT&& value) { m_outputModelNameHasBeenSet = true; m_outputModelName = std::forward<OutputModelNameT>(value); }
+    template<typename OutputModelNameT = Aws::String>
+    GetModelCustomizationJobResult& WithOutputModelName(OutputModelNameT&& value) { SetOutputModelName(std::forward<OutputModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the output model.</p>
      */
-    inline const Aws::String& GetOutputModelArn() const{ return m_outputModelArn; }
-    inline void SetOutputModelArn(const Aws::String& value) { m_outputModelArn = value; }
-    inline void SetOutputModelArn(Aws::String&& value) { m_outputModelArn = std::move(value); }
-    inline void SetOutputModelArn(const char* value) { m_outputModelArn.assign(value); }
-    inline GetModelCustomizationJobResult& WithOutputModelArn(const Aws::String& value) { SetOutputModelArn(value); return *this;}
-    inline GetModelCustomizationJobResult& WithOutputModelArn(Aws::String&& value) { SetOutputModelArn(std::move(value)); return *this;}
-    inline GetModelCustomizationJobResult& WithOutputModelArn(const char* value) { SetOutputModelArn(value); return *this;}
+    inline const Aws::String& GetOutputModelArn() const { return m_outputModelArn; }
+    template<typename OutputModelArnT = Aws::String>
+    void SetOutputModelArn(OutputModelArnT&& value) { m_outputModelArnHasBeenSet = true; m_outputModelArn = std::forward<OutputModelArnT>(value); }
+    template<typename OutputModelArnT = Aws::String>
+    GetModelCustomizationJobResult& WithOutputModelArn(OutputModelArnT&& value) { SetOutputModelArn(std::forward<OutputModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,26 +93,22 @@ namespace Model
      * <p>The token that you specified in the <code>CreateCustomizationJob</code>
      * request.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestToken.assign(value); }
-    inline GetModelCustomizationJobResult& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline GetModelCustomizationJobResult& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline GetModelCustomizationJobResult& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    GetModelCustomizationJobResult& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-    inline GetModelCustomizationJobResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline GetModelCustomizationJobResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline GetModelCustomizationJobResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    GetModelCustomizationJobResult& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,70 +117,64 @@ namespace Model
      * completed when the output model is ready to use. If the job failed, the failure
      * message contains information about why the job failed.</p>
      */
-    inline const ModelCustomizationJobStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ModelCustomizationJobStatus& value) { m_status = value; }
-    inline void SetStatus(ModelCustomizationJobStatus&& value) { m_status = std::move(value); }
-    inline GetModelCustomizationJobResult& WithStatus(const ModelCustomizationJobStatus& value) { SetStatus(value); return *this;}
-    inline GetModelCustomizationJobResult& WithStatus(ModelCustomizationJobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ModelCustomizationJobStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ModelCustomizationJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetModelCustomizationJobResult& WithStatus(ModelCustomizationJobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about why the job failed.</p>
      */
-    inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
-    inline void SetFailureMessage(const Aws::String& value) { m_failureMessage = value; }
-    inline void SetFailureMessage(Aws::String&& value) { m_failureMessage = std::move(value); }
-    inline void SetFailureMessage(const char* value) { m_failureMessage.assign(value); }
-    inline GetModelCustomizationJobResult& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
-    inline GetModelCustomizationJobResult& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
-    inline GetModelCustomizationJobResult& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
+    inline const Aws::String& GetFailureMessage() const { return m_failureMessage; }
+    template<typename FailureMessageT = Aws::String>
+    void SetFailureMessage(FailureMessageT&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::forward<FailureMessageT>(value); }
+    template<typename FailureMessageT = Aws::String>
+    GetModelCustomizationJobResult& WithFailureMessage(FailureMessageT&& value) { SetFailureMessage(std::forward<FailureMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Time that the resource was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline GetModelCustomizationJobResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline GetModelCustomizationJobResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    GetModelCustomizationJobResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Time that the resource was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
-    inline GetModelCustomizationJobResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline GetModelCustomizationJobResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    GetModelCustomizationJobResult& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Time that the resource transitioned to terminal state.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTime = std::move(value); }
-    inline GetModelCustomizationJobResult& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline GetModelCustomizationJobResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    GetModelCustomizationJobResult& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Amazon Resource Name (ARN) of the base model.</p>
      */
-    inline const Aws::String& GetBaseModelArn() const{ return m_baseModelArn; }
-    inline void SetBaseModelArn(const Aws::String& value) { m_baseModelArn = value; }
-    inline void SetBaseModelArn(Aws::String&& value) { m_baseModelArn = std::move(value); }
-    inline void SetBaseModelArn(const char* value) { m_baseModelArn.assign(value); }
-    inline GetModelCustomizationJobResult& WithBaseModelArn(const Aws::String& value) { SetBaseModelArn(value); return *this;}
-    inline GetModelCustomizationJobResult& WithBaseModelArn(Aws::String&& value) { SetBaseModelArn(std::move(value)); return *this;}
-    inline GetModelCustomizationJobResult& WithBaseModelArn(const char* value) { SetBaseModelArn(value); return *this;}
+    inline const Aws::String& GetBaseModelArn() const { return m_baseModelArn; }
+    template<typename BaseModelArnT = Aws::String>
+    void SetBaseModelArn(BaseModelArnT&& value) { m_baseModelArnHasBeenSet = true; m_baseModelArn = std::forward<BaseModelArnT>(value); }
+    template<typename BaseModelArnT = Aws::String>
+    GetModelCustomizationJobResult& WithBaseModelArn(BaseModelArnT&& value) { SetBaseModelArn(std::forward<BaseModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -202,86 +184,79 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/custom-models-hp.html">Custom
      * model hyperparameters</a>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetHyperParameters() const{ return m_hyperParameters; }
-    inline void SetHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_hyperParameters = value; }
-    inline void SetHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_hyperParameters = std::move(value); }
-    inline GetModelCustomizationJobResult& WithHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetHyperParameters(value); return *this;}
-    inline GetModelCustomizationJobResult& WithHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetHyperParameters(std::move(value)); return *this;}
-    inline GetModelCustomizationJobResult& AddHyperParameters(const Aws::String& key, const Aws::String& value) { m_hyperParameters.emplace(key, value); return *this; }
-    inline GetModelCustomizationJobResult& AddHyperParameters(Aws::String&& key, const Aws::String& value) { m_hyperParameters.emplace(std::move(key), value); return *this; }
-    inline GetModelCustomizationJobResult& AddHyperParameters(const Aws::String& key, Aws::String&& value) { m_hyperParameters.emplace(key, std::move(value)); return *this; }
-    inline GetModelCustomizationJobResult& AddHyperParameters(Aws::String&& key, Aws::String&& value) { m_hyperParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetModelCustomizationJobResult& AddHyperParameters(const char* key, Aws::String&& value) { m_hyperParameters.emplace(key, std::move(value)); return *this; }
-    inline GetModelCustomizationJobResult& AddHyperParameters(Aws::String&& key, const char* value) { m_hyperParameters.emplace(std::move(key), value); return *this; }
-    inline GetModelCustomizationJobResult& AddHyperParameters(const char* key, const char* value) { m_hyperParameters.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetHyperParameters() const { return m_hyperParameters; }
+    template<typename HyperParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetHyperParameters(HyperParametersT&& value) { m_hyperParametersHasBeenSet = true; m_hyperParameters = std::forward<HyperParametersT>(value); }
+    template<typename HyperParametersT = Aws::Map<Aws::String, Aws::String>>
+    GetModelCustomizationJobResult& WithHyperParameters(HyperParametersT&& value) { SetHyperParameters(std::forward<HyperParametersT>(value)); return *this;}
+    template<typename HyperParametersKeyT = Aws::String, typename HyperParametersValueT = Aws::String>
+    GetModelCustomizationJobResult& AddHyperParameters(HyperParametersKeyT&& key, HyperParametersValueT&& value) {
+      m_hyperParametersHasBeenSet = true; m_hyperParameters.emplace(std::forward<HyperParametersKeyT>(key), std::forward<HyperParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Contains information about the training dataset.</p>
      */
-    inline const TrainingDataConfig& GetTrainingDataConfig() const{ return m_trainingDataConfig; }
-    inline void SetTrainingDataConfig(const TrainingDataConfig& value) { m_trainingDataConfig = value; }
-    inline void SetTrainingDataConfig(TrainingDataConfig&& value) { m_trainingDataConfig = std::move(value); }
-    inline GetModelCustomizationJobResult& WithTrainingDataConfig(const TrainingDataConfig& value) { SetTrainingDataConfig(value); return *this;}
-    inline GetModelCustomizationJobResult& WithTrainingDataConfig(TrainingDataConfig&& value) { SetTrainingDataConfig(std::move(value)); return *this;}
+    inline const TrainingDataConfig& GetTrainingDataConfig() const { return m_trainingDataConfig; }
+    template<typename TrainingDataConfigT = TrainingDataConfig>
+    void SetTrainingDataConfig(TrainingDataConfigT&& value) { m_trainingDataConfigHasBeenSet = true; m_trainingDataConfig = std::forward<TrainingDataConfigT>(value); }
+    template<typename TrainingDataConfigT = TrainingDataConfig>
+    GetModelCustomizationJobResult& WithTrainingDataConfig(TrainingDataConfigT&& value) { SetTrainingDataConfig(std::forward<TrainingDataConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains information about the validation dataset.</p>
      */
-    inline const ValidationDataConfig& GetValidationDataConfig() const{ return m_validationDataConfig; }
-    inline void SetValidationDataConfig(const ValidationDataConfig& value) { m_validationDataConfig = value; }
-    inline void SetValidationDataConfig(ValidationDataConfig&& value) { m_validationDataConfig = std::move(value); }
-    inline GetModelCustomizationJobResult& WithValidationDataConfig(const ValidationDataConfig& value) { SetValidationDataConfig(value); return *this;}
-    inline GetModelCustomizationJobResult& WithValidationDataConfig(ValidationDataConfig&& value) { SetValidationDataConfig(std::move(value)); return *this;}
+    inline const ValidationDataConfig& GetValidationDataConfig() const { return m_validationDataConfig; }
+    template<typename ValidationDataConfigT = ValidationDataConfig>
+    void SetValidationDataConfig(ValidationDataConfigT&& value) { m_validationDataConfigHasBeenSet = true; m_validationDataConfig = std::forward<ValidationDataConfigT>(value); }
+    template<typename ValidationDataConfigT = ValidationDataConfig>
+    GetModelCustomizationJobResult& WithValidationDataConfig(ValidationDataConfigT&& value) { SetValidationDataConfig(std::forward<ValidationDataConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Output data configuration </p>
      */
-    inline const OutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
-    inline void SetOutputDataConfig(const OutputDataConfig& value) { m_outputDataConfig = value; }
-    inline void SetOutputDataConfig(OutputDataConfig&& value) { m_outputDataConfig = std::move(value); }
-    inline GetModelCustomizationJobResult& WithOutputDataConfig(const OutputDataConfig& value) { SetOutputDataConfig(value); return *this;}
-    inline GetModelCustomizationJobResult& WithOutputDataConfig(OutputDataConfig&& value) { SetOutputDataConfig(std::move(value)); return *this;}
+    inline const OutputDataConfig& GetOutputDataConfig() const { return m_outputDataConfig; }
+    template<typename OutputDataConfigT = OutputDataConfig>
+    void SetOutputDataConfig(OutputDataConfigT&& value) { m_outputDataConfigHasBeenSet = true; m_outputDataConfig = std::forward<OutputDataConfigT>(value); }
+    template<typename OutputDataConfigT = OutputDataConfig>
+    GetModelCustomizationJobResult& WithOutputDataConfig(OutputDataConfigT&& value) { SetOutputDataConfig(std::forward<OutputDataConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of model customization.</p>
      */
-    inline const CustomizationType& GetCustomizationType() const{ return m_customizationType; }
-    inline void SetCustomizationType(const CustomizationType& value) { m_customizationType = value; }
-    inline void SetCustomizationType(CustomizationType&& value) { m_customizationType = std::move(value); }
-    inline GetModelCustomizationJobResult& WithCustomizationType(const CustomizationType& value) { SetCustomizationType(value); return *this;}
-    inline GetModelCustomizationJobResult& WithCustomizationType(CustomizationType&& value) { SetCustomizationType(std::move(value)); return *this;}
+    inline CustomizationType GetCustomizationType() const { return m_customizationType; }
+    inline void SetCustomizationType(CustomizationType value) { m_customizationTypeHasBeenSet = true; m_customizationType = value; }
+    inline GetModelCustomizationJobResult& WithCustomizationType(CustomizationType value) { SetCustomizationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The custom model is encrypted at rest using this key.</p>
      */
-    inline const Aws::String& GetOutputModelKmsKeyArn() const{ return m_outputModelKmsKeyArn; }
-    inline void SetOutputModelKmsKeyArn(const Aws::String& value) { m_outputModelKmsKeyArn = value; }
-    inline void SetOutputModelKmsKeyArn(Aws::String&& value) { m_outputModelKmsKeyArn = std::move(value); }
-    inline void SetOutputModelKmsKeyArn(const char* value) { m_outputModelKmsKeyArn.assign(value); }
-    inline GetModelCustomizationJobResult& WithOutputModelKmsKeyArn(const Aws::String& value) { SetOutputModelKmsKeyArn(value); return *this;}
-    inline GetModelCustomizationJobResult& WithOutputModelKmsKeyArn(Aws::String&& value) { SetOutputModelKmsKeyArn(std::move(value)); return *this;}
-    inline GetModelCustomizationJobResult& WithOutputModelKmsKeyArn(const char* value) { SetOutputModelKmsKeyArn(value); return *this;}
+    inline const Aws::String& GetOutputModelKmsKeyArn() const { return m_outputModelKmsKeyArn; }
+    template<typename OutputModelKmsKeyArnT = Aws::String>
+    void SetOutputModelKmsKeyArn(OutputModelKmsKeyArnT&& value) { m_outputModelKmsKeyArnHasBeenSet = true; m_outputModelKmsKeyArn = std::forward<OutputModelKmsKeyArnT>(value); }
+    template<typename OutputModelKmsKeyArnT = Aws::String>
+    GetModelCustomizationJobResult& WithOutputModelKmsKeyArn(OutputModelKmsKeyArnT&& value) { SetOutputModelKmsKeyArn(std::forward<OutputModelKmsKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains training metrics from the job creation.</p>
      */
-    inline const TrainingMetrics& GetTrainingMetrics() const{ return m_trainingMetrics; }
-    inline void SetTrainingMetrics(const TrainingMetrics& value) { m_trainingMetrics = value; }
-    inline void SetTrainingMetrics(TrainingMetrics&& value) { m_trainingMetrics = std::move(value); }
-    inline GetModelCustomizationJobResult& WithTrainingMetrics(const TrainingMetrics& value) { SetTrainingMetrics(value); return *this;}
-    inline GetModelCustomizationJobResult& WithTrainingMetrics(TrainingMetrics&& value) { SetTrainingMetrics(std::move(value)); return *this;}
+    inline const TrainingMetrics& GetTrainingMetrics() const { return m_trainingMetrics; }
+    template<typename TrainingMetricsT = TrainingMetrics>
+    void SetTrainingMetrics(TrainingMetricsT&& value) { m_trainingMetricsHasBeenSet = true; m_trainingMetrics = std::forward<TrainingMetricsT>(value); }
+    template<typename TrainingMetricsT = TrainingMetrics>
+    GetModelCustomizationJobResult& WithTrainingMetrics(TrainingMetricsT&& value) { SetTrainingMetrics(std::forward<TrainingMetricsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -289,94 +264,115 @@ namespace Model
      * <p>The loss metric for each validator that you provided in the createjob
      * request.</p>
      */
-    inline const Aws::Vector<ValidatorMetric>& GetValidationMetrics() const{ return m_validationMetrics; }
-    inline void SetValidationMetrics(const Aws::Vector<ValidatorMetric>& value) { m_validationMetrics = value; }
-    inline void SetValidationMetrics(Aws::Vector<ValidatorMetric>&& value) { m_validationMetrics = std::move(value); }
-    inline GetModelCustomizationJobResult& WithValidationMetrics(const Aws::Vector<ValidatorMetric>& value) { SetValidationMetrics(value); return *this;}
-    inline GetModelCustomizationJobResult& WithValidationMetrics(Aws::Vector<ValidatorMetric>&& value) { SetValidationMetrics(std::move(value)); return *this;}
-    inline GetModelCustomizationJobResult& AddValidationMetrics(const ValidatorMetric& value) { m_validationMetrics.push_back(value); return *this; }
-    inline GetModelCustomizationJobResult& AddValidationMetrics(ValidatorMetric&& value) { m_validationMetrics.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ValidatorMetric>& GetValidationMetrics() const { return m_validationMetrics; }
+    template<typename ValidationMetricsT = Aws::Vector<ValidatorMetric>>
+    void SetValidationMetrics(ValidationMetricsT&& value) { m_validationMetricsHasBeenSet = true; m_validationMetrics = std::forward<ValidationMetricsT>(value); }
+    template<typename ValidationMetricsT = Aws::Vector<ValidatorMetric>>
+    GetModelCustomizationJobResult& WithValidationMetrics(ValidationMetricsT&& value) { SetValidationMetrics(std::forward<ValidationMetricsT>(value)); return *this;}
+    template<typename ValidationMetricsT = ValidatorMetric>
+    GetModelCustomizationJobResult& AddValidationMetrics(ValidationMetricsT&& value) { m_validationMetricsHasBeenSet = true; m_validationMetrics.emplace_back(std::forward<ValidationMetricsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>VPC configuration for the custom model job.</p>
      */
-    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
-    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfig = value; }
-    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfig = std::move(value); }
-    inline GetModelCustomizationJobResult& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
-    inline GetModelCustomizationJobResult& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+    inline const VpcConfig& GetVpcConfig() const { return m_vpcConfig; }
+    template<typename VpcConfigT = VpcConfig>
+    void SetVpcConfig(VpcConfigT&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::forward<VpcConfigT>(value); }
+    template<typename VpcConfigT = VpcConfig>
+    GetModelCustomizationJobResult& WithVpcConfig(VpcConfigT&& value) { SetVpcConfig(std::forward<VpcConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The customization configuration for the model customization job.</p>
      */
-    inline const CustomizationConfig& GetCustomizationConfig() const{ return m_customizationConfig; }
-    inline void SetCustomizationConfig(const CustomizationConfig& value) { m_customizationConfig = value; }
-    inline void SetCustomizationConfig(CustomizationConfig&& value) { m_customizationConfig = std::move(value); }
-    inline GetModelCustomizationJobResult& WithCustomizationConfig(const CustomizationConfig& value) { SetCustomizationConfig(value); return *this;}
-    inline GetModelCustomizationJobResult& WithCustomizationConfig(CustomizationConfig&& value) { SetCustomizationConfig(std::move(value)); return *this;}
+    inline const CustomizationConfig& GetCustomizationConfig() const { return m_customizationConfig; }
+    template<typename CustomizationConfigT = CustomizationConfig>
+    void SetCustomizationConfig(CustomizationConfigT&& value) { m_customizationConfigHasBeenSet = true; m_customizationConfig = std::forward<CustomizationConfigT>(value); }
+    template<typename CustomizationConfigT = CustomizationConfig>
+    GetModelCustomizationJobResult& WithCustomizationConfig(CustomizationConfigT&& value) { SetCustomizationConfig(std::forward<CustomizationConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetModelCustomizationJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetModelCustomizationJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetModelCustomizationJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetModelCustomizationJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_jobArn;
+    bool m_jobArnHasBeenSet = false;
 
     Aws::String m_jobName;
+    bool m_jobNameHasBeenSet = false;
 
     Aws::String m_outputModelName;
+    bool m_outputModelNameHasBeenSet = false;
 
     Aws::String m_outputModelArn;
+    bool m_outputModelArnHasBeenSet = false;
 
     Aws::String m_clientRequestToken;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
-    ModelCustomizationJobStatus m_status;
+    ModelCustomizationJobStatus m_status{ModelCustomizationJobStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_failureMessage;
+    bool m_failureMessageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
+    bool m_lastModifiedTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
+    bool m_endTimeHasBeenSet = false;
 
     Aws::String m_baseModelArn;
+    bool m_baseModelArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_hyperParameters;
+    bool m_hyperParametersHasBeenSet = false;
 
     TrainingDataConfig m_trainingDataConfig;
+    bool m_trainingDataConfigHasBeenSet = false;
 
     ValidationDataConfig m_validationDataConfig;
+    bool m_validationDataConfigHasBeenSet = false;
 
     OutputDataConfig m_outputDataConfig;
+    bool m_outputDataConfigHasBeenSet = false;
 
-    CustomizationType m_customizationType;
+    CustomizationType m_customizationType{CustomizationType::NOT_SET};
+    bool m_customizationTypeHasBeenSet = false;
 
     Aws::String m_outputModelKmsKeyArn;
+    bool m_outputModelKmsKeyArnHasBeenSet = false;
 
     TrainingMetrics m_trainingMetrics;
+    bool m_trainingMetricsHasBeenSet = false;
 
     Aws::Vector<ValidatorMetric> m_validationMetrics;
+    bool m_validationMetricsHasBeenSet = false;
 
     VpcConfig m_vpcConfig;
+    bool m_vpcConfigHasBeenSet = false;
 
     CustomizationConfig m_customizationConfig;
+    bool m_customizationConfigHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

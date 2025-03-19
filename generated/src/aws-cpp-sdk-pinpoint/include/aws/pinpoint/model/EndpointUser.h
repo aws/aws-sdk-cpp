@@ -34,7 +34,7 @@ namespace Model
   class EndpointUser
   {
   public:
-    AWS_PINPOINT_API EndpointUser();
+    AWS_PINPOINT_API EndpointUser() = default;
     AWS_PINPOINT_API EndpointUser(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API EndpointUser& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,32 +53,28 @@ namespace Model
      * attribute names that contain these characters. This restriction doesn't apply to
      * attribute values.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetUserAttributes() const{ return m_userAttributes; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetUserAttributes() const { return m_userAttributes; }
     inline bool UserAttributesHasBeenSet() const { return m_userAttributesHasBeenSet; }
-    inline void SetUserAttributes(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_userAttributesHasBeenSet = true; m_userAttributes = value; }
-    inline void SetUserAttributes(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_userAttributesHasBeenSet = true; m_userAttributes = std::move(value); }
-    inline EndpointUser& WithUserAttributes(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetUserAttributes(value); return *this;}
-    inline EndpointUser& WithUserAttributes(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetUserAttributes(std::move(value)); return *this;}
-    inline EndpointUser& AddUserAttributes(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_userAttributesHasBeenSet = true; m_userAttributes.emplace(key, value); return *this; }
-    inline EndpointUser& AddUserAttributes(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_userAttributesHasBeenSet = true; m_userAttributes.emplace(std::move(key), value); return *this; }
-    inline EndpointUser& AddUserAttributes(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.emplace(key, std::move(value)); return *this; }
-    inline EndpointUser& AddUserAttributes(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline EndpointUser& AddUserAttributes(const char* key, Aws::Vector<Aws::String>&& value) { m_userAttributesHasBeenSet = true; m_userAttributes.emplace(key, std::move(value)); return *this; }
-    inline EndpointUser& AddUserAttributes(const char* key, const Aws::Vector<Aws::String>& value) { m_userAttributesHasBeenSet = true; m_userAttributes.emplace(key, value); return *this; }
+    template<typename UserAttributesT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetUserAttributes(UserAttributesT&& value) { m_userAttributesHasBeenSet = true; m_userAttributes = std::forward<UserAttributesT>(value); }
+    template<typename UserAttributesT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    EndpointUser& WithUserAttributes(UserAttributesT&& value) { SetUserAttributes(std::forward<UserAttributesT>(value)); return *this;}
+    template<typename UserAttributesKeyT = Aws::String, typename UserAttributesValueT = Aws::Vector<Aws::String>>
+    EndpointUser& AddUserAttributes(UserAttributesKeyT&& key, UserAttributesValueT&& value) {
+      m_userAttributesHasBeenSet = true; m_userAttributes.emplace(std::forward<UserAttributesKeyT>(key), std::forward<UserAttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the user.</p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline EndpointUser& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline EndpointUser& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline EndpointUser& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    EndpointUser& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
   private:
 

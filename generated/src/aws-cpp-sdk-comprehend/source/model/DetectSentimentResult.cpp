@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DetectSentimentResult::DetectSentimentResult() : 
-    m_sentiment(SentimentType::NOT_SET)
-{
-}
-
 DetectSentimentResult::DetectSentimentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DetectSentimentResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ DetectSentimentResult& DetectSentimentResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("Sentiment"))
   {
     m_sentiment = SentimentTypeMapper::GetSentimentTypeForName(jsonValue.GetString("Sentiment"));
-
+    m_sentimentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SentimentScore"))
   {
     m_sentimentScore = jsonValue.GetObject("SentimentScore");
-
+    m_sentimentScoreHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

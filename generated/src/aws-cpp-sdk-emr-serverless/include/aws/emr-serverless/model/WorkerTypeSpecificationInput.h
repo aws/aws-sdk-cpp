@@ -31,7 +31,7 @@ namespace Model
   class WorkerTypeSpecificationInput
   {
   public:
-    AWS_EMRSERVERLESS_API WorkerTypeSpecificationInput();
+    AWS_EMRSERVERLESS_API WorkerTypeSpecificationInput() = default;
     AWS_EMRSERVERLESS_API WorkerTypeSpecificationInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API WorkerTypeSpecificationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The image configuration for a worker type.</p>
      */
-    inline const ImageConfigurationInput& GetImageConfiguration() const{ return m_imageConfiguration; }
+    inline const ImageConfigurationInput& GetImageConfiguration() const { return m_imageConfiguration; }
     inline bool ImageConfigurationHasBeenSet() const { return m_imageConfigurationHasBeenSet; }
-    inline void SetImageConfiguration(const ImageConfigurationInput& value) { m_imageConfigurationHasBeenSet = true; m_imageConfiguration = value; }
-    inline void SetImageConfiguration(ImageConfigurationInput&& value) { m_imageConfigurationHasBeenSet = true; m_imageConfiguration = std::move(value); }
-    inline WorkerTypeSpecificationInput& WithImageConfiguration(const ImageConfigurationInput& value) { SetImageConfiguration(value); return *this;}
-    inline WorkerTypeSpecificationInput& WithImageConfiguration(ImageConfigurationInput&& value) { SetImageConfiguration(std::move(value)); return *this;}
+    template<typename ImageConfigurationT = ImageConfigurationInput>
+    void SetImageConfiguration(ImageConfigurationT&& value) { m_imageConfigurationHasBeenSet = true; m_imageConfiguration = std::forward<ImageConfigurationT>(value); }
+    template<typename ImageConfigurationT = ImageConfigurationInput>
+    WorkerTypeSpecificationInput& WithImageConfiguration(ImageConfigurationT&& value) { SetImageConfiguration(std::forward<ImageConfigurationT>(value)); return *this;}
     ///@}
   private:
 

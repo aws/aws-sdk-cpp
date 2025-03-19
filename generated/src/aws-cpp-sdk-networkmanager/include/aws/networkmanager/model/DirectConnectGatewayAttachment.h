@@ -32,7 +32,7 @@ namespace Model
   class DirectConnectGatewayAttachment
   {
   public:
-    AWS_NETWORKMANAGER_API DirectConnectGatewayAttachment();
+    AWS_NETWORKMANAGER_API DirectConnectGatewayAttachment() = default;
     AWS_NETWORKMANAGER_API DirectConnectGatewayAttachment(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API DirectConnectGatewayAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,26 +40,24 @@ namespace Model
 
     ///@{
     
-    inline const Attachment& GetAttachment() const{ return m_attachment; }
+    inline const Attachment& GetAttachment() const { return m_attachment; }
     inline bool AttachmentHasBeenSet() const { return m_attachmentHasBeenSet; }
-    inline void SetAttachment(const Attachment& value) { m_attachmentHasBeenSet = true; m_attachment = value; }
-    inline void SetAttachment(Attachment&& value) { m_attachmentHasBeenSet = true; m_attachment = std::move(value); }
-    inline DirectConnectGatewayAttachment& WithAttachment(const Attachment& value) { SetAttachment(value); return *this;}
-    inline DirectConnectGatewayAttachment& WithAttachment(Attachment&& value) { SetAttachment(std::move(value)); return *this;}
+    template<typename AttachmentT = Attachment>
+    void SetAttachment(AttachmentT&& value) { m_attachmentHasBeenSet = true; m_attachment = std::forward<AttachmentT>(value); }
+    template<typename AttachmentT = Attachment>
+    DirectConnectGatewayAttachment& WithAttachment(AttachmentT&& value) { SetAttachment(std::forward<AttachmentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Direct Connect gateway attachment ARN.</p>
      */
-    inline const Aws::String& GetDirectConnectGatewayArn() const{ return m_directConnectGatewayArn; }
+    inline const Aws::String& GetDirectConnectGatewayArn() const { return m_directConnectGatewayArn; }
     inline bool DirectConnectGatewayArnHasBeenSet() const { return m_directConnectGatewayArnHasBeenSet; }
-    inline void SetDirectConnectGatewayArn(const Aws::String& value) { m_directConnectGatewayArnHasBeenSet = true; m_directConnectGatewayArn = value; }
-    inline void SetDirectConnectGatewayArn(Aws::String&& value) { m_directConnectGatewayArnHasBeenSet = true; m_directConnectGatewayArn = std::move(value); }
-    inline void SetDirectConnectGatewayArn(const char* value) { m_directConnectGatewayArnHasBeenSet = true; m_directConnectGatewayArn.assign(value); }
-    inline DirectConnectGatewayAttachment& WithDirectConnectGatewayArn(const Aws::String& value) { SetDirectConnectGatewayArn(value); return *this;}
-    inline DirectConnectGatewayAttachment& WithDirectConnectGatewayArn(Aws::String&& value) { SetDirectConnectGatewayArn(std::move(value)); return *this;}
-    inline DirectConnectGatewayAttachment& WithDirectConnectGatewayArn(const char* value) { SetDirectConnectGatewayArn(value); return *this;}
+    template<typename DirectConnectGatewayArnT = Aws::String>
+    void SetDirectConnectGatewayArn(DirectConnectGatewayArnT&& value) { m_directConnectGatewayArnHasBeenSet = true; m_directConnectGatewayArn = std::forward<DirectConnectGatewayArnT>(value); }
+    template<typename DirectConnectGatewayArnT = Aws::String>
+    DirectConnectGatewayAttachment& WithDirectConnectGatewayArn(DirectConnectGatewayArnT&& value) { SetDirectConnectGatewayArn(std::forward<DirectConnectGatewayArnT>(value)); return *this;}
     ///@}
   private:
 

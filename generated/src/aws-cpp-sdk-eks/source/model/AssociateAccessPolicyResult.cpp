@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociateAccessPolicyResult::AssociateAccessPolicyResult()
-{
-}
-
 AssociateAccessPolicyResult::AssociateAccessPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ AssociateAccessPolicyResult& AssociateAccessPolicyResult::operator =(const Aws::
   if(jsonValue.ValueExists("clusterName"))
   {
     m_clusterName = jsonValue.GetString("clusterName");
-
+    m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principalArn"))
   {
     m_principalArn = jsonValue.GetString("principalArn");
-
+    m_principalArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associatedAccessPolicy"))
   {
     m_associatedAccessPolicy = jsonValue.GetObject("associatedAccessPolicy");
-
+    m_associatedAccessPolicyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

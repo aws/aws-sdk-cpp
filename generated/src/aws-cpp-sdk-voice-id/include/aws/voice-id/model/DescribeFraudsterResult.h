@@ -28,7 +28,7 @@ namespace Model
   class DescribeFraudsterResult
   {
   public:
-    AWS_VOICEID_API DescribeFraudsterResult();
+    AWS_VOICEID_API DescribeFraudsterResult() = default;
     AWS_VOICEID_API DescribeFraudsterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_VOICEID_API DescribeFraudsterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the specified fraudster.</p>
      */
-    inline const Fraudster& GetFraudster() const{ return m_fraudster; }
-    inline void SetFraudster(const Fraudster& value) { m_fraudster = value; }
-    inline void SetFraudster(Fraudster&& value) { m_fraudster = std::move(value); }
-    inline DescribeFraudsterResult& WithFraudster(const Fraudster& value) { SetFraudster(value); return *this;}
-    inline DescribeFraudsterResult& WithFraudster(Fraudster&& value) { SetFraudster(std::move(value)); return *this;}
+    inline const Fraudster& GetFraudster() const { return m_fraudster; }
+    template<typename FraudsterT = Fraudster>
+    void SetFraudster(FraudsterT&& value) { m_fraudsterHasBeenSet = true; m_fraudster = std::forward<FraudsterT>(value); }
+    template<typename FraudsterT = Fraudster>
+    DescribeFraudsterResult& WithFraudster(FraudsterT&& value) { SetFraudster(std::forward<FraudsterT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeFraudsterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeFraudsterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeFraudsterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeFraudsterResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Fraudster m_fraudster;
+    bool m_fraudsterHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

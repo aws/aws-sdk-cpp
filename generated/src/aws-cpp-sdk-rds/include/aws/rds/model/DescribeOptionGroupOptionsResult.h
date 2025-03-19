@@ -35,20 +35,20 @@ namespace Model
   class DescribeOptionGroupOptionsResult
   {
   public:
-    AWS_RDS_API DescribeOptionGroupOptionsResult();
+    AWS_RDS_API DescribeOptionGroupOptionsResult() = default;
     AWS_RDS_API DescribeOptionGroupOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RDS_API DescribeOptionGroupOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const Aws::Vector<OptionGroupOption>& GetOptionGroupOptions() const{ return m_optionGroupOptions; }
-    inline void SetOptionGroupOptions(const Aws::Vector<OptionGroupOption>& value) { m_optionGroupOptions = value; }
-    inline void SetOptionGroupOptions(Aws::Vector<OptionGroupOption>&& value) { m_optionGroupOptions = std::move(value); }
-    inline DescribeOptionGroupOptionsResult& WithOptionGroupOptions(const Aws::Vector<OptionGroupOption>& value) { SetOptionGroupOptions(value); return *this;}
-    inline DescribeOptionGroupOptionsResult& WithOptionGroupOptions(Aws::Vector<OptionGroupOption>&& value) { SetOptionGroupOptions(std::move(value)); return *this;}
-    inline DescribeOptionGroupOptionsResult& AddOptionGroupOptions(const OptionGroupOption& value) { m_optionGroupOptions.push_back(value); return *this; }
-    inline DescribeOptionGroupOptionsResult& AddOptionGroupOptions(OptionGroupOption&& value) { m_optionGroupOptions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<OptionGroupOption>& GetOptionGroupOptions() const { return m_optionGroupOptions; }
+    template<typename OptionGroupOptionsT = Aws::Vector<OptionGroupOption>>
+    void SetOptionGroupOptions(OptionGroupOptionsT&& value) { m_optionGroupOptionsHasBeenSet = true; m_optionGroupOptions = std::forward<OptionGroupOptionsT>(value); }
+    template<typename OptionGroupOptionsT = Aws::Vector<OptionGroupOption>>
+    DescribeOptionGroupOptionsResult& WithOptionGroupOptions(OptionGroupOptionsT&& value) { SetOptionGroupOptions(std::forward<OptionGroupOptionsT>(value)); return *this;}
+    template<typename OptionGroupOptionsT = OptionGroupOption>
+    DescribeOptionGroupOptionsResult& AddOptionGroupOptions(OptionGroupOptionsT&& value) { m_optionGroupOptionsHasBeenSet = true; m_optionGroupOptions.emplace_back(std::forward<OptionGroupOptionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,30 +57,31 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeOptionGroupOptionsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeOptionGroupOptionsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeOptionGroupOptionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeOptionGroupOptionsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeOptionGroupOptionsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeOptionGroupOptionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeOptionGroupOptionsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<OptionGroupOption> m_optionGroupOptions;
+    bool m_optionGroupOptionsHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

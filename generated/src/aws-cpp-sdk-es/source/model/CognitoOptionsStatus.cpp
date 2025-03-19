@@ -18,14 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-CognitoOptionsStatus::CognitoOptionsStatus() : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 CognitoOptionsStatus::CognitoOptionsStatus(JsonView jsonValue)
-  : CognitoOptionsStatus()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CognitoOptionsStatus& CognitoOptionsStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Options"))
   {
     m_options = jsonValue.GetObject("Options");
-
     m_optionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

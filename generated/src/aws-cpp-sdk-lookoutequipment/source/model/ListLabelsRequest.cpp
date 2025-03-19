@@ -12,18 +12,6 @@ using namespace Aws::LookoutEquipment::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListLabelsRequest::ListLabelsRequest() : 
-    m_labelGroupNameHasBeenSet(false),
-    m_intervalStartTimeHasBeenSet(false),
-    m_intervalEndTimeHasBeenSet(false),
-    m_faultCodeHasBeenSet(false),
-    m_equipmentHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListLabelsRequest::SerializePayload() const
 {
   JsonValue payload;

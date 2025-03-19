@@ -21,7 +21,7 @@ namespace Model
   class DescribeStreamRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API DescribeStreamRequest();
+    AWS_IOT_API DescribeStreamRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The stream ID.</p>
      */
-    inline const Aws::String& GetStreamId() const{ return m_streamId; }
+    inline const Aws::String& GetStreamId() const { return m_streamId; }
     inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
-    inline void SetStreamId(const Aws::String& value) { m_streamIdHasBeenSet = true; m_streamId = value; }
-    inline void SetStreamId(Aws::String&& value) { m_streamIdHasBeenSet = true; m_streamId = std::move(value); }
-    inline void SetStreamId(const char* value) { m_streamIdHasBeenSet = true; m_streamId.assign(value); }
-    inline DescribeStreamRequest& WithStreamId(const Aws::String& value) { SetStreamId(value); return *this;}
-    inline DescribeStreamRequest& WithStreamId(Aws::String&& value) { SetStreamId(std::move(value)); return *this;}
-    inline DescribeStreamRequest& WithStreamId(const char* value) { SetStreamId(value); return *this;}
+    template<typename StreamIdT = Aws::String>
+    void SetStreamId(StreamIdT&& value) { m_streamIdHasBeenSet = true; m_streamId = std::forward<StreamIdT>(value); }
+    template<typename StreamIdT = Aws::String>
+    DescribeStreamRequest& WithStreamId(StreamIdT&& value) { SetStreamId(std::forward<StreamIdT>(value)); return *this;}
     ///@}
   private:
 

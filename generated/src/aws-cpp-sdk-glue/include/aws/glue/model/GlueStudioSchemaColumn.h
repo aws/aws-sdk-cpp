@@ -32,7 +32,7 @@ namespace Model
   class GlueStudioSchemaColumn
   {
   public:
-    AWS_GLUE_API GlueStudioSchemaColumn();
+    AWS_GLUE_API GlueStudioSchemaColumn() = default;
     AWS_GLUE_API GlueStudioSchemaColumn(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API GlueStudioSchemaColumn& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of the column in the Glue Studio schema.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline GlueStudioSchemaColumn& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GlueStudioSchemaColumn& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GlueStudioSchemaColumn& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GlueStudioSchemaColumn& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The hive type for this column in the Glue Studio schema.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline GlueStudioSchemaColumn& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline GlueStudioSchemaColumn& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline GlueStudioSchemaColumn& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    GlueStudioSchemaColumn& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

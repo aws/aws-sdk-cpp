@@ -12,18 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ConnectDirectoryRequest::ConnectDirectoryRequest() : 
-    m_nameHasBeenSet(false),
-    m_shortNameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_size(DirectorySize::NOT_SET),
-    m_sizeHasBeenSet(false),
-    m_connectSettingsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String ConnectDirectoryRequest::SerializePayload() const
 {
   JsonValue payload;

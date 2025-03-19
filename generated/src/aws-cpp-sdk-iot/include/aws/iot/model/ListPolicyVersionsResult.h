@@ -35,7 +35,7 @@ namespace Model
   class ListPolicyVersionsResult
   {
   public:
-    AWS_IOT_API ListPolicyVersionsResult();
+    AWS_IOT_API ListPolicyVersionsResult() = default;
     AWS_IOT_API ListPolicyVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API ListPolicyVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,30 +44,30 @@ namespace Model
     /**
      * <p>The policy versions.</p>
      */
-    inline const Aws::Vector<PolicyVersion>& GetPolicyVersions() const{ return m_policyVersions; }
-    inline void SetPolicyVersions(const Aws::Vector<PolicyVersion>& value) { m_policyVersions = value; }
-    inline void SetPolicyVersions(Aws::Vector<PolicyVersion>&& value) { m_policyVersions = std::move(value); }
-    inline ListPolicyVersionsResult& WithPolicyVersions(const Aws::Vector<PolicyVersion>& value) { SetPolicyVersions(value); return *this;}
-    inline ListPolicyVersionsResult& WithPolicyVersions(Aws::Vector<PolicyVersion>&& value) { SetPolicyVersions(std::move(value)); return *this;}
-    inline ListPolicyVersionsResult& AddPolicyVersions(const PolicyVersion& value) { m_policyVersions.push_back(value); return *this; }
-    inline ListPolicyVersionsResult& AddPolicyVersions(PolicyVersion&& value) { m_policyVersions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PolicyVersion>& GetPolicyVersions() const { return m_policyVersions; }
+    template<typename PolicyVersionsT = Aws::Vector<PolicyVersion>>
+    void SetPolicyVersions(PolicyVersionsT&& value) { m_policyVersionsHasBeenSet = true; m_policyVersions = std::forward<PolicyVersionsT>(value); }
+    template<typename PolicyVersionsT = Aws::Vector<PolicyVersion>>
+    ListPolicyVersionsResult& WithPolicyVersions(PolicyVersionsT&& value) { SetPolicyVersions(std::forward<PolicyVersionsT>(value)); return *this;}
+    template<typename PolicyVersionsT = PolicyVersion>
+    ListPolicyVersionsResult& AddPolicyVersions(PolicyVersionsT&& value) { m_policyVersionsHasBeenSet = true; m_policyVersions.emplace_back(std::forward<PolicyVersionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListPolicyVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListPolicyVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListPolicyVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListPolicyVersionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<PolicyVersion> m_policyVersions;
+    bool m_policyVersionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

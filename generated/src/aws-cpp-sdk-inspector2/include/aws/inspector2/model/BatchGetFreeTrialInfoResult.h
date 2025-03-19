@@ -30,7 +30,7 @@ namespace Model
   class BatchGetFreeTrialInfoResult
   {
   public:
-    AWS_INSPECTOR2_API BatchGetFreeTrialInfoResult();
+    AWS_INSPECTOR2_API BatchGetFreeTrialInfoResult() = default;
     AWS_INSPECTOR2_API BatchGetFreeTrialInfoResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INSPECTOR2_API BatchGetFreeTrialInfoResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>An array of objects that provide Amazon Inspector free trial details for each
      * of the requested accounts. </p>
      */
-    inline const Aws::Vector<FreeTrialAccountInfo>& GetAccounts() const{ return m_accounts; }
-    inline void SetAccounts(const Aws::Vector<FreeTrialAccountInfo>& value) { m_accounts = value; }
-    inline void SetAccounts(Aws::Vector<FreeTrialAccountInfo>&& value) { m_accounts = std::move(value); }
-    inline BatchGetFreeTrialInfoResult& WithAccounts(const Aws::Vector<FreeTrialAccountInfo>& value) { SetAccounts(value); return *this;}
-    inline BatchGetFreeTrialInfoResult& WithAccounts(Aws::Vector<FreeTrialAccountInfo>&& value) { SetAccounts(std::move(value)); return *this;}
-    inline BatchGetFreeTrialInfoResult& AddAccounts(const FreeTrialAccountInfo& value) { m_accounts.push_back(value); return *this; }
-    inline BatchGetFreeTrialInfoResult& AddAccounts(FreeTrialAccountInfo&& value) { m_accounts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FreeTrialAccountInfo>& GetAccounts() const { return m_accounts; }
+    template<typename AccountsT = Aws::Vector<FreeTrialAccountInfo>>
+    void SetAccounts(AccountsT&& value) { m_accountsHasBeenSet = true; m_accounts = std::forward<AccountsT>(value); }
+    template<typename AccountsT = Aws::Vector<FreeTrialAccountInfo>>
+    BatchGetFreeTrialInfoResult& WithAccounts(AccountsT&& value) { SetAccounts(std::forward<AccountsT>(value)); return *this;}
+    template<typename AccountsT = FreeTrialAccountInfo>
+    BatchGetFreeTrialInfoResult& AddAccounts(AccountsT&& value) { m_accountsHasBeenSet = true; m_accounts.emplace_back(std::forward<AccountsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,33 @@ namespace Model
      * <p>An array of objects detailing any accounts that free trial data could not be
      * returned for.</p>
      */
-    inline const Aws::Vector<FreeTrialInfoError>& GetFailedAccounts() const{ return m_failedAccounts; }
-    inline void SetFailedAccounts(const Aws::Vector<FreeTrialInfoError>& value) { m_failedAccounts = value; }
-    inline void SetFailedAccounts(Aws::Vector<FreeTrialInfoError>&& value) { m_failedAccounts = std::move(value); }
-    inline BatchGetFreeTrialInfoResult& WithFailedAccounts(const Aws::Vector<FreeTrialInfoError>& value) { SetFailedAccounts(value); return *this;}
-    inline BatchGetFreeTrialInfoResult& WithFailedAccounts(Aws::Vector<FreeTrialInfoError>&& value) { SetFailedAccounts(std::move(value)); return *this;}
-    inline BatchGetFreeTrialInfoResult& AddFailedAccounts(const FreeTrialInfoError& value) { m_failedAccounts.push_back(value); return *this; }
-    inline BatchGetFreeTrialInfoResult& AddFailedAccounts(FreeTrialInfoError&& value) { m_failedAccounts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FreeTrialInfoError>& GetFailedAccounts() const { return m_failedAccounts; }
+    template<typename FailedAccountsT = Aws::Vector<FreeTrialInfoError>>
+    void SetFailedAccounts(FailedAccountsT&& value) { m_failedAccountsHasBeenSet = true; m_failedAccounts = std::forward<FailedAccountsT>(value); }
+    template<typename FailedAccountsT = Aws::Vector<FreeTrialInfoError>>
+    BatchGetFreeTrialInfoResult& WithFailedAccounts(FailedAccountsT&& value) { SetFailedAccounts(std::forward<FailedAccountsT>(value)); return *this;}
+    template<typename FailedAccountsT = FreeTrialInfoError>
+    BatchGetFreeTrialInfoResult& AddFailedAccounts(FailedAccountsT&& value) { m_failedAccountsHasBeenSet = true; m_failedAccounts.emplace_back(std::forward<FailedAccountsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetFreeTrialInfoResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetFreeTrialInfoResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetFreeTrialInfoResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetFreeTrialInfoResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FreeTrialAccountInfo> m_accounts;
+    bool m_accountsHasBeenSet = false;
 
     Aws::Vector<FreeTrialInfoError> m_failedAccounts;
+    bool m_failedAccountsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

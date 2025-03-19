@@ -12,14 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AcceptSubscriptionRequestRequest::AcceptSubscriptionRequestRequest() : 
-    m_assetScopesHasBeenSet(false),
-    m_decisionCommentHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String AcceptSubscriptionRequestRequest::SerializePayload() const
 {
   JsonValue payload;

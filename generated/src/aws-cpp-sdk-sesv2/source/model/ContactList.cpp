@@ -18,14 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-ContactList::ContactList() : 
-    m_contactListNameHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false)
-{
-}
-
 ContactList::ContactList(JsonView jsonValue)
-  : ContactList()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ContactList& ContactList::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ContactListName"))
   {
     m_contactListName = jsonValue.GetString("ContactListName");
-
     m_contactListNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTimestamp"))
   {
     m_lastUpdatedTimestamp = jsonValue.GetDouble("LastUpdatedTimestamp");
-
     m_lastUpdatedTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

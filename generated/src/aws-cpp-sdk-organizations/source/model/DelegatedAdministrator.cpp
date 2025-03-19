@@ -18,22 +18,7 @@ namespace Organizations
 namespace Model
 {
 
-DelegatedAdministrator::DelegatedAdministrator() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(AccountStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_joinedMethod(AccountJoinedMethod::NOT_SET),
-    m_joinedMethodHasBeenSet(false),
-    m_joinedTimestampHasBeenSet(false),
-    m_delegationEnabledDateHasBeenSet(false)
-{
-}
-
 DelegatedAdministrator::DelegatedAdministrator(JsonView jsonValue)
-  : DelegatedAdministrator()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ DelegatedAdministrator& DelegatedAdministrator::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Email"))
   {
     m_email = jsonValue.GetString("Email");
-
     m_emailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = AccountStatusMapper::GetAccountStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JoinedMethod"))
   {
     m_joinedMethod = AccountJoinedMethodMapper::GetAccountJoinedMethodForName(jsonValue.GetString("JoinedMethod"));
-
     m_joinedMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JoinedTimestamp"))
   {
     m_joinedTimestamp = jsonValue.GetDouble("JoinedTimestamp");
-
     m_joinedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DelegationEnabledDate"))
   {
     m_delegationEnabledDate = jsonValue.GetDouble("DelegationEnabledDate");
-
     m_delegationEnabledDateHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UploadReadSetPartResult::UploadReadSetPartResult()
-{
-}
-
 UploadReadSetPartResult::UploadReadSetPartResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UploadReadSetPartResult& UploadReadSetPartResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("checksum"))
   {
     m_checksum = jsonValue.GetString("checksum");
-
+    m_checksumHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

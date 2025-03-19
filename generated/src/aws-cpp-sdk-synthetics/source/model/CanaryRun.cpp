@@ -18,17 +18,7 @@ namespace Synthetics
 namespace Model
 {
 
-CanaryRun::CanaryRun() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_timelineHasBeenSet(false),
-    m_artifactS3LocationHasBeenSet(false)
-{
-}
-
 CanaryRun::CanaryRun(JsonView jsonValue)
-  : CanaryRun()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ CanaryRun& CanaryRun::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timeline"))
   {
     m_timeline = jsonValue.GetObject("Timeline");
-
     m_timelineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ArtifactS3Location"))
   {
     m_artifactS3Location = jsonValue.GetString("ArtifactS3Location");
-
     m_artifactS3LocationHasBeenSet = true;
   }
-
   return *this;
 }
 

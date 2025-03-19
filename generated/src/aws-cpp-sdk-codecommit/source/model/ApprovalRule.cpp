@@ -18,20 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-ApprovalRule::ApprovalRule() : 
-    m_approvalRuleIdHasBeenSet(false),
-    m_approvalRuleNameHasBeenSet(false),
-    m_approvalRuleContentHasBeenSet(false),
-    m_ruleContentSha256HasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastModifiedUserHasBeenSet(false),
-    m_originApprovalRuleTemplateHasBeenSet(false)
-{
-}
-
 ApprovalRule::ApprovalRule(JsonView jsonValue)
-  : ApprovalRule()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ ApprovalRule& ApprovalRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("approvalRuleId"))
   {
     m_approvalRuleId = jsonValue.GetString("approvalRuleId");
-
     m_approvalRuleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("approvalRuleName"))
   {
     m_approvalRuleName = jsonValue.GetString("approvalRuleName");
-
     m_approvalRuleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("approvalRuleContent"))
   {
     m_approvalRuleContent = jsonValue.GetString("approvalRuleContent");
-
     m_approvalRuleContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleContentSha256"))
   {
     m_ruleContentSha256 = jsonValue.GetString("ruleContentSha256");
-
     m_ruleContentSha256HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("lastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDate"))
   {
     m_creationDate = jsonValue.GetDouble("creationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedUser"))
   {
     m_lastModifiedUser = jsonValue.GetString("lastModifiedUser");
-
     m_lastModifiedUserHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("originApprovalRuleTemplate"))
   {
     m_originApprovalRuleTemplate = jsonValue.GetObject("originApprovalRuleTemplate");
-
     m_originApprovalRuleTemplateHasBeenSet = true;
   }
-
   return *this;
 }
 

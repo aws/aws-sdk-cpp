@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TopicSingularFilterConstant::TopicSingularFilterConstant() : 
-    m_constantType(ConstantType::NOT_SET),
-    m_constantTypeHasBeenSet(false),
-    m_singularConstantHasBeenSet(false)
-{
-}
-
 TopicSingularFilterConstant::TopicSingularFilterConstant(JsonView jsonValue)
-  : TopicSingularFilterConstant()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TopicSingularFilterConstant& TopicSingularFilterConstant::operator =(JsonView js
   if(jsonValue.ValueExists("ConstantType"))
   {
     m_constantType = ConstantTypeMapper::GetConstantTypeForName(jsonValue.GetString("ConstantType"));
-
     m_constantTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SingularConstant"))
   {
     m_singularConstant = jsonValue.GetString("SingularConstant");
-
     m_singularConstantHasBeenSet = true;
   }
-
   return *this;
 }
 

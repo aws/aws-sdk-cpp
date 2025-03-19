@@ -12,11 +12,6 @@ using namespace Aws::BillingConductor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePricingPlanRequest::DeletePricingPlanRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeletePricingPlanRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class AnalyzerConfiguration
   {
   public:
-    AWS_ACCESSANALYZER_API AnalyzerConfiguration();
+    AWS_ACCESSANALYZER_API AnalyzerConfiguration() = default;
     AWS_ACCESSANALYZER_API AnalyzerConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API AnalyzerConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Specifies the configuration of an unused access analyzer for an Amazon Web
      * Services organization or account.</p>
      */
-    inline const UnusedAccessConfiguration& GetUnusedAccess() const{ return m_unusedAccess; }
+    inline const UnusedAccessConfiguration& GetUnusedAccess() const { return m_unusedAccess; }
     inline bool UnusedAccessHasBeenSet() const { return m_unusedAccessHasBeenSet; }
-    inline void SetUnusedAccess(const UnusedAccessConfiguration& value) { m_unusedAccessHasBeenSet = true; m_unusedAccess = value; }
-    inline void SetUnusedAccess(UnusedAccessConfiguration&& value) { m_unusedAccessHasBeenSet = true; m_unusedAccess = std::move(value); }
-    inline AnalyzerConfiguration& WithUnusedAccess(const UnusedAccessConfiguration& value) { SetUnusedAccess(value); return *this;}
-    inline AnalyzerConfiguration& WithUnusedAccess(UnusedAccessConfiguration&& value) { SetUnusedAccess(std::move(value)); return *this;}
+    template<typename UnusedAccessT = UnusedAccessConfiguration>
+    void SetUnusedAccess(UnusedAccessT&& value) { m_unusedAccessHasBeenSet = true; m_unusedAccess = std::forward<UnusedAccessT>(value); }
+    template<typename UnusedAccessT = UnusedAccessConfiguration>
+    AnalyzerConfiguration& WithUnusedAccess(UnusedAccessT&& value) { SetUnusedAccess(std::forward<UnusedAccessT>(value)); return *this;}
     ///@}
   private:
 

@@ -10,15 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DescribeTrafficSourcesRequest::DescribeTrafficSourcesRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_trafficSourceTypeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTrafficSourcesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

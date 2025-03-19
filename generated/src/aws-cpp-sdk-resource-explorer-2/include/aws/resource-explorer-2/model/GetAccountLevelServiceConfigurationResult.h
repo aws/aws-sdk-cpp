@@ -28,7 +28,7 @@ namespace Model
   class GetAccountLevelServiceConfigurationResult
   {
   public:
-    AWS_RESOURCEEXPLORER2_API GetAccountLevelServiceConfigurationResult();
+    AWS_RESOURCEEXPLORER2_API GetAccountLevelServiceConfigurationResult() = default;
     AWS_RESOURCEEXPLORER2_API GetAccountLevelServiceConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESOURCEEXPLORER2_API GetAccountLevelServiceConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Details about the organization, and whether configuration is
      * <code>ENABLED</code> or <code>DISABLED</code>.</p>
      */
-    inline const OrgConfiguration& GetOrgConfiguration() const{ return m_orgConfiguration; }
-    inline void SetOrgConfiguration(const OrgConfiguration& value) { m_orgConfiguration = value; }
-    inline void SetOrgConfiguration(OrgConfiguration&& value) { m_orgConfiguration = std::move(value); }
-    inline GetAccountLevelServiceConfigurationResult& WithOrgConfiguration(const OrgConfiguration& value) { SetOrgConfiguration(value); return *this;}
-    inline GetAccountLevelServiceConfigurationResult& WithOrgConfiguration(OrgConfiguration&& value) { SetOrgConfiguration(std::move(value)); return *this;}
+    inline const OrgConfiguration& GetOrgConfiguration() const { return m_orgConfiguration; }
+    template<typename OrgConfigurationT = OrgConfiguration>
+    void SetOrgConfiguration(OrgConfigurationT&& value) { m_orgConfigurationHasBeenSet = true; m_orgConfiguration = std::forward<OrgConfigurationT>(value); }
+    template<typename OrgConfigurationT = OrgConfiguration>
+    GetAccountLevelServiceConfigurationResult& WithOrgConfiguration(OrgConfigurationT&& value) { SetOrgConfiguration(std::forward<OrgConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAccountLevelServiceConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAccountLevelServiceConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAccountLevelServiceConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAccountLevelServiceConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     OrgConfiguration m_orgConfiguration;
+    bool m_orgConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

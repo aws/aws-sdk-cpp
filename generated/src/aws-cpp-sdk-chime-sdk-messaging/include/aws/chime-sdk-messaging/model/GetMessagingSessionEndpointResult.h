@@ -28,7 +28,7 @@ namespace Model
   class GetMessagingSessionEndpointResult
   {
   public:
-    AWS_CHIMESDKMESSAGING_API GetMessagingSessionEndpointResult();
+    AWS_CHIMESDKMESSAGING_API GetMessagingSessionEndpointResult() = default;
     AWS_CHIMESDKMESSAGING_API GetMessagingSessionEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKMESSAGING_API GetMessagingSessionEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The endpoint returned in the response.</p>
      */
-    inline const MessagingSessionEndpoint& GetEndpoint() const{ return m_endpoint; }
-    inline void SetEndpoint(const MessagingSessionEndpoint& value) { m_endpoint = value; }
-    inline void SetEndpoint(MessagingSessionEndpoint&& value) { m_endpoint = std::move(value); }
-    inline GetMessagingSessionEndpointResult& WithEndpoint(const MessagingSessionEndpoint& value) { SetEndpoint(value); return *this;}
-    inline GetMessagingSessionEndpointResult& WithEndpoint(MessagingSessionEndpoint&& value) { SetEndpoint(std::move(value)); return *this;}
+    inline const MessagingSessionEndpoint& GetEndpoint() const { return m_endpoint; }
+    template<typename EndpointT = MessagingSessionEndpoint>
+    void SetEndpoint(EndpointT&& value) { m_endpointHasBeenSet = true; m_endpoint = std::forward<EndpointT>(value); }
+    template<typename EndpointT = MessagingSessionEndpoint>
+    GetMessagingSessionEndpointResult& WithEndpoint(EndpointT&& value) { SetEndpoint(std::forward<EndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetMessagingSessionEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetMessagingSessionEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetMessagingSessionEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetMessagingSessionEndpointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     MessagingSessionEndpoint m_endpoint;
+    bool m_endpointHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

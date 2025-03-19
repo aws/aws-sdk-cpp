@@ -29,7 +29,7 @@ namespace Model
   class UpdateColumnStatisticsForTableResult
   {
   public:
-    AWS_GLUE_API UpdateColumnStatisticsForTableResult();
+    AWS_GLUE_API UpdateColumnStatisticsForTableResult() = default;
     AWS_GLUE_API UpdateColumnStatisticsForTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API UpdateColumnStatisticsForTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>List of ColumnStatisticsErrors.</p>
      */
-    inline const Aws::Vector<ColumnStatisticsError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<ColumnStatisticsError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<ColumnStatisticsError>&& value) { m_errors = std::move(value); }
-    inline UpdateColumnStatisticsForTableResult& WithErrors(const Aws::Vector<ColumnStatisticsError>& value) { SetErrors(value); return *this;}
-    inline UpdateColumnStatisticsForTableResult& WithErrors(Aws::Vector<ColumnStatisticsError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline UpdateColumnStatisticsForTableResult& AddErrors(const ColumnStatisticsError& value) { m_errors.push_back(value); return *this; }
-    inline UpdateColumnStatisticsForTableResult& AddErrors(ColumnStatisticsError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ColumnStatisticsError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<ColumnStatisticsError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<ColumnStatisticsError>>
+    UpdateColumnStatisticsForTableResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = ColumnStatisticsError>
+    UpdateColumnStatisticsForTableResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateColumnStatisticsForTableResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateColumnStatisticsForTableResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateColumnStatisticsForTableResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateColumnStatisticsForTableResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ColumnStatisticsError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

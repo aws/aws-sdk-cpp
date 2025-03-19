@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RunStatementResult::RunStatementResult() : 
-    m_id(0)
-{
-}
-
 RunStatementResult::RunStatementResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : RunStatementResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ RunStatementResult& RunStatementResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetInteger("Id");
-
+    m_idHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

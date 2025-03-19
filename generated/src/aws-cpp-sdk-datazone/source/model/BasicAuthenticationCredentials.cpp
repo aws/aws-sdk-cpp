@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-BasicAuthenticationCredentials::BasicAuthenticationCredentials() : 
-    m_passwordHasBeenSet(false),
-    m_userNameHasBeenSet(false)
-{
-}
-
 BasicAuthenticationCredentials::BasicAuthenticationCredentials(JsonView jsonValue)
-  : BasicAuthenticationCredentials()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BasicAuthenticationCredentials& BasicAuthenticationCredentials::operator =(JsonV
   if(jsonValue.ValueExists("password"))
   {
     m_password = jsonValue.GetString("password");
-
     m_passwordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userName"))
   {
     m_userName = jsonValue.GetString("userName");
-
     m_userNameHasBeenSet = true;
   }
-
   return *this;
 }
 

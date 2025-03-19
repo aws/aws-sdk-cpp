@@ -32,7 +32,7 @@ namespace Model
   class ClusterMasterUserSecret
   {
   public:
-    AWS_DOCDB_API ClusterMasterUserSecret();
+    AWS_DOCDB_API ClusterMasterUserSecret() = default;
     AWS_DOCDB_API ClusterMasterUserSecret(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_DOCDB_API ClusterMasterUserSecret& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the secret.</p>
      */
-    inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
+    inline const Aws::String& GetSecretArn() const { return m_secretArn; }
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
-    inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
-    inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
-    inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
-    inline ClusterMasterUserSecret& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
-    inline ClusterMasterUserSecret& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
-    inline ClusterMasterUserSecret& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
+    template<typename SecretArnT = Aws::String>
+    void SetSecretArn(SecretArnT&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::forward<SecretArnT>(value); }
+    template<typename SecretArnT = Aws::String>
+    ClusterMasterUserSecret& WithSecretArn(SecretArnT&& value) { SetSecretArn(std::forward<SecretArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * management of database credentials, and then modify the instance again to turn
      * on automatic management of database credentials.</p> </li> </ul>
      */
-    inline const Aws::String& GetSecretStatus() const{ return m_secretStatus; }
+    inline const Aws::String& GetSecretStatus() const { return m_secretStatus; }
     inline bool SecretStatusHasBeenSet() const { return m_secretStatusHasBeenSet; }
-    inline void SetSecretStatus(const Aws::String& value) { m_secretStatusHasBeenSet = true; m_secretStatus = value; }
-    inline void SetSecretStatus(Aws::String&& value) { m_secretStatusHasBeenSet = true; m_secretStatus = std::move(value); }
-    inline void SetSecretStatus(const char* value) { m_secretStatusHasBeenSet = true; m_secretStatus.assign(value); }
-    inline ClusterMasterUserSecret& WithSecretStatus(const Aws::String& value) { SetSecretStatus(value); return *this;}
-    inline ClusterMasterUserSecret& WithSecretStatus(Aws::String&& value) { SetSecretStatus(std::move(value)); return *this;}
-    inline ClusterMasterUserSecret& WithSecretStatus(const char* value) { SetSecretStatus(value); return *this;}
+    template<typename SecretStatusT = Aws::String>
+    void SetSecretStatus(SecretStatusT&& value) { m_secretStatusHasBeenSet = true; m_secretStatus = std::forward<SecretStatusT>(value); }
+    template<typename SecretStatusT = Aws::String>
+    ClusterMasterUserSecret& WithSecretStatus(SecretStatusT&& value) { SetSecretStatus(std::forward<SecretStatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +79,12 @@ namespace Model
      * <p>The Amazon Web Services KMS key identifier that is used to encrypt the
      * secret.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline ClusterMasterUserSecret& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline ClusterMasterUserSecret& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline ClusterMasterUserSecret& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    ClusterMasterUserSecret& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
   private:
 

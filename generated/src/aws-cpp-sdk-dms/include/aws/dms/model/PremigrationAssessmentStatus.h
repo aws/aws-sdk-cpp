@@ -36,7 +36,7 @@ namespace Model
   class PremigrationAssessmentStatus
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API PremigrationAssessmentStatus();
+    AWS_DATABASEMIGRATIONSERVICE_API PremigrationAssessmentStatus() = default;
     AWS_DATABASEMIGRATIONSERVICE_API PremigrationAssessmentStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API PremigrationAssessmentStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of this assessment run.</p>
      */
-    inline const Aws::String& GetPremigrationAssessmentRunArn() const{ return m_premigrationAssessmentRunArn; }
+    inline const Aws::String& GetPremigrationAssessmentRunArn() const { return m_premigrationAssessmentRunArn; }
     inline bool PremigrationAssessmentRunArnHasBeenSet() const { return m_premigrationAssessmentRunArnHasBeenSet; }
-    inline void SetPremigrationAssessmentRunArn(const Aws::String& value) { m_premigrationAssessmentRunArnHasBeenSet = true; m_premigrationAssessmentRunArn = value; }
-    inline void SetPremigrationAssessmentRunArn(Aws::String&& value) { m_premigrationAssessmentRunArnHasBeenSet = true; m_premigrationAssessmentRunArn = std::move(value); }
-    inline void SetPremigrationAssessmentRunArn(const char* value) { m_premigrationAssessmentRunArnHasBeenSet = true; m_premigrationAssessmentRunArn.assign(value); }
-    inline PremigrationAssessmentStatus& WithPremigrationAssessmentRunArn(const Aws::String& value) { SetPremigrationAssessmentRunArn(value); return *this;}
-    inline PremigrationAssessmentStatus& WithPremigrationAssessmentRunArn(Aws::String&& value) { SetPremigrationAssessmentRunArn(std::move(value)); return *this;}
-    inline PremigrationAssessmentStatus& WithPremigrationAssessmentRunArn(const char* value) { SetPremigrationAssessmentRunArn(value); return *this;}
+    template<typename PremigrationAssessmentRunArnT = Aws::String>
+    void SetPremigrationAssessmentRunArn(PremigrationAssessmentRunArnT&& value) { m_premigrationAssessmentRunArnHasBeenSet = true; m_premigrationAssessmentRunArn = std::forward<PremigrationAssessmentRunArnT>(value); }
+    template<typename PremigrationAssessmentRunArnT = Aws::String>
+    PremigrationAssessmentStatus& WithPremigrationAssessmentRunArn(PremigrationAssessmentRunArnT&& value) { SetPremigrationAssessmentRunArn(std::forward<PremigrationAssessmentRunArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,7 +61,7 @@ namespace Model
      * automatically if the assessment fails. This can help you evaluate the issue that
      * is preventing the replication from running successfully.</p>
      */
-    inline bool GetFailOnAssessmentFailure() const{ return m_failOnAssessmentFailure; }
+    inline bool GetFailOnAssessmentFailure() const { return m_failOnAssessmentFailure; }
     inline bool FailOnAssessmentFailureHasBeenSet() const { return m_failOnAssessmentFailureHasBeenSet; }
     inline void SetFailOnAssessmentFailure(bool value) { m_failOnAssessmentFailureHasBeenSet = true; m_failOnAssessmentFailure = value; }
     inline PremigrationAssessmentStatus& WithFailOnAssessmentFailure(bool value) { SetFailOnAssessmentFailure(value); return *this;}
@@ -90,50 +88,46 @@ namespace Model
      * <li> <p> <code>warning</code>: At least one individual assessment completed with
      * a warning status. </p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline PremigrationAssessmentStatus& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline PremigrationAssessmentStatus& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline PremigrationAssessmentStatus& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    PremigrationAssessmentStatus& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date which the assessment run was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetPremigrationAssessmentRunCreationDate() const{ return m_premigrationAssessmentRunCreationDate; }
+    inline const Aws::Utils::DateTime& GetPremigrationAssessmentRunCreationDate() const { return m_premigrationAssessmentRunCreationDate; }
     inline bool PremigrationAssessmentRunCreationDateHasBeenSet() const { return m_premigrationAssessmentRunCreationDateHasBeenSet; }
-    inline void SetPremigrationAssessmentRunCreationDate(const Aws::Utils::DateTime& value) { m_premigrationAssessmentRunCreationDateHasBeenSet = true; m_premigrationAssessmentRunCreationDate = value; }
-    inline void SetPremigrationAssessmentRunCreationDate(Aws::Utils::DateTime&& value) { m_premigrationAssessmentRunCreationDateHasBeenSet = true; m_premigrationAssessmentRunCreationDate = std::move(value); }
-    inline PremigrationAssessmentStatus& WithPremigrationAssessmentRunCreationDate(const Aws::Utils::DateTime& value) { SetPremigrationAssessmentRunCreationDate(value); return *this;}
-    inline PremigrationAssessmentStatus& WithPremigrationAssessmentRunCreationDate(Aws::Utils::DateTime&& value) { SetPremigrationAssessmentRunCreationDate(std::move(value)); return *this;}
+    template<typename PremigrationAssessmentRunCreationDateT = Aws::Utils::DateTime>
+    void SetPremigrationAssessmentRunCreationDate(PremigrationAssessmentRunCreationDateT&& value) { m_premigrationAssessmentRunCreationDateHasBeenSet = true; m_premigrationAssessmentRunCreationDate = std::forward<PremigrationAssessmentRunCreationDateT>(value); }
+    template<typename PremigrationAssessmentRunCreationDateT = Aws::Utils::DateTime>
+    PremigrationAssessmentStatus& WithPremigrationAssessmentRunCreationDate(PremigrationAssessmentRunCreationDateT&& value) { SetPremigrationAssessmentRunCreationDate(std::forward<PremigrationAssessmentRunCreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ReplicationTaskAssessmentRunProgress& GetAssessmentProgress() const{ return m_assessmentProgress; }
+    inline const ReplicationTaskAssessmentRunProgress& GetAssessmentProgress() const { return m_assessmentProgress; }
     inline bool AssessmentProgressHasBeenSet() const { return m_assessmentProgressHasBeenSet; }
-    inline void SetAssessmentProgress(const ReplicationTaskAssessmentRunProgress& value) { m_assessmentProgressHasBeenSet = true; m_assessmentProgress = value; }
-    inline void SetAssessmentProgress(ReplicationTaskAssessmentRunProgress&& value) { m_assessmentProgressHasBeenSet = true; m_assessmentProgress = std::move(value); }
-    inline PremigrationAssessmentStatus& WithAssessmentProgress(const ReplicationTaskAssessmentRunProgress& value) { SetAssessmentProgress(value); return *this;}
-    inline PremigrationAssessmentStatus& WithAssessmentProgress(ReplicationTaskAssessmentRunProgress&& value) { SetAssessmentProgress(std::move(value)); return *this;}
+    template<typename AssessmentProgressT = ReplicationTaskAssessmentRunProgress>
+    void SetAssessmentProgress(AssessmentProgressT&& value) { m_assessmentProgressHasBeenSet = true; m_assessmentProgress = std::forward<AssessmentProgressT>(value); }
+    template<typename AssessmentProgressT = ReplicationTaskAssessmentRunProgress>
+    PremigrationAssessmentStatus& WithAssessmentProgress(AssessmentProgressT&& value) { SetAssessmentProgress(std::forward<AssessmentProgressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last message generated by an individual assessment failure.</p>
      */
-    inline const Aws::String& GetLastFailureMessage() const{ return m_lastFailureMessage; }
+    inline const Aws::String& GetLastFailureMessage() const { return m_lastFailureMessage; }
     inline bool LastFailureMessageHasBeenSet() const { return m_lastFailureMessageHasBeenSet; }
-    inline void SetLastFailureMessage(const Aws::String& value) { m_lastFailureMessageHasBeenSet = true; m_lastFailureMessage = value; }
-    inline void SetLastFailureMessage(Aws::String&& value) { m_lastFailureMessageHasBeenSet = true; m_lastFailureMessage = std::move(value); }
-    inline void SetLastFailureMessage(const char* value) { m_lastFailureMessageHasBeenSet = true; m_lastFailureMessage.assign(value); }
-    inline PremigrationAssessmentStatus& WithLastFailureMessage(const Aws::String& value) { SetLastFailureMessage(value); return *this;}
-    inline PremigrationAssessmentStatus& WithLastFailureMessage(Aws::String&& value) { SetLastFailureMessage(std::move(value)); return *this;}
-    inline PremigrationAssessmentStatus& WithLastFailureMessage(const char* value) { SetLastFailureMessage(value); return *this;}
+    template<typename LastFailureMessageT = Aws::String>
+    void SetLastFailureMessage(LastFailureMessageT&& value) { m_lastFailureMessageHasBeenSet = true; m_lastFailureMessage = std::forward<LastFailureMessageT>(value); }
+    template<typename LastFailureMessageT = Aws::String>
+    PremigrationAssessmentStatus& WithLastFailureMessage(LastFailureMessageT&& value) { SetLastFailureMessage(std::forward<LastFailureMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,14 +135,12 @@ namespace Model
      * <p>The Amazon S3 bucket that Database Migration Service Serverless created to
      * store the results of this assessment run.</p>
      */
-    inline const Aws::String& GetResultLocationBucket() const{ return m_resultLocationBucket; }
+    inline const Aws::String& GetResultLocationBucket() const { return m_resultLocationBucket; }
     inline bool ResultLocationBucketHasBeenSet() const { return m_resultLocationBucketHasBeenSet; }
-    inline void SetResultLocationBucket(const Aws::String& value) { m_resultLocationBucketHasBeenSet = true; m_resultLocationBucket = value; }
-    inline void SetResultLocationBucket(Aws::String&& value) { m_resultLocationBucketHasBeenSet = true; m_resultLocationBucket = std::move(value); }
-    inline void SetResultLocationBucket(const char* value) { m_resultLocationBucketHasBeenSet = true; m_resultLocationBucket.assign(value); }
-    inline PremigrationAssessmentStatus& WithResultLocationBucket(const Aws::String& value) { SetResultLocationBucket(value); return *this;}
-    inline PremigrationAssessmentStatus& WithResultLocationBucket(Aws::String&& value) { SetResultLocationBucket(std::move(value)); return *this;}
-    inline PremigrationAssessmentStatus& WithResultLocationBucket(const char* value) { SetResultLocationBucket(value); return *this;}
+    template<typename ResultLocationBucketT = Aws::String>
+    void SetResultLocationBucket(ResultLocationBucketT&& value) { m_resultLocationBucketHasBeenSet = true; m_resultLocationBucket = std::forward<ResultLocationBucketT>(value); }
+    template<typename ResultLocationBucketT = Aws::String>
+    PremigrationAssessmentStatus& WithResultLocationBucket(ResultLocationBucketT&& value) { SetResultLocationBucket(std::forward<ResultLocationBucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -156,14 +148,12 @@ namespace Model
      * <p>The folder within an Amazon S3 bucket where you want Database Migration
      * Service to store the results of this assessment run.</p>
      */
-    inline const Aws::String& GetResultLocationFolder() const{ return m_resultLocationFolder; }
+    inline const Aws::String& GetResultLocationFolder() const { return m_resultLocationFolder; }
     inline bool ResultLocationFolderHasBeenSet() const { return m_resultLocationFolderHasBeenSet; }
-    inline void SetResultLocationFolder(const Aws::String& value) { m_resultLocationFolderHasBeenSet = true; m_resultLocationFolder = value; }
-    inline void SetResultLocationFolder(Aws::String&& value) { m_resultLocationFolderHasBeenSet = true; m_resultLocationFolder = std::move(value); }
-    inline void SetResultLocationFolder(const char* value) { m_resultLocationFolderHasBeenSet = true; m_resultLocationFolder.assign(value); }
-    inline PremigrationAssessmentStatus& WithResultLocationFolder(const Aws::String& value) { SetResultLocationFolder(value); return *this;}
-    inline PremigrationAssessmentStatus& WithResultLocationFolder(Aws::String&& value) { SetResultLocationFolder(std::move(value)); return *this;}
-    inline PremigrationAssessmentStatus& WithResultLocationFolder(const char* value) { SetResultLocationFolder(value); return *this;}
+    template<typename ResultLocationFolderT = Aws::String>
+    void SetResultLocationFolder(ResultLocationFolderT&& value) { m_resultLocationFolderHasBeenSet = true; m_resultLocationFolder = std::forward<ResultLocationFolderT>(value); }
+    template<typename ResultLocationFolderT = Aws::String>
+    PremigrationAssessmentStatus& WithResultLocationFolder(ResultLocationFolderT&& value) { SetResultLocationFolder(std::forward<ResultLocationFolderT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -174,14 +164,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.KMSKeys">Creating
      * Amazon Web Services KMS keys to encrypt Amazon S3 target objects</a>.</p>
      */
-    inline const Aws::String& GetResultEncryptionMode() const{ return m_resultEncryptionMode; }
+    inline const Aws::String& GetResultEncryptionMode() const { return m_resultEncryptionMode; }
     inline bool ResultEncryptionModeHasBeenSet() const { return m_resultEncryptionModeHasBeenSet; }
-    inline void SetResultEncryptionMode(const Aws::String& value) { m_resultEncryptionModeHasBeenSet = true; m_resultEncryptionMode = value; }
-    inline void SetResultEncryptionMode(Aws::String&& value) { m_resultEncryptionModeHasBeenSet = true; m_resultEncryptionMode = std::move(value); }
-    inline void SetResultEncryptionMode(const char* value) { m_resultEncryptionModeHasBeenSet = true; m_resultEncryptionMode.assign(value); }
-    inline PremigrationAssessmentStatus& WithResultEncryptionMode(const Aws::String& value) { SetResultEncryptionMode(value); return *this;}
-    inline PremigrationAssessmentStatus& WithResultEncryptionMode(Aws::String&& value) { SetResultEncryptionMode(std::move(value)); return *this;}
-    inline PremigrationAssessmentStatus& WithResultEncryptionMode(const char* value) { SetResultEncryptionMode(value); return *this;}
+    template<typename ResultEncryptionModeT = Aws::String>
+    void SetResultEncryptionMode(ResultEncryptionModeT&& value) { m_resultEncryptionModeHasBeenSet = true; m_resultEncryptionMode = std::forward<ResultEncryptionModeT>(value); }
+    template<typename ResultEncryptionModeT = Aws::String>
+    PremigrationAssessmentStatus& WithResultEncryptionMode(ResultEncryptionModeT&& value) { SetResultEncryptionMode(std::forward<ResultEncryptionModeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -189,37 +177,35 @@ namespace Model
      * <p>The ARN of a custom KMS encryption key that you specify when you set
      * <code>ResultEncryptionMode</code> to <code>SSE_KMS</code>.</p>
      */
-    inline const Aws::String& GetResultKmsKeyArn() const{ return m_resultKmsKeyArn; }
+    inline const Aws::String& GetResultKmsKeyArn() const { return m_resultKmsKeyArn; }
     inline bool ResultKmsKeyArnHasBeenSet() const { return m_resultKmsKeyArnHasBeenSet; }
-    inline void SetResultKmsKeyArn(const Aws::String& value) { m_resultKmsKeyArnHasBeenSet = true; m_resultKmsKeyArn = value; }
-    inline void SetResultKmsKeyArn(Aws::String&& value) { m_resultKmsKeyArnHasBeenSet = true; m_resultKmsKeyArn = std::move(value); }
-    inline void SetResultKmsKeyArn(const char* value) { m_resultKmsKeyArnHasBeenSet = true; m_resultKmsKeyArn.assign(value); }
-    inline PremigrationAssessmentStatus& WithResultKmsKeyArn(const Aws::String& value) { SetResultKmsKeyArn(value); return *this;}
-    inline PremigrationAssessmentStatus& WithResultKmsKeyArn(Aws::String&& value) { SetResultKmsKeyArn(std::move(value)); return *this;}
-    inline PremigrationAssessmentStatus& WithResultKmsKeyArn(const char* value) { SetResultKmsKeyArn(value); return *this;}
+    template<typename ResultKmsKeyArnT = Aws::String>
+    void SetResultKmsKeyArn(ResultKmsKeyArnT&& value) { m_resultKmsKeyArnHasBeenSet = true; m_resultKmsKeyArn = std::forward<ResultKmsKeyArnT>(value); }
+    template<typename ResultKmsKeyArnT = Aws::String>
+    PremigrationAssessmentStatus& WithResultKmsKeyArn(ResultKmsKeyArnT&& value) { SetResultKmsKeyArn(std::forward<ResultKmsKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ReplicationTaskAssessmentRunResultStatistic& GetResultStatistic() const{ return m_resultStatistic; }
+    inline const ReplicationTaskAssessmentRunResultStatistic& GetResultStatistic() const { return m_resultStatistic; }
     inline bool ResultStatisticHasBeenSet() const { return m_resultStatisticHasBeenSet; }
-    inline void SetResultStatistic(const ReplicationTaskAssessmentRunResultStatistic& value) { m_resultStatisticHasBeenSet = true; m_resultStatistic = value; }
-    inline void SetResultStatistic(ReplicationTaskAssessmentRunResultStatistic&& value) { m_resultStatisticHasBeenSet = true; m_resultStatistic = std::move(value); }
-    inline PremigrationAssessmentStatus& WithResultStatistic(const ReplicationTaskAssessmentRunResultStatistic& value) { SetResultStatistic(value); return *this;}
-    inline PremigrationAssessmentStatus& WithResultStatistic(ReplicationTaskAssessmentRunResultStatistic&& value) { SetResultStatistic(std::move(value)); return *this;}
+    template<typename ResultStatisticT = ReplicationTaskAssessmentRunResultStatistic>
+    void SetResultStatistic(ResultStatisticT&& value) { m_resultStatisticHasBeenSet = true; m_resultStatistic = std::forward<ResultStatisticT>(value); }
+    template<typename ResultStatisticT = ReplicationTaskAssessmentRunResultStatistic>
+    PremigrationAssessmentStatus& WithResultStatistic(ResultStatisticT&& value) { SetResultStatistic(std::forward<ResultStatisticT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_premigrationAssessmentRunArn;
     bool m_premigrationAssessmentRunArnHasBeenSet = false;
 
-    bool m_failOnAssessmentFailure;
+    bool m_failOnAssessmentFailure{false};
     bool m_failOnAssessmentFailureHasBeenSet = false;
 
     Aws::String m_status;
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_premigrationAssessmentRunCreationDate;
+    Aws::Utils::DateTime m_premigrationAssessmentRunCreationDate{};
     bool m_premigrationAssessmentRunCreationDateHasBeenSet = false;
 
     ReplicationTaskAssessmentRunProgress m_assessmentProgress;

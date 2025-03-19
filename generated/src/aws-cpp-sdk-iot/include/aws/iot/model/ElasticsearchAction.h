@@ -37,7 +37,7 @@ namespace Model
   class ElasticsearchAction
   {
   public:
-    AWS_IOT_API ElasticsearchAction();
+    AWS_IOT_API ElasticsearchAction() = default;
     AWS_IOT_API ElasticsearchAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API ElasticsearchAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,70 +47,60 @@ namespace Model
     /**
      * <p>The IAM role ARN that has access to OpenSearch.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline ElasticsearchAction& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline ElasticsearchAction& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline ElasticsearchAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    ElasticsearchAction& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The endpoint of your OpenSearch domain.</p>
      */
-    inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
+    inline const Aws::String& GetEndpoint() const { return m_endpoint; }
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
-    inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
-    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
-    inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
-    inline ElasticsearchAction& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
-    inline ElasticsearchAction& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
-    inline ElasticsearchAction& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
+    template<typename EndpointT = Aws::String>
+    void SetEndpoint(EndpointT&& value) { m_endpointHasBeenSet = true; m_endpoint = std::forward<EndpointT>(value); }
+    template<typename EndpointT = Aws::String>
+    ElasticsearchAction& WithEndpoint(EndpointT&& value) { SetEndpoint(std::forward<EndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The index where you want to store your data.</p>
      */
-    inline const Aws::String& GetIndex() const{ return m_index; }
+    inline const Aws::String& GetIndex() const { return m_index; }
     inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
-    inline void SetIndex(const Aws::String& value) { m_indexHasBeenSet = true; m_index = value; }
-    inline void SetIndex(Aws::String&& value) { m_indexHasBeenSet = true; m_index = std::move(value); }
-    inline void SetIndex(const char* value) { m_indexHasBeenSet = true; m_index.assign(value); }
-    inline ElasticsearchAction& WithIndex(const Aws::String& value) { SetIndex(value); return *this;}
-    inline ElasticsearchAction& WithIndex(Aws::String&& value) { SetIndex(std::move(value)); return *this;}
-    inline ElasticsearchAction& WithIndex(const char* value) { SetIndex(value); return *this;}
+    template<typename IndexT = Aws::String>
+    void SetIndex(IndexT&& value) { m_indexHasBeenSet = true; m_index = std::forward<IndexT>(value); }
+    template<typename IndexT = Aws::String>
+    ElasticsearchAction& WithIndex(IndexT&& value) { SetIndex(std::forward<IndexT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of document you are storing.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline ElasticsearchAction& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline ElasticsearchAction& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline ElasticsearchAction& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    ElasticsearchAction& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the document you are storing.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ElasticsearchAction& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ElasticsearchAction& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ElasticsearchAction& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ElasticsearchAction& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
   private:
 

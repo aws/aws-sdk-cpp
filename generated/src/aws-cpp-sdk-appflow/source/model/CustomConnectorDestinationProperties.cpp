@@ -18,18 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-CustomConnectorDestinationProperties::CustomConnectorDestinationProperties() : 
-    m_entityNameHasBeenSet(false),
-    m_errorHandlingConfigHasBeenSet(false),
-    m_writeOperationType(WriteOperationType::NOT_SET),
-    m_writeOperationTypeHasBeenSet(false),
-    m_idFieldNamesHasBeenSet(false),
-    m_customPropertiesHasBeenSet(false)
-{
-}
-
 CustomConnectorDestinationProperties::CustomConnectorDestinationProperties(JsonView jsonValue)
-  : CustomConnectorDestinationProperties()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ CustomConnectorDestinationProperties& CustomConnectorDestinationProperties::oper
   if(jsonValue.ValueExists("entityName"))
   {
     m_entityName = jsonValue.GetString("entityName");
-
     m_entityNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorHandlingConfig"))
   {
     m_errorHandlingConfig = jsonValue.GetObject("errorHandlingConfig");
-
     m_errorHandlingConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("writeOperationType"))
   {
     m_writeOperationType = WriteOperationTypeMapper::GetWriteOperationTypeForName(jsonValue.GetString("writeOperationType"));
-
     m_writeOperationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("idFieldNames"))
   {
     Aws::Utils::Array<JsonView> idFieldNamesJsonList = jsonValue.GetArray("idFieldNames");
@@ -66,7 +49,6 @@ CustomConnectorDestinationProperties& CustomConnectorDestinationProperties::oper
     }
     m_idFieldNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customProperties"))
   {
     Aws::Map<Aws::String, JsonView> customPropertiesJsonMap = jsonValue.GetObject("customProperties").GetAllObjects();
@@ -76,7 +58,6 @@ CustomConnectorDestinationProperties& CustomConnectorDestinationProperties::oper
     }
     m_customPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,19 +18,7 @@ namespace ChimeSDKMessaging
 namespace Model
 {
 
-ChannelMessageCallback::ChannelMessageCallback() : 
-    m_messageIdHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_pushNotificationHasBeenSet(false),
-    m_messageAttributesHasBeenSet(false),
-    m_subChannelIdHasBeenSet(false),
-    m_contentTypeHasBeenSet(false)
-{
-}
-
 ChannelMessageCallback::ChannelMessageCallback(JsonView jsonValue)
-  : ChannelMessageCallback()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ ChannelMessageCallback& ChannelMessageCallback::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MessageId"))
   {
     m_messageId = jsonValue.GetString("MessageId");
-
     m_messageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetString("Content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Metadata"))
   {
     m_metadata = jsonValue.GetString("Metadata");
-
     m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PushNotification"))
   {
     m_pushNotification = jsonValue.GetObject("PushNotification");
-
     m_pushNotificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageAttributes"))
   {
     Aws::Map<Aws::String, JsonView> messageAttributesJsonMap = jsonValue.GetObject("MessageAttributes").GetAllObjects();
@@ -74,21 +54,16 @@ ChannelMessageCallback& ChannelMessageCallback::operator =(JsonView jsonValue)
     }
     m_messageAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubChannelId"))
   {
     m_subChannelId = jsonValue.GetString("SubChannelId");
-
     m_subChannelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentType"))
   {
     m_contentType = jsonValue.GetString("ContentType");
-
     m_contentTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

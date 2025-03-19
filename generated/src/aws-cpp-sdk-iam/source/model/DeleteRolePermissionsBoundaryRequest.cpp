@@ -10,11 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeleteRolePermissionsBoundaryRequest::DeleteRolePermissionsBoundaryRequest() : 
-    m_roleNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRolePermissionsBoundaryRequest::SerializePayload() const
 {
   Aws::StringStream ss;

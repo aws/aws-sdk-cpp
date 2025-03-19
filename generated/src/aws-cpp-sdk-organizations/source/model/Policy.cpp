@@ -18,14 +18,7 @@ namespace Organizations
 namespace Model
 {
 
-Policy::Policy() : 
-    m_policySummaryHasBeenSet(false),
-    m_contentHasBeenSet(false)
-{
-}
-
 Policy::Policy(JsonView jsonValue)
-  : Policy()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Policy& Policy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PolicySummary"))
   {
     m_policySummary = jsonValue.GetObject("PolicySummary");
-
     m_policySummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetString("Content");
-
     m_contentHasBeenSet = true;
   }
-
   return *this;
 }
 

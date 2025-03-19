@@ -24,7 +24,7 @@ namespace Model
   class TerminateEnvironmentRequest : public ElasticBeanstalkRequest
   {
   public:
-    AWS_ELASTICBEANSTALK_API TerminateEnvironmentRequest();
+    AWS_ELASTICBEANSTALK_API TerminateEnvironmentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * either this or an EnvironmentName, or both. If you do not specify either, AWS
      * Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
      */
-    inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
+    inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
     inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
-    inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
-    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
-    inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
-    inline TerminateEnvironmentRequest& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
-    inline TerminateEnvironmentRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
-    inline TerminateEnvironmentRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+    template<typename EnvironmentIdT = Aws::String>
+    void SetEnvironmentId(EnvironmentIdT&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::forward<EnvironmentIdT>(value); }
+    template<typename EnvironmentIdT = Aws::String>
+    TerminateEnvironmentRequest& WithEnvironmentId(EnvironmentIdT&& value) { SetEnvironmentId(std::forward<EnvironmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * either this or an EnvironmentId, or both. If you do not specify either, AWS
      * Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
      */
-    inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
+    inline const Aws::String& GetEnvironmentName() const { return m_environmentName; }
     inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
-    inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
-    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::move(value); }
-    inline void SetEnvironmentName(const char* value) { m_environmentNameHasBeenSet = true; m_environmentName.assign(value); }
-    inline TerminateEnvironmentRequest& WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
-    inline TerminateEnvironmentRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(std::move(value)); return *this;}
-    inline TerminateEnvironmentRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
+    template<typename EnvironmentNameT = Aws::String>
+    void SetEnvironmentName(EnvironmentNameT&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::forward<EnvironmentNameT>(value); }
+    template<typename EnvironmentNameT = Aws::String>
+    TerminateEnvironmentRequest& WithEnvironmentName(EnvironmentNameT&& value) { SetEnvironmentName(std::forward<EnvironmentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,7 +79,7 @@ namespace Model
      * Elastic Beanstalk User Guide. </a> </p> <p> Default: <code>true</code> </p> <p>
      * Valid Values: <code>true</code> | <code>false</code> </p>
      */
-    inline bool GetTerminateResources() const{ return m_terminateResources; }
+    inline bool GetTerminateResources() const { return m_terminateResources; }
     inline bool TerminateResourcesHasBeenSet() const { return m_terminateResourcesHasBeenSet; }
     inline void SetTerminateResources(bool value) { m_terminateResourcesHasBeenSet = true; m_terminateResources = value; }
     inline TerminateEnvironmentRequest& WithTerminateResources(bool value) { SetTerminateResources(value); return *this;}
@@ -94,7 +90,7 @@ namespace Model
      * <p>Terminates the target environment even if another environment in the same
      * group is dependent on it.</p>
      */
-    inline bool GetForceTerminate() const{ return m_forceTerminate; }
+    inline bool GetForceTerminate() const { return m_forceTerminate; }
     inline bool ForceTerminateHasBeenSet() const { return m_forceTerminateHasBeenSet; }
     inline void SetForceTerminate(bool value) { m_forceTerminateHasBeenSet = true; m_forceTerminate = value; }
     inline TerminateEnvironmentRequest& WithForceTerminate(bool value) { SetForceTerminate(value); return *this;}
@@ -107,10 +103,10 @@ namespace Model
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet = false;
 
-    bool m_terminateResources;
+    bool m_terminateResources{false};
     bool m_terminateResourcesHasBeenSet = false;
 
-    bool m_forceTerminate;
+    bool m_forceTerminate{false};
     bool m_forceTerminateHasBeenSet = false;
   };
 

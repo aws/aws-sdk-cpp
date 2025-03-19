@@ -18,20 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsNetworkFirewallRuleGroupDetails::AwsNetworkFirewallRuleGroupDetails() : 
-    m_capacity(0),
-    m_capacityHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ruleGroupHasBeenSet(false),
-    m_ruleGroupArnHasBeenSet(false),
-    m_ruleGroupIdHasBeenSet(false),
-    m_ruleGroupNameHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 AwsNetworkFirewallRuleGroupDetails::AwsNetworkFirewallRuleGroupDetails(JsonView jsonValue)
-  : AwsNetworkFirewallRuleGroupDetails()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ AwsNetworkFirewallRuleGroupDetails& AwsNetworkFirewallRuleGroupDetails::operator
   if(jsonValue.ValueExists("Capacity"))
   {
     m_capacity = jsonValue.GetInteger("Capacity");
-
     m_capacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleGroup"))
   {
     m_ruleGroup = jsonValue.GetObject("RuleGroup");
-
     m_ruleGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleGroupArn"))
   {
     m_ruleGroupArn = jsonValue.GetString("RuleGroupArn");
-
     m_ruleGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleGroupId"))
   {
     m_ruleGroupId = jsonValue.GetString("RuleGroupId");
-
     m_ruleGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleGroupName"))
   {
     m_ruleGroupName = jsonValue.GetString("RuleGroupName");
-
     m_ruleGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

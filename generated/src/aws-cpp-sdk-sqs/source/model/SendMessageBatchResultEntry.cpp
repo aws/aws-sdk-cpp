@@ -18,18 +18,7 @@ namespace SQS
 namespace Model
 {
 
-SendMessageBatchResultEntry::SendMessageBatchResultEntry() : 
-    m_idHasBeenSet(false),
-    m_messageIdHasBeenSet(false),
-    m_mD5OfMessageBodyHasBeenSet(false),
-    m_mD5OfMessageAttributesHasBeenSet(false),
-    m_mD5OfMessageSystemAttributesHasBeenSet(false),
-    m_sequenceNumberHasBeenSet(false)
-{
-}
-
 SendMessageBatchResultEntry::SendMessageBatchResultEntry(JsonView jsonValue)
-  : SendMessageBatchResultEntry()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ SendMessageBatchResultEntry& SendMessageBatchResultEntry::operator =(JsonView js
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageId"))
   {
     m_messageId = jsonValue.GetString("MessageId");
-
     m_messageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MD5OfMessageBody"))
   {
     m_mD5OfMessageBody = jsonValue.GetString("MD5OfMessageBody");
-
     m_mD5OfMessageBodyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MD5OfMessageAttributes"))
   {
     m_mD5OfMessageAttributes = jsonValue.GetString("MD5OfMessageAttributes");
-
     m_mD5OfMessageAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MD5OfMessageSystemAttributes"))
   {
     m_mD5OfMessageSystemAttributes = jsonValue.GetString("MD5OfMessageSystemAttributes");
-
     m_mD5OfMessageSystemAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SequenceNumber"))
   {
     m_sequenceNumber = jsonValue.GetString("SequenceNumber");
-
     m_sequenceNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

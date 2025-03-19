@@ -18,15 +18,7 @@ namespace B2BI
 namespace Model
 {
 
-Mapping::Mapping() : 
-    m_templateLanguage(MappingTemplateLanguage::NOT_SET),
-    m_templateLanguageHasBeenSet(false),
-    m_templateHasBeenSet(false)
-{
-}
-
 Mapping::Mapping(JsonView jsonValue)
-  : Mapping()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Mapping& Mapping::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("templateLanguage"))
   {
     m_templateLanguage = MappingTemplateLanguageMapper::GetMappingTemplateLanguageForName(jsonValue.GetString("templateLanguage"));
-
     m_templateLanguageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("template"))
   {
     m_template = jsonValue.GetString("template");
-
     m_templateHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-SingleMeasureMapping::SingleMeasureMapping() : 
-    m_measureValueHasBeenSet(false),
-    m_measureValueType(MeasureValueType::NOT_SET),
-    m_measureValueTypeHasBeenSet(false),
-    m_measureNameHasBeenSet(false)
-{
-}
-
 SingleMeasureMapping::SingleMeasureMapping(JsonView jsonValue)
-  : SingleMeasureMapping()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SingleMeasureMapping& SingleMeasureMapping::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MeasureValue"))
   {
     m_measureValue = jsonValue.GetString("MeasureValue");
-
     m_measureValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MeasureValueType"))
   {
     m_measureValueType = MeasureValueTypeMapper::GetMeasureValueTypeForName(jsonValue.GetString("MeasureValueType"));
-
     m_measureValueTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MeasureName"))
   {
     m_measureName = jsonValue.GetString("MeasureName");
-
     m_measureNameHasBeenSet = true;
   }
-
   return *this;
 }
 

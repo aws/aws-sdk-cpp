@@ -32,7 +32,7 @@ namespace Model
   class EgyptAdditionalInfo
   {
   public:
-    AWS_TAXSETTINGS_API EgyptAdditionalInfo();
+    AWS_TAXSETTINGS_API EgyptAdditionalInfo() = default;
     AWS_TAXSETTINGS_API EgyptAdditionalInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API EgyptAdditionalInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The unique identification number provided by the Egypt Tax Authority.</p>
      */
-    inline const Aws::String& GetUniqueIdentificationNumber() const{ return m_uniqueIdentificationNumber; }
+    inline const Aws::String& GetUniqueIdentificationNumber() const { return m_uniqueIdentificationNumber; }
     inline bool UniqueIdentificationNumberHasBeenSet() const { return m_uniqueIdentificationNumberHasBeenSet; }
-    inline void SetUniqueIdentificationNumber(const Aws::String& value) { m_uniqueIdentificationNumberHasBeenSet = true; m_uniqueIdentificationNumber = value; }
-    inline void SetUniqueIdentificationNumber(Aws::String&& value) { m_uniqueIdentificationNumberHasBeenSet = true; m_uniqueIdentificationNumber = std::move(value); }
-    inline void SetUniqueIdentificationNumber(const char* value) { m_uniqueIdentificationNumberHasBeenSet = true; m_uniqueIdentificationNumber.assign(value); }
-    inline EgyptAdditionalInfo& WithUniqueIdentificationNumber(const Aws::String& value) { SetUniqueIdentificationNumber(value); return *this;}
-    inline EgyptAdditionalInfo& WithUniqueIdentificationNumber(Aws::String&& value) { SetUniqueIdentificationNumber(std::move(value)); return *this;}
-    inline EgyptAdditionalInfo& WithUniqueIdentificationNumber(const char* value) { SetUniqueIdentificationNumber(value); return *this;}
+    template<typename UniqueIdentificationNumberT = Aws::String>
+    void SetUniqueIdentificationNumber(UniqueIdentificationNumberT&& value) { m_uniqueIdentificationNumberHasBeenSet = true; m_uniqueIdentificationNumber = std::forward<UniqueIdentificationNumberT>(value); }
+    template<typename UniqueIdentificationNumberT = Aws::String>
+    EgyptAdditionalInfo& WithUniqueIdentificationNumber(UniqueIdentificationNumberT&& value) { SetUniqueIdentificationNumber(std::forward<UniqueIdentificationNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The expiration date of the unique identification number provided by the Egypt
      * Tax Authority.</p>
      */
-    inline const Aws::String& GetUniqueIdentificationNumberExpirationDate() const{ return m_uniqueIdentificationNumberExpirationDate; }
+    inline const Aws::String& GetUniqueIdentificationNumberExpirationDate() const { return m_uniqueIdentificationNumberExpirationDate; }
     inline bool UniqueIdentificationNumberExpirationDateHasBeenSet() const { return m_uniqueIdentificationNumberExpirationDateHasBeenSet; }
-    inline void SetUniqueIdentificationNumberExpirationDate(const Aws::String& value) { m_uniqueIdentificationNumberExpirationDateHasBeenSet = true; m_uniqueIdentificationNumberExpirationDate = value; }
-    inline void SetUniqueIdentificationNumberExpirationDate(Aws::String&& value) { m_uniqueIdentificationNumberExpirationDateHasBeenSet = true; m_uniqueIdentificationNumberExpirationDate = std::move(value); }
-    inline void SetUniqueIdentificationNumberExpirationDate(const char* value) { m_uniqueIdentificationNumberExpirationDateHasBeenSet = true; m_uniqueIdentificationNumberExpirationDate.assign(value); }
-    inline EgyptAdditionalInfo& WithUniqueIdentificationNumberExpirationDate(const Aws::String& value) { SetUniqueIdentificationNumberExpirationDate(value); return *this;}
-    inline EgyptAdditionalInfo& WithUniqueIdentificationNumberExpirationDate(Aws::String&& value) { SetUniqueIdentificationNumberExpirationDate(std::move(value)); return *this;}
-    inline EgyptAdditionalInfo& WithUniqueIdentificationNumberExpirationDate(const char* value) { SetUniqueIdentificationNumberExpirationDate(value); return *this;}
+    template<typename UniqueIdentificationNumberExpirationDateT = Aws::String>
+    void SetUniqueIdentificationNumberExpirationDate(UniqueIdentificationNumberExpirationDateT&& value) { m_uniqueIdentificationNumberExpirationDateHasBeenSet = true; m_uniqueIdentificationNumberExpirationDate = std::forward<UniqueIdentificationNumberExpirationDateT>(value); }
+    template<typename UniqueIdentificationNumberExpirationDateT = Aws::String>
+    EgyptAdditionalInfo& WithUniqueIdentificationNumberExpirationDate(UniqueIdentificationNumberExpirationDateT&& value) { SetUniqueIdentificationNumberExpirationDate(std::forward<UniqueIdentificationNumberExpirationDateT>(value)); return *this;}
     ///@}
   private:
 

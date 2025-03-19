@@ -18,16 +18,7 @@ namespace Snowball
 namespace Model
 {
 
-TargetOnDeviceService::TargetOnDeviceService() : 
-    m_serviceName(DeviceServiceName::NOT_SET),
-    m_serviceNameHasBeenSet(false),
-    m_transferOption(TransferOption::NOT_SET),
-    m_transferOptionHasBeenSet(false)
-{
-}
-
 TargetOnDeviceService::TargetOnDeviceService(JsonView jsonValue)
-  : TargetOnDeviceService()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TargetOnDeviceService& TargetOnDeviceService::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ServiceName"))
   {
     m_serviceName = DeviceServiceNameMapper::GetDeviceServiceNameForName(jsonValue.GetString("ServiceName"));
-
     m_serviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransferOption"))
   {
     m_transferOption = TransferOptionMapper::GetTransferOptionForName(jsonValue.GetString("TransferOption"));
-
     m_transferOptionHasBeenSet = true;
   }
-
   return *this;
 }
 

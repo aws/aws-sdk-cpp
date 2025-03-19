@@ -12,23 +12,6 @@ using namespace Aws::IoTManagedIntegrations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateManagedThingRequest::UpdateManagedThingRequest() : 
-    m_identifierHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_credentialLockerIdHasBeenSet(false),
-    m_serialNumberHasBeenSet(false),
-    m_brandHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_capabilityReportHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false),
-    m_classificationHasBeenSet(false),
-    m_hubNetworkMode(HubNetworkMode::NOT_SET),
-    m_hubNetworkModeHasBeenSet(false),
-    m_metaDataHasBeenSet(false)
-{
-}
-
 Aws::String UpdateManagedThingRequest::SerializePayload() const
 {
   JsonValue payload;

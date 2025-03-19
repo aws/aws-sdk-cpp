@@ -18,14 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-GuardianAttributes::GuardianAttributes() : 
-    m_optimizedSharedDelivery(FeatureStatus::NOT_SET),
-    m_optimizedSharedDeliveryHasBeenSet(false)
-{
-}
-
 GuardianAttributes::GuardianAttributes(JsonView jsonValue)
-  : GuardianAttributes()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ GuardianAttributes& GuardianAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OptimizedSharedDelivery"))
   {
     m_optimizedSharedDelivery = FeatureStatusMapper::GetFeatureStatusForName(jsonValue.GetString("OptimizedSharedDelivery"));
-
     m_optimizedSharedDeliveryHasBeenSet = true;
   }
-
   return *this;
 }
 

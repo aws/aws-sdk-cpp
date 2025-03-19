@@ -18,14 +18,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-LayoutConfiguration::LayoutConfiguration() : 
-    m_gridHasBeenSet(false),
-    m_pipHasBeenSet(false)
-{
-}
-
 LayoutConfiguration::LayoutConfiguration(JsonView jsonValue)
-  : LayoutConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LayoutConfiguration& LayoutConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("grid"))
   {
     m_grid = jsonValue.GetObject("grid");
-
     m_gridHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pip"))
   {
     m_pip = jsonValue.GetObject("pip");
-
     m_pipHasBeenSet = true;
   }
-
   return *this;
 }
 

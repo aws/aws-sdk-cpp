@@ -32,7 +32,7 @@ namespace Model
   class PrivacyConfiguration
   {
   public:
-    AWS_CLEANROOMSML_API PrivacyConfiguration();
+    AWS_CLEANROOMSML_API PrivacyConfiguration() = default;
     AWS_CLEANROOMSML_API PrivacyConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API PrivacyConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The privacy configuration policies for a configured model algorithm
      * association.</p>
      */
-    inline const PrivacyConfigurationPolicies& GetPolicies() const{ return m_policies; }
+    inline const PrivacyConfigurationPolicies& GetPolicies() const { return m_policies; }
     inline bool PoliciesHasBeenSet() const { return m_policiesHasBeenSet; }
-    inline void SetPolicies(const PrivacyConfigurationPolicies& value) { m_policiesHasBeenSet = true; m_policies = value; }
-    inline void SetPolicies(PrivacyConfigurationPolicies&& value) { m_policiesHasBeenSet = true; m_policies = std::move(value); }
-    inline PrivacyConfiguration& WithPolicies(const PrivacyConfigurationPolicies& value) { SetPolicies(value); return *this;}
-    inline PrivacyConfiguration& WithPolicies(PrivacyConfigurationPolicies&& value) { SetPolicies(std::move(value)); return *this;}
+    template<typename PoliciesT = PrivacyConfigurationPolicies>
+    void SetPolicies(PoliciesT&& value) { m_policiesHasBeenSet = true; m_policies = std::forward<PoliciesT>(value); }
+    template<typename PoliciesT = PrivacyConfigurationPolicies>
+    PrivacyConfiguration& WithPolicies(PoliciesT&& value) { SetPolicies(std::forward<PoliciesT>(value)); return *this;}
     ///@}
   private:
 

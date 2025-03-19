@@ -18,31 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-SegmentDetection::SegmentDetection() : 
-    m_type(SegmentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_startTimestampMillis(0),
-    m_startTimestampMillisHasBeenSet(false),
-    m_endTimestampMillis(0),
-    m_endTimestampMillisHasBeenSet(false),
-    m_durationMillis(0),
-    m_durationMillisHasBeenSet(false),
-    m_startTimecodeSMPTEHasBeenSet(false),
-    m_endTimecodeSMPTEHasBeenSet(false),
-    m_durationSMPTEHasBeenSet(false),
-    m_technicalCueSegmentHasBeenSet(false),
-    m_shotSegmentHasBeenSet(false),
-    m_startFrameNumber(0),
-    m_startFrameNumberHasBeenSet(false),
-    m_endFrameNumber(0),
-    m_endFrameNumberHasBeenSet(false),
-    m_durationFrames(0),
-    m_durationFramesHasBeenSet(false)
-{
-}
-
 SegmentDetection::SegmentDetection(JsonView jsonValue)
-  : SegmentDetection()
 {
   *this = jsonValue;
 }
@@ -52,87 +28,63 @@ SegmentDetection& SegmentDetection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = SegmentTypeMapper::GetSegmentTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTimestampMillis"))
   {
     m_startTimestampMillis = jsonValue.GetInt64("StartTimestampMillis");
-
     m_startTimestampMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTimestampMillis"))
   {
     m_endTimestampMillis = jsonValue.GetInt64("EndTimestampMillis");
-
     m_endTimestampMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DurationMillis"))
   {
     m_durationMillis = jsonValue.GetInt64("DurationMillis");
-
     m_durationMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTimecodeSMPTE"))
   {
     m_startTimecodeSMPTE = jsonValue.GetString("StartTimecodeSMPTE");
-
     m_startTimecodeSMPTEHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTimecodeSMPTE"))
   {
     m_endTimecodeSMPTE = jsonValue.GetString("EndTimecodeSMPTE");
-
     m_endTimecodeSMPTEHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DurationSMPTE"))
   {
     m_durationSMPTE = jsonValue.GetString("DurationSMPTE");
-
     m_durationSMPTEHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TechnicalCueSegment"))
   {
     m_technicalCueSegment = jsonValue.GetObject("TechnicalCueSegment");
-
     m_technicalCueSegmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShotSegment"))
   {
     m_shotSegment = jsonValue.GetObject("ShotSegment");
-
     m_shotSegmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartFrameNumber"))
   {
     m_startFrameNumber = jsonValue.GetInt64("StartFrameNumber");
-
     m_startFrameNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndFrameNumber"))
   {
     m_endFrameNumber = jsonValue.GetInt64("EndFrameNumber");
-
     m_endFrameNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DurationFrames"))
   {
     m_durationFrames = jsonValue.GetInt64("DurationFrames");
-
     m_durationFramesHasBeenSet = true;
   }
-
   return *this;
 }
 

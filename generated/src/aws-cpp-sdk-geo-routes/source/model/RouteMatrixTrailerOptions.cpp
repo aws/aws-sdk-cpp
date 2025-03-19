@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteMatrixTrailerOptions::RouteMatrixTrailerOptions() : 
-    m_trailerCount(0),
-    m_trailerCountHasBeenSet(false)
-{
-}
-
 RouteMatrixTrailerOptions::RouteMatrixTrailerOptions(JsonView jsonValue)
-  : RouteMatrixTrailerOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RouteMatrixTrailerOptions& RouteMatrixTrailerOptions::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("TrailerCount"))
   {
     m_trailerCount = jsonValue.GetInteger("TrailerCount");
-
     m_trailerCountHasBeenSet = true;
   }
-
   return *this;
 }
 

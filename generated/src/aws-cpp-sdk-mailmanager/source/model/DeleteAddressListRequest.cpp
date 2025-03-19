@@ -12,11 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAddressListRequest::DeleteAddressListRequest() : 
-    m_addressListIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAddressListRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,15 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRoleMembershipRequest::DeleteRoleMembershipRequest() : 
-    m_memberNameHasBeenSet(false),
-    m_role(Role::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRoleMembershipRequest::SerializePayload() const
 {
   return {};

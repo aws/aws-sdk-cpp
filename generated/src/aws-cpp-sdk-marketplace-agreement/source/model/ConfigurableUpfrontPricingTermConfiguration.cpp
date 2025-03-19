@@ -18,14 +18,7 @@ namespace AgreementService
 namespace Model
 {
 
-ConfigurableUpfrontPricingTermConfiguration::ConfigurableUpfrontPricingTermConfiguration() : 
-    m_dimensionsHasBeenSet(false),
-    m_selectorValueHasBeenSet(false)
-{
-}
-
 ConfigurableUpfrontPricingTermConfiguration::ConfigurableUpfrontPricingTermConfiguration(JsonView jsonValue)
-  : ConfigurableUpfrontPricingTermConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ ConfigurableUpfrontPricingTermConfiguration& ConfigurableUpfrontPricingTermConfi
     }
     m_dimensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("selectorValue"))
   {
     m_selectorValue = jsonValue.GetString("selectorValue");
-
     m_selectorValueHasBeenSet = true;
   }
-
   return *this;
 }
 

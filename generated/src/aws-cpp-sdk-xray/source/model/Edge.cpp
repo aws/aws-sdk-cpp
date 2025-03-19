@@ -18,21 +18,7 @@ namespace XRay
 namespace Model
 {
 
-Edge::Edge() : 
-    m_referenceId(0),
-    m_referenceIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_summaryStatisticsHasBeenSet(false),
-    m_responseTimeHistogramHasBeenSet(false),
-    m_aliasesHasBeenSet(false),
-    m_edgeTypeHasBeenSet(false),
-    m_receivedEventAgeHistogramHasBeenSet(false)
-{
-}
-
 Edge::Edge(JsonView jsonValue)
-  : Edge()
 {
   *this = jsonValue;
 }
@@ -42,31 +28,23 @@ Edge& Edge::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReferenceId"))
   {
     m_referenceId = jsonValue.GetInteger("ReferenceId");
-
     m_referenceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SummaryStatistics"))
   {
     m_summaryStatistics = jsonValue.GetObject("SummaryStatistics");
-
     m_summaryStatisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResponseTimeHistogram"))
   {
     Aws::Utils::Array<JsonView> responseTimeHistogramJsonList = jsonValue.GetArray("ResponseTimeHistogram");
@@ -76,7 +54,6 @@ Edge& Edge::operator =(JsonView jsonValue)
     }
     m_responseTimeHistogramHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Aliases"))
   {
     Aws::Utils::Array<JsonView> aliasesJsonList = jsonValue.GetArray("Aliases");
@@ -86,14 +63,11 @@ Edge& Edge::operator =(JsonView jsonValue)
     }
     m_aliasesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EdgeType"))
   {
     m_edgeType = jsonValue.GetString("EdgeType");
-
     m_edgeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReceivedEventAgeHistogram"))
   {
     Aws::Utils::Array<JsonView> receivedEventAgeHistogramJsonList = jsonValue.GetArray("ReceivedEventAgeHistogram");
@@ -103,7 +77,6 @@ Edge& Edge::operator =(JsonView jsonValue)
     }
     m_receivedEventAgeHistogramHasBeenSet = true;
   }
-
   return *this;
 }
 

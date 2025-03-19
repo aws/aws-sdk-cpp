@@ -27,7 +27,7 @@ namespace Model
   class GetJobDocumentResult
   {
   public:
-    AWS_IOT_API GetJobDocumentResult();
+    AWS_IOT_API GetJobDocumentResult() = default;
     AWS_IOT_API GetJobDocumentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API GetJobDocumentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The job document content.</p>
      */
-    inline const Aws::String& GetDocument() const{ return m_document; }
-    inline void SetDocument(const Aws::String& value) { m_document = value; }
-    inline void SetDocument(Aws::String&& value) { m_document = std::move(value); }
-    inline void SetDocument(const char* value) { m_document.assign(value); }
-    inline GetJobDocumentResult& WithDocument(const Aws::String& value) { SetDocument(value); return *this;}
-    inline GetJobDocumentResult& WithDocument(Aws::String&& value) { SetDocument(std::move(value)); return *this;}
-    inline GetJobDocumentResult& WithDocument(const char* value) { SetDocument(value); return *this;}
+    inline const Aws::String& GetDocument() const { return m_document; }
+    template<typename DocumentT = Aws::String>
+    void SetDocument(DocumentT&& value) { m_documentHasBeenSet = true; m_document = std::forward<DocumentT>(value); }
+    template<typename DocumentT = Aws::String>
+    GetJobDocumentResult& WithDocument(DocumentT&& value) { SetDocument(std::forward<DocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetJobDocumentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetJobDocumentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetJobDocumentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetJobDocumentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_document;
+    bool m_documentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

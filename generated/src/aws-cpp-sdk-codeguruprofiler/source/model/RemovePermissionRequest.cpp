@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-RemovePermissionRequest::RemovePermissionRequest() : 
-    m_actionGroup(ActionGroup::NOT_SET),
-    m_actionGroupHasBeenSet(false),
-    m_profilingGroupNameHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
-{
-}
-
 Aws::String RemovePermissionRequest::SerializePayload() const
 {
   return {};

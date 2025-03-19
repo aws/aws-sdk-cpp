@@ -32,7 +32,7 @@ namespace Model
   class CsvOutputOptions
   {
   public:
-    AWS_GLUEDATABREW_API CsvOutputOptions();
+    AWS_GLUEDATABREW_API CsvOutputOptions() = default;
     AWS_GLUEDATABREW_API CsvOutputOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API CsvOutputOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>A single character that specifies the delimiter used to create CSV job
      * output.</p>
      */
-    inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
+    inline const Aws::String& GetDelimiter() const { return m_delimiter; }
     inline bool DelimiterHasBeenSet() const { return m_delimiterHasBeenSet; }
-    inline void SetDelimiter(const Aws::String& value) { m_delimiterHasBeenSet = true; m_delimiter = value; }
-    inline void SetDelimiter(Aws::String&& value) { m_delimiterHasBeenSet = true; m_delimiter = std::move(value); }
-    inline void SetDelimiter(const char* value) { m_delimiterHasBeenSet = true; m_delimiter.assign(value); }
-    inline CsvOutputOptions& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
-    inline CsvOutputOptions& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
-    inline CsvOutputOptions& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
+    template<typename DelimiterT = Aws::String>
+    void SetDelimiter(DelimiterT&& value) { m_delimiterHasBeenSet = true; m_delimiter = std::forward<DelimiterT>(value); }
+    template<typename DelimiterT = Aws::String>
+    CsvOutputOptions& WithDelimiter(DelimiterT&& value) { SetDelimiter(std::forward<DelimiterT>(value)); return *this;}
     ///@}
   private:
 

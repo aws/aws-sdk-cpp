@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-TableVersion::TableVersion() : 
-    m_tableHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
-{
-}
-
 TableVersion::TableVersion(JsonView jsonValue)
-  : TableVersion()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TableVersion& TableVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Table"))
   {
     m_table = jsonValue.GetObject("Table");
-
     m_tableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionId"))
   {
     m_versionId = jsonValue.GetString("VersionId");
-
     m_versionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

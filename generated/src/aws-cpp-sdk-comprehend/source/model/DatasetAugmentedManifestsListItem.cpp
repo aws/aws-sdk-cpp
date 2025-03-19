@@ -18,18 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-DatasetAugmentedManifestsListItem::DatasetAugmentedManifestsListItem() : 
-    m_attributeNamesHasBeenSet(false),
-    m_s3UriHasBeenSet(false),
-    m_annotationDataS3UriHasBeenSet(false),
-    m_sourceDocumentsS3UriHasBeenSet(false),
-    m_documentType(AugmentedManifestsDocumentTypeFormat::NOT_SET),
-    m_documentTypeHasBeenSet(false)
-{
-}
-
 DatasetAugmentedManifestsListItem::DatasetAugmentedManifestsListItem(JsonView jsonValue)
-  : DatasetAugmentedManifestsListItem()
 {
   *this = jsonValue;
 }
@@ -45,35 +34,26 @@ DatasetAugmentedManifestsListItem& DatasetAugmentedManifestsListItem::operator =
     }
     m_attributeNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AnnotationDataS3Uri"))
   {
     m_annotationDataS3Uri = jsonValue.GetString("AnnotationDataS3Uri");
-
     m_annotationDataS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceDocumentsS3Uri"))
   {
     m_sourceDocumentsS3Uri = jsonValue.GetString("SourceDocumentsS3Uri");
-
     m_sourceDocumentsS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentType"))
   {
     m_documentType = AugmentedManifestsDocumentTypeFormatMapper::GetAugmentedManifestsDocumentTypeFormatForName(jsonValue.GetString("DocumentType"));
-
     m_documentTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

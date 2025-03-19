@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails::AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails(JsonView jsonValue)
-  : AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AwsAutoScalingLaunchConfigurationInstanceMonitoringDetails& AwsAutoScalingLaunch
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

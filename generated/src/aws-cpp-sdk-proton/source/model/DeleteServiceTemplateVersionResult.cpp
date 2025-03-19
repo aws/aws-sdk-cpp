@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteServiceTemplateVersionResult::DeleteServiceTemplateVersionResult()
-{
-}
-
 DeleteServiceTemplateVersionResult::DeleteServiceTemplateVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeleteServiceTemplateVersionResult& DeleteServiceTemplateVersionResult::operator
   if(jsonValue.ValueExists("serviceTemplateVersion"))
   {
     m_serviceTemplateVersion = jsonValue.GetObject("serviceTemplateVersion");
-
+    m_serviceTemplateVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,26 +18,7 @@ namespace kendra
 namespace Model
 {
 
-GitHubDocumentCrawlProperties::GitHubDocumentCrawlProperties() : 
-    m_crawlRepositoryDocuments(false),
-    m_crawlRepositoryDocumentsHasBeenSet(false),
-    m_crawlIssue(false),
-    m_crawlIssueHasBeenSet(false),
-    m_crawlIssueComment(false),
-    m_crawlIssueCommentHasBeenSet(false),
-    m_crawlIssueCommentAttachment(false),
-    m_crawlIssueCommentAttachmentHasBeenSet(false),
-    m_crawlPullRequest(false),
-    m_crawlPullRequestHasBeenSet(false),
-    m_crawlPullRequestComment(false),
-    m_crawlPullRequestCommentHasBeenSet(false),
-    m_crawlPullRequestCommentAttachment(false),
-    m_crawlPullRequestCommentAttachmentHasBeenSet(false)
-{
-}
-
 GitHubDocumentCrawlProperties::GitHubDocumentCrawlProperties(JsonView jsonValue)
-  : GitHubDocumentCrawlProperties()
 {
   *this = jsonValue;
 }
@@ -47,52 +28,38 @@ GitHubDocumentCrawlProperties& GitHubDocumentCrawlProperties::operator =(JsonVie
   if(jsonValue.ValueExists("CrawlRepositoryDocuments"))
   {
     m_crawlRepositoryDocuments = jsonValue.GetBool("CrawlRepositoryDocuments");
-
     m_crawlRepositoryDocumentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrawlIssue"))
   {
     m_crawlIssue = jsonValue.GetBool("CrawlIssue");
-
     m_crawlIssueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrawlIssueComment"))
   {
     m_crawlIssueComment = jsonValue.GetBool("CrawlIssueComment");
-
     m_crawlIssueCommentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrawlIssueCommentAttachment"))
   {
     m_crawlIssueCommentAttachment = jsonValue.GetBool("CrawlIssueCommentAttachment");
-
     m_crawlIssueCommentAttachmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrawlPullRequest"))
   {
     m_crawlPullRequest = jsonValue.GetBool("CrawlPullRequest");
-
     m_crawlPullRequestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrawlPullRequestComment"))
   {
     m_crawlPullRequestComment = jsonValue.GetBool("CrawlPullRequestComment");
-
     m_crawlPullRequestCommentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrawlPullRequestCommentAttachment"))
   {
     m_crawlPullRequestCommentAttachment = jsonValue.GetBool("CrawlPullRequestCommentAttachment");
-
     m_crawlPullRequestCommentAttachmentHasBeenSet = true;
   }
-
   return *this;
 }
 

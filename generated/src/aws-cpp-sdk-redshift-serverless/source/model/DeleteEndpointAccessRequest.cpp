@@ -12,11 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEndpointAccessRequest::DeleteEndpointAccessRequest() : 
-    m_endpointNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEndpointAccessRequest::SerializePayload() const
 {
   JsonValue payload;

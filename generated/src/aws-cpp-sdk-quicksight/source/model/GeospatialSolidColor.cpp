@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialSolidColor::GeospatialSolidColor() : 
-    m_colorHasBeenSet(false),
-    m_state(GeospatialColorState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 GeospatialSolidColor::GeospatialSolidColor(JsonView jsonValue)
-  : GeospatialSolidColor()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GeospatialSolidColor& GeospatialSolidColor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Color"))
   {
     m_color = jsonValue.GetString("Color");
-
     m_colorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = GeospatialColorStateMapper::GetGeospatialColorStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

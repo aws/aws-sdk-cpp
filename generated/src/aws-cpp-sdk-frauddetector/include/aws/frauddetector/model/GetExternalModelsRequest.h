@@ -21,7 +21,7 @@ namespace Model
   class GetExternalModelsRequest : public FraudDetectorRequest
   {
   public:
-    AWS_FRAUDDETECTOR_API GetExternalModelsRequest();
+    AWS_FRAUDDETECTOR_API GetExternalModelsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,35 +38,31 @@ namespace Model
     /**
      * <p>The Amazon SageMaker model endpoint.</p>
      */
-    inline const Aws::String& GetModelEndpoint() const{ return m_modelEndpoint; }
+    inline const Aws::String& GetModelEndpoint() const { return m_modelEndpoint; }
     inline bool ModelEndpointHasBeenSet() const { return m_modelEndpointHasBeenSet; }
-    inline void SetModelEndpoint(const Aws::String& value) { m_modelEndpointHasBeenSet = true; m_modelEndpoint = value; }
-    inline void SetModelEndpoint(Aws::String&& value) { m_modelEndpointHasBeenSet = true; m_modelEndpoint = std::move(value); }
-    inline void SetModelEndpoint(const char* value) { m_modelEndpointHasBeenSet = true; m_modelEndpoint.assign(value); }
-    inline GetExternalModelsRequest& WithModelEndpoint(const Aws::String& value) { SetModelEndpoint(value); return *this;}
-    inline GetExternalModelsRequest& WithModelEndpoint(Aws::String&& value) { SetModelEndpoint(std::move(value)); return *this;}
-    inline GetExternalModelsRequest& WithModelEndpoint(const char* value) { SetModelEndpoint(value); return *this;}
+    template<typename ModelEndpointT = Aws::String>
+    void SetModelEndpoint(ModelEndpointT&& value) { m_modelEndpointHasBeenSet = true; m_modelEndpoint = std::forward<ModelEndpointT>(value); }
+    template<typename ModelEndpointT = Aws::String>
+    GetExternalModelsRequest& WithModelEndpoint(ModelEndpointT&& value) { SetModelEndpoint(std::forward<ModelEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The next page token for the request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetExternalModelsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetExternalModelsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetExternalModelsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetExternalModelsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of objects to return for the request.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetExternalModelsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -79,7 +75,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

@@ -25,7 +25,7 @@ namespace Model
   class NestedWithNamespace
   {
   public:
-    AWS_RESTXMLPROTOCOLNAMESPACE_API NestedWithNamespace();
+    AWS_RESTXMLPROTOCOLNAMESPACE_API NestedWithNamespace() = default;
     AWS_RESTXMLPROTOCOLNAMESPACE_API NestedWithNamespace(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RESTXMLPROTOCOLNAMESPACE_API NestedWithNamespace& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -34,14 +34,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetAttrField() const{ return m_attrField; }
+    inline const Aws::String& GetAttrField() const { return m_attrField; }
     inline bool AttrFieldHasBeenSet() const { return m_attrFieldHasBeenSet; }
-    inline void SetAttrField(const Aws::String& value) { m_attrFieldHasBeenSet = true; m_attrField = value; }
-    inline void SetAttrField(Aws::String&& value) { m_attrFieldHasBeenSet = true; m_attrField = std::move(value); }
-    inline void SetAttrField(const char* value) { m_attrFieldHasBeenSet = true; m_attrField.assign(value); }
-    inline NestedWithNamespace& WithAttrField(const Aws::String& value) { SetAttrField(value); return *this;}
-    inline NestedWithNamespace& WithAttrField(Aws::String&& value) { SetAttrField(std::move(value)); return *this;}
-    inline NestedWithNamespace& WithAttrField(const char* value) { SetAttrField(value); return *this;}
+    template<typename AttrFieldT = Aws::String>
+    void SetAttrField(AttrFieldT&& value) { m_attrFieldHasBeenSet = true; m_attrField = std::forward<AttrFieldT>(value); }
+    template<typename AttrFieldT = Aws::String>
+    NestedWithNamespace& WithAttrField(AttrFieldT&& value) { SetAttrField(std::forward<AttrFieldT>(value)); return *this;}
     ///@}
   private:
 

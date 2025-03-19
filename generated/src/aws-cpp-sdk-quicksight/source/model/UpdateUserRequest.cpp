@@ -12,22 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateUserRequest::UpdateUserRequest() : 
-    m_userNameHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_role(UserRole::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_customPermissionsNameHasBeenSet(false),
-    m_unapplyCustomPermissions(false),
-    m_unapplyCustomPermissionsHasBeenSet(false),
-    m_externalLoginFederationProviderTypeHasBeenSet(false),
-    m_customFederationProviderUrlHasBeenSet(false),
-    m_externalLoginIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateUserRequest::SerializePayload() const
 {
   JsonValue payload;

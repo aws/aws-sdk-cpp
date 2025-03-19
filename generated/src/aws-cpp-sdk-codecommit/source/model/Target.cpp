@@ -18,15 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-Target::Target() : 
-    m_repositoryNameHasBeenSet(false),
-    m_sourceReferenceHasBeenSet(false),
-    m_destinationReferenceHasBeenSet(false)
-{
-}
-
 Target::Target(JsonView jsonValue)
-  : Target()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Target& Target::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceReference"))
   {
     m_sourceReference = jsonValue.GetString("sourceReference");
-
     m_sourceReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationReference"))
   {
     m_destinationReference = jsonValue.GetString("destinationReference");
-
     m_destinationReferenceHasBeenSet = true;
   }
-
   return *this;
 }
 

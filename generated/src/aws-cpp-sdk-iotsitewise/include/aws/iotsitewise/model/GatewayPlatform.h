@@ -33,7 +33,7 @@ namespace Model
   class GatewayPlatform
   {
   public:
-    AWS_IOTSITEWISE_API GatewayPlatform();
+    AWS_IOTSITEWISE_API GatewayPlatform() = default;
     AWS_IOTSITEWISE_API GatewayPlatform(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API GatewayPlatform& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,36 +43,36 @@ namespace Model
     /**
      * <p>A gateway that runs on IoT Greengrass.</p>
      */
-    inline const Greengrass& GetGreengrass() const{ return m_greengrass; }
+    inline const Greengrass& GetGreengrass() const { return m_greengrass; }
     inline bool GreengrassHasBeenSet() const { return m_greengrassHasBeenSet; }
-    inline void SetGreengrass(const Greengrass& value) { m_greengrassHasBeenSet = true; m_greengrass = value; }
-    inline void SetGreengrass(Greengrass&& value) { m_greengrassHasBeenSet = true; m_greengrass = std::move(value); }
-    inline GatewayPlatform& WithGreengrass(const Greengrass& value) { SetGreengrass(value); return *this;}
-    inline GatewayPlatform& WithGreengrass(Greengrass&& value) { SetGreengrass(std::move(value)); return *this;}
+    template<typename GreengrassT = Greengrass>
+    void SetGreengrass(GreengrassT&& value) { m_greengrassHasBeenSet = true; m_greengrass = std::forward<GreengrassT>(value); }
+    template<typename GreengrassT = Greengrass>
+    GatewayPlatform& WithGreengrass(GreengrassT&& value) { SetGreengrass(std::forward<GreengrassT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A gateway that runs on IoT Greengrass V2.</p>
      */
-    inline const GreengrassV2& GetGreengrassV2() const{ return m_greengrassV2; }
+    inline const GreengrassV2& GetGreengrassV2() const { return m_greengrassV2; }
     inline bool GreengrassV2HasBeenSet() const { return m_greengrassV2HasBeenSet; }
-    inline void SetGreengrassV2(const GreengrassV2& value) { m_greengrassV2HasBeenSet = true; m_greengrassV2 = value; }
-    inline void SetGreengrassV2(GreengrassV2&& value) { m_greengrassV2HasBeenSet = true; m_greengrassV2 = std::move(value); }
-    inline GatewayPlatform& WithGreengrassV2(const GreengrassV2& value) { SetGreengrassV2(value); return *this;}
-    inline GatewayPlatform& WithGreengrassV2(GreengrassV2&& value) { SetGreengrassV2(std::move(value)); return *this;}
+    template<typename GreengrassV2T = GreengrassV2>
+    void SetGreengrassV2(GreengrassV2T&& value) { m_greengrassV2HasBeenSet = true; m_greengrassV2 = std::forward<GreengrassV2T>(value); }
+    template<typename GreengrassV2T = GreengrassV2>
+    GatewayPlatform& WithGreengrassV2(GreengrassV2T&& value) { SetGreengrassV2(std::forward<GreengrassV2T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A SiteWise Edge gateway that runs on a Siemens Industrial Edge Device.</p>
      */
-    inline const SiemensIE& GetSiemensIE() const{ return m_siemensIE; }
+    inline const SiemensIE& GetSiemensIE() const { return m_siemensIE; }
     inline bool SiemensIEHasBeenSet() const { return m_siemensIEHasBeenSet; }
-    inline void SetSiemensIE(const SiemensIE& value) { m_siemensIEHasBeenSet = true; m_siemensIE = value; }
-    inline void SetSiemensIE(SiemensIE&& value) { m_siemensIEHasBeenSet = true; m_siemensIE = std::move(value); }
-    inline GatewayPlatform& WithSiemensIE(const SiemensIE& value) { SetSiemensIE(value); return *this;}
-    inline GatewayPlatform& WithSiemensIE(SiemensIE&& value) { SetSiemensIE(std::move(value)); return *this;}
+    template<typename SiemensIET = SiemensIE>
+    void SetSiemensIE(SiemensIET&& value) { m_siemensIEHasBeenSet = true; m_siemensIE = std::forward<SiemensIET>(value); }
+    template<typename SiemensIET = SiemensIE>
+    GatewayPlatform& WithSiemensIE(SiemensIET&& value) { SetSiemensIE(std::forward<SiemensIET>(value)); return *this;}
     ///@}
   private:
 

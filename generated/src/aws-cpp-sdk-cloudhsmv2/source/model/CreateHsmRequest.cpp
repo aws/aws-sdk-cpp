@@ -12,13 +12,6 @@ using namespace Aws::CloudHSMV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateHsmRequest::CreateHsmRequest() : 
-    m_clusterIdHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_ipAddressHasBeenSet(false)
-{
-}
-
 Aws::String CreateHsmRequest::SerializePayload() const
 {
   JsonValue payload;

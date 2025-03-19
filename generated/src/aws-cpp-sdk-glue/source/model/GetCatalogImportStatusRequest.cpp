@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCatalogImportStatusRequest::GetCatalogImportStatusRequest() : 
-    m_catalogIdHasBeenSet(false)
-{
-}
-
 Aws::String GetCatalogImportStatusRequest::SerializePayload() const
 {
   JsonValue payload;

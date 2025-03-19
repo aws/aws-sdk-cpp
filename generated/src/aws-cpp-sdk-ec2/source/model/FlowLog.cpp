@@ -20,31 +20,7 @@ namespace EC2
 namespace Model
 {
 
-FlowLog::FlowLog() : 
-    m_creationTimeHasBeenSet(false),
-    m_deliverLogsErrorMessageHasBeenSet(false),
-    m_deliverLogsPermissionArnHasBeenSet(false),
-    m_deliverCrossAccountRoleHasBeenSet(false),
-    m_deliverLogsStatusHasBeenSet(false),
-    m_flowLogIdHasBeenSet(false),
-    m_flowLogStatusHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_trafficType(TrafficType::NOT_SET),
-    m_trafficTypeHasBeenSet(false),
-    m_logDestinationType(LogDestinationType::NOT_SET),
-    m_logDestinationTypeHasBeenSet(false),
-    m_logDestinationHasBeenSet(false),
-    m_logFormatHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_maxAggregationInterval(0),
-    m_maxAggregationIntervalHasBeenSet(false),
-    m_destinationOptionsHasBeenSet(false)
-{
-}
-
 FlowLog::FlowLog(const XmlNode& xmlNode)
-  : FlowLog()
 {
   *this = xmlNode;
 }
@@ -112,13 +88,13 @@ FlowLog& FlowLog::operator =(const XmlNode& xmlNode)
     XmlNode trafficTypeNode = resultNode.FirstChild("trafficType");
     if(!trafficTypeNode.IsNull())
     {
-      m_trafficType = TrafficTypeMapper::GetTrafficTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trafficTypeNode.GetText()).c_str()).c_str());
+      m_trafficType = TrafficTypeMapper::GetTrafficTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(trafficTypeNode.GetText()).c_str()));
       m_trafficTypeHasBeenSet = true;
     }
     XmlNode logDestinationTypeNode = resultNode.FirstChild("logDestinationType");
     if(!logDestinationTypeNode.IsNull())
     {
-      m_logDestinationType = LogDestinationTypeMapper::GetLogDestinationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(logDestinationTypeNode.GetText()).c_str()).c_str());
+      m_logDestinationType = LogDestinationTypeMapper::GetLogDestinationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(logDestinationTypeNode.GetText()).c_str()));
       m_logDestinationTypeHasBeenSet = true;
     }
     XmlNode logDestinationNode = resultNode.FirstChild("logDestination");
@@ -137,6 +113,7 @@ FlowLog& FlowLog::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

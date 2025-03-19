@@ -18,18 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-DescribedWorkflow::DescribedWorkflow() : 
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_stepsHasBeenSet(false),
-    m_onExceptionStepsHasBeenSet(false),
-    m_workflowIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 DescribedWorkflow::DescribedWorkflow(JsonView jsonValue)
-  : DescribedWorkflow()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ DescribedWorkflow& DescribedWorkflow::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Steps"))
   {
     Aws::Utils::Array<JsonView> stepsJsonList = jsonValue.GetArray("Steps");
@@ -59,7 +44,6 @@ DescribedWorkflow& DescribedWorkflow::operator =(JsonView jsonValue)
     }
     m_stepsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnExceptionSteps"))
   {
     Aws::Utils::Array<JsonView> onExceptionStepsJsonList = jsonValue.GetArray("OnExceptionSteps");
@@ -69,14 +53,11 @@ DescribedWorkflow& DescribedWorkflow::operator =(JsonView jsonValue)
     }
     m_onExceptionStepsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkflowId"))
   {
     m_workflowId = jsonValue.GetString("WorkflowId");
-
     m_workflowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -86,7 +67,6 @@ DescribedWorkflow& DescribedWorkflow::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

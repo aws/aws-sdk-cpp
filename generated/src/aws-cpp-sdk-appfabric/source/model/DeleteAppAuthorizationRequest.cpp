@@ -12,12 +12,6 @@ using namespace Aws::AppFabric::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAppAuthorizationRequest::DeleteAppAuthorizationRequest() : 
-    m_appBundleIdentifierHasBeenSet(false),
-    m_appAuthorizationIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAppAuthorizationRequest::SerializePayload() const
 {
   return {};

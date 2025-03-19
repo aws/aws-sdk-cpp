@@ -36,7 +36,7 @@ namespace Model
   class RuntimePlatform
   {
   public:
-    AWS_ECS_API RuntimePlatform();
+    AWS_ECS_API RuntimePlatform() = default;
     AWS_ECS_API RuntimePlatform(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API RuntimePlatform& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,31 +49,27 @@ namespace Model
      * for tasks that run on Linux Amazon EC2 instance or Linux containers on
      * Fargate.</p>
      */
-    inline const CPUArchitecture& GetCpuArchitecture() const{ return m_cpuArchitecture; }
+    inline CPUArchitecture GetCpuArchitecture() const { return m_cpuArchitecture; }
     inline bool CpuArchitectureHasBeenSet() const { return m_cpuArchitectureHasBeenSet; }
-    inline void SetCpuArchitecture(const CPUArchitecture& value) { m_cpuArchitectureHasBeenSet = true; m_cpuArchitecture = value; }
-    inline void SetCpuArchitecture(CPUArchitecture&& value) { m_cpuArchitectureHasBeenSet = true; m_cpuArchitecture = std::move(value); }
-    inline RuntimePlatform& WithCpuArchitecture(const CPUArchitecture& value) { SetCpuArchitecture(value); return *this;}
-    inline RuntimePlatform& WithCpuArchitecture(CPUArchitecture&& value) { SetCpuArchitecture(std::move(value)); return *this;}
+    inline void SetCpuArchitecture(CPUArchitecture value) { m_cpuArchitectureHasBeenSet = true; m_cpuArchitecture = value; }
+    inline RuntimePlatform& WithCpuArchitecture(CPUArchitecture value) { SetCpuArchitecture(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The operating system.</p>
      */
-    inline const OSFamily& GetOperatingSystemFamily() const{ return m_operatingSystemFamily; }
+    inline OSFamily GetOperatingSystemFamily() const { return m_operatingSystemFamily; }
     inline bool OperatingSystemFamilyHasBeenSet() const { return m_operatingSystemFamilyHasBeenSet; }
-    inline void SetOperatingSystemFamily(const OSFamily& value) { m_operatingSystemFamilyHasBeenSet = true; m_operatingSystemFamily = value; }
-    inline void SetOperatingSystemFamily(OSFamily&& value) { m_operatingSystemFamilyHasBeenSet = true; m_operatingSystemFamily = std::move(value); }
-    inline RuntimePlatform& WithOperatingSystemFamily(const OSFamily& value) { SetOperatingSystemFamily(value); return *this;}
-    inline RuntimePlatform& WithOperatingSystemFamily(OSFamily&& value) { SetOperatingSystemFamily(std::move(value)); return *this;}
+    inline void SetOperatingSystemFamily(OSFamily value) { m_operatingSystemFamilyHasBeenSet = true; m_operatingSystemFamily = value; }
+    inline RuntimePlatform& WithOperatingSystemFamily(OSFamily value) { SetOperatingSystemFamily(value); return *this;}
     ///@}
   private:
 
-    CPUArchitecture m_cpuArchitecture;
+    CPUArchitecture m_cpuArchitecture{CPUArchitecture::NOT_SET};
     bool m_cpuArchitectureHasBeenSet = false;
 
-    OSFamily m_operatingSystemFamily;
+    OSFamily m_operatingSystemFamily{OSFamily::NOT_SET};
     bool m_operatingSystemFamilyHasBeenSet = false;
   };
 

@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeChannelRequest::DescribeChannelRequest() : 
-    m_channelNameHasBeenSet(false),
-    m_includeStatistics(false),
-    m_includeStatisticsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeChannelRequest::SerializePayload() const
 {
   return {};

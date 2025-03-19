@@ -12,11 +12,6 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMLConfigurationRequest::GetMLConfigurationRequest() : 
-    m_membershipIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetMLConfigurationRequest::SerializePayload() const
 {
   return {};

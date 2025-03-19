@@ -21,7 +21,7 @@ namespace Model
   class GetTableMaintenanceJobStatusRequest : public S3TablesRequest
   {
   public:
-    AWS_S3TABLES_API GetTableMaintenanceJobStatusRequest();
+    AWS_S3TABLES_API GetTableMaintenanceJobStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the table bucket.</p>
      */
-    inline const Aws::String& GetTableBucketARN() const{ return m_tableBucketARN; }
+    inline const Aws::String& GetTableBucketARN() const { return m_tableBucketARN; }
     inline bool TableBucketARNHasBeenSet() const { return m_tableBucketARNHasBeenSet; }
-    inline void SetTableBucketARN(const Aws::String& value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN = value; }
-    inline void SetTableBucketARN(Aws::String&& value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN = std::move(value); }
-    inline void SetTableBucketARN(const char* value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN.assign(value); }
-    inline GetTableMaintenanceJobStatusRequest& WithTableBucketARN(const Aws::String& value) { SetTableBucketARN(value); return *this;}
-    inline GetTableMaintenanceJobStatusRequest& WithTableBucketARN(Aws::String&& value) { SetTableBucketARN(std::move(value)); return *this;}
-    inline GetTableMaintenanceJobStatusRequest& WithTableBucketARN(const char* value) { SetTableBucketARN(value); return *this;}
+    template<typename TableBucketARNT = Aws::String>
+    void SetTableBucketARN(TableBucketARNT&& value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN = std::forward<TableBucketARNT>(value); }
+    template<typename TableBucketARNT = Aws::String>
+    GetTableMaintenanceJobStatusRequest& WithTableBucketARN(TableBucketARNT&& value) { SetTableBucketARN(std::forward<TableBucketARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,28 +49,24 @@ namespace Model
      * <p>The name of the namespace the table is associated with. <pre><code>&lt;/p&gt;
      * </code></pre>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline GetTableMaintenanceJobStatusRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline GetTableMaintenanceJobStatusRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline GetTableMaintenanceJobStatusRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    GetTableMaintenanceJobStatusRequest& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the maintenance job.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline GetTableMaintenanceJobStatusRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetTableMaintenanceJobStatusRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetTableMaintenanceJobStatusRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetTableMaintenanceJobStatusRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

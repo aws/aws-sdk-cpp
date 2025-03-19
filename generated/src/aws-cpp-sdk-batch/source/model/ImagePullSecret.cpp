@@ -18,13 +18,7 @@ namespace Batch
 namespace Model
 {
 
-ImagePullSecret::ImagePullSecret() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 ImagePullSecret::ImagePullSecret(JsonView jsonValue)
-  : ImagePullSecret()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ImagePullSecret& ImagePullSecret::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

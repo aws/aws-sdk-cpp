@@ -23,7 +23,7 @@ namespace Model
   class UpdateSourceControlFromJobRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API UpdateSourceControlFromJobRequest();
+    AWS_GLUE_API UpdateSourceControlFromJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The name of the Glue job to be synchronized to or from the remote
      * repository.</p>
      */
-    inline const Aws::String& GetJobName() const{ return m_jobName; }
+    inline const Aws::String& GetJobName() const { return m_jobName; }
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
-    inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
-    inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
-    inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
-    inline UpdateSourceControlFromJobRequest& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
-    inline UpdateSourceControlFromJobRequest& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
-    inline UpdateSourceControlFromJobRequest& WithJobName(const char* value) { SetJobName(value); return *this;}
+    template<typename JobNameT = Aws::String>
+    void SetJobName(JobNameT&& value) { m_jobNameHasBeenSet = true; m_jobName = std::forward<JobNameT>(value); }
+    template<typename JobNameT = Aws::String>
+    UpdateSourceControlFromJobRequest& WithJobName(JobNameT&& value) { SetJobName(std::forward<JobNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +54,10 @@ namespace Model
      * <p> The provider for the remote repository. Possible values: GITHUB,
      * AWS_CODE_COMMIT, GITLAB, BITBUCKET. </p>
      */
-    inline const SourceControlProvider& GetProvider() const{ return m_provider; }
+    inline SourceControlProvider GetProvider() const { return m_provider; }
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
-    inline void SetProvider(const SourceControlProvider& value) { m_providerHasBeenSet = true; m_provider = value; }
-    inline void SetProvider(SourceControlProvider&& value) { m_providerHasBeenSet = true; m_provider = std::move(value); }
-    inline UpdateSourceControlFromJobRequest& WithProvider(const SourceControlProvider& value) { SetProvider(value); return *this;}
-    inline UpdateSourceControlFromJobRequest& WithProvider(SourceControlProvider&& value) { SetProvider(std::move(value)); return *this;}
+    inline void SetProvider(SourceControlProvider value) { m_providerHasBeenSet = true; m_provider = value; }
+    inline UpdateSourceControlFromJobRequest& WithProvider(SourceControlProvider value) { SetProvider(value); return *this;}
     ///@}
 
     ///@{
@@ -71,70 +67,60 @@ namespace Model
      * <code>WorkspaceName</code>. Use the format
      * <code>&lt;WorkspaceName&gt;/&lt;RepositoryName&gt;</code>. </p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-    inline UpdateSourceControlFromJobRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline UpdateSourceControlFromJobRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline UpdateSourceControlFromJobRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    UpdateSourceControlFromJobRequest& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The owner of the remote repository that contains the job artifacts.</p>
      */
-    inline const Aws::String& GetRepositoryOwner() const{ return m_repositoryOwner; }
+    inline const Aws::String& GetRepositoryOwner() const { return m_repositoryOwner; }
     inline bool RepositoryOwnerHasBeenSet() const { return m_repositoryOwnerHasBeenSet; }
-    inline void SetRepositoryOwner(const Aws::String& value) { m_repositoryOwnerHasBeenSet = true; m_repositoryOwner = value; }
-    inline void SetRepositoryOwner(Aws::String&& value) { m_repositoryOwnerHasBeenSet = true; m_repositoryOwner = std::move(value); }
-    inline void SetRepositoryOwner(const char* value) { m_repositoryOwnerHasBeenSet = true; m_repositoryOwner.assign(value); }
-    inline UpdateSourceControlFromJobRequest& WithRepositoryOwner(const Aws::String& value) { SetRepositoryOwner(value); return *this;}
-    inline UpdateSourceControlFromJobRequest& WithRepositoryOwner(Aws::String&& value) { SetRepositoryOwner(std::move(value)); return *this;}
-    inline UpdateSourceControlFromJobRequest& WithRepositoryOwner(const char* value) { SetRepositoryOwner(value); return *this;}
+    template<typename RepositoryOwnerT = Aws::String>
+    void SetRepositoryOwner(RepositoryOwnerT&& value) { m_repositoryOwnerHasBeenSet = true; m_repositoryOwner = std::forward<RepositoryOwnerT>(value); }
+    template<typename RepositoryOwnerT = Aws::String>
+    UpdateSourceControlFromJobRequest& WithRepositoryOwner(RepositoryOwnerT&& value) { SetRepositoryOwner(std::forward<RepositoryOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An optional branch in the remote repository.</p>
      */
-    inline const Aws::String& GetBranchName() const{ return m_branchName; }
+    inline const Aws::String& GetBranchName() const { return m_branchName; }
     inline bool BranchNameHasBeenSet() const { return m_branchNameHasBeenSet; }
-    inline void SetBranchName(const Aws::String& value) { m_branchNameHasBeenSet = true; m_branchName = value; }
-    inline void SetBranchName(Aws::String&& value) { m_branchNameHasBeenSet = true; m_branchName = std::move(value); }
-    inline void SetBranchName(const char* value) { m_branchNameHasBeenSet = true; m_branchName.assign(value); }
-    inline UpdateSourceControlFromJobRequest& WithBranchName(const Aws::String& value) { SetBranchName(value); return *this;}
-    inline UpdateSourceControlFromJobRequest& WithBranchName(Aws::String&& value) { SetBranchName(std::move(value)); return *this;}
-    inline UpdateSourceControlFromJobRequest& WithBranchName(const char* value) { SetBranchName(value); return *this;}
+    template<typename BranchNameT = Aws::String>
+    void SetBranchName(BranchNameT&& value) { m_branchNameHasBeenSet = true; m_branchName = std::forward<BranchNameT>(value); }
+    template<typename BranchNameT = Aws::String>
+    UpdateSourceControlFromJobRequest& WithBranchName(BranchNameT&& value) { SetBranchName(std::forward<BranchNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An optional folder in the remote repository.</p>
      */
-    inline const Aws::String& GetFolder() const{ return m_folder; }
+    inline const Aws::String& GetFolder() const { return m_folder; }
     inline bool FolderHasBeenSet() const { return m_folderHasBeenSet; }
-    inline void SetFolder(const Aws::String& value) { m_folderHasBeenSet = true; m_folder = value; }
-    inline void SetFolder(Aws::String&& value) { m_folderHasBeenSet = true; m_folder = std::move(value); }
-    inline void SetFolder(const char* value) { m_folderHasBeenSet = true; m_folder.assign(value); }
-    inline UpdateSourceControlFromJobRequest& WithFolder(const Aws::String& value) { SetFolder(value); return *this;}
-    inline UpdateSourceControlFromJobRequest& WithFolder(Aws::String&& value) { SetFolder(std::move(value)); return *this;}
-    inline UpdateSourceControlFromJobRequest& WithFolder(const char* value) { SetFolder(value); return *this;}
+    template<typename FolderT = Aws::String>
+    void SetFolder(FolderT&& value) { m_folderHasBeenSet = true; m_folder = std::forward<FolderT>(value); }
+    template<typename FolderT = Aws::String>
+    UpdateSourceControlFromJobRequest& WithFolder(FolderT&& value) { SetFolder(std::forward<FolderT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A commit ID for a commit in the remote repository.</p>
      */
-    inline const Aws::String& GetCommitId() const{ return m_commitId; }
+    inline const Aws::String& GetCommitId() const { return m_commitId; }
     inline bool CommitIdHasBeenSet() const { return m_commitIdHasBeenSet; }
-    inline void SetCommitId(const Aws::String& value) { m_commitIdHasBeenSet = true; m_commitId = value; }
-    inline void SetCommitId(Aws::String&& value) { m_commitIdHasBeenSet = true; m_commitId = std::move(value); }
-    inline void SetCommitId(const char* value) { m_commitIdHasBeenSet = true; m_commitId.assign(value); }
-    inline UpdateSourceControlFromJobRequest& WithCommitId(const Aws::String& value) { SetCommitId(value); return *this;}
-    inline UpdateSourceControlFromJobRequest& WithCommitId(Aws::String&& value) { SetCommitId(std::move(value)); return *this;}
-    inline UpdateSourceControlFromJobRequest& WithCommitId(const char* value) { SetCommitId(value); return *this;}
+    template<typename CommitIdT = Aws::String>
+    void SetCommitId(CommitIdT&& value) { m_commitIdHasBeenSet = true; m_commitId = std::forward<CommitIdT>(value); }
+    template<typename CommitIdT = Aws::String>
+    UpdateSourceControlFromJobRequest& WithCommitId(CommitIdT&& value) { SetCommitId(std::forward<CommitIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,33 +128,29 @@ namespace Model
      * <p>The type of authentication, which can be an authentication token stored in
      * Amazon Web Services Secrets Manager, or a personal access token.</p>
      */
-    inline const SourceControlAuthStrategy& GetAuthStrategy() const{ return m_authStrategy; }
+    inline SourceControlAuthStrategy GetAuthStrategy() const { return m_authStrategy; }
     inline bool AuthStrategyHasBeenSet() const { return m_authStrategyHasBeenSet; }
-    inline void SetAuthStrategy(const SourceControlAuthStrategy& value) { m_authStrategyHasBeenSet = true; m_authStrategy = value; }
-    inline void SetAuthStrategy(SourceControlAuthStrategy&& value) { m_authStrategyHasBeenSet = true; m_authStrategy = std::move(value); }
-    inline UpdateSourceControlFromJobRequest& WithAuthStrategy(const SourceControlAuthStrategy& value) { SetAuthStrategy(value); return *this;}
-    inline UpdateSourceControlFromJobRequest& WithAuthStrategy(SourceControlAuthStrategy&& value) { SetAuthStrategy(std::move(value)); return *this;}
+    inline void SetAuthStrategy(SourceControlAuthStrategy value) { m_authStrategyHasBeenSet = true; m_authStrategy = value; }
+    inline UpdateSourceControlFromJobRequest& WithAuthStrategy(SourceControlAuthStrategy value) { SetAuthStrategy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the authorization token.</p>
      */
-    inline const Aws::String& GetAuthToken() const{ return m_authToken; }
+    inline const Aws::String& GetAuthToken() const { return m_authToken; }
     inline bool AuthTokenHasBeenSet() const { return m_authTokenHasBeenSet; }
-    inline void SetAuthToken(const Aws::String& value) { m_authTokenHasBeenSet = true; m_authToken = value; }
-    inline void SetAuthToken(Aws::String&& value) { m_authTokenHasBeenSet = true; m_authToken = std::move(value); }
-    inline void SetAuthToken(const char* value) { m_authTokenHasBeenSet = true; m_authToken.assign(value); }
-    inline UpdateSourceControlFromJobRequest& WithAuthToken(const Aws::String& value) { SetAuthToken(value); return *this;}
-    inline UpdateSourceControlFromJobRequest& WithAuthToken(Aws::String&& value) { SetAuthToken(std::move(value)); return *this;}
-    inline UpdateSourceControlFromJobRequest& WithAuthToken(const char* value) { SetAuthToken(value); return *this;}
+    template<typename AuthTokenT = Aws::String>
+    void SetAuthToken(AuthTokenT&& value) { m_authTokenHasBeenSet = true; m_authToken = std::forward<AuthTokenT>(value); }
+    template<typename AuthTokenT = Aws::String>
+    UpdateSourceControlFromJobRequest& WithAuthToken(AuthTokenT&& value) { SetAuthToken(std::forward<AuthTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_jobName;
     bool m_jobNameHasBeenSet = false;
 
-    SourceControlProvider m_provider;
+    SourceControlProvider m_provider{SourceControlProvider::NOT_SET};
     bool m_providerHasBeenSet = false;
 
     Aws::String m_repositoryName;
@@ -186,7 +168,7 @@ namespace Model
     Aws::String m_commitId;
     bool m_commitIdHasBeenSet = false;
 
-    SourceControlAuthStrategy m_authStrategy;
+    SourceControlAuthStrategy m_authStrategy{SourceControlAuthStrategy::NOT_SET};
     bool m_authStrategyHasBeenSet = false;
 
     Aws::String m_authToken;

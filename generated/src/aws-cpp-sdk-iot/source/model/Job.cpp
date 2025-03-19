@@ -18,41 +18,7 @@ namespace IoT
 namespace Model
 {
 
-Job::Job() : 
-    m_jobArnHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_targetSelection(TargetSelection::NOT_SET),
-    m_targetSelectionHasBeenSet(false),
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_forceCanceled(false),
-    m_forceCanceledHasBeenSet(false),
-    m_reasonCodeHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_presignedUrlConfigHasBeenSet(false),
-    m_jobExecutionsRolloutConfigHasBeenSet(false),
-    m_abortConfigHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_completedAtHasBeenSet(false),
-    m_jobProcessDetailsHasBeenSet(false),
-    m_timeoutConfigHasBeenSet(false),
-    m_namespaceIdHasBeenSet(false),
-    m_jobTemplateArnHasBeenSet(false),
-    m_jobExecutionsRetryConfigHasBeenSet(false),
-    m_documentParametersHasBeenSet(false),
-    m_isConcurrent(false),
-    m_isConcurrentHasBeenSet(false),
-    m_schedulingConfigHasBeenSet(false),
-    m_scheduledJobRolloutsHasBeenSet(false),
-    m_destinationPackageVersionsHasBeenSet(false)
-{
-}
-
 Job::Job(JsonView jsonValue)
-  : Job()
 {
   *this = jsonValue;
 }
@@ -62,52 +28,38 @@ Job& Job::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobArn"))
   {
     m_jobArn = jsonValue.GetString("jobArn");
-
     m_jobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetSelection"))
   {
     m_targetSelection = TargetSelectionMapper::GetTargetSelectionForName(jsonValue.GetString("targetSelection"));
-
     m_targetSelectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("forceCanceled"))
   {
     m_forceCanceled = jsonValue.GetBool("forceCanceled");
-
     m_forceCanceledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reasonCode"))
   {
     m_reasonCode = jsonValue.GetString("reasonCode");
-
     m_reasonCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("comment"))
   {
     m_comment = jsonValue.GetString("comment");
-
     m_commentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targets"))
   {
     Aws::Utils::Array<JsonView> targetsJsonList = jsonValue.GetArray("targets");
@@ -117,91 +69,66 @@ Job& Job::operator =(JsonView jsonValue)
     }
     m_targetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("presignedUrlConfig"))
   {
     m_presignedUrlConfig = jsonValue.GetObject("presignedUrlConfig");
-
     m_presignedUrlConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobExecutionsRolloutConfig"))
   {
     m_jobExecutionsRolloutConfig = jsonValue.GetObject("jobExecutionsRolloutConfig");
-
     m_jobExecutionsRolloutConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("abortConfig"))
   {
     m_abortConfig = jsonValue.GetObject("abortConfig");
-
     m_abortConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("completedAt"))
   {
     m_completedAt = jsonValue.GetDouble("completedAt");
-
     m_completedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobProcessDetails"))
   {
     m_jobProcessDetails = jsonValue.GetObject("jobProcessDetails");
-
     m_jobProcessDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeoutConfig"))
   {
     m_timeoutConfig = jsonValue.GetObject("timeoutConfig");
-
     m_timeoutConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespaceId"))
   {
     m_namespaceId = jsonValue.GetString("namespaceId");
-
     m_namespaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobTemplateArn"))
   {
     m_jobTemplateArn = jsonValue.GetString("jobTemplateArn");
-
     m_jobTemplateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobExecutionsRetryConfig"))
   {
     m_jobExecutionsRetryConfig = jsonValue.GetObject("jobExecutionsRetryConfig");
-
     m_jobExecutionsRetryConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("documentParameters"))
   {
     Aws::Map<Aws::String, JsonView> documentParametersJsonMap = jsonValue.GetObject("documentParameters").GetAllObjects();
@@ -211,21 +138,16 @@ Job& Job::operator =(JsonView jsonValue)
     }
     m_documentParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isConcurrent"))
   {
     m_isConcurrent = jsonValue.GetBool("isConcurrent");
-
     m_isConcurrentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schedulingConfig"))
   {
     m_schedulingConfig = jsonValue.GetObject("schedulingConfig");
-
     m_schedulingConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scheduledJobRollouts"))
   {
     Aws::Utils::Array<JsonView> scheduledJobRolloutsJsonList = jsonValue.GetArray("scheduledJobRollouts");
@@ -235,7 +157,6 @@ Job& Job::operator =(JsonView jsonValue)
     }
     m_scheduledJobRolloutsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationPackageVersions"))
   {
     Aws::Utils::Array<JsonView> destinationPackageVersionsJsonList = jsonValue.GetArray("destinationPackageVersions");
@@ -245,7 +166,6 @@ Job& Job::operator =(JsonView jsonValue)
     }
     m_destinationPackageVersionsHasBeenSet = true;
   }
-
   return *this;
 }
 

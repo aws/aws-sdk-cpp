@@ -34,7 +34,7 @@ namespace Model
   class Framework
   {
   public:
-    AWS_BACKUP_API Framework();
+    AWS_BACKUP_API Framework() = default;
     AWS_BACKUP_API Framework(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API Framework& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * starting with a letter, and consisting of letters (a-z, A-Z), numbers (0-9), and
      * underscores (_).</p>
      */
-    inline const Aws::String& GetFrameworkName() const{ return m_frameworkName; }
+    inline const Aws::String& GetFrameworkName() const { return m_frameworkName; }
     inline bool FrameworkNameHasBeenSet() const { return m_frameworkNameHasBeenSet; }
-    inline void SetFrameworkName(const Aws::String& value) { m_frameworkNameHasBeenSet = true; m_frameworkName = value; }
-    inline void SetFrameworkName(Aws::String&& value) { m_frameworkNameHasBeenSet = true; m_frameworkName = std::move(value); }
-    inline void SetFrameworkName(const char* value) { m_frameworkNameHasBeenSet = true; m_frameworkName.assign(value); }
-    inline Framework& WithFrameworkName(const Aws::String& value) { SetFrameworkName(value); return *this;}
-    inline Framework& WithFrameworkName(Aws::String&& value) { SetFrameworkName(std::move(value)); return *this;}
-    inline Framework& WithFrameworkName(const char* value) { SetFrameworkName(value); return *this;}
+    template<typename FrameworkNameT = Aws::String>
+    void SetFrameworkName(FrameworkNameT&& value) { m_frameworkNameHasBeenSet = true; m_frameworkName = std::forward<FrameworkNameT>(value); }
+    template<typename FrameworkNameT = Aws::String>
+    Framework& WithFrameworkName(FrameworkNameT&& value) { SetFrameworkName(std::forward<FrameworkNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,35 +59,31 @@ namespace Model
      * <p>An Amazon Resource Name (ARN) that uniquely identifies a resource. The format
      * of the ARN depends on the resource type.</p>
      */
-    inline const Aws::String& GetFrameworkArn() const{ return m_frameworkArn; }
+    inline const Aws::String& GetFrameworkArn() const { return m_frameworkArn; }
     inline bool FrameworkArnHasBeenSet() const { return m_frameworkArnHasBeenSet; }
-    inline void SetFrameworkArn(const Aws::String& value) { m_frameworkArnHasBeenSet = true; m_frameworkArn = value; }
-    inline void SetFrameworkArn(Aws::String&& value) { m_frameworkArnHasBeenSet = true; m_frameworkArn = std::move(value); }
-    inline void SetFrameworkArn(const char* value) { m_frameworkArnHasBeenSet = true; m_frameworkArn.assign(value); }
-    inline Framework& WithFrameworkArn(const Aws::String& value) { SetFrameworkArn(value); return *this;}
-    inline Framework& WithFrameworkArn(Aws::String&& value) { SetFrameworkArn(std::move(value)); return *this;}
-    inline Framework& WithFrameworkArn(const char* value) { SetFrameworkArn(value); return *this;}
+    template<typename FrameworkArnT = Aws::String>
+    void SetFrameworkArn(FrameworkArnT&& value) { m_frameworkArnHasBeenSet = true; m_frameworkArn = std::forward<FrameworkArnT>(value); }
+    template<typename FrameworkArnT = Aws::String>
+    Framework& WithFrameworkArn(FrameworkArnT&& value) { SetFrameworkArn(std::forward<FrameworkArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An optional description of the framework with a maximum 1,024 characters.</p>
      */
-    inline const Aws::String& GetFrameworkDescription() const{ return m_frameworkDescription; }
+    inline const Aws::String& GetFrameworkDescription() const { return m_frameworkDescription; }
     inline bool FrameworkDescriptionHasBeenSet() const { return m_frameworkDescriptionHasBeenSet; }
-    inline void SetFrameworkDescription(const Aws::String& value) { m_frameworkDescriptionHasBeenSet = true; m_frameworkDescription = value; }
-    inline void SetFrameworkDescription(Aws::String&& value) { m_frameworkDescriptionHasBeenSet = true; m_frameworkDescription = std::move(value); }
-    inline void SetFrameworkDescription(const char* value) { m_frameworkDescriptionHasBeenSet = true; m_frameworkDescription.assign(value); }
-    inline Framework& WithFrameworkDescription(const Aws::String& value) { SetFrameworkDescription(value); return *this;}
-    inline Framework& WithFrameworkDescription(Aws::String&& value) { SetFrameworkDescription(std::move(value)); return *this;}
-    inline Framework& WithFrameworkDescription(const char* value) { SetFrameworkDescription(value); return *this;}
+    template<typename FrameworkDescriptionT = Aws::String>
+    void SetFrameworkDescription(FrameworkDescriptionT&& value) { m_frameworkDescriptionHasBeenSet = true; m_frameworkDescription = std::forward<FrameworkDescriptionT>(value); }
+    template<typename FrameworkDescriptionT = Aws::String>
+    Framework& WithFrameworkDescription(FrameworkDescriptionT&& value) { SetFrameworkDescription(std::forward<FrameworkDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of controls contained by the framework.</p>
      */
-    inline int GetNumberOfControls() const{ return m_numberOfControls; }
+    inline int GetNumberOfControls() const { return m_numberOfControls; }
     inline bool NumberOfControlsHasBeenSet() const { return m_numberOfControlsHasBeenSet; }
     inline void SetNumberOfControls(int value) { m_numberOfControlsHasBeenSet = true; m_numberOfControls = value; }
     inline Framework& WithNumberOfControls(int value) { SetNumberOfControls(value); return *this;}
@@ -102,12 +96,12 @@ namespace Model
      * 2020-07-10T15:00:00.000-08:00 represents the 10th of July 2020 at 3:00 PM 8
      * hours behind UTC.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline Framework& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline Framework& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    Framework& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,14 +110,12 @@ namespace Model
      * <code>CREATE_IN_PROGRESS | UPDATE_IN_PROGRESS | DELETE_IN_PROGRESS | COMPLETED |
      * FAILED</code> </p>
      */
-    inline const Aws::String& GetDeploymentStatus() const{ return m_deploymentStatus; }
+    inline const Aws::String& GetDeploymentStatus() const { return m_deploymentStatus; }
     inline bool DeploymentStatusHasBeenSet() const { return m_deploymentStatusHasBeenSet; }
-    inline void SetDeploymentStatus(const Aws::String& value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = value; }
-    inline void SetDeploymentStatus(Aws::String&& value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = std::move(value); }
-    inline void SetDeploymentStatus(const char* value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus.assign(value); }
-    inline Framework& WithDeploymentStatus(const Aws::String& value) { SetDeploymentStatus(value); return *this;}
-    inline Framework& WithDeploymentStatus(Aws::String&& value) { SetDeploymentStatus(std::move(value)); return *this;}
-    inline Framework& WithDeploymentStatus(const char* value) { SetDeploymentStatus(value); return *this;}
+    template<typename DeploymentStatusT = Aws::String>
+    void SetDeploymentStatus(DeploymentStatusT&& value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = std::forward<DeploymentStatusT>(value); }
+    template<typename DeploymentStatusT = Aws::String>
+    Framework& WithDeploymentStatus(DeploymentStatusT&& value) { SetDeploymentStatus(std::forward<DeploymentStatusT>(value)); return *this;}
     ///@}
   private:
 
@@ -136,10 +128,10 @@ namespace Model
     Aws::String m_frameworkDescription;
     bool m_frameworkDescriptionHasBeenSet = false;
 
-    int m_numberOfControls;
+    int m_numberOfControls{0};
     bool m_numberOfControlsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_deploymentStatus;

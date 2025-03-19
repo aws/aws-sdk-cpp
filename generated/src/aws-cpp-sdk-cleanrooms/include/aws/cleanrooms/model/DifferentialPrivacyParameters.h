@@ -33,7 +33,7 @@ namespace Model
   class DifferentialPrivacyParameters
   {
   public:
-    AWS_CLEANROOMS_API DifferentialPrivacyParameters();
+    AWS_CLEANROOMS_API DifferentialPrivacyParameters() = default;
     AWS_CLEANROOMS_API DifferentialPrivacyParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API DifferentialPrivacyParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>Provides the sensitivity parameters that you can use to better understand the
      * total amount of noise in query results.</p>
      */
-    inline const Aws::Vector<DifferentialPrivacySensitivityParameters>& GetSensitivityParameters() const{ return m_sensitivityParameters; }
+    inline const Aws::Vector<DifferentialPrivacySensitivityParameters>& GetSensitivityParameters() const { return m_sensitivityParameters; }
     inline bool SensitivityParametersHasBeenSet() const { return m_sensitivityParametersHasBeenSet; }
-    inline void SetSensitivityParameters(const Aws::Vector<DifferentialPrivacySensitivityParameters>& value) { m_sensitivityParametersHasBeenSet = true; m_sensitivityParameters = value; }
-    inline void SetSensitivityParameters(Aws::Vector<DifferentialPrivacySensitivityParameters>&& value) { m_sensitivityParametersHasBeenSet = true; m_sensitivityParameters = std::move(value); }
-    inline DifferentialPrivacyParameters& WithSensitivityParameters(const Aws::Vector<DifferentialPrivacySensitivityParameters>& value) { SetSensitivityParameters(value); return *this;}
-    inline DifferentialPrivacyParameters& WithSensitivityParameters(Aws::Vector<DifferentialPrivacySensitivityParameters>&& value) { SetSensitivityParameters(std::move(value)); return *this;}
-    inline DifferentialPrivacyParameters& AddSensitivityParameters(const DifferentialPrivacySensitivityParameters& value) { m_sensitivityParametersHasBeenSet = true; m_sensitivityParameters.push_back(value); return *this; }
-    inline DifferentialPrivacyParameters& AddSensitivityParameters(DifferentialPrivacySensitivityParameters&& value) { m_sensitivityParametersHasBeenSet = true; m_sensitivityParameters.push_back(std::move(value)); return *this; }
+    template<typename SensitivityParametersT = Aws::Vector<DifferentialPrivacySensitivityParameters>>
+    void SetSensitivityParameters(SensitivityParametersT&& value) { m_sensitivityParametersHasBeenSet = true; m_sensitivityParameters = std::forward<SensitivityParametersT>(value); }
+    template<typename SensitivityParametersT = Aws::Vector<DifferentialPrivacySensitivityParameters>>
+    DifferentialPrivacyParameters& WithSensitivityParameters(SensitivityParametersT&& value) { SetSensitivityParameters(std::forward<SensitivityParametersT>(value)); return *this;}
+    template<typename SensitivityParametersT = DifferentialPrivacySensitivityParameters>
+    DifferentialPrivacyParameters& AddSensitivityParameters(SensitivityParametersT&& value) { m_sensitivityParametersHasBeenSet = true; m_sensitivityParameters.emplace_back(std::forward<SensitivityParametersT>(value)); return *this; }
     ///@}
   private:
 

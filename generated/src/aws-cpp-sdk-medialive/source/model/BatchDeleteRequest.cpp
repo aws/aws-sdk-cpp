@@ -12,14 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchDeleteRequest::BatchDeleteRequest() : 
-    m_channelIdsHasBeenSet(false),
-    m_inputIdsHasBeenSet(false),
-    m_inputSecurityGroupIdsHasBeenSet(false),
-    m_multiplexIdsHasBeenSet(false)
-{
-}
-
 Aws::String BatchDeleteRequest::SerializePayload() const
 {
   JsonValue payload;

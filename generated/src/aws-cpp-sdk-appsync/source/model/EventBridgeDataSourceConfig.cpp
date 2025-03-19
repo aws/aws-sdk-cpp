@@ -18,13 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-EventBridgeDataSourceConfig::EventBridgeDataSourceConfig() : 
-    m_eventBusArnHasBeenSet(false)
-{
-}
-
 EventBridgeDataSourceConfig::EventBridgeDataSourceConfig(JsonView jsonValue)
-  : EventBridgeDataSourceConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EventBridgeDataSourceConfig& EventBridgeDataSourceConfig::operator =(JsonView js
   if(jsonValue.ValueExists("eventBusArn"))
   {
     m_eventBusArn = jsonValue.GetString("eventBusArn");
-
     m_eventBusArnHasBeenSet = true;
   }
-
   return *this;
 }
 

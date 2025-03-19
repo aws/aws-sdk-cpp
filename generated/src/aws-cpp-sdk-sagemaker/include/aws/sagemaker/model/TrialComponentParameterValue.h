@@ -35,7 +35,7 @@ namespace Model
   class TrialComponentParameterValue
   {
   public:
-    AWS_SAGEMAKER_API TrialComponentParameterValue();
+    AWS_SAGEMAKER_API TrialComponentParameterValue() = default;
     AWS_SAGEMAKER_API TrialComponentParameterValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API TrialComponentParameterValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The string value of a categorical hyperparameter. If you specify a value for
      * this parameter, you can't specify the <code>NumberValue</code> parameter.</p>
      */
-    inline const Aws::String& GetStringValue() const{ return m_stringValue; }
+    inline const Aws::String& GetStringValue() const { return m_stringValue; }
     inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
-    inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
-    inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
-    inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
-    inline TrialComponentParameterValue& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
-    inline TrialComponentParameterValue& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
-    inline TrialComponentParameterValue& WithStringValue(const char* value) { SetStringValue(value); return *this;}
+    template<typename StringValueT = Aws::String>
+    void SetStringValue(StringValueT&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::forward<StringValueT>(value); }
+    template<typename StringValueT = Aws::String>
+    TrialComponentParameterValue& WithStringValue(StringValueT&& value) { SetStringValue(std::forward<StringValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * <p>The numeric value of a numeric hyperparameter. If you specify a value for
      * this parameter, you can't specify the <code>StringValue</code> parameter.</p>
      */
-    inline double GetNumberValue() const{ return m_numberValue; }
+    inline double GetNumberValue() const { return m_numberValue; }
     inline bool NumberValueHasBeenSet() const { return m_numberValueHasBeenSet; }
     inline void SetNumberValue(double value) { m_numberValueHasBeenSet = true; m_numberValue = value; }
     inline TrialComponentParameterValue& WithNumberValue(double value) { SetNumberValue(value); return *this;}
@@ -71,7 +69,7 @@ namespace Model
     Aws::String m_stringValue;
     bool m_stringValueHasBeenSet = false;
 
-    double m_numberValue;
+    double m_numberValue{0.0};
     bool m_numberValueHasBeenSet = false;
   };
 

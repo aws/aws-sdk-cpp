@@ -32,7 +32,7 @@ namespace Model
   class PagerDutyIncidentDetail
   {
   public:
-    AWS_SSMINCIDENTS_API PagerDutyIncidentDetail();
+    AWS_SSMINCIDENTS_API PagerDutyIncidentDetail() = default;
     AWS_SSMINCIDENTS_API PagerDutyIncidentDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMINCIDENTS_API PagerDutyIncidentDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMINCIDENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>Indicates whether to resolve the PagerDuty incident when you resolve the
      * associated Incident Manager incident.</p>
      */
-    inline bool GetAutoResolve() const{ return m_autoResolve; }
+    inline bool GetAutoResolve() const { return m_autoResolve; }
     inline bool AutoResolveHasBeenSet() const { return m_autoResolveHasBeenSet; }
     inline void SetAutoResolve(bool value) { m_autoResolveHasBeenSet = true; m_autoResolve = value; }
     inline PagerDutyIncidentDetail& WithAutoResolve(bool value) { SetAutoResolve(value); return *this;}
@@ -54,14 +54,12 @@ namespace Model
      * <p>The ID of the incident associated with the PagerDuty service for the response
      * plan.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline PagerDutyIncidentDetail& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline PagerDutyIncidentDetail& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline PagerDutyIncidentDetail& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    PagerDutyIncidentDetail& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,18 +68,16 @@ namespace Model
      * PagerDuty key, either a General Access REST API Key or User Token REST API Key,
      * and other user credentials.</p>
      */
-    inline const Aws::String& GetSecretId() const{ return m_secretId; }
+    inline const Aws::String& GetSecretId() const { return m_secretId; }
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
-    inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
-    inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
-    inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
-    inline PagerDutyIncidentDetail& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
-    inline PagerDutyIncidentDetail& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
-    inline PagerDutyIncidentDetail& WithSecretId(const char* value) { SetSecretId(value); return *this;}
+    template<typename SecretIdT = Aws::String>
+    void SetSecretId(SecretIdT&& value) { m_secretIdHasBeenSet = true; m_secretId = std::forward<SecretIdT>(value); }
+    template<typename SecretIdT = Aws::String>
+    PagerDutyIncidentDetail& WithSecretId(SecretIdT&& value) { SetSecretId(std::forward<SecretIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_autoResolve;
+    bool m_autoResolve{false};
     bool m_autoResolveHasBeenSet = false;
 
     Aws::String m_id;

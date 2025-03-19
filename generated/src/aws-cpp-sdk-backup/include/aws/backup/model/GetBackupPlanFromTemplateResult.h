@@ -28,7 +28,7 @@ namespace Model
   class GetBackupPlanFromTemplateResult
   {
   public:
-    AWS_BACKUP_API GetBackupPlanFromTemplateResult();
+    AWS_BACKUP_API GetBackupPlanFromTemplateResult() = default;
     AWS_BACKUP_API GetBackupPlanFromTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUP_API GetBackupPlanFromTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Returns the body of a backup plan based on the target template, including the
      * name, rules, and backup vault of the plan.</p>
      */
-    inline const BackupPlan& GetBackupPlanDocument() const{ return m_backupPlanDocument; }
-    inline void SetBackupPlanDocument(const BackupPlan& value) { m_backupPlanDocument = value; }
-    inline void SetBackupPlanDocument(BackupPlan&& value) { m_backupPlanDocument = std::move(value); }
-    inline GetBackupPlanFromTemplateResult& WithBackupPlanDocument(const BackupPlan& value) { SetBackupPlanDocument(value); return *this;}
-    inline GetBackupPlanFromTemplateResult& WithBackupPlanDocument(BackupPlan&& value) { SetBackupPlanDocument(std::move(value)); return *this;}
+    inline const BackupPlan& GetBackupPlanDocument() const { return m_backupPlanDocument; }
+    template<typename BackupPlanDocumentT = BackupPlan>
+    void SetBackupPlanDocument(BackupPlanDocumentT&& value) { m_backupPlanDocumentHasBeenSet = true; m_backupPlanDocument = std::forward<BackupPlanDocumentT>(value); }
+    template<typename BackupPlanDocumentT = BackupPlan>
+    GetBackupPlanFromTemplateResult& WithBackupPlanDocument(BackupPlanDocumentT&& value) { SetBackupPlanDocument(std::forward<BackupPlanDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetBackupPlanFromTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetBackupPlanFromTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetBackupPlanFromTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetBackupPlanFromTemplateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     BackupPlan m_backupPlanDocument;
+    bool m_backupPlanDocumentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

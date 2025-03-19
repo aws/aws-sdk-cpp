@@ -34,7 +34,7 @@ namespace Model
   class FailedDeleteRemediationExceptionsBatch
   {
   public:
-    AWS_CONFIGSERVICE_API FailedDeleteRemediationExceptionsBatch();
+    AWS_CONFIGSERVICE_API FailedDeleteRemediationExceptionsBatch() = default;
     AWS_CONFIGSERVICE_API FailedDeleteRemediationExceptionsBatch(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API FailedDeleteRemediationExceptionsBatch& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,26 @@ namespace Model
      * <p>Returns a failure message for delete remediation exception. For example,
      * Config creates an exception due to an internal error.</p>
      */
-    inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
+    inline const Aws::String& GetFailureMessage() const { return m_failureMessage; }
     inline bool FailureMessageHasBeenSet() const { return m_failureMessageHasBeenSet; }
-    inline void SetFailureMessage(const Aws::String& value) { m_failureMessageHasBeenSet = true; m_failureMessage = value; }
-    inline void SetFailureMessage(Aws::String&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::move(value); }
-    inline void SetFailureMessage(const char* value) { m_failureMessageHasBeenSet = true; m_failureMessage.assign(value); }
-    inline FailedDeleteRemediationExceptionsBatch& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
-    inline FailedDeleteRemediationExceptionsBatch& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
-    inline FailedDeleteRemediationExceptionsBatch& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
+    template<typename FailureMessageT = Aws::String>
+    void SetFailureMessage(FailureMessageT&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::forward<FailureMessageT>(value); }
+    template<typename FailureMessageT = Aws::String>
+    FailedDeleteRemediationExceptionsBatch& WithFailureMessage(FailureMessageT&& value) { SetFailureMessage(std::forward<FailureMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns remediation exception resource key object of the failed items.</p>
      */
-    inline const Aws::Vector<RemediationExceptionResourceKey>& GetFailedItems() const{ return m_failedItems; }
+    inline const Aws::Vector<RemediationExceptionResourceKey>& GetFailedItems() const { return m_failedItems; }
     inline bool FailedItemsHasBeenSet() const { return m_failedItemsHasBeenSet; }
-    inline void SetFailedItems(const Aws::Vector<RemediationExceptionResourceKey>& value) { m_failedItemsHasBeenSet = true; m_failedItems = value; }
-    inline void SetFailedItems(Aws::Vector<RemediationExceptionResourceKey>&& value) { m_failedItemsHasBeenSet = true; m_failedItems = std::move(value); }
-    inline FailedDeleteRemediationExceptionsBatch& WithFailedItems(const Aws::Vector<RemediationExceptionResourceKey>& value) { SetFailedItems(value); return *this;}
-    inline FailedDeleteRemediationExceptionsBatch& WithFailedItems(Aws::Vector<RemediationExceptionResourceKey>&& value) { SetFailedItems(std::move(value)); return *this;}
-    inline FailedDeleteRemediationExceptionsBatch& AddFailedItems(const RemediationExceptionResourceKey& value) { m_failedItemsHasBeenSet = true; m_failedItems.push_back(value); return *this; }
-    inline FailedDeleteRemediationExceptionsBatch& AddFailedItems(RemediationExceptionResourceKey&& value) { m_failedItemsHasBeenSet = true; m_failedItems.push_back(std::move(value)); return *this; }
+    template<typename FailedItemsT = Aws::Vector<RemediationExceptionResourceKey>>
+    void SetFailedItems(FailedItemsT&& value) { m_failedItemsHasBeenSet = true; m_failedItems = std::forward<FailedItemsT>(value); }
+    template<typename FailedItemsT = Aws::Vector<RemediationExceptionResourceKey>>
+    FailedDeleteRemediationExceptionsBatch& WithFailedItems(FailedItemsT&& value) { SetFailedItems(std::forward<FailedItemsT>(value)); return *this;}
+    template<typename FailedItemsT = RemediationExceptionResourceKey>
+    FailedDeleteRemediationExceptionsBatch& AddFailedItems(FailedItemsT&& value) { m_failedItemsHasBeenSet = true; m_failedItems.emplace_back(std::forward<FailedItemsT>(value)); return *this; }
     ///@}
   private:
 

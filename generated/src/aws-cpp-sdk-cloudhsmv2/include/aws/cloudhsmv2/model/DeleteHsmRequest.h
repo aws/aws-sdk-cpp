@@ -21,7 +21,7 @@ namespace Model
   class DeleteHsmRequest : public CloudHSMV2Request
   {
   public:
-    AWS_CLOUDHSMV2_API DeleteHsmRequest();
+    AWS_CLOUDHSMV2_API DeleteHsmRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
      * <p>The identifier (ID) of the cluster that contains the HSM that you are
      * deleting.</p>
      */
-    inline const Aws::String& GetClusterId() const{ return m_clusterId; }
+    inline const Aws::String& GetClusterId() const { return m_clusterId; }
     inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
-    inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
-    inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
-    inline DeleteHsmRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
-    inline DeleteHsmRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
-    inline DeleteHsmRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+    template<typename ClusterIdT = Aws::String>
+    void SetClusterId(ClusterIdT&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::forward<ClusterIdT>(value); }
+    template<typename ClusterIdT = Aws::String>
+    DeleteHsmRequest& WithClusterId(ClusterIdT&& value) { SetClusterId(std::forward<ClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier (ID) of the HSM that you are deleting.</p>
      */
-    inline const Aws::String& GetHsmId() const{ return m_hsmId; }
+    inline const Aws::String& GetHsmId() const { return m_hsmId; }
     inline bool HsmIdHasBeenSet() const { return m_hsmIdHasBeenSet; }
-    inline void SetHsmId(const Aws::String& value) { m_hsmIdHasBeenSet = true; m_hsmId = value; }
-    inline void SetHsmId(Aws::String&& value) { m_hsmIdHasBeenSet = true; m_hsmId = std::move(value); }
-    inline void SetHsmId(const char* value) { m_hsmIdHasBeenSet = true; m_hsmId.assign(value); }
-    inline DeleteHsmRequest& WithHsmId(const Aws::String& value) { SetHsmId(value); return *this;}
-    inline DeleteHsmRequest& WithHsmId(Aws::String&& value) { SetHsmId(std::move(value)); return *this;}
-    inline DeleteHsmRequest& WithHsmId(const char* value) { SetHsmId(value); return *this;}
+    template<typename HsmIdT = Aws::String>
+    void SetHsmId(HsmIdT&& value) { m_hsmIdHasBeenSet = true; m_hsmId = std::forward<HsmIdT>(value); }
+    template<typename HsmIdT = Aws::String>
+    DeleteHsmRequest& WithHsmId(HsmIdT&& value) { SetHsmId(std::forward<HsmIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +64,12 @@ namespace Model
      * <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that
      * you are deleting.</p>
      */
-    inline const Aws::String& GetEniId() const{ return m_eniId; }
+    inline const Aws::String& GetEniId() const { return m_eniId; }
     inline bool EniIdHasBeenSet() const { return m_eniIdHasBeenSet; }
-    inline void SetEniId(const Aws::String& value) { m_eniIdHasBeenSet = true; m_eniId = value; }
-    inline void SetEniId(Aws::String&& value) { m_eniIdHasBeenSet = true; m_eniId = std::move(value); }
-    inline void SetEniId(const char* value) { m_eniIdHasBeenSet = true; m_eniId.assign(value); }
-    inline DeleteHsmRequest& WithEniId(const Aws::String& value) { SetEniId(value); return *this;}
-    inline DeleteHsmRequest& WithEniId(Aws::String&& value) { SetEniId(std::move(value)); return *this;}
-    inline DeleteHsmRequest& WithEniId(const char* value) { SetEniId(value); return *this;}
+    template<typename EniIdT = Aws::String>
+    void SetEniId(EniIdT&& value) { m_eniIdHasBeenSet = true; m_eniId = std::forward<EniIdT>(value); }
+    template<typename EniIdT = Aws::String>
+    DeleteHsmRequest& WithEniId(EniIdT&& value) { SetEniId(std::forward<EniIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +77,12 @@ namespace Model
      * <p>The IP address of the elastic network interface (ENI) of the HSM that you are
      * deleting.</p>
      */
-    inline const Aws::String& GetEniIp() const{ return m_eniIp; }
+    inline const Aws::String& GetEniIp() const { return m_eniIp; }
     inline bool EniIpHasBeenSet() const { return m_eniIpHasBeenSet; }
-    inline void SetEniIp(const Aws::String& value) { m_eniIpHasBeenSet = true; m_eniIp = value; }
-    inline void SetEniIp(Aws::String&& value) { m_eniIpHasBeenSet = true; m_eniIp = std::move(value); }
-    inline void SetEniIp(const char* value) { m_eniIpHasBeenSet = true; m_eniIp.assign(value); }
-    inline DeleteHsmRequest& WithEniIp(const Aws::String& value) { SetEniIp(value); return *this;}
-    inline DeleteHsmRequest& WithEniIp(Aws::String&& value) { SetEniIp(std::move(value)); return *this;}
-    inline DeleteHsmRequest& WithEniIp(const char* value) { SetEniIp(value); return *this;}
+    template<typename EniIpT = Aws::String>
+    void SetEniIp(EniIpT&& value) { m_eniIpHasBeenSet = true; m_eniIp = std::forward<EniIpT>(value); }
+    template<typename EniIpT = Aws::String>
+    DeleteHsmRequest& WithEniIp(EniIpT&& value) { SetEniIp(std::forward<EniIpT>(value)); return *this;}
     ///@}
   private:
 

@@ -43,7 +43,7 @@ namespace Model
   class ReplicationGroupUpdate
   {
   public:
-    AWS_DYNAMODB_API ReplicationGroupUpdate();
+    AWS_DYNAMODB_API ReplicationGroupUpdate() = default;
     AWS_DYNAMODB_API ReplicationGroupUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API ReplicationGroupUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,36 +53,36 @@ namespace Model
     /**
      * <p>The parameters required for creating a replica for the table.</p>
      */
-    inline const CreateReplicationGroupMemberAction& GetCreate() const{ return m_create; }
+    inline const CreateReplicationGroupMemberAction& GetCreate() const { return m_create; }
     inline bool CreateHasBeenSet() const { return m_createHasBeenSet; }
-    inline void SetCreate(const CreateReplicationGroupMemberAction& value) { m_createHasBeenSet = true; m_create = value; }
-    inline void SetCreate(CreateReplicationGroupMemberAction&& value) { m_createHasBeenSet = true; m_create = std::move(value); }
-    inline ReplicationGroupUpdate& WithCreate(const CreateReplicationGroupMemberAction& value) { SetCreate(value); return *this;}
-    inline ReplicationGroupUpdate& WithCreate(CreateReplicationGroupMemberAction&& value) { SetCreate(std::move(value)); return *this;}
+    template<typename CreateT = CreateReplicationGroupMemberAction>
+    void SetCreate(CreateT&& value) { m_createHasBeenSet = true; m_create = std::forward<CreateT>(value); }
+    template<typename CreateT = CreateReplicationGroupMemberAction>
+    ReplicationGroupUpdate& WithCreate(CreateT&& value) { SetCreate(std::forward<CreateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameters required for updating a replica for the table.</p>
      */
-    inline const UpdateReplicationGroupMemberAction& GetUpdate() const{ return m_update; }
+    inline const UpdateReplicationGroupMemberAction& GetUpdate() const { return m_update; }
     inline bool UpdateHasBeenSet() const { return m_updateHasBeenSet; }
-    inline void SetUpdate(const UpdateReplicationGroupMemberAction& value) { m_updateHasBeenSet = true; m_update = value; }
-    inline void SetUpdate(UpdateReplicationGroupMemberAction&& value) { m_updateHasBeenSet = true; m_update = std::move(value); }
-    inline ReplicationGroupUpdate& WithUpdate(const UpdateReplicationGroupMemberAction& value) { SetUpdate(value); return *this;}
-    inline ReplicationGroupUpdate& WithUpdate(UpdateReplicationGroupMemberAction&& value) { SetUpdate(std::move(value)); return *this;}
+    template<typename UpdateT = UpdateReplicationGroupMemberAction>
+    void SetUpdate(UpdateT&& value) { m_updateHasBeenSet = true; m_update = std::forward<UpdateT>(value); }
+    template<typename UpdateT = UpdateReplicationGroupMemberAction>
+    ReplicationGroupUpdate& WithUpdate(UpdateT&& value) { SetUpdate(std::forward<UpdateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameters required for deleting a replica for the table.</p>
      */
-    inline const DeleteReplicationGroupMemberAction& GetDelete() const{ return m_delete; }
+    inline const DeleteReplicationGroupMemberAction& GetDelete() const { return m_delete; }
     inline bool DeleteHasBeenSet() const { return m_deleteHasBeenSet; }
-    inline void SetDelete(const DeleteReplicationGroupMemberAction& value) { m_deleteHasBeenSet = true; m_delete = value; }
-    inline void SetDelete(DeleteReplicationGroupMemberAction&& value) { m_deleteHasBeenSet = true; m_delete = std::move(value); }
-    inline ReplicationGroupUpdate& WithDelete(const DeleteReplicationGroupMemberAction& value) { SetDelete(value); return *this;}
-    inline ReplicationGroupUpdate& WithDelete(DeleteReplicationGroupMemberAction&& value) { SetDelete(std::move(value)); return *this;}
+    template<typename DeleteT = DeleteReplicationGroupMemberAction>
+    void SetDelete(DeleteT&& value) { m_deleteHasBeenSet = true; m_delete = std::forward<DeleteT>(value); }
+    template<typename DeleteT = DeleteReplicationGroupMemberAction>
+    ReplicationGroupUpdate& WithDelete(DeleteT&& value) { SetDelete(std::forward<DeleteT>(value)); return *this;}
     ///@}
   private:
 

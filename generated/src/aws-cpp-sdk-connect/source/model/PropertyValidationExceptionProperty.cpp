@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-PropertyValidationExceptionProperty::PropertyValidationExceptionProperty() : 
-    m_propertyPathHasBeenSet(false),
-    m_reason(PropertyValidationExceptionReason::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 PropertyValidationExceptionProperty::PropertyValidationExceptionProperty(JsonView jsonValue)
-  : PropertyValidationExceptionProperty()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ PropertyValidationExceptionProperty& PropertyValidationExceptionProperty::operat
   if(jsonValue.ValueExists("PropertyPath"))
   {
     m_propertyPath = jsonValue.GetString("PropertyPath");
-
     m_propertyPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = PropertyValidationExceptionReasonMapper::GetPropertyValidationExceptionReasonForName(jsonValue.GetString("Reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

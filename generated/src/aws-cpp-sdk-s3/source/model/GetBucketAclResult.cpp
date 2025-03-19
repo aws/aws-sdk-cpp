@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketAclResult::GetBucketAclResult()
-{
-}
-
 GetBucketAclResult::GetBucketAclResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,17 +32,20 @@ GetBucketAclResult& GetBucketAclResult::operator =(const Aws::AmazonWebServiceRe
     if(!ownerNode.IsNull())
     {
       m_owner = ownerNode;
+      m_ownerHasBeenSet = true;
     }
     XmlNode grantsNode = resultNode.FirstChild("AccessControlList");
     if(!grantsNode.IsNull())
     {
       XmlNode grantsMember = grantsNode.FirstChild("Grant");
+      m_grantsHasBeenSet = !grantsMember.IsNull();
       while(!grantsMember.IsNull())
       {
         m_grants.push_back(grantsMember);
         grantsMember = grantsMember.NextNode("Grant");
       }
 
+      m_grantsHasBeenSet = true;
     }
   }
 
@@ -55,6 +54,7 @@ GetBucketAclResult& GetBucketAclResult::operator =(const Aws::AmazonWebServiceRe
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

@@ -12,15 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutRetentionPolicyRequest::PutRetentionPolicyRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_folderConfigurationsHasBeenSet(false)
-{
-}
-
 Aws::String PutRetentionPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

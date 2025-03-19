@@ -18,16 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-PersonMatch::PersonMatch() : 
-    m_timestamp(0),
-    m_timestampHasBeenSet(false),
-    m_personHasBeenSet(false),
-    m_faceMatchesHasBeenSet(false)
-{
-}
-
 PersonMatch::PersonMatch(JsonView jsonValue)
-  : PersonMatch()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ PersonMatch& PersonMatch::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetInt64("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Person"))
   {
     m_person = jsonValue.GetObject("Person");
-
     m_personHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FaceMatches"))
   {
     Aws::Utils::Array<JsonView> faceMatchesJsonList = jsonValue.GetArray("FaceMatches");
@@ -57,7 +44,6 @@ PersonMatch& PersonMatch::operator =(JsonView jsonValue)
     }
     m_faceMatchesHasBeenSet = true;
   }
-
   return *this;
 }
 

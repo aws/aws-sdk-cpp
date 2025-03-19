@@ -12,13 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDatabaseRequest::GetDatabaseRequest() : 
-    m_catalogNameHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_workGroupHasBeenSet(false)
-{
-}
-
 Aws::String GetDatabaseRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-WaypointOptimizationTrailerOptions::WaypointOptimizationTrailerOptions() : 
-    m_trailerCount(0),
-    m_trailerCountHasBeenSet(false)
-{
-}
-
 WaypointOptimizationTrailerOptions::WaypointOptimizationTrailerOptions(JsonView jsonValue)
-  : WaypointOptimizationTrailerOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ WaypointOptimizationTrailerOptions& WaypointOptimizationTrailerOptions::operator
   if(jsonValue.ValueExists("TrailerCount"))
   {
     m_trailerCount = jsonValue.GetInteger("TrailerCount");
-
     m_trailerCountHasBeenSet = true;
   }
-
   return *this;
 }
 

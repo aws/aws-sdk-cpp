@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateNetworkResult::CreateNetworkResult() : 
-    m_state(NetworkState::NOT_SET)
-{
-}
-
 CreateNetworkResult::CreateNetworkResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateNetworkResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ CreateNetworkResult& CreateNetworkResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associatedClusterIds"))
   {
     Aws::Utils::Array<JsonView> associatedClusterIdsJsonList = jsonValue.GetArray("associatedClusterIds");
@@ -44,14 +37,13 @@ CreateNetworkResult& CreateNetworkResult::operator =(const Aws::AmazonWebService
     {
       m_associatedClusterIds.push_back(associatedClusterIdsJsonList[associatedClusterIdsIndex].AsString());
     }
+    m_associatedClusterIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipPools"))
   {
     Aws::Utils::Array<JsonView> ipPoolsJsonList = jsonValue.GetArray("ipPools");
@@ -59,14 +51,13 @@ CreateNetworkResult& CreateNetworkResult::operator =(const Aws::AmazonWebService
     {
       m_ipPools.push_back(ipPoolsJsonList[ipPoolsIndex].AsObject());
     }
+    m_ipPoolsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("routes"))
   {
     Aws::Utils::Array<JsonView> routesJsonList = jsonValue.GetArray("routes");
@@ -74,20 +65,20 @@ CreateNetworkResult& CreateNetworkResult::operator =(const Aws::AmazonWebService
     {
       m_routes.push_back(routesJsonList[routesIndex].AsObject());
     }
+    m_routesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = NetworkStateMapper::GetNetworkStateForName(jsonValue.GetString("state"));
-
+    m_stateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

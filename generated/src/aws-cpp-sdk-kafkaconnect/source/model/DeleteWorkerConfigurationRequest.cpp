@@ -12,11 +12,6 @@ using namespace Aws::KafkaConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteWorkerConfigurationRequest::DeleteWorkerConfigurationRequest() : 
-    m_workerConfigurationArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWorkerConfigurationRequest::SerializePayload() const
 {
   return {};

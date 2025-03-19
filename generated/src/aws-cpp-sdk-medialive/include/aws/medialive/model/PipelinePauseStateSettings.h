@@ -31,7 +31,7 @@ namespace Model
   class PipelinePauseStateSettings
   {
   public:
-    AWS_MEDIALIVE_API PipelinePauseStateSettings();
+    AWS_MEDIALIVE_API PipelinePauseStateSettings() = default;
     AWS_MEDIALIVE_API PipelinePauseStateSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API PipelinePauseStateSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * Pipeline ID to pause ("PIPELINE_0" or "PIPELINE_1").
      */
-    inline const PipelineId& GetPipelineId() const{ return m_pipelineId; }
+    inline PipelineId GetPipelineId() const { return m_pipelineId; }
     inline bool PipelineIdHasBeenSet() const { return m_pipelineIdHasBeenSet; }
-    inline void SetPipelineId(const PipelineId& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
-    inline void SetPipelineId(PipelineId&& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = std::move(value); }
-    inline PipelinePauseStateSettings& WithPipelineId(const PipelineId& value) { SetPipelineId(value); return *this;}
-    inline PipelinePauseStateSettings& WithPipelineId(PipelineId&& value) { SetPipelineId(std::move(value)); return *this;}
+    inline void SetPipelineId(PipelineId value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
+    inline PipelinePauseStateSettings& WithPipelineId(PipelineId value) { SetPipelineId(value); return *this;}
     ///@}
   private:
 
-    PipelineId m_pipelineId;
+    PipelineId m_pipelineId{PipelineId::NOT_SET};
     bool m_pipelineIdHasBeenSet = false;
   };
 

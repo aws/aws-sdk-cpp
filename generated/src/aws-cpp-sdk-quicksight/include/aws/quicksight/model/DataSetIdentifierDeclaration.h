@@ -31,7 +31,7 @@ namespace Model
   class DataSetIdentifierDeclaration
   {
   public:
-    AWS_QUICKSIGHT_API DataSetIdentifierDeclaration();
+    AWS_QUICKSIGHT_API DataSetIdentifierDeclaration() = default;
     AWS_QUICKSIGHT_API DataSetIdentifierDeclaration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DataSetIdentifierDeclaration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The identifier of the data set, typically the data set's name.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline DataSetIdentifierDeclaration& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline DataSetIdentifierDeclaration& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline DataSetIdentifierDeclaration& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    DataSetIdentifierDeclaration& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the data set.</p>
      */
-    inline const Aws::String& GetDataSetArn() const{ return m_dataSetArn; }
+    inline const Aws::String& GetDataSetArn() const { return m_dataSetArn; }
     inline bool DataSetArnHasBeenSet() const { return m_dataSetArnHasBeenSet; }
-    inline void SetDataSetArn(const Aws::String& value) { m_dataSetArnHasBeenSet = true; m_dataSetArn = value; }
-    inline void SetDataSetArn(Aws::String&& value) { m_dataSetArnHasBeenSet = true; m_dataSetArn = std::move(value); }
-    inline void SetDataSetArn(const char* value) { m_dataSetArnHasBeenSet = true; m_dataSetArn.assign(value); }
-    inline DataSetIdentifierDeclaration& WithDataSetArn(const Aws::String& value) { SetDataSetArn(value); return *this;}
-    inline DataSetIdentifierDeclaration& WithDataSetArn(Aws::String&& value) { SetDataSetArn(std::move(value)); return *this;}
-    inline DataSetIdentifierDeclaration& WithDataSetArn(const char* value) { SetDataSetArn(value); return *this;}
+    template<typename DataSetArnT = Aws::String>
+    void SetDataSetArn(DataSetArnT&& value) { m_dataSetArnHasBeenSet = true; m_dataSetArn = std::forward<DataSetArnT>(value); }
+    template<typename DataSetArnT = Aws::String>
+    DataSetIdentifierDeclaration& WithDataSetArn(DataSetArnT&& value) { SetDataSetArn(std::forward<DataSetArnT>(value)); return *this;}
     ///@}
   private:
 

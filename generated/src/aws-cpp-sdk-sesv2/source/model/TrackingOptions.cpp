@@ -18,15 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-TrackingOptions::TrackingOptions() : 
-    m_customRedirectDomainHasBeenSet(false),
-    m_httpsPolicy(HttpsPolicy::NOT_SET),
-    m_httpsPolicyHasBeenSet(false)
-{
-}
-
 TrackingOptions::TrackingOptions(JsonView jsonValue)
-  : TrackingOptions()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TrackingOptions& TrackingOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CustomRedirectDomain"))
   {
     m_customRedirectDomain = jsonValue.GetString("CustomRedirectDomain");
-
     m_customRedirectDomainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HttpsPolicy"))
   {
     m_httpsPolicy = HttpsPolicyMapper::GetHttpsPolicyForName(jsonValue.GetString("HttpsPolicy"));
-
     m_httpsPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

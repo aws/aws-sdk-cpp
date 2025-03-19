@@ -12,18 +12,6 @@ using namespace Aws::MarketplaceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartChangeSetRequest::StartChangeSetRequest() : 
-    m_catalogHasBeenSet(false),
-    m_changeSetHasBeenSet(false),
-    m_changeSetNameHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_changeSetTagsHasBeenSet(false),
-    m_intent(Intent::NOT_SET),
-    m_intentHasBeenSet(false)
-{
-}
-
 Aws::String StartChangeSetRequest::SerializePayload() const
 {
   JsonValue payload;

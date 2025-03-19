@@ -18,14 +18,7 @@ namespace Proton
 namespace Model
 {
 
-EnvironmentTemplateFilter::EnvironmentTemplateFilter() : 
-    m_majorVersionHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
-{
-}
-
 EnvironmentTemplateFilter::EnvironmentTemplateFilter(JsonView jsonValue)
-  : EnvironmentTemplateFilter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EnvironmentTemplateFilter& EnvironmentTemplateFilter::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("majorVersion"))
   {
     m_majorVersion = jsonValue.GetString("majorVersion");
-
     m_majorVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateName"))
   {
     m_templateName = jsonValue.GetString("templateName");
-
     m_templateNameHasBeenSet = true;
   }
-
   return *this;
 }
 

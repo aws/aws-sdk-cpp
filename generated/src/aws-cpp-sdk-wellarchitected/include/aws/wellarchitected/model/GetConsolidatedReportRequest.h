@@ -26,7 +26,7 @@ namespace Model
   class GetConsolidatedReportRequest : public WellArchitectedRequest
   {
   public:
-    AWS_WELLARCHITECTED_API GetConsolidatedReportRequest();
+    AWS_WELLARCHITECTED_API GetConsolidatedReportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,19 +45,17 @@ namespace Model
      * <code>Base64String</code> is returned. For <code>JSON</code>,
      * <code>Metrics</code> is returned.</p>
      */
-    inline const ReportFormat& GetFormat() const{ return m_format; }
+    inline ReportFormat GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const ReportFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(ReportFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline GetConsolidatedReportRequest& WithFormat(const ReportFormat& value) { SetFormat(value); return *this;}
-    inline GetConsolidatedReportRequest& WithFormat(ReportFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(ReportFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline GetConsolidatedReportRequest& WithFormat(ReportFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Set to <code>true</code> to have shared resources included in the report.</p>
      */
-    inline bool GetIncludeSharedResources() const{ return m_includeSharedResources; }
+    inline bool GetIncludeSharedResources() const { return m_includeSharedResources; }
     inline bool IncludeSharedResourcesHasBeenSet() const { return m_includeSharedResourcesHasBeenSet; }
     inline void SetIncludeSharedResources(bool value) { m_includeSharedResourcesHasBeenSet = true; m_includeSharedResources = value; }
     inline GetConsolidatedReportRequest& WithIncludeSharedResources(bool value) { SetIncludeSharedResources(value); return *this;}
@@ -65,37 +63,35 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetConsolidatedReportRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetConsolidatedReportRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetConsolidatedReportRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetConsolidatedReportRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return for this request.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetConsolidatedReportRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
-    ReportFormat m_format;
+    ReportFormat m_format{ReportFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
 
-    bool m_includeSharedResources;
+    bool m_includeSharedResources{false};
     bool m_includeSharedResourcesHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

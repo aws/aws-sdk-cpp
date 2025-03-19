@@ -28,35 +28,35 @@ namespace Model
   class GetJourneyRunsResult
   {
   public:
-    AWS_PINPOINT_API GetJourneyRunsResult();
+    AWS_PINPOINT_API GetJourneyRunsResult() = default;
     AWS_PINPOINT_API GetJourneyRunsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API GetJourneyRunsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const JourneyRunsResponse& GetJourneyRunsResponse() const{ return m_journeyRunsResponse; }
-    inline void SetJourneyRunsResponse(const JourneyRunsResponse& value) { m_journeyRunsResponse = value; }
-    inline void SetJourneyRunsResponse(JourneyRunsResponse&& value) { m_journeyRunsResponse = std::move(value); }
-    inline GetJourneyRunsResult& WithJourneyRunsResponse(const JourneyRunsResponse& value) { SetJourneyRunsResponse(value); return *this;}
-    inline GetJourneyRunsResult& WithJourneyRunsResponse(JourneyRunsResponse&& value) { SetJourneyRunsResponse(std::move(value)); return *this;}
+    inline const JourneyRunsResponse& GetJourneyRunsResponse() const { return m_journeyRunsResponse; }
+    template<typename JourneyRunsResponseT = JourneyRunsResponse>
+    void SetJourneyRunsResponse(JourneyRunsResponseT&& value) { m_journeyRunsResponseHasBeenSet = true; m_journeyRunsResponse = std::forward<JourneyRunsResponseT>(value); }
+    template<typename JourneyRunsResponseT = JourneyRunsResponse>
+    GetJourneyRunsResult& WithJourneyRunsResponse(JourneyRunsResponseT&& value) { SetJourneyRunsResponse(std::forward<JourneyRunsResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetJourneyRunsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetJourneyRunsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetJourneyRunsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetJourneyRunsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     JourneyRunsResponse m_journeyRunsResponse;
+    bool m_journeyRunsResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

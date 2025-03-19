@@ -12,13 +12,6 @@ using namespace Aws::CodeCatalyst::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSourceRepositoryCloneUrlsRequest::GetSourceRepositoryCloneUrlsRequest() : 
-    m_spaceNameHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_sourceRepositoryNameHasBeenSet(false)
-{
-}
-
 Aws::String GetSourceRepositoryCloneUrlsRequest::SerializePayload() const
 {
   return {};

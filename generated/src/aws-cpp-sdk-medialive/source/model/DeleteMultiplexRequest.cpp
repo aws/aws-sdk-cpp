@@ -12,11 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMultiplexRequest::DeleteMultiplexRequest() : 
-    m_multiplexIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMultiplexRequest::SerializePayload() const
 {
   return {};

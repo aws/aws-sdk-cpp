@@ -35,7 +35,7 @@ namespace Model
   class CodeSnippetResult
   {
   public:
-    AWS_INSPECTOR2_API CodeSnippetResult();
+    AWS_INSPECTOR2_API CodeSnippetResult() = default;
     AWS_INSPECTOR2_API CodeSnippetResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API CodeSnippetResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,21 +45,21 @@ namespace Model
     /**
      * <p>Contains information on the retrieved code snippet.</p>
      */
-    inline const Aws::Vector<CodeLine>& GetCodeSnippet() const{ return m_codeSnippet; }
+    inline const Aws::Vector<CodeLine>& GetCodeSnippet() const { return m_codeSnippet; }
     inline bool CodeSnippetHasBeenSet() const { return m_codeSnippetHasBeenSet; }
-    inline void SetCodeSnippet(const Aws::Vector<CodeLine>& value) { m_codeSnippetHasBeenSet = true; m_codeSnippet = value; }
-    inline void SetCodeSnippet(Aws::Vector<CodeLine>&& value) { m_codeSnippetHasBeenSet = true; m_codeSnippet = std::move(value); }
-    inline CodeSnippetResult& WithCodeSnippet(const Aws::Vector<CodeLine>& value) { SetCodeSnippet(value); return *this;}
-    inline CodeSnippetResult& WithCodeSnippet(Aws::Vector<CodeLine>&& value) { SetCodeSnippet(std::move(value)); return *this;}
-    inline CodeSnippetResult& AddCodeSnippet(const CodeLine& value) { m_codeSnippetHasBeenSet = true; m_codeSnippet.push_back(value); return *this; }
-    inline CodeSnippetResult& AddCodeSnippet(CodeLine&& value) { m_codeSnippetHasBeenSet = true; m_codeSnippet.push_back(std::move(value)); return *this; }
+    template<typename CodeSnippetT = Aws::Vector<CodeLine>>
+    void SetCodeSnippet(CodeSnippetT&& value) { m_codeSnippetHasBeenSet = true; m_codeSnippet = std::forward<CodeSnippetT>(value); }
+    template<typename CodeSnippetT = Aws::Vector<CodeLine>>
+    CodeSnippetResult& WithCodeSnippet(CodeSnippetT&& value) { SetCodeSnippet(std::forward<CodeSnippetT>(value)); return *this;}
+    template<typename CodeSnippetT = CodeLine>
+    CodeSnippetResult& AddCodeSnippet(CodeSnippetT&& value) { m_codeSnippetHasBeenSet = true; m_codeSnippet.emplace_back(std::forward<CodeSnippetT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The line number of the last line of a code snippet.</p>
      */
-    inline int GetEndLine() const{ return m_endLine; }
+    inline int GetEndLine() const { return m_endLine; }
     inline bool EndLineHasBeenSet() const { return m_endLineHasBeenSet; }
     inline void SetEndLine(int value) { m_endLineHasBeenSet = true; m_endLine = value; }
     inline CodeSnippetResult& WithEndLine(int value) { SetEndLine(value); return *this;}
@@ -69,21 +69,19 @@ namespace Model
     /**
      * <p>The ARN of a finding that the code snippet is associated with.</p>
      */
-    inline const Aws::String& GetFindingArn() const{ return m_findingArn; }
+    inline const Aws::String& GetFindingArn() const { return m_findingArn; }
     inline bool FindingArnHasBeenSet() const { return m_findingArnHasBeenSet; }
-    inline void SetFindingArn(const Aws::String& value) { m_findingArnHasBeenSet = true; m_findingArn = value; }
-    inline void SetFindingArn(Aws::String&& value) { m_findingArnHasBeenSet = true; m_findingArn = std::move(value); }
-    inline void SetFindingArn(const char* value) { m_findingArnHasBeenSet = true; m_findingArn.assign(value); }
-    inline CodeSnippetResult& WithFindingArn(const Aws::String& value) { SetFindingArn(value); return *this;}
-    inline CodeSnippetResult& WithFindingArn(Aws::String&& value) { SetFindingArn(std::move(value)); return *this;}
-    inline CodeSnippetResult& WithFindingArn(const char* value) { SetFindingArn(value); return *this;}
+    template<typename FindingArnT = Aws::String>
+    void SetFindingArn(FindingArnT&& value) { m_findingArnHasBeenSet = true; m_findingArn = std::forward<FindingArnT>(value); }
+    template<typename FindingArnT = Aws::String>
+    CodeSnippetResult& WithFindingArn(FindingArnT&& value) { SetFindingArn(std::forward<FindingArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The line number of the first line of a code snippet.</p>
      */
-    inline int GetStartLine() const{ return m_startLine; }
+    inline int GetStartLine() const { return m_startLine; }
     inline bool StartLineHasBeenSet() const { return m_startLineHasBeenSet; }
     inline void SetStartLine(int value) { m_startLineHasBeenSet = true; m_startLine = value; }
     inline CodeSnippetResult& WithStartLine(int value) { SetStartLine(value); return *this;}
@@ -93,27 +91,27 @@ namespace Model
     /**
      * <p>Details of a suggested code fix.</p>
      */
-    inline const Aws::Vector<SuggestedFix>& GetSuggestedFixes() const{ return m_suggestedFixes; }
+    inline const Aws::Vector<SuggestedFix>& GetSuggestedFixes() const { return m_suggestedFixes; }
     inline bool SuggestedFixesHasBeenSet() const { return m_suggestedFixesHasBeenSet; }
-    inline void SetSuggestedFixes(const Aws::Vector<SuggestedFix>& value) { m_suggestedFixesHasBeenSet = true; m_suggestedFixes = value; }
-    inline void SetSuggestedFixes(Aws::Vector<SuggestedFix>&& value) { m_suggestedFixesHasBeenSet = true; m_suggestedFixes = std::move(value); }
-    inline CodeSnippetResult& WithSuggestedFixes(const Aws::Vector<SuggestedFix>& value) { SetSuggestedFixes(value); return *this;}
-    inline CodeSnippetResult& WithSuggestedFixes(Aws::Vector<SuggestedFix>&& value) { SetSuggestedFixes(std::move(value)); return *this;}
-    inline CodeSnippetResult& AddSuggestedFixes(const SuggestedFix& value) { m_suggestedFixesHasBeenSet = true; m_suggestedFixes.push_back(value); return *this; }
-    inline CodeSnippetResult& AddSuggestedFixes(SuggestedFix&& value) { m_suggestedFixesHasBeenSet = true; m_suggestedFixes.push_back(std::move(value)); return *this; }
+    template<typename SuggestedFixesT = Aws::Vector<SuggestedFix>>
+    void SetSuggestedFixes(SuggestedFixesT&& value) { m_suggestedFixesHasBeenSet = true; m_suggestedFixes = std::forward<SuggestedFixesT>(value); }
+    template<typename SuggestedFixesT = Aws::Vector<SuggestedFix>>
+    CodeSnippetResult& WithSuggestedFixes(SuggestedFixesT&& value) { SetSuggestedFixes(std::forward<SuggestedFixesT>(value)); return *this;}
+    template<typename SuggestedFixesT = SuggestedFix>
+    CodeSnippetResult& AddSuggestedFixes(SuggestedFixesT&& value) { m_suggestedFixesHasBeenSet = true; m_suggestedFixes.emplace_back(std::forward<SuggestedFixesT>(value)); return *this; }
     ///@}
   private:
 
     Aws::Vector<CodeLine> m_codeSnippet;
     bool m_codeSnippetHasBeenSet = false;
 
-    int m_endLine;
+    int m_endLine{0};
     bool m_endLineHasBeenSet = false;
 
     Aws::String m_findingArn;
     bool m_findingArnHasBeenSet = false;
 
-    int m_startLine;
+    int m_startLine{0};
     bool m_startLineHasBeenSet = false;
 
     Aws::Vector<SuggestedFix> m_suggestedFixes;

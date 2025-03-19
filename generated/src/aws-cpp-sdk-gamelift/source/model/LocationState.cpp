@@ -18,15 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-LocationState::LocationState() : 
-    m_locationHasBeenSet(false),
-    m_status(FleetStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 LocationState::LocationState(JsonView jsonValue)
-  : LocationState()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LocationState& LocationState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Location"))
   {
     m_location = jsonValue.GetString("Location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = FleetStatusMapper::GetFleetStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

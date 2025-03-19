@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutAutoScalingPolicyResult::PutAutoScalingPolicyResult()
-{
-}
-
 PutAutoScalingPolicyResult::PutAutoScalingPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,30 @@ PutAutoScalingPolicyResult& PutAutoScalingPolicyResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("ClusterId"))
   {
     m_clusterId = jsonValue.GetString("ClusterId");
-
+    m_clusterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceGroupId"))
   {
     m_instanceGroupId = jsonValue.GetString("InstanceGroupId");
-
+    m_instanceGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoScalingPolicy"))
   {
     m_autoScalingPolicy = jsonValue.GetObject("AutoScalingPolicy");
-
+    m_autoScalingPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterArn"))
   {
     m_clusterArn = jsonValue.GetString("ClusterArn");
-
+    m_clusterArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

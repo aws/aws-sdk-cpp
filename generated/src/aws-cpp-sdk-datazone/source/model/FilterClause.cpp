@@ -18,15 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-FilterClause::FilterClause() : 
-    m_andHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_orHasBeenSet(false)
-{
-}
-
 FilterClause::FilterClause(JsonView jsonValue)
-  : FilterClause()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ FilterClause& FilterClause::operator =(JsonView jsonValue)
     }
     m_andHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filter"))
   {
     m_filter = jsonValue.GetObject("filter");
-
     m_filterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("or"))
   {
     Aws::Utils::Array<JsonView> orJsonList = jsonValue.GetArray("or");
@@ -59,7 +48,6 @@ FilterClause& FilterClause::operator =(JsonView jsonValue)
     }
     m_orHasBeenSet = true;
   }
-
   return *this;
 }
 

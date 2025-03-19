@@ -18,14 +18,7 @@ namespace Translate
 namespace Model
 {
 
-Term::Term() : 
-    m_sourceTextHasBeenSet(false),
-    m_targetTextHasBeenSet(false)
-{
-}
-
 Term::Term(JsonView jsonValue)
-  : Term()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Term& Term::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceText"))
   {
     m_sourceText = jsonValue.GetString("SourceText");
-
     m_sourceTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetText"))
   {
     m_targetText = jsonValue.GetString("TargetText");
-
     m_targetTextHasBeenSet = true;
   }
-
   return *this;
 }
 

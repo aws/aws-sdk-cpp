@@ -23,7 +23,7 @@ namespace Model
   class ModifyWorkspacePropertiesRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API ModifyWorkspacePropertiesRequest();
+    AWS_WORKSPACES_API ModifyWorkspacePropertiesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,38 +40,34 @@ namespace Model
     /**
      * <p>The identifier of the WorkSpace.</p>
      */
-    inline const Aws::String& GetWorkspaceId() const{ return m_workspaceId; }
+    inline const Aws::String& GetWorkspaceId() const { return m_workspaceId; }
     inline bool WorkspaceIdHasBeenSet() const { return m_workspaceIdHasBeenSet; }
-    inline void SetWorkspaceId(const Aws::String& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = value; }
-    inline void SetWorkspaceId(Aws::String&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::move(value); }
-    inline void SetWorkspaceId(const char* value) { m_workspaceIdHasBeenSet = true; m_workspaceId.assign(value); }
-    inline ModifyWorkspacePropertiesRequest& WithWorkspaceId(const Aws::String& value) { SetWorkspaceId(value); return *this;}
-    inline ModifyWorkspacePropertiesRequest& WithWorkspaceId(Aws::String&& value) { SetWorkspaceId(std::move(value)); return *this;}
-    inline ModifyWorkspacePropertiesRequest& WithWorkspaceId(const char* value) { SetWorkspaceId(value); return *this;}
+    template<typename WorkspaceIdT = Aws::String>
+    void SetWorkspaceId(WorkspaceIdT&& value) { m_workspaceIdHasBeenSet = true; m_workspaceId = std::forward<WorkspaceIdT>(value); }
+    template<typename WorkspaceIdT = Aws::String>
+    ModifyWorkspacePropertiesRequest& WithWorkspaceId(WorkspaceIdT&& value) { SetWorkspaceId(std::forward<WorkspaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The properties of the WorkSpace.</p>
      */
-    inline const WorkspaceProperties& GetWorkspaceProperties() const{ return m_workspaceProperties; }
+    inline const WorkspaceProperties& GetWorkspaceProperties() const { return m_workspaceProperties; }
     inline bool WorkspacePropertiesHasBeenSet() const { return m_workspacePropertiesHasBeenSet; }
-    inline void SetWorkspaceProperties(const WorkspaceProperties& value) { m_workspacePropertiesHasBeenSet = true; m_workspaceProperties = value; }
-    inline void SetWorkspaceProperties(WorkspaceProperties&& value) { m_workspacePropertiesHasBeenSet = true; m_workspaceProperties = std::move(value); }
-    inline ModifyWorkspacePropertiesRequest& WithWorkspaceProperties(const WorkspaceProperties& value) { SetWorkspaceProperties(value); return *this;}
-    inline ModifyWorkspacePropertiesRequest& WithWorkspaceProperties(WorkspaceProperties&& value) { SetWorkspaceProperties(std::move(value)); return *this;}
+    template<typename WorkspacePropertiesT = WorkspaceProperties>
+    void SetWorkspaceProperties(WorkspacePropertiesT&& value) { m_workspacePropertiesHasBeenSet = true; m_workspaceProperties = std::forward<WorkspacePropertiesT>(value); }
+    template<typename WorkspacePropertiesT = WorkspaceProperties>
+    ModifyWorkspacePropertiesRequest& WithWorkspaceProperties(WorkspacePropertiesT&& value) { SetWorkspaceProperties(std::forward<WorkspacePropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the data replication status.</p>
      */
-    inline const DataReplication& GetDataReplication() const{ return m_dataReplication; }
+    inline DataReplication GetDataReplication() const { return m_dataReplication; }
     inline bool DataReplicationHasBeenSet() const { return m_dataReplicationHasBeenSet; }
-    inline void SetDataReplication(const DataReplication& value) { m_dataReplicationHasBeenSet = true; m_dataReplication = value; }
-    inline void SetDataReplication(DataReplication&& value) { m_dataReplicationHasBeenSet = true; m_dataReplication = std::move(value); }
-    inline ModifyWorkspacePropertiesRequest& WithDataReplication(const DataReplication& value) { SetDataReplication(value); return *this;}
-    inline ModifyWorkspacePropertiesRequest& WithDataReplication(DataReplication&& value) { SetDataReplication(std::move(value)); return *this;}
+    inline void SetDataReplication(DataReplication value) { m_dataReplicationHasBeenSet = true; m_dataReplication = value; }
+    inline ModifyWorkspacePropertiesRequest& WithDataReplication(DataReplication value) { SetDataReplication(value); return *this;}
     ///@}
   private:
 
@@ -81,7 +77,7 @@ namespace Model
     WorkspaceProperties m_workspaceProperties;
     bool m_workspacePropertiesHasBeenSet = false;
 
-    DataReplication m_dataReplication;
+    DataReplication m_dataReplication{DataReplication::NOT_SET};
     bool m_dataReplicationHasBeenSet = false;
   };
 

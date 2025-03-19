@@ -18,21 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-CollaborationConfiguredAudienceModelAssociationSummary::CollaborationConfiguredAudienceModelAssociationSummary() : 
-    m_arnHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_collaborationArnHasBeenSet(false),
-    m_collaborationIdHasBeenSet(false),
-    m_creatorAccountIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 CollaborationConfiguredAudienceModelAssociationSummary::CollaborationConfiguredAudienceModelAssociationSummary(JsonView jsonValue)
-  : CollaborationConfiguredAudienceModelAssociationSummary()
 {
   *this = jsonValue;
 }
@@ -42,66 +28,48 @@ CollaborationConfiguredAudienceModelAssociationSummary& CollaborationConfiguredA
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetDouble("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetDouble("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collaborationArn"))
   {
     m_collaborationArn = jsonValue.GetString("collaborationArn");
-
     m_collaborationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collaborationId"))
   {
     m_collaborationId = jsonValue.GetString("collaborationId");
-
     m_collaborationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creatorAccountId"))
   {
     m_creatorAccountId = jsonValue.GetString("creatorAccountId");
-
     m_creatorAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-PackageAggregationResponse::PackageAggregationResponse() : 
-    m_accountIdHasBeenSet(false),
-    m_packageNameHasBeenSet(false),
-    m_severityCountsHasBeenSet(false)
-{
-}
-
 PackageAggregationResponse::PackageAggregationResponse(JsonView jsonValue)
-  : PackageAggregationResponse()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ PackageAggregationResponse& PackageAggregationResponse::operator =(JsonView json
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("packageName"))
   {
     m_packageName = jsonValue.GetString("packageName");
-
     m_packageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("severityCounts"))
   {
     m_severityCounts = jsonValue.GetObject("severityCounts");
-
     m_severityCountsHasBeenSet = true;
   }
-
   return *this;
 }
 

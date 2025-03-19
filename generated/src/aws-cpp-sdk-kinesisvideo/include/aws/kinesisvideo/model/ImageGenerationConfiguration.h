@@ -39,7 +39,7 @@ namespace Model
   class ImageGenerationConfiguration
   {
   public:
-    AWS_KINESISVIDEO_API ImageGenerationConfiguration();
+    AWS_KINESISVIDEO_API ImageGenerationConfiguration() = default;
     AWS_KINESISVIDEO_API ImageGenerationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEO_API ImageGenerationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEO_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,10 @@ namespace Model
      * <p>Indicates whether the <code>ContinuousImageGenerationConfigurations</code>
      * API is enabled or disabled.</p>
      */
-    inline const ConfigurationStatus& GetStatus() const{ return m_status; }
+    inline ConfigurationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ConfigurationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ConfigurationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ImageGenerationConfiguration& WithStatus(const ConfigurationStatus& value) { SetStatus(value); return *this;}
-    inline ImageGenerationConfiguration& WithStatus(ConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ConfigurationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ImageGenerationConfiguration& WithStatus(ConfigurationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +61,10 @@ namespace Model
      * <p>The origin of the Server or Producer timestamps to use to generate the
      * images.</p>
      */
-    inline const ImageSelectorType& GetImageSelectorType() const{ return m_imageSelectorType; }
+    inline ImageSelectorType GetImageSelectorType() const { return m_imageSelectorType; }
     inline bool ImageSelectorTypeHasBeenSet() const { return m_imageSelectorTypeHasBeenSet; }
-    inline void SetImageSelectorType(const ImageSelectorType& value) { m_imageSelectorTypeHasBeenSet = true; m_imageSelectorType = value; }
-    inline void SetImageSelectorType(ImageSelectorType&& value) { m_imageSelectorTypeHasBeenSet = true; m_imageSelectorType = std::move(value); }
-    inline ImageGenerationConfiguration& WithImageSelectorType(const ImageSelectorType& value) { SetImageSelectorType(value); return *this;}
-    inline ImageGenerationConfiguration& WithImageSelectorType(ImageSelectorType&& value) { SetImageSelectorType(std::move(value)); return *this;}
+    inline void SetImageSelectorType(ImageSelectorType value) { m_imageSelectorTypeHasBeenSet = true; m_imageSelectorType = value; }
+    inline ImageGenerationConfiguration& WithImageSelectorType(ImageSelectorType value) { SetImageSelectorType(value); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +72,12 @@ namespace Model
      * <p>The structure that contains the information required to deliver images to a
      * customer.</p>
      */
-    inline const ImageGenerationDestinationConfig& GetDestinationConfig() const{ return m_destinationConfig; }
+    inline const ImageGenerationDestinationConfig& GetDestinationConfig() const { return m_destinationConfig; }
     inline bool DestinationConfigHasBeenSet() const { return m_destinationConfigHasBeenSet; }
-    inline void SetDestinationConfig(const ImageGenerationDestinationConfig& value) { m_destinationConfigHasBeenSet = true; m_destinationConfig = value; }
-    inline void SetDestinationConfig(ImageGenerationDestinationConfig&& value) { m_destinationConfigHasBeenSet = true; m_destinationConfig = std::move(value); }
-    inline ImageGenerationConfiguration& WithDestinationConfig(const ImageGenerationDestinationConfig& value) { SetDestinationConfig(value); return *this;}
-    inline ImageGenerationConfiguration& WithDestinationConfig(ImageGenerationDestinationConfig&& value) { SetDestinationConfig(std::move(value)); return *this;}
+    template<typename DestinationConfigT = ImageGenerationDestinationConfig>
+    void SetDestinationConfig(DestinationConfigT&& value) { m_destinationConfigHasBeenSet = true; m_destinationConfig = std::forward<DestinationConfigT>(value); }
+    template<typename DestinationConfigT = ImageGenerationDestinationConfig>
+    ImageGenerationConfiguration& WithDestinationConfig(DestinationConfigT&& value) { SetDestinationConfig(std::forward<DestinationConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,7 +87,7 @@ namespace Model
      * the timestamp range is less than the sampling interval, the Image from the
      * <code>StartTimestamp</code> will be returned if available. </p>
      */
-    inline int GetSamplingInterval() const{ return m_samplingInterval; }
+    inline int GetSamplingInterval() const { return m_samplingInterval; }
     inline bool SamplingIntervalHasBeenSet() const { return m_samplingIntervalHasBeenSet; }
     inline void SetSamplingInterval(int value) { m_samplingIntervalHasBeenSet = true; m_samplingInterval = value; }
     inline ImageGenerationConfiguration& WithSamplingInterval(int value) { SetSamplingInterval(value); return *this;}
@@ -101,12 +97,10 @@ namespace Model
     /**
      * <p>The accepted image format.</p>
      */
-    inline const Format& GetFormat() const{ return m_format; }
+    inline Format GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const Format& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(Format&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline ImageGenerationConfiguration& WithFormat(const Format& value) { SetFormat(value); return *this;}
-    inline ImageGenerationConfiguration& WithFormat(Format&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(Format value) { m_formatHasBeenSet = true; m_format = value; }
+    inline ImageGenerationConfiguration& WithFormat(Format value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -120,18 +114,15 @@ namespace Model
      * quality and less compression. If no value is provided, the default value of the
      * <code>JPEGQuality</code> key will be set to 80.</p>
      */
-    inline const Aws::Map<FormatConfigKey, Aws::String>& GetFormatConfig() const{ return m_formatConfig; }
+    inline const Aws::Map<FormatConfigKey, Aws::String>& GetFormatConfig() const { return m_formatConfig; }
     inline bool FormatConfigHasBeenSet() const { return m_formatConfigHasBeenSet; }
-    inline void SetFormatConfig(const Aws::Map<FormatConfigKey, Aws::String>& value) { m_formatConfigHasBeenSet = true; m_formatConfig = value; }
-    inline void SetFormatConfig(Aws::Map<FormatConfigKey, Aws::String>&& value) { m_formatConfigHasBeenSet = true; m_formatConfig = std::move(value); }
-    inline ImageGenerationConfiguration& WithFormatConfig(const Aws::Map<FormatConfigKey, Aws::String>& value) { SetFormatConfig(value); return *this;}
-    inline ImageGenerationConfiguration& WithFormatConfig(Aws::Map<FormatConfigKey, Aws::String>&& value) { SetFormatConfig(std::move(value)); return *this;}
-    inline ImageGenerationConfiguration& AddFormatConfig(const FormatConfigKey& key, const Aws::String& value) { m_formatConfigHasBeenSet = true; m_formatConfig.emplace(key, value); return *this; }
-    inline ImageGenerationConfiguration& AddFormatConfig(FormatConfigKey&& key, const Aws::String& value) { m_formatConfigHasBeenSet = true; m_formatConfig.emplace(std::move(key), value); return *this; }
-    inline ImageGenerationConfiguration& AddFormatConfig(const FormatConfigKey& key, Aws::String&& value) { m_formatConfigHasBeenSet = true; m_formatConfig.emplace(key, std::move(value)); return *this; }
-    inline ImageGenerationConfiguration& AddFormatConfig(FormatConfigKey&& key, Aws::String&& value) { m_formatConfigHasBeenSet = true; m_formatConfig.emplace(std::move(key), std::move(value)); return *this; }
-    inline ImageGenerationConfiguration& AddFormatConfig(FormatConfigKey&& key, const char* value) { m_formatConfigHasBeenSet = true; m_formatConfig.emplace(std::move(key), value); return *this; }
-    inline ImageGenerationConfiguration& AddFormatConfig(const FormatConfigKey& key, const char* value) { m_formatConfigHasBeenSet = true; m_formatConfig.emplace(key, value); return *this; }
+    template<typename FormatConfigT = Aws::Map<FormatConfigKey, Aws::String>>
+    void SetFormatConfig(FormatConfigT&& value) { m_formatConfigHasBeenSet = true; m_formatConfig = std::forward<FormatConfigT>(value); }
+    template<typename FormatConfigT = Aws::Map<FormatConfigKey, Aws::String>>
+    ImageGenerationConfiguration& WithFormatConfig(FormatConfigT&& value) { SetFormatConfig(std::forward<FormatConfigT>(value)); return *this;}
+    inline ImageGenerationConfiguration& AddFormatConfig(FormatConfigKey key, Aws::String value) {
+      m_formatConfigHasBeenSet = true; m_formatConfig.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
@@ -144,7 +135,7 @@ namespace Model
      * <code>HeightPixels</code> ratio. If neither parameter is provided, the original
      * image size will be returned.</p>
      */
-    inline int GetWidthPixels() const{ return m_widthPixels; }
+    inline int GetWidthPixels() const { return m_widthPixels; }
     inline bool WidthPixelsHasBeenSet() const { return m_widthPixelsHasBeenSet; }
     inline void SetWidthPixels(int value) { m_widthPixelsHasBeenSet = true; m_widthPixels = value; }
     inline ImageGenerationConfiguration& WithWidthPixels(int value) { SetWidthPixels(value); return *this;}
@@ -160,35 +151,35 @@ namespace Model
      * <code>WidthPixels</code> ratio. If neither parameter is provided, the original
      * image size will be returned.</p>
      */
-    inline int GetHeightPixels() const{ return m_heightPixels; }
+    inline int GetHeightPixels() const { return m_heightPixels; }
     inline bool HeightPixelsHasBeenSet() const { return m_heightPixelsHasBeenSet; }
     inline void SetHeightPixels(int value) { m_heightPixelsHasBeenSet = true; m_heightPixels = value; }
     inline ImageGenerationConfiguration& WithHeightPixels(int value) { SetHeightPixels(value); return *this;}
     ///@}
   private:
 
-    ConfigurationStatus m_status;
+    ConfigurationStatus m_status{ConfigurationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    ImageSelectorType m_imageSelectorType;
+    ImageSelectorType m_imageSelectorType{ImageSelectorType::NOT_SET};
     bool m_imageSelectorTypeHasBeenSet = false;
 
     ImageGenerationDestinationConfig m_destinationConfig;
     bool m_destinationConfigHasBeenSet = false;
 
-    int m_samplingInterval;
+    int m_samplingInterval{0};
     bool m_samplingIntervalHasBeenSet = false;
 
-    Format m_format;
+    Format m_format{Format::NOT_SET};
     bool m_formatHasBeenSet = false;
 
     Aws::Map<FormatConfigKey, Aws::String> m_formatConfig;
     bool m_formatConfigHasBeenSet = false;
 
-    int m_widthPixels;
+    int m_widthPixels{0};
     bool m_widthPixelsHasBeenSet = false;
 
-    int m_heightPixels;
+    int m_heightPixels{0};
     bool m_heightPixelsHasBeenSet = false;
   };
 

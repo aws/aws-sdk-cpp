@@ -18,20 +18,7 @@ namespace SSM
 namespace Model
 {
 
-MaintenanceWindowTarget::MaintenanceWindowTarget() : 
-    m_windowIdHasBeenSet(false),
-    m_windowTargetIdHasBeenSet(false),
-    m_resourceType(MaintenanceWindowResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_ownerInformationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 MaintenanceWindowTarget::MaintenanceWindowTarget(JsonView jsonValue)
-  : MaintenanceWindowTarget()
 {
   *this = jsonValue;
 }
@@ -41,24 +28,18 @@ MaintenanceWindowTarget& MaintenanceWindowTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WindowId"))
   {
     m_windowId = jsonValue.GetString("WindowId");
-
     m_windowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WindowTargetId"))
   {
     m_windowTargetId = jsonValue.GetString("WindowTargetId");
-
     m_windowTargetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = MaintenanceWindowResourceTypeMapper::GetMaintenanceWindowResourceTypeForName(jsonValue.GetString("ResourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Targets"))
   {
     Aws::Utils::Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
@@ -68,28 +49,21 @@ MaintenanceWindowTarget& MaintenanceWindowTarget::operator =(JsonView jsonValue)
     }
     m_targetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerInformation"))
   {
     m_ownerInformation = jsonValue.GetString("OwnerInformation");
-
     m_ownerInformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

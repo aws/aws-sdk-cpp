@@ -29,7 +29,7 @@ namespace Model
   class GetDisksResult
   {
   public:
-    AWS_LIGHTSAIL_API GetDisksResult();
+    AWS_LIGHTSAIL_API GetDisksResult() = default;
     AWS_LIGHTSAIL_API GetDisksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetDisksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>An array of objects containing information about all block storage disks.</p>
      */
-    inline const Aws::Vector<Disk>& GetDisks() const{ return m_disks; }
-    inline void SetDisks(const Aws::Vector<Disk>& value) { m_disks = value; }
-    inline void SetDisks(Aws::Vector<Disk>&& value) { m_disks = std::move(value); }
-    inline GetDisksResult& WithDisks(const Aws::Vector<Disk>& value) { SetDisks(value); return *this;}
-    inline GetDisksResult& WithDisks(Aws::Vector<Disk>&& value) { SetDisks(std::move(value)); return *this;}
-    inline GetDisksResult& AddDisks(const Disk& value) { m_disks.push_back(value); return *this; }
-    inline GetDisksResult& AddDisks(Disk&& value) { m_disks.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Disk>& GetDisks() const { return m_disks; }
+    template<typename DisksT = Aws::Vector<Disk>>
+    void SetDisks(DisksT&& value) { m_disksHasBeenSet = true; m_disks = std::forward<DisksT>(value); }
+    template<typename DisksT = Aws::Vector<Disk>>
+    GetDisksResult& WithDisks(DisksT&& value) { SetDisks(std::forward<DisksT>(value)); return *this;}
+    template<typename DisksT = Disk>
+    GetDisksResult& AddDisks(DisksT&& value) { m_disksHasBeenSet = true; m_disks.emplace_back(std::forward<DisksT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * request and specify the next page token using the <code>pageToken</code>
      * parameter.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-    inline GetDisksResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline GetDisksResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline GetDisksResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    GetDisksResult& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDisksResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDisksResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDisksResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDisksResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Disk> m_disks;
+    bool m_disksHasBeenSet = false;
 
     Aws::String m_nextPageToken;
+    bool m_nextPageTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

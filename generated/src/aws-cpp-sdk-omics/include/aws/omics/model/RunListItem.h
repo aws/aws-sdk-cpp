@@ -34,7 +34,7 @@ namespace Model
   class RunListItem
   {
   public:
-    AWS_OMICS_API RunListItem();
+    AWS_OMICS_API RunListItem() = default;
     AWS_OMICS_API RunListItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API RunListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,75 +44,65 @@ namespace Model
     /**
      * <p>The run's ARN.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline RunListItem& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline RunListItem& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline RunListItem& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    RunListItem& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The run's ID.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline RunListItem& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline RunListItem& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline RunListItem& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    RunListItem& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The run's status.</p>
      */
-    inline const RunStatus& GetStatus() const{ return m_status; }
+    inline RunStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const RunStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(RunStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline RunListItem& WithStatus(const RunStatus& value) { SetStatus(value); return *this;}
-    inline RunListItem& WithStatus(RunStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(RunStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline RunListItem& WithStatus(RunStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The run's workflow ID.</p>
      */
-    inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
+    inline const Aws::String& GetWorkflowId() const { return m_workflowId; }
     inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
-    inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
-    inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::move(value); }
-    inline void SetWorkflowId(const char* value) { m_workflowIdHasBeenSet = true; m_workflowId.assign(value); }
-    inline RunListItem& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
-    inline RunListItem& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
-    inline RunListItem& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
+    template<typename WorkflowIdT = Aws::String>
+    void SetWorkflowId(WorkflowIdT&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::forward<WorkflowIdT>(value); }
+    template<typename WorkflowIdT = Aws::String>
+    RunListItem& WithWorkflowId(WorkflowIdT&& value) { SetWorkflowId(std::forward<WorkflowIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The run's name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline RunListItem& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline RunListItem& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline RunListItem& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    RunListItem& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The run's priority.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline RunListItem& WithPriority(int value) { SetPriority(value); return *this;}
@@ -124,7 +114,7 @@ namespace Model
      * has completed, this value is the maximum amount of storage used during the
      * run.</p>
      */
-    inline int GetStorageCapacity() const{ return m_storageCapacity; }
+    inline int GetStorageCapacity() const { return m_storageCapacity; }
     inline bool StorageCapacityHasBeenSet() const { return m_storageCapacityHasBeenSet; }
     inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
     inline RunListItem& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
@@ -134,48 +124,46 @@ namespace Model
     /**
      * <p>When the run was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline RunListItem& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline RunListItem& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    RunListItem& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the run started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline RunListItem& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline RunListItem& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    RunListItem& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the run stopped.</p>
      */
-    inline const Aws::Utils::DateTime& GetStopTime() const{ return m_stopTime; }
+    inline const Aws::Utils::DateTime& GetStopTime() const { return m_stopTime; }
     inline bool StopTimeHasBeenSet() const { return m_stopTimeHasBeenSet; }
-    inline void SetStopTime(const Aws::Utils::DateTime& value) { m_stopTimeHasBeenSet = true; m_stopTime = value; }
-    inline void SetStopTime(Aws::Utils::DateTime&& value) { m_stopTimeHasBeenSet = true; m_stopTime = std::move(value); }
-    inline RunListItem& WithStopTime(const Aws::Utils::DateTime& value) { SetStopTime(value); return *this;}
-    inline RunListItem& WithStopTime(Aws::Utils::DateTime&& value) { SetStopTime(std::move(value)); return *this;}
+    template<typename StopTimeT = Aws::Utils::DateTime>
+    void SetStopTime(StopTimeT&& value) { m_stopTimeHasBeenSet = true; m_stopTime = std::forward<StopTimeT>(value); }
+    template<typename StopTimeT = Aws::Utils::DateTime>
+    RunListItem& WithStopTime(StopTimeT&& value) { SetStopTime(std::forward<StopTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The run's storage type.</p>
      */
-    inline const StorageType& GetStorageType() const{ return m_storageType; }
+    inline StorageType GetStorageType() const { return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
-    inline void SetStorageType(const StorageType& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
-    inline void SetStorageType(StorageType&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
-    inline RunListItem& WithStorageType(const StorageType& value) { SetStorageType(value); return *this;}
-    inline RunListItem& WithStorageType(StorageType&& value) { SetStorageType(std::move(value)); return *this;}
+    inline void SetStorageType(StorageType value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+    inline RunListItem& WithStorageType(StorageType value) { SetStorageType(value); return *this;}
     ///@}
   private:
 
@@ -185,7 +173,7 @@ namespace Model
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    RunStatus m_status;
+    RunStatus m_status{RunStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_workflowId;
@@ -194,22 +182,22 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
 
-    int m_storageCapacity;
+    int m_storageCapacity{0};
     bool m_storageCapacityHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_stopTime;
+    Aws::Utils::DateTime m_stopTime{};
     bool m_stopTimeHasBeenSet = false;
 
-    StorageType m_storageType;
+    StorageType m_storageType{StorageType::NOT_SET};
     bool m_storageTypeHasBeenSet = false;
   };
 

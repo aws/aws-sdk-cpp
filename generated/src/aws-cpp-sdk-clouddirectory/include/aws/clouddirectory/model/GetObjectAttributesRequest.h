@@ -25,7 +25,7 @@ namespace Model
   class GetObjectAttributesRequest : public CloudDirectoryRequest
   {
   public:
-    AWS_CLOUDDIRECTORY_API GetObjectAttributesRequest();
+    AWS_CLOUDDIRECTORY_API GetObjectAttributesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,38 +43,34 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
      * where the object resides.</p>
      */
-    inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
+    inline const Aws::String& GetDirectoryArn() const { return m_directoryArn; }
     inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
-    inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
-    inline void SetDirectoryArn(const char* value) { m_directoryArnHasBeenSet = true; m_directoryArn.assign(value); }
-    inline GetObjectAttributesRequest& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
-    inline GetObjectAttributesRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
-    inline GetObjectAttributesRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
+    template<typename DirectoryArnT = Aws::String>
+    void SetDirectoryArn(DirectoryArnT&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::forward<DirectoryArnT>(value); }
+    template<typename DirectoryArnT = Aws::String>
+    GetObjectAttributesRequest& WithDirectoryArn(DirectoryArnT&& value) { SetDirectoryArn(std::forward<DirectoryArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Reference that identifies the object whose attributes will be retrieved.</p>
      */
-    inline const ObjectReference& GetObjectReference() const{ return m_objectReference; }
+    inline const ObjectReference& GetObjectReference() const { return m_objectReference; }
     inline bool ObjectReferenceHasBeenSet() const { return m_objectReferenceHasBeenSet; }
-    inline void SetObjectReference(const ObjectReference& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
-    inline void SetObjectReference(ObjectReference&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::move(value); }
-    inline GetObjectAttributesRequest& WithObjectReference(const ObjectReference& value) { SetObjectReference(value); return *this;}
-    inline GetObjectAttributesRequest& WithObjectReference(ObjectReference&& value) { SetObjectReference(std::move(value)); return *this;}
+    template<typename ObjectReferenceT = ObjectReference>
+    void SetObjectReference(ObjectReferenceT&& value) { m_objectReferenceHasBeenSet = true; m_objectReference = std::forward<ObjectReferenceT>(value); }
+    template<typename ObjectReferenceT = ObjectReference>
+    GetObjectAttributesRequest& WithObjectReference(ObjectReferenceT&& value) { SetObjectReference(std::forward<ObjectReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The consistency level at which to retrieve the attributes on an object.</p>
      */
-    inline const ConsistencyLevel& GetConsistencyLevel() const{ return m_consistencyLevel; }
+    inline ConsistencyLevel GetConsistencyLevel() const { return m_consistencyLevel; }
     inline bool ConsistencyLevelHasBeenSet() const { return m_consistencyLevelHasBeenSet; }
-    inline void SetConsistencyLevel(const ConsistencyLevel& value) { m_consistencyLevelHasBeenSet = true; m_consistencyLevel = value; }
-    inline void SetConsistencyLevel(ConsistencyLevel&& value) { m_consistencyLevelHasBeenSet = true; m_consistencyLevel = std::move(value); }
-    inline GetObjectAttributesRequest& WithConsistencyLevel(const ConsistencyLevel& value) { SetConsistencyLevel(value); return *this;}
-    inline GetObjectAttributesRequest& WithConsistencyLevel(ConsistencyLevel&& value) { SetConsistencyLevel(std::move(value)); return *this;}
+    inline void SetConsistencyLevel(ConsistencyLevel value) { m_consistencyLevelHasBeenSet = true; m_consistencyLevel = value; }
+    inline GetObjectAttributesRequest& WithConsistencyLevel(ConsistencyLevel value) { SetConsistencyLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -82,27 +78,26 @@ namespace Model
      * <p>Identifier for the facet whose attributes will be retrieved. See
      * <a>SchemaFacet</a> for details.</p>
      */
-    inline const SchemaFacet& GetSchemaFacet() const{ return m_schemaFacet; }
+    inline const SchemaFacet& GetSchemaFacet() const { return m_schemaFacet; }
     inline bool SchemaFacetHasBeenSet() const { return m_schemaFacetHasBeenSet; }
-    inline void SetSchemaFacet(const SchemaFacet& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = value; }
-    inline void SetSchemaFacet(SchemaFacet&& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = std::move(value); }
-    inline GetObjectAttributesRequest& WithSchemaFacet(const SchemaFacet& value) { SetSchemaFacet(value); return *this;}
-    inline GetObjectAttributesRequest& WithSchemaFacet(SchemaFacet&& value) { SetSchemaFacet(std::move(value)); return *this;}
+    template<typename SchemaFacetT = SchemaFacet>
+    void SetSchemaFacet(SchemaFacetT&& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = std::forward<SchemaFacetT>(value); }
+    template<typename SchemaFacetT = SchemaFacet>
+    GetObjectAttributesRequest& WithSchemaFacet(SchemaFacetT&& value) { SetSchemaFacet(std::forward<SchemaFacetT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of attribute names whose values will be retrieved.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAttributeNames() const{ return m_attributeNames; }
+    inline const Aws::Vector<Aws::String>& GetAttributeNames() const { return m_attributeNames; }
     inline bool AttributeNamesHasBeenSet() const { return m_attributeNamesHasBeenSet; }
-    inline void SetAttributeNames(const Aws::Vector<Aws::String>& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = value; }
-    inline void SetAttributeNames(Aws::Vector<Aws::String>&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = std::move(value); }
-    inline GetObjectAttributesRequest& WithAttributeNames(const Aws::Vector<Aws::String>& value) { SetAttributeNames(value); return *this;}
-    inline GetObjectAttributesRequest& WithAttributeNames(Aws::Vector<Aws::String>&& value) { SetAttributeNames(std::move(value)); return *this;}
-    inline GetObjectAttributesRequest& AddAttributeNames(const Aws::String& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
-    inline GetObjectAttributesRequest& AddAttributeNames(Aws::String&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(std::move(value)); return *this; }
-    inline GetObjectAttributesRequest& AddAttributeNames(const char* value) { m_attributeNamesHasBeenSet = true; m_attributeNames.push_back(value); return *this; }
+    template<typename AttributeNamesT = Aws::Vector<Aws::String>>
+    void SetAttributeNames(AttributeNamesT&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames = std::forward<AttributeNamesT>(value); }
+    template<typename AttributeNamesT = Aws::Vector<Aws::String>>
+    GetObjectAttributesRequest& WithAttributeNames(AttributeNamesT&& value) { SetAttributeNames(std::forward<AttributeNamesT>(value)); return *this;}
+    template<typename AttributeNamesT = Aws::String>
+    GetObjectAttributesRequest& AddAttributeNames(AttributeNamesT&& value) { m_attributeNamesHasBeenSet = true; m_attributeNames.emplace_back(std::forward<AttributeNamesT>(value)); return *this; }
     ///@}
   private:
 
@@ -112,7 +107,7 @@ namespace Model
     ObjectReference m_objectReference;
     bool m_objectReferenceHasBeenSet = false;
 
-    ConsistencyLevel m_consistencyLevel;
+    ConsistencyLevel m_consistencyLevel{ConsistencyLevel::NOT_SET};
     bool m_consistencyLevelHasBeenSet = false;
 
     SchemaFacet m_schemaFacet;

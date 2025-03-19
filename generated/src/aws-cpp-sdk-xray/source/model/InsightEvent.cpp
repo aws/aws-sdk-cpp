@@ -18,17 +18,7 @@ namespace XRay
 namespace Model
 {
 
-InsightEvent::InsightEvent() : 
-    m_summaryHasBeenSet(false),
-    m_eventTimeHasBeenSet(false),
-    m_clientRequestImpactStatisticsHasBeenSet(false),
-    m_rootCauseServiceRequestImpactStatisticsHasBeenSet(false),
-    m_topAnomalousServicesHasBeenSet(false)
-{
-}
-
 InsightEvent::InsightEvent(JsonView jsonValue)
-  : InsightEvent()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ InsightEvent& InsightEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Summary"))
   {
     m_summary = jsonValue.GetString("Summary");
-
     m_summaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventTime"))
   {
     m_eventTime = jsonValue.GetDouble("EventTime");
-
     m_eventTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientRequestImpactStatistics"))
   {
     m_clientRequestImpactStatistics = jsonValue.GetObject("ClientRequestImpactStatistics");
-
     m_clientRequestImpactStatisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RootCauseServiceRequestImpactStatistics"))
   {
     m_rootCauseServiceRequestImpactStatistics = jsonValue.GetObject("RootCauseServiceRequestImpactStatistics");
-
     m_rootCauseServiceRequestImpactStatisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TopAnomalousServices"))
   {
     Aws::Utils::Array<JsonView> topAnomalousServicesJsonList = jsonValue.GetArray("TopAnomalousServices");
@@ -72,7 +54,6 @@ InsightEvent& InsightEvent::operator =(JsonView jsonValue)
     }
     m_topAnomalousServicesHasBeenSet = true;
   }
-
   return *this;
 }
 

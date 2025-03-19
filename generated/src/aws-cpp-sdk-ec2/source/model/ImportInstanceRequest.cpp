@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ImportInstanceRequest::ImportInstanceRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_launchSpecificationHasBeenSet(false),
-    m_diskImagesHasBeenSet(false),
-    m_platform(PlatformValues::NOT_SET),
-    m_platformHasBeenSet(false)
-{
-}
-
 Aws::String ImportInstanceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

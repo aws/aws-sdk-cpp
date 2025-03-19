@@ -20,16 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-OrderableClusterOption::OrderableClusterOption() : 
-    m_clusterVersionHasBeenSet(false),
-    m_clusterTypeHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false)
-{
-}
-
 OrderableClusterOption::OrderableClusterOption(const XmlNode& xmlNode)
-  : OrderableClusterOption()
 {
   *this = xmlNode;
 }
@@ -62,6 +53,7 @@ OrderableClusterOption& OrderableClusterOption::operator =(const XmlNode& xmlNod
     if(!availabilityZonesNode.IsNull())
     {
       XmlNode availabilityZonesMember = availabilityZonesNode.FirstChild("AvailabilityZone");
+      m_availabilityZonesHasBeenSet = !availabilityZonesMember.IsNull();
       while(!availabilityZonesMember.IsNull())
       {
         m_availabilityZones.push_back(availabilityZonesMember);

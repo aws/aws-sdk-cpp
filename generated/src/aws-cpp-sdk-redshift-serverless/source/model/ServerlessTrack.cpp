@@ -18,15 +18,7 @@ namespace RedshiftServerless
 namespace Model
 {
 
-ServerlessTrack::ServerlessTrack() : 
-    m_trackNameHasBeenSet(false),
-    m_updateTargetsHasBeenSet(false),
-    m_workgroupVersionHasBeenSet(false)
-{
-}
-
 ServerlessTrack::ServerlessTrack(JsonView jsonValue)
-  : ServerlessTrack()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ServerlessTrack& ServerlessTrack::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("trackName"))
   {
     m_trackName = jsonValue.GetString("trackName");
-
     m_trackNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTargets"))
   {
     Aws::Utils::Array<JsonView> updateTargetsJsonList = jsonValue.GetArray("updateTargets");
@@ -49,14 +39,11 @@ ServerlessTrack& ServerlessTrack::operator =(JsonView jsonValue)
     }
     m_updateTargetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workgroupVersion"))
   {
     m_workgroupVersion = jsonValue.GetString("workgroupVersion");
-
     m_workgroupVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -22,7 +22,7 @@ namespace Model
   class UntagRequest : public ResourceGroupsRequest
   {
   public:
-    AWS_RESOURCEGROUPS_API UntagRequest();
+    AWS_RESOURCEGROUPS_API UntagRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,29 +39,26 @@ namespace Model
      * tags. The command removed both the specified keys and any values associated with
      * those keys.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline UntagRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UntagRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UntagRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UntagRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The keys of the tags to be removed.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetKeys() const{ return m_keys; }
+    inline const Aws::Vector<Aws::String>& GetKeys() const { return m_keys; }
     inline bool KeysHasBeenSet() const { return m_keysHasBeenSet; }
-    inline void SetKeys(const Aws::Vector<Aws::String>& value) { m_keysHasBeenSet = true; m_keys = value; }
-    inline void SetKeys(Aws::Vector<Aws::String>&& value) { m_keysHasBeenSet = true; m_keys = std::move(value); }
-    inline UntagRequest& WithKeys(const Aws::Vector<Aws::String>& value) { SetKeys(value); return *this;}
-    inline UntagRequest& WithKeys(Aws::Vector<Aws::String>&& value) { SetKeys(std::move(value)); return *this;}
-    inline UntagRequest& AddKeys(const Aws::String& value) { m_keysHasBeenSet = true; m_keys.push_back(value); return *this; }
-    inline UntagRequest& AddKeys(Aws::String&& value) { m_keysHasBeenSet = true; m_keys.push_back(std::move(value)); return *this; }
-    inline UntagRequest& AddKeys(const char* value) { m_keysHasBeenSet = true; m_keys.push_back(value); return *this; }
+    template<typename KeysT = Aws::Vector<Aws::String>>
+    void SetKeys(KeysT&& value) { m_keysHasBeenSet = true; m_keys = std::forward<KeysT>(value); }
+    template<typename KeysT = Aws::Vector<Aws::String>>
+    UntagRequest& WithKeys(KeysT&& value) { SetKeys(std::forward<KeysT>(value)); return *this;}
+    template<typename KeysT = Aws::String>
+    UntagRequest& AddKeys(KeysT&& value) { m_keysHasBeenSet = true; m_keys.emplace_back(std::forward<KeysT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-UpdateDataSecurityConfig::UpdateDataSecurityConfig() : 
-    m_modelKmsKeyIdHasBeenSet(false),
-    m_volumeKmsKeyIdHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
-{
-}
-
 UpdateDataSecurityConfig::UpdateDataSecurityConfig(JsonView jsonValue)
-  : UpdateDataSecurityConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ UpdateDataSecurityConfig& UpdateDataSecurityConfig::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("ModelKmsKeyId"))
   {
     m_modelKmsKeyId = jsonValue.GetString("ModelKmsKeyId");
-
     m_modelKmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeKmsKeyId"))
   {
     m_volumeKmsKeyId = jsonValue.GetString("VolumeKmsKeyId");
-
     m_volumeKmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("VpcConfig");
-
     m_vpcConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

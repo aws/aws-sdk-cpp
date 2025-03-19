@@ -12,13 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutRetentionPolicyRequest::PutRetentionPolicyRequest() : 
-    m_logGroupNameHasBeenSet(false),
-    m_retentionInDays(0),
-    m_retentionInDaysHasBeenSet(false)
-{
-}
-
 Aws::String PutRetentionPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

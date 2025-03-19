@@ -18,14 +18,7 @@ namespace Proton
 namespace Model
 {
 
-Output::Output() : 
-    m_keyHasBeenSet(false),
-    m_valueStringHasBeenSet(false)
-{
-}
-
 Output::Output(JsonView jsonValue)
-  : Output()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Output& Output::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("valueString"))
   {
     m_valueString = jsonValue.GetString("valueString");
-
     m_valueStringHasBeenSet = true;
   }
-
   return *this;
 }
 

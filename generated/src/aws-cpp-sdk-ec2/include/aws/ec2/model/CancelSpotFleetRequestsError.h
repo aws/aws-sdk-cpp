@@ -32,7 +32,7 @@ namespace Model
   class CancelSpotFleetRequestsError
   {
   public:
-    AWS_EC2_API CancelSpotFleetRequestsError();
+    AWS_EC2_API CancelSpotFleetRequestsError() = default;
     AWS_EC2_API CancelSpotFleetRequestsError(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API CancelSpotFleetRequestsError& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,30 +44,26 @@ namespace Model
     /**
      * <p>The error code.</p>
      */
-    inline const CancelBatchErrorCode& GetCode() const{ return m_code; }
+    inline CancelBatchErrorCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const CancelBatchErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(CancelBatchErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline CancelSpotFleetRequestsError& WithCode(const CancelBatchErrorCode& value) { SetCode(value); return *this;}
-    inline CancelSpotFleetRequestsError& WithCode(CancelBatchErrorCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(CancelBatchErrorCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline CancelSpotFleetRequestsError& WithCode(CancelBatchErrorCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description for the error code.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline CancelSpotFleetRequestsError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline CancelSpotFleetRequestsError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline CancelSpotFleetRequestsError& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    CancelSpotFleetRequestsError& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
-    CancelBatchErrorCode m_code;
+    CancelBatchErrorCode m_code{CancelBatchErrorCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
     Aws::String m_message;

@@ -26,7 +26,7 @@ namespace Model
   class ResponseMetadata
   {
   public:
-    AWS_SES_API ResponseMetadata();
+    AWS_SES_API ResponseMetadata() = default;
     AWS_SES_API ResponseMetadata(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API ResponseMetadata& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -36,14 +36,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline ResponseMetadata& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ResponseMetadata& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ResponseMetadata& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ResponseMetadata& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-SiteToSiteVpnAttachment::SiteToSiteVpnAttachment() : 
-    m_attachmentHasBeenSet(false),
-    m_vpnConnectionArnHasBeenSet(false)
-{
-}
-
 SiteToSiteVpnAttachment::SiteToSiteVpnAttachment(JsonView jsonValue)
-  : SiteToSiteVpnAttachment()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SiteToSiteVpnAttachment& SiteToSiteVpnAttachment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Attachment"))
   {
     m_attachment = jsonValue.GetObject("Attachment");
-
     m_attachmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpnConnectionArn"))
   {
     m_vpnConnectionArn = jsonValue.GetString("VpnConnectionArn");
-
     m_vpnConnectionArnHasBeenSet = true;
   }
-
   return *this;
 }
 

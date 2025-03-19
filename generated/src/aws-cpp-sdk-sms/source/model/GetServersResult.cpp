@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetServersResult::GetServersResult() : 
-    m_serverCatalogStatus(ServerCatalogStatus::NOT_SET)
-{
-}
-
 GetServersResult::GetServersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetServersResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ GetServersResult& GetServersResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("lastModifiedOn"))
   {
     m_lastModifiedOn = jsonValue.GetDouble("lastModifiedOn");
-
+    m_lastModifiedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverCatalogStatus"))
   {
     m_serverCatalogStatus = ServerCatalogStatusMapper::GetServerCatalogStatusForName(jsonValue.GetString("serverCatalogStatus"));
-
+    m_serverCatalogStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverList"))
   {
     Aws::Utils::Array<JsonView> serverListJsonList = jsonValue.GetArray("serverList");
@@ -50,20 +42,20 @@ GetServersResult& GetServersResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_serverList.push_back(serverListJsonList[serverListIndex].AsObject());
     }
+    m_serverListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -10,13 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-ListCustomVerificationEmailTemplatesRequest::ListCustomVerificationEmailTemplatesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListCustomVerificationEmailTemplatesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -33,7 +33,7 @@ namespace Model
   class Observations
   {
   public:
-    AWS_GUARDDUTY_API Observations();
+    AWS_GUARDDUTY_API Observations() = default;
     AWS_GUARDDUTY_API Observations(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Observations& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,15 +43,14 @@ namespace Model
     /**
      * <p>The text that was unusual.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetText() const{ return m_text; }
+    inline const Aws::Vector<Aws::String>& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::Vector<Aws::String>& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::Vector<Aws::String>&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline Observations& WithText(const Aws::Vector<Aws::String>& value) { SetText(value); return *this;}
-    inline Observations& WithText(Aws::Vector<Aws::String>&& value) { SetText(std::move(value)); return *this;}
-    inline Observations& AddText(const Aws::String& value) { m_textHasBeenSet = true; m_text.push_back(value); return *this; }
-    inline Observations& AddText(Aws::String&& value) { m_textHasBeenSet = true; m_text.push_back(std::move(value)); return *this; }
-    inline Observations& AddText(const char* value) { m_textHasBeenSet = true; m_text.push_back(value); return *this; }
+    template<typename TextT = Aws::Vector<Aws::String>>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::Vector<Aws::String>>
+    Observations& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
+    template<typename TextT = Aws::String>
+    Observations& AddText(TextT&& value) { m_textHasBeenSet = true; m_text.emplace_back(std::forward<TextT>(value)); return *this; }
     ///@}
   private:
 

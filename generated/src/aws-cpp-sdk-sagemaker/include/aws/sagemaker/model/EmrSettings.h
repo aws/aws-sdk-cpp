@@ -36,7 +36,7 @@ namespace Model
   class EmrSettings
   {
   public:
-    AWS_SAGEMAKER_API EmrSettings();
+    AWS_SAGEMAKER_API EmrSettings() = default;
     AWS_SAGEMAKER_API EmrSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API EmrSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,15 +54,14 @@ namespace Model
      * applications) are located in a different Amazon Web Services account than the
      * SageMaker domain.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAssumableRoleArns() const{ return m_assumableRoleArns; }
+    inline const Aws::Vector<Aws::String>& GetAssumableRoleArns() const { return m_assumableRoleArns; }
     inline bool AssumableRoleArnsHasBeenSet() const { return m_assumableRoleArnsHasBeenSet; }
-    inline void SetAssumableRoleArns(const Aws::Vector<Aws::String>& value) { m_assumableRoleArnsHasBeenSet = true; m_assumableRoleArns = value; }
-    inline void SetAssumableRoleArns(Aws::Vector<Aws::String>&& value) { m_assumableRoleArnsHasBeenSet = true; m_assumableRoleArns = std::move(value); }
-    inline EmrSettings& WithAssumableRoleArns(const Aws::Vector<Aws::String>& value) { SetAssumableRoleArns(value); return *this;}
-    inline EmrSettings& WithAssumableRoleArns(Aws::Vector<Aws::String>&& value) { SetAssumableRoleArns(std::move(value)); return *this;}
-    inline EmrSettings& AddAssumableRoleArns(const Aws::String& value) { m_assumableRoleArnsHasBeenSet = true; m_assumableRoleArns.push_back(value); return *this; }
-    inline EmrSettings& AddAssumableRoleArns(Aws::String&& value) { m_assumableRoleArnsHasBeenSet = true; m_assumableRoleArns.push_back(std::move(value)); return *this; }
-    inline EmrSettings& AddAssumableRoleArns(const char* value) { m_assumableRoleArnsHasBeenSet = true; m_assumableRoleArns.push_back(value); return *this; }
+    template<typename AssumableRoleArnsT = Aws::Vector<Aws::String>>
+    void SetAssumableRoleArns(AssumableRoleArnsT&& value) { m_assumableRoleArnsHasBeenSet = true; m_assumableRoleArns = std::forward<AssumableRoleArnsT>(value); }
+    template<typename AssumableRoleArnsT = Aws::Vector<Aws::String>>
+    EmrSettings& WithAssumableRoleArns(AssumableRoleArnsT&& value) { SetAssumableRoleArns(std::forward<AssumableRoleArnsT>(value)); return *this;}
+    template<typename AssumableRoleArnsT = Aws::String>
+    EmrSettings& AddAssumableRoleArns(AssumableRoleArnsT&& value) { m_assumableRoleArnsHasBeenSet = true; m_assumableRoleArns.emplace_back(std::forward<AssumableRoleArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -74,15 +73,14 @@ namespace Model
      * CloudWatch for logging, or other Amazon Web Services services based on the
      * particular workload requirements.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExecutionRoleArns() const{ return m_executionRoleArns; }
+    inline const Aws::Vector<Aws::String>& GetExecutionRoleArns() const { return m_executionRoleArns; }
     inline bool ExecutionRoleArnsHasBeenSet() const { return m_executionRoleArnsHasBeenSet; }
-    inline void SetExecutionRoleArns(const Aws::Vector<Aws::String>& value) { m_executionRoleArnsHasBeenSet = true; m_executionRoleArns = value; }
-    inline void SetExecutionRoleArns(Aws::Vector<Aws::String>&& value) { m_executionRoleArnsHasBeenSet = true; m_executionRoleArns = std::move(value); }
-    inline EmrSettings& WithExecutionRoleArns(const Aws::Vector<Aws::String>& value) { SetExecutionRoleArns(value); return *this;}
-    inline EmrSettings& WithExecutionRoleArns(Aws::Vector<Aws::String>&& value) { SetExecutionRoleArns(std::move(value)); return *this;}
-    inline EmrSettings& AddExecutionRoleArns(const Aws::String& value) { m_executionRoleArnsHasBeenSet = true; m_executionRoleArns.push_back(value); return *this; }
-    inline EmrSettings& AddExecutionRoleArns(Aws::String&& value) { m_executionRoleArnsHasBeenSet = true; m_executionRoleArns.push_back(std::move(value)); return *this; }
-    inline EmrSettings& AddExecutionRoleArns(const char* value) { m_executionRoleArnsHasBeenSet = true; m_executionRoleArns.push_back(value); return *this; }
+    template<typename ExecutionRoleArnsT = Aws::Vector<Aws::String>>
+    void SetExecutionRoleArns(ExecutionRoleArnsT&& value) { m_executionRoleArnsHasBeenSet = true; m_executionRoleArns = std::forward<ExecutionRoleArnsT>(value); }
+    template<typename ExecutionRoleArnsT = Aws::Vector<Aws::String>>
+    EmrSettings& WithExecutionRoleArns(ExecutionRoleArnsT&& value) { SetExecutionRoleArns(std::forward<ExecutionRoleArnsT>(value)); return *this;}
+    template<typename ExecutionRoleArnsT = Aws::String>
+    EmrSettings& AddExecutionRoleArns(ExecutionRoleArnsT&& value) { m_executionRoleArnsHasBeenSet = true; m_executionRoleArns.emplace_back(std::forward<ExecutionRoleArnsT>(value)); return *this; }
     ///@}
   private:
 

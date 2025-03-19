@@ -33,7 +33,7 @@ namespace Model
   class ClusterConfiguration
   {
   public:
-    AWS_ECS_API ClusterConfiguration();
+    AWS_ECS_API ClusterConfiguration() = default;
     AWS_ECS_API ClusterConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API ClusterConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The details of the execute command configuration.</p>
      */
-    inline const ExecuteCommandConfiguration& GetExecuteCommandConfiguration() const{ return m_executeCommandConfiguration; }
+    inline const ExecuteCommandConfiguration& GetExecuteCommandConfiguration() const { return m_executeCommandConfiguration; }
     inline bool ExecuteCommandConfigurationHasBeenSet() const { return m_executeCommandConfigurationHasBeenSet; }
-    inline void SetExecuteCommandConfiguration(const ExecuteCommandConfiguration& value) { m_executeCommandConfigurationHasBeenSet = true; m_executeCommandConfiguration = value; }
-    inline void SetExecuteCommandConfiguration(ExecuteCommandConfiguration&& value) { m_executeCommandConfigurationHasBeenSet = true; m_executeCommandConfiguration = std::move(value); }
-    inline ClusterConfiguration& WithExecuteCommandConfiguration(const ExecuteCommandConfiguration& value) { SetExecuteCommandConfiguration(value); return *this;}
-    inline ClusterConfiguration& WithExecuteCommandConfiguration(ExecuteCommandConfiguration&& value) { SetExecuteCommandConfiguration(std::move(value)); return *this;}
+    template<typename ExecuteCommandConfigurationT = ExecuteCommandConfiguration>
+    void SetExecuteCommandConfiguration(ExecuteCommandConfigurationT&& value) { m_executeCommandConfigurationHasBeenSet = true; m_executeCommandConfiguration = std::forward<ExecuteCommandConfigurationT>(value); }
+    template<typename ExecuteCommandConfigurationT = ExecuteCommandConfiguration>
+    ClusterConfiguration& WithExecuteCommandConfiguration(ExecuteCommandConfigurationT&& value) { SetExecuteCommandConfiguration(std::forward<ExecuteCommandConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The details of the managed storage configuration.</p>
      */
-    inline const ManagedStorageConfiguration& GetManagedStorageConfiguration() const{ return m_managedStorageConfiguration; }
+    inline const ManagedStorageConfiguration& GetManagedStorageConfiguration() const { return m_managedStorageConfiguration; }
     inline bool ManagedStorageConfigurationHasBeenSet() const { return m_managedStorageConfigurationHasBeenSet; }
-    inline void SetManagedStorageConfiguration(const ManagedStorageConfiguration& value) { m_managedStorageConfigurationHasBeenSet = true; m_managedStorageConfiguration = value; }
-    inline void SetManagedStorageConfiguration(ManagedStorageConfiguration&& value) { m_managedStorageConfigurationHasBeenSet = true; m_managedStorageConfiguration = std::move(value); }
-    inline ClusterConfiguration& WithManagedStorageConfiguration(const ManagedStorageConfiguration& value) { SetManagedStorageConfiguration(value); return *this;}
-    inline ClusterConfiguration& WithManagedStorageConfiguration(ManagedStorageConfiguration&& value) { SetManagedStorageConfiguration(std::move(value)); return *this;}
+    template<typename ManagedStorageConfigurationT = ManagedStorageConfiguration>
+    void SetManagedStorageConfiguration(ManagedStorageConfigurationT&& value) { m_managedStorageConfigurationHasBeenSet = true; m_managedStorageConfiguration = std::forward<ManagedStorageConfigurationT>(value); }
+    template<typename ManagedStorageConfigurationT = ManagedStorageConfiguration>
+    ClusterConfiguration& WithManagedStorageConfiguration(ManagedStorageConfigurationT&& value) { SetManagedStorageConfiguration(std::forward<ManagedStorageConfigurationT>(value)); return *this;}
     ///@}
   private:
 

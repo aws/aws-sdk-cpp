@@ -30,7 +30,7 @@ namespace Model
   class ManagedExecution
   {
   public:
-    AWS_CLOUDFORMATION_API ManagedExecution();
+    AWS_CLOUDFORMATION_API ManagedExecution() = default;
     AWS_CLOUDFORMATION_API ManagedExecution(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API ManagedExecution& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,14 +49,14 @@ namespace Model
      * that stack set.</p>  <p>When <code>false</code> (default), StackSets
      * performs one operation at a time in request order.</p>
      */
-    inline bool GetActive() const{ return m_active; }
+    inline bool GetActive() const { return m_active; }
     inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
     inline void SetActive(bool value) { m_activeHasBeenSet = true; m_active = value; }
     inline ManagedExecution& WithActive(bool value) { SetActive(value); return *this;}
     ///@}
   private:
 
-    bool m_active;
+    bool m_active{false};
     bool m_activeHasBeenSet = false;
   };
 

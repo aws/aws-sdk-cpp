@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-FlowTraceEvent::FlowTraceEvent() : 
-    m_traceHasBeenSet(false)
-{
-}
-
 FlowTraceEvent::FlowTraceEvent(JsonView jsonValue)
-  : FlowTraceEvent()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FlowTraceEvent& FlowTraceEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("trace"))
   {
     m_trace = jsonValue.GetObject("trace");
-
     m_traceHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-Address::Address() : 
-    m_addressDefinitionHasBeenSet(false)
-{
-}
-
 Address::Address(JsonView jsonValue)
-  : Address()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Address& Address::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AddressDefinition"))
   {
     m_addressDefinition = jsonValue.GetString("AddressDefinition");
-
     m_addressDefinitionHasBeenSet = true;
   }
-
   return *this;
 }
 

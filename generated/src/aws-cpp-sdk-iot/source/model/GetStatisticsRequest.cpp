@@ -12,14 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetStatisticsRequest::GetStatisticsRequest() : 
-    m_indexNameHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_aggregationFieldHasBeenSet(false),
-    m_queryVersionHasBeenSet(false)
-{
-}
-
 Aws::String GetStatisticsRequest::SerializePayload() const
 {
   JsonValue payload;

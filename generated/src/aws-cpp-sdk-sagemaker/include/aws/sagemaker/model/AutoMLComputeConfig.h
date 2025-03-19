@@ -33,7 +33,7 @@ namespace Model
   class AutoMLComputeConfig
   {
   public:
-    AWS_SAGEMAKER_API AutoMLComputeConfig();
+    AWS_SAGEMAKER_API AutoMLComputeConfig() = default;
     AWS_SAGEMAKER_API AutoMLComputeConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API AutoMLComputeConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,12 +55,12 @@ namespace Model
      * time series problem types. We recommend setting up this option for tabular
      * datasets larger than 5 GB and time series datasets larger than 30 GB.</p>
      */
-    inline const EmrServerlessComputeConfig& GetEmrServerlessComputeConfig() const{ return m_emrServerlessComputeConfig; }
+    inline const EmrServerlessComputeConfig& GetEmrServerlessComputeConfig() const { return m_emrServerlessComputeConfig; }
     inline bool EmrServerlessComputeConfigHasBeenSet() const { return m_emrServerlessComputeConfigHasBeenSet; }
-    inline void SetEmrServerlessComputeConfig(const EmrServerlessComputeConfig& value) { m_emrServerlessComputeConfigHasBeenSet = true; m_emrServerlessComputeConfig = value; }
-    inline void SetEmrServerlessComputeConfig(EmrServerlessComputeConfig&& value) { m_emrServerlessComputeConfigHasBeenSet = true; m_emrServerlessComputeConfig = std::move(value); }
-    inline AutoMLComputeConfig& WithEmrServerlessComputeConfig(const EmrServerlessComputeConfig& value) { SetEmrServerlessComputeConfig(value); return *this;}
-    inline AutoMLComputeConfig& WithEmrServerlessComputeConfig(EmrServerlessComputeConfig&& value) { SetEmrServerlessComputeConfig(std::move(value)); return *this;}
+    template<typename EmrServerlessComputeConfigT = EmrServerlessComputeConfig>
+    void SetEmrServerlessComputeConfig(EmrServerlessComputeConfigT&& value) { m_emrServerlessComputeConfigHasBeenSet = true; m_emrServerlessComputeConfig = std::forward<EmrServerlessComputeConfigT>(value); }
+    template<typename EmrServerlessComputeConfigT = EmrServerlessComputeConfig>
+    AutoMLComputeConfig& WithEmrServerlessComputeConfig(EmrServerlessComputeConfigT&& value) { SetEmrServerlessComputeConfig(std::forward<EmrServerlessComputeConfigT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,13 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSubscriptionTargetRequest::DeleteSubscriptionTargetRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_environmentIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSubscriptionTargetRequest::SerializePayload() const
 {
   return {};

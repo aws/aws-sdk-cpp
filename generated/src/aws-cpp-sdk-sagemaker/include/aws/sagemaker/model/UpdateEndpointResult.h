@@ -27,7 +27,7 @@ namespace Model
   class UpdateEndpointResult
   {
   public:
-    AWS_SAGEMAKER_API UpdateEndpointResult();
+    AWS_SAGEMAKER_API UpdateEndpointResult() = default;
     AWS_SAGEMAKER_API UpdateEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API UpdateEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the endpoint.</p>
      */
-    inline const Aws::String& GetEndpointArn() const{ return m_endpointArn; }
-    inline void SetEndpointArn(const Aws::String& value) { m_endpointArn = value; }
-    inline void SetEndpointArn(Aws::String&& value) { m_endpointArn = std::move(value); }
-    inline void SetEndpointArn(const char* value) { m_endpointArn.assign(value); }
-    inline UpdateEndpointResult& WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
-    inline UpdateEndpointResult& WithEndpointArn(Aws::String&& value) { SetEndpointArn(std::move(value)); return *this;}
-    inline UpdateEndpointResult& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
+    inline const Aws::String& GetEndpointArn() const { return m_endpointArn; }
+    template<typename EndpointArnT = Aws::String>
+    void SetEndpointArn(EndpointArnT&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::forward<EndpointArnT>(value); }
+    template<typename EndpointArnT = Aws::String>
+    UpdateEndpointResult& WithEndpointArn(EndpointArnT&& value) { SetEndpointArn(std::forward<EndpointArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateEndpointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_endpointArn;
+    bool m_endpointArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

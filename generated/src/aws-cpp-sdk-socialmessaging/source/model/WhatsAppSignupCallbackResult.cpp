@@ -18,14 +18,7 @@ namespace SocialMessaging
 namespace Model
 {
 
-WhatsAppSignupCallbackResult::WhatsAppSignupCallbackResult() : 
-    m_associateInProgressTokenHasBeenSet(false),
-    m_linkedAccountsWithIncompleteSetupHasBeenSet(false)
-{
-}
-
 WhatsAppSignupCallbackResult::WhatsAppSignupCallbackResult(JsonView jsonValue)
-  : WhatsAppSignupCallbackResult()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ WhatsAppSignupCallbackResult& WhatsAppSignupCallbackResult::operator =(JsonView 
   if(jsonValue.ValueExists("associateInProgressToken"))
   {
     m_associateInProgressToken = jsonValue.GetString("associateInProgressToken");
-
     m_associateInProgressTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("linkedAccountsWithIncompleteSetup"))
   {
     Aws::Map<Aws::String, JsonView> linkedAccountsWithIncompleteSetupJsonMap = jsonValue.GetObject("linkedAccountsWithIncompleteSetup").GetAllObjects();
@@ -48,7 +39,6 @@ WhatsAppSignupCallbackResult& WhatsAppSignupCallbackResult::operator =(JsonView 
     }
     m_linkedAccountsWithIncompleteSetupHasBeenSet = true;
   }
-
   return *this;
 }
 

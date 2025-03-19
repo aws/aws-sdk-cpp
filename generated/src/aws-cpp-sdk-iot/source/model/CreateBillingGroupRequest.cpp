@@ -12,13 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBillingGroupRequest::CreateBillingGroupRequest() : 
-    m_billingGroupNameHasBeenSet(false),
-    m_billingGroupPropertiesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateBillingGroupRequest::SerializePayload() const
 {
   JsonValue payload;

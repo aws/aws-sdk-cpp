@@ -32,7 +32,7 @@ namespace Model
   class Dimension
   {
   public:
-    AWS_AGREEMENTSERVICE_API Dimension();
+    AWS_AGREEMENTSERVICE_API Dimension() = default;
     AWS_AGREEMENTSERVICE_API Dimension(Aws::Utils::Json::JsonView jsonValue);
     AWS_AGREEMENTSERVICE_API Dimension& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AGREEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of key value of the dimension.</p>
      */
-    inline const Aws::String& GetDimensionKey() const{ return m_dimensionKey; }
+    inline const Aws::String& GetDimensionKey() const { return m_dimensionKey; }
     inline bool DimensionKeyHasBeenSet() const { return m_dimensionKeyHasBeenSet; }
-    inline void SetDimensionKey(const Aws::String& value) { m_dimensionKeyHasBeenSet = true; m_dimensionKey = value; }
-    inline void SetDimensionKey(Aws::String&& value) { m_dimensionKeyHasBeenSet = true; m_dimensionKey = std::move(value); }
-    inline void SetDimensionKey(const char* value) { m_dimensionKeyHasBeenSet = true; m_dimensionKey.assign(value); }
-    inline Dimension& WithDimensionKey(const Aws::String& value) { SetDimensionKey(value); return *this;}
-    inline Dimension& WithDimensionKey(Aws::String&& value) { SetDimensionKey(std::move(value)); return *this;}
-    inline Dimension& WithDimensionKey(const char* value) { SetDimensionKey(value); return *this;}
+    template<typename DimensionKeyT = Aws::String>
+    void SetDimensionKey(DimensionKeyT&& value) { m_dimensionKeyHasBeenSet = true; m_dimensionKey = std::forward<DimensionKeyT>(value); }
+    template<typename DimensionKeyT = Aws::String>
+    Dimension& WithDimensionKey(DimensionKeyT&& value) { SetDimensionKey(std::forward<DimensionKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * define the actual dimensions, prices, and units the buyer has chosen to
      * accept.</p> 
      */
-    inline int GetDimensionValue() const{ return m_dimensionValue; }
+    inline int GetDimensionValue() const { return m_dimensionValue; }
     inline bool DimensionValueHasBeenSet() const { return m_dimensionValueHasBeenSet; }
     inline void SetDimensionValue(int value) { m_dimensionValueHasBeenSet = true; m_dimensionValue = value; }
     inline Dimension& WithDimensionValue(int value) { SetDimensionValue(value); return *this;}
@@ -71,7 +69,7 @@ namespace Model
     Aws::String m_dimensionKey;
     bool m_dimensionKeyHasBeenSet = false;
 
-    int m_dimensionValue;
+    int m_dimensionValue{0};
     bool m_dimensionValueHasBeenSet = false;
   };
 

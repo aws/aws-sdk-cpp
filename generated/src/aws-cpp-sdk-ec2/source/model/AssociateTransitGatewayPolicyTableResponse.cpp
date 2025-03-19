@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociateTransitGatewayPolicyTableResponse::AssociateTransitGatewayPolicyTableResponse()
-{
-}
-
 AssociateTransitGatewayPolicyTableResponse::AssociateTransitGatewayPolicyTableResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ AssociateTransitGatewayPolicyTableResponse& AssociateTransitGatewayPolicyTableRe
     if(!associationNode.IsNull())
     {
       m_association = associationNode;
+      m_associationHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ AssociateTransitGatewayPolicyTableResponse& AssociateTransitGatewayPolicyTableRe
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AssociateTransitGatewayPolicyTableResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

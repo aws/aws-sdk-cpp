@@ -21,7 +21,7 @@ namespace Model
   class GetAnalysisReportResultsRequest : public NetworkFirewallRequest
   {
   public:
-    AWS_NETWORKFIREWALL_API GetAnalysisReportResultsRequest();
+    AWS_NETWORKFIREWALL_API GetAnalysisReportResultsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * after you create it.</p> <p>You must specify the ARN or the name, and you can
      * specify both. </p>
      */
-    inline const Aws::String& GetFirewallName() const{ return m_firewallName; }
+    inline const Aws::String& GetFirewallName() const { return m_firewallName; }
     inline bool FirewallNameHasBeenSet() const { return m_firewallNameHasBeenSet; }
-    inline void SetFirewallName(const Aws::String& value) { m_firewallNameHasBeenSet = true; m_firewallName = value; }
-    inline void SetFirewallName(Aws::String&& value) { m_firewallNameHasBeenSet = true; m_firewallName = std::move(value); }
-    inline void SetFirewallName(const char* value) { m_firewallNameHasBeenSet = true; m_firewallName.assign(value); }
-    inline GetAnalysisReportResultsRequest& WithFirewallName(const Aws::String& value) { SetFirewallName(value); return *this;}
-    inline GetAnalysisReportResultsRequest& WithFirewallName(Aws::String&& value) { SetFirewallName(std::move(value)); return *this;}
-    inline GetAnalysisReportResultsRequest& WithFirewallName(const char* value) { SetFirewallName(value); return *this;}
+    template<typename FirewallNameT = Aws::String>
+    void SetFirewallName(FirewallNameT&& value) { m_firewallNameHasBeenSet = true; m_firewallName = std::forward<FirewallNameT>(value); }
+    template<typename FirewallNameT = Aws::String>
+    GetAnalysisReportResultsRequest& WithFirewallName(FirewallNameT&& value) { SetFirewallName(std::forward<FirewallNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * <p>The unique ID of the query that ran when you requested an analysis report.
      * </p>
      */
-    inline const Aws::String& GetAnalysisReportId() const{ return m_analysisReportId; }
+    inline const Aws::String& GetAnalysisReportId() const { return m_analysisReportId; }
     inline bool AnalysisReportIdHasBeenSet() const { return m_analysisReportIdHasBeenSet; }
-    inline void SetAnalysisReportId(const Aws::String& value) { m_analysisReportIdHasBeenSet = true; m_analysisReportId = value; }
-    inline void SetAnalysisReportId(Aws::String&& value) { m_analysisReportIdHasBeenSet = true; m_analysisReportId = std::move(value); }
-    inline void SetAnalysisReportId(const char* value) { m_analysisReportIdHasBeenSet = true; m_analysisReportId.assign(value); }
-    inline GetAnalysisReportResultsRequest& WithAnalysisReportId(const Aws::String& value) { SetAnalysisReportId(value); return *this;}
-    inline GetAnalysisReportResultsRequest& WithAnalysisReportId(Aws::String&& value) { SetAnalysisReportId(std::move(value)); return *this;}
-    inline GetAnalysisReportResultsRequest& WithAnalysisReportId(const char* value) { SetAnalysisReportId(value); return *this;}
+    template<typename AnalysisReportIdT = Aws::String>
+    void SetAnalysisReportId(AnalysisReportIdT&& value) { m_analysisReportIdHasBeenSet = true; m_analysisReportId = std::forward<AnalysisReportIdT>(value); }
+    template<typename AnalysisReportIdT = Aws::String>
+    GetAnalysisReportResultsRequest& WithAnalysisReportId(AnalysisReportIdT&& value) { SetAnalysisReportId(std::forward<AnalysisReportIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +66,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the firewall.</p> <p>You must specify the
      * ARN or the name, and you can specify both. </p>
      */
-    inline const Aws::String& GetFirewallArn() const{ return m_firewallArn; }
+    inline const Aws::String& GetFirewallArn() const { return m_firewallArn; }
     inline bool FirewallArnHasBeenSet() const { return m_firewallArnHasBeenSet; }
-    inline void SetFirewallArn(const Aws::String& value) { m_firewallArnHasBeenSet = true; m_firewallArn = value; }
-    inline void SetFirewallArn(Aws::String&& value) { m_firewallArnHasBeenSet = true; m_firewallArn = std::move(value); }
-    inline void SetFirewallArn(const char* value) { m_firewallArnHasBeenSet = true; m_firewallArn.assign(value); }
-    inline GetAnalysisReportResultsRequest& WithFirewallArn(const Aws::String& value) { SetFirewallArn(value); return *this;}
-    inline GetAnalysisReportResultsRequest& WithFirewallArn(Aws::String&& value) { SetFirewallArn(std::move(value)); return *this;}
-    inline GetAnalysisReportResultsRequest& WithFirewallArn(const char* value) { SetFirewallArn(value); return *this;}
+    template<typename FirewallArnT = Aws::String>
+    void SetFirewallArn(FirewallArnT&& value) { m_firewallArnHasBeenSet = true; m_firewallArn = std::forward<FirewallArnT>(value); }
+    template<typename FirewallArnT = Aws::String>
+    GetAnalysisReportResultsRequest& WithFirewallArn(FirewallArnT&& value) { SetFirewallArn(std::forward<FirewallArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +82,12 @@ namespace Model
      * response. To retrieve the next batch of objects, use the token returned from the
      * prior request in your next request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetAnalysisReportResultsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetAnalysisReportResultsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetAnalysisReportResultsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetAnalysisReportResultsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,7 +97,7 @@ namespace Model
      * provides a <code>NextToken</code> value that you can use in a subsequent call to
      * get the next batch of objects.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetAnalysisReportResultsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -124,7 +116,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

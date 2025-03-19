@@ -34,7 +34,7 @@ namespace Model
   class OriginAccessControlConfig
   {
   public:
-    AWS_CLOUDFRONT_API OriginAccessControlConfig();
+    AWS_CLOUDFRONT_API OriginAccessControlConfig() = default;
     AWS_CLOUDFRONT_API OriginAccessControlConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API OriginAccessControlConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,28 +46,24 @@ namespace Model
      * <p>A name to identify the origin access control. You can specify up to 64
      * characters.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline OriginAccessControlConfig& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline OriginAccessControlConfig& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline OriginAccessControlConfig& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    OriginAccessControlConfig& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the origin access control.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline OriginAccessControlConfig& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline OriginAccessControlConfig& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline OriginAccessControlConfig& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    OriginAccessControlConfig& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +72,10 @@ namespace Model
      * CloudFront signs (authenticates) requests. The only valid value is
      * <code>sigv4</code>.</p>
      */
-    inline const OriginAccessControlSigningProtocols& GetSigningProtocol() const{ return m_signingProtocol; }
+    inline OriginAccessControlSigningProtocols GetSigningProtocol() const { return m_signingProtocol; }
     inline bool SigningProtocolHasBeenSet() const { return m_signingProtocolHasBeenSet; }
-    inline void SetSigningProtocol(const OriginAccessControlSigningProtocols& value) { m_signingProtocolHasBeenSet = true; m_signingProtocol = value; }
-    inline void SetSigningProtocol(OriginAccessControlSigningProtocols&& value) { m_signingProtocolHasBeenSet = true; m_signingProtocol = std::move(value); }
-    inline OriginAccessControlConfig& WithSigningProtocol(const OriginAccessControlSigningProtocols& value) { SetSigningProtocol(value); return *this;}
-    inline OriginAccessControlConfig& WithSigningProtocol(OriginAccessControlSigningProtocols&& value) { SetSigningProtocol(std::move(value)); return *this;}
+    inline void SetSigningProtocol(OriginAccessControlSigningProtocols value) { m_signingProtocolHasBeenSet = true; m_signingProtocol = value; }
+    inline OriginAccessControlConfig& WithSigningProtocol(OriginAccessControlSigningProtocols value) { SetSigningProtocol(value); return *this;}
     ///@}
 
     ///@{
@@ -108,24 +102,20 @@ namespace Model
      * policy</a> for all cache behaviors that use origins associated with this origin
      * access control.</b> </p> </li> </ul>
      */
-    inline const OriginAccessControlSigningBehaviors& GetSigningBehavior() const{ return m_signingBehavior; }
+    inline OriginAccessControlSigningBehaviors GetSigningBehavior() const { return m_signingBehavior; }
     inline bool SigningBehaviorHasBeenSet() const { return m_signingBehaviorHasBeenSet; }
-    inline void SetSigningBehavior(const OriginAccessControlSigningBehaviors& value) { m_signingBehaviorHasBeenSet = true; m_signingBehavior = value; }
-    inline void SetSigningBehavior(OriginAccessControlSigningBehaviors&& value) { m_signingBehaviorHasBeenSet = true; m_signingBehavior = std::move(value); }
-    inline OriginAccessControlConfig& WithSigningBehavior(const OriginAccessControlSigningBehaviors& value) { SetSigningBehavior(value); return *this;}
-    inline OriginAccessControlConfig& WithSigningBehavior(OriginAccessControlSigningBehaviors&& value) { SetSigningBehavior(std::move(value)); return *this;}
+    inline void SetSigningBehavior(OriginAccessControlSigningBehaviors value) { m_signingBehaviorHasBeenSet = true; m_signingBehavior = value; }
+    inline OriginAccessControlConfig& WithSigningBehavior(OriginAccessControlSigningBehaviors value) { SetSigningBehavior(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of origin that this origin access control is for.</p>
      */
-    inline const OriginAccessControlOriginTypes& GetOriginAccessControlOriginType() const{ return m_originAccessControlOriginType; }
+    inline OriginAccessControlOriginTypes GetOriginAccessControlOriginType() const { return m_originAccessControlOriginType; }
     inline bool OriginAccessControlOriginTypeHasBeenSet() const { return m_originAccessControlOriginTypeHasBeenSet; }
-    inline void SetOriginAccessControlOriginType(const OriginAccessControlOriginTypes& value) { m_originAccessControlOriginTypeHasBeenSet = true; m_originAccessControlOriginType = value; }
-    inline void SetOriginAccessControlOriginType(OriginAccessControlOriginTypes&& value) { m_originAccessControlOriginTypeHasBeenSet = true; m_originAccessControlOriginType = std::move(value); }
-    inline OriginAccessControlConfig& WithOriginAccessControlOriginType(const OriginAccessControlOriginTypes& value) { SetOriginAccessControlOriginType(value); return *this;}
-    inline OriginAccessControlConfig& WithOriginAccessControlOriginType(OriginAccessControlOriginTypes&& value) { SetOriginAccessControlOriginType(std::move(value)); return *this;}
+    inline void SetOriginAccessControlOriginType(OriginAccessControlOriginTypes value) { m_originAccessControlOriginTypeHasBeenSet = true; m_originAccessControlOriginType = value; }
+    inline OriginAccessControlConfig& WithOriginAccessControlOriginType(OriginAccessControlOriginTypes value) { SetOriginAccessControlOriginType(value); return *this;}
     ///@}
   private:
 
@@ -135,13 +125,13 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    OriginAccessControlSigningProtocols m_signingProtocol;
+    OriginAccessControlSigningProtocols m_signingProtocol{OriginAccessControlSigningProtocols::NOT_SET};
     bool m_signingProtocolHasBeenSet = false;
 
-    OriginAccessControlSigningBehaviors m_signingBehavior;
+    OriginAccessControlSigningBehaviors m_signingBehavior{OriginAccessControlSigningBehaviors::NOT_SET};
     bool m_signingBehaviorHasBeenSet = false;
 
-    OriginAccessControlOriginTypes m_originAccessControlOriginType;
+    OriginAccessControlOriginTypes m_originAccessControlOriginType{OriginAccessControlOriginTypes::NOT_SET};
     bool m_originAccessControlOriginTypeHasBeenSet = false;
   };
 

@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-StorageFlowNodeConfiguration::StorageFlowNodeConfiguration() : 
-    m_serviceConfigurationHasBeenSet(false)
-{
-}
-
 StorageFlowNodeConfiguration::StorageFlowNodeConfiguration(JsonView jsonValue)
-  : StorageFlowNodeConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ StorageFlowNodeConfiguration& StorageFlowNodeConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("serviceConfiguration"))
   {
     m_serviceConfiguration = jsonValue.GetObject("serviceConfiguration");
-
     m_serviceConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

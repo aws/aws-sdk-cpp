@@ -14,42 +14,6 @@ using namespace Aws::JsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-KitchenSinkOperationRequest::KitchenSinkOperationRequest() : 
-    m_blobHasBeenSet(false),
-    m_boolean(false),
-    m_booleanHasBeenSet(false),
-    m_double(0.0),
-    m_doubleHasBeenSet(false),
-    m_emptyStructHasBeenSet(false),
-    m_float(0.0),
-    m_floatHasBeenSet(false),
-    m_httpdateTimestampHasBeenSet(false),
-    m_integer(0),
-    m_integerHasBeenSet(false),
-    m_iso8601TimestampHasBeenSet(false),
-    m_jsonValueHasBeenSet(false),
-    m_listOfListsHasBeenSet(false),
-    m_listOfMapsOfStringsHasBeenSet(false),
-    m_listOfStringsHasBeenSet(false),
-    m_listOfStructsHasBeenSet(false),
-    m_long(0),
-    m_longHasBeenSet(false),
-    m_mapOfListsOfStringsHasBeenSet(false),
-    m_mapOfMapsHasBeenSet(false),
-    m_mapOfStringsHasBeenSet(false),
-    m_mapOfStructsHasBeenSet(false),
-    m_recursiveListHasBeenSet(false),
-    m_recursiveMapHasBeenSet(false),
-    m_recursiveStructHasBeenSet(false),
-    m_simpleStructHasBeenSet(false),
-    m_stringHasBeenSet(false),
-    m_structWithJsonNameHasBeenSet(false),
-    m_timestampHasBeenSet(false),
-    m_unixTimestampHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Aws::String KitchenSinkOperationRequest::SerializePayload() const
 {
   JsonValue payload;

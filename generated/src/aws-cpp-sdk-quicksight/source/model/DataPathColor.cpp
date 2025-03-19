@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DataPathColor::DataPathColor() : 
-    m_elementHasBeenSet(false),
-    m_colorHasBeenSet(false),
-    m_timeGranularity(TimeGranularity::NOT_SET),
-    m_timeGranularityHasBeenSet(false)
-{
-}
-
 DataPathColor::DataPathColor(JsonView jsonValue)
-  : DataPathColor()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DataPathColor& DataPathColor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Element"))
   {
     m_element = jsonValue.GetObject("Element");
-
     m_elementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Color"))
   {
     m_color = jsonValue.GetString("Color");
-
     m_colorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeGranularity"))
   {
     m_timeGranularity = TimeGranularityMapper::GetTimeGranularityForName(jsonValue.GetString("TimeGranularity"));
-
     m_timeGranularityHasBeenSet = true;
   }
-
   return *this;
 }
 

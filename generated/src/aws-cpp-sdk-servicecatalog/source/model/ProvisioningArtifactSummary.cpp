@@ -18,17 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-ProvisioningArtifactSummary::ProvisioningArtifactSummary() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_provisioningArtifactMetadataHasBeenSet(false)
-{
-}
-
 ProvisioningArtifactSummary::ProvisioningArtifactSummary(JsonView jsonValue)
-  : ProvisioningArtifactSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ProvisioningArtifactSummary& ProvisioningArtifactSummary::operator =(JsonView js
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisioningArtifactMetadata"))
   {
     Aws::Map<Aws::String, JsonView> provisioningArtifactMetadataJsonMap = jsonValue.GetObject("ProvisioningArtifactMetadata").GetAllObjects();
@@ -72,7 +54,6 @@ ProvisioningArtifactSummary& ProvisioningArtifactSummary::operator =(JsonView js
     }
     m_provisioningArtifactMetadataHasBeenSet = true;
   }
-
   return *this;
 }
 

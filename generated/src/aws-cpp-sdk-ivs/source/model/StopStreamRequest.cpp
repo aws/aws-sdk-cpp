@@ -12,11 +12,6 @@ using namespace Aws::IVS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopStreamRequest::StopStreamRequest() : 
-    m_channelArnHasBeenSet(false)
-{
-}
-
 Aws::String StopStreamRequest::SerializePayload() const
 {
   JsonValue payload;

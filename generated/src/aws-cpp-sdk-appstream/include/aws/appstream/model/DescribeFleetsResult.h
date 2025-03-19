@@ -29,7 +29,7 @@ namespace Model
   class DescribeFleetsResult
   {
   public:
-    AWS_APPSTREAM_API DescribeFleetsResult();
+    AWS_APPSTREAM_API DescribeFleetsResult() = default;
     AWS_APPSTREAM_API DescribeFleetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSTREAM_API DescribeFleetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Information about the fleets.</p>
      */
-    inline const Aws::Vector<Fleet>& GetFleets() const{ return m_fleets; }
-    inline void SetFleets(const Aws::Vector<Fleet>& value) { m_fleets = value; }
-    inline void SetFleets(Aws::Vector<Fleet>&& value) { m_fleets = std::move(value); }
-    inline DescribeFleetsResult& WithFleets(const Aws::Vector<Fleet>& value) { SetFleets(value); return *this;}
-    inline DescribeFleetsResult& WithFleets(Aws::Vector<Fleet>&& value) { SetFleets(std::move(value)); return *this;}
-    inline DescribeFleetsResult& AddFleets(const Fleet& value) { m_fleets.push_back(value); return *this; }
-    inline DescribeFleetsResult& AddFleets(Fleet&& value) { m_fleets.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Fleet>& GetFleets() const { return m_fleets; }
+    template<typename FleetsT = Aws::Vector<Fleet>>
+    void SetFleets(FleetsT&& value) { m_fleetsHasBeenSet = true; m_fleets = std::forward<FleetsT>(value); }
+    template<typename FleetsT = Aws::Vector<Fleet>>
+    DescribeFleetsResult& WithFleets(FleetsT&& value) { SetFleets(std::forward<FleetsT>(value)); return *this;}
+    template<typename FleetsT = Fleet>
+    DescribeFleetsResult& AddFleets(FleetsT&& value) { m_fleetsHasBeenSet = true; m_fleets.emplace_back(std::forward<FleetsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The pagination token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeFleetsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeFleetsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeFleetsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeFleetsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeFleetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeFleetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeFleetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeFleetsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Fleet> m_fleets;
+    bool m_fleetsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

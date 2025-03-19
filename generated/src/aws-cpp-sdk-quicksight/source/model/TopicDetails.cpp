@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TopicDetails::TopicDetails() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_userExperienceVersion(TopicUserExperienceVersion::NOT_SET),
-    m_userExperienceVersionHasBeenSet(false),
-    m_dataSetsHasBeenSet(false),
-    m_configOptionsHasBeenSet(false)
-{
-}
-
 TopicDetails::TopicDetails(JsonView jsonValue)
-  : TopicDetails()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ TopicDetails& TopicDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserExperienceVersion"))
   {
     m_userExperienceVersion = TopicUserExperienceVersionMapper::GetTopicUserExperienceVersionForName(jsonValue.GetString("UserExperienceVersion"));
-
     m_userExperienceVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSets"))
   {
     Aws::Utils::Array<JsonView> dataSetsJsonList = jsonValue.GetArray("DataSets");
@@ -66,14 +49,11 @@ TopicDetails& TopicDetails::operator =(JsonView jsonValue)
     }
     m_dataSetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigOptions"))
   {
     m_configOptions = jsonValue.GetObject("ConfigOptions");
-
     m_configOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

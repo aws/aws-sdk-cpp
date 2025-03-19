@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetOTAUpdateResult::GetOTAUpdateResult()
-{
-}
-
 GetOTAUpdateResult::GetOTAUpdateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetOTAUpdateResult& GetOTAUpdateResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("otaUpdateInfo"))
   {
     m_otaUpdateInfo = jsonValue.GetObject("otaUpdateInfo");
-
+    m_otaUpdateInfoHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

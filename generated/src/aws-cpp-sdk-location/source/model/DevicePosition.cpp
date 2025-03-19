@@ -18,18 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-DevicePosition::DevicePosition() : 
-    m_deviceIdHasBeenSet(false),
-    m_sampleTimeHasBeenSet(false),
-    m_receivedTimeHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_accuracyHasBeenSet(false),
-    m_positionPropertiesHasBeenSet(false)
-{
-}
-
 DevicePosition::DevicePosition(JsonView jsonValue)
-  : DevicePosition()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ DevicePosition& DevicePosition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DeviceId"))
   {
     m_deviceId = jsonValue.GetString("DeviceId");
-
     m_deviceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SampleTime"))
   {
     m_sampleTime = jsonValue.GetString("SampleTime");
-
     m_sampleTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReceivedTime"))
   {
     m_receivedTime = jsonValue.GetString("ReceivedTime");
-
     m_receivedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Position"))
   {
     Aws::Utils::Array<JsonView> positionJsonList = jsonValue.GetArray("Position");
@@ -66,14 +49,11 @@ DevicePosition& DevicePosition::operator =(JsonView jsonValue)
     }
     m_positionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Accuracy"))
   {
     m_accuracy = jsonValue.GetObject("Accuracy");
-
     m_accuracyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PositionProperties"))
   {
     Aws::Map<Aws::String, JsonView> positionPropertiesJsonMap = jsonValue.GetObject("PositionProperties").GetAllObjects();
@@ -83,7 +63,6 @@ DevicePosition& DevicePosition::operator =(JsonView jsonValue)
     }
     m_positionPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

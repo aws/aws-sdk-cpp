@@ -15,22 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeActivitiesRequest::DescribeActivitiesRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_organizationIdHasBeenSet(false),
-    m_activityTypesHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_includeIndirectActivities(false),
-    m_includeIndirectActivitiesHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeActivitiesRequest::SerializePayload() const
 {
   return {};

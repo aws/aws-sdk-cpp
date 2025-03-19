@@ -12,11 +12,6 @@ using namespace Aws::Keyspaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetKeyspaceRequest::GetKeyspaceRequest() : 
-    m_keyspaceNameHasBeenSet(false)
-{
-}
-
 Aws::String GetKeyspaceRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-RequestBodyAssociatedResourceTypeConfig::RequestBodyAssociatedResourceTypeConfig() : 
-    m_defaultSizeInspectionLimit(SizeInspectionLimit::NOT_SET),
-    m_defaultSizeInspectionLimitHasBeenSet(false)
-{
-}
-
 RequestBodyAssociatedResourceTypeConfig::RequestBodyAssociatedResourceTypeConfig(JsonView jsonValue)
-  : RequestBodyAssociatedResourceTypeConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RequestBodyAssociatedResourceTypeConfig& RequestBodyAssociatedResourceTypeConfig
   if(jsonValue.ValueExists("DefaultSizeInspectionLimit"))
   {
     m_defaultSizeInspectionLimit = SizeInspectionLimitMapper::GetSizeInspectionLimitForName(jsonValue.GetString("DefaultSizeInspectionLimit"));
-
     m_defaultSizeInspectionLimitHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -27,7 +27,7 @@ namespace Model
   class DeleteSourceRepositoryResult
   {
   public:
-    AWS_CODECATALYST_API DeleteSourceRepositoryResult();
+    AWS_CODECATALYST_API DeleteSourceRepositoryResult() = default;
     AWS_CODECATALYST_API DeleteSourceRepositoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECATALYST_API DeleteSourceRepositoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,60 +36,56 @@ namespace Model
     /**
      * <p>The name of the space.</p>
      */
-    inline const Aws::String& GetSpaceName() const{ return m_spaceName; }
-    inline void SetSpaceName(const Aws::String& value) { m_spaceName = value; }
-    inline void SetSpaceName(Aws::String&& value) { m_spaceName = std::move(value); }
-    inline void SetSpaceName(const char* value) { m_spaceName.assign(value); }
-    inline DeleteSourceRepositoryResult& WithSpaceName(const Aws::String& value) { SetSpaceName(value); return *this;}
-    inline DeleteSourceRepositoryResult& WithSpaceName(Aws::String&& value) { SetSpaceName(std::move(value)); return *this;}
-    inline DeleteSourceRepositoryResult& WithSpaceName(const char* value) { SetSpaceName(value); return *this;}
+    inline const Aws::String& GetSpaceName() const { return m_spaceName; }
+    template<typename SpaceNameT = Aws::String>
+    void SetSpaceName(SpaceNameT&& value) { m_spaceNameHasBeenSet = true; m_spaceName = std::forward<SpaceNameT>(value); }
+    template<typename SpaceNameT = Aws::String>
+    DeleteSourceRepositoryResult& WithSpaceName(SpaceNameT&& value) { SetSpaceName(std::forward<SpaceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the project in the space.</p>
      */
-    inline const Aws::String& GetProjectName() const{ return m_projectName; }
-    inline void SetProjectName(const Aws::String& value) { m_projectName = value; }
-    inline void SetProjectName(Aws::String&& value) { m_projectName = std::move(value); }
-    inline void SetProjectName(const char* value) { m_projectName.assign(value); }
-    inline DeleteSourceRepositoryResult& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-    inline DeleteSourceRepositoryResult& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-    inline DeleteSourceRepositoryResult& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+    inline const Aws::String& GetProjectName() const { return m_projectName; }
+    template<typename ProjectNameT = Aws::String>
+    void SetProjectName(ProjectNameT&& value) { m_projectNameHasBeenSet = true; m_projectName = std::forward<ProjectNameT>(value); }
+    template<typename ProjectNameT = Aws::String>
+    DeleteSourceRepositoryResult& WithProjectName(ProjectNameT&& value) { SetProjectName(std::forward<ProjectNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the repository.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline DeleteSourceRepositoryResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DeleteSourceRepositoryResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DeleteSourceRepositoryResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DeleteSourceRepositoryResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteSourceRepositoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteSourceRepositoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteSourceRepositoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteSourceRepositoryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_spaceName;
+    bool m_spaceNameHasBeenSet = false;
 
     Aws::String m_projectName;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

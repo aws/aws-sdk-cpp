@@ -18,27 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-RecordDetail::RecordDetail() : 
-    m_recordIdHasBeenSet(false),
-    m_provisionedProductNameHasBeenSet(false),
-    m_status(RecordStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_updatedTimeHasBeenSet(false),
-    m_provisionedProductTypeHasBeenSet(false),
-    m_recordTypeHasBeenSet(false),
-    m_provisionedProductIdHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_provisioningArtifactIdHasBeenSet(false),
-    m_pathIdHasBeenSet(false),
-    m_recordErrorsHasBeenSet(false),
-    m_recordTagsHasBeenSet(false),
-    m_launchRoleArnHasBeenSet(false)
-{
-}
-
 RecordDetail::RecordDetail(JsonView jsonValue)
-  : RecordDetail()
 {
   *this = jsonValue;
 }
@@ -48,80 +28,58 @@ RecordDetail& RecordDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RecordId"))
   {
     m_recordId = jsonValue.GetString("RecordId");
-
     m_recordIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedProductName"))
   {
     m_provisionedProductName = jsonValue.GetString("ProvisionedProductName");
-
     m_provisionedProductNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = RecordStatusMapper::GetRecordStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedTime"))
   {
     m_updatedTime = jsonValue.GetDouble("UpdatedTime");
-
     m_updatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedProductType"))
   {
     m_provisionedProductType = jsonValue.GetString("ProvisionedProductType");
-
     m_provisionedProductTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordType"))
   {
     m_recordType = jsonValue.GetString("RecordType");
-
     m_recordTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedProductId"))
   {
     m_provisionedProductId = jsonValue.GetString("ProvisionedProductId");
-
     m_provisionedProductIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductId"))
   {
     m_productId = jsonValue.GetString("ProductId");
-
     m_productIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisioningArtifactId"))
   {
     m_provisioningArtifactId = jsonValue.GetString("ProvisioningArtifactId");
-
     m_provisioningArtifactIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PathId"))
   {
     m_pathId = jsonValue.GetString("PathId");
-
     m_pathIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordErrors"))
   {
     Aws::Utils::Array<JsonView> recordErrorsJsonList = jsonValue.GetArray("RecordErrors");
@@ -131,7 +89,6 @@ RecordDetail& RecordDetail::operator =(JsonView jsonValue)
     }
     m_recordErrorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordTags"))
   {
     Aws::Utils::Array<JsonView> recordTagsJsonList = jsonValue.GetArray("RecordTags");
@@ -141,14 +98,11 @@ RecordDetail& RecordDetail::operator =(JsonView jsonValue)
     }
     m_recordTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LaunchRoleArn"))
   {
     m_launchRoleArn = jsonValue.GetString("LaunchRoleArn");
-
     m_launchRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

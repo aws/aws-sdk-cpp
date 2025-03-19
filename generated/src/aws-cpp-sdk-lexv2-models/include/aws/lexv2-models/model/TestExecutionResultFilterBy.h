@@ -33,7 +33,7 @@ namespace Model
   class TestExecutionResultFilterBy
   {
   public:
-    AWS_LEXMODELSV2_API TestExecutionResultFilterBy();
+    AWS_LEXMODELSV2_API TestExecutionResultFilterBy() = default;
     AWS_LEXMODELSV2_API TestExecutionResultFilterBy(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API TestExecutionResultFilterBy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * result details"&gt;Test results details</a> for details about different types of
      * results.</p>
      */
-    inline const TestResultTypeFilter& GetResultTypeFilter() const{ return m_resultTypeFilter; }
+    inline TestResultTypeFilter GetResultTypeFilter() const { return m_resultTypeFilter; }
     inline bool ResultTypeFilterHasBeenSet() const { return m_resultTypeFilterHasBeenSet; }
-    inline void SetResultTypeFilter(const TestResultTypeFilter& value) { m_resultTypeFilterHasBeenSet = true; m_resultTypeFilter = value; }
-    inline void SetResultTypeFilter(TestResultTypeFilter&& value) { m_resultTypeFilterHasBeenSet = true; m_resultTypeFilter = std::move(value); }
-    inline TestExecutionResultFilterBy& WithResultTypeFilter(const TestResultTypeFilter& value) { SetResultTypeFilter(value); return *this;}
-    inline TestExecutionResultFilterBy& WithResultTypeFilter(TestResultTypeFilter&& value) { SetResultTypeFilter(std::move(value)); return *this;}
+    inline void SetResultTypeFilter(TestResultTypeFilter value) { m_resultTypeFilterHasBeenSet = true; m_resultTypeFilter = value; }
+    inline TestExecutionResultFilterBy& WithResultTypeFilter(TestResultTypeFilter value) { SetResultTypeFilter(value); return *this;}
     ///@}
 
     ///@{
@@ -59,16 +57,16 @@ namespace Model
      * <p>Contains information about the method for filtering Conversation level test
      * results.</p>
      */
-    inline const ConversationLevelTestResultsFilterBy& GetConversationLevelTestResultsFilterBy() const{ return m_conversationLevelTestResultsFilterBy; }
+    inline const ConversationLevelTestResultsFilterBy& GetConversationLevelTestResultsFilterBy() const { return m_conversationLevelTestResultsFilterBy; }
     inline bool ConversationLevelTestResultsFilterByHasBeenSet() const { return m_conversationLevelTestResultsFilterByHasBeenSet; }
-    inline void SetConversationLevelTestResultsFilterBy(const ConversationLevelTestResultsFilterBy& value) { m_conversationLevelTestResultsFilterByHasBeenSet = true; m_conversationLevelTestResultsFilterBy = value; }
-    inline void SetConversationLevelTestResultsFilterBy(ConversationLevelTestResultsFilterBy&& value) { m_conversationLevelTestResultsFilterByHasBeenSet = true; m_conversationLevelTestResultsFilterBy = std::move(value); }
-    inline TestExecutionResultFilterBy& WithConversationLevelTestResultsFilterBy(const ConversationLevelTestResultsFilterBy& value) { SetConversationLevelTestResultsFilterBy(value); return *this;}
-    inline TestExecutionResultFilterBy& WithConversationLevelTestResultsFilterBy(ConversationLevelTestResultsFilterBy&& value) { SetConversationLevelTestResultsFilterBy(std::move(value)); return *this;}
+    template<typename ConversationLevelTestResultsFilterByT = ConversationLevelTestResultsFilterBy>
+    void SetConversationLevelTestResultsFilterBy(ConversationLevelTestResultsFilterByT&& value) { m_conversationLevelTestResultsFilterByHasBeenSet = true; m_conversationLevelTestResultsFilterBy = std::forward<ConversationLevelTestResultsFilterByT>(value); }
+    template<typename ConversationLevelTestResultsFilterByT = ConversationLevelTestResultsFilterBy>
+    TestExecutionResultFilterBy& WithConversationLevelTestResultsFilterBy(ConversationLevelTestResultsFilterByT&& value) { SetConversationLevelTestResultsFilterBy(std::forward<ConversationLevelTestResultsFilterByT>(value)); return *this;}
     ///@}
   private:
 
-    TestResultTypeFilter m_resultTypeFilter;
+    TestResultTypeFilter m_resultTypeFilter{TestResultTypeFilter::NOT_SET};
     bool m_resultTypeFilterHasBeenSet = false;
 
     ConversationLevelTestResultsFilterBy m_conversationLevelTestResultsFilterBy;

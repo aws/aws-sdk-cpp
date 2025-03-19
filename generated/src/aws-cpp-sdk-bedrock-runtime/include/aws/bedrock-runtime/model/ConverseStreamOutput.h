@@ -41,7 +41,7 @@ namespace Model
   class ConverseStreamOutput
   {
   public:
-    AWS_BEDROCKRUNTIME_API ConverseStreamOutput();
+    AWS_BEDROCKRUNTIME_API ConverseStreamOutput() = default;
     AWS_BEDROCKRUNTIME_API ConverseStreamOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API ConverseStreamOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,96 +51,96 @@ namespace Model
     /**
      * <p>Message start information.</p>
      */
-    inline const MessageStartEvent& GetMessageStart() const{ return m_messageStart; }
+    inline const MessageStartEvent& GetMessageStart() const { return m_messageStart; }
     inline bool MessageStartHasBeenSet() const { return m_messageStartHasBeenSet; }
-    inline void SetMessageStart(const MessageStartEvent& value) { m_messageStartHasBeenSet = true; m_messageStart = value; }
-    inline void SetMessageStart(MessageStartEvent&& value) { m_messageStartHasBeenSet = true; m_messageStart = std::move(value); }
-    inline ConverseStreamOutput& WithMessageStart(const MessageStartEvent& value) { SetMessageStart(value); return *this;}
-    inline ConverseStreamOutput& WithMessageStart(MessageStartEvent&& value) { SetMessageStart(std::move(value)); return *this;}
+    template<typename MessageStartT = MessageStartEvent>
+    void SetMessageStart(MessageStartT&& value) { m_messageStartHasBeenSet = true; m_messageStart = std::forward<MessageStartT>(value); }
+    template<typename MessageStartT = MessageStartEvent>
+    ConverseStreamOutput& WithMessageStart(MessageStartT&& value) { SetMessageStart(std::forward<MessageStartT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Start information for a content block.</p>
      */
-    inline const ContentBlockStartEvent& GetContentBlockStart() const{ return m_contentBlockStart; }
+    inline const ContentBlockStartEvent& GetContentBlockStart() const { return m_contentBlockStart; }
     inline bool ContentBlockStartHasBeenSet() const { return m_contentBlockStartHasBeenSet; }
-    inline void SetContentBlockStart(const ContentBlockStartEvent& value) { m_contentBlockStartHasBeenSet = true; m_contentBlockStart = value; }
-    inline void SetContentBlockStart(ContentBlockStartEvent&& value) { m_contentBlockStartHasBeenSet = true; m_contentBlockStart = std::move(value); }
-    inline ConverseStreamOutput& WithContentBlockStart(const ContentBlockStartEvent& value) { SetContentBlockStart(value); return *this;}
-    inline ConverseStreamOutput& WithContentBlockStart(ContentBlockStartEvent&& value) { SetContentBlockStart(std::move(value)); return *this;}
+    template<typename ContentBlockStartT = ContentBlockStartEvent>
+    void SetContentBlockStart(ContentBlockStartT&& value) { m_contentBlockStartHasBeenSet = true; m_contentBlockStart = std::forward<ContentBlockStartT>(value); }
+    template<typename ContentBlockStartT = ContentBlockStartEvent>
+    ConverseStreamOutput& WithContentBlockStart(ContentBlockStartT&& value) { SetContentBlockStart(std::forward<ContentBlockStartT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The messages output content block delta.</p>
      */
-    inline const ContentBlockDeltaEvent& GetContentBlockDelta() const{ return m_contentBlockDelta; }
+    inline const ContentBlockDeltaEvent& GetContentBlockDelta() const { return m_contentBlockDelta; }
     inline bool ContentBlockDeltaHasBeenSet() const { return m_contentBlockDeltaHasBeenSet; }
-    inline void SetContentBlockDelta(const ContentBlockDeltaEvent& value) { m_contentBlockDeltaHasBeenSet = true; m_contentBlockDelta = value; }
-    inline void SetContentBlockDelta(ContentBlockDeltaEvent&& value) { m_contentBlockDeltaHasBeenSet = true; m_contentBlockDelta = std::move(value); }
-    inline ConverseStreamOutput& WithContentBlockDelta(const ContentBlockDeltaEvent& value) { SetContentBlockDelta(value); return *this;}
-    inline ConverseStreamOutput& WithContentBlockDelta(ContentBlockDeltaEvent&& value) { SetContentBlockDelta(std::move(value)); return *this;}
+    template<typename ContentBlockDeltaT = ContentBlockDeltaEvent>
+    void SetContentBlockDelta(ContentBlockDeltaT&& value) { m_contentBlockDeltaHasBeenSet = true; m_contentBlockDelta = std::forward<ContentBlockDeltaT>(value); }
+    template<typename ContentBlockDeltaT = ContentBlockDeltaEvent>
+    ConverseStreamOutput& WithContentBlockDelta(ContentBlockDeltaT&& value) { SetContentBlockDelta(std::forward<ContentBlockDeltaT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Stop information for a content block.</p>
      */
-    inline const ContentBlockStopEvent& GetContentBlockStop() const{ return m_contentBlockStop; }
+    inline const ContentBlockStopEvent& GetContentBlockStop() const { return m_contentBlockStop; }
     inline bool ContentBlockStopHasBeenSet() const { return m_contentBlockStopHasBeenSet; }
-    inline void SetContentBlockStop(const ContentBlockStopEvent& value) { m_contentBlockStopHasBeenSet = true; m_contentBlockStop = value; }
-    inline void SetContentBlockStop(ContentBlockStopEvent&& value) { m_contentBlockStopHasBeenSet = true; m_contentBlockStop = std::move(value); }
-    inline ConverseStreamOutput& WithContentBlockStop(const ContentBlockStopEvent& value) { SetContentBlockStop(value); return *this;}
-    inline ConverseStreamOutput& WithContentBlockStop(ContentBlockStopEvent&& value) { SetContentBlockStop(std::move(value)); return *this;}
+    template<typename ContentBlockStopT = ContentBlockStopEvent>
+    void SetContentBlockStop(ContentBlockStopT&& value) { m_contentBlockStopHasBeenSet = true; m_contentBlockStop = std::forward<ContentBlockStopT>(value); }
+    template<typename ContentBlockStopT = ContentBlockStopEvent>
+    ConverseStreamOutput& WithContentBlockStop(ContentBlockStopT&& value) { SetContentBlockStop(std::forward<ContentBlockStopT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Message stop information.</p>
      */
-    inline const MessageStopEvent& GetMessageStop() const{ return m_messageStop; }
+    inline const MessageStopEvent& GetMessageStop() const { return m_messageStop; }
     inline bool MessageStopHasBeenSet() const { return m_messageStopHasBeenSet; }
-    inline void SetMessageStop(const MessageStopEvent& value) { m_messageStopHasBeenSet = true; m_messageStop = value; }
-    inline void SetMessageStop(MessageStopEvent&& value) { m_messageStopHasBeenSet = true; m_messageStop = std::move(value); }
-    inline ConverseStreamOutput& WithMessageStop(const MessageStopEvent& value) { SetMessageStop(value); return *this;}
-    inline ConverseStreamOutput& WithMessageStop(MessageStopEvent&& value) { SetMessageStop(std::move(value)); return *this;}
+    template<typename MessageStopT = MessageStopEvent>
+    void SetMessageStop(MessageStopT&& value) { m_messageStopHasBeenSet = true; m_messageStop = std::forward<MessageStopT>(value); }
+    template<typename MessageStopT = MessageStopEvent>
+    ConverseStreamOutput& WithMessageStop(MessageStopT&& value) { SetMessageStop(std::forward<MessageStopT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Metadata for the converse output stream.</p>
      */
-    inline const ConverseStreamMetadataEvent& GetMetadata() const{ return m_metadata; }
+    inline const ConverseStreamMetadataEvent& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const ConverseStreamMetadataEvent& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(ConverseStreamMetadataEvent&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline ConverseStreamOutput& WithMetadata(const ConverseStreamMetadataEvent& value) { SetMetadata(value); return *this;}
-    inline ConverseStreamOutput& WithMetadata(ConverseStreamMetadataEvent&& value) { SetMetadata(std::move(value)); return *this;}
+    template<typename MetadataT = ConverseStreamMetadataEvent>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = ConverseStreamMetadataEvent>
+    ConverseStreamOutput& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An internal server error occurred. Retry your request.</p>
      */
-    inline const InternalServerException& GetInternalServerException() const{ return m_internalServerException; }
+    inline const InternalServerException& GetInternalServerException() const { return m_internalServerException; }
     inline bool InternalServerExceptionHasBeenSet() const { return m_internalServerExceptionHasBeenSet; }
-    inline void SetInternalServerException(const InternalServerException& value) { m_internalServerExceptionHasBeenSet = true; m_internalServerException = value; }
-    inline void SetInternalServerException(InternalServerException&& value) { m_internalServerExceptionHasBeenSet = true; m_internalServerException = std::move(value); }
-    inline ConverseStreamOutput& WithInternalServerException(const InternalServerException& value) { SetInternalServerException(value); return *this;}
-    inline ConverseStreamOutput& WithInternalServerException(InternalServerException&& value) { SetInternalServerException(std::move(value)); return *this;}
+    template<typename InternalServerExceptionT = InternalServerException>
+    void SetInternalServerException(InternalServerExceptionT&& value) { m_internalServerExceptionHasBeenSet = true; m_internalServerException = std::forward<InternalServerExceptionT>(value); }
+    template<typename InternalServerExceptionT = InternalServerException>
+    ConverseStreamOutput& WithInternalServerException(InternalServerExceptionT&& value) { SetInternalServerException(std::forward<InternalServerExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A streaming error occurred. Retry your request.</p>
      */
-    inline const ModelStreamErrorException& GetModelStreamErrorException() const{ return m_modelStreamErrorException; }
+    inline const ModelStreamErrorException& GetModelStreamErrorException() const { return m_modelStreamErrorException; }
     inline bool ModelStreamErrorExceptionHasBeenSet() const { return m_modelStreamErrorExceptionHasBeenSet; }
-    inline void SetModelStreamErrorException(const ModelStreamErrorException& value) { m_modelStreamErrorExceptionHasBeenSet = true; m_modelStreamErrorException = value; }
-    inline void SetModelStreamErrorException(ModelStreamErrorException&& value) { m_modelStreamErrorExceptionHasBeenSet = true; m_modelStreamErrorException = std::move(value); }
-    inline ConverseStreamOutput& WithModelStreamErrorException(const ModelStreamErrorException& value) { SetModelStreamErrorException(value); return *this;}
-    inline ConverseStreamOutput& WithModelStreamErrorException(ModelStreamErrorException&& value) { SetModelStreamErrorException(std::move(value)); return *this;}
+    template<typename ModelStreamErrorExceptionT = ModelStreamErrorException>
+    void SetModelStreamErrorException(ModelStreamErrorExceptionT&& value) { m_modelStreamErrorExceptionHasBeenSet = true; m_modelStreamErrorException = std::forward<ModelStreamErrorExceptionT>(value); }
+    template<typename ModelStreamErrorExceptionT = ModelStreamErrorException>
+    ConverseStreamOutput& WithModelStreamErrorException(ModelStreamErrorExceptionT&& value) { SetModelStreamErrorException(std::forward<ModelStreamErrorExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -150,12 +150,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-validation-error">ValidationError</a>
      * in the Amazon Bedrock User Guide</p>
      */
-    inline const ValidationException& GetValidationException() const{ return m_validationException; }
+    inline const ValidationException& GetValidationException() const { return m_validationException; }
     inline bool ValidationExceptionHasBeenSet() const { return m_validationExceptionHasBeenSet; }
-    inline void SetValidationException(const ValidationException& value) { m_validationExceptionHasBeenSet = true; m_validationException = value; }
-    inline void SetValidationException(ValidationException&& value) { m_validationExceptionHasBeenSet = true; m_validationException = std::move(value); }
-    inline ConverseStreamOutput& WithValidationException(const ValidationException& value) { SetValidationException(value); return *this;}
-    inline ConverseStreamOutput& WithValidationException(ValidationException&& value) { SetValidationException(std::move(value)); return *this;}
+    template<typename ValidationExceptionT = ValidationException>
+    void SetValidationException(ValidationExceptionT&& value) { m_validationExceptionHasBeenSet = true; m_validationException = std::forward<ValidationExceptionT>(value); }
+    template<typename ValidationExceptionT = ValidationException>
+    ConverseStreamOutput& WithValidationException(ValidationExceptionT&& value) { SetValidationException(std::forward<ValidationExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -165,12 +165,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-throttling-exception">ThrottlingException</a>
      * in the Amazon Bedrock User Guide</p>
      */
-    inline const ThrottlingException& GetThrottlingException() const{ return m_throttlingException; }
+    inline const ThrottlingException& GetThrottlingException() const { return m_throttlingException; }
     inline bool ThrottlingExceptionHasBeenSet() const { return m_throttlingExceptionHasBeenSet; }
-    inline void SetThrottlingException(const ThrottlingException& value) { m_throttlingExceptionHasBeenSet = true; m_throttlingException = value; }
-    inline void SetThrottlingException(ThrottlingException&& value) { m_throttlingExceptionHasBeenSet = true; m_throttlingException = std::move(value); }
-    inline ConverseStreamOutput& WithThrottlingException(const ThrottlingException& value) { SetThrottlingException(value); return *this;}
-    inline ConverseStreamOutput& WithThrottlingException(ThrottlingException&& value) { SetThrottlingException(std::move(value)); return *this;}
+    template<typename ThrottlingExceptionT = ThrottlingException>
+    void SetThrottlingException(ThrottlingExceptionT&& value) { m_throttlingExceptionHasBeenSet = true; m_throttlingException = std::forward<ThrottlingExceptionT>(value); }
+    template<typename ThrottlingExceptionT = ThrottlingException>
+    ConverseStreamOutput& WithThrottlingException(ThrottlingExceptionT&& value) { SetThrottlingException(std::forward<ThrottlingExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -179,12 +179,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/troubleshooting-api-error-codes.html#ts-service-unavailable">ServiceUnavailable</a>
      * in the Amazon Bedrock User Guide</p>
      */
-    inline const ServiceUnavailableException& GetServiceUnavailableException() const{ return m_serviceUnavailableException; }
+    inline const ServiceUnavailableException& GetServiceUnavailableException() const { return m_serviceUnavailableException; }
     inline bool ServiceUnavailableExceptionHasBeenSet() const { return m_serviceUnavailableExceptionHasBeenSet; }
-    inline void SetServiceUnavailableException(const ServiceUnavailableException& value) { m_serviceUnavailableExceptionHasBeenSet = true; m_serviceUnavailableException = value; }
-    inline void SetServiceUnavailableException(ServiceUnavailableException&& value) { m_serviceUnavailableExceptionHasBeenSet = true; m_serviceUnavailableException = std::move(value); }
-    inline ConverseStreamOutput& WithServiceUnavailableException(const ServiceUnavailableException& value) { SetServiceUnavailableException(value); return *this;}
-    inline ConverseStreamOutput& WithServiceUnavailableException(ServiceUnavailableException&& value) { SetServiceUnavailableException(std::move(value)); return *this;}
+    template<typename ServiceUnavailableExceptionT = ServiceUnavailableException>
+    void SetServiceUnavailableException(ServiceUnavailableExceptionT&& value) { m_serviceUnavailableExceptionHasBeenSet = true; m_serviceUnavailableException = std::forward<ServiceUnavailableExceptionT>(value); }
+    template<typename ServiceUnavailableExceptionT = ServiceUnavailableException>
+    ConverseStreamOutput& WithServiceUnavailableException(ServiceUnavailableExceptionT&& value) { SetServiceUnavailableException(std::forward<ServiceUnavailableExceptionT>(value)); return *this;}
     ///@}
   private:
 

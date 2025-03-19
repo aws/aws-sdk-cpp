@@ -12,12 +12,6 @@ using namespace Aws::MedicalImaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDICOMImportJobRequest::GetDICOMImportJobRequest() : 
-    m_datastoreIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String GetDICOMImportJobRequest::SerializePayload() const
 {
   return {};

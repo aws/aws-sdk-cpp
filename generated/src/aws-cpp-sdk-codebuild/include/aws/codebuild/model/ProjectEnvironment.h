@@ -40,7 +40,7 @@ namespace Model
   class ProjectEnvironment
   {
   public:
-    AWS_CODEBUILD_API ProjectEnvironment();
+    AWS_CODEBUILD_API ProjectEnvironment() = default;
     AWS_CODEBUILD_API ProjectEnvironment(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API ProjectEnvironment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,12 +54,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html">Build
      * environment compute types</a> in the <i>CodeBuild user guide</i>.</p>
      */
-    inline const EnvironmentType& GetType() const{ return m_type; }
+    inline EnvironmentType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const EnvironmentType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(EnvironmentType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ProjectEnvironment& WithType(const EnvironmentType& value) { SetType(value); return *this;}
-    inline ProjectEnvironment& WithType(EnvironmentType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(EnvironmentType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ProjectEnvironment& WithType(EnvironmentType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +75,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-available.html">Docker
      * images provided by CodeBuild</a> in the <i>CodeBuild user guide</i>.</p>
      */
-    inline const Aws::String& GetImage() const{ return m_image; }
+    inline const Aws::String& GetImage() const { return m_image; }
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
-    inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-    inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
-    inline ProjectEnvironment& WithImage(const Aws::String& value) { SetImage(value); return *this;}
-    inline ProjectEnvironment& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
-    inline ProjectEnvironment& WithImage(const char* value) { SetImage(value); return *this;}
+    template<typename ImageT = Aws::String>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = Aws::String>
+    ProjectEnvironment& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,12 +134,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/build-env-ref-compute-types.html#environment.types">On-demand
      * environment types</a> in the <i>CodeBuild User Guide.</i> </p>
      */
-    inline const ComputeType& GetComputeType() const{ return m_computeType; }
+    inline ComputeType GetComputeType() const { return m_computeType; }
     inline bool ComputeTypeHasBeenSet() const { return m_computeTypeHasBeenSet; }
-    inline void SetComputeType(const ComputeType& value) { m_computeTypeHasBeenSet = true; m_computeType = value; }
-    inline void SetComputeType(ComputeType&& value) { m_computeTypeHasBeenSet = true; m_computeType = std::move(value); }
-    inline ProjectEnvironment& WithComputeType(const ComputeType& value) { SetComputeType(value); return *this;}
-    inline ProjectEnvironment& WithComputeType(ComputeType&& value) { SetComputeType(std::move(value)); return *this;}
+    inline void SetComputeType(ComputeType value) { m_computeTypeHasBeenSet = true; m_computeType = value; }
+    inline ProjectEnvironment& WithComputeType(ComputeType value) { SetComputeType(value); return *this;}
     ///@}
 
     ///@{
@@ -151,24 +145,24 @@ namespace Model
      * <p>The compute configuration of the build project. This is only required if
      * <code>computeType</code> is set to <code>ATTRIBUTE_BASED_COMPUTE</code>.</p>
      */
-    inline const ComputeConfiguration& GetComputeConfiguration() const{ return m_computeConfiguration; }
+    inline const ComputeConfiguration& GetComputeConfiguration() const { return m_computeConfiguration; }
     inline bool ComputeConfigurationHasBeenSet() const { return m_computeConfigurationHasBeenSet; }
-    inline void SetComputeConfiguration(const ComputeConfiguration& value) { m_computeConfigurationHasBeenSet = true; m_computeConfiguration = value; }
-    inline void SetComputeConfiguration(ComputeConfiguration&& value) { m_computeConfigurationHasBeenSet = true; m_computeConfiguration = std::move(value); }
-    inline ProjectEnvironment& WithComputeConfiguration(const ComputeConfiguration& value) { SetComputeConfiguration(value); return *this;}
-    inline ProjectEnvironment& WithComputeConfiguration(ComputeConfiguration&& value) { SetComputeConfiguration(std::move(value)); return *this;}
+    template<typename ComputeConfigurationT = ComputeConfiguration>
+    void SetComputeConfiguration(ComputeConfigurationT&& value) { m_computeConfigurationHasBeenSet = true; m_computeConfiguration = std::forward<ComputeConfigurationT>(value); }
+    template<typename ComputeConfigurationT = ComputeConfiguration>
+    ProjectEnvironment& WithComputeConfiguration(ComputeConfigurationT&& value) { SetComputeConfiguration(std::forward<ComputeConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A ProjectFleet object to use for this build project.</p>
      */
-    inline const ProjectFleet& GetFleet() const{ return m_fleet; }
+    inline const ProjectFleet& GetFleet() const { return m_fleet; }
     inline bool FleetHasBeenSet() const { return m_fleetHasBeenSet; }
-    inline void SetFleet(const ProjectFleet& value) { m_fleetHasBeenSet = true; m_fleet = value; }
-    inline void SetFleet(ProjectFleet&& value) { m_fleetHasBeenSet = true; m_fleet = std::move(value); }
-    inline ProjectEnvironment& WithFleet(const ProjectFleet& value) { SetFleet(value); return *this;}
-    inline ProjectEnvironment& WithFleet(ProjectFleet&& value) { SetFleet(std::move(value)); return *this;}
+    template<typename FleetT = ProjectFleet>
+    void SetFleet(FleetT&& value) { m_fleetHasBeenSet = true; m_fleet = std::forward<FleetT>(value); }
+    template<typename FleetT = ProjectFleet>
+    ProjectEnvironment& WithFleet(FleetT&& value) { SetFleet(std::forward<FleetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -176,14 +170,14 @@ namespace Model
      * <p>A set of environment variables to make available to builds for this build
      * project.</p>
      */
-    inline const Aws::Vector<EnvironmentVariable>& GetEnvironmentVariables() const{ return m_environmentVariables; }
+    inline const Aws::Vector<EnvironmentVariable>& GetEnvironmentVariables() const { return m_environmentVariables; }
     inline bool EnvironmentVariablesHasBeenSet() const { return m_environmentVariablesHasBeenSet; }
-    inline void SetEnvironmentVariables(const Aws::Vector<EnvironmentVariable>& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = value; }
-    inline void SetEnvironmentVariables(Aws::Vector<EnvironmentVariable>&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = std::move(value); }
-    inline ProjectEnvironment& WithEnvironmentVariables(const Aws::Vector<EnvironmentVariable>& value) { SetEnvironmentVariables(value); return *this;}
-    inline ProjectEnvironment& WithEnvironmentVariables(Aws::Vector<EnvironmentVariable>&& value) { SetEnvironmentVariables(std::move(value)); return *this;}
-    inline ProjectEnvironment& AddEnvironmentVariables(const EnvironmentVariable& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.push_back(value); return *this; }
-    inline ProjectEnvironment& AddEnvironmentVariables(EnvironmentVariable&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.push_back(std::move(value)); return *this; }
+    template<typename EnvironmentVariablesT = Aws::Vector<EnvironmentVariable>>
+    void SetEnvironmentVariables(EnvironmentVariablesT&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables = std::forward<EnvironmentVariablesT>(value); }
+    template<typename EnvironmentVariablesT = Aws::Vector<EnvironmentVariable>>
+    ProjectEnvironment& WithEnvironmentVariables(EnvironmentVariablesT&& value) { SetEnvironmentVariables(std::forward<EnvironmentVariablesT>(value)); return *this;}
+    template<typename EnvironmentVariablesT = EnvironmentVariable>
+    ProjectEnvironment& AddEnvironmentVariables(EnvironmentVariablesT&& value) { m_environmentVariablesHasBeenSet = true; m_environmentVariables.emplace_back(std::forward<EnvironmentVariablesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -204,7 +198,7 @@ namespace Model
      * --host=tcp://0.0.0.0:2375 --storage-driver=overlay&amp;</code> </p> <p> <code>-
      * timeout -t 15 sh -c "until docker info; do echo .; sleep 1; done"</code> </p>
      */
-    inline bool GetPrivilegedMode() const{ return m_privilegedMode; }
+    inline bool GetPrivilegedMode() const { return m_privilegedMode; }
     inline bool PrivilegedModeHasBeenSet() const { return m_privilegedModeHasBeenSet; }
     inline void SetPrivilegedMode(bool value) { m_privilegedModeHasBeenSet = true; m_privilegedMode = value; }
     inline ProjectEnvironment& WithPrivilegedMode(bool value) { SetPrivilegedMode(value); return *this;}
@@ -217,26 +211,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate">certificate</a>
      * in the <i>CodeBuild User Guide</i>.</p>
      */
-    inline const Aws::String& GetCertificate() const{ return m_certificate; }
+    inline const Aws::String& GetCertificate() const { return m_certificate; }
     inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
-    inline void SetCertificate(const Aws::String& value) { m_certificateHasBeenSet = true; m_certificate = value; }
-    inline void SetCertificate(Aws::String&& value) { m_certificateHasBeenSet = true; m_certificate = std::move(value); }
-    inline void SetCertificate(const char* value) { m_certificateHasBeenSet = true; m_certificate.assign(value); }
-    inline ProjectEnvironment& WithCertificate(const Aws::String& value) { SetCertificate(value); return *this;}
-    inline ProjectEnvironment& WithCertificate(Aws::String&& value) { SetCertificate(std::move(value)); return *this;}
-    inline ProjectEnvironment& WithCertificate(const char* value) { SetCertificate(value); return *this;}
+    template<typename CertificateT = Aws::String>
+    void SetCertificate(CertificateT&& value) { m_certificateHasBeenSet = true; m_certificate = std::forward<CertificateT>(value); }
+    template<typename CertificateT = Aws::String>
+    ProjectEnvironment& WithCertificate(CertificateT&& value) { SetCertificate(std::forward<CertificateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The credentials for access to a private registry.</p>
      */
-    inline const RegistryCredential& GetRegistryCredential() const{ return m_registryCredential; }
+    inline const RegistryCredential& GetRegistryCredential() const { return m_registryCredential; }
     inline bool RegistryCredentialHasBeenSet() const { return m_registryCredentialHasBeenSet; }
-    inline void SetRegistryCredential(const RegistryCredential& value) { m_registryCredentialHasBeenSet = true; m_registryCredential = value; }
-    inline void SetRegistryCredential(RegistryCredential&& value) { m_registryCredentialHasBeenSet = true; m_registryCredential = std::move(value); }
-    inline ProjectEnvironment& WithRegistryCredential(const RegistryCredential& value) { SetRegistryCredential(value); return *this;}
-    inline ProjectEnvironment& WithRegistryCredential(RegistryCredential&& value) { SetRegistryCredential(std::move(value)); return *this;}
+    template<typename RegistryCredentialT = RegistryCredential>
+    void SetRegistryCredential(RegistryCredentialT&& value) { m_registryCredentialHasBeenSet = true; m_registryCredential = std::forward<RegistryCredentialT>(value); }
+    template<typename RegistryCredentialT = RegistryCredential>
+    ProjectEnvironment& WithRegistryCredential(RegistryCredentialT&& value) { SetRegistryCredential(std::forward<RegistryCredentialT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -250,22 +242,20 @@ namespace Model
      * registry image, you must use SERVICE_ROLE credentials. When you use an CodeBuild
      * curated image, you must use CODEBUILD credentials. </p>
      */
-    inline const ImagePullCredentialsType& GetImagePullCredentialsType() const{ return m_imagePullCredentialsType; }
+    inline ImagePullCredentialsType GetImagePullCredentialsType() const { return m_imagePullCredentialsType; }
     inline bool ImagePullCredentialsTypeHasBeenSet() const { return m_imagePullCredentialsTypeHasBeenSet; }
-    inline void SetImagePullCredentialsType(const ImagePullCredentialsType& value) { m_imagePullCredentialsTypeHasBeenSet = true; m_imagePullCredentialsType = value; }
-    inline void SetImagePullCredentialsType(ImagePullCredentialsType&& value) { m_imagePullCredentialsTypeHasBeenSet = true; m_imagePullCredentialsType = std::move(value); }
-    inline ProjectEnvironment& WithImagePullCredentialsType(const ImagePullCredentialsType& value) { SetImagePullCredentialsType(value); return *this;}
-    inline ProjectEnvironment& WithImagePullCredentialsType(ImagePullCredentialsType&& value) { SetImagePullCredentialsType(std::move(value)); return *this;}
+    inline void SetImagePullCredentialsType(ImagePullCredentialsType value) { m_imagePullCredentialsTypeHasBeenSet = true; m_imagePullCredentialsType = value; }
+    inline ProjectEnvironment& WithImagePullCredentialsType(ImagePullCredentialsType value) { SetImagePullCredentialsType(value); return *this;}
     ///@}
   private:
 
-    EnvironmentType m_type;
+    EnvironmentType m_type{EnvironmentType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_image;
     bool m_imageHasBeenSet = false;
 
-    ComputeType m_computeType;
+    ComputeType m_computeType{ComputeType::NOT_SET};
     bool m_computeTypeHasBeenSet = false;
 
     ComputeConfiguration m_computeConfiguration;
@@ -277,7 +267,7 @@ namespace Model
     Aws::Vector<EnvironmentVariable> m_environmentVariables;
     bool m_environmentVariablesHasBeenSet = false;
 
-    bool m_privilegedMode;
+    bool m_privilegedMode{false};
     bool m_privilegedModeHasBeenSet = false;
 
     Aws::String m_certificate;
@@ -286,7 +276,7 @@ namespace Model
     RegistryCredential m_registryCredential;
     bool m_registryCredentialHasBeenSet = false;
 
-    ImagePullCredentialsType m_imagePullCredentialsType;
+    ImagePullCredentialsType m_imagePullCredentialsType{ImagePullCredentialsType::NOT_SET};
     bool m_imagePullCredentialsTypeHasBeenSet = false;
   };
 

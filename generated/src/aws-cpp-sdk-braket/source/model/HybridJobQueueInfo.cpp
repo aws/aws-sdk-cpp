@@ -18,16 +18,7 @@ namespace Braket
 namespace Model
 {
 
-HybridJobQueueInfo::HybridJobQueueInfo() : 
-    m_messageHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_queue(QueueName::NOT_SET),
-    m_queueHasBeenSet(false)
-{
-}
-
 HybridJobQueueInfo::HybridJobQueueInfo(JsonView jsonValue)
-  : HybridJobQueueInfo()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ HybridJobQueueInfo& HybridJobQueueInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("position"))
   {
     m_position = jsonValue.GetString("position");
-
     m_positionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queue"))
   {
     m_queue = QueueNameMapper::GetQueueNameForName(jsonValue.GetString("queue"));
-
     m_queueHasBeenSet = true;
   }
-
   return *this;
 }
 

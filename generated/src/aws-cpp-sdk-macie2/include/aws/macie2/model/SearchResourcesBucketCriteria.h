@@ -33,7 +33,7 @@ namespace Model
   class SearchResourcesBucketCriteria
   {
   public:
-    AWS_MACIE2_API SearchResourcesBucketCriteria();
+    AWS_MACIE2_API SearchResourcesBucketCriteria() = default;
     AWS_MACIE2_API SearchResourcesBucketCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API SearchResourcesBucketCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>The property- and tag-based conditions that determine which buckets to
      * exclude from the results.</p>
      */
-    inline const SearchResourcesCriteriaBlock& GetExcludes() const{ return m_excludes; }
+    inline const SearchResourcesCriteriaBlock& GetExcludes() const { return m_excludes; }
     inline bool ExcludesHasBeenSet() const { return m_excludesHasBeenSet; }
-    inline void SetExcludes(const SearchResourcesCriteriaBlock& value) { m_excludesHasBeenSet = true; m_excludes = value; }
-    inline void SetExcludes(SearchResourcesCriteriaBlock&& value) { m_excludesHasBeenSet = true; m_excludes = std::move(value); }
-    inline SearchResourcesBucketCriteria& WithExcludes(const SearchResourcesCriteriaBlock& value) { SetExcludes(value); return *this;}
-    inline SearchResourcesBucketCriteria& WithExcludes(SearchResourcesCriteriaBlock&& value) { SetExcludes(std::move(value)); return *this;}
+    template<typename ExcludesT = SearchResourcesCriteriaBlock>
+    void SetExcludes(ExcludesT&& value) { m_excludesHasBeenSet = true; m_excludes = std::forward<ExcludesT>(value); }
+    template<typename ExcludesT = SearchResourcesCriteriaBlock>
+    SearchResourcesBucketCriteria& WithExcludes(ExcludesT&& value) { SetExcludes(std::forward<ExcludesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p>The property- and tag-based conditions that determine which buckets to
      * include in the results.</p>
      */
-    inline const SearchResourcesCriteriaBlock& GetIncludes() const{ return m_includes; }
+    inline const SearchResourcesCriteriaBlock& GetIncludes() const { return m_includes; }
     inline bool IncludesHasBeenSet() const { return m_includesHasBeenSet; }
-    inline void SetIncludes(const SearchResourcesCriteriaBlock& value) { m_includesHasBeenSet = true; m_includes = value; }
-    inline void SetIncludes(SearchResourcesCriteriaBlock&& value) { m_includesHasBeenSet = true; m_includes = std::move(value); }
-    inline SearchResourcesBucketCriteria& WithIncludes(const SearchResourcesCriteriaBlock& value) { SetIncludes(value); return *this;}
-    inline SearchResourcesBucketCriteria& WithIncludes(SearchResourcesCriteriaBlock&& value) { SetIncludes(std::move(value)); return *this;}
+    template<typename IncludesT = SearchResourcesCriteriaBlock>
+    void SetIncludes(IncludesT&& value) { m_includesHasBeenSet = true; m_includes = std::forward<IncludesT>(value); }
+    template<typename IncludesT = SearchResourcesCriteriaBlock>
+    SearchResourcesBucketCriteria& WithIncludes(IncludesT&& value) { SetIncludes(std::forward<IncludesT>(value)); return *this;}
     ///@}
   private:
 

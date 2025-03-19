@@ -18,14 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-SplunkRetryOptions::SplunkRetryOptions() : 
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false)
-{
-}
-
 SplunkRetryOptions::SplunkRetryOptions(JsonView jsonValue)
-  : SplunkRetryOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SplunkRetryOptions& SplunkRetryOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DurationInSeconds"))
   {
     m_durationInSeconds = jsonValue.GetInteger("DurationInSeconds");
-
     m_durationInSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

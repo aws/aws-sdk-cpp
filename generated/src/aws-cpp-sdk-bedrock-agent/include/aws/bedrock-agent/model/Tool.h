@@ -36,7 +36,7 @@ namespace Model
   class Tool
   {
   public:
-    AWS_BEDROCKAGENT_API Tool();
+    AWS_BEDROCKAGENT_API Tool() = default;
     AWS_BEDROCKAGENT_API Tool(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Tool& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,24 +46,24 @@ namespace Model
     /**
      * <p>Creates a cache checkpoint within a tool designation</p>
      */
-    inline const CachePointBlock& GetCachePoint() const{ return m_cachePoint; }
+    inline const CachePointBlock& GetCachePoint() const { return m_cachePoint; }
     inline bool CachePointHasBeenSet() const { return m_cachePointHasBeenSet; }
-    inline void SetCachePoint(const CachePointBlock& value) { m_cachePointHasBeenSet = true; m_cachePoint = value; }
-    inline void SetCachePoint(CachePointBlock&& value) { m_cachePointHasBeenSet = true; m_cachePoint = std::move(value); }
-    inline Tool& WithCachePoint(const CachePointBlock& value) { SetCachePoint(value); return *this;}
-    inline Tool& WithCachePoint(CachePointBlock&& value) { SetCachePoint(std::move(value)); return *this;}
+    template<typename CachePointT = CachePointBlock>
+    void SetCachePoint(CachePointT&& value) { m_cachePointHasBeenSet = true; m_cachePoint = std::forward<CachePointT>(value); }
+    template<typename CachePointT = CachePointBlock>
+    Tool& WithCachePoint(CachePointT&& value) { SetCachePoint(std::forward<CachePointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The specification for the tool.</p>
      */
-    inline const ToolSpecification& GetToolSpec() const{ return m_toolSpec; }
+    inline const ToolSpecification& GetToolSpec() const { return m_toolSpec; }
     inline bool ToolSpecHasBeenSet() const { return m_toolSpecHasBeenSet; }
-    inline void SetToolSpec(const ToolSpecification& value) { m_toolSpecHasBeenSet = true; m_toolSpec = value; }
-    inline void SetToolSpec(ToolSpecification&& value) { m_toolSpecHasBeenSet = true; m_toolSpec = std::move(value); }
-    inline Tool& WithToolSpec(const ToolSpecification& value) { SetToolSpec(value); return *this;}
-    inline Tool& WithToolSpec(ToolSpecification&& value) { SetToolSpec(std::move(value)); return *this;}
+    template<typename ToolSpecT = ToolSpecification>
+    void SetToolSpec(ToolSpecT&& value) { m_toolSpecHasBeenSet = true; m_toolSpec = std::forward<ToolSpecT>(value); }
+    template<typename ToolSpecT = ToolSpecification>
+    Tool& WithToolSpec(ToolSpecT&& value) { SetToolSpec(std::forward<ToolSpecT>(value)); return *this;}
     ///@}
   private:
 

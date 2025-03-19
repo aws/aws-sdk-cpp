@@ -22,7 +22,7 @@ namespace Model
   class PutAccountSettingDefaultRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API PutAccountSettingDefaultRequest();
+    AWS_ECS_API PutAccountSettingDefaultRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -119,12 +119,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-guard-duty-integration.html">Protecting
      * Amazon ECS workloads with Amazon ECS Runtime Monitoring</a>.</p> </li> </ul>
      */
-    inline const SettingName& GetName() const{ return m_name; }
+    inline SettingName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const SettingName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(SettingName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline PutAccountSettingDefaultRequest& WithName(const SettingName& value) { SetName(value); return *this;}
-    inline PutAccountSettingDefaultRequest& WithName(SettingName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(SettingName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline PutAccountSettingDefaultRequest& WithName(SettingName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -140,18 +138,16 @@ namespace Model
      * Amazon Web Services sends the notification, and waits 14 calendar days to retire
      * the tasks.</p> </li> </ul>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline PutAccountSettingDefaultRequest& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline PutAccountSettingDefaultRequest& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline PutAccountSettingDefaultRequest& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    PutAccountSettingDefaultRequest& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    SettingName m_name;
+    SettingName m_name{SettingName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_value;

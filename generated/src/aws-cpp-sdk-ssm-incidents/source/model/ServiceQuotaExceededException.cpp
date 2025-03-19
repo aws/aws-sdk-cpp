@@ -18,19 +18,7 @@ namespace SSMIncidents
 namespace Model
 {
 
-ServiceQuotaExceededException::ServiceQuotaExceededException() : 
-    m_messageHasBeenSet(false),
-    m_quotaCodeHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_serviceCode(ServiceCode::NOT_SET),
-    m_serviceCodeHasBeenSet(false)
-{
-}
-
 ServiceQuotaExceededException::ServiceQuotaExceededException(JsonView jsonValue)
-  : ServiceQuotaExceededException()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ ServiceQuotaExceededException& ServiceQuotaExceededException::operator =(JsonVie
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("quotaCode"))
   {
     m_quotaCode = jsonValue.GetString("quotaCode");
-
     m_quotaCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceIdentifier"))
   {
     m_resourceIdentifier = jsonValue.GetString("resourceIdentifier");
-
     m_resourceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceCode"))
   {
     m_serviceCode = ServiceCodeMapper::GetServiceCodeForName(jsonValue.GetString("serviceCode"));
-
     m_serviceCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

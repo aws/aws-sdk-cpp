@@ -23,7 +23,7 @@ namespace Model
   class ListLoaderJobsRequest : public NeptunedataRequest
   {
   public:
-    AWS_NEPTUNEDATA_API ListLoaderJobsRequest();
+    AWS_NEPTUNEDATA_API ListLoaderJobsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,7 +41,7 @@ namespace Model
      * <p>The number of load IDs to list. Must be a positive integer greater than zero
      * and not more than <code>100</code> (which is the default).</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline ListLoaderJobsRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -53,17 +53,17 @@ namespace Model
      * requests when requesting a list of load IDs by setting the parameter to
      * <code>FALSE</code>. The default value is <code>TRUE</code>.</p>
      */
-    inline bool GetIncludeQueuedLoads() const{ return m_includeQueuedLoads; }
+    inline bool GetIncludeQueuedLoads() const { return m_includeQueuedLoads; }
     inline bool IncludeQueuedLoadsHasBeenSet() const { return m_includeQueuedLoadsHasBeenSet; }
     inline void SetIncludeQueuedLoads(bool value) { m_includeQueuedLoadsHasBeenSet = true; m_includeQueuedLoads = value; }
     inline ListLoaderJobsRequest& WithIncludeQueuedLoads(bool value) { SetIncludeQueuedLoads(value); return *this;}
     ///@}
   private:
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
-    bool m_includeQueuedLoads;
+    bool m_includeQueuedLoads{false};
     bool m_includeQueuedLoadsHasBeenSet = false;
   };
 

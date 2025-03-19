@@ -12,18 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateKeyRequest::UpdateKeyRequest() : 
-    m_keyNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_expireTimeHasBeenSet(false),
-    m_noExpiry(false),
-    m_noExpiryHasBeenSet(false),
-    m_forceUpdate(false),
-    m_forceUpdateHasBeenSet(false),
-    m_restrictionsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateKeyRequest::SerializePayload() const
 {
   JsonValue payload;

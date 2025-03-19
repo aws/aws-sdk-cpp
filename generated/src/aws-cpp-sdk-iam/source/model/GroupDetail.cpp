@@ -20,19 +20,7 @@ namespace IAM
 namespace Model
 {
 
-GroupDetail::GroupDetail() : 
-    m_pathHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_groupPolicyListHasBeenSet(false),
-    m_attachedManagedPoliciesHasBeenSet(false)
-{
-}
-
 GroupDetail::GroupDetail(const XmlNode& xmlNode)
-  : GroupDetail()
 {
   *this = xmlNode;
 }
@@ -77,6 +65,7 @@ GroupDetail& GroupDetail::operator =(const XmlNode& xmlNode)
     if(!groupPolicyListNode.IsNull())
     {
       XmlNode groupPolicyListMember = groupPolicyListNode.FirstChild("member");
+      m_groupPolicyListHasBeenSet = !groupPolicyListMember.IsNull();
       while(!groupPolicyListMember.IsNull())
       {
         m_groupPolicyList.push_back(groupPolicyListMember);
@@ -89,6 +78,7 @@ GroupDetail& GroupDetail::operator =(const XmlNode& xmlNode)
     if(!attachedManagedPoliciesNode.IsNull())
     {
       XmlNode attachedManagedPoliciesMember = attachedManagedPoliciesNode.FirstChild("member");
+      m_attachedManagedPoliciesHasBeenSet = !attachedManagedPoliciesMember.IsNull();
       while(!attachedManagedPoliciesMember.IsNull())
       {
         m_attachedManagedPolicies.push_back(attachedManagedPoliciesMember);

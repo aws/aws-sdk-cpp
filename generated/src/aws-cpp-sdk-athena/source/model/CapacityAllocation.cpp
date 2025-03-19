@@ -18,17 +18,7 @@ namespace Athena
 namespace Model
 {
 
-CapacityAllocation::CapacityAllocation() : 
-    m_status(CapacityAllocationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_requestTimeHasBeenSet(false),
-    m_requestCompletionTimeHasBeenSet(false)
-{
-}
-
 CapacityAllocation::CapacityAllocation(JsonView jsonValue)
-  : CapacityAllocation()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ CapacityAllocation& CapacityAllocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = CapacityAllocationStatusMapper::GetCapacityAllocationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestTime"))
   {
     m_requestTime = jsonValue.GetDouble("RequestTime");
-
     m_requestTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestCompletionTime"))
   {
     m_requestCompletionTime = jsonValue.GetDouble("RequestCompletionTime");
-
     m_requestCompletionTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

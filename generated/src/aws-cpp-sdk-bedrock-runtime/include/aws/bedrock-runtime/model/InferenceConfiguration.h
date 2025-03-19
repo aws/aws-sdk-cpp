@@ -44,7 +44,7 @@ namespace Model
   class InferenceConfiguration
   {
   public:
-    AWS_BEDROCKRUNTIME_API InferenceConfiguration();
+    AWS_BEDROCKRUNTIME_API InferenceConfiguration() = default;
     AWS_BEDROCKRUNTIME_API InferenceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API InferenceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,7 +58,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
      * parameters for foundation models</a>. </p>
      */
-    inline int GetMaxTokens() const{ return m_maxTokens; }
+    inline int GetMaxTokens() const { return m_maxTokens; }
     inline bool MaxTokensHasBeenSet() const { return m_maxTokensHasBeenSet; }
     inline void SetMaxTokens(int value) { m_maxTokensHasBeenSet = true; m_maxTokens = value; }
     inline InferenceConfiguration& WithMaxTokens(int value) { SetMaxTokens(value); return *this;}
@@ -74,7 +74,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
      * parameters for foundation models</a>. </p>
      */
-    inline double GetTemperature() const{ return m_temperature; }
+    inline double GetTemperature() const { return m_temperature; }
     inline bool TemperatureHasBeenSet() const { return m_temperatureHasBeenSet; }
     inline void SetTemperature(double value) { m_temperatureHasBeenSet = true; m_temperature = value; }
     inline InferenceConfiguration& WithTemperature(double value) { SetTemperature(value); return *this;}
@@ -90,7 +90,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/model-parameters.html">Inference
      * parameters for foundation models</a>. </p>
      */
-    inline double GetTopP() const{ return m_topP; }
+    inline double GetTopP() const { return m_topP; }
     inline bool TopPHasBeenSet() const { return m_topPHasBeenSet; }
     inline void SetTopP(double value) { m_topPHasBeenSet = true; m_topP = value; }
     inline InferenceConfiguration& WithTopP(double value) { SetTopP(value); return *this;}
@@ -101,25 +101,24 @@ namespace Model
      * <p>A list of stop sequences. A stop sequence is a sequence of characters that
      * causes the model to stop generating the response. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetStopSequences() const{ return m_stopSequences; }
+    inline const Aws::Vector<Aws::String>& GetStopSequences() const { return m_stopSequences; }
     inline bool StopSequencesHasBeenSet() const { return m_stopSequencesHasBeenSet; }
-    inline void SetStopSequences(const Aws::Vector<Aws::String>& value) { m_stopSequencesHasBeenSet = true; m_stopSequences = value; }
-    inline void SetStopSequences(Aws::Vector<Aws::String>&& value) { m_stopSequencesHasBeenSet = true; m_stopSequences = std::move(value); }
-    inline InferenceConfiguration& WithStopSequences(const Aws::Vector<Aws::String>& value) { SetStopSequences(value); return *this;}
-    inline InferenceConfiguration& WithStopSequences(Aws::Vector<Aws::String>&& value) { SetStopSequences(std::move(value)); return *this;}
-    inline InferenceConfiguration& AddStopSequences(const Aws::String& value) { m_stopSequencesHasBeenSet = true; m_stopSequences.push_back(value); return *this; }
-    inline InferenceConfiguration& AddStopSequences(Aws::String&& value) { m_stopSequencesHasBeenSet = true; m_stopSequences.push_back(std::move(value)); return *this; }
-    inline InferenceConfiguration& AddStopSequences(const char* value) { m_stopSequencesHasBeenSet = true; m_stopSequences.push_back(value); return *this; }
+    template<typename StopSequencesT = Aws::Vector<Aws::String>>
+    void SetStopSequences(StopSequencesT&& value) { m_stopSequencesHasBeenSet = true; m_stopSequences = std::forward<StopSequencesT>(value); }
+    template<typename StopSequencesT = Aws::Vector<Aws::String>>
+    InferenceConfiguration& WithStopSequences(StopSequencesT&& value) { SetStopSequences(std::forward<StopSequencesT>(value)); return *this;}
+    template<typename StopSequencesT = Aws::String>
+    InferenceConfiguration& AddStopSequences(StopSequencesT&& value) { m_stopSequencesHasBeenSet = true; m_stopSequences.emplace_back(std::forward<StopSequencesT>(value)); return *this; }
     ///@}
   private:
 
-    int m_maxTokens;
+    int m_maxTokens{0};
     bool m_maxTokensHasBeenSet = false;
 
-    double m_temperature;
+    double m_temperature{0.0};
     bool m_temperatureHasBeenSet = false;
 
-    double m_topP;
+    double m_topP{0.0};
     bool m_topPHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_stopSequences;

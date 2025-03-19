@@ -18,25 +18,7 @@ namespace DocDBElastic
 namespace Model
 {
 
-ClusterSnapshot::ClusterSnapshot() : 
-    m_adminUserNameHasBeenSet(false),
-    m_clusterArnHasBeenSet(false),
-    m_clusterCreationTimeHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_snapshotArnHasBeenSet(false),
-    m_snapshotCreationTimeHasBeenSet(false),
-    m_snapshotNameHasBeenSet(false),
-    m_snapshotType(SnapshotType::NOT_SET),
-    m_snapshotTypeHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false)
-{
-}
-
 ClusterSnapshot::ClusterSnapshot(JsonView jsonValue)
-  : ClusterSnapshot()
 {
   *this = jsonValue;
 }
@@ -46,66 +28,48 @@ ClusterSnapshot& ClusterSnapshot::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("adminUserName"))
   {
     m_adminUserName = jsonValue.GetString("adminUserName");
-
     m_adminUserNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterArn"))
   {
     m_clusterArn = jsonValue.GetString("clusterArn");
-
     m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterCreationTime"))
   {
     m_clusterCreationTime = jsonValue.GetString("clusterCreationTime");
-
     m_clusterCreationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snapshotArn"))
   {
     m_snapshotArn = jsonValue.GetString("snapshotArn");
-
     m_snapshotArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snapshotCreationTime"))
   {
     m_snapshotCreationTime = jsonValue.GetString("snapshotCreationTime");
-
     m_snapshotCreationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snapshotName"))
   {
     m_snapshotName = jsonValue.GetString("snapshotName");
-
     m_snapshotNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snapshotType"))
   {
     m_snapshotType = SnapshotTypeMapper::GetSnapshotTypeForName(jsonValue.GetString("snapshotType"));
-
     m_snapshotTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
@@ -115,7 +79,6 @@ ClusterSnapshot& ClusterSnapshot::operator =(JsonView jsonValue)
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcSecurityGroupIds"))
   {
     Aws::Utils::Array<JsonView> vpcSecurityGroupIdsJsonList = jsonValue.GetArray("vpcSecurityGroupIds");
@@ -125,7 +88,6 @@ ClusterSnapshot& ClusterSnapshot::operator =(JsonView jsonValue)
     }
     m_vpcSecurityGroupIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

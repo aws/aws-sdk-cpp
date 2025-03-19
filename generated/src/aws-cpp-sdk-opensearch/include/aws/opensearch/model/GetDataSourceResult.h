@@ -35,7 +35,7 @@ namespace Model
   class GetDataSourceResult
   {
   public:
-    AWS_OPENSEARCHSERVICE_API GetDataSourceResult();
+    AWS_OPENSEARCHSERVICE_API GetDataSourceResult() = default;
     AWS_OPENSEARCHSERVICE_API GetDataSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPENSEARCHSERVICE_API GetDataSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,71 +44,68 @@ namespace Model
     /**
      * <p>The type of data source.</p>
      */
-    inline const DataSourceType& GetDataSourceType() const{ return m_dataSourceType; }
-    inline void SetDataSourceType(const DataSourceType& value) { m_dataSourceType = value; }
-    inline void SetDataSourceType(DataSourceType&& value) { m_dataSourceType = std::move(value); }
-    inline GetDataSourceResult& WithDataSourceType(const DataSourceType& value) { SetDataSourceType(value); return *this;}
-    inline GetDataSourceResult& WithDataSourceType(DataSourceType&& value) { SetDataSourceType(std::move(value)); return *this;}
+    inline const DataSourceType& GetDataSourceType() const { return m_dataSourceType; }
+    template<typename DataSourceTypeT = DataSourceType>
+    void SetDataSourceType(DataSourceTypeT&& value) { m_dataSourceTypeHasBeenSet = true; m_dataSourceType = std::forward<DataSourceTypeT>(value); }
+    template<typename DataSourceTypeT = DataSourceType>
+    GetDataSourceResult& WithDataSourceType(DataSourceTypeT&& value) { SetDataSourceType(std::forward<DataSourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the data source.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetDataSourceResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetDataSourceResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetDataSourceResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetDataSourceResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the data source.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetDataSourceResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetDataSourceResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetDataSourceResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetDataSourceResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the data source.</p>
      */
-    inline const DataSourceStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const DataSourceStatus& value) { m_status = value; }
-    inline void SetStatus(DataSourceStatus&& value) { m_status = std::move(value); }
-    inline GetDataSourceResult& WithStatus(const DataSourceStatus& value) { SetStatus(value); return *this;}
-    inline GetDataSourceResult& WithStatus(DataSourceStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline DataSourceStatus GetStatus() const { return m_status; }
+    inline void SetStatus(DataSourceStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetDataSourceResult& WithStatus(DataSourceStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDataSourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDataSourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDataSourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDataSourceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DataSourceType m_dataSourceType;
+    bool m_dataSourceTypeHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    DataSourceStatus m_status;
+    DataSourceStatus m_status{DataSourceStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

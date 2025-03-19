@@ -18,15 +18,7 @@ namespace BCMDataExports
 namespace Model
 {
 
-ExportReference::ExportReference() : 
-    m_exportArnHasBeenSet(false),
-    m_exportNameHasBeenSet(false),
-    m_exportStatusHasBeenSet(false)
-{
-}
-
 ExportReference::ExportReference(JsonView jsonValue)
-  : ExportReference()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ExportReference& ExportReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExportArn"))
   {
     m_exportArn = jsonValue.GetString("ExportArn");
-
     m_exportArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportName"))
   {
     m_exportName = jsonValue.GetString("ExportName");
-
     m_exportNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportStatus"))
   {
     m_exportStatus = jsonValue.GetObject("ExportStatus");
-
     m_exportStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

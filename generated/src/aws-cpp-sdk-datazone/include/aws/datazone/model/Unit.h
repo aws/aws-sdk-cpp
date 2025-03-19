@@ -30,7 +30,7 @@ namespace Model
   class Unit
   {
   public:
-    AWS_DATAZONE_API Unit();
+    AWS_DATAZONE_API Unit() = default;
     AWS_DATAZONE_API Unit(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Unit& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;

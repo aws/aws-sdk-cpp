@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RegisterJobDefinitionResult::RegisterJobDefinitionResult() : 
-    m_revision(0)
-{
-}
-
 RegisterJobDefinitionResult::RegisterJobDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : RegisterJobDefinitionResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ RegisterJobDefinitionResult& RegisterJobDefinitionResult::operator =(const Aws::
   if(jsonValue.ValueExists("jobDefinitionName"))
   {
     m_jobDefinitionName = jsonValue.GetString("jobDefinitionName");
-
+    m_jobDefinitionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobDefinitionArn"))
   {
     m_jobDefinitionArn = jsonValue.GetString("jobDefinitionArn");
-
+    m_jobDefinitionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revision"))
   {
     m_revision = jsonValue.GetInteger("revision");
-
+    m_revisionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,14 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-BusinessChain::BusinessChain() : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 BusinessChain::BusinessChain(JsonView jsonValue)
-  : BusinessChain()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BusinessChain& BusinessChain::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

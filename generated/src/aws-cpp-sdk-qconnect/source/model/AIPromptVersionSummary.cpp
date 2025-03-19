@@ -18,15 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-AIPromptVersionSummary::AIPromptVersionSummary() : 
-    m_aiPromptSummaryHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false)
-{
-}
-
 AIPromptVersionSummary::AIPromptVersionSummary(JsonView jsonValue)
-  : AIPromptVersionSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AIPromptVersionSummary& AIPromptVersionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("aiPromptSummary"))
   {
     m_aiPromptSummary = jsonValue.GetObject("aiPromptSummary");
-
     m_aiPromptSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionNumber"))
   {
     m_versionNumber = jsonValue.GetInt64("versionNumber");
-
     m_versionNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

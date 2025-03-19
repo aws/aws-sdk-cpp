@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetGroupPolicyResult::GetGroupPolicyResult()
-{
-}
-
 GetGroupPolicyResult::GetGroupPolicyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,22 +38,26 @@ GetGroupPolicyResult& GetGroupPolicyResult::operator =(const Aws::AmazonWebServi
     if(!groupNameNode.IsNull())
     {
       m_groupName = Aws::Utils::Xml::DecodeEscapedXmlText(groupNameNode.GetText());
+      m_groupNameHasBeenSet = true;
     }
     XmlNode policyNameNode = resultNode.FirstChild("PolicyName");
     if(!policyNameNode.IsNull())
     {
       m_policyName = Aws::Utils::Xml::DecodeEscapedXmlText(policyNameNode.GetText());
+      m_policyNameHasBeenSet = true;
     }
     XmlNode policyDocumentNode = resultNode.FirstChild("PolicyDocument");
     if(!policyDocumentNode.IsNull())
     {
       m_policyDocument = Aws::Utils::Xml::DecodeEscapedXmlText(policyDocumentNode.GetText());
+      m_policyDocumentHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::GetGroupPolicyResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -10,11 +10,6 @@
 using namespace Aws::STS::Model;
 using namespace Aws::Utils;
 
-GetAccessKeyInfoRequest::GetAccessKeyInfoRequest() : 
-    m_accessKeyIdHasBeenSet(false)
-{
-}
-
 Aws::String GetAccessKeyInfoRequest::SerializePayload() const
 {
   Aws::StringStream ss;

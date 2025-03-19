@@ -30,7 +30,7 @@ namespace Model
   class Highlight
   {
   public:
-    AWS_QCONNECT_API Highlight();
+    AWS_QCONNECT_API Highlight() = default;
     AWS_QCONNECT_API Highlight(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Highlight& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The offset for the start of the highlight.</p>
      */
-    inline int GetBeginOffsetInclusive() const{ return m_beginOffsetInclusive; }
+    inline int GetBeginOffsetInclusive() const { return m_beginOffsetInclusive; }
     inline bool BeginOffsetInclusiveHasBeenSet() const { return m_beginOffsetInclusiveHasBeenSet; }
     inline void SetBeginOffsetInclusive(int value) { m_beginOffsetInclusiveHasBeenSet = true; m_beginOffsetInclusive = value; }
     inline Highlight& WithBeginOffsetInclusive(int value) { SetBeginOffsetInclusive(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>The offset for the end of the highlight.</p>
      */
-    inline int GetEndOffsetExclusive() const{ return m_endOffsetExclusive; }
+    inline int GetEndOffsetExclusive() const { return m_endOffsetExclusive; }
     inline bool EndOffsetExclusiveHasBeenSet() const { return m_endOffsetExclusiveHasBeenSet; }
     inline void SetEndOffsetExclusive(int value) { m_endOffsetExclusiveHasBeenSet = true; m_endOffsetExclusive = value; }
     inline Highlight& WithEndOffsetExclusive(int value) { SetEndOffsetExclusive(value); return *this;}
     ///@}
   private:
 
-    int m_beginOffsetInclusive;
+    int m_beginOffsetInclusive{0};
     bool m_beginOffsetInclusiveHasBeenSet = false;
 
-    int m_endOffsetExclusive;
+    int m_endOffsetExclusive{0};
     bool m_endOffsetExclusiveHasBeenSet = false;
   };
 

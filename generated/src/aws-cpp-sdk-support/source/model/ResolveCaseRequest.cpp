@@ -12,11 +12,6 @@ using namespace Aws::Support::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ResolveCaseRequest::ResolveCaseRequest() : 
-    m_caseIdHasBeenSet(false)
-{
-}
-
 Aws::String ResolveCaseRequest::SerializePayload() const
 {
   JsonValue payload;

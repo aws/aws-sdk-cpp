@@ -10,14 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-UpdateSSHPublicKeyRequest::UpdateSSHPublicKeyRequest() : 
-    m_userNameHasBeenSet(false),
-    m_sSHPublicKeyIdHasBeenSet(false),
-    m_status(StatusType::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSSHPublicKeyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

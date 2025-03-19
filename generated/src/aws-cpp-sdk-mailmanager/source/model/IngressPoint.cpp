@@ -18,19 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-IngressPoint::IngressPoint() : 
-    m_aRecordHasBeenSet(false),
-    m_ingressPointIdHasBeenSet(false),
-    m_ingressPointNameHasBeenSet(false),
-    m_status(IngressPointStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(IngressPointType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 IngressPoint::IngressPoint(JsonView jsonValue)
-  : IngressPoint()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ IngressPoint& IngressPoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ARecord"))
   {
     m_aRecord = jsonValue.GetString("ARecord");
-
     m_aRecordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IngressPointId"))
   {
     m_ingressPointId = jsonValue.GetString("IngressPointId");
-
     m_ingressPointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IngressPointName"))
   {
     m_ingressPointName = jsonValue.GetString("IngressPointName");
-
     m_ingressPointNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = IngressPointStatusMapper::GetIngressPointStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = IngressPointTypeMapper::GetIngressPointTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

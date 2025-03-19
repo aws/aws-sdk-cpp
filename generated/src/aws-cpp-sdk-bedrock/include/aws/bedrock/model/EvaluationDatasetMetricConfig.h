@@ -35,7 +35,7 @@ namespace Model
   class EvaluationDatasetMetricConfig
   {
   public:
-    AWS_BEDROCK_API EvaluationDatasetMetricConfig();
+    AWS_BEDROCK_API EvaluationDatasetMetricConfig() = default;
     AWS_BEDROCK_API EvaluationDatasetMetricConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API EvaluationDatasetMetricConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,24 +47,22 @@ namespace Model
      * applies only to model evaluation jobs and is ignored for knowledge base
      * evaluation jobs.</p>
      */
-    inline const EvaluationTaskType& GetTaskType() const{ return m_taskType; }
+    inline EvaluationTaskType GetTaskType() const { return m_taskType; }
     inline bool TaskTypeHasBeenSet() const { return m_taskTypeHasBeenSet; }
-    inline void SetTaskType(const EvaluationTaskType& value) { m_taskTypeHasBeenSet = true; m_taskType = value; }
-    inline void SetTaskType(EvaluationTaskType&& value) { m_taskTypeHasBeenSet = true; m_taskType = std::move(value); }
-    inline EvaluationDatasetMetricConfig& WithTaskType(const EvaluationTaskType& value) { SetTaskType(value); return *this;}
-    inline EvaluationDatasetMetricConfig& WithTaskType(EvaluationTaskType&& value) { SetTaskType(std::move(value)); return *this;}
+    inline void SetTaskType(EvaluationTaskType value) { m_taskTypeHasBeenSet = true; m_taskType = value; }
+    inline EvaluationDatasetMetricConfig& WithTaskType(EvaluationTaskType value) { SetTaskType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the prompt dataset.</p>
      */
-    inline const EvaluationDataset& GetDataset() const{ return m_dataset; }
+    inline const EvaluationDataset& GetDataset() const { return m_dataset; }
     inline bool DatasetHasBeenSet() const { return m_datasetHasBeenSet; }
-    inline void SetDataset(const EvaluationDataset& value) { m_datasetHasBeenSet = true; m_dataset = value; }
-    inline void SetDataset(EvaluationDataset&& value) { m_datasetHasBeenSet = true; m_dataset = std::move(value); }
-    inline EvaluationDatasetMetricConfig& WithDataset(const EvaluationDataset& value) { SetDataset(value); return *this;}
-    inline EvaluationDatasetMetricConfig& WithDataset(EvaluationDataset&& value) { SetDataset(std::move(value)); return *this;}
+    template<typename DatasetT = EvaluationDataset>
+    void SetDataset(DatasetT&& value) { m_datasetHasBeenSet = true; m_dataset = std::forward<DatasetT>(value); }
+    template<typename DatasetT = EvaluationDataset>
+    EvaluationDatasetMetricConfig& WithDataset(DatasetT&& value) { SetDataset(std::forward<DatasetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,19 +91,18 @@ namespace Model
      * <code>name</code> parameter specified in
      * <code>HumanEvaluationCustomMetric</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetMetricNames() const{ return m_metricNames; }
+    inline const Aws::Vector<Aws::String>& GetMetricNames() const { return m_metricNames; }
     inline bool MetricNamesHasBeenSet() const { return m_metricNamesHasBeenSet; }
-    inline void SetMetricNames(const Aws::Vector<Aws::String>& value) { m_metricNamesHasBeenSet = true; m_metricNames = value; }
-    inline void SetMetricNames(Aws::Vector<Aws::String>&& value) { m_metricNamesHasBeenSet = true; m_metricNames = std::move(value); }
-    inline EvaluationDatasetMetricConfig& WithMetricNames(const Aws::Vector<Aws::String>& value) { SetMetricNames(value); return *this;}
-    inline EvaluationDatasetMetricConfig& WithMetricNames(Aws::Vector<Aws::String>&& value) { SetMetricNames(std::move(value)); return *this;}
-    inline EvaluationDatasetMetricConfig& AddMetricNames(const Aws::String& value) { m_metricNamesHasBeenSet = true; m_metricNames.push_back(value); return *this; }
-    inline EvaluationDatasetMetricConfig& AddMetricNames(Aws::String&& value) { m_metricNamesHasBeenSet = true; m_metricNames.push_back(std::move(value)); return *this; }
-    inline EvaluationDatasetMetricConfig& AddMetricNames(const char* value) { m_metricNamesHasBeenSet = true; m_metricNames.push_back(value); return *this; }
+    template<typename MetricNamesT = Aws::Vector<Aws::String>>
+    void SetMetricNames(MetricNamesT&& value) { m_metricNamesHasBeenSet = true; m_metricNames = std::forward<MetricNamesT>(value); }
+    template<typename MetricNamesT = Aws::Vector<Aws::String>>
+    EvaluationDatasetMetricConfig& WithMetricNames(MetricNamesT&& value) { SetMetricNames(std::forward<MetricNamesT>(value)); return *this;}
+    template<typename MetricNamesT = Aws::String>
+    EvaluationDatasetMetricConfig& AddMetricNames(MetricNamesT&& value) { m_metricNamesHasBeenSet = true; m_metricNames.emplace_back(std::forward<MetricNamesT>(value)); return *this; }
     ///@}
   private:
 
-    EvaluationTaskType m_taskType;
+    EvaluationTaskType m_taskType{EvaluationTaskType::NOT_SET};
     bool m_taskTypeHasBeenSet = false;
 
     EvaluationDataset m_dataset;

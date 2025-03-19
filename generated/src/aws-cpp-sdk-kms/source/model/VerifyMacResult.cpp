@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-VerifyMacResult::VerifyMacResult() : 
-    m_macValid(false),
-    m_macAlgorithm(MacAlgorithmSpec::NOT_SET)
-{
-}
-
 VerifyMacResult::VerifyMacResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : VerifyMacResult()
 {
   *this = result;
 }
@@ -35,27 +28,25 @@ VerifyMacResult& VerifyMacResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("KeyId"))
   {
     m_keyId = jsonValue.GetString("KeyId");
-
+    m_keyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MacValid"))
   {
     m_macValid = jsonValue.GetBool("MacValid");
-
+    m_macValidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MacAlgorithm"))
   {
     m_macAlgorithm = MacAlgorithmSpecMapper::GetMacAlgorithmSpecForName(jsonValue.GetString("MacAlgorithm"));
-
+    m_macAlgorithmHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

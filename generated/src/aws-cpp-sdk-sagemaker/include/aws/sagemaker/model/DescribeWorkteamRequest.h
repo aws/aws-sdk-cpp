@@ -21,7 +21,7 @@ namespace Model
   class DescribeWorkteamRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API DescribeWorkteamRequest();
+    AWS_SAGEMAKER_API DescribeWorkteamRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the work team to return a description of.</p>
      */
-    inline const Aws::String& GetWorkteamName() const{ return m_workteamName; }
+    inline const Aws::String& GetWorkteamName() const { return m_workteamName; }
     inline bool WorkteamNameHasBeenSet() const { return m_workteamNameHasBeenSet; }
-    inline void SetWorkteamName(const Aws::String& value) { m_workteamNameHasBeenSet = true; m_workteamName = value; }
-    inline void SetWorkteamName(Aws::String&& value) { m_workteamNameHasBeenSet = true; m_workteamName = std::move(value); }
-    inline void SetWorkteamName(const char* value) { m_workteamNameHasBeenSet = true; m_workteamName.assign(value); }
-    inline DescribeWorkteamRequest& WithWorkteamName(const Aws::String& value) { SetWorkteamName(value); return *this;}
-    inline DescribeWorkteamRequest& WithWorkteamName(Aws::String&& value) { SetWorkteamName(std::move(value)); return *this;}
-    inline DescribeWorkteamRequest& WithWorkteamName(const char* value) { SetWorkteamName(value); return *this;}
+    template<typename WorkteamNameT = Aws::String>
+    void SetWorkteamName(WorkteamNameT&& value) { m_workteamNameHasBeenSet = true; m_workteamName = std::forward<WorkteamNameT>(value); }
+    template<typename WorkteamNameT = Aws::String>
+    DescribeWorkteamRequest& WithWorkteamName(WorkteamNameT&& value) { SetWorkteamName(std::forward<WorkteamNameT>(value)); return *this;}
     ///@}
   private:
 

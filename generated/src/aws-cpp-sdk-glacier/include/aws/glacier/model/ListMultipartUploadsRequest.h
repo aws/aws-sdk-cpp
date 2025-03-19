@@ -29,7 +29,7 @@ namespace Model
   class ListMultipartUploadsRequest : public GlacierRequest
   {
   public:
-    AWS_GLACIER_API ListMultipartUploadsRequest();
+    AWS_GLACIER_API ListMultipartUploadsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,28 +50,24 @@ namespace Model
      * ID associated with the credentials used to sign the request. If you use an
      * account ID, do not include any hyphens ('-') in the ID. </p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline ListMultipartUploadsRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline ListMultipartUploadsRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline ListMultipartUploadsRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    ListMultipartUploadsRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the vault.</p>
      */
-    inline const Aws::String& GetVaultName() const{ return m_vaultName; }
+    inline const Aws::String& GetVaultName() const { return m_vaultName; }
     inline bool VaultNameHasBeenSet() const { return m_vaultNameHasBeenSet; }
-    inline void SetVaultName(const Aws::String& value) { m_vaultNameHasBeenSet = true; m_vaultName = value; }
-    inline void SetVaultName(Aws::String&& value) { m_vaultNameHasBeenSet = true; m_vaultName = std::move(value); }
-    inline void SetVaultName(const char* value) { m_vaultNameHasBeenSet = true; m_vaultName.assign(value); }
-    inline ListMultipartUploadsRequest& WithVaultName(const Aws::String& value) { SetVaultName(value); return *this;}
-    inline ListMultipartUploadsRequest& WithVaultName(Aws::String&& value) { SetVaultName(std::move(value)); return *this;}
-    inline ListMultipartUploadsRequest& WithVaultName(const char* value) { SetVaultName(value); return *this;}
+    template<typename VaultNameT = Aws::String>
+    void SetVaultName(VaultNameT&& value) { m_vaultNameHasBeenSet = true; m_vaultName = std::forward<VaultNameT>(value); }
+    template<typename VaultNameT = Aws::String>
+    ListMultipartUploadsRequest& WithVaultName(VaultNameT&& value) { SetVaultName(std::forward<VaultNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,12 @@ namespace Model
      * List Uploads response. You need only include the marker if you are continuing
      * the pagination of results started in a previous List Uploads request.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline ListMultipartUploadsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListMultipartUploadsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListMultipartUploadsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListMultipartUploadsRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,14 +91,12 @@ namespace Model
      * this value is not specified, the List Uploads operation returns up to 50
      * uploads.</p>
      */
-    inline const Aws::String& GetLimit() const{ return m_limit; }
+    inline const Aws::String& GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
-    inline void SetLimit(const Aws::String& value) { m_limitHasBeenSet = true; m_limit = value; }
-    inline void SetLimit(Aws::String&& value) { m_limitHasBeenSet = true; m_limit = std::move(value); }
-    inline void SetLimit(const char* value) { m_limitHasBeenSet = true; m_limit.assign(value); }
-    inline ListMultipartUploadsRequest& WithLimit(const Aws::String& value) { SetLimit(value); return *this;}
-    inline ListMultipartUploadsRequest& WithLimit(Aws::String&& value) { SetLimit(std::move(value)); return *this;}
-    inline ListMultipartUploadsRequest& WithLimit(const char* value) { SetLimit(value); return *this;}
+    template<typename LimitT = Aws::String>
+    void SetLimit(LimitT&& value) { m_limitHasBeenSet = true; m_limit = std::forward<LimitT>(value); }
+    template<typename LimitT = Aws::String>
+    ListMultipartUploadsRequest& WithLimit(LimitT&& value) { SetLimit(std::forward<LimitT>(value)); return *this;}
     ///@}
   private:
 

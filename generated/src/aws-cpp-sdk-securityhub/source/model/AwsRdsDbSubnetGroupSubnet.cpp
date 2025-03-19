@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRdsDbSubnetGroupSubnet::AwsRdsDbSubnetGroupSubnet() : 
-    m_subnetIdentifierHasBeenSet(false),
-    m_subnetAvailabilityZoneHasBeenSet(false),
-    m_subnetStatusHasBeenSet(false)
-{
-}
-
 AwsRdsDbSubnetGroupSubnet::AwsRdsDbSubnetGroupSubnet(JsonView jsonValue)
-  : AwsRdsDbSubnetGroupSubnet()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AwsRdsDbSubnetGroupSubnet& AwsRdsDbSubnetGroupSubnet::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("SubnetIdentifier"))
   {
     m_subnetIdentifier = jsonValue.GetString("SubnetIdentifier");
-
     m_subnetIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetAvailabilityZone"))
   {
     m_subnetAvailabilityZone = jsonValue.GetObject("SubnetAvailabilityZone");
-
     m_subnetAvailabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetStatus"))
   {
     m_subnetStatus = jsonValue.GetString("SubnetStatus");
-
     m_subnetStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

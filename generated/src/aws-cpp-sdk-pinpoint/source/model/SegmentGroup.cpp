@@ -18,18 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-SegmentGroup::SegmentGroup() : 
-    m_dimensionsHasBeenSet(false),
-    m_sourceSegmentsHasBeenSet(false),
-    m_sourceType(SourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 SegmentGroup::SegmentGroup(JsonView jsonValue)
-  : SegmentGroup()
 {
   *this = jsonValue;
 }
@@ -45,7 +34,6 @@ SegmentGroup& SegmentGroup::operator =(JsonView jsonValue)
     }
     m_dimensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceSegments"))
   {
     Aws::Utils::Array<JsonView> sourceSegmentsJsonList = jsonValue.GetArray("SourceSegments");
@@ -55,21 +43,16 @@ SegmentGroup& SegmentGroup::operator =(JsonView jsonValue)
     }
     m_sourceSegmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceType"))
   {
     m_sourceType = SourceTypeMapper::GetSourceTypeForName(jsonValue.GetString("SourceType"));
-
     m_sourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = TypeMapper::GetTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

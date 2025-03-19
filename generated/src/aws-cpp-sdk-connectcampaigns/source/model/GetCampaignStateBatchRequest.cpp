@@ -12,11 +12,6 @@ using namespace Aws::ConnectCampaigns::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCampaignStateBatchRequest::GetCampaignStateBatchRequest() : 
-    m_campaignIdsHasBeenSet(false)
-{
-}
-
 Aws::String GetCampaignStateBatchRequest::SerializePayload() const
 {
   JsonValue payload;

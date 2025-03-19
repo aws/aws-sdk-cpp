@@ -32,7 +32,7 @@ namespace Model
   class GuardrailInvocationMetrics
   {
   public:
-    AWS_BEDROCKRUNTIME_API GuardrailInvocationMetrics();
+    AWS_BEDROCKRUNTIME_API GuardrailInvocationMetrics() = default;
     AWS_BEDROCKRUNTIME_API GuardrailInvocationMetrics(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API GuardrailInvocationMetrics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The processing latency details for the guardrail invocation metrics.</p>
      */
-    inline long long GetGuardrailProcessingLatency() const{ return m_guardrailProcessingLatency; }
+    inline long long GetGuardrailProcessingLatency() const { return m_guardrailProcessingLatency; }
     inline bool GuardrailProcessingLatencyHasBeenSet() const { return m_guardrailProcessingLatencyHasBeenSet; }
     inline void SetGuardrailProcessingLatency(long long value) { m_guardrailProcessingLatencyHasBeenSet = true; m_guardrailProcessingLatency = value; }
     inline GuardrailInvocationMetrics& WithGuardrailProcessingLatency(long long value) { SetGuardrailProcessingLatency(value); return *this;}
@@ -52,28 +52,28 @@ namespace Model
     /**
      * <p>The usage details for the guardrail invocation metrics.</p>
      */
-    inline const GuardrailUsage& GetUsage() const{ return m_usage; }
+    inline const GuardrailUsage& GetUsage() const { return m_usage; }
     inline bool UsageHasBeenSet() const { return m_usageHasBeenSet; }
-    inline void SetUsage(const GuardrailUsage& value) { m_usageHasBeenSet = true; m_usage = value; }
-    inline void SetUsage(GuardrailUsage&& value) { m_usageHasBeenSet = true; m_usage = std::move(value); }
-    inline GuardrailInvocationMetrics& WithUsage(const GuardrailUsage& value) { SetUsage(value); return *this;}
-    inline GuardrailInvocationMetrics& WithUsage(GuardrailUsage&& value) { SetUsage(std::move(value)); return *this;}
+    template<typename UsageT = GuardrailUsage>
+    void SetUsage(UsageT&& value) { m_usageHasBeenSet = true; m_usage = std::forward<UsageT>(value); }
+    template<typename UsageT = GuardrailUsage>
+    GuardrailInvocationMetrics& WithUsage(UsageT&& value) { SetUsage(std::forward<UsageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The coverage details for the guardrail invocation metrics.</p>
      */
-    inline const GuardrailCoverage& GetGuardrailCoverage() const{ return m_guardrailCoverage; }
+    inline const GuardrailCoverage& GetGuardrailCoverage() const { return m_guardrailCoverage; }
     inline bool GuardrailCoverageHasBeenSet() const { return m_guardrailCoverageHasBeenSet; }
-    inline void SetGuardrailCoverage(const GuardrailCoverage& value) { m_guardrailCoverageHasBeenSet = true; m_guardrailCoverage = value; }
-    inline void SetGuardrailCoverage(GuardrailCoverage&& value) { m_guardrailCoverageHasBeenSet = true; m_guardrailCoverage = std::move(value); }
-    inline GuardrailInvocationMetrics& WithGuardrailCoverage(const GuardrailCoverage& value) { SetGuardrailCoverage(value); return *this;}
-    inline GuardrailInvocationMetrics& WithGuardrailCoverage(GuardrailCoverage&& value) { SetGuardrailCoverage(std::move(value)); return *this;}
+    template<typename GuardrailCoverageT = GuardrailCoverage>
+    void SetGuardrailCoverage(GuardrailCoverageT&& value) { m_guardrailCoverageHasBeenSet = true; m_guardrailCoverage = std::forward<GuardrailCoverageT>(value); }
+    template<typename GuardrailCoverageT = GuardrailCoverage>
+    GuardrailInvocationMetrics& WithGuardrailCoverage(GuardrailCoverageT&& value) { SetGuardrailCoverage(std::forward<GuardrailCoverageT>(value)); return *this;}
     ///@}
   private:
 
-    long long m_guardrailProcessingLatency;
+    long long m_guardrailProcessingLatency{0};
     bool m_guardrailProcessingLatencyHasBeenSet = false;
 
     GuardrailUsage m_usage;

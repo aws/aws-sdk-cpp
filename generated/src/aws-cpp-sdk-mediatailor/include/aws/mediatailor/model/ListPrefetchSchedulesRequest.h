@@ -21,7 +21,7 @@ namespace Model
   class ListPrefetchSchedulesRequest : public MediaTailorRequest
   {
   public:
-    AWS_MEDIATAILOR_API ListPrefetchSchedulesRequest();
+    AWS_MEDIATAILOR_API ListPrefetchSchedulesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,7 +39,7 @@ namespace Model
      * <code>MaxResults</code> prefetch schedules, use the value of
      * <code>NextToken</code> in the response to get the next page of results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListPrefetchSchedulesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -56,28 +56,24 @@ namespace Model
      * request.</p> <p> If the previous response didn't include a
      * <code>NextToken</code> element, there are no more prefetch schedules to get.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListPrefetchSchedulesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPrefetchSchedulesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPrefetchSchedulesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPrefetchSchedulesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Retrieves the prefetch schedule(s) for a specific playback configuration.</p>
      */
-    inline const Aws::String& GetPlaybackConfigurationName() const{ return m_playbackConfigurationName; }
+    inline const Aws::String& GetPlaybackConfigurationName() const { return m_playbackConfigurationName; }
     inline bool PlaybackConfigurationNameHasBeenSet() const { return m_playbackConfigurationNameHasBeenSet; }
-    inline void SetPlaybackConfigurationName(const Aws::String& value) { m_playbackConfigurationNameHasBeenSet = true; m_playbackConfigurationName = value; }
-    inline void SetPlaybackConfigurationName(Aws::String&& value) { m_playbackConfigurationNameHasBeenSet = true; m_playbackConfigurationName = std::move(value); }
-    inline void SetPlaybackConfigurationName(const char* value) { m_playbackConfigurationNameHasBeenSet = true; m_playbackConfigurationName.assign(value); }
-    inline ListPrefetchSchedulesRequest& WithPlaybackConfigurationName(const Aws::String& value) { SetPlaybackConfigurationName(value); return *this;}
-    inline ListPrefetchSchedulesRequest& WithPlaybackConfigurationName(Aws::String&& value) { SetPlaybackConfigurationName(std::move(value)); return *this;}
-    inline ListPrefetchSchedulesRequest& WithPlaybackConfigurationName(const char* value) { SetPlaybackConfigurationName(value); return *this;}
+    template<typename PlaybackConfigurationNameT = Aws::String>
+    void SetPlaybackConfigurationName(PlaybackConfigurationNameT&& value) { m_playbackConfigurationNameHasBeenSet = true; m_playbackConfigurationName = std::forward<PlaybackConfigurationNameT>(value); }
+    template<typename PlaybackConfigurationNameT = Aws::String>
+    ListPrefetchSchedulesRequest& WithPlaybackConfigurationName(PlaybackConfigurationNameT&& value) { SetPlaybackConfigurationName(std::forward<PlaybackConfigurationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,18 +81,16 @@ namespace Model
      * <p>An optional filtering parameter whereby MediaTailor filters the prefetch
      * schedules to include only specific streams.</p>
      */
-    inline const Aws::String& GetStreamId() const{ return m_streamId; }
+    inline const Aws::String& GetStreamId() const { return m_streamId; }
     inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
-    inline void SetStreamId(const Aws::String& value) { m_streamIdHasBeenSet = true; m_streamId = value; }
-    inline void SetStreamId(Aws::String&& value) { m_streamIdHasBeenSet = true; m_streamId = std::move(value); }
-    inline void SetStreamId(const char* value) { m_streamIdHasBeenSet = true; m_streamId.assign(value); }
-    inline ListPrefetchSchedulesRequest& WithStreamId(const Aws::String& value) { SetStreamId(value); return *this;}
-    inline ListPrefetchSchedulesRequest& WithStreamId(Aws::String&& value) { SetStreamId(std::move(value)); return *this;}
-    inline ListPrefetchSchedulesRequest& WithStreamId(const char* value) { SetStreamId(value); return *this;}
+    template<typename StreamIdT = Aws::String>
+    void SetStreamId(StreamIdT&& value) { m_streamIdHasBeenSet = true; m_streamId = std::forward<StreamIdT>(value); }
+    template<typename StreamIdT = Aws::String>
+    ListPrefetchSchedulesRequest& WithStreamId(StreamIdT&& value) { SetStreamId(std::forward<StreamIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

@@ -21,7 +21,7 @@ namespace Model
   class DeleteDetectorModelRequest : public IoTEventsRequest
   {
   public:
-    AWS_IOTEVENTS_API DeleteDetectorModelRequest();
+    AWS_IOTEVENTS_API DeleteDetectorModelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The name of the detector model to be deleted.</p>
      */
-    inline const Aws::String& GetDetectorModelName() const{ return m_detectorModelName; }
+    inline const Aws::String& GetDetectorModelName() const { return m_detectorModelName; }
     inline bool DetectorModelNameHasBeenSet() const { return m_detectorModelNameHasBeenSet; }
-    inline void SetDetectorModelName(const Aws::String& value) { m_detectorModelNameHasBeenSet = true; m_detectorModelName = value; }
-    inline void SetDetectorModelName(Aws::String&& value) { m_detectorModelNameHasBeenSet = true; m_detectorModelName = std::move(value); }
-    inline void SetDetectorModelName(const char* value) { m_detectorModelNameHasBeenSet = true; m_detectorModelName.assign(value); }
-    inline DeleteDetectorModelRequest& WithDetectorModelName(const Aws::String& value) { SetDetectorModelName(value); return *this;}
-    inline DeleteDetectorModelRequest& WithDetectorModelName(Aws::String&& value) { SetDetectorModelName(std::move(value)); return *this;}
-    inline DeleteDetectorModelRequest& WithDetectorModelName(const char* value) { SetDetectorModelName(value); return *this;}
+    template<typename DetectorModelNameT = Aws::String>
+    void SetDetectorModelName(DetectorModelNameT&& value) { m_detectorModelNameHasBeenSet = true; m_detectorModelName = std::forward<DetectorModelNameT>(value); }
+    template<typename DetectorModelNameT = Aws::String>
+    DeleteDetectorModelRequest& WithDetectorModelName(DetectorModelNameT&& value) { SetDetectorModelName(std::forward<DetectorModelNameT>(value)); return *this;}
     ///@}
   private:
 

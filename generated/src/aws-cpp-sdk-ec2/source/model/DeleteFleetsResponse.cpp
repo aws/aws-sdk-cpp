@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteFleetsResponse::DeleteFleetsResponse()
-{
-}
-
 DeleteFleetsResponse::DeleteFleetsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DeleteFleetsResponse& DeleteFleetsResponse::operator =(const Aws::AmazonWebServi
     if(!successfulFleetDeletionsNode.IsNull())
     {
       XmlNode successfulFleetDeletionsMember = successfulFleetDeletionsNode.FirstChild("item");
+      m_successfulFleetDeletionsHasBeenSet = !successfulFleetDeletionsMember.IsNull();
       while(!successfulFleetDeletionsMember.IsNull())
       {
         m_successfulFleetDeletions.push_back(successfulFleetDeletionsMember);
         successfulFleetDeletionsMember = successfulFleetDeletionsMember.NextNode("item");
       }
 
+      m_successfulFleetDeletionsHasBeenSet = true;
     }
     XmlNode unsuccessfulFleetDeletionsNode = resultNode.FirstChild("unsuccessfulFleetDeletionSet");
     if(!unsuccessfulFleetDeletionsNode.IsNull())
     {
       XmlNode unsuccessfulFleetDeletionsMember = unsuccessfulFleetDeletionsNode.FirstChild("item");
+      m_unsuccessfulFleetDeletionsHasBeenSet = !unsuccessfulFleetDeletionsMember.IsNull();
       while(!unsuccessfulFleetDeletionsMember.IsNull())
       {
         m_unsuccessfulFleetDeletions.push_back(unsuccessfulFleetDeletionsMember);
         unsuccessfulFleetDeletionsMember = unsuccessfulFleetDeletionsMember.NextNode("item");
       }
 
+      m_unsuccessfulFleetDeletionsHasBeenSet = true;
     }
   }
 
@@ -67,6 +67,7 @@ DeleteFleetsResponse& DeleteFleetsResponse::operator =(const Aws::AmazonWebServi
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeleteFleetsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

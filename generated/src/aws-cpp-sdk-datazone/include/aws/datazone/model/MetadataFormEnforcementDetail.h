@@ -32,7 +32,7 @@ namespace Model
   class MetadataFormEnforcementDetail
   {
   public:
-    AWS_DATAZONE_API MetadataFormEnforcementDetail();
+    AWS_DATAZONE_API MetadataFormEnforcementDetail() = default;
     AWS_DATAZONE_API MetadataFormEnforcementDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API MetadataFormEnforcementDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>The required metadata forms.</p>
      */
-    inline const Aws::Vector<MetadataFormReference>& GetRequiredMetadataForms() const{ return m_requiredMetadataForms; }
+    inline const Aws::Vector<MetadataFormReference>& GetRequiredMetadataForms() const { return m_requiredMetadataForms; }
     inline bool RequiredMetadataFormsHasBeenSet() const { return m_requiredMetadataFormsHasBeenSet; }
-    inline void SetRequiredMetadataForms(const Aws::Vector<MetadataFormReference>& value) { m_requiredMetadataFormsHasBeenSet = true; m_requiredMetadataForms = value; }
-    inline void SetRequiredMetadataForms(Aws::Vector<MetadataFormReference>&& value) { m_requiredMetadataFormsHasBeenSet = true; m_requiredMetadataForms = std::move(value); }
-    inline MetadataFormEnforcementDetail& WithRequiredMetadataForms(const Aws::Vector<MetadataFormReference>& value) { SetRequiredMetadataForms(value); return *this;}
-    inline MetadataFormEnforcementDetail& WithRequiredMetadataForms(Aws::Vector<MetadataFormReference>&& value) { SetRequiredMetadataForms(std::move(value)); return *this;}
-    inline MetadataFormEnforcementDetail& AddRequiredMetadataForms(const MetadataFormReference& value) { m_requiredMetadataFormsHasBeenSet = true; m_requiredMetadataForms.push_back(value); return *this; }
-    inline MetadataFormEnforcementDetail& AddRequiredMetadataForms(MetadataFormReference&& value) { m_requiredMetadataFormsHasBeenSet = true; m_requiredMetadataForms.push_back(std::move(value)); return *this; }
+    template<typename RequiredMetadataFormsT = Aws::Vector<MetadataFormReference>>
+    void SetRequiredMetadataForms(RequiredMetadataFormsT&& value) { m_requiredMetadataFormsHasBeenSet = true; m_requiredMetadataForms = std::forward<RequiredMetadataFormsT>(value); }
+    template<typename RequiredMetadataFormsT = Aws::Vector<MetadataFormReference>>
+    MetadataFormEnforcementDetail& WithRequiredMetadataForms(RequiredMetadataFormsT&& value) { SetRequiredMetadataForms(std::forward<RequiredMetadataFormsT>(value)); return *this;}
+    template<typename RequiredMetadataFormsT = MetadataFormReference>
+    MetadataFormEnforcementDetail& AddRequiredMetadataForms(RequiredMetadataFormsT&& value) { m_requiredMetadataFormsHasBeenSet = true; m_requiredMetadataForms.emplace_back(std::forward<RequiredMetadataFormsT>(value)); return *this; }
     ///@}
   private:
 

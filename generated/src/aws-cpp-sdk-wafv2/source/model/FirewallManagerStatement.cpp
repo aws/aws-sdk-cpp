@@ -18,14 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-FirewallManagerStatement::FirewallManagerStatement() : 
-    m_managedRuleGroupStatementHasBeenSet(false),
-    m_ruleGroupReferenceStatementHasBeenSet(false)
-{
-}
-
 FirewallManagerStatement::FirewallManagerStatement(JsonView jsonValue)
-  : FirewallManagerStatement()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FirewallManagerStatement& FirewallManagerStatement::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("ManagedRuleGroupStatement"))
   {
     m_managedRuleGroupStatement = jsonValue.GetObject("ManagedRuleGroupStatement");
-
     m_managedRuleGroupStatementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleGroupReferenceStatement"))
   {
     m_ruleGroupReferenceStatement = jsonValue.GetObject("RuleGroupReferenceStatement");
-
     m_ruleGroupReferenceStatementHasBeenSet = true;
   }
-
   return *this;
 }
 

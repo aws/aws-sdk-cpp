@@ -20,22 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-RedshiftIdcApplication::RedshiftIdcApplication() : 
-    m_idcInstanceArnHasBeenSet(false),
-    m_redshiftIdcApplicationNameHasBeenSet(false),
-    m_redshiftIdcApplicationArnHasBeenSet(false),
-    m_identityNamespaceHasBeenSet(false),
-    m_idcDisplayNameHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_idcManagedApplicationArnHasBeenSet(false),
-    m_idcOnboardStatusHasBeenSet(false),
-    m_authorizedTokenIssuerListHasBeenSet(false),
-    m_serviceIntegrationsHasBeenSet(false)
-{
-}
-
 RedshiftIdcApplication::RedshiftIdcApplication(const XmlNode& xmlNode)
-  : RedshiftIdcApplication()
 {
   *this = xmlNode;
 }
@@ -98,6 +83,7 @@ RedshiftIdcApplication& RedshiftIdcApplication::operator =(const XmlNode& xmlNod
     if(!authorizedTokenIssuerListNode.IsNull())
     {
       XmlNode authorizedTokenIssuerListMember = authorizedTokenIssuerListNode.FirstChild("member");
+      m_authorizedTokenIssuerListHasBeenSet = !authorizedTokenIssuerListMember.IsNull();
       while(!authorizedTokenIssuerListMember.IsNull())
       {
         m_authorizedTokenIssuerList.push_back(authorizedTokenIssuerListMember);
@@ -110,6 +96,7 @@ RedshiftIdcApplication& RedshiftIdcApplication::operator =(const XmlNode& xmlNod
     if(!serviceIntegrationsNode.IsNull())
     {
       XmlNode serviceIntegrationsMember = serviceIntegrationsNode.FirstChild("member");
+      m_serviceIntegrationsHasBeenSet = !serviceIntegrationsMember.IsNull();
       while(!serviceIntegrationsMember.IsNull())
       {
         m_serviceIntegrations.push_back(serviceIntegrationsMember);

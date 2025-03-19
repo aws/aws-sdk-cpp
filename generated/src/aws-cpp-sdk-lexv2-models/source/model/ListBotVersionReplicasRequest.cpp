@@ -12,16 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListBotVersionReplicasRequest::ListBotVersionReplicasRequest() : 
-    m_botIdHasBeenSet(false),
-    m_replicaRegionHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sortByHasBeenSet(false)
-{
-}
-
 Aws::String ListBotVersionReplicasRequest::SerializePayload() const
 {
   JsonValue payload;

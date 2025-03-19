@@ -33,7 +33,7 @@ namespace Model
   class EsamSettings
   {
   public:
-    AWS_MEDIACONVERT_API EsamSettings();
+    AWS_MEDIACONVERT_API EsamSettings() = default;
     AWS_MEDIACONVERT_API EsamSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API EsamSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * OC-SP-ESAM-API-I03-131025. The transcoder uses the manifest conditioning
      * instructions that you provide in the setting MCC XML.
      */
-    inline const EsamManifestConfirmConditionNotification& GetManifestConfirmConditionNotification() const{ return m_manifestConfirmConditionNotification; }
+    inline const EsamManifestConfirmConditionNotification& GetManifestConfirmConditionNotification() const { return m_manifestConfirmConditionNotification; }
     inline bool ManifestConfirmConditionNotificationHasBeenSet() const { return m_manifestConfirmConditionNotificationHasBeenSet; }
-    inline void SetManifestConfirmConditionNotification(const EsamManifestConfirmConditionNotification& value) { m_manifestConfirmConditionNotificationHasBeenSet = true; m_manifestConfirmConditionNotification = value; }
-    inline void SetManifestConfirmConditionNotification(EsamManifestConfirmConditionNotification&& value) { m_manifestConfirmConditionNotificationHasBeenSet = true; m_manifestConfirmConditionNotification = std::move(value); }
-    inline EsamSettings& WithManifestConfirmConditionNotification(const EsamManifestConfirmConditionNotification& value) { SetManifestConfirmConditionNotification(value); return *this;}
-    inline EsamSettings& WithManifestConfirmConditionNotification(EsamManifestConfirmConditionNotification&& value) { SetManifestConfirmConditionNotification(std::move(value)); return *this;}
+    template<typename ManifestConfirmConditionNotificationT = EsamManifestConfirmConditionNotification>
+    void SetManifestConfirmConditionNotification(ManifestConfirmConditionNotificationT&& value) { m_manifestConfirmConditionNotificationHasBeenSet = true; m_manifestConfirmConditionNotification = std::forward<ManifestConfirmConditionNotificationT>(value); }
+    template<typename ManifestConfirmConditionNotificationT = EsamManifestConfirmConditionNotification>
+    EsamSettings& WithManifestConfirmConditionNotification(ManifestConfirmConditionNotificationT&& value) { SetManifestConfirmConditionNotification(std::forward<ManifestConfirmConditionNotificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +60,7 @@ namespace Model
      * between the start of the asset and the SCTE-35 message is less than this value,
      * then the transcoder places the SCTE-35 marker at the beginning of the stream.
      */
-    inline int GetResponseSignalPreroll() const{ return m_responseSignalPreroll; }
+    inline int GetResponseSignalPreroll() const { return m_responseSignalPreroll; }
     inline bool ResponseSignalPrerollHasBeenSet() const { return m_responseSignalPrerollHasBeenSet; }
     inline void SetResponseSignalPreroll(int value) { m_responseSignalPrerollHasBeenSet = true; m_responseSignalPreroll = value; }
     inline EsamSettings& WithResponseSignalPreroll(int value) { SetResponseSignalPreroll(value); return *this;}
@@ -72,19 +72,19 @@ namespace Model
      * OC-SP-ESAM-API-I03-131025. The transcoder uses the signal processing
      * instructions that you provide in the setting SCC XML.
      */
-    inline const EsamSignalProcessingNotification& GetSignalProcessingNotification() const{ return m_signalProcessingNotification; }
+    inline const EsamSignalProcessingNotification& GetSignalProcessingNotification() const { return m_signalProcessingNotification; }
     inline bool SignalProcessingNotificationHasBeenSet() const { return m_signalProcessingNotificationHasBeenSet; }
-    inline void SetSignalProcessingNotification(const EsamSignalProcessingNotification& value) { m_signalProcessingNotificationHasBeenSet = true; m_signalProcessingNotification = value; }
-    inline void SetSignalProcessingNotification(EsamSignalProcessingNotification&& value) { m_signalProcessingNotificationHasBeenSet = true; m_signalProcessingNotification = std::move(value); }
-    inline EsamSettings& WithSignalProcessingNotification(const EsamSignalProcessingNotification& value) { SetSignalProcessingNotification(value); return *this;}
-    inline EsamSettings& WithSignalProcessingNotification(EsamSignalProcessingNotification&& value) { SetSignalProcessingNotification(std::move(value)); return *this;}
+    template<typename SignalProcessingNotificationT = EsamSignalProcessingNotification>
+    void SetSignalProcessingNotification(SignalProcessingNotificationT&& value) { m_signalProcessingNotificationHasBeenSet = true; m_signalProcessingNotification = std::forward<SignalProcessingNotificationT>(value); }
+    template<typename SignalProcessingNotificationT = EsamSignalProcessingNotification>
+    EsamSettings& WithSignalProcessingNotification(SignalProcessingNotificationT&& value) { SetSignalProcessingNotification(std::forward<SignalProcessingNotificationT>(value)); return *this;}
     ///@}
   private:
 
     EsamManifestConfirmConditionNotification m_manifestConfirmConditionNotification;
     bool m_manifestConfirmConditionNotificationHasBeenSet = false;
 
-    int m_responseSignalPreroll;
+    int m_responseSignalPreroll{0};
     bool m_responseSignalPrerollHasBeenSet = false;
 
     EsamSignalProcessingNotification m_signalProcessingNotification;

@@ -28,7 +28,7 @@ namespace Model
   class GetBucketPolicyStatusResult
   {
   public:
-    AWS_S3_API GetBucketPolicyStatusResult();
+    AWS_S3_API GetBucketPolicyStatusResult() = default;
     AWS_S3_API GetBucketPolicyStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3_API GetBucketPolicyStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The policy status for the specified bucket.</p>
      */
-    inline const PolicyStatus& GetPolicyStatus() const{ return m_policyStatus; }
-    inline void SetPolicyStatus(const PolicyStatus& value) { m_policyStatus = value; }
-    inline void SetPolicyStatus(PolicyStatus&& value) { m_policyStatus = std::move(value); }
-    inline GetBucketPolicyStatusResult& WithPolicyStatus(const PolicyStatus& value) { SetPolicyStatus(value); return *this;}
-    inline GetBucketPolicyStatusResult& WithPolicyStatus(PolicyStatus&& value) { SetPolicyStatus(std::move(value)); return *this;}
+    inline const PolicyStatus& GetPolicyStatus() const { return m_policyStatus; }
+    template<typename PolicyStatusT = PolicyStatus>
+    void SetPolicyStatus(PolicyStatusT&& value) { m_policyStatusHasBeenSet = true; m_policyStatus = std::forward<PolicyStatusT>(value); }
+    template<typename PolicyStatusT = PolicyStatus>
+    GetBucketPolicyStatusResult& WithPolicyStatus(PolicyStatusT&& value) { SetPolicyStatus(std::forward<PolicyStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetBucketPolicyStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetBucketPolicyStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetBucketPolicyStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetBucketPolicyStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     PolicyStatus m_policyStatus;
+    bool m_policyStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

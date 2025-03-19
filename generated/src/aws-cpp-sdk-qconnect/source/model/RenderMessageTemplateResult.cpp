@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RenderMessageTemplateResult::RenderMessageTemplateResult()
-{
-}
-
 RenderMessageTemplateResult::RenderMessageTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ RenderMessageTemplateResult& RenderMessageTemplateResult::operator =(const Aws::
     {
       m_attachments.push_back(attachmentsJsonList[attachmentsIndex].AsObject());
     }
+    m_attachmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributesNotInterpolated"))
   {
     Aws::Utils::Array<JsonView> attributesNotInterpolatedJsonList = jsonValue.GetArray("attributesNotInterpolated");
@@ -45,20 +41,20 @@ RenderMessageTemplateResult& RenderMessageTemplateResult::operator =(const Aws::
     {
       m_attributesNotInterpolated.push_back(attributesNotInterpolatedJsonList[attributesNotInterpolatedIndex].AsString());
     }
+    m_attributesNotInterpolatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("content"))
   {
     m_content = jsonValue.GetObject("content");
-
+    m_contentHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

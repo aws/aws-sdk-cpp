@@ -18,23 +18,7 @@ namespace Snowball
 namespace Model
 {
 
-JobListEntry::JobListEntry() : 
-    m_jobIdHasBeenSet(false),
-    m_jobState(JobState::NOT_SET),
-    m_jobStateHasBeenSet(false),
-    m_isMaster(false),
-    m_isMasterHasBeenSet(false),
-    m_jobType(JobType::NOT_SET),
-    m_jobTypeHasBeenSet(false),
-    m_snowballType(SnowballType::NOT_SET),
-    m_snowballTypeHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 JobListEntry::JobListEntry(JsonView jsonValue)
-  : JobListEntry()
 {
   *this = jsonValue;
 }
@@ -44,52 +28,38 @@ JobListEntry& JobListEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobState"))
   {
     m_jobState = JobStateMapper::GetJobStateForName(jsonValue.GetString("JobState"));
-
     m_jobStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsMaster"))
   {
     m_isMaster = jsonValue.GetBool("IsMaster");
-
     m_isMasterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobType"))
   {
     m_jobType = JobTypeMapper::GetJobTypeForName(jsonValue.GetString("JobType"));
-
     m_jobTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnowballType"))
   {
     m_snowballType = SnowballTypeMapper::GetSnowballTypeForName(jsonValue.GetString("SnowballType"));
-
     m_snowballTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -35,7 +35,7 @@ namespace Model
   class AuthenticationResult
   {
   public:
-    AWS_VOICEID_API AuthenticationResult();
+    AWS_VOICEID_API AuthenticationResult() = default;
     AWS_VOICEID_API AuthenticationResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_VOICEID_API AuthenticationResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * <p>A timestamp of when audio aggregation ended for this authentication
      * result.</p>
      */
-    inline const Aws::Utils::DateTime& GetAudioAggregationEndedAt() const{ return m_audioAggregationEndedAt; }
+    inline const Aws::Utils::DateTime& GetAudioAggregationEndedAt() const { return m_audioAggregationEndedAt; }
     inline bool AudioAggregationEndedAtHasBeenSet() const { return m_audioAggregationEndedAtHasBeenSet; }
-    inline void SetAudioAggregationEndedAt(const Aws::Utils::DateTime& value) { m_audioAggregationEndedAtHasBeenSet = true; m_audioAggregationEndedAt = value; }
-    inline void SetAudioAggregationEndedAt(Aws::Utils::DateTime&& value) { m_audioAggregationEndedAtHasBeenSet = true; m_audioAggregationEndedAt = std::move(value); }
-    inline AuthenticationResult& WithAudioAggregationEndedAt(const Aws::Utils::DateTime& value) { SetAudioAggregationEndedAt(value); return *this;}
-    inline AuthenticationResult& WithAudioAggregationEndedAt(Aws::Utils::DateTime&& value) { SetAudioAggregationEndedAt(std::move(value)); return *this;}
+    template<typename AudioAggregationEndedAtT = Aws::Utils::DateTime>
+    void SetAudioAggregationEndedAt(AudioAggregationEndedAtT&& value) { m_audioAggregationEndedAtHasBeenSet = true; m_audioAggregationEndedAt = std::forward<AudioAggregationEndedAtT>(value); }
+    template<typename AudioAggregationEndedAtT = Aws::Utils::DateTime>
+    AuthenticationResult& WithAudioAggregationEndedAt(AudioAggregationEndedAtT&& value) { SetAudioAggregationEndedAt(std::forward<AudioAggregationEndedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +59,12 @@ namespace Model
      * <p>A timestamp of when audio aggregation started for this authentication
      * result.</p>
      */
-    inline const Aws::Utils::DateTime& GetAudioAggregationStartedAt() const{ return m_audioAggregationStartedAt; }
+    inline const Aws::Utils::DateTime& GetAudioAggregationStartedAt() const { return m_audioAggregationStartedAt; }
     inline bool AudioAggregationStartedAtHasBeenSet() const { return m_audioAggregationStartedAtHasBeenSet; }
-    inline void SetAudioAggregationStartedAt(const Aws::Utils::DateTime& value) { m_audioAggregationStartedAtHasBeenSet = true; m_audioAggregationStartedAt = value; }
-    inline void SetAudioAggregationStartedAt(Aws::Utils::DateTime&& value) { m_audioAggregationStartedAtHasBeenSet = true; m_audioAggregationStartedAt = std::move(value); }
-    inline AuthenticationResult& WithAudioAggregationStartedAt(const Aws::Utils::DateTime& value) { SetAudioAggregationStartedAt(value); return *this;}
-    inline AuthenticationResult& WithAudioAggregationStartedAt(Aws::Utils::DateTime&& value) { SetAudioAggregationStartedAt(std::move(value)); return *this;}
+    template<typename AudioAggregationStartedAtT = Aws::Utils::DateTime>
+    void SetAudioAggregationStartedAt(AudioAggregationStartedAtT&& value) { m_audioAggregationStartedAtHasBeenSet = true; m_audioAggregationStartedAt = std::forward<AudioAggregationStartedAtT>(value); }
+    template<typename AudioAggregationStartedAtT = Aws::Utils::DateTime>
+    AuthenticationResult& WithAudioAggregationStartedAt(AudioAggregationStartedAtT&& value) { SetAudioAggregationStartedAt(std::forward<AudioAggregationStartedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +76,12 @@ namespace Model
      * changes, or <code>SpeakerId</code> changes, Voice ID always returns cached
      * Authentication Result for this API.</p>
      */
-    inline const Aws::String& GetAuthenticationResultId() const{ return m_authenticationResultId; }
+    inline const Aws::String& GetAuthenticationResultId() const { return m_authenticationResultId; }
     inline bool AuthenticationResultIdHasBeenSet() const { return m_authenticationResultIdHasBeenSet; }
-    inline void SetAuthenticationResultId(const Aws::String& value) { m_authenticationResultIdHasBeenSet = true; m_authenticationResultId = value; }
-    inline void SetAuthenticationResultId(Aws::String&& value) { m_authenticationResultIdHasBeenSet = true; m_authenticationResultId = std::move(value); }
-    inline void SetAuthenticationResultId(const char* value) { m_authenticationResultIdHasBeenSet = true; m_authenticationResultId.assign(value); }
-    inline AuthenticationResult& WithAuthenticationResultId(const Aws::String& value) { SetAuthenticationResultId(value); return *this;}
-    inline AuthenticationResult& WithAuthenticationResultId(Aws::String&& value) { SetAuthenticationResultId(std::move(value)); return *this;}
-    inline AuthenticationResult& WithAuthenticationResultId(const char* value) { SetAuthenticationResultId(value); return *this;}
+    template<typename AuthenticationResultIdT = Aws::String>
+    void SetAuthenticationResultId(AuthenticationResultIdT&& value) { m_authenticationResultIdHasBeenSet = true; m_authenticationResultId = std::forward<AuthenticationResultIdT>(value); }
+    template<typename AuthenticationResultIdT = Aws::String>
+    AuthenticationResult& WithAuthenticationResultId(AuthenticationResultIdT&& value) { SetAuthenticationResultId(std::forward<AuthenticationResultIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,12 +89,12 @@ namespace Model
      * <p>The <code>AuthenticationConfiguration</code> used to generate this
      * authentication result.</p>
      */
-    inline const AuthenticationConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const AuthenticationConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const AuthenticationConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(AuthenticationConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline AuthenticationResult& WithConfiguration(const AuthenticationConfiguration& value) { SetConfiguration(value); return *this;}
-    inline AuthenticationResult& WithConfiguration(AuthenticationConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = AuthenticationConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = AuthenticationConfiguration>
+    AuthenticationResult& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +103,12 @@ namespace Model
      * produced. Only present if a <code>SpeakerId</code> is provided for the
      * session.</p>
      */
-    inline const Aws::String& GetCustomerSpeakerId() const{ return m_customerSpeakerId; }
+    inline const Aws::String& GetCustomerSpeakerId() const { return m_customerSpeakerId; }
     inline bool CustomerSpeakerIdHasBeenSet() const { return m_customerSpeakerIdHasBeenSet; }
-    inline void SetCustomerSpeakerId(const Aws::String& value) { m_customerSpeakerIdHasBeenSet = true; m_customerSpeakerId = value; }
-    inline void SetCustomerSpeakerId(Aws::String&& value) { m_customerSpeakerIdHasBeenSet = true; m_customerSpeakerId = std::move(value); }
-    inline void SetCustomerSpeakerId(const char* value) { m_customerSpeakerIdHasBeenSet = true; m_customerSpeakerId.assign(value); }
-    inline AuthenticationResult& WithCustomerSpeakerId(const Aws::String& value) { SetCustomerSpeakerId(value); return *this;}
-    inline AuthenticationResult& WithCustomerSpeakerId(Aws::String&& value) { SetCustomerSpeakerId(std::move(value)); return *this;}
-    inline AuthenticationResult& WithCustomerSpeakerId(const char* value) { SetCustomerSpeakerId(value); return *this;}
+    template<typename CustomerSpeakerIdT = Aws::String>
+    void SetCustomerSpeakerId(CustomerSpeakerIdT&& value) { m_customerSpeakerIdHasBeenSet = true; m_customerSpeakerId = std::forward<CustomerSpeakerIdT>(value); }
+    template<typename CustomerSpeakerIdT = Aws::String>
+    AuthenticationResult& WithCustomerSpeakerId(CustomerSpeakerIdT&& value) { SetCustomerSpeakerId(std::forward<CustomerSpeakerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,12 +116,10 @@ namespace Model
      * <p>The authentication decision produced by Voice ID, processed against the
      * current session state and streamed audio of the speaker.</p>
      */
-    inline const AuthenticationDecision& GetDecision() const{ return m_decision; }
+    inline AuthenticationDecision GetDecision() const { return m_decision; }
     inline bool DecisionHasBeenSet() const { return m_decisionHasBeenSet; }
-    inline void SetDecision(const AuthenticationDecision& value) { m_decisionHasBeenSet = true; m_decision = value; }
-    inline void SetDecision(AuthenticationDecision&& value) { m_decisionHasBeenSet = true; m_decision = std::move(value); }
-    inline AuthenticationResult& WithDecision(const AuthenticationDecision& value) { SetDecision(value); return *this;}
-    inline AuthenticationResult& WithDecision(AuthenticationDecision&& value) { SetDecision(std::move(value)); return *this;}
+    inline void SetDecision(AuthenticationDecision value) { m_decisionHasBeenSet = true; m_decision = value; }
+    inline AuthenticationResult& WithDecision(AuthenticationDecision value) { SetDecision(value); return *this;}
     ///@}
 
     ///@{
@@ -133,14 +127,12 @@ namespace Model
      * <p>The service-generated identifier for the speaker whose authentication result
      * is produced.</p>
      */
-    inline const Aws::String& GetGeneratedSpeakerId() const{ return m_generatedSpeakerId; }
+    inline const Aws::String& GetGeneratedSpeakerId() const { return m_generatedSpeakerId; }
     inline bool GeneratedSpeakerIdHasBeenSet() const { return m_generatedSpeakerIdHasBeenSet; }
-    inline void SetGeneratedSpeakerId(const Aws::String& value) { m_generatedSpeakerIdHasBeenSet = true; m_generatedSpeakerId = value; }
-    inline void SetGeneratedSpeakerId(Aws::String&& value) { m_generatedSpeakerIdHasBeenSet = true; m_generatedSpeakerId = std::move(value); }
-    inline void SetGeneratedSpeakerId(const char* value) { m_generatedSpeakerIdHasBeenSet = true; m_generatedSpeakerId.assign(value); }
-    inline AuthenticationResult& WithGeneratedSpeakerId(const Aws::String& value) { SetGeneratedSpeakerId(value); return *this;}
-    inline AuthenticationResult& WithGeneratedSpeakerId(Aws::String&& value) { SetGeneratedSpeakerId(std::move(value)); return *this;}
-    inline AuthenticationResult& WithGeneratedSpeakerId(const char* value) { SetGeneratedSpeakerId(value); return *this;}
+    template<typename GeneratedSpeakerIdT = Aws::String>
+    void SetGeneratedSpeakerId(GeneratedSpeakerIdT&& value) { m_generatedSpeakerIdHasBeenSet = true; m_generatedSpeakerId = std::forward<GeneratedSpeakerIdT>(value); }
+    template<typename GeneratedSpeakerIdT = Aws::String>
+    AuthenticationResult& WithGeneratedSpeakerId(GeneratedSpeakerIdT&& value) { SetGeneratedSpeakerId(std::forward<GeneratedSpeakerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,17 +141,17 @@ namespace Model
      * produced. This value is only present if the authentication decision is either
      * <code>ACCEPT</code> or <code>REJECT</code>.</p>
      */
-    inline int GetScore() const{ return m_score; }
+    inline int GetScore() const { return m_score; }
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
     inline void SetScore(int value) { m_scoreHasBeenSet = true; m_score = value; }
     inline AuthenticationResult& WithScore(int value) { SetScore(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_audioAggregationEndedAt;
+    Aws::Utils::DateTime m_audioAggregationEndedAt{};
     bool m_audioAggregationEndedAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_audioAggregationStartedAt;
+    Aws::Utils::DateTime m_audioAggregationStartedAt{};
     bool m_audioAggregationStartedAtHasBeenSet = false;
 
     Aws::String m_authenticationResultId;
@@ -171,13 +163,13 @@ namespace Model
     Aws::String m_customerSpeakerId;
     bool m_customerSpeakerIdHasBeenSet = false;
 
-    AuthenticationDecision m_decision;
+    AuthenticationDecision m_decision{AuthenticationDecision::NOT_SET};
     bool m_decisionHasBeenSet = false;
 
     Aws::String m_generatedSpeakerId;
     bool m_generatedSpeakerIdHasBeenSet = false;
 
-    int m_score;
+    int m_score{0};
     bool m_scoreHasBeenSet = false;
   };
 

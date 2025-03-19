@@ -12,11 +12,6 @@ using namespace Aws::CloudWatchEvidently::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSegmentRequest::GetSegmentRequest() : 
-    m_segmentHasBeenSet(false)
-{
-}
-
 Aws::String GetSegmentRequest::SerializePayload() const
 {
   return {};

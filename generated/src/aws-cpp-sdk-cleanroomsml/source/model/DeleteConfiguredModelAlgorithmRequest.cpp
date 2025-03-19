@@ -12,11 +12,6 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteConfiguredModelAlgorithmRequest::DeleteConfiguredModelAlgorithmRequest() : 
-    m_configuredModelAlgorithmArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteConfiguredModelAlgorithmRequest::SerializePayload() const
 {
   return {};

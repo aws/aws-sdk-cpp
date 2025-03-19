@@ -12,11 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisableOrganizationAdminAccountRequest::DisableOrganizationAdminAccountRequest() : 
-    m_adminAccountIdHasBeenSet(false)
-{
-}
-
 Aws::String DisableOrganizationAdminAccountRequest::SerializePayload() const
 {
   JsonValue payload;

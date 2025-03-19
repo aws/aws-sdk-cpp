@@ -29,7 +29,7 @@ namespace Model
   class OneTimeSchedule
   {
   public:
-    AWS_INSPECTOR2_API OneTimeSchedule();
+    AWS_INSPECTOR2_API OneTimeSchedule() = default;
     AWS_INSPECTOR2_API OneTimeSchedule(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API OneTimeSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;

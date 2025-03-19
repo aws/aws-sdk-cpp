@@ -21,7 +21,7 @@ namespace Model
   class SendTaskSuccessRequest : public SFNRequest
   {
   public:
-    AWS_SFN_API SendTaskSuccessRequest();
+    AWS_SFN_API SendTaskSuccessRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * object</a> when a workflow enters a task state. See
      * <a>GetActivityTaskOutput$taskToken</a>.</p>
      */
-    inline const Aws::String& GetTaskToken() const{ return m_taskToken; }
+    inline const Aws::String& GetTaskToken() const { return m_taskToken; }
     inline bool TaskTokenHasBeenSet() const { return m_taskTokenHasBeenSet; }
-    inline void SetTaskToken(const Aws::String& value) { m_taskTokenHasBeenSet = true; m_taskToken = value; }
-    inline void SetTaskToken(Aws::String&& value) { m_taskTokenHasBeenSet = true; m_taskToken = std::move(value); }
-    inline void SetTaskToken(const char* value) { m_taskTokenHasBeenSet = true; m_taskToken.assign(value); }
-    inline SendTaskSuccessRequest& WithTaskToken(const Aws::String& value) { SetTaskToken(value); return *this;}
-    inline SendTaskSuccessRequest& WithTaskToken(Aws::String&& value) { SetTaskToken(std::move(value)); return *this;}
-    inline SendTaskSuccessRequest& WithTaskToken(const char* value) { SetTaskToken(value); return *this;}
+    template<typename TaskTokenT = Aws::String>
+    void SetTaskToken(TaskTokenT&& value) { m_taskTokenHasBeenSet = true; m_taskToken = std::forward<TaskTokenT>(value); }
+    template<typename TaskTokenT = Aws::String>
+    SendTaskSuccessRequest& WithTaskToken(TaskTokenT&& value) { SetTaskToken(std::forward<TaskTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The JSON output of the task. Length constraints apply to the payload size,
      * and are expressed as bytes in UTF-8 encoding.</p>
      */
-    inline const Aws::String& GetOutput() const{ return m_output; }
+    inline const Aws::String& GetOutput() const { return m_output; }
     inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
-    inline void SetOutput(const Aws::String& value) { m_outputHasBeenSet = true; m_output = value; }
-    inline void SetOutput(Aws::String&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
-    inline void SetOutput(const char* value) { m_outputHasBeenSet = true; m_output.assign(value); }
-    inline SendTaskSuccessRequest& WithOutput(const Aws::String& value) { SetOutput(value); return *this;}
-    inline SendTaskSuccessRequest& WithOutput(Aws::String&& value) { SetOutput(std::move(value)); return *this;}
-    inline SendTaskSuccessRequest& WithOutput(const char* value) { SetOutput(value); return *this;}
+    template<typename OutputT = Aws::String>
+    void SetOutput(OutputT&& value) { m_outputHasBeenSet = true; m_output = std::forward<OutputT>(value); }
+    template<typename OutputT = Aws::String>
+    SendTaskSuccessRequest& WithOutput(OutputT&& value) { SetOutput(std::forward<OutputT>(value)); return *this;}
     ///@}
   private:
 

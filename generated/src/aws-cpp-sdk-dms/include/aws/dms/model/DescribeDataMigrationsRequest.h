@@ -23,7 +23,7 @@ namespace Model
   class DescribeDataMigrationsRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API DescribeDataMigrationsRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeDataMigrationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>Filters applied to the data migrations.</p>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeDataMigrationsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline DescribeDataMigrationsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeDataMigrationsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeDataMigrationsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    DescribeDataMigrationsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    DescribeDataMigrationsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,7 +57,7 @@ namespace Model
      * called a marker is included in the response so that the remaining results can be
      * retrieved. </p>
      */
-    inline int GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
     inline DescribeDataMigrationsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
@@ -69,14 +69,12 @@ namespace Model
      * parameter is specified, the response includes only records beyond the marker, up
      * to the value specified by <code>MaxRecords</code>. </p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline DescribeDataMigrationsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeDataMigrationsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeDataMigrationsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeDataMigrationsRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,7 +84,7 @@ namespace Model
      * choose <code>true</code>; otherwise, choose <code>false</code> (the
      * default).</p>
      */
-    inline bool GetWithoutSettings() const{ return m_withoutSettings; }
+    inline bool GetWithoutSettings() const { return m_withoutSettings; }
     inline bool WithoutSettingsHasBeenSet() const { return m_withoutSettingsHasBeenSet; }
     inline void SetWithoutSettings(bool value) { m_withoutSettingsHasBeenSet = true; m_withoutSettings = value; }
     inline DescribeDataMigrationsRequest& WithWithoutSettings(bool value) { SetWithoutSettings(value); return *this;}
@@ -99,7 +97,7 @@ namespace Model
      * choose <code>true</code>; otherwise, choose <code>false</code> (the
      * default).</p>
      */
-    inline bool GetWithoutStatistics() const{ return m_withoutStatistics; }
+    inline bool GetWithoutStatistics() const { return m_withoutStatistics; }
     inline bool WithoutStatisticsHasBeenSet() const { return m_withoutStatisticsHasBeenSet; }
     inline void SetWithoutStatistics(bool value) { m_withoutStatisticsHasBeenSet = true; m_withoutStatistics = value; }
     inline DescribeDataMigrationsRequest& WithWithoutStatistics(bool value) { SetWithoutStatistics(value); return *this;}
@@ -109,16 +107,16 @@ namespace Model
     Aws::Vector<Filter> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_maxRecords;
+    int m_maxRecords{0};
     bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;
     bool m_markerHasBeenSet = false;
 
-    bool m_withoutSettings;
+    bool m_withoutSettings{false};
     bool m_withoutSettingsHasBeenSet = false;
 
-    bool m_withoutStatistics;
+    bool m_withoutStatistics{false};
     bool m_withoutStatisticsHasBeenSet = false;
   };
 

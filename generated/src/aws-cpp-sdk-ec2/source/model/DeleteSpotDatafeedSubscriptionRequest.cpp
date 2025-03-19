@@ -10,12 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteSpotDatafeedSubscriptionRequest::DeleteSpotDatafeedSubscriptionRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSpotDatafeedSubscriptionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

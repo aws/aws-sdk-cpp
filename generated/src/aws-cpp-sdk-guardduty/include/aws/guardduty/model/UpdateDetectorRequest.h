@@ -24,7 +24,7 @@ namespace Model
   class UpdateDetectorRequest : public GuardDutyRequest
   {
   public:
-    AWS_GUARDDUTY_API UpdateDetectorRequest();
+    AWS_GUARDDUTY_API UpdateDetectorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,21 +43,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_ListDetectors.html">ListDetectors</a>
      * API.</p>
      */
-    inline const Aws::String& GetDetectorId() const{ return m_detectorId; }
+    inline const Aws::String& GetDetectorId() const { return m_detectorId; }
     inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
-    inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
-    inline void SetDetectorId(Aws::String&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::move(value); }
-    inline void SetDetectorId(const char* value) { m_detectorIdHasBeenSet = true; m_detectorId.assign(value); }
-    inline UpdateDetectorRequest& WithDetectorId(const Aws::String& value) { SetDetectorId(value); return *this;}
-    inline UpdateDetectorRequest& WithDetectorId(Aws::String&& value) { SetDetectorId(std::move(value)); return *this;}
-    inline UpdateDetectorRequest& WithDetectorId(const char* value) { SetDetectorId(value); return *this;}
+    template<typename DetectorIdT = Aws::String>
+    void SetDetectorId(DetectorIdT&& value) { m_detectorIdHasBeenSet = true; m_detectorId = std::forward<DetectorIdT>(value); }
+    template<typename DetectorIdT = Aws::String>
+    UpdateDetectorRequest& WithDetectorId(DetectorIdT&& value) { SetDetectorId(std::forward<DetectorIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether the detector is enabled or not enabled.</p>
      */
-    inline bool GetEnable() const{ return m_enable; }
+    inline bool GetEnable() const { return m_enable; }
     inline bool EnableHasBeenSet() const { return m_enableHasBeenSet; }
     inline void SetEnable(bool value) { m_enableHasBeenSet = true; m_enable = value; }
     inline UpdateDetectorRequest& WithEnable(bool value) { SetEnable(value); return *this;}
@@ -68,36 +66,34 @@ namespace Model
      * <p>An enum value that specifies how frequently findings are exported, such as to
      * CloudWatch Events.</p>
      */
-    inline const FindingPublishingFrequency& GetFindingPublishingFrequency() const{ return m_findingPublishingFrequency; }
+    inline FindingPublishingFrequency GetFindingPublishingFrequency() const { return m_findingPublishingFrequency; }
     inline bool FindingPublishingFrequencyHasBeenSet() const { return m_findingPublishingFrequencyHasBeenSet; }
-    inline void SetFindingPublishingFrequency(const FindingPublishingFrequency& value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = value; }
-    inline void SetFindingPublishingFrequency(FindingPublishingFrequency&& value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = std::move(value); }
-    inline UpdateDetectorRequest& WithFindingPublishingFrequency(const FindingPublishingFrequency& value) { SetFindingPublishingFrequency(value); return *this;}
-    inline UpdateDetectorRequest& WithFindingPublishingFrequency(FindingPublishingFrequency&& value) { SetFindingPublishingFrequency(std::move(value)); return *this;}
+    inline void SetFindingPublishingFrequency(FindingPublishingFrequency value) { m_findingPublishingFrequencyHasBeenSet = true; m_findingPublishingFrequency = value; }
+    inline UpdateDetectorRequest& WithFindingPublishingFrequency(FindingPublishingFrequency value) { SetFindingPublishingFrequency(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides the features that will be updated for the detector.</p>
      */
-    inline const Aws::Vector<DetectorFeatureConfiguration>& GetFeatures() const{ return m_features; }
+    inline const Aws::Vector<DetectorFeatureConfiguration>& GetFeatures() const { return m_features; }
     inline bool FeaturesHasBeenSet() const { return m_featuresHasBeenSet; }
-    inline void SetFeatures(const Aws::Vector<DetectorFeatureConfiguration>& value) { m_featuresHasBeenSet = true; m_features = value; }
-    inline void SetFeatures(Aws::Vector<DetectorFeatureConfiguration>&& value) { m_featuresHasBeenSet = true; m_features = std::move(value); }
-    inline UpdateDetectorRequest& WithFeatures(const Aws::Vector<DetectorFeatureConfiguration>& value) { SetFeatures(value); return *this;}
-    inline UpdateDetectorRequest& WithFeatures(Aws::Vector<DetectorFeatureConfiguration>&& value) { SetFeatures(std::move(value)); return *this;}
-    inline UpdateDetectorRequest& AddFeatures(const DetectorFeatureConfiguration& value) { m_featuresHasBeenSet = true; m_features.push_back(value); return *this; }
-    inline UpdateDetectorRequest& AddFeatures(DetectorFeatureConfiguration&& value) { m_featuresHasBeenSet = true; m_features.push_back(std::move(value)); return *this; }
+    template<typename FeaturesT = Aws::Vector<DetectorFeatureConfiguration>>
+    void SetFeatures(FeaturesT&& value) { m_featuresHasBeenSet = true; m_features = std::forward<FeaturesT>(value); }
+    template<typename FeaturesT = Aws::Vector<DetectorFeatureConfiguration>>
+    UpdateDetectorRequest& WithFeatures(FeaturesT&& value) { SetFeatures(std::forward<FeaturesT>(value)); return *this;}
+    template<typename FeaturesT = DetectorFeatureConfiguration>
+    UpdateDetectorRequest& AddFeatures(FeaturesT&& value) { m_featuresHasBeenSet = true; m_features.emplace_back(std::forward<FeaturesT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_detectorId;
     bool m_detectorIdHasBeenSet = false;
 
-    bool m_enable;
+    bool m_enable{false};
     bool m_enableHasBeenSet = false;
 
-    FindingPublishingFrequency m_findingPublishingFrequency;
+    FindingPublishingFrequency m_findingPublishingFrequency{FindingPublishingFrequency::NOT_SET};
     bool m_findingPublishingFrequencyHasBeenSet = false;
 
     Aws::Vector<DetectorFeatureConfiguration> m_features;

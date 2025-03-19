@@ -10,20 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateManagedPrefixListRequest::CreateManagedPrefixListRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_prefixListNameHasBeenSet(false),
-    m_entriesHasBeenSet(false),
-    m_maxEntries(0),
-    m_maxEntriesHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_addressFamilyHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateManagedPrefixListRequest::SerializePayload() const
 {
   Aws::StringStream ss;

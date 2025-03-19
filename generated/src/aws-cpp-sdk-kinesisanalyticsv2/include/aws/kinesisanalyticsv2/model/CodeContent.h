@@ -35,7 +35,7 @@ namespace Model
   class CodeContent
   {
   public:
-    AWS_KINESISANALYTICSV2_API CodeContent();
+    AWS_KINESISANALYTICSV2_API CodeContent() = default;
     AWS_KINESISANALYTICSV2_API CodeContent(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API CodeContent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,26 +45,24 @@ namespace Model
     /**
      * <p>The text-format code for a Managed Service for Apache Flink application.</p>
      */
-    inline const Aws::String& GetTextContent() const{ return m_textContent; }
+    inline const Aws::String& GetTextContent() const { return m_textContent; }
     inline bool TextContentHasBeenSet() const { return m_textContentHasBeenSet; }
-    inline void SetTextContent(const Aws::String& value) { m_textContentHasBeenSet = true; m_textContent = value; }
-    inline void SetTextContent(Aws::String&& value) { m_textContentHasBeenSet = true; m_textContent = std::move(value); }
-    inline void SetTextContent(const char* value) { m_textContentHasBeenSet = true; m_textContent.assign(value); }
-    inline CodeContent& WithTextContent(const Aws::String& value) { SetTextContent(value); return *this;}
-    inline CodeContent& WithTextContent(Aws::String&& value) { SetTextContent(std::move(value)); return *this;}
-    inline CodeContent& WithTextContent(const char* value) { SetTextContent(value); return *this;}
+    template<typename TextContentT = Aws::String>
+    void SetTextContent(TextContentT&& value) { m_textContentHasBeenSet = true; m_textContent = std::forward<TextContentT>(value); }
+    template<typename TextContentT = Aws::String>
+    CodeContent& WithTextContent(TextContentT&& value) { SetTextContent(std::forward<TextContentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The zip-format code for a Managed Service for Apache Flink application.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetZipFileContent() const{ return m_zipFileContent; }
+    inline const Aws::Utils::ByteBuffer& GetZipFileContent() const { return m_zipFileContent; }
     inline bool ZipFileContentHasBeenSet() const { return m_zipFileContentHasBeenSet; }
-    inline void SetZipFileContent(const Aws::Utils::ByteBuffer& value) { m_zipFileContentHasBeenSet = true; m_zipFileContent = value; }
-    inline void SetZipFileContent(Aws::Utils::ByteBuffer&& value) { m_zipFileContentHasBeenSet = true; m_zipFileContent = std::move(value); }
-    inline CodeContent& WithZipFileContent(const Aws::Utils::ByteBuffer& value) { SetZipFileContent(value); return *this;}
-    inline CodeContent& WithZipFileContent(Aws::Utils::ByteBuffer&& value) { SetZipFileContent(std::move(value)); return *this;}
+    template<typename ZipFileContentT = Aws::Utils::ByteBuffer>
+    void SetZipFileContent(ZipFileContentT&& value) { m_zipFileContentHasBeenSet = true; m_zipFileContent = std::forward<ZipFileContentT>(value); }
+    template<typename ZipFileContentT = Aws::Utils::ByteBuffer>
+    CodeContent& WithZipFileContent(ZipFileContentT&& value) { SetZipFileContent(std::forward<ZipFileContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,19 +70,19 @@ namespace Model
      * <p>Information about the Amazon S3 bucket that contains the application
      * code.</p>
      */
-    inline const S3ContentLocation& GetS3ContentLocation() const{ return m_s3ContentLocation; }
+    inline const S3ContentLocation& GetS3ContentLocation() const { return m_s3ContentLocation; }
     inline bool S3ContentLocationHasBeenSet() const { return m_s3ContentLocationHasBeenSet; }
-    inline void SetS3ContentLocation(const S3ContentLocation& value) { m_s3ContentLocationHasBeenSet = true; m_s3ContentLocation = value; }
-    inline void SetS3ContentLocation(S3ContentLocation&& value) { m_s3ContentLocationHasBeenSet = true; m_s3ContentLocation = std::move(value); }
-    inline CodeContent& WithS3ContentLocation(const S3ContentLocation& value) { SetS3ContentLocation(value); return *this;}
-    inline CodeContent& WithS3ContentLocation(S3ContentLocation&& value) { SetS3ContentLocation(std::move(value)); return *this;}
+    template<typename S3ContentLocationT = S3ContentLocation>
+    void SetS3ContentLocation(S3ContentLocationT&& value) { m_s3ContentLocationHasBeenSet = true; m_s3ContentLocation = std::forward<S3ContentLocationT>(value); }
+    template<typename S3ContentLocationT = S3ContentLocation>
+    CodeContent& WithS3ContentLocation(S3ContentLocationT&& value) { SetS3ContentLocation(std::forward<S3ContentLocationT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_textContent;
     bool m_textContentHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_zipFileContent;
+    Aws::Utils::ByteBuffer m_zipFileContent{};
     bool m_zipFileContentHasBeenSet = false;
 
     S3ContentLocation m_s3ContentLocation;

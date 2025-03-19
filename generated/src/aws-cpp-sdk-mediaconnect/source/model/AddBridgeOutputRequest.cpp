@@ -18,13 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-AddBridgeOutputRequest::AddBridgeOutputRequest() : 
-    m_networkOutputHasBeenSet(false)
-{
-}
-
 AddBridgeOutputRequest::AddBridgeOutputRequest(JsonView jsonValue)
-  : AddBridgeOutputRequest()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AddBridgeOutputRequest& AddBridgeOutputRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("networkOutput"))
   {
     m_networkOutput = jsonValue.GetObject("networkOutput");
-
     m_networkOutputHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,133 +28,139 @@ namespace Model
   class SimpleScalarPropertiesResult
   {
   public:
-    AWS_RESTXMLPROTOCOLNAMESPACE_API SimpleScalarPropertiesResult();
+    AWS_RESTXMLPROTOCOLNAMESPACE_API SimpleScalarPropertiesResult() = default;
     AWS_RESTXMLPROTOCOLNAMESPACE_API SimpleScalarPropertiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RESTXMLPROTOCOLNAMESPACE_API SimpleScalarPropertiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetFoo() const{ return m_foo; }
-    inline void SetFoo(const Aws::String& value) { m_foo = value; }
-    inline void SetFoo(Aws::String&& value) { m_foo = std::move(value); }
-    inline void SetFoo(const char* value) { m_foo.assign(value); }
-    inline SimpleScalarPropertiesResult& WithFoo(const Aws::String& value) { SetFoo(value); return *this;}
-    inline SimpleScalarPropertiesResult& WithFoo(Aws::String&& value) { SetFoo(std::move(value)); return *this;}
-    inline SimpleScalarPropertiesResult& WithFoo(const char* value) { SetFoo(value); return *this;}
+    inline const Aws::String& GetFoo() const { return m_foo; }
+    template<typename FooT = Aws::String>
+    void SetFoo(FooT&& value) { m_fooHasBeenSet = true; m_foo = std::forward<FooT>(value); }
+    template<typename FooT = Aws::String>
+    SimpleScalarPropertiesResult& WithFoo(FooT&& value) { SetFoo(std::forward<FooT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetStringValue() const{ return m_stringValue; }
-    inline void SetStringValue(const Aws::String& value) { m_stringValue = value; }
-    inline void SetStringValue(Aws::String&& value) { m_stringValue = std::move(value); }
-    inline void SetStringValue(const char* value) { m_stringValue.assign(value); }
-    inline SimpleScalarPropertiesResult& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
-    inline SimpleScalarPropertiesResult& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
-    inline SimpleScalarPropertiesResult& WithStringValue(const char* value) { SetStringValue(value); return *this;}
+    inline const Aws::String& GetStringValue() const { return m_stringValue; }
+    template<typename StringValueT = Aws::String>
+    void SetStringValue(StringValueT&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::forward<StringValueT>(value); }
+    template<typename StringValueT = Aws::String>
+    SimpleScalarPropertiesResult& WithStringValue(StringValueT&& value) { SetStringValue(std::forward<StringValueT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline bool GetTrueBooleanValue() const{ return m_trueBooleanValue; }
-    inline void SetTrueBooleanValue(bool value) { m_trueBooleanValue = value; }
+    inline bool GetTrueBooleanValue() const { return m_trueBooleanValue; }
+    inline void SetTrueBooleanValue(bool value) { m_trueBooleanValueHasBeenSet = true; m_trueBooleanValue = value; }
     inline SimpleScalarPropertiesResult& WithTrueBooleanValue(bool value) { SetTrueBooleanValue(value); return *this;}
     ///@}
 
     ///@{
     
-    inline bool GetFalseBooleanValue() const{ return m_falseBooleanValue; }
-    inline void SetFalseBooleanValue(bool value) { m_falseBooleanValue = value; }
+    inline bool GetFalseBooleanValue() const { return m_falseBooleanValue; }
+    inline void SetFalseBooleanValue(bool value) { m_falseBooleanValueHasBeenSet = true; m_falseBooleanValue = value; }
     inline SimpleScalarPropertiesResult& WithFalseBooleanValue(bool value) { SetFalseBooleanValue(value); return *this;}
     ///@}
 
     ///@{
     
-    inline int GetByteValue() const{ return m_byteValue; }
-    inline void SetByteValue(int value) { m_byteValue = value; }
+    inline int GetByteValue() const { return m_byteValue; }
+    inline void SetByteValue(int value) { m_byteValueHasBeenSet = true; m_byteValue = value; }
     inline SimpleScalarPropertiesResult& WithByteValue(int value) { SetByteValue(value); return *this;}
     ///@}
 
     ///@{
     
-    inline int GetShortValue() const{ return m_shortValue; }
-    inline void SetShortValue(int value) { m_shortValue = value; }
+    inline int GetShortValue() const { return m_shortValue; }
+    inline void SetShortValue(int value) { m_shortValueHasBeenSet = true; m_shortValue = value; }
     inline SimpleScalarPropertiesResult& WithShortValue(int value) { SetShortValue(value); return *this;}
     ///@}
 
     ///@{
     
-    inline int GetIntegerValue() const{ return m_integerValue; }
-    inline void SetIntegerValue(int value) { m_integerValue = value; }
+    inline int GetIntegerValue() const { return m_integerValue; }
+    inline void SetIntegerValue(int value) { m_integerValueHasBeenSet = true; m_integerValue = value; }
     inline SimpleScalarPropertiesResult& WithIntegerValue(int value) { SetIntegerValue(value); return *this;}
     ///@}
 
     ///@{
     
-    inline long long GetLongValue() const{ return m_longValue; }
-    inline void SetLongValue(long long value) { m_longValue = value; }
+    inline long long GetLongValue() const { return m_longValue; }
+    inline void SetLongValue(long long value) { m_longValueHasBeenSet = true; m_longValue = value; }
     inline SimpleScalarPropertiesResult& WithLongValue(long long value) { SetLongValue(value); return *this;}
     ///@}
 
     ///@{
     
-    inline double GetFloatValue() const{ return m_floatValue; }
-    inline void SetFloatValue(double value) { m_floatValue = value; }
+    inline double GetFloatValue() const { return m_floatValue; }
+    inline void SetFloatValue(double value) { m_floatValueHasBeenSet = true; m_floatValue = value; }
     inline SimpleScalarPropertiesResult& WithFloatValue(double value) { SetFloatValue(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const NestedWithNamespace& GetNested() const{ return m_nested; }
-    inline void SetNested(const NestedWithNamespace& value) { m_nested = value; }
-    inline void SetNested(NestedWithNamespace&& value) { m_nested = std::move(value); }
-    inline SimpleScalarPropertiesResult& WithNested(const NestedWithNamespace& value) { SetNested(value); return *this;}
-    inline SimpleScalarPropertiesResult& WithNested(NestedWithNamespace&& value) { SetNested(std::move(value)); return *this;}
+    inline const NestedWithNamespace& GetNested() const { return m_nested; }
+    template<typename NestedT = NestedWithNamespace>
+    void SetNested(NestedT&& value) { m_nestedHasBeenSet = true; m_nested = std::forward<NestedT>(value); }
+    template<typename NestedT = NestedWithNamespace>
+    SimpleScalarPropertiesResult& WithNested(NestedT&& value) { SetNested(std::forward<NestedT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline double GetDoubleValue() const{ return m_doubleValue; }
-    inline void SetDoubleValue(double value) { m_doubleValue = value; }
+    inline double GetDoubleValue() const { return m_doubleValue; }
+    inline void SetDoubleValue(double value) { m_doubleValueHasBeenSet = true; m_doubleValue = value; }
     inline SimpleScalarPropertiesResult& WithDoubleValue(double value) { SetDoubleValue(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SimpleScalarPropertiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SimpleScalarPropertiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SimpleScalarPropertiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SimpleScalarPropertiesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_foo;
+    bool m_fooHasBeenSet = false;
 
     Aws::String m_stringValue;
+    bool m_stringValueHasBeenSet = false;
 
-    bool m_trueBooleanValue;
+    bool m_trueBooleanValue{false};
+    bool m_trueBooleanValueHasBeenSet = false;
 
-    bool m_falseBooleanValue;
+    bool m_falseBooleanValue{false};
+    bool m_falseBooleanValueHasBeenSet = false;
 
-    int m_byteValue;
+    int m_byteValue{0};
+    bool m_byteValueHasBeenSet = false;
 
-    int m_shortValue;
+    int m_shortValue{0};
+    bool m_shortValueHasBeenSet = false;
 
-    int m_integerValue;
+    int m_integerValue{0};
+    bool m_integerValueHasBeenSet = false;
 
-    long long m_longValue;
+    long long m_longValue{0};
+    bool m_longValueHasBeenSet = false;
 
-    double m_floatValue;
+    double m_floatValue{0.0};
+    bool m_floatValueHasBeenSet = false;
 
     NestedWithNamespace m_nested;
+    bool m_nestedHasBeenSet = false;
 
-    double m_doubleValue;
+    double m_doubleValue{0.0};
+    bool m_doubleValueHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

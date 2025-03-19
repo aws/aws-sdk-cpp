@@ -12,22 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListModelPackageGroupsRequest::ListModelPackageGroupsRequest() : 
-    m_creationTimeAfterHasBeenSet(false),
-    m_creationTimeBeforeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nameContainsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sortBy(ModelPackageGroupSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_crossAccountFilterOption(CrossAccountFilterOption::NOT_SET),
-    m_crossAccountFilterOptionHasBeenSet(false)
-{
-}
-
 Aws::String ListModelPackageGroupsRequest::SerializePayload() const
 {
   JsonValue payload;

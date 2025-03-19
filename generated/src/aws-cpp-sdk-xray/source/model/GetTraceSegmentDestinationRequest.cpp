@@ -12,10 +12,6 @@ using namespace Aws::XRay::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTraceSegmentDestinationRequest::GetTraceSegmentDestinationRequest()
-{
-}
-
 Aws::String GetTraceSegmentDestinationRequest::SerializePayload() const
 {
   return {};

@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SubnetIpPrefixes::SubnetIpPrefixes() : 
-    m_subnetIdHasBeenSet(false),
-    m_ipPrefixesHasBeenSet(false)
-{
-}
-
 SubnetIpPrefixes::SubnetIpPrefixes(const XmlNode& xmlNode)
-  : SubnetIpPrefixes()
 {
   *this = xmlNode;
 }
@@ -48,6 +41,7 @@ SubnetIpPrefixes& SubnetIpPrefixes::operator =(const XmlNode& xmlNode)
     if(!ipPrefixesNode.IsNull())
     {
       XmlNode ipPrefixesMember = ipPrefixesNode.FirstChild("item");
+      m_ipPrefixesHasBeenSet = !ipPrefixesMember.IsNull();
       while(!ipPrefixesMember.IsNull())
       {
         m_ipPrefixes.push_back(ipPrefixesMember.GetText());

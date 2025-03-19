@@ -32,7 +32,7 @@ namespace Model
   class AgentAliasRoutingConfigurationListItem
   {
   public:
-    AWS_BEDROCKAGENT_API AgentAliasRoutingConfigurationListItem();
+    AWS_BEDROCKAGENT_API AgentAliasRoutingConfigurationListItem() = default;
     AWS_BEDROCKAGENT_API AgentAliasRoutingConfigurationListItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API AgentAliasRoutingConfigurationListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The version of the agent with which the alias is associated.</p>
      */
-    inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+    inline const Aws::String& GetAgentVersion() const { return m_agentVersion; }
     inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
-    inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
-    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
-    inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
-    inline AgentAliasRoutingConfigurationListItem& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
-    inline AgentAliasRoutingConfigurationListItem& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
-    inline AgentAliasRoutingConfigurationListItem& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+    template<typename AgentVersionT = Aws::String>
+    void SetAgentVersion(AgentVersionT&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::forward<AgentVersionT>(value); }
+    template<typename AgentVersionT = Aws::String>
+    AgentAliasRoutingConfigurationListItem& WithAgentVersion(AgentVersionT&& value) { SetAgentVersion(std::forward<AgentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information on the Provisioned Throughput assigned to an agent alias.</p>
      */
-    inline const Aws::String& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
+    inline const Aws::String& GetProvisionedThroughput() const { return m_provisionedThroughput; }
     inline bool ProvisionedThroughputHasBeenSet() const { return m_provisionedThroughputHasBeenSet; }
-    inline void SetProvisionedThroughput(const Aws::String& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
-    inline void SetProvisionedThroughput(Aws::String&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::move(value); }
-    inline void SetProvisionedThroughput(const char* value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput.assign(value); }
-    inline AgentAliasRoutingConfigurationListItem& WithProvisionedThroughput(const Aws::String& value) { SetProvisionedThroughput(value); return *this;}
-    inline AgentAliasRoutingConfigurationListItem& WithProvisionedThroughput(Aws::String&& value) { SetProvisionedThroughput(std::move(value)); return *this;}
-    inline AgentAliasRoutingConfigurationListItem& WithProvisionedThroughput(const char* value) { SetProvisionedThroughput(value); return *this;}
+    template<typename ProvisionedThroughputT = Aws::String>
+    void SetProvisionedThroughput(ProvisionedThroughputT&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::forward<ProvisionedThroughputT>(value); }
+    template<typename ProvisionedThroughputT = Aws::String>
+    AgentAliasRoutingConfigurationListItem& WithProvisionedThroughput(ProvisionedThroughputT&& value) { SetProvisionedThroughput(std::forward<ProvisionedThroughputT>(value)); return *this;}
     ///@}
   private:
 

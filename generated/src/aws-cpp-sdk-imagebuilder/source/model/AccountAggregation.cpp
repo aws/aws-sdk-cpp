@@ -18,14 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-AccountAggregation::AccountAggregation() : 
-    m_accountIdHasBeenSet(false),
-    m_severityCountsHasBeenSet(false)
-{
-}
-
 AccountAggregation::AccountAggregation(JsonView jsonValue)
-  : AccountAggregation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AccountAggregation& AccountAggregation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("severityCounts"))
   {
     m_severityCounts = jsonValue.GetObject("severityCounts");
-
     m_severityCountsHasBeenSet = true;
   }
-
   return *this;
 }
 

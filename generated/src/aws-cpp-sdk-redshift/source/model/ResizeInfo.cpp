@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ResizeInfo::ResizeInfo() : 
-    m_resizeTypeHasBeenSet(false),
-    m_allowCancelResize(false),
-    m_allowCancelResizeHasBeenSet(false)
-{
-}
-
 ResizeInfo::ResizeInfo(const XmlNode& xmlNode)
-  : ResizeInfo()
 {
   *this = xmlNode;
 }

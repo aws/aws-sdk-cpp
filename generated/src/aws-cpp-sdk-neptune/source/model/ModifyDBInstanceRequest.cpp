@@ -10,60 +10,6 @@
 using namespace Aws::Neptune::Model;
 using namespace Aws::Utils;
 
-ModifyDBInstanceRequest::ModifyDBInstanceRequest() : 
-    m_dBInstanceIdentifierHasBeenSet(false),
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_dBInstanceClassHasBeenSet(false),
-    m_dBSubnetGroupNameHasBeenSet(false),
-    m_dBSecurityGroupsHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false),
-    m_applyImmediately(false),
-    m_applyImmediatelyHasBeenSet(false),
-    m_masterUserPasswordHasBeenSet(false),
-    m_dBParameterGroupNameHasBeenSet(false),
-    m_backupRetentionPeriod(0),
-    m_backupRetentionPeriodHasBeenSet(false),
-    m_preferredBackupWindowHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_multiAZ(false),
-    m_multiAZHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_allowMajorVersionUpgrade(false),
-    m_allowMajorVersionUpgradeHasBeenSet(false),
-    m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false),
-    m_licenseModelHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_optionGroupNameHasBeenSet(false),
-    m_newDBInstanceIdentifierHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_tdeCredentialArnHasBeenSet(false),
-    m_tdeCredentialPasswordHasBeenSet(false),
-    m_cACertificateIdentifierHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_copyTagsToSnapshot(false),
-    m_copyTagsToSnapshotHasBeenSet(false),
-    m_monitoringInterval(0),
-    m_monitoringIntervalHasBeenSet(false),
-    m_dBPortNumber(0),
-    m_dBPortNumberHasBeenSet(false),
-    m_monitoringRoleArnHasBeenSet(false),
-    m_domainIAMRoleNameHasBeenSet(false),
-    m_promotionTier(0),
-    m_promotionTierHasBeenSet(false),
-    m_enableIAMDatabaseAuthentication(false),
-    m_enableIAMDatabaseAuthenticationHasBeenSet(false),
-    m_enablePerformanceInsights(false),
-    m_enablePerformanceInsightsHasBeenSet(false),
-    m_performanceInsightsKMSKeyIdHasBeenSet(false),
-    m_cloudwatchLogsExportConfigurationHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false)
-{
-}
-
 Aws::String ModifyDBInstanceRequest::SerializePayload() const
 {
   Aws::StringStream ss;

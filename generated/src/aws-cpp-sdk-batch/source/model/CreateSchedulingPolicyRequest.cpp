@@ -12,13 +12,6 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSchedulingPolicyRequest::CreateSchedulingPolicyRequest() : 
-    m_nameHasBeenSet(false),
-    m_fairsharePolicyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateSchedulingPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

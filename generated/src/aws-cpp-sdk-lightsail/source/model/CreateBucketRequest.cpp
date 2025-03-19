@@ -12,15 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBucketRequest::CreateBucketRequest() : 
-    m_bucketNameHasBeenSet(false),
-    m_bundleIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_enableObjectVersioning(false),
-    m_enableObjectVersioningHasBeenSet(false)
-{
-}
-
 Aws::String CreateBucketRequest::SerializePayload() const
 {
   JsonValue payload;

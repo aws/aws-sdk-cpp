@@ -18,15 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-PackageDetailsForAssociation::PackageDetailsForAssociation() : 
-    m_packageIDHasBeenSet(false),
-    m_prerequisitePackageIDListHasBeenSet(false),
-    m_associationConfigurationHasBeenSet(false)
-{
-}
-
 PackageDetailsForAssociation::PackageDetailsForAssociation(JsonView jsonValue)
-  : PackageDetailsForAssociation()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ PackageDetailsForAssociation& PackageDetailsForAssociation::operator =(JsonView 
   if(jsonValue.ValueExists("PackageID"))
   {
     m_packageID = jsonValue.GetString("PackageID");
-
     m_packageIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrerequisitePackageIDList"))
   {
     Aws::Utils::Array<JsonView> prerequisitePackageIDListJsonList = jsonValue.GetArray("PrerequisitePackageIDList");
@@ -49,14 +39,11 @@ PackageDetailsForAssociation& PackageDetailsForAssociation::operator =(JsonView 
     }
     m_prerequisitePackageIDListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationConfiguration"))
   {
     m_associationConfiguration = jsonValue.GetObject("AssociationConfiguration");
-
     m_associationConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

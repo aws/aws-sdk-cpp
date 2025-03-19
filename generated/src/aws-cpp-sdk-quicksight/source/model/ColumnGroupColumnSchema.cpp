@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ColumnGroupColumnSchema::ColumnGroupColumnSchema() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 ColumnGroupColumnSchema::ColumnGroupColumnSchema(JsonView jsonValue)
-  : ColumnGroupColumnSchema()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ColumnGroupColumnSchema& ColumnGroupColumnSchema::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

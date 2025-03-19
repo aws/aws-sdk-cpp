@@ -21,7 +21,7 @@ namespace Model
   class RenameTableRequest : public S3TablesRequest
   {
   public:
-    AWS_S3TABLES_API RenameTableRequest();
+    AWS_S3TABLES_API RenameTableRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,84 +36,72 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the table bucket. </p>
      */
-    inline const Aws::String& GetTableBucketARN() const{ return m_tableBucketARN; }
+    inline const Aws::String& GetTableBucketARN() const { return m_tableBucketARN; }
     inline bool TableBucketARNHasBeenSet() const { return m_tableBucketARNHasBeenSet; }
-    inline void SetTableBucketARN(const Aws::String& value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN = value; }
-    inline void SetTableBucketARN(Aws::String&& value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN = std::move(value); }
-    inline void SetTableBucketARN(const char* value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN.assign(value); }
-    inline RenameTableRequest& WithTableBucketARN(const Aws::String& value) { SetTableBucketARN(value); return *this;}
-    inline RenameTableRequest& WithTableBucketARN(Aws::String&& value) { SetTableBucketARN(std::move(value)); return *this;}
-    inline RenameTableRequest& WithTableBucketARN(const char* value) { SetTableBucketARN(value); return *this;}
+    template<typename TableBucketARNT = Aws::String>
+    void SetTableBucketARN(TableBucketARNT&& value) { m_tableBucketARNHasBeenSet = true; m_tableBucketARN = std::forward<TableBucketARNT>(value); }
+    template<typename TableBucketARNT = Aws::String>
+    RenameTableRequest& WithTableBucketARN(TableBucketARNT&& value) { SetTableBucketARN(std::forward<TableBucketARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The namespace associated with the table. </p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline RenameTableRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline RenameTableRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline RenameTableRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    RenameTableRequest& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current name of the table.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline RenameTableRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline RenameTableRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline RenameTableRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    RenameTableRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new name for the namespace.</p>
      */
-    inline const Aws::String& GetNewNamespaceName() const{ return m_newNamespaceName; }
+    inline const Aws::String& GetNewNamespaceName() const { return m_newNamespaceName; }
     inline bool NewNamespaceNameHasBeenSet() const { return m_newNamespaceNameHasBeenSet; }
-    inline void SetNewNamespaceName(const Aws::String& value) { m_newNamespaceNameHasBeenSet = true; m_newNamespaceName = value; }
-    inline void SetNewNamespaceName(Aws::String&& value) { m_newNamespaceNameHasBeenSet = true; m_newNamespaceName = std::move(value); }
-    inline void SetNewNamespaceName(const char* value) { m_newNamespaceNameHasBeenSet = true; m_newNamespaceName.assign(value); }
-    inline RenameTableRequest& WithNewNamespaceName(const Aws::String& value) { SetNewNamespaceName(value); return *this;}
-    inline RenameTableRequest& WithNewNamespaceName(Aws::String&& value) { SetNewNamespaceName(std::move(value)); return *this;}
-    inline RenameTableRequest& WithNewNamespaceName(const char* value) { SetNewNamespaceName(value); return *this;}
+    template<typename NewNamespaceNameT = Aws::String>
+    void SetNewNamespaceName(NewNamespaceNameT&& value) { m_newNamespaceNameHasBeenSet = true; m_newNamespaceName = std::forward<NewNamespaceNameT>(value); }
+    template<typename NewNamespaceNameT = Aws::String>
+    RenameTableRequest& WithNewNamespaceName(NewNamespaceNameT&& value) { SetNewNamespaceName(std::forward<NewNamespaceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new name for the table.</p>
      */
-    inline const Aws::String& GetNewName() const{ return m_newName; }
+    inline const Aws::String& GetNewName() const { return m_newName; }
     inline bool NewNameHasBeenSet() const { return m_newNameHasBeenSet; }
-    inline void SetNewName(const Aws::String& value) { m_newNameHasBeenSet = true; m_newName = value; }
-    inline void SetNewName(Aws::String&& value) { m_newNameHasBeenSet = true; m_newName = std::move(value); }
-    inline void SetNewName(const char* value) { m_newNameHasBeenSet = true; m_newName.assign(value); }
-    inline RenameTableRequest& WithNewName(const Aws::String& value) { SetNewName(value); return *this;}
-    inline RenameTableRequest& WithNewName(Aws::String&& value) { SetNewName(std::move(value)); return *this;}
-    inline RenameTableRequest& WithNewName(const char* value) { SetNewName(value); return *this;}
+    template<typename NewNameT = Aws::String>
+    void SetNewName(NewNameT&& value) { m_newNameHasBeenSet = true; m_newName = std::forward<NewNameT>(value); }
+    template<typename NewNameT = Aws::String>
+    RenameTableRequest& WithNewName(NewNameT&& value) { SetNewName(std::forward<NewNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version token of the table.</p>
      */
-    inline const Aws::String& GetVersionToken() const{ return m_versionToken; }
+    inline const Aws::String& GetVersionToken() const { return m_versionToken; }
     inline bool VersionTokenHasBeenSet() const { return m_versionTokenHasBeenSet; }
-    inline void SetVersionToken(const Aws::String& value) { m_versionTokenHasBeenSet = true; m_versionToken = value; }
-    inline void SetVersionToken(Aws::String&& value) { m_versionTokenHasBeenSet = true; m_versionToken = std::move(value); }
-    inline void SetVersionToken(const char* value) { m_versionTokenHasBeenSet = true; m_versionToken.assign(value); }
-    inline RenameTableRequest& WithVersionToken(const Aws::String& value) { SetVersionToken(value); return *this;}
-    inline RenameTableRequest& WithVersionToken(Aws::String&& value) { SetVersionToken(std::move(value)); return *this;}
-    inline RenameTableRequest& WithVersionToken(const char* value) { SetVersionToken(value); return *this;}
+    template<typename VersionTokenT = Aws::String>
+    void SetVersionToken(VersionTokenT&& value) { m_versionTokenHasBeenSet = true; m_versionToken = std::forward<VersionTokenT>(value); }
+    template<typename VersionTokenT = Aws::String>
+    RenameTableRequest& WithVersionToken(VersionTokenT&& value) { SetVersionToken(std::forward<VersionTokenT>(value)); return *this;}
     ///@}
   private:
 

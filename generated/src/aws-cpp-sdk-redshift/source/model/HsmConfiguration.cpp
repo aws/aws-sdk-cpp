@@ -20,17 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-HsmConfiguration::HsmConfiguration() : 
-    m_hsmConfigurationIdentifierHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_hsmIpAddressHasBeenSet(false),
-    m_hsmPartitionNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 HsmConfiguration::HsmConfiguration(const XmlNode& xmlNode)
-  : HsmConfiguration()
 {
   *this = xmlNode;
 }
@@ -69,6 +59,7 @@ HsmConfiguration& HsmConfiguration::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

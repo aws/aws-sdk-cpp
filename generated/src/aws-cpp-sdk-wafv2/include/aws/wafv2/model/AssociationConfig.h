@@ -42,7 +42,7 @@ namespace Model
   class AssociationConfig
   {
   public:
-    AWS_WAFV2_API AssociationConfig();
+    AWS_WAFV2_API AssociationConfig() = default;
     AWS_WAFV2_API AssociationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API AssociationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -61,16 +61,15 @@ namespace Model
      * }</code> </p> <p>For Application Load Balancer and AppSync, the limit is fixed
      * at 8 KB (8,192 bytes).</p>
      */
-    inline const Aws::Map<AssociatedResourceType, RequestBodyAssociatedResourceTypeConfig>& GetRequestBody() const{ return m_requestBody; }
+    inline const Aws::Map<AssociatedResourceType, RequestBodyAssociatedResourceTypeConfig>& GetRequestBody() const { return m_requestBody; }
     inline bool RequestBodyHasBeenSet() const { return m_requestBodyHasBeenSet; }
-    inline void SetRequestBody(const Aws::Map<AssociatedResourceType, RequestBodyAssociatedResourceTypeConfig>& value) { m_requestBodyHasBeenSet = true; m_requestBody = value; }
-    inline void SetRequestBody(Aws::Map<AssociatedResourceType, RequestBodyAssociatedResourceTypeConfig>&& value) { m_requestBodyHasBeenSet = true; m_requestBody = std::move(value); }
-    inline AssociationConfig& WithRequestBody(const Aws::Map<AssociatedResourceType, RequestBodyAssociatedResourceTypeConfig>& value) { SetRequestBody(value); return *this;}
-    inline AssociationConfig& WithRequestBody(Aws::Map<AssociatedResourceType, RequestBodyAssociatedResourceTypeConfig>&& value) { SetRequestBody(std::move(value)); return *this;}
-    inline AssociationConfig& AddRequestBody(const AssociatedResourceType& key, const RequestBodyAssociatedResourceTypeConfig& value) { m_requestBodyHasBeenSet = true; m_requestBody.emplace(key, value); return *this; }
-    inline AssociationConfig& AddRequestBody(AssociatedResourceType&& key, const RequestBodyAssociatedResourceTypeConfig& value) { m_requestBodyHasBeenSet = true; m_requestBody.emplace(std::move(key), value); return *this; }
-    inline AssociationConfig& AddRequestBody(const AssociatedResourceType& key, RequestBodyAssociatedResourceTypeConfig&& value) { m_requestBodyHasBeenSet = true; m_requestBody.emplace(key, std::move(value)); return *this; }
-    inline AssociationConfig& AddRequestBody(AssociatedResourceType&& key, RequestBodyAssociatedResourceTypeConfig&& value) { m_requestBodyHasBeenSet = true; m_requestBody.emplace(std::move(key), std::move(value)); return *this; }
+    template<typename RequestBodyT = Aws::Map<AssociatedResourceType, RequestBodyAssociatedResourceTypeConfig>>
+    void SetRequestBody(RequestBodyT&& value) { m_requestBodyHasBeenSet = true; m_requestBody = std::forward<RequestBodyT>(value); }
+    template<typename RequestBodyT = Aws::Map<AssociatedResourceType, RequestBodyAssociatedResourceTypeConfig>>
+    AssociationConfig& WithRequestBody(RequestBodyT&& value) { SetRequestBody(std::forward<RequestBodyT>(value)); return *this;}
+    inline AssociationConfig& AddRequestBody(AssociatedResourceType key, RequestBodyAssociatedResourceTypeConfig value) {
+      m_requestBodyHasBeenSet = true; m_requestBody.emplace(key, value); return *this;
+    }
     ///@}
   private:
 

@@ -29,7 +29,7 @@ namespace Model
   class ListResourceServersResult
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API ListResourceServersResult();
+    AWS_COGNITOIDENTITYPROVIDER_API ListResourceServersResult() = default;
     AWS_COGNITOIDENTITYPROVIDER_API ListResourceServersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOIDENTITYPROVIDER_API ListResourceServersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>An array of resource servers and the details of their configuration. For
      * each, the response includes names, identifiers, and custom scopes.</p>
      */
-    inline const Aws::Vector<ResourceServerType>& GetResourceServers() const{ return m_resourceServers; }
-    inline void SetResourceServers(const Aws::Vector<ResourceServerType>& value) { m_resourceServers = value; }
-    inline void SetResourceServers(Aws::Vector<ResourceServerType>&& value) { m_resourceServers = std::move(value); }
-    inline ListResourceServersResult& WithResourceServers(const Aws::Vector<ResourceServerType>& value) { SetResourceServers(value); return *this;}
-    inline ListResourceServersResult& WithResourceServers(Aws::Vector<ResourceServerType>&& value) { SetResourceServers(std::move(value)); return *this;}
-    inline ListResourceServersResult& AddResourceServers(const ResourceServerType& value) { m_resourceServers.push_back(value); return *this; }
-    inline ListResourceServersResult& AddResourceServers(ResourceServerType&& value) { m_resourceServers.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResourceServerType>& GetResourceServers() const { return m_resourceServers; }
+    template<typename ResourceServersT = Aws::Vector<ResourceServerType>>
+    void SetResourceServers(ResourceServersT&& value) { m_resourceServersHasBeenSet = true; m_resourceServers = std::forward<ResourceServersT>(value); }
+    template<typename ResourceServersT = Aws::Vector<ResourceServerType>>
+    ListResourceServersResult& WithResourceServers(ResourceServersT&& value) { SetResourceServers(std::forward<ResourceServersT>(value)); return *this;}
+    template<typename ResourceServersT = ResourceServerType>
+    ListResourceServersResult& AddResourceServers(ResourceServersT&& value) { m_resourceServersHasBeenSet = true; m_resourceServers.emplace_back(std::forward<ResourceServersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * returns the next set of items in the list. By use of this token, you can
      * paginate through the full list of items.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListResourceServersResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListResourceServersResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListResourceServersResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListResourceServersResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListResourceServersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListResourceServersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListResourceServersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListResourceServersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ResourceServerType> m_resourceServers;
+    bool m_resourceServersHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

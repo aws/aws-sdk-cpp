@@ -31,7 +31,7 @@ namespace Model
   class OptInFeature
   {
   public:
-    AWS_SECURITYIR_API OptInFeature();
+    AWS_SECURITYIR_API OptInFeature() = default;
     AWS_SECURITYIR_API OptInFeature(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYIR_API OptInFeature& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYIR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,29 +41,27 @@ namespace Model
     /**
      * <p/>
      */
-    inline const OptInFeatureName& GetFeatureName() const{ return m_featureName; }
+    inline OptInFeatureName GetFeatureName() const { return m_featureName; }
     inline bool FeatureNameHasBeenSet() const { return m_featureNameHasBeenSet; }
-    inline void SetFeatureName(const OptInFeatureName& value) { m_featureNameHasBeenSet = true; m_featureName = value; }
-    inline void SetFeatureName(OptInFeatureName&& value) { m_featureNameHasBeenSet = true; m_featureName = std::move(value); }
-    inline OptInFeature& WithFeatureName(const OptInFeatureName& value) { SetFeatureName(value); return *this;}
-    inline OptInFeature& WithFeatureName(OptInFeatureName&& value) { SetFeatureName(std::move(value)); return *this;}
+    inline void SetFeatureName(OptInFeatureName value) { m_featureNameHasBeenSet = true; m_featureName = value; }
+    inline OptInFeature& WithFeatureName(OptInFeatureName value) { SetFeatureName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline bool GetIsEnabled() const{ return m_isEnabled; }
+    inline bool GetIsEnabled() const { return m_isEnabled; }
     inline bool IsEnabledHasBeenSet() const { return m_isEnabledHasBeenSet; }
     inline void SetIsEnabled(bool value) { m_isEnabledHasBeenSet = true; m_isEnabled = value; }
     inline OptInFeature& WithIsEnabled(bool value) { SetIsEnabled(value); return *this;}
     ///@}
   private:
 
-    OptInFeatureName m_featureName;
+    OptInFeatureName m_featureName{OptInFeatureName::NOT_SET};
     bool m_featureNameHasBeenSet = false;
 
-    bool m_isEnabled;
+    bool m_isEnabled{false};
     bool m_isEnabledHasBeenSet = false;
   };
 

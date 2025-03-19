@@ -34,7 +34,7 @@ namespace Model
   class ActivateGatewayRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API ActivateGatewayRequest();
+    AWS_STORAGEGATEWAY_API ActivateGatewayRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -59,28 +59,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/get-activation-key.html">Getting
      * activation key</a> in the <i>Storage Gateway User Guide</i>.</p>
      */
-    inline const Aws::String& GetActivationKey() const{ return m_activationKey; }
+    inline const Aws::String& GetActivationKey() const { return m_activationKey; }
     inline bool ActivationKeyHasBeenSet() const { return m_activationKeyHasBeenSet; }
-    inline void SetActivationKey(const Aws::String& value) { m_activationKeyHasBeenSet = true; m_activationKey = value; }
-    inline void SetActivationKey(Aws::String&& value) { m_activationKeyHasBeenSet = true; m_activationKey = std::move(value); }
-    inline void SetActivationKey(const char* value) { m_activationKeyHasBeenSet = true; m_activationKey.assign(value); }
-    inline ActivateGatewayRequest& WithActivationKey(const Aws::String& value) { SetActivationKey(value); return *this;}
-    inline ActivateGatewayRequest& WithActivationKey(Aws::String&& value) { SetActivationKey(std::move(value)); return *this;}
-    inline ActivateGatewayRequest& WithActivationKey(const char* value) { SetActivationKey(value); return *this;}
+    template<typename ActivationKeyT = Aws::String>
+    void SetActivationKey(ActivationKeyT&& value) { m_activationKeyHasBeenSet = true; m_activationKey = std::forward<ActivationKeyT>(value); }
+    template<typename ActivationKeyT = Aws::String>
+    ActivateGatewayRequest& WithActivationKey(ActivationKeyT&& value) { SetActivationKey(std::forward<ActivationKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name you configured for your gateway.</p>
      */
-    inline const Aws::String& GetGatewayName() const{ return m_gatewayName; }
+    inline const Aws::String& GetGatewayName() const { return m_gatewayName; }
     inline bool GatewayNameHasBeenSet() const { return m_gatewayNameHasBeenSet; }
-    inline void SetGatewayName(const Aws::String& value) { m_gatewayNameHasBeenSet = true; m_gatewayName = value; }
-    inline void SetGatewayName(Aws::String&& value) { m_gatewayNameHasBeenSet = true; m_gatewayName = std::move(value); }
-    inline void SetGatewayName(const char* value) { m_gatewayNameHasBeenSet = true; m_gatewayName.assign(value); }
-    inline ActivateGatewayRequest& WithGatewayName(const Aws::String& value) { SetGatewayName(value); return *this;}
-    inline ActivateGatewayRequest& WithGatewayName(Aws::String&& value) { SetGatewayName(std::move(value)); return *this;}
-    inline ActivateGatewayRequest& WithGatewayName(const char* value) { SetGatewayName(value); return *this;}
+    template<typename GatewayNameT = Aws::String>
+    void SetGatewayName(GatewayNameT&& value) { m_gatewayNameHasBeenSet = true; m_gatewayName = std::forward<GatewayNameT>(value); }
+    template<typename GatewayNameT = Aws::String>
+    ActivateGatewayRequest& WithGatewayName(GatewayNameT&& value) { SetGatewayName(std::forward<GatewayNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,14 +88,12 @@ namespace Model
      * time zone is used, for example, for scheduling snapshots and your gateway's
      * maintenance schedule.</p>
      */
-    inline const Aws::String& GetGatewayTimezone() const{ return m_gatewayTimezone; }
+    inline const Aws::String& GetGatewayTimezone() const { return m_gatewayTimezone; }
     inline bool GatewayTimezoneHasBeenSet() const { return m_gatewayTimezoneHasBeenSet; }
-    inline void SetGatewayTimezone(const Aws::String& value) { m_gatewayTimezoneHasBeenSet = true; m_gatewayTimezone = value; }
-    inline void SetGatewayTimezone(Aws::String&& value) { m_gatewayTimezoneHasBeenSet = true; m_gatewayTimezone = std::move(value); }
-    inline void SetGatewayTimezone(const char* value) { m_gatewayTimezoneHasBeenSet = true; m_gatewayTimezone.assign(value); }
-    inline ActivateGatewayRequest& WithGatewayTimezone(const Aws::String& value) { SetGatewayTimezone(value); return *this;}
-    inline ActivateGatewayRequest& WithGatewayTimezone(Aws::String&& value) { SetGatewayTimezone(std::move(value)); return *this;}
-    inline ActivateGatewayRequest& WithGatewayTimezone(const char* value) { SetGatewayTimezone(value); return *this;}
+    template<typename GatewayTimezoneT = Aws::String>
+    void SetGatewayTimezone(GatewayTimezoneT&& value) { m_gatewayTimezoneHasBeenSet = true; m_gatewayTimezone = std::forward<GatewayTimezoneT>(value); }
+    template<typename GatewayTimezoneT = Aws::String>
+    ActivateGatewayRequest& WithGatewayTimezone(GatewayTimezoneT&& value) { SetGatewayTimezone(std::forward<GatewayTimezoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,14 +110,12 @@ namespace Model
      * endpoints and quotas</a> in the <i>Amazon Web Services General Reference</i>.
      * </p>
      */
-    inline const Aws::String& GetGatewayRegion() const{ return m_gatewayRegion; }
+    inline const Aws::String& GetGatewayRegion() const { return m_gatewayRegion; }
     inline bool GatewayRegionHasBeenSet() const { return m_gatewayRegionHasBeenSet; }
-    inline void SetGatewayRegion(const Aws::String& value) { m_gatewayRegionHasBeenSet = true; m_gatewayRegion = value; }
-    inline void SetGatewayRegion(Aws::String&& value) { m_gatewayRegionHasBeenSet = true; m_gatewayRegion = std::move(value); }
-    inline void SetGatewayRegion(const char* value) { m_gatewayRegionHasBeenSet = true; m_gatewayRegion.assign(value); }
-    inline ActivateGatewayRequest& WithGatewayRegion(const Aws::String& value) { SetGatewayRegion(value); return *this;}
-    inline ActivateGatewayRequest& WithGatewayRegion(Aws::String&& value) { SetGatewayRegion(std::move(value)); return *this;}
-    inline ActivateGatewayRequest& WithGatewayRegion(const char* value) { SetGatewayRegion(value); return *this;}
+    template<typename GatewayRegionT = Aws::String>
+    void SetGatewayRegion(GatewayRegionT&& value) { m_gatewayRegionHasBeenSet = true; m_gatewayRegion = std::forward<GatewayRegionT>(value); }
+    template<typename GatewayRegionT = Aws::String>
+    ActivateGatewayRequest& WithGatewayRegion(GatewayRegionT&& value) { SetGatewayRegion(std::forward<GatewayRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,14 +131,12 @@ namespace Model
      * <code>CACHED</code> | <code>VTL</code> | <code>FILE_S3</code> |
      * <code>FILE_FSX_SMB</code> </p>
      */
-    inline const Aws::String& GetGatewayType() const{ return m_gatewayType; }
+    inline const Aws::String& GetGatewayType() const { return m_gatewayType; }
     inline bool GatewayTypeHasBeenSet() const { return m_gatewayTypeHasBeenSet; }
-    inline void SetGatewayType(const Aws::String& value) { m_gatewayTypeHasBeenSet = true; m_gatewayType = value; }
-    inline void SetGatewayType(Aws::String&& value) { m_gatewayTypeHasBeenSet = true; m_gatewayType = std::move(value); }
-    inline void SetGatewayType(const char* value) { m_gatewayTypeHasBeenSet = true; m_gatewayType.assign(value); }
-    inline ActivateGatewayRequest& WithGatewayType(const Aws::String& value) { SetGatewayType(value); return *this;}
-    inline ActivateGatewayRequest& WithGatewayType(Aws::String&& value) { SetGatewayType(std::move(value)); return *this;}
-    inline ActivateGatewayRequest& WithGatewayType(const char* value) { SetGatewayType(value); return *this;}
+    template<typename GatewayTypeT = Aws::String>
+    void SetGatewayType(GatewayTypeT&& value) { m_gatewayTypeHasBeenSet = true; m_gatewayType = std::forward<GatewayTypeT>(value); }
+    template<typename GatewayTypeT = Aws::String>
+    ActivateGatewayRequest& WithGatewayType(GatewayTypeT&& value) { SetGatewayType(std::forward<GatewayTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -154,14 +144,12 @@ namespace Model
      * <p>The value that indicates the type of tape drive to use for tape gateway. This
      * field is optional.</p> <p>Valid Values: <code>IBM-ULT3580-TD5</code> </p>
      */
-    inline const Aws::String& GetTapeDriveType() const{ return m_tapeDriveType; }
+    inline const Aws::String& GetTapeDriveType() const { return m_tapeDriveType; }
     inline bool TapeDriveTypeHasBeenSet() const { return m_tapeDriveTypeHasBeenSet; }
-    inline void SetTapeDriveType(const Aws::String& value) { m_tapeDriveTypeHasBeenSet = true; m_tapeDriveType = value; }
-    inline void SetTapeDriveType(Aws::String&& value) { m_tapeDriveTypeHasBeenSet = true; m_tapeDriveType = std::move(value); }
-    inline void SetTapeDriveType(const char* value) { m_tapeDriveTypeHasBeenSet = true; m_tapeDriveType.assign(value); }
-    inline ActivateGatewayRequest& WithTapeDriveType(const Aws::String& value) { SetTapeDriveType(value); return *this;}
-    inline ActivateGatewayRequest& WithTapeDriveType(Aws::String&& value) { SetTapeDriveType(std::move(value)); return *this;}
-    inline ActivateGatewayRequest& WithTapeDriveType(const char* value) { SetTapeDriveType(value); return *this;}
+    template<typename TapeDriveTypeT = Aws::String>
+    void SetTapeDriveType(TapeDriveTypeT&& value) { m_tapeDriveTypeHasBeenSet = true; m_tapeDriveType = std::forward<TapeDriveTypeT>(value); }
+    template<typename TapeDriveTypeT = Aws::String>
+    ActivateGatewayRequest& WithTapeDriveType(TapeDriveTypeT&& value) { SetTapeDriveType(std::forward<TapeDriveTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -170,14 +158,12 @@ namespace Model
      * This field is optional.</p> <p>Valid Values: <code>STK-L700</code> |
      * <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code> </p>
      */
-    inline const Aws::String& GetMediumChangerType() const{ return m_mediumChangerType; }
+    inline const Aws::String& GetMediumChangerType() const { return m_mediumChangerType; }
     inline bool MediumChangerTypeHasBeenSet() const { return m_mediumChangerTypeHasBeenSet; }
-    inline void SetMediumChangerType(const Aws::String& value) { m_mediumChangerTypeHasBeenSet = true; m_mediumChangerType = value; }
-    inline void SetMediumChangerType(Aws::String&& value) { m_mediumChangerTypeHasBeenSet = true; m_mediumChangerType = std::move(value); }
-    inline void SetMediumChangerType(const char* value) { m_mediumChangerTypeHasBeenSet = true; m_mediumChangerType.assign(value); }
-    inline ActivateGatewayRequest& WithMediumChangerType(const Aws::String& value) { SetMediumChangerType(value); return *this;}
-    inline ActivateGatewayRequest& WithMediumChangerType(Aws::String&& value) { SetMediumChangerType(std::move(value)); return *this;}
-    inline ActivateGatewayRequest& WithMediumChangerType(const char* value) { SetMediumChangerType(value); return *this;}
+    template<typename MediumChangerTypeT = Aws::String>
+    void SetMediumChangerType(MediumChangerTypeT&& value) { m_mediumChangerTypeHasBeenSet = true; m_mediumChangerType = std::forward<MediumChangerTypeT>(value); }
+    template<typename MediumChangerTypeT = Aws::String>
+    ActivateGatewayRequest& WithMediumChangerType(MediumChangerTypeT&& value) { SetMediumChangerType(std::forward<MediumChangerTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -189,14 +175,14 @@ namespace Model
      * characters, and the maximum length for a tag's value is 256 characters.</p>
      * 
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ActivateGatewayRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline ActivateGatewayRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline ActivateGatewayRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline ActivateGatewayRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    ActivateGatewayRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    ActivateGatewayRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

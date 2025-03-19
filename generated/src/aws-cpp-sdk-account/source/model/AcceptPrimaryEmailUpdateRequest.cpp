@@ -12,13 +12,6 @@ using namespace Aws::Account::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AcceptPrimaryEmailUpdateRequest::AcceptPrimaryEmailUpdateRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_otpHasBeenSet(false),
-    m_primaryEmailHasBeenSet(false)
-{
-}
-
 Aws::String AcceptPrimaryEmailUpdateRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace SecurityLake
 namespace Model
 {
 
-NotificationConfiguration::NotificationConfiguration() : 
-    m_httpsNotificationConfigurationHasBeenSet(false),
-    m_sqsNotificationConfigurationHasBeenSet(false)
-{
-}
-
 NotificationConfiguration::NotificationConfiguration(JsonView jsonValue)
-  : NotificationConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NotificationConfiguration& NotificationConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("httpsNotificationConfiguration"))
   {
     m_httpsNotificationConfiguration = jsonValue.GetObject("httpsNotificationConfiguration");
-
     m_httpsNotificationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sqsNotificationConfiguration"))
   {
     m_sqsNotificationConfiguration = jsonValue.GetObject("sqsNotificationConfiguration");
-
     m_sqsNotificationConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

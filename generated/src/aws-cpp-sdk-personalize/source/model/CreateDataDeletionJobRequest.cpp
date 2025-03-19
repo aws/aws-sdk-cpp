@@ -12,15 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDataDeletionJobRequest::CreateDataDeletionJobRequest() : 
-    m_jobNameHasBeenSet(false),
-    m_datasetGroupArnHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDataDeletionJobRequest::SerializePayload() const
 {
   JsonValue payload;

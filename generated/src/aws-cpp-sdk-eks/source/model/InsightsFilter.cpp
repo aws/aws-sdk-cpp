@@ -18,15 +18,7 @@ namespace EKS
 namespace Model
 {
 
-InsightsFilter::InsightsFilter() : 
-    m_categoriesHasBeenSet(false),
-    m_kubernetesVersionsHasBeenSet(false),
-    m_statusesHasBeenSet(false)
-{
-}
-
 InsightsFilter::InsightsFilter(JsonView jsonValue)
-  : InsightsFilter()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ InsightsFilter& InsightsFilter::operator =(JsonView jsonValue)
     }
     m_categoriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kubernetesVersions"))
   {
     Aws::Utils::Array<JsonView> kubernetesVersionsJsonList = jsonValue.GetArray("kubernetesVersions");
@@ -52,7 +43,6 @@ InsightsFilter& InsightsFilter::operator =(JsonView jsonValue)
     }
     m_kubernetesVersionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statuses"))
   {
     Aws::Utils::Array<JsonView> statusesJsonList = jsonValue.GetArray("statuses");
@@ -62,7 +52,6 @@ InsightsFilter& InsightsFilter::operator =(JsonView jsonValue)
     }
     m_statusesHasBeenSet = true;
   }
-
   return *this;
 }
 

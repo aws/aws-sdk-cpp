@@ -18,58 +18,28 @@ namespace TimestreamQuery
 namespace Model
 {
 
-Type::Type() : 
-    m_scalarType(ScalarType::NOT_SET),
-    m_scalarTypeHasBeenSet(false),
-    m_arrayColumnInfoHasBeenSet(false),
-    m_timeSeriesMeasureValueColumnInfoHasBeenSet(false),
-    m_rowColumnInfoHasBeenSet(false)
-{
-}
-
 Type::Type(JsonView jsonValue)
-  : Type()
 {
   *this = jsonValue;
 }
-
-const ColumnInfo& Type::GetArrayColumnInfo() const{ return *m_arrayColumnInfo; }
-bool Type::ArrayColumnInfoHasBeenSet() const { return m_arrayColumnInfoHasBeenSet; }
-void Type::SetArrayColumnInfo(const ColumnInfo& value) { m_arrayColumnInfoHasBeenSet = true; m_arrayColumnInfo = Aws::MakeShared<ColumnInfo>("Type", value); }
-void Type::SetArrayColumnInfo(ColumnInfo&& value) { m_arrayColumnInfoHasBeenSet = true; m_arrayColumnInfo = Aws::MakeShared<ColumnInfo>("Type", std::move(value)); }
-Type& Type::WithArrayColumnInfo(const ColumnInfo& value) { SetArrayColumnInfo(value); return *this;}
-Type& Type::WithArrayColumnInfo(ColumnInfo&& value) { SetArrayColumnInfo(std::move(value)); return *this;}
-
-const ColumnInfo& Type::GetTimeSeriesMeasureValueColumnInfo() const{ return *m_timeSeriesMeasureValueColumnInfo; }
-bool Type::TimeSeriesMeasureValueColumnInfoHasBeenSet() const { return m_timeSeriesMeasureValueColumnInfoHasBeenSet; }
-void Type::SetTimeSeriesMeasureValueColumnInfo(const ColumnInfo& value) { m_timeSeriesMeasureValueColumnInfoHasBeenSet = true; m_timeSeriesMeasureValueColumnInfo = Aws::MakeShared<ColumnInfo>("Type", value); }
-void Type::SetTimeSeriesMeasureValueColumnInfo(ColumnInfo&& value) { m_timeSeriesMeasureValueColumnInfoHasBeenSet = true; m_timeSeriesMeasureValueColumnInfo = Aws::MakeShared<ColumnInfo>("Type", std::move(value)); }
-Type& Type::WithTimeSeriesMeasureValueColumnInfo(const ColumnInfo& value) { SetTimeSeriesMeasureValueColumnInfo(value); return *this;}
-Type& Type::WithTimeSeriesMeasureValueColumnInfo(ColumnInfo&& value) { SetTimeSeriesMeasureValueColumnInfo(std::move(value)); return *this;}
 
 Type& Type::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("ScalarType"))
   {
     m_scalarType = ScalarTypeMapper::GetScalarTypeForName(jsonValue.GetString("ScalarType"));
-
     m_scalarTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ArrayColumnInfo"))
   {
     m_arrayColumnInfo = Aws::MakeShared<ColumnInfo>("Type", jsonValue.GetObject("ArrayColumnInfo"));
-
     m_arrayColumnInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeSeriesMeasureValueColumnInfo"))
   {
     m_timeSeriesMeasureValueColumnInfo = Aws::MakeShared<ColumnInfo>("Type", jsonValue.GetObject("TimeSeriesMeasureValueColumnInfo"));
-
     m_timeSeriesMeasureValueColumnInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RowColumnInfo"))
   {
     Aws::Utils::Array<JsonView> rowColumnInfoJsonList = jsonValue.GetArray("RowColumnInfo");
@@ -79,7 +49,6 @@ Type& Type::operator =(JsonView jsonValue)
     }
     m_rowColumnInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

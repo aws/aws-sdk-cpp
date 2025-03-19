@@ -32,7 +32,7 @@ namespace Model
   class EffectivePolicy
   {
   public:
-    AWS_IOT_API EffectivePolicy();
+    AWS_IOT_API EffectivePolicy() = default;
     AWS_IOT_API EffectivePolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API EffectivePolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The policy name.</p>
      */
-    inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+    inline const Aws::String& GetPolicyName() const { return m_policyName; }
     inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
-    inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
-    inline void SetPolicyName(Aws::String&& value) { m_policyNameHasBeenSet = true; m_policyName = std::move(value); }
-    inline void SetPolicyName(const char* value) { m_policyNameHasBeenSet = true; m_policyName.assign(value); }
-    inline EffectivePolicy& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-    inline EffectivePolicy& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-    inline EffectivePolicy& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    template<typename PolicyNameT = Aws::String>
+    void SetPolicyName(PolicyNameT&& value) { m_policyNameHasBeenSet = true; m_policyName = std::forward<PolicyNameT>(value); }
+    template<typename PolicyNameT = Aws::String>
+    EffectivePolicy& WithPolicyName(PolicyNameT&& value) { SetPolicyName(std::forward<PolicyNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The policy ARN.</p>
      */
-    inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
+    inline const Aws::String& GetPolicyArn() const { return m_policyArn; }
     inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
-    inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }
-    inline void SetPolicyArn(Aws::String&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::move(value); }
-    inline void SetPolicyArn(const char* value) { m_policyArnHasBeenSet = true; m_policyArn.assign(value); }
-    inline EffectivePolicy& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
-    inline EffectivePolicy& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
-    inline EffectivePolicy& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
+    template<typename PolicyArnT = Aws::String>
+    void SetPolicyArn(PolicyArnT&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::forward<PolicyArnT>(value); }
+    template<typename PolicyArnT = Aws::String>
+    EffectivePolicy& WithPolicyArn(PolicyArnT&& value) { SetPolicyArn(std::forward<PolicyArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IAM policy document.</p>
      */
-    inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
+    inline const Aws::String& GetPolicyDocument() const { return m_policyDocument; }
     inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
-    inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
-    inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::move(value); }
-    inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
-    inline EffectivePolicy& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
-    inline EffectivePolicy& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
-    inline EffectivePolicy& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
+    template<typename PolicyDocumentT = Aws::String>
+    void SetPolicyDocument(PolicyDocumentT&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::forward<PolicyDocumentT>(value); }
+    template<typename PolicyDocumentT = Aws::String>
+    EffectivePolicy& WithPolicyDocument(PolicyDocumentT&& value) { SetPolicyDocument(std::forward<PolicyDocumentT>(value)); return *this;}
     ///@}
   private:
 

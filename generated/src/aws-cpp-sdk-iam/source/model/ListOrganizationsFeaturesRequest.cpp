@@ -10,10 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-ListOrganizationsFeaturesRequest::ListOrganizationsFeaturesRequest()
-{
-}
-
 Aws::String ListOrganizationsFeaturesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

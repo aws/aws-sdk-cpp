@@ -32,7 +32,7 @@ namespace Model
   class SenderContact
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API SenderContact();
+    AWS_PARTNERCENTRALSELLING_API SenderContact() = default;
     AWS_PARTNERCENTRALSELLING_API SenderContact(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API SenderContact& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The sender-provided contact's title (job title or role) associated with the
      * <code>EngagementInvitation</code>.</p>
      */
-    inline const Aws::String& GetBusinessTitle() const{ return m_businessTitle; }
+    inline const Aws::String& GetBusinessTitle() const { return m_businessTitle; }
     inline bool BusinessTitleHasBeenSet() const { return m_businessTitleHasBeenSet; }
-    inline void SetBusinessTitle(const Aws::String& value) { m_businessTitleHasBeenSet = true; m_businessTitle = value; }
-    inline void SetBusinessTitle(Aws::String&& value) { m_businessTitleHasBeenSet = true; m_businessTitle = std::move(value); }
-    inline void SetBusinessTitle(const char* value) { m_businessTitleHasBeenSet = true; m_businessTitle.assign(value); }
-    inline SenderContact& WithBusinessTitle(const Aws::String& value) { SetBusinessTitle(value); return *this;}
-    inline SenderContact& WithBusinessTitle(Aws::String&& value) { SetBusinessTitle(std::move(value)); return *this;}
-    inline SenderContact& WithBusinessTitle(const char* value) { SetBusinessTitle(value); return *this;}
+    template<typename BusinessTitleT = Aws::String>
+    void SetBusinessTitle(BusinessTitleT&& value) { m_businessTitleHasBeenSet = true; m_businessTitle = std::forward<BusinessTitleT>(value); }
+    template<typename BusinessTitleT = Aws::String>
+    SenderContact& WithBusinessTitle(BusinessTitleT&& value) { SetBusinessTitle(std::forward<BusinessTitleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The sender-provided contact's email address associated with the
      * <code>EngagementInvitation</code>.</p>
      */
-    inline const Aws::String& GetEmail() const{ return m_email; }
+    inline const Aws::String& GetEmail() const { return m_email; }
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
-    inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
-    inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
-    inline void SetEmail(const char* value) { m_emailHasBeenSet = true; m_email.assign(value); }
-    inline SenderContact& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
-    inline SenderContact& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
-    inline SenderContact& WithEmail(const char* value) { SetEmail(value); return *this;}
+    template<typename EmailT = Aws::String>
+    void SetEmail(EmailT&& value) { m_emailHasBeenSet = true; m_email = std::forward<EmailT>(value); }
+    template<typename EmailT = Aws::String>
+    SenderContact& WithEmail(EmailT&& value) { SetEmail(std::forward<EmailT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p>The sender-provided contact's last name associated with the
      * <code>EngagementInvitation</code>.</p>
      */
-    inline const Aws::String& GetFirstName() const{ return m_firstName; }
+    inline const Aws::String& GetFirstName() const { return m_firstName; }
     inline bool FirstNameHasBeenSet() const { return m_firstNameHasBeenSet; }
-    inline void SetFirstName(const Aws::String& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
-    inline void SetFirstName(Aws::String&& value) { m_firstNameHasBeenSet = true; m_firstName = std::move(value); }
-    inline void SetFirstName(const char* value) { m_firstNameHasBeenSet = true; m_firstName.assign(value); }
-    inline SenderContact& WithFirstName(const Aws::String& value) { SetFirstName(value); return *this;}
-    inline SenderContact& WithFirstName(Aws::String&& value) { SetFirstName(std::move(value)); return *this;}
-    inline SenderContact& WithFirstName(const char* value) { SetFirstName(value); return *this;}
+    template<typename FirstNameT = Aws::String>
+    void SetFirstName(FirstNameT&& value) { m_firstNameHasBeenSet = true; m_firstName = std::forward<FirstNameT>(value); }
+    template<typename FirstNameT = Aws::String>
+    SenderContact& WithFirstName(FirstNameT&& value) { SetFirstName(std::forward<FirstNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +82,12 @@ namespace Model
      * <p>The sender-provided contact's first name associated with the
      * <code>EngagementInvitation</code>.</p>
      */
-    inline const Aws::String& GetLastName() const{ return m_lastName; }
+    inline const Aws::String& GetLastName() const { return m_lastName; }
     inline bool LastNameHasBeenSet() const { return m_lastNameHasBeenSet; }
-    inline void SetLastName(const Aws::String& value) { m_lastNameHasBeenSet = true; m_lastName = value; }
-    inline void SetLastName(Aws::String&& value) { m_lastNameHasBeenSet = true; m_lastName = std::move(value); }
-    inline void SetLastName(const char* value) { m_lastNameHasBeenSet = true; m_lastName.assign(value); }
-    inline SenderContact& WithLastName(const Aws::String& value) { SetLastName(value); return *this;}
-    inline SenderContact& WithLastName(Aws::String&& value) { SetLastName(std::move(value)); return *this;}
-    inline SenderContact& WithLastName(const char* value) { SetLastName(value); return *this;}
+    template<typename LastNameT = Aws::String>
+    void SetLastName(LastNameT&& value) { m_lastNameHasBeenSet = true; m_lastName = std::forward<LastNameT>(value); }
+    template<typename LastNameT = Aws::String>
+    SenderContact& WithLastName(LastNameT&& value) { SetLastName(std::forward<LastNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +95,12 @@ namespace Model
      * <p>The sender-provided contact's phone number associated with the
      * <code>EngagementInvitation</code>.</p>
      */
-    inline const Aws::String& GetPhone() const{ return m_phone; }
+    inline const Aws::String& GetPhone() const { return m_phone; }
     inline bool PhoneHasBeenSet() const { return m_phoneHasBeenSet; }
-    inline void SetPhone(const Aws::String& value) { m_phoneHasBeenSet = true; m_phone = value; }
-    inline void SetPhone(Aws::String&& value) { m_phoneHasBeenSet = true; m_phone = std::move(value); }
-    inline void SetPhone(const char* value) { m_phoneHasBeenSet = true; m_phone.assign(value); }
-    inline SenderContact& WithPhone(const Aws::String& value) { SetPhone(value); return *this;}
-    inline SenderContact& WithPhone(Aws::String&& value) { SetPhone(std::move(value)); return *this;}
-    inline SenderContact& WithPhone(const char* value) { SetPhone(value); return *this;}
+    template<typename PhoneT = Aws::String>
+    void SetPhone(PhoneT&& value) { m_phoneHasBeenSet = true; m_phone = std::forward<PhoneT>(value); }
+    template<typename PhoneT = Aws::String>
+    SenderContact& WithPhone(PhoneT&& value) { SetPhone(std::forward<PhoneT>(value)); return *this;}
     ///@}
   private:
 

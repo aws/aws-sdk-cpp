@@ -30,7 +30,7 @@ namespace Model
   class ModifyInstanceCreditSpecificationResponse
   {
   public:
-    AWS_EC2_API ModifyInstanceCreditSpecificationResponse();
+    AWS_EC2_API ModifyInstanceCreditSpecificationResponse() = default;
     AWS_EC2_API ModifyInstanceCreditSpecificationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API ModifyInstanceCreditSpecificationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>Information about the instances whose credit option for CPU usage was
      * successfully modified.</p>
      */
-    inline const Aws::Vector<SuccessfulInstanceCreditSpecificationItem>& GetSuccessfulInstanceCreditSpecifications() const{ return m_successfulInstanceCreditSpecifications; }
-    inline void SetSuccessfulInstanceCreditSpecifications(const Aws::Vector<SuccessfulInstanceCreditSpecificationItem>& value) { m_successfulInstanceCreditSpecifications = value; }
-    inline void SetSuccessfulInstanceCreditSpecifications(Aws::Vector<SuccessfulInstanceCreditSpecificationItem>&& value) { m_successfulInstanceCreditSpecifications = std::move(value); }
-    inline ModifyInstanceCreditSpecificationResponse& WithSuccessfulInstanceCreditSpecifications(const Aws::Vector<SuccessfulInstanceCreditSpecificationItem>& value) { SetSuccessfulInstanceCreditSpecifications(value); return *this;}
-    inline ModifyInstanceCreditSpecificationResponse& WithSuccessfulInstanceCreditSpecifications(Aws::Vector<SuccessfulInstanceCreditSpecificationItem>&& value) { SetSuccessfulInstanceCreditSpecifications(std::move(value)); return *this;}
-    inline ModifyInstanceCreditSpecificationResponse& AddSuccessfulInstanceCreditSpecifications(const SuccessfulInstanceCreditSpecificationItem& value) { m_successfulInstanceCreditSpecifications.push_back(value); return *this; }
-    inline ModifyInstanceCreditSpecificationResponse& AddSuccessfulInstanceCreditSpecifications(SuccessfulInstanceCreditSpecificationItem&& value) { m_successfulInstanceCreditSpecifications.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SuccessfulInstanceCreditSpecificationItem>& GetSuccessfulInstanceCreditSpecifications() const { return m_successfulInstanceCreditSpecifications; }
+    template<typename SuccessfulInstanceCreditSpecificationsT = Aws::Vector<SuccessfulInstanceCreditSpecificationItem>>
+    void SetSuccessfulInstanceCreditSpecifications(SuccessfulInstanceCreditSpecificationsT&& value) { m_successfulInstanceCreditSpecificationsHasBeenSet = true; m_successfulInstanceCreditSpecifications = std::forward<SuccessfulInstanceCreditSpecificationsT>(value); }
+    template<typename SuccessfulInstanceCreditSpecificationsT = Aws::Vector<SuccessfulInstanceCreditSpecificationItem>>
+    ModifyInstanceCreditSpecificationResponse& WithSuccessfulInstanceCreditSpecifications(SuccessfulInstanceCreditSpecificationsT&& value) { SetSuccessfulInstanceCreditSpecifications(std::forward<SuccessfulInstanceCreditSpecificationsT>(value)); return *this;}
+    template<typename SuccessfulInstanceCreditSpecificationsT = SuccessfulInstanceCreditSpecificationItem>
+    ModifyInstanceCreditSpecificationResponse& AddSuccessfulInstanceCreditSpecifications(SuccessfulInstanceCreditSpecificationsT&& value) { m_successfulInstanceCreditSpecificationsHasBeenSet = true; m_successfulInstanceCreditSpecifications.emplace_back(std::forward<SuccessfulInstanceCreditSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,30 +54,33 @@ namespace Model
      * <p>Information about the instances whose credit option for CPU usage was not
      * modified.</p>
      */
-    inline const Aws::Vector<UnsuccessfulInstanceCreditSpecificationItem>& GetUnsuccessfulInstanceCreditSpecifications() const{ return m_unsuccessfulInstanceCreditSpecifications; }
-    inline void SetUnsuccessfulInstanceCreditSpecifications(const Aws::Vector<UnsuccessfulInstanceCreditSpecificationItem>& value) { m_unsuccessfulInstanceCreditSpecifications = value; }
-    inline void SetUnsuccessfulInstanceCreditSpecifications(Aws::Vector<UnsuccessfulInstanceCreditSpecificationItem>&& value) { m_unsuccessfulInstanceCreditSpecifications = std::move(value); }
-    inline ModifyInstanceCreditSpecificationResponse& WithUnsuccessfulInstanceCreditSpecifications(const Aws::Vector<UnsuccessfulInstanceCreditSpecificationItem>& value) { SetUnsuccessfulInstanceCreditSpecifications(value); return *this;}
-    inline ModifyInstanceCreditSpecificationResponse& WithUnsuccessfulInstanceCreditSpecifications(Aws::Vector<UnsuccessfulInstanceCreditSpecificationItem>&& value) { SetUnsuccessfulInstanceCreditSpecifications(std::move(value)); return *this;}
-    inline ModifyInstanceCreditSpecificationResponse& AddUnsuccessfulInstanceCreditSpecifications(const UnsuccessfulInstanceCreditSpecificationItem& value) { m_unsuccessfulInstanceCreditSpecifications.push_back(value); return *this; }
-    inline ModifyInstanceCreditSpecificationResponse& AddUnsuccessfulInstanceCreditSpecifications(UnsuccessfulInstanceCreditSpecificationItem&& value) { m_unsuccessfulInstanceCreditSpecifications.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<UnsuccessfulInstanceCreditSpecificationItem>& GetUnsuccessfulInstanceCreditSpecifications() const { return m_unsuccessfulInstanceCreditSpecifications; }
+    template<typename UnsuccessfulInstanceCreditSpecificationsT = Aws::Vector<UnsuccessfulInstanceCreditSpecificationItem>>
+    void SetUnsuccessfulInstanceCreditSpecifications(UnsuccessfulInstanceCreditSpecificationsT&& value) { m_unsuccessfulInstanceCreditSpecificationsHasBeenSet = true; m_unsuccessfulInstanceCreditSpecifications = std::forward<UnsuccessfulInstanceCreditSpecificationsT>(value); }
+    template<typename UnsuccessfulInstanceCreditSpecificationsT = Aws::Vector<UnsuccessfulInstanceCreditSpecificationItem>>
+    ModifyInstanceCreditSpecificationResponse& WithUnsuccessfulInstanceCreditSpecifications(UnsuccessfulInstanceCreditSpecificationsT&& value) { SetUnsuccessfulInstanceCreditSpecifications(std::forward<UnsuccessfulInstanceCreditSpecificationsT>(value)); return *this;}
+    template<typename UnsuccessfulInstanceCreditSpecificationsT = UnsuccessfulInstanceCreditSpecificationItem>
+    ModifyInstanceCreditSpecificationResponse& AddUnsuccessfulInstanceCreditSpecifications(UnsuccessfulInstanceCreditSpecificationsT&& value) { m_unsuccessfulInstanceCreditSpecificationsHasBeenSet = true; m_unsuccessfulInstanceCreditSpecifications.emplace_back(std::forward<UnsuccessfulInstanceCreditSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ModifyInstanceCreditSpecificationResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ModifyInstanceCreditSpecificationResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ModifyInstanceCreditSpecificationResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SuccessfulInstanceCreditSpecificationItem> m_successfulInstanceCreditSpecifications;
+    bool m_successfulInstanceCreditSpecificationsHasBeenSet = false;
 
     Aws::Vector<UnsuccessfulInstanceCreditSpecificationItem> m_unsuccessfulInstanceCreditSpecifications;
+    bool m_unsuccessfulInstanceCreditSpecificationsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

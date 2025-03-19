@@ -18,17 +18,7 @@ namespace Connect
 namespace Model
 {
 
-AvailableNumberSummary::AvailableNumberSummary() : 
-    m_phoneNumberHasBeenSet(false),
-    m_phoneNumberCountryCode(PhoneNumberCountryCode::NOT_SET),
-    m_phoneNumberCountryCodeHasBeenSet(false),
-    m_phoneNumberType(PhoneNumberType::NOT_SET),
-    m_phoneNumberTypeHasBeenSet(false)
-{
-}
-
 AvailableNumberSummary::AvailableNumberSummary(JsonView jsonValue)
-  : AvailableNumberSummary()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ AvailableNumberSummary& AvailableNumberSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PhoneNumber"))
   {
     m_phoneNumber = jsonValue.GetString("PhoneNumber");
-
     m_phoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhoneNumberCountryCode"))
   {
     m_phoneNumberCountryCode = PhoneNumberCountryCodeMapper::GetPhoneNumberCountryCodeForName(jsonValue.GetString("PhoneNumberCountryCode"));
-
     m_phoneNumberCountryCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhoneNumberType"))
   {
     m_phoneNumberType = PhoneNumberTypeMapper::GetPhoneNumberTypeForName(jsonValue.GetString("PhoneNumberType"));
-
     m_phoneNumberTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

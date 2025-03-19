@@ -12,11 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteConnectPeerRequest::DeleteConnectPeerRequest() : 
-    m_connectPeerIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteConnectPeerRequest::SerializePayload() const
 {
   return {};

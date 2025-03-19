@@ -25,7 +25,7 @@ namespace Model
   class ModifyEventSubscriptionRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API ModifyEventSubscriptionRequest();
+    AWS_REDSHIFT_API ModifyEventSubscriptionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The name of the modified Amazon Redshift event notification subscription.</p>
      */
-    inline const Aws::String& GetSubscriptionName() const{ return m_subscriptionName; }
+    inline const Aws::String& GetSubscriptionName() const { return m_subscriptionName; }
     inline bool SubscriptionNameHasBeenSet() const { return m_subscriptionNameHasBeenSet; }
-    inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
-    inline void SetSubscriptionName(Aws::String&& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = std::move(value); }
-    inline void SetSubscriptionName(const char* value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName.assign(value); }
-    inline ModifyEventSubscriptionRequest& WithSubscriptionName(const Aws::String& value) { SetSubscriptionName(value); return *this;}
-    inline ModifyEventSubscriptionRequest& WithSubscriptionName(Aws::String&& value) { SetSubscriptionName(std::move(value)); return *this;}
-    inline ModifyEventSubscriptionRequest& WithSubscriptionName(const char* value) { SetSubscriptionName(value); return *this;}
+    template<typename SubscriptionNameT = Aws::String>
+    void SetSubscriptionName(SubscriptionNameT&& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = std::forward<SubscriptionNameT>(value); }
+    template<typename SubscriptionNameT = Aws::String>
+    ModifyEventSubscriptionRequest& WithSubscriptionName(SubscriptionNameT&& value) { SetSubscriptionName(std::forward<SubscriptionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the SNS topic to be used by the event
      * notification subscription.</p>
      */
-    inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
+    inline const Aws::String& GetSnsTopicArn() const { return m_snsTopicArn; }
     inline bool SnsTopicArnHasBeenSet() const { return m_snsTopicArnHasBeenSet; }
-    inline void SetSnsTopicArn(const Aws::String& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = value; }
-    inline void SetSnsTopicArn(Aws::String&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::move(value); }
-    inline void SetSnsTopicArn(const char* value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn.assign(value); }
-    inline ModifyEventSubscriptionRequest& WithSnsTopicArn(const Aws::String& value) { SetSnsTopicArn(value); return *this;}
-    inline ModifyEventSubscriptionRequest& WithSnsTopicArn(Aws::String&& value) { SetSnsTopicArn(std::move(value)); return *this;}
-    inline ModifyEventSubscriptionRequest& WithSnsTopicArn(const char* value) { SetSnsTopicArn(value); return *this;}
+    template<typename SnsTopicArnT = Aws::String>
+    void SetSnsTopicArn(SnsTopicArnT&& value) { m_snsTopicArnHasBeenSet = true; m_snsTopicArn = std::forward<SnsTopicArnT>(value); }
+    template<typename SnsTopicArnT = Aws::String>
+    ModifyEventSubscriptionRequest& WithSnsTopicArn(SnsTopicArnT&& value) { SetSnsTopicArn(std::forward<SnsTopicArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +75,12 @@ namespace Model
      * cluster, cluster-parameter-group, cluster-security-group, cluster-snapshot, and
      * scheduled-action.</p>
      */
-    inline const Aws::String& GetSourceType() const{ return m_sourceType; }
+    inline const Aws::String& GetSourceType() const { return m_sourceType; }
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-    inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-    inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
-    inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
-    inline ModifyEventSubscriptionRequest& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
-    inline ModifyEventSubscriptionRequest& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
-    inline ModifyEventSubscriptionRequest& WithSourceType(const char* value) { SetSourceType(value); return *this;}
+    template<typename SourceTypeT = Aws::String>
+    void SetSourceType(SourceTypeT&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::forward<SourceTypeT>(value); }
+    template<typename SourceTypeT = Aws::String>
+    ModifyEventSubscriptionRequest& WithSourceType(SourceTypeT&& value) { SetSourceType(std::forward<SourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,15 +92,14 @@ namespace Model
      * within the source type specified.</p> <p>Example: my-cluster-1, my-cluster-2</p>
      * <p>Example: my-snapshot-20131010</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSourceIds() const{ return m_sourceIds; }
+    inline const Aws::Vector<Aws::String>& GetSourceIds() const { return m_sourceIds; }
     inline bool SourceIdsHasBeenSet() const { return m_sourceIdsHasBeenSet; }
-    inline void SetSourceIds(const Aws::Vector<Aws::String>& value) { m_sourceIdsHasBeenSet = true; m_sourceIds = value; }
-    inline void SetSourceIds(Aws::Vector<Aws::String>&& value) { m_sourceIdsHasBeenSet = true; m_sourceIds = std::move(value); }
-    inline ModifyEventSubscriptionRequest& WithSourceIds(const Aws::Vector<Aws::String>& value) { SetSourceIds(value); return *this;}
-    inline ModifyEventSubscriptionRequest& WithSourceIds(Aws::Vector<Aws::String>&& value) { SetSourceIds(std::move(value)); return *this;}
-    inline ModifyEventSubscriptionRequest& AddSourceIds(const Aws::String& value) { m_sourceIdsHasBeenSet = true; m_sourceIds.push_back(value); return *this; }
-    inline ModifyEventSubscriptionRequest& AddSourceIds(Aws::String&& value) { m_sourceIdsHasBeenSet = true; m_sourceIds.push_back(std::move(value)); return *this; }
-    inline ModifyEventSubscriptionRequest& AddSourceIds(const char* value) { m_sourceIdsHasBeenSet = true; m_sourceIds.push_back(value); return *this; }
+    template<typename SourceIdsT = Aws::Vector<Aws::String>>
+    void SetSourceIds(SourceIdsT&& value) { m_sourceIdsHasBeenSet = true; m_sourceIds = std::forward<SourceIdsT>(value); }
+    template<typename SourceIdsT = Aws::Vector<Aws::String>>
+    ModifyEventSubscriptionRequest& WithSourceIds(SourceIdsT&& value) { SetSourceIds(std::forward<SourceIdsT>(value)); return *this;}
+    template<typename SourceIdsT = Aws::String>
+    ModifyEventSubscriptionRequest& AddSourceIds(SourceIdsT&& value) { m_sourceIdsHasBeenSet = true; m_sourceIds.emplace_back(std::forward<SourceIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -115,15 +108,14 @@ namespace Model
      * notification subscription.</p> <p>Values: configuration, management, monitoring,
      * security, pending</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEventCategories() const{ return m_eventCategories; }
+    inline const Aws::Vector<Aws::String>& GetEventCategories() const { return m_eventCategories; }
     inline bool EventCategoriesHasBeenSet() const { return m_eventCategoriesHasBeenSet; }
-    inline void SetEventCategories(const Aws::Vector<Aws::String>& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = value; }
-    inline void SetEventCategories(Aws::Vector<Aws::String>&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = std::move(value); }
-    inline ModifyEventSubscriptionRequest& WithEventCategories(const Aws::Vector<Aws::String>& value) { SetEventCategories(value); return *this;}
-    inline ModifyEventSubscriptionRequest& WithEventCategories(Aws::Vector<Aws::String>&& value) { SetEventCategories(std::move(value)); return *this;}
-    inline ModifyEventSubscriptionRequest& AddEventCategories(const Aws::String& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
-    inline ModifyEventSubscriptionRequest& AddEventCategories(Aws::String&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(std::move(value)); return *this; }
-    inline ModifyEventSubscriptionRequest& AddEventCategories(const char* value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.push_back(value); return *this; }
+    template<typename EventCategoriesT = Aws::Vector<Aws::String>>
+    void SetEventCategories(EventCategoriesT&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories = std::forward<EventCategoriesT>(value); }
+    template<typename EventCategoriesT = Aws::Vector<Aws::String>>
+    ModifyEventSubscriptionRequest& WithEventCategories(EventCategoriesT&& value) { SetEventCategories(std::forward<EventCategoriesT>(value)); return *this;}
+    template<typename EventCategoriesT = Aws::String>
+    ModifyEventSubscriptionRequest& AddEventCategories(EventCategoriesT&& value) { m_eventCategoriesHasBeenSet = true; m_eventCategories.emplace_back(std::forward<EventCategoriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -131,14 +123,12 @@ namespace Model
      * <p>Specifies the Amazon Redshift event severity to be published by the event
      * notification subscription.</p> <p>Values: ERROR, INFO</p>
      */
-    inline const Aws::String& GetSeverity() const{ return m_severity; }
+    inline const Aws::String& GetSeverity() const { return m_severity; }
     inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
-    inline void SetSeverity(const Aws::String& value) { m_severityHasBeenSet = true; m_severity = value; }
-    inline void SetSeverity(Aws::String&& value) { m_severityHasBeenSet = true; m_severity = std::move(value); }
-    inline void SetSeverity(const char* value) { m_severityHasBeenSet = true; m_severity.assign(value); }
-    inline ModifyEventSubscriptionRequest& WithSeverity(const Aws::String& value) { SetSeverity(value); return *this;}
-    inline ModifyEventSubscriptionRequest& WithSeverity(Aws::String&& value) { SetSeverity(std::move(value)); return *this;}
-    inline ModifyEventSubscriptionRequest& WithSeverity(const char* value) { SetSeverity(value); return *this;}
+    template<typename SeverityT = Aws::String>
+    void SetSeverity(SeverityT&& value) { m_severityHasBeenSet = true; m_severity = std::forward<SeverityT>(value); }
+    template<typename SeverityT = Aws::String>
+    ModifyEventSubscriptionRequest& WithSeverity(SeverityT&& value) { SetSeverity(std::forward<SeverityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -146,7 +136,7 @@ namespace Model
      * <p>A Boolean value indicating if the subscription is enabled. <code>true</code>
      * indicates the subscription is enabled </p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline ModifyEventSubscriptionRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -171,7 +161,7 @@ namespace Model
     Aws::String m_severity;
     bool m_severityHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

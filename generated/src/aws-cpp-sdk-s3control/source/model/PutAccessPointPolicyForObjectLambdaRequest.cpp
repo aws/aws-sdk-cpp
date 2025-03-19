@@ -15,12 +15,6 @@ using namespace Aws::S3Control::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-PutAccessPointPolicyForObjectLambdaRequest::PutAccessPointPolicyForObjectLambdaRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_policyHasBeenSet(false)
-{
-}
 
 Aws::String PutAccessPointPolicyForObjectLambdaRequest::SerializePayload() const
 {

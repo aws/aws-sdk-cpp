@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-Detection::Detection() : 
-    m_anomalyHasBeenSet(false),
-    m_sequenceHasBeenSet(false)
-{
-}
-
 Detection::Detection(JsonView jsonValue)
-  : Detection()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Detection& Detection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("anomaly"))
   {
     m_anomaly = jsonValue.GetObject("anomaly");
-
     m_anomalyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sequence"))
   {
     m_sequence = jsonValue.GetObject("sequence");
-
     m_sequenceHasBeenSet = true;
   }
-
   return *this;
 }
 

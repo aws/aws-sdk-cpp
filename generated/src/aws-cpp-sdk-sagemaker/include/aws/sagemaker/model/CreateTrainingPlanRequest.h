@@ -23,7 +23,7 @@ namespace Model
   class CreateTrainingPlanRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API CreateTrainingPlanRequest();
+    AWS_SAGEMAKER_API CreateTrainingPlanRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The name of the training plan to create.</p>
      */
-    inline const Aws::String& GetTrainingPlanName() const{ return m_trainingPlanName; }
+    inline const Aws::String& GetTrainingPlanName() const { return m_trainingPlanName; }
     inline bool TrainingPlanNameHasBeenSet() const { return m_trainingPlanNameHasBeenSet; }
-    inline void SetTrainingPlanName(const Aws::String& value) { m_trainingPlanNameHasBeenSet = true; m_trainingPlanName = value; }
-    inline void SetTrainingPlanName(Aws::String&& value) { m_trainingPlanNameHasBeenSet = true; m_trainingPlanName = std::move(value); }
-    inline void SetTrainingPlanName(const char* value) { m_trainingPlanNameHasBeenSet = true; m_trainingPlanName.assign(value); }
-    inline CreateTrainingPlanRequest& WithTrainingPlanName(const Aws::String& value) { SetTrainingPlanName(value); return *this;}
-    inline CreateTrainingPlanRequest& WithTrainingPlanName(Aws::String&& value) { SetTrainingPlanName(std::move(value)); return *this;}
-    inline CreateTrainingPlanRequest& WithTrainingPlanName(const char* value) { SetTrainingPlanName(value); return *this;}
+    template<typename TrainingPlanNameT = Aws::String>
+    void SetTrainingPlanName(TrainingPlanNameT&& value) { m_trainingPlanNameHasBeenSet = true; m_trainingPlanName = std::forward<TrainingPlanNameT>(value); }
+    template<typename TrainingPlanNameT = Aws::String>
+    CreateTrainingPlanRequest& WithTrainingPlanName(TrainingPlanNameT&& value) { SetTrainingPlanName(std::forward<TrainingPlanNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,28 +53,26 @@ namespace Model
      * <p>The unique identifier of the training plan offering to use for creating this
      * plan.</p>
      */
-    inline const Aws::String& GetTrainingPlanOfferingId() const{ return m_trainingPlanOfferingId; }
+    inline const Aws::String& GetTrainingPlanOfferingId() const { return m_trainingPlanOfferingId; }
     inline bool TrainingPlanOfferingIdHasBeenSet() const { return m_trainingPlanOfferingIdHasBeenSet; }
-    inline void SetTrainingPlanOfferingId(const Aws::String& value) { m_trainingPlanOfferingIdHasBeenSet = true; m_trainingPlanOfferingId = value; }
-    inline void SetTrainingPlanOfferingId(Aws::String&& value) { m_trainingPlanOfferingIdHasBeenSet = true; m_trainingPlanOfferingId = std::move(value); }
-    inline void SetTrainingPlanOfferingId(const char* value) { m_trainingPlanOfferingIdHasBeenSet = true; m_trainingPlanOfferingId.assign(value); }
-    inline CreateTrainingPlanRequest& WithTrainingPlanOfferingId(const Aws::String& value) { SetTrainingPlanOfferingId(value); return *this;}
-    inline CreateTrainingPlanRequest& WithTrainingPlanOfferingId(Aws::String&& value) { SetTrainingPlanOfferingId(std::move(value)); return *this;}
-    inline CreateTrainingPlanRequest& WithTrainingPlanOfferingId(const char* value) { SetTrainingPlanOfferingId(value); return *this;}
+    template<typename TrainingPlanOfferingIdT = Aws::String>
+    void SetTrainingPlanOfferingId(TrainingPlanOfferingIdT&& value) { m_trainingPlanOfferingIdHasBeenSet = true; m_trainingPlanOfferingId = std::forward<TrainingPlanOfferingIdT>(value); }
+    template<typename TrainingPlanOfferingIdT = Aws::String>
+    CreateTrainingPlanRequest& WithTrainingPlanOfferingId(TrainingPlanOfferingIdT&& value) { SetTrainingPlanOfferingId(std::forward<TrainingPlanOfferingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of key-value pairs to apply to this training plan.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateTrainingPlanRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateTrainingPlanRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateTrainingPlanRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateTrainingPlanRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateTrainingPlanRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateTrainingPlanRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

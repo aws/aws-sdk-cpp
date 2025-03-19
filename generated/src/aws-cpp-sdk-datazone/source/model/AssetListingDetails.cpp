@@ -18,15 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-AssetListingDetails::AssetListingDetails() : 
-    m_listingIdHasBeenSet(false),
-    m_listingStatus(ListingStatus::NOT_SET),
-    m_listingStatusHasBeenSet(false)
-{
-}
-
 AssetListingDetails::AssetListingDetails(JsonView jsonValue)
-  : AssetListingDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AssetListingDetails& AssetListingDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("listingId"))
   {
     m_listingId = jsonValue.GetString("listingId");
-
     m_listingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listingStatus"))
   {
     m_listingStatus = ListingStatusMapper::GetListingStatusForName(jsonValue.GetString("listingStatus"));
-
     m_listingStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

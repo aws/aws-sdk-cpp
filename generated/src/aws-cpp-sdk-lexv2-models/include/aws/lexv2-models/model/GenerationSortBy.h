@@ -33,7 +33,7 @@ namespace Model
   class GenerationSortBy
   {
   public:
-    AWS_LEXMODELSV2_API GenerationSortBy();
+    AWS_LEXMODELSV2_API GenerationSortBy() = default;
     AWS_LEXMODELSV2_API GenerationSortBy(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API GenerationSortBy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,31 +47,27 @@ namespace Model
      * created.</p> </li> <li> <p> <code>lastUpdatedTime</code> – The time at which the
      * generation request was last updated.</p> </li> </ul>
      */
-    inline const GenerationSortByAttribute& GetAttribute() const{ return m_attribute; }
+    inline GenerationSortByAttribute GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const GenerationSortByAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(GenerationSortByAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline GenerationSortBy& WithAttribute(const GenerationSortByAttribute& value) { SetAttribute(value); return *this;}
-    inline GenerationSortBy& WithAttribute(GenerationSortByAttribute&& value) { SetAttribute(std::move(value)); return *this;}
+    inline void SetAttribute(GenerationSortByAttribute value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline GenerationSortBy& WithAttribute(GenerationSortByAttribute value) { SetAttribute(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The order by which to sort the generation request information.</p>
      */
-    inline const SortOrder& GetOrder() const{ return m_order; }
+    inline SortOrder GetOrder() const { return m_order; }
     inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
-    inline void SetOrder(const SortOrder& value) { m_orderHasBeenSet = true; m_order = value; }
-    inline void SetOrder(SortOrder&& value) { m_orderHasBeenSet = true; m_order = std::move(value); }
-    inline GenerationSortBy& WithOrder(const SortOrder& value) { SetOrder(value); return *this;}
-    inline GenerationSortBy& WithOrder(SortOrder&& value) { SetOrder(std::move(value)); return *this;}
+    inline void SetOrder(SortOrder value) { m_orderHasBeenSet = true; m_order = value; }
+    inline GenerationSortBy& WithOrder(SortOrder value) { SetOrder(value); return *this;}
     ///@}
   private:
 
-    GenerationSortByAttribute m_attribute;
+    GenerationSortByAttribute m_attribute{GenerationSortByAttribute::NOT_SET};
     bool m_attributeHasBeenSet = false;
 
-    SortOrder m_order;
+    SortOrder m_order{SortOrder::NOT_SET};
     bool m_orderHasBeenSet = false;
   };
 

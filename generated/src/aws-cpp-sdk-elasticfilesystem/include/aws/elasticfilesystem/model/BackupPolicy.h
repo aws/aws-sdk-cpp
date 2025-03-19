@@ -35,7 +35,7 @@ namespace Model
   class BackupPolicy
   {
   public:
-    AWS_EFS_API BackupPolicy();
+    AWS_EFS_API BackupPolicy() = default;
     AWS_EFS_API BackupPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_EFS_API BackupPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,16 +51,14 @@ namespace Model
      * system.</p> </li> <li> <p> <b> <code>DISABLING</code> </b> – EFS is turning off
      * automatic backups for the file system.</p> </li> </ul>
      */
-    inline const Status& GetStatus() const{ return m_status; }
+    inline Status GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline BackupPolicy& WithStatus(const Status& value) { SetStatus(value); return *this;}
-    inline BackupPolicy& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline BackupPolicy& WithStatus(Status value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    Status m_status;
+    Status m_status{Status::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

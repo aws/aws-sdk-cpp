@@ -18,10 +18,6 @@ namespace MediaLive
 namespace Model
 {
 
-RtmpCaptionInfoDestinationSettings::RtmpCaptionInfoDestinationSettings()
-{
-}
-
 RtmpCaptionInfoDestinationSettings::RtmpCaptionInfoDestinationSettings(JsonView jsonValue)
 {
   *this = jsonValue;

@@ -33,7 +33,7 @@ namespace Model
   class DatasetContentDeliveryDestination
   {
   public:
-    AWS_IOTANALYTICS_API DatasetContentDeliveryDestination();
+    AWS_IOTANALYTICS_API DatasetContentDeliveryDestination() = default;
     AWS_IOTANALYTICS_API DatasetContentDeliveryDestination(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API DatasetContentDeliveryDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>Configuration information for delivery of dataset contents to IoT Events.</p>
      */
-    inline const IotEventsDestinationConfiguration& GetIotEventsDestinationConfiguration() const{ return m_iotEventsDestinationConfiguration; }
+    inline const IotEventsDestinationConfiguration& GetIotEventsDestinationConfiguration() const { return m_iotEventsDestinationConfiguration; }
     inline bool IotEventsDestinationConfigurationHasBeenSet() const { return m_iotEventsDestinationConfigurationHasBeenSet; }
-    inline void SetIotEventsDestinationConfiguration(const IotEventsDestinationConfiguration& value) { m_iotEventsDestinationConfigurationHasBeenSet = true; m_iotEventsDestinationConfiguration = value; }
-    inline void SetIotEventsDestinationConfiguration(IotEventsDestinationConfiguration&& value) { m_iotEventsDestinationConfigurationHasBeenSet = true; m_iotEventsDestinationConfiguration = std::move(value); }
-    inline DatasetContentDeliveryDestination& WithIotEventsDestinationConfiguration(const IotEventsDestinationConfiguration& value) { SetIotEventsDestinationConfiguration(value); return *this;}
-    inline DatasetContentDeliveryDestination& WithIotEventsDestinationConfiguration(IotEventsDestinationConfiguration&& value) { SetIotEventsDestinationConfiguration(std::move(value)); return *this;}
+    template<typename IotEventsDestinationConfigurationT = IotEventsDestinationConfiguration>
+    void SetIotEventsDestinationConfiguration(IotEventsDestinationConfigurationT&& value) { m_iotEventsDestinationConfigurationHasBeenSet = true; m_iotEventsDestinationConfiguration = std::forward<IotEventsDestinationConfigurationT>(value); }
+    template<typename IotEventsDestinationConfigurationT = IotEventsDestinationConfiguration>
+    DatasetContentDeliveryDestination& WithIotEventsDestinationConfiguration(IotEventsDestinationConfigurationT&& value) { SetIotEventsDestinationConfiguration(std::forward<IotEventsDestinationConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configuration information for delivery of dataset contents to Amazon S3.</p>
      */
-    inline const S3DestinationConfiguration& GetS3DestinationConfiguration() const{ return m_s3DestinationConfiguration; }
+    inline const S3DestinationConfiguration& GetS3DestinationConfiguration() const { return m_s3DestinationConfiguration; }
     inline bool S3DestinationConfigurationHasBeenSet() const { return m_s3DestinationConfigurationHasBeenSet; }
-    inline void SetS3DestinationConfiguration(const S3DestinationConfiguration& value) { m_s3DestinationConfigurationHasBeenSet = true; m_s3DestinationConfiguration = value; }
-    inline void SetS3DestinationConfiguration(S3DestinationConfiguration&& value) { m_s3DestinationConfigurationHasBeenSet = true; m_s3DestinationConfiguration = std::move(value); }
-    inline DatasetContentDeliveryDestination& WithS3DestinationConfiguration(const S3DestinationConfiguration& value) { SetS3DestinationConfiguration(value); return *this;}
-    inline DatasetContentDeliveryDestination& WithS3DestinationConfiguration(S3DestinationConfiguration&& value) { SetS3DestinationConfiguration(std::move(value)); return *this;}
+    template<typename S3DestinationConfigurationT = S3DestinationConfiguration>
+    void SetS3DestinationConfiguration(S3DestinationConfigurationT&& value) { m_s3DestinationConfigurationHasBeenSet = true; m_s3DestinationConfiguration = std::forward<S3DestinationConfigurationT>(value); }
+    template<typename S3DestinationConfigurationT = S3DestinationConfiguration>
+    DatasetContentDeliveryDestination& WithS3DestinationConfiguration(S3DestinationConfigurationT&& value) { SetS3DestinationConfiguration(std::forward<S3DestinationConfigurationT>(value)); return *this;}
     ///@}
   private:
 

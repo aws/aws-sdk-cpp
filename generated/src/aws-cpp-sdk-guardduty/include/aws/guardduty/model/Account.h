@@ -31,7 +31,7 @@ namespace Model
   class Account
   {
   public:
-    AWS_GUARDDUTY_API Account();
+    AWS_GUARDDUTY_API Account() = default;
     AWS_GUARDDUTY_API Account(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Account& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>ID of the member's Amazon Web Services account</p>
      */
-    inline const Aws::String& GetUid() const{ return m_uid; }
+    inline const Aws::String& GetUid() const { return m_uid; }
     inline bool UidHasBeenSet() const { return m_uidHasBeenSet; }
-    inline void SetUid(const Aws::String& value) { m_uidHasBeenSet = true; m_uid = value; }
-    inline void SetUid(Aws::String&& value) { m_uidHasBeenSet = true; m_uid = std::move(value); }
-    inline void SetUid(const char* value) { m_uidHasBeenSet = true; m_uid.assign(value); }
-    inline Account& WithUid(const Aws::String& value) { SetUid(value); return *this;}
-    inline Account& WithUid(Aws::String&& value) { SetUid(std::move(value)); return *this;}
-    inline Account& WithUid(const char* value) { SetUid(value); return *this;}
+    template<typename UidT = Aws::String>
+    void SetUid(UidT&& value) { m_uidHasBeenSet = true; m_uid = std::forward<UidT>(value); }
+    template<typename UidT = Aws::String>
+    Account& WithUid(UidT&& value) { SetUid(std::forward<UidT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Name of the member's Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Account& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Account& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Account& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Account& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

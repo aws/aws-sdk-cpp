@@ -18,10 +18,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDigestResult::GetDigestResult()
-{
-}
-
 GetDigestResult::GetDigestResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -33,20 +29,20 @@ GetDigestResult& GetDigestResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("Digest"))
   {
     m_digest = HashingUtils::Base64Decode(jsonValue.GetString("Digest"));
+    m_digestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DigestTipAddress"))
   {
     m_digestTipAddress = jsonValue.GetObject("DigestTipAddress");
-
+    m_digestTipAddressHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -30,7 +30,7 @@ namespace Model
   class AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails();
+    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails() = default;
     AWS_SECURITYHUB_API AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>Whether node-to-node encryption is enabled.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

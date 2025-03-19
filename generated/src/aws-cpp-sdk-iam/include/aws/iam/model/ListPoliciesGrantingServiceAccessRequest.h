@@ -22,7 +22,7 @@ namespace Model
   class ListPoliciesGrantingServiceAccessRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API ListPoliciesGrantingServiceAccessRequest();
+    AWS_IAM_API ListPoliciesGrantingServiceAccessRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * <code>Marker</code> element in the response that you received to indicate where
      * the next call should start.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline ListPoliciesGrantingServiceAccessRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListPoliciesGrantingServiceAccessRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListPoliciesGrantingServiceAccessRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListPoliciesGrantingServiceAccessRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The ARN of the IAM identity (user, group, or role) whose policies you want to
      * list.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ListPoliciesGrantingServiceAccessRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ListPoliciesGrantingServiceAccessRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ListPoliciesGrantingServiceAccessRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ListPoliciesGrantingServiceAccessRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,15 +78,14 @@ namespace Model
      * Web Services service namespaces</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetServiceNamespaces() const{ return m_serviceNamespaces; }
+    inline const Aws::Vector<Aws::String>& GetServiceNamespaces() const { return m_serviceNamespaces; }
     inline bool ServiceNamespacesHasBeenSet() const { return m_serviceNamespacesHasBeenSet; }
-    inline void SetServiceNamespaces(const Aws::Vector<Aws::String>& value) { m_serviceNamespacesHasBeenSet = true; m_serviceNamespaces = value; }
-    inline void SetServiceNamespaces(Aws::Vector<Aws::String>&& value) { m_serviceNamespacesHasBeenSet = true; m_serviceNamespaces = std::move(value); }
-    inline ListPoliciesGrantingServiceAccessRequest& WithServiceNamespaces(const Aws::Vector<Aws::String>& value) { SetServiceNamespaces(value); return *this;}
-    inline ListPoliciesGrantingServiceAccessRequest& WithServiceNamespaces(Aws::Vector<Aws::String>&& value) { SetServiceNamespaces(std::move(value)); return *this;}
-    inline ListPoliciesGrantingServiceAccessRequest& AddServiceNamespaces(const Aws::String& value) { m_serviceNamespacesHasBeenSet = true; m_serviceNamespaces.push_back(value); return *this; }
-    inline ListPoliciesGrantingServiceAccessRequest& AddServiceNamespaces(Aws::String&& value) { m_serviceNamespacesHasBeenSet = true; m_serviceNamespaces.push_back(std::move(value)); return *this; }
-    inline ListPoliciesGrantingServiceAccessRequest& AddServiceNamespaces(const char* value) { m_serviceNamespacesHasBeenSet = true; m_serviceNamespaces.push_back(value); return *this; }
+    template<typename ServiceNamespacesT = Aws::Vector<Aws::String>>
+    void SetServiceNamespaces(ServiceNamespacesT&& value) { m_serviceNamespacesHasBeenSet = true; m_serviceNamespaces = std::forward<ServiceNamespacesT>(value); }
+    template<typename ServiceNamespacesT = Aws::Vector<Aws::String>>
+    ListPoliciesGrantingServiceAccessRequest& WithServiceNamespaces(ServiceNamespacesT&& value) { SetServiceNamespaces(std::forward<ServiceNamespacesT>(value)); return *this;}
+    template<typename ServiceNamespacesT = Aws::String>
+    ListPoliciesGrantingServiceAccessRequest& AddServiceNamespaces(ServiceNamespacesT&& value) { m_serviceNamespacesHasBeenSet = true; m_serviceNamespaces.emplace_back(std::forward<ServiceNamespacesT>(value)); return *this; }
     ///@}
   private:
 

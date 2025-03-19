@@ -18,20 +18,7 @@ namespace TranscribeService
 namespace Model
 {
 
-RelativeTimeRange::RelativeTimeRange() : 
-    m_startPercentage(0),
-    m_startPercentageHasBeenSet(false),
-    m_endPercentage(0),
-    m_endPercentageHasBeenSet(false),
-    m_first(0),
-    m_firstHasBeenSet(false),
-    m_last(0),
-    m_lastHasBeenSet(false)
-{
-}
-
 RelativeTimeRange::RelativeTimeRange(JsonView jsonValue)
-  : RelativeTimeRange()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ RelativeTimeRange& RelativeTimeRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StartPercentage"))
   {
     m_startPercentage = jsonValue.GetInteger("StartPercentage");
-
     m_startPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndPercentage"))
   {
     m_endPercentage = jsonValue.GetInteger("EndPercentage");
-
     m_endPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("First"))
   {
     m_first = jsonValue.GetInteger("First");
-
     m_firstHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Last"))
   {
     m_last = jsonValue.GetInteger("Last");
-
     m_lastHasBeenSet = true;
   }
-
   return *this;
 }
 

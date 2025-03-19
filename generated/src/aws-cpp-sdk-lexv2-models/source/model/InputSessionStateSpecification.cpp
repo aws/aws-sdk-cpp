@@ -18,15 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-InputSessionStateSpecification::InputSessionStateSpecification() : 
-    m_sessionAttributesHasBeenSet(false),
-    m_activeContextsHasBeenSet(false),
-    m_runtimeHintsHasBeenSet(false)
-{
-}
-
 InputSessionStateSpecification::InputSessionStateSpecification(JsonView jsonValue)
-  : InputSessionStateSpecification()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ InputSessionStateSpecification& InputSessionStateSpecification::operator =(JsonV
     }
     m_sessionAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("activeContexts"))
   {
     Aws::Utils::Array<JsonView> activeContextsJsonList = jsonValue.GetArray("activeContexts");
@@ -52,14 +43,11 @@ InputSessionStateSpecification& InputSessionStateSpecification::operator =(JsonV
     }
     m_activeContextsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runtimeHints"))
   {
     m_runtimeHints = jsonValue.GetObject("runtimeHints");
-
     m_runtimeHintsHasBeenSet = true;
   }
-
   return *this;
 }
 

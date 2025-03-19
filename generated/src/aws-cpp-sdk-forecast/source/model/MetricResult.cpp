@@ -18,15 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-MetricResult::MetricResult() : 
-    m_metricNameHasBeenSet(false),
-    m_metricValue(0.0),
-    m_metricValueHasBeenSet(false)
-{
-}
-
 MetricResult::MetricResult(JsonView jsonValue)
-  : MetricResult()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MetricResult& MetricResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = jsonValue.GetString("MetricName");
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricValue"))
   {
     m_metricValue = jsonValue.GetDouble("MetricValue");
-
     m_metricValueHasBeenSet = true;
   }
-
   return *this;
 }
 

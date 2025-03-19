@@ -22,7 +22,7 @@ namespace Model
   class CreateImportJobRequest : public PinpointRequest
   {
   public:
-    AWS_PINPOINT_API CreateImportJobRequest();
+    AWS_PINPOINT_API CreateImportJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,24 +38,22 @@ namespace Model
      * <p>The unique identifier for the application. This identifier is displayed as
      * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline CreateImportJobRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline CreateImportJobRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline CreateImportJobRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    CreateImportJobRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ImportJobRequest& GetImportJobRequest() const{ return m_importJobRequest; }
+    inline const ImportJobRequest& GetImportJobRequest() const { return m_importJobRequest; }
     inline bool ImportJobRequestHasBeenSet() const { return m_importJobRequestHasBeenSet; }
-    inline void SetImportJobRequest(const ImportJobRequest& value) { m_importJobRequestHasBeenSet = true; m_importJobRequest = value; }
-    inline void SetImportJobRequest(ImportJobRequest&& value) { m_importJobRequestHasBeenSet = true; m_importJobRequest = std::move(value); }
-    inline CreateImportJobRequest& WithImportJobRequest(const ImportJobRequest& value) { SetImportJobRequest(value); return *this;}
-    inline CreateImportJobRequest& WithImportJobRequest(ImportJobRequest&& value) { SetImportJobRequest(std::move(value)); return *this;}
+    template<typename ImportJobRequestT = ImportJobRequest>
+    void SetImportJobRequest(ImportJobRequestT&& value) { m_importJobRequestHasBeenSet = true; m_importJobRequest = std::forward<ImportJobRequestT>(value); }
+    template<typename ImportJobRequestT = ImportJobRequest>
+    CreateImportJobRequest& WithImportJobRequest(ImportJobRequestT&& value) { SetImportJobRequest(std::forward<ImportJobRequestT>(value)); return *this;}
     ///@}
   private:
 

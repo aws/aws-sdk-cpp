@@ -18,17 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-RecommenderUpdateSummary::RecommenderUpdateSummary() : 
-    m_recommenderConfigHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
-{
-}
-
 RecommenderUpdateSummary::RecommenderUpdateSummary(JsonView jsonValue)
-  : RecommenderUpdateSummary()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ RecommenderUpdateSummary& RecommenderUpdateSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("recommenderConfig"))
   {
     m_recommenderConfig = jsonValue.GetObject("recommenderConfig");
-
     m_recommenderConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

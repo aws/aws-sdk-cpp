@@ -28,35 +28,35 @@ namespace Model
   class RetryBuildResult
   {
   public:
-    AWS_CODEBUILD_API RetryBuildResult();
+    AWS_CODEBUILD_API RetryBuildResult() = default;
     AWS_CODEBUILD_API RetryBuildResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEBUILD_API RetryBuildResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Build& GetBuild() const{ return m_build; }
-    inline void SetBuild(const Build& value) { m_build = value; }
-    inline void SetBuild(Build&& value) { m_build = std::move(value); }
-    inline RetryBuildResult& WithBuild(const Build& value) { SetBuild(value); return *this;}
-    inline RetryBuildResult& WithBuild(Build&& value) { SetBuild(std::move(value)); return *this;}
+    inline const Build& GetBuild() const { return m_build; }
+    template<typename BuildT = Build>
+    void SetBuild(BuildT&& value) { m_buildHasBeenSet = true; m_build = std::forward<BuildT>(value); }
+    template<typename BuildT = Build>
+    RetryBuildResult& WithBuild(BuildT&& value) { SetBuild(std::forward<BuildT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RetryBuildResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RetryBuildResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RetryBuildResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RetryBuildResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Build m_build;
+    bool m_buildHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

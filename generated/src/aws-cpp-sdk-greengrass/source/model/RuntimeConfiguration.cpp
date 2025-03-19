@@ -18,13 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-RuntimeConfiguration::RuntimeConfiguration() : 
-    m_telemetryConfigurationHasBeenSet(false)
-{
-}
-
 RuntimeConfiguration::RuntimeConfiguration(JsonView jsonValue)
-  : RuntimeConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RuntimeConfiguration& RuntimeConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TelemetryConfiguration"))
   {
     m_telemetryConfiguration = jsonValue.GetObject("TelemetryConfiguration");
-
     m_telemetryConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

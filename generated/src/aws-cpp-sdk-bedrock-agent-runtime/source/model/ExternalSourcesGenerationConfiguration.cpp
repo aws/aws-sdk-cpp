@@ -18,17 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-ExternalSourcesGenerationConfiguration::ExternalSourcesGenerationConfiguration() : 
-    m_additionalModelRequestFieldsHasBeenSet(false),
-    m_guardrailConfigurationHasBeenSet(false),
-    m_inferenceConfigHasBeenSet(false),
-    m_performanceConfigHasBeenSet(false),
-    m_promptTemplateHasBeenSet(false)
-{
-}
-
 ExternalSourcesGenerationConfiguration::ExternalSourcesGenerationConfiguration(JsonView jsonValue)
-  : ExternalSourcesGenerationConfiguration()
 {
   *this = jsonValue;
 }
@@ -44,35 +34,26 @@ ExternalSourcesGenerationConfiguration& ExternalSourcesGenerationConfiguration::
     }
     m_additionalModelRequestFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("guardrailConfiguration"))
   {
     m_guardrailConfiguration = jsonValue.GetObject("guardrailConfiguration");
-
     m_guardrailConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inferenceConfig"))
   {
     m_inferenceConfig = jsonValue.GetObject("inferenceConfig");
-
     m_inferenceConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("performanceConfig"))
   {
     m_performanceConfig = jsonValue.GetObject("performanceConfig");
-
     m_performanceConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("promptTemplate"))
   {
     m_promptTemplate = jsonValue.GetObject("promptTemplate");
-
     m_promptTemplateHasBeenSet = true;
   }
-
   return *this;
 }
 

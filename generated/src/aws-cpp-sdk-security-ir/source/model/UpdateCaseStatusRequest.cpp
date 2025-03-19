@@ -12,13 +12,6 @@ using namespace Aws::SecurityIR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCaseStatusRequest::UpdateCaseStatusRequest() : 
-    m_caseIdHasBeenSet(false),
-    m_caseStatus(SelfManagedCaseStatus::NOT_SET),
-    m_caseStatusHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCaseStatusRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,15 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-StreamChannelDefinition::StreamChannelDefinition() : 
-    m_numberOfChannels(0),
-    m_numberOfChannelsHasBeenSet(false),
-    m_channelDefinitionsHasBeenSet(false)
-{
-}
-
 StreamChannelDefinition::StreamChannelDefinition(JsonView jsonValue)
-  : StreamChannelDefinition()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ StreamChannelDefinition& StreamChannelDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NumberOfChannels"))
   {
     m_numberOfChannels = jsonValue.GetInteger("NumberOfChannels");
-
     m_numberOfChannelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChannelDefinitions"))
   {
     Aws::Utils::Array<JsonView> channelDefinitionsJsonList = jsonValue.GetArray("ChannelDefinitions");
@@ -49,7 +39,6 @@ StreamChannelDefinition& StreamChannelDefinition::operator =(JsonView jsonValue)
     }
     m_channelDefinitionsHasBeenSet = true;
   }
-
   return *this;
 }
 

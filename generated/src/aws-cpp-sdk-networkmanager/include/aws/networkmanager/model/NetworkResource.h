@@ -35,7 +35,7 @@ namespace Model
   class NetworkResource
   {
   public:
-    AWS_NETWORKMANAGER_API NetworkResource();
+    AWS_NETWORKMANAGER_API NetworkResource() = default;
     AWS_NETWORKMANAGER_API NetworkResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API NetworkResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,56 +45,48 @@ namespace Model
     /**
      * <p>The ARN of the gateway.</p>
      */
-    inline const Aws::String& GetRegisteredGatewayArn() const{ return m_registeredGatewayArn; }
+    inline const Aws::String& GetRegisteredGatewayArn() const { return m_registeredGatewayArn; }
     inline bool RegisteredGatewayArnHasBeenSet() const { return m_registeredGatewayArnHasBeenSet; }
-    inline void SetRegisteredGatewayArn(const Aws::String& value) { m_registeredGatewayArnHasBeenSet = true; m_registeredGatewayArn = value; }
-    inline void SetRegisteredGatewayArn(Aws::String&& value) { m_registeredGatewayArnHasBeenSet = true; m_registeredGatewayArn = std::move(value); }
-    inline void SetRegisteredGatewayArn(const char* value) { m_registeredGatewayArnHasBeenSet = true; m_registeredGatewayArn.assign(value); }
-    inline NetworkResource& WithRegisteredGatewayArn(const Aws::String& value) { SetRegisteredGatewayArn(value); return *this;}
-    inline NetworkResource& WithRegisteredGatewayArn(Aws::String&& value) { SetRegisteredGatewayArn(std::move(value)); return *this;}
-    inline NetworkResource& WithRegisteredGatewayArn(const char* value) { SetRegisteredGatewayArn(value); return *this;}
+    template<typename RegisteredGatewayArnT = Aws::String>
+    void SetRegisteredGatewayArn(RegisteredGatewayArnT&& value) { m_registeredGatewayArnHasBeenSet = true; m_registeredGatewayArn = std::forward<RegisteredGatewayArnT>(value); }
+    template<typename RegisteredGatewayArnT = Aws::String>
+    NetworkResource& WithRegisteredGatewayArn(RegisteredGatewayArnT&& value) { SetRegisteredGatewayArn(std::forward<RegisteredGatewayArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of a core network.</p>
      */
-    inline const Aws::String& GetCoreNetworkId() const{ return m_coreNetworkId; }
+    inline const Aws::String& GetCoreNetworkId() const { return m_coreNetworkId; }
     inline bool CoreNetworkIdHasBeenSet() const { return m_coreNetworkIdHasBeenSet; }
-    inline void SetCoreNetworkId(const Aws::String& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = value; }
-    inline void SetCoreNetworkId(Aws::String&& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = std::move(value); }
-    inline void SetCoreNetworkId(const char* value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId.assign(value); }
-    inline NetworkResource& WithCoreNetworkId(const Aws::String& value) { SetCoreNetworkId(value); return *this;}
-    inline NetworkResource& WithCoreNetworkId(Aws::String&& value) { SetCoreNetworkId(std::move(value)); return *this;}
-    inline NetworkResource& WithCoreNetworkId(const char* value) { SetCoreNetworkId(value); return *this;}
+    template<typename CoreNetworkIdT = Aws::String>
+    void SetCoreNetworkId(CoreNetworkIdT&& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = std::forward<CoreNetworkIdT>(value); }
+    template<typename CoreNetworkIdT = Aws::String>
+    NetworkResource& WithCoreNetworkId(CoreNetworkIdT&& value) { SetCoreNetworkId(std::forward<CoreNetworkIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Region.</p>
      */
-    inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
+    inline const Aws::String& GetAwsRegion() const { return m_awsRegion; }
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
-    inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
-    inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
-    inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
-    inline NetworkResource& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
-    inline NetworkResource& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
-    inline NetworkResource& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
+    template<typename AwsRegionT = Aws::String>
+    void SetAwsRegion(AwsRegionT&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::forward<AwsRegionT>(value); }
+    template<typename AwsRegionT = Aws::String>
+    NetworkResource& WithAwsRegion(AwsRegionT&& value) { SetAwsRegion(std::forward<AwsRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services account ID.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline NetworkResource& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline NetworkResource& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline NetworkResource& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    NetworkResource& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,42 +107,36 @@ namespace Model
      * <code>transit-gateway-route-table</code> </p> </li> <li> <p>
      * <code>vpn-connection</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline NetworkResource& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline NetworkResource& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline NetworkResource& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    NetworkResource& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the resource.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline NetworkResource& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline NetworkResource& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline NetworkResource& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    NetworkResource& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the resource.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline NetworkResource& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline NetworkResource& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline NetworkResource& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    NetworkResource& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,59 +144,54 @@ namespace Model
      * <p>Information about the resource, in JSON format. Network Manager gets this
      * information by describing the resource using its Describe API call.</p>
      */
-    inline const Aws::String& GetDefinition() const{ return m_definition; }
+    inline const Aws::String& GetDefinition() const { return m_definition; }
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-    inline void SetDefinition(const Aws::String& value) { m_definitionHasBeenSet = true; m_definition = value; }
-    inline void SetDefinition(Aws::String&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
-    inline void SetDefinition(const char* value) { m_definitionHasBeenSet = true; m_definition.assign(value); }
-    inline NetworkResource& WithDefinition(const Aws::String& value) { SetDefinition(value); return *this;}
-    inline NetworkResource& WithDefinition(Aws::String&& value) { SetDefinition(std::move(value)); return *this;}
-    inline NetworkResource& WithDefinition(const char* value) { SetDefinition(value); return *this;}
+    template<typename DefinitionT = Aws::String>
+    void SetDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition = std::forward<DefinitionT>(value); }
+    template<typename DefinitionT = Aws::String>
+    NetworkResource& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that the resource definition was retrieved.</p>
      */
-    inline const Aws::Utils::DateTime& GetDefinitionTimestamp() const{ return m_definitionTimestamp; }
+    inline const Aws::Utils::DateTime& GetDefinitionTimestamp() const { return m_definitionTimestamp; }
     inline bool DefinitionTimestampHasBeenSet() const { return m_definitionTimestampHasBeenSet; }
-    inline void SetDefinitionTimestamp(const Aws::Utils::DateTime& value) { m_definitionTimestampHasBeenSet = true; m_definitionTimestamp = value; }
-    inline void SetDefinitionTimestamp(Aws::Utils::DateTime&& value) { m_definitionTimestampHasBeenSet = true; m_definitionTimestamp = std::move(value); }
-    inline NetworkResource& WithDefinitionTimestamp(const Aws::Utils::DateTime& value) { SetDefinitionTimestamp(value); return *this;}
-    inline NetworkResource& WithDefinitionTimestamp(Aws::Utils::DateTime&& value) { SetDefinitionTimestamp(std::move(value)); return *this;}
+    template<typename DefinitionTimestampT = Aws::Utils::DateTime>
+    void SetDefinitionTimestamp(DefinitionTimestampT&& value) { m_definitionTimestampHasBeenSet = true; m_definitionTimestamp = std::forward<DefinitionTimestampT>(value); }
+    template<typename DefinitionTimestampT = Aws::Utils::DateTime>
+    NetworkResource& WithDefinitionTimestamp(DefinitionTimestampT&& value) { SetDefinitionTimestamp(std::forward<DefinitionTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline NetworkResource& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline NetworkResource& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline NetworkResource& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline NetworkResource& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    NetworkResource& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    NetworkResource& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The resource metadata.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const{ return m_metadata; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline NetworkResource& WithMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetMetadata(value); return *this;}
-    inline NetworkResource& WithMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetMetadata(std::move(value)); return *this;}
-    inline NetworkResource& AddMetadata(const Aws::String& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
-    inline NetworkResource& AddMetadata(Aws::String&& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
-    inline NetworkResource& AddMetadata(const Aws::String& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
-    inline NetworkResource& AddMetadata(Aws::String&& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), std::move(value)); return *this; }
-    inline NetworkResource& AddMetadata(const char* key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
-    inline NetworkResource& AddMetadata(Aws::String&& key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
-    inline NetworkResource& AddMetadata(const char* key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
+    template<typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+    NetworkResource& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
+    template<typename MetadataKeyT = Aws::String, typename MetadataValueT = Aws::String>
+    NetworkResource& AddMetadata(MetadataKeyT&& key, MetadataValueT&& value) {
+      m_metadataHasBeenSet = true; m_metadata.emplace(std::forward<MetadataKeyT>(key), std::forward<MetadataValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -238,7 +219,7 @@ namespace Model
     Aws::String m_definition;
     bool m_definitionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_definitionTimestamp;
+    Aws::Utils::DateTime m_definitionTimestamp{};
     bool m_definitionTimestampHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

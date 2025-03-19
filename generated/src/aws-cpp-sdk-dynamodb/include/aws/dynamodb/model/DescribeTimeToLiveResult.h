@@ -28,7 +28,7 @@ namespace Model
   class DescribeTimeToLiveResult
   {
   public:
-    AWS_DYNAMODB_API DescribeTimeToLiveResult();
+    AWS_DYNAMODB_API DescribeTimeToLiveResult() = default;
     AWS_DYNAMODB_API DescribeTimeToLiveResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DYNAMODB_API DescribeTimeToLiveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p/>
      */
-    inline const TimeToLiveDescription& GetTimeToLiveDescription() const{ return m_timeToLiveDescription; }
-    inline void SetTimeToLiveDescription(const TimeToLiveDescription& value) { m_timeToLiveDescription = value; }
-    inline void SetTimeToLiveDescription(TimeToLiveDescription&& value) { m_timeToLiveDescription = std::move(value); }
-    inline DescribeTimeToLiveResult& WithTimeToLiveDescription(const TimeToLiveDescription& value) { SetTimeToLiveDescription(value); return *this;}
-    inline DescribeTimeToLiveResult& WithTimeToLiveDescription(TimeToLiveDescription&& value) { SetTimeToLiveDescription(std::move(value)); return *this;}
+    inline const TimeToLiveDescription& GetTimeToLiveDescription() const { return m_timeToLiveDescription; }
+    template<typename TimeToLiveDescriptionT = TimeToLiveDescription>
+    void SetTimeToLiveDescription(TimeToLiveDescriptionT&& value) { m_timeToLiveDescriptionHasBeenSet = true; m_timeToLiveDescription = std::forward<TimeToLiveDescriptionT>(value); }
+    template<typename TimeToLiveDescriptionT = TimeToLiveDescription>
+    DescribeTimeToLiveResult& WithTimeToLiveDescription(TimeToLiveDescriptionT&& value) { SetTimeToLiveDescription(std::forward<TimeToLiveDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeTimeToLiveResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeTimeToLiveResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeTimeToLiveResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeTimeToLiveResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TimeToLiveDescription m_timeToLiveDescription;
+    bool m_timeToLiveDescriptionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

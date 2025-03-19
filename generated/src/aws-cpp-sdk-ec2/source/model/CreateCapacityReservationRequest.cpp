@@ -10,39 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateCapacityReservationRequest::CreateCapacityReservationRequest() : 
-    m_clientTokenHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_instancePlatform(CapacityReservationInstancePlatform::NOT_SET),
-    m_instancePlatformHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_tenancy(CapacityReservationTenancy::NOT_SET),
-    m_tenancyHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_ephemeralStorage(false),
-    m_ephemeralStorageHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_endDateType(EndDateType::NOT_SET),
-    m_endDateTypeHasBeenSet(false),
-    m_instanceMatchCriteria(InstanceMatchCriteria::NOT_SET),
-    m_instanceMatchCriteriaHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_placementGroupArnHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_commitmentDuration(0),
-    m_commitmentDurationHasBeenSet(false),
-    m_deliveryPreference(CapacityReservationDeliveryPreference::NOT_SET),
-    m_deliveryPreferenceHasBeenSet(false)
-{
-}
-
 Aws::String CreateCapacityReservationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

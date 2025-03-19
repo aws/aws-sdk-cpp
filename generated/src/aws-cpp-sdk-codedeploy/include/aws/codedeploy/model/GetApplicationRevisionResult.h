@@ -35,7 +35,7 @@ namespace Model
   class GetApplicationRevisionResult
   {
   public:
-    AWS_CODEDEPLOY_API GetApplicationRevisionResult();
+    AWS_CODEDEPLOY_API GetApplicationRevisionResult() = default;
     AWS_CODEDEPLOY_API GetApplicationRevisionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEDEPLOY_API GetApplicationRevisionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,56 +44,56 @@ namespace Model
     /**
      * <p>The name of the application that corresponds to the revision.</p>
      */
-    inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
-    inline void SetApplicationName(const Aws::String& value) { m_applicationName = value; }
-    inline void SetApplicationName(Aws::String&& value) { m_applicationName = std::move(value); }
-    inline void SetApplicationName(const char* value) { m_applicationName.assign(value); }
-    inline GetApplicationRevisionResult& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-    inline GetApplicationRevisionResult& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-    inline GetApplicationRevisionResult& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    inline const Aws::String& GetApplicationName() const { return m_applicationName; }
+    template<typename ApplicationNameT = Aws::String>
+    void SetApplicationName(ApplicationNameT&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::forward<ApplicationNameT>(value); }
+    template<typename ApplicationNameT = Aws::String>
+    GetApplicationRevisionResult& WithApplicationName(ApplicationNameT&& value) { SetApplicationName(std::forward<ApplicationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Additional information about the revision, including type and location.</p>
      */
-    inline const RevisionLocation& GetRevision() const{ return m_revision; }
-    inline void SetRevision(const RevisionLocation& value) { m_revision = value; }
-    inline void SetRevision(RevisionLocation&& value) { m_revision = std::move(value); }
-    inline GetApplicationRevisionResult& WithRevision(const RevisionLocation& value) { SetRevision(value); return *this;}
-    inline GetApplicationRevisionResult& WithRevision(RevisionLocation&& value) { SetRevision(std::move(value)); return *this;}
+    inline const RevisionLocation& GetRevision() const { return m_revision; }
+    template<typename RevisionT = RevisionLocation>
+    void SetRevision(RevisionT&& value) { m_revisionHasBeenSet = true; m_revision = std::forward<RevisionT>(value); }
+    template<typename RevisionT = RevisionLocation>
+    GetApplicationRevisionResult& WithRevision(RevisionT&& value) { SetRevision(std::forward<RevisionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>General information about the revision.</p>
      */
-    inline const GenericRevisionInfo& GetRevisionInfo() const{ return m_revisionInfo; }
-    inline void SetRevisionInfo(const GenericRevisionInfo& value) { m_revisionInfo = value; }
-    inline void SetRevisionInfo(GenericRevisionInfo&& value) { m_revisionInfo = std::move(value); }
-    inline GetApplicationRevisionResult& WithRevisionInfo(const GenericRevisionInfo& value) { SetRevisionInfo(value); return *this;}
-    inline GetApplicationRevisionResult& WithRevisionInfo(GenericRevisionInfo&& value) { SetRevisionInfo(std::move(value)); return *this;}
+    inline const GenericRevisionInfo& GetRevisionInfo() const { return m_revisionInfo; }
+    template<typename RevisionInfoT = GenericRevisionInfo>
+    void SetRevisionInfo(RevisionInfoT&& value) { m_revisionInfoHasBeenSet = true; m_revisionInfo = std::forward<RevisionInfoT>(value); }
+    template<typename RevisionInfoT = GenericRevisionInfo>
+    GetApplicationRevisionResult& WithRevisionInfo(RevisionInfoT&& value) { SetRevisionInfo(std::forward<RevisionInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetApplicationRevisionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetApplicationRevisionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetApplicationRevisionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetApplicationRevisionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_applicationName;
+    bool m_applicationNameHasBeenSet = false;
 
     RevisionLocation m_revision;
+    bool m_revisionHasBeenSet = false;
 
     GenericRevisionInfo m_revisionInfo;
+    bool m_revisionInfoHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

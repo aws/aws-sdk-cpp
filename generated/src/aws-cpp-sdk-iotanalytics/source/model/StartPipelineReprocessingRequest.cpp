@@ -12,14 +12,6 @@ using namespace Aws::IoTAnalytics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartPipelineReprocessingRequest::StartPipelineReprocessingRequest() : 
-    m_pipelineNameHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_channelMessagesHasBeenSet(false)
-{
-}
-
 Aws::String StartPipelineReprocessingRequest::SerializePayload() const
 {
   JsonValue payload;

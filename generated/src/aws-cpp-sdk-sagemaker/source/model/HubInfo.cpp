@@ -18,21 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-HubInfo::HubInfo() : 
-    m_hubNameHasBeenSet(false),
-    m_hubArnHasBeenSet(false),
-    m_hubDisplayNameHasBeenSet(false),
-    m_hubDescriptionHasBeenSet(false),
-    m_hubSearchKeywordsHasBeenSet(false),
-    m_hubStatus(HubStatus::NOT_SET),
-    m_hubStatusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 HubInfo::HubInfo(JsonView jsonValue)
-  : HubInfo()
 {
   *this = jsonValue;
 }
@@ -42,31 +28,23 @@ HubInfo& HubInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HubName"))
   {
     m_hubName = jsonValue.GetString("HubName");
-
     m_hubNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HubArn"))
   {
     m_hubArn = jsonValue.GetString("HubArn");
-
     m_hubArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HubDisplayName"))
   {
     m_hubDisplayName = jsonValue.GetString("HubDisplayName");
-
     m_hubDisplayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HubDescription"))
   {
     m_hubDescription = jsonValue.GetString("HubDescription");
-
     m_hubDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HubSearchKeywords"))
   {
     Aws::Utils::Array<JsonView> hubSearchKeywordsJsonList = jsonValue.GetArray("HubSearchKeywords");
@@ -76,28 +54,21 @@ HubInfo& HubInfo::operator =(JsonView jsonValue)
     }
     m_hubSearchKeywordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HubStatus"))
   {
     m_hubStatus = HubStatusMapper::GetHubStatusForName(jsonValue.GetString("HubStatus"));
-
     m_hubStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

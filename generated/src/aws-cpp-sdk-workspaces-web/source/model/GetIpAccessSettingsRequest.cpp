@@ -12,11 +12,6 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetIpAccessSettingsRequest::GetIpAccessSettingsRequest() : 
-    m_ipAccessSettingsArnHasBeenSet(false)
-{
-}
-
 Aws::String GetIpAccessSettingsRequest::SerializePayload() const
 {
   return {};

@@ -18,16 +18,7 @@ namespace MTurk
 namespace Model
 {
 
-NotifyWorkersFailureStatus::NotifyWorkersFailureStatus() : 
-    m_notifyWorkersFailureCode(NotifyWorkersFailureCode::NOT_SET),
-    m_notifyWorkersFailureCodeHasBeenSet(false),
-    m_notifyWorkersFailureMessageHasBeenSet(false),
-    m_workerIdHasBeenSet(false)
-{
-}
-
 NotifyWorkersFailureStatus::NotifyWorkersFailureStatus(JsonView jsonValue)
-  : NotifyWorkersFailureStatus()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ NotifyWorkersFailureStatus& NotifyWorkersFailureStatus::operator =(JsonView json
   if(jsonValue.ValueExists("NotifyWorkersFailureCode"))
   {
     m_notifyWorkersFailureCode = NotifyWorkersFailureCodeMapper::GetNotifyWorkersFailureCodeForName(jsonValue.GetString("NotifyWorkersFailureCode"));
-
     m_notifyWorkersFailureCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotifyWorkersFailureMessage"))
   {
     m_notifyWorkersFailureMessage = jsonValue.GetString("NotifyWorkersFailureMessage");
-
     m_notifyWorkersFailureMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkerId"))
   {
     m_workerId = jsonValue.GetString("WorkerId");
-
     m_workerIdHasBeenSet = true;
   }
-
   return *this;
 }
 

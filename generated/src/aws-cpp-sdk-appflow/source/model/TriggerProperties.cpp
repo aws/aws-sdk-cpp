@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-TriggerProperties::TriggerProperties() : 
-    m_scheduledHasBeenSet(false)
-{
-}
-
 TriggerProperties::TriggerProperties(JsonView jsonValue)
-  : TriggerProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TriggerProperties& TriggerProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Scheduled"))
   {
     m_scheduled = jsonValue.GetObject("Scheduled");
-
     m_scheduledHasBeenSet = true;
   }
-
   return *this;
 }
 

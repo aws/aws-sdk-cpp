@@ -22,7 +22,7 @@ namespace Model
   class EnableClientAuthenticationRequest : public DirectoryServiceRequest
   {
   public:
-    AWS_DIRECTORYSERVICE_API EnableClientAuthenticationRequest();
+    AWS_DIRECTORYSERVICE_API EnableClientAuthenticationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The identifier of the specified directory. </p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-    inline EnableClientAuthenticationRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline EnableClientAuthenticationRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline EnableClientAuthenticationRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    EnableClientAuthenticationRequest& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,19 +54,17 @@ namespace Model
      * requires that you enable Kerberos Constrained Delegation for the Service User to
      * the LDAP service in your self-managed AD. </p>
      */
-    inline const ClientAuthenticationType& GetType() const{ return m_type; }
+    inline ClientAuthenticationType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ClientAuthenticationType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ClientAuthenticationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline EnableClientAuthenticationRequest& WithType(const ClientAuthenticationType& value) { SetType(value); return *this;}
-    inline EnableClientAuthenticationRequest& WithType(ClientAuthenticationType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ClientAuthenticationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline EnableClientAuthenticationRequest& WithType(ClientAuthenticationType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_directoryId;
     bool m_directoryIdHasBeenSet = false;
 
-    ClientAuthenticationType m_type;
+    ClientAuthenticationType m_type{ClientAuthenticationType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

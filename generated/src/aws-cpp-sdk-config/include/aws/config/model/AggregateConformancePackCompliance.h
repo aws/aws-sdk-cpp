@@ -41,7 +41,7 @@ namespace Model
   class AggregateConformancePackCompliance
   {
   public:
-    AWS_CONFIGSERVICE_API AggregateConformancePackCompliance();
+    AWS_CONFIGSERVICE_API AggregateConformancePackCompliance() = default;
     AWS_CONFIGSERVICE_API AggregateConformancePackCompliance(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API AggregateConformancePackCompliance& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,19 +51,17 @@ namespace Model
     /**
      * <p>The compliance status of the conformance pack.</p>
      */
-    inline const ConformancePackComplianceType& GetComplianceType() const{ return m_complianceType; }
+    inline ConformancePackComplianceType GetComplianceType() const { return m_complianceType; }
     inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
-    inline void SetComplianceType(const ConformancePackComplianceType& value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
-    inline void SetComplianceType(ConformancePackComplianceType&& value) { m_complianceTypeHasBeenSet = true; m_complianceType = std::move(value); }
-    inline AggregateConformancePackCompliance& WithComplianceType(const ConformancePackComplianceType& value) { SetComplianceType(value); return *this;}
-    inline AggregateConformancePackCompliance& WithComplianceType(ConformancePackComplianceType&& value) { SetComplianceType(std::move(value)); return *this;}
+    inline void SetComplianceType(ConformancePackComplianceType value) { m_complianceTypeHasBeenSet = true; m_complianceType = value; }
+    inline AggregateConformancePackCompliance& WithComplianceType(ConformancePackComplianceType value) { SetComplianceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of compliant Config Rules.</p>
      */
-    inline int GetCompliantRuleCount() const{ return m_compliantRuleCount; }
+    inline int GetCompliantRuleCount() const { return m_compliantRuleCount; }
     inline bool CompliantRuleCountHasBeenSet() const { return m_compliantRuleCountHasBeenSet; }
     inline void SetCompliantRuleCount(int value) { m_compliantRuleCountHasBeenSet = true; m_compliantRuleCount = value; }
     inline AggregateConformancePackCompliance& WithCompliantRuleCount(int value) { SetCompliantRuleCount(value); return *this;}
@@ -73,7 +71,7 @@ namespace Model
     /**
      * <p>The number of noncompliant Config Rules.</p>
      */
-    inline int GetNonCompliantRuleCount() const{ return m_nonCompliantRuleCount; }
+    inline int GetNonCompliantRuleCount() const { return m_nonCompliantRuleCount; }
     inline bool NonCompliantRuleCountHasBeenSet() const { return m_nonCompliantRuleCountHasBeenSet; }
     inline void SetNonCompliantRuleCount(int value) { m_nonCompliantRuleCountHasBeenSet = true; m_nonCompliantRuleCount = value; }
     inline AggregateConformancePackCompliance& WithNonCompliantRuleCount(int value) { SetNonCompliantRuleCount(value); return *this;}
@@ -85,23 +83,23 @@ namespace Model
      * not have any applicable resources to evaluate upon resulting in insufficient
      * data.</p>
      */
-    inline int GetTotalRuleCount() const{ return m_totalRuleCount; }
+    inline int GetTotalRuleCount() const { return m_totalRuleCount; }
     inline bool TotalRuleCountHasBeenSet() const { return m_totalRuleCountHasBeenSet; }
     inline void SetTotalRuleCount(int value) { m_totalRuleCountHasBeenSet = true; m_totalRuleCount = value; }
     inline AggregateConformancePackCompliance& WithTotalRuleCount(int value) { SetTotalRuleCount(value); return *this;}
     ///@}
   private:
 
-    ConformancePackComplianceType m_complianceType;
+    ConformancePackComplianceType m_complianceType{ConformancePackComplianceType::NOT_SET};
     bool m_complianceTypeHasBeenSet = false;
 
-    int m_compliantRuleCount;
+    int m_compliantRuleCount{0};
     bool m_compliantRuleCountHasBeenSet = false;
 
-    int m_nonCompliantRuleCount;
+    int m_nonCompliantRuleCount{0};
     bool m_nonCompliantRuleCountHasBeenSet = false;
 
-    int m_totalRuleCount;
+    int m_totalRuleCount{0};
     bool m_totalRuleCountHasBeenSet = false;
   };
 

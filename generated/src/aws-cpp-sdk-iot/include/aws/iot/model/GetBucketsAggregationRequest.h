@@ -22,7 +22,7 @@ namespace Model
   class GetBucketsAggregationRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API GetBucketsAggregationRequest();
+    AWS_IOT_API GetBucketsAggregationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,56 +37,48 @@ namespace Model
     /**
      * <p>The name of the index to search.</p>
      */
-    inline const Aws::String& GetIndexName() const{ return m_indexName; }
+    inline const Aws::String& GetIndexName() const { return m_indexName; }
     inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
-    inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
-    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
-    inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
-    inline GetBucketsAggregationRequest& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-    inline GetBucketsAggregationRequest& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-    inline GetBucketsAggregationRequest& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+    template<typename IndexNameT = Aws::String>
+    void SetIndexName(IndexNameT&& value) { m_indexNameHasBeenSet = true; m_indexName = std::forward<IndexNameT>(value); }
+    template<typename IndexNameT = Aws::String>
+    GetBucketsAggregationRequest& WithIndexName(IndexNameT&& value) { SetIndexName(std::forward<IndexNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The search query string.</p>
      */
-    inline const Aws::String& GetQueryString() const{ return m_queryString; }
+    inline const Aws::String& GetQueryString() const { return m_queryString; }
     inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
-    inline void SetQueryString(const Aws::String& value) { m_queryStringHasBeenSet = true; m_queryString = value; }
-    inline void SetQueryString(Aws::String&& value) { m_queryStringHasBeenSet = true; m_queryString = std::move(value); }
-    inline void SetQueryString(const char* value) { m_queryStringHasBeenSet = true; m_queryString.assign(value); }
-    inline GetBucketsAggregationRequest& WithQueryString(const Aws::String& value) { SetQueryString(value); return *this;}
-    inline GetBucketsAggregationRequest& WithQueryString(Aws::String&& value) { SetQueryString(std::move(value)); return *this;}
-    inline GetBucketsAggregationRequest& WithQueryString(const char* value) { SetQueryString(value); return *this;}
+    template<typename QueryStringT = Aws::String>
+    void SetQueryString(QueryStringT&& value) { m_queryStringHasBeenSet = true; m_queryString = std::forward<QueryStringT>(value); }
+    template<typename QueryStringT = Aws::String>
+    GetBucketsAggregationRequest& WithQueryString(QueryStringT&& value) { SetQueryString(std::forward<QueryStringT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The aggregation field.</p>
      */
-    inline const Aws::String& GetAggregationField() const{ return m_aggregationField; }
+    inline const Aws::String& GetAggregationField() const { return m_aggregationField; }
     inline bool AggregationFieldHasBeenSet() const { return m_aggregationFieldHasBeenSet; }
-    inline void SetAggregationField(const Aws::String& value) { m_aggregationFieldHasBeenSet = true; m_aggregationField = value; }
-    inline void SetAggregationField(Aws::String&& value) { m_aggregationFieldHasBeenSet = true; m_aggregationField = std::move(value); }
-    inline void SetAggregationField(const char* value) { m_aggregationFieldHasBeenSet = true; m_aggregationField.assign(value); }
-    inline GetBucketsAggregationRequest& WithAggregationField(const Aws::String& value) { SetAggregationField(value); return *this;}
-    inline GetBucketsAggregationRequest& WithAggregationField(Aws::String&& value) { SetAggregationField(std::move(value)); return *this;}
-    inline GetBucketsAggregationRequest& WithAggregationField(const char* value) { SetAggregationField(value); return *this;}
+    template<typename AggregationFieldT = Aws::String>
+    void SetAggregationField(AggregationFieldT&& value) { m_aggregationFieldHasBeenSet = true; m_aggregationField = std::forward<AggregationFieldT>(value); }
+    template<typename AggregationFieldT = Aws::String>
+    GetBucketsAggregationRequest& WithAggregationField(AggregationFieldT&& value) { SetAggregationField(std::forward<AggregationFieldT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the query.</p>
      */
-    inline const Aws::String& GetQueryVersion() const{ return m_queryVersion; }
+    inline const Aws::String& GetQueryVersion() const { return m_queryVersion; }
     inline bool QueryVersionHasBeenSet() const { return m_queryVersionHasBeenSet; }
-    inline void SetQueryVersion(const Aws::String& value) { m_queryVersionHasBeenSet = true; m_queryVersion = value; }
-    inline void SetQueryVersion(Aws::String&& value) { m_queryVersionHasBeenSet = true; m_queryVersion = std::move(value); }
-    inline void SetQueryVersion(const char* value) { m_queryVersionHasBeenSet = true; m_queryVersion.assign(value); }
-    inline GetBucketsAggregationRequest& WithQueryVersion(const Aws::String& value) { SetQueryVersion(value); return *this;}
-    inline GetBucketsAggregationRequest& WithQueryVersion(Aws::String&& value) { SetQueryVersion(std::move(value)); return *this;}
-    inline GetBucketsAggregationRequest& WithQueryVersion(const char* value) { SetQueryVersion(value); return *this;}
+    template<typename QueryVersionT = Aws::String>
+    void SetQueryVersion(QueryVersionT&& value) { m_queryVersionHasBeenSet = true; m_queryVersion = std::forward<QueryVersionT>(value); }
+    template<typename QueryVersionT = Aws::String>
+    GetBucketsAggregationRequest& WithQueryVersion(QueryVersionT&& value) { SetQueryVersion(std::forward<QueryVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,12 +86,12 @@ namespace Model
      * <p>The basic control of the response shape and the bucket aggregation type to
      * perform. </p>
      */
-    inline const BucketsAggregationType& GetBucketsAggregationType() const{ return m_bucketsAggregationType; }
+    inline const BucketsAggregationType& GetBucketsAggregationType() const { return m_bucketsAggregationType; }
     inline bool BucketsAggregationTypeHasBeenSet() const { return m_bucketsAggregationTypeHasBeenSet; }
-    inline void SetBucketsAggregationType(const BucketsAggregationType& value) { m_bucketsAggregationTypeHasBeenSet = true; m_bucketsAggregationType = value; }
-    inline void SetBucketsAggregationType(BucketsAggregationType&& value) { m_bucketsAggregationTypeHasBeenSet = true; m_bucketsAggregationType = std::move(value); }
-    inline GetBucketsAggregationRequest& WithBucketsAggregationType(const BucketsAggregationType& value) { SetBucketsAggregationType(value); return *this;}
-    inline GetBucketsAggregationRequest& WithBucketsAggregationType(BucketsAggregationType&& value) { SetBucketsAggregationType(std::move(value)); return *this;}
+    template<typename BucketsAggregationTypeT = BucketsAggregationType>
+    void SetBucketsAggregationType(BucketsAggregationTypeT&& value) { m_bucketsAggregationTypeHasBeenSet = true; m_bucketsAggregationType = std::forward<BucketsAggregationTypeT>(value); }
+    template<typename BucketsAggregationTypeT = BucketsAggregationType>
+    GetBucketsAggregationRequest& WithBucketsAggregationType(BucketsAggregationTypeT&& value) { SetBucketsAggregationType(std::forward<BucketsAggregationTypeT>(value)); return *this;}
     ///@}
   private:
 

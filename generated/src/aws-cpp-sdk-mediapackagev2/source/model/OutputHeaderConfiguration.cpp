@@ -18,14 +18,7 @@ namespace mediapackagev2
 namespace Model
 {
 
-OutputHeaderConfiguration::OutputHeaderConfiguration() : 
-    m_publishMQCS(false),
-    m_publishMQCSHasBeenSet(false)
-{
-}
-
 OutputHeaderConfiguration::OutputHeaderConfiguration(JsonView jsonValue)
-  : OutputHeaderConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ OutputHeaderConfiguration& OutputHeaderConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("PublishMQCS"))
   {
     m_publishMQCS = jsonValue.GetBool("PublishMQCS");
-
     m_publishMQCSHasBeenSet = true;
   }
-
   return *this;
 }
 

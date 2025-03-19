@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListResourceProfileDetectionsRequest::ListResourceProfileDetectionsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String ListResourceProfileDetectionsRequest::SerializePayload() const
 {
   return {};

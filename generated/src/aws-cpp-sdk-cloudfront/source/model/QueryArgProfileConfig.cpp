@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-QueryArgProfileConfig::QueryArgProfileConfig() : 
-    m_forwardWhenQueryArgProfileIsUnknown(false),
-    m_forwardWhenQueryArgProfileIsUnknownHasBeenSet(false),
-    m_queryArgProfilesHasBeenSet(false)
-{
-}
-
 QueryArgProfileConfig::QueryArgProfileConfig(const XmlNode& xmlNode)
-  : QueryArgProfileConfig()
 {
   *this = xmlNode;
 }

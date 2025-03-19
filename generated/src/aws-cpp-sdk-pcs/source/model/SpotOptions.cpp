@@ -18,14 +18,7 @@ namespace PCS
 namespace Model
 {
 
-SpotOptions::SpotOptions() : 
-    m_allocationStrategy(SpotAllocationStrategy::NOT_SET),
-    m_allocationStrategyHasBeenSet(false)
-{
-}
-
 SpotOptions::SpotOptions(JsonView jsonValue)
-  : SpotOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SpotOptions& SpotOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("allocationStrategy"))
   {
     m_allocationStrategy = SpotAllocationStrategyMapper::GetSpotAllocationStrategyForName(jsonValue.GetString("allocationStrategy"));
-
     m_allocationStrategyHasBeenSet = true;
   }
-
   return *this;
 }
 

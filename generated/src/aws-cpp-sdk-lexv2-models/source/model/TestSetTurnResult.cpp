@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-TestSetTurnResult::TestSetTurnResult() : 
-    m_agentHasBeenSet(false),
-    m_userHasBeenSet(false)
-{
-}
-
 TestSetTurnResult::TestSetTurnResult(JsonView jsonValue)
-  : TestSetTurnResult()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TestSetTurnResult& TestSetTurnResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("agent"))
   {
     m_agent = jsonValue.GetObject("agent");
-
     m_agentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("user"))
   {
     m_user = jsonValue.GetObject("user");
-
     m_userHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetServerCertificateResult::GetServerCertificateResult()
-{
-}
-
 GetServerCertificateResult::GetServerCertificateResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ GetServerCertificateResult& GetServerCertificateResult::operator =(const Aws::Am
     if(!serverCertificateNode.IsNull())
     {
       m_serverCertificate = serverCertificateNode;
+      m_serverCertificateHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::GetServerCertificateResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -18,18 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-RootCause::RootCause() : 
-    m_serviceHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_linkedAccountHasBeenSet(false),
-    m_linkedAccountNameHasBeenSet(false),
-    m_usageTypeHasBeenSet(false),
-    m_impactHasBeenSet(false)
-{
-}
-
 RootCause::RootCause(JsonView jsonValue)
-  : RootCause()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ RootCause& RootCause::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Service"))
   {
     m_service = jsonValue.GetString("Service");
-
     m_serviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LinkedAccount"))
   {
     m_linkedAccount = jsonValue.GetString("LinkedAccount");
-
     m_linkedAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LinkedAccountName"))
   {
     m_linkedAccountName = jsonValue.GetString("LinkedAccountName");
-
     m_linkedAccountNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UsageType"))
   {
     m_usageType = jsonValue.GetString("UsageType");
-
     m_usageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Impact"))
   {
     m_impact = jsonValue.GetObject("Impact");
-
     m_impactHasBeenSet = true;
   }
-
   return *this;
 }
 

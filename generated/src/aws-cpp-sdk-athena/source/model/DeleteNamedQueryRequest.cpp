@@ -12,12 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteNamedQueryRequest::DeleteNamedQueryRequest() : 
-    m_namedQueryId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_namedQueryIdHasBeenSet(true)
-{
-}
-
 Aws::String DeleteNamedQueryRequest::SerializePayload() const
 {
   JsonValue payload;

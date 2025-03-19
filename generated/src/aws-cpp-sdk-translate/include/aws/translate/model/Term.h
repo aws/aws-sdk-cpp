@@ -31,7 +31,7 @@ namespace Model
   class Term
   {
   public:
-    AWS_TRANSLATE_API Term();
+    AWS_TRANSLATE_API Term() = default;
     AWS_TRANSLATE_API Term(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSLATE_API Term& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The source text of the term being translated by the custom terminology.</p>
      */
-    inline const Aws::String& GetSourceText() const{ return m_sourceText; }
+    inline const Aws::String& GetSourceText() const { return m_sourceText; }
     inline bool SourceTextHasBeenSet() const { return m_sourceTextHasBeenSet; }
-    inline void SetSourceText(const Aws::String& value) { m_sourceTextHasBeenSet = true; m_sourceText = value; }
-    inline void SetSourceText(Aws::String&& value) { m_sourceTextHasBeenSet = true; m_sourceText = std::move(value); }
-    inline void SetSourceText(const char* value) { m_sourceTextHasBeenSet = true; m_sourceText.assign(value); }
-    inline Term& WithSourceText(const Aws::String& value) { SetSourceText(value); return *this;}
-    inline Term& WithSourceText(Aws::String&& value) { SetSourceText(std::move(value)); return *this;}
-    inline Term& WithSourceText(const char* value) { SetSourceText(value); return *this;}
+    template<typename SourceTextT = Aws::String>
+    void SetSourceText(SourceTextT&& value) { m_sourceTextHasBeenSet = true; m_sourceText = std::forward<SourceTextT>(value); }
+    template<typename SourceTextT = Aws::String>
+    Term& WithSourceText(SourceTextT&& value) { SetSourceText(std::forward<SourceTextT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target text of the term being translated by the custom terminology.</p>
      */
-    inline const Aws::String& GetTargetText() const{ return m_targetText; }
+    inline const Aws::String& GetTargetText() const { return m_targetText; }
     inline bool TargetTextHasBeenSet() const { return m_targetTextHasBeenSet; }
-    inline void SetTargetText(const Aws::String& value) { m_targetTextHasBeenSet = true; m_targetText = value; }
-    inline void SetTargetText(Aws::String&& value) { m_targetTextHasBeenSet = true; m_targetText = std::move(value); }
-    inline void SetTargetText(const char* value) { m_targetTextHasBeenSet = true; m_targetText.assign(value); }
-    inline Term& WithTargetText(const Aws::String& value) { SetTargetText(value); return *this;}
-    inline Term& WithTargetText(Aws::String&& value) { SetTargetText(std::move(value)); return *this;}
-    inline Term& WithTargetText(const char* value) { SetTargetText(value); return *this;}
+    template<typename TargetTextT = Aws::String>
+    void SetTargetText(TargetTextT&& value) { m_targetTextHasBeenSet = true; m_targetText = std::forward<TargetTextT>(value); }
+    template<typename TargetTextT = Aws::String>
+    Term& WithTargetText(TargetTextT&& value) { SetTargetText(std::forward<TargetTextT>(value)); return *this;}
     ///@}
   private:
 

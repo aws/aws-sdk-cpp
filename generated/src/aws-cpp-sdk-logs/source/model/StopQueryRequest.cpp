@@ -12,11 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopQueryRequest::StopQueryRequest() : 
-    m_queryIdHasBeenSet(false)
-{
-}
-
 Aws::String StopQueryRequest::SerializePayload() const
 {
   JsonValue payload;

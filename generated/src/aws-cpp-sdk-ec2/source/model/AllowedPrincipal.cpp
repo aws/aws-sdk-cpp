@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AllowedPrincipal::AllowedPrincipal() : 
-    m_principalType(PrincipalType::NOT_SET),
-    m_principalTypeHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_servicePermissionIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_serviceIdHasBeenSet(false)
-{
-}
-
 AllowedPrincipal::AllowedPrincipal(const XmlNode& xmlNode)
-  : AllowedPrincipal()
 {
   *this = xmlNode;
 }
@@ -45,7 +34,7 @@ AllowedPrincipal& AllowedPrincipal::operator =(const XmlNode& xmlNode)
     XmlNode principalTypeNode = resultNode.FirstChild("principalType");
     if(!principalTypeNode.IsNull())
     {
-      m_principalType = PrincipalTypeMapper::GetPrincipalTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(principalTypeNode.GetText()).c_str()).c_str());
+      m_principalType = PrincipalTypeMapper::GetPrincipalTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(principalTypeNode.GetText()).c_str()));
       m_principalTypeHasBeenSet = true;
     }
     XmlNode principalNode = resultNode.FirstChild("principal");
@@ -64,6 +53,7 @@ AllowedPrincipal& AllowedPrincipal::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

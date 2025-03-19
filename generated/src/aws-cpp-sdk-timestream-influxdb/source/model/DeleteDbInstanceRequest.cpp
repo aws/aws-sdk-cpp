@@ -12,11 +12,6 @@ using namespace Aws::TimestreamInfluxDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDbInstanceRequest::DeleteDbInstanceRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDbInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutRemediationExceptionsResult::PutRemediationExceptionsResult()
-{
-}
-
 PutRemediationExceptionsResult::PutRemediationExceptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ PutRemediationExceptionsResult& PutRemediationExceptionsResult::operator =(const
     {
       m_failedBatches.push_back(failedBatchesJsonList[failedBatchesIndex].AsObject());
     }
+    m_failedBatchesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

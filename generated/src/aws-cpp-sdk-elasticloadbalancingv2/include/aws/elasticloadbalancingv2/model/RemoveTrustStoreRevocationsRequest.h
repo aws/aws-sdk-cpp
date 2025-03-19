@@ -22,7 +22,7 @@ namespace Model
   class RemoveTrustStoreRevocationsRequest : public ElasticLoadBalancingv2Request
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API RemoveTrustStoreRevocationsRequest();
+    AWS_ELASTICLOADBALANCINGV2_API RemoveTrustStoreRevocationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,26 +41,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the trust store.</p>
      */
-    inline const Aws::String& GetTrustStoreArn() const{ return m_trustStoreArn; }
+    inline const Aws::String& GetTrustStoreArn() const { return m_trustStoreArn; }
     inline bool TrustStoreArnHasBeenSet() const { return m_trustStoreArnHasBeenSet; }
-    inline void SetTrustStoreArn(const Aws::String& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = value; }
-    inline void SetTrustStoreArn(Aws::String&& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = std::move(value); }
-    inline void SetTrustStoreArn(const char* value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn.assign(value); }
-    inline RemoveTrustStoreRevocationsRequest& WithTrustStoreArn(const Aws::String& value) { SetTrustStoreArn(value); return *this;}
-    inline RemoveTrustStoreRevocationsRequest& WithTrustStoreArn(Aws::String&& value) { SetTrustStoreArn(std::move(value)); return *this;}
-    inline RemoveTrustStoreRevocationsRequest& WithTrustStoreArn(const char* value) { SetTrustStoreArn(value); return *this;}
+    template<typename TrustStoreArnT = Aws::String>
+    void SetTrustStoreArn(TrustStoreArnT&& value) { m_trustStoreArnHasBeenSet = true; m_trustStoreArn = std::forward<TrustStoreArnT>(value); }
+    template<typename TrustStoreArnT = Aws::String>
+    RemoveTrustStoreRevocationsRequest& WithTrustStoreArn(TrustStoreArnT&& value) { SetTrustStoreArn(std::forward<TrustStoreArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The revocation IDs of the revocation files you want to remove.</p>
      */
-    inline const Aws::Vector<long long>& GetRevocationIds() const{ return m_revocationIds; }
+    inline const Aws::Vector<long long>& GetRevocationIds() const { return m_revocationIds; }
     inline bool RevocationIdsHasBeenSet() const { return m_revocationIdsHasBeenSet; }
-    inline void SetRevocationIds(const Aws::Vector<long long>& value) { m_revocationIdsHasBeenSet = true; m_revocationIds = value; }
-    inline void SetRevocationIds(Aws::Vector<long long>&& value) { m_revocationIdsHasBeenSet = true; m_revocationIds = std::move(value); }
-    inline RemoveTrustStoreRevocationsRequest& WithRevocationIds(const Aws::Vector<long long>& value) { SetRevocationIds(value); return *this;}
-    inline RemoveTrustStoreRevocationsRequest& WithRevocationIds(Aws::Vector<long long>&& value) { SetRevocationIds(std::move(value)); return *this;}
+    template<typename RevocationIdsT = Aws::Vector<long long>>
+    void SetRevocationIds(RevocationIdsT&& value) { m_revocationIdsHasBeenSet = true; m_revocationIds = std::forward<RevocationIdsT>(value); }
+    template<typename RevocationIdsT = Aws::Vector<long long>>
+    RemoveTrustStoreRevocationsRequest& WithRevocationIds(RevocationIdsT&& value) { SetRevocationIds(std::forward<RevocationIdsT>(value)); return *this;}
     inline RemoveTrustStoreRevocationsRequest& AddRevocationIds(long long value) { m_revocationIdsHasBeenSet = true; m_revocationIds.push_back(value); return *this; }
     ///@}
   private:

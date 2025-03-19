@@ -27,7 +27,7 @@ namespace Model
   class CreateIntegrationWorkflowResult
   {
   public:
-    AWS_CUSTOMERPROFILES_API CreateIntegrationWorkflowResult();
+    AWS_CUSTOMERPROFILES_API CreateIntegrationWorkflowResult() = default;
     AWS_CUSTOMERPROFILES_API CreateIntegrationWorkflowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CUSTOMERPROFILES_API CreateIntegrationWorkflowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>Unique identifier for the workflow.</p>
      */
-    inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
-    inline void SetWorkflowId(const Aws::String& value) { m_workflowId = value; }
-    inline void SetWorkflowId(Aws::String&& value) { m_workflowId = std::move(value); }
-    inline void SetWorkflowId(const char* value) { m_workflowId.assign(value); }
-    inline CreateIntegrationWorkflowResult& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
-    inline CreateIntegrationWorkflowResult& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
-    inline CreateIntegrationWorkflowResult& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
+    inline const Aws::String& GetWorkflowId() const { return m_workflowId; }
+    template<typename WorkflowIdT = Aws::String>
+    void SetWorkflowId(WorkflowIdT&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::forward<WorkflowIdT>(value); }
+    template<typename WorkflowIdT = Aws::String>
+    CreateIntegrationWorkflowResult& WithWorkflowId(WorkflowIdT&& value) { SetWorkflowId(std::forward<WorkflowIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message indicating create request was received.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
-    inline void SetMessage(const Aws::String& value) { m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_message.assign(value); }
-    inline CreateIntegrationWorkflowResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline CreateIntegrationWorkflowResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline CreateIntegrationWorkflowResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+    inline const Aws::String& GetMessage() const { return m_message; }
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    CreateIntegrationWorkflowResult& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateIntegrationWorkflowResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateIntegrationWorkflowResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateIntegrationWorkflowResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateIntegrationWorkflowResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_workflowId;
+    bool m_workflowIdHasBeenSet = false;
 
     Aws::String m_message;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,26 +12,6 @@ using namespace Aws::MemoryDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateClusterRequest::UpdateClusterRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_maintenanceWindowHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false),
-    m_snsTopicStatusHasBeenSet(false),
-    m_parameterGroupNameHasBeenSet(false),
-    m_snapshotWindowHasBeenSet(false),
-    m_snapshotRetentionLimit(0),
-    m_snapshotRetentionLimitHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_replicaConfigurationHasBeenSet(false),
-    m_shardConfigurationHasBeenSet(false),
-    m_aCLNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateClusterRequest::SerializePayload() const
 {
   JsonValue payload;

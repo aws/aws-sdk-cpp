@@ -24,7 +24,7 @@ namespace Model
   class ListIntentPathsRequest : public LexModelsV2Request
   {
   public:
-    AWS_LEXMODELSV2_API ListIntentPathsRequest();
+    AWS_LEXMODELSV2_API ListIntentPathsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>The identifier for the bot for which you want to retrieve intent path
      * metrics.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
+    inline const Aws::String& GetBotId() const { return m_botId; }
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
-    inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
-    inline ListIntentPathsRequest& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline ListIntentPathsRequest& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline ListIntentPathsRequest& WithBotId(const char* value) { SetBotId(value); return *this;}
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    ListIntentPathsRequest& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,12 +53,12 @@ namespace Model
      * <p>The date and time that marks the beginning of the range of time for which you
      * want to see intent path metrics.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartDateTime() const{ return m_startDateTime; }
+    inline const Aws::Utils::DateTime& GetStartDateTime() const { return m_startDateTime; }
     inline bool StartDateTimeHasBeenSet() const { return m_startDateTimeHasBeenSet; }
-    inline void SetStartDateTime(const Aws::Utils::DateTime& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = value; }
-    inline void SetStartDateTime(Aws::Utils::DateTime&& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = std::move(value); }
-    inline ListIntentPathsRequest& WithStartDateTime(const Aws::Utils::DateTime& value) { SetStartDateTime(value); return *this;}
-    inline ListIntentPathsRequest& WithStartDateTime(Aws::Utils::DateTime&& value) { SetStartDateTime(std::move(value)); return *this;}
+    template<typename StartDateTimeT = Aws::Utils::DateTime>
+    void SetStartDateTime(StartDateTimeT&& value) { m_startDateTimeHasBeenSet = true; m_startDateTime = std::forward<StartDateTimeT>(value); }
+    template<typename StartDateTimeT = Aws::Utils::DateTime>
+    ListIntentPathsRequest& WithStartDateTime(StartDateTimeT&& value) { SetStartDateTime(std::forward<StartDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +66,12 @@ namespace Model
      * <p>The date and time that marks the end of the range of time for which you want
      * to see intent path metrics.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndDateTime() const{ return m_endDateTime; }
+    inline const Aws::Utils::DateTime& GetEndDateTime() const { return m_endDateTime; }
     inline bool EndDateTimeHasBeenSet() const { return m_endDateTimeHasBeenSet; }
-    inline void SetEndDateTime(const Aws::Utils::DateTime& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = value; }
-    inline void SetEndDateTime(Aws::Utils::DateTime&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = std::move(value); }
-    inline ListIntentPathsRequest& WithEndDateTime(const Aws::Utils::DateTime& value) { SetEndDateTime(value); return *this;}
-    inline ListIntentPathsRequest& WithEndDateTime(Aws::Utils::DateTime&& value) { SetEndDateTime(std::move(value)); return *this;}
+    template<typename EndDateTimeT = Aws::Utils::DateTime>
+    void SetEndDateTime(EndDateTimeT&& value) { m_endDateTimeHasBeenSet = true; m_endDateTime = std::forward<EndDateTimeT>(value); }
+    template<typename EndDateTimeT = Aws::Utils::DateTime>
+    ListIntentPathsRequest& WithEndDateTime(EndDateTimeT&& value) { SetEndDateTime(std::forward<EndDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +81,12 @@ namespace Model
      * </li> <li> <p>/BookCar/BookHotel</p> </li> <li> <p>/BookHotel/BookCar</p> </li>
      * </ul>
      */
-    inline const Aws::String& GetIntentPath() const{ return m_intentPath; }
+    inline const Aws::String& GetIntentPath() const { return m_intentPath; }
     inline bool IntentPathHasBeenSet() const { return m_intentPathHasBeenSet; }
-    inline void SetIntentPath(const Aws::String& value) { m_intentPathHasBeenSet = true; m_intentPath = value; }
-    inline void SetIntentPath(Aws::String&& value) { m_intentPathHasBeenSet = true; m_intentPath = std::move(value); }
-    inline void SetIntentPath(const char* value) { m_intentPathHasBeenSet = true; m_intentPath.assign(value); }
-    inline ListIntentPathsRequest& WithIntentPath(const Aws::String& value) { SetIntentPath(value); return *this;}
-    inline ListIntentPathsRequest& WithIntentPath(Aws::String&& value) { SetIntentPath(std::move(value)); return *this;}
-    inline ListIntentPathsRequest& WithIntentPath(const char* value) { SetIntentPath(value); return *this;}
+    template<typename IntentPathT = Aws::String>
+    void SetIntentPath(IntentPathT&& value) { m_intentPathHasBeenSet = true; m_intentPath = std::forward<IntentPathT>(value); }
+    template<typename IntentPathT = Aws::String>
+    ListIntentPathsRequest& WithIntentPath(IntentPathT&& value) { SetIntentPath(std::forward<IntentPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,24 +94,24 @@ namespace Model
      * <p>A list of objects, each describes a condition by which you want to filter the
      * results.</p>
      */
-    inline const Aws::Vector<AnalyticsPathFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<AnalyticsPathFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<AnalyticsPathFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<AnalyticsPathFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListIntentPathsRequest& WithFilters(const Aws::Vector<AnalyticsPathFilter>& value) { SetFilters(value); return *this;}
-    inline ListIntentPathsRequest& WithFilters(Aws::Vector<AnalyticsPathFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline ListIntentPathsRequest& AddFilters(const AnalyticsPathFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline ListIntentPathsRequest& AddFilters(AnalyticsPathFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<AnalyticsPathFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<AnalyticsPathFilter>>
+    ListIntentPathsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = AnalyticsPathFilter>
+    ListIntentPathsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_botId;
     bool m_botIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startDateTime;
+    Aws::Utils::DateTime m_startDateTime{};
     bool m_startDateTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endDateTime;
+    Aws::Utils::DateTime m_endDateTime{};
     bool m_endDateTimeHasBeenSet = false;
 
     Aws::String m_intentPath;

@@ -28,7 +28,7 @@ namespace Model
   class WithdrawByoipCidrResult
   {
   public:
-    AWS_GLOBALACCELERATOR_API WithdrawByoipCidrResult();
+    AWS_GLOBALACCELERATOR_API WithdrawByoipCidrResult() = default;
     AWS_GLOBALACCELERATOR_API WithdrawByoipCidrResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLOBALACCELERATOR_API WithdrawByoipCidrResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the BYOIP address pool.</p>
      */
-    inline const ByoipCidr& GetByoipCidr() const{ return m_byoipCidr; }
-    inline void SetByoipCidr(const ByoipCidr& value) { m_byoipCidr = value; }
-    inline void SetByoipCidr(ByoipCidr&& value) { m_byoipCidr = std::move(value); }
-    inline WithdrawByoipCidrResult& WithByoipCidr(const ByoipCidr& value) { SetByoipCidr(value); return *this;}
-    inline WithdrawByoipCidrResult& WithByoipCidr(ByoipCidr&& value) { SetByoipCidr(std::move(value)); return *this;}
+    inline const ByoipCidr& GetByoipCidr() const { return m_byoipCidr; }
+    template<typename ByoipCidrT = ByoipCidr>
+    void SetByoipCidr(ByoipCidrT&& value) { m_byoipCidrHasBeenSet = true; m_byoipCidr = std::forward<ByoipCidrT>(value); }
+    template<typename ByoipCidrT = ByoipCidr>
+    WithdrawByoipCidrResult& WithByoipCidr(ByoipCidrT&& value) { SetByoipCidr(std::forward<ByoipCidrT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline WithdrawByoipCidrResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline WithdrawByoipCidrResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline WithdrawByoipCidrResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    WithdrawByoipCidrResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ByoipCidr m_byoipCidr;
+    bool m_byoipCidrHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

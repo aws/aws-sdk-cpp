@@ -43,7 +43,7 @@ namespace Model
   class StartSelector
   {
   public:
-    AWS_KINESISVIDEOMEDIA_API StartSelector();
+    AWS_KINESISVIDEOMEDIA_API StartSelector() = default;
     AWS_KINESISVIDEOMEDIA_API StartSelector(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEOMEDIA_API StartSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEOMEDIA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -64,12 +64,10 @@ namespace Model
      * <code>startSelectorType</code>, you don't provide any additional information in
      * the <code>startSelector</code>.</p> 
      */
-    inline const StartSelectorType& GetStartSelectorType() const{ return m_startSelectorType; }
+    inline StartSelectorType GetStartSelectorType() const { return m_startSelectorType; }
     inline bool StartSelectorTypeHasBeenSet() const { return m_startSelectorTypeHasBeenSet; }
-    inline void SetStartSelectorType(const StartSelectorType& value) { m_startSelectorTypeHasBeenSet = true; m_startSelectorType = value; }
-    inline void SetStartSelectorType(StartSelectorType&& value) { m_startSelectorTypeHasBeenSet = true; m_startSelectorType = std::move(value); }
-    inline StartSelector& WithStartSelectorType(const StartSelectorType& value) { SetStartSelectorType(value); return *this;}
-    inline StartSelector& WithStartSelectorType(StartSelectorType&& value) { SetStartSelectorType(std::move(value)); return *this;}
+    inline void SetStartSelectorType(StartSelectorType value) { m_startSelectorTypeHasBeenSet = true; m_startSelectorType = value; }
+    inline StartSelector& WithStartSelectorType(StartSelectorType value) { SetStartSelectorType(value); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +75,12 @@ namespace Model
      * <p>Specifies the fragment number from where you want the <code>GetMedia</code>
      * API to start returning the fragments. </p>
      */
-    inline const Aws::String& GetAfterFragmentNumber() const{ return m_afterFragmentNumber; }
+    inline const Aws::String& GetAfterFragmentNumber() const { return m_afterFragmentNumber; }
     inline bool AfterFragmentNumberHasBeenSet() const { return m_afterFragmentNumberHasBeenSet; }
-    inline void SetAfterFragmentNumber(const Aws::String& value) { m_afterFragmentNumberHasBeenSet = true; m_afterFragmentNumber = value; }
-    inline void SetAfterFragmentNumber(Aws::String&& value) { m_afterFragmentNumberHasBeenSet = true; m_afterFragmentNumber = std::move(value); }
-    inline void SetAfterFragmentNumber(const char* value) { m_afterFragmentNumberHasBeenSet = true; m_afterFragmentNumber.assign(value); }
-    inline StartSelector& WithAfterFragmentNumber(const Aws::String& value) { SetAfterFragmentNumber(value); return *this;}
-    inline StartSelector& WithAfterFragmentNumber(Aws::String&& value) { SetAfterFragmentNumber(std::move(value)); return *this;}
-    inline StartSelector& WithAfterFragmentNumber(const char* value) { SetAfterFragmentNumber(value); return *this;}
+    template<typename AfterFragmentNumberT = Aws::String>
+    void SetAfterFragmentNumber(AfterFragmentNumberT&& value) { m_afterFragmentNumberHasBeenSet = true; m_afterFragmentNumber = std::forward<AfterFragmentNumberT>(value); }
+    template<typename AfterFragmentNumberT = Aws::String>
+    StartSelector& WithAfterFragmentNumber(AfterFragmentNumberT&& value) { SetAfterFragmentNumber(std::forward<AfterFragmentNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,12 +90,12 @@ namespace Model
      * <code>startSelectorType</code>. The <code>GetMedia</code> API then starts with
      * the chunk containing the fragment that has the specified timestamp.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTimestamp() const{ return m_startTimestamp; }
+    inline const Aws::Utils::DateTime& GetStartTimestamp() const { return m_startTimestamp; }
     inline bool StartTimestampHasBeenSet() const { return m_startTimestampHasBeenSet; }
-    inline void SetStartTimestamp(const Aws::Utils::DateTime& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = value; }
-    inline void SetStartTimestamp(Aws::Utils::DateTime&& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = std::move(value); }
-    inline StartSelector& WithStartTimestamp(const Aws::Utils::DateTime& value) { SetStartTimestamp(value); return *this;}
-    inline StartSelector& WithStartTimestamp(Aws::Utils::DateTime&& value) { SetStartTimestamp(std::move(value)); return *this;}
+    template<typename StartTimestampT = Aws::Utils::DateTime>
+    void SetStartTimestamp(StartTimestampT&& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = std::forward<StartTimestampT>(value); }
+    template<typename StartTimestampT = Aws::Utils::DateTime>
+    StartSelector& WithStartTimestamp(StartTimestampT&& value) { SetStartTimestamp(std::forward<StartTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,24 +104,22 @@ namespace Model
      * <code>GetMedia</code> response. The <code>GetMedia</code> API then starts with
      * the chunk identified by the continuation token.</p>
      */
-    inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
+    inline const Aws::String& GetContinuationToken() const { return m_continuationToken; }
     inline bool ContinuationTokenHasBeenSet() const { return m_continuationTokenHasBeenSet; }
-    inline void SetContinuationToken(const Aws::String& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = value; }
-    inline void SetContinuationToken(Aws::String&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::move(value); }
-    inline void SetContinuationToken(const char* value) { m_continuationTokenHasBeenSet = true; m_continuationToken.assign(value); }
-    inline StartSelector& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
-    inline StartSelector& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
-    inline StartSelector& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
+    template<typename ContinuationTokenT = Aws::String>
+    void SetContinuationToken(ContinuationTokenT&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::forward<ContinuationTokenT>(value); }
+    template<typename ContinuationTokenT = Aws::String>
+    StartSelector& WithContinuationToken(ContinuationTokenT&& value) { SetContinuationToken(std::forward<ContinuationTokenT>(value)); return *this;}
     ///@}
   private:
 
-    StartSelectorType m_startSelectorType;
+    StartSelectorType m_startSelectorType{StartSelectorType::NOT_SET};
     bool m_startSelectorTypeHasBeenSet = false;
 
     Aws::String m_afterFragmentNumber;
     bool m_afterFragmentNumberHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTimestamp;
+    Aws::Utils::DateTime m_startTimestamp{};
     bool m_startTimestampHasBeenSet = false;
 
     Aws::String m_continuationToken;

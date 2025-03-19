@@ -18,14 +18,7 @@ namespace FSx
 namespace Model
 {
 
-BackupBeingCopied::BackupBeingCopied() : 
-    m_messageHasBeenSet(false),
-    m_backupIdHasBeenSet(false)
-{
-}
-
 BackupBeingCopied::BackupBeingCopied(JsonView jsonValue)
-  : BackupBeingCopied()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BackupBeingCopied& BackupBeingCopied::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupId"))
   {
     m_backupId = jsonValue.GetString("BackupId");
-
     m_backupIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace LicenseManagerUserSubscriptions
 namespace Model
 {
 
-Filter::Filter() : 
-    m_attributeHasBeenSet(false),
-    m_operationHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 Filter::Filter(JsonView jsonValue)
-  : Filter()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Filter& Filter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Attribute"))
   {
     m_attribute = jsonValue.GetString("Attribute");
-
     m_attributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operation"))
   {
     m_operation = jsonValue.GetString("Operation");
-
     m_operationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

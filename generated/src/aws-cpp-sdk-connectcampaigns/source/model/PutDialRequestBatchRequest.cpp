@@ -12,12 +12,6 @@ using namespace Aws::ConnectCampaigns::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutDialRequestBatchRequest::PutDialRequestBatchRequest() : 
-    m_idHasBeenSet(false),
-    m_dialRequestsHasBeenSet(false)
-{
-}
-
 Aws::String PutDialRequestBatchRequest::SerializePayload() const
 {
   JsonValue payload;

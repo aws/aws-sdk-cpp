@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribePlacementResult::DescribePlacementResult()
-{
-}
-
 DescribePlacementResult::DescribePlacementResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribePlacementResult& DescribePlacementResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("placement"))
   {
     m_placement = jsonValue.GetObject("placement");
-
+    m_placementHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

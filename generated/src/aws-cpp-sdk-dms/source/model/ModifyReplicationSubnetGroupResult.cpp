@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyReplicationSubnetGroupResult::ModifyReplicationSubnetGroupResult()
-{
-}
-
 ModifyReplicationSubnetGroupResult::ModifyReplicationSubnetGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ ModifyReplicationSubnetGroupResult& ModifyReplicationSubnetGroupResult::operator
   if(jsonValue.ValueExists("ReplicationSubnetGroup"))
   {
     m_replicationSubnetGroup = jsonValue.GetObject("ReplicationSubnetGroup");
-
+    m_replicationSubnetGroupHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

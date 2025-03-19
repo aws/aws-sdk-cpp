@@ -35,7 +35,7 @@ namespace Model
   class FindingTypeAggregation
   {
   public:
-    AWS_INSPECTOR2_API FindingTypeAggregation();
+    AWS_INSPECTOR2_API FindingTypeAggregation() = default;
     AWS_INSPECTOR2_API FindingTypeAggregation(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API FindingTypeAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,61 +45,53 @@ namespace Model
     /**
      * <p>The finding type to aggregate.</p>
      */
-    inline const AggregationFindingType& GetFindingType() const{ return m_findingType; }
+    inline AggregationFindingType GetFindingType() const { return m_findingType; }
     inline bool FindingTypeHasBeenSet() const { return m_findingTypeHasBeenSet; }
-    inline void SetFindingType(const AggregationFindingType& value) { m_findingTypeHasBeenSet = true; m_findingType = value; }
-    inline void SetFindingType(AggregationFindingType&& value) { m_findingTypeHasBeenSet = true; m_findingType = std::move(value); }
-    inline FindingTypeAggregation& WithFindingType(const AggregationFindingType& value) { SetFindingType(value); return *this;}
-    inline FindingTypeAggregation& WithFindingType(AggregationFindingType&& value) { SetFindingType(std::move(value)); return *this;}
+    inline void SetFindingType(AggregationFindingType value) { m_findingTypeHasBeenSet = true; m_findingType = value; }
+    inline FindingTypeAggregation& WithFindingType(AggregationFindingType value) { SetFindingType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource type to aggregate.</p>
      */
-    inline const AggregationResourceType& GetResourceType() const{ return m_resourceType; }
+    inline AggregationResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const AggregationResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(AggregationResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline FindingTypeAggregation& WithResourceType(const AggregationResourceType& value) { SetResourceType(value); return *this;}
-    inline FindingTypeAggregation& WithResourceType(AggregationResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(AggregationResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline FindingTypeAggregation& WithResourceType(AggregationResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value to sort results by.</p>
      */
-    inline const FindingTypeSortBy& GetSortBy() const{ return m_sortBy; }
+    inline FindingTypeSortBy GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const FindingTypeSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(FindingTypeSortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline FindingTypeAggregation& WithSortBy(const FindingTypeSortBy& value) { SetSortBy(value); return *this;}
-    inline FindingTypeAggregation& WithSortBy(FindingTypeSortBy&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(FindingTypeSortBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline FindingTypeAggregation& WithSortBy(FindingTypeSortBy value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The order to sort results by.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline FindingTypeAggregation& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline FindingTypeAggregation& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline FindingTypeAggregation& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
-    AggregationFindingType m_findingType;
+    AggregationFindingType m_findingType{AggregationFindingType::NOT_SET};
     bool m_findingTypeHasBeenSet = false;
 
-    AggregationResourceType m_resourceType;
+    AggregationResourceType m_resourceType{AggregationResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
-    FindingTypeSortBy m_sortBy;
+    FindingTypeSortBy m_sortBy{FindingTypeSortBy::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

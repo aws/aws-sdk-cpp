@@ -33,7 +33,7 @@ namespace Model
   class CaseAttachmentAttributes
   {
   public:
-    AWS_SECURITYIR_API CaseAttachmentAttributes();
+    AWS_SECURITYIR_API CaseAttachmentAttributes() = default;
     AWS_SECURITYIR_API CaseAttachmentAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYIR_API CaseAttachmentAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYIR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,66 +43,58 @@ namespace Model
     /**
      * <p/>
      */
-    inline const Aws::String& GetAttachmentId() const{ return m_attachmentId; }
+    inline const Aws::String& GetAttachmentId() const { return m_attachmentId; }
     inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
-    inline void SetAttachmentId(const Aws::String& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = value; }
-    inline void SetAttachmentId(Aws::String&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::move(value); }
-    inline void SetAttachmentId(const char* value) { m_attachmentIdHasBeenSet = true; m_attachmentId.assign(value); }
-    inline CaseAttachmentAttributes& WithAttachmentId(const Aws::String& value) { SetAttachmentId(value); return *this;}
-    inline CaseAttachmentAttributes& WithAttachmentId(Aws::String&& value) { SetAttachmentId(std::move(value)); return *this;}
-    inline CaseAttachmentAttributes& WithAttachmentId(const char* value) { SetAttachmentId(value); return *this;}
+    template<typename AttachmentIdT = Aws::String>
+    void SetAttachmentId(AttachmentIdT&& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = std::forward<AttachmentIdT>(value); }
+    template<typename AttachmentIdT = Aws::String>
+    CaseAttachmentAttributes& WithAttachmentId(AttachmentIdT&& value) { SetAttachmentId(std::forward<AttachmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetFileName() const{ return m_fileName; }
+    inline const Aws::String& GetFileName() const { return m_fileName; }
     inline bool FileNameHasBeenSet() const { return m_fileNameHasBeenSet; }
-    inline void SetFileName(const Aws::String& value) { m_fileNameHasBeenSet = true; m_fileName = value; }
-    inline void SetFileName(Aws::String&& value) { m_fileNameHasBeenSet = true; m_fileName = std::move(value); }
-    inline void SetFileName(const char* value) { m_fileNameHasBeenSet = true; m_fileName.assign(value); }
-    inline CaseAttachmentAttributes& WithFileName(const Aws::String& value) { SetFileName(value); return *this;}
-    inline CaseAttachmentAttributes& WithFileName(Aws::String&& value) { SetFileName(std::move(value)); return *this;}
-    inline CaseAttachmentAttributes& WithFileName(const char* value) { SetFileName(value); return *this;}
+    template<typename FileNameT = Aws::String>
+    void SetFileName(FileNameT&& value) { m_fileNameHasBeenSet = true; m_fileName = std::forward<FileNameT>(value); }
+    template<typename FileNameT = Aws::String>
+    CaseAttachmentAttributes& WithFileName(FileNameT&& value) { SetFileName(std::forward<FileNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const CaseAttachmentStatus& GetAttachmentStatus() const{ return m_attachmentStatus; }
+    inline CaseAttachmentStatus GetAttachmentStatus() const { return m_attachmentStatus; }
     inline bool AttachmentStatusHasBeenSet() const { return m_attachmentStatusHasBeenSet; }
-    inline void SetAttachmentStatus(const CaseAttachmentStatus& value) { m_attachmentStatusHasBeenSet = true; m_attachmentStatus = value; }
-    inline void SetAttachmentStatus(CaseAttachmentStatus&& value) { m_attachmentStatusHasBeenSet = true; m_attachmentStatus = std::move(value); }
-    inline CaseAttachmentAttributes& WithAttachmentStatus(const CaseAttachmentStatus& value) { SetAttachmentStatus(value); return *this;}
-    inline CaseAttachmentAttributes& WithAttachmentStatus(CaseAttachmentStatus&& value) { SetAttachmentStatus(std::move(value)); return *this;}
+    inline void SetAttachmentStatus(CaseAttachmentStatus value) { m_attachmentStatusHasBeenSet = true; m_attachmentStatus = value; }
+    inline CaseAttachmentAttributes& WithAttachmentStatus(CaseAttachmentStatus value) { SetAttachmentStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetCreator() const{ return m_creator; }
+    inline const Aws::String& GetCreator() const { return m_creator; }
     inline bool CreatorHasBeenSet() const { return m_creatorHasBeenSet; }
-    inline void SetCreator(const Aws::String& value) { m_creatorHasBeenSet = true; m_creator = value; }
-    inline void SetCreator(Aws::String&& value) { m_creatorHasBeenSet = true; m_creator = std::move(value); }
-    inline void SetCreator(const char* value) { m_creatorHasBeenSet = true; m_creator.assign(value); }
-    inline CaseAttachmentAttributes& WithCreator(const Aws::String& value) { SetCreator(value); return *this;}
-    inline CaseAttachmentAttributes& WithCreator(Aws::String&& value) { SetCreator(std::move(value)); return *this;}
-    inline CaseAttachmentAttributes& WithCreator(const char* value) { SetCreator(value); return *this;}
+    template<typename CreatorT = Aws::String>
+    void SetCreator(CreatorT&& value) { m_creatorHasBeenSet = true; m_creator = std::forward<CreatorT>(value); }
+    template<typename CreatorT = Aws::String>
+    CaseAttachmentAttributes& WithCreator(CreatorT&& value) { SetCreator(std::forward<CreatorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
+    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
     inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
-    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
-    inline CaseAttachmentAttributes& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
-    inline CaseAttachmentAttributes& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    CaseAttachmentAttributes& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
     ///@}
   private:
 
@@ -112,13 +104,13 @@ namespace Model
     Aws::String m_fileName;
     bool m_fileNameHasBeenSet = false;
 
-    CaseAttachmentStatus m_attachmentStatus;
+    CaseAttachmentStatus m_attachmentStatus{CaseAttachmentStatus::NOT_SET};
     bool m_attachmentStatusHasBeenSet = false;
 
     Aws::String m_creator;
     bool m_creatorHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdDate;
+    Aws::Utils::DateTime m_createdDate{};
     bool m_createdDateHasBeenSet = false;
   };
 

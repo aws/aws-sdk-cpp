@@ -32,7 +32,7 @@ namespace Model
   class AwsNetworkFirewallFirewallSubnetMappingsDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsNetworkFirewallFirewallSubnetMappingsDetails();
+    AWS_SECURITYHUB_API AwsNetworkFirewallFirewallSubnetMappingsDetails() = default;
     AWS_SECURITYHUB_API AwsNetworkFirewallFirewallSubnetMappingsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsNetworkFirewallFirewallSubnetMappingsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The identifier of the subnet</p>
      */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+    inline const Aws::String& GetSubnetId() const { return m_subnetId; }
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-    inline AwsNetworkFirewallFirewallSubnetMappingsDetails& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-    inline AwsNetworkFirewallFirewallSubnetMappingsDetails& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-    inline AwsNetworkFirewallFirewallSubnetMappingsDetails& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    template<typename SubnetIdT = Aws::String>
+    void SetSubnetId(SubnetIdT&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::forward<SubnetIdT>(value); }
+    template<typename SubnetIdT = Aws::String>
+    AwsNetworkFirewallFirewallSubnetMappingsDetails& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
     ///@}
   private:
 

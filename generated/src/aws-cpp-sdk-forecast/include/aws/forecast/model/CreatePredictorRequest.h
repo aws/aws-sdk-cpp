@@ -31,7 +31,7 @@ namespace Model
   class CreatePredictorRequest : public ForecastServiceRequest
   {
   public:
-    AWS_FORECASTSERVICE_API CreatePredictorRequest();
+    AWS_FORECASTSERVICE_API CreatePredictorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>A name for the predictor.</p>
      */
-    inline const Aws::String& GetPredictorName() const{ return m_predictorName; }
+    inline const Aws::String& GetPredictorName() const { return m_predictorName; }
     inline bool PredictorNameHasBeenSet() const { return m_predictorNameHasBeenSet; }
-    inline void SetPredictorName(const Aws::String& value) { m_predictorNameHasBeenSet = true; m_predictorName = value; }
-    inline void SetPredictorName(Aws::String&& value) { m_predictorNameHasBeenSet = true; m_predictorName = std::move(value); }
-    inline void SetPredictorName(const char* value) { m_predictorNameHasBeenSet = true; m_predictorName.assign(value); }
-    inline CreatePredictorRequest& WithPredictorName(const Aws::String& value) { SetPredictorName(value); return *this;}
-    inline CreatePredictorRequest& WithPredictorName(Aws::String&& value) { SetPredictorName(std::move(value)); return *this;}
-    inline CreatePredictorRequest& WithPredictorName(const char* value) { SetPredictorName(value); return *this;}
+    template<typename PredictorNameT = Aws::String>
+    void SetPredictorName(PredictorNameT&& value) { m_predictorNameHasBeenSet = true; m_predictorName = std::forward<PredictorNameT>(value); }
+    template<typename PredictorNameT = Aws::String>
+    CreatePredictorRequest& WithPredictorName(PredictorNameT&& value) { SetPredictorName(std::forward<PredictorNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * <code>arn:aws:forecast:::algorithm/NPTS</code> </p> </li> <li> <p>
      * <code>arn:aws:forecast:::algorithm/Prophet</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetAlgorithmArn() const{ return m_algorithmArn; }
+    inline const Aws::String& GetAlgorithmArn() const { return m_algorithmArn; }
     inline bool AlgorithmArnHasBeenSet() const { return m_algorithmArnHasBeenSet; }
-    inline void SetAlgorithmArn(const Aws::String& value) { m_algorithmArnHasBeenSet = true; m_algorithmArn = value; }
-    inline void SetAlgorithmArn(Aws::String&& value) { m_algorithmArnHasBeenSet = true; m_algorithmArn = std::move(value); }
-    inline void SetAlgorithmArn(const char* value) { m_algorithmArnHasBeenSet = true; m_algorithmArn.assign(value); }
-    inline CreatePredictorRequest& WithAlgorithmArn(const Aws::String& value) { SetAlgorithmArn(value); return *this;}
-    inline CreatePredictorRequest& WithAlgorithmArn(Aws::String&& value) { SetAlgorithmArn(std::move(value)); return *this;}
-    inline CreatePredictorRequest& WithAlgorithmArn(const char* value) { SetAlgorithmArn(value); return *this;}
+    template<typename AlgorithmArnT = Aws::String>
+    void SetAlgorithmArn(AlgorithmArnT&& value) { m_algorithmArnHasBeenSet = true; m_algorithmArn = std::forward<AlgorithmArnT>(value); }
+    template<typename AlgorithmArnT = Aws::String>
+    CreatePredictorRequest& WithAlgorithmArn(AlgorithmArnT&& value) { SetAlgorithmArn(std::forward<AlgorithmArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,7 +86,7 @@ namespace Model
      * <p>The maximum forecast horizon is the lesser of 500 time-steps or 1/3 of the
      * TARGET_TIME_SERIES dataset length.</p>
      */
-    inline int GetForecastHorizon() const{ return m_forecastHorizon; }
+    inline int GetForecastHorizon() const { return m_forecastHorizon; }
     inline bool ForecastHorizonHasBeenSet() const { return m_forecastHorizonHasBeenSet; }
     inline void SetForecastHorizon(int value) { m_forecastHorizonHasBeenSet = true; m_forecastHorizon = value; }
     inline CreatePredictorRequest& WithForecastHorizon(int value) { SetForecastHorizon(value); return *this;}
@@ -104,15 +100,14 @@ namespace Model
      * <code>mean</code>. </p> <p>The default value is <code>["0.10", "0.50",
      * "0.9"]</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetForecastTypes() const{ return m_forecastTypes; }
+    inline const Aws::Vector<Aws::String>& GetForecastTypes() const { return m_forecastTypes; }
     inline bool ForecastTypesHasBeenSet() const { return m_forecastTypesHasBeenSet; }
-    inline void SetForecastTypes(const Aws::Vector<Aws::String>& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes = value; }
-    inline void SetForecastTypes(Aws::Vector<Aws::String>&& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes = std::move(value); }
-    inline CreatePredictorRequest& WithForecastTypes(const Aws::Vector<Aws::String>& value) { SetForecastTypes(value); return *this;}
-    inline CreatePredictorRequest& WithForecastTypes(Aws::Vector<Aws::String>&& value) { SetForecastTypes(std::move(value)); return *this;}
-    inline CreatePredictorRequest& AddForecastTypes(const Aws::String& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes.push_back(value); return *this; }
-    inline CreatePredictorRequest& AddForecastTypes(Aws::String&& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes.push_back(std::move(value)); return *this; }
-    inline CreatePredictorRequest& AddForecastTypes(const char* value) { m_forecastTypesHasBeenSet = true; m_forecastTypes.push_back(value); return *this; }
+    template<typename ForecastTypesT = Aws::Vector<Aws::String>>
+    void SetForecastTypes(ForecastTypesT&& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes = std::forward<ForecastTypesT>(value); }
+    template<typename ForecastTypesT = Aws::Vector<Aws::String>>
+    CreatePredictorRequest& WithForecastTypes(ForecastTypesT&& value) { SetForecastTypes(std::forward<ForecastTypesT>(value)); return *this;}
+    template<typename ForecastTypesT = Aws::String>
+    CreatePredictorRequest& AddForecastTypes(ForecastTypesT&& value) { m_forecastTypesHasBeenSet = true; m_forecastTypes.emplace_back(std::forward<ForecastTypesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -125,7 +120,7 @@ namespace Model
      * AutoML. This is a good option if you aren't sure which algorithm is suitable for
      * your training data. In this case, <code>PerformHPO</code> must be false.</p>
      */
-    inline bool GetPerformAutoML() const{ return m_performAutoML; }
+    inline bool GetPerformAutoML() const { return m_performAutoML; }
     inline bool PerformAutoMLHasBeenSet() const { return m_performAutoMLHasBeenSet; }
     inline void SetPerformAutoML(bool value) { m_performAutoMLHasBeenSet = true; m_performAutoML = value; }
     inline CreatePredictorRequest& WithPerformAutoML(bool value) { SetPerformAutoML(value); return *this;}
@@ -141,12 +136,10 @@ namespace Model
      * <code>LatencyOptimized</code>.</p> <p>This parameter is only valid for
      * predictors trained using AutoML.</p>
      */
-    inline const AutoMLOverrideStrategy& GetAutoMLOverrideStrategy() const{ return m_autoMLOverrideStrategy; }
+    inline AutoMLOverrideStrategy GetAutoMLOverrideStrategy() const { return m_autoMLOverrideStrategy; }
     inline bool AutoMLOverrideStrategyHasBeenSet() const { return m_autoMLOverrideStrategyHasBeenSet; }
-    inline void SetAutoMLOverrideStrategy(const AutoMLOverrideStrategy& value) { m_autoMLOverrideStrategyHasBeenSet = true; m_autoMLOverrideStrategy = value; }
-    inline void SetAutoMLOverrideStrategy(AutoMLOverrideStrategy&& value) { m_autoMLOverrideStrategyHasBeenSet = true; m_autoMLOverrideStrategy = std::move(value); }
-    inline CreatePredictorRequest& WithAutoMLOverrideStrategy(const AutoMLOverrideStrategy& value) { SetAutoMLOverrideStrategy(value); return *this;}
-    inline CreatePredictorRequest& WithAutoMLOverrideStrategy(AutoMLOverrideStrategy&& value) { SetAutoMLOverrideStrategy(std::move(value)); return *this;}
+    inline void SetAutoMLOverrideStrategy(AutoMLOverrideStrategy value) { m_autoMLOverrideStrategyHasBeenSet = true; m_autoMLOverrideStrategy = value; }
+    inline CreatePredictorRequest& WithAutoMLOverrideStrategy(AutoMLOverrideStrategy value) { SetAutoMLOverrideStrategy(value); return *this;}
     ///@}
 
     ///@{
@@ -164,7 +157,7 @@ namespace Model
      * algorithms support HPO:</p> <ul> <li> <p>DeepAR+</p> </li> <li> <p>CNN-QR</p>
      * </li> </ul>
      */
-    inline bool GetPerformHPO() const{ return m_performHPO; }
+    inline bool GetPerformHPO() const { return m_performHPO; }
     inline bool PerformHPOHasBeenSet() const { return m_performHPOHasBeenSet; }
     inline void SetPerformHPO(bool value) { m_performHPOHasBeenSet = true; m_performHPO = value; }
     inline CreatePredictorRequest& WithPerformHPO(bool value) { SetPerformHPO(value); return *this;}
@@ -176,19 +169,16 @@ namespace Model
      * you can override are listed in the individual algorithms. For the list of
      * supported algorithms, see <a>aws-forecast-choosing-recipes</a>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTrainingParameters() const{ return m_trainingParameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTrainingParameters() const { return m_trainingParameters; }
     inline bool TrainingParametersHasBeenSet() const { return m_trainingParametersHasBeenSet; }
-    inline void SetTrainingParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_trainingParametersHasBeenSet = true; m_trainingParameters = value; }
-    inline void SetTrainingParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_trainingParametersHasBeenSet = true; m_trainingParameters = std::move(value); }
-    inline CreatePredictorRequest& WithTrainingParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetTrainingParameters(value); return *this;}
-    inline CreatePredictorRequest& WithTrainingParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetTrainingParameters(std::move(value)); return *this;}
-    inline CreatePredictorRequest& AddTrainingParameters(const Aws::String& key, const Aws::String& value) { m_trainingParametersHasBeenSet = true; m_trainingParameters.emplace(key, value); return *this; }
-    inline CreatePredictorRequest& AddTrainingParameters(Aws::String&& key, const Aws::String& value) { m_trainingParametersHasBeenSet = true; m_trainingParameters.emplace(std::move(key), value); return *this; }
-    inline CreatePredictorRequest& AddTrainingParameters(const Aws::String& key, Aws::String&& value) { m_trainingParametersHasBeenSet = true; m_trainingParameters.emplace(key, std::move(value)); return *this; }
-    inline CreatePredictorRequest& AddTrainingParameters(Aws::String&& key, Aws::String&& value) { m_trainingParametersHasBeenSet = true; m_trainingParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreatePredictorRequest& AddTrainingParameters(const char* key, Aws::String&& value) { m_trainingParametersHasBeenSet = true; m_trainingParameters.emplace(key, std::move(value)); return *this; }
-    inline CreatePredictorRequest& AddTrainingParameters(Aws::String&& key, const char* value) { m_trainingParametersHasBeenSet = true; m_trainingParameters.emplace(std::move(key), value); return *this; }
-    inline CreatePredictorRequest& AddTrainingParameters(const char* key, const char* value) { m_trainingParametersHasBeenSet = true; m_trainingParameters.emplace(key, value); return *this; }
+    template<typename TrainingParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetTrainingParameters(TrainingParametersT&& value) { m_trainingParametersHasBeenSet = true; m_trainingParameters = std::forward<TrainingParametersT>(value); }
+    template<typename TrainingParametersT = Aws::Map<Aws::String, Aws::String>>
+    CreatePredictorRequest& WithTrainingParameters(TrainingParametersT&& value) { SetTrainingParameters(std::forward<TrainingParametersT>(value)); return *this;}
+    template<typename TrainingParametersKeyT = Aws::String, typename TrainingParametersValueT = Aws::String>
+    CreatePredictorRequest& AddTrainingParameters(TrainingParametersKeyT&& key, TrainingParametersValueT&& value) {
+      m_trainingParametersHasBeenSet = true; m_trainingParameters.emplace(std::forward<TrainingParametersKeyT>(key), std::forward<TrainingParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -198,12 +188,12 @@ namespace Model
      * training data and testing data. The evaluation parameters define how to perform
      * the split and the number of iterations.</p>
      */
-    inline const EvaluationParameters& GetEvaluationParameters() const{ return m_evaluationParameters; }
+    inline const EvaluationParameters& GetEvaluationParameters() const { return m_evaluationParameters; }
     inline bool EvaluationParametersHasBeenSet() const { return m_evaluationParametersHasBeenSet; }
-    inline void SetEvaluationParameters(const EvaluationParameters& value) { m_evaluationParametersHasBeenSet = true; m_evaluationParameters = value; }
-    inline void SetEvaluationParameters(EvaluationParameters&& value) { m_evaluationParametersHasBeenSet = true; m_evaluationParameters = std::move(value); }
-    inline CreatePredictorRequest& WithEvaluationParameters(const EvaluationParameters& value) { SetEvaluationParameters(value); return *this;}
-    inline CreatePredictorRequest& WithEvaluationParameters(EvaluationParameters&& value) { SetEvaluationParameters(std::move(value)); return *this;}
+    template<typename EvaluationParametersT = EvaluationParameters>
+    void SetEvaluationParameters(EvaluationParametersT&& value) { m_evaluationParametersHasBeenSet = true; m_evaluationParameters = std::forward<EvaluationParametersT>(value); }
+    template<typename EvaluationParametersT = EvaluationParameters>
+    CreatePredictorRequest& WithEvaluationParameters(EvaluationParametersT&& value) { SetEvaluationParameters(std::forward<EvaluationParametersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -215,12 +205,12 @@ namespace Model
      * you included the <code>HPOConfig</code> object, you must set
      * <code>PerformHPO</code> to true.</p>
      */
-    inline const HyperParameterTuningJobConfig& GetHPOConfig() const{ return m_hPOConfig; }
+    inline const HyperParameterTuningJobConfig& GetHPOConfig() const { return m_hPOConfig; }
     inline bool HPOConfigHasBeenSet() const { return m_hPOConfigHasBeenSet; }
-    inline void SetHPOConfig(const HyperParameterTuningJobConfig& value) { m_hPOConfigHasBeenSet = true; m_hPOConfig = value; }
-    inline void SetHPOConfig(HyperParameterTuningJobConfig&& value) { m_hPOConfigHasBeenSet = true; m_hPOConfig = std::move(value); }
-    inline CreatePredictorRequest& WithHPOConfig(const HyperParameterTuningJobConfig& value) { SetHPOConfig(value); return *this;}
-    inline CreatePredictorRequest& WithHPOConfig(HyperParameterTuningJobConfig&& value) { SetHPOConfig(std::move(value)); return *this;}
+    template<typename HPOConfigT = HyperParameterTuningJobConfig>
+    void SetHPOConfig(HPOConfigT&& value) { m_hPOConfigHasBeenSet = true; m_hPOConfig = std::forward<HPOConfigT>(value); }
+    template<typename HPOConfigT = HyperParameterTuningJobConfig>
+    CreatePredictorRequest& WithHPOConfig(HPOConfigT&& value) { SetHPOConfig(std::forward<HPOConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -228,24 +218,24 @@ namespace Model
      * <p>Describes the dataset group that contains the data to use to train the
      * predictor.</p>
      */
-    inline const InputDataConfig& GetInputDataConfig() const{ return m_inputDataConfig; }
+    inline const InputDataConfig& GetInputDataConfig() const { return m_inputDataConfig; }
     inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
-    inline void SetInputDataConfig(const InputDataConfig& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = value; }
-    inline void SetInputDataConfig(InputDataConfig&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = std::move(value); }
-    inline CreatePredictorRequest& WithInputDataConfig(const InputDataConfig& value) { SetInputDataConfig(value); return *this;}
-    inline CreatePredictorRequest& WithInputDataConfig(InputDataConfig&& value) { SetInputDataConfig(std::move(value)); return *this;}
+    template<typename InputDataConfigT = InputDataConfig>
+    void SetInputDataConfig(InputDataConfigT&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = std::forward<InputDataConfigT>(value); }
+    template<typename InputDataConfigT = InputDataConfig>
+    CreatePredictorRequest& WithInputDataConfig(InputDataConfigT&& value) { SetInputDataConfig(std::forward<InputDataConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The featurization configuration.</p>
      */
-    inline const FeaturizationConfig& GetFeaturizationConfig() const{ return m_featurizationConfig; }
+    inline const FeaturizationConfig& GetFeaturizationConfig() const { return m_featurizationConfig; }
     inline bool FeaturizationConfigHasBeenSet() const { return m_featurizationConfigHasBeenSet; }
-    inline void SetFeaturizationConfig(const FeaturizationConfig& value) { m_featurizationConfigHasBeenSet = true; m_featurizationConfig = value; }
-    inline void SetFeaturizationConfig(FeaturizationConfig&& value) { m_featurizationConfigHasBeenSet = true; m_featurizationConfig = std::move(value); }
-    inline CreatePredictorRequest& WithFeaturizationConfig(const FeaturizationConfig& value) { SetFeaturizationConfig(value); return *this;}
-    inline CreatePredictorRequest& WithFeaturizationConfig(FeaturizationConfig&& value) { SetFeaturizationConfig(std::move(value)); return *this;}
+    template<typename FeaturizationConfigT = FeaturizationConfig>
+    void SetFeaturizationConfig(FeaturizationConfigT&& value) { m_featurizationConfigHasBeenSet = true; m_featurizationConfig = std::forward<FeaturizationConfigT>(value); }
+    template<typename FeaturizationConfigT = FeaturizationConfig>
+    CreatePredictorRequest& WithFeaturizationConfig(FeaturizationConfigT&& value) { SetFeaturizationConfig(std::forward<FeaturizationConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -253,12 +243,12 @@ namespace Model
      * <p>An Key Management Service (KMS) key and the Identity and Access Management
      * (IAM) role that Amazon Forecast can assume to access the key.</p>
      */
-    inline const EncryptionConfig& GetEncryptionConfig() const{ return m_encryptionConfig; }
+    inline const EncryptionConfig& GetEncryptionConfig() const { return m_encryptionConfig; }
     inline bool EncryptionConfigHasBeenSet() const { return m_encryptionConfigHasBeenSet; }
-    inline void SetEncryptionConfig(const EncryptionConfig& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = value; }
-    inline void SetEncryptionConfig(EncryptionConfig&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = std::move(value); }
-    inline CreatePredictorRequest& WithEncryptionConfig(const EncryptionConfig& value) { SetEncryptionConfig(value); return *this;}
-    inline CreatePredictorRequest& WithEncryptionConfig(EncryptionConfig&& value) { SetEncryptionConfig(std::move(value)); return *this;}
+    template<typename EncryptionConfigT = EncryptionConfig>
+    void SetEncryptionConfig(EncryptionConfigT&& value) { m_encryptionConfigHasBeenSet = true; m_encryptionConfig = std::forward<EncryptionConfigT>(value); }
+    template<typename EncryptionConfigT = EncryptionConfig>
+    CreatePredictorRequest& WithEncryptionConfig(EncryptionConfigT&& value) { SetEncryptionConfig(std::forward<EncryptionConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -283,26 +273,24 @@ namespace Model
      * tags. Tags with only the key prefix of <code>aws</code> do not count against
      * your tags per resource limit.</p> </li> </ul>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreatePredictorRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreatePredictorRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreatePredictorRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreatePredictorRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreatePredictorRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreatePredictorRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The accuracy metric used to optimize the predictor.</p>
      */
-    inline const OptimizationMetric& GetOptimizationMetric() const{ return m_optimizationMetric; }
+    inline OptimizationMetric GetOptimizationMetric() const { return m_optimizationMetric; }
     inline bool OptimizationMetricHasBeenSet() const { return m_optimizationMetricHasBeenSet; }
-    inline void SetOptimizationMetric(const OptimizationMetric& value) { m_optimizationMetricHasBeenSet = true; m_optimizationMetric = value; }
-    inline void SetOptimizationMetric(OptimizationMetric&& value) { m_optimizationMetricHasBeenSet = true; m_optimizationMetric = std::move(value); }
-    inline CreatePredictorRequest& WithOptimizationMetric(const OptimizationMetric& value) { SetOptimizationMetric(value); return *this;}
-    inline CreatePredictorRequest& WithOptimizationMetric(OptimizationMetric&& value) { SetOptimizationMetric(std::move(value)); return *this;}
+    inline void SetOptimizationMetric(OptimizationMetric value) { m_optimizationMetricHasBeenSet = true; m_optimizationMetric = value; }
+    inline CreatePredictorRequest& WithOptimizationMetric(OptimizationMetric value) { SetOptimizationMetric(value); return *this;}
     ///@}
   private:
 
@@ -312,19 +300,19 @@ namespace Model
     Aws::String m_algorithmArn;
     bool m_algorithmArnHasBeenSet = false;
 
-    int m_forecastHorizon;
+    int m_forecastHorizon{0};
     bool m_forecastHorizonHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_forecastTypes;
     bool m_forecastTypesHasBeenSet = false;
 
-    bool m_performAutoML;
+    bool m_performAutoML{false};
     bool m_performAutoMLHasBeenSet = false;
 
-    AutoMLOverrideStrategy m_autoMLOverrideStrategy;
+    AutoMLOverrideStrategy m_autoMLOverrideStrategy{AutoMLOverrideStrategy::NOT_SET};
     bool m_autoMLOverrideStrategyHasBeenSet = false;
 
-    bool m_performHPO;
+    bool m_performHPO{false};
     bool m_performHPOHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_trainingParameters;
@@ -348,7 +336,7 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    OptimizationMetric m_optimizationMetric;
+    OptimizationMetric m_optimizationMetric{OptimizationMetric::NOT_SET};
     bool m_optimizationMetricHasBeenSet = false;
   };
 

@@ -12,11 +12,6 @@ using namespace Aws::ManagedGrafana::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeWorkspaceAuthenticationRequest::DescribeWorkspaceAuthenticationRequest() : 
-    m_workspaceIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeWorkspaceAuthenticationRequest::SerializePayload() const
 {
   return {};

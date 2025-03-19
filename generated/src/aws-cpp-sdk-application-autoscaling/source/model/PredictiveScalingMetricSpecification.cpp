@@ -18,20 +18,7 @@ namespace ApplicationAutoScaling
 namespace Model
 {
 
-PredictiveScalingMetricSpecification::PredictiveScalingMetricSpecification() : 
-    m_targetValue(0.0),
-    m_targetValueHasBeenSet(false),
-    m_predefinedMetricPairSpecificationHasBeenSet(false),
-    m_predefinedScalingMetricSpecificationHasBeenSet(false),
-    m_predefinedLoadMetricSpecificationHasBeenSet(false),
-    m_customizedScalingMetricSpecificationHasBeenSet(false),
-    m_customizedLoadMetricSpecificationHasBeenSet(false),
-    m_customizedCapacityMetricSpecificationHasBeenSet(false)
-{
-}
-
 PredictiveScalingMetricSpecification::PredictiveScalingMetricSpecification(JsonView jsonValue)
-  : PredictiveScalingMetricSpecification()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ PredictiveScalingMetricSpecification& PredictiveScalingMetricSpecification::oper
   if(jsonValue.ValueExists("TargetValue"))
   {
     m_targetValue = jsonValue.GetDouble("TargetValue");
-
     m_targetValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PredefinedMetricPairSpecification"))
   {
     m_predefinedMetricPairSpecification = jsonValue.GetObject("PredefinedMetricPairSpecification");
-
     m_predefinedMetricPairSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PredefinedScalingMetricSpecification"))
   {
     m_predefinedScalingMetricSpecification = jsonValue.GetObject("PredefinedScalingMetricSpecification");
-
     m_predefinedScalingMetricSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PredefinedLoadMetricSpecification"))
   {
     m_predefinedLoadMetricSpecification = jsonValue.GetObject("PredefinedLoadMetricSpecification");
-
     m_predefinedLoadMetricSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomizedScalingMetricSpecification"))
   {
     m_customizedScalingMetricSpecification = jsonValue.GetObject("CustomizedScalingMetricSpecification");
-
     m_customizedScalingMetricSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomizedLoadMetricSpecification"))
   {
     m_customizedLoadMetricSpecification = jsonValue.GetObject("CustomizedLoadMetricSpecification");
-
     m_customizedLoadMetricSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomizedCapacityMetricSpecification"))
   {
     m_customizedCapacityMetricSpecification = jsonValue.GetObject("CustomizedCapacityMetricSpecification");
-
     m_customizedCapacityMetricSpecificationHasBeenSet = true;
   }
-
   return *this;
 }
 

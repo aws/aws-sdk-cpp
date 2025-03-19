@@ -18,14 +18,7 @@ namespace SSMContacts
 namespace Model
 {
 
-CoverageTime::CoverageTime() : 
-    m_startHasBeenSet(false),
-    m_endHasBeenSet(false)
-{
-}
-
 CoverageTime::CoverageTime(JsonView jsonValue)
-  : CoverageTime()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CoverageTime& CoverageTime::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Start"))
   {
     m_start = jsonValue.GetObject("Start");
-
     m_startHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("End"))
   {
     m_end = jsonValue.GetObject("End");
-
     m_endHasBeenSet = true;
   }
-
   return *this;
 }
 

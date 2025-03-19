@@ -34,7 +34,7 @@ namespace Model
   class FargateDetails
   {
   public:
-    AWS_GUARDDUTY_API FargateDetails();
+    AWS_GUARDDUTY_API FargateDetails() = default;
     AWS_GUARDDUTY_API FargateDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API FargateDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,15 +45,14 @@ namespace Model
      * <p>Runtime coverage issues identified for the resource running on Amazon Web
      * Services Fargate.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIssues() const{ return m_issues; }
+    inline const Aws::Vector<Aws::String>& GetIssues() const { return m_issues; }
     inline bool IssuesHasBeenSet() const { return m_issuesHasBeenSet; }
-    inline void SetIssues(const Aws::Vector<Aws::String>& value) { m_issuesHasBeenSet = true; m_issues = value; }
-    inline void SetIssues(Aws::Vector<Aws::String>&& value) { m_issuesHasBeenSet = true; m_issues = std::move(value); }
-    inline FargateDetails& WithIssues(const Aws::Vector<Aws::String>& value) { SetIssues(value); return *this;}
-    inline FargateDetails& WithIssues(Aws::Vector<Aws::String>&& value) { SetIssues(std::move(value)); return *this;}
-    inline FargateDetails& AddIssues(const Aws::String& value) { m_issuesHasBeenSet = true; m_issues.push_back(value); return *this; }
-    inline FargateDetails& AddIssues(Aws::String&& value) { m_issuesHasBeenSet = true; m_issues.push_back(std::move(value)); return *this; }
-    inline FargateDetails& AddIssues(const char* value) { m_issuesHasBeenSet = true; m_issues.push_back(value); return *this; }
+    template<typename IssuesT = Aws::Vector<Aws::String>>
+    void SetIssues(IssuesT&& value) { m_issuesHasBeenSet = true; m_issues = std::forward<IssuesT>(value); }
+    template<typename IssuesT = Aws::Vector<Aws::String>>
+    FargateDetails& WithIssues(IssuesT&& value) { SetIssues(std::forward<IssuesT>(value)); return *this;}
+    template<typename IssuesT = Aws::String>
+    FargateDetails& AddIssues(IssuesT&& value) { m_issuesHasBeenSet = true; m_issues.emplace_back(std::forward<IssuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -66,19 +65,17 @@ namespace Model
      * apply to the Amazon Web Services Fargate (Amazon ECS only) woprkloads.</p>
      * 
      */
-    inline const ManagementType& GetManagementType() const{ return m_managementType; }
+    inline ManagementType GetManagementType() const { return m_managementType; }
     inline bool ManagementTypeHasBeenSet() const { return m_managementTypeHasBeenSet; }
-    inline void SetManagementType(const ManagementType& value) { m_managementTypeHasBeenSet = true; m_managementType = value; }
-    inline void SetManagementType(ManagementType&& value) { m_managementTypeHasBeenSet = true; m_managementType = std::move(value); }
-    inline FargateDetails& WithManagementType(const ManagementType& value) { SetManagementType(value); return *this;}
-    inline FargateDetails& WithManagementType(ManagementType&& value) { SetManagementType(std::move(value)); return *this;}
+    inline void SetManagementType(ManagementType value) { m_managementTypeHasBeenSet = true; m_managementType = value; }
+    inline FargateDetails& WithManagementType(ManagementType value) { SetManagementType(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_issues;
     bool m_issuesHasBeenSet = false;
 
-    ManagementType m_managementType;
+    ManagementType m_managementType{ManagementType::NOT_SET};
     bool m_managementTypeHasBeenSet = false;
   };
 

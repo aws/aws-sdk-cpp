@@ -30,7 +30,7 @@ namespace Model
   class BatchGetCodeSnippetResult
   {
   public:
-    AWS_INSPECTOR2_API BatchGetCodeSnippetResult();
+    AWS_INSPECTOR2_API BatchGetCodeSnippetResult() = default;
     AWS_INSPECTOR2_API BatchGetCodeSnippetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INSPECTOR2_API BatchGetCodeSnippetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>The retrieved code snippets associated with the provided finding ARNs.</p>
      */
-    inline const Aws::Vector<CodeSnippetResult>& GetCodeSnippetResults() const{ return m_codeSnippetResults; }
-    inline void SetCodeSnippetResults(const Aws::Vector<CodeSnippetResult>& value) { m_codeSnippetResults = value; }
-    inline void SetCodeSnippetResults(Aws::Vector<CodeSnippetResult>&& value) { m_codeSnippetResults = std::move(value); }
-    inline BatchGetCodeSnippetResult& WithCodeSnippetResults(const Aws::Vector<CodeSnippetResult>& value) { SetCodeSnippetResults(value); return *this;}
-    inline BatchGetCodeSnippetResult& WithCodeSnippetResults(Aws::Vector<CodeSnippetResult>&& value) { SetCodeSnippetResults(std::move(value)); return *this;}
-    inline BatchGetCodeSnippetResult& AddCodeSnippetResults(const CodeSnippetResult& value) { m_codeSnippetResults.push_back(value); return *this; }
-    inline BatchGetCodeSnippetResult& AddCodeSnippetResults(CodeSnippetResult&& value) { m_codeSnippetResults.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CodeSnippetResult>& GetCodeSnippetResults() const { return m_codeSnippetResults; }
+    template<typename CodeSnippetResultsT = Aws::Vector<CodeSnippetResult>>
+    void SetCodeSnippetResults(CodeSnippetResultsT&& value) { m_codeSnippetResultsHasBeenSet = true; m_codeSnippetResults = std::forward<CodeSnippetResultsT>(value); }
+    template<typename CodeSnippetResultsT = Aws::Vector<CodeSnippetResult>>
+    BatchGetCodeSnippetResult& WithCodeSnippetResults(CodeSnippetResultsT&& value) { SetCodeSnippetResults(std::forward<CodeSnippetResultsT>(value)); return *this;}
+    template<typename CodeSnippetResultsT = CodeSnippetResult>
+    BatchGetCodeSnippetResult& AddCodeSnippetResults(CodeSnippetResultsT&& value) { m_codeSnippetResultsHasBeenSet = true; m_codeSnippetResults.emplace_back(std::forward<CodeSnippetResultsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,33 @@ namespace Model
      * <p>Any errors Amazon Inspector encountered while trying to retrieve the
      * requested code snippets.</p>
      */
-    inline const Aws::Vector<CodeSnippetError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<CodeSnippetError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<CodeSnippetError>&& value) { m_errors = std::move(value); }
-    inline BatchGetCodeSnippetResult& WithErrors(const Aws::Vector<CodeSnippetError>& value) { SetErrors(value); return *this;}
-    inline BatchGetCodeSnippetResult& WithErrors(Aws::Vector<CodeSnippetError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchGetCodeSnippetResult& AddErrors(const CodeSnippetError& value) { m_errors.push_back(value); return *this; }
-    inline BatchGetCodeSnippetResult& AddErrors(CodeSnippetError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CodeSnippetError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<CodeSnippetError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<CodeSnippetError>>
+    BatchGetCodeSnippetResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = CodeSnippetError>
+    BatchGetCodeSnippetResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetCodeSnippetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetCodeSnippetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetCodeSnippetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetCodeSnippetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CodeSnippetResult> m_codeSnippetResults;
+    bool m_codeSnippetResultsHasBeenSet = false;
 
     Aws::Vector<CodeSnippetError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

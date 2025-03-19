@@ -18,13 +18,7 @@ namespace mediapackagev2
 namespace Model
 {
 
-Destination::Destination() : 
-    m_s3DestinationHasBeenSet(false)
-{
-}
-
 Destination::Destination(JsonView jsonValue)
-  : Destination()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Destination& Destination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Destination"))
   {
     m_s3Destination = jsonValue.GetObject("S3Destination");
-
     m_s3DestinationHasBeenSet = true;
   }
-
   return *this;
 }
 

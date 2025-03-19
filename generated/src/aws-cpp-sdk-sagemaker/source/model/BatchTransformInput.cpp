@@ -18,27 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-BatchTransformInput::BatchTransformInput() : 
-    m_dataCapturedDestinationS3UriHasBeenSet(false),
-    m_datasetFormatHasBeenSet(false),
-    m_localPathHasBeenSet(false),
-    m_s3InputMode(ProcessingS3InputMode::NOT_SET),
-    m_s3InputModeHasBeenSet(false),
-    m_s3DataDistributionType(ProcessingS3DataDistributionType::NOT_SET),
-    m_s3DataDistributionTypeHasBeenSet(false),
-    m_featuresAttributeHasBeenSet(false),
-    m_inferenceAttributeHasBeenSet(false),
-    m_probabilityAttributeHasBeenSet(false),
-    m_probabilityThresholdAttribute(0.0),
-    m_probabilityThresholdAttributeHasBeenSet(false),
-    m_startTimeOffsetHasBeenSet(false),
-    m_endTimeOffsetHasBeenSet(false),
-    m_excludeFeaturesAttributeHasBeenSet(false)
-{
-}
-
 BatchTransformInput::BatchTransformInput(JsonView jsonValue)
-  : BatchTransformInput()
 {
   *this = jsonValue;
 }
@@ -48,87 +28,63 @@ BatchTransformInput& BatchTransformInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataCapturedDestinationS3Uri"))
   {
     m_dataCapturedDestinationS3Uri = jsonValue.GetString("DataCapturedDestinationS3Uri");
-
     m_dataCapturedDestinationS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasetFormat"))
   {
     m_datasetFormat = jsonValue.GetObject("DatasetFormat");
-
     m_datasetFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LocalPath"))
   {
     m_localPath = jsonValue.GetString("LocalPath");
-
     m_localPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3InputMode"))
   {
     m_s3InputMode = ProcessingS3InputModeMapper::GetProcessingS3InputModeForName(jsonValue.GetString("S3InputMode"));
-
     m_s3InputModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3DataDistributionType"))
   {
     m_s3DataDistributionType = ProcessingS3DataDistributionTypeMapper::GetProcessingS3DataDistributionTypeForName(jsonValue.GetString("S3DataDistributionType"));
-
     m_s3DataDistributionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeaturesAttribute"))
   {
     m_featuresAttribute = jsonValue.GetString("FeaturesAttribute");
-
     m_featuresAttributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InferenceAttribute"))
   {
     m_inferenceAttribute = jsonValue.GetString("InferenceAttribute");
-
     m_inferenceAttributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProbabilityAttribute"))
   {
     m_probabilityAttribute = jsonValue.GetString("ProbabilityAttribute");
-
     m_probabilityAttributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProbabilityThresholdAttribute"))
   {
     m_probabilityThresholdAttribute = jsonValue.GetDouble("ProbabilityThresholdAttribute");
-
     m_probabilityThresholdAttributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTimeOffset"))
   {
     m_startTimeOffset = jsonValue.GetString("StartTimeOffset");
-
     m_startTimeOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTimeOffset"))
   {
     m_endTimeOffset = jsonValue.GetString("EndTimeOffset");
-
     m_endTimeOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExcludeFeaturesAttribute"))
   {
     m_excludeFeaturesAttribute = jsonValue.GetString("ExcludeFeaturesAttribute");
-
     m_excludeFeaturesAttributeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -40,7 +40,7 @@ namespace Model
   class DomainEntryPoint
   {
   public:
-    AWS_CODEARTIFACT_API DomainEntryPoint();
+    AWS_CODEARTIFACT_API DomainEntryPoint() = default;
     AWS_CODEARTIFACT_API DomainEntryPoint(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEARTIFACT_API DomainEntryPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEARTIFACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,28 +50,24 @@ namespace Model
     /**
      * <p>The name of the repository that a package was originally published to.</p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-    inline DomainEntryPoint& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline DomainEntryPoint& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline DomainEntryPoint& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    DomainEntryPoint& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the external connection that a package was ingested from.</p>
      */
-    inline const Aws::String& GetExternalConnectionName() const{ return m_externalConnectionName; }
+    inline const Aws::String& GetExternalConnectionName() const { return m_externalConnectionName; }
     inline bool ExternalConnectionNameHasBeenSet() const { return m_externalConnectionNameHasBeenSet; }
-    inline void SetExternalConnectionName(const Aws::String& value) { m_externalConnectionNameHasBeenSet = true; m_externalConnectionName = value; }
-    inline void SetExternalConnectionName(Aws::String&& value) { m_externalConnectionNameHasBeenSet = true; m_externalConnectionName = std::move(value); }
-    inline void SetExternalConnectionName(const char* value) { m_externalConnectionNameHasBeenSet = true; m_externalConnectionName.assign(value); }
-    inline DomainEntryPoint& WithExternalConnectionName(const Aws::String& value) { SetExternalConnectionName(value); return *this;}
-    inline DomainEntryPoint& WithExternalConnectionName(Aws::String&& value) { SetExternalConnectionName(std::move(value)); return *this;}
-    inline DomainEntryPoint& WithExternalConnectionName(const char* value) { SetExternalConnectionName(value); return *this;}
+    template<typename ExternalConnectionNameT = Aws::String>
+    void SetExternalConnectionName(ExternalConnectionNameT&& value) { m_externalConnectionNameHasBeenSet = true; m_externalConnectionName = std::forward<ExternalConnectionNameT>(value); }
+    template<typename ExternalConnectionNameT = Aws::String>
+    DomainEntryPoint& WithExternalConnectionName(ExternalConnectionNameT&& value) { SetExternalConnectionName(std::forward<ExternalConnectionNameT>(value)); return *this;}
     ///@}
   private:
 

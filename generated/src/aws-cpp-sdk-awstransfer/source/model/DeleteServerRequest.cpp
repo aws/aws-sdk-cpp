@@ -12,11 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteServerRequest::DeleteServerRequest() : 
-    m_serverIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteServerRequest::SerializePayload() const
 {
   JsonValue payload;

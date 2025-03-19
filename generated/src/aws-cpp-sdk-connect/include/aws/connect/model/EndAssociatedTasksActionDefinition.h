@@ -29,7 +29,7 @@ namespace Model
   class EndAssociatedTasksActionDefinition
   {
   public:
-    AWS_CONNECT_API EndAssociatedTasksActionDefinition();
+    AWS_CONNECT_API EndAssociatedTasksActionDefinition() = default;
     AWS_CONNECT_API EndAssociatedTasksActionDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API EndAssociatedTasksActionDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;

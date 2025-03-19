@@ -12,11 +12,6 @@ using namespace Aws::OpenSearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetApplicationRequest::GetApplicationRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetApplicationRequest::SerializePayload() const
 {
   return {};

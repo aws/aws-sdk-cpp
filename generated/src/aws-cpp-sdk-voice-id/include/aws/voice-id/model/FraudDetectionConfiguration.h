@@ -32,7 +32,7 @@ namespace Model
   class FraudDetectionConfiguration
   {
   public:
-    AWS_VOICEID_API FraudDetectionConfiguration();
+    AWS_VOICEID_API FraudDetectionConfiguration() = default;
     AWS_VOICEID_API FraudDetectionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_VOICEID_API FraudDetectionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * detected risk score calculated by Voice ID is higher than the threshold, the
      * speaker is considered a fraudster.</p>
      */
-    inline int GetRiskThreshold() const{ return m_riskThreshold; }
+    inline int GetRiskThreshold() const { return m_riskThreshold; }
     inline bool RiskThresholdHasBeenSet() const { return m_riskThresholdHasBeenSet; }
     inline void SetRiskThreshold(int value) { m_riskThresholdHasBeenSet = true; m_riskThreshold = value; }
     inline FraudDetectionConfiguration& WithRiskThreshold(int value) { SetRiskThreshold(value); return *this;}
@@ -55,18 +55,16 @@ namespace Model
      * <p>The identifier of the watchlist against which fraud detection is performed.
      * </p>
      */
-    inline const Aws::String& GetWatchlistId() const{ return m_watchlistId; }
+    inline const Aws::String& GetWatchlistId() const { return m_watchlistId; }
     inline bool WatchlistIdHasBeenSet() const { return m_watchlistIdHasBeenSet; }
-    inline void SetWatchlistId(const Aws::String& value) { m_watchlistIdHasBeenSet = true; m_watchlistId = value; }
-    inline void SetWatchlistId(Aws::String&& value) { m_watchlistIdHasBeenSet = true; m_watchlistId = std::move(value); }
-    inline void SetWatchlistId(const char* value) { m_watchlistIdHasBeenSet = true; m_watchlistId.assign(value); }
-    inline FraudDetectionConfiguration& WithWatchlistId(const Aws::String& value) { SetWatchlistId(value); return *this;}
-    inline FraudDetectionConfiguration& WithWatchlistId(Aws::String&& value) { SetWatchlistId(std::move(value)); return *this;}
-    inline FraudDetectionConfiguration& WithWatchlistId(const char* value) { SetWatchlistId(value); return *this;}
+    template<typename WatchlistIdT = Aws::String>
+    void SetWatchlistId(WatchlistIdT&& value) { m_watchlistIdHasBeenSet = true; m_watchlistId = std::forward<WatchlistIdT>(value); }
+    template<typename WatchlistIdT = Aws::String>
+    FraudDetectionConfiguration& WithWatchlistId(WatchlistIdT&& value) { SetWatchlistId(std::forward<WatchlistIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_riskThreshold;
+    int m_riskThreshold{0};
     bool m_riskThresholdHasBeenSet = false;
 
     Aws::String m_watchlistId;

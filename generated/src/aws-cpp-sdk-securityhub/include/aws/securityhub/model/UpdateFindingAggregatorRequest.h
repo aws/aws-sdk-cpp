@@ -22,7 +22,7 @@ namespace Model
   class UpdateFindingAggregatorRequest : public SecurityHubRequest
   {
   public:
-    AWS_SECURITYHUB_API UpdateFindingAggregatorRequest();
+    AWS_SECURITYHUB_API UpdateFindingAggregatorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * <p>The ARN of the finding aggregator. To obtain the ARN, use
      * <code>ListFindingAggregators</code>.</p>
      */
-    inline const Aws::String& GetFindingAggregatorArn() const{ return m_findingAggregatorArn; }
+    inline const Aws::String& GetFindingAggregatorArn() const { return m_findingAggregatorArn; }
     inline bool FindingAggregatorArnHasBeenSet() const { return m_findingAggregatorArnHasBeenSet; }
-    inline void SetFindingAggregatorArn(const Aws::String& value) { m_findingAggregatorArnHasBeenSet = true; m_findingAggregatorArn = value; }
-    inline void SetFindingAggregatorArn(Aws::String&& value) { m_findingAggregatorArnHasBeenSet = true; m_findingAggregatorArn = std::move(value); }
-    inline void SetFindingAggregatorArn(const char* value) { m_findingAggregatorArnHasBeenSet = true; m_findingAggregatorArn.assign(value); }
-    inline UpdateFindingAggregatorRequest& WithFindingAggregatorArn(const Aws::String& value) { SetFindingAggregatorArn(value); return *this;}
-    inline UpdateFindingAggregatorRequest& WithFindingAggregatorArn(Aws::String&& value) { SetFindingAggregatorArn(std::move(value)); return *this;}
-    inline UpdateFindingAggregatorRequest& WithFindingAggregatorArn(const char* value) { SetFindingAggregatorArn(value); return *this;}
+    template<typename FindingAggregatorArnT = Aws::String>
+    void SetFindingAggregatorArn(FindingAggregatorArnT&& value) { m_findingAggregatorArnHasBeenSet = true; m_findingAggregatorArn = std::forward<FindingAggregatorArnT>(value); }
+    template<typename FindingAggregatorArnT = Aws::String>
+    UpdateFindingAggregatorRequest& WithFindingAggregatorArn(FindingAggregatorArnT&& value) { SetFindingAggregatorArn(std::forward<FindingAggregatorArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * Regions. </p> </li> <li> <p> <code>NO_REGIONS</code> - Aggregates no data
      * because no Regions are selected as linked Regions. </p> </li> </ul>
      */
-    inline const Aws::String& GetRegionLinkingMode() const{ return m_regionLinkingMode; }
+    inline const Aws::String& GetRegionLinkingMode() const { return m_regionLinkingMode; }
     inline bool RegionLinkingModeHasBeenSet() const { return m_regionLinkingModeHasBeenSet; }
-    inline void SetRegionLinkingMode(const Aws::String& value) { m_regionLinkingModeHasBeenSet = true; m_regionLinkingMode = value; }
-    inline void SetRegionLinkingMode(Aws::String&& value) { m_regionLinkingModeHasBeenSet = true; m_regionLinkingMode = std::move(value); }
-    inline void SetRegionLinkingMode(const char* value) { m_regionLinkingModeHasBeenSet = true; m_regionLinkingMode.assign(value); }
-    inline UpdateFindingAggregatorRequest& WithRegionLinkingMode(const Aws::String& value) { SetRegionLinkingMode(value); return *this;}
-    inline UpdateFindingAggregatorRequest& WithRegionLinkingMode(Aws::String&& value) { SetRegionLinkingMode(std::move(value)); return *this;}
-    inline UpdateFindingAggregatorRequest& WithRegionLinkingMode(const char* value) { SetRegionLinkingMode(value); return *this;}
+    template<typename RegionLinkingModeT = Aws::String>
+    void SetRegionLinkingMode(RegionLinkingModeT&& value) { m_regionLinkingModeHasBeenSet = true; m_regionLinkingMode = std::forward<RegionLinkingModeT>(value); }
+    template<typename RegionLinkingModeT = Aws::String>
+    UpdateFindingAggregatorRequest& WithRegionLinkingMode(RegionLinkingModeT&& value) { SetRegionLinkingMode(std::forward<RegionLinkingModeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,15 +86,14 @@ namespace Model
      * populate this field while <code>RegionLinkingMode</code> is
      * <code>NO_REGIONS</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
+    inline const Aws::Vector<Aws::String>& GetRegions() const { return m_regions; }
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
-    inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
-    inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
-    inline UpdateFindingAggregatorRequest& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
-    inline UpdateFindingAggregatorRequest& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
-    inline UpdateFindingAggregatorRequest& AddRegions(const Aws::String& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
-    inline UpdateFindingAggregatorRequest& AddRegions(Aws::String&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
-    inline UpdateFindingAggregatorRequest& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
+    template<typename RegionsT = Aws::Vector<Aws::String>>
+    void SetRegions(RegionsT&& value) { m_regionsHasBeenSet = true; m_regions = std::forward<RegionsT>(value); }
+    template<typename RegionsT = Aws::Vector<Aws::String>>
+    UpdateFindingAggregatorRequest& WithRegions(RegionsT&& value) { SetRegions(std::forward<RegionsT>(value)); return *this;}
+    template<typename RegionsT = Aws::String>
+    UpdateFindingAggregatorRequest& AddRegions(RegionsT&& value) { m_regionsHasBeenSet = true; m_regions.emplace_back(std::forward<RegionsT>(value)); return *this; }
     ///@}
   private:
 

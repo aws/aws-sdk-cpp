@@ -18,19 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsCodeBuildProjectEnvironment::AwsCodeBuildProjectEnvironment() : 
-    m_certificateHasBeenSet(false),
-    m_environmentVariablesHasBeenSet(false),
-    m_privilegedMode(false),
-    m_privilegedModeHasBeenSet(false),
-    m_imagePullCredentialsTypeHasBeenSet(false),
-    m_registryCredentialHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 AwsCodeBuildProjectEnvironment::AwsCodeBuildProjectEnvironment(JsonView jsonValue)
-  : AwsCodeBuildProjectEnvironment()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ AwsCodeBuildProjectEnvironment& AwsCodeBuildProjectEnvironment::operator =(JsonV
   if(jsonValue.ValueExists("Certificate"))
   {
     m_certificate = jsonValue.GetString("Certificate");
-
     m_certificateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnvironmentVariables"))
   {
     Aws::Utils::Array<JsonView> environmentVariablesJsonList = jsonValue.GetArray("EnvironmentVariables");
@@ -53,35 +39,26 @@ AwsCodeBuildProjectEnvironment& AwsCodeBuildProjectEnvironment::operator =(JsonV
     }
     m_environmentVariablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrivilegedMode"))
   {
     m_privilegedMode = jsonValue.GetBool("PrivilegedMode");
-
     m_privilegedModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImagePullCredentialsType"))
   {
     m_imagePullCredentialsType = jsonValue.GetString("ImagePullCredentialsType");
-
     m_imagePullCredentialsTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistryCredential"))
   {
     m_registryCredential = jsonValue.GetObject("RegistryCredential");
-
     m_registryCredentialHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

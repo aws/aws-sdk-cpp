@@ -18,17 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-MetadataCatalogDetail::MetadataCatalogDetail() : 
-    m_catalogType(CatalogType::NOT_SET),
-    m_catalogTypeHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_tableRegistrationOutputHasBeenSet(false),
-    m_partitionRegistrationOutputHasBeenSet(false)
-{
-}
-
 MetadataCatalogDetail::MetadataCatalogDetail(JsonView jsonValue)
-  : MetadataCatalogDetail()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ MetadataCatalogDetail& MetadataCatalogDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("catalogType"))
   {
     m_catalogType = CatalogTypeMapper::GetCatalogTypeForName(jsonValue.GetString("catalogType"));
-
     m_catalogTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tableName"))
   {
     m_tableName = jsonValue.GetString("tableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tableRegistrationOutput"))
   {
     m_tableRegistrationOutput = jsonValue.GetObject("tableRegistrationOutput");
-
     m_tableRegistrationOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("partitionRegistrationOutput"))
   {
     m_partitionRegistrationOutput = jsonValue.GetObject("partitionRegistrationOutput");
-
     m_partitionRegistrationOutputHasBeenSet = true;
   }
-
   return *this;
 }
 

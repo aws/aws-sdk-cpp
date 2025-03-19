@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails::AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails() : 
-    m_capacityReservationPreferenceHasBeenSet(false),
-    m_capacityReservationTargetHasBeenSet(false)
-{
-}
-
 AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails::AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails(JsonView jsonValue)
-  : AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsEc2LaunchTemplateDataCapacityReservationSpecificationDetails& AwsEc2LaunchTem
   if(jsonValue.ValueExists("CapacityReservationPreference"))
   {
     m_capacityReservationPreference = jsonValue.GetString("CapacityReservationPreference");
-
     m_capacityReservationPreferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CapacityReservationTarget"))
   {
     m_capacityReservationTarget = jsonValue.GetObject("CapacityReservationTarget");
-
     m_capacityReservationTargetHasBeenSet = true;
   }
-
   return *this;
 }
 

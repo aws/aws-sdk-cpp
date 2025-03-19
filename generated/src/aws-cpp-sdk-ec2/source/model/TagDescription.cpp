@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TagDescription::TagDescription() : 
-    m_keyHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 TagDescription::TagDescription(const XmlNode& xmlNode)
-  : TagDescription()
 {
   *this = xmlNode;
 }
@@ -56,7 +46,7 @@ TagDescription& TagDescription::operator =(const XmlNode& xmlNode)
     XmlNode resourceTypeNode = resultNode.FirstChild("resourceType");
     if(!resourceTypeNode.IsNull())
     {
-      m_resourceType = ResourceTypeMapper::GetResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()).c_str());
+      m_resourceType = ResourceTypeMapper::GetResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()));
       m_resourceTypeHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("value");

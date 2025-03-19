@@ -18,10 +18,6 @@ namespace Appflow
 namespace Model
 {
 
-EventBridgeMetadata::EventBridgeMetadata()
-{
-}
-
 EventBridgeMetadata::EventBridgeMetadata(JsonView jsonValue)
 {
   *this = jsonValue;

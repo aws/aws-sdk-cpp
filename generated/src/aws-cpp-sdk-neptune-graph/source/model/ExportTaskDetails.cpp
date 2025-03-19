@@ -18,21 +18,7 @@ namespace NeptuneGraph
 namespace Model
 {
 
-ExportTaskDetails::ExportTaskDetails() : 
-    m_startTimeHasBeenSet(false),
-    m_timeElapsedSeconds(0),
-    m_timeElapsedSecondsHasBeenSet(false),
-    m_progressPercentage(0),
-    m_progressPercentageHasBeenSet(false),
-    m_numVerticesWritten(0),
-    m_numVerticesWrittenHasBeenSet(false),
-    m_numEdgesWritten(0),
-    m_numEdgesWrittenHasBeenSet(false)
-{
-}
-
 ExportTaskDetails::ExportTaskDetails(JsonView jsonValue)
-  : ExportTaskDetails()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ ExportTaskDetails& ExportTaskDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeElapsedSeconds"))
   {
     m_timeElapsedSeconds = jsonValue.GetInt64("timeElapsedSeconds");
-
     m_timeElapsedSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("progressPercentage"))
   {
     m_progressPercentage = jsonValue.GetInteger("progressPercentage");
-
     m_progressPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numVerticesWritten"))
   {
     m_numVerticesWritten = jsonValue.GetInt64("numVerticesWritten");
-
     m_numVerticesWrittenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numEdgesWritten"))
   {
     m_numEdgesWritten = jsonValue.GetInt64("numEdgesWritten");
-
     m_numEdgesWrittenHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -25,7 +25,7 @@ namespace Model
   class DescribeNFSFileSharesRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API DescribeNFSFileSharesRequest();
+    AWS_STORAGEGATEWAY_API DescribeNFSFileSharesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,15 +43,14 @@ namespace Model
      * <p>An array containing the Amazon Resource Name (ARN) of each file share to be
      * described.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFileShareARNList() const{ return m_fileShareARNList; }
+    inline const Aws::Vector<Aws::String>& GetFileShareARNList() const { return m_fileShareARNList; }
     inline bool FileShareARNListHasBeenSet() const { return m_fileShareARNListHasBeenSet; }
-    inline void SetFileShareARNList(const Aws::Vector<Aws::String>& value) { m_fileShareARNListHasBeenSet = true; m_fileShareARNList = value; }
-    inline void SetFileShareARNList(Aws::Vector<Aws::String>&& value) { m_fileShareARNListHasBeenSet = true; m_fileShareARNList = std::move(value); }
-    inline DescribeNFSFileSharesRequest& WithFileShareARNList(const Aws::Vector<Aws::String>& value) { SetFileShareARNList(value); return *this;}
-    inline DescribeNFSFileSharesRequest& WithFileShareARNList(Aws::Vector<Aws::String>&& value) { SetFileShareARNList(std::move(value)); return *this;}
-    inline DescribeNFSFileSharesRequest& AddFileShareARNList(const Aws::String& value) { m_fileShareARNListHasBeenSet = true; m_fileShareARNList.push_back(value); return *this; }
-    inline DescribeNFSFileSharesRequest& AddFileShareARNList(Aws::String&& value) { m_fileShareARNListHasBeenSet = true; m_fileShareARNList.push_back(std::move(value)); return *this; }
-    inline DescribeNFSFileSharesRequest& AddFileShareARNList(const char* value) { m_fileShareARNListHasBeenSet = true; m_fileShareARNList.push_back(value); return *this; }
+    template<typename FileShareARNListT = Aws::Vector<Aws::String>>
+    void SetFileShareARNList(FileShareARNListT&& value) { m_fileShareARNListHasBeenSet = true; m_fileShareARNList = std::forward<FileShareARNListT>(value); }
+    template<typename FileShareARNListT = Aws::Vector<Aws::String>>
+    DescribeNFSFileSharesRequest& WithFileShareARNList(FileShareARNListT&& value) { SetFileShareARNList(std::forward<FileShareARNListT>(value)); return *this;}
+    template<typename FileShareARNListT = Aws::String>
+    DescribeNFSFileSharesRequest& AddFileShareARNList(FileShareARNListT&& value) { m_fileShareARNListHasBeenSet = true; m_fileShareARNList.emplace_back(std::forward<FileShareARNListT>(value)); return *this; }
     ///@}
   private:
 

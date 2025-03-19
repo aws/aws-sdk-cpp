@@ -31,7 +31,7 @@ namespace Model
   class InstanceTypeItem
   {
   public:
-    AWS_OUTPOSTS_API InstanceTypeItem();
+    AWS_OUTPOSTS_API InstanceTypeItem() = default;
     AWS_OUTPOSTS_API InstanceTypeItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_OUTPOSTS_API InstanceTypeItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,21 +39,19 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline InstanceTypeItem& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline InstanceTypeItem& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline InstanceTypeItem& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    InstanceTypeItem& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of default VCPUs in an instance type.</p>
      */
-    inline int GetVCPUs() const{ return m_vCPUs; }
+    inline int GetVCPUs() const { return m_vCPUs; }
     inline bool VCPUsHasBeenSet() const { return m_vCPUsHasBeenSet; }
     inline void SetVCPUs(int value) { m_vCPUsHasBeenSet = true; m_vCPUs = value; }
     inline InstanceTypeItem& WithVCPUs(int value) { SetVCPUs(value); return *this;}
@@ -63,7 +61,7 @@ namespace Model
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet = false;
 
-    int m_vCPUs;
+    int m_vCPUs{0};
     bool m_vCPUsHasBeenSet = false;
   };
 

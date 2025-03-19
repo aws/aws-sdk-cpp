@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateLicenseEndpointResult::CreateLicenseEndpointResult()
-{
-}
-
 CreateLicenseEndpointResult::CreateLicenseEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateLicenseEndpointResult& CreateLicenseEndpointResult::operator =(const Aws::
   if(jsonValue.ValueExists("licenseEndpointId"))
   {
     m_licenseEndpointId = jsonValue.GetString("licenseEndpointId");
-
+    m_licenseEndpointIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

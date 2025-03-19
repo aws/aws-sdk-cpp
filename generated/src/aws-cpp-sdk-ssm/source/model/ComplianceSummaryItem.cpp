@@ -18,15 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ComplianceSummaryItem::ComplianceSummaryItem() : 
-    m_complianceTypeHasBeenSet(false),
-    m_compliantSummaryHasBeenSet(false),
-    m_nonCompliantSummaryHasBeenSet(false)
-{
-}
-
 ComplianceSummaryItem::ComplianceSummaryItem(JsonView jsonValue)
-  : ComplianceSummaryItem()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ComplianceSummaryItem& ComplianceSummaryItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ComplianceType"))
   {
     m_complianceType = jsonValue.GetString("ComplianceType");
-
     m_complianceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompliantSummary"))
   {
     m_compliantSummary = jsonValue.GetObject("CompliantSummary");
-
     m_compliantSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NonCompliantSummary"))
   {
     m_nonCompliantSummary = jsonValue.GetObject("NonCompliantSummary");
-
     m_nonCompliantSummaryHasBeenSet = true;
   }
-
   return *this;
 }
 

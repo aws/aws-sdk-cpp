@@ -33,7 +33,7 @@ namespace Model
   class BatchGetTableOptimizerEntry
   {
   public:
-    AWS_GLUE_API BatchGetTableOptimizerEntry();
+    AWS_GLUE_API BatchGetTableOptimizerEntry() = default;
     AWS_GLUE_API BatchGetTableOptimizerEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API BatchGetTableOptimizerEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,54 +43,46 @@ namespace Model
     /**
      * <p>The Catalog ID of the table.</p>
      */
-    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+    inline const Aws::String& GetCatalogId() const { return m_catalogId; }
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-    inline BatchGetTableOptimizerEntry& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-    inline BatchGetTableOptimizerEntry& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-    inline BatchGetTableOptimizerEntry& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    template<typename CatalogIdT = Aws::String>
+    void SetCatalogId(CatalogIdT&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::forward<CatalogIdT>(value); }
+    template<typename CatalogIdT = Aws::String>
+    BatchGetTableOptimizerEntry& WithCatalogId(CatalogIdT&& value) { SetCatalogId(std::forward<CatalogIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the database in the catalog in which the table resides.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline BatchGetTableOptimizerEntry& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline BatchGetTableOptimizerEntry& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline BatchGetTableOptimizerEntry& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    BatchGetTableOptimizerEntry& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the table.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline BatchGetTableOptimizerEntry& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline BatchGetTableOptimizerEntry& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline BatchGetTableOptimizerEntry& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    BatchGetTableOptimizerEntry& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of table optimizer.</p>
      */
-    inline const TableOptimizerType& GetType() const{ return m_type; }
+    inline TableOptimizerType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const TableOptimizerType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(TableOptimizerType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline BatchGetTableOptimizerEntry& WithType(const TableOptimizerType& value) { SetType(value); return *this;}
-    inline BatchGetTableOptimizerEntry& WithType(TableOptimizerType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(TableOptimizerType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline BatchGetTableOptimizerEntry& WithType(TableOptimizerType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -103,7 +95,7 @@ namespace Model
     Aws::String m_tableName;
     bool m_tableNameHasBeenSet = false;
 
-    TableOptimizerType m_type;
+    TableOptimizerType m_type{TableOptimizerType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

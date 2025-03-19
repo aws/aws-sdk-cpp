@@ -33,7 +33,7 @@ namespace Model
   class ConsumableResourceProperties
   {
   public:
-    AWS_BATCH_API ConsumableResourceProperties();
+    AWS_BATCH_API ConsumableResourceProperties() = default;
     AWS_BATCH_API ConsumableResourceProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API ConsumableResourceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>The list of consumable resources required by a job.</p>
      */
-    inline const Aws::Vector<ConsumableResourceRequirement>& GetConsumableResourceList() const{ return m_consumableResourceList; }
+    inline const Aws::Vector<ConsumableResourceRequirement>& GetConsumableResourceList() const { return m_consumableResourceList; }
     inline bool ConsumableResourceListHasBeenSet() const { return m_consumableResourceListHasBeenSet; }
-    inline void SetConsumableResourceList(const Aws::Vector<ConsumableResourceRequirement>& value) { m_consumableResourceListHasBeenSet = true; m_consumableResourceList = value; }
-    inline void SetConsumableResourceList(Aws::Vector<ConsumableResourceRequirement>&& value) { m_consumableResourceListHasBeenSet = true; m_consumableResourceList = std::move(value); }
-    inline ConsumableResourceProperties& WithConsumableResourceList(const Aws::Vector<ConsumableResourceRequirement>& value) { SetConsumableResourceList(value); return *this;}
-    inline ConsumableResourceProperties& WithConsumableResourceList(Aws::Vector<ConsumableResourceRequirement>&& value) { SetConsumableResourceList(std::move(value)); return *this;}
-    inline ConsumableResourceProperties& AddConsumableResourceList(const ConsumableResourceRequirement& value) { m_consumableResourceListHasBeenSet = true; m_consumableResourceList.push_back(value); return *this; }
-    inline ConsumableResourceProperties& AddConsumableResourceList(ConsumableResourceRequirement&& value) { m_consumableResourceListHasBeenSet = true; m_consumableResourceList.push_back(std::move(value)); return *this; }
+    template<typename ConsumableResourceListT = Aws::Vector<ConsumableResourceRequirement>>
+    void SetConsumableResourceList(ConsumableResourceListT&& value) { m_consumableResourceListHasBeenSet = true; m_consumableResourceList = std::forward<ConsumableResourceListT>(value); }
+    template<typename ConsumableResourceListT = Aws::Vector<ConsumableResourceRequirement>>
+    ConsumableResourceProperties& WithConsumableResourceList(ConsumableResourceListT&& value) { SetConsumableResourceList(std::forward<ConsumableResourceListT>(value)); return *this;}
+    template<typename ConsumableResourceListT = ConsumableResourceRequirement>
+    ConsumableResourceProperties& AddConsumableResourceList(ConsumableResourceListT&& value) { m_consumableResourceListHasBeenSet = true; m_consumableResourceList.emplace_back(std::forward<ConsumableResourceListT>(value)); return *this; }
     ///@}
   private:
 

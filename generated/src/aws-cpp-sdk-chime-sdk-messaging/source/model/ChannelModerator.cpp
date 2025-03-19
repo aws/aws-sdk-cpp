@@ -18,16 +18,7 @@ namespace ChimeSDKMessaging
 namespace Model
 {
 
-ChannelModerator::ChannelModerator() : 
-    m_moderatorHasBeenSet(false),
-    m_channelArnHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_createdByHasBeenSet(false)
-{
-}
-
 ChannelModerator::ChannelModerator(JsonView jsonValue)
-  : ChannelModerator()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ChannelModerator& ChannelModerator::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Moderator"))
   {
     m_moderator = jsonValue.GetObject("Moderator");
-
     m_moderatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChannelArn"))
   {
     m_channelArn = jsonValue.GetString("ChannelArn");
-
     m_channelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetObject("CreatedBy");
-
     m_createdByHasBeenSet = true;
   }
-
   return *this;
 }
 

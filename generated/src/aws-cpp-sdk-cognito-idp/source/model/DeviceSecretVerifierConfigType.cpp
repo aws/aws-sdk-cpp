@@ -18,14 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-DeviceSecretVerifierConfigType::DeviceSecretVerifierConfigType() : 
-    m_passwordVerifierHasBeenSet(false),
-    m_saltHasBeenSet(false)
-{
-}
-
 DeviceSecretVerifierConfigType::DeviceSecretVerifierConfigType(JsonView jsonValue)
-  : DeviceSecretVerifierConfigType()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DeviceSecretVerifierConfigType& DeviceSecretVerifierConfigType::operator =(JsonV
   if(jsonValue.ValueExists("PasswordVerifier"))
   {
     m_passwordVerifier = jsonValue.GetString("PasswordVerifier");
-
     m_passwordVerifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Salt"))
   {
     m_salt = jsonValue.GetString("Salt");
-
     m_saltHasBeenSet = true;
   }
-
   return *this;
 }
 

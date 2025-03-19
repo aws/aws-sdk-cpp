@@ -32,7 +32,7 @@ namespace Model
   class UserUnion
   {
   public:
-    AWS_CONNECTCASES_API UserUnion();
+    AWS_CONNECTCASES_API UserUnion() = default;
     AWS_CONNECTCASES_API UserUnion(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API UserUnion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>Represents the Amazon Connect ARN of the user.</p>
      */
-    inline const Aws::String& GetUserArn() const{ return m_userArn; }
+    inline const Aws::String& GetUserArn() const { return m_userArn; }
     inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
-    inline void SetUserArn(const Aws::String& value) { m_userArnHasBeenSet = true; m_userArn = value; }
-    inline void SetUserArn(Aws::String&& value) { m_userArnHasBeenSet = true; m_userArn = std::move(value); }
-    inline void SetUserArn(const char* value) { m_userArnHasBeenSet = true; m_userArn.assign(value); }
-    inline UserUnion& WithUserArn(const Aws::String& value) { SetUserArn(value); return *this;}
-    inline UserUnion& WithUserArn(Aws::String&& value) { SetUserArn(std::move(value)); return *this;}
-    inline UserUnion& WithUserArn(const char* value) { SetUserArn(value); return *this;}
+    template<typename UserArnT = Aws::String>
+    void SetUserArn(UserArnT&& value) { m_userArnHasBeenSet = true; m_userArn = std::forward<UserArnT>(value); }
+    template<typename UserArnT = Aws::String>
+    UserUnion& WithUserArn(UserArnT&& value) { SetUserArn(std::forward<UserArnT>(value)); return *this;}
     ///@}
   private:
 

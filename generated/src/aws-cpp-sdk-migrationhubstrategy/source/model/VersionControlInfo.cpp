@@ -18,15 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-VersionControlInfo::VersionControlInfo() : 
-    m_versionControlConfigurationTimeStampHasBeenSet(false),
-    m_versionControlType(VersionControlType::NOT_SET),
-    m_versionControlTypeHasBeenSet(false)
-{
-}
-
 VersionControlInfo::VersionControlInfo(JsonView jsonValue)
-  : VersionControlInfo()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ VersionControlInfo& VersionControlInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("versionControlConfigurationTimeStamp"))
   {
     m_versionControlConfigurationTimeStamp = jsonValue.GetString("versionControlConfigurationTimeStamp");
-
     m_versionControlConfigurationTimeStampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionControlType"))
   {
     m_versionControlType = VersionControlTypeMapper::GetVersionControlTypeForName(jsonValue.GetString("versionControlType"));
-
     m_versionControlTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

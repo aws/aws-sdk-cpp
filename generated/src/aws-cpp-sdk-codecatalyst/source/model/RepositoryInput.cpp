@@ -18,14 +18,7 @@ namespace CodeCatalyst
 namespace Model
 {
 
-RepositoryInput::RepositoryInput() : 
-    m_repositoryNameHasBeenSet(false),
-    m_branchNameHasBeenSet(false)
-{
-}
-
 RepositoryInput::RepositoryInput(JsonView jsonValue)
-  : RepositoryInput()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RepositoryInput& RepositoryInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("branchName"))
   {
     m_branchName = jsonValue.GetString("branchName");
-
     m_branchNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace MachineLearning
 namespace Model
 {
 
-PerformanceMetrics::PerformanceMetrics() : 
-    m_propertiesHasBeenSet(false)
-{
-}
-
 PerformanceMetrics::PerformanceMetrics(JsonView jsonValue)
-  : PerformanceMetrics()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ PerformanceMetrics& PerformanceMetrics::operator =(JsonView jsonValue)
     }
     m_propertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

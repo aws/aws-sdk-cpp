@@ -18,17 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-LakeFormationDataPermissionAsset::LakeFormationDataPermissionAsset() : 
-    m_lakeFormationDataPermissionDetailsHasBeenSet(false),
-    m_lakeFormationDataPermissionType(LakeFormationDataPermissionType::NOT_SET),
-    m_lakeFormationDataPermissionTypeHasBeenSet(false),
-    m_permissionsHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 LakeFormationDataPermissionAsset::LakeFormationDataPermissionAsset(JsonView jsonValue)
-  : LakeFormationDataPermissionAsset()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ LakeFormationDataPermissionAsset& LakeFormationDataPermissionAsset::operator =(J
   if(jsonValue.ValueExists("LakeFormationDataPermissionDetails"))
   {
     m_lakeFormationDataPermissionDetails = jsonValue.GetObject("LakeFormationDataPermissionDetails");
-
     m_lakeFormationDataPermissionDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LakeFormationDataPermissionType"))
   {
     m_lakeFormationDataPermissionType = LakeFormationDataPermissionTypeMapper::GetLakeFormationDataPermissionTypeForName(jsonValue.GetString("LakeFormationDataPermissionType"));
-
     m_lakeFormationDataPermissionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Permissions"))
   {
     Aws::Utils::Array<JsonView> permissionsJsonList = jsonValue.GetArray("Permissions");
@@ -58,14 +44,11 @@ LakeFormationDataPermissionAsset& LakeFormationDataPermissionAsset::operator =(J
     }
     m_permissionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

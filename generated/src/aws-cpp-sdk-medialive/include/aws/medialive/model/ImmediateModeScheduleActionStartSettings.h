@@ -30,7 +30,7 @@ namespace Model
   class ImmediateModeScheduleActionStartSettings
   {
   public:
-    AWS_MEDIALIVE_API ImmediateModeScheduleActionStartSettings();
+    AWS_MEDIALIVE_API ImmediateModeScheduleActionStartSettings() = default;
     AWS_MEDIALIVE_API ImmediateModeScheduleActionStartSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API ImmediateModeScheduleActionStartSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;

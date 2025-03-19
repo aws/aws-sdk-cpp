@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-KnowledgeBaseDocument::KnowledgeBaseDocument() : 
-    m_contentHasBeenSet(false),
-    m_metadataHasBeenSet(false)
-{
-}
-
 KnowledgeBaseDocument::KnowledgeBaseDocument(JsonView jsonValue)
-  : KnowledgeBaseDocument()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ KnowledgeBaseDocument& KnowledgeBaseDocument::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("content"))
   {
     m_content = jsonValue.GetObject("content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata"))
   {
     m_metadata = jsonValue.GetObject("metadata");
-
     m_metadataHasBeenSet = true;
   }
-
   return *this;
 }
 

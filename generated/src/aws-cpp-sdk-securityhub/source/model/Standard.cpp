@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Standard::Standard() : 
-    m_standardsArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_enabledByDefault(false),
-    m_enabledByDefaultHasBeenSet(false),
-    m_standardsManagedByHasBeenSet(false)
-{
-}
-
 Standard::Standard(JsonView jsonValue)
-  : Standard()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ Standard& Standard::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StandardsArn"))
   {
     m_standardsArn = jsonValue.GetString("StandardsArn");
-
     m_standardsArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnabledByDefault"))
   {
     m_enabledByDefault = jsonValue.GetBool("EnabledByDefault");
-
     m_enabledByDefaultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StandardsManagedBy"))
   {
     m_standardsManagedBy = jsonValue.GetObject("StandardsManagedBy");
-
     m_standardsManagedByHasBeenSet = true;
   }
-
   return *this;
 }
 

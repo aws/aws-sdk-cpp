@@ -18,13 +18,7 @@ namespace S3Outposts
 namespace Model
 {
 
-NetworkInterface::NetworkInterface() : 
-    m_networkInterfaceIdHasBeenSet(false)
-{
-}
-
 NetworkInterface::NetworkInterface(JsonView jsonValue)
-  : NetworkInterface()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ NetworkInterface& NetworkInterface::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NetworkInterfaceId"))
   {
     m_networkInterfaceId = jsonValue.GetString("NetworkInterfaceId");
-
     m_networkInterfaceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

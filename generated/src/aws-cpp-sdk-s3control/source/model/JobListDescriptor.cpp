@@ -20,23 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-JobListDescriptor::JobListDescriptor() : 
-    m_jobIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_operation(OperationName::NOT_SET),
-    m_operationHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_status(JobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_terminationDateHasBeenSet(false),
-    m_progressSummaryHasBeenSet(false)
-{
-}
-
 JobListDescriptor::JobListDescriptor(const XmlNode& xmlNode)
-  : JobListDescriptor()
 {
   *this = xmlNode;
 }
@@ -62,7 +46,7 @@ JobListDescriptor& JobListDescriptor::operator =(const XmlNode& xmlNode)
     XmlNode operationNode = resultNode.FirstChild("Operation");
     if(!operationNode.IsNull())
     {
-      m_operation = OperationNameMapper::GetOperationNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(operationNode.GetText()).c_str()).c_str());
+      m_operation = OperationNameMapper::GetOperationNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(operationNode.GetText()).c_str()));
       m_operationHasBeenSet = true;
     }
     XmlNode priorityNode = resultNode.FirstChild("Priority");
@@ -74,7 +58,7 @@ JobListDescriptor& JobListDescriptor::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = JobStatusMapper::GetJobStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = JobStatusMapper::GetJobStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode creationTimeNode = resultNode.FirstChild("CreationTime");

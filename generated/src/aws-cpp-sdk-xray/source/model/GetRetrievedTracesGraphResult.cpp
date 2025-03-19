@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRetrievedTracesGraphResult::GetRetrievedTracesGraphResult() : 
-    m_retrievalStatus(RetrievalStatus::NOT_SET)
-{
-}
-
 GetRetrievedTracesGraphResult::GetRetrievedTracesGraphResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetRetrievedTracesGraphResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ GetRetrievedTracesGraphResult& GetRetrievedTracesGraphResult::operator =(const A
   if(jsonValue.ValueExists("RetrievalStatus"))
   {
     m_retrievalStatus = RetrievalStatusMapper::GetRetrievalStatusForName(jsonValue.GetString("RetrievalStatus"));
-
+    m_retrievalStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Services"))
   {
     Aws::Utils::Array<JsonView> servicesJsonList = jsonValue.GetArray("Services");
@@ -44,20 +37,20 @@ GetRetrievedTracesGraphResult& GetRetrievedTracesGraphResult::operator =(const A
     {
       m_services.push_back(servicesJsonList[servicesIndex].AsObject());
     }
+    m_servicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

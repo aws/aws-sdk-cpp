@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteContextResult::DeleteContextResult()
-{
-}
-
 DeleteContextResult::DeleteContextResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeleteContextResult& DeleteContextResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("ContextArn"))
   {
     m_contextArn = jsonValue.GetString("ContextArn");
-
+    m_contextArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

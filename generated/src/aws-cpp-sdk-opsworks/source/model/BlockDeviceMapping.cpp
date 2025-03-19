@@ -18,16 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-BlockDeviceMapping::BlockDeviceMapping() : 
-    m_deviceNameHasBeenSet(false),
-    m_noDeviceHasBeenSet(false),
-    m_virtualNameHasBeenSet(false),
-    m_ebsHasBeenSet(false)
-{
-}
-
 BlockDeviceMapping::BlockDeviceMapping(JsonView jsonValue)
-  : BlockDeviceMapping()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ BlockDeviceMapping& BlockDeviceMapping::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DeviceName"))
   {
     m_deviceName = jsonValue.GetString("DeviceName");
-
     m_deviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NoDevice"))
   {
     m_noDevice = jsonValue.GetString("NoDevice");
-
     m_noDeviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VirtualName"))
   {
     m_virtualName = jsonValue.GetString("VirtualName");
-
     m_virtualNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ebs"))
   {
     m_ebs = jsonValue.GetObject("Ebs");
-
     m_ebsHasBeenSet = true;
   }
-
   return *this;
 }
 

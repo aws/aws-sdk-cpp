@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLocalGatewayRouteTableVpcAssociationsResponse::DescribeLocalGatewayRouteTableVpcAssociationsResponse()
-{
-}
-
 DescribeLocalGatewayRouteTableVpcAssociationsResponse::DescribeLocalGatewayRouteTableVpcAssociationsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeLocalGatewayRouteTableVpcAssociationsResponse& DescribeLocalGatewayRoute
     if(!localGatewayRouteTableVpcAssociationsNode.IsNull())
     {
       XmlNode localGatewayRouteTableVpcAssociationsMember = localGatewayRouteTableVpcAssociationsNode.FirstChild("item");
+      m_localGatewayRouteTableVpcAssociationsHasBeenSet = !localGatewayRouteTableVpcAssociationsMember.IsNull();
       while(!localGatewayRouteTableVpcAssociationsMember.IsNull())
       {
         m_localGatewayRouteTableVpcAssociations.push_back(localGatewayRouteTableVpcAssociationsMember);
         localGatewayRouteTableVpcAssociationsMember = localGatewayRouteTableVpcAssociationsMember.NextNode("item");
       }
 
+      m_localGatewayRouteTableVpcAssociationsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeLocalGatewayRouteTableVpcAssociationsResponse& DescribeLocalGatewayRoute
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeLocalGatewayRouteTableVpcAssociationsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

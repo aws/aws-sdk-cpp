@@ -38,7 +38,7 @@ namespace Model
   class SignalFetchInformation
   {
   public:
-    AWS_IOTFLEETWISE_API SignalFetchInformation();
+    AWS_IOTFLEETWISE_API SignalFetchInformation() = default;
     AWS_IOTFLEETWISE_API SignalFetchInformation(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API SignalFetchInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,33 +48,31 @@ namespace Model
     /**
      * <p>The fully qualified name of the signal to be fetched.</p>
      */
-    inline const Aws::String& GetFullyQualifiedName() const{ return m_fullyQualifiedName; }
+    inline const Aws::String& GetFullyQualifiedName() const { return m_fullyQualifiedName; }
     inline bool FullyQualifiedNameHasBeenSet() const { return m_fullyQualifiedNameHasBeenSet; }
-    inline void SetFullyQualifiedName(const Aws::String& value) { m_fullyQualifiedNameHasBeenSet = true; m_fullyQualifiedName = value; }
-    inline void SetFullyQualifiedName(Aws::String&& value) { m_fullyQualifiedNameHasBeenSet = true; m_fullyQualifiedName = std::move(value); }
-    inline void SetFullyQualifiedName(const char* value) { m_fullyQualifiedNameHasBeenSet = true; m_fullyQualifiedName.assign(value); }
-    inline SignalFetchInformation& WithFullyQualifiedName(const Aws::String& value) { SetFullyQualifiedName(value); return *this;}
-    inline SignalFetchInformation& WithFullyQualifiedName(Aws::String&& value) { SetFullyQualifiedName(std::move(value)); return *this;}
-    inline SignalFetchInformation& WithFullyQualifiedName(const char* value) { SetFullyQualifiedName(value); return *this;}
+    template<typename FullyQualifiedNameT = Aws::String>
+    void SetFullyQualifiedName(FullyQualifiedNameT&& value) { m_fullyQualifiedNameHasBeenSet = true; m_fullyQualifiedName = std::forward<FullyQualifiedNameT>(value); }
+    template<typename FullyQualifiedNameT = Aws::String>
+    SignalFetchInformation& WithFullyQualifiedName(FullyQualifiedNameT&& value) { SetFullyQualifiedName(std::forward<FullyQualifiedNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration of the signal fetch operation.</p>
      */
-    inline const SignalFetchConfig& GetSignalFetchConfig() const{ return m_signalFetchConfig; }
+    inline const SignalFetchConfig& GetSignalFetchConfig() const { return m_signalFetchConfig; }
     inline bool SignalFetchConfigHasBeenSet() const { return m_signalFetchConfigHasBeenSet; }
-    inline void SetSignalFetchConfig(const SignalFetchConfig& value) { m_signalFetchConfigHasBeenSet = true; m_signalFetchConfig = value; }
-    inline void SetSignalFetchConfig(SignalFetchConfig&& value) { m_signalFetchConfigHasBeenSet = true; m_signalFetchConfig = std::move(value); }
-    inline SignalFetchInformation& WithSignalFetchConfig(const SignalFetchConfig& value) { SetSignalFetchConfig(value); return *this;}
-    inline SignalFetchInformation& WithSignalFetchConfig(SignalFetchConfig&& value) { SetSignalFetchConfig(std::move(value)); return *this;}
+    template<typename SignalFetchConfigT = SignalFetchConfig>
+    void SetSignalFetchConfig(SignalFetchConfigT&& value) { m_signalFetchConfigHasBeenSet = true; m_signalFetchConfig = std::forward<SignalFetchConfigT>(value); }
+    template<typename SignalFetchConfigT = SignalFetchConfig>
+    SignalFetchInformation& WithSignalFetchConfig(SignalFetchConfigT&& value) { SetSignalFetchConfig(std::forward<SignalFetchConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the condition language used.</p>
      */
-    inline int GetConditionLanguageVersion() const{ return m_conditionLanguageVersion; }
+    inline int GetConditionLanguageVersion() const { return m_conditionLanguageVersion; }
     inline bool ConditionLanguageVersionHasBeenSet() const { return m_conditionLanguageVersionHasBeenSet; }
     inline void SetConditionLanguageVersion(int value) { m_conditionLanguageVersionHasBeenSet = true; m_conditionLanguageVersion = value; }
     inline SignalFetchInformation& WithConditionLanguageVersion(int value) { SetConditionLanguageVersion(value); return *this;}
@@ -84,15 +82,14 @@ namespace Model
     /**
      * <p>The actions to be performed by the signal fetch.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<Aws::String>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<Aws::String>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<Aws::String>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline SignalFetchInformation& WithActions(const Aws::Vector<Aws::String>& value) { SetActions(value); return *this;}
-    inline SignalFetchInformation& WithActions(Aws::Vector<Aws::String>&& value) { SetActions(std::move(value)); return *this;}
-    inline SignalFetchInformation& AddActions(const Aws::String& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline SignalFetchInformation& AddActions(Aws::String&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
-    inline SignalFetchInformation& AddActions(const char* value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
+    template<typename ActionsT = Aws::Vector<Aws::String>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<Aws::String>>
+    SignalFetchInformation& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = Aws::String>
+    SignalFetchInformation& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
   private:
 
@@ -102,7 +99,7 @@ namespace Model
     SignalFetchConfig m_signalFetchConfig;
     bool m_signalFetchConfigHasBeenSet = false;
 
-    int m_conditionLanguageVersion;
+    int m_conditionLanguageVersion{0};
     bool m_conditionLanguageVersionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_actions;

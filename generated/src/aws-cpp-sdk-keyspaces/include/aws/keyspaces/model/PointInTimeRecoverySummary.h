@@ -33,7 +33,7 @@ namespace Model
   class PointInTimeRecoverySummary
   {
   public:
-    AWS_KEYSPACES_API PointInTimeRecoverySummary();
+    AWS_KEYSPACES_API PointInTimeRecoverySummary() = default;
     AWS_KEYSPACES_API PointInTimeRecoverySummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API PointInTimeRecoverySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
      * <p>Shows if point-in-time recovery is enabled or disabled for the specified
      * table.</p>
      */
-    inline const PointInTimeRecoveryStatus& GetStatus() const{ return m_status; }
+    inline PointInTimeRecoveryStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const PointInTimeRecoveryStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(PointInTimeRecoveryStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline PointInTimeRecoverySummary& WithStatus(const PointInTimeRecoveryStatus& value) { SetStatus(value); return *this;}
-    inline PointInTimeRecoverySummary& WithStatus(PointInTimeRecoveryStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(PointInTimeRecoveryStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline PointInTimeRecoverySummary& WithStatus(PointInTimeRecoveryStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -57,19 +55,19 @@ namespace Model
      * <p>Specifies the earliest possible restore point of the table in ISO 8601
      * format.</p>
      */
-    inline const Aws::Utils::DateTime& GetEarliestRestorableTimestamp() const{ return m_earliestRestorableTimestamp; }
+    inline const Aws::Utils::DateTime& GetEarliestRestorableTimestamp() const { return m_earliestRestorableTimestamp; }
     inline bool EarliestRestorableTimestampHasBeenSet() const { return m_earliestRestorableTimestampHasBeenSet; }
-    inline void SetEarliestRestorableTimestamp(const Aws::Utils::DateTime& value) { m_earliestRestorableTimestampHasBeenSet = true; m_earliestRestorableTimestamp = value; }
-    inline void SetEarliestRestorableTimestamp(Aws::Utils::DateTime&& value) { m_earliestRestorableTimestampHasBeenSet = true; m_earliestRestorableTimestamp = std::move(value); }
-    inline PointInTimeRecoverySummary& WithEarliestRestorableTimestamp(const Aws::Utils::DateTime& value) { SetEarliestRestorableTimestamp(value); return *this;}
-    inline PointInTimeRecoverySummary& WithEarliestRestorableTimestamp(Aws::Utils::DateTime&& value) { SetEarliestRestorableTimestamp(std::move(value)); return *this;}
+    template<typename EarliestRestorableTimestampT = Aws::Utils::DateTime>
+    void SetEarliestRestorableTimestamp(EarliestRestorableTimestampT&& value) { m_earliestRestorableTimestampHasBeenSet = true; m_earliestRestorableTimestamp = std::forward<EarliestRestorableTimestampT>(value); }
+    template<typename EarliestRestorableTimestampT = Aws::Utils::DateTime>
+    PointInTimeRecoverySummary& WithEarliestRestorableTimestamp(EarliestRestorableTimestampT&& value) { SetEarliestRestorableTimestamp(std::forward<EarliestRestorableTimestampT>(value)); return *this;}
     ///@}
   private:
 
-    PointInTimeRecoveryStatus m_status;
+    PointInTimeRecoveryStatus m_status{PointInTimeRecoveryStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_earliestRestorableTimestamp;
+    Aws::Utils::DateTime m_earliestRestorableTimestamp{};
     bool m_earliestRestorableTimestampHasBeenSet = false;
   };
 

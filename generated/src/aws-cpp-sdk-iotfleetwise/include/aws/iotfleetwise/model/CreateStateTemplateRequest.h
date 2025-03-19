@@ -23,7 +23,7 @@ namespace Model
   class CreateStateTemplateRequest : public IoTFleetWiseRequest
   {
   public:
-    AWS_IOTFLEETWISE_API CreateStateTemplateRequest();
+    AWS_IOTFLEETWISE_API CreateStateTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,42 +40,36 @@ namespace Model
     /**
      * <p>The name of the state template.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateStateTemplateRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateStateTemplateRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateStateTemplateRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateStateTemplateRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A brief description of the state template.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateStateTemplateRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateStateTemplateRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateStateTemplateRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateStateTemplateRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the signal catalog associated with the state template.</p>
      */
-    inline const Aws::String& GetSignalCatalogArn() const{ return m_signalCatalogArn; }
+    inline const Aws::String& GetSignalCatalogArn() const { return m_signalCatalogArn; }
     inline bool SignalCatalogArnHasBeenSet() const { return m_signalCatalogArnHasBeenSet; }
-    inline void SetSignalCatalogArn(const Aws::String& value) { m_signalCatalogArnHasBeenSet = true; m_signalCatalogArn = value; }
-    inline void SetSignalCatalogArn(Aws::String&& value) { m_signalCatalogArnHasBeenSet = true; m_signalCatalogArn = std::move(value); }
-    inline void SetSignalCatalogArn(const char* value) { m_signalCatalogArnHasBeenSet = true; m_signalCatalogArn.assign(value); }
-    inline CreateStateTemplateRequest& WithSignalCatalogArn(const Aws::String& value) { SetSignalCatalogArn(value); return *this;}
-    inline CreateStateTemplateRequest& WithSignalCatalogArn(Aws::String&& value) { SetSignalCatalogArn(std::move(value)); return *this;}
-    inline CreateStateTemplateRequest& WithSignalCatalogArn(const char* value) { SetSignalCatalogArn(value); return *this;}
+    template<typename SignalCatalogArnT = Aws::String>
+    void SetSignalCatalogArn(SignalCatalogArnT&& value) { m_signalCatalogArnHasBeenSet = true; m_signalCatalogArn = std::forward<SignalCatalogArnT>(value); }
+    template<typename SignalCatalogArnT = Aws::String>
+    CreateStateTemplateRequest& WithSignalCatalogArn(SignalCatalogArnT&& value) { SetSignalCatalogArn(std::forward<SignalCatalogArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,15 +77,14 @@ namespace Model
      * <p>A list of signals from which data is collected. The state template properties
      * contain the fully qualified names of the signals.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStateTemplateProperties() const{ return m_stateTemplateProperties; }
+    inline const Aws::Vector<Aws::String>& GetStateTemplateProperties() const { return m_stateTemplateProperties; }
     inline bool StateTemplatePropertiesHasBeenSet() const { return m_stateTemplatePropertiesHasBeenSet; }
-    inline void SetStateTemplateProperties(const Aws::Vector<Aws::String>& value) { m_stateTemplatePropertiesHasBeenSet = true; m_stateTemplateProperties = value; }
-    inline void SetStateTemplateProperties(Aws::Vector<Aws::String>&& value) { m_stateTemplatePropertiesHasBeenSet = true; m_stateTemplateProperties = std::move(value); }
-    inline CreateStateTemplateRequest& WithStateTemplateProperties(const Aws::Vector<Aws::String>& value) { SetStateTemplateProperties(value); return *this;}
-    inline CreateStateTemplateRequest& WithStateTemplateProperties(Aws::Vector<Aws::String>&& value) { SetStateTemplateProperties(std::move(value)); return *this;}
-    inline CreateStateTemplateRequest& AddStateTemplateProperties(const Aws::String& value) { m_stateTemplatePropertiesHasBeenSet = true; m_stateTemplateProperties.push_back(value); return *this; }
-    inline CreateStateTemplateRequest& AddStateTemplateProperties(Aws::String&& value) { m_stateTemplatePropertiesHasBeenSet = true; m_stateTemplateProperties.push_back(std::move(value)); return *this; }
-    inline CreateStateTemplateRequest& AddStateTemplateProperties(const char* value) { m_stateTemplatePropertiesHasBeenSet = true; m_stateTemplateProperties.push_back(value); return *this; }
+    template<typename StateTemplatePropertiesT = Aws::Vector<Aws::String>>
+    void SetStateTemplateProperties(StateTemplatePropertiesT&& value) { m_stateTemplatePropertiesHasBeenSet = true; m_stateTemplateProperties = std::forward<StateTemplatePropertiesT>(value); }
+    template<typename StateTemplatePropertiesT = Aws::Vector<Aws::String>>
+    CreateStateTemplateRequest& WithStateTemplateProperties(StateTemplatePropertiesT&& value) { SetStateTemplateProperties(std::forward<StateTemplatePropertiesT>(value)); return *this;}
+    template<typename StateTemplatePropertiesT = Aws::String>
+    CreateStateTemplateRequest& AddStateTemplateProperties(StateTemplatePropertiesT&& value) { m_stateTemplatePropertiesHasBeenSet = true; m_stateTemplateProperties.emplace_back(std::forward<StateTemplatePropertiesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -105,15 +98,14 @@ namespace Model
      * FleetWise will enrich the protobuf encoded payload with those attributes in the
      * <code>extraDimensions</code> field.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDataExtraDimensions() const{ return m_dataExtraDimensions; }
+    inline const Aws::Vector<Aws::String>& GetDataExtraDimensions() const { return m_dataExtraDimensions; }
     inline bool DataExtraDimensionsHasBeenSet() const { return m_dataExtraDimensionsHasBeenSet; }
-    inline void SetDataExtraDimensions(const Aws::Vector<Aws::String>& value) { m_dataExtraDimensionsHasBeenSet = true; m_dataExtraDimensions = value; }
-    inline void SetDataExtraDimensions(Aws::Vector<Aws::String>&& value) { m_dataExtraDimensionsHasBeenSet = true; m_dataExtraDimensions = std::move(value); }
-    inline CreateStateTemplateRequest& WithDataExtraDimensions(const Aws::Vector<Aws::String>& value) { SetDataExtraDimensions(value); return *this;}
-    inline CreateStateTemplateRequest& WithDataExtraDimensions(Aws::Vector<Aws::String>&& value) { SetDataExtraDimensions(std::move(value)); return *this;}
-    inline CreateStateTemplateRequest& AddDataExtraDimensions(const Aws::String& value) { m_dataExtraDimensionsHasBeenSet = true; m_dataExtraDimensions.push_back(value); return *this; }
-    inline CreateStateTemplateRequest& AddDataExtraDimensions(Aws::String&& value) { m_dataExtraDimensionsHasBeenSet = true; m_dataExtraDimensions.push_back(std::move(value)); return *this; }
-    inline CreateStateTemplateRequest& AddDataExtraDimensions(const char* value) { m_dataExtraDimensionsHasBeenSet = true; m_dataExtraDimensions.push_back(value); return *this; }
+    template<typename DataExtraDimensionsT = Aws::Vector<Aws::String>>
+    void SetDataExtraDimensions(DataExtraDimensionsT&& value) { m_dataExtraDimensionsHasBeenSet = true; m_dataExtraDimensions = std::forward<DataExtraDimensionsT>(value); }
+    template<typename DataExtraDimensionsT = Aws::Vector<Aws::String>>
+    CreateStateTemplateRequest& WithDataExtraDimensions(DataExtraDimensionsT&& value) { SetDataExtraDimensions(std::forward<DataExtraDimensionsT>(value)); return *this;}
+    template<typename DataExtraDimensionsT = Aws::String>
+    CreateStateTemplateRequest& AddDataExtraDimensions(DataExtraDimensionsT&& value) { m_dataExtraDimensionsHasBeenSet = true; m_dataExtraDimensions.emplace_back(std::forward<DataExtraDimensionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -127,29 +119,28 @@ namespace Model
      * FleetWise will include these attributes as User Properties with the MQTT
      * message.</p> <p>Default: An empty array</p>
      */
-    inline const Aws::Vector<Aws::String>& GetMetadataExtraDimensions() const{ return m_metadataExtraDimensions; }
+    inline const Aws::Vector<Aws::String>& GetMetadataExtraDimensions() const { return m_metadataExtraDimensions; }
     inline bool MetadataExtraDimensionsHasBeenSet() const { return m_metadataExtraDimensionsHasBeenSet; }
-    inline void SetMetadataExtraDimensions(const Aws::Vector<Aws::String>& value) { m_metadataExtraDimensionsHasBeenSet = true; m_metadataExtraDimensions = value; }
-    inline void SetMetadataExtraDimensions(Aws::Vector<Aws::String>&& value) { m_metadataExtraDimensionsHasBeenSet = true; m_metadataExtraDimensions = std::move(value); }
-    inline CreateStateTemplateRequest& WithMetadataExtraDimensions(const Aws::Vector<Aws::String>& value) { SetMetadataExtraDimensions(value); return *this;}
-    inline CreateStateTemplateRequest& WithMetadataExtraDimensions(Aws::Vector<Aws::String>&& value) { SetMetadataExtraDimensions(std::move(value)); return *this;}
-    inline CreateStateTemplateRequest& AddMetadataExtraDimensions(const Aws::String& value) { m_metadataExtraDimensionsHasBeenSet = true; m_metadataExtraDimensions.push_back(value); return *this; }
-    inline CreateStateTemplateRequest& AddMetadataExtraDimensions(Aws::String&& value) { m_metadataExtraDimensionsHasBeenSet = true; m_metadataExtraDimensions.push_back(std::move(value)); return *this; }
-    inline CreateStateTemplateRequest& AddMetadataExtraDimensions(const char* value) { m_metadataExtraDimensionsHasBeenSet = true; m_metadataExtraDimensions.push_back(value); return *this; }
+    template<typename MetadataExtraDimensionsT = Aws::Vector<Aws::String>>
+    void SetMetadataExtraDimensions(MetadataExtraDimensionsT&& value) { m_metadataExtraDimensionsHasBeenSet = true; m_metadataExtraDimensions = std::forward<MetadataExtraDimensionsT>(value); }
+    template<typename MetadataExtraDimensionsT = Aws::Vector<Aws::String>>
+    CreateStateTemplateRequest& WithMetadataExtraDimensions(MetadataExtraDimensionsT&& value) { SetMetadataExtraDimensions(std::forward<MetadataExtraDimensionsT>(value)); return *this;}
+    template<typename MetadataExtraDimensionsT = Aws::String>
+    CreateStateTemplateRequest& AddMetadataExtraDimensions(MetadataExtraDimensionsT&& value) { m_metadataExtraDimensionsHasBeenSet = true; m_metadataExtraDimensions.emplace_back(std::forward<MetadataExtraDimensionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Metadata that can be used to manage the state template.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateStateTemplateRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateStateTemplateRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateStateTemplateRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateStateTemplateRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateStateTemplateRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateStateTemplateRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

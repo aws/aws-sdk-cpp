@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-HttpRouteAction::HttpRouteAction() : 
-    m_weightedTargetsHasBeenSet(false)
-{
-}
-
 HttpRouteAction::HttpRouteAction(JsonView jsonValue)
-  : HttpRouteAction()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ HttpRouteAction& HttpRouteAction::operator =(JsonView jsonValue)
     }
     m_weightedTargetsHasBeenSet = true;
   }
-
   return *this;
 }
 

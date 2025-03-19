@@ -12,15 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutLogEventsRequest::PutLogEventsRequest() : 
-    m_logGroupNameHasBeenSet(false),
-    m_logStreamNameHasBeenSet(false),
-    m_logEventsHasBeenSet(false),
-    m_sequenceTokenHasBeenSet(false),
-    m_entityHasBeenSet(false)
-{
-}
-
 Aws::String PutLogEventsRequest::SerializePayload() const
 {
   JsonValue payload;

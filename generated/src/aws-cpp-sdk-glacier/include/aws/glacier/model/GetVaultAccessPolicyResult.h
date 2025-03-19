@@ -33,7 +33,7 @@ namespace Model
   class GetVaultAccessPolicyResult
   {
   public:
-    AWS_GLACIER_API GetVaultAccessPolicyResult();
+    AWS_GLACIER_API GetVaultAccessPolicyResult() = default;
     AWS_GLACIER_API GetVaultAccessPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLACIER_API GetVaultAccessPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,28 +42,28 @@ namespace Model
     /**
      * <p>Contains the returned vault access policy as a JSON string.</p>
      */
-    inline const VaultAccessPolicy& GetPolicy() const{ return m_policy; }
-    inline void SetPolicy(const VaultAccessPolicy& value) { m_policy = value; }
-    inline void SetPolicy(VaultAccessPolicy&& value) { m_policy = std::move(value); }
-    inline GetVaultAccessPolicyResult& WithPolicy(const VaultAccessPolicy& value) { SetPolicy(value); return *this;}
-    inline GetVaultAccessPolicyResult& WithPolicy(VaultAccessPolicy&& value) { SetPolicy(std::move(value)); return *this;}
+    inline const VaultAccessPolicy& GetPolicy() const { return m_policy; }
+    template<typename PolicyT = VaultAccessPolicy>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = VaultAccessPolicy>
+    GetVaultAccessPolicyResult& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetVaultAccessPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetVaultAccessPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetVaultAccessPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetVaultAccessPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     VaultAccessPolicy m_policy;
+    bool m_policyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

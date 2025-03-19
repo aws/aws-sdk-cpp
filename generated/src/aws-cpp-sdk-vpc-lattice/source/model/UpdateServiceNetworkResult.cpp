@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateServiceNetworkResult::UpdateServiceNetworkResult() : 
-    m_authType(AuthType::NOT_SET)
-{
-}
-
 UpdateServiceNetworkResult::UpdateServiceNetworkResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateServiceNetworkResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ UpdateServiceNetworkResult& UpdateServiceNetworkResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("authType"))
   {
     m_authType = AuthTypeMapper::GetAuthTypeForName(jsonValue.GetString("authType"));
-
+    m_authTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

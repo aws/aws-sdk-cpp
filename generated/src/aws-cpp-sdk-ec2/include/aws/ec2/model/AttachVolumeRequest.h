@@ -21,7 +21,7 @@ namespace Model
   class AttachVolumeRequest : public EC2Request
   {
   public:
-    AWS_EC2_API AttachVolumeRequest();
+    AWS_EC2_API AttachVolumeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,28 +41,24 @@ namespace Model
      * <p>The device name (for example, <code>/dev/sdh</code> or
      * <code>xvdh</code>).</p>
      */
-    inline const Aws::String& GetDevice() const{ return m_device; }
+    inline const Aws::String& GetDevice() const { return m_device; }
     inline bool DeviceHasBeenSet() const { return m_deviceHasBeenSet; }
-    inline void SetDevice(const Aws::String& value) { m_deviceHasBeenSet = true; m_device = value; }
-    inline void SetDevice(Aws::String&& value) { m_deviceHasBeenSet = true; m_device = std::move(value); }
-    inline void SetDevice(const char* value) { m_deviceHasBeenSet = true; m_device.assign(value); }
-    inline AttachVolumeRequest& WithDevice(const Aws::String& value) { SetDevice(value); return *this;}
-    inline AttachVolumeRequest& WithDevice(Aws::String&& value) { SetDevice(std::move(value)); return *this;}
-    inline AttachVolumeRequest& WithDevice(const char* value) { SetDevice(value); return *this;}
+    template<typename DeviceT = Aws::String>
+    void SetDevice(DeviceT&& value) { m_deviceHasBeenSet = true; m_device = std::forward<DeviceT>(value); }
+    template<typename DeviceT = Aws::String>
+    AttachVolumeRequest& WithDevice(DeviceT&& value) { SetDevice(std::forward<DeviceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline AttachVolumeRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline AttachVolumeRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline AttachVolumeRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    AttachVolumeRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +66,12 @@ namespace Model
      * <p>The ID of the EBS volume. The volume and instance must be within the same
      * Availability Zone.</p>
      */
-    inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
+    inline const Aws::String& GetVolumeId() const { return m_volumeId; }
     inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
-    inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
-    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
-    inline void SetVolumeId(const char* value) { m_volumeIdHasBeenSet = true; m_volumeId.assign(value); }
-    inline AttachVolumeRequest& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
-    inline AttachVolumeRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
-    inline AttachVolumeRequest& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
+    template<typename VolumeIdT = Aws::String>
+    void SetVolumeId(VolumeIdT&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::forward<VolumeIdT>(value); }
+    template<typename VolumeIdT = Aws::String>
+    AttachVolumeRequest& WithVolumeId(VolumeIdT&& value) { SetVolumeId(std::forward<VolumeIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,7 +81,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline AttachVolumeRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -103,7 +97,7 @@ namespace Model
     Aws::String m_volumeId;
     bool m_volumeIdHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

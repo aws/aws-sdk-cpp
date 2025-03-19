@@ -12,11 +12,6 @@ using namespace Aws::Route53Resolver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetResolverRuleAssociationRequest::GetResolverRuleAssociationRequest() : 
-    m_resolverRuleAssociationIdHasBeenSet(false)
-{
-}
-
 Aws::String GetResolverRuleAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

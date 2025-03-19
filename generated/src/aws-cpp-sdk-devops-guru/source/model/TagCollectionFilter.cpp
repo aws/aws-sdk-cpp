@@ -18,14 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-TagCollectionFilter::TagCollectionFilter() : 
-    m_appBoundaryKeyHasBeenSet(false),
-    m_tagValuesHasBeenSet(false)
-{
-}
-
 TagCollectionFilter::TagCollectionFilter(JsonView jsonValue)
-  : TagCollectionFilter()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TagCollectionFilter& TagCollectionFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AppBoundaryKey"))
   {
     m_appBoundaryKey = jsonValue.GetString("AppBoundaryKey");
-
     m_appBoundaryKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagValues"))
   {
     Aws::Utils::Array<JsonView> tagValuesJsonList = jsonValue.GetArray("TagValues");
@@ -48,7 +39,6 @@ TagCollectionFilter& TagCollectionFilter::operator =(JsonView jsonValue)
     }
     m_tagValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

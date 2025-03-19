@@ -18,27 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DataSource::DataSource() : 
-    m_arnHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(DataSourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(ResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_dataSourceParametersHasBeenSet(false),
-    m_alternateDataSourceParametersHasBeenSet(false),
-    m_vpcConnectionPropertiesHasBeenSet(false),
-    m_sslPropertiesHasBeenSet(false),
-    m_errorInfoHasBeenSet(false),
-    m_secretArnHasBeenSet(false)
-{
-}
-
 DataSource::DataSource(JsonView jsonValue)
-  : DataSource()
 {
   *this = jsonValue;
 }
@@ -48,59 +28,43 @@ DataSource& DataSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSourceId"))
   {
     m_dataSourceId = jsonValue.GetString("DataSourceId");
-
     m_dataSourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = DataSourceTypeMapper::GetDataSourceTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ResourceStatusMapper::GetResourceStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSourceParameters"))
   {
     m_dataSourceParameters = jsonValue.GetObject("DataSourceParameters");
-
     m_dataSourceParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlternateDataSourceParameters"))
   {
     Aws::Utils::Array<JsonView> alternateDataSourceParametersJsonList = jsonValue.GetArray("AlternateDataSourceParameters");
@@ -110,35 +74,26 @@ DataSource& DataSource::operator =(JsonView jsonValue)
     }
     m_alternateDataSourceParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConnectionProperties"))
   {
     m_vpcConnectionProperties = jsonValue.GetObject("VpcConnectionProperties");
-
     m_vpcConnectionPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SslProperties"))
   {
     m_sslProperties = jsonValue.GetObject("SslProperties");
-
     m_sslPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorInfo"))
   {
     m_errorInfo = jsonValue.GetObject("ErrorInfo");
-
     m_errorInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretArn"))
   {
     m_secretArn = jsonValue.GetString("SecretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   return *this;
 }
 

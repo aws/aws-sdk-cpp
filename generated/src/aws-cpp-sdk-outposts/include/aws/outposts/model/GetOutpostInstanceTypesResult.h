@@ -29,78 +29,75 @@ namespace Model
   class GetOutpostInstanceTypesResult
   {
   public:
-    AWS_OUTPOSTS_API GetOutpostInstanceTypesResult();
+    AWS_OUTPOSTS_API GetOutpostInstanceTypesResult() = default;
     AWS_OUTPOSTS_API GetOutpostInstanceTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OUTPOSTS_API GetOutpostInstanceTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::Vector<InstanceTypeItem>& GetInstanceTypes() const{ return m_instanceTypes; }
-    inline void SetInstanceTypes(const Aws::Vector<InstanceTypeItem>& value) { m_instanceTypes = value; }
-    inline void SetInstanceTypes(Aws::Vector<InstanceTypeItem>&& value) { m_instanceTypes = std::move(value); }
-    inline GetOutpostInstanceTypesResult& WithInstanceTypes(const Aws::Vector<InstanceTypeItem>& value) { SetInstanceTypes(value); return *this;}
-    inline GetOutpostInstanceTypesResult& WithInstanceTypes(Aws::Vector<InstanceTypeItem>&& value) { SetInstanceTypes(std::move(value)); return *this;}
-    inline GetOutpostInstanceTypesResult& AddInstanceTypes(const InstanceTypeItem& value) { m_instanceTypes.push_back(value); return *this; }
-    inline GetOutpostInstanceTypesResult& AddInstanceTypes(InstanceTypeItem&& value) { m_instanceTypes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InstanceTypeItem>& GetInstanceTypes() const { return m_instanceTypes; }
+    template<typename InstanceTypesT = Aws::Vector<InstanceTypeItem>>
+    void SetInstanceTypes(InstanceTypesT&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::forward<InstanceTypesT>(value); }
+    template<typename InstanceTypesT = Aws::Vector<InstanceTypeItem>>
+    GetOutpostInstanceTypesResult& WithInstanceTypes(InstanceTypesT&& value) { SetInstanceTypes(std::forward<InstanceTypesT>(value)); return *this;}
+    template<typename InstanceTypesT = InstanceTypeItem>
+    GetOutpostInstanceTypesResult& AddInstanceTypes(InstanceTypesT&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.emplace_back(std::forward<InstanceTypesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetOutpostInstanceTypesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetOutpostInstanceTypesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetOutpostInstanceTypesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetOutpostInstanceTypesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The ID of the Outpost. </p>
      */
-    inline const Aws::String& GetOutpostId() const{ return m_outpostId; }
-    inline void SetOutpostId(const Aws::String& value) { m_outpostId = value; }
-    inline void SetOutpostId(Aws::String&& value) { m_outpostId = std::move(value); }
-    inline void SetOutpostId(const char* value) { m_outpostId.assign(value); }
-    inline GetOutpostInstanceTypesResult& WithOutpostId(const Aws::String& value) { SetOutpostId(value); return *this;}
-    inline GetOutpostInstanceTypesResult& WithOutpostId(Aws::String&& value) { SetOutpostId(std::move(value)); return *this;}
-    inline GetOutpostInstanceTypesResult& WithOutpostId(const char* value) { SetOutpostId(value); return *this;}
+    inline const Aws::String& GetOutpostId() const { return m_outpostId; }
+    template<typename OutpostIdT = Aws::String>
+    void SetOutpostId(OutpostIdT&& value) { m_outpostIdHasBeenSet = true; m_outpostId = std::forward<OutpostIdT>(value); }
+    template<typename OutpostIdT = Aws::String>
+    GetOutpostInstanceTypesResult& WithOutpostId(OutpostIdT&& value) { SetOutpostId(std::forward<OutpostIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
-    inline void SetOutpostArn(const Aws::String& value) { m_outpostArn = value; }
-    inline void SetOutpostArn(Aws::String&& value) { m_outpostArn = std::move(value); }
-    inline void SetOutpostArn(const char* value) { m_outpostArn.assign(value); }
-    inline GetOutpostInstanceTypesResult& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
-    inline GetOutpostInstanceTypesResult& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
-    inline GetOutpostInstanceTypesResult& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
+    inline const Aws::String& GetOutpostArn() const { return m_outpostArn; }
+    template<typename OutpostArnT = Aws::String>
+    void SetOutpostArn(OutpostArnT&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::forward<OutpostArnT>(value); }
+    template<typename OutpostArnT = Aws::String>
+    GetOutpostInstanceTypesResult& WithOutpostArn(OutpostArnT&& value) { SetOutpostArn(std::forward<OutpostArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetOutpostInstanceTypesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetOutpostInstanceTypesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetOutpostInstanceTypesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetOutpostInstanceTypesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<InstanceTypeItem> m_instanceTypes;
+    bool m_instanceTypesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_outpostId;
+    bool m_outpostIdHasBeenSet = false;
 
     Aws::String m_outpostArn;
+    bool m_outpostArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,14 +12,6 @@ using namespace Aws::Synthetics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCanaryRunsRequest::GetCanaryRunsRequest() : 
-    m_nameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetCanaryRunsRequest::SerializePayload() const
 {
   JsonValue payload;

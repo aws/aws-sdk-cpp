@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-LocalizedString::LocalizedString() : 
-    m_languageHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 LocalizedString::LocalizedString(JsonView jsonValue)
-  : LocalizedString()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LocalizedString& LocalizedString::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Language"))
   {
     m_language = jsonValue.GetString("Language");
-
     m_languageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::PrivateNetworks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateNetworkSitePlanRequest::UpdateNetworkSitePlanRequest() : 
-    m_clientTokenHasBeenSet(false),
-    m_networkSiteArnHasBeenSet(false),
-    m_pendingPlanHasBeenSet(false)
-{
-}
-
 Aws::String UpdateNetworkSitePlanRequest::SerializePayload() const
 {
   JsonValue payload;

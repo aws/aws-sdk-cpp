@@ -31,7 +31,7 @@ namespace Model
   class InferSNOMEDCTResult
   {
   public:
-    AWS_COMPREHENDMEDICAL_API InferSNOMEDCTResult();
+    AWS_COMPREHENDMEDICAL_API InferSNOMEDCTResult() = default;
     AWS_COMPREHENDMEDICAL_API InferSNOMEDCTResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHENDMEDICAL_API InferSNOMEDCTResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,13 +44,13 @@ namespace Model
      * of confidence that Amazon Comprehend Medical has in the detection and analysis.
      * Attributes and traits of the entity are also returned. </p>
      */
-    inline const Aws::Vector<SNOMEDCTEntity>& GetEntities() const{ return m_entities; }
-    inline void SetEntities(const Aws::Vector<SNOMEDCTEntity>& value) { m_entities = value; }
-    inline void SetEntities(Aws::Vector<SNOMEDCTEntity>&& value) { m_entities = std::move(value); }
-    inline InferSNOMEDCTResult& WithEntities(const Aws::Vector<SNOMEDCTEntity>& value) { SetEntities(value); return *this;}
-    inline InferSNOMEDCTResult& WithEntities(Aws::Vector<SNOMEDCTEntity>&& value) { SetEntities(std::move(value)); return *this;}
-    inline InferSNOMEDCTResult& AddEntities(const SNOMEDCTEntity& value) { m_entities.push_back(value); return *this; }
-    inline InferSNOMEDCTResult& AddEntities(SNOMEDCTEntity&& value) { m_entities.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SNOMEDCTEntity>& GetEntities() const { return m_entities; }
+    template<typename EntitiesT = Aws::Vector<SNOMEDCTEntity>>
+    void SetEntities(EntitiesT&& value) { m_entitiesHasBeenSet = true; m_entities = std::forward<EntitiesT>(value); }
+    template<typename EntitiesT = Aws::Vector<SNOMEDCTEntity>>
+    InferSNOMEDCTResult& WithEntities(EntitiesT&& value) { SetEntities(std::forward<EntitiesT>(value)); return *this;}
+    template<typename EntitiesT = SNOMEDCTEntity>
+    InferSNOMEDCTResult& AddEntities(EntitiesT&& value) { m_entitiesHasBeenSet = true; m_entities.emplace_back(std::forward<EntitiesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,13 +58,11 @@ namespace Model
      * <p> If the result of the request is truncated, the pagination token can be used
      * to fetch the next page of entities. </p>
      */
-    inline const Aws::String& GetPaginationToken() const{ return m_paginationToken; }
-    inline void SetPaginationToken(const Aws::String& value) { m_paginationToken = value; }
-    inline void SetPaginationToken(Aws::String&& value) { m_paginationToken = std::move(value); }
-    inline void SetPaginationToken(const char* value) { m_paginationToken.assign(value); }
-    inline InferSNOMEDCTResult& WithPaginationToken(const Aws::String& value) { SetPaginationToken(value); return *this;}
-    inline InferSNOMEDCTResult& WithPaginationToken(Aws::String&& value) { SetPaginationToken(std::move(value)); return *this;}
-    inline InferSNOMEDCTResult& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
+    inline const Aws::String& GetPaginationToken() const { return m_paginationToken; }
+    template<typename PaginationTokenT = Aws::String>
+    void SetPaginationToken(PaginationTokenT&& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = std::forward<PaginationTokenT>(value); }
+    template<typename PaginationTokenT = Aws::String>
+    InferSNOMEDCTResult& WithPaginationToken(PaginationTokenT&& value) { SetPaginationToken(std::forward<PaginationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,13 +71,11 @@ namespace Model
      * You can use this information to track the model used for a particular batch of
      * documents. </p>
      */
-    inline const Aws::String& GetModelVersion() const{ return m_modelVersion; }
-    inline void SetModelVersion(const Aws::String& value) { m_modelVersion = value; }
-    inline void SetModelVersion(Aws::String&& value) { m_modelVersion = std::move(value); }
-    inline void SetModelVersion(const char* value) { m_modelVersion.assign(value); }
-    inline InferSNOMEDCTResult& WithModelVersion(const Aws::String& value) { SetModelVersion(value); return *this;}
-    inline InferSNOMEDCTResult& WithModelVersion(Aws::String&& value) { SetModelVersion(std::move(value)); return *this;}
-    inline InferSNOMEDCTResult& WithModelVersion(const char* value) { SetModelVersion(value); return *this;}
+    inline const Aws::String& GetModelVersion() const { return m_modelVersion; }
+    template<typename ModelVersionT = Aws::String>
+    void SetModelVersion(ModelVersionT&& value) { m_modelVersionHasBeenSet = true; m_modelVersion = std::forward<ModelVersionT>(value); }
+    template<typename ModelVersionT = Aws::String>
+    InferSNOMEDCTResult& WithModelVersion(ModelVersionT&& value) { SetModelVersion(std::forward<ModelVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,47 +83,51 @@ namespace Model
      * <p> The details of the SNOMED-CT revision, including the edition, language, and
      * version date. </p>
      */
-    inline const SNOMEDCTDetails& GetSNOMEDCTDetails() const{ return m_sNOMEDCTDetails; }
-    inline void SetSNOMEDCTDetails(const SNOMEDCTDetails& value) { m_sNOMEDCTDetails = value; }
-    inline void SetSNOMEDCTDetails(SNOMEDCTDetails&& value) { m_sNOMEDCTDetails = std::move(value); }
-    inline InferSNOMEDCTResult& WithSNOMEDCTDetails(const SNOMEDCTDetails& value) { SetSNOMEDCTDetails(value); return *this;}
-    inline InferSNOMEDCTResult& WithSNOMEDCTDetails(SNOMEDCTDetails&& value) { SetSNOMEDCTDetails(std::move(value)); return *this;}
+    inline const SNOMEDCTDetails& GetSNOMEDCTDetails() const { return m_sNOMEDCTDetails; }
+    template<typename SNOMEDCTDetailsT = SNOMEDCTDetails>
+    void SetSNOMEDCTDetails(SNOMEDCTDetailsT&& value) { m_sNOMEDCTDetailsHasBeenSet = true; m_sNOMEDCTDetails = std::forward<SNOMEDCTDetailsT>(value); }
+    template<typename SNOMEDCTDetailsT = SNOMEDCTDetails>
+    InferSNOMEDCTResult& WithSNOMEDCTDetails(SNOMEDCTDetailsT&& value) { SetSNOMEDCTDetails(std::forward<SNOMEDCTDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The number of characters in the input request documentation. </p>
      */
-    inline const Characters& GetCharacters() const{ return m_characters; }
-    inline void SetCharacters(const Characters& value) { m_characters = value; }
-    inline void SetCharacters(Characters&& value) { m_characters = std::move(value); }
-    inline InferSNOMEDCTResult& WithCharacters(const Characters& value) { SetCharacters(value); return *this;}
-    inline InferSNOMEDCTResult& WithCharacters(Characters&& value) { SetCharacters(std::move(value)); return *this;}
+    inline const Characters& GetCharacters() const { return m_characters; }
+    template<typename CharactersT = Characters>
+    void SetCharacters(CharactersT&& value) { m_charactersHasBeenSet = true; m_characters = std::forward<CharactersT>(value); }
+    template<typename CharactersT = Characters>
+    InferSNOMEDCTResult& WithCharacters(CharactersT&& value) { SetCharacters(std::forward<CharactersT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline InferSNOMEDCTResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline InferSNOMEDCTResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline InferSNOMEDCTResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    InferSNOMEDCTResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SNOMEDCTEntity> m_entities;
+    bool m_entitiesHasBeenSet = false;
 
     Aws::String m_paginationToken;
+    bool m_paginationTokenHasBeenSet = false;
 
     Aws::String m_modelVersion;
+    bool m_modelVersionHasBeenSet = false;
 
     SNOMEDCTDetails m_sNOMEDCTDetails;
+    bool m_sNOMEDCTDetailsHasBeenSet = false;
 
     Characters m_characters;
+    bool m_charactersHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

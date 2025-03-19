@@ -33,7 +33,7 @@ namespace Model
   class SamlAuthentication
   {
   public:
-    AWS_MANAGEDGRAFANA_API SamlAuthentication();
+    AWS_MANAGEDGRAFANA_API SamlAuthentication() = default;
     AWS_MANAGEDGRAFANA_API SamlAuthentication(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDGRAFANA_API SamlAuthentication& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDGRAFANA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,29 @@ namespace Model
     /**
      * <p>A structure containing details about how this workspace works with SAML. </p>
      */
-    inline const SamlConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const SamlConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const SamlConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(SamlConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline SamlAuthentication& WithConfiguration(const SamlConfiguration& value) { SetConfiguration(value); return *this;}
-    inline SamlAuthentication& WithConfiguration(SamlConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = SamlConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = SamlConfiguration>
+    SamlAuthentication& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether the workspace's SAML configuration is complete.</p>
      */
-    inline const SamlConfigurationStatus& GetStatus() const{ return m_status; }
+    inline SamlConfigurationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const SamlConfigurationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(SamlConfigurationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline SamlAuthentication& WithStatus(const SamlConfigurationStatus& value) { SetStatus(value); return *this;}
-    inline SamlAuthentication& WithStatus(SamlConfigurationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(SamlConfigurationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline SamlAuthentication& WithStatus(SamlConfigurationStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     SamlConfiguration m_configuration;
     bool m_configurationHasBeenSet = false;
 
-    SamlConfigurationStatus m_status;
+    SamlConfigurationStatus m_status{SamlConfigurationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

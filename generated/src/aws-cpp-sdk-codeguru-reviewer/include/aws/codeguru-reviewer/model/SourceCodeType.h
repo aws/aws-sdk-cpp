@@ -36,7 +36,7 @@ namespace Model
   class SourceCodeType
   {
   public:
-    AWS_CODEGURUREVIEWER_API SourceCodeType();
+    AWS_CODEGURUREVIEWER_API SourceCodeType() = default;
     AWS_CODEGURUREVIEWER_API SourceCodeType(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API SourceCodeType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,22 +49,22 @@ namespace Model
      * that specifies a commit diff created by a pull request on an associated
      * repository.</p>
      */
-    inline const CommitDiffSourceCodeType& GetCommitDiff() const{ return m_commitDiff; }
+    inline const CommitDiffSourceCodeType& GetCommitDiff() const { return m_commitDiff; }
     inline bool CommitDiffHasBeenSet() const { return m_commitDiffHasBeenSet; }
-    inline void SetCommitDiff(const CommitDiffSourceCodeType& value) { m_commitDiffHasBeenSet = true; m_commitDiff = value; }
-    inline void SetCommitDiff(CommitDiffSourceCodeType&& value) { m_commitDiffHasBeenSet = true; m_commitDiff = std::move(value); }
-    inline SourceCodeType& WithCommitDiff(const CommitDiffSourceCodeType& value) { SetCommitDiff(value); return *this;}
-    inline SourceCodeType& WithCommitDiff(CommitDiffSourceCodeType&& value) { SetCommitDiff(std::move(value)); return *this;}
+    template<typename CommitDiffT = CommitDiffSourceCodeType>
+    void SetCommitDiff(CommitDiffT&& value) { m_commitDiffHasBeenSet = true; m_commitDiff = std::forward<CommitDiffT>(value); }
+    template<typename CommitDiffT = CommitDiffSourceCodeType>
+    SourceCodeType& WithCommitDiff(CommitDiffT&& value) { SetCommitDiff(std::forward<CommitDiffT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const RepositoryHeadSourceCodeType& GetRepositoryHead() const{ return m_repositoryHead; }
+    inline const RepositoryHeadSourceCodeType& GetRepositoryHead() const { return m_repositoryHead; }
     inline bool RepositoryHeadHasBeenSet() const { return m_repositoryHeadHasBeenSet; }
-    inline void SetRepositoryHead(const RepositoryHeadSourceCodeType& value) { m_repositoryHeadHasBeenSet = true; m_repositoryHead = value; }
-    inline void SetRepositoryHead(RepositoryHeadSourceCodeType&& value) { m_repositoryHeadHasBeenSet = true; m_repositoryHead = std::move(value); }
-    inline SourceCodeType& WithRepositoryHead(const RepositoryHeadSourceCodeType& value) { SetRepositoryHead(value); return *this;}
-    inline SourceCodeType& WithRepositoryHead(RepositoryHeadSourceCodeType&& value) { SetRepositoryHead(std::move(value)); return *this;}
+    template<typename RepositoryHeadT = RepositoryHeadSourceCodeType>
+    void SetRepositoryHead(RepositoryHeadT&& value) { m_repositoryHeadHasBeenSet = true; m_repositoryHead = std::forward<RepositoryHeadT>(value); }
+    template<typename RepositoryHeadT = RepositoryHeadSourceCodeType>
+    SourceCodeType& WithRepositoryHead(RepositoryHeadT&& value) { SetRepositoryHead(std::forward<RepositoryHeadT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +74,12 @@ namespace Model
      * that specifies a source branch name and a destination branch name in an
      * associated repository.</p>
      */
-    inline const BranchDiffSourceCodeType& GetBranchDiff() const{ return m_branchDiff; }
+    inline const BranchDiffSourceCodeType& GetBranchDiff() const { return m_branchDiff; }
     inline bool BranchDiffHasBeenSet() const { return m_branchDiffHasBeenSet; }
-    inline void SetBranchDiff(const BranchDiffSourceCodeType& value) { m_branchDiffHasBeenSet = true; m_branchDiff = value; }
-    inline void SetBranchDiff(BranchDiffSourceCodeType&& value) { m_branchDiffHasBeenSet = true; m_branchDiff = std::move(value); }
-    inline SourceCodeType& WithBranchDiff(const BranchDiffSourceCodeType& value) { SetBranchDiff(value); return *this;}
-    inline SourceCodeType& WithBranchDiff(BranchDiffSourceCodeType&& value) { SetBranchDiff(std::move(value)); return *this;}
+    template<typename BranchDiffT = BranchDiffSourceCodeType>
+    void SetBranchDiff(BranchDiffT&& value) { m_branchDiffHasBeenSet = true; m_branchDiff = std::forward<BranchDiffT>(value); }
+    template<typename BranchDiffT = BranchDiffSourceCodeType>
+    SourceCodeType& WithBranchDiff(BranchDiffT&& value) { SetBranchDiff(std::forward<BranchDiffT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,12 +92,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">SourceCodeType</a>
      * for <code>S3BucketRepository</code> based code reviews.</p>
      */
-    inline const S3BucketRepository& GetS3BucketRepository() const{ return m_s3BucketRepository; }
+    inline const S3BucketRepository& GetS3BucketRepository() const { return m_s3BucketRepository; }
     inline bool S3BucketRepositoryHasBeenSet() const { return m_s3BucketRepositoryHasBeenSet; }
-    inline void SetS3BucketRepository(const S3BucketRepository& value) { m_s3BucketRepositoryHasBeenSet = true; m_s3BucketRepository = value; }
-    inline void SetS3BucketRepository(S3BucketRepository&& value) { m_s3BucketRepositoryHasBeenSet = true; m_s3BucketRepository = std::move(value); }
-    inline SourceCodeType& WithS3BucketRepository(const S3BucketRepository& value) { SetS3BucketRepository(value); return *this;}
-    inline SourceCodeType& WithS3BucketRepository(S3BucketRepository&& value) { SetS3BucketRepository(std::move(value)); return *this;}
+    template<typename S3BucketRepositoryT = S3BucketRepository>
+    void SetS3BucketRepository(S3BucketRepositoryT&& value) { m_s3BucketRepositoryHasBeenSet = true; m_s3BucketRepository = std::forward<S3BucketRepositoryT>(value); }
+    template<typename S3BucketRepositoryT = S3BucketRepository>
+    SourceCodeType& WithS3BucketRepository(S3BucketRepositoryT&& value) { SetS3BucketRepository(std::forward<S3BucketRepositoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,12 +107,12 @@ namespace Model
      * field captures any event metadata. For example, it might capture metadata
      * associated with an event trigger, such as a push or a pull request.</p>
      */
-    inline const RequestMetadata& GetRequestMetadata() const{ return m_requestMetadata; }
+    inline const RequestMetadata& GetRequestMetadata() const { return m_requestMetadata; }
     inline bool RequestMetadataHasBeenSet() const { return m_requestMetadataHasBeenSet; }
-    inline void SetRequestMetadata(const RequestMetadata& value) { m_requestMetadataHasBeenSet = true; m_requestMetadata = value; }
-    inline void SetRequestMetadata(RequestMetadata&& value) { m_requestMetadataHasBeenSet = true; m_requestMetadata = std::move(value); }
-    inline SourceCodeType& WithRequestMetadata(const RequestMetadata& value) { SetRequestMetadata(value); return *this;}
-    inline SourceCodeType& WithRequestMetadata(RequestMetadata&& value) { SetRequestMetadata(std::move(value)); return *this;}
+    template<typename RequestMetadataT = RequestMetadata>
+    void SetRequestMetadata(RequestMetadataT&& value) { m_requestMetadataHasBeenSet = true; m_requestMetadata = std::forward<RequestMetadataT>(value); }
+    template<typename RequestMetadataT = RequestMetadata>
+    SourceCodeType& WithRequestMetadata(RequestMetadataT&& value) { SetRequestMetadata(std::forward<RequestMetadataT>(value)); return *this;}
     ///@}
   private:
 

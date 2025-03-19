@@ -33,7 +33,7 @@ namespace Model
   class RegisterCACertificateRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API RegisterCACertificateRequest();
+    AWS_IOT_API RegisterCACertificateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,14 +50,12 @@ namespace Model
     /**
      * <p>The CA certificate.</p>
      */
-    inline const Aws::String& GetCaCertificate() const{ return m_caCertificate; }
+    inline const Aws::String& GetCaCertificate() const { return m_caCertificate; }
     inline bool CaCertificateHasBeenSet() const { return m_caCertificateHasBeenSet; }
-    inline void SetCaCertificate(const Aws::String& value) { m_caCertificateHasBeenSet = true; m_caCertificate = value; }
-    inline void SetCaCertificate(Aws::String&& value) { m_caCertificateHasBeenSet = true; m_caCertificate = std::move(value); }
-    inline void SetCaCertificate(const char* value) { m_caCertificateHasBeenSet = true; m_caCertificate.assign(value); }
-    inline RegisterCACertificateRequest& WithCaCertificate(const Aws::String& value) { SetCaCertificate(value); return *this;}
-    inline RegisterCACertificateRequest& WithCaCertificate(Aws::String&& value) { SetCaCertificate(std::move(value)); return *this;}
-    inline RegisterCACertificateRequest& WithCaCertificate(const char* value) { SetCaCertificate(value); return *this;}
+    template<typename CaCertificateT = Aws::String>
+    void SetCaCertificate(CaCertificateT&& value) { m_caCertificateHasBeenSet = true; m_caCertificate = std::forward<CaCertificateT>(value); }
+    template<typename CaCertificateT = Aws::String>
+    RegisterCACertificateRequest& WithCaCertificate(CaCertificateT&& value) { SetCaCertificate(std::forward<CaCertificateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,12 @@ namespace Model
      * empty. If <code>certificateMode</code> is <code>DEFAULT</code> or not provided,
      * the <code>verificationCertificate</code> field must not be empty. </p>
      */
-    inline const Aws::String& GetVerificationCertificate() const{ return m_verificationCertificate; }
+    inline const Aws::String& GetVerificationCertificate() const { return m_verificationCertificate; }
     inline bool VerificationCertificateHasBeenSet() const { return m_verificationCertificateHasBeenSet; }
-    inline void SetVerificationCertificate(const Aws::String& value) { m_verificationCertificateHasBeenSet = true; m_verificationCertificate = value; }
-    inline void SetVerificationCertificate(Aws::String&& value) { m_verificationCertificateHasBeenSet = true; m_verificationCertificate = std::move(value); }
-    inline void SetVerificationCertificate(const char* value) { m_verificationCertificateHasBeenSet = true; m_verificationCertificate.assign(value); }
-    inline RegisterCACertificateRequest& WithVerificationCertificate(const Aws::String& value) { SetVerificationCertificate(value); return *this;}
-    inline RegisterCACertificateRequest& WithVerificationCertificate(Aws::String&& value) { SetVerificationCertificate(std::move(value)); return *this;}
-    inline RegisterCACertificateRequest& WithVerificationCertificate(const char* value) { SetVerificationCertificate(value); return *this;}
+    template<typename VerificationCertificateT = Aws::String>
+    void SetVerificationCertificate(VerificationCertificateT&& value) { m_verificationCertificateHasBeenSet = true; m_verificationCertificate = std::forward<VerificationCertificateT>(value); }
+    template<typename VerificationCertificateT = Aws::String>
+    RegisterCACertificateRequest& WithVerificationCertificate(VerificationCertificateT&& value) { SetVerificationCertificate(std::forward<VerificationCertificateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,7 +78,7 @@ namespace Model
      * <p>A boolean value that specifies if the CA certificate is set to active.</p>
      * <p>Valid values: <code>ACTIVE | INACTIVE</code> </p>
      */
-    inline bool GetSetAsActive() const{ return m_setAsActive; }
+    inline bool GetSetAsActive() const { return m_setAsActive; }
     inline bool SetAsActiveHasBeenSet() const { return m_setAsActiveHasBeenSet; }
     inline void SetSetAsActive(bool value) { m_setAsActiveHasBeenSet = true; m_setAsActive = value; }
     inline RegisterCACertificateRequest& WithSetAsActive(bool value) { SetSetAsActive(value); return *this;}
@@ -93,7 +89,7 @@ namespace Model
      * <p>Allows this CA certificate to be used for auto registration of device
      * certificates.</p>
      */
-    inline bool GetAllowAutoRegistration() const{ return m_allowAutoRegistration; }
+    inline bool GetAllowAutoRegistration() const { return m_allowAutoRegistration; }
     inline bool AllowAutoRegistrationHasBeenSet() const { return m_allowAutoRegistrationHasBeenSet; }
     inline void SetAllowAutoRegistration(bool value) { m_allowAutoRegistrationHasBeenSet = true; m_allowAutoRegistration = value; }
     inline RegisterCACertificateRequest& WithAllowAutoRegistration(bool value) { SetAllowAutoRegistration(value); return *this;}
@@ -103,12 +99,12 @@ namespace Model
     /**
      * <p>Information about the registration configuration.</p>
      */
-    inline const RegistrationConfig& GetRegistrationConfig() const{ return m_registrationConfig; }
+    inline const RegistrationConfig& GetRegistrationConfig() const { return m_registrationConfig; }
     inline bool RegistrationConfigHasBeenSet() const { return m_registrationConfigHasBeenSet; }
-    inline void SetRegistrationConfig(const RegistrationConfig& value) { m_registrationConfigHasBeenSet = true; m_registrationConfig = value; }
-    inline void SetRegistrationConfig(RegistrationConfig&& value) { m_registrationConfigHasBeenSet = true; m_registrationConfig = std::move(value); }
-    inline RegisterCACertificateRequest& WithRegistrationConfig(const RegistrationConfig& value) { SetRegistrationConfig(value); return *this;}
-    inline RegisterCACertificateRequest& WithRegistrationConfig(RegistrationConfig&& value) { SetRegistrationConfig(std::move(value)); return *this;}
+    template<typename RegistrationConfigT = RegistrationConfig>
+    void SetRegistrationConfig(RegistrationConfigT&& value) { m_registrationConfigHasBeenSet = true; m_registrationConfig = std::forward<RegistrationConfigT>(value); }
+    template<typename RegistrationConfigT = RegistrationConfig>
+    RegisterCACertificateRequest& WithRegistrationConfig(RegistrationConfigT&& value) { SetRegistrationConfig(std::forward<RegistrationConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,14 +115,14 @@ namespace Model
      * "key1=value1&amp;key2=value2..."</p> <p>For the cli-input-json file use format:
      * "tags": "key1=value1&amp;key2=value2..."</p> 
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline RegisterCACertificateRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline RegisterCACertificateRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline RegisterCACertificateRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline RegisterCACertificateRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    RegisterCACertificateRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    RegisterCACertificateRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -143,12 +139,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">
      * certificate mode</a>. </p>
      */
-    inline const CertificateMode& GetCertificateMode() const{ return m_certificateMode; }
+    inline CertificateMode GetCertificateMode() const { return m_certificateMode; }
     inline bool CertificateModeHasBeenSet() const { return m_certificateModeHasBeenSet; }
-    inline void SetCertificateMode(const CertificateMode& value) { m_certificateModeHasBeenSet = true; m_certificateMode = value; }
-    inline void SetCertificateMode(CertificateMode&& value) { m_certificateModeHasBeenSet = true; m_certificateMode = std::move(value); }
-    inline RegisterCACertificateRequest& WithCertificateMode(const CertificateMode& value) { SetCertificateMode(value); return *this;}
-    inline RegisterCACertificateRequest& WithCertificateMode(CertificateMode&& value) { SetCertificateMode(std::move(value)); return *this;}
+    inline void SetCertificateMode(CertificateMode value) { m_certificateModeHasBeenSet = true; m_certificateMode = value; }
+    inline RegisterCACertificateRequest& WithCertificateMode(CertificateMode value) { SetCertificateMode(value); return *this;}
     ///@}
   private:
 
@@ -158,10 +152,10 @@ namespace Model
     Aws::String m_verificationCertificate;
     bool m_verificationCertificateHasBeenSet = false;
 
-    bool m_setAsActive;
+    bool m_setAsActive{false};
     bool m_setAsActiveHasBeenSet = false;
 
-    bool m_allowAutoRegistration;
+    bool m_allowAutoRegistration{false};
     bool m_allowAutoRegistrationHasBeenSet = false;
 
     RegistrationConfig m_registrationConfig;
@@ -170,7 +164,7 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    CertificateMode m_certificateMode;
+    CertificateMode m_certificateMode{CertificateMode::NOT_SET};
     bool m_certificateModeHasBeenSet = false;
   };
 

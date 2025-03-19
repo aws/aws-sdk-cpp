@@ -18,13 +18,7 @@ namespace TranscribeService
 namespace Model
 {
 
-CallAnalyticsJobDetails::CallAnalyticsJobDetails() : 
-    m_skippedHasBeenSet(false)
-{
-}
-
 CallAnalyticsJobDetails::CallAnalyticsJobDetails(JsonView jsonValue)
-  : CallAnalyticsJobDetails()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ CallAnalyticsJobDetails& CallAnalyticsJobDetails::operator =(JsonView jsonValue)
     }
     m_skippedHasBeenSet = true;
   }
-
   return *this;
 }
 

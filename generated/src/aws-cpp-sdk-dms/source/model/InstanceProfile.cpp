@@ -18,23 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-InstanceProfile::InstanceProfile() : 
-    m_instanceProfileArnHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_networkTypeHasBeenSet(false),
-    m_instanceProfileNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_instanceProfileCreationTimeHasBeenSet(false),
-    m_subnetGroupIdentifierHasBeenSet(false),
-    m_vpcSecurityGroupsHasBeenSet(false)
-{
-}
-
 InstanceProfile::InstanceProfile(JsonView jsonValue)
-  : InstanceProfile()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ InstanceProfile& InstanceProfile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InstanceProfileArn"))
   {
     m_instanceProfileArn = jsonValue.GetString("InstanceProfileArn");
-
     m_instanceProfileArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("AvailabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("KmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PubliclyAccessible"))
   {
     m_publiclyAccessible = jsonValue.GetBool("PubliclyAccessible");
-
     m_publiclyAccessibleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkType"))
   {
     m_networkType = jsonValue.GetString("NetworkType");
-
     m_networkTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceProfileName"))
   {
     m_instanceProfileName = jsonValue.GetString("InstanceProfileName");
-
     m_instanceProfileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceProfileCreationTime"))
   {
     m_instanceProfileCreationTime = jsonValue.GetString("InstanceProfileCreationTime");
-
     m_instanceProfileCreationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetGroupIdentifier"))
   {
     m_subnetGroupIdentifier = jsonValue.GetString("SubnetGroupIdentifier");
-
     m_subnetGroupIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcSecurityGroups"))
   {
     Aws::Utils::Array<JsonView> vpcSecurityGroupsJsonList = jsonValue.GetArray("VpcSecurityGroups");
@@ -113,7 +79,6 @@ InstanceProfile& InstanceProfile::operator =(JsonView jsonValue)
     }
     m_vpcSecurityGroupsHasBeenSet = true;
   }
-
   return *this;
 }
 

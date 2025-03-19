@@ -20,15 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-PrefixLevelStorageMetrics::PrefixLevelStorageMetrics() : 
-    m_isEnabled(false),
-    m_isEnabledHasBeenSet(false),
-    m_selectionCriteriaHasBeenSet(false)
-{
-}
-
 PrefixLevelStorageMetrics::PrefixLevelStorageMetrics(const XmlNode& xmlNode)
-  : PrefixLevelStorageMetrics()
 {
   *this = xmlNode;
 }

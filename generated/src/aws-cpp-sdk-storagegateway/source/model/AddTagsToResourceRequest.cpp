@@ -12,12 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AddTagsToResourceRequest::AddTagsToResourceRequest() : 
-    m_resourceARNHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String AddTagsToResourceRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -35,7 +35,7 @@ namespace Model
   class FlinkApplicationConfigurationDescription
   {
   public:
-    AWS_KINESISANALYTICSV2_API FlinkApplicationConfigurationDescription();
+    AWS_KINESISANALYTICSV2_API FlinkApplicationConfigurationDescription() = default;
     AWS_KINESISANALYTICSV2_API FlinkApplicationConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API FlinkApplicationConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * <p>Describes an application's checkpointing configuration. Checkpointing is the
      * process of persisting application state for fault tolerance.</p>
      */
-    inline const CheckpointConfigurationDescription& GetCheckpointConfigurationDescription() const{ return m_checkpointConfigurationDescription; }
+    inline const CheckpointConfigurationDescription& GetCheckpointConfigurationDescription() const { return m_checkpointConfigurationDescription; }
     inline bool CheckpointConfigurationDescriptionHasBeenSet() const { return m_checkpointConfigurationDescriptionHasBeenSet; }
-    inline void SetCheckpointConfigurationDescription(const CheckpointConfigurationDescription& value) { m_checkpointConfigurationDescriptionHasBeenSet = true; m_checkpointConfigurationDescription = value; }
-    inline void SetCheckpointConfigurationDescription(CheckpointConfigurationDescription&& value) { m_checkpointConfigurationDescriptionHasBeenSet = true; m_checkpointConfigurationDescription = std::move(value); }
-    inline FlinkApplicationConfigurationDescription& WithCheckpointConfigurationDescription(const CheckpointConfigurationDescription& value) { SetCheckpointConfigurationDescription(value); return *this;}
-    inline FlinkApplicationConfigurationDescription& WithCheckpointConfigurationDescription(CheckpointConfigurationDescription&& value) { SetCheckpointConfigurationDescription(std::move(value)); return *this;}
+    template<typename CheckpointConfigurationDescriptionT = CheckpointConfigurationDescription>
+    void SetCheckpointConfigurationDescription(CheckpointConfigurationDescriptionT&& value) { m_checkpointConfigurationDescriptionHasBeenSet = true; m_checkpointConfigurationDescription = std::forward<CheckpointConfigurationDescriptionT>(value); }
+    template<typename CheckpointConfigurationDescriptionT = CheckpointConfigurationDescription>
+    FlinkApplicationConfigurationDescription& WithCheckpointConfigurationDescription(CheckpointConfigurationDescriptionT&& value) { SetCheckpointConfigurationDescription(std::forward<CheckpointConfigurationDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +59,12 @@ namespace Model
      * <p>Describes configuration parameters for Amazon CloudWatch logging for an
      * application.</p>
      */
-    inline const MonitoringConfigurationDescription& GetMonitoringConfigurationDescription() const{ return m_monitoringConfigurationDescription; }
+    inline const MonitoringConfigurationDescription& GetMonitoringConfigurationDescription() const { return m_monitoringConfigurationDescription; }
     inline bool MonitoringConfigurationDescriptionHasBeenSet() const { return m_monitoringConfigurationDescriptionHasBeenSet; }
-    inline void SetMonitoringConfigurationDescription(const MonitoringConfigurationDescription& value) { m_monitoringConfigurationDescriptionHasBeenSet = true; m_monitoringConfigurationDescription = value; }
-    inline void SetMonitoringConfigurationDescription(MonitoringConfigurationDescription&& value) { m_monitoringConfigurationDescriptionHasBeenSet = true; m_monitoringConfigurationDescription = std::move(value); }
-    inline FlinkApplicationConfigurationDescription& WithMonitoringConfigurationDescription(const MonitoringConfigurationDescription& value) { SetMonitoringConfigurationDescription(value); return *this;}
-    inline FlinkApplicationConfigurationDescription& WithMonitoringConfigurationDescription(MonitoringConfigurationDescription&& value) { SetMonitoringConfigurationDescription(std::move(value)); return *this;}
+    template<typename MonitoringConfigurationDescriptionT = MonitoringConfigurationDescription>
+    void SetMonitoringConfigurationDescription(MonitoringConfigurationDescriptionT&& value) { m_monitoringConfigurationDescriptionHasBeenSet = true; m_monitoringConfigurationDescription = std::forward<MonitoringConfigurationDescriptionT>(value); }
+    template<typename MonitoringConfigurationDescriptionT = MonitoringConfigurationDescription>
+    FlinkApplicationConfigurationDescription& WithMonitoringConfigurationDescription(MonitoringConfigurationDescriptionT&& value) { SetMonitoringConfigurationDescription(std::forward<MonitoringConfigurationDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +72,12 @@ namespace Model
      * <p>Describes parameters for how an application executes multiple tasks
      * simultaneously.</p>
      */
-    inline const ParallelismConfigurationDescription& GetParallelismConfigurationDescription() const{ return m_parallelismConfigurationDescription; }
+    inline const ParallelismConfigurationDescription& GetParallelismConfigurationDescription() const { return m_parallelismConfigurationDescription; }
     inline bool ParallelismConfigurationDescriptionHasBeenSet() const { return m_parallelismConfigurationDescriptionHasBeenSet; }
-    inline void SetParallelismConfigurationDescription(const ParallelismConfigurationDescription& value) { m_parallelismConfigurationDescriptionHasBeenSet = true; m_parallelismConfigurationDescription = value; }
-    inline void SetParallelismConfigurationDescription(ParallelismConfigurationDescription&& value) { m_parallelismConfigurationDescriptionHasBeenSet = true; m_parallelismConfigurationDescription = std::move(value); }
-    inline FlinkApplicationConfigurationDescription& WithParallelismConfigurationDescription(const ParallelismConfigurationDescription& value) { SetParallelismConfigurationDescription(value); return *this;}
-    inline FlinkApplicationConfigurationDescription& WithParallelismConfigurationDescription(ParallelismConfigurationDescription&& value) { SetParallelismConfigurationDescription(std::move(value)); return *this;}
+    template<typename ParallelismConfigurationDescriptionT = ParallelismConfigurationDescription>
+    void SetParallelismConfigurationDescription(ParallelismConfigurationDescriptionT&& value) { m_parallelismConfigurationDescriptionHasBeenSet = true; m_parallelismConfigurationDescription = std::forward<ParallelismConfigurationDescriptionT>(value); }
+    template<typename ParallelismConfigurationDescriptionT = ParallelismConfigurationDescription>
+    FlinkApplicationConfigurationDescription& WithParallelismConfigurationDescription(ParallelismConfigurationDescriptionT&& value) { SetParallelismConfigurationDescription(std::forward<ParallelismConfigurationDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +91,12 @@ namespace Model
      * <a>DescribeApplicationRequest$IncludeAdditionalDetails</a> parameter of the
      * <a>DescribeApplication</a> operation.</p>
      */
-    inline const Aws::String& GetJobPlanDescription() const{ return m_jobPlanDescription; }
+    inline const Aws::String& GetJobPlanDescription() const { return m_jobPlanDescription; }
     inline bool JobPlanDescriptionHasBeenSet() const { return m_jobPlanDescriptionHasBeenSet; }
-    inline void SetJobPlanDescription(const Aws::String& value) { m_jobPlanDescriptionHasBeenSet = true; m_jobPlanDescription = value; }
-    inline void SetJobPlanDescription(Aws::String&& value) { m_jobPlanDescriptionHasBeenSet = true; m_jobPlanDescription = std::move(value); }
-    inline void SetJobPlanDescription(const char* value) { m_jobPlanDescriptionHasBeenSet = true; m_jobPlanDescription.assign(value); }
-    inline FlinkApplicationConfigurationDescription& WithJobPlanDescription(const Aws::String& value) { SetJobPlanDescription(value); return *this;}
-    inline FlinkApplicationConfigurationDescription& WithJobPlanDescription(Aws::String&& value) { SetJobPlanDescription(std::move(value)); return *this;}
-    inline FlinkApplicationConfigurationDescription& WithJobPlanDescription(const char* value) { SetJobPlanDescription(value); return *this;}
+    template<typename JobPlanDescriptionT = Aws::String>
+    void SetJobPlanDescription(JobPlanDescriptionT&& value) { m_jobPlanDescriptionHasBeenSet = true; m_jobPlanDescription = std::forward<JobPlanDescriptionT>(value); }
+    template<typename JobPlanDescriptionT = Aws::String>
+    FlinkApplicationConfigurationDescription& WithJobPlanDescription(JobPlanDescriptionT&& value) { SetJobPlanDescription(std::forward<JobPlanDescriptionT>(value)); return *this;}
     ///@}
   private:
 

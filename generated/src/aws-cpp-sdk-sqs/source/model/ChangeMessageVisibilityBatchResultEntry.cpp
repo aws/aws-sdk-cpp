@@ -18,13 +18,7 @@ namespace SQS
 namespace Model
 {
 
-ChangeMessageVisibilityBatchResultEntry::ChangeMessageVisibilityBatchResultEntry() : 
-    m_idHasBeenSet(false)
-{
-}
-
 ChangeMessageVisibilityBatchResultEntry::ChangeMessageVisibilityBatchResultEntry(JsonView jsonValue)
-  : ChangeMessageVisibilityBatchResultEntry()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ChangeMessageVisibilityBatchResultEntry& ChangeMessageVisibilityBatchResultEntry
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

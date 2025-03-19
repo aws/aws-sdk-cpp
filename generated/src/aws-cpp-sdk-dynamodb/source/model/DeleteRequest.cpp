@@ -18,13 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-DeleteRequest::DeleteRequest() : 
-    m_keyHasBeenSet(false)
-{
-}
-
 DeleteRequest::DeleteRequest(JsonView jsonValue)
-  : DeleteRequest()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ DeleteRequest& DeleteRequest::operator =(JsonView jsonValue)
     }
     m_keyHasBeenSet = true;
   }
-
   return *this;
 }
 

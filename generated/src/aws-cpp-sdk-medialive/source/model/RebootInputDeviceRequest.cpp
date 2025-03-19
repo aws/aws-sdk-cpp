@@ -12,13 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RebootInputDeviceRequest::RebootInputDeviceRequest() : 
-    m_force(RebootInputDeviceForce::NOT_SET),
-    m_forceHasBeenSet(false),
-    m_inputDeviceIdHasBeenSet(false)
-{
-}
-
 Aws::String RebootInputDeviceRequest::SerializePayload() const
 {
   JsonValue payload;

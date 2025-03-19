@@ -12,15 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetectModerationLabelsRequest::DetectModerationLabelsRequest() : 
-    m_imageHasBeenSet(false),
-    m_minConfidence(0.0),
-    m_minConfidenceHasBeenSet(false),
-    m_humanLoopConfigHasBeenSet(false),
-    m_projectVersionHasBeenSet(false)
-{
-}
-
 Aws::String DetectModerationLabelsRequest::SerializePayload() const
 {
   JsonValue payload;

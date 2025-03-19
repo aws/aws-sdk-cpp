@@ -12,15 +12,6 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetActionTypeRequest::GetActionTypeRequest() : 
-    m_category(ActionCategory::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_providerHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 Aws::String GetActionTypeRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class GetRunResult
   {
   public:
-    AWS_DEVICEFARM_API GetRunResult();
+    AWS_DEVICEFARM_API GetRunResult() = default;
     AWS_DEVICEFARM_API GetRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEVICEFARM_API GetRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,28 +42,28 @@ namespace Model
     /**
      * <p>The run to get results from.</p>
      */
-    inline const Run& GetRun() const{ return m_run; }
-    inline void SetRun(const Run& value) { m_run = value; }
-    inline void SetRun(Run&& value) { m_run = std::move(value); }
-    inline GetRunResult& WithRun(const Run& value) { SetRun(value); return *this;}
-    inline GetRunResult& WithRun(Run&& value) { SetRun(std::move(value)); return *this;}
+    inline const Run& GetRun() const { return m_run; }
+    template<typename RunT = Run>
+    void SetRun(RunT&& value) { m_runHasBeenSet = true; m_run = std::forward<RunT>(value); }
+    template<typename RunT = Run>
+    GetRunResult& WithRun(RunT&& value) { SetRun(std::forward<RunT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRunResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRunResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRunResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRunResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Run m_run;
+    bool m_runHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

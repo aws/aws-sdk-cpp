@@ -21,7 +21,7 @@ namespace Model
   class DeleteRealtimeEndpointRequest : public MachineLearningRequest
   {
   public:
-    AWS_MACHINELEARNING_API DeleteRealtimeEndpointRequest();
+    AWS_MACHINELEARNING_API DeleteRealtimeEndpointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID assigned to the <code>MLModel</code> during creation.</p>
      */
-    inline const Aws::String& GetMLModelId() const{ return m_mLModelId; }
+    inline const Aws::String& GetMLModelId() const { return m_mLModelId; }
     inline bool MLModelIdHasBeenSet() const { return m_mLModelIdHasBeenSet; }
-    inline void SetMLModelId(const Aws::String& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = value; }
-    inline void SetMLModelId(Aws::String&& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = std::move(value); }
-    inline void SetMLModelId(const char* value) { m_mLModelIdHasBeenSet = true; m_mLModelId.assign(value); }
-    inline DeleteRealtimeEndpointRequest& WithMLModelId(const Aws::String& value) { SetMLModelId(value); return *this;}
-    inline DeleteRealtimeEndpointRequest& WithMLModelId(Aws::String&& value) { SetMLModelId(std::move(value)); return *this;}
-    inline DeleteRealtimeEndpointRequest& WithMLModelId(const char* value) { SetMLModelId(value); return *this;}
+    template<typename MLModelIdT = Aws::String>
+    void SetMLModelId(MLModelIdT&& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = std::forward<MLModelIdT>(value); }
+    template<typename MLModelIdT = Aws::String>
+    DeleteRealtimeEndpointRequest& WithMLModelId(MLModelIdT&& value) { SetMLModelId(std::forward<MLModelIdT>(value)); return *this;}
     ///@}
   private:
 

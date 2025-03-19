@@ -32,7 +32,7 @@ namespace Model
   class OwnershipControls
   {
   public:
-    AWS_S3CRT_API OwnershipControls();
+    AWS_S3CRT_API OwnershipControls() = default;
     AWS_S3CRT_API OwnershipControls(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API OwnershipControls& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>The container element for an ownership control rule.</p>
      */
-    inline const Aws::Vector<OwnershipControlsRule>& GetRules() const{ return m_rules; }
+    inline const Aws::Vector<OwnershipControlsRule>& GetRules() const { return m_rules; }
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    inline void SetRules(const Aws::Vector<OwnershipControlsRule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-    inline void SetRules(Aws::Vector<OwnershipControlsRule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-    inline OwnershipControls& WithRules(const Aws::Vector<OwnershipControlsRule>& value) { SetRules(value); return *this;}
-    inline OwnershipControls& WithRules(Aws::Vector<OwnershipControlsRule>&& value) { SetRules(std::move(value)); return *this;}
-    inline OwnershipControls& AddRules(const OwnershipControlsRule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-    inline OwnershipControls& AddRules(OwnershipControlsRule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    template<typename RulesT = Aws::Vector<OwnershipControlsRule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<OwnershipControlsRule>>
+    OwnershipControls& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = OwnershipControlsRule>
+    OwnershipControls& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
   private:
 

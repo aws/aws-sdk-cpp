@@ -18,14 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-ExportSummary::ExportSummary() : 
-    m_exportIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 ExportSummary::ExportSummary(JsonView jsonValue)
-  : ExportSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ExportSummary& ExportSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExportId"))
   {
     m_exportId = jsonValue.GetString("ExportId");
-
     m_exportIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

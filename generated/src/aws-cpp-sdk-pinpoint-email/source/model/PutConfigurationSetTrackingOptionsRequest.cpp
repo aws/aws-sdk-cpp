@@ -12,12 +12,6 @@ using namespace Aws::PinpointEmail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutConfigurationSetTrackingOptionsRequest::PutConfigurationSetTrackingOptionsRequest() : 
-    m_configurationSetNameHasBeenSet(false),
-    m_customRedirectDomainHasBeenSet(false)
-{
-}
-
 Aws::String PutConfigurationSetTrackingOptionsRequest::SerializePayload() const
 {
   JsonValue payload;

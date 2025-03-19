@@ -36,7 +36,7 @@ namespace Model
   class TimeToLive
   {
   public:
-    AWS_KEYSPACES_API TimeToLive();
+    AWS_KEYSPACES_API TimeToLive() = default;
     AWS_KEYSPACES_API TimeToLive(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API TimeToLive& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KEYSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,16 +47,14 @@ namespace Model
      * <p>Shows how to enable custom Time to Live (TTL) settings for the specified
      * table.</p>
      */
-    inline const TimeToLiveStatus& GetStatus() const{ return m_status; }
+    inline TimeToLiveStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const TimeToLiveStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(TimeToLiveStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline TimeToLive& WithStatus(const TimeToLiveStatus& value) { SetStatus(value); return *this;}
-    inline TimeToLive& WithStatus(TimeToLiveStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(TimeToLiveStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline TimeToLive& WithStatus(TimeToLiveStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    TimeToLiveStatus m_status;
+    TimeToLiveStatus m_status{TimeToLiveStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

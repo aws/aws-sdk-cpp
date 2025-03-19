@@ -28,7 +28,7 @@ namespace Model
   class GetProfileAssociationResult
   {
   public:
-    AWS_ROUTE53PROFILES_API GetProfileAssociationResult();
+    AWS_ROUTE53PROFILES_API GetProfileAssociationResult() = default;
     AWS_ROUTE53PROFILES_API GetProfileAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53PROFILES_API GetProfileAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p> Information about the Profile association that you specified in a
      * <code>GetProfileAssociation</code> request. </p>
      */
-    inline const ProfileAssociation& GetProfileAssociation() const{ return m_profileAssociation; }
-    inline void SetProfileAssociation(const ProfileAssociation& value) { m_profileAssociation = value; }
-    inline void SetProfileAssociation(ProfileAssociation&& value) { m_profileAssociation = std::move(value); }
-    inline GetProfileAssociationResult& WithProfileAssociation(const ProfileAssociation& value) { SetProfileAssociation(value); return *this;}
-    inline GetProfileAssociationResult& WithProfileAssociation(ProfileAssociation&& value) { SetProfileAssociation(std::move(value)); return *this;}
+    inline const ProfileAssociation& GetProfileAssociation() const { return m_profileAssociation; }
+    template<typename ProfileAssociationT = ProfileAssociation>
+    void SetProfileAssociation(ProfileAssociationT&& value) { m_profileAssociationHasBeenSet = true; m_profileAssociation = std::forward<ProfileAssociationT>(value); }
+    template<typename ProfileAssociationT = ProfileAssociation>
+    GetProfileAssociationResult& WithProfileAssociation(ProfileAssociationT&& value) { SetProfileAssociation(std::forward<ProfileAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetProfileAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetProfileAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetProfileAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetProfileAssociationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ProfileAssociation m_profileAssociation;
+    bool m_profileAssociationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

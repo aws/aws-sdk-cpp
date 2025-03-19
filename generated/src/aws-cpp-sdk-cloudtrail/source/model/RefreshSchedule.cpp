@@ -18,16 +18,7 @@ namespace CloudTrail
 namespace Model
 {
 
-RefreshSchedule::RefreshSchedule() : 
-    m_frequencyHasBeenSet(false),
-    m_status(RefreshScheduleStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_timeOfDayHasBeenSet(false)
-{
-}
-
 RefreshSchedule::RefreshSchedule(JsonView jsonValue)
-  : RefreshSchedule()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ RefreshSchedule& RefreshSchedule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Frequency"))
   {
     m_frequency = jsonValue.GetObject("Frequency");
-
     m_frequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = RefreshScheduleStatusMapper::GetRefreshScheduleStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeOfDay"))
   {
     m_timeOfDay = jsonValue.GetString("TimeOfDay");
-
     m_timeOfDayHasBeenSet = true;
   }
-
   return *this;
 }
 

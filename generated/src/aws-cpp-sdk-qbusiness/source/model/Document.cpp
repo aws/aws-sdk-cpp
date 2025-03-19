@@ -18,21 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-Document::Document() : 
-    m_idHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_contentType(ContentType::NOT_SET),
-    m_contentTypeHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_accessConfigurationHasBeenSet(false),
-    m_documentEnrichmentConfigurationHasBeenSet(false),
-    m_mediaExtractionConfigurationHasBeenSet(false)
-{
-}
-
 Document::Document(JsonView jsonValue)
-  : Document()
 {
   *this = jsonValue;
 }
@@ -42,10 +28,8 @@ Document& Document::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("attributes");
@@ -55,49 +39,36 @@ Document& Document::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("content"))
   {
     m_content = jsonValue.GetObject("content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contentType"))
   {
     m_contentType = ContentTypeMapper::GetContentTypeForName(jsonValue.GetString("contentType"));
-
     m_contentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accessConfiguration"))
   {
     m_accessConfiguration = jsonValue.GetObject("accessConfiguration");
-
     m_accessConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("documentEnrichmentConfiguration"))
   {
     m_documentEnrichmentConfiguration = jsonValue.GetObject("documentEnrichmentConfiguration");
-
     m_documentEnrichmentConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mediaExtractionConfiguration"))
   {
     m_mediaExtractionConfiguration = jsonValue.GetObject("mediaExtractionConfiguration");
-
     m_mediaExtractionConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

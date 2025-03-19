@@ -41,7 +41,7 @@ namespace Model
   class AuthEventType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API AuthEventType();
+    AWS_COGNITOIDENTITYPROVIDER_API AuthEventType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API AuthEventType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API AuthEventType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,26 +51,22 @@ namespace Model
     /**
      * <p>The event ID.</p>
      */
-    inline const Aws::String& GetEventId() const{ return m_eventId; }
+    inline const Aws::String& GetEventId() const { return m_eventId; }
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
-    inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
-    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
-    inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
-    inline AuthEventType& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
-    inline AuthEventType& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
-    inline AuthEventType& WithEventId(const char* value) { SetEventId(value); return *this;}
+    template<typename EventIdT = Aws::String>
+    void SetEventId(EventIdT&& value) { m_eventIdHasBeenSet = true; m_eventId = std::forward<EventIdT>(value); }
+    template<typename EventIdT = Aws::String>
+    AuthEventType& WithEventId(EventIdT&& value) { SetEventId(std::forward<EventIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of authentication event.</p>
      */
-    inline const EventType& GetEventType() const{ return m_eventType; }
+    inline EventType GetEventType() const { return m_eventType; }
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
-    inline void SetEventType(const EventType& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
-    inline void SetEventType(EventType&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
-    inline AuthEventType& WithEventType(const EventType& value) { SetEventType(value); return *this;}
-    inline AuthEventType& WithEventType(EventType&& value) { SetEventType(std::move(value)); return *this;}
+    inline void SetEventType(EventType value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
+    inline AuthEventType& WithEventType(EventType value) { SetEventType(value); return *this;}
     ///@}
 
     ///@{
@@ -79,24 +75,22 @@ namespace Model
      * timestamp in UNIX epoch time format. Your SDK might render the output in a
      * human-readable format like ISO 8601 or a Java <code>Date</code> object.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline AuthEventType& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline AuthEventType& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    AuthEventType& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The event response.</p>
      */
-    inline const EventResponseType& GetEventResponse() const{ return m_eventResponse; }
+    inline EventResponseType GetEventResponse() const { return m_eventResponse; }
     inline bool EventResponseHasBeenSet() const { return m_eventResponseHasBeenSet; }
-    inline void SetEventResponse(const EventResponseType& value) { m_eventResponseHasBeenSet = true; m_eventResponse = value; }
-    inline void SetEventResponse(EventResponseType&& value) { m_eventResponseHasBeenSet = true; m_eventResponse = std::move(value); }
-    inline AuthEventType& WithEventResponse(const EventResponseType& value) { SetEventResponse(value); return *this;}
-    inline AuthEventType& WithEventResponse(EventResponseType&& value) { SetEventResponse(std::move(value)); return *this;}
+    inline void SetEventResponse(EventResponseType value) { m_eventResponseHasBeenSet = true; m_eventResponse = value; }
+    inline AuthEventType& WithEventResponse(EventResponseType value) { SetEventResponse(value); return *this;}
     ///@}
 
     ///@{
@@ -105,12 +99,12 @@ namespace Model
      * information about whether your user pool detected compromised credentials,
      * whether the event triggered an automated response, and the level of risk.</p>
      */
-    inline const EventRiskType& GetEventRisk() const{ return m_eventRisk; }
+    inline const EventRiskType& GetEventRisk() const { return m_eventRisk; }
     inline bool EventRiskHasBeenSet() const { return m_eventRiskHasBeenSet; }
-    inline void SetEventRisk(const EventRiskType& value) { m_eventRiskHasBeenSet = true; m_eventRisk = value; }
-    inline void SetEventRisk(EventRiskType&& value) { m_eventRiskHasBeenSet = true; m_eventRisk = std::move(value); }
-    inline AuthEventType& WithEventRisk(const EventRiskType& value) { SetEventRisk(value); return *this;}
-    inline AuthEventType& WithEventRisk(EventRiskType&& value) { SetEventRisk(std::move(value)); return *this;}
+    template<typename EventRiskT = EventRiskType>
+    void SetEventRisk(EventRiskT&& value) { m_eventRiskHasBeenSet = true; m_eventRisk = std::forward<EventRiskT>(value); }
+    template<typename EventRiskT = EventRiskType>
+    AuthEventType& WithEventRisk(EventRiskT&& value) { SetEventRisk(std::forward<EventRiskT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,14 +112,14 @@ namespace Model
      * <p>A list of the challenges that the user was requested to answer, for example
      * <code>Password</code>, and the result, for example <code>Success</code>.</p>
      */
-    inline const Aws::Vector<ChallengeResponseType>& GetChallengeResponses() const{ return m_challengeResponses; }
+    inline const Aws::Vector<ChallengeResponseType>& GetChallengeResponses() const { return m_challengeResponses; }
     inline bool ChallengeResponsesHasBeenSet() const { return m_challengeResponsesHasBeenSet; }
-    inline void SetChallengeResponses(const Aws::Vector<ChallengeResponseType>& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses = value; }
-    inline void SetChallengeResponses(Aws::Vector<ChallengeResponseType>&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses = std::move(value); }
-    inline AuthEventType& WithChallengeResponses(const Aws::Vector<ChallengeResponseType>& value) { SetChallengeResponses(value); return *this;}
-    inline AuthEventType& WithChallengeResponses(Aws::Vector<ChallengeResponseType>&& value) { SetChallengeResponses(std::move(value)); return *this;}
-    inline AuthEventType& AddChallengeResponses(const ChallengeResponseType& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.push_back(value); return *this; }
-    inline AuthEventType& AddChallengeResponses(ChallengeResponseType&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.push_back(std::move(value)); return *this; }
+    template<typename ChallengeResponsesT = Aws::Vector<ChallengeResponseType>>
+    void SetChallengeResponses(ChallengeResponsesT&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses = std::forward<ChallengeResponsesT>(value); }
+    template<typename ChallengeResponsesT = Aws::Vector<ChallengeResponseType>>
+    AuthEventType& WithChallengeResponses(ChallengeResponsesT&& value) { SetChallengeResponses(std::forward<ChallengeResponsesT>(value)); return *this;}
+    template<typename ChallengeResponsesT = ChallengeResponseType>
+    AuthEventType& AddChallengeResponses(ChallengeResponsesT&& value) { m_challengeResponsesHasBeenSet = true; m_challengeResponses.emplace_back(std::forward<ChallengeResponsesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -134,12 +128,12 @@ namespace Model
      * provides additional information about the client from which event the request is
      * received.</p>
      */
-    inline const EventContextDataType& GetEventContextData() const{ return m_eventContextData; }
+    inline const EventContextDataType& GetEventContextData() const { return m_eventContextData; }
     inline bool EventContextDataHasBeenSet() const { return m_eventContextDataHasBeenSet; }
-    inline void SetEventContextData(const EventContextDataType& value) { m_eventContextDataHasBeenSet = true; m_eventContextData = value; }
-    inline void SetEventContextData(EventContextDataType&& value) { m_eventContextDataHasBeenSet = true; m_eventContextData = std::move(value); }
-    inline AuthEventType& WithEventContextData(const EventContextDataType& value) { SetEventContextData(value); return *this;}
-    inline AuthEventType& WithEventContextData(EventContextDataType&& value) { SetEventContextData(std::move(value)); return *this;}
+    template<typename EventContextDataT = EventContextDataType>
+    void SetEventContextData(EventContextDataT&& value) { m_eventContextDataHasBeenSet = true; m_eventContextData = std::forward<EventContextDataT>(value); }
+    template<typename EventContextDataT = EventContextDataType>
+    AuthEventType& WithEventContextData(EventContextDataT&& value) { SetEventContextData(std::forward<EventContextDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -152,25 +146,25 @@ namespace Model
      * that you agreed with the user pool risk level and evaluated a session to be
      * invalid, or likely malicious.</p>
      */
-    inline const EventFeedbackType& GetEventFeedback() const{ return m_eventFeedback; }
+    inline const EventFeedbackType& GetEventFeedback() const { return m_eventFeedback; }
     inline bool EventFeedbackHasBeenSet() const { return m_eventFeedbackHasBeenSet; }
-    inline void SetEventFeedback(const EventFeedbackType& value) { m_eventFeedbackHasBeenSet = true; m_eventFeedback = value; }
-    inline void SetEventFeedback(EventFeedbackType&& value) { m_eventFeedbackHasBeenSet = true; m_eventFeedback = std::move(value); }
-    inline AuthEventType& WithEventFeedback(const EventFeedbackType& value) { SetEventFeedback(value); return *this;}
-    inline AuthEventType& WithEventFeedback(EventFeedbackType&& value) { SetEventFeedback(std::move(value)); return *this;}
+    template<typename EventFeedbackT = EventFeedbackType>
+    void SetEventFeedback(EventFeedbackT&& value) { m_eventFeedbackHasBeenSet = true; m_eventFeedback = std::forward<EventFeedbackT>(value); }
+    template<typename EventFeedbackT = EventFeedbackType>
+    AuthEventType& WithEventFeedback(EventFeedbackT&& value) { SetEventFeedback(std::forward<EventFeedbackT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_eventId;
     bool m_eventIdHasBeenSet = false;
 
-    EventType m_eventType;
+    EventType m_eventType{EventType::NOT_SET};
     bool m_eventTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
     bool m_creationDateHasBeenSet = false;
 
-    EventResponseType m_eventResponse;
+    EventResponseType m_eventResponse{EventResponseType::NOT_SET};
     bool m_eventResponseHasBeenSet = false;
 
     EventRiskType m_eventRisk;

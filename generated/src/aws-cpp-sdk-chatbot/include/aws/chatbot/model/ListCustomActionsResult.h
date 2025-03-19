@@ -28,7 +28,7 @@ namespace Model
   class ListCustomActionsResult
   {
   public:
-    AWS_CHATBOT_API ListCustomActionsResult();
+    AWS_CHATBOT_API ListCustomActionsResult() = default;
     AWS_CHATBOT_API ListCustomActionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHATBOT_API ListCustomActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,14 +37,13 @@ namespace Model
     /**
      * <p>A list of custom actions.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCustomActions() const{ return m_customActions; }
-    inline void SetCustomActions(const Aws::Vector<Aws::String>& value) { m_customActions = value; }
-    inline void SetCustomActions(Aws::Vector<Aws::String>&& value) { m_customActions = std::move(value); }
-    inline ListCustomActionsResult& WithCustomActions(const Aws::Vector<Aws::String>& value) { SetCustomActions(value); return *this;}
-    inline ListCustomActionsResult& WithCustomActions(Aws::Vector<Aws::String>&& value) { SetCustomActions(std::move(value)); return *this;}
-    inline ListCustomActionsResult& AddCustomActions(const Aws::String& value) { m_customActions.push_back(value); return *this; }
-    inline ListCustomActionsResult& AddCustomActions(Aws::String&& value) { m_customActions.push_back(std::move(value)); return *this; }
-    inline ListCustomActionsResult& AddCustomActions(const char* value) { m_customActions.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetCustomActions() const { return m_customActions; }
+    template<typename CustomActionsT = Aws::Vector<Aws::String>>
+    void SetCustomActions(CustomActionsT&& value) { m_customActionsHasBeenSet = true; m_customActions = std::forward<CustomActionsT>(value); }
+    template<typename CustomActionsT = Aws::Vector<Aws::String>>
+    ListCustomActionsResult& WithCustomActions(CustomActionsT&& value) { SetCustomActions(std::forward<CustomActionsT>(value)); return *this;}
+    template<typename CustomActionsT = Aws::String>
+    ListCustomActionsResult& AddCustomActions(CustomActionsT&& value) { m_customActionsHasBeenSet = true; m_customActions.emplace_back(std::forward<CustomActionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +53,31 @@ namespace Model
      * response includes only results beyond the token, up to the value specified by
      * MaxResults.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCustomActionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCustomActionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCustomActionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCustomActionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCustomActionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCustomActionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCustomActionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCustomActionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_customActions;
+    bool m_customActionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

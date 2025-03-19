@@ -35,7 +35,7 @@ namespace Model
   class ReportStatus
   {
   public:
-    AWS_COSTANDUSAGEREPORTSERVICE_API ReportStatus();
+    AWS_COSTANDUSAGEREPORTSERVICE_API ReportStatus() = default;
     AWS_COSTANDUSAGEREPORTSERVICE_API ReportStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTANDUSAGEREPORTSERVICE_API ReportStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTANDUSAGEREPORTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,33 +45,29 @@ namespace Model
     /**
      * <p>A timestamp that gives the date of a report delivery.</p>
      */
-    inline const Aws::String& GetLastDelivery() const{ return m_lastDelivery; }
+    inline const Aws::String& GetLastDelivery() const { return m_lastDelivery; }
     inline bool LastDeliveryHasBeenSet() const { return m_lastDeliveryHasBeenSet; }
-    inline void SetLastDelivery(const Aws::String& value) { m_lastDeliveryHasBeenSet = true; m_lastDelivery = value; }
-    inline void SetLastDelivery(Aws::String&& value) { m_lastDeliveryHasBeenSet = true; m_lastDelivery = std::move(value); }
-    inline void SetLastDelivery(const char* value) { m_lastDeliveryHasBeenSet = true; m_lastDelivery.assign(value); }
-    inline ReportStatus& WithLastDelivery(const Aws::String& value) { SetLastDelivery(value); return *this;}
-    inline ReportStatus& WithLastDelivery(Aws::String&& value) { SetLastDelivery(std::move(value)); return *this;}
-    inline ReportStatus& WithLastDelivery(const char* value) { SetLastDelivery(value); return *this;}
+    template<typename LastDeliveryT = Aws::String>
+    void SetLastDelivery(LastDeliveryT&& value) { m_lastDeliveryHasBeenSet = true; m_lastDelivery = std::forward<LastDeliveryT>(value); }
+    template<typename LastDeliveryT = Aws::String>
+    ReportStatus& WithLastDelivery(LastDeliveryT&& value) { SetLastDelivery(std::forward<LastDeliveryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An enum that gives the status of a report delivery.</p>
      */
-    inline const LastStatus& GetLastStatus() const{ return m_lastStatus; }
+    inline LastStatus GetLastStatus() const { return m_lastStatus; }
     inline bool LastStatusHasBeenSet() const { return m_lastStatusHasBeenSet; }
-    inline void SetLastStatus(const LastStatus& value) { m_lastStatusHasBeenSet = true; m_lastStatus = value; }
-    inline void SetLastStatus(LastStatus&& value) { m_lastStatusHasBeenSet = true; m_lastStatus = std::move(value); }
-    inline ReportStatus& WithLastStatus(const LastStatus& value) { SetLastStatus(value); return *this;}
-    inline ReportStatus& WithLastStatus(LastStatus&& value) { SetLastStatus(std::move(value)); return *this;}
+    inline void SetLastStatus(LastStatus value) { m_lastStatusHasBeenSet = true; m_lastStatus = value; }
+    inline ReportStatus& WithLastStatus(LastStatus value) { SetLastStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_lastDelivery;
     bool m_lastDeliveryHasBeenSet = false;
 
-    LastStatus m_lastStatus;
+    LastStatus m_lastStatus{LastStatus::NOT_SET};
     bool m_lastStatusHasBeenSet = false;
   };
 

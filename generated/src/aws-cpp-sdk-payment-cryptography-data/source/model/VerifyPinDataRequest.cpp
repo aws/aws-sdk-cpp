@@ -12,21 +12,6 @@ using namespace Aws::PaymentCryptographyData::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-VerifyPinDataRequest::VerifyPinDataRequest() : 
-    m_verificationKeyIdentifierHasBeenSet(false),
-    m_encryptionKeyIdentifierHasBeenSet(false),
-    m_verificationAttributesHasBeenSet(false),
-    m_encryptedPinBlockHasBeenSet(false),
-    m_primaryAccountNumberHasBeenSet(false),
-    m_pinBlockFormat(PinBlockFormatForPinData::NOT_SET),
-    m_pinBlockFormatHasBeenSet(false),
-    m_pinDataLength(0),
-    m_pinDataLengthHasBeenSet(false),
-    m_dukptAttributesHasBeenSet(false),
-    m_encryptionWrappedKeyHasBeenSet(false)
-{
-}
-
 Aws::String VerifyPinDataRequest::SerializePayload() const
 {
   JsonValue payload;

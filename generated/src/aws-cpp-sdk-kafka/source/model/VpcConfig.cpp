@@ -18,14 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-VpcConfig::VpcConfig() : 
-    m_subnetIdsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
-{
-}
-
 VpcConfig::VpcConfig(JsonView jsonValue)
-  : VpcConfig()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ VpcConfig& VpcConfig::operator =(JsonView jsonValue)
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
@@ -51,7 +43,6 @@ VpcConfig& VpcConfig::operator =(JsonView jsonValue)
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

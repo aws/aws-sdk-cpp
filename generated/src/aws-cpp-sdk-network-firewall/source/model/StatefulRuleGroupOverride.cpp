@@ -18,14 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-StatefulRuleGroupOverride::StatefulRuleGroupOverride() : 
-    m_action(OverrideAction::NOT_SET),
-    m_actionHasBeenSet(false)
-{
-}
-
 StatefulRuleGroupOverride::StatefulRuleGroupOverride(JsonView jsonValue)
-  : StatefulRuleGroupOverride()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ StatefulRuleGroupOverride& StatefulRuleGroupOverride::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Action"))
   {
     m_action = OverrideActionMapper::GetOverrideActionForName(jsonValue.GetString("Action"));
-
     m_actionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-S3Location::S3Location() : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_bucketOwnerHasBeenSet(false)
-{
-}
-
 S3Location::S3Location(JsonView jsonValue)
-  : S3Location()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ S3Location& S3Location::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Bucket"))
   {
     m_bucket = jsonValue.GetString("Bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BucketOwner"))
   {
     m_bucketOwner = jsonValue.GetString("BucketOwner");
-
     m_bucketOwnerHasBeenSet = true;
   }
-
   return *this;
 }
 

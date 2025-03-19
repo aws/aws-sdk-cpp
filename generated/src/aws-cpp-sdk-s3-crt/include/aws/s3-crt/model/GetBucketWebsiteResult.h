@@ -32,7 +32,7 @@ namespace Model
   class GetBucketWebsiteResult
   {
   public:
-    AWS_S3CRT_API GetBucketWebsiteResult();
+    AWS_S3CRT_API GetBucketWebsiteResult() = default;
     AWS_S3CRT_API GetBucketWebsiteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3CRT_API GetBucketWebsiteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -42,11 +42,11 @@ namespace Model
      * <p>Specifies the redirect behavior of all requests to a website endpoint of an
      * Amazon S3 bucket.</p>
      */
-    inline const RedirectAllRequestsTo& GetRedirectAllRequestsTo() const{ return m_redirectAllRequestsTo; }
-    inline void SetRedirectAllRequestsTo(const RedirectAllRequestsTo& value) { m_redirectAllRequestsTo = value; }
-    inline void SetRedirectAllRequestsTo(RedirectAllRequestsTo&& value) { m_redirectAllRequestsTo = std::move(value); }
-    inline GetBucketWebsiteResult& WithRedirectAllRequestsTo(const RedirectAllRequestsTo& value) { SetRedirectAllRequestsTo(value); return *this;}
-    inline GetBucketWebsiteResult& WithRedirectAllRequestsTo(RedirectAllRequestsTo&& value) { SetRedirectAllRequestsTo(std::move(value)); return *this;}
+    inline const RedirectAllRequestsTo& GetRedirectAllRequestsTo() const { return m_redirectAllRequestsTo; }
+    template<typename RedirectAllRequestsToT = RedirectAllRequestsTo>
+    void SetRedirectAllRequestsTo(RedirectAllRequestsToT&& value) { m_redirectAllRequestsToHasBeenSet = true; m_redirectAllRequestsTo = std::forward<RedirectAllRequestsToT>(value); }
+    template<typename RedirectAllRequestsToT = RedirectAllRequestsTo>
+    GetBucketWebsiteResult& WithRedirectAllRequestsTo(RedirectAllRequestsToT&& value) { SetRedirectAllRequestsTo(std::forward<RedirectAllRequestsToT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,11 +54,11 @@ namespace Model
      * <p>The name of the index document for the website (for example
      * <code>index.html</code>).</p>
      */
-    inline const IndexDocument& GetIndexDocument() const{ return m_indexDocument; }
-    inline void SetIndexDocument(const IndexDocument& value) { m_indexDocument = value; }
-    inline void SetIndexDocument(IndexDocument&& value) { m_indexDocument = std::move(value); }
-    inline GetBucketWebsiteResult& WithIndexDocument(const IndexDocument& value) { SetIndexDocument(value); return *this;}
-    inline GetBucketWebsiteResult& WithIndexDocument(IndexDocument&& value) { SetIndexDocument(std::move(value)); return *this;}
+    inline const IndexDocument& GetIndexDocument() const { return m_indexDocument; }
+    template<typename IndexDocumentT = IndexDocument>
+    void SetIndexDocument(IndexDocumentT&& value) { m_indexDocumentHasBeenSet = true; m_indexDocument = std::forward<IndexDocumentT>(value); }
+    template<typename IndexDocumentT = IndexDocument>
+    GetBucketWebsiteResult& WithIndexDocument(IndexDocumentT&& value) { SetIndexDocument(std::forward<IndexDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,47 +66,50 @@ namespace Model
      * <p>The object key name of the website error document to use for 4XX class
      * errors.</p>
      */
-    inline const ErrorDocument& GetErrorDocument() const{ return m_errorDocument; }
-    inline void SetErrorDocument(const ErrorDocument& value) { m_errorDocument = value; }
-    inline void SetErrorDocument(ErrorDocument&& value) { m_errorDocument = std::move(value); }
-    inline GetBucketWebsiteResult& WithErrorDocument(const ErrorDocument& value) { SetErrorDocument(value); return *this;}
-    inline GetBucketWebsiteResult& WithErrorDocument(ErrorDocument&& value) { SetErrorDocument(std::move(value)); return *this;}
+    inline const ErrorDocument& GetErrorDocument() const { return m_errorDocument; }
+    template<typename ErrorDocumentT = ErrorDocument>
+    void SetErrorDocument(ErrorDocumentT&& value) { m_errorDocumentHasBeenSet = true; m_errorDocument = std::forward<ErrorDocumentT>(value); }
+    template<typename ErrorDocumentT = ErrorDocument>
+    GetBucketWebsiteResult& WithErrorDocument(ErrorDocumentT&& value) { SetErrorDocument(std::forward<ErrorDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Rules that define when a redirect is applied and the redirect behavior.</p>
      */
-    inline const Aws::Vector<RoutingRule>& GetRoutingRules() const{ return m_routingRules; }
-    inline void SetRoutingRules(const Aws::Vector<RoutingRule>& value) { m_routingRules = value; }
-    inline void SetRoutingRules(Aws::Vector<RoutingRule>&& value) { m_routingRules = std::move(value); }
-    inline GetBucketWebsiteResult& WithRoutingRules(const Aws::Vector<RoutingRule>& value) { SetRoutingRules(value); return *this;}
-    inline GetBucketWebsiteResult& WithRoutingRules(Aws::Vector<RoutingRule>&& value) { SetRoutingRules(std::move(value)); return *this;}
-    inline GetBucketWebsiteResult& AddRoutingRules(const RoutingRule& value) { m_routingRules.push_back(value); return *this; }
-    inline GetBucketWebsiteResult& AddRoutingRules(RoutingRule&& value) { m_routingRules.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RoutingRule>& GetRoutingRules() const { return m_routingRules; }
+    template<typename RoutingRulesT = Aws::Vector<RoutingRule>>
+    void SetRoutingRules(RoutingRulesT&& value) { m_routingRulesHasBeenSet = true; m_routingRules = std::forward<RoutingRulesT>(value); }
+    template<typename RoutingRulesT = Aws::Vector<RoutingRule>>
+    GetBucketWebsiteResult& WithRoutingRules(RoutingRulesT&& value) { SetRoutingRules(std::forward<RoutingRulesT>(value)); return *this;}
+    template<typename RoutingRulesT = RoutingRule>
+    GetBucketWebsiteResult& AddRoutingRules(RoutingRulesT&& value) { m_routingRulesHasBeenSet = true; m_routingRules.emplace_back(std::forward<RoutingRulesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetBucketWebsiteResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetBucketWebsiteResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetBucketWebsiteResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetBucketWebsiteResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RedirectAllRequestsTo m_redirectAllRequestsTo;
+    bool m_redirectAllRequestsToHasBeenSet = false;
 
     IndexDocument m_indexDocument;
+    bool m_indexDocumentHasBeenSet = false;
 
     ErrorDocument m_errorDocument;
+    bool m_errorDocumentHasBeenSet = false;
 
     Aws::Vector<RoutingRule> m_routingRules;
+    bool m_routingRulesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

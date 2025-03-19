@@ -12,13 +12,6 @@ using namespace Aws::CodeCatalyst::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopDevEnvironmentRequest::StopDevEnvironmentRequest() : 
-    m_spaceNameHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String StopDevEnvironmentRequest::SerializePayload() const
 {
   return {};

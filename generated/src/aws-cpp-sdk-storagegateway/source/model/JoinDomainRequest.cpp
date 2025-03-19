@@ -12,18 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-JoinDomainRequest::JoinDomainRequest() : 
-    m_gatewayARNHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_organizationalUnitHasBeenSet(false),
-    m_domainControllersHasBeenSet(false),
-    m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
-{
-}
-
 Aws::String JoinDomainRequest::SerializePayload() const
 {
   JsonValue payload;

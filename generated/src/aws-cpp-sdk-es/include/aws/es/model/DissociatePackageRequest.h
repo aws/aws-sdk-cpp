@@ -25,7 +25,7 @@ namespace Model
   class DissociatePackageRequest : public ElasticsearchServiceRequest
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API DissociatePackageRequest();
+    AWS_ELASTICSEARCHSERVICE_API DissociatePackageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,28 +41,24 @@ namespace Model
      * <p>Internal ID of the package that you want to associate with a domain. Use
      * <code>DescribePackages</code> to find this value.</p>
      */
-    inline const Aws::String& GetPackageID() const{ return m_packageID; }
+    inline const Aws::String& GetPackageID() const { return m_packageID; }
     inline bool PackageIDHasBeenSet() const { return m_packageIDHasBeenSet; }
-    inline void SetPackageID(const Aws::String& value) { m_packageIDHasBeenSet = true; m_packageID = value; }
-    inline void SetPackageID(Aws::String&& value) { m_packageIDHasBeenSet = true; m_packageID = std::move(value); }
-    inline void SetPackageID(const char* value) { m_packageIDHasBeenSet = true; m_packageID.assign(value); }
-    inline DissociatePackageRequest& WithPackageID(const Aws::String& value) { SetPackageID(value); return *this;}
-    inline DissociatePackageRequest& WithPackageID(Aws::String&& value) { SetPackageID(std::move(value)); return *this;}
-    inline DissociatePackageRequest& WithPackageID(const char* value) { SetPackageID(value); return *this;}
+    template<typename PackageIDT = Aws::String>
+    void SetPackageID(PackageIDT&& value) { m_packageIDHasBeenSet = true; m_packageID = std::forward<PackageIDT>(value); }
+    template<typename PackageIDT = Aws::String>
+    DissociatePackageRequest& WithPackageID(PackageIDT&& value) { SetPackageID(std::forward<PackageIDT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Name of the domain that you want to associate the package with.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline DissociatePackageRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline DissociatePackageRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline DissociatePackageRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    DissociatePackageRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
   private:
 

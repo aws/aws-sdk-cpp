@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-EncryptionConfiguration::EncryptionConfiguration() : 
-    m_s3EncryptionHasBeenSet(false),
-    m_cloudWatchEncryptionHasBeenSet(false),
-    m_jobBookmarksEncryptionHasBeenSet(false),
-    m_dataQualityEncryptionHasBeenSet(false)
-{
-}
-
 EncryptionConfiguration::EncryptionConfiguration(JsonView jsonValue)
-  : EncryptionConfiguration()
 {
   *this = jsonValue;
 }
@@ -43,28 +34,21 @@ EncryptionConfiguration& EncryptionConfiguration::operator =(JsonView jsonValue)
     }
     m_s3EncryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchEncryption"))
   {
     m_cloudWatchEncryption = jsonValue.GetObject("CloudWatchEncryption");
-
     m_cloudWatchEncryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobBookmarksEncryption"))
   {
     m_jobBookmarksEncryption = jsonValue.GetObject("JobBookmarksEncryption");
-
     m_jobBookmarksEncryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataQualityEncryption"))
   {
     m_dataQualityEncryption = jsonValue.GetObject("DataQualityEncryption");
-
     m_dataQualityEncryptionHasBeenSet = true;
   }
-
   return *this;
 }
 

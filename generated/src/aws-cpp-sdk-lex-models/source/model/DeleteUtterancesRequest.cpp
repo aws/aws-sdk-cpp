@@ -12,12 +12,6 @@ using namespace Aws::LexModelBuildingService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteUtterancesRequest::DeleteUtterancesRequest() : 
-    m_botNameHasBeenSet(false),
-    m_userIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteUtterancesRequest::SerializePayload() const
 {
   return {};

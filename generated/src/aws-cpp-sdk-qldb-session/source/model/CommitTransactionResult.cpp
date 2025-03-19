@@ -19,16 +19,7 @@ namespace QLDBSession
 namespace Model
 {
 
-CommitTransactionResult::CommitTransactionResult() : 
-    m_transactionIdHasBeenSet(false),
-    m_commitDigestHasBeenSet(false),
-    m_timingInformationHasBeenSet(false),
-    m_consumedIOsHasBeenSet(false)
-{
-}
-
 CommitTransactionResult::CommitTransactionResult(JsonView jsonValue)
-  : CommitTransactionResult()
 {
   *this = jsonValue;
 }
@@ -38,30 +29,23 @@ CommitTransactionResult& CommitTransactionResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TransactionId"))
   {
     m_transactionId = jsonValue.GetString("TransactionId");
-
     m_transactionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CommitDigest"))
   {
     m_commitDigest = HashingUtils::Base64Decode(jsonValue.GetString("CommitDigest"));
     m_commitDigestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimingInformation"))
   {
     m_timingInformation = jsonValue.GetObject("TimingInformation");
-
     m_timingInformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConsumedIOs"))
   {
     m_consumedIOs = jsonValue.GetObject("ConsumedIOs");
-
     m_consumedIOsHasBeenSet = true;
   }
-
   return *this;
 }
 

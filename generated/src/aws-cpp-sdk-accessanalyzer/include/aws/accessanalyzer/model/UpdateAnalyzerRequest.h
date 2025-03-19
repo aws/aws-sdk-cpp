@@ -22,7 +22,7 @@ namespace Model
   class UpdateAnalyzerRequest : public AccessAnalyzerRequest
   {
   public:
-    AWS_ACCESSANALYZER_API UpdateAnalyzerRequest();
+    AWS_ACCESSANALYZER_API UpdateAnalyzerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,24 +37,22 @@ namespace Model
     /**
      * <p>The name of the analyzer to modify.</p>
      */
-    inline const Aws::String& GetAnalyzerName() const{ return m_analyzerName; }
+    inline const Aws::String& GetAnalyzerName() const { return m_analyzerName; }
     inline bool AnalyzerNameHasBeenSet() const { return m_analyzerNameHasBeenSet; }
-    inline void SetAnalyzerName(const Aws::String& value) { m_analyzerNameHasBeenSet = true; m_analyzerName = value; }
-    inline void SetAnalyzerName(Aws::String&& value) { m_analyzerNameHasBeenSet = true; m_analyzerName = std::move(value); }
-    inline void SetAnalyzerName(const char* value) { m_analyzerNameHasBeenSet = true; m_analyzerName.assign(value); }
-    inline UpdateAnalyzerRequest& WithAnalyzerName(const Aws::String& value) { SetAnalyzerName(value); return *this;}
-    inline UpdateAnalyzerRequest& WithAnalyzerName(Aws::String&& value) { SetAnalyzerName(std::move(value)); return *this;}
-    inline UpdateAnalyzerRequest& WithAnalyzerName(const char* value) { SetAnalyzerName(value); return *this;}
+    template<typename AnalyzerNameT = Aws::String>
+    void SetAnalyzerName(AnalyzerNameT&& value) { m_analyzerNameHasBeenSet = true; m_analyzerName = std::forward<AnalyzerNameT>(value); }
+    template<typename AnalyzerNameT = Aws::String>
+    UpdateAnalyzerRequest& WithAnalyzerName(AnalyzerNameT&& value) { SetAnalyzerName(std::forward<AnalyzerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const AnalyzerConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const AnalyzerConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const AnalyzerConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(AnalyzerConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline UpdateAnalyzerRequest& WithConfiguration(const AnalyzerConfiguration& value) { SetConfiguration(value); return *this;}
-    inline UpdateAnalyzerRequest& WithConfiguration(AnalyzerConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = AnalyzerConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = AnalyzerConfiguration>
+    UpdateAnalyzerRequest& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
   private:
 

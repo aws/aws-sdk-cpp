@@ -18,16 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteMatrixTrafficOptions::RouteMatrixTrafficOptions() : 
-    m_flowEventThresholdOverride(0),
-    m_flowEventThresholdOverrideHasBeenSet(false),
-    m_usage(TrafficUsage::NOT_SET),
-    m_usageHasBeenSet(false)
-{
-}
-
 RouteMatrixTrafficOptions::RouteMatrixTrafficOptions(JsonView jsonValue)
-  : RouteMatrixTrafficOptions()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RouteMatrixTrafficOptions& RouteMatrixTrafficOptions::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("FlowEventThresholdOverride"))
   {
     m_flowEventThresholdOverride = jsonValue.GetInt64("FlowEventThresholdOverride");
-
     m_flowEventThresholdOverrideHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Usage"))
   {
     m_usage = TrafficUsageMapper::GetTrafficUsageForName(jsonValue.GetString("Usage"));
-
     m_usageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetArchiveMessageContentRequest::GetArchiveMessageContentRequest() : 
-    m_archivedMessageIdHasBeenSet(false)
-{
-}
-
 Aws::String GetArchiveMessageContentRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -10,14 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-DescribeUserGroupsRequest::DescribeUserGroupsRequest() : 
-    m_userGroupIdHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeUserGroupsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

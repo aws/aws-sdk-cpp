@@ -13,13 +13,6 @@ using namespace Aws::ChimeSDKMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateChannelFlowRequest::DisassociateChannelFlowRequest() : 
-    m_channelArnHasBeenSet(false),
-    m_channelFlowArnHasBeenSet(false),
-    m_chimeBearerHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateChannelFlowRequest::SerializePayload() const
 {
   return {};

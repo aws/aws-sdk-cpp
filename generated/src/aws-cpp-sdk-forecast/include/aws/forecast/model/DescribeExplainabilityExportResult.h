@@ -29,7 +29,7 @@ namespace Model
   class DescribeExplainabilityExportResult
   {
   public:
-    AWS_FORECASTSERVICE_API DescribeExplainabilityExportResult();
+    AWS_FORECASTSERVICE_API DescribeExplainabilityExportResult() = default;
     AWS_FORECASTSERVICE_API DescribeExplainabilityExportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FORECASTSERVICE_API DescribeExplainabilityExportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,61 +38,53 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
      */
-    inline const Aws::String& GetExplainabilityExportArn() const{ return m_explainabilityExportArn; }
-    inline void SetExplainabilityExportArn(const Aws::String& value) { m_explainabilityExportArn = value; }
-    inline void SetExplainabilityExportArn(Aws::String&& value) { m_explainabilityExportArn = std::move(value); }
-    inline void SetExplainabilityExportArn(const char* value) { m_explainabilityExportArn.assign(value); }
-    inline DescribeExplainabilityExportResult& WithExplainabilityExportArn(const Aws::String& value) { SetExplainabilityExportArn(value); return *this;}
-    inline DescribeExplainabilityExportResult& WithExplainabilityExportArn(Aws::String&& value) { SetExplainabilityExportArn(std::move(value)); return *this;}
-    inline DescribeExplainabilityExportResult& WithExplainabilityExportArn(const char* value) { SetExplainabilityExportArn(value); return *this;}
+    inline const Aws::String& GetExplainabilityExportArn() const { return m_explainabilityExportArn; }
+    template<typename ExplainabilityExportArnT = Aws::String>
+    void SetExplainabilityExportArn(ExplainabilityExportArnT&& value) { m_explainabilityExportArnHasBeenSet = true; m_explainabilityExportArn = std::forward<ExplainabilityExportArnT>(value); }
+    template<typename ExplainabilityExportArnT = Aws::String>
+    DescribeExplainabilityExportResult& WithExplainabilityExportArn(ExplainabilityExportArnT&& value) { SetExplainabilityExportArn(std::forward<ExplainabilityExportArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Explainability export.</p>
      */
-    inline const Aws::String& GetExplainabilityExportName() const{ return m_explainabilityExportName; }
-    inline void SetExplainabilityExportName(const Aws::String& value) { m_explainabilityExportName = value; }
-    inline void SetExplainabilityExportName(Aws::String&& value) { m_explainabilityExportName = std::move(value); }
-    inline void SetExplainabilityExportName(const char* value) { m_explainabilityExportName.assign(value); }
-    inline DescribeExplainabilityExportResult& WithExplainabilityExportName(const Aws::String& value) { SetExplainabilityExportName(value); return *this;}
-    inline DescribeExplainabilityExportResult& WithExplainabilityExportName(Aws::String&& value) { SetExplainabilityExportName(std::move(value)); return *this;}
-    inline DescribeExplainabilityExportResult& WithExplainabilityExportName(const char* value) { SetExplainabilityExportName(value); return *this;}
+    inline const Aws::String& GetExplainabilityExportName() const { return m_explainabilityExportName; }
+    template<typename ExplainabilityExportNameT = Aws::String>
+    void SetExplainabilityExportName(ExplainabilityExportNameT&& value) { m_explainabilityExportNameHasBeenSet = true; m_explainabilityExportName = std::forward<ExplainabilityExportNameT>(value); }
+    template<typename ExplainabilityExportNameT = Aws::String>
+    DescribeExplainabilityExportResult& WithExplainabilityExportName(ExplainabilityExportNameT&& value) { SetExplainabilityExportName(std::forward<ExplainabilityExportNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
      */
-    inline const Aws::String& GetExplainabilityArn() const{ return m_explainabilityArn; }
-    inline void SetExplainabilityArn(const Aws::String& value) { m_explainabilityArn = value; }
-    inline void SetExplainabilityArn(Aws::String&& value) { m_explainabilityArn = std::move(value); }
-    inline void SetExplainabilityArn(const char* value) { m_explainabilityArn.assign(value); }
-    inline DescribeExplainabilityExportResult& WithExplainabilityArn(const Aws::String& value) { SetExplainabilityArn(value); return *this;}
-    inline DescribeExplainabilityExportResult& WithExplainabilityArn(Aws::String&& value) { SetExplainabilityArn(std::move(value)); return *this;}
-    inline DescribeExplainabilityExportResult& WithExplainabilityArn(const char* value) { SetExplainabilityArn(value); return *this;}
+    inline const Aws::String& GetExplainabilityArn() const { return m_explainabilityArn; }
+    template<typename ExplainabilityArnT = Aws::String>
+    void SetExplainabilityArn(ExplainabilityArnT&& value) { m_explainabilityArnHasBeenSet = true; m_explainabilityArn = std::forward<ExplainabilityArnT>(value); }
+    template<typename ExplainabilityArnT = Aws::String>
+    DescribeExplainabilityExportResult& WithExplainabilityArn(ExplainabilityArnT&& value) { SetExplainabilityArn(std::forward<ExplainabilityArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DataDestination& GetDestination() const{ return m_destination; }
-    inline void SetDestination(const DataDestination& value) { m_destination = value; }
-    inline void SetDestination(DataDestination&& value) { m_destination = std::move(value); }
-    inline DescribeExplainabilityExportResult& WithDestination(const DataDestination& value) { SetDestination(value); return *this;}
-    inline DescribeExplainabilityExportResult& WithDestination(DataDestination&& value) { SetDestination(std::move(value)); return *this;}
+    inline const DataDestination& GetDestination() const { return m_destination; }
+    template<typename DestinationT = DataDestination>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = DataDestination>
+    DescribeExplainabilityExportResult& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about any errors that occurred during the export.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
-    inline void SetMessage(const Aws::String& value) { m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_message.assign(value); }
-    inline DescribeExplainabilityExportResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline DescribeExplainabilityExportResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline DescribeExplainabilityExportResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+    inline const Aws::String& GetMessage() const { return m_message; }
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    DescribeExplainabilityExportResult& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,24 +96,22 @@ namespace Model
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_status.assign(value); }
-    inline DescribeExplainabilityExportResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline DescribeExplainabilityExportResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline DescribeExplainabilityExportResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+    inline const Aws::String& GetStatus() const { return m_status; }
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    DescribeExplainabilityExportResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>When the Explainability export was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeExplainabilityExportResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeExplainabilityExportResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeExplainabilityExportResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,57 +124,63 @@ namespace Model
      * stopped.</p> </li> <li> <p> <code>ACTIVE</code> or <code>CREATE_FAILED</code> -
      * When the job finished or failed.</p> </li> </ul>
      */
-    inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
-    inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTime = value; }
-    inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTime = std::move(value); }
-    inline DescribeExplainabilityExportResult& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
-    inline DescribeExplainabilityExportResult& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModificationTime() const { return m_lastModificationTime; }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    void SetLastModificationTime(LastModificationTimeT&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::forward<LastModificationTimeT>(value); }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    DescribeExplainabilityExportResult& WithLastModificationTime(LastModificationTimeT&& value) { SetLastModificationTime(std::forward<LastModificationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format of the exported data, CSV or PARQUET.</p>
      */
-    inline const Aws::String& GetFormat() const{ return m_format; }
-    inline void SetFormat(const Aws::String& value) { m_format = value; }
-    inline void SetFormat(Aws::String&& value) { m_format = std::move(value); }
-    inline void SetFormat(const char* value) { m_format.assign(value); }
-    inline DescribeExplainabilityExportResult& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
-    inline DescribeExplainabilityExportResult& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
-    inline DescribeExplainabilityExportResult& WithFormat(const char* value) { SetFormat(value); return *this;}
+    inline const Aws::String& GetFormat() const { return m_format; }
+    template<typename FormatT = Aws::String>
+    void SetFormat(FormatT&& value) { m_formatHasBeenSet = true; m_format = std::forward<FormatT>(value); }
+    template<typename FormatT = Aws::String>
+    DescribeExplainabilityExportResult& WithFormat(FormatT&& value) { SetFormat(std::forward<FormatT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeExplainabilityExportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeExplainabilityExportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeExplainabilityExportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeExplainabilityExportResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_explainabilityExportArn;
+    bool m_explainabilityExportArnHasBeenSet = false;
 
     Aws::String m_explainabilityExportName;
+    bool m_explainabilityExportNameHasBeenSet = false;
 
     Aws::String m_explainabilityArn;
+    bool m_explainabilityArnHasBeenSet = false;
 
     DataDestination m_destination;
+    bool m_destinationHasBeenSet = false;
 
     Aws::String m_message;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_status;
+    bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModificationTime;
+    Aws::Utils::DateTime m_lastModificationTime{};
+    bool m_lastModificationTimeHasBeenSet = false;
 
     Aws::String m_format;
+    bool m_formatHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

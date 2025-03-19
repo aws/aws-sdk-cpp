@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CompareFacesResult::CompareFacesResult() : 
-    m_sourceImageOrientationCorrection(OrientationCorrection::NOT_SET),
-    m_targetImageOrientationCorrection(OrientationCorrection::NOT_SET)
-{
-}
-
 CompareFacesResult::CompareFacesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CompareFacesResult()
 {
   *this = result;
 }
@@ -35,9 +28,8 @@ CompareFacesResult& CompareFacesResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("SourceImageFace"))
   {
     m_sourceImageFace = jsonValue.GetObject("SourceImageFace");
-
+    m_sourceImageFaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FaceMatches"))
   {
     Aws::Utils::Array<JsonView> faceMatchesJsonList = jsonValue.GetArray("FaceMatches");
@@ -45,8 +37,8 @@ CompareFacesResult& CompareFacesResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_faceMatches.push_back(faceMatchesJsonList[faceMatchesIndex].AsObject());
     }
+    m_faceMatchesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnmatchedFaces"))
   {
     Aws::Utils::Array<JsonView> unmatchedFacesJsonList = jsonValue.GetArray("UnmatchedFaces");
@@ -54,26 +46,25 @@ CompareFacesResult& CompareFacesResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_unmatchedFaces.push_back(unmatchedFacesJsonList[unmatchedFacesIndex].AsObject());
     }
+    m_unmatchedFacesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceImageOrientationCorrection"))
   {
     m_sourceImageOrientationCorrection = OrientationCorrectionMapper::GetOrientationCorrectionForName(jsonValue.GetString("SourceImageOrientationCorrection"));
-
+    m_sourceImageOrientationCorrectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetImageOrientationCorrection"))
   {
     m_targetImageOrientationCorrection = OrientationCorrectionMapper::GetOrientationCorrectionForName(jsonValue.GetString("TargetImageOrientationCorrection"));
-
+    m_targetImageOrientationCorrectionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

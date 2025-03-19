@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateConfiguredTableResult::CreateConfiguredTableResult()
-{
-}
-
 CreateConfiguredTableResult::CreateConfiguredTableResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateConfiguredTableResult& CreateConfiguredTableResult::operator =(const Aws::
   if(jsonValue.ValueExists("configuredTable"))
   {
     m_configuredTable = jsonValue.GetObject("configuredTable");
-
+    m_configuredTableHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

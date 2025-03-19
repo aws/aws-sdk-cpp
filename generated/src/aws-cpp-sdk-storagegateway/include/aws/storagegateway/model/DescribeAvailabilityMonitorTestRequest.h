@@ -21,7 +21,7 @@ namespace Model
   class DescribeAvailabilityMonitorTestRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API DescribeAvailabilityMonitorTestRequest();
+    AWS_STORAGEGATEWAY_API DescribeAvailabilityMonitorTestRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
+    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
-    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
-    inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
-    inline DescribeAvailabilityMonitorTestRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-    inline DescribeAvailabilityMonitorTestRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-    inline DescribeAvailabilityMonitorTestRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    template<typename GatewayARNT = Aws::String>
+    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
+    template<typename GatewayARNT = Aws::String>
+    DescribeAvailabilityMonitorTestRequest& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
     ///@}
   private:
 

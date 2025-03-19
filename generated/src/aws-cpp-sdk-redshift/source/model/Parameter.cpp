@@ -20,23 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-Parameter::Parameter() : 
-    m_parameterNameHasBeenSet(false),
-    m_parameterValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_dataTypeHasBeenSet(false),
-    m_allowedValuesHasBeenSet(false),
-    m_applyType(ParameterApplyType::NOT_SET),
-    m_applyTypeHasBeenSet(false),
-    m_isModifiable(false),
-    m_isModifiableHasBeenSet(false),
-    m_minimumEngineVersionHasBeenSet(false)
-{
-}
-
 Parameter::Parameter(const XmlNode& xmlNode)
-  : Parameter()
 {
   *this = xmlNode;
 }
@@ -86,7 +70,7 @@ Parameter& Parameter::operator =(const XmlNode& xmlNode)
     XmlNode applyTypeNode = resultNode.FirstChild("ApplyType");
     if(!applyTypeNode.IsNull())
     {
-      m_applyType = ParameterApplyTypeMapper::GetParameterApplyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(applyTypeNode.GetText()).c_str()).c_str());
+      m_applyType = ParameterApplyTypeMapper::GetParameterApplyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(applyTypeNode.GetText()).c_str()));
       m_applyTypeHasBeenSet = true;
     }
     XmlNode isModifiableNode = resultNode.FirstChild("IsModifiable");

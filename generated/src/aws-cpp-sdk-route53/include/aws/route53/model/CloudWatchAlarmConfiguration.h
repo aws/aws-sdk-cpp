@@ -36,7 +36,7 @@ namespace Model
   class CloudWatchAlarmConfiguration
   {
   public:
-    AWS_ROUTE53_API CloudWatchAlarmConfiguration();
+    AWS_ROUTE53_API CloudWatchAlarmConfiguration() = default;
     AWS_ROUTE53_API CloudWatchAlarmConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ROUTE53_API CloudWatchAlarmConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,7 +48,7 @@ namespace Model
      * <p>For the metric that the CloudWatch alarm is associated with, the number of
      * periods that the metric is compared to the threshold.</p>
      */
-    inline int GetEvaluationPeriods() const{ return m_evaluationPeriods; }
+    inline int GetEvaluationPeriods() const { return m_evaluationPeriods; }
     inline bool EvaluationPeriodsHasBeenSet() const { return m_evaluationPeriodsHasBeenSet; }
     inline void SetEvaluationPeriods(int value) { m_evaluationPeriodsHasBeenSet = true; m_evaluationPeriods = value; }
     inline CloudWatchAlarmConfiguration& WithEvaluationPeriods(int value) { SetEvaluationPeriods(value); return *this;}
@@ -59,7 +59,7 @@ namespace Model
      * <p>For the metric that the CloudWatch alarm is associated with, the value the
      * metric is compared with.</p>
      */
-    inline double GetThreshold() const{ return m_threshold; }
+    inline double GetThreshold() const { return m_threshold; }
     inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
     inline void SetThreshold(double value) { m_thresholdHasBeenSet = true; m_threshold = value; }
     inline CloudWatchAlarmConfiguration& WithThreshold(double value) { SetThreshold(value); return *this;}
@@ -70,12 +70,10 @@ namespace Model
      * <p>For the metric that the CloudWatch alarm is associated with, the arithmetic
      * operation that is used for the comparison.</p>
      */
-    inline const ComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
+    inline ComparisonOperator GetComparisonOperator() const { return m_comparisonOperator; }
     inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
-    inline void SetComparisonOperator(const ComparisonOperator& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
-    inline void SetComparisonOperator(ComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
-    inline CloudWatchAlarmConfiguration& WithComparisonOperator(const ComparisonOperator& value) { SetComparisonOperator(value); return *this;}
-    inline CloudWatchAlarmConfiguration& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
+    inline void SetComparisonOperator(ComparisonOperator value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
+    inline CloudWatchAlarmConfiguration& WithComparisonOperator(ComparisonOperator value) { SetComparisonOperator(value); return *this;}
     ///@}
 
     ///@{
@@ -83,7 +81,7 @@ namespace Model
      * <p>For the metric that the CloudWatch alarm is associated with, the duration of
      * one evaluation period in seconds.</p>
      */
-    inline int GetPeriod() const{ return m_period; }
+    inline int GetPeriod() const { return m_period; }
     inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
     inline CloudWatchAlarmConfiguration& WithPeriod(int value) { SetPeriod(value); return *this;}
@@ -93,14 +91,12 @@ namespace Model
     /**
      * <p>The name of the CloudWatch metric that the alarm is associated with.</p>
      */
-    inline const Aws::String& GetMetricName() const{ return m_metricName; }
+    inline const Aws::String& GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
-    inline CloudWatchAlarmConfiguration& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-    inline CloudWatchAlarmConfiguration& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-    inline CloudWatchAlarmConfiguration& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+    template<typename MetricNameT = Aws::String>
+    void SetMetricName(MetricNameT&& value) { m_metricNameHasBeenSet = true; m_metricName = std::forward<MetricNameT>(value); }
+    template<typename MetricNameT = Aws::String>
+    CloudWatchAlarmConfiguration& WithMetricName(MetricNameT&& value) { SetMetricName(std::forward<MetricNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,14 +107,12 @@ namespace Model
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
      * CloudWatch User Guide</i>.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline CloudWatchAlarmConfiguration& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline CloudWatchAlarmConfiguration& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline CloudWatchAlarmConfiguration& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    CloudWatchAlarmConfiguration& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,12 +120,10 @@ namespace Model
      * <p>For the metric that the CloudWatch alarm is associated with, the statistic
      * that is applied to the metric.</p>
      */
-    inline const Statistic& GetStatistic() const{ return m_statistic; }
+    inline Statistic GetStatistic() const { return m_statistic; }
     inline bool StatisticHasBeenSet() const { return m_statisticHasBeenSet; }
-    inline void SetStatistic(const Statistic& value) { m_statisticHasBeenSet = true; m_statistic = value; }
-    inline void SetStatistic(Statistic&& value) { m_statisticHasBeenSet = true; m_statistic = std::move(value); }
-    inline CloudWatchAlarmConfiguration& WithStatistic(const Statistic& value) { SetStatistic(value); return *this;}
-    inline CloudWatchAlarmConfiguration& WithStatistic(Statistic&& value) { SetStatistic(std::move(value)); return *this;}
+    inline void SetStatistic(Statistic value) { m_statisticHasBeenSet = true; m_statistic = value; }
+    inline CloudWatchAlarmConfiguration& WithStatistic(Statistic value) { SetStatistic(value); return *this;}
     ///@}
 
     ///@{
@@ -143,27 +135,27 @@ namespace Model
      * CloudWatch Namespaces, Dimensions, and Metrics Reference</a> in the <i>Amazon
      * CloudWatch User Guide</i>.</p>
      */
-    inline const Aws::Vector<Dimension>& GetDimensions() const{ return m_dimensions; }
+    inline const Aws::Vector<Dimension>& GetDimensions() const { return m_dimensions; }
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-    inline void SetDimensions(const Aws::Vector<Dimension>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-    inline void SetDimensions(Aws::Vector<Dimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-    inline CloudWatchAlarmConfiguration& WithDimensions(const Aws::Vector<Dimension>& value) { SetDimensions(value); return *this;}
-    inline CloudWatchAlarmConfiguration& WithDimensions(Aws::Vector<Dimension>&& value) { SetDimensions(std::move(value)); return *this;}
-    inline CloudWatchAlarmConfiguration& AddDimensions(const Dimension& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
-    inline CloudWatchAlarmConfiguration& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
+    template<typename DimensionsT = Aws::Vector<Dimension>>
+    void SetDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::forward<DimensionsT>(value); }
+    template<typename DimensionsT = Aws::Vector<Dimension>>
+    CloudWatchAlarmConfiguration& WithDimensions(DimensionsT&& value) { SetDimensions(std::forward<DimensionsT>(value)); return *this;}
+    template<typename DimensionsT = Dimension>
+    CloudWatchAlarmConfiguration& AddDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace_back(std::forward<DimensionsT>(value)); return *this; }
     ///@}
   private:
 
-    int m_evaluationPeriods;
+    int m_evaluationPeriods{0};
     bool m_evaluationPeriodsHasBeenSet = false;
 
-    double m_threshold;
+    double m_threshold{0.0};
     bool m_thresholdHasBeenSet = false;
 
-    ComparisonOperator m_comparisonOperator;
+    ComparisonOperator m_comparisonOperator{ComparisonOperator::NOT_SET};
     bool m_comparisonOperatorHasBeenSet = false;
 
-    int m_period;
+    int m_period{0};
     bool m_periodHasBeenSet = false;
 
     Aws::String m_metricName;
@@ -172,7 +164,7 @@ namespace Model
     Aws::String m_namespace;
     bool m_namespaceHasBeenSet = false;
 
-    Statistic m_statistic;
+    Statistic m_statistic{Statistic::NOT_SET};
     bool m_statisticHasBeenSet = false;
 
     Aws::Vector<Dimension> m_dimensions;

@@ -15,11 +15,6 @@ using namespace Aws::S3Control::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-ListTagsForResourceRequest::ListTagsForResourceRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
-{
-}
 
 Aws::String ListTagsForResourceRequest::SerializePayload() const
 {

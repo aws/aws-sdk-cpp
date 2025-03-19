@@ -10,37 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateIpamPoolRequest::CreateIpamPoolRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_ipamScopeIdHasBeenSet(false),
-    m_localeHasBeenSet(false),
-    m_sourceIpamPoolIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_addressFamily(AddressFamily::NOT_SET),
-    m_addressFamilyHasBeenSet(false),
-    m_autoImport(false),
-    m_autoImportHasBeenSet(false),
-    m_publiclyAdvertisable(false),
-    m_publiclyAdvertisableHasBeenSet(false),
-    m_allocationMinNetmaskLength(0),
-    m_allocationMinNetmaskLengthHasBeenSet(false),
-    m_allocationMaxNetmaskLength(0),
-    m_allocationMaxNetmaskLengthHasBeenSet(false),
-    m_allocationDefaultNetmaskLength(0),
-    m_allocationDefaultNetmaskLengthHasBeenSet(false),
-    m_allocationResourceTagsHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_awsService(IpamPoolAwsService::NOT_SET),
-    m_awsServiceHasBeenSet(false),
-    m_publicIpSource(IpamPoolPublicIpSource::NOT_SET),
-    m_publicIpSourceHasBeenSet(false),
-    m_sourceResourceHasBeenSet(false)
-{
-}
-
 Aws::String CreateIpamPoolRequest::SerializePayload() const
 {
   Aws::StringStream ss;

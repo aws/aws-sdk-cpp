@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ActiveIAMPolicyAssignment::ActiveIAMPolicyAssignment() : 
-    m_assignmentNameHasBeenSet(false),
-    m_policyArnHasBeenSet(false)
-{
-}
-
 ActiveIAMPolicyAssignment::ActiveIAMPolicyAssignment(JsonView jsonValue)
-  : ActiveIAMPolicyAssignment()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ActiveIAMPolicyAssignment& ActiveIAMPolicyAssignment::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("AssignmentName"))
   {
     m_assignmentName = jsonValue.GetString("AssignmentName");
-
     m_assignmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyArn"))
   {
     m_policyArn = jsonValue.GetString("PolicyArn");
-
     m_policyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

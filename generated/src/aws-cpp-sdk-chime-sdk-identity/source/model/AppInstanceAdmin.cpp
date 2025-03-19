@@ -18,15 +18,7 @@ namespace ChimeSDKIdentity
 namespace Model
 {
 
-AppInstanceAdmin::AppInstanceAdmin() : 
-    m_adminHasBeenSet(false),
-    m_appInstanceArnHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
-{
-}
-
 AppInstanceAdmin::AppInstanceAdmin(JsonView jsonValue)
-  : AppInstanceAdmin()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AppInstanceAdmin& AppInstanceAdmin::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Admin"))
   {
     m_admin = jsonValue.GetObject("Admin");
-
     m_adminHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppInstanceArn"))
   {
     m_appInstanceArn = jsonValue.GetString("AppInstanceArn");
-
     m_appInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

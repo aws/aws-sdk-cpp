@@ -35,7 +35,7 @@ namespace Model
   class PolicyToPath
   {
   public:
-    AWS_CLOUDDIRECTORY_API PolicyToPath();
+    AWS_CLOUDDIRECTORY_API PolicyToPath() = default;
     AWS_CLOUDDIRECTORY_API PolicyToPath(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API PolicyToPath& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,26 @@ namespace Model
     /**
      * <p>The path that is referenced from the root.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline PolicyToPath& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline PolicyToPath& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline PolicyToPath& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    PolicyToPath& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of policy objects.</p>
      */
-    inline const Aws::Vector<PolicyAttachment>& GetPolicies() const{ return m_policies; }
+    inline const Aws::Vector<PolicyAttachment>& GetPolicies() const { return m_policies; }
     inline bool PoliciesHasBeenSet() const { return m_policiesHasBeenSet; }
-    inline void SetPolicies(const Aws::Vector<PolicyAttachment>& value) { m_policiesHasBeenSet = true; m_policies = value; }
-    inline void SetPolicies(Aws::Vector<PolicyAttachment>&& value) { m_policiesHasBeenSet = true; m_policies = std::move(value); }
-    inline PolicyToPath& WithPolicies(const Aws::Vector<PolicyAttachment>& value) { SetPolicies(value); return *this;}
-    inline PolicyToPath& WithPolicies(Aws::Vector<PolicyAttachment>&& value) { SetPolicies(std::move(value)); return *this;}
-    inline PolicyToPath& AddPolicies(const PolicyAttachment& value) { m_policiesHasBeenSet = true; m_policies.push_back(value); return *this; }
-    inline PolicyToPath& AddPolicies(PolicyAttachment&& value) { m_policiesHasBeenSet = true; m_policies.push_back(std::move(value)); return *this; }
+    template<typename PoliciesT = Aws::Vector<PolicyAttachment>>
+    void SetPolicies(PoliciesT&& value) { m_policiesHasBeenSet = true; m_policies = std::forward<PoliciesT>(value); }
+    template<typename PoliciesT = Aws::Vector<PolicyAttachment>>
+    PolicyToPath& WithPolicies(PoliciesT&& value) { SetPolicies(std::forward<PoliciesT>(value)); return *this;}
+    template<typename PoliciesT = PolicyAttachment>
+    PolicyToPath& AddPolicies(PoliciesT&& value) { m_policiesHasBeenSet = true; m_policies.emplace_back(std::forward<PoliciesT>(value)); return *this; }
     ///@}
   private:
 

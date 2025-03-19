@@ -29,7 +29,7 @@ namespace Model
   class ListMultipartReadSetUploadsResult
   {
   public:
-    AWS_OMICS_API ListMultipartReadSetUploadsResult();
+    AWS_OMICS_API ListMultipartReadSetUploadsResult() = default;
     AWS_OMICS_API ListMultipartReadSetUploadsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API ListMultipartReadSetUploadsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>Next token returned in the response of a previous ListMultipartReadSetUploads
      * call. Used to get the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListMultipartReadSetUploadsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMultipartReadSetUploadsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMultipartReadSetUploadsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMultipartReadSetUploadsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of multipart uploads.</p>
      */
-    inline const Aws::Vector<MultipartReadSetUploadListItem>& GetUploads() const{ return m_uploads; }
-    inline void SetUploads(const Aws::Vector<MultipartReadSetUploadListItem>& value) { m_uploads = value; }
-    inline void SetUploads(Aws::Vector<MultipartReadSetUploadListItem>&& value) { m_uploads = std::move(value); }
-    inline ListMultipartReadSetUploadsResult& WithUploads(const Aws::Vector<MultipartReadSetUploadListItem>& value) { SetUploads(value); return *this;}
-    inline ListMultipartReadSetUploadsResult& WithUploads(Aws::Vector<MultipartReadSetUploadListItem>&& value) { SetUploads(std::move(value)); return *this;}
-    inline ListMultipartReadSetUploadsResult& AddUploads(const MultipartReadSetUploadListItem& value) { m_uploads.push_back(value); return *this; }
-    inline ListMultipartReadSetUploadsResult& AddUploads(MultipartReadSetUploadListItem&& value) { m_uploads.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MultipartReadSetUploadListItem>& GetUploads() const { return m_uploads; }
+    template<typename UploadsT = Aws::Vector<MultipartReadSetUploadListItem>>
+    void SetUploads(UploadsT&& value) { m_uploadsHasBeenSet = true; m_uploads = std::forward<UploadsT>(value); }
+    template<typename UploadsT = Aws::Vector<MultipartReadSetUploadListItem>>
+    ListMultipartReadSetUploadsResult& WithUploads(UploadsT&& value) { SetUploads(std::forward<UploadsT>(value)); return *this;}
+    template<typename UploadsT = MultipartReadSetUploadListItem>
+    ListMultipartReadSetUploadsResult& AddUploads(UploadsT&& value) { m_uploadsHasBeenSet = true; m_uploads.emplace_back(std::forward<UploadsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListMultipartReadSetUploadsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListMultipartReadSetUploadsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListMultipartReadSetUploadsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListMultipartReadSetUploadsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<MultipartReadSetUploadListItem> m_uploads;
+    bool m_uploadsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

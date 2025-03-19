@@ -13,18 +13,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSessionRequest::UpdateSessionRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_targetLifecycleStatus(SessionLifecycleTargetStatus::NOT_SET),
-    m_targetLifecycleStatusHasBeenSet(false),
-    m_farmIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSessionRequest::SerializePayload() const
 {
   JsonValue payload;

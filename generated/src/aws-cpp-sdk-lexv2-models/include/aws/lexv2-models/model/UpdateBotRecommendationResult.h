@@ -31,7 +31,7 @@ namespace Model
   class UpdateBotRecommendationResult
   {
   public:
-    AWS_LEXMODELSV2_API UpdateBotRecommendationResult();
+    AWS_LEXMODELSV2_API UpdateBotRecommendationResult() = default;
     AWS_LEXMODELSV2_API UpdateBotRecommendationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELSV2_API UpdateBotRecommendationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,13 +41,11 @@ namespace Model
      * <p>The unique identifier of the bot containing the bot recommendation that has
      * been updated.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
-    inline void SetBotId(const Aws::String& value) { m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botId.assign(value); }
-    inline UpdateBotRecommendationResult& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline UpdateBotRecommendationResult& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline UpdateBotRecommendationResult& WithBotId(const char* value) { SetBotId(value); return *this;}
+    inline const Aws::String& GetBotId() const { return m_botId; }
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    UpdateBotRecommendationResult& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,13 +53,11 @@ namespace Model
      * <p>The version of the bot containing the bot recommendation that has been
      * updated.</p>
      */
-    inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
-    inline void SetBotVersion(const Aws::String& value) { m_botVersion = value; }
-    inline void SetBotVersion(Aws::String&& value) { m_botVersion = std::move(value); }
-    inline void SetBotVersion(const char* value) { m_botVersion.assign(value); }
-    inline UpdateBotRecommendationResult& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
-    inline UpdateBotRecommendationResult& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
-    inline UpdateBotRecommendationResult& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
+    inline const Aws::String& GetBotVersion() const { return m_botVersion; }
+    template<typename BotVersionT = Aws::String>
+    void SetBotVersion(BotVersionT&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::forward<BotVersionT>(value); }
+    template<typename BotVersionT = Aws::String>
+    UpdateBotRecommendationResult& WithBotVersion(BotVersionT&& value) { SetBotVersion(std::forward<BotVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,13 +68,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
      * languages</a> </p>
      */
-    inline const Aws::String& GetLocaleId() const{ return m_localeId; }
-    inline void SetLocaleId(const Aws::String& value) { m_localeId = value; }
-    inline void SetLocaleId(Aws::String&& value) { m_localeId = std::move(value); }
-    inline void SetLocaleId(const char* value) { m_localeId.assign(value); }
-    inline UpdateBotRecommendationResult& WithLocaleId(const Aws::String& value) { SetLocaleId(value); return *this;}
-    inline UpdateBotRecommendationResult& WithLocaleId(Aws::String&& value) { SetLocaleId(std::move(value)); return *this;}
-    inline UpdateBotRecommendationResult& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
+    inline const Aws::String& GetLocaleId() const { return m_localeId; }
+    template<typename LocaleIdT = Aws::String>
+    void SetLocaleId(LocaleIdT&& value) { m_localeIdHasBeenSet = true; m_localeId = std::forward<LocaleIdT>(value); }
+    template<typename LocaleIdT = Aws::String>
+    UpdateBotRecommendationResult& WithLocaleId(LocaleIdT&& value) { SetLocaleId(std::forward<LocaleIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,35 +80,31 @@ namespace Model
      * <p>The status of the bot recommendation.</p> <p>If the status is Failed, then
      * the reasons for the failure are listed in the failureReasons field. </p>
      */
-    inline const BotRecommendationStatus& GetBotRecommendationStatus() const{ return m_botRecommendationStatus; }
-    inline void SetBotRecommendationStatus(const BotRecommendationStatus& value) { m_botRecommendationStatus = value; }
-    inline void SetBotRecommendationStatus(BotRecommendationStatus&& value) { m_botRecommendationStatus = std::move(value); }
-    inline UpdateBotRecommendationResult& WithBotRecommendationStatus(const BotRecommendationStatus& value) { SetBotRecommendationStatus(value); return *this;}
-    inline UpdateBotRecommendationResult& WithBotRecommendationStatus(BotRecommendationStatus&& value) { SetBotRecommendationStatus(std::move(value)); return *this;}
+    inline BotRecommendationStatus GetBotRecommendationStatus() const { return m_botRecommendationStatus; }
+    inline void SetBotRecommendationStatus(BotRecommendationStatus value) { m_botRecommendationStatusHasBeenSet = true; m_botRecommendationStatus = value; }
+    inline UpdateBotRecommendationResult& WithBotRecommendationStatus(BotRecommendationStatus value) { SetBotRecommendationStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the bot recommendation to be updated.</p>
      */
-    inline const Aws::String& GetBotRecommendationId() const{ return m_botRecommendationId; }
-    inline void SetBotRecommendationId(const Aws::String& value) { m_botRecommendationId = value; }
-    inline void SetBotRecommendationId(Aws::String&& value) { m_botRecommendationId = std::move(value); }
-    inline void SetBotRecommendationId(const char* value) { m_botRecommendationId.assign(value); }
-    inline UpdateBotRecommendationResult& WithBotRecommendationId(const Aws::String& value) { SetBotRecommendationId(value); return *this;}
-    inline UpdateBotRecommendationResult& WithBotRecommendationId(Aws::String&& value) { SetBotRecommendationId(std::move(value)); return *this;}
-    inline UpdateBotRecommendationResult& WithBotRecommendationId(const char* value) { SetBotRecommendationId(value); return *this;}
+    inline const Aws::String& GetBotRecommendationId() const { return m_botRecommendationId; }
+    template<typename BotRecommendationIdT = Aws::String>
+    void SetBotRecommendationId(BotRecommendationIdT&& value) { m_botRecommendationIdHasBeenSet = true; m_botRecommendationId = std::forward<BotRecommendationIdT>(value); }
+    template<typename BotRecommendationIdT = Aws::String>
+    UpdateBotRecommendationResult& WithBotRecommendationId(BotRecommendationIdT&& value) { SetBotRecommendationId(std::forward<BotRecommendationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp of the date and time that the bot recommendation was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
-    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTime = value; }
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTime = std::move(value); }
-    inline UpdateBotRecommendationResult& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-    inline UpdateBotRecommendationResult& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    UpdateBotRecommendationResult& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,11 +112,11 @@ namespace Model
      * <p>A timestamp of the date and time that the bot recommendation was last
      * updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const{ return m_lastUpdatedDateTime; }
-    inline void SetLastUpdatedDateTime(const Aws::Utils::DateTime& value) { m_lastUpdatedDateTime = value; }
-    inline void SetLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_lastUpdatedDateTime = std::move(value); }
-    inline UpdateBotRecommendationResult& WithLastUpdatedDateTime(const Aws::Utils::DateTime& value) { SetLastUpdatedDateTime(value); return *this;}
-    inline UpdateBotRecommendationResult& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const { return m_lastUpdatedDateTime; }
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::forward<LastUpdatedDateTimeT>(value); }
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    UpdateBotRecommendationResult& WithLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { SetLastUpdatedDateTime(std::forward<LastUpdatedDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,11 +124,11 @@ namespace Model
      * <p>The object representing the Amazon S3 bucket containing the transcript, as
      * well as the associated metadata.</p>
      */
-    inline const TranscriptSourceSetting& GetTranscriptSourceSetting() const{ return m_transcriptSourceSetting; }
-    inline void SetTranscriptSourceSetting(const TranscriptSourceSetting& value) { m_transcriptSourceSetting = value; }
-    inline void SetTranscriptSourceSetting(TranscriptSourceSetting&& value) { m_transcriptSourceSetting = std::move(value); }
-    inline UpdateBotRecommendationResult& WithTranscriptSourceSetting(const TranscriptSourceSetting& value) { SetTranscriptSourceSetting(value); return *this;}
-    inline UpdateBotRecommendationResult& WithTranscriptSourceSetting(TranscriptSourceSetting&& value) { SetTranscriptSourceSetting(std::move(value)); return *this;}
+    inline const TranscriptSourceSetting& GetTranscriptSourceSetting() const { return m_transcriptSourceSetting; }
+    template<typename TranscriptSourceSettingT = TranscriptSourceSetting>
+    void SetTranscriptSourceSetting(TranscriptSourceSettingT&& value) { m_transcriptSourceSettingHasBeenSet = true; m_transcriptSourceSetting = std::forward<TranscriptSourceSettingT>(value); }
+    template<typename TranscriptSourceSettingT = TranscriptSourceSetting>
+    UpdateBotRecommendationResult& WithTranscriptSourceSetting(TranscriptSourceSettingT&& value) { SetTranscriptSourceSetting(std::forward<TranscriptSourceSettingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -147,44 +137,52 @@ namespace Model
      * related to the bot recommendation results, as well as the KMS key ARN used to
      * encrypt the associated metadata.</p>
      */
-    inline const EncryptionSetting& GetEncryptionSetting() const{ return m_encryptionSetting; }
-    inline void SetEncryptionSetting(const EncryptionSetting& value) { m_encryptionSetting = value; }
-    inline void SetEncryptionSetting(EncryptionSetting&& value) { m_encryptionSetting = std::move(value); }
-    inline UpdateBotRecommendationResult& WithEncryptionSetting(const EncryptionSetting& value) { SetEncryptionSetting(value); return *this;}
-    inline UpdateBotRecommendationResult& WithEncryptionSetting(EncryptionSetting&& value) { SetEncryptionSetting(std::move(value)); return *this;}
+    inline const EncryptionSetting& GetEncryptionSetting() const { return m_encryptionSetting; }
+    template<typename EncryptionSettingT = EncryptionSetting>
+    void SetEncryptionSetting(EncryptionSettingT&& value) { m_encryptionSettingHasBeenSet = true; m_encryptionSetting = std::forward<EncryptionSettingT>(value); }
+    template<typename EncryptionSettingT = EncryptionSetting>
+    UpdateBotRecommendationResult& WithEncryptionSetting(EncryptionSettingT&& value) { SetEncryptionSetting(std::forward<EncryptionSettingT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateBotRecommendationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateBotRecommendationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateBotRecommendationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateBotRecommendationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_botId;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_botVersion;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::String m_localeId;
+    bool m_localeIdHasBeenSet = false;
 
-    BotRecommendationStatus m_botRecommendationStatus;
+    BotRecommendationStatus m_botRecommendationStatus{BotRecommendationStatus::NOT_SET};
+    bool m_botRecommendationStatusHasBeenSet = false;
 
     Aws::String m_botRecommendationId;
+    bool m_botRecommendationIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDateTime;
+    Aws::Utils::DateTime m_creationDateTime{};
+    bool m_creationDateTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedDateTime;
+    Aws::Utils::DateTime m_lastUpdatedDateTime{};
+    bool m_lastUpdatedDateTimeHasBeenSet = false;
 
     TranscriptSourceSetting m_transcriptSourceSetting;
+    bool m_transcriptSourceSettingHasBeenSet = false;
 
     EncryptionSetting m_encryptionSetting;
+    bool m_encryptionSettingHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

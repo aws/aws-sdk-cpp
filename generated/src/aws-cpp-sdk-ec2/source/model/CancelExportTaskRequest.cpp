@@ -10,11 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CancelExportTaskRequest::CancelExportTaskRequest() : 
-    m_exportTaskIdHasBeenSet(false)
-{
-}
-
 Aws::String CancelExportTaskRequest::SerializePayload() const
 {
   Aws::StringStream ss;

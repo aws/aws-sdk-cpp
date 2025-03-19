@@ -18,46 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-Cluster::Cluster() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_pendingUpdatesHasBeenSet(false),
-    m_multiRegionClusterNameHasBeenSet(false),
-    m_numberOfShards(0),
-    m_numberOfShardsHasBeenSet(false),
-    m_shardsHasBeenSet(false),
-    m_availabilityMode(AZStatus::NOT_SET),
-    m_availabilityModeHasBeenSet(false),
-    m_clusterEndpointHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_enginePatchVersionHasBeenSet(false),
-    m_parameterGroupNameHasBeenSet(false),
-    m_parameterGroupStatusHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_subnetGroupNameHasBeenSet(false),
-    m_tLSEnabled(false),
-    m_tLSEnabledHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false),
-    m_snsTopicStatusHasBeenSet(false),
-    m_snapshotRetentionLimit(0),
-    m_snapshotRetentionLimitHasBeenSet(false),
-    m_maintenanceWindowHasBeenSet(false),
-    m_snapshotWindowHasBeenSet(false),
-    m_aCLNameHasBeenSet(false),
-    m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false),
-    m_dataTiering(DataTieringStatus::NOT_SET),
-    m_dataTieringHasBeenSet(false)
-{
-}
-
 Cluster::Cluster(JsonView jsonValue)
-  : Cluster()
 {
   *this = jsonValue;
 }
@@ -67,45 +28,33 @@ Cluster& Cluster::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PendingUpdates"))
   {
     m_pendingUpdates = jsonValue.GetObject("PendingUpdates");
-
     m_pendingUpdatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MultiRegionClusterName"))
   {
     m_multiRegionClusterName = jsonValue.GetString("MultiRegionClusterName");
-
     m_multiRegionClusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfShards"))
   {
     m_numberOfShards = jsonValue.GetInteger("NumberOfShards");
-
     m_numberOfShardsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Shards"))
   {
     Aws::Utils::Array<JsonView> shardsJsonList = jsonValue.GetArray("Shards");
@@ -115,63 +64,46 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     }
     m_shardsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityMode"))
   {
     m_availabilityMode = AZStatusMapper::GetAZStatusForName(jsonValue.GetString("AvailabilityMode"));
-
     m_availabilityModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterEndpoint"))
   {
     m_clusterEndpoint = jsonValue.GetObject("ClusterEndpoint");
-
     m_clusterEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeType"))
   {
     m_nodeType = jsonValue.GetString("NodeType");
-
     m_nodeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Engine"))
   {
     m_engine = jsonValue.GetString("Engine");
-
     m_engineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineVersion"))
   {
     m_engineVersion = jsonValue.GetString("EngineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnginePatchVersion"))
   {
     m_enginePatchVersion = jsonValue.GetString("EnginePatchVersion");
-
     m_enginePatchVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParameterGroupName"))
   {
     m_parameterGroupName = jsonValue.GetString("ParameterGroupName");
-
     m_parameterGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParameterGroupStatus"))
   {
     m_parameterGroupStatus = jsonValue.GetString("ParameterGroupStatus");
-
     m_parameterGroupStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroups"))
   {
     Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("SecurityGroups");
@@ -181,91 +113,66 @@ Cluster& Cluster::operator =(JsonView jsonValue)
     }
     m_securityGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetGroupName"))
   {
     m_subnetGroupName = jsonValue.GetString("SubnetGroupName");
-
     m_subnetGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TLSEnabled"))
   {
     m_tLSEnabled = jsonValue.GetBool("TLSEnabled");
-
     m_tLSEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnsTopicArn"))
   {
     m_snsTopicArn = jsonValue.GetString("SnsTopicArn");
-
     m_snsTopicArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnsTopicStatus"))
   {
     m_snsTopicStatus = jsonValue.GetString("SnsTopicStatus");
-
     m_snsTopicStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnapshotRetentionLimit"))
   {
     m_snapshotRetentionLimit = jsonValue.GetInteger("SnapshotRetentionLimit");
-
     m_snapshotRetentionLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaintenanceWindow"))
   {
     m_maintenanceWindow = jsonValue.GetString("MaintenanceWindow");
-
     m_maintenanceWindowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnapshotWindow"))
   {
     m_snapshotWindow = jsonValue.GetString("SnapshotWindow");
-
     m_snapshotWindowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ACLName"))
   {
     m_aCLName = jsonValue.GetString("ACLName");
-
     m_aCLNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoMinorVersionUpgrade"))
   {
     m_autoMinorVersionUpgrade = jsonValue.GetBool("AutoMinorVersionUpgrade");
-
     m_autoMinorVersionUpgradeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataTiering"))
   {
     m_dataTiering = DataTieringStatusMapper::GetDataTieringStatusForName(jsonValue.GetString("DataTiering"));
-
     m_dataTieringHasBeenSet = true;
   }
-
   return *this;
 }
 

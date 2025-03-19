@@ -29,7 +29,7 @@ namespace Model
   class MultiplexStatmuxVideoSettings
   {
   public:
-    AWS_MEDIALIVE_API MultiplexStatmuxVideoSettings();
+    AWS_MEDIALIVE_API MultiplexStatmuxVideoSettings() = default;
     AWS_MEDIALIVE_API MultiplexStatmuxVideoSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API MultiplexStatmuxVideoSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,7 +39,7 @@ namespace Model
     /**
      * Maximum statmux bitrate.
      */
-    inline int GetMaximumBitrate() const{ return m_maximumBitrate; }
+    inline int GetMaximumBitrate() const { return m_maximumBitrate; }
     inline bool MaximumBitrateHasBeenSet() const { return m_maximumBitrateHasBeenSet; }
     inline void SetMaximumBitrate(int value) { m_maximumBitrateHasBeenSet = true; m_maximumBitrate = value; }
     inline MultiplexStatmuxVideoSettings& WithMaximumBitrate(int value) { SetMaximumBitrate(value); return *this;}
@@ -49,7 +49,7 @@ namespace Model
     /**
      * Minimum statmux bitrate.
      */
-    inline int GetMinimumBitrate() const{ return m_minimumBitrate; }
+    inline int GetMinimumBitrate() const { return m_minimumBitrate; }
     inline bool MinimumBitrateHasBeenSet() const { return m_minimumBitrateHasBeenSet; }
     inline void SetMinimumBitrate(int value) { m_minimumBitrateHasBeenSet = true; m_minimumBitrate = value; }
     inline MultiplexStatmuxVideoSettings& WithMinimumBitrate(int value) { SetMinimumBitrate(value); return *this;}
@@ -63,20 +63,20 @@ namespace Model
      * higher priority will\nget higher video quality at the expense of the video
      * quality of\nother channels in the multiplex with lower priority.
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline MultiplexStatmuxVideoSettings& WithPriority(int value) { SetPriority(value); return *this;}
     ///@}
   private:
 
-    int m_maximumBitrate;
+    int m_maximumBitrate{0};
     bool m_maximumBitrateHasBeenSet = false;
 
-    int m_minimumBitrate;
+    int m_minimumBitrate{0};
     bool m_minimumBitrateHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
   };
 

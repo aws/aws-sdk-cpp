@@ -32,7 +32,7 @@ namespace Model
   class AggregateConformancePackComplianceSummaryFilters
   {
   public:
-    AWS_CONFIGSERVICE_API AggregateConformancePackComplianceSummaryFilters();
+    AWS_CONFIGSERVICE_API AggregateConformancePackComplianceSummaryFilters() = default;
     AWS_CONFIGSERVICE_API AggregateConformancePackComplianceSummaryFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API AggregateConformancePackComplianceSummaryFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The 12-digit Amazon Web Services account ID of the source account.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline AggregateConformancePackComplianceSummaryFilters& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline AggregateConformancePackComplianceSummaryFilters& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline AggregateConformancePackComplianceSummaryFilters& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    AggregateConformancePackComplianceSummaryFilters& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source Amazon Web Services Region from where the data is aggregated.</p>
      */
-    inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
+    inline const Aws::String& GetAwsRegion() const { return m_awsRegion; }
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
-    inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
-    inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
-    inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
-    inline AggregateConformancePackComplianceSummaryFilters& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
-    inline AggregateConformancePackComplianceSummaryFilters& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
-    inline AggregateConformancePackComplianceSummaryFilters& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
+    template<typename AwsRegionT = Aws::String>
+    void SetAwsRegion(AwsRegionT&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::forward<AwsRegionT>(value); }
+    template<typename AwsRegionT = Aws::String>
+    AggregateConformancePackComplianceSummaryFilters& WithAwsRegion(AwsRegionT&& value) { SetAwsRegion(std::forward<AwsRegionT>(value)); return *this;}
     ///@}
   private:
 

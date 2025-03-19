@@ -31,7 +31,7 @@ namespace Model
   class DiskInfo
   {
   public:
-    AWS_LIGHTSAIL_API DiskInfo();
+    AWS_LIGHTSAIL_API DiskInfo() = default;
     AWS_LIGHTSAIL_API DiskInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API DiskInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,35 +41,31 @@ namespace Model
     /**
      * <p>The disk name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DiskInfo& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DiskInfo& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DiskInfo& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DiskInfo& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The disk path.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline DiskInfo& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline DiskInfo& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline DiskInfo& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    DiskInfo& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The size of the disk in GB (<code>32</code>).</p>
      */
-    inline int GetSizeInGb() const{ return m_sizeInGb; }
+    inline int GetSizeInGb() const { return m_sizeInGb; }
     inline bool SizeInGbHasBeenSet() const { return m_sizeInGbHasBeenSet; }
     inline void SetSizeInGb(int value) { m_sizeInGbHasBeenSet = true; m_sizeInGb = value; }
     inline DiskInfo& WithSizeInGb(int value) { SetSizeInGb(value); return *this;}
@@ -80,7 +76,7 @@ namespace Model
      * <p>A Boolean value indicating whether this disk is a system disk (has an
      * operating system loaded on it).</p>
      */
-    inline bool GetIsSystemDisk() const{ return m_isSystemDisk; }
+    inline bool GetIsSystemDisk() const { return m_isSystemDisk; }
     inline bool IsSystemDiskHasBeenSet() const { return m_isSystemDiskHasBeenSet; }
     inline void SetIsSystemDisk(bool value) { m_isSystemDiskHasBeenSet = true; m_isSystemDisk = value; }
     inline DiskInfo& WithIsSystemDisk(bool value) { SetIsSystemDisk(value); return *this;}
@@ -93,10 +89,10 @@ namespace Model
     Aws::String m_path;
     bool m_pathHasBeenSet = false;
 
-    int m_sizeInGb;
+    int m_sizeInGb{0};
     bool m_sizeInGbHasBeenSet = false;
 
-    bool m_isSystemDisk;
+    bool m_isSystemDisk{false};
     bool m_isSystemDiskHasBeenSet = false;
   };
 

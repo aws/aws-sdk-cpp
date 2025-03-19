@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateTestCaseResult::CreateTestCaseResult() : 
-    m_testCaseVersion(0)
-{
-}
-
 CreateTestCaseResult::CreateTestCaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateTestCaseResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ CreateTestCaseResult& CreateTestCaseResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("testCaseId"))
   {
     m_testCaseId = jsonValue.GetString("testCaseId");
-
+    m_testCaseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testCaseVersion"))
   {
     m_testCaseVersion = jsonValue.GetInteger("testCaseVersion");
-
+    m_testCaseVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

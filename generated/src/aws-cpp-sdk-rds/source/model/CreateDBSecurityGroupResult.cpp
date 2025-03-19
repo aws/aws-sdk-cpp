@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDBSecurityGroupResult::CreateDBSecurityGroupResult()
-{
-}
-
 CreateDBSecurityGroupResult::CreateDBSecurityGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ CreateDBSecurityGroupResult& CreateDBSecurityGroupResult::operator =(const Aws::
     if(!dBSecurityGroupNode.IsNull())
     {
       m_dBSecurityGroup = dBSecurityGroupNode;
+      m_dBSecurityGroupHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::CreateDBSecurityGroupResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

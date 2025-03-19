@@ -26,7 +26,7 @@ namespace Model
   class CreateRuleRequest : public DataZoneRequest
   {
   public:
-    AWS_DATAZONE_API CreateRuleRequest();
+    AWS_DATAZONE_API CreateRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,12 +41,10 @@ namespace Model
     /**
      * <p>The action of the rule.</p>
      */
-    inline const RuleAction& GetAction() const{ return m_action; }
+    inline RuleAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const RuleAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(RuleAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline CreateRuleRequest& WithAction(const RuleAction& value) { SetAction(value); return *this;}
-    inline CreateRuleRequest& WithAction(RuleAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(RuleAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline CreateRuleRequest& WithAction(RuleAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -54,96 +52,88 @@ namespace Model
      * <p>A unique, case-sensitive identifier that is provided to ensure the
      * idempotency of the request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateRuleRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateRuleRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateRuleRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateRuleRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the rule.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateRuleRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateRuleRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateRuleRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateRuleRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The detail of the rule.</p>
      */
-    inline const RuleDetail& GetDetail() const{ return m_detail; }
+    inline const RuleDetail& GetDetail() const { return m_detail; }
     inline bool DetailHasBeenSet() const { return m_detailHasBeenSet; }
-    inline void SetDetail(const RuleDetail& value) { m_detailHasBeenSet = true; m_detail = value; }
-    inline void SetDetail(RuleDetail&& value) { m_detailHasBeenSet = true; m_detail = std::move(value); }
-    inline CreateRuleRequest& WithDetail(const RuleDetail& value) { SetDetail(value); return *this;}
-    inline CreateRuleRequest& WithDetail(RuleDetail&& value) { SetDetail(std::move(value)); return *this;}
+    template<typename DetailT = RuleDetail>
+    void SetDetail(DetailT&& value) { m_detailHasBeenSet = true; m_detail = std::forward<DetailT>(value); }
+    template<typename DetailT = RuleDetail>
+    CreateRuleRequest& WithDetail(DetailT&& value) { SetDetail(std::forward<DetailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the domain where the rule is created.</p>
      */
-    inline const Aws::String& GetDomainIdentifier() const{ return m_domainIdentifier; }
+    inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
     inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
-    inline void SetDomainIdentifier(const Aws::String& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = value; }
-    inline void SetDomainIdentifier(Aws::String&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::move(value); }
-    inline void SetDomainIdentifier(const char* value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier.assign(value); }
-    inline CreateRuleRequest& WithDomainIdentifier(const Aws::String& value) { SetDomainIdentifier(value); return *this;}
-    inline CreateRuleRequest& WithDomainIdentifier(Aws::String&& value) { SetDomainIdentifier(std::move(value)); return *this;}
-    inline CreateRuleRequest& WithDomainIdentifier(const char* value) { SetDomainIdentifier(value); return *this;}
+    template<typename DomainIdentifierT = Aws::String>
+    void SetDomainIdentifier(DomainIdentifierT&& value) { m_domainIdentifierHasBeenSet = true; m_domainIdentifier = std::forward<DomainIdentifierT>(value); }
+    template<typename DomainIdentifierT = Aws::String>
+    CreateRuleRequest& WithDomainIdentifier(DomainIdentifierT&& value) { SetDomainIdentifier(std::forward<DomainIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the rule.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateRuleRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateRuleRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateRuleRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateRuleRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The scope of the rule.</p>
      */
-    inline const RuleScope& GetScope() const{ return m_scope; }
+    inline const RuleScope& GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const RuleScope& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(RuleScope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline CreateRuleRequest& WithScope(const RuleScope& value) { SetScope(value); return *this;}
-    inline CreateRuleRequest& WithScope(RuleScope&& value) { SetScope(std::move(value)); return *this;}
+    template<typename ScopeT = RuleScope>
+    void SetScope(ScopeT&& value) { m_scopeHasBeenSet = true; m_scope = std::forward<ScopeT>(value); }
+    template<typename ScopeT = RuleScope>
+    CreateRuleRequest& WithScope(ScopeT&& value) { SetScope(std::forward<ScopeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target of the rule.</p>
      */
-    inline const RuleTarget& GetTarget() const{ return m_target; }
+    inline const RuleTarget& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const RuleTarget& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(RuleTarget&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline CreateRuleRequest& WithTarget(const RuleTarget& value) { SetTarget(value); return *this;}
-    inline CreateRuleRequest& WithTarget(RuleTarget&& value) { SetTarget(std::move(value)); return *this;}
+    template<typename TargetT = RuleTarget>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = RuleTarget>
+    CreateRuleRequest& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
   private:
 
-    RuleAction m_action;
+    RuleAction m_action{RuleAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
     Aws::String m_clientToken;

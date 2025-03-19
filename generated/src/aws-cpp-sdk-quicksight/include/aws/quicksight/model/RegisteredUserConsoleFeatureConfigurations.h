@@ -33,7 +33,7 @@ namespace Model
   class RegisteredUserConsoleFeatureConfigurations
   {
   public:
-    AWS_QUICKSIGHT_API RegisteredUserConsoleFeatureConfigurations();
+    AWS_QUICKSIGHT_API RegisteredUserConsoleFeatureConfigurations() = default;
     AWS_QUICKSIGHT_API RegisteredUserConsoleFeatureConfigurations(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API RegisteredUserConsoleFeatureConfigurations& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
      * <p>The state persistence configurations of an embedded Amazon QuickSight
      * console.</p>
      */
-    inline const StatePersistenceConfigurations& GetStatePersistence() const{ return m_statePersistence; }
+    inline const StatePersistenceConfigurations& GetStatePersistence() const { return m_statePersistence; }
     inline bool StatePersistenceHasBeenSet() const { return m_statePersistenceHasBeenSet; }
-    inline void SetStatePersistence(const StatePersistenceConfigurations& value) { m_statePersistenceHasBeenSet = true; m_statePersistence = value; }
-    inline void SetStatePersistence(StatePersistenceConfigurations&& value) { m_statePersistenceHasBeenSet = true; m_statePersistence = std::move(value); }
-    inline RegisteredUserConsoleFeatureConfigurations& WithStatePersistence(const StatePersistenceConfigurations& value) { SetStatePersistence(value); return *this;}
-    inline RegisteredUserConsoleFeatureConfigurations& WithStatePersistence(StatePersistenceConfigurations&& value) { SetStatePersistence(std::move(value)); return *this;}
+    template<typename StatePersistenceT = StatePersistenceConfigurations>
+    void SetStatePersistence(StatePersistenceT&& value) { m_statePersistenceHasBeenSet = true; m_statePersistence = std::forward<StatePersistenceT>(value); }
+    template<typename StatePersistenceT = StatePersistenceConfigurations>
+    RegisteredUserConsoleFeatureConfigurations& WithStatePersistence(StatePersistenceT&& value) { SetStatePersistence(std::forward<StatePersistenceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The shared view settings of an embedded dashboard.</p>
      */
-    inline const SharedViewConfigurations& GetSharedView() const{ return m_sharedView; }
+    inline const SharedViewConfigurations& GetSharedView() const { return m_sharedView; }
     inline bool SharedViewHasBeenSet() const { return m_sharedViewHasBeenSet; }
-    inline void SetSharedView(const SharedViewConfigurations& value) { m_sharedViewHasBeenSet = true; m_sharedView = value; }
-    inline void SetSharedView(SharedViewConfigurations&& value) { m_sharedViewHasBeenSet = true; m_sharedView = std::move(value); }
-    inline RegisteredUserConsoleFeatureConfigurations& WithSharedView(const SharedViewConfigurations& value) { SetSharedView(value); return *this;}
-    inline RegisteredUserConsoleFeatureConfigurations& WithSharedView(SharedViewConfigurations&& value) { SetSharedView(std::move(value)); return *this;}
+    template<typename SharedViewT = SharedViewConfigurations>
+    void SetSharedView(SharedViewT&& value) { m_sharedViewHasBeenSet = true; m_sharedView = std::forward<SharedViewT>(value); }
+    template<typename SharedViewT = SharedViewConfigurations>
+    RegisteredUserConsoleFeatureConfigurations& WithSharedView(SharedViewT&& value) { SetSharedView(std::forward<SharedViewT>(value)); return *this;}
     ///@}
   private:
 

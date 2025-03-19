@@ -36,7 +36,7 @@ namespace Model
   class UserTokenConfiguration
   {
   public:
-    AWS_KENDRA_API UserTokenConfiguration();
+    AWS_KENDRA_API UserTokenConfiguration() = default;
     AWS_KENDRA_API UserTokenConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API UserTokenConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,24 +46,24 @@ namespace Model
     /**
      * <p>Information about the JWT token type configuration.</p>
      */
-    inline const JwtTokenTypeConfiguration& GetJwtTokenTypeConfiguration() const{ return m_jwtTokenTypeConfiguration; }
+    inline const JwtTokenTypeConfiguration& GetJwtTokenTypeConfiguration() const { return m_jwtTokenTypeConfiguration; }
     inline bool JwtTokenTypeConfigurationHasBeenSet() const { return m_jwtTokenTypeConfigurationHasBeenSet; }
-    inline void SetJwtTokenTypeConfiguration(const JwtTokenTypeConfiguration& value) { m_jwtTokenTypeConfigurationHasBeenSet = true; m_jwtTokenTypeConfiguration = value; }
-    inline void SetJwtTokenTypeConfiguration(JwtTokenTypeConfiguration&& value) { m_jwtTokenTypeConfigurationHasBeenSet = true; m_jwtTokenTypeConfiguration = std::move(value); }
-    inline UserTokenConfiguration& WithJwtTokenTypeConfiguration(const JwtTokenTypeConfiguration& value) { SetJwtTokenTypeConfiguration(value); return *this;}
-    inline UserTokenConfiguration& WithJwtTokenTypeConfiguration(JwtTokenTypeConfiguration&& value) { SetJwtTokenTypeConfiguration(std::move(value)); return *this;}
+    template<typename JwtTokenTypeConfigurationT = JwtTokenTypeConfiguration>
+    void SetJwtTokenTypeConfiguration(JwtTokenTypeConfigurationT&& value) { m_jwtTokenTypeConfigurationHasBeenSet = true; m_jwtTokenTypeConfiguration = std::forward<JwtTokenTypeConfigurationT>(value); }
+    template<typename JwtTokenTypeConfigurationT = JwtTokenTypeConfiguration>
+    UserTokenConfiguration& WithJwtTokenTypeConfiguration(JwtTokenTypeConfigurationT&& value) { SetJwtTokenTypeConfiguration(std::forward<JwtTokenTypeConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the JSON token type configuration.</p>
      */
-    inline const JsonTokenTypeConfiguration& GetJsonTokenTypeConfiguration() const{ return m_jsonTokenTypeConfiguration; }
+    inline const JsonTokenTypeConfiguration& GetJsonTokenTypeConfiguration() const { return m_jsonTokenTypeConfiguration; }
     inline bool JsonTokenTypeConfigurationHasBeenSet() const { return m_jsonTokenTypeConfigurationHasBeenSet; }
-    inline void SetJsonTokenTypeConfiguration(const JsonTokenTypeConfiguration& value) { m_jsonTokenTypeConfigurationHasBeenSet = true; m_jsonTokenTypeConfiguration = value; }
-    inline void SetJsonTokenTypeConfiguration(JsonTokenTypeConfiguration&& value) { m_jsonTokenTypeConfigurationHasBeenSet = true; m_jsonTokenTypeConfiguration = std::move(value); }
-    inline UserTokenConfiguration& WithJsonTokenTypeConfiguration(const JsonTokenTypeConfiguration& value) { SetJsonTokenTypeConfiguration(value); return *this;}
-    inline UserTokenConfiguration& WithJsonTokenTypeConfiguration(JsonTokenTypeConfiguration&& value) { SetJsonTokenTypeConfiguration(std::move(value)); return *this;}
+    template<typename JsonTokenTypeConfigurationT = JsonTokenTypeConfiguration>
+    void SetJsonTokenTypeConfiguration(JsonTokenTypeConfigurationT&& value) { m_jsonTokenTypeConfigurationHasBeenSet = true; m_jsonTokenTypeConfiguration = std::forward<JsonTokenTypeConfigurationT>(value); }
+    template<typename JsonTokenTypeConfigurationT = JsonTokenTypeConfiguration>
+    UserTokenConfiguration& WithJsonTokenTypeConfiguration(JsonTokenTypeConfigurationT&& value) { SetJsonTokenTypeConfiguration(std::forward<JsonTokenTypeConfigurationT>(value)); return *this;}
     ///@}
   private:
 

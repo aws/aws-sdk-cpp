@@ -34,7 +34,7 @@ namespace Model
   class CoreNetworkChange
   {
   public:
-    AWS_NETWORKMANAGER_API CoreNetworkChange();
+    AWS_NETWORKMANAGER_API CoreNetworkChange() = default;
     AWS_NETWORKMANAGER_API CoreNetworkChange(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API CoreNetworkChange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,62 +44,56 @@ namespace Model
     /**
      * <p>The type of change.</p>
      */
-    inline const ChangeType& GetType() const{ return m_type; }
+    inline ChangeType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ChangeType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ChangeType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CoreNetworkChange& WithType(const ChangeType& value) { SetType(value); return *this;}
-    inline CoreNetworkChange& WithType(ChangeType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ChangeType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CoreNetworkChange& WithType(ChangeType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The action to take for a core network.</p>
      */
-    inline const ChangeAction& GetAction() const{ return m_action; }
+    inline ChangeAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline CoreNetworkChange& WithAction(const ChangeAction& value) { SetAction(value); return *this;}
-    inline CoreNetworkChange& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(ChangeAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline CoreNetworkChange& WithAction(ChangeAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource identifier.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline CoreNetworkChange& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline CoreNetworkChange& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline CoreNetworkChange& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    CoreNetworkChange& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The previous values for a core network.</p>
      */
-    inline const CoreNetworkChangeValues& GetPreviousValues() const{ return m_previousValues; }
+    inline const CoreNetworkChangeValues& GetPreviousValues() const { return m_previousValues; }
     inline bool PreviousValuesHasBeenSet() const { return m_previousValuesHasBeenSet; }
-    inline void SetPreviousValues(const CoreNetworkChangeValues& value) { m_previousValuesHasBeenSet = true; m_previousValues = value; }
-    inline void SetPreviousValues(CoreNetworkChangeValues&& value) { m_previousValuesHasBeenSet = true; m_previousValues = std::move(value); }
-    inline CoreNetworkChange& WithPreviousValues(const CoreNetworkChangeValues& value) { SetPreviousValues(value); return *this;}
-    inline CoreNetworkChange& WithPreviousValues(CoreNetworkChangeValues&& value) { SetPreviousValues(std::move(value)); return *this;}
+    template<typename PreviousValuesT = CoreNetworkChangeValues>
+    void SetPreviousValues(PreviousValuesT&& value) { m_previousValuesHasBeenSet = true; m_previousValues = std::forward<PreviousValuesT>(value); }
+    template<typename PreviousValuesT = CoreNetworkChangeValues>
+    CoreNetworkChange& WithPreviousValues(PreviousValuesT&& value) { SetPreviousValues(std::forward<PreviousValuesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new value for a core network</p>
      */
-    inline const CoreNetworkChangeValues& GetNewValues() const{ return m_newValues; }
+    inline const CoreNetworkChangeValues& GetNewValues() const { return m_newValues; }
     inline bool NewValuesHasBeenSet() const { return m_newValuesHasBeenSet; }
-    inline void SetNewValues(const CoreNetworkChangeValues& value) { m_newValuesHasBeenSet = true; m_newValues = value; }
-    inline void SetNewValues(CoreNetworkChangeValues&& value) { m_newValuesHasBeenSet = true; m_newValues = std::move(value); }
-    inline CoreNetworkChange& WithNewValues(const CoreNetworkChangeValues& value) { SetNewValues(value); return *this;}
-    inline CoreNetworkChange& WithNewValues(CoreNetworkChangeValues&& value) { SetNewValues(std::move(value)); return *this;}
+    template<typename NewValuesT = CoreNetworkChangeValues>
+    void SetNewValues(NewValuesT&& value) { m_newValuesHasBeenSet = true; m_newValues = std::forward<NewValuesT>(value); }
+    template<typename NewValuesT = CoreNetworkChangeValues>
+    CoreNetworkChange& WithNewValues(NewValuesT&& value) { SetNewValues(std::forward<NewValuesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,21 +102,19 @@ namespace Model
      * the <code>IdentifierPath</code> for a core network segment change might be
      * <code>"CORE_NETWORK_SEGMENT/us-east-1/devsegment"</code>.</p>
      */
-    inline const Aws::String& GetIdentifierPath() const{ return m_identifierPath; }
+    inline const Aws::String& GetIdentifierPath() const { return m_identifierPath; }
     inline bool IdentifierPathHasBeenSet() const { return m_identifierPathHasBeenSet; }
-    inline void SetIdentifierPath(const Aws::String& value) { m_identifierPathHasBeenSet = true; m_identifierPath = value; }
-    inline void SetIdentifierPath(Aws::String&& value) { m_identifierPathHasBeenSet = true; m_identifierPath = std::move(value); }
-    inline void SetIdentifierPath(const char* value) { m_identifierPathHasBeenSet = true; m_identifierPath.assign(value); }
-    inline CoreNetworkChange& WithIdentifierPath(const Aws::String& value) { SetIdentifierPath(value); return *this;}
-    inline CoreNetworkChange& WithIdentifierPath(Aws::String&& value) { SetIdentifierPath(std::move(value)); return *this;}
-    inline CoreNetworkChange& WithIdentifierPath(const char* value) { SetIdentifierPath(value); return *this;}
+    template<typename IdentifierPathT = Aws::String>
+    void SetIdentifierPath(IdentifierPathT&& value) { m_identifierPathHasBeenSet = true; m_identifierPath = std::forward<IdentifierPathT>(value); }
+    template<typename IdentifierPathT = Aws::String>
+    CoreNetworkChange& WithIdentifierPath(IdentifierPathT&& value) { SetIdentifierPath(std::forward<IdentifierPathT>(value)); return *this;}
     ///@}
   private:
 
-    ChangeType m_type;
+    ChangeType m_type{ChangeType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    ChangeAction m_action;
+    ChangeAction m_action{ChangeAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
     Aws::String m_identifier;

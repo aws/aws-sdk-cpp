@@ -18,15 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-EcsEnvironmentFile::EcsEnvironmentFile() : 
-    m_type(EcsEnvironmentFileType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 EcsEnvironmentFile::EcsEnvironmentFile(JsonView jsonValue)
-  : EcsEnvironmentFile()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EcsEnvironmentFile& EcsEnvironmentFile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = EcsEnvironmentFileTypeMapper::GetEcsEnvironmentFileTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

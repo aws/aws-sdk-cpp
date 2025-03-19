@@ -23,7 +23,7 @@ namespace Model
   class DescribeEnvironmentMembershipsRequest : public Cloud9Request
   {
   public:
-    AWS_CLOUD9_API DescribeEnvironmentMembershipsRequest();
+    AWS_CLOUD9_API DescribeEnvironmentMembershipsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
      * information about. If no value is specified, information about all environment
      * members are returned.</p>
      */
-    inline const Aws::String& GetUserArn() const{ return m_userArn; }
+    inline const Aws::String& GetUserArn() const { return m_userArn; }
     inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
-    inline void SetUserArn(const Aws::String& value) { m_userArnHasBeenSet = true; m_userArn = value; }
-    inline void SetUserArn(Aws::String&& value) { m_userArnHasBeenSet = true; m_userArn = std::move(value); }
-    inline void SetUserArn(const char* value) { m_userArnHasBeenSet = true; m_userArn.assign(value); }
-    inline DescribeEnvironmentMembershipsRequest& WithUserArn(const Aws::String& value) { SetUserArn(value); return *this;}
-    inline DescribeEnvironmentMembershipsRequest& WithUserArn(Aws::String&& value) { SetUserArn(std::move(value)); return *this;}
-    inline DescribeEnvironmentMembershipsRequest& WithUserArn(const char* value) { SetUserArn(value); return *this;}
+    template<typename UserArnT = Aws::String>
+    void SetUserArn(UserArnT&& value) { m_userArnHasBeenSet = true; m_userArn = std::forward<UserArnT>(value); }
+    template<typename UserArnT = Aws::String>
+    DescribeEnvironmentMembershipsRequest& WithUserArn(UserArnT&& value) { SetUserArn(std::forward<UserArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the environment to get environment member information about.</p>
      */
-    inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
+    inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
     inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
-    inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
-    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
-    inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
-    inline DescribeEnvironmentMembershipsRequest& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
-    inline DescribeEnvironmentMembershipsRequest& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
-    inline DescribeEnvironmentMembershipsRequest& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+    template<typename EnvironmentIdT = Aws::String>
+    void SetEnvironmentId(EnvironmentIdT&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::forward<EnvironmentIdT>(value); }
+    template<typename EnvironmentIdT = Aws::String>
+    DescribeEnvironmentMembershipsRequest& WithEnvironmentId(EnvironmentIdT&& value) { SetEnvironmentId(std::forward<EnvironmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,13 @@ namespace Model
      * access to the environment.</p> </li> </ul> <p>If no value is specified,
      * information about all environment members are returned.</p>
      */
-    inline const Aws::Vector<Permissions>& GetPermissions() const{ return m_permissions; }
+    inline const Aws::Vector<Permissions>& GetPermissions() const { return m_permissions; }
     inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
-    inline void SetPermissions(const Aws::Vector<Permissions>& value) { m_permissionsHasBeenSet = true; m_permissions = value; }
-    inline void SetPermissions(Aws::Vector<Permissions>&& value) { m_permissionsHasBeenSet = true; m_permissions = std::move(value); }
-    inline DescribeEnvironmentMembershipsRequest& WithPermissions(const Aws::Vector<Permissions>& value) { SetPermissions(value); return *this;}
-    inline DescribeEnvironmentMembershipsRequest& WithPermissions(Aws::Vector<Permissions>&& value) { SetPermissions(std::move(value)); return *this;}
-    inline DescribeEnvironmentMembershipsRequest& AddPermissions(const Permissions& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(value); return *this; }
-    inline DescribeEnvironmentMembershipsRequest& AddPermissions(Permissions&& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(std::move(value)); return *this; }
+    template<typename PermissionsT = Aws::Vector<Permissions>>
+    void SetPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions = std::forward<PermissionsT>(value); }
+    template<typename PermissionsT = Aws::Vector<Permissions>>
+    DescribeEnvironmentMembershipsRequest& WithPermissions(PermissionsT&& value) { SetPermissions(std::forward<PermissionsT>(value)); return *this;}
+    inline DescribeEnvironmentMembershipsRequest& AddPermissions(Permissions value) { m_permissionsHasBeenSet = true; m_permissions.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -94,21 +89,19 @@ namespace Model
      * keep calling this operation with each subsequent next token that is returned,
      * until no more next tokens are returned.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeEnvironmentMembershipsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeEnvironmentMembershipsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeEnvironmentMembershipsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeEnvironmentMembershipsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of environment members to get information about.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeEnvironmentMembershipsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -127,7 +120,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

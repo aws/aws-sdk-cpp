@@ -10,14 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-CreateCacheParameterGroupRequest::CreateCacheParameterGroupRequest() : 
-    m_cacheParameterGroupNameHasBeenSet(false),
-    m_cacheParameterGroupFamilyHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateCacheParameterGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -12,16 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateExperienceRequest::UpdateExperienceRequest() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_indexIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateExperienceRequest::SerializePayload() const
 {
   JsonValue payload;

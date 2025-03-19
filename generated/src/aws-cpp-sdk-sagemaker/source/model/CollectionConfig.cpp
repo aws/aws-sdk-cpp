@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-CollectionConfig::CollectionConfig() : 
-    m_vectorConfigHasBeenSet(false)
-{
-}
-
 CollectionConfig::CollectionConfig(JsonView jsonValue)
-  : CollectionConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CollectionConfig& CollectionConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VectorConfig"))
   {
     m_vectorConfig = jsonValue.GetObject("VectorConfig");
-
     m_vectorConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

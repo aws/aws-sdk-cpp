@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAvailabilityZonesResponse::DescribeAvailabilityZonesResponse()
-{
-}
-
 DescribeAvailabilityZonesResponse::DescribeAvailabilityZonesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ DescribeAvailabilityZonesResponse& DescribeAvailabilityZonesResponse::operator =
     if(!availabilityZonesNode.IsNull())
     {
       XmlNode availabilityZonesMember = availabilityZonesNode.FirstChild("item");
+      m_availabilityZonesHasBeenSet = !availabilityZonesMember.IsNull();
       while(!availabilityZonesMember.IsNull())
       {
         m_availabilityZones.push_back(availabilityZonesMember);
         availabilityZonesMember = availabilityZonesMember.NextNode("item");
       }
 
+      m_availabilityZonesHasBeenSet = true;
     }
   }
 
@@ -56,6 +54,7 @@ DescribeAvailabilityZonesResponse& DescribeAvailabilityZonesResponse::operator =
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeAvailabilityZonesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

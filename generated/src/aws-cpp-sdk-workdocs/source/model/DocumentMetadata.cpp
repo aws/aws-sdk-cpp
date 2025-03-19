@@ -18,21 +18,7 @@ namespace WorkDocs
 namespace Model
 {
 
-DocumentMetadata::DocumentMetadata() : 
-    m_idHasBeenSet(false),
-    m_creatorIdHasBeenSet(false),
-    m_parentFolderIdHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false),
-    m_modifiedTimestampHasBeenSet(false),
-    m_latestVersionMetadataHasBeenSet(false),
-    m_resourceState(ResourceStateType::NOT_SET),
-    m_resourceStateHasBeenSet(false),
-    m_labelsHasBeenSet(false)
-{
-}
-
 DocumentMetadata::DocumentMetadata(JsonView jsonValue)
-  : DocumentMetadata()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ DocumentMetadata& DocumentMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatorId"))
   {
     m_creatorId = jsonValue.GetString("CreatorId");
-
     m_creatorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParentFolderId"))
   {
     m_parentFolderId = jsonValue.GetString("ParentFolderId");
-
     m_parentFolderIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModifiedTimestamp"))
   {
     m_modifiedTimestamp = jsonValue.GetDouble("ModifiedTimestamp");
-
     m_modifiedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestVersionMetadata"))
   {
     m_latestVersionMetadata = jsonValue.GetObject("LatestVersionMetadata");
-
     m_latestVersionMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceState"))
   {
     m_resourceState = ResourceStateTypeMapper::GetResourceStateTypeForName(jsonValue.GetString("ResourceState"));
-
     m_resourceStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Labels"))
   {
     Aws::Utils::Array<JsonView> labelsJsonList = jsonValue.GetArray("Labels");
@@ -97,7 +69,6 @@ DocumentMetadata& DocumentMetadata::operator =(JsonView jsonValue)
     }
     m_labelsHasBeenSet = true;
   }
-
   return *this;
 }
 

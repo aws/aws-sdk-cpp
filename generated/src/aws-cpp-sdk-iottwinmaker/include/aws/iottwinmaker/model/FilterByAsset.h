@@ -31,7 +31,7 @@ namespace Model
   class FilterByAsset
   {
   public:
-    AWS_IOTTWINMAKER_API FilterByAsset();
+    AWS_IOTTWINMAKER_API FilterByAsset() = default;
     AWS_IOTTWINMAKER_API FilterByAsset(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API FilterByAsset& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,35 +41,31 @@ namespace Model
     /**
      * <p>Filter by asset Id.</p>
      */
-    inline const Aws::String& GetAssetId() const{ return m_assetId; }
+    inline const Aws::String& GetAssetId() const { return m_assetId; }
     inline bool AssetIdHasBeenSet() const { return m_assetIdHasBeenSet; }
-    inline void SetAssetId(const Aws::String& value) { m_assetIdHasBeenSet = true; m_assetId = value; }
-    inline void SetAssetId(Aws::String&& value) { m_assetIdHasBeenSet = true; m_assetId = std::move(value); }
-    inline void SetAssetId(const char* value) { m_assetIdHasBeenSet = true; m_assetId.assign(value); }
-    inline FilterByAsset& WithAssetId(const Aws::String& value) { SetAssetId(value); return *this;}
-    inline FilterByAsset& WithAssetId(Aws::String&& value) { SetAssetId(std::move(value)); return *this;}
-    inline FilterByAsset& WithAssetId(const char* value) { SetAssetId(value); return *this;}
+    template<typename AssetIdT = Aws::String>
+    void SetAssetId(AssetIdT&& value) { m_assetIdHasBeenSet = true; m_assetId = std::forward<AssetIdT>(value); }
+    template<typename AssetIdT = Aws::String>
+    FilterByAsset& WithAssetId(AssetIdT&& value) { SetAssetId(std::forward<AssetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The external-Id property of an asset. </p>
      */
-    inline const Aws::String& GetAssetExternalId() const{ return m_assetExternalId; }
+    inline const Aws::String& GetAssetExternalId() const { return m_assetExternalId; }
     inline bool AssetExternalIdHasBeenSet() const { return m_assetExternalIdHasBeenSet; }
-    inline void SetAssetExternalId(const Aws::String& value) { m_assetExternalIdHasBeenSet = true; m_assetExternalId = value; }
-    inline void SetAssetExternalId(Aws::String&& value) { m_assetExternalIdHasBeenSet = true; m_assetExternalId = std::move(value); }
-    inline void SetAssetExternalId(const char* value) { m_assetExternalIdHasBeenSet = true; m_assetExternalId.assign(value); }
-    inline FilterByAsset& WithAssetExternalId(const Aws::String& value) { SetAssetExternalId(value); return *this;}
-    inline FilterByAsset& WithAssetExternalId(Aws::String&& value) { SetAssetExternalId(std::move(value)); return *this;}
-    inline FilterByAsset& WithAssetExternalId(const char* value) { SetAssetExternalId(value); return *this;}
+    template<typename AssetExternalIdT = Aws::String>
+    void SetAssetExternalId(AssetExternalIdT&& value) { m_assetExternalIdHasBeenSet = true; m_assetExternalId = std::forward<AssetExternalIdT>(value); }
+    template<typename AssetExternalIdT = Aws::String>
+    FilterByAsset& WithAssetExternalId(AssetExternalIdT&& value) { SetAssetExternalId(std::forward<AssetExternalIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Includes sub-assets.[need description hekp for this]</p>
      */
-    inline bool GetIncludeOffspring() const{ return m_includeOffspring; }
+    inline bool GetIncludeOffspring() const { return m_includeOffspring; }
     inline bool IncludeOffspringHasBeenSet() const { return m_includeOffspringHasBeenSet; }
     inline void SetIncludeOffspring(bool value) { m_includeOffspringHasBeenSet = true; m_includeOffspring = value; }
     inline FilterByAsset& WithIncludeOffspring(bool value) { SetIncludeOffspring(value); return *this;}
@@ -79,7 +75,7 @@ namespace Model
     /**
      * <p>Boolean to include the asset model.</p>
      */
-    inline bool GetIncludeAssetModel() const{ return m_includeAssetModel; }
+    inline bool GetIncludeAssetModel() const { return m_includeAssetModel; }
     inline bool IncludeAssetModelHasBeenSet() const { return m_includeAssetModelHasBeenSet; }
     inline void SetIncludeAssetModel(bool value) { m_includeAssetModelHasBeenSet = true; m_includeAssetModel = value; }
     inline FilterByAsset& WithIncludeAssetModel(bool value) { SetIncludeAssetModel(value); return *this;}
@@ -92,10 +88,10 @@ namespace Model
     Aws::String m_assetExternalId;
     bool m_assetExternalIdHasBeenSet = false;
 
-    bool m_includeOffspring;
+    bool m_includeOffspring{false};
     bool m_includeOffspringHasBeenSet = false;
 
-    bool m_includeAssetModel;
+    bool m_includeAssetModel{false};
     bool m_includeAssetModelHasBeenSet = false;
   };
 

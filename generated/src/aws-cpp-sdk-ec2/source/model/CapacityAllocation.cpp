@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CapacityAllocation::CapacityAllocation() : 
-    m_allocationType(AllocationType::NOT_SET),
-    m_allocationTypeHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
-{
-}
-
 CapacityAllocation::CapacityAllocation(const XmlNode& xmlNode)
-  : CapacityAllocation()
 {
   *this = xmlNode;
 }
@@ -43,7 +34,7 @@ CapacityAllocation& CapacityAllocation::operator =(const XmlNode& xmlNode)
     XmlNode allocationTypeNode = resultNode.FirstChild("allocationType");
     if(!allocationTypeNode.IsNull())
     {
-      m_allocationType = AllocationTypeMapper::GetAllocationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allocationTypeNode.GetText()).c_str()).c_str());
+      m_allocationType = AllocationTypeMapper::GetAllocationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allocationTypeNode.GetText()).c_str()));
       m_allocationTypeHasBeenSet = true;
     }
     XmlNode countNode = resultNode.FirstChild("count");

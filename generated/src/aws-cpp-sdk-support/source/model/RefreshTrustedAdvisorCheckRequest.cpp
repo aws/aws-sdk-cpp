@@ -12,11 +12,6 @@ using namespace Aws::Support::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RefreshTrustedAdvisorCheckRequest::RefreshTrustedAdvisorCheckRequest() : 
-    m_checkIdHasBeenSet(false)
-{
-}
-
 Aws::String RefreshTrustedAdvisorCheckRequest::SerializePayload() const
 {
   JsonValue payload;

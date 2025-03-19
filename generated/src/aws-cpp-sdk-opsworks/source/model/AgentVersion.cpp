@@ -18,14 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-AgentVersion::AgentVersion() : 
-    m_versionHasBeenSet(false),
-    m_configurationManagerHasBeenSet(false)
-{
-}
-
 AgentVersion::AgentVersion(JsonView jsonValue)
-  : AgentVersion()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AgentVersion& AgentVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigurationManager"))
   {
     m_configurationManager = jsonValue.GetObject("ConfigurationManager");
-
     m_configurationManagerHasBeenSet = true;
   }
-
   return *this;
 }
 

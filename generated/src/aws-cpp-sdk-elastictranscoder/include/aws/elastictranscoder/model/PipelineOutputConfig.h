@@ -34,7 +34,7 @@ namespace Model
   class PipelineOutputConfig
   {
   public:
-    AWS_ELASTICTRANSCODER_API PipelineOutputConfig();
+    AWS_ELASTICTRANSCODER_API PipelineOutputConfig() = default;
     AWS_ELASTICTRANSCODER_API PipelineOutputConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API PipelineOutputConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,14 +56,12 @@ namespace Model
      * storage class, omit OutputBucket and specify values for
      * <code>ContentConfig</code> and <code>ThumbnailConfig</code> instead. </p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline PipelineOutputConfig& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline PipelineOutputConfig& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline PipelineOutputConfig& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    PipelineOutputConfig& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +70,12 @@ namespace Model
      * <code>ReducedRedundancy</code>, that you want Elastic Transcoder to assign to
      * the video files and playlists that it stores in your Amazon S3 bucket. </p>
      */
-    inline const Aws::String& GetStorageClass() const{ return m_storageClass; }
+    inline const Aws::String& GetStorageClass() const { return m_storageClass; }
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
-    inline void SetStorageClass(const Aws::String& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
-    inline void SetStorageClass(Aws::String&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
-    inline void SetStorageClass(const char* value) { m_storageClassHasBeenSet = true; m_storageClass.assign(value); }
-    inline PipelineOutputConfig& WithStorageClass(const Aws::String& value) { SetStorageClass(value); return *this;}
-    inline PipelineOutputConfig& WithStorageClass(Aws::String&& value) { SetStorageClass(std::move(value)); return *this;}
-    inline PipelineOutputConfig& WithStorageClass(const char* value) { SetStorageClass(value); return *this;}
+    template<typename StorageClassT = Aws::String>
+    void SetStorageClass(StorageClassT&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::forward<StorageClassT>(value); }
+    template<typename StorageClassT = Aws::String>
+    PipelineOutputConfig& WithStorageClass(StorageClassT&& value) { SetStorageClass(std::forward<StorageClassT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,14 +93,14 @@ namespace Model
      * <code>Role</code>, and grants no other permissions to any other user or
      * group.</p>
      */
-    inline const Aws::Vector<Permission>& GetPermissions() const{ return m_permissions; }
+    inline const Aws::Vector<Permission>& GetPermissions() const { return m_permissions; }
     inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
-    inline void SetPermissions(const Aws::Vector<Permission>& value) { m_permissionsHasBeenSet = true; m_permissions = value; }
-    inline void SetPermissions(Aws::Vector<Permission>&& value) { m_permissionsHasBeenSet = true; m_permissions = std::move(value); }
-    inline PipelineOutputConfig& WithPermissions(const Aws::Vector<Permission>& value) { SetPermissions(value); return *this;}
-    inline PipelineOutputConfig& WithPermissions(Aws::Vector<Permission>&& value) { SetPermissions(std::move(value)); return *this;}
-    inline PipelineOutputConfig& AddPermissions(const Permission& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(value); return *this; }
-    inline PipelineOutputConfig& AddPermissions(Permission&& value) { m_permissionsHasBeenSet = true; m_permissions.push_back(std::move(value)); return *this; }
+    template<typename PermissionsT = Aws::Vector<Permission>>
+    void SetPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions = std::forward<PermissionsT>(value); }
+    template<typename PermissionsT = Aws::Vector<Permission>>
+    PipelineOutputConfig& WithPermissions(PermissionsT&& value) { SetPermissions(std::forward<PermissionsT>(value)); return *this;}
+    template<typename PermissionsT = Permission>
+    PipelineOutputConfig& AddPermissions(PermissionsT&& value) { m_permissionsHasBeenSet = true; m_permissions.emplace_back(std::forward<PermissionsT>(value)); return *this; }
     ///@}
   private:
 

@@ -30,7 +30,7 @@ namespace Model
   class DetectEntitiesV2Result
   {
   public:
-    AWS_COMPREHENDMEDICAL_API DetectEntitiesV2Result();
+    AWS_COMPREHENDMEDICAL_API DetectEntitiesV2Result() = default;
     AWS_COMPREHENDMEDICAL_API DetectEntitiesV2Result(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHENDMEDICAL_API DetectEntitiesV2Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,13 +43,13 @@ namespace Model
      * confidence in the detection and analysis. Attributes and traits of the entity
      * are also returned.</p>
      */
-    inline const Aws::Vector<Entity>& GetEntities() const{ return m_entities; }
-    inline void SetEntities(const Aws::Vector<Entity>& value) { m_entities = value; }
-    inline void SetEntities(Aws::Vector<Entity>&& value) { m_entities = std::move(value); }
-    inline DetectEntitiesV2Result& WithEntities(const Aws::Vector<Entity>& value) { SetEntities(value); return *this;}
-    inline DetectEntitiesV2Result& WithEntities(Aws::Vector<Entity>&& value) { SetEntities(std::move(value)); return *this;}
-    inline DetectEntitiesV2Result& AddEntities(const Entity& value) { m_entities.push_back(value); return *this; }
-    inline DetectEntitiesV2Result& AddEntities(Entity&& value) { m_entities.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Entity>& GetEntities() const { return m_entities; }
+    template<typename EntitiesT = Aws::Vector<Entity>>
+    void SetEntities(EntitiesT&& value) { m_entitiesHasBeenSet = true; m_entities = std::forward<EntitiesT>(value); }
+    template<typename EntitiesT = Aws::Vector<Entity>>
+    DetectEntitiesV2Result& WithEntities(EntitiesT&& value) { SetEntities(std::forward<EntitiesT>(value)); return *this;}
+    template<typename EntitiesT = Entity>
+    DetectEntitiesV2Result& AddEntities(EntitiesT&& value) { m_entitiesHasBeenSet = true; m_entities.emplace_back(std::forward<EntitiesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,13 +57,13 @@ namespace Model
      * <p>Attributes extracted from the input text that couldn't be related to an
      * entity.</p>
      */
-    inline const Aws::Vector<UnmappedAttribute>& GetUnmappedAttributes() const{ return m_unmappedAttributes; }
-    inline void SetUnmappedAttributes(const Aws::Vector<UnmappedAttribute>& value) { m_unmappedAttributes = value; }
-    inline void SetUnmappedAttributes(Aws::Vector<UnmappedAttribute>&& value) { m_unmappedAttributes = std::move(value); }
-    inline DetectEntitiesV2Result& WithUnmappedAttributes(const Aws::Vector<UnmappedAttribute>& value) { SetUnmappedAttributes(value); return *this;}
-    inline DetectEntitiesV2Result& WithUnmappedAttributes(Aws::Vector<UnmappedAttribute>&& value) { SetUnmappedAttributes(std::move(value)); return *this;}
-    inline DetectEntitiesV2Result& AddUnmappedAttributes(const UnmappedAttribute& value) { m_unmappedAttributes.push_back(value); return *this; }
-    inline DetectEntitiesV2Result& AddUnmappedAttributes(UnmappedAttribute&& value) { m_unmappedAttributes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<UnmappedAttribute>& GetUnmappedAttributes() const { return m_unmappedAttributes; }
+    template<typename UnmappedAttributesT = Aws::Vector<UnmappedAttribute>>
+    void SetUnmappedAttributes(UnmappedAttributesT&& value) { m_unmappedAttributesHasBeenSet = true; m_unmappedAttributes = std::forward<UnmappedAttributesT>(value); }
+    template<typename UnmappedAttributesT = Aws::Vector<UnmappedAttribute>>
+    DetectEntitiesV2Result& WithUnmappedAttributes(UnmappedAttributesT&& value) { SetUnmappedAttributes(std::forward<UnmappedAttributesT>(value)); return *this;}
+    template<typename UnmappedAttributesT = UnmappedAttribute>
+    DetectEntitiesV2Result& AddUnmappedAttributes(UnmappedAttributesT&& value) { m_unmappedAttributesHasBeenSet = true; m_unmappedAttributes.emplace_back(std::forward<UnmappedAttributesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -71,13 +71,11 @@ namespace Model
      * <p>If the result to the <code>DetectEntitiesV2</code> operation was truncated,
      * include the <code>PaginationToken</code> to fetch the next page of entities.</p>
      */
-    inline const Aws::String& GetPaginationToken() const{ return m_paginationToken; }
-    inline void SetPaginationToken(const Aws::String& value) { m_paginationToken = value; }
-    inline void SetPaginationToken(Aws::String&& value) { m_paginationToken = std::move(value); }
-    inline void SetPaginationToken(const char* value) { m_paginationToken.assign(value); }
-    inline DetectEntitiesV2Result& WithPaginationToken(const Aws::String& value) { SetPaginationToken(value); return *this;}
-    inline DetectEntitiesV2Result& WithPaginationToken(Aws::String&& value) { SetPaginationToken(std::move(value)); return *this;}
-    inline DetectEntitiesV2Result& WithPaginationToken(const char* value) { SetPaginationToken(value); return *this;}
+    inline const Aws::String& GetPaginationToken() const { return m_paginationToken; }
+    template<typename PaginationTokenT = Aws::String>
+    void SetPaginationToken(PaginationTokenT&& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = std::forward<PaginationTokenT>(value); }
+    template<typename PaginationTokenT = Aws::String>
+    DetectEntitiesV2Result& WithPaginationToken(PaginationTokenT&& value) { SetPaginationToken(std::forward<PaginationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,36 +84,37 @@ namespace Model
      * looks like X.X.X. You can use this information to track the model used for a
      * particular batch of documents.</p>
      */
-    inline const Aws::String& GetModelVersion() const{ return m_modelVersion; }
-    inline void SetModelVersion(const Aws::String& value) { m_modelVersion = value; }
-    inline void SetModelVersion(Aws::String&& value) { m_modelVersion = std::move(value); }
-    inline void SetModelVersion(const char* value) { m_modelVersion.assign(value); }
-    inline DetectEntitiesV2Result& WithModelVersion(const Aws::String& value) { SetModelVersion(value); return *this;}
-    inline DetectEntitiesV2Result& WithModelVersion(Aws::String&& value) { SetModelVersion(std::move(value)); return *this;}
-    inline DetectEntitiesV2Result& WithModelVersion(const char* value) { SetModelVersion(value); return *this;}
+    inline const Aws::String& GetModelVersion() const { return m_modelVersion; }
+    template<typename ModelVersionT = Aws::String>
+    void SetModelVersion(ModelVersionT&& value) { m_modelVersionHasBeenSet = true; m_modelVersion = std::forward<ModelVersionT>(value); }
+    template<typename ModelVersionT = Aws::String>
+    DetectEntitiesV2Result& WithModelVersion(ModelVersionT&& value) { SetModelVersion(std::forward<ModelVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DetectEntitiesV2Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DetectEntitiesV2Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DetectEntitiesV2Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DetectEntitiesV2Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Entity> m_entities;
+    bool m_entitiesHasBeenSet = false;
 
     Aws::Vector<UnmappedAttribute> m_unmappedAttributes;
+    bool m_unmappedAttributesHasBeenSet = false;
 
     Aws::String m_paginationToken;
+    bool m_paginationTokenHasBeenSet = false;
 
     Aws::String m_modelVersion;
+    bool m_modelVersionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

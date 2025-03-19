@@ -21,7 +21,7 @@ namespace Model
   class StopNotebookExecutionRequest : public EMRRequest
   {
   public:
-    AWS_EMR_API StopNotebookExecutionRequest();
+    AWS_EMR_API StopNotebookExecutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The unique identifier of the notebook execution.</p>
      */
-    inline const Aws::String& GetNotebookExecutionId() const{ return m_notebookExecutionId; }
+    inline const Aws::String& GetNotebookExecutionId() const { return m_notebookExecutionId; }
     inline bool NotebookExecutionIdHasBeenSet() const { return m_notebookExecutionIdHasBeenSet; }
-    inline void SetNotebookExecutionId(const Aws::String& value) { m_notebookExecutionIdHasBeenSet = true; m_notebookExecutionId = value; }
-    inline void SetNotebookExecutionId(Aws::String&& value) { m_notebookExecutionIdHasBeenSet = true; m_notebookExecutionId = std::move(value); }
-    inline void SetNotebookExecutionId(const char* value) { m_notebookExecutionIdHasBeenSet = true; m_notebookExecutionId.assign(value); }
-    inline StopNotebookExecutionRequest& WithNotebookExecutionId(const Aws::String& value) { SetNotebookExecutionId(value); return *this;}
-    inline StopNotebookExecutionRequest& WithNotebookExecutionId(Aws::String&& value) { SetNotebookExecutionId(std::move(value)); return *this;}
-    inline StopNotebookExecutionRequest& WithNotebookExecutionId(const char* value) { SetNotebookExecutionId(value); return *this;}
+    template<typename NotebookExecutionIdT = Aws::String>
+    void SetNotebookExecutionId(NotebookExecutionIdT&& value) { m_notebookExecutionIdHasBeenSet = true; m_notebookExecutionId = std::forward<NotebookExecutionIdT>(value); }
+    template<typename NotebookExecutionIdT = Aws::String>
+    StopNotebookExecutionRequest& WithNotebookExecutionId(NotebookExecutionIdT&& value) { SetNotebookExecutionId(std::forward<NotebookExecutionIdT>(value)); return *this;}
     ///@}
   private:
 

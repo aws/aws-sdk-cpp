@@ -10,15 +10,6 @@
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-SetAlarmStateRequest::SetAlarmStateRequest() : 
-    m_alarmNameHasBeenSet(false),
-    m_stateValue(StateValue::NOT_SET),
-    m_stateValueHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_stateReasonDataHasBeenSet(false)
-{
-}
-
 Aws::String SetAlarmStateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

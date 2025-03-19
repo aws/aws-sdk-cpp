@@ -18,17 +18,7 @@ namespace LicenseManagerUserSubscriptions
 namespace Model
 {
 
-InstanceSummary::InstanceSummary() : 
-    m_instanceIdHasBeenSet(false),
-    m_lastStatusCheckDateHasBeenSet(false),
-    m_productsHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 InstanceSummary::InstanceSummary(JsonView jsonValue)
-  : InstanceSummary()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ InstanceSummary& InstanceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastStatusCheckDate"))
   {
     m_lastStatusCheckDate = jsonValue.GetString("LastStatusCheckDate");
-
     m_lastStatusCheckDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Products"))
   {
     Aws::Utils::Array<JsonView> productsJsonList = jsonValue.GetArray("Products");
@@ -58,21 +44,16 @@ InstanceSummary& InstanceSummary::operator =(JsonView jsonValue)
     }
     m_productsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

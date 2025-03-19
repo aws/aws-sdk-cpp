@@ -29,7 +29,7 @@ namespace Model
   class ListIdentityProviderConfigsResult
   {
   public:
-    AWS_EKS_API ListIdentityProviderConfigsResult();
+    AWS_EKS_API ListIdentityProviderConfigsResult() = default;
     AWS_EKS_API ListIdentityProviderConfigsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EKS_API ListIdentityProviderConfigsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The identity provider configurations for the cluster.</p>
      */
-    inline const Aws::Vector<IdentityProviderConfig>& GetIdentityProviderConfigs() const{ return m_identityProviderConfigs; }
-    inline void SetIdentityProviderConfigs(const Aws::Vector<IdentityProviderConfig>& value) { m_identityProviderConfigs = value; }
-    inline void SetIdentityProviderConfigs(Aws::Vector<IdentityProviderConfig>&& value) { m_identityProviderConfigs = std::move(value); }
-    inline ListIdentityProviderConfigsResult& WithIdentityProviderConfigs(const Aws::Vector<IdentityProviderConfig>& value) { SetIdentityProviderConfigs(value); return *this;}
-    inline ListIdentityProviderConfigsResult& WithIdentityProviderConfigs(Aws::Vector<IdentityProviderConfig>&& value) { SetIdentityProviderConfigs(std::move(value)); return *this;}
-    inline ListIdentityProviderConfigsResult& AddIdentityProviderConfigs(const IdentityProviderConfig& value) { m_identityProviderConfigs.push_back(value); return *this; }
-    inline ListIdentityProviderConfigsResult& AddIdentityProviderConfigs(IdentityProviderConfig&& value) { m_identityProviderConfigs.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<IdentityProviderConfig>& GetIdentityProviderConfigs() const { return m_identityProviderConfigs; }
+    template<typename IdentityProviderConfigsT = Aws::Vector<IdentityProviderConfig>>
+    void SetIdentityProviderConfigs(IdentityProviderConfigsT&& value) { m_identityProviderConfigsHasBeenSet = true; m_identityProviderConfigs = std::forward<IdentityProviderConfigsT>(value); }
+    template<typename IdentityProviderConfigsT = Aws::Vector<IdentityProviderConfig>>
+    ListIdentityProviderConfigsResult& WithIdentityProviderConfigs(IdentityProviderConfigsT&& value) { SetIdentityProviderConfigs(std::forward<IdentityProviderConfigsT>(value)); return *this;}
+    template<typename IdentityProviderConfigsT = IdentityProviderConfig>
+    ListIdentityProviderConfigsResult& AddIdentityProviderConfigs(IdentityProviderConfigsT&& value) { m_identityProviderConfigsHasBeenSet = true; m_identityProviderConfigs.emplace_back(std::forward<IdentityProviderConfigsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,32 +58,31 @@ namespace Model
      * is used only to retrieve the next items in a list and not for other programmatic
      * purposes.</p> 
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListIdentityProviderConfigsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListIdentityProviderConfigsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListIdentityProviderConfigsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListIdentityProviderConfigsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListIdentityProviderConfigsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListIdentityProviderConfigsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListIdentityProviderConfigsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListIdentityProviderConfigsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<IdentityProviderConfig> m_identityProviderConfigs;
+    bool m_identityProviderConfigsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

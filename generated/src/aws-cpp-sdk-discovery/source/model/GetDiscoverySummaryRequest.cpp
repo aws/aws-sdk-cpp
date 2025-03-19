@@ -12,10 +12,6 @@ using namespace Aws::ApplicationDiscoveryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDiscoverySummaryRequest::GetDiscoverySummaryRequest()
-{
-}
-
 Aws::String GetDiscoverySummaryRequest::SerializePayload() const
 {
   return "{}";

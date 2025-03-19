@@ -34,7 +34,7 @@ namespace Model
   class GrantAccessResult
   {
   public:
-    AWS_OPSWORKS_API GrantAccessResult();
+    AWS_OPSWORKS_API GrantAccessResult() = default;
     AWS_OPSWORKS_API GrantAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPSWORKS_API GrantAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,28 +45,28 @@ namespace Model
      * log in to the instance by RDP clients, such as the Microsoft Remote Desktop
      * Connection.</p>
      */
-    inline const TemporaryCredential& GetTemporaryCredential() const{ return m_temporaryCredential; }
-    inline void SetTemporaryCredential(const TemporaryCredential& value) { m_temporaryCredential = value; }
-    inline void SetTemporaryCredential(TemporaryCredential&& value) { m_temporaryCredential = std::move(value); }
-    inline GrantAccessResult& WithTemporaryCredential(const TemporaryCredential& value) { SetTemporaryCredential(value); return *this;}
-    inline GrantAccessResult& WithTemporaryCredential(TemporaryCredential&& value) { SetTemporaryCredential(std::move(value)); return *this;}
+    inline const TemporaryCredential& GetTemporaryCredential() const { return m_temporaryCredential; }
+    template<typename TemporaryCredentialT = TemporaryCredential>
+    void SetTemporaryCredential(TemporaryCredentialT&& value) { m_temporaryCredentialHasBeenSet = true; m_temporaryCredential = std::forward<TemporaryCredentialT>(value); }
+    template<typename TemporaryCredentialT = TemporaryCredential>
+    GrantAccessResult& WithTemporaryCredential(TemporaryCredentialT&& value) { SetTemporaryCredential(std::forward<TemporaryCredentialT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GrantAccessResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GrantAccessResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GrantAccessResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GrantAccessResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TemporaryCredential m_temporaryCredential;
+    bool m_temporaryCredentialHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

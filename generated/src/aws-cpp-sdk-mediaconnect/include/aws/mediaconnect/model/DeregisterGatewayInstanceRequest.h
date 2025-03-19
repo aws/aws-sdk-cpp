@@ -25,7 +25,7 @@ namespace Model
   class DeregisterGatewayInstanceRequest : public MediaConnectRequest
   {
   public:
-    AWS_MEDIACONNECT_API DeregisterGatewayInstanceRequest();
+    AWS_MEDIACONNECT_API DeregisterGatewayInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
      * Force the deregistration of an instance. Force will deregister an instance, even
      * if there are bridges running on it.
      */
-    inline bool GetForce() const{ return m_force; }
+    inline bool GetForce() const { return m_force; }
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
     inline DeregisterGatewayInstanceRequest& WithForce(bool value) { SetForce(value); return *this;}
@@ -54,18 +54,16 @@ namespace Model
      * The Amazon Resource Name (ARN) of the gateway that contains the instance that
      * you want to deregister.
      */
-    inline const Aws::String& GetGatewayInstanceArn() const{ return m_gatewayInstanceArn; }
+    inline const Aws::String& GetGatewayInstanceArn() const { return m_gatewayInstanceArn; }
     inline bool GatewayInstanceArnHasBeenSet() const { return m_gatewayInstanceArnHasBeenSet; }
-    inline void SetGatewayInstanceArn(const Aws::String& value) { m_gatewayInstanceArnHasBeenSet = true; m_gatewayInstanceArn = value; }
-    inline void SetGatewayInstanceArn(Aws::String&& value) { m_gatewayInstanceArnHasBeenSet = true; m_gatewayInstanceArn = std::move(value); }
-    inline void SetGatewayInstanceArn(const char* value) { m_gatewayInstanceArnHasBeenSet = true; m_gatewayInstanceArn.assign(value); }
-    inline DeregisterGatewayInstanceRequest& WithGatewayInstanceArn(const Aws::String& value) { SetGatewayInstanceArn(value); return *this;}
-    inline DeregisterGatewayInstanceRequest& WithGatewayInstanceArn(Aws::String&& value) { SetGatewayInstanceArn(std::move(value)); return *this;}
-    inline DeregisterGatewayInstanceRequest& WithGatewayInstanceArn(const char* value) { SetGatewayInstanceArn(value); return *this;}
+    template<typename GatewayInstanceArnT = Aws::String>
+    void SetGatewayInstanceArn(GatewayInstanceArnT&& value) { m_gatewayInstanceArnHasBeenSet = true; m_gatewayInstanceArn = std::forward<GatewayInstanceArnT>(value); }
+    template<typename GatewayInstanceArnT = Aws::String>
+    DeregisterGatewayInstanceRequest& WithGatewayInstanceArn(GatewayInstanceArnT&& value) { SetGatewayInstanceArn(std::forward<GatewayInstanceArnT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_force;
+    bool m_force{false};
     bool m_forceHasBeenSet = false;
 
     Aws::String m_gatewayInstanceArn;

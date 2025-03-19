@@ -35,7 +35,7 @@ namespace Model
   class Filter
   {
   public:
-    AWS_LOOKOUTMETRICS_API Filter();
+    AWS_LOOKOUTMETRICS_API Filter() = default;
     AWS_LOOKOUTMETRICS_API Filter(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API Filter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,33 +45,29 @@ namespace Model
     /**
      * <p>The value that you want to include in the filter.</p>
      */
-    inline const Aws::String& GetDimensionValue() const{ return m_dimensionValue; }
+    inline const Aws::String& GetDimensionValue() const { return m_dimensionValue; }
     inline bool DimensionValueHasBeenSet() const { return m_dimensionValueHasBeenSet; }
-    inline void SetDimensionValue(const Aws::String& value) { m_dimensionValueHasBeenSet = true; m_dimensionValue = value; }
-    inline void SetDimensionValue(Aws::String&& value) { m_dimensionValueHasBeenSet = true; m_dimensionValue = std::move(value); }
-    inline void SetDimensionValue(const char* value) { m_dimensionValueHasBeenSet = true; m_dimensionValue.assign(value); }
-    inline Filter& WithDimensionValue(const Aws::String& value) { SetDimensionValue(value); return *this;}
-    inline Filter& WithDimensionValue(Aws::String&& value) { SetDimensionValue(std::move(value)); return *this;}
-    inline Filter& WithDimensionValue(const char* value) { SetDimensionValue(value); return *this;}
+    template<typename DimensionValueT = Aws::String>
+    void SetDimensionValue(DimensionValueT&& value) { m_dimensionValueHasBeenSet = true; m_dimensionValue = std::forward<DimensionValueT>(value); }
+    template<typename DimensionValueT = Aws::String>
+    Filter& WithDimensionValue(DimensionValueT&& value) { SetDimensionValue(std::forward<DimensionValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The condition to apply.</p>
      */
-    inline const FilterOperation& GetFilterOperation() const{ return m_filterOperation; }
+    inline FilterOperation GetFilterOperation() const { return m_filterOperation; }
     inline bool FilterOperationHasBeenSet() const { return m_filterOperationHasBeenSet; }
-    inline void SetFilterOperation(const FilterOperation& value) { m_filterOperationHasBeenSet = true; m_filterOperation = value; }
-    inline void SetFilterOperation(FilterOperation&& value) { m_filterOperationHasBeenSet = true; m_filterOperation = std::move(value); }
-    inline Filter& WithFilterOperation(const FilterOperation& value) { SetFilterOperation(value); return *this;}
-    inline Filter& WithFilterOperation(FilterOperation&& value) { SetFilterOperation(std::move(value)); return *this;}
+    inline void SetFilterOperation(FilterOperation value) { m_filterOperationHasBeenSet = true; m_filterOperation = value; }
+    inline Filter& WithFilterOperation(FilterOperation value) { SetFilterOperation(value); return *this;}
     ///@}
   private:
 
     Aws::String m_dimensionValue;
     bool m_dimensionValueHasBeenSet = false;
 
-    FilterOperation m_filterOperation;
+    FilterOperation m_filterOperation{FilterOperation::NOT_SET};
     bool m_filterOperationHasBeenSet = false;
   };
 

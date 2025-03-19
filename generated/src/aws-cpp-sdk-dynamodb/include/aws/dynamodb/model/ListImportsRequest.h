@@ -21,7 +21,7 @@ namespace Model
   class ListImportsRequest : public DynamoDBRequest
   {
   public:
-    AWS_DYNAMODB_API ListImportsRequest();
+    AWS_DYNAMODB_API ListImportsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) associated with the table that was imported
      * to. </p>
      */
-    inline const Aws::String& GetTableArn() const{ return m_tableArn; }
+    inline const Aws::String& GetTableArn() const { return m_tableArn; }
     inline bool TableArnHasBeenSet() const { return m_tableArnHasBeenSet; }
-    inline void SetTableArn(const Aws::String& value) { m_tableArnHasBeenSet = true; m_tableArn = value; }
-    inline void SetTableArn(Aws::String&& value) { m_tableArnHasBeenSet = true; m_tableArn = std::move(value); }
-    inline void SetTableArn(const char* value) { m_tableArnHasBeenSet = true; m_tableArn.assign(value); }
-    inline ListImportsRequest& WithTableArn(const Aws::String& value) { SetTableArn(value); return *this;}
-    inline ListImportsRequest& WithTableArn(Aws::String&& value) { SetTableArn(std::move(value)); return *this;}
-    inline ListImportsRequest& WithTableArn(const char* value) { SetTableArn(value); return *this;}
+    template<typename TableArnT = Aws::String>
+    void SetTableArn(TableArnT&& value) { m_tableArnHasBeenSet = true; m_tableArn = std::forward<TableArnT>(value); }
+    template<typename TableArnT = Aws::String>
+    ListImportsRequest& WithTableArn(TableArnT&& value) { SetTableArn(std::forward<TableArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * <p> The number of <code>ImportSummary </code>objects returned in a single page.
      * </p>
      */
-    inline int GetPageSize() const{ return m_pageSize; }
+    inline int GetPageSize() const { return m_pageSize; }
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
     inline ListImportsRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
@@ -70,21 +68,19 @@ namespace Model
      * previous call to <code>ListImports</code>. When provided in this manner, the API
      * fetches the next page of results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListImportsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListImportsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListImportsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListImportsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_tableArn;
     bool m_tableArnHasBeenSet = false;
 
-    int m_pageSize;
+    int m_pageSize{0};
     bool m_pageSizeHasBeenSet = false;
 
     Aws::String m_nextToken;

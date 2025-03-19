@@ -18,19 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-MemoryDBInstanceDetails::MemoryDBInstanceDetails() : 
-    m_familyHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_currentGeneration(false),
-    m_currentGenerationHasBeenSet(false),
-    m_sizeFlexEligible(false),
-    m_sizeFlexEligibleHasBeenSet(false)
-{
-}
-
 MemoryDBInstanceDetails::MemoryDBInstanceDetails(JsonView jsonValue)
-  : MemoryDBInstanceDetails()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ MemoryDBInstanceDetails& MemoryDBInstanceDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Family"))
   {
     m_family = jsonValue.GetString("Family");
-
     m_familyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeType"))
   {
     m_nodeType = jsonValue.GetString("NodeType");
-
     m_nodeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentGeneration"))
   {
     m_currentGeneration = jsonValue.GetBool("CurrentGeneration");
-
     m_currentGenerationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SizeFlexEligible"))
   {
     m_sizeFlexEligible = jsonValue.GetBool("SizeFlexEligible");
-
     m_sizeFlexEligibleHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class ListAuditSuppressionsResult
   {
   public:
-    AWS_IOT_API ListAuditSuppressionsResult();
+    AWS_IOT_API ListAuditSuppressionsResult() = default;
     AWS_IOT_API ListAuditSuppressionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API ListAuditSuppressionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p> List of audit suppressions. </p>
      */
-    inline const Aws::Vector<AuditSuppression>& GetSuppressions() const{ return m_suppressions; }
-    inline void SetSuppressions(const Aws::Vector<AuditSuppression>& value) { m_suppressions = value; }
-    inline void SetSuppressions(Aws::Vector<AuditSuppression>&& value) { m_suppressions = std::move(value); }
-    inline ListAuditSuppressionsResult& WithSuppressions(const Aws::Vector<AuditSuppression>& value) { SetSuppressions(value); return *this;}
-    inline ListAuditSuppressionsResult& WithSuppressions(Aws::Vector<AuditSuppression>&& value) { SetSuppressions(std::move(value)); return *this;}
-    inline ListAuditSuppressionsResult& AddSuppressions(const AuditSuppression& value) { m_suppressions.push_back(value); return *this; }
-    inline ListAuditSuppressionsResult& AddSuppressions(AuditSuppression&& value) { m_suppressions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AuditSuppression>& GetSuppressions() const { return m_suppressions; }
+    template<typename SuppressionsT = Aws::Vector<AuditSuppression>>
+    void SetSuppressions(SuppressionsT&& value) { m_suppressionsHasBeenSet = true; m_suppressions = std::forward<SuppressionsT>(value); }
+    template<typename SuppressionsT = Aws::Vector<AuditSuppression>>
+    ListAuditSuppressionsResult& WithSuppressions(SuppressionsT&& value) { SetSuppressions(std::forward<SuppressionsT>(value)); return *this;}
+    template<typename SuppressionsT = AuditSuppression>
+    ListAuditSuppressionsResult& AddSuppressions(SuppressionsT&& value) { m_suppressionsHasBeenSet = true; m_suppressions.emplace_back(std::forward<SuppressionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p> A token that can be used to retrieve the next set of results, or
      * <code>null</code> if there are no additional results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAuditSuppressionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAuditSuppressionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAuditSuppressionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAuditSuppressionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAuditSuppressionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAuditSuppressionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAuditSuppressionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAuditSuppressionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AuditSuppression> m_suppressions;
+    bool m_suppressionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

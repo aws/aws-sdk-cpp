@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeCapacityBlockOfferingsResponse::DescribeCapacityBlockOfferingsResponse()
-{
-}
-
 DescribeCapacityBlockOfferingsResponse::DescribeCapacityBlockOfferingsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeCapacityBlockOfferingsResponse& DescribeCapacityBlockOfferingsResponse::
     if(!capacityBlockOfferingsNode.IsNull())
     {
       XmlNode capacityBlockOfferingsMember = capacityBlockOfferingsNode.FirstChild("item");
+      m_capacityBlockOfferingsHasBeenSet = !capacityBlockOfferingsMember.IsNull();
       while(!capacityBlockOfferingsMember.IsNull())
       {
         m_capacityBlockOfferings.push_back(capacityBlockOfferingsMember);
         capacityBlockOfferingsMember = capacityBlockOfferingsMember.NextNode("item");
       }
 
+      m_capacityBlockOfferingsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeCapacityBlockOfferingsResponse& DescribeCapacityBlockOfferingsResponse::
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeCapacityBlockOfferingsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -12,16 +12,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMonitoringRequest::UpdateMonitoringRequest() : 
-    m_clusterArnHasBeenSet(false),
-    m_currentVersionHasBeenSet(false),
-    m_enhancedMonitoring(EnhancedMonitoring::NOT_SET),
-    m_enhancedMonitoringHasBeenSet(false),
-    m_openMonitoringHasBeenSet(false),
-    m_loggingInfoHasBeenSet(false)
-{
-}
-
 Aws::String UpdateMonitoringRequest::SerializePayload() const
 {
   JsonValue payload;

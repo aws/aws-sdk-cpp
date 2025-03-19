@@ -18,14 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-ValueMappings::ValueMappings() : 
-    m_valuesHasBeenSet(false),
-    m_bindingPropertiesHasBeenSet(false)
-{
-}
-
 ValueMappings::ValueMappings(JsonView jsonValue)
-  : ValueMappings()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ ValueMappings& ValueMappings::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bindingProperties"))
   {
     Aws::Map<Aws::String, JsonView> bindingPropertiesJsonMap = jsonValue.GetObject("bindingProperties").GetAllObjects();
@@ -51,7 +43,6 @@ ValueMappings& ValueMappings::operator =(JsonView jsonValue)
     }
     m_bindingPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

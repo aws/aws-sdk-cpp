@@ -32,7 +32,7 @@ namespace Model
   class Circle
   {
   public:
-    AWS_LOCATIONSERVICE_API Circle();
+    AWS_LOCATIONSERVICE_API Circle() = default;
     AWS_LOCATIONSERVICE_API Circle(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Circle& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * href="https://gisgeography.com/wgs84-world-geodetic-system/">WGS 84</a>
      * coordinates, in the form <code>[longitude, latitude]</code>.</p>
      */
-    inline const Aws::Vector<double>& GetCenter() const{ return m_center; }
+    inline const Aws::Vector<double>& GetCenter() const { return m_center; }
     inline bool CenterHasBeenSet() const { return m_centerHasBeenSet; }
-    inline void SetCenter(const Aws::Vector<double>& value) { m_centerHasBeenSet = true; m_center = value; }
-    inline void SetCenter(Aws::Vector<double>&& value) { m_centerHasBeenSet = true; m_center = std::move(value); }
-    inline Circle& WithCenter(const Aws::Vector<double>& value) { SetCenter(value); return *this;}
-    inline Circle& WithCenter(Aws::Vector<double>&& value) { SetCenter(std::move(value)); return *this;}
+    template<typename CenterT = Aws::Vector<double>>
+    void SetCenter(CenterT&& value) { m_centerHasBeenSet = true; m_center = std::forward<CenterT>(value); }
+    template<typename CenterT = Aws::Vector<double>>
+    Circle& WithCenter(CenterT&& value) { SetCenter(std::forward<CenterT>(value)); return *this;}
     inline Circle& AddCenter(double value) { m_centerHasBeenSet = true; m_center.push_back(value); return *this; }
     ///@}
 
@@ -58,7 +58,7 @@ namespace Model
      * <p>The radius of the circle in meters. Must be greater than zero and no larger
      * than 100,000 (100 kilometers).</p>
      */
-    inline double GetRadius() const{ return m_radius; }
+    inline double GetRadius() const { return m_radius; }
     inline bool RadiusHasBeenSet() const { return m_radiusHasBeenSet; }
     inline void SetRadius(double value) { m_radiusHasBeenSet = true; m_radius = value; }
     inline Circle& WithRadius(double value) { SetRadius(value); return *this;}
@@ -68,7 +68,7 @@ namespace Model
     Aws::Vector<double> m_center;
     bool m_centerHasBeenSet = false;
 
-    double m_radius;
+    double m_radius{0.0};
     bool m_radiusHasBeenSet = false;
   };
 

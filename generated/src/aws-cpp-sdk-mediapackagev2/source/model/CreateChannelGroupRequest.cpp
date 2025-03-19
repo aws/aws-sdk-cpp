@@ -13,15 +13,6 @@ using namespace Aws::mediapackagev2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateChannelGroupRequest::CreateChannelGroupRequest() : 
-    m_channelGroupNameHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateChannelGroupRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-UpdateAttributesRequest::UpdateAttributesRequest() : 
-    m_blacklistHasBeenSet(false)
-{
-}
-
 UpdateAttributesRequest::UpdateAttributesRequest(JsonView jsonValue)
-  : UpdateAttributesRequest()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ UpdateAttributesRequest& UpdateAttributesRequest::operator =(JsonView jsonValue)
     }
     m_blacklistHasBeenSet = true;
   }
-
   return *this;
 }
 

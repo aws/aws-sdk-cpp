@@ -16,10 +16,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteImageRecipeResult::DeleteImageRecipeResult()
-{
-}
-
 DeleteImageRecipeResult::DeleteImageRecipeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -31,15 +27,13 @@ DeleteImageRecipeResult& DeleteImageRecipeResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
+    m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageRecipeArn"))
   {
     m_imageRecipeArn = jsonValue.GetString("imageRecipeArn");
-
+    m_imageRecipeArnHasBeenSet = true;
   }
-
 
 
   return *this;

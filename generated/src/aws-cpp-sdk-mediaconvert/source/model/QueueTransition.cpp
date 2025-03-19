@@ -18,15 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-QueueTransition::QueueTransition() : 
-    m_destinationQueueHasBeenSet(false),
-    m_sourceQueueHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 QueueTransition::QueueTransition(JsonView jsonValue)
-  : QueueTransition()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ QueueTransition& QueueTransition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("destinationQueue"))
   {
     m_destinationQueue = jsonValue.GetString("destinationQueue");
-
     m_destinationQueueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceQueue"))
   {
     m_sourceQueue = jsonValue.GetString("sourceQueue");
-
     m_sourceQueueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   return *this;
 }
 

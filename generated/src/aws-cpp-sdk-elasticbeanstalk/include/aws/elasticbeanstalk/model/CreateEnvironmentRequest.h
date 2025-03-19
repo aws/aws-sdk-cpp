@@ -29,7 +29,7 @@ namespace Model
   class CreateEnvironmentRequest : public ElasticBeanstalkRequest
   {
   public:
-    AWS_ELASTICBEANSTALK_API CreateEnvironmentRequest();
+    AWS_ELASTICBEANSTALK_API CreateEnvironmentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>The name of the application that is associated with this environment.</p>
      */
-    inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+    inline const Aws::String& GetApplicationName() const { return m_applicationName; }
     inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
-    inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
-    inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
-    inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
-    inline CreateEnvironmentRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
-    inline CreateEnvironmentRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
-    inline CreateEnvironmentRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
+    template<typename ApplicationNameT = Aws::String>
+    void SetApplicationName(ApplicationNameT&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::forward<ApplicationNameT>(value); }
+    template<typename ApplicationNameT = Aws::String>
+    CreateEnvironmentRequest& WithApplicationName(ApplicationNameT&& value) { SetApplicationName(std::forward<ApplicationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * becomes part of the CNAME, and therefore part of the visible URL for your
      * application.</p>
      */
-    inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
+    inline const Aws::String& GetEnvironmentName() const { return m_environmentName; }
     inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
-    inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
-    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::move(value); }
-    inline void SetEnvironmentName(const char* value) { m_environmentNameHasBeenSet = true; m_environmentName.assign(value); }
-    inline CreateEnvironmentRequest& WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
-    inline CreateEnvironmentRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(std::move(value)); return *this;}
-    inline CreateEnvironmentRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
+    template<typename EnvironmentNameT = Aws::String>
+    void SetEnvironmentName(EnvironmentNameT&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::forward<EnvironmentNameT>(value); }
+    template<typename EnvironmentNameT = Aws::String>
+    CreateEnvironmentRequest& WithEnvironmentName(EnvironmentNameT&& value) { SetEnvironmentName(std::forward<EnvironmentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,28 +83,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline CreateEnvironmentRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline CreateEnvironmentRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline CreateEnvironmentRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    CreateEnvironmentRequest& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Your description for this environment.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateEnvironmentRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateEnvironmentRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateEnvironmentRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateEnvironmentRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,14 +110,12 @@ namespace Model
      * is generated automatically by appending a random alphanumeric string to the
      * environment name.</p>
      */
-    inline const Aws::String& GetCNAMEPrefix() const{ return m_cNAMEPrefix; }
+    inline const Aws::String& GetCNAMEPrefix() const { return m_cNAMEPrefix; }
     inline bool CNAMEPrefixHasBeenSet() const { return m_cNAMEPrefixHasBeenSet; }
-    inline void SetCNAMEPrefix(const Aws::String& value) { m_cNAMEPrefixHasBeenSet = true; m_cNAMEPrefix = value; }
-    inline void SetCNAMEPrefix(Aws::String&& value) { m_cNAMEPrefixHasBeenSet = true; m_cNAMEPrefix = std::move(value); }
-    inline void SetCNAMEPrefix(const char* value) { m_cNAMEPrefixHasBeenSet = true; m_cNAMEPrefix.assign(value); }
-    inline CreateEnvironmentRequest& WithCNAMEPrefix(const Aws::String& value) { SetCNAMEPrefix(value); return *this;}
-    inline CreateEnvironmentRequest& WithCNAMEPrefix(Aws::String&& value) { SetCNAMEPrefix(std::move(value)); return *this;}
-    inline CreateEnvironmentRequest& WithCNAMEPrefix(const char* value) { SetCNAMEPrefix(value); return *this;}
+    template<typename CNAMEPrefixT = Aws::String>
+    void SetCNAMEPrefix(CNAMEPrefixT&& value) { m_cNAMEPrefixHasBeenSet = true; m_cNAMEPrefix = std::forward<CNAMEPrefixT>(value); }
+    template<typename CNAMEPrefixT = Aws::String>
+    CreateEnvironmentRequest& WithCNAMEPrefix(CNAMEPrefixT&& value) { SetCNAMEPrefix(std::forward<CNAMEPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,26 +125,26 @@ namespace Model
      * support a web application that handles HTTP(S) requests or a web application
      * that handles background-processing tasks.</p>
      */
-    inline const EnvironmentTier& GetTier() const{ return m_tier; }
+    inline const EnvironmentTier& GetTier() const { return m_tier; }
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
-    inline void SetTier(const EnvironmentTier& value) { m_tierHasBeenSet = true; m_tier = value; }
-    inline void SetTier(EnvironmentTier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
-    inline CreateEnvironmentRequest& WithTier(const EnvironmentTier& value) { SetTier(value); return *this;}
-    inline CreateEnvironmentRequest& WithTier(EnvironmentTier&& value) { SetTier(std::move(value)); return *this;}
+    template<typename TierT = EnvironmentTier>
+    void SetTier(TierT&& value) { m_tierHasBeenSet = true; m_tier = std::forward<TierT>(value); }
+    template<typename TierT = EnvironmentTier>
+    CreateEnvironmentRequest& WithTier(TierT&& value) { SetTier(std::forward<TierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the tags applied to resources in the environment.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateEnvironmentRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateEnvironmentRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateEnvironmentRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateEnvironmentRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateEnvironmentRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateEnvironmentRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -162,14 +152,12 @@ namespace Model
      * <p>The name of the application version to deploy.</p> <p>Default: If not
      * specified, Elastic Beanstalk attempts to deploy the sample application.</p>
      */
-    inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
+    inline const Aws::String& GetVersionLabel() const { return m_versionLabel; }
     inline bool VersionLabelHasBeenSet() const { return m_versionLabelHasBeenSet; }
-    inline void SetVersionLabel(const Aws::String& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
-    inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = std::move(value); }
-    inline void SetVersionLabel(const char* value) { m_versionLabelHasBeenSet = true; m_versionLabel.assign(value); }
-    inline CreateEnvironmentRequest& WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
-    inline CreateEnvironmentRequest& WithVersionLabel(Aws::String&& value) { SetVersionLabel(std::move(value)); return *this;}
-    inline CreateEnvironmentRequest& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
+    template<typename VersionLabelT = Aws::String>
+    void SetVersionLabel(VersionLabelT&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = std::forward<VersionLabelT>(value); }
+    template<typename VersionLabelT = Aws::String>
+    CreateEnvironmentRequest& WithVersionLabel(VersionLabelT&& value) { SetVersionLabel(std::forward<VersionLabelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -178,14 +166,12 @@ namespace Model
      * environment.</p>  <p>If you specify <code>TemplateName</code>, then don't
      * specify <code>SolutionStackName</code>.</p> 
      */
-    inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+    inline const Aws::String& GetTemplateName() const { return m_templateName; }
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-    inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-    inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-    inline CreateEnvironmentRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-    inline CreateEnvironmentRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-    inline CreateEnvironmentRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    template<typename TemplateNameT = Aws::String>
+    void SetTemplateName(TemplateNameT&& value) { m_templateNameHasBeenSet = true; m_templateName = std::forward<TemplateNameT>(value); }
+    template<typename TemplateNameT = Aws::String>
+    CreateEnvironmentRequest& WithTemplateName(TemplateNameT&& value) { SetTemplateName(std::forward<TemplateNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -199,14 +185,12 @@ namespace Model
      * guide.</p>  <p>If you specify <code>SolutionStackName</code>, don't
      * specify <code>PlatformArn</code> or <code>TemplateName</code>.</p> 
      */
-    inline const Aws::String& GetSolutionStackName() const{ return m_solutionStackName; }
+    inline const Aws::String& GetSolutionStackName() const { return m_solutionStackName; }
     inline bool SolutionStackNameHasBeenSet() const { return m_solutionStackNameHasBeenSet; }
-    inline void SetSolutionStackName(const Aws::String& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
-    inline void SetSolutionStackName(Aws::String&& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = std::move(value); }
-    inline void SetSolutionStackName(const char* value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName.assign(value); }
-    inline CreateEnvironmentRequest& WithSolutionStackName(const Aws::String& value) { SetSolutionStackName(value); return *this;}
-    inline CreateEnvironmentRequest& WithSolutionStackName(Aws::String&& value) { SetSolutionStackName(std::move(value)); return *this;}
-    inline CreateEnvironmentRequest& WithSolutionStackName(const char* value) { SetSolutionStackName(value); return *this;}
+    template<typename SolutionStackNameT = Aws::String>
+    void SetSolutionStackName(SolutionStackNameT&& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = std::forward<SolutionStackNameT>(value); }
+    template<typename SolutionStackNameT = Aws::String>
+    CreateEnvironmentRequest& WithSolutionStackName(SolutionStackNameT&& value) { SetSolutionStackName(std::forward<SolutionStackNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -218,14 +202,12 @@ namespace Model
      * <p>If you specify <code>PlatformArn</code>, don't specify
      * <code>SolutionStackName</code>.</p> 
      */
-    inline const Aws::String& GetPlatformArn() const{ return m_platformArn; }
+    inline const Aws::String& GetPlatformArn() const { return m_platformArn; }
     inline bool PlatformArnHasBeenSet() const { return m_platformArnHasBeenSet; }
-    inline void SetPlatformArn(const Aws::String& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
-    inline void SetPlatformArn(Aws::String&& value) { m_platformArnHasBeenSet = true; m_platformArn = std::move(value); }
-    inline void SetPlatformArn(const char* value) { m_platformArnHasBeenSet = true; m_platformArn.assign(value); }
-    inline CreateEnvironmentRequest& WithPlatformArn(const Aws::String& value) { SetPlatformArn(value); return *this;}
-    inline CreateEnvironmentRequest& WithPlatformArn(Aws::String&& value) { SetPlatformArn(std::move(value)); return *this;}
-    inline CreateEnvironmentRequest& WithPlatformArn(const char* value) { SetPlatformArn(value); return *this;}
+    template<typename PlatformArnT = Aws::String>
+    void SetPlatformArn(PlatformArnT&& value) { m_platformArnHasBeenSet = true; m_platformArn = std::forward<PlatformArnT>(value); }
+    template<typename PlatformArnT = Aws::String>
+    CreateEnvironmentRequest& WithPlatformArn(PlatformArnT&& value) { SetPlatformArn(std::forward<PlatformArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -235,14 +217,14 @@ namespace Model
      * override the values obtained from the solution stack or the configuration
      * template.</p>
      */
-    inline const Aws::Vector<ConfigurationOptionSetting>& GetOptionSettings() const{ return m_optionSettings; }
+    inline const Aws::Vector<ConfigurationOptionSetting>& GetOptionSettings() const { return m_optionSettings; }
     inline bool OptionSettingsHasBeenSet() const { return m_optionSettingsHasBeenSet; }
-    inline void SetOptionSettings(const Aws::Vector<ConfigurationOptionSetting>& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = value; }
-    inline void SetOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = std::move(value); }
-    inline CreateEnvironmentRequest& WithOptionSettings(const Aws::Vector<ConfigurationOptionSetting>& value) { SetOptionSettings(value); return *this;}
-    inline CreateEnvironmentRequest& WithOptionSettings(Aws::Vector<ConfigurationOptionSetting>&& value) { SetOptionSettings(std::move(value)); return *this;}
-    inline CreateEnvironmentRequest& AddOptionSettings(const ConfigurationOptionSetting& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(value); return *this; }
-    inline CreateEnvironmentRequest& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(std::move(value)); return *this; }
+    template<typename OptionSettingsT = Aws::Vector<ConfigurationOptionSetting>>
+    void SetOptionSettings(OptionSettingsT&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = std::forward<OptionSettingsT>(value); }
+    template<typename OptionSettingsT = Aws::Vector<ConfigurationOptionSetting>>
+    CreateEnvironmentRequest& WithOptionSettings(OptionSettingsT&& value) { SetOptionSettings(std::forward<OptionSettingsT>(value)); return *this;}
+    template<typename OptionSettingsT = ConfigurationOptionSetting>
+    CreateEnvironmentRequest& AddOptionSettings(OptionSettingsT&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.emplace_back(std::forward<OptionSettingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -250,14 +232,14 @@ namespace Model
      * <p>A list of custom user-defined configuration options to remove from the
      * configuration set for this new environment.</p>
      */
-    inline const Aws::Vector<OptionSpecification>& GetOptionsToRemove() const{ return m_optionsToRemove; }
+    inline const Aws::Vector<OptionSpecification>& GetOptionsToRemove() const { return m_optionsToRemove; }
     inline bool OptionsToRemoveHasBeenSet() const { return m_optionsToRemoveHasBeenSet; }
-    inline void SetOptionsToRemove(const Aws::Vector<OptionSpecification>& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove = value; }
-    inline void SetOptionsToRemove(Aws::Vector<OptionSpecification>&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove = std::move(value); }
-    inline CreateEnvironmentRequest& WithOptionsToRemove(const Aws::Vector<OptionSpecification>& value) { SetOptionsToRemove(value); return *this;}
-    inline CreateEnvironmentRequest& WithOptionsToRemove(Aws::Vector<OptionSpecification>&& value) { SetOptionsToRemove(std::move(value)); return *this;}
-    inline CreateEnvironmentRequest& AddOptionsToRemove(const OptionSpecification& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(value); return *this; }
-    inline CreateEnvironmentRequest& AddOptionsToRemove(OptionSpecification&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.push_back(std::move(value)); return *this; }
+    template<typename OptionsToRemoveT = Aws::Vector<OptionSpecification>>
+    void SetOptionsToRemove(OptionsToRemoveT&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove = std::forward<OptionsToRemoveT>(value); }
+    template<typename OptionsToRemoveT = Aws::Vector<OptionSpecification>>
+    CreateEnvironmentRequest& WithOptionsToRemove(OptionsToRemoveT&& value) { SetOptionsToRemove(std::forward<OptionsToRemoveT>(value)); return *this;}
+    template<typename OptionsToRemoveT = OptionSpecification>
+    CreateEnvironmentRequest& AddOptionsToRemove(OptionsToRemoveT&& value) { m_optionsToRemoveHasBeenSet = true; m_optionsToRemove.emplace_back(std::forward<OptionsToRemoveT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -271,14 +253,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations
      * roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetOperationsRole() const{ return m_operationsRole; }
+    inline const Aws::String& GetOperationsRole() const { return m_operationsRole; }
     inline bool OperationsRoleHasBeenSet() const { return m_operationsRoleHasBeenSet; }
-    inline void SetOperationsRole(const Aws::String& value) { m_operationsRoleHasBeenSet = true; m_operationsRole = value; }
-    inline void SetOperationsRole(Aws::String&& value) { m_operationsRoleHasBeenSet = true; m_operationsRole = std::move(value); }
-    inline void SetOperationsRole(const char* value) { m_operationsRoleHasBeenSet = true; m_operationsRole.assign(value); }
-    inline CreateEnvironmentRequest& WithOperationsRole(const Aws::String& value) { SetOperationsRole(value); return *this;}
-    inline CreateEnvironmentRequest& WithOperationsRole(Aws::String&& value) { SetOperationsRole(std::move(value)); return *this;}
-    inline CreateEnvironmentRequest& WithOperationsRole(const char* value) { SetOperationsRole(value); return *this;}
+    template<typename OperationsRoleT = Aws::String>
+    void SetOperationsRole(OperationsRoleT&& value) { m_operationsRoleHasBeenSet = true; m_operationsRole = std::forward<OperationsRoleT>(value); }
+    template<typename OperationsRoleT = Aws::String>
+    CreateEnvironmentRequest& WithOperationsRole(OperationsRoleT&& value) { SetOperationsRole(std::forward<OperationsRoleT>(value)); return *this;}
     ///@}
   private:
 

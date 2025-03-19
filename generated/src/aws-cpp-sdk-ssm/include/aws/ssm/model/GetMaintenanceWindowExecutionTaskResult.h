@@ -35,7 +35,7 @@ namespace Model
   class GetMaintenanceWindowExecutionTaskResult
   {
   public:
-    AWS_SSM_API GetMaintenanceWindowExecutionTaskResult();
+    AWS_SSM_API GetMaintenanceWindowExecutionTaskResult() = default;
     AWS_SSM_API GetMaintenanceWindowExecutionTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSM_API GetMaintenanceWindowExecutionTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,13 +44,11 @@ namespace Model
     /**
      * <p>The ID of the maintenance window execution that includes the task.</p>
      */
-    inline const Aws::String& GetWindowExecutionId() const{ return m_windowExecutionId; }
-    inline void SetWindowExecutionId(const Aws::String& value) { m_windowExecutionId = value; }
-    inline void SetWindowExecutionId(Aws::String&& value) { m_windowExecutionId = std::move(value); }
-    inline void SetWindowExecutionId(const char* value) { m_windowExecutionId.assign(value); }
-    inline GetMaintenanceWindowExecutionTaskResult& WithWindowExecutionId(const Aws::String& value) { SetWindowExecutionId(value); return *this;}
-    inline GetMaintenanceWindowExecutionTaskResult& WithWindowExecutionId(Aws::String&& value) { SetWindowExecutionId(std::move(value)); return *this;}
-    inline GetMaintenanceWindowExecutionTaskResult& WithWindowExecutionId(const char* value) { SetWindowExecutionId(value); return *this;}
+    inline const Aws::String& GetWindowExecutionId() const { return m_windowExecutionId; }
+    template<typename WindowExecutionIdT = Aws::String>
+    void SetWindowExecutionId(WindowExecutionIdT&& value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId = std::forward<WindowExecutionIdT>(value); }
+    template<typename WindowExecutionIdT = Aws::String>
+    GetMaintenanceWindowExecutionTaskResult& WithWindowExecutionId(WindowExecutionIdT&& value) { SetWindowExecutionId(std::forward<WindowExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,50 +56,42 @@ namespace Model
      * <p>The ID of the specific task execution in the maintenance window task that was
      * retrieved.</p>
      */
-    inline const Aws::String& GetTaskExecutionId() const{ return m_taskExecutionId; }
-    inline void SetTaskExecutionId(const Aws::String& value) { m_taskExecutionId = value; }
-    inline void SetTaskExecutionId(Aws::String&& value) { m_taskExecutionId = std::move(value); }
-    inline void SetTaskExecutionId(const char* value) { m_taskExecutionId.assign(value); }
-    inline GetMaintenanceWindowExecutionTaskResult& WithTaskExecutionId(const Aws::String& value) { SetTaskExecutionId(value); return *this;}
-    inline GetMaintenanceWindowExecutionTaskResult& WithTaskExecutionId(Aws::String&& value) { SetTaskExecutionId(std::move(value)); return *this;}
-    inline GetMaintenanceWindowExecutionTaskResult& WithTaskExecutionId(const char* value) { SetTaskExecutionId(value); return *this;}
+    inline const Aws::String& GetTaskExecutionId() const { return m_taskExecutionId; }
+    template<typename TaskExecutionIdT = Aws::String>
+    void SetTaskExecutionId(TaskExecutionIdT&& value) { m_taskExecutionIdHasBeenSet = true; m_taskExecutionId = std::forward<TaskExecutionIdT>(value); }
+    template<typename TaskExecutionIdT = Aws::String>
+    GetMaintenanceWindowExecutionTaskResult& WithTaskExecutionId(TaskExecutionIdT&& value) { SetTaskExecutionId(std::forward<TaskExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the task that ran.</p>
      */
-    inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
-    inline void SetTaskArn(const Aws::String& value) { m_taskArn = value; }
-    inline void SetTaskArn(Aws::String&& value) { m_taskArn = std::move(value); }
-    inline void SetTaskArn(const char* value) { m_taskArn.assign(value); }
-    inline GetMaintenanceWindowExecutionTaskResult& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
-    inline GetMaintenanceWindowExecutionTaskResult& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
-    inline GetMaintenanceWindowExecutionTaskResult& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
+    inline const Aws::String& GetTaskArn() const { return m_taskArn; }
+    template<typename TaskArnT = Aws::String>
+    void SetTaskArn(TaskArnT&& value) { m_taskArnHasBeenSet = true; m_taskArn = std::forward<TaskArnT>(value); }
+    template<typename TaskArnT = Aws::String>
+    GetMaintenanceWindowExecutionTaskResult& WithTaskArn(TaskArnT&& value) { SetTaskArn(std::forward<TaskArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The role that was assumed when running the task.</p>
      */
-    inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
-    inline void SetServiceRole(const Aws::String& value) { m_serviceRole = value; }
-    inline void SetServiceRole(Aws::String&& value) { m_serviceRole = std::move(value); }
-    inline void SetServiceRole(const char* value) { m_serviceRole.assign(value); }
-    inline GetMaintenanceWindowExecutionTaskResult& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
-    inline GetMaintenanceWindowExecutionTaskResult& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
-    inline GetMaintenanceWindowExecutionTaskResult& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
+    inline const Aws::String& GetServiceRole() const { return m_serviceRole; }
+    template<typename ServiceRoleT = Aws::String>
+    void SetServiceRole(ServiceRoleT&& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = std::forward<ServiceRoleT>(value); }
+    template<typename ServiceRoleT = Aws::String>
+    GetMaintenanceWindowExecutionTaskResult& WithServiceRole(ServiceRoleT&& value) { SetServiceRole(std::forward<ServiceRoleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of task that was run.</p>
      */
-    inline const MaintenanceWindowTaskType& GetType() const{ return m_type; }
-    inline void SetType(const MaintenanceWindowTaskType& value) { m_type = value; }
-    inline void SetType(MaintenanceWindowTaskType&& value) { m_type = std::move(value); }
-    inline GetMaintenanceWindowExecutionTaskResult& WithType(const MaintenanceWindowTaskType& value) { SetType(value); return *this;}
-    inline GetMaintenanceWindowExecutionTaskResult& WithType(MaintenanceWindowTaskType&& value) { SetType(std::move(value)); return *this;}
+    inline MaintenanceWindowTaskType GetType() const { return m_type; }
+    inline void SetType(MaintenanceWindowTaskType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GetMaintenanceWindowExecutionTaskResult& WithType(MaintenanceWindowTaskType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -116,21 +106,21 @@ namespace Model
      * between 1 and 255 characters</p> </li> <li> <p> <code>Value</code>: an array of
      * strings, each between 1 and 255 characters</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>& GetTaskParameters() const{ return m_taskParameters; }
-    inline void SetTaskParameters(const Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>& value) { m_taskParameters = value; }
-    inline void SetTaskParameters(Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>&& value) { m_taskParameters = std::move(value); }
-    inline GetMaintenanceWindowExecutionTaskResult& WithTaskParameters(const Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>& value) { SetTaskParameters(value); return *this;}
-    inline GetMaintenanceWindowExecutionTaskResult& WithTaskParameters(Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>&& value) { SetTaskParameters(std::move(value)); return *this;}
-    inline GetMaintenanceWindowExecutionTaskResult& AddTaskParameters(const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& value) { m_taskParameters.push_back(value); return *this; }
-    inline GetMaintenanceWindowExecutionTaskResult& AddTaskParameters(Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>&& value) { m_taskParameters.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>& GetTaskParameters() const { return m_taskParameters; }
+    template<typename TaskParametersT = Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>>
+    void SetTaskParameters(TaskParametersT&& value) { m_taskParametersHasBeenSet = true; m_taskParameters = std::forward<TaskParametersT>(value); }
+    template<typename TaskParametersT = Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>>
+    GetMaintenanceWindowExecutionTaskResult& WithTaskParameters(TaskParametersT&& value) { SetTaskParameters(std::forward<TaskParametersT>(value)); return *this;}
+    template<typename TaskParametersT = Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>
+    GetMaintenanceWindowExecutionTaskResult& AddTaskParameters(TaskParametersT&& value) { m_taskParametersHasBeenSet = true; m_taskParameters.emplace_back(std::forward<TaskParametersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The priority of the task.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
-    inline void SetPriority(int value) { m_priority = value; }
+    inline int GetPriority() const { return m_priority; }
+    inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline GetMaintenanceWindowExecutionTaskResult& WithPriority(int value) { SetPriority(value); return *this;}
     ///@}
 
@@ -139,13 +129,11 @@ namespace Model
      * <p>The defined maximum number of task executions that could be run in
      * parallel.</p>
      */
-    inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
-    inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrency = value; }
-    inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrency = std::move(value); }
-    inline void SetMaxConcurrency(const char* value) { m_maxConcurrency.assign(value); }
-    inline GetMaintenanceWindowExecutionTaskResult& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
-    inline GetMaintenanceWindowExecutionTaskResult& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
-    inline GetMaintenanceWindowExecutionTaskResult& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
+    inline const Aws::String& GetMaxConcurrency() const { return m_maxConcurrency; }
+    template<typename MaxConcurrencyT = Aws::String>
+    void SetMaxConcurrency(MaxConcurrencyT&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::forward<MaxConcurrencyT>(value); }
+    template<typename MaxConcurrencyT = Aws::String>
+    GetMaintenanceWindowExecutionTaskResult& WithMaxConcurrency(MaxConcurrencyT&& value) { SetMaxConcurrency(std::forward<MaxConcurrencyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,59 +141,53 @@ namespace Model
      * <p>The defined maximum number of task execution errors allowed before scheduling
      * of the task execution would have been stopped.</p>
      */
-    inline const Aws::String& GetMaxErrors() const{ return m_maxErrors; }
-    inline void SetMaxErrors(const Aws::String& value) { m_maxErrors = value; }
-    inline void SetMaxErrors(Aws::String&& value) { m_maxErrors = std::move(value); }
-    inline void SetMaxErrors(const char* value) { m_maxErrors.assign(value); }
-    inline GetMaintenanceWindowExecutionTaskResult& WithMaxErrors(const Aws::String& value) { SetMaxErrors(value); return *this;}
-    inline GetMaintenanceWindowExecutionTaskResult& WithMaxErrors(Aws::String&& value) { SetMaxErrors(std::move(value)); return *this;}
-    inline GetMaintenanceWindowExecutionTaskResult& WithMaxErrors(const char* value) { SetMaxErrors(value); return *this;}
+    inline const Aws::String& GetMaxErrors() const { return m_maxErrors; }
+    template<typename MaxErrorsT = Aws::String>
+    void SetMaxErrors(MaxErrorsT&& value) { m_maxErrorsHasBeenSet = true; m_maxErrors = std::forward<MaxErrorsT>(value); }
+    template<typename MaxErrorsT = Aws::String>
+    GetMaintenanceWindowExecutionTaskResult& WithMaxErrors(MaxErrorsT&& value) { SetMaxErrors(std::forward<MaxErrorsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the task.</p>
      */
-    inline const MaintenanceWindowExecutionStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const MaintenanceWindowExecutionStatus& value) { m_status = value; }
-    inline void SetStatus(MaintenanceWindowExecutionStatus&& value) { m_status = std::move(value); }
-    inline GetMaintenanceWindowExecutionTaskResult& WithStatus(const MaintenanceWindowExecutionStatus& value) { SetStatus(value); return *this;}
-    inline GetMaintenanceWindowExecutionTaskResult& WithStatus(MaintenanceWindowExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline MaintenanceWindowExecutionStatus GetStatus() const { return m_status; }
+    inline void SetStatus(MaintenanceWindowExecutionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetMaintenanceWindowExecutionTaskResult& WithStatus(MaintenanceWindowExecutionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The details explaining the status. Not available for all status values.</p>
      */
-    inline const Aws::String& GetStatusDetails() const{ return m_statusDetails; }
-    inline void SetStatusDetails(const Aws::String& value) { m_statusDetails = value; }
-    inline void SetStatusDetails(Aws::String&& value) { m_statusDetails = std::move(value); }
-    inline void SetStatusDetails(const char* value) { m_statusDetails.assign(value); }
-    inline GetMaintenanceWindowExecutionTaskResult& WithStatusDetails(const Aws::String& value) { SetStatusDetails(value); return *this;}
-    inline GetMaintenanceWindowExecutionTaskResult& WithStatusDetails(Aws::String&& value) { SetStatusDetails(std::move(value)); return *this;}
-    inline GetMaintenanceWindowExecutionTaskResult& WithStatusDetails(const char* value) { SetStatusDetails(value); return *this;}
+    inline const Aws::String& GetStatusDetails() const { return m_statusDetails; }
+    template<typename StatusDetailsT = Aws::String>
+    void SetStatusDetails(StatusDetailsT&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::forward<StatusDetailsT>(value); }
+    template<typename StatusDetailsT = Aws::String>
+    GetMaintenanceWindowExecutionTaskResult& WithStatusDetails(StatusDetailsT&& value) { SetStatusDetails(std::forward<StatusDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the task execution started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
-    inline GetMaintenanceWindowExecutionTaskResult& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline GetMaintenanceWindowExecutionTaskResult& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    GetMaintenanceWindowExecutionTaskResult& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the task execution completed.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTime = std::move(value); }
-    inline GetMaintenanceWindowExecutionTaskResult& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline GetMaintenanceWindowExecutionTaskResult& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    GetMaintenanceWindowExecutionTaskResult& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -213,69 +195,83 @@ namespace Model
      * <p>The details for the CloudWatch alarm you applied to your maintenance window
      * task.</p>
      */
-    inline const AlarmConfiguration& GetAlarmConfiguration() const{ return m_alarmConfiguration; }
-    inline void SetAlarmConfiguration(const AlarmConfiguration& value) { m_alarmConfiguration = value; }
-    inline void SetAlarmConfiguration(AlarmConfiguration&& value) { m_alarmConfiguration = std::move(value); }
-    inline GetMaintenanceWindowExecutionTaskResult& WithAlarmConfiguration(const AlarmConfiguration& value) { SetAlarmConfiguration(value); return *this;}
-    inline GetMaintenanceWindowExecutionTaskResult& WithAlarmConfiguration(AlarmConfiguration&& value) { SetAlarmConfiguration(std::move(value)); return *this;}
+    inline const AlarmConfiguration& GetAlarmConfiguration() const { return m_alarmConfiguration; }
+    template<typename AlarmConfigurationT = AlarmConfiguration>
+    void SetAlarmConfiguration(AlarmConfigurationT&& value) { m_alarmConfigurationHasBeenSet = true; m_alarmConfiguration = std::forward<AlarmConfigurationT>(value); }
+    template<typename AlarmConfigurationT = AlarmConfiguration>
+    GetMaintenanceWindowExecutionTaskResult& WithAlarmConfiguration(AlarmConfigurationT&& value) { SetAlarmConfiguration(std::forward<AlarmConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The CloudWatch alarms that were invoked by the maintenance window task.</p>
      */
-    inline const Aws::Vector<AlarmStateInformation>& GetTriggeredAlarms() const{ return m_triggeredAlarms; }
-    inline void SetTriggeredAlarms(const Aws::Vector<AlarmStateInformation>& value) { m_triggeredAlarms = value; }
-    inline void SetTriggeredAlarms(Aws::Vector<AlarmStateInformation>&& value) { m_triggeredAlarms = std::move(value); }
-    inline GetMaintenanceWindowExecutionTaskResult& WithTriggeredAlarms(const Aws::Vector<AlarmStateInformation>& value) { SetTriggeredAlarms(value); return *this;}
-    inline GetMaintenanceWindowExecutionTaskResult& WithTriggeredAlarms(Aws::Vector<AlarmStateInformation>&& value) { SetTriggeredAlarms(std::move(value)); return *this;}
-    inline GetMaintenanceWindowExecutionTaskResult& AddTriggeredAlarms(const AlarmStateInformation& value) { m_triggeredAlarms.push_back(value); return *this; }
-    inline GetMaintenanceWindowExecutionTaskResult& AddTriggeredAlarms(AlarmStateInformation&& value) { m_triggeredAlarms.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AlarmStateInformation>& GetTriggeredAlarms() const { return m_triggeredAlarms; }
+    template<typename TriggeredAlarmsT = Aws::Vector<AlarmStateInformation>>
+    void SetTriggeredAlarms(TriggeredAlarmsT&& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms = std::forward<TriggeredAlarmsT>(value); }
+    template<typename TriggeredAlarmsT = Aws::Vector<AlarmStateInformation>>
+    GetMaintenanceWindowExecutionTaskResult& WithTriggeredAlarms(TriggeredAlarmsT&& value) { SetTriggeredAlarms(std::forward<TriggeredAlarmsT>(value)); return *this;}
+    template<typename TriggeredAlarmsT = AlarmStateInformation>
+    GetMaintenanceWindowExecutionTaskResult& AddTriggeredAlarms(TriggeredAlarmsT&& value) { m_triggeredAlarmsHasBeenSet = true; m_triggeredAlarms.emplace_back(std::forward<TriggeredAlarmsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetMaintenanceWindowExecutionTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetMaintenanceWindowExecutionTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetMaintenanceWindowExecutionTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetMaintenanceWindowExecutionTaskResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_windowExecutionId;
+    bool m_windowExecutionIdHasBeenSet = false;
 
     Aws::String m_taskExecutionId;
+    bool m_taskExecutionIdHasBeenSet = false;
 
     Aws::String m_taskArn;
+    bool m_taskArnHasBeenSet = false;
 
     Aws::String m_serviceRole;
+    bool m_serviceRoleHasBeenSet = false;
 
-    MaintenanceWindowTaskType m_type;
+    MaintenanceWindowTaskType m_type{MaintenanceWindowTaskType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>> m_taskParameters;
+    bool m_taskParametersHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
+    bool m_priorityHasBeenSet = false;
 
     Aws::String m_maxConcurrency;
+    bool m_maxConcurrencyHasBeenSet = false;
 
     Aws::String m_maxErrors;
+    bool m_maxErrorsHasBeenSet = false;
 
-    MaintenanceWindowExecutionStatus m_status;
+    MaintenanceWindowExecutionStatus m_status{MaintenanceWindowExecutionStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusDetails;
+    bool m_statusDetailsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
+    bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
+    bool m_endTimeHasBeenSet = false;
 
     AlarmConfiguration m_alarmConfiguration;
+    bool m_alarmConfigurationHasBeenSet = false;
 
     Aws::Vector<AlarmStateInformation> m_triggeredAlarms;
+    bool m_triggeredAlarmsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

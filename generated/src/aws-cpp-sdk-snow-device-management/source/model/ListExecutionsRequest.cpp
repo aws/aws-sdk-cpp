@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListExecutionsRequest::ListExecutionsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_state(ExecutionState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
-{
-}
-
 Aws::String ListExecutionsRequest::SerializePayload() const
 {
   return {};

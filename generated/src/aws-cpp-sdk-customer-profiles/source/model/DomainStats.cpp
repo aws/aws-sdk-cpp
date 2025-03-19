@@ -18,20 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-DomainStats::DomainStats() : 
-    m_profileCount(0),
-    m_profileCountHasBeenSet(false),
-    m_meteringProfileCount(0),
-    m_meteringProfileCountHasBeenSet(false),
-    m_objectCount(0),
-    m_objectCountHasBeenSet(false),
-    m_totalSize(0),
-    m_totalSizeHasBeenSet(false)
-{
-}
-
 DomainStats::DomainStats(JsonView jsonValue)
-  : DomainStats()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ DomainStats& DomainStats::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProfileCount"))
   {
     m_profileCount = jsonValue.GetInt64("ProfileCount");
-
     m_profileCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MeteringProfileCount"))
   {
     m_meteringProfileCount = jsonValue.GetInt64("MeteringProfileCount");
-
     m_meteringProfileCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectCount"))
   {
     m_objectCount = jsonValue.GetInt64("ObjectCount");
-
     m_objectCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalSize"))
   {
     m_totalSize = jsonValue.GetInt64("TotalSize");
-
     m_totalSizeHasBeenSet = true;
   }
-
   return *this;
 }
 

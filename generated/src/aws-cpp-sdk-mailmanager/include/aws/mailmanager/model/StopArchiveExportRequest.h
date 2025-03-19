@@ -25,7 +25,7 @@ namespace Model
   class StopArchiveExportRequest : public MailManagerRequest
   {
   public:
-    AWS_MAILMANAGER_API StopArchiveExportRequest();
+    AWS_MAILMANAGER_API StopArchiveExportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The identifier of the export job to stop.</p>
      */
-    inline const Aws::String& GetExportId() const{ return m_exportId; }
+    inline const Aws::String& GetExportId() const { return m_exportId; }
     inline bool ExportIdHasBeenSet() const { return m_exportIdHasBeenSet; }
-    inline void SetExportId(const Aws::String& value) { m_exportIdHasBeenSet = true; m_exportId = value; }
-    inline void SetExportId(Aws::String&& value) { m_exportIdHasBeenSet = true; m_exportId = std::move(value); }
-    inline void SetExportId(const char* value) { m_exportIdHasBeenSet = true; m_exportId.assign(value); }
-    inline StopArchiveExportRequest& WithExportId(const Aws::String& value) { SetExportId(value); return *this;}
-    inline StopArchiveExportRequest& WithExportId(Aws::String&& value) { SetExportId(std::move(value)); return *this;}
-    inline StopArchiveExportRequest& WithExportId(const char* value) { SetExportId(value); return *this;}
+    template<typename ExportIdT = Aws::String>
+    void SetExportId(ExportIdT&& value) { m_exportIdHasBeenSet = true; m_exportId = std::forward<ExportIdT>(value); }
+    template<typename ExportIdT = Aws::String>
+    StopArchiveExportRequest& WithExportId(ExportIdT&& value) { SetExportId(std::forward<ExportIdT>(value)); return *this;}
     ///@}
   private:
 

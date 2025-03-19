@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMarketplaceModelEndpointResult::GetMarketplaceModelEndpointResult()
-{
-}
-
 GetMarketplaceModelEndpointResult::GetMarketplaceModelEndpointResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetMarketplaceModelEndpointResult& GetMarketplaceModelEndpointResult::operator =
   if(jsonValue.ValueExists("marketplaceModelEndpoint"))
   {
     m_marketplaceModelEndpoint = jsonValue.GetObject("marketplaceModelEndpoint");
-
+    m_marketplaceModelEndpointHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

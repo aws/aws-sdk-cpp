@@ -39,7 +39,7 @@ namespace Model
   class IPSetReferenceStatement
   {
   public:
-    AWS_WAFV2_API IPSetReferenceStatement();
+    AWS_WAFV2_API IPSetReferenceStatement() = default;
     AWS_WAFV2_API IPSetReferenceStatement(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API IPSetReferenceStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the <a>IPSet</a> that this statement
      * references.</p>
      */
-    inline const Aws::String& GetARN() const{ return m_aRN; }
+    inline const Aws::String& GetARN() const { return m_aRN; }
     inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
-    inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
-    inline void SetARN(Aws::String&& value) { m_aRNHasBeenSet = true; m_aRN = std::move(value); }
-    inline void SetARN(const char* value) { m_aRNHasBeenSet = true; m_aRN.assign(value); }
-    inline IPSetReferenceStatement& WithARN(const Aws::String& value) { SetARN(value); return *this;}
-    inline IPSetReferenceStatement& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
-    inline IPSetReferenceStatement& WithARN(const char* value) { SetARN(value); return *this;}
+    template<typename ARNT = Aws::String>
+    void SetARN(ARNT&& value) { m_aRNHasBeenSet = true; m_aRN = std::forward<ARNT>(value); }
+    template<typename ARNT = Aws::String>
+    IPSetReferenceStatement& WithARN(ARNT&& value) { SetARN(std::forward<ARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +66,12 @@ namespace Model
      * any header name. </p>  <p>If the specified header isn't present in the
      * request, WAF doesn't apply the rule to the web request at all.</p> 
      */
-    inline const IPSetForwardedIPConfig& GetIPSetForwardedIPConfig() const{ return m_iPSetForwardedIPConfig; }
+    inline const IPSetForwardedIPConfig& GetIPSetForwardedIPConfig() const { return m_iPSetForwardedIPConfig; }
     inline bool IPSetForwardedIPConfigHasBeenSet() const { return m_iPSetForwardedIPConfigHasBeenSet; }
-    inline void SetIPSetForwardedIPConfig(const IPSetForwardedIPConfig& value) { m_iPSetForwardedIPConfigHasBeenSet = true; m_iPSetForwardedIPConfig = value; }
-    inline void SetIPSetForwardedIPConfig(IPSetForwardedIPConfig&& value) { m_iPSetForwardedIPConfigHasBeenSet = true; m_iPSetForwardedIPConfig = std::move(value); }
-    inline IPSetReferenceStatement& WithIPSetForwardedIPConfig(const IPSetForwardedIPConfig& value) { SetIPSetForwardedIPConfig(value); return *this;}
-    inline IPSetReferenceStatement& WithIPSetForwardedIPConfig(IPSetForwardedIPConfig&& value) { SetIPSetForwardedIPConfig(std::move(value)); return *this;}
+    template<typename IPSetForwardedIPConfigT = IPSetForwardedIPConfig>
+    void SetIPSetForwardedIPConfig(IPSetForwardedIPConfigT&& value) { m_iPSetForwardedIPConfigHasBeenSet = true; m_iPSetForwardedIPConfig = std::forward<IPSetForwardedIPConfigT>(value); }
+    template<typename IPSetForwardedIPConfigT = IPSetForwardedIPConfig>
+    IPSetReferenceStatement& WithIPSetForwardedIPConfig(IPSetForwardedIPConfigT&& value) { SetIPSetForwardedIPConfig(std::forward<IPSetForwardedIPConfigT>(value)); return *this;}
     ///@}
   private:
 

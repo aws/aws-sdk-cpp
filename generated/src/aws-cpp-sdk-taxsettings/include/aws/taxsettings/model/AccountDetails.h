@@ -35,7 +35,7 @@ namespace Model
   class AccountDetails
   {
   public:
-    AWS_TAXSETTINGS_API AccountDetails();
+    AWS_TAXSETTINGS_API AccountDetails() = default;
     AWS_TAXSETTINGS_API AccountDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API AccountDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,38 +45,36 @@ namespace Model
     /**
      * <p>List of unique account identifiers. </p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline AccountDetails& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline AccountDetails& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline AccountDetails& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    AccountDetails& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The meta data information associated with the account. </p>
      */
-    inline const AccountMetaData& GetAccountMetaData() const{ return m_accountMetaData; }
+    inline const AccountMetaData& GetAccountMetaData() const { return m_accountMetaData; }
     inline bool AccountMetaDataHasBeenSet() const { return m_accountMetaDataHasBeenSet; }
-    inline void SetAccountMetaData(const AccountMetaData& value) { m_accountMetaDataHasBeenSet = true; m_accountMetaData = value; }
-    inline void SetAccountMetaData(AccountMetaData&& value) { m_accountMetaDataHasBeenSet = true; m_accountMetaData = std::move(value); }
-    inline AccountDetails& WithAccountMetaData(const AccountMetaData& value) { SetAccountMetaData(value); return *this;}
-    inline AccountDetails& WithAccountMetaData(AccountMetaData&& value) { SetAccountMetaData(std::move(value)); return *this;}
+    template<typename AccountMetaDataT = AccountMetaData>
+    void SetAccountMetaData(AccountMetaDataT&& value) { m_accountMetaDataHasBeenSet = true; m_accountMetaData = std::forward<AccountMetaDataT>(value); }
+    template<typename AccountMetaDataT = AccountMetaData>
+    AccountDetails& WithAccountMetaData(AccountMetaDataT&& value) { SetAccountMetaData(std::forward<AccountMetaDataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Tax inheritance information associated with the account. </p>
      */
-    inline const TaxInheritanceDetails& GetTaxInheritanceDetails() const{ return m_taxInheritanceDetails; }
+    inline const TaxInheritanceDetails& GetTaxInheritanceDetails() const { return m_taxInheritanceDetails; }
     inline bool TaxInheritanceDetailsHasBeenSet() const { return m_taxInheritanceDetailsHasBeenSet; }
-    inline void SetTaxInheritanceDetails(const TaxInheritanceDetails& value) { m_taxInheritanceDetailsHasBeenSet = true; m_taxInheritanceDetails = value; }
-    inline void SetTaxInheritanceDetails(TaxInheritanceDetails&& value) { m_taxInheritanceDetailsHasBeenSet = true; m_taxInheritanceDetails = std::move(value); }
-    inline AccountDetails& WithTaxInheritanceDetails(const TaxInheritanceDetails& value) { SetTaxInheritanceDetails(value); return *this;}
-    inline AccountDetails& WithTaxInheritanceDetails(TaxInheritanceDetails&& value) { SetTaxInheritanceDetails(std::move(value)); return *this;}
+    template<typename TaxInheritanceDetailsT = TaxInheritanceDetails>
+    void SetTaxInheritanceDetails(TaxInheritanceDetailsT&& value) { m_taxInheritanceDetailsHasBeenSet = true; m_taxInheritanceDetails = std::forward<TaxInheritanceDetailsT>(value); }
+    template<typename TaxInheritanceDetailsT = TaxInheritanceDetails>
+    AccountDetails& WithTaxInheritanceDetails(TaxInheritanceDetailsT&& value) { SetTaxInheritanceDetails(std::forward<TaxInheritanceDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +83,12 @@ namespace Model
      * information will have jurisdiction details (for example, country code and
      * state/region/province if applicable). </p>
      */
-    inline const TaxRegistrationWithJurisdiction& GetTaxRegistration() const{ return m_taxRegistration; }
+    inline const TaxRegistrationWithJurisdiction& GetTaxRegistration() const { return m_taxRegistration; }
     inline bool TaxRegistrationHasBeenSet() const { return m_taxRegistrationHasBeenSet; }
-    inline void SetTaxRegistration(const TaxRegistrationWithJurisdiction& value) { m_taxRegistrationHasBeenSet = true; m_taxRegistration = value; }
-    inline void SetTaxRegistration(TaxRegistrationWithJurisdiction&& value) { m_taxRegistrationHasBeenSet = true; m_taxRegistration = std::move(value); }
-    inline AccountDetails& WithTaxRegistration(const TaxRegistrationWithJurisdiction& value) { SetTaxRegistration(value); return *this;}
-    inline AccountDetails& WithTaxRegistration(TaxRegistrationWithJurisdiction&& value) { SetTaxRegistration(std::move(value)); return *this;}
+    template<typename TaxRegistrationT = TaxRegistrationWithJurisdiction>
+    void SetTaxRegistration(TaxRegistrationT&& value) { m_taxRegistrationHasBeenSet = true; m_taxRegistration = std::forward<TaxRegistrationT>(value); }
+    template<typename TaxRegistrationT = TaxRegistrationWithJurisdiction>
+    AccountDetails& WithTaxRegistration(TaxRegistrationT&& value) { SetTaxRegistration(std::forward<TaxRegistrationT>(value)); return *this;}
     ///@}
   private:
 

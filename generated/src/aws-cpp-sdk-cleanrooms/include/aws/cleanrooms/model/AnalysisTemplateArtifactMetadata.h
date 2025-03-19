@@ -32,7 +32,7 @@ namespace Model
   class AnalysisTemplateArtifactMetadata
   {
   public:
-    AWS_CLEANROOMS_API AnalysisTemplateArtifactMetadata();
+    AWS_CLEANROOMS_API AnalysisTemplateArtifactMetadata() = default;
     AWS_CLEANROOMS_API AnalysisTemplateArtifactMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API AnalysisTemplateArtifactMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,26 +42,26 @@ namespace Model
     /**
      * <p> The hash of the entry point for the analysis template artifact metadata.</p>
      */
-    inline const Hash& GetEntryPointHash() const{ return m_entryPointHash; }
+    inline const Hash& GetEntryPointHash() const { return m_entryPointHash; }
     inline bool EntryPointHashHasBeenSet() const { return m_entryPointHashHasBeenSet; }
-    inline void SetEntryPointHash(const Hash& value) { m_entryPointHashHasBeenSet = true; m_entryPointHash = value; }
-    inline void SetEntryPointHash(Hash&& value) { m_entryPointHashHasBeenSet = true; m_entryPointHash = std::move(value); }
-    inline AnalysisTemplateArtifactMetadata& WithEntryPointHash(const Hash& value) { SetEntryPointHash(value); return *this;}
-    inline AnalysisTemplateArtifactMetadata& WithEntryPointHash(Hash&& value) { SetEntryPointHash(std::move(value)); return *this;}
+    template<typename EntryPointHashT = Hash>
+    void SetEntryPointHash(EntryPointHashT&& value) { m_entryPointHashHasBeenSet = true; m_entryPointHash = std::forward<EntryPointHashT>(value); }
+    template<typename EntryPointHashT = Hash>
+    AnalysisTemplateArtifactMetadata& WithEntryPointHash(EntryPointHashT&& value) { SetEntryPointHash(std::forward<EntryPointHashT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Additional artifact hashes for the analysis template.</p>
      */
-    inline const Aws::Vector<Hash>& GetAdditionalArtifactHashes() const{ return m_additionalArtifactHashes; }
+    inline const Aws::Vector<Hash>& GetAdditionalArtifactHashes() const { return m_additionalArtifactHashes; }
     inline bool AdditionalArtifactHashesHasBeenSet() const { return m_additionalArtifactHashesHasBeenSet; }
-    inline void SetAdditionalArtifactHashes(const Aws::Vector<Hash>& value) { m_additionalArtifactHashesHasBeenSet = true; m_additionalArtifactHashes = value; }
-    inline void SetAdditionalArtifactHashes(Aws::Vector<Hash>&& value) { m_additionalArtifactHashesHasBeenSet = true; m_additionalArtifactHashes = std::move(value); }
-    inline AnalysisTemplateArtifactMetadata& WithAdditionalArtifactHashes(const Aws::Vector<Hash>& value) { SetAdditionalArtifactHashes(value); return *this;}
-    inline AnalysisTemplateArtifactMetadata& WithAdditionalArtifactHashes(Aws::Vector<Hash>&& value) { SetAdditionalArtifactHashes(std::move(value)); return *this;}
-    inline AnalysisTemplateArtifactMetadata& AddAdditionalArtifactHashes(const Hash& value) { m_additionalArtifactHashesHasBeenSet = true; m_additionalArtifactHashes.push_back(value); return *this; }
-    inline AnalysisTemplateArtifactMetadata& AddAdditionalArtifactHashes(Hash&& value) { m_additionalArtifactHashesHasBeenSet = true; m_additionalArtifactHashes.push_back(std::move(value)); return *this; }
+    template<typename AdditionalArtifactHashesT = Aws::Vector<Hash>>
+    void SetAdditionalArtifactHashes(AdditionalArtifactHashesT&& value) { m_additionalArtifactHashesHasBeenSet = true; m_additionalArtifactHashes = std::forward<AdditionalArtifactHashesT>(value); }
+    template<typename AdditionalArtifactHashesT = Aws::Vector<Hash>>
+    AnalysisTemplateArtifactMetadata& WithAdditionalArtifactHashes(AdditionalArtifactHashesT&& value) { SetAdditionalArtifactHashes(std::forward<AdditionalArtifactHashesT>(value)); return *this;}
+    template<typename AdditionalArtifactHashesT = Hash>
+    AnalysisTemplateArtifactMetadata& AddAdditionalArtifactHashes(AdditionalArtifactHashesT&& value) { m_additionalArtifactHashesHasBeenSet = true; m_additionalArtifactHashes.emplace_back(std::forward<AdditionalArtifactHashesT>(value)); return *this; }
     ///@}
   private:
 

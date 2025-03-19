@@ -23,7 +23,7 @@ namespace Model
   class ListSharedProjectsRequest : public CodeBuildRequest
   {
   public:
-    AWS_CODEBUILD_API ListSharedProjectsRequest();
+    AWS_CODEBUILD_API ListSharedProjectsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,12 +44,10 @@ namespace Model
      * <code>MODIFIED_TIME</code>: List based on when information about the shared
      * project was last changed. </p> </li> </ul>
      */
-    inline const SharedResourceSortByType& GetSortBy() const{ return m_sortBy; }
+    inline SharedResourceSortByType GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const SharedResourceSortByType& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(SharedResourceSortByType&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListSharedProjectsRequest& WithSortBy(const SharedResourceSortByType& value) { SetSortBy(value); return *this;}
-    inline ListSharedProjectsRequest& WithSortBy(SharedResourceSortByType&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(SharedResourceSortByType value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline ListSharedProjectsRequest& WithSortBy(SharedResourceSortByType value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,10 @@ namespace Model
      * <ul> <li> <p> <code>ASCENDING</code>: List in ascending order.</p> </li> <li>
      * <p> <code>DESCENDING</code>: List in descending order.</p> </li> </ul>
      */
-    inline const SortOrderType& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrderType GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrderType& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrderType&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListSharedProjectsRequest& WithSortOrder(const SortOrderType& value) { SetSortOrder(value); return *this;}
-    inline ListSharedProjectsRequest& WithSortOrder(SortOrderType&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrderType value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListSharedProjectsRequest& WithSortOrder(SortOrderType value) { SetSortOrder(value); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +68,7 @@ namespace Model
      * Use <code>nextToken</code> to iterate pages in the list of returned
      * <code>Project</code> objects. The default value is 100. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListSharedProjectsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -88,24 +84,22 @@ namespace Model
      * each subsequent next token that is returned, until no more next tokens are
      * returned. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListSharedProjectsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSharedProjectsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSharedProjectsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSharedProjectsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
-    SharedResourceSortByType m_sortBy;
+    SharedResourceSortByType m_sortBy{SharedResourceSortByType::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    SortOrderType m_sortOrder;
+    SortOrderType m_sortOrder{SortOrderType::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

@@ -10,18 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-RunScheduledInstancesRequest::RunScheduledInstancesRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_launchSpecificationHasBeenSet(false),
-    m_scheduledInstanceIdHasBeenSet(false)
-{
-}
-
 Aws::String RunScheduledInstancesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

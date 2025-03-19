@@ -18,51 +18,7 @@ namespace Glue
 namespace Model
 {
 
-JobRun::JobRun() : 
-    m_idHasBeenSet(false),
-    m_attempt(0),
-    m_attemptHasBeenSet(false),
-    m_previousRunIdHasBeenSet(false),
-    m_triggerNameHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_jobMode(JobMode::NOT_SET),
-    m_jobModeHasBeenSet(false),
-    m_jobRunQueuingEnabled(false),
-    m_jobRunQueuingEnabledHasBeenSet(false),
-    m_startedOnHasBeenSet(false),
-    m_lastModifiedOnHasBeenSet(false),
-    m_completedOnHasBeenSet(false),
-    m_jobRunState(JobRunState::NOT_SET),
-    m_jobRunStateHasBeenSet(false),
-    m_argumentsHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_predecessorRunsHasBeenSet(false),
-    m_executionTime(0),
-    m_executionTimeHasBeenSet(false),
-    m_timeout(0),
-    m_timeoutHasBeenSet(false),
-    m_maxCapacity(0.0),
-    m_maxCapacityHasBeenSet(false),
-    m_workerType(WorkerType::NOT_SET),
-    m_workerTypeHasBeenSet(false),
-    m_numberOfWorkers(0),
-    m_numberOfWorkersHasBeenSet(false),
-    m_securityConfigurationHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_notificationPropertyHasBeenSet(false),
-    m_glueVersionHasBeenSet(false),
-    m_dPUSeconds(0.0),
-    m_dPUSecondsHasBeenSet(false),
-    m_executionClass(ExecutionClass::NOT_SET),
-    m_executionClassHasBeenSet(false),
-    m_maintenanceWindowHasBeenSet(false),
-    m_profileNameHasBeenSet(false),
-    m_stateDetailHasBeenSet(false)
-{
-}
-
 JobRun::JobRun(JsonView jsonValue)
-  : JobRun()
 {
   *this = jsonValue;
 }
@@ -72,80 +28,58 @@ JobRun& JobRun::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attempt"))
   {
     m_attempt = jsonValue.GetInteger("Attempt");
-
     m_attemptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreviousRunId"))
   {
     m_previousRunId = jsonValue.GetString("PreviousRunId");
-
     m_previousRunIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TriggerName"))
   {
     m_triggerName = jsonValue.GetString("TriggerName");
-
     m_triggerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobName"))
   {
     m_jobName = jsonValue.GetString("JobName");
-
     m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobMode"))
   {
     m_jobMode = JobModeMapper::GetJobModeForName(jsonValue.GetString("JobMode"));
-
     m_jobModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobRunQueuingEnabled"))
   {
     m_jobRunQueuingEnabled = jsonValue.GetBool("JobRunQueuingEnabled");
-
     m_jobRunQueuingEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedOn"))
   {
     m_startedOn = jsonValue.GetDouble("StartedOn");
-
     m_startedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedOn"))
   {
     m_lastModifiedOn = jsonValue.GetDouble("LastModifiedOn");
-
     m_lastModifiedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletedOn"))
   {
     m_completedOn = jsonValue.GetDouble("CompletedOn");
-
     m_completedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobRunState"))
   {
     m_jobRunState = JobRunStateMapper::GetJobRunStateForName(jsonValue.GetString("JobRunState"));
-
     m_jobRunStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arguments"))
   {
     Aws::Map<Aws::String, JsonView> argumentsJsonMap = jsonValue.GetObject("Arguments").GetAllObjects();
@@ -155,14 +89,11 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     }
     m_argumentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PredecessorRuns"))
   {
     Aws::Utils::Array<JsonView> predecessorRunsJsonList = jsonValue.GetArray("PredecessorRuns");
@@ -172,105 +103,76 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     }
     m_predecessorRunsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionTime"))
   {
     m_executionTime = jsonValue.GetInteger("ExecutionTime");
-
     m_executionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timeout"))
   {
     m_timeout = jsonValue.GetInteger("Timeout");
-
     m_timeoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxCapacity"))
   {
     m_maxCapacity = jsonValue.GetDouble("MaxCapacity");
-
     m_maxCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkerType"))
   {
     m_workerType = WorkerTypeMapper::GetWorkerTypeForName(jsonValue.GetString("WorkerType"));
-
     m_workerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfWorkers"))
   {
     m_numberOfWorkers = jsonValue.GetInteger("NumberOfWorkers");
-
     m_numberOfWorkersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityConfiguration"))
   {
     m_securityConfiguration = jsonValue.GetString("SecurityConfiguration");
-
     m_securityConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogGroupName"))
   {
     m_logGroupName = jsonValue.GetString("LogGroupName");
-
     m_logGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotificationProperty"))
   {
     m_notificationProperty = jsonValue.GetObject("NotificationProperty");
-
     m_notificationPropertyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlueVersion"))
   {
     m_glueVersion = jsonValue.GetString("GlueVersion");
-
     m_glueVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DPUSeconds"))
   {
     m_dPUSeconds = jsonValue.GetDouble("DPUSeconds");
-
     m_dPUSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionClass"))
   {
     m_executionClass = ExecutionClassMapper::GetExecutionClassForName(jsonValue.GetString("ExecutionClass"));
-
     m_executionClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaintenanceWindow"))
   {
     m_maintenanceWindow = jsonValue.GetString("MaintenanceWindow");
-
     m_maintenanceWindowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProfileName"))
   {
     m_profileName = jsonValue.GetString("ProfileName");
-
     m_profileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateDetail"))
   {
     m_stateDetail = jsonValue.GetString("StateDetail");
-
     m_stateDetailHasBeenSet = true;
   }
-
   return *this;
 }
 

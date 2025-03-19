@@ -33,7 +33,7 @@ namespace Model
   class PropertyNameQuery
   {
   public:
-    AWS_SAGEMAKER_API PropertyNameQuery();
+    AWS_SAGEMAKER_API PropertyNameQuery() = default;
     AWS_SAGEMAKER_API PropertyNameQuery(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API PropertyNameQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>Text that begins a property's name.</p>
      */
-    inline const Aws::String& GetPropertyNameHint() const{ return m_propertyNameHint; }
+    inline const Aws::String& GetPropertyNameHint() const { return m_propertyNameHint; }
     inline bool PropertyNameHintHasBeenSet() const { return m_propertyNameHintHasBeenSet; }
-    inline void SetPropertyNameHint(const Aws::String& value) { m_propertyNameHintHasBeenSet = true; m_propertyNameHint = value; }
-    inline void SetPropertyNameHint(Aws::String&& value) { m_propertyNameHintHasBeenSet = true; m_propertyNameHint = std::move(value); }
-    inline void SetPropertyNameHint(const char* value) { m_propertyNameHintHasBeenSet = true; m_propertyNameHint.assign(value); }
-    inline PropertyNameQuery& WithPropertyNameHint(const Aws::String& value) { SetPropertyNameHint(value); return *this;}
-    inline PropertyNameQuery& WithPropertyNameHint(Aws::String&& value) { SetPropertyNameHint(std::move(value)); return *this;}
-    inline PropertyNameQuery& WithPropertyNameHint(const char* value) { SetPropertyNameHint(value); return *this;}
+    template<typename PropertyNameHintT = Aws::String>
+    void SetPropertyNameHint(PropertyNameHintT&& value) { m_propertyNameHintHasBeenSet = true; m_propertyNameHint = std::forward<PropertyNameHintT>(value); }
+    template<typename PropertyNameHintT = Aws::String>
+    PropertyNameQuery& WithPropertyNameHint(PropertyNameHintT&& value) { SetPropertyNameHint(std::forward<PropertyNameHintT>(value)); return *this;}
     ///@}
   private:
 

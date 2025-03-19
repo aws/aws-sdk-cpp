@@ -41,7 +41,7 @@ namespace Model
   class TracePart
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API TracePart();
+    AWS_BEDROCKAGENTRUNTIME_API TracePart() = default;
     AWS_BEDROCKAGENTRUNTIME_API TracePart(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API TracePart& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,96 +51,86 @@ namespace Model
     /**
      * <p>The unique identifier of the alias of the agent.</p>
      */
-    inline const Aws::String& GetAgentAliasId() const{ return m_agentAliasId; }
+    inline const Aws::String& GetAgentAliasId() const { return m_agentAliasId; }
     inline bool AgentAliasIdHasBeenSet() const { return m_agentAliasIdHasBeenSet; }
-    inline void SetAgentAliasId(const Aws::String& value) { m_agentAliasIdHasBeenSet = true; m_agentAliasId = value; }
-    inline void SetAgentAliasId(Aws::String&& value) { m_agentAliasIdHasBeenSet = true; m_agentAliasId = std::move(value); }
-    inline void SetAgentAliasId(const char* value) { m_agentAliasIdHasBeenSet = true; m_agentAliasId.assign(value); }
-    inline TracePart& WithAgentAliasId(const Aws::String& value) { SetAgentAliasId(value); return *this;}
-    inline TracePart& WithAgentAliasId(Aws::String&& value) { SetAgentAliasId(std::move(value)); return *this;}
-    inline TracePart& WithAgentAliasId(const char* value) { SetAgentAliasId(value); return *this;}
+    template<typename AgentAliasIdT = Aws::String>
+    void SetAgentAliasId(AgentAliasIdT&& value) { m_agentAliasIdHasBeenSet = true; m_agentAliasId = std::forward<AgentAliasIdT>(value); }
+    template<typename AgentAliasIdT = Aws::String>
+    TracePart& WithAgentAliasId(AgentAliasIdT&& value) { SetAgentAliasId(std::forward<AgentAliasIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the agent.</p>
      */
-    inline const Aws::String& GetAgentId() const{ return m_agentId; }
+    inline const Aws::String& GetAgentId() const { return m_agentId; }
     inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-    inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
-    inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
-    inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
-    inline TracePart& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
-    inline TracePart& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
-    inline TracePart& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    template<typename AgentIdT = Aws::String>
+    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
+    template<typename AgentIdT = Aws::String>
+    TracePart& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the agent.</p>
      */
-    inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+    inline const Aws::String& GetAgentVersion() const { return m_agentVersion; }
     inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
-    inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
-    inline void SetAgentVersion(Aws::String&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::move(value); }
-    inline void SetAgentVersion(const char* value) { m_agentVersionHasBeenSet = true; m_agentVersion.assign(value); }
-    inline TracePart& WithAgentVersion(const Aws::String& value) { SetAgentVersion(value); return *this;}
-    inline TracePart& WithAgentVersion(Aws::String&& value) { SetAgentVersion(std::move(value)); return *this;}
-    inline TracePart& WithAgentVersion(const char* value) { SetAgentVersion(value); return *this;}
+    template<typename AgentVersionT = Aws::String>
+    void SetAgentVersion(AgentVersionT&& value) { m_agentVersionHasBeenSet = true; m_agentVersion = std::forward<AgentVersionT>(value); }
+    template<typename AgentVersionT = Aws::String>
+    TracePart& WithAgentVersion(AgentVersionT&& value) { SetAgentVersion(std::forward<AgentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The part's caller chain.</p>
      */
-    inline const Aws::Vector<Caller>& GetCallerChain() const{ return m_callerChain; }
+    inline const Aws::Vector<Caller>& GetCallerChain() const { return m_callerChain; }
     inline bool CallerChainHasBeenSet() const { return m_callerChainHasBeenSet; }
-    inline void SetCallerChain(const Aws::Vector<Caller>& value) { m_callerChainHasBeenSet = true; m_callerChain = value; }
-    inline void SetCallerChain(Aws::Vector<Caller>&& value) { m_callerChainHasBeenSet = true; m_callerChain = std::move(value); }
-    inline TracePart& WithCallerChain(const Aws::Vector<Caller>& value) { SetCallerChain(value); return *this;}
-    inline TracePart& WithCallerChain(Aws::Vector<Caller>&& value) { SetCallerChain(std::move(value)); return *this;}
-    inline TracePart& AddCallerChain(const Caller& value) { m_callerChainHasBeenSet = true; m_callerChain.push_back(value); return *this; }
-    inline TracePart& AddCallerChain(Caller&& value) { m_callerChainHasBeenSet = true; m_callerChain.push_back(std::move(value)); return *this; }
+    template<typename CallerChainT = Aws::Vector<Caller>>
+    void SetCallerChain(CallerChainT&& value) { m_callerChainHasBeenSet = true; m_callerChain = std::forward<CallerChainT>(value); }
+    template<typename CallerChainT = Aws::Vector<Caller>>
+    TracePart& WithCallerChain(CallerChainT&& value) { SetCallerChain(std::forward<CallerChainT>(value)); return *this;}
+    template<typename CallerChainT = Caller>
+    TracePart& AddCallerChain(CallerChainT&& value) { m_callerChainHasBeenSet = true; m_callerChain.emplace_back(std::forward<CallerChainT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The part's collaborator name.</p>
      */
-    inline const Aws::String& GetCollaboratorName() const{ return m_collaboratorName; }
+    inline const Aws::String& GetCollaboratorName() const { return m_collaboratorName; }
     inline bool CollaboratorNameHasBeenSet() const { return m_collaboratorNameHasBeenSet; }
-    inline void SetCollaboratorName(const Aws::String& value) { m_collaboratorNameHasBeenSet = true; m_collaboratorName = value; }
-    inline void SetCollaboratorName(Aws::String&& value) { m_collaboratorNameHasBeenSet = true; m_collaboratorName = std::move(value); }
-    inline void SetCollaboratorName(const char* value) { m_collaboratorNameHasBeenSet = true; m_collaboratorName.assign(value); }
-    inline TracePart& WithCollaboratorName(const Aws::String& value) { SetCollaboratorName(value); return *this;}
-    inline TracePart& WithCollaboratorName(Aws::String&& value) { SetCollaboratorName(std::move(value)); return *this;}
-    inline TracePart& WithCollaboratorName(const char* value) { SetCollaboratorName(value); return *this;}
+    template<typename CollaboratorNameT = Aws::String>
+    void SetCollaboratorName(CollaboratorNameT&& value) { m_collaboratorNameHasBeenSet = true; m_collaboratorName = std::forward<CollaboratorNameT>(value); }
+    template<typename CollaboratorNameT = Aws::String>
+    TracePart& WithCollaboratorName(CollaboratorNameT&& value) { SetCollaboratorName(std::forward<CollaboratorNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The time of the trace. </p>
      */
-    inline const Aws::Utils::DateTime& GetEventTime() const{ return m_eventTime; }
+    inline const Aws::Utils::DateTime& GetEventTime() const { return m_eventTime; }
     inline bool EventTimeHasBeenSet() const { return m_eventTimeHasBeenSet; }
-    inline void SetEventTime(const Aws::Utils::DateTime& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
-    inline void SetEventTime(Aws::Utils::DateTime&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::move(value); }
-    inline TracePart& WithEventTime(const Aws::Utils::DateTime& value) { SetEventTime(value); return *this;}
-    inline TracePart& WithEventTime(Aws::Utils::DateTime&& value) { SetEventTime(std::move(value)); return *this;}
+    template<typename EventTimeT = Aws::Utils::DateTime>
+    void SetEventTime(EventTimeT&& value) { m_eventTimeHasBeenSet = true; m_eventTime = std::forward<EventTimeT>(value); }
+    template<typename EventTimeT = Aws::Utils::DateTime>
+    TracePart& WithEventTime(EventTimeT&& value) { SetEventTime(std::forward<EventTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the session with the agent.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline TracePart& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline TracePart& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline TracePart& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    TracePart& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -152,12 +142,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/agents-test.html#trace-enablement">Trace
      * enablement</a>.</p>
      */
-    inline const Trace& GetTrace() const{ return m_trace; }
+    inline const Trace& GetTrace() const { return m_trace; }
     inline bool TraceHasBeenSet() const { return m_traceHasBeenSet; }
-    inline void SetTrace(const Trace& value) { m_traceHasBeenSet = true; m_trace = value; }
-    inline void SetTrace(Trace&& value) { m_traceHasBeenSet = true; m_trace = std::move(value); }
-    inline TracePart& WithTrace(const Trace& value) { SetTrace(value); return *this;}
-    inline TracePart& WithTrace(Trace&& value) { SetTrace(std::move(value)); return *this;}
+    template<typename TraceT = Trace>
+    void SetTrace(TraceT&& value) { m_traceHasBeenSet = true; m_trace = std::forward<TraceT>(value); }
+    template<typename TraceT = Trace>
+    TracePart& WithTrace(TraceT&& value) { SetTrace(std::forward<TraceT>(value)); return *this;}
     ///@}
   private:
 
@@ -176,7 +166,7 @@ namespace Model
     Aws::String m_collaboratorName;
     bool m_collaboratorNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_eventTime;
+    Aws::Utils::DateTime m_eventTime{};
     bool m_eventTimeHasBeenSet = false;
 
     Aws::String m_sessionId;

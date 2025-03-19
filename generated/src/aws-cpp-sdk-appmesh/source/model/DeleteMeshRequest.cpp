@@ -12,11 +12,6 @@ using namespace Aws::AppMesh::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMeshRequest::DeleteMeshRequest() : 
-    m_meshNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMeshRequest::SerializePayload() const
 {
   return {};

@@ -18,32 +18,7 @@ namespace ApiGatewayV2
 namespace Model
 {
 
-Api::Api() : 
-    m_apiEndpointHasBeenSet(false),
-    m_apiGatewayManaged(false),
-    m_apiGatewayManagedHasBeenSet(false),
-    m_apiIdHasBeenSet(false),
-    m_apiKeySelectionExpressionHasBeenSet(false),
-    m_corsConfigurationHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_disableSchemaValidation(false),
-    m_disableSchemaValidationHasBeenSet(false),
-    m_disableExecuteApiEndpoint(false),
-    m_disableExecuteApiEndpointHasBeenSet(false),
-    m_importInfoHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_protocolType(ProtocolType::NOT_SET),
-    m_protocolTypeHasBeenSet(false),
-    m_routeSelectionExpressionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_warningsHasBeenSet(false)
-{
-}
-
 Api::Api(JsonView jsonValue)
-  : Api()
 {
   *this = jsonValue;
 }
@@ -53,66 +28,48 @@ Api& Api::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("apiEndpoint"))
   {
     m_apiEndpoint = jsonValue.GetString("apiEndpoint");
-
     m_apiEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiGatewayManaged"))
   {
     m_apiGatewayManaged = jsonValue.GetBool("apiGatewayManaged");
-
     m_apiGatewayManagedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiId"))
   {
     m_apiId = jsonValue.GetString("apiId");
-
     m_apiIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiKeySelectionExpression"))
   {
     m_apiKeySelectionExpression = jsonValue.GetString("apiKeySelectionExpression");
-
     m_apiKeySelectionExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("corsConfiguration"))
   {
     m_corsConfiguration = jsonValue.GetObject("corsConfiguration");
-
     m_corsConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetString("createdDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("disableSchemaValidation"))
   {
     m_disableSchemaValidation = jsonValue.GetBool("disableSchemaValidation");
-
     m_disableSchemaValidationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("disableExecuteApiEndpoint"))
   {
     m_disableExecuteApiEndpoint = jsonValue.GetBool("disableExecuteApiEndpoint");
-
     m_disableExecuteApiEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("importInfo"))
   {
     Aws::Utils::Array<JsonView> importInfoJsonList = jsonValue.GetArray("importInfo");
@@ -122,28 +79,21 @@ Api& Api::operator =(JsonView jsonValue)
     }
     m_importInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protocolType"))
   {
     m_protocolType = ProtocolTypeMapper::GetProtocolTypeForName(jsonValue.GetString("protocolType"));
-
     m_protocolTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("routeSelectionExpression"))
   {
     m_routeSelectionExpression = jsonValue.GetString("routeSelectionExpression");
-
     m_routeSelectionExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -153,14 +103,11 @@ Api& Api::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("warnings"))
   {
     Aws::Utils::Array<JsonView> warningsJsonList = jsonValue.GetArray("warnings");
@@ -170,7 +117,6 @@ Api& Api::operator =(JsonView jsonValue)
     }
     m_warningsHasBeenSet = true;
   }
-
   return *this;
 }
 

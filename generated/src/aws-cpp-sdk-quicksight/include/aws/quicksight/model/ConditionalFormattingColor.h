@@ -32,7 +32,7 @@ namespace Model
   class ConditionalFormattingColor
   {
   public:
-    AWS_QUICKSIGHT_API ConditionalFormattingColor();
+    AWS_QUICKSIGHT_API ConditionalFormattingColor() = default;
     AWS_QUICKSIGHT_API ConditionalFormattingColor(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ConditionalFormattingColor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>Formatting configuration for solid color.</p>
      */
-    inline const ConditionalFormattingSolidColor& GetSolid() const{ return m_solid; }
+    inline const ConditionalFormattingSolidColor& GetSolid() const { return m_solid; }
     inline bool SolidHasBeenSet() const { return m_solidHasBeenSet; }
-    inline void SetSolid(const ConditionalFormattingSolidColor& value) { m_solidHasBeenSet = true; m_solid = value; }
-    inline void SetSolid(ConditionalFormattingSolidColor&& value) { m_solidHasBeenSet = true; m_solid = std::move(value); }
-    inline ConditionalFormattingColor& WithSolid(const ConditionalFormattingSolidColor& value) { SetSolid(value); return *this;}
-    inline ConditionalFormattingColor& WithSolid(ConditionalFormattingSolidColor&& value) { SetSolid(std::move(value)); return *this;}
+    template<typename SolidT = ConditionalFormattingSolidColor>
+    void SetSolid(SolidT&& value) { m_solidHasBeenSet = true; m_solid = std::forward<SolidT>(value); }
+    template<typename SolidT = ConditionalFormattingSolidColor>
+    ConditionalFormattingColor& WithSolid(SolidT&& value) { SetSolid(std::forward<SolidT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Formatting configuration for gradient color.</p>
      */
-    inline const ConditionalFormattingGradientColor& GetGradient() const{ return m_gradient; }
+    inline const ConditionalFormattingGradientColor& GetGradient() const { return m_gradient; }
     inline bool GradientHasBeenSet() const { return m_gradientHasBeenSet; }
-    inline void SetGradient(const ConditionalFormattingGradientColor& value) { m_gradientHasBeenSet = true; m_gradient = value; }
-    inline void SetGradient(ConditionalFormattingGradientColor&& value) { m_gradientHasBeenSet = true; m_gradient = std::move(value); }
-    inline ConditionalFormattingColor& WithGradient(const ConditionalFormattingGradientColor& value) { SetGradient(value); return *this;}
-    inline ConditionalFormattingColor& WithGradient(ConditionalFormattingGradientColor&& value) { SetGradient(std::move(value)); return *this;}
+    template<typename GradientT = ConditionalFormattingGradientColor>
+    void SetGradient(GradientT&& value) { m_gradientHasBeenSet = true; m_gradient = std::forward<GradientT>(value); }
+    template<typename GradientT = ConditionalFormattingGradientColor>
+    ConditionalFormattingColor& WithGradient(GradientT&& value) { SetGradient(std::forward<GradientT>(value)); return *this;}
     ///@}
   private:
 

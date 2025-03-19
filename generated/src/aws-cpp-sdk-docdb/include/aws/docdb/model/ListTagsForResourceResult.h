@@ -35,7 +35,7 @@ namespace Model
   class ListTagsForResourceResult
   {
   public:
-    AWS_DOCDB_API ListTagsForResourceResult();
+    AWS_DOCDB_API ListTagsForResourceResult() = default;
     AWS_DOCDB_API ListTagsForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_DOCDB_API ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,28 +44,30 @@ namespace Model
     /**
      * <p>A list of one or more tags.</p>
      */
-    inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
-    inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagList = value; }
-    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagList = std::move(value); }
-    inline ListTagsForResourceResult& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
-    inline ListTagsForResourceResult& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
-    inline ListTagsForResourceResult& AddTagList(const Tag& value) { m_tagList.push_back(value); return *this; }
-    inline ListTagsForResourceResult& AddTagList(Tag&& value) { m_tagList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Tag>& GetTagList() const { return m_tagList; }
+    template<typename TagListT = Aws::Vector<Tag>>
+    void SetTagList(TagListT&& value) { m_tagListHasBeenSet = true; m_tagList = std::forward<TagListT>(value); }
+    template<typename TagListT = Aws::Vector<Tag>>
+    ListTagsForResourceResult& WithTagList(TagListT&& value) { SetTagList(std::forward<TagListT>(value)); return *this;}
+    template<typename TagListT = Tag>
+    ListTagsForResourceResult& AddTagList(TagListT&& value) { m_tagListHasBeenSet = true; m_tagList.emplace_back(std::forward<TagListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ListTagsForResourceResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ListTagsForResourceResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ListTagsForResourceResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Tag> m_tagList;
+    bool m_tagListHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,13 +18,7 @@ namespace Glue
 namespace Model
 {
 
-LabelingSetGenerationTaskRunProperties::LabelingSetGenerationTaskRunProperties() : 
-    m_outputS3PathHasBeenSet(false)
-{
-}
-
 LabelingSetGenerationTaskRunProperties::LabelingSetGenerationTaskRunProperties(JsonView jsonValue)
-  : LabelingSetGenerationTaskRunProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LabelingSetGenerationTaskRunProperties& LabelingSetGenerationTaskRunProperties::
   if(jsonValue.ValueExists("OutputS3Path"))
   {
     m_outputS3Path = jsonValue.GetString("OutputS3Path");
-
     m_outputS3PathHasBeenSet = true;
   }
-
   return *this;
 }
 

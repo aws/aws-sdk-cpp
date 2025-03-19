@@ -24,7 +24,7 @@ namespace Model
   class ImportCertificateRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API ImportCertificateRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API ImportCertificateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * letter and must contain only ASCII letters, digits, and hyphens. They can't end
      * with a hyphen or contain two consecutive hyphens.</p>
      */
-    inline const Aws::String& GetCertificateIdentifier() const{ return m_certificateIdentifier; }
+    inline const Aws::String& GetCertificateIdentifier() const { return m_certificateIdentifier; }
     inline bool CertificateIdentifierHasBeenSet() const { return m_certificateIdentifierHasBeenSet; }
-    inline void SetCertificateIdentifier(const Aws::String& value) { m_certificateIdentifierHasBeenSet = true; m_certificateIdentifier = value; }
-    inline void SetCertificateIdentifier(Aws::String&& value) { m_certificateIdentifierHasBeenSet = true; m_certificateIdentifier = std::move(value); }
-    inline void SetCertificateIdentifier(const char* value) { m_certificateIdentifierHasBeenSet = true; m_certificateIdentifier.assign(value); }
-    inline ImportCertificateRequest& WithCertificateIdentifier(const Aws::String& value) { SetCertificateIdentifier(value); return *this;}
-    inline ImportCertificateRequest& WithCertificateIdentifier(Aws::String&& value) { SetCertificateIdentifier(std::move(value)); return *this;}
-    inline ImportCertificateRequest& WithCertificateIdentifier(const char* value) { SetCertificateIdentifier(value); return *this;}
+    template<typename CertificateIdentifierT = Aws::String>
+    void SetCertificateIdentifier(CertificateIdentifierT&& value) { m_certificateIdentifierHasBeenSet = true; m_certificateIdentifier = std::forward<CertificateIdentifierT>(value); }
+    template<typename CertificateIdentifierT = Aws::String>
+    ImportCertificateRequest& WithCertificateIdentifier(CertificateIdentifierT&& value) { SetCertificateIdentifier(std::forward<CertificateIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The contents of a <code>.pem</code> file, which contains an X.509
      * certificate.</p>
      */
-    inline const Aws::String& GetCertificatePem() const{ return m_certificatePem; }
+    inline const Aws::String& GetCertificatePem() const { return m_certificatePem; }
     inline bool CertificatePemHasBeenSet() const { return m_certificatePemHasBeenSet; }
-    inline void SetCertificatePem(const Aws::String& value) { m_certificatePemHasBeenSet = true; m_certificatePem = value; }
-    inline void SetCertificatePem(Aws::String&& value) { m_certificatePemHasBeenSet = true; m_certificatePem = std::move(value); }
-    inline void SetCertificatePem(const char* value) { m_certificatePemHasBeenSet = true; m_certificatePem.assign(value); }
-    inline ImportCertificateRequest& WithCertificatePem(const Aws::String& value) { SetCertificatePem(value); return *this;}
-    inline ImportCertificateRequest& WithCertificatePem(Aws::String&& value) { SetCertificatePem(std::move(value)); return *this;}
-    inline ImportCertificateRequest& WithCertificatePem(const char* value) { SetCertificatePem(value); return *this;}
+    template<typename CertificatePemT = Aws::String>
+    void SetCertificatePem(CertificatePemT&& value) { m_certificatePemHasBeenSet = true; m_certificatePem = std::forward<CertificatePemT>(value); }
+    template<typename CertificatePemT = Aws::String>
+    ImportCertificateRequest& WithCertificatePem(CertificatePemT&& value) { SetCertificatePem(std::forward<CertificatePemT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,26 +71,26 @@ namespace Model
      * prefix. You can't provide the certificate inline.</p> <p>Example:
      * <code>filebase64("${path.root}/rds-ca-2019-root.sso")</code> </p>
      */
-    inline const Aws::Utils::ByteBuffer& GetCertificateWallet() const{ return m_certificateWallet; }
+    inline const Aws::Utils::ByteBuffer& GetCertificateWallet() const { return m_certificateWallet; }
     inline bool CertificateWalletHasBeenSet() const { return m_certificateWalletHasBeenSet; }
-    inline void SetCertificateWallet(const Aws::Utils::ByteBuffer& value) { m_certificateWalletHasBeenSet = true; m_certificateWallet = value; }
-    inline void SetCertificateWallet(Aws::Utils::ByteBuffer&& value) { m_certificateWalletHasBeenSet = true; m_certificateWallet = std::move(value); }
-    inline ImportCertificateRequest& WithCertificateWallet(const Aws::Utils::ByteBuffer& value) { SetCertificateWallet(value); return *this;}
-    inline ImportCertificateRequest& WithCertificateWallet(Aws::Utils::ByteBuffer&& value) { SetCertificateWallet(std::move(value)); return *this;}
+    template<typename CertificateWalletT = Aws::Utils::ByteBuffer>
+    void SetCertificateWallet(CertificateWalletT&& value) { m_certificateWalletHasBeenSet = true; m_certificateWallet = std::forward<CertificateWalletT>(value); }
+    template<typename CertificateWalletT = Aws::Utils::ByteBuffer>
+    ImportCertificateRequest& WithCertificateWallet(CertificateWalletT&& value) { SetCertificateWallet(std::forward<CertificateWalletT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags associated with the certificate.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline ImportCertificateRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline ImportCertificateRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline ImportCertificateRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline ImportCertificateRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    ImportCertificateRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    ImportCertificateRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -104,7 +100,7 @@ namespace Model
     Aws::String m_certificatePem;
     bool m_certificatePemHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_certificateWallet;
+    Aws::Utils::ByteBuffer m_certificateWallet{};
     bool m_certificateWalletHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

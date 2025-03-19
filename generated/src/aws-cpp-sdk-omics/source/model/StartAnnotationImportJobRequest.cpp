@@ -12,18 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartAnnotationImportJobRequest::StartAnnotationImportJobRequest() : 
-    m_destinationNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_versionNameHasBeenSet(false),
-    m_formatOptionsHasBeenSet(false),
-    m_runLeftNormalization(false),
-    m_runLeftNormalizationHasBeenSet(false),
-    m_annotationFieldsHasBeenSet(false)
-{
-}
-
 Aws::String StartAnnotationImportJobRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -34,7 +34,7 @@ namespace Model
   class RelayAction
   {
   public:
-    AWS_MAILMANAGER_API RelayAction();
+    AWS_MAILMANAGER_API RelayAction() = default;
     AWS_MAILMANAGER_API RelayAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API RelayAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * if there are configuration errors. For example, the specified relay has been
      * deleted.</p>
      */
-    inline const ActionFailurePolicy& GetActionFailurePolicy() const{ return m_actionFailurePolicy; }
+    inline ActionFailurePolicy GetActionFailurePolicy() const { return m_actionFailurePolicy; }
     inline bool ActionFailurePolicyHasBeenSet() const { return m_actionFailurePolicyHasBeenSet; }
-    inline void SetActionFailurePolicy(const ActionFailurePolicy& value) { m_actionFailurePolicyHasBeenSet = true; m_actionFailurePolicy = value; }
-    inline void SetActionFailurePolicy(ActionFailurePolicy&& value) { m_actionFailurePolicyHasBeenSet = true; m_actionFailurePolicy = std::move(value); }
-    inline RelayAction& WithActionFailurePolicy(const ActionFailurePolicy& value) { SetActionFailurePolicy(value); return *this;}
-    inline RelayAction& WithActionFailurePolicy(ActionFailurePolicy&& value) { SetActionFailurePolicy(std::move(value)); return *this;}
+    inline void SetActionFailurePolicy(ActionFailurePolicy value) { m_actionFailurePolicyHasBeenSet = true; m_actionFailurePolicy = value; }
+    inline RelayAction& WithActionFailurePolicy(ActionFailurePolicy value) { SetActionFailurePolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -59,33 +57,29 @@ namespace Model
      * <p>This action specifies whether to preserve or replace original mail from
      * address while relaying received emails to a destination server.</p>
      */
-    inline const MailFrom& GetMailFrom() const{ return m_mailFrom; }
+    inline MailFrom GetMailFrom() const { return m_mailFrom; }
     inline bool MailFromHasBeenSet() const { return m_mailFromHasBeenSet; }
-    inline void SetMailFrom(const MailFrom& value) { m_mailFromHasBeenSet = true; m_mailFrom = value; }
-    inline void SetMailFrom(MailFrom&& value) { m_mailFromHasBeenSet = true; m_mailFrom = std::move(value); }
-    inline RelayAction& WithMailFrom(const MailFrom& value) { SetMailFrom(value); return *this;}
-    inline RelayAction& WithMailFrom(MailFrom&& value) { SetMailFrom(std::move(value)); return *this;}
+    inline void SetMailFrom(MailFrom value) { m_mailFromHasBeenSet = true; m_mailFrom = value; }
+    inline RelayAction& WithMailFrom(MailFrom value) { SetMailFrom(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the relay resource to be used when relaying an email.</p>
      */
-    inline const Aws::String& GetRelay() const{ return m_relay; }
+    inline const Aws::String& GetRelay() const { return m_relay; }
     inline bool RelayHasBeenSet() const { return m_relayHasBeenSet; }
-    inline void SetRelay(const Aws::String& value) { m_relayHasBeenSet = true; m_relay = value; }
-    inline void SetRelay(Aws::String&& value) { m_relayHasBeenSet = true; m_relay = std::move(value); }
-    inline void SetRelay(const char* value) { m_relayHasBeenSet = true; m_relay.assign(value); }
-    inline RelayAction& WithRelay(const Aws::String& value) { SetRelay(value); return *this;}
-    inline RelayAction& WithRelay(Aws::String&& value) { SetRelay(std::move(value)); return *this;}
-    inline RelayAction& WithRelay(const char* value) { SetRelay(value); return *this;}
+    template<typename RelayT = Aws::String>
+    void SetRelay(RelayT&& value) { m_relayHasBeenSet = true; m_relay = std::forward<RelayT>(value); }
+    template<typename RelayT = Aws::String>
+    RelayAction& WithRelay(RelayT&& value) { SetRelay(std::forward<RelayT>(value)); return *this;}
     ///@}
   private:
 
-    ActionFailurePolicy m_actionFailurePolicy;
+    ActionFailurePolicy m_actionFailurePolicy{ActionFailurePolicy::NOT_SET};
     bool m_actionFailurePolicyHasBeenSet = false;
 
-    MailFrom m_mailFrom;
+    MailFrom m_mailFrom{MailFrom::NOT_SET};
     bool m_mailFromHasBeenSet = false;
 
     Aws::String m_relay;

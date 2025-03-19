@@ -12,11 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSourceCredentialsRequest::DeleteSourceCredentialsRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSourceCredentialsRequest::SerializePayload() const
 {
   JsonValue payload;

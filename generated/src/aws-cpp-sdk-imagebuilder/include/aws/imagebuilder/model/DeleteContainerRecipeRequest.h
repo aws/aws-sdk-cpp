@@ -25,7 +25,7 @@ namespace Model
   class DeleteContainerRecipeRequest : public ImagebuilderRequest
   {
   public:
-    AWS_IMAGEBUILDER_API DeleteContainerRecipeRequest();
+    AWS_IMAGEBUILDER_API DeleteContainerRecipeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the container recipe to delete.</p>
      */
-    inline const Aws::String& GetContainerRecipeArn() const{ return m_containerRecipeArn; }
+    inline const Aws::String& GetContainerRecipeArn() const { return m_containerRecipeArn; }
     inline bool ContainerRecipeArnHasBeenSet() const { return m_containerRecipeArnHasBeenSet; }
-    inline void SetContainerRecipeArn(const Aws::String& value) { m_containerRecipeArnHasBeenSet = true; m_containerRecipeArn = value; }
-    inline void SetContainerRecipeArn(Aws::String&& value) { m_containerRecipeArnHasBeenSet = true; m_containerRecipeArn = std::move(value); }
-    inline void SetContainerRecipeArn(const char* value) { m_containerRecipeArnHasBeenSet = true; m_containerRecipeArn.assign(value); }
-    inline DeleteContainerRecipeRequest& WithContainerRecipeArn(const Aws::String& value) { SetContainerRecipeArn(value); return *this;}
-    inline DeleteContainerRecipeRequest& WithContainerRecipeArn(Aws::String&& value) { SetContainerRecipeArn(std::move(value)); return *this;}
-    inline DeleteContainerRecipeRequest& WithContainerRecipeArn(const char* value) { SetContainerRecipeArn(value); return *this;}
+    template<typename ContainerRecipeArnT = Aws::String>
+    void SetContainerRecipeArn(ContainerRecipeArnT&& value) { m_containerRecipeArnHasBeenSet = true; m_containerRecipeArn = std::forward<ContainerRecipeArnT>(value); }
+    template<typename ContainerRecipeArnT = Aws::String>
+    DeleteContainerRecipeRequest& WithContainerRecipeArn(ContainerRecipeArnT&& value) { SetContainerRecipeArn(std::forward<ContainerRecipeArnT>(value)); return *this;}
     ///@}
   private:
 

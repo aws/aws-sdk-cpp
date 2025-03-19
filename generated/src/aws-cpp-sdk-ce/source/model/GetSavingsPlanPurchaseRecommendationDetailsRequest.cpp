@@ -12,11 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSavingsPlanPurchaseRecommendationDetailsRequest::GetSavingsPlanPurchaseRecommendationDetailsRequest() : 
-    m_recommendationDetailIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSavingsPlanPurchaseRecommendationDetailsRequest::SerializePayload() const
 {
   JsonValue payload;

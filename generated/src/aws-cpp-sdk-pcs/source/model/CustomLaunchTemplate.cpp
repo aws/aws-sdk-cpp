@@ -18,14 +18,7 @@ namespace PCS
 namespace Model
 {
 
-CustomLaunchTemplate::CustomLaunchTemplate() : 
-    m_idHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 CustomLaunchTemplate::CustomLaunchTemplate(JsonView jsonValue)
-  : CustomLaunchTemplate()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CustomLaunchTemplate& CustomLaunchTemplate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

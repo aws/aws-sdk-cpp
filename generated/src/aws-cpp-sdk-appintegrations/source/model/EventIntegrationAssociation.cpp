@@ -18,18 +18,7 @@ namespace AppIntegrationsService
 namespace Model
 {
 
-EventIntegrationAssociation::EventIntegrationAssociation() : 
-    m_eventIntegrationAssociationArnHasBeenSet(false),
-    m_eventIntegrationAssociationIdHasBeenSet(false),
-    m_eventIntegrationNameHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_eventBridgeRuleNameHasBeenSet(false),
-    m_clientAssociationMetadataHasBeenSet(false)
-{
-}
-
 EventIntegrationAssociation::EventIntegrationAssociation(JsonView jsonValue)
-  : EventIntegrationAssociation()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ EventIntegrationAssociation& EventIntegrationAssociation::operator =(JsonView js
   if(jsonValue.ValueExists("EventIntegrationAssociationArn"))
   {
     m_eventIntegrationAssociationArn = jsonValue.GetString("EventIntegrationAssociationArn");
-
     m_eventIntegrationAssociationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventIntegrationAssociationId"))
   {
     m_eventIntegrationAssociationId = jsonValue.GetString("EventIntegrationAssociationId");
-
     m_eventIntegrationAssociationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventIntegrationName"))
   {
     m_eventIntegrationName = jsonValue.GetString("EventIntegrationName");
-
     m_eventIntegrationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientId"))
   {
     m_clientId = jsonValue.GetString("ClientId");
-
     m_clientIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventBridgeRuleName"))
   {
     m_eventBridgeRuleName = jsonValue.GetString("EventBridgeRuleName");
-
     m_eventBridgeRuleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientAssociationMetadata"))
   {
     Aws::Map<Aws::String, JsonView> clientAssociationMetadataJsonMap = jsonValue.GetObject("ClientAssociationMetadata").GetAllObjects();
@@ -80,7 +59,6 @@ EventIntegrationAssociation& EventIntegrationAssociation::operator =(JsonView js
     }
     m_clientAssociationMetadataHasBeenSet = true;
   }
-
   return *this;
 }
 

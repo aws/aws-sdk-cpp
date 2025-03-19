@@ -12,16 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDetectorRequest::UpdateDetectorRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_enable(false),
-    m_enableHasBeenSet(false),
-    m_findingPublishingFrequency(FindingPublishingFrequency::NOT_SET),
-    m_findingPublishingFrequencyHasBeenSet(false),
-    m_featuresHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDetectorRequest::SerializePayload() const
 {
   JsonValue payload;

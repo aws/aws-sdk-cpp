@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-AsyncResponseDetails::AsyncResponseDetails() : 
-    m_multiRegionAccessPointDetailsHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false)
-{
-}
-
 AsyncResponseDetails::AsyncResponseDetails(const XmlNode& xmlNode)
-  : AsyncResponseDetails()
 {
   *this = xmlNode;
 }

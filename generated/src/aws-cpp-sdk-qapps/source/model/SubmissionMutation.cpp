@@ -18,15 +18,7 @@ namespace QApps
 namespace Model
 {
 
-SubmissionMutation::SubmissionMutation() : 
-    m_submissionIdHasBeenSet(false),
-    m_mutationType(SubmissionMutationKind::NOT_SET),
-    m_mutationTypeHasBeenSet(false)
-{
-}
-
 SubmissionMutation::SubmissionMutation(JsonView jsonValue)
-  : SubmissionMutation()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SubmissionMutation& SubmissionMutation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("submissionId"))
   {
     m_submissionId = jsonValue.GetString("submissionId");
-
     m_submissionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mutationType"))
   {
     m_mutationType = SubmissionMutationKindMapper::GetSubmissionMutationKindForName(jsonValue.GetString("mutationType"));
-
     m_mutationTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

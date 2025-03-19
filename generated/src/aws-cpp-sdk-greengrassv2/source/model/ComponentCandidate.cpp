@@ -18,15 +18,7 @@ namespace GreengrassV2
 namespace Model
 {
 
-ComponentCandidate::ComponentCandidate() : 
-    m_componentNameHasBeenSet(false),
-    m_componentVersionHasBeenSet(false),
-    m_versionRequirementsHasBeenSet(false)
-{
-}
-
 ComponentCandidate::ComponentCandidate(JsonView jsonValue)
-  : ComponentCandidate()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ComponentCandidate& ComponentCandidate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("componentName"))
   {
     m_componentName = jsonValue.GetString("componentName");
-
     m_componentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentVersion"))
   {
     m_componentVersion = jsonValue.GetString("componentVersion");
-
     m_componentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionRequirements"))
   {
     Aws::Map<Aws::String, JsonView> versionRequirementsJsonMap = jsonValue.GetObject("versionRequirements").GetAllObjects();
@@ -56,7 +44,6 @@ ComponentCandidate& ComponentCandidate::operator =(JsonView jsonValue)
     }
     m_versionRequirementsHasBeenSet = true;
   }
-
   return *this;
 }
 

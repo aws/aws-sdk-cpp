@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CancelRetrievalResult::CancelRetrievalResult()
-{
-}
-
 CancelRetrievalResult::CancelRetrievalResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CancelRetrievalResult& CancelRetrievalResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("TapeARN"))
   {
     m_tapeARN = jsonValue.GetString("TapeARN");
-
+    m_tapeARNHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

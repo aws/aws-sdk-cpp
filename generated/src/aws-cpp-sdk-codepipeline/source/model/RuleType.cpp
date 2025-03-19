@@ -18,16 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-RuleType::RuleType() : 
-    m_idHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_ruleConfigurationPropertiesHasBeenSet(false),
-    m_inputArtifactDetailsHasBeenSet(false)
-{
-}
-
 RuleType::RuleType(JsonView jsonValue)
-  : RuleType()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RuleType& RuleType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetObject("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("settings"))
   {
     m_settings = jsonValue.GetObject("settings");
-
     m_settingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleConfigurationProperties"))
   {
     Aws::Utils::Array<JsonView> ruleConfigurationPropertiesJsonList = jsonValue.GetArray("ruleConfigurationProperties");
@@ -57,14 +44,11 @@ RuleType& RuleType::operator =(JsonView jsonValue)
     }
     m_ruleConfigurationPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputArtifactDetails"))
   {
     m_inputArtifactDetails = jsonValue.GetObject("inputArtifactDetails");
-
     m_inputArtifactDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

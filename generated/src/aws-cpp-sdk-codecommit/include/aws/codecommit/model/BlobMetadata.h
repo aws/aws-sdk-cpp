@@ -32,7 +32,7 @@ namespace Model
   class BlobMetadata
   {
   public:
-    AWS_CODECOMMIT_API BlobMetadata();
+    AWS_CODECOMMIT_API BlobMetadata() = default;
     AWS_CODECOMMIT_API BlobMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API BlobMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The full ID of the blob.</p>
      */
-    inline const Aws::String& GetBlobId() const{ return m_blobId; }
+    inline const Aws::String& GetBlobId() const { return m_blobId; }
     inline bool BlobIdHasBeenSet() const { return m_blobIdHasBeenSet; }
-    inline void SetBlobId(const Aws::String& value) { m_blobIdHasBeenSet = true; m_blobId = value; }
-    inline void SetBlobId(Aws::String&& value) { m_blobIdHasBeenSet = true; m_blobId = std::move(value); }
-    inline void SetBlobId(const char* value) { m_blobIdHasBeenSet = true; m_blobId.assign(value); }
-    inline BlobMetadata& WithBlobId(const Aws::String& value) { SetBlobId(value); return *this;}
-    inline BlobMetadata& WithBlobId(Aws::String&& value) { SetBlobId(std::move(value)); return *this;}
-    inline BlobMetadata& WithBlobId(const char* value) { SetBlobId(value); return *this;}
+    template<typename BlobIdT = Aws::String>
+    void SetBlobId(BlobIdT&& value) { m_blobIdHasBeenSet = true; m_blobId = std::forward<BlobIdT>(value); }
+    template<typename BlobIdT = Aws::String>
+    BlobMetadata& WithBlobId(BlobIdT&& value) { SetBlobId(std::forward<BlobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The path to the blob and associated file name, if any.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline BlobMetadata& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline BlobMetadata& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline BlobMetadata& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    BlobMetadata& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * <code>160000</code> indicates a submodule</p> </li> <li> <p> <code>120000</code>
      * indicates a symlink</p> </li> </ul>
      */
-    inline const Aws::String& GetMode() const{ return m_mode; }
+    inline const Aws::String& GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const Aws::String& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(Aws::String&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline void SetMode(const char* value) { m_modeHasBeenSet = true; m_mode.assign(value); }
-    inline BlobMetadata& WithMode(const Aws::String& value) { SetMode(value); return *this;}
-    inline BlobMetadata& WithMode(Aws::String&& value) { SetMode(std::move(value)); return *this;}
-    inline BlobMetadata& WithMode(const char* value) { SetMode(value); return *this;}
+    template<typename ModeT = Aws::String>
+    void SetMode(ModeT&& value) { m_modeHasBeenSet = true; m_mode = std::forward<ModeT>(value); }
+    template<typename ModeT = Aws::String>
+    BlobMetadata& WithMode(ModeT&& value) { SetMode(std::forward<ModeT>(value)); return *this;}
     ///@}
   private:
 

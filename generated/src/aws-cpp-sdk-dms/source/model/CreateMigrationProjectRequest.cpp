@@ -12,18 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMigrationProjectRequest::CreateMigrationProjectRequest() : 
-    m_migrationProjectNameHasBeenSet(false),
-    m_sourceDataProviderDescriptorsHasBeenSet(false),
-    m_targetDataProviderDescriptorsHasBeenSet(false),
-    m_instanceProfileIdentifierHasBeenSet(false),
-    m_transformationRulesHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_schemaConversionApplicationAttributesHasBeenSet(false)
-{
-}
-
 Aws::String CreateMigrationProjectRequest::SerializePayload() const
 {
   JsonValue payload;

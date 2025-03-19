@@ -18,16 +18,7 @@ namespace AuditManager
 namespace Model
 {
 
-ServiceMetadata::ServiceMetadata() : 
-    m_nameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_categoryHasBeenSet(false)
-{
-}
-
 ServiceMetadata::ServiceMetadata(JsonView jsonValue)
-  : ServiceMetadata()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ServiceMetadata& ServiceMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("category"))
   {
     m_category = jsonValue.GetString("category");
-
     m_categoryHasBeenSet = true;
   }
-
   return *this;
 }
 

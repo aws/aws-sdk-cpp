@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetApplicationAuthenticationMethodResult::GetApplicationAuthenticationMethodResult()
-{
-}
-
 GetApplicationAuthenticationMethodResult::GetApplicationAuthenticationMethodResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetApplicationAuthenticationMethodResult& GetApplicationAuthenticationMethodResu
   if(jsonValue.ValueExists("AuthenticationMethod"))
   {
     m_authenticationMethod = jsonValue.GetObject("AuthenticationMethod");
-
+    m_authenticationMethodHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

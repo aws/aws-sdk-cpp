@@ -21,7 +21,7 @@ namespace Model
   class JoinStorageSessionAsViewerRequest : public KinesisVideoWebRTCStorageRequest
   {
   public:
-    AWS_KINESISVIDEOWEBRTCSTORAGE_API JoinStorageSessionAsViewerRequest();
+    AWS_KINESISVIDEOWEBRTCSTORAGE_API JoinStorageSessionAsViewerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (ARN) of the signaling channel. </p>
      */
-    inline const Aws::String& GetChannelArn() const{ return m_channelArn; }
+    inline const Aws::String& GetChannelArn() const { return m_channelArn; }
     inline bool ChannelArnHasBeenSet() const { return m_channelArnHasBeenSet; }
-    inline void SetChannelArn(const Aws::String& value) { m_channelArnHasBeenSet = true; m_channelArn = value; }
-    inline void SetChannelArn(Aws::String&& value) { m_channelArnHasBeenSet = true; m_channelArn = std::move(value); }
-    inline void SetChannelArn(const char* value) { m_channelArnHasBeenSet = true; m_channelArn.assign(value); }
-    inline JoinStorageSessionAsViewerRequest& WithChannelArn(const Aws::String& value) { SetChannelArn(value); return *this;}
-    inline JoinStorageSessionAsViewerRequest& WithChannelArn(Aws::String&& value) { SetChannelArn(std::move(value)); return *this;}
-    inline JoinStorageSessionAsViewerRequest& WithChannelArn(const char* value) { SetChannelArn(value); return *this;}
+    template<typename ChannelArnT = Aws::String>
+    void SetChannelArn(ChannelArnT&& value) { m_channelArnHasBeenSet = true; m_channelArn = std::forward<ChannelArnT>(value); }
+    template<typename ChannelArnT = Aws::String>
+    JoinStorageSessionAsViewerRequest& WithChannelArn(ChannelArnT&& value) { SetChannelArn(std::forward<ChannelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The unique identifier for the sender client. </p>
      */
-    inline const Aws::String& GetClientId() const{ return m_clientId; }
+    inline const Aws::String& GetClientId() const { return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
-    inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
-    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
-    inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
-    inline JoinStorageSessionAsViewerRequest& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
-    inline JoinStorageSessionAsViewerRequest& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
-    inline JoinStorageSessionAsViewerRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
+    template<typename ClientIdT = Aws::String>
+    void SetClientId(ClientIdT&& value) { m_clientIdHasBeenSet = true; m_clientId = std::forward<ClientIdT>(value); }
+    template<typename ClientIdT = Aws::String>
+    JoinStorageSessionAsViewerRequest& WithClientId(ClientIdT&& value) { SetClientId(std::forward<ClientIdT>(value)); return *this;}
     ///@}
   private:
 

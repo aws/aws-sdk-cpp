@@ -33,7 +33,7 @@ namespace Model
   class S3BatchJobIdentifier
   {
   public:
-    AWS_MAINFRAMEMODERNIZATION_API S3BatchJobIdentifier();
+    AWS_MAINFRAMEMODERNIZATION_API S3BatchJobIdentifier() = default;
     AWS_MAINFRAMEMODERNIZATION_API S3BatchJobIdentifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API S3BatchJobIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket that contains the batch job definitions.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline S3BatchJobIdentifier& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline S3BatchJobIdentifier& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline S3BatchJobIdentifier& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    S3BatchJobIdentifier& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,12 @@ namespace Model
      * batch job definitions within the directory that is specified in
      * <code>keyPrefix</code>.</p>
      */
-    inline const JobIdentifier& GetIdentifier() const{ return m_identifier; }
+    inline const JobIdentifier& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const JobIdentifier& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(JobIdentifier&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline S3BatchJobIdentifier& WithIdentifier(const JobIdentifier& value) { SetIdentifier(value); return *this;}
-    inline S3BatchJobIdentifier& WithIdentifier(JobIdentifier&& value) { SetIdentifier(std::move(value)); return *this;}
+    template<typename IdentifierT = JobIdentifier>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = JobIdentifier>
+    S3BatchJobIdentifier& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,12 @@ namespace Model
      * <p>The key prefix that specifies the path to the folder in the S3 bucket that
      * has the batch job definitions.</p>
      */
-    inline const Aws::String& GetKeyPrefix() const{ return m_keyPrefix; }
+    inline const Aws::String& GetKeyPrefix() const { return m_keyPrefix; }
     inline bool KeyPrefixHasBeenSet() const { return m_keyPrefixHasBeenSet; }
-    inline void SetKeyPrefix(const Aws::String& value) { m_keyPrefixHasBeenSet = true; m_keyPrefix = value; }
-    inline void SetKeyPrefix(Aws::String&& value) { m_keyPrefixHasBeenSet = true; m_keyPrefix = std::move(value); }
-    inline void SetKeyPrefix(const char* value) { m_keyPrefixHasBeenSet = true; m_keyPrefix.assign(value); }
-    inline S3BatchJobIdentifier& WithKeyPrefix(const Aws::String& value) { SetKeyPrefix(value); return *this;}
-    inline S3BatchJobIdentifier& WithKeyPrefix(Aws::String&& value) { SetKeyPrefix(std::move(value)); return *this;}
-    inline S3BatchJobIdentifier& WithKeyPrefix(const char* value) { SetKeyPrefix(value); return *this;}
+    template<typename KeyPrefixT = Aws::String>
+    void SetKeyPrefix(KeyPrefixT&& value) { m_keyPrefixHasBeenSet = true; m_keyPrefix = std::forward<KeyPrefixT>(value); }
+    template<typename KeyPrefixT = Aws::String>
+    S3BatchJobIdentifier& WithKeyPrefix(KeyPrefixT&& value) { SetKeyPrefix(std::forward<KeyPrefixT>(value)); return *this;}
     ///@}
   private:
 

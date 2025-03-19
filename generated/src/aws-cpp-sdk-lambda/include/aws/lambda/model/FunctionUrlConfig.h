@@ -34,7 +34,7 @@ namespace Model
   class FunctionUrlConfig
   {
   public:
-    AWS_LAMBDA_API FunctionUrlConfig();
+    AWS_LAMBDA_API FunctionUrlConfig() = default;
     AWS_LAMBDA_API FunctionUrlConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API FunctionUrlConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The HTTP URL endpoint for your function.</p>
      */
-    inline const Aws::String& GetFunctionUrl() const{ return m_functionUrl; }
+    inline const Aws::String& GetFunctionUrl() const { return m_functionUrl; }
     inline bool FunctionUrlHasBeenSet() const { return m_functionUrlHasBeenSet; }
-    inline void SetFunctionUrl(const Aws::String& value) { m_functionUrlHasBeenSet = true; m_functionUrl = value; }
-    inline void SetFunctionUrl(Aws::String&& value) { m_functionUrlHasBeenSet = true; m_functionUrl = std::move(value); }
-    inline void SetFunctionUrl(const char* value) { m_functionUrlHasBeenSet = true; m_functionUrl.assign(value); }
-    inline FunctionUrlConfig& WithFunctionUrl(const Aws::String& value) { SetFunctionUrl(value); return *this;}
-    inline FunctionUrlConfig& WithFunctionUrl(Aws::String&& value) { SetFunctionUrl(std::move(value)); return *this;}
-    inline FunctionUrlConfig& WithFunctionUrl(const char* value) { SetFunctionUrl(value); return *this;}
+    template<typename FunctionUrlT = Aws::String>
+    void SetFunctionUrl(FunctionUrlT&& value) { m_functionUrlHasBeenSet = true; m_functionUrl = std::forward<FunctionUrlT>(value); }
+    template<typename FunctionUrlT = Aws::String>
+    FunctionUrlConfig& WithFunctionUrl(FunctionUrlT&& value) { SetFunctionUrl(std::forward<FunctionUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of your function.</p>
      */
-    inline const Aws::String& GetFunctionArn() const{ return m_functionArn; }
+    inline const Aws::String& GetFunctionArn() const { return m_functionArn; }
     inline bool FunctionArnHasBeenSet() const { return m_functionArnHasBeenSet; }
-    inline void SetFunctionArn(const Aws::String& value) { m_functionArnHasBeenSet = true; m_functionArn = value; }
-    inline void SetFunctionArn(Aws::String&& value) { m_functionArnHasBeenSet = true; m_functionArn = std::move(value); }
-    inline void SetFunctionArn(const char* value) { m_functionArnHasBeenSet = true; m_functionArn.assign(value); }
-    inline FunctionUrlConfig& WithFunctionArn(const Aws::String& value) { SetFunctionArn(value); return *this;}
-    inline FunctionUrlConfig& WithFunctionArn(Aws::String&& value) { SetFunctionArn(std::move(value)); return *this;}
-    inline FunctionUrlConfig& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
+    template<typename FunctionArnT = Aws::String>
+    void SetFunctionArn(FunctionArnT&& value) { m_functionArnHasBeenSet = true; m_functionArn = std::forward<FunctionArnT>(value); }
+    template<typename FunctionArnT = Aws::String>
+    FunctionUrlConfig& WithFunctionArn(FunctionArnT&& value) { SetFunctionArn(std::forward<FunctionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a>
      * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
      */
-    inline const Aws::String& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::String& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::String& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::String&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline void SetCreationTime(const char* value) { m_creationTimeHasBeenSet = true; m_creationTime.assign(value); }
-    inline FunctionUrlConfig& WithCreationTime(const Aws::String& value) { SetCreationTime(value); return *this;}
-    inline FunctionUrlConfig& WithCreationTime(Aws::String&& value) { SetCreationTime(std::move(value)); return *this;}
-    inline FunctionUrlConfig& WithCreationTime(const char* value) { SetCreationTime(value); return *this;}
+    template<typename CreationTimeT = Aws::String>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::String>
+    FunctionUrlConfig& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +84,12 @@ namespace Model
      * href="https://www.w3.org/TR/NOTE-datetime">ISO-8601 format</a>
      * (YYYY-MM-DDThh:mm:ss.sTZD).</p>
      */
-    inline const Aws::String& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::String& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::String& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::String&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline void SetLastModifiedTime(const char* value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime.assign(value); }
-    inline FunctionUrlConfig& WithLastModifiedTime(const Aws::String& value) { SetLastModifiedTime(value); return *this;}
-    inline FunctionUrlConfig& WithLastModifiedTime(Aws::String&& value) { SetLastModifiedTime(std::move(value)); return *this;}
-    inline FunctionUrlConfig& WithLastModifiedTime(const char* value) { SetLastModifiedTime(value); return *this;}
+    template<typename LastModifiedTimeT = Aws::String>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::String>
+    FunctionUrlConfig& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,12 +98,12 @@ namespace Model
      * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS">cross-origin
      * resource sharing (CORS)</a> settings for your function URL.</p>
      */
-    inline const Cors& GetCors() const{ return m_cors; }
+    inline const Cors& GetCors() const { return m_cors; }
     inline bool CorsHasBeenSet() const { return m_corsHasBeenSet; }
-    inline void SetCors(const Cors& value) { m_corsHasBeenSet = true; m_cors = value; }
-    inline void SetCors(Cors&& value) { m_corsHasBeenSet = true; m_cors = std::move(value); }
-    inline FunctionUrlConfig& WithCors(const Cors& value) { SetCors(value); return *this;}
-    inline FunctionUrlConfig& WithCors(Cors&& value) { SetCors(std::move(value)); return *this;}
+    template<typename CorsT = Cors>
+    void SetCors(CorsT&& value) { m_corsHasBeenSet = true; m_cors = std::forward<CorsT>(value); }
+    template<typename CorsT = Cors>
+    FunctionUrlConfig& WithCors(CorsT&& value) { SetCors(std::forward<CorsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,12 +115,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/lambda/latest/dg/urls-auth.html">Security and
      * auth model for Lambda function URLs</a>.</p>
      */
-    inline const FunctionUrlAuthType& GetAuthType() const{ return m_authType; }
+    inline FunctionUrlAuthType GetAuthType() const { return m_authType; }
     inline bool AuthTypeHasBeenSet() const { return m_authTypeHasBeenSet; }
-    inline void SetAuthType(const FunctionUrlAuthType& value) { m_authTypeHasBeenSet = true; m_authType = value; }
-    inline void SetAuthType(FunctionUrlAuthType&& value) { m_authTypeHasBeenSet = true; m_authType = std::move(value); }
-    inline FunctionUrlConfig& WithAuthType(const FunctionUrlAuthType& value) { SetAuthType(value); return *this;}
-    inline FunctionUrlConfig& WithAuthType(FunctionUrlAuthType&& value) { SetAuthType(std::move(value)); return *this;}
+    inline void SetAuthType(FunctionUrlAuthType value) { m_authTypeHasBeenSet = true; m_authType = value; }
+    inline FunctionUrlConfig& WithAuthType(FunctionUrlAuthType value) { SetAuthType(value); return *this;}
     ///@}
 
     ///@{
@@ -144,12 +134,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request
      * a quota increase</a>.</p> </li> </ul>
      */
-    inline const InvokeMode& GetInvokeMode() const{ return m_invokeMode; }
+    inline InvokeMode GetInvokeMode() const { return m_invokeMode; }
     inline bool InvokeModeHasBeenSet() const { return m_invokeModeHasBeenSet; }
-    inline void SetInvokeMode(const InvokeMode& value) { m_invokeModeHasBeenSet = true; m_invokeMode = value; }
-    inline void SetInvokeMode(InvokeMode&& value) { m_invokeModeHasBeenSet = true; m_invokeMode = std::move(value); }
-    inline FunctionUrlConfig& WithInvokeMode(const InvokeMode& value) { SetInvokeMode(value); return *this;}
-    inline FunctionUrlConfig& WithInvokeMode(InvokeMode&& value) { SetInvokeMode(std::move(value)); return *this;}
+    inline void SetInvokeMode(InvokeMode value) { m_invokeModeHasBeenSet = true; m_invokeMode = value; }
+    inline FunctionUrlConfig& WithInvokeMode(InvokeMode value) { SetInvokeMode(value); return *this;}
     ///@}
   private:
 
@@ -168,10 +156,10 @@ namespace Model
     Cors m_cors;
     bool m_corsHasBeenSet = false;
 
-    FunctionUrlAuthType m_authType;
+    FunctionUrlAuthType m_authType{FunctionUrlAuthType::NOT_SET};
     bool m_authTypeHasBeenSet = false;
 
-    InvokeMode m_invokeMode;
+    InvokeMode m_invokeMode{InvokeMode::NOT_SET};
     bool m_invokeModeHasBeenSet = false;
   };
 

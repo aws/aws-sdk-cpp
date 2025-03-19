@@ -18,13 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-MediaAnalysisInput::MediaAnalysisInput() : 
-    m_s3ObjectHasBeenSet(false)
-{
-}
-
 MediaAnalysisInput::MediaAnalysisInput(JsonView jsonValue)
-  : MediaAnalysisInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MediaAnalysisInput& MediaAnalysisInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Object"))
   {
     m_s3Object = jsonValue.GetObject("S3Object");
-
     m_s3ObjectHasBeenSet = true;
   }
-
   return *this;
 }
 

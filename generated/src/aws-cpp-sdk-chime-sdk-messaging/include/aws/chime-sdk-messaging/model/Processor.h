@@ -34,7 +34,7 @@ namespace Model
   class Processor
   {
   public:
-    AWS_CHIMESDKMESSAGING_API Processor();
+    AWS_CHIMESDKMESSAGING_API Processor() = default;
     AWS_CHIMESDKMESSAGING_API Processor(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMESSAGING_API Processor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,24 @@ namespace Model
     /**
      * <p>The name of the channel flow.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Processor& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Processor& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Processor& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Processor& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The information about the type of processor and its identifier.</p>
      */
-    inline const ProcessorConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const ProcessorConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const ProcessorConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(ProcessorConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline Processor& WithConfiguration(const ProcessorConfiguration& value) { SetConfiguration(value); return *this;}
-    inline Processor& WithConfiguration(ProcessorConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = ProcessorConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = ProcessorConfiguration>
+    Processor& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,7 +71,7 @@ namespace Model
      * The value determines the sequence. At this point, we support only 1 processor
      * within a flow.</p>
      */
-    inline int GetExecutionOrder() const{ return m_executionOrder; }
+    inline int GetExecutionOrder() const { return m_executionOrder; }
     inline bool ExecutionOrderHasBeenSet() const { return m_executionOrderHasBeenSet; }
     inline void SetExecutionOrder(int value) { m_executionOrderHasBeenSet = true; m_executionOrder = value; }
     inline Processor& WithExecutionOrder(int value) { SetExecutionOrder(value); return *this;}
@@ -90,12 +88,10 @@ namespace Model
      * fails, then the message is considered processed and sent to recipients of the
      * channel.</p>
      */
-    inline const FallbackAction& GetFallbackAction() const{ return m_fallbackAction; }
+    inline FallbackAction GetFallbackAction() const { return m_fallbackAction; }
     inline bool FallbackActionHasBeenSet() const { return m_fallbackActionHasBeenSet; }
-    inline void SetFallbackAction(const FallbackAction& value) { m_fallbackActionHasBeenSet = true; m_fallbackAction = value; }
-    inline void SetFallbackAction(FallbackAction&& value) { m_fallbackActionHasBeenSet = true; m_fallbackAction = std::move(value); }
-    inline Processor& WithFallbackAction(const FallbackAction& value) { SetFallbackAction(value); return *this;}
-    inline Processor& WithFallbackAction(FallbackAction&& value) { SetFallbackAction(std::move(value)); return *this;}
+    inline void SetFallbackAction(FallbackAction value) { m_fallbackActionHasBeenSet = true; m_fallbackAction = value; }
+    inline Processor& WithFallbackAction(FallbackAction value) { SetFallbackAction(value); return *this;}
     ///@}
   private:
 
@@ -105,10 +101,10 @@ namespace Model
     ProcessorConfiguration m_configuration;
     bool m_configurationHasBeenSet = false;
 
-    int m_executionOrder;
+    int m_executionOrder{0};
     bool m_executionOrderHasBeenSet = false;
 
-    FallbackAction m_fallbackAction;
+    FallbackAction m_fallbackAction{FallbackAction::NOT_SET};
     bool m_fallbackActionHasBeenSet = false;
   };
 

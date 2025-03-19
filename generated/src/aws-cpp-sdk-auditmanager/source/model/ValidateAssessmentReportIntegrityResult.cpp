@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ValidateAssessmentReportIntegrityResult::ValidateAssessmentReportIntegrityResult() : 
-    m_signatureValid(false)
-{
-}
-
 ValidateAssessmentReportIntegrityResult::ValidateAssessmentReportIntegrityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ValidateAssessmentReportIntegrityResult()
 {
   *this = result;
 }
@@ -34,27 +28,23 @@ ValidateAssessmentReportIntegrityResult& ValidateAssessmentReportIntegrityResult
   if(jsonValue.ValueExists("signatureValid"))
   {
     m_signatureValid = jsonValue.GetBool("signatureValid");
-
+    m_signatureValidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("signatureAlgorithm"))
   {
     m_signatureAlgorithm = jsonValue.GetString("signatureAlgorithm");
-
+    m_signatureAlgorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("signatureDateTime"))
   {
     m_signatureDateTime = jsonValue.GetString("signatureDateTime");
-
+    m_signatureDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("signatureKeyId"))
   {
     m_signatureKeyId = jsonValue.GetString("signatureKeyId");
-
+    m_signatureKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("validationErrors"))
   {
     Aws::Utils::Array<JsonView> validationErrorsJsonList = jsonValue.GetArray("validationErrors");
@@ -62,14 +52,15 @@ ValidateAssessmentReportIntegrityResult& ValidateAssessmentReportIntegrityResult
     {
       m_validationErrors.push_back(validationErrorsJsonList[validationErrorsIndex].AsString());
     }
+    m_validationErrorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

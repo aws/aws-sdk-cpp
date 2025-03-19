@@ -34,7 +34,7 @@ namespace Model
   class RelatedOpsItem
   {
   public:
-    AWS_SSM_API RelatedOpsItem();
+    AWS_SSM_API RelatedOpsItem() = default;
     AWS_SSM_API RelatedOpsItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API RelatedOpsItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The ID of an OpsItem related to the current OpsItem.</p>
      */
-    inline const Aws::String& GetOpsItemId() const{ return m_opsItemId; }
+    inline const Aws::String& GetOpsItemId() const { return m_opsItemId; }
     inline bool OpsItemIdHasBeenSet() const { return m_opsItemIdHasBeenSet; }
-    inline void SetOpsItemId(const Aws::String& value) { m_opsItemIdHasBeenSet = true; m_opsItemId = value; }
-    inline void SetOpsItemId(Aws::String&& value) { m_opsItemIdHasBeenSet = true; m_opsItemId = std::move(value); }
-    inline void SetOpsItemId(const char* value) { m_opsItemIdHasBeenSet = true; m_opsItemId.assign(value); }
-    inline RelatedOpsItem& WithOpsItemId(const Aws::String& value) { SetOpsItemId(value); return *this;}
-    inline RelatedOpsItem& WithOpsItemId(Aws::String&& value) { SetOpsItemId(std::move(value)); return *this;}
-    inline RelatedOpsItem& WithOpsItemId(const char* value) { SetOpsItemId(value); return *this;}
+    template<typename OpsItemIdT = Aws::String>
+    void SetOpsItemId(OpsItemIdT&& value) { m_opsItemIdHasBeenSet = true; m_opsItemId = std::forward<OpsItemIdT>(value); }
+    template<typename OpsItemIdT = Aws::String>
+    RelatedOpsItem& WithOpsItemId(OpsItemIdT&& value) { SetOpsItemId(std::forward<OpsItemIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,37 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateModelPackageRequest::CreateModelPackageRequest() : 
-    m_modelPackageNameHasBeenSet(false),
-    m_modelPackageGroupNameHasBeenSet(false),
-    m_modelPackageDescriptionHasBeenSet(false),
-    m_inferenceSpecificationHasBeenSet(false),
-    m_validationSpecificationHasBeenSet(false),
-    m_sourceAlgorithmSpecificationHasBeenSet(false),
-    m_certifyForMarketplace(false),
-    m_certifyForMarketplaceHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_modelApprovalStatus(ModelApprovalStatus::NOT_SET),
-    m_modelApprovalStatusHasBeenSet(false),
-    m_metadataPropertiesHasBeenSet(false),
-    m_modelMetricsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_domainHasBeenSet(false),
-    m_taskHasBeenSet(false),
-    m_samplePayloadUrlHasBeenSet(false),
-    m_customerMetadataPropertiesHasBeenSet(false),
-    m_driftCheckBaselinesHasBeenSet(false),
-    m_additionalInferenceSpecificationsHasBeenSet(false),
-    m_skipModelValidation(SkipModelValidation::NOT_SET),
-    m_skipModelValidationHasBeenSet(false),
-    m_sourceUriHasBeenSet(false),
-    m_securityConfigHasBeenSet(false),
-    m_modelCardHasBeenSet(false),
-    m_modelLifeCycleHasBeenSet(false)
-{
-}
-
 Aws::String CreateModelPackageRequest::SerializePayload() const
 {
   JsonValue payload;

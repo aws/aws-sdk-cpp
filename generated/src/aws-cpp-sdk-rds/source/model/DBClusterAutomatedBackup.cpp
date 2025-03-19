@@ -20,44 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DBClusterAutomatedBackup::DBClusterAutomatedBackup() : 
-    m_engineHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_dBClusterAutomatedBackupsArnHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_restoreWindowHasBeenSet(false),
-    m_masterUsernameHasBeenSet(false),
-    m_dbClusterResourceIdHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_licenseModelHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_iAMDatabaseAuthenticationEnabled(false),
-    m_iAMDatabaseAuthenticationEnabledHasBeenSet(false),
-    m_clusterCreateTimeHasBeenSet(false),
-    m_storageEncrypted(false),
-    m_storageEncryptedHasBeenSet(false),
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_dBClusterArnHasBeenSet(false),
-    m_backupRetentionPeriod(0),
-    m_backupRetentionPeriodHasBeenSet(false),
-    m_engineModeHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_storageTypeHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_awsBackupRecoveryPointArnHasBeenSet(false),
-    m_storageThroughput(0),
-    m_storageThroughputHasBeenSet(false)
-{
-}
-
 DBClusterAutomatedBackup::DBClusterAutomatedBackup(const XmlNode& xmlNode)
-  : DBClusterAutomatedBackup()
 {
   *this = xmlNode;
 }
@@ -180,6 +143,7 @@ DBClusterAutomatedBackup& DBClusterAutomatedBackup::operator =(const XmlNode& xm
     if(!availabilityZonesNode.IsNull())
     {
       XmlNode availabilityZonesMember = availabilityZonesNode.FirstChild("AvailabilityZone");
+      m_availabilityZonesHasBeenSet = !availabilityZonesMember.IsNull();
       while(!availabilityZonesMember.IsNull())
       {
         m_availabilityZones.push_back(availabilityZonesMember.GetText());

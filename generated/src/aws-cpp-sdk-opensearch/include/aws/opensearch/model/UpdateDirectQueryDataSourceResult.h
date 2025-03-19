@@ -27,7 +27,7 @@ namespace Model
   class UpdateDirectQueryDataSourceResult
   {
   public:
-    AWS_OPENSEARCHSERVICE_API UpdateDirectQueryDataSourceResult();
+    AWS_OPENSEARCHSERVICE_API UpdateDirectQueryDataSourceResult() = default;
     AWS_OPENSEARCHSERVICE_API UpdateDirectQueryDataSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPENSEARCHSERVICE_API UpdateDirectQueryDataSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p> The unique, system-generated identifier that represents the data source.
      * </p>
      */
-    inline const Aws::String& GetDataSourceArn() const{ return m_dataSourceArn; }
-    inline void SetDataSourceArn(const Aws::String& value) { m_dataSourceArn = value; }
-    inline void SetDataSourceArn(Aws::String&& value) { m_dataSourceArn = std::move(value); }
-    inline void SetDataSourceArn(const char* value) { m_dataSourceArn.assign(value); }
-    inline UpdateDirectQueryDataSourceResult& WithDataSourceArn(const Aws::String& value) { SetDataSourceArn(value); return *this;}
-    inline UpdateDirectQueryDataSourceResult& WithDataSourceArn(Aws::String&& value) { SetDataSourceArn(std::move(value)); return *this;}
-    inline UpdateDirectQueryDataSourceResult& WithDataSourceArn(const char* value) { SetDataSourceArn(value); return *this;}
+    inline const Aws::String& GetDataSourceArn() const { return m_dataSourceArn; }
+    template<typename DataSourceArnT = Aws::String>
+    void SetDataSourceArn(DataSourceArnT&& value) { m_dataSourceArnHasBeenSet = true; m_dataSourceArn = std::forward<DataSourceArnT>(value); }
+    template<typename DataSourceArnT = Aws::String>
+    UpdateDirectQueryDataSourceResult& WithDataSourceArn(DataSourceArnT&& value) { SetDataSourceArn(std::forward<DataSourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateDirectQueryDataSourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateDirectQueryDataSourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateDirectQueryDataSourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateDirectQueryDataSourceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_dataSourceArn;
+    bool m_dataSourceArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

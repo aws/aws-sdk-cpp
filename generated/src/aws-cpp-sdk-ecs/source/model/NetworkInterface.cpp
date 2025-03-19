@@ -18,15 +18,7 @@ namespace ECS
 namespace Model
 {
 
-NetworkInterface::NetworkInterface() : 
-    m_attachmentIdHasBeenSet(false),
-    m_privateIpv4AddressHasBeenSet(false),
-    m_ipv6AddressHasBeenSet(false)
-{
-}
-
 NetworkInterface::NetworkInterface(JsonView jsonValue)
-  : NetworkInterface()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ NetworkInterface& NetworkInterface::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attachmentId"))
   {
     m_attachmentId = jsonValue.GetString("attachmentId");
-
     m_attachmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("privateIpv4Address"))
   {
     m_privateIpv4Address = jsonValue.GetString("privateIpv4Address");
-
     m_privateIpv4AddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipv6Address"))
   {
     m_ipv6Address = jsonValue.GetString("ipv6Address");
-
     m_ipv6AddressHasBeenSet = true;
   }
-
   return *this;
 }
 

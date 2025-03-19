@@ -31,7 +31,7 @@ namespace Model
   class FederatedResourceAlreadyExistsException
   {
   public:
-    AWS_GLUE_API FederatedResourceAlreadyExistsException();
+    AWS_GLUE_API FederatedResourceAlreadyExistsException() = default;
     AWS_GLUE_API FederatedResourceAlreadyExistsException(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API FederatedResourceAlreadyExistsException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The message describing the problem.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline FederatedResourceAlreadyExistsException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline FederatedResourceAlreadyExistsException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline FederatedResourceAlreadyExistsException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    FederatedResourceAlreadyExistsException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The associated Glue resource already exists.</p>
      */
-    inline const Aws::String& GetAssociatedGlueResource() const{ return m_associatedGlueResource; }
+    inline const Aws::String& GetAssociatedGlueResource() const { return m_associatedGlueResource; }
     inline bool AssociatedGlueResourceHasBeenSet() const { return m_associatedGlueResourceHasBeenSet; }
-    inline void SetAssociatedGlueResource(const Aws::String& value) { m_associatedGlueResourceHasBeenSet = true; m_associatedGlueResource = value; }
-    inline void SetAssociatedGlueResource(Aws::String&& value) { m_associatedGlueResourceHasBeenSet = true; m_associatedGlueResource = std::move(value); }
-    inline void SetAssociatedGlueResource(const char* value) { m_associatedGlueResourceHasBeenSet = true; m_associatedGlueResource.assign(value); }
-    inline FederatedResourceAlreadyExistsException& WithAssociatedGlueResource(const Aws::String& value) { SetAssociatedGlueResource(value); return *this;}
-    inline FederatedResourceAlreadyExistsException& WithAssociatedGlueResource(Aws::String&& value) { SetAssociatedGlueResource(std::move(value)); return *this;}
-    inline FederatedResourceAlreadyExistsException& WithAssociatedGlueResource(const char* value) { SetAssociatedGlueResource(value); return *this;}
+    template<typename AssociatedGlueResourceT = Aws::String>
+    void SetAssociatedGlueResource(AssociatedGlueResourceT&& value) { m_associatedGlueResourceHasBeenSet = true; m_associatedGlueResource = std::forward<AssociatedGlueResourceT>(value); }
+    template<typename AssociatedGlueResourceT = Aws::String>
+    FederatedResourceAlreadyExistsException& WithAssociatedGlueResource(AssociatedGlueResourceT&& value) { SetAssociatedGlueResource(std::forward<AssociatedGlueResourceT>(value)); return *this;}
     ///@}
   private:
 

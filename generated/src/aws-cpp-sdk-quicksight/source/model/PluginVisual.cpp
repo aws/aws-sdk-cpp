@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PluginVisual::PluginVisual() : 
-    m_visualIdHasBeenSet(false),
-    m_pluginArnHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_subtitleHasBeenSet(false),
-    m_chartConfigurationHasBeenSet(false),
-    m_visualContentAltTextHasBeenSet(false)
-{
-}
-
 PluginVisual::PluginVisual(JsonView jsonValue)
-  : PluginVisual()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ PluginVisual& PluginVisual::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VisualId"))
   {
     m_visualId = jsonValue.GetString("VisualId");
-
     m_visualIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PluginArn"))
   {
     m_pluginArn = jsonValue.GetString("PluginArn");
-
     m_pluginArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetObject("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subtitle"))
   {
     m_subtitle = jsonValue.GetObject("Subtitle");
-
     m_subtitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChartConfiguration"))
   {
     m_chartConfiguration = jsonValue.GetObject("ChartConfiguration");
-
     m_chartConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisualContentAltText"))
   {
     m_visualContentAltText = jsonValue.GetString("VisualContentAltText");
-
     m_visualContentAltTextHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class JobExecutionState
   {
   public:
-    AWS_IOTJOBSDATAPLANE_API JobExecutionState();
+    AWS_IOTJOBSDATAPLANE_API JobExecutionState() = default;
     AWS_IOTJOBSDATAPLANE_API JobExecutionState(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTJOBSDATAPLANE_API JobExecutionState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTJOBSDATAPLANE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS",
      * "FAILED", "SUCCESS", "CANCELED", "TIMED_OUT", "REJECTED", or "REMOVED".</p>
      */
-    inline const JobExecutionStatus& GetStatus() const{ return m_status; }
+    inline JobExecutionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const JobExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(JobExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline JobExecutionState& WithStatus(const JobExecutionStatus& value) { SetStatus(value); return *this;}
-    inline JobExecutionState& WithStatus(JobExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(JobExecutionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline JobExecutionState& WithStatus(JobExecutionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -59,19 +57,16 @@ namespace Model
      * execution.</p> <p>The maximum length of the value in the name/value pair is
      * 1,024 characters.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetStatusDetails() const{ return m_statusDetails; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetStatusDetails() const { return m_statusDetails; }
     inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
-    inline void SetStatusDetails(const Aws::Map<Aws::String, Aws::String>& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = value; }
-    inline void SetStatusDetails(Aws::Map<Aws::String, Aws::String>&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::move(value); }
-    inline JobExecutionState& WithStatusDetails(const Aws::Map<Aws::String, Aws::String>& value) { SetStatusDetails(value); return *this;}
-    inline JobExecutionState& WithStatusDetails(Aws::Map<Aws::String, Aws::String>&& value) { SetStatusDetails(std::move(value)); return *this;}
-    inline JobExecutionState& AddStatusDetails(const Aws::String& key, const Aws::String& value) { m_statusDetailsHasBeenSet = true; m_statusDetails.emplace(key, value); return *this; }
-    inline JobExecutionState& AddStatusDetails(Aws::String&& key, const Aws::String& value) { m_statusDetailsHasBeenSet = true; m_statusDetails.emplace(std::move(key), value); return *this; }
-    inline JobExecutionState& AddStatusDetails(const Aws::String& key, Aws::String&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails.emplace(key, std::move(value)); return *this; }
-    inline JobExecutionState& AddStatusDetails(Aws::String&& key, Aws::String&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails.emplace(std::move(key), std::move(value)); return *this; }
-    inline JobExecutionState& AddStatusDetails(const char* key, Aws::String&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails.emplace(key, std::move(value)); return *this; }
-    inline JobExecutionState& AddStatusDetails(Aws::String&& key, const char* value) { m_statusDetailsHasBeenSet = true; m_statusDetails.emplace(std::move(key), value); return *this; }
-    inline JobExecutionState& AddStatusDetails(const char* key, const char* value) { m_statusDetailsHasBeenSet = true; m_statusDetails.emplace(key, value); return *this; }
+    template<typename StatusDetailsT = Aws::Map<Aws::String, Aws::String>>
+    void SetStatusDetails(StatusDetailsT&& value) { m_statusDetailsHasBeenSet = true; m_statusDetails = std::forward<StatusDetailsT>(value); }
+    template<typename StatusDetailsT = Aws::Map<Aws::String, Aws::String>>
+    JobExecutionState& WithStatusDetails(StatusDetailsT&& value) { SetStatusDetails(std::forward<StatusDetailsT>(value)); return *this;}
+    template<typename StatusDetailsKeyT = Aws::String, typename StatusDetailsValueT = Aws::String>
+    JobExecutionState& AddStatusDetails(StatusDetailsKeyT&& key, StatusDetailsValueT&& value) {
+      m_statusDetailsHasBeenSet = true; m_statusDetails.emplace(std::forward<StatusDetailsKeyT>(key), std::forward<StatusDetailsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -79,20 +74,20 @@ namespace Model
      * <p>The version of the job execution. Job execution versions are incremented each
      * time they are updated by a device.</p>
      */
-    inline long long GetVersionNumber() const{ return m_versionNumber; }
+    inline long long GetVersionNumber() const { return m_versionNumber; }
     inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
     inline void SetVersionNumber(long long value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
     inline JobExecutionState& WithVersionNumber(long long value) { SetVersionNumber(value); return *this;}
     ///@}
   private:
 
-    JobExecutionStatus m_status;
+    JobExecutionStatus m_status{JobExecutionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_statusDetails;
     bool m_statusDetailsHasBeenSet = false;
 
-    long long m_versionNumber;
+    long long m_versionNumber{0};
     bool m_versionNumberHasBeenSet = false;
   };
 

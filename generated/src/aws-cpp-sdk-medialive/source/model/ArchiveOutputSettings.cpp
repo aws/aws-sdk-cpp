@@ -18,15 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-ArchiveOutputSettings::ArchiveOutputSettings() : 
-    m_containerSettingsHasBeenSet(false),
-    m_extensionHasBeenSet(false),
-    m_nameModifierHasBeenSet(false)
-{
-}
-
 ArchiveOutputSettings::ArchiveOutputSettings(JsonView jsonValue)
-  : ArchiveOutputSettings()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ArchiveOutputSettings& ArchiveOutputSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("containerSettings"))
   {
     m_containerSettings = jsonValue.GetObject("containerSettings");
-
     m_containerSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("extension"))
   {
     m_extension = jsonValue.GetString("extension");
-
     m_extensionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nameModifier"))
   {
     m_nameModifier = jsonValue.GetString("nameModifier");
-
     m_nameModifierHasBeenSet = true;
   }
-
   return *this;
 }
 

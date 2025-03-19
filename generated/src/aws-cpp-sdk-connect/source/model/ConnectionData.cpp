@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ConnectionData::ConnectionData() : 
-    m_attendeeHasBeenSet(false),
-    m_meetingHasBeenSet(false)
-{
-}
-
 ConnectionData::ConnectionData(JsonView jsonValue)
-  : ConnectionData()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ConnectionData& ConnectionData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Attendee"))
   {
     m_attendee = jsonValue.GetObject("Attendee");
-
     m_attendeeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Meeting"))
   {
     m_meeting = jsonValue.GetObject("Meeting");
-
     m_meetingHasBeenSet = true;
   }
-
   return *this;
 }
 

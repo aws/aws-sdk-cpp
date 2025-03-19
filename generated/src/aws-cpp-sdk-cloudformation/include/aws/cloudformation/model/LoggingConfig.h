@@ -32,7 +32,7 @@ namespace Model
   class LoggingConfig
   {
   public:
-    AWS_CLOUDFORMATION_API LoggingConfig();
+    AWS_CLOUDFORMATION_API LoggingConfig() = default;
     AWS_CLOUDFORMATION_API LoggingConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API LoggingConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,14 +45,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the role that CloudFormation should assume
      * when sending log entries to CloudWatch Logs.</p>
      */
-    inline const Aws::String& GetLogRoleArn() const{ return m_logRoleArn; }
+    inline const Aws::String& GetLogRoleArn() const { return m_logRoleArn; }
     inline bool LogRoleArnHasBeenSet() const { return m_logRoleArnHasBeenSet; }
-    inline void SetLogRoleArn(const Aws::String& value) { m_logRoleArnHasBeenSet = true; m_logRoleArn = value; }
-    inline void SetLogRoleArn(Aws::String&& value) { m_logRoleArnHasBeenSet = true; m_logRoleArn = std::move(value); }
-    inline void SetLogRoleArn(const char* value) { m_logRoleArnHasBeenSet = true; m_logRoleArn.assign(value); }
-    inline LoggingConfig& WithLogRoleArn(const Aws::String& value) { SetLogRoleArn(value); return *this;}
-    inline LoggingConfig& WithLogRoleArn(Aws::String&& value) { SetLogRoleArn(std::move(value)); return *this;}
-    inline LoggingConfig& WithLogRoleArn(const char* value) { SetLogRoleArn(value); return *this;}
+    template<typename LogRoleArnT = Aws::String>
+    void SetLogRoleArn(LogRoleArnT&& value) { m_logRoleArnHasBeenSet = true; m_logRoleArn = std::forward<LogRoleArnT>(value); }
+    template<typename LogRoleArnT = Aws::String>
+    LoggingConfig& WithLogRoleArn(LogRoleArnT&& value) { SetLogRoleArn(std::forward<LogRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>The Amazon CloudWatch Logs group to which CloudFormation sends error logging
      * information when invoking the extension's handlers.</p>
      */
-    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+    inline const Aws::String& GetLogGroupName() const { return m_logGroupName; }
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-    inline LoggingConfig& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-    inline LoggingConfig& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-    inline LoggingConfig& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+    template<typename LogGroupNameT = Aws::String>
+    void SetLogGroupName(LogGroupNameT&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::forward<LogGroupNameT>(value); }
+    template<typename LogGroupNameT = Aws::String>
+    LoggingConfig& WithLogGroupName(LogGroupNameT&& value) { SetLogGroupName(std::forward<LogGroupNameT>(value)); return *this;}
     ///@}
   private:
 

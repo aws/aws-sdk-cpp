@@ -32,7 +32,7 @@ namespace Model
   class CampaignConfig
   {
   public:
-    AWS_PERSONALIZE_API CampaignConfig();
+    AWS_PERSONALIZE_API CampaignConfig() = default;
     AWS_PERSONALIZE_API CampaignConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API CampaignConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,19 +48,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">User-Personalization</a>
      * recipe.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetItemExplorationConfig() const{ return m_itemExplorationConfig; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetItemExplorationConfig() const { return m_itemExplorationConfig; }
     inline bool ItemExplorationConfigHasBeenSet() const { return m_itemExplorationConfigHasBeenSet; }
-    inline void SetItemExplorationConfig(const Aws::Map<Aws::String, Aws::String>& value) { m_itemExplorationConfigHasBeenSet = true; m_itemExplorationConfig = value; }
-    inline void SetItemExplorationConfig(Aws::Map<Aws::String, Aws::String>&& value) { m_itemExplorationConfigHasBeenSet = true; m_itemExplorationConfig = std::move(value); }
-    inline CampaignConfig& WithItemExplorationConfig(const Aws::Map<Aws::String, Aws::String>& value) { SetItemExplorationConfig(value); return *this;}
-    inline CampaignConfig& WithItemExplorationConfig(Aws::Map<Aws::String, Aws::String>&& value) { SetItemExplorationConfig(std::move(value)); return *this;}
-    inline CampaignConfig& AddItemExplorationConfig(const Aws::String& key, const Aws::String& value) { m_itemExplorationConfigHasBeenSet = true; m_itemExplorationConfig.emplace(key, value); return *this; }
-    inline CampaignConfig& AddItemExplorationConfig(Aws::String&& key, const Aws::String& value) { m_itemExplorationConfigHasBeenSet = true; m_itemExplorationConfig.emplace(std::move(key), value); return *this; }
-    inline CampaignConfig& AddItemExplorationConfig(const Aws::String& key, Aws::String&& value) { m_itemExplorationConfigHasBeenSet = true; m_itemExplorationConfig.emplace(key, std::move(value)); return *this; }
-    inline CampaignConfig& AddItemExplorationConfig(Aws::String&& key, Aws::String&& value) { m_itemExplorationConfigHasBeenSet = true; m_itemExplorationConfig.emplace(std::move(key), std::move(value)); return *this; }
-    inline CampaignConfig& AddItemExplorationConfig(const char* key, Aws::String&& value) { m_itemExplorationConfigHasBeenSet = true; m_itemExplorationConfig.emplace(key, std::move(value)); return *this; }
-    inline CampaignConfig& AddItemExplorationConfig(Aws::String&& key, const char* value) { m_itemExplorationConfigHasBeenSet = true; m_itemExplorationConfig.emplace(std::move(key), value); return *this; }
-    inline CampaignConfig& AddItemExplorationConfig(const char* key, const char* value) { m_itemExplorationConfigHasBeenSet = true; m_itemExplorationConfig.emplace(key, value); return *this; }
+    template<typename ItemExplorationConfigT = Aws::Map<Aws::String, Aws::String>>
+    void SetItemExplorationConfig(ItemExplorationConfigT&& value) { m_itemExplorationConfigHasBeenSet = true; m_itemExplorationConfig = std::forward<ItemExplorationConfigT>(value); }
+    template<typename ItemExplorationConfigT = Aws::Map<Aws::String, Aws::String>>
+    CampaignConfig& WithItemExplorationConfig(ItemExplorationConfigT&& value) { SetItemExplorationConfig(std::forward<ItemExplorationConfigT>(value)); return *this;}
+    template<typename ItemExplorationConfigKeyT = Aws::String, typename ItemExplorationConfigValueT = Aws::String>
+    CampaignConfig& AddItemExplorationConfig(ItemExplorationConfigKeyT&& key, ItemExplorationConfigValueT&& value) {
+      m_itemExplorationConfigHasBeenSet = true; m_itemExplorationConfig.emplace(std::forward<ItemExplorationConfigKeyT>(key), std::forward<ItemExplorationConfigValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -76,7 +73,7 @@ namespace Model
      * <a href="https://aws.amazon.com/personalize/pricing/">Amazon Personalize
      * pricing</a>. </p>
      */
-    inline bool GetEnableMetadataWithRecommendations() const{ return m_enableMetadataWithRecommendations; }
+    inline bool GetEnableMetadataWithRecommendations() const { return m_enableMetadataWithRecommendations; }
     inline bool EnableMetadataWithRecommendationsHasBeenSet() const { return m_enableMetadataWithRecommendationsHasBeenSet; }
     inline void SetEnableMetadataWithRecommendations(bool value) { m_enableMetadataWithRecommendationsHasBeenSet = true; m_enableMetadataWithRecommendations = value; }
     inline CampaignConfig& WithEnableMetadataWithRecommendations(bool value) { SetEnableMetadataWithRecommendations(value); return *this;}
@@ -94,7 +91,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling
      * automatic campaign updates</a>. </p>
      */
-    inline bool GetSyncWithLatestSolutionVersion() const{ return m_syncWithLatestSolutionVersion; }
+    inline bool GetSyncWithLatestSolutionVersion() const { return m_syncWithLatestSolutionVersion; }
     inline bool SyncWithLatestSolutionVersionHasBeenSet() const { return m_syncWithLatestSolutionVersionHasBeenSet; }
     inline void SetSyncWithLatestSolutionVersion(bool value) { m_syncWithLatestSolutionVersionHasBeenSet = true; m_syncWithLatestSolutionVersion = value; }
     inline CampaignConfig& WithSyncWithLatestSolutionVersion(bool value) { SetSyncWithLatestSolutionVersion(value); return *this;}
@@ -104,10 +101,10 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_itemExplorationConfig;
     bool m_itemExplorationConfigHasBeenSet = false;
 
-    bool m_enableMetadataWithRecommendations;
+    bool m_enableMetadataWithRecommendations{false};
     bool m_enableMetadataWithRecommendationsHasBeenSet = false;
 
-    bool m_syncWithLatestSolutionVersion;
+    bool m_syncWithLatestSolutionVersion{false};
     bool m_syncWithLatestSolutionVersionHasBeenSet = false;
   };
 

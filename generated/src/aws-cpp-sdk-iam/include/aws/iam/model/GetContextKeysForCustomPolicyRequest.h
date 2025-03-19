@@ -22,7 +22,7 @@ namespace Model
   class GetContextKeysForCustomPolicyRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API GetContextKeysForCustomPolicyRequest();
+    AWS_IAM_API GetContextKeysForCustomPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -51,15 +51,14 @@ namespace Model
      * characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and
      * carriage return (<code>\u000D</code>)</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetPolicyInputList() const{ return m_policyInputList; }
+    inline const Aws::Vector<Aws::String>& GetPolicyInputList() const { return m_policyInputList; }
     inline bool PolicyInputListHasBeenSet() const { return m_policyInputListHasBeenSet; }
-    inline void SetPolicyInputList(const Aws::Vector<Aws::String>& value) { m_policyInputListHasBeenSet = true; m_policyInputList = value; }
-    inline void SetPolicyInputList(Aws::Vector<Aws::String>&& value) { m_policyInputListHasBeenSet = true; m_policyInputList = std::move(value); }
-    inline GetContextKeysForCustomPolicyRequest& WithPolicyInputList(const Aws::Vector<Aws::String>& value) { SetPolicyInputList(value); return *this;}
-    inline GetContextKeysForCustomPolicyRequest& WithPolicyInputList(Aws::Vector<Aws::String>&& value) { SetPolicyInputList(std::move(value)); return *this;}
-    inline GetContextKeysForCustomPolicyRequest& AddPolicyInputList(const Aws::String& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
-    inline GetContextKeysForCustomPolicyRequest& AddPolicyInputList(Aws::String&& value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(std::move(value)); return *this; }
-    inline GetContextKeysForCustomPolicyRequest& AddPolicyInputList(const char* value) { m_policyInputListHasBeenSet = true; m_policyInputList.push_back(value); return *this; }
+    template<typename PolicyInputListT = Aws::Vector<Aws::String>>
+    void SetPolicyInputList(PolicyInputListT&& value) { m_policyInputListHasBeenSet = true; m_policyInputList = std::forward<PolicyInputListT>(value); }
+    template<typename PolicyInputListT = Aws::Vector<Aws::String>>
+    GetContextKeysForCustomPolicyRequest& WithPolicyInputList(PolicyInputListT&& value) { SetPolicyInputList(std::forward<PolicyInputListT>(value)); return *this;}
+    template<typename PolicyInputListT = Aws::String>
+    GetContextKeysForCustomPolicyRequest& AddPolicyInputList(PolicyInputListT&& value) { m_policyInputListHasBeenSet = true; m_policyInputList.emplace_back(std::forward<PolicyInputListT>(value)); return *this; }
     ///@}
   private:
 

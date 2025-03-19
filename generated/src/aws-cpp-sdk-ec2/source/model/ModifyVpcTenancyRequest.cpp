@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyVpcTenancyRequest::ModifyVpcTenancyRequest() : 
-    m_vpcIdHasBeenSet(false),
-    m_instanceTenancy(VpcTenancy::NOT_SET),
-    m_instanceTenancyHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ModifyVpcTenancyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

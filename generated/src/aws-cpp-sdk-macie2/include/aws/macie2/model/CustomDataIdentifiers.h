@@ -34,7 +34,7 @@ namespace Model
   class CustomDataIdentifiers
   {
   public:
-    AWS_MACIE2_API CustomDataIdentifiers();
+    AWS_MACIE2_API CustomDataIdentifiers() = default;
     AWS_MACIE2_API CustomDataIdentifiers(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API CustomDataIdentifiers& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * <p>The custom data identifiers that detected the data, and the number of
      * occurrences of the data that each identifier detected.</p>
      */
-    inline const Aws::Vector<CustomDetection>& GetDetections() const{ return m_detections; }
+    inline const Aws::Vector<CustomDetection>& GetDetections() const { return m_detections; }
     inline bool DetectionsHasBeenSet() const { return m_detectionsHasBeenSet; }
-    inline void SetDetections(const Aws::Vector<CustomDetection>& value) { m_detectionsHasBeenSet = true; m_detections = value; }
-    inline void SetDetections(Aws::Vector<CustomDetection>&& value) { m_detectionsHasBeenSet = true; m_detections = std::move(value); }
-    inline CustomDataIdentifiers& WithDetections(const Aws::Vector<CustomDetection>& value) { SetDetections(value); return *this;}
-    inline CustomDataIdentifiers& WithDetections(Aws::Vector<CustomDetection>&& value) { SetDetections(std::move(value)); return *this;}
-    inline CustomDataIdentifiers& AddDetections(const CustomDetection& value) { m_detectionsHasBeenSet = true; m_detections.push_back(value); return *this; }
-    inline CustomDataIdentifiers& AddDetections(CustomDetection&& value) { m_detectionsHasBeenSet = true; m_detections.push_back(std::move(value)); return *this; }
+    template<typename DetectionsT = Aws::Vector<CustomDetection>>
+    void SetDetections(DetectionsT&& value) { m_detectionsHasBeenSet = true; m_detections = std::forward<DetectionsT>(value); }
+    template<typename DetectionsT = Aws::Vector<CustomDetection>>
+    CustomDataIdentifiers& WithDetections(DetectionsT&& value) { SetDetections(std::forward<DetectionsT>(value)); return *this;}
+    template<typename DetectionsT = CustomDetection>
+    CustomDataIdentifiers& AddDetections(DetectionsT&& value) { m_detectionsHasBeenSet = true; m_detections.emplace_back(std::forward<DetectionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,7 +60,7 @@ namespace Model
      * <p>The total number of occurrences of the data that was detected by the custom
      * data identifiers and produced the finding.</p>
      */
-    inline long long GetTotalCount() const{ return m_totalCount; }
+    inline long long GetTotalCount() const { return m_totalCount; }
     inline bool TotalCountHasBeenSet() const { return m_totalCountHasBeenSet; }
     inline void SetTotalCount(long long value) { m_totalCountHasBeenSet = true; m_totalCount = value; }
     inline CustomDataIdentifiers& WithTotalCount(long long value) { SetTotalCount(value); return *this;}
@@ -70,7 +70,7 @@ namespace Model
     Aws::Vector<CustomDetection> m_detections;
     bool m_detectionsHasBeenSet = false;
 
-    long long m_totalCount;
+    long long m_totalCount{0};
     bool m_totalCountHasBeenSet = false;
   };
 

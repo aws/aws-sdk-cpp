@@ -33,7 +33,7 @@ namespace Model
   class GoogleAnalyticsConnectorProfileCredentials
   {
   public:
-    AWS_APPFLOW_API GoogleAnalyticsConnectorProfileCredentials();
+    AWS_APPFLOW_API GoogleAnalyticsConnectorProfileCredentials() = default;
     AWS_APPFLOW_API GoogleAnalyticsConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API GoogleAnalyticsConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p> The identifier for the desired client. </p>
      */
-    inline const Aws::String& GetClientId() const{ return m_clientId; }
+    inline const Aws::String& GetClientId() const { return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
-    inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
-    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
-    inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
-    inline GoogleAnalyticsConnectorProfileCredentials& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
-    inline GoogleAnalyticsConnectorProfileCredentials& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
-    inline GoogleAnalyticsConnectorProfileCredentials& WithClientId(const char* value) { SetClientId(value); return *this;}
+    template<typename ClientIdT = Aws::String>
+    void SetClientId(ClientIdT&& value) { m_clientIdHasBeenSet = true; m_clientId = std::forward<ClientIdT>(value); }
+    template<typename ClientIdT = Aws::String>
+    GoogleAnalyticsConnectorProfileCredentials& WithClientId(ClientIdT&& value) { SetClientId(std::forward<ClientIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,28 +56,24 @@ namespace Model
      * <p> The client secret used by the OAuth client to authenticate to the
      * authorization server. </p>
      */
-    inline const Aws::String& GetClientSecret() const{ return m_clientSecret; }
+    inline const Aws::String& GetClientSecret() const { return m_clientSecret; }
     inline bool ClientSecretHasBeenSet() const { return m_clientSecretHasBeenSet; }
-    inline void SetClientSecret(const Aws::String& value) { m_clientSecretHasBeenSet = true; m_clientSecret = value; }
-    inline void SetClientSecret(Aws::String&& value) { m_clientSecretHasBeenSet = true; m_clientSecret = std::move(value); }
-    inline void SetClientSecret(const char* value) { m_clientSecretHasBeenSet = true; m_clientSecret.assign(value); }
-    inline GoogleAnalyticsConnectorProfileCredentials& WithClientSecret(const Aws::String& value) { SetClientSecret(value); return *this;}
-    inline GoogleAnalyticsConnectorProfileCredentials& WithClientSecret(Aws::String&& value) { SetClientSecret(std::move(value)); return *this;}
-    inline GoogleAnalyticsConnectorProfileCredentials& WithClientSecret(const char* value) { SetClientSecret(value); return *this;}
+    template<typename ClientSecretT = Aws::String>
+    void SetClientSecret(ClientSecretT&& value) { m_clientSecretHasBeenSet = true; m_clientSecret = std::forward<ClientSecretT>(value); }
+    template<typename ClientSecretT = Aws::String>
+    GoogleAnalyticsConnectorProfileCredentials& WithClientSecret(ClientSecretT&& value) { SetClientSecret(std::forward<ClientSecretT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The credentials used to access protected Google Analytics resources. </p>
      */
-    inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
+    inline const Aws::String& GetAccessToken() const { return m_accessToken; }
     inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
-    inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
-    inline void SetAccessToken(Aws::String&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::move(value); }
-    inline void SetAccessToken(const char* value) { m_accessTokenHasBeenSet = true; m_accessToken.assign(value); }
-    inline GoogleAnalyticsConnectorProfileCredentials& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
-    inline GoogleAnalyticsConnectorProfileCredentials& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
-    inline GoogleAnalyticsConnectorProfileCredentials& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
+    template<typename AccessTokenT = Aws::String>
+    void SetAccessToken(AccessTokenT&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::forward<AccessTokenT>(value); }
+    template<typename AccessTokenT = Aws::String>
+    GoogleAnalyticsConnectorProfileCredentials& WithAccessToken(AccessTokenT&& value) { SetAccessToken(std::forward<AccessTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +81,12 @@ namespace Model
      * <p> The credentials used to acquire new access tokens. This is required only for
      * OAuth2 access tokens, and is not required for OAuth1 access tokens. </p>
      */
-    inline const Aws::String& GetRefreshToken() const{ return m_refreshToken; }
+    inline const Aws::String& GetRefreshToken() const { return m_refreshToken; }
     inline bool RefreshTokenHasBeenSet() const { return m_refreshTokenHasBeenSet; }
-    inline void SetRefreshToken(const Aws::String& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = value; }
-    inline void SetRefreshToken(Aws::String&& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = std::move(value); }
-    inline void SetRefreshToken(const char* value) { m_refreshTokenHasBeenSet = true; m_refreshToken.assign(value); }
-    inline GoogleAnalyticsConnectorProfileCredentials& WithRefreshToken(const Aws::String& value) { SetRefreshToken(value); return *this;}
-    inline GoogleAnalyticsConnectorProfileCredentials& WithRefreshToken(Aws::String&& value) { SetRefreshToken(std::move(value)); return *this;}
-    inline GoogleAnalyticsConnectorProfileCredentials& WithRefreshToken(const char* value) { SetRefreshToken(value); return *this;}
+    template<typename RefreshTokenT = Aws::String>
+    void SetRefreshToken(RefreshTokenT&& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = std::forward<RefreshTokenT>(value); }
+    template<typename RefreshTokenT = Aws::String>
+    GoogleAnalyticsConnectorProfileCredentials& WithRefreshToken(RefreshTokenT&& value) { SetRefreshToken(std::forward<RefreshTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +94,12 @@ namespace Model
      * <p> The OAuth requirement needed to request security tokens from the connector
      * endpoint. </p>
      */
-    inline const ConnectorOAuthRequest& GetOAuthRequest() const{ return m_oAuthRequest; }
+    inline const ConnectorOAuthRequest& GetOAuthRequest() const { return m_oAuthRequest; }
     inline bool OAuthRequestHasBeenSet() const { return m_oAuthRequestHasBeenSet; }
-    inline void SetOAuthRequest(const ConnectorOAuthRequest& value) { m_oAuthRequestHasBeenSet = true; m_oAuthRequest = value; }
-    inline void SetOAuthRequest(ConnectorOAuthRequest&& value) { m_oAuthRequestHasBeenSet = true; m_oAuthRequest = std::move(value); }
-    inline GoogleAnalyticsConnectorProfileCredentials& WithOAuthRequest(const ConnectorOAuthRequest& value) { SetOAuthRequest(value); return *this;}
-    inline GoogleAnalyticsConnectorProfileCredentials& WithOAuthRequest(ConnectorOAuthRequest&& value) { SetOAuthRequest(std::move(value)); return *this;}
+    template<typename OAuthRequestT = ConnectorOAuthRequest>
+    void SetOAuthRequest(OAuthRequestT&& value) { m_oAuthRequestHasBeenSet = true; m_oAuthRequest = std::forward<OAuthRequestT>(value); }
+    template<typename OAuthRequestT = ConnectorOAuthRequest>
+    GoogleAnalyticsConnectorProfileCredentials& WithOAuthRequest(OAuthRequestT&& value) { SetOAuthRequest(std::forward<OAuthRequestT>(value)); return *this;}
     ///@}
   private:
 

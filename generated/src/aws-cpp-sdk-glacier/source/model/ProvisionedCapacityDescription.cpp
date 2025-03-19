@@ -18,15 +18,7 @@ namespace Glacier
 namespace Model
 {
 
-ProvisionedCapacityDescription::ProvisionedCapacityDescription() : 
-    m_capacityIdHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_expirationDateHasBeenSet(false)
-{
-}
-
 ProvisionedCapacityDescription::ProvisionedCapacityDescription(JsonView jsonValue)
-  : ProvisionedCapacityDescription()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ProvisionedCapacityDescription& ProvisionedCapacityDescription::operator =(JsonV
   if(jsonValue.ValueExists("CapacityId"))
   {
     m_capacityId = jsonValue.GetString("CapacityId");
-
     m_capacityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartDate"))
   {
     m_startDate = jsonValue.GetString("StartDate");
-
     m_startDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpirationDate"))
   {
     m_expirationDate = jsonValue.GetString("ExpirationDate");
-
     m_expirationDateHasBeenSet = true;
   }
-
   return *this;
 }
 

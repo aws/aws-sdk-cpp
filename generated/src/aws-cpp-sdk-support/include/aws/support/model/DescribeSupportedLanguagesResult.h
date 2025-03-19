@@ -29,7 +29,7 @@ namespace Model
   class DescribeSupportedLanguagesResult
   {
   public:
-    AWS_SUPPORT_API DescribeSupportedLanguagesResult();
+    AWS_SUPPORT_API DescribeSupportedLanguagesResult() = default;
     AWS_SUPPORT_API DescribeSupportedLanguagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SUPPORT_API DescribeSupportedLanguagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p> A JSON-formatted array that contains the available ISO 639-1 language codes.
      * </p>
      */
-    inline const Aws::Vector<SupportedLanguage>& GetSupportedLanguages() const{ return m_supportedLanguages; }
-    inline void SetSupportedLanguages(const Aws::Vector<SupportedLanguage>& value) { m_supportedLanguages = value; }
-    inline void SetSupportedLanguages(Aws::Vector<SupportedLanguage>&& value) { m_supportedLanguages = std::move(value); }
-    inline DescribeSupportedLanguagesResult& WithSupportedLanguages(const Aws::Vector<SupportedLanguage>& value) { SetSupportedLanguages(value); return *this;}
-    inline DescribeSupportedLanguagesResult& WithSupportedLanguages(Aws::Vector<SupportedLanguage>&& value) { SetSupportedLanguages(std::move(value)); return *this;}
-    inline DescribeSupportedLanguagesResult& AddSupportedLanguages(const SupportedLanguage& value) { m_supportedLanguages.push_back(value); return *this; }
-    inline DescribeSupportedLanguagesResult& AddSupportedLanguages(SupportedLanguage&& value) { m_supportedLanguages.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SupportedLanguage>& GetSupportedLanguages() const { return m_supportedLanguages; }
+    template<typename SupportedLanguagesT = Aws::Vector<SupportedLanguage>>
+    void SetSupportedLanguages(SupportedLanguagesT&& value) { m_supportedLanguagesHasBeenSet = true; m_supportedLanguages = std::forward<SupportedLanguagesT>(value); }
+    template<typename SupportedLanguagesT = Aws::Vector<SupportedLanguage>>
+    DescribeSupportedLanguagesResult& WithSupportedLanguages(SupportedLanguagesT&& value) { SetSupportedLanguages(std::forward<SupportedLanguagesT>(value)); return *this;}
+    template<typename SupportedLanguagesT = SupportedLanguage>
+    DescribeSupportedLanguagesResult& AddSupportedLanguages(SupportedLanguagesT&& value) { m_supportedLanguagesHasBeenSet = true; m_supportedLanguages.emplace_back(std::forward<SupportedLanguagesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeSupportedLanguagesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeSupportedLanguagesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeSupportedLanguagesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeSupportedLanguagesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SupportedLanguage> m_supportedLanguages;
+    bool m_supportedLanguagesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

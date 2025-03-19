@@ -12,19 +12,6 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAnalysisTemplateRequest::CreateAnalysisTemplateRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_membershipIdentifierHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_format(AnalysisFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_analysisParametersHasBeenSet(false),
-    m_schemaHasBeenSet(false)
-{
-}
-
 Aws::String CreateAnalysisTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

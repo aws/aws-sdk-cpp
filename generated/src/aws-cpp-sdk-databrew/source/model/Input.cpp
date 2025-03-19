@@ -18,16 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-Input::Input() : 
-    m_s3InputDefinitionHasBeenSet(false),
-    m_dataCatalogInputDefinitionHasBeenSet(false),
-    m_databaseInputDefinitionHasBeenSet(false),
-    m_metadataHasBeenSet(false)
-{
-}
-
 Input::Input(JsonView jsonValue)
-  : Input()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Input& Input::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3InputDefinition"))
   {
     m_s3InputDefinition = jsonValue.GetObject("S3InputDefinition");
-
     m_s3InputDefinitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataCatalogInputDefinition"))
   {
     m_dataCatalogInputDefinition = jsonValue.GetObject("DataCatalogInputDefinition");
-
     m_dataCatalogInputDefinitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseInputDefinition"))
   {
     m_databaseInputDefinition = jsonValue.GetObject("DatabaseInputDefinition");
-
     m_databaseInputDefinitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Metadata"))
   {
     m_metadata = jsonValue.GetObject("Metadata");
-
     m_metadataHasBeenSet = true;
   }
-
   return *this;
 }
 

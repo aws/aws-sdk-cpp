@@ -34,7 +34,7 @@ namespace Model
   class GuardrailContentFilter
   {
   public:
-    AWS_BEDROCKRUNTIME_API GuardrailContentFilter();
+    AWS_BEDROCKRUNTIME_API GuardrailContentFilter() = default;
     AWS_BEDROCKRUNTIME_API GuardrailContentFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API GuardrailContentFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,61 +44,53 @@ namespace Model
     /**
      * <p>The guardrail type.</p>
      */
-    inline const GuardrailContentFilterType& GetType() const{ return m_type; }
+    inline GuardrailContentFilterType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const GuardrailContentFilterType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(GuardrailContentFilterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline GuardrailContentFilter& WithType(const GuardrailContentFilterType& value) { SetType(value); return *this;}
-    inline GuardrailContentFilter& WithType(GuardrailContentFilterType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(GuardrailContentFilterType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GuardrailContentFilter& WithType(GuardrailContentFilterType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The guardrail confidence.</p>
      */
-    inline const GuardrailContentFilterConfidence& GetConfidence() const{ return m_confidence; }
+    inline GuardrailContentFilterConfidence GetConfidence() const { return m_confidence; }
     inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
-    inline void SetConfidence(const GuardrailContentFilterConfidence& value) { m_confidenceHasBeenSet = true; m_confidence = value; }
-    inline void SetConfidence(GuardrailContentFilterConfidence&& value) { m_confidenceHasBeenSet = true; m_confidence = std::move(value); }
-    inline GuardrailContentFilter& WithConfidence(const GuardrailContentFilterConfidence& value) { SetConfidence(value); return *this;}
-    inline GuardrailContentFilter& WithConfidence(GuardrailContentFilterConfidence&& value) { SetConfidence(std::move(value)); return *this;}
+    inline void SetConfidence(GuardrailContentFilterConfidence value) { m_confidenceHasBeenSet = true; m_confidence = value; }
+    inline GuardrailContentFilter& WithConfidence(GuardrailContentFilterConfidence value) { SetConfidence(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The filter strength setting for the guardrail content filter.</p>
      */
-    inline const GuardrailContentFilterStrength& GetFilterStrength() const{ return m_filterStrength; }
+    inline GuardrailContentFilterStrength GetFilterStrength() const { return m_filterStrength; }
     inline bool FilterStrengthHasBeenSet() const { return m_filterStrengthHasBeenSet; }
-    inline void SetFilterStrength(const GuardrailContentFilterStrength& value) { m_filterStrengthHasBeenSet = true; m_filterStrength = value; }
-    inline void SetFilterStrength(GuardrailContentFilterStrength&& value) { m_filterStrengthHasBeenSet = true; m_filterStrength = std::move(value); }
-    inline GuardrailContentFilter& WithFilterStrength(const GuardrailContentFilterStrength& value) { SetFilterStrength(value); return *this;}
-    inline GuardrailContentFilter& WithFilterStrength(GuardrailContentFilterStrength&& value) { SetFilterStrength(std::move(value)); return *this;}
+    inline void SetFilterStrength(GuardrailContentFilterStrength value) { m_filterStrengthHasBeenSet = true; m_filterStrength = value; }
+    inline GuardrailContentFilter& WithFilterStrength(GuardrailContentFilterStrength value) { SetFilterStrength(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The guardrail action.</p>
      */
-    inline const GuardrailContentPolicyAction& GetAction() const{ return m_action; }
+    inline GuardrailContentPolicyAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const GuardrailContentPolicyAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(GuardrailContentPolicyAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline GuardrailContentFilter& WithAction(const GuardrailContentPolicyAction& value) { SetAction(value); return *this;}
-    inline GuardrailContentFilter& WithAction(GuardrailContentPolicyAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(GuardrailContentPolicyAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline GuardrailContentFilter& WithAction(GuardrailContentPolicyAction value) { SetAction(value); return *this;}
     ///@}
   private:
 
-    GuardrailContentFilterType m_type;
+    GuardrailContentFilterType m_type{GuardrailContentFilterType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    GuardrailContentFilterConfidence m_confidence;
+    GuardrailContentFilterConfidence m_confidence{GuardrailContentFilterConfidence::NOT_SET};
     bool m_confidenceHasBeenSet = false;
 
-    GuardrailContentFilterStrength m_filterStrength;
+    GuardrailContentFilterStrength m_filterStrength{GuardrailContentFilterStrength::NOT_SET};
     bool m_filterStrengthHasBeenSet = false;
 
-    GuardrailContentPolicyAction m_action;
+    GuardrailContentPolicyAction m_action{GuardrailContentPolicyAction::NOT_SET};
     bool m_actionHasBeenSet = false;
   };
 

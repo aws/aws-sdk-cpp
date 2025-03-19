@@ -36,7 +36,7 @@ namespace Model
   class UpdateWorkloadEstimateResult
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API UpdateWorkloadEstimateResult();
+    AWS_BCMPRICINGCALCULATOR_API UpdateWorkloadEstimateResult() = default;
     AWS_BCMPRICINGCALCULATOR_API UpdateWorkloadEstimateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BCMPRICINGCALCULATOR_API UpdateWorkloadEstimateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,89 +45,81 @@ namespace Model
     /**
      * <p> The unique identifier of the updated workload estimate. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline UpdateWorkloadEstimateResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateWorkloadEstimateResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateWorkloadEstimateResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateWorkloadEstimateResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The updated name of the workload estimate. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline UpdateWorkloadEstimateResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateWorkloadEstimateResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateWorkloadEstimateResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateWorkloadEstimateResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The timestamp when the workload estimate was originally created. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline UpdateWorkloadEstimateResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline UpdateWorkloadEstimateResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    UpdateWorkloadEstimateResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The updated expiration timestamp for the workload estimate. </p>
      */
-    inline const Aws::Utils::DateTime& GetExpiresAt() const{ return m_expiresAt; }
-    inline void SetExpiresAt(const Aws::Utils::DateTime& value) { m_expiresAt = value; }
-    inline void SetExpiresAt(Aws::Utils::DateTime&& value) { m_expiresAt = std::move(value); }
-    inline UpdateWorkloadEstimateResult& WithExpiresAt(const Aws::Utils::DateTime& value) { SetExpiresAt(value); return *this;}
-    inline UpdateWorkloadEstimateResult& WithExpiresAt(Aws::Utils::DateTime&& value) { SetExpiresAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetExpiresAt() const { return m_expiresAt; }
+    template<typename ExpiresAtT = Aws::Utils::DateTime>
+    void SetExpiresAt(ExpiresAtT&& value) { m_expiresAtHasBeenSet = true; m_expiresAt = std::forward<ExpiresAtT>(value); }
+    template<typename ExpiresAtT = Aws::Utils::DateTime>
+    UpdateWorkloadEstimateResult& WithExpiresAt(ExpiresAtT&& value) { SetExpiresAt(std::forward<ExpiresAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The type of pricing rates used for the updated estimate. </p>
      */
-    inline const WorkloadEstimateRateType& GetRateType() const{ return m_rateType; }
-    inline void SetRateType(const WorkloadEstimateRateType& value) { m_rateType = value; }
-    inline void SetRateType(WorkloadEstimateRateType&& value) { m_rateType = std::move(value); }
-    inline UpdateWorkloadEstimateResult& WithRateType(const WorkloadEstimateRateType& value) { SetRateType(value); return *this;}
-    inline UpdateWorkloadEstimateResult& WithRateType(WorkloadEstimateRateType&& value) { SetRateType(std::move(value)); return *this;}
+    inline WorkloadEstimateRateType GetRateType() const { return m_rateType; }
+    inline void SetRateType(WorkloadEstimateRateType value) { m_rateTypeHasBeenSet = true; m_rateType = value; }
+    inline UpdateWorkloadEstimateResult& WithRateType(WorkloadEstimateRateType value) { SetRateType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The timestamp of the pricing rates used for the updated estimate. </p>
      */
-    inline const Aws::Utils::DateTime& GetRateTimestamp() const{ return m_rateTimestamp; }
-    inline void SetRateTimestamp(const Aws::Utils::DateTime& value) { m_rateTimestamp = value; }
-    inline void SetRateTimestamp(Aws::Utils::DateTime&& value) { m_rateTimestamp = std::move(value); }
-    inline UpdateWorkloadEstimateResult& WithRateTimestamp(const Aws::Utils::DateTime& value) { SetRateTimestamp(value); return *this;}
-    inline UpdateWorkloadEstimateResult& WithRateTimestamp(Aws::Utils::DateTime&& value) { SetRateTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetRateTimestamp() const { return m_rateTimestamp; }
+    template<typename RateTimestampT = Aws::Utils::DateTime>
+    void SetRateTimestamp(RateTimestampT&& value) { m_rateTimestampHasBeenSet = true; m_rateTimestamp = std::forward<RateTimestampT>(value); }
+    template<typename RateTimestampT = Aws::Utils::DateTime>
+    UpdateWorkloadEstimateResult& WithRateTimestamp(RateTimestampT&& value) { SetRateTimestamp(std::forward<RateTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The current status of the updated workload estimate. </p>
      */
-    inline const WorkloadEstimateStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const WorkloadEstimateStatus& value) { m_status = value; }
-    inline void SetStatus(WorkloadEstimateStatus&& value) { m_status = std::move(value); }
-    inline UpdateWorkloadEstimateResult& WithStatus(const WorkloadEstimateStatus& value) { SetStatus(value); return *this;}
-    inline UpdateWorkloadEstimateResult& WithStatus(WorkloadEstimateStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline WorkloadEstimateStatus GetStatus() const { return m_status; }
+    inline void SetStatus(WorkloadEstimateStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateWorkloadEstimateResult& WithStatus(WorkloadEstimateStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The updated total estimated cost for the workload. </p>
      */
-    inline double GetTotalCost() const{ return m_totalCost; }
-    inline void SetTotalCost(double value) { m_totalCost = value; }
+    inline double GetTotalCost() const { return m_totalCost; }
+    inline void SetTotalCost(double value) { m_totalCostHasBeenSet = true; m_totalCost = value; }
     inline UpdateWorkloadEstimateResult& WithTotalCost(double value) { SetTotalCost(value); return *this;}
     ///@}
 
@@ -135,59 +127,64 @@ namespace Model
     /**
      * <p> The currency of the updated estimated cost. </p>
      */
-    inline const CurrencyCode& GetCostCurrency() const{ return m_costCurrency; }
-    inline void SetCostCurrency(const CurrencyCode& value) { m_costCurrency = value; }
-    inline void SetCostCurrency(CurrencyCode&& value) { m_costCurrency = std::move(value); }
-    inline UpdateWorkloadEstimateResult& WithCostCurrency(const CurrencyCode& value) { SetCostCurrency(value); return *this;}
-    inline UpdateWorkloadEstimateResult& WithCostCurrency(CurrencyCode&& value) { SetCostCurrency(std::move(value)); return *this;}
+    inline CurrencyCode GetCostCurrency() const { return m_costCurrency; }
+    inline void SetCostCurrency(CurrencyCode value) { m_costCurrencyHasBeenSet = true; m_costCurrency = value; }
+    inline UpdateWorkloadEstimateResult& WithCostCurrency(CurrencyCode value) { SetCostCurrency(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> An error message if the workload estimate update failed. </p>
      */
-    inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
-    inline void SetFailureMessage(const Aws::String& value) { m_failureMessage = value; }
-    inline void SetFailureMessage(Aws::String&& value) { m_failureMessage = std::move(value); }
-    inline void SetFailureMessage(const char* value) { m_failureMessage.assign(value); }
-    inline UpdateWorkloadEstimateResult& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
-    inline UpdateWorkloadEstimateResult& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
-    inline UpdateWorkloadEstimateResult& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
+    inline const Aws::String& GetFailureMessage() const { return m_failureMessage; }
+    template<typename FailureMessageT = Aws::String>
+    void SetFailureMessage(FailureMessageT&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::forward<FailureMessageT>(value); }
+    template<typename FailureMessageT = Aws::String>
+    UpdateWorkloadEstimateResult& WithFailureMessage(FailureMessageT&& value) { SetFailureMessage(std::forward<FailureMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateWorkloadEstimateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateWorkloadEstimateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateWorkloadEstimateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateWorkloadEstimateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expiresAt;
+    Aws::Utils::DateTime m_expiresAt{};
+    bool m_expiresAtHasBeenSet = false;
 
-    WorkloadEstimateRateType m_rateType;
+    WorkloadEstimateRateType m_rateType{WorkloadEstimateRateType::NOT_SET};
+    bool m_rateTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_rateTimestamp;
+    Aws::Utils::DateTime m_rateTimestamp{};
+    bool m_rateTimestampHasBeenSet = false;
 
-    WorkloadEstimateStatus m_status;
+    WorkloadEstimateStatus m_status{WorkloadEstimateStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    double m_totalCost;
+    double m_totalCost{0.0};
+    bool m_totalCostHasBeenSet = false;
 
-    CurrencyCode m_costCurrency;
+    CurrencyCode m_costCurrency{CurrencyCode::NOT_SET};
+    bool m_costCurrencyHasBeenSet = false;
 
     Aws::String m_failureMessage;
+    bool m_failureMessageHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -36,7 +36,7 @@ namespace Model
   class CacheConfig
   {
   public:
-    AWS_AMPLIFY_API CacheConfig();
+    AWS_AMPLIFY_API CacheConfig() = default;
     AWS_AMPLIFY_API CacheConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFY_API CacheConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,16 +52,14 @@ namespace Model
      * <code>AMPLIFY_MANAGED</code>, except that it excludes all cookies from the cache
      * key.</p>
      */
-    inline const CacheConfigType& GetType() const{ return m_type; }
+    inline CacheConfigType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const CacheConfigType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(CacheConfigType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CacheConfig& WithType(const CacheConfigType& value) { SetType(value); return *this;}
-    inline CacheConfig& WithType(CacheConfigType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(CacheConfigType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CacheConfig& WithType(CacheConfigType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    CacheConfigType m_type;
+    CacheConfigType m_type{CacheConfigType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

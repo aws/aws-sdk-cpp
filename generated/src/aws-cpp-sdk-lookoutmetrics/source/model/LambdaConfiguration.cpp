@@ -18,14 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-LambdaConfiguration::LambdaConfiguration() : 
-    m_roleArnHasBeenSet(false),
-    m_lambdaArnHasBeenSet(false)
-{
-}
-
 LambdaConfiguration::LambdaConfiguration(JsonView jsonValue)
-  : LambdaConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LambdaConfiguration& LambdaConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LambdaArn"))
   {
     m_lambdaArn = jsonValue.GetString("LambdaArn");
-
     m_lambdaArnHasBeenSet = true;
   }
-
   return *this;
 }
 

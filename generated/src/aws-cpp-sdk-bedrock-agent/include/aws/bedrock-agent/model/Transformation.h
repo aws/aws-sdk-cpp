@@ -34,7 +34,7 @@ namespace Model
   class Transformation
   {
   public:
-    AWS_BEDROCKAGENT_API Transformation();
+    AWS_BEDROCKAGENT_API Transformation() = default;
     AWS_BEDROCKAGENT_API Transformation(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Transformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,26 @@ namespace Model
     /**
      * <p>When the service applies the transformation.</p>
      */
-    inline const StepType& GetStepToApply() const{ return m_stepToApply; }
+    inline StepType GetStepToApply() const { return m_stepToApply; }
     inline bool StepToApplyHasBeenSet() const { return m_stepToApplyHasBeenSet; }
-    inline void SetStepToApply(const StepType& value) { m_stepToApplyHasBeenSet = true; m_stepToApply = value; }
-    inline void SetStepToApply(StepType&& value) { m_stepToApplyHasBeenSet = true; m_stepToApply = std::move(value); }
-    inline Transformation& WithStepToApply(const StepType& value) { SetStepToApply(value); return *this;}
-    inline Transformation& WithStepToApply(StepType&& value) { SetStepToApply(std::move(value)); return *this;}
+    inline void SetStepToApply(StepType value) { m_stepToApplyHasBeenSet = true; m_stepToApply = value; }
+    inline Transformation& WithStepToApply(StepType value) { SetStepToApply(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A Lambda function that processes documents.</p>
      */
-    inline const TransformationFunction& GetTransformationFunction() const{ return m_transformationFunction; }
+    inline const TransformationFunction& GetTransformationFunction() const { return m_transformationFunction; }
     inline bool TransformationFunctionHasBeenSet() const { return m_transformationFunctionHasBeenSet; }
-    inline void SetTransformationFunction(const TransformationFunction& value) { m_transformationFunctionHasBeenSet = true; m_transformationFunction = value; }
-    inline void SetTransformationFunction(TransformationFunction&& value) { m_transformationFunctionHasBeenSet = true; m_transformationFunction = std::move(value); }
-    inline Transformation& WithTransformationFunction(const TransformationFunction& value) { SetTransformationFunction(value); return *this;}
-    inline Transformation& WithTransformationFunction(TransformationFunction&& value) { SetTransformationFunction(std::move(value)); return *this;}
+    template<typename TransformationFunctionT = TransformationFunction>
+    void SetTransformationFunction(TransformationFunctionT&& value) { m_transformationFunctionHasBeenSet = true; m_transformationFunction = std::forward<TransformationFunctionT>(value); }
+    template<typename TransformationFunctionT = TransformationFunction>
+    Transformation& WithTransformationFunction(TransformationFunctionT&& value) { SetTransformationFunction(std::forward<TransformationFunctionT>(value)); return *this;}
     ///@}
   private:
 
-    StepType m_stepToApply;
+    StepType m_stepToApply{StepType::NOT_SET};
     bool m_stepToApplyHasBeenSet = false;
 
     TransformationFunction m_transformationFunction;

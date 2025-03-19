@@ -23,7 +23,7 @@ namespace Model
   class ListFindingsRequest : public InspectorRequest
   {
   public:
-    AWS_INSPECTOR_API ListFindingsRequest();
+    AWS_INSPECTOR_API ListFindingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,15 +41,14 @@ namespace Model
      * <p>The ARNs of the assessment runs that generate the findings that you want to
      * list.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAssessmentRunArns() const{ return m_assessmentRunArns; }
+    inline const Aws::Vector<Aws::String>& GetAssessmentRunArns() const { return m_assessmentRunArns; }
     inline bool AssessmentRunArnsHasBeenSet() const { return m_assessmentRunArnsHasBeenSet; }
-    inline void SetAssessmentRunArns(const Aws::Vector<Aws::String>& value) { m_assessmentRunArnsHasBeenSet = true; m_assessmentRunArns = value; }
-    inline void SetAssessmentRunArns(Aws::Vector<Aws::String>&& value) { m_assessmentRunArnsHasBeenSet = true; m_assessmentRunArns = std::move(value); }
-    inline ListFindingsRequest& WithAssessmentRunArns(const Aws::Vector<Aws::String>& value) { SetAssessmentRunArns(value); return *this;}
-    inline ListFindingsRequest& WithAssessmentRunArns(Aws::Vector<Aws::String>&& value) { SetAssessmentRunArns(std::move(value)); return *this;}
-    inline ListFindingsRequest& AddAssessmentRunArns(const Aws::String& value) { m_assessmentRunArnsHasBeenSet = true; m_assessmentRunArns.push_back(value); return *this; }
-    inline ListFindingsRequest& AddAssessmentRunArns(Aws::String&& value) { m_assessmentRunArnsHasBeenSet = true; m_assessmentRunArns.push_back(std::move(value)); return *this; }
-    inline ListFindingsRequest& AddAssessmentRunArns(const char* value) { m_assessmentRunArnsHasBeenSet = true; m_assessmentRunArns.push_back(value); return *this; }
+    template<typename AssessmentRunArnsT = Aws::Vector<Aws::String>>
+    void SetAssessmentRunArns(AssessmentRunArnsT&& value) { m_assessmentRunArnsHasBeenSet = true; m_assessmentRunArns = std::forward<AssessmentRunArnsT>(value); }
+    template<typename AssessmentRunArnsT = Aws::Vector<Aws::String>>
+    ListFindingsRequest& WithAssessmentRunArns(AssessmentRunArnsT&& value) { SetAssessmentRunArns(std::forward<AssessmentRunArnsT>(value)); return *this;}
+    template<typename AssessmentRunArnsT = Aws::String>
+    ListFindingsRequest& AddAssessmentRunArns(AssessmentRunArnsT&& value) { m_assessmentRunArnsHasBeenSet = true; m_assessmentRunArns.emplace_back(std::forward<AssessmentRunArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,12 +58,12 @@ namespace Model
      * attributes must match. When multiple values are specified for a filter
      * attribute, any of the values can match.</p>
      */
-    inline const FindingFilter& GetFilter() const{ return m_filter; }
+    inline const FindingFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const FindingFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(FindingFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline ListFindingsRequest& WithFilter(const FindingFilter& value) { SetFilter(value); return *this;}
-    inline ListFindingsRequest& WithFilter(FindingFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = FindingFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = FindingFilter>
+    ListFindingsRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +74,12 @@ namespace Model
      * value of <b>NextToken</b> from the previous response to continue listing
      * data.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListFindingsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListFindingsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListFindingsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListFindingsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,7 +87,7 @@ namespace Model
      * <p>You can use this parameter to indicate the maximum number of items you want
      * in the response. The default value is 10. The maximum value is 500.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListFindingsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -106,7 +103,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

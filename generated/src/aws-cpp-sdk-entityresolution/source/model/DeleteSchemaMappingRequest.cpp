@@ -12,11 +12,6 @@ using namespace Aws::EntityResolution::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSchemaMappingRequest::DeleteSchemaMappingRequest() : 
-    m_schemaNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSchemaMappingRequest::SerializePayload() const
 {
   return {};

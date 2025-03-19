@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TimeSeriesTransformations::TimeSeriesTransformations() : 
-    m_fillingHasBeenSet(false),
-    m_aggregationHasBeenSet(false)
-{
-}
-
 TimeSeriesTransformations::TimeSeriesTransformations(JsonView jsonValue)
-  : TimeSeriesTransformations()
 {
   *this = jsonValue;
 }
@@ -47,7 +40,6 @@ TimeSeriesTransformations& TimeSeriesTransformations::operator =(JsonView jsonVa
     }
     m_fillingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Aggregation"))
   {
     Aws::Map<Aws::String, JsonView> aggregationJsonMap = jsonValue.GetObject("Aggregation").GetAllObjects();
@@ -57,7 +49,6 @@ TimeSeriesTransformations& TimeSeriesTransformations::operator =(JsonView jsonVa
     }
     m_aggregationHasBeenSet = true;
   }
-
   return *this;
 }
 

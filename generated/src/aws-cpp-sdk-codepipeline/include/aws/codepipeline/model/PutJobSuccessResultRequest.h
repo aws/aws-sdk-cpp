@@ -28,7 +28,7 @@ namespace Model
   class PutJobSuccessResultRequest : public CodePipelineRequest
   {
   public:
-    AWS_CODEPIPELINE_API PutJobSuccessResultRequest();
+    AWS_CODEPIPELINE_API PutJobSuccessResultRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * <p>The unique system-generated ID of the job that succeeded. This is the same ID
      * returned from <code>PollForJobs</code>.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline PutJobSuccessResultRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline PutJobSuccessResultRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline PutJobSuccessResultRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    PutJobSuccessResultRequest& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,12 @@ namespace Model
      * <p>The ID of the current revision of the artifact successfully worked on by the
      * job.</p>
      */
-    inline const CurrentRevision& GetCurrentRevision() const{ return m_currentRevision; }
+    inline const CurrentRevision& GetCurrentRevision() const { return m_currentRevision; }
     inline bool CurrentRevisionHasBeenSet() const { return m_currentRevisionHasBeenSet; }
-    inline void SetCurrentRevision(const CurrentRevision& value) { m_currentRevisionHasBeenSet = true; m_currentRevision = value; }
-    inline void SetCurrentRevision(CurrentRevision&& value) { m_currentRevisionHasBeenSet = true; m_currentRevision = std::move(value); }
-    inline PutJobSuccessResultRequest& WithCurrentRevision(const CurrentRevision& value) { SetCurrentRevision(value); return *this;}
-    inline PutJobSuccessResultRequest& WithCurrentRevision(CurrentRevision&& value) { SetCurrentRevision(std::move(value)); return *this;}
+    template<typename CurrentRevisionT = CurrentRevision>
+    void SetCurrentRevision(CurrentRevisionT&& value) { m_currentRevisionHasBeenSet = true; m_currentRevision = std::forward<CurrentRevisionT>(value); }
+    template<typename CurrentRevisionT = CurrentRevision>
+    PutJobSuccessResultRequest& WithCurrentRevision(CurrentRevisionT&& value) { SetCurrentRevision(std::forward<CurrentRevisionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +75,12 @@ namespace Model
      * return more information about the progress of the custom action. When the action
      * is complete, no continuation token should be supplied.</p>
      */
-    inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
+    inline const Aws::String& GetContinuationToken() const { return m_continuationToken; }
     inline bool ContinuationTokenHasBeenSet() const { return m_continuationTokenHasBeenSet; }
-    inline void SetContinuationToken(const Aws::String& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = value; }
-    inline void SetContinuationToken(Aws::String&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::move(value); }
-    inline void SetContinuationToken(const char* value) { m_continuationTokenHasBeenSet = true; m_continuationToken.assign(value); }
-    inline PutJobSuccessResultRequest& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
-    inline PutJobSuccessResultRequest& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
-    inline PutJobSuccessResultRequest& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
+    template<typename ContinuationTokenT = Aws::String>
+    void SetContinuationToken(ContinuationTokenT&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::forward<ContinuationTokenT>(value); }
+    template<typename ContinuationTokenT = Aws::String>
+    PutJobSuccessResultRequest& WithContinuationToken(ContinuationTokenT&& value) { SetContinuationToken(std::forward<ContinuationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,12 +88,12 @@ namespace Model
      * <p>The execution details of the successful job, such as the actions taken by the
      * job worker.</p>
      */
-    inline const ExecutionDetails& GetExecutionDetails() const{ return m_executionDetails; }
+    inline const ExecutionDetails& GetExecutionDetails() const { return m_executionDetails; }
     inline bool ExecutionDetailsHasBeenSet() const { return m_executionDetailsHasBeenSet; }
-    inline void SetExecutionDetails(const ExecutionDetails& value) { m_executionDetailsHasBeenSet = true; m_executionDetails = value; }
-    inline void SetExecutionDetails(ExecutionDetails&& value) { m_executionDetailsHasBeenSet = true; m_executionDetails = std::move(value); }
-    inline PutJobSuccessResultRequest& WithExecutionDetails(const ExecutionDetails& value) { SetExecutionDetails(value); return *this;}
-    inline PutJobSuccessResultRequest& WithExecutionDetails(ExecutionDetails&& value) { SetExecutionDetails(std::move(value)); return *this;}
+    template<typename ExecutionDetailsT = ExecutionDetails>
+    void SetExecutionDetails(ExecutionDetailsT&& value) { m_executionDetailsHasBeenSet = true; m_executionDetails = std::forward<ExecutionDetailsT>(value); }
+    template<typename ExecutionDetailsT = ExecutionDetails>
+    PutJobSuccessResultRequest& WithExecutionDetails(ExecutionDetailsT&& value) { SetExecutionDetails(std::forward<ExecutionDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,19 +102,16 @@ namespace Model
      * to a downstream action configuration. <code>outputVariables</code> can be
      * included only when there is no continuation token on the request.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetOutputVariables() const{ return m_outputVariables; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetOutputVariables() const { return m_outputVariables; }
     inline bool OutputVariablesHasBeenSet() const { return m_outputVariablesHasBeenSet; }
-    inline void SetOutputVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_outputVariablesHasBeenSet = true; m_outputVariables = value; }
-    inline void SetOutputVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_outputVariablesHasBeenSet = true; m_outputVariables = std::move(value); }
-    inline PutJobSuccessResultRequest& WithOutputVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetOutputVariables(value); return *this;}
-    inline PutJobSuccessResultRequest& WithOutputVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetOutputVariables(std::move(value)); return *this;}
-    inline PutJobSuccessResultRequest& AddOutputVariables(const Aws::String& key, const Aws::String& value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(key, value); return *this; }
-    inline PutJobSuccessResultRequest& AddOutputVariables(Aws::String&& key, const Aws::String& value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(std::move(key), value); return *this; }
-    inline PutJobSuccessResultRequest& AddOutputVariables(const Aws::String& key, Aws::String&& value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(key, std::move(value)); return *this; }
-    inline PutJobSuccessResultRequest& AddOutputVariables(Aws::String&& key, Aws::String&& value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(std::move(key), std::move(value)); return *this; }
-    inline PutJobSuccessResultRequest& AddOutputVariables(const char* key, Aws::String&& value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(key, std::move(value)); return *this; }
-    inline PutJobSuccessResultRequest& AddOutputVariables(Aws::String&& key, const char* value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(std::move(key), value); return *this; }
-    inline PutJobSuccessResultRequest& AddOutputVariables(const char* key, const char* value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(key, value); return *this; }
+    template<typename OutputVariablesT = Aws::Map<Aws::String, Aws::String>>
+    void SetOutputVariables(OutputVariablesT&& value) { m_outputVariablesHasBeenSet = true; m_outputVariables = std::forward<OutputVariablesT>(value); }
+    template<typename OutputVariablesT = Aws::Map<Aws::String, Aws::String>>
+    PutJobSuccessResultRequest& WithOutputVariables(OutputVariablesT&& value) { SetOutputVariables(std::forward<OutputVariablesT>(value)); return *this;}
+    template<typename OutputVariablesKeyT = Aws::String, typename OutputVariablesValueT = Aws::String>
+    PutJobSuccessResultRequest& AddOutputVariables(OutputVariablesKeyT&& key, OutputVariablesValueT&& value) {
+      m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(std::forward<OutputVariablesKeyT>(key), std::forward<OutputVariablesValueT>(value)); return *this;
+    }
     ///@}
   private:
 

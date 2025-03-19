@@ -12,17 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEventBridgeRuleTemplateRequest::UpdateEventBridgeRuleTemplateRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_eventTargetsHasBeenSet(false),
-    m_eventType(EventBridgeRuleTemplateEventType::NOT_SET),
-    m_eventTypeHasBeenSet(false),
-    m_groupIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEventBridgeRuleTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

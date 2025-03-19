@@ -18,13 +18,7 @@ namespace tnb
 namespace Model
 {
 
-LcmOperationInfo::LcmOperationInfo() : 
-    m_nsLcmOpOccIdHasBeenSet(false)
-{
-}
-
 LcmOperationInfo::LcmOperationInfo(JsonView jsonValue)
-  : LcmOperationInfo()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LcmOperationInfo& LcmOperationInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("nsLcmOpOccId"))
   {
     m_nsLcmOpOccId = jsonValue.GetString("nsLcmOpOccId");
-
     m_nsLcmOpOccIdHasBeenSet = true;
   }
-
   return *this;
 }
 

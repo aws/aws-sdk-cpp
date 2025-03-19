@@ -12,14 +12,6 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeFileCachesRequest::DescribeFileCachesRequest() : 
-    m_fileCacheIdsHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFileCachesRequest::SerializePayload() const
 {
   JsonValue payload;

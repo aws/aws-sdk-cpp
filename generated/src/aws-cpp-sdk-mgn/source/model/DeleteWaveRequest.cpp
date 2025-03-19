@@ -12,12 +12,6 @@ using namespace Aws::mgn::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteWaveRequest::DeleteWaveRequest() : 
-    m_accountIDHasBeenSet(false),
-    m_waveIDHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWaveRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -27,7 +27,7 @@ namespace Model
   class StartNotebookExecutionResult
   {
   public:
-    AWS_EMR_API StartNotebookExecutionResult();
+    AWS_EMR_API StartNotebookExecutionResult() = default;
     AWS_EMR_API StartNotebookExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EMR_API StartNotebookExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The unique identifier of the notebook execution.</p>
      */
-    inline const Aws::String& GetNotebookExecutionId() const{ return m_notebookExecutionId; }
-    inline void SetNotebookExecutionId(const Aws::String& value) { m_notebookExecutionId = value; }
-    inline void SetNotebookExecutionId(Aws::String&& value) { m_notebookExecutionId = std::move(value); }
-    inline void SetNotebookExecutionId(const char* value) { m_notebookExecutionId.assign(value); }
-    inline StartNotebookExecutionResult& WithNotebookExecutionId(const Aws::String& value) { SetNotebookExecutionId(value); return *this;}
-    inline StartNotebookExecutionResult& WithNotebookExecutionId(Aws::String&& value) { SetNotebookExecutionId(std::move(value)); return *this;}
-    inline StartNotebookExecutionResult& WithNotebookExecutionId(const char* value) { SetNotebookExecutionId(value); return *this;}
+    inline const Aws::String& GetNotebookExecutionId() const { return m_notebookExecutionId; }
+    template<typename NotebookExecutionIdT = Aws::String>
+    void SetNotebookExecutionId(NotebookExecutionIdT&& value) { m_notebookExecutionIdHasBeenSet = true; m_notebookExecutionId = std::forward<NotebookExecutionIdT>(value); }
+    template<typename NotebookExecutionIdT = Aws::String>
+    StartNotebookExecutionResult& WithNotebookExecutionId(NotebookExecutionIdT&& value) { SetNotebookExecutionId(std::forward<NotebookExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartNotebookExecutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartNotebookExecutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartNotebookExecutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartNotebookExecutionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_notebookExecutionId;
+    bool m_notebookExecutionIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

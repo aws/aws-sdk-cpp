@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRedshiftClusterClusterSecurityGroup::AwsRedshiftClusterClusterSecurityGroup() : 
-    m_clusterSecurityGroupNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 AwsRedshiftClusterClusterSecurityGroup::AwsRedshiftClusterClusterSecurityGroup(JsonView jsonValue)
-  : AwsRedshiftClusterClusterSecurityGroup()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsRedshiftClusterClusterSecurityGroup& AwsRedshiftClusterClusterSecurityGroup::
   if(jsonValue.ValueExists("ClusterSecurityGroupName"))
   {
     m_clusterSecurityGroupName = jsonValue.GetString("ClusterSecurityGroupName");
-
     m_clusterSecurityGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,16 +21,7 @@ namespace Lambda
 namespace Model
 {
 
-InvokeWithResponseStreamInitialResponse::InvokeWithResponseStreamInitialResponse() : 
-    m_statusCode(0),
-    m_statusCodeHasBeenSet(false),
-    m_executedVersionHasBeenSet(false),
-    m_responseStreamContentTypeHasBeenSet(false)
-{
-}
-
 InvokeWithResponseStreamInitialResponse::InvokeWithResponseStreamInitialResponse(JsonView jsonValue)
-  : InvokeWithResponseStreamInitialResponse()
 {
   *this = jsonValue;
 }
@@ -47,12 +38,14 @@ InvokeWithResponseStreamInitialResponse::InvokeWithResponseStreamInitialResponse
   if(executedVersionIter != headers.end())
   {
     m_executedVersion = executedVersionIter->second;
+    m_executedVersionHasBeenSet = true;
   }
 
   const auto& responseStreamContentTypeIter = headers.find("content-type");
   if(responseStreamContentTypeIter != headers.end())
   {
     m_responseStreamContentType = responseStreamContentTypeIter->second;
+    m_responseStreamContentTypeHasBeenSet = true;
   }
 
 }

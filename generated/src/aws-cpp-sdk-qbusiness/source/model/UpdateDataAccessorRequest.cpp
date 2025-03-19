@@ -12,14 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDataAccessorRequest::UpdateDataAccessorRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_dataAccessorIdHasBeenSet(false),
-    m_actionConfigurationsHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDataAccessorRequest::SerializePayload() const
 {
   JsonValue payload;

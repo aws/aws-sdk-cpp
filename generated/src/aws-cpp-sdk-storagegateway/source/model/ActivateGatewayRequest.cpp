@@ -12,18 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ActivateGatewayRequest::ActivateGatewayRequest() : 
-    m_activationKeyHasBeenSet(false),
-    m_gatewayNameHasBeenSet(false),
-    m_gatewayTimezoneHasBeenSet(false),
-    m_gatewayRegionHasBeenSet(false),
-    m_gatewayTypeHasBeenSet(false),
-    m_tapeDriveTypeHasBeenSet(false),
-    m_mediumChangerTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String ActivateGatewayRequest::SerializePayload() const
 {
   JsonValue payload;

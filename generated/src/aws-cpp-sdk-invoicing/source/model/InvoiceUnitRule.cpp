@@ -18,13 +18,7 @@ namespace Invoicing
 namespace Model
 {
 
-InvoiceUnitRule::InvoiceUnitRule() : 
-    m_linkedAccountsHasBeenSet(false)
-{
-}
-
 InvoiceUnitRule::InvoiceUnitRule(JsonView jsonValue)
-  : InvoiceUnitRule()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ InvoiceUnitRule& InvoiceUnitRule::operator =(JsonView jsonValue)
     }
     m_linkedAccountsHasBeenSet = true;
   }
-
   return *this;
 }
 

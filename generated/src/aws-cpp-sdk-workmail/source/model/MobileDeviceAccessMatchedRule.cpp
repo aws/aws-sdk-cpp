@@ -18,14 +18,7 @@ namespace WorkMail
 namespace Model
 {
 
-MobileDeviceAccessMatchedRule::MobileDeviceAccessMatchedRule() : 
-    m_mobileDeviceAccessRuleIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 MobileDeviceAccessMatchedRule::MobileDeviceAccessMatchedRule(JsonView jsonValue)
-  : MobileDeviceAccessMatchedRule()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MobileDeviceAccessMatchedRule& MobileDeviceAccessMatchedRule::operator =(JsonVie
   if(jsonValue.ValueExists("MobileDeviceAccessRuleId"))
   {
     m_mobileDeviceAccessRuleId = jsonValue.GetString("MobileDeviceAccessRuleId");
-
     m_mobileDeviceAccessRuleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

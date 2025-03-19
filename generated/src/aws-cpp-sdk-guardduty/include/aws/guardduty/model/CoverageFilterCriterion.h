@@ -33,7 +33,7 @@ namespace Model
   class CoverageFilterCriterion
   {
   public:
-    AWS_GUARDDUTY_API CoverageFilterCriterion();
+    AWS_GUARDDUTY_API CoverageFilterCriterion() = default;
     AWS_GUARDDUTY_API CoverageFilterCriterion(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API CoverageFilterCriterion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,26 @@ namespace Model
      * enum value <code>CLUSTER_NAME</code> with <code>EKS_CLUSTER_NAME</code>.
      * <code>CLUSTER_NAME</code> has been deprecated.</p> 
      */
-    inline const CoverageFilterCriterionKey& GetCriterionKey() const{ return m_criterionKey; }
+    inline CoverageFilterCriterionKey GetCriterionKey() const { return m_criterionKey; }
     inline bool CriterionKeyHasBeenSet() const { return m_criterionKeyHasBeenSet; }
-    inline void SetCriterionKey(const CoverageFilterCriterionKey& value) { m_criterionKeyHasBeenSet = true; m_criterionKey = value; }
-    inline void SetCriterionKey(CoverageFilterCriterionKey&& value) { m_criterionKeyHasBeenSet = true; m_criterionKey = std::move(value); }
-    inline CoverageFilterCriterion& WithCriterionKey(const CoverageFilterCriterionKey& value) { SetCriterionKey(value); return *this;}
-    inline CoverageFilterCriterion& WithCriterionKey(CoverageFilterCriterionKey&& value) { SetCriterionKey(std::move(value)); return *this;}
+    inline void SetCriterionKey(CoverageFilterCriterionKey value) { m_criterionKeyHasBeenSet = true; m_criterionKey = value; }
+    inline CoverageFilterCriterion& WithCriterionKey(CoverageFilterCriterionKey value) { SetCriterionKey(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains information about the condition.</p>
      */
-    inline const CoverageFilterCondition& GetFilterCondition() const{ return m_filterCondition; }
+    inline const CoverageFilterCondition& GetFilterCondition() const { return m_filterCondition; }
     inline bool FilterConditionHasBeenSet() const { return m_filterConditionHasBeenSet; }
-    inline void SetFilterCondition(const CoverageFilterCondition& value) { m_filterConditionHasBeenSet = true; m_filterCondition = value; }
-    inline void SetFilterCondition(CoverageFilterCondition&& value) { m_filterConditionHasBeenSet = true; m_filterCondition = std::move(value); }
-    inline CoverageFilterCriterion& WithFilterCondition(const CoverageFilterCondition& value) { SetFilterCondition(value); return *this;}
-    inline CoverageFilterCriterion& WithFilterCondition(CoverageFilterCondition&& value) { SetFilterCondition(std::move(value)); return *this;}
+    template<typename FilterConditionT = CoverageFilterCondition>
+    void SetFilterCondition(FilterConditionT&& value) { m_filterConditionHasBeenSet = true; m_filterCondition = std::forward<FilterConditionT>(value); }
+    template<typename FilterConditionT = CoverageFilterCondition>
+    CoverageFilterCriterion& WithFilterCondition(FilterConditionT&& value) { SetFilterCondition(std::forward<FilterConditionT>(value)); return *this;}
     ///@}
   private:
 
-    CoverageFilterCriterionKey m_criterionKey;
+    CoverageFilterCriterionKey m_criterionKey{CoverageFilterCriterionKey::NOT_SET};
     bool m_criterionKeyHasBeenSet = false;
 
     CoverageFilterCondition m_filterCondition;

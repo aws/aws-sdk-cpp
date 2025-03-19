@@ -12,11 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ClaimDeviceRequest::ClaimDeviceRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String ClaimDeviceRequest::SerializePayload() const
 {
   JsonValue payload;

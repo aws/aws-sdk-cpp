@@ -47,7 +47,7 @@ namespace Model
   class RunInstancesRequest : public EC2Request
   {
   public:
-    AWS_EC2_API RunInstancesRequest();
+    AWS_EC2_API RunInstancesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -69,14 +69,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html">Block
      * device mappings</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
-    inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
+    inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const { return m_blockDeviceMappings; }
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
-    inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
-    inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
-    inline RunInstancesRequest& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
-    inline RunInstancesRequest& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
-    inline RunInstancesRequest& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
-    inline RunInstancesRequest& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
+    template<typename BlockDeviceMappingsT = Aws::Vector<BlockDeviceMapping>>
+    void SetBlockDeviceMappings(BlockDeviceMappingsT&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::forward<BlockDeviceMappingsT>(value); }
+    template<typename BlockDeviceMappingsT = Aws::Vector<BlockDeviceMapping>>
+    RunInstancesRequest& WithBlockDeviceMappings(BlockDeviceMappingsT&& value) { SetBlockDeviceMappings(std::forward<BlockDeviceMappingsT>(value)); return *this;}
+    template<typename BlockDeviceMappingsT = BlockDeviceMapping>
+    RunInstancesRequest& AddBlockDeviceMappings(BlockDeviceMappingsT&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.emplace_back(std::forward<BlockDeviceMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -84,14 +84,12 @@ namespace Model
      * <p>The ID of the AMI. An AMI ID is required to launch an instance and must be
      * specified here or in a launch template.</p>
      */
-    inline const Aws::String& GetImageId() const{ return m_imageId; }
+    inline const Aws::String& GetImageId() const { return m_imageId; }
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
-    inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
-    inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
-    inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
-    inline RunInstancesRequest& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
-    inline RunInstancesRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
-    inline RunInstancesRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
+    template<typename ImageIdT = Aws::String>
+    void SetImageId(ImageIdT&& value) { m_imageIdHasBeenSet = true; m_imageId = std::forward<ImageIdT>(value); }
+    template<typename ImageIdT = Aws::String>
+    RunInstancesRequest& WithImageId(ImageIdT&& value) { SetImageId(std::forward<ImageIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,12 +98,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Amazon
      * EC2 instance types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
-    inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline InstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline RunInstancesRequest& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
-    inline RunInstancesRequest& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(InstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline RunInstancesRequest& WithInstanceType(InstanceType value) { SetInstanceType(value); return *this;}
     ///@}
 
     ///@{
@@ -117,7 +113,7 @@ namespace Model
      * instances to launch.</p> <p>You cannot specify this option and the network
      * interfaces option in the same request.</p>
      */
-    inline int GetIpv6AddressCount() const{ return m_ipv6AddressCount; }
+    inline int GetIpv6AddressCount() const { return m_ipv6AddressCount; }
     inline bool Ipv6AddressCountHasBeenSet() const { return m_ipv6AddressCountHasBeenSet; }
     inline void SetIpv6AddressCount(int value) { m_ipv6AddressCountHasBeenSet = true; m_ipv6AddressCount = value; }
     inline RunInstancesRequest& WithIpv6AddressCount(int value) { SetIpv6AddressCount(value); return *this;}
@@ -131,14 +127,14 @@ namespace Model
      * you've specified a minimum number of instances to launch.</p> <p>You cannot
      * specify this option and the network interfaces option in the same request.</p>
      */
-    inline const Aws::Vector<InstanceIpv6Address>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
+    inline const Aws::Vector<InstanceIpv6Address>& GetIpv6Addresses() const { return m_ipv6Addresses; }
     inline bool Ipv6AddressesHasBeenSet() const { return m_ipv6AddressesHasBeenSet; }
-    inline void SetIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = value; }
-    inline void SetIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::move(value); }
-    inline RunInstancesRequest& WithIpv6Addresses(const Aws::Vector<InstanceIpv6Address>& value) { SetIpv6Addresses(value); return *this;}
-    inline RunInstancesRequest& WithIpv6Addresses(Aws::Vector<InstanceIpv6Address>&& value) { SetIpv6Addresses(std::move(value)); return *this;}
-    inline RunInstancesRequest& AddIpv6Addresses(const InstanceIpv6Address& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(value); return *this; }
-    inline RunInstancesRequest& AddIpv6Addresses(InstanceIpv6Address&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.push_back(std::move(value)); return *this; }
+    template<typename Ipv6AddressesT = Aws::Vector<InstanceIpv6Address>>
+    void SetIpv6Addresses(Ipv6AddressesT&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses = std::forward<Ipv6AddressesT>(value); }
+    template<typename Ipv6AddressesT = Aws::Vector<InstanceIpv6Address>>
+    RunInstancesRequest& WithIpv6Addresses(Ipv6AddressesT&& value) { SetIpv6Addresses(std::forward<Ipv6AddressesT>(value)); return *this;}
+    template<typename Ipv6AddressesT = InstanceIpv6Address>
+    RunInstancesRequest& AddIpv6Addresses(Ipv6AddressesT&& value) { m_ipv6AddressesHasBeenSet = true; m_ipv6Addresses.emplace_back(std::forward<Ipv6AddressesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -148,14 +144,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">PV-GRUB</a>
      * in the <i>Amazon EC2 User Guide</i>.</p> 
      */
-    inline const Aws::String& GetKernelId() const{ return m_kernelId; }
+    inline const Aws::String& GetKernelId() const { return m_kernelId; }
     inline bool KernelIdHasBeenSet() const { return m_kernelIdHasBeenSet; }
-    inline void SetKernelId(const Aws::String& value) { m_kernelIdHasBeenSet = true; m_kernelId = value; }
-    inline void SetKernelId(Aws::String&& value) { m_kernelIdHasBeenSet = true; m_kernelId = std::move(value); }
-    inline void SetKernelId(const char* value) { m_kernelIdHasBeenSet = true; m_kernelId.assign(value); }
-    inline RunInstancesRequest& WithKernelId(const Aws::String& value) { SetKernelId(value); return *this;}
-    inline RunInstancesRequest& WithKernelId(Aws::String&& value) { SetKernelId(std::move(value)); return *this;}
-    inline RunInstancesRequest& WithKernelId(const char* value) { SetKernelId(value); return *this;}
+    template<typename KernelIdT = Aws::String>
+    void SetKernelId(KernelIdT&& value) { m_kernelIdHasBeenSet = true; m_kernelId = std::forward<KernelIdT>(value); }
+    template<typename KernelIdT = Aws::String>
+    RunInstancesRequest& WithKernelId(KernelIdT&& value) { SetKernelId(std::forward<KernelIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -168,14 +162,12 @@ namespace Model
      * instance unless you choose an AMI that is configured to allow users another way
      * to log in.</p> 
      */
-    inline const Aws::String& GetKeyName() const{ return m_keyName; }
+    inline const Aws::String& GetKeyName() const { return m_keyName; }
     inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
-    inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
-    inline void SetKeyName(Aws::String&& value) { m_keyNameHasBeenSet = true; m_keyName = std::move(value); }
-    inline void SetKeyName(const char* value) { m_keyNameHasBeenSet = true; m_keyName.assign(value); }
-    inline RunInstancesRequest& WithKeyName(const Aws::String& value) { SetKeyName(value); return *this;}
-    inline RunInstancesRequest& WithKeyName(Aws::String&& value) { SetKeyName(std::move(value)); return *this;}
-    inline RunInstancesRequest& WithKeyName(const char* value) { SetKeyName(value); return *this;}
+    template<typename KeyNameT = Aws::String>
+    void SetKeyName(KeyNameT&& value) { m_keyNameHasBeenSet = true; m_keyName = std::forward<KeyNameT>(value); }
+    template<typename KeyNameT = Aws::String>
+    RunInstancesRequest& WithKeyName(KeyNameT&& value) { SetKeyName(std::forward<KeyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -188,7 +180,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-instance-quotas.html">Amazon
      * EC2 instance type quotas</a>.</p>
      */
-    inline int GetMaxCount() const{ return m_maxCount; }
+    inline int GetMaxCount() const { return m_maxCount; }
     inline bool MaxCountHasBeenSet() const { return m_maxCountHasBeenSet; }
     inline void SetMaxCount(int value) { m_maxCountHasBeenSet = true; m_maxCount = value; }
     inline RunInstancesRequest& WithMaxCount(int value) { SetMaxCount(value); return *this;}
@@ -204,7 +196,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/ec2/latest/instancetypes/ec2-instance-quotas.html">Amazon
      * EC2 instance type quotas</a>.</p>
      */
-    inline int GetMinCount() const{ return m_minCount; }
+    inline int GetMinCount() const { return m_minCount; }
     inline bool MinCountHasBeenSet() const { return m_minCountHasBeenSet; }
     inline void SetMinCount(int value) { m_minCountHasBeenSet = true; m_minCount = value; }
     inline RunInstancesRequest& WithMinCount(int value) { SetMinCount(value); return *this;}
@@ -214,24 +206,24 @@ namespace Model
     /**
      * <p>Specifies whether detailed monitoring is enabled for the instance.</p>
      */
-    inline const RunInstancesMonitoringEnabled& GetMonitoring() const{ return m_monitoring; }
+    inline const RunInstancesMonitoringEnabled& GetMonitoring() const { return m_monitoring; }
     inline bool MonitoringHasBeenSet() const { return m_monitoringHasBeenSet; }
-    inline void SetMonitoring(const RunInstancesMonitoringEnabled& value) { m_monitoringHasBeenSet = true; m_monitoring = value; }
-    inline void SetMonitoring(RunInstancesMonitoringEnabled&& value) { m_monitoringHasBeenSet = true; m_monitoring = std::move(value); }
-    inline RunInstancesRequest& WithMonitoring(const RunInstancesMonitoringEnabled& value) { SetMonitoring(value); return *this;}
-    inline RunInstancesRequest& WithMonitoring(RunInstancesMonitoringEnabled&& value) { SetMonitoring(std::move(value)); return *this;}
+    template<typename MonitoringT = RunInstancesMonitoringEnabled>
+    void SetMonitoring(MonitoringT&& value) { m_monitoringHasBeenSet = true; m_monitoring = std::forward<MonitoringT>(value); }
+    template<typename MonitoringT = RunInstancesMonitoringEnabled>
+    RunInstancesRequest& WithMonitoring(MonitoringT&& value) { SetMonitoring(std::forward<MonitoringT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The placement for the instance.</p>
      */
-    inline const Placement& GetPlacement() const{ return m_placement; }
+    inline const Placement& GetPlacement() const { return m_placement; }
     inline bool PlacementHasBeenSet() const { return m_placementHasBeenSet; }
-    inline void SetPlacement(const Placement& value) { m_placementHasBeenSet = true; m_placement = value; }
-    inline void SetPlacement(Placement&& value) { m_placementHasBeenSet = true; m_placement = std::move(value); }
-    inline RunInstancesRequest& WithPlacement(const Placement& value) { SetPlacement(value); return *this;}
-    inline RunInstancesRequest& WithPlacement(Placement&& value) { SetPlacement(std::move(value)); return *this;}
+    template<typename PlacementT = Placement>
+    void SetPlacement(PlacementT&& value) { m_placementHasBeenSet = true; m_placement = std::forward<PlacementT>(value); }
+    template<typename PlacementT = Placement>
+    RunInstancesRequest& WithPlacement(PlacementT&& value) { SetPlacement(std::forward<PlacementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -245,14 +237,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedkernels.html">PV-GRUB</a>
      * in the <i>Amazon EC2 User Guide</i>.</p> 
      */
-    inline const Aws::String& GetRamdiskId() const{ return m_ramdiskId; }
+    inline const Aws::String& GetRamdiskId() const { return m_ramdiskId; }
     inline bool RamdiskIdHasBeenSet() const { return m_ramdiskIdHasBeenSet; }
-    inline void SetRamdiskId(const Aws::String& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = value; }
-    inline void SetRamdiskId(Aws::String&& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = std::move(value); }
-    inline void SetRamdiskId(const char* value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId.assign(value); }
-    inline RunInstancesRequest& WithRamdiskId(const Aws::String& value) { SetRamdiskId(value); return *this;}
-    inline RunInstancesRequest& WithRamdiskId(Aws::String&& value) { SetRamdiskId(std::move(value)); return *this;}
-    inline RunInstancesRequest& WithRamdiskId(const char* value) { SetRamdiskId(value); return *this;}
+    template<typename RamdiskIdT = Aws::String>
+    void SetRamdiskId(RamdiskIdT&& value) { m_ramdiskIdHasBeenSet = true; m_ramdiskId = std::forward<RamdiskIdT>(value); }
+    template<typename RamdiskIdT = Aws::String>
+    RunInstancesRequest& WithRamdiskId(RamdiskIdT&& value) { SetRamdiskId(std::forward<RamdiskIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -262,15 +252,14 @@ namespace Model
      * <p>If you specify a network interface, you must specify any security groups as
      * part of the network interface instead of using this parameter.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-    inline RunInstancesRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline RunInstancesRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline RunInstancesRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-    inline RunInstancesRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline RunInstancesRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    RunInstancesRequest& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    RunInstancesRequest& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -280,15 +269,14 @@ namespace Model
      * interface instead of using this parameter.</p> <p>Default: Amazon EC2 uses the
      * default security group.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroups() const { return m_securityGroups; }
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
-    inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
-    inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
-    inline RunInstancesRequest& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
-    inline RunInstancesRequest& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
-    inline RunInstancesRequest& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
-    inline RunInstancesRequest& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
-    inline RunInstancesRequest& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
+    template<typename SecurityGroupsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroups(SecurityGroupsT&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::forward<SecurityGroupsT>(value); }
+    template<typename SecurityGroupsT = Aws::Vector<Aws::String>>
+    RunInstancesRequest& WithSecurityGroups(SecurityGroupsT&& value) { SetSecurityGroups(std::forward<SecurityGroupsT>(value)); return *this;}
+    template<typename SecurityGroupsT = Aws::String>
+    RunInstancesRequest& AddSecurityGroups(SecurityGroupsT&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.emplace_back(std::forward<SecurityGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -297,14 +285,12 @@ namespace Model
      * network interface, you must specify any subnets as part of the network interface
      * instead of using this parameter.</p>
      */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+    inline const Aws::String& GetSubnetId() const { return m_subnetId; }
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-    inline RunInstancesRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-    inline RunInstancesRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-    inline RunInstancesRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    template<typename SubnetIdT = Aws::String>
+    void SetSubnetId(SubnetIdT&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::forward<SubnetIdT>(value); }
+    template<typename SubnetIdT = Aws::String>
+    RunInstancesRequest& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -315,14 +301,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instancedata-add-user-data.html">Work
      * with instance user data</a>.</p>
      */
-    inline const Aws::String& GetUserData() const{ return m_userData; }
+    inline const Aws::String& GetUserData() const { return m_userData; }
     inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
-    inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
-    inline void SetUserData(Aws::String&& value) { m_userDataHasBeenSet = true; m_userData = std::move(value); }
-    inline void SetUserData(const char* value) { m_userDataHasBeenSet = true; m_userData.assign(value); }
-    inline RunInstancesRequest& WithUserData(const Aws::String& value) { SetUserData(value); return *this;}
-    inline RunInstancesRequest& WithUserData(Aws::String&& value) { SetUserData(std::move(value)); return *this;}
-    inline RunInstancesRequest& WithUserData(const char* value) { SetUserData(value); return *this;}
+    template<typename UserDataT = Aws::String>
+    void SetUserData(UserDataT&& value) { m_userDataHasBeenSet = true; m_userData = std::forward<UserDataT>(value); }
+    template<typename UserDataT = Aws::String>
+    RunInstancesRequest& WithUserData(UserDataT&& value) { SetUserData(std::forward<UserDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -330,14 +314,14 @@ namespace Model
      * <p>An elastic GPU to associate with the instance.</p>  <p>Amazon Elastic
      * Graphics reached end of life on January 8, 2024.</p> 
      */
-    inline const Aws::Vector<ElasticGpuSpecification>& GetElasticGpuSpecification() const{ return m_elasticGpuSpecification; }
+    inline const Aws::Vector<ElasticGpuSpecification>& GetElasticGpuSpecification() const { return m_elasticGpuSpecification; }
     inline bool ElasticGpuSpecificationHasBeenSet() const { return m_elasticGpuSpecificationHasBeenSet; }
-    inline void SetElasticGpuSpecification(const Aws::Vector<ElasticGpuSpecification>& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification = value; }
-    inline void SetElasticGpuSpecification(Aws::Vector<ElasticGpuSpecification>&& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification = std::move(value); }
-    inline RunInstancesRequest& WithElasticGpuSpecification(const Aws::Vector<ElasticGpuSpecification>& value) { SetElasticGpuSpecification(value); return *this;}
-    inline RunInstancesRequest& WithElasticGpuSpecification(Aws::Vector<ElasticGpuSpecification>&& value) { SetElasticGpuSpecification(std::move(value)); return *this;}
-    inline RunInstancesRequest& AddElasticGpuSpecification(const ElasticGpuSpecification& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification.push_back(value); return *this; }
-    inline RunInstancesRequest& AddElasticGpuSpecification(ElasticGpuSpecification&& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification.push_back(std::move(value)); return *this; }
+    template<typename ElasticGpuSpecificationT = Aws::Vector<ElasticGpuSpecification>>
+    void SetElasticGpuSpecification(ElasticGpuSpecificationT&& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification = std::forward<ElasticGpuSpecificationT>(value); }
+    template<typename ElasticGpuSpecificationT = Aws::Vector<ElasticGpuSpecification>>
+    RunInstancesRequest& WithElasticGpuSpecification(ElasticGpuSpecificationT&& value) { SetElasticGpuSpecification(std::forward<ElasticGpuSpecificationT>(value)); return *this;}
+    template<typename ElasticGpuSpecificationT = ElasticGpuSpecification>
+    RunInstancesRequest& AddElasticGpuSpecification(ElasticGpuSpecificationT&& value) { m_elasticGpuSpecificationHasBeenSet = true; m_elasticGpuSpecification.emplace_back(std::forward<ElasticGpuSpecificationT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -345,14 +329,14 @@ namespace Model
      * <p>An elastic inference accelerator to associate with the instance.</p> 
      * <p>Amazon Elastic Inference is no longer available.</p> 
      */
-    inline const Aws::Vector<ElasticInferenceAccelerator>& GetElasticInferenceAccelerators() const{ return m_elasticInferenceAccelerators; }
+    inline const Aws::Vector<ElasticInferenceAccelerator>& GetElasticInferenceAccelerators() const { return m_elasticInferenceAccelerators; }
     inline bool ElasticInferenceAcceleratorsHasBeenSet() const { return m_elasticInferenceAcceleratorsHasBeenSet; }
-    inline void SetElasticInferenceAccelerators(const Aws::Vector<ElasticInferenceAccelerator>& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators = value; }
-    inline void SetElasticInferenceAccelerators(Aws::Vector<ElasticInferenceAccelerator>&& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators = std::move(value); }
-    inline RunInstancesRequest& WithElasticInferenceAccelerators(const Aws::Vector<ElasticInferenceAccelerator>& value) { SetElasticInferenceAccelerators(value); return *this;}
-    inline RunInstancesRequest& WithElasticInferenceAccelerators(Aws::Vector<ElasticInferenceAccelerator>&& value) { SetElasticInferenceAccelerators(std::move(value)); return *this;}
-    inline RunInstancesRequest& AddElasticInferenceAccelerators(const ElasticInferenceAccelerator& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators.push_back(value); return *this; }
-    inline RunInstancesRequest& AddElasticInferenceAccelerators(ElasticInferenceAccelerator&& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators.push_back(std::move(value)); return *this; }
+    template<typename ElasticInferenceAcceleratorsT = Aws::Vector<ElasticInferenceAccelerator>>
+    void SetElasticInferenceAccelerators(ElasticInferenceAcceleratorsT&& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators = std::forward<ElasticInferenceAcceleratorsT>(value); }
+    template<typename ElasticInferenceAcceleratorsT = Aws::Vector<ElasticInferenceAccelerator>>
+    RunInstancesRequest& WithElasticInferenceAccelerators(ElasticInferenceAcceleratorsT&& value) { SetElasticInferenceAccelerators(std::forward<ElasticInferenceAcceleratorsT>(value)); return *this;}
+    template<typename ElasticInferenceAcceleratorsT = ElasticInferenceAccelerator>
+    RunInstancesRequest& AddElasticInferenceAccelerators(ElasticInferenceAcceleratorsT&& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators.emplace_back(std::forward<ElasticInferenceAcceleratorsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -364,14 +348,14 @@ namespace Model
      * resource after it has been created, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.</p>
      */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline RunInstancesRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline RunInstancesRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline RunInstancesRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline RunInstancesRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    void SetTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::forward<TagSpecificationsT>(value); }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    RunInstancesRequest& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
+    template<typename TagSpecificationsT = TagSpecification>
+    RunInstancesRequest& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -380,12 +364,12 @@ namespace Model
      * instance overwrite the corresponding parameters included in the launch
      * template.</p>
      */
-    inline const LaunchTemplateSpecification& GetLaunchTemplate() const{ return m_launchTemplate; }
+    inline const LaunchTemplateSpecification& GetLaunchTemplate() const { return m_launchTemplate; }
     inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
-    inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
-    inline void SetLaunchTemplate(LaunchTemplateSpecification&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::move(value); }
-    inline RunInstancesRequest& WithLaunchTemplate(const LaunchTemplateSpecification& value) { SetLaunchTemplate(value); return *this;}
-    inline RunInstancesRequest& WithLaunchTemplate(LaunchTemplateSpecification&& value) { SetLaunchTemplate(std::move(value)); return *this;}
+    template<typename LaunchTemplateT = LaunchTemplateSpecification>
+    void SetLaunchTemplate(LaunchTemplateT&& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = std::forward<LaunchTemplateT>(value); }
+    template<typename LaunchTemplateT = LaunchTemplateSpecification>
+    RunInstancesRequest& WithLaunchTemplate(LaunchTemplateT&& value) { SetLaunchTemplate(std::forward<LaunchTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -395,12 +379,12 @@ namespace Model
      * <b>InstanceInterruptionBehavior</b> is set to either <code>hibernate</code> or
      * <code>stop</code>.</p>
      */
-    inline const InstanceMarketOptionsRequest& GetInstanceMarketOptions() const{ return m_instanceMarketOptions; }
+    inline const InstanceMarketOptionsRequest& GetInstanceMarketOptions() const { return m_instanceMarketOptions; }
     inline bool InstanceMarketOptionsHasBeenSet() const { return m_instanceMarketOptionsHasBeenSet; }
-    inline void SetInstanceMarketOptions(const InstanceMarketOptionsRequest& value) { m_instanceMarketOptionsHasBeenSet = true; m_instanceMarketOptions = value; }
-    inline void SetInstanceMarketOptions(InstanceMarketOptionsRequest&& value) { m_instanceMarketOptionsHasBeenSet = true; m_instanceMarketOptions = std::move(value); }
-    inline RunInstancesRequest& WithInstanceMarketOptions(const InstanceMarketOptionsRequest& value) { SetInstanceMarketOptions(value); return *this;}
-    inline RunInstancesRequest& WithInstanceMarketOptions(InstanceMarketOptionsRequest&& value) { SetInstanceMarketOptions(std::move(value)); return *this;}
+    template<typename InstanceMarketOptionsT = InstanceMarketOptionsRequest>
+    void SetInstanceMarketOptions(InstanceMarketOptionsT&& value) { m_instanceMarketOptionsHasBeenSet = true; m_instanceMarketOptions = std::forward<InstanceMarketOptionsT>(value); }
+    template<typename InstanceMarketOptionsT = InstanceMarketOptionsRequest>
+    RunInstancesRequest& WithInstanceMarketOptions(InstanceMarketOptionsT&& value) { SetInstanceMarketOptions(std::forward<InstanceMarketOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -416,12 +400,12 @@ namespace Model
      * instances)</p> <p>For T3 instances with <code>host</code> tenancy, only
      * <code>standard</code> is supported.</p>
      */
-    inline const CreditSpecificationRequest& GetCreditSpecification() const{ return m_creditSpecification; }
+    inline const CreditSpecificationRequest& GetCreditSpecification() const { return m_creditSpecification; }
     inline bool CreditSpecificationHasBeenSet() const { return m_creditSpecificationHasBeenSet; }
-    inline void SetCreditSpecification(const CreditSpecificationRequest& value) { m_creditSpecificationHasBeenSet = true; m_creditSpecification = value; }
-    inline void SetCreditSpecification(CreditSpecificationRequest&& value) { m_creditSpecificationHasBeenSet = true; m_creditSpecification = std::move(value); }
-    inline RunInstancesRequest& WithCreditSpecification(const CreditSpecificationRequest& value) { SetCreditSpecification(value); return *this;}
-    inline RunInstancesRequest& WithCreditSpecification(CreditSpecificationRequest&& value) { SetCreditSpecification(std::move(value)); return *this;}
+    template<typename CreditSpecificationT = CreditSpecificationRequest>
+    void SetCreditSpecification(CreditSpecificationT&& value) { m_creditSpecificationHasBeenSet = true; m_creditSpecification = std::forward<CreditSpecificationT>(value); }
+    template<typename CreditSpecificationT = CreditSpecificationRequest>
+    RunInstancesRequest& WithCreditSpecification(CreditSpecificationT&& value) { SetCreditSpecification(std::forward<CreditSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -430,12 +414,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-optimize-cpu.html">Optimize
      * CPU options</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
-    inline const CpuOptionsRequest& GetCpuOptions() const{ return m_cpuOptions; }
+    inline const CpuOptionsRequest& GetCpuOptions() const { return m_cpuOptions; }
     inline bool CpuOptionsHasBeenSet() const { return m_cpuOptionsHasBeenSet; }
-    inline void SetCpuOptions(const CpuOptionsRequest& value) { m_cpuOptionsHasBeenSet = true; m_cpuOptions = value; }
-    inline void SetCpuOptions(CpuOptionsRequest&& value) { m_cpuOptionsHasBeenSet = true; m_cpuOptions = std::move(value); }
-    inline RunInstancesRequest& WithCpuOptions(const CpuOptionsRequest& value) { SetCpuOptions(value); return *this;}
-    inline RunInstancesRequest& WithCpuOptions(CpuOptionsRequest&& value) { SetCpuOptions(std::move(value)); return *this;}
+    template<typename CpuOptionsT = CpuOptionsRequest>
+    void SetCpuOptions(CpuOptionsT&& value) { m_cpuOptionsHasBeenSet = true; m_cpuOptions = std::forward<CpuOptionsT>(value); }
+    template<typename CpuOptionsT = CpuOptionsRequest>
+    RunInstancesRequest& WithCpuOptions(CpuOptionsT&& value) { SetCpuOptions(std::forward<CpuOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -446,12 +430,12 @@ namespace Model
      * that has matching attributes (instance type, platform, Availability Zone, and
      * tenancy).</p>
      */
-    inline const CapacityReservationSpecification& GetCapacityReservationSpecification() const{ return m_capacityReservationSpecification; }
+    inline const CapacityReservationSpecification& GetCapacityReservationSpecification() const { return m_capacityReservationSpecification; }
     inline bool CapacityReservationSpecificationHasBeenSet() const { return m_capacityReservationSpecificationHasBeenSet; }
-    inline void SetCapacityReservationSpecification(const CapacityReservationSpecification& value) { m_capacityReservationSpecificationHasBeenSet = true; m_capacityReservationSpecification = value; }
-    inline void SetCapacityReservationSpecification(CapacityReservationSpecification&& value) { m_capacityReservationSpecificationHasBeenSet = true; m_capacityReservationSpecification = std::move(value); }
-    inline RunInstancesRequest& WithCapacityReservationSpecification(const CapacityReservationSpecification& value) { SetCapacityReservationSpecification(value); return *this;}
-    inline RunInstancesRequest& WithCapacityReservationSpecification(CapacityReservationSpecification&& value) { SetCapacityReservationSpecification(std::move(value)); return *this;}
+    template<typename CapacityReservationSpecificationT = CapacityReservationSpecification>
+    void SetCapacityReservationSpecification(CapacityReservationSpecificationT&& value) { m_capacityReservationSpecificationHasBeenSet = true; m_capacityReservationSpecification = std::forward<CapacityReservationSpecificationT>(value); }
+    template<typename CapacityReservationSpecificationT = CapacityReservationSpecification>
+    RunInstancesRequest& WithCapacityReservationSpecification(CapacityReservationSpecificationT&& value) { SetCapacityReservationSpecification(std::forward<CapacityReservationSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -465,26 +449,26 @@ namespace Model
      * can't enable hibernation and Amazon Web Services Nitro Enclaves on the same
      * instance.</p>
      */
-    inline const HibernationOptionsRequest& GetHibernationOptions() const{ return m_hibernationOptions; }
+    inline const HibernationOptionsRequest& GetHibernationOptions() const { return m_hibernationOptions; }
     inline bool HibernationOptionsHasBeenSet() const { return m_hibernationOptionsHasBeenSet; }
-    inline void SetHibernationOptions(const HibernationOptionsRequest& value) { m_hibernationOptionsHasBeenSet = true; m_hibernationOptions = value; }
-    inline void SetHibernationOptions(HibernationOptionsRequest&& value) { m_hibernationOptionsHasBeenSet = true; m_hibernationOptions = std::move(value); }
-    inline RunInstancesRequest& WithHibernationOptions(const HibernationOptionsRequest& value) { SetHibernationOptions(value); return *this;}
-    inline RunInstancesRequest& WithHibernationOptions(HibernationOptionsRequest&& value) { SetHibernationOptions(std::move(value)); return *this;}
+    template<typename HibernationOptionsT = HibernationOptionsRequest>
+    void SetHibernationOptions(HibernationOptionsT&& value) { m_hibernationOptionsHasBeenSet = true; m_hibernationOptions = std::forward<HibernationOptionsT>(value); }
+    template<typename HibernationOptionsT = HibernationOptionsRequest>
+    RunInstancesRequest& WithHibernationOptions(HibernationOptionsT&& value) { SetHibernationOptions(std::forward<HibernationOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The license configurations.</p>
      */
-    inline const Aws::Vector<LicenseConfigurationRequest>& GetLicenseSpecifications() const{ return m_licenseSpecifications; }
+    inline const Aws::Vector<LicenseConfigurationRequest>& GetLicenseSpecifications() const { return m_licenseSpecifications; }
     inline bool LicenseSpecificationsHasBeenSet() const { return m_licenseSpecificationsHasBeenSet; }
-    inline void SetLicenseSpecifications(const Aws::Vector<LicenseConfigurationRequest>& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications = value; }
-    inline void SetLicenseSpecifications(Aws::Vector<LicenseConfigurationRequest>&& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications = std::move(value); }
-    inline RunInstancesRequest& WithLicenseSpecifications(const Aws::Vector<LicenseConfigurationRequest>& value) { SetLicenseSpecifications(value); return *this;}
-    inline RunInstancesRequest& WithLicenseSpecifications(Aws::Vector<LicenseConfigurationRequest>&& value) { SetLicenseSpecifications(std::move(value)); return *this;}
-    inline RunInstancesRequest& AddLicenseSpecifications(const LicenseConfigurationRequest& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications.push_back(value); return *this; }
-    inline RunInstancesRequest& AddLicenseSpecifications(LicenseConfigurationRequest&& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications.push_back(std::move(value)); return *this; }
+    template<typename LicenseSpecificationsT = Aws::Vector<LicenseConfigurationRequest>>
+    void SetLicenseSpecifications(LicenseSpecificationsT&& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications = std::forward<LicenseSpecificationsT>(value); }
+    template<typename LicenseSpecificationsT = Aws::Vector<LicenseConfigurationRequest>>
+    RunInstancesRequest& WithLicenseSpecifications(LicenseSpecificationsT&& value) { SetLicenseSpecifications(std::forward<LicenseSpecificationsT>(value)); return *this;}
+    template<typename LicenseSpecificationsT = LicenseConfigurationRequest>
+    RunInstancesRequest& AddLicenseSpecifications(LicenseSpecificationsT&& value) { m_licenseSpecificationsHasBeenSet = true; m_licenseSpecifications.emplace_back(std::forward<LicenseSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -493,12 +477,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-metadata.html">Instance
      * metadata and user data</a>.</p>
      */
-    inline const InstanceMetadataOptionsRequest& GetMetadataOptions() const{ return m_metadataOptions; }
+    inline const InstanceMetadataOptionsRequest& GetMetadataOptions() const { return m_metadataOptions; }
     inline bool MetadataOptionsHasBeenSet() const { return m_metadataOptionsHasBeenSet; }
-    inline void SetMetadataOptions(const InstanceMetadataOptionsRequest& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = value; }
-    inline void SetMetadataOptions(InstanceMetadataOptionsRequest&& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = std::move(value); }
-    inline RunInstancesRequest& WithMetadataOptions(const InstanceMetadataOptionsRequest& value) { SetMetadataOptions(value); return *this;}
-    inline RunInstancesRequest& WithMetadataOptions(InstanceMetadataOptionsRequest&& value) { SetMetadataOptions(std::move(value)); return *this;}
+    template<typename MetadataOptionsT = InstanceMetadataOptionsRequest>
+    void SetMetadataOptions(MetadataOptionsT&& value) { m_metadataOptionsHasBeenSet = true; m_metadataOptions = std::forward<MetadataOptionsT>(value); }
+    template<typename MetadataOptionsT = InstanceMetadataOptionsRequest>
+    RunInstancesRequest& WithMetadataOptions(MetadataOptionsT&& value) { SetMetadataOptions(std::forward<MetadataOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -510,12 +494,12 @@ namespace Model
      * Enclaves User Guide</i>.</p> <p>You can't enable Amazon Web Services Nitro
      * Enclaves and hibernation on the same instance.</p>
      */
-    inline const EnclaveOptionsRequest& GetEnclaveOptions() const{ return m_enclaveOptions; }
+    inline const EnclaveOptionsRequest& GetEnclaveOptions() const { return m_enclaveOptions; }
     inline bool EnclaveOptionsHasBeenSet() const { return m_enclaveOptionsHasBeenSet; }
-    inline void SetEnclaveOptions(const EnclaveOptionsRequest& value) { m_enclaveOptionsHasBeenSet = true; m_enclaveOptions = value; }
-    inline void SetEnclaveOptions(EnclaveOptionsRequest&& value) { m_enclaveOptionsHasBeenSet = true; m_enclaveOptions = std::move(value); }
-    inline RunInstancesRequest& WithEnclaveOptions(const EnclaveOptionsRequest& value) { SetEnclaveOptions(value); return *this;}
-    inline RunInstancesRequest& WithEnclaveOptions(EnclaveOptionsRequest&& value) { SetEnclaveOptions(std::move(value)); return *this;}
+    template<typename EnclaveOptionsT = EnclaveOptionsRequest>
+    void SetEnclaveOptions(EnclaveOptionsT&& value) { m_enclaveOptionsHasBeenSet = true; m_enclaveOptions = std::forward<EnclaveOptionsT>(value); }
+    template<typename EnclaveOptionsT = EnclaveOptionsRequest>
+    RunInstancesRequest& WithEnclaveOptions(EnclaveOptionsT&& value) { SetEnclaveOptions(std::forward<EnclaveOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -524,24 +508,24 @@ namespace Model
      * the subnet. Applies only if creating a network interface, not attaching an
      * existing one.</p>
      */
-    inline const PrivateDnsNameOptionsRequest& GetPrivateDnsNameOptions() const{ return m_privateDnsNameOptions; }
+    inline const PrivateDnsNameOptionsRequest& GetPrivateDnsNameOptions() const { return m_privateDnsNameOptions; }
     inline bool PrivateDnsNameOptionsHasBeenSet() const { return m_privateDnsNameOptionsHasBeenSet; }
-    inline void SetPrivateDnsNameOptions(const PrivateDnsNameOptionsRequest& value) { m_privateDnsNameOptionsHasBeenSet = true; m_privateDnsNameOptions = value; }
-    inline void SetPrivateDnsNameOptions(PrivateDnsNameOptionsRequest&& value) { m_privateDnsNameOptionsHasBeenSet = true; m_privateDnsNameOptions = std::move(value); }
-    inline RunInstancesRequest& WithPrivateDnsNameOptions(const PrivateDnsNameOptionsRequest& value) { SetPrivateDnsNameOptions(value); return *this;}
-    inline RunInstancesRequest& WithPrivateDnsNameOptions(PrivateDnsNameOptionsRequest&& value) { SetPrivateDnsNameOptions(std::move(value)); return *this;}
+    template<typename PrivateDnsNameOptionsT = PrivateDnsNameOptionsRequest>
+    void SetPrivateDnsNameOptions(PrivateDnsNameOptionsT&& value) { m_privateDnsNameOptionsHasBeenSet = true; m_privateDnsNameOptions = std::forward<PrivateDnsNameOptionsT>(value); }
+    template<typename PrivateDnsNameOptionsT = PrivateDnsNameOptionsRequest>
+    RunInstancesRequest& WithPrivateDnsNameOptions(PrivateDnsNameOptionsT&& value) { SetPrivateDnsNameOptions(std::forward<PrivateDnsNameOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maintenance and recovery options for the instance.</p>
      */
-    inline const InstanceMaintenanceOptionsRequest& GetMaintenanceOptions() const{ return m_maintenanceOptions; }
+    inline const InstanceMaintenanceOptionsRequest& GetMaintenanceOptions() const { return m_maintenanceOptions; }
     inline bool MaintenanceOptionsHasBeenSet() const { return m_maintenanceOptionsHasBeenSet; }
-    inline void SetMaintenanceOptions(const InstanceMaintenanceOptionsRequest& value) { m_maintenanceOptionsHasBeenSet = true; m_maintenanceOptions = value; }
-    inline void SetMaintenanceOptions(InstanceMaintenanceOptionsRequest&& value) { m_maintenanceOptionsHasBeenSet = true; m_maintenanceOptions = std::move(value); }
-    inline RunInstancesRequest& WithMaintenanceOptions(const InstanceMaintenanceOptionsRequest& value) { SetMaintenanceOptions(value); return *this;}
-    inline RunInstancesRequest& WithMaintenanceOptions(InstanceMaintenanceOptionsRequest&& value) { SetMaintenanceOptions(std::move(value)); return *this;}
+    template<typename MaintenanceOptionsT = InstanceMaintenanceOptionsRequest>
+    void SetMaintenanceOptions(MaintenanceOptionsT&& value) { m_maintenanceOptionsHasBeenSet = true; m_maintenanceOptions = std::forward<MaintenanceOptionsT>(value); }
+    template<typename MaintenanceOptionsT = InstanceMaintenanceOptionsRequest>
+    RunInstancesRequest& WithMaintenanceOptions(MaintenanceOptionsT&& value) { SetMaintenanceOptions(std::forward<MaintenanceOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -551,7 +535,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html#Using_StopProtection">Stop
      * protection</a>. </p>
      */
-    inline bool GetDisableApiStop() const{ return m_disableApiStop; }
+    inline bool GetDisableApiStop() const { return m_disableApiStop; }
     inline bool DisableApiStopHasBeenSet() const { return m_disableApiStopHasBeenSet; }
     inline void SetDisableApiStop(bool value) { m_disableApiStopHasBeenSet = true; m_disableApiStop = value; }
     inline RunInstancesRequest& WithDisableApiStop(bool value) { SetDisableApiStop(value); return *this;}
@@ -573,7 +557,7 @@ namespace Model
      * primary IPv6 address, the first IPv6 GUA address associated with the ENI becomes
      * the primary IPv6 address.</p>
      */
-    inline bool GetEnablePrimaryIpv6() const{ return m_enablePrimaryIpv6; }
+    inline bool GetEnablePrimaryIpv6() const { return m_enablePrimaryIpv6; }
     inline bool EnablePrimaryIpv6HasBeenSet() const { return m_enablePrimaryIpv6HasBeenSet; }
     inline void SetEnablePrimaryIpv6(bool value) { m_enablePrimaryIpv6HasBeenSet = true; m_enablePrimaryIpv6 = value; }
     inline RunInstancesRequest& WithEnablePrimaryIpv6(bool value) { SetEnablePrimaryIpv6(value); return *this;}
@@ -583,24 +567,24 @@ namespace Model
     /**
      * <p>Contains settings for the network performance options for the instance.</p>
      */
-    inline const InstanceNetworkPerformanceOptionsRequest& GetNetworkPerformanceOptions() const{ return m_networkPerformanceOptions; }
+    inline const InstanceNetworkPerformanceOptionsRequest& GetNetworkPerformanceOptions() const { return m_networkPerformanceOptions; }
     inline bool NetworkPerformanceOptionsHasBeenSet() const { return m_networkPerformanceOptionsHasBeenSet; }
-    inline void SetNetworkPerformanceOptions(const InstanceNetworkPerformanceOptionsRequest& value) { m_networkPerformanceOptionsHasBeenSet = true; m_networkPerformanceOptions = value; }
-    inline void SetNetworkPerformanceOptions(InstanceNetworkPerformanceOptionsRequest&& value) { m_networkPerformanceOptionsHasBeenSet = true; m_networkPerformanceOptions = std::move(value); }
-    inline RunInstancesRequest& WithNetworkPerformanceOptions(const InstanceNetworkPerformanceOptionsRequest& value) { SetNetworkPerformanceOptions(value); return *this;}
-    inline RunInstancesRequest& WithNetworkPerformanceOptions(InstanceNetworkPerformanceOptionsRequest&& value) { SetNetworkPerformanceOptions(std::move(value)); return *this;}
+    template<typename NetworkPerformanceOptionsT = InstanceNetworkPerformanceOptionsRequest>
+    void SetNetworkPerformanceOptions(NetworkPerformanceOptionsT&& value) { m_networkPerformanceOptionsHasBeenSet = true; m_networkPerformanceOptions = std::forward<NetworkPerformanceOptionsT>(value); }
+    template<typename NetworkPerformanceOptionsT = InstanceNetworkPerformanceOptionsRequest>
+    RunInstancesRequest& WithNetworkPerformanceOptions(NetworkPerformanceOptionsT&& value) { SetNetworkPerformanceOptions(std::forward<NetworkPerformanceOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Reserved for internal use.</p>
      */
-    inline const OperatorRequest& GetOperator() const{ return m_operator; }
+    inline const OperatorRequest& GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const OperatorRequest& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(OperatorRequest&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline RunInstancesRequest& WithOperator(const OperatorRequest& value) { SetOperator(value); return *this;}
-    inline RunInstancesRequest& WithOperator(OperatorRequest&& value) { SetOperator(std::move(value)); return *this;}
+    template<typename OperatorT = OperatorRequest>
+    void SetOperator(OperatorT&& value) { m_operatorHasBeenSet = true; m_operator = std::forward<OperatorT>(value); }
+    template<typename OperatorT = OperatorRequest>
+    RunInstancesRequest& WithOperator(OperatorT&& value) { SetOperator(std::forward<OperatorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -610,7 +594,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline RunInstancesRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -624,7 +608,7 @@ namespace Model
      * termination protection when you launch an instance, while the instance is
      * running, or while the instance is stopped.</p>
      */
-    inline bool GetDisableApiTermination() const{ return m_disableApiTermination; }
+    inline bool GetDisableApiTermination() const { return m_disableApiTermination; }
     inline bool DisableApiTerminationHasBeenSet() const { return m_disableApiTerminationHasBeenSet; }
     inline void SetDisableApiTermination(bool value) { m_disableApiTerminationHasBeenSet = true; m_disableApiTermination = value; }
     inline RunInstancesRequest& WithDisableApiTermination(bool value) { SetDisableApiTermination(value); return *this;}
@@ -636,12 +620,10 @@ namespace Model
      * from the instance (using the operating system command for system shutdown).</p>
      * <p>Default: <code>stop</code> </p>
      */
-    inline const ShutdownBehavior& GetInstanceInitiatedShutdownBehavior() const{ return m_instanceInitiatedShutdownBehavior; }
+    inline ShutdownBehavior GetInstanceInitiatedShutdownBehavior() const { return m_instanceInitiatedShutdownBehavior; }
     inline bool InstanceInitiatedShutdownBehaviorHasBeenSet() const { return m_instanceInitiatedShutdownBehaviorHasBeenSet; }
-    inline void SetInstanceInitiatedShutdownBehavior(const ShutdownBehavior& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = value; }
-    inline void SetInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = std::move(value); }
-    inline RunInstancesRequest& WithInstanceInitiatedShutdownBehavior(const ShutdownBehavior& value) { SetInstanceInitiatedShutdownBehavior(value); return *this;}
-    inline RunInstancesRequest& WithInstanceInitiatedShutdownBehavior(ShutdownBehavior&& value) { SetInstanceInitiatedShutdownBehavior(std::move(value)); return *this;}
+    inline void SetInstanceInitiatedShutdownBehavior(ShutdownBehavior value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = value; }
+    inline RunInstancesRequest& WithInstanceInitiatedShutdownBehavior(ShutdownBehavior value) { SetInstanceInitiatedShutdownBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -654,14 +636,12 @@ namespace Model
      * instance in the request.</p> <p>You cannot specify this option and the network
      * interfaces option in the same request.</p>
      */
-    inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
+    inline const Aws::String& GetPrivateIpAddress() const { return m_privateIpAddress; }
     inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
-    inline void SetPrivateIpAddress(const Aws::String& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = value; }
-    inline void SetPrivateIpAddress(Aws::String&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::move(value); }
-    inline void SetPrivateIpAddress(const char* value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress.assign(value); }
-    inline RunInstancesRequest& WithPrivateIpAddress(const Aws::String& value) { SetPrivateIpAddress(value); return *this;}
-    inline RunInstancesRequest& WithPrivateIpAddress(Aws::String&& value) { SetPrivateIpAddress(std::move(value)); return *this;}
-    inline RunInstancesRequest& WithPrivateIpAddress(const char* value) { SetPrivateIpAddress(value); return *this;}
+    template<typename PrivateIpAddressT = Aws::String>
+    void SetPrivateIpAddress(PrivateIpAddressT&& value) { m_privateIpAddressHasBeenSet = true; m_privateIpAddress = std::forward<PrivateIpAddressT>(value); }
+    template<typename PrivateIpAddressT = Aws::String>
+    RunInstancesRequest& WithPrivateIpAddress(PrivateIpAddressT&& value) { SetPrivateIpAddress(std::forward<PrivateIpAddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -672,54 +652,50 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p> <p>Constraints: Maximum 64 ASCII characters</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline RunInstancesRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline RunInstancesRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline RunInstancesRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    RunInstancesRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Reserved.</p>
      */
-    inline const Aws::String& GetAdditionalInfo() const{ return m_additionalInfo; }
+    inline const Aws::String& GetAdditionalInfo() const { return m_additionalInfo; }
     inline bool AdditionalInfoHasBeenSet() const { return m_additionalInfoHasBeenSet; }
-    inline void SetAdditionalInfo(const Aws::String& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
-    inline void SetAdditionalInfo(Aws::String&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = std::move(value); }
-    inline void SetAdditionalInfo(const char* value) { m_additionalInfoHasBeenSet = true; m_additionalInfo.assign(value); }
-    inline RunInstancesRequest& WithAdditionalInfo(const Aws::String& value) { SetAdditionalInfo(value); return *this;}
-    inline RunInstancesRequest& WithAdditionalInfo(Aws::String&& value) { SetAdditionalInfo(std::move(value)); return *this;}
-    inline RunInstancesRequest& WithAdditionalInfo(const char* value) { SetAdditionalInfo(value); return *this;}
+    template<typename AdditionalInfoT = Aws::String>
+    void SetAdditionalInfo(AdditionalInfoT&& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = std::forward<AdditionalInfoT>(value); }
+    template<typename AdditionalInfoT = Aws::String>
+    RunInstancesRequest& WithAdditionalInfo(AdditionalInfoT&& value) { SetAdditionalInfo(std::forward<AdditionalInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The network interfaces to associate with the instance.</p>
      */
-    inline const Aws::Vector<InstanceNetworkInterfaceSpecification>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
+    inline const Aws::Vector<InstanceNetworkInterfaceSpecification>& GetNetworkInterfaces() const { return m_networkInterfaces; }
     inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
-    inline void SetNetworkInterfaces(const Aws::Vector<InstanceNetworkInterfaceSpecification>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
-    inline void SetNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
-    inline RunInstancesRequest& WithNetworkInterfaces(const Aws::Vector<InstanceNetworkInterfaceSpecification>& value) { SetNetworkInterfaces(value); return *this;}
-    inline RunInstancesRequest& WithNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
-    inline RunInstancesRequest& AddNetworkInterfaces(const InstanceNetworkInterfaceSpecification& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
-    inline RunInstancesRequest& AddNetworkInterfaces(InstanceNetworkInterfaceSpecification&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
+    template<typename NetworkInterfacesT = Aws::Vector<InstanceNetworkInterfaceSpecification>>
+    void SetNetworkInterfaces(NetworkInterfacesT&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::forward<NetworkInterfacesT>(value); }
+    template<typename NetworkInterfacesT = Aws::Vector<InstanceNetworkInterfaceSpecification>>
+    RunInstancesRequest& WithNetworkInterfaces(NetworkInterfacesT&& value) { SetNetworkInterfaces(std::forward<NetworkInterfacesT>(value)); return *this;}
+    template<typename NetworkInterfacesT = InstanceNetworkInterfaceSpecification>
+    RunInstancesRequest& AddNetworkInterfaces(NetworkInterfacesT&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.emplace_back(std::forward<NetworkInterfacesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name or Amazon Resource Name (ARN) of an IAM instance profile.</p>
      */
-    inline const IamInstanceProfileSpecification& GetIamInstanceProfile() const{ return m_iamInstanceProfile; }
+    inline const IamInstanceProfileSpecification& GetIamInstanceProfile() const { return m_iamInstanceProfile; }
     inline bool IamInstanceProfileHasBeenSet() const { return m_iamInstanceProfileHasBeenSet; }
-    inline void SetIamInstanceProfile(const IamInstanceProfileSpecification& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
-    inline void SetIamInstanceProfile(IamInstanceProfileSpecification&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::move(value); }
-    inline RunInstancesRequest& WithIamInstanceProfile(const IamInstanceProfileSpecification& value) { SetIamInstanceProfile(value); return *this;}
-    inline RunInstancesRequest& WithIamInstanceProfile(IamInstanceProfileSpecification&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
+    template<typename IamInstanceProfileT = IamInstanceProfileSpecification>
+    void SetIamInstanceProfile(IamInstanceProfileT&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::forward<IamInstanceProfileT>(value); }
+    template<typename IamInstanceProfileT = IamInstanceProfileSpecification>
+    RunInstancesRequest& WithIamInstanceProfile(IamInstanceProfileT&& value) { SetIamInstanceProfile(std::forward<IamInstanceProfileT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -731,7 +707,7 @@ namespace Model
      * apply when using an EBS-optimized instance.</p> <p>Default: <code>false</code>
      * </p>
      */
-    inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
+    inline bool GetEbsOptimized() const { return m_ebsOptimized; }
     inline bool EbsOptimizedHasBeenSet() const { return m_ebsOptimizedHasBeenSet; }
     inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
     inline RunInstancesRequest& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
@@ -744,10 +720,10 @@ namespace Model
     Aws::String m_imageId;
     bool m_imageIdHasBeenSet = false;
 
-    InstanceType m_instanceType;
+    InstanceType m_instanceType{InstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
-    int m_ipv6AddressCount;
+    int m_ipv6AddressCount{0};
     bool m_ipv6AddressCountHasBeenSet = false;
 
     Aws::Vector<InstanceIpv6Address> m_ipv6Addresses;
@@ -759,10 +735,10 @@ namespace Model
     Aws::String m_keyName;
     bool m_keyNameHasBeenSet = false;
 
-    int m_maxCount;
+    int m_maxCount{0};
     bool m_maxCountHasBeenSet = false;
 
-    int m_minCount;
+    int m_minCount{0};
     bool m_minCountHasBeenSet = false;
 
     RunInstancesMonitoringEnabled m_monitoring;
@@ -828,10 +804,10 @@ namespace Model
     InstanceMaintenanceOptionsRequest m_maintenanceOptions;
     bool m_maintenanceOptionsHasBeenSet = false;
 
-    bool m_disableApiStop;
+    bool m_disableApiStop{false};
     bool m_disableApiStopHasBeenSet = false;
 
-    bool m_enablePrimaryIpv6;
+    bool m_enablePrimaryIpv6{false};
     bool m_enablePrimaryIpv6HasBeenSet = false;
 
     InstanceNetworkPerformanceOptionsRequest m_networkPerformanceOptions;
@@ -840,13 +816,13 @@ namespace Model
     OperatorRequest m_operator;
     bool m_operatorHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
-    bool m_disableApiTermination;
+    bool m_disableApiTermination{false};
     bool m_disableApiTerminationHasBeenSet = false;
 
-    ShutdownBehavior m_instanceInitiatedShutdownBehavior;
+    ShutdownBehavior m_instanceInitiatedShutdownBehavior{ShutdownBehavior::NOT_SET};
     bool m_instanceInitiatedShutdownBehaviorHasBeenSet = false;
 
     Aws::String m_privateIpAddress;
@@ -864,7 +840,7 @@ namespace Model
     IamInstanceProfileSpecification m_iamInstanceProfile;
     bool m_iamInstanceProfileHasBeenSet = false;
 
-    bool m_ebsOptimized;
+    bool m_ebsOptimized{false};
     bool m_ebsOptimizedHasBeenSet = false;
   };
 

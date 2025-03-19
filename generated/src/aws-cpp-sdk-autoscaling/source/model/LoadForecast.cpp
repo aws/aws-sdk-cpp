@@ -20,15 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-LoadForecast::LoadForecast() : 
-    m_timestampsHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_metricSpecificationHasBeenSet(false)
-{
-}
-
 LoadForecast::LoadForecast(const XmlNode& xmlNode)
-  : LoadForecast()
 {
   *this = xmlNode;
 }
@@ -43,6 +35,7 @@ LoadForecast& LoadForecast::operator =(const XmlNode& xmlNode)
     if(!timestampsNode.IsNull())
     {
       XmlNode timestampsMember = timestampsNode.FirstChild("member");
+      m_timestampsHasBeenSet = !timestampsMember.IsNull();
       while(!timestampsMember.IsNull())
       {
         m_timestamps.push_back(DateTime(StringUtils::Trim(timestampsMember.GetText().c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601));
@@ -55,6 +48,7 @@ LoadForecast& LoadForecast::operator =(const XmlNode& xmlNode)
     if(!valuesNode.IsNull())
     {
       XmlNode valuesMember = valuesNode.FirstChild("member");
+      m_valuesHasBeenSet = !valuesMember.IsNull();
       while(!valuesMember.IsNull())
       {
         m_values.push_back(StringUtils::ConvertToDouble(StringUtils::Trim(valuesMember.GetText().c_str()).c_str()));

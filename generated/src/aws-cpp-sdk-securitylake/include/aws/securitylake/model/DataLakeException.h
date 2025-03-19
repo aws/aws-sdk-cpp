@@ -33,7 +33,7 @@ namespace Model
   class DataLakeException
   {
   public:
-    AWS_SECURITYLAKE_API DataLakeException();
+    AWS_SECURITYLAKE_API DataLakeException() = default;
     AWS_SECURITYLAKE_API DataLakeException(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API DataLakeException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,42 +43,36 @@ namespace Model
     /**
      * <p>The underlying exception of a Security Lake exception.</p>
      */
-    inline const Aws::String& GetException() const{ return m_exception; }
+    inline const Aws::String& GetException() const { return m_exception; }
     inline bool ExceptionHasBeenSet() const { return m_exceptionHasBeenSet; }
-    inline void SetException(const Aws::String& value) { m_exceptionHasBeenSet = true; m_exception = value; }
-    inline void SetException(Aws::String&& value) { m_exceptionHasBeenSet = true; m_exception = std::move(value); }
-    inline void SetException(const char* value) { m_exceptionHasBeenSet = true; m_exception.assign(value); }
-    inline DataLakeException& WithException(const Aws::String& value) { SetException(value); return *this;}
-    inline DataLakeException& WithException(Aws::String&& value) { SetException(std::move(value)); return *this;}
-    inline DataLakeException& WithException(const char* value) { SetException(value); return *this;}
+    template<typename ExceptionT = Aws::String>
+    void SetException(ExceptionT&& value) { m_exceptionHasBeenSet = true; m_exception = std::forward<ExceptionT>(value); }
+    template<typename ExceptionT = Aws::String>
+    DataLakeException& WithException(ExceptionT&& value) { SetException(std::forward<ExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Regions where the exception occurred.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline DataLakeException& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline DataLakeException& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline DataLakeException& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    DataLakeException& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of all remediation steps for a Security Lake exception.</p>
      */
-    inline const Aws::String& GetRemediation() const{ return m_remediation; }
+    inline const Aws::String& GetRemediation() const { return m_remediation; }
     inline bool RemediationHasBeenSet() const { return m_remediationHasBeenSet; }
-    inline void SetRemediation(const Aws::String& value) { m_remediationHasBeenSet = true; m_remediation = value; }
-    inline void SetRemediation(Aws::String&& value) { m_remediationHasBeenSet = true; m_remediation = std::move(value); }
-    inline void SetRemediation(const char* value) { m_remediationHasBeenSet = true; m_remediation.assign(value); }
-    inline DataLakeException& WithRemediation(const Aws::String& value) { SetRemediation(value); return *this;}
-    inline DataLakeException& WithRemediation(Aws::String&& value) { SetRemediation(std::move(value)); return *this;}
-    inline DataLakeException& WithRemediation(const char* value) { SetRemediation(value); return *this;}
+    template<typename RemediationT = Aws::String>
+    void SetRemediation(RemediationT&& value) { m_remediationHasBeenSet = true; m_remediation = std::forward<RemediationT>(value); }
+    template<typename RemediationT = Aws::String>
+    DataLakeException& WithRemediation(RemediationT&& value) { SetRemediation(std::forward<RemediationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +80,12 @@ namespace Model
      * <p>This error can occur if you configure the wrong timestamp format, or if the
      * subset of entries used for validation had errors or missing values.</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline DataLakeException& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline DataLakeException& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    DataLakeException& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
   private:
 
@@ -104,7 +98,7 @@ namespace Model
     Aws::String m_remediation;
     bool m_remediationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
   };
 

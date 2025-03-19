@@ -37,7 +37,7 @@ namespace Model
   class IpPermission
   {
   public:
-    AWS_GAMELIFT_API IpPermission();
+    AWS_GAMELIFT_API IpPermission() = default;
     AWS_GAMELIFT_API IpPermission(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API IpPermission& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,7 +50,7 @@ namespace Model
      * valid.</p> <p>For fleets using Windows builds, only ports
      * <code>1026-60000</code> are valid.</p>
      */
-    inline int GetFromPort() const{ return m_fromPort; }
+    inline int GetFromPort() const { return m_fromPort; }
     inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
     inline IpPermission& WithFromPort(int value) { SetFromPort(value); return *this;}
@@ -64,7 +64,7 @@ namespace Model
      * <code>22</code> and <code>1026-60000</code> are valid.</p> <p>For fleets using
      * Windows builds, only ports <code>1026-60000</code> are valid.</p>
      */
-    inline int GetToPort() const{ return m_toPort; }
+    inline int GetToPort() const { return m_toPort; }
     inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
     inline IpPermission& WithToPort(int value) { SetToPort(value); return *this;}
@@ -76,39 +76,35 @@ namespace Model
      * notation. Example: "<code>000.000.000.000/[subnet mask]</code>" or optionally
      * the shortened version "<code>0.0.0.0/[subnet mask]</code>".</p>
      */
-    inline const Aws::String& GetIpRange() const{ return m_ipRange; }
+    inline const Aws::String& GetIpRange() const { return m_ipRange; }
     inline bool IpRangeHasBeenSet() const { return m_ipRangeHasBeenSet; }
-    inline void SetIpRange(const Aws::String& value) { m_ipRangeHasBeenSet = true; m_ipRange = value; }
-    inline void SetIpRange(Aws::String&& value) { m_ipRangeHasBeenSet = true; m_ipRange = std::move(value); }
-    inline void SetIpRange(const char* value) { m_ipRangeHasBeenSet = true; m_ipRange.assign(value); }
-    inline IpPermission& WithIpRange(const Aws::String& value) { SetIpRange(value); return *this;}
-    inline IpPermission& WithIpRange(Aws::String&& value) { SetIpRange(std::move(value)); return *this;}
-    inline IpPermission& WithIpRange(const char* value) { SetIpRange(value); return *this;}
+    template<typename IpRangeT = Aws::String>
+    void SetIpRange(IpRangeT&& value) { m_ipRangeHasBeenSet = true; m_ipRange = std::forward<IpRangeT>(value); }
+    template<typename IpRangeT = Aws::String>
+    IpPermission& WithIpRange(IpRangeT&& value) { SetIpRange(std::forward<IpRangeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The network communication protocol used by the fleet.</p>
      */
-    inline const IpProtocol& GetProtocol() const{ return m_protocol; }
+    inline IpProtocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const IpProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(IpProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline IpPermission& WithProtocol(const IpProtocol& value) { SetProtocol(value); return *this;}
-    inline IpPermission& WithProtocol(IpProtocol&& value) { SetProtocol(std::move(value)); return *this;}
+    inline void SetProtocol(IpProtocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline IpPermission& WithProtocol(IpProtocol value) { SetProtocol(value); return *this;}
     ///@}
   private:
 
-    int m_fromPort;
+    int m_fromPort{0};
     bool m_fromPortHasBeenSet = false;
 
-    int m_toPort;
+    int m_toPort{0};
     bool m_toPortHasBeenSet = false;
 
     Aws::String m_ipRange;
     bool m_ipRangeHasBeenSet = false;
 
-    IpProtocol m_protocol;
+    IpProtocol m_protocol{IpProtocol::NOT_SET};
     bool m_protocolHasBeenSet = false;
   };
 

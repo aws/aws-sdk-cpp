@@ -20,15 +20,7 @@ namespace S3
 namespace Model
 {
 
-FilterRule::FilterRule() : 
-    m_name(FilterRuleName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 FilterRule::FilterRule(const XmlNode& xmlNode)
-  : FilterRule()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ FilterRule& FilterRule::operator =(const XmlNode& xmlNode)
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = FilterRuleNameMapper::GetFilterRuleNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText()).c_str()).c_str());
+      m_name = FilterRuleNameMapper::GetFilterRuleNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText()).c_str()));
       m_nameHasBeenSet = true;
     }
     XmlNode valueNode = resultNode.FirstChild("Value");

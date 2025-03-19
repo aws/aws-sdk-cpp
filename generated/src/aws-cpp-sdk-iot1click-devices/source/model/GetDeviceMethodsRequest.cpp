@@ -12,11 +12,6 @@ using namespace Aws::IoT1ClickDevicesService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDeviceMethodsRequest::GetDeviceMethodsRequest() : 
-    m_deviceIdHasBeenSet(false)
-{
-}
-
 Aws::String GetDeviceMethodsRequest::SerializePayload() const
 {
   return {};

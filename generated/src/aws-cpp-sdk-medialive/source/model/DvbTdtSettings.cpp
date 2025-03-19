@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-DvbTdtSettings::DvbTdtSettings() : 
-    m_repInterval(0),
-    m_repIntervalHasBeenSet(false)
-{
-}
-
 DvbTdtSettings::DvbTdtSettings(JsonView jsonValue)
-  : DvbTdtSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DvbTdtSettings& DvbTdtSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("repInterval"))
   {
     m_repInterval = jsonValue.GetInteger("repInterval");
-
     m_repIntervalHasBeenSet = true;
   }
-
   return *this;
 }
 

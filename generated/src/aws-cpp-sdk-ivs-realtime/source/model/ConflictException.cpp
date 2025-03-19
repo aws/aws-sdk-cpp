@@ -19,21 +19,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-ConflictException::ConflictException() : 
-    m_accessControlAllowOriginHasBeenSet(false),
-    m_accessControlExposeHeadersHasBeenSet(false),
-    m_cacheControlHasBeenSet(false),
-    m_contentSecurityPolicyHasBeenSet(false),
-    m_strictTransportSecurityHasBeenSet(false),
-    m_xContentTypeOptionsHasBeenSet(false),
-    m_xFrameOptionsHasBeenSet(false),
-    m_xAmznErrorTypeHasBeenSet(false),
-    m_exceptionMessageHasBeenSet(false)
-{
-}
-
 ConflictException::ConflictException(JsonView jsonValue)
-  : ConflictException()
 {
   *this = jsonValue;
 }
@@ -43,10 +29,8 @@ ConflictException& ConflictException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("exceptionMessage"))
   {
     m_exceptionMessage = jsonValue.GetString("exceptionMessage");
-
     m_exceptionMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

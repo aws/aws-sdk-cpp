@@ -18,29 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-DescribedCertificate::DescribedCertificate() : 
-    m_arnHasBeenSet(false),
-    m_certificateIdHasBeenSet(false),
-    m_usage(CertificateUsageType::NOT_SET),
-    m_usageHasBeenSet(false),
-    m_status(CertificateStatusType::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_certificateHasBeenSet(false),
-    m_certificateChainHasBeenSet(false),
-    m_activeDateHasBeenSet(false),
-    m_inactiveDateHasBeenSet(false),
-    m_serialHasBeenSet(false),
-    m_notBeforeDateHasBeenSet(false),
-    m_notAfterDateHasBeenSet(false),
-    m_type(CertificateType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 DescribedCertificate::DescribedCertificate(JsonView jsonValue)
-  : DescribedCertificate()
 {
   *this = jsonValue;
 }
@@ -50,94 +28,68 @@ DescribedCertificate& DescribedCertificate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CertificateId"))
   {
     m_certificateId = jsonValue.GetString("CertificateId");
-
     m_certificateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Usage"))
   {
     m_usage = CertificateUsageTypeMapper::GetCertificateUsageTypeForName(jsonValue.GetString("Usage"));
-
     m_usageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = CertificateStatusTypeMapper::GetCertificateStatusTypeForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Certificate"))
   {
     m_certificate = jsonValue.GetString("Certificate");
-
     m_certificateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CertificateChain"))
   {
     m_certificateChain = jsonValue.GetString("CertificateChain");
-
     m_certificateChainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActiveDate"))
   {
     m_activeDate = jsonValue.GetDouble("ActiveDate");
-
     m_activeDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InactiveDate"))
   {
     m_inactiveDate = jsonValue.GetDouble("InactiveDate");
-
     m_inactiveDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Serial"))
   {
     m_serial = jsonValue.GetString("Serial");
-
     m_serialHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotBeforeDate"))
   {
     m_notBeforeDate = jsonValue.GetDouble("NotBeforeDate");
-
     m_notBeforeDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotAfterDate"))
   {
     m_notAfterDate = jsonValue.GetDouble("NotAfterDate");
-
     m_notAfterDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = CertificateTypeMapper::GetCertificateTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -147,7 +99,6 @@ DescribedCertificate& DescribedCertificate::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

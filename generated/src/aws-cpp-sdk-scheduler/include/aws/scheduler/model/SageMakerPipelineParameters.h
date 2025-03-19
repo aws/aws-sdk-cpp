@@ -35,7 +35,7 @@ namespace Model
   class SageMakerPipelineParameters
   {
   public:
-    AWS_SCHEDULER_API SageMakerPipelineParameters();
+    AWS_SCHEDULER_API SageMakerPipelineParameters() = default;
     AWS_SCHEDULER_API SageMakerPipelineParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_SCHEDULER_API SageMakerPipelineParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SCHEDULER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * <p>List of parameter names and values to use when executing the SageMaker Model
      * Building Pipeline.</p>
      */
-    inline const Aws::Vector<SageMakerPipelineParameter>& GetPipelineParameterList() const{ return m_pipelineParameterList; }
+    inline const Aws::Vector<SageMakerPipelineParameter>& GetPipelineParameterList() const { return m_pipelineParameterList; }
     inline bool PipelineParameterListHasBeenSet() const { return m_pipelineParameterListHasBeenSet; }
-    inline void SetPipelineParameterList(const Aws::Vector<SageMakerPipelineParameter>& value) { m_pipelineParameterListHasBeenSet = true; m_pipelineParameterList = value; }
-    inline void SetPipelineParameterList(Aws::Vector<SageMakerPipelineParameter>&& value) { m_pipelineParameterListHasBeenSet = true; m_pipelineParameterList = std::move(value); }
-    inline SageMakerPipelineParameters& WithPipelineParameterList(const Aws::Vector<SageMakerPipelineParameter>& value) { SetPipelineParameterList(value); return *this;}
-    inline SageMakerPipelineParameters& WithPipelineParameterList(Aws::Vector<SageMakerPipelineParameter>&& value) { SetPipelineParameterList(std::move(value)); return *this;}
-    inline SageMakerPipelineParameters& AddPipelineParameterList(const SageMakerPipelineParameter& value) { m_pipelineParameterListHasBeenSet = true; m_pipelineParameterList.push_back(value); return *this; }
-    inline SageMakerPipelineParameters& AddPipelineParameterList(SageMakerPipelineParameter&& value) { m_pipelineParameterListHasBeenSet = true; m_pipelineParameterList.push_back(std::move(value)); return *this; }
+    template<typename PipelineParameterListT = Aws::Vector<SageMakerPipelineParameter>>
+    void SetPipelineParameterList(PipelineParameterListT&& value) { m_pipelineParameterListHasBeenSet = true; m_pipelineParameterList = std::forward<PipelineParameterListT>(value); }
+    template<typename PipelineParameterListT = Aws::Vector<SageMakerPipelineParameter>>
+    SageMakerPipelineParameters& WithPipelineParameterList(PipelineParameterListT&& value) { SetPipelineParameterList(std::forward<PipelineParameterListT>(value)); return *this;}
+    template<typename PipelineParameterListT = SageMakerPipelineParameter>
+    SageMakerPipelineParameters& AddPipelineParameterList(PipelineParameterListT&& value) { m_pipelineParameterListHasBeenSet = true; m_pipelineParameterList.emplace_back(std::forward<PipelineParameterListT>(value)); return *this; }
     ///@}
   private:
 

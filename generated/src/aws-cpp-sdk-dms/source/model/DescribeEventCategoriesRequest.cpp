@@ -12,12 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeEventCategoriesRequest::DescribeEventCategoriesRequest() : 
-    m_sourceTypeHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEventCategoriesRequest::SerializePayload() const
 {
   JsonValue payload;

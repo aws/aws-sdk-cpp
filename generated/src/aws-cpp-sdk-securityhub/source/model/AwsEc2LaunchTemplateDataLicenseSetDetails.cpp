@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2LaunchTemplateDataLicenseSetDetails::AwsEc2LaunchTemplateDataLicenseSetDetails() : 
-    m_licenseConfigurationArnHasBeenSet(false)
-{
-}
-
 AwsEc2LaunchTemplateDataLicenseSetDetails::AwsEc2LaunchTemplateDataLicenseSetDetails(JsonView jsonValue)
-  : AwsEc2LaunchTemplateDataLicenseSetDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsEc2LaunchTemplateDataLicenseSetDetails& AwsEc2LaunchTemplateDataLicenseSetDet
   if(jsonValue.ValueExists("LicenseConfigurationArn"))
   {
     m_licenseConfigurationArn = jsonValue.GetString("LicenseConfigurationArn");
-
     m_licenseConfigurationArnHasBeenSet = true;
   }
-
   return *this;
 }
 

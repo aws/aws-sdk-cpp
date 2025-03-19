@@ -18,22 +18,7 @@ namespace ServerlessApplicationRepository
 namespace Model
 {
 
-Version::Version() : 
-    m_applicationIdHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_parameterDefinitionsHasBeenSet(false),
-    m_requiredCapabilitiesHasBeenSet(false),
-    m_resourcesSupported(false),
-    m_resourcesSupportedHasBeenSet(false),
-    m_semanticVersionHasBeenSet(false),
-    m_sourceCodeArchiveUrlHasBeenSet(false),
-    m_sourceCodeUrlHasBeenSet(false),
-    m_templateUrlHasBeenSet(false)
-{
-}
-
 Version::Version(JsonView jsonValue)
-  : Version()
 {
   *this = jsonValue;
 }
@@ -43,17 +28,13 @@ Version& Version::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("applicationId"))
   {
     m_applicationId = jsonValue.GetString("applicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameterDefinitions"))
   {
     Aws::Utils::Array<JsonView> parameterDefinitionsJsonList = jsonValue.GetArray("parameterDefinitions");
@@ -63,7 +44,6 @@ Version& Version::operator =(JsonView jsonValue)
     }
     m_parameterDefinitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requiredCapabilities"))
   {
     Aws::Utils::Array<JsonView> requiredCapabilitiesJsonList = jsonValue.GetArray("requiredCapabilities");
@@ -73,42 +53,31 @@ Version& Version::operator =(JsonView jsonValue)
     }
     m_requiredCapabilitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourcesSupported"))
   {
     m_resourcesSupported = jsonValue.GetBool("resourcesSupported");
-
     m_resourcesSupportedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("semanticVersion"))
   {
     m_semanticVersion = jsonValue.GetString("semanticVersion");
-
     m_semanticVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceCodeArchiveUrl"))
   {
     m_sourceCodeArchiveUrl = jsonValue.GetString("sourceCodeArchiveUrl");
-
     m_sourceCodeArchiveUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceCodeUrl"))
   {
     m_sourceCodeUrl = jsonValue.GetString("sourceCodeUrl");
-
     m_sourceCodeUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateUrl"))
   {
     m_templateUrl = jsonValue.GetString("templateUrl");
-
     m_templateUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

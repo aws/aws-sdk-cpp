@@ -33,7 +33,7 @@ namespace Model
   class ConflictException
   {
   public:
-    AWS_ARCZONALSHIFT_API ConflictException();
+    AWS_ARCZONALSHIFT_API ConflictException() = default;
     AWS_ARCZONALSHIFT_API ConflictException(Aws::Utils::Json::JsonView jsonValue);
     AWS_ARCZONALSHIFT_API ConflictException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ARCZONALSHIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,47 +41,41 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ConflictException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ConflictException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ConflictException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ConflictException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason for the conflict exception.</p>
      */
-    inline const ConflictExceptionReason& GetReason() const{ return m_reason; }
+    inline ConflictExceptionReason GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const ConflictExceptionReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(ConflictExceptionReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline ConflictException& WithReason(const ConflictExceptionReason& value) { SetReason(value); return *this;}
-    inline ConflictException& WithReason(ConflictExceptionReason&& value) { SetReason(std::move(value)); return *this;}
+    inline void SetReason(ConflictExceptionReason value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline ConflictException& WithReason(ConflictExceptionReason value) { SetReason(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The zonal shift ID associated with the conflict exception.</p>
      */
-    inline const Aws::String& GetZonalShiftId() const{ return m_zonalShiftId; }
+    inline const Aws::String& GetZonalShiftId() const { return m_zonalShiftId; }
     inline bool ZonalShiftIdHasBeenSet() const { return m_zonalShiftIdHasBeenSet; }
-    inline void SetZonalShiftId(const Aws::String& value) { m_zonalShiftIdHasBeenSet = true; m_zonalShiftId = value; }
-    inline void SetZonalShiftId(Aws::String&& value) { m_zonalShiftIdHasBeenSet = true; m_zonalShiftId = std::move(value); }
-    inline void SetZonalShiftId(const char* value) { m_zonalShiftIdHasBeenSet = true; m_zonalShiftId.assign(value); }
-    inline ConflictException& WithZonalShiftId(const Aws::String& value) { SetZonalShiftId(value); return *this;}
-    inline ConflictException& WithZonalShiftId(Aws::String&& value) { SetZonalShiftId(std::move(value)); return *this;}
-    inline ConflictException& WithZonalShiftId(const char* value) { SetZonalShiftId(value); return *this;}
+    template<typename ZonalShiftIdT = Aws::String>
+    void SetZonalShiftId(ZonalShiftIdT&& value) { m_zonalShiftIdHasBeenSet = true; m_zonalShiftId = std::forward<ZonalShiftIdT>(value); }
+    template<typename ZonalShiftIdT = Aws::String>
+    ConflictException& WithZonalShiftId(ZonalShiftIdT&& value) { SetZonalShiftId(std::forward<ZonalShiftIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    ConflictExceptionReason m_reason;
+    ConflictExceptionReason m_reason{ConflictExceptionReason::NOT_SET};
     bool m_reasonHasBeenSet = false;
 
     Aws::String m_zonalShiftId;

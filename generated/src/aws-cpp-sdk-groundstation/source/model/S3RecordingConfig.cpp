@@ -18,15 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-S3RecordingConfig::S3RecordingConfig() : 
-    m_bucketArnHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 S3RecordingConfig::S3RecordingConfig(JsonView jsonValue)
-  : S3RecordingConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ S3RecordingConfig& S3RecordingConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucketArn"))
   {
     m_bucketArn = jsonValue.GetString("bucketArn");
-
     m_bucketArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prefix"))
   {
     m_prefix = jsonValue.GetString("prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

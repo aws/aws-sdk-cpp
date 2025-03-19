@@ -31,7 +31,7 @@ namespace Model
   class SilentAudio
   {
   public:
-    AWS_MEDIACONNECT_API SilentAudio();
+    AWS_MEDIACONNECT_API SilentAudio() = default;
     AWS_MEDIACONNECT_API SilentAudio(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API SilentAudio& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,10 @@ namespace Model
     /**
      * Indicates whether the SilentAudio metric is enabled or disabled.
      */
-    inline const State& GetState() const{ return m_state; }
+    inline State GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const State& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(State&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline SilentAudio& WithState(const State& value) { SetState(value); return *this;}
-    inline SilentAudio& WithState(State&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(State value) { m_stateHasBeenSet = true; m_state = value; }
+    inline SilentAudio& WithState(State value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -54,17 +52,17 @@ namespace Model
      * Specifies the number of consecutive seconds of silence that triggers an event or
      * alert.
      */
-    inline int GetThresholdSeconds() const{ return m_thresholdSeconds; }
+    inline int GetThresholdSeconds() const { return m_thresholdSeconds; }
     inline bool ThresholdSecondsHasBeenSet() const { return m_thresholdSecondsHasBeenSet; }
     inline void SetThresholdSeconds(int value) { m_thresholdSecondsHasBeenSet = true; m_thresholdSeconds = value; }
     inline SilentAudio& WithThresholdSeconds(int value) { SetThresholdSeconds(value); return *this;}
     ///@}
   private:
 
-    State m_state;
+    State m_state{State::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    int m_thresholdSeconds;
+    int m_thresholdSeconds{0};
     bool m_thresholdSecondsHasBeenSet = false;
   };
 

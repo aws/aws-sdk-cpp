@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-SrtGroupSettings::SrtGroupSettings() : 
-    m_inputLossAction(InputLossActionForUdpOut::NOT_SET),
-    m_inputLossActionHasBeenSet(false)
-{
-}
-
 SrtGroupSettings::SrtGroupSettings(JsonView jsonValue)
-  : SrtGroupSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SrtGroupSettings& SrtGroupSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("inputLossAction"))
   {
     m_inputLossAction = InputLossActionForUdpOutMapper::GetInputLossActionForUdpOutForName(jsonValue.GetString("inputLossAction"));
-
     m_inputLossActionHasBeenSet = true;
   }
-
   return *this;
 }
 

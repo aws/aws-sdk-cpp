@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCardinalityResult::GetCardinalityResult() : 
-    m_cardinality(0)
-{
-}
-
 GetCardinalityResult::GetCardinalityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetCardinalityResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ GetCardinalityResult& GetCardinalityResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("cardinality"))
   {
     m_cardinality = jsonValue.GetInteger("cardinality");
-
+    m_cardinalityHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

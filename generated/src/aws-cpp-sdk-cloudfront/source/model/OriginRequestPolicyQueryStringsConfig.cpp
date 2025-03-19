@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-OriginRequestPolicyQueryStringsConfig::OriginRequestPolicyQueryStringsConfig() : 
-    m_queryStringBehavior(OriginRequestPolicyQueryStringBehavior::NOT_SET),
-    m_queryStringBehaviorHasBeenSet(false),
-    m_queryStringsHasBeenSet(false)
-{
-}
-
 OriginRequestPolicyQueryStringsConfig::OriginRequestPolicyQueryStringsConfig(const XmlNode& xmlNode)
-  : OriginRequestPolicyQueryStringsConfig()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ OriginRequestPolicyQueryStringsConfig& OriginRequestPolicyQueryStringsConfig::op
     XmlNode queryStringBehaviorNode = resultNode.FirstChild("QueryStringBehavior");
     if(!queryStringBehaviorNode.IsNull())
     {
-      m_queryStringBehavior = OriginRequestPolicyQueryStringBehaviorMapper::GetOriginRequestPolicyQueryStringBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(queryStringBehaviorNode.GetText()).c_str()).c_str());
+      m_queryStringBehavior = OriginRequestPolicyQueryStringBehaviorMapper::GetOriginRequestPolicyQueryStringBehaviorForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(queryStringBehaviorNode.GetText()).c_str()));
       m_queryStringBehaviorHasBeenSet = true;
     }
     XmlNode queryStringsNode = resultNode.FirstChild("QueryStrings");

@@ -18,16 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-CognitoUserPoolConfigurationDetail::CognitoUserPoolConfigurationDetail() : 
-    m_userPoolArnHasBeenSet(false),
-    m_clientIdsHasBeenSet(false),
-    m_issuerHasBeenSet(false),
-    m_groupConfigurationHasBeenSet(false)
-{
-}
-
 CognitoUserPoolConfigurationDetail::CognitoUserPoolConfigurationDetail(JsonView jsonValue)
-  : CognitoUserPoolConfigurationDetail()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ CognitoUserPoolConfigurationDetail& CognitoUserPoolConfigurationDetail::operator
   if(jsonValue.ValueExists("userPoolArn"))
   {
     m_userPoolArn = jsonValue.GetString("userPoolArn");
-
     m_userPoolArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientIds"))
   {
     Aws::Utils::Array<JsonView> clientIdsJsonList = jsonValue.GetArray("clientIds");
@@ -50,21 +39,16 @@ CognitoUserPoolConfigurationDetail& CognitoUserPoolConfigurationDetail::operator
     }
     m_clientIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("issuer"))
   {
     m_issuer = jsonValue.GetString("issuer");
-
     m_issuerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groupConfiguration"))
   {
     m_groupConfiguration = jsonValue.GetObject("groupConfiguration");
-
     m_groupConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

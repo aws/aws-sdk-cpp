@@ -18,16 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-OperationFailureException::OperationFailureException() : 
-    m_codeHasBeenSet(false),
-    m_docsHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_tipHasBeenSet(false)
-{
-}
-
 OperationFailureException::OperationFailureException(JsonView jsonValue)
-  : OperationFailureException()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ OperationFailureException& OperationFailureException::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("docs"))
   {
     m_docs = jsonValue.GetString("docs");
-
     m_docsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tip"))
   {
     m_tip = jsonValue.GetString("tip");
-
     m_tipHasBeenSet = true;
   }
-
   return *this;
 }
 

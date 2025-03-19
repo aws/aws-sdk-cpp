@@ -29,7 +29,7 @@ namespace Model
   class GetServerStrategiesResult
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetServerStrategiesResult();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetServerStrategiesResult() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetServerStrategiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API GetServerStrategiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p> A list of strategy recommendations for the server. </p>
      */
-    inline const Aws::Vector<ServerStrategy>& GetServerStrategies() const{ return m_serverStrategies; }
-    inline void SetServerStrategies(const Aws::Vector<ServerStrategy>& value) { m_serverStrategies = value; }
-    inline void SetServerStrategies(Aws::Vector<ServerStrategy>&& value) { m_serverStrategies = std::move(value); }
-    inline GetServerStrategiesResult& WithServerStrategies(const Aws::Vector<ServerStrategy>& value) { SetServerStrategies(value); return *this;}
-    inline GetServerStrategiesResult& WithServerStrategies(Aws::Vector<ServerStrategy>&& value) { SetServerStrategies(std::move(value)); return *this;}
-    inline GetServerStrategiesResult& AddServerStrategies(const ServerStrategy& value) { m_serverStrategies.push_back(value); return *this; }
-    inline GetServerStrategiesResult& AddServerStrategies(ServerStrategy&& value) { m_serverStrategies.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ServerStrategy>& GetServerStrategies() const { return m_serverStrategies; }
+    template<typename ServerStrategiesT = Aws::Vector<ServerStrategy>>
+    void SetServerStrategies(ServerStrategiesT&& value) { m_serverStrategiesHasBeenSet = true; m_serverStrategies = std::forward<ServerStrategiesT>(value); }
+    template<typename ServerStrategiesT = Aws::Vector<ServerStrategy>>
+    GetServerStrategiesResult& WithServerStrategies(ServerStrategiesT&& value) { SetServerStrategies(std::forward<ServerStrategiesT>(value)); return *this;}
+    template<typename ServerStrategiesT = ServerStrategy>
+    GetServerStrategiesResult& AddServerStrategies(ServerStrategiesT&& value) { m_serverStrategiesHasBeenSet = true; m_serverStrategies.emplace_back(std::forward<ServerStrategiesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetServerStrategiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetServerStrategiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetServerStrategiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetServerStrategiesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ServerStrategy> m_serverStrategies;
+    bool m_serverStrategiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

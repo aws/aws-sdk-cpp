@@ -33,7 +33,7 @@ namespace Model
   class AdminAccountSummary
   {
   public:
-    AWS_FMS_API AdminAccountSummary();
+    AWS_FMS_API AdminAccountSummary() = default;
     AWS_FMS_API AdminAccountSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API AdminAccountSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The Amazon Web Services account ID of the Firewall Manager administrator's
      * account.</p>
      */
-    inline const Aws::String& GetAdminAccount() const{ return m_adminAccount; }
+    inline const Aws::String& GetAdminAccount() const { return m_adminAccount; }
     inline bool AdminAccountHasBeenSet() const { return m_adminAccountHasBeenSet; }
-    inline void SetAdminAccount(const Aws::String& value) { m_adminAccountHasBeenSet = true; m_adminAccount = value; }
-    inline void SetAdminAccount(Aws::String&& value) { m_adminAccountHasBeenSet = true; m_adminAccount = std::move(value); }
-    inline void SetAdminAccount(const char* value) { m_adminAccountHasBeenSet = true; m_adminAccount.assign(value); }
-    inline AdminAccountSummary& WithAdminAccount(const Aws::String& value) { SetAdminAccount(value); return *this;}
-    inline AdminAccountSummary& WithAdminAccount(Aws::String&& value) { SetAdminAccount(std::move(value)); return *this;}
-    inline AdminAccountSummary& WithAdminAccount(const char* value) { SetAdminAccount(value); return *this;}
+    template<typename AdminAccountT = Aws::String>
+    void SetAdminAccount(AdminAccountT&& value) { m_adminAccountHasBeenSet = true; m_adminAccount = std::forward<AdminAccountT>(value); }
+    template<typename AdminAccountT = Aws::String>
+    AdminAccountSummary& WithAdminAccount(AdminAccountT&& value) { SetAdminAccount(std::forward<AdminAccountT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,7 +64,7 @@ namespace Model
      * Firewall Manager administrators</a> in the <i>Firewall Manager Developer
      * Guide</i>.</p>
      */
-    inline bool GetDefaultAdmin() const{ return m_defaultAdmin; }
+    inline bool GetDefaultAdmin() const { return m_defaultAdmin; }
     inline bool DefaultAdminHasBeenSet() const { return m_defaultAdminHasBeenSet; }
     inline void SetDefaultAdmin(bool value) { m_defaultAdminHasBeenSet = true; m_defaultAdmin = value; }
     inline AdminAccountSummary& WithDefaultAdmin(bool value) { SetDefaultAdmin(value); return *this;}
@@ -84,22 +82,20 @@ namespace Model
      * <li> <p> <code>OFFBOARDING_COMPLETE</code> - The account has been removed as an
      * Firewall Manager administrator.</p> </li> </ul>
      */
-    inline const OrganizationStatus& GetStatus() const{ return m_status; }
+    inline OrganizationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const OrganizationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(OrganizationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AdminAccountSummary& WithStatus(const OrganizationStatus& value) { SetStatus(value); return *this;}
-    inline AdminAccountSummary& WithStatus(OrganizationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(OrganizationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline AdminAccountSummary& WithStatus(OrganizationStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_adminAccount;
     bool m_adminAccountHasBeenSet = false;
 
-    bool m_defaultAdmin;
+    bool m_defaultAdmin{false};
     bool m_defaultAdminHasBeenSet = false;
 
-    OrganizationStatus m_status;
+    OrganizationStatus m_status{OrganizationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

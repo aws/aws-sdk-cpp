@@ -26,7 +26,7 @@ namespace Model
   class PutStorageConfigurationRequest : public IoTSiteWiseRequest
   {
   public:
-    AWS_IOTSITEWISE_API PutStorageConfigurationRequest();
+    AWS_IOTSITEWISE_API PutStorageConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,12 +47,10 @@ namespace Model
      * cold tier and the hot tier. The cold tier is a customer-managed Amazon S3
      * bucket.</p> </li> </ul>
      */
-    inline const StorageType& GetStorageType() const{ return m_storageType; }
+    inline StorageType GetStorageType() const { return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
-    inline void SetStorageType(const StorageType& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
-    inline void SetStorageType(StorageType&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
-    inline PutStorageConfigurationRequest& WithStorageType(const StorageType& value) { SetStorageType(value); return *this;}
-    inline PutStorageConfigurationRequest& WithStorageType(StorageType&& value) { SetStorageType(std::move(value)); return *this;}
+    inline void SetStorageType(StorageType value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+    inline PutStorageConfigurationRequest& WithStorageType(StorageType value) { SetStorageType(value); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,12 @@ namespace Model
      * <code>MULTI_LAYER_STORAGE</code> for the storage type, you must specify a
      * <code>MultiLayerStorage</code> object.</p>
      */
-    inline const MultiLayerStorage& GetMultiLayerStorage() const{ return m_multiLayerStorage; }
+    inline const MultiLayerStorage& GetMultiLayerStorage() const { return m_multiLayerStorage; }
     inline bool MultiLayerStorageHasBeenSet() const { return m_multiLayerStorageHasBeenSet; }
-    inline void SetMultiLayerStorage(const MultiLayerStorage& value) { m_multiLayerStorageHasBeenSet = true; m_multiLayerStorage = value; }
-    inline void SetMultiLayerStorage(MultiLayerStorage&& value) { m_multiLayerStorageHasBeenSet = true; m_multiLayerStorage = std::move(value); }
-    inline PutStorageConfigurationRequest& WithMultiLayerStorage(const MultiLayerStorage& value) { SetMultiLayerStorage(value); return *this;}
-    inline PutStorageConfigurationRequest& WithMultiLayerStorage(MultiLayerStorage&& value) { SetMultiLayerStorage(std::move(value)); return *this;}
+    template<typename MultiLayerStorageT = MultiLayerStorage>
+    void SetMultiLayerStorage(MultiLayerStorageT&& value) { m_multiLayerStorageHasBeenSet = true; m_multiLayerStorage = std::forward<MultiLayerStorageT>(value); }
+    template<typename MultiLayerStorageT = MultiLayerStorage>
+    PutStorageConfigurationRequest& WithMultiLayerStorage(MultiLayerStorageT&& value) { SetMultiLayerStorage(std::forward<MultiLayerStorageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,22 +80,20 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/data-streams.html">Data
      * streams</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
-    inline const DisassociatedDataStorageState& GetDisassociatedDataStorage() const{ return m_disassociatedDataStorage; }
+    inline DisassociatedDataStorageState GetDisassociatedDataStorage() const { return m_disassociatedDataStorage; }
     inline bool DisassociatedDataStorageHasBeenSet() const { return m_disassociatedDataStorageHasBeenSet; }
-    inline void SetDisassociatedDataStorage(const DisassociatedDataStorageState& value) { m_disassociatedDataStorageHasBeenSet = true; m_disassociatedDataStorage = value; }
-    inline void SetDisassociatedDataStorage(DisassociatedDataStorageState&& value) { m_disassociatedDataStorageHasBeenSet = true; m_disassociatedDataStorage = std::move(value); }
-    inline PutStorageConfigurationRequest& WithDisassociatedDataStorage(const DisassociatedDataStorageState& value) { SetDisassociatedDataStorage(value); return *this;}
-    inline PutStorageConfigurationRequest& WithDisassociatedDataStorage(DisassociatedDataStorageState&& value) { SetDisassociatedDataStorage(std::move(value)); return *this;}
+    inline void SetDisassociatedDataStorage(DisassociatedDataStorageState value) { m_disassociatedDataStorageHasBeenSet = true; m_disassociatedDataStorage = value; }
+    inline PutStorageConfigurationRequest& WithDisassociatedDataStorage(DisassociatedDataStorageState value) { SetDisassociatedDataStorage(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const RetentionPeriod& GetRetentionPeriod() const{ return m_retentionPeriod; }
+    inline const RetentionPeriod& GetRetentionPeriod() const { return m_retentionPeriod; }
     inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
-    inline void SetRetentionPeriod(const RetentionPeriod& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
-    inline void SetRetentionPeriod(RetentionPeriod&& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = std::move(value); }
-    inline PutStorageConfigurationRequest& WithRetentionPeriod(const RetentionPeriod& value) { SetRetentionPeriod(value); return *this;}
-    inline PutStorageConfigurationRequest& WithRetentionPeriod(RetentionPeriod&& value) { SetRetentionPeriod(std::move(value)); return *this;}
+    template<typename RetentionPeriodT = RetentionPeriod>
+    void SetRetentionPeriod(RetentionPeriodT&& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = std::forward<RetentionPeriodT>(value); }
+    template<typename RetentionPeriodT = RetentionPeriod>
+    PutStorageConfigurationRequest& WithRetentionPeriod(RetentionPeriodT&& value) { SetRetentionPeriod(std::forward<RetentionPeriodT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,12 +102,10 @@ namespace Model
      * periodically uploaded, buffered and historical data ingested with the
      * CreaeBulkImportJob API.</p>
      */
-    inline const WarmTierState& GetWarmTier() const{ return m_warmTier; }
+    inline WarmTierState GetWarmTier() const { return m_warmTier; }
     inline bool WarmTierHasBeenSet() const { return m_warmTierHasBeenSet; }
-    inline void SetWarmTier(const WarmTierState& value) { m_warmTierHasBeenSet = true; m_warmTier = value; }
-    inline void SetWarmTier(WarmTierState&& value) { m_warmTierHasBeenSet = true; m_warmTier = std::move(value); }
-    inline PutStorageConfigurationRequest& WithWarmTier(const WarmTierState& value) { SetWarmTier(value); return *this;}
-    inline PutStorageConfigurationRequest& WithWarmTier(WarmTierState&& value) { SetWarmTier(std::move(value)); return *this;}
+    inline void SetWarmTier(WarmTierState value) { m_warmTierHasBeenSet = true; m_warmTier = value; }
+    inline PutStorageConfigurationRequest& WithWarmTier(WarmTierState value) { SetWarmTier(value); return *this;}
     ///@}
 
     ///@{
@@ -119,12 +113,12 @@ namespace Model
      * <p>Set this period to specify how long your data is stored in the warm tier
      * before it is deleted. You can set this only if cold tier is enabled.</p>
      */
-    inline const WarmTierRetentionPeriod& GetWarmTierRetentionPeriod() const{ return m_warmTierRetentionPeriod; }
+    inline const WarmTierRetentionPeriod& GetWarmTierRetentionPeriod() const { return m_warmTierRetentionPeriod; }
     inline bool WarmTierRetentionPeriodHasBeenSet() const { return m_warmTierRetentionPeriodHasBeenSet; }
-    inline void SetWarmTierRetentionPeriod(const WarmTierRetentionPeriod& value) { m_warmTierRetentionPeriodHasBeenSet = true; m_warmTierRetentionPeriod = value; }
-    inline void SetWarmTierRetentionPeriod(WarmTierRetentionPeriod&& value) { m_warmTierRetentionPeriodHasBeenSet = true; m_warmTierRetentionPeriod = std::move(value); }
-    inline PutStorageConfigurationRequest& WithWarmTierRetentionPeriod(const WarmTierRetentionPeriod& value) { SetWarmTierRetentionPeriod(value); return *this;}
-    inline PutStorageConfigurationRequest& WithWarmTierRetentionPeriod(WarmTierRetentionPeriod&& value) { SetWarmTierRetentionPeriod(std::move(value)); return *this;}
+    template<typename WarmTierRetentionPeriodT = WarmTierRetentionPeriod>
+    void SetWarmTierRetentionPeriod(WarmTierRetentionPeriodT&& value) { m_warmTierRetentionPeriodHasBeenSet = true; m_warmTierRetentionPeriod = std::forward<WarmTierRetentionPeriodT>(value); }
+    template<typename WarmTierRetentionPeriodT = WarmTierRetentionPeriod>
+    PutStorageConfigurationRequest& WithWarmTierRetentionPeriod(WarmTierRetentionPeriodT&& value) { SetWarmTierRetentionPeriod(std::forward<WarmTierRetentionPeriodT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,32 +127,32 @@ namespace Model
      * feature is allowed. The feature is disallowed if the value is
      * <code>true</code>.</p>
      */
-    inline bool GetDisallowIngestNullNaN() const{ return m_disallowIngestNullNaN; }
+    inline bool GetDisallowIngestNullNaN() const { return m_disallowIngestNullNaN; }
     inline bool DisallowIngestNullNaNHasBeenSet() const { return m_disallowIngestNullNaNHasBeenSet; }
     inline void SetDisallowIngestNullNaN(bool value) { m_disallowIngestNullNaNHasBeenSet = true; m_disallowIngestNullNaN = value; }
     inline PutStorageConfigurationRequest& WithDisallowIngestNullNaN(bool value) { SetDisallowIngestNullNaN(value); return *this;}
     ///@}
   private:
 
-    StorageType m_storageType;
+    StorageType m_storageType{StorageType::NOT_SET};
     bool m_storageTypeHasBeenSet = false;
 
     MultiLayerStorage m_multiLayerStorage;
     bool m_multiLayerStorageHasBeenSet = false;
 
-    DisassociatedDataStorageState m_disassociatedDataStorage;
+    DisassociatedDataStorageState m_disassociatedDataStorage{DisassociatedDataStorageState::NOT_SET};
     bool m_disassociatedDataStorageHasBeenSet = false;
 
     RetentionPeriod m_retentionPeriod;
     bool m_retentionPeriodHasBeenSet = false;
 
-    WarmTierState m_warmTier;
+    WarmTierState m_warmTier{WarmTierState::NOT_SET};
     bool m_warmTierHasBeenSet = false;
 
     WarmTierRetentionPeriod m_warmTierRetentionPeriod;
     bool m_warmTierRetentionPeriodHasBeenSet = false;
 
-    bool m_disallowIngestNullNaN;
+    bool m_disallowIngestNullNaN{false};
     bool m_disallowIngestNullNaNHasBeenSet = false;
   };
 

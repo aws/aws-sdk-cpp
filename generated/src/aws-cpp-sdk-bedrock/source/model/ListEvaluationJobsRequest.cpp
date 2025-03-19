@@ -15,24 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListEvaluationJobsRequest::ListEvaluationJobsRequest() : 
-    m_creationTimeAfterHasBeenSet(false),
-    m_creationTimeBeforeHasBeenSet(false),
-    m_statusEquals(EvaluationJobStatus::NOT_SET),
-    m_statusEqualsHasBeenSet(false),
-    m_applicationTypeEquals(ApplicationType::NOT_SET),
-    m_applicationTypeEqualsHasBeenSet(false),
-    m_nameContainsHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sortBy(SortJobsBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 Aws::String ListEvaluationJobsRequest::SerializePayload() const
 {
   return {};

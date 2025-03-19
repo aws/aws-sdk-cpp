@@ -12,17 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartRouteAnalysisRequest::StartRouteAnalysisRequest() : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_includeReturnPath(false),
-    m_includeReturnPathHasBeenSet(false),
-    m_useMiddleboxes(false),
-    m_useMiddleboxesHasBeenSet(false)
-{
-}
-
 Aws::String StartRouteAnalysisRequest::SerializePayload() const
 {
   JsonValue payload;

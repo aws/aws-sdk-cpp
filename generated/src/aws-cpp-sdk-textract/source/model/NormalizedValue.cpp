@@ -18,15 +18,7 @@ namespace Textract
 namespace Model
 {
 
-NormalizedValue::NormalizedValue() : 
-    m_valueHasBeenSet(false),
-    m_valueType(ValueType::NOT_SET),
-    m_valueTypeHasBeenSet(false)
-{
-}
-
 NormalizedValue::NormalizedValue(JsonView jsonValue)
-  : NormalizedValue()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ NormalizedValue& NormalizedValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValueType"))
   {
     m_valueType = ValueTypeMapper::GetValueTypeForName(jsonValue.GetString("ValueType"));
-
     m_valueTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,14 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateViewVersionRequest::CreateViewVersionRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_viewIdHasBeenSet(false),
-    m_versionDescriptionHasBeenSet(false),
-    m_viewContentSha256HasBeenSet(false)
-{
-}
-
 Aws::String CreateViewVersionRequest::SerializePayload() const
 {
   JsonValue payload;

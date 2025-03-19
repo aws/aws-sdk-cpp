@@ -32,7 +32,7 @@ namespace Model
   class ModelInvocationJobS3OutputDataConfig
   {
   public:
-    AWS_BEDROCK_API ModelInvocationJobS3OutputDataConfig();
+    AWS_BEDROCK_API ModelInvocationJobS3OutputDataConfig() = default;
     AWS_BEDROCK_API ModelInvocationJobS3OutputDataConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API ModelInvocationJobS3OutputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The S3 location of the output data.</p>
      */
-    inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+    inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-    inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-    inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-    inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-    inline ModelInvocationJobS3OutputDataConfig& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-    inline ModelInvocationJobS3OutputDataConfig& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-    inline ModelInvocationJobS3OutputDataConfig& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    template<typename S3UriT = Aws::String>
+    void SetS3Uri(S3UriT&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::forward<S3UriT>(value); }
+    template<typename S3UriT = Aws::String>
+    ModelInvocationJobS3OutputDataConfig& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The unique identifier of the key that encrypts the S3 location of the output
      * data.</p>
      */
-    inline const Aws::String& GetS3EncryptionKeyId() const{ return m_s3EncryptionKeyId; }
+    inline const Aws::String& GetS3EncryptionKeyId() const { return m_s3EncryptionKeyId; }
     inline bool S3EncryptionKeyIdHasBeenSet() const { return m_s3EncryptionKeyIdHasBeenSet; }
-    inline void SetS3EncryptionKeyId(const Aws::String& value) { m_s3EncryptionKeyIdHasBeenSet = true; m_s3EncryptionKeyId = value; }
-    inline void SetS3EncryptionKeyId(Aws::String&& value) { m_s3EncryptionKeyIdHasBeenSet = true; m_s3EncryptionKeyId = std::move(value); }
-    inline void SetS3EncryptionKeyId(const char* value) { m_s3EncryptionKeyIdHasBeenSet = true; m_s3EncryptionKeyId.assign(value); }
-    inline ModelInvocationJobS3OutputDataConfig& WithS3EncryptionKeyId(const Aws::String& value) { SetS3EncryptionKeyId(value); return *this;}
-    inline ModelInvocationJobS3OutputDataConfig& WithS3EncryptionKeyId(Aws::String&& value) { SetS3EncryptionKeyId(std::move(value)); return *this;}
-    inline ModelInvocationJobS3OutputDataConfig& WithS3EncryptionKeyId(const char* value) { SetS3EncryptionKeyId(value); return *this;}
+    template<typename S3EncryptionKeyIdT = Aws::String>
+    void SetS3EncryptionKeyId(S3EncryptionKeyIdT&& value) { m_s3EncryptionKeyIdHasBeenSet = true; m_s3EncryptionKeyId = std::forward<S3EncryptionKeyIdT>(value); }
+    template<typename S3EncryptionKeyIdT = Aws::String>
+    ModelInvocationJobS3OutputDataConfig& WithS3EncryptionKeyId(S3EncryptionKeyIdT&& value) { SetS3EncryptionKeyId(std::forward<S3EncryptionKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * <p>The ID of the Amazon Web Services account that owns the S3 bucket containing
      * the output data.</p>
      */
-    inline const Aws::String& GetS3BucketOwner() const{ return m_s3BucketOwner; }
+    inline const Aws::String& GetS3BucketOwner() const { return m_s3BucketOwner; }
     inline bool S3BucketOwnerHasBeenSet() const { return m_s3BucketOwnerHasBeenSet; }
-    inline void SetS3BucketOwner(const Aws::String& value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner = value; }
-    inline void SetS3BucketOwner(Aws::String&& value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner = std::move(value); }
-    inline void SetS3BucketOwner(const char* value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner.assign(value); }
-    inline ModelInvocationJobS3OutputDataConfig& WithS3BucketOwner(const Aws::String& value) { SetS3BucketOwner(value); return *this;}
-    inline ModelInvocationJobS3OutputDataConfig& WithS3BucketOwner(Aws::String&& value) { SetS3BucketOwner(std::move(value)); return *this;}
-    inline ModelInvocationJobS3OutputDataConfig& WithS3BucketOwner(const char* value) { SetS3BucketOwner(value); return *this;}
+    template<typename S3BucketOwnerT = Aws::String>
+    void SetS3BucketOwner(S3BucketOwnerT&& value) { m_s3BucketOwnerHasBeenSet = true; m_s3BucketOwner = std::forward<S3BucketOwnerT>(value); }
+    template<typename S3BucketOwnerT = Aws::String>
+    ModelInvocationJobS3OutputDataConfig& WithS3BucketOwner(S3BucketOwnerT&& value) { SetS3BucketOwner(std::forward<S3BucketOwnerT>(value)); return *this;}
     ///@}
   private:
 

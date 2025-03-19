@@ -18,14 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-AutoScalingPolicyUpdate::AutoScalingPolicyUpdate() : 
-    m_policyNameHasBeenSet(false),
-    m_targetTrackingScalingPolicyConfigurationHasBeenSet(false)
-{
-}
-
 AutoScalingPolicyUpdate::AutoScalingPolicyUpdate(JsonView jsonValue)
-  : AutoScalingPolicyUpdate()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AutoScalingPolicyUpdate& AutoScalingPolicyUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PolicyName"))
   {
     m_policyName = jsonValue.GetString("PolicyName");
-
     m_policyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetTrackingScalingPolicyConfiguration"))
   {
     m_targetTrackingScalingPolicyConfiguration = jsonValue.GetObject("TargetTrackingScalingPolicyConfiguration");
-
     m_targetTrackingScalingPolicyConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

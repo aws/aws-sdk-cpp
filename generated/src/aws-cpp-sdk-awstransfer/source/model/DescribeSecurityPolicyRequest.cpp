@@ -12,11 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSecurityPolicyRequest::DescribeSecurityPolicyRequest() : 
-    m_securityPolicyNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSecurityPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

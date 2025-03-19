@@ -18,15 +18,7 @@ namespace AmplifyBackend
 namespace Model
 {
 
-CreateBackendAuthIdentityPoolConfig::CreateBackendAuthIdentityPoolConfig() : 
-    m_identityPoolNameHasBeenSet(false),
-    m_unauthenticatedLogin(false),
-    m_unauthenticatedLoginHasBeenSet(false)
-{
-}
-
 CreateBackendAuthIdentityPoolConfig::CreateBackendAuthIdentityPoolConfig(JsonView jsonValue)
-  : CreateBackendAuthIdentityPoolConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CreateBackendAuthIdentityPoolConfig& CreateBackendAuthIdentityPoolConfig::operat
   if(jsonValue.ValueExists("identityPoolName"))
   {
     m_identityPoolName = jsonValue.GetString("identityPoolName");
-
     m_identityPoolNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unauthenticatedLogin"))
   {
     m_unauthenticatedLogin = jsonValue.GetBool("unauthenticatedLogin");
-
     m_unauthenticatedLoginHasBeenSet = true;
   }
-
   return *this;
 }
 

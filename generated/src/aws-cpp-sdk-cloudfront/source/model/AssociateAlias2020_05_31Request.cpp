@@ -17,11 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-AssociateAlias2020_05_31Request::AssociateAlias2020_05_31Request() : 
-    m_targetDistributionIdHasBeenSet(false),
-    m_aliasHasBeenSet(false)
-{
-}
 
 Aws::String AssociateAlias2020_05_31Request::SerializePayload() const
 {

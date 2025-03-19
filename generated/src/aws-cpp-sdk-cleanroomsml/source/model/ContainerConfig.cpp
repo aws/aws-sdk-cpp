@@ -18,16 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-ContainerConfig::ContainerConfig() : 
-    m_imageUriHasBeenSet(false),
-    m_entrypointHasBeenSet(false),
-    m_argumentsHasBeenSet(false),
-    m_metricDefinitionsHasBeenSet(false)
-{
-}
-
 ContainerConfig::ContainerConfig(JsonView jsonValue)
-  : ContainerConfig()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ ContainerConfig& ContainerConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("imageUri"))
   {
     m_imageUri = jsonValue.GetString("imageUri");
-
     m_imageUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entrypoint"))
   {
     Aws::Utils::Array<JsonView> entrypointJsonList = jsonValue.GetArray("entrypoint");
@@ -50,7 +39,6 @@ ContainerConfig& ContainerConfig::operator =(JsonView jsonValue)
     }
     m_entrypointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arguments"))
   {
     Aws::Utils::Array<JsonView> argumentsJsonList = jsonValue.GetArray("arguments");
@@ -60,7 +48,6 @@ ContainerConfig& ContainerConfig::operator =(JsonView jsonValue)
     }
     m_argumentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricDefinitions"))
   {
     Aws::Utils::Array<JsonView> metricDefinitionsJsonList = jsonValue.GetArray("metricDefinitions");
@@ -70,7 +57,6 @@ ContainerConfig& ContainerConfig::operator =(JsonView jsonValue)
     }
     m_metricDefinitionsHasBeenSet = true;
   }
-
   return *this;
 }
 

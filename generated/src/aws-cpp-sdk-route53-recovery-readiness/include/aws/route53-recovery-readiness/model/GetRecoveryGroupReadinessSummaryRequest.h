@@ -25,7 +25,7 @@ namespace Model
   class GetRecoveryGroupReadinessSummaryRequest : public Route53RecoveryReadinessRequest
   {
   public:
-    AWS_ROUTE53RECOVERYREADINESS_API GetRecoveryGroupReadinessSummaryRequest();
+    AWS_ROUTE53RECOVERYREADINESS_API GetRecoveryGroupReadinessSummaryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The number of objects that you want to return with this call.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetRecoveryGroupReadinessSummaryRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -52,32 +52,28 @@ namespace Model
     /**
      * <p>The token that identifies which batch of results you want to see.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetRecoveryGroupReadinessSummaryRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetRecoveryGroupReadinessSummaryRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetRecoveryGroupReadinessSummaryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetRecoveryGroupReadinessSummaryRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of a recovery group.</p>
      */
-    inline const Aws::String& GetRecoveryGroupName() const{ return m_recoveryGroupName; }
+    inline const Aws::String& GetRecoveryGroupName() const { return m_recoveryGroupName; }
     inline bool RecoveryGroupNameHasBeenSet() const { return m_recoveryGroupNameHasBeenSet; }
-    inline void SetRecoveryGroupName(const Aws::String& value) { m_recoveryGroupNameHasBeenSet = true; m_recoveryGroupName = value; }
-    inline void SetRecoveryGroupName(Aws::String&& value) { m_recoveryGroupNameHasBeenSet = true; m_recoveryGroupName = std::move(value); }
-    inline void SetRecoveryGroupName(const char* value) { m_recoveryGroupNameHasBeenSet = true; m_recoveryGroupName.assign(value); }
-    inline GetRecoveryGroupReadinessSummaryRequest& WithRecoveryGroupName(const Aws::String& value) { SetRecoveryGroupName(value); return *this;}
-    inline GetRecoveryGroupReadinessSummaryRequest& WithRecoveryGroupName(Aws::String&& value) { SetRecoveryGroupName(std::move(value)); return *this;}
-    inline GetRecoveryGroupReadinessSummaryRequest& WithRecoveryGroupName(const char* value) { SetRecoveryGroupName(value); return *this;}
+    template<typename RecoveryGroupNameT = Aws::String>
+    void SetRecoveryGroupName(RecoveryGroupNameT&& value) { m_recoveryGroupNameHasBeenSet = true; m_recoveryGroupName = std::forward<RecoveryGroupNameT>(value); }
+    template<typename RecoveryGroupNameT = Aws::String>
+    GetRecoveryGroupReadinessSummaryRequest& WithRecoveryGroupName(RecoveryGroupNameT&& value) { SetRecoveryGroupName(std::forward<RecoveryGroupNameT>(value)); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

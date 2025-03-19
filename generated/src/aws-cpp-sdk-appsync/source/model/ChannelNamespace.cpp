@@ -18,21 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-ChannelNamespace::ChannelNamespace() : 
-    m_apiIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_subscribeAuthModesHasBeenSet(false),
-    m_publishAuthModesHasBeenSet(false),
-    m_codeHandlersHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_channelNamespaceArnHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false)
-{
-}
-
 ChannelNamespace::ChannelNamespace(JsonView jsonValue)
-  : ChannelNamespace()
 {
   *this = jsonValue;
 }
@@ -42,17 +28,13 @@ ChannelNamespace& ChannelNamespace::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("apiId"))
   {
     m_apiId = jsonValue.GetString("apiId");
-
     m_apiIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subscribeAuthModes"))
   {
     Aws::Utils::Array<JsonView> subscribeAuthModesJsonList = jsonValue.GetArray("subscribeAuthModes");
@@ -62,7 +44,6 @@ ChannelNamespace& ChannelNamespace::operator =(JsonView jsonValue)
     }
     m_subscribeAuthModesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publishAuthModes"))
   {
     Aws::Utils::Array<JsonView> publishAuthModesJsonList = jsonValue.GetArray("publishAuthModes");
@@ -72,14 +53,11 @@ ChannelNamespace& ChannelNamespace::operator =(JsonView jsonValue)
     }
     m_publishAuthModesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("codeHandlers"))
   {
     m_codeHandlers = jsonValue.GetString("codeHandlers");
-
     m_codeHandlersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -89,28 +67,21 @@ ChannelNamespace& ChannelNamespace::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("channelNamespaceArn"))
   {
     m_channelNamespaceArn = jsonValue.GetString("channelNamespaceArn");
-
     m_channelNamespaceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("created"))
   {
     m_created = jsonValue.GetDouble("created");
-
     m_createdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModified"))
   {
     m_lastModified = jsonValue.GetDouble("lastModified");
-
     m_lastModifiedHasBeenSet = true;
   }
-
   return *this;
 }
 

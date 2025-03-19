@@ -36,7 +36,7 @@ namespace Model
   class ServiceOperation
   {
   public:
-    AWS_APPLICATIONSIGNALS_API ServiceOperation();
+    AWS_APPLICATIONSIGNALS_API ServiceOperation() = default;
     AWS_APPLICATIONSIGNALS_API ServiceOperation(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API ServiceOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The name of the operation, discovered by Application Signals.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ServiceOperation& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ServiceOperation& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ServiceOperation& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ServiceOperation& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,14 @@ namespace Model
      * associated with this service operation that was discovered by Application
      * Signals.</p>
      */
-    inline const Aws::Vector<MetricReference>& GetMetricReferences() const{ return m_metricReferences; }
+    inline const Aws::Vector<MetricReference>& GetMetricReferences() const { return m_metricReferences; }
     inline bool MetricReferencesHasBeenSet() const { return m_metricReferencesHasBeenSet; }
-    inline void SetMetricReferences(const Aws::Vector<MetricReference>& value) { m_metricReferencesHasBeenSet = true; m_metricReferences = value; }
-    inline void SetMetricReferences(Aws::Vector<MetricReference>&& value) { m_metricReferencesHasBeenSet = true; m_metricReferences = std::move(value); }
-    inline ServiceOperation& WithMetricReferences(const Aws::Vector<MetricReference>& value) { SetMetricReferences(value); return *this;}
-    inline ServiceOperation& WithMetricReferences(Aws::Vector<MetricReference>&& value) { SetMetricReferences(std::move(value)); return *this;}
-    inline ServiceOperation& AddMetricReferences(const MetricReference& value) { m_metricReferencesHasBeenSet = true; m_metricReferences.push_back(value); return *this; }
-    inline ServiceOperation& AddMetricReferences(MetricReference&& value) { m_metricReferencesHasBeenSet = true; m_metricReferences.push_back(std::move(value)); return *this; }
+    template<typename MetricReferencesT = Aws::Vector<MetricReference>>
+    void SetMetricReferences(MetricReferencesT&& value) { m_metricReferencesHasBeenSet = true; m_metricReferences = std::forward<MetricReferencesT>(value); }
+    template<typename MetricReferencesT = Aws::Vector<MetricReference>>
+    ServiceOperation& WithMetricReferences(MetricReferencesT&& value) { SetMetricReferences(std::forward<MetricReferencesT>(value)); return *this;}
+    template<typename MetricReferencesT = MetricReference>
+    ServiceOperation& AddMetricReferences(MetricReferencesT&& value) { m_metricReferencesHasBeenSet = true; m_metricReferences.emplace_back(std::forward<MetricReferencesT>(value)); return *this; }
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class AwsRoute53HostedZoneVpcDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsRoute53HostedZoneVpcDetails();
+    AWS_SECURITYHUB_API AwsRoute53HostedZoneVpcDetails() = default;
     AWS_SECURITYHUB_API AwsRoute53HostedZoneVpcDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsRoute53HostedZoneVpcDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p> The identifier of an Amazon VPC. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline AwsRoute53HostedZoneVpcDetails& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline AwsRoute53HostedZoneVpcDetails& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline AwsRoute53HostedZoneVpcDetails& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    AwsRoute53HostedZoneVpcDetails& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Amazon Web Services Region that an Amazon VPC was created in.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline AwsRoute53HostedZoneVpcDetails& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline AwsRoute53HostedZoneVpcDetails& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline AwsRoute53HostedZoneVpcDetails& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    AwsRoute53HostedZoneVpcDetails& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
   private:
 

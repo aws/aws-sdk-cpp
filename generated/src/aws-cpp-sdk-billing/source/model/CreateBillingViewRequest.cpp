@@ -12,17 +12,6 @@ using namespace Aws::Billing::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBillingViewRequest::CreateBillingViewRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sourceViewsHasBeenSet(false),
-    m_dataFilterExpressionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_resourceTagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateBillingViewRequest::SerializePayload() const
 {
   JsonValue payload;

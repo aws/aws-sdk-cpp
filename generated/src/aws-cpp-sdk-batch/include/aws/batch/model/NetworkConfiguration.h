@@ -33,7 +33,7 @@ namespace Model
   class NetworkConfiguration
   {
   public:
-    AWS_BATCH_API NetworkConfiguration();
+    AWS_BATCH_API NetworkConfiguration() = default;
     AWS_BATCH_API NetworkConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API NetworkConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,16 +50,14 @@ namespace Model
      * ECS task networking</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>. The default value is "<code>DISABLED</code>".</p>
      */
-    inline const AssignPublicIp& GetAssignPublicIp() const{ return m_assignPublicIp; }
+    inline AssignPublicIp GetAssignPublicIp() const { return m_assignPublicIp; }
     inline bool AssignPublicIpHasBeenSet() const { return m_assignPublicIpHasBeenSet; }
-    inline void SetAssignPublicIp(const AssignPublicIp& value) { m_assignPublicIpHasBeenSet = true; m_assignPublicIp = value; }
-    inline void SetAssignPublicIp(AssignPublicIp&& value) { m_assignPublicIpHasBeenSet = true; m_assignPublicIp = std::move(value); }
-    inline NetworkConfiguration& WithAssignPublicIp(const AssignPublicIp& value) { SetAssignPublicIp(value); return *this;}
-    inline NetworkConfiguration& WithAssignPublicIp(AssignPublicIp&& value) { SetAssignPublicIp(std::move(value)); return *this;}
+    inline void SetAssignPublicIp(AssignPublicIp value) { m_assignPublicIpHasBeenSet = true; m_assignPublicIp = value; }
+    inline NetworkConfiguration& WithAssignPublicIp(AssignPublicIp value) { SetAssignPublicIp(value); return *this;}
     ///@}
   private:
 
-    AssignPublicIp m_assignPublicIp;
+    AssignPublicIp m_assignPublicIp{AssignPublicIp::NOT_SET};
     bool m_assignPublicIpHasBeenSet = false;
   };
 

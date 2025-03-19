@@ -37,7 +37,7 @@ namespace Model
   class ChangeSummary
   {
   public:
-    AWS_MARKETPLACECATALOG_API ChangeSummary();
+    AWS_MARKETPLACECATALOG_API ChangeSummary() = default;
     AWS_MARKETPLACECATALOG_API ChangeSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API ChangeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,26 +47,24 @@ namespace Model
     /**
      * <p>The type of the change.</p>
      */
-    inline const Aws::String& GetChangeType() const{ return m_changeType; }
+    inline const Aws::String& GetChangeType() const { return m_changeType; }
     inline bool ChangeTypeHasBeenSet() const { return m_changeTypeHasBeenSet; }
-    inline void SetChangeType(const Aws::String& value) { m_changeTypeHasBeenSet = true; m_changeType = value; }
-    inline void SetChangeType(Aws::String&& value) { m_changeTypeHasBeenSet = true; m_changeType = std::move(value); }
-    inline void SetChangeType(const char* value) { m_changeTypeHasBeenSet = true; m_changeType.assign(value); }
-    inline ChangeSummary& WithChangeType(const Aws::String& value) { SetChangeType(value); return *this;}
-    inline ChangeSummary& WithChangeType(Aws::String&& value) { SetChangeType(std::move(value)); return *this;}
-    inline ChangeSummary& WithChangeType(const char* value) { SetChangeType(value); return *this;}
+    template<typename ChangeTypeT = Aws::String>
+    void SetChangeType(ChangeTypeT&& value) { m_changeTypeHasBeenSet = true; m_changeType = std::forward<ChangeTypeT>(value); }
+    template<typename ChangeTypeT = Aws::String>
+    ChangeSummary& WithChangeType(ChangeTypeT&& value) { SetChangeType(std::forward<ChangeTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The entity to be changed.</p>
      */
-    inline const Entity& GetEntity() const{ return m_entity; }
+    inline const Entity& GetEntity() const { return m_entity; }
     inline bool EntityHasBeenSet() const { return m_entityHasBeenSet; }
-    inline void SetEntity(const Entity& value) { m_entityHasBeenSet = true; m_entity = value; }
-    inline void SetEntity(Entity&& value) { m_entityHasBeenSet = true; m_entity = std::move(value); }
-    inline ChangeSummary& WithEntity(const Entity& value) { SetEntity(value); return *this;}
-    inline ChangeSummary& WithEntity(Entity&& value) { SetEntity(std::move(value)); return *this;}
+    template<typename EntityT = Entity>
+    void SetEntity(EntityT&& value) { m_entityHasBeenSet = true; m_entity = std::forward<EntityT>(value); }
+    template<typename EntityT = Entity>
+    ChangeSummary& WithEntity(EntityT&& value) { SetEntity(std::forward<EntityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +72,12 @@ namespace Model
      * <p>This object contains details specific to the change type of the requested
      * change.</p>
      */
-    inline const Aws::String& GetDetails() const{ return m_details; }
+    inline const Aws::String& GetDetails() const { return m_details; }
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-    inline void SetDetails(const Aws::String& value) { m_detailsHasBeenSet = true; m_details = value; }
-    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-    inline void SetDetails(const char* value) { m_detailsHasBeenSet = true; m_details.assign(value); }
-    inline ChangeSummary& WithDetails(const Aws::String& value) { SetDetails(value); return *this;}
-    inline ChangeSummary& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
-    inline ChangeSummary& WithDetails(const char* value) { SetDetails(value); return *this;}
+    template<typename DetailsT = Aws::String>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = Aws::String>
+    ChangeSummary& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,40 +85,38 @@ namespace Model
      * <p>The JSON value of the details specific to the change type of the requested
      * change.</p>
      */
-    inline Aws::Utils::DocumentView GetDetailsDocument() const{ return m_detailsDocument; }
+    inline Aws::Utils::DocumentView GetDetailsDocument() const { return m_detailsDocument; }
     inline bool DetailsDocumentHasBeenSet() const { return m_detailsDocumentHasBeenSet; }
-    inline void SetDetailsDocument(const Aws::Utils::Document& value) { m_detailsDocumentHasBeenSet = true; m_detailsDocument = value; }
-    inline void SetDetailsDocument(Aws::Utils::Document&& value) { m_detailsDocumentHasBeenSet = true; m_detailsDocument = std::move(value); }
-    inline ChangeSummary& WithDetailsDocument(const Aws::Utils::Document& value) { SetDetailsDocument(value); return *this;}
-    inline ChangeSummary& WithDetailsDocument(Aws::Utils::Document&& value) { SetDetailsDocument(std::move(value)); return *this;}
+    template<typename DetailsDocumentT = Aws::Utils::Document>
+    void SetDetailsDocument(DetailsDocumentT&& value) { m_detailsDocumentHasBeenSet = true; m_detailsDocument = std::forward<DetailsDocumentT>(value); }
+    template<typename DetailsDocumentT = Aws::Utils::Document>
+    ChangeSummary& WithDetailsDocument(DetailsDocumentT&& value) { SetDetailsDocument(std::forward<DetailsDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of <code>ErrorDetail</code> objects associated with the change.</p>
      */
-    inline const Aws::Vector<ErrorDetail>& GetErrorDetailList() const{ return m_errorDetailList; }
+    inline const Aws::Vector<ErrorDetail>& GetErrorDetailList() const { return m_errorDetailList; }
     inline bool ErrorDetailListHasBeenSet() const { return m_errorDetailListHasBeenSet; }
-    inline void SetErrorDetailList(const Aws::Vector<ErrorDetail>& value) { m_errorDetailListHasBeenSet = true; m_errorDetailList = value; }
-    inline void SetErrorDetailList(Aws::Vector<ErrorDetail>&& value) { m_errorDetailListHasBeenSet = true; m_errorDetailList = std::move(value); }
-    inline ChangeSummary& WithErrorDetailList(const Aws::Vector<ErrorDetail>& value) { SetErrorDetailList(value); return *this;}
-    inline ChangeSummary& WithErrorDetailList(Aws::Vector<ErrorDetail>&& value) { SetErrorDetailList(std::move(value)); return *this;}
-    inline ChangeSummary& AddErrorDetailList(const ErrorDetail& value) { m_errorDetailListHasBeenSet = true; m_errorDetailList.push_back(value); return *this; }
-    inline ChangeSummary& AddErrorDetailList(ErrorDetail&& value) { m_errorDetailListHasBeenSet = true; m_errorDetailList.push_back(std::move(value)); return *this; }
+    template<typename ErrorDetailListT = Aws::Vector<ErrorDetail>>
+    void SetErrorDetailList(ErrorDetailListT&& value) { m_errorDetailListHasBeenSet = true; m_errorDetailList = std::forward<ErrorDetailListT>(value); }
+    template<typename ErrorDetailListT = Aws::Vector<ErrorDetail>>
+    ChangeSummary& WithErrorDetailList(ErrorDetailListT&& value) { SetErrorDetailList(std::forward<ErrorDetailListT>(value)); return *this;}
+    template<typename ErrorDetailListT = ErrorDetail>
+    ChangeSummary& AddErrorDetailList(ErrorDetailListT&& value) { m_errorDetailListHasBeenSet = true; m_errorDetailList.emplace_back(std::forward<ErrorDetailListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Optional name for the change.</p>
      */
-    inline const Aws::String& GetChangeName() const{ return m_changeName; }
+    inline const Aws::String& GetChangeName() const { return m_changeName; }
     inline bool ChangeNameHasBeenSet() const { return m_changeNameHasBeenSet; }
-    inline void SetChangeName(const Aws::String& value) { m_changeNameHasBeenSet = true; m_changeName = value; }
-    inline void SetChangeName(Aws::String&& value) { m_changeNameHasBeenSet = true; m_changeName = std::move(value); }
-    inline void SetChangeName(const char* value) { m_changeNameHasBeenSet = true; m_changeName.assign(value); }
-    inline ChangeSummary& WithChangeName(const Aws::String& value) { SetChangeName(value); return *this;}
-    inline ChangeSummary& WithChangeName(Aws::String&& value) { SetChangeName(std::move(value)); return *this;}
-    inline ChangeSummary& WithChangeName(const char* value) { SetChangeName(value); return *this;}
+    template<typename ChangeNameT = Aws::String>
+    void SetChangeName(ChangeNameT&& value) { m_changeNameHasBeenSet = true; m_changeName = std::forward<ChangeNameT>(value); }
+    template<typename ChangeNameT = Aws::String>
+    ChangeSummary& WithChangeName(ChangeNameT&& value) { SetChangeName(std::forward<ChangeNameT>(value)); return *this;}
     ///@}
   private:
 

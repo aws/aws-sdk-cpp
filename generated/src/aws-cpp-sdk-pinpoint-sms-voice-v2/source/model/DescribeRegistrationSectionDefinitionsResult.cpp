@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeRegistrationSectionDefinitionsResult::DescribeRegistrationSectionDefinitionsResult()
-{
-}
-
 DescribeRegistrationSectionDefinitionsResult::DescribeRegistrationSectionDefinitionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeRegistrationSectionDefinitionsResult& DescribeRegistrationSectionDefinit
   if(jsonValue.ValueExists("RegistrationType"))
   {
     m_registrationType = jsonValue.GetString("RegistrationType");
-
+    m_registrationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationSectionDefinitions"))
   {
     Aws::Utils::Array<JsonView> registrationSectionDefinitionsJsonList = jsonValue.GetArray("RegistrationSectionDefinitions");
@@ -42,20 +37,20 @@ DescribeRegistrationSectionDefinitionsResult& DescribeRegistrationSectionDefinit
     {
       m_registrationSectionDefinitions.push_back(registrationSectionDefinitionsJsonList[registrationSectionDefinitionsIndex].AsObject());
     }
+    m_registrationSectionDefinitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

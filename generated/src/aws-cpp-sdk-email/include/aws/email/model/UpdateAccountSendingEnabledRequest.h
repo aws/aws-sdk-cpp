@@ -23,7 +23,7 @@ namespace Model
   class UpdateAccountSendingEnabledRequest : public SESRequest
   {
   public:
-    AWS_SES_API UpdateAccountSendingEnabledRequest();
+    AWS_SES_API UpdateAccountSendingEnabledRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,14 @@ namespace Model
      * <p>Describes whether email sending is enabled or disabled for your Amazon SES
      * account in the current Amazon Web Services Region.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline UpdateAccountSendingEnabledRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

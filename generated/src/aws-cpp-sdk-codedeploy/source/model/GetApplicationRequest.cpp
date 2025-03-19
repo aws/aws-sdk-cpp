@@ -12,11 +12,6 @@ using namespace Aws::CodeDeploy::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetApplicationRequest::GetApplicationRequest() : 
-    m_applicationNameHasBeenSet(false)
-{
-}
-
 Aws::String GetApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

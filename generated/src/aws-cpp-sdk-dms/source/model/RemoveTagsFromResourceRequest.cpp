@@ -12,12 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveTagsFromResourceRequest::RemoveTagsFromResourceRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_tagKeysHasBeenSet(false)
-{
-}
-
 Aws::String RemoveTagsFromResourceRequest::SerializePayload() const
 {
   JsonValue payload;

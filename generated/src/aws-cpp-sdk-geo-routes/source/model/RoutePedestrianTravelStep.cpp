@@ -18,31 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RoutePedestrianTravelStep::RoutePedestrianTravelStep() : 
-    m_continueStepDetailsHasBeenSet(false),
-    m_currentRoadHasBeenSet(false),
-    m_distance(0),
-    m_distanceHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_exitNumberHasBeenSet(false),
-    m_geometryOffset(0),
-    m_geometryOffsetHasBeenSet(false),
-    m_instructionHasBeenSet(false),
-    m_keepStepDetailsHasBeenSet(false),
-    m_nextRoadHasBeenSet(false),
-    m_roundaboutEnterStepDetailsHasBeenSet(false),
-    m_roundaboutExitStepDetailsHasBeenSet(false),
-    m_roundaboutPassStepDetailsHasBeenSet(false),
-    m_signpostHasBeenSet(false),
-    m_turnStepDetailsHasBeenSet(false),
-    m_type(RoutePedestrianTravelStepType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 RoutePedestrianTravelStep::RoutePedestrianTravelStep(JsonView jsonValue)
-  : RoutePedestrianTravelStep()
 {
   *this = jsonValue;
 }
@@ -52,31 +28,23 @@ RoutePedestrianTravelStep& RoutePedestrianTravelStep::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ContinueStepDetails"))
   {
     m_continueStepDetails = jsonValue.GetObject("ContinueStepDetails");
-
     m_continueStepDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentRoad"))
   {
     m_currentRoad = jsonValue.GetObject("CurrentRoad");
-
     m_currentRoadHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Distance"))
   {
     m_distance = jsonValue.GetInt64("Distance");
-
     m_distanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Duration"))
   {
     m_duration = jsonValue.GetInt64("Duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExitNumber"))
   {
     Aws::Utils::Array<JsonView> exitNumberJsonList = jsonValue.GetArray("ExitNumber");
@@ -86,77 +54,56 @@ RoutePedestrianTravelStep& RoutePedestrianTravelStep::operator =(JsonView jsonVa
     }
     m_exitNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GeometryOffset"))
   {
     m_geometryOffset = jsonValue.GetInteger("GeometryOffset");
-
     m_geometryOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Instruction"))
   {
     m_instruction = jsonValue.GetString("Instruction");
-
     m_instructionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeepStepDetails"))
   {
     m_keepStepDetails = jsonValue.GetObject("KeepStepDetails");
-
     m_keepStepDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextRoad"))
   {
     m_nextRoad = jsonValue.GetObject("NextRoad");
-
     m_nextRoadHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoundaboutEnterStepDetails"))
   {
     m_roundaboutEnterStepDetails = jsonValue.GetObject("RoundaboutEnterStepDetails");
-
     m_roundaboutEnterStepDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoundaboutExitStepDetails"))
   {
     m_roundaboutExitStepDetails = jsonValue.GetObject("RoundaboutExitStepDetails");
-
     m_roundaboutExitStepDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoundaboutPassStepDetails"))
   {
     m_roundaboutPassStepDetails = jsonValue.GetObject("RoundaboutPassStepDetails");
-
     m_roundaboutPassStepDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Signpost"))
   {
     m_signpost = jsonValue.GetObject("Signpost");
-
     m_signpostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TurnStepDetails"))
   {
     m_turnStepDetails = jsonValue.GetObject("TurnStepDetails");
-
     m_turnStepDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = RoutePedestrianTravelStepTypeMapper::GetRoutePedestrianTravelStepTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

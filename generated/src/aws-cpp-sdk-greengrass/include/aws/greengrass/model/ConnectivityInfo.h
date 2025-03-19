@@ -31,7 +31,7 @@ namespace Model
   class ConnectivityInfo
   {
   public:
-    AWS_GREENGRASS_API ConnectivityInfo();
+    AWS_GREENGRASS_API ConnectivityInfo() = default;
     AWS_GREENGRASS_API ConnectivityInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API ConnectivityInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,49 +41,43 @@ namespace Model
     /**
      * The endpoint for the Greengrass core. Can be an IP address or DNS.
      */
-    inline const Aws::String& GetHostAddress() const{ return m_hostAddress; }
+    inline const Aws::String& GetHostAddress() const { return m_hostAddress; }
     inline bool HostAddressHasBeenSet() const { return m_hostAddressHasBeenSet; }
-    inline void SetHostAddress(const Aws::String& value) { m_hostAddressHasBeenSet = true; m_hostAddress = value; }
-    inline void SetHostAddress(Aws::String&& value) { m_hostAddressHasBeenSet = true; m_hostAddress = std::move(value); }
-    inline void SetHostAddress(const char* value) { m_hostAddressHasBeenSet = true; m_hostAddress.assign(value); }
-    inline ConnectivityInfo& WithHostAddress(const Aws::String& value) { SetHostAddress(value); return *this;}
-    inline ConnectivityInfo& WithHostAddress(Aws::String&& value) { SetHostAddress(std::move(value)); return *this;}
-    inline ConnectivityInfo& WithHostAddress(const char* value) { SetHostAddress(value); return *this;}
+    template<typename HostAddressT = Aws::String>
+    void SetHostAddress(HostAddressT&& value) { m_hostAddressHasBeenSet = true; m_hostAddress = std::forward<HostAddressT>(value); }
+    template<typename HostAddressT = Aws::String>
+    ConnectivityInfo& WithHostAddress(HostAddressT&& value) { SetHostAddress(std::forward<HostAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The ID of the connectivity information.
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ConnectivityInfo& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ConnectivityInfo& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ConnectivityInfo& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ConnectivityInfo& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Metadata for this endpoint.
      */
-    inline const Aws::String& GetMetadata() const{ return m_metadata; }
+    inline const Aws::String& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline void SetMetadata(const char* value) { m_metadataHasBeenSet = true; m_metadata.assign(value); }
-    inline ConnectivityInfo& WithMetadata(const Aws::String& value) { SetMetadata(value); return *this;}
-    inline ConnectivityInfo& WithMetadata(Aws::String&& value) { SetMetadata(std::move(value)); return *this;}
-    inline ConnectivityInfo& WithMetadata(const char* value) { SetMetadata(value); return *this;}
+    template<typename MetadataT = Aws::String>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Aws::String>
+    ConnectivityInfo& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The port of the Greengrass core. Usually 8883.
      */
-    inline int GetPortNumber() const{ return m_portNumber; }
+    inline int GetPortNumber() const { return m_portNumber; }
     inline bool PortNumberHasBeenSet() const { return m_portNumberHasBeenSet; }
     inline void SetPortNumber(int value) { m_portNumberHasBeenSet = true; m_portNumber = value; }
     inline ConnectivityInfo& WithPortNumber(int value) { SetPortNumber(value); return *this;}
@@ -99,7 +93,7 @@ namespace Model
     Aws::String m_metadata;
     bool m_metadataHasBeenSet = false;
 
-    int m_portNumber;
+    int m_portNumber{0};
     bool m_portNumberHasBeenSet = false;
   };
 

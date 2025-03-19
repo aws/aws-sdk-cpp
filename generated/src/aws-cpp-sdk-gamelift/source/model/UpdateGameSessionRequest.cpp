@@ -12,19 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateGameSessionRequest::UpdateGameSessionRequest() : 
-    m_gameSessionIdHasBeenSet(false),
-    m_maximumPlayerSessionCount(0),
-    m_maximumPlayerSessionCountHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_playerSessionCreationPolicy(PlayerSessionCreationPolicy::NOT_SET),
-    m_playerSessionCreationPolicyHasBeenSet(false),
-    m_protectionPolicy(ProtectionPolicy::NOT_SET),
-    m_protectionPolicyHasBeenSet(false),
-    m_gamePropertiesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateGameSessionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,14 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePullRequestApprovalStateRequest::UpdatePullRequestApprovalStateRequest() : 
-    m_pullRequestIdHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_approvalState(ApprovalState::NOT_SET),
-    m_approvalStateHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePullRequestApprovalStateRequest::SerializePayload() const
 {
   JsonValue payload;

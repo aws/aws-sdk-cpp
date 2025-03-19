@@ -31,7 +31,7 @@ namespace Model
   class WorkflowAttributes
   {
   public:
-    AWS_CUSTOMERPROFILES_API WorkflowAttributes();
+    AWS_CUSTOMERPROFILES_API WorkflowAttributes() = default;
     AWS_CUSTOMERPROFILES_API WorkflowAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API WorkflowAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
      * <p>Workflow attributes specific to <code>APPFLOW_INTEGRATION</code>
      * workflow.</p>
      */
-    inline const AppflowIntegrationWorkflowAttributes& GetAppflowIntegration() const{ return m_appflowIntegration; }
+    inline const AppflowIntegrationWorkflowAttributes& GetAppflowIntegration() const { return m_appflowIntegration; }
     inline bool AppflowIntegrationHasBeenSet() const { return m_appflowIntegrationHasBeenSet; }
-    inline void SetAppflowIntegration(const AppflowIntegrationWorkflowAttributes& value) { m_appflowIntegrationHasBeenSet = true; m_appflowIntegration = value; }
-    inline void SetAppflowIntegration(AppflowIntegrationWorkflowAttributes&& value) { m_appflowIntegrationHasBeenSet = true; m_appflowIntegration = std::move(value); }
-    inline WorkflowAttributes& WithAppflowIntegration(const AppflowIntegrationWorkflowAttributes& value) { SetAppflowIntegration(value); return *this;}
-    inline WorkflowAttributes& WithAppflowIntegration(AppflowIntegrationWorkflowAttributes&& value) { SetAppflowIntegration(std::move(value)); return *this;}
+    template<typename AppflowIntegrationT = AppflowIntegrationWorkflowAttributes>
+    void SetAppflowIntegration(AppflowIntegrationT&& value) { m_appflowIntegrationHasBeenSet = true; m_appflowIntegration = std::forward<AppflowIntegrationT>(value); }
+    template<typename AppflowIntegrationT = AppflowIntegrationWorkflowAttributes>
+    WorkflowAttributes& WithAppflowIntegration(AppflowIntegrationT&& value) { SetAppflowIntegration(std::forward<AppflowIntegrationT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class GetMembershipAccountDetailItem
   {
   public:
-    AWS_SECURITYIR_API GetMembershipAccountDetailItem();
+    AWS_SECURITYIR_API GetMembershipAccountDetailItem() = default;
     AWS_SECURITYIR_API GetMembershipAccountDetailItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYIR_API GetMembershipAccountDetailItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYIR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,48 +43,42 @@ namespace Model
     /**
      * <p/>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline GetMembershipAccountDetailItem& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline GetMembershipAccountDetailItem& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline GetMembershipAccountDetailItem& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    GetMembershipAccountDetailItem& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const MembershipAccountRelationshipStatus& GetRelationshipStatus() const{ return m_relationshipStatus; }
+    inline MembershipAccountRelationshipStatus GetRelationshipStatus() const { return m_relationshipStatus; }
     inline bool RelationshipStatusHasBeenSet() const { return m_relationshipStatusHasBeenSet; }
-    inline void SetRelationshipStatus(const MembershipAccountRelationshipStatus& value) { m_relationshipStatusHasBeenSet = true; m_relationshipStatus = value; }
-    inline void SetRelationshipStatus(MembershipAccountRelationshipStatus&& value) { m_relationshipStatusHasBeenSet = true; m_relationshipStatus = std::move(value); }
-    inline GetMembershipAccountDetailItem& WithRelationshipStatus(const MembershipAccountRelationshipStatus& value) { SetRelationshipStatus(value); return *this;}
-    inline GetMembershipAccountDetailItem& WithRelationshipStatus(MembershipAccountRelationshipStatus&& value) { SetRelationshipStatus(std::move(value)); return *this;}
+    inline void SetRelationshipStatus(MembershipAccountRelationshipStatus value) { m_relationshipStatusHasBeenSet = true; m_relationshipStatus = value; }
+    inline GetMembershipAccountDetailItem& WithRelationshipStatus(MembershipAccountRelationshipStatus value) { SetRelationshipStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const MembershipAccountRelationshipType& GetRelationshipType() const{ return m_relationshipType; }
+    inline MembershipAccountRelationshipType GetRelationshipType() const { return m_relationshipType; }
     inline bool RelationshipTypeHasBeenSet() const { return m_relationshipTypeHasBeenSet; }
-    inline void SetRelationshipType(const MembershipAccountRelationshipType& value) { m_relationshipTypeHasBeenSet = true; m_relationshipType = value; }
-    inline void SetRelationshipType(MembershipAccountRelationshipType&& value) { m_relationshipTypeHasBeenSet = true; m_relationshipType = std::move(value); }
-    inline GetMembershipAccountDetailItem& WithRelationshipType(const MembershipAccountRelationshipType& value) { SetRelationshipType(value); return *this;}
-    inline GetMembershipAccountDetailItem& WithRelationshipType(MembershipAccountRelationshipType&& value) { SetRelationshipType(std::move(value)); return *this;}
+    inline void SetRelationshipType(MembershipAccountRelationshipType value) { m_relationshipTypeHasBeenSet = true; m_relationshipType = value; }
+    inline GetMembershipAccountDetailItem& WithRelationshipType(MembershipAccountRelationshipType value) { SetRelationshipType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    MembershipAccountRelationshipStatus m_relationshipStatus;
+    MembershipAccountRelationshipStatus m_relationshipStatus{MembershipAccountRelationshipStatus::NOT_SET};
     bool m_relationshipStatusHasBeenSet = false;
 
-    MembershipAccountRelationshipType m_relationshipType;
+    MembershipAccountRelationshipType m_relationshipType{MembershipAccountRelationshipType::NOT_SET};
     bool m_relationshipTypeHasBeenSet = false;
   };
 

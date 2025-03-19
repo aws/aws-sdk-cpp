@@ -30,7 +30,7 @@ namespace Model
   class BinWidthOptions
   {
   public:
-    AWS_QUICKSIGHT_API BinWidthOptions();
+    AWS_QUICKSIGHT_API BinWidthOptions() = default;
     AWS_QUICKSIGHT_API BinWidthOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API BinWidthOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The options that determine the bin width value.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline BinWidthOptions& WithValue(double value) { SetValue(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>The options that determine the bin count limit.</p>
      */
-    inline long long GetBinCountLimit() const{ return m_binCountLimit; }
+    inline long long GetBinCountLimit() const { return m_binCountLimit; }
     inline bool BinCountLimitHasBeenSet() const { return m_binCountLimitHasBeenSet; }
     inline void SetBinCountLimit(long long value) { m_binCountLimitHasBeenSet = true; m_binCountLimit = value; }
     inline BinWidthOptions& WithBinCountLimit(long long value) { SetBinCountLimit(value); return *this;}
     ///@}
   private:
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
 
-    long long m_binCountLimit;
+    long long m_binCountLimit{0};
     bool m_binCountLimitHasBeenSet = false;
   };
 

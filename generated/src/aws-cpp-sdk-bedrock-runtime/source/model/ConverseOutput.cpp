@@ -18,13 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-ConverseOutput::ConverseOutput() : 
-    m_messageHasBeenSet(false)
-{
-}
-
 ConverseOutput::ConverseOutput(JsonView jsonValue)
-  : ConverseOutput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ConverseOutput& ConverseOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetObject("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

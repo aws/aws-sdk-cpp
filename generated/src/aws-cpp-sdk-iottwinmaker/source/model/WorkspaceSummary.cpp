@@ -18,18 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-WorkspaceSummary::WorkspaceSummary() : 
-    m_workspaceIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_linkedServicesHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_updateDateTimeHasBeenSet(false)
-{
-}
-
 WorkspaceSummary::WorkspaceSummary(JsonView jsonValue)
-  : WorkspaceSummary()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ WorkspaceSummary& WorkspaceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("workspaceId"))
   {
     m_workspaceId = jsonValue.GetString("workspaceId");
-
     m_workspaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("linkedServices"))
   {
     Aws::Utils::Array<JsonView> linkedServicesJsonList = jsonValue.GetArray("linkedServices");
@@ -66,21 +49,16 @@ WorkspaceSummary& WorkspaceSummary::operator =(JsonView jsonValue)
     }
     m_linkedServicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateDateTime"))
   {
     m_updateDateTime = jsonValue.GetDouble("updateDateTime");
-
     m_updateDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

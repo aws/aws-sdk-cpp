@@ -10,11 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-CreateAccessKeyRequest::CreateAccessKeyRequest() : 
-    m_userNameHasBeenSet(false)
-{
-}
-
 Aws::String CreateAccessKeyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

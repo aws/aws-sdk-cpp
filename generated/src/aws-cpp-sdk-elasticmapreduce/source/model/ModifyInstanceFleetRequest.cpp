@@ -12,12 +12,6 @@ using namespace Aws::EMR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ModifyInstanceFleetRequest::ModifyInstanceFleetRequest() : 
-    m_clusterIdHasBeenSet(false),
-    m_instanceFleetHasBeenSet(false)
-{
-}
-
 Aws::String ModifyInstanceFleetRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateInstanceProfileResult::UpdateInstanceProfileResult()
-{
-}
-
 UpdateInstanceProfileResult::UpdateInstanceProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateInstanceProfileResult& UpdateInstanceProfileResult::operator =(const Aws::
   if(jsonValue.ValueExists("instanceProfile"))
   {
     m_instanceProfile = jsonValue.GetObject("instanceProfile");
-
+    m_instanceProfileHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

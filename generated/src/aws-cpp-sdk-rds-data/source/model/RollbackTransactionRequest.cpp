@@ -12,13 +12,6 @@ using namespace Aws::RDSDataService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RollbackTransactionRequest::RollbackTransactionRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_transactionIdHasBeenSet(false)
-{
-}
-
 Aws::String RollbackTransactionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -30,7 +30,7 @@ namespace Model
   class ScalingConfigurationRequest
   {
   public:
-    AWS_PCS_API ScalingConfigurationRequest();
+    AWS_PCS_API ScalingConfigurationRequest() = default;
     AWS_PCS_API ScalingConfigurationRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_PCS_API ScalingConfigurationRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PCS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The lower bound of the number of instances allowed in the compute fleet.</p>
      */
-    inline int GetMinInstanceCount() const{ return m_minInstanceCount; }
+    inline int GetMinInstanceCount() const { return m_minInstanceCount; }
     inline bool MinInstanceCountHasBeenSet() const { return m_minInstanceCountHasBeenSet; }
     inline void SetMinInstanceCount(int value) { m_minInstanceCountHasBeenSet = true; m_minInstanceCount = value; }
     inline ScalingConfigurationRequest& WithMinInstanceCount(int value) { SetMinInstanceCount(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>The upper bound of the number of instances allowed in the compute fleet.</p>
      */
-    inline int GetMaxInstanceCount() const{ return m_maxInstanceCount; }
+    inline int GetMaxInstanceCount() const { return m_maxInstanceCount; }
     inline bool MaxInstanceCountHasBeenSet() const { return m_maxInstanceCountHasBeenSet; }
     inline void SetMaxInstanceCount(int value) { m_maxInstanceCountHasBeenSet = true; m_maxInstanceCount = value; }
     inline ScalingConfigurationRequest& WithMaxInstanceCount(int value) { SetMaxInstanceCount(value); return *this;}
     ///@}
   private:
 
-    int m_minInstanceCount;
+    int m_minInstanceCount{0};
     bool m_minInstanceCountHasBeenSet = false;
 
-    int m_maxInstanceCount;
+    int m_maxInstanceCount{0};
     bool m_maxInstanceCountHasBeenSet = false;
   };
 

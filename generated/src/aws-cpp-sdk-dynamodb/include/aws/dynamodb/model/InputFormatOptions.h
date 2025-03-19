@@ -32,7 +32,7 @@ namespace Model
   class InputFormatOptions
   {
   public:
-    AWS_DYNAMODB_API InputFormatOptions();
+    AWS_DYNAMODB_API InputFormatOptions() = default;
     AWS_DYNAMODB_API InputFormatOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API InputFormatOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p> The options for imported source files in CSV format. The values are
      * Delimiter and HeaderList. </p>
      */
-    inline const CsvOptions& GetCsv() const{ return m_csv; }
+    inline const CsvOptions& GetCsv() const { return m_csv; }
     inline bool CsvHasBeenSet() const { return m_csvHasBeenSet; }
-    inline void SetCsv(const CsvOptions& value) { m_csvHasBeenSet = true; m_csv = value; }
-    inline void SetCsv(CsvOptions&& value) { m_csvHasBeenSet = true; m_csv = std::move(value); }
-    inline InputFormatOptions& WithCsv(const CsvOptions& value) { SetCsv(value); return *this;}
-    inline InputFormatOptions& WithCsv(CsvOptions&& value) { SetCsv(std::move(value)); return *this;}
+    template<typename CsvT = CsvOptions>
+    void SetCsv(CsvT&& value) { m_csvHasBeenSet = true; m_csv = std::forward<CsvT>(value); }
+    template<typename CsvT = CsvOptions>
+    InputFormatOptions& WithCsv(CsvT&& value) { SetCsv(std::forward<CsvT>(value)); return *this;}
     ///@}
   private:
 

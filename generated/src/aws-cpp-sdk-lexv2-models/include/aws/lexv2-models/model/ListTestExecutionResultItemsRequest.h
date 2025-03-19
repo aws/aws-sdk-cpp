@@ -22,7 +22,7 @@ namespace Model
   class ListTestExecutionResultItemsRequest : public LexModelsV2Request
   {
   public:
-    AWS_LEXMODELSV2_API ListTestExecutionResultItemsRequest();
+    AWS_LEXMODELSV2_API ListTestExecutionResultItemsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,26 +37,24 @@ namespace Model
     /**
      * <p>The unique identifier of the test execution to list the result items.</p>
      */
-    inline const Aws::String& GetTestExecutionId() const{ return m_testExecutionId; }
+    inline const Aws::String& GetTestExecutionId() const { return m_testExecutionId; }
     inline bool TestExecutionIdHasBeenSet() const { return m_testExecutionIdHasBeenSet; }
-    inline void SetTestExecutionId(const Aws::String& value) { m_testExecutionIdHasBeenSet = true; m_testExecutionId = value; }
-    inline void SetTestExecutionId(Aws::String&& value) { m_testExecutionIdHasBeenSet = true; m_testExecutionId = std::move(value); }
-    inline void SetTestExecutionId(const char* value) { m_testExecutionIdHasBeenSet = true; m_testExecutionId.assign(value); }
-    inline ListTestExecutionResultItemsRequest& WithTestExecutionId(const Aws::String& value) { SetTestExecutionId(value); return *this;}
-    inline ListTestExecutionResultItemsRequest& WithTestExecutionId(Aws::String&& value) { SetTestExecutionId(std::move(value)); return *this;}
-    inline ListTestExecutionResultItemsRequest& WithTestExecutionId(const char* value) { SetTestExecutionId(value); return *this;}
+    template<typename TestExecutionIdT = Aws::String>
+    void SetTestExecutionId(TestExecutionIdT&& value) { m_testExecutionIdHasBeenSet = true; m_testExecutionId = std::forward<TestExecutionIdT>(value); }
+    template<typename TestExecutionIdT = Aws::String>
+    ListTestExecutionResultItemsRequest& WithTestExecutionId(TestExecutionIdT&& value) { SetTestExecutionId(std::forward<TestExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The filter for the list of results from the test set execution.</p>
      */
-    inline const TestExecutionResultFilterBy& GetResultFilterBy() const{ return m_resultFilterBy; }
+    inline const TestExecutionResultFilterBy& GetResultFilterBy() const { return m_resultFilterBy; }
     inline bool ResultFilterByHasBeenSet() const { return m_resultFilterByHasBeenSet; }
-    inline void SetResultFilterBy(const TestExecutionResultFilterBy& value) { m_resultFilterByHasBeenSet = true; m_resultFilterBy = value; }
-    inline void SetResultFilterBy(TestExecutionResultFilterBy&& value) { m_resultFilterByHasBeenSet = true; m_resultFilterBy = std::move(value); }
-    inline ListTestExecutionResultItemsRequest& WithResultFilterBy(const TestExecutionResultFilterBy& value) { SetResultFilterBy(value); return *this;}
-    inline ListTestExecutionResultItemsRequest& WithResultFilterBy(TestExecutionResultFilterBy&& value) { SetResultFilterBy(std::move(value)); return *this;}
+    template<typename ResultFilterByT = TestExecutionResultFilterBy>
+    void SetResultFilterBy(ResultFilterByT&& value) { m_resultFilterByHasBeenSet = true; m_resultFilterBy = std::forward<ResultFilterByT>(value); }
+    template<typename ResultFilterByT = TestExecutionResultFilterBy>
+    ListTestExecutionResultItemsRequest& WithResultFilterBy(ResultFilterByT&& value) { SetResultFilterBy(std::forward<ResultFilterByT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,7 +63,7 @@ namespace Model
      * there are fewer results than the max page size, only the actual number of
      * results are returned.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListTestExecutionResultItemsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -78,14 +76,12 @@ namespace Model
      * token is returned in the response. Use that token in the <code>nextToken</code>
      * parameter to return the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListTestExecutionResultItemsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTestExecutionResultItemsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTestExecutionResultItemsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTestExecutionResultItemsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -95,7 +91,7 @@ namespace Model
     TestExecutionResultFilterBy m_resultFilterBy;
     bool m_resultFilterByHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

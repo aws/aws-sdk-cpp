@@ -18,14 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-InvalidLDAPSStatusException::InvalidLDAPSStatusException() : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 InvalidLDAPSStatusException::InvalidLDAPSStatusException(JsonView jsonValue)
-  : InvalidLDAPSStatusException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InvalidLDAPSStatusException& InvalidLDAPSStatusException::operator =(JsonView js
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   return *this;
 }
 

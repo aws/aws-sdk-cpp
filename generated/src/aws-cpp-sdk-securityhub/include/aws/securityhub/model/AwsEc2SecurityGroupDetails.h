@@ -33,7 +33,7 @@ namespace Model
   class AwsEc2SecurityGroupDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2SecurityGroupDetails();
+    AWS_SECURITYHUB_API AwsEc2SecurityGroupDetails() = default;
     AWS_SECURITYHUB_API AwsEc2SecurityGroupDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2SecurityGroupDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,84 +43,76 @@ namespace Model
     /**
      * <p>The name of the security group.</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline AwsEc2SecurityGroupDetails& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline AwsEc2SecurityGroupDetails& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline AwsEc2SecurityGroupDetails& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    AwsEc2SecurityGroupDetails& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the security group.</p>
      */
-    inline const Aws::String& GetGroupId() const{ return m_groupId; }
+    inline const Aws::String& GetGroupId() const { return m_groupId; }
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-    inline AwsEc2SecurityGroupDetails& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-    inline AwsEc2SecurityGroupDetails& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-    inline AwsEc2SecurityGroupDetails& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    template<typename GroupIdT = Aws::String>
+    void SetGroupId(GroupIdT&& value) { m_groupIdHasBeenSet = true; m_groupId = std::forward<GroupIdT>(value); }
+    template<typename GroupIdT = Aws::String>
+    AwsEc2SecurityGroupDetails& WithGroupId(GroupIdT&& value) { SetGroupId(std::forward<GroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services account ID of the owner of the security group.</p>
      */
-    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+    inline const Aws::String& GetOwnerId() const { return m_ownerId; }
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
-    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
-    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
-    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
-    inline AwsEc2SecurityGroupDetails& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
-    inline AwsEc2SecurityGroupDetails& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
-    inline AwsEc2SecurityGroupDetails& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+    template<typename OwnerIdT = Aws::String>
+    void SetOwnerId(OwnerIdT&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::forward<OwnerIdT>(value); }
+    template<typename OwnerIdT = Aws::String>
+    AwsEc2SecurityGroupDetails& WithOwnerId(OwnerIdT&& value) { SetOwnerId(std::forward<OwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>[VPC only] The ID of the VPC for the security group.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline AwsEc2SecurityGroupDetails& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline AwsEc2SecurityGroupDetails& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline AwsEc2SecurityGroupDetails& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    AwsEc2SecurityGroupDetails& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The inbound rules associated with the security group.</p>
      */
-    inline const Aws::Vector<AwsEc2SecurityGroupIpPermission>& GetIpPermissions() const{ return m_ipPermissions; }
+    inline const Aws::Vector<AwsEc2SecurityGroupIpPermission>& GetIpPermissions() const { return m_ipPermissions; }
     inline bool IpPermissionsHasBeenSet() const { return m_ipPermissionsHasBeenSet; }
-    inline void SetIpPermissions(const Aws::Vector<AwsEc2SecurityGroupIpPermission>& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = value; }
-    inline void SetIpPermissions(Aws::Vector<AwsEc2SecurityGroupIpPermission>&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = std::move(value); }
-    inline AwsEc2SecurityGroupDetails& WithIpPermissions(const Aws::Vector<AwsEc2SecurityGroupIpPermission>& value) { SetIpPermissions(value); return *this;}
-    inline AwsEc2SecurityGroupDetails& WithIpPermissions(Aws::Vector<AwsEc2SecurityGroupIpPermission>&& value) { SetIpPermissions(std::move(value)); return *this;}
-    inline AwsEc2SecurityGroupDetails& AddIpPermissions(const AwsEc2SecurityGroupIpPermission& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(value); return *this; }
-    inline AwsEc2SecurityGroupDetails& AddIpPermissions(AwsEc2SecurityGroupIpPermission&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.push_back(std::move(value)); return *this; }
+    template<typename IpPermissionsT = Aws::Vector<AwsEc2SecurityGroupIpPermission>>
+    void SetIpPermissions(IpPermissionsT&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = std::forward<IpPermissionsT>(value); }
+    template<typename IpPermissionsT = Aws::Vector<AwsEc2SecurityGroupIpPermission>>
+    AwsEc2SecurityGroupDetails& WithIpPermissions(IpPermissionsT&& value) { SetIpPermissions(std::forward<IpPermissionsT>(value)); return *this;}
+    template<typename IpPermissionsT = AwsEc2SecurityGroupIpPermission>
+    AwsEc2SecurityGroupDetails& AddIpPermissions(IpPermissionsT&& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions.emplace_back(std::forward<IpPermissionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>[VPC only] The outbound rules associated with the security group.</p>
      */
-    inline const Aws::Vector<AwsEc2SecurityGroupIpPermission>& GetIpPermissionsEgress() const{ return m_ipPermissionsEgress; }
+    inline const Aws::Vector<AwsEc2SecurityGroupIpPermission>& GetIpPermissionsEgress() const { return m_ipPermissionsEgress; }
     inline bool IpPermissionsEgressHasBeenSet() const { return m_ipPermissionsEgressHasBeenSet; }
-    inline void SetIpPermissionsEgress(const Aws::Vector<AwsEc2SecurityGroupIpPermission>& value) { m_ipPermissionsEgressHasBeenSet = true; m_ipPermissionsEgress = value; }
-    inline void SetIpPermissionsEgress(Aws::Vector<AwsEc2SecurityGroupIpPermission>&& value) { m_ipPermissionsEgressHasBeenSet = true; m_ipPermissionsEgress = std::move(value); }
-    inline AwsEc2SecurityGroupDetails& WithIpPermissionsEgress(const Aws::Vector<AwsEc2SecurityGroupIpPermission>& value) { SetIpPermissionsEgress(value); return *this;}
-    inline AwsEc2SecurityGroupDetails& WithIpPermissionsEgress(Aws::Vector<AwsEc2SecurityGroupIpPermission>&& value) { SetIpPermissionsEgress(std::move(value)); return *this;}
-    inline AwsEc2SecurityGroupDetails& AddIpPermissionsEgress(const AwsEc2SecurityGroupIpPermission& value) { m_ipPermissionsEgressHasBeenSet = true; m_ipPermissionsEgress.push_back(value); return *this; }
-    inline AwsEc2SecurityGroupDetails& AddIpPermissionsEgress(AwsEc2SecurityGroupIpPermission&& value) { m_ipPermissionsEgressHasBeenSet = true; m_ipPermissionsEgress.push_back(std::move(value)); return *this; }
+    template<typename IpPermissionsEgressT = Aws::Vector<AwsEc2SecurityGroupIpPermission>>
+    void SetIpPermissionsEgress(IpPermissionsEgressT&& value) { m_ipPermissionsEgressHasBeenSet = true; m_ipPermissionsEgress = std::forward<IpPermissionsEgressT>(value); }
+    template<typename IpPermissionsEgressT = Aws::Vector<AwsEc2SecurityGroupIpPermission>>
+    AwsEc2SecurityGroupDetails& WithIpPermissionsEgress(IpPermissionsEgressT&& value) { SetIpPermissionsEgress(std::forward<IpPermissionsEgressT>(value)); return *this;}
+    template<typename IpPermissionsEgressT = AwsEc2SecurityGroupIpPermission>
+    AwsEc2SecurityGroupDetails& AddIpPermissionsEgress(IpPermissionsEgressT&& value) { m_ipPermissionsEgressHasBeenSet = true; m_ipPermissionsEgress.emplace_back(std::forward<IpPermissionsEgressT>(value)); return *this; }
     ///@}
   private:
 

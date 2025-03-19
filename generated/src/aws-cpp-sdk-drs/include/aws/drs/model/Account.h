@@ -31,7 +31,7 @@ namespace Model
   class Account
   {
   public:
-    AWS_DRS_API Account();
+    AWS_DRS_API Account() = default;
     AWS_DRS_API Account(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API Account& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>Account ID of AWS account.</p>
      */
-    inline const Aws::String& GetAccountID() const{ return m_accountID; }
+    inline const Aws::String& GetAccountID() const { return m_accountID; }
     inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-    inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
-    inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
-    inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
-    inline Account& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
-    inline Account& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
-    inline Account& WithAccountID(const char* value) { SetAccountID(value); return *this;}
+    template<typename AccountIDT = Aws::String>
+    void SetAccountID(AccountIDT&& value) { m_accountIDHasBeenSet = true; m_accountID = std::forward<AccountIDT>(value); }
+    template<typename AccountIDT = Aws::String>
+    Account& WithAccountID(AccountIDT&& value) { SetAccountID(std::forward<AccountIDT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,21 +18,7 @@ namespace MainframeModernization
 namespace Model
 {
 
-JobStep::JobStep() : 
-    m_procStepNameHasBeenSet(false),
-    m_procStepNumber(0),
-    m_procStepNumberHasBeenSet(false),
-    m_stepCondCodeHasBeenSet(false),
-    m_stepNameHasBeenSet(false),
-    m_stepNumber(0),
-    m_stepNumberHasBeenSet(false),
-    m_stepRestartable(false),
-    m_stepRestartableHasBeenSet(false)
-{
-}
-
 JobStep::JobStep(JsonView jsonValue)
-  : JobStep()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ JobStep& JobStep::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("procStepName"))
   {
     m_procStepName = jsonValue.GetString("procStepName");
-
     m_procStepNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("procStepNumber"))
   {
     m_procStepNumber = jsonValue.GetInteger("procStepNumber");
-
     m_procStepNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stepCondCode"))
   {
     m_stepCondCode = jsonValue.GetString("stepCondCode");
-
     m_stepCondCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stepName"))
   {
     m_stepName = jsonValue.GetString("stepName");
-
     m_stepNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stepNumber"))
   {
     m_stepNumber = jsonValue.GetInteger("stepNumber");
-
     m_stepNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stepRestartable"))
   {
     m_stepRestartable = jsonValue.GetBool("stepRestartable");
-
     m_stepRestartableHasBeenSet = true;
   }
-
   return *this;
 }
 

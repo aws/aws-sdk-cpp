@@ -28,7 +28,7 @@ namespace Model
   class InvokeRestApiResult
   {
   public:
-    AWS_MWAA_API InvokeRestApiResult();
+    AWS_MWAA_API InvokeRestApiResult() = default;
     AWS_MWAA_API InvokeRestApiResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MWAA_API InvokeRestApiResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,8 +37,8 @@ namespace Model
     /**
      * <p>The HTTP status code returned by the Apache Airflow REST API call.</p>
      */
-    inline int GetRestApiStatusCode() const{ return m_restApiStatusCode; }
-    inline void SetRestApiStatusCode(int value) { m_restApiStatusCode = value; }
+    inline int GetRestApiStatusCode() const { return m_restApiStatusCode; }
+    inline void SetRestApiStatusCode(int value) { m_restApiStatusCodeHasBeenSet = true; m_restApiStatusCode = value; }
     inline InvokeRestApiResult& WithRestApiStatusCode(int value) { SetRestApiStatusCode(value); return *this;}
     ///@}
 
@@ -47,30 +47,31 @@ namespace Model
      * <p>The response data from the Apache Airflow REST API call, provided as a JSON
      * object.</p>
      */
-    inline Aws::Utils::DocumentView GetRestApiResponse() const{ return m_restApiResponse; }
-    inline void SetRestApiResponse(const Aws::Utils::Document& value) { m_restApiResponse = value; }
-    inline void SetRestApiResponse(Aws::Utils::Document&& value) { m_restApiResponse = std::move(value); }
-    inline InvokeRestApiResult& WithRestApiResponse(const Aws::Utils::Document& value) { SetRestApiResponse(value); return *this;}
-    inline InvokeRestApiResult& WithRestApiResponse(Aws::Utils::Document&& value) { SetRestApiResponse(std::move(value)); return *this;}
+    inline Aws::Utils::DocumentView GetRestApiResponse() const { return m_restApiResponse; }
+    template<typename RestApiResponseT = Aws::Utils::Document>
+    void SetRestApiResponse(RestApiResponseT&& value) { m_restApiResponseHasBeenSet = true; m_restApiResponse = std::forward<RestApiResponseT>(value); }
+    template<typename RestApiResponseT = Aws::Utils::Document>
+    InvokeRestApiResult& WithRestApiResponse(RestApiResponseT&& value) { SetRestApiResponse(std::forward<RestApiResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline InvokeRestApiResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline InvokeRestApiResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline InvokeRestApiResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    InvokeRestApiResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_restApiStatusCode;
+    int m_restApiStatusCode{0};
+    bool m_restApiStatusCodeHasBeenSet = false;
 
     Aws::Utils::Document m_restApiResponse;
+    bool m_restApiResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

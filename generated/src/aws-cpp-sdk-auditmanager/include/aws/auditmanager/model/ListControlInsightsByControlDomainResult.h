@@ -29,7 +29,7 @@ namespace Model
   class ListControlInsightsByControlDomainResult
   {
   public:
-    AWS_AUDITMANAGER_API ListControlInsightsByControlDomainResult();
+    AWS_AUDITMANAGER_API ListControlInsightsByControlDomainResult() = default;
     AWS_AUDITMANAGER_API ListControlInsightsByControlDomainResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AUDITMANAGER_API ListControlInsightsByControlDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>The control analytics data that the
      * <code>ListControlInsightsByControlDomain</code> API returned. </p>
      */
-    inline const Aws::Vector<ControlInsightsMetadataItem>& GetControlInsightsMetadata() const{ return m_controlInsightsMetadata; }
-    inline void SetControlInsightsMetadata(const Aws::Vector<ControlInsightsMetadataItem>& value) { m_controlInsightsMetadata = value; }
-    inline void SetControlInsightsMetadata(Aws::Vector<ControlInsightsMetadataItem>&& value) { m_controlInsightsMetadata = std::move(value); }
-    inline ListControlInsightsByControlDomainResult& WithControlInsightsMetadata(const Aws::Vector<ControlInsightsMetadataItem>& value) { SetControlInsightsMetadata(value); return *this;}
-    inline ListControlInsightsByControlDomainResult& WithControlInsightsMetadata(Aws::Vector<ControlInsightsMetadataItem>&& value) { SetControlInsightsMetadata(std::move(value)); return *this;}
-    inline ListControlInsightsByControlDomainResult& AddControlInsightsMetadata(const ControlInsightsMetadataItem& value) { m_controlInsightsMetadata.push_back(value); return *this; }
-    inline ListControlInsightsByControlDomainResult& AddControlInsightsMetadata(ControlInsightsMetadataItem&& value) { m_controlInsightsMetadata.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ControlInsightsMetadataItem>& GetControlInsightsMetadata() const { return m_controlInsightsMetadata; }
+    template<typename ControlInsightsMetadataT = Aws::Vector<ControlInsightsMetadataItem>>
+    void SetControlInsightsMetadata(ControlInsightsMetadataT&& value) { m_controlInsightsMetadataHasBeenSet = true; m_controlInsightsMetadata = std::forward<ControlInsightsMetadataT>(value); }
+    template<typename ControlInsightsMetadataT = Aws::Vector<ControlInsightsMetadataItem>>
+    ListControlInsightsByControlDomainResult& WithControlInsightsMetadata(ControlInsightsMetadataT&& value) { SetControlInsightsMetadata(std::forward<ControlInsightsMetadataT>(value)); return *this;}
+    template<typename ControlInsightsMetadataT = ControlInsightsMetadataItem>
+    ListControlInsightsByControlDomainResult& AddControlInsightsMetadata(ControlInsightsMetadataT&& value) { m_controlInsightsMetadataHasBeenSet = true; m_controlInsightsMetadata.emplace_back(std::forward<ControlInsightsMetadataT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token that's used to fetch the next set of results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListControlInsightsByControlDomainResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListControlInsightsByControlDomainResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListControlInsightsByControlDomainResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListControlInsightsByControlDomainResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListControlInsightsByControlDomainResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListControlInsightsByControlDomainResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListControlInsightsByControlDomainResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListControlInsightsByControlDomainResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ControlInsightsMetadataItem> m_controlInsightsMetadata;
+    bool m_controlInsightsMetadataHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

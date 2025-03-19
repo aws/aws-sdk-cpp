@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-EnableImageResponse::EnableImageResponse() : 
-    m_return(false)
-{
-}
-
 EnableImageResponse::EnableImageResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : EnableImageResponse()
 {
   *this = result;
 }
@@ -44,6 +38,7 @@ EnableImageResponse& EnableImageResponse::operator =(const Aws::AmazonWebService
     if(!returnNode.IsNull())
     {
       m_return = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnNode.GetText()).c_str()).c_str());
+      m_returnHasBeenSet = true;
     }
   }
 
@@ -52,6 +47,7 @@ EnableImageResponse& EnableImageResponse::operator =(const Aws::AmazonWebService
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::EnableImageResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

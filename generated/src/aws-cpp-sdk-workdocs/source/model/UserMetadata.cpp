@@ -18,17 +18,7 @@ namespace WorkDocs
 namespace Model
 {
 
-UserMetadata::UserMetadata() : 
-    m_idHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_givenNameHasBeenSet(false),
-    m_surnameHasBeenSet(false),
-    m_emailAddressHasBeenSet(false)
-{
-}
-
 UserMetadata::UserMetadata(JsonView jsonValue)
-  : UserMetadata()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ UserMetadata& UserMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Username"))
   {
     m_username = jsonValue.GetString("Username");
-
     m_usernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GivenName"))
   {
     m_givenName = jsonValue.GetString("GivenName");
-
     m_givenNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Surname"))
   {
     m_surname = jsonValue.GetString("Surname");
-
     m_surnameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmailAddress"))
   {
     m_emailAddress = jsonValue.GetString("EmailAddress");
-
     m_emailAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

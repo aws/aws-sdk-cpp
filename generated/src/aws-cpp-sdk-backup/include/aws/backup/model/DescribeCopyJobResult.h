@@ -28,7 +28,7 @@ namespace Model
   class DescribeCopyJobResult
   {
   public:
-    AWS_BACKUP_API DescribeCopyJobResult();
+    AWS_BACKUP_API DescribeCopyJobResult() = default;
     AWS_BACKUP_API DescribeCopyJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUP_API DescribeCopyJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Contains detailed information about a copy job.</p>
      */
-    inline const CopyJob& GetCopyJob() const{ return m_copyJob; }
-    inline void SetCopyJob(const CopyJob& value) { m_copyJob = value; }
-    inline void SetCopyJob(CopyJob&& value) { m_copyJob = std::move(value); }
-    inline DescribeCopyJobResult& WithCopyJob(const CopyJob& value) { SetCopyJob(value); return *this;}
-    inline DescribeCopyJobResult& WithCopyJob(CopyJob&& value) { SetCopyJob(std::move(value)); return *this;}
+    inline const CopyJob& GetCopyJob() const { return m_copyJob; }
+    template<typename CopyJobT = CopyJob>
+    void SetCopyJob(CopyJobT&& value) { m_copyJobHasBeenSet = true; m_copyJob = std::forward<CopyJobT>(value); }
+    template<typename CopyJobT = CopyJob>
+    DescribeCopyJobResult& WithCopyJob(CopyJobT&& value) { SetCopyJob(std::forward<CopyJobT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeCopyJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeCopyJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeCopyJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeCopyJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CopyJob m_copyJob;
+    bool m_copyJobHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

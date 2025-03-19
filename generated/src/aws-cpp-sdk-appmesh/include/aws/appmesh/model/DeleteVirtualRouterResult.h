@@ -33,7 +33,7 @@ namespace Model
   class DeleteVirtualRouterResult
   {
   public:
-    AWS_APPMESH_API DeleteVirtualRouterResult();
+    AWS_APPMESH_API DeleteVirtualRouterResult() = default;
     AWS_APPMESH_API DeleteVirtualRouterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPMESH_API DeleteVirtualRouterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,28 +42,28 @@ namespace Model
     /**
      * <p>The virtual router that was deleted.</p>
      */
-    inline const VirtualRouterData& GetVirtualRouter() const{ return m_virtualRouter; }
-    inline void SetVirtualRouter(const VirtualRouterData& value) { m_virtualRouter = value; }
-    inline void SetVirtualRouter(VirtualRouterData&& value) { m_virtualRouter = std::move(value); }
-    inline DeleteVirtualRouterResult& WithVirtualRouter(const VirtualRouterData& value) { SetVirtualRouter(value); return *this;}
-    inline DeleteVirtualRouterResult& WithVirtualRouter(VirtualRouterData&& value) { SetVirtualRouter(std::move(value)); return *this;}
+    inline const VirtualRouterData& GetVirtualRouter() const { return m_virtualRouter; }
+    template<typename VirtualRouterT = VirtualRouterData>
+    void SetVirtualRouter(VirtualRouterT&& value) { m_virtualRouterHasBeenSet = true; m_virtualRouter = std::forward<VirtualRouterT>(value); }
+    template<typename VirtualRouterT = VirtualRouterData>
+    DeleteVirtualRouterResult& WithVirtualRouter(VirtualRouterT&& value) { SetVirtualRouter(std::forward<VirtualRouterT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteVirtualRouterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteVirtualRouterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteVirtualRouterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteVirtualRouterResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     VirtualRouterData m_virtualRouter;
+    bool m_virtualRouterHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

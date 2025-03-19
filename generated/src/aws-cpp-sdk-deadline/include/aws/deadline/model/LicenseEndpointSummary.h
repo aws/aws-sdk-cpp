@@ -32,7 +32,7 @@ namespace Model
   class LicenseEndpointSummary
   {
   public:
-    AWS_DEADLINE_API LicenseEndpointSummary();
+    AWS_DEADLINE_API LicenseEndpointSummary() = default;
     AWS_DEADLINE_API LicenseEndpointSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API LicenseEndpointSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,61 +42,53 @@ namespace Model
     /**
      * <p>The license endpoint ID.</p>
      */
-    inline const Aws::String& GetLicenseEndpointId() const{ return m_licenseEndpointId; }
+    inline const Aws::String& GetLicenseEndpointId() const { return m_licenseEndpointId; }
     inline bool LicenseEndpointIdHasBeenSet() const { return m_licenseEndpointIdHasBeenSet; }
-    inline void SetLicenseEndpointId(const Aws::String& value) { m_licenseEndpointIdHasBeenSet = true; m_licenseEndpointId = value; }
-    inline void SetLicenseEndpointId(Aws::String&& value) { m_licenseEndpointIdHasBeenSet = true; m_licenseEndpointId = std::move(value); }
-    inline void SetLicenseEndpointId(const char* value) { m_licenseEndpointIdHasBeenSet = true; m_licenseEndpointId.assign(value); }
-    inline LicenseEndpointSummary& WithLicenseEndpointId(const Aws::String& value) { SetLicenseEndpointId(value); return *this;}
-    inline LicenseEndpointSummary& WithLicenseEndpointId(Aws::String&& value) { SetLicenseEndpointId(std::move(value)); return *this;}
-    inline LicenseEndpointSummary& WithLicenseEndpointId(const char* value) { SetLicenseEndpointId(value); return *this;}
+    template<typename LicenseEndpointIdT = Aws::String>
+    void SetLicenseEndpointId(LicenseEndpointIdT&& value) { m_licenseEndpointIdHasBeenSet = true; m_licenseEndpointId = std::forward<LicenseEndpointIdT>(value); }
+    template<typename LicenseEndpointIdT = Aws::String>
+    LicenseEndpointSummary& WithLicenseEndpointId(LicenseEndpointIdT&& value) { SetLicenseEndpointId(std::forward<LicenseEndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the license endpoint.</p>
      */
-    inline const LicenseEndpointStatus& GetStatus() const{ return m_status; }
+    inline LicenseEndpointStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const LicenseEndpointStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(LicenseEndpointStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline LicenseEndpointSummary& WithStatus(const LicenseEndpointStatus& value) { SetStatus(value); return *this;}
-    inline LicenseEndpointSummary& WithStatus(LicenseEndpointStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(LicenseEndpointStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline LicenseEndpointSummary& WithStatus(LicenseEndpointStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status message of the license endpoint.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline LicenseEndpointSummary& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline LicenseEndpointSummary& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline LicenseEndpointSummary& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    LicenseEndpointSummary& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The VCP(virtual private cloud) ID associated with the license endpoint.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline LicenseEndpointSummary& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline LicenseEndpointSummary& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline LicenseEndpointSummary& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    LicenseEndpointSummary& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_licenseEndpointId;
     bool m_licenseEndpointIdHasBeenSet = false;
 
-    LicenseEndpointStatus m_status;
+    LicenseEndpointStatus m_status{LicenseEndpointStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;

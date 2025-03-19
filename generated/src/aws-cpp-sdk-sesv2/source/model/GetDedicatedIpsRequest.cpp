@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetDedicatedIpsRequest::GetDedicatedIpsRequest() : 
-    m_poolNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false)
-{
-}
-
 Aws::String GetDedicatedIpsRequest::SerializePayload() const
 {
   return {};

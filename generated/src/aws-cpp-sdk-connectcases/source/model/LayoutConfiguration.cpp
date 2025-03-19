@@ -18,13 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-LayoutConfiguration::LayoutConfiguration() : 
-    m_defaultLayoutHasBeenSet(false)
-{
-}
-
 LayoutConfiguration::LayoutConfiguration(JsonView jsonValue)
-  : LayoutConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LayoutConfiguration& LayoutConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("defaultLayout"))
   {
     m_defaultLayout = jsonValue.GetString("defaultLayout");
-
     m_defaultLayoutHasBeenSet = true;
   }
-
   return *this;
 }
 

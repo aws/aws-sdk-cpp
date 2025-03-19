@@ -33,7 +33,7 @@ namespace Model
   class InvalidRequestRegionException
   {
   public:
-    AWS_SSOOIDC_API InvalidRequestRegionException();
+    AWS_SSOOIDC_API InvalidRequestRegionException() = default;
     AWS_SSOOIDC_API InvalidRequestRegionException(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOOIDC_API InvalidRequestRegionException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOOIDC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>Single error code. For this exception the value will be
      * <code>invalid_request</code>.</p>
      */
-    inline const Aws::String& GetError() const{ return m_error; }
+    inline const Aws::String& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const Aws::String& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(Aws::String&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline void SetError(const char* value) { m_errorHasBeenSet = true; m_error.assign(value); }
-    inline InvalidRequestRegionException& WithError(const Aws::String& value) { SetError(value); return *this;}
-    inline InvalidRequestRegionException& WithError(Aws::String&& value) { SetError(std::move(value)); return *this;}
-    inline InvalidRequestRegionException& WithError(const char* value) { SetError(value); return *this;}
+    template<typename ErrorT = Aws::String>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = Aws::String>
+    InvalidRequestRegionException& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>Human-readable text providing additional information, used to assist the
      * client developer in understanding the error that occurred.</p>
      */
-    inline const Aws::String& GetError_description() const{ return m_error_description; }
+    inline const Aws::String& GetError_description() const { return m_error_description; }
     inline bool Error_descriptionHasBeenSet() const { return m_error_descriptionHasBeenSet; }
-    inline void SetError_description(const Aws::String& value) { m_error_descriptionHasBeenSet = true; m_error_description = value; }
-    inline void SetError_description(Aws::String&& value) { m_error_descriptionHasBeenSet = true; m_error_description = std::move(value); }
-    inline void SetError_description(const char* value) { m_error_descriptionHasBeenSet = true; m_error_description.assign(value); }
-    inline InvalidRequestRegionException& WithError_description(const Aws::String& value) { SetError_description(value); return *this;}
-    inline InvalidRequestRegionException& WithError_description(Aws::String&& value) { SetError_description(std::move(value)); return *this;}
-    inline InvalidRequestRegionException& WithError_description(const char* value) { SetError_description(value); return *this;}
+    template<typename Error_descriptionT = Aws::String>
+    void SetError_description(Error_descriptionT&& value) { m_error_descriptionHasBeenSet = true; m_error_description = std::forward<Error_descriptionT>(value); }
+    template<typename Error_descriptionT = Aws::String>
+    InvalidRequestRegionException& WithError_description(Error_descriptionT&& value) { SetError_description(std::forward<Error_descriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,28 +70,24 @@ namespace Model
      * <p>Indicates the IAM Identity Center endpoint which the requester may call with
      * this token.</p>
      */
-    inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
+    inline const Aws::String& GetEndpoint() const { return m_endpoint; }
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
-    inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
-    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
-    inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
-    inline InvalidRequestRegionException& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
-    inline InvalidRequestRegionException& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
-    inline InvalidRequestRegionException& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
+    template<typename EndpointT = Aws::String>
+    void SetEndpoint(EndpointT&& value) { m_endpointHasBeenSet = true; m_endpoint = std::forward<EndpointT>(value); }
+    template<typename EndpointT = Aws::String>
+    InvalidRequestRegionException& WithEndpoint(EndpointT&& value) { SetEndpoint(std::forward<EndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the region which the requester may call with this token.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline InvalidRequestRegionException& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline InvalidRequestRegionException& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline InvalidRequestRegionException& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    InvalidRequestRegionException& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
   private:
 

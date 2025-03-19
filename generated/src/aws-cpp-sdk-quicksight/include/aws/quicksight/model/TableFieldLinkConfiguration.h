@@ -32,7 +32,7 @@ namespace Model
   class TableFieldLinkConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API TableFieldLinkConfiguration();
+    AWS_QUICKSIGHT_API TableFieldLinkConfiguration() = default;
     AWS_QUICKSIGHT_API TableFieldLinkConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TableFieldLinkConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,26 @@ namespace Model
      * <p>The URL target (new tab, new window, same tab) for the table link
      * configuration.</p>
      */
-    inline const URLTargetConfiguration& GetTarget() const{ return m_target; }
+    inline URLTargetConfiguration GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const URLTargetConfiguration& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(URLTargetConfiguration&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline TableFieldLinkConfiguration& WithTarget(const URLTargetConfiguration& value) { SetTarget(value); return *this;}
-    inline TableFieldLinkConfiguration& WithTarget(URLTargetConfiguration&& value) { SetTarget(std::move(value)); return *this;}
+    inline void SetTarget(URLTargetConfiguration value) { m_targetHasBeenSet = true; m_target = value; }
+    inline TableFieldLinkConfiguration& WithTarget(URLTargetConfiguration value) { SetTarget(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The URL content (text, icon) for the table link configuration.</p>
      */
-    inline const TableFieldLinkContentConfiguration& GetContent() const{ return m_content; }
+    inline const TableFieldLinkContentConfiguration& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const TableFieldLinkContentConfiguration& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(TableFieldLinkContentConfiguration&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline TableFieldLinkConfiguration& WithContent(const TableFieldLinkContentConfiguration& value) { SetContent(value); return *this;}
-    inline TableFieldLinkConfiguration& WithContent(TableFieldLinkContentConfiguration&& value) { SetContent(std::move(value)); return *this;}
+    template<typename ContentT = TableFieldLinkContentConfiguration>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = TableFieldLinkContentConfiguration>
+    TableFieldLinkConfiguration& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
   private:
 
-    URLTargetConfiguration m_target;
+    URLTargetConfiguration m_target{URLTargetConfiguration::NOT_SET};
     bool m_targetHasBeenSet = false;
 
     TableFieldLinkContentConfiguration m_content;

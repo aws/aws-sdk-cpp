@@ -32,7 +32,7 @@ namespace Model
   class ContainerImage
   {
   public:
-    AWS_BRAKET_API ContainerImage();
+    AWS_BRAKET_API ContainerImage() = default;
     AWS_BRAKET_API ContainerImage(Aws::Utils::Json::JsonView jsonValue);
     AWS_BRAKET_API ContainerImage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BRAKET_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The URI locating the container image.</p>
      */
-    inline const Aws::String& GetUri() const{ return m_uri; }
+    inline const Aws::String& GetUri() const { return m_uri; }
     inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
-    inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
-    inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = std::move(value); }
-    inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
-    inline ContainerImage& WithUri(const Aws::String& value) { SetUri(value); return *this;}
-    inline ContainerImage& WithUri(Aws::String&& value) { SetUri(std::move(value)); return *this;}
-    inline ContainerImage& WithUri(const char* value) { SetUri(value); return *this;}
+    template<typename UriT = Aws::String>
+    void SetUri(UriT&& value) { m_uriHasBeenSet = true; m_uri = std::forward<UriT>(value); }
+    template<typename UriT = Aws::String>
+    ContainerImage& WithUri(UriT&& value) { SetUri(std::forward<UriT>(value)); return *this;}
     ///@}
   private:
 

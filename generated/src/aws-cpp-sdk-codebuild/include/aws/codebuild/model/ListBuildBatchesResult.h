@@ -28,7 +28,7 @@ namespace Model
   class ListBuildBatchesResult
   {
   public:
-    AWS_CODEBUILD_API ListBuildBatchesResult();
+    AWS_CODEBUILD_API ListBuildBatchesResult() = default;
     AWS_CODEBUILD_API ListBuildBatchesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEBUILD_API ListBuildBatchesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,14 +37,13 @@ namespace Model
     /**
      * <p>An array of strings that contains the batch build identifiers.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIds() const{ return m_ids; }
-    inline void SetIds(const Aws::Vector<Aws::String>& value) { m_ids = value; }
-    inline void SetIds(Aws::Vector<Aws::String>&& value) { m_ids = std::move(value); }
-    inline ListBuildBatchesResult& WithIds(const Aws::Vector<Aws::String>& value) { SetIds(value); return *this;}
-    inline ListBuildBatchesResult& WithIds(Aws::Vector<Aws::String>&& value) { SetIds(std::move(value)); return *this;}
-    inline ListBuildBatchesResult& AddIds(const Aws::String& value) { m_ids.push_back(value); return *this; }
-    inline ListBuildBatchesResult& AddIds(Aws::String&& value) { m_ids.push_back(std::move(value)); return *this; }
-    inline ListBuildBatchesResult& AddIds(const char* value) { m_ids.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetIds() const { return m_ids; }
+    template<typename IdsT = Aws::Vector<Aws::String>>
+    void SetIds(IdsT&& value) { m_idsHasBeenSet = true; m_ids = std::forward<IdsT>(value); }
+    template<typename IdsT = Aws::Vector<Aws::String>>
+    ListBuildBatchesResult& WithIds(IdsT&& value) { SetIds(std::forward<IdsT>(value)); return *this;}
+    template<typename IdsT = Aws::String>
+    ListBuildBatchesResult& AddIds(IdsT&& value) { m_idsHasBeenSet = true; m_ids.emplace_back(std::forward<IdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +52,31 @@ namespace Model
      * subsequent call to <code>ListBuildBatches</code> to retrieve the next set of
      * items.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListBuildBatchesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListBuildBatchesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListBuildBatchesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListBuildBatchesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListBuildBatchesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListBuildBatchesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListBuildBatchesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListBuildBatchesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_ids;
+    bool m_idsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

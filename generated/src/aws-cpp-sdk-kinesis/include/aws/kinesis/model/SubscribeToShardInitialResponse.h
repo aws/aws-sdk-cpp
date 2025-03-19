@@ -25,7 +25,7 @@ namespace Model
   class SubscribeToShardInitialResponse
   {
   public:
-    AWS_KINESIS_API SubscribeToShardInitialResponse();
+    AWS_KINESIS_API SubscribeToShardInitialResponse() = default;
     AWS_KINESIS_API SubscribeToShardInitialResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESIS_API SubscribeToShardInitialResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESIS_API SubscribeToShardInitialResponse(const Http::HeaderValueCollection& responseHeaders);

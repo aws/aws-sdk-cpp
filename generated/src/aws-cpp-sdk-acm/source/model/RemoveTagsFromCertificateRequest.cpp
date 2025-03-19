@@ -12,12 +12,6 @@ using namespace Aws::ACM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveTagsFromCertificateRequest::RemoveTagsFromCertificateRequest() : 
-    m_certificateArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String RemoveTagsFromCertificateRequest::SerializePayload() const
 {
   JsonValue payload;

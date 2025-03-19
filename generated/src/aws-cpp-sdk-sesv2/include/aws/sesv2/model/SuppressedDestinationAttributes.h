@@ -33,7 +33,7 @@ namespace Model
   class SuppressedDestinationAttributes
   {
   public:
-    AWS_SESV2_API SuppressedDestinationAttributes();
+    AWS_SESV2_API SuppressedDestinationAttributes() = default;
     AWS_SESV2_API SuppressedDestinationAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API SuppressedDestinationAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The unique identifier of the email message that caused the email address to
      * be added to the suppression list for your account.</p>
      */
-    inline const Aws::String& GetMessageId() const{ return m_messageId; }
+    inline const Aws::String& GetMessageId() const { return m_messageId; }
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
-    inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
-    inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
-    inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
-    inline SuppressedDestinationAttributes& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
-    inline SuppressedDestinationAttributes& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
-    inline SuppressedDestinationAttributes& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+    template<typename MessageIdT = Aws::String>
+    void SetMessageId(MessageIdT&& value) { m_messageIdHasBeenSet = true; m_messageId = std::forward<MessageIdT>(value); }
+    template<typename MessageIdT = Aws::String>
+    SuppressedDestinationAttributes& WithMessageId(MessageIdT&& value) { SetMessageId(std::forward<MessageIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>A unique identifier that's generated when an email address is added to the
      * suppression list for your account.</p>
      */
-    inline const Aws::String& GetFeedbackId() const{ return m_feedbackId; }
+    inline const Aws::String& GetFeedbackId() const { return m_feedbackId; }
     inline bool FeedbackIdHasBeenSet() const { return m_feedbackIdHasBeenSet; }
-    inline void SetFeedbackId(const Aws::String& value) { m_feedbackIdHasBeenSet = true; m_feedbackId = value; }
-    inline void SetFeedbackId(Aws::String&& value) { m_feedbackIdHasBeenSet = true; m_feedbackId = std::move(value); }
-    inline void SetFeedbackId(const char* value) { m_feedbackIdHasBeenSet = true; m_feedbackId.assign(value); }
-    inline SuppressedDestinationAttributes& WithFeedbackId(const Aws::String& value) { SetFeedbackId(value); return *this;}
-    inline SuppressedDestinationAttributes& WithFeedbackId(Aws::String&& value) { SetFeedbackId(std::move(value)); return *this;}
-    inline SuppressedDestinationAttributes& WithFeedbackId(const char* value) { SetFeedbackId(value); return *this;}
+    template<typename FeedbackIdT = Aws::String>
+    void SetFeedbackId(FeedbackIdT&& value) { m_feedbackIdHasBeenSet = true; m_feedbackId = std::forward<FeedbackIdT>(value); }
+    template<typename FeedbackIdT = Aws::String>
+    SuppressedDestinationAttributes& WithFeedbackId(FeedbackIdT&& value) { SetFeedbackId(std::forward<FeedbackIdT>(value)); return *this;}
     ///@}
   private:
 

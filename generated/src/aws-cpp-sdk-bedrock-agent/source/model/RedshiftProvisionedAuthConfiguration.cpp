@@ -18,16 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-RedshiftProvisionedAuthConfiguration::RedshiftProvisionedAuthConfiguration() : 
-    m_databaseUserHasBeenSet(false),
-    m_type(RedshiftProvisionedAuthType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_usernamePasswordSecretArnHasBeenSet(false)
-{
-}
-
 RedshiftProvisionedAuthConfiguration::RedshiftProvisionedAuthConfiguration(JsonView jsonValue)
-  : RedshiftProvisionedAuthConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ RedshiftProvisionedAuthConfiguration& RedshiftProvisionedAuthConfiguration::oper
   if(jsonValue.ValueExists("databaseUser"))
   {
     m_databaseUser = jsonValue.GetString("databaseUser");
-
     m_databaseUserHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = RedshiftProvisionedAuthTypeMapper::GetRedshiftProvisionedAuthTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("usernamePasswordSecretArn"))
   {
     m_usernamePasswordSecretArn = jsonValue.GetString("usernamePasswordSecretArn");
-
     m_usernamePasswordSecretArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::repostspace::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSpaceRequest::GetSpaceRequest() : 
-    m_spaceIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSpaceRequest::SerializePayload() const
 {
   return {};

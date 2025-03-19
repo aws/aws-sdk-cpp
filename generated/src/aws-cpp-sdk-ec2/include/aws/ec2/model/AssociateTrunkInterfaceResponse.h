@@ -29,7 +29,7 @@ namespace Model
   class AssociateTrunkInterfaceResponse
   {
   public:
-    AWS_EC2_API AssociateTrunkInterfaceResponse();
+    AWS_EC2_API AssociateTrunkInterfaceResponse() = default;
     AWS_EC2_API AssociateTrunkInterfaceResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API AssociateTrunkInterfaceResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,11 +39,11 @@ namespace Model
      * <p>Information about the association between the trunk network interface and
      * branch network interface.</p>
      */
-    inline const TrunkInterfaceAssociation& GetInterfaceAssociation() const{ return m_interfaceAssociation; }
-    inline void SetInterfaceAssociation(const TrunkInterfaceAssociation& value) { m_interfaceAssociation = value; }
-    inline void SetInterfaceAssociation(TrunkInterfaceAssociation&& value) { m_interfaceAssociation = std::move(value); }
-    inline AssociateTrunkInterfaceResponse& WithInterfaceAssociation(const TrunkInterfaceAssociation& value) { SetInterfaceAssociation(value); return *this;}
-    inline AssociateTrunkInterfaceResponse& WithInterfaceAssociation(TrunkInterfaceAssociation&& value) { SetInterfaceAssociation(std::move(value)); return *this;}
+    inline const TrunkInterfaceAssociation& GetInterfaceAssociation() const { return m_interfaceAssociation; }
+    template<typename InterfaceAssociationT = TrunkInterfaceAssociation>
+    void SetInterfaceAssociation(InterfaceAssociationT&& value) { m_interfaceAssociationHasBeenSet = true; m_interfaceAssociation = std::forward<InterfaceAssociationT>(value); }
+    template<typename InterfaceAssociationT = TrunkInterfaceAssociation>
+    AssociateTrunkInterfaceResponse& WithInterfaceAssociation(InterfaceAssociationT&& value) { SetInterfaceAssociation(std::forward<InterfaceAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring
      * idempotency</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-    inline void SetClientToken(const Aws::String& value) { m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientToken.assign(value); }
-    inline AssociateTrunkInterfaceResponse& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline AssociateTrunkInterfaceResponse& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline AssociateTrunkInterfaceResponse& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    AssociateTrunkInterfaceResponse& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline AssociateTrunkInterfaceResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline AssociateTrunkInterfaceResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    AssociateTrunkInterfaceResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     TrunkInterfaceAssociation m_interfaceAssociation;
+    bool m_interfaceAssociationHasBeenSet = false;
 
     Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

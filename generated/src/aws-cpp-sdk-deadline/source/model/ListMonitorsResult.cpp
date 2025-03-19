@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListMonitorsResult::ListMonitorsResult()
-{
-}
-
 ListMonitorsResult::ListMonitorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListMonitorsResult& ListMonitorsResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("monitors"))
   {
     Aws::Utils::Array<JsonView> monitorsJsonList = jsonValue.GetArray("monitors");
@@ -42,14 +37,15 @@ ListMonitorsResult& ListMonitorsResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_monitors.push_back(monitorsJsonList[monitorsIndex].AsObject());
     }
+    m_monitorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

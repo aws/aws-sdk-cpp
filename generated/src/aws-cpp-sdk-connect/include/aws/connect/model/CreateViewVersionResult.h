@@ -28,7 +28,7 @@ namespace Model
   class CreateViewVersionResult
   {
   public:
-    AWS_CONNECT_API CreateViewVersionResult();
+    AWS_CONNECT_API CreateViewVersionResult() = default;
     AWS_CONNECT_API CreateViewVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API CreateViewVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>All view data is contained within the View object.</p>
      */
-    inline const View& GetView() const{ return m_view; }
-    inline void SetView(const View& value) { m_view = value; }
-    inline void SetView(View&& value) { m_view = std::move(value); }
-    inline CreateViewVersionResult& WithView(const View& value) { SetView(value); return *this;}
-    inline CreateViewVersionResult& WithView(View&& value) { SetView(std::move(value)); return *this;}
+    inline const View& GetView() const { return m_view; }
+    template<typename ViewT = View>
+    void SetView(ViewT&& value) { m_viewHasBeenSet = true; m_view = std::forward<ViewT>(value); }
+    template<typename ViewT = View>
+    CreateViewVersionResult& WithView(ViewT&& value) { SetView(std::forward<ViewT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateViewVersionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateViewVersionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateViewVersionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateViewVersionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     View m_view;
+    bool m_viewHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

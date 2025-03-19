@@ -33,7 +33,7 @@ namespace Model
   class CheckDNSAvailabilityResult
   {
   public:
-    AWS_ELASTICBEANSTALK_API CheckDNSAvailabilityResult();
+    AWS_ELASTICBEANSTALK_API CheckDNSAvailabilityResult() = default;
     AWS_ELASTICBEANSTALK_API CheckDNSAvailabilityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICBEANSTALK_API CheckDNSAvailabilityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,8 +44,8 @@ namespace Model
      * <code>true</code> : The CNAME is available.</p> </li> <li> <p>
      * <code>false</code> : The CNAME is not available.</p> </li> </ul>
      */
-    inline bool GetAvailable() const{ return m_available; }
-    inline void SetAvailable(bool value) { m_available = value; }
+    inline bool GetAvailable() const { return m_available; }
+    inline void SetAvailable(bool value) { m_availableHasBeenSet = true; m_available = value; }
     inline CheckDNSAvailabilityResult& WithAvailable(bool value) { SetAvailable(value); return *this;}
     ///@}
 
@@ -54,30 +54,31 @@ namespace Model
      * <p>The fully qualified CNAME to reserve when <a>CreateEnvironment</a> is called
      * with the provided prefix.</p>
      */
-    inline const Aws::String& GetFullyQualifiedCNAME() const{ return m_fullyQualifiedCNAME; }
-    inline void SetFullyQualifiedCNAME(const Aws::String& value) { m_fullyQualifiedCNAME = value; }
-    inline void SetFullyQualifiedCNAME(Aws::String&& value) { m_fullyQualifiedCNAME = std::move(value); }
-    inline void SetFullyQualifiedCNAME(const char* value) { m_fullyQualifiedCNAME.assign(value); }
-    inline CheckDNSAvailabilityResult& WithFullyQualifiedCNAME(const Aws::String& value) { SetFullyQualifiedCNAME(value); return *this;}
-    inline CheckDNSAvailabilityResult& WithFullyQualifiedCNAME(Aws::String&& value) { SetFullyQualifiedCNAME(std::move(value)); return *this;}
-    inline CheckDNSAvailabilityResult& WithFullyQualifiedCNAME(const char* value) { SetFullyQualifiedCNAME(value); return *this;}
+    inline const Aws::String& GetFullyQualifiedCNAME() const { return m_fullyQualifiedCNAME; }
+    template<typename FullyQualifiedCNAMET = Aws::String>
+    void SetFullyQualifiedCNAME(FullyQualifiedCNAMET&& value) { m_fullyQualifiedCNAMEHasBeenSet = true; m_fullyQualifiedCNAME = std::forward<FullyQualifiedCNAMET>(value); }
+    template<typename FullyQualifiedCNAMET = Aws::String>
+    CheckDNSAvailabilityResult& WithFullyQualifiedCNAME(FullyQualifiedCNAMET&& value) { SetFullyQualifiedCNAME(std::forward<FullyQualifiedCNAMET>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CheckDNSAvailabilityResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CheckDNSAvailabilityResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CheckDNSAvailabilityResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_available;
+    bool m_available{false};
+    bool m_availableHasBeenSet = false;
 
     Aws::String m_fullyQualifiedCNAME;
+    bool m_fullyQualifiedCNAMEHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

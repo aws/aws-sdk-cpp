@@ -12,12 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBranchRequest::GetBranchRequest() : 
-    m_repositoryNameHasBeenSet(false),
-    m_branchNameHasBeenSet(false)
-{
-}
-
 Aws::String GetBranchRequest::SerializePayload() const
 {
   JsonValue payload;

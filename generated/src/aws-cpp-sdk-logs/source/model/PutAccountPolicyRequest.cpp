@@ -12,17 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutAccountPolicyRequest::PutAccountPolicyRequest() : 
-    m_policyNameHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false),
-    m_policyType(PolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false),
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_selectionCriteriaHasBeenSet(false)
-{
-}
-
 Aws::String PutAccountPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

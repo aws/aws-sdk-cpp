@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-AnywhereSettings::AnywhereSettings() : 
-    m_channelPlacementGroupIdHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
-{
-}
-
 AnywhereSettings::AnywhereSettings(JsonView jsonValue)
-  : AnywhereSettings()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AnywhereSettings& AnywhereSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("channelPlacementGroupId"))
   {
     m_channelPlacementGroupId = jsonValue.GetString("channelPlacementGroupId");
-
     m_channelPlacementGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterId"))
   {
     m_clusterId = jsonValue.GetString("clusterId");
-
     m_clusterIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-StorageConnector::StorageConnector() : 
-    m_connectorType(StorageConnectorType::NOT_SET),
-    m_connectorTypeHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_domainsHasBeenSet(false),
-    m_domainsRequireAdminConsentHasBeenSet(false)
-{
-}
-
 StorageConnector::StorageConnector(JsonView jsonValue)
-  : StorageConnector()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ StorageConnector& StorageConnector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConnectorType"))
   {
     m_connectorType = StorageConnectorTypeMapper::GetStorageConnectorTypeForName(jsonValue.GetString("ConnectorType"));
-
     m_connectorTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceIdentifier"))
   {
     m_resourceIdentifier = jsonValue.GetString("ResourceIdentifier");
-
     m_resourceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Domains"))
   {
     Aws::Utils::Array<JsonView> domainsJsonList = jsonValue.GetArray("Domains");
@@ -58,7 +44,6 @@ StorageConnector& StorageConnector::operator =(JsonView jsonValue)
     }
     m_domainsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainsRequireAdminConsent"))
   {
     Aws::Utils::Array<JsonView> domainsRequireAdminConsentJsonList = jsonValue.GetArray("DomainsRequireAdminConsent");
@@ -68,7 +53,6 @@ StorageConnector& StorageConnector::operator =(JsonView jsonValue)
     }
     m_domainsRequireAdminConsentHasBeenSet = true;
   }
-
   return *this;
 }
 

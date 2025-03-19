@@ -10,15 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribeTableRestoreStatusRequest::DescribeTableRestoreStatusRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_tableRestoreRequestIdHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTableRestoreStatusRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -34,7 +34,7 @@ namespace Model
   class CreatePolicyVersionResult
   {
   public:
-    AWS_IAM_API CreatePolicyVersionResult();
+    AWS_IAM_API CreatePolicyVersionResult() = default;
     AWS_IAM_API CreatePolicyVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_IAM_API CreatePolicyVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -43,26 +43,28 @@ namespace Model
     /**
      * <p>A structure containing details about the new policy version.</p>
      */
-    inline const PolicyVersion& GetPolicyVersion() const{ return m_policyVersion; }
-    inline void SetPolicyVersion(const PolicyVersion& value) { m_policyVersion = value; }
-    inline void SetPolicyVersion(PolicyVersion&& value) { m_policyVersion = std::move(value); }
-    inline CreatePolicyVersionResult& WithPolicyVersion(const PolicyVersion& value) { SetPolicyVersion(value); return *this;}
-    inline CreatePolicyVersionResult& WithPolicyVersion(PolicyVersion&& value) { SetPolicyVersion(std::move(value)); return *this;}
+    inline const PolicyVersion& GetPolicyVersion() const { return m_policyVersion; }
+    template<typename PolicyVersionT = PolicyVersion>
+    void SetPolicyVersion(PolicyVersionT&& value) { m_policyVersionHasBeenSet = true; m_policyVersion = std::forward<PolicyVersionT>(value); }
+    template<typename PolicyVersionT = PolicyVersion>
+    CreatePolicyVersionResult& WithPolicyVersion(PolicyVersionT&& value) { SetPolicyVersion(std::forward<PolicyVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreatePolicyVersionResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreatePolicyVersionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreatePolicyVersionResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     PolicyVersion m_policyVersion;
+    bool m_policyVersionHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

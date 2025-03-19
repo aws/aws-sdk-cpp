@@ -12,11 +12,6 @@ using namespace Aws::ElasticsearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeElasticsearchDomainsRequest::DescribeElasticsearchDomainsRequest() : 
-    m_domainNamesHasBeenSet(false)
-{
-}
-
 Aws::String DescribeElasticsearchDomainsRequest::SerializePayload() const
 {
   JsonValue payload;

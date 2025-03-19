@@ -34,7 +34,7 @@ namespace Model
   class CloudTrailDetails
   {
   public:
-    AWS_ACCESSANALYZER_API CloudTrailDetails();
+    AWS_ACCESSANALYZER_API CloudTrailDetails() = default;
     AWS_ACCESSANALYZER_API CloudTrailDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API CloudTrailDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
     /**
      * <p>A <code>Trail</code> object that contains settings for a trail.</p>
      */
-    inline const Aws::Vector<Trail>& GetTrails() const{ return m_trails; }
+    inline const Aws::Vector<Trail>& GetTrails() const { return m_trails; }
     inline bool TrailsHasBeenSet() const { return m_trailsHasBeenSet; }
-    inline void SetTrails(const Aws::Vector<Trail>& value) { m_trailsHasBeenSet = true; m_trails = value; }
-    inline void SetTrails(Aws::Vector<Trail>&& value) { m_trailsHasBeenSet = true; m_trails = std::move(value); }
-    inline CloudTrailDetails& WithTrails(const Aws::Vector<Trail>& value) { SetTrails(value); return *this;}
-    inline CloudTrailDetails& WithTrails(Aws::Vector<Trail>&& value) { SetTrails(std::move(value)); return *this;}
-    inline CloudTrailDetails& AddTrails(const Trail& value) { m_trailsHasBeenSet = true; m_trails.push_back(value); return *this; }
-    inline CloudTrailDetails& AddTrails(Trail&& value) { m_trailsHasBeenSet = true; m_trails.push_back(std::move(value)); return *this; }
+    template<typename TrailsT = Aws::Vector<Trail>>
+    void SetTrails(TrailsT&& value) { m_trailsHasBeenSet = true; m_trails = std::forward<TrailsT>(value); }
+    template<typename TrailsT = Aws::Vector<Trail>>
+    CloudTrailDetails& WithTrails(TrailsT&& value) { SetTrails(std::forward<TrailsT>(value)); return *this;}
+    template<typename TrailsT = Trail>
+    CloudTrailDetails& AddTrails(TrailsT&& value) { m_trailsHasBeenSet = true; m_trails.emplace_back(std::forward<TrailsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,14 +59,12 @@ namespace Model
      * <p>The ARN of the service role that IAM Access Analyzer uses to access your
      * CloudTrail trail and service last accessed information.</p>
      */
-    inline const Aws::String& GetAccessRole() const{ return m_accessRole; }
+    inline const Aws::String& GetAccessRole() const { return m_accessRole; }
     inline bool AccessRoleHasBeenSet() const { return m_accessRoleHasBeenSet; }
-    inline void SetAccessRole(const Aws::String& value) { m_accessRoleHasBeenSet = true; m_accessRole = value; }
-    inline void SetAccessRole(Aws::String&& value) { m_accessRoleHasBeenSet = true; m_accessRole = std::move(value); }
-    inline void SetAccessRole(const char* value) { m_accessRoleHasBeenSet = true; m_accessRole.assign(value); }
-    inline CloudTrailDetails& WithAccessRole(const Aws::String& value) { SetAccessRole(value); return *this;}
-    inline CloudTrailDetails& WithAccessRole(Aws::String&& value) { SetAccessRole(std::move(value)); return *this;}
-    inline CloudTrailDetails& WithAccessRole(const char* value) { SetAccessRole(value); return *this;}
+    template<typename AccessRoleT = Aws::String>
+    void SetAccessRole(AccessRoleT&& value) { m_accessRoleHasBeenSet = true; m_accessRole = std::forward<AccessRoleT>(value); }
+    template<typename AccessRoleT = Aws::String>
+    CloudTrailDetails& WithAccessRole(AccessRoleT&& value) { SetAccessRole(std::forward<AccessRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +73,12 @@ namespace Model
      * CloudTrail events. Events with a timestamp before this time are not considered
      * to generate a policy.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline CloudTrailDetails& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline CloudTrailDetails& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    CloudTrailDetails& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,12 +88,12 @@ namespace Model
      * generate a policy. If this is not included in the request, the default value is
      * the current time.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline CloudTrailDetails& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline CloudTrailDetails& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    CloudTrailDetails& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -105,10 +103,10 @@ namespace Model
     Aws::String m_accessRole;
     bool m_accessRoleHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
   };
 

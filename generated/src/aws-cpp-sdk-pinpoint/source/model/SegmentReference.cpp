@@ -18,15 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-SegmentReference::SegmentReference() : 
-    m_idHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false)
-{
-}
-
 SegmentReference::SegmentReference(JsonView jsonValue)
-  : SegmentReference()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SegmentReference& SegmentReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetInteger("Version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

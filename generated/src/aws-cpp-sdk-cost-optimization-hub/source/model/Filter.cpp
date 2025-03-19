@@ -18,25 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-Filter::Filter() : 
-    m_restartNeeded(false),
-    m_restartNeededHasBeenSet(false),
-    m_rollbackPossible(false),
-    m_rollbackPossibleHasBeenSet(false),
-    m_implementationEffortsHasBeenSet(false),
-    m_accountIdsHasBeenSet(false),
-    m_regionsHasBeenSet(false),
-    m_resourceTypesHasBeenSet(false),
-    m_actionTypesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false),
-    m_resourceArnsHasBeenSet(false),
-    m_recommendationIdsHasBeenSet(false)
-{
-}
-
 Filter::Filter(JsonView jsonValue)
-  : Filter()
 {
   *this = jsonValue;
 }
@@ -46,17 +28,13 @@ Filter& Filter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("restartNeeded"))
   {
     m_restartNeeded = jsonValue.GetBool("restartNeeded");
-
     m_restartNeededHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rollbackPossible"))
   {
     m_rollbackPossible = jsonValue.GetBool("rollbackPossible");
-
     m_rollbackPossibleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("implementationEfforts"))
   {
     Aws::Utils::Array<JsonView> implementationEffortsJsonList = jsonValue.GetArray("implementationEfforts");
@@ -66,7 +44,6 @@ Filter& Filter::operator =(JsonView jsonValue)
     }
     m_implementationEffortsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountIds"))
   {
     Aws::Utils::Array<JsonView> accountIdsJsonList = jsonValue.GetArray("accountIds");
@@ -76,7 +53,6 @@ Filter& Filter::operator =(JsonView jsonValue)
     }
     m_accountIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("regions"))
   {
     Aws::Utils::Array<JsonView> regionsJsonList = jsonValue.GetArray("regions");
@@ -86,7 +62,6 @@ Filter& Filter::operator =(JsonView jsonValue)
     }
     m_regionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceTypes"))
   {
     Aws::Utils::Array<JsonView> resourceTypesJsonList = jsonValue.GetArray("resourceTypes");
@@ -96,7 +71,6 @@ Filter& Filter::operator =(JsonView jsonValue)
     }
     m_resourceTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionTypes"))
   {
     Aws::Utils::Array<JsonView> actionTypesJsonList = jsonValue.GetArray("actionTypes");
@@ -106,7 +80,6 @@ Filter& Filter::operator =(JsonView jsonValue)
     }
     m_actionTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -116,7 +89,6 @@ Filter& Filter::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceIds"))
   {
     Aws::Utils::Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("resourceIds");
@@ -126,7 +98,6 @@ Filter& Filter::operator =(JsonView jsonValue)
     }
     m_resourceIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceArns"))
   {
     Aws::Utils::Array<JsonView> resourceArnsJsonList = jsonValue.GetArray("resourceArns");
@@ -136,7 +107,6 @@ Filter& Filter::operator =(JsonView jsonValue)
     }
     m_resourceArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationIds"))
   {
     Aws::Utils::Array<JsonView> recommendationIdsJsonList = jsonValue.GetArray("recommendationIds");
@@ -146,7 +116,6 @@ Filter& Filter::operator =(JsonView jsonValue)
     }
     m_recommendationIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

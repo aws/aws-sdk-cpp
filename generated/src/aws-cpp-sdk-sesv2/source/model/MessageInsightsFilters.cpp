@@ -18,18 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-MessageInsightsFilters::MessageInsightsFilters() : 
-    m_fromEmailAddressHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_subjectHasBeenSet(false),
-    m_ispHasBeenSet(false),
-    m_lastDeliveryEventHasBeenSet(false),
-    m_lastEngagementEventHasBeenSet(false)
-{
-}
-
 MessageInsightsFilters::MessageInsightsFilters(JsonView jsonValue)
-  : MessageInsightsFilters()
 {
   *this = jsonValue;
 }
@@ -45,7 +34,6 @@ MessageInsightsFilters& MessageInsightsFilters::operator =(JsonView jsonValue)
     }
     m_fromEmailAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Destination"))
   {
     Aws::Utils::Array<JsonView> destinationJsonList = jsonValue.GetArray("Destination");
@@ -55,7 +43,6 @@ MessageInsightsFilters& MessageInsightsFilters::operator =(JsonView jsonValue)
     }
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subject"))
   {
     Aws::Utils::Array<JsonView> subjectJsonList = jsonValue.GetArray("Subject");
@@ -65,7 +52,6 @@ MessageInsightsFilters& MessageInsightsFilters::operator =(JsonView jsonValue)
     }
     m_subjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Isp"))
   {
     Aws::Utils::Array<JsonView> ispJsonList = jsonValue.GetArray("Isp");
@@ -75,7 +61,6 @@ MessageInsightsFilters& MessageInsightsFilters::operator =(JsonView jsonValue)
     }
     m_ispHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastDeliveryEvent"))
   {
     Aws::Utils::Array<JsonView> lastDeliveryEventJsonList = jsonValue.GetArray("LastDeliveryEvent");
@@ -85,7 +70,6 @@ MessageInsightsFilters& MessageInsightsFilters::operator =(JsonView jsonValue)
     }
     m_lastDeliveryEventHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastEngagementEvent"))
   {
     Aws::Utils::Array<JsonView> lastEngagementEventJsonList = jsonValue.GetArray("LastEngagementEvent");
@@ -95,7 +79,6 @@ MessageInsightsFilters& MessageInsightsFilters::operator =(JsonView jsonValue)
     }
     m_lastEngagementEventHasBeenSet = true;
   }
-
   return *this;
 }
 

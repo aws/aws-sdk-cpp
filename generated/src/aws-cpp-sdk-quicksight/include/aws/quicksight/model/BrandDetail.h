@@ -36,7 +36,7 @@ namespace Model
   class BrandDetail
   {
   public:
-    AWS_QUICKSIGHT_API BrandDetail();
+    AWS_QUICKSIGHT_API BrandDetail() = default;
     AWS_QUICKSIGHT_API BrandDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API BrandDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,117 +46,106 @@ namespace Model
     /**
      * <p>The ID of the Amazon QuickSight brand.</p>
      */
-    inline const Aws::String& GetBrandId() const{ return m_brandId; }
+    inline const Aws::String& GetBrandId() const { return m_brandId; }
     inline bool BrandIdHasBeenSet() const { return m_brandIdHasBeenSet; }
-    inline void SetBrandId(const Aws::String& value) { m_brandIdHasBeenSet = true; m_brandId = value; }
-    inline void SetBrandId(Aws::String&& value) { m_brandIdHasBeenSet = true; m_brandId = std::move(value); }
-    inline void SetBrandId(const char* value) { m_brandIdHasBeenSet = true; m_brandId.assign(value); }
-    inline BrandDetail& WithBrandId(const Aws::String& value) { SetBrandId(value); return *this;}
-    inline BrandDetail& WithBrandId(Aws::String&& value) { SetBrandId(std::move(value)); return *this;}
-    inline BrandDetail& WithBrandId(const char* value) { SetBrandId(value); return *this;}
+    template<typename BrandIdT = Aws::String>
+    void SetBrandId(BrandIdT&& value) { m_brandIdHasBeenSet = true; m_brandId = std::forward<BrandIdT>(value); }
+    template<typename BrandIdT = Aws::String>
+    BrandDetail& WithBrandId(BrandIdT&& value) { SetBrandId(std::forward<BrandIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the brand.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline BrandDetail& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline BrandDetail& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline BrandDetail& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    BrandDetail& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the brand.</p>
      */
-    inline const BrandStatus& GetBrandStatus() const{ return m_brandStatus; }
+    inline BrandStatus GetBrandStatus() const { return m_brandStatus; }
     inline bool BrandStatusHasBeenSet() const { return m_brandStatusHasBeenSet; }
-    inline void SetBrandStatus(const BrandStatus& value) { m_brandStatusHasBeenSet = true; m_brandStatus = value; }
-    inline void SetBrandStatus(BrandStatus&& value) { m_brandStatusHasBeenSet = true; m_brandStatus = std::move(value); }
-    inline BrandDetail& WithBrandStatus(const BrandStatus& value) { SetBrandStatus(value); return *this;}
-    inline BrandDetail& WithBrandStatus(BrandStatus&& value) { SetBrandStatus(std::move(value)); return *this;}
+    inline void SetBrandStatus(BrandStatus value) { m_brandStatusHasBeenSet = true; m_brandStatus = value; }
+    inline BrandDetail& WithBrandStatus(BrandStatus value) { SetBrandStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time that the brand was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-    inline BrandDetail& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-    inline BrandDetail& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    BrandDetail& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last time the brand was updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const { return m_lastUpdatedTime; }
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
-    inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
-    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
-    inline BrandDetail& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
-    inline BrandDetail& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedTime(LastUpdatedTimeT&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::forward<LastUpdatedTimeT>(value); }
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    BrandDetail& WithLastUpdatedTime(LastUpdatedTimeT&& value) { SetLastUpdatedTime(std::forward<LastUpdatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the version.</p>
      */
-    inline const Aws::String& GetVersionId() const{ return m_versionId; }
+    inline const Aws::String& GetVersionId() const { return m_versionId; }
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
-    inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
-    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
-    inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
-    inline BrandDetail& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
-    inline BrandDetail& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
-    inline BrandDetail& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+    template<typename VersionIdT = Aws::String>
+    void SetVersionId(VersionIdT&& value) { m_versionIdHasBeenSet = true; m_versionId = std::forward<VersionIdT>(value); }
+    template<typename VersionIdT = Aws::String>
+    BrandDetail& WithVersionId(VersionIdT&& value) { SetVersionId(std::forward<VersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the version.</p>
      */
-    inline const BrandVersionStatus& GetVersionStatus() const{ return m_versionStatus; }
+    inline BrandVersionStatus GetVersionStatus() const { return m_versionStatus; }
     inline bool VersionStatusHasBeenSet() const { return m_versionStatusHasBeenSet; }
-    inline void SetVersionStatus(const BrandVersionStatus& value) { m_versionStatusHasBeenSet = true; m_versionStatus = value; }
-    inline void SetVersionStatus(BrandVersionStatus&& value) { m_versionStatusHasBeenSet = true; m_versionStatus = std::move(value); }
-    inline BrandDetail& WithVersionStatus(const BrandVersionStatus& value) { SetVersionStatus(value); return *this;}
-    inline BrandDetail& WithVersionStatus(BrandVersionStatus&& value) { SetVersionStatus(std::move(value)); return *this;}
+    inline void SetVersionStatus(BrandVersionStatus value) { m_versionStatusHasBeenSet = true; m_versionStatus = value; }
+    inline BrandDetail& WithVersionStatus(BrandVersionStatus value) { SetVersionStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of errors that occurred during the most recent brand operation.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetErrors() const{ return m_errors; }
+    inline const Aws::Vector<Aws::String>& GetErrors() const { return m_errors; }
     inline bool ErrorsHasBeenSet() const { return m_errorsHasBeenSet; }
-    inline void SetErrors(const Aws::Vector<Aws::String>& value) { m_errorsHasBeenSet = true; m_errors = value; }
-    inline void SetErrors(Aws::Vector<Aws::String>&& value) { m_errorsHasBeenSet = true; m_errors = std::move(value); }
-    inline BrandDetail& WithErrors(const Aws::Vector<Aws::String>& value) { SetErrors(value); return *this;}
-    inline BrandDetail& WithErrors(Aws::Vector<Aws::String>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BrandDetail& AddErrors(const Aws::String& value) { m_errorsHasBeenSet = true; m_errors.push_back(value); return *this; }
-    inline BrandDetail& AddErrors(Aws::String&& value) { m_errorsHasBeenSet = true; m_errors.push_back(std::move(value)); return *this; }
-    inline BrandDetail& AddErrors(const char* value) { m_errorsHasBeenSet = true; m_errors.push_back(value); return *this; }
+    template<typename ErrorsT = Aws::Vector<Aws::String>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<Aws::String>>
+    BrandDetail& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = Aws::String>
+    BrandDetail& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The logo details.</p>
      */
-    inline const Logo& GetLogo() const{ return m_logo; }
+    inline const Logo& GetLogo() const { return m_logo; }
     inline bool LogoHasBeenSet() const { return m_logoHasBeenSet; }
-    inline void SetLogo(const Logo& value) { m_logoHasBeenSet = true; m_logo = value; }
-    inline void SetLogo(Logo&& value) { m_logoHasBeenSet = true; m_logo = std::move(value); }
-    inline BrandDetail& WithLogo(const Logo& value) { SetLogo(value); return *this;}
-    inline BrandDetail& WithLogo(Logo&& value) { SetLogo(std::move(value)); return *this;}
+    template<typename LogoT = Logo>
+    void SetLogo(LogoT&& value) { m_logoHasBeenSet = true; m_logo = std::forward<LogoT>(value); }
+    template<typename LogoT = Logo>
+    BrandDetail& WithLogo(LogoT&& value) { SetLogo(std::forward<LogoT>(value)); return *this;}
     ///@}
   private:
 
@@ -166,19 +155,19 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    BrandStatus m_brandStatus;
+    BrandStatus m_brandStatus{BrandStatus::NOT_SET};
     bool m_brandStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTime;
+    Aws::Utils::DateTime m_createdTime{};
     bool m_createdTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedTime;
+    Aws::Utils::DateTime m_lastUpdatedTime{};
     bool m_lastUpdatedTimeHasBeenSet = false;
 
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet = false;
 
-    BrandVersionStatus m_versionStatus;
+    BrandVersionStatus m_versionStatus{BrandVersionStatus::NOT_SET};
     bool m_versionStatusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_errors;

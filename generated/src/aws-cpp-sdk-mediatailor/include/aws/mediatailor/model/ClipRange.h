@@ -30,7 +30,7 @@ namespace Model
   class ClipRange
   {
   public:
-    AWS_MEDIATAILOR_API ClipRange();
+    AWS_MEDIATAILOR_API ClipRange() = default;
     AWS_MEDIATAILOR_API ClipRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API ClipRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>The end offset of the clip range, in milliseconds, starting from the
      * beginning of the VOD source associated with the program.</p>
      */
-    inline long long GetEndOffsetMillis() const{ return m_endOffsetMillis; }
+    inline long long GetEndOffsetMillis() const { return m_endOffsetMillis; }
     inline bool EndOffsetMillisHasBeenSet() const { return m_endOffsetMillisHasBeenSet; }
     inline void SetEndOffsetMillis(long long value) { m_endOffsetMillisHasBeenSet = true; m_endOffsetMillis = value; }
     inline ClipRange& WithEndOffsetMillis(long long value) { SetEndOffsetMillis(value); return *this;}
@@ -52,17 +52,17 @@ namespace Model
      * <p>The start offset of the clip range, in milliseconds. This offset truncates
      * the start at the number of milliseconds into the duration of the VOD source.</p>
      */
-    inline long long GetStartOffsetMillis() const{ return m_startOffsetMillis; }
+    inline long long GetStartOffsetMillis() const { return m_startOffsetMillis; }
     inline bool StartOffsetMillisHasBeenSet() const { return m_startOffsetMillisHasBeenSet; }
     inline void SetStartOffsetMillis(long long value) { m_startOffsetMillisHasBeenSet = true; m_startOffsetMillis = value; }
     inline ClipRange& WithStartOffsetMillis(long long value) { SetStartOffsetMillis(value); return *this;}
     ///@}
   private:
 
-    long long m_endOffsetMillis;
+    long long m_endOffsetMillis{0};
     bool m_endOffsetMillisHasBeenSet = false;
 
-    long long m_startOffsetMillis;
+    long long m_startOffsetMillis{0};
     bool m_startOffsetMillisHasBeenSet = false;
   };
 

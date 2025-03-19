@@ -12,11 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeInputSecurityGroupRequest::DescribeInputSecurityGroupRequest() : 
-    m_inputSecurityGroupIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeInputSecurityGroupRequest::SerializePayload() const
 {
   return {};

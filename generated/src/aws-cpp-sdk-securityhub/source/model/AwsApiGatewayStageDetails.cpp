@@ -18,30 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsApiGatewayStageDetails::AwsApiGatewayStageDetails() : 
-    m_deploymentIdHasBeenSet(false),
-    m_clientCertificateIdHasBeenSet(false),
-    m_stageNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_cacheClusterEnabled(false),
-    m_cacheClusterEnabledHasBeenSet(false),
-    m_cacheClusterSizeHasBeenSet(false),
-    m_cacheClusterStatusHasBeenSet(false),
-    m_methodSettingsHasBeenSet(false),
-    m_variablesHasBeenSet(false),
-    m_documentationVersionHasBeenSet(false),
-    m_accessLogSettingsHasBeenSet(false),
-    m_canarySettingsHasBeenSet(false),
-    m_tracingEnabled(false),
-    m_tracingEnabledHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_webAclArnHasBeenSet(false)
-{
-}
-
 AwsApiGatewayStageDetails::AwsApiGatewayStageDetails(JsonView jsonValue)
-  : AwsApiGatewayStageDetails()
 {
   *this = jsonValue;
 }
@@ -51,52 +28,38 @@ AwsApiGatewayStageDetails& AwsApiGatewayStageDetails::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("DeploymentId"))
   {
     m_deploymentId = jsonValue.GetString("DeploymentId");
-
     m_deploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientCertificateId"))
   {
     m_clientCertificateId = jsonValue.GetString("ClientCertificateId");
-
     m_clientCertificateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StageName"))
   {
     m_stageName = jsonValue.GetString("StageName");
-
     m_stageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CacheClusterEnabled"))
   {
     m_cacheClusterEnabled = jsonValue.GetBool("CacheClusterEnabled");
-
     m_cacheClusterEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CacheClusterSize"))
   {
     m_cacheClusterSize = jsonValue.GetString("CacheClusterSize");
-
     m_cacheClusterSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CacheClusterStatus"))
   {
     m_cacheClusterStatus = jsonValue.GetString("CacheClusterStatus");
-
     m_cacheClusterStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MethodSettings"))
   {
     Aws::Utils::Array<JsonView> methodSettingsJsonList = jsonValue.GetArray("MethodSettings");
@@ -106,7 +69,6 @@ AwsApiGatewayStageDetails& AwsApiGatewayStageDetails::operator =(JsonView jsonVa
     }
     m_methodSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Variables"))
   {
     Aws::Map<Aws::String, JsonView> variablesJsonMap = jsonValue.GetObject("Variables").GetAllObjects();
@@ -116,56 +78,41 @@ AwsApiGatewayStageDetails& AwsApiGatewayStageDetails::operator =(JsonView jsonVa
     }
     m_variablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentationVersion"))
   {
     m_documentationVersion = jsonValue.GetString("DocumentationVersion");
-
     m_documentationVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessLogSettings"))
   {
     m_accessLogSettings = jsonValue.GetObject("AccessLogSettings");
-
     m_accessLogSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CanarySettings"))
   {
     m_canarySettings = jsonValue.GetObject("CanarySettings");
-
     m_canarySettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TracingEnabled"))
   {
     m_tracingEnabled = jsonValue.GetBool("TracingEnabled");
-
     m_tracingEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedDate"))
   {
     m_createdDate = jsonValue.GetString("CreatedDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedDate"))
   {
     m_lastUpdatedDate = jsonValue.GetString("LastUpdatedDate");
-
     m_lastUpdatedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WebAclArn"))
   {
     m_webAclArn = jsonValue.GetString("WebAclArn");
-
     m_webAclArnHasBeenSet = true;
   }
-
   return *this;
 }
 

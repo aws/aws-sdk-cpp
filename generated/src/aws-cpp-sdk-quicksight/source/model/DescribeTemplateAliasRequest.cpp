@@ -12,13 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeTemplateAliasRequest::DescribeTemplateAliasRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_templateIdHasBeenSet(false),
-    m_aliasNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTemplateAliasRequest::SerializePayload() const
 {
   return {};

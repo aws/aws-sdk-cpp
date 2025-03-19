@@ -18,16 +18,7 @@ namespace Proton
 namespace Model
 {
 
-DeploymentState::DeploymentState() : 
-    m_componentHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_serviceInstanceHasBeenSet(false),
-    m_servicePipelineHasBeenSet(false)
-{
-}
-
 DeploymentState::DeploymentState(JsonView jsonValue)
-  : DeploymentState()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ DeploymentState& DeploymentState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("component"))
   {
     m_component = jsonValue.GetObject("component");
-
     m_componentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environment"))
   {
     m_environment = jsonValue.GetObject("environment");
-
     m_environmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceInstance"))
   {
     m_serviceInstance = jsonValue.GetObject("serviceInstance");
-
     m_serviceInstanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("servicePipeline"))
   {
     m_servicePipeline = jsonValue.GetObject("servicePipeline");
-
     m_servicePipelineHasBeenSet = true;
   }
-
   return *this;
 }
 

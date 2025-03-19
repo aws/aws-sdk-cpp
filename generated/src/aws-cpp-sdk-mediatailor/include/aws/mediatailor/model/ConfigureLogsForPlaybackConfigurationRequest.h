@@ -27,7 +27,7 @@ namespace Model
   class ConfigureLogsForPlaybackConfigurationRequest : public MediaTailorRequest
   {
   public:
-    AWS_MEDIATAILOR_API ConfigureLogsForPlaybackConfigurationRequest();
+    AWS_MEDIATAILOR_API ConfigureLogsForPlaybackConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,7 +49,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/mediatailor/latest/ug/debug-log-mode.html">debug
      * log mode</a>.</p> <p>Valid values: <code>0</code> - <code>100</code> </p>
      */
-    inline int GetPercentEnabled() const{ return m_percentEnabled; }
+    inline int GetPercentEnabled() const { return m_percentEnabled; }
     inline bool PercentEnabledHasBeenSet() const { return m_percentEnabledHasBeenSet; }
     inline void SetPercentEnabled(int value) { m_percentEnabledHasBeenSet = true; m_percentEnabled = value; }
     inline ConfigureLogsForPlaybackConfigurationRequest& WithPercentEnabled(int value) { SetPercentEnabled(value); return *this;}
@@ -59,14 +59,12 @@ namespace Model
     /**
      * <p>The name of the playback configuration.</p>
      */
-    inline const Aws::String& GetPlaybackConfigurationName() const{ return m_playbackConfigurationName; }
+    inline const Aws::String& GetPlaybackConfigurationName() const { return m_playbackConfigurationName; }
     inline bool PlaybackConfigurationNameHasBeenSet() const { return m_playbackConfigurationNameHasBeenSet; }
-    inline void SetPlaybackConfigurationName(const Aws::String& value) { m_playbackConfigurationNameHasBeenSet = true; m_playbackConfigurationName = value; }
-    inline void SetPlaybackConfigurationName(Aws::String&& value) { m_playbackConfigurationNameHasBeenSet = true; m_playbackConfigurationName = std::move(value); }
-    inline void SetPlaybackConfigurationName(const char* value) { m_playbackConfigurationNameHasBeenSet = true; m_playbackConfigurationName.assign(value); }
-    inline ConfigureLogsForPlaybackConfigurationRequest& WithPlaybackConfigurationName(const Aws::String& value) { SetPlaybackConfigurationName(value); return *this;}
-    inline ConfigureLogsForPlaybackConfigurationRequest& WithPlaybackConfigurationName(Aws::String&& value) { SetPlaybackConfigurationName(std::move(value)); return *this;}
-    inline ConfigureLogsForPlaybackConfigurationRequest& WithPlaybackConfigurationName(const char* value) { SetPlaybackConfigurationName(value); return *this;}
+    template<typename PlaybackConfigurationNameT = Aws::String>
+    void SetPlaybackConfigurationName(PlaybackConfigurationNameT&& value) { m_playbackConfigurationNameHasBeenSet = true; m_playbackConfigurationName = std::forward<PlaybackConfigurationNameT>(value); }
+    template<typename PlaybackConfigurationNameT = Aws::String>
+    ConfigureLogsForPlaybackConfigurationRequest& WithPlaybackConfigurationName(PlaybackConfigurationNameT&& value) { SetPlaybackConfigurationName(std::forward<PlaybackConfigurationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,18 +81,17 @@ namespace Model
      * logging from AWS services, Logging that requires additional permissions
      * [V2]</a>.</p>
      */
-    inline const Aws::Vector<LoggingStrategy>& GetEnabledLoggingStrategies() const{ return m_enabledLoggingStrategies; }
+    inline const Aws::Vector<LoggingStrategy>& GetEnabledLoggingStrategies() const { return m_enabledLoggingStrategies; }
     inline bool EnabledLoggingStrategiesHasBeenSet() const { return m_enabledLoggingStrategiesHasBeenSet; }
-    inline void SetEnabledLoggingStrategies(const Aws::Vector<LoggingStrategy>& value) { m_enabledLoggingStrategiesHasBeenSet = true; m_enabledLoggingStrategies = value; }
-    inline void SetEnabledLoggingStrategies(Aws::Vector<LoggingStrategy>&& value) { m_enabledLoggingStrategiesHasBeenSet = true; m_enabledLoggingStrategies = std::move(value); }
-    inline ConfigureLogsForPlaybackConfigurationRequest& WithEnabledLoggingStrategies(const Aws::Vector<LoggingStrategy>& value) { SetEnabledLoggingStrategies(value); return *this;}
-    inline ConfigureLogsForPlaybackConfigurationRequest& WithEnabledLoggingStrategies(Aws::Vector<LoggingStrategy>&& value) { SetEnabledLoggingStrategies(std::move(value)); return *this;}
-    inline ConfigureLogsForPlaybackConfigurationRequest& AddEnabledLoggingStrategies(const LoggingStrategy& value) { m_enabledLoggingStrategiesHasBeenSet = true; m_enabledLoggingStrategies.push_back(value); return *this; }
-    inline ConfigureLogsForPlaybackConfigurationRequest& AddEnabledLoggingStrategies(LoggingStrategy&& value) { m_enabledLoggingStrategiesHasBeenSet = true; m_enabledLoggingStrategies.push_back(std::move(value)); return *this; }
+    template<typename EnabledLoggingStrategiesT = Aws::Vector<LoggingStrategy>>
+    void SetEnabledLoggingStrategies(EnabledLoggingStrategiesT&& value) { m_enabledLoggingStrategiesHasBeenSet = true; m_enabledLoggingStrategies = std::forward<EnabledLoggingStrategiesT>(value); }
+    template<typename EnabledLoggingStrategiesT = Aws::Vector<LoggingStrategy>>
+    ConfigureLogsForPlaybackConfigurationRequest& WithEnabledLoggingStrategies(EnabledLoggingStrategiesT&& value) { SetEnabledLoggingStrategies(std::forward<EnabledLoggingStrategiesT>(value)); return *this;}
+    inline ConfigureLogsForPlaybackConfigurationRequest& AddEnabledLoggingStrategies(LoggingStrategy value) { m_enabledLoggingStrategiesHasBeenSet = true; m_enabledLoggingStrategies.push_back(value); return *this; }
     ///@}
   private:
 
-    int m_percentEnabled;
+    int m_percentEnabled{0};
     bool m_percentEnabledHasBeenSet = false;
 
     Aws::String m_playbackConfigurationName;

@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TimeSeriesConfig::TimeSeriesConfig() : 
-    m_targetAttributeNameHasBeenSet(false),
-    m_timestampAttributeNameHasBeenSet(false),
-    m_itemIdentifierAttributeNameHasBeenSet(false),
-    m_groupingAttributeNamesHasBeenSet(false)
-{
-}
-
 TimeSeriesConfig::TimeSeriesConfig(JsonView jsonValue)
-  : TimeSeriesConfig()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ TimeSeriesConfig& TimeSeriesConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TargetAttributeName"))
   {
     m_targetAttributeName = jsonValue.GetString("TargetAttributeName");
-
     m_targetAttributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimestampAttributeName"))
   {
     m_timestampAttributeName = jsonValue.GetString("TimestampAttributeName");
-
     m_timestampAttributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ItemIdentifierAttributeName"))
   {
     m_itemIdentifierAttributeName = jsonValue.GetString("ItemIdentifierAttributeName");
-
     m_itemIdentifierAttributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupingAttributeNames"))
   {
     Aws::Utils::Array<JsonView> groupingAttributeNamesJsonList = jsonValue.GetArray("GroupingAttributeNames");
@@ -64,7 +49,6 @@ TimeSeriesConfig& TimeSeriesConfig::operator =(JsonView jsonValue)
     }
     m_groupingAttributeNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

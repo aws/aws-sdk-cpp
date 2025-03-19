@@ -18,14 +18,7 @@ namespace DataPipeline
 namespace Model
 {
 
-ParameterValue::ParameterValue() : 
-    m_idHasBeenSet(false),
-    m_stringValueHasBeenSet(false)
-{
-}
-
 ParameterValue::ParameterValue(JsonView jsonValue)
-  : ParameterValue()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ParameterValue& ParameterValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stringValue"))
   {
     m_stringValue = jsonValue.GetString("stringValue");
-
     m_stringValueHasBeenSet = true;
   }
-
   return *this;
 }
 

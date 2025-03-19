@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribePortfolioResult::DescribePortfolioResult()
-{
-}
-
 DescribePortfolioResult::DescribePortfolioResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribePortfolioResult& DescribePortfolioResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("PortfolioDetail"))
   {
     m_portfolioDetail = jsonValue.GetObject("PortfolioDetail");
-
+    m_portfolioDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -42,8 +37,8 @@ DescribePortfolioResult& DescribePortfolioResult::operator =(const Aws::AmazonWe
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
+    m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagOptions"))
   {
     Aws::Utils::Array<JsonView> tagOptionsJsonList = jsonValue.GetArray("TagOptions");
@@ -51,8 +46,8 @@ DescribePortfolioResult& DescribePortfolioResult::operator =(const Aws::AmazonWe
     {
       m_tagOptions.push_back(tagOptionsJsonList[tagOptionsIndex].AsObject());
     }
+    m_tagOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Budgets"))
   {
     Aws::Utils::Array<JsonView> budgetsJsonList = jsonValue.GetArray("Budgets");
@@ -60,14 +55,15 @@ DescribePortfolioResult& DescribePortfolioResult::operator =(const Aws::AmazonWe
     {
       m_budgets.push_back(budgetsJsonList[budgetsIndex].AsObject());
     }
+    m_budgetsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

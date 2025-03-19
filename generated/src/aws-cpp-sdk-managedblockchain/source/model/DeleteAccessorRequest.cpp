@@ -12,11 +12,6 @@ using namespace Aws::ManagedBlockchain::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAccessorRequest::DeleteAccessorRequest() : 
-    m_accessorIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAccessorRequest::SerializePayload() const
 {
   return {};

@@ -18,15 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-EngagementMember::EngagementMember() : 
-    m_accountIdHasBeenSet(false),
-    m_companyNameHasBeenSet(false),
-    m_websiteUrlHasBeenSet(false)
-{
-}
-
 EngagementMember::EngagementMember(JsonView jsonValue)
-  : EngagementMember()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ EngagementMember& EngagementMember::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompanyName"))
   {
     m_companyName = jsonValue.GetString("CompanyName");
-
     m_companyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WebsiteUrl"))
   {
     m_websiteUrl = jsonValue.GetString("WebsiteUrl");
-
     m_websiteUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

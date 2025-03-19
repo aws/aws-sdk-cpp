@@ -12,11 +12,6 @@ using namespace Aws::PcaConnectorScep::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetChallengePasswordRequest::GetChallengePasswordRequest() : 
-    m_challengeArnHasBeenSet(false)
-{
-}
-
 Aws::String GetChallengePasswordRequest::SerializePayload() const
 {
   return {};

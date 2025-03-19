@@ -33,7 +33,7 @@ namespace Model
   class HealthCheckObservation
   {
   public:
-    AWS_ROUTE53_API HealthCheckObservation();
+    AWS_ROUTE53_API HealthCheckObservation() = default;
     AWS_ROUTE53_API HealthCheckObservation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ROUTE53_API HealthCheckObservation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,12 +45,10 @@ namespace Model
      * <p>The region of the Amazon Route 53 health checker that provided the status in
      * <code>StatusReport</code>.</p>
      */
-    inline const HealthCheckRegion& GetRegion() const{ return m_region; }
+    inline HealthCheckRegion GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const HealthCheckRegion& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(HealthCheckRegion&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline HealthCheckObservation& WithRegion(const HealthCheckRegion& value) { SetRegion(value); return *this;}
-    inline HealthCheckObservation& WithRegion(HealthCheckRegion&& value) { SetRegion(std::move(value)); return *this;}
+    inline void SetRegion(HealthCheckRegion value) { m_regionHasBeenSet = true; m_region = value; }
+    inline HealthCheckObservation& WithRegion(HealthCheckRegion value) { SetRegion(value); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The IP address of the Amazon Route 53 health checker that provided the
      * failure reason in <code>StatusReport</code>.</p>
      */
-    inline const Aws::String& GetIPAddress() const{ return m_iPAddress; }
+    inline const Aws::String& GetIPAddress() const { return m_iPAddress; }
     inline bool IPAddressHasBeenSet() const { return m_iPAddressHasBeenSet; }
-    inline void SetIPAddress(const Aws::String& value) { m_iPAddressHasBeenSet = true; m_iPAddress = value; }
-    inline void SetIPAddress(Aws::String&& value) { m_iPAddressHasBeenSet = true; m_iPAddress = std::move(value); }
-    inline void SetIPAddress(const char* value) { m_iPAddressHasBeenSet = true; m_iPAddress.assign(value); }
-    inline HealthCheckObservation& WithIPAddress(const Aws::String& value) { SetIPAddress(value); return *this;}
-    inline HealthCheckObservation& WithIPAddress(Aws::String&& value) { SetIPAddress(std::move(value)); return *this;}
-    inline HealthCheckObservation& WithIPAddress(const char* value) { SetIPAddress(value); return *this;}
+    template<typename IPAddressT = Aws::String>
+    void SetIPAddress(IPAddressT&& value) { m_iPAddressHasBeenSet = true; m_iPAddress = std::forward<IPAddressT>(value); }
+    template<typename IPAddressT = Aws::String>
+    HealthCheckObservation& WithIPAddress(IPAddressT&& value) { SetIPAddress(std::forward<IPAddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,16 +69,16 @@ namespace Model
      * <p>A complex type that contains the last failure reason as reported by one
      * Amazon Route 53 health checker and the time of the failed health check.</p>
      */
-    inline const StatusReport& GetStatusReport() const{ return m_statusReport; }
+    inline const StatusReport& GetStatusReport() const { return m_statusReport; }
     inline bool StatusReportHasBeenSet() const { return m_statusReportHasBeenSet; }
-    inline void SetStatusReport(const StatusReport& value) { m_statusReportHasBeenSet = true; m_statusReport = value; }
-    inline void SetStatusReport(StatusReport&& value) { m_statusReportHasBeenSet = true; m_statusReport = std::move(value); }
-    inline HealthCheckObservation& WithStatusReport(const StatusReport& value) { SetStatusReport(value); return *this;}
-    inline HealthCheckObservation& WithStatusReport(StatusReport&& value) { SetStatusReport(std::move(value)); return *this;}
+    template<typename StatusReportT = StatusReport>
+    void SetStatusReport(StatusReportT&& value) { m_statusReportHasBeenSet = true; m_statusReport = std::forward<StatusReportT>(value); }
+    template<typename StatusReportT = StatusReport>
+    HealthCheckObservation& WithStatusReport(StatusReportT&& value) { SetStatusReport(std::forward<StatusReportT>(value)); return *this;}
     ///@}
   private:
 
-    HealthCheckRegion m_region;
+    HealthCheckRegion m_region{HealthCheckRegion::NOT_SET};
     bool m_regionHasBeenSet = false;
 
     Aws::String m_iPAddress;

@@ -18,16 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-ZeppelinApplicationConfigurationDescription::ZeppelinApplicationConfigurationDescription() : 
-    m_monitoringConfigurationDescriptionHasBeenSet(false),
-    m_catalogConfigurationDescriptionHasBeenSet(false),
-    m_deployAsApplicationConfigurationDescriptionHasBeenSet(false),
-    m_customArtifactsConfigurationDescriptionHasBeenSet(false)
-{
-}
-
 ZeppelinApplicationConfigurationDescription::ZeppelinApplicationConfigurationDescription(JsonView jsonValue)
-  : ZeppelinApplicationConfigurationDescription()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ZeppelinApplicationConfigurationDescription& ZeppelinApplicationConfigurationDes
   if(jsonValue.ValueExists("MonitoringConfigurationDescription"))
   {
     m_monitoringConfigurationDescription = jsonValue.GetObject("MonitoringConfigurationDescription");
-
     m_monitoringConfigurationDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CatalogConfigurationDescription"))
   {
     m_catalogConfigurationDescription = jsonValue.GetObject("CatalogConfigurationDescription");
-
     m_catalogConfigurationDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeployAsApplicationConfigurationDescription"))
   {
     m_deployAsApplicationConfigurationDescription = jsonValue.GetObject("DeployAsApplicationConfigurationDescription");
-
     m_deployAsApplicationConfigurationDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomArtifactsConfigurationDescription"))
   {
     Aws::Utils::Array<JsonView> customArtifactsConfigurationDescriptionJsonList = jsonValue.GetArray("CustomArtifactsConfigurationDescription");
@@ -64,7 +49,6 @@ ZeppelinApplicationConfigurationDescription& ZeppelinApplicationConfigurationDes
     }
     m_customArtifactsConfigurationDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

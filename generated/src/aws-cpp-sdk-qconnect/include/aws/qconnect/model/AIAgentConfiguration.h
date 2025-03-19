@@ -34,7 +34,7 @@ namespace Model
   class AIAgentConfiguration
   {
   public:
-    AWS_QCONNECT_API AIAgentConfiguration();
+    AWS_QCONNECT_API AIAgentConfiguration() = default;
     AWS_QCONNECT_API AIAgentConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API AIAgentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,36 +45,36 @@ namespace Model
      * <p>The configuration for AI Agents of type
      * <code>ANSWER_RECOMMENDATION</code>.</p>
      */
-    inline const AnswerRecommendationAIAgentConfiguration& GetAnswerRecommendationAIAgentConfiguration() const{ return m_answerRecommendationAIAgentConfiguration; }
+    inline const AnswerRecommendationAIAgentConfiguration& GetAnswerRecommendationAIAgentConfiguration() const { return m_answerRecommendationAIAgentConfiguration; }
     inline bool AnswerRecommendationAIAgentConfigurationHasBeenSet() const { return m_answerRecommendationAIAgentConfigurationHasBeenSet; }
-    inline void SetAnswerRecommendationAIAgentConfiguration(const AnswerRecommendationAIAgentConfiguration& value) { m_answerRecommendationAIAgentConfigurationHasBeenSet = true; m_answerRecommendationAIAgentConfiguration = value; }
-    inline void SetAnswerRecommendationAIAgentConfiguration(AnswerRecommendationAIAgentConfiguration&& value) { m_answerRecommendationAIAgentConfigurationHasBeenSet = true; m_answerRecommendationAIAgentConfiguration = std::move(value); }
-    inline AIAgentConfiguration& WithAnswerRecommendationAIAgentConfiguration(const AnswerRecommendationAIAgentConfiguration& value) { SetAnswerRecommendationAIAgentConfiguration(value); return *this;}
-    inline AIAgentConfiguration& WithAnswerRecommendationAIAgentConfiguration(AnswerRecommendationAIAgentConfiguration&& value) { SetAnswerRecommendationAIAgentConfiguration(std::move(value)); return *this;}
+    template<typename AnswerRecommendationAIAgentConfigurationT = AnswerRecommendationAIAgentConfiguration>
+    void SetAnswerRecommendationAIAgentConfiguration(AnswerRecommendationAIAgentConfigurationT&& value) { m_answerRecommendationAIAgentConfigurationHasBeenSet = true; m_answerRecommendationAIAgentConfiguration = std::forward<AnswerRecommendationAIAgentConfigurationT>(value); }
+    template<typename AnswerRecommendationAIAgentConfigurationT = AnswerRecommendationAIAgentConfiguration>
+    AIAgentConfiguration& WithAnswerRecommendationAIAgentConfiguration(AnswerRecommendationAIAgentConfigurationT&& value) { SetAnswerRecommendationAIAgentConfiguration(std::forward<AnswerRecommendationAIAgentConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration for AI Agents of type <code>MANUAL_SEARCH</code>.</p>
      */
-    inline const ManualSearchAIAgentConfiguration& GetManualSearchAIAgentConfiguration() const{ return m_manualSearchAIAgentConfiguration; }
+    inline const ManualSearchAIAgentConfiguration& GetManualSearchAIAgentConfiguration() const { return m_manualSearchAIAgentConfiguration; }
     inline bool ManualSearchAIAgentConfigurationHasBeenSet() const { return m_manualSearchAIAgentConfigurationHasBeenSet; }
-    inline void SetManualSearchAIAgentConfiguration(const ManualSearchAIAgentConfiguration& value) { m_manualSearchAIAgentConfigurationHasBeenSet = true; m_manualSearchAIAgentConfiguration = value; }
-    inline void SetManualSearchAIAgentConfiguration(ManualSearchAIAgentConfiguration&& value) { m_manualSearchAIAgentConfigurationHasBeenSet = true; m_manualSearchAIAgentConfiguration = std::move(value); }
-    inline AIAgentConfiguration& WithManualSearchAIAgentConfiguration(const ManualSearchAIAgentConfiguration& value) { SetManualSearchAIAgentConfiguration(value); return *this;}
-    inline AIAgentConfiguration& WithManualSearchAIAgentConfiguration(ManualSearchAIAgentConfiguration&& value) { SetManualSearchAIAgentConfiguration(std::move(value)); return *this;}
+    template<typename ManualSearchAIAgentConfigurationT = ManualSearchAIAgentConfiguration>
+    void SetManualSearchAIAgentConfiguration(ManualSearchAIAgentConfigurationT&& value) { m_manualSearchAIAgentConfigurationHasBeenSet = true; m_manualSearchAIAgentConfiguration = std::forward<ManualSearchAIAgentConfigurationT>(value); }
+    template<typename ManualSearchAIAgentConfigurationT = ManualSearchAIAgentConfiguration>
+    AIAgentConfiguration& WithManualSearchAIAgentConfiguration(ManualSearchAIAgentConfigurationT&& value) { SetManualSearchAIAgentConfiguration(std::forward<ManualSearchAIAgentConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration for AI Agents of type SELF_SERVICE.</p>
      */
-    inline const SelfServiceAIAgentConfiguration& GetSelfServiceAIAgentConfiguration() const{ return m_selfServiceAIAgentConfiguration; }
+    inline const SelfServiceAIAgentConfiguration& GetSelfServiceAIAgentConfiguration() const { return m_selfServiceAIAgentConfiguration; }
     inline bool SelfServiceAIAgentConfigurationHasBeenSet() const { return m_selfServiceAIAgentConfigurationHasBeenSet; }
-    inline void SetSelfServiceAIAgentConfiguration(const SelfServiceAIAgentConfiguration& value) { m_selfServiceAIAgentConfigurationHasBeenSet = true; m_selfServiceAIAgentConfiguration = value; }
-    inline void SetSelfServiceAIAgentConfiguration(SelfServiceAIAgentConfiguration&& value) { m_selfServiceAIAgentConfigurationHasBeenSet = true; m_selfServiceAIAgentConfiguration = std::move(value); }
-    inline AIAgentConfiguration& WithSelfServiceAIAgentConfiguration(const SelfServiceAIAgentConfiguration& value) { SetSelfServiceAIAgentConfiguration(value); return *this;}
-    inline AIAgentConfiguration& WithSelfServiceAIAgentConfiguration(SelfServiceAIAgentConfiguration&& value) { SetSelfServiceAIAgentConfiguration(std::move(value)); return *this;}
+    template<typename SelfServiceAIAgentConfigurationT = SelfServiceAIAgentConfiguration>
+    void SetSelfServiceAIAgentConfiguration(SelfServiceAIAgentConfigurationT&& value) { m_selfServiceAIAgentConfigurationHasBeenSet = true; m_selfServiceAIAgentConfiguration = std::forward<SelfServiceAIAgentConfigurationT>(value); }
+    template<typename SelfServiceAIAgentConfigurationT = SelfServiceAIAgentConfiguration>
+    AIAgentConfiguration& WithSelfServiceAIAgentConfiguration(SelfServiceAIAgentConfigurationT&& value) { SetSelfServiceAIAgentConfiguration(std::forward<SelfServiceAIAgentConfigurationT>(value)); return *this;}
     ///@}
   private:
 

@@ -29,7 +29,7 @@ namespace Model
   class CreateLocationSmbRequest : public DataSyncRequest
   {
   public:
-    AWS_DATASYNC_API CreateLocationSmbRequest();
+    AWS_DATASYNC_API CreateLocationSmbRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -53,14 +53,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">Providing
      * DataSync access to SMB file servers</a>.</p>
      */
-    inline const Aws::String& GetSubdirectory() const{ return m_subdirectory; }
+    inline const Aws::String& GetSubdirectory() const { return m_subdirectory; }
     inline bool SubdirectoryHasBeenSet() const { return m_subdirectoryHasBeenSet; }
-    inline void SetSubdirectory(const Aws::String& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = value; }
-    inline void SetSubdirectory(Aws::String&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::move(value); }
-    inline void SetSubdirectory(const char* value) { m_subdirectoryHasBeenSet = true; m_subdirectory.assign(value); }
-    inline CreateLocationSmbRequest& WithSubdirectory(const Aws::String& value) { SetSubdirectory(value); return *this;}
-    inline CreateLocationSmbRequest& WithSubdirectory(Aws::String&& value) { SetSubdirectory(std::move(value)); return *this;}
-    inline CreateLocationSmbRequest& WithSubdirectory(const char* value) { SetSubdirectory(value); return *this;}
+    template<typename SubdirectoryT = Aws::String>
+    void SetSubdirectory(SubdirectoryT&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::forward<SubdirectoryT>(value); }
+    template<typename SubdirectoryT = Aws::String>
+    CreateLocationSmbRequest& WithSubdirectory(SubdirectoryT&& value) { SetSubdirectory(std::forward<SubdirectoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * address.</p> </li> <li> <p>If you're using Kerberos authentication, you must
      * specify a domain name.</p> </li> </ul>
      */
-    inline const Aws::String& GetServerHostname() const{ return m_serverHostname; }
+    inline const Aws::String& GetServerHostname() const { return m_serverHostname; }
     inline bool ServerHostnameHasBeenSet() const { return m_serverHostnameHasBeenSet; }
-    inline void SetServerHostname(const Aws::String& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = value; }
-    inline void SetServerHostname(Aws::String&& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = std::move(value); }
-    inline void SetServerHostname(const char* value) { m_serverHostnameHasBeenSet = true; m_serverHostname.assign(value); }
-    inline CreateLocationSmbRequest& WithServerHostname(const Aws::String& value) { SetServerHostname(value); return *this;}
-    inline CreateLocationSmbRequest& WithServerHostname(Aws::String&& value) { SetServerHostname(std::move(value)); return *this;}
-    inline CreateLocationSmbRequest& WithServerHostname(const char* value) { SetServerHostname(value); return *this;}
+    template<typename ServerHostnameT = Aws::String>
+    void SetServerHostname(ServerHostnameT&& value) { m_serverHostnameHasBeenSet = true; m_serverHostname = std::forward<ServerHostnameT>(value); }
+    template<typename ServerHostnameT = Aws::String>
+    CreateLocationSmbRequest& WithServerHostname(ServerHostnameT&& value) { SetServerHostname(std::forward<ServerHostnameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +87,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">Providing
      * DataSync access to SMB file servers</a>.</p>
      */
-    inline const Aws::String& GetUser() const{ return m_user; }
+    inline const Aws::String& GetUser() const { return m_user; }
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
-    inline void SetUser(const Aws::String& value) { m_userHasBeenSet = true; m_user = value; }
-    inline void SetUser(Aws::String&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
-    inline void SetUser(const char* value) { m_userHasBeenSet = true; m_user.assign(value); }
-    inline CreateLocationSmbRequest& WithUser(const Aws::String& value) { SetUser(value); return *this;}
-    inline CreateLocationSmbRequest& WithUser(Aws::String&& value) { SetUser(std::move(value)); return *this;}
-    inline CreateLocationSmbRequest& WithUser(const char* value) { SetUser(value); return *this;}
+    template<typename UserT = Aws::String>
+    void SetUser(UserT&& value) { m_userHasBeenSet = true; m_user = std::forward<UserT>(value); }
+    template<typename UserT = Aws::String>
+    CreateLocationSmbRequest& WithUser(UserT&& value) { SetUser(std::forward<UserT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,14 +103,12 @@ namespace Model
      * configuring this parameter makes sure that DataSync connects to the right file
      * server.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline CreateLocationSmbRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline CreateLocationSmbRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline CreateLocationSmbRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    CreateLocationSmbRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,14 +118,12 @@ namespace Model
      * parameter applies only if <code>AuthenticationType</code> is set to
      * <code>NTLM</code>.</p>
      */
-    inline const Aws::String& GetPassword() const{ return m_password; }
+    inline const Aws::String& GetPassword() const { return m_password; }
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
-    inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
-    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
-    inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
-    inline CreateLocationSmbRequest& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
-    inline CreateLocationSmbRequest& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
-    inline CreateLocationSmbRequest& WithPassword(const char* value) { SetPassword(value); return *this;}
+    template<typename PasswordT = Aws::String>
+    void SetPassword(PasswordT&& value) { m_passwordHasBeenSet = true; m_password = std::forward<PasswordT>(value); }
+    template<typename PasswordT = Aws::String>
+    CreateLocationSmbRequest& WithPassword(PasswordT&& value) { SetPassword(std::forward<PasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,15 +131,14 @@ namespace Model
      * <p>Specifies the DataSync agent (or agents) that can connect to your SMB file
      * server. You specify an agent by using its Amazon Resource Name (ARN).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAgentArns() const{ return m_agentArns; }
+    inline const Aws::Vector<Aws::String>& GetAgentArns() const { return m_agentArns; }
     inline bool AgentArnsHasBeenSet() const { return m_agentArnsHasBeenSet; }
-    inline void SetAgentArns(const Aws::Vector<Aws::String>& value) { m_agentArnsHasBeenSet = true; m_agentArns = value; }
-    inline void SetAgentArns(Aws::Vector<Aws::String>&& value) { m_agentArnsHasBeenSet = true; m_agentArns = std::move(value); }
-    inline CreateLocationSmbRequest& WithAgentArns(const Aws::Vector<Aws::String>& value) { SetAgentArns(value); return *this;}
-    inline CreateLocationSmbRequest& WithAgentArns(Aws::Vector<Aws::String>&& value) { SetAgentArns(std::move(value)); return *this;}
-    inline CreateLocationSmbRequest& AddAgentArns(const Aws::String& value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(value); return *this; }
-    inline CreateLocationSmbRequest& AddAgentArns(Aws::String&& value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(std::move(value)); return *this; }
-    inline CreateLocationSmbRequest& AddAgentArns(const char* value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(value); return *this; }
+    template<typename AgentArnsT = Aws::Vector<Aws::String>>
+    void SetAgentArns(AgentArnsT&& value) { m_agentArnsHasBeenSet = true; m_agentArns = std::forward<AgentArnsT>(value); }
+    template<typename AgentArnsT = Aws::Vector<Aws::String>>
+    CreateLocationSmbRequest& WithAgentArns(AgentArnsT&& value) { SetAgentArns(std::forward<AgentArnsT>(value)); return *this;}
+    template<typename AgentArnsT = Aws::String>
+    CreateLocationSmbRequest& AddAgentArns(AgentArnsT&& value) { m_agentArnsHasBeenSet = true; m_agentArns.emplace_back(std::forward<AgentArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -157,12 +146,12 @@ namespace Model
      * <p>Specifies the version of the SMB protocol that DataSync uses to access your
      * SMB file server.</p>
      */
-    inline const SmbMountOptions& GetMountOptions() const{ return m_mountOptions; }
+    inline const SmbMountOptions& GetMountOptions() const { return m_mountOptions; }
     inline bool MountOptionsHasBeenSet() const { return m_mountOptionsHasBeenSet; }
-    inline void SetMountOptions(const SmbMountOptions& value) { m_mountOptionsHasBeenSet = true; m_mountOptions = value; }
-    inline void SetMountOptions(SmbMountOptions&& value) { m_mountOptionsHasBeenSet = true; m_mountOptions = std::move(value); }
-    inline CreateLocationSmbRequest& WithMountOptions(const SmbMountOptions& value) { SetMountOptions(value); return *this;}
-    inline CreateLocationSmbRequest& WithMountOptions(SmbMountOptions&& value) { SetMountOptions(std::move(value)); return *this;}
+    template<typename MountOptionsT = SmbMountOptions>
+    void SetMountOptions(MountOptionsT&& value) { m_mountOptionsHasBeenSet = true; m_mountOptions = std::forward<MountOptionsT>(value); }
+    template<typename MountOptionsT = SmbMountOptions>
+    CreateLocationSmbRequest& WithMountOptions(MountOptionsT&& value) { SetMountOptions(std::forward<MountOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -171,14 +160,14 @@ namespace Model
      * Web Services resources. We recommend creating at least a name tag for your
      * location.</p>
      */
-    inline const Aws::Vector<TagListEntry>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<TagListEntry>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<TagListEntry>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<TagListEntry>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateLocationSmbRequest& WithTags(const Aws::Vector<TagListEntry>& value) { SetTags(value); return *this;}
-    inline CreateLocationSmbRequest& WithTags(Aws::Vector<TagListEntry>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateLocationSmbRequest& AddTags(const TagListEntry& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateLocationSmbRequest& AddTags(TagListEntry&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<TagListEntry>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<TagListEntry>>
+    CreateLocationSmbRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = TagListEntry>
+    CreateLocationSmbRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -189,12 +178,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html#configuring-smb-permissions">Providing
      * DataSync access to SMB file servers</a>.</p>
      */
-    inline const SmbAuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
+    inline SmbAuthenticationType GetAuthenticationType() const { return m_authenticationType; }
     inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
-    inline void SetAuthenticationType(const SmbAuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
-    inline void SetAuthenticationType(SmbAuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
-    inline CreateLocationSmbRequest& WithAuthenticationType(const SmbAuthenticationType& value) { SetAuthenticationType(value); return *this;}
-    inline CreateLocationSmbRequest& WithAuthenticationType(SmbAuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
+    inline void SetAuthenticationType(SmbAuthenticationType value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
+    inline CreateLocationSmbRequest& WithAuthenticationType(SmbAuthenticationType value) { SetAuthenticationType(value); return *this;}
     ///@}
 
     ///@{
@@ -205,15 +192,14 @@ namespace Model
      * environment, configuring this parameter makes sure that DataSync connects to the
      * right SMB file server.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDnsIpAddresses() const{ return m_dnsIpAddresses; }
+    inline const Aws::Vector<Aws::String>& GetDnsIpAddresses() const { return m_dnsIpAddresses; }
     inline bool DnsIpAddressesHasBeenSet() const { return m_dnsIpAddressesHasBeenSet; }
-    inline void SetDnsIpAddresses(const Aws::Vector<Aws::String>& value) { m_dnsIpAddressesHasBeenSet = true; m_dnsIpAddresses = value; }
-    inline void SetDnsIpAddresses(Aws::Vector<Aws::String>&& value) { m_dnsIpAddressesHasBeenSet = true; m_dnsIpAddresses = std::move(value); }
-    inline CreateLocationSmbRequest& WithDnsIpAddresses(const Aws::Vector<Aws::String>& value) { SetDnsIpAddresses(value); return *this;}
-    inline CreateLocationSmbRequest& WithDnsIpAddresses(Aws::Vector<Aws::String>&& value) { SetDnsIpAddresses(std::move(value)); return *this;}
-    inline CreateLocationSmbRequest& AddDnsIpAddresses(const Aws::String& value) { m_dnsIpAddressesHasBeenSet = true; m_dnsIpAddresses.push_back(value); return *this; }
-    inline CreateLocationSmbRequest& AddDnsIpAddresses(Aws::String&& value) { m_dnsIpAddressesHasBeenSet = true; m_dnsIpAddresses.push_back(std::move(value)); return *this; }
-    inline CreateLocationSmbRequest& AddDnsIpAddresses(const char* value) { m_dnsIpAddressesHasBeenSet = true; m_dnsIpAddresses.push_back(value); return *this; }
+    template<typename DnsIpAddressesT = Aws::Vector<Aws::String>>
+    void SetDnsIpAddresses(DnsIpAddressesT&& value) { m_dnsIpAddressesHasBeenSet = true; m_dnsIpAddresses = std::forward<DnsIpAddressesT>(value); }
+    template<typename DnsIpAddressesT = Aws::Vector<Aws::String>>
+    CreateLocationSmbRequest& WithDnsIpAddresses(DnsIpAddressesT&& value) { SetDnsIpAddresses(std::forward<DnsIpAddressesT>(value)); return *this;}
+    template<typename DnsIpAddressesT = Aws::String>
+    CreateLocationSmbRequest& AddDnsIpAddresses(DnsIpAddressesT&& value) { m_dnsIpAddressesHasBeenSet = true; m_dnsIpAddresses.emplace_back(std::forward<DnsIpAddressesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -226,14 +212,12 @@ namespace Model
      * specify for this parameter doesn’t exactly match the principal that you use to
      * create the keytab file.</p>
      */
-    inline const Aws::String& GetKerberosPrincipal() const{ return m_kerberosPrincipal; }
+    inline const Aws::String& GetKerberosPrincipal() const { return m_kerberosPrincipal; }
     inline bool KerberosPrincipalHasBeenSet() const { return m_kerberosPrincipalHasBeenSet; }
-    inline void SetKerberosPrincipal(const Aws::String& value) { m_kerberosPrincipalHasBeenSet = true; m_kerberosPrincipal = value; }
-    inline void SetKerberosPrincipal(Aws::String&& value) { m_kerberosPrincipalHasBeenSet = true; m_kerberosPrincipal = std::move(value); }
-    inline void SetKerberosPrincipal(const char* value) { m_kerberosPrincipalHasBeenSet = true; m_kerberosPrincipal.assign(value); }
-    inline CreateLocationSmbRequest& WithKerberosPrincipal(const Aws::String& value) { SetKerberosPrincipal(value); return *this;}
-    inline CreateLocationSmbRequest& WithKerberosPrincipal(Aws::String&& value) { SetKerberosPrincipal(std::move(value)); return *this;}
-    inline CreateLocationSmbRequest& WithKerberosPrincipal(const char* value) { SetKerberosPrincipal(value); return *this;}
+    template<typename KerberosPrincipalT = Aws::String>
+    void SetKerberosPrincipal(KerberosPrincipalT&& value) { m_kerberosPrincipalHasBeenSet = true; m_kerberosPrincipal = std::forward<KerberosPrincipalT>(value); }
+    template<typename KerberosPrincipalT = Aws::String>
+    CreateLocationSmbRequest& WithKerberosPrincipal(KerberosPrincipalT&& value) { SetKerberosPrincipal(std::forward<KerberosPrincipalT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -245,12 +229,12 @@ namespace Model
      * to create the keytab file matches exactly what you specify for
      * <code>KerberosPrincipal</code>. </p>
      */
-    inline const Aws::Utils::ByteBuffer& GetKerberosKeytab() const{ return m_kerberosKeytab; }
+    inline const Aws::Utils::ByteBuffer& GetKerberosKeytab() const { return m_kerberosKeytab; }
     inline bool KerberosKeytabHasBeenSet() const { return m_kerberosKeytabHasBeenSet; }
-    inline void SetKerberosKeytab(const Aws::Utils::ByteBuffer& value) { m_kerberosKeytabHasBeenSet = true; m_kerberosKeytab = value; }
-    inline void SetKerberosKeytab(Aws::Utils::ByteBuffer&& value) { m_kerberosKeytabHasBeenSet = true; m_kerberosKeytab = std::move(value); }
-    inline CreateLocationSmbRequest& WithKerberosKeytab(const Aws::Utils::ByteBuffer& value) { SetKerberosKeytab(value); return *this;}
-    inline CreateLocationSmbRequest& WithKerberosKeytab(Aws::Utils::ByteBuffer&& value) { SetKerberosKeytab(std::move(value)); return *this;}
+    template<typename KerberosKeytabT = Aws::Utils::ByteBuffer>
+    void SetKerberosKeytab(KerberosKeytabT&& value) { m_kerberosKeytabHasBeenSet = true; m_kerberosKeytab = std::forward<KerberosKeytabT>(value); }
+    template<typename KerberosKeytabT = Aws::Utils::ByteBuffer>
+    CreateLocationSmbRequest& WithKerberosKeytab(KerberosKeytabT&& value) { SetKerberosKeytab(std::forward<KerberosKeytabT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -259,12 +243,12 @@ namespace Model
      * your Kerberos realm configuration.</p> <p>The file must be base64 encoded. If
      * you're using the CLI, the encoding is done for you.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetKerberosKrb5Conf() const{ return m_kerberosKrb5Conf; }
+    inline const Aws::Utils::ByteBuffer& GetKerberosKrb5Conf() const { return m_kerberosKrb5Conf; }
     inline bool KerberosKrb5ConfHasBeenSet() const { return m_kerberosKrb5ConfHasBeenSet; }
-    inline void SetKerberosKrb5Conf(const Aws::Utils::ByteBuffer& value) { m_kerberosKrb5ConfHasBeenSet = true; m_kerberosKrb5Conf = value; }
-    inline void SetKerberosKrb5Conf(Aws::Utils::ByteBuffer&& value) { m_kerberosKrb5ConfHasBeenSet = true; m_kerberosKrb5Conf = std::move(value); }
-    inline CreateLocationSmbRequest& WithKerberosKrb5Conf(const Aws::Utils::ByteBuffer& value) { SetKerberosKrb5Conf(value); return *this;}
-    inline CreateLocationSmbRequest& WithKerberosKrb5Conf(Aws::Utils::ByteBuffer&& value) { SetKerberosKrb5Conf(std::move(value)); return *this;}
+    template<typename KerberosKrb5ConfT = Aws::Utils::ByteBuffer>
+    void SetKerberosKrb5Conf(KerberosKrb5ConfT&& value) { m_kerberosKrb5ConfHasBeenSet = true; m_kerberosKrb5Conf = std::forward<KerberosKrb5ConfT>(value); }
+    template<typename KerberosKrb5ConfT = Aws::Utils::ByteBuffer>
+    CreateLocationSmbRequest& WithKerberosKrb5Conf(KerberosKrb5ConfT&& value) { SetKerberosKrb5Conf(std::forward<KerberosKrb5ConfT>(value)); return *this;}
     ///@}
   private:
 
@@ -292,7 +276,7 @@ namespace Model
     Aws::Vector<TagListEntry> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    SmbAuthenticationType m_authenticationType;
+    SmbAuthenticationType m_authenticationType{SmbAuthenticationType::NOT_SET};
     bool m_authenticationTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dnsIpAddresses;
@@ -301,10 +285,10 @@ namespace Model
     Aws::String m_kerberosPrincipal;
     bool m_kerberosPrincipalHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_kerberosKeytab;
+    Aws::Utils::ByteBuffer m_kerberosKeytab{};
     bool m_kerberosKeytabHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_kerberosKrb5Conf;
+    Aws::Utils::ByteBuffer m_kerberosKrb5Conf{};
     bool m_kerberosKrb5ConfHasBeenSet = false;
   };
 

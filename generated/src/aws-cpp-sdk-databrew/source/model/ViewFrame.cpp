@@ -18,23 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-ViewFrame::ViewFrame() : 
-    m_startColumnIndex(0),
-    m_startColumnIndexHasBeenSet(false),
-    m_columnRange(0),
-    m_columnRangeHasBeenSet(false),
-    m_hiddenColumnsHasBeenSet(false),
-    m_startRowIndex(0),
-    m_startRowIndexHasBeenSet(false),
-    m_rowRange(0),
-    m_rowRangeHasBeenSet(false),
-    m_analytics(AnalyticsMode::NOT_SET),
-    m_analyticsHasBeenSet(false)
-{
-}
-
 ViewFrame::ViewFrame(JsonView jsonValue)
-  : ViewFrame()
 {
   *this = jsonValue;
 }
@@ -44,17 +28,13 @@ ViewFrame& ViewFrame::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StartColumnIndex"))
   {
     m_startColumnIndex = jsonValue.GetInteger("StartColumnIndex");
-
     m_startColumnIndexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnRange"))
   {
     m_columnRange = jsonValue.GetInteger("ColumnRange");
-
     m_columnRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HiddenColumns"))
   {
     Aws::Utils::Array<JsonView> hiddenColumnsJsonList = jsonValue.GetArray("HiddenColumns");
@@ -64,28 +44,21 @@ ViewFrame& ViewFrame::operator =(JsonView jsonValue)
     }
     m_hiddenColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartRowIndex"))
   {
     m_startRowIndex = jsonValue.GetInteger("StartRowIndex");
-
     m_startRowIndexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RowRange"))
   {
     m_rowRange = jsonValue.GetInteger("RowRange");
-
     m_rowRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Analytics"))
   {
     m_analytics = AnalyticsModeMapper::GetAnalyticsModeForName(jsonValue.GetString("Analytics"));
-
     m_analyticsHasBeenSet = true;
   }
-
   return *this;
 }
 

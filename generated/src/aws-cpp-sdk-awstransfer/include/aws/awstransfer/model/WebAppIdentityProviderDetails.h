@@ -32,7 +32,7 @@ namespace Model
   class WebAppIdentityProviderDetails
   {
   public:
-    AWS_TRANSFER_API WebAppIdentityProviderDetails();
+    AWS_TRANSFER_API WebAppIdentityProviderDetails() = default;
     AWS_TRANSFER_API WebAppIdentityProviderDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API WebAppIdentityProviderDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>A structure that describes the values to use for the IAM Identity Center
      * settings when you create a web app.</p>
      */
-    inline const IdentityCenterConfig& GetIdentityCenterConfig() const{ return m_identityCenterConfig; }
+    inline const IdentityCenterConfig& GetIdentityCenterConfig() const { return m_identityCenterConfig; }
     inline bool IdentityCenterConfigHasBeenSet() const { return m_identityCenterConfigHasBeenSet; }
-    inline void SetIdentityCenterConfig(const IdentityCenterConfig& value) { m_identityCenterConfigHasBeenSet = true; m_identityCenterConfig = value; }
-    inline void SetIdentityCenterConfig(IdentityCenterConfig&& value) { m_identityCenterConfigHasBeenSet = true; m_identityCenterConfig = std::move(value); }
-    inline WebAppIdentityProviderDetails& WithIdentityCenterConfig(const IdentityCenterConfig& value) { SetIdentityCenterConfig(value); return *this;}
-    inline WebAppIdentityProviderDetails& WithIdentityCenterConfig(IdentityCenterConfig&& value) { SetIdentityCenterConfig(std::move(value)); return *this;}
+    template<typename IdentityCenterConfigT = IdentityCenterConfig>
+    void SetIdentityCenterConfig(IdentityCenterConfigT&& value) { m_identityCenterConfigHasBeenSet = true; m_identityCenterConfig = std::forward<IdentityCenterConfigT>(value); }
+    template<typename IdentityCenterConfigT = IdentityCenterConfig>
+    WebAppIdentityProviderDetails& WithIdentityCenterConfig(IdentityCenterConfigT&& value) { SetIdentityCenterConfig(std::forward<IdentityCenterConfigT>(value)); return *this;}
     ///@}
   private:
 

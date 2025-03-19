@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-OperationalHour::OperationalHour() : 
-    m_startHasBeenSet(false),
-    m_endHasBeenSet(false)
-{
-}
-
 OperationalHour::OperationalHour(JsonView jsonValue)
-  : OperationalHour()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OperationalHour& OperationalHour::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Start"))
   {
     m_start = jsonValue.GetObject("Start");
-
     m_startHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("End"))
   {
     m_end = jsonValue.GetObject("End");
-
     m_endHasBeenSet = true;
   }
-
   return *this;
 }
 

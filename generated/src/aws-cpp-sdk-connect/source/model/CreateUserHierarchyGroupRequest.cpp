@@ -12,14 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateUserHierarchyGroupRequest::CreateUserHierarchyGroupRequest() : 
-    m_nameHasBeenSet(false),
-    m_parentGroupIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateUserHierarchyGroupRequest::SerializePayload() const
 {
   JsonValue payload;

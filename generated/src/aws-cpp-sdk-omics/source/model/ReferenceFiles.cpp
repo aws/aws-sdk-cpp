@@ -18,14 +18,7 @@ namespace Omics
 namespace Model
 {
 
-ReferenceFiles::ReferenceFiles() : 
-    m_sourceHasBeenSet(false),
-    m_indexHasBeenSet(false)
-{
-}
-
 ReferenceFiles::ReferenceFiles(JsonView jsonValue)
-  : ReferenceFiles()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ReferenceFiles& ReferenceFiles::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetObject("source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("index"))
   {
     m_index = jsonValue.GetObject("index");
-
     m_indexHasBeenSet = true;
   }
-
   return *this;
 }
 

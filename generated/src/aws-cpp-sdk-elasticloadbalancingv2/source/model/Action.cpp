@@ -20,22 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-Action::Action() : 
-    m_type(ActionTypeEnum::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_targetGroupArnHasBeenSet(false),
-    m_authenticateOidcConfigHasBeenSet(false),
-    m_authenticateCognitoConfigHasBeenSet(false),
-    m_order(0),
-    m_orderHasBeenSet(false),
-    m_redirectConfigHasBeenSet(false),
-    m_fixedResponseConfigHasBeenSet(false),
-    m_forwardConfigHasBeenSet(false)
-{
-}
-
 Action::Action(const XmlNode& xmlNode)
-  : Action()
 {
   *this = xmlNode;
 }
@@ -49,7 +34,7 @@ Action& Action::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = ActionTypeEnumMapper::GetActionTypeEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = ActionTypeEnumMapper::GetActionTypeEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode targetGroupArnNode = resultNode.FirstChild("TargetGroupArn");

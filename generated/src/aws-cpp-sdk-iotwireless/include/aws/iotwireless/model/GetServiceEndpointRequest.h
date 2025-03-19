@@ -25,7 +25,7 @@ namespace Model
   class GetServiceEndpointRequest : public IoTWirelessRequest
   {
   public:
-    AWS_IOTWIRELESS_API GetServiceEndpointRequest();
+    AWS_IOTWIRELESS_API GetServiceEndpointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,16 +45,14 @@ namespace Model
      * <code>LNS</code> for the LoRaWAN Network Server endpoint or <code>CLAIM</code>
      * for the global endpoint.</p>
      */
-    inline const WirelessGatewayServiceType& GetServiceType() const{ return m_serviceType; }
+    inline WirelessGatewayServiceType GetServiceType() const { return m_serviceType; }
     inline bool ServiceTypeHasBeenSet() const { return m_serviceTypeHasBeenSet; }
-    inline void SetServiceType(const WirelessGatewayServiceType& value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
-    inline void SetServiceType(WirelessGatewayServiceType&& value) { m_serviceTypeHasBeenSet = true; m_serviceType = std::move(value); }
-    inline GetServiceEndpointRequest& WithServiceType(const WirelessGatewayServiceType& value) { SetServiceType(value); return *this;}
-    inline GetServiceEndpointRequest& WithServiceType(WirelessGatewayServiceType&& value) { SetServiceType(std::move(value)); return *this;}
+    inline void SetServiceType(WirelessGatewayServiceType value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
+    inline GetServiceEndpointRequest& WithServiceType(WirelessGatewayServiceType value) { SetServiceType(value); return *this;}
     ///@}
   private:
 
-    WirelessGatewayServiceType m_serviceType;
+    WirelessGatewayServiceType m_serviceType{WirelessGatewayServiceType::NOT_SET};
     bool m_serviceTypeHasBeenSet = false;
   };
 

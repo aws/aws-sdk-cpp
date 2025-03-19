@@ -30,7 +30,7 @@ namespace Model
   class GetMembersResult
   {
   public:
-    AWS_DETECTIVE_API GetMembersResult();
+    AWS_DETECTIVE_API GetMembersResult() = default;
     AWS_DETECTIVE_API GetMembersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DETECTIVE_API GetMembersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>The member account details that Detective is returning in response to the
      * request.</p>
      */
-    inline const Aws::Vector<MemberDetail>& GetMemberDetails() const{ return m_memberDetails; }
-    inline void SetMemberDetails(const Aws::Vector<MemberDetail>& value) { m_memberDetails = value; }
-    inline void SetMemberDetails(Aws::Vector<MemberDetail>&& value) { m_memberDetails = std::move(value); }
-    inline GetMembersResult& WithMemberDetails(const Aws::Vector<MemberDetail>& value) { SetMemberDetails(value); return *this;}
-    inline GetMembersResult& WithMemberDetails(Aws::Vector<MemberDetail>&& value) { SetMemberDetails(std::move(value)); return *this;}
-    inline GetMembersResult& AddMemberDetails(const MemberDetail& value) { m_memberDetails.push_back(value); return *this; }
-    inline GetMembersResult& AddMemberDetails(MemberDetail&& value) { m_memberDetails.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MemberDetail>& GetMemberDetails() const { return m_memberDetails; }
+    template<typename MemberDetailsT = Aws::Vector<MemberDetail>>
+    void SetMemberDetails(MemberDetailsT&& value) { m_memberDetailsHasBeenSet = true; m_memberDetails = std::forward<MemberDetailsT>(value); }
+    template<typename MemberDetailsT = Aws::Vector<MemberDetail>>
+    GetMembersResult& WithMemberDetails(MemberDetailsT&& value) { SetMemberDetails(std::forward<MemberDetailsT>(value)); return *this;}
+    template<typename MemberDetailsT = MemberDetail>
+    GetMembersResult& AddMemberDetails(MemberDetailsT&& value) { m_memberDetailsHasBeenSet = true; m_memberDetails.emplace_back(std::forward<MemberDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,33 @@ namespace Model
      * details.</p> <p>For each account, provides the reason why the request could not
      * be processed.</p>
      */
-    inline const Aws::Vector<UnprocessedAccount>& GetUnprocessedAccounts() const{ return m_unprocessedAccounts; }
-    inline void SetUnprocessedAccounts(const Aws::Vector<UnprocessedAccount>& value) { m_unprocessedAccounts = value; }
-    inline void SetUnprocessedAccounts(Aws::Vector<UnprocessedAccount>&& value) { m_unprocessedAccounts = std::move(value); }
-    inline GetMembersResult& WithUnprocessedAccounts(const Aws::Vector<UnprocessedAccount>& value) { SetUnprocessedAccounts(value); return *this;}
-    inline GetMembersResult& WithUnprocessedAccounts(Aws::Vector<UnprocessedAccount>&& value) { SetUnprocessedAccounts(std::move(value)); return *this;}
-    inline GetMembersResult& AddUnprocessedAccounts(const UnprocessedAccount& value) { m_unprocessedAccounts.push_back(value); return *this; }
-    inline GetMembersResult& AddUnprocessedAccounts(UnprocessedAccount&& value) { m_unprocessedAccounts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<UnprocessedAccount>& GetUnprocessedAccounts() const { return m_unprocessedAccounts; }
+    template<typename UnprocessedAccountsT = Aws::Vector<UnprocessedAccount>>
+    void SetUnprocessedAccounts(UnprocessedAccountsT&& value) { m_unprocessedAccountsHasBeenSet = true; m_unprocessedAccounts = std::forward<UnprocessedAccountsT>(value); }
+    template<typename UnprocessedAccountsT = Aws::Vector<UnprocessedAccount>>
+    GetMembersResult& WithUnprocessedAccounts(UnprocessedAccountsT&& value) { SetUnprocessedAccounts(std::forward<UnprocessedAccountsT>(value)); return *this;}
+    template<typename UnprocessedAccountsT = UnprocessedAccount>
+    GetMembersResult& AddUnprocessedAccounts(UnprocessedAccountsT&& value) { m_unprocessedAccountsHasBeenSet = true; m_unprocessedAccounts.emplace_back(std::forward<UnprocessedAccountsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetMembersResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetMembersResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetMembersResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetMembersResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<MemberDetail> m_memberDetails;
+    bool m_memberDetailsHasBeenSet = false;
 
     Aws::Vector<UnprocessedAccount> m_unprocessedAccounts;
+    bool m_unprocessedAccountsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

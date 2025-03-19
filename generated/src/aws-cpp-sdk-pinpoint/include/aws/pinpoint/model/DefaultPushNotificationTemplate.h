@@ -34,7 +34,7 @@ namespace Model
   class DefaultPushNotificationTemplate
   {
   public:
-    AWS_PINPOINT_API DefaultPushNotificationTemplate();
+    AWS_PINPOINT_API DefaultPushNotificationTemplate() = default;
     AWS_PINPOINT_API DefaultPushNotificationTemplate(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API DefaultPushNotificationTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,12 +51,10 @@ namespace Model
      * mobile browser on the recipient's device opens and loads the web page at a URL
      * that you specify.</p></li></ul>
      */
-    inline const Action& GetAction() const{ return m_action; }
+    inline Action GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const Action& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(Action&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline DefaultPushNotificationTemplate& WithAction(const Action& value) { SetAction(value); return *this;}
-    inline DefaultPushNotificationTemplate& WithAction(Action&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(Action value) { m_actionHasBeenSet = true; m_action = value; }
+    inline DefaultPushNotificationTemplate& WithAction(Action value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * <p>The message body to use in push notifications that are based on the message
      * template.</p>
      */
-    inline const Aws::String& GetBody() const{ return m_body; }
+    inline const Aws::String& GetBody() const { return m_body; }
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
-    inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
-    inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
-    inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
-    inline DefaultPushNotificationTemplate& WithBody(const Aws::String& value) { SetBody(value); return *this;}
-    inline DefaultPushNotificationTemplate& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
-    inline DefaultPushNotificationTemplate& WithBody(const char* value) { SetBody(value); return *this;}
+    template<typename BodyT = Aws::String>
+    void SetBody(BodyT&& value) { m_bodyHasBeenSet = true; m_body = std::forward<BodyT>(value); }
+    template<typename BodyT = Aws::String>
+    DefaultPushNotificationTemplate& WithBody(BodyT&& value) { SetBody(std::forward<BodyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +81,12 @@ namespace Model
      * found or you specify default for the value, the system plays the default alert
      * sound.</p>
      */
-    inline const Aws::String& GetSound() const{ return m_sound; }
+    inline const Aws::String& GetSound() const { return m_sound; }
     inline bool SoundHasBeenSet() const { return m_soundHasBeenSet; }
-    inline void SetSound(const Aws::String& value) { m_soundHasBeenSet = true; m_sound = value; }
-    inline void SetSound(Aws::String&& value) { m_soundHasBeenSet = true; m_sound = std::move(value); }
-    inline void SetSound(const char* value) { m_soundHasBeenSet = true; m_sound.assign(value); }
-    inline DefaultPushNotificationTemplate& WithSound(const Aws::String& value) { SetSound(value); return *this;}
-    inline DefaultPushNotificationTemplate& WithSound(Aws::String&& value) { SetSound(std::move(value)); return *this;}
-    inline DefaultPushNotificationTemplate& WithSound(const char* value) { SetSound(value); return *this;}
+    template<typename SoundT = Aws::String>
+    void SetSound(SoundT&& value) { m_soundHasBeenSet = true; m_sound = std::forward<SoundT>(value); }
+    template<typename SoundT = Aws::String>
+    DefaultPushNotificationTemplate& WithSound(SoundT&& value) { SetSound(std::forward<SoundT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +95,12 @@ namespace Model
      * template. This title appears above the notification message on a recipient's
      * device.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline DefaultPushNotificationTemplate& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline DefaultPushNotificationTemplate& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline DefaultPushNotificationTemplate& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    DefaultPushNotificationTemplate& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,18 +109,16 @@ namespace Model
      * a push notification that's based on the message template and the value of the
      * Action property is URL.</p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline DefaultPushNotificationTemplate& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline DefaultPushNotificationTemplate& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline DefaultPushNotificationTemplate& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    DefaultPushNotificationTemplate& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
   private:
 
-    Action m_action;
+    Action m_action{Action::NOT_SET};
     bool m_actionHasBeenSet = false;
 
     Aws::String m_body;

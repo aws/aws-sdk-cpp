@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-AuthenticationConfiguration::AuthenticationConfiguration() : 
-    m_authenticationType(AuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_oAuth2PropertiesHasBeenSet(false)
-{
-}
-
 AuthenticationConfiguration::AuthenticationConfiguration(JsonView jsonValue)
-  : AuthenticationConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AuthenticationConfiguration& AuthenticationConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("AuthenticationType"))
   {
     m_authenticationType = AuthenticationTypeMapper::GetAuthenticationTypeForName(jsonValue.GetString("AuthenticationType"));
-
     m_authenticationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretArn"))
   {
     m_secretArn = jsonValue.GetString("SecretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OAuth2Properties"))
   {
     m_oAuth2Properties = jsonValue.GetObject("OAuth2Properties");
-
     m_oAuth2PropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

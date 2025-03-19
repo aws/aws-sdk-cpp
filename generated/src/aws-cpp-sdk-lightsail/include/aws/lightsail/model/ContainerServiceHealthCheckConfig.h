@@ -32,7 +32,7 @@ namespace Model
   class ContainerServiceHealthCheckConfig
   {
   public:
-    AWS_LIGHTSAIL_API ContainerServiceHealthCheckConfig();
+    AWS_LIGHTSAIL_API ContainerServiceHealthCheckConfig() = default;
     AWS_LIGHTSAIL_API ContainerServiceHealthCheckConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API ContainerServiceHealthCheckConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * container to the <code>Healthy</code> state. The default value is
      * <code>2</code>.</p>
      */
-    inline int GetHealthyThreshold() const{ return m_healthyThreshold; }
+    inline int GetHealthyThreshold() const { return m_healthyThreshold; }
     inline bool HealthyThresholdHasBeenSet() const { return m_healthyThresholdHasBeenSet; }
     inline void SetHealthyThreshold(int value) { m_healthyThresholdHasBeenSet = true; m_healthyThreshold = value; }
     inline ContainerServiceHealthCheckConfig& WithHealthyThreshold(int value) { SetHealthyThreshold(value); return *this;}
@@ -56,7 +56,7 @@ namespace Model
      * container to the <code>Unhealthy</code> state. The default value is
      * <code>2</code>.</p>
      */
-    inline int GetUnhealthyThreshold() const{ return m_unhealthyThreshold; }
+    inline int GetUnhealthyThreshold() const { return m_unhealthyThreshold; }
     inline bool UnhealthyThresholdHasBeenSet() const { return m_unhealthyThresholdHasBeenSet; }
     inline void SetUnhealthyThreshold(int value) { m_unhealthyThresholdHasBeenSet = true; m_unhealthyThreshold = value; }
     inline ContainerServiceHealthCheckConfig& WithUnhealthyThreshold(int value) { SetUnhealthyThreshold(value); return *this;}
@@ -68,7 +68,7 @@ namespace Model
      * health check. You can specify between 2 and 60 seconds. The default value is
      * <code>2</code>.</p>
      */
-    inline int GetTimeoutSeconds() const{ return m_timeoutSeconds; }
+    inline int GetTimeoutSeconds() const { return m_timeoutSeconds; }
     inline bool TimeoutSecondsHasBeenSet() const { return m_timeoutSecondsHasBeenSet; }
     inline void SetTimeoutSeconds(int value) { m_timeoutSecondsHasBeenSet = true; m_timeoutSeconds = value; }
     inline ContainerServiceHealthCheckConfig& WithTimeoutSeconds(int value) { SetTimeoutSeconds(value); return *this;}
@@ -80,7 +80,7 @@ namespace Model
      * container. You can specify between 5 and 300 seconds. The default value is
      * <code>5</code>.</p>
      */
-    inline int GetIntervalSeconds() const{ return m_intervalSeconds; }
+    inline int GetIntervalSeconds() const { return m_intervalSeconds; }
     inline bool IntervalSecondsHasBeenSet() const { return m_intervalSecondsHasBeenSet; }
     inline void SetIntervalSeconds(int value) { m_intervalSecondsHasBeenSet = true; m_intervalSeconds = value; }
     inline ContainerServiceHealthCheckConfig& WithIntervalSeconds(int value) { SetIntervalSeconds(value); return *this;}
@@ -91,14 +91,12 @@ namespace Model
      * <p>The path on the container on which to perform the health check. The default
      * value is <code>/</code>.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline ContainerServiceHealthCheckConfig& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline ContainerServiceHealthCheckConfig& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline ContainerServiceHealthCheckConfig& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    ContainerServiceHealthCheckConfig& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,27 +106,25 @@ namespace Model
      * You can specify multiple values (for example, <code>200,202</code>) or a range
      * of values (for example, <code>200-299</code>).</p>
      */
-    inline const Aws::String& GetSuccessCodes() const{ return m_successCodes; }
+    inline const Aws::String& GetSuccessCodes() const { return m_successCodes; }
     inline bool SuccessCodesHasBeenSet() const { return m_successCodesHasBeenSet; }
-    inline void SetSuccessCodes(const Aws::String& value) { m_successCodesHasBeenSet = true; m_successCodes = value; }
-    inline void SetSuccessCodes(Aws::String&& value) { m_successCodesHasBeenSet = true; m_successCodes = std::move(value); }
-    inline void SetSuccessCodes(const char* value) { m_successCodesHasBeenSet = true; m_successCodes.assign(value); }
-    inline ContainerServiceHealthCheckConfig& WithSuccessCodes(const Aws::String& value) { SetSuccessCodes(value); return *this;}
-    inline ContainerServiceHealthCheckConfig& WithSuccessCodes(Aws::String&& value) { SetSuccessCodes(std::move(value)); return *this;}
-    inline ContainerServiceHealthCheckConfig& WithSuccessCodes(const char* value) { SetSuccessCodes(value); return *this;}
+    template<typename SuccessCodesT = Aws::String>
+    void SetSuccessCodes(SuccessCodesT&& value) { m_successCodesHasBeenSet = true; m_successCodes = std::forward<SuccessCodesT>(value); }
+    template<typename SuccessCodesT = Aws::String>
+    ContainerServiceHealthCheckConfig& WithSuccessCodes(SuccessCodesT&& value) { SetSuccessCodes(std::forward<SuccessCodesT>(value)); return *this;}
     ///@}
   private:
 
-    int m_healthyThreshold;
+    int m_healthyThreshold{0};
     bool m_healthyThresholdHasBeenSet = false;
 
-    int m_unhealthyThreshold;
+    int m_unhealthyThreshold{0};
     bool m_unhealthyThresholdHasBeenSet = false;
 
-    int m_timeoutSeconds;
+    int m_timeoutSeconds{0};
     bool m_timeoutSecondsHasBeenSet = false;
 
-    int m_intervalSeconds;
+    int m_intervalSeconds{0};
     bool m_intervalSecondsHasBeenSet = false;
 
     Aws::String m_path;

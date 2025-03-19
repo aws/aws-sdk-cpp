@@ -20,15 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-NotificationConfiguration::NotificationConfiguration() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_topicARNHasBeenSet(false),
-    m_notificationTypeHasBeenSet(false)
-{
-}
-
 NotificationConfiguration::NotificationConfiguration(const XmlNode& xmlNode)
-  : NotificationConfiguration()
 {
   *this = xmlNode;
 }

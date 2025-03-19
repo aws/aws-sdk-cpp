@@ -21,7 +21,7 @@ namespace Model
   class AssociateApplicationToEntitlementRequest : public AppStreamRequest
   {
   public:
-    AWS_APPSTREAM_API AssociateApplicationToEntitlementRequest();
+    AWS_APPSTREAM_API AssociateApplicationToEntitlementRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,42 +38,36 @@ namespace Model
     /**
      * <p>The name of the stack.</p>
      */
-    inline const Aws::String& GetStackName() const{ return m_stackName; }
+    inline const Aws::String& GetStackName() const { return m_stackName; }
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-    inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
-    inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
-    inline AssociateApplicationToEntitlementRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-    inline AssociateApplicationToEntitlementRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-    inline AssociateApplicationToEntitlementRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+    template<typename StackNameT = Aws::String>
+    void SetStackName(StackNameT&& value) { m_stackNameHasBeenSet = true; m_stackName = std::forward<StackNameT>(value); }
+    template<typename StackNameT = Aws::String>
+    AssociateApplicationToEntitlementRequest& WithStackName(StackNameT&& value) { SetStackName(std::forward<StackNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the entitlement.</p>
      */
-    inline const Aws::String& GetEntitlementName() const{ return m_entitlementName; }
+    inline const Aws::String& GetEntitlementName() const { return m_entitlementName; }
     inline bool EntitlementNameHasBeenSet() const { return m_entitlementNameHasBeenSet; }
-    inline void SetEntitlementName(const Aws::String& value) { m_entitlementNameHasBeenSet = true; m_entitlementName = value; }
-    inline void SetEntitlementName(Aws::String&& value) { m_entitlementNameHasBeenSet = true; m_entitlementName = std::move(value); }
-    inline void SetEntitlementName(const char* value) { m_entitlementNameHasBeenSet = true; m_entitlementName.assign(value); }
-    inline AssociateApplicationToEntitlementRequest& WithEntitlementName(const Aws::String& value) { SetEntitlementName(value); return *this;}
-    inline AssociateApplicationToEntitlementRequest& WithEntitlementName(Aws::String&& value) { SetEntitlementName(std::move(value)); return *this;}
-    inline AssociateApplicationToEntitlementRequest& WithEntitlementName(const char* value) { SetEntitlementName(value); return *this;}
+    template<typename EntitlementNameT = Aws::String>
+    void SetEntitlementName(EntitlementNameT&& value) { m_entitlementNameHasBeenSet = true; m_entitlementName = std::forward<EntitlementNameT>(value); }
+    template<typename EntitlementNameT = Aws::String>
+    AssociateApplicationToEntitlementRequest& WithEntitlementName(EntitlementNameT&& value) { SetEntitlementName(std::forward<EntitlementNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the application.</p>
      */
-    inline const Aws::String& GetApplicationIdentifier() const{ return m_applicationIdentifier; }
+    inline const Aws::String& GetApplicationIdentifier() const { return m_applicationIdentifier; }
     inline bool ApplicationIdentifierHasBeenSet() const { return m_applicationIdentifierHasBeenSet; }
-    inline void SetApplicationIdentifier(const Aws::String& value) { m_applicationIdentifierHasBeenSet = true; m_applicationIdentifier = value; }
-    inline void SetApplicationIdentifier(Aws::String&& value) { m_applicationIdentifierHasBeenSet = true; m_applicationIdentifier = std::move(value); }
-    inline void SetApplicationIdentifier(const char* value) { m_applicationIdentifierHasBeenSet = true; m_applicationIdentifier.assign(value); }
-    inline AssociateApplicationToEntitlementRequest& WithApplicationIdentifier(const Aws::String& value) { SetApplicationIdentifier(value); return *this;}
-    inline AssociateApplicationToEntitlementRequest& WithApplicationIdentifier(Aws::String&& value) { SetApplicationIdentifier(std::move(value)); return *this;}
-    inline AssociateApplicationToEntitlementRequest& WithApplicationIdentifier(const char* value) { SetApplicationIdentifier(value); return *this;}
+    template<typename ApplicationIdentifierT = Aws::String>
+    void SetApplicationIdentifier(ApplicationIdentifierT&& value) { m_applicationIdentifierHasBeenSet = true; m_applicationIdentifier = std::forward<ApplicationIdentifierT>(value); }
+    template<typename ApplicationIdentifierT = Aws::String>
+    AssociateApplicationToEntitlementRequest& WithApplicationIdentifier(ApplicationIdentifierT&& value) { SetApplicationIdentifier(std::forward<ApplicationIdentifierT>(value)); return *this;}
     ///@}
   private:
 

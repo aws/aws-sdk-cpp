@@ -12,12 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RestartChannelPipelinesRequest::RestartChannelPipelinesRequest() : 
-    m_channelIdHasBeenSet(false),
-    m_pipelineIdsHasBeenSet(false)
-{
-}
-
 Aws::String RestartChannelPipelinesRequest::SerializePayload() const
 {
   JsonValue payload;

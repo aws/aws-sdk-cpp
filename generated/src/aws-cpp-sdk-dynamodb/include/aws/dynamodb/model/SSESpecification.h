@@ -33,7 +33,7 @@ namespace Model
   class SSESpecification
   {
   public:
-    AWS_DYNAMODB_API SSESpecification();
+    AWS_DYNAMODB_API SSESpecification() = default;
     AWS_DYNAMODB_API SSESpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API SSESpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,7 +47,7 @@ namespace Model
      * key is used (KMS charges apply). If disabled (false) or not specified,
      * server-side encryption is set to Amazon Web Services owned key.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline SSESpecification& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -60,12 +60,10 @@ namespace Model
      * key is stored in your account and is managed by KMS (KMS charges apply).</p>
      * </li> </ul>
      */
-    inline const SSEType& GetSSEType() const{ return m_sSEType; }
+    inline SSEType GetSSEType() const { return m_sSEType; }
     inline bool SSETypeHasBeenSet() const { return m_sSETypeHasBeenSet; }
-    inline void SetSSEType(const SSEType& value) { m_sSETypeHasBeenSet = true; m_sSEType = value; }
-    inline void SetSSEType(SSEType&& value) { m_sSETypeHasBeenSet = true; m_sSEType = std::move(value); }
-    inline SSESpecification& WithSSEType(const SSEType& value) { SetSSEType(value); return *this;}
-    inline SSESpecification& WithSSEType(SSEType&& value) { SetSSEType(std::move(value)); return *this;}
+    inline void SetSSEType(SSEType value) { m_sSETypeHasBeenSet = true; m_sSEType = value; }
+    inline SSESpecification& WithSSEType(SSEType value) { SetSSEType(value); return *this;}
     ///@}
 
     ///@{
@@ -75,21 +73,19 @@ namespace Model
      * should only provide this parameter if the key is different from the default
      * DynamoDB key <code>alias/aws/dynamodb</code>.</p>
      */
-    inline const Aws::String& GetKMSMasterKeyId() const{ return m_kMSMasterKeyId; }
+    inline const Aws::String& GetKMSMasterKeyId() const { return m_kMSMasterKeyId; }
     inline bool KMSMasterKeyIdHasBeenSet() const { return m_kMSMasterKeyIdHasBeenSet; }
-    inline void SetKMSMasterKeyId(const Aws::String& value) { m_kMSMasterKeyIdHasBeenSet = true; m_kMSMasterKeyId = value; }
-    inline void SetKMSMasterKeyId(Aws::String&& value) { m_kMSMasterKeyIdHasBeenSet = true; m_kMSMasterKeyId = std::move(value); }
-    inline void SetKMSMasterKeyId(const char* value) { m_kMSMasterKeyIdHasBeenSet = true; m_kMSMasterKeyId.assign(value); }
-    inline SSESpecification& WithKMSMasterKeyId(const Aws::String& value) { SetKMSMasterKeyId(value); return *this;}
-    inline SSESpecification& WithKMSMasterKeyId(Aws::String&& value) { SetKMSMasterKeyId(std::move(value)); return *this;}
-    inline SSESpecification& WithKMSMasterKeyId(const char* value) { SetKMSMasterKeyId(value); return *this;}
+    template<typename KMSMasterKeyIdT = Aws::String>
+    void SetKMSMasterKeyId(KMSMasterKeyIdT&& value) { m_kMSMasterKeyIdHasBeenSet = true; m_kMSMasterKeyId = std::forward<KMSMasterKeyIdT>(value); }
+    template<typename KMSMasterKeyIdT = Aws::String>
+    SSESpecification& WithKMSMasterKeyId(KMSMasterKeyIdT&& value) { SetKMSMasterKeyId(std::forward<KMSMasterKeyIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
-    SSEType m_sSEType;
+    SSEType m_sSEType{SSEType::NOT_SET};
     bool m_sSETypeHasBeenSet = false;
 
     Aws::String m_kMSMasterKeyId;

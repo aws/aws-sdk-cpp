@@ -39,7 +39,7 @@ namespace Model
   class BaselineOverride
   {
   public:
-    AWS_SSM_API BaselineOverride();
+    AWS_SSM_API BaselineOverride() = default;
     AWS_SSM_API BaselineOverride(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API BaselineOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,32 +49,30 @@ namespace Model
     /**
      * <p>The operating system rule used by the patch baseline override.</p>
      */
-    inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
+    inline OperatingSystem GetOperatingSystem() const { return m_operatingSystem; }
     inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
-    inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
-    inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
-    inline BaselineOverride& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
-    inline BaselineOverride& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
+    inline void SetOperatingSystem(OperatingSystem value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
+    inline BaselineOverride& WithOperatingSystem(OperatingSystem value) { SetOperatingSystem(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const PatchFilterGroup& GetGlobalFilters() const{ return m_globalFilters; }
+    inline const PatchFilterGroup& GetGlobalFilters() const { return m_globalFilters; }
     inline bool GlobalFiltersHasBeenSet() const { return m_globalFiltersHasBeenSet; }
-    inline void SetGlobalFilters(const PatchFilterGroup& value) { m_globalFiltersHasBeenSet = true; m_globalFilters = value; }
-    inline void SetGlobalFilters(PatchFilterGroup&& value) { m_globalFiltersHasBeenSet = true; m_globalFilters = std::move(value); }
-    inline BaselineOverride& WithGlobalFilters(const PatchFilterGroup& value) { SetGlobalFilters(value); return *this;}
-    inline BaselineOverride& WithGlobalFilters(PatchFilterGroup&& value) { SetGlobalFilters(std::move(value)); return *this;}
+    template<typename GlobalFiltersT = PatchFilterGroup>
+    void SetGlobalFilters(GlobalFiltersT&& value) { m_globalFiltersHasBeenSet = true; m_globalFilters = std::forward<GlobalFiltersT>(value); }
+    template<typename GlobalFiltersT = PatchFilterGroup>
+    BaselineOverride& WithGlobalFilters(GlobalFiltersT&& value) { SetGlobalFilters(std::forward<GlobalFiltersT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const PatchRuleGroup& GetApprovalRules() const{ return m_approvalRules; }
+    inline const PatchRuleGroup& GetApprovalRules() const { return m_approvalRules; }
     inline bool ApprovalRulesHasBeenSet() const { return m_approvalRulesHasBeenSet; }
-    inline void SetApprovalRules(const PatchRuleGroup& value) { m_approvalRulesHasBeenSet = true; m_approvalRules = value; }
-    inline void SetApprovalRules(PatchRuleGroup&& value) { m_approvalRulesHasBeenSet = true; m_approvalRules = std::move(value); }
-    inline BaselineOverride& WithApprovalRules(const PatchRuleGroup& value) { SetApprovalRules(value); return *this;}
-    inline BaselineOverride& WithApprovalRules(PatchRuleGroup&& value) { SetApprovalRules(std::move(value)); return *this;}
+    template<typename ApprovalRulesT = PatchRuleGroup>
+    void SetApprovalRules(ApprovalRulesT&& value) { m_approvalRulesHasBeenSet = true; m_approvalRules = std::forward<ApprovalRulesT>(value); }
+    template<typename ApprovalRulesT = PatchRuleGroup>
+    BaselineOverride& WithApprovalRules(ApprovalRulesT&& value) { SetApprovalRules(std::forward<ApprovalRulesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,15 +84,14 @@ namespace Model
      * name formats for approved and rejected patch lists</a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetApprovedPatches() const{ return m_approvedPatches; }
+    inline const Aws::Vector<Aws::String>& GetApprovedPatches() const { return m_approvedPatches; }
     inline bool ApprovedPatchesHasBeenSet() const { return m_approvedPatchesHasBeenSet; }
-    inline void SetApprovedPatches(const Aws::Vector<Aws::String>& value) { m_approvedPatchesHasBeenSet = true; m_approvedPatches = value; }
-    inline void SetApprovedPatches(Aws::Vector<Aws::String>&& value) { m_approvedPatchesHasBeenSet = true; m_approvedPatches = std::move(value); }
-    inline BaselineOverride& WithApprovedPatches(const Aws::Vector<Aws::String>& value) { SetApprovedPatches(value); return *this;}
-    inline BaselineOverride& WithApprovedPatches(Aws::Vector<Aws::String>&& value) { SetApprovedPatches(std::move(value)); return *this;}
-    inline BaselineOverride& AddApprovedPatches(const Aws::String& value) { m_approvedPatchesHasBeenSet = true; m_approvedPatches.push_back(value); return *this; }
-    inline BaselineOverride& AddApprovedPatches(Aws::String&& value) { m_approvedPatchesHasBeenSet = true; m_approvedPatches.push_back(std::move(value)); return *this; }
-    inline BaselineOverride& AddApprovedPatches(const char* value) { m_approvedPatchesHasBeenSet = true; m_approvedPatches.push_back(value); return *this; }
+    template<typename ApprovedPatchesT = Aws::Vector<Aws::String>>
+    void SetApprovedPatches(ApprovedPatchesT&& value) { m_approvedPatchesHasBeenSet = true; m_approvedPatches = std::forward<ApprovedPatchesT>(value); }
+    template<typename ApprovedPatchesT = Aws::Vector<Aws::String>>
+    BaselineOverride& WithApprovedPatches(ApprovedPatchesT&& value) { SetApprovedPatches(std::forward<ApprovedPatchesT>(value)); return *this;}
+    template<typename ApprovedPatchesT = Aws::String>
+    BaselineOverride& AddApprovedPatches(ApprovedPatchesT&& value) { m_approvedPatchesHasBeenSet = true; m_approvedPatches.emplace_back(std::forward<ApprovedPatchesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -103,12 +100,10 @@ namespace Model
      * reported as missing, this value describes the severity of the compliance
      * violation.</p>
      */
-    inline const PatchComplianceLevel& GetApprovedPatchesComplianceLevel() const{ return m_approvedPatchesComplianceLevel; }
+    inline PatchComplianceLevel GetApprovedPatchesComplianceLevel() const { return m_approvedPatchesComplianceLevel; }
     inline bool ApprovedPatchesComplianceLevelHasBeenSet() const { return m_approvedPatchesComplianceLevelHasBeenSet; }
-    inline void SetApprovedPatchesComplianceLevel(const PatchComplianceLevel& value) { m_approvedPatchesComplianceLevelHasBeenSet = true; m_approvedPatchesComplianceLevel = value; }
-    inline void SetApprovedPatchesComplianceLevel(PatchComplianceLevel&& value) { m_approvedPatchesComplianceLevelHasBeenSet = true; m_approvedPatchesComplianceLevel = std::move(value); }
-    inline BaselineOverride& WithApprovedPatchesComplianceLevel(const PatchComplianceLevel& value) { SetApprovedPatchesComplianceLevel(value); return *this;}
-    inline BaselineOverride& WithApprovedPatchesComplianceLevel(PatchComplianceLevel&& value) { SetApprovedPatchesComplianceLevel(std::move(value)); return *this;}
+    inline void SetApprovedPatchesComplianceLevel(PatchComplianceLevel value) { m_approvedPatchesComplianceLevelHasBeenSet = true; m_approvedPatchesComplianceLevel = value; }
+    inline BaselineOverride& WithApprovedPatchesComplianceLevel(PatchComplianceLevel value) { SetApprovedPatchesComplianceLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -120,15 +115,14 @@ namespace Model
      * name formats for approved and rejected patch lists</a> in the <i>Amazon Web
      * Services Systems Manager User Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRejectedPatches() const{ return m_rejectedPatches; }
+    inline const Aws::Vector<Aws::String>& GetRejectedPatches() const { return m_rejectedPatches; }
     inline bool RejectedPatchesHasBeenSet() const { return m_rejectedPatchesHasBeenSet; }
-    inline void SetRejectedPatches(const Aws::Vector<Aws::String>& value) { m_rejectedPatchesHasBeenSet = true; m_rejectedPatches = value; }
-    inline void SetRejectedPatches(Aws::Vector<Aws::String>&& value) { m_rejectedPatchesHasBeenSet = true; m_rejectedPatches = std::move(value); }
-    inline BaselineOverride& WithRejectedPatches(const Aws::Vector<Aws::String>& value) { SetRejectedPatches(value); return *this;}
-    inline BaselineOverride& WithRejectedPatches(Aws::Vector<Aws::String>&& value) { SetRejectedPatches(std::move(value)); return *this;}
-    inline BaselineOverride& AddRejectedPatches(const Aws::String& value) { m_rejectedPatchesHasBeenSet = true; m_rejectedPatches.push_back(value); return *this; }
-    inline BaselineOverride& AddRejectedPatches(Aws::String&& value) { m_rejectedPatchesHasBeenSet = true; m_rejectedPatches.push_back(std::move(value)); return *this; }
-    inline BaselineOverride& AddRejectedPatches(const char* value) { m_rejectedPatchesHasBeenSet = true; m_rejectedPatches.push_back(value); return *this; }
+    template<typename RejectedPatchesT = Aws::Vector<Aws::String>>
+    void SetRejectedPatches(RejectedPatchesT&& value) { m_rejectedPatchesHasBeenSet = true; m_rejectedPatches = std::forward<RejectedPatchesT>(value); }
+    template<typename RejectedPatchesT = Aws::Vector<Aws::String>>
+    BaselineOverride& WithRejectedPatches(RejectedPatchesT&& value) { SetRejectedPatches(std::forward<RejectedPatchesT>(value)); return *this;}
+    template<typename RejectedPatchesT = Aws::String>
+    BaselineOverride& AddRejectedPatches(RejectedPatchesT&& value) { m_rejectedPatchesHasBeenSet = true; m_rejectedPatches.emplace_back(std::forward<RejectedPatchesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -138,12 +132,10 @@ namespace Model
      * dependency of another package, or blocked entirely along with packages that
      * include it as a dependency.</p>
      */
-    inline const PatchAction& GetRejectedPatchesAction() const{ return m_rejectedPatchesAction; }
+    inline PatchAction GetRejectedPatchesAction() const { return m_rejectedPatchesAction; }
     inline bool RejectedPatchesActionHasBeenSet() const { return m_rejectedPatchesActionHasBeenSet; }
-    inline void SetRejectedPatchesAction(const PatchAction& value) { m_rejectedPatchesActionHasBeenSet = true; m_rejectedPatchesAction = value; }
-    inline void SetRejectedPatchesAction(PatchAction&& value) { m_rejectedPatchesActionHasBeenSet = true; m_rejectedPatchesAction = std::move(value); }
-    inline BaselineOverride& WithRejectedPatchesAction(const PatchAction& value) { SetRejectedPatchesAction(value); return *this;}
-    inline BaselineOverride& WithRejectedPatchesAction(PatchAction&& value) { SetRejectedPatchesAction(std::move(value)); return *this;}
+    inline void SetRejectedPatchesAction(PatchAction value) { m_rejectedPatchesActionHasBeenSet = true; m_rejectedPatchesAction = value; }
+    inline BaselineOverride& WithRejectedPatchesAction(PatchAction value) { SetRejectedPatchesAction(value); return *this;}
     ///@}
 
     ///@{
@@ -152,7 +144,7 @@ namespace Model
      * that should be applied to the managed nodes. The default value is
      * <code>false</code>. Applies to Linux managed nodes only.</p>
      */
-    inline bool GetApprovedPatchesEnableNonSecurity() const{ return m_approvedPatchesEnableNonSecurity; }
+    inline bool GetApprovedPatchesEnableNonSecurity() const { return m_approvedPatchesEnableNonSecurity; }
     inline bool ApprovedPatchesEnableNonSecurityHasBeenSet() const { return m_approvedPatchesEnableNonSecurityHasBeenSet; }
     inline void SetApprovedPatchesEnableNonSecurity(bool value) { m_approvedPatchesEnableNonSecurityHasBeenSet = true; m_approvedPatchesEnableNonSecurity = value; }
     inline BaselineOverride& WithApprovedPatchesEnableNonSecurity(bool value) { SetApprovedPatchesEnableNonSecurity(value); return *this;}
@@ -164,18 +156,18 @@ namespace Model
      * target operating systems and source repositories. Applies to Linux managed nodes
      * only.</p>
      */
-    inline const Aws::Vector<PatchSource>& GetSources() const{ return m_sources; }
+    inline const Aws::Vector<PatchSource>& GetSources() const { return m_sources; }
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
-    inline void SetSources(const Aws::Vector<PatchSource>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
-    inline void SetSources(Aws::Vector<PatchSource>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
-    inline BaselineOverride& WithSources(const Aws::Vector<PatchSource>& value) { SetSources(value); return *this;}
-    inline BaselineOverride& WithSources(Aws::Vector<PatchSource>&& value) { SetSources(std::move(value)); return *this;}
-    inline BaselineOverride& AddSources(const PatchSource& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
-    inline BaselineOverride& AddSources(PatchSource&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
+    template<typename SourcesT = Aws::Vector<PatchSource>>
+    void SetSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources = std::forward<SourcesT>(value); }
+    template<typename SourcesT = Aws::Vector<PatchSource>>
+    BaselineOverride& WithSources(SourcesT&& value) { SetSources(std::forward<SourcesT>(value)); return *this;}
+    template<typename SourcesT = PatchSource>
+    BaselineOverride& AddSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources.emplace_back(std::forward<SourcesT>(value)); return *this; }
     ///@}
   private:
 
-    OperatingSystem m_operatingSystem;
+    OperatingSystem m_operatingSystem{OperatingSystem::NOT_SET};
     bool m_operatingSystemHasBeenSet = false;
 
     PatchFilterGroup m_globalFilters;
@@ -187,16 +179,16 @@ namespace Model
     Aws::Vector<Aws::String> m_approvedPatches;
     bool m_approvedPatchesHasBeenSet = false;
 
-    PatchComplianceLevel m_approvedPatchesComplianceLevel;
+    PatchComplianceLevel m_approvedPatchesComplianceLevel{PatchComplianceLevel::NOT_SET};
     bool m_approvedPatchesComplianceLevelHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_rejectedPatches;
     bool m_rejectedPatchesHasBeenSet = false;
 
-    PatchAction m_rejectedPatchesAction;
+    PatchAction m_rejectedPatchesAction{PatchAction::NOT_SET};
     bool m_rejectedPatchesActionHasBeenSet = false;
 
-    bool m_approvedPatchesEnableNonSecurity;
+    bool m_approvedPatchesEnableNonSecurity{false};
     bool m_approvedPatchesEnableNonSecurityHasBeenSet = false;
 
     Aws::Vector<PatchSource> m_sources;

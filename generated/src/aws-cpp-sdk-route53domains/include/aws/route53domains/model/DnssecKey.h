@@ -35,7 +35,7 @@ namespace Model
   class DnssecKey
   {
   public:
-    AWS_ROUTE53DOMAINS_API DnssecKey();
+    AWS_ROUTE53DOMAINS_API DnssecKey() = default;
     AWS_ROUTE53DOMAINS_API DnssecKey(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53DOMAINS_API DnssecKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,7 +50,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/dns-configuring-dnssec-enable-signing.html">Enabling
      * DNSSEC signing and establishing a chain of trust</a>.</p>
      */
-    inline int GetAlgorithm() const{ return m_algorithm; }
+    inline int GetAlgorithm() const { return m_algorithm; }
     inline bool AlgorithmHasBeenSet() const { return m_algorithmHasBeenSet; }
     inline void SetAlgorithm(int value) { m_algorithmHasBeenSet = true; m_algorithm = value; }
     inline DnssecKey& WithAlgorithm(int value) { SetAlgorithm(value); return *this;}
@@ -64,7 +64,7 @@ namespace Model
      * <p>If you have KSK and ZSK keys, always use KSK to create a delegations signer
      * (DS) record. If you have ZSK keys only – use ZSK to create a DS record.</p>
      */
-    inline int GetFlags() const{ return m_flags; }
+    inline int GetFlags() const { return m_flags; }
     inline bool FlagsHasBeenSet() const { return m_flagsHasBeenSet; }
     inline void SetFlags(int value) { m_flagsHasBeenSet = true; m_flags = value; }
     inline DnssecKey& WithFlags(int value) { SetFlags(value); return *this;}
@@ -75,14 +75,12 @@ namespace Model
      * <p>The base64-encoded public key part of the key pair that is passed to the
      * registry .</p>
      */
-    inline const Aws::String& GetPublicKey() const{ return m_publicKey; }
+    inline const Aws::String& GetPublicKey() const { return m_publicKey; }
     inline bool PublicKeyHasBeenSet() const { return m_publicKeyHasBeenSet; }
-    inline void SetPublicKey(const Aws::String& value) { m_publicKeyHasBeenSet = true; m_publicKey = value; }
-    inline void SetPublicKey(Aws::String&& value) { m_publicKeyHasBeenSet = true; m_publicKey = std::move(value); }
-    inline void SetPublicKey(const char* value) { m_publicKeyHasBeenSet = true; m_publicKey.assign(value); }
-    inline DnssecKey& WithPublicKey(const Aws::String& value) { SetPublicKey(value); return *this;}
-    inline DnssecKey& WithPublicKey(Aws::String&& value) { SetPublicKey(std::move(value)); return *this;}
-    inline DnssecKey& WithPublicKey(const char* value) { SetPublicKey(value); return *this;}
+    template<typename PublicKeyT = Aws::String>
+    void SetPublicKey(PublicKeyT&& value) { m_publicKeyHasBeenSet = true; m_publicKey = std::forward<PublicKeyT>(value); }
+    template<typename PublicKeyT = Aws::String>
+    DnssecKey& WithPublicKey(PublicKeyT&& value) { SetPublicKey(std::forward<PublicKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,7 +91,7 @@ namespace Model
      * for DNSSEC Delegation Signer (DS) Resource Record (RR) Type Digest Algorithms.
      * </p>
      */
-    inline int GetDigestType() const{ return m_digestType; }
+    inline int GetDigestType() const { return m_digestType; }
     inline bool DigestTypeHasBeenSet() const { return m_digestTypeHasBeenSet; }
     inline void SetDigestType(int value) { m_digestTypeHasBeenSet = true; m_digestType = value; }
     inline DnssecKey& WithDigestType(int value) { SetDigestType(value); return *this;}
@@ -105,14 +103,12 @@ namespace Model
      * key provided using specified digest algorithm and this digest is the actual
      * value returned from the registry nameservers as the value of DS records. </p>
      */
-    inline const Aws::String& GetDigest() const{ return m_digest; }
+    inline const Aws::String& GetDigest() const { return m_digest; }
     inline bool DigestHasBeenSet() const { return m_digestHasBeenSet; }
-    inline void SetDigest(const Aws::String& value) { m_digestHasBeenSet = true; m_digest = value; }
-    inline void SetDigest(Aws::String&& value) { m_digestHasBeenSet = true; m_digest = std::move(value); }
-    inline void SetDigest(const char* value) { m_digestHasBeenSet = true; m_digest.assign(value); }
-    inline DnssecKey& WithDigest(const Aws::String& value) { SetDigest(value); return *this;}
-    inline DnssecKey& WithDigest(Aws::String&& value) { SetDigest(std::move(value)); return *this;}
-    inline DnssecKey& WithDigest(const char* value) { SetDigest(value); return *this;}
+    template<typename DigestT = Aws::String>
+    void SetDigest(DigestT&& value) { m_digestHasBeenSet = true; m_digest = std::forward<DigestT>(value); }
+    template<typename DigestT = Aws::String>
+    DnssecKey& WithDigest(DigestT&& value) { SetDigest(std::forward<DigestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,7 +116,7 @@ namespace Model
      * <p> A numeric identification of the DNSKEY record referred to by this DS record.
      * </p>
      */
-    inline int GetKeyTag() const{ return m_keyTag; }
+    inline int GetKeyTag() const { return m_keyTag; }
     inline bool KeyTagHasBeenSet() const { return m_keyTagHasBeenSet; }
     inline void SetKeyTag(int value) { m_keyTagHasBeenSet = true; m_keyTag = value; }
     inline DnssecKey& WithKeyTag(int value) { SetKeyTag(value); return *this;}
@@ -132,33 +128,31 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_AssociateDelegationSignerToDomain.html">AssociateDelegationSignerToDomain</a>.
      * </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline DnssecKey& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline DnssecKey& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline DnssecKey& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    DnssecKey& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_algorithm;
+    int m_algorithm{0};
     bool m_algorithmHasBeenSet = false;
 
-    int m_flags;
+    int m_flags{0};
     bool m_flagsHasBeenSet = false;
 
     Aws::String m_publicKey;
     bool m_publicKeyHasBeenSet = false;
 
-    int m_digestType;
+    int m_digestType{0};
     bool m_digestTypeHasBeenSet = false;
 
     Aws::String m_digest;
     bool m_digestHasBeenSet = false;
 
-    int m_keyTag;
+    int m_keyTag{0};
     bool m_keyTagHasBeenSet = false;
 
     Aws::String m_id;

@@ -18,13 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-RecommendationPreferences::RecommendationPreferences() : 
-    m_cpuVendorArchitecturesHasBeenSet(false)
-{
-}
-
 RecommendationPreferences::RecommendationPreferences(JsonView jsonValue)
-  : RecommendationPreferences()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ RecommendationPreferences& RecommendationPreferences::operator =(JsonView jsonVa
     }
     m_cpuVendorArchitecturesHasBeenSet = true;
   }
-
   return *this;
 }
 

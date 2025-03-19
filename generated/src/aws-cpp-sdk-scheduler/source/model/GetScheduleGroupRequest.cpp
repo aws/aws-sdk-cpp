@@ -12,11 +12,6 @@ using namespace Aws::Scheduler::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetScheduleGroupRequest::GetScheduleGroupRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetScheduleGroupRequest::SerializePayload() const
 {
   return {};

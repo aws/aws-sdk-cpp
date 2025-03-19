@@ -18,14 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-AppUnitError::AppUnitError() : 
-    m_appUnitErrorCategory(AppUnitErrorCategory::NOT_SET),
-    m_appUnitErrorCategoryHasBeenSet(false)
-{
-}
-
 AppUnitError::AppUnitError(JsonView jsonValue)
-  : AppUnitError()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AppUnitError& AppUnitError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("appUnitErrorCategory"))
   {
     m_appUnitErrorCategory = AppUnitErrorCategoryMapper::GetAppUnitErrorCategoryForName(jsonValue.GetString("appUnitErrorCategory"));
-
     m_appUnitErrorCategoryHasBeenSet = true;
   }
-
   return *this;
 }
 

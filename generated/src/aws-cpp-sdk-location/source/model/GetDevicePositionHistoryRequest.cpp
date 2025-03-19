@@ -12,17 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDevicePositionHistoryRequest::GetDevicePositionHistoryRequest() : 
-    m_trackerNameHasBeenSet(false),
-    m_deviceIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_startTimeInclusiveHasBeenSet(false),
-    m_endTimeExclusiveHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetDevicePositionHistoryRequest::SerializePayload() const
 {
   JsonValue payload;

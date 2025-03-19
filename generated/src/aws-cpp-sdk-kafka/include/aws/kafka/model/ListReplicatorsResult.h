@@ -29,7 +29,7 @@ namespace Model
   class ListReplicatorsResult
   {
   public:
-    AWS_KAFKA_API ListReplicatorsResult();
+    AWS_KAFKA_API ListReplicatorsResult() = default;
     AWS_KAFKA_API ListReplicatorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KAFKA_API ListReplicatorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,45 +40,44 @@ namespace Model
      * the response. This NextToken should be sent in the subsequent request to
      * ListReplicators.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListReplicatorsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListReplicatorsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListReplicatorsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListReplicatorsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List containing information of each of the replicators in the account.</p>
      */
-    inline const Aws::Vector<ReplicatorSummary>& GetReplicators() const{ return m_replicators; }
-    inline void SetReplicators(const Aws::Vector<ReplicatorSummary>& value) { m_replicators = value; }
-    inline void SetReplicators(Aws::Vector<ReplicatorSummary>&& value) { m_replicators = std::move(value); }
-    inline ListReplicatorsResult& WithReplicators(const Aws::Vector<ReplicatorSummary>& value) { SetReplicators(value); return *this;}
-    inline ListReplicatorsResult& WithReplicators(Aws::Vector<ReplicatorSummary>&& value) { SetReplicators(std::move(value)); return *this;}
-    inline ListReplicatorsResult& AddReplicators(const ReplicatorSummary& value) { m_replicators.push_back(value); return *this; }
-    inline ListReplicatorsResult& AddReplicators(ReplicatorSummary&& value) { m_replicators.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReplicatorSummary>& GetReplicators() const { return m_replicators; }
+    template<typename ReplicatorsT = Aws::Vector<ReplicatorSummary>>
+    void SetReplicators(ReplicatorsT&& value) { m_replicatorsHasBeenSet = true; m_replicators = std::forward<ReplicatorsT>(value); }
+    template<typename ReplicatorsT = Aws::Vector<ReplicatorSummary>>
+    ListReplicatorsResult& WithReplicators(ReplicatorsT&& value) { SetReplicators(std::forward<ReplicatorsT>(value)); return *this;}
+    template<typename ReplicatorsT = ReplicatorSummary>
+    ListReplicatorsResult& AddReplicators(ReplicatorsT&& value) { m_replicatorsHasBeenSet = true; m_replicators.emplace_back(std::forward<ReplicatorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListReplicatorsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListReplicatorsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListReplicatorsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListReplicatorsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ReplicatorSummary> m_replicators;
+    bool m_replicatorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

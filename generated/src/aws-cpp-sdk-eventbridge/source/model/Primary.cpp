@@ -18,13 +18,7 @@ namespace EventBridge
 namespace Model
 {
 
-Primary::Primary() : 
-    m_healthCheckHasBeenSet(false)
-{
-}
-
 Primary::Primary(JsonView jsonValue)
-  : Primary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Primary& Primary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HealthCheck"))
   {
     m_healthCheck = jsonValue.GetString("HealthCheck");
-
     m_healthCheckHasBeenSet = true;
   }
-
   return *this;
 }
 

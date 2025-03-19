@@ -23,7 +23,7 @@ namespace Model
   class CreateRelationalDatabaseRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API CreateRelationalDatabaseRequest();
+    AWS_LIGHTSAIL_API CreateRelationalDatabaseRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * characters, or hyphens.</p> </li> <li> <p>The first and last character must be a
      * letter or number.</p> </li> </ul>
      */
-    inline const Aws::String& GetRelationalDatabaseName() const{ return m_relationalDatabaseName; }
+    inline const Aws::String& GetRelationalDatabaseName() const { return m_relationalDatabaseName; }
     inline bool RelationalDatabaseNameHasBeenSet() const { return m_relationalDatabaseNameHasBeenSet; }
-    inline void SetRelationalDatabaseName(const Aws::String& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = value; }
-    inline void SetRelationalDatabaseName(Aws::String&& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = std::move(value); }
-    inline void SetRelationalDatabaseName(const char* value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName.assign(value); }
-    inline CreateRelationalDatabaseRequest& WithRelationalDatabaseName(const Aws::String& value) { SetRelationalDatabaseName(value); return *this;}
-    inline CreateRelationalDatabaseRequest& WithRelationalDatabaseName(Aws::String&& value) { SetRelationalDatabaseName(std::move(value)); return *this;}
-    inline CreateRelationalDatabaseRequest& WithRelationalDatabaseName(const char* value) { SetRelationalDatabaseName(value); return *this;}
+    template<typename RelationalDatabaseNameT = Aws::String>
+    void SetRelationalDatabaseName(RelationalDatabaseNameT&& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = std::forward<RelationalDatabaseNameT>(value); }
+    template<typename RelationalDatabaseNameT = Aws::String>
+    CreateRelationalDatabaseRequest& WithRelationalDatabaseName(RelationalDatabaseNameT&& value) { SetRelationalDatabaseName(std::forward<RelationalDatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * add the <code>include relational database Availability Zones</code> parameter to
      * your request.</p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-    inline CreateRelationalDatabaseRequest& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline CreateRelationalDatabaseRequest& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline CreateRelationalDatabaseRequest& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    CreateRelationalDatabaseRequest& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * engine version of a database.</p> <p>You can get a list of database blueprints
      * IDs by using the <code>get relational database blueprints</code> operation.</p>
      */
-    inline const Aws::String& GetRelationalDatabaseBlueprintId() const{ return m_relationalDatabaseBlueprintId; }
+    inline const Aws::String& GetRelationalDatabaseBlueprintId() const { return m_relationalDatabaseBlueprintId; }
     inline bool RelationalDatabaseBlueprintIdHasBeenSet() const { return m_relationalDatabaseBlueprintIdHasBeenSet; }
-    inline void SetRelationalDatabaseBlueprintId(const Aws::String& value) { m_relationalDatabaseBlueprintIdHasBeenSet = true; m_relationalDatabaseBlueprintId = value; }
-    inline void SetRelationalDatabaseBlueprintId(Aws::String&& value) { m_relationalDatabaseBlueprintIdHasBeenSet = true; m_relationalDatabaseBlueprintId = std::move(value); }
-    inline void SetRelationalDatabaseBlueprintId(const char* value) { m_relationalDatabaseBlueprintIdHasBeenSet = true; m_relationalDatabaseBlueprintId.assign(value); }
-    inline CreateRelationalDatabaseRequest& WithRelationalDatabaseBlueprintId(const Aws::String& value) { SetRelationalDatabaseBlueprintId(value); return *this;}
-    inline CreateRelationalDatabaseRequest& WithRelationalDatabaseBlueprintId(Aws::String&& value) { SetRelationalDatabaseBlueprintId(std::move(value)); return *this;}
-    inline CreateRelationalDatabaseRequest& WithRelationalDatabaseBlueprintId(const char* value) { SetRelationalDatabaseBlueprintId(value); return *this;}
+    template<typename RelationalDatabaseBlueprintIdT = Aws::String>
+    void SetRelationalDatabaseBlueprintId(RelationalDatabaseBlueprintIdT&& value) { m_relationalDatabaseBlueprintIdHasBeenSet = true; m_relationalDatabaseBlueprintId = std::forward<RelationalDatabaseBlueprintIdT>(value); }
+    template<typename RelationalDatabaseBlueprintIdT = Aws::String>
+    CreateRelationalDatabaseRequest& WithRelationalDatabaseBlueprintId(RelationalDatabaseBlueprintIdT&& value) { SetRelationalDatabaseBlueprintId(std::forward<RelationalDatabaseBlueprintIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,14 +87,12 @@ namespace Model
      * specifications for your database.</p> <p>You can get a list of database bundle
      * IDs by using the <code>get relational database bundles</code> operation.</p>
      */
-    inline const Aws::String& GetRelationalDatabaseBundleId() const{ return m_relationalDatabaseBundleId; }
+    inline const Aws::String& GetRelationalDatabaseBundleId() const { return m_relationalDatabaseBundleId; }
     inline bool RelationalDatabaseBundleIdHasBeenSet() const { return m_relationalDatabaseBundleIdHasBeenSet; }
-    inline void SetRelationalDatabaseBundleId(const Aws::String& value) { m_relationalDatabaseBundleIdHasBeenSet = true; m_relationalDatabaseBundleId = value; }
-    inline void SetRelationalDatabaseBundleId(Aws::String&& value) { m_relationalDatabaseBundleIdHasBeenSet = true; m_relationalDatabaseBundleId = std::move(value); }
-    inline void SetRelationalDatabaseBundleId(const char* value) { m_relationalDatabaseBundleIdHasBeenSet = true; m_relationalDatabaseBundleId.assign(value); }
-    inline CreateRelationalDatabaseRequest& WithRelationalDatabaseBundleId(const Aws::String& value) { SetRelationalDatabaseBundleId(value); return *this;}
-    inline CreateRelationalDatabaseRequest& WithRelationalDatabaseBundleId(Aws::String&& value) { SetRelationalDatabaseBundleId(std::move(value)); return *this;}
-    inline CreateRelationalDatabaseRequest& WithRelationalDatabaseBundleId(const char* value) { SetRelationalDatabaseBundleId(value); return *this;}
+    template<typename RelationalDatabaseBundleIdT = Aws::String>
+    void SetRelationalDatabaseBundleId(RelationalDatabaseBundleIdT&& value) { m_relationalDatabaseBundleIdHasBeenSet = true; m_relationalDatabaseBundleId = std::forward<RelationalDatabaseBundleIdT>(value); }
+    template<typename RelationalDatabaseBundleIdT = Aws::String>
+    CreateRelationalDatabaseRequest& WithRelationalDatabaseBundleId(RelationalDatabaseBundleIdT&& value) { SetRelationalDatabaseBundleId(std::forward<RelationalDatabaseBundleIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,14 +127,12 @@ namespace Model
      * href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL
      * 12</a>.</p> </li> </ul>
      */
-    inline const Aws::String& GetMasterDatabaseName() const{ return m_masterDatabaseName; }
+    inline const Aws::String& GetMasterDatabaseName() const { return m_masterDatabaseName; }
     inline bool MasterDatabaseNameHasBeenSet() const { return m_masterDatabaseNameHasBeenSet; }
-    inline void SetMasterDatabaseName(const Aws::String& value) { m_masterDatabaseNameHasBeenSet = true; m_masterDatabaseName = value; }
-    inline void SetMasterDatabaseName(Aws::String&& value) { m_masterDatabaseNameHasBeenSet = true; m_masterDatabaseName = std::move(value); }
-    inline void SetMasterDatabaseName(const char* value) { m_masterDatabaseNameHasBeenSet = true; m_masterDatabaseName.assign(value); }
-    inline CreateRelationalDatabaseRequest& WithMasterDatabaseName(const Aws::String& value) { SetMasterDatabaseName(value); return *this;}
-    inline CreateRelationalDatabaseRequest& WithMasterDatabaseName(Aws::String&& value) { SetMasterDatabaseName(std::move(value)); return *this;}
-    inline CreateRelationalDatabaseRequest& WithMasterDatabaseName(const char* value) { SetMasterDatabaseName(value); return *this;}
+    template<typename MasterDatabaseNameT = Aws::String>
+    void SetMasterDatabaseName(MasterDatabaseNameT&& value) { m_masterDatabaseNameHasBeenSet = true; m_masterDatabaseName = std::forward<MasterDatabaseNameT>(value); }
+    template<typename MasterDatabaseNameT = Aws::String>
+    CreateRelationalDatabaseRequest& WithMasterDatabaseName(MasterDatabaseNameT&& value) { SetMasterDatabaseName(std::forward<MasterDatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -171,14 +161,12 @@ namespace Model
      * href="https://www.postgresql.org/docs/12/sql-keywords-appendix.html">PostgreSQL
      * 12</a>.</p> </li> </ul>
      */
-    inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
+    inline const Aws::String& GetMasterUsername() const { return m_masterUsername; }
     inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
-    inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
-    inline void SetMasterUsername(Aws::String&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::move(value); }
-    inline void SetMasterUsername(const char* value) { m_masterUsernameHasBeenSet = true; m_masterUsername.assign(value); }
-    inline CreateRelationalDatabaseRequest& WithMasterUsername(const Aws::String& value) { SetMasterUsername(value); return *this;}
-    inline CreateRelationalDatabaseRequest& WithMasterUsername(Aws::String&& value) { SetMasterUsername(std::move(value)); return *this;}
-    inline CreateRelationalDatabaseRequest& WithMasterUsername(const char* value) { SetMasterUsername(value); return *this;}
+    template<typename MasterUsernameT = Aws::String>
+    void SetMasterUsername(MasterUsernameT&& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = std::forward<MasterUsernameT>(value); }
+    template<typename MasterUsernameT = Aws::String>
+    CreateRelationalDatabaseRequest& WithMasterUsername(MasterUsernameT&& value) { SetMasterUsername(std::forward<MasterUsernameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -189,14 +177,12 @@ namespace Model
      * <b>PostgreSQL</b> </p> <p>Constraints: Must contain from 8 to 128
      * characters.</p>
      */
-    inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
+    inline const Aws::String& GetMasterUserPassword() const { return m_masterUserPassword; }
     inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
-    inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
-    inline void SetMasterUserPassword(Aws::String&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::move(value); }
-    inline void SetMasterUserPassword(const char* value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword.assign(value); }
-    inline CreateRelationalDatabaseRequest& WithMasterUserPassword(const Aws::String& value) { SetMasterUserPassword(value); return *this;}
-    inline CreateRelationalDatabaseRequest& WithMasterUserPassword(Aws::String&& value) { SetMasterUserPassword(std::move(value)); return *this;}
-    inline CreateRelationalDatabaseRequest& WithMasterUserPassword(const char* value) { SetMasterUserPassword(value); return *this;}
+    template<typename MasterUserPasswordT = Aws::String>
+    void SetMasterUserPassword(MasterUserPasswordT&& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = std::forward<MasterUserPasswordT>(value); }
+    template<typename MasterUserPasswordT = Aws::String>
+    CreateRelationalDatabaseRequest& WithMasterUserPassword(MasterUserPasswordT&& value) { SetMasterUserPassword(std::forward<MasterUserPasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -214,14 +200,12 @@ namespace Model
      * <p>Must not conflict with the preferred maintenance window.</p> </li> <li>
      * <p>Must be at least 30 minutes.</p> </li> </ul>
      */
-    inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
+    inline const Aws::String& GetPreferredBackupWindow() const { return m_preferredBackupWindow; }
     inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
-    inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
-    inline void SetPreferredBackupWindow(Aws::String&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::move(value); }
-    inline void SetPreferredBackupWindow(const char* value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow.assign(value); }
-    inline CreateRelationalDatabaseRequest& WithPreferredBackupWindow(const Aws::String& value) { SetPreferredBackupWindow(value); return *this;}
-    inline CreateRelationalDatabaseRequest& WithPreferredBackupWindow(Aws::String&& value) { SetPreferredBackupWindow(std::move(value)); return *this;}
-    inline CreateRelationalDatabaseRequest& WithPreferredBackupWindow(const char* value) { SetPreferredBackupWindow(value); return *this;}
+    template<typename PreferredBackupWindowT = Aws::String>
+    void SetPreferredBackupWindow(PreferredBackupWindowT&& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = std::forward<PreferredBackupWindowT>(value); }
+    template<typename PreferredBackupWindowT = Aws::String>
+    CreateRelationalDatabaseRequest& WithPreferredBackupWindow(PreferredBackupWindowT&& value) { SetPreferredBackupWindow(std::forward<PreferredBackupWindowT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -235,14 +219,12 @@ namespace Model
      * </li> <li> <p>Specified in Coordinated Universal Time (UTC).</p> </li> <li>
      * <p>Example: <code>Tue:17:00-Tue:17:30</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
+    inline const Aws::String& GetPreferredMaintenanceWindow() const { return m_preferredMaintenanceWindow; }
     inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
-    inline void SetPreferredMaintenanceWindow(const Aws::String& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = value; }
-    inline void SetPreferredMaintenanceWindow(Aws::String&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::move(value); }
-    inline void SetPreferredMaintenanceWindow(const char* value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow.assign(value); }
-    inline CreateRelationalDatabaseRequest& WithPreferredMaintenanceWindow(const Aws::String& value) { SetPreferredMaintenanceWindow(value); return *this;}
-    inline CreateRelationalDatabaseRequest& WithPreferredMaintenanceWindow(Aws::String&& value) { SetPreferredMaintenanceWindow(std::move(value)); return *this;}
-    inline CreateRelationalDatabaseRequest& WithPreferredMaintenanceWindow(const char* value) { SetPreferredMaintenanceWindow(value); return *this;}
+    template<typename PreferredMaintenanceWindowT = Aws::String>
+    void SetPreferredMaintenanceWindow(PreferredMaintenanceWindowT&& value) { m_preferredMaintenanceWindowHasBeenSet = true; m_preferredMaintenanceWindow = std::forward<PreferredMaintenanceWindowT>(value); }
+    template<typename PreferredMaintenanceWindowT = Aws::String>
+    CreateRelationalDatabaseRequest& WithPreferredMaintenanceWindow(PreferredMaintenanceWindowT&& value) { SetPreferredMaintenanceWindow(std::forward<PreferredMaintenanceWindowT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -253,7 +235,7 @@ namespace Model
      * is available only to your Lightsail resources in the same region as your
      * database.</p>
      */
-    inline bool GetPubliclyAccessible() const{ return m_publiclyAccessible; }
+    inline bool GetPubliclyAccessible() const { return m_publiclyAccessible; }
     inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
     inline CreateRelationalDatabaseRequest& WithPubliclyAccessible(bool value) { SetPubliclyAccessible(value); return *this;}
@@ -265,14 +247,14 @@ namespace Model
      * <p>Use the <code>TagResource</code> action to tag a resource after it's
      * created.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateRelationalDatabaseRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateRelationalDatabaseRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateRelationalDatabaseRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateRelationalDatabaseRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateRelationalDatabaseRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateRelationalDatabaseRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -303,7 +285,7 @@ namespace Model
     Aws::String m_preferredMaintenanceWindow;
     bool m_preferredMaintenanceWindowHasBeenSet = false;
 
-    bool m_publiclyAccessible;
+    bool m_publiclyAccessible{false};
     bool m_publiclyAccessibleHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

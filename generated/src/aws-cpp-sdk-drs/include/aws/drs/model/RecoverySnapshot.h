@@ -33,7 +33,7 @@ namespace Model
   class RecoverySnapshot
   {
   public:
-    AWS_DRS_API RecoverySnapshot();
+    AWS_DRS_API RecoverySnapshot() = default;
     AWS_DRS_API RecoverySnapshot(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API RecoverySnapshot& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,71 +43,62 @@ namespace Model
     /**
      * <p>A list of EBS snapshots.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEbsSnapshots() const{ return m_ebsSnapshots; }
+    inline const Aws::Vector<Aws::String>& GetEbsSnapshots() const { return m_ebsSnapshots; }
     inline bool EbsSnapshotsHasBeenSet() const { return m_ebsSnapshotsHasBeenSet; }
-    inline void SetEbsSnapshots(const Aws::Vector<Aws::String>& value) { m_ebsSnapshotsHasBeenSet = true; m_ebsSnapshots = value; }
-    inline void SetEbsSnapshots(Aws::Vector<Aws::String>&& value) { m_ebsSnapshotsHasBeenSet = true; m_ebsSnapshots = std::move(value); }
-    inline RecoverySnapshot& WithEbsSnapshots(const Aws::Vector<Aws::String>& value) { SetEbsSnapshots(value); return *this;}
-    inline RecoverySnapshot& WithEbsSnapshots(Aws::Vector<Aws::String>&& value) { SetEbsSnapshots(std::move(value)); return *this;}
-    inline RecoverySnapshot& AddEbsSnapshots(const Aws::String& value) { m_ebsSnapshotsHasBeenSet = true; m_ebsSnapshots.push_back(value); return *this; }
-    inline RecoverySnapshot& AddEbsSnapshots(Aws::String&& value) { m_ebsSnapshotsHasBeenSet = true; m_ebsSnapshots.push_back(std::move(value)); return *this; }
-    inline RecoverySnapshot& AddEbsSnapshots(const char* value) { m_ebsSnapshotsHasBeenSet = true; m_ebsSnapshots.push_back(value); return *this; }
+    template<typename EbsSnapshotsT = Aws::Vector<Aws::String>>
+    void SetEbsSnapshots(EbsSnapshotsT&& value) { m_ebsSnapshotsHasBeenSet = true; m_ebsSnapshots = std::forward<EbsSnapshotsT>(value); }
+    template<typename EbsSnapshotsT = Aws::Vector<Aws::String>>
+    RecoverySnapshot& WithEbsSnapshots(EbsSnapshotsT&& value) { SetEbsSnapshots(std::forward<EbsSnapshotsT>(value)); return *this;}
+    template<typename EbsSnapshotsT = Aws::String>
+    RecoverySnapshot& AddEbsSnapshots(EbsSnapshotsT&& value) { m_ebsSnapshotsHasBeenSet = true; m_ebsSnapshots.emplace_back(std::forward<EbsSnapshotsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when we expect the snapshot to be taken.</p>
      */
-    inline const Aws::String& GetExpectedTimestamp() const{ return m_expectedTimestamp; }
+    inline const Aws::String& GetExpectedTimestamp() const { return m_expectedTimestamp; }
     inline bool ExpectedTimestampHasBeenSet() const { return m_expectedTimestampHasBeenSet; }
-    inline void SetExpectedTimestamp(const Aws::String& value) { m_expectedTimestampHasBeenSet = true; m_expectedTimestamp = value; }
-    inline void SetExpectedTimestamp(Aws::String&& value) { m_expectedTimestampHasBeenSet = true; m_expectedTimestamp = std::move(value); }
-    inline void SetExpectedTimestamp(const char* value) { m_expectedTimestampHasBeenSet = true; m_expectedTimestamp.assign(value); }
-    inline RecoverySnapshot& WithExpectedTimestamp(const Aws::String& value) { SetExpectedTimestamp(value); return *this;}
-    inline RecoverySnapshot& WithExpectedTimestamp(Aws::String&& value) { SetExpectedTimestamp(std::move(value)); return *this;}
-    inline RecoverySnapshot& WithExpectedTimestamp(const char* value) { SetExpectedTimestamp(value); return *this;}
+    template<typename ExpectedTimestampT = Aws::String>
+    void SetExpectedTimestamp(ExpectedTimestampT&& value) { m_expectedTimestampHasBeenSet = true; m_expectedTimestamp = std::forward<ExpectedTimestampT>(value); }
+    template<typename ExpectedTimestampT = Aws::String>
+    RecoverySnapshot& WithExpectedTimestamp(ExpectedTimestampT&& value) { SetExpectedTimestamp(std::forward<ExpectedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Recovery Snapshot.</p>
      */
-    inline const Aws::String& GetSnapshotID() const{ return m_snapshotID; }
+    inline const Aws::String& GetSnapshotID() const { return m_snapshotID; }
     inline bool SnapshotIDHasBeenSet() const { return m_snapshotIDHasBeenSet; }
-    inline void SetSnapshotID(const Aws::String& value) { m_snapshotIDHasBeenSet = true; m_snapshotID = value; }
-    inline void SetSnapshotID(Aws::String&& value) { m_snapshotIDHasBeenSet = true; m_snapshotID = std::move(value); }
-    inline void SetSnapshotID(const char* value) { m_snapshotIDHasBeenSet = true; m_snapshotID.assign(value); }
-    inline RecoverySnapshot& WithSnapshotID(const Aws::String& value) { SetSnapshotID(value); return *this;}
-    inline RecoverySnapshot& WithSnapshotID(Aws::String&& value) { SetSnapshotID(std::move(value)); return *this;}
-    inline RecoverySnapshot& WithSnapshotID(const char* value) { SetSnapshotID(value); return *this;}
+    template<typename SnapshotIDT = Aws::String>
+    void SetSnapshotID(SnapshotIDT&& value) { m_snapshotIDHasBeenSet = true; m_snapshotID = std::forward<SnapshotIDT>(value); }
+    template<typename SnapshotIDT = Aws::String>
+    RecoverySnapshot& WithSnapshotID(SnapshotIDT&& value) { SetSnapshotID(std::forward<SnapshotIDT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Source Server that the snapshot was taken for.</p>
      */
-    inline const Aws::String& GetSourceServerID() const{ return m_sourceServerID; }
+    inline const Aws::String& GetSourceServerID() const { return m_sourceServerID; }
     inline bool SourceServerIDHasBeenSet() const { return m_sourceServerIDHasBeenSet; }
-    inline void SetSourceServerID(const Aws::String& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = value; }
-    inline void SetSourceServerID(Aws::String&& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = std::move(value); }
-    inline void SetSourceServerID(const char* value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID.assign(value); }
-    inline RecoverySnapshot& WithSourceServerID(const Aws::String& value) { SetSourceServerID(value); return *this;}
-    inline RecoverySnapshot& WithSourceServerID(Aws::String&& value) { SetSourceServerID(std::move(value)); return *this;}
-    inline RecoverySnapshot& WithSourceServerID(const char* value) { SetSourceServerID(value); return *this;}
+    template<typename SourceServerIDT = Aws::String>
+    void SetSourceServerID(SourceServerIDT&& value) { m_sourceServerIDHasBeenSet = true; m_sourceServerID = std::forward<SourceServerIDT>(value); }
+    template<typename SourceServerIDT = Aws::String>
+    RecoverySnapshot& WithSourceServerID(SourceServerIDT&& value) { SetSourceServerID(std::forward<SourceServerIDT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The actual timestamp that the snapshot was taken.</p>
      */
-    inline const Aws::String& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::String& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::String& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::String&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline void SetTimestamp(const char* value) { m_timestampHasBeenSet = true; m_timestamp.assign(value); }
-    inline RecoverySnapshot& WithTimestamp(const Aws::String& value) { SetTimestamp(value); return *this;}
-    inline RecoverySnapshot& WithTimestamp(Aws::String&& value) { SetTimestamp(std::move(value)); return *this;}
-    inline RecoverySnapshot& WithTimestamp(const char* value) { SetTimestamp(value); return *this;}
+    template<typename TimestampT = Aws::String>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::String>
+    RecoverySnapshot& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
   private:
 

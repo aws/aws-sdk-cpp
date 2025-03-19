@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CancelBundleTaskRequest::CancelBundleTaskRequest() : 
-    m_bundleIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CancelBundleTaskRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -35,7 +35,7 @@ namespace Model
   class TaskScheduleDetails
   {
   public:
-    AWS_DATASYNC_API TaskScheduleDetails();
+    AWS_DATASYNC_API TaskScheduleDetails() = default;
     AWS_DATASYNC_API TaskScheduleDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API TaskScheduleDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * example, if DataSync automatically disables your schedule because of a repeated
      * error, you can see when the schedule was disabled.</p>
      */
-    inline const Aws::Utils::DateTime& GetStatusUpdateTime() const{ return m_statusUpdateTime; }
+    inline const Aws::Utils::DateTime& GetStatusUpdateTime() const { return m_statusUpdateTime; }
     inline bool StatusUpdateTimeHasBeenSet() const { return m_statusUpdateTimeHasBeenSet; }
-    inline void SetStatusUpdateTime(const Aws::Utils::DateTime& value) { m_statusUpdateTimeHasBeenSet = true; m_statusUpdateTime = value; }
-    inline void SetStatusUpdateTime(Aws::Utils::DateTime&& value) { m_statusUpdateTimeHasBeenSet = true; m_statusUpdateTime = std::move(value); }
-    inline TaskScheduleDetails& WithStatusUpdateTime(const Aws::Utils::DateTime& value) { SetStatusUpdateTime(value); return *this;}
-    inline TaskScheduleDetails& WithStatusUpdateTime(Aws::Utils::DateTime&& value) { SetStatusUpdateTime(std::move(value)); return *this;}
+    template<typename StatusUpdateTimeT = Aws::Utils::DateTime>
+    void SetStatusUpdateTime(StatusUpdateTimeT&& value) { m_statusUpdateTimeHasBeenSet = true; m_statusUpdateTime = std::forward<StatusUpdateTimeT>(value); }
+    template<typename StatusUpdateTimeT = Aws::Utils::DateTime>
+    TaskScheduleDetails& WithStatusUpdateTime(StatusUpdateTimeT&& value) { SetStatusUpdateTime(std::forward<StatusUpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +65,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/troubleshooting-datasync-locations-tasks.html">Troubleshooting
      * issues with DataSync transfers</a>.</p>
      */
-    inline const Aws::String& GetDisabledReason() const{ return m_disabledReason; }
+    inline const Aws::String& GetDisabledReason() const { return m_disabledReason; }
     inline bool DisabledReasonHasBeenSet() const { return m_disabledReasonHasBeenSet; }
-    inline void SetDisabledReason(const Aws::String& value) { m_disabledReasonHasBeenSet = true; m_disabledReason = value; }
-    inline void SetDisabledReason(Aws::String&& value) { m_disabledReasonHasBeenSet = true; m_disabledReason = std::move(value); }
-    inline void SetDisabledReason(const char* value) { m_disabledReasonHasBeenSet = true; m_disabledReason.assign(value); }
-    inline TaskScheduleDetails& WithDisabledReason(const Aws::String& value) { SetDisabledReason(value); return *this;}
-    inline TaskScheduleDetails& WithDisabledReason(Aws::String&& value) { SetDisabledReason(std::move(value)); return *this;}
-    inline TaskScheduleDetails& WithDisabledReason(const char* value) { SetDisabledReason(value); return *this;}
+    template<typename DisabledReasonT = Aws::String>
+    void SetDisabledReason(DisabledReasonT&& value) { m_disabledReasonHasBeenSet = true; m_disabledReason = std::forward<DisabledReasonT>(value); }
+    template<typename DisabledReasonT = Aws::String>
+    TaskScheduleDetails& WithDisabledReason(DisabledReasonT&& value) { SetDisabledReason(std::forward<DisabledReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,22 +82,20 @@ namespace Model
      * schedule was automatically disabled by DataSync because the task failed
      * repeatedly with the same error.</p> </li> </ul>
      */
-    inline const ScheduleDisabledBy& GetDisabledBy() const{ return m_disabledBy; }
+    inline ScheduleDisabledBy GetDisabledBy() const { return m_disabledBy; }
     inline bool DisabledByHasBeenSet() const { return m_disabledByHasBeenSet; }
-    inline void SetDisabledBy(const ScheduleDisabledBy& value) { m_disabledByHasBeenSet = true; m_disabledBy = value; }
-    inline void SetDisabledBy(ScheduleDisabledBy&& value) { m_disabledByHasBeenSet = true; m_disabledBy = std::move(value); }
-    inline TaskScheduleDetails& WithDisabledBy(const ScheduleDisabledBy& value) { SetDisabledBy(value); return *this;}
-    inline TaskScheduleDetails& WithDisabledBy(ScheduleDisabledBy&& value) { SetDisabledBy(std::move(value)); return *this;}
+    inline void SetDisabledBy(ScheduleDisabledBy value) { m_disabledByHasBeenSet = true; m_disabledBy = value; }
+    inline TaskScheduleDetails& WithDisabledBy(ScheduleDisabledBy value) { SetDisabledBy(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_statusUpdateTime;
+    Aws::Utils::DateTime m_statusUpdateTime{};
     bool m_statusUpdateTimeHasBeenSet = false;
 
     Aws::String m_disabledReason;
     bool m_disabledReasonHasBeenSet = false;
 
-    ScheduleDisabledBy m_disabledBy;
+    ScheduleDisabledBy m_disabledBy{ScheduleDisabledBy::NOT_SET};
     bool m_disabledByHasBeenSet = false;
   };
 

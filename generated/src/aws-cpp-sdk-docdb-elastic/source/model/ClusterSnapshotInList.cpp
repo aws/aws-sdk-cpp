@@ -18,18 +18,7 @@ namespace DocDBElastic
 namespace Model
 {
 
-ClusterSnapshotInList::ClusterSnapshotInList() : 
-    m_clusterArnHasBeenSet(false),
-    m_snapshotArnHasBeenSet(false),
-    m_snapshotCreationTimeHasBeenSet(false),
-    m_snapshotNameHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ClusterSnapshotInList::ClusterSnapshotInList(JsonView jsonValue)
-  : ClusterSnapshotInList()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ClusterSnapshotInList& ClusterSnapshotInList::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("clusterArn"))
   {
     m_clusterArn = jsonValue.GetString("clusterArn");
-
     m_clusterArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snapshotArn"))
   {
     m_snapshotArn = jsonValue.GetString("snapshotArn");
-
     m_snapshotArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snapshotCreationTime"))
   {
     m_snapshotCreationTime = jsonValue.GetString("snapshotCreationTime");
-
     m_snapshotCreationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snapshotName"))
   {
     m_snapshotName = jsonValue.GetString("snapshotName");
-
     m_snapshotNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class Messages
   {
   public:
-    AWS_MEDIACONNECT_API Messages();
+    AWS_MEDIACONNECT_API Messages() = default;
     AWS_MEDIACONNECT_API Messages(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Messages& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,15 +42,14 @@ namespace Model
     /**
      * A list of errors that might have been generated from processes on this flow.
      */
-    inline const Aws::Vector<Aws::String>& GetErrors() const{ return m_errors; }
+    inline const Aws::Vector<Aws::String>& GetErrors() const { return m_errors; }
     inline bool ErrorsHasBeenSet() const { return m_errorsHasBeenSet; }
-    inline void SetErrors(const Aws::Vector<Aws::String>& value) { m_errorsHasBeenSet = true; m_errors = value; }
-    inline void SetErrors(Aws::Vector<Aws::String>&& value) { m_errorsHasBeenSet = true; m_errors = std::move(value); }
-    inline Messages& WithErrors(const Aws::Vector<Aws::String>& value) { SetErrors(value); return *this;}
-    inline Messages& WithErrors(Aws::Vector<Aws::String>&& value) { SetErrors(std::move(value)); return *this;}
-    inline Messages& AddErrors(const Aws::String& value) { m_errorsHasBeenSet = true; m_errors.push_back(value); return *this; }
-    inline Messages& AddErrors(Aws::String&& value) { m_errorsHasBeenSet = true; m_errors.push_back(std::move(value)); return *this; }
-    inline Messages& AddErrors(const char* value) { m_errorsHasBeenSet = true; m_errors.push_back(value); return *this; }
+    template<typename ErrorsT = Aws::Vector<Aws::String>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<Aws::String>>
+    Messages& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = Aws::String>
+    Messages& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
   private:
 

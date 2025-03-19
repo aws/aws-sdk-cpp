@@ -33,7 +33,7 @@ namespace Model
   class CpuPerformanceFactorRequest
   {
   public:
-    AWS_EC2_API CpuPerformanceFactorRequest();
+    AWS_EC2_API CpuPerformanceFactorRequest() = default;
     AWS_EC2_API CpuPerformanceFactorRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API CpuPerformanceFactorRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,14 +49,14 @@ namespace Model
      * regardless of CPU manufacturer or architecture differences.</p> 
      * <p>Currently, only one instance family can be specified in the list.</p> 
      */
-    inline const Aws::Vector<PerformanceFactorReferenceRequest>& GetReferences() const{ return m_references; }
+    inline const Aws::Vector<PerformanceFactorReferenceRequest>& GetReferences() const { return m_references; }
     inline bool ReferencesHasBeenSet() const { return m_referencesHasBeenSet; }
-    inline void SetReferences(const Aws::Vector<PerformanceFactorReferenceRequest>& value) { m_referencesHasBeenSet = true; m_references = value; }
-    inline void SetReferences(Aws::Vector<PerformanceFactorReferenceRequest>&& value) { m_referencesHasBeenSet = true; m_references = std::move(value); }
-    inline CpuPerformanceFactorRequest& WithReferences(const Aws::Vector<PerformanceFactorReferenceRequest>& value) { SetReferences(value); return *this;}
-    inline CpuPerformanceFactorRequest& WithReferences(Aws::Vector<PerformanceFactorReferenceRequest>&& value) { SetReferences(std::move(value)); return *this;}
-    inline CpuPerformanceFactorRequest& AddReferences(const PerformanceFactorReferenceRequest& value) { m_referencesHasBeenSet = true; m_references.push_back(value); return *this; }
-    inline CpuPerformanceFactorRequest& AddReferences(PerformanceFactorReferenceRequest&& value) { m_referencesHasBeenSet = true; m_references.push_back(std::move(value)); return *this; }
+    template<typename ReferencesT = Aws::Vector<PerformanceFactorReferenceRequest>>
+    void SetReferences(ReferencesT&& value) { m_referencesHasBeenSet = true; m_references = std::forward<ReferencesT>(value); }
+    template<typename ReferencesT = Aws::Vector<PerformanceFactorReferenceRequest>>
+    CpuPerformanceFactorRequest& WithReferences(ReferencesT&& value) { SetReferences(std::forward<ReferencesT>(value)); return *this;}
+    template<typename ReferencesT = PerformanceFactorReferenceRequest>
+    CpuPerformanceFactorRequest& AddReferences(ReferencesT&& value) { m_referencesHasBeenSet = true; m_references.emplace_back(std::forward<ReferencesT>(value)); return *this; }
     ///@}
   private:
 

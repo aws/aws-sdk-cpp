@@ -34,7 +34,7 @@ namespace Model
   class ProvisioningArtifactProperties
   {
   public:
-    AWS_SERVICECATALOG_API ProvisioningArtifactProperties();
+    AWS_SERVICECATALOG_API ProvisioningArtifactProperties() = default;
     AWS_SERVICECATALOG_API ProvisioningArtifactProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API ProvisioningArtifactProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The name of the provisioning artifact (for example, v1 v2beta). No spaces are
      * allowed.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ProvisioningArtifactProperties& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ProvisioningArtifactProperties& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ProvisioningArtifactProperties& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ProvisioningArtifactProperties& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>The description of the provisioning artifact, including how it differs from
      * the previous provisioning artifact.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ProvisioningArtifactProperties& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ProvisioningArtifactProperties& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ProvisioningArtifactProperties& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ProvisioningArtifactProperties& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,19 +80,16 @@ namespace Model
      * “arn:aws:cloudformation:[us-east-1]:[accountId]:stack/[StackName]/[resourceId]</code>
      * </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetInfo() const{ return m_info; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetInfo() const { return m_info; }
     inline bool InfoHasBeenSet() const { return m_infoHasBeenSet; }
-    inline void SetInfo(const Aws::Map<Aws::String, Aws::String>& value) { m_infoHasBeenSet = true; m_info = value; }
-    inline void SetInfo(Aws::Map<Aws::String, Aws::String>&& value) { m_infoHasBeenSet = true; m_info = std::move(value); }
-    inline ProvisioningArtifactProperties& WithInfo(const Aws::Map<Aws::String, Aws::String>& value) { SetInfo(value); return *this;}
-    inline ProvisioningArtifactProperties& WithInfo(Aws::Map<Aws::String, Aws::String>&& value) { SetInfo(std::move(value)); return *this;}
-    inline ProvisioningArtifactProperties& AddInfo(const Aws::String& key, const Aws::String& value) { m_infoHasBeenSet = true; m_info.emplace(key, value); return *this; }
-    inline ProvisioningArtifactProperties& AddInfo(Aws::String&& key, const Aws::String& value) { m_infoHasBeenSet = true; m_info.emplace(std::move(key), value); return *this; }
-    inline ProvisioningArtifactProperties& AddInfo(const Aws::String& key, Aws::String&& value) { m_infoHasBeenSet = true; m_info.emplace(key, std::move(value)); return *this; }
-    inline ProvisioningArtifactProperties& AddInfo(Aws::String&& key, Aws::String&& value) { m_infoHasBeenSet = true; m_info.emplace(std::move(key), std::move(value)); return *this; }
-    inline ProvisioningArtifactProperties& AddInfo(const char* key, Aws::String&& value) { m_infoHasBeenSet = true; m_info.emplace(key, std::move(value)); return *this; }
-    inline ProvisioningArtifactProperties& AddInfo(Aws::String&& key, const char* value) { m_infoHasBeenSet = true; m_info.emplace(std::move(key), value); return *this; }
-    inline ProvisioningArtifactProperties& AddInfo(const char* key, const char* value) { m_infoHasBeenSet = true; m_info.emplace(key, value); return *this; }
+    template<typename InfoT = Aws::Map<Aws::String, Aws::String>>
+    void SetInfo(InfoT&& value) { m_infoHasBeenSet = true; m_info = std::forward<InfoT>(value); }
+    template<typename InfoT = Aws::Map<Aws::String, Aws::String>>
+    ProvisioningArtifactProperties& WithInfo(InfoT&& value) { SetInfo(std::forward<InfoT>(value)); return *this;}
+    template<typename InfoKeyT = Aws::String, typename InfoValueT = Aws::String>
+    ProvisioningArtifactProperties& AddInfo(InfoKeyT&& key, InfoValueT&& value) {
+      m_infoHasBeenSet = true; m_info.emplace(std::forward<InfoKeyT>(key), std::forward<InfoValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -108,12 +101,10 @@ namespace Model
      * configuration file</p> </li> <li> <p> <code>EXTERNAL</code> - External
      * configuration file</p> </li> </ul>
      */
-    inline const ProvisioningArtifactType& GetType() const{ return m_type; }
+    inline ProvisioningArtifactType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ProvisioningArtifactType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ProvisioningArtifactType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ProvisioningArtifactProperties& WithType(const ProvisioningArtifactType& value) { SetType(value); return *this;}
-    inline ProvisioningArtifactProperties& WithType(ProvisioningArtifactType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ProvisioningArtifactType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ProvisioningArtifactProperties& WithType(ProvisioningArtifactType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -122,7 +113,7 @@ namespace Model
      * artifact even if it is invalid. </p> <p>Service Catalog does not support
      * template validation for the <code>TERRAFORM_OS</code> product type. </p>
      */
-    inline bool GetDisableTemplateValidation() const{ return m_disableTemplateValidation; }
+    inline bool GetDisableTemplateValidation() const { return m_disableTemplateValidation; }
     inline bool DisableTemplateValidationHasBeenSet() const { return m_disableTemplateValidationHasBeenSet; }
     inline void SetDisableTemplateValidation(bool value) { m_disableTemplateValidationHasBeenSet = true; m_disableTemplateValidation = value; }
     inline ProvisioningArtifactProperties& WithDisableTemplateValidation(bool value) { SetDisableTemplateValidation(value); return *this;}
@@ -138,10 +129,10 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_info;
     bool m_infoHasBeenSet = false;
 
-    ProvisioningArtifactType m_type;
+    ProvisioningArtifactType m_type{ProvisioningArtifactType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    bool m_disableTemplateValidation;
+    bool m_disableTemplateValidation{false};
     bool m_disableTemplateValidationHasBeenSet = false;
   };
 

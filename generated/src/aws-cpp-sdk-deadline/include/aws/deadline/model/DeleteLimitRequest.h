@@ -21,7 +21,7 @@ namespace Model
   class DeleteLimitRequest : public DeadlineRequest
   {
   public:
-    AWS_DEADLINE_API DeleteLimitRequest();
+    AWS_DEADLINE_API DeleteLimitRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The unique identifier of the farm that contains the limit to delete.</p>
      */
-    inline const Aws::String& GetFarmId() const{ return m_farmId; }
+    inline const Aws::String& GetFarmId() const { return m_farmId; }
     inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-    inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
-    inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
-    inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
-    inline DeleteLimitRequest& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
-    inline DeleteLimitRequest& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
-    inline DeleteLimitRequest& WithFarmId(const char* value) { SetFarmId(value); return *this;}
+    template<typename FarmIdT = Aws::String>
+    void SetFarmId(FarmIdT&& value) { m_farmIdHasBeenSet = true; m_farmId = std::forward<FarmIdT>(value); }
+    template<typename FarmIdT = Aws::String>
+    DeleteLimitRequest& WithFarmId(FarmIdT&& value) { SetFarmId(std::forward<FarmIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the limit to delete.</p>
      */
-    inline const Aws::String& GetLimitId() const{ return m_limitId; }
+    inline const Aws::String& GetLimitId() const { return m_limitId; }
     inline bool LimitIdHasBeenSet() const { return m_limitIdHasBeenSet; }
-    inline void SetLimitId(const Aws::String& value) { m_limitIdHasBeenSet = true; m_limitId = value; }
-    inline void SetLimitId(Aws::String&& value) { m_limitIdHasBeenSet = true; m_limitId = std::move(value); }
-    inline void SetLimitId(const char* value) { m_limitIdHasBeenSet = true; m_limitId.assign(value); }
-    inline DeleteLimitRequest& WithLimitId(const Aws::String& value) { SetLimitId(value); return *this;}
-    inline DeleteLimitRequest& WithLimitId(Aws::String&& value) { SetLimitId(std::move(value)); return *this;}
-    inline DeleteLimitRequest& WithLimitId(const char* value) { SetLimitId(value); return *this;}
+    template<typename LimitIdT = Aws::String>
+    void SetLimitId(LimitIdT&& value) { m_limitIdHasBeenSet = true; m_limitId = std::forward<LimitIdT>(value); }
+    template<typename LimitIdT = Aws::String>
+    DeleteLimitRequest& WithLimitId(LimitIdT&& value) { SetLimitId(std::forward<LimitIdT>(value)); return *this;}
     ///@}
   private:
 

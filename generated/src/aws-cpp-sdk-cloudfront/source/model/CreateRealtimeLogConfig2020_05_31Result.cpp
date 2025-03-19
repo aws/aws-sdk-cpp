@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateRealtimeLogConfig2020_05_31Result::CreateRealtimeLogConfig2020_05_31Result()
-{
-}
-
 CreateRealtimeLogConfig2020_05_31Result::CreateRealtimeLogConfig2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ CreateRealtimeLogConfig2020_05_31Result& CreateRealtimeLogConfig2020_05_31Result
     if(!realtimeLogConfigNode.IsNull())
     {
       m_realtimeLogConfig = realtimeLogConfigNode;
+      m_realtimeLogConfigHasBeenSet = true;
     }
   }
 
@@ -44,6 +41,7 @@ CreateRealtimeLogConfig2020_05_31Result& CreateRealtimeLogConfig2020_05_31Result
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

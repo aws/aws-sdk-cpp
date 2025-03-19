@@ -18,13 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-OutputFile::OutputFile() : 
-    m_fileLocationHasBeenSet(false)
-{
-}
-
 OutputFile::OutputFile(JsonView jsonValue)
-  : OutputFile()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OutputFile& OutputFile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fileLocation"))
   {
     m_fileLocation = jsonValue.GetString("fileLocation");
-
     m_fileLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

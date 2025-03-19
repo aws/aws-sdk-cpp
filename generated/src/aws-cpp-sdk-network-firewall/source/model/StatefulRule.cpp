@@ -18,16 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-StatefulRule::StatefulRule() : 
-    m_action(StatefulAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_headerHasBeenSet(false),
-    m_ruleOptionsHasBeenSet(false)
-{
-}
-
 StatefulRule::StatefulRule(JsonView jsonValue)
-  : StatefulRule()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ StatefulRule& StatefulRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Action"))
   {
     m_action = StatefulActionMapper::GetStatefulActionForName(jsonValue.GetString("Action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Header"))
   {
     m_header = jsonValue.GetObject("Header");
-
     m_headerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleOptions"))
   {
     Aws::Utils::Array<JsonView> ruleOptionsJsonList = jsonValue.GetArray("RuleOptions");
@@ -57,7 +44,6 @@ StatefulRule& StatefulRule::operator =(JsonView jsonValue)
     }
     m_ruleOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

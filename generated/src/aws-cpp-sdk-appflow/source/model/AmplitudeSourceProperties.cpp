@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-AmplitudeSourceProperties::AmplitudeSourceProperties() : 
-    m_objectHasBeenSet(false)
-{
-}
-
 AmplitudeSourceProperties::AmplitudeSourceProperties(JsonView jsonValue)
-  : AmplitudeSourceProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AmplitudeSourceProperties& AmplitudeSourceProperties::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("object"))
   {
     m_object = jsonValue.GetString("object");
-
     m_objectHasBeenSet = true;
   }
-
   return *this;
 }
 

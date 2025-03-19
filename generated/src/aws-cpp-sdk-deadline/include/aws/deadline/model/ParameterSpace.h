@@ -34,7 +34,7 @@ namespace Model
   class ParameterSpace
   {
   public:
-    AWS_DEADLINE_API ParameterSpace();
+    AWS_DEADLINE_API ParameterSpace() = default;
     AWS_DEADLINE_API ParameterSpace(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API ParameterSpace& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,26 @@ namespace Model
     /**
      * <p>The parameters to search for.</p>
      */
-    inline const Aws::Vector<StepParameter>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Vector<StepParameter>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Vector<StepParameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Vector<StepParameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline ParameterSpace& WithParameters(const Aws::Vector<StepParameter>& value) { SetParameters(value); return *this;}
-    inline ParameterSpace& WithParameters(Aws::Vector<StepParameter>&& value) { SetParameters(std::move(value)); return *this;}
-    inline ParameterSpace& AddParameters(const StepParameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
-    inline ParameterSpace& AddParameters(StepParameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
+    template<typename ParametersT = Aws::Vector<StepParameter>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Vector<StepParameter>>
+    ParameterSpace& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersT = StepParameter>
+    ParameterSpace& AddParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters.emplace_back(std::forward<ParametersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The combination expression to use in the search.</p>
      */
-    inline const Aws::String& GetCombination() const{ return m_combination; }
+    inline const Aws::String& GetCombination() const { return m_combination; }
     inline bool CombinationHasBeenSet() const { return m_combinationHasBeenSet; }
-    inline void SetCombination(const Aws::String& value) { m_combinationHasBeenSet = true; m_combination = value; }
-    inline void SetCombination(Aws::String&& value) { m_combinationHasBeenSet = true; m_combination = std::move(value); }
-    inline void SetCombination(const char* value) { m_combinationHasBeenSet = true; m_combination.assign(value); }
-    inline ParameterSpace& WithCombination(const Aws::String& value) { SetCombination(value); return *this;}
-    inline ParameterSpace& WithCombination(Aws::String&& value) { SetCombination(std::move(value)); return *this;}
-    inline ParameterSpace& WithCombination(const char* value) { SetCombination(value); return *this;}
+    template<typename CombinationT = Aws::String>
+    void SetCombination(CombinationT&& value) { m_combinationHasBeenSet = true; m_combination = std::forward<CombinationT>(value); }
+    template<typename CombinationT = Aws::String>
+    ParameterSpace& WithCombination(CombinationT&& value) { SetCombination(std::forward<CombinationT>(value)); return *this;}
     ///@}
   private:
 

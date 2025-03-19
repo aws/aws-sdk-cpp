@@ -12,11 +12,6 @@ using namespace Aws::AppRunner::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteObservabilityConfigurationRequest::DeleteObservabilityConfigurationRequest() : 
-    m_observabilityConfigurationArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteObservabilityConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

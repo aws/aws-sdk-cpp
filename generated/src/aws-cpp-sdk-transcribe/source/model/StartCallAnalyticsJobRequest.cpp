@@ -12,18 +12,6 @@ using namespace Aws::TranscribeService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartCallAnalyticsJobRequest::StartCallAnalyticsJobRequest() : 
-    m_callAnalyticsJobNameHasBeenSet(false),
-    m_mediaHasBeenSet(false),
-    m_outputLocationHasBeenSet(false),
-    m_outputEncryptionKMSKeyIdHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_channelDefinitionsHasBeenSet(false)
-{
-}
-
 Aws::String StartCallAnalyticsJobRequest::SerializePayload() const
 {
   JsonValue payload;

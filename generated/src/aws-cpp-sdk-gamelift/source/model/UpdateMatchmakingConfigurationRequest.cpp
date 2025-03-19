@@ -12,30 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMatchmakingConfigurationRequest::UpdateMatchmakingConfigurationRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_gameSessionQueueArnsHasBeenSet(false),
-    m_requestTimeoutSeconds(0),
-    m_requestTimeoutSecondsHasBeenSet(false),
-    m_acceptanceTimeoutSeconds(0),
-    m_acceptanceTimeoutSecondsHasBeenSet(false),
-    m_acceptanceRequired(false),
-    m_acceptanceRequiredHasBeenSet(false),
-    m_ruleSetNameHasBeenSet(false),
-    m_notificationTargetHasBeenSet(false),
-    m_additionalPlayerCount(0),
-    m_additionalPlayerCountHasBeenSet(false),
-    m_customEventDataHasBeenSet(false),
-    m_gamePropertiesHasBeenSet(false),
-    m_gameSessionDataHasBeenSet(false),
-    m_backfillMode(BackfillMode::NOT_SET),
-    m_backfillModeHasBeenSet(false),
-    m_flexMatchMode(FlexMatchMode::NOT_SET),
-    m_flexMatchModeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateMatchmakingConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

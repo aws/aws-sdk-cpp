@@ -12,11 +12,6 @@ using namespace Aws::IoTSiteWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDatasetRequest::DescribeDatasetRequest() : 
-    m_datasetIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDatasetRequest::SerializePayload() const
 {
   return {};

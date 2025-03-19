@@ -18,14 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-DatasetEntry::DatasetEntry() : 
-    m_entryNameHasBeenSet(false),
-    m_dataURIHasBeenSet(false)
-{
-}
-
 DatasetEntry::DatasetEntry(JsonView jsonValue)
-  : DatasetEntry()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DatasetEntry& DatasetEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("entryName"))
   {
     m_entryName = jsonValue.GetString("entryName");
-
     m_entryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataURI"))
   {
     m_dataURI = jsonValue.GetString("dataURI");
-
     m_dataURIHasBeenSet = true;
   }
-
   return *this;
 }
 

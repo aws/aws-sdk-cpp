@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CancelMLModelTrainingJobRequest::CancelMLModelTrainingJobRequest() : 
-    m_idHasBeenSet(false),
-    m_neptuneIamRoleArnHasBeenSet(false),
-    m_clean(false),
-    m_cleanHasBeenSet(false)
-{
-}
-
 Aws::String CancelMLModelTrainingJobRequest::SerializePayload() const
 {
   return {};

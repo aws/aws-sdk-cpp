@@ -25,7 +25,7 @@ namespace Model
   class DeleteCommandExecutionRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API DeleteCommandExecutionRequest();
+    AWS_IOT_API DeleteCommandExecutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The unique identifier of the command execution that you want to delete from
      * your account.</p>
      */
-    inline const Aws::String& GetExecutionId() const{ return m_executionId; }
+    inline const Aws::String& GetExecutionId() const { return m_executionId; }
     inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
-    inline void SetExecutionId(const Aws::String& value) { m_executionIdHasBeenSet = true; m_executionId = value; }
-    inline void SetExecutionId(Aws::String&& value) { m_executionIdHasBeenSet = true; m_executionId = std::move(value); }
-    inline void SetExecutionId(const char* value) { m_executionIdHasBeenSet = true; m_executionId.assign(value); }
-    inline DeleteCommandExecutionRequest& WithExecutionId(const Aws::String& value) { SetExecutionId(value); return *this;}
-    inline DeleteCommandExecutionRequest& WithExecutionId(Aws::String&& value) { SetExecutionId(std::move(value)); return *this;}
-    inline DeleteCommandExecutionRequest& WithExecutionId(const char* value) { SetExecutionId(value); return *this;}
+    template<typename ExecutionIdT = Aws::String>
+    void SetExecutionId(ExecutionIdT&& value) { m_executionIdHasBeenSet = true; m_executionId = std::forward<ExecutionIdT>(value); }
+    template<typename ExecutionIdT = Aws::String>
+    DeleteCommandExecutionRequest& WithExecutionId(ExecutionIdT&& value) { SetExecutionId(std::forward<ExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The Amazon Resource Number (ARN) of the target device for which you want to
      * delete command executions.</p>
      */
-    inline const Aws::String& GetTargetArn() const{ return m_targetArn; }
+    inline const Aws::String& GetTargetArn() const { return m_targetArn; }
     inline bool TargetArnHasBeenSet() const { return m_targetArnHasBeenSet; }
-    inline void SetTargetArn(const Aws::String& value) { m_targetArnHasBeenSet = true; m_targetArn = value; }
-    inline void SetTargetArn(Aws::String&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::move(value); }
-    inline void SetTargetArn(const char* value) { m_targetArnHasBeenSet = true; m_targetArn.assign(value); }
-    inline DeleteCommandExecutionRequest& WithTargetArn(const Aws::String& value) { SetTargetArn(value); return *this;}
-    inline DeleteCommandExecutionRequest& WithTargetArn(Aws::String&& value) { SetTargetArn(std::move(value)); return *this;}
-    inline DeleteCommandExecutionRequest& WithTargetArn(const char* value) { SetTargetArn(value); return *this;}
+    template<typename TargetArnT = Aws::String>
+    void SetTargetArn(TargetArnT&& value) { m_targetArnHasBeenSet = true; m_targetArn = std::forward<TargetArnT>(value); }
+    template<typename TargetArnT = Aws::String>
+    DeleteCommandExecutionRequest& WithTargetArn(TargetArnT&& value) { SetTargetArn(std::forward<TargetArnT>(value)); return *this;}
     ///@}
   private:
 

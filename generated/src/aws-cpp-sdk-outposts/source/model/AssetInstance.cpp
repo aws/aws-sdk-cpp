@@ -18,18 +18,7 @@ namespace Outposts
 namespace Model
 {
 
-AssetInstance::AssetInstance() : 
-    m_instanceIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_assetIdHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_awsServiceName(AWSServiceName::NOT_SET),
-    m_awsServiceNameHasBeenSet(false)
-{
-}
-
 AssetInstance::AssetInstance(JsonView jsonValue)
-  : AssetInstance()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ AssetInstance& AssetInstance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = jsonValue.GetString("InstanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssetId"))
   {
     m_assetId = jsonValue.GetString("AssetId");
-
     m_assetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsServiceName"))
   {
     m_awsServiceName = AWSServiceNameMapper::GetAWSServiceNameForName(jsonValue.GetString("AwsServiceName"));
-
     m_awsServiceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

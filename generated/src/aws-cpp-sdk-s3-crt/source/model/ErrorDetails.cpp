@@ -20,14 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-ErrorDetails::ErrorDetails() : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 ErrorDetails::ErrorDetails(const XmlNode& xmlNode)
-  : ErrorDetails()
 {
   *this = xmlNode;
 }

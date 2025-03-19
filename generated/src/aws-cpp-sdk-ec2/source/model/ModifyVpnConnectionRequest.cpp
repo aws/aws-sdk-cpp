@@ -10,16 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyVpnConnectionRequest::ModifyVpnConnectionRequest() : 
-    m_vpnConnectionIdHasBeenSet(false),
-    m_transitGatewayIdHasBeenSet(false),
-    m_customerGatewayIdHasBeenSet(false),
-    m_vpnGatewayIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ModifyVpnConnectionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

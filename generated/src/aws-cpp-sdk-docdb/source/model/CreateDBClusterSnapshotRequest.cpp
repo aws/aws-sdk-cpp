@@ -10,13 +10,6 @@
 using namespace Aws::DocDB::Model;
 using namespace Aws::Utils;
 
-CreateDBClusterSnapshotRequest::CreateDBClusterSnapshotRequest() : 
-    m_dBClusterSnapshotIdentifierHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDBClusterSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;

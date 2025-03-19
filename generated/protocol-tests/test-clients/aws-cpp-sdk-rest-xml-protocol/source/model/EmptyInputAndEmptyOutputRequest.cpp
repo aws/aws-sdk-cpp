@@ -14,9 +14,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-EmptyInputAndEmptyOutputRequest::EmptyInputAndEmptyOutputRequest()
-{
-}
 
 Aws::String EmptyInputAndEmptyOutputRequest::SerializePayload() const
 {

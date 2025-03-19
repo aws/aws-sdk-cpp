@@ -12,12 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCollectionRequest::CreateCollectionRequest() : 
-    m_collectionIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateCollectionRequest::SerializePayload() const
 {
   JsonValue payload;

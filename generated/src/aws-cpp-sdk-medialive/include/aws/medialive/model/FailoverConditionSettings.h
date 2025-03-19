@@ -33,7 +33,7 @@ namespace Model
   class FailoverConditionSettings
   {
   public:
-    AWS_MEDIALIVE_API FailoverConditionSettings();
+    AWS_MEDIALIVE_API FailoverConditionSettings() = default;
     AWS_MEDIALIVE_API FailoverConditionSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API FailoverConditionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * MediaLive will perform a failover if the specified audio selector is silent for
      * the specified period.
      */
-    inline const AudioSilenceFailoverSettings& GetAudioSilenceSettings() const{ return m_audioSilenceSettings; }
+    inline const AudioSilenceFailoverSettings& GetAudioSilenceSettings() const { return m_audioSilenceSettings; }
     inline bool AudioSilenceSettingsHasBeenSet() const { return m_audioSilenceSettingsHasBeenSet; }
-    inline void SetAudioSilenceSettings(const AudioSilenceFailoverSettings& value) { m_audioSilenceSettingsHasBeenSet = true; m_audioSilenceSettings = value; }
-    inline void SetAudioSilenceSettings(AudioSilenceFailoverSettings&& value) { m_audioSilenceSettingsHasBeenSet = true; m_audioSilenceSettings = std::move(value); }
-    inline FailoverConditionSettings& WithAudioSilenceSettings(const AudioSilenceFailoverSettings& value) { SetAudioSilenceSettings(value); return *this;}
-    inline FailoverConditionSettings& WithAudioSilenceSettings(AudioSilenceFailoverSettings&& value) { SetAudioSilenceSettings(std::move(value)); return *this;}
+    template<typename AudioSilenceSettingsT = AudioSilenceFailoverSettings>
+    void SetAudioSilenceSettings(AudioSilenceSettingsT&& value) { m_audioSilenceSettingsHasBeenSet = true; m_audioSilenceSettings = std::forward<AudioSilenceSettingsT>(value); }
+    template<typename AudioSilenceSettingsT = AudioSilenceFailoverSettings>
+    FailoverConditionSettings& WithAudioSilenceSettings(AudioSilenceSettingsT&& value) { SetAudioSilenceSettings(std::forward<AudioSilenceSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * MediaLive will perform a failover if content is not detected in this input for
      * the specified period.
      */
-    inline const InputLossFailoverSettings& GetInputLossSettings() const{ return m_inputLossSettings; }
+    inline const InputLossFailoverSettings& GetInputLossSettings() const { return m_inputLossSettings; }
     inline bool InputLossSettingsHasBeenSet() const { return m_inputLossSettingsHasBeenSet; }
-    inline void SetInputLossSettings(const InputLossFailoverSettings& value) { m_inputLossSettingsHasBeenSet = true; m_inputLossSettings = value; }
-    inline void SetInputLossSettings(InputLossFailoverSettings&& value) { m_inputLossSettingsHasBeenSet = true; m_inputLossSettings = std::move(value); }
-    inline FailoverConditionSettings& WithInputLossSettings(const InputLossFailoverSettings& value) { SetInputLossSettings(value); return *this;}
-    inline FailoverConditionSettings& WithInputLossSettings(InputLossFailoverSettings&& value) { SetInputLossSettings(std::move(value)); return *this;}
+    template<typename InputLossSettingsT = InputLossFailoverSettings>
+    void SetInputLossSettings(InputLossSettingsT&& value) { m_inputLossSettingsHasBeenSet = true; m_inputLossSettings = std::forward<InputLossSettingsT>(value); }
+    template<typename InputLossSettingsT = InputLossFailoverSettings>
+    FailoverConditionSettings& WithInputLossSettings(InputLossSettingsT&& value) { SetInputLossSettings(std::forward<InputLossSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +70,12 @@ namespace Model
      * MediaLive will perform a failover if content is considered black for the
      * specified period.
      */
-    inline const VideoBlackFailoverSettings& GetVideoBlackSettings() const{ return m_videoBlackSettings; }
+    inline const VideoBlackFailoverSettings& GetVideoBlackSettings() const { return m_videoBlackSettings; }
     inline bool VideoBlackSettingsHasBeenSet() const { return m_videoBlackSettingsHasBeenSet; }
-    inline void SetVideoBlackSettings(const VideoBlackFailoverSettings& value) { m_videoBlackSettingsHasBeenSet = true; m_videoBlackSettings = value; }
-    inline void SetVideoBlackSettings(VideoBlackFailoverSettings&& value) { m_videoBlackSettingsHasBeenSet = true; m_videoBlackSettings = std::move(value); }
-    inline FailoverConditionSettings& WithVideoBlackSettings(const VideoBlackFailoverSettings& value) { SetVideoBlackSettings(value); return *this;}
-    inline FailoverConditionSettings& WithVideoBlackSettings(VideoBlackFailoverSettings&& value) { SetVideoBlackSettings(std::move(value)); return *this;}
+    template<typename VideoBlackSettingsT = VideoBlackFailoverSettings>
+    void SetVideoBlackSettings(VideoBlackSettingsT&& value) { m_videoBlackSettingsHasBeenSet = true; m_videoBlackSettings = std::forward<VideoBlackSettingsT>(value); }
+    template<typename VideoBlackSettingsT = VideoBlackFailoverSettings>
+    FailoverConditionSettings& WithVideoBlackSettings(VideoBlackSettingsT&& value) { SetVideoBlackSettings(std::forward<VideoBlackSettingsT>(value)); return *this;}
     ///@}
   private:
 

@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteAccountAuditConfigurationRequest::DeleteAccountAuditConfigurationRequest() : 
-    m_deleteScheduledAudits(false),
-    m_deleteScheduledAuditsHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAccountAuditConfigurationRequest::SerializePayload() const
 {
   return {};

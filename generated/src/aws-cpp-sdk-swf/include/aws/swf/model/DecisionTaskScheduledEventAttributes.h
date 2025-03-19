@@ -33,7 +33,7 @@ namespace Model
   class DecisionTaskScheduledEventAttributes
   {
   public:
-    AWS_SWF_API DecisionTaskScheduledEventAttributes();
+    AWS_SWF_API DecisionTaskScheduledEventAttributes() = default;
     AWS_SWF_API DecisionTaskScheduledEventAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API DecisionTaskScheduledEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The name of the task list in which the decision task was scheduled.</p>
      */
-    inline const TaskList& GetTaskList() const{ return m_taskList; }
+    inline const TaskList& GetTaskList() const { return m_taskList; }
     inline bool TaskListHasBeenSet() const { return m_taskListHasBeenSet; }
-    inline void SetTaskList(const TaskList& value) { m_taskListHasBeenSet = true; m_taskList = value; }
-    inline void SetTaskList(TaskList&& value) { m_taskListHasBeenSet = true; m_taskList = std::move(value); }
-    inline DecisionTaskScheduledEventAttributes& WithTaskList(const TaskList& value) { SetTaskList(value); return *this;}
-    inline DecisionTaskScheduledEventAttributes& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
+    template<typename TaskListT = TaskList>
+    void SetTaskList(TaskListT&& value) { m_taskListHasBeenSet = true; m_taskList = std::forward<TaskListT>(value); }
+    template<typename TaskListT = TaskList>
+    DecisionTaskScheduledEventAttributes& WithTaskList(TaskListT&& value) { SetTaskList(std::forward<TaskListT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +61,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetTaskPriority() const{ return m_taskPriority; }
+    inline const Aws::String& GetTaskPriority() const { return m_taskPriority; }
     inline bool TaskPriorityHasBeenSet() const { return m_taskPriorityHasBeenSet; }
-    inline void SetTaskPriority(const Aws::String& value) { m_taskPriorityHasBeenSet = true; m_taskPriority = value; }
-    inline void SetTaskPriority(Aws::String&& value) { m_taskPriorityHasBeenSet = true; m_taskPriority = std::move(value); }
-    inline void SetTaskPriority(const char* value) { m_taskPriorityHasBeenSet = true; m_taskPriority.assign(value); }
-    inline DecisionTaskScheduledEventAttributes& WithTaskPriority(const Aws::String& value) { SetTaskPriority(value); return *this;}
-    inline DecisionTaskScheduledEventAttributes& WithTaskPriority(Aws::String&& value) { SetTaskPriority(std::move(value)); return *this;}
-    inline DecisionTaskScheduledEventAttributes& WithTaskPriority(const char* value) { SetTaskPriority(value); return *this;}
+    template<typename TaskPriorityT = Aws::String>
+    void SetTaskPriority(TaskPriorityT&& value) { m_taskPriorityHasBeenSet = true; m_taskPriority = std::forward<TaskPriorityT>(value); }
+    template<typename TaskPriorityT = Aws::String>
+    DecisionTaskScheduledEventAttributes& WithTaskPriority(TaskPriorityT&& value) { SetTaskPriority(std::forward<TaskPriorityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +76,12 @@ namespace Model
      * in seconds, an integer greater than or equal to <code>0</code>. You can use
      * <code>NONE</code> to specify unlimited duration.</p>
      */
-    inline const Aws::String& GetStartToCloseTimeout() const{ return m_startToCloseTimeout; }
+    inline const Aws::String& GetStartToCloseTimeout() const { return m_startToCloseTimeout; }
     inline bool StartToCloseTimeoutHasBeenSet() const { return m_startToCloseTimeoutHasBeenSet; }
-    inline void SetStartToCloseTimeout(const Aws::String& value) { m_startToCloseTimeoutHasBeenSet = true; m_startToCloseTimeout = value; }
-    inline void SetStartToCloseTimeout(Aws::String&& value) { m_startToCloseTimeoutHasBeenSet = true; m_startToCloseTimeout = std::move(value); }
-    inline void SetStartToCloseTimeout(const char* value) { m_startToCloseTimeoutHasBeenSet = true; m_startToCloseTimeout.assign(value); }
-    inline DecisionTaskScheduledEventAttributes& WithStartToCloseTimeout(const Aws::String& value) { SetStartToCloseTimeout(value); return *this;}
-    inline DecisionTaskScheduledEventAttributes& WithStartToCloseTimeout(Aws::String&& value) { SetStartToCloseTimeout(std::move(value)); return *this;}
-    inline DecisionTaskScheduledEventAttributes& WithStartToCloseTimeout(const char* value) { SetStartToCloseTimeout(value); return *this;}
+    template<typename StartToCloseTimeoutT = Aws::String>
+    void SetStartToCloseTimeout(StartToCloseTimeoutT&& value) { m_startToCloseTimeoutHasBeenSet = true; m_startToCloseTimeout = std::forward<StartToCloseTimeoutT>(value); }
+    template<typename StartToCloseTimeoutT = Aws::String>
+    DecisionTaskScheduledEventAttributes& WithStartToCloseTimeout(StartToCloseTimeoutT&& value) { SetStartToCloseTimeout(std::forward<StartToCloseTimeoutT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,14 +89,12 @@ namespace Model
      * <p>The maximum amount of time the decision task can wait to be assigned to a
      * worker.</p>
      */
-    inline const Aws::String& GetScheduleToStartTimeout() const{ return m_scheduleToStartTimeout; }
+    inline const Aws::String& GetScheduleToStartTimeout() const { return m_scheduleToStartTimeout; }
     inline bool ScheduleToStartTimeoutHasBeenSet() const { return m_scheduleToStartTimeoutHasBeenSet; }
-    inline void SetScheduleToStartTimeout(const Aws::String& value) { m_scheduleToStartTimeoutHasBeenSet = true; m_scheduleToStartTimeout = value; }
-    inline void SetScheduleToStartTimeout(Aws::String&& value) { m_scheduleToStartTimeoutHasBeenSet = true; m_scheduleToStartTimeout = std::move(value); }
-    inline void SetScheduleToStartTimeout(const char* value) { m_scheduleToStartTimeoutHasBeenSet = true; m_scheduleToStartTimeout.assign(value); }
-    inline DecisionTaskScheduledEventAttributes& WithScheduleToStartTimeout(const Aws::String& value) { SetScheduleToStartTimeout(value); return *this;}
-    inline DecisionTaskScheduledEventAttributes& WithScheduleToStartTimeout(Aws::String&& value) { SetScheduleToStartTimeout(std::move(value)); return *this;}
-    inline DecisionTaskScheduledEventAttributes& WithScheduleToStartTimeout(const char* value) { SetScheduleToStartTimeout(value); return *this;}
+    template<typename ScheduleToStartTimeoutT = Aws::String>
+    void SetScheduleToStartTimeout(ScheduleToStartTimeoutT&& value) { m_scheduleToStartTimeoutHasBeenSet = true; m_scheduleToStartTimeout = std::forward<ScheduleToStartTimeoutT>(value); }
+    template<typename ScheduleToStartTimeoutT = Aws::String>
+    DecisionTaskScheduledEventAttributes& WithScheduleToStartTimeout(ScheduleToStartTimeoutT&& value) { SetScheduleToStartTimeout(std::forward<ScheduleToStartTimeoutT>(value)); return *this;}
     ///@}
   private:
 

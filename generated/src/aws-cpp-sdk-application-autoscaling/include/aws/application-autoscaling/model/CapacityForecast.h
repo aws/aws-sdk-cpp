@@ -35,7 +35,7 @@ namespace Model
   class CapacityForecast
   {
   public:
-    AWS_APPLICATIONAUTOSCALING_API CapacityForecast();
+    AWS_APPLICATIONAUTOSCALING_API CapacityForecast() = default;
     AWS_APPLICATIONAUTOSCALING_API CapacityForecast(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONAUTOSCALING_API CapacityForecast& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONAUTOSCALING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,26 +45,26 @@ namespace Model
     /**
      * <p> The timestamps for the data points, in UTC format. </p>
      */
-    inline const Aws::Vector<Aws::Utils::DateTime>& GetTimestamps() const{ return m_timestamps; }
+    inline const Aws::Vector<Aws::Utils::DateTime>& GetTimestamps() const { return m_timestamps; }
     inline bool TimestampsHasBeenSet() const { return m_timestampsHasBeenSet; }
-    inline void SetTimestamps(const Aws::Vector<Aws::Utils::DateTime>& value) { m_timestampsHasBeenSet = true; m_timestamps = value; }
-    inline void SetTimestamps(Aws::Vector<Aws::Utils::DateTime>&& value) { m_timestampsHasBeenSet = true; m_timestamps = std::move(value); }
-    inline CapacityForecast& WithTimestamps(const Aws::Vector<Aws::Utils::DateTime>& value) { SetTimestamps(value); return *this;}
-    inline CapacityForecast& WithTimestamps(Aws::Vector<Aws::Utils::DateTime>&& value) { SetTimestamps(std::move(value)); return *this;}
-    inline CapacityForecast& AddTimestamps(const Aws::Utils::DateTime& value) { m_timestampsHasBeenSet = true; m_timestamps.push_back(value); return *this; }
-    inline CapacityForecast& AddTimestamps(Aws::Utils::DateTime&& value) { m_timestampsHasBeenSet = true; m_timestamps.push_back(std::move(value)); return *this; }
+    template<typename TimestampsT = Aws::Vector<Aws::Utils::DateTime>>
+    void SetTimestamps(TimestampsT&& value) { m_timestampsHasBeenSet = true; m_timestamps = std::forward<TimestampsT>(value); }
+    template<typename TimestampsT = Aws::Vector<Aws::Utils::DateTime>>
+    CapacityForecast& WithTimestamps(TimestampsT&& value) { SetTimestamps(std::forward<TimestampsT>(value)); return *this;}
+    template<typename TimestampsT = Aws::Utils::DateTime>
+    CapacityForecast& AddTimestamps(TimestampsT&& value) { m_timestampsHasBeenSet = true; m_timestamps.emplace_back(std::forward<TimestampsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The values of the data points. </p>
      */
-    inline const Aws::Vector<double>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<double>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<double>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<double>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline CapacityForecast& WithValues(const Aws::Vector<double>& value) { SetValues(value); return *this;}
-    inline CapacityForecast& WithValues(Aws::Vector<double>&& value) { SetValues(std::move(value)); return *this;}
+    template<typename ValuesT = Aws::Vector<double>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<double>>
+    CapacityForecast& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
     inline CapacityForecast& AddValues(double value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
     ///@}
   private:

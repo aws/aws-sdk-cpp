@@ -32,7 +32,7 @@ namespace Model
   class StepFunctionsAction
   {
   public:
-    AWS_IOT_API StepFunctionsAction();
+    AWS_IOT_API StepFunctionsAction() = default;
     AWS_IOT_API StepFunctionsAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API StepFunctionsAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * this prefix followed by a UUID. Step Functions automatically creates a unique
      * name for each state machine execution if one is not provided.</p>
      */
-    inline const Aws::String& GetExecutionNamePrefix() const{ return m_executionNamePrefix; }
+    inline const Aws::String& GetExecutionNamePrefix() const { return m_executionNamePrefix; }
     inline bool ExecutionNamePrefixHasBeenSet() const { return m_executionNamePrefixHasBeenSet; }
-    inline void SetExecutionNamePrefix(const Aws::String& value) { m_executionNamePrefixHasBeenSet = true; m_executionNamePrefix = value; }
-    inline void SetExecutionNamePrefix(Aws::String&& value) { m_executionNamePrefixHasBeenSet = true; m_executionNamePrefix = std::move(value); }
-    inline void SetExecutionNamePrefix(const char* value) { m_executionNamePrefixHasBeenSet = true; m_executionNamePrefix.assign(value); }
-    inline StepFunctionsAction& WithExecutionNamePrefix(const Aws::String& value) { SetExecutionNamePrefix(value); return *this;}
-    inline StepFunctionsAction& WithExecutionNamePrefix(Aws::String&& value) { SetExecutionNamePrefix(std::move(value)); return *this;}
-    inline StepFunctionsAction& WithExecutionNamePrefix(const char* value) { SetExecutionNamePrefix(value); return *this;}
+    template<typename ExecutionNamePrefixT = Aws::String>
+    void SetExecutionNamePrefix(ExecutionNamePrefixT&& value) { m_executionNamePrefixHasBeenSet = true; m_executionNamePrefix = std::forward<ExecutionNamePrefixT>(value); }
+    template<typename ExecutionNamePrefixT = Aws::String>
+    StepFunctionsAction& WithExecutionNamePrefix(ExecutionNamePrefixT&& value) { SetExecutionNamePrefix(std::forward<ExecutionNamePrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The name of the Step Functions state machine whose execution will be
      * started.</p>
      */
-    inline const Aws::String& GetStateMachineName() const{ return m_stateMachineName; }
+    inline const Aws::String& GetStateMachineName() const { return m_stateMachineName; }
     inline bool StateMachineNameHasBeenSet() const { return m_stateMachineNameHasBeenSet; }
-    inline void SetStateMachineName(const Aws::String& value) { m_stateMachineNameHasBeenSet = true; m_stateMachineName = value; }
-    inline void SetStateMachineName(Aws::String&& value) { m_stateMachineNameHasBeenSet = true; m_stateMachineName = std::move(value); }
-    inline void SetStateMachineName(const char* value) { m_stateMachineNameHasBeenSet = true; m_stateMachineName.assign(value); }
-    inline StepFunctionsAction& WithStateMachineName(const Aws::String& value) { SetStateMachineName(value); return *this;}
-    inline StepFunctionsAction& WithStateMachineName(Aws::String&& value) { SetStateMachineName(std::move(value)); return *this;}
-    inline StepFunctionsAction& WithStateMachineName(const char* value) { SetStateMachineName(value); return *this;}
+    template<typename StateMachineNameT = Aws::String>
+    void SetStateMachineName(StateMachineNameT&& value) { m_stateMachineNameHasBeenSet = true; m_stateMachineName = std::forward<StateMachineNameT>(value); }
+    template<typename StateMachineNameT = Aws::String>
+    StepFunctionsAction& WithStateMachineName(StateMachineNameT&& value) { SetStateMachineName(std::forward<StateMachineNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * <p>The ARN of the role that grants IoT permission to start execution of a state
      * machine ("Action":"states:StartExecution").</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline StepFunctionsAction& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline StepFunctionsAction& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline StepFunctionsAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    StepFunctionsAction& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

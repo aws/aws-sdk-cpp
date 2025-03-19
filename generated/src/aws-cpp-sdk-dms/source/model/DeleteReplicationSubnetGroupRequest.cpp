@@ -12,11 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteReplicationSubnetGroupRequest::DeleteReplicationSubnetGroupRequest() : 
-    m_replicationSubnetGroupIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteReplicationSubnetGroupRequest::SerializePayload() const
 {
   JsonValue payload;

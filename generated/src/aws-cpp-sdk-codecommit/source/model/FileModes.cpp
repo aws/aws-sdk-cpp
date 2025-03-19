@@ -18,18 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-FileModes::FileModes() : 
-    m_source(FileModeTypeEnum::NOT_SET),
-    m_sourceHasBeenSet(false),
-    m_destination(FileModeTypeEnum::NOT_SET),
-    m_destinationHasBeenSet(false),
-    m_base(FileModeTypeEnum::NOT_SET),
-    m_baseHasBeenSet(false)
-{
-}
-
 FileModes::FileModes(JsonView jsonValue)
-  : FileModes()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ FileModes& FileModes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("source"))
   {
     m_source = FileModeTypeEnumMapper::GetFileModeTypeEnumForName(jsonValue.GetString("source"));
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = FileModeTypeEnumMapper::GetFileModeTypeEnumForName(jsonValue.GetString("destination"));
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("base"))
   {
     m_base = FileModeTypeEnumMapper::GetFileModeTypeEnumForName(jsonValue.GetString("base"));
-
     m_baseHasBeenSet = true;
   }
-
   return *this;
 }
 

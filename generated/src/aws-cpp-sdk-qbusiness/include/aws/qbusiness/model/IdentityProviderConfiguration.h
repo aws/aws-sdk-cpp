@@ -33,7 +33,7 @@ namespace Model
   class IdentityProviderConfiguration
   {
   public:
-    AWS_QBUSINESS_API IdentityProviderConfiguration();
+    AWS_QBUSINESS_API IdentityProviderConfiguration() = default;
     AWS_QBUSINESS_API IdentityProviderConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API IdentityProviderConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,22 +41,22 @@ namespace Model
 
     ///@{
     
-    inline const SamlProviderConfiguration& GetSamlConfiguration() const{ return m_samlConfiguration; }
+    inline const SamlProviderConfiguration& GetSamlConfiguration() const { return m_samlConfiguration; }
     inline bool SamlConfigurationHasBeenSet() const { return m_samlConfigurationHasBeenSet; }
-    inline void SetSamlConfiguration(const SamlProviderConfiguration& value) { m_samlConfigurationHasBeenSet = true; m_samlConfiguration = value; }
-    inline void SetSamlConfiguration(SamlProviderConfiguration&& value) { m_samlConfigurationHasBeenSet = true; m_samlConfiguration = std::move(value); }
-    inline IdentityProviderConfiguration& WithSamlConfiguration(const SamlProviderConfiguration& value) { SetSamlConfiguration(value); return *this;}
-    inline IdentityProviderConfiguration& WithSamlConfiguration(SamlProviderConfiguration&& value) { SetSamlConfiguration(std::move(value)); return *this;}
+    template<typename SamlConfigurationT = SamlProviderConfiguration>
+    void SetSamlConfiguration(SamlConfigurationT&& value) { m_samlConfigurationHasBeenSet = true; m_samlConfiguration = std::forward<SamlConfigurationT>(value); }
+    template<typename SamlConfigurationT = SamlProviderConfiguration>
+    IdentityProviderConfiguration& WithSamlConfiguration(SamlConfigurationT&& value) { SetSamlConfiguration(std::forward<SamlConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const OpenIDConnectProviderConfiguration& GetOpenIDConnectConfiguration() const{ return m_openIDConnectConfiguration; }
+    inline const OpenIDConnectProviderConfiguration& GetOpenIDConnectConfiguration() const { return m_openIDConnectConfiguration; }
     inline bool OpenIDConnectConfigurationHasBeenSet() const { return m_openIDConnectConfigurationHasBeenSet; }
-    inline void SetOpenIDConnectConfiguration(const OpenIDConnectProviderConfiguration& value) { m_openIDConnectConfigurationHasBeenSet = true; m_openIDConnectConfiguration = value; }
-    inline void SetOpenIDConnectConfiguration(OpenIDConnectProviderConfiguration&& value) { m_openIDConnectConfigurationHasBeenSet = true; m_openIDConnectConfiguration = std::move(value); }
-    inline IdentityProviderConfiguration& WithOpenIDConnectConfiguration(const OpenIDConnectProviderConfiguration& value) { SetOpenIDConnectConfiguration(value); return *this;}
-    inline IdentityProviderConfiguration& WithOpenIDConnectConfiguration(OpenIDConnectProviderConfiguration&& value) { SetOpenIDConnectConfiguration(std::move(value)); return *this;}
+    template<typename OpenIDConnectConfigurationT = OpenIDConnectProviderConfiguration>
+    void SetOpenIDConnectConfiguration(OpenIDConnectConfigurationT&& value) { m_openIDConnectConfigurationHasBeenSet = true; m_openIDConnectConfiguration = std::forward<OpenIDConnectConfigurationT>(value); }
+    template<typename OpenIDConnectConfigurationT = OpenIDConnectProviderConfiguration>
+    IdentityProviderConfiguration& WithOpenIDConnectConfiguration(OpenIDConnectConfigurationT&& value) { SetOpenIDConnectConfiguration(std::forward<OpenIDConnectConfigurationT>(value)); return *this;}
     ///@}
   private:
 

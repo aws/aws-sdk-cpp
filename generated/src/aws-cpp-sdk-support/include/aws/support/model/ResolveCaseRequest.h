@@ -21,7 +21,7 @@ namespace Model
   class ResolveCaseRequest : public SupportRequest
   {
   public:
-    AWS_SUPPORT_API ResolveCaseRequest();
+    AWS_SUPPORT_API ResolveCaseRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
-    inline const Aws::String& GetCaseId() const{ return m_caseId; }
+    inline const Aws::String& GetCaseId() const { return m_caseId; }
     inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }
-    inline void SetCaseId(const Aws::String& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
-    inline void SetCaseId(Aws::String&& value) { m_caseIdHasBeenSet = true; m_caseId = std::move(value); }
-    inline void SetCaseId(const char* value) { m_caseIdHasBeenSet = true; m_caseId.assign(value); }
-    inline ResolveCaseRequest& WithCaseId(const Aws::String& value) { SetCaseId(value); return *this;}
-    inline ResolveCaseRequest& WithCaseId(Aws::String&& value) { SetCaseId(std::move(value)); return *this;}
-    inline ResolveCaseRequest& WithCaseId(const char* value) { SetCaseId(value); return *this;}
+    template<typename CaseIdT = Aws::String>
+    void SetCaseId(CaseIdT&& value) { m_caseIdHasBeenSet = true; m_caseId = std::forward<CaseIdT>(value); }
+    template<typename CaseIdT = Aws::String>
+    ResolveCaseRequest& WithCaseId(CaseIdT&& value) { SetCaseId(std::forward<CaseIdT>(value)); return *this;}
     ///@}
   private:
 

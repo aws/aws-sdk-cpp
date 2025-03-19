@@ -18,15 +18,7 @@ namespace drs
 namespace Model
 {
 
-ParticipatingResource::ParticipatingResource() : 
-    m_launchStatus(LaunchStatus::NOT_SET),
-    m_launchStatusHasBeenSet(false),
-    m_participatingResourceIDHasBeenSet(false)
-{
-}
-
 ParticipatingResource::ParticipatingResource(JsonView jsonValue)
-  : ParticipatingResource()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ParticipatingResource& ParticipatingResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("launchStatus"))
   {
     m_launchStatus = LaunchStatusMapper::GetLaunchStatusForName(jsonValue.GetString("launchStatus"));
-
     m_launchStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("participatingResourceID"))
   {
     m_participatingResourceID = jsonValue.GetObject("participatingResourceID");
-
     m_participatingResourceIDHasBeenSet = true;
   }
-
   return *this;
 }
 

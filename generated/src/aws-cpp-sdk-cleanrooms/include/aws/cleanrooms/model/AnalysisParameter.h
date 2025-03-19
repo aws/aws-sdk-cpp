@@ -33,7 +33,7 @@ namespace Model
   class AnalysisParameter
   {
   public:
-    AWS_CLEANROOMS_API AnalysisParameter();
+    AWS_CLEANROOMS_API AnalysisParameter() = default;
     AWS_CLEANROOMS_API AnalysisParameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API AnalysisParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,22 @@ namespace Model
      * <p>The name of the parameter. The name must use only alphanumeric, underscore
      * (_), or hyphen (-) characters but cannot start or end with a hyphen.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AnalysisParameter& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AnalysisParameter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AnalysisParameter& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AnalysisParameter& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of parameter.</p>
      */
-    inline const ParameterType& GetType() const{ return m_type; }
+    inline ParameterType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ParameterType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ParameterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline AnalysisParameter& WithType(const ParameterType& value) { SetType(value); return *this;}
-    inline AnalysisParameter& WithType(ParameterType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ParameterType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline AnalysisParameter& WithType(ParameterType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -71,21 +67,19 @@ namespace Model
      * <p>Optional. The default value that is applied in the analysis template. The
      * member who can query can override this value in the query editor.</p>
      */
-    inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+    inline const Aws::String& GetDefaultValue() const { return m_defaultValue; }
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-    inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-    inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
-    inline AnalysisParameter& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
-    inline AnalysisParameter& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
-    inline AnalysisParameter& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+    template<typename DefaultValueT = Aws::String>
+    void SetDefaultValue(DefaultValueT&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::forward<DefaultValueT>(value); }
+    template<typename DefaultValueT = Aws::String>
+    AnalysisParameter& WithDefaultValue(DefaultValueT&& value) { SetDefaultValue(std::forward<DefaultValueT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    ParameterType m_type;
+    ParameterType m_type{ParameterType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_defaultValue;

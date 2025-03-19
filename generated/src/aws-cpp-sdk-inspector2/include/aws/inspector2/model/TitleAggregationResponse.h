@@ -33,7 +33,7 @@ namespace Model
   class TitleAggregationResponse
   {
   public:
-    AWS_INSPECTOR2_API TitleAggregationResponse();
+    AWS_INSPECTOR2_API TitleAggregationResponse() = default;
     AWS_INSPECTOR2_API TitleAggregationResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API TitleAggregationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,54 +43,48 @@ namespace Model
     /**
      * <p>The ID of the Amazon Web Services account associated with the findings.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline TitleAggregationResponse& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline TitleAggregationResponse& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline TitleAggregationResponse& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    TitleAggregationResponse& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that represent the count of matched findings per severity.</p>
      */
-    inline const SeverityCounts& GetSeverityCounts() const{ return m_severityCounts; }
+    inline const SeverityCounts& GetSeverityCounts() const { return m_severityCounts; }
     inline bool SeverityCountsHasBeenSet() const { return m_severityCountsHasBeenSet; }
-    inline void SetSeverityCounts(const SeverityCounts& value) { m_severityCountsHasBeenSet = true; m_severityCounts = value; }
-    inline void SetSeverityCounts(SeverityCounts&& value) { m_severityCountsHasBeenSet = true; m_severityCounts = std::move(value); }
-    inline TitleAggregationResponse& WithSeverityCounts(const SeverityCounts& value) { SetSeverityCounts(value); return *this;}
-    inline TitleAggregationResponse& WithSeverityCounts(SeverityCounts&& value) { SetSeverityCounts(std::move(value)); return *this;}
+    template<typename SeverityCountsT = SeverityCounts>
+    void SetSeverityCounts(SeverityCountsT&& value) { m_severityCountsHasBeenSet = true; m_severityCounts = std::forward<SeverityCountsT>(value); }
+    template<typename SeverityCountsT = SeverityCounts>
+    TitleAggregationResponse& WithSeverityCounts(SeverityCountsT&& value) { SetSeverityCounts(std::forward<SeverityCountsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The title that the findings were aggregated on.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline TitleAggregationResponse& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline TitleAggregationResponse& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline TitleAggregationResponse& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    TitleAggregationResponse& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The vulnerability ID of the finding.</p>
      */
-    inline const Aws::String& GetVulnerabilityId() const{ return m_vulnerabilityId; }
+    inline const Aws::String& GetVulnerabilityId() const { return m_vulnerabilityId; }
     inline bool VulnerabilityIdHasBeenSet() const { return m_vulnerabilityIdHasBeenSet; }
-    inline void SetVulnerabilityId(const Aws::String& value) { m_vulnerabilityIdHasBeenSet = true; m_vulnerabilityId = value; }
-    inline void SetVulnerabilityId(Aws::String&& value) { m_vulnerabilityIdHasBeenSet = true; m_vulnerabilityId = std::move(value); }
-    inline void SetVulnerabilityId(const char* value) { m_vulnerabilityIdHasBeenSet = true; m_vulnerabilityId.assign(value); }
-    inline TitleAggregationResponse& WithVulnerabilityId(const Aws::String& value) { SetVulnerabilityId(value); return *this;}
-    inline TitleAggregationResponse& WithVulnerabilityId(Aws::String&& value) { SetVulnerabilityId(std::move(value)); return *this;}
-    inline TitleAggregationResponse& WithVulnerabilityId(const char* value) { SetVulnerabilityId(value); return *this;}
+    template<typename VulnerabilityIdT = Aws::String>
+    void SetVulnerabilityId(VulnerabilityIdT&& value) { m_vulnerabilityIdHasBeenSet = true; m_vulnerabilityId = std::forward<VulnerabilityIdT>(value); }
+    template<typename VulnerabilityIdT = Aws::String>
+    TitleAggregationResponse& WithVulnerabilityId(VulnerabilityIdT&& value) { SetVulnerabilityId(std::forward<VulnerabilityIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -30,7 +30,7 @@ namespace Model
   class EndOfInputEvent
   {
   public:
-    AWS_QBUSINESS_API EndOfInputEvent();
+    AWS_QBUSINESS_API EndOfInputEvent() = default;
     AWS_QBUSINESS_API EndOfInputEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API EndOfInputEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;

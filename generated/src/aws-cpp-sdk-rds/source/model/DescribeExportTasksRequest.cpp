@@ -10,18 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DescribeExportTasksRequest::DescribeExportTasksRequest() : 
-    m_exportTaskIdentifierHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_sourceType(ExportSourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeExportTasksRequest::SerializePayload() const
 {
   Aws::StringStream ss;

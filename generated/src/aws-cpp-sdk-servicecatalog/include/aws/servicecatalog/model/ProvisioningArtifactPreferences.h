@@ -38,7 +38,7 @@ namespace Model
   class ProvisioningArtifactPreferences
   {
   public:
-    AWS_SERVICECATALOG_API ProvisioningArtifactPreferences();
+    AWS_SERVICECATALOG_API ProvisioningArtifactPreferences() = default;
     AWS_SERVICECATALOG_API ProvisioningArtifactPreferences(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API ProvisioningArtifactPreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,15 +52,14 @@ namespace Model
      * <code>UpdateProvisioningPreferences$StackSetAccounts</code>.</p> <p>Applicable
      * only to a <code>CFN_STACKSET</code> provisioned product type.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStackSetAccounts() const{ return m_stackSetAccounts; }
+    inline const Aws::Vector<Aws::String>& GetStackSetAccounts() const { return m_stackSetAccounts; }
     inline bool StackSetAccountsHasBeenSet() const { return m_stackSetAccountsHasBeenSet; }
-    inline void SetStackSetAccounts(const Aws::Vector<Aws::String>& value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts = value; }
-    inline void SetStackSetAccounts(Aws::Vector<Aws::String>&& value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts = std::move(value); }
-    inline ProvisioningArtifactPreferences& WithStackSetAccounts(const Aws::Vector<Aws::String>& value) { SetStackSetAccounts(value); return *this;}
-    inline ProvisioningArtifactPreferences& WithStackSetAccounts(Aws::Vector<Aws::String>&& value) { SetStackSetAccounts(std::move(value)); return *this;}
-    inline ProvisioningArtifactPreferences& AddStackSetAccounts(const Aws::String& value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts.push_back(value); return *this; }
-    inline ProvisioningArtifactPreferences& AddStackSetAccounts(Aws::String&& value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts.push_back(std::move(value)); return *this; }
-    inline ProvisioningArtifactPreferences& AddStackSetAccounts(const char* value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts.push_back(value); return *this; }
+    template<typename StackSetAccountsT = Aws::Vector<Aws::String>>
+    void SetStackSetAccounts(StackSetAccountsT&& value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts = std::forward<StackSetAccountsT>(value); }
+    template<typename StackSetAccountsT = Aws::Vector<Aws::String>>
+    ProvisioningArtifactPreferences& WithStackSetAccounts(StackSetAccountsT&& value) { SetStackSetAccounts(std::forward<StackSetAccountsT>(value)); return *this;}
+    template<typename StackSetAccountsT = Aws::String>
+    ProvisioningArtifactPreferences& AddStackSetAccounts(StackSetAccountsT&& value) { m_stackSetAccountsHasBeenSet = true; m_stackSetAccounts.emplace_back(std::forward<StackSetAccountsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -71,15 +70,14 @@ namespace Model
      * <code>UpdateProvisioningPreferences$StackSetRegions</code>.</p> <p>Applicable
      * only to a <code>CFN_STACKSET</code> provisioned product type.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStackSetRegions() const{ return m_stackSetRegions; }
+    inline const Aws::Vector<Aws::String>& GetStackSetRegions() const { return m_stackSetRegions; }
     inline bool StackSetRegionsHasBeenSet() const { return m_stackSetRegionsHasBeenSet; }
-    inline void SetStackSetRegions(const Aws::Vector<Aws::String>& value) { m_stackSetRegionsHasBeenSet = true; m_stackSetRegions = value; }
-    inline void SetStackSetRegions(Aws::Vector<Aws::String>&& value) { m_stackSetRegionsHasBeenSet = true; m_stackSetRegions = std::move(value); }
-    inline ProvisioningArtifactPreferences& WithStackSetRegions(const Aws::Vector<Aws::String>& value) { SetStackSetRegions(value); return *this;}
-    inline ProvisioningArtifactPreferences& WithStackSetRegions(Aws::Vector<Aws::String>&& value) { SetStackSetRegions(std::move(value)); return *this;}
-    inline ProvisioningArtifactPreferences& AddStackSetRegions(const Aws::String& value) { m_stackSetRegionsHasBeenSet = true; m_stackSetRegions.push_back(value); return *this; }
-    inline ProvisioningArtifactPreferences& AddStackSetRegions(Aws::String&& value) { m_stackSetRegionsHasBeenSet = true; m_stackSetRegions.push_back(std::move(value)); return *this; }
-    inline ProvisioningArtifactPreferences& AddStackSetRegions(const char* value) { m_stackSetRegionsHasBeenSet = true; m_stackSetRegions.push_back(value); return *this; }
+    template<typename StackSetRegionsT = Aws::Vector<Aws::String>>
+    void SetStackSetRegions(StackSetRegionsT&& value) { m_stackSetRegionsHasBeenSet = true; m_stackSetRegions = std::forward<StackSetRegionsT>(value); }
+    template<typename StackSetRegionsT = Aws::Vector<Aws::String>>
+    ProvisioningArtifactPreferences& WithStackSetRegions(StackSetRegionsT&& value) { SetStackSetRegions(std::forward<StackSetRegionsT>(value)); return *this;}
+    template<typename StackSetRegionsT = Aws::String>
+    ProvisioningArtifactPreferences& AddStackSetRegions(StackSetRegionsT&& value) { m_stackSetRegionsHasBeenSet = true; m_stackSetRegions.emplace_back(std::forward<StackSetRegionsT>(value)); return *this; }
     ///@}
   private:
 

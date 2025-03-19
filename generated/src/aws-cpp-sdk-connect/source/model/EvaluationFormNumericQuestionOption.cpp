@@ -18,20 +18,7 @@ namespace Connect
 namespace Model
 {
 
-EvaluationFormNumericQuestionOption::EvaluationFormNumericQuestionOption() : 
-    m_minValue(0),
-    m_minValueHasBeenSet(false),
-    m_maxValue(0),
-    m_maxValueHasBeenSet(false),
-    m_score(0),
-    m_scoreHasBeenSet(false),
-    m_automaticFail(false),
-    m_automaticFailHasBeenSet(false)
-{
-}
-
 EvaluationFormNumericQuestionOption::EvaluationFormNumericQuestionOption(JsonView jsonValue)
-  : EvaluationFormNumericQuestionOption()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ EvaluationFormNumericQuestionOption& EvaluationFormNumericQuestionOption::operat
   if(jsonValue.ValueExists("MinValue"))
   {
     m_minValue = jsonValue.GetInteger("MinValue");
-
     m_minValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxValue"))
   {
     m_maxValue = jsonValue.GetInteger("MaxValue");
-
     m_maxValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Score"))
   {
     m_score = jsonValue.GetInteger("Score");
-
     m_scoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutomaticFail"))
   {
     m_automaticFail = jsonValue.GetBool("AutomaticFail");
-
     m_automaticFailHasBeenSet = true;
   }
-
   return *this;
 }
 

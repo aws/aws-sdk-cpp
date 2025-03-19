@@ -20,27 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-ObjectVersion::ObjectVersion() : 
-    m_eTagHasBeenSet(false),
-    m_checksumAlgorithmHasBeenSet(false),
-    m_checksumType(ChecksumType::NOT_SET),
-    m_checksumTypeHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_storageClass(ObjectVersionStorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_isLatest(false),
-    m_isLatestHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_restoreStatusHasBeenSet(false)
-{
-}
-
 ObjectVersion::ObjectVersion(const XmlNode& xmlNode)
-  : ObjectVersion()
 {
   *this = xmlNode;
 }
@@ -61,6 +41,7 @@ ObjectVersion& ObjectVersion::operator =(const XmlNode& xmlNode)
     if(!checksumAlgorithmNode.IsNull())
     {
       XmlNode checksumAlgorithmMember = checksumAlgorithmNode;
+      m_checksumAlgorithmHasBeenSet = !checksumAlgorithmMember.IsNull();
       while(!checksumAlgorithmMember.IsNull())
       {
         m_checksumAlgorithm.push_back(ChecksumAlgorithmMapper::GetChecksumAlgorithmForName(StringUtils::Trim(checksumAlgorithmMember.GetText().c_str())));
@@ -72,7 +53,7 @@ ObjectVersion& ObjectVersion::operator =(const XmlNode& xmlNode)
     XmlNode checksumTypeNode = resultNode.FirstChild("ChecksumType");
     if(!checksumTypeNode.IsNull())
     {
-      m_checksumType = ChecksumTypeMapper::GetChecksumTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(checksumTypeNode.GetText()).c_str()).c_str());
+      m_checksumType = ChecksumTypeMapper::GetChecksumTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(checksumTypeNode.GetText()).c_str()));
       m_checksumTypeHasBeenSet = true;
     }
     XmlNode sizeNode = resultNode.FirstChild("Size");
@@ -84,7 +65,7 @@ ObjectVersion& ObjectVersion::operator =(const XmlNode& xmlNode)
     XmlNode storageClassNode = resultNode.FirstChild("StorageClass");
     if(!storageClassNode.IsNull())
     {
-      m_storageClass = ObjectVersionStorageClassMapper::GetObjectVersionStorageClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageClassNode.GetText()).c_str()).c_str());
+      m_storageClass = ObjectVersionStorageClassMapper::GetObjectVersionStorageClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageClassNode.GetText()).c_str()));
       m_storageClassHasBeenSet = true;
     }
     XmlNode keyNode = resultNode.FirstChild("Key");

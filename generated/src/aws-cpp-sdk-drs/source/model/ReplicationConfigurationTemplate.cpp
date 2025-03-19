@@ -19,38 +19,7 @@ namespace drs
 namespace Model
 {
 
-ReplicationConfigurationTemplate::ReplicationConfigurationTemplate() : 
-    m_arnHasBeenSet(false),
-    m_associateDefaultSecurityGroup(false),
-    m_associateDefaultSecurityGroupHasBeenSet(false),
-    m_autoReplicateNewDisks(false),
-    m_autoReplicateNewDisksHasBeenSet(false),
-    m_bandwidthThrottling(0),
-    m_bandwidthThrottlingHasBeenSet(false),
-    m_createPublicIP(false),
-    m_createPublicIPHasBeenSet(false),
-    m_dataPlaneRouting(ReplicationConfigurationDataPlaneRouting::NOT_SET),
-    m_dataPlaneRoutingHasBeenSet(false),
-    m_defaultLargeStagingDiskType(ReplicationConfigurationDefaultLargeStagingDiskType::NOT_SET),
-    m_defaultLargeStagingDiskTypeHasBeenSet(false),
-    m_ebsEncryption(ReplicationConfigurationEbsEncryption::NOT_SET),
-    m_ebsEncryptionHasBeenSet(false),
-    m_ebsEncryptionKeyArnHasBeenSet(false),
-    m_pitPolicyHasBeenSet(false),
-    m_replicationConfigurationTemplateIDHasBeenSet(false),
-    m_replicationServerInstanceTypeHasBeenSet(false),
-    m_replicationServersSecurityGroupsIDsHasBeenSet(false),
-    m_stagingAreaSubnetIdHasBeenSet(false),
-    m_stagingAreaTagsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_useDedicatedReplicationServer(false),
-    m_useDedicatedReplicationServerHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 ReplicationConfigurationTemplate::ReplicationConfigurationTemplate(JsonView jsonValue)
-  : ReplicationConfigurationTemplate()
 {
   *this = jsonValue;
 }
@@ -60,66 +29,48 @@ ReplicationConfigurationTemplate& ReplicationConfigurationTemplate::operator =(J
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associateDefaultSecurityGroup"))
   {
     m_associateDefaultSecurityGroup = jsonValue.GetBool("associateDefaultSecurityGroup");
-
     m_associateDefaultSecurityGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoReplicateNewDisks"))
   {
     m_autoReplicateNewDisks = jsonValue.GetBool("autoReplicateNewDisks");
-
     m_autoReplicateNewDisksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bandwidthThrottling"))
   {
     m_bandwidthThrottling = jsonValue.GetInt64("bandwidthThrottling");
-
     m_bandwidthThrottlingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createPublicIP"))
   {
     m_createPublicIP = jsonValue.GetBool("createPublicIP");
-
     m_createPublicIPHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataPlaneRouting"))
   {
     m_dataPlaneRouting = ReplicationConfigurationDataPlaneRoutingMapper::GetReplicationConfigurationDataPlaneRoutingForName(jsonValue.GetString("dataPlaneRouting"));
-
     m_dataPlaneRoutingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultLargeStagingDiskType"))
   {
     m_defaultLargeStagingDiskType = ReplicationConfigurationDefaultLargeStagingDiskTypeMapper::GetReplicationConfigurationDefaultLargeStagingDiskTypeForName(jsonValue.GetString("defaultLargeStagingDiskType"));
-
     m_defaultLargeStagingDiskTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ebsEncryption"))
   {
     m_ebsEncryption = ReplicationConfigurationEbsEncryptionMapper::GetReplicationConfigurationEbsEncryptionForName(jsonValue.GetString("ebsEncryption"));
-
     m_ebsEncryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ebsEncryptionKeyArn"))
   {
     m_ebsEncryptionKeyArn = jsonValue.GetString("ebsEncryptionKeyArn");
-
     m_ebsEncryptionKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pitPolicy"))
   {
     Aws::Utils::Array<JsonView> pitPolicyJsonList = jsonValue.GetArray("pitPolicy");
@@ -129,21 +80,16 @@ ReplicationConfigurationTemplate& ReplicationConfigurationTemplate::operator =(J
     }
     m_pitPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replicationConfigurationTemplateID"))
   {
     m_replicationConfigurationTemplateID = jsonValue.GetString("replicationConfigurationTemplateID");
-
     m_replicationConfigurationTemplateIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replicationServerInstanceType"))
   {
     m_replicationServerInstanceType = jsonValue.GetString("replicationServerInstanceType");
-
     m_replicationServerInstanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replicationServersSecurityGroupsIDs"))
   {
     Aws::Utils::Array<JsonView> replicationServersSecurityGroupsIDsJsonList = jsonValue.GetArray("replicationServersSecurityGroupsIDs");
@@ -153,14 +99,11 @@ ReplicationConfigurationTemplate& ReplicationConfigurationTemplate::operator =(J
     }
     m_replicationServersSecurityGroupsIDsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stagingAreaSubnetId"))
   {
     m_stagingAreaSubnetId = jsonValue.GetString("stagingAreaSubnetId");
-
     m_stagingAreaSubnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stagingAreaTags"))
   {
     Aws::Map<Aws::String, JsonView> stagingAreaTagsJsonMap = jsonValue.GetObject("stagingAreaTags").GetAllObjects();
@@ -170,7 +113,6 @@ ReplicationConfigurationTemplate& ReplicationConfigurationTemplate::operator =(J
     }
     m_stagingAreaTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -180,14 +122,11 @@ ReplicationConfigurationTemplate& ReplicationConfigurationTemplate::operator =(J
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("useDedicatedReplicationServer"))
   {
     m_useDedicatedReplicationServer = jsonValue.GetBool("useDedicatedReplicationServer");
-
     m_useDedicatedReplicationServerHasBeenSet = true;
   }
-
   return *this;
 }
 

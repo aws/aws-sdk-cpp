@@ -29,7 +29,7 @@ namespace Model
   class DiskSnapshotInfo
   {
   public:
-    AWS_LIGHTSAIL_API DiskSnapshotInfo();
+    AWS_LIGHTSAIL_API DiskSnapshotInfo() = default;
     AWS_LIGHTSAIL_API DiskSnapshotInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API DiskSnapshotInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>The size of the disk in GB (<code>32</code>).</p>
      */
-    inline int GetSizeInGb() const{ return m_sizeInGb; }
+    inline int GetSizeInGb() const { return m_sizeInGb; }
     inline bool SizeInGbHasBeenSet() const { return m_sizeInGbHasBeenSet; }
     inline void SetSizeInGb(int value) { m_sizeInGbHasBeenSet = true; m_sizeInGb = value; }
     inline DiskSnapshotInfo& WithSizeInGb(int value) { SetSizeInGb(value); return *this;}
     ///@}
   private:
 
-    int m_sizeInGb;
+    int m_sizeInGb{0};
     bool m_sizeInGbHasBeenSet = false;
   };
 

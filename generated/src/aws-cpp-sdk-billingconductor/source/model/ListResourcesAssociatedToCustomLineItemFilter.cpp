@@ -18,14 +18,7 @@ namespace BillingConductor
 namespace Model
 {
 
-ListResourcesAssociatedToCustomLineItemFilter::ListResourcesAssociatedToCustomLineItemFilter() : 
-    m_relationship(CustomLineItemRelationship::NOT_SET),
-    m_relationshipHasBeenSet(false)
-{
-}
-
 ListResourcesAssociatedToCustomLineItemFilter::ListResourcesAssociatedToCustomLineItemFilter(JsonView jsonValue)
-  : ListResourcesAssociatedToCustomLineItemFilter()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ListResourcesAssociatedToCustomLineItemFilter& ListResourcesAssociatedToCustomLi
   if(jsonValue.ValueExists("Relationship"))
   {
     m_relationship = CustomLineItemRelationshipMapper::GetCustomLineItemRelationshipForName(jsonValue.GetString("Relationship"));
-
     m_relationshipHasBeenSet = true;
   }
-
   return *this;
 }
 

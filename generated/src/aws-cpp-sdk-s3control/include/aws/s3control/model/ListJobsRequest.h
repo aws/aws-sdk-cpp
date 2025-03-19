@@ -27,7 +27,7 @@ namespace Model
   class ListJobsRequest : public S3ControlRequest
   {
   public:
-    AWS_S3CONTROL_API ListJobsRequest();
+    AWS_S3CONTROL_API ListJobsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -51,14 +51,12 @@ namespace Model
      * <p>The Amazon Web Services account ID associated with the S3 Batch Operations
      * job.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline ListJobsRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline ListJobsRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline ListJobsRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    ListJobsRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,13 @@ namespace Model
      * <p>The <code>List Jobs</code> request returns jobs that match the statuses
      * listed in this element.</p>
      */
-    inline const Aws::Vector<JobStatus>& GetJobStatuses() const{ return m_jobStatuses; }
+    inline const Aws::Vector<JobStatus>& GetJobStatuses() const { return m_jobStatuses; }
     inline bool JobStatusesHasBeenSet() const { return m_jobStatusesHasBeenSet; }
-    inline void SetJobStatuses(const Aws::Vector<JobStatus>& value) { m_jobStatusesHasBeenSet = true; m_jobStatuses = value; }
-    inline void SetJobStatuses(Aws::Vector<JobStatus>&& value) { m_jobStatusesHasBeenSet = true; m_jobStatuses = std::move(value); }
-    inline ListJobsRequest& WithJobStatuses(const Aws::Vector<JobStatus>& value) { SetJobStatuses(value); return *this;}
-    inline ListJobsRequest& WithJobStatuses(Aws::Vector<JobStatus>&& value) { SetJobStatuses(std::move(value)); return *this;}
-    inline ListJobsRequest& AddJobStatuses(const JobStatus& value) { m_jobStatusesHasBeenSet = true; m_jobStatuses.push_back(value); return *this; }
-    inline ListJobsRequest& AddJobStatuses(JobStatus&& value) { m_jobStatusesHasBeenSet = true; m_jobStatuses.push_back(std::move(value)); return *this; }
+    template<typename JobStatusesT = Aws::Vector<JobStatus>>
+    void SetJobStatuses(JobStatusesT&& value) { m_jobStatusesHasBeenSet = true; m_jobStatuses = std::forward<JobStatusesT>(value); }
+    template<typename JobStatusesT = Aws::Vector<JobStatus>>
+    ListJobsRequest& WithJobStatuses(JobStatusesT&& value) { SetJobStatuses(std::forward<JobStatusesT>(value)); return *this;}
+    inline ListJobsRequest& AddJobStatuses(JobStatus value) { m_jobStatusesHasBeenSet = true; m_jobStatuses.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -83,14 +80,12 @@ namespace Model
      * <code>ListJobsResult</code> from the previous <code>List Jobs</code>
      * request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListJobsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,7 +95,7 @@ namespace Model
      * include a pagination token in the <code>NextToken</code> field to enable you to
      * retrieve the next page of results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -116,7 +111,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

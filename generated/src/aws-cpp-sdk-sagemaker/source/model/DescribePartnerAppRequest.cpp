@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribePartnerAppRequest::DescribePartnerAppRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DescribePartnerAppRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,17 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-AlarmConfiguration::AlarmConfiguration() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_ignorePollAlarmFailure(false),
-    m_ignorePollAlarmFailureHasBeenSet(false),
-    m_alarmsHasBeenSet(false)
-{
-}
-
 AlarmConfiguration::AlarmConfiguration(JsonView jsonValue)
-  : AlarmConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ AlarmConfiguration& AlarmConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ignorePollAlarmFailure"))
   {
     m_ignorePollAlarmFailure = jsonValue.GetBool("ignorePollAlarmFailure");
-
     m_ignorePollAlarmFailureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("alarms"))
   {
     Aws::Utils::Array<JsonView> alarmsJsonList = jsonValue.GetArray("alarms");
@@ -58,7 +44,6 @@ AlarmConfiguration& AlarmConfiguration::operator =(JsonView jsonValue)
     }
     m_alarmsHasBeenSet = true;
   }
-
   return *this;
 }
 

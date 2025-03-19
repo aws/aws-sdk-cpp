@@ -33,7 +33,7 @@ namespace Model
   class TriggerProperties
   {
   public:
-    AWS_APPFLOW_API TriggerProperties();
+    AWS_APPFLOW_API TriggerProperties() = default;
     AWS_APPFLOW_API TriggerProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API TriggerProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p> Specifies the configuration details of a schedule-triggered flow as defined
      * by the user. </p>
      */
-    inline const ScheduledTriggerProperties& GetScheduled() const{ return m_scheduled; }
+    inline const ScheduledTriggerProperties& GetScheduled() const { return m_scheduled; }
     inline bool ScheduledHasBeenSet() const { return m_scheduledHasBeenSet; }
-    inline void SetScheduled(const ScheduledTriggerProperties& value) { m_scheduledHasBeenSet = true; m_scheduled = value; }
-    inline void SetScheduled(ScheduledTriggerProperties&& value) { m_scheduledHasBeenSet = true; m_scheduled = std::move(value); }
-    inline TriggerProperties& WithScheduled(const ScheduledTriggerProperties& value) { SetScheduled(value); return *this;}
-    inline TriggerProperties& WithScheduled(ScheduledTriggerProperties&& value) { SetScheduled(std::move(value)); return *this;}
+    template<typename ScheduledT = ScheduledTriggerProperties>
+    void SetScheduled(ScheduledT&& value) { m_scheduledHasBeenSet = true; m_scheduled = std::forward<ScheduledT>(value); }
+    template<typename ScheduledT = ScheduledTriggerProperties>
+    TriggerProperties& WithScheduled(ScheduledT&& value) { SetScheduled(std::forward<ScheduledT>(value)); return *this;}
     ///@}
   private:
 

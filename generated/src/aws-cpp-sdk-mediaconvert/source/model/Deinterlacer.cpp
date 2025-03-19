@@ -18,18 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-Deinterlacer::Deinterlacer() : 
-    m_algorithm(DeinterlaceAlgorithm::NOT_SET),
-    m_algorithmHasBeenSet(false),
-    m_control(DeinterlacerControl::NOT_SET),
-    m_controlHasBeenSet(false),
-    m_mode(DeinterlacerMode::NOT_SET),
-    m_modeHasBeenSet(false)
-{
-}
-
 Deinterlacer::Deinterlacer(JsonView jsonValue)
-  : Deinterlacer()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ Deinterlacer& Deinterlacer::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("algorithm"))
   {
     m_algorithm = DeinterlaceAlgorithmMapper::GetDeinterlaceAlgorithmForName(jsonValue.GetString("algorithm"));
-
     m_algorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("control"))
   {
     m_control = DeinterlacerControlMapper::GetDeinterlacerControlForName(jsonValue.GetString("control"));
-
     m_controlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mode"))
   {
     m_mode = DeinterlacerModeMapper::GetDeinterlacerModeForName(jsonValue.GetString("mode"));
-
     m_modeHasBeenSet = true;
   }
-
   return *this;
 }
 

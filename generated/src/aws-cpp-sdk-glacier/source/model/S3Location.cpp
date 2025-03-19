@@ -18,22 +18,7 @@ namespace Glacier
 namespace Model
 {
 
-S3Location::S3Location() : 
-    m_bucketNameHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_encryptionHasBeenSet(false),
-    m_cannedACL(CannedACL::NOT_SET),
-    m_cannedACLHasBeenSet(false),
-    m_accessControlListHasBeenSet(false),
-    m_taggingHasBeenSet(false),
-    m_userMetadataHasBeenSet(false),
-    m_storageClass(StorageClass::NOT_SET),
-    m_storageClassHasBeenSet(false)
-{
-}
-
 S3Location::S3Location(JsonView jsonValue)
-  : S3Location()
 {
   *this = jsonValue;
 }
@@ -43,31 +28,23 @@ S3Location& S3Location::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BucketName"))
   {
     m_bucketName = jsonValue.GetString("BucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Prefix"))
   {
     m_prefix = jsonValue.GetString("Prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Encryption"))
   {
     m_encryption = jsonValue.GetObject("Encryption");
-
     m_encryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CannedACL"))
   {
     m_cannedACL = CannedACLMapper::GetCannedACLForName(jsonValue.GetString("CannedACL"));
-
     m_cannedACLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessControlList"))
   {
     Aws::Utils::Array<JsonView> accessControlListJsonList = jsonValue.GetArray("AccessControlList");
@@ -77,7 +54,6 @@ S3Location& S3Location::operator =(JsonView jsonValue)
     }
     m_accessControlListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tagging"))
   {
     Aws::Map<Aws::String, JsonView> taggingJsonMap = jsonValue.GetObject("Tagging").GetAllObjects();
@@ -87,7 +63,6 @@ S3Location& S3Location::operator =(JsonView jsonValue)
     }
     m_taggingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserMetadata"))
   {
     Aws::Map<Aws::String, JsonView> userMetadataJsonMap = jsonValue.GetObject("UserMetadata").GetAllObjects();
@@ -97,14 +72,11 @@ S3Location& S3Location::operator =(JsonView jsonValue)
     }
     m_userMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageClass"))
   {
     m_storageClass = StorageClassMapper::GetStorageClassForName(jsonValue.GetString("StorageClass"));
-
     m_storageClassHasBeenSet = true;
   }
-
   return *this;
 }
 

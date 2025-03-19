@@ -18,13 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-AwsOpportunityCustomer::AwsOpportunityCustomer() : 
-    m_contactsHasBeenSet(false)
-{
-}
-
 AwsOpportunityCustomer::AwsOpportunityCustomer(JsonView jsonValue)
-  : AwsOpportunityCustomer()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AwsOpportunityCustomer& AwsOpportunityCustomer::operator =(JsonView jsonValue)
     }
     m_contactsHasBeenSet = true;
   }
-
   return *this;
 }
 

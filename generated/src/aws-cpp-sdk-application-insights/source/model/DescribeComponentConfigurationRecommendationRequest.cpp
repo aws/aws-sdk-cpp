@@ -12,17 +12,6 @@ using namespace Aws::ApplicationInsights::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeComponentConfigurationRecommendationRequest::DescribeComponentConfigurationRecommendationRequest() : 
-    m_resourceGroupNameHasBeenSet(false),
-    m_componentNameHasBeenSet(false),
-    m_tier(Tier::NOT_SET),
-    m_tierHasBeenSet(false),
-    m_workloadNameHasBeenSet(false),
-    m_recommendationType(RecommendationType::NOT_SET),
-    m_recommendationTypeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeComponentConfigurationRecommendationRequest::SerializePayload() const
 {
   JsonValue payload;

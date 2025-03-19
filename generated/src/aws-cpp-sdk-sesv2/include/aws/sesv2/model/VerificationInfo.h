@@ -34,7 +34,7 @@ namespace Model
   class VerificationInfo
   {
   public:
-    AWS_SESV2_API VerificationInfo();
+    AWS_SESV2_API VerificationInfo() = default;
     AWS_SESV2_API VerificationInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API VerificationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
     /**
      * <p>The last time a verification attempt was made for this identity.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastCheckedTimestamp() const{ return m_lastCheckedTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastCheckedTimestamp() const { return m_lastCheckedTimestamp; }
     inline bool LastCheckedTimestampHasBeenSet() const { return m_lastCheckedTimestampHasBeenSet; }
-    inline void SetLastCheckedTimestamp(const Aws::Utils::DateTime& value) { m_lastCheckedTimestampHasBeenSet = true; m_lastCheckedTimestamp = value; }
-    inline void SetLastCheckedTimestamp(Aws::Utils::DateTime&& value) { m_lastCheckedTimestampHasBeenSet = true; m_lastCheckedTimestamp = std::move(value); }
-    inline VerificationInfo& WithLastCheckedTimestamp(const Aws::Utils::DateTime& value) { SetLastCheckedTimestamp(value); return *this;}
-    inline VerificationInfo& WithLastCheckedTimestamp(Aws::Utils::DateTime&& value) { SetLastCheckedTimestamp(std::move(value)); return *this;}
+    template<typename LastCheckedTimestampT = Aws::Utils::DateTime>
+    void SetLastCheckedTimestamp(LastCheckedTimestampT&& value) { m_lastCheckedTimestampHasBeenSet = true; m_lastCheckedTimestamp = std::forward<LastCheckedTimestampT>(value); }
+    template<typename LastCheckedTimestampT = Aws::Utils::DateTime>
+    VerificationInfo& WithLastCheckedTimestamp(LastCheckedTimestampT&& value) { SetLastCheckedTimestamp(std::forward<LastCheckedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last time a successful verification was made for this identity.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastSuccessTimestamp() const{ return m_lastSuccessTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastSuccessTimestamp() const { return m_lastSuccessTimestamp; }
     inline bool LastSuccessTimestampHasBeenSet() const { return m_lastSuccessTimestampHasBeenSet; }
-    inline void SetLastSuccessTimestamp(const Aws::Utils::DateTime& value) { m_lastSuccessTimestampHasBeenSet = true; m_lastSuccessTimestamp = value; }
-    inline void SetLastSuccessTimestamp(Aws::Utils::DateTime&& value) { m_lastSuccessTimestampHasBeenSet = true; m_lastSuccessTimestamp = std::move(value); }
-    inline VerificationInfo& WithLastSuccessTimestamp(const Aws::Utils::DateTime& value) { SetLastSuccessTimestamp(value); return *this;}
-    inline VerificationInfo& WithLastSuccessTimestamp(Aws::Utils::DateTime&& value) { SetLastSuccessTimestamp(std::move(value)); return *this;}
+    template<typename LastSuccessTimestampT = Aws::Utils::DateTime>
+    void SetLastSuccessTimestamp(LastSuccessTimestampT&& value) { m_lastSuccessTimestampHasBeenSet = true; m_lastSuccessTimestamp = std::forward<LastSuccessTimestampT>(value); }
+    template<typename LastSuccessTimestampT = Aws::Utils::DateTime>
+    VerificationInfo& WithLastSuccessTimestamp(LastSuccessTimestampT&& value) { SetLastSuccessTimestamp(std::forward<LastSuccessTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,12 +99,10 @@ namespace Model
      * Services region where Amazon SES is available and different from the replica
      * region. </p> </li> </ul>
      */
-    inline const VerificationError& GetErrorType() const{ return m_errorType; }
+    inline VerificationError GetErrorType() const { return m_errorType; }
     inline bool ErrorTypeHasBeenSet() const { return m_errorTypeHasBeenSet; }
-    inline void SetErrorType(const VerificationError& value) { m_errorTypeHasBeenSet = true; m_errorType = value; }
-    inline void SetErrorType(VerificationError&& value) { m_errorTypeHasBeenSet = true; m_errorType = std::move(value); }
-    inline VerificationInfo& WithErrorType(const VerificationError& value) { SetErrorType(value); return *this;}
-    inline VerificationInfo& WithErrorType(VerificationError&& value) { SetErrorType(std::move(value)); return *this;}
+    inline void SetErrorType(VerificationError value) { m_errorTypeHasBeenSet = true; m_errorType = value; }
+    inline VerificationInfo& WithErrorType(VerificationError value) { SetErrorType(value); return *this;}
     ///@}
 
     ///@{
@@ -112,22 +110,22 @@ namespace Model
      * <p>An object that contains information about the start of authority (SOA) record
      * associated with the identity.</p>
      */
-    inline const SOARecord& GetSOARecord() const{ return m_sOARecord; }
+    inline const SOARecord& GetSOARecord() const { return m_sOARecord; }
     inline bool SOARecordHasBeenSet() const { return m_sOARecordHasBeenSet; }
-    inline void SetSOARecord(const SOARecord& value) { m_sOARecordHasBeenSet = true; m_sOARecord = value; }
-    inline void SetSOARecord(SOARecord&& value) { m_sOARecordHasBeenSet = true; m_sOARecord = std::move(value); }
-    inline VerificationInfo& WithSOARecord(const SOARecord& value) { SetSOARecord(value); return *this;}
-    inline VerificationInfo& WithSOARecord(SOARecord&& value) { SetSOARecord(std::move(value)); return *this;}
+    template<typename SOARecordT = SOARecord>
+    void SetSOARecord(SOARecordT&& value) { m_sOARecordHasBeenSet = true; m_sOARecord = std::forward<SOARecordT>(value); }
+    template<typename SOARecordT = SOARecord>
+    VerificationInfo& WithSOARecord(SOARecordT&& value) { SetSOARecord(std::forward<SOARecordT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_lastCheckedTimestamp;
+    Aws::Utils::DateTime m_lastCheckedTimestamp{};
     bool m_lastCheckedTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastSuccessTimestamp;
+    Aws::Utils::DateTime m_lastSuccessTimestamp{};
     bool m_lastSuccessTimestampHasBeenSet = false;
 
-    VerificationError m_errorType;
+    VerificationError m_errorType{VerificationError::NOT_SET};
     bool m_errorTypeHasBeenSet = false;
 
     SOARecord m_sOARecord;

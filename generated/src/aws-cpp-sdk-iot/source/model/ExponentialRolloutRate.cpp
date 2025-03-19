@@ -18,17 +18,7 @@ namespace IoT
 namespace Model
 {
 
-ExponentialRolloutRate::ExponentialRolloutRate() : 
-    m_baseRatePerMinute(0),
-    m_baseRatePerMinuteHasBeenSet(false),
-    m_incrementFactor(0.0),
-    m_incrementFactorHasBeenSet(false),
-    m_rateIncreaseCriteriaHasBeenSet(false)
-{
-}
-
 ExponentialRolloutRate::ExponentialRolloutRate(JsonView jsonValue)
-  : ExponentialRolloutRate()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ExponentialRolloutRate& ExponentialRolloutRate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("baseRatePerMinute"))
   {
     m_baseRatePerMinute = jsonValue.GetInteger("baseRatePerMinute");
-
     m_baseRatePerMinuteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("incrementFactor"))
   {
     m_incrementFactor = jsonValue.GetDouble("incrementFactor");
-
     m_incrementFactorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rateIncreaseCriteria"))
   {
     m_rateIncreaseCriteria = jsonValue.GetObject("rateIncreaseCriteria");
-
     m_rateIncreaseCriteriaHasBeenSet = true;
   }
-
   return *this;
 }
 

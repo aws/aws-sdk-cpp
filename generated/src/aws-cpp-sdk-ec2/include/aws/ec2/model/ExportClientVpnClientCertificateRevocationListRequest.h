@@ -21,7 +21,7 @@ namespace Model
   class ExportClientVpnClientCertificateRevocationListRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ExportClientVpnClientCertificateRevocationListRequest();
+    AWS_EC2_API ExportClientVpnClientCertificateRevocationListRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The ID of the Client VPN endpoint.</p>
      */
-    inline const Aws::String& GetClientVpnEndpointId() const{ return m_clientVpnEndpointId; }
+    inline const Aws::String& GetClientVpnEndpointId() const { return m_clientVpnEndpointId; }
     inline bool ClientVpnEndpointIdHasBeenSet() const { return m_clientVpnEndpointIdHasBeenSet; }
-    inline void SetClientVpnEndpointId(const Aws::String& value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId = value; }
-    inline void SetClientVpnEndpointId(Aws::String&& value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId = std::move(value); }
-    inline void SetClientVpnEndpointId(const char* value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId.assign(value); }
-    inline ExportClientVpnClientCertificateRevocationListRequest& WithClientVpnEndpointId(const Aws::String& value) { SetClientVpnEndpointId(value); return *this;}
-    inline ExportClientVpnClientCertificateRevocationListRequest& WithClientVpnEndpointId(Aws::String&& value) { SetClientVpnEndpointId(std::move(value)); return *this;}
-    inline ExportClientVpnClientCertificateRevocationListRequest& WithClientVpnEndpointId(const char* value) { SetClientVpnEndpointId(value); return *this;}
+    template<typename ClientVpnEndpointIdT = Aws::String>
+    void SetClientVpnEndpointId(ClientVpnEndpointIdT&& value) { m_clientVpnEndpointIdHasBeenSet = true; m_clientVpnEndpointId = std::forward<ClientVpnEndpointIdT>(value); }
+    template<typename ClientVpnEndpointIdT = Aws::String>
+    ExportClientVpnClientCertificateRevocationListRequest& WithClientVpnEndpointId(ClientVpnEndpointIdT&& value) { SetClientVpnEndpointId(std::forward<ClientVpnEndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline ExportClientVpnClientCertificateRevocationListRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_clientVpnEndpointId;
     bool m_clientVpnEndpointIdHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

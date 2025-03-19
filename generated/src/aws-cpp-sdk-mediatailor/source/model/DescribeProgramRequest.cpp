@@ -12,12 +12,6 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeProgramRequest::DescribeProgramRequest() : 
-    m_channelNameHasBeenSet(false),
-    m_programNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeProgramRequest::SerializePayload() const
 {
   return {};

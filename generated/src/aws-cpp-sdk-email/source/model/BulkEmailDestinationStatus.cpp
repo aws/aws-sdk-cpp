@@ -20,16 +20,7 @@ namespace SES
 namespace Model
 {
 
-BulkEmailDestinationStatus::BulkEmailDestinationStatus() : 
-    m_status(BulkEmailStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_messageIdHasBeenSet(false)
-{
-}
-
 BulkEmailDestinationStatus::BulkEmailDestinationStatus(const XmlNode& xmlNode)
-  : BulkEmailDestinationStatus()
 {
   *this = xmlNode;
 }
@@ -43,7 +34,7 @@ BulkEmailDestinationStatus& BulkEmailDestinationStatus::operator =(const XmlNode
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = BulkEmailStatusMapper::GetBulkEmailStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = BulkEmailStatusMapper::GetBulkEmailStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode errorNode = resultNode.FirstChild("Error");

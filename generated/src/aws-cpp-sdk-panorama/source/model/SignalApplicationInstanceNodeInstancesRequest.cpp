@@ -12,12 +12,6 @@ using namespace Aws::Panorama::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SignalApplicationInstanceNodeInstancesRequest::SignalApplicationInstanceNodeInstancesRequest() : 
-    m_applicationInstanceIdHasBeenSet(false),
-    m_nodeSignalsHasBeenSet(false)
-{
-}
-
 Aws::String SignalApplicationInstanceNodeInstancesRequest::SerializePayload() const
 {
   JsonValue payload;

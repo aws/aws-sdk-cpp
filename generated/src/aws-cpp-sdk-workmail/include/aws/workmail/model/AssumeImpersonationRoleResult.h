@@ -27,7 +27,7 @@ namespace Model
   class AssumeImpersonationRoleResult
   {
   public:
-    AWS_WORKMAIL_API AssumeImpersonationRoleResult();
+    AWS_WORKMAIL_API AssumeImpersonationRoleResult() = default;
     AWS_WORKMAIL_API AssumeImpersonationRoleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKMAIL_API AssumeImpersonationRoleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,41 +36,40 @@ namespace Model
     /**
      * <p>The authentication token for the impersonation role.</p>
      */
-    inline const Aws::String& GetToken() const{ return m_token; }
-    inline void SetToken(const Aws::String& value) { m_token = value; }
-    inline void SetToken(Aws::String&& value) { m_token = std::move(value); }
-    inline void SetToken(const char* value) { m_token.assign(value); }
-    inline AssumeImpersonationRoleResult& WithToken(const Aws::String& value) { SetToken(value); return *this;}
-    inline AssumeImpersonationRoleResult& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
-    inline AssumeImpersonationRoleResult& WithToken(const char* value) { SetToken(value); return *this;}
+    inline const Aws::String& GetToken() const { return m_token; }
+    template<typename TokenT = Aws::String>
+    void SetToken(TokenT&& value) { m_tokenHasBeenSet = true; m_token = std::forward<TokenT>(value); }
+    template<typename TokenT = Aws::String>
+    AssumeImpersonationRoleResult& WithToken(TokenT&& value) { SetToken(std::forward<TokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The authentication token's validity, in seconds.</p>
      */
-    inline long long GetExpiresIn() const{ return m_expiresIn; }
-    inline void SetExpiresIn(long long value) { m_expiresIn = value; }
+    inline long long GetExpiresIn() const { return m_expiresIn; }
+    inline void SetExpiresIn(long long value) { m_expiresInHasBeenSet = true; m_expiresIn = value; }
     inline AssumeImpersonationRoleResult& WithExpiresIn(long long value) { SetExpiresIn(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AssumeImpersonationRoleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AssumeImpersonationRoleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AssumeImpersonationRoleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AssumeImpersonationRoleResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_token;
+    bool m_tokenHasBeenSet = false;
 
-    long long m_expiresIn;
+    long long m_expiresIn{0};
+    bool m_expiresInHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

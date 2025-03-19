@@ -26,7 +26,7 @@ namespace Model
   class ListDomainConfigurationsRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API ListDomainConfigurationsRequest();
+    AWS_IOT_API ListDomainConfigurationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,21 +43,19 @@ namespace Model
     /**
      * <p>The marker for the next set of results.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline ListDomainConfigurationsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListDomainConfigurationsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListDomainConfigurationsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListDomainConfigurationsRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The result page size.</p>
      */
-    inline int GetPageSize() const{ return m_pageSize; }
+    inline int GetPageSize() const { return m_pageSize; }
     inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
     inline ListDomainConfigurationsRequest& WithPageSize(int value) { SetPageSize(value); return *this;}
@@ -67,22 +65,20 @@ namespace Model
     /**
      * <p>The type of service delivered by the endpoint.</p>
      */
-    inline const ServiceType& GetServiceType() const{ return m_serviceType; }
+    inline ServiceType GetServiceType() const { return m_serviceType; }
     inline bool ServiceTypeHasBeenSet() const { return m_serviceTypeHasBeenSet; }
-    inline void SetServiceType(const ServiceType& value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
-    inline void SetServiceType(ServiceType&& value) { m_serviceTypeHasBeenSet = true; m_serviceType = std::move(value); }
-    inline ListDomainConfigurationsRequest& WithServiceType(const ServiceType& value) { SetServiceType(value); return *this;}
-    inline ListDomainConfigurationsRequest& WithServiceType(ServiceType&& value) { SetServiceType(std::move(value)); return *this;}
+    inline void SetServiceType(ServiceType value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
+    inline ListDomainConfigurationsRequest& WithServiceType(ServiceType value) { SetServiceType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_marker;
     bool m_markerHasBeenSet = false;
 
-    int m_pageSize;
+    int m_pageSize{0};
     bool m_pageSizeHasBeenSet = false;
 
-    ServiceType m_serviceType;
+    ServiceType m_serviceType{ServiceType::NOT_SET};
     bool m_serviceTypeHasBeenSet = false;
   };
 

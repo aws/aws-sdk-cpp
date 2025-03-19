@@ -21,7 +21,7 @@ namespace Model
   class ImportSshPublicKeyRequest : public TransferRequest
   {
   public:
-    AWS_TRANSFER_API ImportSshPublicKeyRequest();
+    AWS_TRANSFER_API ImportSshPublicKeyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>A system-assigned unique identifier for a server.</p>
      */
-    inline const Aws::String& GetServerId() const{ return m_serverId; }
+    inline const Aws::String& GetServerId() const { return m_serverId; }
     inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
-    inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
-    inline void SetServerId(Aws::String&& value) { m_serverIdHasBeenSet = true; m_serverId = std::move(value); }
-    inline void SetServerId(const char* value) { m_serverIdHasBeenSet = true; m_serverId.assign(value); }
-    inline ImportSshPublicKeyRequest& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
-    inline ImportSshPublicKeyRequest& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
-    inline ImportSshPublicKeyRequest& WithServerId(const char* value) { SetServerId(value); return *this;}
+    template<typename ServerIdT = Aws::String>
+    void SetServerId(ServerIdT&& value) { m_serverIdHasBeenSet = true; m_serverId = std::forward<ServerIdT>(value); }
+    template<typename ServerIdT = Aws::String>
+    ImportSshPublicKeyRequest& WithServerId(ServerIdT&& value) { SetServerId(std::forward<ServerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * <p>The public key portion of an SSH key pair.</p> <p>Transfer Family accepts
      * RSA, ECDSA, and ED25519 keys.</p>
      */
-    inline const Aws::String& GetSshPublicKeyBody() const{ return m_sshPublicKeyBody; }
+    inline const Aws::String& GetSshPublicKeyBody() const { return m_sshPublicKeyBody; }
     inline bool SshPublicKeyBodyHasBeenSet() const { return m_sshPublicKeyBodyHasBeenSet; }
-    inline void SetSshPublicKeyBody(const Aws::String& value) { m_sshPublicKeyBodyHasBeenSet = true; m_sshPublicKeyBody = value; }
-    inline void SetSshPublicKeyBody(Aws::String&& value) { m_sshPublicKeyBodyHasBeenSet = true; m_sshPublicKeyBody = std::move(value); }
-    inline void SetSshPublicKeyBody(const char* value) { m_sshPublicKeyBodyHasBeenSet = true; m_sshPublicKeyBody.assign(value); }
-    inline ImportSshPublicKeyRequest& WithSshPublicKeyBody(const Aws::String& value) { SetSshPublicKeyBody(value); return *this;}
-    inline ImportSshPublicKeyRequest& WithSshPublicKeyBody(Aws::String&& value) { SetSshPublicKeyBody(std::move(value)); return *this;}
-    inline ImportSshPublicKeyRequest& WithSshPublicKeyBody(const char* value) { SetSshPublicKeyBody(value); return *this;}
+    template<typename SshPublicKeyBodyT = Aws::String>
+    void SetSshPublicKeyBody(SshPublicKeyBodyT&& value) { m_sshPublicKeyBodyHasBeenSet = true; m_sshPublicKeyBody = std::forward<SshPublicKeyBodyT>(value); }
+    template<typename SshPublicKeyBodyT = Aws::String>
+    ImportSshPublicKeyRequest& WithSshPublicKeyBody(SshPublicKeyBodyT&& value) { SetSshPublicKeyBody(std::forward<SshPublicKeyBodyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +64,12 @@ namespace Model
      * <p>The name of the Transfer Family user that is assigned to one or more
      * servers.</p>
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
+    inline const Aws::String& GetUserName() const { return m_userName; }
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-    inline ImportSshPublicKeyRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline ImportSshPublicKeyRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline ImportSshPublicKeyRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    ImportSshPublicKeyRequest& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,28 +18,7 @@ namespace AppRunner
 namespace Model
 {
 
-Service::Service() : 
-    m_serviceNameHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
-    m_serviceArnHasBeenSet(false),
-    m_serviceUrlHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_deletedAtHasBeenSet(false),
-    m_status(ServiceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_sourceConfigurationHasBeenSet(false),
-    m_instanceConfigurationHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_healthCheckConfigurationHasBeenSet(false),
-    m_autoScalingConfigurationSummaryHasBeenSet(false),
-    m_networkConfigurationHasBeenSet(false),
-    m_observabilityConfigurationHasBeenSet(false)
-{
-}
-
 Service::Service(JsonView jsonValue)
-  : Service()
 {
   *this = jsonValue;
 }
@@ -49,108 +28,78 @@ Service& Service::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ServiceName"))
   {
     m_serviceName = jsonValue.GetString("ServiceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceId"))
   {
     m_serviceId = jsonValue.GetString("ServiceId");
-
     m_serviceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceArn"))
   {
     m_serviceArn = jsonValue.GetString("ServiceArn");
-
     m_serviceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceUrl"))
   {
     m_serviceUrl = jsonValue.GetString("ServiceUrl");
-
     m_serviceUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeletedAt"))
   {
     m_deletedAt = jsonValue.GetDouble("DeletedAt");
-
     m_deletedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ServiceStatusMapper::GetServiceStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceConfiguration"))
   {
     m_sourceConfiguration = jsonValue.GetObject("SourceConfiguration");
-
     m_sourceConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceConfiguration"))
   {
     m_instanceConfiguration = jsonValue.GetObject("InstanceConfiguration");
-
     m_instanceConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionConfiguration"))
   {
     m_encryptionConfiguration = jsonValue.GetObject("EncryptionConfiguration");
-
     m_encryptionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HealthCheckConfiguration"))
   {
     m_healthCheckConfiguration = jsonValue.GetObject("HealthCheckConfiguration");
-
     m_healthCheckConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoScalingConfigurationSummary"))
   {
     m_autoScalingConfigurationSummary = jsonValue.GetObject("AutoScalingConfigurationSummary");
-
     m_autoScalingConfigurationSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkConfiguration"))
   {
     m_networkConfiguration = jsonValue.GetObject("NetworkConfiguration");
-
     m_networkConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObservabilityConfiguration"))
   {
     m_observabilityConfiguration = jsonValue.GetObject("ObservabilityConfiguration");
-
     m_observabilityConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

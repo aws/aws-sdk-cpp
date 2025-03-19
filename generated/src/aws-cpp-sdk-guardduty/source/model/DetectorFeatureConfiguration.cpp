@@ -18,17 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-DetectorFeatureConfiguration::DetectorFeatureConfiguration() : 
-    m_name(DetectorFeature::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_status(FeatureStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_additionalConfigurationHasBeenSet(false)
-{
-}
-
 DetectorFeatureConfiguration::DetectorFeatureConfiguration(JsonView jsonValue)
-  : DetectorFeatureConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ DetectorFeatureConfiguration& DetectorFeatureConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("name"))
   {
     m_name = DetectorFeatureMapper::GetDetectorFeatureForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = FeatureStatusMapper::GetFeatureStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("additionalConfiguration"))
   {
     Aws::Utils::Array<JsonView> additionalConfigurationJsonList = jsonValue.GetArray("additionalConfiguration");
@@ -58,7 +44,6 @@ DetectorFeatureConfiguration& DetectorFeatureConfiguration::operator =(JsonView 
     }
     m_additionalConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

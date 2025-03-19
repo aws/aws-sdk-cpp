@@ -31,7 +31,7 @@ namespace Model
   class CreateVerifiedAccessEndpointRequest : public EC2Request
   {
   public:
-    AWS_EC2_API CreateVerifiedAccessEndpointRequest();
+    AWS_EC2_API CreateVerifiedAccessEndpointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,38 +50,32 @@ namespace Model
     /**
      * <p>The ID of the Verified Access group to associate the endpoint with.</p>
      */
-    inline const Aws::String& GetVerifiedAccessGroupId() const{ return m_verifiedAccessGroupId; }
+    inline const Aws::String& GetVerifiedAccessGroupId() const { return m_verifiedAccessGroupId; }
     inline bool VerifiedAccessGroupIdHasBeenSet() const { return m_verifiedAccessGroupIdHasBeenSet; }
-    inline void SetVerifiedAccessGroupId(const Aws::String& value) { m_verifiedAccessGroupIdHasBeenSet = true; m_verifiedAccessGroupId = value; }
-    inline void SetVerifiedAccessGroupId(Aws::String&& value) { m_verifiedAccessGroupIdHasBeenSet = true; m_verifiedAccessGroupId = std::move(value); }
-    inline void SetVerifiedAccessGroupId(const char* value) { m_verifiedAccessGroupIdHasBeenSet = true; m_verifiedAccessGroupId.assign(value); }
-    inline CreateVerifiedAccessEndpointRequest& WithVerifiedAccessGroupId(const Aws::String& value) { SetVerifiedAccessGroupId(value); return *this;}
-    inline CreateVerifiedAccessEndpointRequest& WithVerifiedAccessGroupId(Aws::String&& value) { SetVerifiedAccessGroupId(std::move(value)); return *this;}
-    inline CreateVerifiedAccessEndpointRequest& WithVerifiedAccessGroupId(const char* value) { SetVerifiedAccessGroupId(value); return *this;}
+    template<typename VerifiedAccessGroupIdT = Aws::String>
+    void SetVerifiedAccessGroupId(VerifiedAccessGroupIdT&& value) { m_verifiedAccessGroupIdHasBeenSet = true; m_verifiedAccessGroupId = std::forward<VerifiedAccessGroupIdT>(value); }
+    template<typename VerifiedAccessGroupIdT = Aws::String>
+    CreateVerifiedAccessEndpointRequest& WithVerifiedAccessGroupId(VerifiedAccessGroupIdT&& value) { SetVerifiedAccessGroupId(std::forward<VerifiedAccessGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of Verified Access endpoint to create.</p>
      */
-    inline const VerifiedAccessEndpointType& GetEndpointType() const{ return m_endpointType; }
+    inline VerifiedAccessEndpointType GetEndpointType() const { return m_endpointType; }
     inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
-    inline void SetEndpointType(const VerifiedAccessEndpointType& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
-    inline void SetEndpointType(VerifiedAccessEndpointType&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
-    inline CreateVerifiedAccessEndpointRequest& WithEndpointType(const VerifiedAccessEndpointType& value) { SetEndpointType(value); return *this;}
-    inline CreateVerifiedAccessEndpointRequest& WithEndpointType(VerifiedAccessEndpointType&& value) { SetEndpointType(std::move(value)); return *this;}
+    inline void SetEndpointType(VerifiedAccessEndpointType value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
+    inline CreateVerifiedAccessEndpointRequest& WithEndpointType(VerifiedAccessEndpointType value) { SetEndpointType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of attachment.</p>
      */
-    inline const VerifiedAccessEndpointAttachmentType& GetAttachmentType() const{ return m_attachmentType; }
+    inline VerifiedAccessEndpointAttachmentType GetAttachmentType() const { return m_attachmentType; }
     inline bool AttachmentTypeHasBeenSet() const { return m_attachmentTypeHasBeenSet; }
-    inline void SetAttachmentType(const VerifiedAccessEndpointAttachmentType& value) { m_attachmentTypeHasBeenSet = true; m_attachmentType = value; }
-    inline void SetAttachmentType(VerifiedAccessEndpointAttachmentType&& value) { m_attachmentTypeHasBeenSet = true; m_attachmentType = std::move(value); }
-    inline CreateVerifiedAccessEndpointRequest& WithAttachmentType(const VerifiedAccessEndpointAttachmentType& value) { SetAttachmentType(value); return *this;}
-    inline CreateVerifiedAccessEndpointRequest& WithAttachmentType(VerifiedAccessEndpointAttachmentType&& value) { SetAttachmentType(std::move(value)); return *this;}
+    inline void SetAttachmentType(VerifiedAccessEndpointAttachmentType value) { m_attachmentTypeHasBeenSet = true; m_attachmentType = value; }
+    inline CreateVerifiedAccessEndpointRequest& WithAttachmentType(VerifiedAccessEndpointAttachmentType value) { SetAttachmentType(value); return *this;}
     ///@}
 
     ///@{
@@ -90,28 +84,24 @@ namespace Model
      * Manager to associate with the endpoint. The CN in the certificate must match the
      * DNS name your end users will use to reach your application.</p>
      */
-    inline const Aws::String& GetDomainCertificateArn() const{ return m_domainCertificateArn; }
+    inline const Aws::String& GetDomainCertificateArn() const { return m_domainCertificateArn; }
     inline bool DomainCertificateArnHasBeenSet() const { return m_domainCertificateArnHasBeenSet; }
-    inline void SetDomainCertificateArn(const Aws::String& value) { m_domainCertificateArnHasBeenSet = true; m_domainCertificateArn = value; }
-    inline void SetDomainCertificateArn(Aws::String&& value) { m_domainCertificateArnHasBeenSet = true; m_domainCertificateArn = std::move(value); }
-    inline void SetDomainCertificateArn(const char* value) { m_domainCertificateArnHasBeenSet = true; m_domainCertificateArn.assign(value); }
-    inline CreateVerifiedAccessEndpointRequest& WithDomainCertificateArn(const Aws::String& value) { SetDomainCertificateArn(value); return *this;}
-    inline CreateVerifiedAccessEndpointRequest& WithDomainCertificateArn(Aws::String&& value) { SetDomainCertificateArn(std::move(value)); return *this;}
-    inline CreateVerifiedAccessEndpointRequest& WithDomainCertificateArn(const char* value) { SetDomainCertificateArn(value); return *this;}
+    template<typename DomainCertificateArnT = Aws::String>
+    void SetDomainCertificateArn(DomainCertificateArnT&& value) { m_domainCertificateArnHasBeenSet = true; m_domainCertificateArn = std::forward<DomainCertificateArnT>(value); }
+    template<typename DomainCertificateArnT = Aws::String>
+    CreateVerifiedAccessEndpointRequest& WithDomainCertificateArn(DomainCertificateArnT&& value) { SetDomainCertificateArn(std::forward<DomainCertificateArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The DNS name for users to reach your application.</p>
      */
-    inline const Aws::String& GetApplicationDomain() const{ return m_applicationDomain; }
+    inline const Aws::String& GetApplicationDomain() const { return m_applicationDomain; }
     inline bool ApplicationDomainHasBeenSet() const { return m_applicationDomainHasBeenSet; }
-    inline void SetApplicationDomain(const Aws::String& value) { m_applicationDomainHasBeenSet = true; m_applicationDomain = value; }
-    inline void SetApplicationDomain(Aws::String&& value) { m_applicationDomainHasBeenSet = true; m_applicationDomain = std::move(value); }
-    inline void SetApplicationDomain(const char* value) { m_applicationDomainHasBeenSet = true; m_applicationDomain.assign(value); }
-    inline CreateVerifiedAccessEndpointRequest& WithApplicationDomain(const Aws::String& value) { SetApplicationDomain(value); return *this;}
-    inline CreateVerifiedAccessEndpointRequest& WithApplicationDomain(Aws::String&& value) { SetApplicationDomain(std::move(value)); return *this;}
-    inline CreateVerifiedAccessEndpointRequest& WithApplicationDomain(const char* value) { SetApplicationDomain(value); return *this;}
+    template<typename ApplicationDomainT = Aws::String>
+    void SetApplicationDomain(ApplicationDomainT&& value) { m_applicationDomainHasBeenSet = true; m_applicationDomain = std::forward<ApplicationDomainT>(value); }
+    template<typename ApplicationDomainT = Aws::String>
+    CreateVerifiedAccessEndpointRequest& WithApplicationDomain(ApplicationDomainT&& value) { SetApplicationDomain(std::forward<ApplicationDomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,14 +109,12 @@ namespace Model
      * <p>A custom identifier that is prepended to the DNS name that is generated for
      * the endpoint.</p>
      */
-    inline const Aws::String& GetEndpointDomainPrefix() const{ return m_endpointDomainPrefix; }
+    inline const Aws::String& GetEndpointDomainPrefix() const { return m_endpointDomainPrefix; }
     inline bool EndpointDomainPrefixHasBeenSet() const { return m_endpointDomainPrefixHasBeenSet; }
-    inline void SetEndpointDomainPrefix(const Aws::String& value) { m_endpointDomainPrefixHasBeenSet = true; m_endpointDomainPrefix = value; }
-    inline void SetEndpointDomainPrefix(Aws::String&& value) { m_endpointDomainPrefixHasBeenSet = true; m_endpointDomainPrefix = std::move(value); }
-    inline void SetEndpointDomainPrefix(const char* value) { m_endpointDomainPrefixHasBeenSet = true; m_endpointDomainPrefix.assign(value); }
-    inline CreateVerifiedAccessEndpointRequest& WithEndpointDomainPrefix(const Aws::String& value) { SetEndpointDomainPrefix(value); return *this;}
-    inline CreateVerifiedAccessEndpointRequest& WithEndpointDomainPrefix(Aws::String&& value) { SetEndpointDomainPrefix(std::move(value)); return *this;}
-    inline CreateVerifiedAccessEndpointRequest& WithEndpointDomainPrefix(const char* value) { SetEndpointDomainPrefix(value); return *this;}
+    template<typename EndpointDomainPrefixT = Aws::String>
+    void SetEndpointDomainPrefix(EndpointDomainPrefixT&& value) { m_endpointDomainPrefixHasBeenSet = true; m_endpointDomainPrefix = std::forward<EndpointDomainPrefixT>(value); }
+    template<typename EndpointDomainPrefixT = Aws::String>
+    CreateVerifiedAccessEndpointRequest& WithEndpointDomainPrefix(EndpointDomainPrefixT&& value) { SetEndpointDomainPrefix(std::forward<EndpointDomainPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,15 +123,14 @@ namespace Model
      * endpoint. Required if <code>AttachmentType</code> is set to
      * <code>vpc</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-    inline CreateVerifiedAccessEndpointRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline CreateVerifiedAccessEndpointRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline CreateVerifiedAccessEndpointRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-    inline CreateVerifiedAccessEndpointRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline CreateVerifiedAccessEndpointRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    CreateVerifiedAccessEndpointRequest& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    CreateVerifiedAccessEndpointRequest& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -151,12 +138,12 @@ namespace Model
      * <p>The load balancer details. This parameter is required if the endpoint type is
      * <code>load-balancer</code>.</p>
      */
-    inline const CreateVerifiedAccessEndpointLoadBalancerOptions& GetLoadBalancerOptions() const{ return m_loadBalancerOptions; }
+    inline const CreateVerifiedAccessEndpointLoadBalancerOptions& GetLoadBalancerOptions() const { return m_loadBalancerOptions; }
     inline bool LoadBalancerOptionsHasBeenSet() const { return m_loadBalancerOptionsHasBeenSet; }
-    inline void SetLoadBalancerOptions(const CreateVerifiedAccessEndpointLoadBalancerOptions& value) { m_loadBalancerOptionsHasBeenSet = true; m_loadBalancerOptions = value; }
-    inline void SetLoadBalancerOptions(CreateVerifiedAccessEndpointLoadBalancerOptions&& value) { m_loadBalancerOptionsHasBeenSet = true; m_loadBalancerOptions = std::move(value); }
-    inline CreateVerifiedAccessEndpointRequest& WithLoadBalancerOptions(const CreateVerifiedAccessEndpointLoadBalancerOptions& value) { SetLoadBalancerOptions(value); return *this;}
-    inline CreateVerifiedAccessEndpointRequest& WithLoadBalancerOptions(CreateVerifiedAccessEndpointLoadBalancerOptions&& value) { SetLoadBalancerOptions(std::move(value)); return *this;}
+    template<typename LoadBalancerOptionsT = CreateVerifiedAccessEndpointLoadBalancerOptions>
+    void SetLoadBalancerOptions(LoadBalancerOptionsT&& value) { m_loadBalancerOptionsHasBeenSet = true; m_loadBalancerOptions = std::forward<LoadBalancerOptionsT>(value); }
+    template<typename LoadBalancerOptionsT = CreateVerifiedAccessEndpointLoadBalancerOptions>
+    CreateVerifiedAccessEndpointRequest& WithLoadBalancerOptions(LoadBalancerOptionsT&& value) { SetLoadBalancerOptions(std::forward<LoadBalancerOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -164,54 +151,50 @@ namespace Model
      * <p>The network interface details. This parameter is required if the endpoint
      * type is <code>network-interface</code>.</p>
      */
-    inline const CreateVerifiedAccessEndpointEniOptions& GetNetworkInterfaceOptions() const{ return m_networkInterfaceOptions; }
+    inline const CreateVerifiedAccessEndpointEniOptions& GetNetworkInterfaceOptions() const { return m_networkInterfaceOptions; }
     inline bool NetworkInterfaceOptionsHasBeenSet() const { return m_networkInterfaceOptionsHasBeenSet; }
-    inline void SetNetworkInterfaceOptions(const CreateVerifiedAccessEndpointEniOptions& value) { m_networkInterfaceOptionsHasBeenSet = true; m_networkInterfaceOptions = value; }
-    inline void SetNetworkInterfaceOptions(CreateVerifiedAccessEndpointEniOptions&& value) { m_networkInterfaceOptionsHasBeenSet = true; m_networkInterfaceOptions = std::move(value); }
-    inline CreateVerifiedAccessEndpointRequest& WithNetworkInterfaceOptions(const CreateVerifiedAccessEndpointEniOptions& value) { SetNetworkInterfaceOptions(value); return *this;}
-    inline CreateVerifiedAccessEndpointRequest& WithNetworkInterfaceOptions(CreateVerifiedAccessEndpointEniOptions&& value) { SetNetworkInterfaceOptions(std::move(value)); return *this;}
+    template<typename NetworkInterfaceOptionsT = CreateVerifiedAccessEndpointEniOptions>
+    void SetNetworkInterfaceOptions(NetworkInterfaceOptionsT&& value) { m_networkInterfaceOptionsHasBeenSet = true; m_networkInterfaceOptions = std::forward<NetworkInterfaceOptionsT>(value); }
+    template<typename NetworkInterfaceOptionsT = CreateVerifiedAccessEndpointEniOptions>
+    CreateVerifiedAccessEndpointRequest& WithNetworkInterfaceOptions(NetworkInterfaceOptionsT&& value) { SetNetworkInterfaceOptions(std::forward<NetworkInterfaceOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description for the Verified Access endpoint.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateVerifiedAccessEndpointRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateVerifiedAccessEndpointRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateVerifiedAccessEndpointRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateVerifiedAccessEndpointRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Verified Access policy document.</p>
      */
-    inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
+    inline const Aws::String& GetPolicyDocument() const { return m_policyDocument; }
     inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
-    inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
-    inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::move(value); }
-    inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
-    inline CreateVerifiedAccessEndpointRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
-    inline CreateVerifiedAccessEndpointRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
-    inline CreateVerifiedAccessEndpointRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
+    template<typename PolicyDocumentT = Aws::String>
+    void SetPolicyDocument(PolicyDocumentT&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::forward<PolicyDocumentT>(value); }
+    template<typename PolicyDocumentT = Aws::String>
+    CreateVerifiedAccessEndpointRequest& WithPolicyDocument(PolicyDocumentT&& value) { SetPolicyDocument(std::forward<PolicyDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags to assign to the Verified Access endpoint.</p>
      */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline CreateVerifiedAccessEndpointRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline CreateVerifiedAccessEndpointRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline CreateVerifiedAccessEndpointRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline CreateVerifiedAccessEndpointRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    void SetTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::forward<TagSpecificationsT>(value); }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    CreateVerifiedAccessEndpointRequest& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
+    template<typename TagSpecificationsT = TagSpecification>
+    CreateVerifiedAccessEndpointRequest& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -221,14 +204,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">Ensuring
      * idempotency</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateVerifiedAccessEndpointRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateVerifiedAccessEndpointRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateVerifiedAccessEndpointRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateVerifiedAccessEndpointRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -238,7 +219,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline CreateVerifiedAccessEndpointRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -248,12 +229,12 @@ namespace Model
     /**
      * <p>The options for server side encryption.</p>
      */
-    inline const VerifiedAccessSseSpecificationRequest& GetSseSpecification() const{ return m_sseSpecification; }
+    inline const VerifiedAccessSseSpecificationRequest& GetSseSpecification() const { return m_sseSpecification; }
     inline bool SseSpecificationHasBeenSet() const { return m_sseSpecificationHasBeenSet; }
-    inline void SetSseSpecification(const VerifiedAccessSseSpecificationRequest& value) { m_sseSpecificationHasBeenSet = true; m_sseSpecification = value; }
-    inline void SetSseSpecification(VerifiedAccessSseSpecificationRequest&& value) { m_sseSpecificationHasBeenSet = true; m_sseSpecification = std::move(value); }
-    inline CreateVerifiedAccessEndpointRequest& WithSseSpecification(const VerifiedAccessSseSpecificationRequest& value) { SetSseSpecification(value); return *this;}
-    inline CreateVerifiedAccessEndpointRequest& WithSseSpecification(VerifiedAccessSseSpecificationRequest&& value) { SetSseSpecification(std::move(value)); return *this;}
+    template<typename SseSpecificationT = VerifiedAccessSseSpecificationRequest>
+    void SetSseSpecification(SseSpecificationT&& value) { m_sseSpecificationHasBeenSet = true; m_sseSpecification = std::forward<SseSpecificationT>(value); }
+    template<typename SseSpecificationT = VerifiedAccessSseSpecificationRequest>
+    CreateVerifiedAccessEndpointRequest& WithSseSpecification(SseSpecificationT&& value) { SetSseSpecification(std::forward<SseSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -261,12 +242,12 @@ namespace Model
      * <p>The RDS details. This parameter is required if the endpoint type is
      * <code>rds</code>.</p>
      */
-    inline const CreateVerifiedAccessEndpointRdsOptions& GetRdsOptions() const{ return m_rdsOptions; }
+    inline const CreateVerifiedAccessEndpointRdsOptions& GetRdsOptions() const { return m_rdsOptions; }
     inline bool RdsOptionsHasBeenSet() const { return m_rdsOptionsHasBeenSet; }
-    inline void SetRdsOptions(const CreateVerifiedAccessEndpointRdsOptions& value) { m_rdsOptionsHasBeenSet = true; m_rdsOptions = value; }
-    inline void SetRdsOptions(CreateVerifiedAccessEndpointRdsOptions&& value) { m_rdsOptionsHasBeenSet = true; m_rdsOptions = std::move(value); }
-    inline CreateVerifiedAccessEndpointRequest& WithRdsOptions(const CreateVerifiedAccessEndpointRdsOptions& value) { SetRdsOptions(value); return *this;}
-    inline CreateVerifiedAccessEndpointRequest& WithRdsOptions(CreateVerifiedAccessEndpointRdsOptions&& value) { SetRdsOptions(std::move(value)); return *this;}
+    template<typename RdsOptionsT = CreateVerifiedAccessEndpointRdsOptions>
+    void SetRdsOptions(RdsOptionsT&& value) { m_rdsOptionsHasBeenSet = true; m_rdsOptions = std::forward<RdsOptionsT>(value); }
+    template<typename RdsOptionsT = CreateVerifiedAccessEndpointRdsOptions>
+    CreateVerifiedAccessEndpointRequest& WithRdsOptions(RdsOptionsT&& value) { SetRdsOptions(std::forward<RdsOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -274,22 +255,22 @@ namespace Model
      * <p>The CIDR options. This parameter is required if the endpoint type is
      * <code>cidr</code>.</p>
      */
-    inline const CreateVerifiedAccessEndpointCidrOptions& GetCidrOptions() const{ return m_cidrOptions; }
+    inline const CreateVerifiedAccessEndpointCidrOptions& GetCidrOptions() const { return m_cidrOptions; }
     inline bool CidrOptionsHasBeenSet() const { return m_cidrOptionsHasBeenSet; }
-    inline void SetCidrOptions(const CreateVerifiedAccessEndpointCidrOptions& value) { m_cidrOptionsHasBeenSet = true; m_cidrOptions = value; }
-    inline void SetCidrOptions(CreateVerifiedAccessEndpointCidrOptions&& value) { m_cidrOptionsHasBeenSet = true; m_cidrOptions = std::move(value); }
-    inline CreateVerifiedAccessEndpointRequest& WithCidrOptions(const CreateVerifiedAccessEndpointCidrOptions& value) { SetCidrOptions(value); return *this;}
-    inline CreateVerifiedAccessEndpointRequest& WithCidrOptions(CreateVerifiedAccessEndpointCidrOptions&& value) { SetCidrOptions(std::move(value)); return *this;}
+    template<typename CidrOptionsT = CreateVerifiedAccessEndpointCidrOptions>
+    void SetCidrOptions(CidrOptionsT&& value) { m_cidrOptionsHasBeenSet = true; m_cidrOptions = std::forward<CidrOptionsT>(value); }
+    template<typename CidrOptionsT = CreateVerifiedAccessEndpointCidrOptions>
+    CreateVerifiedAccessEndpointRequest& WithCidrOptions(CidrOptionsT&& value) { SetCidrOptions(std::forward<CidrOptionsT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_verifiedAccessGroupId;
     bool m_verifiedAccessGroupIdHasBeenSet = false;
 
-    VerifiedAccessEndpointType m_endpointType;
+    VerifiedAccessEndpointType m_endpointType{VerifiedAccessEndpointType::NOT_SET};
     bool m_endpointTypeHasBeenSet = false;
 
-    VerifiedAccessEndpointAttachmentType m_attachmentType;
+    VerifiedAccessEndpointAttachmentType m_attachmentType{VerifiedAccessEndpointAttachmentType::NOT_SET};
     bool m_attachmentTypeHasBeenSet = false;
 
     Aws::String m_domainCertificateArn;
@@ -322,7 +303,7 @@ namespace Model
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     VerifiedAccessSseSpecificationRequest m_sseSpecification;

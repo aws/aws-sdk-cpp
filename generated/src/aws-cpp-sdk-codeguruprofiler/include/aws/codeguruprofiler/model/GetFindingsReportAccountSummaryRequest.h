@@ -29,7 +29,7 @@ namespace Model
   class GetFindingsReportAccountSummaryRequest : public CodeGuruProfilerRequest
   {
   public:
-    AWS_CODEGURUPROFILER_API GetFindingsReportAccountSummaryRequest();
+    AWS_CODEGURUPROFILER_API GetFindingsReportAccountSummaryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,7 +49,7 @@ namespace Model
      * profiles is returned. If set to <code>False</code>, analysis data is returned
      * from smaller time windows (for example, one hour).</p>
      */
-    inline bool GetDailyReportsOnly() const{ return m_dailyReportsOnly; }
+    inline bool GetDailyReportsOnly() const { return m_dailyReportsOnly; }
     inline bool DailyReportsOnlyHasBeenSet() const { return m_dailyReportsOnlyHasBeenSet; }
     inline void SetDailyReportsOnly(bool value) { m_dailyReportsOnlyHasBeenSet = true; m_dailyReportsOnly = value; }
     inline GetFindingsReportAccountSummaryRequest& WithDailyReportsOnly(bool value) { SetDailyReportsOnly(value); return *this;}
@@ -66,7 +66,7 @@ namespace Model
      * <code>GetFindingsReportAccountSummary</code> request with the returned
      * <code>nextToken</code> value.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetFindingsReportAccountSummaryRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -82,21 +82,19 @@ namespace Model
      * treated as an opaque identifier that is only used to retrieve the next items in
      * a list and not for other programmatic purposes.</p> 
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetFindingsReportAccountSummaryRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetFindingsReportAccountSummaryRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetFindingsReportAccountSummaryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetFindingsReportAccountSummaryRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_dailyReportsOnly;
+    bool m_dailyReportsOnly{false};
     bool m_dailyReportsOnlyHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

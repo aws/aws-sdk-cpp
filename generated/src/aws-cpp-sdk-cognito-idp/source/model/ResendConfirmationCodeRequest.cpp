@@ -12,16 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ResendConfirmationCodeRequest::ResendConfirmationCodeRequest() : 
-    m_clientIdHasBeenSet(false),
-    m_secretHashHasBeenSet(false),
-    m_userContextDataHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_analyticsMetadataHasBeenSet(false),
-    m_clientMetadataHasBeenSet(false)
-{
-}
-
 Aws::String ResendConfirmationCodeRequest::SerializePayload() const
 {
   JsonValue payload;

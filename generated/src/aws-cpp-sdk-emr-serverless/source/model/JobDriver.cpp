@@ -18,14 +18,7 @@ namespace EMRServerless
 namespace Model
 {
 
-JobDriver::JobDriver() : 
-    m_sparkSubmitHasBeenSet(false),
-    m_hiveHasBeenSet(false)
-{
-}
-
 JobDriver::JobDriver(JsonView jsonValue)
-  : JobDriver()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ JobDriver& JobDriver::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sparkSubmit"))
   {
     m_sparkSubmit = jsonValue.GetObject("sparkSubmit");
-
     m_sparkSubmitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hive"))
   {
     m_hive = jsonValue.GetObject("hive");
-
     m_hiveHasBeenSet = true;
   }
-
   return *this;
 }
 

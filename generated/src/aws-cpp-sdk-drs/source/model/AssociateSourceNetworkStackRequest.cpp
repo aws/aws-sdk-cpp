@@ -12,12 +12,6 @@ using namespace Aws::drs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateSourceNetworkStackRequest::AssociateSourceNetworkStackRequest() : 
-    m_cfnStackNameHasBeenSet(false),
-    m_sourceNetworkIDHasBeenSet(false)
-{
-}
-
 Aws::String AssociateSourceNetworkStackRequest::SerializePayload() const
 {
   JsonValue payload;

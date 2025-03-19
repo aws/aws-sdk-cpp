@@ -32,7 +32,7 @@ namespace Model
   class CustomerManagedS3Storage
   {
   public:
-    AWS_IOTSITEWISE_API CustomerManagedS3Storage();
+    AWS_IOTSITEWISE_API CustomerManagedS3Storage() = default;
     AWS_IOTSITEWISE_API CustomerManagedS3Storage(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API CustomerManagedS3Storage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-arn-format.html">Amazon
      * S3 resources</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>
      */
-    inline const Aws::String& GetS3ResourceArn() const{ return m_s3ResourceArn; }
+    inline const Aws::String& GetS3ResourceArn() const { return m_s3ResourceArn; }
     inline bool S3ResourceArnHasBeenSet() const { return m_s3ResourceArnHasBeenSet; }
-    inline void SetS3ResourceArn(const Aws::String& value) { m_s3ResourceArnHasBeenSet = true; m_s3ResourceArn = value; }
-    inline void SetS3ResourceArn(Aws::String&& value) { m_s3ResourceArnHasBeenSet = true; m_s3ResourceArn = std::move(value); }
-    inline void SetS3ResourceArn(const char* value) { m_s3ResourceArnHasBeenSet = true; m_s3ResourceArn.assign(value); }
-    inline CustomerManagedS3Storage& WithS3ResourceArn(const Aws::String& value) { SetS3ResourceArn(value); return *this;}
-    inline CustomerManagedS3Storage& WithS3ResourceArn(Aws::String&& value) { SetS3ResourceArn(std::move(value)); return *this;}
-    inline CustomerManagedS3Storage& WithS3ResourceArn(const char* value) { SetS3ResourceArn(value); return *this;}
+    template<typename S3ResourceArnT = Aws::String>
+    void SetS3ResourceArn(S3ResourceArnT&& value) { m_s3ResourceArnHasBeenSet = true; m_s3ResourceArn = std::forward<S3ResourceArnT>(value); }
+    template<typename S3ResourceArnT = Aws::String>
+    CustomerManagedS3Storage& WithS3ResourceArn(S3ResourceArnT&& value) { SetS3ResourceArn(std::forward<S3ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * of the Identity and Access Management role that allows IoT SiteWise to send data
      * to Amazon S3.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline CustomerManagedS3Storage& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CustomerManagedS3Storage& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CustomerManagedS3Storage& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CustomerManagedS3Storage& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

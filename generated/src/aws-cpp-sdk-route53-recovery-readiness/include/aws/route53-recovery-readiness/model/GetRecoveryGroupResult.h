@@ -29,7 +29,7 @@ namespace Model
   class GetRecoveryGroupResult
   {
   public:
-    AWS_ROUTE53RECOVERYREADINESS_API GetRecoveryGroupResult();
+    AWS_ROUTE53RECOVERYREADINESS_API GetRecoveryGroupResult() = default;
     AWS_ROUTE53RECOVERYREADINESS_API GetRecoveryGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53RECOVERYREADINESS_API GetRecoveryGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,81 +38,76 @@ namespace Model
     /**
      * <p>A list of a cell's Amazon Resource Names (ARNs).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCells() const{ return m_cells; }
-    inline void SetCells(const Aws::Vector<Aws::String>& value) { m_cells = value; }
-    inline void SetCells(Aws::Vector<Aws::String>&& value) { m_cells = std::move(value); }
-    inline GetRecoveryGroupResult& WithCells(const Aws::Vector<Aws::String>& value) { SetCells(value); return *this;}
-    inline GetRecoveryGroupResult& WithCells(Aws::Vector<Aws::String>&& value) { SetCells(std::move(value)); return *this;}
-    inline GetRecoveryGroupResult& AddCells(const Aws::String& value) { m_cells.push_back(value); return *this; }
-    inline GetRecoveryGroupResult& AddCells(Aws::String&& value) { m_cells.push_back(std::move(value)); return *this; }
-    inline GetRecoveryGroupResult& AddCells(const char* value) { m_cells.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetCells() const { return m_cells; }
+    template<typename CellsT = Aws::Vector<Aws::String>>
+    void SetCells(CellsT&& value) { m_cellsHasBeenSet = true; m_cells = std::forward<CellsT>(value); }
+    template<typename CellsT = Aws::Vector<Aws::String>>
+    GetRecoveryGroupResult& WithCells(CellsT&& value) { SetCells(std::forward<CellsT>(value)); return *this;}
+    template<typename CellsT = Aws::String>
+    GetRecoveryGroupResult& AddCells(CellsT&& value) { m_cellsHasBeenSet = true; m_cells.emplace_back(std::forward<CellsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the recovery group.</p>
      */
-    inline const Aws::String& GetRecoveryGroupArn() const{ return m_recoveryGroupArn; }
-    inline void SetRecoveryGroupArn(const Aws::String& value) { m_recoveryGroupArn = value; }
-    inline void SetRecoveryGroupArn(Aws::String&& value) { m_recoveryGroupArn = std::move(value); }
-    inline void SetRecoveryGroupArn(const char* value) { m_recoveryGroupArn.assign(value); }
-    inline GetRecoveryGroupResult& WithRecoveryGroupArn(const Aws::String& value) { SetRecoveryGroupArn(value); return *this;}
-    inline GetRecoveryGroupResult& WithRecoveryGroupArn(Aws::String&& value) { SetRecoveryGroupArn(std::move(value)); return *this;}
-    inline GetRecoveryGroupResult& WithRecoveryGroupArn(const char* value) { SetRecoveryGroupArn(value); return *this;}
+    inline const Aws::String& GetRecoveryGroupArn() const { return m_recoveryGroupArn; }
+    template<typename RecoveryGroupArnT = Aws::String>
+    void SetRecoveryGroupArn(RecoveryGroupArnT&& value) { m_recoveryGroupArnHasBeenSet = true; m_recoveryGroupArn = std::forward<RecoveryGroupArnT>(value); }
+    template<typename RecoveryGroupArnT = Aws::String>
+    GetRecoveryGroupResult& WithRecoveryGroupArn(RecoveryGroupArnT&& value) { SetRecoveryGroupArn(std::forward<RecoveryGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the recovery group.</p>
      */
-    inline const Aws::String& GetRecoveryGroupName() const{ return m_recoveryGroupName; }
-    inline void SetRecoveryGroupName(const Aws::String& value) { m_recoveryGroupName = value; }
-    inline void SetRecoveryGroupName(Aws::String&& value) { m_recoveryGroupName = std::move(value); }
-    inline void SetRecoveryGroupName(const char* value) { m_recoveryGroupName.assign(value); }
-    inline GetRecoveryGroupResult& WithRecoveryGroupName(const Aws::String& value) { SetRecoveryGroupName(value); return *this;}
-    inline GetRecoveryGroupResult& WithRecoveryGroupName(Aws::String&& value) { SetRecoveryGroupName(std::move(value)); return *this;}
-    inline GetRecoveryGroupResult& WithRecoveryGroupName(const char* value) { SetRecoveryGroupName(value); return *this;}
+    inline const Aws::String& GetRecoveryGroupName() const { return m_recoveryGroupName; }
+    template<typename RecoveryGroupNameT = Aws::String>
+    void SetRecoveryGroupName(RecoveryGroupNameT&& value) { m_recoveryGroupNameHasBeenSet = true; m_recoveryGroupName = std::forward<RecoveryGroupNameT>(value); }
+    template<typename RecoveryGroupNameT = Aws::String>
+    GetRecoveryGroupResult& WithRecoveryGroupName(RecoveryGroupNameT&& value) { SetRecoveryGroupName(std::forward<RecoveryGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags associated with the recovery group.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetRecoveryGroupResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetRecoveryGroupResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetRecoveryGroupResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetRecoveryGroupResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetRecoveryGroupResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetRecoveryGroupResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetRecoveryGroupResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetRecoveryGroupResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetRecoveryGroupResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetRecoveryGroupResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetRecoveryGroupResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRecoveryGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRecoveryGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRecoveryGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRecoveryGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_cells;
+    bool m_cellsHasBeenSet = false;
 
     Aws::String m_recoveryGroupArn;
+    bool m_recoveryGroupArnHasBeenSet = false;
 
     Aws::String m_recoveryGroupName;
+    bool m_recoveryGroupNameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

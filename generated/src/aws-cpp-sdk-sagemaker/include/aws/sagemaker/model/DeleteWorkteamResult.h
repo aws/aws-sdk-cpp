@@ -27,7 +27,7 @@ namespace Model
   class DeleteWorkteamResult
   {
   public:
-    AWS_SAGEMAKER_API DeleteWorkteamResult();
+    AWS_SAGEMAKER_API DeleteWorkteamResult() = default;
     AWS_SAGEMAKER_API DeleteWorkteamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API DeleteWorkteamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,26 +37,26 @@ namespace Model
      * <p>Returns <code>true</code> if the work team was successfully deleted;
      * otherwise, returns <code>false</code>.</p>
      */
-    inline bool GetSuccess() const{ return m_success; }
-    inline void SetSuccess(bool value) { m_success = value; }
+    inline bool GetSuccess() const { return m_success; }
+    inline void SetSuccess(bool value) { m_successHasBeenSet = true; m_success = value; }
     inline DeleteWorkteamResult& WithSuccess(bool value) { SetSuccess(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteWorkteamResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteWorkteamResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteWorkteamResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteWorkteamResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_success;
+    bool m_success{false};
+    bool m_successHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

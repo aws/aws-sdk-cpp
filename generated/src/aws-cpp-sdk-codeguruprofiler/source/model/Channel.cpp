@@ -18,15 +18,7 @@ namespace CodeGuruProfiler
 namespace Model
 {
 
-Channel::Channel() : 
-    m_eventPublishersHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_uriHasBeenSet(false)
-{
-}
-
 Channel::Channel(JsonView jsonValue)
-  : Channel()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ Channel& Channel::operator =(JsonView jsonValue)
     }
     m_eventPublishersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uri"))
   {
     m_uri = jsonValue.GetString("uri");
-
     m_uriHasBeenSet = true;
   }
-
   return *this;
 }
 

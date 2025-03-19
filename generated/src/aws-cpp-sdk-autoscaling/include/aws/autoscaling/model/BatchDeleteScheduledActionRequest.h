@@ -22,7 +22,7 @@ namespace Model
   class BatchDeleteScheduledActionRequest : public AutoScalingRequest
   {
   public:
-    AWS_AUTOSCALING_API BatchDeleteScheduledActionRequest();
+    AWS_AUTOSCALING_API BatchDeleteScheduledActionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
-    inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+    inline const Aws::String& GetAutoScalingGroupName() const { return m_autoScalingGroupName; }
     inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
-    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
-    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
-    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
-    inline BatchDeleteScheduledActionRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
-    inline BatchDeleteScheduledActionRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
-    inline BatchDeleteScheduledActionRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+    template<typename AutoScalingGroupNameT = Aws::String>
+    void SetAutoScalingGroupName(AutoScalingGroupNameT&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::forward<AutoScalingGroupNameT>(value); }
+    template<typename AutoScalingGroupNameT = Aws::String>
+    BatchDeleteScheduledActionRequest& WithAutoScalingGroupName(AutoScalingGroupNameT&& value) { SetAutoScalingGroupName(std::forward<AutoScalingGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,15 +54,14 @@ namespace Model
      * <p>The names of the scheduled actions to delete. The maximum number allowed is
      * 50. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetScheduledActionNames() const{ return m_scheduledActionNames; }
+    inline const Aws::Vector<Aws::String>& GetScheduledActionNames() const { return m_scheduledActionNames; }
     inline bool ScheduledActionNamesHasBeenSet() const { return m_scheduledActionNamesHasBeenSet; }
-    inline void SetScheduledActionNames(const Aws::Vector<Aws::String>& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames = value; }
-    inline void SetScheduledActionNames(Aws::Vector<Aws::String>&& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames = std::move(value); }
-    inline BatchDeleteScheduledActionRequest& WithScheduledActionNames(const Aws::Vector<Aws::String>& value) { SetScheduledActionNames(value); return *this;}
-    inline BatchDeleteScheduledActionRequest& WithScheduledActionNames(Aws::Vector<Aws::String>&& value) { SetScheduledActionNames(std::move(value)); return *this;}
-    inline BatchDeleteScheduledActionRequest& AddScheduledActionNames(const Aws::String& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames.push_back(value); return *this; }
-    inline BatchDeleteScheduledActionRequest& AddScheduledActionNames(Aws::String&& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames.push_back(std::move(value)); return *this; }
-    inline BatchDeleteScheduledActionRequest& AddScheduledActionNames(const char* value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames.push_back(value); return *this; }
+    template<typename ScheduledActionNamesT = Aws::Vector<Aws::String>>
+    void SetScheduledActionNames(ScheduledActionNamesT&& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames = std::forward<ScheduledActionNamesT>(value); }
+    template<typename ScheduledActionNamesT = Aws::Vector<Aws::String>>
+    BatchDeleteScheduledActionRequest& WithScheduledActionNames(ScheduledActionNamesT&& value) { SetScheduledActionNames(std::forward<ScheduledActionNamesT>(value)); return *this;}
+    template<typename ScheduledActionNamesT = Aws::String>
+    BatchDeleteScheduledActionRequest& AddScheduledActionNames(ScheduledActionNamesT&& value) { m_scheduledActionNamesHasBeenSet = true; m_scheduledActionNames.emplace_back(std::forward<ScheduledActionNamesT>(value)); return *this; }
     ///@}
   private:
 

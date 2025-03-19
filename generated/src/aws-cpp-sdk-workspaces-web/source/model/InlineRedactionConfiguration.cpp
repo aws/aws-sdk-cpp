@@ -18,17 +18,7 @@ namespace WorkSpacesWeb
 namespace Model
 {
 
-InlineRedactionConfiguration::InlineRedactionConfiguration() : 
-    m_globalConfidenceLevel(0),
-    m_globalConfidenceLevelHasBeenSet(false),
-    m_globalEnforcedUrlsHasBeenSet(false),
-    m_globalExemptUrlsHasBeenSet(false),
-    m_inlineRedactionPatternsHasBeenSet(false)
-{
-}
-
 InlineRedactionConfiguration::InlineRedactionConfiguration(JsonView jsonValue)
-  : InlineRedactionConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ InlineRedactionConfiguration& InlineRedactionConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("globalConfidenceLevel"))
   {
     m_globalConfidenceLevel = jsonValue.GetInteger("globalConfidenceLevel");
-
     m_globalConfidenceLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("globalEnforcedUrls"))
   {
     Aws::Utils::Array<JsonView> globalEnforcedUrlsJsonList = jsonValue.GetArray("globalEnforcedUrls");
@@ -51,7 +39,6 @@ InlineRedactionConfiguration& InlineRedactionConfiguration::operator =(JsonView 
     }
     m_globalEnforcedUrlsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("globalExemptUrls"))
   {
     Aws::Utils::Array<JsonView> globalExemptUrlsJsonList = jsonValue.GetArray("globalExemptUrls");
@@ -61,7 +48,6 @@ InlineRedactionConfiguration& InlineRedactionConfiguration::operator =(JsonView 
     }
     m_globalExemptUrlsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inlineRedactionPatterns"))
   {
     Aws::Utils::Array<JsonView> inlineRedactionPatternsJsonList = jsonValue.GetArray("inlineRedactionPatterns");
@@ -71,7 +57,6 @@ InlineRedactionConfiguration& InlineRedactionConfiguration::operator =(JsonView 
     }
     m_inlineRedactionPatternsHasBeenSet = true;
   }
-
   return *this;
 }
 

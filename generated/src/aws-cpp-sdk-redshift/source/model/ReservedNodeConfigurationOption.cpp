@@ -20,16 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ReservedNodeConfigurationOption::ReservedNodeConfigurationOption() : 
-    m_sourceReservedNodeHasBeenSet(false),
-    m_targetReservedNodeCount(0),
-    m_targetReservedNodeCountHasBeenSet(false),
-    m_targetReservedNodeOfferingHasBeenSet(false)
-{
-}
-
 ReservedNodeConfigurationOption::ReservedNodeConfigurationOption(const XmlNode& xmlNode)
-  : ReservedNodeConfigurationOption()
 {
   *this = xmlNode;
 }

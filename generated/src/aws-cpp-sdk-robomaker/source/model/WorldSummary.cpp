@@ -18,16 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-WorldSummary::WorldSummary() : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_generationJobHasBeenSet(false),
-    m_templateHasBeenSet(false)
-{
-}
-
 WorldSummary::WorldSummary(JsonView jsonValue)
-  : WorldSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ WorldSummary& WorldSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("generationJob"))
   {
     m_generationJob = jsonValue.GetString("generationJob");
-
     m_generationJobHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("template"))
   {
     m_template = jsonValue.GetString("template");
-
     m_templateHasBeenSet = true;
   }
-
   return *this;
 }
 

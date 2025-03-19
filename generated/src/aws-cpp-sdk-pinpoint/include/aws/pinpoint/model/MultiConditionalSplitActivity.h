@@ -43,7 +43,7 @@ namespace Model
   class MultiConditionalSplitActivity
   {
   public:
-    AWS_PINPOINT_API MultiConditionalSplitActivity();
+    AWS_PINPOINT_API MultiConditionalSplitActivity() = default;
     AWS_PINPOINT_API MultiConditionalSplitActivity(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API MultiConditionalSplitActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,14 +54,14 @@ namespace Model
      * <p>The paths for the activity, including the conditions for entering each path
      * and the activity to perform for each path.</p>
      */
-    inline const Aws::Vector<MultiConditionalBranch>& GetBranches() const{ return m_branches; }
+    inline const Aws::Vector<MultiConditionalBranch>& GetBranches() const { return m_branches; }
     inline bool BranchesHasBeenSet() const { return m_branchesHasBeenSet; }
-    inline void SetBranches(const Aws::Vector<MultiConditionalBranch>& value) { m_branchesHasBeenSet = true; m_branches = value; }
-    inline void SetBranches(Aws::Vector<MultiConditionalBranch>&& value) { m_branchesHasBeenSet = true; m_branches = std::move(value); }
-    inline MultiConditionalSplitActivity& WithBranches(const Aws::Vector<MultiConditionalBranch>& value) { SetBranches(value); return *this;}
-    inline MultiConditionalSplitActivity& WithBranches(Aws::Vector<MultiConditionalBranch>&& value) { SetBranches(std::move(value)); return *this;}
-    inline MultiConditionalSplitActivity& AddBranches(const MultiConditionalBranch& value) { m_branchesHasBeenSet = true; m_branches.push_back(value); return *this; }
-    inline MultiConditionalSplitActivity& AddBranches(MultiConditionalBranch&& value) { m_branchesHasBeenSet = true; m_branches.push_back(std::move(value)); return *this; }
+    template<typename BranchesT = Aws::Vector<MultiConditionalBranch>>
+    void SetBranches(BranchesT&& value) { m_branchesHasBeenSet = true; m_branches = std::forward<BranchesT>(value); }
+    template<typename BranchesT = Aws::Vector<MultiConditionalBranch>>
+    MultiConditionalSplitActivity& WithBranches(BranchesT&& value) { SetBranches(std::forward<BranchesT>(value)); return *this;}
+    template<typename BranchesT = MultiConditionalBranch>
+    MultiConditionalSplitActivity& AddBranches(BranchesT&& value) { m_branchesHasBeenSet = true; m_branches.emplace_back(std::forward<BranchesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -69,14 +69,12 @@ namespace Model
      * <p>The unique identifier for the activity to perform for participants who don't
      * meet any of the conditions specified for other paths in the activity.</p>
      */
-    inline const Aws::String& GetDefaultActivity() const{ return m_defaultActivity; }
+    inline const Aws::String& GetDefaultActivity() const { return m_defaultActivity; }
     inline bool DefaultActivityHasBeenSet() const { return m_defaultActivityHasBeenSet; }
-    inline void SetDefaultActivity(const Aws::String& value) { m_defaultActivityHasBeenSet = true; m_defaultActivity = value; }
-    inline void SetDefaultActivity(Aws::String&& value) { m_defaultActivityHasBeenSet = true; m_defaultActivity = std::move(value); }
-    inline void SetDefaultActivity(const char* value) { m_defaultActivityHasBeenSet = true; m_defaultActivity.assign(value); }
-    inline MultiConditionalSplitActivity& WithDefaultActivity(const Aws::String& value) { SetDefaultActivity(value); return *this;}
-    inline MultiConditionalSplitActivity& WithDefaultActivity(Aws::String&& value) { SetDefaultActivity(std::move(value)); return *this;}
-    inline MultiConditionalSplitActivity& WithDefaultActivity(const char* value) { SetDefaultActivity(value); return *this;}
+    template<typename DefaultActivityT = Aws::String>
+    void SetDefaultActivity(DefaultActivityT&& value) { m_defaultActivityHasBeenSet = true; m_defaultActivity = std::forward<DefaultActivityT>(value); }
+    template<typename DefaultActivityT = Aws::String>
+    MultiConditionalSplitActivity& WithDefaultActivity(DefaultActivityT&& value) { SetDefaultActivity(std::forward<DefaultActivityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,12 +82,12 @@ namespace Model
      * <p>The amount of time to wait or the date and time when Amazon Pinpoint
      * determines whether the conditions are met.</p>
      */
-    inline const WaitTime& GetEvaluationWaitTime() const{ return m_evaluationWaitTime; }
+    inline const WaitTime& GetEvaluationWaitTime() const { return m_evaluationWaitTime; }
     inline bool EvaluationWaitTimeHasBeenSet() const { return m_evaluationWaitTimeHasBeenSet; }
-    inline void SetEvaluationWaitTime(const WaitTime& value) { m_evaluationWaitTimeHasBeenSet = true; m_evaluationWaitTime = value; }
-    inline void SetEvaluationWaitTime(WaitTime&& value) { m_evaluationWaitTimeHasBeenSet = true; m_evaluationWaitTime = std::move(value); }
-    inline MultiConditionalSplitActivity& WithEvaluationWaitTime(const WaitTime& value) { SetEvaluationWaitTime(value); return *this;}
-    inline MultiConditionalSplitActivity& WithEvaluationWaitTime(WaitTime&& value) { SetEvaluationWaitTime(std::move(value)); return *this;}
+    template<typename EvaluationWaitTimeT = WaitTime>
+    void SetEvaluationWaitTime(EvaluationWaitTimeT&& value) { m_evaluationWaitTimeHasBeenSet = true; m_evaluationWaitTime = std::forward<EvaluationWaitTimeT>(value); }
+    template<typename EvaluationWaitTimeT = WaitTime>
+    MultiConditionalSplitActivity& WithEvaluationWaitTime(EvaluationWaitTimeT&& value) { SetEvaluationWaitTime(std::forward<EvaluationWaitTimeT>(value)); return *this;}
     ///@}
   private:
 

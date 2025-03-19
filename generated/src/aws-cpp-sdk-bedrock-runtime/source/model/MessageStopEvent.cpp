@@ -18,15 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-MessageStopEvent::MessageStopEvent() : 
-    m_stopReason(StopReason::NOT_SET),
-    m_stopReasonHasBeenSet(false),
-    m_additionalModelResponseFieldsHasBeenSet(false)
-{
-}
-
 MessageStopEvent::MessageStopEvent(JsonView jsonValue)
-  : MessageStopEvent()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MessageStopEvent& MessageStopEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("stopReason"))
   {
     m_stopReason = StopReasonMapper::GetStopReasonForName(jsonValue.GetString("stopReason"));
-
     m_stopReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("additionalModelResponseFields"))
   {
     m_additionalModelResponseFields = jsonValue.GetObject("additionalModelResponseFields");
-
     m_additionalModelResponseFieldsHasBeenSet = true;
   }
-
   return *this;
 }
 

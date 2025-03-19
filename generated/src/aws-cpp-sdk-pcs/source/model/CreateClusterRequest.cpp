@@ -12,19 +12,6 @@ using namespace Aws::PCS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateClusterRequest::CreateClusterRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_schedulerHasBeenSet(false),
-    m_size(Size::NOT_SET),
-    m_sizeHasBeenSet(false),
-    m_networkingHasBeenSet(false),
-    m_slurmConfigurationHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateClusterRequest::SerializePayload() const
 {
   JsonValue payload;

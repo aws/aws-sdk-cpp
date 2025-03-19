@@ -18,15 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-ContactListDestination::ContactListDestination() : 
-    m_contactListNameHasBeenSet(false),
-    m_contactListImportAction(ContactListImportAction::NOT_SET),
-    m_contactListImportActionHasBeenSet(false)
-{
-}
-
 ContactListDestination::ContactListDestination(JsonView jsonValue)
-  : ContactListDestination()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ContactListDestination& ContactListDestination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ContactListName"))
   {
     m_contactListName = jsonValue.GetString("ContactListName");
-
     m_contactListNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContactListImportAction"))
   {
     m_contactListImportAction = ContactListImportActionMapper::GetContactListImportActionForName(jsonValue.GetString("ContactListImportAction"));
-
     m_contactListImportActionHasBeenSet = true;
   }
-
   return *this;
 }
 

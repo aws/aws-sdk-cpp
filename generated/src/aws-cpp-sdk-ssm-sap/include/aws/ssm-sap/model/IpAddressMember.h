@@ -32,7 +32,7 @@ namespace Model
   class IpAddressMember
   {
   public:
-    AWS_SSMSAP_API IpAddressMember();
+    AWS_SSMSAP_API IpAddressMember() = default;
     AWS_SSMSAP_API IpAddressMember(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMSAP_API IpAddressMember& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMSAP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The IP address.</p>
      */
-    inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+    inline const Aws::String& GetIpAddress() const { return m_ipAddress; }
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
-    inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
-    inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
-    inline IpAddressMember& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
-    inline IpAddressMember& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
-    inline IpAddressMember& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+    template<typename IpAddressT = Aws::String>
+    void SetIpAddress(IpAddressT&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::forward<IpAddressT>(value); }
+    template<typename IpAddressT = Aws::String>
+    IpAddressMember& WithIpAddress(IpAddressT&& value) { SetIpAddress(std::forward<IpAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The primary IP address.</p>
      */
-    inline bool GetPrimary() const{ return m_primary; }
+    inline bool GetPrimary() const { return m_primary; }
     inline bool PrimaryHasBeenSet() const { return m_primaryHasBeenSet; }
     inline void SetPrimary(bool value) { m_primaryHasBeenSet = true; m_primary = value; }
     inline IpAddressMember& WithPrimary(bool value) { SetPrimary(value); return *this;}
@@ -66,22 +64,20 @@ namespace Model
     /**
      * <p>The type of allocation for the IP address.</p>
      */
-    inline const AllocationType& GetAllocationType() const{ return m_allocationType; }
+    inline AllocationType GetAllocationType() const { return m_allocationType; }
     inline bool AllocationTypeHasBeenSet() const { return m_allocationTypeHasBeenSet; }
-    inline void SetAllocationType(const AllocationType& value) { m_allocationTypeHasBeenSet = true; m_allocationType = value; }
-    inline void SetAllocationType(AllocationType&& value) { m_allocationTypeHasBeenSet = true; m_allocationType = std::move(value); }
-    inline IpAddressMember& WithAllocationType(const AllocationType& value) { SetAllocationType(value); return *this;}
-    inline IpAddressMember& WithAllocationType(AllocationType&& value) { SetAllocationType(std::move(value)); return *this;}
+    inline void SetAllocationType(AllocationType value) { m_allocationTypeHasBeenSet = true; m_allocationType = value; }
+    inline IpAddressMember& WithAllocationType(AllocationType value) { SetAllocationType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_ipAddress;
     bool m_ipAddressHasBeenSet = false;
 
-    bool m_primary;
+    bool m_primary{false};
     bool m_primaryHasBeenSet = false;
 
-    AllocationType m_allocationType;
+    AllocationType m_allocationType{AllocationType::NOT_SET};
     bool m_allocationTypeHasBeenSet = false;
   };
 

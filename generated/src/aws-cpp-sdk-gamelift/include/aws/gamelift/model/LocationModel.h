@@ -34,7 +34,7 @@ namespace Model
   class LocationModel
   {
   public:
-    AWS_GAMELIFT_API LocationModel();
+    AWS_GAMELIFT_API LocationModel() = default;
     AWS_GAMELIFT_API LocationModel(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API LocationModel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The location's name.</p>
      */
-    inline const Aws::String& GetLocationName() const{ return m_locationName; }
+    inline const Aws::String& GetLocationName() const { return m_locationName; }
     inline bool LocationNameHasBeenSet() const { return m_locationNameHasBeenSet; }
-    inline void SetLocationName(const Aws::String& value) { m_locationNameHasBeenSet = true; m_locationName = value; }
-    inline void SetLocationName(Aws::String&& value) { m_locationNameHasBeenSet = true; m_locationName = std::move(value); }
-    inline void SetLocationName(const char* value) { m_locationNameHasBeenSet = true; m_locationName.assign(value); }
-    inline LocationModel& WithLocationName(const Aws::String& value) { SetLocationName(value); return *this;}
-    inline LocationModel& WithLocationName(Aws::String&& value) { SetLocationName(std::move(value)); return *this;}
-    inline LocationModel& WithLocationName(const char* value) { SetLocationName(value); return *this;}
+    template<typename LocationNameT = Aws::String>
+    void SetLocationName(LocationNameT&& value) { m_locationNameHasBeenSet = true; m_locationName = std::forward<LocationNameT>(value); }
+    template<typename LocationNameT = Aws::String>
+    LocationModel& WithLocationName(LocationNameT&& value) { SetLocationName(std::forward<LocationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::location/location-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
-    inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
+    inline const Aws::String& GetLocationArn() const { return m_locationArn; }
     inline bool LocationArnHasBeenSet() const { return m_locationArnHasBeenSet; }
-    inline void SetLocationArn(const Aws::String& value) { m_locationArnHasBeenSet = true; m_locationArn = value; }
-    inline void SetLocationArn(Aws::String&& value) { m_locationArnHasBeenSet = true; m_locationArn = std::move(value); }
-    inline void SetLocationArn(const char* value) { m_locationArnHasBeenSet = true; m_locationArn.assign(value); }
-    inline LocationModel& WithLocationArn(const Aws::String& value) { SetLocationArn(value); return *this;}
-    inline LocationModel& WithLocationArn(Aws::String&& value) { SetLocationArn(std::move(value)); return *this;}
-    inline LocationModel& WithLocationArn(const char* value) { SetLocationArn(value); return *this;}
+    template<typename LocationArnT = Aws::String>
+    void SetLocationArn(LocationArnT&& value) { m_locationArnHasBeenSet = true; m_locationArn = std::forward<LocationArnT>(value); }
+    template<typename LocationArnT = Aws::String>
+    LocationModel& WithLocationArn(LocationArnT&& value) { SetLocationArn(std::forward<LocationArnT>(value)); return *this;}
     ///@}
   private:
 

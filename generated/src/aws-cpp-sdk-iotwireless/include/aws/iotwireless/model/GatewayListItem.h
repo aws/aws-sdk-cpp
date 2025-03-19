@@ -32,7 +32,7 @@ namespace Model
   class GatewayListItem
   {
   public:
-    AWS_IOTWIRELESS_API GatewayListItem();
+    AWS_IOTWIRELESS_API GatewayListItem() = default;
     AWS_IOTWIRELESS_API GatewayListItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API GatewayListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The ID of the wireless gateways that you want to add to the list of gateways
      * when sending downlink messages.</p>
      */
-    inline const Aws::String& GetGatewayId() const{ return m_gatewayId; }
+    inline const Aws::String& GetGatewayId() const { return m_gatewayId; }
     inline bool GatewayIdHasBeenSet() const { return m_gatewayIdHasBeenSet; }
-    inline void SetGatewayId(const Aws::String& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
-    inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::move(value); }
-    inline void SetGatewayId(const char* value) { m_gatewayIdHasBeenSet = true; m_gatewayId.assign(value); }
-    inline GatewayListItem& WithGatewayId(const Aws::String& value) { SetGatewayId(value); return *this;}
-    inline GatewayListItem& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
-    inline GatewayListItem& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
+    template<typename GatewayIdT = Aws::String>
+    void SetGatewayId(GatewayIdT&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::forward<GatewayIdT>(value); }
+    template<typename GatewayIdT = Aws::String>
+    GatewayListItem& WithGatewayId(GatewayIdT&& value) { SetGatewayId(std::forward<GatewayIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * <p>The frequency to use for the gateways when sending a downlink message to the
      * wireless device.</p>
      */
-    inline int GetDownlinkFrequency() const{ return m_downlinkFrequency; }
+    inline int GetDownlinkFrequency() const { return m_downlinkFrequency; }
     inline bool DownlinkFrequencyHasBeenSet() const { return m_downlinkFrequencyHasBeenSet; }
     inline void SetDownlinkFrequency(int value) { m_downlinkFrequencyHasBeenSet = true; m_downlinkFrequency = value; }
     inline GatewayListItem& WithDownlinkFrequency(int value) { SetDownlinkFrequency(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     Aws::String m_gatewayId;
     bool m_gatewayIdHasBeenSet = false;
 
-    int m_downlinkFrequency;
+    int m_downlinkFrequency{0};
     bool m_downlinkFrequencyHasBeenSet = false;
   };
 

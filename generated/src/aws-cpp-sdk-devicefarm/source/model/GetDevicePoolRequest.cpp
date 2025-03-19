@@ -12,11 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDevicePoolRequest::GetDevicePoolRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String GetDevicePoolRequest::SerializePayload() const
 {
   JsonValue payload;

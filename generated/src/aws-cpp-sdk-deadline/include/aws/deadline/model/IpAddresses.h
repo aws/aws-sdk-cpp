@@ -32,7 +32,7 @@ namespace Model
   class IpAddresses
   {
   public:
-    AWS_DEADLINE_API IpAddresses();
+    AWS_DEADLINE_API IpAddresses() = default;
     AWS_DEADLINE_API IpAddresses(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API IpAddresses& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,30 +42,28 @@ namespace Model
     /**
      * <p>The IpV4 address of the network.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIpV4Addresses() const{ return m_ipV4Addresses; }
+    inline const Aws::Vector<Aws::String>& GetIpV4Addresses() const { return m_ipV4Addresses; }
     inline bool IpV4AddressesHasBeenSet() const { return m_ipV4AddressesHasBeenSet; }
-    inline void SetIpV4Addresses(const Aws::Vector<Aws::String>& value) { m_ipV4AddressesHasBeenSet = true; m_ipV4Addresses = value; }
-    inline void SetIpV4Addresses(Aws::Vector<Aws::String>&& value) { m_ipV4AddressesHasBeenSet = true; m_ipV4Addresses = std::move(value); }
-    inline IpAddresses& WithIpV4Addresses(const Aws::Vector<Aws::String>& value) { SetIpV4Addresses(value); return *this;}
-    inline IpAddresses& WithIpV4Addresses(Aws::Vector<Aws::String>&& value) { SetIpV4Addresses(std::move(value)); return *this;}
-    inline IpAddresses& AddIpV4Addresses(const Aws::String& value) { m_ipV4AddressesHasBeenSet = true; m_ipV4Addresses.push_back(value); return *this; }
-    inline IpAddresses& AddIpV4Addresses(Aws::String&& value) { m_ipV4AddressesHasBeenSet = true; m_ipV4Addresses.push_back(std::move(value)); return *this; }
-    inline IpAddresses& AddIpV4Addresses(const char* value) { m_ipV4AddressesHasBeenSet = true; m_ipV4Addresses.push_back(value); return *this; }
+    template<typename IpV4AddressesT = Aws::Vector<Aws::String>>
+    void SetIpV4Addresses(IpV4AddressesT&& value) { m_ipV4AddressesHasBeenSet = true; m_ipV4Addresses = std::forward<IpV4AddressesT>(value); }
+    template<typename IpV4AddressesT = Aws::Vector<Aws::String>>
+    IpAddresses& WithIpV4Addresses(IpV4AddressesT&& value) { SetIpV4Addresses(std::forward<IpV4AddressesT>(value)); return *this;}
+    template<typename IpV4AddressesT = Aws::String>
+    IpAddresses& AddIpV4Addresses(IpV4AddressesT&& value) { m_ipV4AddressesHasBeenSet = true; m_ipV4Addresses.emplace_back(std::forward<IpV4AddressesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The IpV6 address for the network and node component.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIpV6Addresses() const{ return m_ipV6Addresses; }
+    inline const Aws::Vector<Aws::String>& GetIpV6Addresses() const { return m_ipV6Addresses; }
     inline bool IpV6AddressesHasBeenSet() const { return m_ipV6AddressesHasBeenSet; }
-    inline void SetIpV6Addresses(const Aws::Vector<Aws::String>& value) { m_ipV6AddressesHasBeenSet = true; m_ipV6Addresses = value; }
-    inline void SetIpV6Addresses(Aws::Vector<Aws::String>&& value) { m_ipV6AddressesHasBeenSet = true; m_ipV6Addresses = std::move(value); }
-    inline IpAddresses& WithIpV6Addresses(const Aws::Vector<Aws::String>& value) { SetIpV6Addresses(value); return *this;}
-    inline IpAddresses& WithIpV6Addresses(Aws::Vector<Aws::String>&& value) { SetIpV6Addresses(std::move(value)); return *this;}
-    inline IpAddresses& AddIpV6Addresses(const Aws::String& value) { m_ipV6AddressesHasBeenSet = true; m_ipV6Addresses.push_back(value); return *this; }
-    inline IpAddresses& AddIpV6Addresses(Aws::String&& value) { m_ipV6AddressesHasBeenSet = true; m_ipV6Addresses.push_back(std::move(value)); return *this; }
-    inline IpAddresses& AddIpV6Addresses(const char* value) { m_ipV6AddressesHasBeenSet = true; m_ipV6Addresses.push_back(value); return *this; }
+    template<typename IpV6AddressesT = Aws::Vector<Aws::String>>
+    void SetIpV6Addresses(IpV6AddressesT&& value) { m_ipV6AddressesHasBeenSet = true; m_ipV6Addresses = std::forward<IpV6AddressesT>(value); }
+    template<typename IpV6AddressesT = Aws::Vector<Aws::String>>
+    IpAddresses& WithIpV6Addresses(IpV6AddressesT&& value) { SetIpV6Addresses(std::forward<IpV6AddressesT>(value)); return *this;}
+    template<typename IpV6AddressesT = Aws::String>
+    IpAddresses& AddIpV6Addresses(IpV6AddressesT&& value) { m_ipV6AddressesHasBeenSet = true; m_ipV6Addresses.emplace_back(std::forward<IpV6AddressesT>(value)); return *this; }
     ///@}
   private:
 

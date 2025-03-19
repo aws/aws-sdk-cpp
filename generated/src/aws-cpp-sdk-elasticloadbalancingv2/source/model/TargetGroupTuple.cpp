@@ -20,15 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-TargetGroupTuple::TargetGroupTuple() : 
-    m_targetGroupArnHasBeenSet(false),
-    m_weight(0),
-    m_weightHasBeenSet(false)
-{
-}
-
 TargetGroupTuple::TargetGroupTuple(const XmlNode& xmlNode)
-  : TargetGroupTuple()
 {
   *this = xmlNode;
 }

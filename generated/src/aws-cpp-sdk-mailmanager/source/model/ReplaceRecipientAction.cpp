@@ -18,13 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-ReplaceRecipientAction::ReplaceRecipientAction() : 
-    m_replaceWithHasBeenSet(false)
-{
-}
-
 ReplaceRecipientAction::ReplaceRecipientAction(JsonView jsonValue)
-  : ReplaceRecipientAction()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ReplaceRecipientAction& ReplaceRecipientAction::operator =(JsonView jsonValue)
     }
     m_replaceWithHasBeenSet = true;
   }
-
   return *this;
 }
 

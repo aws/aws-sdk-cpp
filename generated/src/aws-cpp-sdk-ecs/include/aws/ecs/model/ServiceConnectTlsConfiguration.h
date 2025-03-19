@@ -33,7 +33,7 @@ namespace Model
   class ServiceConnectTlsConfiguration
   {
   public:
-    AWS_ECS_API ServiceConnectTlsConfiguration();
+    AWS_ECS_API ServiceConnectTlsConfiguration() = default;
     AWS_ECS_API ServiceConnectTlsConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API ServiceConnectTlsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The signer certificate authority.</p>
      */
-    inline const ServiceConnectTlsCertificateAuthority& GetIssuerCertificateAuthority() const{ return m_issuerCertificateAuthority; }
+    inline const ServiceConnectTlsCertificateAuthority& GetIssuerCertificateAuthority() const { return m_issuerCertificateAuthority; }
     inline bool IssuerCertificateAuthorityHasBeenSet() const { return m_issuerCertificateAuthorityHasBeenSet; }
-    inline void SetIssuerCertificateAuthority(const ServiceConnectTlsCertificateAuthority& value) { m_issuerCertificateAuthorityHasBeenSet = true; m_issuerCertificateAuthority = value; }
-    inline void SetIssuerCertificateAuthority(ServiceConnectTlsCertificateAuthority&& value) { m_issuerCertificateAuthorityHasBeenSet = true; m_issuerCertificateAuthority = std::move(value); }
-    inline ServiceConnectTlsConfiguration& WithIssuerCertificateAuthority(const ServiceConnectTlsCertificateAuthority& value) { SetIssuerCertificateAuthority(value); return *this;}
-    inline ServiceConnectTlsConfiguration& WithIssuerCertificateAuthority(ServiceConnectTlsCertificateAuthority&& value) { SetIssuerCertificateAuthority(std::move(value)); return *this;}
+    template<typename IssuerCertificateAuthorityT = ServiceConnectTlsCertificateAuthority>
+    void SetIssuerCertificateAuthority(IssuerCertificateAuthorityT&& value) { m_issuerCertificateAuthorityHasBeenSet = true; m_issuerCertificateAuthority = std::forward<IssuerCertificateAuthorityT>(value); }
+    template<typename IssuerCertificateAuthorityT = ServiceConnectTlsCertificateAuthority>
+    ServiceConnectTlsConfiguration& WithIssuerCertificateAuthority(IssuerCertificateAuthorityT&& value) { SetIssuerCertificateAuthority(std::forward<IssuerCertificateAuthorityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Key Management Service key.</p>
      */
-    inline const Aws::String& GetKmsKey() const{ return m_kmsKey; }
+    inline const Aws::String& GetKmsKey() const { return m_kmsKey; }
     inline bool KmsKeyHasBeenSet() const { return m_kmsKeyHasBeenSet; }
-    inline void SetKmsKey(const Aws::String& value) { m_kmsKeyHasBeenSet = true; m_kmsKey = value; }
-    inline void SetKmsKey(Aws::String&& value) { m_kmsKeyHasBeenSet = true; m_kmsKey = std::move(value); }
-    inline void SetKmsKey(const char* value) { m_kmsKeyHasBeenSet = true; m_kmsKey.assign(value); }
-    inline ServiceConnectTlsConfiguration& WithKmsKey(const Aws::String& value) { SetKmsKey(value); return *this;}
-    inline ServiceConnectTlsConfiguration& WithKmsKey(Aws::String&& value) { SetKmsKey(std::move(value)); return *this;}
-    inline ServiceConnectTlsConfiguration& WithKmsKey(const char* value) { SetKmsKey(value); return *this;}
+    template<typename KmsKeyT = Aws::String>
+    void SetKmsKey(KmsKeyT&& value) { m_kmsKeyHasBeenSet = true; m_kmsKey = std::forward<KmsKeyT>(value); }
+    template<typename KmsKeyT = Aws::String>
+    ServiceConnectTlsConfiguration& WithKmsKey(KmsKeyT&& value) { SetKmsKey(std::forward<KmsKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that's associated with the
      * Service Connect TLS.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline ServiceConnectTlsConfiguration& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline ServiceConnectTlsConfiguration& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline ServiceConnectTlsConfiguration& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    ServiceConnectTlsConfiguration& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

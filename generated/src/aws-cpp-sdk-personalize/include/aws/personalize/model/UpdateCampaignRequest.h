@@ -22,7 +22,7 @@ namespace Model
   class UpdateCampaignRequest : public PersonalizeRequest
   {
   public:
-    AWS_PERSONALIZE_API UpdateCampaignRequest();
+    AWS_PERSONALIZE_API UpdateCampaignRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the campaign.</p>
      */
-    inline const Aws::String& GetCampaignArn() const{ return m_campaignArn; }
+    inline const Aws::String& GetCampaignArn() const { return m_campaignArn; }
     inline bool CampaignArnHasBeenSet() const { return m_campaignArnHasBeenSet; }
-    inline void SetCampaignArn(const Aws::String& value) { m_campaignArnHasBeenSet = true; m_campaignArn = value; }
-    inline void SetCampaignArn(Aws::String&& value) { m_campaignArnHasBeenSet = true; m_campaignArn = std::move(value); }
-    inline void SetCampaignArn(const char* value) { m_campaignArnHasBeenSet = true; m_campaignArn.assign(value); }
-    inline UpdateCampaignRequest& WithCampaignArn(const Aws::String& value) { SetCampaignArn(value); return *this;}
-    inline UpdateCampaignRequest& WithCampaignArn(Aws::String&& value) { SetCampaignArn(std::move(value)); return *this;}
-    inline UpdateCampaignRequest& WithCampaignArn(const char* value) { SetCampaignArn(value); return *this;}
+    template<typename CampaignArnT = Aws::String>
+    void SetCampaignArn(CampaignArnT&& value) { m_campaignArnHasBeenSet = true; m_campaignArn = std::forward<CampaignArnT>(value); }
+    template<typename CampaignArnT = Aws::String>
+    UpdateCampaignRequest& WithCampaignArn(CampaignArnT&& value) { SetCampaignArn(std::forward<CampaignArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/personalize/latest/dg/campaigns.html#create-campaign-automatic-latest-sv-update">Enabling
      * automatic campaign updates</a>. </p>
      */
-    inline const Aws::String& GetSolutionVersionArn() const{ return m_solutionVersionArn; }
+    inline const Aws::String& GetSolutionVersionArn() const { return m_solutionVersionArn; }
     inline bool SolutionVersionArnHasBeenSet() const { return m_solutionVersionArnHasBeenSet; }
-    inline void SetSolutionVersionArn(const Aws::String& value) { m_solutionVersionArnHasBeenSet = true; m_solutionVersionArn = value; }
-    inline void SetSolutionVersionArn(Aws::String&& value) { m_solutionVersionArnHasBeenSet = true; m_solutionVersionArn = std::move(value); }
-    inline void SetSolutionVersionArn(const char* value) { m_solutionVersionArnHasBeenSet = true; m_solutionVersionArn.assign(value); }
-    inline UpdateCampaignRequest& WithSolutionVersionArn(const Aws::String& value) { SetSolutionVersionArn(value); return *this;}
-    inline UpdateCampaignRequest& WithSolutionVersionArn(Aws::String&& value) { SetSolutionVersionArn(std::move(value)); return *this;}
-    inline UpdateCampaignRequest& WithSolutionVersionArn(const char* value) { SetSolutionVersionArn(value); return *this;}
+    template<typename SolutionVersionArnT = Aws::String>
+    void SetSolutionVersionArn(SolutionVersionArnT&& value) { m_solutionVersionArnHasBeenSet = true; m_solutionVersionArn = std::forward<SolutionVersionArnT>(value); }
+    template<typename SolutionVersionArnT = Aws::String>
+    UpdateCampaignRequest& WithSolutionVersionArn(SolutionVersionArnT&& value) { SetSolutionVersionArn(std::forward<SolutionVersionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,7 +78,7 @@ namespace Model
      * Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as
      * necessary.</p>
      */
-    inline int GetMinProvisionedTPS() const{ return m_minProvisionedTPS; }
+    inline int GetMinProvisionedTPS() const { return m_minProvisionedTPS; }
     inline bool MinProvisionedTPSHasBeenSet() const { return m_minProvisionedTPSHasBeenSet; }
     inline void SetMinProvisionedTPS(int value) { m_minProvisionedTPSHasBeenSet = true; m_minProvisionedTPS = value; }
     inline UpdateCampaignRequest& WithMinProvisionedTPS(int value) { SetMinProvisionedTPS(value); return *this;}
@@ -92,12 +88,12 @@ namespace Model
     /**
      * <p>The configuration details of a campaign.</p>
      */
-    inline const CampaignConfig& GetCampaignConfig() const{ return m_campaignConfig; }
+    inline const CampaignConfig& GetCampaignConfig() const { return m_campaignConfig; }
     inline bool CampaignConfigHasBeenSet() const { return m_campaignConfigHasBeenSet; }
-    inline void SetCampaignConfig(const CampaignConfig& value) { m_campaignConfigHasBeenSet = true; m_campaignConfig = value; }
-    inline void SetCampaignConfig(CampaignConfig&& value) { m_campaignConfigHasBeenSet = true; m_campaignConfig = std::move(value); }
-    inline UpdateCampaignRequest& WithCampaignConfig(const CampaignConfig& value) { SetCampaignConfig(value); return *this;}
-    inline UpdateCampaignRequest& WithCampaignConfig(CampaignConfig&& value) { SetCampaignConfig(std::move(value)); return *this;}
+    template<typename CampaignConfigT = CampaignConfig>
+    void SetCampaignConfig(CampaignConfigT&& value) { m_campaignConfigHasBeenSet = true; m_campaignConfig = std::forward<CampaignConfigT>(value); }
+    template<typename CampaignConfigT = CampaignConfig>
+    UpdateCampaignRequest& WithCampaignConfig(CampaignConfigT&& value) { SetCampaignConfig(std::forward<CampaignConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -107,7 +103,7 @@ namespace Model
     Aws::String m_solutionVersionArn;
     bool m_solutionVersionArnHasBeenSet = false;
 
-    int m_minProvisionedTPS;
+    int m_minProvisionedTPS{0};
     bool m_minProvisionedTPSHasBeenSet = false;
 
     CampaignConfig m_campaignConfig;

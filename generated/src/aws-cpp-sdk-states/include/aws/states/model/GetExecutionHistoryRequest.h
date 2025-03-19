@@ -21,7 +21,7 @@ namespace Model
   class GetExecutionHistoryRequest : public SFNRequest
   {
   public:
-    AWS_SFN_API GetExecutionHistoryRequest();
+    AWS_SFN_API GetExecutionHistoryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the execution.</p>
      */
-    inline const Aws::String& GetExecutionArn() const{ return m_executionArn; }
+    inline const Aws::String& GetExecutionArn() const { return m_executionArn; }
     inline bool ExecutionArnHasBeenSet() const { return m_executionArnHasBeenSet; }
-    inline void SetExecutionArn(const Aws::String& value) { m_executionArnHasBeenSet = true; m_executionArn = value; }
-    inline void SetExecutionArn(Aws::String&& value) { m_executionArnHasBeenSet = true; m_executionArn = std::move(value); }
-    inline void SetExecutionArn(const char* value) { m_executionArnHasBeenSet = true; m_executionArn.assign(value); }
-    inline GetExecutionHistoryRequest& WithExecutionArn(const Aws::String& value) { SetExecutionArn(value); return *this;}
-    inline GetExecutionHistoryRequest& WithExecutionArn(Aws::String&& value) { SetExecutionArn(std::move(value)); return *this;}
-    inline GetExecutionHistoryRequest& WithExecutionArn(const char* value) { SetExecutionArn(value); return *this;}
+    template<typename ExecutionArnT = Aws::String>
+    void SetExecutionArn(ExecutionArnT&& value) { m_executionArnHasBeenSet = true; m_executionArn = std::forward<ExecutionArnT>(value); }
+    template<typename ExecutionArnT = Aws::String>
+    GetExecutionHistoryRequest& WithExecutionArn(ExecutionArnT&& value) { SetExecutionArn(std::forward<ExecutionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,7 +54,7 @@ namespace Model
      * <p>This is only an upper limit. The actual number of results returned per call
      * might be fewer than the specified maximum.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetExecutionHistoryRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     /**
      * <p>Lists events in descending order of their <code>timeStamp</code>.</p>
      */
-    inline bool GetReverseOrder() const{ return m_reverseOrder; }
+    inline bool GetReverseOrder() const { return m_reverseOrder; }
     inline bool ReverseOrderHasBeenSet() const { return m_reverseOrderHasBeenSet; }
     inline void SetReverseOrder(bool value) { m_reverseOrderHasBeenSet = true; m_reverseOrder = value; }
     inline GetExecutionHistoryRequest& WithReverseOrder(bool value) { SetReverseOrder(value); return *this;}
@@ -81,14 +79,12 @@ namespace Model
      * an expired pagination token will return an <i>HTTP 400 InvalidToken</i>
      * error.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetExecutionHistoryRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetExecutionHistoryRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetExecutionHistoryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetExecutionHistoryRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,7 +92,7 @@ namespace Model
      * <p>You can select whether execution data (input or output of a history event) is
      * returned. The default is <code>true</code>.</p>
      */
-    inline bool GetIncludeExecutionData() const{ return m_includeExecutionData; }
+    inline bool GetIncludeExecutionData() const { return m_includeExecutionData; }
     inline bool IncludeExecutionDataHasBeenSet() const { return m_includeExecutionDataHasBeenSet; }
     inline void SetIncludeExecutionData(bool value) { m_includeExecutionDataHasBeenSet = true; m_includeExecutionData = value; }
     inline GetExecutionHistoryRequest& WithIncludeExecutionData(bool value) { SetIncludeExecutionData(value); return *this;}
@@ -106,16 +102,16 @@ namespace Model
     Aws::String m_executionArn;
     bool m_executionArnHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    bool m_reverseOrder;
+    bool m_reverseOrder{false};
     bool m_reverseOrderHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    bool m_includeExecutionData;
+    bool m_includeExecutionData{false};
     bool m_includeExecutionDataHasBeenSet = false;
   };
 

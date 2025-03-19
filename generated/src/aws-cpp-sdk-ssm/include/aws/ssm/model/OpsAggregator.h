@@ -37,7 +37,7 @@ namespace Model
   class OpsAggregator
   {
   public:
-    AWS_SSM_API OpsAggregator();
+    AWS_SSM_API OpsAggregator() = default;
     AWS_SSM_API OpsAggregator(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API OpsAggregator& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,89 +48,80 @@ namespace Model
      * <p>Either a <code>Range</code> or <code>Count</code> aggregator for limiting an
      * OpsData summary.</p>
      */
-    inline const Aws::String& GetAggregatorType() const{ return m_aggregatorType; }
+    inline const Aws::String& GetAggregatorType() const { return m_aggregatorType; }
     inline bool AggregatorTypeHasBeenSet() const { return m_aggregatorTypeHasBeenSet; }
-    inline void SetAggregatorType(const Aws::String& value) { m_aggregatorTypeHasBeenSet = true; m_aggregatorType = value; }
-    inline void SetAggregatorType(Aws::String&& value) { m_aggregatorTypeHasBeenSet = true; m_aggregatorType = std::move(value); }
-    inline void SetAggregatorType(const char* value) { m_aggregatorTypeHasBeenSet = true; m_aggregatorType.assign(value); }
-    inline OpsAggregator& WithAggregatorType(const Aws::String& value) { SetAggregatorType(value); return *this;}
-    inline OpsAggregator& WithAggregatorType(Aws::String&& value) { SetAggregatorType(std::move(value)); return *this;}
-    inline OpsAggregator& WithAggregatorType(const char* value) { SetAggregatorType(value); return *this;}
+    template<typename AggregatorTypeT = Aws::String>
+    void SetAggregatorType(AggregatorTypeT&& value) { m_aggregatorTypeHasBeenSet = true; m_aggregatorType = std::forward<AggregatorTypeT>(value); }
+    template<typename AggregatorTypeT = Aws::String>
+    OpsAggregator& WithAggregatorType(AggregatorTypeT&& value) { SetAggregatorType(std::forward<AggregatorTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data type name to use for viewing counts of OpsData.</p>
      */
-    inline const Aws::String& GetTypeName() const{ return m_typeName; }
+    inline const Aws::String& GetTypeName() const { return m_typeName; }
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
-    inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
-    inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
-    inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
-    inline OpsAggregator& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
-    inline OpsAggregator& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
-    inline OpsAggregator& WithTypeName(const char* value) { SetTypeName(value); return *this;}
+    template<typename TypeNameT = Aws::String>
+    void SetTypeName(TypeNameT&& value) { m_typeNameHasBeenSet = true; m_typeName = std::forward<TypeNameT>(value); }
+    template<typename TypeNameT = Aws::String>
+    OpsAggregator& WithTypeName(TypeNameT&& value) { SetTypeName(std::forward<TypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of an OpsData attribute on which to limit the count of OpsData.</p>
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline OpsAggregator& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline OpsAggregator& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline OpsAggregator& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    OpsAggregator& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The aggregator value.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Map<Aws::String, Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Map<Aws::String, Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline OpsAggregator& WithValues(const Aws::Map<Aws::String, Aws::String>& value) { SetValues(value); return *this;}
-    inline OpsAggregator& WithValues(Aws::Map<Aws::String, Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline OpsAggregator& AddValues(const Aws::String& key, const Aws::String& value) { m_valuesHasBeenSet = true; m_values.emplace(key, value); return *this; }
-    inline OpsAggregator& AddValues(Aws::String&& key, const Aws::String& value) { m_valuesHasBeenSet = true; m_values.emplace(std::move(key), value); return *this; }
-    inline OpsAggregator& AddValues(const Aws::String& key, Aws::String&& value) { m_valuesHasBeenSet = true; m_values.emplace(key, std::move(value)); return *this; }
-    inline OpsAggregator& AddValues(Aws::String&& key, Aws::String&& value) { m_valuesHasBeenSet = true; m_values.emplace(std::move(key), std::move(value)); return *this; }
-    inline OpsAggregator& AddValues(const char* key, Aws::String&& value) { m_valuesHasBeenSet = true; m_values.emplace(key, std::move(value)); return *this; }
-    inline OpsAggregator& AddValues(Aws::String&& key, const char* value) { m_valuesHasBeenSet = true; m_values.emplace(std::move(key), value); return *this; }
-    inline OpsAggregator& AddValues(const char* key, const char* value) { m_valuesHasBeenSet = true; m_values.emplace(key, value); return *this; }
+    template<typename ValuesT = Aws::Map<Aws::String, Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Map<Aws::String, Aws::String>>
+    OpsAggregator& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesKeyT = Aws::String, typename ValuesValueT = Aws::String>
+    OpsAggregator& AddValues(ValuesKeyT&& key, ValuesValueT&& value) {
+      m_valuesHasBeenSet = true; m_values.emplace(std::forward<ValuesKeyT>(key), std::forward<ValuesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The aggregator filters.</p>
      */
-    inline const Aws::Vector<OpsFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<OpsFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<OpsFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<OpsFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline OpsAggregator& WithFilters(const Aws::Vector<OpsFilter>& value) { SetFilters(value); return *this;}
-    inline OpsAggregator& WithFilters(Aws::Vector<OpsFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline OpsAggregator& AddFilters(const OpsFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline OpsAggregator& AddFilters(OpsFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<OpsFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<OpsFilter>>
+    OpsAggregator& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = OpsFilter>
+    OpsAggregator& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A nested aggregator for viewing counts of OpsData.</p>
      */
-    inline const Aws::Vector<OpsAggregator>& GetAggregators() const{ return m_aggregators; }
+    inline const Aws::Vector<OpsAggregator>& GetAggregators() const { return m_aggregators; }
     inline bool AggregatorsHasBeenSet() const { return m_aggregatorsHasBeenSet; }
-    inline void SetAggregators(const Aws::Vector<OpsAggregator>& value) { m_aggregatorsHasBeenSet = true; m_aggregators = value; }
-    inline void SetAggregators(Aws::Vector<OpsAggregator>&& value) { m_aggregatorsHasBeenSet = true; m_aggregators = std::move(value); }
-    inline OpsAggregator& WithAggregators(const Aws::Vector<OpsAggregator>& value) { SetAggregators(value); return *this;}
-    inline OpsAggregator& WithAggregators(Aws::Vector<OpsAggregator>&& value) { SetAggregators(std::move(value)); return *this;}
-    inline OpsAggregator& AddAggregators(const OpsAggregator& value) { m_aggregatorsHasBeenSet = true; m_aggregators.push_back(value); return *this; }
-    inline OpsAggregator& AddAggregators(OpsAggregator&& value) { m_aggregatorsHasBeenSet = true; m_aggregators.push_back(std::move(value)); return *this; }
+    template<typename AggregatorsT = Aws::Vector<OpsAggregator>>
+    void SetAggregators(AggregatorsT&& value) { m_aggregatorsHasBeenSet = true; m_aggregators = std::forward<AggregatorsT>(value); }
+    template<typename AggregatorsT = Aws::Vector<OpsAggregator>>
+    OpsAggregator& WithAggregators(AggregatorsT&& value) { SetAggregators(std::forward<AggregatorsT>(value)); return *this;}
+    template<typename AggregatorsT = OpsAggregator>
+    OpsAggregator& AddAggregators(AggregatorsT&& value) { m_aggregatorsHasBeenSet = true; m_aggregators.emplace_back(std::forward<AggregatorsT>(value)); return *this; }
     ///@}
   private:
 

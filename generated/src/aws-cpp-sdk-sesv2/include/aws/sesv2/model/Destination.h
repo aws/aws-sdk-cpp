@@ -41,7 +41,7 @@ namespace Model
   class Destination
   {
   public:
-    AWS_SESV2_API Destination();
+    AWS_SESV2_API Destination() = default;
     AWS_SESV2_API Destination(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,15 +52,14 @@ namespace Model
      * <p>An array that contains the email addresses of the "To" recipients for the
      * email.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetToAddresses() const{ return m_toAddresses; }
+    inline const Aws::Vector<Aws::String>& GetToAddresses() const { return m_toAddresses; }
     inline bool ToAddressesHasBeenSet() const { return m_toAddressesHasBeenSet; }
-    inline void SetToAddresses(const Aws::Vector<Aws::String>& value) { m_toAddressesHasBeenSet = true; m_toAddresses = value; }
-    inline void SetToAddresses(Aws::Vector<Aws::String>&& value) { m_toAddressesHasBeenSet = true; m_toAddresses = std::move(value); }
-    inline Destination& WithToAddresses(const Aws::Vector<Aws::String>& value) { SetToAddresses(value); return *this;}
-    inline Destination& WithToAddresses(Aws::Vector<Aws::String>&& value) { SetToAddresses(std::move(value)); return *this;}
-    inline Destination& AddToAddresses(const Aws::String& value) { m_toAddressesHasBeenSet = true; m_toAddresses.push_back(value); return *this; }
-    inline Destination& AddToAddresses(Aws::String&& value) { m_toAddressesHasBeenSet = true; m_toAddresses.push_back(std::move(value)); return *this; }
-    inline Destination& AddToAddresses(const char* value) { m_toAddressesHasBeenSet = true; m_toAddresses.push_back(value); return *this; }
+    template<typename ToAddressesT = Aws::Vector<Aws::String>>
+    void SetToAddresses(ToAddressesT&& value) { m_toAddressesHasBeenSet = true; m_toAddresses = std::forward<ToAddressesT>(value); }
+    template<typename ToAddressesT = Aws::Vector<Aws::String>>
+    Destination& WithToAddresses(ToAddressesT&& value) { SetToAddresses(std::forward<ToAddressesT>(value)); return *this;}
+    template<typename ToAddressesT = Aws::String>
+    Destination& AddToAddresses(ToAddressesT&& value) { m_toAddressesHasBeenSet = true; m_toAddresses.emplace_back(std::forward<ToAddressesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -68,15 +67,14 @@ namespace Model
      * <p>An array that contains the email addresses of the "CC" (carbon copy)
      * recipients for the email.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCcAddresses() const{ return m_ccAddresses; }
+    inline const Aws::Vector<Aws::String>& GetCcAddresses() const { return m_ccAddresses; }
     inline bool CcAddressesHasBeenSet() const { return m_ccAddressesHasBeenSet; }
-    inline void SetCcAddresses(const Aws::Vector<Aws::String>& value) { m_ccAddressesHasBeenSet = true; m_ccAddresses = value; }
-    inline void SetCcAddresses(Aws::Vector<Aws::String>&& value) { m_ccAddressesHasBeenSet = true; m_ccAddresses = std::move(value); }
-    inline Destination& WithCcAddresses(const Aws::Vector<Aws::String>& value) { SetCcAddresses(value); return *this;}
-    inline Destination& WithCcAddresses(Aws::Vector<Aws::String>&& value) { SetCcAddresses(std::move(value)); return *this;}
-    inline Destination& AddCcAddresses(const Aws::String& value) { m_ccAddressesHasBeenSet = true; m_ccAddresses.push_back(value); return *this; }
-    inline Destination& AddCcAddresses(Aws::String&& value) { m_ccAddressesHasBeenSet = true; m_ccAddresses.push_back(std::move(value)); return *this; }
-    inline Destination& AddCcAddresses(const char* value) { m_ccAddressesHasBeenSet = true; m_ccAddresses.push_back(value); return *this; }
+    template<typename CcAddressesT = Aws::Vector<Aws::String>>
+    void SetCcAddresses(CcAddressesT&& value) { m_ccAddressesHasBeenSet = true; m_ccAddresses = std::forward<CcAddressesT>(value); }
+    template<typename CcAddressesT = Aws::Vector<Aws::String>>
+    Destination& WithCcAddresses(CcAddressesT&& value) { SetCcAddresses(std::forward<CcAddressesT>(value)); return *this;}
+    template<typename CcAddressesT = Aws::String>
+    Destination& AddCcAddresses(CcAddressesT&& value) { m_ccAddressesHasBeenSet = true; m_ccAddresses.emplace_back(std::forward<CcAddressesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -84,15 +82,14 @@ namespace Model
      * <p>An array that contains the email addresses of the "BCC" (blind carbon copy)
      * recipients for the email.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetBccAddresses() const{ return m_bccAddresses; }
+    inline const Aws::Vector<Aws::String>& GetBccAddresses() const { return m_bccAddresses; }
     inline bool BccAddressesHasBeenSet() const { return m_bccAddressesHasBeenSet; }
-    inline void SetBccAddresses(const Aws::Vector<Aws::String>& value) { m_bccAddressesHasBeenSet = true; m_bccAddresses = value; }
-    inline void SetBccAddresses(Aws::Vector<Aws::String>&& value) { m_bccAddressesHasBeenSet = true; m_bccAddresses = std::move(value); }
-    inline Destination& WithBccAddresses(const Aws::Vector<Aws::String>& value) { SetBccAddresses(value); return *this;}
-    inline Destination& WithBccAddresses(Aws::Vector<Aws::String>&& value) { SetBccAddresses(std::move(value)); return *this;}
-    inline Destination& AddBccAddresses(const Aws::String& value) { m_bccAddressesHasBeenSet = true; m_bccAddresses.push_back(value); return *this; }
-    inline Destination& AddBccAddresses(Aws::String&& value) { m_bccAddressesHasBeenSet = true; m_bccAddresses.push_back(std::move(value)); return *this; }
-    inline Destination& AddBccAddresses(const char* value) { m_bccAddressesHasBeenSet = true; m_bccAddresses.push_back(value); return *this; }
+    template<typename BccAddressesT = Aws::Vector<Aws::String>>
+    void SetBccAddresses(BccAddressesT&& value) { m_bccAddressesHasBeenSet = true; m_bccAddresses = std::forward<BccAddressesT>(value); }
+    template<typename BccAddressesT = Aws::Vector<Aws::String>>
+    Destination& WithBccAddresses(BccAddressesT&& value) { SetBccAddresses(std::forward<BccAddressesT>(value)); return *this;}
+    template<typename BccAddressesT = Aws::String>
+    Destination& AddBccAddresses(BccAddressesT&& value) { m_bccAddressesHasBeenSet = true; m_bccAddresses.emplace_back(std::forward<BccAddressesT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace BackupSearch
 namespace Model
 {
 
-TimeCondition::TimeCondition() : 
-    m_valueHasBeenSet(false),
-    m_operator(TimeConditionOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
-{
-}
-
 TimeCondition::TimeCondition(JsonView jsonValue)
-  : TimeCondition()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TimeCondition& TimeCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetDouble("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = TimeConditionOperatorMapper::GetTimeConditionOperatorForName(jsonValue.GetString("Operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   return *this;
 }
 

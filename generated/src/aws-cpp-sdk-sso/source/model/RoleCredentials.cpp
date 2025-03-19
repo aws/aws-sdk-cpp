@@ -18,17 +18,7 @@ namespace SSO
 namespace Model
 {
 
-RoleCredentials::RoleCredentials() : 
-    m_accessKeyIdHasBeenSet(false),
-    m_secretAccessKeyHasBeenSet(false),
-    m_sessionTokenHasBeenSet(false),
-    m_expiration(0),
-    m_expirationHasBeenSet(false)
-{
-}
-
 RoleCredentials::RoleCredentials(JsonView jsonValue)
-  : RoleCredentials()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ RoleCredentials& RoleCredentials::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accessKeyId"))
   {
     m_accessKeyId = jsonValue.GetString("accessKeyId");
-
     m_accessKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secretAccessKey"))
   {
     m_secretAccessKey = jsonValue.GetString("secretAccessKey");
-
     m_secretAccessKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionToken"))
   {
     m_sessionToken = jsonValue.GetString("sessionToken");
-
     m_sessionTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expiration"))
   {
     m_expiration = jsonValue.GetInt64("expiration");
-
     m_expirationHasBeenSet = true;
   }
-
   return *this;
 }
 

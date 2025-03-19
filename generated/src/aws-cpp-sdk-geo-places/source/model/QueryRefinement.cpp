@@ -18,18 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-QueryRefinement::QueryRefinement() : 
-    m_refinedTermHasBeenSet(false),
-    m_originalTermHasBeenSet(false),
-    m_startIndex(0),
-    m_startIndexHasBeenSet(false),
-    m_endIndex(0),
-    m_endIndexHasBeenSet(false)
-{
-}
-
 QueryRefinement::QueryRefinement(JsonView jsonValue)
-  : QueryRefinement()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ QueryRefinement& QueryRefinement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RefinedTerm"))
   {
     m_refinedTerm = jsonValue.GetString("RefinedTerm");
-
     m_refinedTermHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OriginalTerm"))
   {
     m_originalTerm = jsonValue.GetString("OriginalTerm");
-
     m_originalTermHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartIndex"))
   {
     m_startIndex = jsonValue.GetInteger("StartIndex");
-
     m_startIndexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndIndex"))
   {
     m_endIndex = jsonValue.GetInteger("EndIndex");
-
     m_endIndexHasBeenSet = true;
   }
-
   return *this;
 }
 

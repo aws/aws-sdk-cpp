@@ -12,14 +12,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateVerifiedDestinationNumberRequest::CreateVerifiedDestinationNumberRequest() : 
-    m_destinationPhoneNumberHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateVerifiedDestinationNumberRequest::SerializePayload() const
 {
   JsonValue payload;

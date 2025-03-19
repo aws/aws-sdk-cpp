@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdateSmsTemplateRequest::UpdateSmsTemplateRequest() : 
-    m_createNewVersion(false),
-    m_createNewVersionHasBeenSet(false),
-    m_sMSTemplateRequestHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSmsTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

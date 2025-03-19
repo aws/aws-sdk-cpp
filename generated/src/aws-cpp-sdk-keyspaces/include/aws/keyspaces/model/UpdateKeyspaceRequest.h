@@ -23,7 +23,7 @@ namespace Model
   class UpdateKeyspaceRequest : public KeyspacesRequest
   {
   public:
-    AWS_KEYSPACES_API UpdateKeyspaceRequest();
+    AWS_KEYSPACES_API UpdateKeyspaceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,34 +40,32 @@ namespace Model
     /**
      * <p> The name of the keyspace. </p>
      */
-    inline const Aws::String& GetKeyspaceName() const{ return m_keyspaceName; }
+    inline const Aws::String& GetKeyspaceName() const { return m_keyspaceName; }
     inline bool KeyspaceNameHasBeenSet() const { return m_keyspaceNameHasBeenSet; }
-    inline void SetKeyspaceName(const Aws::String& value) { m_keyspaceNameHasBeenSet = true; m_keyspaceName = value; }
-    inline void SetKeyspaceName(Aws::String&& value) { m_keyspaceNameHasBeenSet = true; m_keyspaceName = std::move(value); }
-    inline void SetKeyspaceName(const char* value) { m_keyspaceNameHasBeenSet = true; m_keyspaceName.assign(value); }
-    inline UpdateKeyspaceRequest& WithKeyspaceName(const Aws::String& value) { SetKeyspaceName(value); return *this;}
-    inline UpdateKeyspaceRequest& WithKeyspaceName(Aws::String&& value) { SetKeyspaceName(std::move(value)); return *this;}
-    inline UpdateKeyspaceRequest& WithKeyspaceName(const char* value) { SetKeyspaceName(value); return *this;}
+    template<typename KeyspaceNameT = Aws::String>
+    void SetKeyspaceName(KeyspaceNameT&& value) { m_keyspaceNameHasBeenSet = true; m_keyspaceName = std::forward<KeyspaceNameT>(value); }
+    template<typename KeyspaceNameT = Aws::String>
+    UpdateKeyspaceRequest& WithKeyspaceName(KeyspaceNameT&& value) { SetKeyspaceName(std::forward<KeyspaceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ReplicationSpecification& GetReplicationSpecification() const{ return m_replicationSpecification; }
+    inline const ReplicationSpecification& GetReplicationSpecification() const { return m_replicationSpecification; }
     inline bool ReplicationSpecificationHasBeenSet() const { return m_replicationSpecificationHasBeenSet; }
-    inline void SetReplicationSpecification(const ReplicationSpecification& value) { m_replicationSpecificationHasBeenSet = true; m_replicationSpecification = value; }
-    inline void SetReplicationSpecification(ReplicationSpecification&& value) { m_replicationSpecificationHasBeenSet = true; m_replicationSpecification = std::move(value); }
-    inline UpdateKeyspaceRequest& WithReplicationSpecification(const ReplicationSpecification& value) { SetReplicationSpecification(value); return *this;}
-    inline UpdateKeyspaceRequest& WithReplicationSpecification(ReplicationSpecification&& value) { SetReplicationSpecification(std::move(value)); return *this;}
+    template<typename ReplicationSpecificationT = ReplicationSpecification>
+    void SetReplicationSpecification(ReplicationSpecificationT&& value) { m_replicationSpecificationHasBeenSet = true; m_replicationSpecification = std::forward<ReplicationSpecificationT>(value); }
+    template<typename ReplicationSpecificationT = ReplicationSpecification>
+    UpdateKeyspaceRequest& WithReplicationSpecification(ReplicationSpecificationT&& value) { SetReplicationSpecification(std::forward<ReplicationSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ClientSideTimestamps& GetClientSideTimestamps() const{ return m_clientSideTimestamps; }
+    inline const ClientSideTimestamps& GetClientSideTimestamps() const { return m_clientSideTimestamps; }
     inline bool ClientSideTimestampsHasBeenSet() const { return m_clientSideTimestampsHasBeenSet; }
-    inline void SetClientSideTimestamps(const ClientSideTimestamps& value) { m_clientSideTimestampsHasBeenSet = true; m_clientSideTimestamps = value; }
-    inline void SetClientSideTimestamps(ClientSideTimestamps&& value) { m_clientSideTimestampsHasBeenSet = true; m_clientSideTimestamps = std::move(value); }
-    inline UpdateKeyspaceRequest& WithClientSideTimestamps(const ClientSideTimestamps& value) { SetClientSideTimestamps(value); return *this;}
-    inline UpdateKeyspaceRequest& WithClientSideTimestamps(ClientSideTimestamps&& value) { SetClientSideTimestamps(std::move(value)); return *this;}
+    template<typename ClientSideTimestampsT = ClientSideTimestamps>
+    void SetClientSideTimestamps(ClientSideTimestampsT&& value) { m_clientSideTimestampsHasBeenSet = true; m_clientSideTimestamps = std::forward<ClientSideTimestampsT>(value); }
+    template<typename ClientSideTimestampsT = ClientSideTimestamps>
+    UpdateKeyspaceRequest& WithClientSideTimestamps(ClientSideTimestampsT&& value) { SetClientSideTimestamps(std::forward<ClientSideTimestampsT>(value)); return *this;}
     ///@}
   private:
 

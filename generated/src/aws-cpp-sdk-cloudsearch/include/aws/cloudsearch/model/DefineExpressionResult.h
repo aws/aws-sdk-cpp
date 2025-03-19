@@ -34,33 +34,35 @@ namespace Model
   class DefineExpressionResult
   {
   public:
-    AWS_CLOUDSEARCH_API DefineExpressionResult();
+    AWS_CLOUDSEARCH_API DefineExpressionResult() = default;
     AWS_CLOUDSEARCH_API DefineExpressionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDSEARCH_API DefineExpressionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const ExpressionStatus& GetExpression() const{ return m_expression; }
-    inline void SetExpression(const ExpressionStatus& value) { m_expression = value; }
-    inline void SetExpression(ExpressionStatus&& value) { m_expression = std::move(value); }
-    inline DefineExpressionResult& WithExpression(const ExpressionStatus& value) { SetExpression(value); return *this;}
-    inline DefineExpressionResult& WithExpression(ExpressionStatus&& value) { SetExpression(std::move(value)); return *this;}
+    inline const ExpressionStatus& GetExpression() const { return m_expression; }
+    template<typename ExpressionT = ExpressionStatus>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = ExpressionStatus>
+    DefineExpressionResult& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DefineExpressionResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DefineExpressionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DefineExpressionResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     ExpressionStatus m_expression;
+    bool m_expressionHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

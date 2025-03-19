@@ -18,16 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-DeploymentStyle::DeploymentStyle() : 
-    m_deploymentType(DeploymentType::NOT_SET),
-    m_deploymentTypeHasBeenSet(false),
-    m_deploymentOption(DeploymentOption::NOT_SET),
-    m_deploymentOptionHasBeenSet(false)
-{
-}
-
 DeploymentStyle::DeploymentStyle(JsonView jsonValue)
-  : DeploymentStyle()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ DeploymentStyle& DeploymentStyle::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("deploymentType"))
   {
     m_deploymentType = DeploymentTypeMapper::GetDeploymentTypeForName(jsonValue.GetString("deploymentType"));
-
     m_deploymentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentOption"))
   {
     m_deploymentOption = DeploymentOptionMapper::GetDeploymentOptionForName(jsonValue.GetString("deploymentOption"));
-
     m_deploymentOptionHasBeenSet = true;
   }
-
   return *this;
 }
 

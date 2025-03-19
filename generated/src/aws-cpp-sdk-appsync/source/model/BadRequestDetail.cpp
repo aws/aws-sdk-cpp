@@ -18,13 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-BadRequestDetail::BadRequestDetail() : 
-    m_codeErrorsHasBeenSet(false)
-{
-}
-
 BadRequestDetail::BadRequestDetail(JsonView jsonValue)
-  : BadRequestDetail()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ BadRequestDetail& BadRequestDetail::operator =(JsonView jsonValue)
     }
     m_codeErrorsHasBeenSet = true;
   }
-
   return *this;
 }
 

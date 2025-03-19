@@ -33,7 +33,7 @@ namespace Model
   class AvailabilityZone
   {
   public:
-    AWS_REDSHIFT_API AvailabilityZone();
+    AWS_REDSHIFT_API AvailabilityZone() = default;
     AWS_REDSHIFT_API AvailabilityZone(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API AvailabilityZone& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,28 +45,26 @@ namespace Model
     /**
      * <p>The name of the availability zone.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AvailabilityZone& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AvailabilityZone& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AvailabilityZone& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AvailabilityZone& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::Vector<SupportedPlatform>& GetSupportedPlatforms() const{ return m_supportedPlatforms; }
+    inline const Aws::Vector<SupportedPlatform>& GetSupportedPlatforms() const { return m_supportedPlatforms; }
     inline bool SupportedPlatformsHasBeenSet() const { return m_supportedPlatformsHasBeenSet; }
-    inline void SetSupportedPlatforms(const Aws::Vector<SupportedPlatform>& value) { m_supportedPlatformsHasBeenSet = true; m_supportedPlatforms = value; }
-    inline void SetSupportedPlatforms(Aws::Vector<SupportedPlatform>&& value) { m_supportedPlatformsHasBeenSet = true; m_supportedPlatforms = std::move(value); }
-    inline AvailabilityZone& WithSupportedPlatforms(const Aws::Vector<SupportedPlatform>& value) { SetSupportedPlatforms(value); return *this;}
-    inline AvailabilityZone& WithSupportedPlatforms(Aws::Vector<SupportedPlatform>&& value) { SetSupportedPlatforms(std::move(value)); return *this;}
-    inline AvailabilityZone& AddSupportedPlatforms(const SupportedPlatform& value) { m_supportedPlatformsHasBeenSet = true; m_supportedPlatforms.push_back(value); return *this; }
-    inline AvailabilityZone& AddSupportedPlatforms(SupportedPlatform&& value) { m_supportedPlatformsHasBeenSet = true; m_supportedPlatforms.push_back(std::move(value)); return *this; }
+    template<typename SupportedPlatformsT = Aws::Vector<SupportedPlatform>>
+    void SetSupportedPlatforms(SupportedPlatformsT&& value) { m_supportedPlatformsHasBeenSet = true; m_supportedPlatforms = std::forward<SupportedPlatformsT>(value); }
+    template<typename SupportedPlatformsT = Aws::Vector<SupportedPlatform>>
+    AvailabilityZone& WithSupportedPlatforms(SupportedPlatformsT&& value) { SetSupportedPlatforms(std::forward<SupportedPlatformsT>(value)); return *this;}
+    template<typename SupportedPlatformsT = SupportedPlatform>
+    AvailabilityZone& AddSupportedPlatforms(SupportedPlatformsT&& value) { m_supportedPlatformsHasBeenSet = true; m_supportedPlatforms.emplace_back(std::forward<SupportedPlatformsT>(value)); return *this; }
     ///@}
   private:
 

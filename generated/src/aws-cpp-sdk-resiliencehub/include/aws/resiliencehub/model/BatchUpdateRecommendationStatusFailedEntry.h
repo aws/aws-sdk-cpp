@@ -32,7 +32,7 @@ namespace Model
   class BatchUpdateRecommendationStatusFailedEntry
   {
   public:
-    AWS_RESILIENCEHUB_API BatchUpdateRecommendationStatusFailedEntry();
+    AWS_RESILIENCEHUB_API BatchUpdateRecommendationStatusFailedEntry() = default;
     AWS_RESILIENCEHUB_API BatchUpdateRecommendationStatusFailedEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API BatchUpdateRecommendationStatusFailedEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * result.</p>  <p>The <code>entryId</code>s of a batch request need to be
      * unique within a request.</p> 
      */
-    inline const Aws::String& GetEntryId() const{ return m_entryId; }
+    inline const Aws::String& GetEntryId() const { return m_entryId; }
     inline bool EntryIdHasBeenSet() const { return m_entryIdHasBeenSet; }
-    inline void SetEntryId(const Aws::String& value) { m_entryIdHasBeenSet = true; m_entryId = value; }
-    inline void SetEntryId(Aws::String&& value) { m_entryIdHasBeenSet = true; m_entryId = std::move(value); }
-    inline void SetEntryId(const char* value) { m_entryIdHasBeenSet = true; m_entryId.assign(value); }
-    inline BatchUpdateRecommendationStatusFailedEntry& WithEntryId(const Aws::String& value) { SetEntryId(value); return *this;}
-    inline BatchUpdateRecommendationStatusFailedEntry& WithEntryId(Aws::String&& value) { SetEntryId(std::move(value)); return *this;}
-    inline BatchUpdateRecommendationStatusFailedEntry& WithEntryId(const char* value) { SetEntryId(value); return *this;}
+    template<typename EntryIdT = Aws::String>
+    void SetEntryId(EntryIdT&& value) { m_entryIdHasBeenSet = true; m_entryId = std::forward<EntryIdT>(value); }
+    template<typename EntryIdT = Aws::String>
+    BatchUpdateRecommendationStatusFailedEntry& WithEntryId(EntryIdT&& value) { SetEntryId(std::forward<EntryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>Indicates the error that occurred while excluding an operational
      * recommendation.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline BatchUpdateRecommendationStatusFailedEntry& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline BatchUpdateRecommendationStatusFailedEntry& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline BatchUpdateRecommendationStatusFailedEntry& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    BatchUpdateRecommendationStatusFailedEntry& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
   private:
 

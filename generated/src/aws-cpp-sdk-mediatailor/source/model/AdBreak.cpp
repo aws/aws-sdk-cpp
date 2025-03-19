@@ -18,20 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-AdBreak::AdBreak() : 
-    m_messageType(MessageType::NOT_SET),
-    m_messageTypeHasBeenSet(false),
-    m_offsetMillis(0),
-    m_offsetMillisHasBeenSet(false),
-    m_slateHasBeenSet(false),
-    m_spliceInsertMessageHasBeenSet(false),
-    m_timeSignalMessageHasBeenSet(false),
-    m_adBreakMetadataHasBeenSet(false)
-{
-}
-
 AdBreak::AdBreak(JsonView jsonValue)
-  : AdBreak()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ AdBreak& AdBreak::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MessageType"))
   {
     m_messageType = MessageTypeMapper::GetMessageTypeForName(jsonValue.GetString("MessageType"));
-
     m_messageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OffsetMillis"))
   {
     m_offsetMillis = jsonValue.GetInt64("OffsetMillis");
-
     m_offsetMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Slate"))
   {
     m_slate = jsonValue.GetObject("Slate");
-
     m_slateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpliceInsertMessage"))
   {
     m_spliceInsertMessage = jsonValue.GetObject("SpliceInsertMessage");
-
     m_spliceInsertMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeSignalMessage"))
   {
     m_timeSignalMessage = jsonValue.GetObject("TimeSignalMessage");
-
     m_timeSignalMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdBreakMetadata"))
   {
     Aws::Utils::Array<JsonView> adBreakMetadataJsonList = jsonValue.GetArray("AdBreakMetadata");
@@ -82,7 +59,6 @@ AdBreak& AdBreak::operator =(JsonView jsonValue)
     }
     m_adBreakMetadataHasBeenSet = true;
   }
-
   return *this;
 }
 

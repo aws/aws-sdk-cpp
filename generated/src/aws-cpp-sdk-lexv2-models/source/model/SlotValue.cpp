@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-SlotValue::SlotValue() : 
-    m_interpretedValueHasBeenSet(false)
-{
-}
-
 SlotValue::SlotValue(JsonView jsonValue)
-  : SlotValue()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SlotValue& SlotValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("interpretedValue"))
   {
     m_interpretedValue = jsonValue.GetString("interpretedValue");
-
     m_interpretedValueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -22,7 +22,7 @@ namespace Model
   class UpdateBillScenarioRequest : public BCMPricingCalculatorRequest
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API UpdateBillScenarioRequest();
+    AWS_BCMPRICINGCALCULATOR_API UpdateBillScenarioRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,40 +39,36 @@ namespace Model
     /**
      * <p> The unique identifier of the bill scenario to update. </p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline UpdateBillScenarioRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline UpdateBillScenarioRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline UpdateBillScenarioRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    UpdateBillScenarioRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The new name for the bill scenario. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateBillScenarioRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateBillScenarioRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateBillScenarioRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateBillScenarioRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The new expiration date for the bill scenario. </p>
      */
-    inline const Aws::Utils::DateTime& GetExpiresAt() const{ return m_expiresAt; }
+    inline const Aws::Utils::DateTime& GetExpiresAt() const { return m_expiresAt; }
     inline bool ExpiresAtHasBeenSet() const { return m_expiresAtHasBeenSet; }
-    inline void SetExpiresAt(const Aws::Utils::DateTime& value) { m_expiresAtHasBeenSet = true; m_expiresAt = value; }
-    inline void SetExpiresAt(Aws::Utils::DateTime&& value) { m_expiresAtHasBeenSet = true; m_expiresAt = std::move(value); }
-    inline UpdateBillScenarioRequest& WithExpiresAt(const Aws::Utils::DateTime& value) { SetExpiresAt(value); return *this;}
-    inline UpdateBillScenarioRequest& WithExpiresAt(Aws::Utils::DateTime&& value) { SetExpiresAt(std::move(value)); return *this;}
+    template<typename ExpiresAtT = Aws::Utils::DateTime>
+    void SetExpiresAt(ExpiresAtT&& value) { m_expiresAtHasBeenSet = true; m_expiresAt = std::forward<ExpiresAtT>(value); }
+    template<typename ExpiresAtT = Aws::Utils::DateTime>
+    UpdateBillScenarioRequest& WithExpiresAt(ExpiresAtT&& value) { SetExpiresAt(std::forward<ExpiresAtT>(value)); return *this;}
     ///@}
   private:
 
@@ -82,7 +78,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expiresAt;
+    Aws::Utils::DateTime m_expiresAt{};
     bool m_expiresAtHasBeenSet = false;
   };
 

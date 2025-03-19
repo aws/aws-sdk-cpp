@@ -32,7 +32,7 @@ namespace Model
   class DomainConfiguration
   {
   public:
-    AWS_SWF_API DomainConfiguration();
+    AWS_SWF_API DomainConfiguration() = default;
     AWS_SWF_API DomainConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API DomainConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The retention period for workflow executions in this domain.</p>
      */
-    inline const Aws::String& GetWorkflowExecutionRetentionPeriodInDays() const{ return m_workflowExecutionRetentionPeriodInDays; }
+    inline const Aws::String& GetWorkflowExecutionRetentionPeriodInDays() const { return m_workflowExecutionRetentionPeriodInDays; }
     inline bool WorkflowExecutionRetentionPeriodInDaysHasBeenSet() const { return m_workflowExecutionRetentionPeriodInDaysHasBeenSet; }
-    inline void SetWorkflowExecutionRetentionPeriodInDays(const Aws::String& value) { m_workflowExecutionRetentionPeriodInDaysHasBeenSet = true; m_workflowExecutionRetentionPeriodInDays = value; }
-    inline void SetWorkflowExecutionRetentionPeriodInDays(Aws::String&& value) { m_workflowExecutionRetentionPeriodInDaysHasBeenSet = true; m_workflowExecutionRetentionPeriodInDays = std::move(value); }
-    inline void SetWorkflowExecutionRetentionPeriodInDays(const char* value) { m_workflowExecutionRetentionPeriodInDaysHasBeenSet = true; m_workflowExecutionRetentionPeriodInDays.assign(value); }
-    inline DomainConfiguration& WithWorkflowExecutionRetentionPeriodInDays(const Aws::String& value) { SetWorkflowExecutionRetentionPeriodInDays(value); return *this;}
-    inline DomainConfiguration& WithWorkflowExecutionRetentionPeriodInDays(Aws::String&& value) { SetWorkflowExecutionRetentionPeriodInDays(std::move(value)); return *this;}
-    inline DomainConfiguration& WithWorkflowExecutionRetentionPeriodInDays(const char* value) { SetWorkflowExecutionRetentionPeriodInDays(value); return *this;}
+    template<typename WorkflowExecutionRetentionPeriodInDaysT = Aws::String>
+    void SetWorkflowExecutionRetentionPeriodInDays(WorkflowExecutionRetentionPeriodInDaysT&& value) { m_workflowExecutionRetentionPeriodInDaysHasBeenSet = true; m_workflowExecutionRetentionPeriodInDays = std::forward<WorkflowExecutionRetentionPeriodInDaysT>(value); }
+    template<typename WorkflowExecutionRetentionPeriodInDaysT = Aws::String>
+    DomainConfiguration& WithWorkflowExecutionRetentionPeriodInDays(WorkflowExecutionRetentionPeriodInDaysT&& value) { SetWorkflowExecutionRetentionPeriodInDays(std::forward<WorkflowExecutionRetentionPeriodInDaysT>(value)); return *this;}
     ///@}
   private:
 

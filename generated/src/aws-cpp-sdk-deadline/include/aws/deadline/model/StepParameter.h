@@ -32,7 +32,7 @@ namespace Model
   class StepParameter
   {
   public:
-    AWS_DEADLINE_API StepParameter();
+    AWS_DEADLINE_API StepParameter() = default;
     AWS_DEADLINE_API StepParameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API StepParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>The name of the parameter.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline StepParameter& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline StepParameter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline StepParameter& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    StepParameter& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data type of the parameter.</p>
      */
-    inline const StepParameterType& GetType() const{ return m_type; }
+    inline StepParameterType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const StepParameterType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(StepParameterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline StepParameter& WithType(const StepParameterType& value) { SetType(value); return *this;}
-    inline StepParameter& WithType(StepParameterType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(StepParameterType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline StepParameter& WithType(StepParameterType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    StepParameterType m_type;
+    StepParameterType m_type{StepParameterType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

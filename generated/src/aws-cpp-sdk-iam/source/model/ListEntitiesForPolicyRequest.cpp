@@ -10,19 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-ListEntitiesForPolicyRequest::ListEntitiesForPolicyRequest() : 
-    m_policyArnHasBeenSet(false),
-    m_entityFilter(EntityType::NOT_SET),
-    m_entityFilterHasBeenSet(false),
-    m_pathPrefixHasBeenSet(false),
-    m_policyUsageFilter(PolicyUsageType::NOT_SET),
-    m_policyUsageFilterHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false)
-{
-}
-
 Aws::String ListEntitiesForPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

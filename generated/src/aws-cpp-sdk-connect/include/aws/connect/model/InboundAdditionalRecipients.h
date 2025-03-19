@@ -33,7 +33,7 @@ namespace Model
   class InboundAdditionalRecipients
   {
   public:
-    AWS_CONNECT_API InboundAdditionalRecipients();
+    AWS_CONNECT_API InboundAdditionalRecipients() = default;
     AWS_CONNECT_API InboundAdditionalRecipients(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API InboundAdditionalRecipients& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>The additional recipients information present in to list.</p>
      */
-    inline const Aws::Vector<EmailAddressInfo>& GetToAddresses() const{ return m_toAddresses; }
+    inline const Aws::Vector<EmailAddressInfo>& GetToAddresses() const { return m_toAddresses; }
     inline bool ToAddressesHasBeenSet() const { return m_toAddressesHasBeenSet; }
-    inline void SetToAddresses(const Aws::Vector<EmailAddressInfo>& value) { m_toAddressesHasBeenSet = true; m_toAddresses = value; }
-    inline void SetToAddresses(Aws::Vector<EmailAddressInfo>&& value) { m_toAddressesHasBeenSet = true; m_toAddresses = std::move(value); }
-    inline InboundAdditionalRecipients& WithToAddresses(const Aws::Vector<EmailAddressInfo>& value) { SetToAddresses(value); return *this;}
-    inline InboundAdditionalRecipients& WithToAddresses(Aws::Vector<EmailAddressInfo>&& value) { SetToAddresses(std::move(value)); return *this;}
-    inline InboundAdditionalRecipients& AddToAddresses(const EmailAddressInfo& value) { m_toAddressesHasBeenSet = true; m_toAddresses.push_back(value); return *this; }
-    inline InboundAdditionalRecipients& AddToAddresses(EmailAddressInfo&& value) { m_toAddressesHasBeenSet = true; m_toAddresses.push_back(std::move(value)); return *this; }
+    template<typename ToAddressesT = Aws::Vector<EmailAddressInfo>>
+    void SetToAddresses(ToAddressesT&& value) { m_toAddressesHasBeenSet = true; m_toAddresses = std::forward<ToAddressesT>(value); }
+    template<typename ToAddressesT = Aws::Vector<EmailAddressInfo>>
+    InboundAdditionalRecipients& WithToAddresses(ToAddressesT&& value) { SetToAddresses(std::forward<ToAddressesT>(value)); return *this;}
+    template<typename ToAddressesT = EmailAddressInfo>
+    InboundAdditionalRecipients& AddToAddresses(ToAddressesT&& value) { m_toAddressesHasBeenSet = true; m_toAddresses.emplace_back(std::forward<ToAddressesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The additional recipients information present in cc list.</p>
      */
-    inline const Aws::Vector<EmailAddressInfo>& GetCcAddresses() const{ return m_ccAddresses; }
+    inline const Aws::Vector<EmailAddressInfo>& GetCcAddresses() const { return m_ccAddresses; }
     inline bool CcAddressesHasBeenSet() const { return m_ccAddressesHasBeenSet; }
-    inline void SetCcAddresses(const Aws::Vector<EmailAddressInfo>& value) { m_ccAddressesHasBeenSet = true; m_ccAddresses = value; }
-    inline void SetCcAddresses(Aws::Vector<EmailAddressInfo>&& value) { m_ccAddressesHasBeenSet = true; m_ccAddresses = std::move(value); }
-    inline InboundAdditionalRecipients& WithCcAddresses(const Aws::Vector<EmailAddressInfo>& value) { SetCcAddresses(value); return *this;}
-    inline InboundAdditionalRecipients& WithCcAddresses(Aws::Vector<EmailAddressInfo>&& value) { SetCcAddresses(std::move(value)); return *this;}
-    inline InboundAdditionalRecipients& AddCcAddresses(const EmailAddressInfo& value) { m_ccAddressesHasBeenSet = true; m_ccAddresses.push_back(value); return *this; }
-    inline InboundAdditionalRecipients& AddCcAddresses(EmailAddressInfo&& value) { m_ccAddressesHasBeenSet = true; m_ccAddresses.push_back(std::move(value)); return *this; }
+    template<typename CcAddressesT = Aws::Vector<EmailAddressInfo>>
+    void SetCcAddresses(CcAddressesT&& value) { m_ccAddressesHasBeenSet = true; m_ccAddresses = std::forward<CcAddressesT>(value); }
+    template<typename CcAddressesT = Aws::Vector<EmailAddressInfo>>
+    InboundAdditionalRecipients& WithCcAddresses(CcAddressesT&& value) { SetCcAddresses(std::forward<CcAddressesT>(value)); return *this;}
+    template<typename CcAddressesT = EmailAddressInfo>
+    InboundAdditionalRecipients& AddCcAddresses(CcAddressesT&& value) { m_ccAddressesHasBeenSet = true; m_ccAddresses.emplace_back(std::forward<CcAddressesT>(value)); return *this; }
     ///@}
   private:
 

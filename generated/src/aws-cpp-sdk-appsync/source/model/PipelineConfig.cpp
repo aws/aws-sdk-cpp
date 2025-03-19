@@ -18,13 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-PipelineConfig::PipelineConfig() : 
-    m_functionsHasBeenSet(false)
-{
-}
-
 PipelineConfig::PipelineConfig(JsonView jsonValue)
-  : PipelineConfig()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ PipelineConfig& PipelineConfig::operator =(JsonView jsonValue)
     }
     m_functionsHasBeenSet = true;
   }
-
   return *this;
 }
 

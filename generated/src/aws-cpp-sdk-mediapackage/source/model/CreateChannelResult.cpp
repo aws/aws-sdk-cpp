@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateChannelResult::CreateChannelResult()
-{
-}
-
 CreateChannelResult::CreateChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,45 +28,38 @@ CreateChannelResult& CreateChannelResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("egressAccessLogs"))
   {
     m_egressAccessLogs = jsonValue.GetObject("egressAccessLogs");
-
+    m_egressAccessLogsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hlsIngest"))
   {
     m_hlsIngest = jsonValue.GetObject("hlsIngest");
-
+    m_hlsIngestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ingressAccessLogs"))
   {
     m_ingressAccessLogs = jsonValue.GetObject("ingressAccessLogs");
-
+    m_ingressAccessLogsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -78,14 +67,15 @@ CreateChannelResult& CreateChannelResult::operator =(const Aws::AmazonWebService
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

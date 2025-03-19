@@ -21,7 +21,7 @@ namespace Model
   class DeleteOpsMetadataRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API DeleteOpsMetadataRequest();
+    AWS_SSM_API DeleteOpsMetadataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an OpsMetadata Object to delete.</p>
      */
-    inline const Aws::String& GetOpsMetadataArn() const{ return m_opsMetadataArn; }
+    inline const Aws::String& GetOpsMetadataArn() const { return m_opsMetadataArn; }
     inline bool OpsMetadataArnHasBeenSet() const { return m_opsMetadataArnHasBeenSet; }
-    inline void SetOpsMetadataArn(const Aws::String& value) { m_opsMetadataArnHasBeenSet = true; m_opsMetadataArn = value; }
-    inline void SetOpsMetadataArn(Aws::String&& value) { m_opsMetadataArnHasBeenSet = true; m_opsMetadataArn = std::move(value); }
-    inline void SetOpsMetadataArn(const char* value) { m_opsMetadataArnHasBeenSet = true; m_opsMetadataArn.assign(value); }
-    inline DeleteOpsMetadataRequest& WithOpsMetadataArn(const Aws::String& value) { SetOpsMetadataArn(value); return *this;}
-    inline DeleteOpsMetadataRequest& WithOpsMetadataArn(Aws::String&& value) { SetOpsMetadataArn(std::move(value)); return *this;}
-    inline DeleteOpsMetadataRequest& WithOpsMetadataArn(const char* value) { SetOpsMetadataArn(value); return *this;}
+    template<typename OpsMetadataArnT = Aws::String>
+    void SetOpsMetadataArn(OpsMetadataArnT&& value) { m_opsMetadataArnHasBeenSet = true; m_opsMetadataArn = std::forward<OpsMetadataArnT>(value); }
+    template<typename OpsMetadataArnT = Aws::String>
+    DeleteOpsMetadataRequest& WithOpsMetadataArn(OpsMetadataArnT&& value) { SetOpsMetadataArn(std::forward<OpsMetadataArnT>(value)); return *this;}
     ///@}
   private:
 

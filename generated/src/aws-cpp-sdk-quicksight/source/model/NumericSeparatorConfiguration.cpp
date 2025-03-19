@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-NumericSeparatorConfiguration::NumericSeparatorConfiguration() : 
-    m_decimalSeparator(NumericSeparatorSymbol::NOT_SET),
-    m_decimalSeparatorHasBeenSet(false),
-    m_thousandsSeparatorHasBeenSet(false)
-{
-}
-
 NumericSeparatorConfiguration::NumericSeparatorConfiguration(JsonView jsonValue)
-  : NumericSeparatorConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ NumericSeparatorConfiguration& NumericSeparatorConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("DecimalSeparator"))
   {
     m_decimalSeparator = NumericSeparatorSymbolMapper::GetNumericSeparatorSymbolForName(jsonValue.GetString("DecimalSeparator"));
-
     m_decimalSeparatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThousandsSeparator"))
   {
     m_thousandsSeparator = jsonValue.GetObject("ThousandsSeparator");
-
     m_thousandsSeparatorHasBeenSet = true;
   }
-
   return *this;
 }
 

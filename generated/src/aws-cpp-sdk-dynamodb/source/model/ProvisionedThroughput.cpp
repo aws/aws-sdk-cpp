@@ -18,16 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-ProvisionedThroughput::ProvisionedThroughput() : 
-    m_readCapacityUnits(0),
-    m_readCapacityUnitsHasBeenSet(false),
-    m_writeCapacityUnits(0),
-    m_writeCapacityUnitsHasBeenSet(false)
-{
-}
-
 ProvisionedThroughput::ProvisionedThroughput(JsonView jsonValue)
-  : ProvisionedThroughput()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ProvisionedThroughput& ProvisionedThroughput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReadCapacityUnits"))
   {
     m_readCapacityUnits = jsonValue.GetInt64("ReadCapacityUnits");
-
     m_readCapacityUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WriteCapacityUnits"))
   {
     m_writeCapacityUnits = jsonValue.GetInt64("WriteCapacityUnits");
-
     m_writeCapacityUnitsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace OpenSearchServerless
 namespace Model
 {
 
-AccessPolicyStats::AccessPolicyStats() : 
-    m_dataPolicyCount(0),
-    m_dataPolicyCountHasBeenSet(false)
-{
-}
-
 AccessPolicyStats::AccessPolicyStats(JsonView jsonValue)
-  : AccessPolicyStats()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AccessPolicyStats& AccessPolicyStats::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataPolicyCount"))
   {
     m_dataPolicyCount = jsonValue.GetInt64("DataPolicyCount");
-
     m_dataPolicyCountHasBeenSet = true;
   }
-
   return *this;
 }
 

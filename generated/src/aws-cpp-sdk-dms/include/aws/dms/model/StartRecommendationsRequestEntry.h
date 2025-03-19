@@ -34,7 +34,7 @@ namespace Model
   class StartRecommendationsRequestEntry
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API StartRecommendationsRequestEntry();
+    AWS_DATABASEMIGRATIONSERVICE_API StartRecommendationsRequestEntry() = default;
     AWS_DATABASEMIGRATIONSERVICE_API StartRecommendationsRequestEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API StartRecommendationsRequestEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,24 @@ namespace Model
     /**
      * <p>The identifier of the source database.</p>
      */
-    inline const Aws::String& GetDatabaseId() const{ return m_databaseId; }
+    inline const Aws::String& GetDatabaseId() const { return m_databaseId; }
     inline bool DatabaseIdHasBeenSet() const { return m_databaseIdHasBeenSet; }
-    inline void SetDatabaseId(const Aws::String& value) { m_databaseIdHasBeenSet = true; m_databaseId = value; }
-    inline void SetDatabaseId(Aws::String&& value) { m_databaseIdHasBeenSet = true; m_databaseId = std::move(value); }
-    inline void SetDatabaseId(const char* value) { m_databaseIdHasBeenSet = true; m_databaseId.assign(value); }
-    inline StartRecommendationsRequestEntry& WithDatabaseId(const Aws::String& value) { SetDatabaseId(value); return *this;}
-    inline StartRecommendationsRequestEntry& WithDatabaseId(Aws::String&& value) { SetDatabaseId(std::move(value)); return *this;}
-    inline StartRecommendationsRequestEntry& WithDatabaseId(const char* value) { SetDatabaseId(value); return *this;}
+    template<typename DatabaseIdT = Aws::String>
+    void SetDatabaseId(DatabaseIdT&& value) { m_databaseIdHasBeenSet = true; m_databaseId = std::forward<DatabaseIdT>(value); }
+    template<typename DatabaseIdT = Aws::String>
+    StartRecommendationsRequestEntry& WithDatabaseId(DatabaseIdT&& value) { SetDatabaseId(std::forward<DatabaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The required target engine settings.</p>
      */
-    inline const RecommendationSettings& GetSettings() const{ return m_settings; }
+    inline const RecommendationSettings& GetSettings() const { return m_settings; }
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
-    inline void SetSettings(const RecommendationSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
-    inline void SetSettings(RecommendationSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
-    inline StartRecommendationsRequestEntry& WithSettings(const RecommendationSettings& value) { SetSettings(value); return *this;}
-    inline StartRecommendationsRequestEntry& WithSettings(RecommendationSettings&& value) { SetSettings(std::move(value)); return *this;}
+    template<typename SettingsT = RecommendationSettings>
+    void SetSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings = std::forward<SettingsT>(value); }
+    template<typename SettingsT = RecommendationSettings>
+    StartRecommendationsRequestEntry& WithSettings(SettingsT&& value) { SetSettings(std::forward<SettingsT>(value)); return *this;}
     ///@}
   private:
 

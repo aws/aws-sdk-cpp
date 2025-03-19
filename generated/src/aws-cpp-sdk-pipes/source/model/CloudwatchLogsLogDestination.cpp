@@ -18,13 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-CloudwatchLogsLogDestination::CloudwatchLogsLogDestination() : 
-    m_logGroupArnHasBeenSet(false)
-{
-}
-
 CloudwatchLogsLogDestination::CloudwatchLogsLogDestination(JsonView jsonValue)
-  : CloudwatchLogsLogDestination()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CloudwatchLogsLogDestination& CloudwatchLogsLogDestination::operator =(JsonView 
   if(jsonValue.ValueExists("LogGroupArn"))
   {
     m_logGroupArn = jsonValue.GetString("LogGroupArn");
-
     m_logGroupArnHasBeenSet = true;
   }
-
   return *this;
 }
 

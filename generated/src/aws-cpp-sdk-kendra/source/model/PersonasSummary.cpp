@@ -18,17 +18,7 @@ namespace kendra
 namespace Model
 {
 
-PersonasSummary::PersonasSummary() : 
-    m_entityIdHasBeenSet(false),
-    m_persona(Persona::NOT_SET),
-    m_personaHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 PersonasSummary::PersonasSummary(JsonView jsonValue)
-  : PersonasSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ PersonasSummary& PersonasSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EntityId"))
   {
     m_entityId = jsonValue.GetString("EntityId");
-
     m_entityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Persona"))
   {
     m_persona = PersonaMapper::GetPersonaForName(jsonValue.GetString("Persona"));
-
     m_personaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

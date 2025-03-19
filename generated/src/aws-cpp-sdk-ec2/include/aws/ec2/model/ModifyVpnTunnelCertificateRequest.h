@@ -21,7 +21,7 @@ namespace Model
   class ModifyVpnTunnelCertificateRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ModifyVpnTunnelCertificateRequest();
+    AWS_EC2_API ModifyVpnTunnelCertificateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
     /**
      * <p>The ID of the Amazon Web Services Site-to-Site VPN connection.</p>
      */
-    inline const Aws::String& GetVpnConnectionId() const{ return m_vpnConnectionId; }
+    inline const Aws::String& GetVpnConnectionId() const { return m_vpnConnectionId; }
     inline bool VpnConnectionIdHasBeenSet() const { return m_vpnConnectionIdHasBeenSet; }
-    inline void SetVpnConnectionId(const Aws::String& value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId = value; }
-    inline void SetVpnConnectionId(Aws::String&& value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId = std::move(value); }
-    inline void SetVpnConnectionId(const char* value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId.assign(value); }
-    inline ModifyVpnTunnelCertificateRequest& WithVpnConnectionId(const Aws::String& value) { SetVpnConnectionId(value); return *this;}
-    inline ModifyVpnTunnelCertificateRequest& WithVpnConnectionId(Aws::String&& value) { SetVpnConnectionId(std::move(value)); return *this;}
-    inline ModifyVpnTunnelCertificateRequest& WithVpnConnectionId(const char* value) { SetVpnConnectionId(value); return *this;}
+    template<typename VpnConnectionIdT = Aws::String>
+    void SetVpnConnectionId(VpnConnectionIdT&& value) { m_vpnConnectionIdHasBeenSet = true; m_vpnConnectionId = std::forward<VpnConnectionIdT>(value); }
+    template<typename VpnConnectionIdT = Aws::String>
+    ModifyVpnTunnelCertificateRequest& WithVpnConnectionId(VpnConnectionIdT&& value) { SetVpnConnectionId(std::forward<VpnConnectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The external IP address of the VPN tunnel.</p>
      */
-    inline const Aws::String& GetVpnTunnelOutsideIpAddress() const{ return m_vpnTunnelOutsideIpAddress; }
+    inline const Aws::String& GetVpnTunnelOutsideIpAddress() const { return m_vpnTunnelOutsideIpAddress; }
     inline bool VpnTunnelOutsideIpAddressHasBeenSet() const { return m_vpnTunnelOutsideIpAddressHasBeenSet; }
-    inline void SetVpnTunnelOutsideIpAddress(const Aws::String& value) { m_vpnTunnelOutsideIpAddressHasBeenSet = true; m_vpnTunnelOutsideIpAddress = value; }
-    inline void SetVpnTunnelOutsideIpAddress(Aws::String&& value) { m_vpnTunnelOutsideIpAddressHasBeenSet = true; m_vpnTunnelOutsideIpAddress = std::move(value); }
-    inline void SetVpnTunnelOutsideIpAddress(const char* value) { m_vpnTunnelOutsideIpAddressHasBeenSet = true; m_vpnTunnelOutsideIpAddress.assign(value); }
-    inline ModifyVpnTunnelCertificateRequest& WithVpnTunnelOutsideIpAddress(const Aws::String& value) { SetVpnTunnelOutsideIpAddress(value); return *this;}
-    inline ModifyVpnTunnelCertificateRequest& WithVpnTunnelOutsideIpAddress(Aws::String&& value) { SetVpnTunnelOutsideIpAddress(std::move(value)); return *this;}
-    inline ModifyVpnTunnelCertificateRequest& WithVpnTunnelOutsideIpAddress(const char* value) { SetVpnTunnelOutsideIpAddress(value); return *this;}
+    template<typename VpnTunnelOutsideIpAddressT = Aws::String>
+    void SetVpnTunnelOutsideIpAddress(VpnTunnelOutsideIpAddressT&& value) { m_vpnTunnelOutsideIpAddressHasBeenSet = true; m_vpnTunnelOutsideIpAddress = std::forward<VpnTunnelOutsideIpAddressT>(value); }
+    template<typename VpnTunnelOutsideIpAddressT = Aws::String>
+    ModifyVpnTunnelCertificateRequest& WithVpnTunnelOutsideIpAddress(VpnTunnelOutsideIpAddressT&& value) { SetVpnTunnelOutsideIpAddress(std::forward<VpnTunnelOutsideIpAddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,7 +67,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline ModifyVpnTunnelCertificateRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -84,7 +80,7 @@ namespace Model
     Aws::String m_vpnTunnelOutsideIpAddress;
     bool m_vpnTunnelOutsideIpAddressHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

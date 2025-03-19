@@ -36,7 +36,7 @@ namespace Model
   class Span
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API Span();
+    AWS_BEDROCKAGENTRUNTIME_API Span() = default;
     AWS_BEDROCKAGENTRUNTIME_API Span(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Span& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
     /**
      * <p>Where the text with a citation ends in the generated output.</p>
      */
-    inline int GetEnd() const{ return m_end; }
+    inline int GetEnd() const { return m_end; }
     inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
     inline void SetEnd(int value) { m_endHasBeenSet = true; m_end = value; }
     inline Span& WithEnd(int value) { SetEnd(value); return *this;}
@@ -56,17 +56,17 @@ namespace Model
     /**
      * <p>Where the text with a citation starts in the generated output.</p>
      */
-    inline int GetStart() const{ return m_start; }
+    inline int GetStart() const { return m_start; }
     inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
     inline void SetStart(int value) { m_startHasBeenSet = true; m_start = value; }
     inline Span& WithStart(int value) { SetStart(value); return *this;}
     ///@}
   private:
 
-    int m_end;
+    int m_end{0};
     bool m_endHasBeenSet = false;
 
-    int m_start;
+    int m_start{0};
     bool m_startHasBeenSet = false;
   };
 

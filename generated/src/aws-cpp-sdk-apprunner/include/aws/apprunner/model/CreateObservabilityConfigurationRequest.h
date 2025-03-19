@@ -24,7 +24,7 @@ namespace Model
   class CreateObservabilityConfigurationRequest : public AppRunnerRequest
   {
   public:
-    AWS_APPRUNNER_API CreateObservabilityConfigurationRequest();
+    AWS_APPRUNNER_API CreateObservabilityConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,14 +49,12 @@ namespace Model
      * service, <i>create a configuration with a different name</i>, and then provide
      * it when you create or update your service.</p> 
      */
-    inline const Aws::String& GetObservabilityConfigurationName() const{ return m_observabilityConfigurationName; }
+    inline const Aws::String& GetObservabilityConfigurationName() const { return m_observabilityConfigurationName; }
     inline bool ObservabilityConfigurationNameHasBeenSet() const { return m_observabilityConfigurationNameHasBeenSet; }
-    inline void SetObservabilityConfigurationName(const Aws::String& value) { m_observabilityConfigurationNameHasBeenSet = true; m_observabilityConfigurationName = value; }
-    inline void SetObservabilityConfigurationName(Aws::String&& value) { m_observabilityConfigurationNameHasBeenSet = true; m_observabilityConfigurationName = std::move(value); }
-    inline void SetObservabilityConfigurationName(const char* value) { m_observabilityConfigurationNameHasBeenSet = true; m_observabilityConfigurationName.assign(value); }
-    inline CreateObservabilityConfigurationRequest& WithObservabilityConfigurationName(const Aws::String& value) { SetObservabilityConfigurationName(value); return *this;}
-    inline CreateObservabilityConfigurationRequest& WithObservabilityConfigurationName(Aws::String&& value) { SetObservabilityConfigurationName(std::move(value)); return *this;}
-    inline CreateObservabilityConfigurationRequest& WithObservabilityConfigurationName(const char* value) { SetObservabilityConfigurationName(value); return *this;}
+    template<typename ObservabilityConfigurationNameT = Aws::String>
+    void SetObservabilityConfigurationName(ObservabilityConfigurationNameT&& value) { m_observabilityConfigurationNameHasBeenSet = true; m_observabilityConfigurationName = std::forward<ObservabilityConfigurationNameT>(value); }
+    template<typename ObservabilityConfigurationNameT = Aws::String>
+    CreateObservabilityConfigurationRequest& WithObservabilityConfigurationName(ObservabilityConfigurationNameT&& value) { SetObservabilityConfigurationName(std::forward<ObservabilityConfigurationNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +62,12 @@ namespace Model
      * <p>The configuration of the tracing feature within this observability
      * configuration. If you don't specify it, App Runner doesn't enable tracing.</p>
      */
-    inline const TraceConfiguration& GetTraceConfiguration() const{ return m_traceConfiguration; }
+    inline const TraceConfiguration& GetTraceConfiguration() const { return m_traceConfiguration; }
     inline bool TraceConfigurationHasBeenSet() const { return m_traceConfigurationHasBeenSet; }
-    inline void SetTraceConfiguration(const TraceConfiguration& value) { m_traceConfigurationHasBeenSet = true; m_traceConfiguration = value; }
-    inline void SetTraceConfiguration(TraceConfiguration&& value) { m_traceConfigurationHasBeenSet = true; m_traceConfiguration = std::move(value); }
-    inline CreateObservabilityConfigurationRequest& WithTraceConfiguration(const TraceConfiguration& value) { SetTraceConfiguration(value); return *this;}
-    inline CreateObservabilityConfigurationRequest& WithTraceConfiguration(TraceConfiguration&& value) { SetTraceConfiguration(std::move(value)); return *this;}
+    template<typename TraceConfigurationT = TraceConfiguration>
+    void SetTraceConfiguration(TraceConfigurationT&& value) { m_traceConfigurationHasBeenSet = true; m_traceConfiguration = std::forward<TraceConfigurationT>(value); }
+    template<typename TraceConfigurationT = TraceConfiguration>
+    CreateObservabilityConfigurationRequest& WithTraceConfiguration(TraceConfigurationT&& value) { SetTraceConfiguration(std::forward<TraceConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +75,14 @@ namespace Model
      * <p>A list of metadata items that you can associate with your observability
      * configuration resource. A tag is a key-value pair.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateObservabilityConfigurationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateObservabilityConfigurationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateObservabilityConfigurationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateObservabilityConfigurationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateObservabilityConfigurationRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateObservabilityConfigurationRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

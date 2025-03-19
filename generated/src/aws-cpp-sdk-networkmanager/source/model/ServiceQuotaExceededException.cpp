@@ -18,17 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-ServiceQuotaExceededException::ServiceQuotaExceededException() : 
-    m_messageHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_limitCodeHasBeenSet(false),
-    m_serviceCodeHasBeenSet(false)
-{
-}
-
 ServiceQuotaExceededException::ServiceQuotaExceededException(JsonView jsonValue)
-  : ServiceQuotaExceededException()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ ServiceQuotaExceededException& ServiceQuotaExceededException::operator =(JsonVie
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LimitCode"))
   {
     m_limitCode = jsonValue.GetString("LimitCode");
-
     m_limitCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceCode"))
   {
     m_serviceCode = jsonValue.GetString("ServiceCode");
-
     m_serviceCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

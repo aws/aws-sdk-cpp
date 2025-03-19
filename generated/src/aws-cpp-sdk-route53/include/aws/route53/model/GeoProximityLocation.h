@@ -38,7 +38,7 @@ namespace Model
   class GeoProximityLocation
   {
   public:
-    AWS_ROUTE53_API GeoProximityLocation();
+    AWS_ROUTE53_API GeoProximityLocation() = default;
     AWS_ROUTE53_API GeoProximityLocation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ROUTE53_API GeoProximityLocation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,14 +50,12 @@ namespace Model
      * <p> The Amazon Web Services Region the resource you are directing DNS traffic
      * to, is in. </p>
      */
-    inline const Aws::String& GetAWSRegion() const{ return m_aWSRegion; }
+    inline const Aws::String& GetAWSRegion() const { return m_aWSRegion; }
     inline bool AWSRegionHasBeenSet() const { return m_aWSRegionHasBeenSet; }
-    inline void SetAWSRegion(const Aws::String& value) { m_aWSRegionHasBeenSet = true; m_aWSRegion = value; }
-    inline void SetAWSRegion(Aws::String&& value) { m_aWSRegionHasBeenSet = true; m_aWSRegion = std::move(value); }
-    inline void SetAWSRegion(const char* value) { m_aWSRegionHasBeenSet = true; m_aWSRegion.assign(value); }
-    inline GeoProximityLocation& WithAWSRegion(const Aws::String& value) { SetAWSRegion(value); return *this;}
-    inline GeoProximityLocation& WithAWSRegion(Aws::String&& value) { SetAWSRegion(std::move(value)); return *this;}
-    inline GeoProximityLocation& WithAWSRegion(const char* value) { SetAWSRegion(value); return *this;}
+    template<typename AWSRegionT = Aws::String>
+    void SetAWSRegion(AWSRegionT&& value) { m_aWSRegionHasBeenSet = true; m_aWSRegion = std::forward<AWSRegionT>(value); }
+    template<typename AWSRegionT = Aws::String>
+    GeoProximityLocation& WithAWSRegion(AWSRegionT&& value) { SetAWSRegion(std::forward<AWSRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,26 +71,24 @@ namespace Model
      * <code>us-west-2-den-1a</code> belongs to the Local Zone Group
      * <code>us-west-2-den-1</code>.</p>
      */
-    inline const Aws::String& GetLocalZoneGroup() const{ return m_localZoneGroup; }
+    inline const Aws::String& GetLocalZoneGroup() const { return m_localZoneGroup; }
     inline bool LocalZoneGroupHasBeenSet() const { return m_localZoneGroupHasBeenSet; }
-    inline void SetLocalZoneGroup(const Aws::String& value) { m_localZoneGroupHasBeenSet = true; m_localZoneGroup = value; }
-    inline void SetLocalZoneGroup(Aws::String&& value) { m_localZoneGroupHasBeenSet = true; m_localZoneGroup = std::move(value); }
-    inline void SetLocalZoneGroup(const char* value) { m_localZoneGroupHasBeenSet = true; m_localZoneGroup.assign(value); }
-    inline GeoProximityLocation& WithLocalZoneGroup(const Aws::String& value) { SetLocalZoneGroup(value); return *this;}
-    inline GeoProximityLocation& WithLocalZoneGroup(Aws::String&& value) { SetLocalZoneGroup(std::move(value)); return *this;}
-    inline GeoProximityLocation& WithLocalZoneGroup(const char* value) { SetLocalZoneGroup(value); return *this;}
+    template<typename LocalZoneGroupT = Aws::String>
+    void SetLocalZoneGroup(LocalZoneGroupT&& value) { m_localZoneGroupHasBeenSet = true; m_localZoneGroup = std::forward<LocalZoneGroupT>(value); }
+    template<typename LocalZoneGroupT = Aws::String>
+    GeoProximityLocation& WithLocalZoneGroup(LocalZoneGroupT&& value) { SetLocalZoneGroup(std::forward<LocalZoneGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Contains the longitude and latitude for a geographic region. </p>
      */
-    inline const Coordinates& GetCoordinates() const{ return m_coordinates; }
+    inline const Coordinates& GetCoordinates() const { return m_coordinates; }
     inline bool CoordinatesHasBeenSet() const { return m_coordinatesHasBeenSet; }
-    inline void SetCoordinates(const Coordinates& value) { m_coordinatesHasBeenSet = true; m_coordinates = value; }
-    inline void SetCoordinates(Coordinates&& value) { m_coordinatesHasBeenSet = true; m_coordinates = std::move(value); }
-    inline GeoProximityLocation& WithCoordinates(const Coordinates& value) { SetCoordinates(value); return *this;}
-    inline GeoProximityLocation& WithCoordinates(Coordinates&& value) { SetCoordinates(std::move(value)); return *this;}
+    template<typename CoordinatesT = Coordinates>
+    void SetCoordinates(CoordinatesT&& value) { m_coordinatesHasBeenSet = true; m_coordinates = std::forward<CoordinatesT>(value); }
+    template<typename CoordinatesT = Coordinates>
+    GeoProximityLocation& WithCoordinates(CoordinatesT&& value) { SetCoordinates(std::forward<CoordinatesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,7 +103,7 @@ namespace Model
      * traffic to a resource, specify a negative bias of -1 to -99. Route 53 expands
      * the size of adjacent regions. </p> </li> </ul>
      */
-    inline int GetBias() const{ return m_bias; }
+    inline int GetBias() const { return m_bias; }
     inline bool BiasHasBeenSet() const { return m_biasHasBeenSet; }
     inline void SetBias(int value) { m_biasHasBeenSet = true; m_bias = value; }
     inline GeoProximityLocation& WithBias(int value) { SetBias(value); return *this;}
@@ -123,7 +119,7 @@ namespace Model
     Coordinates m_coordinates;
     bool m_coordinatesHasBeenSet = false;
 
-    int m_bias;
+    int m_bias{0};
     bool m_biasHasBeenSet = false;
   };
 

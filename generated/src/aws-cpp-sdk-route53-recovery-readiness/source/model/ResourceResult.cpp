@@ -18,17 +18,7 @@ namespace Route53RecoveryReadiness
 namespace Model
 {
 
-ResourceResult::ResourceResult() : 
-    m_componentIdHasBeenSet(false),
-    m_lastCheckedTimestampHasBeenSet(false),
-    m_readiness(Readiness::NOT_SET),
-    m_readinessHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 ResourceResult::ResourceResult(JsonView jsonValue)
-  : ResourceResult()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ResourceResult& ResourceResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("componentId"))
   {
     m_componentId = jsonValue.GetString("componentId");
-
     m_componentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastCheckedTimestamp"))
   {
     m_lastCheckedTimestamp = jsonValue.GetString("lastCheckedTimestamp");
-
     m_lastCheckedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("readiness"))
   {
     m_readiness = ReadinessMapper::GetReadinessForName(jsonValue.GetString("readiness"));
-
     m_readinessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceArn"))
   {
     m_resourceArn = jsonValue.GetString("resourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

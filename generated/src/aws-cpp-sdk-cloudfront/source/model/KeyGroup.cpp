@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-KeyGroup::KeyGroup() : 
-    m_idHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_keyGroupConfigHasBeenSet(false)
-{
-}
-
 KeyGroup::KeyGroup(const XmlNode& xmlNode)
-  : KeyGroup()
 {
   *this = xmlNode;
 }

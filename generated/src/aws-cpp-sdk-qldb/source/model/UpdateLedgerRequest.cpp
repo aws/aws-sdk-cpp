@@ -12,14 +12,6 @@ using namespace Aws::QLDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateLedgerRequest::UpdateLedgerRequest() : 
-    m_nameHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false),
-    m_kmsKeyHasBeenSet(false)
-{
-}
-
 Aws::String UpdateLedgerRequest::SerializePayload() const
 {
   JsonValue payload;

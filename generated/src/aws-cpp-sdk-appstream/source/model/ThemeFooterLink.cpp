@@ -18,14 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-ThemeFooterLink::ThemeFooterLink() : 
-    m_displayNameHasBeenSet(false),
-    m_footerLinkURLHasBeenSet(false)
-{
-}
-
 ThemeFooterLink::ThemeFooterLink(JsonView jsonValue)
-  : ThemeFooterLink()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ThemeFooterLink& ThemeFooterLink::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FooterLinkURL"))
   {
     m_footerLinkURL = jsonValue.GetString("FooterLinkURL");
-
     m_footerLinkURLHasBeenSet = true;
   }
-
   return *this;
 }
 

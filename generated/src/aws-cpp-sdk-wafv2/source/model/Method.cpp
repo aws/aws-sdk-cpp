@@ -18,10 +18,6 @@ namespace WAFV2
 namespace Model
 {
 
-Method::Method()
-{
-}
-
 Method::Method(JsonView jsonValue)
 {
   *this = jsonValue;

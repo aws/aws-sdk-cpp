@@ -30,7 +30,7 @@ namespace Model
   class LambdaFunctionStartedEventAttributes
   {
   public:
-    AWS_SWF_API LambdaFunctionStartedEventAttributes();
+    AWS_SWF_API LambdaFunctionStartedEventAttributes() = default;
     AWS_SWF_API LambdaFunctionStartedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API LambdaFunctionStartedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
      * when this activity task was scheduled. To help diagnose issues, use this
      * information to trace back the chain of events leading up to this event.</p>
      */
-    inline long long GetScheduledEventId() const{ return m_scheduledEventId; }
+    inline long long GetScheduledEventId() const { return m_scheduledEventId; }
     inline bool ScheduledEventIdHasBeenSet() const { return m_scheduledEventIdHasBeenSet; }
     inline void SetScheduledEventId(long long value) { m_scheduledEventIdHasBeenSet = true; m_scheduledEventId = value; }
     inline LambdaFunctionStartedEventAttributes& WithScheduledEventId(long long value) { SetScheduledEventId(value); return *this;}
     ///@}
   private:
 
-    long long m_scheduledEventId;
+    long long m_scheduledEventId{0};
     bool m_scheduledEventIdHasBeenSet = false;
   };
 

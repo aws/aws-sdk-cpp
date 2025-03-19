@@ -33,7 +33,7 @@ namespace Model
   class HierarchicalPrincipal
   {
   public:
-    AWS_KENDRA_API HierarchicalPrincipal();
+    AWS_KENDRA_API HierarchicalPrincipal() = default;
     AWS_KENDRA_API HierarchicalPrincipal(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API HierarchicalPrincipal& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,14 @@ namespace Model
      * Each hierarchical list specifies which user or group has allow or deny access
      * for each document.</p>
      */
-    inline const Aws::Vector<Principal>& GetPrincipalList() const{ return m_principalList; }
+    inline const Aws::Vector<Principal>& GetPrincipalList() const { return m_principalList; }
     inline bool PrincipalListHasBeenSet() const { return m_principalListHasBeenSet; }
-    inline void SetPrincipalList(const Aws::Vector<Principal>& value) { m_principalListHasBeenSet = true; m_principalList = value; }
-    inline void SetPrincipalList(Aws::Vector<Principal>&& value) { m_principalListHasBeenSet = true; m_principalList = std::move(value); }
-    inline HierarchicalPrincipal& WithPrincipalList(const Aws::Vector<Principal>& value) { SetPrincipalList(value); return *this;}
-    inline HierarchicalPrincipal& WithPrincipalList(Aws::Vector<Principal>&& value) { SetPrincipalList(std::move(value)); return *this;}
-    inline HierarchicalPrincipal& AddPrincipalList(const Principal& value) { m_principalListHasBeenSet = true; m_principalList.push_back(value); return *this; }
-    inline HierarchicalPrincipal& AddPrincipalList(Principal&& value) { m_principalListHasBeenSet = true; m_principalList.push_back(std::move(value)); return *this; }
+    template<typename PrincipalListT = Aws::Vector<Principal>>
+    void SetPrincipalList(PrincipalListT&& value) { m_principalListHasBeenSet = true; m_principalList = std::forward<PrincipalListT>(value); }
+    template<typename PrincipalListT = Aws::Vector<Principal>>
+    HierarchicalPrincipal& WithPrincipalList(PrincipalListT&& value) { SetPrincipalList(std::forward<PrincipalListT>(value)); return *this;}
+    template<typename PrincipalListT = Principal>
+    HierarchicalPrincipal& AddPrincipalList(PrincipalListT&& value) { m_principalListHasBeenSet = true; m_principalList.emplace_back(std::forward<PrincipalListT>(value)); return *this; }
     ///@}
   private:
 

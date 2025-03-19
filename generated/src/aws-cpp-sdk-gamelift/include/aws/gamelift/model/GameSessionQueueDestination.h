@@ -33,7 +33,7 @@ namespace Model
   class GameSessionQueueDestination
   {
   public:
-    AWS_GAMELIFT_API GameSessionQueueDestination();
+    AWS_GAMELIFT_API GameSessionQueueDestination() = default;
     AWS_GAMELIFT_API GameSessionQueueDestination(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API GameSessionQueueDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * ARNs, which include a fleet ID or alias ID and a Region name, provide a unique
      * identifier across all Regions.</p>
      */
-    inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
+    inline const Aws::String& GetDestinationArn() const { return m_destinationArn; }
     inline bool DestinationArnHasBeenSet() const { return m_destinationArnHasBeenSet; }
-    inline void SetDestinationArn(const Aws::String& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
-    inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::move(value); }
-    inline void SetDestinationArn(const char* value) { m_destinationArnHasBeenSet = true; m_destinationArn.assign(value); }
-    inline GameSessionQueueDestination& WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
-    inline GameSessionQueueDestination& WithDestinationArn(Aws::String&& value) { SetDestinationArn(std::move(value)); return *this;}
-    inline GameSessionQueueDestination& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
+    template<typename DestinationArnT = Aws::String>
+    void SetDestinationArn(DestinationArnT&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::forward<DestinationArnT>(value); }
+    template<typename DestinationArnT = Aws::String>
+    GameSessionQueueDestination& WithDestinationArn(DestinationArnT&& value) { SetDestinationArn(std::forward<DestinationArnT>(value)); return *this;}
     ///@}
   private:
 

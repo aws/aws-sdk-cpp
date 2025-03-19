@@ -18,17 +18,7 @@ namespace ECRPublic
 namespace Model
 {
 
-Repository::Repository() : 
-    m_repositoryArnHasBeenSet(false),
-    m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_repositoryUriHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
-{
-}
-
 Repository::Repository(JsonView jsonValue)
-  : Repository()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ Repository& Repository::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("repositoryArn"))
   {
     m_repositoryArn = jsonValue.GetString("repositoryArn");
-
     m_repositoryArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registryId"))
   {
     m_registryId = jsonValue.GetString("registryId");
-
     m_registryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryUri"))
   {
     m_repositoryUri = jsonValue.GetString("repositoryUri");
-
     m_repositoryUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   return *this;
 }
 

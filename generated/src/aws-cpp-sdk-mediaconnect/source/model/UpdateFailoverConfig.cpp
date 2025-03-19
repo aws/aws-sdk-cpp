@@ -18,19 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-UpdateFailoverConfig::UpdateFailoverConfig() : 
-    m_failoverMode(FailoverMode::NOT_SET),
-    m_failoverModeHasBeenSet(false),
-    m_recoveryWindow(0),
-    m_recoveryWindowHasBeenSet(false),
-    m_sourcePriorityHasBeenSet(false),
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 UpdateFailoverConfig::UpdateFailoverConfig(JsonView jsonValue)
-  : UpdateFailoverConfig()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ UpdateFailoverConfig& UpdateFailoverConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("failoverMode"))
   {
     m_failoverMode = FailoverModeMapper::GetFailoverModeForName(jsonValue.GetString("failoverMode"));
-
     m_failoverModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recoveryWindow"))
   {
     m_recoveryWindow = jsonValue.GetInteger("recoveryWindow");
-
     m_recoveryWindowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourcePriority"))
   {
     m_sourcePriority = jsonValue.GetObject("sourcePriority");
-
     m_sourcePriorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

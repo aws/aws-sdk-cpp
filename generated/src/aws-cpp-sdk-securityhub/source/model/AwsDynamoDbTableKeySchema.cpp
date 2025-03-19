@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsDynamoDbTableKeySchema::AwsDynamoDbTableKeySchema() : 
-    m_attributeNameHasBeenSet(false),
-    m_keyTypeHasBeenSet(false)
-{
-}
-
 AwsDynamoDbTableKeySchema::AwsDynamoDbTableKeySchema(JsonView jsonValue)
-  : AwsDynamoDbTableKeySchema()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsDynamoDbTableKeySchema& AwsDynamoDbTableKeySchema::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("AttributeName"))
   {
     m_attributeName = jsonValue.GetString("AttributeName");
-
     m_attributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyType"))
   {
     m_keyType = jsonValue.GetString("KeyType");
-
     m_keyTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

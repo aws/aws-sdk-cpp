@@ -21,7 +21,7 @@ namespace Model
   class DescribeReportPlanRequest : public BackupRequest
   {
   public:
-    AWS_BACKUP_API DescribeReportPlanRequest();
+    AWS_BACKUP_API DescribeReportPlanRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The unique name of a report plan.</p>
      */
-    inline const Aws::String& GetReportPlanName() const{ return m_reportPlanName; }
+    inline const Aws::String& GetReportPlanName() const { return m_reportPlanName; }
     inline bool ReportPlanNameHasBeenSet() const { return m_reportPlanNameHasBeenSet; }
-    inline void SetReportPlanName(const Aws::String& value) { m_reportPlanNameHasBeenSet = true; m_reportPlanName = value; }
-    inline void SetReportPlanName(Aws::String&& value) { m_reportPlanNameHasBeenSet = true; m_reportPlanName = std::move(value); }
-    inline void SetReportPlanName(const char* value) { m_reportPlanNameHasBeenSet = true; m_reportPlanName.assign(value); }
-    inline DescribeReportPlanRequest& WithReportPlanName(const Aws::String& value) { SetReportPlanName(value); return *this;}
-    inline DescribeReportPlanRequest& WithReportPlanName(Aws::String&& value) { SetReportPlanName(std::move(value)); return *this;}
-    inline DescribeReportPlanRequest& WithReportPlanName(const char* value) { SetReportPlanName(value); return *this;}
+    template<typename ReportPlanNameT = Aws::String>
+    void SetReportPlanName(ReportPlanNameT&& value) { m_reportPlanNameHasBeenSet = true; m_reportPlanName = std::forward<ReportPlanNameT>(value); }
+    template<typename ReportPlanNameT = Aws::String>
+    DescribeReportPlanRequest& WithReportPlanName(ReportPlanNameT&& value) { SetReportPlanName(std::forward<ReportPlanNameT>(value)); return *this;}
     ///@}
   private:
 

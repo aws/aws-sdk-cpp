@@ -32,7 +32,7 @@ namespace Model
   class DataIntegrationFlowSQLTransformationConfiguration
   {
   public:
-    AWS_SUPPLYCHAIN_API DataIntegrationFlowSQLTransformationConfiguration();
+    AWS_SUPPLYCHAIN_API DataIntegrationFlowSQLTransformationConfiguration() = default;
     AWS_SUPPLYCHAIN_API DataIntegrationFlowSQLTransformationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPLYCHAIN_API DataIntegrationFlowSQLTransformationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPLYCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The transformation SQL query body based on SparkSQL.</p>
      */
-    inline const Aws::String& GetQuery() const{ return m_query; }
+    inline const Aws::String& GetQuery() const { return m_query; }
     inline bool QueryHasBeenSet() const { return m_queryHasBeenSet; }
-    inline void SetQuery(const Aws::String& value) { m_queryHasBeenSet = true; m_query = value; }
-    inline void SetQuery(Aws::String&& value) { m_queryHasBeenSet = true; m_query = std::move(value); }
-    inline void SetQuery(const char* value) { m_queryHasBeenSet = true; m_query.assign(value); }
-    inline DataIntegrationFlowSQLTransformationConfiguration& WithQuery(const Aws::String& value) { SetQuery(value); return *this;}
-    inline DataIntegrationFlowSQLTransformationConfiguration& WithQuery(Aws::String&& value) { SetQuery(std::move(value)); return *this;}
-    inline DataIntegrationFlowSQLTransformationConfiguration& WithQuery(const char* value) { SetQuery(value); return *this;}
+    template<typename QueryT = Aws::String>
+    void SetQuery(QueryT&& value) { m_queryHasBeenSet = true; m_query = std::forward<QueryT>(value); }
+    template<typename QueryT = Aws::String>
+    DataIntegrationFlowSQLTransformationConfiguration& WithQuery(QueryT&& value) { SetQuery(std::forward<QueryT>(value)); return *this;}
     ///@}
   private:
 

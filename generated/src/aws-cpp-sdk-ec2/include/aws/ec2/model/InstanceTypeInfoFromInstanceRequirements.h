@@ -32,7 +32,7 @@ namespace Model
   class InstanceTypeInfoFromInstanceRequirements
   {
   public:
-    AWS_EC2_API InstanceTypeInfoFromInstanceRequirements();
+    AWS_EC2_API InstanceTypeInfoFromInstanceRequirements() = default;
     AWS_EC2_API InstanceTypeInfoFromInstanceRequirements(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API InstanceTypeInfoFromInstanceRequirements& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The matching instance type.</p>
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline InstanceTypeInfoFromInstanceRequirements& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline InstanceTypeInfoFromInstanceRequirements& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline InstanceTypeInfoFromInstanceRequirements& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    InstanceTypeInfoFromInstanceRequirements& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
   private:
 

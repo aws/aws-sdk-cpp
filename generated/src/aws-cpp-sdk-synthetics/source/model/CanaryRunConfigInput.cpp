@@ -18,19 +18,7 @@ namespace Synthetics
 namespace Model
 {
 
-CanaryRunConfigInput::CanaryRunConfigInput() : 
-    m_timeoutInSeconds(0),
-    m_timeoutInSecondsHasBeenSet(false),
-    m_memoryInMB(0),
-    m_memoryInMBHasBeenSet(false),
-    m_activeTracing(false),
-    m_activeTracingHasBeenSet(false),
-    m_environmentVariablesHasBeenSet(false)
-{
-}
-
 CanaryRunConfigInput::CanaryRunConfigInput(JsonView jsonValue)
-  : CanaryRunConfigInput()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ CanaryRunConfigInput& CanaryRunConfigInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TimeoutInSeconds"))
   {
     m_timeoutInSeconds = jsonValue.GetInteger("TimeoutInSeconds");
-
     m_timeoutInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MemoryInMB"))
   {
     m_memoryInMB = jsonValue.GetInteger("MemoryInMB");
-
     m_memoryInMBHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActiveTracing"))
   {
     m_activeTracing = jsonValue.GetBool("ActiveTracing");
-
     m_activeTracingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnvironmentVariables"))
   {
     Aws::Map<Aws::String, JsonView> environmentVariablesJsonMap = jsonValue.GetObject("EnvironmentVariables").GetAllObjects();
@@ -67,7 +49,6 @@ CanaryRunConfigInput& CanaryRunConfigInput::operator =(JsonView jsonValue)
     }
     m_environmentVariablesHasBeenSet = true;
   }
-
   return *this;
 }
 

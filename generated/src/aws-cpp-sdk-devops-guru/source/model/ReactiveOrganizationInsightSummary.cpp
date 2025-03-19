@@ -18,23 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-ReactiveOrganizationInsightSummary::ReactiveOrganizationInsightSummary() : 
-    m_idHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_organizationalUnitIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_severity(InsightSeverity::NOT_SET),
-    m_severityHasBeenSet(false),
-    m_status(InsightStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_insightTimeRangeHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false),
-    m_serviceCollectionHasBeenSet(false)
-{
-}
-
 ReactiveOrganizationInsightSummary::ReactiveOrganizationInsightSummary(JsonView jsonValue)
-  : ReactiveOrganizationInsightSummary()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ ReactiveOrganizationInsightSummary& ReactiveOrganizationInsightSummary::operator
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationalUnitId"))
   {
     m_organizationalUnitId = jsonValue.GetString("OrganizationalUnitId");
-
     m_organizationalUnitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Severity"))
   {
     m_severity = InsightSeverityMapper::GetInsightSeverityForName(jsonValue.GetString("Severity"));
-
     m_severityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = InsightStatusMapper::GetInsightStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InsightTimeRange"))
   {
     m_insightTimeRange = jsonValue.GetObject("InsightTimeRange");
-
     m_insightTimeRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceCollection"))
   {
     m_resourceCollection = jsonValue.GetObject("ResourceCollection");
-
     m_resourceCollectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceCollection"))
   {
     m_serviceCollection = jsonValue.GetObject("ServiceCollection");
-
     m_serviceCollectionHasBeenSet = true;
   }
-
   return *this;
 }
 

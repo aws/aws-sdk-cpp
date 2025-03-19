@@ -12,15 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchPredefinedAttributesRequest::SearchPredefinedAttributesRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_searchCriteriaHasBeenSet(false)
-{
-}
-
 Aws::String SearchPredefinedAttributesRequest::SerializePayload() const
 {
   JsonValue payload;

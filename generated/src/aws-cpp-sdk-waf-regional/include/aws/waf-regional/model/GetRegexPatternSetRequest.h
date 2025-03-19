@@ -21,7 +21,7 @@ namespace Model
   class GetRegexPatternSetRequest : public WAFRegionalRequest
   {
   public:
-    AWS_WAFREGIONAL_API GetRegexPatternSetRequest();
+    AWS_WAFREGIONAL_API GetRegexPatternSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * want to get. <code>RegexPatternSetId</code> is returned by
      * <a>CreateRegexPatternSet</a> and by <a>ListRegexPatternSets</a>.</p>
      */
-    inline const Aws::String& GetRegexPatternSetId() const{ return m_regexPatternSetId; }
+    inline const Aws::String& GetRegexPatternSetId() const { return m_regexPatternSetId; }
     inline bool RegexPatternSetIdHasBeenSet() const { return m_regexPatternSetIdHasBeenSet; }
-    inline void SetRegexPatternSetId(const Aws::String& value) { m_regexPatternSetIdHasBeenSet = true; m_regexPatternSetId = value; }
-    inline void SetRegexPatternSetId(Aws::String&& value) { m_regexPatternSetIdHasBeenSet = true; m_regexPatternSetId = std::move(value); }
-    inline void SetRegexPatternSetId(const char* value) { m_regexPatternSetIdHasBeenSet = true; m_regexPatternSetId.assign(value); }
-    inline GetRegexPatternSetRequest& WithRegexPatternSetId(const Aws::String& value) { SetRegexPatternSetId(value); return *this;}
-    inline GetRegexPatternSetRequest& WithRegexPatternSetId(Aws::String&& value) { SetRegexPatternSetId(std::move(value)); return *this;}
-    inline GetRegexPatternSetRequest& WithRegexPatternSetId(const char* value) { SetRegexPatternSetId(value); return *this;}
+    template<typename RegexPatternSetIdT = Aws::String>
+    void SetRegexPatternSetId(RegexPatternSetIdT&& value) { m_regexPatternSetIdHasBeenSet = true; m_regexPatternSetId = std::forward<RegexPatternSetIdT>(value); }
+    template<typename RegexPatternSetIdT = Aws::String>
+    GetRegexPatternSetRequest& WithRegexPatternSetId(RegexPatternSetIdT&& value) { SetRegexPatternSetId(std::forward<RegexPatternSetIdT>(value)); return *this;}
     ///@}
   private:
 

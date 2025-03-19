@@ -18,15 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-FastLaunchLaunchTemplateSpecification::FastLaunchLaunchTemplateSpecification() : 
-    m_launchTemplateIdHasBeenSet(false),
-    m_launchTemplateNameHasBeenSet(false),
-    m_launchTemplateVersionHasBeenSet(false)
-{
-}
-
 FastLaunchLaunchTemplateSpecification::FastLaunchLaunchTemplateSpecification(JsonView jsonValue)
-  : FastLaunchLaunchTemplateSpecification()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ FastLaunchLaunchTemplateSpecification& FastLaunchLaunchTemplateSpecification::op
   if(jsonValue.ValueExists("launchTemplateId"))
   {
     m_launchTemplateId = jsonValue.GetString("launchTemplateId");
-
     m_launchTemplateIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("launchTemplateName"))
   {
     m_launchTemplateName = jsonValue.GetString("launchTemplateName");
-
     m_launchTemplateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("launchTemplateVersion"))
   {
     m_launchTemplateVersion = jsonValue.GetString("launchTemplateVersion");
-
     m_launchTemplateVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

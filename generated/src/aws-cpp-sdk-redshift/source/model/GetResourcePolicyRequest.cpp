@@ -10,11 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-GetResourcePolicyRequest::GetResourcePolicyRequest() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String GetResourcePolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

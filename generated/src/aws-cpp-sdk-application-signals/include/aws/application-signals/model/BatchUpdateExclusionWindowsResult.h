@@ -29,7 +29,7 @@ namespace Model
   class BatchUpdateExclusionWindowsResult
   {
   public:
-    AWS_APPLICATIONSIGNALS_API BatchUpdateExclusionWindowsResult();
+    AWS_APPLICATIONSIGNALS_API BatchUpdateExclusionWindowsResult() = default;
     AWS_APPLICATIONSIGNALS_API BatchUpdateExclusionWindowsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONSIGNALS_API BatchUpdateExclusionWindowsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,46 +38,46 @@ namespace Model
     /**
      * <p>The list of SLO IDs that were successfully processed.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSloIds() const{ return m_sloIds; }
-    inline void SetSloIds(const Aws::Vector<Aws::String>& value) { m_sloIds = value; }
-    inline void SetSloIds(Aws::Vector<Aws::String>&& value) { m_sloIds = std::move(value); }
-    inline BatchUpdateExclusionWindowsResult& WithSloIds(const Aws::Vector<Aws::String>& value) { SetSloIds(value); return *this;}
-    inline BatchUpdateExclusionWindowsResult& WithSloIds(Aws::Vector<Aws::String>&& value) { SetSloIds(std::move(value)); return *this;}
-    inline BatchUpdateExclusionWindowsResult& AddSloIds(const Aws::String& value) { m_sloIds.push_back(value); return *this; }
-    inline BatchUpdateExclusionWindowsResult& AddSloIds(Aws::String&& value) { m_sloIds.push_back(std::move(value)); return *this; }
-    inline BatchUpdateExclusionWindowsResult& AddSloIds(const char* value) { m_sloIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetSloIds() const { return m_sloIds; }
+    template<typename SloIdsT = Aws::Vector<Aws::String>>
+    void SetSloIds(SloIdsT&& value) { m_sloIdsHasBeenSet = true; m_sloIds = std::forward<SloIdsT>(value); }
+    template<typename SloIdsT = Aws::Vector<Aws::String>>
+    BatchUpdateExclusionWindowsResult& WithSloIds(SloIdsT&& value) { SetSloIds(std::forward<SloIdsT>(value)); return *this;}
+    template<typename SloIdsT = Aws::String>
+    BatchUpdateExclusionWindowsResult& AddSloIds(SloIdsT&& value) { m_sloIdsHasBeenSet = true; m_sloIds.emplace_back(std::forward<SloIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of errors that occurred while processing the request.</p>
      */
-    inline const Aws::Vector<BatchUpdateExclusionWindowsError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<BatchUpdateExclusionWindowsError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchUpdateExclusionWindowsError>&& value) { m_errors = std::move(value); }
-    inline BatchUpdateExclusionWindowsResult& WithErrors(const Aws::Vector<BatchUpdateExclusionWindowsError>& value) { SetErrors(value); return *this;}
-    inline BatchUpdateExclusionWindowsResult& WithErrors(Aws::Vector<BatchUpdateExclusionWindowsError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchUpdateExclusionWindowsResult& AddErrors(const BatchUpdateExclusionWindowsError& value) { m_errors.push_back(value); return *this; }
-    inline BatchUpdateExclusionWindowsResult& AddErrors(BatchUpdateExclusionWindowsError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchUpdateExclusionWindowsError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchUpdateExclusionWindowsError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchUpdateExclusionWindowsError>>
+    BatchUpdateExclusionWindowsResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchUpdateExclusionWindowsError>
+    BatchUpdateExclusionWindowsResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchUpdateExclusionWindowsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchUpdateExclusionWindowsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchUpdateExclusionWindowsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchUpdateExclusionWindowsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_sloIds;
+    bool m_sloIdsHasBeenSet = false;
 
     Aws::Vector<BatchUpdateExclusionWindowsError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,22 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-ContainerSettings::ContainerSettings() : 
-    m_cmfcSettingsHasBeenSet(false),
-    m_container(ContainerType::NOT_SET),
-    m_containerHasBeenSet(false),
-    m_f4vSettingsHasBeenSet(false),
-    m_m2tsSettingsHasBeenSet(false),
-    m_m3u8SettingsHasBeenSet(false),
-    m_movSettingsHasBeenSet(false),
-    m_mp4SettingsHasBeenSet(false),
-    m_mpdSettingsHasBeenSet(false),
-    m_mxfSettingsHasBeenSet(false)
-{
-}
-
 ContainerSettings::ContainerSettings(JsonView jsonValue)
-  : ContainerSettings()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ ContainerSettings& ContainerSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cmfcSettings"))
   {
     m_cmfcSettings = jsonValue.GetObject("cmfcSettings");
-
     m_cmfcSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("container"))
   {
     m_container = ContainerTypeMapper::GetContainerTypeForName(jsonValue.GetString("container"));
-
     m_containerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("f4vSettings"))
   {
     m_f4vSettings = jsonValue.GetObject("f4vSettings");
-
     m_f4vSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("m2tsSettings"))
   {
     m_m2tsSettings = jsonValue.GetObject("m2tsSettings");
-
     m_m2tsSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("m3u8Settings"))
   {
     m_m3u8Settings = jsonValue.GetObject("m3u8Settings");
-
     m_m3u8SettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("movSettings"))
   {
     m_movSettings = jsonValue.GetObject("movSettings");
-
     m_movSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mp4Settings"))
   {
     m_mp4Settings = jsonValue.GetObject("mp4Settings");
-
     m_mp4SettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mpdSettings"))
   {
     m_mpdSettings = jsonValue.GetObject("mpdSettings");
-
     m_mpdSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mxfSettings"))
   {
     m_mxfSettings = jsonValue.GetObject("mxfSettings");
-
     m_mxfSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class DescribeResourceGroupsResult
   {
   public:
-    AWS_INSPECTOR_API DescribeResourceGroupsResult();
+    AWS_INSPECTOR_API DescribeResourceGroupsResult() = default;
     AWS_INSPECTOR_API DescribeResourceGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INSPECTOR_API DescribeResourceGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
     /**
      * <p>Information about a resource group.</p>
      */
-    inline const Aws::Vector<ResourceGroup>& GetResourceGroups() const{ return m_resourceGroups; }
-    inline void SetResourceGroups(const Aws::Vector<ResourceGroup>& value) { m_resourceGroups = value; }
-    inline void SetResourceGroups(Aws::Vector<ResourceGroup>&& value) { m_resourceGroups = std::move(value); }
-    inline DescribeResourceGroupsResult& WithResourceGroups(const Aws::Vector<ResourceGroup>& value) { SetResourceGroups(value); return *this;}
-    inline DescribeResourceGroupsResult& WithResourceGroups(Aws::Vector<ResourceGroup>&& value) { SetResourceGroups(std::move(value)); return *this;}
-    inline DescribeResourceGroupsResult& AddResourceGroups(const ResourceGroup& value) { m_resourceGroups.push_back(value); return *this; }
-    inline DescribeResourceGroupsResult& AddResourceGroups(ResourceGroup&& value) { m_resourceGroups.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResourceGroup>& GetResourceGroups() const { return m_resourceGroups; }
+    template<typename ResourceGroupsT = Aws::Vector<ResourceGroup>>
+    void SetResourceGroups(ResourceGroupsT&& value) { m_resourceGroupsHasBeenSet = true; m_resourceGroups = std::forward<ResourceGroupsT>(value); }
+    template<typename ResourceGroupsT = Aws::Vector<ResourceGroup>>
+    DescribeResourceGroupsResult& WithResourceGroups(ResourceGroupsT&& value) { SetResourceGroups(std::forward<ResourceGroupsT>(value)); return *this;}
+    template<typename ResourceGroupsT = ResourceGroup>
+    DescribeResourceGroupsResult& AddResourceGroups(ResourceGroupsT&& value) { m_resourceGroupsHasBeenSet = true; m_resourceGroups.emplace_back(std::forward<ResourceGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,36 +54,35 @@ namespace Model
      * <p>Resource group details that cannot be described. An error code is provided
      * for each failed item.</p>
      */
-    inline const Aws::Map<Aws::String, FailedItemDetails>& GetFailedItems() const{ return m_failedItems; }
-    inline void SetFailedItems(const Aws::Map<Aws::String, FailedItemDetails>& value) { m_failedItems = value; }
-    inline void SetFailedItems(Aws::Map<Aws::String, FailedItemDetails>&& value) { m_failedItems = std::move(value); }
-    inline DescribeResourceGroupsResult& WithFailedItems(const Aws::Map<Aws::String, FailedItemDetails>& value) { SetFailedItems(value); return *this;}
-    inline DescribeResourceGroupsResult& WithFailedItems(Aws::Map<Aws::String, FailedItemDetails>&& value) { SetFailedItems(std::move(value)); return *this;}
-    inline DescribeResourceGroupsResult& AddFailedItems(const Aws::String& key, const FailedItemDetails& value) { m_failedItems.emplace(key, value); return *this; }
-    inline DescribeResourceGroupsResult& AddFailedItems(Aws::String&& key, const FailedItemDetails& value) { m_failedItems.emplace(std::move(key), value); return *this; }
-    inline DescribeResourceGroupsResult& AddFailedItems(const Aws::String& key, FailedItemDetails&& value) { m_failedItems.emplace(key, std::move(value)); return *this; }
-    inline DescribeResourceGroupsResult& AddFailedItems(Aws::String&& key, FailedItemDetails&& value) { m_failedItems.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeResourceGroupsResult& AddFailedItems(const char* key, FailedItemDetails&& value) { m_failedItems.emplace(key, std::move(value)); return *this; }
-    inline DescribeResourceGroupsResult& AddFailedItems(const char* key, const FailedItemDetails& value) { m_failedItems.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, FailedItemDetails>& GetFailedItems() const { return m_failedItems; }
+    template<typename FailedItemsT = Aws::Map<Aws::String, FailedItemDetails>>
+    void SetFailedItems(FailedItemsT&& value) { m_failedItemsHasBeenSet = true; m_failedItems = std::forward<FailedItemsT>(value); }
+    template<typename FailedItemsT = Aws::Map<Aws::String, FailedItemDetails>>
+    DescribeResourceGroupsResult& WithFailedItems(FailedItemsT&& value) { SetFailedItems(std::forward<FailedItemsT>(value)); return *this;}
+    template<typename FailedItemsKeyT = Aws::String, typename FailedItemsValueT = FailedItemDetails>
+    DescribeResourceGroupsResult& AddFailedItems(FailedItemsKeyT&& key, FailedItemsValueT&& value) {
+      m_failedItemsHasBeenSet = true; m_failedItems.emplace(std::forward<FailedItemsKeyT>(key), std::forward<FailedItemsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeResourceGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeResourceGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeResourceGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeResourceGroupsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ResourceGroup> m_resourceGroups;
+    bool m_resourceGroupsHasBeenSet = false;
 
     Aws::Map<Aws::String, FailedItemDetails> m_failedItems;
+    bool m_failedItemsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

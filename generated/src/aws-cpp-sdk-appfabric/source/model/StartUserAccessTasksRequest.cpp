@@ -12,12 +12,6 @@ using namespace Aws::AppFabric::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartUserAccessTasksRequest::StartUserAccessTasksRequest() : 
-    m_appBundleIdentifierHasBeenSet(false),
-    m_emailHasBeenSet(false)
-{
-}
-
 Aws::String StartUserAccessTasksRequest::SerializePayload() const
 {
   JsonValue payload;

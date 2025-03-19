@@ -30,7 +30,7 @@ namespace Model
   class MonthlySchedule
   {
   public:
-    AWS_MACIE2_API MonthlySchedule();
+    AWS_MACIE2_API MonthlySchedule() = default;
     AWS_MACIE2_API MonthlySchedule(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API MonthlySchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * and a month has only 30 days, Macie doesn't run the job that month. To run the
      * job every month, specify a value that's less than 29.</p>
      */
-    inline int GetDayOfMonth() const{ return m_dayOfMonth; }
+    inline int GetDayOfMonth() const { return m_dayOfMonth; }
     inline bool DayOfMonthHasBeenSet() const { return m_dayOfMonthHasBeenSet; }
     inline void SetDayOfMonth(int value) { m_dayOfMonthHasBeenSet = true; m_dayOfMonth = value; }
     inline MonthlySchedule& WithDayOfMonth(int value) { SetDayOfMonth(value); return *this;}
     ///@}
   private:
 
-    int m_dayOfMonth;
+    int m_dayOfMonth{0};
     bool m_dayOfMonthHasBeenSet = false;
   };
 

@@ -30,7 +30,7 @@ namespace Model
   class DeploymentProperties
   {
   public:
-    AWS_DATAZONE_API DeploymentProperties();
+    AWS_DATAZONE_API DeploymentProperties() = default;
     AWS_DATAZONE_API DeploymentProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API DeploymentProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The end timeout of the environment blueprint deployment.</p>
      */
-    inline int GetEndTimeoutMinutes() const{ return m_endTimeoutMinutes; }
+    inline int GetEndTimeoutMinutes() const { return m_endTimeoutMinutes; }
     inline bool EndTimeoutMinutesHasBeenSet() const { return m_endTimeoutMinutesHasBeenSet; }
     inline void SetEndTimeoutMinutes(int value) { m_endTimeoutMinutesHasBeenSet = true; m_endTimeoutMinutes = value; }
     inline DeploymentProperties& WithEndTimeoutMinutes(int value) { SetEndTimeoutMinutes(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>The start timeout of the environment blueprint deployment.</p>
      */
-    inline int GetStartTimeoutMinutes() const{ return m_startTimeoutMinutes; }
+    inline int GetStartTimeoutMinutes() const { return m_startTimeoutMinutes; }
     inline bool StartTimeoutMinutesHasBeenSet() const { return m_startTimeoutMinutesHasBeenSet; }
     inline void SetStartTimeoutMinutes(int value) { m_startTimeoutMinutesHasBeenSet = true; m_startTimeoutMinutes = value; }
     inline DeploymentProperties& WithStartTimeoutMinutes(int value) { SetStartTimeoutMinutes(value); return *this;}
     ///@}
   private:
 
-    int m_endTimeoutMinutes;
+    int m_endTimeoutMinutes{0};
     bool m_endTimeoutMinutesHasBeenSet = false;
 
-    int m_startTimeoutMinutes;
+    int m_startTimeoutMinutes{0};
     bool m_startTimeoutMinutesHasBeenSet = false;
   };
 

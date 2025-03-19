@@ -36,7 +36,7 @@ namespace Model
   class ControlPlanePlacementResponse
   {
   public:
-    AWS_EKS_API ControlPlanePlacementResponse();
+    AWS_EKS_API ControlPlanePlacementResponse() = default;
     AWS_EKS_API ControlPlanePlacementResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API ControlPlanePlacementResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * <p>The name of the placement group for the Kubernetes control plane
      * instances.</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline ControlPlanePlacementResponse& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline ControlPlanePlacementResponse& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline ControlPlanePlacementResponse& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    ControlPlanePlacementResponse& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
   private:
 

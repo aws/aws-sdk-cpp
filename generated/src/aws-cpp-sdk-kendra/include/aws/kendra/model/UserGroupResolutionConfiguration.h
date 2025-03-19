@@ -51,7 +51,7 @@ namespace Model
   class UserGroupResolutionConfiguration
   {
   public:
-    AWS_KENDRA_API UserGroupResolutionConfiguration();
+    AWS_KENDRA_API UserGroupResolutionConfiguration() = default;
     AWS_KENDRA_API UserGroupResolutionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API UserGroupResolutionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -64,16 +64,14 @@ namespace Model
      * must exist in an IAM Identity Center identity source in order to use this
      * mode.</p>
      */
-    inline const UserGroupResolutionMode& GetUserGroupResolutionMode() const{ return m_userGroupResolutionMode; }
+    inline UserGroupResolutionMode GetUserGroupResolutionMode() const { return m_userGroupResolutionMode; }
     inline bool UserGroupResolutionModeHasBeenSet() const { return m_userGroupResolutionModeHasBeenSet; }
-    inline void SetUserGroupResolutionMode(const UserGroupResolutionMode& value) { m_userGroupResolutionModeHasBeenSet = true; m_userGroupResolutionMode = value; }
-    inline void SetUserGroupResolutionMode(UserGroupResolutionMode&& value) { m_userGroupResolutionModeHasBeenSet = true; m_userGroupResolutionMode = std::move(value); }
-    inline UserGroupResolutionConfiguration& WithUserGroupResolutionMode(const UserGroupResolutionMode& value) { SetUserGroupResolutionMode(value); return *this;}
-    inline UserGroupResolutionConfiguration& WithUserGroupResolutionMode(UserGroupResolutionMode&& value) { SetUserGroupResolutionMode(std::move(value)); return *this;}
+    inline void SetUserGroupResolutionMode(UserGroupResolutionMode value) { m_userGroupResolutionModeHasBeenSet = true; m_userGroupResolutionMode = value; }
+    inline UserGroupResolutionConfiguration& WithUserGroupResolutionMode(UserGroupResolutionMode value) { SetUserGroupResolutionMode(value); return *this;}
     ///@}
   private:
 
-    UserGroupResolutionMode m_userGroupResolutionMode;
+    UserGroupResolutionMode m_userGroupResolutionMode{UserGroupResolutionMode::NOT_SET};
     bool m_userGroupResolutionModeHasBeenSet = false;
   };
 

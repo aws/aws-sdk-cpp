@@ -12,16 +12,6 @@ using namespace Aws::PaymentCryptography::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportKeyRequest::ImportKeyRequest() : 
-    m_keyMaterialHasBeenSet(false),
-    m_keyCheckValueAlgorithm(KeyCheckValueAlgorithm::NOT_SET),
-    m_keyCheckValueAlgorithmHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String ImportKeyRequest::SerializePayload() const
 {
   JsonValue payload;

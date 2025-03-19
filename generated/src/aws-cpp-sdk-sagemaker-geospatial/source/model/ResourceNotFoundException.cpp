@@ -18,14 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-ResourceNotFoundException::ResourceNotFoundException() : 
-    m_messageHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
-{
-}
-
 ResourceNotFoundException::ResourceNotFoundException(JsonView jsonValue)
-  : ResourceNotFoundException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ResourceNotFoundException& ResourceNotFoundException::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

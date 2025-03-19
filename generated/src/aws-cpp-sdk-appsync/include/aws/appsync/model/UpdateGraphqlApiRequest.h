@@ -30,7 +30,7 @@ namespace Model
   class UpdateGraphqlApiRequest : public AppSyncRequest
   {
   public:
-    AWS_APPSYNC_API UpdateGraphqlApiRequest();
+    AWS_APPSYNC_API UpdateGraphqlApiRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The API ID.</p>
      */
-    inline const Aws::String& GetApiId() const{ return m_apiId; }
+    inline const Aws::String& GetApiId() const { return m_apiId; }
     inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
-    inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
-    inline void SetApiId(Aws::String&& value) { m_apiIdHasBeenSet = true; m_apiId = std::move(value); }
-    inline void SetApiId(const char* value) { m_apiIdHasBeenSet = true; m_apiId.assign(value); }
-    inline UpdateGraphqlApiRequest& WithApiId(const Aws::String& value) { SetApiId(value); return *this;}
-    inline UpdateGraphqlApiRequest& WithApiId(Aws::String&& value) { SetApiId(std::move(value)); return *this;}
-    inline UpdateGraphqlApiRequest& WithApiId(const char* value) { SetApiId(value); return *this;}
+    template<typename ApiIdT = Aws::String>
+    void SetApiId(ApiIdT&& value) { m_apiIdHasBeenSet = true; m_apiId = std::forward<ApiIdT>(value); }
+    template<typename ApiIdT = Aws::String>
+    UpdateGraphqlApiRequest& WithApiId(ApiIdT&& value) { SetApiId(std::forward<ApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new name for the <code>GraphqlApi</code> object.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateGraphqlApiRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateGraphqlApiRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateGraphqlApiRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateGraphqlApiRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,24 +70,22 @@ namespace Model
      * <p>The Amazon CloudWatch Logs configuration for the <code>GraphqlApi</code>
      * object.</p>
      */
-    inline const LogConfig& GetLogConfig() const{ return m_logConfig; }
+    inline const LogConfig& GetLogConfig() const { return m_logConfig; }
     inline bool LogConfigHasBeenSet() const { return m_logConfigHasBeenSet; }
-    inline void SetLogConfig(const LogConfig& value) { m_logConfigHasBeenSet = true; m_logConfig = value; }
-    inline void SetLogConfig(LogConfig&& value) { m_logConfigHasBeenSet = true; m_logConfig = std::move(value); }
-    inline UpdateGraphqlApiRequest& WithLogConfig(const LogConfig& value) { SetLogConfig(value); return *this;}
-    inline UpdateGraphqlApiRequest& WithLogConfig(LogConfig&& value) { SetLogConfig(std::move(value)); return *this;}
+    template<typename LogConfigT = LogConfig>
+    void SetLogConfig(LogConfigT&& value) { m_logConfigHasBeenSet = true; m_logConfig = std::forward<LogConfigT>(value); }
+    template<typename LogConfigT = LogConfig>
+    UpdateGraphqlApiRequest& WithLogConfig(LogConfigT&& value) { SetLogConfig(std::forward<LogConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new authentication type for the <code>GraphqlApi</code> object.</p>
      */
-    inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
+    inline AuthenticationType GetAuthenticationType() const { return m_authenticationType; }
     inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
-    inline void SetAuthenticationType(const AuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
-    inline void SetAuthenticationType(AuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
-    inline UpdateGraphqlApiRequest& WithAuthenticationType(const AuthenticationType& value) { SetAuthenticationType(value); return *this;}
-    inline UpdateGraphqlApiRequest& WithAuthenticationType(AuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
+    inline void SetAuthenticationType(AuthenticationType value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
+    inline UpdateGraphqlApiRequest& WithAuthenticationType(AuthenticationType value) { SetAuthenticationType(value); return *this;}
     ///@}
 
     ///@{
@@ -99,24 +93,24 @@ namespace Model
      * <p>The new Amazon Cognito user pool configuration for the
      * <code>~GraphqlApi</code> object.</p>
      */
-    inline const UserPoolConfig& GetUserPoolConfig() const{ return m_userPoolConfig; }
+    inline const UserPoolConfig& GetUserPoolConfig() const { return m_userPoolConfig; }
     inline bool UserPoolConfigHasBeenSet() const { return m_userPoolConfigHasBeenSet; }
-    inline void SetUserPoolConfig(const UserPoolConfig& value) { m_userPoolConfigHasBeenSet = true; m_userPoolConfig = value; }
-    inline void SetUserPoolConfig(UserPoolConfig&& value) { m_userPoolConfigHasBeenSet = true; m_userPoolConfig = std::move(value); }
-    inline UpdateGraphqlApiRequest& WithUserPoolConfig(const UserPoolConfig& value) { SetUserPoolConfig(value); return *this;}
-    inline UpdateGraphqlApiRequest& WithUserPoolConfig(UserPoolConfig&& value) { SetUserPoolConfig(std::move(value)); return *this;}
+    template<typename UserPoolConfigT = UserPoolConfig>
+    void SetUserPoolConfig(UserPoolConfigT&& value) { m_userPoolConfigHasBeenSet = true; m_userPoolConfig = std::forward<UserPoolConfigT>(value); }
+    template<typename UserPoolConfigT = UserPoolConfig>
+    UpdateGraphqlApiRequest& WithUserPoolConfig(UserPoolConfigT&& value) { SetUserPoolConfig(std::forward<UserPoolConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The OpenID Connect configuration for the <code>GraphqlApi</code> object.</p>
      */
-    inline const OpenIDConnectConfig& GetOpenIDConnectConfig() const{ return m_openIDConnectConfig; }
+    inline const OpenIDConnectConfig& GetOpenIDConnectConfig() const { return m_openIDConnectConfig; }
     inline bool OpenIDConnectConfigHasBeenSet() const { return m_openIDConnectConfigHasBeenSet; }
-    inline void SetOpenIDConnectConfig(const OpenIDConnectConfig& value) { m_openIDConnectConfigHasBeenSet = true; m_openIDConnectConfig = value; }
-    inline void SetOpenIDConnectConfig(OpenIDConnectConfig&& value) { m_openIDConnectConfigHasBeenSet = true; m_openIDConnectConfig = std::move(value); }
-    inline UpdateGraphqlApiRequest& WithOpenIDConnectConfig(const OpenIDConnectConfig& value) { SetOpenIDConnectConfig(value); return *this;}
-    inline UpdateGraphqlApiRequest& WithOpenIDConnectConfig(OpenIDConnectConfig&& value) { SetOpenIDConnectConfig(std::move(value)); return *this;}
+    template<typename OpenIDConnectConfigT = OpenIDConnectConfig>
+    void SetOpenIDConnectConfig(OpenIDConnectConfigT&& value) { m_openIDConnectConfigHasBeenSet = true; m_openIDConnectConfig = std::forward<OpenIDConnectConfigT>(value); }
+    template<typename OpenIDConnectConfigT = OpenIDConnectConfig>
+    UpdateGraphqlApiRequest& WithOpenIDConnectConfig(OpenIDConnectConfigT&& value) { SetOpenIDConnectConfig(std::forward<OpenIDConnectConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,14 +118,14 @@ namespace Model
      * <p>A list of additional authentication providers for the <code>GraphqlApi</code>
      * API.</p>
      */
-    inline const Aws::Vector<AdditionalAuthenticationProvider>& GetAdditionalAuthenticationProviders() const{ return m_additionalAuthenticationProviders; }
+    inline const Aws::Vector<AdditionalAuthenticationProvider>& GetAdditionalAuthenticationProviders() const { return m_additionalAuthenticationProviders; }
     inline bool AdditionalAuthenticationProvidersHasBeenSet() const { return m_additionalAuthenticationProvidersHasBeenSet; }
-    inline void SetAdditionalAuthenticationProviders(const Aws::Vector<AdditionalAuthenticationProvider>& value) { m_additionalAuthenticationProvidersHasBeenSet = true; m_additionalAuthenticationProviders = value; }
-    inline void SetAdditionalAuthenticationProviders(Aws::Vector<AdditionalAuthenticationProvider>&& value) { m_additionalAuthenticationProvidersHasBeenSet = true; m_additionalAuthenticationProviders = std::move(value); }
-    inline UpdateGraphqlApiRequest& WithAdditionalAuthenticationProviders(const Aws::Vector<AdditionalAuthenticationProvider>& value) { SetAdditionalAuthenticationProviders(value); return *this;}
-    inline UpdateGraphqlApiRequest& WithAdditionalAuthenticationProviders(Aws::Vector<AdditionalAuthenticationProvider>&& value) { SetAdditionalAuthenticationProviders(std::move(value)); return *this;}
-    inline UpdateGraphqlApiRequest& AddAdditionalAuthenticationProviders(const AdditionalAuthenticationProvider& value) { m_additionalAuthenticationProvidersHasBeenSet = true; m_additionalAuthenticationProviders.push_back(value); return *this; }
-    inline UpdateGraphqlApiRequest& AddAdditionalAuthenticationProviders(AdditionalAuthenticationProvider&& value) { m_additionalAuthenticationProvidersHasBeenSet = true; m_additionalAuthenticationProviders.push_back(std::move(value)); return *this; }
+    template<typename AdditionalAuthenticationProvidersT = Aws::Vector<AdditionalAuthenticationProvider>>
+    void SetAdditionalAuthenticationProviders(AdditionalAuthenticationProvidersT&& value) { m_additionalAuthenticationProvidersHasBeenSet = true; m_additionalAuthenticationProviders = std::forward<AdditionalAuthenticationProvidersT>(value); }
+    template<typename AdditionalAuthenticationProvidersT = Aws::Vector<AdditionalAuthenticationProvider>>
+    UpdateGraphqlApiRequest& WithAdditionalAuthenticationProviders(AdditionalAuthenticationProvidersT&& value) { SetAdditionalAuthenticationProviders(std::forward<AdditionalAuthenticationProvidersT>(value)); return *this;}
+    template<typename AdditionalAuthenticationProvidersT = AdditionalAuthenticationProvider>
+    UpdateGraphqlApiRequest& AddAdditionalAuthenticationProviders(AdditionalAuthenticationProvidersT&& value) { m_additionalAuthenticationProvidersHasBeenSet = true; m_additionalAuthenticationProviders.emplace_back(std::forward<AdditionalAuthenticationProvidersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -139,7 +133,7 @@ namespace Model
      * <p>A flag indicating whether to use X-Ray tracing for the
      * <code>GraphqlApi</code>.</p>
      */
-    inline bool GetXrayEnabled() const{ return m_xrayEnabled; }
+    inline bool GetXrayEnabled() const { return m_xrayEnabled; }
     inline bool XrayEnabledHasBeenSet() const { return m_xrayEnabledHasBeenSet; }
     inline void SetXrayEnabled(bool value) { m_xrayEnabledHasBeenSet = true; m_xrayEnabled = value; }
     inline UpdateGraphqlApiRequest& WithXrayEnabled(bool value) { SetXrayEnabled(value); return *this;}
@@ -149,12 +143,12 @@ namespace Model
     /**
      * <p>Configuration for Lambda function authorization.</p>
      */
-    inline const LambdaAuthorizerConfig& GetLambdaAuthorizerConfig() const{ return m_lambdaAuthorizerConfig; }
+    inline const LambdaAuthorizerConfig& GetLambdaAuthorizerConfig() const { return m_lambdaAuthorizerConfig; }
     inline bool LambdaAuthorizerConfigHasBeenSet() const { return m_lambdaAuthorizerConfigHasBeenSet; }
-    inline void SetLambdaAuthorizerConfig(const LambdaAuthorizerConfig& value) { m_lambdaAuthorizerConfigHasBeenSet = true; m_lambdaAuthorizerConfig = value; }
-    inline void SetLambdaAuthorizerConfig(LambdaAuthorizerConfig&& value) { m_lambdaAuthorizerConfigHasBeenSet = true; m_lambdaAuthorizerConfig = std::move(value); }
-    inline UpdateGraphqlApiRequest& WithLambdaAuthorizerConfig(const LambdaAuthorizerConfig& value) { SetLambdaAuthorizerConfig(value); return *this;}
-    inline UpdateGraphqlApiRequest& WithLambdaAuthorizerConfig(LambdaAuthorizerConfig&& value) { SetLambdaAuthorizerConfig(std::move(value)); return *this;}
+    template<typename LambdaAuthorizerConfigT = LambdaAuthorizerConfig>
+    void SetLambdaAuthorizerConfig(LambdaAuthorizerConfigT&& value) { m_lambdaAuthorizerConfigHasBeenSet = true; m_lambdaAuthorizerConfig = std::forward<LambdaAuthorizerConfigT>(value); }
+    template<typename LambdaAuthorizerConfigT = LambdaAuthorizerConfig>
+    UpdateGraphqlApiRequest& WithLambdaAuthorizerConfig(LambdaAuthorizerConfigT&& value) { SetLambdaAuthorizerConfig(std::forward<LambdaAuthorizerConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -164,14 +158,12 @@ namespace Model
      * to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update
      * the merged API endpoint with the source API changes automatically.</p>
      */
-    inline const Aws::String& GetMergedApiExecutionRoleArn() const{ return m_mergedApiExecutionRoleArn; }
+    inline const Aws::String& GetMergedApiExecutionRoleArn() const { return m_mergedApiExecutionRoleArn; }
     inline bool MergedApiExecutionRoleArnHasBeenSet() const { return m_mergedApiExecutionRoleArnHasBeenSet; }
-    inline void SetMergedApiExecutionRoleArn(const Aws::String& value) { m_mergedApiExecutionRoleArnHasBeenSet = true; m_mergedApiExecutionRoleArn = value; }
-    inline void SetMergedApiExecutionRoleArn(Aws::String&& value) { m_mergedApiExecutionRoleArnHasBeenSet = true; m_mergedApiExecutionRoleArn = std::move(value); }
-    inline void SetMergedApiExecutionRoleArn(const char* value) { m_mergedApiExecutionRoleArnHasBeenSet = true; m_mergedApiExecutionRoleArn.assign(value); }
-    inline UpdateGraphqlApiRequest& WithMergedApiExecutionRoleArn(const Aws::String& value) { SetMergedApiExecutionRoleArn(value); return *this;}
-    inline UpdateGraphqlApiRequest& WithMergedApiExecutionRoleArn(Aws::String&& value) { SetMergedApiExecutionRoleArn(std::move(value)); return *this;}
-    inline UpdateGraphqlApiRequest& WithMergedApiExecutionRoleArn(const char* value) { SetMergedApiExecutionRoleArn(value); return *this;}
+    template<typename MergedApiExecutionRoleArnT = Aws::String>
+    void SetMergedApiExecutionRoleArn(MergedApiExecutionRoleArnT&& value) { m_mergedApiExecutionRoleArnHasBeenSet = true; m_mergedApiExecutionRoleArn = std::forward<MergedApiExecutionRoleArnT>(value); }
+    template<typename MergedApiExecutionRoleArnT = Aws::String>
+    UpdateGraphqlApiRequest& WithMergedApiExecutionRoleArn(MergedApiExecutionRoleArnT&& value) { SetMergedApiExecutionRoleArn(std::forward<MergedApiExecutionRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -179,14 +171,12 @@ namespace Model
      * <p>The owner contact information for an API resource.</p> <p>This field accepts
      * any string input with a length of 0 - 256 characters.</p>
      */
-    inline const Aws::String& GetOwnerContact() const{ return m_ownerContact; }
+    inline const Aws::String& GetOwnerContact() const { return m_ownerContact; }
     inline bool OwnerContactHasBeenSet() const { return m_ownerContactHasBeenSet; }
-    inline void SetOwnerContact(const Aws::String& value) { m_ownerContactHasBeenSet = true; m_ownerContact = value; }
-    inline void SetOwnerContact(Aws::String&& value) { m_ownerContactHasBeenSet = true; m_ownerContact = std::move(value); }
-    inline void SetOwnerContact(const char* value) { m_ownerContactHasBeenSet = true; m_ownerContact.assign(value); }
-    inline UpdateGraphqlApiRequest& WithOwnerContact(const Aws::String& value) { SetOwnerContact(value); return *this;}
-    inline UpdateGraphqlApiRequest& WithOwnerContact(Aws::String&& value) { SetOwnerContact(std::move(value)); return *this;}
-    inline UpdateGraphqlApiRequest& WithOwnerContact(const char* value) { SetOwnerContact(value); return *this;}
+    template<typename OwnerContactT = Aws::String>
+    void SetOwnerContact(OwnerContactT&& value) { m_ownerContactHasBeenSet = true; m_ownerContact = std::forward<OwnerContactT>(value); }
+    template<typename OwnerContactT = Aws::String>
+    UpdateGraphqlApiRequest& WithOwnerContact(OwnerContactT&& value) { SetOwnerContact(std::forward<OwnerContactT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -199,12 +189,10 @@ namespace Model
      * introspection, see <a href="https://graphql.org/learn/introspection/">GraphQL
      * introspection</a>.</p>
      */
-    inline const GraphQLApiIntrospectionConfig& GetIntrospectionConfig() const{ return m_introspectionConfig; }
+    inline GraphQLApiIntrospectionConfig GetIntrospectionConfig() const { return m_introspectionConfig; }
     inline bool IntrospectionConfigHasBeenSet() const { return m_introspectionConfigHasBeenSet; }
-    inline void SetIntrospectionConfig(const GraphQLApiIntrospectionConfig& value) { m_introspectionConfigHasBeenSet = true; m_introspectionConfig = value; }
-    inline void SetIntrospectionConfig(GraphQLApiIntrospectionConfig&& value) { m_introspectionConfigHasBeenSet = true; m_introspectionConfig = std::move(value); }
-    inline UpdateGraphqlApiRequest& WithIntrospectionConfig(const GraphQLApiIntrospectionConfig& value) { SetIntrospectionConfig(value); return *this;}
-    inline UpdateGraphqlApiRequest& WithIntrospectionConfig(GraphQLApiIntrospectionConfig&& value) { SetIntrospectionConfig(std::move(value)); return *this;}
+    inline void SetIntrospectionConfig(GraphQLApiIntrospectionConfig value) { m_introspectionConfigHasBeenSet = true; m_introspectionConfig = value; }
+    inline UpdateGraphqlApiRequest& WithIntrospectionConfig(GraphQLApiIntrospectionConfig value) { SetIntrospectionConfig(value); return *this;}
     ///@}
 
     ///@{
@@ -218,7 +206,7 @@ namespace Model
      * non-nullable field produces an error, the error will be thrown upwards to the
      * first nullable field available.</p>
      */
-    inline int GetQueryDepthLimit() const{ return m_queryDepthLimit; }
+    inline int GetQueryDepthLimit() const { return m_queryDepthLimit; }
     inline bool QueryDepthLimitHasBeenSet() const { return m_queryDepthLimitHasBeenSet; }
     inline void SetQueryDepthLimit(int value) { m_queryDepthLimitHasBeenSet = true; m_queryDepthLimit = value; }
     inline UpdateGraphqlApiRequest& WithQueryDepthLimit(int value) { SetQueryDepthLimit(value); return *this;}
@@ -232,7 +220,7 @@ namespace Model
      * <code>1</code> and <code>10000</code>. This field will produce a limit error if
      * the operation falls out of bounds.</p>
      */
-    inline int GetResolverCountLimit() const{ return m_resolverCountLimit; }
+    inline int GetResolverCountLimit() const { return m_resolverCountLimit; }
     inline bool ResolverCountLimitHasBeenSet() const { return m_resolverCountLimitHasBeenSet; }
     inline void SetResolverCountLimit(int value) { m_resolverCountLimitHasBeenSet = true; m_resolverCountLimit = value; }
     inline UpdateGraphqlApiRequest& WithResolverCountLimit(int value) { SetResolverCountLimit(value); return *this;}
@@ -242,12 +230,12 @@ namespace Model
     /**
      * <p>The <code>enhancedMetricsConfig</code> object.</p>
      */
-    inline const EnhancedMetricsConfig& GetEnhancedMetricsConfig() const{ return m_enhancedMetricsConfig; }
+    inline const EnhancedMetricsConfig& GetEnhancedMetricsConfig() const { return m_enhancedMetricsConfig; }
     inline bool EnhancedMetricsConfigHasBeenSet() const { return m_enhancedMetricsConfigHasBeenSet; }
-    inline void SetEnhancedMetricsConfig(const EnhancedMetricsConfig& value) { m_enhancedMetricsConfigHasBeenSet = true; m_enhancedMetricsConfig = value; }
-    inline void SetEnhancedMetricsConfig(EnhancedMetricsConfig&& value) { m_enhancedMetricsConfigHasBeenSet = true; m_enhancedMetricsConfig = std::move(value); }
-    inline UpdateGraphqlApiRequest& WithEnhancedMetricsConfig(const EnhancedMetricsConfig& value) { SetEnhancedMetricsConfig(value); return *this;}
-    inline UpdateGraphqlApiRequest& WithEnhancedMetricsConfig(EnhancedMetricsConfig&& value) { SetEnhancedMetricsConfig(std::move(value)); return *this;}
+    template<typename EnhancedMetricsConfigT = EnhancedMetricsConfig>
+    void SetEnhancedMetricsConfig(EnhancedMetricsConfigT&& value) { m_enhancedMetricsConfigHasBeenSet = true; m_enhancedMetricsConfig = std::forward<EnhancedMetricsConfigT>(value); }
+    template<typename EnhancedMetricsConfigT = EnhancedMetricsConfig>
+    UpdateGraphqlApiRequest& WithEnhancedMetricsConfig(EnhancedMetricsConfigT&& value) { SetEnhancedMetricsConfig(std::forward<EnhancedMetricsConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -260,7 +248,7 @@ namespace Model
     LogConfig m_logConfig;
     bool m_logConfigHasBeenSet = false;
 
-    AuthenticationType m_authenticationType;
+    AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
     bool m_authenticationTypeHasBeenSet = false;
 
     UserPoolConfig m_userPoolConfig;
@@ -272,7 +260,7 @@ namespace Model
     Aws::Vector<AdditionalAuthenticationProvider> m_additionalAuthenticationProviders;
     bool m_additionalAuthenticationProvidersHasBeenSet = false;
 
-    bool m_xrayEnabled;
+    bool m_xrayEnabled{false};
     bool m_xrayEnabledHasBeenSet = false;
 
     LambdaAuthorizerConfig m_lambdaAuthorizerConfig;
@@ -284,13 +272,13 @@ namespace Model
     Aws::String m_ownerContact;
     bool m_ownerContactHasBeenSet = false;
 
-    GraphQLApiIntrospectionConfig m_introspectionConfig;
+    GraphQLApiIntrospectionConfig m_introspectionConfig{GraphQLApiIntrospectionConfig::NOT_SET};
     bool m_introspectionConfigHasBeenSet = false;
 
-    int m_queryDepthLimit;
+    int m_queryDepthLimit{0};
     bool m_queryDepthLimitHasBeenSet = false;
 
-    int m_resolverCountLimit;
+    int m_resolverCountLimit{0};
     bool m_resolverCountLimitHasBeenSet = false;
 
     EnhancedMetricsConfig m_enhancedMetricsConfig;

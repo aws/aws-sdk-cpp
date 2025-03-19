@@ -25,7 +25,7 @@ namespace Model
   class CreateCustomRoutingAcceleratorRequest : public GlobalAcceleratorRequest
   {
   public:
-    AWS_GLOBALACCELERATOR_API CreateCustomRoutingAcceleratorRequest();
+    AWS_GLOBALACCELERATOR_API CreateCustomRoutingAcceleratorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * characters, must contain only alphanumeric characters or hyphens (-), and must
      * not begin or end with a hyphen.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateCustomRoutingAcceleratorRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateCustomRoutingAcceleratorRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateCustomRoutingAcceleratorRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateCustomRoutingAcceleratorRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,10 @@ namespace Model
      * <p>The IP address type that an accelerator supports. For a custom routing
      * accelerator, the value must be IPV4.</p>
      */
-    inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
+    inline IpAddressType GetIpAddressType() const { return m_ipAddressType; }
     inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
-    inline void SetIpAddressType(const IpAddressType& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
-    inline void SetIpAddressType(IpAddressType&& value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = std::move(value); }
-    inline CreateCustomRoutingAcceleratorRequest& WithIpAddressType(const IpAddressType& value) { SetIpAddressType(value); return *this;}
-    inline CreateCustomRoutingAcceleratorRequest& WithIpAddressType(IpAddressType&& value) { SetIpAddressType(std::move(value)); return *this;}
+    inline void SetIpAddressType(IpAddressType value) { m_ipAddressTypeHasBeenSet = true; m_ipAddressType = value; }
+    inline CreateCustomRoutingAcceleratorRequest& WithIpAddressType(IpAddressType value) { SetIpAddressType(value); return *this;}
     ///@}
 
     ///@{
@@ -87,15 +83,14 @@ namespace Model
      * your own IP addresses (BYOIP)</a> in the <i>Global Accelerator Developer
      * Guide</i>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIpAddresses() const{ return m_ipAddresses; }
+    inline const Aws::Vector<Aws::String>& GetIpAddresses() const { return m_ipAddresses; }
     inline bool IpAddressesHasBeenSet() const { return m_ipAddressesHasBeenSet; }
-    inline void SetIpAddresses(const Aws::Vector<Aws::String>& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = value; }
-    inline void SetIpAddresses(Aws::Vector<Aws::String>&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = std::move(value); }
-    inline CreateCustomRoutingAcceleratorRequest& WithIpAddresses(const Aws::Vector<Aws::String>& value) { SetIpAddresses(value); return *this;}
-    inline CreateCustomRoutingAcceleratorRequest& WithIpAddresses(Aws::Vector<Aws::String>&& value) { SetIpAddresses(std::move(value)); return *this;}
-    inline CreateCustomRoutingAcceleratorRequest& AddIpAddresses(const Aws::String& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.push_back(value); return *this; }
-    inline CreateCustomRoutingAcceleratorRequest& AddIpAddresses(Aws::String&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.push_back(std::move(value)); return *this; }
-    inline CreateCustomRoutingAcceleratorRequest& AddIpAddresses(const char* value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.push_back(value); return *this; }
+    template<typename IpAddressesT = Aws::Vector<Aws::String>>
+    void SetIpAddresses(IpAddressesT&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = std::forward<IpAddressesT>(value); }
+    template<typename IpAddressesT = Aws::Vector<Aws::String>>
+    CreateCustomRoutingAcceleratorRequest& WithIpAddresses(IpAddressesT&& value) { SetIpAddresses(std::forward<IpAddressesT>(value)); return *this;}
+    template<typename IpAddressesT = Aws::String>
+    CreateCustomRoutingAcceleratorRequest& AddIpAddresses(IpAddressesT&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses.emplace_back(std::forward<IpAddressesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -104,7 +99,7 @@ namespace Model
      * default value is true. </p> <p>If the value is set to true, an accelerator
      * cannot be deleted. If set to false, the accelerator can be deleted.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline CreateCustomRoutingAcceleratorRequest& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -115,14 +110,12 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency—that is, the uniqueness—of the request.</p>
      */
-    inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
+    inline const Aws::String& GetIdempotencyToken() const { return m_idempotencyToken; }
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
-    inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
-    inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
-    inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
-    inline CreateCustomRoutingAcceleratorRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
-    inline CreateCustomRoutingAcceleratorRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
-    inline CreateCustomRoutingAcceleratorRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
+    template<typename IdempotencyTokenT = Aws::String>
+    void SetIdempotencyToken(IdempotencyTokenT&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::forward<IdempotencyTokenT>(value); }
+    template<typename IdempotencyTokenT = Aws::String>
+    CreateCustomRoutingAcceleratorRequest& WithIdempotencyToken(IdempotencyTokenT&& value) { SetIdempotencyToken(std::forward<IdempotencyTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,27 +124,27 @@ namespace Model
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/tagging-in-global-accelerator.html">Tagging
      * in Global Accelerator</a> in the <i>Global Accelerator Developer Guide</i>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateCustomRoutingAcceleratorRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateCustomRoutingAcceleratorRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateCustomRoutingAcceleratorRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateCustomRoutingAcceleratorRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateCustomRoutingAcceleratorRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateCustomRoutingAcceleratorRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    IpAddressType m_ipAddressType;
+    IpAddressType m_ipAddressType{IpAddressType::NOT_SET};
     bool m_ipAddressTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_ipAddresses;
     bool m_ipAddressesHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::String m_idempotencyToken;

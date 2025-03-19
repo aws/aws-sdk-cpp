@@ -18,18 +18,7 @@ namespace TranscribeService
 namespace Model
 {
 
-NonTalkTimeFilter::NonTalkTimeFilter() : 
-    m_threshold(0),
-    m_thresholdHasBeenSet(false),
-    m_absoluteTimeRangeHasBeenSet(false),
-    m_relativeTimeRangeHasBeenSet(false),
-    m_negate(false),
-    m_negateHasBeenSet(false)
-{
-}
-
 NonTalkTimeFilter::NonTalkTimeFilter(JsonView jsonValue)
-  : NonTalkTimeFilter()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ NonTalkTimeFilter& NonTalkTimeFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Threshold"))
   {
     m_threshold = jsonValue.GetInt64("Threshold");
-
     m_thresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AbsoluteTimeRange"))
   {
     m_absoluteTimeRange = jsonValue.GetObject("AbsoluteTimeRange");
-
     m_absoluteTimeRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelativeTimeRange"))
   {
     m_relativeTimeRange = jsonValue.GetObject("RelativeTimeRange");
-
     m_relativeTimeRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Negate"))
   {
     m_negate = jsonValue.GetBool("Negate");
-
     m_negateHasBeenSet = true;
   }
-
   return *this;
 }
 

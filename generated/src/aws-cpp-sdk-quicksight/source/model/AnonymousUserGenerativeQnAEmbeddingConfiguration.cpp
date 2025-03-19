@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AnonymousUserGenerativeQnAEmbeddingConfiguration::AnonymousUserGenerativeQnAEmbeddingConfiguration() : 
-    m_initialTopicIdHasBeenSet(false)
-{
-}
-
 AnonymousUserGenerativeQnAEmbeddingConfiguration::AnonymousUserGenerativeQnAEmbeddingConfiguration(JsonView jsonValue)
-  : AnonymousUserGenerativeQnAEmbeddingConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AnonymousUserGenerativeQnAEmbeddingConfiguration& AnonymousUserGenerativeQnAEmbe
   if(jsonValue.ValueExists("InitialTopicId"))
   {
     m_initialTopicId = jsonValue.GetString("InitialTopicId");
-
     m_initialTopicIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-TextSegment::TextSegment() : 
-    m_beginOffset(0),
-    m_beginOffsetHasBeenSet(false),
-    m_endOffset(0),
-    m_endOffsetHasBeenSet(false),
-    m_snippetExcerptHasBeenSet(false),
-    m_sourceDetailsHasBeenSet(false)
-{
-}
-
 TextSegment::TextSegment(JsonView jsonValue)
-  : TextSegment()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ TextSegment& TextSegment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("beginOffset"))
   {
     m_beginOffset = jsonValue.GetInteger("beginOffset");
-
     m_beginOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endOffset"))
   {
     m_endOffset = jsonValue.GetInteger("endOffset");
-
     m_endOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snippetExcerpt"))
   {
     m_snippetExcerpt = jsonValue.GetObject("snippetExcerpt");
-
     m_snippetExcerptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceDetails"))
   {
     m_sourceDetails = jsonValue.GetObject("sourceDetails");
-
     m_sourceDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

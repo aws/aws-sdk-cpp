@@ -41,7 +41,7 @@ namespace Model
   class WebACLUpdate
   {
   public:
-    AWS_WAFREGIONAL_API WebACLUpdate();
+    AWS_WAFREGIONAL_API WebACLUpdate() = default;
     AWS_WAFREGIONAL_API WebACLUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API WebACLUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,12 +52,10 @@ namespace Model
      * <p>Specifies whether to insert a <code>Rule</code> into or delete a
      * <code>Rule</code> from a <code>WebACL</code>.</p>
      */
-    inline const ChangeAction& GetAction() const{ return m_action; }
+    inline ChangeAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(ChangeAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline WebACLUpdate& WithAction(const ChangeAction& value) { SetAction(value); return *this;}
-    inline WebACLUpdate& WithAction(ChangeAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(ChangeAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline WebACLUpdate& WithAction(ChangeAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -68,16 +66,16 @@ namespace Model
      * AWS WAF to take when a web request matches the <code>Rule</code>
      * (<code>ALLOW</code>, <code>BLOCK</code>, or <code>COUNT</code>).</p>
      */
-    inline const ActivatedRule& GetActivatedRule() const{ return m_activatedRule; }
+    inline const ActivatedRule& GetActivatedRule() const { return m_activatedRule; }
     inline bool ActivatedRuleHasBeenSet() const { return m_activatedRuleHasBeenSet; }
-    inline void SetActivatedRule(const ActivatedRule& value) { m_activatedRuleHasBeenSet = true; m_activatedRule = value; }
-    inline void SetActivatedRule(ActivatedRule&& value) { m_activatedRuleHasBeenSet = true; m_activatedRule = std::move(value); }
-    inline WebACLUpdate& WithActivatedRule(const ActivatedRule& value) { SetActivatedRule(value); return *this;}
-    inline WebACLUpdate& WithActivatedRule(ActivatedRule&& value) { SetActivatedRule(std::move(value)); return *this;}
+    template<typename ActivatedRuleT = ActivatedRule>
+    void SetActivatedRule(ActivatedRuleT&& value) { m_activatedRuleHasBeenSet = true; m_activatedRule = std::forward<ActivatedRuleT>(value); }
+    template<typename ActivatedRuleT = ActivatedRule>
+    WebACLUpdate& WithActivatedRule(ActivatedRuleT&& value) { SetActivatedRule(std::forward<ActivatedRuleT>(value)); return *this;}
     ///@}
   private:
 
-    ChangeAction m_action;
+    ChangeAction m_action{ChangeAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
     ActivatedRule m_activatedRule;

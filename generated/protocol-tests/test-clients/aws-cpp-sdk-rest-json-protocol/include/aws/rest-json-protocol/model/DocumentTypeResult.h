@@ -28,48 +28,47 @@ namespace Model
   class DocumentTypeResult
   {
   public:
-    AWS_RESTJSONPROTOCOL_API DocumentTypeResult();
+    AWS_RESTJSONPROTOCOL_API DocumentTypeResult() = default;
     AWS_RESTJSONPROTOCOL_API DocumentTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESTJSONPROTOCOL_API DocumentTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetStringValue() const{ return m_stringValue; }
-    inline void SetStringValue(const Aws::String& value) { m_stringValue = value; }
-    inline void SetStringValue(Aws::String&& value) { m_stringValue = std::move(value); }
-    inline void SetStringValue(const char* value) { m_stringValue.assign(value); }
-    inline DocumentTypeResult& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
-    inline DocumentTypeResult& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
-    inline DocumentTypeResult& WithStringValue(const char* value) { SetStringValue(value); return *this;}
+    inline const Aws::String& GetStringValue() const { return m_stringValue; }
+    template<typename StringValueT = Aws::String>
+    void SetStringValue(StringValueT&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::forward<StringValueT>(value); }
+    template<typename StringValueT = Aws::String>
+    DocumentTypeResult& WithStringValue(StringValueT&& value) { SetStringValue(std::forward<StringValueT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline Aws::Utils::DocumentView GetDocumentValue() const{ return m_documentValue; }
-    inline void SetDocumentValue(const Aws::Utils::Document& value) { m_documentValue = value; }
-    inline void SetDocumentValue(Aws::Utils::Document&& value) { m_documentValue = std::move(value); }
-    inline DocumentTypeResult& WithDocumentValue(const Aws::Utils::Document& value) { SetDocumentValue(value); return *this;}
-    inline DocumentTypeResult& WithDocumentValue(Aws::Utils::Document&& value) { SetDocumentValue(std::move(value)); return *this;}
+    inline Aws::Utils::DocumentView GetDocumentValue() const { return m_documentValue; }
+    template<typename DocumentValueT = Aws::Utils::Document>
+    void SetDocumentValue(DocumentValueT&& value) { m_documentValueHasBeenSet = true; m_documentValue = std::forward<DocumentValueT>(value); }
+    template<typename DocumentValueT = Aws::Utils::Document>
+    DocumentTypeResult& WithDocumentValue(DocumentValueT&& value) { SetDocumentValue(std::forward<DocumentValueT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DocumentTypeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DocumentTypeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DocumentTypeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DocumentTypeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_stringValue;
+    bool m_stringValueHasBeenSet = false;
 
     Aws::Utils::Document m_documentValue;
+    bool m_documentValueHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

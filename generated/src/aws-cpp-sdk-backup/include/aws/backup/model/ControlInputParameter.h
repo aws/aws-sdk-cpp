@@ -35,7 +35,7 @@ namespace Model
   class ControlInputParameter
   {
   public:
-    AWS_BACKUP_API ControlInputParameter();
+    AWS_BACKUP_API ControlInputParameter() = default;
     AWS_BACKUP_API ControlInputParameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API ControlInputParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The name of a parameter, for example, <code>BackupPlanFrequency</code>.</p>
      */
-    inline const Aws::String& GetParameterName() const{ return m_parameterName; }
+    inline const Aws::String& GetParameterName() const { return m_parameterName; }
     inline bool ParameterNameHasBeenSet() const { return m_parameterNameHasBeenSet; }
-    inline void SetParameterName(const Aws::String& value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
-    inline void SetParameterName(Aws::String&& value) { m_parameterNameHasBeenSet = true; m_parameterName = std::move(value); }
-    inline void SetParameterName(const char* value) { m_parameterNameHasBeenSet = true; m_parameterName.assign(value); }
-    inline ControlInputParameter& WithParameterName(const Aws::String& value) { SetParameterName(value); return *this;}
-    inline ControlInputParameter& WithParameterName(Aws::String&& value) { SetParameterName(std::move(value)); return *this;}
-    inline ControlInputParameter& WithParameterName(const char* value) { SetParameterName(value); return *this;}
+    template<typename ParameterNameT = Aws::String>
+    void SetParameterName(ParameterNameT&& value) { m_parameterNameHasBeenSet = true; m_parameterName = std::forward<ParameterNameT>(value); }
+    template<typename ParameterNameT = Aws::String>
+    ControlInputParameter& WithParameterName(ParameterNameT&& value) { SetParameterName(std::forward<ParameterNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of parameter, for example, <code>hourly</code>.</p>
      */
-    inline const Aws::String& GetParameterValue() const{ return m_parameterValue; }
+    inline const Aws::String& GetParameterValue() const { return m_parameterValue; }
     inline bool ParameterValueHasBeenSet() const { return m_parameterValueHasBeenSet; }
-    inline void SetParameterValue(const Aws::String& value) { m_parameterValueHasBeenSet = true; m_parameterValue = value; }
-    inline void SetParameterValue(Aws::String&& value) { m_parameterValueHasBeenSet = true; m_parameterValue = std::move(value); }
-    inline void SetParameterValue(const char* value) { m_parameterValueHasBeenSet = true; m_parameterValue.assign(value); }
-    inline ControlInputParameter& WithParameterValue(const Aws::String& value) { SetParameterValue(value); return *this;}
-    inline ControlInputParameter& WithParameterValue(Aws::String&& value) { SetParameterValue(std::move(value)); return *this;}
-    inline ControlInputParameter& WithParameterValue(const char* value) { SetParameterValue(value); return *this;}
+    template<typename ParameterValueT = Aws::String>
+    void SetParameterValue(ParameterValueT&& value) { m_parameterValueHasBeenSet = true; m_parameterValue = std::forward<ParameterValueT>(value); }
+    template<typename ParameterValueT = Aws::String>
+    ControlInputParameter& WithParameterValue(ParameterValueT&& value) { SetParameterValue(std::forward<ParameterValueT>(value)); return *this;}
     ///@}
   private:
 

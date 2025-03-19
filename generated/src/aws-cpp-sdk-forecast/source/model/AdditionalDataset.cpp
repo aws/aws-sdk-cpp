@@ -18,14 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-AdditionalDataset::AdditionalDataset() : 
-    m_nameHasBeenSet(false),
-    m_configurationHasBeenSet(false)
-{
-}
-
 AdditionalDataset::AdditionalDataset(JsonView jsonValue)
-  : AdditionalDataset()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AdditionalDataset& AdditionalDataset::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Configuration"))
   {
     Aws::Map<Aws::String, JsonView> configurationJsonMap = jsonValue.GetObject("Configuration").GetAllObjects();
@@ -55,7 +46,6 @@ AdditionalDataset& AdditionalDataset::operator =(JsonView jsonValue)
     }
     m_configurationHasBeenSet = true;
   }
-
   return *this;
 }
 

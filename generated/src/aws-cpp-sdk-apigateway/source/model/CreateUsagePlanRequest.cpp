@@ -12,16 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateUsagePlanRequest::CreateUsagePlanRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_apiStagesHasBeenSet(false),
-    m_throttleHasBeenSet(false),
-    m_quotaHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateUsagePlanRequest::SerializePayload() const
 {
   JsonValue payload;

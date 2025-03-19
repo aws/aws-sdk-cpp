@@ -33,7 +33,7 @@ namespace Model
   class RuleNumberExpression
   {
   public:
-    AWS_MAILMANAGER_API RuleNumberExpression();
+    AWS_MAILMANAGER_API RuleNumberExpression() = default;
     AWS_MAILMANAGER_API RuleNumberExpression(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API RuleNumberExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,29 @@ namespace Model
     /**
      * <p>The number to evaluate in a numeric condition expression.</p>
      */
-    inline const RuleNumberToEvaluate& GetEvaluate() const{ return m_evaluate; }
+    inline const RuleNumberToEvaluate& GetEvaluate() const { return m_evaluate; }
     inline bool EvaluateHasBeenSet() const { return m_evaluateHasBeenSet; }
-    inline void SetEvaluate(const RuleNumberToEvaluate& value) { m_evaluateHasBeenSet = true; m_evaluate = value; }
-    inline void SetEvaluate(RuleNumberToEvaluate&& value) { m_evaluateHasBeenSet = true; m_evaluate = std::move(value); }
-    inline RuleNumberExpression& WithEvaluate(const RuleNumberToEvaluate& value) { SetEvaluate(value); return *this;}
-    inline RuleNumberExpression& WithEvaluate(RuleNumberToEvaluate&& value) { SetEvaluate(std::move(value)); return *this;}
+    template<typename EvaluateT = RuleNumberToEvaluate>
+    void SetEvaluate(EvaluateT&& value) { m_evaluateHasBeenSet = true; m_evaluate = std::forward<EvaluateT>(value); }
+    template<typename EvaluateT = RuleNumberToEvaluate>
+    RuleNumberExpression& WithEvaluate(EvaluateT&& value) { SetEvaluate(std::forward<EvaluateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The operator for a numeric condition expression.</p>
      */
-    inline const RuleNumberOperator& GetOperator() const{ return m_operator; }
+    inline RuleNumberOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const RuleNumberOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(RuleNumberOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline RuleNumberExpression& WithOperator(const RuleNumberOperator& value) { SetOperator(value); return *this;}
-    inline RuleNumberExpression& WithOperator(RuleNumberOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(RuleNumberOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline RuleNumberExpression& WithOperator(RuleNumberOperator value) { SetOperator(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value to evaluate in a numeric condition expression.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline RuleNumberExpression& WithValue(double value) { SetValue(value); return *this;}
@@ -77,10 +75,10 @@ namespace Model
     RuleNumberToEvaluate m_evaluate;
     bool m_evaluateHasBeenSet = false;
 
-    RuleNumberOperator m_operator;
+    RuleNumberOperator m_operator{RuleNumberOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

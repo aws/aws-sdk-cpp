@@ -18,13 +18,7 @@ namespace IoTEventsData
 namespace Model
 {
 
-EnableActionConfiguration::EnableActionConfiguration() : 
-    m_noteHasBeenSet(false)
-{
-}
-
 EnableActionConfiguration::EnableActionConfiguration(JsonView jsonValue)
-  : EnableActionConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EnableActionConfiguration& EnableActionConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("note"))
   {
     m_note = jsonValue.GetString("note");
-
     m_noteHasBeenSet = true;
   }
-
   return *this;
 }
 

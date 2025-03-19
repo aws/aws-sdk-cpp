@@ -26,7 +26,7 @@ namespace Model
   class DeleteProfileRequest : public WellArchitectedRequest
   {
   public:
-    AWS_WELLARCHITECTED_API DeleteProfileRequest();
+    AWS_WELLARCHITECTED_API DeleteProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,26 +43,22 @@ namespace Model
     /**
      * <p>The profile ARN.</p>
      */
-    inline const Aws::String& GetProfileArn() const{ return m_profileArn; }
+    inline const Aws::String& GetProfileArn() const { return m_profileArn; }
     inline bool ProfileArnHasBeenSet() const { return m_profileArnHasBeenSet; }
-    inline void SetProfileArn(const Aws::String& value) { m_profileArnHasBeenSet = true; m_profileArn = value; }
-    inline void SetProfileArn(Aws::String&& value) { m_profileArnHasBeenSet = true; m_profileArn = std::move(value); }
-    inline void SetProfileArn(const char* value) { m_profileArnHasBeenSet = true; m_profileArn.assign(value); }
-    inline DeleteProfileRequest& WithProfileArn(const Aws::String& value) { SetProfileArn(value); return *this;}
-    inline DeleteProfileRequest& WithProfileArn(Aws::String&& value) { SetProfileArn(std::move(value)); return *this;}
-    inline DeleteProfileRequest& WithProfileArn(const char* value) { SetProfileArn(value); return *this;}
+    template<typename ProfileArnT = Aws::String>
+    void SetProfileArn(ProfileArnT&& value) { m_profileArnHasBeenSet = true; m_profileArn = std::forward<ProfileArnT>(value); }
+    template<typename ProfileArnT = Aws::String>
+    DeleteProfileRequest& WithProfileArn(ProfileArnT&& value) { SetProfileArn(std::forward<ProfileArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline DeleteProfileRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline DeleteProfileRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline DeleteProfileRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    DeleteProfileRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
   private:
 

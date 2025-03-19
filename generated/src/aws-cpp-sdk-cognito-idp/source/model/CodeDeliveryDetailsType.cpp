@@ -18,16 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-CodeDeliveryDetailsType::CodeDeliveryDetailsType() : 
-    m_destinationHasBeenSet(false),
-    m_deliveryMedium(DeliveryMediumType::NOT_SET),
-    m_deliveryMediumHasBeenSet(false),
-    m_attributeNameHasBeenSet(false)
-{
-}
-
 CodeDeliveryDetailsType::CodeDeliveryDetailsType(JsonView jsonValue)
-  : CodeDeliveryDetailsType()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CodeDeliveryDetailsType& CodeDeliveryDetailsType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Destination"))
   {
     m_destination = jsonValue.GetString("Destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeliveryMedium"))
   {
     m_deliveryMedium = DeliveryMediumTypeMapper::GetDeliveryMediumTypeForName(jsonValue.GetString("DeliveryMedium"));
-
     m_deliveryMediumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeName"))
   {
     m_attributeName = jsonValue.GetString("AttributeName");
-
     m_attributeNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class DeleteBackupSelectionRequest : public BackupRequest
   {
   public:
-    AWS_BACKUP_API DeleteBackupSelectionRequest();
+    AWS_BACKUP_API DeleteBackupSelectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>Uniquely identifies a backup plan.</p>
      */
-    inline const Aws::String& GetBackupPlanId() const{ return m_backupPlanId; }
+    inline const Aws::String& GetBackupPlanId() const { return m_backupPlanId; }
     inline bool BackupPlanIdHasBeenSet() const { return m_backupPlanIdHasBeenSet; }
-    inline void SetBackupPlanId(const Aws::String& value) { m_backupPlanIdHasBeenSet = true; m_backupPlanId = value; }
-    inline void SetBackupPlanId(Aws::String&& value) { m_backupPlanIdHasBeenSet = true; m_backupPlanId = std::move(value); }
-    inline void SetBackupPlanId(const char* value) { m_backupPlanIdHasBeenSet = true; m_backupPlanId.assign(value); }
-    inline DeleteBackupSelectionRequest& WithBackupPlanId(const Aws::String& value) { SetBackupPlanId(value); return *this;}
-    inline DeleteBackupSelectionRequest& WithBackupPlanId(Aws::String&& value) { SetBackupPlanId(std::move(value)); return *this;}
-    inline DeleteBackupSelectionRequest& WithBackupPlanId(const char* value) { SetBackupPlanId(value); return *this;}
+    template<typename BackupPlanIdT = Aws::String>
+    void SetBackupPlanId(BackupPlanIdT&& value) { m_backupPlanIdHasBeenSet = true; m_backupPlanId = std::forward<BackupPlanIdT>(value); }
+    template<typename BackupPlanIdT = Aws::String>
+    DeleteBackupSelectionRequest& WithBackupPlanId(BackupPlanIdT&& value) { SetBackupPlanId(std::forward<BackupPlanIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,14 +49,12 @@ namespace Model
      * <p>Uniquely identifies the body of a request to assign a set of resources to a
      * backup plan.</p>
      */
-    inline const Aws::String& GetSelectionId() const{ return m_selectionId; }
+    inline const Aws::String& GetSelectionId() const { return m_selectionId; }
     inline bool SelectionIdHasBeenSet() const { return m_selectionIdHasBeenSet; }
-    inline void SetSelectionId(const Aws::String& value) { m_selectionIdHasBeenSet = true; m_selectionId = value; }
-    inline void SetSelectionId(Aws::String&& value) { m_selectionIdHasBeenSet = true; m_selectionId = std::move(value); }
-    inline void SetSelectionId(const char* value) { m_selectionIdHasBeenSet = true; m_selectionId.assign(value); }
-    inline DeleteBackupSelectionRequest& WithSelectionId(const Aws::String& value) { SetSelectionId(value); return *this;}
-    inline DeleteBackupSelectionRequest& WithSelectionId(Aws::String&& value) { SetSelectionId(std::move(value)); return *this;}
-    inline DeleteBackupSelectionRequest& WithSelectionId(const char* value) { SetSelectionId(value); return *this;}
+    template<typename SelectionIdT = Aws::String>
+    void SetSelectionId(SelectionIdT&& value) { m_selectionIdHasBeenSet = true; m_selectionId = std::forward<SelectionIdT>(value); }
+    template<typename SelectionIdT = Aws::String>
+    DeleteBackupSelectionRequest& WithSelectionId(SelectionIdT&& value) { SetSelectionId(std::forward<SelectionIdT>(value)); return *this;}
     ///@}
   private:
 

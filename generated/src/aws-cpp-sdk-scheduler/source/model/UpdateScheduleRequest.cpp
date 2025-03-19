@@ -12,26 +12,6 @@ using namespace Aws::Scheduler::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateScheduleRequest::UpdateScheduleRequest() : 
-    m_actionAfterCompletion(ActionAfterCompletion::NOT_SET),
-    m_actionAfterCompletionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_endDateHasBeenSet(false),
-    m_flexibleTimeWindowHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_scheduleExpressionHasBeenSet(false),
-    m_scheduleExpressionTimezoneHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_state(ScheduleState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_targetHasBeenSet(false)
-{
-}
-
 Aws::String UpdateScheduleRequest::SerializePayload() const
 {
   JsonValue payload;

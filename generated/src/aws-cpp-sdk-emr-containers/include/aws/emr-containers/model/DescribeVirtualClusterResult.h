@@ -28,7 +28,7 @@ namespace Model
   class DescribeVirtualClusterResult
   {
   public:
-    AWS_EMRCONTAINERS_API DescribeVirtualClusterResult();
+    AWS_EMRCONTAINERS_API DescribeVirtualClusterResult() = default;
     AWS_EMRCONTAINERS_API DescribeVirtualClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EMRCONTAINERS_API DescribeVirtualClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>This output displays information about the specified virtual cluster.</p>
      */
-    inline const VirtualCluster& GetVirtualCluster() const{ return m_virtualCluster; }
-    inline void SetVirtualCluster(const VirtualCluster& value) { m_virtualCluster = value; }
-    inline void SetVirtualCluster(VirtualCluster&& value) { m_virtualCluster = std::move(value); }
-    inline DescribeVirtualClusterResult& WithVirtualCluster(const VirtualCluster& value) { SetVirtualCluster(value); return *this;}
-    inline DescribeVirtualClusterResult& WithVirtualCluster(VirtualCluster&& value) { SetVirtualCluster(std::move(value)); return *this;}
+    inline const VirtualCluster& GetVirtualCluster() const { return m_virtualCluster; }
+    template<typename VirtualClusterT = VirtualCluster>
+    void SetVirtualCluster(VirtualClusterT&& value) { m_virtualClusterHasBeenSet = true; m_virtualCluster = std::forward<VirtualClusterT>(value); }
+    template<typename VirtualClusterT = VirtualCluster>
+    DescribeVirtualClusterResult& WithVirtualCluster(VirtualClusterT&& value) { SetVirtualCluster(std::forward<VirtualClusterT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeVirtualClusterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeVirtualClusterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeVirtualClusterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeVirtualClusterResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     VirtualCluster m_virtualCluster;
+    bool m_virtualClusterHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

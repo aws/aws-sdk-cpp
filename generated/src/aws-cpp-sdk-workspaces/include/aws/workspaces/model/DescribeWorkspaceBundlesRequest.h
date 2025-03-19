@@ -22,7 +22,7 @@ namespace Model
   class DescribeWorkspaceBundlesRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API DescribeWorkspaceBundlesRequest();
+    AWS_WORKSPACES_API DescribeWorkspaceBundlesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,15 +40,14 @@ namespace Model
      * <p>The identifiers of the bundles. You cannot combine this parameter with any
      * other filter.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetBundleIds() const{ return m_bundleIds; }
+    inline const Aws::Vector<Aws::String>& GetBundleIds() const { return m_bundleIds; }
     inline bool BundleIdsHasBeenSet() const { return m_bundleIdsHasBeenSet; }
-    inline void SetBundleIds(const Aws::Vector<Aws::String>& value) { m_bundleIdsHasBeenSet = true; m_bundleIds = value; }
-    inline void SetBundleIds(Aws::Vector<Aws::String>&& value) { m_bundleIdsHasBeenSet = true; m_bundleIds = std::move(value); }
-    inline DescribeWorkspaceBundlesRequest& WithBundleIds(const Aws::Vector<Aws::String>& value) { SetBundleIds(value); return *this;}
-    inline DescribeWorkspaceBundlesRequest& WithBundleIds(Aws::Vector<Aws::String>&& value) { SetBundleIds(std::move(value)); return *this;}
-    inline DescribeWorkspaceBundlesRequest& AddBundleIds(const Aws::String& value) { m_bundleIdsHasBeenSet = true; m_bundleIds.push_back(value); return *this; }
-    inline DescribeWorkspaceBundlesRequest& AddBundleIds(Aws::String&& value) { m_bundleIdsHasBeenSet = true; m_bundleIds.push_back(std::move(value)); return *this; }
-    inline DescribeWorkspaceBundlesRequest& AddBundleIds(const char* value) { m_bundleIdsHasBeenSet = true; m_bundleIds.push_back(value); return *this; }
+    template<typename BundleIdsT = Aws::Vector<Aws::String>>
+    void SetBundleIds(BundleIdsT&& value) { m_bundleIdsHasBeenSet = true; m_bundleIds = std::forward<BundleIdsT>(value); }
+    template<typename BundleIdsT = Aws::Vector<Aws::String>>
+    DescribeWorkspaceBundlesRequest& WithBundleIds(BundleIdsT&& value) { SetBundleIds(std::forward<BundleIdsT>(value)); return *this;}
+    template<typename BundleIdsT = Aws::String>
+    DescribeWorkspaceBundlesRequest& AddBundleIds(BundleIdsT&& value) { m_bundleIdsHasBeenSet = true; m_bundleIds.emplace_back(std::forward<BundleIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,14 +57,12 @@ namespace Model
      * <code>AMAZON</code>. To describe the bundles that belong to your account, don't
      * specify a value.</p>
      */
-    inline const Aws::String& GetOwner() const{ return m_owner; }
+    inline const Aws::String& GetOwner() const { return m_owner; }
     inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
-    inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
-    inline void SetOwner(Aws::String&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
-    inline void SetOwner(const char* value) { m_ownerHasBeenSet = true; m_owner.assign(value); }
-    inline DescribeWorkspaceBundlesRequest& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
-    inline DescribeWorkspaceBundlesRequest& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
-    inline DescribeWorkspaceBundlesRequest& WithOwner(const char* value) { SetOwner(value); return *this;}
+    template<typename OwnerT = Aws::String>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = Aws::String>
+    DescribeWorkspaceBundlesRequest& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +70,12 @@ namespace Model
      * <p>The token for the next set of results. (You received this token from a
      * previous call.)</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeWorkspaceBundlesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeWorkspaceBundlesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeWorkspaceBundlesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeWorkspaceBundlesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-AuthInfo::AuthInfo() : 
-    m_actionType(ActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false),
-    m_resourcesHasBeenSet(false)
-{
-}
-
 AuthInfo::AuthInfo(JsonView jsonValue)
-  : AuthInfo()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AuthInfo& AuthInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actionType"))
   {
     m_actionType = ActionTypeMapper::GetActionTypeForName(jsonValue.GetString("actionType"));
-
     m_actionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resources"))
   {
     Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("resources");
@@ -49,7 +39,6 @@ AuthInfo& AuthInfo::operator =(JsonView jsonValue)
     }
     m_resourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

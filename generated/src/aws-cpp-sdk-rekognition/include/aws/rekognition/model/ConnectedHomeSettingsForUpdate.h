@@ -34,7 +34,7 @@ namespace Model
   class ConnectedHomeSettingsForUpdate
   {
   public:
-    AWS_REKOGNITION_API ConnectedHomeSettingsForUpdate();
+    AWS_REKOGNITION_API ConnectedHomeSettingsForUpdate() = default;
     AWS_REKOGNITION_API ConnectedHomeSettingsForUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API ConnectedHomeSettingsForUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,22 +46,21 @@ namespace Model
      * pets. The current valid labels you can include in this list are: "PERSON",
      * "PET", "PACKAGE", and "ALL". </p>
      */
-    inline const Aws::Vector<Aws::String>& GetLabels() const{ return m_labels; }
+    inline const Aws::Vector<Aws::String>& GetLabels() const { return m_labels; }
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
-    inline void SetLabels(const Aws::Vector<Aws::String>& value) { m_labelsHasBeenSet = true; m_labels = value; }
-    inline void SetLabels(Aws::Vector<Aws::String>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
-    inline ConnectedHomeSettingsForUpdate& WithLabels(const Aws::Vector<Aws::String>& value) { SetLabels(value); return *this;}
-    inline ConnectedHomeSettingsForUpdate& WithLabels(Aws::Vector<Aws::String>&& value) { SetLabels(std::move(value)); return *this;}
-    inline ConnectedHomeSettingsForUpdate& AddLabels(const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
-    inline ConnectedHomeSettingsForUpdate& AddLabels(Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.push_back(std::move(value)); return *this; }
-    inline ConnectedHomeSettingsForUpdate& AddLabels(const char* value) { m_labelsHasBeenSet = true; m_labels.push_back(value); return *this; }
+    template<typename LabelsT = Aws::Vector<Aws::String>>
+    void SetLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels = std::forward<LabelsT>(value); }
+    template<typename LabelsT = Aws::Vector<Aws::String>>
+    ConnectedHomeSettingsForUpdate& WithLabels(LabelsT&& value) { SetLabels(std::forward<LabelsT>(value)); return *this;}
+    template<typename LabelsT = Aws::String>
+    ConnectedHomeSettingsForUpdate& AddLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels.emplace_back(std::forward<LabelsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The minimum confidence required to label an object in the video. </p>
      */
-    inline double GetMinConfidence() const{ return m_minConfidence; }
+    inline double GetMinConfidence() const { return m_minConfidence; }
     inline bool MinConfidenceHasBeenSet() const { return m_minConfidenceHasBeenSet; }
     inline void SetMinConfidence(double value) { m_minConfidenceHasBeenSet = true; m_minConfidence = value; }
     inline ConnectedHomeSettingsForUpdate& WithMinConfidence(double value) { SetMinConfidence(value); return *this;}
@@ -71,7 +70,7 @@ namespace Model
     Aws::Vector<Aws::String> m_labels;
     bool m_labelsHasBeenSet = false;
 
-    double m_minConfidence;
+    double m_minConfidence{0.0};
     bool m_minConfidenceHasBeenSet = false;
   };
 

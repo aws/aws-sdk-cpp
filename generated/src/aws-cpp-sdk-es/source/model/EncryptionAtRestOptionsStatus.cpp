@@ -18,14 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-EncryptionAtRestOptionsStatus::EncryptionAtRestOptionsStatus() : 
-    m_optionsHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 EncryptionAtRestOptionsStatus::EncryptionAtRestOptionsStatus(JsonView jsonValue)
-  : EncryptionAtRestOptionsStatus()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EncryptionAtRestOptionsStatus& EncryptionAtRestOptionsStatus::operator =(JsonVie
   if(jsonValue.ValueExists("Options"))
   {
     m_options = jsonValue.GetObject("Options");
-
     m_optionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

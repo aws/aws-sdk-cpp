@@ -29,7 +29,7 @@ namespace Model
   class CreateAgentRequest : public BedrockAgentRequest
   {
   public:
-    AWS_BEDROCKAGENT_API CreateAgentRequest();
+    AWS_BEDROCKAGENT_API CreateAgentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,26 +44,22 @@ namespace Model
     /**
      * <p>The agent's collaboration role.</p>
      */
-    inline const AgentCollaboration& GetAgentCollaboration() const{ return m_agentCollaboration; }
+    inline AgentCollaboration GetAgentCollaboration() const { return m_agentCollaboration; }
     inline bool AgentCollaborationHasBeenSet() const { return m_agentCollaborationHasBeenSet; }
-    inline void SetAgentCollaboration(const AgentCollaboration& value) { m_agentCollaborationHasBeenSet = true; m_agentCollaboration = value; }
-    inline void SetAgentCollaboration(AgentCollaboration&& value) { m_agentCollaborationHasBeenSet = true; m_agentCollaboration = std::move(value); }
-    inline CreateAgentRequest& WithAgentCollaboration(const AgentCollaboration& value) { SetAgentCollaboration(value); return *this;}
-    inline CreateAgentRequest& WithAgentCollaboration(AgentCollaboration&& value) { SetAgentCollaboration(std::move(value)); return *this;}
+    inline void SetAgentCollaboration(AgentCollaboration value) { m_agentCollaborationHasBeenSet = true; m_agentCollaboration = value; }
+    inline CreateAgentRequest& WithAgentCollaboration(AgentCollaboration value) { SetAgentCollaboration(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A name for the agent that you create.</p>
      */
-    inline const Aws::String& GetAgentName() const{ return m_agentName; }
+    inline const Aws::String& GetAgentName() const { return m_agentName; }
     inline bool AgentNameHasBeenSet() const { return m_agentNameHasBeenSet; }
-    inline void SetAgentName(const Aws::String& value) { m_agentNameHasBeenSet = true; m_agentName = value; }
-    inline void SetAgentName(Aws::String&& value) { m_agentNameHasBeenSet = true; m_agentName = std::move(value); }
-    inline void SetAgentName(const char* value) { m_agentNameHasBeenSet = true; m_agentName.assign(value); }
-    inline CreateAgentRequest& WithAgentName(const Aws::String& value) { SetAgentName(value); return *this;}
-    inline CreateAgentRequest& WithAgentName(Aws::String&& value) { SetAgentName(std::move(value)); return *this;}
-    inline CreateAgentRequest& WithAgentName(const char* value) { SetAgentName(value); return *this;}
+    template<typename AgentNameT = Aws::String>
+    void SetAgentName(AgentNameT&& value) { m_agentNameHasBeenSet = true; m_agentName = std::forward<AgentNameT>(value); }
+    template<typename AgentNameT = Aws::String>
+    CreateAgentRequest& WithAgentName(AgentNameT&& value) { SetAgentName(std::forward<AgentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +67,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role with permissions to invoke API
      * operations on the agent.</p>
      */
-    inline const Aws::String& GetAgentResourceRoleArn() const{ return m_agentResourceRoleArn; }
+    inline const Aws::String& GetAgentResourceRoleArn() const { return m_agentResourceRoleArn; }
     inline bool AgentResourceRoleArnHasBeenSet() const { return m_agentResourceRoleArnHasBeenSet; }
-    inline void SetAgentResourceRoleArn(const Aws::String& value) { m_agentResourceRoleArnHasBeenSet = true; m_agentResourceRoleArn = value; }
-    inline void SetAgentResourceRoleArn(Aws::String&& value) { m_agentResourceRoleArnHasBeenSet = true; m_agentResourceRoleArn = std::move(value); }
-    inline void SetAgentResourceRoleArn(const char* value) { m_agentResourceRoleArnHasBeenSet = true; m_agentResourceRoleArn.assign(value); }
-    inline CreateAgentRequest& WithAgentResourceRoleArn(const Aws::String& value) { SetAgentResourceRoleArn(value); return *this;}
-    inline CreateAgentRequest& WithAgentResourceRoleArn(Aws::String&& value) { SetAgentResourceRoleArn(std::move(value)); return *this;}
-    inline CreateAgentRequest& WithAgentResourceRoleArn(const char* value) { SetAgentResourceRoleArn(value); return *this;}
+    template<typename AgentResourceRoleArnT = Aws::String>
+    void SetAgentResourceRoleArn(AgentResourceRoleArnT&& value) { m_agentResourceRoleArnHasBeenSet = true; m_agentResourceRoleArn = std::forward<AgentResourceRoleArnT>(value); }
+    template<typename AgentResourceRoleArnT = Aws::String>
+    CreateAgentRequest& WithAgentResourceRoleArn(AgentResourceRoleArnT&& value) { SetAgentResourceRoleArn(std::forward<AgentResourceRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,26 +83,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * idempotency</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateAgentRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateAgentRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateAgentRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateAgentRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Contains details of the custom orchestration configured for the agent. </p>
      */
-    inline const CustomOrchestration& GetCustomOrchestration() const{ return m_customOrchestration; }
+    inline const CustomOrchestration& GetCustomOrchestration() const { return m_customOrchestration; }
     inline bool CustomOrchestrationHasBeenSet() const { return m_customOrchestrationHasBeenSet; }
-    inline void SetCustomOrchestration(const CustomOrchestration& value) { m_customOrchestrationHasBeenSet = true; m_customOrchestration = value; }
-    inline void SetCustomOrchestration(CustomOrchestration&& value) { m_customOrchestrationHasBeenSet = true; m_customOrchestration = std::move(value); }
-    inline CreateAgentRequest& WithCustomOrchestration(const CustomOrchestration& value) { SetCustomOrchestration(value); return *this;}
-    inline CreateAgentRequest& WithCustomOrchestration(CustomOrchestration&& value) { SetCustomOrchestration(std::move(value)); return *this;}
+    template<typename CustomOrchestrationT = CustomOrchestration>
+    void SetCustomOrchestration(CustomOrchestrationT&& value) { m_customOrchestrationHasBeenSet = true; m_customOrchestration = std::forward<CustomOrchestrationT>(value); }
+    template<typename CustomOrchestrationT = CustomOrchestration>
+    CreateAgentRequest& WithCustomOrchestration(CustomOrchestrationT&& value) { SetCustomOrchestration(std::forward<CustomOrchestrationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,28 +108,24 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the KMS key with which to encrypt the
      * agent.</p>
      */
-    inline const Aws::String& GetCustomerEncryptionKeyArn() const{ return m_customerEncryptionKeyArn; }
+    inline const Aws::String& GetCustomerEncryptionKeyArn() const { return m_customerEncryptionKeyArn; }
     inline bool CustomerEncryptionKeyArnHasBeenSet() const { return m_customerEncryptionKeyArnHasBeenSet; }
-    inline void SetCustomerEncryptionKeyArn(const Aws::String& value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn = value; }
-    inline void SetCustomerEncryptionKeyArn(Aws::String&& value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn = std::move(value); }
-    inline void SetCustomerEncryptionKeyArn(const char* value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn.assign(value); }
-    inline CreateAgentRequest& WithCustomerEncryptionKeyArn(const Aws::String& value) { SetCustomerEncryptionKeyArn(value); return *this;}
-    inline CreateAgentRequest& WithCustomerEncryptionKeyArn(Aws::String&& value) { SetCustomerEncryptionKeyArn(std::move(value)); return *this;}
-    inline CreateAgentRequest& WithCustomerEncryptionKeyArn(const char* value) { SetCustomerEncryptionKeyArn(value); return *this;}
+    template<typename CustomerEncryptionKeyArnT = Aws::String>
+    void SetCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) { m_customerEncryptionKeyArnHasBeenSet = true; m_customerEncryptionKeyArn = std::forward<CustomerEncryptionKeyArnT>(value); }
+    template<typename CustomerEncryptionKeyArnT = Aws::String>
+    CreateAgentRequest& WithCustomerEncryptionKeyArn(CustomerEncryptionKeyArnT&& value) { SetCustomerEncryptionKeyArn(std::forward<CustomerEncryptionKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the agent.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateAgentRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateAgentRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateAgentRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateAgentRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -169,14 +157,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_CreateModelImportJob.html">CreateModelImportJob</a>
      * or from the Imported models page in the Amazon Bedrock console.</p> </li> </ul>
      */
-    inline const Aws::String& GetFoundationModel() const{ return m_foundationModel; }
+    inline const Aws::String& GetFoundationModel() const { return m_foundationModel; }
     inline bool FoundationModelHasBeenSet() const { return m_foundationModelHasBeenSet; }
-    inline void SetFoundationModel(const Aws::String& value) { m_foundationModelHasBeenSet = true; m_foundationModel = value; }
-    inline void SetFoundationModel(Aws::String&& value) { m_foundationModelHasBeenSet = true; m_foundationModel = std::move(value); }
-    inline void SetFoundationModel(const char* value) { m_foundationModelHasBeenSet = true; m_foundationModel.assign(value); }
-    inline CreateAgentRequest& WithFoundationModel(const Aws::String& value) { SetFoundationModel(value); return *this;}
-    inline CreateAgentRequest& WithFoundationModel(Aws::String&& value) { SetFoundationModel(std::move(value)); return *this;}
-    inline CreateAgentRequest& WithFoundationModel(const char* value) { SetFoundationModel(value); return *this;}
+    template<typename FoundationModelT = Aws::String>
+    void SetFoundationModel(FoundationModelT&& value) { m_foundationModelHasBeenSet = true; m_foundationModel = std::forward<FoundationModelT>(value); }
+    template<typename FoundationModelT = Aws::String>
+    CreateAgentRequest& WithFoundationModel(FoundationModelT&& value) { SetFoundationModel(std::forward<FoundationModelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -184,12 +170,12 @@ namespace Model
      * <p>The unique Guardrail configuration assigned to the agent when it is
      * created.</p>
      */
-    inline const GuardrailConfiguration& GetGuardrailConfiguration() const{ return m_guardrailConfiguration; }
+    inline const GuardrailConfiguration& GetGuardrailConfiguration() const { return m_guardrailConfiguration; }
     inline bool GuardrailConfigurationHasBeenSet() const { return m_guardrailConfigurationHasBeenSet; }
-    inline void SetGuardrailConfiguration(const GuardrailConfiguration& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = value; }
-    inline void SetGuardrailConfiguration(GuardrailConfiguration&& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = std::move(value); }
-    inline CreateAgentRequest& WithGuardrailConfiguration(const GuardrailConfiguration& value) { SetGuardrailConfiguration(value); return *this;}
-    inline CreateAgentRequest& WithGuardrailConfiguration(GuardrailConfiguration&& value) { SetGuardrailConfiguration(std::move(value)); return *this;}
+    template<typename GuardrailConfigurationT = GuardrailConfiguration>
+    void SetGuardrailConfiguration(GuardrailConfigurationT&& value) { m_guardrailConfigurationHasBeenSet = true; m_guardrailConfiguration = std::forward<GuardrailConfigurationT>(value); }
+    template<typename GuardrailConfigurationT = GuardrailConfiguration>
+    CreateAgentRequest& WithGuardrailConfiguration(GuardrailConfigurationT&& value) { SetGuardrailConfiguration(std::forward<GuardrailConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -200,7 +186,7 @@ namespace Model
      * session expires and Amazon Bedrock deletes any data provided before the
      * timeout.</p>
      */
-    inline int GetIdleSessionTTLInSeconds() const{ return m_idleSessionTTLInSeconds; }
+    inline int GetIdleSessionTTLInSeconds() const { return m_idleSessionTTLInSeconds; }
     inline bool IdleSessionTTLInSecondsHasBeenSet() const { return m_idleSessionTTLInSecondsHasBeenSet; }
     inline void SetIdleSessionTTLInSeconds(int value) { m_idleSessionTTLInSecondsHasBeenSet = true; m_idleSessionTTLInSeconds = value; }
     inline CreateAgentRequest& WithIdleSessionTTLInSeconds(int value) { SetIdleSessionTTLInSeconds(value); return *this;}
@@ -211,26 +197,24 @@ namespace Model
      * <p>Instructions that tell the agent what it should do and how it should interact
      * with users.</p>
      */
-    inline const Aws::String& GetInstruction() const{ return m_instruction; }
+    inline const Aws::String& GetInstruction() const { return m_instruction; }
     inline bool InstructionHasBeenSet() const { return m_instructionHasBeenSet; }
-    inline void SetInstruction(const Aws::String& value) { m_instructionHasBeenSet = true; m_instruction = value; }
-    inline void SetInstruction(Aws::String&& value) { m_instructionHasBeenSet = true; m_instruction = std::move(value); }
-    inline void SetInstruction(const char* value) { m_instructionHasBeenSet = true; m_instruction.assign(value); }
-    inline CreateAgentRequest& WithInstruction(const Aws::String& value) { SetInstruction(value); return *this;}
-    inline CreateAgentRequest& WithInstruction(Aws::String&& value) { SetInstruction(std::move(value)); return *this;}
-    inline CreateAgentRequest& WithInstruction(const char* value) { SetInstruction(value); return *this;}
+    template<typename InstructionT = Aws::String>
+    void SetInstruction(InstructionT&& value) { m_instructionHasBeenSet = true; m_instruction = std::forward<InstructionT>(value); }
+    template<typename InstructionT = Aws::String>
+    CreateAgentRequest& WithInstruction(InstructionT&& value) { SetInstruction(std::forward<InstructionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Contains the details of the memory configured for the agent.</p>
      */
-    inline const MemoryConfiguration& GetMemoryConfiguration() const{ return m_memoryConfiguration; }
+    inline const MemoryConfiguration& GetMemoryConfiguration() const { return m_memoryConfiguration; }
     inline bool MemoryConfigurationHasBeenSet() const { return m_memoryConfigurationHasBeenSet; }
-    inline void SetMemoryConfiguration(const MemoryConfiguration& value) { m_memoryConfigurationHasBeenSet = true; m_memoryConfiguration = value; }
-    inline void SetMemoryConfiguration(MemoryConfiguration&& value) { m_memoryConfigurationHasBeenSet = true; m_memoryConfiguration = std::move(value); }
-    inline CreateAgentRequest& WithMemoryConfiguration(const MemoryConfiguration& value) { SetMemoryConfiguration(value); return *this;}
-    inline CreateAgentRequest& WithMemoryConfiguration(MemoryConfiguration&& value) { SetMemoryConfiguration(std::move(value)); return *this;}
+    template<typename MemoryConfigurationT = MemoryConfiguration>
+    void SetMemoryConfiguration(MemoryConfigurationT&& value) { m_memoryConfigurationHasBeenSet = true; m_memoryConfiguration = std::forward<MemoryConfigurationT>(value); }
+    template<typename MemoryConfigurationT = MemoryConfiguration>
+    CreateAgentRequest& WithMemoryConfiguration(MemoryConfigurationT&& value) { SetMemoryConfiguration(std::forward<MemoryConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -238,12 +222,10 @@ namespace Model
      * <p> Specifies the type of orchestration strategy for the agent. This is set to
      * <code>DEFAULT</code> orchestration type, by default. </p>
      */
-    inline const OrchestrationType& GetOrchestrationType() const{ return m_orchestrationType; }
+    inline OrchestrationType GetOrchestrationType() const { return m_orchestrationType; }
     inline bool OrchestrationTypeHasBeenSet() const { return m_orchestrationTypeHasBeenSet; }
-    inline void SetOrchestrationType(const OrchestrationType& value) { m_orchestrationTypeHasBeenSet = true; m_orchestrationType = value; }
-    inline void SetOrchestrationType(OrchestrationType&& value) { m_orchestrationTypeHasBeenSet = true; m_orchestrationType = std::move(value); }
-    inline CreateAgentRequest& WithOrchestrationType(const OrchestrationType& value) { SetOrchestrationType(value); return *this;}
-    inline CreateAgentRequest& WithOrchestrationType(OrchestrationType&& value) { SetOrchestrationType(std::move(value)); return *this;}
+    inline void SetOrchestrationType(OrchestrationType value) { m_orchestrationTypeHasBeenSet = true; m_orchestrationType = value; }
+    inline CreateAgentRequest& WithOrchestrationType(OrchestrationType value) { SetOrchestrationType(value); return *this;}
     ///@}
 
     ///@{
@@ -253,35 +235,32 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced
      * prompts</a>.</p>
      */
-    inline const PromptOverrideConfiguration& GetPromptOverrideConfiguration() const{ return m_promptOverrideConfiguration; }
+    inline const PromptOverrideConfiguration& GetPromptOverrideConfiguration() const { return m_promptOverrideConfiguration; }
     inline bool PromptOverrideConfigurationHasBeenSet() const { return m_promptOverrideConfigurationHasBeenSet; }
-    inline void SetPromptOverrideConfiguration(const PromptOverrideConfiguration& value) { m_promptOverrideConfigurationHasBeenSet = true; m_promptOverrideConfiguration = value; }
-    inline void SetPromptOverrideConfiguration(PromptOverrideConfiguration&& value) { m_promptOverrideConfigurationHasBeenSet = true; m_promptOverrideConfiguration = std::move(value); }
-    inline CreateAgentRequest& WithPromptOverrideConfiguration(const PromptOverrideConfiguration& value) { SetPromptOverrideConfiguration(value); return *this;}
-    inline CreateAgentRequest& WithPromptOverrideConfiguration(PromptOverrideConfiguration&& value) { SetPromptOverrideConfiguration(std::move(value)); return *this;}
+    template<typename PromptOverrideConfigurationT = PromptOverrideConfiguration>
+    void SetPromptOverrideConfiguration(PromptOverrideConfigurationT&& value) { m_promptOverrideConfigurationHasBeenSet = true; m_promptOverrideConfiguration = std::forward<PromptOverrideConfigurationT>(value); }
+    template<typename PromptOverrideConfigurationT = PromptOverrideConfiguration>
+    CreateAgentRequest& WithPromptOverrideConfiguration(PromptOverrideConfigurationT&& value) { SetPromptOverrideConfiguration(std::forward<PromptOverrideConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Any tags that you want to attach to the agent.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateAgentRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateAgentRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateAgentRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateAgentRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateAgentRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateAgentRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateAgentRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateAgentRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateAgentRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateAgentRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateAgentRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
-    AgentCollaboration m_agentCollaboration;
+    AgentCollaboration m_agentCollaboration{AgentCollaboration::NOT_SET};
     bool m_agentCollaborationHasBeenSet = false;
 
     Aws::String m_agentName;
@@ -308,7 +287,7 @@ namespace Model
     GuardrailConfiguration m_guardrailConfiguration;
     bool m_guardrailConfigurationHasBeenSet = false;
 
-    int m_idleSessionTTLInSeconds;
+    int m_idleSessionTTLInSeconds{0};
     bool m_idleSessionTTLInSecondsHasBeenSet = false;
 
     Aws::String m_instruction;
@@ -317,7 +296,7 @@ namespace Model
     MemoryConfiguration m_memoryConfiguration;
     bool m_memoryConfigurationHasBeenSet = false;
 
-    OrchestrationType m_orchestrationType;
+    OrchestrationType m_orchestrationType{OrchestrationType::NOT_SET};
     bool m_orchestrationTypeHasBeenSet = false;
 
     PromptOverrideConfiguration m_promptOverrideConfiguration;

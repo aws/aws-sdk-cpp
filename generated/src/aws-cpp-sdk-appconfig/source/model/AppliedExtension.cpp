@@ -18,17 +18,7 @@ namespace AppConfig
 namespace Model
 {
 
-AppliedExtension::AppliedExtension() : 
-    m_extensionIdHasBeenSet(false),
-    m_extensionAssociationIdHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 AppliedExtension::AppliedExtension(JsonView jsonValue)
-  : AppliedExtension()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ AppliedExtension& AppliedExtension::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ExtensionId"))
   {
     m_extensionId = jsonValue.GetString("ExtensionId");
-
     m_extensionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExtensionAssociationId"))
   {
     m_extensionAssociationId = jsonValue.GetString("ExtensionAssociationId");
-
     m_extensionAssociationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionNumber"))
   {
     m_versionNumber = jsonValue.GetInteger("VersionNumber");
-
     m_versionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -65,7 +49,6 @@ AppliedExtension& AppliedExtension::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

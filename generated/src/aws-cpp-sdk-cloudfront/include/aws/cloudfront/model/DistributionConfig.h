@@ -41,7 +41,7 @@ namespace Model
   class DistributionConfig
   {
   public:
-    AWS_CLOUDFRONT_API DistributionConfig();
+    AWS_CLOUDFRONT_API DistributionConfig() = default;
     AWS_CLOUDFRONT_API DistributionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API DistributionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -57,14 +57,12 @@ namespace Model
      * a value that you already sent in a previous request to create a distribution,
      * CloudFront returns a <code>DistributionAlreadyExists</code> error.</p>
      */
-    inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
+    inline const Aws::String& GetCallerReference() const { return m_callerReference; }
     inline bool CallerReferenceHasBeenSet() const { return m_callerReferenceHasBeenSet; }
-    inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
-    inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
-    inline void SetCallerReference(const char* value) { m_callerReferenceHasBeenSet = true; m_callerReference.assign(value); }
-    inline DistributionConfig& WithCallerReference(const Aws::String& value) { SetCallerReference(value); return *this;}
-    inline DistributionConfig& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
-    inline DistributionConfig& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
+    template<typename CallerReferenceT = Aws::String>
+    void SetCallerReference(CallerReferenceT&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::forward<CallerReferenceT>(value); }
+    template<typename CallerReferenceT = Aws::String>
+    DistributionConfig& WithCallerReference(CallerReferenceT&& value) { SetCallerReference(std::forward<CallerReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +70,12 @@ namespace Model
      * <p>A complex type that contains information about CNAMEs (alternate domain
      * names), if any, for this distribution.</p>
      */
-    inline const Aliases& GetAliases() const{ return m_aliases; }
+    inline const Aliases& GetAliases() const { return m_aliases; }
     inline bool AliasesHasBeenSet() const { return m_aliasesHasBeenSet; }
-    inline void SetAliases(const Aliases& value) { m_aliasesHasBeenSet = true; m_aliases = value; }
-    inline void SetAliases(Aliases&& value) { m_aliasesHasBeenSet = true; m_aliases = std::move(value); }
-    inline DistributionConfig& WithAliases(const Aliases& value) { SetAliases(value); return *this;}
-    inline DistributionConfig& WithAliases(Aliases&& value) { SetAliases(std::move(value)); return *this;}
+    template<typename AliasesT = Aliases>
+    void SetAliases(AliasesT&& value) { m_aliasesHasBeenSet = true; m_aliases = std::forward<AliasesT>(value); }
+    template<typename AliasesT = Aliases>
+    DistributionConfig& WithAliases(AliasesT&& value) { SetAliases(std::forward<AliasesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +101,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/DefaultRootObject.html">Specify
      * a default root object</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetDefaultRootObject() const{ return m_defaultRootObject; }
+    inline const Aws::String& GetDefaultRootObject() const { return m_defaultRootObject; }
     inline bool DefaultRootObjectHasBeenSet() const { return m_defaultRootObjectHasBeenSet; }
-    inline void SetDefaultRootObject(const Aws::String& value) { m_defaultRootObjectHasBeenSet = true; m_defaultRootObject = value; }
-    inline void SetDefaultRootObject(Aws::String&& value) { m_defaultRootObjectHasBeenSet = true; m_defaultRootObject = std::move(value); }
-    inline void SetDefaultRootObject(const char* value) { m_defaultRootObjectHasBeenSet = true; m_defaultRootObject.assign(value); }
-    inline DistributionConfig& WithDefaultRootObject(const Aws::String& value) { SetDefaultRootObject(value); return *this;}
-    inline DistributionConfig& WithDefaultRootObject(Aws::String&& value) { SetDefaultRootObject(std::move(value)); return *this;}
-    inline DistributionConfig& WithDefaultRootObject(const char* value) { SetDefaultRootObject(value); return *this;}
+    template<typename DefaultRootObjectT = Aws::String>
+    void SetDefaultRootObject(DefaultRootObjectT&& value) { m_defaultRootObjectHasBeenSet = true; m_defaultRootObject = std::forward<DefaultRootObjectT>(value); }
+    template<typename DefaultRootObjectT = Aws::String>
+    DistributionConfig& WithDefaultRootObject(DefaultRootObjectT&& value) { SetDefaultRootObject(std::forward<DefaultRootObjectT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,12 +114,12 @@ namespace Model
      * <p>A complex type that contains information about origins for this
      * distribution.</p>
      */
-    inline const Origins& GetOrigins() const{ return m_origins; }
+    inline const Origins& GetOrigins() const { return m_origins; }
     inline bool OriginsHasBeenSet() const { return m_originsHasBeenSet; }
-    inline void SetOrigins(const Origins& value) { m_originsHasBeenSet = true; m_origins = value; }
-    inline void SetOrigins(Origins&& value) { m_originsHasBeenSet = true; m_origins = std::move(value); }
-    inline DistributionConfig& WithOrigins(const Origins& value) { SetOrigins(value); return *this;}
-    inline DistributionConfig& WithOrigins(Origins&& value) { SetOrigins(std::move(value)); return *this;}
+    template<typename OriginsT = Origins>
+    void SetOrigins(OriginsT&& value) { m_originsHasBeenSet = true; m_origins = std::forward<OriginsT>(value); }
+    template<typename OriginsT = Origins>
+    DistributionConfig& WithOrigins(OriginsT&& value) { SetOrigins(std::forward<OriginsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -131,12 +127,12 @@ namespace Model
      * <p>A complex type that contains information about origin groups for this
      * distribution.</p>
      */
-    inline const OriginGroups& GetOriginGroups() const{ return m_originGroups; }
+    inline const OriginGroups& GetOriginGroups() const { return m_originGroups; }
     inline bool OriginGroupsHasBeenSet() const { return m_originGroupsHasBeenSet; }
-    inline void SetOriginGroups(const OriginGroups& value) { m_originGroupsHasBeenSet = true; m_originGroups = value; }
-    inline void SetOriginGroups(OriginGroups&& value) { m_originGroupsHasBeenSet = true; m_originGroups = std::move(value); }
-    inline DistributionConfig& WithOriginGroups(const OriginGroups& value) { SetOriginGroups(value); return *this;}
-    inline DistributionConfig& WithOriginGroups(OriginGroups&& value) { SetOriginGroups(std::move(value)); return *this;}
+    template<typename OriginGroupsT = OriginGroups>
+    void SetOriginGroups(OriginGroupsT&& value) { m_originGroupsHasBeenSet = true; m_originGroups = std::forward<OriginGroupsT>(value); }
+    template<typename OriginGroupsT = OriginGroups>
+    DistributionConfig& WithOriginGroups(OriginGroupsT&& value) { SetOriginGroups(std::forward<OriginGroupsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -146,12 +142,12 @@ namespace Model
      * of <code>PathPattern</code> in <code>CacheBehavior</code> elements. You must
      * create exactly one default cache behavior.</p>
      */
-    inline const DefaultCacheBehavior& GetDefaultCacheBehavior() const{ return m_defaultCacheBehavior; }
+    inline const DefaultCacheBehavior& GetDefaultCacheBehavior() const { return m_defaultCacheBehavior; }
     inline bool DefaultCacheBehaviorHasBeenSet() const { return m_defaultCacheBehaviorHasBeenSet; }
-    inline void SetDefaultCacheBehavior(const DefaultCacheBehavior& value) { m_defaultCacheBehaviorHasBeenSet = true; m_defaultCacheBehavior = value; }
-    inline void SetDefaultCacheBehavior(DefaultCacheBehavior&& value) { m_defaultCacheBehaviorHasBeenSet = true; m_defaultCacheBehavior = std::move(value); }
-    inline DistributionConfig& WithDefaultCacheBehavior(const DefaultCacheBehavior& value) { SetDefaultCacheBehavior(value); return *this;}
-    inline DistributionConfig& WithDefaultCacheBehavior(DefaultCacheBehavior&& value) { SetDefaultCacheBehavior(std::move(value)); return *this;}
+    template<typename DefaultCacheBehaviorT = DefaultCacheBehavior>
+    void SetDefaultCacheBehavior(DefaultCacheBehaviorT&& value) { m_defaultCacheBehaviorHasBeenSet = true; m_defaultCacheBehavior = std::forward<DefaultCacheBehaviorT>(value); }
+    template<typename DefaultCacheBehaviorT = DefaultCacheBehavior>
+    DistributionConfig& WithDefaultCacheBehavior(DefaultCacheBehaviorT&& value) { SetDefaultCacheBehavior(std::forward<DefaultCacheBehaviorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -159,12 +155,12 @@ namespace Model
      * <p>A complex type that contains zero or more <code>CacheBehavior</code>
      * elements.</p>
      */
-    inline const CacheBehaviors& GetCacheBehaviors() const{ return m_cacheBehaviors; }
+    inline const CacheBehaviors& GetCacheBehaviors() const { return m_cacheBehaviors; }
     inline bool CacheBehaviorsHasBeenSet() const { return m_cacheBehaviorsHasBeenSet; }
-    inline void SetCacheBehaviors(const CacheBehaviors& value) { m_cacheBehaviorsHasBeenSet = true; m_cacheBehaviors = value; }
-    inline void SetCacheBehaviors(CacheBehaviors&& value) { m_cacheBehaviorsHasBeenSet = true; m_cacheBehaviors = std::move(value); }
-    inline DistributionConfig& WithCacheBehaviors(const CacheBehaviors& value) { SetCacheBehaviors(value); return *this;}
-    inline DistributionConfig& WithCacheBehaviors(CacheBehaviors&& value) { SetCacheBehaviors(std::move(value)); return *this;}
+    template<typename CacheBehaviorsT = CacheBehaviors>
+    void SetCacheBehaviors(CacheBehaviorsT&& value) { m_cacheBehaviorsHasBeenSet = true; m_cacheBehaviors = std::forward<CacheBehaviorsT>(value); }
+    template<typename CacheBehaviorsT = CacheBehaviors>
+    DistributionConfig& WithCacheBehaviors(CacheBehaviorsT&& value) { SetCacheBehaviors(std::forward<CacheBehaviorsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -177,12 +173,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
      * Error Responses</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
-    inline const CustomErrorResponses& GetCustomErrorResponses() const{ return m_customErrorResponses; }
+    inline const CustomErrorResponses& GetCustomErrorResponses() const { return m_customErrorResponses; }
     inline bool CustomErrorResponsesHasBeenSet() const { return m_customErrorResponsesHasBeenSet; }
-    inline void SetCustomErrorResponses(const CustomErrorResponses& value) { m_customErrorResponsesHasBeenSet = true; m_customErrorResponses = value; }
-    inline void SetCustomErrorResponses(CustomErrorResponses&& value) { m_customErrorResponsesHasBeenSet = true; m_customErrorResponses = std::move(value); }
-    inline DistributionConfig& WithCustomErrorResponses(const CustomErrorResponses& value) { SetCustomErrorResponses(value); return *this;}
-    inline DistributionConfig& WithCustomErrorResponses(CustomErrorResponses&& value) { SetCustomErrorResponses(std::move(value)); return *this;}
+    template<typename CustomErrorResponsesT = CustomErrorResponses>
+    void SetCustomErrorResponses(CustomErrorResponsesT&& value) { m_customErrorResponsesHasBeenSet = true; m_customErrorResponses = std::forward<CustomErrorResponsesT>(value); }
+    template<typename CustomErrorResponsesT = CustomErrorResponses>
+    DistributionConfig& WithCustomErrorResponses(CustomErrorResponsesT&& value) { SetCustomErrorResponses(std::forward<CustomErrorResponsesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -190,14 +186,12 @@ namespace Model
      * <p>A comment to describe the distribution. The comment cannot be longer than 128
      * characters.</p>
      */
-    inline const Aws::String& GetComment() const{ return m_comment; }
+    inline const Aws::String& GetComment() const { return m_comment; }
     inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
-    inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
-    inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
-    inline DistributionConfig& WithComment(const Aws::String& value) { SetComment(value); return *this;}
-    inline DistributionConfig& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
-    inline DistributionConfig& WithComment(const char* value) { SetComment(value); return *this;}
+    template<typename CommentT = Aws::String>
+    void SetComment(CommentT&& value) { m_commentHasBeenSet = true; m_comment = std::forward<CommentT>(value); }
+    template<typename CommentT = Aws::String>
+    DistributionConfig& WithComment(CommentT&& value) { SetComment(std::forward<CommentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -207,12 +201,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/AccessLogs.html">Access
      * Logs</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
-    inline const LoggingConfig& GetLogging() const{ return m_logging; }
+    inline const LoggingConfig& GetLogging() const { return m_logging; }
     inline bool LoggingHasBeenSet() const { return m_loggingHasBeenSet; }
-    inline void SetLogging(const LoggingConfig& value) { m_loggingHasBeenSet = true; m_logging = value; }
-    inline void SetLogging(LoggingConfig&& value) { m_loggingHasBeenSet = true; m_logging = std::move(value); }
-    inline DistributionConfig& WithLogging(const LoggingConfig& value) { SetLogging(value); return *this;}
-    inline DistributionConfig& WithLogging(LoggingConfig&& value) { SetLogging(std::move(value)); return *this;}
+    template<typename LoggingT = LoggingConfig>
+    void SetLogging(LoggingT&& value) { m_loggingHasBeenSet = true; m_logging = std::forward<LoggingT>(value); }
+    template<typename LoggingT = LoggingConfig>
+    DistributionConfig& WithLogging(LoggingT&& value) { SetLogging(std::forward<LoggingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -232,19 +226,17 @@ namespace Model
      * href="http://aws.amazon.com/cloudfront/pricing/">Amazon CloudFront
      * Pricing</a>.</p>
      */
-    inline const PriceClass& GetPriceClass() const{ return m_priceClass; }
+    inline PriceClass GetPriceClass() const { return m_priceClass; }
     inline bool PriceClassHasBeenSet() const { return m_priceClassHasBeenSet; }
-    inline void SetPriceClass(const PriceClass& value) { m_priceClassHasBeenSet = true; m_priceClass = value; }
-    inline void SetPriceClass(PriceClass&& value) { m_priceClassHasBeenSet = true; m_priceClass = std::move(value); }
-    inline DistributionConfig& WithPriceClass(const PriceClass& value) { SetPriceClass(value); return *this;}
-    inline DistributionConfig& WithPriceClass(PriceClass&& value) { SetPriceClass(std::move(value)); return *this;}
+    inline void SetPriceClass(PriceClass value) { m_priceClassHasBeenSet = true; m_priceClass = value; }
+    inline DistributionConfig& WithPriceClass(PriceClass value) { SetPriceClass(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>From this field, you can enable or disable the selected distribution.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline DistributionConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -255,12 +247,12 @@ namespace Model
      * <p>A complex type that determines the distribution's SSL/TLS configuration for
      * communicating with viewers.</p>
      */
-    inline const ViewerCertificate& GetViewerCertificate() const{ return m_viewerCertificate; }
+    inline const ViewerCertificate& GetViewerCertificate() const { return m_viewerCertificate; }
     inline bool ViewerCertificateHasBeenSet() const { return m_viewerCertificateHasBeenSet; }
-    inline void SetViewerCertificate(const ViewerCertificate& value) { m_viewerCertificateHasBeenSet = true; m_viewerCertificate = value; }
-    inline void SetViewerCertificate(ViewerCertificate&& value) { m_viewerCertificateHasBeenSet = true; m_viewerCertificate = std::move(value); }
-    inline DistributionConfig& WithViewerCertificate(const ViewerCertificate& value) { SetViewerCertificate(value); return *this;}
-    inline DistributionConfig& WithViewerCertificate(ViewerCertificate&& value) { SetViewerCertificate(std::move(value)); return *this;}
+    template<typename ViewerCertificateT = ViewerCertificate>
+    void SetViewerCertificate(ViewerCertificateT&& value) { m_viewerCertificateHasBeenSet = true; m_viewerCertificate = std::forward<ViewerCertificateT>(value); }
+    template<typename ViewerCertificateT = ViewerCertificate>
+    DistributionConfig& WithViewerCertificate(ViewerCertificateT&& value) { SetViewerCertificate(std::forward<ViewerCertificateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -268,12 +260,12 @@ namespace Model
      * <p>A complex type that identifies ways in which you want to restrict
      * distribution of your content.</p>
      */
-    inline const Restrictions& GetRestrictions() const{ return m_restrictions; }
+    inline const Restrictions& GetRestrictions() const { return m_restrictions; }
     inline bool RestrictionsHasBeenSet() const { return m_restrictionsHasBeenSet; }
-    inline void SetRestrictions(const Restrictions& value) { m_restrictionsHasBeenSet = true; m_restrictions = value; }
-    inline void SetRestrictions(Restrictions&& value) { m_restrictionsHasBeenSet = true; m_restrictions = std::move(value); }
-    inline DistributionConfig& WithRestrictions(const Restrictions& value) { SetRestrictions(value); return *this;}
-    inline DistributionConfig& WithRestrictions(Restrictions&& value) { SetRestrictions(std::move(value)); return *this;}
+    template<typename RestrictionsT = Restrictions>
+    void SetRestrictions(RestrictionsT&& value) { m_restrictionsHasBeenSet = true; m_restrictions = std::forward<RestrictionsT>(value); }
+    template<typename RestrictionsT = Restrictions>
+    DistributionConfig& WithRestrictions(RestrictionsT&& value) { SetRestrictions(std::forward<RestrictionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -294,14 +286,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
      * Developer Guide</a>.</p>
      */
-    inline const Aws::String& GetWebACLId() const{ return m_webACLId; }
+    inline const Aws::String& GetWebACLId() const { return m_webACLId; }
     inline bool WebACLIdHasBeenSet() const { return m_webACLIdHasBeenSet; }
-    inline void SetWebACLId(const Aws::String& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
-    inline void SetWebACLId(Aws::String&& value) { m_webACLIdHasBeenSet = true; m_webACLId = std::move(value); }
-    inline void SetWebACLId(const char* value) { m_webACLIdHasBeenSet = true; m_webACLId.assign(value); }
-    inline DistributionConfig& WithWebACLId(const Aws::String& value) { SetWebACLId(value); return *this;}
-    inline DistributionConfig& WithWebACLId(Aws::String&& value) { SetWebACLId(std::move(value)); return *this;}
-    inline DistributionConfig& WithWebACLId(const char* value) { SetWebACLId(value); return *this;}
+    template<typename WebACLIdT = Aws::String>
+    void SetWebACLId(WebACLIdT&& value) { m_webACLIdHasBeenSet = true; m_webACLId = std::forward<WebACLIdT>(value); }
+    template<typename WebACLIdT = Aws::String>
+    DistributionConfig& WithWebACLId(WebACLIdT&& value) { SetWebACLId(std::forward<WebACLIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -321,12 +311,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/secure-connections-supported-viewer-protocols-ciphers.html">Supported
      * protocols and ciphers between viewers and CloudFront</a>.</p>
      */
-    inline const HttpVersion& GetHttpVersion() const{ return m_httpVersion; }
+    inline HttpVersion GetHttpVersion() const { return m_httpVersion; }
     inline bool HttpVersionHasBeenSet() const { return m_httpVersionHasBeenSet; }
-    inline void SetHttpVersion(const HttpVersion& value) { m_httpVersionHasBeenSet = true; m_httpVersion = value; }
-    inline void SetHttpVersion(HttpVersion&& value) { m_httpVersionHasBeenSet = true; m_httpVersion = std::move(value); }
-    inline DistributionConfig& WithHttpVersion(const HttpVersion& value) { SetHttpVersion(value); return *this;}
-    inline DistributionConfig& WithHttpVersion(HttpVersion&& value) { SetHttpVersion(std::move(value)); return *this;}
+    inline void SetHttpVersion(HttpVersion value) { m_httpVersionHasBeenSet = true; m_httpVersion = value; }
+    inline DistributionConfig& WithHttpVersion(HttpVersion value) { SetHttpVersion(value); return *this;}
     ///@}
 
     ///@{
@@ -360,7 +348,7 @@ namespace Model
      * changes. A CNAME record will route traffic to your distribution regardless of
      * the IP address format of the viewer request.</p>
      */
-    inline bool GetIsIPV6Enabled() const{ return m_isIPV6Enabled; }
+    inline bool GetIsIPV6Enabled() const { return m_isIPV6Enabled; }
     inline bool IsIPV6EnabledHasBeenSet() const { return m_isIPV6EnabledHasBeenSet; }
     inline void SetIsIPV6Enabled(bool value) { m_isIPV6EnabledHasBeenSet = true; m_isIPV6Enabled = value; }
     inline DistributionConfig& WithIsIPV6Enabled(bool value) { SetIsIPV6Enabled(value); return *this;}
@@ -371,14 +359,12 @@ namespace Model
      * <p>The identifier of a continuous deployment policy. For more information, see
      * <code>CreateContinuousDeploymentPolicy</code>.</p>
      */
-    inline const Aws::String& GetContinuousDeploymentPolicyId() const{ return m_continuousDeploymentPolicyId; }
+    inline const Aws::String& GetContinuousDeploymentPolicyId() const { return m_continuousDeploymentPolicyId; }
     inline bool ContinuousDeploymentPolicyIdHasBeenSet() const { return m_continuousDeploymentPolicyIdHasBeenSet; }
-    inline void SetContinuousDeploymentPolicyId(const Aws::String& value) { m_continuousDeploymentPolicyIdHasBeenSet = true; m_continuousDeploymentPolicyId = value; }
-    inline void SetContinuousDeploymentPolicyId(Aws::String&& value) { m_continuousDeploymentPolicyIdHasBeenSet = true; m_continuousDeploymentPolicyId = std::move(value); }
-    inline void SetContinuousDeploymentPolicyId(const char* value) { m_continuousDeploymentPolicyIdHasBeenSet = true; m_continuousDeploymentPolicyId.assign(value); }
-    inline DistributionConfig& WithContinuousDeploymentPolicyId(const Aws::String& value) { SetContinuousDeploymentPolicyId(value); return *this;}
-    inline DistributionConfig& WithContinuousDeploymentPolicyId(Aws::String&& value) { SetContinuousDeploymentPolicyId(std::move(value)); return *this;}
-    inline DistributionConfig& WithContinuousDeploymentPolicyId(const char* value) { SetContinuousDeploymentPolicyId(value); return *this;}
+    template<typename ContinuousDeploymentPolicyIdT = Aws::String>
+    void SetContinuousDeploymentPolicyId(ContinuousDeploymentPolicyIdT&& value) { m_continuousDeploymentPolicyIdHasBeenSet = true; m_continuousDeploymentPolicyId = std::forward<ContinuousDeploymentPolicyIdT>(value); }
+    template<typename ContinuousDeploymentPolicyIdT = Aws::String>
+    DistributionConfig& WithContinuousDeploymentPolicyId(ContinuousDeploymentPolicyIdT&& value) { SetContinuousDeploymentPolicyId(std::forward<ContinuousDeploymentPolicyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -387,7 +373,7 @@ namespace Model
      * value is <code>true</code>, this is a staging distribution. When this value is
      * <code>false</code>, this is not a staging distribution.</p>
      */
-    inline bool GetStaging() const{ return m_staging; }
+    inline bool GetStaging() const { return m_staging; }
     inline bool StagingHasBeenSet() const { return m_stagingHasBeenSet; }
     inline void SetStaging(bool value) { m_stagingHasBeenSet = true; m_staging = value; }
     inline DistributionConfig& WithStaging(bool value) { SetStaging(value); return *this;}
@@ -398,14 +384,12 @@ namespace Model
      * <p>ID of the Anycast static IP list that is associated with the
      * distribution.</p>
      */
-    inline const Aws::String& GetAnycastIpListId() const{ return m_anycastIpListId; }
+    inline const Aws::String& GetAnycastIpListId() const { return m_anycastIpListId; }
     inline bool AnycastIpListIdHasBeenSet() const { return m_anycastIpListIdHasBeenSet; }
-    inline void SetAnycastIpListId(const Aws::String& value) { m_anycastIpListIdHasBeenSet = true; m_anycastIpListId = value; }
-    inline void SetAnycastIpListId(Aws::String&& value) { m_anycastIpListIdHasBeenSet = true; m_anycastIpListId = std::move(value); }
-    inline void SetAnycastIpListId(const char* value) { m_anycastIpListIdHasBeenSet = true; m_anycastIpListId.assign(value); }
-    inline DistributionConfig& WithAnycastIpListId(const Aws::String& value) { SetAnycastIpListId(value); return *this;}
-    inline DistributionConfig& WithAnycastIpListId(Aws::String&& value) { SetAnycastIpListId(std::move(value)); return *this;}
-    inline DistributionConfig& WithAnycastIpListId(const char* value) { SetAnycastIpListId(value); return *this;}
+    template<typename AnycastIpListIdT = Aws::String>
+    void SetAnycastIpListId(AnycastIpListIdT&& value) { m_anycastIpListIdHasBeenSet = true; m_anycastIpListId = std::forward<AnycastIpListIdT>(value); }
+    template<typename AnycastIpListIdT = Aws::String>
+    DistributionConfig& WithAnycastIpListId(AnycastIpListIdT&& value) { SetAnycastIpListId(std::forward<AnycastIpListIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -439,10 +423,10 @@ namespace Model
     LoggingConfig m_logging;
     bool m_loggingHasBeenSet = false;
 
-    PriceClass m_priceClass;
+    PriceClass m_priceClass{PriceClass::NOT_SET};
     bool m_priceClassHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     ViewerCertificate m_viewerCertificate;
@@ -454,16 +438,16 @@ namespace Model
     Aws::String m_webACLId;
     bool m_webACLIdHasBeenSet = false;
 
-    HttpVersion m_httpVersion;
+    HttpVersion m_httpVersion{HttpVersion::NOT_SET};
     bool m_httpVersionHasBeenSet = false;
 
-    bool m_isIPV6Enabled;
+    bool m_isIPV6Enabled{false};
     bool m_isIPV6EnabledHasBeenSet = false;
 
     Aws::String m_continuousDeploymentPolicyId;
     bool m_continuousDeploymentPolicyIdHasBeenSet = false;
 
-    bool m_staging;
+    bool m_staging{false};
     bool m_stagingHasBeenSet = false;
 
     Aws::String m_anycastIpListId;

@@ -18,14 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-JourneyStateRequest::JourneyStateRequest() : 
-    m_state(State::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 JourneyStateRequest::JourneyStateRequest(JsonView jsonValue)
-  : JourneyStateRequest()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ JourneyStateRequest& JourneyStateRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("State"))
   {
     m_state = StateMapper::GetStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

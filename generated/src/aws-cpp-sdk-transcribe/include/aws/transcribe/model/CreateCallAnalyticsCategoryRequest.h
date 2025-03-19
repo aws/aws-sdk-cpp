@@ -25,7 +25,7 @@ namespace Model
   class CreateCallAnalyticsCategoryRequest : public TranscribeServiceRequest
   {
   public:
-    AWS_TRANSCRIBESERVICE_API CreateCallAnalyticsCategoryRequest();
+    AWS_TRANSCRIBESERVICE_API CreateCallAnalyticsCategoryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * category over a generic name like <code>test-category</code>.</p> <p>Category
      * names are case sensitive.</p>
      */
-    inline const Aws::String& GetCategoryName() const{ return m_categoryName; }
+    inline const Aws::String& GetCategoryName() const { return m_categoryName; }
     inline bool CategoryNameHasBeenSet() const { return m_categoryNameHasBeenSet; }
-    inline void SetCategoryName(const Aws::String& value) { m_categoryNameHasBeenSet = true; m_categoryName = value; }
-    inline void SetCategoryName(Aws::String&& value) { m_categoryNameHasBeenSet = true; m_categoryName = std::move(value); }
-    inline void SetCategoryName(const char* value) { m_categoryNameHasBeenSet = true; m_categoryName.assign(value); }
-    inline CreateCallAnalyticsCategoryRequest& WithCategoryName(const Aws::String& value) { SetCategoryName(value); return *this;}
-    inline CreateCallAnalyticsCategoryRequest& WithCategoryName(Aws::String&& value) { SetCategoryName(std::move(value)); return *this;}
-    inline CreateCallAnalyticsCategoryRequest& WithCategoryName(const char* value) { SetCategoryName(value); return *this;}
+    template<typename CategoryNameT = Aws::String>
+    void SetCategoryName(CategoryNameT&& value) { m_categoryNameHasBeenSet = true; m_categoryName = std::forward<CategoryNameT>(value); }
+    template<typename CategoryNameT = Aws::String>
+    CreateCallAnalyticsCategoryRequest& WithCategoryName(CategoryNameT&& value) { SetCategoryName(std::forward<CategoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,14 @@ namespace Model
      * choose a sentiment filter that detects if a customer's sentiment was positive
      * during the last 30 seconds of the call.</p>
      */
-    inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
+    inline const Aws::Vector<Rule>& GetRules() const { return m_rules; }
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    inline void SetRules(const Aws::Vector<Rule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-    inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-    inline CreateCallAnalyticsCategoryRequest& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
-    inline CreateCallAnalyticsCategoryRequest& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
-    inline CreateCallAnalyticsCategoryRequest& AddRules(const Rule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-    inline CreateCallAnalyticsCategoryRequest& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    template<typename RulesT = Aws::Vector<Rule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<Rule>>
+    CreateCallAnalyticsCategoryRequest& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = Rule>
+    CreateCallAnalyticsCategoryRequest& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -82,14 +80,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/tagging.html">Tagging
      * resources</a>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateCallAnalyticsCategoryRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateCallAnalyticsCategoryRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateCallAnalyticsCategoryRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateCallAnalyticsCategoryRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateCallAnalyticsCategoryRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateCallAnalyticsCategoryRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -103,12 +101,10 @@ namespace Model
      * transcriptions.</p> <p>If you do not include <code>InputType</code>, your
      * category is created as a post-call category by default.</p>
      */
-    inline const InputType& GetInputType() const{ return m_inputType; }
+    inline InputType GetInputType() const { return m_inputType; }
     inline bool InputTypeHasBeenSet() const { return m_inputTypeHasBeenSet; }
-    inline void SetInputType(const InputType& value) { m_inputTypeHasBeenSet = true; m_inputType = value; }
-    inline void SetInputType(InputType&& value) { m_inputTypeHasBeenSet = true; m_inputType = std::move(value); }
-    inline CreateCallAnalyticsCategoryRequest& WithInputType(const InputType& value) { SetInputType(value); return *this;}
-    inline CreateCallAnalyticsCategoryRequest& WithInputType(InputType&& value) { SetInputType(std::move(value)); return *this;}
+    inline void SetInputType(InputType value) { m_inputTypeHasBeenSet = true; m_inputType = value; }
+    inline CreateCallAnalyticsCategoryRequest& WithInputType(InputType value) { SetInputType(value); return *this;}
     ///@}
   private:
 
@@ -121,7 +117,7 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    InputType m_inputType;
+    InputType m_inputType{InputType::NOT_SET};
     bool m_inputTypeHasBeenSet = false;
   };
 

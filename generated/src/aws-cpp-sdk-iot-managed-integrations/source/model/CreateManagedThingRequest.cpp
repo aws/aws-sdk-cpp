@@ -12,28 +12,6 @@ using namespace Aws::IoTManagedIntegrations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateManagedThingRequest::CreateManagedThingRequest() : 
-    m_role(Role::NOT_SET),
-    m_roleHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_credentialLockerIdHasBeenSet(false),
-    m_authenticationMaterialHasBeenSet(false),
-    m_authenticationMaterialType(AuthMaterialType::NOT_SET),
-    m_authenticationMaterialTypeHasBeenSet(false),
-    m_serialNumberHasBeenSet(false),
-    m_brandHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_capabilityReportHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_classificationHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_metaDataHasBeenSet(false)
-{
-}
-
 Aws::String CreateManagedThingRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,18 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-LifecycleEvent::LifecycleEvent() : 
-    m_lifecycleEventNameHasBeenSet(false),
-    m_diagnosticsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_status(LifecycleEventStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 LifecycleEvent::LifecycleEvent(JsonView jsonValue)
-  : LifecycleEvent()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ LifecycleEvent& LifecycleEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("lifecycleEventName"))
   {
     m_lifecycleEventName = jsonValue.GetString("lifecycleEventName");
-
     m_lifecycleEventNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("diagnostics"))
   {
     m_diagnostics = jsonValue.GetObject("diagnostics");
-
     m_diagnosticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetDouble("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetDouble("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = LifecycleEventStatusMapper::GetLifecycleEventStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

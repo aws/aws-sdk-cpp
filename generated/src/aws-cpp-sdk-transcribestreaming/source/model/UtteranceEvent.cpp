@@ -18,27 +18,7 @@ namespace TranscribeStreamingService
 namespace Model
 {
 
-UtteranceEvent::UtteranceEvent() : 
-    m_utteranceIdHasBeenSet(false),
-    m_isPartial(false),
-    m_isPartialHasBeenSet(false),
-    m_participantRole(ParticipantRole::NOT_SET),
-    m_participantRoleHasBeenSet(false),
-    m_beginOffsetMillis(0),
-    m_beginOffsetMillisHasBeenSet(false),
-    m_endOffsetMillis(0),
-    m_endOffsetMillisHasBeenSet(false),
-    m_transcriptHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_entitiesHasBeenSet(false),
-    m_sentiment(Sentiment::NOT_SET),
-    m_sentimentHasBeenSet(false),
-    m_issuesDetectedHasBeenSet(false)
-{
-}
-
 UtteranceEvent::UtteranceEvent(JsonView jsonValue)
-  : UtteranceEvent()
 {
   *this = jsonValue;
 }
@@ -48,45 +28,33 @@ UtteranceEvent& UtteranceEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UtteranceId"))
   {
     m_utteranceId = jsonValue.GetString("UtteranceId");
-
     m_utteranceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsPartial"))
   {
     m_isPartial = jsonValue.GetBool("IsPartial");
-
     m_isPartialHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParticipantRole"))
   {
     m_participantRole = ParticipantRoleMapper::GetParticipantRoleForName(jsonValue.GetString("ParticipantRole"));
-
     m_participantRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BeginOffsetMillis"))
   {
     m_beginOffsetMillis = jsonValue.GetInt64("BeginOffsetMillis");
-
     m_beginOffsetMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndOffsetMillis"))
   {
     m_endOffsetMillis = jsonValue.GetInt64("EndOffsetMillis");
-
     m_endOffsetMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Transcript"))
   {
     m_transcript = jsonValue.GetString("Transcript");
-
     m_transcriptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Items"))
   {
     Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("Items");
@@ -96,7 +64,6 @@ UtteranceEvent& UtteranceEvent::operator =(JsonView jsonValue)
     }
     m_itemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Entities"))
   {
     Aws::Utils::Array<JsonView> entitiesJsonList = jsonValue.GetArray("Entities");
@@ -106,14 +73,11 @@ UtteranceEvent& UtteranceEvent::operator =(JsonView jsonValue)
     }
     m_entitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sentiment"))
   {
     m_sentiment = SentimentMapper::GetSentimentForName(jsonValue.GetString("Sentiment"));
-
     m_sentimentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IssuesDetected"))
   {
     Aws::Utils::Array<JsonView> issuesDetectedJsonList = jsonValue.GetArray("IssuesDetected");
@@ -123,7 +87,6 @@ UtteranceEvent& UtteranceEvent::operator =(JsonView jsonValue)
     }
     m_issuesDetectedHasBeenSet = true;
   }
-
   return *this;
 }
 

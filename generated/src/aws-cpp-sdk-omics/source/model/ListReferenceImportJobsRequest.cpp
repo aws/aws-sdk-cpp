@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListReferenceImportJobsRequest::ListReferenceImportJobsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_referenceStoreIdHasBeenSet(false),
-    m_filterHasBeenSet(false)
-{
-}
-
 Aws::String ListReferenceImportJobsRequest::SerializePayload() const
 {
   JsonValue payload;

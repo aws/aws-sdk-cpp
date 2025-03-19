@@ -18,16 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-RequestOutputItem::RequestOutputItem() : 
-    m_dashPlaylistSettingsHasBeenSet(false),
-    m_hlsPlaylistSettingsHasBeenSet(false),
-    m_manifestNameHasBeenSet(false),
-    m_sourceGroupHasBeenSet(false)
-{
-}
-
 RequestOutputItem::RequestOutputItem(JsonView jsonValue)
-  : RequestOutputItem()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ RequestOutputItem& RequestOutputItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DashPlaylistSettings"))
   {
     m_dashPlaylistSettings = jsonValue.GetObject("DashPlaylistSettings");
-
     m_dashPlaylistSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HlsPlaylistSettings"))
   {
     m_hlsPlaylistSettings = jsonValue.GetObject("HlsPlaylistSettings");
-
     m_hlsPlaylistSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManifestName"))
   {
     m_manifestName = jsonValue.GetString("ManifestName");
-
     m_manifestNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceGroup"))
   {
     m_sourceGroup = jsonValue.GetString("SourceGroup");
-
     m_sourceGroupHasBeenSet = true;
   }
-
   return *this;
 }
 

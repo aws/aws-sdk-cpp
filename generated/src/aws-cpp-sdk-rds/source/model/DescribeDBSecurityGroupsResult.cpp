@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDBSecurityGroupsResult::DescribeDBSecurityGroupsResult()
-{
-}
-
 DescribeDBSecurityGroupsResult::DescribeDBSecurityGroupsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeDBSecurityGroupsResult& DescribeDBSecurityGroupsResult::operator =(const
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode dBSecurityGroupsNode = resultNode.FirstChild("DBSecurityGroups");
     if(!dBSecurityGroupsNode.IsNull())
     {
       XmlNode dBSecurityGroupsMember = dBSecurityGroupsNode.FirstChild("DBSecurityGroup");
+      m_dBSecurityGroupsHasBeenSet = !dBSecurityGroupsMember.IsNull();
       while(!dBSecurityGroupsMember.IsNull())
       {
         m_dBSecurityGroups.push_back(dBSecurityGroupsMember);
         dBSecurityGroupsMember = dBSecurityGroupsMember.NextNode("DBSecurityGroup");
       }
 
+      m_dBSecurityGroupsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DescribeDBSecurityGroupsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

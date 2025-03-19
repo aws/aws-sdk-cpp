@@ -22,10 +22,9 @@ namespace Model
   class GetTileResult
   {
   public:
-    AWS_SAGEMAKERGEOSPATIAL_API GetTileResult();
-    //We have to define these because Microsoft doesn't auto generate them
-    AWS_SAGEMAKERGEOSPATIAL_API GetTileResult(GetTileResult&&);
-    AWS_SAGEMAKERGEOSPATIAL_API GetTileResult& operator=(GetTileResult&&);
+    AWS_SAGEMAKERGEOSPATIAL_API GetTileResult() = default;
+    AWS_SAGEMAKERGEOSPATIAL_API GetTileResult(GetTileResult&&) = default;
+    AWS_SAGEMAKERGEOSPATIAL_API GetTileResult& operator=(GetTileResult&&) = default;
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetTileResult(const GetTileResult&) = delete;
@@ -48,19 +47,19 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTileResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::Stream::ResponseStream m_binaryFile;
+    Aws::Utils::Stream::ResponseStream m_binaryFile{};
+    bool m_binaryFileHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

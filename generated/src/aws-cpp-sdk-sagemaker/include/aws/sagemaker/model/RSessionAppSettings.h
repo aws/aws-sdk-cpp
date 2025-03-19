@@ -34,7 +34,7 @@ namespace Model
   class RSessionAppSettings
   {
   public:
-    AWS_SAGEMAKER_API RSessionAppSettings();
+    AWS_SAGEMAKER_API RSessionAppSettings() = default;
     AWS_SAGEMAKER_API RSessionAppSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API RSessionAppSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
 
     ///@{
     
-    inline const ResourceSpec& GetDefaultResourceSpec() const{ return m_defaultResourceSpec; }
+    inline const ResourceSpec& GetDefaultResourceSpec() const { return m_defaultResourceSpec; }
     inline bool DefaultResourceSpecHasBeenSet() const { return m_defaultResourceSpecHasBeenSet; }
-    inline void SetDefaultResourceSpec(const ResourceSpec& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = value; }
-    inline void SetDefaultResourceSpec(ResourceSpec&& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = std::move(value); }
-    inline RSessionAppSettings& WithDefaultResourceSpec(const ResourceSpec& value) { SetDefaultResourceSpec(value); return *this;}
-    inline RSessionAppSettings& WithDefaultResourceSpec(ResourceSpec&& value) { SetDefaultResourceSpec(std::move(value)); return *this;}
+    template<typename DefaultResourceSpecT = ResourceSpec>
+    void SetDefaultResourceSpec(DefaultResourceSpecT&& value) { m_defaultResourceSpecHasBeenSet = true; m_defaultResourceSpec = std::forward<DefaultResourceSpecT>(value); }
+    template<typename DefaultResourceSpecT = ResourceSpec>
+    RSessionAppSettings& WithDefaultResourceSpec(DefaultResourceSpecT&& value) { SetDefaultResourceSpec(std::forward<DefaultResourceSpecT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +55,14 @@ namespace Model
      * <p>A list of custom SageMaker AI images that are configured to run as a RSession
      * app.</p>
      */
-    inline const Aws::Vector<CustomImage>& GetCustomImages() const{ return m_customImages; }
+    inline const Aws::Vector<CustomImage>& GetCustomImages() const { return m_customImages; }
     inline bool CustomImagesHasBeenSet() const { return m_customImagesHasBeenSet; }
-    inline void SetCustomImages(const Aws::Vector<CustomImage>& value) { m_customImagesHasBeenSet = true; m_customImages = value; }
-    inline void SetCustomImages(Aws::Vector<CustomImage>&& value) { m_customImagesHasBeenSet = true; m_customImages = std::move(value); }
-    inline RSessionAppSettings& WithCustomImages(const Aws::Vector<CustomImage>& value) { SetCustomImages(value); return *this;}
-    inline RSessionAppSettings& WithCustomImages(Aws::Vector<CustomImage>&& value) { SetCustomImages(std::move(value)); return *this;}
-    inline RSessionAppSettings& AddCustomImages(const CustomImage& value) { m_customImagesHasBeenSet = true; m_customImages.push_back(value); return *this; }
-    inline RSessionAppSettings& AddCustomImages(CustomImage&& value) { m_customImagesHasBeenSet = true; m_customImages.push_back(std::move(value)); return *this; }
+    template<typename CustomImagesT = Aws::Vector<CustomImage>>
+    void SetCustomImages(CustomImagesT&& value) { m_customImagesHasBeenSet = true; m_customImages = std::forward<CustomImagesT>(value); }
+    template<typename CustomImagesT = Aws::Vector<CustomImage>>
+    RSessionAppSettings& WithCustomImages(CustomImagesT&& value) { SetCustomImages(std::forward<CustomImagesT>(value)); return *this;}
+    template<typename CustomImagesT = CustomImage>
+    RSessionAppSettings& AddCustomImages(CustomImagesT&& value) { m_customImagesHasBeenSet = true; m_customImages.emplace_back(std::forward<CustomImagesT>(value)); return *this; }
     ///@}
   private:
 

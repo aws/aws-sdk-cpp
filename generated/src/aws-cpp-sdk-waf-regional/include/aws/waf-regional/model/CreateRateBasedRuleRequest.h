@@ -24,7 +24,7 @@ namespace Model
   class CreateRateBasedRuleRequest : public WAFRegionalRequest
   {
   public:
-    AWS_WAFREGIONAL_API CreateRateBasedRuleRequest();
+    AWS_WAFREGIONAL_API CreateRateBasedRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>A friendly name or description of the <a>RateBasedRule</a>. You can't change
      * the name of a <code>RateBasedRule</code> after you create it.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateRateBasedRuleRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateRateBasedRuleRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateRateBasedRuleRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateRateBasedRuleRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * "Default_Action." You can't change the name of the metric after you create the
      * <code>RateBasedRule</code>.</p>
      */
-    inline const Aws::String& GetMetricName() const{ return m_metricName; }
+    inline const Aws::String& GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
-    inline CreateRateBasedRuleRequest& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-    inline CreateRateBasedRuleRequest& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-    inline CreateRateBasedRuleRequest& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+    template<typename MetricNameT = Aws::String>
+    void SetMetricName(MetricNameT&& value) { m_metricNameHasBeenSet = true; m_metricName = std::forward<MetricNameT>(value); }
+    template<typename MetricNameT = Aws::String>
+    CreateRateBasedRuleRequest& WithMetricName(MetricNameT&& value) { SetMetricName(std::forward<MetricNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +75,10 @@ namespace Model
      * that arrive from the same IP address are subject to the <code>RateLimit</code>
      * that is specified in the <code>RateBasedRule</code>.</p>
      */
-    inline const RateKey& GetRateKey() const{ return m_rateKey; }
+    inline RateKey GetRateKey() const { return m_rateKey; }
     inline bool RateKeyHasBeenSet() const { return m_rateKeyHasBeenSet; }
-    inline void SetRateKey(const RateKey& value) { m_rateKeyHasBeenSet = true; m_rateKey = value; }
-    inline void SetRateKey(RateKey&& value) { m_rateKeyHasBeenSet = true; m_rateKey = std::move(value); }
-    inline CreateRateBasedRuleRequest& WithRateKey(const RateKey& value) { SetRateKey(value); return *this;}
-    inline CreateRateBasedRuleRequest& WithRateKey(RateKey&& value) { SetRateKey(std::move(value)); return *this;}
+    inline void SetRateKey(RateKey value) { m_rateKeyHasBeenSet = true; m_rateKey = value; }
+    inline CreateRateBasedRuleRequest& WithRateKey(RateKey value) { SetRateKey(value); return *this;}
     ///@}
 
     ///@{
@@ -95,7 +89,7 @@ namespace Model
      * predicates specified in the rule are also met, AWS WAF triggers the action that
      * is specified for this rule.</p>
      */
-    inline long long GetRateLimit() const{ return m_rateLimit; }
+    inline long long GetRateLimit() const { return m_rateLimit; }
     inline bool RateLimitHasBeenSet() const { return m_rateLimitHasBeenSet; }
     inline void SetRateLimit(long long value) { m_rateLimitHasBeenSet = true; m_rateLimit = value; }
     inline CreateRateBasedRuleRequest& WithRateLimit(long long value) { SetRateLimit(value); return *this;}
@@ -108,28 +102,26 @@ namespace Model
      * the status of the request. For more information, see
      * <a>GetChangeTokenStatus</a>.</p>
      */
-    inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
+    inline const Aws::String& GetChangeToken() const { return m_changeToken; }
     inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
-    inline void SetChangeToken(const Aws::String& value) { m_changeTokenHasBeenSet = true; m_changeToken = value; }
-    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::move(value); }
-    inline void SetChangeToken(const char* value) { m_changeTokenHasBeenSet = true; m_changeToken.assign(value); }
-    inline CreateRateBasedRuleRequest& WithChangeToken(const Aws::String& value) { SetChangeToken(value); return *this;}
-    inline CreateRateBasedRuleRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
-    inline CreateRateBasedRuleRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
+    template<typename ChangeTokenT = Aws::String>
+    void SetChangeToken(ChangeTokenT&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::forward<ChangeTokenT>(value); }
+    template<typename ChangeTokenT = Aws::String>
+    CreateRateBasedRuleRequest& WithChangeToken(ChangeTokenT&& value) { SetChangeToken(std::forward<ChangeTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateRateBasedRuleRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateRateBasedRuleRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateRateBasedRuleRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateRateBasedRuleRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateRateBasedRuleRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateRateBasedRuleRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -139,10 +131,10 @@ namespace Model
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet = false;
 
-    RateKey m_rateKey;
+    RateKey m_rateKey{RateKey::NOT_SET};
     bool m_rateKeyHasBeenSet = false;
 
-    long long m_rateLimit;
+    long long m_rateLimit{0};
     bool m_rateLimitHasBeenSet = false;
 
     Aws::String m_changeToken;

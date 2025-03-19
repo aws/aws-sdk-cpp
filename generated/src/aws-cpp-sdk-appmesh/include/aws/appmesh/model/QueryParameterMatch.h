@@ -32,7 +32,7 @@ namespace Model
   class QueryParameterMatch
   {
   public:
-    AWS_APPMESH_API QueryParameterMatch();
+    AWS_APPMESH_API QueryParameterMatch() = default;
     AWS_APPMESH_API QueryParameterMatch(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API QueryParameterMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The exact query parameter to match on.</p>
      */
-    inline const Aws::String& GetExact() const{ return m_exact; }
+    inline const Aws::String& GetExact() const { return m_exact; }
     inline bool ExactHasBeenSet() const { return m_exactHasBeenSet; }
-    inline void SetExact(const Aws::String& value) { m_exactHasBeenSet = true; m_exact = value; }
-    inline void SetExact(Aws::String&& value) { m_exactHasBeenSet = true; m_exact = std::move(value); }
-    inline void SetExact(const char* value) { m_exactHasBeenSet = true; m_exact.assign(value); }
-    inline QueryParameterMatch& WithExact(const Aws::String& value) { SetExact(value); return *this;}
-    inline QueryParameterMatch& WithExact(Aws::String&& value) { SetExact(std::move(value)); return *this;}
-    inline QueryParameterMatch& WithExact(const char* value) { SetExact(value); return *this;}
+    template<typename ExactT = Aws::String>
+    void SetExact(ExactT&& value) { m_exactHasBeenSet = true; m_exact = std::forward<ExactT>(value); }
+    template<typename ExactT = Aws::String>
+    QueryParameterMatch& WithExact(ExactT&& value) { SetExact(std::forward<ExactT>(value)); return *this;}
     ///@}
   private:
 

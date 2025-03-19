@@ -12,11 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCoreNetworkRequest::DeleteCoreNetworkRequest() : 
-    m_coreNetworkIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCoreNetworkRequest::SerializePayload() const
 {
   return {};

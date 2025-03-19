@@ -18,16 +18,7 @@ namespace LicenseManager
 namespace Model
 {
 
-ReceivedMetadata::ReceivedMetadata() : 
-    m_receivedStatus(ReceivedStatus::NOT_SET),
-    m_receivedStatusHasBeenSet(false),
-    m_receivedStatusReasonHasBeenSet(false),
-    m_allowedOperationsHasBeenSet(false)
-{
-}
-
 ReceivedMetadata::ReceivedMetadata(JsonView jsonValue)
-  : ReceivedMetadata()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ReceivedMetadata& ReceivedMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReceivedStatus"))
   {
     m_receivedStatus = ReceivedStatusMapper::GetReceivedStatusForName(jsonValue.GetString("ReceivedStatus"));
-
     m_receivedStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReceivedStatusReason"))
   {
     m_receivedStatusReason = jsonValue.GetString("ReceivedStatusReason");
-
     m_receivedStatusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowedOperations"))
   {
     Aws::Utils::Array<JsonView> allowedOperationsJsonList = jsonValue.GetArray("AllowedOperations");
@@ -57,7 +44,6 @@ ReceivedMetadata& ReceivedMetadata::operator =(JsonView jsonValue)
     }
     m_allowedOperationsHasBeenSet = true;
   }
-
   return *this;
 }
 

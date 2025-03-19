@@ -31,7 +31,7 @@ namespace Model
   class RestrictedPeriod
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API RestrictedPeriod();
+    AWS_CONNECTCAMPAIGNSV2_API RestrictedPeriod() = default;
     AWS_CONNECTCAMPAIGNSV2_API RestrictedPeriod(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API RestrictedPeriod& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,38 +39,32 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline RestrictedPeriod& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline RestrictedPeriod& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline RestrictedPeriod& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    RestrictedPeriod& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetStartDate() const{ return m_startDate; }
+    inline const Aws::String& GetStartDate() const { return m_startDate; }
     inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
-    inline void SetStartDate(const Aws::String& value) { m_startDateHasBeenSet = true; m_startDate = value; }
-    inline void SetStartDate(Aws::String&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
-    inline void SetStartDate(const char* value) { m_startDateHasBeenSet = true; m_startDate.assign(value); }
-    inline RestrictedPeriod& WithStartDate(const Aws::String& value) { SetStartDate(value); return *this;}
-    inline RestrictedPeriod& WithStartDate(Aws::String&& value) { SetStartDate(std::move(value)); return *this;}
-    inline RestrictedPeriod& WithStartDate(const char* value) { SetStartDate(value); return *this;}
+    template<typename StartDateT = Aws::String>
+    void SetStartDate(StartDateT&& value) { m_startDateHasBeenSet = true; m_startDate = std::forward<StartDateT>(value); }
+    template<typename StartDateT = Aws::String>
+    RestrictedPeriod& WithStartDate(StartDateT&& value) { SetStartDate(std::forward<StartDateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetEndDate() const{ return m_endDate; }
+    inline const Aws::String& GetEndDate() const { return m_endDate; }
     inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
-    inline void SetEndDate(const Aws::String& value) { m_endDateHasBeenSet = true; m_endDate = value; }
-    inline void SetEndDate(Aws::String&& value) { m_endDateHasBeenSet = true; m_endDate = std::move(value); }
-    inline void SetEndDate(const char* value) { m_endDateHasBeenSet = true; m_endDate.assign(value); }
-    inline RestrictedPeriod& WithEndDate(const Aws::String& value) { SetEndDate(value); return *this;}
-    inline RestrictedPeriod& WithEndDate(Aws::String&& value) { SetEndDate(std::move(value)); return *this;}
-    inline RestrictedPeriod& WithEndDate(const char* value) { SetEndDate(value); return *this;}
+    template<typename EndDateT = Aws::String>
+    void SetEndDate(EndDateT&& value) { m_endDateHasBeenSet = true; m_endDate = std::forward<EndDateT>(value); }
+    template<typename EndDateT = Aws::String>
+    RestrictedPeriod& WithEndDate(EndDateT&& value) { SetEndDate(std::forward<EndDateT>(value)); return *this;}
     ///@}
   private:
 

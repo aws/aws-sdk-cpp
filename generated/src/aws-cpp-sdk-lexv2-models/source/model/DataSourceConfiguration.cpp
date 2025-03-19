@@ -18,15 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-DataSourceConfiguration::DataSourceConfiguration() : 
-    m_opensearchConfigurationHasBeenSet(false),
-    m_kendraConfigurationHasBeenSet(false),
-    m_bedrockKnowledgeStoreConfigurationHasBeenSet(false)
-{
-}
-
 DataSourceConfiguration::DataSourceConfiguration(JsonView jsonValue)
-  : DataSourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DataSourceConfiguration& DataSourceConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("opensearchConfiguration"))
   {
     m_opensearchConfiguration = jsonValue.GetObject("opensearchConfiguration");
-
     m_opensearchConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kendraConfiguration"))
   {
     m_kendraConfiguration = jsonValue.GetObject("kendraConfiguration");
-
     m_kendraConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bedrockKnowledgeStoreConfiguration"))
   {
     m_bedrockKnowledgeStoreConfiguration = jsonValue.GetObject("bedrockKnowledgeStoreConfiguration");
-
     m_bedrockKnowledgeStoreConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

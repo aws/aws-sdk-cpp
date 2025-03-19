@@ -27,7 +27,7 @@ namespace Model
   class DescribeLimitsResult
   {
   public:
-    AWS_KINESIS_API DescribeLimitsResult();
+    AWS_KINESIS_API DescribeLimitsResult() = default;
     AWS_KINESIS_API DescribeLimitsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KINESIS_API DescribeLimitsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,8 +36,8 @@ namespace Model
     /**
      * <p>The maximum number of shards.</p>
      */
-    inline int GetShardLimit() const{ return m_shardLimit; }
-    inline void SetShardLimit(int value) { m_shardLimit = value; }
+    inline int GetShardLimit() const { return m_shardLimit; }
+    inline void SetShardLimit(int value) { m_shardLimitHasBeenSet = true; m_shardLimit = value; }
     inline DescribeLimitsResult& WithShardLimit(int value) { SetShardLimit(value); return *this;}
     ///@}
 
@@ -45,8 +45,8 @@ namespace Model
     /**
      * <p>The number of open shards.</p>
      */
-    inline int GetOpenShardCount() const{ return m_openShardCount; }
-    inline void SetOpenShardCount(int value) { m_openShardCount = value; }
+    inline int GetOpenShardCount() const { return m_openShardCount; }
+    inline void SetOpenShardCount(int value) { m_openShardCountHasBeenSet = true; m_openShardCount = value; }
     inline DescribeLimitsResult& WithOpenShardCount(int value) { SetOpenShardCount(value); return *this;}
     ///@}
 
@@ -54,8 +54,8 @@ namespace Model
     /**
      * <p> Indicates the number of data streams with the on-demand capacity mode.</p>
      */
-    inline int GetOnDemandStreamCount() const{ return m_onDemandStreamCount; }
-    inline void SetOnDemandStreamCount(int value) { m_onDemandStreamCount = value; }
+    inline int GetOnDemandStreamCount() const { return m_onDemandStreamCount; }
+    inline void SetOnDemandStreamCount(int value) { m_onDemandStreamCountHasBeenSet = true; m_onDemandStreamCount = value; }
     inline DescribeLimitsResult& WithOnDemandStreamCount(int value) { SetOnDemandStreamCount(value); return *this;}
     ///@}
 
@@ -63,32 +63,35 @@ namespace Model
     /**
      * <p> The maximum number of data streams with the on-demand capacity mode. </p>
      */
-    inline int GetOnDemandStreamCountLimit() const{ return m_onDemandStreamCountLimit; }
-    inline void SetOnDemandStreamCountLimit(int value) { m_onDemandStreamCountLimit = value; }
+    inline int GetOnDemandStreamCountLimit() const { return m_onDemandStreamCountLimit; }
+    inline void SetOnDemandStreamCountLimit(int value) { m_onDemandStreamCountLimitHasBeenSet = true; m_onDemandStreamCountLimit = value; }
     inline DescribeLimitsResult& WithOnDemandStreamCountLimit(int value) { SetOnDemandStreamCountLimit(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeLimitsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeLimitsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeLimitsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeLimitsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_shardLimit;
+    int m_shardLimit{0};
+    bool m_shardLimitHasBeenSet = false;
 
-    int m_openShardCount;
+    int m_openShardCount{0};
+    bool m_openShardCountHasBeenSet = false;
 
-    int m_onDemandStreamCount;
+    int m_onDemandStreamCount{0};
+    bool m_onDemandStreamCountHasBeenSet = false;
 
-    int m_onDemandStreamCountLimit;
+    int m_onDemandStreamCountLimit{0};
+    bool m_onDemandStreamCountLimitHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

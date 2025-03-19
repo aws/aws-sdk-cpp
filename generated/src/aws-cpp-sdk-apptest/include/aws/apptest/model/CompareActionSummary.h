@@ -31,7 +31,7 @@ namespace Model
   class CompareActionSummary
   {
   public:
-    AWS_APPTEST_API CompareActionSummary();
+    AWS_APPTEST_API CompareActionSummary() = default;
     AWS_APPTEST_API CompareActionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API CompareActionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The type of the compare action summary.</p>
      */
-    inline const File& GetType() const{ return m_type; }
+    inline const File& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const File& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(File&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CompareActionSummary& WithType(const File& value) { SetType(value); return *this;}
-    inline CompareActionSummary& WithType(File&& value) { SetType(std::move(value)); return *this;}
+    template<typename TypeT = File>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = File>
+    CompareActionSummary& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

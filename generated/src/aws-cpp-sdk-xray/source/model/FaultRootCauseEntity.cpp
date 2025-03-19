@@ -18,16 +18,7 @@ namespace XRay
 namespace Model
 {
 
-FaultRootCauseEntity::FaultRootCauseEntity() : 
-    m_nameHasBeenSet(false),
-    m_exceptionsHasBeenSet(false),
-    m_remote(false),
-    m_remoteHasBeenSet(false)
-{
-}
-
 FaultRootCauseEntity::FaultRootCauseEntity(JsonView jsonValue)
-  : FaultRootCauseEntity()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ FaultRootCauseEntity& FaultRootCauseEntity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Exceptions"))
   {
     Aws::Utils::Array<JsonView> exceptionsJsonList = jsonValue.GetArray("Exceptions");
@@ -50,14 +39,11 @@ FaultRootCauseEntity& FaultRootCauseEntity::operator =(JsonView jsonValue)
     }
     m_exceptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Remote"))
   {
     m_remote = jsonValue.GetBool("Remote");
-
     m_remoteHasBeenSet = true;
   }
-
   return *this;
 }
 

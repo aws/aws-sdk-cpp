@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TableUnaggregatedFieldWells::TableUnaggregatedFieldWells() : 
-    m_valuesHasBeenSet(false)
-{
-}
-
 TableUnaggregatedFieldWells::TableUnaggregatedFieldWells(JsonView jsonValue)
-  : TableUnaggregatedFieldWells()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ TableUnaggregatedFieldWells& TableUnaggregatedFieldWells::operator =(JsonView js
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

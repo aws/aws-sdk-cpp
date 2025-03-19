@@ -33,7 +33,7 @@ namespace Model
   class ModelPackagingConfiguration
   {
   public:
-    AWS_LOOKOUTFORVISION_API ModelPackagingConfiguration();
+    AWS_LOOKOUTFORVISION_API ModelPackagingConfiguration() = default;
     AWS_LOOKOUTFORVISION_API ModelPackagingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTFORVISION_API ModelPackagingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p> Configuration information for the AWS IoT Greengrass component in a model
      * packaging job. </p>
      */
-    inline const GreengrassConfiguration& GetGreengrass() const{ return m_greengrass; }
+    inline const GreengrassConfiguration& GetGreengrass() const { return m_greengrass; }
     inline bool GreengrassHasBeenSet() const { return m_greengrassHasBeenSet; }
-    inline void SetGreengrass(const GreengrassConfiguration& value) { m_greengrassHasBeenSet = true; m_greengrass = value; }
-    inline void SetGreengrass(GreengrassConfiguration&& value) { m_greengrassHasBeenSet = true; m_greengrass = std::move(value); }
-    inline ModelPackagingConfiguration& WithGreengrass(const GreengrassConfiguration& value) { SetGreengrass(value); return *this;}
-    inline ModelPackagingConfiguration& WithGreengrass(GreengrassConfiguration&& value) { SetGreengrass(std::move(value)); return *this;}
+    template<typename GreengrassT = GreengrassConfiguration>
+    void SetGreengrass(GreengrassT&& value) { m_greengrassHasBeenSet = true; m_greengrass = std::forward<GreengrassT>(value); }
+    template<typename GreengrassT = GreengrassConfiguration>
+    ModelPackagingConfiguration& WithGreengrass(GreengrassT&& value) { SetGreengrass(std::forward<GreengrassT>(value)); return *this;}
     ///@}
   private:
 

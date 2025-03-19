@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DisassociateExternalConnectionRequest::DisassociateExternalConnectionRequest() : 
-    m_domainHasBeenSet(false),
-    m_domainOwnerHasBeenSet(false),
-    m_repositoryHasBeenSet(false),
-    m_externalConnectionHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateExternalConnectionRequest::SerializePayload() const
 {
   return {};

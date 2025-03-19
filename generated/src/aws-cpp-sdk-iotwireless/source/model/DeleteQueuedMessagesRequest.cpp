@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteQueuedMessagesRequest::DeleteQueuedMessagesRequest() : 
-    m_idHasBeenSet(false),
-    m_messageIdHasBeenSet(false),
-    m_wirelessDeviceType(WirelessDeviceType::NOT_SET),
-    m_wirelessDeviceTypeHasBeenSet(false)
-{
-}
-
 Aws::String DeleteQueuedMessagesRequest::SerializePayload() const
 {
   return {};

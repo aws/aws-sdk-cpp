@@ -21,7 +21,7 @@ namespace Model
   class DeleteEvaluationRequest : public MachineLearningRequest
   {
   public:
-    AWS_MACHINELEARNING_API DeleteEvaluationRequest();
+    AWS_MACHINELEARNING_API DeleteEvaluationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>A user-supplied ID that uniquely identifies the <code>Evaluation</code> to
      * delete.</p>
      */
-    inline const Aws::String& GetEvaluationId() const{ return m_evaluationId; }
+    inline const Aws::String& GetEvaluationId() const { return m_evaluationId; }
     inline bool EvaluationIdHasBeenSet() const { return m_evaluationIdHasBeenSet; }
-    inline void SetEvaluationId(const Aws::String& value) { m_evaluationIdHasBeenSet = true; m_evaluationId = value; }
-    inline void SetEvaluationId(Aws::String&& value) { m_evaluationIdHasBeenSet = true; m_evaluationId = std::move(value); }
-    inline void SetEvaluationId(const char* value) { m_evaluationIdHasBeenSet = true; m_evaluationId.assign(value); }
-    inline DeleteEvaluationRequest& WithEvaluationId(const Aws::String& value) { SetEvaluationId(value); return *this;}
-    inline DeleteEvaluationRequest& WithEvaluationId(Aws::String&& value) { SetEvaluationId(std::move(value)); return *this;}
-    inline DeleteEvaluationRequest& WithEvaluationId(const char* value) { SetEvaluationId(value); return *this;}
+    template<typename EvaluationIdT = Aws::String>
+    void SetEvaluationId(EvaluationIdT&& value) { m_evaluationIdHasBeenSet = true; m_evaluationId = std::forward<EvaluationIdT>(value); }
+    template<typename EvaluationIdT = Aws::String>
+    DeleteEvaluationRequest& WithEvaluationId(EvaluationIdT&& value) { SetEvaluationId(std::forward<EvaluationIdT>(value)); return *this;}
     ///@}
   private:
 

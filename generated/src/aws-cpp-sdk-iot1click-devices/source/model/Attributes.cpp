@@ -18,10 +18,6 @@ namespace IoT1ClickDevicesService
 namespace Model
 {
 
-Attributes::Attributes()
-{
-}
-
 Attributes::Attributes(JsonView jsonValue)
 {
   *this = jsonValue;

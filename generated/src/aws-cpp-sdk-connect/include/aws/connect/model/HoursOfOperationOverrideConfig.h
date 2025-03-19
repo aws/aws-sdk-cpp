@@ -33,7 +33,7 @@ namespace Model
   class HoursOfOperationOverrideConfig
   {
   public:
-    AWS_CONNECT_API HoursOfOperationOverrideConfig();
+    AWS_CONNECT_API HoursOfOperationOverrideConfig() = default;
     AWS_CONNECT_API HoursOfOperationOverrideConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API HoursOfOperationOverrideConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,40 +43,38 @@ namespace Model
     /**
      * <p>The day that the hours of operation override applies to.</p>
      */
-    inline const OverrideDays& GetDay() const{ return m_day; }
+    inline OverrideDays GetDay() const { return m_day; }
     inline bool DayHasBeenSet() const { return m_dayHasBeenSet; }
-    inline void SetDay(const OverrideDays& value) { m_dayHasBeenSet = true; m_day = value; }
-    inline void SetDay(OverrideDays&& value) { m_dayHasBeenSet = true; m_day = std::move(value); }
-    inline HoursOfOperationOverrideConfig& WithDay(const OverrideDays& value) { SetDay(value); return *this;}
-    inline HoursOfOperationOverrideConfig& WithDay(OverrideDays&& value) { SetDay(std::move(value)); return *this;}
+    inline void SetDay(OverrideDays value) { m_dayHasBeenSet = true; m_day = value; }
+    inline HoursOfOperationOverrideConfig& WithDay(OverrideDays value) { SetDay(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The start time when your contact center opens if overrides are applied.</p>
      */
-    inline const OverrideTimeSlice& GetStartTime() const{ return m_startTime; }
+    inline const OverrideTimeSlice& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const OverrideTimeSlice& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(OverrideTimeSlice&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline HoursOfOperationOverrideConfig& WithStartTime(const OverrideTimeSlice& value) { SetStartTime(value); return *this;}
-    inline HoursOfOperationOverrideConfig& WithStartTime(OverrideTimeSlice&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = OverrideTimeSlice>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = OverrideTimeSlice>
+    HoursOfOperationOverrideConfig& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The end time that your contact center closes if overrides are applied.</p>
      */
-    inline const OverrideTimeSlice& GetEndTime() const{ return m_endTime; }
+    inline const OverrideTimeSlice& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const OverrideTimeSlice& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(OverrideTimeSlice&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline HoursOfOperationOverrideConfig& WithEndTime(const OverrideTimeSlice& value) { SetEndTime(value); return *this;}
-    inline HoursOfOperationOverrideConfig& WithEndTime(OverrideTimeSlice&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = OverrideTimeSlice>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = OverrideTimeSlice>
+    HoursOfOperationOverrideConfig& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
   private:
 
-    OverrideDays m_day;
+    OverrideDays m_day{OverrideDays::NOT_SET};
     bool m_dayHasBeenSet = false;
 
     OverrideTimeSlice m_startTime;

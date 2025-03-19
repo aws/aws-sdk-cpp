@@ -29,7 +29,7 @@ namespace Model
   class VeevaMetadata
   {
   public:
-    AWS_APPFLOW_API VeevaMetadata();
+    AWS_APPFLOW_API VeevaMetadata() = default;
     AWS_APPFLOW_API VeevaMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API VeevaMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;

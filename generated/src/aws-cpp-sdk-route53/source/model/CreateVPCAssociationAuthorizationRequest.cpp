@@ -14,11 +14,6 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateVPCAssociationAuthorizationRequest::CreateVPCAssociationAuthorizationRequest() : 
-    m_hostedZoneIdHasBeenSet(false),
-    m_vPCHasBeenSet(false)
-{
-}
 
 Aws::String CreateVPCAssociationAuthorizationRequest::SerializePayload() const
 {

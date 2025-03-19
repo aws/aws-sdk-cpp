@@ -35,7 +35,7 @@ namespace Model
   class RDSDBUtilizationMetric
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API RDSDBUtilizationMetric();
+    AWS_COMPUTEOPTIMIZER_API RDSDBUtilizationMetric() = default;
     AWS_COMPUTEOPTIMIZER_API RDSDBUtilizationMetric(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API RDSDBUtilizationMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
     /**
      * <p> The name of the utilization metric. </p>
      */
-    inline const RDSDBMetricName& GetName() const{ return m_name; }
+    inline RDSDBMetricName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const RDSDBMetricName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(RDSDBMetricName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline RDSDBUtilizationMetric& WithName(const RDSDBMetricName& value) { SetName(value); return *this;}
-    inline RDSDBUtilizationMetric& WithName(RDSDBMetricName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(RDSDBMetricName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline RDSDBUtilizationMetric& WithName(RDSDBMetricName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -69,32 +67,30 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/WhatIsCloudWatch.html">Amazon
      * CloudWatch User Guide</a>.</p>
      */
-    inline const RDSDBMetricStatistic& GetStatistic() const{ return m_statistic; }
+    inline RDSDBMetricStatistic GetStatistic() const { return m_statistic; }
     inline bool StatisticHasBeenSet() const { return m_statisticHasBeenSet; }
-    inline void SetStatistic(const RDSDBMetricStatistic& value) { m_statisticHasBeenSet = true; m_statistic = value; }
-    inline void SetStatistic(RDSDBMetricStatistic&& value) { m_statisticHasBeenSet = true; m_statistic = std::move(value); }
-    inline RDSDBUtilizationMetric& WithStatistic(const RDSDBMetricStatistic& value) { SetStatistic(value); return *this;}
-    inline RDSDBUtilizationMetric& WithStatistic(RDSDBMetricStatistic&& value) { SetStatistic(std::move(value)); return *this;}
+    inline void SetStatistic(RDSDBMetricStatistic value) { m_statisticHasBeenSet = true; m_statistic = value; }
+    inline RDSDBUtilizationMetric& WithStatistic(RDSDBMetricStatistic value) { SetStatistic(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The value of the utilization metric. </p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline RDSDBUtilizationMetric& WithValue(double value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    RDSDBMetricName m_name;
+    RDSDBMetricName m_name{RDSDBMetricName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    RDSDBMetricStatistic m_statistic;
+    RDSDBMetricStatistic m_statistic{RDSDBMetricStatistic::NOT_SET};
     bool m_statisticHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

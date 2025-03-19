@@ -33,7 +33,7 @@ namespace Model
   class AwsS3BucketNotificationConfiguration
   {
   public:
-    AWS_SECURITYHUB_API AwsS3BucketNotificationConfiguration();
+    AWS_SECURITYHUB_API AwsS3BucketNotificationConfiguration() = default;
     AWS_SECURITYHUB_API AwsS3BucketNotificationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsS3BucketNotificationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>Configurations for S3 bucket notifications.</p>
      */
-    inline const Aws::Vector<AwsS3BucketNotificationConfigurationDetail>& GetConfigurations() const{ return m_configurations; }
+    inline const Aws::Vector<AwsS3BucketNotificationConfigurationDetail>& GetConfigurations() const { return m_configurations; }
     inline bool ConfigurationsHasBeenSet() const { return m_configurationsHasBeenSet; }
-    inline void SetConfigurations(const Aws::Vector<AwsS3BucketNotificationConfigurationDetail>& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
-    inline void SetConfigurations(Aws::Vector<AwsS3BucketNotificationConfigurationDetail>&& value) { m_configurationsHasBeenSet = true; m_configurations = std::move(value); }
-    inline AwsS3BucketNotificationConfiguration& WithConfigurations(const Aws::Vector<AwsS3BucketNotificationConfigurationDetail>& value) { SetConfigurations(value); return *this;}
-    inline AwsS3BucketNotificationConfiguration& WithConfigurations(Aws::Vector<AwsS3BucketNotificationConfigurationDetail>&& value) { SetConfigurations(std::move(value)); return *this;}
-    inline AwsS3BucketNotificationConfiguration& AddConfigurations(const AwsS3BucketNotificationConfigurationDetail& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
-    inline AwsS3BucketNotificationConfiguration& AddConfigurations(AwsS3BucketNotificationConfigurationDetail&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
+    template<typename ConfigurationsT = Aws::Vector<AwsS3BucketNotificationConfigurationDetail>>
+    void SetConfigurations(ConfigurationsT&& value) { m_configurationsHasBeenSet = true; m_configurations = std::forward<ConfigurationsT>(value); }
+    template<typename ConfigurationsT = Aws::Vector<AwsS3BucketNotificationConfigurationDetail>>
+    AwsS3BucketNotificationConfiguration& WithConfigurations(ConfigurationsT&& value) { SetConfigurations(std::forward<ConfigurationsT>(value)); return *this;}
+    template<typename ConfigurationsT = AwsS3BucketNotificationConfigurationDetail>
+    AwsS3BucketNotificationConfiguration& AddConfigurations(ConfigurationsT&& value) { m_configurationsHasBeenSet = true; m_configurations.emplace_back(std::forward<ConfigurationsT>(value)); return *this; }
     ///@}
   private:
 

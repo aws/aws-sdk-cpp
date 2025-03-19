@@ -18,15 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-EngagementCustomerProjectDetails::EngagementCustomerProjectDetails() : 
-    m_businessProblemHasBeenSet(false),
-    m_targetCompletionDateHasBeenSet(false),
-    m_titleHasBeenSet(false)
-{
-}
-
 EngagementCustomerProjectDetails::EngagementCustomerProjectDetails(JsonView jsonValue)
-  : EngagementCustomerProjectDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ EngagementCustomerProjectDetails& EngagementCustomerProjectDetails::operator =(J
   if(jsonValue.ValueExists("BusinessProblem"))
   {
     m_businessProblem = jsonValue.GetString("BusinessProblem");
-
     m_businessProblemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetCompletionDate"))
   {
     m_targetCompletionDate = jsonValue.GetString("TargetCompletionDate");
-
     m_targetCompletionDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   return *this;
 }
 

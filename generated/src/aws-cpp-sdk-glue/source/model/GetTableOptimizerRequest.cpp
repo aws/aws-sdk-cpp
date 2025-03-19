@@ -12,15 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTableOptimizerRequest::GetTableOptimizerRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_type(TableOptimizerType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String GetTableOptimizerRequest::SerializePayload() const
 {
   JsonValue payload;

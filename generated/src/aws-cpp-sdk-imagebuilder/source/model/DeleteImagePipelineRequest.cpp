@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteImagePipelineRequest::DeleteImagePipelineRequest() : 
-    m_imagePipelineArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteImagePipelineRequest::SerializePayload() const
 {
   return {};

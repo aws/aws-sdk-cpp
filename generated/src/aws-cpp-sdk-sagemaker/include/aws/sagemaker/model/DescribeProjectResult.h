@@ -32,7 +32,7 @@ namespace Model
   class DescribeProjectResult
   {
   public:
-    AWS_SAGEMAKER_API DescribeProjectResult();
+    AWS_SAGEMAKER_API DescribeProjectResult() = default;
     AWS_SAGEMAKER_API DescribeProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API DescribeProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,52 +41,44 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the project.</p>
      */
-    inline const Aws::String& GetProjectArn() const{ return m_projectArn; }
-    inline void SetProjectArn(const Aws::String& value) { m_projectArn = value; }
-    inline void SetProjectArn(Aws::String&& value) { m_projectArn = std::move(value); }
-    inline void SetProjectArn(const char* value) { m_projectArn.assign(value); }
-    inline DescribeProjectResult& WithProjectArn(const Aws::String& value) { SetProjectArn(value); return *this;}
-    inline DescribeProjectResult& WithProjectArn(Aws::String&& value) { SetProjectArn(std::move(value)); return *this;}
-    inline DescribeProjectResult& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
+    inline const Aws::String& GetProjectArn() const { return m_projectArn; }
+    template<typename ProjectArnT = Aws::String>
+    void SetProjectArn(ProjectArnT&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::forward<ProjectArnT>(value); }
+    template<typename ProjectArnT = Aws::String>
+    DescribeProjectResult& WithProjectArn(ProjectArnT&& value) { SetProjectArn(std::forward<ProjectArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the project.</p>
      */
-    inline const Aws::String& GetProjectName() const{ return m_projectName; }
-    inline void SetProjectName(const Aws::String& value) { m_projectName = value; }
-    inline void SetProjectName(Aws::String&& value) { m_projectName = std::move(value); }
-    inline void SetProjectName(const char* value) { m_projectName.assign(value); }
-    inline DescribeProjectResult& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-    inline DescribeProjectResult& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-    inline DescribeProjectResult& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+    inline const Aws::String& GetProjectName() const { return m_projectName; }
+    template<typename ProjectNameT = Aws::String>
+    void SetProjectName(ProjectNameT&& value) { m_projectNameHasBeenSet = true; m_projectName = std::forward<ProjectNameT>(value); }
+    template<typename ProjectNameT = Aws::String>
+    DescribeProjectResult& WithProjectName(ProjectNameT&& value) { SetProjectName(std::forward<ProjectNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the project.</p>
      */
-    inline const Aws::String& GetProjectId() const{ return m_projectId; }
-    inline void SetProjectId(const Aws::String& value) { m_projectId = value; }
-    inline void SetProjectId(Aws::String&& value) { m_projectId = std::move(value); }
-    inline void SetProjectId(const char* value) { m_projectId.assign(value); }
-    inline DescribeProjectResult& WithProjectId(const Aws::String& value) { SetProjectId(value); return *this;}
-    inline DescribeProjectResult& WithProjectId(Aws::String&& value) { SetProjectId(std::move(value)); return *this;}
-    inline DescribeProjectResult& WithProjectId(const char* value) { SetProjectId(value); return *this;}
+    inline const Aws::String& GetProjectId() const { return m_projectId; }
+    template<typename ProjectIdT = Aws::String>
+    void SetProjectId(ProjectIdT&& value) { m_projectIdHasBeenSet = true; m_projectId = std::forward<ProjectIdT>(value); }
+    template<typename ProjectIdT = Aws::String>
+    DescribeProjectResult& WithProjectId(ProjectIdT&& value) { SetProjectId(std::forward<ProjectIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the project.</p>
      */
-    inline const Aws::String& GetProjectDescription() const{ return m_projectDescription; }
-    inline void SetProjectDescription(const Aws::String& value) { m_projectDescription = value; }
-    inline void SetProjectDescription(Aws::String&& value) { m_projectDescription = std::move(value); }
-    inline void SetProjectDescription(const char* value) { m_projectDescription.assign(value); }
-    inline DescribeProjectResult& WithProjectDescription(const Aws::String& value) { SetProjectDescription(value); return *this;}
-    inline DescribeProjectResult& WithProjectDescription(Aws::String&& value) { SetProjectDescription(std::move(value)); return *this;}
-    inline DescribeProjectResult& WithProjectDescription(const char* value) { SetProjectDescription(value); return *this;}
+    inline const Aws::String& GetProjectDescription() const { return m_projectDescription; }
+    template<typename ProjectDescriptionT = Aws::String>
+    void SetProjectDescription(ProjectDescriptionT&& value) { m_projectDescriptionHasBeenSet = true; m_projectDescription = std::forward<ProjectDescriptionT>(value); }
+    template<typename ProjectDescriptionT = Aws::String>
+    DescribeProjectResult& WithProjectDescription(ProjectDescriptionT&& value) { SetProjectDescription(std::forward<ProjectDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,110 +88,118 @@ namespace Model
      * href="https://docs.aws.amazon.com/servicecatalog/latest/adminguide/introduction.html">What
      * is Amazon Web Services Service Catalog</a>.</p>
      */
-    inline const ServiceCatalogProvisioningDetails& GetServiceCatalogProvisioningDetails() const{ return m_serviceCatalogProvisioningDetails; }
-    inline void SetServiceCatalogProvisioningDetails(const ServiceCatalogProvisioningDetails& value) { m_serviceCatalogProvisioningDetails = value; }
-    inline void SetServiceCatalogProvisioningDetails(ServiceCatalogProvisioningDetails&& value) { m_serviceCatalogProvisioningDetails = std::move(value); }
-    inline DescribeProjectResult& WithServiceCatalogProvisioningDetails(const ServiceCatalogProvisioningDetails& value) { SetServiceCatalogProvisioningDetails(value); return *this;}
-    inline DescribeProjectResult& WithServiceCatalogProvisioningDetails(ServiceCatalogProvisioningDetails&& value) { SetServiceCatalogProvisioningDetails(std::move(value)); return *this;}
+    inline const ServiceCatalogProvisioningDetails& GetServiceCatalogProvisioningDetails() const { return m_serviceCatalogProvisioningDetails; }
+    template<typename ServiceCatalogProvisioningDetailsT = ServiceCatalogProvisioningDetails>
+    void SetServiceCatalogProvisioningDetails(ServiceCatalogProvisioningDetailsT&& value) { m_serviceCatalogProvisioningDetailsHasBeenSet = true; m_serviceCatalogProvisioningDetails = std::forward<ServiceCatalogProvisioningDetailsT>(value); }
+    template<typename ServiceCatalogProvisioningDetailsT = ServiceCatalogProvisioningDetails>
+    DescribeProjectResult& WithServiceCatalogProvisioningDetails(ServiceCatalogProvisioningDetailsT&& value) { SetServiceCatalogProvisioningDetails(std::forward<ServiceCatalogProvisioningDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about a provisioned service catalog product.</p>
      */
-    inline const ServiceCatalogProvisionedProductDetails& GetServiceCatalogProvisionedProductDetails() const{ return m_serviceCatalogProvisionedProductDetails; }
-    inline void SetServiceCatalogProvisionedProductDetails(const ServiceCatalogProvisionedProductDetails& value) { m_serviceCatalogProvisionedProductDetails = value; }
-    inline void SetServiceCatalogProvisionedProductDetails(ServiceCatalogProvisionedProductDetails&& value) { m_serviceCatalogProvisionedProductDetails = std::move(value); }
-    inline DescribeProjectResult& WithServiceCatalogProvisionedProductDetails(const ServiceCatalogProvisionedProductDetails& value) { SetServiceCatalogProvisionedProductDetails(value); return *this;}
-    inline DescribeProjectResult& WithServiceCatalogProvisionedProductDetails(ServiceCatalogProvisionedProductDetails&& value) { SetServiceCatalogProvisionedProductDetails(std::move(value)); return *this;}
+    inline const ServiceCatalogProvisionedProductDetails& GetServiceCatalogProvisionedProductDetails() const { return m_serviceCatalogProvisionedProductDetails; }
+    template<typename ServiceCatalogProvisionedProductDetailsT = ServiceCatalogProvisionedProductDetails>
+    void SetServiceCatalogProvisionedProductDetails(ServiceCatalogProvisionedProductDetailsT&& value) { m_serviceCatalogProvisionedProductDetailsHasBeenSet = true; m_serviceCatalogProvisionedProductDetails = std::forward<ServiceCatalogProvisionedProductDetailsT>(value); }
+    template<typename ServiceCatalogProvisionedProductDetailsT = ServiceCatalogProvisionedProductDetails>
+    DescribeProjectResult& WithServiceCatalogProvisionedProductDetails(ServiceCatalogProvisionedProductDetailsT&& value) { SetServiceCatalogProvisionedProductDetails(std::forward<ServiceCatalogProvisionedProductDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the project.</p>
      */
-    inline const ProjectStatus& GetProjectStatus() const{ return m_projectStatus; }
-    inline void SetProjectStatus(const ProjectStatus& value) { m_projectStatus = value; }
-    inline void SetProjectStatus(ProjectStatus&& value) { m_projectStatus = std::move(value); }
-    inline DescribeProjectResult& WithProjectStatus(const ProjectStatus& value) { SetProjectStatus(value); return *this;}
-    inline DescribeProjectResult& WithProjectStatus(ProjectStatus&& value) { SetProjectStatus(std::move(value)); return *this;}
+    inline ProjectStatus GetProjectStatus() const { return m_projectStatus; }
+    inline void SetProjectStatus(ProjectStatus value) { m_projectStatusHasBeenSet = true; m_projectStatus = value; }
+    inline DescribeProjectResult& WithProjectStatus(ProjectStatus value) { SetProjectStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const UserContext& GetCreatedBy() const{ return m_createdBy; }
-    inline void SetCreatedBy(const UserContext& value) { m_createdBy = value; }
-    inline void SetCreatedBy(UserContext&& value) { m_createdBy = std::move(value); }
-    inline DescribeProjectResult& WithCreatedBy(const UserContext& value) { SetCreatedBy(value); return *this;}
-    inline DescribeProjectResult& WithCreatedBy(UserContext&& value) { SetCreatedBy(std::move(value)); return *this;}
+    inline const UserContext& GetCreatedBy() const { return m_createdBy; }
+    template<typename CreatedByT = UserContext>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = UserContext>
+    DescribeProjectResult& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the project was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeProjectResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeProjectResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeProjectResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when project was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
-    inline DescribeProjectResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline DescribeProjectResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    DescribeProjectResult& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const UserContext& GetLastModifiedBy() const{ return m_lastModifiedBy; }
-    inline void SetLastModifiedBy(const UserContext& value) { m_lastModifiedBy = value; }
-    inline void SetLastModifiedBy(UserContext&& value) { m_lastModifiedBy = std::move(value); }
-    inline DescribeProjectResult& WithLastModifiedBy(const UserContext& value) { SetLastModifiedBy(value); return *this;}
-    inline DescribeProjectResult& WithLastModifiedBy(UserContext&& value) { SetLastModifiedBy(std::move(value)); return *this;}
+    inline const UserContext& GetLastModifiedBy() const { return m_lastModifiedBy; }
+    template<typename LastModifiedByT = UserContext>
+    void SetLastModifiedBy(LastModifiedByT&& value) { m_lastModifiedByHasBeenSet = true; m_lastModifiedBy = std::forward<LastModifiedByT>(value); }
+    template<typename LastModifiedByT = UserContext>
+    DescribeProjectResult& WithLastModifiedBy(LastModifiedByT&& value) { SetLastModifiedBy(std::forward<LastModifiedByT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeProjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeProjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeProjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeProjectResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_projectArn;
+    bool m_projectArnHasBeenSet = false;
 
     Aws::String m_projectName;
+    bool m_projectNameHasBeenSet = false;
 
     Aws::String m_projectId;
+    bool m_projectIdHasBeenSet = false;
 
     Aws::String m_projectDescription;
+    bool m_projectDescriptionHasBeenSet = false;
 
     ServiceCatalogProvisioningDetails m_serviceCatalogProvisioningDetails;
+    bool m_serviceCatalogProvisioningDetailsHasBeenSet = false;
 
     ServiceCatalogProvisionedProductDetails m_serviceCatalogProvisionedProductDetails;
+    bool m_serviceCatalogProvisionedProductDetailsHasBeenSet = false;
 
-    ProjectStatus m_projectStatus;
+    ProjectStatus m_projectStatus{ProjectStatus::NOT_SET};
+    bool m_projectStatusHasBeenSet = false;
 
     UserContext m_createdBy;
+    bool m_createdByHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     UserContext m_lastModifiedBy;
+    bool m_lastModifiedByHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

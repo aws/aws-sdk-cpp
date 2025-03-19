@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-AllowedValue::AllowedValue() : 
-    m_descriptionHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 AllowedValue::AllowedValue(JsonView jsonValue)
-  : AllowedValue()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AllowedValue& AllowedValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

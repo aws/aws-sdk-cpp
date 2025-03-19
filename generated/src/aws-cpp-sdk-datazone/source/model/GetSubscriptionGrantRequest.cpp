@@ -12,12 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSubscriptionGrantRequest::GetSubscriptionGrantRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String GetSubscriptionGrantRequest::SerializePayload() const
 {
   return {};

@@ -18,15 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-DataflowDetail::DataflowDetail() : 
-    m_destinationHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_sourceHasBeenSet(false)
-{
-}
-
 DataflowDetail::DataflowDetail(JsonView jsonValue)
-  : DataflowDetail()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DataflowDetail& DataflowDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = jsonValue.GetObject("destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetObject("source");
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

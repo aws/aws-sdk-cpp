@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CreateBasePathMappingRequest::CreateBasePathMappingRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_domainNameIdHasBeenSet(false),
-    m_basePathHasBeenSet(false),
-    m_restApiIdHasBeenSet(false),
-    m_stageHasBeenSet(false)
-{
-}
-
 Aws::String CreateBasePathMappingRequest::SerializePayload() const
 {
   JsonValue payload;

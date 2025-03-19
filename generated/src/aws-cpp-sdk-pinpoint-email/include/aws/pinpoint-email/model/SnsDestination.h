@@ -33,7 +33,7 @@ namespace Model
   class SnsDestination
   {
   public:
-    AWS_PINPOINTEMAIL_API SnsDestination();
+    AWS_PINPOINTEMAIL_API SnsDestination() = default;
     AWS_PINPOINTEMAIL_API SnsDestination(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTEMAIL_API SnsDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
-    inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+    inline const Aws::String& GetTopicArn() const { return m_topicArn; }
     inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
-    inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
-    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
-    inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
-    inline SnsDestination& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
-    inline SnsDestination& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
-    inline SnsDestination& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
+    template<typename TopicArnT = Aws::String>
+    void SetTopicArn(TopicArnT&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::forward<TopicArnT>(value); }
+    template<typename TopicArnT = Aws::String>
+    SnsDestination& WithTopicArn(TopicArnT&& value) { SetTopicArn(std::forward<TopicArnT>(value)); return *this;}
     ///@}
   private:
 

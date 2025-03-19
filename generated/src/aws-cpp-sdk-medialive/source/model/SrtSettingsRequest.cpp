@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-SrtSettingsRequest::SrtSettingsRequest() : 
-    m_srtCallerSourcesHasBeenSet(false)
-{
-}
-
 SrtSettingsRequest::SrtSettingsRequest(JsonView jsonValue)
-  : SrtSettingsRequest()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SrtSettingsRequest& SrtSettingsRequest::operator =(JsonView jsonValue)
     }
     m_srtCallerSourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

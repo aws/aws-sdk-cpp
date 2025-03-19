@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeConfigurationSettingsResult::DescribeConfigurationSettingsResult()
-{
-}
-
 DescribeConfigurationSettingsResult::DescribeConfigurationSettingsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ DescribeConfigurationSettingsResult& DescribeConfigurationSettingsResult::operat
     if(!configurationSettingsNode.IsNull())
     {
       XmlNode configurationSettingsMember = configurationSettingsNode.FirstChild("member");
+      m_configurationSettingsHasBeenSet = !configurationSettingsMember.IsNull();
       while(!configurationSettingsMember.IsNull())
       {
         m_configurationSettings.push_back(configurationSettingsMember);
         configurationSettingsMember = configurationSettingsMember.NextNode("member");
       }
 
+      m_configurationSettingsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticBeanstalk::Model::DescribeConfigurationSettingsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

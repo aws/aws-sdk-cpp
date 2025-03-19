@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateBucketResult::CreateBucketResult()
-{
-}
-
 CreateBucketResult::CreateBucketResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ CreateBucketResult& CreateBucketResult::operator =(const Aws::AmazonWebServiceRe
     if(!bucketArnNode.IsNull())
     {
       m_bucketArn = Aws::Utils::Xml::DecodeEscapedXmlText(bucketArnNode.GetText());
+      m_bucketArnHasBeenSet = true;
     }
   }
 
@@ -44,18 +41,21 @@ CreateBucketResult& CreateBucketResult::operator =(const Aws::AmazonWebServiceRe
   if(locationIter != headers.end())
   {
     m_location = locationIter->second;
+    m_locationHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amz-request-id");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& hostIdIter = headers.find("x-amz-id-2");
   if(hostIdIter != headers.end())
   {
     m_hostId = hostIdIter->second;
+    m_hostIdHasBeenSet = true;
   }
 
   return *this;

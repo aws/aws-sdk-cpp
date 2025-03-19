@@ -18,13 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-OutputConfigInput::OutputConfigInput() : 
-    m_s3DataHasBeenSet(false)
-{
-}
-
 OutputConfigInput::OutputConfigInput(JsonView jsonValue)
-  : OutputConfigInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OutputConfigInput& OutputConfigInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Data"))
   {
     m_s3Data = jsonValue.GetObject("S3Data");
-
     m_s3DataHasBeenSet = true;
   }
-
   return *this;
 }
 

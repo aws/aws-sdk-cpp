@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-MLMemberAbilities::MLMemberAbilities() : 
-    m_customMLMemberAbilitiesHasBeenSet(false)
-{
-}
-
 MLMemberAbilities::MLMemberAbilities(JsonView jsonValue)
-  : MLMemberAbilities()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ MLMemberAbilities& MLMemberAbilities::operator =(JsonView jsonValue)
     }
     m_customMLMemberAbilitiesHasBeenSet = true;
   }
-
   return *this;
 }
 

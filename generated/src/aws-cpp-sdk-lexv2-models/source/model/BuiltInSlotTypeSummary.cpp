@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-BuiltInSlotTypeSummary::BuiltInSlotTypeSummary() : 
-    m_slotTypeSignatureHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 BuiltInSlotTypeSummary::BuiltInSlotTypeSummary(JsonView jsonValue)
-  : BuiltInSlotTypeSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BuiltInSlotTypeSummary& BuiltInSlotTypeSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("slotTypeSignature"))
   {
     m_slotTypeSignature = jsonValue.GetString("slotTypeSignature");
-
     m_slotTypeSignatureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

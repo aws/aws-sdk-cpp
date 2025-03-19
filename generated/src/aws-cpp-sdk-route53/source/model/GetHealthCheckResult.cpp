@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetHealthCheckResult::GetHealthCheckResult()
-{
-}
-
 GetHealthCheckResult::GetHealthCheckResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,6 +32,7 @@ GetHealthCheckResult& GetHealthCheckResult::operator =(const Aws::AmazonWebServi
     if(!healthCheckNode.IsNull())
     {
       m_healthCheck = healthCheckNode;
+      m_healthCheckHasBeenSet = true;
     }
   }
 
@@ -44,6 +41,7 @@ GetHealthCheckResult& GetHealthCheckResult::operator =(const Aws::AmazonWebServi
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

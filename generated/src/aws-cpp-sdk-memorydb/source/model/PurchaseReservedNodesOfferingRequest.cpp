@@ -12,15 +12,6 @@ using namespace Aws::MemoryDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PurchaseReservedNodesOfferingRequest::PurchaseReservedNodesOfferingRequest() : 
-    m_reservedNodesOfferingIdHasBeenSet(false),
-    m_reservationIdHasBeenSet(false),
-    m_nodeCount(0),
-    m_nodeCountHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String PurchaseReservedNodesOfferingRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-BrowserExtensionConfiguration::BrowserExtensionConfiguration() : 
-    m_enabledBrowserExtensionsHasBeenSet(false)
-{
-}
-
 BrowserExtensionConfiguration::BrowserExtensionConfiguration(JsonView jsonValue)
-  : BrowserExtensionConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ BrowserExtensionConfiguration& BrowserExtensionConfiguration::operator =(JsonVie
     }
     m_enabledBrowserExtensionsHasBeenSet = true;
   }
-
   return *this;
 }
 

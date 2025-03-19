@@ -12,10 +12,6 @@ using namespace Aws::Shield::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSubscriptionRequest::CreateSubscriptionRequest()
-{
-}
-
 Aws::String CreateSubscriptionRequest::SerializePayload() const
 {
   return "{}";

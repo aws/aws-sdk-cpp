@@ -18,17 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-HeaderMatchMethod::HeaderMatchMethod() : 
-    m_exactHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_rangeHasBeenSet(false),
-    m_regexHasBeenSet(false),
-    m_suffixHasBeenSet(false)
-{
-}
-
 HeaderMatchMethod::HeaderMatchMethod(JsonView jsonValue)
-  : HeaderMatchMethod()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ HeaderMatchMethod& HeaderMatchMethod::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("exact"))
   {
     m_exact = jsonValue.GetString("exact");
-
     m_exactHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prefix"))
   {
     m_prefix = jsonValue.GetString("prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("range"))
   {
     m_range = jsonValue.GetObject("range");
-
     m_rangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("regex"))
   {
     m_regex = jsonValue.GetString("regex");
-
     m_regexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("suffix"))
   {
     m_suffix = jsonValue.GetString("suffix");
-
     m_suffixHasBeenSet = true;
   }
-
   return *this;
 }
 

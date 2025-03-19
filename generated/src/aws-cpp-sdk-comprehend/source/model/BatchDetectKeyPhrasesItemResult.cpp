@@ -18,15 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-BatchDetectKeyPhrasesItemResult::BatchDetectKeyPhrasesItemResult() : 
-    m_index(0),
-    m_indexHasBeenSet(false),
-    m_keyPhrasesHasBeenSet(false)
-{
-}
-
 BatchDetectKeyPhrasesItemResult::BatchDetectKeyPhrasesItemResult(JsonView jsonValue)
-  : BatchDetectKeyPhrasesItemResult()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ BatchDetectKeyPhrasesItemResult& BatchDetectKeyPhrasesItemResult::operator =(Jso
   if(jsonValue.ValueExists("Index"))
   {
     m_index = jsonValue.GetInteger("Index");
-
     m_indexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyPhrases"))
   {
     Aws::Utils::Array<JsonView> keyPhrasesJsonList = jsonValue.GetArray("KeyPhrases");
@@ -49,7 +39,6 @@ BatchDetectKeyPhrasesItemResult& BatchDetectKeyPhrasesItemResult::operator =(Jso
     }
     m_keyPhrasesHasBeenSet = true;
   }
-
   return *this;
 }
 

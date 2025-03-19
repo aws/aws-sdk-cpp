@@ -33,7 +33,7 @@ namespace Model
   class DescribeAlarmModelResult
   {
   public:
-    AWS_IOTEVENTS_API DescribeAlarmModelResult();
+    AWS_IOTEVENTS_API DescribeAlarmModelResult() = default;
     AWS_IOTEVENTS_API DescribeAlarmModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTEVENTS_API DescribeAlarmModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,11 +42,11 @@ namespace Model
     /**
      * <p>The time the alarm model was created, in the Unix epoch format.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeAlarmModelResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeAlarmModelResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeAlarmModelResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,37 +55,33 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
-    inline const Aws::String& GetAlarmModelArn() const{ return m_alarmModelArn; }
-    inline void SetAlarmModelArn(const Aws::String& value) { m_alarmModelArn = value; }
-    inline void SetAlarmModelArn(Aws::String&& value) { m_alarmModelArn = std::move(value); }
-    inline void SetAlarmModelArn(const char* value) { m_alarmModelArn.assign(value); }
-    inline DescribeAlarmModelResult& WithAlarmModelArn(const Aws::String& value) { SetAlarmModelArn(value); return *this;}
-    inline DescribeAlarmModelResult& WithAlarmModelArn(Aws::String&& value) { SetAlarmModelArn(std::move(value)); return *this;}
-    inline DescribeAlarmModelResult& WithAlarmModelArn(const char* value) { SetAlarmModelArn(value); return *this;}
+    inline const Aws::String& GetAlarmModelArn() const { return m_alarmModelArn; }
+    template<typename AlarmModelArnT = Aws::String>
+    void SetAlarmModelArn(AlarmModelArnT&& value) { m_alarmModelArnHasBeenSet = true; m_alarmModelArn = std::forward<AlarmModelArnT>(value); }
+    template<typename AlarmModelArnT = Aws::String>
+    DescribeAlarmModelResult& WithAlarmModelArn(AlarmModelArnT&& value) { SetAlarmModelArn(std::forward<AlarmModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the alarm model.</p>
      */
-    inline const Aws::String& GetAlarmModelVersion() const{ return m_alarmModelVersion; }
-    inline void SetAlarmModelVersion(const Aws::String& value) { m_alarmModelVersion = value; }
-    inline void SetAlarmModelVersion(Aws::String&& value) { m_alarmModelVersion = std::move(value); }
-    inline void SetAlarmModelVersion(const char* value) { m_alarmModelVersion.assign(value); }
-    inline DescribeAlarmModelResult& WithAlarmModelVersion(const Aws::String& value) { SetAlarmModelVersion(value); return *this;}
-    inline DescribeAlarmModelResult& WithAlarmModelVersion(Aws::String&& value) { SetAlarmModelVersion(std::move(value)); return *this;}
-    inline DescribeAlarmModelResult& WithAlarmModelVersion(const char* value) { SetAlarmModelVersion(value); return *this;}
+    inline const Aws::String& GetAlarmModelVersion() const { return m_alarmModelVersion; }
+    template<typename AlarmModelVersionT = Aws::String>
+    void SetAlarmModelVersion(AlarmModelVersionT&& value) { m_alarmModelVersionHasBeenSet = true; m_alarmModelVersion = std::forward<AlarmModelVersionT>(value); }
+    template<typename AlarmModelVersionT = Aws::String>
+    DescribeAlarmModelResult& WithAlarmModelVersion(AlarmModelVersionT&& value) { SetAlarmModelVersion(std::forward<AlarmModelVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the alarm model was last updated, in the Unix epoch format.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
-    inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTime = value; }
-    inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTime = std::move(value); }
-    inline DescribeAlarmModelResult& WithLastUpdateTime(const Aws::Utils::DateTime& value) { SetLastUpdateTime(value); return *this;}
-    inline DescribeAlarmModelResult& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdateTime() const { return m_lastUpdateTime; }
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdateTime(LastUpdateTimeT&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::forward<LastUpdateTimeT>(value); }
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    DescribeAlarmModelResult& WithLastUpdateTime(LastUpdateTimeT&& value) { SetLastUpdateTime(std::forward<LastUpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,50 +96,42 @@ namespace Model
      * couldn't create or update the alarm model. Check your alarm model information
      * and try again.</p> </li> </ul>
      */
-    inline const AlarmModelVersionStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const AlarmModelVersionStatus& value) { m_status = value; }
-    inline void SetStatus(AlarmModelVersionStatus&& value) { m_status = std::move(value); }
-    inline DescribeAlarmModelResult& WithStatus(const AlarmModelVersionStatus& value) { SetStatus(value); return *this;}
-    inline DescribeAlarmModelResult& WithStatus(AlarmModelVersionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline AlarmModelVersionStatus GetStatus() const { return m_status; }
+    inline void SetStatus(AlarmModelVersionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribeAlarmModelResult& WithStatus(AlarmModelVersionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Contains information about the status of the alarm model. </p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
-    inline DescribeAlarmModelResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline DescribeAlarmModelResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline DescribeAlarmModelResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    DescribeAlarmModelResult& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the alarm model.</p>
      */
-    inline const Aws::String& GetAlarmModelName() const{ return m_alarmModelName; }
-    inline void SetAlarmModelName(const Aws::String& value) { m_alarmModelName = value; }
-    inline void SetAlarmModelName(Aws::String&& value) { m_alarmModelName = std::move(value); }
-    inline void SetAlarmModelName(const char* value) { m_alarmModelName.assign(value); }
-    inline DescribeAlarmModelResult& WithAlarmModelName(const Aws::String& value) { SetAlarmModelName(value); return *this;}
-    inline DescribeAlarmModelResult& WithAlarmModelName(Aws::String&& value) { SetAlarmModelName(std::move(value)); return *this;}
-    inline DescribeAlarmModelResult& WithAlarmModelName(const char* value) { SetAlarmModelName(value); return *this;}
+    inline const Aws::String& GetAlarmModelName() const { return m_alarmModelName; }
+    template<typename AlarmModelNameT = Aws::String>
+    void SetAlarmModelName(AlarmModelNameT&& value) { m_alarmModelNameHasBeenSet = true; m_alarmModelName = std::forward<AlarmModelNameT>(value); }
+    template<typename AlarmModelNameT = Aws::String>
+    DescribeAlarmModelResult& WithAlarmModelName(AlarmModelNameT&& value) { SetAlarmModelName(std::forward<AlarmModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the alarm model.</p>
      */
-    inline const Aws::String& GetAlarmModelDescription() const{ return m_alarmModelDescription; }
-    inline void SetAlarmModelDescription(const Aws::String& value) { m_alarmModelDescription = value; }
-    inline void SetAlarmModelDescription(Aws::String&& value) { m_alarmModelDescription = std::move(value); }
-    inline void SetAlarmModelDescription(const char* value) { m_alarmModelDescription.assign(value); }
-    inline DescribeAlarmModelResult& WithAlarmModelDescription(const Aws::String& value) { SetAlarmModelDescription(value); return *this;}
-    inline DescribeAlarmModelResult& WithAlarmModelDescription(Aws::String&& value) { SetAlarmModelDescription(std::move(value)); return *this;}
-    inline DescribeAlarmModelResult& WithAlarmModelDescription(const char* value) { SetAlarmModelDescription(value); return *this;}
+    inline const Aws::String& GetAlarmModelDescription() const { return m_alarmModelDescription; }
+    template<typename AlarmModelDescriptionT = Aws::String>
+    void SetAlarmModelDescription(AlarmModelDescriptionT&& value) { m_alarmModelDescriptionHasBeenSet = true; m_alarmModelDescription = std::forward<AlarmModelDescriptionT>(value); }
+    template<typename AlarmModelDescriptionT = Aws::String>
+    DescribeAlarmModelResult& WithAlarmModelDescription(AlarmModelDescriptionT&& value) { SetAlarmModelDescription(std::forward<AlarmModelDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,13 +141,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-    inline DescribeAlarmModelResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline DescribeAlarmModelResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline DescribeAlarmModelResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    DescribeAlarmModelResult& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -168,21 +154,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a>
      * associated with this key to the alarm.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
-    inline void SetKey(const Aws::String& value) { m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_key.assign(value); }
-    inline DescribeAlarmModelResult& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline DescribeAlarmModelResult& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline DescribeAlarmModelResult& WithKey(const char* value) { SetKey(value); return *this;}
+    inline const Aws::String& GetKey() const { return m_key; }
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    DescribeAlarmModelResult& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A non-negative integer that reflects the severity level of the alarm.</p>
      */
-    inline int GetSeverity() const{ return m_severity; }
-    inline void SetSeverity(int value) { m_severity = value; }
+    inline int GetSeverity() const { return m_severity; }
+    inline void SetSeverity(int value) { m_severityHasBeenSet = true; m_severity = value; }
     inline DescribeAlarmModelResult& WithSeverity(int value) { SetSeverity(value); return *this;}
     ///@}
 
@@ -190,89 +174,103 @@ namespace Model
     /**
      * <p>Defines when your alarm is invoked.</p>
      */
-    inline const AlarmRule& GetAlarmRule() const{ return m_alarmRule; }
-    inline void SetAlarmRule(const AlarmRule& value) { m_alarmRule = value; }
-    inline void SetAlarmRule(AlarmRule&& value) { m_alarmRule = std::move(value); }
-    inline DescribeAlarmModelResult& WithAlarmRule(const AlarmRule& value) { SetAlarmRule(value); return *this;}
-    inline DescribeAlarmModelResult& WithAlarmRule(AlarmRule&& value) { SetAlarmRule(std::move(value)); return *this;}
+    inline const AlarmRule& GetAlarmRule() const { return m_alarmRule; }
+    template<typename AlarmRuleT = AlarmRule>
+    void SetAlarmRule(AlarmRuleT&& value) { m_alarmRuleHasBeenSet = true; m_alarmRule = std::forward<AlarmRuleT>(value); }
+    template<typename AlarmRuleT = AlarmRule>
+    DescribeAlarmModelResult& WithAlarmRule(AlarmRuleT&& value) { SetAlarmRule(std::forward<AlarmRuleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains information about one or more notification actions.</p>
      */
-    inline const AlarmNotification& GetAlarmNotification() const{ return m_alarmNotification; }
-    inline void SetAlarmNotification(const AlarmNotification& value) { m_alarmNotification = value; }
-    inline void SetAlarmNotification(AlarmNotification&& value) { m_alarmNotification = std::move(value); }
-    inline DescribeAlarmModelResult& WithAlarmNotification(const AlarmNotification& value) { SetAlarmNotification(value); return *this;}
-    inline DescribeAlarmModelResult& WithAlarmNotification(AlarmNotification&& value) { SetAlarmNotification(std::move(value)); return *this;}
+    inline const AlarmNotification& GetAlarmNotification() const { return m_alarmNotification; }
+    template<typename AlarmNotificationT = AlarmNotification>
+    void SetAlarmNotification(AlarmNotificationT&& value) { m_alarmNotificationHasBeenSet = true; m_alarmNotification = std::forward<AlarmNotificationT>(value); }
+    template<typename AlarmNotificationT = AlarmNotification>
+    DescribeAlarmModelResult& WithAlarmNotification(AlarmNotificationT&& value) { SetAlarmNotification(std::forward<AlarmNotificationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains information about one or more alarm actions.</p>
      */
-    inline const AlarmEventActions& GetAlarmEventActions() const{ return m_alarmEventActions; }
-    inline void SetAlarmEventActions(const AlarmEventActions& value) { m_alarmEventActions = value; }
-    inline void SetAlarmEventActions(AlarmEventActions&& value) { m_alarmEventActions = std::move(value); }
-    inline DescribeAlarmModelResult& WithAlarmEventActions(const AlarmEventActions& value) { SetAlarmEventActions(value); return *this;}
-    inline DescribeAlarmModelResult& WithAlarmEventActions(AlarmEventActions&& value) { SetAlarmEventActions(std::move(value)); return *this;}
+    inline const AlarmEventActions& GetAlarmEventActions() const { return m_alarmEventActions; }
+    template<typename AlarmEventActionsT = AlarmEventActions>
+    void SetAlarmEventActions(AlarmEventActionsT&& value) { m_alarmEventActionsHasBeenSet = true; m_alarmEventActions = std::forward<AlarmEventActionsT>(value); }
+    template<typename AlarmEventActionsT = AlarmEventActions>
+    DescribeAlarmModelResult& WithAlarmEventActions(AlarmEventActionsT&& value) { SetAlarmEventActions(std::forward<AlarmEventActionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains the configuration information of alarm state changes.</p>
      */
-    inline const AlarmCapabilities& GetAlarmCapabilities() const{ return m_alarmCapabilities; }
-    inline void SetAlarmCapabilities(const AlarmCapabilities& value) { m_alarmCapabilities = value; }
-    inline void SetAlarmCapabilities(AlarmCapabilities&& value) { m_alarmCapabilities = std::move(value); }
-    inline DescribeAlarmModelResult& WithAlarmCapabilities(const AlarmCapabilities& value) { SetAlarmCapabilities(value); return *this;}
-    inline DescribeAlarmModelResult& WithAlarmCapabilities(AlarmCapabilities&& value) { SetAlarmCapabilities(std::move(value)); return *this;}
+    inline const AlarmCapabilities& GetAlarmCapabilities() const { return m_alarmCapabilities; }
+    template<typename AlarmCapabilitiesT = AlarmCapabilities>
+    void SetAlarmCapabilities(AlarmCapabilitiesT&& value) { m_alarmCapabilitiesHasBeenSet = true; m_alarmCapabilities = std::forward<AlarmCapabilitiesT>(value); }
+    template<typename AlarmCapabilitiesT = AlarmCapabilities>
+    DescribeAlarmModelResult& WithAlarmCapabilities(AlarmCapabilitiesT&& value) { SetAlarmCapabilities(std::forward<AlarmCapabilitiesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAlarmModelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAlarmModelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAlarmModelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAlarmModelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_alarmModelArn;
+    bool m_alarmModelArnHasBeenSet = false;
 
     Aws::String m_alarmModelVersion;
+    bool m_alarmModelVersionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdateTime;
+    Aws::Utils::DateTime m_lastUpdateTime{};
+    bool m_lastUpdateTimeHasBeenSet = false;
 
-    AlarmModelVersionStatus m_status;
+    AlarmModelVersionStatus m_status{AlarmModelVersionStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::String m_alarmModelName;
+    bool m_alarmModelNameHasBeenSet = false;
 
     Aws::String m_alarmModelDescription;
+    bool m_alarmModelDescriptionHasBeenSet = false;
 
     Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_key;
+    bool m_keyHasBeenSet = false;
 
-    int m_severity;
+    int m_severity{0};
+    bool m_severityHasBeenSet = false;
 
     AlarmRule m_alarmRule;
+    bool m_alarmRuleHasBeenSet = false;
 
     AlarmNotification m_alarmNotification;
+    bool m_alarmNotificationHasBeenSet = false;
 
     AlarmEventActions m_alarmEventActions;
+    bool m_alarmEventActionsHasBeenSet = false;
 
     AlarmCapabilities m_alarmCapabilities;
+    bool m_alarmCapabilitiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

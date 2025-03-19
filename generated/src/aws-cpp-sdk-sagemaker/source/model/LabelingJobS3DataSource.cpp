@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-LabelingJobS3DataSource::LabelingJobS3DataSource() : 
-    m_manifestS3UriHasBeenSet(false)
-{
-}
-
 LabelingJobS3DataSource::LabelingJobS3DataSource(JsonView jsonValue)
-  : LabelingJobS3DataSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LabelingJobS3DataSource& LabelingJobS3DataSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ManifestS3Uri"))
   {
     m_manifestS3Uri = jsonValue.GetString("ManifestS3Uri");
-
     m_manifestS3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

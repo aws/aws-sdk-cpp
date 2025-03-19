@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-HistogramBinOptions::HistogramBinOptions() : 
-    m_selectedBinType(HistogramBinType::NOT_SET),
-    m_selectedBinTypeHasBeenSet(false),
-    m_binCountHasBeenSet(false),
-    m_binWidthHasBeenSet(false),
-    m_startValue(0.0),
-    m_startValueHasBeenSet(false)
-{
-}
-
 HistogramBinOptions::HistogramBinOptions(JsonView jsonValue)
-  : HistogramBinOptions()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ HistogramBinOptions& HistogramBinOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SelectedBinType"))
   {
     m_selectedBinType = HistogramBinTypeMapper::GetHistogramBinTypeForName(jsonValue.GetString("SelectedBinType"));
-
     m_selectedBinTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BinCount"))
   {
     m_binCount = jsonValue.GetObject("BinCount");
-
     m_binCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BinWidth"))
   {
     m_binWidth = jsonValue.GetObject("BinWidth");
-
     m_binWidthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartValue"))
   {
     m_startValue = jsonValue.GetDouble("StartValue");
-
     m_startValueHasBeenSet = true;
   }
-
   return *this;
 }
 

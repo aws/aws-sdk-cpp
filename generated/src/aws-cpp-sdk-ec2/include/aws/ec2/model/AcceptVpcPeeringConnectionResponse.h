@@ -28,7 +28,7 @@ namespace Model
   class AcceptVpcPeeringConnectionResponse
   {
   public:
-    AWS_EC2_API AcceptVpcPeeringConnectionResponse();
+    AWS_EC2_API AcceptVpcPeeringConnectionResponse() = default;
     AWS_EC2_API AcceptVpcPeeringConnectionResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API AcceptVpcPeeringConnectionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the VPC peering connection.</p>
      */
-    inline const VpcPeeringConnection& GetVpcPeeringConnection() const{ return m_vpcPeeringConnection; }
-    inline void SetVpcPeeringConnection(const VpcPeeringConnection& value) { m_vpcPeeringConnection = value; }
-    inline void SetVpcPeeringConnection(VpcPeeringConnection&& value) { m_vpcPeeringConnection = std::move(value); }
-    inline AcceptVpcPeeringConnectionResponse& WithVpcPeeringConnection(const VpcPeeringConnection& value) { SetVpcPeeringConnection(value); return *this;}
-    inline AcceptVpcPeeringConnectionResponse& WithVpcPeeringConnection(VpcPeeringConnection&& value) { SetVpcPeeringConnection(std::move(value)); return *this;}
+    inline const VpcPeeringConnection& GetVpcPeeringConnection() const { return m_vpcPeeringConnection; }
+    template<typename VpcPeeringConnectionT = VpcPeeringConnection>
+    void SetVpcPeeringConnection(VpcPeeringConnectionT&& value) { m_vpcPeeringConnectionHasBeenSet = true; m_vpcPeeringConnection = std::forward<VpcPeeringConnectionT>(value); }
+    template<typename VpcPeeringConnectionT = VpcPeeringConnection>
+    AcceptVpcPeeringConnectionResponse& WithVpcPeeringConnection(VpcPeeringConnectionT&& value) { SetVpcPeeringConnection(std::forward<VpcPeeringConnectionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline AcceptVpcPeeringConnectionResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline AcceptVpcPeeringConnectionResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    AcceptVpcPeeringConnectionResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     VpcPeeringConnection m_vpcPeeringConnection;
+    bool m_vpcPeeringConnectionHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

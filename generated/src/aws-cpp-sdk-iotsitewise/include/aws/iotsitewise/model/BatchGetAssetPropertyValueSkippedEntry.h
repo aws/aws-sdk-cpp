@@ -35,7 +35,7 @@ namespace Model
   class BatchGetAssetPropertyValueSkippedEntry
   {
   public:
-    AWS_IOTSITEWISE_API BatchGetAssetPropertyValueSkippedEntry();
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyValueSkippedEntry() = default;
     AWS_IOTSITEWISE_API BatchGetAssetPropertyValueSkippedEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API BatchGetAssetPropertyValueSkippedEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The ID of the entry.</p>
      */
-    inline const Aws::String& GetEntryId() const{ return m_entryId; }
+    inline const Aws::String& GetEntryId() const { return m_entryId; }
     inline bool EntryIdHasBeenSet() const { return m_entryIdHasBeenSet; }
-    inline void SetEntryId(const Aws::String& value) { m_entryIdHasBeenSet = true; m_entryId = value; }
-    inline void SetEntryId(Aws::String&& value) { m_entryIdHasBeenSet = true; m_entryId = std::move(value); }
-    inline void SetEntryId(const char* value) { m_entryIdHasBeenSet = true; m_entryId.assign(value); }
-    inline BatchGetAssetPropertyValueSkippedEntry& WithEntryId(const Aws::String& value) { SetEntryId(value); return *this;}
-    inline BatchGetAssetPropertyValueSkippedEntry& WithEntryId(Aws::String&& value) { SetEntryId(std::move(value)); return *this;}
-    inline BatchGetAssetPropertyValueSkippedEntry& WithEntryId(const char* value) { SetEntryId(value); return *this;}
+    template<typename EntryIdT = Aws::String>
+    void SetEntryId(EntryIdT&& value) { m_entryIdHasBeenSet = true; m_entryId = std::forward<EntryIdT>(value); }
+    template<typename EntryIdT = Aws::String>
+    BatchGetAssetPropertyValueSkippedEntry& WithEntryId(EntryIdT&& value) { SetEntryId(std::forward<EntryIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,31 +59,29 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_BatchGetAssetPropertyValue.html">BatchGetAssetPropertyValue</a>
      * request.</p>
      */
-    inline const BatchEntryCompletionStatus& GetCompletionStatus() const{ return m_completionStatus; }
+    inline BatchEntryCompletionStatus GetCompletionStatus() const { return m_completionStatus; }
     inline bool CompletionStatusHasBeenSet() const { return m_completionStatusHasBeenSet; }
-    inline void SetCompletionStatus(const BatchEntryCompletionStatus& value) { m_completionStatusHasBeenSet = true; m_completionStatus = value; }
-    inline void SetCompletionStatus(BatchEntryCompletionStatus&& value) { m_completionStatusHasBeenSet = true; m_completionStatus = std::move(value); }
-    inline BatchGetAssetPropertyValueSkippedEntry& WithCompletionStatus(const BatchEntryCompletionStatus& value) { SetCompletionStatus(value); return *this;}
-    inline BatchGetAssetPropertyValueSkippedEntry& WithCompletionStatus(BatchEntryCompletionStatus&& value) { SetCompletionStatus(std::move(value)); return *this;}
+    inline void SetCompletionStatus(BatchEntryCompletionStatus value) { m_completionStatusHasBeenSet = true; m_completionStatus = value; }
+    inline BatchGetAssetPropertyValueSkippedEntry& WithCompletionStatus(BatchEntryCompletionStatus value) { SetCompletionStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error information, such as the error code and the timestamp.</p>
      */
-    inline const BatchGetAssetPropertyValueErrorInfo& GetErrorInfo() const{ return m_errorInfo; }
+    inline const BatchGetAssetPropertyValueErrorInfo& GetErrorInfo() const { return m_errorInfo; }
     inline bool ErrorInfoHasBeenSet() const { return m_errorInfoHasBeenSet; }
-    inline void SetErrorInfo(const BatchGetAssetPropertyValueErrorInfo& value) { m_errorInfoHasBeenSet = true; m_errorInfo = value; }
-    inline void SetErrorInfo(BatchGetAssetPropertyValueErrorInfo&& value) { m_errorInfoHasBeenSet = true; m_errorInfo = std::move(value); }
-    inline BatchGetAssetPropertyValueSkippedEntry& WithErrorInfo(const BatchGetAssetPropertyValueErrorInfo& value) { SetErrorInfo(value); return *this;}
-    inline BatchGetAssetPropertyValueSkippedEntry& WithErrorInfo(BatchGetAssetPropertyValueErrorInfo&& value) { SetErrorInfo(std::move(value)); return *this;}
+    template<typename ErrorInfoT = BatchGetAssetPropertyValueErrorInfo>
+    void SetErrorInfo(ErrorInfoT&& value) { m_errorInfoHasBeenSet = true; m_errorInfo = std::forward<ErrorInfoT>(value); }
+    template<typename ErrorInfoT = BatchGetAssetPropertyValueErrorInfo>
+    BatchGetAssetPropertyValueSkippedEntry& WithErrorInfo(ErrorInfoT&& value) { SetErrorInfo(std::forward<ErrorInfoT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_entryId;
     bool m_entryIdHasBeenSet = false;
 
-    BatchEntryCompletionStatus m_completionStatus;
+    BatchEntryCompletionStatus m_completionStatus{BatchEntryCompletionStatus::NOT_SET};
     bool m_completionStatusHasBeenSet = false;
 
     BatchGetAssetPropertyValueErrorInfo m_errorInfo;

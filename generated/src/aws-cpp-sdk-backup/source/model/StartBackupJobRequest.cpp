@@ -12,23 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartBackupJobRequest::StartBackupJobRequest() : 
-    m_backupVaultNameHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_idempotencyTokenHasBeenSet(false),
-    m_startWindowMinutes(0),
-    m_startWindowMinutesHasBeenSet(false),
-    m_completeWindowMinutes(0),
-    m_completeWindowMinutesHasBeenSet(false),
-    m_lifecycleHasBeenSet(false),
-    m_recoveryPointTagsHasBeenSet(false),
-    m_backupOptionsHasBeenSet(false),
-    m_index(Index::NOT_SET),
-    m_indexHasBeenSet(false)
-{
-}
-
 Aws::String StartBackupJobRequest::SerializePayload() const
 {
   JsonValue payload;

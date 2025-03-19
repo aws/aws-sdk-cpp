@@ -18,18 +18,7 @@ namespace PinpointSMSVoiceV2
 namespace Model
 {
 
-VerifiedDestinationNumberInformation::VerifiedDestinationNumberInformation() : 
-    m_verifiedDestinationNumberArnHasBeenSet(false),
-    m_verifiedDestinationNumberIdHasBeenSet(false),
-    m_destinationPhoneNumberHasBeenSet(false),
-    m_status(VerificationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_createdTimestampHasBeenSet(false)
-{
-}
-
 VerifiedDestinationNumberInformation::VerifiedDestinationNumberInformation(JsonView jsonValue)
-  : VerifiedDestinationNumberInformation()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ VerifiedDestinationNumberInformation& VerifiedDestinationNumberInformation::oper
   if(jsonValue.ValueExists("VerifiedDestinationNumberArn"))
   {
     m_verifiedDestinationNumberArn = jsonValue.GetString("VerifiedDestinationNumberArn");
-
     m_verifiedDestinationNumberArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VerifiedDestinationNumberId"))
   {
     m_verifiedDestinationNumberId = jsonValue.GetString("VerifiedDestinationNumberId");
-
     m_verifiedDestinationNumberIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationPhoneNumber"))
   {
     m_destinationPhoneNumber = jsonValue.GetString("DestinationPhoneNumber");
-
     m_destinationPhoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = VerificationStatusMapper::GetVerificationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
     m_createdTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

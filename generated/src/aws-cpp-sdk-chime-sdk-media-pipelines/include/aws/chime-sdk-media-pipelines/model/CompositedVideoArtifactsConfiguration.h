@@ -34,7 +34,7 @@ namespace Model
   class CompositedVideoArtifactsConfiguration
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API CompositedVideoArtifactsConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API CompositedVideoArtifactsConfiguration() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API CompositedVideoArtifactsConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API CompositedVideoArtifactsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * <p>The layout setting, such as <code>GridView</code> in the configuration
      * object.</p>
      */
-    inline const LayoutOption& GetLayout() const{ return m_layout; }
+    inline LayoutOption GetLayout() const { return m_layout; }
     inline bool LayoutHasBeenSet() const { return m_layoutHasBeenSet; }
-    inline void SetLayout(const LayoutOption& value) { m_layoutHasBeenSet = true; m_layout = value; }
-    inline void SetLayout(LayoutOption&& value) { m_layoutHasBeenSet = true; m_layout = std::move(value); }
-    inline CompositedVideoArtifactsConfiguration& WithLayout(const LayoutOption& value) { SetLayout(value); return *this;}
-    inline CompositedVideoArtifactsConfiguration& WithLayout(LayoutOption&& value) { SetLayout(std::move(value)); return *this;}
+    inline void SetLayout(LayoutOption value) { m_layoutHasBeenSet = true; m_layout = value; }
+    inline CompositedVideoArtifactsConfiguration& WithLayout(LayoutOption value) { SetLayout(value); return *this;}
     ///@}
 
     ///@{
@@ -58,31 +56,29 @@ namespace Model
      * <p>The video resolution setting in the configuration object. Default: HD at 1280
      * x 720. FHD resolution: 1920 x 1080.</p>
      */
-    inline const ResolutionOption& GetResolution() const{ return m_resolution; }
+    inline ResolutionOption GetResolution() const { return m_resolution; }
     inline bool ResolutionHasBeenSet() const { return m_resolutionHasBeenSet; }
-    inline void SetResolution(const ResolutionOption& value) { m_resolutionHasBeenSet = true; m_resolution = value; }
-    inline void SetResolution(ResolutionOption&& value) { m_resolutionHasBeenSet = true; m_resolution = std::move(value); }
-    inline CompositedVideoArtifactsConfiguration& WithResolution(const ResolutionOption& value) { SetResolution(value); return *this;}
-    inline CompositedVideoArtifactsConfiguration& WithResolution(ResolutionOption&& value) { SetResolution(std::move(value)); return *this;}
+    inline void SetResolution(ResolutionOption value) { m_resolutionHasBeenSet = true; m_resolution = value; }
+    inline CompositedVideoArtifactsConfiguration& WithResolution(ResolutionOption value) { SetResolution(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The <code>GridView</code> configuration setting.</p>
      */
-    inline const GridViewConfiguration& GetGridViewConfiguration() const{ return m_gridViewConfiguration; }
+    inline const GridViewConfiguration& GetGridViewConfiguration() const { return m_gridViewConfiguration; }
     inline bool GridViewConfigurationHasBeenSet() const { return m_gridViewConfigurationHasBeenSet; }
-    inline void SetGridViewConfiguration(const GridViewConfiguration& value) { m_gridViewConfigurationHasBeenSet = true; m_gridViewConfiguration = value; }
-    inline void SetGridViewConfiguration(GridViewConfiguration&& value) { m_gridViewConfigurationHasBeenSet = true; m_gridViewConfiguration = std::move(value); }
-    inline CompositedVideoArtifactsConfiguration& WithGridViewConfiguration(const GridViewConfiguration& value) { SetGridViewConfiguration(value); return *this;}
-    inline CompositedVideoArtifactsConfiguration& WithGridViewConfiguration(GridViewConfiguration&& value) { SetGridViewConfiguration(std::move(value)); return *this;}
+    template<typename GridViewConfigurationT = GridViewConfiguration>
+    void SetGridViewConfiguration(GridViewConfigurationT&& value) { m_gridViewConfigurationHasBeenSet = true; m_gridViewConfiguration = std::forward<GridViewConfigurationT>(value); }
+    template<typename GridViewConfigurationT = GridViewConfiguration>
+    CompositedVideoArtifactsConfiguration& WithGridViewConfiguration(GridViewConfigurationT&& value) { SetGridViewConfiguration(std::forward<GridViewConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    LayoutOption m_layout;
+    LayoutOption m_layout{LayoutOption::NOT_SET};
     bool m_layoutHasBeenSet = false;
 
-    ResolutionOption m_resolution;
+    ResolutionOption m_resolution{ResolutionOption::NOT_SET};
     bool m_resolutionHasBeenSet = false;
 
     GridViewConfiguration m_gridViewConfiguration;

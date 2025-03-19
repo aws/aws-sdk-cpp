@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDataSourcePermissionsResult::DescribeDataSourcePermissionsResult() : 
-    m_status(0)
-{
-}
-
 DescribeDataSourcePermissionsResult::DescribeDataSourcePermissionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeDataSourcePermissionsResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ DescribeDataSourcePermissionsResult& DescribeDataSourcePermissionsResult::operat
   if(jsonValue.ValueExists("DataSourceArn"))
   {
     m_dataSourceArn = jsonValue.GetString("DataSourceArn");
-
+    m_dataSourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSourceId"))
   {
     m_dataSourceId = jsonValue.GetString("DataSourceId");
-
+    m_dataSourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Permissions"))
   {
     Aws::Utils::Array<JsonView> permissionsJsonList = jsonValue.GetArray("Permissions");
@@ -50,18 +42,19 @@ DescribeDataSourcePermissionsResult& DescribeDataSourcePermissionsResult::operat
     {
       m_permissions.push_back(permissionsJsonList[permissionsIndex].AsObject());
     }
+    m_permissionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

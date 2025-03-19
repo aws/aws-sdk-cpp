@@ -28,7 +28,7 @@ namespace Model
   class DescribeFilterResult
   {
   public:
-    AWS_PERSONALIZE_API DescribeFilterResult();
+    AWS_PERSONALIZE_API DescribeFilterResult() = default;
     AWS_PERSONALIZE_API DescribeFilterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PERSONALIZE_API DescribeFilterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The filter's details.</p>
      */
-    inline const Filter& GetFilter() const{ return m_filter; }
-    inline void SetFilter(const Filter& value) { m_filter = value; }
-    inline void SetFilter(Filter&& value) { m_filter = std::move(value); }
-    inline DescribeFilterResult& WithFilter(const Filter& value) { SetFilter(value); return *this;}
-    inline DescribeFilterResult& WithFilter(Filter&& value) { SetFilter(std::move(value)); return *this;}
+    inline const Filter& GetFilter() const { return m_filter; }
+    template<typename FilterT = Filter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Filter>
+    DescribeFilterResult& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeFilterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeFilterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeFilterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeFilterResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Filter m_filter;
+    bool m_filterHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

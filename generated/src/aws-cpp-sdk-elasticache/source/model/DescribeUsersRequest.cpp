@@ -10,16 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-DescribeUsersRequest::DescribeUsersRequest() : 
-    m_engineHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeUsersRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -12,14 +12,6 @@ using namespace Aws::AccessAnalyzer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CheckAccessNotGrantedRequest::CheckAccessNotGrantedRequest() : 
-    m_policyDocumentHasBeenSet(false),
-    m_accessHasBeenSet(false),
-    m_policyType(AccessCheckPolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false)
-{
-}
-
 Aws::String CheckAccessNotGrantedRequest::SerializePayload() const
 {
   JsonValue payload;

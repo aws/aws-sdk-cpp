@@ -31,7 +31,7 @@ namespace Model
   class DescribeAccountAuditConfigurationResult
   {
   public:
-    AWS_IOT_API DescribeAccountAuditConfigurationResult();
+    AWS_IOT_API DescribeAccountAuditConfigurationResult() = default;
     AWS_IOT_API DescribeAccountAuditConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API DescribeAccountAuditConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,13 +43,11 @@ namespace Model
      * performing an audit.</p> <p>On the first call to
      * <code>UpdateAccountAuditConfiguration</code>, this parameter is required.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-    inline DescribeAccountAuditConfigurationResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline DescribeAccountAuditConfigurationResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline DescribeAccountAuditConfigurationResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    DescribeAccountAuditConfigurationResult& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,53 +55,52 @@ namespace Model
      * <p>Information about the targets to which audit notifications are sent for this
      * account.</p>
      */
-    inline const Aws::Map<AuditNotificationType, AuditNotificationTarget>& GetAuditNotificationTargetConfigurations() const{ return m_auditNotificationTargetConfigurations; }
-    inline void SetAuditNotificationTargetConfigurations(const Aws::Map<AuditNotificationType, AuditNotificationTarget>& value) { m_auditNotificationTargetConfigurations = value; }
-    inline void SetAuditNotificationTargetConfigurations(Aws::Map<AuditNotificationType, AuditNotificationTarget>&& value) { m_auditNotificationTargetConfigurations = std::move(value); }
-    inline DescribeAccountAuditConfigurationResult& WithAuditNotificationTargetConfigurations(const Aws::Map<AuditNotificationType, AuditNotificationTarget>& value) { SetAuditNotificationTargetConfigurations(value); return *this;}
-    inline DescribeAccountAuditConfigurationResult& WithAuditNotificationTargetConfigurations(Aws::Map<AuditNotificationType, AuditNotificationTarget>&& value) { SetAuditNotificationTargetConfigurations(std::move(value)); return *this;}
-    inline DescribeAccountAuditConfigurationResult& AddAuditNotificationTargetConfigurations(const AuditNotificationType& key, const AuditNotificationTarget& value) { m_auditNotificationTargetConfigurations.emplace(key, value); return *this; }
-    inline DescribeAccountAuditConfigurationResult& AddAuditNotificationTargetConfigurations(AuditNotificationType&& key, const AuditNotificationTarget& value) { m_auditNotificationTargetConfigurations.emplace(std::move(key), value); return *this; }
-    inline DescribeAccountAuditConfigurationResult& AddAuditNotificationTargetConfigurations(const AuditNotificationType& key, AuditNotificationTarget&& value) { m_auditNotificationTargetConfigurations.emplace(key, std::move(value)); return *this; }
-    inline DescribeAccountAuditConfigurationResult& AddAuditNotificationTargetConfigurations(AuditNotificationType&& key, AuditNotificationTarget&& value) { m_auditNotificationTargetConfigurations.emplace(std::move(key), std::move(value)); return *this; }
+    inline const Aws::Map<AuditNotificationType, AuditNotificationTarget>& GetAuditNotificationTargetConfigurations() const { return m_auditNotificationTargetConfigurations; }
+    template<typename AuditNotificationTargetConfigurationsT = Aws::Map<AuditNotificationType, AuditNotificationTarget>>
+    void SetAuditNotificationTargetConfigurations(AuditNotificationTargetConfigurationsT&& value) { m_auditNotificationTargetConfigurationsHasBeenSet = true; m_auditNotificationTargetConfigurations = std::forward<AuditNotificationTargetConfigurationsT>(value); }
+    template<typename AuditNotificationTargetConfigurationsT = Aws::Map<AuditNotificationType, AuditNotificationTarget>>
+    DescribeAccountAuditConfigurationResult& WithAuditNotificationTargetConfigurations(AuditNotificationTargetConfigurationsT&& value) { SetAuditNotificationTargetConfigurations(std::forward<AuditNotificationTargetConfigurationsT>(value)); return *this;}
+    inline DescribeAccountAuditConfigurationResult& AddAuditNotificationTargetConfigurations(AuditNotificationType key, AuditNotificationTarget value) {
+      m_auditNotificationTargetConfigurationsHasBeenSet = true; m_auditNotificationTargetConfigurations.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Which audit checks are enabled and disabled for this account.</p>
      */
-    inline const Aws::Map<Aws::String, AuditCheckConfiguration>& GetAuditCheckConfigurations() const{ return m_auditCheckConfigurations; }
-    inline void SetAuditCheckConfigurations(const Aws::Map<Aws::String, AuditCheckConfiguration>& value) { m_auditCheckConfigurations = value; }
-    inline void SetAuditCheckConfigurations(Aws::Map<Aws::String, AuditCheckConfiguration>&& value) { m_auditCheckConfigurations = std::move(value); }
-    inline DescribeAccountAuditConfigurationResult& WithAuditCheckConfigurations(const Aws::Map<Aws::String, AuditCheckConfiguration>& value) { SetAuditCheckConfigurations(value); return *this;}
-    inline DescribeAccountAuditConfigurationResult& WithAuditCheckConfigurations(Aws::Map<Aws::String, AuditCheckConfiguration>&& value) { SetAuditCheckConfigurations(std::move(value)); return *this;}
-    inline DescribeAccountAuditConfigurationResult& AddAuditCheckConfigurations(const Aws::String& key, const AuditCheckConfiguration& value) { m_auditCheckConfigurations.emplace(key, value); return *this; }
-    inline DescribeAccountAuditConfigurationResult& AddAuditCheckConfigurations(Aws::String&& key, const AuditCheckConfiguration& value) { m_auditCheckConfigurations.emplace(std::move(key), value); return *this; }
-    inline DescribeAccountAuditConfigurationResult& AddAuditCheckConfigurations(const Aws::String& key, AuditCheckConfiguration&& value) { m_auditCheckConfigurations.emplace(key, std::move(value)); return *this; }
-    inline DescribeAccountAuditConfigurationResult& AddAuditCheckConfigurations(Aws::String&& key, AuditCheckConfiguration&& value) { m_auditCheckConfigurations.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeAccountAuditConfigurationResult& AddAuditCheckConfigurations(const char* key, AuditCheckConfiguration&& value) { m_auditCheckConfigurations.emplace(key, std::move(value)); return *this; }
-    inline DescribeAccountAuditConfigurationResult& AddAuditCheckConfigurations(const char* key, const AuditCheckConfiguration& value) { m_auditCheckConfigurations.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, AuditCheckConfiguration>& GetAuditCheckConfigurations() const { return m_auditCheckConfigurations; }
+    template<typename AuditCheckConfigurationsT = Aws::Map<Aws::String, AuditCheckConfiguration>>
+    void SetAuditCheckConfigurations(AuditCheckConfigurationsT&& value) { m_auditCheckConfigurationsHasBeenSet = true; m_auditCheckConfigurations = std::forward<AuditCheckConfigurationsT>(value); }
+    template<typename AuditCheckConfigurationsT = Aws::Map<Aws::String, AuditCheckConfiguration>>
+    DescribeAccountAuditConfigurationResult& WithAuditCheckConfigurations(AuditCheckConfigurationsT&& value) { SetAuditCheckConfigurations(std::forward<AuditCheckConfigurationsT>(value)); return *this;}
+    template<typename AuditCheckConfigurationsKeyT = Aws::String, typename AuditCheckConfigurationsValueT = AuditCheckConfiguration>
+    DescribeAccountAuditConfigurationResult& AddAuditCheckConfigurations(AuditCheckConfigurationsKeyT&& key, AuditCheckConfigurationsValueT&& value) {
+      m_auditCheckConfigurationsHasBeenSet = true; m_auditCheckConfigurations.emplace(std::forward<AuditCheckConfigurationsKeyT>(key), std::forward<AuditCheckConfigurationsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAccountAuditConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAccountAuditConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAccountAuditConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAccountAuditConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Map<AuditNotificationType, AuditNotificationTarget> m_auditNotificationTargetConfigurations;
+    bool m_auditNotificationTargetConfigurationsHasBeenSet = false;
 
     Aws::Map<Aws::String, AuditCheckConfiguration> m_auditCheckConfigurations;
+    bool m_auditCheckConfigurationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

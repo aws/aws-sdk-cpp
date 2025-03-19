@@ -18,16 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-AmazonopensearchserviceBufferingHints::AmazonopensearchserviceBufferingHints() : 
-    m_intervalInSeconds(0),
-    m_intervalInSecondsHasBeenSet(false),
-    m_sizeInMBs(0),
-    m_sizeInMBsHasBeenSet(false)
-{
-}
-
 AmazonopensearchserviceBufferingHints::AmazonopensearchserviceBufferingHints(JsonView jsonValue)
-  : AmazonopensearchserviceBufferingHints()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AmazonopensearchserviceBufferingHints& AmazonopensearchserviceBufferingHints::op
   if(jsonValue.ValueExists("IntervalInSeconds"))
   {
     m_intervalInSeconds = jsonValue.GetInteger("IntervalInSeconds");
-
     m_intervalInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SizeInMBs"))
   {
     m_sizeInMBs = jsonValue.GetInteger("SizeInMBs");
-
     m_sizeInMBsHasBeenSet = true;
   }
-
   return *this;
 }
 

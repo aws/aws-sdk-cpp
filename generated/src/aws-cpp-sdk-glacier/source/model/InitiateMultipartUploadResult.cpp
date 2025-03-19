@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-InitiateMultipartUploadResult::InitiateMultipartUploadResult()
-{
-}
-
 InitiateMultipartUploadResult::InitiateMultipartUploadResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -35,18 +31,21 @@ InitiateMultipartUploadResult& InitiateMultipartUploadResult::operator =(const A
   if(locationIter != headers.end())
   {
     m_location = locationIter->second;
+    m_locationHasBeenSet = true;
   }
 
   const auto& uploadIdIter = headers.find("x-amz-multipart-upload-id");
   if(uploadIdIter != headers.end())
   {
     m_uploadId = uploadIdIter->second;
+    m_uploadIdHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

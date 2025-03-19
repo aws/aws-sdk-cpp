@@ -18,22 +18,7 @@ namespace ServiceDiscovery
 namespace Model
 {
 
-NamespaceSummary::NamespaceSummary() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(NamespaceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_serviceCount(0),
-    m_serviceCountHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_createDateHasBeenSet(false)
-{
-}
-
 NamespaceSummary::NamespaceSummary(JsonView jsonValue)
-  : NamespaceSummary()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ NamespaceSummary& NamespaceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = NamespaceTypeMapper::GetNamespaceTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceCount"))
   {
     m_serviceCount = jsonValue.GetInteger("ServiceCount");
-
     m_serviceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Properties"))
   {
     m_properties = jsonValue.GetObject("Properties");
-
     m_propertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateDate"))
   {
     m_createDate = jsonValue.GetDouble("CreateDate");
-
     m_createDateHasBeenSet = true;
   }
-
   return *this;
 }
 

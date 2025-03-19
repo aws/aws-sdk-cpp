@@ -20,16 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-AcceleratorCountRequest::AcceleratorCountRequest() : 
-    m_min(0),
-    m_minHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false)
-{
-}
-
 AcceleratorCountRequest::AcceleratorCountRequest(const XmlNode& xmlNode)
-  : AcceleratorCountRequest()
 {
   *this = xmlNode;
 }

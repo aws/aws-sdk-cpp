@@ -28,7 +28,7 @@ namespace Model
   class DescribeRoutingProfileResult
   {
   public:
-    AWS_CONNECT_API DescribeRoutingProfileResult();
+    AWS_CONNECT_API DescribeRoutingProfileResult() = default;
     AWS_CONNECT_API DescribeRoutingProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API DescribeRoutingProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The routing profile.</p>
      */
-    inline const RoutingProfile& GetRoutingProfile() const{ return m_routingProfile; }
-    inline void SetRoutingProfile(const RoutingProfile& value) { m_routingProfile = value; }
-    inline void SetRoutingProfile(RoutingProfile&& value) { m_routingProfile = std::move(value); }
-    inline DescribeRoutingProfileResult& WithRoutingProfile(const RoutingProfile& value) { SetRoutingProfile(value); return *this;}
-    inline DescribeRoutingProfileResult& WithRoutingProfile(RoutingProfile&& value) { SetRoutingProfile(std::move(value)); return *this;}
+    inline const RoutingProfile& GetRoutingProfile() const { return m_routingProfile; }
+    template<typename RoutingProfileT = RoutingProfile>
+    void SetRoutingProfile(RoutingProfileT&& value) { m_routingProfileHasBeenSet = true; m_routingProfile = std::forward<RoutingProfileT>(value); }
+    template<typename RoutingProfileT = RoutingProfile>
+    DescribeRoutingProfileResult& WithRoutingProfile(RoutingProfileT&& value) { SetRoutingProfile(std::forward<RoutingProfileT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeRoutingProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeRoutingProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeRoutingProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeRoutingProfileResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RoutingProfile m_routingProfile;
+    bool m_routingProfileHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

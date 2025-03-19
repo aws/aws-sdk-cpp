@@ -12,24 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListInsightsMetricDataRequest::ListInsightsMetricDataRequest() : 
-    m_eventSourceHasBeenSet(false),
-    m_eventNameHasBeenSet(false),
-    m_insightType(InsightType::NOT_SET),
-    m_insightTypeHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_period(0),
-    m_periodHasBeenSet(false),
-    m_dataType(InsightsMetricDataType::NOT_SET),
-    m_dataTypeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListInsightsMetricDataRequest::SerializePayload() const
 {
   JsonValue payload;

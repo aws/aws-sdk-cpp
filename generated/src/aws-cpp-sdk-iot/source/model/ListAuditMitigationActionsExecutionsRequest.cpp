@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAuditMitigationActionsExecutionsRequest::ListAuditMitigationActionsExecutionsRequest() : 
-    m_taskIdHasBeenSet(false),
-    m_actionStatus(AuditMitigationActionsExecutionStatus::NOT_SET),
-    m_actionStatusHasBeenSet(false),
-    m_findingIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListAuditMitigationActionsExecutionsRequest::SerializePayload() const
 {
   return {};

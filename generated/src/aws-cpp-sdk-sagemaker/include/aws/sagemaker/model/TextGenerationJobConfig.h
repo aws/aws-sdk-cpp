@@ -39,7 +39,7 @@ namespace Model
   class TextGenerationJobConfig
   {
   public:
-    AWS_SAGEMAKER_API TextGenerationJobConfig();
+    AWS_SAGEMAKER_API TextGenerationJobConfig() = default;
     AWS_SAGEMAKER_API TextGenerationJobConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API TextGenerationJobConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,12 +52,12 @@ namespace Model
      * <code>MaxRuntimePerTrainingJobInSeconds</code> attribute of
      * <code>AutoMLJobCompletionCriteria</code> defaults to 72h (259200s).</p>
      */
-    inline const AutoMLJobCompletionCriteria& GetCompletionCriteria() const{ return m_completionCriteria; }
+    inline const AutoMLJobCompletionCriteria& GetCompletionCriteria() const { return m_completionCriteria; }
     inline bool CompletionCriteriaHasBeenSet() const { return m_completionCriteriaHasBeenSet; }
-    inline void SetCompletionCriteria(const AutoMLJobCompletionCriteria& value) { m_completionCriteriaHasBeenSet = true; m_completionCriteria = value; }
-    inline void SetCompletionCriteria(AutoMLJobCompletionCriteria&& value) { m_completionCriteriaHasBeenSet = true; m_completionCriteria = std::move(value); }
-    inline TextGenerationJobConfig& WithCompletionCriteria(const AutoMLJobCompletionCriteria& value) { SetCompletionCriteria(value); return *this;}
-    inline TextGenerationJobConfig& WithCompletionCriteria(AutoMLJobCompletionCriteria&& value) { SetCompletionCriteria(std::move(value)); return *this;}
+    template<typename CompletionCriteriaT = AutoMLJobCompletionCriteria>
+    void SetCompletionCriteria(CompletionCriteriaT&& value) { m_completionCriteriaHasBeenSet = true; m_completionCriteria = std::forward<CompletionCriteriaT>(value); }
+    template<typename CompletionCriteriaT = AutoMLJobCompletionCriteria>
+    TextGenerationJobConfig& WithCompletionCriteria(CompletionCriteriaT&& value) { SetCompletionCriteria(std::forward<CompletionCriteriaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +70,12 @@ namespace Model
      * <code>BaseModelName</code> is provided, the default model used is
      * <b>Falcon7BInstruct</b>. </p>
      */
-    inline const Aws::String& GetBaseModelName() const{ return m_baseModelName; }
+    inline const Aws::String& GetBaseModelName() const { return m_baseModelName; }
     inline bool BaseModelNameHasBeenSet() const { return m_baseModelNameHasBeenSet; }
-    inline void SetBaseModelName(const Aws::String& value) { m_baseModelNameHasBeenSet = true; m_baseModelName = value; }
-    inline void SetBaseModelName(Aws::String&& value) { m_baseModelNameHasBeenSet = true; m_baseModelName = std::move(value); }
-    inline void SetBaseModelName(const char* value) { m_baseModelNameHasBeenSet = true; m_baseModelName.assign(value); }
-    inline TextGenerationJobConfig& WithBaseModelName(const Aws::String& value) { SetBaseModelName(value); return *this;}
-    inline TextGenerationJobConfig& WithBaseModelName(Aws::String&& value) { SetBaseModelName(std::move(value)); return *this;}
-    inline TextGenerationJobConfig& WithBaseModelName(const char* value) { SetBaseModelName(value); return *this;}
+    template<typename BaseModelNameT = Aws::String>
+    void SetBaseModelName(BaseModelNameT&& value) { m_baseModelNameHasBeenSet = true; m_baseModelName = std::forward<BaseModelNameT>(value); }
+    template<typename BaseModelNameT = Aws::String>
+    TextGenerationJobConfig& WithBaseModelName(BaseModelNameT&& value) { SetBaseModelName(std::forward<BaseModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,29 +101,26 @@ namespace Model
      * <code>{ "epochCount":"5", "learningRate":"0.5", "batchSize": "32",
      * "learningRateWarmupSteps": "10" }</code> </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTextGenerationHyperParameters() const{ return m_textGenerationHyperParameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTextGenerationHyperParameters() const { return m_textGenerationHyperParameters; }
     inline bool TextGenerationHyperParametersHasBeenSet() const { return m_textGenerationHyperParametersHasBeenSet; }
-    inline void SetTextGenerationHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_textGenerationHyperParametersHasBeenSet = true; m_textGenerationHyperParameters = value; }
-    inline void SetTextGenerationHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_textGenerationHyperParametersHasBeenSet = true; m_textGenerationHyperParameters = std::move(value); }
-    inline TextGenerationJobConfig& WithTextGenerationHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetTextGenerationHyperParameters(value); return *this;}
-    inline TextGenerationJobConfig& WithTextGenerationHyperParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetTextGenerationHyperParameters(std::move(value)); return *this;}
-    inline TextGenerationJobConfig& AddTextGenerationHyperParameters(const Aws::String& key, const Aws::String& value) { m_textGenerationHyperParametersHasBeenSet = true; m_textGenerationHyperParameters.emplace(key, value); return *this; }
-    inline TextGenerationJobConfig& AddTextGenerationHyperParameters(Aws::String&& key, const Aws::String& value) { m_textGenerationHyperParametersHasBeenSet = true; m_textGenerationHyperParameters.emplace(std::move(key), value); return *this; }
-    inline TextGenerationJobConfig& AddTextGenerationHyperParameters(const Aws::String& key, Aws::String&& value) { m_textGenerationHyperParametersHasBeenSet = true; m_textGenerationHyperParameters.emplace(key, std::move(value)); return *this; }
-    inline TextGenerationJobConfig& AddTextGenerationHyperParameters(Aws::String&& key, Aws::String&& value) { m_textGenerationHyperParametersHasBeenSet = true; m_textGenerationHyperParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline TextGenerationJobConfig& AddTextGenerationHyperParameters(const char* key, Aws::String&& value) { m_textGenerationHyperParametersHasBeenSet = true; m_textGenerationHyperParameters.emplace(key, std::move(value)); return *this; }
-    inline TextGenerationJobConfig& AddTextGenerationHyperParameters(Aws::String&& key, const char* value) { m_textGenerationHyperParametersHasBeenSet = true; m_textGenerationHyperParameters.emplace(std::move(key), value); return *this; }
-    inline TextGenerationJobConfig& AddTextGenerationHyperParameters(const char* key, const char* value) { m_textGenerationHyperParametersHasBeenSet = true; m_textGenerationHyperParameters.emplace(key, value); return *this; }
+    template<typename TextGenerationHyperParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetTextGenerationHyperParameters(TextGenerationHyperParametersT&& value) { m_textGenerationHyperParametersHasBeenSet = true; m_textGenerationHyperParameters = std::forward<TextGenerationHyperParametersT>(value); }
+    template<typename TextGenerationHyperParametersT = Aws::Map<Aws::String, Aws::String>>
+    TextGenerationJobConfig& WithTextGenerationHyperParameters(TextGenerationHyperParametersT&& value) { SetTextGenerationHyperParameters(std::forward<TextGenerationHyperParametersT>(value)); return *this;}
+    template<typename TextGenerationHyperParametersKeyT = Aws::String, typename TextGenerationHyperParametersValueT = Aws::String>
+    TextGenerationJobConfig& AddTextGenerationHyperParameters(TextGenerationHyperParametersKeyT&& key, TextGenerationHyperParametersValueT&& value) {
+      m_textGenerationHyperParametersHasBeenSet = true; m_textGenerationHyperParameters.emplace(std::forward<TextGenerationHyperParametersKeyT>(key), std::forward<TextGenerationHyperParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const ModelAccessConfig& GetModelAccessConfig() const{ return m_modelAccessConfig; }
+    inline const ModelAccessConfig& GetModelAccessConfig() const { return m_modelAccessConfig; }
     inline bool ModelAccessConfigHasBeenSet() const { return m_modelAccessConfigHasBeenSet; }
-    inline void SetModelAccessConfig(const ModelAccessConfig& value) { m_modelAccessConfigHasBeenSet = true; m_modelAccessConfig = value; }
-    inline void SetModelAccessConfig(ModelAccessConfig&& value) { m_modelAccessConfigHasBeenSet = true; m_modelAccessConfig = std::move(value); }
-    inline TextGenerationJobConfig& WithModelAccessConfig(const ModelAccessConfig& value) { SetModelAccessConfig(value); return *this;}
-    inline TextGenerationJobConfig& WithModelAccessConfig(ModelAccessConfig&& value) { SetModelAccessConfig(std::move(value)); return *this;}
+    template<typename ModelAccessConfigT = ModelAccessConfig>
+    void SetModelAccessConfig(ModelAccessConfigT&& value) { m_modelAccessConfigHasBeenSet = true; m_modelAccessConfig = std::forward<ModelAccessConfigT>(value); }
+    template<typename ModelAccessConfigT = ModelAccessConfig>
+    TextGenerationJobConfig& WithModelAccessConfig(ModelAccessConfigT&& value) { SetModelAccessConfig(std::forward<ModelAccessConfigT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-JobEngineVersion::JobEngineVersion() : 
-    m_expirationDateHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 JobEngineVersion::JobEngineVersion(JsonView jsonValue)
-  : JobEngineVersion()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ JobEngineVersion& JobEngineVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("expirationDate"))
   {
     m_expirationDate = jsonValue.GetDouble("expirationDate");
-
     m_expirationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

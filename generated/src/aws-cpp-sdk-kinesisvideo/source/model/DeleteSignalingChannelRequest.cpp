@@ -12,12 +12,6 @@ using namespace Aws::KinesisVideo::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSignalingChannelRequest::DeleteSignalingChannelRequest() : 
-    m_channelARNHasBeenSet(false),
-    m_currentVersionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSignalingChannelRequest::SerializePayload() const
 {
   JsonValue payload;

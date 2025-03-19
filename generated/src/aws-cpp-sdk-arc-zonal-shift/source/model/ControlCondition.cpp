@@ -18,15 +18,7 @@ namespace ARCZonalShift
 namespace Model
 {
 
-ControlCondition::ControlCondition() : 
-    m_alarmIdentifierHasBeenSet(false),
-    m_type(ControlConditionType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 ControlCondition::ControlCondition(JsonView jsonValue)
-  : ControlCondition()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ControlCondition& ControlCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("alarmIdentifier"))
   {
     m_alarmIdentifier = jsonValue.GetString("alarmIdentifier");
-
     m_alarmIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = ControlConditionTypeMapper::GetControlConditionTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

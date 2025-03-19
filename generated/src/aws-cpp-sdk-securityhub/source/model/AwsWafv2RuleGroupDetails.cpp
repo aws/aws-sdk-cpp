@@ -18,21 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsWafv2RuleGroupDetails::AwsWafv2RuleGroupDetails() : 
-    m_capacity(0),
-    m_capacityHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_scopeHasBeenSet(false),
-    m_visibilityConfigHasBeenSet(false)
-{
-}
-
 AwsWafv2RuleGroupDetails::AwsWafv2RuleGroupDetails(JsonView jsonValue)
-  : AwsWafv2RuleGroupDetails()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ AwsWafv2RuleGroupDetails& AwsWafv2RuleGroupDetails::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Capacity"))
   {
     m_capacity = jsonValue.GetInt64("Capacity");
-
     m_capacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rules"))
   {
     Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
@@ -83,21 +59,16 @@ AwsWafv2RuleGroupDetails& AwsWafv2RuleGroupDetails::operator =(JsonView jsonValu
     }
     m_rulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Scope"))
   {
     m_scope = jsonValue.GetString("Scope");
-
     m_scopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisibilityConfig"))
   {
     m_visibilityConfig = jsonValue.GetObject("VisibilityConfig");
-
     m_visibilityConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class GetIdentityDkimAttributesRequest : public SESRequest
   {
   public:
-    AWS_SES_API GetIdentityDkimAttributesRequest();
+    AWS_SES_API GetIdentityDkimAttributesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -51,15 +51,14 @@ namespace Model
      * <p>A list of one or more verified identities - email addresses, domains, or
      * both.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIdentities() const{ return m_identities; }
+    inline const Aws::Vector<Aws::String>& GetIdentities() const { return m_identities; }
     inline bool IdentitiesHasBeenSet() const { return m_identitiesHasBeenSet; }
-    inline void SetIdentities(const Aws::Vector<Aws::String>& value) { m_identitiesHasBeenSet = true; m_identities = value; }
-    inline void SetIdentities(Aws::Vector<Aws::String>&& value) { m_identitiesHasBeenSet = true; m_identities = std::move(value); }
-    inline GetIdentityDkimAttributesRequest& WithIdentities(const Aws::Vector<Aws::String>& value) { SetIdentities(value); return *this;}
-    inline GetIdentityDkimAttributesRequest& WithIdentities(Aws::Vector<Aws::String>&& value) { SetIdentities(std::move(value)); return *this;}
-    inline GetIdentityDkimAttributesRequest& AddIdentities(const Aws::String& value) { m_identitiesHasBeenSet = true; m_identities.push_back(value); return *this; }
-    inline GetIdentityDkimAttributesRequest& AddIdentities(Aws::String&& value) { m_identitiesHasBeenSet = true; m_identities.push_back(std::move(value)); return *this; }
-    inline GetIdentityDkimAttributesRequest& AddIdentities(const char* value) { m_identitiesHasBeenSet = true; m_identities.push_back(value); return *this; }
+    template<typename IdentitiesT = Aws::Vector<Aws::String>>
+    void SetIdentities(IdentitiesT&& value) { m_identitiesHasBeenSet = true; m_identities = std::forward<IdentitiesT>(value); }
+    template<typename IdentitiesT = Aws::Vector<Aws::String>>
+    GetIdentityDkimAttributesRequest& WithIdentities(IdentitiesT&& value) { SetIdentities(std::forward<IdentitiesT>(value)); return *this;}
+    template<typename IdentitiesT = Aws::String>
+    GetIdentityDkimAttributesRequest& AddIdentities(IdentitiesT&& value) { m_identitiesHasBeenSet = true; m_identities.emplace_back(std::forward<IdentitiesT>(value)); return *this; }
     ///@}
   private:
 

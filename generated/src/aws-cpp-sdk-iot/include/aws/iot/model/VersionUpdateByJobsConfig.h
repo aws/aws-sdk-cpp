@@ -35,7 +35,7 @@ namespace Model
   class VersionUpdateByJobsConfig
   {
   public:
-    AWS_IOT_API VersionUpdateByJobsConfig();
+    AWS_IOT_API VersionUpdateByJobsConfig() = default;
     AWS_IOT_API VersionUpdateByJobsConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API VersionUpdateByJobsConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
     /**
      * <p>Indicates whether the Job is enabled or not.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline VersionUpdateByJobsConfig& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -57,18 +57,16 @@ namespace Model
      * jobs service to update the reserved named shadow when the job successfully
      * completes.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline VersionUpdateByJobsConfig& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline VersionUpdateByJobsConfig& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline VersionUpdateByJobsConfig& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    VersionUpdateByJobsConfig& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::String m_roleArn;

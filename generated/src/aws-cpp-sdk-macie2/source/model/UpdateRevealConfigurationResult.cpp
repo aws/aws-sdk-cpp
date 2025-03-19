@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateRevealConfigurationResult::UpdateRevealConfigurationResult()
-{
-}
-
 UpdateRevealConfigurationResult::UpdateRevealConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ UpdateRevealConfigurationResult& UpdateRevealConfigurationResult::operator =(con
   if(jsonValue.ValueExists("configuration"))
   {
     m_configuration = jsonValue.GetObject("configuration");
-
+    m_configurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retrievalConfiguration"))
   {
     m_retrievalConfiguration = jsonValue.GetObject("retrievalConfiguration");
-
+    m_retrievalConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

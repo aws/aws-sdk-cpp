@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AcceptReservedInstancesExchangeQuoteResponse::AcceptReservedInstancesExchangeQuoteResponse()
-{
-}
-
 AcceptReservedInstancesExchangeQuoteResponse::AcceptReservedInstancesExchangeQuoteResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ AcceptReservedInstancesExchangeQuoteResponse& AcceptReservedInstancesExchangeQuo
     if(!exchangeIdNode.IsNull())
     {
       m_exchangeId = Aws::Utils::Xml::DecodeEscapedXmlText(exchangeIdNode.GetText());
+      m_exchangeIdHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ AcceptReservedInstancesExchangeQuoteResponse& AcceptReservedInstancesExchangeQuo
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AcceptReservedInstancesExchangeQuoteResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-LocalNavigationConfiguration::LocalNavigationConfiguration() : 
-    m_targetSheetIdHasBeenSet(false)
-{
-}
-
 LocalNavigationConfiguration::LocalNavigationConfiguration(JsonView jsonValue)
-  : LocalNavigationConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LocalNavigationConfiguration& LocalNavigationConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("TargetSheetId"))
   {
     m_targetSheetId = jsonValue.GetString("TargetSheetId");
-
     m_targetSheetIdHasBeenSet = true;
   }
-
   return *this;
 }
 

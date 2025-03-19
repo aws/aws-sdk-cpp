@@ -34,7 +34,7 @@ namespace Model
   class CompareDatabaseCDCStepInput
   {
   public:
-    AWS_APPTEST_API CompareDatabaseCDCStepInput();
+    AWS_APPTEST_API CompareDatabaseCDCStepInput() = default;
     AWS_APPTEST_API CompareDatabaseCDCStepInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API CompareDatabaseCDCStepInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,66 +44,60 @@ namespace Model
     /**
      * <p>The source location of the compare database CDC step input.</p>
      */
-    inline const Aws::String& GetSourceLocation() const{ return m_sourceLocation; }
+    inline const Aws::String& GetSourceLocation() const { return m_sourceLocation; }
     inline bool SourceLocationHasBeenSet() const { return m_sourceLocationHasBeenSet; }
-    inline void SetSourceLocation(const Aws::String& value) { m_sourceLocationHasBeenSet = true; m_sourceLocation = value; }
-    inline void SetSourceLocation(Aws::String&& value) { m_sourceLocationHasBeenSet = true; m_sourceLocation = std::move(value); }
-    inline void SetSourceLocation(const char* value) { m_sourceLocationHasBeenSet = true; m_sourceLocation.assign(value); }
-    inline CompareDatabaseCDCStepInput& WithSourceLocation(const Aws::String& value) { SetSourceLocation(value); return *this;}
-    inline CompareDatabaseCDCStepInput& WithSourceLocation(Aws::String&& value) { SetSourceLocation(std::move(value)); return *this;}
-    inline CompareDatabaseCDCStepInput& WithSourceLocation(const char* value) { SetSourceLocation(value); return *this;}
+    template<typename SourceLocationT = Aws::String>
+    void SetSourceLocation(SourceLocationT&& value) { m_sourceLocationHasBeenSet = true; m_sourceLocation = std::forward<SourceLocationT>(value); }
+    template<typename SourceLocationT = Aws::String>
+    CompareDatabaseCDCStepInput& WithSourceLocation(SourceLocationT&& value) { SetSourceLocation(std::forward<SourceLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target location of the compare database CDC step input.</p>
      */
-    inline const Aws::String& GetTargetLocation() const{ return m_targetLocation; }
+    inline const Aws::String& GetTargetLocation() const { return m_targetLocation; }
     inline bool TargetLocationHasBeenSet() const { return m_targetLocationHasBeenSet; }
-    inline void SetTargetLocation(const Aws::String& value) { m_targetLocationHasBeenSet = true; m_targetLocation = value; }
-    inline void SetTargetLocation(Aws::String&& value) { m_targetLocationHasBeenSet = true; m_targetLocation = std::move(value); }
-    inline void SetTargetLocation(const char* value) { m_targetLocationHasBeenSet = true; m_targetLocation.assign(value); }
-    inline CompareDatabaseCDCStepInput& WithTargetLocation(const Aws::String& value) { SetTargetLocation(value); return *this;}
-    inline CompareDatabaseCDCStepInput& WithTargetLocation(Aws::String&& value) { SetTargetLocation(std::move(value)); return *this;}
-    inline CompareDatabaseCDCStepInput& WithTargetLocation(const char* value) { SetTargetLocation(value); return *this;}
+    template<typename TargetLocationT = Aws::String>
+    void SetTargetLocation(TargetLocationT&& value) { m_targetLocationHasBeenSet = true; m_targetLocation = std::forward<TargetLocationT>(value); }
+    template<typename TargetLocationT = Aws::String>
+    CompareDatabaseCDCStepInput& WithTargetLocation(TargetLocationT&& value) { SetTargetLocation(std::forward<TargetLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The output location of the compare database CDC step input.</p>
      */
-    inline const Aws::String& GetOutputLocation() const{ return m_outputLocation; }
+    inline const Aws::String& GetOutputLocation() const { return m_outputLocation; }
     inline bool OutputLocationHasBeenSet() const { return m_outputLocationHasBeenSet; }
-    inline void SetOutputLocation(const Aws::String& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
-    inline void SetOutputLocation(Aws::String&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::move(value); }
-    inline void SetOutputLocation(const char* value) { m_outputLocationHasBeenSet = true; m_outputLocation.assign(value); }
-    inline CompareDatabaseCDCStepInput& WithOutputLocation(const Aws::String& value) { SetOutputLocation(value); return *this;}
-    inline CompareDatabaseCDCStepInput& WithOutputLocation(Aws::String&& value) { SetOutputLocation(std::move(value)); return *this;}
-    inline CompareDatabaseCDCStepInput& WithOutputLocation(const char* value) { SetOutputLocation(value); return *this;}
+    template<typename OutputLocationT = Aws::String>
+    void SetOutputLocation(OutputLocationT&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::forward<OutputLocationT>(value); }
+    template<typename OutputLocationT = Aws::String>
+    CompareDatabaseCDCStepInput& WithOutputLocation(OutputLocationT&& value) { SetOutputLocation(std::forward<OutputLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source metadata of the compare database CDC step input.</p>
      */
-    inline const SourceDatabaseMetadata& GetSourceMetadata() const{ return m_sourceMetadata; }
+    inline const SourceDatabaseMetadata& GetSourceMetadata() const { return m_sourceMetadata; }
     inline bool SourceMetadataHasBeenSet() const { return m_sourceMetadataHasBeenSet; }
-    inline void SetSourceMetadata(const SourceDatabaseMetadata& value) { m_sourceMetadataHasBeenSet = true; m_sourceMetadata = value; }
-    inline void SetSourceMetadata(SourceDatabaseMetadata&& value) { m_sourceMetadataHasBeenSet = true; m_sourceMetadata = std::move(value); }
-    inline CompareDatabaseCDCStepInput& WithSourceMetadata(const SourceDatabaseMetadata& value) { SetSourceMetadata(value); return *this;}
-    inline CompareDatabaseCDCStepInput& WithSourceMetadata(SourceDatabaseMetadata&& value) { SetSourceMetadata(std::move(value)); return *this;}
+    template<typename SourceMetadataT = SourceDatabaseMetadata>
+    void SetSourceMetadata(SourceMetadataT&& value) { m_sourceMetadataHasBeenSet = true; m_sourceMetadata = std::forward<SourceMetadataT>(value); }
+    template<typename SourceMetadataT = SourceDatabaseMetadata>
+    CompareDatabaseCDCStepInput& WithSourceMetadata(SourceMetadataT&& value) { SetSourceMetadata(std::forward<SourceMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target metadata location of the compare database CDC step input.</p>
      */
-    inline const TargetDatabaseMetadata& GetTargetMetadata() const{ return m_targetMetadata; }
+    inline const TargetDatabaseMetadata& GetTargetMetadata() const { return m_targetMetadata; }
     inline bool TargetMetadataHasBeenSet() const { return m_targetMetadataHasBeenSet; }
-    inline void SetTargetMetadata(const TargetDatabaseMetadata& value) { m_targetMetadataHasBeenSet = true; m_targetMetadata = value; }
-    inline void SetTargetMetadata(TargetDatabaseMetadata&& value) { m_targetMetadataHasBeenSet = true; m_targetMetadata = std::move(value); }
-    inline CompareDatabaseCDCStepInput& WithTargetMetadata(const TargetDatabaseMetadata& value) { SetTargetMetadata(value); return *this;}
-    inline CompareDatabaseCDCStepInput& WithTargetMetadata(TargetDatabaseMetadata&& value) { SetTargetMetadata(std::move(value)); return *this;}
+    template<typename TargetMetadataT = TargetDatabaseMetadata>
+    void SetTargetMetadata(TargetMetadataT&& value) { m_targetMetadataHasBeenSet = true; m_targetMetadata = std::forward<TargetMetadataT>(value); }
+    template<typename TargetMetadataT = TargetDatabaseMetadata>
+    CompareDatabaseCDCStepInput& WithTargetMetadata(TargetMetadataT&& value) { SetTargetMetadata(std::forward<TargetMetadataT>(value)); return *this;}
     ///@}
   private:
 

@@ -30,7 +30,7 @@ namespace Model
   class BatchUpdateVehicleResult
   {
   public:
-    AWS_IOTFLEETWISE_API BatchUpdateVehicleResult();
+    AWS_IOTFLEETWISE_API BatchUpdateVehicleResult() = default;
     AWS_IOTFLEETWISE_API BatchUpdateVehicleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTFLEETWISE_API BatchUpdateVehicleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,13 +41,13 @@ namespace Model
      * <p>This list contains only unique IDs for the vehicles that were updated.</p>
      * 
      */
-    inline const Aws::Vector<UpdateVehicleResponseItem>& GetVehicles() const{ return m_vehicles; }
-    inline void SetVehicles(const Aws::Vector<UpdateVehicleResponseItem>& value) { m_vehicles = value; }
-    inline void SetVehicles(Aws::Vector<UpdateVehicleResponseItem>&& value) { m_vehicles = std::move(value); }
-    inline BatchUpdateVehicleResult& WithVehicles(const Aws::Vector<UpdateVehicleResponseItem>& value) { SetVehicles(value); return *this;}
-    inline BatchUpdateVehicleResult& WithVehicles(Aws::Vector<UpdateVehicleResponseItem>&& value) { SetVehicles(std::move(value)); return *this;}
-    inline BatchUpdateVehicleResult& AddVehicles(const UpdateVehicleResponseItem& value) { m_vehicles.push_back(value); return *this; }
-    inline BatchUpdateVehicleResult& AddVehicles(UpdateVehicleResponseItem&& value) { m_vehicles.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<UpdateVehicleResponseItem>& GetVehicles() const { return m_vehicles; }
+    template<typename VehiclesT = Aws::Vector<UpdateVehicleResponseItem>>
+    void SetVehicles(VehiclesT&& value) { m_vehiclesHasBeenSet = true; m_vehicles = std::forward<VehiclesT>(value); }
+    template<typename VehiclesT = Aws::Vector<UpdateVehicleResponseItem>>
+    BatchUpdateVehicleResult& WithVehicles(VehiclesT&& value) { SetVehicles(std::forward<VehiclesT>(value)); return *this;}
+    template<typename VehiclesT = UpdateVehicleResponseItem>
+    BatchUpdateVehicleResult& AddVehicles(VehiclesT&& value) { m_vehiclesHasBeenSet = true; m_vehicles.emplace_back(std::forward<VehiclesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,33 @@ namespace Model
      * <p>A list of information about errors returned while updating a batch of
      * vehicles, or, if there aren't any errors, an empty list.</p>
      */
-    inline const Aws::Vector<UpdateVehicleError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<UpdateVehicleError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<UpdateVehicleError>&& value) { m_errors = std::move(value); }
-    inline BatchUpdateVehicleResult& WithErrors(const Aws::Vector<UpdateVehicleError>& value) { SetErrors(value); return *this;}
-    inline BatchUpdateVehicleResult& WithErrors(Aws::Vector<UpdateVehicleError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchUpdateVehicleResult& AddErrors(const UpdateVehicleError& value) { m_errors.push_back(value); return *this; }
-    inline BatchUpdateVehicleResult& AddErrors(UpdateVehicleError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<UpdateVehicleError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<UpdateVehicleError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<UpdateVehicleError>>
+    BatchUpdateVehicleResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = UpdateVehicleError>
+    BatchUpdateVehicleResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchUpdateVehicleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchUpdateVehicleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchUpdateVehicleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchUpdateVehicleResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<UpdateVehicleResponseItem> m_vehicles;
+    bool m_vehiclesHasBeenSet = false;
 
     Aws::Vector<UpdateVehicleError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

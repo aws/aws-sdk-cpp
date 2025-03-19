@@ -32,7 +32,7 @@ namespace Model
   class EstoniaAdditionalInfo
   {
   public:
-    AWS_TAXSETTINGS_API EstoniaAdditionalInfo();
+    AWS_TAXSETTINGS_API EstoniaAdditionalInfo() = default;
     AWS_TAXSETTINGS_API EstoniaAdditionalInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API EstoniaAdditionalInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p> Registry commercial code (RCC) for your TRN in Estonia. This value is an
      * eight-numeric string, such as <code>12345678</code>.</p>
      */
-    inline const Aws::String& GetRegistryCommercialCode() const{ return m_registryCommercialCode; }
+    inline const Aws::String& GetRegistryCommercialCode() const { return m_registryCommercialCode; }
     inline bool RegistryCommercialCodeHasBeenSet() const { return m_registryCommercialCodeHasBeenSet; }
-    inline void SetRegistryCommercialCode(const Aws::String& value) { m_registryCommercialCodeHasBeenSet = true; m_registryCommercialCode = value; }
-    inline void SetRegistryCommercialCode(Aws::String&& value) { m_registryCommercialCodeHasBeenSet = true; m_registryCommercialCode = std::move(value); }
-    inline void SetRegistryCommercialCode(const char* value) { m_registryCommercialCodeHasBeenSet = true; m_registryCommercialCode.assign(value); }
-    inline EstoniaAdditionalInfo& WithRegistryCommercialCode(const Aws::String& value) { SetRegistryCommercialCode(value); return *this;}
-    inline EstoniaAdditionalInfo& WithRegistryCommercialCode(Aws::String&& value) { SetRegistryCommercialCode(std::move(value)); return *this;}
-    inline EstoniaAdditionalInfo& WithRegistryCommercialCode(const char* value) { SetRegistryCommercialCode(value); return *this;}
+    template<typename RegistryCommercialCodeT = Aws::String>
+    void SetRegistryCommercialCode(RegistryCommercialCodeT&& value) { m_registryCommercialCodeHasBeenSet = true; m_registryCommercialCode = std::forward<RegistryCommercialCodeT>(value); }
+    template<typename RegistryCommercialCodeT = Aws::String>
+    EstoniaAdditionalInfo& WithRegistryCommercialCode(RegistryCommercialCodeT&& value) { SetRegistryCommercialCode(std::forward<RegistryCommercialCodeT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,20 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-TypeConfigurationDetails::TypeConfigurationDetails() : 
-    m_arnHasBeenSet(false),
-    m_aliasHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_typeArnHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_isDefaultConfiguration(false),
-    m_isDefaultConfigurationHasBeenSet(false)
-{
-}
-
 TypeConfigurationDetails::TypeConfigurationDetails(const XmlNode& xmlNode)
-  : TypeConfigurationDetails()
 {
   *this = xmlNode;
 }

@@ -23,7 +23,7 @@ namespace Model
   class PutAccountSendingAttributesRequest : public PinpointEmailRequest
   {
   public:
-    AWS_PINPOINTEMAIL_API PutAccountSendingAttributesRequest();
+    AWS_PINPOINTEMAIL_API PutAccountSendingAttributesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,14 @@ namespace Model
      * send email, you can't use this operation to resume your account's ability to
      * send email.</p> 
      */
-    inline bool GetSendingEnabled() const{ return m_sendingEnabled; }
+    inline bool GetSendingEnabled() const { return m_sendingEnabled; }
     inline bool SendingEnabledHasBeenSet() const { return m_sendingEnabledHasBeenSet; }
     inline void SetSendingEnabled(bool value) { m_sendingEnabledHasBeenSet = true; m_sendingEnabled = value; }
     inline PutAccountSendingAttributesRequest& WithSendingEnabled(bool value) { SetSendingEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_sendingEnabled;
+    bool m_sendingEnabled{false};
     bool m_sendingEnabledHasBeenSet = false;
   };
 

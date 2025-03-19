@@ -33,7 +33,7 @@ namespace Model
   class UploadConfiguration
   {
   public:
-    AWS_ROBOMAKER_API UploadConfiguration();
+    AWS_ROBOMAKER_API UploadConfiguration() = default;
     AWS_ROBOMAKER_API UploadConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API UploadConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * <code>s3://amzn-s3-demo-bucket/&lt;simid&gt;/&lt;runid&gt;/robot-test</code>.
      * </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UploadConfiguration& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UploadConfiguration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UploadConfiguration& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UploadConfiguration& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,12 @@ namespace Model
      * .log files in the <code>/var/log</code> directory tree to be collected. For more
      * examples, see <a href="https://github.com/gobwas/glob">Glob Library</a>. </p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline UploadConfiguration& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline UploadConfiguration& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline UploadConfiguration& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    UploadConfiguration& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +85,10 @@ namespace Model
      * are uploaded. The specified path is checked every 5 seconds. A final check is
      * made when all of your code (including tools) have stopped. </p> </dd> </dl>
      */
-    inline const UploadBehavior& GetUploadBehavior() const{ return m_uploadBehavior; }
+    inline UploadBehavior GetUploadBehavior() const { return m_uploadBehavior; }
     inline bool UploadBehaviorHasBeenSet() const { return m_uploadBehaviorHasBeenSet; }
-    inline void SetUploadBehavior(const UploadBehavior& value) { m_uploadBehaviorHasBeenSet = true; m_uploadBehavior = value; }
-    inline void SetUploadBehavior(UploadBehavior&& value) { m_uploadBehaviorHasBeenSet = true; m_uploadBehavior = std::move(value); }
-    inline UploadConfiguration& WithUploadBehavior(const UploadBehavior& value) { SetUploadBehavior(value); return *this;}
-    inline UploadConfiguration& WithUploadBehavior(UploadBehavior&& value) { SetUploadBehavior(std::move(value)); return *this;}
+    inline void SetUploadBehavior(UploadBehavior value) { m_uploadBehaviorHasBeenSet = true; m_uploadBehavior = value; }
+    inline UploadConfiguration& WithUploadBehavior(UploadBehavior value) { SetUploadBehavior(value); return *this;}
     ///@}
   private:
 
@@ -104,7 +98,7 @@ namespace Model
     Aws::String m_path;
     bool m_pathHasBeenSet = false;
 
-    UploadBehavior m_uploadBehavior;
+    UploadBehavior m_uploadBehavior{UploadBehavior::NOT_SET};
     bool m_uploadBehaviorHasBeenSet = false;
   };
 

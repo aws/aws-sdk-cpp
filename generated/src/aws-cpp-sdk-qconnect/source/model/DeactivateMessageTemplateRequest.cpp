@@ -12,14 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeactivateMessageTemplateRequest::DeactivateMessageTemplateRequest() : 
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_messageTemplateIdHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false)
-{
-}
-
 Aws::String DeactivateMessageTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

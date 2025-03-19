@@ -21,7 +21,7 @@ namespace Model
   class UpdateIdMappingTableRequest : public CleanRoomsRequest
   {
   public:
-    AWS_CLEANROOMS_API UpdateIdMappingTableRequest();
+    AWS_CLEANROOMS_API UpdateIdMappingTableRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The unique identifier of the ID mapping table that you want to update.</p>
      */
-    inline const Aws::String& GetIdMappingTableIdentifier() const{ return m_idMappingTableIdentifier; }
+    inline const Aws::String& GetIdMappingTableIdentifier() const { return m_idMappingTableIdentifier; }
     inline bool IdMappingTableIdentifierHasBeenSet() const { return m_idMappingTableIdentifierHasBeenSet; }
-    inline void SetIdMappingTableIdentifier(const Aws::String& value) { m_idMappingTableIdentifierHasBeenSet = true; m_idMappingTableIdentifier = value; }
-    inline void SetIdMappingTableIdentifier(Aws::String&& value) { m_idMappingTableIdentifierHasBeenSet = true; m_idMappingTableIdentifier = std::move(value); }
-    inline void SetIdMappingTableIdentifier(const char* value) { m_idMappingTableIdentifierHasBeenSet = true; m_idMappingTableIdentifier.assign(value); }
-    inline UpdateIdMappingTableRequest& WithIdMappingTableIdentifier(const Aws::String& value) { SetIdMappingTableIdentifier(value); return *this;}
-    inline UpdateIdMappingTableRequest& WithIdMappingTableIdentifier(Aws::String&& value) { SetIdMappingTableIdentifier(std::move(value)); return *this;}
-    inline UpdateIdMappingTableRequest& WithIdMappingTableIdentifier(const char* value) { SetIdMappingTableIdentifier(value); return *this;}
+    template<typename IdMappingTableIdentifierT = Aws::String>
+    void SetIdMappingTableIdentifier(IdMappingTableIdentifierT&& value) { m_idMappingTableIdentifierHasBeenSet = true; m_idMappingTableIdentifier = std::forward<IdMappingTableIdentifierT>(value); }
+    template<typename IdMappingTableIdentifierT = Aws::String>
+    UpdateIdMappingTableRequest& WithIdMappingTableIdentifier(IdMappingTableIdentifierT&& value) { SetIdMappingTableIdentifier(std::forward<IdMappingTableIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,42 +49,36 @@ namespace Model
      * <p>The unique identifier of the membership that contains the ID mapping table
      * that you want to update.</p>
      */
-    inline const Aws::String& GetMembershipIdentifier() const{ return m_membershipIdentifier; }
+    inline const Aws::String& GetMembershipIdentifier() const { return m_membershipIdentifier; }
     inline bool MembershipIdentifierHasBeenSet() const { return m_membershipIdentifierHasBeenSet; }
-    inline void SetMembershipIdentifier(const Aws::String& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = value; }
-    inline void SetMembershipIdentifier(Aws::String&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::move(value); }
-    inline void SetMembershipIdentifier(const char* value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier.assign(value); }
-    inline UpdateIdMappingTableRequest& WithMembershipIdentifier(const Aws::String& value) { SetMembershipIdentifier(value); return *this;}
-    inline UpdateIdMappingTableRequest& WithMembershipIdentifier(Aws::String&& value) { SetMembershipIdentifier(std::move(value)); return *this;}
-    inline UpdateIdMappingTableRequest& WithMembershipIdentifier(const char* value) { SetMembershipIdentifier(value); return *this;}
+    template<typename MembershipIdentifierT = Aws::String>
+    void SetMembershipIdentifier(MembershipIdentifierT&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::forward<MembershipIdentifierT>(value); }
+    template<typename MembershipIdentifierT = Aws::String>
+    UpdateIdMappingTableRequest& WithMembershipIdentifier(MembershipIdentifierT&& value) { SetMembershipIdentifier(std::forward<MembershipIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A new description for the ID mapping table.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateIdMappingTableRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateIdMappingTableRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateIdMappingTableRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateIdMappingTableRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Web Services KMS key.</p>
      */
-    inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+    inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
     inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
-    inline void SetKmsKeyArn(const Aws::String& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = value; }
-    inline void SetKmsKeyArn(Aws::String&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::move(value); }
-    inline void SetKmsKeyArn(const char* value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn.assign(value); }
-    inline UpdateIdMappingTableRequest& WithKmsKeyArn(const Aws::String& value) { SetKmsKeyArn(value); return *this;}
-    inline UpdateIdMappingTableRequest& WithKmsKeyArn(Aws::String&& value) { SetKmsKeyArn(std::move(value)); return *this;}
-    inline UpdateIdMappingTableRequest& WithKmsKeyArn(const char* value) { SetKmsKeyArn(value); return *this;}
+    template<typename KmsKeyArnT = Aws::String>
+    void SetKmsKeyArn(KmsKeyArnT&& value) { m_kmsKeyArnHasBeenSet = true; m_kmsKeyArn = std::forward<KmsKeyArnT>(value); }
+    template<typename KmsKeyArnT = Aws::String>
+    UpdateIdMappingTableRequest& WithKmsKeyArn(KmsKeyArnT&& value) { SetKmsKeyArn(std::forward<KmsKeyArnT>(value)); return *this;}
     ///@}
   private:
 

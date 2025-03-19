@@ -32,7 +32,7 @@ namespace Model
   class ProviderUserIdentifierType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API ProviderUserIdentifierType();
+    AWS_COGNITOIDENTITYPROVIDER_API ProviderUserIdentifierType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API ProviderUserIdentifierType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API ProviderUserIdentifierType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the provider, such as Facebook, Google, or Login with Amazon.</p>
      */
-    inline const Aws::String& GetProviderName() const{ return m_providerName; }
+    inline const Aws::String& GetProviderName() const { return m_providerName; }
     inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
-    inline void SetProviderName(const Aws::String& value) { m_providerNameHasBeenSet = true; m_providerName = value; }
-    inline void SetProviderName(Aws::String&& value) { m_providerNameHasBeenSet = true; m_providerName = std::move(value); }
-    inline void SetProviderName(const char* value) { m_providerNameHasBeenSet = true; m_providerName.assign(value); }
-    inline ProviderUserIdentifierType& WithProviderName(const Aws::String& value) { SetProviderName(value); return *this;}
-    inline ProviderUserIdentifierType& WithProviderName(Aws::String&& value) { SetProviderName(std::move(value)); return *this;}
-    inline ProviderUserIdentifierType& WithProviderName(const char* value) { SetProviderName(value); return *this;}
+    template<typename ProviderNameT = Aws::String>
+    void SetProviderName(ProviderNameT&& value) { m_providerNameHasBeenSet = true; m_providerName = std::forward<ProviderNameT>(value); }
+    template<typename ProviderNameT = Aws::String>
+    ProviderUserIdentifierType& WithProviderName(ProviderNameT&& value) { SetProviderName(std::forward<ProviderNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The name of the provider attribute to link to, such as
      * <code>NameID</code>.</p>
      */
-    inline const Aws::String& GetProviderAttributeName() const{ return m_providerAttributeName; }
+    inline const Aws::String& GetProviderAttributeName() const { return m_providerAttributeName; }
     inline bool ProviderAttributeNameHasBeenSet() const { return m_providerAttributeNameHasBeenSet; }
-    inline void SetProviderAttributeName(const Aws::String& value) { m_providerAttributeNameHasBeenSet = true; m_providerAttributeName = value; }
-    inline void SetProviderAttributeName(Aws::String&& value) { m_providerAttributeNameHasBeenSet = true; m_providerAttributeName = std::move(value); }
-    inline void SetProviderAttributeName(const char* value) { m_providerAttributeNameHasBeenSet = true; m_providerAttributeName.assign(value); }
-    inline ProviderUserIdentifierType& WithProviderAttributeName(const Aws::String& value) { SetProviderAttributeName(value); return *this;}
-    inline ProviderUserIdentifierType& WithProviderAttributeName(Aws::String&& value) { SetProviderAttributeName(std::move(value)); return *this;}
-    inline ProviderUserIdentifierType& WithProviderAttributeName(const char* value) { SetProviderAttributeName(value); return *this;}
+    template<typename ProviderAttributeNameT = Aws::String>
+    void SetProviderAttributeName(ProviderAttributeNameT&& value) { m_providerAttributeNameHasBeenSet = true; m_providerAttributeName = std::forward<ProviderAttributeNameT>(value); }
+    template<typename ProviderAttributeNameT = Aws::String>
+    ProviderUserIdentifierType& WithProviderAttributeName(ProviderAttributeNameT&& value) { SetProviderAttributeName(std::forward<ProviderAttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * <p>The value of the provider attribute to link to, such as
      * <code>xxxxx_account</code>.</p>
      */
-    inline const Aws::String& GetProviderAttributeValue() const{ return m_providerAttributeValue; }
+    inline const Aws::String& GetProviderAttributeValue() const { return m_providerAttributeValue; }
     inline bool ProviderAttributeValueHasBeenSet() const { return m_providerAttributeValueHasBeenSet; }
-    inline void SetProviderAttributeValue(const Aws::String& value) { m_providerAttributeValueHasBeenSet = true; m_providerAttributeValue = value; }
-    inline void SetProviderAttributeValue(Aws::String&& value) { m_providerAttributeValueHasBeenSet = true; m_providerAttributeValue = std::move(value); }
-    inline void SetProviderAttributeValue(const char* value) { m_providerAttributeValueHasBeenSet = true; m_providerAttributeValue.assign(value); }
-    inline ProviderUserIdentifierType& WithProviderAttributeValue(const Aws::String& value) { SetProviderAttributeValue(value); return *this;}
-    inline ProviderUserIdentifierType& WithProviderAttributeValue(Aws::String&& value) { SetProviderAttributeValue(std::move(value)); return *this;}
-    inline ProviderUserIdentifierType& WithProviderAttributeValue(const char* value) { SetProviderAttributeValue(value); return *this;}
+    template<typename ProviderAttributeValueT = Aws::String>
+    void SetProviderAttributeValue(ProviderAttributeValueT&& value) { m_providerAttributeValueHasBeenSet = true; m_providerAttributeValue = std::forward<ProviderAttributeValueT>(value); }
+    template<typename ProviderAttributeValueT = Aws::String>
+    ProviderUserIdentifierType& WithProviderAttributeValue(ProviderAttributeValueT&& value) { SetProviderAttributeValue(std::forward<ProviderAttributeValueT>(value)); return *this;}
     ///@}
   private:
 

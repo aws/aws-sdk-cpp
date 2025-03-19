@@ -18,17 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-SenderContact::SenderContact() : 
-    m_businessTitleHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_firstNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false),
-    m_phoneHasBeenSet(false)
-{
-}
-
 SenderContact::SenderContact(JsonView jsonValue)
-  : SenderContact()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ SenderContact& SenderContact::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BusinessTitle"))
   {
     m_businessTitle = jsonValue.GetString("BusinessTitle");
-
     m_businessTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Email"))
   {
     m_email = jsonValue.GetString("Email");
-
     m_emailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirstName"))
   {
     m_firstName = jsonValue.GetString("FirstName");
-
     m_firstNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastName"))
   {
     m_lastName = jsonValue.GetString("LastName");
-
     m_lastNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Phone"))
   {
     m_phone = jsonValue.GetString("Phone");
-
     m_phoneHasBeenSet = true;
   }
-
   return *this;
 }
 

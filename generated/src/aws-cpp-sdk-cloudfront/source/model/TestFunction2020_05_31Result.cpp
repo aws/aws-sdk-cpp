@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TestFunction2020_05_31Result::TestFunction2020_05_31Result()
-{
-}
-
 TestFunction2020_05_31Result::TestFunction2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ TestFunction2020_05_31Result& TestFunction2020_05_31Result::operator =(const Aws
   if(!resultNode.IsNull())
   {
     m_testResult = resultNode;
+    m_testResultHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,6 +37,7 @@ TestFunction2020_05_31Result& TestFunction2020_05_31Result::operator =(const Aws
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

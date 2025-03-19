@@ -18,15 +18,7 @@ namespace PcaConnectorAd
 namespace Model
 {
 
-KeyUsageProperty::KeyUsageProperty() : 
-    m_propertyFlagsHasBeenSet(false),
-    m_propertyType(KeyUsagePropertyType::NOT_SET),
-    m_propertyTypeHasBeenSet(false)
-{
-}
-
 KeyUsageProperty::KeyUsageProperty(JsonView jsonValue)
-  : KeyUsageProperty()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ KeyUsageProperty& KeyUsageProperty::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PropertyFlags"))
   {
     m_propertyFlags = jsonValue.GetObject("PropertyFlags");
-
     m_propertyFlagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PropertyType"))
   {
     m_propertyType = KeyUsagePropertyTypeMapper::GetKeyUsagePropertyTypeForName(jsonValue.GetString("PropertyType"));
-
     m_propertyTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

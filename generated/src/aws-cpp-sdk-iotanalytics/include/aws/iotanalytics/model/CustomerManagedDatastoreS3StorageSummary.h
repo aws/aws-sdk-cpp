@@ -32,7 +32,7 @@ namespace Model
   class CustomerManagedDatastoreS3StorageSummary
   {
   public:
-    AWS_IOTANALYTICS_API CustomerManagedDatastoreS3StorageSummary();
+    AWS_IOTANALYTICS_API CustomerManagedDatastoreS3StorageSummary() = default;
     AWS_IOTANALYTICS_API CustomerManagedDatastoreS3StorageSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API CustomerManagedDatastoreS3StorageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the Amazon S3 bucket where your data is stored.</p>
      */
-    inline const Aws::String& GetBucket() const{ return m_bucket; }
+    inline const Aws::String& GetBucket() const { return m_bucket; }
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
-    inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
-    inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
-    inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
-    inline CustomerManagedDatastoreS3StorageSummary& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
-    inline CustomerManagedDatastoreS3StorageSummary& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
-    inline CustomerManagedDatastoreS3StorageSummary& WithBucket(const char* value) { SetBucket(value); return *this;}
+    template<typename BucketT = Aws::String>
+    void SetBucket(BucketT&& value) { m_bucketHasBeenSet = true; m_bucket = std::forward<BucketT>(value); }
+    template<typename BucketT = Aws::String>
+    CustomerManagedDatastoreS3StorageSummary& WithBucket(BucketT&& value) { SetBucket(std::forward<BucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * the bucket. Each object in a bucket has exactly one key. The prefix must end
      * with a forward slash (/).</p>
      */
-    inline const Aws::String& GetKeyPrefix() const{ return m_keyPrefix; }
+    inline const Aws::String& GetKeyPrefix() const { return m_keyPrefix; }
     inline bool KeyPrefixHasBeenSet() const { return m_keyPrefixHasBeenSet; }
-    inline void SetKeyPrefix(const Aws::String& value) { m_keyPrefixHasBeenSet = true; m_keyPrefix = value; }
-    inline void SetKeyPrefix(Aws::String&& value) { m_keyPrefixHasBeenSet = true; m_keyPrefix = std::move(value); }
-    inline void SetKeyPrefix(const char* value) { m_keyPrefixHasBeenSet = true; m_keyPrefix.assign(value); }
-    inline CustomerManagedDatastoreS3StorageSummary& WithKeyPrefix(const Aws::String& value) { SetKeyPrefix(value); return *this;}
-    inline CustomerManagedDatastoreS3StorageSummary& WithKeyPrefix(Aws::String&& value) { SetKeyPrefix(std::move(value)); return *this;}
-    inline CustomerManagedDatastoreS3StorageSummary& WithKeyPrefix(const char* value) { SetKeyPrefix(value); return *this;}
+    template<typename KeyPrefixT = Aws::String>
+    void SetKeyPrefix(KeyPrefixT&& value) { m_keyPrefixHasBeenSet = true; m_keyPrefix = std::forward<KeyPrefixT>(value); }
+    template<typename KeyPrefixT = Aws::String>
+    CustomerManagedDatastoreS3StorageSummary& WithKeyPrefix(KeyPrefixT&& value) { SetKeyPrefix(std::forward<KeyPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * <p>The ARN of the role that grants IoT Analytics permission to interact with
      * your Amazon S3 resources.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline CustomerManagedDatastoreS3StorageSummary& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CustomerManagedDatastoreS3StorageSummary& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CustomerManagedDatastoreS3StorageSummary& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CustomerManagedDatastoreS3StorageSummary& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

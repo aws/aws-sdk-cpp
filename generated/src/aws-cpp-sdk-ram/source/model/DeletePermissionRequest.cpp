@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeletePermissionRequest::DeletePermissionRequest() : 
-    m_permissionArnHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
-{
-}
-
 Aws::String DeletePermissionRequest::SerializePayload() const
 {
   return {};

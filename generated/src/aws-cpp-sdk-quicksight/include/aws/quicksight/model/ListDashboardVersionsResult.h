@@ -29,7 +29,7 @@ namespace Model
   class ListDashboardVersionsResult
   {
   public:
-    AWS_QUICKSIGHT_API ListDashboardVersionsResult();
+    AWS_QUICKSIGHT_API ListDashboardVersionsResult() = default;
     AWS_QUICKSIGHT_API ListDashboardVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API ListDashboardVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A structure that contains information about each version of the
      * dashboard.</p>
      */
-    inline const Aws::Vector<DashboardVersionSummary>& GetDashboardVersionSummaryList() const{ return m_dashboardVersionSummaryList; }
-    inline void SetDashboardVersionSummaryList(const Aws::Vector<DashboardVersionSummary>& value) { m_dashboardVersionSummaryList = value; }
-    inline void SetDashboardVersionSummaryList(Aws::Vector<DashboardVersionSummary>&& value) { m_dashboardVersionSummaryList = std::move(value); }
-    inline ListDashboardVersionsResult& WithDashboardVersionSummaryList(const Aws::Vector<DashboardVersionSummary>& value) { SetDashboardVersionSummaryList(value); return *this;}
-    inline ListDashboardVersionsResult& WithDashboardVersionSummaryList(Aws::Vector<DashboardVersionSummary>&& value) { SetDashboardVersionSummaryList(std::move(value)); return *this;}
-    inline ListDashboardVersionsResult& AddDashboardVersionSummaryList(const DashboardVersionSummary& value) { m_dashboardVersionSummaryList.push_back(value); return *this; }
-    inline ListDashboardVersionsResult& AddDashboardVersionSummaryList(DashboardVersionSummary&& value) { m_dashboardVersionSummaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DashboardVersionSummary>& GetDashboardVersionSummaryList() const { return m_dashboardVersionSummaryList; }
+    template<typename DashboardVersionSummaryListT = Aws::Vector<DashboardVersionSummary>>
+    void SetDashboardVersionSummaryList(DashboardVersionSummaryListT&& value) { m_dashboardVersionSummaryListHasBeenSet = true; m_dashboardVersionSummaryList = std::forward<DashboardVersionSummaryListT>(value); }
+    template<typename DashboardVersionSummaryListT = Aws::Vector<DashboardVersionSummary>>
+    ListDashboardVersionsResult& WithDashboardVersionSummaryList(DashboardVersionSummaryListT&& value) { SetDashboardVersionSummaryList(std::forward<DashboardVersionSummaryListT>(value)); return *this;}
+    template<typename DashboardVersionSummaryListT = DashboardVersionSummary>
+    ListDashboardVersionsResult& AddDashboardVersionSummaryList(DashboardVersionSummaryListT&& value) { m_dashboardVersionSummaryListHasBeenSet = true; m_dashboardVersionSummaryList.emplace_back(std::forward<DashboardVersionSummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,43 +53,43 @@ namespace Model
      * <p>The token for the next set of results, or null if there are no more
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListDashboardVersionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDashboardVersionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDashboardVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDashboardVersionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline ListDashboardVersionsResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListDashboardVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListDashboardVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListDashboardVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListDashboardVersionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DashboardVersionSummary> m_dashboardVersionSummaryList;
+    bool m_dashboardVersionSummaryListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -34,52 +34,51 @@ namespace Model
   class GetModelsResult
   {
   public:
-    AWS_APIGATEWAY_API GetModelsResult();
+    AWS_APIGATEWAY_API GetModelsResult() = default;
     AWS_APIGATEWAY_API GetModelsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APIGATEWAY_API GetModelsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetPosition() const{ return m_position; }
-    inline void SetPosition(const Aws::String& value) { m_position = value; }
-    inline void SetPosition(Aws::String&& value) { m_position = std::move(value); }
-    inline void SetPosition(const char* value) { m_position.assign(value); }
-    inline GetModelsResult& WithPosition(const Aws::String& value) { SetPosition(value); return *this;}
-    inline GetModelsResult& WithPosition(Aws::String&& value) { SetPosition(std::move(value)); return *this;}
-    inline GetModelsResult& WithPosition(const char* value) { SetPosition(value); return *this;}
+    inline const Aws::String& GetPosition() const { return m_position; }
+    template<typename PositionT = Aws::String>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Aws::String>
+    GetModelsResult& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current page of elements from this collection.</p>
      */
-    inline const Aws::Vector<Model>& GetItems() const{ return m_items; }
-    inline void SetItems(const Aws::Vector<Model>& value) { m_items = value; }
-    inline void SetItems(Aws::Vector<Model>&& value) { m_items = std::move(value); }
-    inline GetModelsResult& WithItems(const Aws::Vector<Model>& value) { SetItems(value); return *this;}
-    inline GetModelsResult& WithItems(Aws::Vector<Model>&& value) { SetItems(std::move(value)); return *this;}
-    inline GetModelsResult& AddItems(const Model& value) { m_items.push_back(value); return *this; }
-    inline GetModelsResult& AddItems(Model&& value) { m_items.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Model>& GetItems() const { return m_items; }
+    template<typename ItemsT = Aws::Vector<Model>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<Model>>
+    GetModelsResult& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = Model>
+    GetModelsResult& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetModelsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetModelsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetModelsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetModelsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_position;
+    bool m_positionHasBeenSet = false;
 
     Aws::Vector<Model> m_items;
+    bool m_itemsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

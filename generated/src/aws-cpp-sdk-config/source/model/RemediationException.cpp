@@ -18,17 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-RemediationException::RemediationException() : 
-    m_configRuleNameHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_expirationTimeHasBeenSet(false)
-{
-}
-
 RemediationException::RemediationException(JsonView jsonValue)
-  : RemediationException()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ RemediationException& RemediationException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConfigRuleName"))
   {
     m_configRuleName = jsonValue.GetString("ConfigRuleName");
-
     m_configRuleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpirationTime"))
   {
     m_expirationTime = jsonValue.GetDouble("ExpirationTime");
-
     m_expirationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

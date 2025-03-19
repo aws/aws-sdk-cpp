@@ -17,19 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DomainMetadataResult::DomainMetadataResult() : 
-    m_itemCount(0),
-    m_itemNamesSizeBytes(0),
-    m_attributeNameCount(0),
-    m_attributeNamesSizeBytes(0),
-    m_attributeValueCount(0),
-    m_attributeValuesSizeBytes(0),
-    m_timestamp(0)
-{
-}
-
 DomainMetadataResult::DomainMetadataResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : DomainMetadataResult()
 {
   *this = result;
 }
@@ -50,42 +38,50 @@ DomainMetadataResult& DomainMetadataResult::operator =(const Aws::AmazonWebServi
     if(!itemCountNode.IsNull())
     {
       m_itemCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(itemCountNode.GetText()).c_str()).c_str());
+      m_itemCountHasBeenSet = true;
     }
     XmlNode itemNamesSizeBytesNode = resultNode.FirstChild("ItemNamesSizeBytes");
     if(!itemNamesSizeBytesNode.IsNull())
     {
       m_itemNamesSizeBytes = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(itemNamesSizeBytesNode.GetText()).c_str()).c_str());
+      m_itemNamesSizeBytesHasBeenSet = true;
     }
     XmlNode attributeNameCountNode = resultNode.FirstChild("AttributeNameCount");
     if(!attributeNameCountNode.IsNull())
     {
       m_attributeNameCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attributeNameCountNode.GetText()).c_str()).c_str());
+      m_attributeNameCountHasBeenSet = true;
     }
     XmlNode attributeNamesSizeBytesNode = resultNode.FirstChild("AttributeNamesSizeBytes");
     if(!attributeNamesSizeBytesNode.IsNull())
     {
       m_attributeNamesSizeBytes = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attributeNamesSizeBytesNode.GetText()).c_str()).c_str());
+      m_attributeNamesSizeBytesHasBeenSet = true;
     }
     XmlNode attributeValueCountNode = resultNode.FirstChild("AttributeValueCount");
     if(!attributeValueCountNode.IsNull())
     {
       m_attributeValueCount = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attributeValueCountNode.GetText()).c_str()).c_str());
+      m_attributeValueCountHasBeenSet = true;
     }
     XmlNode attributeValuesSizeBytesNode = resultNode.FirstChild("AttributeValuesSizeBytes");
     if(!attributeValuesSizeBytesNode.IsNull())
     {
       m_attributeValuesSizeBytes = StringUtils::ConvertToInt64(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attributeValuesSizeBytesNode.GetText()).c_str()).c_str());
+      m_attributeValuesSizeBytesHasBeenSet = true;
     }
     XmlNode timestampNode = resultNode.FirstChild("Timestamp");
     if(!timestampNode.IsNull())
     {
       m_timestamp = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(timestampNode.GetText()).c_str()).c_str());
+      m_timestampHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SimpleDB::Model::DomainMetadataResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

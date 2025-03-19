@@ -18,15 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-CapabilityReportEndpoint::CapabilityReportEndpoint() : 
-    m_idHasBeenSet(false),
-    m_deviceTypesHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false)
-{
-}
-
 CapabilityReportEndpoint::CapabilityReportEndpoint(JsonView jsonValue)
-  : CapabilityReportEndpoint()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ CapabilityReportEndpoint& CapabilityReportEndpoint::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deviceTypes"))
   {
     Aws::Utils::Array<JsonView> deviceTypesJsonList = jsonValue.GetArray("deviceTypes");
@@ -49,7 +39,6 @@ CapabilityReportEndpoint& CapabilityReportEndpoint::operator =(JsonView jsonValu
     }
     m_deviceTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("capabilities"))
   {
     Aws::Utils::Array<JsonView> capabilitiesJsonList = jsonValue.GetArray("capabilities");
@@ -59,7 +48,6 @@ CapabilityReportEndpoint& CapabilityReportEndpoint::operator =(JsonView jsonValu
     }
     m_capabilitiesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,14 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFleetAdvisorCollectorRequest::CreateFleetAdvisorCollectorRequest() : 
-    m_collectorNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_serviceAccessRoleArnHasBeenSet(false),
-    m_s3BucketNameHasBeenSet(false)
-{
-}
-
 Aws::String CreateFleetAdvisorCollectorRequest::SerializePayload() const
 {
   JsonValue payload;

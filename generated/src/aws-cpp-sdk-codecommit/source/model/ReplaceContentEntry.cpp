@@ -19,18 +19,7 @@ namespace CodeCommit
 namespace Model
 {
 
-ReplaceContentEntry::ReplaceContentEntry() : 
-    m_filePathHasBeenSet(false),
-    m_replacementType(ReplacementTypeEnum::NOT_SET),
-    m_replacementTypeHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_fileMode(FileModeTypeEnum::NOT_SET),
-    m_fileModeHasBeenSet(false)
-{
-}
-
 ReplaceContentEntry::ReplaceContentEntry(JsonView jsonValue)
-  : ReplaceContentEntry()
 {
   *this = jsonValue;
 }
@@ -40,30 +29,23 @@ ReplaceContentEntry& ReplaceContentEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("filePath"))
   {
     m_filePath = jsonValue.GetString("filePath");
-
     m_filePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("replacementType"))
   {
     m_replacementType = ReplacementTypeEnumMapper::GetReplacementTypeEnumForName(jsonValue.GetString("replacementType"));
-
     m_replacementTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("content"))
   {
     m_content = HashingUtils::Base64Decode(jsonValue.GetString("content"));
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileMode"))
   {
     m_fileMode = FileModeTypeEnumMapper::GetFileModeTypeEnumForName(jsonValue.GetString("fileMode"));
-
     m_fileModeHasBeenSet = true;
   }
-
   return *this;
 }
 

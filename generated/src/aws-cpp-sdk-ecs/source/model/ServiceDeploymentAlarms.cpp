@@ -18,16 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ServiceDeploymentAlarms::ServiceDeploymentAlarms() : 
-    m_status(ServiceDeploymentRollbackMonitorsStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_alarmNamesHasBeenSet(false),
-    m_triggeredAlarmNamesHasBeenSet(false)
-{
-}
-
 ServiceDeploymentAlarms::ServiceDeploymentAlarms(JsonView jsonValue)
-  : ServiceDeploymentAlarms()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ ServiceDeploymentAlarms& ServiceDeploymentAlarms::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = ServiceDeploymentRollbackMonitorsStatusMapper::GetServiceDeploymentRollbackMonitorsStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("alarmNames"))
   {
     Aws::Utils::Array<JsonView> alarmNamesJsonList = jsonValue.GetArray("alarmNames");
@@ -50,7 +39,6 @@ ServiceDeploymentAlarms& ServiceDeploymentAlarms::operator =(JsonView jsonValue)
     }
     m_alarmNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("triggeredAlarmNames"))
   {
     Aws::Utils::Array<JsonView> triggeredAlarmNamesJsonList = jsonValue.GetArray("triggeredAlarmNames");
@@ -60,7 +48,6 @@ ServiceDeploymentAlarms& ServiceDeploymentAlarms::operator =(JsonView jsonValue)
     }
     m_triggeredAlarmNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -35,7 +35,7 @@ namespace Model
   class GetConfigurationSetEventDestinationsResult
   {
   public:
-    AWS_PINPOINTEMAIL_API GetConfigurationSetEventDestinationsResult();
+    AWS_PINPOINTEMAIL_API GetConfigurationSetEventDestinationsResult() = default;
     AWS_PINPOINTEMAIL_API GetConfigurationSetEventDestinationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTEMAIL_API GetConfigurationSetEventDestinationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,30 +45,30 @@ namespace Model
      * <p>An array that includes all of the events destinations that have been
      * configured for the configuration set.</p>
      */
-    inline const Aws::Vector<EventDestination>& GetEventDestinations() const{ return m_eventDestinations; }
-    inline void SetEventDestinations(const Aws::Vector<EventDestination>& value) { m_eventDestinations = value; }
-    inline void SetEventDestinations(Aws::Vector<EventDestination>&& value) { m_eventDestinations = std::move(value); }
-    inline GetConfigurationSetEventDestinationsResult& WithEventDestinations(const Aws::Vector<EventDestination>& value) { SetEventDestinations(value); return *this;}
-    inline GetConfigurationSetEventDestinationsResult& WithEventDestinations(Aws::Vector<EventDestination>&& value) { SetEventDestinations(std::move(value)); return *this;}
-    inline GetConfigurationSetEventDestinationsResult& AddEventDestinations(const EventDestination& value) { m_eventDestinations.push_back(value); return *this; }
-    inline GetConfigurationSetEventDestinationsResult& AddEventDestinations(EventDestination&& value) { m_eventDestinations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EventDestination>& GetEventDestinations() const { return m_eventDestinations; }
+    template<typename EventDestinationsT = Aws::Vector<EventDestination>>
+    void SetEventDestinations(EventDestinationsT&& value) { m_eventDestinationsHasBeenSet = true; m_eventDestinations = std::forward<EventDestinationsT>(value); }
+    template<typename EventDestinationsT = Aws::Vector<EventDestination>>
+    GetConfigurationSetEventDestinationsResult& WithEventDestinations(EventDestinationsT&& value) { SetEventDestinations(std::forward<EventDestinationsT>(value)); return *this;}
+    template<typename EventDestinationsT = EventDestination>
+    GetConfigurationSetEventDestinationsResult& AddEventDestinations(EventDestinationsT&& value) { m_eventDestinationsHasBeenSet = true; m_eventDestinations.emplace_back(std::forward<EventDestinationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetConfigurationSetEventDestinationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetConfigurationSetEventDestinationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetConfigurationSetEventDestinationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetConfigurationSetEventDestinationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EventDestination> m_eventDestinations;
+    bool m_eventDestinationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

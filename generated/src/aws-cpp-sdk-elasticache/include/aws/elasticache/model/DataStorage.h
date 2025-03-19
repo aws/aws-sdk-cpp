@@ -31,7 +31,7 @@ namespace Model
   class DataStorage
   {
   public:
-    AWS_ELASTICACHE_API DataStorage();
+    AWS_ELASTICACHE_API DataStorage() = default;
     AWS_ELASTICACHE_API DataStorage(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICACHE_API DataStorage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The upper limit for data storage the cache is set to use.</p>
      */
-    inline int GetMaximum() const{ return m_maximum; }
+    inline int GetMaximum() const { return m_maximum; }
     inline bool MaximumHasBeenSet() const { return m_maximumHasBeenSet; }
     inline void SetMaximum(int value) { m_maximumHasBeenSet = true; m_maximum = value; }
     inline DataStorage& WithMaximum(int value) { SetMaximum(value); return *this;}
@@ -53,7 +53,7 @@ namespace Model
     /**
      * <p>The lower limit for data storage the cache is set to use.</p>
      */
-    inline int GetMinimum() const{ return m_minimum; }
+    inline int GetMinimum() const { return m_minimum; }
     inline bool MinimumHasBeenSet() const { return m_minimumHasBeenSet; }
     inline void SetMinimum(int value) { m_minimumHasBeenSet = true; m_minimum = value; }
     inline DataStorage& WithMinimum(int value) { SetMinimum(value); return *this;}
@@ -63,22 +63,20 @@ namespace Model
     /**
      * <p>The unit that the storage is measured in, in GB.</p>
      */
-    inline const DataStorageUnit& GetUnit() const{ return m_unit; }
+    inline DataStorageUnit GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const DataStorageUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(DataStorageUnit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline DataStorage& WithUnit(const DataStorageUnit& value) { SetUnit(value); return *this;}
-    inline DataStorage& WithUnit(DataStorageUnit&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(DataStorageUnit value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline DataStorage& WithUnit(DataStorageUnit value) { SetUnit(value); return *this;}
     ///@}
   private:
 
-    int m_maximum;
+    int m_maximum{0};
     bool m_maximumHasBeenSet = false;
 
-    int m_minimum;
+    int m_minimum{0};
     bool m_minimumHasBeenSet = false;
 
-    DataStorageUnit m_unit;
+    DataStorageUnit m_unit{DataStorageUnit::NOT_SET};
     bool m_unitHasBeenSet = false;
   };
 

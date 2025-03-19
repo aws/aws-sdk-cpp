@@ -38,7 +38,7 @@ namespace Model
   class VpcPeeringAuthorization
   {
   public:
-    AWS_GAMELIFT_API VpcPeeringAuthorization();
+    AWS_GAMELIFT_API VpcPeeringAuthorization() = default;
     AWS_GAMELIFT_API VpcPeeringAuthorization(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API VpcPeeringAuthorization& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,28 +50,24 @@ namespace Model
      * manage your Amazon GameLift fleet. You can find your Account ID in the Amazon
      * Web Services Management Console under account settings.</p>
      */
-    inline const Aws::String& GetGameLiftAwsAccountId() const{ return m_gameLiftAwsAccountId; }
+    inline const Aws::String& GetGameLiftAwsAccountId() const { return m_gameLiftAwsAccountId; }
     inline bool GameLiftAwsAccountIdHasBeenSet() const { return m_gameLiftAwsAccountIdHasBeenSet; }
-    inline void SetGameLiftAwsAccountId(const Aws::String& value) { m_gameLiftAwsAccountIdHasBeenSet = true; m_gameLiftAwsAccountId = value; }
-    inline void SetGameLiftAwsAccountId(Aws::String&& value) { m_gameLiftAwsAccountIdHasBeenSet = true; m_gameLiftAwsAccountId = std::move(value); }
-    inline void SetGameLiftAwsAccountId(const char* value) { m_gameLiftAwsAccountIdHasBeenSet = true; m_gameLiftAwsAccountId.assign(value); }
-    inline VpcPeeringAuthorization& WithGameLiftAwsAccountId(const Aws::String& value) { SetGameLiftAwsAccountId(value); return *this;}
-    inline VpcPeeringAuthorization& WithGameLiftAwsAccountId(Aws::String&& value) { SetGameLiftAwsAccountId(std::move(value)); return *this;}
-    inline VpcPeeringAuthorization& WithGameLiftAwsAccountId(const char* value) { SetGameLiftAwsAccountId(value); return *this;}
+    template<typename GameLiftAwsAccountIdT = Aws::String>
+    void SetGameLiftAwsAccountId(GameLiftAwsAccountIdT&& value) { m_gameLiftAwsAccountIdHasBeenSet = true; m_gameLiftAwsAccountId = std::forward<GameLiftAwsAccountIdT>(value); }
+    template<typename GameLiftAwsAccountIdT = Aws::String>
+    VpcPeeringAuthorization& WithGameLiftAwsAccountId(GameLiftAwsAccountIdT&& value) { SetGameLiftAwsAccountId(std::forward<GameLiftAwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The authorization's peer VPC Amazon Web Services account ID.</p>
      */
-    inline const Aws::String& GetPeerVpcAwsAccountId() const{ return m_peerVpcAwsAccountId; }
+    inline const Aws::String& GetPeerVpcAwsAccountId() const { return m_peerVpcAwsAccountId; }
     inline bool PeerVpcAwsAccountIdHasBeenSet() const { return m_peerVpcAwsAccountIdHasBeenSet; }
-    inline void SetPeerVpcAwsAccountId(const Aws::String& value) { m_peerVpcAwsAccountIdHasBeenSet = true; m_peerVpcAwsAccountId = value; }
-    inline void SetPeerVpcAwsAccountId(Aws::String&& value) { m_peerVpcAwsAccountIdHasBeenSet = true; m_peerVpcAwsAccountId = std::move(value); }
-    inline void SetPeerVpcAwsAccountId(const char* value) { m_peerVpcAwsAccountIdHasBeenSet = true; m_peerVpcAwsAccountId.assign(value); }
-    inline VpcPeeringAuthorization& WithPeerVpcAwsAccountId(const Aws::String& value) { SetPeerVpcAwsAccountId(value); return *this;}
-    inline VpcPeeringAuthorization& WithPeerVpcAwsAccountId(Aws::String&& value) { SetPeerVpcAwsAccountId(std::move(value)); return *this;}
-    inline VpcPeeringAuthorization& WithPeerVpcAwsAccountId(const char* value) { SetPeerVpcAwsAccountId(value); return *this;}
+    template<typename PeerVpcAwsAccountIdT = Aws::String>
+    void SetPeerVpcAwsAccountId(PeerVpcAwsAccountIdT&& value) { m_peerVpcAwsAccountIdHasBeenSet = true; m_peerVpcAwsAccountId = std::forward<PeerVpcAwsAccountIdT>(value); }
+    template<typename PeerVpcAwsAccountIdT = Aws::String>
+    VpcPeeringAuthorization& WithPeerVpcAwsAccountId(PeerVpcAwsAccountIdT&& value) { SetPeerVpcAwsAccountId(std::forward<PeerVpcAwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +80,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
      * Peering with Amazon GameLift Fleets</a>.</p>
      */
-    inline const Aws::String& GetPeerVpcId() const{ return m_peerVpcId; }
+    inline const Aws::String& GetPeerVpcId() const { return m_peerVpcId; }
     inline bool PeerVpcIdHasBeenSet() const { return m_peerVpcIdHasBeenSet; }
-    inline void SetPeerVpcId(const Aws::String& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = value; }
-    inline void SetPeerVpcId(Aws::String&& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = std::move(value); }
-    inline void SetPeerVpcId(const char* value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId.assign(value); }
-    inline VpcPeeringAuthorization& WithPeerVpcId(const Aws::String& value) { SetPeerVpcId(value); return *this;}
-    inline VpcPeeringAuthorization& WithPeerVpcId(Aws::String&& value) { SetPeerVpcId(std::move(value)); return *this;}
-    inline VpcPeeringAuthorization& WithPeerVpcId(const char* value) { SetPeerVpcId(value); return *this;}
+    template<typename PeerVpcIdT = Aws::String>
+    void SetPeerVpcId(PeerVpcIdT&& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = std::forward<PeerVpcIdT>(value); }
+    template<typename PeerVpcIdT = Aws::String>
+    VpcPeeringAuthorization& WithPeerVpcId(PeerVpcIdT&& value) { SetPeerVpcId(std::forward<PeerVpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,12 +94,12 @@ namespace Model
      * expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline VpcPeeringAuthorization& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline VpcPeeringAuthorization& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    VpcPeeringAuthorization& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,12 +108,12 @@ namespace Model
      * issuance). Format is a number expressed in Unix time as milliseconds (for
      * example <code>"1469498468.057"</code>).</p>
      */
-    inline const Aws::Utils::DateTime& GetExpirationTime() const{ return m_expirationTime; }
+    inline const Aws::Utils::DateTime& GetExpirationTime() const { return m_expirationTime; }
     inline bool ExpirationTimeHasBeenSet() const { return m_expirationTimeHasBeenSet; }
-    inline void SetExpirationTime(const Aws::Utils::DateTime& value) { m_expirationTimeHasBeenSet = true; m_expirationTime = value; }
-    inline void SetExpirationTime(Aws::Utils::DateTime&& value) { m_expirationTimeHasBeenSet = true; m_expirationTime = std::move(value); }
-    inline VpcPeeringAuthorization& WithExpirationTime(const Aws::Utils::DateTime& value) { SetExpirationTime(value); return *this;}
-    inline VpcPeeringAuthorization& WithExpirationTime(Aws::Utils::DateTime&& value) { SetExpirationTime(std::move(value)); return *this;}
+    template<typename ExpirationTimeT = Aws::Utils::DateTime>
+    void SetExpirationTime(ExpirationTimeT&& value) { m_expirationTimeHasBeenSet = true; m_expirationTime = std::forward<ExpirationTimeT>(value); }
+    template<typename ExpirationTimeT = Aws::Utils::DateTime>
+    VpcPeeringAuthorization& WithExpirationTime(ExpirationTimeT&& value) { SetExpirationTime(std::forward<ExpirationTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -132,10 +126,10 @@ namespace Model
     Aws::String m_peerVpcId;
     bool m_peerVpcIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expirationTime;
+    Aws::Utils::DateTime m_expirationTime{};
     bool m_expirationTimeHasBeenSet = false;
   };
 

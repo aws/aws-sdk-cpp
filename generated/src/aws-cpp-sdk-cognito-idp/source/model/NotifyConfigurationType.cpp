@@ -18,18 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-NotifyConfigurationType::NotifyConfigurationType() : 
-    m_fromHasBeenSet(false),
-    m_replyToHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_blockEmailHasBeenSet(false),
-    m_noActionEmailHasBeenSet(false),
-    m_mfaEmailHasBeenSet(false)
-{
-}
-
 NotifyConfigurationType::NotifyConfigurationType(JsonView jsonValue)
-  : NotifyConfigurationType()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ NotifyConfigurationType& NotifyConfigurationType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("From"))
   {
     m_from = jsonValue.GetString("From");
-
     m_fromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplyTo"))
   {
     m_replyTo = jsonValue.GetString("ReplyTo");
-
     m_replyToHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceArn"))
   {
     m_sourceArn = jsonValue.GetString("SourceArn");
-
     m_sourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BlockEmail"))
   {
     m_blockEmail = jsonValue.GetObject("BlockEmail");
-
     m_blockEmailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NoActionEmail"))
   {
     m_noActionEmail = jsonValue.GetObject("NoActionEmail");
-
     m_noActionEmailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MfaEmail"))
   {
     m_mfaEmail = jsonValue.GetObject("MfaEmail");
-
     m_mfaEmailHasBeenSet = true;
   }
-
   return *this;
 }
 

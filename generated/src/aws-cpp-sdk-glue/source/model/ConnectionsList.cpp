@@ -18,13 +18,7 @@ namespace Glue
 namespace Model
 {
 
-ConnectionsList::ConnectionsList() : 
-    m_connectionsHasBeenSet(false)
-{
-}
-
 ConnectionsList::ConnectionsList(JsonView jsonValue)
-  : ConnectionsList()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ConnectionsList& ConnectionsList::operator =(JsonView jsonValue)
     }
     m_connectionsHasBeenSet = true;
   }
-
   return *this;
 }
 

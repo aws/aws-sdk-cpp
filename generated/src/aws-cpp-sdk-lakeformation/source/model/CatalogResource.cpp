@@ -18,13 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-CatalogResource::CatalogResource() : 
-    m_idHasBeenSet(false)
-{
-}
-
 CatalogResource::CatalogResource(JsonView jsonValue)
-  : CatalogResource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CatalogResource& CatalogResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

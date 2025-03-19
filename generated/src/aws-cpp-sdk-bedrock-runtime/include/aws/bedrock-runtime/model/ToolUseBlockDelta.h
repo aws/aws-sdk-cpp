@@ -31,7 +31,7 @@ namespace Model
   class ToolUseBlockDelta
   {
   public:
-    AWS_BEDROCKRUNTIME_API ToolUseBlockDelta();
+    AWS_BEDROCKRUNTIME_API ToolUseBlockDelta() = default;
     AWS_BEDROCKRUNTIME_API ToolUseBlockDelta(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API ToolUseBlockDelta& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The input for a requested tool.</p>
      */
-    inline const Aws::String& GetInput() const{ return m_input; }
+    inline const Aws::String& GetInput() const { return m_input; }
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
-    inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
-    inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
-    inline void SetInput(const char* value) { m_inputHasBeenSet = true; m_input.assign(value); }
-    inline ToolUseBlockDelta& WithInput(const Aws::String& value) { SetInput(value); return *this;}
-    inline ToolUseBlockDelta& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
-    inline ToolUseBlockDelta& WithInput(const char* value) { SetInput(value); return *this;}
+    template<typename InputT = Aws::String>
+    void SetInput(InputT&& value) { m_inputHasBeenSet = true; m_input = std::forward<InputT>(value); }
+    template<typename InputT = Aws::String>
+    ToolUseBlockDelta& WithInput(InputT&& value) { SetInput(std::forward<InputT>(value)); return *this;}
     ///@}
   private:
 

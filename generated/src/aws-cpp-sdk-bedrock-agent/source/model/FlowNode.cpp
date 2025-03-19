@@ -18,18 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-FlowNode::FlowNode() : 
-    m_configurationHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_type(FlowNodeType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 FlowNode::FlowNode(JsonView jsonValue)
-  : FlowNode()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ FlowNode& FlowNode::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("configuration"))
   {
     m_configuration = jsonValue.GetObject("configuration");
-
     m_configurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputs"))
   {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("inputs");
@@ -52,14 +39,11 @@ FlowNode& FlowNode::operator =(JsonView jsonValue)
     }
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputs"))
   {
     Aws::Utils::Array<JsonView> outputsJsonList = jsonValue.GetArray("outputs");
@@ -69,14 +53,11 @@ FlowNode& FlowNode::operator =(JsonView jsonValue)
     }
     m_outputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = FlowNodeTypeMapper::GetFlowNodeTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

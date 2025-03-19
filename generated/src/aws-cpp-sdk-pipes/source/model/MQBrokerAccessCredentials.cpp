@@ -18,13 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-MQBrokerAccessCredentials::MQBrokerAccessCredentials() : 
-    m_basicAuthHasBeenSet(false)
-{
-}
-
 MQBrokerAccessCredentials::MQBrokerAccessCredentials(JsonView jsonValue)
-  : MQBrokerAccessCredentials()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MQBrokerAccessCredentials& MQBrokerAccessCredentials::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("BasicAuth"))
   {
     m_basicAuth = jsonValue.GetString("BasicAuth");
-
     m_basicAuthHasBeenSet = true;
   }
-
   return *this;
 }
 

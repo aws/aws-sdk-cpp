@@ -19,15 +19,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-ImageFile::ImageFile() : 
-    m_dataHasBeenSet(false),
-    m_type(ImageFileType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 ImageFile::ImageFile(JsonView jsonValue)
-  : ImageFile()
 {
   *this = jsonValue;
 }
@@ -39,14 +31,11 @@ ImageFile& ImageFile::operator =(JsonView jsonValue)
     m_data = HashingUtils::Base64Decode(jsonValue.GetString("data"));
     m_dataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = ImageFileTypeMapper::GetImageFileTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

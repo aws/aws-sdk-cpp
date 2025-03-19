@@ -36,7 +36,7 @@ namespace Model
   class UsageTotal
   {
   public:
-    AWS_MACIE2_API UsageTotal();
+    AWS_MACIE2_API UsageTotal() = default;
     AWS_MACIE2_API UsageTotal(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API UsageTotal& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,26 +47,22 @@ namespace Model
      * <p>The type of currency that the value for the metric (estimatedCost) is
      * reported in.</p>
      */
-    inline const Currency& GetCurrency() const{ return m_currency; }
+    inline Currency GetCurrency() const { return m_currency; }
     inline bool CurrencyHasBeenSet() const { return m_currencyHasBeenSet; }
-    inline void SetCurrency(const Currency& value) { m_currencyHasBeenSet = true; m_currency = value; }
-    inline void SetCurrency(Currency&& value) { m_currencyHasBeenSet = true; m_currency = std::move(value); }
-    inline UsageTotal& WithCurrency(const Currency& value) { SetCurrency(value); return *this;}
-    inline UsageTotal& WithCurrency(Currency&& value) { SetCurrency(std::move(value)); return *this;}
+    inline void SetCurrency(Currency value) { m_currencyHasBeenSet = true; m_currency = value; }
+    inline UsageTotal& WithCurrency(Currency value) { SetCurrency(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The estimated value for the metric.</p>
      */
-    inline const Aws::String& GetEstimatedCost() const{ return m_estimatedCost; }
+    inline const Aws::String& GetEstimatedCost() const { return m_estimatedCost; }
     inline bool EstimatedCostHasBeenSet() const { return m_estimatedCostHasBeenSet; }
-    inline void SetEstimatedCost(const Aws::String& value) { m_estimatedCostHasBeenSet = true; m_estimatedCost = value; }
-    inline void SetEstimatedCost(Aws::String&& value) { m_estimatedCostHasBeenSet = true; m_estimatedCost = std::move(value); }
-    inline void SetEstimatedCost(const char* value) { m_estimatedCostHasBeenSet = true; m_estimatedCost.assign(value); }
-    inline UsageTotal& WithEstimatedCost(const Aws::String& value) { SetEstimatedCost(value); return *this;}
-    inline UsageTotal& WithEstimatedCost(Aws::String&& value) { SetEstimatedCost(std::move(value)); return *this;}
-    inline UsageTotal& WithEstimatedCost(const char* value) { SetEstimatedCost(value); return *this;}
+    template<typename EstimatedCostT = Aws::String>
+    void SetEstimatedCost(EstimatedCostT&& value) { m_estimatedCostHasBeenSet = true; m_estimatedCost = std::forward<EstimatedCostT>(value); }
+    template<typename EstimatedCostT = Aws::String>
+    UsageTotal& WithEstimatedCost(EstimatedCostT&& value) { SetEstimatedCost(std::forward<EstimatedCostT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,22 +73,20 @@ namespace Model
      * sensitive data discovery; DATA_INVENTORY_EVALUATION, to monitor S3 buckets; and,
      * SENSITIVE_DATA_DISCOVERY, to run classification jobs.</p>
      */
-    inline const UsageType& GetType() const{ return m_type; }
+    inline UsageType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const UsageType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(UsageType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline UsageTotal& WithType(const UsageType& value) { SetType(value); return *this;}
-    inline UsageTotal& WithType(UsageType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(UsageType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline UsageTotal& WithType(UsageType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    Currency m_currency;
+    Currency m_currency{Currency::NOT_SET};
     bool m_currencyHasBeenSet = false;
 
     Aws::String m_estimatedCost;
     bool m_estimatedCostHasBeenSet = false;
 
-    UsageType m_type;
+    UsageType m_type{UsageType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

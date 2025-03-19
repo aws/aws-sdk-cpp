@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteCanaryRequest::DeleteCanaryRequest() : 
-    m_nameHasBeenSet(false),
-    m_deleteLambda(false),
-    m_deleteLambdaHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCanaryRequest::SerializePayload() const
 {
   return {};

@@ -10,39 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-ModifyCacheClusterRequest::ModifyCacheClusterRequest() : 
-    m_cacheClusterIdHasBeenSet(false),
-    m_numCacheNodes(0),
-    m_numCacheNodesHasBeenSet(false),
-    m_cacheNodeIdsToRemoveHasBeenSet(false),
-    m_aZMode(AZMode::NOT_SET),
-    m_aZModeHasBeenSet(false),
-    m_newAvailabilityZonesHasBeenSet(false),
-    m_cacheSecurityGroupNamesHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_notificationTopicArnHasBeenSet(false),
-    m_cacheParameterGroupNameHasBeenSet(false),
-    m_notificationTopicStatusHasBeenSet(false),
-    m_applyImmediately(false),
-    m_applyImmediatelyHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false),
-    m_snapshotRetentionLimit(0),
-    m_snapshotRetentionLimitHasBeenSet(false),
-    m_snapshotWindowHasBeenSet(false),
-    m_cacheNodeTypeHasBeenSet(false),
-    m_authTokenHasBeenSet(false),
-    m_authTokenUpdateStrategy(AuthTokenUpdateStrategyType::NOT_SET),
-    m_authTokenUpdateStrategyHasBeenSet(false),
-    m_logDeliveryConfigurationsHasBeenSet(false),
-    m_ipDiscovery(IpDiscovery::NOT_SET),
-    m_ipDiscoveryHasBeenSet(false)
-{
-}
-
 Aws::String ModifyCacheClusterRequest::SerializePayload() const
 {
   Aws::StringStream ss;

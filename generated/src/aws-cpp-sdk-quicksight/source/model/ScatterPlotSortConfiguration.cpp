@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ScatterPlotSortConfiguration::ScatterPlotSortConfiguration() : 
-    m_scatterPlotLimitConfigurationHasBeenSet(false)
-{
-}
-
 ScatterPlotSortConfiguration::ScatterPlotSortConfiguration(JsonView jsonValue)
-  : ScatterPlotSortConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ScatterPlotSortConfiguration& ScatterPlotSortConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("ScatterPlotLimitConfiguration"))
   {
     m_scatterPlotLimitConfiguration = jsonValue.GetObject("ScatterPlotLimitConfiguration");
-
     m_scatterPlotLimitConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class GeospatialLineWidth
   {
   public:
-    AWS_QUICKSIGHT_API GeospatialLineWidth();
+    AWS_QUICKSIGHT_API GeospatialLineWidth() = default;
     AWS_QUICKSIGHT_API GeospatialLineWidth(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GeospatialLineWidth& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>The positive value for the width of a line.</p>
      */
-    inline double GetLineWidth() const{ return m_lineWidth; }
+    inline double GetLineWidth() const { return m_lineWidth; }
     inline bool LineWidthHasBeenSet() const { return m_lineWidthHasBeenSet; }
     inline void SetLineWidth(double value) { m_lineWidthHasBeenSet = true; m_lineWidth = value; }
     inline GeospatialLineWidth& WithLineWidth(double value) { SetLineWidth(value); return *this;}
     ///@}
   private:
 
-    double m_lineWidth;
+    double m_lineWidth{0.0};
     bool m_lineWidthHasBeenSet = false;
   };
 

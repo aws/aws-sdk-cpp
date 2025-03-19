@@ -18,15 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-SAPODataSourceProperties::SAPODataSourceProperties() : 
-    m_objectPathHasBeenSet(false),
-    m_parallelismConfigHasBeenSet(false),
-    m_paginationConfigHasBeenSet(false)
-{
-}
-
 SAPODataSourceProperties::SAPODataSourceProperties(JsonView jsonValue)
-  : SAPODataSourceProperties()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SAPODataSourceProperties& SAPODataSourceProperties::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("objectPath"))
   {
     m_objectPath = jsonValue.GetString("objectPath");
-
     m_objectPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parallelismConfig"))
   {
     m_parallelismConfig = jsonValue.GetObject("parallelismConfig");
-
     m_parallelismConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("paginationConfig"))
   {
     m_paginationConfig = jsonValue.GetObject("paginationConfig");
-
     m_paginationConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,15 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListIntentPathsRequest::ListIntentPathsRequest() : 
-    m_botIdHasBeenSet(false),
-    m_startDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false),
-    m_intentPathHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String ListIntentPathsRequest::SerializePayload() const
 {
   JsonValue payload;

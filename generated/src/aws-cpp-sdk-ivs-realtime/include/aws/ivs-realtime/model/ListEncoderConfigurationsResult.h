@@ -29,7 +29,7 @@ namespace Model
   class ListEncoderConfigurationsResult
   {
   public:
-    AWS_IVSREALTIME_API ListEncoderConfigurationsResult();
+    AWS_IVSREALTIME_API ListEncoderConfigurationsResult() = default;
     AWS_IVSREALTIME_API ListEncoderConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IVSREALTIME_API ListEncoderConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>List of the matching EncoderConfigurations (summary information only).</p>
      */
-    inline const Aws::Vector<EncoderConfigurationSummary>& GetEncoderConfigurations() const{ return m_encoderConfigurations; }
-    inline void SetEncoderConfigurations(const Aws::Vector<EncoderConfigurationSummary>& value) { m_encoderConfigurations = value; }
-    inline void SetEncoderConfigurations(Aws::Vector<EncoderConfigurationSummary>&& value) { m_encoderConfigurations = std::move(value); }
-    inline ListEncoderConfigurationsResult& WithEncoderConfigurations(const Aws::Vector<EncoderConfigurationSummary>& value) { SetEncoderConfigurations(value); return *this;}
-    inline ListEncoderConfigurationsResult& WithEncoderConfigurations(Aws::Vector<EncoderConfigurationSummary>&& value) { SetEncoderConfigurations(std::move(value)); return *this;}
-    inline ListEncoderConfigurationsResult& AddEncoderConfigurations(const EncoderConfigurationSummary& value) { m_encoderConfigurations.push_back(value); return *this; }
-    inline ListEncoderConfigurationsResult& AddEncoderConfigurations(EncoderConfigurationSummary&& value) { m_encoderConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EncoderConfigurationSummary>& GetEncoderConfigurations() const { return m_encoderConfigurations; }
+    template<typename EncoderConfigurationsT = Aws::Vector<EncoderConfigurationSummary>>
+    void SetEncoderConfigurations(EncoderConfigurationsT&& value) { m_encoderConfigurationsHasBeenSet = true; m_encoderConfigurations = std::forward<EncoderConfigurationsT>(value); }
+    template<typename EncoderConfigurationsT = Aws::Vector<EncoderConfigurationSummary>>
+    ListEncoderConfigurationsResult& WithEncoderConfigurations(EncoderConfigurationsT&& value) { SetEncoderConfigurations(std::forward<EncoderConfigurationsT>(value)); return *this;}
+    template<typename EncoderConfigurationsT = EncoderConfigurationSummary>
+    ListEncoderConfigurationsResult& AddEncoderConfigurations(EncoderConfigurationsT&& value) { m_encoderConfigurationsHasBeenSet = true; m_encoderConfigurations.emplace_back(std::forward<EncoderConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>If there are more encoder configurations than <code>maxResults</code>, use
      * <code>nextToken</code> in the request to get the next set.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListEncoderConfigurationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEncoderConfigurationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEncoderConfigurationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEncoderConfigurationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListEncoderConfigurationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListEncoderConfigurationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListEncoderConfigurationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListEncoderConfigurationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EncoderConfigurationSummary> m_encoderConfigurations;
+    bool m_encoderConfigurationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,7 +21,7 @@ namespace Model
   class DescribeOrganizationsAccessRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API DescribeOrganizationsAccessRequest();
+    AWS_CLOUDFORMATION_API DescribeOrganizationsAccessRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,16 +50,14 @@ namespace Model
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>
      */
-    inline const CallAs& GetCallAs() const{ return m_callAs; }
+    inline CallAs GetCallAs() const { return m_callAs; }
     inline bool CallAsHasBeenSet() const { return m_callAsHasBeenSet; }
-    inline void SetCallAs(const CallAs& value) { m_callAsHasBeenSet = true; m_callAs = value; }
-    inline void SetCallAs(CallAs&& value) { m_callAsHasBeenSet = true; m_callAs = std::move(value); }
-    inline DescribeOrganizationsAccessRequest& WithCallAs(const CallAs& value) { SetCallAs(value); return *this;}
-    inline DescribeOrganizationsAccessRequest& WithCallAs(CallAs&& value) { SetCallAs(std::move(value)); return *this;}
+    inline void SetCallAs(CallAs value) { m_callAsHasBeenSet = true; m_callAs = value; }
+    inline DescribeOrganizationsAccessRequest& WithCallAs(CallAs value) { SetCallAs(value); return *this;}
     ///@}
   private:
 
-    CallAs m_callAs;
+    CallAs m_callAs{CallAs::NOT_SET};
     bool m_callAsHasBeenSet = false;
   };
 

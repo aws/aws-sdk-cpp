@@ -12,11 +12,6 @@ using namespace Aws::MedicalImaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDatastoreRequest::DeleteDatastoreRequest() : 
-    m_datastoreIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDatastoreRequest::SerializePayload() const
 {
   return {};

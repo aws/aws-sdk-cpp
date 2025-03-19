@@ -33,7 +33,7 @@ namespace Model
   class DifferentialPrivacyPreviewAggregation
   {
   public:
-    AWS_CLEANROOMS_API DifferentialPrivacyPreviewAggregation();
+    AWS_CLEANROOMS_API DifferentialPrivacyPreviewAggregation() = default;
     AWS_CLEANROOMS_API DifferentialPrivacyPreviewAggregation(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API DifferentialPrivacyPreviewAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>The type of aggregation function.</p>
      */
-    inline const DifferentialPrivacyAggregationType& GetType() const{ return m_type; }
+    inline DifferentialPrivacyAggregationType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const DifferentialPrivacyAggregationType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(DifferentialPrivacyAggregationType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline DifferentialPrivacyPreviewAggregation& WithType(const DifferentialPrivacyAggregationType& value) { SetType(value); return *this;}
-    inline DifferentialPrivacyPreviewAggregation& WithType(DifferentialPrivacyAggregationType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(DifferentialPrivacyAggregationType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DifferentialPrivacyPreviewAggregation& WithType(DifferentialPrivacyAggregationType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -56,17 +54,17 @@ namespace Model
      * <p>The maximum number of aggregations that the member who can query can run
      * given the epsilon and noise parameters.</p>
      */
-    inline int GetMaxCount() const{ return m_maxCount; }
+    inline int GetMaxCount() const { return m_maxCount; }
     inline bool MaxCountHasBeenSet() const { return m_maxCountHasBeenSet; }
     inline void SetMaxCount(int value) { m_maxCountHasBeenSet = true; m_maxCount = value; }
     inline DifferentialPrivacyPreviewAggregation& WithMaxCount(int value) { SetMaxCount(value); return *this;}
     ///@}
   private:
 
-    DifferentialPrivacyAggregationType m_type;
+    DifferentialPrivacyAggregationType m_type{DifferentialPrivacyAggregationType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    int m_maxCount;
+    int m_maxCount{0};
     bool m_maxCountHasBeenSet = false;
   };
 

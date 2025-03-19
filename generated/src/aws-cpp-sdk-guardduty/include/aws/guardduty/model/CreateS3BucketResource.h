@@ -33,7 +33,7 @@ namespace Model
   class CreateS3BucketResource
   {
   public:
-    AWS_GUARDDUTY_API CreateS3BucketResource();
+    AWS_GUARDDUTY_API CreateS3BucketResource() = default;
     AWS_GUARDDUTY_API CreateS3BucketResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API CreateS3BucketResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>Name of the S3 bucket.</p>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline CreateS3BucketResource& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline CreateS3BucketResource& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline CreateS3BucketResource& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    CreateS3BucketResource& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,15 +56,14 @@ namespace Model
      * <p>Information about the specified object prefixes. The S3 object will be
      * scanned only if it belongs to any of the specified object prefixes.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetObjectPrefixes() const{ return m_objectPrefixes; }
+    inline const Aws::Vector<Aws::String>& GetObjectPrefixes() const { return m_objectPrefixes; }
     inline bool ObjectPrefixesHasBeenSet() const { return m_objectPrefixesHasBeenSet; }
-    inline void SetObjectPrefixes(const Aws::Vector<Aws::String>& value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes = value; }
-    inline void SetObjectPrefixes(Aws::Vector<Aws::String>&& value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes = std::move(value); }
-    inline CreateS3BucketResource& WithObjectPrefixes(const Aws::Vector<Aws::String>& value) { SetObjectPrefixes(value); return *this;}
-    inline CreateS3BucketResource& WithObjectPrefixes(Aws::Vector<Aws::String>&& value) { SetObjectPrefixes(std::move(value)); return *this;}
-    inline CreateS3BucketResource& AddObjectPrefixes(const Aws::String& value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes.push_back(value); return *this; }
-    inline CreateS3BucketResource& AddObjectPrefixes(Aws::String&& value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes.push_back(std::move(value)); return *this; }
-    inline CreateS3BucketResource& AddObjectPrefixes(const char* value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes.push_back(value); return *this; }
+    template<typename ObjectPrefixesT = Aws::Vector<Aws::String>>
+    void SetObjectPrefixes(ObjectPrefixesT&& value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes = std::forward<ObjectPrefixesT>(value); }
+    template<typename ObjectPrefixesT = Aws::Vector<Aws::String>>
+    CreateS3BucketResource& WithObjectPrefixes(ObjectPrefixesT&& value) { SetObjectPrefixes(std::forward<ObjectPrefixesT>(value)); return *this;}
+    template<typename ObjectPrefixesT = Aws::String>
+    CreateS3BucketResource& AddObjectPrefixes(ObjectPrefixesT&& value) { m_objectPrefixesHasBeenSet = true; m_objectPrefixes.emplace_back(std::forward<ObjectPrefixesT>(value)); return *this; }
     ///@}
   private:
 

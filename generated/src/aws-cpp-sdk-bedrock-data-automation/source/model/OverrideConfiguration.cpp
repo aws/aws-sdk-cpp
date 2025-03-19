@@ -18,13 +18,7 @@ namespace BedrockDataAutomation
 namespace Model
 {
 
-OverrideConfiguration::OverrideConfiguration() : 
-    m_documentHasBeenSet(false)
-{
-}
-
 OverrideConfiguration::OverrideConfiguration(JsonView jsonValue)
-  : OverrideConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ OverrideConfiguration& OverrideConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("document"))
   {
     m_document = jsonValue.GetObject("document");
-
     m_documentHasBeenSet = true;
   }
-
   return *this;
 }
 

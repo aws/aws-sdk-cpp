@@ -12,18 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCostAndUsageRequest::GetCostAndUsageRequest() : 
-    m_timePeriodHasBeenSet(false),
-    m_granularity(Granularity::NOT_SET),
-    m_granularityHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_groupByHasBeenSet(false),
-    m_billingViewArnHasBeenSet(false),
-    m_nextPageTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetCostAndUsageRequest::SerializePayload() const
 {
   JsonValue payload;

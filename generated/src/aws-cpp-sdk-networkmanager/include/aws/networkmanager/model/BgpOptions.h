@@ -29,7 +29,7 @@ namespace Model
   class BgpOptions
   {
   public:
-    AWS_NETWORKMANAGER_API BgpOptions();
+    AWS_NETWORKMANAGER_API BgpOptions() = default;
     AWS_NETWORKMANAGER_API BgpOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API BgpOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>The Peer ASN of the BGP.</p>
      */
-    inline long long GetPeerAsn() const{ return m_peerAsn; }
+    inline long long GetPeerAsn() const { return m_peerAsn; }
     inline bool PeerAsnHasBeenSet() const { return m_peerAsnHasBeenSet; }
     inline void SetPeerAsn(long long value) { m_peerAsnHasBeenSet = true; m_peerAsn = value; }
     inline BgpOptions& WithPeerAsn(long long value) { SetPeerAsn(value); return *this;}
     ///@}
   private:
 
-    long long m_peerAsn;
+    long long m_peerAsn{0};
     bool m_peerAsnHasBeenSet = false;
   };
 

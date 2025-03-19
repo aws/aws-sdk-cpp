@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteBlueGreenDeploymentResult::DeleteBlueGreenDeploymentResult()
-{
-}
-
 DeleteBlueGreenDeploymentResult::DeleteBlueGreenDeploymentResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ DeleteBlueGreenDeploymentResult& DeleteBlueGreenDeploymentResult::operator =(con
     if(!blueGreenDeploymentNode.IsNull())
     {
       m_blueGreenDeployment = blueGreenDeploymentNode;
+      m_blueGreenDeploymentHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::DeleteBlueGreenDeploymentResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

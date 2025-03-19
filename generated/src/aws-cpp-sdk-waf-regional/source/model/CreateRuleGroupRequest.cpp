@@ -12,14 +12,6 @@ using namespace Aws::WAFRegional::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRuleGroupRequest::CreateRuleGroupRequest() : 
-    m_nameHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_changeTokenHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateRuleGroupRequest::SerializePayload() const
 {
   JsonValue payload;

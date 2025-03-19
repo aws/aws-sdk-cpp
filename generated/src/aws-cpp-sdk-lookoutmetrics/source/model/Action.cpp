@@ -18,14 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-Action::Action() : 
-    m_sNSConfigurationHasBeenSet(false),
-    m_lambdaConfigurationHasBeenSet(false)
-{
-}
-
 Action::Action(JsonView jsonValue)
-  : Action()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Action& Action::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SNSConfiguration"))
   {
     m_sNSConfiguration = jsonValue.GetObject("SNSConfiguration");
-
     m_sNSConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LambdaConfiguration"))
   {
     m_lambdaConfiguration = jsonValue.GetObject("LambdaConfiguration");
-
     m_lambdaConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

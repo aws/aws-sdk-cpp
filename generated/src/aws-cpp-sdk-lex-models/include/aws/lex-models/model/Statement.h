@@ -34,7 +34,7 @@ namespace Model
   class Statement
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API Statement();
+    AWS_LEXMODELBUILDINGSERVICE_API Statement() = default;
     AWS_LEXMODELBUILDINGSERVICE_API Statement(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API Statement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
     /**
      * <p>A collection of message objects.</p>
      */
-    inline const Aws::Vector<Message>& GetMessages() const{ return m_messages; }
+    inline const Aws::Vector<Message>& GetMessages() const { return m_messages; }
     inline bool MessagesHasBeenSet() const { return m_messagesHasBeenSet; }
-    inline void SetMessages(const Aws::Vector<Message>& value) { m_messagesHasBeenSet = true; m_messages = value; }
-    inline void SetMessages(Aws::Vector<Message>&& value) { m_messagesHasBeenSet = true; m_messages = std::move(value); }
-    inline Statement& WithMessages(const Aws::Vector<Message>& value) { SetMessages(value); return *this;}
-    inline Statement& WithMessages(Aws::Vector<Message>&& value) { SetMessages(std::move(value)); return *this;}
-    inline Statement& AddMessages(const Message& value) { m_messagesHasBeenSet = true; m_messages.push_back(value); return *this; }
-    inline Statement& AddMessages(Message&& value) { m_messagesHasBeenSet = true; m_messages.push_back(std::move(value)); return *this; }
+    template<typename MessagesT = Aws::Vector<Message>>
+    void SetMessages(MessagesT&& value) { m_messagesHasBeenSet = true; m_messages = std::forward<MessagesT>(value); }
+    template<typename MessagesT = Aws::Vector<Message>>
+    Statement& WithMessages(MessagesT&& value) { SetMessages(std::forward<MessagesT>(value)); return *this;}
+    template<typename MessagesT = Message>
+    Statement& AddMessages(MessagesT&& value) { m_messagesHasBeenSet = true; m_messages.emplace_back(std::forward<MessagesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,14 +62,12 @@ namespace Model
      * of the session attributes and slot values for placeholders in the response card.
      * </p>
      */
-    inline const Aws::String& GetResponseCard() const{ return m_responseCard; }
+    inline const Aws::String& GetResponseCard() const { return m_responseCard; }
     inline bool ResponseCardHasBeenSet() const { return m_responseCardHasBeenSet; }
-    inline void SetResponseCard(const Aws::String& value) { m_responseCardHasBeenSet = true; m_responseCard = value; }
-    inline void SetResponseCard(Aws::String&& value) { m_responseCardHasBeenSet = true; m_responseCard = std::move(value); }
-    inline void SetResponseCard(const char* value) { m_responseCardHasBeenSet = true; m_responseCard.assign(value); }
-    inline Statement& WithResponseCard(const Aws::String& value) { SetResponseCard(value); return *this;}
-    inline Statement& WithResponseCard(Aws::String&& value) { SetResponseCard(std::move(value)); return *this;}
-    inline Statement& WithResponseCard(const char* value) { SetResponseCard(value); return *this;}
+    template<typename ResponseCardT = Aws::String>
+    void SetResponseCard(ResponseCardT&& value) { m_responseCardHasBeenSet = true; m_responseCard = std::forward<ResponseCardT>(value); }
+    template<typename ResponseCardT = Aws::String>
+    Statement& WithResponseCard(ResponseCardT&& value) { SetResponseCard(std::forward<ResponseCardT>(value)); return *this;}
     ///@}
   private:
 

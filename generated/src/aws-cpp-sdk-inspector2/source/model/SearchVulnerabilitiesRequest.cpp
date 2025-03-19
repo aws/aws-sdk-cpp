@@ -12,12 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchVulnerabilitiesRequest::SearchVulnerabilitiesRequest() : 
-    m_filterCriteriaHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String SearchVulnerabilitiesRequest::SerializePayload() const
 {
   JsonValue payload;

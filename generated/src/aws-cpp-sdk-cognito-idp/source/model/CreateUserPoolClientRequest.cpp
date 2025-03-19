@@ -12,41 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateUserPoolClientRequest::CreateUserPoolClientRequest() : 
-    m_userPoolIdHasBeenSet(false),
-    m_clientNameHasBeenSet(false),
-    m_generateSecret(false),
-    m_generateSecretHasBeenSet(false),
-    m_refreshTokenValidity(0),
-    m_refreshTokenValidityHasBeenSet(false),
-    m_accessTokenValidity(0),
-    m_accessTokenValidityHasBeenSet(false),
-    m_idTokenValidity(0),
-    m_idTokenValidityHasBeenSet(false),
-    m_tokenValidityUnitsHasBeenSet(false),
-    m_readAttributesHasBeenSet(false),
-    m_writeAttributesHasBeenSet(false),
-    m_explicitAuthFlowsHasBeenSet(false),
-    m_supportedIdentityProvidersHasBeenSet(false),
-    m_callbackURLsHasBeenSet(false),
-    m_logoutURLsHasBeenSet(false),
-    m_defaultRedirectURIHasBeenSet(false),
-    m_allowedOAuthFlowsHasBeenSet(false),
-    m_allowedOAuthScopesHasBeenSet(false),
-    m_allowedOAuthFlowsUserPoolClient(false),
-    m_allowedOAuthFlowsUserPoolClientHasBeenSet(false),
-    m_analyticsConfigurationHasBeenSet(false),
-    m_preventUserExistenceErrors(PreventUserExistenceErrorTypes::NOT_SET),
-    m_preventUserExistenceErrorsHasBeenSet(false),
-    m_enableTokenRevocation(false),
-    m_enableTokenRevocationHasBeenSet(false),
-    m_enablePropagateAdditionalUserContextData(false),
-    m_enablePropagateAdditionalUserContextDataHasBeenSet(false),
-    m_authSessionValidity(0),
-    m_authSessionValidityHasBeenSet(false)
-{
-}
-
 Aws::String CreateUserPoolClientRequest::SerializePayload() const
 {
   JsonValue payload;

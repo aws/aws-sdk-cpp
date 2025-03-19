@@ -18,14 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-BasicLayout::BasicLayout() : 
-    m_moreInfoHasBeenSet(false),
-    m_topPanelHasBeenSet(false)
-{
-}
-
 BasicLayout::BasicLayout(JsonView jsonValue)
-  : BasicLayout()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BasicLayout& BasicLayout::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("moreInfo"))
   {
     m_moreInfo = jsonValue.GetObject("moreInfo");
-
     m_moreInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("topPanel"))
   {
     m_topPanel = jsonValue.GetObject("topPanel");
-
     m_topPanelHasBeenSet = true;
   }
-
   return *this;
 }
 

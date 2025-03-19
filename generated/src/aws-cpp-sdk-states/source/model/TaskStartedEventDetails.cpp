@@ -18,14 +18,7 @@ namespace SFN
 namespace Model
 {
 
-TaskStartedEventDetails::TaskStartedEventDetails() : 
-    m_resourceTypeHasBeenSet(false),
-    m_resourceHasBeenSet(false)
-{
-}
-
 TaskStartedEventDetails::TaskStartedEventDetails(JsonView jsonValue)
-  : TaskStartedEventDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TaskStartedEventDetails& TaskStartedEventDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = jsonValue.GetString("resourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetString("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace finspace
 namespace Model
 {
 
-KxDatabaseCacheConfiguration::KxDatabaseCacheConfiguration() : 
-    m_cacheTypeHasBeenSet(false),
-    m_dbPathsHasBeenSet(false),
-    m_dataviewNameHasBeenSet(false)
-{
-}
-
 KxDatabaseCacheConfiguration::KxDatabaseCacheConfiguration(JsonView jsonValue)
-  : KxDatabaseCacheConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ KxDatabaseCacheConfiguration& KxDatabaseCacheConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("cacheType"))
   {
     m_cacheType = jsonValue.GetString("cacheType");
-
     m_cacheTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dbPaths"))
   {
     Aws::Utils::Array<JsonView> dbPathsJsonList = jsonValue.GetArray("dbPaths");
@@ -49,14 +39,11 @@ KxDatabaseCacheConfiguration& KxDatabaseCacheConfiguration::operator =(JsonView 
     }
     m_dbPathsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataviewName"))
   {
     m_dataviewName = jsonValue.GetString("dataviewName");
-
     m_dataviewNameHasBeenSet = true;
   }
-
   return *this;
 }
 

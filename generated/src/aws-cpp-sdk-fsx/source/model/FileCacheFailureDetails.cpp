@@ -18,13 +18,7 @@ namespace FSx
 namespace Model
 {
 
-FileCacheFailureDetails::FileCacheFailureDetails() : 
-    m_messageHasBeenSet(false)
-{
-}
-
 FileCacheFailureDetails::FileCacheFailureDetails(JsonView jsonValue)
-  : FileCacheFailureDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FileCacheFailureDetails& FileCacheFailureDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class PutCommentReactionRequest : public CodeCommitRequest
   {
   public:
-    AWS_CODECOMMIT_API PutCommentReactionRequest();
+    AWS_CODECOMMIT_API PutCommentReactionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID of the comment to which you want to add or update a reaction.</p>
      */
-    inline const Aws::String& GetCommentId() const{ return m_commentId; }
+    inline const Aws::String& GetCommentId() const { return m_commentId; }
     inline bool CommentIdHasBeenSet() const { return m_commentIdHasBeenSet; }
-    inline void SetCommentId(const Aws::String& value) { m_commentIdHasBeenSet = true; m_commentId = value; }
-    inline void SetCommentId(Aws::String&& value) { m_commentIdHasBeenSet = true; m_commentId = std::move(value); }
-    inline void SetCommentId(const char* value) { m_commentIdHasBeenSet = true; m_commentId.assign(value); }
-    inline PutCommentReactionRequest& WithCommentId(const Aws::String& value) { SetCommentId(value); return *this;}
-    inline PutCommentReactionRequest& WithCommentId(Aws::String&& value) { SetCommentId(std::move(value)); return *this;}
-    inline PutCommentReactionRequest& WithCommentId(const char* value) { SetCommentId(value); return *this;}
+    template<typename CommentIdT = Aws::String>
+    void SetCommentId(CommentIdT&& value) { m_commentIdHasBeenSet = true; m_commentId = std::forward<CommentIdT>(value); }
+    template<typename CommentIdT = Aws::String>
+    PutCommentReactionRequest& WithCommentId(CommentIdT&& value) { SetCommentId(std::forward<CommentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/codecommit/latest/userguide/how-to-commit-comment.html#emoji-reaction-table">CodeCommit
      * User Guide</a>.</p>
      */
-    inline const Aws::String& GetReactionValue() const{ return m_reactionValue; }
+    inline const Aws::String& GetReactionValue() const { return m_reactionValue; }
     inline bool ReactionValueHasBeenSet() const { return m_reactionValueHasBeenSet; }
-    inline void SetReactionValue(const Aws::String& value) { m_reactionValueHasBeenSet = true; m_reactionValue = value; }
-    inline void SetReactionValue(Aws::String&& value) { m_reactionValueHasBeenSet = true; m_reactionValue = std::move(value); }
-    inline void SetReactionValue(const char* value) { m_reactionValueHasBeenSet = true; m_reactionValue.assign(value); }
-    inline PutCommentReactionRequest& WithReactionValue(const Aws::String& value) { SetReactionValue(value); return *this;}
-    inline PutCommentReactionRequest& WithReactionValue(Aws::String&& value) { SetReactionValue(std::move(value)); return *this;}
-    inline PutCommentReactionRequest& WithReactionValue(const char* value) { SetReactionValue(value); return *this;}
+    template<typename ReactionValueT = Aws::String>
+    void SetReactionValue(ReactionValueT&& value) { m_reactionValueHasBeenSet = true; m_reactionValue = std::forward<ReactionValueT>(value); }
+    template<typename ReactionValueT = Aws::String>
+    PutCommentReactionRequest& WithReactionValue(ReactionValueT&& value) { SetReactionValue(std::forward<ReactionValueT>(value)); return *this;}
     ///@}
   private:
 

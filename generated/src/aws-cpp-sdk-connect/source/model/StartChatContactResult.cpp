@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartChatContactResult::StartChatContactResult()
-{
-}
-
 StartChatContactResult::StartChatContactResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,30 @@ StartChatContactResult& StartChatContactResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("ContactId"))
   {
     m_contactId = jsonValue.GetString("ContactId");
-
+    m_contactIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParticipantId"))
   {
     m_participantId = jsonValue.GetString("ParticipantId");
-
+    m_participantIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParticipantToken"))
   {
     m_participantToken = jsonValue.GetString("ParticipantToken");
-
+    m_participantTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContinuedFromContactId"))
   {
     m_continuedFromContactId = jsonValue.GetString("ContinuedFromContactId");
-
+    m_continuedFromContactIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

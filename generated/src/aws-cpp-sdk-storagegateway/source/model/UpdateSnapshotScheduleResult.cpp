@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateSnapshotScheduleResult::UpdateSnapshotScheduleResult()
-{
-}
-
 UpdateSnapshotScheduleResult::UpdateSnapshotScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateSnapshotScheduleResult& UpdateSnapshotScheduleResult::operator =(const Aws
   if(jsonValue.ValueExists("VolumeARN"))
   {
     m_volumeARN = jsonValue.GetString("VolumeARN");
-
+    m_volumeARNHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

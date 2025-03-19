@@ -20,14 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-MinimumLoadBalancerCapacity::MinimumLoadBalancerCapacity() : 
-    m_capacityUnits(0),
-    m_capacityUnitsHasBeenSet(false)
-{
-}
-
 MinimumLoadBalancerCapacity::MinimumLoadBalancerCapacity(const XmlNode& xmlNode)
-  : MinimumLoadBalancerCapacity()
 {
   *this = xmlNode;
 }

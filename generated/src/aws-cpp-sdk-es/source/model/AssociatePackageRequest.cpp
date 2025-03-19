@@ -12,12 +12,6 @@ using namespace Aws::ElasticsearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociatePackageRequest::AssociatePackageRequest() : 
-    m_packageIDHasBeenSet(false),
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String AssociatePackageRequest::SerializePayload() const
 {
   return {};

@@ -38,7 +38,7 @@ namespace Model
   class HIT
   {
   public:
-    AWS_MTURK_API HIT();
+    AWS_MTURK_API HIT() = default;
     AWS_MTURK_API HIT(Aws::Utils::Json::JsonView jsonValue);
     AWS_MTURK_API HIT& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MTURK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,96 +48,84 @@ namespace Model
     /**
      * <p> A unique identifier for the HIT.</p>
      */
-    inline const Aws::String& GetHITId() const{ return m_hITId; }
+    inline const Aws::String& GetHITId() const { return m_hITId; }
     inline bool HITIdHasBeenSet() const { return m_hITIdHasBeenSet; }
-    inline void SetHITId(const Aws::String& value) { m_hITIdHasBeenSet = true; m_hITId = value; }
-    inline void SetHITId(Aws::String&& value) { m_hITIdHasBeenSet = true; m_hITId = std::move(value); }
-    inline void SetHITId(const char* value) { m_hITIdHasBeenSet = true; m_hITId.assign(value); }
-    inline HIT& WithHITId(const Aws::String& value) { SetHITId(value); return *this;}
-    inline HIT& WithHITId(Aws::String&& value) { SetHITId(std::move(value)); return *this;}
-    inline HIT& WithHITId(const char* value) { SetHITId(value); return *this;}
+    template<typename HITIdT = Aws::String>
+    void SetHITId(HITIdT&& value) { m_hITIdHasBeenSet = true; m_hITId = std::forward<HITIdT>(value); }
+    template<typename HITIdT = Aws::String>
+    HIT& WithHITId(HITIdT&& value) { SetHITId(std::forward<HITIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the HIT type of this HIT</p>
      */
-    inline const Aws::String& GetHITTypeId() const{ return m_hITTypeId; }
+    inline const Aws::String& GetHITTypeId() const { return m_hITTypeId; }
     inline bool HITTypeIdHasBeenSet() const { return m_hITTypeIdHasBeenSet; }
-    inline void SetHITTypeId(const Aws::String& value) { m_hITTypeIdHasBeenSet = true; m_hITTypeId = value; }
-    inline void SetHITTypeId(Aws::String&& value) { m_hITTypeIdHasBeenSet = true; m_hITTypeId = std::move(value); }
-    inline void SetHITTypeId(const char* value) { m_hITTypeIdHasBeenSet = true; m_hITTypeId.assign(value); }
-    inline HIT& WithHITTypeId(const Aws::String& value) { SetHITTypeId(value); return *this;}
-    inline HIT& WithHITTypeId(Aws::String&& value) { SetHITTypeId(std::move(value)); return *this;}
-    inline HIT& WithHITTypeId(const char* value) { SetHITTypeId(value); return *this;}
+    template<typename HITTypeIdT = Aws::String>
+    void SetHITTypeId(HITTypeIdT&& value) { m_hITTypeIdHasBeenSet = true; m_hITTypeId = std::forward<HITTypeIdT>(value); }
+    template<typename HITTypeIdT = Aws::String>
+    HIT& WithHITTypeId(HITTypeIdT&& value) { SetHITTypeId(std::forward<HITTypeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The ID of the HIT Group of this HIT.</p>
      */
-    inline const Aws::String& GetHITGroupId() const{ return m_hITGroupId; }
+    inline const Aws::String& GetHITGroupId() const { return m_hITGroupId; }
     inline bool HITGroupIdHasBeenSet() const { return m_hITGroupIdHasBeenSet; }
-    inline void SetHITGroupId(const Aws::String& value) { m_hITGroupIdHasBeenSet = true; m_hITGroupId = value; }
-    inline void SetHITGroupId(Aws::String&& value) { m_hITGroupIdHasBeenSet = true; m_hITGroupId = std::move(value); }
-    inline void SetHITGroupId(const char* value) { m_hITGroupIdHasBeenSet = true; m_hITGroupId.assign(value); }
-    inline HIT& WithHITGroupId(const Aws::String& value) { SetHITGroupId(value); return *this;}
-    inline HIT& WithHITGroupId(Aws::String&& value) { SetHITGroupId(std::move(value)); return *this;}
-    inline HIT& WithHITGroupId(const char* value) { SetHITGroupId(value); return *this;}
+    template<typename HITGroupIdT = Aws::String>
+    void SetHITGroupId(HITGroupIdT&& value) { m_hITGroupIdHasBeenSet = true; m_hITGroupId = std::forward<HITGroupIdT>(value); }
+    template<typename HITGroupIdT = Aws::String>
+    HIT& WithHITGroupId(HITGroupIdT&& value) { SetHITGroupId(std::forward<HITGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The ID of the HIT Layout of this HIT.</p>
      */
-    inline const Aws::String& GetHITLayoutId() const{ return m_hITLayoutId; }
+    inline const Aws::String& GetHITLayoutId() const { return m_hITLayoutId; }
     inline bool HITLayoutIdHasBeenSet() const { return m_hITLayoutIdHasBeenSet; }
-    inline void SetHITLayoutId(const Aws::String& value) { m_hITLayoutIdHasBeenSet = true; m_hITLayoutId = value; }
-    inline void SetHITLayoutId(Aws::String&& value) { m_hITLayoutIdHasBeenSet = true; m_hITLayoutId = std::move(value); }
-    inline void SetHITLayoutId(const char* value) { m_hITLayoutIdHasBeenSet = true; m_hITLayoutId.assign(value); }
-    inline HIT& WithHITLayoutId(const Aws::String& value) { SetHITLayoutId(value); return *this;}
-    inline HIT& WithHITLayoutId(Aws::String&& value) { SetHITLayoutId(std::move(value)); return *this;}
-    inline HIT& WithHITLayoutId(const char* value) { SetHITLayoutId(value); return *this;}
+    template<typename HITLayoutIdT = Aws::String>
+    void SetHITLayoutId(HITLayoutIdT&& value) { m_hITLayoutIdHasBeenSet = true; m_hITLayoutId = std::forward<HITLayoutIdT>(value); }
+    template<typename HITLayoutIdT = Aws::String>
+    HIT& WithHITLayoutId(HITLayoutIdT&& value) { SetHITLayoutId(std::forward<HITLayoutIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The date and time the HIT was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline HIT& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline HIT& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    HIT& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The title of the HIT.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline HIT& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline HIT& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline HIT& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    HIT& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A general description of the HIT.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline HIT& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline HIT& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline HIT& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    HIT& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -146,14 +134,12 @@ namespace Model
      * either either a QuestionForm, HTMLQuestion or an ExternalQuestion data
      * structure.</p>
      */
-    inline const Aws::String& GetQuestion() const{ return m_question; }
+    inline const Aws::String& GetQuestion() const { return m_question; }
     inline bool QuestionHasBeenSet() const { return m_questionHasBeenSet; }
-    inline void SetQuestion(const Aws::String& value) { m_questionHasBeenSet = true; m_question = value; }
-    inline void SetQuestion(Aws::String&& value) { m_questionHasBeenSet = true; m_question = std::move(value); }
-    inline void SetQuestion(const char* value) { m_questionHasBeenSet = true; m_question.assign(value); }
-    inline HIT& WithQuestion(const Aws::String& value) { SetQuestion(value); return *this;}
-    inline HIT& WithQuestion(Aws::String&& value) { SetQuestion(std::move(value)); return *this;}
-    inline HIT& WithQuestion(const char* value) { SetQuestion(value); return *this;}
+    template<typename QuestionT = Aws::String>
+    void SetQuestion(QuestionT&& value) { m_questionHasBeenSet = true; m_question = std::forward<QuestionT>(value); }
+    template<typename QuestionT = Aws::String>
+    HIT& WithQuestion(QuestionT&& value) { SetQuestion(std::forward<QuestionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,14 +148,12 @@ namespace Model
      * Search terms similar to the keywords of a HIT are more likely to have the HIT in
      * the search results.</p>
      */
-    inline const Aws::String& GetKeywords() const{ return m_keywords; }
+    inline const Aws::String& GetKeywords() const { return m_keywords; }
     inline bool KeywordsHasBeenSet() const { return m_keywordsHasBeenSet; }
-    inline void SetKeywords(const Aws::String& value) { m_keywordsHasBeenSet = true; m_keywords = value; }
-    inline void SetKeywords(Aws::String&& value) { m_keywordsHasBeenSet = true; m_keywords = std::move(value); }
-    inline void SetKeywords(const char* value) { m_keywordsHasBeenSet = true; m_keywords.assign(value); }
-    inline HIT& WithKeywords(const Aws::String& value) { SetKeywords(value); return *this;}
-    inline HIT& WithKeywords(Aws::String&& value) { SetKeywords(std::move(value)); return *this;}
-    inline HIT& WithKeywords(const char* value) { SetKeywords(value); return *this;}
+    template<typename KeywordsT = Aws::String>
+    void SetKeywords(KeywordsT&& value) { m_keywordsHasBeenSet = true; m_keywords = std::forward<KeywordsT>(value); }
+    template<typename KeywordsT = Aws::String>
+    HIT& WithKeywords(KeywordsT&& value) { SetKeywords(std::forward<KeywordsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -177,12 +161,10 @@ namespace Model
      * <p>The status of the HIT and its assignments. Valid Values are Assignable |
      * Unassignable | Reviewable | Reviewing | Disposed. </p>
      */
-    inline const HITStatus& GetHITStatus() const{ return m_hITStatus; }
+    inline HITStatus GetHITStatus() const { return m_hITStatus; }
     inline bool HITStatusHasBeenSet() const { return m_hITStatusHasBeenSet; }
-    inline void SetHITStatus(const HITStatus& value) { m_hITStatusHasBeenSet = true; m_hITStatus = value; }
-    inline void SetHITStatus(HITStatus&& value) { m_hITStatusHasBeenSet = true; m_hITStatus = std::move(value); }
-    inline HIT& WithHITStatus(const HITStatus& value) { SetHITStatus(value); return *this;}
-    inline HIT& WithHITStatus(HITStatus&& value) { SetHITStatus(std::move(value)); return *this;}
+    inline void SetHITStatus(HITStatus value) { m_hITStatusHasBeenSet = true; m_hITStatus = value; }
+    inline HIT& WithHITStatus(HITStatus value) { SetHITStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -190,7 +172,7 @@ namespace Model
      * <p>The number of times the HIT can be accepted and completed before the HIT
      * becomes unavailable. </p>
      */
-    inline int GetMaxAssignments() const{ return m_maxAssignments; }
+    inline int GetMaxAssignments() const { return m_maxAssignments; }
     inline bool MaxAssignmentsHasBeenSet() const { return m_maxAssignmentsHasBeenSet; }
     inline void SetMaxAssignments(int value) { m_maxAssignmentsHasBeenSet = true; m_maxAssignments = value; }
     inline HIT& WithMaxAssignments(int value) { SetMaxAssignments(value); return *this;}
@@ -198,14 +180,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetReward() const{ return m_reward; }
+    inline const Aws::String& GetReward() const { return m_reward; }
     inline bool RewardHasBeenSet() const { return m_rewardHasBeenSet; }
-    inline void SetReward(const Aws::String& value) { m_rewardHasBeenSet = true; m_reward = value; }
-    inline void SetReward(Aws::String&& value) { m_rewardHasBeenSet = true; m_reward = std::move(value); }
-    inline void SetReward(const char* value) { m_rewardHasBeenSet = true; m_reward.assign(value); }
-    inline HIT& WithReward(const Aws::String& value) { SetReward(value); return *this;}
-    inline HIT& WithReward(Aws::String&& value) { SetReward(std::move(value)); return *this;}
-    inline HIT& WithReward(const char* value) { SetReward(value); return *this;}
+    template<typename RewardT = Aws::String>
+    void SetReward(RewardT&& value) { m_rewardHasBeenSet = true; m_reward = std::forward<RewardT>(value); }
+    template<typename RewardT = Aws::String>
+    HIT& WithReward(RewardT&& value) { SetReward(std::forward<RewardT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -215,7 +195,7 @@ namespace Model
      * This is the amount of time the Requester has to reject an assignment submitted
      * by a Worker before the assignment is auto-approved and the Worker is paid. </p>
      */
-    inline long long GetAutoApprovalDelayInSeconds() const{ return m_autoApprovalDelayInSeconds; }
+    inline long long GetAutoApprovalDelayInSeconds() const { return m_autoApprovalDelayInSeconds; }
     inline bool AutoApprovalDelayInSecondsHasBeenSet() const { return m_autoApprovalDelayInSecondsHasBeenSet; }
     inline void SetAutoApprovalDelayInSeconds(long long value) { m_autoApprovalDelayInSecondsHasBeenSet = true; m_autoApprovalDelayInSeconds = value; }
     inline HIT& WithAutoApprovalDelayInSeconds(long long value) { SetAutoApprovalDelayInSeconds(value); return *this;}
@@ -225,12 +205,12 @@ namespace Model
     /**
      * <p>The date and time the HIT expires.</p>
      */
-    inline const Aws::Utils::DateTime& GetExpiration() const{ return m_expiration; }
+    inline const Aws::Utils::DateTime& GetExpiration() const { return m_expiration; }
     inline bool ExpirationHasBeenSet() const { return m_expirationHasBeenSet; }
-    inline void SetExpiration(const Aws::Utils::DateTime& value) { m_expirationHasBeenSet = true; m_expiration = value; }
-    inline void SetExpiration(Aws::Utils::DateTime&& value) { m_expirationHasBeenSet = true; m_expiration = std::move(value); }
-    inline HIT& WithExpiration(const Aws::Utils::DateTime& value) { SetExpiration(value); return *this;}
-    inline HIT& WithExpiration(Aws::Utils::DateTime&& value) { SetExpiration(std::move(value)); return *this;}
+    template<typename ExpirationT = Aws::Utils::DateTime>
+    void SetExpiration(ExpirationT&& value) { m_expirationHasBeenSet = true; m_expiration = std::forward<ExpirationT>(value); }
+    template<typename ExpirationT = Aws::Utils::DateTime>
+    HIT& WithExpiration(ExpirationT&& value) { SetExpiration(std::forward<ExpirationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -238,7 +218,7 @@ namespace Model
      * <p> The length of time, in seconds, that a Worker has to complete the HIT after
      * accepting it.</p>
      */
-    inline long long GetAssignmentDurationInSeconds() const{ return m_assignmentDurationInSeconds; }
+    inline long long GetAssignmentDurationInSeconds() const { return m_assignmentDurationInSeconds; }
     inline bool AssignmentDurationInSecondsHasBeenSet() const { return m_assignmentDurationInSecondsHasBeenSet; }
     inline void SetAssignmentDurationInSeconds(long long value) { m_assignmentDurationInSecondsHasBeenSet = true; m_assignmentDurationInSeconds = value; }
     inline HIT& WithAssignmentDurationInSeconds(long long value) { SetAssignmentDurationInSeconds(value); return *this;}
@@ -249,14 +229,12 @@ namespace Model
      * <p> An arbitrary data field the Requester who created the HIT can use. This
      * field is visible only to the creator of the HIT.</p>
      */
-    inline const Aws::String& GetRequesterAnnotation() const{ return m_requesterAnnotation; }
+    inline const Aws::String& GetRequesterAnnotation() const { return m_requesterAnnotation; }
     inline bool RequesterAnnotationHasBeenSet() const { return m_requesterAnnotationHasBeenSet; }
-    inline void SetRequesterAnnotation(const Aws::String& value) { m_requesterAnnotationHasBeenSet = true; m_requesterAnnotation = value; }
-    inline void SetRequesterAnnotation(Aws::String&& value) { m_requesterAnnotationHasBeenSet = true; m_requesterAnnotation = std::move(value); }
-    inline void SetRequesterAnnotation(const char* value) { m_requesterAnnotationHasBeenSet = true; m_requesterAnnotation.assign(value); }
-    inline HIT& WithRequesterAnnotation(const Aws::String& value) { SetRequesterAnnotation(value); return *this;}
-    inline HIT& WithRequesterAnnotation(Aws::String&& value) { SetRequesterAnnotation(std::move(value)); return *this;}
-    inline HIT& WithRequesterAnnotation(const char* value) { SetRequesterAnnotation(value); return *this;}
+    template<typename RequesterAnnotationT = Aws::String>
+    void SetRequesterAnnotation(RequesterAnnotationT&& value) { m_requesterAnnotationHasBeenSet = true; m_requesterAnnotation = std::forward<RequesterAnnotationT>(value); }
+    template<typename RequesterAnnotationT = Aws::String>
+    HIT& WithRequesterAnnotation(RequesterAnnotationT&& value) { SetRequesterAnnotation(std::forward<RequesterAnnotationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -267,14 +245,14 @@ namespace Model
      * other actions can be restricted using the <code>ActionsGuarded</code> field on
      * each <code>QualificationRequirement</code> structure. </p>
      */
-    inline const Aws::Vector<QualificationRequirement>& GetQualificationRequirements() const{ return m_qualificationRequirements; }
+    inline const Aws::Vector<QualificationRequirement>& GetQualificationRequirements() const { return m_qualificationRequirements; }
     inline bool QualificationRequirementsHasBeenSet() const { return m_qualificationRequirementsHasBeenSet; }
-    inline void SetQualificationRequirements(const Aws::Vector<QualificationRequirement>& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements = value; }
-    inline void SetQualificationRequirements(Aws::Vector<QualificationRequirement>&& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements = std::move(value); }
-    inline HIT& WithQualificationRequirements(const Aws::Vector<QualificationRequirement>& value) { SetQualificationRequirements(value); return *this;}
-    inline HIT& WithQualificationRequirements(Aws::Vector<QualificationRequirement>&& value) { SetQualificationRequirements(std::move(value)); return *this;}
-    inline HIT& AddQualificationRequirements(const QualificationRequirement& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements.push_back(value); return *this; }
-    inline HIT& AddQualificationRequirements(QualificationRequirement&& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements.push_back(std::move(value)); return *this; }
+    template<typename QualificationRequirementsT = Aws::Vector<QualificationRequirement>>
+    void SetQualificationRequirements(QualificationRequirementsT&& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements = std::forward<QualificationRequirementsT>(value); }
+    template<typename QualificationRequirementsT = Aws::Vector<QualificationRequirement>>
+    HIT& WithQualificationRequirements(QualificationRequirementsT&& value) { SetQualificationRequirements(std::forward<QualificationRequirementsT>(value)); return *this;}
+    template<typename QualificationRequirementsT = QualificationRequirement>
+    HIT& AddQualificationRequirements(QualificationRequirementsT&& value) { m_qualificationRequirementsHasBeenSet = true; m_qualificationRequirements.emplace_back(std::forward<QualificationRequirementsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -282,12 +260,10 @@ namespace Model
      * <p> Indicates the review status of the HIT. Valid Values are NotReviewed |
      * MarkedForReview | ReviewedAppropriate | ReviewedInappropriate.</p>
      */
-    inline const HITReviewStatus& GetHITReviewStatus() const{ return m_hITReviewStatus; }
+    inline HITReviewStatus GetHITReviewStatus() const { return m_hITReviewStatus; }
     inline bool HITReviewStatusHasBeenSet() const { return m_hITReviewStatusHasBeenSet; }
-    inline void SetHITReviewStatus(const HITReviewStatus& value) { m_hITReviewStatusHasBeenSet = true; m_hITReviewStatus = value; }
-    inline void SetHITReviewStatus(HITReviewStatus&& value) { m_hITReviewStatusHasBeenSet = true; m_hITReviewStatus = std::move(value); }
-    inline HIT& WithHITReviewStatus(const HITReviewStatus& value) { SetHITReviewStatus(value); return *this;}
-    inline HIT& WithHITReviewStatus(HITReviewStatus&& value) { SetHITReviewStatus(std::move(value)); return *this;}
+    inline void SetHITReviewStatus(HITReviewStatus value) { m_hITReviewStatusHasBeenSet = true; m_hITReviewStatus = value; }
+    inline HIT& WithHITReviewStatus(HITReviewStatus value) { SetHITReviewStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -296,7 +272,7 @@ namespace Model
      * accepted by Workers, but have not yet been submitted, returned, or
      * abandoned.</p>
      */
-    inline int GetNumberOfAssignmentsPending() const{ return m_numberOfAssignmentsPending; }
+    inline int GetNumberOfAssignmentsPending() const { return m_numberOfAssignmentsPending; }
     inline bool NumberOfAssignmentsPendingHasBeenSet() const { return m_numberOfAssignmentsPendingHasBeenSet; }
     inline void SetNumberOfAssignmentsPending(int value) { m_numberOfAssignmentsPendingHasBeenSet = true; m_numberOfAssignmentsPending = value; }
     inline HIT& WithNumberOfAssignmentsPending(int value) { SetNumberOfAssignmentsPending(value); return *this;}
@@ -307,7 +283,7 @@ namespace Model
      * <p> The number of assignments for this HIT that are available for Workers to
      * accept.</p>
      */
-    inline int GetNumberOfAssignmentsAvailable() const{ return m_numberOfAssignmentsAvailable; }
+    inline int GetNumberOfAssignmentsAvailable() const { return m_numberOfAssignmentsAvailable; }
     inline bool NumberOfAssignmentsAvailableHasBeenSet() const { return m_numberOfAssignmentsAvailableHasBeenSet; }
     inline void SetNumberOfAssignmentsAvailable(int value) { m_numberOfAssignmentsAvailableHasBeenSet = true; m_numberOfAssignmentsAvailable = value; }
     inline HIT& WithNumberOfAssignmentsAvailable(int value) { SetNumberOfAssignmentsAvailable(value); return *this;}
@@ -318,7 +294,7 @@ namespace Model
      * <p> The number of assignments for this HIT that have been approved or
      * rejected.</p>
      */
-    inline int GetNumberOfAssignmentsCompleted() const{ return m_numberOfAssignmentsCompleted; }
+    inline int GetNumberOfAssignmentsCompleted() const { return m_numberOfAssignmentsCompleted; }
     inline bool NumberOfAssignmentsCompletedHasBeenSet() const { return m_numberOfAssignmentsCompletedHasBeenSet; }
     inline void SetNumberOfAssignmentsCompleted(int value) { m_numberOfAssignmentsCompletedHasBeenSet = true; m_numberOfAssignmentsCompleted = value; }
     inline HIT& WithNumberOfAssignmentsCompleted(int value) { SetNumberOfAssignmentsCompleted(value); return *this;}
@@ -337,7 +313,7 @@ namespace Model
     Aws::String m_hITLayoutId;
     bool m_hITLayoutIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_title;
@@ -352,22 +328,22 @@ namespace Model
     Aws::String m_keywords;
     bool m_keywordsHasBeenSet = false;
 
-    HITStatus m_hITStatus;
+    HITStatus m_hITStatus{HITStatus::NOT_SET};
     bool m_hITStatusHasBeenSet = false;
 
-    int m_maxAssignments;
+    int m_maxAssignments{0};
     bool m_maxAssignmentsHasBeenSet = false;
 
     Aws::String m_reward;
     bool m_rewardHasBeenSet = false;
 
-    long long m_autoApprovalDelayInSeconds;
+    long long m_autoApprovalDelayInSeconds{0};
     bool m_autoApprovalDelayInSecondsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expiration;
+    Aws::Utils::DateTime m_expiration{};
     bool m_expirationHasBeenSet = false;
 
-    long long m_assignmentDurationInSeconds;
+    long long m_assignmentDurationInSeconds{0};
     bool m_assignmentDurationInSecondsHasBeenSet = false;
 
     Aws::String m_requesterAnnotation;
@@ -376,16 +352,16 @@ namespace Model
     Aws::Vector<QualificationRequirement> m_qualificationRequirements;
     bool m_qualificationRequirementsHasBeenSet = false;
 
-    HITReviewStatus m_hITReviewStatus;
+    HITReviewStatus m_hITReviewStatus{HITReviewStatus::NOT_SET};
     bool m_hITReviewStatusHasBeenSet = false;
 
-    int m_numberOfAssignmentsPending;
+    int m_numberOfAssignmentsPending{0};
     bool m_numberOfAssignmentsPendingHasBeenSet = false;
 
-    int m_numberOfAssignmentsAvailable;
+    int m_numberOfAssignmentsAvailable{0};
     bool m_numberOfAssignmentsAvailableHasBeenSet = false;
 
-    int m_numberOfAssignmentsCompleted;
+    int m_numberOfAssignmentsCompleted{0};
     bool m_numberOfAssignmentsCompletedHasBeenSet = false;
   };
 

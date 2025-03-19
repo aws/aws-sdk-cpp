@@ -12,11 +12,6 @@ using namespace Aws::MediaConvert::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePresetRequest::DeletePresetRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeletePresetRequest::SerializePayload() const
 {
   return {};

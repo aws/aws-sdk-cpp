@@ -18,13 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-AIAgentConfigurationData::AIAgentConfigurationData() : 
-    m_aiAgentIdHasBeenSet(false)
-{
-}
-
 AIAgentConfigurationData::AIAgentConfigurationData(JsonView jsonValue)
-  : AIAgentConfigurationData()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AIAgentConfigurationData& AIAgentConfigurationData::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("aiAgentId"))
   {
     m_aiAgentId = jsonValue.GetString("aiAgentId");
-
     m_aiAgentIdHasBeenSet = true;
   }
-
   return *this;
 }
 

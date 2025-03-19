@@ -22,7 +22,7 @@ namespace Model
   class SetUICustomizationRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API SetUICustomizationRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API SetUICustomizationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>The ID of the user pool where you want to apply branding to the classic
      * hosted UI.</p>
      */
-    inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+    inline const Aws::String& GetUserPoolId() const { return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-    inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-    inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-    inline SetUICustomizationRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-    inline SetUICustomizationRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-    inline SetUICustomizationRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    template<typename UserPoolIdT = Aws::String>
+    void SetUserPoolId(UserPoolIdT&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::forward<UserPoolIdT>(value); }
+    template<typename UserPoolIdT = Aws::String>
+    SetUICustomizationRequest& WithUserPoolId(UserPoolIdT&& value) { SetUserPoolId(std::forward<UserPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * to all app clients not configured with client-level branding, set this parameter
      * value to <code>ALL</code>.</p>
      */
-    inline const Aws::String& GetClientId() const{ return m_clientId; }
+    inline const Aws::String& GetClientId() const { return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
-    inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
-    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
-    inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
-    inline SetUICustomizationRequest& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
-    inline SetUICustomizationRequest& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
-    inline SetUICustomizationRequest& WithClientId(const char* value) { SetClientId(value); return *this;}
+    template<typename ClientIdT = Aws::String>
+    void SetClientId(ClientIdT&& value) { m_clientIdHasBeenSet = true; m_clientId = std::forward<ClientIdT>(value); }
+    template<typename ClientIdT = Aws::String>
+    SetUICustomizationRequest& WithClientId(ClientIdT&& value) { SetClientId(std::forward<ClientIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * <i>Login pages</i>, edit <i>Hosted UI (classic) style</i>, and select the link
      * to <code>CSS template.css</code>.</p>
      */
-    inline const Aws::String& GetCSS() const{ return m_cSS; }
+    inline const Aws::String& GetCSS() const { return m_cSS; }
     inline bool CSSHasBeenSet() const { return m_cSSHasBeenSet; }
-    inline void SetCSS(const Aws::String& value) { m_cSSHasBeenSet = true; m_cSS = value; }
-    inline void SetCSS(Aws::String&& value) { m_cSSHasBeenSet = true; m_cSS = std::move(value); }
-    inline void SetCSS(const char* value) { m_cSSHasBeenSet = true; m_cSS.assign(value); }
-    inline SetUICustomizationRequest& WithCSS(const Aws::String& value) { SetCSS(value); return *this;}
-    inline SetUICustomizationRequest& WithCSS(Aws::String&& value) { SetCSS(std::move(value)); return *this;}
-    inline SetUICustomizationRequest& WithCSS(const char* value) { SetCSS(value); return *this;}
+    template<typename CSST = Aws::String>
+    void SetCSS(CSST&& value) { m_cSSHasBeenSet = true; m_cSS = std::forward<CSST>(value); }
+    template<typename CSST = Aws::String>
+    SetUICustomizationRequest& WithCSS(CSST&& value) { SetCSS(std::forward<CSST>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +83,12 @@ namespace Model
      * <p>The image that you want to set as your login in the classic hosted UI, as a
      * Base64-formatted binary object.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetImageFile() const{ return m_imageFile; }
+    inline const Aws::Utils::ByteBuffer& GetImageFile() const { return m_imageFile; }
     inline bool ImageFileHasBeenSet() const { return m_imageFileHasBeenSet; }
-    inline void SetImageFile(const Aws::Utils::ByteBuffer& value) { m_imageFileHasBeenSet = true; m_imageFile = value; }
-    inline void SetImageFile(Aws::Utils::ByteBuffer&& value) { m_imageFileHasBeenSet = true; m_imageFile = std::move(value); }
-    inline SetUICustomizationRequest& WithImageFile(const Aws::Utils::ByteBuffer& value) { SetImageFile(value); return *this;}
-    inline SetUICustomizationRequest& WithImageFile(Aws::Utils::ByteBuffer&& value) { SetImageFile(std::move(value)); return *this;}
+    template<typename ImageFileT = Aws::Utils::ByteBuffer>
+    void SetImageFile(ImageFileT&& value) { m_imageFileHasBeenSet = true; m_imageFile = std::forward<ImageFileT>(value); }
+    template<typename ImageFileT = Aws::Utils::ByteBuffer>
+    SetUICustomizationRequest& WithImageFile(ImageFileT&& value) { SetImageFile(std::forward<ImageFileT>(value)); return *this;}
     ///@}
   private:
 
@@ -107,7 +101,7 @@ namespace Model
     Aws::String m_cSS;
     bool m_cSSHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_imageFile;
+    Aws::Utils::ByteBuffer m_imageFile{};
     bool m_imageFileHasBeenSet = false;
   };
 

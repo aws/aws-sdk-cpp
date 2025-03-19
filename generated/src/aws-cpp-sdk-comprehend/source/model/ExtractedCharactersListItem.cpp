@@ -18,16 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-ExtractedCharactersListItem::ExtractedCharactersListItem() : 
-    m_page(0),
-    m_pageHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
-{
-}
-
 ExtractedCharactersListItem::ExtractedCharactersListItem(JsonView jsonValue)
-  : ExtractedCharactersListItem()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ExtractedCharactersListItem& ExtractedCharactersListItem::operator =(JsonView js
   if(jsonValue.ValueExists("Page"))
   {
     m_page = jsonValue.GetInteger("Page");
-
     m_pageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Count"))
   {
     m_count = jsonValue.GetInteger("Count");
-
     m_countHasBeenSet = true;
   }
-
   return *this;
 }
 

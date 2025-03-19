@@ -36,7 +36,7 @@ namespace Model
   class ECSServiceRecommendationOption
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API ECSServiceRecommendationOption();
+    AWS_COMPUTEOPTIMIZER_API ECSServiceRecommendationOption() = default;
     AWS_COMPUTEOPTIMIZER_API ECSServiceRecommendationOption(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API ECSServiceRecommendationOption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
     /**
      * <p> The memory size of the Amazon ECS service recommendation option. </p>
      */
-    inline int GetMemory() const{ return m_memory; }
+    inline int GetMemory() const { return m_memory; }
     inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
     inline void SetMemory(int value) { m_memoryHasBeenSet = true; m_memory = value; }
     inline ECSServiceRecommendationOption& WithMemory(int value) { SetMemory(value); return *this;}
@@ -56,7 +56,7 @@ namespace Model
     /**
      * <p> The CPU size of the Amazon ECS service recommendation option. </p>
      */
-    inline int GetCpu() const{ return m_cpu; }
+    inline int GetCpu() const { return m_cpu; }
     inline bool CpuHasBeenSet() const { return m_cpuHasBeenSet; }
     inline void SetCpu(int value) { m_cpuHasBeenSet = true; m_cpu = value; }
     inline ECSServiceRecommendationOption& WithCpu(int value) { SetCpu(value); return *this;}
@@ -64,12 +64,12 @@ namespace Model
 
     ///@{
     
-    inline const SavingsOpportunity& GetSavingsOpportunity() const{ return m_savingsOpportunity; }
+    inline const SavingsOpportunity& GetSavingsOpportunity() const { return m_savingsOpportunity; }
     inline bool SavingsOpportunityHasBeenSet() const { return m_savingsOpportunityHasBeenSet; }
-    inline void SetSavingsOpportunity(const SavingsOpportunity& value) { m_savingsOpportunityHasBeenSet = true; m_savingsOpportunity = value; }
-    inline void SetSavingsOpportunity(SavingsOpportunity&& value) { m_savingsOpportunityHasBeenSet = true; m_savingsOpportunity = std::move(value); }
-    inline ECSServiceRecommendationOption& WithSavingsOpportunity(const SavingsOpportunity& value) { SetSavingsOpportunity(value); return *this;}
-    inline ECSServiceRecommendationOption& WithSavingsOpportunity(SavingsOpportunity&& value) { SetSavingsOpportunity(std::move(value)); return *this;}
+    template<typename SavingsOpportunityT = SavingsOpportunity>
+    void SetSavingsOpportunity(SavingsOpportunityT&& value) { m_savingsOpportunityHasBeenSet = true; m_savingsOpportunity = std::forward<SavingsOpportunityT>(value); }
+    template<typename SavingsOpportunityT = SavingsOpportunity>
+    ECSServiceRecommendationOption& WithSavingsOpportunity(SavingsOpportunityT&& value) { SetSavingsOpportunity(std::forward<SavingsOpportunityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +79,12 @@ namespace Model
      * estimated monthly savings after applying Savings Plans discounts. You can
      * achieve this by implementing a given Compute Optimizer recommendation.</p>
      */
-    inline const ECSSavingsOpportunityAfterDiscounts& GetSavingsOpportunityAfterDiscounts() const{ return m_savingsOpportunityAfterDiscounts; }
+    inline const ECSSavingsOpportunityAfterDiscounts& GetSavingsOpportunityAfterDiscounts() const { return m_savingsOpportunityAfterDiscounts; }
     inline bool SavingsOpportunityAfterDiscountsHasBeenSet() const { return m_savingsOpportunityAfterDiscountsHasBeenSet; }
-    inline void SetSavingsOpportunityAfterDiscounts(const ECSSavingsOpportunityAfterDiscounts& value) { m_savingsOpportunityAfterDiscountsHasBeenSet = true; m_savingsOpportunityAfterDiscounts = value; }
-    inline void SetSavingsOpportunityAfterDiscounts(ECSSavingsOpportunityAfterDiscounts&& value) { m_savingsOpportunityAfterDiscountsHasBeenSet = true; m_savingsOpportunityAfterDiscounts = std::move(value); }
-    inline ECSServiceRecommendationOption& WithSavingsOpportunityAfterDiscounts(const ECSSavingsOpportunityAfterDiscounts& value) { SetSavingsOpportunityAfterDiscounts(value); return *this;}
-    inline ECSServiceRecommendationOption& WithSavingsOpportunityAfterDiscounts(ECSSavingsOpportunityAfterDiscounts&& value) { SetSavingsOpportunityAfterDiscounts(std::move(value)); return *this;}
+    template<typename SavingsOpportunityAfterDiscountsT = ECSSavingsOpportunityAfterDiscounts>
+    void SetSavingsOpportunityAfterDiscounts(SavingsOpportunityAfterDiscountsT&& value) { m_savingsOpportunityAfterDiscountsHasBeenSet = true; m_savingsOpportunityAfterDiscounts = std::forward<SavingsOpportunityAfterDiscountsT>(value); }
+    template<typename SavingsOpportunityAfterDiscountsT = ECSSavingsOpportunityAfterDiscounts>
+    ECSServiceRecommendationOption& WithSavingsOpportunityAfterDiscounts(SavingsOpportunityAfterDiscountsT&& value) { SetSavingsOpportunityAfterDiscounts(std::forward<SavingsOpportunityAfterDiscountsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,14 +92,14 @@ namespace Model
      * <p> An array of objects that describe the projected utilization metrics of the
      * Amazon ECS service recommendation option. </p>
      */
-    inline const Aws::Vector<ECSServiceProjectedUtilizationMetric>& GetProjectedUtilizationMetrics() const{ return m_projectedUtilizationMetrics; }
+    inline const Aws::Vector<ECSServiceProjectedUtilizationMetric>& GetProjectedUtilizationMetrics() const { return m_projectedUtilizationMetrics; }
     inline bool ProjectedUtilizationMetricsHasBeenSet() const { return m_projectedUtilizationMetricsHasBeenSet; }
-    inline void SetProjectedUtilizationMetrics(const Aws::Vector<ECSServiceProjectedUtilizationMetric>& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics = value; }
-    inline void SetProjectedUtilizationMetrics(Aws::Vector<ECSServiceProjectedUtilizationMetric>&& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics = std::move(value); }
-    inline ECSServiceRecommendationOption& WithProjectedUtilizationMetrics(const Aws::Vector<ECSServiceProjectedUtilizationMetric>& value) { SetProjectedUtilizationMetrics(value); return *this;}
-    inline ECSServiceRecommendationOption& WithProjectedUtilizationMetrics(Aws::Vector<ECSServiceProjectedUtilizationMetric>&& value) { SetProjectedUtilizationMetrics(std::move(value)); return *this;}
-    inline ECSServiceRecommendationOption& AddProjectedUtilizationMetrics(const ECSServiceProjectedUtilizationMetric& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics.push_back(value); return *this; }
-    inline ECSServiceRecommendationOption& AddProjectedUtilizationMetrics(ECSServiceProjectedUtilizationMetric&& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics.push_back(std::move(value)); return *this; }
+    template<typename ProjectedUtilizationMetricsT = Aws::Vector<ECSServiceProjectedUtilizationMetric>>
+    void SetProjectedUtilizationMetrics(ProjectedUtilizationMetricsT&& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics = std::forward<ProjectedUtilizationMetricsT>(value); }
+    template<typename ProjectedUtilizationMetricsT = Aws::Vector<ECSServiceProjectedUtilizationMetric>>
+    ECSServiceRecommendationOption& WithProjectedUtilizationMetrics(ProjectedUtilizationMetricsT&& value) { SetProjectedUtilizationMetrics(std::forward<ProjectedUtilizationMetricsT>(value)); return *this;}
+    template<typename ProjectedUtilizationMetricsT = ECSServiceProjectedUtilizationMetric>
+    ECSServiceRecommendationOption& AddProjectedUtilizationMetrics(ProjectedUtilizationMetricsT&& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics.emplace_back(std::forward<ProjectedUtilizationMetricsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -107,21 +107,21 @@ namespace Model
      * <p> The CPU and memory size recommendations for the containers within the task
      * of your Amazon ECS service. </p>
      */
-    inline const Aws::Vector<ContainerRecommendation>& GetContainerRecommendations() const{ return m_containerRecommendations; }
+    inline const Aws::Vector<ContainerRecommendation>& GetContainerRecommendations() const { return m_containerRecommendations; }
     inline bool ContainerRecommendationsHasBeenSet() const { return m_containerRecommendationsHasBeenSet; }
-    inline void SetContainerRecommendations(const Aws::Vector<ContainerRecommendation>& value) { m_containerRecommendationsHasBeenSet = true; m_containerRecommendations = value; }
-    inline void SetContainerRecommendations(Aws::Vector<ContainerRecommendation>&& value) { m_containerRecommendationsHasBeenSet = true; m_containerRecommendations = std::move(value); }
-    inline ECSServiceRecommendationOption& WithContainerRecommendations(const Aws::Vector<ContainerRecommendation>& value) { SetContainerRecommendations(value); return *this;}
-    inline ECSServiceRecommendationOption& WithContainerRecommendations(Aws::Vector<ContainerRecommendation>&& value) { SetContainerRecommendations(std::move(value)); return *this;}
-    inline ECSServiceRecommendationOption& AddContainerRecommendations(const ContainerRecommendation& value) { m_containerRecommendationsHasBeenSet = true; m_containerRecommendations.push_back(value); return *this; }
-    inline ECSServiceRecommendationOption& AddContainerRecommendations(ContainerRecommendation&& value) { m_containerRecommendationsHasBeenSet = true; m_containerRecommendations.push_back(std::move(value)); return *this; }
+    template<typename ContainerRecommendationsT = Aws::Vector<ContainerRecommendation>>
+    void SetContainerRecommendations(ContainerRecommendationsT&& value) { m_containerRecommendationsHasBeenSet = true; m_containerRecommendations = std::forward<ContainerRecommendationsT>(value); }
+    template<typename ContainerRecommendationsT = Aws::Vector<ContainerRecommendation>>
+    ECSServiceRecommendationOption& WithContainerRecommendations(ContainerRecommendationsT&& value) { SetContainerRecommendations(std::forward<ContainerRecommendationsT>(value)); return *this;}
+    template<typename ContainerRecommendationsT = ContainerRecommendation>
+    ECSServiceRecommendationOption& AddContainerRecommendations(ContainerRecommendationsT&& value) { m_containerRecommendationsHasBeenSet = true; m_containerRecommendations.emplace_back(std::forward<ContainerRecommendationsT>(value)); return *this; }
     ///@}
   private:
 
-    int m_memory;
+    int m_memory{0};
     bool m_memoryHasBeenSet = false;
 
-    int m_cpu;
+    int m_cpu{0};
     bool m_cpuHasBeenSet = false;
 
     SavingsOpportunity m_savingsOpportunity;

@@ -12,15 +12,6 @@ using namespace Aws::SSMContacts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRotationOverrideRequest::CreateRotationOverrideRequest() : 
-    m_rotationIdHasBeenSet(false),
-    m_newContactIdsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_idempotencyTokenHasBeenSet(false)
-{
-}
-
 Aws::String CreateRotationOverrideRequest::SerializePayload() const
 {
   JsonValue payload;

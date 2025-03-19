@@ -29,7 +29,7 @@ namespace Model
   class DescribeEngineVersionsResult
   {
   public:
-    AWS_MEMORYDB_API DescribeEngineVersionsResult();
+    AWS_MEMORYDB_API DescribeEngineVersionsResult() = default;
     AWS_MEMORYDB_API DescribeEngineVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEMORYDB_API DescribeEngineVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,13 +42,11 @@ namespace Model
      * again using the returned token to retrieve the next page. Keep all other
      * arguments unchanged. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeEngineVersionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeEngineVersionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeEngineVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeEngineVersionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,32 +54,33 @@ namespace Model
      * <p>A list of engine version details. Each element in the list contains detailed
      * information about one engine version.</p>
      */
-    inline const Aws::Vector<EngineVersionInfo>& GetEngineVersions() const{ return m_engineVersions; }
-    inline void SetEngineVersions(const Aws::Vector<EngineVersionInfo>& value) { m_engineVersions = value; }
-    inline void SetEngineVersions(Aws::Vector<EngineVersionInfo>&& value) { m_engineVersions = std::move(value); }
-    inline DescribeEngineVersionsResult& WithEngineVersions(const Aws::Vector<EngineVersionInfo>& value) { SetEngineVersions(value); return *this;}
-    inline DescribeEngineVersionsResult& WithEngineVersions(Aws::Vector<EngineVersionInfo>&& value) { SetEngineVersions(std::move(value)); return *this;}
-    inline DescribeEngineVersionsResult& AddEngineVersions(const EngineVersionInfo& value) { m_engineVersions.push_back(value); return *this; }
-    inline DescribeEngineVersionsResult& AddEngineVersions(EngineVersionInfo&& value) { m_engineVersions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EngineVersionInfo>& GetEngineVersions() const { return m_engineVersions; }
+    template<typename EngineVersionsT = Aws::Vector<EngineVersionInfo>>
+    void SetEngineVersions(EngineVersionsT&& value) { m_engineVersionsHasBeenSet = true; m_engineVersions = std::forward<EngineVersionsT>(value); }
+    template<typename EngineVersionsT = Aws::Vector<EngineVersionInfo>>
+    DescribeEngineVersionsResult& WithEngineVersions(EngineVersionsT&& value) { SetEngineVersions(std::forward<EngineVersionsT>(value)); return *this;}
+    template<typename EngineVersionsT = EngineVersionInfo>
+    DescribeEngineVersionsResult& AddEngineVersions(EngineVersionsT&& value) { m_engineVersionsHasBeenSet = true; m_engineVersions.emplace_back(std::forward<EngineVersionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeEngineVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeEngineVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeEngineVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeEngineVersionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<EngineVersionInfo> m_engineVersions;
+    bool m_engineVersionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

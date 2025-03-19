@@ -29,7 +29,7 @@ namespace Model
   class CaptionRectangle
   {
   public:
-    AWS_MEDIALIVE_API CaptionRectangle();
+    AWS_MEDIALIVE_API CaptionRectangle() = default;
     AWS_MEDIALIVE_API CaptionRectangle(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API CaptionRectangle& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ For height, specify the entire height of the
 This field corresponds to
      * tts:extent - Y in the TTML standard.
      */
-    inline double GetHeight() const{ return m_height; }
+    inline double GetHeight() const { return m_height; }
     inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
     inline void SetHeight(double value) { m_heightHasBeenSet = true; m_height = value; }
     inline CaptionRectangle& WithHeight(double value) { SetHeight(value); return *this;}
@@ -70,7 +70,7 @@ For leftOffset, specify the position
 This field corresponds to
      * tts:origin - X in the TTML standard.
      */
-    inline double GetLeftOffset() const{ return m_leftOffset; }
+    inline double GetLeftOffset() const { return m_leftOffset; }
     inline bool LeftOffsetHasBeenSet() const { return m_leftOffsetHasBeenSet; }
     inline void SetLeftOffset(double value) { m_leftOffsetHasBeenSet = true; m_leftOffset = value; }
     inline CaptionRectangle& WithLeftOffset(double value) { SetLeftOffset(value); return *this;}
@@ -87,7 +87,7 @@ For topOffset, specify the position of the
 This field corresponds to tts:origin -
      * Y in the TTML standard.
      */
-    inline double GetTopOffset() const{ return m_topOffset; }
+    inline double GetTopOffset() const { return m_topOffset; }
     inline bool TopOffsetHasBeenSet() const { return m_topOffsetHasBeenSet; }
     inline void SetTopOffset(double value) { m_topOffsetHasBeenSet = true; m_topOffset = value; }
     inline CaptionRectangle& WithTopOffset(double value) { SetTopOffset(value); return *this;}
@@ -103,23 +103,23 @@ For width, specify the entire width of the
 This field corresponds to
      * tts:extent - X in the TTML standard.
      */
-    inline double GetWidth() const{ return m_width; }
+    inline double GetWidth() const { return m_width; }
     inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
     inline void SetWidth(double value) { m_widthHasBeenSet = true; m_width = value; }
     inline CaptionRectangle& WithWidth(double value) { SetWidth(value); return *this;}
     ///@}
   private:
 
-    double m_height;
+    double m_height{0.0};
     bool m_heightHasBeenSet = false;
 
-    double m_leftOffset;
+    double m_leftOffset{0.0};
     bool m_leftOffsetHasBeenSet = false;
 
-    double m_topOffset;
+    double m_topOffset{0.0};
     bool m_topOffsetHasBeenSet = false;
 
-    double m_width;
+    double m_width{0.0};
     bool m_widthHasBeenSet = false;
   };
 

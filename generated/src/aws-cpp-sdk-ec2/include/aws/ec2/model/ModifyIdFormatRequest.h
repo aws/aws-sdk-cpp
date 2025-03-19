@@ -21,7 +21,7 @@ namespace Model
   class ModifyIdFormatRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ModifyIdFormatRequest();
+    AWS_EC2_API ModifyIdFormatRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -54,21 +54,19 @@ namespace Model
      * use the <code>all-current</code> option to include all resource types that are
      * currently within their opt-in period for longer IDs.</p>
      */
-    inline const Aws::String& GetResource() const{ return m_resource; }
+    inline const Aws::String& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-    inline ModifyIdFormatRequest& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-    inline ModifyIdFormatRequest& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-    inline ModifyIdFormatRequest& WithResource(const char* value) { SetResource(value); return *this;}
+    template<typename ResourceT = Aws::String>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Aws::String>
+    ModifyIdFormatRequest& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicate whether the resource should use longer IDs (17-character IDs).</p>
      */
-    inline bool GetUseLongIds() const{ return m_useLongIds; }
+    inline bool GetUseLongIds() const { return m_useLongIds; }
     inline bool UseLongIdsHasBeenSet() const { return m_useLongIdsHasBeenSet; }
     inline void SetUseLongIds(bool value) { m_useLongIdsHasBeenSet = true; m_useLongIds = value; }
     inline ModifyIdFormatRequest& WithUseLongIds(bool value) { SetUseLongIds(value); return *this;}
@@ -78,7 +76,7 @@ namespace Model
     Aws::String m_resource;
     bool m_resourceHasBeenSet = false;
 
-    bool m_useLongIds;
+    bool m_useLongIds{false};
     bool m_useLongIdsHasBeenSet = false;
   };
 

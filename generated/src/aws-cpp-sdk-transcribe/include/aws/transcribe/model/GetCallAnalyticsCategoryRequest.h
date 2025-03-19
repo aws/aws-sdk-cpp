@@ -21,7 +21,7 @@ namespace Model
   class GetCallAnalyticsCategoryRequest : public TranscribeServiceRequest
   {
   public:
-    AWS_TRANSCRIBESERVICE_API GetCallAnalyticsCategoryRequest();
+    AWS_TRANSCRIBESERVICE_API GetCallAnalyticsCategoryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The name of the Call Analytics category you want information about. Category
      * names are case sensitive.</p>
      */
-    inline const Aws::String& GetCategoryName() const{ return m_categoryName; }
+    inline const Aws::String& GetCategoryName() const { return m_categoryName; }
     inline bool CategoryNameHasBeenSet() const { return m_categoryNameHasBeenSet; }
-    inline void SetCategoryName(const Aws::String& value) { m_categoryNameHasBeenSet = true; m_categoryName = value; }
-    inline void SetCategoryName(Aws::String&& value) { m_categoryNameHasBeenSet = true; m_categoryName = std::move(value); }
-    inline void SetCategoryName(const char* value) { m_categoryNameHasBeenSet = true; m_categoryName.assign(value); }
-    inline GetCallAnalyticsCategoryRequest& WithCategoryName(const Aws::String& value) { SetCategoryName(value); return *this;}
-    inline GetCallAnalyticsCategoryRequest& WithCategoryName(Aws::String&& value) { SetCategoryName(std::move(value)); return *this;}
-    inline GetCallAnalyticsCategoryRequest& WithCategoryName(const char* value) { SetCategoryName(value); return *this;}
+    template<typename CategoryNameT = Aws::String>
+    void SetCategoryName(CategoryNameT&& value) { m_categoryNameHasBeenSet = true; m_categoryName = std::forward<CategoryNameT>(value); }
+    template<typename CategoryNameT = Aws::String>
+    GetCallAnalyticsCategoryRequest& WithCategoryName(CategoryNameT&& value) { SetCategoryName(std::forward<CategoryNameT>(value)); return *this;}
     ///@}
   private:
 

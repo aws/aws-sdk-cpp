@@ -32,7 +32,7 @@ namespace Model
   class StepAttributeCapability
   {
   public:
-    AWS_DEADLINE_API StepAttributeCapability();
+    AWS_DEADLINE_API StepAttributeCapability() = default;
     AWS_DEADLINE_API StepAttributeCapability(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API StepAttributeCapability& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,44 +42,40 @@ namespace Model
     /**
      * <p>The name of the step attribute.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline StepAttributeCapability& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline StepAttributeCapability& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline StepAttributeCapability& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    StepAttributeCapability& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Requires any of the step attributes in a given list.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAnyOf() const{ return m_anyOf; }
+    inline const Aws::Vector<Aws::String>& GetAnyOf() const { return m_anyOf; }
     inline bool AnyOfHasBeenSet() const { return m_anyOfHasBeenSet; }
-    inline void SetAnyOf(const Aws::Vector<Aws::String>& value) { m_anyOfHasBeenSet = true; m_anyOf = value; }
-    inline void SetAnyOf(Aws::Vector<Aws::String>&& value) { m_anyOfHasBeenSet = true; m_anyOf = std::move(value); }
-    inline StepAttributeCapability& WithAnyOf(const Aws::Vector<Aws::String>& value) { SetAnyOf(value); return *this;}
-    inline StepAttributeCapability& WithAnyOf(Aws::Vector<Aws::String>&& value) { SetAnyOf(std::move(value)); return *this;}
-    inline StepAttributeCapability& AddAnyOf(const Aws::String& value) { m_anyOfHasBeenSet = true; m_anyOf.push_back(value); return *this; }
-    inline StepAttributeCapability& AddAnyOf(Aws::String&& value) { m_anyOfHasBeenSet = true; m_anyOf.push_back(std::move(value)); return *this; }
-    inline StepAttributeCapability& AddAnyOf(const char* value) { m_anyOfHasBeenSet = true; m_anyOf.push_back(value); return *this; }
+    template<typename AnyOfT = Aws::Vector<Aws::String>>
+    void SetAnyOf(AnyOfT&& value) { m_anyOfHasBeenSet = true; m_anyOf = std::forward<AnyOfT>(value); }
+    template<typename AnyOfT = Aws::Vector<Aws::String>>
+    StepAttributeCapability& WithAnyOf(AnyOfT&& value) { SetAnyOf(std::forward<AnyOfT>(value)); return *this;}
+    template<typename AnyOfT = Aws::String>
+    StepAttributeCapability& AddAnyOf(AnyOfT&& value) { m_anyOfHasBeenSet = true; m_anyOf.emplace_back(std::forward<AnyOfT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Requires all of the step attribute values.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAllOf() const{ return m_allOf; }
+    inline const Aws::Vector<Aws::String>& GetAllOf() const { return m_allOf; }
     inline bool AllOfHasBeenSet() const { return m_allOfHasBeenSet; }
-    inline void SetAllOf(const Aws::Vector<Aws::String>& value) { m_allOfHasBeenSet = true; m_allOf = value; }
-    inline void SetAllOf(Aws::Vector<Aws::String>&& value) { m_allOfHasBeenSet = true; m_allOf = std::move(value); }
-    inline StepAttributeCapability& WithAllOf(const Aws::Vector<Aws::String>& value) { SetAllOf(value); return *this;}
-    inline StepAttributeCapability& WithAllOf(Aws::Vector<Aws::String>&& value) { SetAllOf(std::move(value)); return *this;}
-    inline StepAttributeCapability& AddAllOf(const Aws::String& value) { m_allOfHasBeenSet = true; m_allOf.push_back(value); return *this; }
-    inline StepAttributeCapability& AddAllOf(Aws::String&& value) { m_allOfHasBeenSet = true; m_allOf.push_back(std::move(value)); return *this; }
-    inline StepAttributeCapability& AddAllOf(const char* value) { m_allOfHasBeenSet = true; m_allOf.push_back(value); return *this; }
+    template<typename AllOfT = Aws::Vector<Aws::String>>
+    void SetAllOf(AllOfT&& value) { m_allOfHasBeenSet = true; m_allOf = std::forward<AllOfT>(value); }
+    template<typename AllOfT = Aws::Vector<Aws::String>>
+    StepAttributeCapability& WithAllOf(AllOfT&& value) { SetAllOf(std::forward<AllOfT>(value)); return *this;}
+    template<typename AllOfT = Aws::String>
+    StepAttributeCapability& AddAllOf(AllOfT&& value) { m_allOfHasBeenSet = true; m_allOf.emplace_back(std::forward<AllOfT>(value)); return *this; }
     ///@}
   private:
 

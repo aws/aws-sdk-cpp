@@ -35,7 +35,7 @@ namespace Model
   class KnowledgeBaseDocumentDetail
   {
   public:
-    AWS_BEDROCKAGENT_API KnowledgeBaseDocumentDetail();
+    AWS_BEDROCKAGENT_API KnowledgeBaseDocumentDetail() = default;
     AWS_BEDROCKAGENT_API KnowledgeBaseDocumentDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API KnowledgeBaseDocumentDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,26 +46,24 @@ namespace Model
      * <p>The identifier of the data source connected to the knowledge base that the
      * document was ingested into or deleted from.</p>
      */
-    inline const Aws::String& GetDataSourceId() const{ return m_dataSourceId; }
+    inline const Aws::String& GetDataSourceId() const { return m_dataSourceId; }
     inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
-    inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
-    inline void SetDataSourceId(Aws::String&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::move(value); }
-    inline void SetDataSourceId(const char* value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId.assign(value); }
-    inline KnowledgeBaseDocumentDetail& WithDataSourceId(const Aws::String& value) { SetDataSourceId(value); return *this;}
-    inline KnowledgeBaseDocumentDetail& WithDataSourceId(Aws::String&& value) { SetDataSourceId(std::move(value)); return *this;}
-    inline KnowledgeBaseDocumentDetail& WithDataSourceId(const char* value) { SetDataSourceId(value); return *this;}
+    template<typename DataSourceIdT = Aws::String>
+    void SetDataSourceId(DataSourceIdT&& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = std::forward<DataSourceIdT>(value); }
+    template<typename DataSourceIdT = Aws::String>
+    KnowledgeBaseDocumentDetail& WithDataSourceId(DataSourceIdT&& value) { SetDataSourceId(std::forward<DataSourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains information that identifies the document.</p>
      */
-    inline const DocumentIdentifier& GetIdentifier() const{ return m_identifier; }
+    inline const DocumentIdentifier& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const DocumentIdentifier& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(DocumentIdentifier&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline KnowledgeBaseDocumentDetail& WithIdentifier(const DocumentIdentifier& value) { SetIdentifier(value); return *this;}
-    inline KnowledgeBaseDocumentDetail& WithIdentifier(DocumentIdentifier&& value) { SetIdentifier(std::move(value)); return *this;}
+    template<typename IdentifierT = DocumentIdentifier>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = DocumentIdentifier>
+    KnowledgeBaseDocumentDetail& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +71,12 @@ namespace Model
      * <p>The identifier of the knowledge base that the document was ingested into or
      * deleted from.</p>
      */
-    inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
+    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-    inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
-    inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
-    inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
-    inline KnowledgeBaseDocumentDetail& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
-    inline KnowledgeBaseDocumentDetail& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
-    inline KnowledgeBaseDocumentDetail& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
+    template<typename KnowledgeBaseIdT = Aws::String>
+    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    KnowledgeBaseDocumentDetail& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,12 +96,10 @@ namespace Model
      * job containing the document.</p> </li> <li> <p>DELETE_IN_PROGRESS – The document
      * is being deleted.</p> </li> </ul>
      */
-    inline const DocumentStatus& GetStatus() const{ return m_status; }
+    inline DocumentStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DocumentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DocumentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline KnowledgeBaseDocumentDetail& WithStatus(const DocumentStatus& value) { SetStatus(value); return *this;}
-    inline KnowledgeBaseDocumentDetail& WithStatus(DocumentStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(DocumentStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline KnowledgeBaseDocumentDetail& WithStatus(DocumentStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -113,26 +107,24 @@ namespace Model
      * <p>The reason for the status. Appears alongside the status
      * <code>IGNORED</code>.</p>
      */
-    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
-    inline KnowledgeBaseDocumentDetail& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-    inline KnowledgeBaseDocumentDetail& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-    inline KnowledgeBaseDocumentDetail& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    KnowledgeBaseDocumentDetail& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time at which the document was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline KnowledgeBaseDocumentDetail& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline KnowledgeBaseDocumentDetail& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    KnowledgeBaseDocumentDetail& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
   private:
 
@@ -145,13 +137,13 @@ namespace Model
     Aws::String m_knowledgeBaseId;
     bool m_knowledgeBaseIdHasBeenSet = false;
 
-    DocumentStatus m_status;
+    DocumentStatus m_status{DocumentStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
   };
 

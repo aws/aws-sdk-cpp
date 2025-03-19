@@ -24,7 +24,7 @@ namespace Model
   class ListServiceDeploymentsRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API ListServiceDeploymentsRequest();
+    AWS_ECS_API ListServiceDeploymentsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The ARN or name of the service</p>
      */
-    inline const Aws::String& GetService() const{ return m_service; }
+    inline const Aws::String& GetService() const { return m_service; }
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
-    inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
-    inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
-    inline void SetService(const char* value) { m_serviceHasBeenSet = true; m_service.assign(value); }
-    inline ListServiceDeploymentsRequest& WithService(const Aws::String& value) { SetService(value); return *this;}
-    inline ListServiceDeploymentsRequest& WithService(Aws::String&& value) { SetService(std::move(value)); return *this;}
-    inline ListServiceDeploymentsRequest& WithService(const char* value) { SetService(value); return *this;}
+    template<typename ServiceT = Aws::String>
+    void SetService(ServiceT&& value) { m_serviceHasBeenSet = true; m_service = std::forward<ServiceT>(value); }
+    template<typename ServiceT = Aws::String>
+    ListServiceDeploymentsRequest& WithService(ServiceT&& value) { SetService(std::forward<ServiceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * workloads to options that offer better price and performance. If you don't
      * specify a cluster, <code>default</code> is used.</p>
      */
-    inline const Aws::String& GetCluster() const{ return m_cluster; }
+    inline const Aws::String& GetCluster() const { return m_cluster; }
     inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
-    inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
-    inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
-    inline ListServiceDeploymentsRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
-    inline ListServiceDeploymentsRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
-    inline ListServiceDeploymentsRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+    template<typename ClusterT = Aws::String>
+    void SetCluster(ClusterT&& value) { m_clusterHasBeenSet = true; m_cluster = std::forward<ClusterT>(value); }
+    template<typename ClusterT = Aws::String>
+    ListServiceDeploymentsRequest& WithCluster(ClusterT&& value) { SetCluster(std::forward<ClusterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,13 @@ namespace Model
      * <p>An optional filter you can use to narrow the results. If you do not specify a
      * status, then all status values are included in the result.</p>
      */
-    inline const Aws::Vector<ServiceDeploymentStatus>& GetStatus() const{ return m_status; }
+    inline const Aws::Vector<ServiceDeploymentStatus>& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::Vector<ServiceDeploymentStatus>& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::Vector<ServiceDeploymentStatus>&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ListServiceDeploymentsRequest& WithStatus(const Aws::Vector<ServiceDeploymentStatus>& value) { SetStatus(value); return *this;}
-    inline ListServiceDeploymentsRequest& WithStatus(Aws::Vector<ServiceDeploymentStatus>&& value) { SetStatus(std::move(value)); return *this;}
-    inline ListServiceDeploymentsRequest& AddStatus(const ServiceDeploymentStatus& value) { m_statusHasBeenSet = true; m_status.push_back(value); return *this; }
-    inline ListServiceDeploymentsRequest& AddStatus(ServiceDeploymentStatus&& value) { m_statusHasBeenSet = true; m_status.push_back(std::move(value)); return *this; }
+    template<typename StatusT = Aws::Vector<ServiceDeploymentStatus>>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::Vector<ServiceDeploymentStatus>>
+    ListServiceDeploymentsRequest& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
+    inline ListServiceDeploymentsRequest& AddStatus(ServiceDeploymentStatus value) { m_statusHasBeenSet = true; m_status.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -90,12 +85,12 @@ namespace Model
      * date. If you do not specify a value, the result includes all services created
      * before the current time. The format is yyyy-MM-dd HH:mm:ss.SSSSSS.</p>
      */
-    inline const CreatedAt& GetCreatedAt() const{ return m_createdAt; }
+    inline const CreatedAt& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const CreatedAt& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(CreatedAt&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline ListServiceDeploymentsRequest& WithCreatedAt(const CreatedAt& value) { SetCreatedAt(value); return *this;}
-    inline ListServiceDeploymentsRequest& WithCreatedAt(CreatedAt&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = CreatedAt>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = CreatedAt>
+    ListServiceDeploymentsRequest& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,14 +101,12 @@ namespace Model
      * <code>maxResults</code>, it's possible the number of results is fewer than
      * <code>maxResults</code>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListServiceDeploymentsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListServiceDeploymentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListServiceDeploymentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListServiceDeploymentsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,7 +122,7 @@ namespace Model
      * <code>ListServiceDeployments</code> returns up to 20 results and a
      * <code>nextToken</code> value if applicable.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListServiceDeploymentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -151,7 +144,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

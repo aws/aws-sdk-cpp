@@ -13,12 +13,6 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-HttpEnumPayloadRequest::HttpEnumPayloadRequest() : 
-    m_payload(StringEnum::NOT_SET),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 Aws::String HttpEnumPayloadRequest::SerializePayload() const
 {
   JsonValue payload;

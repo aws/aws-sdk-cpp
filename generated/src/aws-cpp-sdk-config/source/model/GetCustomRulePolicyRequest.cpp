@@ -12,11 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCustomRulePolicyRequest::GetCustomRulePolicyRequest() : 
-    m_configRuleNameHasBeenSet(false)
-{
-}
-
 Aws::String GetCustomRulePolicyRequest::SerializePayload() const
 {
   JsonValue payload;

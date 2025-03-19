@@ -12,12 +12,6 @@ using namespace Aws::Route53Domains::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTagsForDomainRequest::DeleteTagsForDomainRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_tagsToDeleteHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTagsForDomainRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,15 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTemplateAliasRequest::UpdateTemplateAliasRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_templateIdHasBeenSet(false),
-    m_aliasNameHasBeenSet(false),
-    m_templateVersionNumber(0),
-    m_templateVersionNumberHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTemplateAliasRequest::SerializePayload() const
 {
   JsonValue payload;

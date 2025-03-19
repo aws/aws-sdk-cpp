@@ -18,21 +18,7 @@ namespace VPCLattice
 namespace Model
 {
 
-ServiceSummary::ServiceSummary() : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_customDomainNameHasBeenSet(false),
-    m_dnsEntryHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(ServiceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ServiceSummary::ServiceSummary(JsonView jsonValue)
-  : ServiceSummary()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ ServiceSummary& ServiceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customDomainName"))
   {
     m_customDomainName = jsonValue.GetString("customDomainName");
-
     m_customDomainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dnsEntry"))
   {
     m_dnsEntry = jsonValue.GetObject("dnsEntry");
-
     m_dnsEntryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetString("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ServiceStatusMapper::GetServiceStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

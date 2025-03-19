@@ -37,7 +37,7 @@ namespace Model
   class CustomKeyStoresListEntry
   {
   public:
-    AWS_KMS_API CustomKeyStoresListEntry();
+    AWS_KMS_API CustomKeyStoresListEntry() = default;
     AWS_KMS_API CustomKeyStoresListEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_KMS_API CustomKeyStoresListEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,28 +47,24 @@ namespace Model
     /**
      * <p>A unique identifier for the custom key store.</p>
      */
-    inline const Aws::String& GetCustomKeyStoreId() const{ return m_customKeyStoreId; }
+    inline const Aws::String& GetCustomKeyStoreId() const { return m_customKeyStoreId; }
     inline bool CustomKeyStoreIdHasBeenSet() const { return m_customKeyStoreIdHasBeenSet; }
-    inline void SetCustomKeyStoreId(const Aws::String& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = value; }
-    inline void SetCustomKeyStoreId(Aws::String&& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = std::move(value); }
-    inline void SetCustomKeyStoreId(const char* value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId.assign(value); }
-    inline CustomKeyStoresListEntry& WithCustomKeyStoreId(const Aws::String& value) { SetCustomKeyStoreId(value); return *this;}
-    inline CustomKeyStoresListEntry& WithCustomKeyStoreId(Aws::String&& value) { SetCustomKeyStoreId(std::move(value)); return *this;}
-    inline CustomKeyStoresListEntry& WithCustomKeyStoreId(const char* value) { SetCustomKeyStoreId(value); return *this;}
+    template<typename CustomKeyStoreIdT = Aws::String>
+    void SetCustomKeyStoreId(CustomKeyStoreIdT&& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = std::forward<CustomKeyStoreIdT>(value); }
+    template<typename CustomKeyStoreIdT = Aws::String>
+    CustomKeyStoresListEntry& WithCustomKeyStoreId(CustomKeyStoreIdT&& value) { SetCustomKeyStoreId(std::forward<CustomKeyStoreIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user-specified friendly name for the custom key store.</p>
      */
-    inline const Aws::String& GetCustomKeyStoreName() const{ return m_customKeyStoreName; }
+    inline const Aws::String& GetCustomKeyStoreName() const { return m_customKeyStoreName; }
     inline bool CustomKeyStoreNameHasBeenSet() const { return m_customKeyStoreNameHasBeenSet; }
-    inline void SetCustomKeyStoreName(const Aws::String& value) { m_customKeyStoreNameHasBeenSet = true; m_customKeyStoreName = value; }
-    inline void SetCustomKeyStoreName(Aws::String&& value) { m_customKeyStoreNameHasBeenSet = true; m_customKeyStoreName = std::move(value); }
-    inline void SetCustomKeyStoreName(const char* value) { m_customKeyStoreNameHasBeenSet = true; m_customKeyStoreName.assign(value); }
-    inline CustomKeyStoresListEntry& WithCustomKeyStoreName(const Aws::String& value) { SetCustomKeyStoreName(value); return *this;}
-    inline CustomKeyStoresListEntry& WithCustomKeyStoreName(Aws::String&& value) { SetCustomKeyStoreName(std::move(value)); return *this;}
-    inline CustomKeyStoresListEntry& WithCustomKeyStoreName(const char* value) { SetCustomKeyStoreName(value); return *this;}
+    template<typename CustomKeyStoreNameT = Aws::String>
+    void SetCustomKeyStoreName(CustomKeyStoreNameT&& value) { m_customKeyStoreNameHasBeenSet = true; m_customKeyStoreName = std::forward<CustomKeyStoreNameT>(value); }
+    template<typename CustomKeyStoreNameT = Aws::String>
+    CustomKeyStoresListEntry& WithCustomKeyStoreName(CustomKeyStoreNameT&& value) { SetCustomKeyStoreName(std::forward<CustomKeyStoreNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * CloudHSM key store. This field appears only when the
      * <code>CustomKeyStoreType</code> is <code>AWS_CLOUDHSM</code>.</p>
      */
-    inline const Aws::String& GetCloudHsmClusterId() const{ return m_cloudHsmClusterId; }
+    inline const Aws::String& GetCloudHsmClusterId() const { return m_cloudHsmClusterId; }
     inline bool CloudHsmClusterIdHasBeenSet() const { return m_cloudHsmClusterIdHasBeenSet; }
-    inline void SetCloudHsmClusterId(const Aws::String& value) { m_cloudHsmClusterIdHasBeenSet = true; m_cloudHsmClusterId = value; }
-    inline void SetCloudHsmClusterId(Aws::String&& value) { m_cloudHsmClusterIdHasBeenSet = true; m_cloudHsmClusterId = std::move(value); }
-    inline void SetCloudHsmClusterId(const char* value) { m_cloudHsmClusterIdHasBeenSet = true; m_cloudHsmClusterId.assign(value); }
-    inline CustomKeyStoresListEntry& WithCloudHsmClusterId(const Aws::String& value) { SetCloudHsmClusterId(value); return *this;}
-    inline CustomKeyStoresListEntry& WithCloudHsmClusterId(Aws::String&& value) { SetCloudHsmClusterId(std::move(value)); return *this;}
-    inline CustomKeyStoresListEntry& WithCloudHsmClusterId(const char* value) { SetCloudHsmClusterId(value); return *this;}
+    template<typename CloudHsmClusterIdT = Aws::String>
+    void SetCloudHsmClusterId(CloudHsmClusterIdT&& value) { m_cloudHsmClusterIdHasBeenSet = true; m_cloudHsmClusterId = std::forward<CloudHsmClusterIdT>(value); }
+    template<typename CloudHsmClusterIdT = Aws::String>
+    CustomKeyStoresListEntry& WithCloudHsmClusterId(CloudHsmClusterIdT&& value) { SetCloudHsmClusterId(std::forward<CloudHsmClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +90,12 @@ namespace Model
      * <code>customerCA.crt</code> file.</p> <p>This field appears only when the
      * <code>CustomKeyStoreType</code> is <code>AWS_CLOUDHSM</code>.</p>
      */
-    inline const Aws::String& GetTrustAnchorCertificate() const{ return m_trustAnchorCertificate; }
+    inline const Aws::String& GetTrustAnchorCertificate() const { return m_trustAnchorCertificate; }
     inline bool TrustAnchorCertificateHasBeenSet() const { return m_trustAnchorCertificateHasBeenSet; }
-    inline void SetTrustAnchorCertificate(const Aws::String& value) { m_trustAnchorCertificateHasBeenSet = true; m_trustAnchorCertificate = value; }
-    inline void SetTrustAnchorCertificate(Aws::String&& value) { m_trustAnchorCertificateHasBeenSet = true; m_trustAnchorCertificate = std::move(value); }
-    inline void SetTrustAnchorCertificate(const char* value) { m_trustAnchorCertificateHasBeenSet = true; m_trustAnchorCertificate.assign(value); }
-    inline CustomKeyStoresListEntry& WithTrustAnchorCertificate(const Aws::String& value) { SetTrustAnchorCertificate(value); return *this;}
-    inline CustomKeyStoresListEntry& WithTrustAnchorCertificate(Aws::String&& value) { SetTrustAnchorCertificate(std::move(value)); return *this;}
-    inline CustomKeyStoresListEntry& WithTrustAnchorCertificate(const char* value) { SetTrustAnchorCertificate(value); return *this;}
+    template<typename TrustAnchorCertificateT = Aws::String>
+    void SetTrustAnchorCertificate(TrustAnchorCertificateT&& value) { m_trustAnchorCertificateHasBeenSet = true; m_trustAnchorCertificate = std::forward<TrustAnchorCertificateT>(value); }
+    template<typename TrustAnchorCertificateT = Aws::String>
+    CustomKeyStoresListEntry& WithTrustAnchorCertificate(TrustAnchorCertificateT&& value) { SetTrustAnchorCertificate(std::forward<TrustAnchorCertificateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,12 +121,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/fix-keystore.html">Troubleshooting
      * a custom key store</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
-    inline const ConnectionStateType& GetConnectionState() const{ return m_connectionState; }
+    inline ConnectionStateType GetConnectionState() const { return m_connectionState; }
     inline bool ConnectionStateHasBeenSet() const { return m_connectionStateHasBeenSet; }
-    inline void SetConnectionState(const ConnectionStateType& value) { m_connectionStateHasBeenSet = true; m_connectionState = value; }
-    inline void SetConnectionState(ConnectionStateType&& value) { m_connectionStateHasBeenSet = true; m_connectionState = std::move(value); }
-    inline CustomKeyStoresListEntry& WithConnectionState(const ConnectionStateType& value) { SetConnectionState(value); return *this;}
-    inline CustomKeyStoresListEntry& WithConnectionState(ConnectionStateType&& value) { SetConnectionState(std::move(value)); return *this;}
+    inline void SetConnectionState(ConnectionStateType value) { m_connectionStateHasBeenSet = true; m_connectionState = value; }
+    inline CustomKeyStoresListEntry& WithConnectionState(ConnectionStateType value) { SetConnectionState(value); return *this;}
     ///@}
 
     ///@{
@@ -257,24 +247,22 @@ namespace Model
      * KMS service principal has service consumer permissions on the Amazon VPC
      * endpoint service.</p> </li> </ul>
      */
-    inline const ConnectionErrorCodeType& GetConnectionErrorCode() const{ return m_connectionErrorCode; }
+    inline ConnectionErrorCodeType GetConnectionErrorCode() const { return m_connectionErrorCode; }
     inline bool ConnectionErrorCodeHasBeenSet() const { return m_connectionErrorCodeHasBeenSet; }
-    inline void SetConnectionErrorCode(const ConnectionErrorCodeType& value) { m_connectionErrorCodeHasBeenSet = true; m_connectionErrorCode = value; }
-    inline void SetConnectionErrorCode(ConnectionErrorCodeType&& value) { m_connectionErrorCodeHasBeenSet = true; m_connectionErrorCode = std::move(value); }
-    inline CustomKeyStoresListEntry& WithConnectionErrorCode(const ConnectionErrorCodeType& value) { SetConnectionErrorCode(value); return *this;}
-    inline CustomKeyStoresListEntry& WithConnectionErrorCode(ConnectionErrorCodeType&& value) { SetConnectionErrorCode(std::move(value)); return *this;}
+    inline void SetConnectionErrorCode(ConnectionErrorCodeType value) { m_connectionErrorCodeHasBeenSet = true; m_connectionErrorCode = value; }
+    inline CustomKeyStoresListEntry& WithConnectionErrorCode(ConnectionErrorCodeType value) { SetConnectionErrorCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the custom key store was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline CustomKeyStoresListEntry& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline CustomKeyStoresListEntry& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    CustomKeyStoresListEntry& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -285,12 +273,10 @@ namespace Model
      * external key store proxy and external key manager outside of Amazon Web
      * Services.</p>
      */
-    inline const CustomKeyStoreType& GetCustomKeyStoreType() const{ return m_customKeyStoreType; }
+    inline CustomKeyStoreType GetCustomKeyStoreType() const { return m_customKeyStoreType; }
     inline bool CustomKeyStoreTypeHasBeenSet() const { return m_customKeyStoreTypeHasBeenSet; }
-    inline void SetCustomKeyStoreType(const CustomKeyStoreType& value) { m_customKeyStoreTypeHasBeenSet = true; m_customKeyStoreType = value; }
-    inline void SetCustomKeyStoreType(CustomKeyStoreType&& value) { m_customKeyStoreTypeHasBeenSet = true; m_customKeyStoreType = std::move(value); }
-    inline CustomKeyStoresListEntry& WithCustomKeyStoreType(const CustomKeyStoreType& value) { SetCustomKeyStoreType(value); return *this;}
-    inline CustomKeyStoresListEntry& WithCustomKeyStoreType(CustomKeyStoreType&& value) { SetCustomKeyStoreType(std::move(value)); return *this;}
+    inline void SetCustomKeyStoreType(CustomKeyStoreType value) { m_customKeyStoreTypeHasBeenSet = true; m_customKeyStoreType = value; }
+    inline CustomKeyStoresListEntry& WithCustomKeyStoreType(CustomKeyStoreType value) { SetCustomKeyStoreType(value); return *this;}
     ///@}
 
     ///@{
@@ -301,12 +287,12 @@ namespace Model
      * information that KMS requires.</p> <p>This field appears only when the
      * <code>CustomKeyStoreType</code> is <code>EXTERNAL_KEY_STORE</code>.</p>
      */
-    inline const XksProxyConfigurationType& GetXksProxyConfiguration() const{ return m_xksProxyConfiguration; }
+    inline const XksProxyConfigurationType& GetXksProxyConfiguration() const { return m_xksProxyConfiguration; }
     inline bool XksProxyConfigurationHasBeenSet() const { return m_xksProxyConfigurationHasBeenSet; }
-    inline void SetXksProxyConfiguration(const XksProxyConfigurationType& value) { m_xksProxyConfigurationHasBeenSet = true; m_xksProxyConfiguration = value; }
-    inline void SetXksProxyConfiguration(XksProxyConfigurationType&& value) { m_xksProxyConfigurationHasBeenSet = true; m_xksProxyConfiguration = std::move(value); }
-    inline CustomKeyStoresListEntry& WithXksProxyConfiguration(const XksProxyConfigurationType& value) { SetXksProxyConfiguration(value); return *this;}
-    inline CustomKeyStoresListEntry& WithXksProxyConfiguration(XksProxyConfigurationType&& value) { SetXksProxyConfiguration(std::move(value)); return *this;}
+    template<typename XksProxyConfigurationT = XksProxyConfigurationType>
+    void SetXksProxyConfiguration(XksProxyConfigurationT&& value) { m_xksProxyConfigurationHasBeenSet = true; m_xksProxyConfiguration = std::forward<XksProxyConfigurationT>(value); }
+    template<typename XksProxyConfigurationT = XksProxyConfigurationType>
+    CustomKeyStoresListEntry& WithXksProxyConfiguration(XksProxyConfigurationT&& value) { SetXksProxyConfiguration(std::forward<XksProxyConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -322,16 +308,16 @@ namespace Model
     Aws::String m_trustAnchorCertificate;
     bool m_trustAnchorCertificateHasBeenSet = false;
 
-    ConnectionStateType m_connectionState;
+    ConnectionStateType m_connectionState{ConnectionStateType::NOT_SET};
     bool m_connectionStateHasBeenSet = false;
 
-    ConnectionErrorCodeType m_connectionErrorCode;
+    ConnectionErrorCodeType m_connectionErrorCode{ConnectionErrorCodeType::NOT_SET};
     bool m_connectionErrorCodeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
     bool m_creationDateHasBeenSet = false;
 
-    CustomKeyStoreType m_customKeyStoreType;
+    CustomKeyStoreType m_customKeyStoreType{CustomKeyStoreType::NOT_SET};
     bool m_customKeyStoreTypeHasBeenSet = false;
 
     XksProxyConfigurationType m_xksProxyConfiguration;

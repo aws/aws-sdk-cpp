@@ -12,11 +12,6 @@ using namespace Aws::ForecastService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePredictorRequest::DeletePredictorRequest() : 
-    m_predictorArnHasBeenSet(false)
-{
-}
-
 Aws::String DeletePredictorRequest::SerializePayload() const
 {
   JsonValue payload;

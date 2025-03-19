@@ -32,7 +32,7 @@ namespace Model
   class SmsChannelSubtypeParameters
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API SmsChannelSubtypeParameters();
+    AWS_CONNECTCAMPAIGNSV2_API SmsChannelSubtypeParameters() = default;
     AWS_CONNECTCAMPAIGNSV2_API SmsChannelSubtypeParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API SmsChannelSubtypeParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,55 +40,46 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetDestinationPhoneNumber() const{ return m_destinationPhoneNumber; }
+    inline const Aws::String& GetDestinationPhoneNumber() const { return m_destinationPhoneNumber; }
     inline bool DestinationPhoneNumberHasBeenSet() const { return m_destinationPhoneNumberHasBeenSet; }
-    inline void SetDestinationPhoneNumber(const Aws::String& value) { m_destinationPhoneNumberHasBeenSet = true; m_destinationPhoneNumber = value; }
-    inline void SetDestinationPhoneNumber(Aws::String&& value) { m_destinationPhoneNumberHasBeenSet = true; m_destinationPhoneNumber = std::move(value); }
-    inline void SetDestinationPhoneNumber(const char* value) { m_destinationPhoneNumberHasBeenSet = true; m_destinationPhoneNumber.assign(value); }
-    inline SmsChannelSubtypeParameters& WithDestinationPhoneNumber(const Aws::String& value) { SetDestinationPhoneNumber(value); return *this;}
-    inline SmsChannelSubtypeParameters& WithDestinationPhoneNumber(Aws::String&& value) { SetDestinationPhoneNumber(std::move(value)); return *this;}
-    inline SmsChannelSubtypeParameters& WithDestinationPhoneNumber(const char* value) { SetDestinationPhoneNumber(value); return *this;}
+    template<typename DestinationPhoneNumberT = Aws::String>
+    void SetDestinationPhoneNumber(DestinationPhoneNumberT&& value) { m_destinationPhoneNumberHasBeenSet = true; m_destinationPhoneNumber = std::forward<DestinationPhoneNumberT>(value); }
+    template<typename DestinationPhoneNumberT = Aws::String>
+    SmsChannelSubtypeParameters& WithDestinationPhoneNumber(DestinationPhoneNumberT&& value) { SetDestinationPhoneNumber(std::forward<DestinationPhoneNumberT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetConnectSourcePhoneNumberArn() const{ return m_connectSourcePhoneNumberArn; }
+    inline const Aws::String& GetConnectSourcePhoneNumberArn() const { return m_connectSourcePhoneNumberArn; }
     inline bool ConnectSourcePhoneNumberArnHasBeenSet() const { return m_connectSourcePhoneNumberArnHasBeenSet; }
-    inline void SetConnectSourcePhoneNumberArn(const Aws::String& value) { m_connectSourcePhoneNumberArnHasBeenSet = true; m_connectSourcePhoneNumberArn = value; }
-    inline void SetConnectSourcePhoneNumberArn(Aws::String&& value) { m_connectSourcePhoneNumberArnHasBeenSet = true; m_connectSourcePhoneNumberArn = std::move(value); }
-    inline void SetConnectSourcePhoneNumberArn(const char* value) { m_connectSourcePhoneNumberArnHasBeenSet = true; m_connectSourcePhoneNumberArn.assign(value); }
-    inline SmsChannelSubtypeParameters& WithConnectSourcePhoneNumberArn(const Aws::String& value) { SetConnectSourcePhoneNumberArn(value); return *this;}
-    inline SmsChannelSubtypeParameters& WithConnectSourcePhoneNumberArn(Aws::String&& value) { SetConnectSourcePhoneNumberArn(std::move(value)); return *this;}
-    inline SmsChannelSubtypeParameters& WithConnectSourcePhoneNumberArn(const char* value) { SetConnectSourcePhoneNumberArn(value); return *this;}
+    template<typename ConnectSourcePhoneNumberArnT = Aws::String>
+    void SetConnectSourcePhoneNumberArn(ConnectSourcePhoneNumberArnT&& value) { m_connectSourcePhoneNumberArnHasBeenSet = true; m_connectSourcePhoneNumberArn = std::forward<ConnectSourcePhoneNumberArnT>(value); }
+    template<typename ConnectSourcePhoneNumberArnT = Aws::String>
+    SmsChannelSubtypeParameters& WithConnectSourcePhoneNumberArn(ConnectSourcePhoneNumberArnT&& value) { SetConnectSourcePhoneNumberArn(std::forward<ConnectSourcePhoneNumberArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetTemplateArn() const{ return m_templateArn; }
+    inline const Aws::String& GetTemplateArn() const { return m_templateArn; }
     inline bool TemplateArnHasBeenSet() const { return m_templateArnHasBeenSet; }
-    inline void SetTemplateArn(const Aws::String& value) { m_templateArnHasBeenSet = true; m_templateArn = value; }
-    inline void SetTemplateArn(Aws::String&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::move(value); }
-    inline void SetTemplateArn(const char* value) { m_templateArnHasBeenSet = true; m_templateArn.assign(value); }
-    inline SmsChannelSubtypeParameters& WithTemplateArn(const Aws::String& value) { SetTemplateArn(value); return *this;}
-    inline SmsChannelSubtypeParameters& WithTemplateArn(Aws::String&& value) { SetTemplateArn(std::move(value)); return *this;}
-    inline SmsChannelSubtypeParameters& WithTemplateArn(const char* value) { SetTemplateArn(value); return *this;}
+    template<typename TemplateArnT = Aws::String>
+    void SetTemplateArn(TemplateArnT&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::forward<TemplateArnT>(value); }
+    template<typename TemplateArnT = Aws::String>
+    SmsChannelSubtypeParameters& WithTemplateArn(TemplateArnT&& value) { SetTemplateArn(std::forward<TemplateArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetTemplateParameters() const{ return m_templateParameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTemplateParameters() const { return m_templateParameters; }
     inline bool TemplateParametersHasBeenSet() const { return m_templateParametersHasBeenSet; }
-    inline void SetTemplateParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_templateParametersHasBeenSet = true; m_templateParameters = value; }
-    inline void SetTemplateParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_templateParametersHasBeenSet = true; m_templateParameters = std::move(value); }
-    inline SmsChannelSubtypeParameters& WithTemplateParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetTemplateParameters(value); return *this;}
-    inline SmsChannelSubtypeParameters& WithTemplateParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetTemplateParameters(std::move(value)); return *this;}
-    inline SmsChannelSubtypeParameters& AddTemplateParameters(const Aws::String& key, const Aws::String& value) { m_templateParametersHasBeenSet = true; m_templateParameters.emplace(key, value); return *this; }
-    inline SmsChannelSubtypeParameters& AddTemplateParameters(Aws::String&& key, const Aws::String& value) { m_templateParametersHasBeenSet = true; m_templateParameters.emplace(std::move(key), value); return *this; }
-    inline SmsChannelSubtypeParameters& AddTemplateParameters(const Aws::String& key, Aws::String&& value) { m_templateParametersHasBeenSet = true; m_templateParameters.emplace(key, std::move(value)); return *this; }
-    inline SmsChannelSubtypeParameters& AddTemplateParameters(Aws::String&& key, Aws::String&& value) { m_templateParametersHasBeenSet = true; m_templateParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline SmsChannelSubtypeParameters& AddTemplateParameters(const char* key, Aws::String&& value) { m_templateParametersHasBeenSet = true; m_templateParameters.emplace(key, std::move(value)); return *this; }
-    inline SmsChannelSubtypeParameters& AddTemplateParameters(Aws::String&& key, const char* value) { m_templateParametersHasBeenSet = true; m_templateParameters.emplace(std::move(key), value); return *this; }
-    inline SmsChannelSubtypeParameters& AddTemplateParameters(const char* key, const char* value) { m_templateParametersHasBeenSet = true; m_templateParameters.emplace(key, value); return *this; }
+    template<typename TemplateParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetTemplateParameters(TemplateParametersT&& value) { m_templateParametersHasBeenSet = true; m_templateParameters = std::forward<TemplateParametersT>(value); }
+    template<typename TemplateParametersT = Aws::Map<Aws::String, Aws::String>>
+    SmsChannelSubtypeParameters& WithTemplateParameters(TemplateParametersT&& value) { SetTemplateParameters(std::forward<TemplateParametersT>(value)); return *this;}
+    template<typename TemplateParametersKeyT = Aws::String, typename TemplateParametersValueT = Aws::String>
+    SmsChannelSubtypeParameters& AddTemplateParameters(TemplateParametersKeyT&& key, TemplateParametersValueT&& value) {
+      m_templateParametersHasBeenSet = true; m_templateParameters.emplace(std::forward<TemplateParametersKeyT>(key), std::forward<TemplateParametersValueT>(value)); return *this;
+    }
     ///@}
   private:
 

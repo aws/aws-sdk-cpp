@@ -28,7 +28,7 @@ namespace Model
   class CreateIPSetResult
   {
   public:
-    AWS_WAFREGIONAL_API CreateIPSetResult();
+    AWS_WAFREGIONAL_API CreateIPSetResult() = default;
     AWS_WAFREGIONAL_API CreateIPSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WAFREGIONAL_API CreateIPSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,11 +37,11 @@ namespace Model
     /**
      * <p>The <a>IPSet</a> returned in the <code>CreateIPSet</code> response.</p>
      */
-    inline const IPSet& GetIPSet() const{ return m_iPSet; }
-    inline void SetIPSet(const IPSet& value) { m_iPSet = value; }
-    inline void SetIPSet(IPSet&& value) { m_iPSet = std::move(value); }
-    inline CreateIPSetResult& WithIPSet(const IPSet& value) { SetIPSet(value); return *this;}
-    inline CreateIPSetResult& WithIPSet(IPSet&& value) { SetIPSet(std::move(value)); return *this;}
+    inline const IPSet& GetIPSet() const { return m_iPSet; }
+    template<typename IPSetT = IPSet>
+    void SetIPSet(IPSetT&& value) { m_iPSetHasBeenSet = true; m_iPSet = std::forward<IPSetT>(value); }
+    template<typename IPSetT = IPSet>
+    CreateIPSetResult& WithIPSet(IPSetT&& value) { SetIPSet(std::forward<IPSetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,32 +51,31 @@ namespace Model
      * status of the request. For more information, see
      * <a>GetChangeTokenStatus</a>.</p>
      */
-    inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
-    inline void SetChangeToken(const Aws::String& value) { m_changeToken = value; }
-    inline void SetChangeToken(Aws::String&& value) { m_changeToken = std::move(value); }
-    inline void SetChangeToken(const char* value) { m_changeToken.assign(value); }
-    inline CreateIPSetResult& WithChangeToken(const Aws::String& value) { SetChangeToken(value); return *this;}
-    inline CreateIPSetResult& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
-    inline CreateIPSetResult& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
+    inline const Aws::String& GetChangeToken() const { return m_changeToken; }
+    template<typename ChangeTokenT = Aws::String>
+    void SetChangeToken(ChangeTokenT&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::forward<ChangeTokenT>(value); }
+    template<typename ChangeTokenT = Aws::String>
+    CreateIPSetResult& WithChangeToken(ChangeTokenT&& value) { SetChangeToken(std::forward<ChangeTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateIPSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateIPSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateIPSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateIPSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     IPSet m_iPSet;
+    bool m_iPSetHasBeenSet = false;
 
     Aws::String m_changeToken;
+    bool m_changeTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

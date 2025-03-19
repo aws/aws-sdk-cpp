@@ -28,7 +28,7 @@ namespace Model
   class DescribeDeliveryStreamResult
   {
   public:
-    AWS_FIREHOSE_API DescribeDeliveryStreamResult();
+    AWS_FIREHOSE_API DescribeDeliveryStreamResult() = default;
     AWS_FIREHOSE_API DescribeDeliveryStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FIREHOSE_API DescribeDeliveryStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the Firehose stream.</p>
      */
-    inline const DeliveryStreamDescription& GetDeliveryStreamDescription() const{ return m_deliveryStreamDescription; }
-    inline void SetDeliveryStreamDescription(const DeliveryStreamDescription& value) { m_deliveryStreamDescription = value; }
-    inline void SetDeliveryStreamDescription(DeliveryStreamDescription&& value) { m_deliveryStreamDescription = std::move(value); }
-    inline DescribeDeliveryStreamResult& WithDeliveryStreamDescription(const DeliveryStreamDescription& value) { SetDeliveryStreamDescription(value); return *this;}
-    inline DescribeDeliveryStreamResult& WithDeliveryStreamDescription(DeliveryStreamDescription&& value) { SetDeliveryStreamDescription(std::move(value)); return *this;}
+    inline const DeliveryStreamDescription& GetDeliveryStreamDescription() const { return m_deliveryStreamDescription; }
+    template<typename DeliveryStreamDescriptionT = DeliveryStreamDescription>
+    void SetDeliveryStreamDescription(DeliveryStreamDescriptionT&& value) { m_deliveryStreamDescriptionHasBeenSet = true; m_deliveryStreamDescription = std::forward<DeliveryStreamDescriptionT>(value); }
+    template<typename DeliveryStreamDescriptionT = DeliveryStreamDescription>
+    DescribeDeliveryStreamResult& WithDeliveryStreamDescription(DeliveryStreamDescriptionT&& value) { SetDeliveryStreamDescription(std::forward<DeliveryStreamDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDeliveryStreamResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDeliveryStreamResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDeliveryStreamResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDeliveryStreamResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DeliveryStreamDescription m_deliveryStreamDescription;
+    bool m_deliveryStreamDescriptionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

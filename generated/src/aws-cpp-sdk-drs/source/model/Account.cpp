@@ -18,13 +18,7 @@ namespace drs
 namespace Model
 {
 
-Account::Account() : 
-    m_accountIDHasBeenSet(false)
-{
-}
-
 Account::Account(JsonView jsonValue)
-  : Account()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Account& Account::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountID"))
   {
     m_accountID = jsonValue.GetString("accountID");
-
     m_accountIDHasBeenSet = true;
   }
-
   return *this;
 }
 

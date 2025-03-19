@@ -18,33 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition() : 
-    m_definitionNameHasBeenSet(false),
-    m_tuningObjectiveHasBeenSet(false),
-    m_hyperParameterRangesHasBeenSet(false),
-    m_staticHyperParametersHasBeenSet(false),
-    m_algorithmSpecificationHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false),
-    m_resourceConfigHasBeenSet(false),
-    m_hyperParameterTuningResourceConfigHasBeenSet(false),
-    m_stoppingConditionHasBeenSet(false),
-    m_enableNetworkIsolation(false),
-    m_enableNetworkIsolationHasBeenSet(false),
-    m_enableInterContainerTrafficEncryption(false),
-    m_enableInterContainerTrafficEncryptionHasBeenSet(false),
-    m_enableManagedSpotTraining(false),
-    m_enableManagedSpotTrainingHasBeenSet(false),
-    m_checkpointConfigHasBeenSet(false),
-    m_retryStrategyHasBeenSet(false),
-    m_environmentHasBeenSet(false)
-{
-}
-
 HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition(JsonView jsonValue)
-  : HyperParameterTrainingJobDefinition()
 {
   *this = jsonValue;
 }
@@ -54,24 +28,18 @@ HyperParameterTrainingJobDefinition& HyperParameterTrainingJobDefinition::operat
   if(jsonValue.ValueExists("DefinitionName"))
   {
     m_definitionName = jsonValue.GetString("DefinitionName");
-
     m_definitionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TuningObjective"))
   {
     m_tuningObjective = jsonValue.GetObject("TuningObjective");
-
     m_tuningObjectiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HyperParameterRanges"))
   {
     m_hyperParameterRanges = jsonValue.GetObject("HyperParameterRanges");
-
     m_hyperParameterRangesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StaticHyperParameters"))
   {
     Aws::Map<Aws::String, JsonView> staticHyperParametersJsonMap = jsonValue.GetObject("StaticHyperParameters").GetAllObjects();
@@ -81,21 +49,16 @@ HyperParameterTrainingJobDefinition& HyperParameterTrainingJobDefinition::operat
     }
     m_staticHyperParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlgorithmSpecification"))
   {
     m_algorithmSpecification = jsonValue.GetObject("AlgorithmSpecification");
-
     m_algorithmSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputDataConfig"))
   {
     Aws::Utils::Array<JsonView> inputDataConfigJsonList = jsonValue.GetArray("InputDataConfig");
@@ -105,77 +68,56 @@ HyperParameterTrainingJobDefinition& HyperParameterTrainingJobDefinition::operat
     }
     m_inputDataConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("VpcConfig");
-
     m_vpcConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputDataConfig"))
   {
     m_outputDataConfig = jsonValue.GetObject("OutputDataConfig");
-
     m_outputDataConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceConfig"))
   {
     m_resourceConfig = jsonValue.GetObject("ResourceConfig");
-
     m_resourceConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HyperParameterTuningResourceConfig"))
   {
     m_hyperParameterTuningResourceConfig = jsonValue.GetObject("HyperParameterTuningResourceConfig");
-
     m_hyperParameterTuningResourceConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StoppingCondition"))
   {
     m_stoppingCondition = jsonValue.GetObject("StoppingCondition");
-
     m_stoppingConditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableNetworkIsolation"))
   {
     m_enableNetworkIsolation = jsonValue.GetBool("EnableNetworkIsolation");
-
     m_enableNetworkIsolationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableInterContainerTrafficEncryption"))
   {
     m_enableInterContainerTrafficEncryption = jsonValue.GetBool("EnableInterContainerTrafficEncryption");
-
     m_enableInterContainerTrafficEncryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableManagedSpotTraining"))
   {
     m_enableManagedSpotTraining = jsonValue.GetBool("EnableManagedSpotTraining");
-
     m_enableManagedSpotTrainingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CheckpointConfig"))
   {
     m_checkpointConfig = jsonValue.GetObject("CheckpointConfig");
-
     m_checkpointConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetryStrategy"))
   {
     m_retryStrategy = jsonValue.GetObject("RetryStrategy");
-
     m_retryStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Environment"))
   {
     Aws::Map<Aws::String, JsonView> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();
@@ -185,7 +127,6 @@ HyperParameterTrainingJobDefinition& HyperParameterTrainingJobDefinition::operat
     }
     m_environmentHasBeenSet = true;
   }
-
   return *this;
 }
 

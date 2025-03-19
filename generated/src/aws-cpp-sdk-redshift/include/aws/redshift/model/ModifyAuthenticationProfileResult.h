@@ -28,7 +28,7 @@ namespace Model
   class ModifyAuthenticationProfileResult
   {
   public:
-    AWS_REDSHIFT_API ModifyAuthenticationProfileResult();
+    AWS_REDSHIFT_API ModifyAuthenticationProfileResult() = default;
     AWS_REDSHIFT_API ModifyAuthenticationProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_REDSHIFT_API ModifyAuthenticationProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,43 +37,42 @@ namespace Model
     /**
      * <p>The name of the authentication profile that was replaced.</p>
      */
-    inline const Aws::String& GetAuthenticationProfileName() const{ return m_authenticationProfileName; }
-    inline void SetAuthenticationProfileName(const Aws::String& value) { m_authenticationProfileName = value; }
-    inline void SetAuthenticationProfileName(Aws::String&& value) { m_authenticationProfileName = std::move(value); }
-    inline void SetAuthenticationProfileName(const char* value) { m_authenticationProfileName.assign(value); }
-    inline ModifyAuthenticationProfileResult& WithAuthenticationProfileName(const Aws::String& value) { SetAuthenticationProfileName(value); return *this;}
-    inline ModifyAuthenticationProfileResult& WithAuthenticationProfileName(Aws::String&& value) { SetAuthenticationProfileName(std::move(value)); return *this;}
-    inline ModifyAuthenticationProfileResult& WithAuthenticationProfileName(const char* value) { SetAuthenticationProfileName(value); return *this;}
+    inline const Aws::String& GetAuthenticationProfileName() const { return m_authenticationProfileName; }
+    template<typename AuthenticationProfileNameT = Aws::String>
+    void SetAuthenticationProfileName(AuthenticationProfileNameT&& value) { m_authenticationProfileNameHasBeenSet = true; m_authenticationProfileName = std::forward<AuthenticationProfileNameT>(value); }
+    template<typename AuthenticationProfileNameT = Aws::String>
+    ModifyAuthenticationProfileResult& WithAuthenticationProfileName(AuthenticationProfileNameT&& value) { SetAuthenticationProfileName(std::forward<AuthenticationProfileNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The updated content of the authentication profile in JSON format.</p>
      */
-    inline const Aws::String& GetAuthenticationProfileContent() const{ return m_authenticationProfileContent; }
-    inline void SetAuthenticationProfileContent(const Aws::String& value) { m_authenticationProfileContent = value; }
-    inline void SetAuthenticationProfileContent(Aws::String&& value) { m_authenticationProfileContent = std::move(value); }
-    inline void SetAuthenticationProfileContent(const char* value) { m_authenticationProfileContent.assign(value); }
-    inline ModifyAuthenticationProfileResult& WithAuthenticationProfileContent(const Aws::String& value) { SetAuthenticationProfileContent(value); return *this;}
-    inline ModifyAuthenticationProfileResult& WithAuthenticationProfileContent(Aws::String&& value) { SetAuthenticationProfileContent(std::move(value)); return *this;}
-    inline ModifyAuthenticationProfileResult& WithAuthenticationProfileContent(const char* value) { SetAuthenticationProfileContent(value); return *this;}
+    inline const Aws::String& GetAuthenticationProfileContent() const { return m_authenticationProfileContent; }
+    template<typename AuthenticationProfileContentT = Aws::String>
+    void SetAuthenticationProfileContent(AuthenticationProfileContentT&& value) { m_authenticationProfileContentHasBeenSet = true; m_authenticationProfileContent = std::forward<AuthenticationProfileContentT>(value); }
+    template<typename AuthenticationProfileContentT = Aws::String>
+    ModifyAuthenticationProfileResult& WithAuthenticationProfileContent(AuthenticationProfileContentT&& value) { SetAuthenticationProfileContent(std::forward<AuthenticationProfileContentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ModifyAuthenticationProfileResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ModifyAuthenticationProfileResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ModifyAuthenticationProfileResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_authenticationProfileName;
+    bool m_authenticationProfileNameHasBeenSet = false;
 
     Aws::String m_authenticationProfileContent;
+    bool m_authenticationProfileContentHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

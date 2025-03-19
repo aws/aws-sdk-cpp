@@ -18,24 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-PredictorMonitorEvaluation::PredictorMonitorEvaluation() : 
-    m_resourceArnHasBeenSet(false),
-    m_monitorArnHasBeenSet(false),
-    m_evaluationTimeHasBeenSet(false),
-    m_evaluationStateHasBeenSet(false),
-    m_windowStartDatetimeHasBeenSet(false),
-    m_windowEndDatetimeHasBeenSet(false),
-    m_predictorEventHasBeenSet(false),
-    m_monitorDataSourceHasBeenSet(false),
-    m_metricResultsHasBeenSet(false),
-    m_numItemsEvaluated(0),
-    m_numItemsEvaluatedHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 PredictorMonitorEvaluation::PredictorMonitorEvaluation(JsonView jsonValue)
-  : PredictorMonitorEvaluation()
 {
   *this = jsonValue;
 }
@@ -45,59 +28,43 @@ PredictorMonitorEvaluation& PredictorMonitorEvaluation::operator =(JsonView json
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitorArn"))
   {
     m_monitorArn = jsonValue.GetString("MonitorArn");
-
     m_monitorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationTime"))
   {
     m_evaluationTime = jsonValue.GetDouble("EvaluationTime");
-
     m_evaluationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationState"))
   {
     m_evaluationState = jsonValue.GetString("EvaluationState");
-
     m_evaluationStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WindowStartDatetime"))
   {
     m_windowStartDatetime = jsonValue.GetDouble("WindowStartDatetime");
-
     m_windowStartDatetimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WindowEndDatetime"))
   {
     m_windowEndDatetime = jsonValue.GetDouble("WindowEndDatetime");
-
     m_windowEndDatetimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PredictorEvent"))
   {
     m_predictorEvent = jsonValue.GetObject("PredictorEvent");
-
     m_predictorEventHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitorDataSource"))
   {
     m_monitorDataSource = jsonValue.GetObject("MonitorDataSource");
-
     m_monitorDataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricResults"))
   {
     Aws::Utils::Array<JsonView> metricResultsJsonList = jsonValue.GetArray("MetricResults");
@@ -107,21 +74,16 @@ PredictorMonitorEvaluation& PredictorMonitorEvaluation::operator =(JsonView json
     }
     m_metricResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumItemsEvaluated"))
   {
     m_numItemsEvaluated = jsonValue.GetInt64("NumItemsEvaluated");
-
     m_numItemsEvaluatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

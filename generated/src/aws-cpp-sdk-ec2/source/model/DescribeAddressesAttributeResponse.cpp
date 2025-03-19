@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAddressesAttributeResponse::DescribeAddressesAttributeResponse()
-{
-}
-
 DescribeAddressesAttributeResponse::DescribeAddressesAttributeResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeAddressesAttributeResponse& DescribeAddressesAttributeResponse::operator
     if(!addressesNode.IsNull())
     {
       XmlNode addressesMember = addressesNode.FirstChild("item");
+      m_addressesHasBeenSet = !addressesMember.IsNull();
       while(!addressesMember.IsNull())
       {
         m_addresses.push_back(addressesMember);
         addressesMember = addressesMember.NextNode("item");
       }
 
+      m_addressesHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeAddressesAttributeResponse& DescribeAddressesAttributeResponse::operator
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeAddressesAttributeResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

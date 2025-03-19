@@ -30,7 +30,7 @@ namespace Model
   class RoutePedestrianTravelOnlySummary
   {
   public:
-    AWS_GEOROUTES_API RoutePedestrianTravelOnlySummary();
+    AWS_GEOROUTES_API RoutePedestrianTravelOnlySummary() = default;
     AWS_GEOROUTES_API RoutePedestrianTravelOnlySummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RoutePedestrianTravelOnlySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>Duration of the step.</p> <p> <b>Unit</b>: <code>seconds</code> </p>
      */
-    inline long long GetDuration() const{ return m_duration; }
+    inline long long GetDuration() const { return m_duration; }
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
     inline void SetDuration(long long value) { m_durationHasBeenSet = true; m_duration = value; }
     inline RoutePedestrianTravelOnlySummary& WithDuration(long long value) { SetDuration(value); return *this;}
     ///@}
   private:
 
-    long long m_duration;
+    long long m_duration{0};
     bool m_durationHasBeenSet = false;
   };
 

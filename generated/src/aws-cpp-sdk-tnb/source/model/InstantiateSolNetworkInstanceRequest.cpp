@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-InstantiateSolNetworkInstanceRequest::InstantiateSolNetworkInstanceRequest() : 
-    m_additionalParamsForNsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_nsInstanceIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String InstantiateSolNetworkInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

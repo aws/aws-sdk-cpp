@@ -33,7 +33,7 @@ namespace Model
   class Difference
   {
   public:
-    AWS_CODECOMMIT_API Difference();
+    AWS_CODECOMMIT_API Difference() = default;
     AWS_CODECOMMIT_API Difference(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API Difference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>Information about a <code>beforeBlob</code> data type object, including the
      * ID, the file mode permission code, and the path.</p>
      */
-    inline const BlobMetadata& GetBeforeBlob() const{ return m_beforeBlob; }
+    inline const BlobMetadata& GetBeforeBlob() const { return m_beforeBlob; }
     inline bool BeforeBlobHasBeenSet() const { return m_beforeBlobHasBeenSet; }
-    inline void SetBeforeBlob(const BlobMetadata& value) { m_beforeBlobHasBeenSet = true; m_beforeBlob = value; }
-    inline void SetBeforeBlob(BlobMetadata&& value) { m_beforeBlobHasBeenSet = true; m_beforeBlob = std::move(value); }
-    inline Difference& WithBeforeBlob(const BlobMetadata& value) { SetBeforeBlob(value); return *this;}
-    inline Difference& WithBeforeBlob(BlobMetadata&& value) { SetBeforeBlob(std::move(value)); return *this;}
+    template<typename BeforeBlobT = BlobMetadata>
+    void SetBeforeBlob(BeforeBlobT&& value) { m_beforeBlobHasBeenSet = true; m_beforeBlob = std::forward<BeforeBlobT>(value); }
+    template<typename BeforeBlobT = BlobMetadata>
+    Difference& WithBeforeBlob(BeforeBlobT&& value) { SetBeforeBlob(std::forward<BeforeBlobT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * <p>Information about an <code>afterBlob</code> data type object, including the
      * ID, the file mode permission code, and the path.</p>
      */
-    inline const BlobMetadata& GetAfterBlob() const{ return m_afterBlob; }
+    inline const BlobMetadata& GetAfterBlob() const { return m_afterBlob; }
     inline bool AfterBlobHasBeenSet() const { return m_afterBlobHasBeenSet; }
-    inline void SetAfterBlob(const BlobMetadata& value) { m_afterBlobHasBeenSet = true; m_afterBlob = value; }
-    inline void SetAfterBlob(BlobMetadata&& value) { m_afterBlobHasBeenSet = true; m_afterBlob = std::move(value); }
-    inline Difference& WithAfterBlob(const BlobMetadata& value) { SetAfterBlob(value); return *this;}
-    inline Difference& WithAfterBlob(BlobMetadata&& value) { SetAfterBlob(std::move(value)); return *this;}
+    template<typename AfterBlobT = BlobMetadata>
+    void SetAfterBlob(AfterBlobT&& value) { m_afterBlobHasBeenSet = true; m_afterBlob = std::forward<AfterBlobT>(value); }
+    template<typename AfterBlobT = BlobMetadata>
+    Difference& WithAfterBlob(AfterBlobT&& value) { SetAfterBlob(std::forward<AfterBlobT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +70,10 @@ namespace Model
      * <p>Whether the change type of the difference is an addition (A), deletion (D),
      * or modification (M).</p>
      */
-    inline const ChangeTypeEnum& GetChangeType() const{ return m_changeType; }
+    inline ChangeTypeEnum GetChangeType() const { return m_changeType; }
     inline bool ChangeTypeHasBeenSet() const { return m_changeTypeHasBeenSet; }
-    inline void SetChangeType(const ChangeTypeEnum& value) { m_changeTypeHasBeenSet = true; m_changeType = value; }
-    inline void SetChangeType(ChangeTypeEnum&& value) { m_changeTypeHasBeenSet = true; m_changeType = std::move(value); }
-    inline Difference& WithChangeType(const ChangeTypeEnum& value) { SetChangeType(value); return *this;}
-    inline Difference& WithChangeType(ChangeTypeEnum&& value) { SetChangeType(std::move(value)); return *this;}
+    inline void SetChangeType(ChangeTypeEnum value) { m_changeTypeHasBeenSet = true; m_changeType = value; }
+    inline Difference& WithChangeType(ChangeTypeEnum value) { SetChangeType(value); return *this;}
     ///@}
   private:
 
@@ -85,7 +83,7 @@ namespace Model
     BlobMetadata m_afterBlob;
     bool m_afterBlobHasBeenSet = false;
 
-    ChangeTypeEnum m_changeType;
+    ChangeTypeEnum m_changeType{ChangeTypeEnum::NOT_SET};
     bool m_changeTypeHasBeenSet = false;
   };
 

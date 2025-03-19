@@ -18,15 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ExecutionTrigger::ExecutionTrigger() : 
-    m_triggerType(TriggerType::NOT_SET),
-    m_triggerTypeHasBeenSet(false),
-    m_triggerDetailHasBeenSet(false)
-{
-}
-
 ExecutionTrigger::ExecutionTrigger(JsonView jsonValue)
-  : ExecutionTrigger()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ExecutionTrigger& ExecutionTrigger::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("triggerType"))
   {
     m_triggerType = TriggerTypeMapper::GetTriggerTypeForName(jsonValue.GetString("triggerType"));
-
     m_triggerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("triggerDetail"))
   {
     m_triggerDetail = jsonValue.GetString("triggerDetail");
-
     m_triggerDetailHasBeenSet = true;
   }
-
   return *this;
 }
 

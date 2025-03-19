@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-BedrockGuardrailConfiguration::BedrockGuardrailConfiguration() : 
-    m_identifierHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 BedrockGuardrailConfiguration::BedrockGuardrailConfiguration(JsonView jsonValue)
-  : BedrockGuardrailConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BedrockGuardrailConfiguration& BedrockGuardrailConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetString("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

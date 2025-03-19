@@ -18,27 +18,7 @@ namespace Artifact
 namespace Model
 {
 
-CustomerAgreementSummary::CustomerAgreementSummary() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_agreementArnHasBeenSet(false),
-    m_awsAccountIdHasBeenSet(false),
-    m_organizationArnHasBeenSet(false),
-    m_effectiveStartHasBeenSet(false),
-    m_effectiveEndHasBeenSet(false),
-    m_state(CustomerAgreementState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_acceptanceTermsHasBeenSet(false),
-    m_terminateTermsHasBeenSet(false),
-    m_type(AgreementType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 CustomerAgreementSummary::CustomerAgreementSummary(JsonView jsonValue)
-  : CustomerAgreementSummary()
 {
   *this = jsonValue;
 }
@@ -48,73 +28,53 @@ CustomerAgreementSummary& CustomerAgreementSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agreementArn"))
   {
     m_agreementArn = jsonValue.GetString("agreementArn");
-
     m_agreementArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsAccountId"))
   {
     m_awsAccountId = jsonValue.GetString("awsAccountId");
-
     m_awsAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("organizationArn"))
   {
     m_organizationArn = jsonValue.GetString("organizationArn");
-
     m_organizationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("effectiveStart"))
   {
     m_effectiveStart = jsonValue.GetString("effectiveStart");
-
     m_effectiveStartHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("effectiveEnd"))
   {
     m_effectiveEnd = jsonValue.GetString("effectiveEnd");
-
     m_effectiveEndHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = CustomerAgreementStateMapper::GetCustomerAgreementStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("acceptanceTerms"))
   {
     Aws::Utils::Array<JsonView> acceptanceTermsJsonList = jsonValue.GetArray("acceptanceTerms");
@@ -124,7 +84,6 @@ CustomerAgreementSummary& CustomerAgreementSummary::operator =(JsonView jsonValu
     }
     m_acceptanceTermsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("terminateTerms"))
   {
     Aws::Utils::Array<JsonView> terminateTermsJsonList = jsonValue.GetArray("terminateTerms");
@@ -134,14 +93,11 @@ CustomerAgreementSummary& CustomerAgreementSummary::operator =(JsonView jsonValu
     }
     m_terminateTermsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = AgreementTypeMapper::GetAgreementTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

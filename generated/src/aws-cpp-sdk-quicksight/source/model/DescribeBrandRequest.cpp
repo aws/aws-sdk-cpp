@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeBrandRequest::DescribeBrandRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_brandIdHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeBrandRequest::SerializePayload() const
 {
   return {};

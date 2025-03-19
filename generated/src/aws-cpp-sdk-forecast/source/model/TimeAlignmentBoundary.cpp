@@ -18,20 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-TimeAlignmentBoundary::TimeAlignmentBoundary() : 
-    m_month(Month::NOT_SET),
-    m_monthHasBeenSet(false),
-    m_dayOfMonth(0),
-    m_dayOfMonthHasBeenSet(false),
-    m_dayOfWeek(DayOfWeek::NOT_SET),
-    m_dayOfWeekHasBeenSet(false),
-    m_hour(0),
-    m_hourHasBeenSet(false)
-{
-}
-
 TimeAlignmentBoundary::TimeAlignmentBoundary(JsonView jsonValue)
-  : TimeAlignmentBoundary()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ TimeAlignmentBoundary& TimeAlignmentBoundary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Month"))
   {
     m_month = MonthMapper::GetMonthForName(jsonValue.GetString("Month"));
-
     m_monthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DayOfMonth"))
   {
     m_dayOfMonth = jsonValue.GetInteger("DayOfMonth");
-
     m_dayOfMonthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DayOfWeek"))
   {
     m_dayOfWeek = DayOfWeekMapper::GetDayOfWeekForName(jsonValue.GetString("DayOfWeek"));
-
     m_dayOfWeekHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Hour"))
   {
     m_hour = jsonValue.GetInteger("Hour");
-
     m_hourHasBeenSet = true;
   }
-
   return *this;
 }
 

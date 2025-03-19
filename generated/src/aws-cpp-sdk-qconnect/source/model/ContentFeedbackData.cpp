@@ -18,13 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-ContentFeedbackData::ContentFeedbackData() : 
-    m_generativeContentFeedbackDataHasBeenSet(false)
-{
-}
-
 ContentFeedbackData::ContentFeedbackData(JsonView jsonValue)
-  : ContentFeedbackData()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ContentFeedbackData& ContentFeedbackData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("generativeContentFeedbackData"))
   {
     m_generativeContentFeedbackData = jsonValue.GetObject("generativeContentFeedbackData");
-
     m_generativeContentFeedbackDataHasBeenSet = true;
   }
-
   return *this;
 }
 

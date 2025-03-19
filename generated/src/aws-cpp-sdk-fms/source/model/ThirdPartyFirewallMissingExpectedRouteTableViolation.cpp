@@ -18,17 +18,7 @@ namespace FMS
 namespace Model
 {
 
-ThirdPartyFirewallMissingExpectedRouteTableViolation::ThirdPartyFirewallMissingExpectedRouteTableViolation() : 
-    m_violationTargetHasBeenSet(false),
-    m_vPCHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_currentRouteTableHasBeenSet(false),
-    m_expectedRouteTableHasBeenSet(false)
-{
-}
-
 ThirdPartyFirewallMissingExpectedRouteTableViolation::ThirdPartyFirewallMissingExpectedRouteTableViolation(JsonView jsonValue)
-  : ThirdPartyFirewallMissingExpectedRouteTableViolation()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ ThirdPartyFirewallMissingExpectedRouteTableViolation& ThirdPartyFirewallMissingE
   if(jsonValue.ValueExists("ViolationTarget"))
   {
     m_violationTarget = jsonValue.GetString("ViolationTarget");
-
     m_violationTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VPC"))
   {
     m_vPC = jsonValue.GetString("VPC");
-
     m_vPCHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("AvailabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentRouteTable"))
   {
     m_currentRouteTable = jsonValue.GetString("CurrentRouteTable");
-
     m_currentRouteTableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpectedRouteTable"))
   {
     m_expectedRouteTable = jsonValue.GetString("ExpectedRouteTable");
-
     m_expectedRouteTableHasBeenSet = true;
   }
-
   return *this;
 }
 

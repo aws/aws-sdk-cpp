@@ -12,16 +12,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateReplicationInfoRequest::UpdateReplicationInfoRequest() : 
-    m_consumerGroupReplicationHasBeenSet(false),
-    m_currentVersionHasBeenSet(false),
-    m_replicatorArnHasBeenSet(false),
-    m_sourceKafkaClusterArnHasBeenSet(false),
-    m_targetKafkaClusterArnHasBeenSet(false),
-    m_topicReplicationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateReplicationInfoRequest::SerializePayload() const
 {
   JsonValue payload;

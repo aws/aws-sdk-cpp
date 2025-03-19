@@ -18,14 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-VpcConfig::VpcConfig() : 
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
-{
-}
-
 VpcConfig::VpcConfig(JsonView jsonValue)
-  : VpcConfig()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ VpcConfig& VpcConfig::operator =(JsonView jsonValue)
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subnets"))
   {
     Aws::Utils::Array<JsonView> subnetsJsonList = jsonValue.GetArray("Subnets");
@@ -51,7 +43,6 @@ VpcConfig& VpcConfig::operator =(JsonView jsonValue)
     }
     m_subnetsHasBeenSet = true;
   }
-
   return *this;
 }
 

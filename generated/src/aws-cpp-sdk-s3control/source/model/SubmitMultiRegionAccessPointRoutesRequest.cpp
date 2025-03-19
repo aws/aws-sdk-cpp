@@ -15,12 +15,6 @@ using namespace Aws::S3Control::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-SubmitMultiRegionAccessPointRoutesRequest::SubmitMultiRegionAccessPointRoutesRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_mrapHasBeenSet(false),
-    m_routeUpdatesHasBeenSet(false)
-{
-}
 
 Aws::String SubmitMultiRegionAccessPointRoutesRequest::SerializePayload() const
 {

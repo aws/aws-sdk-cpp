@@ -36,7 +36,7 @@ namespace Model
   class GetVpcLinkResult
   {
   public:
-    AWS_APIGATEWAY_API GetVpcLinkResult();
+    AWS_APIGATEWAY_API GetVpcLinkResult() = default;
     AWS_APIGATEWAY_API GetVpcLinkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APIGATEWAY_API GetVpcLinkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,39 +46,33 @@ namespace Model
      * <p>The identifier of the VpcLink. It is used in an Integration to reference this
      * VpcLink.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetVpcLinkResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetVpcLinkResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetVpcLinkResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetVpcLinkResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name used to label and identify the VPC link.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetVpcLinkResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetVpcLinkResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetVpcLinkResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetVpcLinkResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the VPC link.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetVpcLinkResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetVpcLinkResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetVpcLinkResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetVpcLinkResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +81,13 @@ namespace Model
      * network load balancer must be owned by the same Amazon Web Services account of
      * the API owner.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTargetArns() const{ return m_targetArns; }
-    inline void SetTargetArns(const Aws::Vector<Aws::String>& value) { m_targetArns = value; }
-    inline void SetTargetArns(Aws::Vector<Aws::String>&& value) { m_targetArns = std::move(value); }
-    inline GetVpcLinkResult& WithTargetArns(const Aws::Vector<Aws::String>& value) { SetTargetArns(value); return *this;}
-    inline GetVpcLinkResult& WithTargetArns(Aws::Vector<Aws::String>&& value) { SetTargetArns(std::move(value)); return *this;}
-    inline GetVpcLinkResult& AddTargetArns(const Aws::String& value) { m_targetArns.push_back(value); return *this; }
-    inline GetVpcLinkResult& AddTargetArns(Aws::String&& value) { m_targetArns.push_back(std::move(value)); return *this; }
-    inline GetVpcLinkResult& AddTargetArns(const char* value) { m_targetArns.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetTargetArns() const { return m_targetArns; }
+    template<typename TargetArnsT = Aws::Vector<Aws::String>>
+    void SetTargetArns(TargetArnsT&& value) { m_targetArnsHasBeenSet = true; m_targetArns = std::forward<TargetArnsT>(value); }
+    template<typename TargetArnsT = Aws::Vector<Aws::String>>
+    GetVpcLinkResult& WithTargetArns(TargetArnsT&& value) { SetTargetArns(std::forward<TargetArnsT>(value)); return *this;}
+    template<typename TargetArnsT = Aws::String>
+    GetVpcLinkResult& AddTargetArns(TargetArnsT&& value) { m_targetArnsHasBeenSet = true; m_targetArns.emplace_back(std::forward<TargetArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -104,24 +97,20 @@ namespace Model
      * an API will wait if the status is <code>PENDING</code> and will fail if the
      * status is <code>DELETING</code>. </p>
      */
-    inline const VpcLinkStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const VpcLinkStatus& value) { m_status = value; }
-    inline void SetStatus(VpcLinkStatus&& value) { m_status = std::move(value); }
-    inline GetVpcLinkResult& WithStatus(const VpcLinkStatus& value) { SetStatus(value); return *this;}
-    inline GetVpcLinkResult& WithStatus(VpcLinkStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline VpcLinkStatus GetStatus() const { return m_status; }
+    inline void SetStatus(VpcLinkStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetVpcLinkResult& WithStatus(VpcLinkStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description about the VPC link status.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
-    inline GetVpcLinkResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline GetVpcLinkResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline GetVpcLinkResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    GetVpcLinkResult& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,47 +118,50 @@ namespace Model
      * <p>The collection of tags. Each tag element is associated with a given
      * resource.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetVpcLinkResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetVpcLinkResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetVpcLinkResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetVpcLinkResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetVpcLinkResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetVpcLinkResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetVpcLinkResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetVpcLinkResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetVpcLinkResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetVpcLinkResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetVpcLinkResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetVpcLinkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetVpcLinkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetVpcLinkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetVpcLinkResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_targetArns;
+    bool m_targetArnsHasBeenSet = false;
 
-    VpcLinkStatus m_status;
+    VpcLinkStatus m_status{VpcLinkStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

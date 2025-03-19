@@ -25,7 +25,7 @@ namespace Model
   class UpdateAddonRequest : public EKSRequest
   {
   public:
-    AWS_EKS_API UpdateAddonRequest();
+    AWS_EKS_API UpdateAddonRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The name of your cluster.</p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline UpdateAddonRequest& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline UpdateAddonRequest& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline UpdateAddonRequest& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    UpdateAddonRequest& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html">
      * <code>ListAddons</code> </a>.</p>
      */
-    inline const Aws::String& GetAddonName() const{ return m_addonName; }
+    inline const Aws::String& GetAddonName() const { return m_addonName; }
     inline bool AddonNameHasBeenSet() const { return m_addonNameHasBeenSet; }
-    inline void SetAddonName(const Aws::String& value) { m_addonNameHasBeenSet = true; m_addonName = value; }
-    inline void SetAddonName(Aws::String&& value) { m_addonNameHasBeenSet = true; m_addonName = std::move(value); }
-    inline void SetAddonName(const char* value) { m_addonNameHasBeenSet = true; m_addonName.assign(value); }
-    inline UpdateAddonRequest& WithAddonName(const Aws::String& value) { SetAddonName(value); return *this;}
-    inline UpdateAddonRequest& WithAddonName(Aws::String&& value) { SetAddonName(std::move(value)); return *this;}
-    inline UpdateAddonRequest& WithAddonName(const char* value) { SetAddonName(value); return *this;}
+    template<typename AddonNameT = Aws::String>
+    void SetAddonName(AddonNameT&& value) { m_addonNameHasBeenSet = true; m_addonName = std::forward<AddonNameT>(value); }
+    template<typename AddonNameT = Aws::String>
+    UpdateAddonRequest& WithAddonName(AddonNameT&& value) { SetAddonName(std::forward<AddonNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/eks/latest/APIReference/API_DescribeAddonVersions.html">
      * <code>DescribeAddonVersions</code> </a>.</p>
      */
-    inline const Aws::String& GetAddonVersion() const{ return m_addonVersion; }
+    inline const Aws::String& GetAddonVersion() const { return m_addonVersion; }
     inline bool AddonVersionHasBeenSet() const { return m_addonVersionHasBeenSet; }
-    inline void SetAddonVersion(const Aws::String& value) { m_addonVersionHasBeenSet = true; m_addonVersion = value; }
-    inline void SetAddonVersion(Aws::String&& value) { m_addonVersionHasBeenSet = true; m_addonVersion = std::move(value); }
-    inline void SetAddonVersion(const char* value) { m_addonVersionHasBeenSet = true; m_addonVersion.assign(value); }
-    inline UpdateAddonRequest& WithAddonVersion(const Aws::String& value) { SetAddonVersion(value); return *this;}
-    inline UpdateAddonRequest& WithAddonVersion(Aws::String&& value) { SetAddonVersion(std::move(value)); return *this;}
-    inline UpdateAddonRequest& WithAddonVersion(const char* value) { SetAddonVersion(value); return *this;}
+    template<typename AddonVersionT = Aws::String>
+    void SetAddonVersion(AddonVersionT&& value) { m_addonVersionHasBeenSet = true; m_addonVersion = std::forward<AddonVersionT>(value); }
+    template<typename AddonVersionT = Aws::String>
+    UpdateAddonRequest& WithAddonVersion(AddonVersionT&& value) { SetAddonVersion(std::forward<AddonVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,14 +91,12 @@ namespace Model
      * IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User
      * Guide</i>.</p> 
      */
-    inline const Aws::String& GetServiceAccountRoleArn() const{ return m_serviceAccountRoleArn; }
+    inline const Aws::String& GetServiceAccountRoleArn() const { return m_serviceAccountRoleArn; }
     inline bool ServiceAccountRoleArnHasBeenSet() const { return m_serviceAccountRoleArnHasBeenSet; }
-    inline void SetServiceAccountRoleArn(const Aws::String& value) { m_serviceAccountRoleArnHasBeenSet = true; m_serviceAccountRoleArn = value; }
-    inline void SetServiceAccountRoleArn(Aws::String&& value) { m_serviceAccountRoleArnHasBeenSet = true; m_serviceAccountRoleArn = std::move(value); }
-    inline void SetServiceAccountRoleArn(const char* value) { m_serviceAccountRoleArnHasBeenSet = true; m_serviceAccountRoleArn.assign(value); }
-    inline UpdateAddonRequest& WithServiceAccountRoleArn(const Aws::String& value) { SetServiceAccountRoleArn(value); return *this;}
-    inline UpdateAddonRequest& WithServiceAccountRoleArn(Aws::String&& value) { SetServiceAccountRoleArn(std::move(value)); return *this;}
-    inline UpdateAddonRequest& WithServiceAccountRoleArn(const char* value) { SetServiceAccountRoleArn(value); return *this;}
+    template<typename ServiceAccountRoleArnT = Aws::String>
+    void SetServiceAccountRoleArn(ServiceAccountRoleArnT&& value) { m_serviceAccountRoleArnHasBeenSet = true; m_serviceAccountRoleArn = std::forward<ServiceAccountRoleArnT>(value); }
+    template<typename ServiceAccountRoleArnT = Aws::String>
+    UpdateAddonRequest& WithServiceAccountRoleArn(ServiceAccountRoleArnT&& value) { SetServiceAccountRoleArn(std::forward<ServiceAccountRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,12 +111,10 @@ namespace Model
      * on a non-production cluster before updating the add-on on your production
      * cluster.</p> </li> </ul>
      */
-    inline const ResolveConflicts& GetResolveConflicts() const{ return m_resolveConflicts; }
+    inline ResolveConflicts GetResolveConflicts() const { return m_resolveConflicts; }
     inline bool ResolveConflictsHasBeenSet() const { return m_resolveConflictsHasBeenSet; }
-    inline void SetResolveConflicts(const ResolveConflicts& value) { m_resolveConflictsHasBeenSet = true; m_resolveConflicts = value; }
-    inline void SetResolveConflicts(ResolveConflicts&& value) { m_resolveConflictsHasBeenSet = true; m_resolveConflicts = std::move(value); }
-    inline UpdateAddonRequest& WithResolveConflicts(const ResolveConflicts& value) { SetResolveConflicts(value); return *this;}
-    inline UpdateAddonRequest& WithResolveConflicts(ResolveConflicts&& value) { SetResolveConflicts(std::move(value)); return *this;}
+    inline void SetResolveConflicts(ResolveConflicts value) { m_resolveConflictsHasBeenSet = true; m_resolveConflicts = value; }
+    inline UpdateAddonRequest& WithResolveConflicts(ResolveConflicts value) { SetResolveConflicts(value); return *this;}
     ///@}
 
     ///@{
@@ -132,14 +122,12 @@ namespace Model
      * <p>A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request.</p>
      */
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline UpdateAddonRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline UpdateAddonRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline UpdateAddonRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    UpdateAddonRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -148,14 +136,12 @@ namespace Model
      * that you provide are validated against the schema returned by
      * <code>DescribeAddonConfiguration</code>.</p>
      */
-    inline const Aws::String& GetConfigurationValues() const{ return m_configurationValues; }
+    inline const Aws::String& GetConfigurationValues() const { return m_configurationValues; }
     inline bool ConfigurationValuesHasBeenSet() const { return m_configurationValuesHasBeenSet; }
-    inline void SetConfigurationValues(const Aws::String& value) { m_configurationValuesHasBeenSet = true; m_configurationValues = value; }
-    inline void SetConfigurationValues(Aws::String&& value) { m_configurationValuesHasBeenSet = true; m_configurationValues = std::move(value); }
-    inline void SetConfigurationValues(const char* value) { m_configurationValuesHasBeenSet = true; m_configurationValues.assign(value); }
-    inline UpdateAddonRequest& WithConfigurationValues(const Aws::String& value) { SetConfigurationValues(value); return *this;}
-    inline UpdateAddonRequest& WithConfigurationValues(Aws::String&& value) { SetConfigurationValues(std::move(value)); return *this;}
-    inline UpdateAddonRequest& WithConfigurationValues(const char* value) { SetConfigurationValues(value); return *this;}
+    template<typename ConfigurationValuesT = Aws::String>
+    void SetConfigurationValues(ConfigurationValuesT&& value) { m_configurationValuesHasBeenSet = true; m_configurationValues = std::forward<ConfigurationValuesT>(value); }
+    template<typename ConfigurationValuesT = Aws::String>
+    UpdateAddonRequest& WithConfigurationValues(ConfigurationValuesT&& value) { SetConfigurationValues(std::forward<ConfigurationValuesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -168,14 +154,14 @@ namespace Model
      * an IAM Role to an Amazon EKS add-on using Pod Identity</a> in the <i>Amazon EKS
      * User Guide</i>.</p>
      */
-    inline const Aws::Vector<AddonPodIdentityAssociations>& GetPodIdentityAssociations() const{ return m_podIdentityAssociations; }
+    inline const Aws::Vector<AddonPodIdentityAssociations>& GetPodIdentityAssociations() const { return m_podIdentityAssociations; }
     inline bool PodIdentityAssociationsHasBeenSet() const { return m_podIdentityAssociationsHasBeenSet; }
-    inline void SetPodIdentityAssociations(const Aws::Vector<AddonPodIdentityAssociations>& value) { m_podIdentityAssociationsHasBeenSet = true; m_podIdentityAssociations = value; }
-    inline void SetPodIdentityAssociations(Aws::Vector<AddonPodIdentityAssociations>&& value) { m_podIdentityAssociationsHasBeenSet = true; m_podIdentityAssociations = std::move(value); }
-    inline UpdateAddonRequest& WithPodIdentityAssociations(const Aws::Vector<AddonPodIdentityAssociations>& value) { SetPodIdentityAssociations(value); return *this;}
-    inline UpdateAddonRequest& WithPodIdentityAssociations(Aws::Vector<AddonPodIdentityAssociations>&& value) { SetPodIdentityAssociations(std::move(value)); return *this;}
-    inline UpdateAddonRequest& AddPodIdentityAssociations(const AddonPodIdentityAssociations& value) { m_podIdentityAssociationsHasBeenSet = true; m_podIdentityAssociations.push_back(value); return *this; }
-    inline UpdateAddonRequest& AddPodIdentityAssociations(AddonPodIdentityAssociations&& value) { m_podIdentityAssociationsHasBeenSet = true; m_podIdentityAssociations.push_back(std::move(value)); return *this; }
+    template<typename PodIdentityAssociationsT = Aws::Vector<AddonPodIdentityAssociations>>
+    void SetPodIdentityAssociations(PodIdentityAssociationsT&& value) { m_podIdentityAssociationsHasBeenSet = true; m_podIdentityAssociations = std::forward<PodIdentityAssociationsT>(value); }
+    template<typename PodIdentityAssociationsT = Aws::Vector<AddonPodIdentityAssociations>>
+    UpdateAddonRequest& WithPodIdentityAssociations(PodIdentityAssociationsT&& value) { SetPodIdentityAssociations(std::forward<PodIdentityAssociationsT>(value)); return *this;}
+    template<typename PodIdentityAssociationsT = AddonPodIdentityAssociations>
+    UpdateAddonRequest& AddPodIdentityAssociations(PodIdentityAssociationsT&& value) { m_podIdentityAssociationsHasBeenSet = true; m_podIdentityAssociations.emplace_back(std::forward<PodIdentityAssociationsT>(value)); return *this; }
     ///@}
   private:
 
@@ -191,7 +177,7 @@ namespace Model
     Aws::String m_serviceAccountRoleArn;
     bool m_serviceAccountRoleArnHasBeenSet = false;
 
-    ResolveConflicts m_resolveConflicts;
+    ResolveConflicts m_resolveConflicts{ResolveConflicts::NOT_SET};
     bool m_resolveConflictsHasBeenSet = false;
 
     Aws::String m_clientRequestToken;

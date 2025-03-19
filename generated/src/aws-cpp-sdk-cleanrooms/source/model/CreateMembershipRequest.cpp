@@ -12,19 +12,6 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMembershipRequest::CreateMembershipRequest() : 
-    m_collaborationIdentifierHasBeenSet(false),
-    m_queryLogStatus(MembershipQueryLogStatus::NOT_SET),
-    m_queryLogStatusHasBeenSet(false),
-    m_jobLogStatus(MembershipJobLogStatus::NOT_SET),
-    m_jobLogStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_defaultResultConfigurationHasBeenSet(false),
-    m_defaultJobResultConfigurationHasBeenSet(false),
-    m_paymentConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String CreateMembershipRequest::SerializePayload() const
 {
   JsonValue payload;

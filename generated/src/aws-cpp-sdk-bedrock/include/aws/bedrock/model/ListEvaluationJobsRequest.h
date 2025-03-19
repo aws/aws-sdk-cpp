@@ -30,7 +30,7 @@ namespace Model
   class ListEvaluationJobsRequest : public BedrockRequest
   {
   public:
-    AWS_BEDROCK_API ListEvaluationJobsRequest();
+    AWS_BEDROCK_API ListEvaluationJobsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,36 +47,34 @@ namespace Model
     /**
      * <p>A filter to only list evaluation jobs created after a specified time.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTimeAfter() const{ return m_creationTimeAfter; }
+    inline const Aws::Utils::DateTime& GetCreationTimeAfter() const { return m_creationTimeAfter; }
     inline bool CreationTimeAfterHasBeenSet() const { return m_creationTimeAfterHasBeenSet; }
-    inline void SetCreationTimeAfter(const Aws::Utils::DateTime& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = value; }
-    inline void SetCreationTimeAfter(Aws::Utils::DateTime&& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = std::move(value); }
-    inline ListEvaluationJobsRequest& WithCreationTimeAfter(const Aws::Utils::DateTime& value) { SetCreationTimeAfter(value); return *this;}
-    inline ListEvaluationJobsRequest& WithCreationTimeAfter(Aws::Utils::DateTime&& value) { SetCreationTimeAfter(std::move(value)); return *this;}
+    template<typename CreationTimeAfterT = Aws::Utils::DateTime>
+    void SetCreationTimeAfter(CreationTimeAfterT&& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = std::forward<CreationTimeAfterT>(value); }
+    template<typename CreationTimeAfterT = Aws::Utils::DateTime>
+    ListEvaluationJobsRequest& WithCreationTimeAfter(CreationTimeAfterT&& value) { SetCreationTimeAfter(std::forward<CreationTimeAfterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A filter to only list evaluation jobs created before a specified time.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTimeBefore() const{ return m_creationTimeBefore; }
+    inline const Aws::Utils::DateTime& GetCreationTimeBefore() const { return m_creationTimeBefore; }
     inline bool CreationTimeBeforeHasBeenSet() const { return m_creationTimeBeforeHasBeenSet; }
-    inline void SetCreationTimeBefore(const Aws::Utils::DateTime& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = value; }
-    inline void SetCreationTimeBefore(Aws::Utils::DateTime&& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = std::move(value); }
-    inline ListEvaluationJobsRequest& WithCreationTimeBefore(const Aws::Utils::DateTime& value) { SetCreationTimeBefore(value); return *this;}
-    inline ListEvaluationJobsRequest& WithCreationTimeBefore(Aws::Utils::DateTime&& value) { SetCreationTimeBefore(std::move(value)); return *this;}
+    template<typename CreationTimeBeforeT = Aws::Utils::DateTime>
+    void SetCreationTimeBefore(CreationTimeBeforeT&& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = std::forward<CreationTimeBeforeT>(value); }
+    template<typename CreationTimeBeforeT = Aws::Utils::DateTime>
+    ListEvaluationJobsRequest& WithCreationTimeBefore(CreationTimeBeforeT&& value) { SetCreationTimeBefore(std::forward<CreationTimeBeforeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A filter to only list evaluation jobs that are of a certain status.</p>
      */
-    inline const EvaluationJobStatus& GetStatusEquals() const{ return m_statusEquals; }
+    inline EvaluationJobStatus GetStatusEquals() const { return m_statusEquals; }
     inline bool StatusEqualsHasBeenSet() const { return m_statusEqualsHasBeenSet; }
-    inline void SetStatusEquals(const EvaluationJobStatus& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = value; }
-    inline void SetStatusEquals(EvaluationJobStatus&& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = std::move(value); }
-    inline ListEvaluationJobsRequest& WithStatusEquals(const EvaluationJobStatus& value) { SetStatusEquals(value); return *this;}
-    inline ListEvaluationJobsRequest& WithStatusEquals(EvaluationJobStatus&& value) { SetStatusEquals(std::move(value)); return *this;}
+    inline void SetStatusEquals(EvaluationJobStatus value) { m_statusEqualsHasBeenSet = true; m_statusEquals = value; }
+    inline ListEvaluationJobsRequest& WithStatusEquals(EvaluationJobStatus value) { SetStatusEquals(value); return *this;}
     ///@}
 
     ///@{
@@ -84,12 +82,10 @@ namespace Model
      * <p>A filter to only list evaluation jobs that are either model evaluations or
      * knowledge base evaluations.</p>
      */
-    inline const ApplicationType& GetApplicationTypeEquals() const{ return m_applicationTypeEquals; }
+    inline ApplicationType GetApplicationTypeEquals() const { return m_applicationTypeEquals; }
     inline bool ApplicationTypeEqualsHasBeenSet() const { return m_applicationTypeEqualsHasBeenSet; }
-    inline void SetApplicationTypeEquals(const ApplicationType& value) { m_applicationTypeEqualsHasBeenSet = true; m_applicationTypeEquals = value; }
-    inline void SetApplicationTypeEquals(ApplicationType&& value) { m_applicationTypeEqualsHasBeenSet = true; m_applicationTypeEquals = std::move(value); }
-    inline ListEvaluationJobsRequest& WithApplicationTypeEquals(const ApplicationType& value) { SetApplicationTypeEquals(value); return *this;}
-    inline ListEvaluationJobsRequest& WithApplicationTypeEquals(ApplicationType&& value) { SetApplicationTypeEquals(std::move(value)); return *this;}
+    inline void SetApplicationTypeEquals(ApplicationType value) { m_applicationTypeEqualsHasBeenSet = true; m_applicationTypeEquals = value; }
+    inline ListEvaluationJobsRequest& WithApplicationTypeEquals(ApplicationType value) { SetApplicationTypeEquals(value); return *this;}
     ///@}
 
     ///@{
@@ -97,21 +93,19 @@ namespace Model
      * <p>A filter to only list evaluation jobs that contain a specified string in the
      * job name.</p>
      */
-    inline const Aws::String& GetNameContains() const{ return m_nameContains; }
+    inline const Aws::String& GetNameContains() const { return m_nameContains; }
     inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
-    inline void SetNameContains(const Aws::String& value) { m_nameContainsHasBeenSet = true; m_nameContains = value; }
-    inline void SetNameContains(Aws::String&& value) { m_nameContainsHasBeenSet = true; m_nameContains = std::move(value); }
-    inline void SetNameContains(const char* value) { m_nameContainsHasBeenSet = true; m_nameContains.assign(value); }
-    inline ListEvaluationJobsRequest& WithNameContains(const Aws::String& value) { SetNameContains(value); return *this;}
-    inline ListEvaluationJobsRequest& WithNameContains(Aws::String&& value) { SetNameContains(std::move(value)); return *this;}
-    inline ListEvaluationJobsRequest& WithNameContains(const char* value) { SetNameContains(value); return *this;}
+    template<typename NameContainsT = Aws::String>
+    void SetNameContains(NameContainsT&& value) { m_nameContainsHasBeenSet = true; m_nameContains = std::forward<NameContainsT>(value); }
+    template<typename NameContainsT = Aws::String>
+    ListEvaluationJobsRequest& WithNameContains(NameContainsT&& value) { SetNameContains(std::forward<NameContainsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListEvaluationJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -122,14 +116,12 @@ namespace Model
      * <p>Continuation token from the previous response, for Amazon Bedrock to list the
      * next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListEvaluationJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEvaluationJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEvaluationJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEvaluationJobsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,12 +129,10 @@ namespace Model
      * <p>Specifies a creation time to sort the list of evaluation jobs by when they
      * were created.</p>
      */
-    inline const SortJobsBy& GetSortBy() const{ return m_sortBy; }
+    inline SortJobsBy GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const SortJobsBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(SortJobsBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListEvaluationJobsRequest& WithSortBy(const SortJobsBy& value) { SetSortBy(value); return *this;}
-    inline ListEvaluationJobsRequest& WithSortBy(SortJobsBy&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(SortJobsBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline ListEvaluationJobsRequest& WithSortBy(SortJobsBy value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
@@ -150,40 +140,38 @@ namespace Model
      * <p>Specifies whether to sort the list of evaluation jobs by either ascending or
      * descending order.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListEvaluationJobsRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline ListEvaluationJobsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListEvaluationJobsRequest& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_creationTimeAfter;
+    Aws::Utils::DateTime m_creationTimeAfter{};
     bool m_creationTimeAfterHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTimeBefore;
+    Aws::Utils::DateTime m_creationTimeBefore{};
     bool m_creationTimeBeforeHasBeenSet = false;
 
-    EvaluationJobStatus m_statusEquals;
+    EvaluationJobStatus m_statusEquals{EvaluationJobStatus::NOT_SET};
     bool m_statusEqualsHasBeenSet = false;
 
-    ApplicationType m_applicationTypeEquals;
+    ApplicationType m_applicationTypeEquals{ApplicationType::NOT_SET};
     bool m_applicationTypeEqualsHasBeenSet = false;
 
     Aws::String m_nameContains;
     bool m_nameContainsHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    SortJobsBy m_sortBy;
+    SortJobsBy m_sortBy{SortJobsBy::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

@@ -21,7 +21,7 @@ namespace Model
   class DeleteAudienceModelRequest : public CleanRoomsMLRequest
   {
   public:
-    AWS_CLEANROOMSML_API DeleteAudienceModelRequest();
+    AWS_CLEANROOMSML_API DeleteAudienceModelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the audience model that you want to
      * delete.</p>
      */
-    inline const Aws::String& GetAudienceModelArn() const{ return m_audienceModelArn; }
+    inline const Aws::String& GetAudienceModelArn() const { return m_audienceModelArn; }
     inline bool AudienceModelArnHasBeenSet() const { return m_audienceModelArnHasBeenSet; }
-    inline void SetAudienceModelArn(const Aws::String& value) { m_audienceModelArnHasBeenSet = true; m_audienceModelArn = value; }
-    inline void SetAudienceModelArn(Aws::String&& value) { m_audienceModelArnHasBeenSet = true; m_audienceModelArn = std::move(value); }
-    inline void SetAudienceModelArn(const char* value) { m_audienceModelArnHasBeenSet = true; m_audienceModelArn.assign(value); }
-    inline DeleteAudienceModelRequest& WithAudienceModelArn(const Aws::String& value) { SetAudienceModelArn(value); return *this;}
-    inline DeleteAudienceModelRequest& WithAudienceModelArn(Aws::String&& value) { SetAudienceModelArn(std::move(value)); return *this;}
-    inline DeleteAudienceModelRequest& WithAudienceModelArn(const char* value) { SetAudienceModelArn(value); return *this;}
+    template<typename AudienceModelArnT = Aws::String>
+    void SetAudienceModelArn(AudienceModelArnT&& value) { m_audienceModelArnHasBeenSet = true; m_audienceModelArn = std::forward<AudienceModelArnT>(value); }
+    template<typename AudienceModelArnT = Aws::String>
+    DeleteAudienceModelRequest& WithAudienceModelArn(AudienceModelArnT&& value) { SetAudienceModelArn(std::forward<AudienceModelArnT>(value)); return *this;}
     ///@}
   private:
 

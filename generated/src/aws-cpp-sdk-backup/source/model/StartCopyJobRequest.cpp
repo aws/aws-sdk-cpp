@@ -12,16 +12,6 @@ using namespace Aws::Backup::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartCopyJobRequest::StartCopyJobRequest() : 
-    m_recoveryPointArnHasBeenSet(false),
-    m_sourceBackupVaultNameHasBeenSet(false),
-    m_destinationBackupVaultArnHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_idempotencyTokenHasBeenSet(false),
-    m_lifecycleHasBeenSet(false)
-{
-}
-
 Aws::String StartCopyJobRequest::SerializePayload() const
 {
   JsonValue payload;

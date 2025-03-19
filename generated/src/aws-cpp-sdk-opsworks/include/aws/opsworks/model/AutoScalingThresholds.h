@@ -34,7 +34,7 @@ namespace Model
   class AutoScalingThresholds
   {
   public:
-    AWS_OPSWORKS_API AutoScalingThresholds();
+    AWS_OPSWORKS_API AutoScalingThresholds() = default;
     AWS_OPSWORKS_API AutoScalingThresholds(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API AutoScalingThresholds& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * <p>The number of instances to add or remove when the load exceeds a
      * threshold.</p>
      */
-    inline int GetInstanceCount() const{ return m_instanceCount; }
+    inline int GetInstanceCount() const { return m_instanceCount; }
     inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
     inline AutoScalingThresholds& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
@@ -56,7 +56,7 @@ namespace Model
      * <p>The amount of time, in minutes, that the load must exceed a threshold before
      * more instances are added or removed.</p>
      */
-    inline int GetThresholdsWaitTime() const{ return m_thresholdsWaitTime; }
+    inline int GetThresholdsWaitTime() const { return m_thresholdsWaitTime; }
     inline bool ThresholdsWaitTimeHasBeenSet() const { return m_thresholdsWaitTimeHasBeenSet; }
     inline void SetThresholdsWaitTime(int value) { m_thresholdsWaitTimeHasBeenSet = true; m_thresholdsWaitTime = value; }
     inline AutoScalingThresholds& WithThresholdsWaitTime(int value) { SetThresholdsWaitTime(value); return *this;}
@@ -73,7 +73,7 @@ namespace Model
      * allows you to direct OpsWorks Stacks to suppress scaling events long enough to
      * get the new instances online.</p>
      */
-    inline int GetIgnoreMetricsTime() const{ return m_ignoreMetricsTime; }
+    inline int GetIgnoreMetricsTime() const { return m_ignoreMetricsTime; }
     inline bool IgnoreMetricsTimeHasBeenSet() const { return m_ignoreMetricsTimeHasBeenSet; }
     inline void SetIgnoreMetricsTime(int value) { m_ignoreMetricsTimeHasBeenSet = true; m_ignoreMetricsTime = value; }
     inline AutoScalingThresholds& WithIgnoreMetricsTime(int value) { SetIgnoreMetricsTime(value); return *this;}
@@ -84,7 +84,7 @@ namespace Model
      * <p>The CPU utilization threshold, as a percent of the available CPU. A value of
      * -1 disables the threshold.</p>
      */
-    inline double GetCpuThreshold() const{ return m_cpuThreshold; }
+    inline double GetCpuThreshold() const { return m_cpuThreshold; }
     inline bool CpuThresholdHasBeenSet() const { return m_cpuThresholdHasBeenSet; }
     inline void SetCpuThreshold(double value) { m_cpuThresholdHasBeenSet = true; m_cpuThreshold = value; }
     inline AutoScalingThresholds& WithCpuThreshold(double value) { SetCpuThreshold(value); return *this;}
@@ -95,7 +95,7 @@ namespace Model
      * <p>The memory utilization threshold, as a percent of the available memory. A
      * value of -1 disables the threshold.</p>
      */
-    inline double GetMemoryThreshold() const{ return m_memoryThreshold; }
+    inline double GetMemoryThreshold() const { return m_memoryThreshold; }
     inline bool MemoryThresholdHasBeenSet() const { return m_memoryThresholdHasBeenSet; }
     inline void SetMemoryThreshold(double value) { m_memoryThresholdHasBeenSet = true; m_memoryThreshold = value; }
     inline AutoScalingThresholds& WithMemoryThreshold(double value) { SetMemoryThreshold(value); return *this;}
@@ -108,7 +108,7 @@ namespace Model
      * href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
      * (computing)</a>.</p>
      */
-    inline double GetLoadThreshold() const{ return m_loadThreshold; }
+    inline double GetLoadThreshold() const { return m_loadThreshold; }
     inline bool LoadThresholdHasBeenSet() const { return m_loadThresholdHasBeenSet; }
     inline void SetLoadThreshold(double value) { m_loadThresholdHasBeenSet = true; m_loadThreshold = value; }
     inline AutoScalingThresholds& WithLoadThreshold(double value) { SetLoadThreshold(value); return *this;}
@@ -125,34 +125,33 @@ namespace Model
      * href="https://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
      * OpsWorks Stacks to Act on Your Behalf</a>.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetAlarms() const{ return m_alarms; }
+    inline const Aws::Vector<Aws::String>& GetAlarms() const { return m_alarms; }
     inline bool AlarmsHasBeenSet() const { return m_alarmsHasBeenSet; }
-    inline void SetAlarms(const Aws::Vector<Aws::String>& value) { m_alarmsHasBeenSet = true; m_alarms = value; }
-    inline void SetAlarms(Aws::Vector<Aws::String>&& value) { m_alarmsHasBeenSet = true; m_alarms = std::move(value); }
-    inline AutoScalingThresholds& WithAlarms(const Aws::Vector<Aws::String>& value) { SetAlarms(value); return *this;}
-    inline AutoScalingThresholds& WithAlarms(Aws::Vector<Aws::String>&& value) { SetAlarms(std::move(value)); return *this;}
-    inline AutoScalingThresholds& AddAlarms(const Aws::String& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(value); return *this; }
-    inline AutoScalingThresholds& AddAlarms(Aws::String&& value) { m_alarmsHasBeenSet = true; m_alarms.push_back(std::move(value)); return *this; }
-    inline AutoScalingThresholds& AddAlarms(const char* value) { m_alarmsHasBeenSet = true; m_alarms.push_back(value); return *this; }
+    template<typename AlarmsT = Aws::Vector<Aws::String>>
+    void SetAlarms(AlarmsT&& value) { m_alarmsHasBeenSet = true; m_alarms = std::forward<AlarmsT>(value); }
+    template<typename AlarmsT = Aws::Vector<Aws::String>>
+    AutoScalingThresholds& WithAlarms(AlarmsT&& value) { SetAlarms(std::forward<AlarmsT>(value)); return *this;}
+    template<typename AlarmsT = Aws::String>
+    AutoScalingThresholds& AddAlarms(AlarmsT&& value) { m_alarmsHasBeenSet = true; m_alarms.emplace_back(std::forward<AlarmsT>(value)); return *this; }
     ///@}
   private:
 
-    int m_instanceCount;
+    int m_instanceCount{0};
     bool m_instanceCountHasBeenSet = false;
 
-    int m_thresholdsWaitTime;
+    int m_thresholdsWaitTime{0};
     bool m_thresholdsWaitTimeHasBeenSet = false;
 
-    int m_ignoreMetricsTime;
+    int m_ignoreMetricsTime{0};
     bool m_ignoreMetricsTimeHasBeenSet = false;
 
-    double m_cpuThreshold;
+    double m_cpuThreshold{0.0};
     bool m_cpuThresholdHasBeenSet = false;
 
-    double m_memoryThreshold;
+    double m_memoryThreshold{0.0};
     bool m_memoryThresholdHasBeenSet = false;
 
-    double m_loadThreshold;
+    double m_loadThreshold{0.0};
     bool m_loadThresholdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_alarms;

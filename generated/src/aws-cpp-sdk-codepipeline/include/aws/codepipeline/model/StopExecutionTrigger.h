@@ -32,7 +32,7 @@ namespace Model
   class StopExecutionTrigger
   {
   public:
-    AWS_CODEPIPELINE_API StopExecutionTrigger();
+    AWS_CODEPIPELINE_API StopExecutionTrigger() = default;
     AWS_CODEPIPELINE_API StopExecutionTrigger(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API StopExecutionTrigger& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The user-specified reason the pipeline was stopped.</p>
      */
-    inline const Aws::String& GetReason() const{ return m_reason; }
+    inline const Aws::String& GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
-    inline StopExecutionTrigger& WithReason(const Aws::String& value) { SetReason(value); return *this;}
-    inline StopExecutionTrigger& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
-    inline StopExecutionTrigger& WithReason(const char* value) { SetReason(value); return *this;}
+    template<typename ReasonT = Aws::String>
+    void SetReason(ReasonT&& value) { m_reasonHasBeenSet = true; m_reason = std::forward<ReasonT>(value); }
+    template<typename ReasonT = Aws::String>
+    StopExecutionTrigger& WithReason(ReasonT&& value) { SetReason(std::forward<ReasonT>(value)); return *this;}
     ///@}
   private:
 

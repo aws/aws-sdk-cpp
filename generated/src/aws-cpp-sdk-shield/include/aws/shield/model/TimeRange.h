@@ -31,7 +31,7 @@ namespace Model
   class TimeRange
   {
   public:
-    AWS_SHIELD_API TimeRange();
+    AWS_SHIELD_API TimeRange() = default;
     AWS_SHIELD_API TimeRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API TimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,31 +41,31 @@ namespace Model
     /**
      * <p>The start time, in Unix time in seconds. </p>
      */
-    inline const Aws::Utils::DateTime& GetFromInclusive() const{ return m_fromInclusive; }
+    inline const Aws::Utils::DateTime& GetFromInclusive() const { return m_fromInclusive; }
     inline bool FromInclusiveHasBeenSet() const { return m_fromInclusiveHasBeenSet; }
-    inline void SetFromInclusive(const Aws::Utils::DateTime& value) { m_fromInclusiveHasBeenSet = true; m_fromInclusive = value; }
-    inline void SetFromInclusive(Aws::Utils::DateTime&& value) { m_fromInclusiveHasBeenSet = true; m_fromInclusive = std::move(value); }
-    inline TimeRange& WithFromInclusive(const Aws::Utils::DateTime& value) { SetFromInclusive(value); return *this;}
-    inline TimeRange& WithFromInclusive(Aws::Utils::DateTime&& value) { SetFromInclusive(std::move(value)); return *this;}
+    template<typename FromInclusiveT = Aws::Utils::DateTime>
+    void SetFromInclusive(FromInclusiveT&& value) { m_fromInclusiveHasBeenSet = true; m_fromInclusive = std::forward<FromInclusiveT>(value); }
+    template<typename FromInclusiveT = Aws::Utils::DateTime>
+    TimeRange& WithFromInclusive(FromInclusiveT&& value) { SetFromInclusive(std::forward<FromInclusiveT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The end time, in Unix time in seconds. </p>
      */
-    inline const Aws::Utils::DateTime& GetToExclusive() const{ return m_toExclusive; }
+    inline const Aws::Utils::DateTime& GetToExclusive() const { return m_toExclusive; }
     inline bool ToExclusiveHasBeenSet() const { return m_toExclusiveHasBeenSet; }
-    inline void SetToExclusive(const Aws::Utils::DateTime& value) { m_toExclusiveHasBeenSet = true; m_toExclusive = value; }
-    inline void SetToExclusive(Aws::Utils::DateTime&& value) { m_toExclusiveHasBeenSet = true; m_toExclusive = std::move(value); }
-    inline TimeRange& WithToExclusive(const Aws::Utils::DateTime& value) { SetToExclusive(value); return *this;}
-    inline TimeRange& WithToExclusive(Aws::Utils::DateTime&& value) { SetToExclusive(std::move(value)); return *this;}
+    template<typename ToExclusiveT = Aws::Utils::DateTime>
+    void SetToExclusive(ToExclusiveT&& value) { m_toExclusiveHasBeenSet = true; m_toExclusive = std::forward<ToExclusiveT>(value); }
+    template<typename ToExclusiveT = Aws::Utils::DateTime>
+    TimeRange& WithToExclusive(ToExclusiveT&& value) { SetToExclusive(std::forward<ToExclusiveT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_fromInclusive;
+    Aws::Utils::DateTime m_fromInclusive{};
     bool m_fromInclusiveHasBeenSet = false;
 
-    Aws::Utils::DateTime m_toExclusive;
+    Aws::Utils::DateTime m_toExclusive{};
     bool m_toExclusiveHasBeenSet = false;
   };
 

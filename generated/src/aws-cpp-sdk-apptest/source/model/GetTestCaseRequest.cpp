@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetTestCaseRequest::GetTestCaseRequest() : 
-    m_testCaseIdHasBeenSet(false),
-    m_testCaseVersion(0),
-    m_testCaseVersionHasBeenSet(false)
-{
-}
-
 Aws::String GetTestCaseRequest::SerializePayload() const
 {
   return {};

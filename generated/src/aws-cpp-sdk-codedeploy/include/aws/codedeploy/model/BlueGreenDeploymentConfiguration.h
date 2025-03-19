@@ -34,7 +34,7 @@ namespace Model
   class BlueGreenDeploymentConfiguration
   {
   public:
-    AWS_CODEDEPLOY_API BlueGreenDeploymentConfiguration();
+    AWS_CODEDEPLOY_API BlueGreenDeploymentConfiguration() = default;
     AWS_CODEDEPLOY_API BlueGreenDeploymentConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API BlueGreenDeploymentConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEDEPLOY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>Information about whether to terminate instances in the original fleet during
      * a blue/green deployment.</p>
      */
-    inline const BlueInstanceTerminationOption& GetTerminateBlueInstancesOnDeploymentSuccess() const{ return m_terminateBlueInstancesOnDeploymentSuccess; }
+    inline const BlueInstanceTerminationOption& GetTerminateBlueInstancesOnDeploymentSuccess() const { return m_terminateBlueInstancesOnDeploymentSuccess; }
     inline bool TerminateBlueInstancesOnDeploymentSuccessHasBeenSet() const { return m_terminateBlueInstancesOnDeploymentSuccessHasBeenSet; }
-    inline void SetTerminateBlueInstancesOnDeploymentSuccess(const BlueInstanceTerminationOption& value) { m_terminateBlueInstancesOnDeploymentSuccessHasBeenSet = true; m_terminateBlueInstancesOnDeploymentSuccess = value; }
-    inline void SetTerminateBlueInstancesOnDeploymentSuccess(BlueInstanceTerminationOption&& value) { m_terminateBlueInstancesOnDeploymentSuccessHasBeenSet = true; m_terminateBlueInstancesOnDeploymentSuccess = std::move(value); }
-    inline BlueGreenDeploymentConfiguration& WithTerminateBlueInstancesOnDeploymentSuccess(const BlueInstanceTerminationOption& value) { SetTerminateBlueInstancesOnDeploymentSuccess(value); return *this;}
-    inline BlueGreenDeploymentConfiguration& WithTerminateBlueInstancesOnDeploymentSuccess(BlueInstanceTerminationOption&& value) { SetTerminateBlueInstancesOnDeploymentSuccess(std::move(value)); return *this;}
+    template<typename TerminateBlueInstancesOnDeploymentSuccessT = BlueInstanceTerminationOption>
+    void SetTerminateBlueInstancesOnDeploymentSuccess(TerminateBlueInstancesOnDeploymentSuccessT&& value) { m_terminateBlueInstancesOnDeploymentSuccessHasBeenSet = true; m_terminateBlueInstancesOnDeploymentSuccess = std::forward<TerminateBlueInstancesOnDeploymentSuccessT>(value); }
+    template<typename TerminateBlueInstancesOnDeploymentSuccessT = BlueInstanceTerminationOption>
+    BlueGreenDeploymentConfiguration& WithTerminateBlueInstancesOnDeploymentSuccess(TerminateBlueInstancesOnDeploymentSuccessT&& value) { SetTerminateBlueInstancesOnDeploymentSuccess(std::forward<TerminateBlueInstancesOnDeploymentSuccessT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +58,12 @@ namespace Model
      * <p>Information about the action to take when newly provisioned instances are
      * ready to receive traffic in a blue/green deployment.</p>
      */
-    inline const DeploymentReadyOption& GetDeploymentReadyOption() const{ return m_deploymentReadyOption; }
+    inline const DeploymentReadyOption& GetDeploymentReadyOption() const { return m_deploymentReadyOption; }
     inline bool DeploymentReadyOptionHasBeenSet() const { return m_deploymentReadyOptionHasBeenSet; }
-    inline void SetDeploymentReadyOption(const DeploymentReadyOption& value) { m_deploymentReadyOptionHasBeenSet = true; m_deploymentReadyOption = value; }
-    inline void SetDeploymentReadyOption(DeploymentReadyOption&& value) { m_deploymentReadyOptionHasBeenSet = true; m_deploymentReadyOption = std::move(value); }
-    inline BlueGreenDeploymentConfiguration& WithDeploymentReadyOption(const DeploymentReadyOption& value) { SetDeploymentReadyOption(value); return *this;}
-    inline BlueGreenDeploymentConfiguration& WithDeploymentReadyOption(DeploymentReadyOption&& value) { SetDeploymentReadyOption(std::move(value)); return *this;}
+    template<typename DeploymentReadyOptionT = DeploymentReadyOption>
+    void SetDeploymentReadyOption(DeploymentReadyOptionT&& value) { m_deploymentReadyOptionHasBeenSet = true; m_deploymentReadyOption = std::forward<DeploymentReadyOptionT>(value); }
+    template<typename DeploymentReadyOptionT = DeploymentReadyOption>
+    BlueGreenDeploymentConfiguration& WithDeploymentReadyOption(DeploymentReadyOptionT&& value) { SetDeploymentReadyOption(std::forward<DeploymentReadyOptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +71,12 @@ namespace Model
      * <p>Information about how instances are provisioned for a replacement environment
      * in a blue/green deployment.</p>
      */
-    inline const GreenFleetProvisioningOption& GetGreenFleetProvisioningOption() const{ return m_greenFleetProvisioningOption; }
+    inline const GreenFleetProvisioningOption& GetGreenFleetProvisioningOption() const { return m_greenFleetProvisioningOption; }
     inline bool GreenFleetProvisioningOptionHasBeenSet() const { return m_greenFleetProvisioningOptionHasBeenSet; }
-    inline void SetGreenFleetProvisioningOption(const GreenFleetProvisioningOption& value) { m_greenFleetProvisioningOptionHasBeenSet = true; m_greenFleetProvisioningOption = value; }
-    inline void SetGreenFleetProvisioningOption(GreenFleetProvisioningOption&& value) { m_greenFleetProvisioningOptionHasBeenSet = true; m_greenFleetProvisioningOption = std::move(value); }
-    inline BlueGreenDeploymentConfiguration& WithGreenFleetProvisioningOption(const GreenFleetProvisioningOption& value) { SetGreenFleetProvisioningOption(value); return *this;}
-    inline BlueGreenDeploymentConfiguration& WithGreenFleetProvisioningOption(GreenFleetProvisioningOption&& value) { SetGreenFleetProvisioningOption(std::move(value)); return *this;}
+    template<typename GreenFleetProvisioningOptionT = GreenFleetProvisioningOption>
+    void SetGreenFleetProvisioningOption(GreenFleetProvisioningOptionT&& value) { m_greenFleetProvisioningOptionHasBeenSet = true; m_greenFleetProvisioningOption = std::forward<GreenFleetProvisioningOptionT>(value); }
+    template<typename GreenFleetProvisioningOptionT = GreenFleetProvisioningOption>
+    BlueGreenDeploymentConfiguration& WithGreenFleetProvisioningOption(GreenFleetProvisioningOptionT&& value) { SetGreenFleetProvisioningOption(std::forward<GreenFleetProvisioningOptionT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-OrganizationEbsVolumes::OrganizationEbsVolumes() : 
-    m_autoEnable(false),
-    m_autoEnableHasBeenSet(false)
-{
-}
-
 OrganizationEbsVolumes::OrganizationEbsVolumes(JsonView jsonValue)
-  : OrganizationEbsVolumes()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ OrganizationEbsVolumes& OrganizationEbsVolumes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("autoEnable"))
   {
     m_autoEnable = jsonValue.GetBool("autoEnable");
-
     m_autoEnableHasBeenSet = true;
   }
-
   return *this;
 }
 

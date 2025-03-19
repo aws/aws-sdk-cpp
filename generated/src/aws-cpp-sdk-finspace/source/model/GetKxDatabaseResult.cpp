@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetKxDatabaseResult::GetKxDatabaseResult() : 
-    m_numBytes(0),
-    m_numChangesets(0),
-    m_numFiles(0)
-{
-}
-
 GetKxDatabaseResult::GetKxDatabaseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetKxDatabaseResult()
 {
   *this = result;
 }
@@ -36,69 +28,60 @@ GetKxDatabaseResult& GetKxDatabaseResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("databaseName"))
   {
     m_databaseName = jsonValue.GetString("databaseName");
-
+    m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("databaseArn"))
   {
     m_databaseArn = jsonValue.GetString("databaseArn");
-
+    m_databaseArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentId"))
   {
     m_environmentId = jsonValue.GetString("environmentId");
-
+    m_environmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("createdTimestamp");
-
+    m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTimestamp"))
   {
     m_lastModifiedTimestamp = jsonValue.GetDouble("lastModifiedTimestamp");
-
+    m_lastModifiedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastCompletedChangesetId"))
   {
     m_lastCompletedChangesetId = jsonValue.GetString("lastCompletedChangesetId");
-
+    m_lastCompletedChangesetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numBytes"))
   {
     m_numBytes = jsonValue.GetInt64("numBytes");
-
+    m_numBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numChangesets"))
   {
     m_numChangesets = jsonValue.GetInteger("numChangesets");
-
+    m_numChangesetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numFiles"))
   {
     m_numFiles = jsonValue.GetInteger("numFiles");
-
+    m_numFilesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,12 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeChannelPlacementGroupRequest::DescribeChannelPlacementGroupRequest() : 
-    m_channelPlacementGroupIdHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeChannelPlacementGroupRequest::SerializePayload() const
 {
   return {};

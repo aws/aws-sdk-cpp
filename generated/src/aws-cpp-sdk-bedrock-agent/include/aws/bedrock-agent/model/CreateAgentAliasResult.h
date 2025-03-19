@@ -28,7 +28,7 @@ namespace Model
   class CreateAgentAliasResult
   {
   public:
-    AWS_BEDROCKAGENT_API CreateAgentAliasResult();
+    AWS_BEDROCKAGENT_API CreateAgentAliasResult() = default;
     AWS_BEDROCKAGENT_API CreateAgentAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKAGENT_API CreateAgentAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Contains details about the alias that was created.</p>
      */
-    inline const AgentAlias& GetAgentAlias() const{ return m_agentAlias; }
-    inline void SetAgentAlias(const AgentAlias& value) { m_agentAlias = value; }
-    inline void SetAgentAlias(AgentAlias&& value) { m_agentAlias = std::move(value); }
-    inline CreateAgentAliasResult& WithAgentAlias(const AgentAlias& value) { SetAgentAlias(value); return *this;}
-    inline CreateAgentAliasResult& WithAgentAlias(AgentAlias&& value) { SetAgentAlias(std::move(value)); return *this;}
+    inline const AgentAlias& GetAgentAlias() const { return m_agentAlias; }
+    template<typename AgentAliasT = AgentAlias>
+    void SetAgentAlias(AgentAliasT&& value) { m_agentAliasHasBeenSet = true; m_agentAlias = std::forward<AgentAliasT>(value); }
+    template<typename AgentAliasT = AgentAlias>
+    CreateAgentAliasResult& WithAgentAlias(AgentAliasT&& value) { SetAgentAlias(std::forward<AgentAliasT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAgentAliasResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAgentAliasResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAgentAliasResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAgentAliasResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AgentAlias m_agentAlias;
+    bool m_agentAliasHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

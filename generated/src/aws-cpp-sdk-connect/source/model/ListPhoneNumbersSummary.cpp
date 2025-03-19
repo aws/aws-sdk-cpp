@@ -18,23 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ListPhoneNumbersSummary::ListPhoneNumbersSummary() : 
-    m_phoneNumberIdHasBeenSet(false),
-    m_phoneNumberArnHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_phoneNumberCountryCode(PhoneNumberCountryCode::NOT_SET),
-    m_phoneNumberCountryCodeHasBeenSet(false),
-    m_phoneNumberType(PhoneNumberType::NOT_SET),
-    m_phoneNumberTypeHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_phoneNumberDescriptionHasBeenSet(false),
-    m_sourcePhoneNumberArnHasBeenSet(false)
-{
-}
-
 ListPhoneNumbersSummary::ListPhoneNumbersSummary(JsonView jsonValue)
-  : ListPhoneNumbersSummary()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ ListPhoneNumbersSummary& ListPhoneNumbersSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PhoneNumberId"))
   {
     m_phoneNumberId = jsonValue.GetString("PhoneNumberId");
-
     m_phoneNumberIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhoneNumberArn"))
   {
     m_phoneNumberArn = jsonValue.GetString("PhoneNumberArn");
-
     m_phoneNumberArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhoneNumber"))
   {
     m_phoneNumber = jsonValue.GetString("PhoneNumber");
-
     m_phoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhoneNumberCountryCode"))
   {
     m_phoneNumberCountryCode = PhoneNumberCountryCodeMapper::GetPhoneNumberCountryCodeForName(jsonValue.GetString("PhoneNumberCountryCode"));
-
     m_phoneNumberCountryCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhoneNumberType"))
   {
     m_phoneNumberType = PhoneNumberTypeMapper::GetPhoneNumberTypeForName(jsonValue.GetString("PhoneNumberType"));
-
     m_phoneNumberTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetArn"))
   {
     m_targetArn = jsonValue.GetString("TargetArn");
-
     m_targetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhoneNumberDescription"))
   {
     m_phoneNumberDescription = jsonValue.GetString("PhoneNumberDescription");
-
     m_phoneNumberDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourcePhoneNumberArn"))
   {
     m_sourcePhoneNumberArn = jsonValue.GetString("SourcePhoneNumberArn");
-
     m_sourcePhoneNumberArnHasBeenSet = true;
   }
-
   return *this;
 }
 

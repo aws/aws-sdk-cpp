@@ -12,22 +12,6 @@ using namespace Aws::CodeCatalyst::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDevEnvironmentRequest::CreateDevEnvironmentRequest() : 
-    m_spaceNameHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_repositoriesHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_aliasHasBeenSet(false),
-    m_idesHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_inactivityTimeoutMinutes(0),
-    m_inactivityTimeoutMinutesHasBeenSet(false),
-    m_persistentStorageHasBeenSet(false),
-    m_vpcConnectionNameHasBeenSet(false)
-{
-}
-
 Aws::String CreateDevEnvironmentRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,24 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-Ebs::Ebs() : 
-    m_snapshotIdHasBeenSet(false),
-    m_volumeSize(0),
-    m_volumeSizeHasBeenSet(false),
-    m_volumeTypeHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_throughput(0),
-    m_throughputHasBeenSet(false)
-{
-}
-
 Ebs::Ebs(const XmlNode& xmlNode)
-  : Ebs()
 {
   *this = xmlNode;
 }

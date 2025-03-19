@@ -31,7 +31,7 @@ namespace Model
   class SimplePrefix
   {
   public:
-    AWS_S3CRT_API SimplePrefix();
+    AWS_S3CRT_API SimplePrefix() = default;
     AWS_S3CRT_API SimplePrefix(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API SimplePrefix& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 

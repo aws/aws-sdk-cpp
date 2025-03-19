@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociateRouteTableResponse::AssociateRouteTableResponse()
-{
-}
-
 AssociateRouteTableResponse::AssociateRouteTableResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ AssociateRouteTableResponse& AssociateRouteTableResponse::operator =(const Aws::
     if(!associationIdNode.IsNull())
     {
       m_associationId = Aws::Utils::Xml::DecodeEscapedXmlText(associationIdNode.GetText());
+      m_associationIdHasBeenSet = true;
     }
     XmlNode associationStateNode = resultNode.FirstChild("associationState");
     if(!associationStateNode.IsNull())
     {
       m_associationState = associationStateNode;
+      m_associationStateHasBeenSet = true;
     }
   }
 
@@ -55,6 +53,7 @@ AssociateRouteTableResponse& AssociateRouteTableResponse::operator =(const Aws::
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AssociateRouteTableResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

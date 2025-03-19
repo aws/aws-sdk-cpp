@@ -18,13 +18,7 @@ namespace CognitoIdentity
 namespace Model
 {
 
-RulesConfigurationType::RulesConfigurationType() : 
-    m_rulesHasBeenSet(false)
-{
-}
-
 RulesConfigurationType::RulesConfigurationType(JsonView jsonValue)
-  : RulesConfigurationType()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ RulesConfigurationType& RulesConfigurationType::operator =(JsonView jsonValue)
     }
     m_rulesHasBeenSet = true;
   }
-
   return *this;
 }
 

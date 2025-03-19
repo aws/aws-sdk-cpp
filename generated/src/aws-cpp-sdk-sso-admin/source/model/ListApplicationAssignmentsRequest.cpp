@@ -12,14 +12,6 @@ using namespace Aws::SSOAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListApplicationAssignmentsRequest::ListApplicationAssignmentsRequest() : 
-    m_applicationArnHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListApplicationAssignmentsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,17 +18,7 @@ namespace SupplyChain
 namespace Model
 {
 
-DataIntegrationFlowSource::DataIntegrationFlowSource() : 
-    m_sourceType(DataIntegrationFlowSourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_sourceNameHasBeenSet(false),
-    m_s3SourceHasBeenSet(false),
-    m_datasetSourceHasBeenSet(false)
-{
-}
-
 DataIntegrationFlowSource::DataIntegrationFlowSource(JsonView jsonValue)
-  : DataIntegrationFlowSource()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ DataIntegrationFlowSource& DataIntegrationFlowSource::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("sourceType"))
   {
     m_sourceType = DataIntegrationFlowSourceTypeMapper::GetDataIntegrationFlowSourceTypeForName(jsonValue.GetString("sourceType"));
-
     m_sourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceName"))
   {
     m_sourceName = jsonValue.GetString("sourceName");
-
     m_sourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Source"))
   {
     m_s3Source = jsonValue.GetObject("s3Source");
-
     m_s3SourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datasetSource"))
   {
     m_datasetSource = jsonValue.GetObject("datasetSource");
-
     m_datasetSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

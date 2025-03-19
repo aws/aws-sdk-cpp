@@ -26,7 +26,7 @@ namespace Model
   class CreateModelRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API CreateModelRequest();
+    AWS_SAGEMAKER_API CreateModelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the new model.</p>
      */
-    inline const Aws::String& GetModelName() const{ return m_modelName; }
+    inline const Aws::String& GetModelName() const { return m_modelName; }
     inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
-    inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
-    inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
-    inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
-    inline CreateModelRequest& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
-    inline CreateModelRequest& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
-    inline CreateModelRequest& WithModelName(const char* value) { SetModelName(value); return *this;}
+    template<typename ModelNameT = Aws::String>
+    void SetModelName(ModelNameT&& value) { m_modelNameHasBeenSet = true; m_modelName = std::forward<ModelNameT>(value); }
+    template<typename ModelNameT = Aws::String>
+    CreateModelRequest& WithModelName(ModelNameT&& value) { SetModelName(std::forward<ModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,26 +57,26 @@ namespace Model
      * associated artifacts, and custom environment map that the inference code uses
      * when the model is deployed for predictions. </p>
      */
-    inline const ContainerDefinition& GetPrimaryContainer() const{ return m_primaryContainer; }
+    inline const ContainerDefinition& GetPrimaryContainer() const { return m_primaryContainer; }
     inline bool PrimaryContainerHasBeenSet() const { return m_primaryContainerHasBeenSet; }
-    inline void SetPrimaryContainer(const ContainerDefinition& value) { m_primaryContainerHasBeenSet = true; m_primaryContainer = value; }
-    inline void SetPrimaryContainer(ContainerDefinition&& value) { m_primaryContainerHasBeenSet = true; m_primaryContainer = std::move(value); }
-    inline CreateModelRequest& WithPrimaryContainer(const ContainerDefinition& value) { SetPrimaryContainer(value); return *this;}
-    inline CreateModelRequest& WithPrimaryContainer(ContainerDefinition&& value) { SetPrimaryContainer(std::move(value)); return *this;}
+    template<typename PrimaryContainerT = ContainerDefinition>
+    void SetPrimaryContainer(PrimaryContainerT&& value) { m_primaryContainerHasBeenSet = true; m_primaryContainer = std::forward<PrimaryContainerT>(value); }
+    template<typename PrimaryContainerT = ContainerDefinition>
+    CreateModelRequest& WithPrimaryContainer(PrimaryContainerT&& value) { SetPrimaryContainer(std::forward<PrimaryContainerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the containers in the inference pipeline.</p>
      */
-    inline const Aws::Vector<ContainerDefinition>& GetContainers() const{ return m_containers; }
+    inline const Aws::Vector<ContainerDefinition>& GetContainers() const { return m_containers; }
     inline bool ContainersHasBeenSet() const { return m_containersHasBeenSet; }
-    inline void SetContainers(const Aws::Vector<ContainerDefinition>& value) { m_containersHasBeenSet = true; m_containers = value; }
-    inline void SetContainers(Aws::Vector<ContainerDefinition>&& value) { m_containersHasBeenSet = true; m_containers = std::move(value); }
-    inline CreateModelRequest& WithContainers(const Aws::Vector<ContainerDefinition>& value) { SetContainers(value); return *this;}
-    inline CreateModelRequest& WithContainers(Aws::Vector<ContainerDefinition>&& value) { SetContainers(std::move(value)); return *this;}
-    inline CreateModelRequest& AddContainers(const ContainerDefinition& value) { m_containersHasBeenSet = true; m_containers.push_back(value); return *this; }
-    inline CreateModelRequest& AddContainers(ContainerDefinition&& value) { m_containersHasBeenSet = true; m_containers.push_back(std::move(value)); return *this; }
+    template<typename ContainersT = Aws::Vector<ContainerDefinition>>
+    void SetContainers(ContainersT&& value) { m_containersHasBeenSet = true; m_containers = std::forward<ContainersT>(value); }
+    template<typename ContainersT = Aws::Vector<ContainerDefinition>>
+    CreateModelRequest& WithContainers(ContainersT&& value) { SetContainers(std::forward<ContainersT>(value)); return *this;}
+    template<typename ContainersT = ContainerDefinition>
+    CreateModelRequest& AddContainers(ContainersT&& value) { m_containersHasBeenSet = true; m_containers.emplace_back(std::forward<ContainersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -86,12 +84,12 @@ namespace Model
      * <p>Specifies details of how containers in a multi-container endpoint are
      * called.</p>
      */
-    inline const InferenceExecutionConfig& GetInferenceExecutionConfig() const{ return m_inferenceExecutionConfig; }
+    inline const InferenceExecutionConfig& GetInferenceExecutionConfig() const { return m_inferenceExecutionConfig; }
     inline bool InferenceExecutionConfigHasBeenSet() const { return m_inferenceExecutionConfigHasBeenSet; }
-    inline void SetInferenceExecutionConfig(const InferenceExecutionConfig& value) { m_inferenceExecutionConfigHasBeenSet = true; m_inferenceExecutionConfig = value; }
-    inline void SetInferenceExecutionConfig(InferenceExecutionConfig&& value) { m_inferenceExecutionConfigHasBeenSet = true; m_inferenceExecutionConfig = std::move(value); }
-    inline CreateModelRequest& WithInferenceExecutionConfig(const InferenceExecutionConfig& value) { SetInferenceExecutionConfig(value); return *this;}
-    inline CreateModelRequest& WithInferenceExecutionConfig(InferenceExecutionConfig&& value) { SetInferenceExecutionConfig(std::move(value)); return *this;}
+    template<typename InferenceExecutionConfigT = InferenceExecutionConfig>
+    void SetInferenceExecutionConfig(InferenceExecutionConfigT&& value) { m_inferenceExecutionConfigHasBeenSet = true; m_inferenceExecutionConfig = std::forward<InferenceExecutionConfigT>(value); }
+    template<typename InferenceExecutionConfigT = InferenceExecutionConfig>
+    CreateModelRequest& WithInferenceExecutionConfig(InferenceExecutionConfigT&& value) { SetInferenceExecutionConfig(std::forward<InferenceExecutionConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,14 +102,12 @@ namespace Model
      * Roles</a>. </p>  <p>To be able to pass this role to SageMaker, the caller
      * of this API must have the <code>iam:PassRole</code> permission.</p> 
      */
-    inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+    inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
-    inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
-    inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
-    inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
-    inline CreateModelRequest& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
-    inline CreateModelRequest& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
-    inline CreateModelRequest& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
+    template<typename ExecutionRoleArnT = Aws::String>
+    void SetExecutionRoleArn(ExecutionRoleArnT&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::forward<ExecutionRoleArnT>(value); }
+    template<typename ExecutionRoleArnT = Aws::String>
+    CreateModelRequest& WithExecutionRoleArn(ExecutionRoleArnT&& value) { SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,14 +118,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateModelRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateModelRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateModelRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateModelRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateModelRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateModelRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -145,12 +141,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/batch-vpc.html">Protect
      * Data in Batch Transform Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
-    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+    inline const VpcConfig& GetVpcConfig() const { return m_vpcConfig; }
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
-    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
-    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
-    inline CreateModelRequest& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
-    inline CreateModelRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+    template<typename VpcConfigT = VpcConfig>
+    void SetVpcConfig(VpcConfigT&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::forward<VpcConfigT>(value); }
+    template<typename VpcConfigT = VpcConfig>
+    CreateModelRequest& WithVpcConfig(VpcConfigT&& value) { SetVpcConfig(std::forward<VpcConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,7 +154,7 @@ namespace Model
      * <p>Isolates the model container. No inbound or outbound network calls can be
      * made to or from the model container.</p>
      */
-    inline bool GetEnableNetworkIsolation() const{ return m_enableNetworkIsolation; }
+    inline bool GetEnableNetworkIsolation() const { return m_enableNetworkIsolation; }
     inline bool EnableNetworkIsolationHasBeenSet() const { return m_enableNetworkIsolationHasBeenSet; }
     inline void SetEnableNetworkIsolation(bool value) { m_enableNetworkIsolationHasBeenSet = true; m_enableNetworkIsolation = value; }
     inline CreateModelRequest& WithEnableNetworkIsolation(bool value) { SetEnableNetworkIsolation(value); return *this;}
@@ -186,7 +182,7 @@ namespace Model
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet = false;
 
-    bool m_enableNetworkIsolation;
+    bool m_enableNetworkIsolation{false};
     bool m_enableNetworkIsolationHasBeenSet = false;
   };
 

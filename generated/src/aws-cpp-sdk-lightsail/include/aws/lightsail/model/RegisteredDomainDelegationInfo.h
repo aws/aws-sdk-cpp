@@ -52,7 +52,7 @@ namespace Model
   class RegisteredDomainDelegationInfo
   {
   public:
-    AWS_LIGHTSAIL_API RegisteredDomainDelegationInfo();
+    AWS_LIGHTSAIL_API RegisteredDomainDelegationInfo() = default;
     AWS_LIGHTSAIL_API RegisteredDomainDelegationInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API RegisteredDomainDelegationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -63,12 +63,12 @@ namespace Model
      * <p>An object that describes the state of the name server records that are
      * automatically added to the Route 53 domain by Lightsail.</p>
      */
-    inline const NameServersUpdateState& GetNameServersUpdateState() const{ return m_nameServersUpdateState; }
+    inline const NameServersUpdateState& GetNameServersUpdateState() const { return m_nameServersUpdateState; }
     inline bool NameServersUpdateStateHasBeenSet() const { return m_nameServersUpdateStateHasBeenSet; }
-    inline void SetNameServersUpdateState(const NameServersUpdateState& value) { m_nameServersUpdateStateHasBeenSet = true; m_nameServersUpdateState = value; }
-    inline void SetNameServersUpdateState(NameServersUpdateState&& value) { m_nameServersUpdateStateHasBeenSet = true; m_nameServersUpdateState = std::move(value); }
-    inline RegisteredDomainDelegationInfo& WithNameServersUpdateState(const NameServersUpdateState& value) { SetNameServersUpdateState(value); return *this;}
-    inline RegisteredDomainDelegationInfo& WithNameServersUpdateState(NameServersUpdateState&& value) { SetNameServersUpdateState(std::move(value)); return *this;}
+    template<typename NameServersUpdateStateT = NameServersUpdateState>
+    void SetNameServersUpdateState(NameServersUpdateStateT&& value) { m_nameServersUpdateStateHasBeenSet = true; m_nameServersUpdateState = std::forward<NameServersUpdateStateT>(value); }
+    template<typename NameServersUpdateStateT = NameServersUpdateState>
+    RegisteredDomainDelegationInfo& WithNameServersUpdateState(NameServersUpdateStateT&& value) { SetNameServersUpdateState(std::forward<NameServersUpdateStateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +76,12 @@ namespace Model
      * <p>Describes the deletion state of an Amazon Route 53 hosted zone for a domain
      * that is being automatically delegated to an Amazon Lightsail DNS zone.</p>
      */
-    inline const R53HostedZoneDeletionState& GetR53HostedZoneDeletionState() const{ return m_r53HostedZoneDeletionState; }
+    inline const R53HostedZoneDeletionState& GetR53HostedZoneDeletionState() const { return m_r53HostedZoneDeletionState; }
     inline bool R53HostedZoneDeletionStateHasBeenSet() const { return m_r53HostedZoneDeletionStateHasBeenSet; }
-    inline void SetR53HostedZoneDeletionState(const R53HostedZoneDeletionState& value) { m_r53HostedZoneDeletionStateHasBeenSet = true; m_r53HostedZoneDeletionState = value; }
-    inline void SetR53HostedZoneDeletionState(R53HostedZoneDeletionState&& value) { m_r53HostedZoneDeletionStateHasBeenSet = true; m_r53HostedZoneDeletionState = std::move(value); }
-    inline RegisteredDomainDelegationInfo& WithR53HostedZoneDeletionState(const R53HostedZoneDeletionState& value) { SetR53HostedZoneDeletionState(value); return *this;}
-    inline RegisteredDomainDelegationInfo& WithR53HostedZoneDeletionState(R53HostedZoneDeletionState&& value) { SetR53HostedZoneDeletionState(std::move(value)); return *this;}
+    template<typename R53HostedZoneDeletionStateT = R53HostedZoneDeletionState>
+    void SetR53HostedZoneDeletionState(R53HostedZoneDeletionStateT&& value) { m_r53HostedZoneDeletionStateHasBeenSet = true; m_r53HostedZoneDeletionState = std::forward<R53HostedZoneDeletionStateT>(value); }
+    template<typename R53HostedZoneDeletionStateT = R53HostedZoneDeletionState>
+    RegisteredDomainDelegationInfo& WithR53HostedZoneDeletionState(R53HostedZoneDeletionStateT&& value) { SetR53HostedZoneDeletionState(std::forward<R53HostedZoneDeletionStateT>(value)); return *this;}
     ///@}
   private:
 

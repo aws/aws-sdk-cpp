@@ -10,11 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DeleteClusterSecurityGroupRequest::DeleteClusterSecurityGroupRequest() : 
-    m_clusterSecurityGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteClusterSecurityGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

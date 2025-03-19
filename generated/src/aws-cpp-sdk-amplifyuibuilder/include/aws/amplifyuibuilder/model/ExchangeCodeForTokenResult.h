@@ -27,7 +27,7 @@ namespace Model
   class ExchangeCodeForTokenResult
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API ExchangeCodeForTokenResult();
+    AWS_AMPLIFYUIBUILDER_API ExchangeCodeForTokenResult() = default;
     AWS_AMPLIFYUIBUILDER_API ExchangeCodeForTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AMPLIFYUIBUILDER_API ExchangeCodeForTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,21 +36,19 @@ namespace Model
     /**
      * <p>The access token.</p>
      */
-    inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
-    inline void SetAccessToken(const Aws::String& value) { m_accessToken = value; }
-    inline void SetAccessToken(Aws::String&& value) { m_accessToken = std::move(value); }
-    inline void SetAccessToken(const char* value) { m_accessToken.assign(value); }
-    inline ExchangeCodeForTokenResult& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
-    inline ExchangeCodeForTokenResult& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
-    inline ExchangeCodeForTokenResult& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
+    inline const Aws::String& GetAccessToken() const { return m_accessToken; }
+    template<typename AccessTokenT = Aws::String>
+    void SetAccessToken(AccessTokenT&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::forward<AccessTokenT>(value); }
+    template<typename AccessTokenT = Aws::String>
+    ExchangeCodeForTokenResult& WithAccessToken(AccessTokenT&& value) { SetAccessToken(std::forward<AccessTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the new access token expires.</p>
      */
-    inline int GetExpiresIn() const{ return m_expiresIn; }
-    inline void SetExpiresIn(int value) { m_expiresIn = value; }
+    inline int GetExpiresIn() const { return m_expiresIn; }
+    inline void SetExpiresIn(int value) { m_expiresInHasBeenSet = true; m_expiresIn = value; }
     inline ExchangeCodeForTokenResult& WithExpiresIn(int value) { SetExpiresIn(value); return *this;}
     ///@}
 
@@ -59,34 +57,34 @@ namespace Model
      * <p>The token to use to refresh a previously issued access token that might have
      * expired.</p>
      */
-    inline const Aws::String& GetRefreshToken() const{ return m_refreshToken; }
-    inline void SetRefreshToken(const Aws::String& value) { m_refreshToken = value; }
-    inline void SetRefreshToken(Aws::String&& value) { m_refreshToken = std::move(value); }
-    inline void SetRefreshToken(const char* value) { m_refreshToken.assign(value); }
-    inline ExchangeCodeForTokenResult& WithRefreshToken(const Aws::String& value) { SetRefreshToken(value); return *this;}
-    inline ExchangeCodeForTokenResult& WithRefreshToken(Aws::String&& value) { SetRefreshToken(std::move(value)); return *this;}
-    inline ExchangeCodeForTokenResult& WithRefreshToken(const char* value) { SetRefreshToken(value); return *this;}
+    inline const Aws::String& GetRefreshToken() const { return m_refreshToken; }
+    template<typename RefreshTokenT = Aws::String>
+    void SetRefreshToken(RefreshTokenT&& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = std::forward<RefreshTokenT>(value); }
+    template<typename RefreshTokenT = Aws::String>
+    ExchangeCodeForTokenResult& WithRefreshToken(RefreshTokenT&& value) { SetRefreshToken(std::forward<RefreshTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ExchangeCodeForTokenResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ExchangeCodeForTokenResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ExchangeCodeForTokenResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ExchangeCodeForTokenResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_accessToken;
+    bool m_accessTokenHasBeenSet = false;
 
-    int m_expiresIn;
+    int m_expiresIn{0};
+    bool m_expiresInHasBeenSet = false;
 
     Aws::String m_refreshToken;
+    bool m_refreshTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

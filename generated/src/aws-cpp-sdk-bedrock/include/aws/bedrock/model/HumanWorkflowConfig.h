@@ -33,7 +33,7 @@ namespace Model
   class HumanWorkflowConfig
   {
   public:
-    AWS_BEDROCK_API HumanWorkflowConfig();
+    AWS_BEDROCK_API HumanWorkflowConfig() = default;
     AWS_BEDROCK_API HumanWorkflowConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API HumanWorkflowConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Number (ARN) for the flow definition</p>
      */
-    inline const Aws::String& GetFlowDefinitionArn() const{ return m_flowDefinitionArn; }
+    inline const Aws::String& GetFlowDefinitionArn() const { return m_flowDefinitionArn; }
     inline bool FlowDefinitionArnHasBeenSet() const { return m_flowDefinitionArnHasBeenSet; }
-    inline void SetFlowDefinitionArn(const Aws::String& value) { m_flowDefinitionArnHasBeenSet = true; m_flowDefinitionArn = value; }
-    inline void SetFlowDefinitionArn(Aws::String&& value) { m_flowDefinitionArnHasBeenSet = true; m_flowDefinitionArn = std::move(value); }
-    inline void SetFlowDefinitionArn(const char* value) { m_flowDefinitionArnHasBeenSet = true; m_flowDefinitionArn.assign(value); }
-    inline HumanWorkflowConfig& WithFlowDefinitionArn(const Aws::String& value) { SetFlowDefinitionArn(value); return *this;}
-    inline HumanWorkflowConfig& WithFlowDefinitionArn(Aws::String&& value) { SetFlowDefinitionArn(std::move(value)); return *this;}
-    inline HumanWorkflowConfig& WithFlowDefinitionArn(const char* value) { SetFlowDefinitionArn(value); return *this;}
+    template<typename FlowDefinitionArnT = Aws::String>
+    void SetFlowDefinitionArn(FlowDefinitionArnT&& value) { m_flowDefinitionArnHasBeenSet = true; m_flowDefinitionArn = std::forward<FlowDefinitionArnT>(value); }
+    template<typename FlowDefinitionArnT = Aws::String>
+    HumanWorkflowConfig& WithFlowDefinitionArn(FlowDefinitionArnT&& value) { SetFlowDefinitionArn(std::forward<FlowDefinitionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Instructions for the flow definition</p>
      */
-    inline const Aws::String& GetInstructions() const{ return m_instructions; }
+    inline const Aws::String& GetInstructions() const { return m_instructions; }
     inline bool InstructionsHasBeenSet() const { return m_instructionsHasBeenSet; }
-    inline void SetInstructions(const Aws::String& value) { m_instructionsHasBeenSet = true; m_instructions = value; }
-    inline void SetInstructions(Aws::String&& value) { m_instructionsHasBeenSet = true; m_instructions = std::move(value); }
-    inline void SetInstructions(const char* value) { m_instructionsHasBeenSet = true; m_instructions.assign(value); }
-    inline HumanWorkflowConfig& WithInstructions(const Aws::String& value) { SetInstructions(value); return *this;}
-    inline HumanWorkflowConfig& WithInstructions(Aws::String&& value) { SetInstructions(std::move(value)); return *this;}
-    inline HumanWorkflowConfig& WithInstructions(const char* value) { SetInstructions(value); return *this;}
+    template<typename InstructionsT = Aws::String>
+    void SetInstructions(InstructionsT&& value) { m_instructionsHasBeenSet = true; m_instructions = std::forward<InstructionsT>(value); }
+    template<typename InstructionsT = Aws::String>
+    HumanWorkflowConfig& WithInstructions(InstructionsT&& value) { SetInstructions(std::forward<InstructionsT>(value)); return *this;}
     ///@}
   private:
 

@@ -31,7 +31,7 @@ namespace Model
   class AIPromptVersionSummary
   {
   public:
-    AWS_QCONNECT_API AIPromptVersionSummary();
+    AWS_QCONNECT_API AIPromptVersionSummary() = default;
     AWS_QCONNECT_API AIPromptVersionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API AIPromptVersionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,19 +41,19 @@ namespace Model
     /**
      * <p>The date for the summary of the AI Prompt version.</p>
      */
-    inline const AIPromptSummary& GetAiPromptSummary() const{ return m_aiPromptSummary; }
+    inline const AIPromptSummary& GetAiPromptSummary() const { return m_aiPromptSummary; }
     inline bool AiPromptSummaryHasBeenSet() const { return m_aiPromptSummaryHasBeenSet; }
-    inline void SetAiPromptSummary(const AIPromptSummary& value) { m_aiPromptSummaryHasBeenSet = true; m_aiPromptSummary = value; }
-    inline void SetAiPromptSummary(AIPromptSummary&& value) { m_aiPromptSummaryHasBeenSet = true; m_aiPromptSummary = std::move(value); }
-    inline AIPromptVersionSummary& WithAiPromptSummary(const AIPromptSummary& value) { SetAiPromptSummary(value); return *this;}
-    inline AIPromptVersionSummary& WithAiPromptSummary(AIPromptSummary&& value) { SetAiPromptSummary(std::move(value)); return *this;}
+    template<typename AiPromptSummaryT = AIPromptSummary>
+    void SetAiPromptSummary(AiPromptSummaryT&& value) { m_aiPromptSummaryHasBeenSet = true; m_aiPromptSummary = std::forward<AiPromptSummaryT>(value); }
+    template<typename AiPromptSummaryT = AIPromptSummary>
+    AIPromptVersionSummary& WithAiPromptSummary(AiPromptSummaryT&& value) { SetAiPromptSummary(std::forward<AiPromptSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version number for this AI Prompt version.</p>
      */
-    inline long long GetVersionNumber() const{ return m_versionNumber; }
+    inline long long GetVersionNumber() const { return m_versionNumber; }
     inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
     inline void SetVersionNumber(long long value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
     inline AIPromptVersionSummary& WithVersionNumber(long long value) { SetVersionNumber(value); return *this;}
@@ -63,7 +63,7 @@ namespace Model
     AIPromptSummary m_aiPromptSummary;
     bool m_aiPromptSummaryHasBeenSet = false;
 
-    long long m_versionNumber;
+    long long m_versionNumber{0};
     bool m_versionNumberHasBeenSet = false;
   };
 

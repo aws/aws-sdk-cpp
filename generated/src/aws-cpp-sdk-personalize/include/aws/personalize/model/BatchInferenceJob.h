@@ -37,7 +37,7 @@ namespace Model
   class BatchInferenceJob
   {
   public:
-    AWS_PERSONALIZE_API BatchInferenceJob();
+    AWS_PERSONALIZE_API BatchInferenceJob() = default;
     AWS_PERSONALIZE_API BatchInferenceJob(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API BatchInferenceJob& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,56 +47,48 @@ namespace Model
     /**
      * <p>The name of the batch inference job.</p>
      */
-    inline const Aws::String& GetJobName() const{ return m_jobName; }
+    inline const Aws::String& GetJobName() const { return m_jobName; }
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
-    inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
-    inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
-    inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
-    inline BatchInferenceJob& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
-    inline BatchInferenceJob& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
-    inline BatchInferenceJob& WithJobName(const char* value) { SetJobName(value); return *this;}
+    template<typename JobNameT = Aws::String>
+    void SetJobName(JobNameT&& value) { m_jobNameHasBeenSet = true; m_jobName = std::forward<JobNameT>(value); }
+    template<typename JobNameT = Aws::String>
+    BatchInferenceJob& WithJobName(JobNameT&& value) { SetJobName(std::forward<JobNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the batch inference job.</p>
      */
-    inline const Aws::String& GetBatchInferenceJobArn() const{ return m_batchInferenceJobArn; }
+    inline const Aws::String& GetBatchInferenceJobArn() const { return m_batchInferenceJobArn; }
     inline bool BatchInferenceJobArnHasBeenSet() const { return m_batchInferenceJobArnHasBeenSet; }
-    inline void SetBatchInferenceJobArn(const Aws::String& value) { m_batchInferenceJobArnHasBeenSet = true; m_batchInferenceJobArn = value; }
-    inline void SetBatchInferenceJobArn(Aws::String&& value) { m_batchInferenceJobArnHasBeenSet = true; m_batchInferenceJobArn = std::move(value); }
-    inline void SetBatchInferenceJobArn(const char* value) { m_batchInferenceJobArnHasBeenSet = true; m_batchInferenceJobArn.assign(value); }
-    inline BatchInferenceJob& WithBatchInferenceJobArn(const Aws::String& value) { SetBatchInferenceJobArn(value); return *this;}
-    inline BatchInferenceJob& WithBatchInferenceJobArn(Aws::String&& value) { SetBatchInferenceJobArn(std::move(value)); return *this;}
-    inline BatchInferenceJob& WithBatchInferenceJobArn(const char* value) { SetBatchInferenceJobArn(value); return *this;}
+    template<typename BatchInferenceJobArnT = Aws::String>
+    void SetBatchInferenceJobArn(BatchInferenceJobArnT&& value) { m_batchInferenceJobArnHasBeenSet = true; m_batchInferenceJobArn = std::forward<BatchInferenceJobArnT>(value); }
+    template<typename BatchInferenceJobArnT = Aws::String>
+    BatchInferenceJob& WithBatchInferenceJobArn(BatchInferenceJobArnT&& value) { SetBatchInferenceJobArn(std::forward<BatchInferenceJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the filter used on the batch inference job.</p>
      */
-    inline const Aws::String& GetFilterArn() const{ return m_filterArn; }
+    inline const Aws::String& GetFilterArn() const { return m_filterArn; }
     inline bool FilterArnHasBeenSet() const { return m_filterArnHasBeenSet; }
-    inline void SetFilterArn(const Aws::String& value) { m_filterArnHasBeenSet = true; m_filterArn = value; }
-    inline void SetFilterArn(Aws::String&& value) { m_filterArnHasBeenSet = true; m_filterArn = std::move(value); }
-    inline void SetFilterArn(const char* value) { m_filterArnHasBeenSet = true; m_filterArn.assign(value); }
-    inline BatchInferenceJob& WithFilterArn(const Aws::String& value) { SetFilterArn(value); return *this;}
-    inline BatchInferenceJob& WithFilterArn(Aws::String&& value) { SetFilterArn(std::move(value)); return *this;}
-    inline BatchInferenceJob& WithFilterArn(const char* value) { SetFilterArn(value); return *this;}
+    template<typename FilterArnT = Aws::String>
+    void SetFilterArn(FilterArnT&& value) { m_filterArnHasBeenSet = true; m_filterArn = std::forward<FilterArnT>(value); }
+    template<typename FilterArnT = Aws::String>
+    BatchInferenceJob& WithFilterArn(FilterArnT&& value) { SetFilterArn(std::forward<FilterArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If the batch inference job failed, the reason for the failure.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
-    inline BatchInferenceJob& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline BatchInferenceJob& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline BatchInferenceJob& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    BatchInferenceJob& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,14 +96,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the solution version from which the batch
      * inference job was created.</p>
      */
-    inline const Aws::String& GetSolutionVersionArn() const{ return m_solutionVersionArn; }
+    inline const Aws::String& GetSolutionVersionArn() const { return m_solutionVersionArn; }
     inline bool SolutionVersionArnHasBeenSet() const { return m_solutionVersionArnHasBeenSet; }
-    inline void SetSolutionVersionArn(const Aws::String& value) { m_solutionVersionArnHasBeenSet = true; m_solutionVersionArn = value; }
-    inline void SetSolutionVersionArn(Aws::String&& value) { m_solutionVersionArnHasBeenSet = true; m_solutionVersionArn = std::move(value); }
-    inline void SetSolutionVersionArn(const char* value) { m_solutionVersionArnHasBeenSet = true; m_solutionVersionArn.assign(value); }
-    inline BatchInferenceJob& WithSolutionVersionArn(const Aws::String& value) { SetSolutionVersionArn(value); return *this;}
-    inline BatchInferenceJob& WithSolutionVersionArn(Aws::String&& value) { SetSolutionVersionArn(std::move(value)); return *this;}
-    inline BatchInferenceJob& WithSolutionVersionArn(const char* value) { SetSolutionVersionArn(value); return *this;}
+    template<typename SolutionVersionArnT = Aws::String>
+    void SetSolutionVersionArn(SolutionVersionArnT&& value) { m_solutionVersionArnHasBeenSet = true; m_solutionVersionArn = std::forward<SolutionVersionArnT>(value); }
+    template<typename SolutionVersionArnT = Aws::String>
+    BatchInferenceJob& WithSolutionVersionArn(SolutionVersionArnT&& value) { SetSolutionVersionArn(std::forward<SolutionVersionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,7 +109,7 @@ namespace Model
      * <p>The number of recommendations generated by the batch inference job. This
      * number includes the error messages generated for failed input records.</p>
      */
-    inline int GetNumResults() const{ return m_numResults; }
+    inline int GetNumResults() const { return m_numResults; }
     inline bool NumResultsHasBeenSet() const { return m_numResultsHasBeenSet; }
     inline void SetNumResults(int value) { m_numResultsHasBeenSet = true; m_numResults = value; }
     inline BatchInferenceJob& WithNumResults(int value) { SetNumResults(value); return *this;}
@@ -130,12 +120,12 @@ namespace Model
      * <p>The Amazon S3 path that leads to the input data used to generate the batch
      * inference job.</p>
      */
-    inline const BatchInferenceJobInput& GetJobInput() const{ return m_jobInput; }
+    inline const BatchInferenceJobInput& GetJobInput() const { return m_jobInput; }
     inline bool JobInputHasBeenSet() const { return m_jobInputHasBeenSet; }
-    inline void SetJobInput(const BatchInferenceJobInput& value) { m_jobInputHasBeenSet = true; m_jobInput = value; }
-    inline void SetJobInput(BatchInferenceJobInput&& value) { m_jobInputHasBeenSet = true; m_jobInput = std::move(value); }
-    inline BatchInferenceJob& WithJobInput(const BatchInferenceJobInput& value) { SetJobInput(value); return *this;}
-    inline BatchInferenceJob& WithJobInput(BatchInferenceJobInput&& value) { SetJobInput(std::move(value)); return *this;}
+    template<typename JobInputT = BatchInferenceJobInput>
+    void SetJobInput(JobInputT&& value) { m_jobInputHasBeenSet = true; m_jobInput = std::forward<JobInputT>(value); }
+    template<typename JobInputT = BatchInferenceJobInput>
+    BatchInferenceJob& WithJobInput(JobInputT&& value) { SetJobInput(std::forward<JobInputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,12 +133,12 @@ namespace Model
      * <p>The Amazon S3 bucket that contains the output data generated by the batch
      * inference job.</p>
      */
-    inline const BatchInferenceJobOutput& GetJobOutput() const{ return m_jobOutput; }
+    inline const BatchInferenceJobOutput& GetJobOutput() const { return m_jobOutput; }
     inline bool JobOutputHasBeenSet() const { return m_jobOutputHasBeenSet; }
-    inline void SetJobOutput(const BatchInferenceJobOutput& value) { m_jobOutputHasBeenSet = true; m_jobOutput = value; }
-    inline void SetJobOutput(BatchInferenceJobOutput&& value) { m_jobOutputHasBeenSet = true; m_jobOutput = std::move(value); }
-    inline BatchInferenceJob& WithJobOutput(const BatchInferenceJobOutput& value) { SetJobOutput(value); return *this;}
-    inline BatchInferenceJob& WithJobOutput(BatchInferenceJobOutput&& value) { SetJobOutput(std::move(value)); return *this;}
+    template<typename JobOutputT = BatchInferenceJobOutput>
+    void SetJobOutput(JobOutputT&& value) { m_jobOutputHasBeenSet = true; m_jobOutput = std::forward<JobOutputT>(value); }
+    template<typename JobOutputT = BatchInferenceJobOutput>
+    BatchInferenceJob& WithJobOutput(JobOutputT&& value) { SetJobOutput(std::forward<JobOutputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -156,12 +146,12 @@ namespace Model
      * <p>A string to string map of the configuration details of a batch inference
      * job.</p>
      */
-    inline const BatchInferenceJobConfig& GetBatchInferenceJobConfig() const{ return m_batchInferenceJobConfig; }
+    inline const BatchInferenceJobConfig& GetBatchInferenceJobConfig() const { return m_batchInferenceJobConfig; }
     inline bool BatchInferenceJobConfigHasBeenSet() const { return m_batchInferenceJobConfigHasBeenSet; }
-    inline void SetBatchInferenceJobConfig(const BatchInferenceJobConfig& value) { m_batchInferenceJobConfigHasBeenSet = true; m_batchInferenceJobConfig = value; }
-    inline void SetBatchInferenceJobConfig(BatchInferenceJobConfig&& value) { m_batchInferenceJobConfigHasBeenSet = true; m_batchInferenceJobConfig = std::move(value); }
-    inline BatchInferenceJob& WithBatchInferenceJobConfig(const BatchInferenceJobConfig& value) { SetBatchInferenceJobConfig(value); return *this;}
-    inline BatchInferenceJob& WithBatchInferenceJobConfig(BatchInferenceJobConfig&& value) { SetBatchInferenceJobConfig(std::move(value)); return *this;}
+    template<typename BatchInferenceJobConfigT = BatchInferenceJobConfig>
+    void SetBatchInferenceJobConfig(BatchInferenceJobConfigT&& value) { m_batchInferenceJobConfigHasBeenSet = true; m_batchInferenceJobConfig = std::forward<BatchInferenceJobConfigT>(value); }
+    template<typename BatchInferenceJobConfigT = BatchInferenceJobConfig>
+    BatchInferenceJob& WithBatchInferenceJobConfig(BatchInferenceJobConfigT&& value) { SetBatchInferenceJobConfig(std::forward<BatchInferenceJobConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -169,38 +159,34 @@ namespace Model
      * <p>The ARN of the Amazon Identity and Access Management (IAM) role that
      * requested the batch inference job.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline BatchInferenceJob& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline BatchInferenceJob& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline BatchInferenceJob& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    BatchInferenceJob& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The job's mode.</p>
      */
-    inline const BatchInferenceJobMode& GetBatchInferenceJobMode() const{ return m_batchInferenceJobMode; }
+    inline BatchInferenceJobMode GetBatchInferenceJobMode() const { return m_batchInferenceJobMode; }
     inline bool BatchInferenceJobModeHasBeenSet() const { return m_batchInferenceJobModeHasBeenSet; }
-    inline void SetBatchInferenceJobMode(const BatchInferenceJobMode& value) { m_batchInferenceJobModeHasBeenSet = true; m_batchInferenceJobMode = value; }
-    inline void SetBatchInferenceJobMode(BatchInferenceJobMode&& value) { m_batchInferenceJobModeHasBeenSet = true; m_batchInferenceJobMode = std::move(value); }
-    inline BatchInferenceJob& WithBatchInferenceJobMode(const BatchInferenceJobMode& value) { SetBatchInferenceJobMode(value); return *this;}
-    inline BatchInferenceJob& WithBatchInferenceJobMode(BatchInferenceJobMode&& value) { SetBatchInferenceJobMode(std::move(value)); return *this;}
+    inline void SetBatchInferenceJobMode(BatchInferenceJobMode value) { m_batchInferenceJobModeHasBeenSet = true; m_batchInferenceJobMode = value; }
+    inline BatchInferenceJob& WithBatchInferenceJobMode(BatchInferenceJobMode value) { SetBatchInferenceJobMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The job's theme generation settings.</p>
      */
-    inline const ThemeGenerationConfig& GetThemeGenerationConfig() const{ return m_themeGenerationConfig; }
+    inline const ThemeGenerationConfig& GetThemeGenerationConfig() const { return m_themeGenerationConfig; }
     inline bool ThemeGenerationConfigHasBeenSet() const { return m_themeGenerationConfigHasBeenSet; }
-    inline void SetThemeGenerationConfig(const ThemeGenerationConfig& value) { m_themeGenerationConfigHasBeenSet = true; m_themeGenerationConfig = value; }
-    inline void SetThemeGenerationConfig(ThemeGenerationConfig&& value) { m_themeGenerationConfigHasBeenSet = true; m_themeGenerationConfig = std::move(value); }
-    inline BatchInferenceJob& WithThemeGenerationConfig(const ThemeGenerationConfig& value) { SetThemeGenerationConfig(value); return *this;}
-    inline BatchInferenceJob& WithThemeGenerationConfig(ThemeGenerationConfig&& value) { SetThemeGenerationConfig(std::move(value)); return *this;}
+    template<typename ThemeGenerationConfigT = ThemeGenerationConfig>
+    void SetThemeGenerationConfig(ThemeGenerationConfigT&& value) { m_themeGenerationConfigHasBeenSet = true; m_themeGenerationConfig = std::forward<ThemeGenerationConfigT>(value); }
+    template<typename ThemeGenerationConfigT = ThemeGenerationConfig>
+    BatchInferenceJob& WithThemeGenerationConfig(ThemeGenerationConfigT&& value) { SetThemeGenerationConfig(std::forward<ThemeGenerationConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -209,38 +195,36 @@ namespace Model
      * values:</p> <ul> <li> <p>PENDING</p> </li> <li> <p>IN PROGRESS</p> </li> <li>
      * <p>ACTIVE</p> </li> <li> <p>CREATE FAILED</p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline BatchInferenceJob& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline BatchInferenceJob& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline BatchInferenceJob& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    BatchInferenceJob& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the batch inference job was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
     inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
-    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::move(value); }
-    inline BatchInferenceJob& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-    inline BatchInferenceJob& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    BatchInferenceJob& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the batch inference job was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const{ return m_lastUpdatedDateTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const { return m_lastUpdatedDateTime; }
     inline bool LastUpdatedDateTimeHasBeenSet() const { return m_lastUpdatedDateTimeHasBeenSet; }
-    inline void SetLastUpdatedDateTime(const Aws::Utils::DateTime& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = value; }
-    inline void SetLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::move(value); }
-    inline BatchInferenceJob& WithLastUpdatedDateTime(const Aws::Utils::DateTime& value) { SetLastUpdatedDateTime(value); return *this;}
-    inline BatchInferenceJob& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::forward<LastUpdatedDateTimeT>(value); }
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    BatchInferenceJob& WithLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { SetLastUpdatedDateTime(std::forward<LastUpdatedDateTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -259,7 +243,7 @@ namespace Model
     Aws::String m_solutionVersionArn;
     bool m_solutionVersionArnHasBeenSet = false;
 
-    int m_numResults;
+    int m_numResults{0};
     bool m_numResultsHasBeenSet = false;
 
     BatchInferenceJobInput m_jobInput;
@@ -274,7 +258,7 @@ namespace Model
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
 
-    BatchInferenceJobMode m_batchInferenceJobMode;
+    BatchInferenceJobMode m_batchInferenceJobMode{BatchInferenceJobMode::NOT_SET};
     bool m_batchInferenceJobModeHasBeenSet = false;
 
     ThemeGenerationConfig m_themeGenerationConfig;
@@ -283,10 +267,10 @@ namespace Model
     Aws::String m_status;
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDateTime;
+    Aws::Utils::DateTime m_creationDateTime{};
     bool m_creationDateTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedDateTime;
+    Aws::Utils::DateTime m_lastUpdatedDateTime{};
     bool m_lastUpdatedDateTimeHasBeenSet = false;
   };
 

@@ -34,7 +34,7 @@ namespace Model
   class DimensionGroupDetail
   {
   public:
-    AWS_PI_API DimensionGroupDetail();
+    AWS_PI_API DimensionGroupDetail() = default;
     AWS_PI_API DimensionGroupDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_PI_API DimensionGroupDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,26 @@ namespace Model
     /**
      * <p>The name of the dimension group.</p>
      */
-    inline const Aws::String& GetGroup() const{ return m_group; }
+    inline const Aws::String& GetGroup() const { return m_group; }
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-    inline void SetGroup(const Aws::String& value) { m_groupHasBeenSet = true; m_group = value; }
-    inline void SetGroup(Aws::String&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-    inline void SetGroup(const char* value) { m_groupHasBeenSet = true; m_group.assign(value); }
-    inline DimensionGroupDetail& WithGroup(const Aws::String& value) { SetGroup(value); return *this;}
-    inline DimensionGroupDetail& WithGroup(Aws::String&& value) { SetGroup(std::move(value)); return *this;}
-    inline DimensionGroupDetail& WithGroup(const char* value) { SetGroup(value); return *this;}
+    template<typename GroupT = Aws::String>
+    void SetGroup(GroupT&& value) { m_groupHasBeenSet = true; m_group = std::forward<GroupT>(value); }
+    template<typename GroupT = Aws::String>
+    DimensionGroupDetail& WithGroup(GroupT&& value) { SetGroup(std::forward<GroupT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The dimensions within a dimension group.</p>
      */
-    inline const Aws::Vector<DimensionDetail>& GetDimensions() const{ return m_dimensions; }
+    inline const Aws::Vector<DimensionDetail>& GetDimensions() const { return m_dimensions; }
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-    inline void SetDimensions(const Aws::Vector<DimensionDetail>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-    inline void SetDimensions(Aws::Vector<DimensionDetail>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-    inline DimensionGroupDetail& WithDimensions(const Aws::Vector<DimensionDetail>& value) { SetDimensions(value); return *this;}
-    inline DimensionGroupDetail& WithDimensions(Aws::Vector<DimensionDetail>&& value) { SetDimensions(std::move(value)); return *this;}
-    inline DimensionGroupDetail& AddDimensions(const DimensionDetail& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
-    inline DimensionGroupDetail& AddDimensions(DimensionDetail&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
+    template<typename DimensionsT = Aws::Vector<DimensionDetail>>
+    void SetDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::forward<DimensionsT>(value); }
+    template<typename DimensionsT = Aws::Vector<DimensionDetail>>
+    DimensionGroupDetail& WithDimensions(DimensionsT&& value) { SetDimensions(std::forward<DimensionsT>(value)); return *this;}
+    template<typename DimensionsT = DimensionDetail>
+    DimensionGroupDetail& AddDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace_back(std::forward<DimensionsT>(value)); return *this; }
     ///@}
   private:
 

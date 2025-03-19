@@ -27,7 +27,7 @@ namespace Model
   class StartMedicalScribeStreamRequest : public TranscribeStreamingServiceRequest
   {
   public:
-    AWS_TRANSCRIBESTREAMINGSERVICE_API StartMedicalScribeStreamRequest();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API StartMedicalScribeStreamRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -70,26 +70,22 @@ namespace Model
      * don't include a SessionId in your request, Amazon Web Services HealthScribe
      * generates an ID and returns it in the response. </p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline StartMedicalScribeStreamRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline StartMedicalScribeStreamRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline StartMedicalScribeStreamRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    StartMedicalScribeStreamRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specify the language code for your HealthScribe streaming session.</p>
      */
-    inline const MedicalScribeLanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline MedicalScribeLanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const MedicalScribeLanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(MedicalScribeLanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline StartMedicalScribeStreamRequest& WithLanguageCode(const MedicalScribeLanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline StartMedicalScribeStreamRequest& WithLanguageCode(MedicalScribeLanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(MedicalScribeLanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline StartMedicalScribeStreamRequest& WithLanguageCode(MedicalScribeLanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
@@ -98,7 +94,7 @@ namespace Model
      * HealthScribe supports a range from 16,000 Hz to 48,000 Hz. The sample rate you
      * specify must match that of your audio. </p>
      */
-    inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
+    inline int GetMediaSampleRateHertz() const { return m_mediaSampleRateHertz; }
     inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
     inline StartMedicalScribeStreamRequest& WithMediaSampleRateHertz(int value) { SetMediaSampleRateHertz(value); return *this;}
@@ -113,12 +109,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media
      * formats</a>. </p>
      */
-    inline const MedicalScribeMediaEncoding& GetMediaEncoding() const{ return m_mediaEncoding; }
+    inline MedicalScribeMediaEncoding GetMediaEncoding() const { return m_mediaEncoding; }
     inline bool MediaEncodingHasBeenSet() const { return m_mediaEncodingHasBeenSet; }
-    inline void SetMediaEncoding(const MedicalScribeMediaEncoding& value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = value; }
-    inline void SetMediaEncoding(MedicalScribeMediaEncoding&& value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = std::move(value); }
-    inline StartMedicalScribeStreamRequest& WithMediaEncoding(const MedicalScribeMediaEncoding& value) { SetMediaEncoding(value); return *this;}
-    inline StartMedicalScribeStreamRequest& WithMediaEncoding(MedicalScribeMediaEncoding&& value) { SetMediaEncoding(std::move(value)); return *this;}
+    inline void SetMediaEncoding(MedicalScribeMediaEncoding value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = value; }
+    inline StartMedicalScribeStreamRequest& WithMediaEncoding(MedicalScribeMediaEncoding value) { SetMediaEncoding(value); return *this;}
     ///@}
 
     ///@{
@@ -127,8 +121,8 @@ namespace Model
      * first element of the input stream must be a
      * <code>MedicalScribeConfigurationEvent</code>. </p>
      */
-    AWS_TRANSCRIBESTREAMINGSERVICE_API std::shared_ptr<MedicalScribeInputStream> GetInputStream() const { return m_inputStream; }
-    AWS_TRANSCRIBESTREAMINGSERVICE_API void SetInputStream(const std::shared_ptr<MedicalScribeInputStream>& value) { m_inputStream = value; }
+    AWS_TRANSCRIBESTREAMINGSERVICE_API std::shared_ptr<MedicalScribeInputStream> GetInputStream() const  { return m_inputStream; }
+    AWS_TRANSCRIBESTREAMINGSERVICE_API void SetInputStream(const std::shared_ptr<MedicalScribeInputStream>& value) { m_inputStreamHasBeenSet = true; m_inputStream = value; }
     AWS_TRANSCRIBESTREAMINGSERVICE_API StartMedicalScribeStreamRequest& WithInputStream(const std::shared_ptr<MedicalScribeInputStream>& value) { SetInputStream(value); return *this;}
 
     ///@}
@@ -137,18 +131,19 @@ namespace Model
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;
 
-    MedicalScribeLanguageCode m_languageCode;
+    MedicalScribeLanguageCode m_languageCode{MedicalScribeLanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
 
-    int m_mediaSampleRateHertz;
+    int m_mediaSampleRateHertz{0};
     bool m_mediaSampleRateHertzHasBeenSet = false;
 
-    MedicalScribeMediaEncoding m_mediaEncoding;
+    MedicalScribeMediaEncoding m_mediaEncoding{MedicalScribeMediaEncoding::NOT_SET};
     bool m_mediaEncodingHasBeenSet = false;
 
     std::shared_ptr<MedicalScribeInputStream> m_inputStream;
+    bool m_inputStreamHasBeenSet = false;
     StartMedicalScribeStreamHandler m_handler;
-    Aws::Utils::Event::EventStreamDecoder m_decoder;
+    Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
   };
 

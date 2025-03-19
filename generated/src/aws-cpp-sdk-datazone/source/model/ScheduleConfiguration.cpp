@@ -18,15 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-ScheduleConfiguration::ScheduleConfiguration() : 
-    m_scheduleHasBeenSet(false),
-    m_timezone(Timezone::NOT_SET),
-    m_timezoneHasBeenSet(false)
-{
-}
-
 ScheduleConfiguration::ScheduleConfiguration(JsonView jsonValue)
-  : ScheduleConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ScheduleConfiguration& ScheduleConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("schedule"))
   {
     m_schedule = jsonValue.GetString("schedule");
-
     m_scheduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timezone"))
   {
     m_timezone = TimezoneMapper::GetTimezoneForName(jsonValue.GetString("timezone"));
-
     m_timezoneHasBeenSet = true;
   }
-
   return *this;
 }
 

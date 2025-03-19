@@ -15,12 +15,6 @@ using namespace Aws::S3Control::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-UpdateStorageLensGroupRequest::UpdateStorageLensGroupRequest() : 
-    m_nameHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_storageLensGroupHasBeenSet(false)
-{
-}
 
 Aws::String UpdateStorageLensGroupRequest::SerializePayload() const
 {

@@ -25,7 +25,7 @@ namespace Model
   class CreateReportPlanRequest : public BackupRequest
   {
   public:
-    AWS_BACKUP_API CreateReportPlanRequest();
+    AWS_BACKUP_API CreateReportPlanRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * characters, starting with a letter, and consisting of letters (a-z, A-Z),
      * numbers (0-9), and underscores (_).</p>
      */
-    inline const Aws::String& GetReportPlanName() const{ return m_reportPlanName; }
+    inline const Aws::String& GetReportPlanName() const { return m_reportPlanName; }
     inline bool ReportPlanNameHasBeenSet() const { return m_reportPlanNameHasBeenSet; }
-    inline void SetReportPlanName(const Aws::String& value) { m_reportPlanNameHasBeenSet = true; m_reportPlanName = value; }
-    inline void SetReportPlanName(Aws::String&& value) { m_reportPlanNameHasBeenSet = true; m_reportPlanName = std::move(value); }
-    inline void SetReportPlanName(const char* value) { m_reportPlanNameHasBeenSet = true; m_reportPlanName.assign(value); }
-    inline CreateReportPlanRequest& WithReportPlanName(const Aws::String& value) { SetReportPlanName(value); return *this;}
-    inline CreateReportPlanRequest& WithReportPlanName(Aws::String&& value) { SetReportPlanName(std::move(value)); return *this;}
-    inline CreateReportPlanRequest& WithReportPlanName(const char* value) { SetReportPlanName(value); return *this;}
+    template<typename ReportPlanNameT = Aws::String>
+    void SetReportPlanName(ReportPlanNameT&& value) { m_reportPlanNameHasBeenSet = true; m_reportPlanName = std::forward<ReportPlanNameT>(value); }
+    template<typename ReportPlanNameT = Aws::String>
+    CreateReportPlanRequest& WithReportPlanName(ReportPlanNameT&& value) { SetReportPlanName(std::forward<ReportPlanNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>An optional description of the report plan with a maximum of 1,024
      * characters.</p>
      */
-    inline const Aws::String& GetReportPlanDescription() const{ return m_reportPlanDescription; }
+    inline const Aws::String& GetReportPlanDescription() const { return m_reportPlanDescription; }
     inline bool ReportPlanDescriptionHasBeenSet() const { return m_reportPlanDescriptionHasBeenSet; }
-    inline void SetReportPlanDescription(const Aws::String& value) { m_reportPlanDescriptionHasBeenSet = true; m_reportPlanDescription = value; }
-    inline void SetReportPlanDescription(Aws::String&& value) { m_reportPlanDescriptionHasBeenSet = true; m_reportPlanDescription = std::move(value); }
-    inline void SetReportPlanDescription(const char* value) { m_reportPlanDescriptionHasBeenSet = true; m_reportPlanDescription.assign(value); }
-    inline CreateReportPlanRequest& WithReportPlanDescription(const Aws::String& value) { SetReportPlanDescription(value); return *this;}
-    inline CreateReportPlanRequest& WithReportPlanDescription(Aws::String&& value) { SetReportPlanDescription(std::move(value)); return *this;}
-    inline CreateReportPlanRequest& WithReportPlanDescription(const char* value) { SetReportPlanDescription(value); return *this;}
+    template<typename ReportPlanDescriptionT = Aws::String>
+    void SetReportPlanDescription(ReportPlanDescriptionT&& value) { m_reportPlanDescriptionHasBeenSet = true; m_reportPlanDescription = std::forward<ReportPlanDescriptionT>(value); }
+    template<typename ReportPlanDescriptionT = Aws::String>
+    CreateReportPlanRequest& WithReportPlanDescription(ReportPlanDescriptionT&& value) { SetReportPlanDescription(std::forward<ReportPlanDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +69,12 @@ namespace Model
      * reports, specifically your Amazon S3 bucket name, S3 key prefix, and the formats
      * of your reports.</p>
      */
-    inline const ReportDeliveryChannel& GetReportDeliveryChannel() const{ return m_reportDeliveryChannel; }
+    inline const ReportDeliveryChannel& GetReportDeliveryChannel() const { return m_reportDeliveryChannel; }
     inline bool ReportDeliveryChannelHasBeenSet() const { return m_reportDeliveryChannelHasBeenSet; }
-    inline void SetReportDeliveryChannel(const ReportDeliveryChannel& value) { m_reportDeliveryChannelHasBeenSet = true; m_reportDeliveryChannel = value; }
-    inline void SetReportDeliveryChannel(ReportDeliveryChannel&& value) { m_reportDeliveryChannelHasBeenSet = true; m_reportDeliveryChannel = std::move(value); }
-    inline CreateReportPlanRequest& WithReportDeliveryChannel(const ReportDeliveryChannel& value) { SetReportDeliveryChannel(value); return *this;}
-    inline CreateReportPlanRequest& WithReportDeliveryChannel(ReportDeliveryChannel&& value) { SetReportDeliveryChannel(std::move(value)); return *this;}
+    template<typename ReportDeliveryChannelT = ReportDeliveryChannel>
+    void SetReportDeliveryChannel(ReportDeliveryChannelT&& value) { m_reportDeliveryChannelHasBeenSet = true; m_reportDeliveryChannel = std::forward<ReportDeliveryChannelT>(value); }
+    template<typename ReportDeliveryChannelT = ReportDeliveryChannel>
+    CreateReportPlanRequest& WithReportDeliveryChannel(ReportDeliveryChannelT&& value) { SetReportDeliveryChannel(std::forward<ReportDeliveryChannelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,31 +87,28 @@ namespace Model
      * <code>CONTROL_COMPLIANCE_REPORT</code>, this API resource also describes the
      * report coverage by Amazon Web Services Regions and frameworks.</p>
      */
-    inline const ReportSetting& GetReportSetting() const{ return m_reportSetting; }
+    inline const ReportSetting& GetReportSetting() const { return m_reportSetting; }
     inline bool ReportSettingHasBeenSet() const { return m_reportSettingHasBeenSet; }
-    inline void SetReportSetting(const ReportSetting& value) { m_reportSettingHasBeenSet = true; m_reportSetting = value; }
-    inline void SetReportSetting(ReportSetting&& value) { m_reportSettingHasBeenSet = true; m_reportSetting = std::move(value); }
-    inline CreateReportPlanRequest& WithReportSetting(const ReportSetting& value) { SetReportSetting(value); return *this;}
-    inline CreateReportPlanRequest& WithReportSetting(ReportSetting&& value) { SetReportSetting(std::move(value)); return *this;}
+    template<typename ReportSettingT = ReportSetting>
+    void SetReportSetting(ReportSettingT&& value) { m_reportSettingHasBeenSet = true; m_reportSetting = std::forward<ReportSettingT>(value); }
+    template<typename ReportSettingT = ReportSetting>
+    CreateReportPlanRequest& WithReportSetting(ReportSettingT&& value) { SetReportSetting(std::forward<ReportSettingT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags to assign to the report plan.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetReportPlanTags() const{ return m_reportPlanTags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetReportPlanTags() const { return m_reportPlanTags; }
     inline bool ReportPlanTagsHasBeenSet() const { return m_reportPlanTagsHasBeenSet; }
-    inline void SetReportPlanTags(const Aws::Map<Aws::String, Aws::String>& value) { m_reportPlanTagsHasBeenSet = true; m_reportPlanTags = value; }
-    inline void SetReportPlanTags(Aws::Map<Aws::String, Aws::String>&& value) { m_reportPlanTagsHasBeenSet = true; m_reportPlanTags = std::move(value); }
-    inline CreateReportPlanRequest& WithReportPlanTags(const Aws::Map<Aws::String, Aws::String>& value) { SetReportPlanTags(value); return *this;}
-    inline CreateReportPlanRequest& WithReportPlanTags(Aws::Map<Aws::String, Aws::String>&& value) { SetReportPlanTags(std::move(value)); return *this;}
-    inline CreateReportPlanRequest& AddReportPlanTags(const Aws::String& key, const Aws::String& value) { m_reportPlanTagsHasBeenSet = true; m_reportPlanTags.emplace(key, value); return *this; }
-    inline CreateReportPlanRequest& AddReportPlanTags(Aws::String&& key, const Aws::String& value) { m_reportPlanTagsHasBeenSet = true; m_reportPlanTags.emplace(std::move(key), value); return *this; }
-    inline CreateReportPlanRequest& AddReportPlanTags(const Aws::String& key, Aws::String&& value) { m_reportPlanTagsHasBeenSet = true; m_reportPlanTags.emplace(key, std::move(value)); return *this; }
-    inline CreateReportPlanRequest& AddReportPlanTags(Aws::String&& key, Aws::String&& value) { m_reportPlanTagsHasBeenSet = true; m_reportPlanTags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateReportPlanRequest& AddReportPlanTags(const char* key, Aws::String&& value) { m_reportPlanTagsHasBeenSet = true; m_reportPlanTags.emplace(key, std::move(value)); return *this; }
-    inline CreateReportPlanRequest& AddReportPlanTags(Aws::String&& key, const char* value) { m_reportPlanTagsHasBeenSet = true; m_reportPlanTags.emplace(std::move(key), value); return *this; }
-    inline CreateReportPlanRequest& AddReportPlanTags(const char* key, const char* value) { m_reportPlanTagsHasBeenSet = true; m_reportPlanTags.emplace(key, value); return *this; }
+    template<typename ReportPlanTagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetReportPlanTags(ReportPlanTagsT&& value) { m_reportPlanTagsHasBeenSet = true; m_reportPlanTags = std::forward<ReportPlanTagsT>(value); }
+    template<typename ReportPlanTagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateReportPlanRequest& WithReportPlanTags(ReportPlanTagsT&& value) { SetReportPlanTags(std::forward<ReportPlanTagsT>(value)); return *this;}
+    template<typename ReportPlanTagsKeyT = Aws::String, typename ReportPlanTagsValueT = Aws::String>
+    CreateReportPlanRequest& AddReportPlanTags(ReportPlanTagsKeyT&& key, ReportPlanTagsValueT&& value) {
+      m_reportPlanTagsHasBeenSet = true; m_reportPlanTags.emplace(std::forward<ReportPlanTagsKeyT>(key), std::forward<ReportPlanTagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -125,14 +118,12 @@ namespace Model
      * request with the same idempotency token results in a success message with no
      * action taken.</p>
      */
-    inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
+    inline const Aws::String& GetIdempotencyToken() const { return m_idempotencyToken; }
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
-    inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
-    inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
-    inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
-    inline CreateReportPlanRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
-    inline CreateReportPlanRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
-    inline CreateReportPlanRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
+    template<typename IdempotencyTokenT = Aws::String>
+    void SetIdempotencyToken(IdempotencyTokenT&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::forward<IdempotencyTokenT>(value); }
+    template<typename IdempotencyTokenT = Aws::String>
+    CreateReportPlanRequest& WithIdempotencyToken(IdempotencyTokenT&& value) { SetIdempotencyToken(std::forward<IdempotencyTokenT>(value)); return *this;}
     ///@}
   private:
 

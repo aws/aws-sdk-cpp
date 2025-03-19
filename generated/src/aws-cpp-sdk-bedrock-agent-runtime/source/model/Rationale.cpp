@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-Rationale::Rationale() : 
-    m_textHasBeenSet(false),
-    m_traceIdHasBeenSet(false)
-{
-}
-
 Rationale::Rationale(JsonView jsonValue)
-  : Rationale()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Rationale& Rationale::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("traceId"))
   {
     m_traceId = jsonValue.GetString("traceId");
-
     m_traceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-StreamFile::StreamFile() : 
-    m_fileId(0),
-    m_fileIdHasBeenSet(false),
-    m_s3LocationHasBeenSet(false)
-{
-}
-
 StreamFile::StreamFile(JsonView jsonValue)
-  : StreamFile()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ StreamFile& StreamFile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fileId"))
   {
     m_fileId = jsonValue.GetInteger("fileId");
-
     m_fileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Location"))
   {
     m_s3Location = jsonValue.GetObject("s3Location");
-
     m_s3LocationHasBeenSet = true;
   }
-
   return *this;
 }
 

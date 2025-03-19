@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-InvalidRequestExceptionReason::InvalidRequestExceptionReason() : 
-    m_attachedFileInvalidRequestExceptionReason(AttachedFileInvalidRequestExceptionReason::NOT_SET),
-    m_attachedFileInvalidRequestExceptionReasonHasBeenSet(false)
-{
-}
-
 InvalidRequestExceptionReason::InvalidRequestExceptionReason(JsonView jsonValue)
-  : InvalidRequestExceptionReason()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ InvalidRequestExceptionReason& InvalidRequestExceptionReason::operator =(JsonVie
   if(jsonValue.ValueExists("AttachedFileInvalidRequestExceptionReason"))
   {
     m_attachedFileInvalidRequestExceptionReason = AttachedFileInvalidRequestExceptionReasonMapper::GetAttachedFileInvalidRequestExceptionReasonForName(jsonValue.GetString("AttachedFileInvalidRequestExceptionReason"));
-
     m_attachedFileInvalidRequestExceptionReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

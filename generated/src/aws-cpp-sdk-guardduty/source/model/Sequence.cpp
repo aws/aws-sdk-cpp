@@ -18,19 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-Sequence::Sequence() : 
-    m_uidHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_actorsHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_endpointsHasBeenSet(false),
-    m_signalsHasBeenSet(false),
-    m_sequenceIndicatorsHasBeenSet(false)
-{
-}
-
 Sequence::Sequence(JsonView jsonValue)
-  : Sequence()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ Sequence& Sequence::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("uid"))
   {
     m_uid = jsonValue.GetString("uid");
-
     m_uidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actors"))
   {
     Aws::Utils::Array<JsonView> actorsJsonList = jsonValue.GetArray("actors");
@@ -60,7 +44,6 @@ Sequence& Sequence::operator =(JsonView jsonValue)
     }
     m_actorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resources"))
   {
     Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("resources");
@@ -70,7 +53,6 @@ Sequence& Sequence::operator =(JsonView jsonValue)
     }
     m_resourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endpoints"))
   {
     Aws::Utils::Array<JsonView> endpointsJsonList = jsonValue.GetArray("endpoints");
@@ -80,7 +62,6 @@ Sequence& Sequence::operator =(JsonView jsonValue)
     }
     m_endpointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("signals"))
   {
     Aws::Utils::Array<JsonView> signalsJsonList = jsonValue.GetArray("signals");
@@ -90,7 +71,6 @@ Sequence& Sequence::operator =(JsonView jsonValue)
     }
     m_signalsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sequenceIndicators"))
   {
     Aws::Utils::Array<JsonView> sequenceIndicatorsJsonList = jsonValue.GetArray("sequenceIndicators");
@@ -100,7 +80,6 @@ Sequence& Sequence::operator =(JsonView jsonValue)
     }
     m_sequenceIndicatorsHasBeenSet = true;
   }
-
   return *this;
 }
 

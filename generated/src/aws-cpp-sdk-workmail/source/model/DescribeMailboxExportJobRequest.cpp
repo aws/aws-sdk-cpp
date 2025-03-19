@@ -12,12 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeMailboxExportJobRequest::DescribeMailboxExportJobRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_organizationIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeMailboxExportJobRequest::SerializePayload() const
 {
   JsonValue payload;

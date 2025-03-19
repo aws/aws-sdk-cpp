@@ -18,27 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsTaskDefinitionDetails::AwsEcsTaskDefinitionDetails() : 
-    m_containerDefinitionsHasBeenSet(false),
-    m_cpuHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_familyHasBeenSet(false),
-    m_inferenceAcceleratorsHasBeenSet(false),
-    m_ipcModeHasBeenSet(false),
-    m_memoryHasBeenSet(false),
-    m_networkModeHasBeenSet(false),
-    m_pidModeHasBeenSet(false),
-    m_placementConstraintsHasBeenSet(false),
-    m_proxyConfigurationHasBeenSet(false),
-    m_requiresCompatibilitiesHasBeenSet(false),
-    m_taskRoleArnHasBeenSet(false),
-    m_volumesHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 AwsEcsTaskDefinitionDetails::AwsEcsTaskDefinitionDetails(JsonView jsonValue)
-  : AwsEcsTaskDefinitionDetails()
 {
   *this = jsonValue;
 }
@@ -54,28 +34,21 @@ AwsEcsTaskDefinitionDetails& AwsEcsTaskDefinitionDetails::operator =(JsonView js
     }
     m_containerDefinitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Cpu"))
   {
     m_cpu = jsonValue.GetString("Cpu");
-
     m_cpuHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionRoleArn"))
   {
     m_executionRoleArn = jsonValue.GetString("ExecutionRoleArn");
-
     m_executionRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Family"))
   {
     m_family = jsonValue.GetString("Family");
-
     m_familyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InferenceAccelerators"))
   {
     Aws::Utils::Array<JsonView> inferenceAcceleratorsJsonList = jsonValue.GetArray("InferenceAccelerators");
@@ -85,35 +58,26 @@ AwsEcsTaskDefinitionDetails& AwsEcsTaskDefinitionDetails::operator =(JsonView js
     }
     m_inferenceAcceleratorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpcMode"))
   {
     m_ipcMode = jsonValue.GetString("IpcMode");
-
     m_ipcModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Memory"))
   {
     m_memory = jsonValue.GetString("Memory");
-
     m_memoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkMode"))
   {
     m_networkMode = jsonValue.GetString("NetworkMode");
-
     m_networkModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PidMode"))
   {
     m_pidMode = jsonValue.GetString("PidMode");
-
     m_pidModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlacementConstraints"))
   {
     Aws::Utils::Array<JsonView> placementConstraintsJsonList = jsonValue.GetArray("PlacementConstraints");
@@ -123,14 +87,11 @@ AwsEcsTaskDefinitionDetails& AwsEcsTaskDefinitionDetails::operator =(JsonView js
     }
     m_placementConstraintsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProxyConfiguration"))
   {
     m_proxyConfiguration = jsonValue.GetObject("ProxyConfiguration");
-
     m_proxyConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequiresCompatibilities"))
   {
     Aws::Utils::Array<JsonView> requiresCompatibilitiesJsonList = jsonValue.GetArray("RequiresCompatibilities");
@@ -140,14 +101,11 @@ AwsEcsTaskDefinitionDetails& AwsEcsTaskDefinitionDetails::operator =(JsonView js
     }
     m_requiresCompatibilitiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskRoleArn"))
   {
     m_taskRoleArn = jsonValue.GetString("TaskRoleArn");
-
     m_taskRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Volumes"))
   {
     Aws::Utils::Array<JsonView> volumesJsonList = jsonValue.GetArray("Volumes");
@@ -157,14 +115,11 @@ AwsEcsTaskDefinitionDetails& AwsEcsTaskDefinitionDetails::operator =(JsonView js
     }
     m_volumesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

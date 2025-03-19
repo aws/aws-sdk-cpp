@@ -28,7 +28,7 @@ namespace Model
   class GetPlaceResult
   {
   public:
-    AWS_LOCATIONSERVICE_API GetPlaceResult();
+    AWS_LOCATIONSERVICE_API GetPlaceResult() = default;
     AWS_LOCATIONSERVICE_API GetPlaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOCATIONSERVICE_API GetPlaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Details about the result, such as its address and position.</p>
      */
-    inline const Place& GetPlace() const{ return m_place; }
-    inline void SetPlace(const Place& value) { m_place = value; }
-    inline void SetPlace(Place&& value) { m_place = std::move(value); }
-    inline GetPlaceResult& WithPlace(const Place& value) { SetPlace(value); return *this;}
-    inline GetPlaceResult& WithPlace(Place&& value) { SetPlace(std::move(value)); return *this;}
+    inline const Place& GetPlace() const { return m_place; }
+    template<typename PlaceT = Place>
+    void SetPlace(PlaceT&& value) { m_placeHasBeenSet = true; m_place = std::forward<PlaceT>(value); }
+    template<typename PlaceT = Place>
+    GetPlaceResult& WithPlace(PlaceT&& value) { SetPlace(std::forward<PlaceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPlaceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPlaceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPlaceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPlaceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Place m_place;
+    bool m_placeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

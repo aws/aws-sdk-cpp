@@ -10,11 +10,6 @@
 using namespace Aws::ElasticBeanstalk::Model;
 using namespace Aws::Utils;
 
-DescribeApplicationsRequest::DescribeApplicationsRequest() : 
-    m_applicationNamesHasBeenSet(false)
-{
-}
-
 Aws::String DescribeApplicationsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

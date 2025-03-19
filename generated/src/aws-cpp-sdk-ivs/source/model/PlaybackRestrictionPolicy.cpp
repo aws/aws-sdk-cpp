@@ -18,19 +18,7 @@ namespace IVS
 namespace Model
 {
 
-PlaybackRestrictionPolicy::PlaybackRestrictionPolicy() : 
-    m_allowedCountriesHasBeenSet(false),
-    m_allowedOriginsHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_enableStrictOriginEnforcement(false),
-    m_enableStrictOriginEnforcementHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 PlaybackRestrictionPolicy::PlaybackRestrictionPolicy(JsonView jsonValue)
-  : PlaybackRestrictionPolicy()
 {
   *this = jsonValue;
 }
@@ -46,7 +34,6 @@ PlaybackRestrictionPolicy& PlaybackRestrictionPolicy::operator =(JsonView jsonVa
     }
     m_allowedCountriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowedOrigins"))
   {
     Aws::Utils::Array<JsonView> allowedOriginsJsonList = jsonValue.GetArray("allowedOrigins");
@@ -56,28 +43,21 @@ PlaybackRestrictionPolicy& PlaybackRestrictionPolicy::operator =(JsonView jsonVa
     }
     m_allowedOriginsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enableStrictOriginEnforcement"))
   {
     m_enableStrictOriginEnforcement = jsonValue.GetBool("enableStrictOriginEnforcement");
-
     m_enableStrictOriginEnforcementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -87,7 +67,6 @@ PlaybackRestrictionPolicy& PlaybackRestrictionPolicy::operator =(JsonView jsonVa
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

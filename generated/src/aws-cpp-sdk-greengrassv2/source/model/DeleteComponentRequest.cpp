@@ -12,11 +12,6 @@ using namespace Aws::GreengrassV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteComponentRequest::DeleteComponentRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteComponentRequest::SerializePayload() const
 {
   return {};

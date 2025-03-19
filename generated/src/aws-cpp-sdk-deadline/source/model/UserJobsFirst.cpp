@@ -18,13 +18,7 @@ namespace deadline
 namespace Model
 {
 
-UserJobsFirst::UserJobsFirst() : 
-    m_userIdentityIdHasBeenSet(false)
-{
-}
-
 UserJobsFirst::UserJobsFirst(JsonView jsonValue)
-  : UserJobsFirst()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UserJobsFirst& UserJobsFirst::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("userIdentityId"))
   {
     m_userIdentityId = jsonValue.GetString("userIdentityId");
-
     m_userIdentityIdHasBeenSet = true;
   }
-
   return *this;
 }
 

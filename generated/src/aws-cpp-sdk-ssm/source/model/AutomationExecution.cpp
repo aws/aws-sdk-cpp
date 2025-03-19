@@ -18,51 +18,7 @@ namespace SSM
 namespace Model
 {
 
-AutomationExecution::AutomationExecution() : 
-    m_automationExecutionIdHasBeenSet(false),
-    m_documentNameHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_executionStartTimeHasBeenSet(false),
-    m_executionEndTimeHasBeenSet(false),
-    m_automationExecutionStatus(AutomationExecutionStatus::NOT_SET),
-    m_automationExecutionStatusHasBeenSet(false),
-    m_stepExecutionsHasBeenSet(false),
-    m_stepExecutionsTruncated(false),
-    m_stepExecutionsTruncatedHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_failureMessageHasBeenSet(false),
-    m_mode(ExecutionMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_parentAutomationExecutionIdHasBeenSet(false),
-    m_executedByHasBeenSet(false),
-    m_currentStepNameHasBeenSet(false),
-    m_currentActionHasBeenSet(false),
-    m_targetParameterNameHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_targetMapsHasBeenSet(false),
-    m_resolvedTargetsHasBeenSet(false),
-    m_maxConcurrencyHasBeenSet(false),
-    m_maxErrorsHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_targetLocationsHasBeenSet(false),
-    m_progressCountersHasBeenSet(false),
-    m_alarmConfigurationHasBeenSet(false),
-    m_triggeredAlarmsHasBeenSet(false),
-    m_targetLocationsURLHasBeenSet(false),
-    m_automationSubtype(AutomationSubtype::NOT_SET),
-    m_automationSubtypeHasBeenSet(false),
-    m_scheduledTimeHasBeenSet(false),
-    m_runbooksHasBeenSet(false),
-    m_opsItemIdHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_changeRequestNameHasBeenSet(false),
-    m_variablesHasBeenSet(false)
-{
-}
-
 AutomationExecution::AutomationExecution(JsonView jsonValue)
-  : AutomationExecution()
 {
   *this = jsonValue;
 }
@@ -72,45 +28,33 @@ AutomationExecution& AutomationExecution::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AutomationExecutionId"))
   {
     m_automationExecutionId = jsonValue.GetString("AutomationExecutionId");
-
     m_automationExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentName"))
   {
     m_documentName = jsonValue.GetString("DocumentName");
-
     m_documentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentVersion"))
   {
     m_documentVersion = jsonValue.GetString("DocumentVersion");
-
     m_documentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionStartTime"))
   {
     m_executionStartTime = jsonValue.GetDouble("ExecutionStartTime");
-
     m_executionStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionEndTime"))
   {
     m_executionEndTime = jsonValue.GetDouble("ExecutionEndTime");
-
     m_executionEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutomationExecutionStatus"))
   {
     m_automationExecutionStatus = AutomationExecutionStatusMapper::GetAutomationExecutionStatusForName(jsonValue.GetString("AutomationExecutionStatus"));
-
     m_automationExecutionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StepExecutions"))
   {
     Aws::Utils::Array<JsonView> stepExecutionsJsonList = jsonValue.GetArray("StepExecutions");
@@ -120,14 +64,11 @@ AutomationExecution& AutomationExecution::operator =(JsonView jsonValue)
     }
     m_stepExecutionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StepExecutionsTruncated"))
   {
     m_stepExecutionsTruncated = jsonValue.GetBool("StepExecutionsTruncated");
-
     m_stepExecutionsTruncatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -144,7 +85,6 @@ AutomationExecution& AutomationExecution::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Outputs"))
   {
     Aws::Map<Aws::String, JsonView> outputsJsonMap = jsonValue.GetObject("Outputs").GetAllObjects();
@@ -161,56 +101,41 @@ AutomationExecution& AutomationExecution::operator =(JsonView jsonValue)
     }
     m_outputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureMessage"))
   {
     m_failureMessage = jsonValue.GetString("FailureMessage");
-
     m_failureMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Mode"))
   {
     m_mode = ExecutionModeMapper::GetExecutionModeForName(jsonValue.GetString("Mode"));
-
     m_modeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParentAutomationExecutionId"))
   {
     m_parentAutomationExecutionId = jsonValue.GetString("ParentAutomationExecutionId");
-
     m_parentAutomationExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutedBy"))
   {
     m_executedBy = jsonValue.GetString("ExecutedBy");
-
     m_executedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentStepName"))
   {
     m_currentStepName = jsonValue.GetString("CurrentStepName");
-
     m_currentStepNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentAction"))
   {
     m_currentAction = jsonValue.GetString("CurrentAction");
-
     m_currentActionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetParameterName"))
   {
     m_targetParameterName = jsonValue.GetString("TargetParameterName");
-
     m_targetParameterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Targets"))
   {
     Aws::Utils::Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
@@ -220,7 +145,6 @@ AutomationExecution& AutomationExecution::operator =(JsonView jsonValue)
     }
     m_targetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetMaps"))
   {
     Aws::Utils::Array<JsonView> targetMapsJsonList = jsonValue.GetArray("TargetMaps");
@@ -243,35 +167,26 @@ AutomationExecution& AutomationExecution::operator =(JsonView jsonValue)
     }
     m_targetMapsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResolvedTargets"))
   {
     m_resolvedTargets = jsonValue.GetObject("ResolvedTargets");
-
     m_resolvedTargetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxConcurrency"))
   {
     m_maxConcurrency = jsonValue.GetString("MaxConcurrency");
-
     m_maxConcurrencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxErrors"))
   {
     m_maxErrors = jsonValue.GetString("MaxErrors");
-
     m_maxErrorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Target"))
   {
     m_target = jsonValue.GetString("Target");
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetLocations"))
   {
     Aws::Utils::Array<JsonView> targetLocationsJsonList = jsonValue.GetArray("TargetLocations");
@@ -281,21 +196,16 @@ AutomationExecution& AutomationExecution::operator =(JsonView jsonValue)
     }
     m_targetLocationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProgressCounters"))
   {
     m_progressCounters = jsonValue.GetObject("ProgressCounters");
-
     m_progressCountersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AlarmConfiguration"))
   {
     m_alarmConfiguration = jsonValue.GetObject("AlarmConfiguration");
-
     m_alarmConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TriggeredAlarms"))
   {
     Aws::Utils::Array<JsonView> triggeredAlarmsJsonList = jsonValue.GetArray("TriggeredAlarms");
@@ -305,28 +215,21 @@ AutomationExecution& AutomationExecution::operator =(JsonView jsonValue)
     }
     m_triggeredAlarmsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetLocationsURL"))
   {
     m_targetLocationsURL = jsonValue.GetString("TargetLocationsURL");
-
     m_targetLocationsURLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutomationSubtype"))
   {
     m_automationSubtype = AutomationSubtypeMapper::GetAutomationSubtypeForName(jsonValue.GetString("AutomationSubtype"));
-
     m_automationSubtypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScheduledTime"))
   {
     m_scheduledTime = jsonValue.GetDouble("ScheduledTime");
-
     m_scheduledTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Runbooks"))
   {
     Aws::Utils::Array<JsonView> runbooksJsonList = jsonValue.GetArray("Runbooks");
@@ -336,28 +239,21 @@ AutomationExecution& AutomationExecution::operator =(JsonView jsonValue)
     }
     m_runbooksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OpsItemId"))
   {
     m_opsItemId = jsonValue.GetString("OpsItemId");
-
     m_opsItemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociationId"))
   {
     m_associationId = jsonValue.GetString("AssociationId");
-
     m_associationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChangeRequestName"))
   {
     m_changeRequestName = jsonValue.GetString("ChangeRequestName");
-
     m_changeRequestNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Variables"))
   {
     Aws::Map<Aws::String, JsonView> variablesJsonMap = jsonValue.GetObject("Variables").GetAllObjects();
@@ -374,7 +270,6 @@ AutomationExecution& AutomationExecution::operator =(JsonView jsonValue)
     }
     m_variablesHasBeenSet = true;
   }
-
   return *this;
 }
 

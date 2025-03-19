@@ -31,7 +31,7 @@ namespace Model
   class DomainEndpointOptions
   {
   public:
-    AWS_CLOUDSEARCH_API DomainEndpointOptions();
+    AWS_CLOUDSEARCH_API DomainEndpointOptions() = default;
     AWS_CLOUDSEARCH_API DomainEndpointOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDSEARCH_API DomainEndpointOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>Whether the domain is HTTPS only enabled.</p>
      */
-    inline bool GetEnforceHTTPS() const{ return m_enforceHTTPS; }
+    inline bool GetEnforceHTTPS() const { return m_enforceHTTPS; }
     inline bool EnforceHTTPSHasBeenSet() const { return m_enforceHTTPSHasBeenSet; }
     inline void SetEnforceHTTPS(bool value) { m_enforceHTTPSHasBeenSet = true; m_enforceHTTPS = value; }
     inline DomainEndpointOptions& WithEnforceHTTPS(bool value) { SetEnforceHTTPS(value); return *this;}
@@ -53,19 +53,17 @@ namespace Model
     /**
      * <p>The minimum required TLS version</p>
      */
-    inline const TLSSecurityPolicy& GetTLSSecurityPolicy() const{ return m_tLSSecurityPolicy; }
+    inline TLSSecurityPolicy GetTLSSecurityPolicy() const { return m_tLSSecurityPolicy; }
     inline bool TLSSecurityPolicyHasBeenSet() const { return m_tLSSecurityPolicyHasBeenSet; }
-    inline void SetTLSSecurityPolicy(const TLSSecurityPolicy& value) { m_tLSSecurityPolicyHasBeenSet = true; m_tLSSecurityPolicy = value; }
-    inline void SetTLSSecurityPolicy(TLSSecurityPolicy&& value) { m_tLSSecurityPolicyHasBeenSet = true; m_tLSSecurityPolicy = std::move(value); }
-    inline DomainEndpointOptions& WithTLSSecurityPolicy(const TLSSecurityPolicy& value) { SetTLSSecurityPolicy(value); return *this;}
-    inline DomainEndpointOptions& WithTLSSecurityPolicy(TLSSecurityPolicy&& value) { SetTLSSecurityPolicy(std::move(value)); return *this;}
+    inline void SetTLSSecurityPolicy(TLSSecurityPolicy value) { m_tLSSecurityPolicyHasBeenSet = true; m_tLSSecurityPolicy = value; }
+    inline DomainEndpointOptions& WithTLSSecurityPolicy(TLSSecurityPolicy value) { SetTLSSecurityPolicy(value); return *this;}
     ///@}
   private:
 
-    bool m_enforceHTTPS;
+    bool m_enforceHTTPS{false};
     bool m_enforceHTTPSHasBeenSet = false;
 
-    TLSSecurityPolicy m_tLSSecurityPolicy;
+    TLSSecurityPolicy m_tLSSecurityPolicy{TLSSecurityPolicy::NOT_SET};
     bool m_tLSSecurityPolicyHasBeenSet = false;
   };
 

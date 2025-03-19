@@ -12,16 +12,6 @@ using namespace Aws::BedrockAgent::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePromptRequest::UpdatePromptRequest() : 
-    m_customerEncryptionKeyArnHasBeenSet(false),
-    m_defaultVariantHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_promptIdentifierHasBeenSet(false),
-    m_variantsHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePromptRequest::SerializePayload() const
 {
   JsonValue payload;

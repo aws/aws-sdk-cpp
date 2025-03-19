@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StopCalculationExecutionResult::StopCalculationExecutionResult() : 
-    m_state(CalculationExecutionState::NOT_SET)
-{
-}
-
 StopCalculationExecutionResult::StopCalculationExecutionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StopCalculationExecutionResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ StopCalculationExecutionResult& StopCalculationExecutionResult::operator =(const
   if(jsonValue.ValueExists("State"))
   {
     m_state = CalculationExecutionStateMapper::GetCalculationExecutionStateForName(jsonValue.GetString("State"));
-
+    m_stateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

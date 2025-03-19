@@ -18,10 +18,6 @@ namespace BedrockAgent
 namespace Model
 {
 
-AutoToolChoice::AutoToolChoice()
-{
-}
-
 AutoToolChoice::AutoToolChoice(JsonView jsonValue)
 {
   *this = jsonValue;

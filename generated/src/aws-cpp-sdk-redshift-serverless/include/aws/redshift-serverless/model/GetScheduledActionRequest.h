@@ -21,7 +21,7 @@ namespace Model
   class GetScheduledActionRequest : public RedshiftServerlessRequest
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API GetScheduledActionRequest();
+    AWS_REDSHIFTSERVERLESS_API GetScheduledActionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the scheduled action.</p>
      */
-    inline const Aws::String& GetScheduledActionName() const{ return m_scheduledActionName; }
+    inline const Aws::String& GetScheduledActionName() const { return m_scheduledActionName; }
     inline bool ScheduledActionNameHasBeenSet() const { return m_scheduledActionNameHasBeenSet; }
-    inline void SetScheduledActionName(const Aws::String& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = value; }
-    inline void SetScheduledActionName(Aws::String&& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = std::move(value); }
-    inline void SetScheduledActionName(const char* value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName.assign(value); }
-    inline GetScheduledActionRequest& WithScheduledActionName(const Aws::String& value) { SetScheduledActionName(value); return *this;}
-    inline GetScheduledActionRequest& WithScheduledActionName(Aws::String&& value) { SetScheduledActionName(std::move(value)); return *this;}
-    inline GetScheduledActionRequest& WithScheduledActionName(const char* value) { SetScheduledActionName(value); return *this;}
+    template<typename ScheduledActionNameT = Aws::String>
+    void SetScheduledActionName(ScheduledActionNameT&& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = std::forward<ScheduledActionNameT>(value); }
+    template<typename ScheduledActionNameT = Aws::String>
+    GetScheduledActionRequest& WithScheduledActionName(ScheduledActionNameT&& value) { SetScheduledActionName(std::forward<ScheduledActionNameT>(value)); return *this;}
     ///@}
   private:
 

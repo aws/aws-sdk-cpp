@@ -31,7 +31,7 @@ namespace Model
   class CustomPluginDescription
   {
   public:
-    AWS_KAFKACONNECT_API CustomPluginDescription();
+    AWS_KAFKACONNECT_API CustomPluginDescription() = default;
     AWS_KAFKACONNECT_API CustomPluginDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API CustomPluginDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,21 +41,19 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the custom plugin.</p>
      */
-    inline const Aws::String& GetCustomPluginArn() const{ return m_customPluginArn; }
+    inline const Aws::String& GetCustomPluginArn() const { return m_customPluginArn; }
     inline bool CustomPluginArnHasBeenSet() const { return m_customPluginArnHasBeenSet; }
-    inline void SetCustomPluginArn(const Aws::String& value) { m_customPluginArnHasBeenSet = true; m_customPluginArn = value; }
-    inline void SetCustomPluginArn(Aws::String&& value) { m_customPluginArnHasBeenSet = true; m_customPluginArn = std::move(value); }
-    inline void SetCustomPluginArn(const char* value) { m_customPluginArnHasBeenSet = true; m_customPluginArn.assign(value); }
-    inline CustomPluginDescription& WithCustomPluginArn(const Aws::String& value) { SetCustomPluginArn(value); return *this;}
-    inline CustomPluginDescription& WithCustomPluginArn(Aws::String&& value) { SetCustomPluginArn(std::move(value)); return *this;}
-    inline CustomPluginDescription& WithCustomPluginArn(const char* value) { SetCustomPluginArn(value); return *this;}
+    template<typename CustomPluginArnT = Aws::String>
+    void SetCustomPluginArn(CustomPluginArnT&& value) { m_customPluginArnHasBeenSet = true; m_customPluginArn = std::forward<CustomPluginArnT>(value); }
+    template<typename CustomPluginArnT = Aws::String>
+    CustomPluginDescription& WithCustomPluginArn(CustomPluginArnT&& value) { SetCustomPluginArn(std::forward<CustomPluginArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The revision of the custom plugin.</p>
      */
-    inline long long GetRevision() const{ return m_revision; }
+    inline long long GetRevision() const { return m_revision; }
     inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
     inline void SetRevision(long long value) { m_revisionHasBeenSet = true; m_revision = value; }
     inline CustomPluginDescription& WithRevision(long long value) { SetRevision(value); return *this;}
@@ -65,7 +63,7 @@ namespace Model
     Aws::String m_customPluginArn;
     bool m_customPluginArnHasBeenSet = false;
 
-    long long m_revision;
+    long long m_revision{0};
     bool m_revisionHasBeenSet = false;
   };
 

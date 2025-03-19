@@ -37,7 +37,7 @@ namespace Model
   class EksContainerResourceRequirements
   {
   public:
-    AWS_BATCH_API EksContainerResourceRequirements();
+    AWS_BATCH_API EksContainerResourceRequirements() = default;
     AWS_BATCH_API EksContainerResourceRequirements(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API EksContainerResourceRequirements& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -72,19 +72,16 @@ namespace Model
      * places, then the value that's specified in <code>limits</code> must be equal to
      * the value that's specified in <code>requests</code>.</p> </dd> </dl>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetLimits() const{ return m_limits; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetLimits() const { return m_limits; }
     inline bool LimitsHasBeenSet() const { return m_limitsHasBeenSet; }
-    inline void SetLimits(const Aws::Map<Aws::String, Aws::String>& value) { m_limitsHasBeenSet = true; m_limits = value; }
-    inline void SetLimits(Aws::Map<Aws::String, Aws::String>&& value) { m_limitsHasBeenSet = true; m_limits = std::move(value); }
-    inline EksContainerResourceRequirements& WithLimits(const Aws::Map<Aws::String, Aws::String>& value) { SetLimits(value); return *this;}
-    inline EksContainerResourceRequirements& WithLimits(Aws::Map<Aws::String, Aws::String>&& value) { SetLimits(std::move(value)); return *this;}
-    inline EksContainerResourceRequirements& AddLimits(const Aws::String& key, const Aws::String& value) { m_limitsHasBeenSet = true; m_limits.emplace(key, value); return *this; }
-    inline EksContainerResourceRequirements& AddLimits(Aws::String&& key, const Aws::String& value) { m_limitsHasBeenSet = true; m_limits.emplace(std::move(key), value); return *this; }
-    inline EksContainerResourceRequirements& AddLimits(const Aws::String& key, Aws::String&& value) { m_limitsHasBeenSet = true; m_limits.emplace(key, std::move(value)); return *this; }
-    inline EksContainerResourceRequirements& AddLimits(Aws::String&& key, Aws::String&& value) { m_limitsHasBeenSet = true; m_limits.emplace(std::move(key), std::move(value)); return *this; }
-    inline EksContainerResourceRequirements& AddLimits(const char* key, Aws::String&& value) { m_limitsHasBeenSet = true; m_limits.emplace(key, std::move(value)); return *this; }
-    inline EksContainerResourceRequirements& AddLimits(Aws::String&& key, const char* value) { m_limitsHasBeenSet = true; m_limits.emplace(std::move(key), value); return *this; }
-    inline EksContainerResourceRequirements& AddLimits(const char* key, const char* value) { m_limitsHasBeenSet = true; m_limits.emplace(key, value); return *this; }
+    template<typename LimitsT = Aws::Map<Aws::String, Aws::String>>
+    void SetLimits(LimitsT&& value) { m_limitsHasBeenSet = true; m_limits = std::forward<LimitsT>(value); }
+    template<typename LimitsT = Aws::Map<Aws::String, Aws::String>>
+    EksContainerResourceRequirements& WithLimits(LimitsT&& value) { SetLimits(std::forward<LimitsT>(value)); return *this;}
+    template<typename LimitsKeyT = Aws::String, typename LimitsValueT = Aws::String>
+    EksContainerResourceRequirements& AddLimits(LimitsKeyT&& key, LimitsValueT&& value) {
+      m_limitsHasBeenSet = true; m_limits.emplace(std::forward<LimitsKeyT>(key), std::forward<LimitsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -115,19 +112,16 @@ namespace Model
      * specified in <code>limits</code> must be equal to the value that's specified in
      * <code>requests</code>.</p> </dd> </dl>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetRequests() const{ return m_requests; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetRequests() const { return m_requests; }
     inline bool RequestsHasBeenSet() const { return m_requestsHasBeenSet; }
-    inline void SetRequests(const Aws::Map<Aws::String, Aws::String>& value) { m_requestsHasBeenSet = true; m_requests = value; }
-    inline void SetRequests(Aws::Map<Aws::String, Aws::String>&& value) { m_requestsHasBeenSet = true; m_requests = std::move(value); }
-    inline EksContainerResourceRequirements& WithRequests(const Aws::Map<Aws::String, Aws::String>& value) { SetRequests(value); return *this;}
-    inline EksContainerResourceRequirements& WithRequests(Aws::Map<Aws::String, Aws::String>&& value) { SetRequests(std::move(value)); return *this;}
-    inline EksContainerResourceRequirements& AddRequests(const Aws::String& key, const Aws::String& value) { m_requestsHasBeenSet = true; m_requests.emplace(key, value); return *this; }
-    inline EksContainerResourceRequirements& AddRequests(Aws::String&& key, const Aws::String& value) { m_requestsHasBeenSet = true; m_requests.emplace(std::move(key), value); return *this; }
-    inline EksContainerResourceRequirements& AddRequests(const Aws::String& key, Aws::String&& value) { m_requestsHasBeenSet = true; m_requests.emplace(key, std::move(value)); return *this; }
-    inline EksContainerResourceRequirements& AddRequests(Aws::String&& key, Aws::String&& value) { m_requestsHasBeenSet = true; m_requests.emplace(std::move(key), std::move(value)); return *this; }
-    inline EksContainerResourceRequirements& AddRequests(const char* key, Aws::String&& value) { m_requestsHasBeenSet = true; m_requests.emplace(key, std::move(value)); return *this; }
-    inline EksContainerResourceRequirements& AddRequests(Aws::String&& key, const char* value) { m_requestsHasBeenSet = true; m_requests.emplace(std::move(key), value); return *this; }
-    inline EksContainerResourceRequirements& AddRequests(const char* key, const char* value) { m_requestsHasBeenSet = true; m_requests.emplace(key, value); return *this; }
+    template<typename RequestsT = Aws::Map<Aws::String, Aws::String>>
+    void SetRequests(RequestsT&& value) { m_requestsHasBeenSet = true; m_requests = std::forward<RequestsT>(value); }
+    template<typename RequestsT = Aws::Map<Aws::String, Aws::String>>
+    EksContainerResourceRequirements& WithRequests(RequestsT&& value) { SetRequests(std::forward<RequestsT>(value)); return *this;}
+    template<typename RequestsKeyT = Aws::String, typename RequestsValueT = Aws::String>
+    EksContainerResourceRequirements& AddRequests(RequestsKeyT&& key, RequestsValueT&& value) {
+      m_requestsHasBeenSet = true; m_requests.emplace(std::forward<RequestsKeyT>(key), std::forward<RequestsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

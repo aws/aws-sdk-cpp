@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-RuleGroupSourceStatelessRulesDetails::RuleGroupSourceStatelessRulesDetails() : 
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_ruleDefinitionHasBeenSet(false)
-{
-}
-
 RuleGroupSourceStatelessRulesDetails::RuleGroupSourceStatelessRulesDetails(JsonView jsonValue)
-  : RuleGroupSourceStatelessRulesDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RuleGroupSourceStatelessRulesDetails& RuleGroupSourceStatelessRulesDetails::oper
   if(jsonValue.ValueExists("Priority"))
   {
     m_priority = jsonValue.GetInteger("Priority");
-
     m_priorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleDefinition"))
   {
     m_ruleDefinition = jsonValue.GetObject("RuleDefinition");
-
     m_ruleDefinitionHasBeenSet = true;
   }
-
   return *this;
 }
 

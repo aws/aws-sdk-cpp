@@ -18,15 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-OtaTaskExecutionRolloutConfig::OtaTaskExecutionRolloutConfig() : 
-    m_exponentialRolloutRateHasBeenSet(false),
-    m_maximumPerMinute(0),
-    m_maximumPerMinuteHasBeenSet(false)
-{
-}
-
 OtaTaskExecutionRolloutConfig::OtaTaskExecutionRolloutConfig(JsonView jsonValue)
-  : OtaTaskExecutionRolloutConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ OtaTaskExecutionRolloutConfig& OtaTaskExecutionRolloutConfig::operator =(JsonVie
   if(jsonValue.ValueExists("ExponentialRolloutRate"))
   {
     m_exponentialRolloutRate = jsonValue.GetObject("ExponentialRolloutRate");
-
     m_exponentialRolloutRateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumPerMinute"))
   {
     m_maximumPerMinute = jsonValue.GetInteger("MaximumPerMinute");
-
     m_maximumPerMinuteHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -35,7 +35,7 @@ namespace Model
   class CustomParameterValues
   {
   public:
-    AWS_QUICKSIGHT_API CustomParameterValues();
+    AWS_QUICKSIGHT_API CustomParameterValues() = default;
     AWS_QUICKSIGHT_API CustomParameterValues(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API CustomParameterValues& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,27 +45,26 @@ namespace Model
     /**
      * <p>A list of string-type parameter values.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStringValues() const{ return m_stringValues; }
+    inline const Aws::Vector<Aws::String>& GetStringValues() const { return m_stringValues; }
     inline bool StringValuesHasBeenSet() const { return m_stringValuesHasBeenSet; }
-    inline void SetStringValues(const Aws::Vector<Aws::String>& value) { m_stringValuesHasBeenSet = true; m_stringValues = value; }
-    inline void SetStringValues(Aws::Vector<Aws::String>&& value) { m_stringValuesHasBeenSet = true; m_stringValues = std::move(value); }
-    inline CustomParameterValues& WithStringValues(const Aws::Vector<Aws::String>& value) { SetStringValues(value); return *this;}
-    inline CustomParameterValues& WithStringValues(Aws::Vector<Aws::String>&& value) { SetStringValues(std::move(value)); return *this;}
-    inline CustomParameterValues& AddStringValues(const Aws::String& value) { m_stringValuesHasBeenSet = true; m_stringValues.push_back(value); return *this; }
-    inline CustomParameterValues& AddStringValues(Aws::String&& value) { m_stringValuesHasBeenSet = true; m_stringValues.push_back(std::move(value)); return *this; }
-    inline CustomParameterValues& AddStringValues(const char* value) { m_stringValuesHasBeenSet = true; m_stringValues.push_back(value); return *this; }
+    template<typename StringValuesT = Aws::Vector<Aws::String>>
+    void SetStringValues(StringValuesT&& value) { m_stringValuesHasBeenSet = true; m_stringValues = std::forward<StringValuesT>(value); }
+    template<typename StringValuesT = Aws::Vector<Aws::String>>
+    CustomParameterValues& WithStringValues(StringValuesT&& value) { SetStringValues(std::forward<StringValuesT>(value)); return *this;}
+    template<typename StringValuesT = Aws::String>
+    CustomParameterValues& AddStringValues(StringValuesT&& value) { m_stringValuesHasBeenSet = true; m_stringValues.emplace_back(std::forward<StringValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of integer-type parameter values.</p>
      */
-    inline const Aws::Vector<long long>& GetIntegerValues() const{ return m_integerValues; }
+    inline const Aws::Vector<long long>& GetIntegerValues() const { return m_integerValues; }
     inline bool IntegerValuesHasBeenSet() const { return m_integerValuesHasBeenSet; }
-    inline void SetIntegerValues(const Aws::Vector<long long>& value) { m_integerValuesHasBeenSet = true; m_integerValues = value; }
-    inline void SetIntegerValues(Aws::Vector<long long>&& value) { m_integerValuesHasBeenSet = true; m_integerValues = std::move(value); }
-    inline CustomParameterValues& WithIntegerValues(const Aws::Vector<long long>& value) { SetIntegerValues(value); return *this;}
-    inline CustomParameterValues& WithIntegerValues(Aws::Vector<long long>&& value) { SetIntegerValues(std::move(value)); return *this;}
+    template<typename IntegerValuesT = Aws::Vector<long long>>
+    void SetIntegerValues(IntegerValuesT&& value) { m_integerValuesHasBeenSet = true; m_integerValues = std::forward<IntegerValuesT>(value); }
+    template<typename IntegerValuesT = Aws::Vector<long long>>
+    CustomParameterValues& WithIntegerValues(IntegerValuesT&& value) { SetIntegerValues(std::forward<IntegerValuesT>(value)); return *this;}
     inline CustomParameterValues& AddIntegerValues(long long value) { m_integerValuesHasBeenSet = true; m_integerValues.push_back(value); return *this; }
     ///@}
 
@@ -73,12 +72,12 @@ namespace Model
     /**
      * <p>A list of decimal-type parameter values.</p>
      */
-    inline const Aws::Vector<double>& GetDecimalValues() const{ return m_decimalValues; }
+    inline const Aws::Vector<double>& GetDecimalValues() const { return m_decimalValues; }
     inline bool DecimalValuesHasBeenSet() const { return m_decimalValuesHasBeenSet; }
-    inline void SetDecimalValues(const Aws::Vector<double>& value) { m_decimalValuesHasBeenSet = true; m_decimalValues = value; }
-    inline void SetDecimalValues(Aws::Vector<double>&& value) { m_decimalValuesHasBeenSet = true; m_decimalValues = std::move(value); }
-    inline CustomParameterValues& WithDecimalValues(const Aws::Vector<double>& value) { SetDecimalValues(value); return *this;}
-    inline CustomParameterValues& WithDecimalValues(Aws::Vector<double>&& value) { SetDecimalValues(std::move(value)); return *this;}
+    template<typename DecimalValuesT = Aws::Vector<double>>
+    void SetDecimalValues(DecimalValuesT&& value) { m_decimalValuesHasBeenSet = true; m_decimalValues = std::forward<DecimalValuesT>(value); }
+    template<typename DecimalValuesT = Aws::Vector<double>>
+    CustomParameterValues& WithDecimalValues(DecimalValuesT&& value) { SetDecimalValues(std::forward<DecimalValuesT>(value)); return *this;}
     inline CustomParameterValues& AddDecimalValues(double value) { m_decimalValuesHasBeenSet = true; m_decimalValues.push_back(value); return *this; }
     ///@}
 
@@ -86,14 +85,14 @@ namespace Model
     /**
      * <p>A list of datetime-type parameter values.</p>
      */
-    inline const Aws::Vector<Aws::Utils::DateTime>& GetDateTimeValues() const{ return m_dateTimeValues; }
+    inline const Aws::Vector<Aws::Utils::DateTime>& GetDateTimeValues() const { return m_dateTimeValues; }
     inline bool DateTimeValuesHasBeenSet() const { return m_dateTimeValuesHasBeenSet; }
-    inline void SetDateTimeValues(const Aws::Vector<Aws::Utils::DateTime>& value) { m_dateTimeValuesHasBeenSet = true; m_dateTimeValues = value; }
-    inline void SetDateTimeValues(Aws::Vector<Aws::Utils::DateTime>&& value) { m_dateTimeValuesHasBeenSet = true; m_dateTimeValues = std::move(value); }
-    inline CustomParameterValues& WithDateTimeValues(const Aws::Vector<Aws::Utils::DateTime>& value) { SetDateTimeValues(value); return *this;}
-    inline CustomParameterValues& WithDateTimeValues(Aws::Vector<Aws::Utils::DateTime>&& value) { SetDateTimeValues(std::move(value)); return *this;}
-    inline CustomParameterValues& AddDateTimeValues(const Aws::Utils::DateTime& value) { m_dateTimeValuesHasBeenSet = true; m_dateTimeValues.push_back(value); return *this; }
-    inline CustomParameterValues& AddDateTimeValues(Aws::Utils::DateTime&& value) { m_dateTimeValuesHasBeenSet = true; m_dateTimeValues.push_back(std::move(value)); return *this; }
+    template<typename DateTimeValuesT = Aws::Vector<Aws::Utils::DateTime>>
+    void SetDateTimeValues(DateTimeValuesT&& value) { m_dateTimeValuesHasBeenSet = true; m_dateTimeValues = std::forward<DateTimeValuesT>(value); }
+    template<typename DateTimeValuesT = Aws::Vector<Aws::Utils::DateTime>>
+    CustomParameterValues& WithDateTimeValues(DateTimeValuesT&& value) { SetDateTimeValues(std::forward<DateTimeValuesT>(value)); return *this;}
+    template<typename DateTimeValuesT = Aws::Utils::DateTime>
+    CustomParameterValues& AddDateTimeValues(DateTimeValuesT&& value) { m_dateTimeValuesHasBeenSet = true; m_dateTimeValues.emplace_back(std::forward<DateTimeValuesT>(value)); return *this; }
     ///@}
   private:
 

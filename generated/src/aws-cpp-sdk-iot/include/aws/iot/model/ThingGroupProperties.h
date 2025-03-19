@@ -32,7 +32,7 @@ namespace Model
   class ThingGroupProperties
   {
   public:
-    AWS_IOT_API ThingGroupProperties();
+    AWS_IOT_API ThingGroupProperties() = default;
     AWS_IOT_API ThingGroupProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API ThingGroupProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,26 +42,24 @@ namespace Model
     /**
      * <p>The thing group description.</p>
      */
-    inline const Aws::String& GetThingGroupDescription() const{ return m_thingGroupDescription; }
+    inline const Aws::String& GetThingGroupDescription() const { return m_thingGroupDescription; }
     inline bool ThingGroupDescriptionHasBeenSet() const { return m_thingGroupDescriptionHasBeenSet; }
-    inline void SetThingGroupDescription(const Aws::String& value) { m_thingGroupDescriptionHasBeenSet = true; m_thingGroupDescription = value; }
-    inline void SetThingGroupDescription(Aws::String&& value) { m_thingGroupDescriptionHasBeenSet = true; m_thingGroupDescription = std::move(value); }
-    inline void SetThingGroupDescription(const char* value) { m_thingGroupDescriptionHasBeenSet = true; m_thingGroupDescription.assign(value); }
-    inline ThingGroupProperties& WithThingGroupDescription(const Aws::String& value) { SetThingGroupDescription(value); return *this;}
-    inline ThingGroupProperties& WithThingGroupDescription(Aws::String&& value) { SetThingGroupDescription(std::move(value)); return *this;}
-    inline ThingGroupProperties& WithThingGroupDescription(const char* value) { SetThingGroupDescription(value); return *this;}
+    template<typename ThingGroupDescriptionT = Aws::String>
+    void SetThingGroupDescription(ThingGroupDescriptionT&& value) { m_thingGroupDescriptionHasBeenSet = true; m_thingGroupDescription = std::forward<ThingGroupDescriptionT>(value); }
+    template<typename ThingGroupDescriptionT = Aws::String>
+    ThingGroupProperties& WithThingGroupDescription(ThingGroupDescriptionT&& value) { SetThingGroupDescription(std::forward<ThingGroupDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The thing group attributes in JSON format.</p>
      */
-    inline const AttributePayload& GetAttributePayload() const{ return m_attributePayload; }
+    inline const AttributePayload& GetAttributePayload() const { return m_attributePayload; }
     inline bool AttributePayloadHasBeenSet() const { return m_attributePayloadHasBeenSet; }
-    inline void SetAttributePayload(const AttributePayload& value) { m_attributePayloadHasBeenSet = true; m_attributePayload = value; }
-    inline void SetAttributePayload(AttributePayload&& value) { m_attributePayloadHasBeenSet = true; m_attributePayload = std::move(value); }
-    inline ThingGroupProperties& WithAttributePayload(const AttributePayload& value) { SetAttributePayload(value); return *this;}
-    inline ThingGroupProperties& WithAttributePayload(AttributePayload&& value) { SetAttributePayload(std::move(value)); return *this;}
+    template<typename AttributePayloadT = AttributePayload>
+    void SetAttributePayload(AttributePayloadT&& value) { m_attributePayloadHasBeenSet = true; m_attributePayload = std::forward<AttributePayloadT>(value); }
+    template<typename AttributePayloadT = AttributePayload>
+    ThingGroupProperties& WithAttributePayload(AttributePayloadT&& value) { SetAttributePayload(std::forward<AttributePayloadT>(value)); return *this;}
     ///@}
   private:
 

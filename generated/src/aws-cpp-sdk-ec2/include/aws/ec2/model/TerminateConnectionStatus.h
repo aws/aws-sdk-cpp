@@ -33,7 +33,7 @@ namespace Model
   class TerminateConnectionStatus
   {
   public:
-    AWS_EC2_API TerminateConnectionStatus();
+    AWS_EC2_API TerminateConnectionStatus() = default;
     AWS_EC2_API TerminateConnectionStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API TerminateConnectionStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,38 +45,36 @@ namespace Model
     /**
      * <p>The ID of the client connection.</p>
      */
-    inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
+    inline const Aws::String& GetConnectionId() const { return m_connectionId; }
     inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
-    inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
-    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
-    inline void SetConnectionId(const char* value) { m_connectionIdHasBeenSet = true; m_connectionId.assign(value); }
-    inline TerminateConnectionStatus& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
-    inline TerminateConnectionStatus& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
-    inline TerminateConnectionStatus& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
+    template<typename ConnectionIdT = Aws::String>
+    void SetConnectionId(ConnectionIdT&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::forward<ConnectionIdT>(value); }
+    template<typename ConnectionIdT = Aws::String>
+    TerminateConnectionStatus& WithConnectionId(ConnectionIdT&& value) { SetConnectionId(std::forward<ConnectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the client connection.</p>
      */
-    inline const ClientVpnConnectionStatus& GetPreviousStatus() const{ return m_previousStatus; }
+    inline const ClientVpnConnectionStatus& GetPreviousStatus() const { return m_previousStatus; }
     inline bool PreviousStatusHasBeenSet() const { return m_previousStatusHasBeenSet; }
-    inline void SetPreviousStatus(const ClientVpnConnectionStatus& value) { m_previousStatusHasBeenSet = true; m_previousStatus = value; }
-    inline void SetPreviousStatus(ClientVpnConnectionStatus&& value) { m_previousStatusHasBeenSet = true; m_previousStatus = std::move(value); }
-    inline TerminateConnectionStatus& WithPreviousStatus(const ClientVpnConnectionStatus& value) { SetPreviousStatus(value); return *this;}
-    inline TerminateConnectionStatus& WithPreviousStatus(ClientVpnConnectionStatus&& value) { SetPreviousStatus(std::move(value)); return *this;}
+    template<typename PreviousStatusT = ClientVpnConnectionStatus>
+    void SetPreviousStatus(PreviousStatusT&& value) { m_previousStatusHasBeenSet = true; m_previousStatus = std::forward<PreviousStatusT>(value); }
+    template<typename PreviousStatusT = ClientVpnConnectionStatus>
+    TerminateConnectionStatus& WithPreviousStatus(PreviousStatusT&& value) { SetPreviousStatus(std::forward<PreviousStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A message about the status of the client connection, if applicable.</p>
      */
-    inline const ClientVpnConnectionStatus& GetCurrentStatus() const{ return m_currentStatus; }
+    inline const ClientVpnConnectionStatus& GetCurrentStatus() const { return m_currentStatus; }
     inline bool CurrentStatusHasBeenSet() const { return m_currentStatusHasBeenSet; }
-    inline void SetCurrentStatus(const ClientVpnConnectionStatus& value) { m_currentStatusHasBeenSet = true; m_currentStatus = value; }
-    inline void SetCurrentStatus(ClientVpnConnectionStatus&& value) { m_currentStatusHasBeenSet = true; m_currentStatus = std::move(value); }
-    inline TerminateConnectionStatus& WithCurrentStatus(const ClientVpnConnectionStatus& value) { SetCurrentStatus(value); return *this;}
-    inline TerminateConnectionStatus& WithCurrentStatus(ClientVpnConnectionStatus&& value) { SetCurrentStatus(std::move(value)); return *this;}
+    template<typename CurrentStatusT = ClientVpnConnectionStatus>
+    void SetCurrentStatus(CurrentStatusT&& value) { m_currentStatusHasBeenSet = true; m_currentStatus = std::forward<CurrentStatusT>(value); }
+    template<typename CurrentStatusT = ClientVpnConnectionStatus>
+    TerminateConnectionStatus& WithCurrentStatus(CurrentStatusT&& value) { SetCurrentStatus(std::forward<CurrentStatusT>(value)); return *this;}
     ///@}
   private:
 

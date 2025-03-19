@@ -18,18 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-ScannedItemCount::ScannedItemCount() : 
-    m_totalGb(0),
-    m_totalGbHasBeenSet(false),
-    m_files(0),
-    m_filesHasBeenSet(false),
-    m_volumes(0),
-    m_volumesHasBeenSet(false)
-{
-}
-
 ScannedItemCount::ScannedItemCount(JsonView jsonValue)
-  : ScannedItemCount()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ ScannedItemCount& ScannedItemCount::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("totalGb"))
   {
     m_totalGb = jsonValue.GetInteger("totalGb");
-
     m_totalGbHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("files"))
   {
     m_files = jsonValue.GetInteger("files");
-
     m_filesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumes"))
   {
     m_volumes = jsonValue.GetInteger("volumes");
-
     m_volumesHasBeenSet = true;
   }
-
   return *this;
 }
 

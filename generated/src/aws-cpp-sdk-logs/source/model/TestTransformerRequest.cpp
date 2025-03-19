@@ -12,12 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TestTransformerRequest::TestTransformerRequest() : 
-    m_transformerConfigHasBeenSet(false),
-    m_logEventMessagesHasBeenSet(false)
-{
-}
-
 Aws::String TestTransformerRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,14 +12,6 @@ using namespace Aws::BackupGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TestHypervisorConfigurationRequest::TestHypervisorConfigurationRequest() : 
-    m_gatewayArnHasBeenSet(false),
-    m_hostHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_usernameHasBeenSet(false)
-{
-}
-
 Aws::String TestHypervisorConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

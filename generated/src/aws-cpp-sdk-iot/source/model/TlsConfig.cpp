@@ -18,13 +18,7 @@ namespace IoT
 namespace Model
 {
 
-TlsConfig::TlsConfig() : 
-    m_securityPolicyHasBeenSet(false)
-{
-}
-
 TlsConfig::TlsConfig(JsonView jsonValue)
-  : TlsConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TlsConfig& TlsConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("securityPolicy"))
   {
     m_securityPolicy = jsonValue.GetString("securityPolicy");
-
     m_securityPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

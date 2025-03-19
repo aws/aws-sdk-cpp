@@ -18,20 +18,7 @@ namespace ApiGatewayV2
 namespace Model
 {
 
-Cors::Cors() : 
-    m_allowCredentials(false),
-    m_allowCredentialsHasBeenSet(false),
-    m_allowHeadersHasBeenSet(false),
-    m_allowMethodsHasBeenSet(false),
-    m_allowOriginsHasBeenSet(false),
-    m_exposeHeadersHasBeenSet(false),
-    m_maxAge(0),
-    m_maxAgeHasBeenSet(false)
-{
-}
-
 Cors::Cors(JsonView jsonValue)
-  : Cors()
 {
   *this = jsonValue;
 }
@@ -41,10 +28,8 @@ Cors& Cors::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("allowCredentials"))
   {
     m_allowCredentials = jsonValue.GetBool("allowCredentials");
-
     m_allowCredentialsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowHeaders"))
   {
     Aws::Utils::Array<JsonView> allowHeadersJsonList = jsonValue.GetArray("allowHeaders");
@@ -54,7 +39,6 @@ Cors& Cors::operator =(JsonView jsonValue)
     }
     m_allowHeadersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowMethods"))
   {
     Aws::Utils::Array<JsonView> allowMethodsJsonList = jsonValue.GetArray("allowMethods");
@@ -64,7 +48,6 @@ Cors& Cors::operator =(JsonView jsonValue)
     }
     m_allowMethodsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowOrigins"))
   {
     Aws::Utils::Array<JsonView> allowOriginsJsonList = jsonValue.GetArray("allowOrigins");
@@ -74,7 +57,6 @@ Cors& Cors::operator =(JsonView jsonValue)
     }
     m_allowOriginsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exposeHeaders"))
   {
     Aws::Utils::Array<JsonView> exposeHeadersJsonList = jsonValue.GetArray("exposeHeaders");
@@ -84,14 +66,11 @@ Cors& Cors::operator =(JsonView jsonValue)
     }
     m_exposeHeadersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxAge"))
   {
     m_maxAge = jsonValue.GetInteger("maxAge");
-
     m_maxAgeHasBeenSet = true;
   }
-
   return *this;
 }
 

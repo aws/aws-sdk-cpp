@@ -18,16 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteNumber::RouteNumber() : 
-    m_direction(RouteDirection::NOT_SET),
-    m_directionHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 RouteNumber::RouteNumber(JsonView jsonValue)
-  : RouteNumber()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ RouteNumber& RouteNumber::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Direction"))
   {
     m_direction = RouteDirectionMapper::GetRouteDirectionForName(jsonValue.GetString("Direction"));
-
     m_directionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Language"))
   {
     m_language = jsonValue.GetString("Language");
-
     m_languageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

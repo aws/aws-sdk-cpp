@@ -18,16 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-RuleVerdictExpression::RuleVerdictExpression() : 
-    m_evaluateHasBeenSet(false),
-    m_operator(RuleVerdictOperator::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 RuleVerdictExpression::RuleVerdictExpression(JsonView jsonValue)
-  : RuleVerdictExpression()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RuleVerdictExpression& RuleVerdictExpression::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Evaluate"))
   {
     m_evaluate = jsonValue.GetObject("Evaluate");
-
     m_evaluateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = RuleVerdictOperatorMapper::GetRuleVerdictOperatorForName(jsonValue.GetString("Operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -57,7 +44,6 @@ RuleVerdictExpression& RuleVerdictExpression::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

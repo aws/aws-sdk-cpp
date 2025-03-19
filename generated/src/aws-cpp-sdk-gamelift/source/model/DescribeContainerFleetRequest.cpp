@@ -12,11 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeContainerFleetRequest::DescribeContainerFleetRequest() : 
-    m_fleetIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeContainerFleetRequest::SerializePayload() const
 {
   JsonValue payload;

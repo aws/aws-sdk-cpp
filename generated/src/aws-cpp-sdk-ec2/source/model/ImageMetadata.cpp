@@ -20,24 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ImageMetadata::ImageMetadata() : 
-    m_imageIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_state(ImageState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_imageOwnerAliasHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_deprecationTimeHasBeenSet(false),
-    m_imageAllowed(false),
-    m_imageAllowedHasBeenSet(false),
-    m_isPublic(false),
-    m_isPublicHasBeenSet(false)
-{
-}
-
 ImageMetadata::ImageMetadata(const XmlNode& xmlNode)
-  : ImageMetadata()
 {
   *this = xmlNode;
 }
@@ -69,7 +52,7 @@ ImageMetadata& ImageMetadata::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("imageState");
     if(!stateNode.IsNull())
     {
-      m_state = ImageStateMapper::GetImageStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = ImageStateMapper::GetImageStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode imageOwnerAliasNode = resultNode.FirstChild("imageOwnerAlias");

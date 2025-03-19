@@ -34,7 +34,7 @@ namespace Model
   class DestinationSchema
   {
   public:
-    AWS_KINESISANALYTICS_API DestinationSchema();
+    AWS_KINESISANALYTICS_API DestinationSchema() = default;
     AWS_KINESISANALYTICS_API DestinationSchema(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICS_API DestinationSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,16 +44,14 @@ namespace Model
     /**
      * <p>Specifies the format of the records on the output stream.</p>
      */
-    inline const RecordFormatType& GetRecordFormatType() const{ return m_recordFormatType; }
+    inline RecordFormatType GetRecordFormatType() const { return m_recordFormatType; }
     inline bool RecordFormatTypeHasBeenSet() const { return m_recordFormatTypeHasBeenSet; }
-    inline void SetRecordFormatType(const RecordFormatType& value) { m_recordFormatTypeHasBeenSet = true; m_recordFormatType = value; }
-    inline void SetRecordFormatType(RecordFormatType&& value) { m_recordFormatTypeHasBeenSet = true; m_recordFormatType = std::move(value); }
-    inline DestinationSchema& WithRecordFormatType(const RecordFormatType& value) { SetRecordFormatType(value); return *this;}
-    inline DestinationSchema& WithRecordFormatType(RecordFormatType&& value) { SetRecordFormatType(std::move(value)); return *this;}
+    inline void SetRecordFormatType(RecordFormatType value) { m_recordFormatTypeHasBeenSet = true; m_recordFormatType = value; }
+    inline DestinationSchema& WithRecordFormatType(RecordFormatType value) { SetRecordFormatType(value); return *this;}
     ///@}
   private:
 
-    RecordFormatType m_recordFormatType;
+    RecordFormatType m_recordFormatType{RecordFormatType::NOT_SET};
     bool m_recordFormatTypeHasBeenSet = false;
   };
 

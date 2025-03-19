@@ -18,10 +18,6 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchRemoveFacetFromObjectResponse::BatchRemoveFacetFromObjectResponse()
-{
-}
-
 BatchRemoveFacetFromObjectResponse::BatchRemoveFacetFromObjectResponse(JsonView jsonValue)
 {
   *this = jsonValue;

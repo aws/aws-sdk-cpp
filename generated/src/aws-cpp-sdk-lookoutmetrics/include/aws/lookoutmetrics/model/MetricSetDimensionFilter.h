@@ -37,7 +37,7 @@ namespace Model
   class MetricSetDimensionFilter
   {
   public:
-    AWS_LOOKOUTMETRICS_API MetricSetDimensionFilter();
+    AWS_LOOKOUTMETRICS_API MetricSetDimensionFilter() = default;
     AWS_LOOKOUTMETRICS_API MetricSetDimensionFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API MetricSetDimensionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,28 +47,26 @@ namespace Model
     /**
      * <p>The dimension that you want to filter on.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline MetricSetDimensionFilter& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline MetricSetDimensionFilter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline MetricSetDimensionFilter& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    MetricSetDimensionFilter& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of filters that you are applying.</p>
      */
-    inline const Aws::Vector<Filter>& GetFilterList() const{ return m_filterList; }
+    inline const Aws::Vector<Filter>& GetFilterList() const { return m_filterList; }
     inline bool FilterListHasBeenSet() const { return m_filterListHasBeenSet; }
-    inline void SetFilterList(const Aws::Vector<Filter>& value) { m_filterListHasBeenSet = true; m_filterList = value; }
-    inline void SetFilterList(Aws::Vector<Filter>&& value) { m_filterListHasBeenSet = true; m_filterList = std::move(value); }
-    inline MetricSetDimensionFilter& WithFilterList(const Aws::Vector<Filter>& value) { SetFilterList(value); return *this;}
-    inline MetricSetDimensionFilter& WithFilterList(Aws::Vector<Filter>&& value) { SetFilterList(std::move(value)); return *this;}
-    inline MetricSetDimensionFilter& AddFilterList(const Filter& value) { m_filterListHasBeenSet = true; m_filterList.push_back(value); return *this; }
-    inline MetricSetDimensionFilter& AddFilterList(Filter&& value) { m_filterListHasBeenSet = true; m_filterList.push_back(std::move(value)); return *this; }
+    template<typename FilterListT = Aws::Vector<Filter>>
+    void SetFilterList(FilterListT&& value) { m_filterListHasBeenSet = true; m_filterList = std::forward<FilterListT>(value); }
+    template<typename FilterListT = Aws::Vector<Filter>>
+    MetricSetDimensionFilter& WithFilterList(FilterListT&& value) { SetFilterList(std::forward<FilterListT>(value)); return *this;}
+    template<typename FilterListT = Filter>
+    MetricSetDimensionFilter& AddFilterList(FilterListT&& value) { m_filterListHasBeenSet = true; m_filterList.emplace_back(std::forward<FilterListT>(value)); return *this; }
     ///@}
   private:
 

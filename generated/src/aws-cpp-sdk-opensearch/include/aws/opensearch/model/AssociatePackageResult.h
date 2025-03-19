@@ -34,7 +34,7 @@ namespace Model
   class AssociatePackageResult
   {
   public:
-    AWS_OPENSEARCHSERVICE_API AssociatePackageResult();
+    AWS_OPENSEARCHSERVICE_API AssociatePackageResult() = default;
     AWS_OPENSEARCHSERVICE_API AssociatePackageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPENSEARCHSERVICE_API AssociatePackageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>Information about a package that is associated with a domain.</p>
      */
-    inline const DomainPackageDetails& GetDomainPackageDetails() const{ return m_domainPackageDetails; }
-    inline void SetDomainPackageDetails(const DomainPackageDetails& value) { m_domainPackageDetails = value; }
-    inline void SetDomainPackageDetails(DomainPackageDetails&& value) { m_domainPackageDetails = std::move(value); }
-    inline AssociatePackageResult& WithDomainPackageDetails(const DomainPackageDetails& value) { SetDomainPackageDetails(value); return *this;}
-    inline AssociatePackageResult& WithDomainPackageDetails(DomainPackageDetails&& value) { SetDomainPackageDetails(std::move(value)); return *this;}
+    inline const DomainPackageDetails& GetDomainPackageDetails() const { return m_domainPackageDetails; }
+    template<typename DomainPackageDetailsT = DomainPackageDetails>
+    void SetDomainPackageDetails(DomainPackageDetailsT&& value) { m_domainPackageDetailsHasBeenSet = true; m_domainPackageDetails = std::forward<DomainPackageDetailsT>(value); }
+    template<typename DomainPackageDetailsT = DomainPackageDetails>
+    AssociatePackageResult& WithDomainPackageDetails(DomainPackageDetailsT&& value) { SetDomainPackageDetails(std::forward<DomainPackageDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AssociatePackageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AssociatePackageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AssociatePackageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AssociatePackageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DomainPackageDetails m_domainPackageDetails;
+    bool m_domainPackageDetailsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

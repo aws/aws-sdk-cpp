@@ -10,20 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-LockSnapshotRequest::LockSnapshotRequest() : 
-    m_snapshotIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_lockMode(LockMode::NOT_SET),
-    m_lockModeHasBeenSet(false),
-    m_coolOffPeriod(0),
-    m_coolOffPeriodHasBeenSet(false),
-    m_lockDuration(0),
-    m_lockDurationHasBeenSet(false),
-    m_expirationDateHasBeenSet(false)
-{
-}
-
 Aws::String LockSnapshotRequest::SerializePayload() const
 {
   Aws::StringStream ss;

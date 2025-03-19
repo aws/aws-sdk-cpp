@@ -18,22 +18,7 @@ namespace HealthLake
 namespace Model
 {
 
-ExportJobProperties::ExportJobProperties() : 
-    m_jobIdHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_submitTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_datastoreIdHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ExportJobProperties::ExportJobProperties(JsonView jsonValue)
-  : ExportJobProperties()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ ExportJobProperties& ExportJobProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobName"))
   {
     m_jobName = jsonValue.GetString("JobName");
-
     m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobStatus"))
   {
     m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("JobStatus"));
-
     m_jobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubmitTime"))
   {
     m_submitTime = jsonValue.GetDouble("SubmitTime");
-
     m_submitTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatastoreId"))
   {
     m_datastoreId = jsonValue.GetString("DatastoreId");
-
     m_datastoreIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputDataConfig"))
   {
     m_outputDataConfig = jsonValue.GetObject("OutputDataConfig");
-
     m_outputDataConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataAccessRoleArn"))
   {
     m_dataAccessRoleArn = jsonValue.GetString("DataAccessRoleArn");
-
     m_dataAccessRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

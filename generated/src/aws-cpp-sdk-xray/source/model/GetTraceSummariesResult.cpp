@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTraceSummariesResult::GetTraceSummariesResult() : 
-    m_tracesProcessedCount(0)
-{
-}
-
 GetTraceSummariesResult::GetTraceSummariesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetTraceSummariesResult()
 {
   *this = result;
 }
@@ -38,32 +32,30 @@ GetTraceSummariesResult& GetTraceSummariesResult::operator =(const Aws::AmazonWe
     {
       m_traceSummaries.push_back(traceSummariesJsonList[traceSummariesIndex].AsObject());
     }
+    m_traceSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApproximateTime"))
   {
     m_approximateTime = jsonValue.GetDouble("ApproximateTime");
-
+    m_approximateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TracesProcessedCount"))
   {
     m_tracesProcessedCount = jsonValue.GetInt64("TracesProcessedCount");
-
+    m_tracesProcessedCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

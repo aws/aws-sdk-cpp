@@ -12,19 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRoutingProfileRequest::CreateRoutingProfileRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_defaultOutboundQueueIdHasBeenSet(false),
-    m_queueConfigsHasBeenSet(false),
-    m_mediaConcurrenciesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_agentAvailabilityTimer(AgentAvailabilityTimer::NOT_SET),
-    m_agentAvailabilityTimerHasBeenSet(false)
-{
-}
-
 Aws::String CreateRoutingProfileRequest::SerializePayload() const
 {
   JsonValue payload;

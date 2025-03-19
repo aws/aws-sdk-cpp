@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateApiMappingResult::UpdateApiMappingResult()
-{
-}
-
 UpdateApiMappingResult::UpdateApiMappingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,30 @@ UpdateApiMappingResult& UpdateApiMappingResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("apiId"))
   {
     m_apiId = jsonValue.GetString("apiId");
-
+    m_apiIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiMappingId"))
   {
     m_apiMappingId = jsonValue.GetString("apiMappingId");
-
+    m_apiMappingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiMappingKey"))
   {
     m_apiMappingKey = jsonValue.GetString("apiMappingKey");
-
+    m_apiMappingKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stage"))
   {
     m_stage = jsonValue.GetString("stage");
-
+    m_stageHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

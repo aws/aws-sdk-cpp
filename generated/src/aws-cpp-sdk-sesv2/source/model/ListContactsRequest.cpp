@@ -12,15 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListContactsRequest::ListContactsRequest() : 
-    m_contactListNameHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListContactsRequest::SerializePayload() const
 {
   JsonValue payload;

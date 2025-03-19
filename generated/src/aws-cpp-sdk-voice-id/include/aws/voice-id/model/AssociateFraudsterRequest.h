@@ -21,7 +21,7 @@ namespace Model
   class AssociateFraudsterRequest : public VoiceIDRequest
   {
   public:
-    AWS_VOICEID_API AssociateFraudsterRequest();
+    AWS_VOICEID_API AssociateFraudsterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,42 +38,36 @@ namespace Model
     /**
      * <p>The identifier of the domain that contains the fraudster.</p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-    inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-    inline AssociateFraudsterRequest& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline AssociateFraudsterRequest& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline AssociateFraudsterRequest& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    AssociateFraudsterRequest& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the fraudster to be associated with the watchlist.</p>
      */
-    inline const Aws::String& GetFraudsterId() const{ return m_fraudsterId; }
+    inline const Aws::String& GetFraudsterId() const { return m_fraudsterId; }
     inline bool FraudsterIdHasBeenSet() const { return m_fraudsterIdHasBeenSet; }
-    inline void SetFraudsterId(const Aws::String& value) { m_fraudsterIdHasBeenSet = true; m_fraudsterId = value; }
-    inline void SetFraudsterId(Aws::String&& value) { m_fraudsterIdHasBeenSet = true; m_fraudsterId = std::move(value); }
-    inline void SetFraudsterId(const char* value) { m_fraudsterIdHasBeenSet = true; m_fraudsterId.assign(value); }
-    inline AssociateFraudsterRequest& WithFraudsterId(const Aws::String& value) { SetFraudsterId(value); return *this;}
-    inline AssociateFraudsterRequest& WithFraudsterId(Aws::String&& value) { SetFraudsterId(std::move(value)); return *this;}
-    inline AssociateFraudsterRequest& WithFraudsterId(const char* value) { SetFraudsterId(value); return *this;}
+    template<typename FraudsterIdT = Aws::String>
+    void SetFraudsterId(FraudsterIdT&& value) { m_fraudsterIdHasBeenSet = true; m_fraudsterId = std::forward<FraudsterIdT>(value); }
+    template<typename FraudsterIdT = Aws::String>
+    AssociateFraudsterRequest& WithFraudsterId(FraudsterIdT&& value) { SetFraudsterId(std::forward<FraudsterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the watchlist you want to associate with the fraudster.</p>
      */
-    inline const Aws::String& GetWatchlistId() const{ return m_watchlistId; }
+    inline const Aws::String& GetWatchlistId() const { return m_watchlistId; }
     inline bool WatchlistIdHasBeenSet() const { return m_watchlistIdHasBeenSet; }
-    inline void SetWatchlistId(const Aws::String& value) { m_watchlistIdHasBeenSet = true; m_watchlistId = value; }
-    inline void SetWatchlistId(Aws::String&& value) { m_watchlistIdHasBeenSet = true; m_watchlistId = std::move(value); }
-    inline void SetWatchlistId(const char* value) { m_watchlistIdHasBeenSet = true; m_watchlistId.assign(value); }
-    inline AssociateFraudsterRequest& WithWatchlistId(const Aws::String& value) { SetWatchlistId(value); return *this;}
-    inline AssociateFraudsterRequest& WithWatchlistId(Aws::String&& value) { SetWatchlistId(std::move(value)); return *this;}
-    inline AssociateFraudsterRequest& WithWatchlistId(const char* value) { SetWatchlistId(value); return *this;}
+    template<typename WatchlistIdT = Aws::String>
+    void SetWatchlistId(WatchlistIdT&& value) { m_watchlistIdHasBeenSet = true; m_watchlistId = std::forward<WatchlistIdT>(value); }
+    template<typename WatchlistIdT = Aws::String>
+    AssociateFraudsterRequest& WithWatchlistId(WatchlistIdT&& value) { SetWatchlistId(std::forward<WatchlistIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,18 +18,7 @@ namespace SecurityIR
 namespace Model
 {
 
-ListCommentsItem::ListCommentsItem() : 
-    m_commentIdHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_creatorHasBeenSet(false),
-    m_lastUpdatedByHasBeenSet(false),
-    m_bodyHasBeenSet(false)
-{
-}
-
 ListCommentsItem::ListCommentsItem(JsonView jsonValue)
-  : ListCommentsItem()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ ListCommentsItem& ListCommentsItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("commentId"))
   {
     m_commentId = jsonValue.GetString("commentId");
-
     m_commentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetDouble("createdDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDate"))
   {
     m_lastUpdatedDate = jsonValue.GetDouble("lastUpdatedDate");
-
     m_lastUpdatedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creator"))
   {
     m_creator = jsonValue.GetString("creator");
-
     m_creatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedBy"))
   {
     m_lastUpdatedBy = jsonValue.GetString("lastUpdatedBy");
-
     m_lastUpdatedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("body"))
   {
     m_body = jsonValue.GetString("body");
-
     m_bodyHasBeenSet = true;
   }
-
   return *this;
 }
 

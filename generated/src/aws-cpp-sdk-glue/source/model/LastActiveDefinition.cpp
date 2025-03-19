@@ -18,17 +18,7 @@ namespace Glue
 namespace Model
 {
 
-LastActiveDefinition::LastActiveDefinition() : 
-    m_descriptionHasBeenSet(false),
-    m_lastModifiedOnHasBeenSet(false),
-    m_parameterSpecHasBeenSet(false),
-    m_blueprintLocationHasBeenSet(false),
-    m_blueprintServiceLocationHasBeenSet(false)
-{
-}
-
 LastActiveDefinition::LastActiveDefinition(JsonView jsonValue)
-  : LastActiveDefinition()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ LastActiveDefinition& LastActiveDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedOn"))
   {
     m_lastModifiedOn = jsonValue.GetDouble("LastModifiedOn");
-
     m_lastModifiedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParameterSpec"))
   {
     m_parameterSpec = jsonValue.GetString("ParameterSpec");
-
     m_parameterSpecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BlueprintLocation"))
   {
     m_blueprintLocation = jsonValue.GetString("BlueprintLocation");
-
     m_blueprintLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BlueprintServiceLocation"))
   {
     m_blueprintServiceLocation = jsonValue.GetString("BlueprintServiceLocation");
-
     m_blueprintServiceLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

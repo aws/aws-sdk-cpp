@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteActionRequest::DeleteActionRequest() : 
-    m_actionNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteActionRequest::SerializePayload() const
 {
   JsonValue payload;

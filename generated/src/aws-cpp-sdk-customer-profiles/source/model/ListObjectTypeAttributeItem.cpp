@@ -18,14 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-ListObjectTypeAttributeItem::ListObjectTypeAttributeItem() : 
-    m_attributeNameHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false)
-{
-}
-
 ListObjectTypeAttributeItem::ListObjectTypeAttributeItem(JsonView jsonValue)
-  : ListObjectTypeAttributeItem()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ListObjectTypeAttributeItem& ListObjectTypeAttributeItem::operator =(JsonView js
   if(jsonValue.ValueExists("AttributeName"))
   {
     m_attributeName = jsonValue.GetString("AttributeName");
-
     m_attributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

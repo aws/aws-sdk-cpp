@@ -18,35 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-Certificate::Certificate() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_status(CertificateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_serialNumberHasBeenSet(false),
-    m_subjectAlternativeNamesHasBeenSet(false),
-    m_domainValidationRecordsHasBeenSet(false),
-    m_requestFailureReasonHasBeenSet(false),
-    m_inUseResourceCount(0),
-    m_inUseResourceCountHasBeenSet(false),
-    m_keyAlgorithmHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_issuedAtHasBeenSet(false),
-    m_issuerCAHasBeenSet(false),
-    m_notBeforeHasBeenSet(false),
-    m_notAfterHasBeenSet(false),
-    m_eligibleToRenewHasBeenSet(false),
-    m_renewalSummaryHasBeenSet(false),
-    m_revokedAtHasBeenSet(false),
-    m_revocationReasonHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_supportCodeHasBeenSet(false)
-{
-}
-
 Certificate::Certificate(JsonView jsonValue)
-  : Certificate()
 {
   *this = jsonValue;
 }
@@ -56,38 +28,28 @@ Certificate& Certificate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainName"))
   {
     m_domainName = jsonValue.GetString("domainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = CertificateStatusMapper::GetCertificateStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serialNumber"))
   {
     m_serialNumber = jsonValue.GetString("serialNumber");
-
     m_serialNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subjectAlternativeNames"))
   {
     Aws::Utils::Array<JsonView> subjectAlternativeNamesJsonList = jsonValue.GetArray("subjectAlternativeNames");
@@ -97,7 +59,6 @@ Certificate& Certificate::operator =(JsonView jsonValue)
     }
     m_subjectAlternativeNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainValidationRecords"))
   {
     Aws::Utils::Array<JsonView> domainValidationRecordsJsonList = jsonValue.GetArray("domainValidationRecords");
@@ -107,91 +68,66 @@ Certificate& Certificate::operator =(JsonView jsonValue)
     }
     m_domainValidationRecordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestFailureReason"))
   {
     m_requestFailureReason = jsonValue.GetString("requestFailureReason");
-
     m_requestFailureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inUseResourceCount"))
   {
     m_inUseResourceCount = jsonValue.GetInteger("inUseResourceCount");
-
     m_inUseResourceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("keyAlgorithm"))
   {
     m_keyAlgorithm = jsonValue.GetString("keyAlgorithm");
-
     m_keyAlgorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("issuedAt"))
   {
     m_issuedAt = jsonValue.GetDouble("issuedAt");
-
     m_issuedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("issuerCA"))
   {
     m_issuerCA = jsonValue.GetString("issuerCA");
-
     m_issuerCAHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notBefore"))
   {
     m_notBefore = jsonValue.GetDouble("notBefore");
-
     m_notBeforeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("notAfter"))
   {
     m_notAfter = jsonValue.GetDouble("notAfter");
-
     m_notAfterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eligibleToRenew"))
   {
     m_eligibleToRenew = jsonValue.GetString("eligibleToRenew");
-
     m_eligibleToRenewHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("renewalSummary"))
   {
     m_renewalSummary = jsonValue.GetObject("renewalSummary");
-
     m_renewalSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revokedAt"))
   {
     m_revokedAt = jsonValue.GetDouble("revokedAt");
-
     m_revokedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("revocationReason"))
   {
     m_revocationReason = jsonValue.GetString("revocationReason");
-
     m_revocationReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -201,14 +137,11 @@ Certificate& Certificate::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportCode"))
   {
     m_supportCode = jsonValue.GetString("supportCode");
-
     m_supportCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

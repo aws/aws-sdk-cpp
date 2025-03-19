@@ -29,7 +29,7 @@ namespace Model
   class ListBackupJobSummariesResult
   {
   public:
-    AWS_BACKUP_API ListBackupJobSummariesResult();
+    AWS_BACKUP_API ListBackupJobSummariesResult() = default;
     AWS_BACKUP_API ListBackupJobSummariesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUP_API ListBackupJobSummariesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The summary information.</p>
      */
-    inline const Aws::Vector<BackupJobSummary>& GetBackupJobSummaries() const{ return m_backupJobSummaries; }
-    inline void SetBackupJobSummaries(const Aws::Vector<BackupJobSummary>& value) { m_backupJobSummaries = value; }
-    inline void SetBackupJobSummaries(Aws::Vector<BackupJobSummary>&& value) { m_backupJobSummaries = std::move(value); }
-    inline ListBackupJobSummariesResult& WithBackupJobSummaries(const Aws::Vector<BackupJobSummary>& value) { SetBackupJobSummaries(value); return *this;}
-    inline ListBackupJobSummariesResult& WithBackupJobSummaries(Aws::Vector<BackupJobSummary>&& value) { SetBackupJobSummaries(std::move(value)); return *this;}
-    inline ListBackupJobSummariesResult& AddBackupJobSummaries(const BackupJobSummary& value) { m_backupJobSummaries.push_back(value); return *this; }
-    inline ListBackupJobSummariesResult& AddBackupJobSummaries(BackupJobSummary&& value) { m_backupJobSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BackupJobSummary>& GetBackupJobSummaries() const { return m_backupJobSummaries; }
+    template<typename BackupJobSummariesT = Aws::Vector<BackupJobSummary>>
+    void SetBackupJobSummaries(BackupJobSummariesT&& value) { m_backupJobSummariesHasBeenSet = true; m_backupJobSummaries = std::forward<BackupJobSummariesT>(value); }
+    template<typename BackupJobSummariesT = Aws::Vector<BackupJobSummary>>
+    ListBackupJobSummariesResult& WithBackupJobSummaries(BackupJobSummariesT&& value) { SetBackupJobSummaries(std::forward<BackupJobSummariesT>(value)); return *this;}
+    template<typename BackupJobSummariesT = BackupJobSummary>
+    ListBackupJobSummariesResult& AddBackupJobSummaries(BackupJobSummariesT&& value) { m_backupJobSummariesHasBeenSet = true; m_backupJobSummaries.emplace_back(std::forward<BackupJobSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,13 +55,11 @@ namespace Model
      * </li> <li> <p> <code>FOURTEEN_DAYS</code> - The aggregated job count for prior
      * 14 days.</p> </li> </ul>
      */
-    inline const Aws::String& GetAggregationPeriod() const{ return m_aggregationPeriod; }
-    inline void SetAggregationPeriod(const Aws::String& value) { m_aggregationPeriod = value; }
-    inline void SetAggregationPeriod(Aws::String&& value) { m_aggregationPeriod = std::move(value); }
-    inline void SetAggregationPeriod(const char* value) { m_aggregationPeriod.assign(value); }
-    inline ListBackupJobSummariesResult& WithAggregationPeriod(const Aws::String& value) { SetAggregationPeriod(value); return *this;}
-    inline ListBackupJobSummariesResult& WithAggregationPeriod(Aws::String&& value) { SetAggregationPeriod(std::move(value)); return *this;}
-    inline ListBackupJobSummariesResult& WithAggregationPeriod(const char* value) { SetAggregationPeriod(value); return *this;}
+    inline const Aws::String& GetAggregationPeriod() const { return m_aggregationPeriod; }
+    template<typename AggregationPeriodT = Aws::String>
+    void SetAggregationPeriod(AggregationPeriodT&& value) { m_aggregationPeriodHasBeenSet = true; m_aggregationPeriod = std::forward<AggregationPeriodT>(value); }
+    template<typename AggregationPeriodT = Aws::String>
+    ListBackupJobSummariesResult& WithAggregationPeriod(AggregationPeriodT&& value) { SetAggregationPeriod(std::forward<AggregationPeriodT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,34 +69,34 @@ namespace Model
      * <code>NextToken</code> allows you to return more items in your list starting at
      * the location pointed to by the next token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListBackupJobSummariesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListBackupJobSummariesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListBackupJobSummariesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListBackupJobSummariesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListBackupJobSummariesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListBackupJobSummariesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListBackupJobSummariesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListBackupJobSummariesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BackupJobSummary> m_backupJobSummaries;
+    bool m_backupJobSummariesHasBeenSet = false;
 
     Aws::String m_aggregationPeriod;
+    bool m_aggregationPeriodHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

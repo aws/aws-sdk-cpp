@@ -29,7 +29,7 @@ namespace Model
   class UpdateEntityResult
   {
   public:
-    AWS_IOTTWINMAKER_API UpdateEntityResult();
+    AWS_IOTTWINMAKER_API UpdateEntityResult() = default;
     AWS_IOTTWINMAKER_API UpdateEntityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTTWINMAKER_API UpdateEntityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,41 +38,40 @@ namespace Model
     /**
      * <p>The date and time when the entity was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateDateTime() const{ return m_updateDateTime; }
-    inline void SetUpdateDateTime(const Aws::Utils::DateTime& value) { m_updateDateTime = value; }
-    inline void SetUpdateDateTime(Aws::Utils::DateTime&& value) { m_updateDateTime = std::move(value); }
-    inline UpdateEntityResult& WithUpdateDateTime(const Aws::Utils::DateTime& value) { SetUpdateDateTime(value); return *this;}
-    inline UpdateEntityResult& WithUpdateDateTime(Aws::Utils::DateTime&& value) { SetUpdateDateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdateDateTime() const { return m_updateDateTime; }
+    template<typename UpdateDateTimeT = Aws::Utils::DateTime>
+    void SetUpdateDateTime(UpdateDateTimeT&& value) { m_updateDateTimeHasBeenSet = true; m_updateDateTime = std::forward<UpdateDateTimeT>(value); }
+    template<typename UpdateDateTimeT = Aws::Utils::DateTime>
+    UpdateEntityResult& WithUpdateDateTime(UpdateDateTimeT&& value) { SetUpdateDateTime(std::forward<UpdateDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current state of the entity update.</p>
      */
-    inline const State& GetState() const{ return m_state; }
-    inline void SetState(const State& value) { m_state = value; }
-    inline void SetState(State&& value) { m_state = std::move(value); }
-    inline UpdateEntityResult& WithState(const State& value) { SetState(value); return *this;}
-    inline UpdateEntityResult& WithState(State&& value) { SetState(std::move(value)); return *this;}
+    inline State GetState() const { return m_state; }
+    inline void SetState(State value) { m_stateHasBeenSet = true; m_state = value; }
+    inline UpdateEntityResult& WithState(State value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateEntityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateEntityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateEntityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateEntityResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_updateDateTime;
+    Aws::Utils::DateTime m_updateDateTime{};
+    bool m_updateDateTimeHasBeenSet = false;
 
-    State m_state;
+    State m_state{State::NOT_SET};
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

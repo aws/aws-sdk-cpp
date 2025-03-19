@@ -12,11 +12,6 @@ using namespace Aws::NetworkFirewall::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteResourcePolicyRequest::DeleteResourcePolicyRequest() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteResourcePolicyRequest::SerializePayload() const
 {
   JsonValue payload;

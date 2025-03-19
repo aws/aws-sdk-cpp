@@ -18,16 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-InferenceResourceConfig::InferenceResourceConfig() : 
-    m_instanceType(InferenceInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false)
-{
-}
-
 InferenceResourceConfig::InferenceResourceConfig(JsonView jsonValue)
-  : InferenceResourceConfig()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ InferenceResourceConfig& InferenceResourceConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = InferenceInstanceTypeMapper::GetInferenceInstanceTypeForName(jsonValue.GetString("instanceType"));
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceCount"))
   {
     m_instanceCount = jsonValue.GetInteger("instanceCount");
-
     m_instanceCountHasBeenSet = true;
   }
-
   return *this;
 }
 

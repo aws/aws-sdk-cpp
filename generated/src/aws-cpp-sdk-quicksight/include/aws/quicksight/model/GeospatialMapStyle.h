@@ -33,7 +33,7 @@ namespace Model
   class GeospatialMapStyle
   {
   public:
-    AWS_QUICKSIGHT_API GeospatialMapStyle();
+    AWS_QUICKSIGHT_API GeospatialMapStyle() = default;
     AWS_QUICKSIGHT_API GeospatialMapStyle(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GeospatialMapStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,48 +43,42 @@ namespace Model
     /**
      * <p>The selected base map style.</p>
      */
-    inline const BaseMapStyleType& GetBaseMapStyle() const{ return m_baseMapStyle; }
+    inline BaseMapStyleType GetBaseMapStyle() const { return m_baseMapStyle; }
     inline bool BaseMapStyleHasBeenSet() const { return m_baseMapStyleHasBeenSet; }
-    inline void SetBaseMapStyle(const BaseMapStyleType& value) { m_baseMapStyleHasBeenSet = true; m_baseMapStyle = value; }
-    inline void SetBaseMapStyle(BaseMapStyleType&& value) { m_baseMapStyleHasBeenSet = true; m_baseMapStyle = std::move(value); }
-    inline GeospatialMapStyle& WithBaseMapStyle(const BaseMapStyleType& value) { SetBaseMapStyle(value); return *this;}
-    inline GeospatialMapStyle& WithBaseMapStyle(BaseMapStyleType&& value) { SetBaseMapStyle(std::move(value)); return *this;}
+    inline void SetBaseMapStyle(BaseMapStyleType value) { m_baseMapStyleHasBeenSet = true; m_baseMapStyle = value; }
+    inline GeospatialMapStyle& WithBaseMapStyle(BaseMapStyleType value) { SetBaseMapStyle(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The background color and opacity values for a map.</p>
      */
-    inline const Aws::String& GetBackgroundColor() const{ return m_backgroundColor; }
+    inline const Aws::String& GetBackgroundColor() const { return m_backgroundColor; }
     inline bool BackgroundColorHasBeenSet() const { return m_backgroundColorHasBeenSet; }
-    inline void SetBackgroundColor(const Aws::String& value) { m_backgroundColorHasBeenSet = true; m_backgroundColor = value; }
-    inline void SetBackgroundColor(Aws::String&& value) { m_backgroundColorHasBeenSet = true; m_backgroundColor = std::move(value); }
-    inline void SetBackgroundColor(const char* value) { m_backgroundColorHasBeenSet = true; m_backgroundColor.assign(value); }
-    inline GeospatialMapStyle& WithBackgroundColor(const Aws::String& value) { SetBackgroundColor(value); return *this;}
-    inline GeospatialMapStyle& WithBackgroundColor(Aws::String&& value) { SetBackgroundColor(std::move(value)); return *this;}
-    inline GeospatialMapStyle& WithBackgroundColor(const char* value) { SetBackgroundColor(value); return *this;}
+    template<typename BackgroundColorT = Aws::String>
+    void SetBackgroundColor(BackgroundColorT&& value) { m_backgroundColorHasBeenSet = true; m_backgroundColor = std::forward<BackgroundColorT>(value); }
+    template<typename BackgroundColorT = Aws::String>
+    GeospatialMapStyle& WithBackgroundColor(BackgroundColorT&& value) { SetBackgroundColor(std::forward<BackgroundColorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of visibility for the base map.</p>
      */
-    inline const Visibility& GetBaseMapVisibility() const{ return m_baseMapVisibility; }
+    inline Visibility GetBaseMapVisibility() const { return m_baseMapVisibility; }
     inline bool BaseMapVisibilityHasBeenSet() const { return m_baseMapVisibilityHasBeenSet; }
-    inline void SetBaseMapVisibility(const Visibility& value) { m_baseMapVisibilityHasBeenSet = true; m_baseMapVisibility = value; }
-    inline void SetBaseMapVisibility(Visibility&& value) { m_baseMapVisibilityHasBeenSet = true; m_baseMapVisibility = std::move(value); }
-    inline GeospatialMapStyle& WithBaseMapVisibility(const Visibility& value) { SetBaseMapVisibility(value); return *this;}
-    inline GeospatialMapStyle& WithBaseMapVisibility(Visibility&& value) { SetBaseMapVisibility(std::move(value)); return *this;}
+    inline void SetBaseMapVisibility(Visibility value) { m_baseMapVisibilityHasBeenSet = true; m_baseMapVisibility = value; }
+    inline GeospatialMapStyle& WithBaseMapVisibility(Visibility value) { SetBaseMapVisibility(value); return *this;}
     ///@}
   private:
 
-    BaseMapStyleType m_baseMapStyle;
+    BaseMapStyleType m_baseMapStyle{BaseMapStyleType::NOT_SET};
     bool m_baseMapStyleHasBeenSet = false;
 
     Aws::String m_backgroundColor;
     bool m_backgroundColorHasBeenSet = false;
 
-    Visibility m_baseMapVisibility;
+    Visibility m_baseMapVisibility{Visibility::NOT_SET};
     bool m_baseMapVisibilityHasBeenSet = false;
   };
 

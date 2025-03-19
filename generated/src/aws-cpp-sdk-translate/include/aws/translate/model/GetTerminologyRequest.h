@@ -22,7 +22,7 @@ namespace Model
   class GetTerminologyRequest : public TranslateRequest
   {
   public:
-    AWS_TRANSLATE_API GetTerminologyRequest();
+    AWS_TRANSLATE_API GetTerminologyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The name of the custom terminology being retrieved.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline GetTerminologyRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetTerminologyRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetTerminologyRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetTerminologyRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,19 +56,17 @@ namespace Model
      * resource, you must specify the same format as the input file that was imported
      * to create it. Otherwise, Amazon Translate throws an error.</p>
      */
-    inline const TerminologyDataFormat& GetTerminologyDataFormat() const{ return m_terminologyDataFormat; }
+    inline TerminologyDataFormat GetTerminologyDataFormat() const { return m_terminologyDataFormat; }
     inline bool TerminologyDataFormatHasBeenSet() const { return m_terminologyDataFormatHasBeenSet; }
-    inline void SetTerminologyDataFormat(const TerminologyDataFormat& value) { m_terminologyDataFormatHasBeenSet = true; m_terminologyDataFormat = value; }
-    inline void SetTerminologyDataFormat(TerminologyDataFormat&& value) { m_terminologyDataFormatHasBeenSet = true; m_terminologyDataFormat = std::move(value); }
-    inline GetTerminologyRequest& WithTerminologyDataFormat(const TerminologyDataFormat& value) { SetTerminologyDataFormat(value); return *this;}
-    inline GetTerminologyRequest& WithTerminologyDataFormat(TerminologyDataFormat&& value) { SetTerminologyDataFormat(std::move(value)); return *this;}
+    inline void SetTerminologyDataFormat(TerminologyDataFormat value) { m_terminologyDataFormatHasBeenSet = true; m_terminologyDataFormat = value; }
+    inline GetTerminologyRequest& WithTerminologyDataFormat(TerminologyDataFormat value) { SetTerminologyDataFormat(value); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    TerminologyDataFormat m_terminologyDataFormat;
+    TerminologyDataFormat m_terminologyDataFormat{TerminologyDataFormat::NOT_SET};
     bool m_terminologyDataFormatHasBeenSet = false;
   };
 

@@ -18,13 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-S3ClassificationScopeUpdate::S3ClassificationScopeUpdate() : 
-    m_excludesHasBeenSet(false)
-{
-}
-
 S3ClassificationScopeUpdate::S3ClassificationScopeUpdate(JsonView jsonValue)
-  : S3ClassificationScopeUpdate()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ S3ClassificationScopeUpdate& S3ClassificationScopeUpdate::operator =(JsonView js
   if(jsonValue.ValueExists("excludes"))
   {
     m_excludes = jsonValue.GetObject("excludes");
-
     m_excludesHasBeenSet = true;
   }
-
   return *this;
 }
 

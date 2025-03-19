@@ -32,7 +32,7 @@ namespace Model
   class DataSource
   {
   public:
-    AWS_CLEANROOMSML_API DataSource();
+    AWS_CLEANROOMSML_API DataSource() = default;
     AWS_CLEANROOMSML_API DataSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>A GlueDataSource object that defines the catalog ID, database name, and table
      * name for the training data.</p>
      */
-    inline const GlueDataSource& GetGlueDataSource() const{ return m_glueDataSource; }
+    inline const GlueDataSource& GetGlueDataSource() const { return m_glueDataSource; }
     inline bool GlueDataSourceHasBeenSet() const { return m_glueDataSourceHasBeenSet; }
-    inline void SetGlueDataSource(const GlueDataSource& value) { m_glueDataSourceHasBeenSet = true; m_glueDataSource = value; }
-    inline void SetGlueDataSource(GlueDataSource&& value) { m_glueDataSourceHasBeenSet = true; m_glueDataSource = std::move(value); }
-    inline DataSource& WithGlueDataSource(const GlueDataSource& value) { SetGlueDataSource(value); return *this;}
-    inline DataSource& WithGlueDataSource(GlueDataSource&& value) { SetGlueDataSource(std::move(value)); return *this;}
+    template<typename GlueDataSourceT = GlueDataSource>
+    void SetGlueDataSource(GlueDataSourceT&& value) { m_glueDataSourceHasBeenSet = true; m_glueDataSource = std::forward<GlueDataSourceT>(value); }
+    template<typename GlueDataSourceT = GlueDataSource>
+    DataSource& WithGlueDataSource(GlueDataSourceT&& value) { SetGlueDataSource(std::forward<GlueDataSourceT>(value)); return *this;}
     ///@}
   private:
 

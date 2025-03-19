@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpRange::IpRange() : 
-    m_descriptionHasBeenSet(false),
-    m_cidrIpHasBeenSet(false)
-{
-}
-
 IpRange::IpRange(const XmlNode& xmlNode)
-  : IpRange()
 {
   *this = xmlNode;
 }

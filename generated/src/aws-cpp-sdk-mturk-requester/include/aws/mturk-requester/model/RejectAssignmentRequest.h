@@ -21,7 +21,7 @@ namespace Model
   class RejectAssignmentRequest : public MTurkRequest
   {
   public:
-    AWS_MTURK_API RejectAssignmentRequest();
+    AWS_MTURK_API RejectAssignmentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p> The ID of the assignment. The assignment must correspond to a HIT created by
      * the Requester. </p>
      */
-    inline const Aws::String& GetAssignmentId() const{ return m_assignmentId; }
+    inline const Aws::String& GetAssignmentId() const { return m_assignmentId; }
     inline bool AssignmentIdHasBeenSet() const { return m_assignmentIdHasBeenSet; }
-    inline void SetAssignmentId(const Aws::String& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = value; }
-    inline void SetAssignmentId(Aws::String&& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = std::move(value); }
-    inline void SetAssignmentId(const char* value) { m_assignmentIdHasBeenSet = true; m_assignmentId.assign(value); }
-    inline RejectAssignmentRequest& WithAssignmentId(const Aws::String& value) { SetAssignmentId(value); return *this;}
-    inline RejectAssignmentRequest& WithAssignmentId(Aws::String&& value) { SetAssignmentId(std::move(value)); return *this;}
-    inline RejectAssignmentRequest& WithAssignmentId(const char* value) { SetAssignmentId(value); return *this;}
+    template<typename AssignmentIdT = Aws::String>
+    void SetAssignmentId(AssignmentIdT&& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = std::forward<AssignmentIdT>(value); }
+    template<typename AssignmentIdT = Aws::String>
+    RejectAssignmentRequest& WithAssignmentId(AssignmentIdT&& value) { SetAssignmentId(std::forward<AssignmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * <p> A message for the Worker, which the Worker can see in the Status section of
      * the web site. </p>
      */
-    inline const Aws::String& GetRequesterFeedback() const{ return m_requesterFeedback; }
+    inline const Aws::String& GetRequesterFeedback() const { return m_requesterFeedback; }
     inline bool RequesterFeedbackHasBeenSet() const { return m_requesterFeedbackHasBeenSet; }
-    inline void SetRequesterFeedback(const Aws::String& value) { m_requesterFeedbackHasBeenSet = true; m_requesterFeedback = value; }
-    inline void SetRequesterFeedback(Aws::String&& value) { m_requesterFeedbackHasBeenSet = true; m_requesterFeedback = std::move(value); }
-    inline void SetRequesterFeedback(const char* value) { m_requesterFeedbackHasBeenSet = true; m_requesterFeedback.assign(value); }
-    inline RejectAssignmentRequest& WithRequesterFeedback(const Aws::String& value) { SetRequesterFeedback(value); return *this;}
-    inline RejectAssignmentRequest& WithRequesterFeedback(Aws::String&& value) { SetRequesterFeedback(std::move(value)); return *this;}
-    inline RejectAssignmentRequest& WithRequesterFeedback(const char* value) { SetRequesterFeedback(value); return *this;}
+    template<typename RequesterFeedbackT = Aws::String>
+    void SetRequesterFeedback(RequesterFeedbackT&& value) { m_requesterFeedbackHasBeenSet = true; m_requesterFeedback = std::forward<RequesterFeedbackT>(value); }
+    template<typename RequesterFeedbackT = Aws::String>
+    RejectAssignmentRequest& WithRequesterFeedback(RequesterFeedbackT&& value) { SetRequesterFeedback(std::forward<RequesterFeedbackT>(value)); return *this;}
     ///@}
   private:
 

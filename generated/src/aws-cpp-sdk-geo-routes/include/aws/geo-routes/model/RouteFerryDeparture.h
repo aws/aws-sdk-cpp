@@ -33,7 +33,7 @@ namespace Model
   class RouteFerryDeparture
   {
   public:
-    AWS_GEOROUTES_API RouteFerryDeparture();
+    AWS_GEOROUTES_API RouteFerryDeparture() = default;
     AWS_GEOROUTES_API RouteFerryDeparture(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteFerryDeparture& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p>The place details.</p>
      */
-    inline const RouteFerryPlace& GetPlace() const{ return m_place; }
+    inline const RouteFerryPlace& GetPlace() const { return m_place; }
     inline bool PlaceHasBeenSet() const { return m_placeHasBeenSet; }
-    inline void SetPlace(const RouteFerryPlace& value) { m_placeHasBeenSet = true; m_place = value; }
-    inline void SetPlace(RouteFerryPlace&& value) { m_placeHasBeenSet = true; m_place = std::move(value); }
-    inline RouteFerryDeparture& WithPlace(const RouteFerryPlace& value) { SetPlace(value); return *this;}
-    inline RouteFerryDeparture& WithPlace(RouteFerryPlace&& value) { SetPlace(std::move(value)); return *this;}
+    template<typename PlaceT = RouteFerryPlace>
+    void SetPlace(PlaceT&& value) { m_placeHasBeenSet = true; m_place = std::forward<PlaceT>(value); }
+    template<typename PlaceT = RouteFerryPlace>
+    RouteFerryDeparture& WithPlace(PlaceT&& value) { SetPlace(std::forward<PlaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time.</p>
      */
-    inline const Aws::String& GetTime() const{ return m_time; }
+    inline const Aws::String& GetTime() const { return m_time; }
     inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
-    inline void SetTime(const Aws::String& value) { m_timeHasBeenSet = true; m_time = value; }
-    inline void SetTime(Aws::String&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
-    inline void SetTime(const char* value) { m_timeHasBeenSet = true; m_time.assign(value); }
-    inline RouteFerryDeparture& WithTime(const Aws::String& value) { SetTime(value); return *this;}
-    inline RouteFerryDeparture& WithTime(Aws::String&& value) { SetTime(std::move(value)); return *this;}
-    inline RouteFerryDeparture& WithTime(const char* value) { SetTime(value); return *this;}
+    template<typename TimeT = Aws::String>
+    void SetTime(TimeT&& value) { m_timeHasBeenSet = true; m_time = std::forward<TimeT>(value); }
+    template<typename TimeT = Aws::String>
+    RouteFerryDeparture& WithTime(TimeT&& value) { SetTime(std::forward<TimeT>(value)); return *this;}
     ///@}
   private:
 

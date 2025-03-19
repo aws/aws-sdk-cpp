@@ -34,7 +34,7 @@ namespace Model
   class SavingsPlansUtilizationAggregates
   {
   public:
-    AWS_COSTEXPLORER_API SavingsPlansUtilizationAggregates();
+    AWS_COSTEXPLORER_API SavingsPlansUtilizationAggregates() = default;
     AWS_COSTEXPLORER_API SavingsPlansUtilizationAggregates(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API SavingsPlansUtilizationAggregates& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>A ratio of your effectiveness of using existing Savings Plans to apply to
      * workloads that are Savings Plans eligible.</p>
      */
-    inline const SavingsPlansUtilization& GetUtilization() const{ return m_utilization; }
+    inline const SavingsPlansUtilization& GetUtilization() const { return m_utilization; }
     inline bool UtilizationHasBeenSet() const { return m_utilizationHasBeenSet; }
-    inline void SetUtilization(const SavingsPlansUtilization& value) { m_utilizationHasBeenSet = true; m_utilization = value; }
-    inline void SetUtilization(SavingsPlansUtilization&& value) { m_utilizationHasBeenSet = true; m_utilization = std::move(value); }
-    inline SavingsPlansUtilizationAggregates& WithUtilization(const SavingsPlansUtilization& value) { SetUtilization(value); return *this;}
-    inline SavingsPlansUtilizationAggregates& WithUtilization(SavingsPlansUtilization&& value) { SetUtilization(std::move(value)); return *this;}
+    template<typename UtilizationT = SavingsPlansUtilization>
+    void SetUtilization(UtilizationT&& value) { m_utilizationHasBeenSet = true; m_utilization = std::forward<UtilizationT>(value); }
+    template<typename UtilizationT = SavingsPlansUtilization>
+    SavingsPlansUtilizationAggregates& WithUtilization(UtilizationT&& value) { SetUtilization(std::forward<UtilizationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +59,12 @@ namespace Model
      * net savings from Savings Plans and also the <code>onDemandCostEquivalent</code>
      * of the Savings Plans when considering the utilization rate.</p>
      */
-    inline const SavingsPlansSavings& GetSavings() const{ return m_savings; }
+    inline const SavingsPlansSavings& GetSavings() const { return m_savings; }
     inline bool SavingsHasBeenSet() const { return m_savingsHasBeenSet; }
-    inline void SetSavings(const SavingsPlansSavings& value) { m_savingsHasBeenSet = true; m_savings = value; }
-    inline void SetSavings(SavingsPlansSavings&& value) { m_savingsHasBeenSet = true; m_savings = std::move(value); }
-    inline SavingsPlansUtilizationAggregates& WithSavings(const SavingsPlansSavings& value) { SetSavings(value); return *this;}
-    inline SavingsPlansUtilizationAggregates& WithSavings(SavingsPlansSavings&& value) { SetSavings(std::move(value)); return *this;}
+    template<typename SavingsT = SavingsPlansSavings>
+    void SetSavings(SavingsT&& value) { m_savingsHasBeenSet = true; m_savings = std::forward<SavingsT>(value); }
+    template<typename SavingsT = SavingsPlansSavings>
+    SavingsPlansUtilizationAggregates& WithSavings(SavingsT&& value) { SetSavings(std::forward<SavingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +72,12 @@ namespace Model
      * <p>The total amortized commitment for a Savings Plans. This includes the sum of
      * the upfront and recurring Savings Plans fees.</p>
      */
-    inline const SavingsPlansAmortizedCommitment& GetAmortizedCommitment() const{ return m_amortizedCommitment; }
+    inline const SavingsPlansAmortizedCommitment& GetAmortizedCommitment() const { return m_amortizedCommitment; }
     inline bool AmortizedCommitmentHasBeenSet() const { return m_amortizedCommitmentHasBeenSet; }
-    inline void SetAmortizedCommitment(const SavingsPlansAmortizedCommitment& value) { m_amortizedCommitmentHasBeenSet = true; m_amortizedCommitment = value; }
-    inline void SetAmortizedCommitment(SavingsPlansAmortizedCommitment&& value) { m_amortizedCommitmentHasBeenSet = true; m_amortizedCommitment = std::move(value); }
-    inline SavingsPlansUtilizationAggregates& WithAmortizedCommitment(const SavingsPlansAmortizedCommitment& value) { SetAmortizedCommitment(value); return *this;}
-    inline SavingsPlansUtilizationAggregates& WithAmortizedCommitment(SavingsPlansAmortizedCommitment&& value) { SetAmortizedCommitment(std::move(value)); return *this;}
+    template<typename AmortizedCommitmentT = SavingsPlansAmortizedCommitment>
+    void SetAmortizedCommitment(AmortizedCommitmentT&& value) { m_amortizedCommitmentHasBeenSet = true; m_amortizedCommitment = std::forward<AmortizedCommitmentT>(value); }
+    template<typename AmortizedCommitmentT = SavingsPlansAmortizedCommitment>
+    SavingsPlansUtilizationAggregates& WithAmortizedCommitment(AmortizedCommitmentT&& value) { SetAmortizedCommitment(std::forward<AmortizedCommitmentT>(value)); return *this;}
     ///@}
   private:
 

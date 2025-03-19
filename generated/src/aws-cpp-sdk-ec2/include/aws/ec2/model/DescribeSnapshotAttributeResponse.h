@@ -31,7 +31,7 @@ namespace Model
   class DescribeSnapshotAttributeResponse
   {
   public:
-    AWS_EC2_API DescribeSnapshotAttributeResponse();
+    AWS_EC2_API DescribeSnapshotAttributeResponse() = default;
     AWS_EC2_API DescribeSnapshotAttributeResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeSnapshotAttributeResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,26 +40,24 @@ namespace Model
     /**
      * <p>The product codes.</p>
      */
-    inline const Aws::Vector<ProductCode>& GetProductCodes() const{ return m_productCodes; }
-    inline void SetProductCodes(const Aws::Vector<ProductCode>& value) { m_productCodes = value; }
-    inline void SetProductCodes(Aws::Vector<ProductCode>&& value) { m_productCodes = std::move(value); }
-    inline DescribeSnapshotAttributeResponse& WithProductCodes(const Aws::Vector<ProductCode>& value) { SetProductCodes(value); return *this;}
-    inline DescribeSnapshotAttributeResponse& WithProductCodes(Aws::Vector<ProductCode>&& value) { SetProductCodes(std::move(value)); return *this;}
-    inline DescribeSnapshotAttributeResponse& AddProductCodes(const ProductCode& value) { m_productCodes.push_back(value); return *this; }
-    inline DescribeSnapshotAttributeResponse& AddProductCodes(ProductCode&& value) { m_productCodes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ProductCode>& GetProductCodes() const { return m_productCodes; }
+    template<typename ProductCodesT = Aws::Vector<ProductCode>>
+    void SetProductCodes(ProductCodesT&& value) { m_productCodesHasBeenSet = true; m_productCodes = std::forward<ProductCodesT>(value); }
+    template<typename ProductCodesT = Aws::Vector<ProductCode>>
+    DescribeSnapshotAttributeResponse& WithProductCodes(ProductCodesT&& value) { SetProductCodes(std::forward<ProductCodesT>(value)); return *this;}
+    template<typename ProductCodesT = ProductCode>
+    DescribeSnapshotAttributeResponse& AddProductCodes(ProductCodesT&& value) { m_productCodesHasBeenSet = true; m_productCodes.emplace_back(std::forward<ProductCodesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the EBS snapshot.</p>
      */
-    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
-    inline void SetSnapshotId(const Aws::String& value) { m_snapshotId = value; }
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotId = std::move(value); }
-    inline void SetSnapshotId(const char* value) { m_snapshotId.assign(value); }
-    inline DescribeSnapshotAttributeResponse& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-    inline DescribeSnapshotAttributeResponse& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-    inline DescribeSnapshotAttributeResponse& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+    inline const Aws::String& GetSnapshotId() const { return m_snapshotId; }
+    template<typename SnapshotIdT = Aws::String>
+    void SetSnapshotId(SnapshotIdT&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::forward<SnapshotIdT>(value); }
+    template<typename SnapshotIdT = Aws::String>
+    DescribeSnapshotAttributeResponse& WithSnapshotId(SnapshotIdT&& value) { SetSnapshotId(std::forward<SnapshotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,32 +65,36 @@ namespace Model
      * <p>The users and groups that have the permissions for creating volumes from the
      * snapshot.</p>
      */
-    inline const Aws::Vector<CreateVolumePermission>& GetCreateVolumePermissions() const{ return m_createVolumePermissions; }
-    inline void SetCreateVolumePermissions(const Aws::Vector<CreateVolumePermission>& value) { m_createVolumePermissions = value; }
-    inline void SetCreateVolumePermissions(Aws::Vector<CreateVolumePermission>&& value) { m_createVolumePermissions = std::move(value); }
-    inline DescribeSnapshotAttributeResponse& WithCreateVolumePermissions(const Aws::Vector<CreateVolumePermission>& value) { SetCreateVolumePermissions(value); return *this;}
-    inline DescribeSnapshotAttributeResponse& WithCreateVolumePermissions(Aws::Vector<CreateVolumePermission>&& value) { SetCreateVolumePermissions(std::move(value)); return *this;}
-    inline DescribeSnapshotAttributeResponse& AddCreateVolumePermissions(const CreateVolumePermission& value) { m_createVolumePermissions.push_back(value); return *this; }
-    inline DescribeSnapshotAttributeResponse& AddCreateVolumePermissions(CreateVolumePermission&& value) { m_createVolumePermissions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CreateVolumePermission>& GetCreateVolumePermissions() const { return m_createVolumePermissions; }
+    template<typename CreateVolumePermissionsT = Aws::Vector<CreateVolumePermission>>
+    void SetCreateVolumePermissions(CreateVolumePermissionsT&& value) { m_createVolumePermissionsHasBeenSet = true; m_createVolumePermissions = std::forward<CreateVolumePermissionsT>(value); }
+    template<typename CreateVolumePermissionsT = Aws::Vector<CreateVolumePermission>>
+    DescribeSnapshotAttributeResponse& WithCreateVolumePermissions(CreateVolumePermissionsT&& value) { SetCreateVolumePermissions(std::forward<CreateVolumePermissionsT>(value)); return *this;}
+    template<typename CreateVolumePermissionsT = CreateVolumePermission>
+    DescribeSnapshotAttributeResponse& AddCreateVolumePermissions(CreateVolumePermissionsT&& value) { m_createVolumePermissionsHasBeenSet = true; m_createVolumePermissions.emplace_back(std::forward<CreateVolumePermissionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeSnapshotAttributeResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeSnapshotAttributeResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeSnapshotAttributeResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ProductCode> m_productCodes;
+    bool m_productCodesHasBeenSet = false;
 
     Aws::String m_snapshotId;
+    bool m_snapshotIdHasBeenSet = false;
 
     Aws::Vector<CreateVolumePermission> m_createVolumePermissions;
+    bool m_createVolumePermissionsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

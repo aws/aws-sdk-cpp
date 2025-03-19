@@ -12,13 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteWorkGroupRequest::DeleteWorkGroupRequest() : 
-    m_workGroupHasBeenSet(false),
-    m_recursiveDeleteOption(false),
-    m_recursiveDeleteOptionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWorkGroupRequest::SerializePayload() const
 {
   JsonValue payload;

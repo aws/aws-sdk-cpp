@@ -10,23 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeLaunchTemplateVersionsRequest::DescribeLaunchTemplateVersionsRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_launchTemplateIdHasBeenSet(false),
-    m_launchTemplateNameHasBeenSet(false),
-    m_versionsHasBeenSet(false),
-    m_minVersionHasBeenSet(false),
-    m_maxVersionHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_resolveAlias(false),
-    m_resolveAliasHasBeenSet(false)
-{
-}
-
 Aws::String DescribeLaunchTemplateVersionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

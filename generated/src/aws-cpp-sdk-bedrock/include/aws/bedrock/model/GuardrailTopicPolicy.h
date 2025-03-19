@@ -36,7 +36,7 @@ namespace Model
   class GuardrailTopicPolicy
   {
   public:
-    AWS_BEDROCK_API GuardrailTopicPolicy();
+    AWS_BEDROCK_API GuardrailTopicPolicy() = default;
     AWS_BEDROCK_API GuardrailTopicPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API GuardrailTopicPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
     /**
      * <p>A list of policies related to topics that the guardrail should deny.</p>
      */
-    inline const Aws::Vector<GuardrailTopic>& GetTopics() const{ return m_topics; }
+    inline const Aws::Vector<GuardrailTopic>& GetTopics() const { return m_topics; }
     inline bool TopicsHasBeenSet() const { return m_topicsHasBeenSet; }
-    inline void SetTopics(const Aws::Vector<GuardrailTopic>& value) { m_topicsHasBeenSet = true; m_topics = value; }
-    inline void SetTopics(Aws::Vector<GuardrailTopic>&& value) { m_topicsHasBeenSet = true; m_topics = std::move(value); }
-    inline GuardrailTopicPolicy& WithTopics(const Aws::Vector<GuardrailTopic>& value) { SetTopics(value); return *this;}
-    inline GuardrailTopicPolicy& WithTopics(Aws::Vector<GuardrailTopic>&& value) { SetTopics(std::move(value)); return *this;}
-    inline GuardrailTopicPolicy& AddTopics(const GuardrailTopic& value) { m_topicsHasBeenSet = true; m_topics.push_back(value); return *this; }
-    inline GuardrailTopicPolicy& AddTopics(GuardrailTopic&& value) { m_topicsHasBeenSet = true; m_topics.push_back(std::move(value)); return *this; }
+    template<typename TopicsT = Aws::Vector<GuardrailTopic>>
+    void SetTopics(TopicsT&& value) { m_topicsHasBeenSet = true; m_topics = std::forward<TopicsT>(value); }
+    template<typename TopicsT = Aws::Vector<GuardrailTopic>>
+    GuardrailTopicPolicy& WithTopics(TopicsT&& value) { SetTopics(std::forward<TopicsT>(value)); return *this;}
+    template<typename TopicsT = GuardrailTopic>
+    GuardrailTopicPolicy& AddTopics(TopicsT&& value) { m_topicsHasBeenSet = true; m_topics.emplace_back(std::forward<TopicsT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,16 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-QueryCompileErrorLocation::QueryCompileErrorLocation() : 
-    m_startCharOffset(0),
-    m_startCharOffsetHasBeenSet(false),
-    m_endCharOffset(0),
-    m_endCharOffsetHasBeenSet(false)
-{
-}
-
 QueryCompileErrorLocation::QueryCompileErrorLocation(JsonView jsonValue)
-  : QueryCompileErrorLocation()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ QueryCompileErrorLocation& QueryCompileErrorLocation::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("startCharOffset"))
   {
     m_startCharOffset = jsonValue.GetInteger("startCharOffset");
-
     m_startCharOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endCharOffset"))
   {
     m_endCharOffset = jsonValue.GetInteger("endCharOffset");
-
     m_endCharOffsetHasBeenSet = true;
   }
-
   return *this;
 }
 

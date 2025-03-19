@@ -12,13 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TerminateGameSessionRequest::TerminateGameSessionRequest() : 
-    m_gameSessionIdHasBeenSet(false),
-    m_terminationMode(TerminationMode::NOT_SET),
-    m_terminationModeHasBeenSet(false)
-{
-}
-
 Aws::String TerminateGameSessionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class DiscoveredResource
   {
   public:
-    AWS_FMS_API DiscoveredResource();
+    AWS_FMS_API DiscoveredResource() = default;
     AWS_FMS_API DiscoveredResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API DiscoveredResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The universal resource identifier (URI) of the discovered resource.</p>
      */
-    inline const Aws::String& GetURI() const{ return m_uRI; }
+    inline const Aws::String& GetURI() const { return m_uRI; }
     inline bool URIHasBeenSet() const { return m_uRIHasBeenSet; }
-    inline void SetURI(const Aws::String& value) { m_uRIHasBeenSet = true; m_uRI = value; }
-    inline void SetURI(Aws::String&& value) { m_uRIHasBeenSet = true; m_uRI = std::move(value); }
-    inline void SetURI(const char* value) { m_uRIHasBeenSet = true; m_uRI.assign(value); }
-    inline DiscoveredResource& WithURI(const Aws::String& value) { SetURI(value); return *this;}
-    inline DiscoveredResource& WithURI(Aws::String&& value) { SetURI(std::move(value)); return *this;}
-    inline DiscoveredResource& WithURI(const char* value) { SetURI(value); return *this;}
+    template<typename URIT = Aws::String>
+    void SetURI(URIT&& value) { m_uRIHasBeenSet = true; m_uRI = std::forward<URIT>(value); }
+    template<typename URIT = Aws::String>
+    DiscoveredResource& WithURI(URIT&& value) { SetURI(std::forward<URIT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,42 +55,36 @@ namespace Model
      * <p>The Amazon Web Services account ID associated with the discovered
      * resource.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline DiscoveredResource& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline DiscoveredResource& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline DiscoveredResource& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    DiscoveredResource& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the discovered resource.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline DiscoveredResource& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline DiscoveredResource& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline DiscoveredResource& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    DiscoveredResource& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the discovered resource.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DiscoveredResource& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DiscoveredResource& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DiscoveredResource& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DiscoveredResource& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

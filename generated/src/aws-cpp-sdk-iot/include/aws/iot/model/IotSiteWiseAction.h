@@ -34,7 +34,7 @@ namespace Model
   class IotSiteWiseAction
   {
   public:
-    AWS_IOT_API IotSiteWiseAction();
+    AWS_IOT_API IotSiteWiseAction() = default;
     AWS_IOT_API IotSiteWiseAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API IotSiteWiseAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
     /**
      * <p>A list of asset property value entries.</p>
      */
-    inline const Aws::Vector<PutAssetPropertyValueEntry>& GetPutAssetPropertyValueEntries() const{ return m_putAssetPropertyValueEntries; }
+    inline const Aws::Vector<PutAssetPropertyValueEntry>& GetPutAssetPropertyValueEntries() const { return m_putAssetPropertyValueEntries; }
     inline bool PutAssetPropertyValueEntriesHasBeenSet() const { return m_putAssetPropertyValueEntriesHasBeenSet; }
-    inline void SetPutAssetPropertyValueEntries(const Aws::Vector<PutAssetPropertyValueEntry>& value) { m_putAssetPropertyValueEntriesHasBeenSet = true; m_putAssetPropertyValueEntries = value; }
-    inline void SetPutAssetPropertyValueEntries(Aws::Vector<PutAssetPropertyValueEntry>&& value) { m_putAssetPropertyValueEntriesHasBeenSet = true; m_putAssetPropertyValueEntries = std::move(value); }
-    inline IotSiteWiseAction& WithPutAssetPropertyValueEntries(const Aws::Vector<PutAssetPropertyValueEntry>& value) { SetPutAssetPropertyValueEntries(value); return *this;}
-    inline IotSiteWiseAction& WithPutAssetPropertyValueEntries(Aws::Vector<PutAssetPropertyValueEntry>&& value) { SetPutAssetPropertyValueEntries(std::move(value)); return *this;}
-    inline IotSiteWiseAction& AddPutAssetPropertyValueEntries(const PutAssetPropertyValueEntry& value) { m_putAssetPropertyValueEntriesHasBeenSet = true; m_putAssetPropertyValueEntries.push_back(value); return *this; }
-    inline IotSiteWiseAction& AddPutAssetPropertyValueEntries(PutAssetPropertyValueEntry&& value) { m_putAssetPropertyValueEntriesHasBeenSet = true; m_putAssetPropertyValueEntries.push_back(std::move(value)); return *this; }
+    template<typename PutAssetPropertyValueEntriesT = Aws::Vector<PutAssetPropertyValueEntry>>
+    void SetPutAssetPropertyValueEntries(PutAssetPropertyValueEntriesT&& value) { m_putAssetPropertyValueEntriesHasBeenSet = true; m_putAssetPropertyValueEntries = std::forward<PutAssetPropertyValueEntriesT>(value); }
+    template<typename PutAssetPropertyValueEntriesT = Aws::Vector<PutAssetPropertyValueEntry>>
+    IotSiteWiseAction& WithPutAssetPropertyValueEntries(PutAssetPropertyValueEntriesT&& value) { SetPutAssetPropertyValueEntries(std::forward<PutAssetPropertyValueEntriesT>(value)); return *this;}
+    template<typename PutAssetPropertyValueEntriesT = PutAssetPropertyValueEntry>
+    IotSiteWiseAction& AddPutAssetPropertyValueEntries(PutAssetPropertyValueEntriesT&& value) { m_putAssetPropertyValueEntriesHasBeenSet = true; m_putAssetPropertyValueEntries.emplace_back(std::forward<PutAssetPropertyValueEntriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -61,14 +61,12 @@ namespace Model
      * "iotsitewise:BatchPutAssetPropertyValue"</code>). The trust policy can restrict
      * access to specific asset hierarchy paths.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline IotSiteWiseAction& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline IotSiteWiseAction& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline IotSiteWiseAction& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    IotSiteWiseAction& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

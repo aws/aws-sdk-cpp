@@ -12,22 +12,6 @@ using namespace Aws::Firehose::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDestinationRequest::UpdateDestinationRequest() : 
-    m_deliveryStreamNameHasBeenSet(false),
-    m_currentDeliveryStreamVersionIdHasBeenSet(false),
-    m_destinationIdHasBeenSet(false),
-    m_extendedS3DestinationUpdateHasBeenSet(false),
-    m_redshiftDestinationUpdateHasBeenSet(false),
-    m_elasticsearchDestinationUpdateHasBeenSet(false),
-    m_amazonopensearchserviceDestinationUpdateHasBeenSet(false),
-    m_splunkDestinationUpdateHasBeenSet(false),
-    m_httpEndpointDestinationUpdateHasBeenSet(false),
-    m_amazonOpenSearchServerlessDestinationUpdateHasBeenSet(false),
-    m_snowflakeDestinationUpdateHasBeenSet(false),
-    m_icebergDestinationUpdateHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDestinationRequest::SerializePayload() const
 {
   JsonValue payload;

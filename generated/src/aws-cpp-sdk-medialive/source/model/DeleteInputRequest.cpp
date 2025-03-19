@@ -12,11 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteInputRequest::DeleteInputRequest() : 
-    m_inputIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteInputRequest::SerializePayload() const
 {
   return {};

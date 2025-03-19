@@ -21,7 +21,7 @@ namespace Model
   class GetDataQualityResultRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API GetDataQualityResultRequest();
+    AWS_GLUE_API GetDataQualityResultRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>A unique result ID for the data quality result.</p>
      */
-    inline const Aws::String& GetResultId() const{ return m_resultId; }
+    inline const Aws::String& GetResultId() const { return m_resultId; }
     inline bool ResultIdHasBeenSet() const { return m_resultIdHasBeenSet; }
-    inline void SetResultId(const Aws::String& value) { m_resultIdHasBeenSet = true; m_resultId = value; }
-    inline void SetResultId(Aws::String&& value) { m_resultIdHasBeenSet = true; m_resultId = std::move(value); }
-    inline void SetResultId(const char* value) { m_resultIdHasBeenSet = true; m_resultId.assign(value); }
-    inline GetDataQualityResultRequest& WithResultId(const Aws::String& value) { SetResultId(value); return *this;}
-    inline GetDataQualityResultRequest& WithResultId(Aws::String&& value) { SetResultId(std::move(value)); return *this;}
-    inline GetDataQualityResultRequest& WithResultId(const char* value) { SetResultId(value); return *this;}
+    template<typename ResultIdT = Aws::String>
+    void SetResultId(ResultIdT&& value) { m_resultIdHasBeenSet = true; m_resultId = std::forward<ResultIdT>(value); }
+    template<typename ResultIdT = Aws::String>
+    GetDataQualityResultRequest& WithResultId(ResultIdT&& value) { SetResultId(std::forward<ResultIdT>(value)); return *this;}
     ///@}
   private:
 

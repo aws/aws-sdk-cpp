@@ -32,7 +32,7 @@ namespace Model
   class FlowDataConnectionConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API FlowDataConnectionConfiguration();
+    AWS_BEDROCKAGENT_API FlowDataConnectionConfiguration() = default;
     AWS_BEDROCKAGENT_API FlowDataConnectionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API FlowDataConnectionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * <p>The name of the output in the source node that the connection begins
      * from.</p>
      */
-    inline const Aws::String& GetSourceOutput() const{ return m_sourceOutput; }
+    inline const Aws::String& GetSourceOutput() const { return m_sourceOutput; }
     inline bool SourceOutputHasBeenSet() const { return m_sourceOutputHasBeenSet; }
-    inline void SetSourceOutput(const Aws::String& value) { m_sourceOutputHasBeenSet = true; m_sourceOutput = value; }
-    inline void SetSourceOutput(Aws::String&& value) { m_sourceOutputHasBeenSet = true; m_sourceOutput = std::move(value); }
-    inline void SetSourceOutput(const char* value) { m_sourceOutputHasBeenSet = true; m_sourceOutput.assign(value); }
-    inline FlowDataConnectionConfiguration& WithSourceOutput(const Aws::String& value) { SetSourceOutput(value); return *this;}
-    inline FlowDataConnectionConfiguration& WithSourceOutput(Aws::String&& value) { SetSourceOutput(std::move(value)); return *this;}
-    inline FlowDataConnectionConfiguration& WithSourceOutput(const char* value) { SetSourceOutput(value); return *this;}
+    template<typename SourceOutputT = Aws::String>
+    void SetSourceOutput(SourceOutputT&& value) { m_sourceOutputHasBeenSet = true; m_sourceOutput = std::forward<SourceOutputT>(value); }
+    template<typename SourceOutputT = Aws::String>
+    FlowDataConnectionConfiguration& WithSourceOutput(SourceOutputT&& value) { SetSourceOutput(std::forward<SourceOutputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the input in the target node that the connection ends at.</p>
      */
-    inline const Aws::String& GetTargetInput() const{ return m_targetInput; }
+    inline const Aws::String& GetTargetInput() const { return m_targetInput; }
     inline bool TargetInputHasBeenSet() const { return m_targetInputHasBeenSet; }
-    inline void SetTargetInput(const Aws::String& value) { m_targetInputHasBeenSet = true; m_targetInput = value; }
-    inline void SetTargetInput(Aws::String&& value) { m_targetInputHasBeenSet = true; m_targetInput = std::move(value); }
-    inline void SetTargetInput(const char* value) { m_targetInputHasBeenSet = true; m_targetInput.assign(value); }
-    inline FlowDataConnectionConfiguration& WithTargetInput(const Aws::String& value) { SetTargetInput(value); return *this;}
-    inline FlowDataConnectionConfiguration& WithTargetInput(Aws::String&& value) { SetTargetInput(std::move(value)); return *this;}
-    inline FlowDataConnectionConfiguration& WithTargetInput(const char* value) { SetTargetInput(value); return *this;}
+    template<typename TargetInputT = Aws::String>
+    void SetTargetInput(TargetInputT&& value) { m_targetInputHasBeenSet = true; m_targetInput = std::forward<TargetInputT>(value); }
+    template<typename TargetInputT = Aws::String>
+    FlowDataConnectionConfiguration& WithTargetInput(TargetInputT&& value) { SetTargetInput(std::forward<TargetInputT>(value)); return *this;}
     ///@}
   private:
 

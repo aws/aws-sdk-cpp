@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListIAMPolicyAssignmentsForUserRequest::ListIAMPolicyAssignmentsForUserRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_namespaceHasBeenSet(false)
-{
-}
-
 Aws::String ListIAMPolicyAssignmentsForUserRequest::SerializePayload() const
 {
   return {};

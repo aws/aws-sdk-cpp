@@ -12,13 +12,6 @@ using namespace Aws::XRay::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutEncryptionConfigRequest::PutEncryptionConfigRequest() : 
-    m_keyIdHasBeenSet(false),
-    m_type(EncryptionType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String PutEncryptionConfigRequest::SerializePayload() const
 {
   JsonValue payload;

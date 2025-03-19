@@ -33,7 +33,7 @@ namespace Model
   class RuleSummary
   {
   public:
-    AWS_RECYCLEBIN_API RuleSummary();
+    AWS_RECYCLEBIN_API RuleSummary() = default;
     AWS_RECYCLEBIN_API RuleSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_RECYCLEBIN_API RuleSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RECYCLEBIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The unique ID of the retention rule.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline RuleSummary& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline RuleSummary& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline RuleSummary& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    RuleSummary& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The retention rule description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline RuleSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline RuleSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline RuleSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    RuleSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +68,12 @@ namespace Model
      * <p>Information about the retention period for which the retention rule is to
      * retain resources.</p>
      */
-    inline const RetentionPeriod& GetRetentionPeriod() const{ return m_retentionPeriod; }
+    inline const RetentionPeriod& GetRetentionPeriod() const { return m_retentionPeriod; }
     inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
-    inline void SetRetentionPeriod(const RetentionPeriod& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
-    inline void SetRetentionPeriod(RetentionPeriod&& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = std::move(value); }
-    inline RuleSummary& WithRetentionPeriod(const RetentionPeriod& value) { SetRetentionPeriod(value); return *this;}
-    inline RuleSummary& WithRetentionPeriod(RetentionPeriod&& value) { SetRetentionPeriod(std::move(value)); return *this;}
+    template<typename RetentionPeriodT = RetentionPeriod>
+    void SetRetentionPeriod(RetentionPeriodT&& value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = std::forward<RetentionPeriodT>(value); }
+    template<typename RetentionPeriodT = RetentionPeriod>
+    RuleSummary& WithRetentionPeriod(RetentionPeriodT&& value) { SetRetentionPeriod(std::forward<RetentionPeriodT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,26 +90,22 @@ namespace Model
      * transition between the <code>locked</code> and <code>unlocked</code> states
      * only; it can never transition back to <code>null</code>.</p> </li> </ul>
      */
-    inline const LockState& GetLockState() const{ return m_lockState; }
+    inline LockState GetLockState() const { return m_lockState; }
     inline bool LockStateHasBeenSet() const { return m_lockStateHasBeenSet; }
-    inline void SetLockState(const LockState& value) { m_lockStateHasBeenSet = true; m_lockState = value; }
-    inline void SetLockState(LockState&& value) { m_lockStateHasBeenSet = true; m_lockState = std::move(value); }
-    inline RuleSummary& WithLockState(const LockState& value) { SetLockState(value); return *this;}
-    inline RuleSummary& WithLockState(LockState&& value) { SetLockState(std::move(value)); return *this;}
+    inline void SetLockState(LockState value) { m_lockStateHasBeenSet = true; m_lockState = value; }
+    inline RuleSummary& WithLockState(LockState value) { SetLockState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the retention rule.</p>
      */
-    inline const Aws::String& GetRuleArn() const{ return m_ruleArn; }
+    inline const Aws::String& GetRuleArn() const { return m_ruleArn; }
     inline bool RuleArnHasBeenSet() const { return m_ruleArnHasBeenSet; }
-    inline void SetRuleArn(const Aws::String& value) { m_ruleArnHasBeenSet = true; m_ruleArn = value; }
-    inline void SetRuleArn(Aws::String&& value) { m_ruleArnHasBeenSet = true; m_ruleArn = std::move(value); }
-    inline void SetRuleArn(const char* value) { m_ruleArnHasBeenSet = true; m_ruleArn.assign(value); }
-    inline RuleSummary& WithRuleArn(const Aws::String& value) { SetRuleArn(value); return *this;}
-    inline RuleSummary& WithRuleArn(Aws::String&& value) { SetRuleArn(std::move(value)); return *this;}
-    inline RuleSummary& WithRuleArn(const char* value) { SetRuleArn(value); return *this;}
+    template<typename RuleArnT = Aws::String>
+    void SetRuleArn(RuleArnT&& value) { m_ruleArnHasBeenSet = true; m_ruleArn = std::forward<RuleArnT>(value); }
+    template<typename RuleArnT = Aws::String>
+    RuleSummary& WithRuleArn(RuleArnT&& value) { SetRuleArn(std::forward<RuleArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -126,7 +118,7 @@ namespace Model
     RetentionPeriod m_retentionPeriod;
     bool m_retentionPeriodHasBeenSet = false;
 
-    LockState m_lockState;
+    LockState m_lockState{LockState::NOT_SET};
     bool m_lockStateHasBeenSet = false;
 
     Aws::String m_ruleArn;

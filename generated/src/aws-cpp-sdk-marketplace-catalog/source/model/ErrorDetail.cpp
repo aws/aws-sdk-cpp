@@ -18,14 +18,7 @@ namespace MarketplaceCatalog
 namespace Model
 {
 
-ErrorDetail::ErrorDetail() : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 ErrorDetail::ErrorDetail(JsonView jsonValue)
-  : ErrorDetail()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ErrorDetail& ErrorDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

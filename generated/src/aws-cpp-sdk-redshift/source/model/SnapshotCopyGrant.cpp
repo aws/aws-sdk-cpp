@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-SnapshotCopyGrant::SnapshotCopyGrant() : 
-    m_snapshotCopyGrantNameHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 SnapshotCopyGrant::SnapshotCopyGrant(const XmlNode& xmlNode)
-  : SnapshotCopyGrant()
 {
   *this = xmlNode;
 }
@@ -55,6 +47,7 @@ SnapshotCopyGrant& SnapshotCopyGrant::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

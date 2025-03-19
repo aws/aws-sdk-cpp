@@ -12,13 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateOpsMetadataRequest::CreateOpsMetadataRequest() : 
-    m_resourceIdHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateOpsMetadataRequest::SerializePayload() const
 {
   JsonValue payload;

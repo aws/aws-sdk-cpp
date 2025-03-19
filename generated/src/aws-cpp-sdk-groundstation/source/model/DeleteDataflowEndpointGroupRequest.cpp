@@ -12,11 +12,6 @@ using namespace Aws::GroundStation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDataflowEndpointGroupRequest::DeleteDataflowEndpointGroupRequest() : 
-    m_dataflowEndpointGroupIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDataflowEndpointGroupRequest::SerializePayload() const
 {
   return {};

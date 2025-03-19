@@ -18,14 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-BuiltInIntentSummary::BuiltInIntentSummary() : 
-    m_intentSignatureHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 BuiltInIntentSummary::BuiltInIntentSummary(JsonView jsonValue)
-  : BuiltInIntentSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BuiltInIntentSummary& BuiltInIntentSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("intentSignature"))
   {
     m_intentSignature = jsonValue.GetString("intentSignature");
-
     m_intentSignatureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

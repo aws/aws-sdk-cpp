@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-TrafficDistributionGroupUserSummary::TrafficDistributionGroupUserSummary() : 
-    m_userIdHasBeenSet(false)
-{
-}
-
 TrafficDistributionGroupUserSummary::TrafficDistributionGroupUserSummary(JsonView jsonValue)
-  : TrafficDistributionGroupUserSummary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TrafficDistributionGroupUserSummary& TrafficDistributionGroupUserSummary::operat
   if(jsonValue.ValueExists("UserId"))
   {
     m_userId = jsonValue.GetString("UserId");
-
     m_userIdHasBeenSet = true;
   }
-
   return *this;
 }
 

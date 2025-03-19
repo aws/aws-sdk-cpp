@@ -32,7 +32,7 @@ namespace Model
   class RegistrationTypeDisplayHints
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API RegistrationTypeDisplayHints();
+    AWS_PINPOINTSMSVOICEV2_API RegistrationTypeDisplayHints() = default;
     AWS_PINPOINTSMSVOICEV2_API RegistrationTypeDisplayHints(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API RegistrationTypeDisplayHints& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,70 +42,60 @@ namespace Model
     /**
      * <p>The title of the display hint.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline RegistrationTypeDisplayHints& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline RegistrationTypeDisplayHints& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline RegistrationTypeDisplayHints& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    RegistrationTypeDisplayHints& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A short description of the display hint.</p>
      */
-    inline const Aws::String& GetShortDescription() const{ return m_shortDescription; }
+    inline const Aws::String& GetShortDescription() const { return m_shortDescription; }
     inline bool ShortDescriptionHasBeenSet() const { return m_shortDescriptionHasBeenSet; }
-    inline void SetShortDescription(const Aws::String& value) { m_shortDescriptionHasBeenSet = true; m_shortDescription = value; }
-    inline void SetShortDescription(Aws::String&& value) { m_shortDescriptionHasBeenSet = true; m_shortDescription = std::move(value); }
-    inline void SetShortDescription(const char* value) { m_shortDescriptionHasBeenSet = true; m_shortDescription.assign(value); }
-    inline RegistrationTypeDisplayHints& WithShortDescription(const Aws::String& value) { SetShortDescription(value); return *this;}
-    inline RegistrationTypeDisplayHints& WithShortDescription(Aws::String&& value) { SetShortDescription(std::move(value)); return *this;}
-    inline RegistrationTypeDisplayHints& WithShortDescription(const char* value) { SetShortDescription(value); return *this;}
+    template<typename ShortDescriptionT = Aws::String>
+    void SetShortDescription(ShortDescriptionT&& value) { m_shortDescriptionHasBeenSet = true; m_shortDescription = std::forward<ShortDescriptionT>(value); }
+    template<typename ShortDescriptionT = Aws::String>
+    RegistrationTypeDisplayHints& WithShortDescription(ShortDescriptionT&& value) { SetShortDescription(std::forward<ShortDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A full description of the display hint.</p>
      */
-    inline const Aws::String& GetLongDescription() const{ return m_longDescription; }
+    inline const Aws::String& GetLongDescription() const { return m_longDescription; }
     inline bool LongDescriptionHasBeenSet() const { return m_longDescriptionHasBeenSet; }
-    inline void SetLongDescription(const Aws::String& value) { m_longDescriptionHasBeenSet = true; m_longDescription = value; }
-    inline void SetLongDescription(Aws::String&& value) { m_longDescriptionHasBeenSet = true; m_longDescription = std::move(value); }
-    inline void SetLongDescription(const char* value) { m_longDescriptionHasBeenSet = true; m_longDescription.assign(value); }
-    inline RegistrationTypeDisplayHints& WithLongDescription(const Aws::String& value) { SetLongDescription(value); return *this;}
-    inline RegistrationTypeDisplayHints& WithLongDescription(Aws::String&& value) { SetLongDescription(std::move(value)); return *this;}
-    inline RegistrationTypeDisplayHints& WithLongDescription(const char* value) { SetLongDescription(value); return *this;}
+    template<typename LongDescriptionT = Aws::String>
+    void SetLongDescription(LongDescriptionT&& value) { m_longDescriptionHasBeenSet = true; m_longDescription = std::forward<LongDescriptionT>(value); }
+    template<typename LongDescriptionT = Aws::String>
+    RegistrationTypeDisplayHints& WithLongDescription(LongDescriptionT&& value) { SetLongDescription(std::forward<LongDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The title of the document the display hint is associated with.</p>
      */
-    inline const Aws::String& GetDocumentationTitle() const{ return m_documentationTitle; }
+    inline const Aws::String& GetDocumentationTitle() const { return m_documentationTitle; }
     inline bool DocumentationTitleHasBeenSet() const { return m_documentationTitleHasBeenSet; }
-    inline void SetDocumentationTitle(const Aws::String& value) { m_documentationTitleHasBeenSet = true; m_documentationTitle = value; }
-    inline void SetDocumentationTitle(Aws::String&& value) { m_documentationTitleHasBeenSet = true; m_documentationTitle = std::move(value); }
-    inline void SetDocumentationTitle(const char* value) { m_documentationTitleHasBeenSet = true; m_documentationTitle.assign(value); }
-    inline RegistrationTypeDisplayHints& WithDocumentationTitle(const Aws::String& value) { SetDocumentationTitle(value); return *this;}
-    inline RegistrationTypeDisplayHints& WithDocumentationTitle(Aws::String&& value) { SetDocumentationTitle(std::move(value)); return *this;}
-    inline RegistrationTypeDisplayHints& WithDocumentationTitle(const char* value) { SetDocumentationTitle(value); return *this;}
+    template<typename DocumentationTitleT = Aws::String>
+    void SetDocumentationTitle(DocumentationTitleT&& value) { m_documentationTitleHasBeenSet = true; m_documentationTitle = std::forward<DocumentationTitleT>(value); }
+    template<typename DocumentationTitleT = Aws::String>
+    RegistrationTypeDisplayHints& WithDocumentationTitle(DocumentationTitleT&& value) { SetDocumentationTitle(std::forward<DocumentationTitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The link to the document the display hint is associated with.</p>
      */
-    inline const Aws::String& GetDocumentationLink() const{ return m_documentationLink; }
+    inline const Aws::String& GetDocumentationLink() const { return m_documentationLink; }
     inline bool DocumentationLinkHasBeenSet() const { return m_documentationLinkHasBeenSet; }
-    inline void SetDocumentationLink(const Aws::String& value) { m_documentationLinkHasBeenSet = true; m_documentationLink = value; }
-    inline void SetDocumentationLink(Aws::String&& value) { m_documentationLinkHasBeenSet = true; m_documentationLink = std::move(value); }
-    inline void SetDocumentationLink(const char* value) { m_documentationLinkHasBeenSet = true; m_documentationLink.assign(value); }
-    inline RegistrationTypeDisplayHints& WithDocumentationLink(const Aws::String& value) { SetDocumentationLink(value); return *this;}
-    inline RegistrationTypeDisplayHints& WithDocumentationLink(Aws::String&& value) { SetDocumentationLink(std::move(value)); return *this;}
-    inline RegistrationTypeDisplayHints& WithDocumentationLink(const char* value) { SetDocumentationLink(value); return *this;}
+    template<typename DocumentationLinkT = Aws::String>
+    void SetDocumentationLink(DocumentationLinkT&& value) { m_documentationLinkHasBeenSet = true; m_documentationLink = std::forward<DocumentationLinkT>(value); }
+    template<typename DocumentationLinkT = Aws::String>
+    RegistrationTypeDisplayHints& WithDocumentationLink(DocumentationLinkT&& value) { SetDocumentationLink(std::forward<DocumentationLinkT>(value)); return *this;}
     ///@}
   private:
 

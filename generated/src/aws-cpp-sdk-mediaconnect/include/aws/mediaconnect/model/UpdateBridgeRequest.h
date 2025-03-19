@@ -27,7 +27,7 @@ namespace Model
   class UpdateBridgeRequest : public MediaConnectRequest
   {
   public:
-    AWS_MEDIACONNECT_API UpdateBridgeRequest();
+    AWS_MEDIACONNECT_API UpdateBridgeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,44 +42,42 @@ namespace Model
     /**
      * The Amazon Resource Number (ARN) of the bridge that you want to update.
      */
-    inline const Aws::String& GetBridgeArn() const{ return m_bridgeArn; }
+    inline const Aws::String& GetBridgeArn() const { return m_bridgeArn; }
     inline bool BridgeArnHasBeenSet() const { return m_bridgeArnHasBeenSet; }
-    inline void SetBridgeArn(const Aws::String& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = value; }
-    inline void SetBridgeArn(Aws::String&& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = std::move(value); }
-    inline void SetBridgeArn(const char* value) { m_bridgeArnHasBeenSet = true; m_bridgeArn.assign(value); }
-    inline UpdateBridgeRequest& WithBridgeArn(const Aws::String& value) { SetBridgeArn(value); return *this;}
-    inline UpdateBridgeRequest& WithBridgeArn(Aws::String&& value) { SetBridgeArn(std::move(value)); return *this;}
-    inline UpdateBridgeRequest& WithBridgeArn(const char* value) { SetBridgeArn(value); return *this;}
+    template<typename BridgeArnT = Aws::String>
+    void SetBridgeArn(BridgeArnT&& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = std::forward<BridgeArnT>(value); }
+    template<typename BridgeArnT = Aws::String>
+    UpdateBridgeRequest& WithBridgeArn(BridgeArnT&& value) { SetBridgeArn(std::forward<BridgeArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const UpdateEgressGatewayBridgeRequest& GetEgressGatewayBridge() const{ return m_egressGatewayBridge; }
+    inline const UpdateEgressGatewayBridgeRequest& GetEgressGatewayBridge() const { return m_egressGatewayBridge; }
     inline bool EgressGatewayBridgeHasBeenSet() const { return m_egressGatewayBridgeHasBeenSet; }
-    inline void SetEgressGatewayBridge(const UpdateEgressGatewayBridgeRequest& value) { m_egressGatewayBridgeHasBeenSet = true; m_egressGatewayBridge = value; }
-    inline void SetEgressGatewayBridge(UpdateEgressGatewayBridgeRequest&& value) { m_egressGatewayBridgeHasBeenSet = true; m_egressGatewayBridge = std::move(value); }
-    inline UpdateBridgeRequest& WithEgressGatewayBridge(const UpdateEgressGatewayBridgeRequest& value) { SetEgressGatewayBridge(value); return *this;}
-    inline UpdateBridgeRequest& WithEgressGatewayBridge(UpdateEgressGatewayBridgeRequest&& value) { SetEgressGatewayBridge(std::move(value)); return *this;}
+    template<typename EgressGatewayBridgeT = UpdateEgressGatewayBridgeRequest>
+    void SetEgressGatewayBridge(EgressGatewayBridgeT&& value) { m_egressGatewayBridgeHasBeenSet = true; m_egressGatewayBridge = std::forward<EgressGatewayBridgeT>(value); }
+    template<typename EgressGatewayBridgeT = UpdateEgressGatewayBridgeRequest>
+    UpdateBridgeRequest& WithEgressGatewayBridge(EgressGatewayBridgeT&& value) { SetEgressGatewayBridge(std::forward<EgressGatewayBridgeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const UpdateIngressGatewayBridgeRequest& GetIngressGatewayBridge() const{ return m_ingressGatewayBridge; }
+    inline const UpdateIngressGatewayBridgeRequest& GetIngressGatewayBridge() const { return m_ingressGatewayBridge; }
     inline bool IngressGatewayBridgeHasBeenSet() const { return m_ingressGatewayBridgeHasBeenSet; }
-    inline void SetIngressGatewayBridge(const UpdateIngressGatewayBridgeRequest& value) { m_ingressGatewayBridgeHasBeenSet = true; m_ingressGatewayBridge = value; }
-    inline void SetIngressGatewayBridge(UpdateIngressGatewayBridgeRequest&& value) { m_ingressGatewayBridgeHasBeenSet = true; m_ingressGatewayBridge = std::move(value); }
-    inline UpdateBridgeRequest& WithIngressGatewayBridge(const UpdateIngressGatewayBridgeRequest& value) { SetIngressGatewayBridge(value); return *this;}
-    inline UpdateBridgeRequest& WithIngressGatewayBridge(UpdateIngressGatewayBridgeRequest&& value) { SetIngressGatewayBridge(std::move(value)); return *this;}
+    template<typename IngressGatewayBridgeT = UpdateIngressGatewayBridgeRequest>
+    void SetIngressGatewayBridge(IngressGatewayBridgeT&& value) { m_ingressGatewayBridgeHasBeenSet = true; m_ingressGatewayBridge = std::forward<IngressGatewayBridgeT>(value); }
+    template<typename IngressGatewayBridgeT = UpdateIngressGatewayBridgeRequest>
+    UpdateBridgeRequest& WithIngressGatewayBridge(IngressGatewayBridgeT&& value) { SetIngressGatewayBridge(std::forward<IngressGatewayBridgeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const UpdateFailoverConfig& GetSourceFailoverConfig() const{ return m_sourceFailoverConfig; }
+    inline const UpdateFailoverConfig& GetSourceFailoverConfig() const { return m_sourceFailoverConfig; }
     inline bool SourceFailoverConfigHasBeenSet() const { return m_sourceFailoverConfigHasBeenSet; }
-    inline void SetSourceFailoverConfig(const UpdateFailoverConfig& value) { m_sourceFailoverConfigHasBeenSet = true; m_sourceFailoverConfig = value; }
-    inline void SetSourceFailoverConfig(UpdateFailoverConfig&& value) { m_sourceFailoverConfigHasBeenSet = true; m_sourceFailoverConfig = std::move(value); }
-    inline UpdateBridgeRequest& WithSourceFailoverConfig(const UpdateFailoverConfig& value) { SetSourceFailoverConfig(value); return *this;}
-    inline UpdateBridgeRequest& WithSourceFailoverConfig(UpdateFailoverConfig&& value) { SetSourceFailoverConfig(std::move(value)); return *this;}
+    template<typename SourceFailoverConfigT = UpdateFailoverConfig>
+    void SetSourceFailoverConfig(SourceFailoverConfigT&& value) { m_sourceFailoverConfigHasBeenSet = true; m_sourceFailoverConfig = std::forward<SourceFailoverConfigT>(value); }
+    template<typename SourceFailoverConfigT = UpdateFailoverConfig>
+    UpdateBridgeRequest& WithSourceFailoverConfig(SourceFailoverConfigT&& value) { SetSourceFailoverConfig(std::forward<SourceFailoverConfigT>(value)); return *this;}
     ///@}
   private:
 

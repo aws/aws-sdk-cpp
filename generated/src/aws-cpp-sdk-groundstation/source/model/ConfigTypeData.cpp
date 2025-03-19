@@ -18,19 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-ConfigTypeData::ConfigTypeData() : 
-    m_antennaDownlinkConfigHasBeenSet(false),
-    m_antennaDownlinkDemodDecodeConfigHasBeenSet(false),
-    m_antennaUplinkConfigHasBeenSet(false),
-    m_dataflowEndpointConfigHasBeenSet(false),
-    m_s3RecordingConfigHasBeenSet(false),
-    m_trackingConfigHasBeenSet(false),
-    m_uplinkEchoConfigHasBeenSet(false)
-{
-}
-
 ConfigTypeData::ConfigTypeData(JsonView jsonValue)
-  : ConfigTypeData()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ ConfigTypeData& ConfigTypeData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("antennaDownlinkConfig"))
   {
     m_antennaDownlinkConfig = jsonValue.GetObject("antennaDownlinkConfig");
-
     m_antennaDownlinkConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("antennaDownlinkDemodDecodeConfig"))
   {
     m_antennaDownlinkDemodDecodeConfig = jsonValue.GetObject("antennaDownlinkDemodDecodeConfig");
-
     m_antennaDownlinkDemodDecodeConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("antennaUplinkConfig"))
   {
     m_antennaUplinkConfig = jsonValue.GetObject("antennaUplinkConfig");
-
     m_antennaUplinkConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataflowEndpointConfig"))
   {
     m_dataflowEndpointConfig = jsonValue.GetObject("dataflowEndpointConfig");
-
     m_dataflowEndpointConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3RecordingConfig"))
   {
     m_s3RecordingConfig = jsonValue.GetObject("s3RecordingConfig");
-
     m_s3RecordingConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trackingConfig"))
   {
     m_trackingConfig = jsonValue.GetObject("trackingConfig");
-
     m_trackingConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uplinkEchoConfig"))
   {
     m_uplinkEchoConfig = jsonValue.GetObject("uplinkEchoConfig");
-
     m_uplinkEchoConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

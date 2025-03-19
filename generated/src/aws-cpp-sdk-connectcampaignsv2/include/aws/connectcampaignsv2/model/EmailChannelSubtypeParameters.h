@@ -32,7 +32,7 @@ namespace Model
   class EmailChannelSubtypeParameters
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API EmailChannelSubtypeParameters();
+    AWS_CONNECTCAMPAIGNSV2_API EmailChannelSubtypeParameters() = default;
     AWS_CONNECTCAMPAIGNSV2_API EmailChannelSubtypeParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API EmailChannelSubtypeParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,55 +40,46 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetDestinationEmailAddress() const{ return m_destinationEmailAddress; }
+    inline const Aws::String& GetDestinationEmailAddress() const { return m_destinationEmailAddress; }
     inline bool DestinationEmailAddressHasBeenSet() const { return m_destinationEmailAddressHasBeenSet; }
-    inline void SetDestinationEmailAddress(const Aws::String& value) { m_destinationEmailAddressHasBeenSet = true; m_destinationEmailAddress = value; }
-    inline void SetDestinationEmailAddress(Aws::String&& value) { m_destinationEmailAddressHasBeenSet = true; m_destinationEmailAddress = std::move(value); }
-    inline void SetDestinationEmailAddress(const char* value) { m_destinationEmailAddressHasBeenSet = true; m_destinationEmailAddress.assign(value); }
-    inline EmailChannelSubtypeParameters& WithDestinationEmailAddress(const Aws::String& value) { SetDestinationEmailAddress(value); return *this;}
-    inline EmailChannelSubtypeParameters& WithDestinationEmailAddress(Aws::String&& value) { SetDestinationEmailAddress(std::move(value)); return *this;}
-    inline EmailChannelSubtypeParameters& WithDestinationEmailAddress(const char* value) { SetDestinationEmailAddress(value); return *this;}
+    template<typename DestinationEmailAddressT = Aws::String>
+    void SetDestinationEmailAddress(DestinationEmailAddressT&& value) { m_destinationEmailAddressHasBeenSet = true; m_destinationEmailAddress = std::forward<DestinationEmailAddressT>(value); }
+    template<typename DestinationEmailAddressT = Aws::String>
+    EmailChannelSubtypeParameters& WithDestinationEmailAddress(DestinationEmailAddressT&& value) { SetDestinationEmailAddress(std::forward<DestinationEmailAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetConnectSourceEmailAddress() const{ return m_connectSourceEmailAddress; }
+    inline const Aws::String& GetConnectSourceEmailAddress() const { return m_connectSourceEmailAddress; }
     inline bool ConnectSourceEmailAddressHasBeenSet() const { return m_connectSourceEmailAddressHasBeenSet; }
-    inline void SetConnectSourceEmailAddress(const Aws::String& value) { m_connectSourceEmailAddressHasBeenSet = true; m_connectSourceEmailAddress = value; }
-    inline void SetConnectSourceEmailAddress(Aws::String&& value) { m_connectSourceEmailAddressHasBeenSet = true; m_connectSourceEmailAddress = std::move(value); }
-    inline void SetConnectSourceEmailAddress(const char* value) { m_connectSourceEmailAddressHasBeenSet = true; m_connectSourceEmailAddress.assign(value); }
-    inline EmailChannelSubtypeParameters& WithConnectSourceEmailAddress(const Aws::String& value) { SetConnectSourceEmailAddress(value); return *this;}
-    inline EmailChannelSubtypeParameters& WithConnectSourceEmailAddress(Aws::String&& value) { SetConnectSourceEmailAddress(std::move(value)); return *this;}
-    inline EmailChannelSubtypeParameters& WithConnectSourceEmailAddress(const char* value) { SetConnectSourceEmailAddress(value); return *this;}
+    template<typename ConnectSourceEmailAddressT = Aws::String>
+    void SetConnectSourceEmailAddress(ConnectSourceEmailAddressT&& value) { m_connectSourceEmailAddressHasBeenSet = true; m_connectSourceEmailAddress = std::forward<ConnectSourceEmailAddressT>(value); }
+    template<typename ConnectSourceEmailAddressT = Aws::String>
+    EmailChannelSubtypeParameters& WithConnectSourceEmailAddress(ConnectSourceEmailAddressT&& value) { SetConnectSourceEmailAddress(std::forward<ConnectSourceEmailAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetTemplateArn() const{ return m_templateArn; }
+    inline const Aws::String& GetTemplateArn() const { return m_templateArn; }
     inline bool TemplateArnHasBeenSet() const { return m_templateArnHasBeenSet; }
-    inline void SetTemplateArn(const Aws::String& value) { m_templateArnHasBeenSet = true; m_templateArn = value; }
-    inline void SetTemplateArn(Aws::String&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::move(value); }
-    inline void SetTemplateArn(const char* value) { m_templateArnHasBeenSet = true; m_templateArn.assign(value); }
-    inline EmailChannelSubtypeParameters& WithTemplateArn(const Aws::String& value) { SetTemplateArn(value); return *this;}
-    inline EmailChannelSubtypeParameters& WithTemplateArn(Aws::String&& value) { SetTemplateArn(std::move(value)); return *this;}
-    inline EmailChannelSubtypeParameters& WithTemplateArn(const char* value) { SetTemplateArn(value); return *this;}
+    template<typename TemplateArnT = Aws::String>
+    void SetTemplateArn(TemplateArnT&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::forward<TemplateArnT>(value); }
+    template<typename TemplateArnT = Aws::String>
+    EmailChannelSubtypeParameters& WithTemplateArn(TemplateArnT&& value) { SetTemplateArn(std::forward<TemplateArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetTemplateParameters() const{ return m_templateParameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTemplateParameters() const { return m_templateParameters; }
     inline bool TemplateParametersHasBeenSet() const { return m_templateParametersHasBeenSet; }
-    inline void SetTemplateParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_templateParametersHasBeenSet = true; m_templateParameters = value; }
-    inline void SetTemplateParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_templateParametersHasBeenSet = true; m_templateParameters = std::move(value); }
-    inline EmailChannelSubtypeParameters& WithTemplateParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetTemplateParameters(value); return *this;}
-    inline EmailChannelSubtypeParameters& WithTemplateParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetTemplateParameters(std::move(value)); return *this;}
-    inline EmailChannelSubtypeParameters& AddTemplateParameters(const Aws::String& key, const Aws::String& value) { m_templateParametersHasBeenSet = true; m_templateParameters.emplace(key, value); return *this; }
-    inline EmailChannelSubtypeParameters& AddTemplateParameters(Aws::String&& key, const Aws::String& value) { m_templateParametersHasBeenSet = true; m_templateParameters.emplace(std::move(key), value); return *this; }
-    inline EmailChannelSubtypeParameters& AddTemplateParameters(const Aws::String& key, Aws::String&& value) { m_templateParametersHasBeenSet = true; m_templateParameters.emplace(key, std::move(value)); return *this; }
-    inline EmailChannelSubtypeParameters& AddTemplateParameters(Aws::String&& key, Aws::String&& value) { m_templateParametersHasBeenSet = true; m_templateParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline EmailChannelSubtypeParameters& AddTemplateParameters(const char* key, Aws::String&& value) { m_templateParametersHasBeenSet = true; m_templateParameters.emplace(key, std::move(value)); return *this; }
-    inline EmailChannelSubtypeParameters& AddTemplateParameters(Aws::String&& key, const char* value) { m_templateParametersHasBeenSet = true; m_templateParameters.emplace(std::move(key), value); return *this; }
-    inline EmailChannelSubtypeParameters& AddTemplateParameters(const char* key, const char* value) { m_templateParametersHasBeenSet = true; m_templateParameters.emplace(key, value); return *this; }
+    template<typename TemplateParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetTemplateParameters(TemplateParametersT&& value) { m_templateParametersHasBeenSet = true; m_templateParameters = std::forward<TemplateParametersT>(value); }
+    template<typename TemplateParametersT = Aws::Map<Aws::String, Aws::String>>
+    EmailChannelSubtypeParameters& WithTemplateParameters(TemplateParametersT&& value) { SetTemplateParameters(std::forward<TemplateParametersT>(value)); return *this;}
+    template<typename TemplateParametersKeyT = Aws::String, typename TemplateParametersValueT = Aws::String>
+    EmailChannelSubtypeParameters& AddTemplateParameters(TemplateParametersKeyT&& key, TemplateParametersValueT&& value) {
+      m_templateParametersHasBeenSet = true; m_templateParameters.emplace(std::forward<TemplateParametersKeyT>(key), std::forward<TemplateParametersValueT>(value)); return *this;
+    }
     ///@}
   private:
 

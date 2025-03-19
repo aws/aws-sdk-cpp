@@ -30,7 +30,7 @@ namespace Model
   class BatchDeleteObjectResponse
   {
   public:
-    AWS_CLOUDDIRECTORY_API BatchDeleteObjectResponse();
+    AWS_CLOUDDIRECTORY_API BatchDeleteObjectResponse() = default;
     AWS_CLOUDDIRECTORY_API BatchDeleteObjectResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API BatchDeleteObjectResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;

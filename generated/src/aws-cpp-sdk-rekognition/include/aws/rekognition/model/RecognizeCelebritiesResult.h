@@ -31,7 +31,7 @@ namespace Model
   class RecognizeCelebritiesResult
   {
   public:
-    AWS_REKOGNITION_API RecognizeCelebritiesResult();
+    AWS_REKOGNITION_API RecognizeCelebritiesResult() = default;
     AWS_REKOGNITION_API RecognizeCelebritiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REKOGNITION_API RecognizeCelebritiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,26 +46,26 @@ namespace Model
      * <code>KnownGender</code>, <code>MatchConfidence</code>, <code>Name</code>,
      * <code>Urls</code>.</p>
      */
-    inline const Aws::Vector<Celebrity>& GetCelebrityFaces() const{ return m_celebrityFaces; }
-    inline void SetCelebrityFaces(const Aws::Vector<Celebrity>& value) { m_celebrityFaces = value; }
-    inline void SetCelebrityFaces(Aws::Vector<Celebrity>&& value) { m_celebrityFaces = std::move(value); }
-    inline RecognizeCelebritiesResult& WithCelebrityFaces(const Aws::Vector<Celebrity>& value) { SetCelebrityFaces(value); return *this;}
-    inline RecognizeCelebritiesResult& WithCelebrityFaces(Aws::Vector<Celebrity>&& value) { SetCelebrityFaces(std::move(value)); return *this;}
-    inline RecognizeCelebritiesResult& AddCelebrityFaces(const Celebrity& value) { m_celebrityFaces.push_back(value); return *this; }
-    inline RecognizeCelebritiesResult& AddCelebrityFaces(Celebrity&& value) { m_celebrityFaces.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Celebrity>& GetCelebrityFaces() const { return m_celebrityFaces; }
+    template<typename CelebrityFacesT = Aws::Vector<Celebrity>>
+    void SetCelebrityFaces(CelebrityFacesT&& value) { m_celebrityFacesHasBeenSet = true; m_celebrityFaces = std::forward<CelebrityFacesT>(value); }
+    template<typename CelebrityFacesT = Aws::Vector<Celebrity>>
+    RecognizeCelebritiesResult& WithCelebrityFaces(CelebrityFacesT&& value) { SetCelebrityFaces(std::forward<CelebrityFacesT>(value)); return *this;}
+    template<typename CelebrityFacesT = Celebrity>
+    RecognizeCelebritiesResult& AddCelebrityFaces(CelebrityFacesT&& value) { m_celebrityFacesHasBeenSet = true; m_celebrityFaces.emplace_back(std::forward<CelebrityFacesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Details about each unrecognized face in the image.</p>
      */
-    inline const Aws::Vector<ComparedFace>& GetUnrecognizedFaces() const{ return m_unrecognizedFaces; }
-    inline void SetUnrecognizedFaces(const Aws::Vector<ComparedFace>& value) { m_unrecognizedFaces = value; }
-    inline void SetUnrecognizedFaces(Aws::Vector<ComparedFace>&& value) { m_unrecognizedFaces = std::move(value); }
-    inline RecognizeCelebritiesResult& WithUnrecognizedFaces(const Aws::Vector<ComparedFace>& value) { SetUnrecognizedFaces(value); return *this;}
-    inline RecognizeCelebritiesResult& WithUnrecognizedFaces(Aws::Vector<ComparedFace>&& value) { SetUnrecognizedFaces(std::move(value)); return *this;}
-    inline RecognizeCelebritiesResult& AddUnrecognizedFaces(const ComparedFace& value) { m_unrecognizedFaces.push_back(value); return *this; }
-    inline RecognizeCelebritiesResult& AddUnrecognizedFaces(ComparedFace&& value) { m_unrecognizedFaces.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ComparedFace>& GetUnrecognizedFaces() const { return m_unrecognizedFaces; }
+    template<typename UnrecognizedFacesT = Aws::Vector<ComparedFace>>
+    void SetUnrecognizedFaces(UnrecognizedFacesT&& value) { m_unrecognizedFacesHasBeenSet = true; m_unrecognizedFaces = std::forward<UnrecognizedFacesT>(value); }
+    template<typename UnrecognizedFacesT = Aws::Vector<ComparedFace>>
+    RecognizeCelebritiesResult& WithUnrecognizedFaces(UnrecognizedFacesT&& value) { SetUnrecognizedFaces(std::forward<UnrecognizedFacesT>(value)); return *this;}
+    template<typename UnrecognizedFacesT = ComparedFace>
+    RecognizeCelebritiesResult& AddUnrecognizedFaces(UnrecognizedFacesT&& value) { m_unrecognizedFacesHasBeenSet = true; m_unrecognizedFaces.emplace_back(std::forward<UnrecognizedFacesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -86,32 +86,32 @@ namespace Model
      * after Exif metadata is used to correct the image orientation. Images in .png
      * format don't contain Exif metadata. </p> 
      */
-    inline const OrientationCorrection& GetOrientationCorrection() const{ return m_orientationCorrection; }
-    inline void SetOrientationCorrection(const OrientationCorrection& value) { m_orientationCorrection = value; }
-    inline void SetOrientationCorrection(OrientationCorrection&& value) { m_orientationCorrection = std::move(value); }
-    inline RecognizeCelebritiesResult& WithOrientationCorrection(const OrientationCorrection& value) { SetOrientationCorrection(value); return *this;}
-    inline RecognizeCelebritiesResult& WithOrientationCorrection(OrientationCorrection&& value) { SetOrientationCorrection(std::move(value)); return *this;}
+    inline OrientationCorrection GetOrientationCorrection() const { return m_orientationCorrection; }
+    inline void SetOrientationCorrection(OrientationCorrection value) { m_orientationCorrectionHasBeenSet = true; m_orientationCorrection = value; }
+    inline RecognizeCelebritiesResult& WithOrientationCorrection(OrientationCorrection value) { SetOrientationCorrection(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RecognizeCelebritiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RecognizeCelebritiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RecognizeCelebritiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RecognizeCelebritiesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Celebrity> m_celebrityFaces;
+    bool m_celebrityFacesHasBeenSet = false;
 
     Aws::Vector<ComparedFace> m_unrecognizedFaces;
+    bool m_unrecognizedFacesHasBeenSet = false;
 
-    OrientationCorrection m_orientationCorrection;
+    OrientationCorrection m_orientationCorrection{OrientationCorrection::NOT_SET};
+    bool m_orientationCorrectionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

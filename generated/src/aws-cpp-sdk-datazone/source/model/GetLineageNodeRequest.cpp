@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetLineageNodeRequest::GetLineageNodeRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_eventTimestampHasBeenSet(false),
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String GetLineageNodeRequest::SerializePayload() const
 {
   return {};

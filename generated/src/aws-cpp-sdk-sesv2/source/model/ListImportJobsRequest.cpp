@@ -12,15 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListImportJobsRequest::ListImportJobsRequest() : 
-    m_importDestinationType(ImportDestinationType::NOT_SET),
-    m_importDestinationTypeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false)
-{
-}
-
 Aws::String ListImportJobsRequest::SerializePayload() const
 {
   JsonValue payload;

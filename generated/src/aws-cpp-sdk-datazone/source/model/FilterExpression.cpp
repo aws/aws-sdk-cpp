@@ -18,15 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-FilterExpression::FilterExpression() : 
-    m_expressionHasBeenSet(false),
-    m_type(FilterExpressionType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 FilterExpression::FilterExpression(JsonView jsonValue)
-  : FilterExpression()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ FilterExpression& FilterExpression::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("expression"))
   {
     m_expression = jsonValue.GetString("expression");
-
     m_expressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = FilterExpressionTypeMapper::GetFilterExpressionTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

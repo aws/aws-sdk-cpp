@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-EndpointConfigSummary::EndpointConfigSummary() : 
-    m_endpointConfigNameHasBeenSet(false),
-    m_endpointConfigArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
-{
-}
-
 EndpointConfigSummary::EndpointConfigSummary(JsonView jsonValue)
-  : EndpointConfigSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ EndpointConfigSummary& EndpointConfigSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EndpointConfigName"))
   {
     m_endpointConfigName = jsonValue.GetString("EndpointConfigName");
-
     m_endpointConfigNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointConfigArn"))
   {
     m_endpointConfigArn = jsonValue.GetString("EndpointConfigArn");
-
     m_endpointConfigArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

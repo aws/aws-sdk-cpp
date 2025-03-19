@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-NetworkInputSettings::NetworkInputSettings() : 
-    m_hlsInputSettingsHasBeenSet(false),
-    m_serverValidation(NetworkInputServerValidation::NOT_SET),
-    m_serverValidationHasBeenSet(false),
-    m_multicastInputSettingsHasBeenSet(false)
-{
-}
-
 NetworkInputSettings::NetworkInputSettings(JsonView jsonValue)
-  : NetworkInputSettings()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ NetworkInputSettings& NetworkInputSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("hlsInputSettings"))
   {
     m_hlsInputSettings = jsonValue.GetObject("hlsInputSettings");
-
     m_hlsInputSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverValidation"))
   {
     m_serverValidation = NetworkInputServerValidationMapper::GetNetworkInputServerValidationForName(jsonValue.GetString("serverValidation"));
-
     m_serverValidationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("multicastInputSettings"))
   {
     m_multicastInputSettings = jsonValue.GetObject("multicastInputSettings");
-
     m_multicastInputSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

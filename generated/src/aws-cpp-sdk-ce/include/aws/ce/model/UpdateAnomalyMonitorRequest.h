@@ -21,7 +21,7 @@ namespace Model
   class UpdateAnomalyMonitorRequest : public CostExplorerRequest
   {
   public:
-    AWS_COSTEXPLORER_API UpdateAnomalyMonitorRequest();
+    AWS_COSTEXPLORER_API UpdateAnomalyMonitorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>Cost anomaly monitor Amazon Resource Names (ARNs). </p>
      */
-    inline const Aws::String& GetMonitorArn() const{ return m_monitorArn; }
+    inline const Aws::String& GetMonitorArn() const { return m_monitorArn; }
     inline bool MonitorArnHasBeenSet() const { return m_monitorArnHasBeenSet; }
-    inline void SetMonitorArn(const Aws::String& value) { m_monitorArnHasBeenSet = true; m_monitorArn = value; }
-    inline void SetMonitorArn(Aws::String&& value) { m_monitorArnHasBeenSet = true; m_monitorArn = std::move(value); }
-    inline void SetMonitorArn(const char* value) { m_monitorArnHasBeenSet = true; m_monitorArn.assign(value); }
-    inline UpdateAnomalyMonitorRequest& WithMonitorArn(const Aws::String& value) { SetMonitorArn(value); return *this;}
-    inline UpdateAnomalyMonitorRequest& WithMonitorArn(Aws::String&& value) { SetMonitorArn(std::move(value)); return *this;}
-    inline UpdateAnomalyMonitorRequest& WithMonitorArn(const char* value) { SetMonitorArn(value); return *this;}
+    template<typename MonitorArnT = Aws::String>
+    void SetMonitorArn(MonitorArnT&& value) { m_monitorArnHasBeenSet = true; m_monitorArn = std::forward<MonitorArnT>(value); }
+    template<typename MonitorArnT = Aws::String>
+    UpdateAnomalyMonitorRequest& WithMonitorArn(MonitorArnT&& value) { SetMonitorArn(std::forward<MonitorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new name for the cost anomaly monitor. </p>
      */
-    inline const Aws::String& GetMonitorName() const{ return m_monitorName; }
+    inline const Aws::String& GetMonitorName() const { return m_monitorName; }
     inline bool MonitorNameHasBeenSet() const { return m_monitorNameHasBeenSet; }
-    inline void SetMonitorName(const Aws::String& value) { m_monitorNameHasBeenSet = true; m_monitorName = value; }
-    inline void SetMonitorName(Aws::String&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::move(value); }
-    inline void SetMonitorName(const char* value) { m_monitorNameHasBeenSet = true; m_monitorName.assign(value); }
-    inline UpdateAnomalyMonitorRequest& WithMonitorName(const Aws::String& value) { SetMonitorName(value); return *this;}
-    inline UpdateAnomalyMonitorRequest& WithMonitorName(Aws::String&& value) { SetMonitorName(std::move(value)); return *this;}
-    inline UpdateAnomalyMonitorRequest& WithMonitorName(const char* value) { SetMonitorName(value); return *this;}
+    template<typename MonitorNameT = Aws::String>
+    void SetMonitorName(MonitorNameT&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::forward<MonitorNameT>(value); }
+    template<typename MonitorNameT = Aws::String>
+    UpdateAnomalyMonitorRequest& WithMonitorName(MonitorNameT&& value) { SetMonitorName(std::forward<MonitorNameT>(value)); return *this;}
     ///@}
   private:
 

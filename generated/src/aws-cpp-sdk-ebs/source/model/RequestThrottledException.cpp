@@ -18,15 +18,7 @@ namespace EBS
 namespace Model
 {
 
-RequestThrottledException::RequestThrottledException() : 
-    m_messageHasBeenSet(false),
-    m_reason(RequestThrottledExceptionReason::NOT_SET),
-    m_reasonHasBeenSet(false)
-{
-}
-
 RequestThrottledException::RequestThrottledException(JsonView jsonValue)
-  : RequestThrottledException()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RequestThrottledException& RequestThrottledException::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = RequestThrottledExceptionReasonMapper::GetRequestThrottledExceptionReasonForName(jsonValue.GetString("Reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

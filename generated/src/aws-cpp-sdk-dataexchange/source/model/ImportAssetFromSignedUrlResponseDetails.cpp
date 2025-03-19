@@ -18,18 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-ImportAssetFromSignedUrlResponseDetails::ImportAssetFromSignedUrlResponseDetails() : 
-    m_assetNameHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_md5HashHasBeenSet(false),
-    m_revisionIdHasBeenSet(false),
-    m_signedUrlHasBeenSet(false),
-    m_signedUrlExpiresAtHasBeenSet(false)
-{
-}
-
 ImportAssetFromSignedUrlResponseDetails::ImportAssetFromSignedUrlResponseDetails(JsonView jsonValue)
-  : ImportAssetFromSignedUrlResponseDetails()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ ImportAssetFromSignedUrlResponseDetails& ImportAssetFromSignedUrlResponseDetails
   if(jsonValue.ValueExists("AssetName"))
   {
     m_assetName = jsonValue.GetString("AssetName");
-
     m_assetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetId"))
   {
     m_dataSetId = jsonValue.GetString("DataSetId");
-
     m_dataSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Md5Hash"))
   {
     m_md5Hash = jsonValue.GetString("Md5Hash");
-
     m_md5HashHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RevisionId"))
   {
     m_revisionId = jsonValue.GetString("RevisionId");
-
     m_revisionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SignedUrl"))
   {
     m_signedUrl = jsonValue.GetString("SignedUrl");
-
     m_signedUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SignedUrlExpiresAt"))
   {
     m_signedUrlExpiresAt = jsonValue.GetString("SignedUrlExpiresAt");
-
     m_signedUrlExpiresAtHasBeenSet = true;
   }
-
   return *this;
 }
 

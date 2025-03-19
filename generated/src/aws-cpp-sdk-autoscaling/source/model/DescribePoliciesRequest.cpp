@@ -10,16 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DescribePoliciesRequest::DescribePoliciesRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_policyNamesHasBeenSet(false),
-    m_policyTypesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false)
-{
-}
-
 Aws::String DescribePoliciesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

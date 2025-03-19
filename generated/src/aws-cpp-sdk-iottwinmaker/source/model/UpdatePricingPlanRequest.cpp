@@ -12,13 +12,6 @@ using namespace Aws::IoTTwinMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePricingPlanRequest::UpdatePricingPlanRequest() : 
-    m_pricingMode(PricingMode::NOT_SET),
-    m_pricingModeHasBeenSet(false),
-    m_bundleNamesHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePricingPlanRequest::SerializePayload() const
 {
   JsonValue payload;

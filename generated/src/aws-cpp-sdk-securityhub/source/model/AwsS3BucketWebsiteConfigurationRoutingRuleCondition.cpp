@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsS3BucketWebsiteConfigurationRoutingRuleCondition::AwsS3BucketWebsiteConfigurationRoutingRuleCondition() : 
-    m_httpErrorCodeReturnedEqualsHasBeenSet(false),
-    m_keyPrefixEqualsHasBeenSet(false)
-{
-}
-
 AwsS3BucketWebsiteConfigurationRoutingRuleCondition::AwsS3BucketWebsiteConfigurationRoutingRuleCondition(JsonView jsonValue)
-  : AwsS3BucketWebsiteConfigurationRoutingRuleCondition()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsS3BucketWebsiteConfigurationRoutingRuleCondition& AwsS3BucketWebsiteConfigura
   if(jsonValue.ValueExists("HttpErrorCodeReturnedEquals"))
   {
     m_httpErrorCodeReturnedEquals = jsonValue.GetString("HttpErrorCodeReturnedEquals");
-
     m_httpErrorCodeReturnedEqualsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyPrefixEquals"))
   {
     m_keyPrefixEquals = jsonValue.GetString("KeyPrefixEquals");
-
     m_keyPrefixEqualsHasBeenSet = true;
   }
-
   return *this;
 }
 

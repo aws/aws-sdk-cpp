@@ -13,15 +13,6 @@ using namespace Aws::mediapackagev2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelHarvestJobRequest::CancelHarvestJobRequest() : 
-    m_channelGroupNameHasBeenSet(false),
-    m_channelNameHasBeenSet(false),
-    m_originEndpointNameHasBeenSet(false),
-    m_harvestJobNameHasBeenSet(false),
-    m_eTagHasBeenSet(false)
-{
-}
-
 Aws::String CancelHarvestJobRequest::SerializePayload() const
 {
   return {};

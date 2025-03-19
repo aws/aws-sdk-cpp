@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeConnectorOperationResult::DescribeConnectorOperationResult() : 
-    m_connectorOperationState(ConnectorOperationState::NOT_SET),
-    m_connectorOperationType(ConnectorOperationType::NOT_SET)
-{
-}
-
 DescribeConnectorOperationResult::DescribeConnectorOperationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeConnectorOperationResult()
 {
   *this = result;
 }
@@ -35,27 +28,23 @@ DescribeConnectorOperationResult& DescribeConnectorOperationResult::operator =(c
   if(jsonValue.ValueExists("connectorArn"))
   {
     m_connectorArn = jsonValue.GetString("connectorArn");
-
+    m_connectorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorOperationArn"))
   {
     m_connectorOperationArn = jsonValue.GetString("connectorOperationArn");
-
+    m_connectorOperationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorOperationState"))
   {
     m_connectorOperationState = ConnectorOperationStateMapper::GetConnectorOperationStateForName(jsonValue.GetString("connectorOperationState"));
-
+    m_connectorOperationStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorOperationType"))
   {
     m_connectorOperationType = ConnectorOperationTypeMapper::GetConnectorOperationTypeForName(jsonValue.GetString("connectorOperationType"));
-
+    m_connectorOperationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operationSteps"))
   {
     Aws::Utils::Array<JsonView> operationStepsJsonList = jsonValue.GetArray("operationSteps");
@@ -63,14 +52,13 @@ DescribeConnectorOperationResult& DescribeConnectorOperationResult::operator =(c
     {
       m_operationSteps.push_back(operationStepsJsonList[operationStepsIndex].AsObject());
     }
+    m_operationStepsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("originWorkerSetting"))
   {
     m_originWorkerSetting = jsonValue.GetObject("originWorkerSetting");
-
+    m_originWorkerSettingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("originConnectorConfiguration"))
   {
     Aws::Map<Aws::String, JsonView> originConnectorConfigurationJsonMap = jsonValue.GetObject("originConnectorConfiguration").GetAllObjects();
@@ -78,14 +66,13 @@ DescribeConnectorOperationResult& DescribeConnectorOperationResult::operator =(c
     {
       m_originConnectorConfiguration[originConnectorConfigurationItem.first] = originConnectorConfigurationItem.second.AsString();
     }
+    m_originConnectorConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetWorkerSetting"))
   {
     m_targetWorkerSetting = jsonValue.GetObject("targetWorkerSetting");
-
+    m_targetWorkerSettingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetConnectorConfiguration"))
   {
     Aws::Map<Aws::String, JsonView> targetConnectorConfigurationJsonMap = jsonValue.GetObject("targetConnectorConfiguration").GetAllObjects();
@@ -93,32 +80,30 @@ DescribeConnectorOperationResult& DescribeConnectorOperationResult::operator =(c
     {
       m_targetConnectorConfiguration[targetConnectorConfigurationItem.first] = targetConnectorConfigurationItem.second.AsString();
     }
+    m_targetConnectorConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorInfo"))
   {
     m_errorInfo = jsonValue.GetObject("errorInfo");
-
+    m_errorInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
-
+    m_endTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

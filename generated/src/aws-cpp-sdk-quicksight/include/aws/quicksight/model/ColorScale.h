@@ -34,7 +34,7 @@ namespace Model
   class ColorScale
   {
   public:
-    AWS_QUICKSIGHT_API ColorScale();
+    AWS_QUICKSIGHT_API ColorScale() = default;
     AWS_QUICKSIGHT_API ColorScale(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ColorScale& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,45 +44,43 @@ namespace Model
     /**
      * <p>Determines the list of colors that are applied to the visual.</p>
      */
-    inline const Aws::Vector<DataColor>& GetColors() const{ return m_colors; }
+    inline const Aws::Vector<DataColor>& GetColors() const { return m_colors; }
     inline bool ColorsHasBeenSet() const { return m_colorsHasBeenSet; }
-    inline void SetColors(const Aws::Vector<DataColor>& value) { m_colorsHasBeenSet = true; m_colors = value; }
-    inline void SetColors(Aws::Vector<DataColor>&& value) { m_colorsHasBeenSet = true; m_colors = std::move(value); }
-    inline ColorScale& WithColors(const Aws::Vector<DataColor>& value) { SetColors(value); return *this;}
-    inline ColorScale& WithColors(Aws::Vector<DataColor>&& value) { SetColors(std::move(value)); return *this;}
-    inline ColorScale& AddColors(const DataColor& value) { m_colorsHasBeenSet = true; m_colors.push_back(value); return *this; }
-    inline ColorScale& AddColors(DataColor&& value) { m_colorsHasBeenSet = true; m_colors.push_back(std::move(value)); return *this; }
+    template<typename ColorsT = Aws::Vector<DataColor>>
+    void SetColors(ColorsT&& value) { m_colorsHasBeenSet = true; m_colors = std::forward<ColorsT>(value); }
+    template<typename ColorsT = Aws::Vector<DataColor>>
+    ColorScale& WithColors(ColorsT&& value) { SetColors(std::forward<ColorsT>(value)); return *this;}
+    template<typename ColorsT = DataColor>
+    ColorScale& AddColors(ColorsT&& value) { m_colorsHasBeenSet = true; m_colors.emplace_back(std::forward<ColorsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Determines the color fill type.</p>
      */
-    inline const ColorFillType& GetColorFillType() const{ return m_colorFillType; }
+    inline ColorFillType GetColorFillType() const { return m_colorFillType; }
     inline bool ColorFillTypeHasBeenSet() const { return m_colorFillTypeHasBeenSet; }
-    inline void SetColorFillType(const ColorFillType& value) { m_colorFillTypeHasBeenSet = true; m_colorFillType = value; }
-    inline void SetColorFillType(ColorFillType&& value) { m_colorFillTypeHasBeenSet = true; m_colorFillType = std::move(value); }
-    inline ColorScale& WithColorFillType(const ColorFillType& value) { SetColorFillType(value); return *this;}
-    inline ColorScale& WithColorFillType(ColorFillType&& value) { SetColorFillType(std::move(value)); return *this;}
+    inline void SetColorFillType(ColorFillType value) { m_colorFillTypeHasBeenSet = true; m_colorFillType = value; }
+    inline ColorScale& WithColorFillType(ColorFillType value) { SetColorFillType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Determines the color that is applied to null values.</p>
      */
-    inline const DataColor& GetNullValueColor() const{ return m_nullValueColor; }
+    inline const DataColor& GetNullValueColor() const { return m_nullValueColor; }
     inline bool NullValueColorHasBeenSet() const { return m_nullValueColorHasBeenSet; }
-    inline void SetNullValueColor(const DataColor& value) { m_nullValueColorHasBeenSet = true; m_nullValueColor = value; }
-    inline void SetNullValueColor(DataColor&& value) { m_nullValueColorHasBeenSet = true; m_nullValueColor = std::move(value); }
-    inline ColorScale& WithNullValueColor(const DataColor& value) { SetNullValueColor(value); return *this;}
-    inline ColorScale& WithNullValueColor(DataColor&& value) { SetNullValueColor(std::move(value)); return *this;}
+    template<typename NullValueColorT = DataColor>
+    void SetNullValueColor(NullValueColorT&& value) { m_nullValueColorHasBeenSet = true; m_nullValueColor = std::forward<NullValueColorT>(value); }
+    template<typename NullValueColorT = DataColor>
+    ColorScale& WithNullValueColor(NullValueColorT&& value) { SetNullValueColor(std::forward<NullValueColorT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DataColor> m_colors;
     bool m_colorsHasBeenSet = false;
 
-    ColorFillType m_colorFillType;
+    ColorFillType m_colorFillType{ColorFillType::NOT_SET};
     bool m_colorFillTypeHasBeenSet = false;
 
     DataColor m_nullValueColor;

@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEksClusterLoggingClusterLoggingDetails::AwsEksClusterLoggingClusterLoggingDetails() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_typesHasBeenSet(false)
-{
-}
-
 AwsEksClusterLoggingClusterLoggingDetails::AwsEksClusterLoggingClusterLoggingDetails(JsonView jsonValue)
-  : AwsEksClusterLoggingClusterLoggingDetails()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AwsEksClusterLoggingClusterLoggingDetails& AwsEksClusterLoggingClusterLoggingDet
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Types"))
   {
     Aws::Utils::Array<JsonView> typesJsonList = jsonValue.GetArray("Types");
@@ -49,7 +39,6 @@ AwsEksClusterLoggingClusterLoggingDetails& AwsEksClusterLoggingClusterLoggingDet
     }
     m_typesHasBeenSet = true;
   }
-
   return *this;
 }
 

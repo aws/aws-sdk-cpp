@@ -12,14 +12,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListGlobalTablesRequest::ListGlobalTablesRequest() : 
-    m_exclusiveStartGlobalTableNameHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_regionNameHasBeenSet(false)
-{
-}
-
 Aws::String ListGlobalTablesRequest::SerializePayload() const
 {
   JsonValue payload;

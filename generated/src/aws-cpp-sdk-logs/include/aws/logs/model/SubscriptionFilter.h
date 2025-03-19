@@ -32,7 +32,7 @@ namespace Model
   class SubscriptionFilter
   {
   public:
-    AWS_CLOUDWATCHLOGS_API SubscriptionFilter();
+    AWS_CLOUDWATCHLOGS_API SubscriptionFilter() = default;
     AWS_CLOUDWATCHLOGS_API SubscriptionFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API SubscriptionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,78 +42,66 @@ namespace Model
     /**
      * <p>The name of the subscription filter.</p>
      */
-    inline const Aws::String& GetFilterName() const{ return m_filterName; }
+    inline const Aws::String& GetFilterName() const { return m_filterName; }
     inline bool FilterNameHasBeenSet() const { return m_filterNameHasBeenSet; }
-    inline void SetFilterName(const Aws::String& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
-    inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = std::move(value); }
-    inline void SetFilterName(const char* value) { m_filterNameHasBeenSet = true; m_filterName.assign(value); }
-    inline SubscriptionFilter& WithFilterName(const Aws::String& value) { SetFilterName(value); return *this;}
-    inline SubscriptionFilter& WithFilterName(Aws::String&& value) { SetFilterName(std::move(value)); return *this;}
-    inline SubscriptionFilter& WithFilterName(const char* value) { SetFilterName(value); return *this;}
+    template<typename FilterNameT = Aws::String>
+    void SetFilterName(FilterNameT&& value) { m_filterNameHasBeenSet = true; m_filterName = std::forward<FilterNameT>(value); }
+    template<typename FilterNameT = Aws::String>
+    SubscriptionFilter& WithFilterName(FilterNameT&& value) { SetFilterName(std::forward<FilterNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the log group.</p>
      */
-    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+    inline const Aws::String& GetLogGroupName() const { return m_logGroupName; }
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-    inline SubscriptionFilter& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-    inline SubscriptionFilter& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-    inline SubscriptionFilter& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+    template<typename LogGroupNameT = Aws::String>
+    void SetLogGroupName(LogGroupNameT&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::forward<LogGroupNameT>(value); }
+    template<typename LogGroupNameT = Aws::String>
+    SubscriptionFilter& WithLogGroupName(LogGroupNameT&& value) { SetLogGroupName(std::forward<LogGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetFilterPattern() const{ return m_filterPattern; }
+    inline const Aws::String& GetFilterPattern() const { return m_filterPattern; }
     inline bool FilterPatternHasBeenSet() const { return m_filterPatternHasBeenSet; }
-    inline void SetFilterPattern(const Aws::String& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
-    inline void SetFilterPattern(Aws::String&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = std::move(value); }
-    inline void SetFilterPattern(const char* value) { m_filterPatternHasBeenSet = true; m_filterPattern.assign(value); }
-    inline SubscriptionFilter& WithFilterPattern(const Aws::String& value) { SetFilterPattern(value); return *this;}
-    inline SubscriptionFilter& WithFilterPattern(Aws::String&& value) { SetFilterPattern(std::move(value)); return *this;}
-    inline SubscriptionFilter& WithFilterPattern(const char* value) { SetFilterPattern(value); return *this;}
+    template<typename FilterPatternT = Aws::String>
+    void SetFilterPattern(FilterPatternT&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = std::forward<FilterPatternT>(value); }
+    template<typename FilterPatternT = Aws::String>
+    SubscriptionFilter& WithFilterPattern(FilterPatternT&& value) { SetFilterPattern(std::forward<FilterPatternT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the destination.</p>
      */
-    inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
+    inline const Aws::String& GetDestinationArn() const { return m_destinationArn; }
     inline bool DestinationArnHasBeenSet() const { return m_destinationArnHasBeenSet; }
-    inline void SetDestinationArn(const Aws::String& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
-    inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::move(value); }
-    inline void SetDestinationArn(const char* value) { m_destinationArnHasBeenSet = true; m_destinationArn.assign(value); }
-    inline SubscriptionFilter& WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
-    inline SubscriptionFilter& WithDestinationArn(Aws::String&& value) { SetDestinationArn(std::move(value)); return *this;}
-    inline SubscriptionFilter& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
+    template<typename DestinationArnT = Aws::String>
+    void SetDestinationArn(DestinationArnT&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::forward<DestinationArnT>(value); }
+    template<typename DestinationArnT = Aws::String>
+    SubscriptionFilter& WithDestinationArn(DestinationArnT&& value) { SetDestinationArn(std::forward<DestinationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline SubscriptionFilter& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline SubscriptionFilter& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline SubscriptionFilter& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    SubscriptionFilter& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Distribution& GetDistribution() const{ return m_distribution; }
+    inline Distribution GetDistribution() const { return m_distribution; }
     inline bool DistributionHasBeenSet() const { return m_distributionHasBeenSet; }
-    inline void SetDistribution(const Distribution& value) { m_distributionHasBeenSet = true; m_distribution = value; }
-    inline void SetDistribution(Distribution&& value) { m_distributionHasBeenSet = true; m_distribution = std::move(value); }
-    inline SubscriptionFilter& WithDistribution(const Distribution& value) { SetDistribution(value); return *this;}
-    inline SubscriptionFilter& WithDistribution(Distribution&& value) { SetDistribution(std::move(value)); return *this;}
+    inline void SetDistribution(Distribution value) { m_distributionHasBeenSet = true; m_distribution = value; }
+    inline SubscriptionFilter& WithDistribution(Distribution value) { SetDistribution(value); return *this;}
     ///@}
 
     ///@{
@@ -125,7 +113,7 @@ namespace Model
      * transformed version of the log events instead of the original ingested log
      * events.</p>
      */
-    inline bool GetApplyOnTransformedLogs() const{ return m_applyOnTransformedLogs; }
+    inline bool GetApplyOnTransformedLogs() const { return m_applyOnTransformedLogs; }
     inline bool ApplyOnTransformedLogsHasBeenSet() const { return m_applyOnTransformedLogsHasBeenSet; }
     inline void SetApplyOnTransformedLogs(bool value) { m_applyOnTransformedLogsHasBeenSet = true; m_applyOnTransformedLogs = value; }
     inline SubscriptionFilter& WithApplyOnTransformedLogs(bool value) { SetApplyOnTransformedLogs(value); return *this;}
@@ -136,7 +124,7 @@ namespace Model
      * <p>The creation time of the subscription filter, expressed as the number of
      * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
-    inline long long GetCreationTime() const{ return m_creationTime; }
+    inline long long GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
     inline SubscriptionFilter& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
@@ -158,13 +146,13 @@ namespace Model
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
 
-    Distribution m_distribution;
+    Distribution m_distribution{Distribution::NOT_SET};
     bool m_distributionHasBeenSet = false;
 
-    bool m_applyOnTransformedLogs;
+    bool m_applyOnTransformedLogs{false};
     bool m_applyOnTransformedLogsHasBeenSet = false;
 
-    long long m_creationTime;
+    long long m_creationTime{0};
     bool m_creationTimeHasBeenSet = false;
   };
 

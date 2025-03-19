@@ -21,7 +21,7 @@ namespace Model
   class ListImportsRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API ListImportsRequest();
+    AWS_CLOUDFORMATION_API ListImportsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The name of the exported output value. CloudFormation returns the stack names
      * that are importing this value.</p>
      */
-    inline const Aws::String& GetExportName() const{ return m_exportName; }
+    inline const Aws::String& GetExportName() const { return m_exportName; }
     inline bool ExportNameHasBeenSet() const { return m_exportNameHasBeenSet; }
-    inline void SetExportName(const Aws::String& value) { m_exportNameHasBeenSet = true; m_exportName = value; }
-    inline void SetExportName(Aws::String&& value) { m_exportNameHasBeenSet = true; m_exportName = std::move(value); }
-    inline void SetExportName(const char* value) { m_exportNameHasBeenSet = true; m_exportName.assign(value); }
-    inline ListImportsRequest& WithExportName(const Aws::String& value) { SetExportName(value); return *this;}
-    inline ListImportsRequest& WithExportName(Aws::String&& value) { SetExportName(std::move(value)); return *this;}
-    inline ListImportsRequest& WithExportName(const char* value) { SetExportName(value); return *this;}
+    template<typename ExportNameT = Aws::String>
+    void SetExportName(ExportNameT&& value) { m_exportNameHasBeenSet = true; m_exportName = std::forward<ExportNameT>(value); }
+    template<typename ExportNameT = Aws::String>
+    ListImportsRequest& WithExportName(ExportNameT&& value) { SetExportName(std::forward<ExportNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * the next page of stacks that are importing the specified exported output
      * value.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListImportsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListImportsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListImportsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListImportsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 

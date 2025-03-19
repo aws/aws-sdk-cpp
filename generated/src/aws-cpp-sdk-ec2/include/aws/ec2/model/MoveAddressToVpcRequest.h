@@ -21,7 +21,7 @@ namespace Model
   class MoveAddressToVpcRequest : public EC2Request
   {
   public:
-    AWS_EC2_API MoveAddressToVpcRequest();
+    AWS_EC2_API MoveAddressToVpcRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline MoveAddressToVpcRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -53,18 +53,16 @@ namespace Model
     /**
      * <p>The Elastic IP address.</p>
      */
-    inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
+    inline const Aws::String& GetPublicIp() const { return m_publicIp; }
     inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
-    inline void SetPublicIp(const Aws::String& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
-    inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::move(value); }
-    inline void SetPublicIp(const char* value) { m_publicIpHasBeenSet = true; m_publicIp.assign(value); }
-    inline MoveAddressToVpcRequest& WithPublicIp(const Aws::String& value) { SetPublicIp(value); return *this;}
-    inline MoveAddressToVpcRequest& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
-    inline MoveAddressToVpcRequest& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
+    template<typename PublicIpT = Aws::String>
+    void SetPublicIp(PublicIpT&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::forward<PublicIpT>(value); }
+    template<typename PublicIpT = Aws::String>
+    MoveAddressToVpcRequest& WithPublicIp(PublicIpT&& value) { SetPublicIp(std::forward<PublicIpT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_publicIp;

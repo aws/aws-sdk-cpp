@@ -18,24 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-ConfigRecommendation::ConfigRecommendation() : 
-    m_appComponentNameHasBeenSet(false),
-    m_complianceHasBeenSet(false),
-    m_costHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_haArchitecture(HaArchitecture::NOT_SET),
-    m_haArchitectureHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_optimizationType(ConfigRecommendationOptimizationType::NOT_SET),
-    m_optimizationTypeHasBeenSet(false),
-    m_recommendationComplianceHasBeenSet(false),
-    m_referenceIdHasBeenSet(false),
-    m_suggestedChangesHasBeenSet(false)
-{
-}
-
 ConfigRecommendation::ConfigRecommendation(JsonView jsonValue)
-  : ConfigRecommendation()
 {
   *this = jsonValue;
 }
@@ -45,10 +28,8 @@ ConfigRecommendation& ConfigRecommendation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("appComponentName"))
   {
     m_appComponentName = jsonValue.GetString("appComponentName");
-
     m_appComponentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("compliance"))
   {
     Aws::Map<Aws::String, JsonView> complianceJsonMap = jsonValue.GetObject("compliance").GetAllObjects();
@@ -58,42 +39,31 @@ ConfigRecommendation& ConfigRecommendation::operator =(JsonView jsonValue)
     }
     m_complianceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cost"))
   {
     m_cost = jsonValue.GetObject("cost");
-
     m_costHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("haArchitecture"))
   {
     m_haArchitecture = HaArchitectureMapper::GetHaArchitectureForName(jsonValue.GetString("haArchitecture"));
-
     m_haArchitectureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("optimizationType"))
   {
     m_optimizationType = ConfigRecommendationOptimizationTypeMapper::GetConfigRecommendationOptimizationTypeForName(jsonValue.GetString("optimizationType"));
-
     m_optimizationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendationCompliance"))
   {
     Aws::Map<Aws::String, JsonView> recommendationComplianceJsonMap = jsonValue.GetObject("recommendationCompliance").GetAllObjects();
@@ -103,14 +73,11 @@ ConfigRecommendation& ConfigRecommendation::operator =(JsonView jsonValue)
     }
     m_recommendationComplianceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("referenceId"))
   {
     m_referenceId = jsonValue.GetString("referenceId");
-
     m_referenceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("suggestedChanges"))
   {
     Aws::Utils::Array<JsonView> suggestedChangesJsonList = jsonValue.GetArray("suggestedChanges");
@@ -120,7 +87,6 @@ ConfigRecommendation& ConfigRecommendation::operator =(JsonView jsonValue)
     }
     m_suggestedChangesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class CreateCrossAccountAttachmentResult
   {
   public:
-    AWS_GLOBALACCELERATOR_API CreateCrossAccountAttachmentResult();
+    AWS_GLOBALACCELERATOR_API CreateCrossAccountAttachmentResult() = default;
     AWS_GLOBALACCELERATOR_API CreateCrossAccountAttachmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLOBALACCELERATOR_API CreateCrossAccountAttachmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the cross-account attachment.</p>
      */
-    inline const Attachment& GetCrossAccountAttachment() const{ return m_crossAccountAttachment; }
-    inline void SetCrossAccountAttachment(const Attachment& value) { m_crossAccountAttachment = value; }
-    inline void SetCrossAccountAttachment(Attachment&& value) { m_crossAccountAttachment = std::move(value); }
-    inline CreateCrossAccountAttachmentResult& WithCrossAccountAttachment(const Attachment& value) { SetCrossAccountAttachment(value); return *this;}
-    inline CreateCrossAccountAttachmentResult& WithCrossAccountAttachment(Attachment&& value) { SetCrossAccountAttachment(std::move(value)); return *this;}
+    inline const Attachment& GetCrossAccountAttachment() const { return m_crossAccountAttachment; }
+    template<typename CrossAccountAttachmentT = Attachment>
+    void SetCrossAccountAttachment(CrossAccountAttachmentT&& value) { m_crossAccountAttachmentHasBeenSet = true; m_crossAccountAttachment = std::forward<CrossAccountAttachmentT>(value); }
+    template<typename CrossAccountAttachmentT = Attachment>
+    CreateCrossAccountAttachmentResult& WithCrossAccountAttachment(CrossAccountAttachmentT&& value) { SetCrossAccountAttachment(std::forward<CrossAccountAttachmentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateCrossAccountAttachmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateCrossAccountAttachmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateCrossAccountAttachmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateCrossAccountAttachmentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Attachment m_crossAccountAttachment;
+    bool m_crossAccountAttachmentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

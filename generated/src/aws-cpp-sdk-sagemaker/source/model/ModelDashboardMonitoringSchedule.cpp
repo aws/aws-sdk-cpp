@@ -18,26 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelDashboardMonitoringSchedule::ModelDashboardMonitoringSchedule() : 
-    m_monitoringScheduleArnHasBeenSet(false),
-    m_monitoringScheduleNameHasBeenSet(false),
-    m_monitoringScheduleStatus(ScheduleStatus::NOT_SET),
-    m_monitoringScheduleStatusHasBeenSet(false),
-    m_monitoringType(MonitoringType::NOT_SET),
-    m_monitoringTypeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_monitoringScheduleConfigHasBeenSet(false),
-    m_endpointNameHasBeenSet(false),
-    m_monitoringAlertSummariesHasBeenSet(false),
-    m_lastMonitoringExecutionSummaryHasBeenSet(false),
-    m_batchTransformInputHasBeenSet(false)
-{
-}
-
 ModelDashboardMonitoringSchedule::ModelDashboardMonitoringSchedule(JsonView jsonValue)
-  : ModelDashboardMonitoringSchedule()
 {
   *this = jsonValue;
 }
@@ -47,66 +28,48 @@ ModelDashboardMonitoringSchedule& ModelDashboardMonitoringSchedule::operator =(J
   if(jsonValue.ValueExists("MonitoringScheduleArn"))
   {
     m_monitoringScheduleArn = jsonValue.GetString("MonitoringScheduleArn");
-
     m_monitoringScheduleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitoringScheduleName"))
   {
     m_monitoringScheduleName = jsonValue.GetString("MonitoringScheduleName");
-
     m_monitoringScheduleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitoringScheduleStatus"))
   {
     m_monitoringScheduleStatus = ScheduleStatusMapper::GetScheduleStatusForName(jsonValue.GetString("MonitoringScheduleStatus"));
-
     m_monitoringScheduleStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitoringType"))
   {
     m_monitoringType = MonitoringTypeMapper::GetMonitoringTypeForName(jsonValue.GetString("MonitoringType"));
-
     m_monitoringTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitoringScheduleConfig"))
   {
     m_monitoringScheduleConfig = jsonValue.GetObject("MonitoringScheduleConfig");
-
     m_monitoringScheduleConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointName"))
   {
     m_endpointName = jsonValue.GetString("EndpointName");
-
     m_endpointNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitoringAlertSummaries"))
   {
     Aws::Utils::Array<JsonView> monitoringAlertSummariesJsonList = jsonValue.GetArray("MonitoringAlertSummaries");
@@ -116,21 +79,16 @@ ModelDashboardMonitoringSchedule& ModelDashboardMonitoringSchedule::operator =(J
     }
     m_monitoringAlertSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastMonitoringExecutionSummary"))
   {
     m_lastMonitoringExecutionSummary = jsonValue.GetObject("LastMonitoringExecutionSummary");
-
     m_lastMonitoringExecutionSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BatchTransformInput"))
   {
     m_batchTransformInput = jsonValue.GetObject("BatchTransformInput");
-
     m_batchTransformInputHasBeenSet = true;
   }
-
   return *this;
 }
 

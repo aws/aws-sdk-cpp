@@ -48,7 +48,7 @@ namespace Model
   class CanaryCodeInput
   {
   public:
-    AWS_SYNTHETICS_API CanaryCodeInput();
+    AWS_SYNTHETICS_API CanaryCodeInput() = default;
     AWS_SYNTHETICS_API CanaryCodeInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SYNTHETICS_API CanaryCodeInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SYNTHETICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,14 +59,12 @@ namespace Model
      * <p>If your canary script is located in S3, specify the bucket name here. Do not
      * include <code>s3://</code> as the start of the bucket name.</p>
      */
-    inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
+    inline const Aws::String& GetS3Bucket() const { return m_s3Bucket; }
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
-    inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
-    inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
-    inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
-    inline CanaryCodeInput& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
-    inline CanaryCodeInput& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
-    inline CanaryCodeInput& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
+    template<typename S3BucketT = Aws::String>
+    void SetS3Bucket(S3BucketT&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::forward<S3BucketT>(value); }
+    template<typename S3BucketT = Aws::String>
+    CanaryCodeInput& WithS3Bucket(S3BucketT&& value) { SetS3Bucket(std::forward<S3BucketT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,28 +73,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingObjects.html">Working
      * with Amazon S3 Objects</a>.</p>
      */
-    inline const Aws::String& GetS3Key() const{ return m_s3Key; }
+    inline const Aws::String& GetS3Key() const { return m_s3Key; }
     inline bool S3KeyHasBeenSet() const { return m_s3KeyHasBeenSet; }
-    inline void SetS3Key(const Aws::String& value) { m_s3KeyHasBeenSet = true; m_s3Key = value; }
-    inline void SetS3Key(Aws::String&& value) { m_s3KeyHasBeenSet = true; m_s3Key = std::move(value); }
-    inline void SetS3Key(const char* value) { m_s3KeyHasBeenSet = true; m_s3Key.assign(value); }
-    inline CanaryCodeInput& WithS3Key(const Aws::String& value) { SetS3Key(value); return *this;}
-    inline CanaryCodeInput& WithS3Key(Aws::String&& value) { SetS3Key(std::move(value)); return *this;}
-    inline CanaryCodeInput& WithS3Key(const char* value) { SetS3Key(value); return *this;}
+    template<typename S3KeyT = Aws::String>
+    void SetS3Key(S3KeyT&& value) { m_s3KeyHasBeenSet = true; m_s3Key = std::forward<S3KeyT>(value); }
+    template<typename S3KeyT = Aws::String>
+    CanaryCodeInput& WithS3Key(S3KeyT&& value) { SetS3Key(std::forward<S3KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The S3 version ID of your script.</p>
      */
-    inline const Aws::String& GetS3Version() const{ return m_s3Version; }
+    inline const Aws::String& GetS3Version() const { return m_s3Version; }
     inline bool S3VersionHasBeenSet() const { return m_s3VersionHasBeenSet; }
-    inline void SetS3Version(const Aws::String& value) { m_s3VersionHasBeenSet = true; m_s3Version = value; }
-    inline void SetS3Version(Aws::String&& value) { m_s3VersionHasBeenSet = true; m_s3Version = std::move(value); }
-    inline void SetS3Version(const char* value) { m_s3VersionHasBeenSet = true; m_s3Version.assign(value); }
-    inline CanaryCodeInput& WithS3Version(const Aws::String& value) { SetS3Version(value); return *this;}
-    inline CanaryCodeInput& WithS3Version(Aws::String&& value) { SetS3Version(std::move(value)); return *this;}
-    inline CanaryCodeInput& WithS3Version(const char* value) { SetS3Version(value); return *this;}
+    template<typename S3VersionT = Aws::String>
+    void SetS3Version(S3VersionT&& value) { m_s3VersionHasBeenSet = true; m_s3Version = std::forward<S3VersionT>(value); }
+    template<typename S3VersionT = Aws::String>
+    CanaryCodeInput& WithS3Version(S3VersionT&& value) { SetS3Version(std::forward<S3VersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,12 +101,12 @@ namespace Model
      * <p>For large canary scripts, we recommend that you use an S3 location instead of
      * inputting it directly with this parameter.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetZipFile() const{ return m_zipFile; }
+    inline const Aws::Utils::ByteBuffer& GetZipFile() const { return m_zipFile; }
     inline bool ZipFileHasBeenSet() const { return m_zipFileHasBeenSet; }
-    inline void SetZipFile(const Aws::Utils::ByteBuffer& value) { m_zipFileHasBeenSet = true; m_zipFile = value; }
-    inline void SetZipFile(Aws::Utils::ByteBuffer&& value) { m_zipFileHasBeenSet = true; m_zipFile = std::move(value); }
-    inline CanaryCodeInput& WithZipFile(const Aws::Utils::ByteBuffer& value) { SetZipFile(value); return *this;}
-    inline CanaryCodeInput& WithZipFile(Aws::Utils::ByteBuffer&& value) { SetZipFile(std::move(value)); return *this;}
+    template<typename ZipFileT = Aws::Utils::ByteBuffer>
+    void SetZipFile(ZipFileT&& value) { m_zipFileHasBeenSet = true; m_zipFile = std::forward<ZipFileT>(value); }
+    template<typename ZipFileT = Aws::Utils::ByteBuffer>
+    CanaryCodeInput& WithZipFile(ZipFileT&& value) { SetZipFile(std::forward<ZipFileT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,14 +121,12 @@ namespace Model
      * specify a folder where canary scripts reside as <code>
      * <i>folder</i>/<i>fileName</i>.<i>functionName</i> </code>.</p>
      */
-    inline const Aws::String& GetHandler() const{ return m_handler; }
+    inline const Aws::String& GetHandler() const { return m_handler; }
     inline bool HandlerHasBeenSet() const { return m_handlerHasBeenSet; }
-    inline void SetHandler(const Aws::String& value) { m_handlerHasBeenSet = true; m_handler = value; }
-    inline void SetHandler(Aws::String&& value) { m_handlerHasBeenSet = true; m_handler = std::move(value); }
-    inline void SetHandler(const char* value) { m_handlerHasBeenSet = true; m_handler.assign(value); }
-    inline CanaryCodeInput& WithHandler(const Aws::String& value) { SetHandler(value); return *this;}
-    inline CanaryCodeInput& WithHandler(Aws::String&& value) { SetHandler(std::move(value)); return *this;}
-    inline CanaryCodeInput& WithHandler(const char* value) { SetHandler(value); return *this;}
+    template<typename HandlerT = Aws::String>
+    void SetHandler(HandlerT&& value) { m_handlerHasBeenSet = true; m_handler = std::forward<HandlerT>(value); }
+    template<typename HandlerT = Aws::String>
+    CanaryCodeInput& WithHandler(HandlerT&& value) { SetHandler(std::forward<HandlerT>(value)); return *this;}
     ///@}
   private:
 
@@ -147,7 +139,7 @@ namespace Model
     Aws::String m_s3Version;
     bool m_s3VersionHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_zipFile;
+    Aws::Utils::ByteBuffer m_zipFile{};
     bool m_zipFileHasBeenSet = false;
 
     Aws::String m_handler;

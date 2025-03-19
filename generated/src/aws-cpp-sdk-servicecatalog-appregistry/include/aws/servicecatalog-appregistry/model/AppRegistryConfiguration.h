@@ -31,7 +31,7 @@ namespace Model
   class AppRegistryConfiguration
   {
   public:
-    AWS_APPREGISTRY_API AppRegistryConfiguration();
+    AWS_APPREGISTRY_API AppRegistryConfiguration() = default;
     AWS_APPREGISTRY_API AppRegistryConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPREGISTRY_API AppRegistryConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPREGISTRY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p> Includes the definition of a <code>tagQuery</code>. </p>
      */
-    inline const TagQueryConfiguration& GetTagQueryConfiguration() const{ return m_tagQueryConfiguration; }
+    inline const TagQueryConfiguration& GetTagQueryConfiguration() const { return m_tagQueryConfiguration; }
     inline bool TagQueryConfigurationHasBeenSet() const { return m_tagQueryConfigurationHasBeenSet; }
-    inline void SetTagQueryConfiguration(const TagQueryConfiguration& value) { m_tagQueryConfigurationHasBeenSet = true; m_tagQueryConfiguration = value; }
-    inline void SetTagQueryConfiguration(TagQueryConfiguration&& value) { m_tagQueryConfigurationHasBeenSet = true; m_tagQueryConfiguration = std::move(value); }
-    inline AppRegistryConfiguration& WithTagQueryConfiguration(const TagQueryConfiguration& value) { SetTagQueryConfiguration(value); return *this;}
-    inline AppRegistryConfiguration& WithTagQueryConfiguration(TagQueryConfiguration&& value) { SetTagQueryConfiguration(std::move(value)); return *this;}
+    template<typename TagQueryConfigurationT = TagQueryConfiguration>
+    void SetTagQueryConfiguration(TagQueryConfigurationT&& value) { m_tagQueryConfigurationHasBeenSet = true; m_tagQueryConfiguration = std::forward<TagQueryConfigurationT>(value); }
+    template<typename TagQueryConfigurationT = TagQueryConfiguration>
+    AppRegistryConfiguration& WithTagQueryConfiguration(TagQueryConfigurationT&& value) { SetTagQueryConfiguration(std::forward<TagQueryConfigurationT>(value)); return *this;}
     ///@}
   private:
 

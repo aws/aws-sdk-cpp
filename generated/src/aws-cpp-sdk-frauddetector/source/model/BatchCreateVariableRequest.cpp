@@ -12,12 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchCreateVariableRequest::BatchCreateVariableRequest() : 
-    m_variableEntriesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String BatchCreateVariableRequest::SerializePayload() const
 {
   JsonValue payload;

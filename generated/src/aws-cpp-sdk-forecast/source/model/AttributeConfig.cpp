@@ -18,14 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-AttributeConfig::AttributeConfig() : 
-    m_attributeNameHasBeenSet(false),
-    m_transformationsHasBeenSet(false)
-{
-}
-
 AttributeConfig::AttributeConfig(JsonView jsonValue)
-  : AttributeConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AttributeConfig& AttributeConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AttributeName"))
   {
     m_attributeName = jsonValue.GetString("AttributeName");
-
     m_attributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Transformations"))
   {
     Aws::Map<Aws::String, JsonView> transformationsJsonMap = jsonValue.GetObject("Transformations").GetAllObjects();
@@ -48,7 +39,6 @@ AttributeConfig& AttributeConfig::operator =(JsonView jsonValue)
     }
     m_transformationsHasBeenSet = true;
   }
-
   return *this;
 }
 

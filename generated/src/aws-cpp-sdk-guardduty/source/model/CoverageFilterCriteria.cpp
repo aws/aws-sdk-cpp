@@ -18,13 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-CoverageFilterCriteria::CoverageFilterCriteria() : 
-    m_filterCriterionHasBeenSet(false)
-{
-}
-
 CoverageFilterCriteria::CoverageFilterCriteria(JsonView jsonValue)
-  : CoverageFilterCriteria()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ CoverageFilterCriteria& CoverageFilterCriteria::operator =(JsonView jsonValue)
     }
     m_filterCriterionHasBeenSet = true;
   }
-
   return *this;
 }
 

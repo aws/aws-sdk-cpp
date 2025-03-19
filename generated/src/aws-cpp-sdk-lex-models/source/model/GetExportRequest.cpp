@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetExportRequest::GetExportRequest() : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_exportType(ExportType::NOT_SET),
-    m_exportTypeHasBeenSet(false)
-{
-}
-
 Aws::String GetExportRequest::SerializePayload() const
 {
   return {};

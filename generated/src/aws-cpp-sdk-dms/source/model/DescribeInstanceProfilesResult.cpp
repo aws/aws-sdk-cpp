@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeInstanceProfilesResult::DescribeInstanceProfilesResult()
-{
-}
-
 DescribeInstanceProfilesResult::DescribeInstanceProfilesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeInstanceProfilesResult& DescribeInstanceProfilesResult::operator =(const
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
-
+    m_markerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceProfiles"))
   {
     Aws::Utils::Array<JsonView> instanceProfilesJsonList = jsonValue.GetArray("InstanceProfiles");
@@ -42,14 +37,15 @@ DescribeInstanceProfilesResult& DescribeInstanceProfilesResult::operator =(const
     {
       m_instanceProfiles.push_back(instanceProfilesJsonList[instanceProfilesIndex].AsObject());
     }
+    m_instanceProfilesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

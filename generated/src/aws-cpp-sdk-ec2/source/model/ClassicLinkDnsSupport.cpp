@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ClassicLinkDnsSupport::ClassicLinkDnsSupport() : 
-    m_classicLinkDnsSupported(false),
-    m_classicLinkDnsSupportedHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 ClassicLinkDnsSupport::ClassicLinkDnsSupport(const XmlNode& xmlNode)
-  : ClassicLinkDnsSupport()
 {
   *this = xmlNode;
 }

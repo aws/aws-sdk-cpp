@@ -12,18 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFleetCapacityRequest::UpdateFleetCapacityRequest() : 
-    m_fleetIdHasBeenSet(false),
-    m_desiredInstances(0),
-    m_desiredInstancesHasBeenSet(false),
-    m_minSize(0),
-    m_minSizeHasBeenSet(false),
-    m_maxSize(0),
-    m_maxSizeHasBeenSet(false),
-    m_locationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFleetCapacityRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,17 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeScalingPoliciesRequest::DescribeScalingPoliciesRequest() : 
-    m_fleetIdHasBeenSet(false),
-    m_statusFilter(ScalingStatusType::NOT_SET),
-    m_statusFilterHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_locationHasBeenSet(false)
-{
-}
-
 Aws::String DescribeScalingPoliciesRequest::SerializePayload() const
 {
   JsonValue payload;

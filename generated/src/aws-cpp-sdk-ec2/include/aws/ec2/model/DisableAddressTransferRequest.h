@@ -21,7 +21,7 @@ namespace Model
   class DisableAddressTransferRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DisableAddressTransferRequest();
+    AWS_EC2_API DisableAddressTransferRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The allocation ID of an Elastic IP address.</p>
      */
-    inline const Aws::String& GetAllocationId() const{ return m_allocationId; }
+    inline const Aws::String& GetAllocationId() const { return m_allocationId; }
     inline bool AllocationIdHasBeenSet() const { return m_allocationIdHasBeenSet; }
-    inline void SetAllocationId(const Aws::String& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
-    inline void SetAllocationId(Aws::String&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::move(value); }
-    inline void SetAllocationId(const char* value) { m_allocationIdHasBeenSet = true; m_allocationId.assign(value); }
-    inline DisableAddressTransferRequest& WithAllocationId(const Aws::String& value) { SetAllocationId(value); return *this;}
-    inline DisableAddressTransferRequest& WithAllocationId(Aws::String&& value) { SetAllocationId(std::move(value)); return *this;}
-    inline DisableAddressTransferRequest& WithAllocationId(const char* value) { SetAllocationId(value); return *this;}
+    template<typename AllocationIdT = Aws::String>
+    void SetAllocationId(AllocationIdT&& value) { m_allocationIdHasBeenSet = true; m_allocationId = std::forward<AllocationIdT>(value); }
+    template<typename AllocationIdT = Aws::String>
+    DisableAddressTransferRequest& WithAllocationId(AllocationIdT&& value) { SetAllocationId(std::forward<AllocationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DisableAddressTransferRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_allocationId;
     bool m_allocationIdHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

@@ -30,7 +30,7 @@ namespace Model
   class TagResource2020_05_31Request : public CloudFrontRequest
   {
   public:
-    AWS_CLOUDFRONT_API TagResource2020_05_31Request();
+    AWS_CLOUDFRONT_API TagResource2020_05_31Request() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,26 +47,24 @@ namespace Model
     /**
      * <p>An ARN of a CloudFront resource.</p>
      */
-    inline const Aws::String& GetResource() const{ return m_resource; }
+    inline const Aws::String& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline void SetResource(const char* value) { m_resourceHasBeenSet = true; m_resource.assign(value); }
-    inline TagResource2020_05_31Request& WithResource(const Aws::String& value) { SetResource(value); return *this;}
-    inline TagResource2020_05_31Request& WithResource(Aws::String&& value) { SetResource(std::move(value)); return *this;}
-    inline TagResource2020_05_31Request& WithResource(const char* value) { SetResource(value); return *this;}
+    template<typename ResourceT = Aws::String>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Aws::String>
+    TagResource2020_05_31Request& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
      */
-    inline const Tags& GetTags() const{ return m_tags; }
+    inline const Tags& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Tags& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Tags&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline TagResource2020_05_31Request& WithTags(const Tags& value) { SetTags(value); return *this;}
-    inline TagResource2020_05_31Request& WithTags(Tags&& value) { SetTags(std::move(value)); return *this;}
+    template<typename TagsT = Tags>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Tags>
+    TagResource2020_05_31Request& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
     ///@}
   private:
 

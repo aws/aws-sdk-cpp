@@ -32,7 +32,7 @@ namespace Model
   class PrimitiveMessageDefinition
   {
   public:
-    AWS_IOTFLEETWISE_API PrimitiveMessageDefinition();
+    AWS_IOTFLEETWISE_API PrimitiveMessageDefinition() = default;
     AWS_IOTFLEETWISE_API PrimitiveMessageDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API PrimitiveMessageDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTFLEETWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Information about a <code>PrimitiveMessage</code> using a ROS 2 compliant
      * primitive type message of the complex data structure.</p>
      */
-    inline const ROS2PrimitiveMessageDefinition& GetRos2PrimitiveMessageDefinition() const{ return m_ros2PrimitiveMessageDefinition; }
+    inline const ROS2PrimitiveMessageDefinition& GetRos2PrimitiveMessageDefinition() const { return m_ros2PrimitiveMessageDefinition; }
     inline bool Ros2PrimitiveMessageDefinitionHasBeenSet() const { return m_ros2PrimitiveMessageDefinitionHasBeenSet; }
-    inline void SetRos2PrimitiveMessageDefinition(const ROS2PrimitiveMessageDefinition& value) { m_ros2PrimitiveMessageDefinitionHasBeenSet = true; m_ros2PrimitiveMessageDefinition = value; }
-    inline void SetRos2PrimitiveMessageDefinition(ROS2PrimitiveMessageDefinition&& value) { m_ros2PrimitiveMessageDefinitionHasBeenSet = true; m_ros2PrimitiveMessageDefinition = std::move(value); }
-    inline PrimitiveMessageDefinition& WithRos2PrimitiveMessageDefinition(const ROS2PrimitiveMessageDefinition& value) { SetRos2PrimitiveMessageDefinition(value); return *this;}
-    inline PrimitiveMessageDefinition& WithRos2PrimitiveMessageDefinition(ROS2PrimitiveMessageDefinition&& value) { SetRos2PrimitiveMessageDefinition(std::move(value)); return *this;}
+    template<typename Ros2PrimitiveMessageDefinitionT = ROS2PrimitiveMessageDefinition>
+    void SetRos2PrimitiveMessageDefinition(Ros2PrimitiveMessageDefinitionT&& value) { m_ros2PrimitiveMessageDefinitionHasBeenSet = true; m_ros2PrimitiveMessageDefinition = std::forward<Ros2PrimitiveMessageDefinitionT>(value); }
+    template<typename Ros2PrimitiveMessageDefinitionT = ROS2PrimitiveMessageDefinition>
+    PrimitiveMessageDefinition& WithRos2PrimitiveMessageDefinition(Ros2PrimitiveMessageDefinitionT&& value) { SetRos2PrimitiveMessageDefinition(std::forward<Ros2PrimitiveMessageDefinitionT>(value)); return *this;}
     ///@}
   private:
 

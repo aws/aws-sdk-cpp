@@ -12,10 +12,6 @@ using namespace Aws::WAFRegional::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetChangeTokenRequest::GetChangeTokenRequest()
-{
-}
-
 Aws::String GetChangeTokenRequest::SerializePayload() const
 {
   return "{}";

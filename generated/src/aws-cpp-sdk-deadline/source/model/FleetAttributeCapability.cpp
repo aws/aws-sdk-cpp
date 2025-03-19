@@ -18,14 +18,7 @@ namespace deadline
 namespace Model
 {
 
-FleetAttributeCapability::FleetAttributeCapability() : 
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 FleetAttributeCapability::FleetAttributeCapability(JsonView jsonValue)
-  : FleetAttributeCapability()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ FleetAttributeCapability& FleetAttributeCapability::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -48,7 +39,6 @@ FleetAttributeCapability& FleetAttributeCapability::operator =(JsonView jsonValu
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

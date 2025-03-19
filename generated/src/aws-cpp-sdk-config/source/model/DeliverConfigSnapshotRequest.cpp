@@ -12,11 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeliverConfigSnapshotRequest::DeliverConfigSnapshotRequest() : 
-    m_deliveryChannelNameHasBeenSet(false)
-{
-}
-
 Aws::String DeliverConfigSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

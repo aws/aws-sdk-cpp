@@ -37,7 +37,7 @@ namespace Model
   class RemediationConfiguration
   {
   public:
-    AWS_CONFIGSERVICE_API RemediationConfiguration();
+    AWS_CONFIGSERVICE_API RemediationConfiguration() = default;
     AWS_CONFIGSERVICE_API RemediationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API RemediationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The name of the Config rule.</p>
      */
-    inline const Aws::String& GetConfigRuleName() const{ return m_configRuleName; }
+    inline const Aws::String& GetConfigRuleName() const { return m_configRuleName; }
     inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
-    inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
-    inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::move(value); }
-    inline void SetConfigRuleName(const char* value) { m_configRuleNameHasBeenSet = true; m_configRuleName.assign(value); }
-    inline RemediationConfiguration& WithConfigRuleName(const Aws::String& value) { SetConfigRuleName(value); return *this;}
-    inline RemediationConfiguration& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(std::move(value)); return *this;}
-    inline RemediationConfiguration& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}
+    template<typename ConfigRuleNameT = Aws::String>
+    void SetConfigRuleName(ConfigRuleNameT&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::forward<ConfigRuleNameT>(value); }
+    template<typename ConfigRuleNameT = Aws::String>
+    RemediationConfiguration& WithConfigRuleName(ConfigRuleNameT&& value) { SetConfigRuleName(std::forward<ConfigRuleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,26 +60,22 @@ namespace Model
      * <p>The type of the target. Target executes remediation. For example, SSM
      * document.</p>
      */
-    inline const RemediationTargetType& GetTargetType() const{ return m_targetType; }
+    inline RemediationTargetType GetTargetType() const { return m_targetType; }
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
-    inline void SetTargetType(const RemediationTargetType& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
-    inline void SetTargetType(RemediationTargetType&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
-    inline RemediationConfiguration& WithTargetType(const RemediationTargetType& value) { SetTargetType(value); return *this;}
-    inline RemediationConfiguration& WithTargetType(RemediationTargetType&& value) { SetTargetType(std::move(value)); return *this;}
+    inline void SetTargetType(RemediationTargetType value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
+    inline RemediationConfiguration& WithTargetType(RemediationTargetType value) { SetTargetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Target ID is the name of the SSM document.</p>
      */
-    inline const Aws::String& GetTargetId() const{ return m_targetId; }
+    inline const Aws::String& GetTargetId() const { return m_targetId; }
     inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
-    inline void SetTargetId(const Aws::String& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
-    inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = std::move(value); }
-    inline void SetTargetId(const char* value) { m_targetIdHasBeenSet = true; m_targetId.assign(value); }
-    inline RemediationConfiguration& WithTargetId(const Aws::String& value) { SetTargetId(value); return *this;}
-    inline RemediationConfiguration& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
-    inline RemediationConfiguration& WithTargetId(const char* value) { SetTargetId(value); return *this;}
+    template<typename TargetIdT = Aws::String>
+    void SetTargetId(TargetIdT&& value) { m_targetIdHasBeenSet = true; m_targetId = std::forward<TargetIdT>(value); }
+    template<typename TargetIdT = Aws::String>
+    RemediationConfiguration& WithTargetId(TargetIdT&& value) { SetTargetId(std::forward<TargetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,53 +85,47 @@ namespace Model
      * PutRemediationConfiguration API again to ensure the remediations can run.</p>
      * 
      */
-    inline const Aws::String& GetTargetVersion() const{ return m_targetVersion; }
+    inline const Aws::String& GetTargetVersion() const { return m_targetVersion; }
     inline bool TargetVersionHasBeenSet() const { return m_targetVersionHasBeenSet; }
-    inline void SetTargetVersion(const Aws::String& value) { m_targetVersionHasBeenSet = true; m_targetVersion = value; }
-    inline void SetTargetVersion(Aws::String&& value) { m_targetVersionHasBeenSet = true; m_targetVersion = std::move(value); }
-    inline void SetTargetVersion(const char* value) { m_targetVersionHasBeenSet = true; m_targetVersion.assign(value); }
-    inline RemediationConfiguration& WithTargetVersion(const Aws::String& value) { SetTargetVersion(value); return *this;}
-    inline RemediationConfiguration& WithTargetVersion(Aws::String&& value) { SetTargetVersion(std::move(value)); return *this;}
-    inline RemediationConfiguration& WithTargetVersion(const char* value) { SetTargetVersion(value); return *this;}
+    template<typename TargetVersionT = Aws::String>
+    void SetTargetVersion(TargetVersionT&& value) { m_targetVersionHasBeenSet = true; m_targetVersion = std::forward<TargetVersionT>(value); }
+    template<typename TargetVersionT = Aws::String>
+    RemediationConfiguration& WithTargetVersion(TargetVersionT&& value) { SetTargetVersion(std::forward<TargetVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object of the RemediationParameterValue.</p>
      */
-    inline const Aws::Map<Aws::String, RemediationParameterValue>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, RemediationParameterValue>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, RemediationParameterValue>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, RemediationParameterValue>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline RemediationConfiguration& WithParameters(const Aws::Map<Aws::String, RemediationParameterValue>& value) { SetParameters(value); return *this;}
-    inline RemediationConfiguration& WithParameters(Aws::Map<Aws::String, RemediationParameterValue>&& value) { SetParameters(std::move(value)); return *this;}
-    inline RemediationConfiguration& AddParameters(const Aws::String& key, const RemediationParameterValue& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline RemediationConfiguration& AddParameters(Aws::String&& key, const RemediationParameterValue& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline RemediationConfiguration& AddParameters(const Aws::String& key, RemediationParameterValue&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline RemediationConfiguration& AddParameters(Aws::String&& key, RemediationParameterValue&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline RemediationConfiguration& AddParameters(const char* key, RemediationParameterValue&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline RemediationConfiguration& AddParameters(const char* key, const RemediationParameterValue& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, RemediationParameterValue>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, RemediationParameterValue>>
+    RemediationConfiguration& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = RemediationParameterValue>
+    RemediationConfiguration& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The type of a resource. </p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline RemediationConfiguration& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline RemediationConfiguration& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline RemediationConfiguration& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    RemediationConfiguration& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The remediation is triggered automatically.</p>
      */
-    inline bool GetAutomatic() const{ return m_automatic; }
+    inline bool GetAutomatic() const { return m_automatic; }
     inline bool AutomaticHasBeenSet() const { return m_automaticHasBeenSet; }
     inline void SetAutomatic(bool value) { m_automaticHasBeenSet = true; m_automatic = value; }
     inline RemediationConfiguration& WithAutomatic(bool value) { SetAutomatic(value); return *this;}
@@ -147,12 +135,12 @@ namespace Model
     /**
      * <p>An ExecutionControls object.</p>
      */
-    inline const ExecutionControls& GetExecutionControls() const{ return m_executionControls; }
+    inline const ExecutionControls& GetExecutionControls() const { return m_executionControls; }
     inline bool ExecutionControlsHasBeenSet() const { return m_executionControlsHasBeenSet; }
-    inline void SetExecutionControls(const ExecutionControls& value) { m_executionControlsHasBeenSet = true; m_executionControls = value; }
-    inline void SetExecutionControls(ExecutionControls&& value) { m_executionControlsHasBeenSet = true; m_executionControls = std::move(value); }
-    inline RemediationConfiguration& WithExecutionControls(const ExecutionControls& value) { SetExecutionControls(value); return *this;}
-    inline RemediationConfiguration& WithExecutionControls(ExecutionControls&& value) { SetExecutionControls(std::move(value)); return *this;}
+    template<typename ExecutionControlsT = ExecutionControls>
+    void SetExecutionControls(ExecutionControlsT&& value) { m_executionControlsHasBeenSet = true; m_executionControls = std::forward<ExecutionControlsT>(value); }
+    template<typename ExecutionControlsT = ExecutionControls>
+    RemediationConfiguration& WithExecutionControls(ExecutionControlsT&& value) { SetExecutionControls(std::forward<ExecutionControlsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,7 +151,7 @@ namespace Model
      * will put a RemediationException on your behalf for the failing resource after
      * the 5th failed attempt within 50 seconds.</p>
      */
-    inline int GetMaximumAutomaticAttempts() const{ return m_maximumAutomaticAttempts; }
+    inline int GetMaximumAutomaticAttempts() const { return m_maximumAutomaticAttempts; }
     inline bool MaximumAutomaticAttemptsHasBeenSet() const { return m_maximumAutomaticAttemptsHasBeenSet; }
     inline void SetMaximumAutomaticAttempts(int value) { m_maximumAutomaticAttemptsHasBeenSet = true; m_maximumAutomaticAttempts = value; }
     inline RemediationConfiguration& WithMaximumAutomaticAttempts(int value) { SetMaximumAutomaticAttempts(value); return *this;}
@@ -181,7 +169,7 @@ namespace Model
      * times within 50 seconds before adding a remediation exception to the
      * resource.</p>
      */
-    inline long long GetRetryAttemptSeconds() const{ return m_retryAttemptSeconds; }
+    inline long long GetRetryAttemptSeconds() const { return m_retryAttemptSeconds; }
     inline bool RetryAttemptSecondsHasBeenSet() const { return m_retryAttemptSecondsHasBeenSet; }
     inline void SetRetryAttemptSeconds(long long value) { m_retryAttemptSecondsHasBeenSet = true; m_retryAttemptSeconds = value; }
     inline RemediationConfiguration& WithRetryAttemptSeconds(long long value) { SetRetryAttemptSeconds(value); return *this;}
@@ -191,35 +179,31 @@ namespace Model
     /**
      * <p>Amazon Resource Name (ARN) of remediation configuration.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline RemediationConfiguration& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline RemediationConfiguration& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline RemediationConfiguration& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    RemediationConfiguration& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Name of the service that owns the service-linked rule, if applicable.</p>
      */
-    inline const Aws::String& GetCreatedByService() const{ return m_createdByService; }
+    inline const Aws::String& GetCreatedByService() const { return m_createdByService; }
     inline bool CreatedByServiceHasBeenSet() const { return m_createdByServiceHasBeenSet; }
-    inline void SetCreatedByService(const Aws::String& value) { m_createdByServiceHasBeenSet = true; m_createdByService = value; }
-    inline void SetCreatedByService(Aws::String&& value) { m_createdByServiceHasBeenSet = true; m_createdByService = std::move(value); }
-    inline void SetCreatedByService(const char* value) { m_createdByServiceHasBeenSet = true; m_createdByService.assign(value); }
-    inline RemediationConfiguration& WithCreatedByService(const Aws::String& value) { SetCreatedByService(value); return *this;}
-    inline RemediationConfiguration& WithCreatedByService(Aws::String&& value) { SetCreatedByService(std::move(value)); return *this;}
-    inline RemediationConfiguration& WithCreatedByService(const char* value) { SetCreatedByService(value); return *this;}
+    template<typename CreatedByServiceT = Aws::String>
+    void SetCreatedByService(CreatedByServiceT&& value) { m_createdByServiceHasBeenSet = true; m_createdByService = std::forward<CreatedByServiceT>(value); }
+    template<typename CreatedByServiceT = Aws::String>
+    RemediationConfiguration& WithCreatedByService(CreatedByServiceT&& value) { SetCreatedByService(std::forward<CreatedByServiceT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_configRuleName;
     bool m_configRuleNameHasBeenSet = false;
 
-    RemediationTargetType m_targetType;
+    RemediationTargetType m_targetType{RemediationTargetType::NOT_SET};
     bool m_targetTypeHasBeenSet = false;
 
     Aws::String m_targetId;
@@ -234,16 +218,16 @@ namespace Model
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet = false;
 
-    bool m_automatic;
+    bool m_automatic{false};
     bool m_automaticHasBeenSet = false;
 
     ExecutionControls m_executionControls;
     bool m_executionControlsHasBeenSet = false;
 
-    int m_maximumAutomaticAttempts;
+    int m_maximumAutomaticAttempts{0};
     bool m_maximumAutomaticAttemptsHasBeenSet = false;
 
-    long long m_retryAttemptSeconds;
+    long long m_retryAttemptSeconds{0};
     bool m_retryAttemptSecondsHasBeenSet = false;
 
     Aws::String m_arn;

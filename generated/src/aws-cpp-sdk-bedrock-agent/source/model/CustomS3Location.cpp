@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-CustomS3Location::CustomS3Location() : 
-    m_bucketOwnerAccountIdHasBeenSet(false),
-    m_uriHasBeenSet(false)
-{
-}
-
 CustomS3Location::CustomS3Location(JsonView jsonValue)
-  : CustomS3Location()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CustomS3Location& CustomS3Location::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucketOwnerAccountId"))
   {
     m_bucketOwnerAccountId = jsonValue.GetString("bucketOwnerAccountId");
-
     m_bucketOwnerAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uri"))
   {
     m_uri = jsonValue.GetString("uri");
-
     m_uriHasBeenSet = true;
   }
-
   return *this;
 }
 

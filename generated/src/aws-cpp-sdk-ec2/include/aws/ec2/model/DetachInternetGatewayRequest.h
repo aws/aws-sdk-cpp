@@ -21,7 +21,7 @@ namespace Model
   class DetachInternetGatewayRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DetachInternetGatewayRequest();
+    AWS_EC2_API DetachInternetGatewayRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DetachInternetGatewayRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -53,32 +53,28 @@ namespace Model
     /**
      * <p>The ID of the internet gateway.</p>
      */
-    inline const Aws::String& GetInternetGatewayId() const{ return m_internetGatewayId; }
+    inline const Aws::String& GetInternetGatewayId() const { return m_internetGatewayId; }
     inline bool InternetGatewayIdHasBeenSet() const { return m_internetGatewayIdHasBeenSet; }
-    inline void SetInternetGatewayId(const Aws::String& value) { m_internetGatewayIdHasBeenSet = true; m_internetGatewayId = value; }
-    inline void SetInternetGatewayId(Aws::String&& value) { m_internetGatewayIdHasBeenSet = true; m_internetGatewayId = std::move(value); }
-    inline void SetInternetGatewayId(const char* value) { m_internetGatewayIdHasBeenSet = true; m_internetGatewayId.assign(value); }
-    inline DetachInternetGatewayRequest& WithInternetGatewayId(const Aws::String& value) { SetInternetGatewayId(value); return *this;}
-    inline DetachInternetGatewayRequest& WithInternetGatewayId(Aws::String&& value) { SetInternetGatewayId(std::move(value)); return *this;}
-    inline DetachInternetGatewayRequest& WithInternetGatewayId(const char* value) { SetInternetGatewayId(value); return *this;}
+    template<typename InternetGatewayIdT = Aws::String>
+    void SetInternetGatewayId(InternetGatewayIdT&& value) { m_internetGatewayIdHasBeenSet = true; m_internetGatewayId = std::forward<InternetGatewayIdT>(value); }
+    template<typename InternetGatewayIdT = Aws::String>
+    DetachInternetGatewayRequest& WithInternetGatewayId(InternetGatewayIdT&& value) { SetInternetGatewayId(std::forward<InternetGatewayIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the VPC.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline DetachInternetGatewayRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline DetachInternetGatewayRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline DetachInternetGatewayRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    DetachInternetGatewayRequest& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_internetGatewayId;

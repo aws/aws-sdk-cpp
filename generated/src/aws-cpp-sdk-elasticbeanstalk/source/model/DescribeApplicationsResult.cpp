@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeApplicationsResult::DescribeApplicationsResult()
-{
-}
-
 DescribeApplicationsResult::DescribeApplicationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ DescribeApplicationsResult& DescribeApplicationsResult::operator =(const Aws::Am
     if(!applicationsNode.IsNull())
     {
       XmlNode applicationsMember = applicationsNode.FirstChild("member");
+      m_applicationsHasBeenSet = !applicationsMember.IsNull();
       while(!applicationsMember.IsNull())
       {
         m_applications.push_back(applicationsMember);
         applicationsMember = applicationsMember.NextNode("member");
       }
 
+      m_applicationsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticBeanstalk::Model::DescribeApplicationsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

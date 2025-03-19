@@ -27,7 +27,7 @@ namespace Model
   class StartAuditMitigationActionsTaskResult
   {
   public:
-    AWS_IOT_API StartAuditMitigationActionsTaskResult();
+    AWS_IOT_API StartAuditMitigationActionsTaskResult() = default;
     AWS_IOT_API StartAuditMitigationActionsTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API StartAuditMitigationActionsTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The unique identifier for the audit mitigation task. This matches the
      * <code>taskId</code> that you specified in the request.</p>
      */
-    inline const Aws::String& GetTaskId() const{ return m_taskId; }
-    inline void SetTaskId(const Aws::String& value) { m_taskId = value; }
-    inline void SetTaskId(Aws::String&& value) { m_taskId = std::move(value); }
-    inline void SetTaskId(const char* value) { m_taskId.assign(value); }
-    inline StartAuditMitigationActionsTaskResult& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-    inline StartAuditMitigationActionsTaskResult& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-    inline StartAuditMitigationActionsTaskResult& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    inline const Aws::String& GetTaskId() const { return m_taskId; }
+    template<typename TaskIdT = Aws::String>
+    void SetTaskId(TaskIdT&& value) { m_taskIdHasBeenSet = true; m_taskId = std::forward<TaskIdT>(value); }
+    template<typename TaskIdT = Aws::String>
+    StartAuditMitigationActionsTaskResult& WithTaskId(TaskIdT&& value) { SetTaskId(std::forward<TaskIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartAuditMitigationActionsTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartAuditMitigationActionsTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartAuditMitigationActionsTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartAuditMitigationActionsTaskResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_taskId;
+    bool m_taskIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

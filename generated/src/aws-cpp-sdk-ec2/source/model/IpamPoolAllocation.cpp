@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IpamPoolAllocation::IpamPoolAllocation() : 
-    m_cidrHasBeenSet(false),
-    m_ipamPoolAllocationIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceType(IpamPoolAllocationResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceRegionHasBeenSet(false),
-    m_resourceOwnerHasBeenSet(false)
-{
-}
-
 IpamPoolAllocation::IpamPoolAllocation(const XmlNode& xmlNode)
-  : IpamPoolAllocation()
 {
   *this = xmlNode;
 }
@@ -71,7 +58,7 @@ IpamPoolAllocation& IpamPoolAllocation::operator =(const XmlNode& xmlNode)
     XmlNode resourceTypeNode = resultNode.FirstChild("resourceType");
     if(!resourceTypeNode.IsNull())
     {
-      m_resourceType = IpamPoolAllocationResourceTypeMapper::GetIpamPoolAllocationResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()).c_str());
+      m_resourceType = IpamPoolAllocationResourceTypeMapper::GetIpamPoolAllocationResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()));
       m_resourceTypeHasBeenSet = true;
     }
     XmlNode resourceRegionNode = resultNode.FirstChild("resourceRegion");

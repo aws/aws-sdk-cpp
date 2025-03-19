@@ -25,7 +25,7 @@ namespace Model
   class DescribeScraperRequest : public PrometheusServiceRequest
   {
   public:
-    AWS_PROMETHEUSSERVICE_API DescribeScraperRequest();
+    AWS_PROMETHEUSSERVICE_API DescribeScraperRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The ID of the scraper to describe.</p>
      */
-    inline const Aws::String& GetScraperId() const{ return m_scraperId; }
+    inline const Aws::String& GetScraperId() const { return m_scraperId; }
     inline bool ScraperIdHasBeenSet() const { return m_scraperIdHasBeenSet; }
-    inline void SetScraperId(const Aws::String& value) { m_scraperIdHasBeenSet = true; m_scraperId = value; }
-    inline void SetScraperId(Aws::String&& value) { m_scraperIdHasBeenSet = true; m_scraperId = std::move(value); }
-    inline void SetScraperId(const char* value) { m_scraperIdHasBeenSet = true; m_scraperId.assign(value); }
-    inline DescribeScraperRequest& WithScraperId(const Aws::String& value) { SetScraperId(value); return *this;}
-    inline DescribeScraperRequest& WithScraperId(Aws::String&& value) { SetScraperId(std::move(value)); return *this;}
-    inline DescribeScraperRequest& WithScraperId(const char* value) { SetScraperId(value); return *this;}
+    template<typename ScraperIdT = Aws::String>
+    void SetScraperId(ScraperIdT&& value) { m_scraperIdHasBeenSet = true; m_scraperId = std::forward<ScraperIdT>(value); }
+    template<typename ScraperIdT = Aws::String>
+    DescribeScraperRequest& WithScraperId(ScraperIdT&& value) { SetScraperId(std::forward<ScraperIdT>(value)); return *this;}
     ///@}
   private:
 

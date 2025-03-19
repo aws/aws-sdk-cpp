@@ -22,7 +22,7 @@ namespace Model
   class BatchDeleteAutomationRulesRequest : public SecurityHubRequest
   {
   public:
-    AWS_SECURITYHUB_API BatchDeleteAutomationRulesRequest();
+    AWS_SECURITYHUB_API BatchDeleteAutomationRulesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,15 +38,14 @@ namespace Model
      * <p> A list of Amazon Resource Names (ARNs) for the rules that are to be deleted.
      * </p>
      */
-    inline const Aws::Vector<Aws::String>& GetAutomationRulesArns() const{ return m_automationRulesArns; }
+    inline const Aws::Vector<Aws::String>& GetAutomationRulesArns() const { return m_automationRulesArns; }
     inline bool AutomationRulesArnsHasBeenSet() const { return m_automationRulesArnsHasBeenSet; }
-    inline void SetAutomationRulesArns(const Aws::Vector<Aws::String>& value) { m_automationRulesArnsHasBeenSet = true; m_automationRulesArns = value; }
-    inline void SetAutomationRulesArns(Aws::Vector<Aws::String>&& value) { m_automationRulesArnsHasBeenSet = true; m_automationRulesArns = std::move(value); }
-    inline BatchDeleteAutomationRulesRequest& WithAutomationRulesArns(const Aws::Vector<Aws::String>& value) { SetAutomationRulesArns(value); return *this;}
-    inline BatchDeleteAutomationRulesRequest& WithAutomationRulesArns(Aws::Vector<Aws::String>&& value) { SetAutomationRulesArns(std::move(value)); return *this;}
-    inline BatchDeleteAutomationRulesRequest& AddAutomationRulesArns(const Aws::String& value) { m_automationRulesArnsHasBeenSet = true; m_automationRulesArns.push_back(value); return *this; }
-    inline BatchDeleteAutomationRulesRequest& AddAutomationRulesArns(Aws::String&& value) { m_automationRulesArnsHasBeenSet = true; m_automationRulesArns.push_back(std::move(value)); return *this; }
-    inline BatchDeleteAutomationRulesRequest& AddAutomationRulesArns(const char* value) { m_automationRulesArnsHasBeenSet = true; m_automationRulesArns.push_back(value); return *this; }
+    template<typename AutomationRulesArnsT = Aws::Vector<Aws::String>>
+    void SetAutomationRulesArns(AutomationRulesArnsT&& value) { m_automationRulesArnsHasBeenSet = true; m_automationRulesArns = std::forward<AutomationRulesArnsT>(value); }
+    template<typename AutomationRulesArnsT = Aws::Vector<Aws::String>>
+    BatchDeleteAutomationRulesRequest& WithAutomationRulesArns(AutomationRulesArnsT&& value) { SetAutomationRulesArns(std::forward<AutomationRulesArnsT>(value)); return *this;}
+    template<typename AutomationRulesArnsT = Aws::String>
+    BatchDeleteAutomationRulesRequest& AddAutomationRulesArns(AutomationRulesArnsT&& value) { m_automationRulesArnsHasBeenSet = true; m_automationRulesArns.emplace_back(std::forward<AutomationRulesArnsT>(value)); return *this; }
     ///@}
   private:
 

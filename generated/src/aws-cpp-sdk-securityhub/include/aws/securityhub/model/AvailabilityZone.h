@@ -31,7 +31,7 @@ namespace Model
   class AvailabilityZone
   {
   public:
-    AWS_SECURITYHUB_API AvailabilityZone();
+    AWS_SECURITYHUB_API AvailabilityZone() = default;
     AWS_SECURITYHUB_API AvailabilityZone(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AvailabilityZone& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The name of the Availability Zone.</p>
      */
-    inline const Aws::String& GetZoneName() const{ return m_zoneName; }
+    inline const Aws::String& GetZoneName() const { return m_zoneName; }
     inline bool ZoneNameHasBeenSet() const { return m_zoneNameHasBeenSet; }
-    inline void SetZoneName(const Aws::String& value) { m_zoneNameHasBeenSet = true; m_zoneName = value; }
-    inline void SetZoneName(Aws::String&& value) { m_zoneNameHasBeenSet = true; m_zoneName = std::move(value); }
-    inline void SetZoneName(const char* value) { m_zoneNameHasBeenSet = true; m_zoneName.assign(value); }
-    inline AvailabilityZone& WithZoneName(const Aws::String& value) { SetZoneName(value); return *this;}
-    inline AvailabilityZone& WithZoneName(Aws::String&& value) { SetZoneName(std::move(value)); return *this;}
-    inline AvailabilityZone& WithZoneName(const char* value) { SetZoneName(value); return *this;}
+    template<typename ZoneNameT = Aws::String>
+    void SetZoneName(ZoneNameT&& value) { m_zoneNameHasBeenSet = true; m_zoneName = std::forward<ZoneNameT>(value); }
+    template<typename ZoneNameT = Aws::String>
+    AvailabilityZone& WithZoneName(ZoneNameT&& value) { SetZoneName(std::forward<ZoneNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the subnet. You can specify one subnet per Availability Zone.</p>
      */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+    inline const Aws::String& GetSubnetId() const { return m_subnetId; }
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-    inline AvailabilityZone& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-    inline AvailabilityZone& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-    inline AvailabilityZone& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    template<typename SubnetIdT = Aws::String>
+    void SetSubnetId(SubnetIdT&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::forward<SubnetIdT>(value); }
+    template<typename SubnetIdT = Aws::String>
+    AvailabilityZone& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
     ///@}
   private:
 

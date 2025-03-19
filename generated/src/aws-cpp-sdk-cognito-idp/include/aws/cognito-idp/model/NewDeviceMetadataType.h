@@ -37,7 +37,7 @@ namespace Model
   class NewDeviceMetadataType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API NewDeviceMetadataType();
+    AWS_COGNITOIDENTITYPROVIDER_API NewDeviceMetadataType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API NewDeviceMetadataType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API NewDeviceMetadataType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * <p>The device key, an identifier used in generating the
      * <code>DEVICE_PASSWORD_VERIFIER</code> for device SRP authentication.</p>
      */
-    inline const Aws::String& GetDeviceKey() const{ return m_deviceKey; }
+    inline const Aws::String& GetDeviceKey() const { return m_deviceKey; }
     inline bool DeviceKeyHasBeenSet() const { return m_deviceKeyHasBeenSet; }
-    inline void SetDeviceKey(const Aws::String& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = value; }
-    inline void SetDeviceKey(Aws::String&& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = std::move(value); }
-    inline void SetDeviceKey(const char* value) { m_deviceKeyHasBeenSet = true; m_deviceKey.assign(value); }
-    inline NewDeviceMetadataType& WithDeviceKey(const Aws::String& value) { SetDeviceKey(value); return *this;}
-    inline NewDeviceMetadataType& WithDeviceKey(Aws::String&& value) { SetDeviceKey(std::move(value)); return *this;}
-    inline NewDeviceMetadataType& WithDeviceKey(const char* value) { SetDeviceKey(value); return *this;}
+    template<typename DeviceKeyT = Aws::String>
+    void SetDeviceKey(DeviceKeyT&& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = std::forward<DeviceKeyT>(value); }
+    template<typename DeviceKeyT = Aws::String>
+    NewDeviceMetadataType& WithDeviceKey(DeviceKeyT&& value) { SetDeviceKey(std::forward<DeviceKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * <p>The device group key, an identifier used in generating the
      * <code>DEVICE_PASSWORD_VERIFIER</code> for device SRP authentication.</p>
      */
-    inline const Aws::String& GetDeviceGroupKey() const{ return m_deviceGroupKey; }
+    inline const Aws::String& GetDeviceGroupKey() const { return m_deviceGroupKey; }
     inline bool DeviceGroupKeyHasBeenSet() const { return m_deviceGroupKeyHasBeenSet; }
-    inline void SetDeviceGroupKey(const Aws::String& value) { m_deviceGroupKeyHasBeenSet = true; m_deviceGroupKey = value; }
-    inline void SetDeviceGroupKey(Aws::String&& value) { m_deviceGroupKeyHasBeenSet = true; m_deviceGroupKey = std::move(value); }
-    inline void SetDeviceGroupKey(const char* value) { m_deviceGroupKeyHasBeenSet = true; m_deviceGroupKey.assign(value); }
-    inline NewDeviceMetadataType& WithDeviceGroupKey(const Aws::String& value) { SetDeviceGroupKey(value); return *this;}
-    inline NewDeviceMetadataType& WithDeviceGroupKey(Aws::String&& value) { SetDeviceGroupKey(std::move(value)); return *this;}
-    inline NewDeviceMetadataType& WithDeviceGroupKey(const char* value) { SetDeviceGroupKey(value); return *this;}
+    template<typename DeviceGroupKeyT = Aws::String>
+    void SetDeviceGroupKey(DeviceGroupKeyT&& value) { m_deviceGroupKeyHasBeenSet = true; m_deviceGroupKey = std::forward<DeviceGroupKeyT>(value); }
+    template<typename DeviceGroupKeyT = Aws::String>
+    NewDeviceMetadataType& WithDeviceGroupKey(DeviceGroupKeyT&& value) { SetDeviceGroupKey(std::forward<DeviceGroupKeyT>(value)); return *this;}
     ///@}
   private:
 

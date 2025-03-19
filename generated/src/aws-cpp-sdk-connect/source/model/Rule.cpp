@@ -18,24 +18,7 @@ namespace Connect
 namespace Model
 {
 
-Rule::Rule() : 
-    m_nameHasBeenSet(false),
-    m_ruleIdHasBeenSet(false),
-    m_ruleArnHasBeenSet(false),
-    m_triggerEventSourceHasBeenSet(false),
-    m_functionHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_publishStatus(RulePublishStatus::NOT_SET),
-    m_publishStatusHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_lastUpdatedByHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Rule::Rule(JsonView jsonValue)
-  : Rule()
 {
   *this = jsonValue;
 }
@@ -45,38 +28,28 @@ Rule& Rule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleId"))
   {
     m_ruleId = jsonValue.GetString("RuleId");
-
     m_ruleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleArn"))
   {
     m_ruleArn = jsonValue.GetString("RuleArn");
-
     m_ruleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TriggerEventSource"))
   {
     m_triggerEventSource = jsonValue.GetObject("TriggerEventSource");
-
     m_triggerEventSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Function"))
   {
     m_function = jsonValue.GetString("Function");
-
     m_functionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Actions"))
   {
     Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");
@@ -86,35 +59,26 @@ Rule& Rule::operator =(JsonView jsonValue)
     }
     m_actionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublishStatus"))
   {
     m_publishStatus = RulePublishStatusMapper::GetRulePublishStatusForName(jsonValue.GetString("PublishStatus"));
-
     m_publishStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedBy"))
   {
     m_lastUpdatedBy = jsonValue.GetString("LastUpdatedBy");
-
     m_lastUpdatedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -124,7 +88,6 @@ Rule& Rule::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

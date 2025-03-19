@@ -12,11 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutRegistryPolicyRequest::PutRegistryPolicyRequest() : 
-    m_policyTextHasBeenSet(false)
-{
-}
-
 Aws::String PutRegistryPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

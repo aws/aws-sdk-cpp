@@ -12,11 +12,6 @@ using namespace Aws::IoTTwinMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetWorkspaceRequest::GetWorkspaceRequest() : 
-    m_workspaceIdHasBeenSet(false)
-{
-}
-
 Aws::String GetWorkspaceRequest::SerializePayload() const
 {
   return {};

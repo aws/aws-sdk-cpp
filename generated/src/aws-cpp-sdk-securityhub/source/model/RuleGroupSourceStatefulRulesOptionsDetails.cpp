@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-RuleGroupSourceStatefulRulesOptionsDetails::RuleGroupSourceStatefulRulesOptionsDetails() : 
-    m_keywordHasBeenSet(false),
-    m_settingsHasBeenSet(false)
-{
-}
-
 RuleGroupSourceStatefulRulesOptionsDetails::RuleGroupSourceStatefulRulesOptionsDetails(JsonView jsonValue)
-  : RuleGroupSourceStatefulRulesOptionsDetails()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RuleGroupSourceStatefulRulesOptionsDetails& RuleGroupSourceStatefulRulesOptionsD
   if(jsonValue.ValueExists("Keyword"))
   {
     m_keyword = jsonValue.GetString("Keyword");
-
     m_keywordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Settings"))
   {
     Aws::Utils::Array<JsonView> settingsJsonList = jsonValue.GetArray("Settings");
@@ -48,7 +39,6 @@ RuleGroupSourceStatefulRulesOptionsDetails& RuleGroupSourceStatefulRulesOptionsD
     }
     m_settingsHasBeenSet = true;
   }
-
   return *this;
 }
 

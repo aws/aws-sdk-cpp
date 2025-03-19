@@ -32,7 +32,7 @@ namespace Model
   class MulticastSourceUpdateRequest
   {
   public:
-    AWS_MEDIALIVE_API MulticastSourceUpdateRequest();
+    AWS_MEDIALIVE_API MulticastSourceUpdateRequest() = default;
     AWS_MEDIALIVE_API MulticastSourceUpdateRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API MulticastSourceUpdateRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * This represents the ip address of the device sending the multicast stream.
      */
-    inline const Aws::String& GetSourceIp() const{ return m_sourceIp; }
+    inline const Aws::String& GetSourceIp() const { return m_sourceIp; }
     inline bool SourceIpHasBeenSet() const { return m_sourceIpHasBeenSet; }
-    inline void SetSourceIp(const Aws::String& value) { m_sourceIpHasBeenSet = true; m_sourceIp = value; }
-    inline void SetSourceIp(Aws::String&& value) { m_sourceIpHasBeenSet = true; m_sourceIp = std::move(value); }
-    inline void SetSourceIp(const char* value) { m_sourceIpHasBeenSet = true; m_sourceIp.assign(value); }
-    inline MulticastSourceUpdateRequest& WithSourceIp(const Aws::String& value) { SetSourceIp(value); return *this;}
-    inline MulticastSourceUpdateRequest& WithSourceIp(Aws::String&& value) { SetSourceIp(std::move(value)); return *this;}
-    inline MulticastSourceUpdateRequest& WithSourceIp(const char* value) { SetSourceIp(value); return *this;}
+    template<typename SourceIpT = Aws::String>
+    void SetSourceIp(SourceIpT&& value) { m_sourceIpHasBeenSet = true; m_sourceIp = std::forward<SourceIpT>(value); }
+    template<typename SourceIpT = Aws::String>
+    MulticastSourceUpdateRequest& WithSourceIp(SourceIpT&& value) { SetSourceIp(std::forward<SourceIpT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * This represents the customer's source URL where multicast stream is pulled from.
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline MulticastSourceUpdateRequest& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline MulticastSourceUpdateRequest& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline MulticastSourceUpdateRequest& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    MulticastSourceUpdateRequest& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
   private:
 

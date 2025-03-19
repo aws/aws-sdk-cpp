@@ -29,7 +29,7 @@ namespace Model
   class ListTestGridSessionArtifactsResult
   {
   public:
-    AWS_DEVICEFARM_API ListTestGridSessionArtifactsResult();
+    AWS_DEVICEFARM_API ListTestGridSessionArtifactsResult() = default;
     AWS_DEVICEFARM_API ListTestGridSessionArtifactsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEVICEFARM_API ListTestGridSessionArtifactsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A list of test grid session artifacts for a <a>TestGridSession</a>.</p>
      */
-    inline const Aws::Vector<TestGridSessionArtifact>& GetArtifacts() const{ return m_artifacts; }
-    inline void SetArtifacts(const Aws::Vector<TestGridSessionArtifact>& value) { m_artifacts = value; }
-    inline void SetArtifacts(Aws::Vector<TestGridSessionArtifact>&& value) { m_artifacts = std::move(value); }
-    inline ListTestGridSessionArtifactsResult& WithArtifacts(const Aws::Vector<TestGridSessionArtifact>& value) { SetArtifacts(value); return *this;}
-    inline ListTestGridSessionArtifactsResult& WithArtifacts(Aws::Vector<TestGridSessionArtifact>&& value) { SetArtifacts(std::move(value)); return *this;}
-    inline ListTestGridSessionArtifactsResult& AddArtifacts(const TestGridSessionArtifact& value) { m_artifacts.push_back(value); return *this; }
-    inline ListTestGridSessionArtifactsResult& AddArtifacts(TestGridSessionArtifact&& value) { m_artifacts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TestGridSessionArtifact>& GetArtifacts() const { return m_artifacts; }
+    template<typename ArtifactsT = Aws::Vector<TestGridSessionArtifact>>
+    void SetArtifacts(ArtifactsT&& value) { m_artifactsHasBeenSet = true; m_artifacts = std::forward<ArtifactsT>(value); }
+    template<typename ArtifactsT = Aws::Vector<TestGridSessionArtifact>>
+    ListTestGridSessionArtifactsResult& WithArtifacts(ArtifactsT&& value) { SetArtifacts(std::forward<ArtifactsT>(value)); return *this;}
+    template<typename ArtifactsT = TestGridSessionArtifact>
+    ListTestGridSessionArtifactsResult& AddArtifacts(ArtifactsT&& value) { m_artifactsHasBeenSet = true; m_artifacts.emplace_back(std::forward<ArtifactsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Pagination token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListTestGridSessionArtifactsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTestGridSessionArtifactsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTestGridSessionArtifactsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTestGridSessionArtifactsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListTestGridSessionArtifactsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListTestGridSessionArtifactsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListTestGridSessionArtifactsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListTestGridSessionArtifactsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TestGridSessionArtifact> m_artifacts;
+    bool m_artifactsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

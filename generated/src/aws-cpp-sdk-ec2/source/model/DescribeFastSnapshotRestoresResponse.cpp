@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeFastSnapshotRestoresResponse::DescribeFastSnapshotRestoresResponse()
-{
-}
-
 DescribeFastSnapshotRestoresResponse::DescribeFastSnapshotRestoresResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeFastSnapshotRestoresResponse& DescribeFastSnapshotRestoresResponse::oper
     if(!fastSnapshotRestoresNode.IsNull())
     {
       XmlNode fastSnapshotRestoresMember = fastSnapshotRestoresNode.FirstChild("item");
+      m_fastSnapshotRestoresHasBeenSet = !fastSnapshotRestoresMember.IsNull();
       while(!fastSnapshotRestoresMember.IsNull())
       {
         m_fastSnapshotRestores.push_back(fastSnapshotRestoresMember);
         fastSnapshotRestoresMember = fastSnapshotRestoresMember.NextNode("item");
       }
 
+      m_fastSnapshotRestoresHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeFastSnapshotRestoresResponse& DescribeFastSnapshotRestoresResponse::oper
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeFastSnapshotRestoresResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

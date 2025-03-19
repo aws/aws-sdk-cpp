@@ -12,13 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AdminResetUserPasswordRequest::AdminResetUserPasswordRequest() : 
-    m_userPoolIdHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_clientMetadataHasBeenSet(false)
-{
-}
-
 Aws::String AdminResetUserPasswordRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class ProjectAppConfigResource
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API ProjectAppConfigResource();
+    AWS_CLOUDWATCHEVIDENTLY_API ProjectAppConfigResource() = default;
     AWS_CLOUDWATCHEVIDENTLY_API ProjectAppConfigResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHEVIDENTLY_API ProjectAppConfigResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The ID of the AppConfig application to use for client-side evaluation. </p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline ProjectAppConfigResource& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline ProjectAppConfigResource& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline ProjectAppConfigResource& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    ProjectAppConfigResource& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the AppConfig profile to use for client-side evaluation. </p>
      */
-    inline const Aws::String& GetConfigurationProfileId() const{ return m_configurationProfileId; }
+    inline const Aws::String& GetConfigurationProfileId() const { return m_configurationProfileId; }
     inline bool ConfigurationProfileIdHasBeenSet() const { return m_configurationProfileIdHasBeenSet; }
-    inline void SetConfigurationProfileId(const Aws::String& value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId = value; }
-    inline void SetConfigurationProfileId(Aws::String&& value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId = std::move(value); }
-    inline void SetConfigurationProfileId(const char* value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId.assign(value); }
-    inline ProjectAppConfigResource& WithConfigurationProfileId(const Aws::String& value) { SetConfigurationProfileId(value); return *this;}
-    inline ProjectAppConfigResource& WithConfigurationProfileId(Aws::String&& value) { SetConfigurationProfileId(std::move(value)); return *this;}
-    inline ProjectAppConfigResource& WithConfigurationProfileId(const char* value) { SetConfigurationProfileId(value); return *this;}
+    template<typename ConfigurationProfileIdT = Aws::String>
+    void SetConfigurationProfileId(ConfigurationProfileIdT&& value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId = std::forward<ConfigurationProfileIdT>(value); }
+    template<typename ConfigurationProfileIdT = Aws::String>
+    ProjectAppConfigResource& WithConfigurationProfileId(ConfigurationProfileIdT&& value) { SetConfigurationProfileId(std::forward<ConfigurationProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * must be an environment that is within the application that you specify for
      * <code>applicationId</code>.</p>
      */
-    inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
+    inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
     inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
-    inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
-    inline void SetEnvironmentId(Aws::String&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::move(value); }
-    inline void SetEnvironmentId(const char* value) { m_environmentIdHasBeenSet = true; m_environmentId.assign(value); }
-    inline ProjectAppConfigResource& WithEnvironmentId(const Aws::String& value) { SetEnvironmentId(value); return *this;}
-    inline ProjectAppConfigResource& WithEnvironmentId(Aws::String&& value) { SetEnvironmentId(std::move(value)); return *this;}
-    inline ProjectAppConfigResource& WithEnvironmentId(const char* value) { SetEnvironmentId(value); return *this;}
+    template<typename EnvironmentIdT = Aws::String>
+    void SetEnvironmentId(EnvironmentIdT&& value) { m_environmentIdHasBeenSet = true; m_environmentId = std::forward<EnvironmentIdT>(value); }
+    template<typename EnvironmentIdT = Aws::String>
+    ProjectAppConfigResource& WithEnvironmentId(EnvironmentIdT&& value) { SetEnvironmentId(std::forward<EnvironmentIdT>(value)); return *this;}
     ///@}
   private:
 

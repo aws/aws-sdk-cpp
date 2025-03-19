@@ -33,7 +33,7 @@ namespace Model
   class EvaluationMetadata
   {
   public:
-    AWS_CONNECT_API EvaluationMetadata();
+    AWS_CONNECT_API EvaluationMetadata() = default;
     AWS_CONNECT_API EvaluationMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API EvaluationMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The identifier of the contact in this instance of Amazon Connect. </p>
      */
-    inline const Aws::String& GetContactId() const{ return m_contactId; }
+    inline const Aws::String& GetContactId() const { return m_contactId; }
     inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
-    inline void SetContactId(const Aws::String& value) { m_contactIdHasBeenSet = true; m_contactId = value; }
-    inline void SetContactId(Aws::String&& value) { m_contactIdHasBeenSet = true; m_contactId = std::move(value); }
-    inline void SetContactId(const char* value) { m_contactIdHasBeenSet = true; m_contactId.assign(value); }
-    inline EvaluationMetadata& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
-    inline EvaluationMetadata& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
-    inline EvaluationMetadata& WithContactId(const char* value) { SetContactId(value); return *this;}
+    template<typename ContactIdT = Aws::String>
+    void SetContactId(ContactIdT&& value) { m_contactIdHasBeenSet = true; m_contactId = std::forward<ContactIdT>(value); }
+    template<typename ContactIdT = Aws::String>
+    EvaluationMetadata& WithContactId(ContactIdT&& value) { SetContactId(std::forward<ContactIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,40 +56,36 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the user who last updated the
      * evaluation.</p>
      */
-    inline const Aws::String& GetEvaluatorArn() const{ return m_evaluatorArn; }
+    inline const Aws::String& GetEvaluatorArn() const { return m_evaluatorArn; }
     inline bool EvaluatorArnHasBeenSet() const { return m_evaluatorArnHasBeenSet; }
-    inline void SetEvaluatorArn(const Aws::String& value) { m_evaluatorArnHasBeenSet = true; m_evaluatorArn = value; }
-    inline void SetEvaluatorArn(Aws::String&& value) { m_evaluatorArnHasBeenSet = true; m_evaluatorArn = std::move(value); }
-    inline void SetEvaluatorArn(const char* value) { m_evaluatorArnHasBeenSet = true; m_evaluatorArn.assign(value); }
-    inline EvaluationMetadata& WithEvaluatorArn(const Aws::String& value) { SetEvaluatorArn(value); return *this;}
-    inline EvaluationMetadata& WithEvaluatorArn(Aws::String&& value) { SetEvaluatorArn(std::move(value)); return *this;}
-    inline EvaluationMetadata& WithEvaluatorArn(const char* value) { SetEvaluatorArn(value); return *this;}
+    template<typename EvaluatorArnT = Aws::String>
+    void SetEvaluatorArn(EvaluatorArnT&& value) { m_evaluatorArnHasBeenSet = true; m_evaluatorArn = std::forward<EvaluatorArnT>(value); }
+    template<typename EvaluatorArnT = Aws::String>
+    EvaluationMetadata& WithEvaluatorArn(EvaluatorArnT&& value) { SetEvaluatorArn(std::forward<EvaluatorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the agent who performed the contact.</p>
      */
-    inline const Aws::String& GetContactAgentId() const{ return m_contactAgentId; }
+    inline const Aws::String& GetContactAgentId() const { return m_contactAgentId; }
     inline bool ContactAgentIdHasBeenSet() const { return m_contactAgentIdHasBeenSet; }
-    inline void SetContactAgentId(const Aws::String& value) { m_contactAgentIdHasBeenSet = true; m_contactAgentId = value; }
-    inline void SetContactAgentId(Aws::String&& value) { m_contactAgentIdHasBeenSet = true; m_contactAgentId = std::move(value); }
-    inline void SetContactAgentId(const char* value) { m_contactAgentIdHasBeenSet = true; m_contactAgentId.assign(value); }
-    inline EvaluationMetadata& WithContactAgentId(const Aws::String& value) { SetContactAgentId(value); return *this;}
-    inline EvaluationMetadata& WithContactAgentId(Aws::String&& value) { SetContactAgentId(std::move(value)); return *this;}
-    inline EvaluationMetadata& WithContactAgentId(const char* value) { SetContactAgentId(value); return *this;}
+    template<typename ContactAgentIdT = Aws::String>
+    void SetContactAgentId(ContactAgentIdT&& value) { m_contactAgentIdHasBeenSet = true; m_contactAgentId = std::forward<ContactAgentIdT>(value); }
+    template<typename ContactAgentIdT = Aws::String>
+    EvaluationMetadata& WithContactAgentId(ContactAgentIdT&& value) { SetContactAgentId(std::forward<ContactAgentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The overall score of the contact evaluation.</p>
      */
-    inline const EvaluationScore& GetScore() const{ return m_score; }
+    inline const EvaluationScore& GetScore() const { return m_score; }
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
-    inline void SetScore(const EvaluationScore& value) { m_scoreHasBeenSet = true; m_score = value; }
-    inline void SetScore(EvaluationScore&& value) { m_scoreHasBeenSet = true; m_score = std::move(value); }
-    inline EvaluationMetadata& WithScore(const EvaluationScore& value) { SetScore(value); return *this;}
-    inline EvaluationMetadata& WithScore(EvaluationScore&& value) { SetScore(std::move(value)); return *this;}
+    template<typename ScoreT = EvaluationScore>
+    void SetScore(ScoreT&& value) { m_scoreHasBeenSet = true; m_score = std::forward<ScoreT>(value); }
+    template<typename ScoreT = EvaluationScore>
+    EvaluationMetadata& WithScore(ScoreT&& value) { SetScore(std::forward<ScoreT>(value)); return *this;}
     ///@}
   private:
 

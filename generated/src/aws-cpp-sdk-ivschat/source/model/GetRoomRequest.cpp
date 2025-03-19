@@ -12,11 +12,6 @@ using namespace Aws::ivschat::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRoomRequest::GetRoomRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String GetRoomRequest::SerializePayload() const
 {
   JsonValue payload;

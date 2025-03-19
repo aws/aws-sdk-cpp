@@ -21,7 +21,7 @@ namespace Model
   class GetCollaborationPrivacyBudgetTemplateRequest : public CleanRoomsRequest
   {
   public:
-    AWS_CLEANROOMS_API GetCollaborationPrivacyBudgetTemplateRequest();
+    AWS_CLEANROOMS_API GetCollaborationPrivacyBudgetTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>A unique identifier for one of your collaborations.</p>
      */
-    inline const Aws::String& GetCollaborationIdentifier() const{ return m_collaborationIdentifier; }
+    inline const Aws::String& GetCollaborationIdentifier() const { return m_collaborationIdentifier; }
     inline bool CollaborationIdentifierHasBeenSet() const { return m_collaborationIdentifierHasBeenSet; }
-    inline void SetCollaborationIdentifier(const Aws::String& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = value; }
-    inline void SetCollaborationIdentifier(Aws::String&& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = std::move(value); }
-    inline void SetCollaborationIdentifier(const char* value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier.assign(value); }
-    inline GetCollaborationPrivacyBudgetTemplateRequest& WithCollaborationIdentifier(const Aws::String& value) { SetCollaborationIdentifier(value); return *this;}
-    inline GetCollaborationPrivacyBudgetTemplateRequest& WithCollaborationIdentifier(Aws::String&& value) { SetCollaborationIdentifier(std::move(value)); return *this;}
-    inline GetCollaborationPrivacyBudgetTemplateRequest& WithCollaborationIdentifier(const char* value) { SetCollaborationIdentifier(value); return *this;}
+    template<typename CollaborationIdentifierT = Aws::String>
+    void SetCollaborationIdentifier(CollaborationIdentifierT&& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = std::forward<CollaborationIdentifierT>(value); }
+    template<typename CollaborationIdentifierT = Aws::String>
+    GetCollaborationPrivacyBudgetTemplateRequest& WithCollaborationIdentifier(CollaborationIdentifierT&& value) { SetCollaborationIdentifier(std::forward<CollaborationIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for one of your privacy budget templates.</p>
      */
-    inline const Aws::String& GetPrivacyBudgetTemplateIdentifier() const{ return m_privacyBudgetTemplateIdentifier; }
+    inline const Aws::String& GetPrivacyBudgetTemplateIdentifier() const { return m_privacyBudgetTemplateIdentifier; }
     inline bool PrivacyBudgetTemplateIdentifierHasBeenSet() const { return m_privacyBudgetTemplateIdentifierHasBeenSet; }
-    inline void SetPrivacyBudgetTemplateIdentifier(const Aws::String& value) { m_privacyBudgetTemplateIdentifierHasBeenSet = true; m_privacyBudgetTemplateIdentifier = value; }
-    inline void SetPrivacyBudgetTemplateIdentifier(Aws::String&& value) { m_privacyBudgetTemplateIdentifierHasBeenSet = true; m_privacyBudgetTemplateIdentifier = std::move(value); }
-    inline void SetPrivacyBudgetTemplateIdentifier(const char* value) { m_privacyBudgetTemplateIdentifierHasBeenSet = true; m_privacyBudgetTemplateIdentifier.assign(value); }
-    inline GetCollaborationPrivacyBudgetTemplateRequest& WithPrivacyBudgetTemplateIdentifier(const Aws::String& value) { SetPrivacyBudgetTemplateIdentifier(value); return *this;}
-    inline GetCollaborationPrivacyBudgetTemplateRequest& WithPrivacyBudgetTemplateIdentifier(Aws::String&& value) { SetPrivacyBudgetTemplateIdentifier(std::move(value)); return *this;}
-    inline GetCollaborationPrivacyBudgetTemplateRequest& WithPrivacyBudgetTemplateIdentifier(const char* value) { SetPrivacyBudgetTemplateIdentifier(value); return *this;}
+    template<typename PrivacyBudgetTemplateIdentifierT = Aws::String>
+    void SetPrivacyBudgetTemplateIdentifier(PrivacyBudgetTemplateIdentifierT&& value) { m_privacyBudgetTemplateIdentifierHasBeenSet = true; m_privacyBudgetTemplateIdentifier = std::forward<PrivacyBudgetTemplateIdentifierT>(value); }
+    template<typename PrivacyBudgetTemplateIdentifierT = Aws::String>
+    GetCollaborationPrivacyBudgetTemplateRequest& WithPrivacyBudgetTemplateIdentifier(PrivacyBudgetTemplateIdentifierT&& value) { SetPrivacyBudgetTemplateIdentifier(std::forward<PrivacyBudgetTemplateIdentifierT>(value)); return *this;}
     ///@}
   private:
 

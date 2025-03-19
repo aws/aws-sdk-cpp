@@ -14,10 +14,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-GetContinuousDeploymentPolicy2020_05_31Request::GetContinuousDeploymentPolicy2020_05_31Request() : 
-    m_idHasBeenSet(false)
-{
-}
 
 Aws::String GetContinuousDeploymentPolicy2020_05_31Request::SerializePayload() const
 {

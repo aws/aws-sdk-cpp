@@ -32,7 +32,7 @@ namespace Model
   class TransactGetItem
   {
   public:
-    AWS_DYNAMODB_API TransactGetItem();
+    AWS_DYNAMODB_API TransactGetItem() = default;
     AWS_DYNAMODB_API TransactGetItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API TransactGetItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * name of the table that contains the item, and optionally the specific attributes
      * of the item to retrieve.</p>
      */
-    inline const Get& GetGet() const{ return m_get; }
+    inline const Get& GetGet() const { return m_get; }
     inline bool GetHasBeenSet() const { return m_getHasBeenSet; }
-    inline void SetGet(const Get& value) { m_getHasBeenSet = true; m_get = value; }
-    inline void SetGet(Get&& value) { m_getHasBeenSet = true; m_get = std::move(value); }
-    inline TransactGetItem& WithGet(const Get& value) { SetGet(value); return *this;}
-    inline TransactGetItem& WithGet(Get&& value) { SetGet(std::move(value)); return *this;}
+    template<typename GetT = Get>
+    void SetGet(GetT&& value) { m_getHasBeenSet = true; m_get = std::forward<GetT>(value); }
+    template<typename GetT = Get>
+    TransactGetItem& WithGet(GetT&& value) { SetGet(std::forward<GetT>(value)); return *this;}
     ///@}
   private:
 

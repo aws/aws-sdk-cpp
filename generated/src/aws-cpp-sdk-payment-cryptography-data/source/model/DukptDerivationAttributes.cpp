@@ -18,17 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-DukptDerivationAttributes::DukptDerivationAttributes() : 
-    m_keySerialNumberHasBeenSet(false),
-    m_dukptKeyDerivationType(DukptDerivationType::NOT_SET),
-    m_dukptKeyDerivationTypeHasBeenSet(false),
-    m_dukptKeyVariant(DukptKeyVariant::NOT_SET),
-    m_dukptKeyVariantHasBeenSet(false)
-{
-}
-
 DukptDerivationAttributes::DukptDerivationAttributes(JsonView jsonValue)
-  : DukptDerivationAttributes()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ DukptDerivationAttributes& DukptDerivationAttributes::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("KeySerialNumber"))
   {
     m_keySerialNumber = jsonValue.GetString("KeySerialNumber");
-
     m_keySerialNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DukptKeyDerivationType"))
   {
     m_dukptKeyDerivationType = DukptDerivationTypeMapper::GetDukptDerivationTypeForName(jsonValue.GetString("DukptKeyDerivationType"));
-
     m_dukptKeyDerivationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DukptKeyVariant"))
   {
     m_dukptKeyVariant = DukptKeyVariantMapper::GetDukptKeyVariantForName(jsonValue.GetString("DukptKeyVariant"));
-
     m_dukptKeyVariantHasBeenSet = true;
   }
-
   return *this;
 }
 

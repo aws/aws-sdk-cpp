@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateConnectorProfileResult::UpdateConnectorProfileResult()
-{
-}
-
 UpdateConnectorProfileResult::UpdateConnectorProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateConnectorProfileResult& UpdateConnectorProfileResult::operator =(const Aws
   if(jsonValue.ValueExists("connectorProfileArn"))
   {
     m_connectorProfileArn = jsonValue.GetString("connectorProfileArn");
-
+    m_connectorProfileArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

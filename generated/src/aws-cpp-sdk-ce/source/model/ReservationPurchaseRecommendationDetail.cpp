@@ -18,36 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-ReservationPurchaseRecommendationDetail::ReservationPurchaseRecommendationDetail() : 
-    m_accountIdHasBeenSet(false),
-    m_instanceDetailsHasBeenSet(false),
-    m_recommendedNumberOfInstancesToPurchaseHasBeenSet(false),
-    m_recommendedNormalizedUnitsToPurchaseHasBeenSet(false),
-    m_minimumNumberOfInstancesUsedPerHourHasBeenSet(false),
-    m_minimumNormalizedUnitsUsedPerHourHasBeenSet(false),
-    m_maximumNumberOfInstancesUsedPerHourHasBeenSet(false),
-    m_maximumNormalizedUnitsUsedPerHourHasBeenSet(false),
-    m_averageNumberOfInstancesUsedPerHourHasBeenSet(false),
-    m_averageNormalizedUnitsUsedPerHourHasBeenSet(false),
-    m_averageUtilizationHasBeenSet(false),
-    m_estimatedBreakEvenInMonthsHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_estimatedMonthlySavingsAmountHasBeenSet(false),
-    m_estimatedMonthlySavingsPercentageHasBeenSet(false),
-    m_estimatedMonthlyOnDemandCostHasBeenSet(false),
-    m_estimatedReservationCostForLookbackPeriodHasBeenSet(false),
-    m_upfrontCostHasBeenSet(false),
-    m_recurringStandardMonthlyCostHasBeenSet(false),
-    m_reservedCapacityDetailsHasBeenSet(false),
-    m_recommendedNumberOfCapacityUnitsToPurchaseHasBeenSet(false),
-    m_minimumNumberOfCapacityUnitsUsedPerHourHasBeenSet(false),
-    m_maximumNumberOfCapacityUnitsUsedPerHourHasBeenSet(false),
-    m_averageNumberOfCapacityUnitsUsedPerHourHasBeenSet(false)
-{
-}
-
 ReservationPurchaseRecommendationDetail::ReservationPurchaseRecommendationDetail(JsonView jsonValue)
-  : ReservationPurchaseRecommendationDetail()
 {
   *this = jsonValue;
 }
@@ -57,171 +28,123 @@ ReservationPurchaseRecommendationDetail& ReservationPurchaseRecommendationDetail
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceDetails"))
   {
     m_instanceDetails = jsonValue.GetObject("InstanceDetails");
-
     m_instanceDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecommendedNumberOfInstancesToPurchase"))
   {
     m_recommendedNumberOfInstancesToPurchase = jsonValue.GetString("RecommendedNumberOfInstancesToPurchase");
-
     m_recommendedNumberOfInstancesToPurchaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecommendedNormalizedUnitsToPurchase"))
   {
     m_recommendedNormalizedUnitsToPurchase = jsonValue.GetString("RecommendedNormalizedUnitsToPurchase");
-
     m_recommendedNormalizedUnitsToPurchaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinimumNumberOfInstancesUsedPerHour"))
   {
     m_minimumNumberOfInstancesUsedPerHour = jsonValue.GetString("MinimumNumberOfInstancesUsedPerHour");
-
     m_minimumNumberOfInstancesUsedPerHourHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinimumNormalizedUnitsUsedPerHour"))
   {
     m_minimumNormalizedUnitsUsedPerHour = jsonValue.GetString("MinimumNormalizedUnitsUsedPerHour");
-
     m_minimumNormalizedUnitsUsedPerHourHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumNumberOfInstancesUsedPerHour"))
   {
     m_maximumNumberOfInstancesUsedPerHour = jsonValue.GetString("MaximumNumberOfInstancesUsedPerHour");
-
     m_maximumNumberOfInstancesUsedPerHourHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumNormalizedUnitsUsedPerHour"))
   {
     m_maximumNormalizedUnitsUsedPerHour = jsonValue.GetString("MaximumNormalizedUnitsUsedPerHour");
-
     m_maximumNormalizedUnitsUsedPerHourHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AverageNumberOfInstancesUsedPerHour"))
   {
     m_averageNumberOfInstancesUsedPerHour = jsonValue.GetString("AverageNumberOfInstancesUsedPerHour");
-
     m_averageNumberOfInstancesUsedPerHourHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AverageNormalizedUnitsUsedPerHour"))
   {
     m_averageNormalizedUnitsUsedPerHour = jsonValue.GetString("AverageNormalizedUnitsUsedPerHour");
-
     m_averageNormalizedUnitsUsedPerHourHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AverageUtilization"))
   {
     m_averageUtilization = jsonValue.GetString("AverageUtilization");
-
     m_averageUtilizationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedBreakEvenInMonths"))
   {
     m_estimatedBreakEvenInMonths = jsonValue.GetString("EstimatedBreakEvenInMonths");
-
     m_estimatedBreakEvenInMonthsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrencyCode"))
   {
     m_currencyCode = jsonValue.GetString("CurrencyCode");
-
     m_currencyCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedMonthlySavingsAmount"))
   {
     m_estimatedMonthlySavingsAmount = jsonValue.GetString("EstimatedMonthlySavingsAmount");
-
     m_estimatedMonthlySavingsAmountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedMonthlySavingsPercentage"))
   {
     m_estimatedMonthlySavingsPercentage = jsonValue.GetString("EstimatedMonthlySavingsPercentage");
-
     m_estimatedMonthlySavingsPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedMonthlyOnDemandCost"))
   {
     m_estimatedMonthlyOnDemandCost = jsonValue.GetString("EstimatedMonthlyOnDemandCost");
-
     m_estimatedMonthlyOnDemandCostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EstimatedReservationCostForLookbackPeriod"))
   {
     m_estimatedReservationCostForLookbackPeriod = jsonValue.GetString("EstimatedReservationCostForLookbackPeriod");
-
     m_estimatedReservationCostForLookbackPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpfrontCost"))
   {
     m_upfrontCost = jsonValue.GetString("UpfrontCost");
-
     m_upfrontCostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecurringStandardMonthlyCost"))
   {
     m_recurringStandardMonthlyCost = jsonValue.GetString("RecurringStandardMonthlyCost");
-
     m_recurringStandardMonthlyCostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReservedCapacityDetails"))
   {
     m_reservedCapacityDetails = jsonValue.GetObject("ReservedCapacityDetails");
-
     m_reservedCapacityDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecommendedNumberOfCapacityUnitsToPurchase"))
   {
     m_recommendedNumberOfCapacityUnitsToPurchase = jsonValue.GetString("RecommendedNumberOfCapacityUnitsToPurchase");
-
     m_recommendedNumberOfCapacityUnitsToPurchaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinimumNumberOfCapacityUnitsUsedPerHour"))
   {
     m_minimumNumberOfCapacityUnitsUsedPerHour = jsonValue.GetString("MinimumNumberOfCapacityUnitsUsedPerHour");
-
     m_minimumNumberOfCapacityUnitsUsedPerHourHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumNumberOfCapacityUnitsUsedPerHour"))
   {
     m_maximumNumberOfCapacityUnitsUsedPerHour = jsonValue.GetString("MaximumNumberOfCapacityUnitsUsedPerHour");
-
     m_maximumNumberOfCapacityUnitsUsedPerHourHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AverageNumberOfCapacityUnitsUsedPerHour"))
   {
     m_averageNumberOfCapacityUnitsUsedPerHour = jsonValue.GetString("AverageNumberOfCapacityUnitsUsedPerHour");
-
     m_averageNumberOfCapacityUnitsUsedPerHourHasBeenSet = true;
   }
-
   return *this;
 }
 

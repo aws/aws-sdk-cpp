@@ -27,7 +27,7 @@ namespace Model
   class CreateLicenseManagerReportGeneratorResult
   {
   public:
-    AWS_LICENSEMANAGER_API CreateLicenseManagerReportGeneratorResult();
+    AWS_LICENSEMANAGER_API CreateLicenseManagerReportGeneratorResult() = default;
     AWS_LICENSEMANAGER_API CreateLicenseManagerReportGeneratorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LICENSEMANAGER_API CreateLicenseManagerReportGeneratorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the new report generator.</p>
      */
-    inline const Aws::String& GetLicenseManagerReportGeneratorArn() const{ return m_licenseManagerReportGeneratorArn; }
-    inline void SetLicenseManagerReportGeneratorArn(const Aws::String& value) { m_licenseManagerReportGeneratorArn = value; }
-    inline void SetLicenseManagerReportGeneratorArn(Aws::String&& value) { m_licenseManagerReportGeneratorArn = std::move(value); }
-    inline void SetLicenseManagerReportGeneratorArn(const char* value) { m_licenseManagerReportGeneratorArn.assign(value); }
-    inline CreateLicenseManagerReportGeneratorResult& WithLicenseManagerReportGeneratorArn(const Aws::String& value) { SetLicenseManagerReportGeneratorArn(value); return *this;}
-    inline CreateLicenseManagerReportGeneratorResult& WithLicenseManagerReportGeneratorArn(Aws::String&& value) { SetLicenseManagerReportGeneratorArn(std::move(value)); return *this;}
-    inline CreateLicenseManagerReportGeneratorResult& WithLicenseManagerReportGeneratorArn(const char* value) { SetLicenseManagerReportGeneratorArn(value); return *this;}
+    inline const Aws::String& GetLicenseManagerReportGeneratorArn() const { return m_licenseManagerReportGeneratorArn; }
+    template<typename LicenseManagerReportGeneratorArnT = Aws::String>
+    void SetLicenseManagerReportGeneratorArn(LicenseManagerReportGeneratorArnT&& value) { m_licenseManagerReportGeneratorArnHasBeenSet = true; m_licenseManagerReportGeneratorArn = std::forward<LicenseManagerReportGeneratorArnT>(value); }
+    template<typename LicenseManagerReportGeneratorArnT = Aws::String>
+    CreateLicenseManagerReportGeneratorResult& WithLicenseManagerReportGeneratorArn(LicenseManagerReportGeneratorArnT&& value) { SetLicenseManagerReportGeneratorArn(std::forward<LicenseManagerReportGeneratorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateLicenseManagerReportGeneratorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateLicenseManagerReportGeneratorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateLicenseManagerReportGeneratorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateLicenseManagerReportGeneratorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_licenseManagerReportGeneratorArn;
+    bool m_licenseManagerReportGeneratorArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

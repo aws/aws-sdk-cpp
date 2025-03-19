@@ -18,13 +18,7 @@ namespace MainframeModernization
 namespace Model
 {
 
-ScriptBatchJobIdentifier::ScriptBatchJobIdentifier() : 
-    m_scriptNameHasBeenSet(false)
-{
-}
-
 ScriptBatchJobIdentifier::ScriptBatchJobIdentifier(JsonView jsonValue)
-  : ScriptBatchJobIdentifier()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ScriptBatchJobIdentifier& ScriptBatchJobIdentifier::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("scriptName"))
   {
     m_scriptName = jsonValue.GetString("scriptName");
-
     m_scriptNameHasBeenSet = true;
   }
-
   return *this;
 }
 

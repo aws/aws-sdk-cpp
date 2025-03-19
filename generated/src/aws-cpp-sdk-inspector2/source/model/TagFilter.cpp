@@ -18,16 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-TagFilter::TagFilter() : 
-    m_comparison(TagComparison::NOT_SET),
-    m_comparisonHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 TagFilter::TagFilter(JsonView jsonValue)
-  : TagFilter()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ TagFilter& TagFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("comparison"))
   {
     m_comparison = TagComparisonMapper::GetTagComparisonForName(jsonValue.GetString("comparison"));
-
     m_comparisonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class UpdatePolicyTemplateRequest : public VerifiedPermissionsRequest
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API UpdatePolicyTemplateRequest();
+    AWS_VERIFIEDPERMISSIONS_API UpdatePolicyTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,42 +39,36 @@ namespace Model
      * <p>Specifies the ID of the policy store that contains the policy template that
      * you want to update.</p>
      */
-    inline const Aws::String& GetPolicyStoreId() const{ return m_policyStoreId; }
+    inline const Aws::String& GetPolicyStoreId() const { return m_policyStoreId; }
     inline bool PolicyStoreIdHasBeenSet() const { return m_policyStoreIdHasBeenSet; }
-    inline void SetPolicyStoreId(const Aws::String& value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId = value; }
-    inline void SetPolicyStoreId(Aws::String&& value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId = std::move(value); }
-    inline void SetPolicyStoreId(const char* value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId.assign(value); }
-    inline UpdatePolicyTemplateRequest& WithPolicyStoreId(const Aws::String& value) { SetPolicyStoreId(value); return *this;}
-    inline UpdatePolicyTemplateRequest& WithPolicyStoreId(Aws::String&& value) { SetPolicyStoreId(std::move(value)); return *this;}
-    inline UpdatePolicyTemplateRequest& WithPolicyStoreId(const char* value) { SetPolicyStoreId(value); return *this;}
+    template<typename PolicyStoreIdT = Aws::String>
+    void SetPolicyStoreId(PolicyStoreIdT&& value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId = std::forward<PolicyStoreIdT>(value); }
+    template<typename PolicyStoreIdT = Aws::String>
+    UpdatePolicyTemplateRequest& WithPolicyStoreId(PolicyStoreIdT&& value) { SetPolicyStoreId(std::forward<PolicyStoreIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the ID of the policy template that you want to update.</p>
      */
-    inline const Aws::String& GetPolicyTemplateId() const{ return m_policyTemplateId; }
+    inline const Aws::String& GetPolicyTemplateId() const { return m_policyTemplateId; }
     inline bool PolicyTemplateIdHasBeenSet() const { return m_policyTemplateIdHasBeenSet; }
-    inline void SetPolicyTemplateId(const Aws::String& value) { m_policyTemplateIdHasBeenSet = true; m_policyTemplateId = value; }
-    inline void SetPolicyTemplateId(Aws::String&& value) { m_policyTemplateIdHasBeenSet = true; m_policyTemplateId = std::move(value); }
-    inline void SetPolicyTemplateId(const char* value) { m_policyTemplateIdHasBeenSet = true; m_policyTemplateId.assign(value); }
-    inline UpdatePolicyTemplateRequest& WithPolicyTemplateId(const Aws::String& value) { SetPolicyTemplateId(value); return *this;}
-    inline UpdatePolicyTemplateRequest& WithPolicyTemplateId(Aws::String&& value) { SetPolicyTemplateId(std::move(value)); return *this;}
-    inline UpdatePolicyTemplateRequest& WithPolicyTemplateId(const char* value) { SetPolicyTemplateId(value); return *this;}
+    template<typename PolicyTemplateIdT = Aws::String>
+    void SetPolicyTemplateId(PolicyTemplateIdT&& value) { m_policyTemplateIdHasBeenSet = true; m_policyTemplateId = std::forward<PolicyTemplateIdT>(value); }
+    template<typename PolicyTemplateIdT = Aws::String>
+    UpdatePolicyTemplateRequest& WithPolicyTemplateId(PolicyTemplateIdT&& value) { SetPolicyTemplateId(std::forward<PolicyTemplateIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies a new description to apply to the policy template.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdatePolicyTemplateRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdatePolicyTemplateRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdatePolicyTemplateRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdatePolicyTemplateRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +84,12 @@ namespace Model
      * <li> <p>The <code>resource</code> referenced by the policy template.</p> </li>
      * </ul>
      */
-    inline const Aws::String& GetStatement() const{ return m_statement; }
+    inline const Aws::String& GetStatement() const { return m_statement; }
     inline bool StatementHasBeenSet() const { return m_statementHasBeenSet; }
-    inline void SetStatement(const Aws::String& value) { m_statementHasBeenSet = true; m_statement = value; }
-    inline void SetStatement(Aws::String&& value) { m_statementHasBeenSet = true; m_statement = std::move(value); }
-    inline void SetStatement(const char* value) { m_statementHasBeenSet = true; m_statement.assign(value); }
-    inline UpdatePolicyTemplateRequest& WithStatement(const Aws::String& value) { SetStatement(value); return *this;}
-    inline UpdatePolicyTemplateRequest& WithStatement(Aws::String&& value) { SetStatement(std::move(value)); return *this;}
-    inline UpdatePolicyTemplateRequest& WithStatement(const char* value) { SetStatement(value); return *this;}
+    template<typename StatementT = Aws::String>
+    void SetStatement(StatementT&& value) { m_statementHasBeenSet = true; m_statement = std::forward<StatementT>(value); }
+    template<typename StatementT = Aws::String>
+    UpdatePolicyTemplateRequest& WithStatement(StatementT&& value) { SetStatement(std::forward<StatementT>(value)); return *this;}
     ///@}
   private:
 

@@ -34,7 +34,7 @@ namespace Model
   class FilterV2
   {
   public:
-    AWS_CONNECT_API FilterV2();
+    AWS_CONNECT_API FilterV2() = default;
     AWS_CONNECT_API FilterV2(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API FilterV2& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * <code>AGENT_HIERARCHY_LEVEL_FIVE</code>. There must be at least 1 key and a
      * maximum 5 keys. </p>
      */
-    inline const Aws::String& GetFilterKey() const{ return m_filterKey; }
+    inline const Aws::String& GetFilterKey() const { return m_filterKey; }
     inline bool FilterKeyHasBeenSet() const { return m_filterKeyHasBeenSet; }
-    inline void SetFilterKey(const Aws::String& value) { m_filterKeyHasBeenSet = true; m_filterKey = value; }
-    inline void SetFilterKey(Aws::String&& value) { m_filterKeyHasBeenSet = true; m_filterKey = std::move(value); }
-    inline void SetFilterKey(const char* value) { m_filterKeyHasBeenSet = true; m_filterKey.assign(value); }
-    inline FilterV2& WithFilterKey(const Aws::String& value) { SetFilterKey(value); return *this;}
-    inline FilterV2& WithFilterKey(Aws::String&& value) { SetFilterKey(std::move(value)); return *this;}
-    inline FilterV2& WithFilterKey(const char* value) { SetFilterKey(value); return *this;}
+    template<typename FilterKeyT = Aws::String>
+    void SetFilterKey(FilterKeyT&& value) { m_filterKeyHasBeenSet = true; m_filterKey = std::forward<FilterKeyT>(value); }
+    template<typename FilterKeyT = Aws::String>
+    FilterV2& WithFilterKey(FilterKeyT&& value) { SetFilterKey(std::forward<FilterKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,15 +64,14 @@ namespace Model
      * key of <code>QUEUE</code>, you would add queue IDs or ARNs in
      * <code>FilterValues</code>. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetFilterValues() const{ return m_filterValues; }
+    inline const Aws::Vector<Aws::String>& GetFilterValues() const { return m_filterValues; }
     inline bool FilterValuesHasBeenSet() const { return m_filterValuesHasBeenSet; }
-    inline void SetFilterValues(const Aws::Vector<Aws::String>& value) { m_filterValuesHasBeenSet = true; m_filterValues = value; }
-    inline void SetFilterValues(Aws::Vector<Aws::String>&& value) { m_filterValuesHasBeenSet = true; m_filterValues = std::move(value); }
-    inline FilterV2& WithFilterValues(const Aws::Vector<Aws::String>& value) { SetFilterValues(value); return *this;}
-    inline FilterV2& WithFilterValues(Aws::Vector<Aws::String>&& value) { SetFilterValues(std::move(value)); return *this;}
-    inline FilterV2& AddFilterValues(const Aws::String& value) { m_filterValuesHasBeenSet = true; m_filterValues.push_back(value); return *this; }
-    inline FilterV2& AddFilterValues(Aws::String&& value) { m_filterValuesHasBeenSet = true; m_filterValues.push_back(std::move(value)); return *this; }
-    inline FilterV2& AddFilterValues(const char* value) { m_filterValuesHasBeenSet = true; m_filterValues.push_back(value); return *this; }
+    template<typename FilterValuesT = Aws::Vector<Aws::String>>
+    void SetFilterValues(FilterValuesT&& value) { m_filterValuesHasBeenSet = true; m_filterValues = std::forward<FilterValuesT>(value); }
+    template<typename FilterValuesT = Aws::Vector<Aws::String>>
+    FilterV2& WithFilterValues(FilterValuesT&& value) { SetFilterValues(std::forward<FilterValuesT>(value)); return *this;}
+    template<typename FilterValuesT = Aws::String>
+    FilterV2& AddFilterValues(FilterValuesT&& value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace_back(std::forward<FilterValuesT>(value)); return *this; }
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class DateTimeFilterExpression
   {
   public:
-    AWS_DEADLINE_API DateTimeFilterExpression();
+    AWS_DEADLINE_API DateTimeFilterExpression() = default;
     AWS_DEADLINE_API DateTimeFilterExpression(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API DateTimeFilterExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,48 +43,44 @@ namespace Model
     /**
      * <p>The name of the date-time field to filter on.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DateTimeFilterExpression& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DateTimeFilterExpression& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DateTimeFilterExpression& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DateTimeFilterExpression& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of comparison to use to filter the results.</p>
      */
-    inline const ComparisonOperator& GetOperator() const{ return m_operator; }
+    inline ComparisonOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const ComparisonOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(ComparisonOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline DateTimeFilterExpression& WithOperator(const ComparisonOperator& value) { SetOperator(value); return *this;}
-    inline DateTimeFilterExpression& WithOperator(ComparisonOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(ComparisonOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline DateTimeFilterExpression& WithOperator(ComparisonOperator value) { SetOperator(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time.</p>
      */
-    inline const Aws::Utils::DateTime& GetDateTime() const{ return m_dateTime; }
+    inline const Aws::Utils::DateTime& GetDateTime() const { return m_dateTime; }
     inline bool DateTimeHasBeenSet() const { return m_dateTimeHasBeenSet; }
-    inline void SetDateTime(const Aws::Utils::DateTime& value) { m_dateTimeHasBeenSet = true; m_dateTime = value; }
-    inline void SetDateTime(Aws::Utils::DateTime&& value) { m_dateTimeHasBeenSet = true; m_dateTime = std::move(value); }
-    inline DateTimeFilterExpression& WithDateTime(const Aws::Utils::DateTime& value) { SetDateTime(value); return *this;}
-    inline DateTimeFilterExpression& WithDateTime(Aws::Utils::DateTime&& value) { SetDateTime(std::move(value)); return *this;}
+    template<typename DateTimeT = Aws::Utils::DateTime>
+    void SetDateTime(DateTimeT&& value) { m_dateTimeHasBeenSet = true; m_dateTime = std::forward<DateTimeT>(value); }
+    template<typename DateTimeT = Aws::Utils::DateTime>
+    DateTimeFilterExpression& WithDateTime(DateTimeT&& value) { SetDateTime(std::forward<DateTimeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    ComparisonOperator m_operator;
+    ComparisonOperator m_operator{ComparisonOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
 
-    Aws::Utils::DateTime m_dateTime;
+    Aws::Utils::DateTime m_dateTime{};
     bool m_dateTimeHasBeenSet = false;
   };
 

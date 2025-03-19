@@ -10,17 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-SetSubnetsRequest::SetSubnetsRequest() : 
-    m_loadBalancerArnHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_subnetMappingsHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_enablePrefixForIpv6SourceNat(EnablePrefixForIpv6SourceNatEnum::NOT_SET),
-    m_enablePrefixForIpv6SourceNatHasBeenSet(false)
-{
-}
-
 Aws::String SetSubnetsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

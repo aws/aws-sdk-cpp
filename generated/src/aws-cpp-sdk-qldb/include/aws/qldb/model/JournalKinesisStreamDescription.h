@@ -38,7 +38,7 @@ namespace Model
   class JournalKinesisStreamDescription
   {
   public:
-    AWS_QLDB_API JournalKinesisStreamDescription();
+    AWS_QLDB_API JournalKinesisStreamDescription() = default;
     AWS_QLDB_API JournalKinesisStreamDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_QLDB_API JournalKinesisStreamDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QLDB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>The name of the ledger.</p>
      */
-    inline const Aws::String& GetLedgerName() const{ return m_ledgerName; }
+    inline const Aws::String& GetLedgerName() const { return m_ledgerName; }
     inline bool LedgerNameHasBeenSet() const { return m_ledgerNameHasBeenSet; }
-    inline void SetLedgerName(const Aws::String& value) { m_ledgerNameHasBeenSet = true; m_ledgerName = value; }
-    inline void SetLedgerName(Aws::String&& value) { m_ledgerNameHasBeenSet = true; m_ledgerName = std::move(value); }
-    inline void SetLedgerName(const char* value) { m_ledgerNameHasBeenSet = true; m_ledgerName.assign(value); }
-    inline JournalKinesisStreamDescription& WithLedgerName(const Aws::String& value) { SetLedgerName(value); return *this;}
-    inline JournalKinesisStreamDescription& WithLedgerName(Aws::String&& value) { SetLedgerName(std::move(value)); return *this;}
-    inline JournalKinesisStreamDescription& WithLedgerName(const char* value) { SetLedgerName(value); return *this;}
+    template<typename LedgerNameT = Aws::String>
+    void SetLedgerName(LedgerNameT&& value) { m_ledgerNameHasBeenSet = true; m_ledgerName = std::forward<LedgerNameT>(value); }
+    template<typename LedgerNameT = Aws::String>
+    JournalKinesisStreamDescription& WithLedgerName(LedgerNameT&& value) { SetLedgerName(std::forward<LedgerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +62,12 @@ namespace Model
      * created. (Epoch time format is the number of seconds elapsed since 12:00:00 AM
      * January 1, 1970 UTC.)</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline JournalKinesisStreamDescription& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline JournalKinesisStreamDescription& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    JournalKinesisStreamDescription& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,12 +75,12 @@ namespace Model
      * <p>The inclusive start date and time from which to start streaming journal
      * data.</p>
      */
-    inline const Aws::Utils::DateTime& GetInclusiveStartTime() const{ return m_inclusiveStartTime; }
+    inline const Aws::Utils::DateTime& GetInclusiveStartTime() const { return m_inclusiveStartTime; }
     inline bool InclusiveStartTimeHasBeenSet() const { return m_inclusiveStartTimeHasBeenSet; }
-    inline void SetInclusiveStartTime(const Aws::Utils::DateTime& value) { m_inclusiveStartTimeHasBeenSet = true; m_inclusiveStartTime = value; }
-    inline void SetInclusiveStartTime(Aws::Utils::DateTime&& value) { m_inclusiveStartTimeHasBeenSet = true; m_inclusiveStartTime = std::move(value); }
-    inline JournalKinesisStreamDescription& WithInclusiveStartTime(const Aws::Utils::DateTime& value) { SetInclusiveStartTime(value); return *this;}
-    inline JournalKinesisStreamDescription& WithInclusiveStartTime(Aws::Utils::DateTime&& value) { SetInclusiveStartTime(std::move(value)); return *this;}
+    template<typename InclusiveStartTimeT = Aws::Utils::DateTime>
+    void SetInclusiveStartTime(InclusiveStartTimeT&& value) { m_inclusiveStartTimeHasBeenSet = true; m_inclusiveStartTime = std::forward<InclusiveStartTimeT>(value); }
+    template<typename InclusiveStartTimeT = Aws::Utils::DateTime>
+    JournalKinesisStreamDescription& WithInclusiveStartTime(InclusiveStartTimeT&& value) { SetInclusiveStartTime(std::forward<InclusiveStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,12 +88,12 @@ namespace Model
      * <p>The exclusive date and time that specifies when the stream ends. If this
      * parameter is undefined, the stream runs indefinitely until you cancel it.</p>
      */
-    inline const Aws::Utils::DateTime& GetExclusiveEndTime() const{ return m_exclusiveEndTime; }
+    inline const Aws::Utils::DateTime& GetExclusiveEndTime() const { return m_exclusiveEndTime; }
     inline bool ExclusiveEndTimeHasBeenSet() const { return m_exclusiveEndTimeHasBeenSet; }
-    inline void SetExclusiveEndTime(const Aws::Utils::DateTime& value) { m_exclusiveEndTimeHasBeenSet = true; m_exclusiveEndTime = value; }
-    inline void SetExclusiveEndTime(Aws::Utils::DateTime&& value) { m_exclusiveEndTimeHasBeenSet = true; m_exclusiveEndTime = std::move(value); }
-    inline JournalKinesisStreamDescription& WithExclusiveEndTime(const Aws::Utils::DateTime& value) { SetExclusiveEndTime(value); return *this;}
-    inline JournalKinesisStreamDescription& WithExclusiveEndTime(Aws::Utils::DateTime&& value) { SetExclusiveEndTime(std::move(value)); return *this;}
+    template<typename ExclusiveEndTimeT = Aws::Utils::DateTime>
+    void SetExclusiveEndTime(ExclusiveEndTimeT&& value) { m_exclusiveEndTimeHasBeenSet = true; m_exclusiveEndTime = std::forward<ExclusiveEndTimeT>(value); }
+    template<typename ExclusiveEndTimeT = Aws::Utils::DateTime>
+    JournalKinesisStreamDescription& WithExclusiveEndTime(ExclusiveEndTimeT&& value) { SetExclusiveEndTime(std::forward<ExclusiveEndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,54 +102,46 @@ namespace Model
      * for a journal stream to write data records to a Kinesis Data Streams
      * resource.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline JournalKinesisStreamDescription& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline JournalKinesisStreamDescription& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline JournalKinesisStreamDescription& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    JournalKinesisStreamDescription& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The UUID (represented in Base62-encoded text) of the QLDB journal stream.</p>
      */
-    inline const Aws::String& GetStreamId() const{ return m_streamId; }
+    inline const Aws::String& GetStreamId() const { return m_streamId; }
     inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
-    inline void SetStreamId(const Aws::String& value) { m_streamIdHasBeenSet = true; m_streamId = value; }
-    inline void SetStreamId(Aws::String&& value) { m_streamIdHasBeenSet = true; m_streamId = std::move(value); }
-    inline void SetStreamId(const char* value) { m_streamIdHasBeenSet = true; m_streamId.assign(value); }
-    inline JournalKinesisStreamDescription& WithStreamId(const Aws::String& value) { SetStreamId(value); return *this;}
-    inline JournalKinesisStreamDescription& WithStreamId(Aws::String&& value) { SetStreamId(std::move(value)); return *this;}
-    inline JournalKinesisStreamDescription& WithStreamId(const char* value) { SetStreamId(value); return *this;}
+    template<typename StreamIdT = Aws::String>
+    void SetStreamId(StreamIdT&& value) { m_streamIdHasBeenSet = true; m_streamId = std::forward<StreamIdT>(value); }
+    template<typename StreamIdT = Aws::String>
+    JournalKinesisStreamDescription& WithStreamId(StreamIdT&& value) { SetStreamId(std::forward<StreamIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the QLDB journal stream.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline JournalKinesisStreamDescription& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline JournalKinesisStreamDescription& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline JournalKinesisStreamDescription& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    JournalKinesisStreamDescription& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current state of the QLDB journal stream.</p>
      */
-    inline const StreamStatus& GetStatus() const{ return m_status; }
+    inline StreamStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StreamStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StreamStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline JournalKinesisStreamDescription& WithStatus(const StreamStatus& value) { SetStatus(value); return *this;}
-    inline JournalKinesisStreamDescription& WithStatus(StreamStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(StreamStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline JournalKinesisStreamDescription& WithStatus(StreamStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -159,12 +149,12 @@ namespace Model
      * <p>The configuration settings of the Amazon Kinesis Data Streams destination for
      * a QLDB journal stream.</p>
      */
-    inline const KinesisConfiguration& GetKinesisConfiguration() const{ return m_kinesisConfiguration; }
+    inline const KinesisConfiguration& GetKinesisConfiguration() const { return m_kinesisConfiguration; }
     inline bool KinesisConfigurationHasBeenSet() const { return m_kinesisConfigurationHasBeenSet; }
-    inline void SetKinesisConfiguration(const KinesisConfiguration& value) { m_kinesisConfigurationHasBeenSet = true; m_kinesisConfiguration = value; }
-    inline void SetKinesisConfiguration(KinesisConfiguration&& value) { m_kinesisConfigurationHasBeenSet = true; m_kinesisConfiguration = std::move(value); }
-    inline JournalKinesisStreamDescription& WithKinesisConfiguration(const KinesisConfiguration& value) { SetKinesisConfiguration(value); return *this;}
-    inline JournalKinesisStreamDescription& WithKinesisConfiguration(KinesisConfiguration&& value) { SetKinesisConfiguration(std::move(value)); return *this;}
+    template<typename KinesisConfigurationT = KinesisConfiguration>
+    void SetKinesisConfiguration(KinesisConfigurationT&& value) { m_kinesisConfigurationHasBeenSet = true; m_kinesisConfiguration = std::forward<KinesisConfigurationT>(value); }
+    template<typename KinesisConfigurationT = KinesisConfiguration>
+    JournalKinesisStreamDescription& WithKinesisConfiguration(KinesisConfigurationT&& value) { SetKinesisConfiguration(std::forward<KinesisConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -173,39 +163,35 @@ namespace Model
      * <code>IMPAIRED</code> or <code>FAILED</code>. This is not applicable to streams
      * that have other status values.</p>
      */
-    inline const ErrorCause& GetErrorCause() const{ return m_errorCause; }
+    inline ErrorCause GetErrorCause() const { return m_errorCause; }
     inline bool ErrorCauseHasBeenSet() const { return m_errorCauseHasBeenSet; }
-    inline void SetErrorCause(const ErrorCause& value) { m_errorCauseHasBeenSet = true; m_errorCause = value; }
-    inline void SetErrorCause(ErrorCause&& value) { m_errorCauseHasBeenSet = true; m_errorCause = std::move(value); }
-    inline JournalKinesisStreamDescription& WithErrorCause(const ErrorCause& value) { SetErrorCause(value); return *this;}
-    inline JournalKinesisStreamDescription& WithErrorCause(ErrorCause&& value) { SetErrorCause(std::move(value)); return *this;}
+    inline void SetErrorCause(ErrorCause value) { m_errorCauseHasBeenSet = true; m_errorCause = value; }
+    inline JournalKinesisStreamDescription& WithErrorCause(ErrorCause value) { SetErrorCause(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user-defined name of the QLDB journal stream.</p>
      */
-    inline const Aws::String& GetStreamName() const{ return m_streamName; }
+    inline const Aws::String& GetStreamName() const { return m_streamName; }
     inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
-    inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
-    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
-    inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
-    inline JournalKinesisStreamDescription& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
-    inline JournalKinesisStreamDescription& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
-    inline JournalKinesisStreamDescription& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+    template<typename StreamNameT = Aws::String>
+    void SetStreamName(StreamNameT&& value) { m_streamNameHasBeenSet = true; m_streamName = std::forward<StreamNameT>(value); }
+    template<typename StreamNameT = Aws::String>
+    JournalKinesisStreamDescription& WithStreamName(StreamNameT&& value) { SetStreamName(std::forward<StreamNameT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_ledgerName;
     bool m_ledgerNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_inclusiveStartTime;
+    Aws::Utils::DateTime m_inclusiveStartTime{};
     bool m_inclusiveStartTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_exclusiveEndTime;
+    Aws::Utils::DateTime m_exclusiveEndTime{};
     bool m_exclusiveEndTimeHasBeenSet = false;
 
     Aws::String m_roleArn;
@@ -217,13 +203,13 @@ namespace Model
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    StreamStatus m_status;
+    StreamStatus m_status{StreamStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     KinesisConfiguration m_kinesisConfiguration;
     bool m_kinesisConfigurationHasBeenSet = false;
 
-    ErrorCause m_errorCause;
+    ErrorCause m_errorCause{ErrorCause::NOT_SET};
     bool m_errorCauseHasBeenSet = false;
 
     Aws::String m_streamName;

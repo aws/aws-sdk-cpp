@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdateVirtualServiceRequest::UpdateVirtualServiceRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_meshNameHasBeenSet(false),
-    m_meshOwnerHasBeenSet(false),
-    m_specHasBeenSet(false),
-    m_virtualServiceNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateVirtualServiceRequest::SerializePayload() const
 {
   JsonValue payload;

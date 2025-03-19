@@ -12,18 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListQueriesRequest::ListQueriesRequest() : 
-    m_eventDataStoreHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_queryStatus(QueryStatus::NOT_SET),
-    m_queryStatusHasBeenSet(false)
-{
-}
-
 Aws::String ListQueriesRequest::SerializePayload() const
 {
   JsonValue payload;

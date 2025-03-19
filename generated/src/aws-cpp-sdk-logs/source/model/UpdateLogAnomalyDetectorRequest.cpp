@@ -12,18 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateLogAnomalyDetectorRequest::UpdateLogAnomalyDetectorRequest() : 
-    m_anomalyDetectorArnHasBeenSet(false),
-    m_evaluationFrequency(EvaluationFrequency::NOT_SET),
-    m_evaluationFrequencyHasBeenSet(false),
-    m_filterPatternHasBeenSet(false),
-    m_anomalyVisibilityTime(0),
-    m_anomalyVisibilityTimeHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 Aws::String UpdateLogAnomalyDetectorRequest::SerializePayload() const
 {
   JsonValue payload;

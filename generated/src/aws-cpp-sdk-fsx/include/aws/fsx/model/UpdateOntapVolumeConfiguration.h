@@ -35,7 +35,7 @@ namespace Model
   class UpdateOntapVolumeConfiguration
   {
   public:
-    AWS_FSX_API UpdateOntapVolumeConfiguration();
+    AWS_FSX_API UpdateOntapVolumeConfiguration() = default;
     AWS_FSX_API UpdateOntapVolumeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API UpdateOntapVolumeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * The <code>JunctionPath</code> must have a leading forward slash, such as
      * <code>/vol3</code>.</p>
      */
-    inline const Aws::String& GetJunctionPath() const{ return m_junctionPath; }
+    inline const Aws::String& GetJunctionPath() const { return m_junctionPath; }
     inline bool JunctionPathHasBeenSet() const { return m_junctionPathHasBeenSet; }
-    inline void SetJunctionPath(const Aws::String& value) { m_junctionPathHasBeenSet = true; m_junctionPath = value; }
-    inline void SetJunctionPath(Aws::String&& value) { m_junctionPathHasBeenSet = true; m_junctionPath = std::move(value); }
-    inline void SetJunctionPath(const char* value) { m_junctionPathHasBeenSet = true; m_junctionPath.assign(value); }
-    inline UpdateOntapVolumeConfiguration& WithJunctionPath(const Aws::String& value) { SetJunctionPath(value); return *this;}
-    inline UpdateOntapVolumeConfiguration& WithJunctionPath(Aws::String&& value) { SetJunctionPath(std::move(value)); return *this;}
-    inline UpdateOntapVolumeConfiguration& WithJunctionPath(const char* value) { SetJunctionPath(value); return *this;}
+    template<typename JunctionPathT = Aws::String>
+    void SetJunctionPath(JunctionPathT&& value) { m_junctionPathHasBeenSet = true; m_junctionPath = std::forward<JunctionPathT>(value); }
+    template<typename JunctionPathT = Aws::String>
+    UpdateOntapVolumeConfiguration& WithJunctionPath(JunctionPathT&& value) { SetJunctionPath(std::forward<JunctionPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,19 +60,17 @@ namespace Model
      * <p>The security style for the volume, which can be <code>UNIX</code>,
      * <code>NTFS</code>, or <code>MIXED</code>.</p>
      */
-    inline const SecurityStyle& GetSecurityStyle() const{ return m_securityStyle; }
+    inline SecurityStyle GetSecurityStyle() const { return m_securityStyle; }
     inline bool SecurityStyleHasBeenSet() const { return m_securityStyleHasBeenSet; }
-    inline void SetSecurityStyle(const SecurityStyle& value) { m_securityStyleHasBeenSet = true; m_securityStyle = value; }
-    inline void SetSecurityStyle(SecurityStyle&& value) { m_securityStyleHasBeenSet = true; m_securityStyle = std::move(value); }
-    inline UpdateOntapVolumeConfiguration& WithSecurityStyle(const SecurityStyle& value) { SetSecurityStyle(value); return *this;}
-    inline UpdateOntapVolumeConfiguration& WithSecurityStyle(SecurityStyle&& value) { SetSecurityStyle(std::move(value)); return *this;}
+    inline void SetSecurityStyle(SecurityStyle value) { m_securityStyleHasBeenSet = true; m_securityStyle = value; }
+    inline UpdateOntapVolumeConfiguration& WithSecurityStyle(SecurityStyle value) { SetSecurityStyle(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the size of the volume in megabytes.</p>
      */
-    inline int GetSizeInMegabytes() const{ return m_sizeInMegabytes; }
+    inline int GetSizeInMegabytes() const { return m_sizeInMegabytes; }
     inline bool SizeInMegabytesHasBeenSet() const { return m_sizeInMegabytesHasBeenSet; }
     inline void SetSizeInMegabytes(int value) { m_sizeInMegabytesHasBeenSet = true; m_sizeInMegabytes = value; }
     inline UpdateOntapVolumeConfiguration& WithSizeInMegabytes(int value) { SetSizeInMegabytes(value); return *this;}
@@ -85,7 +81,7 @@ namespace Model
      * <p>Default is <code>false</code>. Set to true to enable the deduplication,
      * compression, and compaction storage efficiency features on the volume.</p>
      */
-    inline bool GetStorageEfficiencyEnabled() const{ return m_storageEfficiencyEnabled; }
+    inline bool GetStorageEfficiencyEnabled() const { return m_storageEfficiencyEnabled; }
     inline bool StorageEfficiencyEnabledHasBeenSet() const { return m_storageEfficiencyEnabledHasBeenSet; }
     inline void SetStorageEfficiencyEnabled(bool value) { m_storageEfficiencyEnabledHasBeenSet = true; m_storageEfficiencyEnabled = value; }
     inline UpdateOntapVolumeConfiguration& WithStorageEfficiencyEnabled(bool value) { SetStorageEfficiencyEnabled(value); return *this;}
@@ -95,12 +91,12 @@ namespace Model
     /**
      * <p>Update the volume's data tiering policy.</p>
      */
-    inline const TieringPolicy& GetTieringPolicy() const{ return m_tieringPolicy; }
+    inline const TieringPolicy& GetTieringPolicy() const { return m_tieringPolicy; }
     inline bool TieringPolicyHasBeenSet() const { return m_tieringPolicyHasBeenSet; }
-    inline void SetTieringPolicy(const TieringPolicy& value) { m_tieringPolicyHasBeenSet = true; m_tieringPolicy = value; }
-    inline void SetTieringPolicy(TieringPolicy&& value) { m_tieringPolicyHasBeenSet = true; m_tieringPolicy = std::move(value); }
-    inline UpdateOntapVolumeConfiguration& WithTieringPolicy(const TieringPolicy& value) { SetTieringPolicy(value); return *this;}
-    inline UpdateOntapVolumeConfiguration& WithTieringPolicy(TieringPolicy&& value) { SetTieringPolicy(std::move(value)); return *this;}
+    template<typename TieringPolicyT = TieringPolicy>
+    void SetTieringPolicy(TieringPolicyT&& value) { m_tieringPolicyHasBeenSet = true; m_tieringPolicy = std::forward<TieringPolicyT>(value); }
+    template<typename TieringPolicyT = TieringPolicy>
+    UpdateOntapVolumeConfiguration& WithTieringPolicy(TieringPolicyT&& value) { SetTieringPolicy(std::forward<TieringPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,14 +116,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/fsx/latest/ONTAPGuide/snapshots-ontap.html#snapshot-policies">Snapshot
      * policies</a> in the <i>Amazon FSx for NetApp ONTAP User Guide</i>.</p>
      */
-    inline const Aws::String& GetSnapshotPolicy() const{ return m_snapshotPolicy; }
+    inline const Aws::String& GetSnapshotPolicy() const { return m_snapshotPolicy; }
     inline bool SnapshotPolicyHasBeenSet() const { return m_snapshotPolicyHasBeenSet; }
-    inline void SetSnapshotPolicy(const Aws::String& value) { m_snapshotPolicyHasBeenSet = true; m_snapshotPolicy = value; }
-    inline void SetSnapshotPolicy(Aws::String&& value) { m_snapshotPolicyHasBeenSet = true; m_snapshotPolicy = std::move(value); }
-    inline void SetSnapshotPolicy(const char* value) { m_snapshotPolicyHasBeenSet = true; m_snapshotPolicy.assign(value); }
-    inline UpdateOntapVolumeConfiguration& WithSnapshotPolicy(const Aws::String& value) { SetSnapshotPolicy(value); return *this;}
-    inline UpdateOntapVolumeConfiguration& WithSnapshotPolicy(Aws::String&& value) { SetSnapshotPolicy(std::move(value)); return *this;}
-    inline UpdateOntapVolumeConfiguration& WithSnapshotPolicy(const char* value) { SetSnapshotPolicy(value); return *this;}
+    template<typename SnapshotPolicyT = Aws::String>
+    void SetSnapshotPolicy(SnapshotPolicyT&& value) { m_snapshotPolicyHasBeenSet = true; m_snapshotPolicy = std::forward<SnapshotPolicyT>(value); }
+    template<typename SnapshotPolicyT = Aws::String>
+    UpdateOntapVolumeConfiguration& WithSnapshotPolicy(SnapshotPolicyT&& value) { SetSnapshotPolicy(std::forward<SnapshotPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,7 +134,7 @@ namespace Model
      * when creating a user-initiated backup, no tags are copied from the volume,
      * regardless of this value.</p>
      */
-    inline bool GetCopyTagsToBackups() const{ return m_copyTagsToBackups; }
+    inline bool GetCopyTagsToBackups() const { return m_copyTagsToBackups; }
     inline bool CopyTagsToBackupsHasBeenSet() const { return m_copyTagsToBackupsHasBeenSet; }
     inline void SetCopyTagsToBackups(bool value) { m_copyTagsToBackupsHasBeenSet = true; m_copyTagsToBackups = value; }
     inline UpdateOntapVolumeConfiguration& WithCopyTagsToBackups(bool value) { SetCopyTagsToBackups(value); return *this;}
@@ -151,19 +145,19 @@ namespace Model
      * <p>The configuration object for updating the SnapLock configuration of an FSx
      * for ONTAP SnapLock volume. </p>
      */
-    inline const UpdateSnaplockConfiguration& GetSnaplockConfiguration() const{ return m_snaplockConfiguration; }
+    inline const UpdateSnaplockConfiguration& GetSnaplockConfiguration() const { return m_snaplockConfiguration; }
     inline bool SnaplockConfigurationHasBeenSet() const { return m_snaplockConfigurationHasBeenSet; }
-    inline void SetSnaplockConfiguration(const UpdateSnaplockConfiguration& value) { m_snaplockConfigurationHasBeenSet = true; m_snaplockConfiguration = value; }
-    inline void SetSnaplockConfiguration(UpdateSnaplockConfiguration&& value) { m_snaplockConfigurationHasBeenSet = true; m_snaplockConfiguration = std::move(value); }
-    inline UpdateOntapVolumeConfiguration& WithSnaplockConfiguration(const UpdateSnaplockConfiguration& value) { SetSnaplockConfiguration(value); return *this;}
-    inline UpdateOntapVolumeConfiguration& WithSnaplockConfiguration(UpdateSnaplockConfiguration&& value) { SetSnaplockConfiguration(std::move(value)); return *this;}
+    template<typename SnaplockConfigurationT = UpdateSnaplockConfiguration>
+    void SetSnaplockConfiguration(SnaplockConfigurationT&& value) { m_snaplockConfigurationHasBeenSet = true; m_snaplockConfiguration = std::forward<SnaplockConfigurationT>(value); }
+    template<typename SnaplockConfigurationT = UpdateSnaplockConfiguration>
+    UpdateOntapVolumeConfiguration& WithSnaplockConfiguration(SnaplockConfigurationT&& value) { SetSnaplockConfiguration(std::forward<SnaplockConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configured size of the volume, in bytes.</p>
      */
-    inline long long GetSizeInBytes() const{ return m_sizeInBytes; }
+    inline long long GetSizeInBytes() const { return m_sizeInBytes; }
     inline bool SizeInBytesHasBeenSet() const { return m_sizeInBytesHasBeenSet; }
     inline void SetSizeInBytes(long long value) { m_sizeInBytesHasBeenSet = true; m_sizeInBytes = value; }
     inline UpdateOntapVolumeConfiguration& WithSizeInBytes(long long value) { SetSizeInBytes(value); return *this;}
@@ -173,13 +167,13 @@ namespace Model
     Aws::String m_junctionPath;
     bool m_junctionPathHasBeenSet = false;
 
-    SecurityStyle m_securityStyle;
+    SecurityStyle m_securityStyle{SecurityStyle::NOT_SET};
     bool m_securityStyleHasBeenSet = false;
 
-    int m_sizeInMegabytes;
+    int m_sizeInMegabytes{0};
     bool m_sizeInMegabytesHasBeenSet = false;
 
-    bool m_storageEfficiencyEnabled;
+    bool m_storageEfficiencyEnabled{false};
     bool m_storageEfficiencyEnabledHasBeenSet = false;
 
     TieringPolicy m_tieringPolicy;
@@ -188,13 +182,13 @@ namespace Model
     Aws::String m_snapshotPolicy;
     bool m_snapshotPolicyHasBeenSet = false;
 
-    bool m_copyTagsToBackups;
+    bool m_copyTagsToBackups{false};
     bool m_copyTagsToBackupsHasBeenSet = false;
 
     UpdateSnaplockConfiguration m_snaplockConfiguration;
     bool m_snaplockConfigurationHasBeenSet = false;
 
-    long long m_sizeInBytes;
+    long long m_sizeInBytes{0};
     bool m_sizeInBytesHasBeenSet = false;
   };
 

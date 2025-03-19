@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartMLEvaluationTaskRunRequest::StartMLEvaluationTaskRunRequest() : 
-    m_transformIdHasBeenSet(false)
-{
-}
-
 Aws::String StartMLEvaluationTaskRunRequest::SerializePayload() const
 {
   JsonValue payload;

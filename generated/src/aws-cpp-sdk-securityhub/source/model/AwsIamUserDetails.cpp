@@ -18,20 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsIamUserDetails::AwsIamUserDetails() : 
-    m_attachedManagedPoliciesHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_groupListHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_permissionsBoundaryHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_userNameHasBeenSet(false),
-    m_userPolicyListHasBeenSet(false)
-{
-}
-
 AwsIamUserDetails::AwsIamUserDetails(JsonView jsonValue)
-  : AwsIamUserDetails()
 {
   *this = jsonValue;
 }
@@ -47,14 +34,11 @@ AwsIamUserDetails& AwsIamUserDetails::operator =(JsonView jsonValue)
     }
     m_attachedManagedPoliciesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateDate"))
   {
     m_createDate = jsonValue.GetString("CreateDate");
-
     m_createDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupList"))
   {
     Aws::Utils::Array<JsonView> groupListJsonList = jsonValue.GetArray("GroupList");
@@ -64,35 +48,26 @@ AwsIamUserDetails& AwsIamUserDetails::operator =(JsonView jsonValue)
     }
     m_groupListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PermissionsBoundary"))
   {
     m_permissionsBoundary = jsonValue.GetObject("PermissionsBoundary");
-
     m_permissionsBoundaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserId"))
   {
     m_userId = jsonValue.GetString("UserId");
-
     m_userIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserName"))
   {
     m_userName = jsonValue.GetString("UserName");
-
     m_userNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserPolicyList"))
   {
     Aws::Utils::Array<JsonView> userPolicyListJsonList = jsonValue.GetArray("UserPolicyList");
@@ -102,7 +77,6 @@ AwsIamUserDetails& AwsIamUserDetails::operator =(JsonView jsonValue)
     }
     m_userPolicyListHasBeenSet = true;
   }
-
   return *this;
 }
 

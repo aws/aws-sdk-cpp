@@ -22,7 +22,7 @@ namespace Model
   class PutTaxRegistrationRequest : public TaxSettingsRequest
   {
   public:
-    AWS_TAXSETTINGS_API PutTaxRegistrationRequest();
+    AWS_TAXSETTINGS_API PutTaxRegistrationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
     /**
      * <p>Your unique account identifier. </p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline PutTaxRegistrationRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline PutTaxRegistrationRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline PutTaxRegistrationRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    PutTaxRegistrationRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,12 +50,12 @@ namespace Model
      * <p> Your TRN information that will be stored to the account mentioned in
      * <code>accountId</code>. </p>
      */
-    inline const TaxRegistrationEntry& GetTaxRegistrationEntry() const{ return m_taxRegistrationEntry; }
+    inline const TaxRegistrationEntry& GetTaxRegistrationEntry() const { return m_taxRegistrationEntry; }
     inline bool TaxRegistrationEntryHasBeenSet() const { return m_taxRegistrationEntryHasBeenSet; }
-    inline void SetTaxRegistrationEntry(const TaxRegistrationEntry& value) { m_taxRegistrationEntryHasBeenSet = true; m_taxRegistrationEntry = value; }
-    inline void SetTaxRegistrationEntry(TaxRegistrationEntry&& value) { m_taxRegistrationEntryHasBeenSet = true; m_taxRegistrationEntry = std::move(value); }
-    inline PutTaxRegistrationRequest& WithTaxRegistrationEntry(const TaxRegistrationEntry& value) { SetTaxRegistrationEntry(value); return *this;}
-    inline PutTaxRegistrationRequest& WithTaxRegistrationEntry(TaxRegistrationEntry&& value) { SetTaxRegistrationEntry(std::move(value)); return *this;}
+    template<typename TaxRegistrationEntryT = TaxRegistrationEntry>
+    void SetTaxRegistrationEntry(TaxRegistrationEntryT&& value) { m_taxRegistrationEntryHasBeenSet = true; m_taxRegistrationEntry = std::forward<TaxRegistrationEntryT>(value); }
+    template<typename TaxRegistrationEntryT = TaxRegistrationEntry>
+    PutTaxRegistrationRequest& WithTaxRegistrationEntry(TaxRegistrationEntryT&& value) { SetTaxRegistrationEntry(std::forward<TaxRegistrationEntryT>(value)); return *this;}
     ///@}
   private:
 

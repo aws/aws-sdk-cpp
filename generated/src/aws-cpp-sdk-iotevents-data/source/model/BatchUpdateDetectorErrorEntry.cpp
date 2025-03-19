@@ -18,16 +18,7 @@ namespace IoTEventsData
 namespace Model
 {
 
-BatchUpdateDetectorErrorEntry::BatchUpdateDetectorErrorEntry() : 
-    m_messageIdHasBeenSet(false),
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 BatchUpdateDetectorErrorEntry::BatchUpdateDetectorErrorEntry(JsonView jsonValue)
-  : BatchUpdateDetectorErrorEntry()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BatchUpdateDetectorErrorEntry& BatchUpdateDetectorErrorEntry::operator =(JsonVie
   if(jsonValue.ValueExists("messageId"))
   {
     m_messageId = jsonValue.GetString("messageId");
-
     m_messageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("errorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

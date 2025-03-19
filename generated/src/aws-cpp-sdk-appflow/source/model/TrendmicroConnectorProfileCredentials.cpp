@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-TrendmicroConnectorProfileCredentials::TrendmicroConnectorProfileCredentials() : 
-    m_apiSecretKeyHasBeenSet(false)
-{
-}
-
 TrendmicroConnectorProfileCredentials::TrendmicroConnectorProfileCredentials(JsonView jsonValue)
-  : TrendmicroConnectorProfileCredentials()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TrendmicroConnectorProfileCredentials& TrendmicroConnectorProfileCredentials::op
   if(jsonValue.ValueExists("apiSecretKey"))
   {
     m_apiSecretKey = jsonValue.GetString("apiSecretKey");
-
     m_apiSecretKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

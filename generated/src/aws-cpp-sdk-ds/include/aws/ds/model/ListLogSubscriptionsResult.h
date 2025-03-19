@@ -29,7 +29,7 @@ namespace Model
   class ListLogSubscriptionsResult
   {
   public:
-    AWS_DIRECTORYSERVICE_API ListLogSubscriptionsResult();
+    AWS_DIRECTORYSERVICE_API ListLogSubscriptionsResult() = default;
     AWS_DIRECTORYSERVICE_API ListLogSubscriptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTORYSERVICE_API ListLogSubscriptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>A list of active <a>LogSubscription</a> objects for calling the Amazon Web
      * Services account.</p>
      */
-    inline const Aws::Vector<LogSubscription>& GetLogSubscriptions() const{ return m_logSubscriptions; }
-    inline void SetLogSubscriptions(const Aws::Vector<LogSubscription>& value) { m_logSubscriptions = value; }
-    inline void SetLogSubscriptions(Aws::Vector<LogSubscription>&& value) { m_logSubscriptions = std::move(value); }
-    inline ListLogSubscriptionsResult& WithLogSubscriptions(const Aws::Vector<LogSubscription>& value) { SetLogSubscriptions(value); return *this;}
-    inline ListLogSubscriptionsResult& WithLogSubscriptions(Aws::Vector<LogSubscription>&& value) { SetLogSubscriptions(std::move(value)); return *this;}
-    inline ListLogSubscriptionsResult& AddLogSubscriptions(const LogSubscription& value) { m_logSubscriptions.push_back(value); return *this; }
-    inline ListLogSubscriptionsResult& AddLogSubscriptions(LogSubscription&& value) { m_logSubscriptions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LogSubscription>& GetLogSubscriptions() const { return m_logSubscriptions; }
+    template<typename LogSubscriptionsT = Aws::Vector<LogSubscription>>
+    void SetLogSubscriptions(LogSubscriptionsT&& value) { m_logSubscriptionsHasBeenSet = true; m_logSubscriptions = std::forward<LogSubscriptionsT>(value); }
+    template<typename LogSubscriptionsT = Aws::Vector<LogSubscription>>
+    ListLogSubscriptionsResult& WithLogSubscriptions(LogSubscriptionsT&& value) { SetLogSubscriptions(std::forward<LogSubscriptionsT>(value)); return *this;}
+    template<typename LogSubscriptionsT = LogSubscription>
+    ListLogSubscriptionsResult& AddLogSubscriptions(LogSubscriptionsT&& value) { m_logSubscriptionsHasBeenSet = true; m_logSubscriptions.emplace_back(std::forward<LogSubscriptionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token for the next set of items to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListLogSubscriptionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListLogSubscriptionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListLogSubscriptionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListLogSubscriptionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListLogSubscriptionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListLogSubscriptionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListLogSubscriptionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListLogSubscriptionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<LogSubscription> m_logSubscriptions;
+    bool m_logSubscriptionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,13 +18,7 @@ namespace MediaPackage
 namespace Model
 {
 
-EgressAccessLogs::EgressAccessLogs() : 
-    m_logGroupNameHasBeenSet(false)
-{
-}
-
 EgressAccessLogs::EgressAccessLogs(JsonView jsonValue)
-  : EgressAccessLogs()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EgressAccessLogs& EgressAccessLogs::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("logGroupName"))
   {
     m_logGroupName = jsonValue.GetString("logGroupName");
-
     m_logGroupNameHasBeenSet = true;
   }
-
   return *this;
 }
 

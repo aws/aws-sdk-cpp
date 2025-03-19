@@ -28,7 +28,7 @@ namespace Model
   class DeregisterTransitGatewayMulticastGroupMembersResponse
   {
   public:
-    AWS_EC2_API DeregisterTransitGatewayMulticastGroupMembersResponse();
+    AWS_EC2_API DeregisterTransitGatewayMulticastGroupMembersResponse() = default;
     AWS_EC2_API DeregisterTransitGatewayMulticastGroupMembersResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DeregisterTransitGatewayMulticastGroupMembersResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the deregistered members.</p>
      */
-    inline const TransitGatewayMulticastDeregisteredGroupMembers& GetDeregisteredMulticastGroupMembers() const{ return m_deregisteredMulticastGroupMembers; }
-    inline void SetDeregisteredMulticastGroupMembers(const TransitGatewayMulticastDeregisteredGroupMembers& value) { m_deregisteredMulticastGroupMembers = value; }
-    inline void SetDeregisteredMulticastGroupMembers(TransitGatewayMulticastDeregisteredGroupMembers&& value) { m_deregisteredMulticastGroupMembers = std::move(value); }
-    inline DeregisterTransitGatewayMulticastGroupMembersResponse& WithDeregisteredMulticastGroupMembers(const TransitGatewayMulticastDeregisteredGroupMembers& value) { SetDeregisteredMulticastGroupMembers(value); return *this;}
-    inline DeregisterTransitGatewayMulticastGroupMembersResponse& WithDeregisteredMulticastGroupMembers(TransitGatewayMulticastDeregisteredGroupMembers&& value) { SetDeregisteredMulticastGroupMembers(std::move(value)); return *this;}
+    inline const TransitGatewayMulticastDeregisteredGroupMembers& GetDeregisteredMulticastGroupMembers() const { return m_deregisteredMulticastGroupMembers; }
+    template<typename DeregisteredMulticastGroupMembersT = TransitGatewayMulticastDeregisteredGroupMembers>
+    void SetDeregisteredMulticastGroupMembers(DeregisteredMulticastGroupMembersT&& value) { m_deregisteredMulticastGroupMembersHasBeenSet = true; m_deregisteredMulticastGroupMembers = std::forward<DeregisteredMulticastGroupMembersT>(value); }
+    template<typename DeregisteredMulticastGroupMembersT = TransitGatewayMulticastDeregisteredGroupMembers>
+    DeregisterTransitGatewayMulticastGroupMembersResponse& WithDeregisteredMulticastGroupMembers(DeregisteredMulticastGroupMembersT&& value) { SetDeregisteredMulticastGroupMembers(std::forward<DeregisteredMulticastGroupMembersT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeregisterTransitGatewayMulticastGroupMembersResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeregisterTransitGatewayMulticastGroupMembersResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeregisterTransitGatewayMulticastGroupMembersResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     TransitGatewayMulticastDeregisteredGroupMembers m_deregisteredMulticastGroupMembers;
+    bool m_deregisteredMulticastGroupMembersHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

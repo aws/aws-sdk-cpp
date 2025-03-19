@@ -35,7 +35,7 @@ namespace Model
   class SnaplockRetentionPeriod
   {
   public:
-    AWS_FSX_API SnaplockRetentionPeriod();
+    AWS_FSX_API SnaplockRetentionPeriod() = default;
     AWS_FSX_API SnaplockRetentionPeriod(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API SnaplockRetentionPeriod& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,12 @@ namespace Model
      * minimum retention period and less than or equal to the maximum retention period.
      * </p>
      */
-    inline const RetentionPeriod& GetDefaultRetention() const{ return m_defaultRetention; }
+    inline const RetentionPeriod& GetDefaultRetention() const { return m_defaultRetention; }
     inline bool DefaultRetentionHasBeenSet() const { return m_defaultRetentionHasBeenSet; }
-    inline void SetDefaultRetention(const RetentionPeriod& value) { m_defaultRetentionHasBeenSet = true; m_defaultRetention = value; }
-    inline void SetDefaultRetention(RetentionPeriod&& value) { m_defaultRetentionHasBeenSet = true; m_defaultRetention = std::move(value); }
-    inline SnaplockRetentionPeriod& WithDefaultRetention(const RetentionPeriod& value) { SetDefaultRetention(value); return *this;}
-    inline SnaplockRetentionPeriod& WithDefaultRetention(RetentionPeriod&& value) { SetDefaultRetention(std::move(value)); return *this;}
+    template<typename DefaultRetentionT = RetentionPeriod>
+    void SetDefaultRetention(DefaultRetentionT&& value) { m_defaultRetentionHasBeenSet = true; m_defaultRetention = std::forward<DefaultRetentionT>(value); }
+    template<typename DefaultRetentionT = RetentionPeriod>
+    SnaplockRetentionPeriod& WithDefaultRetention(DefaultRetentionT&& value) { SetDefaultRetention(std::forward<DefaultRetentionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +62,12 @@ namespace Model
      * <p>The shortest retention period that can be assigned to a WORM file on an FSx
      * for ONTAP SnapLock volume. </p>
      */
-    inline const RetentionPeriod& GetMinimumRetention() const{ return m_minimumRetention; }
+    inline const RetentionPeriod& GetMinimumRetention() const { return m_minimumRetention; }
     inline bool MinimumRetentionHasBeenSet() const { return m_minimumRetentionHasBeenSet; }
-    inline void SetMinimumRetention(const RetentionPeriod& value) { m_minimumRetentionHasBeenSet = true; m_minimumRetention = value; }
-    inline void SetMinimumRetention(RetentionPeriod&& value) { m_minimumRetentionHasBeenSet = true; m_minimumRetention = std::move(value); }
-    inline SnaplockRetentionPeriod& WithMinimumRetention(const RetentionPeriod& value) { SetMinimumRetention(value); return *this;}
-    inline SnaplockRetentionPeriod& WithMinimumRetention(RetentionPeriod&& value) { SetMinimumRetention(std::move(value)); return *this;}
+    template<typename MinimumRetentionT = RetentionPeriod>
+    void SetMinimumRetention(MinimumRetentionT&& value) { m_minimumRetentionHasBeenSet = true; m_minimumRetention = std::forward<MinimumRetentionT>(value); }
+    template<typename MinimumRetentionT = RetentionPeriod>
+    SnaplockRetentionPeriod& WithMinimumRetention(MinimumRetentionT&& value) { SetMinimumRetention(std::forward<MinimumRetentionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +75,12 @@ namespace Model
      * <p>The longest retention period that can be assigned to a WORM file on an FSx
      * for ONTAP SnapLock volume. </p>
      */
-    inline const RetentionPeriod& GetMaximumRetention() const{ return m_maximumRetention; }
+    inline const RetentionPeriod& GetMaximumRetention() const { return m_maximumRetention; }
     inline bool MaximumRetentionHasBeenSet() const { return m_maximumRetentionHasBeenSet; }
-    inline void SetMaximumRetention(const RetentionPeriod& value) { m_maximumRetentionHasBeenSet = true; m_maximumRetention = value; }
-    inline void SetMaximumRetention(RetentionPeriod&& value) { m_maximumRetentionHasBeenSet = true; m_maximumRetention = std::move(value); }
-    inline SnaplockRetentionPeriod& WithMaximumRetention(const RetentionPeriod& value) { SetMaximumRetention(value); return *this;}
-    inline SnaplockRetentionPeriod& WithMaximumRetention(RetentionPeriod&& value) { SetMaximumRetention(std::move(value)); return *this;}
+    template<typename MaximumRetentionT = RetentionPeriod>
+    void SetMaximumRetention(MaximumRetentionT&& value) { m_maximumRetentionHasBeenSet = true; m_maximumRetention = std::forward<MaximumRetentionT>(value); }
+    template<typename MaximumRetentionT = RetentionPeriod>
+    SnaplockRetentionPeriod& WithMaximumRetention(MaximumRetentionT&& value) { SetMaximumRetention(std::forward<MaximumRetentionT>(value)); return *this;}
     ///@}
   private:
 

@@ -33,7 +33,7 @@ namespace Model
   class CoverageSortCriteria
   {
   public:
-    AWS_GUARDDUTY_API CoverageSortCriteria();
+    AWS_GUARDDUTY_API CoverageSortCriteria() = default;
     AWS_GUARDDUTY_API CoverageSortCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API CoverageSortCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,31 +46,27 @@ namespace Model
      * <code>EKS_CLUSTER_NAME</code>. <code>CLUSTER_NAME</code> has been
      * deprecated.</p> 
      */
-    inline const CoverageSortKey& GetAttributeName() const{ return m_attributeName; }
+    inline CoverageSortKey GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const CoverageSortKey& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(CoverageSortKey&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline CoverageSortCriteria& WithAttributeName(const CoverageSortKey& value) { SetAttributeName(value); return *this;}
-    inline CoverageSortCriteria& WithAttributeName(CoverageSortKey&& value) { SetAttributeName(std::move(value)); return *this;}
+    inline void SetAttributeName(CoverageSortKey value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
+    inline CoverageSortCriteria& WithAttributeName(CoverageSortKey value) { SetAttributeName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The order in which the sorted findings are to be displayed.</p>
      */
-    inline const OrderBy& GetOrderBy() const{ return m_orderBy; }
+    inline OrderBy GetOrderBy() const { return m_orderBy; }
     inline bool OrderByHasBeenSet() const { return m_orderByHasBeenSet; }
-    inline void SetOrderBy(const OrderBy& value) { m_orderByHasBeenSet = true; m_orderBy = value; }
-    inline void SetOrderBy(OrderBy&& value) { m_orderByHasBeenSet = true; m_orderBy = std::move(value); }
-    inline CoverageSortCriteria& WithOrderBy(const OrderBy& value) { SetOrderBy(value); return *this;}
-    inline CoverageSortCriteria& WithOrderBy(OrderBy&& value) { SetOrderBy(std::move(value)); return *this;}
+    inline void SetOrderBy(OrderBy value) { m_orderByHasBeenSet = true; m_orderBy = value; }
+    inline CoverageSortCriteria& WithOrderBy(OrderBy value) { SetOrderBy(value); return *this;}
     ///@}
   private:
 
-    CoverageSortKey m_attributeName;
+    CoverageSortKey m_attributeName{CoverageSortKey::NOT_SET};
     bool m_attributeNameHasBeenSet = false;
 
-    OrderBy m_orderBy;
+    OrderBy m_orderBy{OrderBy::NOT_SET};
     bool m_orderByHasBeenSet = false;
   };
 

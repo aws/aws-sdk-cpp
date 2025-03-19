@@ -18,32 +18,7 @@ namespace ACMPCA
 namespace Model
 {
 
-CertificateAuthority::CertificateAuthority() : 
-    m_arnHasBeenSet(false),
-    m_ownerAccountHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastStateChangeAtHasBeenSet(false),
-    m_type(CertificateAuthorityType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_serialHasBeenSet(false),
-    m_status(CertificateAuthorityStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_notBeforeHasBeenSet(false),
-    m_notAfterHasBeenSet(false),
-    m_failureReason(FailureReason::NOT_SET),
-    m_failureReasonHasBeenSet(false),
-    m_certificateAuthorityConfigurationHasBeenSet(false),
-    m_revocationConfigurationHasBeenSet(false),
-    m_restorableUntilHasBeenSet(false),
-    m_keyStorageSecurityStandard(KeyStorageSecurityStandard::NOT_SET),
-    m_keyStorageSecurityStandardHasBeenSet(false),
-    m_usageMode(CertificateAuthorityUsageMode::NOT_SET),
-    m_usageModeHasBeenSet(false)
-{
-}
-
 CertificateAuthority::CertificateAuthority(JsonView jsonValue)
-  : CertificateAuthority()
 {
   *this = jsonValue;
 }
@@ -53,108 +28,78 @@ CertificateAuthority& CertificateAuthority::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerAccount"))
   {
     m_ownerAccount = jsonValue.GetString("OwnerAccount");
-
     m_ownerAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastStateChangeAt"))
   {
     m_lastStateChangeAt = jsonValue.GetDouble("LastStateChangeAt");
-
     m_lastStateChangeAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = CertificateAuthorityTypeMapper::GetCertificateAuthorityTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Serial"))
   {
     m_serial = jsonValue.GetString("Serial");
-
     m_serialHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = CertificateAuthorityStatusMapper::GetCertificateAuthorityStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotBefore"))
   {
     m_notBefore = jsonValue.GetDouble("NotBefore");
-
     m_notBeforeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotAfter"))
   {
     m_notAfter = jsonValue.GetDouble("NotAfter");
-
     m_notAfterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = FailureReasonMapper::GetFailureReasonForName(jsonValue.GetString("FailureReason"));
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CertificateAuthorityConfiguration"))
   {
     m_certificateAuthorityConfiguration = jsonValue.GetObject("CertificateAuthorityConfiguration");
-
     m_certificateAuthorityConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RevocationConfiguration"))
   {
     m_revocationConfiguration = jsonValue.GetObject("RevocationConfiguration");
-
     m_revocationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RestorableUntil"))
   {
     m_restorableUntil = jsonValue.GetDouble("RestorableUntil");
-
     m_restorableUntilHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyStorageSecurityStandard"))
   {
     m_keyStorageSecurityStandard = KeyStorageSecurityStandardMapper::GetKeyStorageSecurityStandardForName(jsonValue.GetString("KeyStorageSecurityStandard"));
-
     m_keyStorageSecurityStandardHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UsageMode"))
   {
     m_usageMode = CertificateAuthorityUsageModeMapper::GetCertificateAuthorityUsageModeForName(jsonValue.GetString("UsageMode"));
-
     m_usageModeHasBeenSet = true;
   }
-
   return *this;
 }
 

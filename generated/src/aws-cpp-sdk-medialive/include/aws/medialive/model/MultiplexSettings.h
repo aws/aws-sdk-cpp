@@ -29,7 +29,7 @@ namespace Model
   class MultiplexSettings
   {
   public:
-    AWS_MEDIALIVE_API MultiplexSettings();
+    AWS_MEDIALIVE_API MultiplexSettings() = default;
     AWS_MEDIALIVE_API MultiplexSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API MultiplexSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,7 +39,7 @@ namespace Model
     /**
      * Maximum video buffer delay in milliseconds.
      */
-    inline int GetMaximumVideoBufferDelayMilliseconds() const{ return m_maximumVideoBufferDelayMilliseconds; }
+    inline int GetMaximumVideoBufferDelayMilliseconds() const { return m_maximumVideoBufferDelayMilliseconds; }
     inline bool MaximumVideoBufferDelayMillisecondsHasBeenSet() const { return m_maximumVideoBufferDelayMillisecondsHasBeenSet; }
     inline void SetMaximumVideoBufferDelayMilliseconds(int value) { m_maximumVideoBufferDelayMillisecondsHasBeenSet = true; m_maximumVideoBufferDelayMilliseconds = value; }
     inline MultiplexSettings& WithMaximumVideoBufferDelayMilliseconds(int value) { SetMaximumVideoBufferDelayMilliseconds(value); return *this;}
@@ -49,7 +49,7 @@ namespace Model
     /**
      * Transport stream bit rate.
      */
-    inline int GetTransportStreamBitrate() const{ return m_transportStreamBitrate; }
+    inline int GetTransportStreamBitrate() const { return m_transportStreamBitrate; }
     inline bool TransportStreamBitrateHasBeenSet() const { return m_transportStreamBitrateHasBeenSet; }
     inline void SetTransportStreamBitrate(int value) { m_transportStreamBitrateHasBeenSet = true; m_transportStreamBitrate = value; }
     inline MultiplexSettings& WithTransportStreamBitrate(int value) { SetTransportStreamBitrate(value); return *this;}
@@ -59,7 +59,7 @@ namespace Model
     /**
      * Transport stream ID.
      */
-    inline int GetTransportStreamId() const{ return m_transportStreamId; }
+    inline int GetTransportStreamId() const { return m_transportStreamId; }
     inline bool TransportStreamIdHasBeenSet() const { return m_transportStreamIdHasBeenSet; }
     inline void SetTransportStreamId(int value) { m_transportStreamIdHasBeenSet = true; m_transportStreamId = value; }
     inline MultiplexSettings& WithTransportStreamId(int value) { SetTransportStreamId(value); return *this;}
@@ -69,23 +69,23 @@ namespace Model
     /**
      * Transport stream reserved bit rate.
      */
-    inline int GetTransportStreamReservedBitrate() const{ return m_transportStreamReservedBitrate; }
+    inline int GetTransportStreamReservedBitrate() const { return m_transportStreamReservedBitrate; }
     inline bool TransportStreamReservedBitrateHasBeenSet() const { return m_transportStreamReservedBitrateHasBeenSet; }
     inline void SetTransportStreamReservedBitrate(int value) { m_transportStreamReservedBitrateHasBeenSet = true; m_transportStreamReservedBitrate = value; }
     inline MultiplexSettings& WithTransportStreamReservedBitrate(int value) { SetTransportStreamReservedBitrate(value); return *this;}
     ///@}
   private:
 
-    int m_maximumVideoBufferDelayMilliseconds;
+    int m_maximumVideoBufferDelayMilliseconds{0};
     bool m_maximumVideoBufferDelayMillisecondsHasBeenSet = false;
 
-    int m_transportStreamBitrate;
+    int m_transportStreamBitrate{0};
     bool m_transportStreamBitrateHasBeenSet = false;
 
-    int m_transportStreamId;
+    int m_transportStreamId{0};
     bool m_transportStreamIdHasBeenSet = false;
 
-    int m_transportStreamReservedBitrate;
+    int m_transportStreamReservedBitrate{0};
     bool m_transportStreamReservedBitrateHasBeenSet = false;
   };
 

@@ -20,17 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DescribeDBLogFilesDetails::DescribeDBLogFilesDetails() : 
-    m_logFileNameHasBeenSet(false),
-    m_lastWritten(0),
-    m_lastWrittenHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false)
-{
-}
-
 DescribeDBLogFilesDetails::DescribeDBLogFilesDetails(const XmlNode& xmlNode)
-  : DescribeDBLogFilesDetails()
 {
   *this = xmlNode;
 }

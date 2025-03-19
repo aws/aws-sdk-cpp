@@ -18,13 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-ConditionOverrides::ConditionOverrides() : 
-    m_rangeHasBeenSet(false)
-{
-}
-
 ConditionOverrides::ConditionOverrides(JsonView jsonValue)
-  : ConditionOverrides()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ConditionOverrides& ConditionOverrides::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Range"))
   {
     m_range = jsonValue.GetObject("Range");
-
     m_rangeHasBeenSet = true;
   }
-
   return *this;
 }
 

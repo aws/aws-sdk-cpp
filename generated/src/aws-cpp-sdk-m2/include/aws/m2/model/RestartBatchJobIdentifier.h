@@ -33,7 +33,7 @@ namespace Model
   class RestartBatchJobIdentifier
   {
   public:
-    AWS_MAINFRAMEMODERNIZATION_API RestartBatchJobIdentifier();
+    AWS_MAINFRAMEMODERNIZATION_API RestartBatchJobIdentifier() = default;
     AWS_MAINFRAMEMODERNIZATION_API RestartBatchJobIdentifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API RestartBatchJobIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,24 @@ namespace Model
      * <p>The <code>executionId</code> from the <code>StartBatchJob</code> response
      * when the job ran for the first time.</p>
      */
-    inline const Aws::String& GetExecutionId() const{ return m_executionId; }
+    inline const Aws::String& GetExecutionId() const { return m_executionId; }
     inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
-    inline void SetExecutionId(const Aws::String& value) { m_executionIdHasBeenSet = true; m_executionId = value; }
-    inline void SetExecutionId(Aws::String&& value) { m_executionIdHasBeenSet = true; m_executionId = std::move(value); }
-    inline void SetExecutionId(const char* value) { m_executionIdHasBeenSet = true; m_executionId.assign(value); }
-    inline RestartBatchJobIdentifier& WithExecutionId(const Aws::String& value) { SetExecutionId(value); return *this;}
-    inline RestartBatchJobIdentifier& WithExecutionId(Aws::String&& value) { SetExecutionId(std::move(value)); return *this;}
-    inline RestartBatchJobIdentifier& WithExecutionId(const char* value) { SetExecutionId(value); return *this;}
+    template<typename ExecutionIdT = Aws::String>
+    void SetExecutionId(ExecutionIdT&& value) { m_executionIdHasBeenSet = true; m_executionId = std::forward<ExecutionIdT>(value); }
+    template<typename ExecutionIdT = Aws::String>
+    RestartBatchJobIdentifier& WithExecutionId(ExecutionIdT&& value) { SetExecutionId(std::forward<ExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The step/procedure step information for a restart batch job operation.</p>
      */
-    inline const JobStepRestartMarker& GetJobStepRestartMarker() const{ return m_jobStepRestartMarker; }
+    inline const JobStepRestartMarker& GetJobStepRestartMarker() const { return m_jobStepRestartMarker; }
     inline bool JobStepRestartMarkerHasBeenSet() const { return m_jobStepRestartMarkerHasBeenSet; }
-    inline void SetJobStepRestartMarker(const JobStepRestartMarker& value) { m_jobStepRestartMarkerHasBeenSet = true; m_jobStepRestartMarker = value; }
-    inline void SetJobStepRestartMarker(JobStepRestartMarker&& value) { m_jobStepRestartMarkerHasBeenSet = true; m_jobStepRestartMarker = std::move(value); }
-    inline RestartBatchJobIdentifier& WithJobStepRestartMarker(const JobStepRestartMarker& value) { SetJobStepRestartMarker(value); return *this;}
-    inline RestartBatchJobIdentifier& WithJobStepRestartMarker(JobStepRestartMarker&& value) { SetJobStepRestartMarker(std::move(value)); return *this;}
+    template<typename JobStepRestartMarkerT = JobStepRestartMarker>
+    void SetJobStepRestartMarker(JobStepRestartMarkerT&& value) { m_jobStepRestartMarkerHasBeenSet = true; m_jobStepRestartMarker = std::forward<JobStepRestartMarkerT>(value); }
+    template<typename JobStepRestartMarkerT = JobStepRestartMarker>
+    RestartBatchJobIdentifier& WithJobStepRestartMarker(JobStepRestartMarkerT&& value) { SetJobStepRestartMarker(std::forward<JobStepRestartMarkerT>(value)); return *this;}
     ///@}
   private:
 

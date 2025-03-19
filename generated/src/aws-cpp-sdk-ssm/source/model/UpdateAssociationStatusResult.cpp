@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateAssociationStatusResult::UpdateAssociationStatusResult()
-{
-}
-
 UpdateAssociationStatusResult::UpdateAssociationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateAssociationStatusResult& UpdateAssociationStatusResult::operator =(const A
   if(jsonValue.ValueExists("AssociationDescription"))
   {
     m_associationDescription = jsonValue.GetObject("AssociationDescription");
-
+    m_associationDescriptionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

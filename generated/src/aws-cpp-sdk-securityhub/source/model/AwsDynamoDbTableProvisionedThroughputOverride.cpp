@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsDynamoDbTableProvisionedThroughputOverride::AwsDynamoDbTableProvisionedThroughputOverride() : 
-    m_readCapacityUnits(0),
-    m_readCapacityUnitsHasBeenSet(false)
-{
-}
-
 AwsDynamoDbTableProvisionedThroughputOverride::AwsDynamoDbTableProvisionedThroughputOverride(JsonView jsonValue)
-  : AwsDynamoDbTableProvisionedThroughputOverride()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AwsDynamoDbTableProvisionedThroughputOverride& AwsDynamoDbTableProvisionedThroug
   if(jsonValue.ValueExists("ReadCapacityUnits"))
   {
     m_readCapacityUnits = jsonValue.GetInteger("ReadCapacityUnits");
-
     m_readCapacityUnitsHasBeenSet = true;
   }
-
   return *this;
 }
 

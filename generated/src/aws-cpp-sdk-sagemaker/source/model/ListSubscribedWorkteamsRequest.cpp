@@ -12,14 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListSubscribedWorkteamsRequest::ListSubscribedWorkteamsRequest() : 
-    m_nameContainsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListSubscribedWorkteamsRequest::SerializePayload() const
 {
   JsonValue payload;

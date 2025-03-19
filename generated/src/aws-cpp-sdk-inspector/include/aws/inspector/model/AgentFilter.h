@@ -35,7 +35,7 @@ namespace Model
   class AgentFilter
   {
   public:
-    AWS_INSPECTOR_API AgentFilter();
+    AWS_INSPECTOR_API AgentFilter() = default;
     AWS_INSPECTOR_API AgentFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API AgentFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,13 @@ namespace Model
      * <p>The current health state of the agent. Values can be set to <b>HEALTHY</b> or
      * <b>UNHEALTHY</b>.</p>
      */
-    inline const Aws::Vector<AgentHealth>& GetAgentHealths() const{ return m_agentHealths; }
+    inline const Aws::Vector<AgentHealth>& GetAgentHealths() const { return m_agentHealths; }
     inline bool AgentHealthsHasBeenSet() const { return m_agentHealthsHasBeenSet; }
-    inline void SetAgentHealths(const Aws::Vector<AgentHealth>& value) { m_agentHealthsHasBeenSet = true; m_agentHealths = value; }
-    inline void SetAgentHealths(Aws::Vector<AgentHealth>&& value) { m_agentHealthsHasBeenSet = true; m_agentHealths = std::move(value); }
-    inline AgentFilter& WithAgentHealths(const Aws::Vector<AgentHealth>& value) { SetAgentHealths(value); return *this;}
-    inline AgentFilter& WithAgentHealths(Aws::Vector<AgentHealth>&& value) { SetAgentHealths(std::move(value)); return *this;}
-    inline AgentFilter& AddAgentHealths(const AgentHealth& value) { m_agentHealthsHasBeenSet = true; m_agentHealths.push_back(value); return *this; }
-    inline AgentFilter& AddAgentHealths(AgentHealth&& value) { m_agentHealthsHasBeenSet = true; m_agentHealths.push_back(std::move(value)); return *this; }
+    template<typename AgentHealthsT = Aws::Vector<AgentHealth>>
+    void SetAgentHealths(AgentHealthsT&& value) { m_agentHealthsHasBeenSet = true; m_agentHealths = std::forward<AgentHealthsT>(value); }
+    template<typename AgentHealthsT = Aws::Vector<AgentHealth>>
+    AgentFilter& WithAgentHealths(AgentHealthsT&& value) { SetAgentHealths(std::forward<AgentHealthsT>(value)); return *this;}
+    inline AgentFilter& AddAgentHealths(AgentHealth value) { m_agentHealthsHasBeenSet = true; m_agentHealths.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -62,14 +61,13 @@ namespace Model
      * <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and
      * <b>UNKNOWN</b>. </p>
      */
-    inline const Aws::Vector<AgentHealthCode>& GetAgentHealthCodes() const{ return m_agentHealthCodes; }
+    inline const Aws::Vector<AgentHealthCode>& GetAgentHealthCodes() const { return m_agentHealthCodes; }
     inline bool AgentHealthCodesHasBeenSet() const { return m_agentHealthCodesHasBeenSet; }
-    inline void SetAgentHealthCodes(const Aws::Vector<AgentHealthCode>& value) { m_agentHealthCodesHasBeenSet = true; m_agentHealthCodes = value; }
-    inline void SetAgentHealthCodes(Aws::Vector<AgentHealthCode>&& value) { m_agentHealthCodesHasBeenSet = true; m_agentHealthCodes = std::move(value); }
-    inline AgentFilter& WithAgentHealthCodes(const Aws::Vector<AgentHealthCode>& value) { SetAgentHealthCodes(value); return *this;}
-    inline AgentFilter& WithAgentHealthCodes(Aws::Vector<AgentHealthCode>&& value) { SetAgentHealthCodes(std::move(value)); return *this;}
-    inline AgentFilter& AddAgentHealthCodes(const AgentHealthCode& value) { m_agentHealthCodesHasBeenSet = true; m_agentHealthCodes.push_back(value); return *this; }
-    inline AgentFilter& AddAgentHealthCodes(AgentHealthCode&& value) { m_agentHealthCodesHasBeenSet = true; m_agentHealthCodes.push_back(std::move(value)); return *this; }
+    template<typename AgentHealthCodesT = Aws::Vector<AgentHealthCode>>
+    void SetAgentHealthCodes(AgentHealthCodesT&& value) { m_agentHealthCodesHasBeenSet = true; m_agentHealthCodes = std::forward<AgentHealthCodesT>(value); }
+    template<typename AgentHealthCodesT = Aws::Vector<AgentHealthCode>>
+    AgentFilter& WithAgentHealthCodes(AgentHealthCodesT&& value) { SetAgentHealthCodes(std::forward<AgentHealthCodesT>(value)); return *this;}
+    inline AgentFilter& AddAgentHealthCodes(AgentHealthCode value) { m_agentHealthCodesHasBeenSet = true; m_agentHealthCodes.push_back(value); return *this; }
     ///@}
   private:
 

@@ -39,7 +39,7 @@ namespace Model
   class DatasetExportJob
   {
   public:
-    AWS_PERSONALIZE_API DatasetExportJob();
+    AWS_PERSONALIZE_API DatasetExportJob() = default;
     AWS_PERSONALIZE_API DatasetExportJob(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API DatasetExportJob& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,42 +49,36 @@ namespace Model
     /**
      * <p>The name of the export job.</p>
      */
-    inline const Aws::String& GetJobName() const{ return m_jobName; }
+    inline const Aws::String& GetJobName() const { return m_jobName; }
     inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
-    inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
-    inline void SetJobName(Aws::String&& value) { m_jobNameHasBeenSet = true; m_jobName = std::move(value); }
-    inline void SetJobName(const char* value) { m_jobNameHasBeenSet = true; m_jobName.assign(value); }
-    inline DatasetExportJob& WithJobName(const Aws::String& value) { SetJobName(value); return *this;}
-    inline DatasetExportJob& WithJobName(Aws::String&& value) { SetJobName(std::move(value)); return *this;}
-    inline DatasetExportJob& WithJobName(const char* value) { SetJobName(value); return *this;}
+    template<typename JobNameT = Aws::String>
+    void SetJobName(JobNameT&& value) { m_jobNameHasBeenSet = true; m_jobName = std::forward<JobNameT>(value); }
+    template<typename JobNameT = Aws::String>
+    DatasetExportJob& WithJobName(JobNameT&& value) { SetJobName(std::forward<JobNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the dataset export job.</p>
      */
-    inline const Aws::String& GetDatasetExportJobArn() const{ return m_datasetExportJobArn; }
+    inline const Aws::String& GetDatasetExportJobArn() const { return m_datasetExportJobArn; }
     inline bool DatasetExportJobArnHasBeenSet() const { return m_datasetExportJobArnHasBeenSet; }
-    inline void SetDatasetExportJobArn(const Aws::String& value) { m_datasetExportJobArnHasBeenSet = true; m_datasetExportJobArn = value; }
-    inline void SetDatasetExportJobArn(Aws::String&& value) { m_datasetExportJobArnHasBeenSet = true; m_datasetExportJobArn = std::move(value); }
-    inline void SetDatasetExportJobArn(const char* value) { m_datasetExportJobArnHasBeenSet = true; m_datasetExportJobArn.assign(value); }
-    inline DatasetExportJob& WithDatasetExportJobArn(const Aws::String& value) { SetDatasetExportJobArn(value); return *this;}
-    inline DatasetExportJob& WithDatasetExportJobArn(Aws::String&& value) { SetDatasetExportJobArn(std::move(value)); return *this;}
-    inline DatasetExportJob& WithDatasetExportJobArn(const char* value) { SetDatasetExportJobArn(value); return *this;}
+    template<typename DatasetExportJobArnT = Aws::String>
+    void SetDatasetExportJobArn(DatasetExportJobArnT&& value) { m_datasetExportJobArnHasBeenSet = true; m_datasetExportJobArn = std::forward<DatasetExportJobArnT>(value); }
+    template<typename DatasetExportJobArnT = Aws::String>
+    DatasetExportJob& WithDatasetExportJobArn(DatasetExportJobArnT&& value) { SetDatasetExportJobArn(std::forward<DatasetExportJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the dataset to export.</p>
      */
-    inline const Aws::String& GetDatasetArn() const{ return m_datasetArn; }
+    inline const Aws::String& GetDatasetArn() const { return m_datasetArn; }
     inline bool DatasetArnHasBeenSet() const { return m_datasetArnHasBeenSet; }
-    inline void SetDatasetArn(const Aws::String& value) { m_datasetArnHasBeenSet = true; m_datasetArn = value; }
-    inline void SetDatasetArn(Aws::String&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::move(value); }
-    inline void SetDatasetArn(const char* value) { m_datasetArnHasBeenSet = true; m_datasetArn.assign(value); }
-    inline DatasetExportJob& WithDatasetArn(const Aws::String& value) { SetDatasetArn(value); return *this;}
-    inline DatasetExportJob& WithDatasetArn(Aws::String&& value) { SetDatasetArn(std::move(value)); return *this;}
-    inline DatasetExportJob& WithDatasetArn(const char* value) { SetDatasetArn(value); return *this;}
+    template<typename DatasetArnT = Aws::String>
+    void SetDatasetArn(DatasetArnT&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::forward<DatasetArnT>(value); }
+    template<typename DatasetArnT = Aws::String>
+    DatasetExportJob& WithDatasetArn(DatasetArnT&& value) { SetDatasetArn(std::forward<DatasetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,12 +89,10 @@ namespace Model
      * PutEvents, PutUsers and PutItems operations), or <code>ALL</code> for both
      * types. The default value is <code>PUT</code>. </p>
      */
-    inline const IngestionMode& GetIngestionMode() const{ return m_ingestionMode; }
+    inline IngestionMode GetIngestionMode() const { return m_ingestionMode; }
     inline bool IngestionModeHasBeenSet() const { return m_ingestionModeHasBeenSet; }
-    inline void SetIngestionMode(const IngestionMode& value) { m_ingestionModeHasBeenSet = true; m_ingestionMode = value; }
-    inline void SetIngestionMode(IngestionMode&& value) { m_ingestionModeHasBeenSet = true; m_ingestionMode = std::move(value); }
-    inline DatasetExportJob& WithIngestionMode(const IngestionMode& value) { SetIngestionMode(value); return *this;}
-    inline DatasetExportJob& WithIngestionMode(IngestionMode&& value) { SetIngestionMode(std::move(value)); return *this;}
+    inline void SetIngestionMode(IngestionMode value) { m_ingestionModeHasBeenSet = true; m_ingestionMode = value; }
+    inline DatasetExportJob& WithIngestionMode(IngestionMode value) { SetIngestionMode(value); return *this;}
     ///@}
 
     ///@{
@@ -108,14 +100,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM service role that has permissions
      * to add data to your output Amazon S3 bucket.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline DatasetExportJob& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline DatasetExportJob& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline DatasetExportJob& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    DatasetExportJob& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,14 +114,12 @@ namespace Model
      * one of the following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE
      * IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED</p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline DatasetExportJob& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline DatasetExportJob& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline DatasetExportJob& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    DatasetExportJob& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,24 +127,24 @@ namespace Model
      * <p>The path to the Amazon S3 bucket where the job's output is stored. For
      * example:</p> <p> <code>s3://bucket-name/folder-name/</code> </p>
      */
-    inline const DatasetExportJobOutput& GetJobOutput() const{ return m_jobOutput; }
+    inline const DatasetExportJobOutput& GetJobOutput() const { return m_jobOutput; }
     inline bool JobOutputHasBeenSet() const { return m_jobOutputHasBeenSet; }
-    inline void SetJobOutput(const DatasetExportJobOutput& value) { m_jobOutputHasBeenSet = true; m_jobOutput = value; }
-    inline void SetJobOutput(DatasetExportJobOutput&& value) { m_jobOutputHasBeenSet = true; m_jobOutput = std::move(value); }
-    inline DatasetExportJob& WithJobOutput(const DatasetExportJobOutput& value) { SetJobOutput(value); return *this;}
-    inline DatasetExportJob& WithJobOutput(DatasetExportJobOutput&& value) { SetJobOutput(std::move(value)); return *this;}
+    template<typename JobOutputT = DatasetExportJobOutput>
+    void SetJobOutput(JobOutputT&& value) { m_jobOutputHasBeenSet = true; m_jobOutput = std::forward<JobOutputT>(value); }
+    template<typename JobOutputT = DatasetExportJobOutput>
+    DatasetExportJob& WithJobOutput(JobOutputT&& value) { SetJobOutput(std::forward<JobOutputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The creation date and time (in Unix time) of the dataset export job.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
     inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
-    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::move(value); }
-    inline DatasetExportJob& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-    inline DatasetExportJob& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    DatasetExportJob& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -164,26 +152,24 @@ namespace Model
      * <p>The date and time (in Unix time) the status of the dataset export job was
      * last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const{ return m_lastUpdatedDateTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const { return m_lastUpdatedDateTime; }
     inline bool LastUpdatedDateTimeHasBeenSet() const { return m_lastUpdatedDateTimeHasBeenSet; }
-    inline void SetLastUpdatedDateTime(const Aws::Utils::DateTime& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = value; }
-    inline void SetLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::move(value); }
-    inline DatasetExportJob& WithLastUpdatedDateTime(const Aws::Utils::DateTime& value) { SetLastUpdatedDateTime(value); return *this;}
-    inline DatasetExportJob& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::forward<LastUpdatedDateTimeT>(value); }
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    DatasetExportJob& WithLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { SetLastUpdatedDateTime(std::forward<LastUpdatedDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If a dataset export job fails, provides the reason why.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
-    inline DatasetExportJob& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline DatasetExportJob& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline DatasetExportJob& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    DatasetExportJob& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
   private:
 
@@ -196,7 +182,7 @@ namespace Model
     Aws::String m_datasetArn;
     bool m_datasetArnHasBeenSet = false;
 
-    IngestionMode m_ingestionMode;
+    IngestionMode m_ingestionMode{IngestionMode::NOT_SET};
     bool m_ingestionModeHasBeenSet = false;
 
     Aws::String m_roleArn;
@@ -208,10 +194,10 @@ namespace Model
     DatasetExportJobOutput m_jobOutput;
     bool m_jobOutputHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDateTime;
+    Aws::Utils::DateTime m_creationDateTime{};
     bool m_creationDateTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedDateTime;
+    Aws::Utils::DateTime m_lastUpdatedDateTime{};
     bool m_lastUpdatedDateTimeHasBeenSet = false;
 
     Aws::String m_failureReason;

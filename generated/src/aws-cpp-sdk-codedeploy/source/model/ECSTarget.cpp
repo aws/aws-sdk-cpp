@@ -18,20 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-ECSTarget::ECSTarget() : 
-    m_deploymentIdHasBeenSet(false),
-    m_targetIdHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_lifecycleEventsHasBeenSet(false),
-    m_status(TargetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_taskSetsInfoHasBeenSet(false)
-{
-}
-
 ECSTarget::ECSTarget(JsonView jsonValue)
-  : ECSTarget()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ ECSTarget& ECSTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("deploymentId"))
   {
     m_deploymentId = jsonValue.GetString("deploymentId");
-
     m_deploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetId"))
   {
     m_targetId = jsonValue.GetString("targetId");
-
     m_targetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetArn"))
   {
     m_targetArn = jsonValue.GetString("targetArn");
-
     m_targetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lifecycleEvents"))
   {
     Aws::Utils::Array<JsonView> lifecycleEventsJsonList = jsonValue.GetArray("lifecycleEvents");
@@ -75,14 +54,11 @@ ECSTarget& ECSTarget::operator =(JsonView jsonValue)
     }
     m_lifecycleEventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = TargetStatusMapper::GetTargetStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskSetsInfo"))
   {
     Aws::Utils::Array<JsonView> taskSetsInfoJsonList = jsonValue.GetArray("taskSetsInfo");
@@ -92,7 +68,6 @@ ECSTarget& ECSTarget::operator =(JsonView jsonValue)
     }
     m_taskSetsInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

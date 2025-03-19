@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeInstanceCreditSpecificationsRequest::DescribeInstanceCreditSpecificationsRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_instanceIdsHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeInstanceCreditSpecificationsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateMeetingWithAttendeesResult::CreateMeetingWithAttendeesResult()
-{
-}
-
 CreateMeetingWithAttendeesResult::CreateMeetingWithAttendeesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ CreateMeetingWithAttendeesResult& CreateMeetingWithAttendeesResult::operator =(c
   if(jsonValue.ValueExists("Meeting"))
   {
     m_meeting = jsonValue.GetObject("Meeting");
-
+    m_meetingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attendees"))
   {
     Aws::Utils::Array<JsonView> attendeesJsonList = jsonValue.GetArray("Attendees");
@@ -42,8 +37,8 @@ CreateMeetingWithAttendeesResult& CreateMeetingWithAttendeesResult::operator =(c
     {
       m_attendees.push_back(attendeesJsonList[attendeesIndex].AsObject());
     }
+    m_attendeesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("Errors");
@@ -51,14 +46,15 @@ CreateMeetingWithAttendeesResult& CreateMeetingWithAttendeesResult::operator =(c
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+    m_errorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-PutMultiRegionAccessPointPolicyInput::PutMultiRegionAccessPointPolicyInput() : 
-    m_nameHasBeenSet(false),
-    m_policyHasBeenSet(false)
-{
-}
-
 PutMultiRegionAccessPointPolicyInput::PutMultiRegionAccessPointPolicyInput(const XmlNode& xmlNode)
-  : PutMultiRegionAccessPointPolicyInput()
 {
   *this = xmlNode;
 }

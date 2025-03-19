@@ -18,15 +18,7 @@ namespace FSx
 namespace Model
 {
 
-DeleteFileSystemWindowsConfiguration::DeleteFileSystemWindowsConfiguration() : 
-    m_skipFinalBackup(false),
-    m_skipFinalBackupHasBeenSet(false),
-    m_finalBackupTagsHasBeenSet(false)
-{
-}
-
 DeleteFileSystemWindowsConfiguration::DeleteFileSystemWindowsConfiguration(JsonView jsonValue)
-  : DeleteFileSystemWindowsConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ DeleteFileSystemWindowsConfiguration& DeleteFileSystemWindowsConfiguration::oper
   if(jsonValue.ValueExists("SkipFinalBackup"))
   {
     m_skipFinalBackup = jsonValue.GetBool("SkipFinalBackup");
-
     m_skipFinalBackupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FinalBackupTags"))
   {
     Aws::Utils::Array<JsonView> finalBackupTagsJsonList = jsonValue.GetArray("FinalBackupTags");
@@ -49,7 +39,6 @@ DeleteFileSystemWindowsConfiguration& DeleteFileSystemWindowsConfiguration::oper
     }
     m_finalBackupTagsHasBeenSet = true;
   }
-
   return *this;
 }
 

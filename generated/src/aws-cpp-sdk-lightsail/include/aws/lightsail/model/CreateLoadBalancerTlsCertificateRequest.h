@@ -23,7 +23,7 @@ namespace Model
   class CreateLoadBalancerTlsCertificateRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API CreateLoadBalancerTlsCertificateRequest();
+    AWS_LIGHTSAIL_API CreateLoadBalancerTlsCertificateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The load balancer name where you want to create the SSL/TLS certificate.</p>
      */
-    inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
+    inline const Aws::String& GetLoadBalancerName() const { return m_loadBalancerName; }
     inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
-    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
-    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::move(value); }
-    inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
-    inline CreateLoadBalancerTlsCertificateRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
-    inline CreateLoadBalancerTlsCertificateRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(std::move(value)); return *this;}
-    inline CreateLoadBalancerTlsCertificateRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
+    template<typename LoadBalancerNameT = Aws::String>
+    void SetLoadBalancerName(LoadBalancerNameT&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::forward<LoadBalancerNameT>(value); }
+    template<typename LoadBalancerNameT = Aws::String>
+    CreateLoadBalancerTlsCertificateRequest& WithLoadBalancerName(LoadBalancerNameT&& value) { SetLoadBalancerName(std::forward<LoadBalancerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,28 +57,24 @@ namespace Model
      * information, see <a
      * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
      */
-    inline const Aws::String& GetCertificateName() const{ return m_certificateName; }
+    inline const Aws::String& GetCertificateName() const { return m_certificateName; }
     inline bool CertificateNameHasBeenSet() const { return m_certificateNameHasBeenSet; }
-    inline void SetCertificateName(const Aws::String& value) { m_certificateNameHasBeenSet = true; m_certificateName = value; }
-    inline void SetCertificateName(Aws::String&& value) { m_certificateNameHasBeenSet = true; m_certificateName = std::move(value); }
-    inline void SetCertificateName(const char* value) { m_certificateNameHasBeenSet = true; m_certificateName.assign(value); }
-    inline CreateLoadBalancerTlsCertificateRequest& WithCertificateName(const Aws::String& value) { SetCertificateName(value); return *this;}
-    inline CreateLoadBalancerTlsCertificateRequest& WithCertificateName(Aws::String&& value) { SetCertificateName(std::move(value)); return *this;}
-    inline CreateLoadBalancerTlsCertificateRequest& WithCertificateName(const char* value) { SetCertificateName(value); return *this;}
+    template<typename CertificateNameT = Aws::String>
+    void SetCertificateName(CertificateNameT&& value) { m_certificateNameHasBeenSet = true; m_certificateName = std::forward<CertificateNameT>(value); }
+    template<typename CertificateNameT = Aws::String>
+    CreateLoadBalancerTlsCertificateRequest& WithCertificateName(CertificateNameT&& value) { SetCertificateName(std::forward<CertificateNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The domain name (<code>example.com</code>) for your SSL/TLS certificate.</p>
      */
-    inline const Aws::String& GetCertificateDomainName() const{ return m_certificateDomainName; }
+    inline const Aws::String& GetCertificateDomainName() const { return m_certificateDomainName; }
     inline bool CertificateDomainNameHasBeenSet() const { return m_certificateDomainNameHasBeenSet; }
-    inline void SetCertificateDomainName(const Aws::String& value) { m_certificateDomainNameHasBeenSet = true; m_certificateDomainName = value; }
-    inline void SetCertificateDomainName(Aws::String&& value) { m_certificateDomainNameHasBeenSet = true; m_certificateDomainName = std::move(value); }
-    inline void SetCertificateDomainName(const char* value) { m_certificateDomainNameHasBeenSet = true; m_certificateDomainName.assign(value); }
-    inline CreateLoadBalancerTlsCertificateRequest& WithCertificateDomainName(const Aws::String& value) { SetCertificateDomainName(value); return *this;}
-    inline CreateLoadBalancerTlsCertificateRequest& WithCertificateDomainName(Aws::String&& value) { SetCertificateDomainName(std::move(value)); return *this;}
-    inline CreateLoadBalancerTlsCertificateRequest& WithCertificateDomainName(const char* value) { SetCertificateDomainName(value); return *this;}
+    template<typename CertificateDomainNameT = Aws::String>
+    void SetCertificateDomainName(CertificateDomainNameT&& value) { m_certificateDomainNameHasBeenSet = true; m_certificateDomainName = std::forward<CertificateDomainNameT>(value); }
+    template<typename CertificateDomainNameT = Aws::String>
+    CreateLoadBalancerTlsCertificateRequest& WithCertificateDomainName(CertificateDomainNameT&& value) { SetCertificateDomainName(std::forward<CertificateDomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,15 +84,14 @@ namespace Model
      * maximum of 9 alternative names (in addition to the 1 primary domain). We do not
      * support wildcards (<code>*.example.com</code>).</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCertificateAlternativeNames() const{ return m_certificateAlternativeNames; }
+    inline const Aws::Vector<Aws::String>& GetCertificateAlternativeNames() const { return m_certificateAlternativeNames; }
     inline bool CertificateAlternativeNamesHasBeenSet() const { return m_certificateAlternativeNamesHasBeenSet; }
-    inline void SetCertificateAlternativeNames(const Aws::Vector<Aws::String>& value) { m_certificateAlternativeNamesHasBeenSet = true; m_certificateAlternativeNames = value; }
-    inline void SetCertificateAlternativeNames(Aws::Vector<Aws::String>&& value) { m_certificateAlternativeNamesHasBeenSet = true; m_certificateAlternativeNames = std::move(value); }
-    inline CreateLoadBalancerTlsCertificateRequest& WithCertificateAlternativeNames(const Aws::Vector<Aws::String>& value) { SetCertificateAlternativeNames(value); return *this;}
-    inline CreateLoadBalancerTlsCertificateRequest& WithCertificateAlternativeNames(Aws::Vector<Aws::String>&& value) { SetCertificateAlternativeNames(std::move(value)); return *this;}
-    inline CreateLoadBalancerTlsCertificateRequest& AddCertificateAlternativeNames(const Aws::String& value) { m_certificateAlternativeNamesHasBeenSet = true; m_certificateAlternativeNames.push_back(value); return *this; }
-    inline CreateLoadBalancerTlsCertificateRequest& AddCertificateAlternativeNames(Aws::String&& value) { m_certificateAlternativeNamesHasBeenSet = true; m_certificateAlternativeNames.push_back(std::move(value)); return *this; }
-    inline CreateLoadBalancerTlsCertificateRequest& AddCertificateAlternativeNames(const char* value) { m_certificateAlternativeNamesHasBeenSet = true; m_certificateAlternativeNames.push_back(value); return *this; }
+    template<typename CertificateAlternativeNamesT = Aws::Vector<Aws::String>>
+    void SetCertificateAlternativeNames(CertificateAlternativeNamesT&& value) { m_certificateAlternativeNamesHasBeenSet = true; m_certificateAlternativeNames = std::forward<CertificateAlternativeNamesT>(value); }
+    template<typename CertificateAlternativeNamesT = Aws::Vector<Aws::String>>
+    CreateLoadBalancerTlsCertificateRequest& WithCertificateAlternativeNames(CertificateAlternativeNamesT&& value) { SetCertificateAlternativeNames(std::forward<CertificateAlternativeNamesT>(value)); return *this;}
+    template<typename CertificateAlternativeNamesT = Aws::String>
+    CreateLoadBalancerTlsCertificateRequest& AddCertificateAlternativeNames(CertificateAlternativeNamesT&& value) { m_certificateAlternativeNamesHasBeenSet = true; m_certificateAlternativeNames.emplace_back(std::forward<CertificateAlternativeNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -107,14 +100,14 @@ namespace Model
      * <p>Use the <code>TagResource</code> action to tag a resource after it's
      * created.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateLoadBalancerTlsCertificateRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateLoadBalancerTlsCertificateRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateLoadBalancerTlsCertificateRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateLoadBalancerTlsCertificateRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateLoadBalancerTlsCertificateRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateLoadBalancerTlsCertificateRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

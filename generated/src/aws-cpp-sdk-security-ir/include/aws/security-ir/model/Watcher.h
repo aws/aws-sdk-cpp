@@ -31,7 +31,7 @@ namespace Model
   class Watcher
   {
   public:
-    AWS_SECURITYIR_API Watcher();
+    AWS_SECURITYIR_API Watcher() = default;
     AWS_SECURITYIR_API Watcher(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYIR_API Watcher& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYIR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,42 +41,36 @@ namespace Model
     /**
      * <p/>
      */
-    inline const Aws::String& GetEmail() const{ return m_email; }
+    inline const Aws::String& GetEmail() const { return m_email; }
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
-    inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
-    inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
-    inline void SetEmail(const char* value) { m_emailHasBeenSet = true; m_email.assign(value); }
-    inline Watcher& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
-    inline Watcher& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
-    inline Watcher& WithEmail(const char* value) { SetEmail(value); return *this;}
+    template<typename EmailT = Aws::String>
+    void SetEmail(EmailT&& value) { m_emailHasBeenSet = true; m_email = std::forward<EmailT>(value); }
+    template<typename EmailT = Aws::String>
+    Watcher& WithEmail(EmailT&& value) { SetEmail(std::forward<EmailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Watcher& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Watcher& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Watcher& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Watcher& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetJobTitle() const{ return m_jobTitle; }
+    inline const Aws::String& GetJobTitle() const { return m_jobTitle; }
     inline bool JobTitleHasBeenSet() const { return m_jobTitleHasBeenSet; }
-    inline void SetJobTitle(const Aws::String& value) { m_jobTitleHasBeenSet = true; m_jobTitle = value; }
-    inline void SetJobTitle(Aws::String&& value) { m_jobTitleHasBeenSet = true; m_jobTitle = std::move(value); }
-    inline void SetJobTitle(const char* value) { m_jobTitleHasBeenSet = true; m_jobTitle.assign(value); }
-    inline Watcher& WithJobTitle(const Aws::String& value) { SetJobTitle(value); return *this;}
-    inline Watcher& WithJobTitle(Aws::String&& value) { SetJobTitle(std::move(value)); return *this;}
-    inline Watcher& WithJobTitle(const char* value) { SetJobTitle(value); return *this;}
+    template<typename JobTitleT = Aws::String>
+    void SetJobTitle(JobTitleT&& value) { m_jobTitleHasBeenSet = true; m_jobTitle = std::forward<JobTitleT>(value); }
+    template<typename JobTitleT = Aws::String>
+    Watcher& WithJobTitle(JobTitleT&& value) { SetJobTitle(std::forward<JobTitleT>(value)); return *this;}
     ///@}
   private:
 

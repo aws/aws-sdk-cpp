@@ -32,7 +32,7 @@ namespace Model
   class SheetControlLayoutConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API SheetControlLayoutConfiguration();
+    AWS_QUICKSIGHT_API SheetControlLayoutConfiguration() = default;
     AWS_QUICKSIGHT_API SheetControlLayoutConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SheetControlLayoutConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The configuration that determines the elements and canvas size options of
      * sheet control.</p>
      */
-    inline const GridLayoutConfiguration& GetGridLayout() const{ return m_gridLayout; }
+    inline const GridLayoutConfiguration& GetGridLayout() const { return m_gridLayout; }
     inline bool GridLayoutHasBeenSet() const { return m_gridLayoutHasBeenSet; }
-    inline void SetGridLayout(const GridLayoutConfiguration& value) { m_gridLayoutHasBeenSet = true; m_gridLayout = value; }
-    inline void SetGridLayout(GridLayoutConfiguration&& value) { m_gridLayoutHasBeenSet = true; m_gridLayout = std::move(value); }
-    inline SheetControlLayoutConfiguration& WithGridLayout(const GridLayoutConfiguration& value) { SetGridLayout(value); return *this;}
-    inline SheetControlLayoutConfiguration& WithGridLayout(GridLayoutConfiguration&& value) { SetGridLayout(std::move(value)); return *this;}
+    template<typename GridLayoutT = GridLayoutConfiguration>
+    void SetGridLayout(GridLayoutT&& value) { m_gridLayoutHasBeenSet = true; m_gridLayout = std::forward<GridLayoutT>(value); }
+    template<typename GridLayoutT = GridLayoutConfiguration>
+    SheetControlLayoutConfiguration& WithGridLayout(GridLayoutT&& value) { SetGridLayout(std::forward<GridLayoutT>(value)); return *this;}
     ///@}
   private:
 

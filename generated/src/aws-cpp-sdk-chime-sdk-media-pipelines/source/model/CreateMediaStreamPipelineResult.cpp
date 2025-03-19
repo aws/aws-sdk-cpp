@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateMediaStreamPipelineResult::CreateMediaStreamPipelineResult()
-{
-}
-
 CreateMediaStreamPipelineResult::CreateMediaStreamPipelineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateMediaStreamPipelineResult& CreateMediaStreamPipelineResult::operator =(con
   if(jsonValue.ValueExists("MediaStreamPipeline"))
   {
     m_mediaStreamPipeline = jsonValue.GetObject("MediaStreamPipeline");
-
+    m_mediaStreamPipelineHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

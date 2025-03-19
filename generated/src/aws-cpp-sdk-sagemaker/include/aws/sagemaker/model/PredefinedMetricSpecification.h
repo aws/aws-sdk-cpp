@@ -31,7 +31,7 @@ namespace Model
   class PredefinedMetricSpecification
   {
   public:
-    AWS_SAGEMAKER_API PredefinedMetricSpecification();
+    AWS_SAGEMAKER_API PredefinedMetricSpecification() = default;
     AWS_SAGEMAKER_API PredefinedMetricSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API PredefinedMetricSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
      * <p>The metric type. You can only apply SageMaker metric types to SageMaker
      * endpoints.</p>
      */
-    inline const Aws::String& GetPredefinedMetricType() const{ return m_predefinedMetricType; }
+    inline const Aws::String& GetPredefinedMetricType() const { return m_predefinedMetricType; }
     inline bool PredefinedMetricTypeHasBeenSet() const { return m_predefinedMetricTypeHasBeenSet; }
-    inline void SetPredefinedMetricType(const Aws::String& value) { m_predefinedMetricTypeHasBeenSet = true; m_predefinedMetricType = value; }
-    inline void SetPredefinedMetricType(Aws::String&& value) { m_predefinedMetricTypeHasBeenSet = true; m_predefinedMetricType = std::move(value); }
-    inline void SetPredefinedMetricType(const char* value) { m_predefinedMetricTypeHasBeenSet = true; m_predefinedMetricType.assign(value); }
-    inline PredefinedMetricSpecification& WithPredefinedMetricType(const Aws::String& value) { SetPredefinedMetricType(value); return *this;}
-    inline PredefinedMetricSpecification& WithPredefinedMetricType(Aws::String&& value) { SetPredefinedMetricType(std::move(value)); return *this;}
-    inline PredefinedMetricSpecification& WithPredefinedMetricType(const char* value) { SetPredefinedMetricType(value); return *this;}
+    template<typename PredefinedMetricTypeT = Aws::String>
+    void SetPredefinedMetricType(PredefinedMetricTypeT&& value) { m_predefinedMetricTypeHasBeenSet = true; m_predefinedMetricType = std::forward<PredefinedMetricTypeT>(value); }
+    template<typename PredefinedMetricTypeT = Aws::String>
+    PredefinedMetricSpecification& WithPredefinedMetricType(PredefinedMetricTypeT&& value) { SetPredefinedMetricType(std::forward<PredefinedMetricTypeT>(value)); return *this;}
     ///@}
   private:
 

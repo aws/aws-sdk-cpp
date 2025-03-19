@@ -18,18 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-ClassificationDetails::ClassificationDetails() : 
-    m_detailedResultsLocationHasBeenSet(false),
-    m_jobArnHasBeenSet(false),
-    m_jobIdHasBeenSet(false),
-    m_originType(OriginType::NOT_SET),
-    m_originTypeHasBeenSet(false),
-    m_resultHasBeenSet(false)
-{
-}
-
 ClassificationDetails::ClassificationDetails(JsonView jsonValue)
-  : ClassificationDetails()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ClassificationDetails& ClassificationDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("detailedResultsLocation"))
   {
     m_detailedResultsLocation = jsonValue.GetString("detailedResultsLocation");
-
     m_detailedResultsLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobArn"))
   {
     m_jobArn = jsonValue.GetString("jobArn");
-
     m_jobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("originType"))
   {
     m_originType = OriginTypeMapper::GetOriginTypeForName(jsonValue.GetString("originType"));
-
     m_originTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("result"))
   {
     m_result = jsonValue.GetObject("result");
-
     m_resultHasBeenSet = true;
   }
-
   return *this;
 }
 

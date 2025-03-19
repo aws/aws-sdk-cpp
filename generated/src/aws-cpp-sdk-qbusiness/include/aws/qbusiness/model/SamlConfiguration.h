@@ -33,7 +33,7 @@ namespace Model
   class SamlConfiguration
   {
   public:
-    AWS_QBUSINESS_API SamlConfiguration();
+    AWS_QBUSINESS_API SamlConfiguration() = default;
     AWS_QBUSINESS_API SamlConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API SamlConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The metadata XML that your IdP generated.</p>
      */
-    inline const Aws::String& GetMetadataXML() const{ return m_metadataXML; }
+    inline const Aws::String& GetMetadataXML() const { return m_metadataXML; }
     inline bool MetadataXMLHasBeenSet() const { return m_metadataXMLHasBeenSet; }
-    inline void SetMetadataXML(const Aws::String& value) { m_metadataXMLHasBeenSet = true; m_metadataXML = value; }
-    inline void SetMetadataXML(Aws::String&& value) { m_metadataXMLHasBeenSet = true; m_metadataXML = std::move(value); }
-    inline void SetMetadataXML(const char* value) { m_metadataXMLHasBeenSet = true; m_metadataXML.assign(value); }
-    inline SamlConfiguration& WithMetadataXML(const Aws::String& value) { SetMetadataXML(value); return *this;}
-    inline SamlConfiguration& WithMetadataXML(Aws::String&& value) { SetMetadataXML(std::move(value)); return *this;}
-    inline SamlConfiguration& WithMetadataXML(const char* value) { SetMetadataXML(value); return *this;}
+    template<typename MetadataXMLT = Aws::String>
+    void SetMetadataXML(MetadataXMLT&& value) { m_metadataXMLHasBeenSet = true; m_metadataXML = std::forward<MetadataXMLT>(value); }
+    template<typename MetadataXMLT = Aws::String>
+    SamlConfiguration& WithMetadataXML(MetadataXMLT&& value) { SetMetadataXML(std::forward<MetadataXMLT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,42 +58,36 @@ namespace Model
      * relevant Amazon Q Business permissions for conversing with Amazon Q
      * Business.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline SamlConfiguration& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline SamlConfiguration& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline SamlConfiguration& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    SamlConfiguration& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user attribute name in your IdP that maps to the user email.</p>
      */
-    inline const Aws::String& GetUserIdAttribute() const{ return m_userIdAttribute; }
+    inline const Aws::String& GetUserIdAttribute() const { return m_userIdAttribute; }
     inline bool UserIdAttributeHasBeenSet() const { return m_userIdAttributeHasBeenSet; }
-    inline void SetUserIdAttribute(const Aws::String& value) { m_userIdAttributeHasBeenSet = true; m_userIdAttribute = value; }
-    inline void SetUserIdAttribute(Aws::String&& value) { m_userIdAttributeHasBeenSet = true; m_userIdAttribute = std::move(value); }
-    inline void SetUserIdAttribute(const char* value) { m_userIdAttributeHasBeenSet = true; m_userIdAttribute.assign(value); }
-    inline SamlConfiguration& WithUserIdAttribute(const Aws::String& value) { SetUserIdAttribute(value); return *this;}
-    inline SamlConfiguration& WithUserIdAttribute(Aws::String&& value) { SetUserIdAttribute(std::move(value)); return *this;}
-    inline SamlConfiguration& WithUserIdAttribute(const char* value) { SetUserIdAttribute(value); return *this;}
+    template<typename UserIdAttributeT = Aws::String>
+    void SetUserIdAttribute(UserIdAttributeT&& value) { m_userIdAttributeHasBeenSet = true; m_userIdAttribute = std::forward<UserIdAttributeT>(value); }
+    template<typename UserIdAttributeT = Aws::String>
+    SamlConfiguration& WithUserIdAttribute(UserIdAttributeT&& value) { SetUserIdAttribute(std::forward<UserIdAttributeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The group attribute name in your IdP that maps to user groups.</p>
      */
-    inline const Aws::String& GetUserGroupAttribute() const{ return m_userGroupAttribute; }
+    inline const Aws::String& GetUserGroupAttribute() const { return m_userGroupAttribute; }
     inline bool UserGroupAttributeHasBeenSet() const { return m_userGroupAttributeHasBeenSet; }
-    inline void SetUserGroupAttribute(const Aws::String& value) { m_userGroupAttributeHasBeenSet = true; m_userGroupAttribute = value; }
-    inline void SetUserGroupAttribute(Aws::String&& value) { m_userGroupAttributeHasBeenSet = true; m_userGroupAttribute = std::move(value); }
-    inline void SetUserGroupAttribute(const char* value) { m_userGroupAttributeHasBeenSet = true; m_userGroupAttribute.assign(value); }
-    inline SamlConfiguration& WithUserGroupAttribute(const Aws::String& value) { SetUserGroupAttribute(value); return *this;}
-    inline SamlConfiguration& WithUserGroupAttribute(Aws::String&& value) { SetUserGroupAttribute(std::move(value)); return *this;}
-    inline SamlConfiguration& WithUserGroupAttribute(const char* value) { SetUserGroupAttribute(value); return *this;}
+    template<typename UserGroupAttributeT = Aws::String>
+    void SetUserGroupAttribute(UserGroupAttributeT&& value) { m_userGroupAttributeHasBeenSet = true; m_userGroupAttribute = std::forward<UserGroupAttributeT>(value); }
+    template<typename UserGroupAttributeT = Aws::String>
+    SamlConfiguration& WithUserGroupAttribute(UserGroupAttributeT&& value) { SetUserGroupAttribute(std::forward<UserGroupAttributeT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,18 +18,7 @@ namespace MachineLearning
 namespace Model
 {
 
-RDSMetadata::RDSMetadata() : 
-    m_databaseHasBeenSet(false),
-    m_databaseUserNameHasBeenSet(false),
-    m_selectSqlQueryHasBeenSet(false),
-    m_resourceRoleHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false),
-    m_dataPipelineIdHasBeenSet(false)
-{
-}
-
 RDSMetadata::RDSMetadata(JsonView jsonValue)
-  : RDSMetadata()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ RDSMetadata& RDSMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Database"))
   {
     m_database = jsonValue.GetObject("Database");
-
     m_databaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseUserName"))
   {
     m_databaseUserName = jsonValue.GetString("DatabaseUserName");
-
     m_databaseUserNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectSqlQuery"))
   {
     m_selectSqlQuery = jsonValue.GetString("SelectSqlQuery");
-
     m_selectSqlQueryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceRole"))
   {
     m_resourceRole = jsonValue.GetString("ResourceRole");
-
     m_resourceRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceRole"))
   {
     m_serviceRole = jsonValue.GetString("ServiceRole");
-
     m_serviceRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataPipelineId"))
   {
     m_dataPipelineId = jsonValue.GetString("DataPipelineId");
-
     m_dataPipelineIdHasBeenSet = true;
   }
-
   return *this;
 }
 

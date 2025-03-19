@@ -20,17 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-OriginGroup::OriginGroup() : 
-    m_idHasBeenSet(false),
-    m_failoverCriteriaHasBeenSet(false),
-    m_membersHasBeenSet(false),
-    m_selectionCriteria(OriginGroupSelectionCriteria::NOT_SET),
-    m_selectionCriteriaHasBeenSet(false)
-{
-}
-
 OriginGroup::OriginGroup(const XmlNode& xmlNode)
-  : OriginGroup()
 {
   *this = xmlNode;
 }
@@ -62,7 +52,7 @@ OriginGroup& OriginGroup::operator =(const XmlNode& xmlNode)
     XmlNode selectionCriteriaNode = resultNode.FirstChild("SelectionCriteria");
     if(!selectionCriteriaNode.IsNull())
     {
-      m_selectionCriteria = OriginGroupSelectionCriteriaMapper::GetOriginGroupSelectionCriteriaForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(selectionCriteriaNode.GetText()).c_str()).c_str());
+      m_selectionCriteria = OriginGroupSelectionCriteriaMapper::GetOriginGroupSelectionCriteriaForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(selectionCriteriaNode.GetText()).c_str()));
       m_selectionCriteriaHasBeenSet = true;
     }
   }

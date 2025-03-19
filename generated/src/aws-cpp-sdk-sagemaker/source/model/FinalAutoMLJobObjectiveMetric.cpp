@@ -18,20 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-FinalAutoMLJobObjectiveMetric::FinalAutoMLJobObjectiveMetric() : 
-    m_type(AutoMLJobObjectiveType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_metricName(AutoMLMetricEnum::NOT_SET),
-    m_metricNameHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false),
-    m_standardMetricName(AutoMLMetricEnum::NOT_SET),
-    m_standardMetricNameHasBeenSet(false)
-{
-}
-
 FinalAutoMLJobObjectiveMetric::FinalAutoMLJobObjectiveMetric(JsonView jsonValue)
-  : FinalAutoMLJobObjectiveMetric()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ FinalAutoMLJobObjectiveMetric& FinalAutoMLJobObjectiveMetric::operator =(JsonVie
   if(jsonValue.ValueExists("Type"))
   {
     m_type = AutoMLJobObjectiveTypeMapper::GetAutoMLJobObjectiveTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricName"))
   {
     m_metricName = AutoMLMetricEnumMapper::GetAutoMLMetricEnumForName(jsonValue.GetString("MetricName"));
-
     m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetDouble("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StandardMetricName"))
   {
     m_standardMetricName = AutoMLMetricEnumMapper::GetAutoMLMetricEnumForName(jsonValue.GetString("StandardMetricName"));
-
     m_standardMetricNameHasBeenSet = true;
   }
-
   return *this;
 }
 

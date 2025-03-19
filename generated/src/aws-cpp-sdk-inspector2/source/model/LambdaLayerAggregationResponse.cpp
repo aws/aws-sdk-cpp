@@ -18,17 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-LambdaLayerAggregationResponse::LambdaLayerAggregationResponse() : 
-    m_accountIdHasBeenSet(false),
-    m_functionNameHasBeenSet(false),
-    m_layerArnHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_severityCountsHasBeenSet(false)
-{
-}
-
 LambdaLayerAggregationResponse::LambdaLayerAggregationResponse(JsonView jsonValue)
-  : LambdaLayerAggregationResponse()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ LambdaLayerAggregationResponse& LambdaLayerAggregationResponse::operator =(JsonV
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("functionName"))
   {
     m_functionName = jsonValue.GetString("functionName");
-
     m_functionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("layerArn"))
   {
     m_layerArn = jsonValue.GetString("layerArn");
-
     m_layerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("severityCounts"))
   {
     m_severityCounts = jsonValue.GetObject("severityCounts");
-
     m_severityCountsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -38,7 +38,7 @@ namespace Model
   class RedshiftQueryEngineConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API RedshiftQueryEngineConfiguration();
+    AWS_BEDROCKAGENT_API RedshiftQueryEngineConfiguration() = default;
     AWS_BEDROCKAGENT_API RedshiftQueryEngineConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API RedshiftQueryEngineConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,36 +48,34 @@ namespace Model
     /**
      * <p>Specifies configurations for a provisioned Amazon Redshift query engine.</p>
      */
-    inline const RedshiftProvisionedConfiguration& GetProvisionedConfiguration() const{ return m_provisionedConfiguration; }
+    inline const RedshiftProvisionedConfiguration& GetProvisionedConfiguration() const { return m_provisionedConfiguration; }
     inline bool ProvisionedConfigurationHasBeenSet() const { return m_provisionedConfigurationHasBeenSet; }
-    inline void SetProvisionedConfiguration(const RedshiftProvisionedConfiguration& value) { m_provisionedConfigurationHasBeenSet = true; m_provisionedConfiguration = value; }
-    inline void SetProvisionedConfiguration(RedshiftProvisionedConfiguration&& value) { m_provisionedConfigurationHasBeenSet = true; m_provisionedConfiguration = std::move(value); }
-    inline RedshiftQueryEngineConfiguration& WithProvisionedConfiguration(const RedshiftProvisionedConfiguration& value) { SetProvisionedConfiguration(value); return *this;}
-    inline RedshiftQueryEngineConfiguration& WithProvisionedConfiguration(RedshiftProvisionedConfiguration&& value) { SetProvisionedConfiguration(std::move(value)); return *this;}
+    template<typename ProvisionedConfigurationT = RedshiftProvisionedConfiguration>
+    void SetProvisionedConfiguration(ProvisionedConfigurationT&& value) { m_provisionedConfigurationHasBeenSet = true; m_provisionedConfiguration = std::forward<ProvisionedConfigurationT>(value); }
+    template<typename ProvisionedConfigurationT = RedshiftProvisionedConfiguration>
+    RedshiftQueryEngineConfiguration& WithProvisionedConfiguration(ProvisionedConfigurationT&& value) { SetProvisionedConfiguration(std::forward<ProvisionedConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies configurations for a serverless Amazon Redshift query engine.</p>
      */
-    inline const RedshiftServerlessConfiguration& GetServerlessConfiguration() const{ return m_serverlessConfiguration; }
+    inline const RedshiftServerlessConfiguration& GetServerlessConfiguration() const { return m_serverlessConfiguration; }
     inline bool ServerlessConfigurationHasBeenSet() const { return m_serverlessConfigurationHasBeenSet; }
-    inline void SetServerlessConfiguration(const RedshiftServerlessConfiguration& value) { m_serverlessConfigurationHasBeenSet = true; m_serverlessConfiguration = value; }
-    inline void SetServerlessConfiguration(RedshiftServerlessConfiguration&& value) { m_serverlessConfigurationHasBeenSet = true; m_serverlessConfiguration = std::move(value); }
-    inline RedshiftQueryEngineConfiguration& WithServerlessConfiguration(const RedshiftServerlessConfiguration& value) { SetServerlessConfiguration(value); return *this;}
-    inline RedshiftQueryEngineConfiguration& WithServerlessConfiguration(RedshiftServerlessConfiguration&& value) { SetServerlessConfiguration(std::move(value)); return *this;}
+    template<typename ServerlessConfigurationT = RedshiftServerlessConfiguration>
+    void SetServerlessConfiguration(ServerlessConfigurationT&& value) { m_serverlessConfigurationHasBeenSet = true; m_serverlessConfiguration = std::forward<ServerlessConfigurationT>(value); }
+    template<typename ServerlessConfigurationT = RedshiftServerlessConfiguration>
+    RedshiftQueryEngineConfiguration& WithServerlessConfiguration(ServerlessConfigurationT&& value) { SetServerlessConfiguration(std::forward<ServerlessConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of query engine.</p>
      */
-    inline const RedshiftQueryEngineType& GetType() const{ return m_type; }
+    inline RedshiftQueryEngineType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RedshiftQueryEngineType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RedshiftQueryEngineType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline RedshiftQueryEngineConfiguration& WithType(const RedshiftQueryEngineType& value) { SetType(value); return *this;}
-    inline RedshiftQueryEngineConfiguration& WithType(RedshiftQueryEngineType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RedshiftQueryEngineType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RedshiftQueryEngineConfiguration& WithType(RedshiftQueryEngineType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -87,7 +85,7 @@ namespace Model
     RedshiftServerlessConfiguration m_serverlessConfiguration;
     bool m_serverlessConfigurationHasBeenSet = false;
 
-    RedshiftQueryEngineType m_type;
+    RedshiftQueryEngineType m_type{RedshiftQueryEngineType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

@@ -14,13 +14,6 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-ChangeCidrCollectionRequest::ChangeCidrCollectionRequest() : 
-    m_idHasBeenSet(false),
-    m_collectionVersion(0),
-    m_collectionVersionHasBeenSet(false),
-    m_changesHasBeenSet(false)
-{
-}
 
 Aws::String ChangeCidrCollectionRequest::SerializePayload() const
 {

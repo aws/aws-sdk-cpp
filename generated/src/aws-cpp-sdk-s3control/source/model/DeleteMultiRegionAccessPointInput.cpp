@@ -20,13 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-DeleteMultiRegionAccessPointInput::DeleteMultiRegionAccessPointInput() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 DeleteMultiRegionAccessPointInput::DeleteMultiRegionAccessPointInput(const XmlNode& xmlNode)
-  : DeleteMultiRegionAccessPointInput()
 {
   *this = xmlNode;
 }

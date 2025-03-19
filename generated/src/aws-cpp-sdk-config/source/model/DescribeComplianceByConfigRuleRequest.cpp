@@ -12,13 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeComplianceByConfigRuleRequest::DescribeComplianceByConfigRuleRequest() : 
-    m_configRuleNamesHasBeenSet(false),
-    m_complianceTypesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeComplianceByConfigRuleRequest::SerializePayload() const
 {
   JsonValue payload;

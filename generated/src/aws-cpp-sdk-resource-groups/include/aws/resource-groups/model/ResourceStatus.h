@@ -34,7 +34,7 @@ namespace Model
   class ResourceStatus
   {
   public:
-    AWS_RESOURCEGROUPS_API ResourceStatus();
+    AWS_RESOURCEGROUPS_API ResourceStatus() = default;
     AWS_RESOURCEGROUPS_API ResourceStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPS_API ResourceStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,16 +44,14 @@ namespace Model
     /**
      * <p>The current status.</p>
      */
-    inline const ResourceStatusValue& GetName() const{ return m_name; }
+    inline ResourceStatusValue GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const ResourceStatusValue& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(ResourceStatusValue&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline ResourceStatus& WithName(const ResourceStatusValue& value) { SetName(value); return *this;}
-    inline ResourceStatus& WithName(ResourceStatusValue&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(ResourceStatusValue value) { m_nameHasBeenSet = true; m_name = value; }
+    inline ResourceStatus& WithName(ResourceStatusValue value) { SetName(value); return *this;}
     ///@}
   private:
 
-    ResourceStatusValue m_name;
+    ResourceStatusValue m_name{ResourceStatusValue::NOT_SET};
     bool m_nameHasBeenSet = false;
   };
 

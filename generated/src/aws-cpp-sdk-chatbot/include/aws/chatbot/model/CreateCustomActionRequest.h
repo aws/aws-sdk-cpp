@@ -26,7 +26,7 @@ namespace Model
   class CreateCustomActionRequest : public ChatbotRequest
   {
   public:
-    AWS_CHATBOT_API CreateCustomActionRequest();
+    AWS_CHATBOT_API CreateCustomActionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,12 +42,12 @@ namespace Model
      * <p>The definition of the command to run when invoked as an alias or as an action
      * button.</p>
      */
-    inline const CustomActionDefinition& GetDefinition() const{ return m_definition; }
+    inline const CustomActionDefinition& GetDefinition() const { return m_definition; }
     inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
-    inline void SetDefinition(const CustomActionDefinition& value) { m_definitionHasBeenSet = true; m_definition = value; }
-    inline void SetDefinition(CustomActionDefinition&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
-    inline CreateCustomActionRequest& WithDefinition(const CustomActionDefinition& value) { SetDefinition(value); return *this;}
-    inline CreateCustomActionRequest& WithDefinition(CustomActionDefinition&& value) { SetDefinition(std::move(value)); return *this;}
+    template<typename DefinitionT = CustomActionDefinition>
+    void SetDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition = std::forward<DefinitionT>(value); }
+    template<typename DefinitionT = CustomActionDefinition>
+    CreateCustomActionRequest& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +55,12 @@ namespace Model
      * <p>The name used to invoke this action in a chat channel. For example,
      * <code>@aws run my-alias</code>.</p>
      */
-    inline const Aws::String& GetAliasName() const{ return m_aliasName; }
+    inline const Aws::String& GetAliasName() const { return m_aliasName; }
     inline bool AliasNameHasBeenSet() const { return m_aliasNameHasBeenSet; }
-    inline void SetAliasName(const Aws::String& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
-    inline void SetAliasName(Aws::String&& value) { m_aliasNameHasBeenSet = true; m_aliasName = std::move(value); }
-    inline void SetAliasName(const char* value) { m_aliasNameHasBeenSet = true; m_aliasName.assign(value); }
-    inline CreateCustomActionRequest& WithAliasName(const Aws::String& value) { SetAliasName(value); return *this;}
-    inline CreateCustomActionRequest& WithAliasName(Aws::String&& value) { SetAliasName(std::move(value)); return *this;}
-    inline CreateCustomActionRequest& WithAliasName(const char* value) { SetAliasName(value); return *this;}
+    template<typename AliasNameT = Aws::String>
+    void SetAliasName(AliasNameT&& value) { m_aliasNameHasBeenSet = true; m_aliasName = std::forward<AliasNameT>(value); }
+    template<typename AliasNameT = Aws::String>
+    CreateCustomActionRequest& WithAliasName(AliasNameT&& value) { SetAliasName(std::forward<AliasNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,14 @@ namespace Model
      * <p>Defines when this custom action button should be attached to a
      * notification.</p>
      */
-    inline const Aws::Vector<CustomActionAttachment>& GetAttachments() const{ return m_attachments; }
+    inline const Aws::Vector<CustomActionAttachment>& GetAttachments() const { return m_attachments; }
     inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
-    inline void SetAttachments(const Aws::Vector<CustomActionAttachment>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
-    inline void SetAttachments(Aws::Vector<CustomActionAttachment>&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
-    inline CreateCustomActionRequest& WithAttachments(const Aws::Vector<CustomActionAttachment>& value) { SetAttachments(value); return *this;}
-    inline CreateCustomActionRequest& WithAttachments(Aws::Vector<CustomActionAttachment>&& value) { SetAttachments(std::move(value)); return *this;}
-    inline CreateCustomActionRequest& AddAttachments(const CustomActionAttachment& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(value); return *this; }
-    inline CreateCustomActionRequest& AddAttachments(CustomActionAttachment&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
+    template<typename AttachmentsT = Aws::Vector<CustomActionAttachment>>
+    void SetAttachments(AttachmentsT&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::forward<AttachmentsT>(value); }
+    template<typename AttachmentsT = Aws::Vector<CustomActionAttachment>>
+    CreateCustomActionRequest& WithAttachments(AttachmentsT&& value) { SetAttachments(std::forward<AttachmentsT>(value)); return *this;}
+    template<typename AttachmentsT = CustomActionAttachment>
+    CreateCustomActionRequest& AddAttachments(AttachmentsT&& value) { m_attachmentsHasBeenSet = true; m_attachments.emplace_back(std::forward<AttachmentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -85,14 +83,14 @@ namespace Model
      * <p>A map of tags assigned to a resource. A tag is a string-to-string map of
      * key-value pairs.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateCustomActionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateCustomActionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateCustomActionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateCustomActionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateCustomActionRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateCustomActionRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -104,14 +102,12 @@ namespace Model
      * from the original successful request.</p> <p>If you do not specify a client
      * token, one is automatically generated by the SDK.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateCustomActionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateCustomActionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateCustomActionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateCustomActionRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -119,14 +115,12 @@ namespace Model
      * <p>The name of the custom action. This name is included in the Amazon Resource
      * Name (ARN).</p>
      */
-    inline const Aws::String& GetActionName() const{ return m_actionName; }
+    inline const Aws::String& GetActionName() const { return m_actionName; }
     inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
-    inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
-    inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
-    inline void SetActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.assign(value); }
-    inline CreateCustomActionRequest& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
-    inline CreateCustomActionRequest& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
-    inline CreateCustomActionRequest& WithActionName(const char* value) { SetActionName(value); return *this;}
+    template<typename ActionNameT = Aws::String>
+    void SetActionName(ActionNameT&& value) { m_actionNameHasBeenSet = true; m_actionName = std::forward<ActionNameT>(value); }
+    template<typename ActionNameT = Aws::String>
+    CreateCustomActionRequest& WithActionName(ActionNameT&& value) { SetActionName(std::forward<ActionNameT>(value)); return *this;}
     ///@}
   private:
 

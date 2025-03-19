@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SuggestResult::SuggestResult()
-{
-}
-
 SuggestResult::SuggestResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ SuggestResult& SuggestResult::operator =(const Aws::AmazonWebServiceResult<JsonV
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("suggest"))
   {
     m_suggest = jsonValue.GetObject("suggest");
-
+    m_suggestHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

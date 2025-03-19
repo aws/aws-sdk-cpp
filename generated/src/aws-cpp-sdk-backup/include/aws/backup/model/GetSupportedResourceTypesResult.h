@@ -28,7 +28,7 @@ namespace Model
   class GetSupportedResourceTypesResult
   {
   public:
-    AWS_BACKUP_API GetSupportedResourceTypesResult();
+    AWS_BACKUP_API GetSupportedResourceTypesResult() = default;
     AWS_BACKUP_API GetSupportedResourceTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUP_API GetSupportedResourceTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -53,31 +53,30 @@ namespace Model
      * <code>Timestream</code> for Amazon Timestream</p> </li> <li> <p>
      * <code>VirtualMachine</code> for VMware virtual machines</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceTypes() const{ return m_resourceTypes; }
-    inline void SetResourceTypes(const Aws::Vector<Aws::String>& value) { m_resourceTypes = value; }
-    inline void SetResourceTypes(Aws::Vector<Aws::String>&& value) { m_resourceTypes = std::move(value); }
-    inline GetSupportedResourceTypesResult& WithResourceTypes(const Aws::Vector<Aws::String>& value) { SetResourceTypes(value); return *this;}
-    inline GetSupportedResourceTypesResult& WithResourceTypes(Aws::Vector<Aws::String>&& value) { SetResourceTypes(std::move(value)); return *this;}
-    inline GetSupportedResourceTypesResult& AddResourceTypes(const Aws::String& value) { m_resourceTypes.push_back(value); return *this; }
-    inline GetSupportedResourceTypesResult& AddResourceTypes(Aws::String&& value) { m_resourceTypes.push_back(std::move(value)); return *this; }
-    inline GetSupportedResourceTypesResult& AddResourceTypes(const char* value) { m_resourceTypes.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetResourceTypes() const { return m_resourceTypes; }
+    template<typename ResourceTypesT = Aws::Vector<Aws::String>>
+    void SetResourceTypes(ResourceTypesT&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::forward<ResourceTypesT>(value); }
+    template<typename ResourceTypesT = Aws::Vector<Aws::String>>
+    GetSupportedResourceTypesResult& WithResourceTypes(ResourceTypesT&& value) { SetResourceTypes(std::forward<ResourceTypesT>(value)); return *this;}
+    template<typename ResourceTypesT = Aws::String>
+    GetSupportedResourceTypesResult& AddResourceTypes(ResourceTypesT&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.emplace_back(std::forward<ResourceTypesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSupportedResourceTypesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSupportedResourceTypesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSupportedResourceTypesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSupportedResourceTypesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_resourceTypes;
+    bool m_resourceTypesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

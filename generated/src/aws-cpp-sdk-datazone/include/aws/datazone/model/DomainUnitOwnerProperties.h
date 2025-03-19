@@ -32,7 +32,7 @@ namespace Model
   class DomainUnitOwnerProperties
   {
   public:
-    AWS_DATAZONE_API DomainUnitOwnerProperties();
+    AWS_DATAZONE_API DomainUnitOwnerProperties() = default;
     AWS_DATAZONE_API DomainUnitOwnerProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API DomainUnitOwnerProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>Indicates that the domain unit owner is a group.</p>
      */
-    inline const DomainUnitGroupProperties& GetGroup() const{ return m_group; }
+    inline const DomainUnitGroupProperties& GetGroup() const { return m_group; }
     inline bool GroupHasBeenSet() const { return m_groupHasBeenSet; }
-    inline void SetGroup(const DomainUnitGroupProperties& value) { m_groupHasBeenSet = true; m_group = value; }
-    inline void SetGroup(DomainUnitGroupProperties&& value) { m_groupHasBeenSet = true; m_group = std::move(value); }
-    inline DomainUnitOwnerProperties& WithGroup(const DomainUnitGroupProperties& value) { SetGroup(value); return *this;}
-    inline DomainUnitOwnerProperties& WithGroup(DomainUnitGroupProperties&& value) { SetGroup(std::move(value)); return *this;}
+    template<typename GroupT = DomainUnitGroupProperties>
+    void SetGroup(GroupT&& value) { m_groupHasBeenSet = true; m_group = std::forward<GroupT>(value); }
+    template<typename GroupT = DomainUnitGroupProperties>
+    DomainUnitOwnerProperties& WithGroup(GroupT&& value) { SetGroup(std::forward<GroupT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates that the domain unit owner is a user.</p>
      */
-    inline const DomainUnitUserProperties& GetUser() const{ return m_user; }
+    inline const DomainUnitUserProperties& GetUser() const { return m_user; }
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
-    inline void SetUser(const DomainUnitUserProperties& value) { m_userHasBeenSet = true; m_user = value; }
-    inline void SetUser(DomainUnitUserProperties&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
-    inline DomainUnitOwnerProperties& WithUser(const DomainUnitUserProperties& value) { SetUser(value); return *this;}
-    inline DomainUnitOwnerProperties& WithUser(DomainUnitUserProperties&& value) { SetUser(std::move(value)); return *this;}
+    template<typename UserT = DomainUnitUserProperties>
+    void SetUser(UserT&& value) { m_userHasBeenSet = true; m_user = std::forward<UserT>(value); }
+    template<typename UserT = DomainUnitUserProperties>
+    DomainUnitOwnerProperties& WithUser(UserT&& value) { SetUser(std::forward<UserT>(value)); return *this;}
     ///@}
   private:
 

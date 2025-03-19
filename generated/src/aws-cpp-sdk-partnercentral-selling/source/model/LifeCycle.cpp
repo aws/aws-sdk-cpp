@@ -18,23 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-LifeCycle::LifeCycle() : 
-    m_closedLostReason(ClosedLostReason::NOT_SET),
-    m_closedLostReasonHasBeenSet(false),
-    m_nextStepsHasBeenSet(false),
-    m_nextStepsHistoryHasBeenSet(false),
-    m_reviewCommentsHasBeenSet(false),
-    m_reviewStatus(ReviewStatus::NOT_SET),
-    m_reviewStatusHasBeenSet(false),
-    m_reviewStatusReasonHasBeenSet(false),
-    m_stage(Stage::NOT_SET),
-    m_stageHasBeenSet(false),
-    m_targetCloseDateHasBeenSet(false)
-{
-}
-
 LifeCycle::LifeCycle(JsonView jsonValue)
-  : LifeCycle()
 {
   *this = jsonValue;
 }
@@ -44,17 +28,13 @@ LifeCycle& LifeCycle::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClosedLostReason"))
   {
     m_closedLostReason = ClosedLostReasonMapper::GetClosedLostReasonForName(jsonValue.GetString("ClosedLostReason"));
-
     m_closedLostReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextSteps"))
   {
     m_nextSteps = jsonValue.GetString("NextSteps");
-
     m_nextStepsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextStepsHistory"))
   {
     Aws::Utils::Array<JsonView> nextStepsHistoryJsonList = jsonValue.GetArray("NextStepsHistory");
@@ -64,42 +44,31 @@ LifeCycle& LifeCycle::operator =(JsonView jsonValue)
     }
     m_nextStepsHistoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReviewComments"))
   {
     m_reviewComments = jsonValue.GetString("ReviewComments");
-
     m_reviewCommentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReviewStatus"))
   {
     m_reviewStatus = ReviewStatusMapper::GetReviewStatusForName(jsonValue.GetString("ReviewStatus"));
-
     m_reviewStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReviewStatusReason"))
   {
     m_reviewStatusReason = jsonValue.GetString("ReviewStatusReason");
-
     m_reviewStatusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Stage"))
   {
     m_stage = StageMapper::GetStageForName(jsonValue.GetString("Stage"));
-
     m_stageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetCloseDate"))
   {
     m_targetCloseDate = jsonValue.GetString("TargetCloseDate");
-
     m_targetCloseDateHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateConnectivityRequest::UpdateConnectivityRequest() : 
-    m_clusterArnHasBeenSet(false),
-    m_connectivityInfoHasBeenSet(false),
-    m_currentVersionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateConnectivityRequest::SerializePayload() const
 {
   JsonValue payload;

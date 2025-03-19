@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribePlatformVersionResult::DescribePlatformVersionResult()
-{
-}
-
 DescribePlatformVersionResult::DescribePlatformVersionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ DescribePlatformVersionResult& DescribePlatformVersionResult::operator =(const A
     if(!platformDescriptionNode.IsNull())
     {
       m_platformDescription = platformDescriptionNode;
+      m_platformDescriptionHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticBeanstalk::Model::DescribePlatformVersionResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

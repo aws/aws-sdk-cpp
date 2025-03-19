@@ -18,10 +18,6 @@ namespace Shield
 namespace Model
 {
 
-CountAction::CountAction()
-{
-}
-
 CountAction::CountAction(JsonView jsonValue)
 {
   *this = jsonValue;

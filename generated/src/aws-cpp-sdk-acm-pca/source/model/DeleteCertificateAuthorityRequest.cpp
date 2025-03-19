@@ -12,13 +12,6 @@ using namespace Aws::ACMPCA::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCertificateAuthorityRequest::DeleteCertificateAuthorityRequest() : 
-    m_certificateAuthorityArnHasBeenSet(false),
-    m_permanentDeletionTimeInDays(0),
-    m_permanentDeletionTimeInDaysHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCertificateAuthorityRequest::SerializePayload() const
 {
   JsonValue payload;

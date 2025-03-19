@@ -21,7 +21,7 @@ namespace Model
   class DescribeExplainabilityExportRequest : public ForecastServiceRequest
   {
   public:
-    AWS_FORECASTSERVICE_API DescribeExplainabilityExportRequest();
+    AWS_FORECASTSERVICE_API DescribeExplainabilityExportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Explainability export.</p>
      */
-    inline const Aws::String& GetExplainabilityExportArn() const{ return m_explainabilityExportArn; }
+    inline const Aws::String& GetExplainabilityExportArn() const { return m_explainabilityExportArn; }
     inline bool ExplainabilityExportArnHasBeenSet() const { return m_explainabilityExportArnHasBeenSet; }
-    inline void SetExplainabilityExportArn(const Aws::String& value) { m_explainabilityExportArnHasBeenSet = true; m_explainabilityExportArn = value; }
-    inline void SetExplainabilityExportArn(Aws::String&& value) { m_explainabilityExportArnHasBeenSet = true; m_explainabilityExportArn = std::move(value); }
-    inline void SetExplainabilityExportArn(const char* value) { m_explainabilityExportArnHasBeenSet = true; m_explainabilityExportArn.assign(value); }
-    inline DescribeExplainabilityExportRequest& WithExplainabilityExportArn(const Aws::String& value) { SetExplainabilityExportArn(value); return *this;}
-    inline DescribeExplainabilityExportRequest& WithExplainabilityExportArn(Aws::String&& value) { SetExplainabilityExportArn(std::move(value)); return *this;}
-    inline DescribeExplainabilityExportRequest& WithExplainabilityExportArn(const char* value) { SetExplainabilityExportArn(value); return *this;}
+    template<typename ExplainabilityExportArnT = Aws::String>
+    void SetExplainabilityExportArn(ExplainabilityExportArnT&& value) { m_explainabilityExportArnHasBeenSet = true; m_explainabilityExportArn = std::forward<ExplainabilityExportArnT>(value); }
+    template<typename ExplainabilityExportArnT = Aws::String>
+    DescribeExplainabilityExportRequest& WithExplainabilityExportArn(ExplainabilityExportArnT&& value) { SetExplainabilityExportArn(std::forward<ExplainabilityExportArnT>(value)); return *this;}
     ///@}
   private:
 

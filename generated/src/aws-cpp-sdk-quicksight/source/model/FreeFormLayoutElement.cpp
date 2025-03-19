@@ -18,26 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FreeFormLayoutElement::FreeFormLayoutElement() : 
-    m_elementIdHasBeenSet(false),
-    m_elementType(LayoutElementType::NOT_SET),
-    m_elementTypeHasBeenSet(false),
-    m_xAxisLocationHasBeenSet(false),
-    m_yAxisLocationHasBeenSet(false),
-    m_widthHasBeenSet(false),
-    m_heightHasBeenSet(false),
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_renderingRulesHasBeenSet(false),
-    m_borderStyleHasBeenSet(false),
-    m_selectedBorderStyleHasBeenSet(false),
-    m_backgroundStyleHasBeenSet(false),
-    m_loadingAnimationHasBeenSet(false)
-{
-}
-
 FreeFormLayoutElement::FreeFormLayoutElement(JsonView jsonValue)
-  : FreeFormLayoutElement()
 {
   *this = jsonValue;
 }
@@ -47,52 +28,38 @@ FreeFormLayoutElement& FreeFormLayoutElement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ElementId"))
   {
     m_elementId = jsonValue.GetString("ElementId");
-
     m_elementIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ElementType"))
   {
     m_elementType = LayoutElementTypeMapper::GetLayoutElementTypeForName(jsonValue.GetString("ElementType"));
-
     m_elementTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("XAxisLocation"))
   {
     m_xAxisLocation = jsonValue.GetString("XAxisLocation");
-
     m_xAxisLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("YAxisLocation"))
   {
     m_yAxisLocation = jsonValue.GetString("YAxisLocation");
-
     m_yAxisLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Width"))
   {
     m_width = jsonValue.GetString("Width");
-
     m_widthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Height"))
   {
     m_height = jsonValue.GetString("Height");
-
     m_heightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RenderingRules"))
   {
     Aws::Utils::Array<JsonView> renderingRulesJsonList = jsonValue.GetArray("RenderingRules");
@@ -102,35 +69,26 @@ FreeFormLayoutElement& FreeFormLayoutElement::operator =(JsonView jsonValue)
     }
     m_renderingRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BorderStyle"))
   {
     m_borderStyle = jsonValue.GetObject("BorderStyle");
-
     m_borderStyleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectedBorderStyle"))
   {
     m_selectedBorderStyle = jsonValue.GetObject("SelectedBorderStyle");
-
     m_selectedBorderStyleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackgroundStyle"))
   {
     m_backgroundStyle = jsonValue.GetObject("BackgroundStyle");
-
     m_backgroundStyleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoadingAnimation"))
   {
     m_loadingAnimation = jsonValue.GetObject("LoadingAnimation");
-
     m_loadingAnimationHasBeenSet = true;
   }
-
   return *this;
 }
 

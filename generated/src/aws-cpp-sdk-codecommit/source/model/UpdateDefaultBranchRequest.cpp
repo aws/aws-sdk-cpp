@@ -12,12 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDefaultBranchRequest::UpdateDefaultBranchRequest() : 
-    m_repositoryNameHasBeenSet(false),
-    m_defaultBranchNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDefaultBranchRequest::SerializePayload() const
 {
   JsonValue payload;

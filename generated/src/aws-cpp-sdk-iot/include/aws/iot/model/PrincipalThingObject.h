@@ -33,7 +33,7 @@ namespace Model
   class PrincipalThingObject
   {
   public:
-    AWS_IOT_API PrincipalThingObject();
+    AWS_IOT_API PrincipalThingObject() = default;
     AWS_IOT_API PrincipalThingObject(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API PrincipalThingObject& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the thing.</p>
      */
-    inline const Aws::String& GetThingName() const{ return m_thingName; }
+    inline const Aws::String& GetThingName() const { return m_thingName; }
     inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
-    inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
-    inline void SetThingName(Aws::String&& value) { m_thingNameHasBeenSet = true; m_thingName = std::move(value); }
-    inline void SetThingName(const char* value) { m_thingNameHasBeenSet = true; m_thingName.assign(value); }
-    inline PrincipalThingObject& WithThingName(const Aws::String& value) { SetThingName(value); return *this;}
-    inline PrincipalThingObject& WithThingName(Aws::String&& value) { SetThingName(std::move(value)); return *this;}
-    inline PrincipalThingObject& WithThingName(const char* value) { SetThingName(value); return *this;}
+    template<typename ThingNameT = Aws::String>
+    void SetThingName(ThingNameT&& value) { m_thingNameHasBeenSet = true; m_thingName = std::forward<ThingNameT>(value); }
+    template<typename ThingNameT = Aws::String>
+    PrincipalThingObject& WithThingName(ThingNameT&& value) { SetThingName(std::forward<ThingNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,19 +61,17 @@ namespace Model
      * Attaches the specified principal to the specified thing. Multiple things can be
      * attached to the principal.</p> </li> </ul>
      */
-    inline const ThingPrincipalType& GetThingPrincipalType() const{ return m_thingPrincipalType; }
+    inline ThingPrincipalType GetThingPrincipalType() const { return m_thingPrincipalType; }
     inline bool ThingPrincipalTypeHasBeenSet() const { return m_thingPrincipalTypeHasBeenSet; }
-    inline void SetThingPrincipalType(const ThingPrincipalType& value) { m_thingPrincipalTypeHasBeenSet = true; m_thingPrincipalType = value; }
-    inline void SetThingPrincipalType(ThingPrincipalType&& value) { m_thingPrincipalTypeHasBeenSet = true; m_thingPrincipalType = std::move(value); }
-    inline PrincipalThingObject& WithThingPrincipalType(const ThingPrincipalType& value) { SetThingPrincipalType(value); return *this;}
-    inline PrincipalThingObject& WithThingPrincipalType(ThingPrincipalType&& value) { SetThingPrincipalType(std::move(value)); return *this;}
+    inline void SetThingPrincipalType(ThingPrincipalType value) { m_thingPrincipalTypeHasBeenSet = true; m_thingPrincipalType = value; }
+    inline PrincipalThingObject& WithThingPrincipalType(ThingPrincipalType value) { SetThingPrincipalType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_thingName;
     bool m_thingNameHasBeenSet = false;
 
-    ThingPrincipalType m_thingPrincipalType;
+    ThingPrincipalType m_thingPrincipalType{ThingPrincipalType::NOT_SET};
     bool m_thingPrincipalTypeHasBeenSet = false;
   };
 

@@ -10,26 +10,6 @@
 using namespace Aws::DocDB::Model;
 using namespace Aws::Utils;
 
-RestoreDBClusterToPointInTimeRequest::RestoreDBClusterToPointInTimeRequest() : 
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_restoreTypeHasBeenSet(false),
-    m_sourceDBClusterIdentifierHasBeenSet(false),
-    m_restoreToTimeHasBeenSet(false),
-    m_useLatestRestorableTime(false),
-    m_useLatestRestorableTimeHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_dBSubnetGroupNameHasBeenSet(false),
-    m_vpcSecurityGroupIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_enableCloudwatchLogsExportsHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false),
-    m_storageTypeHasBeenSet(false)
-{
-}
-
 Aws::String RestoreDBClusterToPointInTimeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

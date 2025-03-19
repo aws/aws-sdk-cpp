@@ -31,7 +31,7 @@ namespace Model
   class AccessKey
   {
   public:
-    AWS_GUARDDUTY_API AccessKey();
+    AWS_GUARDDUTY_API AccessKey() = default;
     AWS_GUARDDUTY_API AccessKey(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API AccessKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,42 +41,36 @@ namespace Model
     /**
      * <p>Principal ID of the user.</p>
      */
-    inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
+    inline const Aws::String& GetPrincipalId() const { return m_principalId; }
     inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
-    inline void SetPrincipalId(const Aws::String& value) { m_principalIdHasBeenSet = true; m_principalId = value; }
-    inline void SetPrincipalId(Aws::String&& value) { m_principalIdHasBeenSet = true; m_principalId = std::move(value); }
-    inline void SetPrincipalId(const char* value) { m_principalIdHasBeenSet = true; m_principalId.assign(value); }
-    inline AccessKey& WithPrincipalId(const Aws::String& value) { SetPrincipalId(value); return *this;}
-    inline AccessKey& WithPrincipalId(Aws::String&& value) { SetPrincipalId(std::move(value)); return *this;}
-    inline AccessKey& WithPrincipalId(const char* value) { SetPrincipalId(value); return *this;}
+    template<typename PrincipalIdT = Aws::String>
+    void SetPrincipalId(PrincipalIdT&& value) { m_principalIdHasBeenSet = true; m_principalId = std::forward<PrincipalIdT>(value); }
+    template<typename PrincipalIdT = Aws::String>
+    AccessKey& WithPrincipalId(PrincipalIdT&& value) { SetPrincipalId(std::forward<PrincipalIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Name of the user.</p>
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
+    inline const Aws::String& GetUserName() const { return m_userName; }
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-    inline AccessKey& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline AccessKey& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline AccessKey& WithUserName(const char* value) { SetUserName(value); return *this;}
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    AccessKey& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Type of the user.</p>
      */
-    inline const Aws::String& GetUserType() const{ return m_userType; }
+    inline const Aws::String& GetUserType() const { return m_userType; }
     inline bool UserTypeHasBeenSet() const { return m_userTypeHasBeenSet; }
-    inline void SetUserType(const Aws::String& value) { m_userTypeHasBeenSet = true; m_userType = value; }
-    inline void SetUserType(Aws::String&& value) { m_userTypeHasBeenSet = true; m_userType = std::move(value); }
-    inline void SetUserType(const char* value) { m_userTypeHasBeenSet = true; m_userType.assign(value); }
-    inline AccessKey& WithUserType(const Aws::String& value) { SetUserType(value); return *this;}
-    inline AccessKey& WithUserType(Aws::String&& value) { SetUserType(std::move(value)); return *this;}
-    inline AccessKey& WithUserType(const char* value) { SetUserType(value); return *this;}
+    template<typename UserTypeT = Aws::String>
+    void SetUserType(UserTypeT&& value) { m_userTypeHasBeenSet = true; m_userType = std::forward<UserTypeT>(value); }
+    template<typename UserTypeT = Aws::String>
+    AccessKey& WithUserType(UserTypeT&& value) { SetUserType(std::forward<UserTypeT>(value)); return *this;}
     ///@}
   private:
 

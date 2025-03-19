@@ -18,26 +18,7 @@ namespace Amplify
 namespace Model
 {
 
-DomainAssociation::DomainAssociation() : 
-    m_domainAssociationArnHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_enableAutoSubDomain(false),
-    m_enableAutoSubDomainHasBeenSet(false),
-    m_autoSubDomainCreationPatternsHasBeenSet(false),
-    m_autoSubDomainIAMRoleHasBeenSet(false),
-    m_domainStatus(DomainStatus::NOT_SET),
-    m_domainStatusHasBeenSet(false),
-    m_updateStatus(UpdateStatus::NOT_SET),
-    m_updateStatusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_certificateVerificationDNSRecordHasBeenSet(false),
-    m_subDomainsHasBeenSet(false),
-    m_certificateHasBeenSet(false)
-{
-}
-
 DomainAssociation::DomainAssociation(JsonView jsonValue)
-  : DomainAssociation()
 {
   *this = jsonValue;
 }
@@ -47,24 +28,18 @@ DomainAssociation& DomainAssociation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("domainAssociationArn"))
   {
     m_domainAssociationArn = jsonValue.GetString("domainAssociationArn");
-
     m_domainAssociationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainName"))
   {
     m_domainName = jsonValue.GetString("domainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enableAutoSubDomain"))
   {
     m_enableAutoSubDomain = jsonValue.GetBool("enableAutoSubDomain");
-
     m_enableAutoSubDomainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoSubDomainCreationPatterns"))
   {
     Aws::Utils::Array<JsonView> autoSubDomainCreationPatternsJsonList = jsonValue.GetArray("autoSubDomainCreationPatterns");
@@ -74,42 +49,31 @@ DomainAssociation& DomainAssociation::operator =(JsonView jsonValue)
     }
     m_autoSubDomainCreationPatternsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoSubDomainIAMRole"))
   {
     m_autoSubDomainIAMRole = jsonValue.GetString("autoSubDomainIAMRole");
-
     m_autoSubDomainIAMRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainStatus"))
   {
     m_domainStatus = DomainStatusMapper::GetDomainStatusForName(jsonValue.GetString("domainStatus"));
-
     m_domainStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateStatus"))
   {
     m_updateStatus = UpdateStatusMapper::GetUpdateStatusForName(jsonValue.GetString("updateStatus"));
-
     m_updateStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certificateVerificationDNSRecord"))
   {
     m_certificateVerificationDNSRecord = jsonValue.GetString("certificateVerificationDNSRecord");
-
     m_certificateVerificationDNSRecordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subDomains"))
   {
     Aws::Utils::Array<JsonView> subDomainsJsonList = jsonValue.GetArray("subDomains");
@@ -119,14 +83,11 @@ DomainAssociation& DomainAssociation::operator =(JsonView jsonValue)
     }
     m_subDomainsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certificate"))
   {
     m_certificate = jsonValue.GetObject("certificate");
-
     m_certificateHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class CampaignState
   {
   public:
-    AWS_PINPOINT_API CampaignState();
+    AWS_PINPOINT_API CampaignState() = default;
     AWS_PINPOINT_API CampaignState(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API CampaignState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,16 +46,14 @@ namespace Model
      * of COMPLETED. If you delete the segment that's associated with a campaign, the
      * campaign fails and has a status of DELETED.</p>
      */
-    inline const CampaignStatus& GetCampaignStatus() const{ return m_campaignStatus; }
+    inline CampaignStatus GetCampaignStatus() const { return m_campaignStatus; }
     inline bool CampaignStatusHasBeenSet() const { return m_campaignStatusHasBeenSet; }
-    inline void SetCampaignStatus(const CampaignStatus& value) { m_campaignStatusHasBeenSet = true; m_campaignStatus = value; }
-    inline void SetCampaignStatus(CampaignStatus&& value) { m_campaignStatusHasBeenSet = true; m_campaignStatus = std::move(value); }
-    inline CampaignState& WithCampaignStatus(const CampaignStatus& value) { SetCampaignStatus(value); return *this;}
-    inline CampaignState& WithCampaignStatus(CampaignStatus&& value) { SetCampaignStatus(std::move(value)); return *this;}
+    inline void SetCampaignStatus(CampaignStatus value) { m_campaignStatusHasBeenSet = true; m_campaignStatus = value; }
+    inline CampaignState& WithCampaignStatus(CampaignStatus value) { SetCampaignStatus(value); return *this;}
     ///@}
   private:
 
-    CampaignStatus m_campaignStatus;
+    CampaignStatus m_campaignStatus{CampaignStatus::NOT_SET};
     bool m_campaignStatusHasBeenSet = false;
   };
 

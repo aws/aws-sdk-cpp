@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEventSubscriptionsResult::DescribeEventSubscriptionsResult()
-{
-}
-
 DescribeEventSubscriptionsResult::DescribeEventSubscriptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeEventSubscriptionsResult& DescribeEventSubscriptionsResult::operator =(c
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
-
+    m_markerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventSubscriptionsList"))
   {
     Aws::Utils::Array<JsonView> eventSubscriptionsListJsonList = jsonValue.GetArray("EventSubscriptionsList");
@@ -42,14 +37,15 @@ DescribeEventSubscriptionsResult& DescribeEventSubscriptionsResult::operator =(c
     {
       m_eventSubscriptionsList.push_back(eventSubscriptionsListJsonList[eventSubscriptionsListIndex].AsObject());
     }
+    m_eventSubscriptionsListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

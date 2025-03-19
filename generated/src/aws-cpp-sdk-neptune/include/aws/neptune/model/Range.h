@@ -29,7 +29,7 @@ namespace Model
   class Range
   {
   public:
-    AWS_NEPTUNE_API Range();
+    AWS_NEPTUNE_API Range() = default;
     AWS_NEPTUNE_API Range(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_NEPTUNE_API Range& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The minimum value in the range.</p>
      */
-    inline int GetFrom() const{ return m_from; }
+    inline int GetFrom() const { return m_from; }
     inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
     inline void SetFrom(int value) { m_fromHasBeenSet = true; m_from = value; }
     inline Range& WithFrom(int value) { SetFrom(value); return *this;}
@@ -51,7 +51,7 @@ namespace Model
     /**
      * <p>The maximum value in the range.</p>
      */
-    inline int GetTo() const{ return m_to; }
+    inline int GetTo() const { return m_to; }
     inline bool ToHasBeenSet() const { return m_toHasBeenSet; }
     inline void SetTo(int value) { m_toHasBeenSet = true; m_to = value; }
     inline Range& WithTo(int value) { SetTo(value); return *this;}
@@ -64,20 +64,20 @@ namespace Model
      * by 1,000. Even though 7,500 is within the range, it isn't a valid value for the
      * range. The valid values are 5,000, 6,000, 7,000, 8,000...</p>
      */
-    inline int GetStep() const{ return m_step; }
+    inline int GetStep() const { return m_step; }
     inline bool StepHasBeenSet() const { return m_stepHasBeenSet; }
     inline void SetStep(int value) { m_stepHasBeenSet = true; m_step = value; }
     inline Range& WithStep(int value) { SetStep(value); return *this;}
     ///@}
   private:
 
-    int m_from;
+    int m_from{0};
     bool m_fromHasBeenSet = false;
 
-    int m_to;
+    int m_to{0};
     bool m_toHasBeenSet = false;
 
-    int m_step;
+    int m_step{0};
     bool m_stepHasBeenSet = false;
   };
 

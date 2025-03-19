@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-Country::Country() : 
-    m_countryCodeHasBeenSet(false),
-    m_countryNameHasBeenSet(false)
-{
-}
-
 Country::Country(JsonView jsonValue)
-  : Country()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Country& Country::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("countryCode"))
   {
     m_countryCode = jsonValue.GetString("countryCode");
-
     m_countryCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("countryName"))
   {
     m_countryName = jsonValue.GetString("countryName");
-
     m_countryNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -30,7 +30,7 @@ namespace Model
   class Segment
   {
   public:
-    AWS_GLUE_API Segment();
+    AWS_GLUE_API Segment() = default;
     AWS_GLUE_API Segment(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Segment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
      * <p>The zero-based index number of the segment. For example, if the total number
      * of segments is 4, <code>SegmentNumber</code> values range from 0 through 3.</p>
      */
-    inline int GetSegmentNumber() const{ return m_segmentNumber; }
+    inline int GetSegmentNumber() const { return m_segmentNumber; }
     inline bool SegmentNumberHasBeenSet() const { return m_segmentNumberHasBeenSet; }
     inline void SetSegmentNumber(int value) { m_segmentNumberHasBeenSet = true; m_segmentNumber = value; }
     inline Segment& WithSegmentNumber(int value) { SetSegmentNumber(value); return *this;}
@@ -51,17 +51,17 @@ namespace Model
     /**
      * <p>The total number of segments.</p>
      */
-    inline int GetTotalSegments() const{ return m_totalSegments; }
+    inline int GetTotalSegments() const { return m_totalSegments; }
     inline bool TotalSegmentsHasBeenSet() const { return m_totalSegmentsHasBeenSet; }
     inline void SetTotalSegments(int value) { m_totalSegmentsHasBeenSet = true; m_totalSegments = value; }
     inline Segment& WithTotalSegments(int value) { SetTotalSegments(value); return *this;}
     ///@}
   private:
 
-    int m_segmentNumber;
+    int m_segmentNumber{0};
     bool m_segmentNumberHasBeenSet = false;
 
-    int m_totalSegments;
+    int m_totalSegments{0};
     bool m_totalSegmentsHasBeenSet = false;
   };
 

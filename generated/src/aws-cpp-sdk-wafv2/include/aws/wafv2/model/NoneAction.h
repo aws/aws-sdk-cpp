@@ -34,7 +34,7 @@ namespace Model
   class NoneAction
   {
   public:
-    AWS_WAFV2_API NoneAction();
+    AWS_WAFV2_API NoneAction() = default;
     AWS_WAFV2_API NoneAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API NoneAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;

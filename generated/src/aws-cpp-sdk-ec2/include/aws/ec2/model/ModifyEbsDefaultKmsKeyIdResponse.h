@@ -28,7 +28,7 @@ namespace Model
   class ModifyEbsDefaultKmsKeyIdResponse
   {
   public:
-    AWS_EC2_API ModifyEbsDefaultKmsKeyIdResponse();
+    AWS_EC2_API ModifyEbsDefaultKmsKeyIdResponse() = default;
     AWS_EC2_API ModifyEbsDefaultKmsKeyIdResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API ModifyEbsDefaultKmsKeyIdResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the default KMS key for encryption by
      * default.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
-    inline ModifyEbsDefaultKmsKeyIdResponse& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline ModifyEbsDefaultKmsKeyIdResponse& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline ModifyEbsDefaultKmsKeyIdResponse& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    ModifyEbsDefaultKmsKeyIdResponse& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ModifyEbsDefaultKmsKeyIdResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ModifyEbsDefaultKmsKeyIdResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ModifyEbsDefaultKmsKeyIdResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

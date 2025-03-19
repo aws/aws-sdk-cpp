@@ -18,14 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-DatabaseCDC::DatabaseCDC() : 
-    m_sourceMetadataHasBeenSet(false),
-    m_targetMetadataHasBeenSet(false)
-{
-}
-
 DatabaseCDC::DatabaseCDC(JsonView jsonValue)
-  : DatabaseCDC()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DatabaseCDC& DatabaseCDC::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sourceMetadata"))
   {
     m_sourceMetadata = jsonValue.GetObject("sourceMetadata");
-
     m_sourceMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetMetadata"))
   {
     m_targetMetadata = jsonValue.GetObject("targetMetadata");
-
     m_targetMetadataHasBeenSet = true;
   }
-
   return *this;
 }
 

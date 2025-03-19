@@ -18,14 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-LoRaWANUpdateGatewayTaskEntry::LoRaWANUpdateGatewayTaskEntry() : 
-    m_currentVersionHasBeenSet(false),
-    m_updateVersionHasBeenSet(false)
-{
-}
-
 LoRaWANUpdateGatewayTaskEntry::LoRaWANUpdateGatewayTaskEntry(JsonView jsonValue)
-  : LoRaWANUpdateGatewayTaskEntry()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LoRaWANUpdateGatewayTaskEntry& LoRaWANUpdateGatewayTaskEntry::operator =(JsonVie
   if(jsonValue.ValueExists("CurrentVersion"))
   {
     m_currentVersion = jsonValue.GetObject("CurrentVersion");
-
     m_currentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateVersion"))
   {
     m_updateVersion = jsonValue.GetObject("UpdateVersion");
-
     m_updateVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

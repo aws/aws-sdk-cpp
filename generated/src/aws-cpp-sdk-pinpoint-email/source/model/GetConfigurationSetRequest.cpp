@@ -12,11 +12,6 @@ using namespace Aws::PinpointEmail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetConfigurationSetRequest::GetConfigurationSetRequest() : 
-    m_configurationSetNameHasBeenSet(false)
-{
-}
-
 Aws::String GetConfigurationSetRequest::SerializePayload() const
 {
   return {};

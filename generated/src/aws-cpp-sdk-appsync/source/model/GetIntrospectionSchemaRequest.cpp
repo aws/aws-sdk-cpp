@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetIntrospectionSchemaRequest::GetIntrospectionSchemaRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_format(OutputType::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_includeDirectives(false),
-    m_includeDirectivesHasBeenSet(false)
-{
-}
-
 Aws::String GetIntrospectionSchemaRequest::SerializePayload() const
 {
   return {};

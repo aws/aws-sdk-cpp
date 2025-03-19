@@ -12,18 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchJobsRequest::SearchJobsRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_queueIdsHasBeenSet(false),
-    m_filterExpressionsHasBeenSet(false),
-    m_sortExpressionsHasBeenSet(false),
-    m_itemOffset(0),
-    m_itemOffsetHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false)
-{
-}
-
 Aws::String SearchJobsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -10,30 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-PutScalingPolicyRequest::PutScalingPolicyRequest() : 
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_policyNameHasBeenSet(false),
-    m_policyTypeHasBeenSet(false),
-    m_adjustmentTypeHasBeenSet(false),
-    m_minAdjustmentStep(0),
-    m_minAdjustmentStepHasBeenSet(false),
-    m_minAdjustmentMagnitude(0),
-    m_minAdjustmentMagnitudeHasBeenSet(false),
-    m_scalingAdjustment(0),
-    m_scalingAdjustmentHasBeenSet(false),
-    m_cooldown(0),
-    m_cooldownHasBeenSet(false),
-    m_metricAggregationTypeHasBeenSet(false),
-    m_stepAdjustmentsHasBeenSet(false),
-    m_estimatedInstanceWarmup(0),
-    m_estimatedInstanceWarmupHasBeenSet(false),
-    m_targetTrackingConfigurationHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_predictiveScalingConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String PutScalingPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

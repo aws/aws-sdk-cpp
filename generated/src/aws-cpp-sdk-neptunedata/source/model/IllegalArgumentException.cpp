@@ -18,15 +18,7 @@ namespace neptunedata
 namespace Model
 {
 
-IllegalArgumentException::IllegalArgumentException() : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
-{
-}
-
 IllegalArgumentException::IllegalArgumentException(JsonView jsonValue)
-  : IllegalArgumentException()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ IllegalArgumentException& IllegalArgumentException::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("detailedMessage"))
   {
     m_detailedMessage = jsonValue.GetString("detailedMessage");
-
     m_detailedMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   return *this;
 }
 

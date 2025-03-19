@@ -12,11 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteServiceNetworkServiceAssociationRequest::DeleteServiceNetworkServiceAssociationRequest() : 
-    m_serviceNetworkServiceAssociationIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteServiceNetworkServiceAssociationRequest::SerializePayload() const
 {
   return {};

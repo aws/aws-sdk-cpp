@@ -33,7 +33,7 @@ namespace Model
   class RuleBooleanToEvaluate
   {
   public:
-    AWS_MAILMANAGER_API RuleBooleanToEvaluate();
+    AWS_MAILMANAGER_API RuleBooleanToEvaluate() = default;
     AWS_MAILMANAGER_API RuleBooleanToEvaluate(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API RuleBooleanToEvaluate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>The boolean type representing the allowed attribute types for an email.</p>
      */
-    inline const RuleBooleanEmailAttribute& GetAttribute() const{ return m_attribute; }
+    inline RuleBooleanEmailAttribute GetAttribute() const { return m_attribute; }
     inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
-    inline void SetAttribute(const RuleBooleanEmailAttribute& value) { m_attributeHasBeenSet = true; m_attribute = value; }
-    inline void SetAttribute(RuleBooleanEmailAttribute&& value) { m_attributeHasBeenSet = true; m_attribute = std::move(value); }
-    inline RuleBooleanToEvaluate& WithAttribute(const RuleBooleanEmailAttribute& value) { SetAttribute(value); return *this;}
-    inline RuleBooleanToEvaluate& WithAttribute(RuleBooleanEmailAttribute&& value) { SetAttribute(std::move(value)); return *this;}
+    inline void SetAttribute(RuleBooleanEmailAttribute value) { m_attributeHasBeenSet = true; m_attribute = value; }
+    inline RuleBooleanToEvaluate& WithAttribute(RuleBooleanEmailAttribute value) { SetAttribute(value); return *this;}
     ///@}
 
     ///@{
@@ -56,16 +54,16 @@ namespace Model
      * <p>The structure representing the address lists and address list attribute that
      * will be used in evaluation of boolean expression.</p>
      */
-    inline const RuleIsInAddressList& GetIsInAddressList() const{ return m_isInAddressList; }
+    inline const RuleIsInAddressList& GetIsInAddressList() const { return m_isInAddressList; }
     inline bool IsInAddressListHasBeenSet() const { return m_isInAddressListHasBeenSet; }
-    inline void SetIsInAddressList(const RuleIsInAddressList& value) { m_isInAddressListHasBeenSet = true; m_isInAddressList = value; }
-    inline void SetIsInAddressList(RuleIsInAddressList&& value) { m_isInAddressListHasBeenSet = true; m_isInAddressList = std::move(value); }
-    inline RuleBooleanToEvaluate& WithIsInAddressList(const RuleIsInAddressList& value) { SetIsInAddressList(value); return *this;}
-    inline RuleBooleanToEvaluate& WithIsInAddressList(RuleIsInAddressList&& value) { SetIsInAddressList(std::move(value)); return *this;}
+    template<typename IsInAddressListT = RuleIsInAddressList>
+    void SetIsInAddressList(IsInAddressListT&& value) { m_isInAddressListHasBeenSet = true; m_isInAddressList = std::forward<IsInAddressListT>(value); }
+    template<typename IsInAddressListT = RuleIsInAddressList>
+    RuleBooleanToEvaluate& WithIsInAddressList(IsInAddressListT&& value) { SetIsInAddressList(std::forward<IsInAddressListT>(value)); return *this;}
     ///@}
   private:
 
-    RuleBooleanEmailAttribute m_attribute;
+    RuleBooleanEmailAttribute m_attribute{RuleBooleanEmailAttribute::NOT_SET};
     bool m_attributeHasBeenSet = false;
 
     RuleIsInAddressList m_isInAddressList;

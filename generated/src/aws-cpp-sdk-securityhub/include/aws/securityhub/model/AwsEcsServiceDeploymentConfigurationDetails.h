@@ -31,7 +31,7 @@ namespace Model
   class AwsEcsServiceDeploymentConfigurationDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEcsServiceDeploymentConfigurationDetails();
+    AWS_SECURITYHUB_API AwsEcsServiceDeploymentConfigurationDetails() = default;
     AWS_SECURITYHUB_API AwsEcsServiceDeploymentConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEcsServiceDeploymentConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
      * <p>Determines whether a service deployment fails if a service cannot reach a
      * steady state.</p>
      */
-    inline const AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails& GetDeploymentCircuitBreaker() const{ return m_deploymentCircuitBreaker; }
+    inline const AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails& GetDeploymentCircuitBreaker() const { return m_deploymentCircuitBreaker; }
     inline bool DeploymentCircuitBreakerHasBeenSet() const { return m_deploymentCircuitBreakerHasBeenSet; }
-    inline void SetDeploymentCircuitBreaker(const AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails& value) { m_deploymentCircuitBreakerHasBeenSet = true; m_deploymentCircuitBreaker = value; }
-    inline void SetDeploymentCircuitBreaker(AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails&& value) { m_deploymentCircuitBreakerHasBeenSet = true; m_deploymentCircuitBreaker = std::move(value); }
-    inline AwsEcsServiceDeploymentConfigurationDetails& WithDeploymentCircuitBreaker(const AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails& value) { SetDeploymentCircuitBreaker(value); return *this;}
-    inline AwsEcsServiceDeploymentConfigurationDetails& WithDeploymentCircuitBreaker(AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails&& value) { SetDeploymentCircuitBreaker(std::move(value)); return *this;}
+    template<typename DeploymentCircuitBreakerT = AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails>
+    void SetDeploymentCircuitBreaker(DeploymentCircuitBreakerT&& value) { m_deploymentCircuitBreakerHasBeenSet = true; m_deploymentCircuitBreaker = std::forward<DeploymentCircuitBreakerT>(value); }
+    template<typename DeploymentCircuitBreakerT = AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails>
+    AwsEcsServiceDeploymentConfigurationDetails& WithDeploymentCircuitBreaker(DeploymentCircuitBreakerT&& value) { SetDeploymentCircuitBreaker(std::forward<DeploymentCircuitBreakerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,7 +64,7 @@ namespace Model
      * the <code>DRAINING</code> state.</p> <p>For the Fargate launch type, the maximum
      * percent value is not used.</p>
      */
-    inline int GetMaximumPercent() const{ return m_maximumPercent; }
+    inline int GetMaximumPercent() const { return m_maximumPercent; }
     inline bool MaximumPercentHasBeenSet() const { return m_maximumPercentHasBeenSet; }
     inline void SetMaximumPercent(int value) { m_maximumPercentHasBeenSet = true; m_maximumPercent = value; }
     inline AwsEcsServiceDeploymentConfigurationDetails& WithMaximumPercent(int value) { SetMaximumPercent(value); return *this;}
@@ -84,7 +84,7 @@ namespace Model
      * in the <code>DRAINING</code> state.</p> <p>For the Fargate launch type, the
      * minimum healthy percent value is not used.</p>
      */
-    inline int GetMinimumHealthyPercent() const{ return m_minimumHealthyPercent; }
+    inline int GetMinimumHealthyPercent() const { return m_minimumHealthyPercent; }
     inline bool MinimumHealthyPercentHasBeenSet() const { return m_minimumHealthyPercentHasBeenSet; }
     inline void SetMinimumHealthyPercent(int value) { m_minimumHealthyPercentHasBeenSet = true; m_minimumHealthyPercent = value; }
     inline AwsEcsServiceDeploymentConfigurationDetails& WithMinimumHealthyPercent(int value) { SetMinimumHealthyPercent(value); return *this;}
@@ -94,10 +94,10 @@ namespace Model
     AwsEcsServiceDeploymentConfigurationDeploymentCircuitBreakerDetails m_deploymentCircuitBreaker;
     bool m_deploymentCircuitBreakerHasBeenSet = false;
 
-    int m_maximumPercent;
+    int m_maximumPercent{0};
     bool m_maximumPercentHasBeenSet = false;
 
-    int m_minimumHealthyPercent;
+    int m_minimumHealthyPercent{0};
     bool m_minimumHealthyPercentHasBeenSet = false;
   };
 

@@ -29,7 +29,7 @@ namespace Model
   class ListVoiceConnectorGroupsResult
   {
   public:
-    AWS_CHIMESDKVOICE_API ListVoiceConnectorGroupsResult();
+    AWS_CHIMESDKVOICE_API ListVoiceConnectorGroupsResult() = default;
     AWS_CHIMESDKVOICE_API ListVoiceConnectorGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIMESDKVOICE_API ListVoiceConnectorGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The details of the Voice Connector groups.</p>
      */
-    inline const Aws::Vector<VoiceConnectorGroup>& GetVoiceConnectorGroups() const{ return m_voiceConnectorGroups; }
-    inline void SetVoiceConnectorGroups(const Aws::Vector<VoiceConnectorGroup>& value) { m_voiceConnectorGroups = value; }
-    inline void SetVoiceConnectorGroups(Aws::Vector<VoiceConnectorGroup>&& value) { m_voiceConnectorGroups = std::move(value); }
-    inline ListVoiceConnectorGroupsResult& WithVoiceConnectorGroups(const Aws::Vector<VoiceConnectorGroup>& value) { SetVoiceConnectorGroups(value); return *this;}
-    inline ListVoiceConnectorGroupsResult& WithVoiceConnectorGroups(Aws::Vector<VoiceConnectorGroup>&& value) { SetVoiceConnectorGroups(std::move(value)); return *this;}
-    inline ListVoiceConnectorGroupsResult& AddVoiceConnectorGroups(const VoiceConnectorGroup& value) { m_voiceConnectorGroups.push_back(value); return *this; }
-    inline ListVoiceConnectorGroupsResult& AddVoiceConnectorGroups(VoiceConnectorGroup&& value) { m_voiceConnectorGroups.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<VoiceConnectorGroup>& GetVoiceConnectorGroups() const { return m_voiceConnectorGroups; }
+    template<typename VoiceConnectorGroupsT = Aws::Vector<VoiceConnectorGroup>>
+    void SetVoiceConnectorGroups(VoiceConnectorGroupsT&& value) { m_voiceConnectorGroupsHasBeenSet = true; m_voiceConnectorGroups = std::forward<VoiceConnectorGroupsT>(value); }
+    template<typename VoiceConnectorGroupsT = Aws::Vector<VoiceConnectorGroup>>
+    ListVoiceConnectorGroupsResult& WithVoiceConnectorGroups(VoiceConnectorGroupsT&& value) { SetVoiceConnectorGroups(std::forward<VoiceConnectorGroupsT>(value)); return *this;}
+    template<typename VoiceConnectorGroupsT = VoiceConnectorGroup>
+    ListVoiceConnectorGroupsResult& AddVoiceConnectorGroups(VoiceConnectorGroupsT&& value) { m_voiceConnectorGroupsHasBeenSet = true; m_voiceConnectorGroups.emplace_back(std::forward<VoiceConnectorGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token used to return the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListVoiceConnectorGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListVoiceConnectorGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListVoiceConnectorGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListVoiceConnectorGroupsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListVoiceConnectorGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListVoiceConnectorGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListVoiceConnectorGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListVoiceConnectorGroupsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<VoiceConnectorGroup> m_voiceConnectorGroups;
+    bool m_voiceConnectorGroupsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

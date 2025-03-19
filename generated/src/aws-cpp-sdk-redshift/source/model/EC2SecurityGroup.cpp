@@ -20,16 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-EC2SecurityGroup::EC2SecurityGroup() : 
-    m_statusHasBeenSet(false),
-    m_eC2SecurityGroupNameHasBeenSet(false),
-    m_eC2SecurityGroupOwnerIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 EC2SecurityGroup::EC2SecurityGroup(const XmlNode& xmlNode)
-  : EC2SecurityGroup()
 {
   *this = xmlNode;
 }
@@ -62,6 +53,7 @@ EC2SecurityGroup& EC2SecurityGroup::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

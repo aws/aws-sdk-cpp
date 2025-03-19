@@ -18,20 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-Variant::Variant() : 
-    m_stringValueHasBeenSet(false),
-    m_integerValue(0),
-    m_integerValueHasBeenSet(false),
-    m_doubleValue(0.0),
-    m_doubleValueHasBeenSet(false),
-    m_booleanValue(false),
-    m_booleanValueHasBeenSet(false),
-    m_nullValueHasBeenSet(false)
-{
-}
-
 Variant::Variant(JsonView jsonValue)
-  : Variant()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ Variant& Variant::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("stringValue"))
   {
     m_stringValue = jsonValue.GetString("stringValue");
-
     m_stringValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("integerValue"))
   {
     m_integerValue = jsonValue.GetInteger("integerValue");
-
     m_integerValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("doubleValue"))
   {
     m_doubleValue = jsonValue.GetDouble("doubleValue");
-
     m_doubleValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("booleanValue"))
   {
     m_booleanValue = jsonValue.GetBool("booleanValue");
-
     m_booleanValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nullValue"))
   {
     m_nullValue = jsonValue.GetObject("nullValue");
-
     m_nullValueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -14,10 +14,6 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-DeleteTrafficPolicyInstanceRequest::DeleteTrafficPolicyInstanceRequest() : 
-    m_idHasBeenSet(false)
-{
-}
 
 Aws::String DeleteTrafficPolicyInstanceRequest::SerializePayload() const
 {

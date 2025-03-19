@@ -33,7 +33,7 @@ namespace Model
   class MembershipMLPaymentConfig
   {
   public:
-    AWS_CLEANROOMS_API MembershipMLPaymentConfig();
+    AWS_CLEANROOMS_API MembershipMLPaymentConfig() = default;
     AWS_CLEANROOMS_API MembershipMLPaymentConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API MembershipMLPaymentConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The payment responsibilities accepted by the member for model training.</p>
      */
-    inline const MembershipModelTrainingPaymentConfig& GetModelTraining() const{ return m_modelTraining; }
+    inline const MembershipModelTrainingPaymentConfig& GetModelTraining() const { return m_modelTraining; }
     inline bool ModelTrainingHasBeenSet() const { return m_modelTrainingHasBeenSet; }
-    inline void SetModelTraining(const MembershipModelTrainingPaymentConfig& value) { m_modelTrainingHasBeenSet = true; m_modelTraining = value; }
-    inline void SetModelTraining(MembershipModelTrainingPaymentConfig&& value) { m_modelTrainingHasBeenSet = true; m_modelTraining = std::move(value); }
-    inline MembershipMLPaymentConfig& WithModelTraining(const MembershipModelTrainingPaymentConfig& value) { SetModelTraining(value); return *this;}
-    inline MembershipMLPaymentConfig& WithModelTraining(MembershipModelTrainingPaymentConfig&& value) { SetModelTraining(std::move(value)); return *this;}
+    template<typename ModelTrainingT = MembershipModelTrainingPaymentConfig>
+    void SetModelTraining(ModelTrainingT&& value) { m_modelTrainingHasBeenSet = true; m_modelTraining = std::forward<ModelTrainingT>(value); }
+    template<typename ModelTrainingT = MembershipModelTrainingPaymentConfig>
+    MembershipMLPaymentConfig& WithModelTraining(ModelTrainingT&& value) { SetModelTraining(std::forward<ModelTrainingT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The payment responsibilities accepted by the member for model inference.</p>
      */
-    inline const MembershipModelInferencePaymentConfig& GetModelInference() const{ return m_modelInference; }
+    inline const MembershipModelInferencePaymentConfig& GetModelInference() const { return m_modelInference; }
     inline bool ModelInferenceHasBeenSet() const { return m_modelInferenceHasBeenSet; }
-    inline void SetModelInference(const MembershipModelInferencePaymentConfig& value) { m_modelInferenceHasBeenSet = true; m_modelInference = value; }
-    inline void SetModelInference(MembershipModelInferencePaymentConfig&& value) { m_modelInferenceHasBeenSet = true; m_modelInference = std::move(value); }
-    inline MembershipMLPaymentConfig& WithModelInference(const MembershipModelInferencePaymentConfig& value) { SetModelInference(value); return *this;}
-    inline MembershipMLPaymentConfig& WithModelInference(MembershipModelInferencePaymentConfig&& value) { SetModelInference(std::move(value)); return *this;}
+    template<typename ModelInferenceT = MembershipModelInferencePaymentConfig>
+    void SetModelInference(ModelInferenceT&& value) { m_modelInferenceHasBeenSet = true; m_modelInference = std::forward<ModelInferenceT>(value); }
+    template<typename ModelInferenceT = MembershipModelInferencePaymentConfig>
+    MembershipMLPaymentConfig& WithModelInference(ModelInferenceT&& value) { SetModelInference(std::forward<ModelInferenceT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,21 +18,7 @@ namespace Inspector
 namespace Model
 {
 
-AssessmentRunNotification::AssessmentRunNotification() : 
-    m_dateHasBeenSet(false),
-    m_event(InspectorEvent::NOT_SET),
-    m_eventHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_error(false),
-    m_errorHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false),
-    m_snsPublishStatusCode(AssessmentRunNotificationSnsStatusCode::NOT_SET),
-    m_snsPublishStatusCodeHasBeenSet(false)
-{
-}
-
 AssessmentRunNotification::AssessmentRunNotification(JsonView jsonValue)
-  : AssessmentRunNotification()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ AssessmentRunNotification& AssessmentRunNotification::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("date"))
   {
     m_date = jsonValue.GetDouble("date");
-
     m_dateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("event"))
   {
     m_event = InspectorEventMapper::GetInspectorEventForName(jsonValue.GetString("event"));
-
     m_eventHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetBool("error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snsTopicArn"))
   {
     m_snsTopicArn = jsonValue.GetString("snsTopicArn");
-
     m_snsTopicArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("snsPublishStatusCode"))
   {
     m_snsPublishStatusCode = AssessmentRunNotificationSnsStatusCodeMapper::GetAssessmentRunNotificationSnsStatusCodeForName(jsonValue.GetString("snsPublishStatusCode"));
-
     m_snsPublishStatusCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

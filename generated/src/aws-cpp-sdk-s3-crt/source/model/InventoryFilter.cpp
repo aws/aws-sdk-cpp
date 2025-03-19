@@ -20,13 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-InventoryFilter::InventoryFilter() : 
-    m_prefixHasBeenSet(false)
-{
-}
-
 InventoryFilter::InventoryFilter(const XmlNode& xmlNode)
-  : InventoryFilter()
 {
   *this = xmlNode;
 }

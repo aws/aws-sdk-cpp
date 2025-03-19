@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-PutResourcePolicyRequest::PutResourcePolicyRequest() : 
-    m_policyHasBeenSet(false),
-    m_registryNameHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
-{
-}
-
 Aws::String PutResourcePolicyRequest::SerializePayload() const
 {
   JsonValue payload;

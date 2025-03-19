@@ -18,15 +18,7 @@ namespace Omics
 namespace Model
 {
 
-Filter::Filter() : 
-    m_resourceArnsHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 Filter::Filter(JsonView jsonValue)
-  : Filter()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ Filter& Filter::operator =(JsonView jsonValue)
     }
     m_resourceArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     Aws::Utils::Array<JsonView> statusJsonList = jsonValue.GetArray("status");
@@ -52,7 +43,6 @@ Filter& Filter::operator =(JsonView jsonValue)
     }
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     Aws::Utils::Array<JsonView> typeJsonList = jsonValue.GetArray("type");
@@ -62,7 +52,6 @@ Filter& Filter::operator =(JsonView jsonValue)
     }
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

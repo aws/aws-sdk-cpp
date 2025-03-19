@@ -25,7 +25,7 @@ namespace Model
   class CreateComponentVersionRequest : public GreengrassV2Request
   {
   public:
-    AWS_GREENGRASSV2_API CreateComponentVersionRequest();
+    AWS_GREENGRASSV2_API CreateComponentVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,12 +43,12 @@ namespace Model
      * compatibility.</p> <p>You must specify either <code>inlineRecipe</code> or
      * <code>lambdaFunction</code>.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetInlineRecipe() const{ return m_inlineRecipe; }
+    inline const Aws::Utils::ByteBuffer& GetInlineRecipe() const { return m_inlineRecipe; }
     inline bool InlineRecipeHasBeenSet() const { return m_inlineRecipeHasBeenSet; }
-    inline void SetInlineRecipe(const Aws::Utils::ByteBuffer& value) { m_inlineRecipeHasBeenSet = true; m_inlineRecipe = value; }
-    inline void SetInlineRecipe(Aws::Utils::ByteBuffer&& value) { m_inlineRecipeHasBeenSet = true; m_inlineRecipe = std::move(value); }
-    inline CreateComponentVersionRequest& WithInlineRecipe(const Aws::Utils::ByteBuffer& value) { SetInlineRecipe(value); return *this;}
-    inline CreateComponentVersionRequest& WithInlineRecipe(Aws::Utils::ByteBuffer&& value) { SetInlineRecipe(std::move(value)); return *this;}
+    template<typename InlineRecipeT = Aws::Utils::ByteBuffer>
+    void SetInlineRecipe(InlineRecipeT&& value) { m_inlineRecipeHasBeenSet = true; m_inlineRecipe = std::forward<InlineRecipeT>(value); }
+    template<typename InlineRecipeT = Aws::Utils::ByteBuffer>
+    CreateComponentVersionRequest& WithInlineRecipe(InlineRecipeT&& value) { SetInlineRecipe(std::forward<InlineRecipeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +56,12 @@ namespace Model
      * <p>The parameters to create a component from a Lambda function.</p> <p>You must
      * specify either <code>inlineRecipe</code> or <code>lambdaFunction</code>.</p>
      */
-    inline const LambdaFunctionRecipeSource& GetLambdaFunction() const{ return m_lambdaFunction; }
+    inline const LambdaFunctionRecipeSource& GetLambdaFunction() const { return m_lambdaFunction; }
     inline bool LambdaFunctionHasBeenSet() const { return m_lambdaFunctionHasBeenSet; }
-    inline void SetLambdaFunction(const LambdaFunctionRecipeSource& value) { m_lambdaFunctionHasBeenSet = true; m_lambdaFunction = value; }
-    inline void SetLambdaFunction(LambdaFunctionRecipeSource&& value) { m_lambdaFunctionHasBeenSet = true; m_lambdaFunction = std::move(value); }
-    inline CreateComponentVersionRequest& WithLambdaFunction(const LambdaFunctionRecipeSource& value) { SetLambdaFunction(value); return *this;}
-    inline CreateComponentVersionRequest& WithLambdaFunction(LambdaFunctionRecipeSource&& value) { SetLambdaFunction(std::move(value)); return *this;}
+    template<typename LambdaFunctionT = LambdaFunctionRecipeSource>
+    void SetLambdaFunction(LambdaFunctionT&& value) { m_lambdaFunctionHasBeenSet = true; m_lambdaFunction = std::forward<LambdaFunctionT>(value); }
+    template<typename LambdaFunctionT = LambdaFunctionRecipeSource>
+    CreateComponentVersionRequest& WithLambdaFunction(LambdaFunctionT&& value) { SetLambdaFunction(std::forward<LambdaFunctionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,19 +71,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/greengrass/v2/developerguide/tag-resources.html">Tag
      * your resources</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateComponentVersionRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateComponentVersionRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateComponentVersionRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateComponentVersionRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateComponentVersionRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateComponentVersionRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateComponentVersionRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateComponentVersionRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateComponentVersionRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateComponentVersionRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateComponentVersionRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -96,18 +93,16 @@ namespace Model
      * caches from the previous request. IoT Greengrass V2 caches successful responses
      * for idempotent requests for up to 8 hours.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateComponentVersionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateComponentVersionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateComponentVersionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateComponentVersionRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_inlineRecipe;
+    Aws::Utils::ByteBuffer m_inlineRecipe{};
     bool m_inlineRecipeHasBeenSet = false;
 
     LambdaFunctionRecipeSource m_lambdaFunction;

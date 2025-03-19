@@ -18,14 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-LoRaWANMulticastMetadata::LoRaWANMulticastMetadata() : 
-    m_fPort(0),
-    m_fPortHasBeenSet(false)
-{
-}
-
 LoRaWANMulticastMetadata::LoRaWANMulticastMetadata(JsonView jsonValue)
-  : LoRaWANMulticastMetadata()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ LoRaWANMulticastMetadata& LoRaWANMulticastMetadata::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("FPort"))
   {
     m_fPort = jsonValue.GetInteger("FPort");
-
     m_fPortHasBeenSet = true;
   }
-
   return *this;
 }
 

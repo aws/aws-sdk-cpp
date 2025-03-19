@@ -32,7 +32,7 @@ namespace Model
   class AutoMLS3DataSource
   {
   public:
-    AWS_SAGEMAKER_API AutoMLS3DataSource();
+    AWS_SAGEMAKER_API AutoMLS3DataSource() = default;
     AWS_SAGEMAKER_API AutoMLS3DataSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API AutoMLS3DataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -67,12 +67,10 @@ namespace Model
      * Dataset Metadata to Training Jobs with an Augmented Manifest File</a>.</p> </li>
      * </ul>
      */
-    inline const AutoMLS3DataType& GetS3DataType() const{ return m_s3DataType; }
+    inline AutoMLS3DataType GetS3DataType() const { return m_s3DataType; }
     inline bool S3DataTypeHasBeenSet() const { return m_s3DataTypeHasBeenSet; }
-    inline void SetS3DataType(const AutoMLS3DataType& value) { m_s3DataTypeHasBeenSet = true; m_s3DataType = value; }
-    inline void SetS3DataType(AutoMLS3DataType&& value) { m_s3DataTypeHasBeenSet = true; m_s3DataType = std::move(value); }
-    inline AutoMLS3DataSource& WithS3DataType(const AutoMLS3DataType& value) { SetS3DataType(value); return *this;}
-    inline AutoMLS3DataSource& WithS3DataType(AutoMLS3DataType&& value) { SetS3DataType(std::move(value)); return *this;}
+    inline void SetS3DataType(AutoMLS3DataType value) { m_s3DataTypeHasBeenSet = true; m_s3DataType = value; }
+    inline AutoMLS3DataSource& WithS3DataType(AutoMLS3DataType value) { SetS3DataType(value); return *this;}
     ///@}
 
     ///@{
@@ -80,18 +78,16 @@ namespace Model
      * <p>The URL to the Amazon S3 data source. The Uri refers to the Amazon S3 prefix
      * or ManifestFile depending on the data type.</p>
      */
-    inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+    inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-    inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-    inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-    inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-    inline AutoMLS3DataSource& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-    inline AutoMLS3DataSource& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-    inline AutoMLS3DataSource& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    template<typename S3UriT = Aws::String>
+    void SetS3Uri(S3UriT&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::forward<S3UriT>(value); }
+    template<typename S3UriT = Aws::String>
+    AutoMLS3DataSource& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
     ///@}
   private:
 
-    AutoMLS3DataType m_s3DataType;
+    AutoMLS3DataType m_s3DataType{AutoMLS3DataType::NOT_SET};
     bool m_s3DataTypeHasBeenSet = false;
 
     Aws::String m_s3Uri;

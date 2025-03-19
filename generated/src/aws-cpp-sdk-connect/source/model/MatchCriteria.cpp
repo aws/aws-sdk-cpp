@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-MatchCriteria::MatchCriteria() : 
-    m_agentsCriteriaHasBeenSet(false)
-{
-}
-
 MatchCriteria::MatchCriteria(JsonView jsonValue)
-  : MatchCriteria()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MatchCriteria& MatchCriteria::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AgentsCriteria"))
   {
     m_agentsCriteria = jsonValue.GetObject("AgentsCriteria");
-
     m_agentsCriteriaHasBeenSet = true;
   }
-
   return *this;
 }
 

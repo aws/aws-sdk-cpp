@@ -13,14 +13,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateWebAppCustomizationRequest::UpdateWebAppCustomizationRequest() : 
-    m_webAppIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_logoFileHasBeenSet(false),
-    m_faviconFileHasBeenSet(false)
-{
-}
-
 Aws::String UpdateWebAppCustomizationRequest::SerializePayload() const
 {
   JsonValue payload;

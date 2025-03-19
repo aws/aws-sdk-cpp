@@ -33,7 +33,7 @@ namespace Model
   class GlueDataCatalogConfigurationUpdate
   {
   public:
-    AWS_KINESISANALYTICSV2_API GlueDataCatalogConfigurationUpdate();
+    AWS_KINESISANALYTICSV2_API GlueDataCatalogConfigurationUpdate() = default;
     AWS_KINESISANALYTICSV2_API GlueDataCatalogConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API GlueDataCatalogConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The updated Amazon Resource Name (ARN) of the database.</p>
      */
-    inline const Aws::String& GetDatabaseARNUpdate() const{ return m_databaseARNUpdate; }
+    inline const Aws::String& GetDatabaseARNUpdate() const { return m_databaseARNUpdate; }
     inline bool DatabaseARNUpdateHasBeenSet() const { return m_databaseARNUpdateHasBeenSet; }
-    inline void SetDatabaseARNUpdate(const Aws::String& value) { m_databaseARNUpdateHasBeenSet = true; m_databaseARNUpdate = value; }
-    inline void SetDatabaseARNUpdate(Aws::String&& value) { m_databaseARNUpdateHasBeenSet = true; m_databaseARNUpdate = std::move(value); }
-    inline void SetDatabaseARNUpdate(const char* value) { m_databaseARNUpdateHasBeenSet = true; m_databaseARNUpdate.assign(value); }
-    inline GlueDataCatalogConfigurationUpdate& WithDatabaseARNUpdate(const Aws::String& value) { SetDatabaseARNUpdate(value); return *this;}
-    inline GlueDataCatalogConfigurationUpdate& WithDatabaseARNUpdate(Aws::String&& value) { SetDatabaseARNUpdate(std::move(value)); return *this;}
-    inline GlueDataCatalogConfigurationUpdate& WithDatabaseARNUpdate(const char* value) { SetDatabaseARNUpdate(value); return *this;}
+    template<typename DatabaseARNUpdateT = Aws::String>
+    void SetDatabaseARNUpdate(DatabaseARNUpdateT&& value) { m_databaseARNUpdateHasBeenSet = true; m_databaseARNUpdate = std::forward<DatabaseARNUpdateT>(value); }
+    template<typename DatabaseARNUpdateT = Aws::String>
+    GlueDataCatalogConfigurationUpdate& WithDatabaseARNUpdate(DatabaseARNUpdateT&& value) { SetDatabaseARNUpdate(std::forward<DatabaseARNUpdateT>(value)); return *this;}
     ///@}
   private:
 

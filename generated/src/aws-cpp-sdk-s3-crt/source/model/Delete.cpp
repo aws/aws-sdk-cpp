@@ -20,15 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-Delete::Delete() : 
-    m_objectsHasBeenSet(false),
-    m_quiet(false),
-    m_quietHasBeenSet(false)
-{
-}
-
 Delete::Delete(const XmlNode& xmlNode)
-  : Delete()
 {
   *this = xmlNode;
 }
@@ -43,6 +35,7 @@ Delete& Delete::operator =(const XmlNode& xmlNode)
     if(!objectsNode.IsNull())
     {
       XmlNode objectMember = objectsNode;
+      m_objectsHasBeenSet = !objectMember.IsNull();
       while(!objectMember.IsNull())
       {
         m_objects.push_back(objectMember);

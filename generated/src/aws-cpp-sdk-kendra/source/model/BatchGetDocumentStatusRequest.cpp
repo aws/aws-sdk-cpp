@@ -12,12 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchGetDocumentStatusRequest::BatchGetDocumentStatusRequest() : 
-    m_indexIdHasBeenSet(false),
-    m_documentInfoListHasBeenSet(false)
-{
-}
-
 Aws::String BatchGetDocumentStatusRequest::SerializePayload() const
 {
   JsonValue payload;

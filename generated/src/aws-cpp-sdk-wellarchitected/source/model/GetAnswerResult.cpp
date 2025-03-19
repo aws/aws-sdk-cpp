@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAnswerResult::GetAnswerResult() : 
-    m_milestoneNumber(0)
-{
-}
-
 GetAnswerResult::GetAnswerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetAnswerResult()
 {
   *this = result;
 }
@@ -34,39 +28,35 @@ GetAnswerResult& GetAnswerResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("WorkloadId"))
   {
     m_workloadId = jsonValue.GetString("WorkloadId");
-
+    m_workloadIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MilestoneNumber"))
   {
     m_milestoneNumber = jsonValue.GetInteger("MilestoneNumber");
-
+    m_milestoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LensAlias"))
   {
     m_lensAlias = jsonValue.GetString("LensAlias");
-
+    m_lensAliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LensArn"))
   {
     m_lensArn = jsonValue.GetString("LensArn");
-
+    m_lensArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Answer"))
   {
     m_answer = jsonValue.GetObject("Answer");
-
+    m_answerHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

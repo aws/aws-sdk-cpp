@@ -30,7 +30,7 @@ namespace Model
   class IcebergCompactionSettings
   {
   public:
-    AWS_S3TABLES_API IcebergCompactionSettings();
+    AWS_S3TABLES_API IcebergCompactionSettings() = default;
     AWS_S3TABLES_API IcebergCompactionSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_S3TABLES_API IcebergCompactionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_S3TABLES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>The target file size for the table in MB.</p>
      */
-    inline int GetTargetFileSizeMB() const{ return m_targetFileSizeMB; }
+    inline int GetTargetFileSizeMB() const { return m_targetFileSizeMB; }
     inline bool TargetFileSizeMBHasBeenSet() const { return m_targetFileSizeMBHasBeenSet; }
     inline void SetTargetFileSizeMB(int value) { m_targetFileSizeMBHasBeenSet = true; m_targetFileSizeMB = value; }
     inline IcebergCompactionSettings& WithTargetFileSizeMB(int value) { SetTargetFileSizeMB(value); return *this;}
     ///@}
   private:
 
-    int m_targetFileSizeMB;
+    int m_targetFileSizeMB{0};
     bool m_targetFileSizeMBHasBeenSet = false;
   };
 

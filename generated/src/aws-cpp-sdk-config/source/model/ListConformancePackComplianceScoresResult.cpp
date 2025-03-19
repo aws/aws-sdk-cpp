@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListConformancePackComplianceScoresResult::ListConformancePackComplianceScoresResult()
-{
-}
-
 ListConformancePackComplianceScoresResult::ListConformancePackComplianceScoresResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListConformancePackComplianceScoresResult& ListConformancePackComplianceScoresRe
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConformancePackComplianceScores"))
   {
     Aws::Utils::Array<JsonView> conformancePackComplianceScoresJsonList = jsonValue.GetArray("ConformancePackComplianceScores");
@@ -42,14 +37,15 @@ ListConformancePackComplianceScoresResult& ListConformancePackComplianceScoresRe
     {
       m_conformancePackComplianceScores.push_back(conformancePackComplianceScoresJsonList[conformancePackComplianceScoresIndex].AsObject());
     }
+    m_conformancePackComplianceScoresHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

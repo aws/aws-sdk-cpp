@@ -18,18 +18,7 @@ namespace ECS
 namespace Model
 {
 
-Ulimit::Ulimit() : 
-    m_name(UlimitName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_softLimit(0),
-    m_softLimitHasBeenSet(false),
-    m_hardLimit(0),
-    m_hardLimitHasBeenSet(false)
-{
-}
-
 Ulimit::Ulimit(JsonView jsonValue)
-  : Ulimit()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ Ulimit& Ulimit::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = UlimitNameMapper::GetUlimitNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("softLimit"))
   {
     m_softLimit = jsonValue.GetInteger("softLimit");
-
     m_softLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hardLimit"))
   {
     m_hardLimit = jsonValue.GetInteger("hardLimit");
-
     m_hardLimitHasBeenSet = true;
   }
-
   return *this;
 }
 

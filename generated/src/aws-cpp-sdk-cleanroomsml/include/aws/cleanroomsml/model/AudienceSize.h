@@ -32,7 +32,7 @@ namespace Model
   class AudienceSize
   {
   public:
-    AWS_CLEANROOMSML_API AudienceSize();
+    AWS_CLEANROOMSML_API AudienceSize() = default;
     AWS_CLEANROOMSML_API AudienceSize(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API AudienceSize& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,29 +46,27 @@ namespace Model
      * <code>Percentage</code> <a>AudienceSize</a> to configure sizes in the range
      * 1-100 percent.</p>
      */
-    inline const AudienceSizeType& GetType() const{ return m_type; }
+    inline AudienceSizeType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const AudienceSizeType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(AudienceSizeType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline AudienceSize& WithType(const AudienceSizeType& value) { SetType(value); return *this;}
-    inline AudienceSize& WithType(AudienceSizeType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(AudienceSizeType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline AudienceSize& WithType(AudienceSizeType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specify an audience size value.</p>
      */
-    inline int GetValue() const{ return m_value; }
+    inline int GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
     inline AudienceSize& WithValue(int value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    AudienceSizeType m_type;
+    AudienceSizeType m_type{AudienceSizeType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    int m_value;
+    int m_value{0};
     bool m_valueHasBeenSet = false;
   };
 

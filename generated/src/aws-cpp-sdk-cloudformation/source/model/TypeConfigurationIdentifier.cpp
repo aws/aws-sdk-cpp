@@ -20,18 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-TypeConfigurationIdentifier::TypeConfigurationIdentifier() : 
-    m_typeArnHasBeenSet(false),
-    m_typeConfigurationAliasHasBeenSet(false),
-    m_typeConfigurationArnHasBeenSet(false),
-    m_type(ThirdPartyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_typeNameHasBeenSet(false)
-{
-}
-
 TypeConfigurationIdentifier::TypeConfigurationIdentifier(const XmlNode& xmlNode)
-  : TypeConfigurationIdentifier()
 {
   *this = xmlNode;
 }
@@ -63,7 +52,7 @@ TypeConfigurationIdentifier& TypeConfigurationIdentifier::operator =(const XmlNo
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = ThirdPartyTypeMapper::GetThirdPartyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = ThirdPartyTypeMapper::GetThirdPartyTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode typeNameNode = resultNode.FirstChild("TypeName");

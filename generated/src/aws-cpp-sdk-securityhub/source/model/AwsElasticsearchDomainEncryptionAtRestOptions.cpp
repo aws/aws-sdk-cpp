@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsElasticsearchDomainEncryptionAtRestOptions::AwsElasticsearchDomainEncryptionAtRestOptions() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 AwsElasticsearchDomainEncryptionAtRestOptions::AwsElasticsearchDomainEncryptionAtRestOptions(JsonView jsonValue)
-  : AwsElasticsearchDomainEncryptionAtRestOptions()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AwsElasticsearchDomainEncryptionAtRestOptions& AwsElasticsearchDomainEncryptionA
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

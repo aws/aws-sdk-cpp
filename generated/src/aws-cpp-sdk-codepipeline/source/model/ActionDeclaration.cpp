@@ -18,27 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ActionDeclaration::ActionDeclaration() : 
-    m_nameHasBeenSet(false),
-    m_actionTypeIdHasBeenSet(false),
-    m_runOrder(0),
-    m_runOrderHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_commandsHasBeenSet(false),
-    m_outputArtifactsHasBeenSet(false),
-    m_inputArtifactsHasBeenSet(false),
-    m_outputVariablesHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_timeoutInMinutes(0),
-    m_timeoutInMinutesHasBeenSet(false),
-    m_environmentVariablesHasBeenSet(false)
-{
-}
-
 ActionDeclaration::ActionDeclaration(JsonView jsonValue)
-  : ActionDeclaration()
 {
   *this = jsonValue;
 }
@@ -48,24 +28,18 @@ ActionDeclaration& ActionDeclaration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionTypeId"))
   {
     m_actionTypeId = jsonValue.GetObject("actionTypeId");
-
     m_actionTypeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runOrder"))
   {
     m_runOrder = jsonValue.GetInteger("runOrder");
-
     m_runOrderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configuration"))
   {
     Aws::Map<Aws::String, JsonView> configurationJsonMap = jsonValue.GetObject("configuration").GetAllObjects();
@@ -75,7 +49,6 @@ ActionDeclaration& ActionDeclaration::operator =(JsonView jsonValue)
     }
     m_configurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("commands"))
   {
     Aws::Utils::Array<JsonView> commandsJsonList = jsonValue.GetArray("commands");
@@ -85,7 +58,6 @@ ActionDeclaration& ActionDeclaration::operator =(JsonView jsonValue)
     }
     m_commandsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputArtifacts"))
   {
     Aws::Utils::Array<JsonView> outputArtifactsJsonList = jsonValue.GetArray("outputArtifacts");
@@ -95,7 +67,6 @@ ActionDeclaration& ActionDeclaration::operator =(JsonView jsonValue)
     }
     m_outputArtifactsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputArtifacts"))
   {
     Aws::Utils::Array<JsonView> inputArtifactsJsonList = jsonValue.GetArray("inputArtifacts");
@@ -105,7 +76,6 @@ ActionDeclaration& ActionDeclaration::operator =(JsonView jsonValue)
     }
     m_inputArtifactsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputVariables"))
   {
     Aws::Utils::Array<JsonView> outputVariablesJsonList = jsonValue.GetArray("outputVariables");
@@ -115,35 +85,26 @@ ActionDeclaration& ActionDeclaration::operator =(JsonView jsonValue)
     }
     m_outputVariablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespace"))
   {
     m_namespace = jsonValue.GetString("namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeoutInMinutes"))
   {
     m_timeoutInMinutes = jsonValue.GetInteger("timeoutInMinutes");
-
     m_timeoutInMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentVariables"))
   {
     Aws::Utils::Array<JsonView> environmentVariablesJsonList = jsonValue.GetArray("environmentVariables");
@@ -153,7 +114,6 @@ ActionDeclaration& ActionDeclaration::operator =(JsonView jsonValue)
     }
     m_environmentVariablesHasBeenSet = true;
   }
-
   return *this;
 }
 

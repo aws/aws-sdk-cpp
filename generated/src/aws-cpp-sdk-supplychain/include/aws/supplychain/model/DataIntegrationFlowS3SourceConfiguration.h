@@ -33,7 +33,7 @@ namespace Model
   class DataIntegrationFlowS3SourceConfiguration
   {
   public:
-    AWS_SUPPLYCHAIN_API DataIntegrationFlowS3SourceConfiguration();
+    AWS_SUPPLYCHAIN_API DataIntegrationFlowS3SourceConfiguration() = default;
     AWS_SUPPLYCHAIN_API DataIntegrationFlowS3SourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPLYCHAIN_API DataIntegrationFlowS3SourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPLYCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,40 +43,36 @@ namespace Model
     /**
      * <p>The bucketName of the S3 source objects.</p>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline DataIntegrationFlowS3SourceConfiguration& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline DataIntegrationFlowS3SourceConfiguration& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline DataIntegrationFlowS3SourceConfiguration& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    DataIntegrationFlowS3SourceConfiguration& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The prefix of the S3 source objects.</p>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline DataIntegrationFlowS3SourceConfiguration& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline DataIntegrationFlowS3SourceConfiguration& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline DataIntegrationFlowS3SourceConfiguration& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    DataIntegrationFlowS3SourceConfiguration& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The other options of the S3 DataIntegrationFlow source.</p>
      */
-    inline const DataIntegrationFlowS3Options& GetOptions() const{ return m_options; }
+    inline const DataIntegrationFlowS3Options& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const DataIntegrationFlowS3Options& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(DataIntegrationFlowS3Options&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline DataIntegrationFlowS3SourceConfiguration& WithOptions(const DataIntegrationFlowS3Options& value) { SetOptions(value); return *this;}
-    inline DataIntegrationFlowS3SourceConfiguration& WithOptions(DataIntegrationFlowS3Options&& value) { SetOptions(std::move(value)); return *this;}
+    template<typename OptionsT = DataIntegrationFlowS3Options>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = DataIntegrationFlowS3Options>
+    DataIntegrationFlowS3SourceConfiguration& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
     ///@}
   private:
 

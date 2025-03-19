@@ -35,7 +35,7 @@ namespace Model
   class RegistrationVersionInformation
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API RegistrationVersionInformation();
+    AWS_PINPOINTSMSVOICEV2_API RegistrationVersionInformation() = default;
     AWS_PINPOINTSMSVOICEV2_API RegistrationVersionInformation(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API RegistrationVersionInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
     /**
      * <p>The version number of the registration.</p>
      */
-    inline long long GetVersionNumber() const{ return m_versionNumber; }
+    inline long long GetVersionNumber() const { return m_versionNumber; }
     inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
     inline void SetVersionNumber(long long value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
     inline RegistrationVersionInformation& WithVersionNumber(long long value) { SetVersionNumber(value); return *this;}
@@ -67,12 +67,10 @@ namespace Model
      * Your previously approved registration has been revoked.</p> </li> <li> <p>
      * <code>SUBMITTED</code>: Your registration has been submitted.</p> </li> </ul>
      */
-    inline const RegistrationVersionStatus& GetRegistrationVersionStatus() const{ return m_registrationVersionStatus; }
+    inline RegistrationVersionStatus GetRegistrationVersionStatus() const { return m_registrationVersionStatus; }
     inline bool RegistrationVersionStatusHasBeenSet() const { return m_registrationVersionStatusHasBeenSet; }
-    inline void SetRegistrationVersionStatus(const RegistrationVersionStatus& value) { m_registrationVersionStatusHasBeenSet = true; m_registrationVersionStatus = value; }
-    inline void SetRegistrationVersionStatus(RegistrationVersionStatus&& value) { m_registrationVersionStatusHasBeenSet = true; m_registrationVersionStatus = std::move(value); }
-    inline RegistrationVersionInformation& WithRegistrationVersionStatus(const RegistrationVersionStatus& value) { SetRegistrationVersionStatus(value); return *this;}
-    inline RegistrationVersionInformation& WithRegistrationVersionStatus(RegistrationVersionStatus&& value) { SetRegistrationVersionStatus(std::move(value)); return *this;}
+    inline void SetRegistrationVersionStatus(RegistrationVersionStatus value) { m_registrationVersionStatusHasBeenSet = true; m_registrationVersionStatus = value; }
+    inline RegistrationVersionInformation& WithRegistrationVersionStatus(RegistrationVersionStatus value) { SetRegistrationVersionStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -80,33 +78,33 @@ namespace Model
      * <p>The <b>RegistrationVersionStatusHistory</b> object contains the time stamps
      * for when the reservations status changes.</p>
      */
-    inline const RegistrationVersionStatusHistory& GetRegistrationVersionStatusHistory() const{ return m_registrationVersionStatusHistory; }
+    inline const RegistrationVersionStatusHistory& GetRegistrationVersionStatusHistory() const { return m_registrationVersionStatusHistory; }
     inline bool RegistrationVersionStatusHistoryHasBeenSet() const { return m_registrationVersionStatusHistoryHasBeenSet; }
-    inline void SetRegistrationVersionStatusHistory(const RegistrationVersionStatusHistory& value) { m_registrationVersionStatusHistoryHasBeenSet = true; m_registrationVersionStatusHistory = value; }
-    inline void SetRegistrationVersionStatusHistory(RegistrationVersionStatusHistory&& value) { m_registrationVersionStatusHistoryHasBeenSet = true; m_registrationVersionStatusHistory = std::move(value); }
-    inline RegistrationVersionInformation& WithRegistrationVersionStatusHistory(const RegistrationVersionStatusHistory& value) { SetRegistrationVersionStatusHistory(value); return *this;}
-    inline RegistrationVersionInformation& WithRegistrationVersionStatusHistory(RegistrationVersionStatusHistory&& value) { SetRegistrationVersionStatusHistory(std::move(value)); return *this;}
+    template<typename RegistrationVersionStatusHistoryT = RegistrationVersionStatusHistory>
+    void SetRegistrationVersionStatusHistory(RegistrationVersionStatusHistoryT&& value) { m_registrationVersionStatusHistoryHasBeenSet = true; m_registrationVersionStatusHistory = std::forward<RegistrationVersionStatusHistoryT>(value); }
+    template<typename RegistrationVersionStatusHistoryT = RegistrationVersionStatusHistory>
+    RegistrationVersionInformation& WithRegistrationVersionStatusHistory(RegistrationVersionStatusHistoryT&& value) { SetRegistrationVersionStatusHistory(std::forward<RegistrationVersionStatusHistoryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of RegistrationDeniedReasonInformation objects. </p>
      */
-    inline const Aws::Vector<RegistrationDeniedReasonInformation>& GetDeniedReasons() const{ return m_deniedReasons; }
+    inline const Aws::Vector<RegistrationDeniedReasonInformation>& GetDeniedReasons() const { return m_deniedReasons; }
     inline bool DeniedReasonsHasBeenSet() const { return m_deniedReasonsHasBeenSet; }
-    inline void SetDeniedReasons(const Aws::Vector<RegistrationDeniedReasonInformation>& value) { m_deniedReasonsHasBeenSet = true; m_deniedReasons = value; }
-    inline void SetDeniedReasons(Aws::Vector<RegistrationDeniedReasonInformation>&& value) { m_deniedReasonsHasBeenSet = true; m_deniedReasons = std::move(value); }
-    inline RegistrationVersionInformation& WithDeniedReasons(const Aws::Vector<RegistrationDeniedReasonInformation>& value) { SetDeniedReasons(value); return *this;}
-    inline RegistrationVersionInformation& WithDeniedReasons(Aws::Vector<RegistrationDeniedReasonInformation>&& value) { SetDeniedReasons(std::move(value)); return *this;}
-    inline RegistrationVersionInformation& AddDeniedReasons(const RegistrationDeniedReasonInformation& value) { m_deniedReasonsHasBeenSet = true; m_deniedReasons.push_back(value); return *this; }
-    inline RegistrationVersionInformation& AddDeniedReasons(RegistrationDeniedReasonInformation&& value) { m_deniedReasonsHasBeenSet = true; m_deniedReasons.push_back(std::move(value)); return *this; }
+    template<typename DeniedReasonsT = Aws::Vector<RegistrationDeniedReasonInformation>>
+    void SetDeniedReasons(DeniedReasonsT&& value) { m_deniedReasonsHasBeenSet = true; m_deniedReasons = std::forward<DeniedReasonsT>(value); }
+    template<typename DeniedReasonsT = Aws::Vector<RegistrationDeniedReasonInformation>>
+    RegistrationVersionInformation& WithDeniedReasons(DeniedReasonsT&& value) { SetDeniedReasons(std::forward<DeniedReasonsT>(value)); return *this;}
+    template<typename DeniedReasonsT = RegistrationDeniedReasonInformation>
+    RegistrationVersionInformation& AddDeniedReasons(DeniedReasonsT&& value) { m_deniedReasonsHasBeenSet = true; m_deniedReasons.emplace_back(std::forward<DeniedReasonsT>(value)); return *this; }
     ///@}
   private:
 
-    long long m_versionNumber;
+    long long m_versionNumber{0};
     bool m_versionNumberHasBeenSet = false;
 
-    RegistrationVersionStatus m_registrationVersionStatus;
+    RegistrationVersionStatus m_registrationVersionStatus{RegistrationVersionStatus::NOT_SET};
     bool m_registrationVersionStatusHasBeenSet = false;
 
     RegistrationVersionStatusHistory m_registrationVersionStatusHistory;

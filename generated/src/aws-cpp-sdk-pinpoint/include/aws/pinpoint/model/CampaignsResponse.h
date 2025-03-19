@@ -34,7 +34,7 @@ namespace Model
   class CampaignsResponse
   {
   public:
-    AWS_PINPOINT_API CampaignsResponse();
+    AWS_PINPOINT_API CampaignsResponse() = default;
     AWS_PINPOINT_API CampaignsResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API CampaignsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * <p>An array of responses, one for each campaign that's associated with the
      * application.</p>
      */
-    inline const Aws::Vector<CampaignResponse>& GetItem() const{ return m_item; }
+    inline const Aws::Vector<CampaignResponse>& GetItem() const { return m_item; }
     inline bool ItemHasBeenSet() const { return m_itemHasBeenSet; }
-    inline void SetItem(const Aws::Vector<CampaignResponse>& value) { m_itemHasBeenSet = true; m_item = value; }
-    inline void SetItem(Aws::Vector<CampaignResponse>&& value) { m_itemHasBeenSet = true; m_item = std::move(value); }
-    inline CampaignsResponse& WithItem(const Aws::Vector<CampaignResponse>& value) { SetItem(value); return *this;}
-    inline CampaignsResponse& WithItem(Aws::Vector<CampaignResponse>&& value) { SetItem(std::move(value)); return *this;}
-    inline CampaignsResponse& AddItem(const CampaignResponse& value) { m_itemHasBeenSet = true; m_item.push_back(value); return *this; }
-    inline CampaignsResponse& AddItem(CampaignResponse&& value) { m_itemHasBeenSet = true; m_item.push_back(std::move(value)); return *this; }
+    template<typename ItemT = Aws::Vector<CampaignResponse>>
+    void SetItem(ItemT&& value) { m_itemHasBeenSet = true; m_item = std::forward<ItemT>(value); }
+    template<typename ItemT = Aws::Vector<CampaignResponse>>
+    CampaignsResponse& WithItem(ItemT&& value) { SetItem(std::forward<ItemT>(value)); return *this;}
+    template<typename ItemT = CampaignResponse>
+    CampaignsResponse& AddItem(ItemT&& value) { m_itemHasBeenSet = true; m_item.emplace_back(std::forward<ItemT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,14 +60,12 @@ namespace Model
      * <p>The string to use in a subsequent request to get the next page of results in
      * a paginated response. This value is null if there are no additional pages.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline CampaignsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline CampaignsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline CampaignsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    CampaignsResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 

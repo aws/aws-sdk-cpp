@@ -29,7 +29,7 @@ namespace Model
   class SidewalkCreateDeviceProfile
   {
   public:
-    AWS_IOTWIRELESS_API SidewalkCreateDeviceProfile();
+    AWS_IOTWIRELESS_API SidewalkCreateDeviceProfile() = default;
     AWS_IOTWIRELESS_API SidewalkCreateDeviceProfile(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API SidewalkCreateDeviceProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;

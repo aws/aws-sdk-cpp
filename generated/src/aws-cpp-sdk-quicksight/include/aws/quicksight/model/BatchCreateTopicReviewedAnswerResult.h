@@ -30,7 +30,7 @@ namespace Model
   class BatchCreateTopicReviewedAnswerResult
   {
   public:
-    AWS_QUICKSIGHT_API BatchCreateTopicReviewedAnswerResult();
+    AWS_QUICKSIGHT_API BatchCreateTopicReviewedAnswerResult() = default;
     AWS_QUICKSIGHT_API BatchCreateTopicReviewedAnswerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API BatchCreateTopicReviewedAnswerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,86 +40,86 @@ namespace Model
      * <p>The ID for the topic reviewed answer that you want to create. This ID is
      * unique per Amazon Web Services Region for each Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetTopicId() const{ return m_topicId; }
-    inline void SetTopicId(const Aws::String& value) { m_topicId = value; }
-    inline void SetTopicId(Aws::String&& value) { m_topicId = std::move(value); }
-    inline void SetTopicId(const char* value) { m_topicId.assign(value); }
-    inline BatchCreateTopicReviewedAnswerResult& WithTopicId(const Aws::String& value) { SetTopicId(value); return *this;}
-    inline BatchCreateTopicReviewedAnswerResult& WithTopicId(Aws::String&& value) { SetTopicId(std::move(value)); return *this;}
-    inline BatchCreateTopicReviewedAnswerResult& WithTopicId(const char* value) { SetTopicId(value); return *this;}
+    inline const Aws::String& GetTopicId() const { return m_topicId; }
+    template<typename TopicIdT = Aws::String>
+    void SetTopicId(TopicIdT&& value) { m_topicIdHasBeenSet = true; m_topicId = std::forward<TopicIdT>(value); }
+    template<typename TopicIdT = Aws::String>
+    BatchCreateTopicReviewedAnswerResult& WithTopicId(TopicIdT&& value) { SetTopicId(std::forward<TopicIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the topic.</p>
      */
-    inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
-    inline void SetTopicArn(const Aws::String& value) { m_topicArn = value; }
-    inline void SetTopicArn(Aws::String&& value) { m_topicArn = std::move(value); }
-    inline void SetTopicArn(const char* value) { m_topicArn.assign(value); }
-    inline BatchCreateTopicReviewedAnswerResult& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
-    inline BatchCreateTopicReviewedAnswerResult& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
-    inline BatchCreateTopicReviewedAnswerResult& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
+    inline const Aws::String& GetTopicArn() const { return m_topicArn; }
+    template<typename TopicArnT = Aws::String>
+    void SetTopicArn(TopicArnT&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::forward<TopicArnT>(value); }
+    template<typename TopicArnT = Aws::String>
+    BatchCreateTopicReviewedAnswerResult& WithTopicArn(TopicArnT&& value) { SetTopicArn(std::forward<TopicArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The definition of Answers that are successfully created.</p>
      */
-    inline const Aws::Vector<SucceededTopicReviewedAnswer>& GetSucceededAnswers() const{ return m_succeededAnswers; }
-    inline void SetSucceededAnswers(const Aws::Vector<SucceededTopicReviewedAnswer>& value) { m_succeededAnswers = value; }
-    inline void SetSucceededAnswers(Aws::Vector<SucceededTopicReviewedAnswer>&& value) { m_succeededAnswers = std::move(value); }
-    inline BatchCreateTopicReviewedAnswerResult& WithSucceededAnswers(const Aws::Vector<SucceededTopicReviewedAnswer>& value) { SetSucceededAnswers(value); return *this;}
-    inline BatchCreateTopicReviewedAnswerResult& WithSucceededAnswers(Aws::Vector<SucceededTopicReviewedAnswer>&& value) { SetSucceededAnswers(std::move(value)); return *this;}
-    inline BatchCreateTopicReviewedAnswerResult& AddSucceededAnswers(const SucceededTopicReviewedAnswer& value) { m_succeededAnswers.push_back(value); return *this; }
-    inline BatchCreateTopicReviewedAnswerResult& AddSucceededAnswers(SucceededTopicReviewedAnswer&& value) { m_succeededAnswers.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SucceededTopicReviewedAnswer>& GetSucceededAnswers() const { return m_succeededAnswers; }
+    template<typename SucceededAnswersT = Aws::Vector<SucceededTopicReviewedAnswer>>
+    void SetSucceededAnswers(SucceededAnswersT&& value) { m_succeededAnswersHasBeenSet = true; m_succeededAnswers = std::forward<SucceededAnswersT>(value); }
+    template<typename SucceededAnswersT = Aws::Vector<SucceededTopicReviewedAnswer>>
+    BatchCreateTopicReviewedAnswerResult& WithSucceededAnswers(SucceededAnswersT&& value) { SetSucceededAnswers(std::forward<SucceededAnswersT>(value)); return *this;}
+    template<typename SucceededAnswersT = SucceededTopicReviewedAnswer>
+    BatchCreateTopicReviewedAnswerResult& AddSucceededAnswers(SucceededAnswersT&& value) { m_succeededAnswersHasBeenSet = true; m_succeededAnswers.emplace_back(std::forward<SucceededAnswersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The definition of Answers that are invalid and not created.</p>
      */
-    inline const Aws::Vector<InvalidTopicReviewedAnswer>& GetInvalidAnswers() const{ return m_invalidAnswers; }
-    inline void SetInvalidAnswers(const Aws::Vector<InvalidTopicReviewedAnswer>& value) { m_invalidAnswers = value; }
-    inline void SetInvalidAnswers(Aws::Vector<InvalidTopicReviewedAnswer>&& value) { m_invalidAnswers = std::move(value); }
-    inline BatchCreateTopicReviewedAnswerResult& WithInvalidAnswers(const Aws::Vector<InvalidTopicReviewedAnswer>& value) { SetInvalidAnswers(value); return *this;}
-    inline BatchCreateTopicReviewedAnswerResult& WithInvalidAnswers(Aws::Vector<InvalidTopicReviewedAnswer>&& value) { SetInvalidAnswers(std::move(value)); return *this;}
-    inline BatchCreateTopicReviewedAnswerResult& AddInvalidAnswers(const InvalidTopicReviewedAnswer& value) { m_invalidAnswers.push_back(value); return *this; }
-    inline BatchCreateTopicReviewedAnswerResult& AddInvalidAnswers(InvalidTopicReviewedAnswer&& value) { m_invalidAnswers.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InvalidTopicReviewedAnswer>& GetInvalidAnswers() const { return m_invalidAnswers; }
+    template<typename InvalidAnswersT = Aws::Vector<InvalidTopicReviewedAnswer>>
+    void SetInvalidAnswers(InvalidAnswersT&& value) { m_invalidAnswersHasBeenSet = true; m_invalidAnswers = std::forward<InvalidAnswersT>(value); }
+    template<typename InvalidAnswersT = Aws::Vector<InvalidTopicReviewedAnswer>>
+    BatchCreateTopicReviewedAnswerResult& WithInvalidAnswers(InvalidAnswersT&& value) { SetInvalidAnswers(std::forward<InvalidAnswersT>(value)); return *this;}
+    template<typename InvalidAnswersT = InvalidTopicReviewedAnswer>
+    BatchCreateTopicReviewedAnswerResult& AddInvalidAnswers(InvalidAnswersT&& value) { m_invalidAnswersHasBeenSet = true; m_invalidAnswers.emplace_back(std::forward<InvalidAnswersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline BatchCreateTopicReviewedAnswerResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchCreateTopicReviewedAnswerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchCreateTopicReviewedAnswerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchCreateTopicReviewedAnswerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchCreateTopicReviewedAnswerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_topicId;
+    bool m_topicIdHasBeenSet = false;
 
     Aws::String m_topicArn;
+    bool m_topicArnHasBeenSet = false;
 
     Aws::Vector<SucceededTopicReviewedAnswer> m_succeededAnswers;
+    bool m_succeededAnswersHasBeenSet = false;
 
     Aws::Vector<InvalidTopicReviewedAnswer> m_invalidAnswers;
+    bool m_invalidAnswersHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

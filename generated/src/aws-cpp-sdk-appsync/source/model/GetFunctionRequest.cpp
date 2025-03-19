@@ -12,12 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetFunctionRequest::GetFunctionRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_functionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetFunctionRequest::SerializePayload() const
 {
   return {};

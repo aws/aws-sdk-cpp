@@ -18,17 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-ProvisioningProfileSummary::ProvisioningProfileSummary() : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_provisioningType(ProvisioningType::NOT_SET),
-    m_provisioningTypeHasBeenSet(false)
-{
-}
-
 ProvisioningProfileSummary::ProvisioningProfileSummary(JsonView jsonValue)
-  : ProvisioningProfileSummary()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ProvisioningProfileSummary& ProvisioningProfileSummary::operator =(JsonView json
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisioningType"))
   {
     m_provisioningType = ProvisioningTypeMapper::GetProvisioningTypeForName(jsonValue.GetString("ProvisioningType"));
-
     m_provisioningTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class InferenceProfileModelSource
   {
   public:
-    AWS_BEDROCK_API InferenceProfileModelSource();
+    AWS_BEDROCK_API InferenceProfileModelSource() = default;
     AWS_BEDROCK_API InferenceProfileModelSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API InferenceProfileModelSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The ARN of the model or system-defined inference profile that is the source
      * for the inference profile.</p>
      */
-    inline const Aws::String& GetCopyFrom() const{ return m_copyFrom; }
+    inline const Aws::String& GetCopyFrom() const { return m_copyFrom; }
     inline bool CopyFromHasBeenSet() const { return m_copyFromHasBeenSet; }
-    inline void SetCopyFrom(const Aws::String& value) { m_copyFromHasBeenSet = true; m_copyFrom = value; }
-    inline void SetCopyFrom(Aws::String&& value) { m_copyFromHasBeenSet = true; m_copyFrom = std::move(value); }
-    inline void SetCopyFrom(const char* value) { m_copyFromHasBeenSet = true; m_copyFrom.assign(value); }
-    inline InferenceProfileModelSource& WithCopyFrom(const Aws::String& value) { SetCopyFrom(value); return *this;}
-    inline InferenceProfileModelSource& WithCopyFrom(Aws::String&& value) { SetCopyFrom(std::move(value)); return *this;}
-    inline InferenceProfileModelSource& WithCopyFrom(const char* value) { SetCopyFrom(value); return *this;}
+    template<typename CopyFromT = Aws::String>
+    void SetCopyFrom(CopyFromT&& value) { m_copyFromHasBeenSet = true; m_copyFrom = std::forward<CopyFromT>(value); }
+    template<typename CopyFromT = Aws::String>
+    InferenceProfileModelSource& WithCopyFrom(CopyFromT&& value) { SetCopyFrom(std::forward<CopyFromT>(value)); return *this;}
     ///@}
   private:
 

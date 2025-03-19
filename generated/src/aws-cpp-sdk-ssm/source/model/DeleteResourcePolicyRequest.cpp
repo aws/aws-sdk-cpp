@@ -12,13 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteResourcePolicyRequest::DeleteResourcePolicyRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_policyIdHasBeenSet(false),
-    m_policyHashHasBeenSet(false)
-{
-}
-
 Aws::String DeleteResourcePolicyRequest::SerializePayload() const
 {
   JsonValue payload;

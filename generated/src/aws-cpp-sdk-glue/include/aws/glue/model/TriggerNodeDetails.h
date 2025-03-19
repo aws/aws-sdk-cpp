@@ -32,7 +32,7 @@ namespace Model
   class TriggerNodeDetails
   {
   public:
-    AWS_GLUE_API TriggerNodeDetails();
+    AWS_GLUE_API TriggerNodeDetails() = default;
     AWS_GLUE_API TriggerNodeDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API TriggerNodeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The information of the trigger represented by the trigger node.</p>
      */
-    inline const Trigger& GetTrigger() const{ return m_trigger; }
+    inline const Trigger& GetTrigger() const { return m_trigger; }
     inline bool TriggerHasBeenSet() const { return m_triggerHasBeenSet; }
-    inline void SetTrigger(const Trigger& value) { m_triggerHasBeenSet = true; m_trigger = value; }
-    inline void SetTrigger(Trigger&& value) { m_triggerHasBeenSet = true; m_trigger = std::move(value); }
-    inline TriggerNodeDetails& WithTrigger(const Trigger& value) { SetTrigger(value); return *this;}
-    inline TriggerNodeDetails& WithTrigger(Trigger&& value) { SetTrigger(std::move(value)); return *this;}
+    template<typename TriggerT = Trigger>
+    void SetTrigger(TriggerT&& value) { m_triggerHasBeenSet = true; m_trigger = std::forward<TriggerT>(value); }
+    template<typename TriggerT = Trigger>
+    TriggerNodeDetails& WithTrigger(TriggerT&& value) { SetTrigger(std::forward<TriggerT>(value)); return *this;}
     ///@}
   private:
 

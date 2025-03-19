@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateNodeRegistrationScriptSdkResult::CreateNodeRegistrationScriptSdkResult()
-{
-}
-
 CreateNodeRegistrationScriptSdkResult::CreateNodeRegistrationScriptSdkResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateNodeRegistrationScriptSdkResult& CreateNodeRegistrationScriptSdkResult::op
   if(jsonValue.ValueExists("nodeRegistrationScript"))
   {
     m_nodeRegistrationScript = jsonValue.GetString("nodeRegistrationScript");
-
+    m_nodeRegistrationScriptHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

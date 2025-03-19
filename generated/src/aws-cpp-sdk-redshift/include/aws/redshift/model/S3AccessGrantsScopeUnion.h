@@ -32,7 +32,7 @@ namespace Model
   class S3AccessGrantsScopeUnion
   {
   public:
-    AWS_REDSHIFT_API S3AccessGrantsScopeUnion();
+    AWS_REDSHIFT_API S3AccessGrantsScopeUnion() = default;
     AWS_REDSHIFT_API S3AccessGrantsScopeUnion(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API S3AccessGrantsScopeUnion& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>The S3 Access Grants scope.</p>
      */
-    inline const ReadWriteAccess& GetReadWriteAccess() const{ return m_readWriteAccess; }
+    inline const ReadWriteAccess& GetReadWriteAccess() const { return m_readWriteAccess; }
     inline bool ReadWriteAccessHasBeenSet() const { return m_readWriteAccessHasBeenSet; }
-    inline void SetReadWriteAccess(const ReadWriteAccess& value) { m_readWriteAccessHasBeenSet = true; m_readWriteAccess = value; }
-    inline void SetReadWriteAccess(ReadWriteAccess&& value) { m_readWriteAccessHasBeenSet = true; m_readWriteAccess = std::move(value); }
-    inline S3AccessGrantsScopeUnion& WithReadWriteAccess(const ReadWriteAccess& value) { SetReadWriteAccess(value); return *this;}
-    inline S3AccessGrantsScopeUnion& WithReadWriteAccess(ReadWriteAccess&& value) { SetReadWriteAccess(std::move(value)); return *this;}
+    template<typename ReadWriteAccessT = ReadWriteAccess>
+    void SetReadWriteAccess(ReadWriteAccessT&& value) { m_readWriteAccessHasBeenSet = true; m_readWriteAccess = std::forward<ReadWriteAccessT>(value); }
+    template<typename ReadWriteAccessT = ReadWriteAccess>
+    S3AccessGrantsScopeUnion& WithReadWriteAccess(ReadWriteAccessT&& value) { SetReadWriteAccess(std::forward<ReadWriteAccessT>(value)); return *this;}
     ///@}
   private:
 

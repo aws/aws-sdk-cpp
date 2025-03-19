@@ -18,14 +18,7 @@ namespace Artifact
 namespace Model
 {
 
-AccountSettings::AccountSettings() : 
-    m_notificationSubscriptionStatus(NotificationSubscriptionStatus::NOT_SET),
-    m_notificationSubscriptionStatusHasBeenSet(false)
-{
-}
-
 AccountSettings::AccountSettings(JsonView jsonValue)
-  : AccountSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AccountSettings& AccountSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("notificationSubscriptionStatus"))
   {
     m_notificationSubscriptionStatus = NotificationSubscriptionStatusMapper::GetNotificationSubscriptionStatusForName(jsonValue.GetString("notificationSubscriptionStatus"));
-
     m_notificationSubscriptionStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

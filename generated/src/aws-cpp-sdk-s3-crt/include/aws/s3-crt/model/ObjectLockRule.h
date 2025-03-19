@@ -30,7 +30,7 @@ namespace Model
   class ObjectLockRule
   {
   public:
-    AWS_S3CRT_API ObjectLockRule();
+    AWS_S3CRT_API ObjectLockRule() = default;
     AWS_S3CRT_API ObjectLockRule(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API ObjectLockRule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,12 +45,12 @@ namespace Model
      * but you must select one. You cannot specify <code>Days</code> and
      * <code>Years</code> at the same time.</p>
      */
-    inline const DefaultRetention& GetDefaultRetention() const{ return m_defaultRetention; }
+    inline const DefaultRetention& GetDefaultRetention() const { return m_defaultRetention; }
     inline bool DefaultRetentionHasBeenSet() const { return m_defaultRetentionHasBeenSet; }
-    inline void SetDefaultRetention(const DefaultRetention& value) { m_defaultRetentionHasBeenSet = true; m_defaultRetention = value; }
-    inline void SetDefaultRetention(DefaultRetention&& value) { m_defaultRetentionHasBeenSet = true; m_defaultRetention = std::move(value); }
-    inline ObjectLockRule& WithDefaultRetention(const DefaultRetention& value) { SetDefaultRetention(value); return *this;}
-    inline ObjectLockRule& WithDefaultRetention(DefaultRetention&& value) { SetDefaultRetention(std::move(value)); return *this;}
+    template<typename DefaultRetentionT = DefaultRetention>
+    void SetDefaultRetention(DefaultRetentionT&& value) { m_defaultRetentionHasBeenSet = true; m_defaultRetention = std::forward<DefaultRetentionT>(value); }
+    template<typename DefaultRetentionT = DefaultRetention>
+    ObjectLockRule& WithDefaultRetention(DefaultRetentionT&& value) { SetDefaultRetention(std::forward<DefaultRetentionT>(value)); return *this;}
     ///@}
   private:
 

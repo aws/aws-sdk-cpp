@@ -32,7 +32,7 @@ namespace Model
   class EmbeddedSourceSettings
   {
   public:
-    AWS_MEDIACONVERT_API EmbeddedSourceSettings();
+    AWS_MEDIACONVERT_API EmbeddedSourceSettings() = default;
     AWS_MEDIACONVERT_API EmbeddedSourceSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API EmbeddedSourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * in two ways: it passes the 608 data through using the 608 compatibility bytes
      * fields of the 708 wrapper, and it also translates the 608 data into 708.
      */
-    inline const EmbeddedConvert608To708& GetConvert608To708() const{ return m_convert608To708; }
+    inline EmbeddedConvert608To708 GetConvert608To708() const { return m_convert608To708; }
     inline bool Convert608To708HasBeenSet() const { return m_convert608To708HasBeenSet; }
-    inline void SetConvert608To708(const EmbeddedConvert608To708& value) { m_convert608To708HasBeenSet = true; m_convert608To708 = value; }
-    inline void SetConvert608To708(EmbeddedConvert608To708&& value) { m_convert608To708HasBeenSet = true; m_convert608To708 = std::move(value); }
-    inline EmbeddedSourceSettings& WithConvert608To708(const EmbeddedConvert608To708& value) { SetConvert608To708(value); return *this;}
-    inline EmbeddedSourceSettings& WithConvert608To708(EmbeddedConvert608To708&& value) { SetConvert608To708(std::move(value)); return *this;}
+    inline void SetConvert608To708(EmbeddedConvert608To708 value) { m_convert608To708HasBeenSet = true; m_convert608To708 = value; }
+    inline EmbeddedSourceSettings& WithConvert608To708(EmbeddedConvert608To708 value) { SetConvert608To708(value); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * Specifies the 608/708 channel number within the video track from which to
      * extract captions. Unused for passthrough.
      */
-    inline int GetSource608ChannelNumber() const{ return m_source608ChannelNumber; }
+    inline int GetSource608ChannelNumber() const { return m_source608ChannelNumber; }
     inline bool Source608ChannelNumberHasBeenSet() const { return m_source608ChannelNumberHasBeenSet; }
     inline void SetSource608ChannelNumber(int value) { m_source608ChannelNumberHasBeenSet = true; m_source608ChannelNumber = value; }
     inline EmbeddedSourceSettings& WithSource608ChannelNumber(int value) { SetSource608ChannelNumber(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
      * Specifies the video track index used for extracting captions. The system only
      * supports one input video track, so this should always be set to '1'.
      */
-    inline int GetSource608TrackNumber() const{ return m_source608TrackNumber; }
+    inline int GetSource608TrackNumber() const { return m_source608TrackNumber; }
     inline bool Source608TrackNumberHasBeenSet() const { return m_source608TrackNumberHasBeenSet; }
     inline void SetSource608TrackNumber(int value) { m_source608TrackNumberHasBeenSet = true; m_source608TrackNumber = value; }
     inline EmbeddedSourceSettings& WithSource608TrackNumber(int value) { SetSource608TrackNumber(value); return *this;}
@@ -81,25 +79,23 @@ namespace Model
      * input. If you want the caption to continue onto your next input, disable this
      * setting.
      */
-    inline const EmbeddedTerminateCaptions& GetTerminateCaptions() const{ return m_terminateCaptions; }
+    inline EmbeddedTerminateCaptions GetTerminateCaptions() const { return m_terminateCaptions; }
     inline bool TerminateCaptionsHasBeenSet() const { return m_terminateCaptionsHasBeenSet; }
-    inline void SetTerminateCaptions(const EmbeddedTerminateCaptions& value) { m_terminateCaptionsHasBeenSet = true; m_terminateCaptions = value; }
-    inline void SetTerminateCaptions(EmbeddedTerminateCaptions&& value) { m_terminateCaptionsHasBeenSet = true; m_terminateCaptions = std::move(value); }
-    inline EmbeddedSourceSettings& WithTerminateCaptions(const EmbeddedTerminateCaptions& value) { SetTerminateCaptions(value); return *this;}
-    inline EmbeddedSourceSettings& WithTerminateCaptions(EmbeddedTerminateCaptions&& value) { SetTerminateCaptions(std::move(value)); return *this;}
+    inline void SetTerminateCaptions(EmbeddedTerminateCaptions value) { m_terminateCaptionsHasBeenSet = true; m_terminateCaptions = value; }
+    inline EmbeddedSourceSettings& WithTerminateCaptions(EmbeddedTerminateCaptions value) { SetTerminateCaptions(value); return *this;}
     ///@}
   private:
 
-    EmbeddedConvert608To708 m_convert608To708;
+    EmbeddedConvert608To708 m_convert608To708{EmbeddedConvert608To708::NOT_SET};
     bool m_convert608To708HasBeenSet = false;
 
-    int m_source608ChannelNumber;
+    int m_source608ChannelNumber{0};
     bool m_source608ChannelNumberHasBeenSet = false;
 
-    int m_source608TrackNumber;
+    int m_source608TrackNumber{0};
     bool m_source608TrackNumberHasBeenSet = false;
 
-    EmbeddedTerminateCaptions m_terminateCaptions;
+    EmbeddedTerminateCaptions m_terminateCaptions{EmbeddedTerminateCaptions::NOT_SET};
     bool m_terminateCaptionsHasBeenSet = false;
   };
 

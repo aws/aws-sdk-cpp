@@ -35,7 +35,7 @@ namespace Model
   class RestoreRequest
   {
   public:
-    AWS_S3CRT_API RestoreRequest();
+    AWS_S3CRT_API RestoreRequest() = default;
     AWS_S3CRT_API RestoreRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API RestoreRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,7 +48,7 @@ namespace Model
      * <code>OutputLocation</code>.</p> <p>The Days element is required for regular
      * restores, and must not be provided for select requests.</p>
      */
-    inline int GetDays() const{ return m_days; }
+    inline int GetDays() const { return m_days; }
     inline bool DaysHasBeenSet() const { return m_daysHasBeenSet; }
     inline void SetDays(int value) { m_daysHasBeenSet = true; m_days = value; }
     inline RestoreRequest& WithDays(int value) { SetDays(value); return *this;}
@@ -59,12 +59,12 @@ namespace Model
      * <p>S3 Glacier related parameters pertaining to this job. Do not use with
      * restores that specify <code>OutputLocation</code>.</p>
      */
-    inline const GlacierJobParameters& GetGlacierJobParameters() const{ return m_glacierJobParameters; }
+    inline const GlacierJobParameters& GetGlacierJobParameters() const { return m_glacierJobParameters; }
     inline bool GlacierJobParametersHasBeenSet() const { return m_glacierJobParametersHasBeenSet; }
-    inline void SetGlacierJobParameters(const GlacierJobParameters& value) { m_glacierJobParametersHasBeenSet = true; m_glacierJobParameters = value; }
-    inline void SetGlacierJobParameters(GlacierJobParameters&& value) { m_glacierJobParametersHasBeenSet = true; m_glacierJobParameters = std::move(value); }
-    inline RestoreRequest& WithGlacierJobParameters(const GlacierJobParameters& value) { SetGlacierJobParameters(value); return *this;}
-    inline RestoreRequest& WithGlacierJobParameters(GlacierJobParameters&& value) { SetGlacierJobParameters(std::move(value)); return *this;}
+    template<typename GlacierJobParametersT = GlacierJobParameters>
+    void SetGlacierJobParameters(GlacierJobParametersT&& value) { m_glacierJobParametersHasBeenSet = true; m_glacierJobParameters = std::forward<GlacierJobParametersT>(value); }
+    template<typename GlacierJobParametersT = GlacierJobParameters>
+    RestoreRequest& WithGlacierJobParameters(GlacierJobParametersT&& value) { SetGlacierJobParameters(std::forward<GlacierJobParametersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,38 +75,32 @@ namespace Model
      * href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
      * more</a> </p>  <p>Type of restore request.</p>
      */
-    inline const RestoreRequestType& GetType() const{ return m_type; }
+    inline RestoreRequestType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RestoreRequestType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RestoreRequestType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline RestoreRequest& WithType(const RestoreRequestType& value) { SetType(value); return *this;}
-    inline RestoreRequest& WithType(RestoreRequestType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RestoreRequestType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RestoreRequest& WithType(RestoreRequestType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Retrieval tier at which the restore will be processed.</p>
      */
-    inline const Tier& GetTier() const{ return m_tier; }
+    inline Tier GetTier() const { return m_tier; }
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
-    inline void SetTier(const Tier& value) { m_tierHasBeenSet = true; m_tier = value; }
-    inline void SetTier(Tier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
-    inline RestoreRequest& WithTier(const Tier& value) { SetTier(value); return *this;}
-    inline RestoreRequest& WithTier(Tier&& value) { SetTier(std::move(value)); return *this;}
+    inline void SetTier(Tier value) { m_tierHasBeenSet = true; m_tier = value; }
+    inline RestoreRequest& WithTier(Tier value) { SetTier(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The optional description for the job.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline RestoreRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline RestoreRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline RestoreRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    RestoreRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,37 +111,37 @@ namespace Model
      * href="http://aws.amazon.com/blogs/storage/how-to-optimize-querying-your-data-in-amazon-s3/">Learn
      * more</a> </p>  <p>Describes the parameters for Select job types.</p>
      */
-    inline const SelectParameters& GetSelectParameters() const{ return m_selectParameters; }
+    inline const SelectParameters& GetSelectParameters() const { return m_selectParameters; }
     inline bool SelectParametersHasBeenSet() const { return m_selectParametersHasBeenSet; }
-    inline void SetSelectParameters(const SelectParameters& value) { m_selectParametersHasBeenSet = true; m_selectParameters = value; }
-    inline void SetSelectParameters(SelectParameters&& value) { m_selectParametersHasBeenSet = true; m_selectParameters = std::move(value); }
-    inline RestoreRequest& WithSelectParameters(const SelectParameters& value) { SetSelectParameters(value); return *this;}
-    inline RestoreRequest& WithSelectParameters(SelectParameters&& value) { SetSelectParameters(std::move(value)); return *this;}
+    template<typename SelectParametersT = SelectParameters>
+    void SetSelectParameters(SelectParametersT&& value) { m_selectParametersHasBeenSet = true; m_selectParameters = std::forward<SelectParametersT>(value); }
+    template<typename SelectParametersT = SelectParameters>
+    RestoreRequest& WithSelectParameters(SelectParametersT&& value) { SetSelectParameters(std::forward<SelectParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes the location where the restore job's output is stored.</p>
      */
-    inline const OutputLocation& GetOutputLocation() const{ return m_outputLocation; }
+    inline const OutputLocation& GetOutputLocation() const { return m_outputLocation; }
     inline bool OutputLocationHasBeenSet() const { return m_outputLocationHasBeenSet; }
-    inline void SetOutputLocation(const OutputLocation& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
-    inline void SetOutputLocation(OutputLocation&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::move(value); }
-    inline RestoreRequest& WithOutputLocation(const OutputLocation& value) { SetOutputLocation(value); return *this;}
-    inline RestoreRequest& WithOutputLocation(OutputLocation&& value) { SetOutputLocation(std::move(value)); return *this;}
+    template<typename OutputLocationT = OutputLocation>
+    void SetOutputLocation(OutputLocationT&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::forward<OutputLocationT>(value); }
+    template<typename OutputLocationT = OutputLocation>
+    RestoreRequest& WithOutputLocation(OutputLocationT&& value) { SetOutputLocation(std::forward<OutputLocationT>(value)); return *this;}
     ///@}
   private:
 
-    int m_days;
+    int m_days{0};
     bool m_daysHasBeenSet = false;
 
     GlacierJobParameters m_glacierJobParameters;
     bool m_glacierJobParametersHasBeenSet = false;
 
-    RestoreRequestType m_type;
+    RestoreRequestType m_type{RestoreRequestType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    Tier m_tier;
+    Tier m_tier{Tier::NOT_SET};
     bool m_tierHasBeenSet = false;
 
     Aws::String m_description;

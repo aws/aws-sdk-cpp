@@ -19,7 +19,7 @@ namespace Model
   class PutRetentionConfigurationRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API PutRetentionConfigurationRequest();
+    AWS_CONFIGSERVICE_API PutRetentionConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,14 @@ namespace Model
      * <p>Number of days Config stores your historical information.</p> 
      * <p>Currently, only applicable to the configuration item history.</p> 
      */
-    inline int GetRetentionPeriodInDays() const{ return m_retentionPeriodInDays; }
+    inline int GetRetentionPeriodInDays() const { return m_retentionPeriodInDays; }
     inline bool RetentionPeriodInDaysHasBeenSet() const { return m_retentionPeriodInDaysHasBeenSet; }
     inline void SetRetentionPeriodInDays(int value) { m_retentionPeriodInDaysHasBeenSet = true; m_retentionPeriodInDays = value; }
     inline PutRetentionConfigurationRequest& WithRetentionPeriodInDays(int value) { SetRetentionPeriodInDays(value); return *this;}
     ///@}
   private:
 
-    int m_retentionPeriodInDays;
+    int m_retentionPeriodInDays{0};
     bool m_retentionPeriodInDaysHasBeenSet = false;
   };
 

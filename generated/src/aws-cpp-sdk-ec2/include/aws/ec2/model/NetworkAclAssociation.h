@@ -32,7 +32,7 @@ namespace Model
   class NetworkAclAssociation
   {
   public:
-    AWS_EC2_API NetworkAclAssociation();
+    AWS_EC2_API NetworkAclAssociation() = default;
     AWS_EC2_API NetworkAclAssociation(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API NetworkAclAssociation& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,42 +44,36 @@ namespace Model
     /**
      * <p>The ID of the association between a network ACL and a subnet.</p>
      */
-    inline const Aws::String& GetNetworkAclAssociationId() const{ return m_networkAclAssociationId; }
+    inline const Aws::String& GetNetworkAclAssociationId() const { return m_networkAclAssociationId; }
     inline bool NetworkAclAssociationIdHasBeenSet() const { return m_networkAclAssociationIdHasBeenSet; }
-    inline void SetNetworkAclAssociationId(const Aws::String& value) { m_networkAclAssociationIdHasBeenSet = true; m_networkAclAssociationId = value; }
-    inline void SetNetworkAclAssociationId(Aws::String&& value) { m_networkAclAssociationIdHasBeenSet = true; m_networkAclAssociationId = std::move(value); }
-    inline void SetNetworkAclAssociationId(const char* value) { m_networkAclAssociationIdHasBeenSet = true; m_networkAclAssociationId.assign(value); }
-    inline NetworkAclAssociation& WithNetworkAclAssociationId(const Aws::String& value) { SetNetworkAclAssociationId(value); return *this;}
-    inline NetworkAclAssociation& WithNetworkAclAssociationId(Aws::String&& value) { SetNetworkAclAssociationId(std::move(value)); return *this;}
-    inline NetworkAclAssociation& WithNetworkAclAssociationId(const char* value) { SetNetworkAclAssociationId(value); return *this;}
+    template<typename NetworkAclAssociationIdT = Aws::String>
+    void SetNetworkAclAssociationId(NetworkAclAssociationIdT&& value) { m_networkAclAssociationIdHasBeenSet = true; m_networkAclAssociationId = std::forward<NetworkAclAssociationIdT>(value); }
+    template<typename NetworkAclAssociationIdT = Aws::String>
+    NetworkAclAssociation& WithNetworkAclAssociationId(NetworkAclAssociationIdT&& value) { SetNetworkAclAssociationId(std::forward<NetworkAclAssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the network ACL.</p>
      */
-    inline const Aws::String& GetNetworkAclId() const{ return m_networkAclId; }
+    inline const Aws::String& GetNetworkAclId() const { return m_networkAclId; }
     inline bool NetworkAclIdHasBeenSet() const { return m_networkAclIdHasBeenSet; }
-    inline void SetNetworkAclId(const Aws::String& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = value; }
-    inline void SetNetworkAclId(Aws::String&& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = std::move(value); }
-    inline void SetNetworkAclId(const char* value) { m_networkAclIdHasBeenSet = true; m_networkAclId.assign(value); }
-    inline NetworkAclAssociation& WithNetworkAclId(const Aws::String& value) { SetNetworkAclId(value); return *this;}
-    inline NetworkAclAssociation& WithNetworkAclId(Aws::String&& value) { SetNetworkAclId(std::move(value)); return *this;}
-    inline NetworkAclAssociation& WithNetworkAclId(const char* value) { SetNetworkAclId(value); return *this;}
+    template<typename NetworkAclIdT = Aws::String>
+    void SetNetworkAclId(NetworkAclIdT&& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = std::forward<NetworkAclIdT>(value); }
+    template<typename NetworkAclIdT = Aws::String>
+    NetworkAclAssociation& WithNetworkAclId(NetworkAclIdT&& value) { SetNetworkAclId(std::forward<NetworkAclIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the subnet.</p>
      */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+    inline const Aws::String& GetSubnetId() const { return m_subnetId; }
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-    inline NetworkAclAssociation& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-    inline NetworkAclAssociation& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-    inline NetworkAclAssociation& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    template<typename SubnetIdT = Aws::String>
+    void SetSubnetId(SubnetIdT&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::forward<SubnetIdT>(value); }
+    template<typename SubnetIdT = Aws::String>
+    NetworkAclAssociation& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
     ///@}
   private:
 

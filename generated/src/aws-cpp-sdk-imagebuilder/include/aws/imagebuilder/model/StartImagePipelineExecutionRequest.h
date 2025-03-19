@@ -22,7 +22,7 @@ namespace Model
   class StartImagePipelineExecutionRequest : public ImagebuilderRequest
   {
   public:
-    AWS_IMAGEBUILDER_API StartImagePipelineExecutionRequest();
+    AWS_IMAGEBUILDER_API StartImagePipelineExecutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the image pipeline that you want to
      * manually invoke.</p>
      */
-    inline const Aws::String& GetImagePipelineArn() const{ return m_imagePipelineArn; }
+    inline const Aws::String& GetImagePipelineArn() const { return m_imagePipelineArn; }
     inline bool ImagePipelineArnHasBeenSet() const { return m_imagePipelineArnHasBeenSet; }
-    inline void SetImagePipelineArn(const Aws::String& value) { m_imagePipelineArnHasBeenSet = true; m_imagePipelineArn = value; }
-    inline void SetImagePipelineArn(Aws::String&& value) { m_imagePipelineArnHasBeenSet = true; m_imagePipelineArn = std::move(value); }
-    inline void SetImagePipelineArn(const char* value) { m_imagePipelineArnHasBeenSet = true; m_imagePipelineArn.assign(value); }
-    inline StartImagePipelineExecutionRequest& WithImagePipelineArn(const Aws::String& value) { SetImagePipelineArn(value); return *this;}
-    inline StartImagePipelineExecutionRequest& WithImagePipelineArn(Aws::String&& value) { SetImagePipelineArn(std::move(value)); return *this;}
-    inline StartImagePipelineExecutionRequest& WithImagePipelineArn(const char* value) { SetImagePipelineArn(value); return *this;}
+    template<typename ImagePipelineArnT = Aws::String>
+    void SetImagePipelineArn(ImagePipelineArnT&& value) { m_imagePipelineArnHasBeenSet = true; m_imagePipelineArn = std::forward<ImagePipelineArnT>(value); }
+    template<typename ImagePipelineArnT = Aws::String>
+    StartImagePipelineExecutionRequest& WithImagePipelineArn(ImagePipelineArnT&& value) { SetImagePipelineArn(std::forward<ImagePipelineArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * idempotency</a> in the <i>Amazon EC2 API Reference</i>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline StartImagePipelineExecutionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline StartImagePipelineExecutionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline StartImagePipelineExecutionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    StartImagePipelineExecutionRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

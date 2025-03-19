@@ -12,14 +12,6 @@ using namespace Aws::PI::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeletePerformanceAnalysisReportRequest::DeletePerformanceAnalysisReportRequest() : 
-    m_serviceType(ServiceType::NOT_SET),
-    m_serviceTypeHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_analysisReportIdHasBeenSet(false)
-{
-}
-
 Aws::String DeletePerformanceAnalysisReportRequest::SerializePayload() const
 {
   JsonValue payload;

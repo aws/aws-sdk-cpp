@@ -36,7 +36,7 @@ namespace Model
   class EvidenceFinderEnablement
   {
   public:
-    AWS_AUDITMANAGER_API EvidenceFinderEnablement();
+    AWS_AUDITMANAGER_API EvidenceFinderEnablement() = default;
     AWS_AUDITMANAGER_API EvidenceFinderEnablement(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API EvidenceFinderEnablement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * used by evidence finder. The event data store is the lake of evidence data that
      * evidence finder runs queries against.</p>
      */
-    inline const Aws::String& GetEventDataStoreArn() const{ return m_eventDataStoreArn; }
+    inline const Aws::String& GetEventDataStoreArn() const { return m_eventDataStoreArn; }
     inline bool EventDataStoreArnHasBeenSet() const { return m_eventDataStoreArnHasBeenSet; }
-    inline void SetEventDataStoreArn(const Aws::String& value) { m_eventDataStoreArnHasBeenSet = true; m_eventDataStoreArn = value; }
-    inline void SetEventDataStoreArn(Aws::String&& value) { m_eventDataStoreArnHasBeenSet = true; m_eventDataStoreArn = std::move(value); }
-    inline void SetEventDataStoreArn(const char* value) { m_eventDataStoreArnHasBeenSet = true; m_eventDataStoreArn.assign(value); }
-    inline EvidenceFinderEnablement& WithEventDataStoreArn(const Aws::String& value) { SetEventDataStoreArn(value); return *this;}
-    inline EvidenceFinderEnablement& WithEventDataStoreArn(Aws::String&& value) { SetEventDataStoreArn(std::move(value)); return *this;}
-    inline EvidenceFinderEnablement& WithEventDataStoreArn(const char* value) { SetEventDataStoreArn(value); return *this;}
+    template<typename EventDataStoreArnT = Aws::String>
+    void SetEventDataStoreArn(EventDataStoreArnT&& value) { m_eventDataStoreArnHasBeenSet = true; m_eventDataStoreArn = std::forward<EventDataStoreArnT>(value); }
+    template<typename EventDataStoreArnT = Aws::String>
+    EvidenceFinderEnablement& WithEventDataStoreArn(EventDataStoreArnT&& value) { SetEventDataStoreArn(std::forward<EventDataStoreArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +73,10 @@ namespace Model
      * evidence finder and the event data store has been deleted. You can't re-enable
      * evidence finder after this point.</p> </li> </ul>
      */
-    inline const EvidenceFinderEnablementStatus& GetEnablementStatus() const{ return m_enablementStatus; }
+    inline EvidenceFinderEnablementStatus GetEnablementStatus() const { return m_enablementStatus; }
     inline bool EnablementStatusHasBeenSet() const { return m_enablementStatusHasBeenSet; }
-    inline void SetEnablementStatus(const EvidenceFinderEnablementStatus& value) { m_enablementStatusHasBeenSet = true; m_enablementStatus = value; }
-    inline void SetEnablementStatus(EvidenceFinderEnablementStatus&& value) { m_enablementStatusHasBeenSet = true; m_enablementStatus = std::move(value); }
-    inline EvidenceFinderEnablement& WithEnablementStatus(const EvidenceFinderEnablementStatus& value) { SetEnablementStatus(value); return *this;}
-    inline EvidenceFinderEnablement& WithEnablementStatus(EvidenceFinderEnablementStatus&& value) { SetEnablementStatus(std::move(value)); return *this;}
+    inline void SetEnablementStatus(EvidenceFinderEnablementStatus value) { m_enablementStatusHasBeenSet = true; m_enablementStatus = value; }
+    inline EvidenceFinderEnablement& WithEnablementStatus(EvidenceFinderEnablementStatus value) { SetEnablementStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -95,12 +91,10 @@ namespace Model
      * </p> </li> <li> <p> <code>COMPLETED</code> means that the backfill is complete.
      * All of your past evidence is now queryable. </p> </li> </ul>
      */
-    inline const EvidenceFinderBackfillStatus& GetBackfillStatus() const{ return m_backfillStatus; }
+    inline EvidenceFinderBackfillStatus GetBackfillStatus() const { return m_backfillStatus; }
     inline bool BackfillStatusHasBeenSet() const { return m_backfillStatusHasBeenSet; }
-    inline void SetBackfillStatus(const EvidenceFinderBackfillStatus& value) { m_backfillStatusHasBeenSet = true; m_backfillStatus = value; }
-    inline void SetBackfillStatus(EvidenceFinderBackfillStatus&& value) { m_backfillStatusHasBeenSet = true; m_backfillStatus = std::move(value); }
-    inline EvidenceFinderEnablement& WithBackfillStatus(const EvidenceFinderBackfillStatus& value) { SetBackfillStatus(value); return *this;}
-    inline EvidenceFinderEnablement& WithBackfillStatus(EvidenceFinderBackfillStatus&& value) { SetBackfillStatus(std::move(value)); return *this;}
+    inline void SetBackfillStatus(EvidenceFinderBackfillStatus value) { m_backfillStatusHasBeenSet = true; m_backfillStatus = value; }
+    inline EvidenceFinderEnablement& WithBackfillStatus(EvidenceFinderBackfillStatus value) { SetBackfillStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -108,24 +102,22 @@ namespace Model
      * <p>Represents any errors that occurred when enabling or disabling evidence
      * finder. </p>
      */
-    inline const Aws::String& GetError() const{ return m_error; }
+    inline const Aws::String& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const Aws::String& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(Aws::String&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline void SetError(const char* value) { m_errorHasBeenSet = true; m_error.assign(value); }
-    inline EvidenceFinderEnablement& WithError(const Aws::String& value) { SetError(value); return *this;}
-    inline EvidenceFinderEnablement& WithError(Aws::String&& value) { SetError(std::move(value)); return *this;}
-    inline EvidenceFinderEnablement& WithError(const char* value) { SetError(value); return *this;}
+    template<typename ErrorT = Aws::String>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = Aws::String>
+    EvidenceFinderEnablement& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_eventDataStoreArn;
     bool m_eventDataStoreArnHasBeenSet = false;
 
-    EvidenceFinderEnablementStatus m_enablementStatus;
+    EvidenceFinderEnablementStatus m_enablementStatus{EvidenceFinderEnablementStatus::NOT_SET};
     bool m_enablementStatusHasBeenSet = false;
 
-    EvidenceFinderBackfillStatus m_backfillStatus;
+    EvidenceFinderBackfillStatus m_backfillStatus{EvidenceFinderBackfillStatus::NOT_SET};
     bool m_backfillStatusHasBeenSet = false;
 
     Aws::String m_error;

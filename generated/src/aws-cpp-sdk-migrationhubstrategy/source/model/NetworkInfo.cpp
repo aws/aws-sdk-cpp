@@ -18,16 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-NetworkInfo::NetworkInfo() : 
-    m_interfaceNameHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_macAddressHasBeenSet(false),
-    m_netMaskHasBeenSet(false)
-{
-}
-
 NetworkInfo::NetworkInfo(JsonView jsonValue)
-  : NetworkInfo()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ NetworkInfo& NetworkInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("interfaceName"))
   {
     m_interfaceName = jsonValue.GetString("interfaceName");
-
     m_interfaceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipAddress"))
   {
     m_ipAddress = jsonValue.GetString("ipAddress");
-
     m_ipAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("macAddress"))
   {
     m_macAddress = jsonValue.GetString("macAddress");
-
     m_macAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("netMask"))
   {
     m_netMask = jsonValue.GetString("netMask");
-
     m_netMaskHasBeenSet = true;
   }
-
   return *this;
 }
 

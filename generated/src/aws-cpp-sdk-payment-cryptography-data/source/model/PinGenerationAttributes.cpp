@@ -18,18 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-PinGenerationAttributes::PinGenerationAttributes() : 
-    m_visaPinHasBeenSet(false),
-    m_visaPinVerificationValueHasBeenSet(false),
-    m_ibm3624PinOffsetHasBeenSet(false),
-    m_ibm3624NaturalPinHasBeenSet(false),
-    m_ibm3624RandomPinHasBeenSet(false),
-    m_ibm3624PinFromOffsetHasBeenSet(false)
-{
-}
-
 PinGenerationAttributes::PinGenerationAttributes(JsonView jsonValue)
-  : PinGenerationAttributes()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ PinGenerationAttributes& PinGenerationAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VisaPin"))
   {
     m_visaPin = jsonValue.GetObject("VisaPin");
-
     m_visaPinHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisaPinVerificationValue"))
   {
     m_visaPinVerificationValue = jsonValue.GetObject("VisaPinVerificationValue");
-
     m_visaPinVerificationValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ibm3624PinOffset"))
   {
     m_ibm3624PinOffset = jsonValue.GetObject("Ibm3624PinOffset");
-
     m_ibm3624PinOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ibm3624NaturalPin"))
   {
     m_ibm3624NaturalPin = jsonValue.GetObject("Ibm3624NaturalPin");
-
     m_ibm3624NaturalPinHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ibm3624RandomPin"))
   {
     m_ibm3624RandomPin = jsonValue.GetObject("Ibm3624RandomPin");
-
     m_ibm3624RandomPinHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ibm3624PinFromOffset"))
   {
     m_ibm3624PinFromOffset = jsonValue.GetObject("Ibm3624PinFromOffset");
-
     m_ibm3624PinFromOffsetHasBeenSet = true;
   }
-
   return *this;
 }
 

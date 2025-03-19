@@ -13,16 +13,6 @@ using namespace Aws::RolesAnywhere::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportCrlRequest::ImportCrlRequest() : 
-    m_crlDataHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_trustAnchorArnHasBeenSet(false)
-{
-}
-
 Aws::String ImportCrlRequest::SerializePayload() const
 {
   JsonValue payload;

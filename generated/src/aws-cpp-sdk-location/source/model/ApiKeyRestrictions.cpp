@@ -18,15 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-ApiKeyRestrictions::ApiKeyRestrictions() : 
-    m_allowActionsHasBeenSet(false),
-    m_allowResourcesHasBeenSet(false),
-    m_allowReferersHasBeenSet(false)
-{
-}
-
 ApiKeyRestrictions::ApiKeyRestrictions(JsonView jsonValue)
-  : ApiKeyRestrictions()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ ApiKeyRestrictions& ApiKeyRestrictions::operator =(JsonView jsonValue)
     }
     m_allowActionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowResources"))
   {
     Aws::Utils::Array<JsonView> allowResourcesJsonList = jsonValue.GetArray("AllowResources");
@@ -52,7 +43,6 @@ ApiKeyRestrictions& ApiKeyRestrictions::operator =(JsonView jsonValue)
     }
     m_allowResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowReferers"))
   {
     Aws::Utils::Array<JsonView> allowReferersJsonList = jsonValue.GetArray("AllowReferers");
@@ -62,7 +52,6 @@ ApiKeyRestrictions& ApiKeyRestrictions::operator =(JsonView jsonValue)
     }
     m_allowReferersHasBeenSet = true;
   }
-
   return *this;
 }
 

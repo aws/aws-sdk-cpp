@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEnvironmentManagedActionsResult::DescribeEnvironmentManagedActionsResult()
-{
-}
-
 DescribeEnvironmentManagedActionsResult::DescribeEnvironmentManagedActionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ DescribeEnvironmentManagedActionsResult& DescribeEnvironmentManagedActionsResult
     if(!managedActionsNode.IsNull())
     {
       XmlNode managedActionsMember = managedActionsNode.FirstChild("member");
+      m_managedActionsHasBeenSet = !managedActionsMember.IsNull();
       while(!managedActionsMember.IsNull())
       {
         m_managedActions.push_back(managedActionsMember);
         managedActionsMember = managedActionsMember.NextNode("member");
       }
 
+      m_managedActionsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticBeanstalk::Model::DescribeEnvironmentManagedActionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

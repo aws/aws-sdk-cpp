@@ -27,7 +27,7 @@ namespace Model
   class DeleteApprovalRuleTemplateResult
   {
   public:
-    AWS_CODECOMMIT_API DeleteApprovalRuleTemplateResult();
+    AWS_CODECOMMIT_API DeleteApprovalRuleTemplateResult() = default;
     AWS_CODECOMMIT_API DeleteApprovalRuleTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECOMMIT_API DeleteApprovalRuleTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The system-generated ID of the deleted approval rule template. If the
      * template has been previously deleted, the only response is a 200 OK.</p>
      */
-    inline const Aws::String& GetApprovalRuleTemplateId() const{ return m_approvalRuleTemplateId; }
-    inline void SetApprovalRuleTemplateId(const Aws::String& value) { m_approvalRuleTemplateId = value; }
-    inline void SetApprovalRuleTemplateId(Aws::String&& value) { m_approvalRuleTemplateId = std::move(value); }
-    inline void SetApprovalRuleTemplateId(const char* value) { m_approvalRuleTemplateId.assign(value); }
-    inline DeleteApprovalRuleTemplateResult& WithApprovalRuleTemplateId(const Aws::String& value) { SetApprovalRuleTemplateId(value); return *this;}
-    inline DeleteApprovalRuleTemplateResult& WithApprovalRuleTemplateId(Aws::String&& value) { SetApprovalRuleTemplateId(std::move(value)); return *this;}
-    inline DeleteApprovalRuleTemplateResult& WithApprovalRuleTemplateId(const char* value) { SetApprovalRuleTemplateId(value); return *this;}
+    inline const Aws::String& GetApprovalRuleTemplateId() const { return m_approvalRuleTemplateId; }
+    template<typename ApprovalRuleTemplateIdT = Aws::String>
+    void SetApprovalRuleTemplateId(ApprovalRuleTemplateIdT&& value) { m_approvalRuleTemplateIdHasBeenSet = true; m_approvalRuleTemplateId = std::forward<ApprovalRuleTemplateIdT>(value); }
+    template<typename ApprovalRuleTemplateIdT = Aws::String>
+    DeleteApprovalRuleTemplateResult& WithApprovalRuleTemplateId(ApprovalRuleTemplateIdT&& value) { SetApprovalRuleTemplateId(std::forward<ApprovalRuleTemplateIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteApprovalRuleTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteApprovalRuleTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteApprovalRuleTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteApprovalRuleTemplateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_approvalRuleTemplateId;
+    bool m_approvalRuleTemplateIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

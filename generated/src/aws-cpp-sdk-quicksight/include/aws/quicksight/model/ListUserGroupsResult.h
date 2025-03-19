@@ -29,7 +29,7 @@ namespace Model
   class ListUserGroupsResult
   {
   public:
-    AWS_QUICKSIGHT_API ListUserGroupsResult();
+    AWS_QUICKSIGHT_API ListUserGroupsResult() = default;
     AWS_QUICKSIGHT_API ListUserGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API ListUserGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,56 +38,56 @@ namespace Model
     /**
      * <p>The list of groups the user is a member of.</p>
      */
-    inline const Aws::Vector<Group>& GetGroupList() const{ return m_groupList; }
-    inline void SetGroupList(const Aws::Vector<Group>& value) { m_groupList = value; }
-    inline void SetGroupList(Aws::Vector<Group>&& value) { m_groupList = std::move(value); }
-    inline ListUserGroupsResult& WithGroupList(const Aws::Vector<Group>& value) { SetGroupList(value); return *this;}
-    inline ListUserGroupsResult& WithGroupList(Aws::Vector<Group>&& value) { SetGroupList(std::move(value)); return *this;}
-    inline ListUserGroupsResult& AddGroupList(const Group& value) { m_groupList.push_back(value); return *this; }
-    inline ListUserGroupsResult& AddGroupList(Group&& value) { m_groupList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Group>& GetGroupList() const { return m_groupList; }
+    template<typename GroupListT = Aws::Vector<Group>>
+    void SetGroupList(GroupListT&& value) { m_groupListHasBeenSet = true; m_groupList = std::forward<GroupListT>(value); }
+    template<typename GroupListT = Aws::Vector<Group>>
+    ListUserGroupsResult& WithGroupList(GroupListT&& value) { SetGroupList(std::forward<GroupListT>(value)); return *this;}
+    template<typename GroupListT = Group>
+    ListUserGroupsResult& AddGroupList(GroupListT&& value) { m_groupListHasBeenSet = true; m_groupList.emplace_back(std::forward<GroupListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A pagination token that can be used in a subsequent request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListUserGroupsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListUserGroupsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListUserGroupsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListUserGroupsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListUserGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListUserGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListUserGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListUserGroupsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline ListUserGroupsResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<Group> m_groupList;
+    bool m_groupListHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

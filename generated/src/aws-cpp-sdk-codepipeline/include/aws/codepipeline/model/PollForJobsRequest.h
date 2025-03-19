@@ -27,7 +27,7 @@ namespace Model
   class PollForJobsRequest : public CodePipelineRequest
   {
   public:
-    AWS_CODEPIPELINE_API PollForJobsRequest();
+    AWS_CODEPIPELINE_API PollForJobsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,19 +44,19 @@ namespace Model
     /**
      * <p>Represents information about an action type.</p>
      */
-    inline const ActionTypeId& GetActionTypeId() const{ return m_actionTypeId; }
+    inline const ActionTypeId& GetActionTypeId() const { return m_actionTypeId; }
     inline bool ActionTypeIdHasBeenSet() const { return m_actionTypeIdHasBeenSet; }
-    inline void SetActionTypeId(const ActionTypeId& value) { m_actionTypeIdHasBeenSet = true; m_actionTypeId = value; }
-    inline void SetActionTypeId(ActionTypeId&& value) { m_actionTypeIdHasBeenSet = true; m_actionTypeId = std::move(value); }
-    inline PollForJobsRequest& WithActionTypeId(const ActionTypeId& value) { SetActionTypeId(value); return *this;}
-    inline PollForJobsRequest& WithActionTypeId(ActionTypeId&& value) { SetActionTypeId(std::move(value)); return *this;}
+    template<typename ActionTypeIdT = ActionTypeId>
+    void SetActionTypeId(ActionTypeIdT&& value) { m_actionTypeIdHasBeenSet = true; m_actionTypeId = std::forward<ActionTypeIdT>(value); }
+    template<typename ActionTypeIdT = ActionTypeId>
+    PollForJobsRequest& WithActionTypeId(ActionTypeIdT&& value) { SetActionTypeId(std::forward<ActionTypeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of jobs to return in a poll for jobs call.</p>
      */
-    inline int GetMaxBatchSize() const{ return m_maxBatchSize; }
+    inline int GetMaxBatchSize() const { return m_maxBatchSize; }
     inline bool MaxBatchSizeHasBeenSet() const { return m_maxBatchSizeHasBeenSet; }
     inline void SetMaxBatchSize(int value) { m_maxBatchSizeHasBeenSet = true; m_maxBatchSize = value; }
     inline PollForJobsRequest& WithMaxBatchSize(int value) { SetMaxBatchSize(value); return *this;}
@@ -69,26 +69,23 @@ namespace Model
      * queryable property, you must supply that property as a key in the map. Only jobs
      * whose action configuration matches the mapped value are returned.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetQueryParam() const{ return m_queryParam; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetQueryParam() const { return m_queryParam; }
     inline bool QueryParamHasBeenSet() const { return m_queryParamHasBeenSet; }
-    inline void SetQueryParam(const Aws::Map<Aws::String, Aws::String>& value) { m_queryParamHasBeenSet = true; m_queryParam = value; }
-    inline void SetQueryParam(Aws::Map<Aws::String, Aws::String>&& value) { m_queryParamHasBeenSet = true; m_queryParam = std::move(value); }
-    inline PollForJobsRequest& WithQueryParam(const Aws::Map<Aws::String, Aws::String>& value) { SetQueryParam(value); return *this;}
-    inline PollForJobsRequest& WithQueryParam(Aws::Map<Aws::String, Aws::String>&& value) { SetQueryParam(std::move(value)); return *this;}
-    inline PollForJobsRequest& AddQueryParam(const Aws::String& key, const Aws::String& value) { m_queryParamHasBeenSet = true; m_queryParam.emplace(key, value); return *this; }
-    inline PollForJobsRequest& AddQueryParam(Aws::String&& key, const Aws::String& value) { m_queryParamHasBeenSet = true; m_queryParam.emplace(std::move(key), value); return *this; }
-    inline PollForJobsRequest& AddQueryParam(const Aws::String& key, Aws::String&& value) { m_queryParamHasBeenSet = true; m_queryParam.emplace(key, std::move(value)); return *this; }
-    inline PollForJobsRequest& AddQueryParam(Aws::String&& key, Aws::String&& value) { m_queryParamHasBeenSet = true; m_queryParam.emplace(std::move(key), std::move(value)); return *this; }
-    inline PollForJobsRequest& AddQueryParam(const char* key, Aws::String&& value) { m_queryParamHasBeenSet = true; m_queryParam.emplace(key, std::move(value)); return *this; }
-    inline PollForJobsRequest& AddQueryParam(Aws::String&& key, const char* value) { m_queryParamHasBeenSet = true; m_queryParam.emplace(std::move(key), value); return *this; }
-    inline PollForJobsRequest& AddQueryParam(const char* key, const char* value) { m_queryParamHasBeenSet = true; m_queryParam.emplace(key, value); return *this; }
+    template<typename QueryParamT = Aws::Map<Aws::String, Aws::String>>
+    void SetQueryParam(QueryParamT&& value) { m_queryParamHasBeenSet = true; m_queryParam = std::forward<QueryParamT>(value); }
+    template<typename QueryParamT = Aws::Map<Aws::String, Aws::String>>
+    PollForJobsRequest& WithQueryParam(QueryParamT&& value) { SetQueryParam(std::forward<QueryParamT>(value)); return *this;}
+    template<typename QueryParamKeyT = Aws::String, typename QueryParamValueT = Aws::String>
+    PollForJobsRequest& AddQueryParam(QueryParamKeyT&& key, QueryParamValueT&& value) {
+      m_queryParamHasBeenSet = true; m_queryParam.emplace(std::forward<QueryParamKeyT>(key), std::forward<QueryParamValueT>(value)); return *this;
+    }
     ///@}
   private:
 
     ActionTypeId m_actionTypeId;
     bool m_actionTypeIdHasBeenSet = false;
 
-    int m_maxBatchSize;
+    int m_maxBatchSize{0};
     bool m_maxBatchSizeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_queryParam;

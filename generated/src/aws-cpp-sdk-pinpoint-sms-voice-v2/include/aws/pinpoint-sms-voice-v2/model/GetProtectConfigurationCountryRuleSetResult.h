@@ -30,7 +30,7 @@ namespace Model
   class GetProtectConfigurationCountryRuleSetResult
   {
   public:
-    AWS_PINPOINTSMSVOICEV2_API GetProtectConfigurationCountryRuleSetResult();
+    AWS_PINPOINTSMSVOICEV2_API GetProtectConfigurationCountryRuleSetResult() = default;
     AWS_PINPOINTSMSVOICEV2_API GetProtectConfigurationCountryRuleSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINTSMSVOICEV2_API GetProtectConfigurationCountryRuleSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,26 +39,22 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the protect configuration.</p>
      */
-    inline const Aws::String& GetProtectConfigurationArn() const{ return m_protectConfigurationArn; }
-    inline void SetProtectConfigurationArn(const Aws::String& value) { m_protectConfigurationArn = value; }
-    inline void SetProtectConfigurationArn(Aws::String&& value) { m_protectConfigurationArn = std::move(value); }
-    inline void SetProtectConfigurationArn(const char* value) { m_protectConfigurationArn.assign(value); }
-    inline GetProtectConfigurationCountryRuleSetResult& WithProtectConfigurationArn(const Aws::String& value) { SetProtectConfigurationArn(value); return *this;}
-    inline GetProtectConfigurationCountryRuleSetResult& WithProtectConfigurationArn(Aws::String&& value) { SetProtectConfigurationArn(std::move(value)); return *this;}
-    inline GetProtectConfigurationCountryRuleSetResult& WithProtectConfigurationArn(const char* value) { SetProtectConfigurationArn(value); return *this;}
+    inline const Aws::String& GetProtectConfigurationArn() const { return m_protectConfigurationArn; }
+    template<typename ProtectConfigurationArnT = Aws::String>
+    void SetProtectConfigurationArn(ProtectConfigurationArnT&& value) { m_protectConfigurationArnHasBeenSet = true; m_protectConfigurationArn = std::forward<ProtectConfigurationArnT>(value); }
+    template<typename ProtectConfigurationArnT = Aws::String>
+    GetProtectConfigurationCountryRuleSetResult& WithProtectConfigurationArn(ProtectConfigurationArnT&& value) { SetProtectConfigurationArn(std::forward<ProtectConfigurationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the protect configuration.</p>
      */
-    inline const Aws::String& GetProtectConfigurationId() const{ return m_protectConfigurationId; }
-    inline void SetProtectConfigurationId(const Aws::String& value) { m_protectConfigurationId = value; }
-    inline void SetProtectConfigurationId(Aws::String&& value) { m_protectConfigurationId = std::move(value); }
-    inline void SetProtectConfigurationId(const char* value) { m_protectConfigurationId.assign(value); }
-    inline GetProtectConfigurationCountryRuleSetResult& WithProtectConfigurationId(const Aws::String& value) { SetProtectConfigurationId(value); return *this;}
-    inline GetProtectConfigurationCountryRuleSetResult& WithProtectConfigurationId(Aws::String&& value) { SetProtectConfigurationId(std::move(value)); return *this;}
-    inline GetProtectConfigurationCountryRuleSetResult& WithProtectConfigurationId(const char* value) { SetProtectConfigurationId(value); return *this;}
+    inline const Aws::String& GetProtectConfigurationId() const { return m_protectConfigurationId; }
+    template<typename ProtectConfigurationIdT = Aws::String>
+    void SetProtectConfigurationId(ProtectConfigurationIdT&& value) { m_protectConfigurationIdHasBeenSet = true; m_protectConfigurationId = std::forward<ProtectConfigurationIdT>(value); }
+    template<typename ProtectConfigurationIdT = Aws::String>
+    GetProtectConfigurationCountryRuleSetResult& WithProtectConfigurationId(ProtectConfigurationIdT&& value) { SetProtectConfigurationId(std::forward<ProtectConfigurationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,11 +62,9 @@ namespace Model
      * <p>The capability type associated with the returned
      * ProtectConfigurationCountryRuleSetInformation objects.</p>
      */
-    inline const NumberCapability& GetNumberCapability() const{ return m_numberCapability; }
-    inline void SetNumberCapability(const NumberCapability& value) { m_numberCapability = value; }
-    inline void SetNumberCapability(NumberCapability&& value) { m_numberCapability = std::move(value); }
-    inline GetProtectConfigurationCountryRuleSetResult& WithNumberCapability(const NumberCapability& value) { SetNumberCapability(value); return *this;}
-    inline GetProtectConfigurationCountryRuleSetResult& WithNumberCapability(NumberCapability&& value) { SetNumberCapability(std::move(value)); return *this;}
+    inline NumberCapability GetNumberCapability() const { return m_numberCapability; }
+    inline void SetNumberCapability(NumberCapability value) { m_numberCapabilityHasBeenSet = true; m_numberCapability = value; }
+    inline GetProtectConfigurationCountryRuleSetResult& WithNumberCapability(NumberCapability value) { SetNumberCapability(value); return *this;}
     ///@}
 
     ///@{
@@ -82,40 +76,41 @@ namespace Model
      * countries and regions (SMS channel)</a> in the AWS End User Messaging SMS User
      * Guide.</p>
      */
-    inline const Aws::Map<Aws::String, ProtectConfigurationCountryRuleSetInformation>& GetCountryRuleSet() const{ return m_countryRuleSet; }
-    inline void SetCountryRuleSet(const Aws::Map<Aws::String, ProtectConfigurationCountryRuleSetInformation>& value) { m_countryRuleSet = value; }
-    inline void SetCountryRuleSet(Aws::Map<Aws::String, ProtectConfigurationCountryRuleSetInformation>&& value) { m_countryRuleSet = std::move(value); }
-    inline GetProtectConfigurationCountryRuleSetResult& WithCountryRuleSet(const Aws::Map<Aws::String, ProtectConfigurationCountryRuleSetInformation>& value) { SetCountryRuleSet(value); return *this;}
-    inline GetProtectConfigurationCountryRuleSetResult& WithCountryRuleSet(Aws::Map<Aws::String, ProtectConfigurationCountryRuleSetInformation>&& value) { SetCountryRuleSet(std::move(value)); return *this;}
-    inline GetProtectConfigurationCountryRuleSetResult& AddCountryRuleSet(const Aws::String& key, const ProtectConfigurationCountryRuleSetInformation& value) { m_countryRuleSet.emplace(key, value); return *this; }
-    inline GetProtectConfigurationCountryRuleSetResult& AddCountryRuleSet(Aws::String&& key, const ProtectConfigurationCountryRuleSetInformation& value) { m_countryRuleSet.emplace(std::move(key), value); return *this; }
-    inline GetProtectConfigurationCountryRuleSetResult& AddCountryRuleSet(const Aws::String& key, ProtectConfigurationCountryRuleSetInformation&& value) { m_countryRuleSet.emplace(key, std::move(value)); return *this; }
-    inline GetProtectConfigurationCountryRuleSetResult& AddCountryRuleSet(Aws::String&& key, ProtectConfigurationCountryRuleSetInformation&& value) { m_countryRuleSet.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetProtectConfigurationCountryRuleSetResult& AddCountryRuleSet(const char* key, ProtectConfigurationCountryRuleSetInformation&& value) { m_countryRuleSet.emplace(key, std::move(value)); return *this; }
-    inline GetProtectConfigurationCountryRuleSetResult& AddCountryRuleSet(const char* key, const ProtectConfigurationCountryRuleSetInformation& value) { m_countryRuleSet.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, ProtectConfigurationCountryRuleSetInformation>& GetCountryRuleSet() const { return m_countryRuleSet; }
+    template<typename CountryRuleSetT = Aws::Map<Aws::String, ProtectConfigurationCountryRuleSetInformation>>
+    void SetCountryRuleSet(CountryRuleSetT&& value) { m_countryRuleSetHasBeenSet = true; m_countryRuleSet = std::forward<CountryRuleSetT>(value); }
+    template<typename CountryRuleSetT = Aws::Map<Aws::String, ProtectConfigurationCountryRuleSetInformation>>
+    GetProtectConfigurationCountryRuleSetResult& WithCountryRuleSet(CountryRuleSetT&& value) { SetCountryRuleSet(std::forward<CountryRuleSetT>(value)); return *this;}
+    template<typename CountryRuleSetKeyT = Aws::String, typename CountryRuleSetValueT = ProtectConfigurationCountryRuleSetInformation>
+    GetProtectConfigurationCountryRuleSetResult& AddCountryRuleSet(CountryRuleSetKeyT&& key, CountryRuleSetValueT&& value) {
+      m_countryRuleSetHasBeenSet = true; m_countryRuleSet.emplace(std::forward<CountryRuleSetKeyT>(key), std::forward<CountryRuleSetValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetProtectConfigurationCountryRuleSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetProtectConfigurationCountryRuleSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetProtectConfigurationCountryRuleSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetProtectConfigurationCountryRuleSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_protectConfigurationArn;
+    bool m_protectConfigurationArnHasBeenSet = false;
 
     Aws::String m_protectConfigurationId;
+    bool m_protectConfigurationIdHasBeenSet = false;
 
-    NumberCapability m_numberCapability;
+    NumberCapability m_numberCapability{NumberCapability::NOT_SET};
+    bool m_numberCapabilityHasBeenSet = false;
 
     Aws::Map<Aws::String, ProtectConfigurationCountryRuleSetInformation> m_countryRuleSet;
+    bool m_countryRuleSetHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

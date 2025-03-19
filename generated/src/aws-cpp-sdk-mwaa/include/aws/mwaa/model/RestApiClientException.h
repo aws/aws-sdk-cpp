@@ -32,7 +32,7 @@ namespace Model
   class RestApiClientException
   {
   public:
-    AWS_MWAA_API RestApiClientException();
+    AWS_MWAA_API RestApiClientException() = default;
     AWS_MWAA_API RestApiClientException(Aws::Utils::Json::JsonView jsonValue);
     AWS_MWAA_API RestApiClientException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MWAA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The HTTP status code returned by the Apache Airflow REST API call.</p>
      */
-    inline int GetRestApiStatusCode() const{ return m_restApiStatusCode; }
+    inline int GetRestApiStatusCode() const { return m_restApiStatusCode; }
     inline bool RestApiStatusCodeHasBeenSet() const { return m_restApiStatusCodeHasBeenSet; }
     inline void SetRestApiStatusCode(int value) { m_restApiStatusCodeHasBeenSet = true; m_restApiStatusCode = value; }
     inline RestApiClientException& WithRestApiStatusCode(int value) { SetRestApiStatusCode(value); return *this;}
@@ -53,16 +53,16 @@ namespace Model
      * <p>The error response data from the Apache Airflow REST API call, provided as a
      * JSON object.</p>
      */
-    inline Aws::Utils::DocumentView GetRestApiResponse() const{ return m_restApiResponse; }
+    inline Aws::Utils::DocumentView GetRestApiResponse() const { return m_restApiResponse; }
     inline bool RestApiResponseHasBeenSet() const { return m_restApiResponseHasBeenSet; }
-    inline void SetRestApiResponse(const Aws::Utils::Document& value) { m_restApiResponseHasBeenSet = true; m_restApiResponse = value; }
-    inline void SetRestApiResponse(Aws::Utils::Document&& value) { m_restApiResponseHasBeenSet = true; m_restApiResponse = std::move(value); }
-    inline RestApiClientException& WithRestApiResponse(const Aws::Utils::Document& value) { SetRestApiResponse(value); return *this;}
-    inline RestApiClientException& WithRestApiResponse(Aws::Utils::Document&& value) { SetRestApiResponse(std::move(value)); return *this;}
+    template<typename RestApiResponseT = Aws::Utils::Document>
+    void SetRestApiResponse(RestApiResponseT&& value) { m_restApiResponseHasBeenSet = true; m_restApiResponse = std::forward<RestApiResponseT>(value); }
+    template<typename RestApiResponseT = Aws::Utils::Document>
+    RestApiClientException& WithRestApiResponse(RestApiResponseT&& value) { SetRestApiResponse(std::forward<RestApiResponseT>(value)); return *this;}
     ///@}
   private:
 
-    int m_restApiStatusCode;
+    int m_restApiStatusCode{0};
     bool m_restApiStatusCodeHasBeenSet = false;
 
     Aws::Utils::Document m_restApiResponse;

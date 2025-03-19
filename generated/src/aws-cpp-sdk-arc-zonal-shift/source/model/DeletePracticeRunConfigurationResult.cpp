@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeletePracticeRunConfigurationResult::DeletePracticeRunConfigurationResult() : 
-    m_zonalAutoshiftStatus(ZonalAutoshiftStatus::NOT_SET)
-{
-}
-
 DeletePracticeRunConfigurationResult::DeletePracticeRunConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeletePracticeRunConfigurationResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ DeletePracticeRunConfigurationResult& DeletePracticeRunConfigurationResult::oper
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("zonalAutoshiftStatus"))
   {
     m_zonalAutoshiftStatus = ZonalAutoshiftStatusMapper::GetZonalAutoshiftStatusForName(jsonValue.GetString("zonalAutoshiftStatus"));
-
+    m_zonalAutoshiftStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

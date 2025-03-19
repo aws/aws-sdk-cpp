@@ -32,7 +32,7 @@ namespace Model
   class PhysicalResourceId
   {
   public:
-    AWS_RESILIENCEHUB_API PhysicalResourceId();
+    AWS_RESILIENCEHUB_API PhysicalResourceId() = default;
     AWS_RESILIENCEHUB_API PhysicalResourceId(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API PhysicalResourceId& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The Amazon Web Services account that owns the physical resource.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline PhysicalResourceId& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline PhysicalResourceId& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline PhysicalResourceId& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    PhysicalResourceId& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Region that the physical resource is located in.</p>
      */
-    inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
+    inline const Aws::String& GetAwsRegion() const { return m_awsRegion; }
     inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
-    inline void SetAwsRegion(const Aws::String& value) { m_awsRegionHasBeenSet = true; m_awsRegion = value; }
-    inline void SetAwsRegion(Aws::String&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::move(value); }
-    inline void SetAwsRegion(const char* value) { m_awsRegionHasBeenSet = true; m_awsRegion.assign(value); }
-    inline PhysicalResourceId& WithAwsRegion(const Aws::String& value) { SetAwsRegion(value); return *this;}
-    inline PhysicalResourceId& WithAwsRegion(Aws::String&& value) { SetAwsRegion(std::move(value)); return *this;}
-    inline PhysicalResourceId& WithAwsRegion(const char* value) { SetAwsRegion(value); return *this;}
+    template<typename AwsRegionT = Aws::String>
+    void SetAwsRegion(AwsRegionT&& value) { m_awsRegionHasBeenSet = true; m_awsRegion = std::forward<AwsRegionT>(value); }
+    template<typename AwsRegionT = Aws::String>
+    PhysicalResourceId& WithAwsRegion(AwsRegionT&& value) { SetAwsRegion(std::forward<AwsRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Identifier of the physical resource.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline PhysicalResourceId& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline PhysicalResourceId& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline PhysicalResourceId& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    PhysicalResourceId& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,12 +106,10 @@ namespace Model
      * <code>AWS::S3::Bucket</code> </p> </li> <li> <p> <code>AWS::SQS::Queue</code>
      * </p> </li> </ul> </dd> </dl>
      */
-    inline const PhysicalIdentifierType& GetType() const{ return m_type; }
+    inline PhysicalIdentifierType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const PhysicalIdentifierType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(PhysicalIdentifierType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline PhysicalResourceId& WithType(const PhysicalIdentifierType& value) { SetType(value); return *this;}
-    inline PhysicalResourceId& WithType(PhysicalIdentifierType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(PhysicalIdentifierType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline PhysicalResourceId& WithType(PhysicalIdentifierType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -130,7 +122,7 @@ namespace Model
     Aws::String m_identifier;
     bool m_identifierHasBeenSet = false;
 
-    PhysicalIdentifierType m_type;
+    PhysicalIdentifierType m_type{PhysicalIdentifierType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

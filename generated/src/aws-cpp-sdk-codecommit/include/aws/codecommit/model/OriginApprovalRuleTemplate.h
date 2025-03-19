@@ -32,7 +32,7 @@ namespace Model
   class OriginApprovalRuleTemplate
   {
   public:
-    AWS_CODECOMMIT_API OriginApprovalRuleTemplate();
+    AWS_CODECOMMIT_API OriginApprovalRuleTemplate() = default;
     AWS_CODECOMMIT_API OriginApprovalRuleTemplate(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API OriginApprovalRuleTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The ID of the template that created the approval rule.</p>
      */
-    inline const Aws::String& GetApprovalRuleTemplateId() const{ return m_approvalRuleTemplateId; }
+    inline const Aws::String& GetApprovalRuleTemplateId() const { return m_approvalRuleTemplateId; }
     inline bool ApprovalRuleTemplateIdHasBeenSet() const { return m_approvalRuleTemplateIdHasBeenSet; }
-    inline void SetApprovalRuleTemplateId(const Aws::String& value) { m_approvalRuleTemplateIdHasBeenSet = true; m_approvalRuleTemplateId = value; }
-    inline void SetApprovalRuleTemplateId(Aws::String&& value) { m_approvalRuleTemplateIdHasBeenSet = true; m_approvalRuleTemplateId = std::move(value); }
-    inline void SetApprovalRuleTemplateId(const char* value) { m_approvalRuleTemplateIdHasBeenSet = true; m_approvalRuleTemplateId.assign(value); }
-    inline OriginApprovalRuleTemplate& WithApprovalRuleTemplateId(const Aws::String& value) { SetApprovalRuleTemplateId(value); return *this;}
-    inline OriginApprovalRuleTemplate& WithApprovalRuleTemplateId(Aws::String&& value) { SetApprovalRuleTemplateId(std::move(value)); return *this;}
-    inline OriginApprovalRuleTemplate& WithApprovalRuleTemplateId(const char* value) { SetApprovalRuleTemplateId(value); return *this;}
+    template<typename ApprovalRuleTemplateIdT = Aws::String>
+    void SetApprovalRuleTemplateId(ApprovalRuleTemplateIdT&& value) { m_approvalRuleTemplateIdHasBeenSet = true; m_approvalRuleTemplateId = std::forward<ApprovalRuleTemplateIdT>(value); }
+    template<typename ApprovalRuleTemplateIdT = Aws::String>
+    OriginApprovalRuleTemplate& WithApprovalRuleTemplateId(ApprovalRuleTemplateIdT&& value) { SetApprovalRuleTemplateId(std::forward<ApprovalRuleTemplateIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the template that created the approval rule.</p>
      */
-    inline const Aws::String& GetApprovalRuleTemplateName() const{ return m_approvalRuleTemplateName; }
+    inline const Aws::String& GetApprovalRuleTemplateName() const { return m_approvalRuleTemplateName; }
     inline bool ApprovalRuleTemplateNameHasBeenSet() const { return m_approvalRuleTemplateNameHasBeenSet; }
-    inline void SetApprovalRuleTemplateName(const Aws::String& value) { m_approvalRuleTemplateNameHasBeenSet = true; m_approvalRuleTemplateName = value; }
-    inline void SetApprovalRuleTemplateName(Aws::String&& value) { m_approvalRuleTemplateNameHasBeenSet = true; m_approvalRuleTemplateName = std::move(value); }
-    inline void SetApprovalRuleTemplateName(const char* value) { m_approvalRuleTemplateNameHasBeenSet = true; m_approvalRuleTemplateName.assign(value); }
-    inline OriginApprovalRuleTemplate& WithApprovalRuleTemplateName(const Aws::String& value) { SetApprovalRuleTemplateName(value); return *this;}
-    inline OriginApprovalRuleTemplate& WithApprovalRuleTemplateName(Aws::String&& value) { SetApprovalRuleTemplateName(std::move(value)); return *this;}
-    inline OriginApprovalRuleTemplate& WithApprovalRuleTemplateName(const char* value) { SetApprovalRuleTemplateName(value); return *this;}
+    template<typename ApprovalRuleTemplateNameT = Aws::String>
+    void SetApprovalRuleTemplateName(ApprovalRuleTemplateNameT&& value) { m_approvalRuleTemplateNameHasBeenSet = true; m_approvalRuleTemplateName = std::forward<ApprovalRuleTemplateNameT>(value); }
+    template<typename ApprovalRuleTemplateNameT = Aws::String>
+    OriginApprovalRuleTemplate& WithApprovalRuleTemplateName(ApprovalRuleTemplateNameT&& value) { SetApprovalRuleTemplateName(std::forward<ApprovalRuleTemplateNameT>(value)); return *this;}
     ///@}
   private:
 

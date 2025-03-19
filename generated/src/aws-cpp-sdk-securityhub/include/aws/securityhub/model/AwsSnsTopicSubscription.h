@@ -32,7 +32,7 @@ namespace Model
   class AwsSnsTopicSubscription
   {
   public:
-    AWS_SECURITYHUB_API AwsSnsTopicSubscription();
+    AWS_SECURITYHUB_API AwsSnsTopicSubscription() = default;
     AWS_SECURITYHUB_API AwsSnsTopicSubscription(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsSnsTopicSubscription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The subscription's endpoint (format depends on the protocol).</p>
      */
-    inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
+    inline const Aws::String& GetEndpoint() const { return m_endpoint; }
     inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
-    inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
-    inline void SetEndpoint(Aws::String&& value) { m_endpointHasBeenSet = true; m_endpoint = std::move(value); }
-    inline void SetEndpoint(const char* value) { m_endpointHasBeenSet = true; m_endpoint.assign(value); }
-    inline AwsSnsTopicSubscription& WithEndpoint(const Aws::String& value) { SetEndpoint(value); return *this;}
-    inline AwsSnsTopicSubscription& WithEndpoint(Aws::String&& value) { SetEndpoint(std::move(value)); return *this;}
-    inline AwsSnsTopicSubscription& WithEndpoint(const char* value) { SetEndpoint(value); return *this;}
+    template<typename EndpointT = Aws::String>
+    void SetEndpoint(EndpointT&& value) { m_endpointHasBeenSet = true; m_endpoint = std::forward<EndpointT>(value); }
+    template<typename EndpointT = Aws::String>
+    AwsSnsTopicSubscription& WithEndpoint(EndpointT&& value) { SetEndpoint(std::forward<EndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The subscription's protocol.</p>
      */
-    inline const Aws::String& GetProtocol() const{ return m_protocol; }
+    inline const Aws::String& GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(Aws::String&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline void SetProtocol(const char* value) { m_protocolHasBeenSet = true; m_protocol.assign(value); }
-    inline AwsSnsTopicSubscription& WithProtocol(const Aws::String& value) { SetProtocol(value); return *this;}
-    inline AwsSnsTopicSubscription& WithProtocol(Aws::String&& value) { SetProtocol(std::move(value)); return *this;}
-    inline AwsSnsTopicSubscription& WithProtocol(const char* value) { SetProtocol(value); return *this;}
+    template<typename ProtocolT = Aws::String>
+    void SetProtocol(ProtocolT&& value) { m_protocolHasBeenSet = true; m_protocol = std::forward<ProtocolT>(value); }
+    template<typename ProtocolT = Aws::String>
+    AwsSnsTopicSubscription& WithProtocol(ProtocolT&& value) { SetProtocol(std::forward<ProtocolT>(value)); return *this;}
     ///@}
   private:
 

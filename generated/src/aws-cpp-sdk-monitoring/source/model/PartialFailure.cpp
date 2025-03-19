@@ -20,16 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-PartialFailure::PartialFailure() : 
-    m_failureResourceHasBeenSet(false),
-    m_exceptionTypeHasBeenSet(false),
-    m_failureCodeHasBeenSet(false),
-    m_failureDescriptionHasBeenSet(false)
-{
-}
-
 PartialFailure::PartialFailure(const XmlNode& xmlNode)
-  : PartialFailure()
 {
   *this = xmlNode;
 }

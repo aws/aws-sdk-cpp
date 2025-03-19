@@ -24,7 +24,7 @@ namespace Model
   class SetStackPolicyRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API SetStackPolicyRequest();
+    AWS_CLOUDFORMATION_API SetStackPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name or unique stack ID that you want to associate a policy with.</p>
      */
-    inline const Aws::String& GetStackName() const{ return m_stackName; }
+    inline const Aws::String& GetStackName() const { return m_stackName; }
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-    inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
-    inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
-    inline SetStackPolicyRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-    inline SetStackPolicyRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-    inline SetStackPolicyRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+    template<typename StackNameT = Aws::String>
+    void SetStackName(StackNameT&& value) { m_stackNameHasBeenSet = true; m_stackName = std::forward<StackNameT>(value); }
+    template<typename StackNameT = Aws::String>
+    SetStackPolicyRequest& WithStackName(StackNameT&& value) { SetStackName(std::forward<StackNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * specify either the <code>StackPolicyBody</code> or the
      * <code>StackPolicyURL</code> parameter, but not both.</p>
      */
-    inline const Aws::String& GetStackPolicyBody() const{ return m_stackPolicyBody; }
+    inline const Aws::String& GetStackPolicyBody() const { return m_stackPolicyBody; }
     inline bool StackPolicyBodyHasBeenSet() const { return m_stackPolicyBodyHasBeenSet; }
-    inline void SetStackPolicyBody(const Aws::String& value) { m_stackPolicyBodyHasBeenSet = true; m_stackPolicyBody = value; }
-    inline void SetStackPolicyBody(Aws::String&& value) { m_stackPolicyBodyHasBeenSet = true; m_stackPolicyBody = std::move(value); }
-    inline void SetStackPolicyBody(const char* value) { m_stackPolicyBodyHasBeenSet = true; m_stackPolicyBody.assign(value); }
-    inline SetStackPolicyRequest& WithStackPolicyBody(const Aws::String& value) { SetStackPolicyBody(value); return *this;}
-    inline SetStackPolicyRequest& WithStackPolicyBody(Aws::String&& value) { SetStackPolicyBody(std::move(value)); return *this;}
-    inline SetStackPolicyRequest& WithStackPolicyBody(const char* value) { SetStackPolicyBody(value); return *this;}
+    template<typename StackPolicyBodyT = Aws::String>
+    void SetStackPolicyBody(StackPolicyBodyT&& value) { m_stackPolicyBodyHasBeenSet = true; m_stackPolicyBody = std::forward<StackPolicyBodyT>(value); }
+    template<typename StackPolicyBodyT = Aws::String>
+    SetStackPolicyRequest& WithStackPolicyBody(StackPolicyBodyT&& value) { SetStackPolicyBody(std::forward<StackPolicyBodyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +76,12 @@ namespace Model
      * <code>StackPolicyBody</code> or the <code>StackPolicyURL</code> parameter, but
      * not both.</p>
      */
-    inline const Aws::String& GetStackPolicyURL() const{ return m_stackPolicyURL; }
+    inline const Aws::String& GetStackPolicyURL() const { return m_stackPolicyURL; }
     inline bool StackPolicyURLHasBeenSet() const { return m_stackPolicyURLHasBeenSet; }
-    inline void SetStackPolicyURL(const Aws::String& value) { m_stackPolicyURLHasBeenSet = true; m_stackPolicyURL = value; }
-    inline void SetStackPolicyURL(Aws::String&& value) { m_stackPolicyURLHasBeenSet = true; m_stackPolicyURL = std::move(value); }
-    inline void SetStackPolicyURL(const char* value) { m_stackPolicyURLHasBeenSet = true; m_stackPolicyURL.assign(value); }
-    inline SetStackPolicyRequest& WithStackPolicyURL(const Aws::String& value) { SetStackPolicyURL(value); return *this;}
-    inline SetStackPolicyRequest& WithStackPolicyURL(Aws::String&& value) { SetStackPolicyURL(std::move(value)); return *this;}
-    inline SetStackPolicyRequest& WithStackPolicyURL(const char* value) { SetStackPolicyURL(value); return *this;}
+    template<typename StackPolicyURLT = Aws::String>
+    void SetStackPolicyURL(StackPolicyURLT&& value) { m_stackPolicyURLHasBeenSet = true; m_stackPolicyURL = std::forward<StackPolicyURLT>(value); }
+    template<typename StackPolicyURLT = Aws::String>
+    SetStackPolicyRequest& WithStackPolicyURL(StackPolicyURLT&& value) { SetStackPolicyURL(std::forward<StackPolicyURLT>(value)); return *this;}
     ///@}
   private:
 

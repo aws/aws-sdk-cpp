@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-UpsertRedshiftTargetOptions::UpsertRedshiftTargetOptions() : 
-    m_tableLocationHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
-    m_upsertKeysHasBeenSet(false)
-{
-}
-
 UpsertRedshiftTargetOptions::UpsertRedshiftTargetOptions(JsonView jsonValue)
-  : UpsertRedshiftTargetOptions()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ UpsertRedshiftTargetOptions& UpsertRedshiftTargetOptions::operator =(JsonView js
   if(jsonValue.ValueExists("TableLocation"))
   {
     m_tableLocation = jsonValue.GetString("TableLocation");
-
     m_tableLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionName"))
   {
     m_connectionName = jsonValue.GetString("ConnectionName");
-
     m_connectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpsertKeys"))
   {
     Aws::Utils::Array<JsonView> upsertKeysJsonList = jsonValue.GetArray("UpsertKeys");
@@ -56,7 +44,6 @@ UpsertRedshiftTargetOptions& UpsertRedshiftTargetOptions::operator =(JsonView js
     }
     m_upsertKeysHasBeenSet = true;
   }
-
   return *this;
 }
 

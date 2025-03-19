@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ParameterDeclaration::ParameterDeclaration() : 
-    m_stringParameterDeclarationHasBeenSet(false),
-    m_decimalParameterDeclarationHasBeenSet(false),
-    m_integerParameterDeclarationHasBeenSet(false),
-    m_dateTimeParameterDeclarationHasBeenSet(false)
-{
-}
-
 ParameterDeclaration::ParameterDeclaration(JsonView jsonValue)
-  : ParameterDeclaration()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ParameterDeclaration& ParameterDeclaration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StringParameterDeclaration"))
   {
     m_stringParameterDeclaration = jsonValue.GetObject("StringParameterDeclaration");
-
     m_stringParameterDeclarationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DecimalParameterDeclaration"))
   {
     m_decimalParameterDeclaration = jsonValue.GetObject("DecimalParameterDeclaration");
-
     m_decimalParameterDeclarationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IntegerParameterDeclaration"))
   {
     m_integerParameterDeclaration = jsonValue.GetObject("IntegerParameterDeclaration");
-
     m_integerParameterDeclarationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateTimeParameterDeclaration"))
   {
     m_dateTimeParameterDeclaration = jsonValue.GetObject("DateTimeParameterDeclaration");
-
     m_dateTimeParameterDeclarationHasBeenSet = true;
   }
-
   return *this;
 }
 

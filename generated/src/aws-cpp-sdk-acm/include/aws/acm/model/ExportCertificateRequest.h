@@ -22,7 +22,7 @@ namespace Model
   class ExportCertificateRequest : public ACMRequest
   {
   public:
-    AWS_ACM_API ExportCertificateRequest();
+    AWS_ACM_API ExportCertificateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <code>arn:aws:acm:region:account:certificate/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
-    inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
+    inline const Aws::String& GetCertificateArn() const { return m_certificateArn; }
     inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
-    inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
-    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
-    inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
-    inline ExportCertificateRequest& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
-    inline ExportCertificateRequest& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
-    inline ExportCertificateRequest& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+    template<typename CertificateArnT = Aws::String>
+    void SetCertificateArn(CertificateArnT&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::forward<CertificateArnT>(value); }
+    template<typename CertificateArnT = Aws::String>
+    ExportCertificateRequest& WithCertificateArn(CertificateArnT&& value) { SetCertificateArn(std::forward<CertificateArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,19 +59,19 @@ namespace Model
      * key. After entering the command, you are prompted for the passphrase.</p> <p>
      * <code>openssl rsa -in encrypted_key.pem -out decrypted_key.pem</code> </p>
      */
-    inline const Aws::Utils::CryptoBuffer& GetPassphrase() const{ return m_passphrase; }
+    inline const Aws::Utils::CryptoBuffer& GetPassphrase() const { return m_passphrase; }
     inline bool PassphraseHasBeenSet() const { return m_passphraseHasBeenSet; }
-    inline void SetPassphrase(const Aws::Utils::CryptoBuffer& value) { m_passphraseHasBeenSet = true; m_passphrase = value; }
-    inline void SetPassphrase(Aws::Utils::CryptoBuffer&& value) { m_passphraseHasBeenSet = true; m_passphrase = std::move(value); }
-    inline ExportCertificateRequest& WithPassphrase(const Aws::Utils::CryptoBuffer& value) { SetPassphrase(value); return *this;}
-    inline ExportCertificateRequest& WithPassphrase(Aws::Utils::CryptoBuffer&& value) { SetPassphrase(std::move(value)); return *this;}
+    template<typename PassphraseT = Aws::Utils::CryptoBuffer>
+    void SetPassphrase(PassphraseT&& value) { m_passphraseHasBeenSet = true; m_passphrase = std::forward<PassphraseT>(value); }
+    template<typename PassphraseT = Aws::Utils::CryptoBuffer>
+    ExportCertificateRequest& WithPassphrase(PassphraseT&& value) { SetPassphrase(std::forward<PassphraseT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet = false;
 
-    Aws::Utils::CryptoBuffer m_passphrase;
+    Aws::Utils::CryptoBuffer m_passphrase{};
     bool m_passphraseHasBeenSet = false;
   };
 

@@ -22,7 +22,7 @@ namespace Model
   class AssociateApplicationsRequest : public MgnRequest
   {
   public:
-    AWS_MGN_API AssociateApplicationsRequest();
+    AWS_MGN_API AssociateApplicationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,43 +37,38 @@ namespace Model
     /**
      * <p>Account ID.</p>
      */
-    inline const Aws::String& GetAccountID() const{ return m_accountID; }
+    inline const Aws::String& GetAccountID() const { return m_accountID; }
     inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-    inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
-    inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
-    inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
-    inline AssociateApplicationsRequest& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
-    inline AssociateApplicationsRequest& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
-    inline AssociateApplicationsRequest& WithAccountID(const char* value) { SetAccountID(value); return *this;}
+    template<typename AccountIDT = Aws::String>
+    void SetAccountID(AccountIDT&& value) { m_accountIDHasBeenSet = true; m_accountID = std::forward<AccountIDT>(value); }
+    template<typename AccountIDT = Aws::String>
+    AssociateApplicationsRequest& WithAccountID(AccountIDT&& value) { SetAccountID(std::forward<AccountIDT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Application IDs list.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetApplicationIDs() const{ return m_applicationIDs; }
+    inline const Aws::Vector<Aws::String>& GetApplicationIDs() const { return m_applicationIDs; }
     inline bool ApplicationIDsHasBeenSet() const { return m_applicationIDsHasBeenSet; }
-    inline void SetApplicationIDs(const Aws::Vector<Aws::String>& value) { m_applicationIDsHasBeenSet = true; m_applicationIDs = value; }
-    inline void SetApplicationIDs(Aws::Vector<Aws::String>&& value) { m_applicationIDsHasBeenSet = true; m_applicationIDs = std::move(value); }
-    inline AssociateApplicationsRequest& WithApplicationIDs(const Aws::Vector<Aws::String>& value) { SetApplicationIDs(value); return *this;}
-    inline AssociateApplicationsRequest& WithApplicationIDs(Aws::Vector<Aws::String>&& value) { SetApplicationIDs(std::move(value)); return *this;}
-    inline AssociateApplicationsRequest& AddApplicationIDs(const Aws::String& value) { m_applicationIDsHasBeenSet = true; m_applicationIDs.push_back(value); return *this; }
-    inline AssociateApplicationsRequest& AddApplicationIDs(Aws::String&& value) { m_applicationIDsHasBeenSet = true; m_applicationIDs.push_back(std::move(value)); return *this; }
-    inline AssociateApplicationsRequest& AddApplicationIDs(const char* value) { m_applicationIDsHasBeenSet = true; m_applicationIDs.push_back(value); return *this; }
+    template<typename ApplicationIDsT = Aws::Vector<Aws::String>>
+    void SetApplicationIDs(ApplicationIDsT&& value) { m_applicationIDsHasBeenSet = true; m_applicationIDs = std::forward<ApplicationIDsT>(value); }
+    template<typename ApplicationIDsT = Aws::Vector<Aws::String>>
+    AssociateApplicationsRequest& WithApplicationIDs(ApplicationIDsT&& value) { SetApplicationIDs(std::forward<ApplicationIDsT>(value)); return *this;}
+    template<typename ApplicationIDsT = Aws::String>
+    AssociateApplicationsRequest& AddApplicationIDs(ApplicationIDsT&& value) { m_applicationIDsHasBeenSet = true; m_applicationIDs.emplace_back(std::forward<ApplicationIDsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Wave ID.</p>
      */
-    inline const Aws::String& GetWaveID() const{ return m_waveID; }
+    inline const Aws::String& GetWaveID() const { return m_waveID; }
     inline bool WaveIDHasBeenSet() const { return m_waveIDHasBeenSet; }
-    inline void SetWaveID(const Aws::String& value) { m_waveIDHasBeenSet = true; m_waveID = value; }
-    inline void SetWaveID(Aws::String&& value) { m_waveIDHasBeenSet = true; m_waveID = std::move(value); }
-    inline void SetWaveID(const char* value) { m_waveIDHasBeenSet = true; m_waveID.assign(value); }
-    inline AssociateApplicationsRequest& WithWaveID(const Aws::String& value) { SetWaveID(value); return *this;}
-    inline AssociateApplicationsRequest& WithWaveID(Aws::String&& value) { SetWaveID(std::move(value)); return *this;}
-    inline AssociateApplicationsRequest& WithWaveID(const char* value) { SetWaveID(value); return *this;}
+    template<typename WaveIDT = Aws::String>
+    void SetWaveID(WaveIDT&& value) { m_waveIDHasBeenSet = true; m_waveID = std::forward<WaveIDT>(value); }
+    template<typename WaveIDT = Aws::String>
+    AssociateApplicationsRequest& WithWaveID(WaveIDT&& value) { SetWaveID(std::forward<WaveIDT>(value)); return *this;}
     ///@}
   private:
 

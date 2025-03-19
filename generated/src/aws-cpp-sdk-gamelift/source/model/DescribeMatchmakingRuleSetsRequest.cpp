@@ -12,14 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeMatchmakingRuleSetsRequest::DescribeMatchmakingRuleSetsRequest() : 
-    m_namesHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeMatchmakingRuleSetsRequest::SerializePayload() const
 {
   JsonValue payload;

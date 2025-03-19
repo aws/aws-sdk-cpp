@@ -12,12 +12,6 @@ using namespace Aws::CognitoSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeIdentityUsageRequest::DescribeIdentityUsageRequest() : 
-    m_identityPoolIdHasBeenSet(false),
-    m_identityIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeIdentityUsageRequest::SerializePayload() const
 {
   return {};

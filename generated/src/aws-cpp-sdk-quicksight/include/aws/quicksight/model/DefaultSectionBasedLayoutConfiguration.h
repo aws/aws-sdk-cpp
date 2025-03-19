@@ -32,7 +32,7 @@ namespace Model
   class DefaultSectionBasedLayoutConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API DefaultSectionBasedLayoutConfiguration();
+    AWS_QUICKSIGHT_API DefaultSectionBasedLayoutConfiguration() = default;
     AWS_QUICKSIGHT_API DefaultSectionBasedLayoutConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DefaultSectionBasedLayoutConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Determines the screen canvas size options for a section-based layout.</p>
      */
-    inline const SectionBasedLayoutCanvasSizeOptions& GetCanvasSizeOptions() const{ return m_canvasSizeOptions; }
+    inline const SectionBasedLayoutCanvasSizeOptions& GetCanvasSizeOptions() const { return m_canvasSizeOptions; }
     inline bool CanvasSizeOptionsHasBeenSet() const { return m_canvasSizeOptionsHasBeenSet; }
-    inline void SetCanvasSizeOptions(const SectionBasedLayoutCanvasSizeOptions& value) { m_canvasSizeOptionsHasBeenSet = true; m_canvasSizeOptions = value; }
-    inline void SetCanvasSizeOptions(SectionBasedLayoutCanvasSizeOptions&& value) { m_canvasSizeOptionsHasBeenSet = true; m_canvasSizeOptions = std::move(value); }
-    inline DefaultSectionBasedLayoutConfiguration& WithCanvasSizeOptions(const SectionBasedLayoutCanvasSizeOptions& value) { SetCanvasSizeOptions(value); return *this;}
-    inline DefaultSectionBasedLayoutConfiguration& WithCanvasSizeOptions(SectionBasedLayoutCanvasSizeOptions&& value) { SetCanvasSizeOptions(std::move(value)); return *this;}
+    template<typename CanvasSizeOptionsT = SectionBasedLayoutCanvasSizeOptions>
+    void SetCanvasSizeOptions(CanvasSizeOptionsT&& value) { m_canvasSizeOptionsHasBeenSet = true; m_canvasSizeOptions = std::forward<CanvasSizeOptionsT>(value); }
+    template<typename CanvasSizeOptionsT = SectionBasedLayoutCanvasSizeOptions>
+    DefaultSectionBasedLayoutConfiguration& WithCanvasSizeOptions(CanvasSizeOptionsT&& value) { SetCanvasSizeOptions(std::forward<CanvasSizeOptionsT>(value)); return *this;}
     ///@}
   private:
 

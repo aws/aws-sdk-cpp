@@ -12,14 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-MergeBranchesByFastForwardRequest::MergeBranchesByFastForwardRequest() : 
-    m_repositoryNameHasBeenSet(false),
-    m_sourceCommitSpecifierHasBeenSet(false),
-    m_destinationCommitSpecifierHasBeenSet(false),
-    m_targetBranchHasBeenSet(false)
-{
-}
-
 Aws::String MergeBranchesByFastForwardRequest::SerializePayload() const
 {
   JsonValue payload;

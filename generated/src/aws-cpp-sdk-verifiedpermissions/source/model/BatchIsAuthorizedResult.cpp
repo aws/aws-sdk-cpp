@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchIsAuthorizedResult::BatchIsAuthorizedResult()
-{
-}
-
 BatchIsAuthorizedResult::BatchIsAuthorizedResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ BatchIsAuthorizedResult& BatchIsAuthorizedResult::operator =(const Aws::AmazonWe
     {
       m_results.push_back(resultsJsonList[resultsIndex].AsObject());
     }
+    m_resultsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

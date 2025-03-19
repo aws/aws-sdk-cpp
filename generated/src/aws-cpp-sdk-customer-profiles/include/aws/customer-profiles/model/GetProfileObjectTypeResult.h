@@ -32,7 +32,7 @@ namespace Model
   class GetProfileObjectTypeResult
   {
   public:
-    AWS_CUSTOMERPROFILES_API GetProfileObjectTypeResult();
+    AWS_CUSTOMERPROFILES_API GetProfileObjectTypeResult() = default;
     AWS_CUSTOMERPROFILES_API GetProfileObjectTypeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CUSTOMERPROFILES_API GetProfileObjectTypeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,47 +41,41 @@ namespace Model
     /**
      * <p>The name of the profile object type.</p>
      */
-    inline const Aws::String& GetObjectTypeName() const{ return m_objectTypeName; }
-    inline void SetObjectTypeName(const Aws::String& value) { m_objectTypeName = value; }
-    inline void SetObjectTypeName(Aws::String&& value) { m_objectTypeName = std::move(value); }
-    inline void SetObjectTypeName(const char* value) { m_objectTypeName.assign(value); }
-    inline GetProfileObjectTypeResult& WithObjectTypeName(const Aws::String& value) { SetObjectTypeName(value); return *this;}
-    inline GetProfileObjectTypeResult& WithObjectTypeName(Aws::String&& value) { SetObjectTypeName(std::move(value)); return *this;}
-    inline GetProfileObjectTypeResult& WithObjectTypeName(const char* value) { SetObjectTypeName(value); return *this;}
+    inline const Aws::String& GetObjectTypeName() const { return m_objectTypeName; }
+    template<typename ObjectTypeNameT = Aws::String>
+    void SetObjectTypeName(ObjectTypeNameT&& value) { m_objectTypeNameHasBeenSet = true; m_objectTypeName = std::forward<ObjectTypeNameT>(value); }
+    template<typename ObjectTypeNameT = Aws::String>
+    GetProfileObjectTypeResult& WithObjectTypeName(ObjectTypeNameT&& value) { SetObjectTypeName(std::forward<ObjectTypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the profile object type.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetProfileObjectTypeResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetProfileObjectTypeResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetProfileObjectTypeResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetProfileObjectTypeResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the object template.</p>
      */
-    inline const Aws::String& GetTemplateId() const{ return m_templateId; }
-    inline void SetTemplateId(const Aws::String& value) { m_templateId = value; }
-    inline void SetTemplateId(Aws::String&& value) { m_templateId = std::move(value); }
-    inline void SetTemplateId(const char* value) { m_templateId.assign(value); }
-    inline GetProfileObjectTypeResult& WithTemplateId(const Aws::String& value) { SetTemplateId(value); return *this;}
-    inline GetProfileObjectTypeResult& WithTemplateId(Aws::String&& value) { SetTemplateId(std::move(value)); return *this;}
-    inline GetProfileObjectTypeResult& WithTemplateId(const char* value) { SetTemplateId(value); return *this;}
+    inline const Aws::String& GetTemplateId() const { return m_templateId; }
+    template<typename TemplateIdT = Aws::String>
+    void SetTemplateId(TemplateIdT&& value) { m_templateIdHasBeenSet = true; m_templateId = std::forward<TemplateIdT>(value); }
+    template<typename TemplateIdT = Aws::String>
+    GetProfileObjectTypeResult& WithTemplateId(TemplateIdT&& value) { SetTemplateId(std::forward<TemplateIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of days until the data in the object expires.</p>
      */
-    inline int GetExpirationDays() const{ return m_expirationDays; }
-    inline void SetExpirationDays(int value) { m_expirationDays = value; }
+    inline int GetExpirationDays() const { return m_expirationDays; }
+    inline void SetExpirationDays(int value) { m_expirationDaysHasBeenSet = true; m_expirationDays = value; }
     inline GetProfileObjectTypeResult& WithExpirationDays(int value) { SetExpirationDays(value); return *this;}
     ///@}
 
@@ -90,13 +84,11 @@ namespace Model
      * <p>The customer-provided key to encrypt the profile object that will be created
      * in this profile object type.</p>
      */
-    inline const Aws::String& GetEncryptionKey() const{ return m_encryptionKey; }
-    inline void SetEncryptionKey(const Aws::String& value) { m_encryptionKey = value; }
-    inline void SetEncryptionKey(Aws::String&& value) { m_encryptionKey = std::move(value); }
-    inline void SetEncryptionKey(const char* value) { m_encryptionKey.assign(value); }
-    inline GetProfileObjectTypeResult& WithEncryptionKey(const Aws::String& value) { SetEncryptionKey(value); return *this;}
-    inline GetProfileObjectTypeResult& WithEncryptionKey(Aws::String&& value) { SetEncryptionKey(std::move(value)); return *this;}
-    inline GetProfileObjectTypeResult& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
+    inline const Aws::String& GetEncryptionKey() const { return m_encryptionKey; }
+    template<typename EncryptionKeyT = Aws::String>
+    void SetEncryptionKey(EncryptionKeyT&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::forward<EncryptionKeyT>(value); }
+    template<typename EncryptionKeyT = Aws::String>
+    GetProfileObjectTypeResult& WithEncryptionKey(EncryptionKeyT&& value) { SetEncryptionKey(std::forward<EncryptionKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,8 +100,8 @@ namespace Model
      * it is set to <code>TRUE</code>, and if no match is found, then the service
      * creates a new standard profile.</p>
      */
-    inline bool GetAllowProfileCreation() const{ return m_allowProfileCreation; }
-    inline void SetAllowProfileCreation(bool value) { m_allowProfileCreation = value; }
+    inline bool GetAllowProfileCreation() const { return m_allowProfileCreation; }
+    inline void SetAllowProfileCreation(bool value) { m_allowProfileCreationHasBeenSet = true; m_allowProfileCreation = value; }
     inline GetProfileObjectTypeResult& WithAllowProfileCreation(bool value) { SetAllowProfileCreation(value); return *this;}
     ///@}
 
@@ -118,21 +110,19 @@ namespace Model
      * <p>The format of your <code>sourceLastUpdatedTimestamp</code> that was
      * previously set up.</p>
      */
-    inline const Aws::String& GetSourceLastUpdatedTimestampFormat() const{ return m_sourceLastUpdatedTimestampFormat; }
-    inline void SetSourceLastUpdatedTimestampFormat(const Aws::String& value) { m_sourceLastUpdatedTimestampFormat = value; }
-    inline void SetSourceLastUpdatedTimestampFormat(Aws::String&& value) { m_sourceLastUpdatedTimestampFormat = std::move(value); }
-    inline void SetSourceLastUpdatedTimestampFormat(const char* value) { m_sourceLastUpdatedTimestampFormat.assign(value); }
-    inline GetProfileObjectTypeResult& WithSourceLastUpdatedTimestampFormat(const Aws::String& value) { SetSourceLastUpdatedTimestampFormat(value); return *this;}
-    inline GetProfileObjectTypeResult& WithSourceLastUpdatedTimestampFormat(Aws::String&& value) { SetSourceLastUpdatedTimestampFormat(std::move(value)); return *this;}
-    inline GetProfileObjectTypeResult& WithSourceLastUpdatedTimestampFormat(const char* value) { SetSourceLastUpdatedTimestampFormat(value); return *this;}
+    inline const Aws::String& GetSourceLastUpdatedTimestampFormat() const { return m_sourceLastUpdatedTimestampFormat; }
+    template<typename SourceLastUpdatedTimestampFormatT = Aws::String>
+    void SetSourceLastUpdatedTimestampFormat(SourceLastUpdatedTimestampFormatT&& value) { m_sourceLastUpdatedTimestampFormatHasBeenSet = true; m_sourceLastUpdatedTimestampFormat = std::forward<SourceLastUpdatedTimestampFormatT>(value); }
+    template<typename SourceLastUpdatedTimestampFormatT = Aws::String>
+    GetProfileObjectTypeResult& WithSourceLastUpdatedTimestampFormat(SourceLastUpdatedTimestampFormatT&& value) { SetSourceLastUpdatedTimestampFormat(std::forward<SourceLastUpdatedTimestampFormatT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The amount of provisioned profile object max count available.</p>
      */
-    inline int GetMaxAvailableProfileObjectCount() const{ return m_maxAvailableProfileObjectCount; }
-    inline void SetMaxAvailableProfileObjectCount(int value) { m_maxAvailableProfileObjectCount = value; }
+    inline int GetMaxAvailableProfileObjectCount() const { return m_maxAvailableProfileObjectCount; }
+    inline void SetMaxAvailableProfileObjectCount(int value) { m_maxAvailableProfileObjectCountHasBeenSet = true; m_maxAvailableProfileObjectCount = value; }
     inline GetProfileObjectTypeResult& WithMaxAvailableProfileObjectCount(int value) { SetMaxAvailableProfileObjectCount(value); return *this;}
     ///@}
 
@@ -140,8 +130,8 @@ namespace Model
     /**
      * <p>The amount of profile object max count assigned to the object type.</p>
      */
-    inline int GetMaxProfileObjectCount() const{ return m_maxProfileObjectCount; }
-    inline void SetMaxProfileObjectCount(int value) { m_maxProfileObjectCount = value; }
+    inline int GetMaxProfileObjectCount() const { return m_maxProfileObjectCount; }
+    inline void SetMaxProfileObjectCount(int value) { m_maxProfileObjectCountHasBeenSet = true; m_maxProfileObjectCount = value; }
     inline GetProfileObjectTypeResult& WithMaxProfileObjectCount(int value) { SetMaxProfileObjectCount(value); return *this;}
     ///@}
 
@@ -149,117 +139,123 @@ namespace Model
     /**
      * <p>A map of the name and ObjectType field.</p>
      */
-    inline const Aws::Map<Aws::String, ObjectTypeField>& GetFields() const{ return m_fields; }
-    inline void SetFields(const Aws::Map<Aws::String, ObjectTypeField>& value) { m_fields = value; }
-    inline void SetFields(Aws::Map<Aws::String, ObjectTypeField>&& value) { m_fields = std::move(value); }
-    inline GetProfileObjectTypeResult& WithFields(const Aws::Map<Aws::String, ObjectTypeField>& value) { SetFields(value); return *this;}
-    inline GetProfileObjectTypeResult& WithFields(Aws::Map<Aws::String, ObjectTypeField>&& value) { SetFields(std::move(value)); return *this;}
-    inline GetProfileObjectTypeResult& AddFields(const Aws::String& key, const ObjectTypeField& value) { m_fields.emplace(key, value); return *this; }
-    inline GetProfileObjectTypeResult& AddFields(Aws::String&& key, const ObjectTypeField& value) { m_fields.emplace(std::move(key), value); return *this; }
-    inline GetProfileObjectTypeResult& AddFields(const Aws::String& key, ObjectTypeField&& value) { m_fields.emplace(key, std::move(value)); return *this; }
-    inline GetProfileObjectTypeResult& AddFields(Aws::String&& key, ObjectTypeField&& value) { m_fields.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetProfileObjectTypeResult& AddFields(const char* key, ObjectTypeField&& value) { m_fields.emplace(key, std::move(value)); return *this; }
-    inline GetProfileObjectTypeResult& AddFields(const char* key, const ObjectTypeField& value) { m_fields.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, ObjectTypeField>& GetFields() const { return m_fields; }
+    template<typename FieldsT = Aws::Map<Aws::String, ObjectTypeField>>
+    void SetFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields = std::forward<FieldsT>(value); }
+    template<typename FieldsT = Aws::Map<Aws::String, ObjectTypeField>>
+    GetProfileObjectTypeResult& WithFields(FieldsT&& value) { SetFields(std::forward<FieldsT>(value)); return *this;}
+    template<typename FieldsKeyT = Aws::String, typename FieldsValueT = ObjectTypeField>
+    GetProfileObjectTypeResult& AddFields(FieldsKeyT&& key, FieldsValueT&& value) {
+      m_fieldsHasBeenSet = true; m_fields.emplace(std::forward<FieldsKeyT>(key), std::forward<FieldsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>A list of unique keys that can be used to map data to the profile.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<ObjectTypeKey>>& GetKeys() const{ return m_keys; }
-    inline void SetKeys(const Aws::Map<Aws::String, Aws::Vector<ObjectTypeKey>>& value) { m_keys = value; }
-    inline void SetKeys(Aws::Map<Aws::String, Aws::Vector<ObjectTypeKey>>&& value) { m_keys = std::move(value); }
-    inline GetProfileObjectTypeResult& WithKeys(const Aws::Map<Aws::String, Aws::Vector<ObjectTypeKey>>& value) { SetKeys(value); return *this;}
-    inline GetProfileObjectTypeResult& WithKeys(Aws::Map<Aws::String, Aws::Vector<ObjectTypeKey>>&& value) { SetKeys(std::move(value)); return *this;}
-    inline GetProfileObjectTypeResult& AddKeys(const Aws::String& key, const Aws::Vector<ObjectTypeKey>& value) { m_keys.emplace(key, value); return *this; }
-    inline GetProfileObjectTypeResult& AddKeys(Aws::String&& key, const Aws::Vector<ObjectTypeKey>& value) { m_keys.emplace(std::move(key), value); return *this; }
-    inline GetProfileObjectTypeResult& AddKeys(const Aws::String& key, Aws::Vector<ObjectTypeKey>&& value) { m_keys.emplace(key, std::move(value)); return *this; }
-    inline GetProfileObjectTypeResult& AddKeys(Aws::String&& key, Aws::Vector<ObjectTypeKey>&& value) { m_keys.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetProfileObjectTypeResult& AddKeys(const char* key, Aws::Vector<ObjectTypeKey>&& value) { m_keys.emplace(key, std::move(value)); return *this; }
-    inline GetProfileObjectTypeResult& AddKeys(const char* key, const Aws::Vector<ObjectTypeKey>& value) { m_keys.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::Vector<ObjectTypeKey>>& GetKeys() const { return m_keys; }
+    template<typename KeysT = Aws::Map<Aws::String, Aws::Vector<ObjectTypeKey>>>
+    void SetKeys(KeysT&& value) { m_keysHasBeenSet = true; m_keys = std::forward<KeysT>(value); }
+    template<typename KeysT = Aws::Map<Aws::String, Aws::Vector<ObjectTypeKey>>>
+    GetProfileObjectTypeResult& WithKeys(KeysT&& value) { SetKeys(std::forward<KeysT>(value)); return *this;}
+    template<typename KeysKeyT = Aws::String, typename KeysValueT = Aws::Vector<ObjectTypeKey>>
+    GetProfileObjectTypeResult& AddKeys(KeysKeyT&& key, KeysValueT&& value) {
+      m_keysHasBeenSet = true; m_keys.emplace(std::forward<KeysKeyT>(key), std::forward<KeysValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the domain was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline GetProfileObjectTypeResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetProfileObjectTypeResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetProfileObjectTypeResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the domain was most recently edited.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAt = std::move(value); }
-    inline GetProfileObjectTypeResult& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline GetProfileObjectTypeResult& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    GetProfileObjectTypeResult& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags used to organize, track, or control access for this resource.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetProfileObjectTypeResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetProfileObjectTypeResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetProfileObjectTypeResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetProfileObjectTypeResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetProfileObjectTypeResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetProfileObjectTypeResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetProfileObjectTypeResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetProfileObjectTypeResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetProfileObjectTypeResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetProfileObjectTypeResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetProfileObjectTypeResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetProfileObjectTypeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetProfileObjectTypeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetProfileObjectTypeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetProfileObjectTypeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_objectTypeName;
+    bool m_objectTypeNameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_templateId;
+    bool m_templateIdHasBeenSet = false;
 
-    int m_expirationDays;
+    int m_expirationDays{0};
+    bool m_expirationDaysHasBeenSet = false;
 
     Aws::String m_encryptionKey;
+    bool m_encryptionKeyHasBeenSet = false;
 
-    bool m_allowProfileCreation;
+    bool m_allowProfileCreation{false};
+    bool m_allowProfileCreationHasBeenSet = false;
 
     Aws::String m_sourceLastUpdatedTimestampFormat;
+    bool m_sourceLastUpdatedTimestampFormatHasBeenSet = false;
 
-    int m_maxAvailableProfileObjectCount;
+    int m_maxAvailableProfileObjectCount{0};
+    bool m_maxAvailableProfileObjectCountHasBeenSet = false;
 
-    int m_maxProfileObjectCount;
+    int m_maxProfileObjectCount{0};
+    bool m_maxProfileObjectCountHasBeenSet = false;
 
     Aws::Map<Aws::String, ObjectTypeField> m_fields;
+    bool m_fieldsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::Vector<ObjectTypeKey>> m_keys;
+    bool m_keysHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
+    bool m_lastUpdatedAtHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,7 +32,7 @@ namespace Model
   class FailureSummary
   {
   public:
-    AWS_ROBOMAKER_API FailureSummary();
+    AWS_ROBOMAKER_API FailureSummary() = default;
     AWS_ROBOMAKER_API FailureSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API FailureSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The total number of failures.</p>
      */
-    inline int GetTotalFailureCount() const{ return m_totalFailureCount; }
+    inline int GetTotalFailureCount() const { return m_totalFailureCount; }
     inline bool TotalFailureCountHasBeenSet() const { return m_totalFailureCountHasBeenSet; }
     inline void SetTotalFailureCount(int value) { m_totalFailureCountHasBeenSet = true; m_totalFailureCount = value; }
     inline FailureSummary& WithTotalFailureCount(int value) { SetTotalFailureCount(value); return *this;}
@@ -52,18 +52,18 @@ namespace Model
     /**
      * <p>The worlds that failed.</p>
      */
-    inline const Aws::Vector<WorldFailure>& GetFailures() const{ return m_failures; }
+    inline const Aws::Vector<WorldFailure>& GetFailures() const { return m_failures; }
     inline bool FailuresHasBeenSet() const { return m_failuresHasBeenSet; }
-    inline void SetFailures(const Aws::Vector<WorldFailure>& value) { m_failuresHasBeenSet = true; m_failures = value; }
-    inline void SetFailures(Aws::Vector<WorldFailure>&& value) { m_failuresHasBeenSet = true; m_failures = std::move(value); }
-    inline FailureSummary& WithFailures(const Aws::Vector<WorldFailure>& value) { SetFailures(value); return *this;}
-    inline FailureSummary& WithFailures(Aws::Vector<WorldFailure>&& value) { SetFailures(std::move(value)); return *this;}
-    inline FailureSummary& AddFailures(const WorldFailure& value) { m_failuresHasBeenSet = true; m_failures.push_back(value); return *this; }
-    inline FailureSummary& AddFailures(WorldFailure&& value) { m_failuresHasBeenSet = true; m_failures.push_back(std::move(value)); return *this; }
+    template<typename FailuresT = Aws::Vector<WorldFailure>>
+    void SetFailures(FailuresT&& value) { m_failuresHasBeenSet = true; m_failures = std::forward<FailuresT>(value); }
+    template<typename FailuresT = Aws::Vector<WorldFailure>>
+    FailureSummary& WithFailures(FailuresT&& value) { SetFailures(std::forward<FailuresT>(value)); return *this;}
+    template<typename FailuresT = WorldFailure>
+    FailureSummary& AddFailures(FailuresT&& value) { m_failuresHasBeenSet = true; m_failures.emplace_back(std::forward<FailuresT>(value)); return *this; }
     ///@}
   private:
 
-    int m_totalFailureCount;
+    int m_totalFailureCount{0};
     bool m_totalFailureCountHasBeenSet = false;
 
     Aws::Vector<WorldFailure> m_failures;

@@ -18,20 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-ScoringComponentResiliencyScore::ScoringComponentResiliencyScore() : 
-    m_excludedCount(0),
-    m_excludedCountHasBeenSet(false),
-    m_outstandingCount(0),
-    m_outstandingCountHasBeenSet(false),
-    m_possibleScore(0.0),
-    m_possibleScoreHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false)
-{
-}
-
 ScoringComponentResiliencyScore::ScoringComponentResiliencyScore(JsonView jsonValue)
-  : ScoringComponentResiliencyScore()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ ScoringComponentResiliencyScore& ScoringComponentResiliencyScore::operator =(Jso
   if(jsonValue.ValueExists("excludedCount"))
   {
     m_excludedCount = jsonValue.GetInt64("excludedCount");
-
     m_excludedCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outstandingCount"))
   {
     m_outstandingCount = jsonValue.GetInt64("outstandingCount");
-
     m_outstandingCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("possibleScore"))
   {
     m_possibleScore = jsonValue.GetDouble("possibleScore");
-
     m_possibleScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("score"))
   {
     m_score = jsonValue.GetDouble("score");
-
     m_scoreHasBeenSet = true;
   }
-
   return *this;
 }
 

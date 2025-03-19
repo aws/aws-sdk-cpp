@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-MediaTypeHeaderResult::MediaTypeHeaderResult()
-{
-}
-
 MediaTypeHeaderResult::MediaTypeHeaderResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -35,12 +31,14 @@ MediaTypeHeaderResult& MediaTypeHeaderResult::operator =(const Aws::AmazonWebSer
   if(jsonIter != headers.end())
   {
     m_json = jsonIter->second;
+    m_jsonHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

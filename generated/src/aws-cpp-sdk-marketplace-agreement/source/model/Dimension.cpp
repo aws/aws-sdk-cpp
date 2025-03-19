@@ -18,15 +18,7 @@ namespace AgreementService
 namespace Model
 {
 
-Dimension::Dimension() : 
-    m_dimensionKeyHasBeenSet(false),
-    m_dimensionValue(0),
-    m_dimensionValueHasBeenSet(false)
-{
-}
-
 Dimension::Dimension(JsonView jsonValue)
-  : Dimension()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Dimension& Dimension::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dimensionKey"))
   {
     m_dimensionKey = jsonValue.GetString("dimensionKey");
-
     m_dimensionKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dimensionValue"))
   {
     m_dimensionValue = jsonValue.GetInteger("dimensionValue");
-
     m_dimensionValueHasBeenSet = true;
   }
-
   return *this;
 }
 

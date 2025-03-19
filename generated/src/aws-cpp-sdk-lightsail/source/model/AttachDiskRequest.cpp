@@ -12,15 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AttachDiskRequest::AttachDiskRequest() : 
-    m_diskNameHasBeenSet(false),
-    m_instanceNameHasBeenSet(false),
-    m_diskPathHasBeenSet(false),
-    m_autoMounting(false),
-    m_autoMountingHasBeenSet(false)
-{
-}
-
 Aws::String AttachDiskRequest::SerializePayload() const
 {
   JsonValue payload;

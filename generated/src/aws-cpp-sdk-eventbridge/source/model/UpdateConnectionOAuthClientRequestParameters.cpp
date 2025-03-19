@@ -18,14 +18,7 @@ namespace EventBridge
 namespace Model
 {
 
-UpdateConnectionOAuthClientRequestParameters::UpdateConnectionOAuthClientRequestParameters() : 
-    m_clientIDHasBeenSet(false),
-    m_clientSecretHasBeenSet(false)
-{
-}
-
 UpdateConnectionOAuthClientRequestParameters::UpdateConnectionOAuthClientRequestParameters(JsonView jsonValue)
-  : UpdateConnectionOAuthClientRequestParameters()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UpdateConnectionOAuthClientRequestParameters& UpdateConnectionOAuthClientRequest
   if(jsonValue.ValueExists("ClientID"))
   {
     m_clientID = jsonValue.GetString("ClientID");
-
     m_clientIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClientSecret"))
   {
     m_clientSecret = jsonValue.GetString("ClientSecret");
-
     m_clientSecretHasBeenSet = true;
   }
-
   return *this;
 }
 

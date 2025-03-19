@@ -18,22 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-TitleAggregation::TitleAggregation() : 
-    m_findingType(AggregationFindingType::NOT_SET),
-    m_findingTypeHasBeenSet(false),
-    m_resourceType(AggregationResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_sortBy(TitleSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_titlesHasBeenSet(false),
-    m_vulnerabilityIdsHasBeenSet(false)
-{
-}
-
 TitleAggregation::TitleAggregation(JsonView jsonValue)
-  : TitleAggregation()
 {
   *this = jsonValue;
 }
@@ -43,31 +28,23 @@ TitleAggregation& TitleAggregation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("findingType"))
   {
     m_findingType = AggregationFindingTypeMapper::GetAggregationFindingTypeForName(jsonValue.GetString("findingType"));
-
     m_findingTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = AggregationResourceTypeMapper::GetAggregationResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sortBy"))
   {
     m_sortBy = TitleSortByMapper::GetTitleSortByForName(jsonValue.GetString("sortBy"));
-
     m_sortByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sortOrder"))
   {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
-
     m_sortOrderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("titles"))
   {
     Aws::Utils::Array<JsonView> titlesJsonList = jsonValue.GetArray("titles");
@@ -77,7 +54,6 @@ TitleAggregation& TitleAggregation::operator =(JsonView jsonValue)
     }
     m_titlesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vulnerabilityIds"))
   {
     Aws::Utils::Array<JsonView> vulnerabilityIdsJsonList = jsonValue.GetArray("vulnerabilityIds");
@@ -87,7 +63,6 @@ TitleAggregation& TitleAggregation::operator =(JsonView jsonValue)
     }
     m_vulnerabilityIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

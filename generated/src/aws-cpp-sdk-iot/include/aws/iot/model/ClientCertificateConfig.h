@@ -32,7 +32,7 @@ namespace Model
   class ClientCertificateConfig
   {
   public:
-    AWS_IOT_API ClientCertificateConfig();
+    AWS_IOT_API ClientCertificateConfig() = default;
     AWS_IOT_API ClientCertificateConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API ClientCertificateConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The ARN of the Lambda function that IoT invokes after mutual TLS
      * authentication during the connection.</p>
      */
-    inline const Aws::String& GetClientCertificateCallbackArn() const{ return m_clientCertificateCallbackArn; }
+    inline const Aws::String& GetClientCertificateCallbackArn() const { return m_clientCertificateCallbackArn; }
     inline bool ClientCertificateCallbackArnHasBeenSet() const { return m_clientCertificateCallbackArnHasBeenSet; }
-    inline void SetClientCertificateCallbackArn(const Aws::String& value) { m_clientCertificateCallbackArnHasBeenSet = true; m_clientCertificateCallbackArn = value; }
-    inline void SetClientCertificateCallbackArn(Aws::String&& value) { m_clientCertificateCallbackArnHasBeenSet = true; m_clientCertificateCallbackArn = std::move(value); }
-    inline void SetClientCertificateCallbackArn(const char* value) { m_clientCertificateCallbackArnHasBeenSet = true; m_clientCertificateCallbackArn.assign(value); }
-    inline ClientCertificateConfig& WithClientCertificateCallbackArn(const Aws::String& value) { SetClientCertificateCallbackArn(value); return *this;}
-    inline ClientCertificateConfig& WithClientCertificateCallbackArn(Aws::String&& value) { SetClientCertificateCallbackArn(std::move(value)); return *this;}
-    inline ClientCertificateConfig& WithClientCertificateCallbackArn(const char* value) { SetClientCertificateCallbackArn(value); return *this;}
+    template<typename ClientCertificateCallbackArnT = Aws::String>
+    void SetClientCertificateCallbackArn(ClientCertificateCallbackArnT&& value) { m_clientCertificateCallbackArnHasBeenSet = true; m_clientCertificateCallbackArn = std::forward<ClientCertificateCallbackArnT>(value); }
+    template<typename ClientCertificateCallbackArnT = Aws::String>
+    ClientCertificateConfig& WithClientCertificateCallbackArn(ClientCertificateCallbackArnT&& value) { SetClientCertificateCallbackArn(std::forward<ClientCertificateCallbackArnT>(value)); return *this;}
     ///@}
   private:
 

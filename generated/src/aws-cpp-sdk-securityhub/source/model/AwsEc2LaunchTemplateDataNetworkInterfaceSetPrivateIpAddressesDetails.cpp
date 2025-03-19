@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails() : 
-    m_primary(false),
-    m_primaryHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false)
-{
-}
-
 AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails::AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails(JsonView jsonValue)
-  : AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AwsEc2LaunchTemplateDataNetworkInterfaceSetPrivateIpAddressesDetails& AwsEc2Laun
   if(jsonValue.ValueExists("Primary"))
   {
     m_primary = jsonValue.GetBool("Primary");
-
     m_primaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrivateIpAddress"))
   {
     m_privateIpAddress = jsonValue.GetString("PrivateIpAddress");
-
     m_privateIpAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

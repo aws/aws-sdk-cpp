@@ -18,14 +18,7 @@ namespace EFS
 namespace Model
 {
 
-AvailabilityZonesMismatch::AvailabilityZonesMismatch() : 
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 AvailabilityZonesMismatch::AvailabilityZonesMismatch(JsonView jsonValue)
-  : AvailabilityZonesMismatch()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AvailabilityZonesMismatch& AvailabilityZonesMismatch::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

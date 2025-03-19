@@ -18,15 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-DNISEmergencyCallingConfiguration::DNISEmergencyCallingConfiguration() : 
-    m_emergencyPhoneNumberHasBeenSet(false),
-    m_testPhoneNumberHasBeenSet(false),
-    m_callingCountryHasBeenSet(false)
-{
-}
-
 DNISEmergencyCallingConfiguration::DNISEmergencyCallingConfiguration(JsonView jsonValue)
-  : DNISEmergencyCallingConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DNISEmergencyCallingConfiguration& DNISEmergencyCallingConfiguration::operator =
   if(jsonValue.ValueExists("EmergencyPhoneNumber"))
   {
     m_emergencyPhoneNumber = jsonValue.GetString("EmergencyPhoneNumber");
-
     m_emergencyPhoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TestPhoneNumber"))
   {
     m_testPhoneNumber = jsonValue.GetString("TestPhoneNumber");
-
     m_testPhoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CallingCountry"))
   {
     m_callingCountry = jsonValue.GetString("CallingCountry");
-
     m_callingCountryHasBeenSet = true;
   }
-
   return *this;
 }
 

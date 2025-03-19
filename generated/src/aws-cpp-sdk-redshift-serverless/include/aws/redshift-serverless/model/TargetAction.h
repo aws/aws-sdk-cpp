@@ -35,7 +35,7 @@ namespace Model
   class TargetAction
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API TargetAction();
+    AWS_REDSHIFTSERVERLESS_API TargetAction() = default;
     AWS_REDSHIFTSERVERLESS_API TargetAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_REDSHIFTSERVERLESS_API TargetAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
 
     ///@{
     
-    inline const CreateSnapshotScheduleActionParameters& GetCreateSnapshot() const{ return m_createSnapshot; }
+    inline const CreateSnapshotScheduleActionParameters& GetCreateSnapshot() const { return m_createSnapshot; }
     inline bool CreateSnapshotHasBeenSet() const { return m_createSnapshotHasBeenSet; }
-    inline void SetCreateSnapshot(const CreateSnapshotScheduleActionParameters& value) { m_createSnapshotHasBeenSet = true; m_createSnapshot = value; }
-    inline void SetCreateSnapshot(CreateSnapshotScheduleActionParameters&& value) { m_createSnapshotHasBeenSet = true; m_createSnapshot = std::move(value); }
-    inline TargetAction& WithCreateSnapshot(const CreateSnapshotScheduleActionParameters& value) { SetCreateSnapshot(value); return *this;}
-    inline TargetAction& WithCreateSnapshot(CreateSnapshotScheduleActionParameters&& value) { SetCreateSnapshot(std::move(value)); return *this;}
+    template<typename CreateSnapshotT = CreateSnapshotScheduleActionParameters>
+    void SetCreateSnapshot(CreateSnapshotT&& value) { m_createSnapshotHasBeenSet = true; m_createSnapshot = std::forward<CreateSnapshotT>(value); }
+    template<typename CreateSnapshotT = CreateSnapshotScheduleActionParameters>
+    TargetAction& WithCreateSnapshot(CreateSnapshotT&& value) { SetCreateSnapshot(std::forward<CreateSnapshotT>(value)); return *this;}
     ///@}
   private:
 

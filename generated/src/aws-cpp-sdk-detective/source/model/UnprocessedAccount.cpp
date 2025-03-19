@@ -18,14 +18,7 @@ namespace Detective
 namespace Model
 {
 
-UnprocessedAccount::UnprocessedAccount() : 
-    m_accountIdHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 UnprocessedAccount::UnprocessedAccount(JsonView jsonValue)
-  : UnprocessedAccount()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UnprocessedAccount& UnprocessedAccount::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reason"))
   {
     m_reason = jsonValue.GetString("Reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

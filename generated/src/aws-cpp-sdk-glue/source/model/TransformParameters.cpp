@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-TransformParameters::TransformParameters() : 
-    m_transformType(TransformType::NOT_SET),
-    m_transformTypeHasBeenSet(false),
-    m_findMatchesParametersHasBeenSet(false)
-{
-}
-
 TransformParameters::TransformParameters(JsonView jsonValue)
-  : TransformParameters()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TransformParameters& TransformParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TransformType"))
   {
     m_transformType = TransformTypeMapper::GetTransformTypeForName(jsonValue.GetString("TransformType"));
-
     m_transformTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FindMatchesParameters"))
   {
     m_findMatchesParameters = jsonValue.GetObject("FindMatchesParameters");
-
     m_findMatchesParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

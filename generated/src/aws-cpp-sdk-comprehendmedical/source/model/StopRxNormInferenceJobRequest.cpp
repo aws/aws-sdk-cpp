@@ -12,11 +12,6 @@ using namespace Aws::ComprehendMedical::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopRxNormInferenceJobRequest::StopRxNormInferenceJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String StopRxNormInferenceJobRequest::SerializePayload() const
 {
   JsonValue payload;

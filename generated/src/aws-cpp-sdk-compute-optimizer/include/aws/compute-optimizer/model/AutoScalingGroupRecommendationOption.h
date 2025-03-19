@@ -38,7 +38,7 @@ namespace Model
   class AutoScalingGroupRecommendationOption
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API AutoScalingGroupRecommendationOption();
+    AWS_COMPUTEOPTIMIZER_API AutoScalingGroupRecommendationOption() = default;
     AWS_COMPUTEOPTIMIZER_API AutoScalingGroupRecommendationOption(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API AutoScalingGroupRecommendationOption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
     /**
      * <p>An array of objects that describe an Auto Scaling group configuration.</p>
      */
-    inline const AutoScalingGroupConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const AutoScalingGroupConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const AutoScalingGroupConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(AutoScalingGroupConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline AutoScalingGroupRecommendationOption& WithConfiguration(const AutoScalingGroupConfiguration& value) { SetConfiguration(value); return *this;}
-    inline AutoScalingGroupRecommendationOption& WithConfiguration(AutoScalingGroupConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = AutoScalingGroupConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = AutoScalingGroupConfiguration>
+    AutoScalingGroupRecommendationOption& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +61,12 @@ namespace Model
      * <p> Describes the GPU accelerator settings for the recommended instance type of
      * the Auto Scaling group. </p>
      */
-    inline const GpuInfo& GetInstanceGpuInfo() const{ return m_instanceGpuInfo; }
+    inline const GpuInfo& GetInstanceGpuInfo() const { return m_instanceGpuInfo; }
     inline bool InstanceGpuInfoHasBeenSet() const { return m_instanceGpuInfoHasBeenSet; }
-    inline void SetInstanceGpuInfo(const GpuInfo& value) { m_instanceGpuInfoHasBeenSet = true; m_instanceGpuInfo = value; }
-    inline void SetInstanceGpuInfo(GpuInfo&& value) { m_instanceGpuInfoHasBeenSet = true; m_instanceGpuInfo = std::move(value); }
-    inline AutoScalingGroupRecommendationOption& WithInstanceGpuInfo(const GpuInfo& value) { SetInstanceGpuInfo(value); return *this;}
-    inline AutoScalingGroupRecommendationOption& WithInstanceGpuInfo(GpuInfo&& value) { SetInstanceGpuInfo(std::move(value)); return *this;}
+    template<typename InstanceGpuInfoT = GpuInfo>
+    void SetInstanceGpuInfo(InstanceGpuInfoT&& value) { m_instanceGpuInfoHasBeenSet = true; m_instanceGpuInfo = std::forward<InstanceGpuInfoT>(value); }
+    template<typename InstanceGpuInfoT = GpuInfo>
+    AutoScalingGroupRecommendationOption& WithInstanceGpuInfo(InstanceGpuInfoT&& value) { SetInstanceGpuInfo(std::forward<InstanceGpuInfoT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +80,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent">Enabling
      * Memory Utilization with the CloudWatch Agent</a>.</p> 
      */
-    inline const Aws::Vector<UtilizationMetric>& GetProjectedUtilizationMetrics() const{ return m_projectedUtilizationMetrics; }
+    inline const Aws::Vector<UtilizationMetric>& GetProjectedUtilizationMetrics() const { return m_projectedUtilizationMetrics; }
     inline bool ProjectedUtilizationMetricsHasBeenSet() const { return m_projectedUtilizationMetricsHasBeenSet; }
-    inline void SetProjectedUtilizationMetrics(const Aws::Vector<UtilizationMetric>& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics = value; }
-    inline void SetProjectedUtilizationMetrics(Aws::Vector<UtilizationMetric>&& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics = std::move(value); }
-    inline AutoScalingGroupRecommendationOption& WithProjectedUtilizationMetrics(const Aws::Vector<UtilizationMetric>& value) { SetProjectedUtilizationMetrics(value); return *this;}
-    inline AutoScalingGroupRecommendationOption& WithProjectedUtilizationMetrics(Aws::Vector<UtilizationMetric>&& value) { SetProjectedUtilizationMetrics(std::move(value)); return *this;}
-    inline AutoScalingGroupRecommendationOption& AddProjectedUtilizationMetrics(const UtilizationMetric& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics.push_back(value); return *this; }
-    inline AutoScalingGroupRecommendationOption& AddProjectedUtilizationMetrics(UtilizationMetric&& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics.push_back(std::move(value)); return *this; }
+    template<typename ProjectedUtilizationMetricsT = Aws::Vector<UtilizationMetric>>
+    void SetProjectedUtilizationMetrics(ProjectedUtilizationMetricsT&& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics = std::forward<ProjectedUtilizationMetricsT>(value); }
+    template<typename ProjectedUtilizationMetricsT = Aws::Vector<UtilizationMetric>>
+    AutoScalingGroupRecommendationOption& WithProjectedUtilizationMetrics(ProjectedUtilizationMetricsT&& value) { SetProjectedUtilizationMetrics(std::forward<ProjectedUtilizationMetricsT>(value)); return *this;}
+    template<typename ProjectedUtilizationMetricsT = UtilizationMetric>
+    AutoScalingGroupRecommendationOption& AddProjectedUtilizationMetrics(ProjectedUtilizationMetricsT&& value) { m_projectedUtilizationMetricsHasBeenSet = true; m_projectedUtilizationMetrics.emplace_back(std::forward<ProjectedUtilizationMetricsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -106,7 +106,7 @@ namespace Model
      * likely you should validate whether the recommendation will meet the performance
      * requirements of your workload before migrating your resource.</p>
      */
-    inline double GetPerformanceRisk() const{ return m_performanceRisk; }
+    inline double GetPerformanceRisk() const { return m_performanceRisk; }
     inline bool PerformanceRiskHasBeenSet() const { return m_performanceRiskHasBeenSet; }
     inline void SetPerformanceRisk(double value) { m_performanceRiskHasBeenSet = true; m_performanceRisk = value; }
     inline AutoScalingGroupRecommendationOption& WithPerformanceRisk(double value) { SetPerformanceRisk(value); return *this;}
@@ -117,7 +117,7 @@ namespace Model
      * <p>The rank of the Auto Scaling group recommendation option.</p> <p>The top
      * recommendation option is ranked as <code>1</code>.</p>
      */
-    inline int GetRank() const{ return m_rank; }
+    inline int GetRank() const { return m_rank; }
     inline bool RankHasBeenSet() const { return m_rankHasBeenSet; }
     inline void SetRank(int value) { m_rankHasBeenSet = true; m_rank = value; }
     inline AutoScalingGroupRecommendationOption& WithRank(int value) { SetRank(value); return *this;}
@@ -129,12 +129,12 @@ namespace Model
      * recommendation option. Savings opportunity includes the estimated monthly
      * savings amount and percentage.</p>
      */
-    inline const SavingsOpportunity& GetSavingsOpportunity() const{ return m_savingsOpportunity; }
+    inline const SavingsOpportunity& GetSavingsOpportunity() const { return m_savingsOpportunity; }
     inline bool SavingsOpportunityHasBeenSet() const { return m_savingsOpportunityHasBeenSet; }
-    inline void SetSavingsOpportunity(const SavingsOpportunity& value) { m_savingsOpportunityHasBeenSet = true; m_savingsOpportunity = value; }
-    inline void SetSavingsOpportunity(SavingsOpportunity&& value) { m_savingsOpportunityHasBeenSet = true; m_savingsOpportunity = std::move(value); }
-    inline AutoScalingGroupRecommendationOption& WithSavingsOpportunity(const SavingsOpportunity& value) { SetSavingsOpportunity(value); return *this;}
-    inline AutoScalingGroupRecommendationOption& WithSavingsOpportunity(SavingsOpportunity&& value) { SetSavingsOpportunity(std::move(value)); return *this;}
+    template<typename SavingsOpportunityT = SavingsOpportunity>
+    void SetSavingsOpportunity(SavingsOpportunityT&& value) { m_savingsOpportunityHasBeenSet = true; m_savingsOpportunity = std::forward<SavingsOpportunityT>(value); }
+    template<typename SavingsOpportunityT = SavingsOpportunity>
+    AutoScalingGroupRecommendationOption& WithSavingsOpportunity(SavingsOpportunityT&& value) { SetSavingsOpportunity(std::forward<SavingsOpportunityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,12 +144,12 @@ namespace Model
      * discounts. Savings opportunity includes the estimated monthly savings and
      * percentage. </p>
      */
-    inline const AutoScalingGroupSavingsOpportunityAfterDiscounts& GetSavingsOpportunityAfterDiscounts() const{ return m_savingsOpportunityAfterDiscounts; }
+    inline const AutoScalingGroupSavingsOpportunityAfterDiscounts& GetSavingsOpportunityAfterDiscounts() const { return m_savingsOpportunityAfterDiscounts; }
     inline bool SavingsOpportunityAfterDiscountsHasBeenSet() const { return m_savingsOpportunityAfterDiscountsHasBeenSet; }
-    inline void SetSavingsOpportunityAfterDiscounts(const AutoScalingGroupSavingsOpportunityAfterDiscounts& value) { m_savingsOpportunityAfterDiscountsHasBeenSet = true; m_savingsOpportunityAfterDiscounts = value; }
-    inline void SetSavingsOpportunityAfterDiscounts(AutoScalingGroupSavingsOpportunityAfterDiscounts&& value) { m_savingsOpportunityAfterDiscountsHasBeenSet = true; m_savingsOpportunityAfterDiscounts = std::move(value); }
-    inline AutoScalingGroupRecommendationOption& WithSavingsOpportunityAfterDiscounts(const AutoScalingGroupSavingsOpportunityAfterDiscounts& value) { SetSavingsOpportunityAfterDiscounts(value); return *this;}
-    inline AutoScalingGroupRecommendationOption& WithSavingsOpportunityAfterDiscounts(AutoScalingGroupSavingsOpportunityAfterDiscounts&& value) { SetSavingsOpportunityAfterDiscounts(std::move(value)); return *this;}
+    template<typename SavingsOpportunityAfterDiscountsT = AutoScalingGroupSavingsOpportunityAfterDiscounts>
+    void SetSavingsOpportunityAfterDiscounts(SavingsOpportunityAfterDiscountsT&& value) { m_savingsOpportunityAfterDiscountsHasBeenSet = true; m_savingsOpportunityAfterDiscounts = std::forward<SavingsOpportunityAfterDiscountsT>(value); }
+    template<typename SavingsOpportunityAfterDiscountsT = AutoScalingGroupSavingsOpportunityAfterDiscounts>
+    AutoScalingGroupRecommendationOption& WithSavingsOpportunityAfterDiscounts(SavingsOpportunityAfterDiscountsT&& value) { SetSavingsOpportunityAfterDiscounts(std::forward<SavingsOpportunityAfterDiscountsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,12 +163,10 @@ namespace Model
      * <code>VeryLow</code> if both the current and recommended instance types are of
      * the same CPU architecture.</p>
      */
-    inline const MigrationEffort& GetMigrationEffort() const{ return m_migrationEffort; }
+    inline MigrationEffort GetMigrationEffort() const { return m_migrationEffort; }
     inline bool MigrationEffortHasBeenSet() const { return m_migrationEffortHasBeenSet; }
-    inline void SetMigrationEffort(const MigrationEffort& value) { m_migrationEffortHasBeenSet = true; m_migrationEffort = value; }
-    inline void SetMigrationEffort(MigrationEffort&& value) { m_migrationEffortHasBeenSet = true; m_migrationEffort = std::move(value); }
-    inline AutoScalingGroupRecommendationOption& WithMigrationEffort(const MigrationEffort& value) { SetMigrationEffort(value); return *this;}
-    inline AutoScalingGroupRecommendationOption& WithMigrationEffort(MigrationEffort&& value) { SetMigrationEffort(std::move(value)); return *this;}
+    inline void SetMigrationEffort(MigrationEffort value) { m_migrationEffortHasBeenSet = true; m_migrationEffort = value; }
+    inline AutoScalingGroupRecommendationOption& WithMigrationEffort(MigrationEffort value) { SetMigrationEffort(value); return *this;}
     ///@}
   private:
 
@@ -181,10 +179,10 @@ namespace Model
     Aws::Vector<UtilizationMetric> m_projectedUtilizationMetrics;
     bool m_projectedUtilizationMetricsHasBeenSet = false;
 
-    double m_performanceRisk;
+    double m_performanceRisk{0.0};
     bool m_performanceRiskHasBeenSet = false;
 
-    int m_rank;
+    int m_rank{0};
     bool m_rankHasBeenSet = false;
 
     SavingsOpportunity m_savingsOpportunity;
@@ -193,7 +191,7 @@ namespace Model
     AutoScalingGroupSavingsOpportunityAfterDiscounts m_savingsOpportunityAfterDiscounts;
     bool m_savingsOpportunityAfterDiscountsHasBeenSet = false;
 
-    MigrationEffort m_migrationEffort;
+    MigrationEffort m_migrationEffort{MigrationEffort::NOT_SET};
     bool m_migrationEffortHasBeenSet = false;
   };
 

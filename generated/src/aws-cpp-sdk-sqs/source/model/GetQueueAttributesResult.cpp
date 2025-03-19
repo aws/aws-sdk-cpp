@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetQueueAttributesResult::GetQueueAttributesResult()
-{
-}
-
 GetQueueAttributesResult::GetQueueAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,19 +32,21 @@ GetQueueAttributesResult& GetQueueAttributesResult::operator =(const Aws::Amazon
     {
       m_attributes[QueueAttributeNameMapper::GetQueueAttributeNameForName(attributesItem.first)] = attributesItem.second.AsString();
     }
+    m_attributesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& responseMetadataIter = headers.find("x-amzn-requestid");
   if(responseMetadataIter != headers.end())
   {
+    m_responseMetadataHasBeenSet = true;
      // for backward compatibility for customers used to an old XML Client interface
      m_responseMetadata.SetRequestId(responseMetadataIter->second);
   }

@@ -32,7 +32,7 @@ namespace Model
   class ExtensionsV2
   {
   public:
-    AWS_PCACONNECTORAD_API ExtensionsV2();
+    AWS_PCACONNECTORAD_API ExtensionsV2() = default;
     AWS_PCACONNECTORAD_API ExtensionsV2(Aws::Utils::Json::JsonView jsonValue);
     AWS_PCACONNECTORAD_API ExtensionsV2& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PCACONNECTORAD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Application policies specify what the certificate is used for and its
      * purpose. </p>
      */
-    inline const ApplicationPolicies& GetApplicationPolicies() const{ return m_applicationPolicies; }
+    inline const ApplicationPolicies& GetApplicationPolicies() const { return m_applicationPolicies; }
     inline bool ApplicationPoliciesHasBeenSet() const { return m_applicationPoliciesHasBeenSet; }
-    inline void SetApplicationPolicies(const ApplicationPolicies& value) { m_applicationPoliciesHasBeenSet = true; m_applicationPolicies = value; }
-    inline void SetApplicationPolicies(ApplicationPolicies&& value) { m_applicationPoliciesHasBeenSet = true; m_applicationPolicies = std::move(value); }
-    inline ExtensionsV2& WithApplicationPolicies(const ApplicationPolicies& value) { SetApplicationPolicies(value); return *this;}
-    inline ExtensionsV2& WithApplicationPolicies(ApplicationPolicies&& value) { SetApplicationPolicies(std::move(value)); return *this;}
+    template<typename ApplicationPoliciesT = ApplicationPolicies>
+    void SetApplicationPolicies(ApplicationPoliciesT&& value) { m_applicationPoliciesHasBeenSet = true; m_applicationPolicies = std::forward<ApplicationPoliciesT>(value); }
+    template<typename ApplicationPoliciesT = ApplicationPolicies>
+    ExtensionsV2& WithApplicationPolicies(ApplicationPoliciesT&& value) { SetApplicationPolicies(std::forward<ApplicationPoliciesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +56,12 @@ namespace Model
      * <p>The key usage extension defines the purpose (e.g., encipherment, signature,
      * certificate signing) of the key contained in the certificate.</p>
      */
-    inline const KeyUsage& GetKeyUsage() const{ return m_keyUsage; }
+    inline const KeyUsage& GetKeyUsage() const { return m_keyUsage; }
     inline bool KeyUsageHasBeenSet() const { return m_keyUsageHasBeenSet; }
-    inline void SetKeyUsage(const KeyUsage& value) { m_keyUsageHasBeenSet = true; m_keyUsage = value; }
-    inline void SetKeyUsage(KeyUsage&& value) { m_keyUsageHasBeenSet = true; m_keyUsage = std::move(value); }
-    inline ExtensionsV2& WithKeyUsage(const KeyUsage& value) { SetKeyUsage(value); return *this;}
-    inline ExtensionsV2& WithKeyUsage(KeyUsage&& value) { SetKeyUsage(std::move(value)); return *this;}
+    template<typename KeyUsageT = KeyUsage>
+    void SetKeyUsage(KeyUsageT&& value) { m_keyUsageHasBeenSet = true; m_keyUsage = std::forward<KeyUsageT>(value); }
+    template<typename KeyUsageT = KeyUsage>
+    ExtensionsV2& WithKeyUsage(KeyUsageT&& value) { SetKeyUsage(std::forward<KeyUsageT>(value)); return *this;}
     ///@}
   private:
 

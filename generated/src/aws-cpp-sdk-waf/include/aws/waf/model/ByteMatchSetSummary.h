@@ -41,7 +41,7 @@ namespace Model
   class ByteMatchSetSummary
   {
   public:
-    AWS_WAF_API ByteMatchSetSummary();
+    AWS_WAF_API ByteMatchSetSummary() = default;
     AWS_WAF_API ByteMatchSetSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API ByteMatchSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,14 +56,12 @@ namespace Model
      * <code>ByteMatchSet</code> from AWS WAF.</p> <p> <code>ByteMatchSetId</code> is
      * returned by <a>CreateByteMatchSet</a> and by <a>ListByteMatchSets</a>.</p>
      */
-    inline const Aws::String& GetByteMatchSetId() const{ return m_byteMatchSetId; }
+    inline const Aws::String& GetByteMatchSetId() const { return m_byteMatchSetId; }
     inline bool ByteMatchSetIdHasBeenSet() const { return m_byteMatchSetIdHasBeenSet; }
-    inline void SetByteMatchSetId(const Aws::String& value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId = value; }
-    inline void SetByteMatchSetId(Aws::String&& value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId = std::move(value); }
-    inline void SetByteMatchSetId(const char* value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId.assign(value); }
-    inline ByteMatchSetSummary& WithByteMatchSetId(const Aws::String& value) { SetByteMatchSetId(value); return *this;}
-    inline ByteMatchSetSummary& WithByteMatchSetId(Aws::String&& value) { SetByteMatchSetId(std::move(value)); return *this;}
-    inline ByteMatchSetSummary& WithByteMatchSetId(const char* value) { SetByteMatchSetId(value); return *this;}
+    template<typename ByteMatchSetIdT = Aws::String>
+    void SetByteMatchSetId(ByteMatchSetIdT&& value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId = std::forward<ByteMatchSetIdT>(value); }
+    template<typename ByteMatchSetIdT = Aws::String>
+    ByteMatchSetSummary& WithByteMatchSetId(ByteMatchSetIdT&& value) { SetByteMatchSetId(std::forward<ByteMatchSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * <p>A friendly name or description of the <a>ByteMatchSet</a>. You can't change
      * <code>Name</code> after you create a <code>ByteMatchSet</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ByteMatchSetSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ByteMatchSetSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ByteMatchSetSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ByteMatchSetSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

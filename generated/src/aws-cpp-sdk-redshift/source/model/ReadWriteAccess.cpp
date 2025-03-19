@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ReadWriteAccess::ReadWriteAccess() : 
-    m_authorization(ServiceAuthorization::NOT_SET),
-    m_authorizationHasBeenSet(false)
-{
-}
-
 ReadWriteAccess::ReadWriteAccess(const XmlNode& xmlNode)
-  : ReadWriteAccess()
 {
   *this = xmlNode;
 }
@@ -41,7 +34,7 @@ ReadWriteAccess& ReadWriteAccess::operator =(const XmlNode& xmlNode)
     XmlNode authorizationNode = resultNode.FirstChild("Authorization");
     if(!authorizationNode.IsNull())
     {
-      m_authorization = ServiceAuthorizationMapper::GetServiceAuthorizationForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authorizationNode.GetText()).c_str()).c_str());
+      m_authorization = ServiceAuthorizationMapper::GetServiceAuthorizationForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(authorizationNode.GetText()).c_str()));
       m_authorizationHasBeenSet = true;
     }
   }

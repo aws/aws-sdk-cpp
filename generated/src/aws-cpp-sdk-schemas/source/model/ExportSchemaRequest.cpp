@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ExportSchemaRequest::ExportSchemaRequest() : 
-    m_registryNameHasBeenSet(false),
-    m_schemaNameHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String ExportSchemaRequest::SerializePayload() const
 {
   return {};

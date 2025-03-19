@@ -18,13 +18,7 @@ namespace kendra
 namespace Model
 {
 
-AdditionalResultAttributeValue::AdditionalResultAttributeValue() : 
-    m_textWithHighlightsValueHasBeenSet(false)
-{
-}
-
 AdditionalResultAttributeValue::AdditionalResultAttributeValue(JsonView jsonValue)
-  : AdditionalResultAttributeValue()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AdditionalResultAttributeValue& AdditionalResultAttributeValue::operator =(JsonV
   if(jsonValue.ValueExists("TextWithHighlightsValue"))
   {
     m_textWithHighlightsValue = jsonValue.GetObject("TextWithHighlightsValue");
-
     m_textWithHighlightsValueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class ModifyCurrentDBClusterCapacityRequest : public RDSRequest
   {
   public:
-    AWS_RDS_API ModifyCurrentDBClusterCapacityRequest();
+    AWS_RDS_API ModifyCurrentDBClusterCapacityRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the
      * identifier of an existing DB cluster.</p> </li> </ul>
      */
-    inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
+    inline const Aws::String& GetDBClusterIdentifier() const { return m_dBClusterIdentifier; }
     inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
-    inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
-    inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
-    inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
-    inline ModifyCurrentDBClusterCapacityRequest& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
-    inline ModifyCurrentDBClusterCapacityRequest& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
-    inline ModifyCurrentDBClusterCapacityRequest& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
+    template<typename DBClusterIdentifierT = Aws::String>
+    void SetDBClusterIdentifier(DBClusterIdentifierT&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::forward<DBClusterIdentifierT>(value); }
+    template<typename DBClusterIdentifierT = Aws::String>
+    ModifyCurrentDBClusterCapacityRequest& WithDBClusterIdentifier(DBClusterIdentifierT&& value) { SetDBClusterIdentifier(std::forward<DBClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,7 +61,7 @@ namespace Model
      * <code>4</code>, <code>8</code>, <code>16</code>, <code>32</code>,
      * <code>64</code>, <code>192</code>, and <code>384</code>.</p> </li> </ul>
      */
-    inline int GetCapacity() const{ return m_capacity; }
+    inline int GetCapacity() const { return m_capacity; }
     inline bool CapacityHasBeenSet() const { return m_capacityHasBeenSet; }
     inline void SetCapacity(int value) { m_capacityHasBeenSet = true; m_capacity = value; }
     inline ModifyCurrentDBClusterCapacityRequest& WithCapacity(int value) { SetCapacity(value); return *this;}
@@ -75,7 +73,7 @@ namespace Model
      * scaling point to perform seamless scaling before enforcing the timeout action.
      * The default is 300.</p> <p>Specify a value between 10 and 600 seconds.</p>
      */
-    inline int GetSecondsBeforeTimeout() const{ return m_secondsBeforeTimeout; }
+    inline int GetSecondsBeforeTimeout() const { return m_secondsBeforeTimeout; }
     inline bool SecondsBeforeTimeoutHasBeenSet() const { return m_secondsBeforeTimeoutHasBeenSet; }
     inline void SetSecondsBeforeTimeout(int value) { m_secondsBeforeTimeoutHasBeenSet = true; m_secondsBeforeTimeout = value; }
     inline ModifyCurrentDBClusterCapacityRequest& WithSecondsBeforeTimeout(int value) { SetSecondsBeforeTimeout(value); return *this;}
@@ -91,24 +89,22 @@ namespace Model
      * ignores the capacity change if a scaling point isn't found in the timeout
      * period.</p>
      */
-    inline const Aws::String& GetTimeoutAction() const{ return m_timeoutAction; }
+    inline const Aws::String& GetTimeoutAction() const { return m_timeoutAction; }
     inline bool TimeoutActionHasBeenSet() const { return m_timeoutActionHasBeenSet; }
-    inline void SetTimeoutAction(const Aws::String& value) { m_timeoutActionHasBeenSet = true; m_timeoutAction = value; }
-    inline void SetTimeoutAction(Aws::String&& value) { m_timeoutActionHasBeenSet = true; m_timeoutAction = std::move(value); }
-    inline void SetTimeoutAction(const char* value) { m_timeoutActionHasBeenSet = true; m_timeoutAction.assign(value); }
-    inline ModifyCurrentDBClusterCapacityRequest& WithTimeoutAction(const Aws::String& value) { SetTimeoutAction(value); return *this;}
-    inline ModifyCurrentDBClusterCapacityRequest& WithTimeoutAction(Aws::String&& value) { SetTimeoutAction(std::move(value)); return *this;}
-    inline ModifyCurrentDBClusterCapacityRequest& WithTimeoutAction(const char* value) { SetTimeoutAction(value); return *this;}
+    template<typename TimeoutActionT = Aws::String>
+    void SetTimeoutAction(TimeoutActionT&& value) { m_timeoutActionHasBeenSet = true; m_timeoutAction = std::forward<TimeoutActionT>(value); }
+    template<typename TimeoutActionT = Aws::String>
+    ModifyCurrentDBClusterCapacityRequest& WithTimeoutAction(TimeoutActionT&& value) { SetTimeoutAction(std::forward<TimeoutActionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_dBClusterIdentifier;
     bool m_dBClusterIdentifierHasBeenSet = false;
 
-    int m_capacity;
+    int m_capacity{0};
     bool m_capacityHasBeenSet = false;
 
-    int m_secondsBeforeTimeout;
+    int m_secondsBeforeTimeout{0};
     bool m_secondsBeforeTimeoutHasBeenSet = false;
 
     Aws::String m_timeoutAction;

@@ -18,15 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-ContainerDistributionConfiguration::ContainerDistributionConfiguration() : 
-    m_descriptionHasBeenSet(false),
-    m_containerTagsHasBeenSet(false),
-    m_targetRepositoryHasBeenSet(false)
-{
-}
-
 ContainerDistributionConfiguration::ContainerDistributionConfiguration(JsonView jsonValue)
-  : ContainerDistributionConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ContainerDistributionConfiguration& ContainerDistributionConfiguration::operator
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerTags"))
   {
     Aws::Utils::Array<JsonView> containerTagsJsonList = jsonValue.GetArray("containerTags");
@@ -49,14 +39,11 @@ ContainerDistributionConfiguration& ContainerDistributionConfiguration::operator
     }
     m_containerTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetRepository"))
   {
     m_targetRepository = jsonValue.GetObject("targetRepository");
-
     m_targetRepositoryHasBeenSet = true;
   }
-
   return *this;
 }
 

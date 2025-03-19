@@ -18,16 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-SessionSummary::SessionSummary() : 
-    m_assistantArnHasBeenSet(false),
-    m_assistantIdHasBeenSet(false),
-    m_sessionArnHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
-{
-}
-
 SessionSummary::SessionSummary(JsonView jsonValue)
-  : SessionSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ SessionSummary& SessionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("assistantArn"))
   {
     m_assistantArn = jsonValue.GetString("assistantArn");
-
     m_assistantArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assistantId"))
   {
     m_assistantId = jsonValue.GetString("assistantId");
-
     m_assistantIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionArn"))
   {
     m_sessionArn = jsonValue.GetString("sessionArn");
-
     m_sessionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionId"))
   {
     m_sessionId = jsonValue.GetString("sessionId");
-
     m_sessionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListV2LoggingLevelsRequest::ListV2LoggingLevelsRequest() : 
-    m_targetType(LogTargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListV2LoggingLevelsRequest::SerializePayload() const
 {
   return {};

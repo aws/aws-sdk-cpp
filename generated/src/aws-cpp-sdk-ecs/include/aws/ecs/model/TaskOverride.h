@@ -35,7 +35,7 @@ namespace Model
   class TaskOverride
   {
   public:
-    AWS_ECS_API TaskOverride();
+    AWS_ECS_API TaskOverride() = default;
     AWS_ECS_API TaskOverride(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API TaskOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,42 +45,40 @@ namespace Model
     /**
      * <p>One or more container overrides that are sent to a task.</p>
      */
-    inline const Aws::Vector<ContainerOverride>& GetContainerOverrides() const{ return m_containerOverrides; }
+    inline const Aws::Vector<ContainerOverride>& GetContainerOverrides() const { return m_containerOverrides; }
     inline bool ContainerOverridesHasBeenSet() const { return m_containerOverridesHasBeenSet; }
-    inline void SetContainerOverrides(const Aws::Vector<ContainerOverride>& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = value; }
-    inline void SetContainerOverrides(Aws::Vector<ContainerOverride>&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = std::move(value); }
-    inline TaskOverride& WithContainerOverrides(const Aws::Vector<ContainerOverride>& value) { SetContainerOverrides(value); return *this;}
-    inline TaskOverride& WithContainerOverrides(Aws::Vector<ContainerOverride>&& value) { SetContainerOverrides(std::move(value)); return *this;}
-    inline TaskOverride& AddContainerOverrides(const ContainerOverride& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides.push_back(value); return *this; }
-    inline TaskOverride& AddContainerOverrides(ContainerOverride&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides.push_back(std::move(value)); return *this; }
+    template<typename ContainerOverridesT = Aws::Vector<ContainerOverride>>
+    void SetContainerOverrides(ContainerOverridesT&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = std::forward<ContainerOverridesT>(value); }
+    template<typename ContainerOverridesT = Aws::Vector<ContainerOverride>>
+    TaskOverride& WithContainerOverrides(ContainerOverridesT&& value) { SetContainerOverrides(std::forward<ContainerOverridesT>(value)); return *this;}
+    template<typename ContainerOverridesT = ContainerOverride>
+    TaskOverride& AddContainerOverrides(ContainerOverridesT&& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides.emplace_back(std::forward<ContainerOverridesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The CPU override for the task.</p>
      */
-    inline const Aws::String& GetCpu() const{ return m_cpu; }
+    inline const Aws::String& GetCpu() const { return m_cpu; }
     inline bool CpuHasBeenSet() const { return m_cpuHasBeenSet; }
-    inline void SetCpu(const Aws::String& value) { m_cpuHasBeenSet = true; m_cpu = value; }
-    inline void SetCpu(Aws::String&& value) { m_cpuHasBeenSet = true; m_cpu = std::move(value); }
-    inline void SetCpu(const char* value) { m_cpuHasBeenSet = true; m_cpu.assign(value); }
-    inline TaskOverride& WithCpu(const Aws::String& value) { SetCpu(value); return *this;}
-    inline TaskOverride& WithCpu(Aws::String&& value) { SetCpu(std::move(value)); return *this;}
-    inline TaskOverride& WithCpu(const char* value) { SetCpu(value); return *this;}
+    template<typename CpuT = Aws::String>
+    void SetCpu(CpuT&& value) { m_cpuHasBeenSet = true; m_cpu = std::forward<CpuT>(value); }
+    template<typename CpuT = Aws::String>
+    TaskOverride& WithCpu(CpuT&& value) { SetCpu(std::forward<CpuT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Elastic Inference accelerator override for the task.</p>
      */
-    inline const Aws::Vector<InferenceAcceleratorOverride>& GetInferenceAcceleratorOverrides() const{ return m_inferenceAcceleratorOverrides; }
+    inline const Aws::Vector<InferenceAcceleratorOverride>& GetInferenceAcceleratorOverrides() const { return m_inferenceAcceleratorOverrides; }
     inline bool InferenceAcceleratorOverridesHasBeenSet() const { return m_inferenceAcceleratorOverridesHasBeenSet; }
-    inline void SetInferenceAcceleratorOverrides(const Aws::Vector<InferenceAcceleratorOverride>& value) { m_inferenceAcceleratorOverridesHasBeenSet = true; m_inferenceAcceleratorOverrides = value; }
-    inline void SetInferenceAcceleratorOverrides(Aws::Vector<InferenceAcceleratorOverride>&& value) { m_inferenceAcceleratorOverridesHasBeenSet = true; m_inferenceAcceleratorOverrides = std::move(value); }
-    inline TaskOverride& WithInferenceAcceleratorOverrides(const Aws::Vector<InferenceAcceleratorOverride>& value) { SetInferenceAcceleratorOverrides(value); return *this;}
-    inline TaskOverride& WithInferenceAcceleratorOverrides(Aws::Vector<InferenceAcceleratorOverride>&& value) { SetInferenceAcceleratorOverrides(std::move(value)); return *this;}
-    inline TaskOverride& AddInferenceAcceleratorOverrides(const InferenceAcceleratorOverride& value) { m_inferenceAcceleratorOverridesHasBeenSet = true; m_inferenceAcceleratorOverrides.push_back(value); return *this; }
-    inline TaskOverride& AddInferenceAcceleratorOverrides(InferenceAcceleratorOverride&& value) { m_inferenceAcceleratorOverridesHasBeenSet = true; m_inferenceAcceleratorOverrides.push_back(std::move(value)); return *this; }
+    template<typename InferenceAcceleratorOverridesT = Aws::Vector<InferenceAcceleratorOverride>>
+    void SetInferenceAcceleratorOverrides(InferenceAcceleratorOverridesT&& value) { m_inferenceAcceleratorOverridesHasBeenSet = true; m_inferenceAcceleratorOverrides = std::forward<InferenceAcceleratorOverridesT>(value); }
+    template<typename InferenceAcceleratorOverridesT = Aws::Vector<InferenceAcceleratorOverride>>
+    TaskOverride& WithInferenceAcceleratorOverrides(InferenceAcceleratorOverridesT&& value) { SetInferenceAcceleratorOverrides(std::forward<InferenceAcceleratorOverridesT>(value)); return *this;}
+    template<typename InferenceAcceleratorOverridesT = InferenceAcceleratorOverride>
+    TaskOverride& AddInferenceAcceleratorOverrides(InferenceAcceleratorOverridesT&& value) { m_inferenceAcceleratorOverridesHasBeenSet = true; m_inferenceAcceleratorOverrides.emplace_back(std::forward<InferenceAcceleratorOverridesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -91,28 +89,24 @@ namespace Model
      * ECS task execution IAM role</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+    inline const Aws::String& GetExecutionRoleArn() const { return m_executionRoleArn; }
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
-    inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
-    inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
-    inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
-    inline TaskOverride& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
-    inline TaskOverride& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
-    inline TaskOverride& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
+    template<typename ExecutionRoleArnT = Aws::String>
+    void SetExecutionRoleArn(ExecutionRoleArnT&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::forward<ExecutionRoleArnT>(value); }
+    template<typename ExecutionRoleArnT = Aws::String>
+    TaskOverride& WithExecutionRoleArn(ExecutionRoleArnT&& value) { SetExecutionRoleArn(std::forward<ExecutionRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The memory override for the task.</p>
      */
-    inline const Aws::String& GetMemory() const{ return m_memory; }
+    inline const Aws::String& GetMemory() const { return m_memory; }
     inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
-    inline void SetMemory(const Aws::String& value) { m_memoryHasBeenSet = true; m_memory = value; }
-    inline void SetMemory(Aws::String&& value) { m_memoryHasBeenSet = true; m_memory = std::move(value); }
-    inline void SetMemory(const char* value) { m_memoryHasBeenSet = true; m_memory.assign(value); }
-    inline TaskOverride& WithMemory(const Aws::String& value) { SetMemory(value); return *this;}
-    inline TaskOverride& WithMemory(Aws::String&& value) { SetMemory(std::move(value)); return *this;}
-    inline TaskOverride& WithMemory(const char* value) { SetMemory(value); return *this;}
+    template<typename MemoryT = Aws::String>
+    void SetMemory(MemoryT&& value) { m_memoryHasBeenSet = true; m_memory = std::forward<MemoryT>(value); }
+    template<typename MemoryT = Aws::String>
+    TaskOverride& WithMemory(MemoryT&& value) { SetMemory(std::forward<MemoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,14 +118,12 @@ namespace Model
      * Role for Tasks</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetTaskRoleArn() const{ return m_taskRoleArn; }
+    inline const Aws::String& GetTaskRoleArn() const { return m_taskRoleArn; }
     inline bool TaskRoleArnHasBeenSet() const { return m_taskRoleArnHasBeenSet; }
-    inline void SetTaskRoleArn(const Aws::String& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = value; }
-    inline void SetTaskRoleArn(Aws::String&& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = std::move(value); }
-    inline void SetTaskRoleArn(const char* value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn.assign(value); }
-    inline TaskOverride& WithTaskRoleArn(const Aws::String& value) { SetTaskRoleArn(value); return *this;}
-    inline TaskOverride& WithTaskRoleArn(Aws::String&& value) { SetTaskRoleArn(std::move(value)); return *this;}
-    inline TaskOverride& WithTaskRoleArn(const char* value) { SetTaskRoleArn(value); return *this;}
+    template<typename TaskRoleArnT = Aws::String>
+    void SetTaskRoleArn(TaskRoleArnT&& value) { m_taskRoleArnHasBeenSet = true; m_taskRoleArn = std::forward<TaskRoleArnT>(value); }
+    template<typename TaskRoleArnT = Aws::String>
+    TaskOverride& WithTaskRoleArn(TaskRoleArnT&& value) { SetTaskRoleArn(std::forward<TaskRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,12 +134,12 @@ namespace Model
      * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
      * later.</p> </li> </ul> 
      */
-    inline const EphemeralStorage& GetEphemeralStorage() const{ return m_ephemeralStorage; }
+    inline const EphemeralStorage& GetEphemeralStorage() const { return m_ephemeralStorage; }
     inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
-    inline void SetEphemeralStorage(const EphemeralStorage& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
-    inline void SetEphemeralStorage(EphemeralStorage&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::move(value); }
-    inline TaskOverride& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
-    inline TaskOverride& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
+    template<typename EphemeralStorageT = EphemeralStorage>
+    void SetEphemeralStorage(EphemeralStorageT&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::forward<EphemeralStorageT>(value); }
+    template<typename EphemeralStorageT = EphemeralStorage>
+    TaskOverride& WithEphemeralStorage(EphemeralStorageT&& value) { SetEphemeralStorage(std::forward<EphemeralStorageT>(value)); return *this;}
     ///@}
   private:
 

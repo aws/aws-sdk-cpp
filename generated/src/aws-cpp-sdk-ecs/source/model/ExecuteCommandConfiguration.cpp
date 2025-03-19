@@ -18,16 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ExecuteCommandConfiguration::ExecuteCommandConfiguration() : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_logging(ExecuteCommandLogging::NOT_SET),
-    m_loggingHasBeenSet(false),
-    m_logConfigurationHasBeenSet(false)
-{
-}
-
 ExecuteCommandConfiguration::ExecuteCommandConfiguration(JsonView jsonValue)
-  : ExecuteCommandConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ExecuteCommandConfiguration& ExecuteCommandConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logging"))
   {
     m_logging = ExecuteCommandLoggingMapper::GetExecuteCommandLoggingForName(jsonValue.GetString("logging"));
-
     m_loggingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logConfiguration"))
   {
     m_logConfiguration = jsonValue.GetObject("logConfiguration");
-
     m_logConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

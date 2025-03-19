@@ -18,20 +18,7 @@ namespace Glue
 namespace Model
 {
 
-ViewRepresentation::ViewRepresentation() : 
-    m_dialect(ViewDialect::NOT_SET),
-    m_dialectHasBeenSet(false),
-    m_dialectVersionHasBeenSet(false),
-    m_viewOriginalTextHasBeenSet(false),
-    m_viewExpandedTextHasBeenSet(false),
-    m_validationConnectionHasBeenSet(false),
-    m_isStale(false),
-    m_isStaleHasBeenSet(false)
-{
-}
-
 ViewRepresentation::ViewRepresentation(JsonView jsonValue)
-  : ViewRepresentation()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ ViewRepresentation& ViewRepresentation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Dialect"))
   {
     m_dialect = ViewDialectMapper::GetViewDialectForName(jsonValue.GetString("Dialect"));
-
     m_dialectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DialectVersion"))
   {
     m_dialectVersion = jsonValue.GetString("DialectVersion");
-
     m_dialectVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ViewOriginalText"))
   {
     m_viewOriginalText = jsonValue.GetString("ViewOriginalText");
-
     m_viewOriginalTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ViewExpandedText"))
   {
     m_viewExpandedText = jsonValue.GetString("ViewExpandedText");
-
     m_viewExpandedTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidationConnection"))
   {
     m_validationConnection = jsonValue.GetString("ValidationConnection");
-
     m_validationConnectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsStale"))
   {
     m_isStale = jsonValue.GetBool("IsStale");
-
     m_isStaleHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,21 +18,7 @@ namespace LookoutforVision
 namespace Model
 {
 
-GreengrassConfiguration::GreengrassConfiguration() : 
-    m_compilerOptionsHasBeenSet(false),
-    m_targetDevice(TargetDevice::NOT_SET),
-    m_targetDeviceHasBeenSet(false),
-    m_targetPlatformHasBeenSet(false),
-    m_s3OutputLocationHasBeenSet(false),
-    m_componentNameHasBeenSet(false),
-    m_componentVersionHasBeenSet(false),
-    m_componentDescriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 GreengrassConfiguration::GreengrassConfiguration(JsonView jsonValue)
-  : GreengrassConfiguration()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ GreengrassConfiguration& GreengrassConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CompilerOptions"))
   {
     m_compilerOptions = jsonValue.GetString("CompilerOptions");
-
     m_compilerOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetDevice"))
   {
     m_targetDevice = TargetDeviceMapper::GetTargetDeviceForName(jsonValue.GetString("TargetDevice"));
-
     m_targetDeviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetPlatform"))
   {
     m_targetPlatform = jsonValue.GetObject("TargetPlatform");
-
     m_targetPlatformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3OutputLocation"))
   {
     m_s3OutputLocation = jsonValue.GetObject("S3OutputLocation");
-
     m_s3OutputLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComponentName"))
   {
     m_componentName = jsonValue.GetString("ComponentName");
-
     m_componentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComponentVersion"))
   {
     m_componentVersion = jsonValue.GetString("ComponentVersion");
-
     m_componentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComponentDescription"))
   {
     m_componentDescription = jsonValue.GetString("ComponentDescription");
-
     m_componentDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -97,7 +69,6 @@ GreengrassConfiguration& GreengrassConfiguration::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

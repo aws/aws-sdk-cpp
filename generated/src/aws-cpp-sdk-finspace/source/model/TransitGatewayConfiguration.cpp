@@ -18,15 +18,7 @@ namespace finspace
 namespace Model
 {
 
-TransitGatewayConfiguration::TransitGatewayConfiguration() : 
-    m_transitGatewayIDHasBeenSet(false),
-    m_routableCIDRSpaceHasBeenSet(false),
-    m_attachmentNetworkAclConfigurationHasBeenSet(false)
-{
-}
-
 TransitGatewayConfiguration::TransitGatewayConfiguration(JsonView jsonValue)
-  : TransitGatewayConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TransitGatewayConfiguration& TransitGatewayConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("transitGatewayID"))
   {
     m_transitGatewayID = jsonValue.GetString("transitGatewayID");
-
     m_transitGatewayIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("routableCIDRSpace"))
   {
     m_routableCIDRSpace = jsonValue.GetString("routableCIDRSpace");
-
     m_routableCIDRSpaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attachmentNetworkAclConfiguration"))
   {
     Aws::Utils::Array<JsonView> attachmentNetworkAclConfigurationJsonList = jsonValue.GetArray("attachmentNetworkAclConfiguration");
@@ -56,7 +44,6 @@ TransitGatewayConfiguration& TransitGatewayConfiguration::operator =(JsonView js
     }
     m_attachmentNetworkAclConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-TestCaseFilter::TestCaseFilter() : 
-    m_statusHasBeenSet(false),
-    m_keywordHasBeenSet(false)
-{
-}
-
 TestCaseFilter::TestCaseFilter(JsonView jsonValue)
-  : TestCaseFilter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TestCaseFilter& TestCaseFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("keyword"))
   {
     m_keyword = jsonValue.GetString("keyword");
-
     m_keywordHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,26 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFleetRequest::CreateFleetRequest() : 
-    m_nameHasBeenSet(false),
-    m_baseCapacity(0),
-    m_baseCapacityHasBeenSet(false),
-    m_environmentType(EnvironmentType::NOT_SET),
-    m_environmentTypeHasBeenSet(false),
-    m_computeType(ComputeType::NOT_SET),
-    m_computeTypeHasBeenSet(false),
-    m_computeConfigurationHasBeenSet(false),
-    m_scalingConfigurationHasBeenSet(false),
-    m_overflowBehavior(FleetOverflowBehavior::NOT_SET),
-    m_overflowBehaviorHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_proxyConfigurationHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_fleetServiceRoleHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateFleetRequest::SerializePayload() const
 {
   JsonValue payload;

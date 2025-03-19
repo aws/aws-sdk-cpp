@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-MediaDeviceMemoryInfo::MediaDeviceMemoryInfo() : 
-    m_sizeInMiB(0),
-    m_sizeInMiBHasBeenSet(false)
-{
-}
-
 MediaDeviceMemoryInfo::MediaDeviceMemoryInfo(const XmlNode& xmlNode)
-  : MediaDeviceMemoryInfo()
 {
   *this = xmlNode;
 }

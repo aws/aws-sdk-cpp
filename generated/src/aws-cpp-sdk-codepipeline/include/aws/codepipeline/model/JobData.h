@@ -39,7 +39,7 @@ namespace Model
   class JobData
   {
   public:
-    AWS_CODEPIPELINE_API JobData();
+    AWS_CODEPIPELINE_API JobData() = default;
     AWS_CODEPIPELINE_API JobData(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API JobData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,24 +49,24 @@ namespace Model
     /**
      * <p>Represents information about an action type.</p>
      */
-    inline const ActionTypeId& GetActionTypeId() const{ return m_actionTypeId; }
+    inline const ActionTypeId& GetActionTypeId() const { return m_actionTypeId; }
     inline bool ActionTypeIdHasBeenSet() const { return m_actionTypeIdHasBeenSet; }
-    inline void SetActionTypeId(const ActionTypeId& value) { m_actionTypeIdHasBeenSet = true; m_actionTypeId = value; }
-    inline void SetActionTypeId(ActionTypeId&& value) { m_actionTypeIdHasBeenSet = true; m_actionTypeId = std::move(value); }
-    inline JobData& WithActionTypeId(const ActionTypeId& value) { SetActionTypeId(value); return *this;}
-    inline JobData& WithActionTypeId(ActionTypeId&& value) { SetActionTypeId(std::move(value)); return *this;}
+    template<typename ActionTypeIdT = ActionTypeId>
+    void SetActionTypeId(ActionTypeIdT&& value) { m_actionTypeIdHasBeenSet = true; m_actionTypeId = std::forward<ActionTypeIdT>(value); }
+    template<typename ActionTypeIdT = ActionTypeId>
+    JobData& WithActionTypeId(ActionTypeIdT&& value) { SetActionTypeId(std::forward<ActionTypeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Represents information about an action configuration.</p>
      */
-    inline const ActionConfiguration& GetActionConfiguration() const{ return m_actionConfiguration; }
+    inline const ActionConfiguration& GetActionConfiguration() const { return m_actionConfiguration; }
     inline bool ActionConfigurationHasBeenSet() const { return m_actionConfigurationHasBeenSet; }
-    inline void SetActionConfiguration(const ActionConfiguration& value) { m_actionConfigurationHasBeenSet = true; m_actionConfiguration = value; }
-    inline void SetActionConfiguration(ActionConfiguration&& value) { m_actionConfigurationHasBeenSet = true; m_actionConfiguration = std::move(value); }
-    inline JobData& WithActionConfiguration(const ActionConfiguration& value) { SetActionConfiguration(value); return *this;}
-    inline JobData& WithActionConfiguration(ActionConfiguration&& value) { SetActionConfiguration(std::move(value)); return *this;}
+    template<typename ActionConfigurationT = ActionConfiguration>
+    void SetActionConfiguration(ActionConfigurationT&& value) { m_actionConfigurationHasBeenSet = true; m_actionConfiguration = std::forward<ActionConfigurationT>(value); }
+    template<typename ActionConfigurationT = ActionConfiguration>
+    JobData& WithActionConfiguration(ActionConfigurationT&& value) { SetActionConfiguration(std::forward<ActionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,40 +75,40 @@ namespace Model
      * <p>Includes <code>pipelineArn</code> and <code>pipelineExecutionId</code> for
      * custom jobs.</p> 
      */
-    inline const PipelineContext& GetPipelineContext() const{ return m_pipelineContext; }
+    inline const PipelineContext& GetPipelineContext() const { return m_pipelineContext; }
     inline bool PipelineContextHasBeenSet() const { return m_pipelineContextHasBeenSet; }
-    inline void SetPipelineContext(const PipelineContext& value) { m_pipelineContextHasBeenSet = true; m_pipelineContext = value; }
-    inline void SetPipelineContext(PipelineContext&& value) { m_pipelineContextHasBeenSet = true; m_pipelineContext = std::move(value); }
-    inline JobData& WithPipelineContext(const PipelineContext& value) { SetPipelineContext(value); return *this;}
-    inline JobData& WithPipelineContext(PipelineContext&& value) { SetPipelineContext(std::move(value)); return *this;}
+    template<typename PipelineContextT = PipelineContext>
+    void SetPipelineContext(PipelineContextT&& value) { m_pipelineContextHasBeenSet = true; m_pipelineContext = std::forward<PipelineContextT>(value); }
+    template<typename PipelineContextT = PipelineContext>
+    JobData& WithPipelineContext(PipelineContextT&& value) { SetPipelineContext(std::forward<PipelineContextT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The artifact supplied to the job.</p>
      */
-    inline const Aws::Vector<Artifact>& GetInputArtifacts() const{ return m_inputArtifacts; }
+    inline const Aws::Vector<Artifact>& GetInputArtifacts() const { return m_inputArtifacts; }
     inline bool InputArtifactsHasBeenSet() const { return m_inputArtifactsHasBeenSet; }
-    inline void SetInputArtifacts(const Aws::Vector<Artifact>& value) { m_inputArtifactsHasBeenSet = true; m_inputArtifacts = value; }
-    inline void SetInputArtifacts(Aws::Vector<Artifact>&& value) { m_inputArtifactsHasBeenSet = true; m_inputArtifacts = std::move(value); }
-    inline JobData& WithInputArtifacts(const Aws::Vector<Artifact>& value) { SetInputArtifacts(value); return *this;}
-    inline JobData& WithInputArtifacts(Aws::Vector<Artifact>&& value) { SetInputArtifacts(std::move(value)); return *this;}
-    inline JobData& AddInputArtifacts(const Artifact& value) { m_inputArtifactsHasBeenSet = true; m_inputArtifacts.push_back(value); return *this; }
-    inline JobData& AddInputArtifacts(Artifact&& value) { m_inputArtifactsHasBeenSet = true; m_inputArtifacts.push_back(std::move(value)); return *this; }
+    template<typename InputArtifactsT = Aws::Vector<Artifact>>
+    void SetInputArtifacts(InputArtifactsT&& value) { m_inputArtifactsHasBeenSet = true; m_inputArtifacts = std::forward<InputArtifactsT>(value); }
+    template<typename InputArtifactsT = Aws::Vector<Artifact>>
+    JobData& WithInputArtifacts(InputArtifactsT&& value) { SetInputArtifacts(std::forward<InputArtifactsT>(value)); return *this;}
+    template<typename InputArtifactsT = Artifact>
+    JobData& AddInputArtifacts(InputArtifactsT&& value) { m_inputArtifactsHasBeenSet = true; m_inputArtifacts.emplace_back(std::forward<InputArtifactsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The output of the job.</p>
      */
-    inline const Aws::Vector<Artifact>& GetOutputArtifacts() const{ return m_outputArtifacts; }
+    inline const Aws::Vector<Artifact>& GetOutputArtifacts() const { return m_outputArtifacts; }
     inline bool OutputArtifactsHasBeenSet() const { return m_outputArtifactsHasBeenSet; }
-    inline void SetOutputArtifacts(const Aws::Vector<Artifact>& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts = value; }
-    inline void SetOutputArtifacts(Aws::Vector<Artifact>&& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts = std::move(value); }
-    inline JobData& WithOutputArtifacts(const Aws::Vector<Artifact>& value) { SetOutputArtifacts(value); return *this;}
-    inline JobData& WithOutputArtifacts(Aws::Vector<Artifact>&& value) { SetOutputArtifacts(std::move(value)); return *this;}
-    inline JobData& AddOutputArtifacts(const Artifact& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts.push_back(value); return *this; }
-    inline JobData& AddOutputArtifacts(Artifact&& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts.push_back(std::move(value)); return *this; }
+    template<typename OutputArtifactsT = Aws::Vector<Artifact>>
+    void SetOutputArtifacts(OutputArtifactsT&& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts = std::forward<OutputArtifactsT>(value); }
+    template<typename OutputArtifactsT = Aws::Vector<Artifact>>
+    JobData& WithOutputArtifacts(OutputArtifactsT&& value) { SetOutputArtifacts(std::forward<OutputArtifactsT>(value)); return *this;}
+    template<typename OutputArtifactsT = Artifact>
+    JobData& AddOutputArtifacts(OutputArtifactsT&& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts.emplace_back(std::forward<OutputArtifactsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -119,12 +119,12 @@ namespace Model
      * artifacts in the S3 bucket used to store artifacts for the pipeline in
      * CodePipeline.</p>
      */
-    inline const AWSSessionCredentials& GetArtifactCredentials() const{ return m_artifactCredentials; }
+    inline const AWSSessionCredentials& GetArtifactCredentials() const { return m_artifactCredentials; }
     inline bool ArtifactCredentialsHasBeenSet() const { return m_artifactCredentialsHasBeenSet; }
-    inline void SetArtifactCredentials(const AWSSessionCredentials& value) { m_artifactCredentialsHasBeenSet = true; m_artifactCredentials = value; }
-    inline void SetArtifactCredentials(AWSSessionCredentials&& value) { m_artifactCredentialsHasBeenSet = true; m_artifactCredentials = std::move(value); }
-    inline JobData& WithArtifactCredentials(const AWSSessionCredentials& value) { SetArtifactCredentials(value); return *this;}
-    inline JobData& WithArtifactCredentials(AWSSessionCredentials&& value) { SetArtifactCredentials(std::move(value)); return *this;}
+    template<typename ArtifactCredentialsT = AWSSessionCredentials>
+    void SetArtifactCredentials(ArtifactCredentialsT&& value) { m_artifactCredentialsHasBeenSet = true; m_artifactCredentials = std::forward<ArtifactCredentialsT>(value); }
+    template<typename ArtifactCredentialsT = AWSSessionCredentials>
+    JobData& WithArtifactCredentials(ArtifactCredentialsT&& value) { SetArtifactCredentials(std::forward<ArtifactCredentialsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,14 +132,12 @@ namespace Model
      * <p>A system-generated token, such as a deployment ID, required by a job to
      * continue the job asynchronously.</p>
      */
-    inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
+    inline const Aws::String& GetContinuationToken() const { return m_continuationToken; }
     inline bool ContinuationTokenHasBeenSet() const { return m_continuationTokenHasBeenSet; }
-    inline void SetContinuationToken(const Aws::String& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = value; }
-    inline void SetContinuationToken(Aws::String&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::move(value); }
-    inline void SetContinuationToken(const char* value) { m_continuationTokenHasBeenSet = true; m_continuationToken.assign(value); }
-    inline JobData& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
-    inline JobData& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
-    inline JobData& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
+    template<typename ContinuationTokenT = Aws::String>
+    void SetContinuationToken(ContinuationTokenT&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::forward<ContinuationTokenT>(value); }
+    template<typename ContinuationTokenT = Aws::String>
+    JobData& WithContinuationToken(ContinuationTokenT&& value) { SetContinuationToken(std::forward<ContinuationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -147,12 +145,12 @@ namespace Model
      * <p>Represents information about the key used to encrypt data in the artifact
      * store, such as an KMS key. </p>
      */
-    inline const EncryptionKey& GetEncryptionKey() const{ return m_encryptionKey; }
+    inline const EncryptionKey& GetEncryptionKey() const { return m_encryptionKey; }
     inline bool EncryptionKeyHasBeenSet() const { return m_encryptionKeyHasBeenSet; }
-    inline void SetEncryptionKey(const EncryptionKey& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
-    inline void SetEncryptionKey(EncryptionKey&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::move(value); }
-    inline JobData& WithEncryptionKey(const EncryptionKey& value) { SetEncryptionKey(value); return *this;}
-    inline JobData& WithEncryptionKey(EncryptionKey&& value) { SetEncryptionKey(std::move(value)); return *this;}
+    template<typename EncryptionKeyT = EncryptionKey>
+    void SetEncryptionKey(EncryptionKeyT&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::forward<EncryptionKeyT>(value); }
+    template<typename EncryptionKeyT = EncryptionKey>
+    JobData& WithEncryptionKey(EncryptionKeyT&& value) { SetEncryptionKey(std::forward<EncryptionKeyT>(value)); return *this;}
     ///@}
   private:
 

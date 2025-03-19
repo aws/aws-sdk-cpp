@@ -29,7 +29,7 @@ namespace Model
   class CreateTrafficMirrorSessionResponse
   {
   public:
-    AWS_EC2_API CreateTrafficMirrorSessionResponse();
+    AWS_EC2_API CreateTrafficMirrorSessionResponse() = default;
     AWS_EC2_API CreateTrafficMirrorSessionResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API CreateTrafficMirrorSessionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,11 +38,11 @@ namespace Model
     /**
      * <p>Information about the Traffic Mirror session.</p>
      */
-    inline const TrafficMirrorSession& GetTrafficMirrorSession() const{ return m_trafficMirrorSession; }
-    inline void SetTrafficMirrorSession(const TrafficMirrorSession& value) { m_trafficMirrorSession = value; }
-    inline void SetTrafficMirrorSession(TrafficMirrorSession&& value) { m_trafficMirrorSession = std::move(value); }
-    inline CreateTrafficMirrorSessionResponse& WithTrafficMirrorSession(const TrafficMirrorSession& value) { SetTrafficMirrorSession(value); return *this;}
-    inline CreateTrafficMirrorSessionResponse& WithTrafficMirrorSession(TrafficMirrorSession&& value) { SetTrafficMirrorSession(std::move(value)); return *this;}
+    inline const TrafficMirrorSession& GetTrafficMirrorSession() const { return m_trafficMirrorSession; }
+    template<typename TrafficMirrorSessionT = TrafficMirrorSession>
+    void SetTrafficMirrorSession(TrafficMirrorSessionT&& value) { m_trafficMirrorSessionHasBeenSet = true; m_trafficMirrorSession = std::forward<TrafficMirrorSessionT>(value); }
+    template<typename TrafficMirrorSessionT = TrafficMirrorSession>
+    CreateTrafficMirrorSessionResponse& WithTrafficMirrorSession(TrafficMirrorSessionT&& value) { SetTrafficMirrorSession(std::forward<TrafficMirrorSessionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,30 +52,31 @@ namespace Model
      * href="https://docs.aws.amazon.com/ec2/latest/devguide/ec2-api-idempotency.html">How
      * to ensure idempotency</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-    inline void SetClientToken(const Aws::String& value) { m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientToken.assign(value); }
-    inline CreateTrafficMirrorSessionResponse& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateTrafficMirrorSessionResponse& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateTrafficMirrorSessionResponse& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateTrafficMirrorSessionResponse& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateTrafficMirrorSessionResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateTrafficMirrorSessionResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateTrafficMirrorSessionResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     TrafficMirrorSession m_trafficMirrorSession;
+    bool m_trafficMirrorSessionHasBeenSet = false;
 
     Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

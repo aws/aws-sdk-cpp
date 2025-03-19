@@ -32,7 +32,7 @@ namespace Model
   class LambdaConfiguration
   {
   public:
-    AWS_LOOKOUTMETRICS_API LambdaConfiguration();
+    AWS_LOOKOUTMETRICS_API LambdaConfiguration() = default;
     AWS_LOOKOUTMETRICS_API LambdaConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API LambdaConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The ARN of an IAM role that has permission to invoke the Lambda function.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline LambdaConfiguration& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline LambdaConfiguration& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline LambdaConfiguration& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    LambdaConfiguration& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the Lambda function.</p>
      */
-    inline const Aws::String& GetLambdaArn() const{ return m_lambdaArn; }
+    inline const Aws::String& GetLambdaArn() const { return m_lambdaArn; }
     inline bool LambdaArnHasBeenSet() const { return m_lambdaArnHasBeenSet; }
-    inline void SetLambdaArn(const Aws::String& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = value; }
-    inline void SetLambdaArn(Aws::String&& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = std::move(value); }
-    inline void SetLambdaArn(const char* value) { m_lambdaArnHasBeenSet = true; m_lambdaArn.assign(value); }
-    inline LambdaConfiguration& WithLambdaArn(const Aws::String& value) { SetLambdaArn(value); return *this;}
-    inline LambdaConfiguration& WithLambdaArn(Aws::String&& value) { SetLambdaArn(std::move(value)); return *this;}
-    inline LambdaConfiguration& WithLambdaArn(const char* value) { SetLambdaArn(value); return *this;}
+    template<typename LambdaArnT = Aws::String>
+    void SetLambdaArn(LambdaArnT&& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = std::forward<LambdaArnT>(value); }
+    template<typename LambdaArnT = Aws::String>
+    LambdaConfiguration& WithLambdaArn(LambdaArnT&& value) { SetLambdaArn(std::forward<LambdaArnT>(value)); return *this;}
     ///@}
   private:
 

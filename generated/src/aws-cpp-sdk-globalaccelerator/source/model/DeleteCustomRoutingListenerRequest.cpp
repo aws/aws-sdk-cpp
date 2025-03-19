@@ -12,11 +12,6 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCustomRoutingListenerRequest::DeleteCustomRoutingListenerRequest() : 
-    m_listenerArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCustomRoutingListenerRequest::SerializePayload() const
 {
   JsonValue payload;

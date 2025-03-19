@@ -18,24 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-Pipe::Pipe() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_desiredState(RequestedPipeState::NOT_SET),
-    m_desiredStateHasBeenSet(false),
-    m_currentState(PipeState::NOT_SET),
-    m_currentStateHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_enrichmentHasBeenSet(false)
-{
-}
-
 Pipe::Pipe(JsonView jsonValue)
-  : Pipe()
 {
   *this = jsonValue;
 }
@@ -45,73 +28,53 @@ Pipe& Pipe::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DesiredState"))
   {
     m_desiredState = RequestedPipeStateMapper::GetRequestedPipeStateForName(jsonValue.GetString("DesiredState"));
-
     m_desiredStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentState"))
   {
     m_currentState = PipeStateMapper::GetPipeStateForName(jsonValue.GetString("CurrentState"));
-
     m_currentStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateReason"))
   {
     m_stateReason = jsonValue.GetString("StateReason");
-
     m_stateReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetString("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Target"))
   {
     m_target = jsonValue.GetString("Target");
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enrichment"))
   {
     m_enrichment = jsonValue.GetString("Enrichment");
-
     m_enrichmentHasBeenSet = true;
   }
-
   return *this;
 }
 

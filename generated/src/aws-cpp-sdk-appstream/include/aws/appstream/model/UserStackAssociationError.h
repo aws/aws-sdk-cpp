@@ -34,7 +34,7 @@ namespace Model
   class UserStackAssociationError
   {
   public:
-    AWS_APPSTREAM_API UserStackAssociationError();
+    AWS_APPSTREAM_API UserStackAssociationError() = default;
     AWS_APPSTREAM_API UserStackAssociationError(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSTREAM_API UserStackAssociationError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>Information about the user and associated stack.</p>
      */
-    inline const UserStackAssociation& GetUserStackAssociation() const{ return m_userStackAssociation; }
+    inline const UserStackAssociation& GetUserStackAssociation() const { return m_userStackAssociation; }
     inline bool UserStackAssociationHasBeenSet() const { return m_userStackAssociationHasBeenSet; }
-    inline void SetUserStackAssociation(const UserStackAssociation& value) { m_userStackAssociationHasBeenSet = true; m_userStackAssociation = value; }
-    inline void SetUserStackAssociation(UserStackAssociation&& value) { m_userStackAssociationHasBeenSet = true; m_userStackAssociation = std::move(value); }
-    inline UserStackAssociationError& WithUserStackAssociation(const UserStackAssociation& value) { SetUserStackAssociation(value); return *this;}
-    inline UserStackAssociationError& WithUserStackAssociation(UserStackAssociation&& value) { SetUserStackAssociation(std::move(value)); return *this;}
+    template<typename UserStackAssociationT = UserStackAssociation>
+    void SetUserStackAssociation(UserStackAssociationT&& value) { m_userStackAssociationHasBeenSet = true; m_userStackAssociation = std::forward<UserStackAssociationT>(value); }
+    template<typename UserStackAssociationT = UserStackAssociation>
+    UserStackAssociationError& WithUserStackAssociation(UserStackAssociationT&& value) { SetUserStackAssociation(std::forward<UserStackAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,10 @@ namespace Model
      * <p>The error code for the error that is returned when a user can’t be associated
      * with or disassociated from a stack.</p>
      */
-    inline const UserStackAssociationErrorCode& GetErrorCode() const{ return m_errorCode; }
+    inline UserStackAssociationErrorCode GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const UserStackAssociationErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(UserStackAssociationErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline UserStackAssociationError& WithErrorCode(const UserStackAssociationErrorCode& value) { SetErrorCode(value); return *this;}
-    inline UserStackAssociationError& WithErrorCode(UserStackAssociationErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline void SetErrorCode(UserStackAssociationErrorCode value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline UserStackAssociationError& WithErrorCode(UserStackAssociationErrorCode value) { SetErrorCode(value); return *this;}
     ///@}
 
     ///@{
@@ -70,21 +68,19 @@ namespace Model
      * <p>The error message for the error that is returned when a user can’t be
      * associated with or disassociated from a stack.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline UserStackAssociationError& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline UserStackAssociationError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline UserStackAssociationError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    UserStackAssociationError& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
   private:
 
     UserStackAssociation m_userStackAssociation;
     bool m_userStackAssociationHasBeenSet = false;
 
-    UserStackAssociationErrorCode m_errorCode;
+    UserStackAssociationErrorCode m_errorCode{UserStackAssociationErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;

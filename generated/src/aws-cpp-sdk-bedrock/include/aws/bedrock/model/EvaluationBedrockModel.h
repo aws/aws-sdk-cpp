@@ -43,7 +43,7 @@ namespace Model
   class EvaluationBedrockModel
   {
   public:
-    AWS_BEDROCK_API EvaluationBedrockModel();
+    AWS_BEDROCK_API EvaluationBedrockModel() = default;
     AWS_BEDROCK_API EvaluationBedrockModel(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API EvaluationBedrockModel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
     /**
      * <p>The ARN of the Amazon Bedrock model or inference profile specified.</p>
      */
-    inline const Aws::String& GetModelIdentifier() const{ return m_modelIdentifier; }
+    inline const Aws::String& GetModelIdentifier() const { return m_modelIdentifier; }
     inline bool ModelIdentifierHasBeenSet() const { return m_modelIdentifierHasBeenSet; }
-    inline void SetModelIdentifier(const Aws::String& value) { m_modelIdentifierHasBeenSet = true; m_modelIdentifier = value; }
-    inline void SetModelIdentifier(Aws::String&& value) { m_modelIdentifierHasBeenSet = true; m_modelIdentifier = std::move(value); }
-    inline void SetModelIdentifier(const char* value) { m_modelIdentifierHasBeenSet = true; m_modelIdentifier.assign(value); }
-    inline EvaluationBedrockModel& WithModelIdentifier(const Aws::String& value) { SetModelIdentifier(value); return *this;}
-    inline EvaluationBedrockModel& WithModelIdentifier(Aws::String&& value) { SetModelIdentifier(std::move(value)); return *this;}
-    inline EvaluationBedrockModel& WithModelIdentifier(const char* value) { SetModelIdentifier(value); return *this;}
+    template<typename ModelIdentifierT = Aws::String>
+    void SetModelIdentifier(ModelIdentifierT&& value) { m_modelIdentifierHasBeenSet = true; m_modelIdentifier = std::forward<ModelIdentifierT>(value); }
+    template<typename ModelIdentifierT = Aws::String>
+    EvaluationBedrockModel& WithModelIdentifier(ModelIdentifierT&& value) { SetModelIdentifier(std::forward<ModelIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,26 +66,24 @@ namespace Model
      * <p>Each Amazon Bedrock support different inference parameters that change how
      * the model behaves during inference.</p>
      */
-    inline const Aws::String& GetInferenceParams() const{ return m_inferenceParams; }
+    inline const Aws::String& GetInferenceParams() const { return m_inferenceParams; }
     inline bool InferenceParamsHasBeenSet() const { return m_inferenceParamsHasBeenSet; }
-    inline void SetInferenceParams(const Aws::String& value) { m_inferenceParamsHasBeenSet = true; m_inferenceParams = value; }
-    inline void SetInferenceParams(Aws::String&& value) { m_inferenceParamsHasBeenSet = true; m_inferenceParams = std::move(value); }
-    inline void SetInferenceParams(const char* value) { m_inferenceParamsHasBeenSet = true; m_inferenceParams.assign(value); }
-    inline EvaluationBedrockModel& WithInferenceParams(const Aws::String& value) { SetInferenceParams(value); return *this;}
-    inline EvaluationBedrockModel& WithInferenceParams(Aws::String&& value) { SetInferenceParams(std::move(value)); return *this;}
-    inline EvaluationBedrockModel& WithInferenceParams(const char* value) { SetInferenceParams(value); return *this;}
+    template<typename InferenceParamsT = Aws::String>
+    void SetInferenceParams(InferenceParamsT&& value) { m_inferenceParamsHasBeenSet = true; m_inferenceParams = std::forward<InferenceParamsT>(value); }
+    template<typename InferenceParamsT = Aws::String>
+    EvaluationBedrockModel& WithInferenceParams(InferenceParamsT&& value) { SetInferenceParams(std::forward<InferenceParamsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies performance settings for the model or inference profile.</p>
      */
-    inline const PerformanceConfiguration& GetPerformanceConfig() const{ return m_performanceConfig; }
+    inline const PerformanceConfiguration& GetPerformanceConfig() const { return m_performanceConfig; }
     inline bool PerformanceConfigHasBeenSet() const { return m_performanceConfigHasBeenSet; }
-    inline void SetPerformanceConfig(const PerformanceConfiguration& value) { m_performanceConfigHasBeenSet = true; m_performanceConfig = value; }
-    inline void SetPerformanceConfig(PerformanceConfiguration&& value) { m_performanceConfigHasBeenSet = true; m_performanceConfig = std::move(value); }
-    inline EvaluationBedrockModel& WithPerformanceConfig(const PerformanceConfiguration& value) { SetPerformanceConfig(value); return *this;}
-    inline EvaluationBedrockModel& WithPerformanceConfig(PerformanceConfiguration&& value) { SetPerformanceConfig(std::move(value)); return *this;}
+    template<typename PerformanceConfigT = PerformanceConfiguration>
+    void SetPerformanceConfig(PerformanceConfigT&& value) { m_performanceConfigHasBeenSet = true; m_performanceConfig = std::forward<PerformanceConfigT>(value); }
+    template<typename PerformanceConfigT = PerformanceConfiguration>
+    EvaluationBedrockModel& WithPerformanceConfig(PerformanceConfigT&& value) { SetPerformanceConfig(std::forward<PerformanceConfigT>(value)); return *this;}
     ///@}
   private:
 

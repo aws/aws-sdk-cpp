@@ -34,7 +34,7 @@ namespace Model
   class MssPackage
   {
   public:
-    AWS_MEDIAPACKAGEVOD_API MssPackage();
+    AWS_MEDIAPACKAGEVOD_API MssPackage() = default;
     AWS_MEDIAPACKAGEVOD_API MssPackage(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEVOD_API MssPackage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEVOD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,33 @@ namespace Model
 
     ///@{
     
-    inline const MssEncryption& GetEncryption() const{ return m_encryption; }
+    inline const MssEncryption& GetEncryption() const { return m_encryption; }
     inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
-    inline void SetEncryption(const MssEncryption& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
-    inline void SetEncryption(MssEncryption&& value) { m_encryptionHasBeenSet = true; m_encryption = std::move(value); }
-    inline MssPackage& WithEncryption(const MssEncryption& value) { SetEncryption(value); return *this;}
-    inline MssPackage& WithEncryption(MssEncryption&& value) { SetEncryption(std::move(value)); return *this;}
+    template<typename EncryptionT = MssEncryption>
+    void SetEncryption(EncryptionT&& value) { m_encryptionHasBeenSet = true; m_encryption = std::forward<EncryptionT>(value); }
+    template<typename EncryptionT = MssEncryption>
+    MssPackage& WithEncryption(EncryptionT&& value) { SetEncryption(std::forward<EncryptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * A list of MSS manifest configurations.
      */
-    inline const Aws::Vector<MssManifest>& GetMssManifests() const{ return m_mssManifests; }
+    inline const Aws::Vector<MssManifest>& GetMssManifests() const { return m_mssManifests; }
     inline bool MssManifestsHasBeenSet() const { return m_mssManifestsHasBeenSet; }
-    inline void SetMssManifests(const Aws::Vector<MssManifest>& value) { m_mssManifestsHasBeenSet = true; m_mssManifests = value; }
-    inline void SetMssManifests(Aws::Vector<MssManifest>&& value) { m_mssManifestsHasBeenSet = true; m_mssManifests = std::move(value); }
-    inline MssPackage& WithMssManifests(const Aws::Vector<MssManifest>& value) { SetMssManifests(value); return *this;}
-    inline MssPackage& WithMssManifests(Aws::Vector<MssManifest>&& value) { SetMssManifests(std::move(value)); return *this;}
-    inline MssPackage& AddMssManifests(const MssManifest& value) { m_mssManifestsHasBeenSet = true; m_mssManifests.push_back(value); return *this; }
-    inline MssPackage& AddMssManifests(MssManifest&& value) { m_mssManifestsHasBeenSet = true; m_mssManifests.push_back(std::move(value)); return *this; }
+    template<typename MssManifestsT = Aws::Vector<MssManifest>>
+    void SetMssManifests(MssManifestsT&& value) { m_mssManifestsHasBeenSet = true; m_mssManifests = std::forward<MssManifestsT>(value); }
+    template<typename MssManifestsT = Aws::Vector<MssManifest>>
+    MssPackage& WithMssManifests(MssManifestsT&& value) { SetMssManifests(std::forward<MssManifestsT>(value)); return *this;}
+    template<typename MssManifestsT = MssManifest>
+    MssPackage& AddMssManifests(MssManifestsT&& value) { m_mssManifestsHasBeenSet = true; m_mssManifests.emplace_back(std::forward<MssManifestsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * The duration (in seconds) of each segment.
      */
-    inline int GetSegmentDurationSeconds() const{ return m_segmentDurationSeconds; }
+    inline int GetSegmentDurationSeconds() const { return m_segmentDurationSeconds; }
     inline bool SegmentDurationSecondsHasBeenSet() const { return m_segmentDurationSecondsHasBeenSet; }
     inline void SetSegmentDurationSeconds(int value) { m_segmentDurationSecondsHasBeenSet = true; m_segmentDurationSeconds = value; }
     inline MssPackage& WithSegmentDurationSeconds(int value) { SetSegmentDurationSeconds(value); return *this;}
@@ -81,7 +81,7 @@ namespace Model
     Aws::Vector<MssManifest> m_mssManifests;
     bool m_mssManifestsHasBeenSet = false;
 
-    int m_segmentDurationSeconds;
+    int m_segmentDurationSeconds{0};
     bool m_segmentDurationSecondsHasBeenSet = false;
   };
 

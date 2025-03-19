@@ -18,15 +18,7 @@ namespace Notifications
 namespace Model
 {
 
-NotificationHubStatusSummary::NotificationHubStatusSummary() : 
-    m_status(NotificationHubStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 NotificationHubStatusSummary::NotificationHubStatusSummary(JsonView jsonValue)
-  : NotificationHubStatusSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ NotificationHubStatusSummary& NotificationHubStatusSummary::operator =(JsonView 
   if(jsonValue.ValueExists("status"))
   {
     m_status = NotificationHubStatusMapper::GetNotificationHubStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

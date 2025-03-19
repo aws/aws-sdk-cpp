@@ -18,15 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-TcpRoute::TcpRoute() : 
-    m_actionHasBeenSet(false),
-    m_matchHasBeenSet(false),
-    m_timeoutHasBeenSet(false)
-{
-}
-
 TcpRoute::TcpRoute(JsonView jsonValue)
-  : TcpRoute()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ TcpRoute& TcpRoute::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("action"))
   {
     m_action = jsonValue.GetObject("action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("match"))
   {
     m_match = jsonValue.GetObject("match");
-
     m_matchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeout"))
   {
     m_timeout = jsonValue.GetObject("timeout");
-
     m_timeoutHasBeenSet = true;
   }
-
   return *this;
 }
 

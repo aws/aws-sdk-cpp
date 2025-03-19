@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AthenaIntegration::AthenaIntegration() : 
-    m_integrationResultS3DestinationArnHasBeenSet(false),
-    m_partitionLoadFrequency(PartitionLoadFrequency::NOT_SET),
-    m_partitionLoadFrequencyHasBeenSet(false),
-    m_partitionStartDateHasBeenSet(false),
-    m_partitionEndDateHasBeenSet(false)
-{
-}
-
 AthenaIntegration::AthenaIntegration(const XmlNode& xmlNode)
-  : AthenaIntegration()
 {
   *this = xmlNode;
 }
@@ -50,7 +40,7 @@ AthenaIntegration& AthenaIntegration::operator =(const XmlNode& xmlNode)
     XmlNode partitionLoadFrequencyNode = resultNode.FirstChild("PartitionLoadFrequency");
     if(!partitionLoadFrequencyNode.IsNull())
     {
-      m_partitionLoadFrequency = PartitionLoadFrequencyMapper::GetPartitionLoadFrequencyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(partitionLoadFrequencyNode.GetText()).c_str()).c_str());
+      m_partitionLoadFrequency = PartitionLoadFrequencyMapper::GetPartitionLoadFrequencyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(partitionLoadFrequencyNode.GetText()).c_str()));
       m_partitionLoadFrequencyHasBeenSet = true;
     }
     XmlNode partitionStartDateNode = resultNode.FirstChild("PartitionStartDate");

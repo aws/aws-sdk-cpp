@@ -26,7 +26,7 @@ namespace Model
   class UpdateLocationAzureBlobRequest : public DataSyncRequest
   {
   public:
-    AWS_DATASYNC_API UpdateLocationAzureBlobRequest();
+    AWS_DATASYNC_API UpdateLocationAzureBlobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * <p>Specifies the ARN of the Azure Blob Storage transfer location that you're
      * updating.</p>
      */
-    inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
+    inline const Aws::String& GetLocationArn() const { return m_locationArn; }
     inline bool LocationArnHasBeenSet() const { return m_locationArnHasBeenSet; }
-    inline void SetLocationArn(const Aws::String& value) { m_locationArnHasBeenSet = true; m_locationArn = value; }
-    inline void SetLocationArn(Aws::String&& value) { m_locationArnHasBeenSet = true; m_locationArn = std::move(value); }
-    inline void SetLocationArn(const char* value) { m_locationArnHasBeenSet = true; m_locationArn.assign(value); }
-    inline UpdateLocationAzureBlobRequest& WithLocationArn(const Aws::String& value) { SetLocationArn(value); return *this;}
-    inline UpdateLocationAzureBlobRequest& WithLocationArn(Aws::String&& value) { SetLocationArn(std::move(value)); return *this;}
-    inline UpdateLocationAzureBlobRequest& WithLocationArn(const char* value) { SetLocationArn(value); return *this;}
+    template<typename LocationArnT = Aws::String>
+    void SetLocationArn(LocationArnT&& value) { m_locationArnHasBeenSet = true; m_locationArn = std::forward<LocationArnT>(value); }
+    template<typename LocationArnT = Aws::String>
+    UpdateLocationAzureBlobRequest& WithLocationArn(LocationArnT&& value) { SetLocationArn(std::forward<LocationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>Specifies path segments if you want to limit your transfer to a virtual
      * directory in your container (for example, <code>/my/images</code>).</p>
      */
-    inline const Aws::String& GetSubdirectory() const{ return m_subdirectory; }
+    inline const Aws::String& GetSubdirectory() const { return m_subdirectory; }
     inline bool SubdirectoryHasBeenSet() const { return m_subdirectoryHasBeenSet; }
-    inline void SetSubdirectory(const Aws::String& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = value; }
-    inline void SetSubdirectory(Aws::String&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::move(value); }
-    inline void SetSubdirectory(const char* value) { m_subdirectoryHasBeenSet = true; m_subdirectory.assign(value); }
-    inline UpdateLocationAzureBlobRequest& WithSubdirectory(const Aws::String& value) { SetSubdirectory(value); return *this;}
-    inline UpdateLocationAzureBlobRequest& WithSubdirectory(Aws::String&& value) { SetSubdirectory(std::move(value)); return *this;}
-    inline UpdateLocationAzureBlobRequest& WithSubdirectory(const char* value) { SetSubdirectory(value); return *this;}
+    template<typename SubdirectoryT = Aws::String>
+    void SetSubdirectory(SubdirectoryT&& value) { m_subdirectoryHasBeenSet = true; m_subdirectory = std::forward<SubdirectoryT>(value); }
+    template<typename SubdirectoryT = Aws::String>
+    UpdateLocationAzureBlobRequest& WithSubdirectory(SubdirectoryT&& value) { SetSubdirectory(std::forward<SubdirectoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +71,10 @@ namespace Model
      * Storage. DataSync can access blob storage using a shared access signature
      * (SAS).</p>
      */
-    inline const AzureBlobAuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
+    inline AzureBlobAuthenticationType GetAuthenticationType() const { return m_authenticationType; }
     inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
-    inline void SetAuthenticationType(const AzureBlobAuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
-    inline void SetAuthenticationType(AzureBlobAuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
-    inline UpdateLocationAzureBlobRequest& WithAuthenticationType(const AzureBlobAuthenticationType& value) { SetAuthenticationType(value); return *this;}
-    inline UpdateLocationAzureBlobRequest& WithAuthenticationType(AzureBlobAuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
+    inline void SetAuthenticationType(AzureBlobAuthenticationType value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
+    inline UpdateLocationAzureBlobRequest& WithAuthenticationType(AzureBlobAuthenticationType value) { SetAuthenticationType(value); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +82,12 @@ namespace Model
      * <p>Specifies the SAS configuration that allows DataSync to access your Azure
      * Blob Storage.</p>
      */
-    inline const AzureBlobSasConfiguration& GetSasConfiguration() const{ return m_sasConfiguration; }
+    inline const AzureBlobSasConfiguration& GetSasConfiguration() const { return m_sasConfiguration; }
     inline bool SasConfigurationHasBeenSet() const { return m_sasConfigurationHasBeenSet; }
-    inline void SetSasConfiguration(const AzureBlobSasConfiguration& value) { m_sasConfigurationHasBeenSet = true; m_sasConfiguration = value; }
-    inline void SetSasConfiguration(AzureBlobSasConfiguration&& value) { m_sasConfigurationHasBeenSet = true; m_sasConfiguration = std::move(value); }
-    inline UpdateLocationAzureBlobRequest& WithSasConfiguration(const AzureBlobSasConfiguration& value) { SetSasConfiguration(value); return *this;}
-    inline UpdateLocationAzureBlobRequest& WithSasConfiguration(AzureBlobSasConfiguration&& value) { SetSasConfiguration(std::move(value)); return *this;}
+    template<typename SasConfigurationT = AzureBlobSasConfiguration>
+    void SetSasConfiguration(SasConfigurationT&& value) { m_sasConfigurationHasBeenSet = true; m_sasConfiguration = std::forward<SasConfigurationT>(value); }
+    template<typename SasConfigurationT = AzureBlobSasConfiguration>
+    UpdateLocationAzureBlobRequest& WithSasConfiguration(SasConfigurationT&& value) { SetSasConfiguration(std::forward<SasConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,12 +99,10 @@ namespace Model
      * href="https://learn.microsoft.com/en-us/rest/api/storageservices/understanding-block-blobs--append-blobs--and-page-blobs">Azure
      * Blob Storage documentation</a>.</p>
      */
-    inline const AzureBlobType& GetBlobType() const{ return m_blobType; }
+    inline AzureBlobType GetBlobType() const { return m_blobType; }
     inline bool BlobTypeHasBeenSet() const { return m_blobTypeHasBeenSet; }
-    inline void SetBlobType(const AzureBlobType& value) { m_blobTypeHasBeenSet = true; m_blobType = value; }
-    inline void SetBlobType(AzureBlobType&& value) { m_blobTypeHasBeenSet = true; m_blobType = std::move(value); }
-    inline UpdateLocationAzureBlobRequest& WithBlobType(const AzureBlobType& value) { SetBlobType(value); return *this;}
-    inline UpdateLocationAzureBlobRequest& WithBlobType(AzureBlobType&& value) { SetBlobType(std::move(value)); return *this;}
+    inline void SetBlobType(AzureBlobType value) { m_blobTypeHasBeenSet = true; m_blobType = value; }
+    inline UpdateLocationAzureBlobRequest& WithBlobType(AzureBlobType value) { SetBlobType(value); return *this;}
     ///@}
 
     ///@{
@@ -121,12 +113,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/creating-azure-blob-location.html#azure-blob-access-tiers">Access
      * tiers</a>.</p>
      */
-    inline const AzureAccessTier& GetAccessTier() const{ return m_accessTier; }
+    inline AzureAccessTier GetAccessTier() const { return m_accessTier; }
     inline bool AccessTierHasBeenSet() const { return m_accessTierHasBeenSet; }
-    inline void SetAccessTier(const AzureAccessTier& value) { m_accessTierHasBeenSet = true; m_accessTier = value; }
-    inline void SetAccessTier(AzureAccessTier&& value) { m_accessTierHasBeenSet = true; m_accessTier = std::move(value); }
-    inline UpdateLocationAzureBlobRequest& WithAccessTier(const AzureAccessTier& value) { SetAccessTier(value); return *this;}
-    inline UpdateLocationAzureBlobRequest& WithAccessTier(AzureAccessTier&& value) { SetAccessTier(std::move(value)); return *this;}
+    inline void SetAccessTier(AzureAccessTier value) { m_accessTierHasBeenSet = true; m_accessTier = value; }
+    inline UpdateLocationAzureBlobRequest& WithAccessTier(AzureAccessTier value) { SetAccessTier(value); return *this;}
     ///@}
 
     ///@{
@@ -137,15 +127,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/multiple-agents.html">Using
      * multiple agents for your transfer</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAgentArns() const{ return m_agentArns; }
+    inline const Aws::Vector<Aws::String>& GetAgentArns() const { return m_agentArns; }
     inline bool AgentArnsHasBeenSet() const { return m_agentArnsHasBeenSet; }
-    inline void SetAgentArns(const Aws::Vector<Aws::String>& value) { m_agentArnsHasBeenSet = true; m_agentArns = value; }
-    inline void SetAgentArns(Aws::Vector<Aws::String>&& value) { m_agentArnsHasBeenSet = true; m_agentArns = std::move(value); }
-    inline UpdateLocationAzureBlobRequest& WithAgentArns(const Aws::Vector<Aws::String>& value) { SetAgentArns(value); return *this;}
-    inline UpdateLocationAzureBlobRequest& WithAgentArns(Aws::Vector<Aws::String>&& value) { SetAgentArns(std::move(value)); return *this;}
-    inline UpdateLocationAzureBlobRequest& AddAgentArns(const Aws::String& value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(value); return *this; }
-    inline UpdateLocationAzureBlobRequest& AddAgentArns(Aws::String&& value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(std::move(value)); return *this; }
-    inline UpdateLocationAzureBlobRequest& AddAgentArns(const char* value) { m_agentArnsHasBeenSet = true; m_agentArns.push_back(value); return *this; }
+    template<typename AgentArnsT = Aws::Vector<Aws::String>>
+    void SetAgentArns(AgentArnsT&& value) { m_agentArnsHasBeenSet = true; m_agentArns = std::forward<AgentArnsT>(value); }
+    template<typename AgentArnsT = Aws::Vector<Aws::String>>
+    UpdateLocationAzureBlobRequest& WithAgentArns(AgentArnsT&& value) { SetAgentArns(std::forward<AgentArnsT>(value)); return *this;}
+    template<typename AgentArnsT = Aws::String>
+    UpdateLocationAzureBlobRequest& AddAgentArns(AgentArnsT&& value) { m_agentArnsHasBeenSet = true; m_agentArns.emplace_back(std::forward<AgentArnsT>(value)); return *this; }
     ///@}
   private:
 
@@ -155,16 +144,16 @@ namespace Model
     Aws::String m_subdirectory;
     bool m_subdirectoryHasBeenSet = false;
 
-    AzureBlobAuthenticationType m_authenticationType;
+    AzureBlobAuthenticationType m_authenticationType{AzureBlobAuthenticationType::NOT_SET};
     bool m_authenticationTypeHasBeenSet = false;
 
     AzureBlobSasConfiguration m_sasConfiguration;
     bool m_sasConfigurationHasBeenSet = false;
 
-    AzureBlobType m_blobType;
+    AzureBlobType m_blobType{AzureBlobType::NOT_SET};
     bool m_blobTypeHasBeenSet = false;
 
-    AzureAccessTier m_accessTier;
+    AzureAccessTier m_accessTier{AzureAccessTier::NOT_SET};
     bool m_accessTierHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_agentArns;

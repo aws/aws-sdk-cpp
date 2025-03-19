@@ -21,7 +21,7 @@ namespace Model
   class DeleteProjectVersionRequest : public RekognitionRequest
   {
   public:
-    AWS_REKOGNITION_API DeleteProjectVersionRequest();
+    AWS_REKOGNITION_API DeleteProjectVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the project version that you want to
      * delete.</p>
      */
-    inline const Aws::String& GetProjectVersionArn() const{ return m_projectVersionArn; }
+    inline const Aws::String& GetProjectVersionArn() const { return m_projectVersionArn; }
     inline bool ProjectVersionArnHasBeenSet() const { return m_projectVersionArnHasBeenSet; }
-    inline void SetProjectVersionArn(const Aws::String& value) { m_projectVersionArnHasBeenSet = true; m_projectVersionArn = value; }
-    inline void SetProjectVersionArn(Aws::String&& value) { m_projectVersionArnHasBeenSet = true; m_projectVersionArn = std::move(value); }
-    inline void SetProjectVersionArn(const char* value) { m_projectVersionArnHasBeenSet = true; m_projectVersionArn.assign(value); }
-    inline DeleteProjectVersionRequest& WithProjectVersionArn(const Aws::String& value) { SetProjectVersionArn(value); return *this;}
-    inline DeleteProjectVersionRequest& WithProjectVersionArn(Aws::String&& value) { SetProjectVersionArn(std::move(value)); return *this;}
-    inline DeleteProjectVersionRequest& WithProjectVersionArn(const char* value) { SetProjectVersionArn(value); return *this;}
+    template<typename ProjectVersionArnT = Aws::String>
+    void SetProjectVersionArn(ProjectVersionArnT&& value) { m_projectVersionArnHasBeenSet = true; m_projectVersionArn = std::forward<ProjectVersionArnT>(value); }
+    template<typename ProjectVersionArnT = Aws::String>
+    DeleteProjectVersionRequest& WithProjectVersionArn(ProjectVersionArnT&& value) { SetProjectVersionArn(std::forward<ProjectVersionArnT>(value)); return *this;}
     ///@}
   private:
 

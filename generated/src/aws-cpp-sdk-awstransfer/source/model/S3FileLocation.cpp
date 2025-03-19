@@ -18,16 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-S3FileLocation::S3FileLocation() : 
-    m_bucketHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_versionIdHasBeenSet(false),
-    m_etagHasBeenSet(false)
-{
-}
-
 S3FileLocation::S3FileLocation(JsonView jsonValue)
-  : S3FileLocation()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ S3FileLocation& S3FileLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Bucket"))
   {
     m_bucket = jsonValue.GetString("Bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionId"))
   {
     m_versionId = jsonValue.GetString("VersionId");
-
     m_versionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Etag"))
   {
     m_etag = jsonValue.GetString("Etag");
-
     m_etagHasBeenSet = true;
   }
-
   return *this;
 }
 

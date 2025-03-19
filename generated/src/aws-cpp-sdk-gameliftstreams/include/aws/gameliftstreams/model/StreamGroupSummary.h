@@ -37,7 +37,7 @@ namespace Model
   class StreamGroupSummary
   {
   public:
-    AWS_GAMELIFTSTREAMS_API StreamGroupSummary();
+    AWS_GAMELIFTSTREAMS_API StreamGroupSummary() = default;
     AWS_GAMELIFTSTREAMS_API StreamGroupSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFTSTREAMS_API StreamGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFTSTREAMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
      * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</code>
      * or ID-<code>1AB2C3De4</code>. </p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline StreamGroupSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline StreamGroupSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline StreamGroupSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    StreamGroupSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +66,12 @@ namespace Model
      * expressed using in ISO8601 format, such as:
      * <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline StreamGroupSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline StreamGroupSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    StreamGroupSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,26 +79,24 @@ namespace Model
      * <p>Object that identifies the Amazon GameLift Streams application to stream with
      * this stream group.</p>
      */
-    inline const DefaultApplication& GetDefaultApplication() const{ return m_defaultApplication; }
+    inline const DefaultApplication& GetDefaultApplication() const { return m_defaultApplication; }
     inline bool DefaultApplicationHasBeenSet() const { return m_defaultApplicationHasBeenSet; }
-    inline void SetDefaultApplication(const DefaultApplication& value) { m_defaultApplicationHasBeenSet = true; m_defaultApplication = value; }
-    inline void SetDefaultApplication(DefaultApplication&& value) { m_defaultApplicationHasBeenSet = true; m_defaultApplication = std::move(value); }
-    inline StreamGroupSummary& WithDefaultApplication(const DefaultApplication& value) { SetDefaultApplication(value); return *this;}
-    inline StreamGroupSummary& WithDefaultApplication(DefaultApplication&& value) { SetDefaultApplication(std::move(value)); return *this;}
+    template<typename DefaultApplicationT = DefaultApplication>
+    void SetDefaultApplication(DefaultApplicationT&& value) { m_defaultApplicationHasBeenSet = true; m_defaultApplication = std::forward<DefaultApplicationT>(value); }
+    template<typename DefaultApplicationT = DefaultApplication>
+    StreamGroupSummary& WithDefaultApplication(DefaultApplicationT&& value) { SetDefaultApplication(std::forward<DefaultApplicationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A descriptive label for the stream group.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline StreamGroupSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline StreamGroupSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline StreamGroupSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    StreamGroupSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,14 +108,12 @@ namespace Model
      * ARN-<code>arn:aws:gameliftstreams:us-west-2:123456789012:streamgroup/1AB2C3De4</code>
      * or ID-<code>1AB2C3De4</code>. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline StreamGroupSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline StreamGroupSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline StreamGroupSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    StreamGroupSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,12 +122,12 @@ namespace Model
      * are expressed using in ISO8601 format, such as:
      * <code>2022-12-27T22:29:40+00:00</code> (UTC).</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
-    inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
-    inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::move(value); }
-    inline StreamGroupSummary& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
-    inline StreamGroupSummary& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    void SetLastUpdatedAt(LastUpdatedAtT&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value); }
+    template<typename LastUpdatedAtT = Aws::Utils::DateTime>
+    StreamGroupSummary& WithLastUpdatedAt(LastUpdatedAtT&& value) { SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -151,12 +145,10 @@ namespace Model
      * <code>UPDATING_LOCATIONS</code>: One or more locations in the stream group are
      * in the process of updating (either activating or deleting). </p> </li> </ul>
      */
-    inline const StreamGroupStatus& GetStatus() const{ return m_status; }
+    inline StreamGroupStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const StreamGroupStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(StreamGroupStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline StreamGroupSummary& WithStatus(const StreamGroupStatus& value) { SetStatus(value); return *this;}
-    inline StreamGroupSummary& WithStatus(StreamGroupStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(StreamGroupStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline StreamGroupSummary& WithStatus(StreamGroupStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -200,19 +192,17 @@ namespace Model
      * 8 vCPUs, 32 GB RAM, 16 GB VRAM</p> </li> <li> <p>Tenancy: Supports 1 concurrent
      * stream session</p> </li> </ul> </li> </ul>
      */
-    inline const StreamClass& GetStreamClass() const{ return m_streamClass; }
+    inline StreamClass GetStreamClass() const { return m_streamClass; }
     inline bool StreamClassHasBeenSet() const { return m_streamClassHasBeenSet; }
-    inline void SetStreamClass(const StreamClass& value) { m_streamClassHasBeenSet = true; m_streamClass = value; }
-    inline void SetStreamClass(StreamClass&& value) { m_streamClassHasBeenSet = true; m_streamClass = std::move(value); }
-    inline StreamGroupSummary& WithStreamClass(const StreamClass& value) { SetStreamClass(value); return *this;}
-    inline StreamGroupSummary& WithStreamClass(StreamClass&& value) { SetStreamClass(std::move(value)); return *this;}
+    inline void SetStreamClass(StreamClass value) { m_streamClassHasBeenSet = true; m_streamClass = value; }
+    inline StreamGroupSummary& WithStreamClass(StreamClass value) { SetStreamClass(value); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     DefaultApplication m_defaultApplication;
@@ -224,13 +214,13 @@ namespace Model
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedAt;
+    Aws::Utils::DateTime m_lastUpdatedAt{};
     bool m_lastUpdatedAtHasBeenSet = false;
 
-    StreamGroupStatus m_status;
+    StreamGroupStatus m_status{StreamGroupStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    StreamClass m_streamClass;
+    StreamClass m_streamClass{StreamClass::NOT_SET};
     bool m_streamClassHasBeenSet = false;
   };
 

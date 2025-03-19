@@ -29,7 +29,7 @@ namespace Model
   class ListEndpointAccessResult
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API ListEndpointAccessResult();
+    AWS_REDSHIFTSERVERLESS_API ListEndpointAccessResult() = default;
     AWS_REDSHIFTSERVERLESS_API ListEndpointAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REDSHIFTSERVERLESS_API ListEndpointAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The returned VPC endpoints.</p>
      */
-    inline const Aws::Vector<EndpointAccess>& GetEndpoints() const{ return m_endpoints; }
-    inline void SetEndpoints(const Aws::Vector<EndpointAccess>& value) { m_endpoints = value; }
-    inline void SetEndpoints(Aws::Vector<EndpointAccess>&& value) { m_endpoints = std::move(value); }
-    inline ListEndpointAccessResult& WithEndpoints(const Aws::Vector<EndpointAccess>& value) { SetEndpoints(value); return *this;}
-    inline ListEndpointAccessResult& WithEndpoints(Aws::Vector<EndpointAccess>&& value) { SetEndpoints(std::move(value)); return *this;}
-    inline ListEndpointAccessResult& AddEndpoints(const EndpointAccess& value) { m_endpoints.push_back(value); return *this; }
-    inline ListEndpointAccessResult& AddEndpoints(EndpointAccess&& value) { m_endpoints.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EndpointAccess>& GetEndpoints() const { return m_endpoints; }
+    template<typename EndpointsT = Aws::Vector<EndpointAccess>>
+    void SetEndpoints(EndpointsT&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::forward<EndpointsT>(value); }
+    template<typename EndpointsT = Aws::Vector<EndpointAccess>>
+    ListEndpointAccessResult& WithEndpoints(EndpointsT&& value) { SetEndpoints(std::forward<EndpointsT>(value)); return *this;}
+    template<typename EndpointsT = EndpointAccess>
+    ListEndpointAccessResult& AddEndpoints(EndpointsT&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace_back(std::forward<EndpointsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * The value of <code>nextToken</code> is a unique pagination token for each page.
      * Make the call again using the returned token to retrieve the next page.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListEndpointAccessResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEndpointAccessResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEndpointAccessResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEndpointAccessResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListEndpointAccessResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListEndpointAccessResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListEndpointAccessResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListEndpointAccessResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EndpointAccess> m_endpoints;
+    bool m_endpointsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

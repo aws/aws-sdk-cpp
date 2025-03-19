@@ -22,7 +22,7 @@ namespace Model
   class ListDeliveryStreamsRequest : public FirehoseRequest
   {
   public:
-    AWS_FIREHOSE_API ListDeliveryStreamsRequest();
+    AWS_FIREHOSE_API ListDeliveryStreamsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>The maximum number of Firehose streams to list. The default value is 10.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline ListDeliveryStreamsRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -54,12 +54,10 @@ namespace Model
      * parameter is optional. If this parameter is omitted, Firehose streams of all
      * types are returned.</p>
      */
-    inline const DeliveryStreamType& GetDeliveryStreamType() const{ return m_deliveryStreamType; }
+    inline DeliveryStreamType GetDeliveryStreamType() const { return m_deliveryStreamType; }
     inline bool DeliveryStreamTypeHasBeenSet() const { return m_deliveryStreamTypeHasBeenSet; }
-    inline void SetDeliveryStreamType(const DeliveryStreamType& value) { m_deliveryStreamTypeHasBeenSet = true; m_deliveryStreamType = value; }
-    inline void SetDeliveryStreamType(DeliveryStreamType&& value) { m_deliveryStreamTypeHasBeenSet = true; m_deliveryStreamType = std::move(value); }
-    inline ListDeliveryStreamsRequest& WithDeliveryStreamType(const DeliveryStreamType& value) { SetDeliveryStreamType(value); return *this;}
-    inline ListDeliveryStreamsRequest& WithDeliveryStreamType(DeliveryStreamType&& value) { SetDeliveryStreamType(std::move(value)); return *this;}
+    inline void SetDeliveryStreamType(DeliveryStreamType value) { m_deliveryStreamTypeHasBeenSet = true; m_deliveryStreamType = value; }
+    inline ListDeliveryStreamsRequest& WithDeliveryStreamType(DeliveryStreamType value) { SetDeliveryStreamType(value); return *this;}
     ///@}
 
     ///@{
@@ -69,21 +67,19 @@ namespace Model
      * comes alphabetically immediately after the name you specify in
      * <code>ExclusiveStartDeliveryStreamName</code>.</p>
      */
-    inline const Aws::String& GetExclusiveStartDeliveryStreamName() const{ return m_exclusiveStartDeliveryStreamName; }
+    inline const Aws::String& GetExclusiveStartDeliveryStreamName() const { return m_exclusiveStartDeliveryStreamName; }
     inline bool ExclusiveStartDeliveryStreamNameHasBeenSet() const { return m_exclusiveStartDeliveryStreamNameHasBeenSet; }
-    inline void SetExclusiveStartDeliveryStreamName(const Aws::String& value) { m_exclusiveStartDeliveryStreamNameHasBeenSet = true; m_exclusiveStartDeliveryStreamName = value; }
-    inline void SetExclusiveStartDeliveryStreamName(Aws::String&& value) { m_exclusiveStartDeliveryStreamNameHasBeenSet = true; m_exclusiveStartDeliveryStreamName = std::move(value); }
-    inline void SetExclusiveStartDeliveryStreamName(const char* value) { m_exclusiveStartDeliveryStreamNameHasBeenSet = true; m_exclusiveStartDeliveryStreamName.assign(value); }
-    inline ListDeliveryStreamsRequest& WithExclusiveStartDeliveryStreamName(const Aws::String& value) { SetExclusiveStartDeliveryStreamName(value); return *this;}
-    inline ListDeliveryStreamsRequest& WithExclusiveStartDeliveryStreamName(Aws::String&& value) { SetExclusiveStartDeliveryStreamName(std::move(value)); return *this;}
-    inline ListDeliveryStreamsRequest& WithExclusiveStartDeliveryStreamName(const char* value) { SetExclusiveStartDeliveryStreamName(value); return *this;}
+    template<typename ExclusiveStartDeliveryStreamNameT = Aws::String>
+    void SetExclusiveStartDeliveryStreamName(ExclusiveStartDeliveryStreamNameT&& value) { m_exclusiveStartDeliveryStreamNameHasBeenSet = true; m_exclusiveStartDeliveryStreamName = std::forward<ExclusiveStartDeliveryStreamNameT>(value); }
+    template<typename ExclusiveStartDeliveryStreamNameT = Aws::String>
+    ListDeliveryStreamsRequest& WithExclusiveStartDeliveryStreamName(ExclusiveStartDeliveryStreamNameT&& value) { SetExclusiveStartDeliveryStreamName(std::forward<ExclusiveStartDeliveryStreamNameT>(value)); return *this;}
     ///@}
   private:
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
-    DeliveryStreamType m_deliveryStreamType;
+    DeliveryStreamType m_deliveryStreamType{DeliveryStreamType::NOT_SET};
     bool m_deliveryStreamTypeHasBeenSet = false;
 
     Aws::String m_exclusiveStartDeliveryStreamName;

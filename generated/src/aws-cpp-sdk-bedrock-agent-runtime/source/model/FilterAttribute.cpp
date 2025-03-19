@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-FilterAttribute::FilterAttribute() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 FilterAttribute::FilterAttribute(JsonView jsonValue)
-  : FilterAttribute()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FilterAttribute& FilterAttribute::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

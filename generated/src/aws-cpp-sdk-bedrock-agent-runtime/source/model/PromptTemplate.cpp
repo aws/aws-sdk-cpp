@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-PromptTemplate::PromptTemplate() : 
-    m_textPromptTemplateHasBeenSet(false)
-{
-}
-
 PromptTemplate::PromptTemplate(JsonView jsonValue)
-  : PromptTemplate()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PromptTemplate& PromptTemplate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("textPromptTemplate"))
   {
     m_textPromptTemplate = jsonValue.GetString("textPromptTemplate");
-
     m_textPromptTemplateHasBeenSet = true;
   }
-
   return *this;
 }
 

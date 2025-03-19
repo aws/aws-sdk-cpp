@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateStackRefactorResult::CreateStackRefactorResult()
-{
-}
-
 CreateStackRefactorResult::CreateStackRefactorResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ CreateStackRefactorResult& CreateStackRefactorResult::operator =(const Aws::Amaz
     if(!stackRefactorIdNode.IsNull())
     {
       m_stackRefactorId = Aws::Utils::Xml::DecodeEscapedXmlText(stackRefactorIdNode.GetText());
+      m_stackRefactorIdHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::CloudFormation::Model::CreateStackRefactorResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

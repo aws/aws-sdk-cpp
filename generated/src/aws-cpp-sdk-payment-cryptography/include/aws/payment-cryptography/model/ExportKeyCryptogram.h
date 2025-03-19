@@ -33,7 +33,7 @@ namespace Model
   class ExportKeyCryptogram
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHY_API ExportKeyCryptogram();
+    AWS_PAYMENTCRYPTOGRAPHY_API ExportKeyCryptogram() = default;
     AWS_PAYMENTCRYPTOGRAPHY_API ExportKeyCryptogram(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API ExportKeyCryptogram& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The <code>KeyARN</code> of the certificate chain that signs the wrapping key
      * certificate during RSA wrap and unwrap key export.</p>
      */
-    inline const Aws::String& GetCertificateAuthorityPublicKeyIdentifier() const{ return m_certificateAuthorityPublicKeyIdentifier; }
+    inline const Aws::String& GetCertificateAuthorityPublicKeyIdentifier() const { return m_certificateAuthorityPublicKeyIdentifier; }
     inline bool CertificateAuthorityPublicKeyIdentifierHasBeenSet() const { return m_certificateAuthorityPublicKeyIdentifierHasBeenSet; }
-    inline void SetCertificateAuthorityPublicKeyIdentifier(const Aws::String& value) { m_certificateAuthorityPublicKeyIdentifierHasBeenSet = true; m_certificateAuthorityPublicKeyIdentifier = value; }
-    inline void SetCertificateAuthorityPublicKeyIdentifier(Aws::String&& value) { m_certificateAuthorityPublicKeyIdentifierHasBeenSet = true; m_certificateAuthorityPublicKeyIdentifier = std::move(value); }
-    inline void SetCertificateAuthorityPublicKeyIdentifier(const char* value) { m_certificateAuthorityPublicKeyIdentifierHasBeenSet = true; m_certificateAuthorityPublicKeyIdentifier.assign(value); }
-    inline ExportKeyCryptogram& WithCertificateAuthorityPublicKeyIdentifier(const Aws::String& value) { SetCertificateAuthorityPublicKeyIdentifier(value); return *this;}
-    inline ExportKeyCryptogram& WithCertificateAuthorityPublicKeyIdentifier(Aws::String&& value) { SetCertificateAuthorityPublicKeyIdentifier(std::move(value)); return *this;}
-    inline ExportKeyCryptogram& WithCertificateAuthorityPublicKeyIdentifier(const char* value) { SetCertificateAuthorityPublicKeyIdentifier(value); return *this;}
+    template<typename CertificateAuthorityPublicKeyIdentifierT = Aws::String>
+    void SetCertificateAuthorityPublicKeyIdentifier(CertificateAuthorityPublicKeyIdentifierT&& value) { m_certificateAuthorityPublicKeyIdentifierHasBeenSet = true; m_certificateAuthorityPublicKeyIdentifier = std::forward<CertificateAuthorityPublicKeyIdentifierT>(value); }
+    template<typename CertificateAuthorityPublicKeyIdentifierT = Aws::String>
+    ExportKeyCryptogram& WithCertificateAuthorityPublicKeyIdentifier(CertificateAuthorityPublicKeyIdentifierT&& value) { SetCertificateAuthorityPublicKeyIdentifier(std::forward<CertificateAuthorityPublicKeyIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,26 +58,22 @@ namespace Model
      * Services Payment Cryptography uses this certificate to wrap the key under
      * export.</p>
      */
-    inline const Aws::String& GetWrappingKeyCertificate() const{ return m_wrappingKeyCertificate; }
+    inline const Aws::String& GetWrappingKeyCertificate() const { return m_wrappingKeyCertificate; }
     inline bool WrappingKeyCertificateHasBeenSet() const { return m_wrappingKeyCertificateHasBeenSet; }
-    inline void SetWrappingKeyCertificate(const Aws::String& value) { m_wrappingKeyCertificateHasBeenSet = true; m_wrappingKeyCertificate = value; }
-    inline void SetWrappingKeyCertificate(Aws::String&& value) { m_wrappingKeyCertificateHasBeenSet = true; m_wrappingKeyCertificate = std::move(value); }
-    inline void SetWrappingKeyCertificate(const char* value) { m_wrappingKeyCertificateHasBeenSet = true; m_wrappingKeyCertificate.assign(value); }
-    inline ExportKeyCryptogram& WithWrappingKeyCertificate(const Aws::String& value) { SetWrappingKeyCertificate(value); return *this;}
-    inline ExportKeyCryptogram& WithWrappingKeyCertificate(Aws::String&& value) { SetWrappingKeyCertificate(std::move(value)); return *this;}
-    inline ExportKeyCryptogram& WithWrappingKeyCertificate(const char* value) { SetWrappingKeyCertificate(value); return *this;}
+    template<typename WrappingKeyCertificateT = Aws::String>
+    void SetWrappingKeyCertificate(WrappingKeyCertificateT&& value) { m_wrappingKeyCertificateHasBeenSet = true; m_wrappingKeyCertificate = std::forward<WrappingKeyCertificateT>(value); }
+    template<typename WrappingKeyCertificateT = Aws::String>
+    ExportKeyCryptogram& WithWrappingKeyCertificate(WrappingKeyCertificateT&& value) { SetWrappingKeyCertificate(std::forward<WrappingKeyCertificateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The wrapping spec for the key under export.</p>
      */
-    inline const WrappingKeySpec& GetWrappingSpec() const{ return m_wrappingSpec; }
+    inline WrappingKeySpec GetWrappingSpec() const { return m_wrappingSpec; }
     inline bool WrappingSpecHasBeenSet() const { return m_wrappingSpecHasBeenSet; }
-    inline void SetWrappingSpec(const WrappingKeySpec& value) { m_wrappingSpecHasBeenSet = true; m_wrappingSpec = value; }
-    inline void SetWrappingSpec(WrappingKeySpec&& value) { m_wrappingSpecHasBeenSet = true; m_wrappingSpec = std::move(value); }
-    inline ExportKeyCryptogram& WithWrappingSpec(const WrappingKeySpec& value) { SetWrappingSpec(value); return *this;}
-    inline ExportKeyCryptogram& WithWrappingSpec(WrappingKeySpec&& value) { SetWrappingSpec(std::move(value)); return *this;}
+    inline void SetWrappingSpec(WrappingKeySpec value) { m_wrappingSpecHasBeenSet = true; m_wrappingSpec = value; }
+    inline ExportKeyCryptogram& WithWrappingSpec(WrappingKeySpec value) { SetWrappingSpec(value); return *this;}
     ///@}
   private:
 
@@ -89,7 +83,7 @@ namespace Model
     Aws::String m_wrappingKeyCertificate;
     bool m_wrappingKeyCertificateHasBeenSet = false;
 
-    WrappingKeySpec m_wrappingSpec;
+    WrappingKeySpec m_wrappingSpec{WrappingKeySpec::NOT_SET};
     bool m_wrappingSpecHasBeenSet = false;
   };
 

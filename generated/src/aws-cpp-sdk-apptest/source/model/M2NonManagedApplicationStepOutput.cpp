@@ -18,10 +18,6 @@ namespace AppTest
 namespace Model
 {
 
-M2NonManagedApplicationStepOutput::M2NonManagedApplicationStepOutput()
-{
-}
-
 M2NonManagedApplicationStepOutput::M2NonManagedApplicationStepOutput(JsonView jsonValue)
 {
   *this = jsonValue;

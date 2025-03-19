@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateSpaceResult::CreateSpaceResult()
-{
-}
-
 CreateSpaceResult::CreateSpaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateSpaceResult& CreateSpaceResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("SpaceArn"))
   {
     m_spaceArn = jsonValue.GetString("SpaceArn");
-
+    m_spaceArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

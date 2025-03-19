@@ -18,15 +18,7 @@ namespace Notifications
 namespace Model
 {
 
-SourceEventMetadataSummary::SourceEventMetadataSummary() : 
-    m_eventOriginRegionHasBeenSet(false),
-    m_sourceHasBeenSet(false),
-    m_eventTypeHasBeenSet(false)
-{
-}
-
 SourceEventMetadataSummary::SourceEventMetadataSummary(JsonView jsonValue)
-  : SourceEventMetadataSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SourceEventMetadataSummary& SourceEventMetadataSummary::operator =(JsonView json
   if(jsonValue.ValueExists("eventOriginRegion"))
   {
     m_eventOriginRegion = jsonValue.GetString("eventOriginRegion");
-
     m_eventOriginRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventType"))
   {
     m_eventType = jsonValue.GetString("eventType");
-
     m_eventTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

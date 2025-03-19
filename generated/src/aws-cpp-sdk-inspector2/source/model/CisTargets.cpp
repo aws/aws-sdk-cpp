@@ -18,14 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-CisTargets::CisTargets() : 
-    m_accountIdsHasBeenSet(false),
-    m_targetResourceTagsHasBeenSet(false)
-{
-}
-
 CisTargets::CisTargets(JsonView jsonValue)
-  : CisTargets()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ CisTargets& CisTargets::operator =(JsonView jsonValue)
     }
     m_accountIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetResourceTags"))
   {
     Aws::Map<Aws::String, JsonView> targetResourceTagsJsonMap = jsonValue.GetObject("targetResourceTags").GetAllObjects();
@@ -58,7 +50,6 @@ CisTargets& CisTargets::operator =(JsonView jsonValue)
     }
     m_targetResourceTagsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-RadarChartFieldWells::RadarChartFieldWells() : 
-    m_radarChartAggregatedFieldWellsHasBeenSet(false)
-{
-}
-
 RadarChartFieldWells::RadarChartFieldWells(JsonView jsonValue)
-  : RadarChartFieldWells()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RadarChartFieldWells& RadarChartFieldWells::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RadarChartAggregatedFieldWells"))
   {
     m_radarChartAggregatedFieldWells = jsonValue.GetObject("RadarChartAggregatedFieldWells");
-
     m_radarChartAggregatedFieldWellsHasBeenSet = true;
   }
-
   return *this;
 }
 

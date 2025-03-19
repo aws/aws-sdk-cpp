@@ -33,7 +33,7 @@ namespace Model
   class IpamPoolCidr
   {
   public:
-    AWS_EC2_API IpamPoolCidr();
+    AWS_EC2_API IpamPoolCidr() = default;
     AWS_EC2_API IpamPoolCidr(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API IpamPoolCidr& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,52 +48,46 @@ namespace Model
      * addresses. An IPv4 CIDR example is <code>10.24.34.0/23</code>. An IPv6 CIDR
      * example is <code>2001:DB8::/32</code>.</p>
      */
-    inline const Aws::String& GetCidr() const{ return m_cidr; }
+    inline const Aws::String& GetCidr() const { return m_cidr; }
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-    inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
-    inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
-    inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
-    inline IpamPoolCidr& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
-    inline IpamPoolCidr& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
-    inline IpamPoolCidr& WithCidr(const char* value) { SetCidr(value); return *this;}
+    template<typename CidrT = Aws::String>
+    void SetCidr(CidrT&& value) { m_cidrHasBeenSet = true; m_cidr = std::forward<CidrT>(value); }
+    template<typename CidrT = Aws::String>
+    IpamPoolCidr& WithCidr(CidrT&& value) { SetCidr(std::forward<CidrT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the CIDR.</p>
      */
-    inline const IpamPoolCidrState& GetState() const{ return m_state; }
+    inline IpamPoolCidrState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const IpamPoolCidrState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(IpamPoolCidrState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline IpamPoolCidr& WithState(const IpamPoolCidrState& value) { SetState(value); return *this;}
-    inline IpamPoolCidr& WithState(IpamPoolCidrState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(IpamPoolCidrState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline IpamPoolCidr& WithState(IpamPoolCidrState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details related to why an IPAM pool CIDR failed to be provisioned.</p>
      */
-    inline const IpamPoolCidrFailureReason& GetFailureReason() const{ return m_failureReason; }
+    inline const IpamPoolCidrFailureReason& GetFailureReason() const { return m_failureReason; }
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-    inline void SetFailureReason(const IpamPoolCidrFailureReason& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-    inline void SetFailureReason(IpamPoolCidrFailureReason&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-    inline IpamPoolCidr& WithFailureReason(const IpamPoolCidrFailureReason& value) { SetFailureReason(value); return *this;}
-    inline IpamPoolCidr& WithFailureReason(IpamPoolCidrFailureReason&& value) { SetFailureReason(std::move(value)); return *this;}
+    template<typename FailureReasonT = IpamPoolCidrFailureReason>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = IpamPoolCidrFailureReason>
+    IpamPoolCidr& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IPAM pool CIDR ID.</p>
      */
-    inline const Aws::String& GetIpamPoolCidrId() const{ return m_ipamPoolCidrId; }
+    inline const Aws::String& GetIpamPoolCidrId() const { return m_ipamPoolCidrId; }
     inline bool IpamPoolCidrIdHasBeenSet() const { return m_ipamPoolCidrIdHasBeenSet; }
-    inline void SetIpamPoolCidrId(const Aws::String& value) { m_ipamPoolCidrIdHasBeenSet = true; m_ipamPoolCidrId = value; }
-    inline void SetIpamPoolCidrId(Aws::String&& value) { m_ipamPoolCidrIdHasBeenSet = true; m_ipamPoolCidrId = std::move(value); }
-    inline void SetIpamPoolCidrId(const char* value) { m_ipamPoolCidrIdHasBeenSet = true; m_ipamPoolCidrId.assign(value); }
-    inline IpamPoolCidr& WithIpamPoolCidrId(const Aws::String& value) { SetIpamPoolCidrId(value); return *this;}
-    inline IpamPoolCidr& WithIpamPoolCidrId(Aws::String&& value) { SetIpamPoolCidrId(std::move(value)); return *this;}
-    inline IpamPoolCidr& WithIpamPoolCidrId(const char* value) { SetIpamPoolCidrId(value); return *this;}
+    template<typename IpamPoolCidrIdT = Aws::String>
+    void SetIpamPoolCidrId(IpamPoolCidrIdT&& value) { m_ipamPoolCidrIdHasBeenSet = true; m_ipamPoolCidrId = std::forward<IpamPoolCidrIdT>(value); }
+    template<typename IpamPoolCidrIdT = Aws::String>
+    IpamPoolCidr& WithIpamPoolCidrId(IpamPoolCidrIdT&& value) { SetIpamPoolCidrId(std::forward<IpamPoolCidrIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,7 +97,7 @@ namespace Model
      * provisioning CIDRs to pools with source pools. Cannot be used to provision BYOIP
      * CIDRs to top-level pools. "NetmaskLength" or "Cidr" is required.</p>
      */
-    inline int GetNetmaskLength() const{ return m_netmaskLength; }
+    inline int GetNetmaskLength() const { return m_netmaskLength; }
     inline bool NetmaskLengthHasBeenSet() const { return m_netmaskLengthHasBeenSet; }
     inline void SetNetmaskLength(int value) { m_netmaskLengthHasBeenSet = true; m_netmaskLength = value; }
     inline IpamPoolCidr& WithNetmaskLength(int value) { SetNetmaskLength(value); return *this;}
@@ -113,7 +107,7 @@ namespace Model
     Aws::String m_cidr;
     bool m_cidrHasBeenSet = false;
 
-    IpamPoolCidrState m_state;
+    IpamPoolCidrState m_state{IpamPoolCidrState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     IpamPoolCidrFailureReason m_failureReason;
@@ -122,7 +116,7 @@ namespace Model
     Aws::String m_ipamPoolCidrId;
     bool m_ipamPoolCidrIdHasBeenSet = false;
 
-    int m_netmaskLength;
+    int m_netmaskLength{0};
     bool m_netmaskLengthHasBeenSet = false;
   };
 

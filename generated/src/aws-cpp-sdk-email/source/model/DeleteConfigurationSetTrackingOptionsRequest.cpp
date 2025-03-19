@@ -10,11 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-DeleteConfigurationSetTrackingOptionsRequest::DeleteConfigurationSetTrackingOptionsRequest() : 
-    m_configurationSetNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteConfigurationSetTrackingOptionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

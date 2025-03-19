@@ -18,19 +18,7 @@ namespace MarketplaceEntitlementService
 namespace Model
 {
 
-EntitlementValue::EntitlementValue() : 
-    m_integerValue(0),
-    m_integerValueHasBeenSet(false),
-    m_doubleValue(0.0),
-    m_doubleValueHasBeenSet(false),
-    m_booleanValue(false),
-    m_booleanValueHasBeenSet(false),
-    m_stringValueHasBeenSet(false)
-{
-}
-
 EntitlementValue::EntitlementValue(JsonView jsonValue)
-  : EntitlementValue()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ EntitlementValue& EntitlementValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IntegerValue"))
   {
     m_integerValue = jsonValue.GetInteger("IntegerValue");
-
     m_integerValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DoubleValue"))
   {
     m_doubleValue = jsonValue.GetDouble("DoubleValue");
-
     m_doubleValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BooleanValue"))
   {
     m_booleanValue = jsonValue.GetBool("BooleanValue");
-
     m_booleanValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StringValue"))
   {
     m_stringValue = jsonValue.GetString("StringValue");
-
     m_stringValueHasBeenSet = true;
   }
-
   return *this;
 }
 

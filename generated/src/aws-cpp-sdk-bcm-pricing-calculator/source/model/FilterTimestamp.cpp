@@ -18,14 +18,7 @@ namespace BCMPricingCalculator
 namespace Model
 {
 
-FilterTimestamp::FilterTimestamp() : 
-    m_afterTimestampHasBeenSet(false),
-    m_beforeTimestampHasBeenSet(false)
-{
-}
-
 FilterTimestamp::FilterTimestamp(JsonView jsonValue)
-  : FilterTimestamp()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FilterTimestamp& FilterTimestamp::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("afterTimestamp"))
   {
     m_afterTimestamp = jsonValue.GetDouble("afterTimestamp");
-
     m_afterTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("beforeTimestamp"))
   {
     m_beforeTimestamp = jsonValue.GetDouble("beforeTimestamp");
-
     m_beforeTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

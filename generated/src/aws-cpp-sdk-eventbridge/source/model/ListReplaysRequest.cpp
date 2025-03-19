@@ -12,17 +12,6 @@ using namespace Aws::EventBridge::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListReplaysRequest::ListReplaysRequest() : 
-    m_namePrefixHasBeenSet(false),
-    m_state(ReplayState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_eventSourceArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String ListReplaysRequest::SerializePayload() const
 {
   JsonValue payload;

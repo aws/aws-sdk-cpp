@@ -12,18 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetInventorySchemaRequest::GetInventorySchemaRequest() : 
-    m_typeNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_aggregator(false),
-    m_aggregatorHasBeenSet(false),
-    m_subType(false),
-    m_subTypeHasBeenSet(false)
-{
-}
-
 Aws::String GetInventorySchemaRequest::SerializePayload() const
 {
   JsonValue payload;

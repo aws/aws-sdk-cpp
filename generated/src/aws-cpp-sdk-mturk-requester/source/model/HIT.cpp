@@ -18,41 +18,7 @@ namespace MTurk
 namespace Model
 {
 
-HIT::HIT() : 
-    m_hITIdHasBeenSet(false),
-    m_hITTypeIdHasBeenSet(false),
-    m_hITGroupIdHasBeenSet(false),
-    m_hITLayoutIdHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_questionHasBeenSet(false),
-    m_keywordsHasBeenSet(false),
-    m_hITStatus(HITStatus::NOT_SET),
-    m_hITStatusHasBeenSet(false),
-    m_maxAssignments(0),
-    m_maxAssignmentsHasBeenSet(false),
-    m_rewardHasBeenSet(false),
-    m_autoApprovalDelayInSeconds(0),
-    m_autoApprovalDelayInSecondsHasBeenSet(false),
-    m_expirationHasBeenSet(false),
-    m_assignmentDurationInSeconds(0),
-    m_assignmentDurationInSecondsHasBeenSet(false),
-    m_requesterAnnotationHasBeenSet(false),
-    m_qualificationRequirementsHasBeenSet(false),
-    m_hITReviewStatus(HITReviewStatus::NOT_SET),
-    m_hITReviewStatusHasBeenSet(false),
-    m_numberOfAssignmentsPending(0),
-    m_numberOfAssignmentsPendingHasBeenSet(false),
-    m_numberOfAssignmentsAvailable(0),
-    m_numberOfAssignmentsAvailableHasBeenSet(false),
-    m_numberOfAssignmentsCompleted(0),
-    m_numberOfAssignmentsCompletedHasBeenSet(false)
-{
-}
-
 HIT::HIT(JsonView jsonValue)
-  : HIT()
 {
   *this = jsonValue;
 }
@@ -62,115 +28,83 @@ HIT& HIT::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HITId"))
   {
     m_hITId = jsonValue.GetString("HITId");
-
     m_hITIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HITTypeId"))
   {
     m_hITTypeId = jsonValue.GetString("HITTypeId");
-
     m_hITTypeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HITGroupId"))
   {
     m_hITGroupId = jsonValue.GetString("HITGroupId");
-
     m_hITGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HITLayoutId"))
   {
     m_hITLayoutId = jsonValue.GetString("HITLayoutId");
-
     m_hITLayoutIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Question"))
   {
     m_question = jsonValue.GetString("Question");
-
     m_questionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Keywords"))
   {
     m_keywords = jsonValue.GetString("Keywords");
-
     m_keywordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HITStatus"))
   {
     m_hITStatus = HITStatusMapper::GetHITStatusForName(jsonValue.GetString("HITStatus"));
-
     m_hITStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxAssignments"))
   {
     m_maxAssignments = jsonValue.GetInteger("MaxAssignments");
-
     m_maxAssignmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reward"))
   {
     m_reward = jsonValue.GetString("Reward");
-
     m_rewardHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoApprovalDelayInSeconds"))
   {
     m_autoApprovalDelayInSeconds = jsonValue.GetInt64("AutoApprovalDelayInSeconds");
-
     m_autoApprovalDelayInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Expiration"))
   {
     m_expiration = jsonValue.GetDouble("Expiration");
-
     m_expirationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssignmentDurationInSeconds"))
   {
     m_assignmentDurationInSeconds = jsonValue.GetInt64("AssignmentDurationInSeconds");
-
     m_assignmentDurationInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequesterAnnotation"))
   {
     m_requesterAnnotation = jsonValue.GetString("RequesterAnnotation");
-
     m_requesterAnnotationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QualificationRequirements"))
   {
     Aws::Utils::Array<JsonView> qualificationRequirementsJsonList = jsonValue.GetArray("QualificationRequirements");
@@ -180,35 +114,26 @@ HIT& HIT::operator =(JsonView jsonValue)
     }
     m_qualificationRequirementsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HITReviewStatus"))
   {
     m_hITReviewStatus = HITReviewStatusMapper::GetHITReviewStatusForName(jsonValue.GetString("HITReviewStatus"));
-
     m_hITReviewStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfAssignmentsPending"))
   {
     m_numberOfAssignmentsPending = jsonValue.GetInteger("NumberOfAssignmentsPending");
-
     m_numberOfAssignmentsPendingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfAssignmentsAvailable"))
   {
     m_numberOfAssignmentsAvailable = jsonValue.GetInteger("NumberOfAssignmentsAvailable");
-
     m_numberOfAssignmentsAvailableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfAssignmentsCompleted"))
   {
     m_numberOfAssignmentsCompleted = jsonValue.GetInteger("NumberOfAssignmentsCompleted");
-
     m_numberOfAssignmentsCompletedHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -27,7 +27,7 @@ namespace Model
   class TestWirelessDeviceResult
   {
   public:
-    AWS_IOTWIRELESS_API TestWirelessDeviceResult();
+    AWS_IOTWIRELESS_API TestWirelessDeviceResult() = default;
     AWS_IOTWIRELESS_API TestWirelessDeviceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTWIRELESS_API TestWirelessDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The result returned by the test.</p>
      */
-    inline const Aws::String& GetResult() const{ return m_result; }
-    inline void SetResult(const Aws::String& value) { m_result = value; }
-    inline void SetResult(Aws::String&& value) { m_result = std::move(value); }
-    inline void SetResult(const char* value) { m_result.assign(value); }
-    inline TestWirelessDeviceResult& WithResult(const Aws::String& value) { SetResult(value); return *this;}
-    inline TestWirelessDeviceResult& WithResult(Aws::String&& value) { SetResult(std::move(value)); return *this;}
-    inline TestWirelessDeviceResult& WithResult(const char* value) { SetResult(value); return *this;}
+    inline const Aws::String& GetResult() const { return m_result; }
+    template<typename ResultT = Aws::String>
+    void SetResult(ResultT&& value) { m_resultHasBeenSet = true; m_result = std::forward<ResultT>(value); }
+    template<typename ResultT = Aws::String>
+    TestWirelessDeviceResult& WithResult(ResultT&& value) { SetResult(std::forward<ResultT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline TestWirelessDeviceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline TestWirelessDeviceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline TestWirelessDeviceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    TestWirelessDeviceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_result;
+    bool m_resultHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

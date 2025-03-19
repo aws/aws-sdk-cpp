@@ -18,13 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-DetectedS3SourceConfig::DetectedS3SourceConfig() : 
-    m_fileFormatDescriptorHasBeenSet(false)
-{
-}
-
 DetectedS3SourceConfig::DetectedS3SourceConfig(JsonView jsonValue)
-  : DetectedS3SourceConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DetectedS3SourceConfig& DetectedS3SourceConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FileFormatDescriptor"))
   {
     m_fileFormatDescriptor = jsonValue.GetObject("FileFormatDescriptor");
-
     m_fileFormatDescriptorHasBeenSet = true;
   }
-
   return *this;
 }
 

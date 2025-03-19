@@ -32,7 +32,7 @@ namespace Model
   class ModelInvocationJobInputDataConfig
   {
   public:
-    AWS_BEDROCK_API ModelInvocationJobInputDataConfig();
+    AWS_BEDROCK_API ModelInvocationJobInputDataConfig() = default;
     AWS_BEDROCK_API ModelInvocationJobInputDataConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API ModelInvocationJobInputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Contains the configuration of the S3 location of the input data.</p>
      */
-    inline const ModelInvocationJobS3InputDataConfig& GetS3InputDataConfig() const{ return m_s3InputDataConfig; }
+    inline const ModelInvocationJobS3InputDataConfig& GetS3InputDataConfig() const { return m_s3InputDataConfig; }
     inline bool S3InputDataConfigHasBeenSet() const { return m_s3InputDataConfigHasBeenSet; }
-    inline void SetS3InputDataConfig(const ModelInvocationJobS3InputDataConfig& value) { m_s3InputDataConfigHasBeenSet = true; m_s3InputDataConfig = value; }
-    inline void SetS3InputDataConfig(ModelInvocationJobS3InputDataConfig&& value) { m_s3InputDataConfigHasBeenSet = true; m_s3InputDataConfig = std::move(value); }
-    inline ModelInvocationJobInputDataConfig& WithS3InputDataConfig(const ModelInvocationJobS3InputDataConfig& value) { SetS3InputDataConfig(value); return *this;}
-    inline ModelInvocationJobInputDataConfig& WithS3InputDataConfig(ModelInvocationJobS3InputDataConfig&& value) { SetS3InputDataConfig(std::move(value)); return *this;}
+    template<typename S3InputDataConfigT = ModelInvocationJobS3InputDataConfig>
+    void SetS3InputDataConfig(S3InputDataConfigT&& value) { m_s3InputDataConfigHasBeenSet = true; m_s3InputDataConfig = std::forward<S3InputDataConfigT>(value); }
+    template<typename S3InputDataConfigT = ModelInvocationJobS3InputDataConfig>
+    ModelInvocationJobInputDataConfig& WithS3InputDataConfig(S3InputDataConfigT&& value) { SetS3InputDataConfig(std::forward<S3InputDataConfigT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeQueryResult::DescribeQueryResult() : 
-    m_queryStatus(QueryStatus::NOT_SET),
-    m_deliveryStatus(DeliveryStatus::NOT_SET)
-{
-}
-
 DescribeQueryResult::DescribeQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeQueryResult()
 {
   *this = result;
 }
@@ -35,63 +28,55 @@ DescribeQueryResult& DescribeQueryResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("QueryId"))
   {
     m_queryId = jsonValue.GetString("QueryId");
-
+    m_queryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryString"))
   {
     m_queryString = jsonValue.GetString("QueryString");
-
+    m_queryStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryStatus"))
   {
     m_queryStatus = QueryStatusMapper::GetQueryStatusForName(jsonValue.GetString("QueryStatus"));
-
+    m_queryStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryStatistics"))
   {
     m_queryStatistics = jsonValue.GetObject("QueryStatistics");
-
+    m_queryStatisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
+    m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeliveryS3Uri"))
   {
     m_deliveryS3Uri = jsonValue.GetString("DeliveryS3Uri");
-
+    m_deliveryS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeliveryStatus"))
   {
     m_deliveryStatus = DeliveryStatusMapper::GetDeliveryStatusForName(jsonValue.GetString("DeliveryStatus"));
-
+    m_deliveryStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Prompt"))
   {
     m_prompt = jsonValue.GetString("Prompt");
-
+    m_promptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventDataStoreOwnerAccountId"))
   {
     m_eventDataStoreOwnerAccountId = jsonValue.GetString("EventDataStoreOwnerAccountId");
-
+    m_eventDataStoreOwnerAccountIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

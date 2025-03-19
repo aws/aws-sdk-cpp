@@ -18,18 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-DocumentDetails::DocumentDetails() : 
-    m_documentIdHasBeenSet(false),
-    m_status(DocumentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 DocumentDetails::DocumentDetails(JsonView jsonValue)
-  : DocumentDetails()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ DocumentDetails& DocumentDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("documentId"))
   {
     m_documentId = jsonValue.GetString("documentId");
-
     m_documentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DocumentStatusMapper::GetDocumentStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetObject("error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

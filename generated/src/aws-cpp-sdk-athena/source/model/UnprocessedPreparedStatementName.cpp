@@ -18,15 +18,7 @@ namespace Athena
 namespace Model
 {
 
-UnprocessedPreparedStatementName::UnprocessedPreparedStatementName() : 
-    m_statementNameHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 UnprocessedPreparedStatementName::UnprocessedPreparedStatementName(JsonView jsonValue)
-  : UnprocessedPreparedStatementName()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ UnprocessedPreparedStatementName& UnprocessedPreparedStatementName::operator =(J
   if(jsonValue.ValueExists("StatementName"))
   {
     m_statementName = jsonValue.GetString("StatementName");
-
     m_statementNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

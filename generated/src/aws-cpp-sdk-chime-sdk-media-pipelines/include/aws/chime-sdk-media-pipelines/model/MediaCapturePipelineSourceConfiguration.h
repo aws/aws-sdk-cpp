@@ -33,7 +33,7 @@ namespace Model
   class MediaCapturePipelineSourceConfiguration
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API MediaCapturePipelineSourceConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API MediaCapturePipelineSourceConfiguration() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API MediaCapturePipelineSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API MediaCapturePipelineSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The media pipeline ARN in the configuration object of a media capture
      * pipeline.</p>
      */
-    inline const Aws::String& GetMediaPipelineArn() const{ return m_mediaPipelineArn; }
+    inline const Aws::String& GetMediaPipelineArn() const { return m_mediaPipelineArn; }
     inline bool MediaPipelineArnHasBeenSet() const { return m_mediaPipelineArnHasBeenSet; }
-    inline void SetMediaPipelineArn(const Aws::String& value) { m_mediaPipelineArnHasBeenSet = true; m_mediaPipelineArn = value; }
-    inline void SetMediaPipelineArn(Aws::String&& value) { m_mediaPipelineArnHasBeenSet = true; m_mediaPipelineArn = std::move(value); }
-    inline void SetMediaPipelineArn(const char* value) { m_mediaPipelineArnHasBeenSet = true; m_mediaPipelineArn.assign(value); }
-    inline MediaCapturePipelineSourceConfiguration& WithMediaPipelineArn(const Aws::String& value) { SetMediaPipelineArn(value); return *this;}
-    inline MediaCapturePipelineSourceConfiguration& WithMediaPipelineArn(Aws::String&& value) { SetMediaPipelineArn(std::move(value)); return *this;}
-    inline MediaCapturePipelineSourceConfiguration& WithMediaPipelineArn(const char* value) { SetMediaPipelineArn(value); return *this;}
+    template<typename MediaPipelineArnT = Aws::String>
+    void SetMediaPipelineArn(MediaPipelineArnT&& value) { m_mediaPipelineArnHasBeenSet = true; m_mediaPipelineArn = std::forward<MediaPipelineArnT>(value); }
+    template<typename MediaPipelineArnT = Aws::String>
+    MediaCapturePipelineSourceConfiguration& WithMediaPipelineArn(MediaPipelineArnT&& value) { SetMediaPipelineArn(std::forward<MediaPipelineArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,12 @@ namespace Model
      * <p>The meeting configuration settings in a media capture pipeline configuration
      * object. </p>
      */
-    inline const ChimeSdkMeetingConcatenationConfiguration& GetChimeSdkMeetingConfiguration() const{ return m_chimeSdkMeetingConfiguration; }
+    inline const ChimeSdkMeetingConcatenationConfiguration& GetChimeSdkMeetingConfiguration() const { return m_chimeSdkMeetingConfiguration; }
     inline bool ChimeSdkMeetingConfigurationHasBeenSet() const { return m_chimeSdkMeetingConfigurationHasBeenSet; }
-    inline void SetChimeSdkMeetingConfiguration(const ChimeSdkMeetingConcatenationConfiguration& value) { m_chimeSdkMeetingConfigurationHasBeenSet = true; m_chimeSdkMeetingConfiguration = value; }
-    inline void SetChimeSdkMeetingConfiguration(ChimeSdkMeetingConcatenationConfiguration&& value) { m_chimeSdkMeetingConfigurationHasBeenSet = true; m_chimeSdkMeetingConfiguration = std::move(value); }
-    inline MediaCapturePipelineSourceConfiguration& WithChimeSdkMeetingConfiguration(const ChimeSdkMeetingConcatenationConfiguration& value) { SetChimeSdkMeetingConfiguration(value); return *this;}
-    inline MediaCapturePipelineSourceConfiguration& WithChimeSdkMeetingConfiguration(ChimeSdkMeetingConcatenationConfiguration&& value) { SetChimeSdkMeetingConfiguration(std::move(value)); return *this;}
+    template<typename ChimeSdkMeetingConfigurationT = ChimeSdkMeetingConcatenationConfiguration>
+    void SetChimeSdkMeetingConfiguration(ChimeSdkMeetingConfigurationT&& value) { m_chimeSdkMeetingConfigurationHasBeenSet = true; m_chimeSdkMeetingConfiguration = std::forward<ChimeSdkMeetingConfigurationT>(value); }
+    template<typename ChimeSdkMeetingConfigurationT = ChimeSdkMeetingConcatenationConfiguration>
+    MediaCapturePipelineSourceConfiguration& WithChimeSdkMeetingConfiguration(ChimeSdkMeetingConfigurationT&& value) { SetChimeSdkMeetingConfiguration(std::forward<ChimeSdkMeetingConfigurationT>(value)); return *this;}
     ///@}
   private:
 

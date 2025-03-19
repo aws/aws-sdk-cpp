@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreatePullThroughCacheRuleResult::CreatePullThroughCacheRuleResult() : 
-    m_upstreamRegistry(UpstreamRegistry::NOT_SET)
-{
-}
-
 CreatePullThroughCacheRuleResult::CreatePullThroughCacheRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreatePullThroughCacheRuleResult()
 {
   *this = result;
 }
@@ -34,57 +28,50 @@ CreatePullThroughCacheRuleResult& CreatePullThroughCacheRuleResult::operator =(c
   if(jsonValue.ValueExists("ecrRepositoryPrefix"))
   {
     m_ecrRepositoryPrefix = jsonValue.GetString("ecrRepositoryPrefix");
-
+    m_ecrRepositoryPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("upstreamRegistryUrl"))
   {
     m_upstreamRegistryUrl = jsonValue.GetString("upstreamRegistryUrl");
-
+    m_upstreamRegistryUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registryId"))
   {
     m_registryId = jsonValue.GetString("registryId");
-
+    m_registryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("upstreamRegistry"))
   {
     m_upstreamRegistry = UpstreamRegistryMapper::GetUpstreamRegistryForName(jsonValue.GetString("upstreamRegistry"));
-
+    m_upstreamRegistryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("credentialArn"))
   {
     m_credentialArn = jsonValue.GetString("credentialArn");
-
+    m_credentialArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customRoleArn"))
   {
     m_customRoleArn = jsonValue.GetString("customRoleArn");
-
+    m_customRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("upstreamRepositoryPrefix"))
   {
     m_upstreamRepositoryPrefix = jsonValue.GetString("upstreamRepositoryPrefix");
-
+    m_upstreamRepositoryPrefixHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

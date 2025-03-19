@@ -18,23 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-OptimizationJobSummary::OptimizationJobSummary() : 
-    m_optimizationJobNameHasBeenSet(false),
-    m_optimizationJobArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_optimizationJobStatus(OptimizationJobStatus::NOT_SET),
-    m_optimizationJobStatusHasBeenSet(false),
-    m_optimizationStartTimeHasBeenSet(false),
-    m_optimizationEndTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_deploymentInstanceType(OptimizationJobDeploymentInstanceType::NOT_SET),
-    m_deploymentInstanceTypeHasBeenSet(false),
-    m_optimizationTypesHasBeenSet(false)
-{
-}
-
 OptimizationJobSummary::OptimizationJobSummary(JsonView jsonValue)
-  : OptimizationJobSummary()
 {
   *this = jsonValue;
 }
@@ -44,59 +28,43 @@ OptimizationJobSummary& OptimizationJobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OptimizationJobName"))
   {
     m_optimizationJobName = jsonValue.GetString("OptimizationJobName");
-
     m_optimizationJobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptimizationJobArn"))
   {
     m_optimizationJobArn = jsonValue.GetString("OptimizationJobArn");
-
     m_optimizationJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptimizationJobStatus"))
   {
     m_optimizationJobStatus = OptimizationJobStatusMapper::GetOptimizationJobStatusForName(jsonValue.GetString("OptimizationJobStatus"));
-
     m_optimizationJobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptimizationStartTime"))
   {
     m_optimizationStartTime = jsonValue.GetDouble("OptimizationStartTime");
-
     m_optimizationStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptimizationEndTime"))
   {
     m_optimizationEndTime = jsonValue.GetDouble("OptimizationEndTime");
-
     m_optimizationEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentInstanceType"))
   {
     m_deploymentInstanceType = OptimizationJobDeploymentInstanceTypeMapper::GetOptimizationJobDeploymentInstanceTypeForName(jsonValue.GetString("DeploymentInstanceType"));
-
     m_deploymentInstanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptimizationTypes"))
   {
     Aws::Utils::Array<JsonView> optimizationTypesJsonList = jsonValue.GetArray("OptimizationTypes");
@@ -106,7 +74,6 @@ OptimizationJobSummary& OptimizationJobSummary::operator =(JsonView jsonValue)
     }
     m_optimizationTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

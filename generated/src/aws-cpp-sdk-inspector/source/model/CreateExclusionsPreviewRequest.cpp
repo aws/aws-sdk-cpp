@@ -12,11 +12,6 @@ using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateExclusionsPreviewRequest::CreateExclusionsPreviewRequest() : 
-    m_assessmentTemplateArnHasBeenSet(false)
-{
-}
-
 Aws::String CreateExclusionsPreviewRequest::SerializePayload() const
 {
   JsonValue payload;

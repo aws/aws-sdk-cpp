@@ -28,7 +28,7 @@ namespace Model
   class StartSearchJobResult
   {
   public:
-    AWS_BACKUPSEARCH_API StartSearchJobResult();
+    AWS_BACKUPSEARCH_API StartSearchJobResult() = default;
     AWS_BACKUPSEARCH_API StartSearchJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUPSEARCH_API StartSearchJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
      * <p>The unique string that identifies the Amazon Resource Name (ARN) of the
      * specified search job.</p>
      */
-    inline const Aws::String& GetSearchJobArn() const{ return m_searchJobArn; }
-    inline void SetSearchJobArn(const Aws::String& value) { m_searchJobArn = value; }
-    inline void SetSearchJobArn(Aws::String&& value) { m_searchJobArn = std::move(value); }
-    inline void SetSearchJobArn(const char* value) { m_searchJobArn.assign(value); }
-    inline StartSearchJobResult& WithSearchJobArn(const Aws::String& value) { SetSearchJobArn(value); return *this;}
-    inline StartSearchJobResult& WithSearchJobArn(Aws::String&& value) { SetSearchJobArn(std::move(value)); return *this;}
-    inline StartSearchJobResult& WithSearchJobArn(const char* value) { SetSearchJobArn(value); return *this;}
+    inline const Aws::String& GetSearchJobArn() const { return m_searchJobArn; }
+    template<typename SearchJobArnT = Aws::String>
+    void SetSearchJobArn(SearchJobArnT&& value) { m_searchJobArnHasBeenSet = true; m_searchJobArn = std::forward<SearchJobArnT>(value); }
+    template<typename SearchJobArnT = Aws::String>
+    StartSearchJobResult& WithSearchJobArn(SearchJobArnT&& value) { SetSearchJobArn(std::forward<SearchJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,45 +52,45 @@ namespace Model
      * milliseconds. For example, the value 1516925490.087 represents Friday, January
      * 26, 2018 12:11:30.087 AM.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline StartSearchJobResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline StartSearchJobResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    StartSearchJobResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique string that specifies the search job.</p>
      */
-    inline const Aws::String& GetSearchJobIdentifier() const{ return m_searchJobIdentifier; }
-    inline void SetSearchJobIdentifier(const Aws::String& value) { m_searchJobIdentifier = value; }
-    inline void SetSearchJobIdentifier(Aws::String&& value) { m_searchJobIdentifier = std::move(value); }
-    inline void SetSearchJobIdentifier(const char* value) { m_searchJobIdentifier.assign(value); }
-    inline StartSearchJobResult& WithSearchJobIdentifier(const Aws::String& value) { SetSearchJobIdentifier(value); return *this;}
-    inline StartSearchJobResult& WithSearchJobIdentifier(Aws::String&& value) { SetSearchJobIdentifier(std::move(value)); return *this;}
-    inline StartSearchJobResult& WithSearchJobIdentifier(const char* value) { SetSearchJobIdentifier(value); return *this;}
+    inline const Aws::String& GetSearchJobIdentifier() const { return m_searchJobIdentifier; }
+    template<typename SearchJobIdentifierT = Aws::String>
+    void SetSearchJobIdentifier(SearchJobIdentifierT&& value) { m_searchJobIdentifierHasBeenSet = true; m_searchJobIdentifier = std::forward<SearchJobIdentifierT>(value); }
+    template<typename SearchJobIdentifierT = Aws::String>
+    StartSearchJobResult& WithSearchJobIdentifier(SearchJobIdentifierT&& value) { SetSearchJobIdentifier(std::forward<SearchJobIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartSearchJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartSearchJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartSearchJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartSearchJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_searchJobArn;
+    bool m_searchJobArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_searchJobIdentifier;
+    bool m_searchJobIdentifierHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

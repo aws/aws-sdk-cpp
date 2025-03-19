@@ -18,19 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AssetBundleImportJobSummary::AssetBundleImportJobSummary() : 
-    m_jobStatus(AssetBundleImportJobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_assetBundleImportJobIdHasBeenSet(false),
-    m_failureAction(AssetBundleImportFailureAction::NOT_SET),
-    m_failureActionHasBeenSet(false)
-{
-}
-
 AssetBundleImportJobSummary::AssetBundleImportJobSummary(JsonView jsonValue)
-  : AssetBundleImportJobSummary()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ AssetBundleImportJobSummary& AssetBundleImportJobSummary::operator =(JsonView js
   if(jsonValue.ValueExists("JobStatus"))
   {
     m_jobStatus = AssetBundleImportJobStatusMapper::GetAssetBundleImportJobStatusForName(jsonValue.GetString("JobStatus"));
-
     m_jobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssetBundleImportJobId"))
   {
     m_assetBundleImportJobId = jsonValue.GetString("AssetBundleImportJobId");
-
     m_assetBundleImportJobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureAction"))
   {
     m_failureAction = AssetBundleImportFailureActionMapper::GetAssetBundleImportFailureActionForName(jsonValue.GetString("FailureAction"));
-
     m_failureActionHasBeenSet = true;
   }
-
   return *this;
 }
 

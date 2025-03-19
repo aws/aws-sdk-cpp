@@ -18,15 +18,7 @@ namespace TranscribeStreamingService
 namespace Model
 {
 
-MedicalAlternative::MedicalAlternative() : 
-    m_transcriptHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_entitiesHasBeenSet(false)
-{
-}
-
 MedicalAlternative::MedicalAlternative(JsonView jsonValue)
-  : MedicalAlternative()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ MedicalAlternative& MedicalAlternative::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Transcript"))
   {
     m_transcript = jsonValue.GetString("Transcript");
-
     m_transcriptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Items"))
   {
     Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("Items");
@@ -49,7 +39,6 @@ MedicalAlternative& MedicalAlternative::operator =(JsonView jsonValue)
     }
     m_itemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Entities"))
   {
     Aws::Utils::Array<JsonView> entitiesJsonList = jsonValue.GetArray("Entities");
@@ -59,7 +48,6 @@ MedicalAlternative& MedicalAlternative::operator =(JsonView jsonValue)
     }
     m_entitiesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class StatisticAnnotation
   {
   public:
-    AWS_GLUE_API StatisticAnnotation();
+    AWS_GLUE_API StatisticAnnotation() = default;
     AWS_GLUE_API StatisticAnnotation(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API StatisticAnnotation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,52 +43,48 @@ namespace Model
     /**
      * <p>The Profile ID.</p>
      */
-    inline const Aws::String& GetProfileId() const{ return m_profileId; }
+    inline const Aws::String& GetProfileId() const { return m_profileId; }
     inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
-    inline void SetProfileId(const Aws::String& value) { m_profileIdHasBeenSet = true; m_profileId = value; }
-    inline void SetProfileId(Aws::String&& value) { m_profileIdHasBeenSet = true; m_profileId = std::move(value); }
-    inline void SetProfileId(const char* value) { m_profileIdHasBeenSet = true; m_profileId.assign(value); }
-    inline StatisticAnnotation& WithProfileId(const Aws::String& value) { SetProfileId(value); return *this;}
-    inline StatisticAnnotation& WithProfileId(Aws::String&& value) { SetProfileId(std::move(value)); return *this;}
-    inline StatisticAnnotation& WithProfileId(const char* value) { SetProfileId(value); return *this;}
+    template<typename ProfileIdT = Aws::String>
+    void SetProfileId(ProfileIdT&& value) { m_profileIdHasBeenSet = true; m_profileId = std::forward<ProfileIdT>(value); }
+    template<typename ProfileIdT = Aws::String>
+    StatisticAnnotation& WithProfileId(ProfileIdT&& value) { SetProfileId(std::forward<ProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Statistic ID.</p>
      */
-    inline const Aws::String& GetStatisticId() const{ return m_statisticId; }
+    inline const Aws::String& GetStatisticId() const { return m_statisticId; }
     inline bool StatisticIdHasBeenSet() const { return m_statisticIdHasBeenSet; }
-    inline void SetStatisticId(const Aws::String& value) { m_statisticIdHasBeenSet = true; m_statisticId = value; }
-    inline void SetStatisticId(Aws::String&& value) { m_statisticIdHasBeenSet = true; m_statisticId = std::move(value); }
-    inline void SetStatisticId(const char* value) { m_statisticIdHasBeenSet = true; m_statisticId.assign(value); }
-    inline StatisticAnnotation& WithStatisticId(const Aws::String& value) { SetStatisticId(value); return *this;}
-    inline StatisticAnnotation& WithStatisticId(Aws::String&& value) { SetStatisticId(std::move(value)); return *this;}
-    inline StatisticAnnotation& WithStatisticId(const char* value) { SetStatisticId(value); return *this;}
+    template<typename StatisticIdT = Aws::String>
+    void SetStatisticId(StatisticIdT&& value) { m_statisticIdHasBeenSet = true; m_statisticId = std::forward<StatisticIdT>(value); }
+    template<typename StatisticIdT = Aws::String>
+    StatisticAnnotation& WithStatisticId(StatisticIdT&& value) { SetStatisticId(std::forward<StatisticIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when the annotated statistic was recorded.</p>
      */
-    inline const Aws::Utils::DateTime& GetStatisticRecordedOn() const{ return m_statisticRecordedOn; }
+    inline const Aws::Utils::DateTime& GetStatisticRecordedOn() const { return m_statisticRecordedOn; }
     inline bool StatisticRecordedOnHasBeenSet() const { return m_statisticRecordedOnHasBeenSet; }
-    inline void SetStatisticRecordedOn(const Aws::Utils::DateTime& value) { m_statisticRecordedOnHasBeenSet = true; m_statisticRecordedOn = value; }
-    inline void SetStatisticRecordedOn(Aws::Utils::DateTime&& value) { m_statisticRecordedOnHasBeenSet = true; m_statisticRecordedOn = std::move(value); }
-    inline StatisticAnnotation& WithStatisticRecordedOn(const Aws::Utils::DateTime& value) { SetStatisticRecordedOn(value); return *this;}
-    inline StatisticAnnotation& WithStatisticRecordedOn(Aws::Utils::DateTime&& value) { SetStatisticRecordedOn(std::move(value)); return *this;}
+    template<typename StatisticRecordedOnT = Aws::Utils::DateTime>
+    void SetStatisticRecordedOn(StatisticRecordedOnT&& value) { m_statisticRecordedOnHasBeenSet = true; m_statisticRecordedOn = std::forward<StatisticRecordedOnT>(value); }
+    template<typename StatisticRecordedOnT = Aws::Utils::DateTime>
+    StatisticAnnotation& WithStatisticRecordedOn(StatisticRecordedOnT&& value) { SetStatisticRecordedOn(std::forward<StatisticRecordedOnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The inclusion annotation applied to the statistic.</p>
      */
-    inline const TimestampedInclusionAnnotation& GetInclusionAnnotation() const{ return m_inclusionAnnotation; }
+    inline const TimestampedInclusionAnnotation& GetInclusionAnnotation() const { return m_inclusionAnnotation; }
     inline bool InclusionAnnotationHasBeenSet() const { return m_inclusionAnnotationHasBeenSet; }
-    inline void SetInclusionAnnotation(const TimestampedInclusionAnnotation& value) { m_inclusionAnnotationHasBeenSet = true; m_inclusionAnnotation = value; }
-    inline void SetInclusionAnnotation(TimestampedInclusionAnnotation&& value) { m_inclusionAnnotationHasBeenSet = true; m_inclusionAnnotation = std::move(value); }
-    inline StatisticAnnotation& WithInclusionAnnotation(const TimestampedInclusionAnnotation& value) { SetInclusionAnnotation(value); return *this;}
-    inline StatisticAnnotation& WithInclusionAnnotation(TimestampedInclusionAnnotation&& value) { SetInclusionAnnotation(std::move(value)); return *this;}
+    template<typename InclusionAnnotationT = TimestampedInclusionAnnotation>
+    void SetInclusionAnnotation(InclusionAnnotationT&& value) { m_inclusionAnnotationHasBeenSet = true; m_inclusionAnnotation = std::forward<InclusionAnnotationT>(value); }
+    template<typename InclusionAnnotationT = TimestampedInclusionAnnotation>
+    StatisticAnnotation& WithInclusionAnnotation(InclusionAnnotationT&& value) { SetInclusionAnnotation(std::forward<InclusionAnnotationT>(value)); return *this;}
     ///@}
   private:
 
@@ -98,7 +94,7 @@ namespace Model
     Aws::String m_statisticId;
     bool m_statisticIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_statisticRecordedOn;
+    Aws::Utils::DateTime m_statisticRecordedOn{};
     bool m_statisticRecordedOnHasBeenSet = false;
 
     TimestampedInclusionAnnotation m_inclusionAnnotation;

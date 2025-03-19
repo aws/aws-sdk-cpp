@@ -18,20 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-CelebrityDetail::CelebrityDetail() : 
-    m_urlsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_boundingBoxHasBeenSet(false),
-    m_faceHasBeenSet(false),
-    m_knownGenderHasBeenSet(false)
-{
-}
-
 CelebrityDetail::CelebrityDetail(JsonView jsonValue)
-  : CelebrityDetail()
 {
   *this = jsonValue;
 }
@@ -47,49 +34,36 @@ CelebrityDetail& CelebrityDetail::operator =(JsonView jsonValue)
     }
     m_urlsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BoundingBox"))
   {
     m_boundingBox = jsonValue.GetObject("BoundingBox");
-
     m_boundingBoxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Face"))
   {
     m_face = jsonValue.GetObject("Face");
-
     m_faceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KnownGender"))
   {
     m_knownGender = jsonValue.GetObject("KnownGender");
-
     m_knownGenderHasBeenSet = true;
   }
-
   return *this;
 }
 

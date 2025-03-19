@@ -28,7 +28,7 @@ namespace Model
   class ResolveAppVersionResourcesResult
   {
   public:
-    AWS_RESILIENCEHUB_API ResolveAppVersionResourcesResult();
+    AWS_RESILIENCEHUB_API ResolveAppVersionResourcesResult() = default;
     AWS_RESILIENCEHUB_API ResolveAppVersionResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESILIENCEHUB_API ResolveAppVersionResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,73 +43,68 @@ namespace Model
      * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i> guide.</p>
      */
-    inline const Aws::String& GetAppArn() const{ return m_appArn; }
-    inline void SetAppArn(const Aws::String& value) { m_appArn = value; }
-    inline void SetAppArn(Aws::String&& value) { m_appArn = std::move(value); }
-    inline void SetAppArn(const char* value) { m_appArn.assign(value); }
-    inline ResolveAppVersionResourcesResult& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
-    inline ResolveAppVersionResourcesResult& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
-    inline ResolveAppVersionResourcesResult& WithAppArn(const char* value) { SetAppArn(value); return *this;}
+    inline const Aws::String& GetAppArn() const { return m_appArn; }
+    template<typename AppArnT = Aws::String>
+    void SetAppArn(AppArnT&& value) { m_appArnHasBeenSet = true; m_appArn = std::forward<AppArnT>(value); }
+    template<typename AppArnT = Aws::String>
+    ResolveAppVersionResourcesResult& WithAppArn(AppArnT&& value) { SetAppArn(std::forward<AppArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the application.</p>
      */
-    inline const Aws::String& GetAppVersion() const{ return m_appVersion; }
-    inline void SetAppVersion(const Aws::String& value) { m_appVersion = value; }
-    inline void SetAppVersion(Aws::String&& value) { m_appVersion = std::move(value); }
-    inline void SetAppVersion(const char* value) { m_appVersion.assign(value); }
-    inline ResolveAppVersionResourcesResult& WithAppVersion(const Aws::String& value) { SetAppVersion(value); return *this;}
-    inline ResolveAppVersionResourcesResult& WithAppVersion(Aws::String&& value) { SetAppVersion(std::move(value)); return *this;}
-    inline ResolveAppVersionResourcesResult& WithAppVersion(const char* value) { SetAppVersion(value); return *this;}
+    inline const Aws::String& GetAppVersion() const { return m_appVersion; }
+    template<typename AppVersionT = Aws::String>
+    void SetAppVersion(AppVersionT&& value) { m_appVersionHasBeenSet = true; m_appVersion = std::forward<AppVersionT>(value); }
+    template<typename AppVersionT = Aws::String>
+    ResolveAppVersionResourcesResult& WithAppVersion(AppVersionT&& value) { SetAppVersion(std::forward<AppVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier for a specific resolution.</p>
      */
-    inline const Aws::String& GetResolutionId() const{ return m_resolutionId; }
-    inline void SetResolutionId(const Aws::String& value) { m_resolutionId = value; }
-    inline void SetResolutionId(Aws::String&& value) { m_resolutionId = std::move(value); }
-    inline void SetResolutionId(const char* value) { m_resolutionId.assign(value); }
-    inline ResolveAppVersionResourcesResult& WithResolutionId(const Aws::String& value) { SetResolutionId(value); return *this;}
-    inline ResolveAppVersionResourcesResult& WithResolutionId(Aws::String&& value) { SetResolutionId(std::move(value)); return *this;}
-    inline ResolveAppVersionResourcesResult& WithResolutionId(const char* value) { SetResolutionId(value); return *this;}
+    inline const Aws::String& GetResolutionId() const { return m_resolutionId; }
+    template<typename ResolutionIdT = Aws::String>
+    void SetResolutionId(ResolutionIdT&& value) { m_resolutionIdHasBeenSet = true; m_resolutionId = std::forward<ResolutionIdT>(value); }
+    template<typename ResolutionIdT = Aws::String>
+    ResolveAppVersionResourcesResult& WithResolutionId(ResolutionIdT&& value) { SetResolutionId(std::forward<ResolutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Status of the action.</p>
      */
-    inline const ResourceResolutionStatusType& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ResourceResolutionStatusType& value) { m_status = value; }
-    inline void SetStatus(ResourceResolutionStatusType&& value) { m_status = std::move(value); }
-    inline ResolveAppVersionResourcesResult& WithStatus(const ResourceResolutionStatusType& value) { SetStatus(value); return *this;}
-    inline ResolveAppVersionResourcesResult& WithStatus(ResourceResolutionStatusType&& value) { SetStatus(std::move(value)); return *this;}
+    inline ResourceResolutionStatusType GetStatus() const { return m_status; }
+    inline void SetStatus(ResourceResolutionStatusType value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ResolveAppVersionResourcesResult& WithStatus(ResourceResolutionStatusType value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ResolveAppVersionResourcesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ResolveAppVersionResourcesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ResolveAppVersionResourcesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ResolveAppVersionResourcesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_appArn;
+    bool m_appArnHasBeenSet = false;
 
     Aws::String m_appVersion;
+    bool m_appVersionHasBeenSet = false;
 
     Aws::String m_resolutionId;
+    bool m_resolutionIdHasBeenSet = false;
 
-    ResourceResolutionStatusType m_status;
+    ResourceResolutionStatusType m_status{ResourceResolutionStatusType::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

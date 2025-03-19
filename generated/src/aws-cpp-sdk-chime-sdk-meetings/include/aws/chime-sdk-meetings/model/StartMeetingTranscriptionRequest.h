@@ -22,7 +22,7 @@ namespace Model
   class StartMeetingTranscriptionRequest : public ChimeSDKMeetingsRequest
   {
   public:
-    AWS_CHIMESDKMEETINGS_API StartMeetingTranscriptionRequest();
+    AWS_CHIMESDKMEETINGS_API StartMeetingTranscriptionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
     /**
      * <p>The unique ID of the meeting being transcribed.</p>
      */
-    inline const Aws::String& GetMeetingId() const{ return m_meetingId; }
+    inline const Aws::String& GetMeetingId() const { return m_meetingId; }
     inline bool MeetingIdHasBeenSet() const { return m_meetingIdHasBeenSet; }
-    inline void SetMeetingId(const Aws::String& value) { m_meetingIdHasBeenSet = true; m_meetingId = value; }
-    inline void SetMeetingId(Aws::String&& value) { m_meetingIdHasBeenSet = true; m_meetingId = std::move(value); }
-    inline void SetMeetingId(const char* value) { m_meetingIdHasBeenSet = true; m_meetingId.assign(value); }
-    inline StartMeetingTranscriptionRequest& WithMeetingId(const Aws::String& value) { SetMeetingId(value); return *this;}
-    inline StartMeetingTranscriptionRequest& WithMeetingId(Aws::String&& value) { SetMeetingId(std::move(value)); return *this;}
-    inline StartMeetingTranscriptionRequest& WithMeetingId(const char* value) { SetMeetingId(value); return *this;}
+    template<typename MeetingIdT = Aws::String>
+    void SetMeetingId(MeetingIdT&& value) { m_meetingIdHasBeenSet = true; m_meetingId = std::forward<MeetingIdT>(value); }
+    template<typename MeetingIdT = Aws::String>
+    StartMeetingTranscriptionRequest& WithMeetingId(MeetingIdT&& value) { SetMeetingId(std::forward<MeetingIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,12 +51,12 @@ namespace Model
      * <code>EngineTranscribeSettings</code> or
      * <code>EngineTranscribeMedicalSettings</code>.</p>
      */
-    inline const TranscriptionConfiguration& GetTranscriptionConfiguration() const{ return m_transcriptionConfiguration; }
+    inline const TranscriptionConfiguration& GetTranscriptionConfiguration() const { return m_transcriptionConfiguration; }
     inline bool TranscriptionConfigurationHasBeenSet() const { return m_transcriptionConfigurationHasBeenSet; }
-    inline void SetTranscriptionConfiguration(const TranscriptionConfiguration& value) { m_transcriptionConfigurationHasBeenSet = true; m_transcriptionConfiguration = value; }
-    inline void SetTranscriptionConfiguration(TranscriptionConfiguration&& value) { m_transcriptionConfigurationHasBeenSet = true; m_transcriptionConfiguration = std::move(value); }
-    inline StartMeetingTranscriptionRequest& WithTranscriptionConfiguration(const TranscriptionConfiguration& value) { SetTranscriptionConfiguration(value); return *this;}
-    inline StartMeetingTranscriptionRequest& WithTranscriptionConfiguration(TranscriptionConfiguration&& value) { SetTranscriptionConfiguration(std::move(value)); return *this;}
+    template<typename TranscriptionConfigurationT = TranscriptionConfiguration>
+    void SetTranscriptionConfiguration(TranscriptionConfigurationT&& value) { m_transcriptionConfigurationHasBeenSet = true; m_transcriptionConfiguration = std::forward<TranscriptionConfigurationT>(value); }
+    template<typename TranscriptionConfigurationT = TranscriptionConfiguration>
+    StartMeetingTranscriptionRequest& WithTranscriptionConfiguration(TranscriptionConfigurationT&& value) { SetTranscriptionConfiguration(std::forward<TranscriptionConfigurationT>(value)); return *this;}
     ///@}
   private:
 

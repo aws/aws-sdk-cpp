@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeMediaStorageConfigurationResult::DescribeMediaStorageConfigurationResult()
-{
-}
-
 DescribeMediaStorageConfigurationResult::DescribeMediaStorageConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeMediaStorageConfigurationResult& DescribeMediaStorageConfigurationResult
   if(jsonValue.ValueExists("MediaStorageConfiguration"))
   {
     m_mediaStorageConfiguration = jsonValue.GetObject("MediaStorageConfiguration");
-
+    m_mediaStorageConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

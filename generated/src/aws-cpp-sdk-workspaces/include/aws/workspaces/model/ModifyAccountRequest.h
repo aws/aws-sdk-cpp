@@ -22,7 +22,7 @@ namespace Model
   class ModifyAccountRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API ModifyAccountRequest();
+    AWS_WORKSPACES_API ModifyAccountRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,12 +39,10 @@ namespace Model
     /**
      * <p>The status of BYOL.</p>
      */
-    inline const DedicatedTenancySupportEnum& GetDedicatedTenancySupport() const{ return m_dedicatedTenancySupport; }
+    inline DedicatedTenancySupportEnum GetDedicatedTenancySupport() const { return m_dedicatedTenancySupport; }
     inline bool DedicatedTenancySupportHasBeenSet() const { return m_dedicatedTenancySupportHasBeenSet; }
-    inline void SetDedicatedTenancySupport(const DedicatedTenancySupportEnum& value) { m_dedicatedTenancySupportHasBeenSet = true; m_dedicatedTenancySupport = value; }
-    inline void SetDedicatedTenancySupport(DedicatedTenancySupportEnum&& value) { m_dedicatedTenancySupportHasBeenSet = true; m_dedicatedTenancySupport = std::move(value); }
-    inline ModifyAccountRequest& WithDedicatedTenancySupport(const DedicatedTenancySupportEnum& value) { SetDedicatedTenancySupport(value); return *this;}
-    inline ModifyAccountRequest& WithDedicatedTenancySupport(DedicatedTenancySupportEnum&& value) { SetDedicatedTenancySupport(std::move(value)); return *this;}
+    inline void SetDedicatedTenancySupport(DedicatedTenancySupportEnum value) { m_dedicatedTenancySupportHasBeenSet = true; m_dedicatedTenancySupport = value; }
+    inline ModifyAccountRequest& WithDedicatedTenancySupport(DedicatedTenancySupportEnum value) { SetDedicatedTenancySupport(value); return *this;}
     ///@}
 
     ///@{
@@ -56,18 +54,16 @@ namespace Model
      * specified as available by the <code>ListAvailableManagementCidrRanges</code>
      * operation.</p>
      */
-    inline const Aws::String& GetDedicatedTenancyManagementCidrRange() const{ return m_dedicatedTenancyManagementCidrRange; }
+    inline const Aws::String& GetDedicatedTenancyManagementCidrRange() const { return m_dedicatedTenancyManagementCidrRange; }
     inline bool DedicatedTenancyManagementCidrRangeHasBeenSet() const { return m_dedicatedTenancyManagementCidrRangeHasBeenSet; }
-    inline void SetDedicatedTenancyManagementCidrRange(const Aws::String& value) { m_dedicatedTenancyManagementCidrRangeHasBeenSet = true; m_dedicatedTenancyManagementCidrRange = value; }
-    inline void SetDedicatedTenancyManagementCidrRange(Aws::String&& value) { m_dedicatedTenancyManagementCidrRangeHasBeenSet = true; m_dedicatedTenancyManagementCidrRange = std::move(value); }
-    inline void SetDedicatedTenancyManagementCidrRange(const char* value) { m_dedicatedTenancyManagementCidrRangeHasBeenSet = true; m_dedicatedTenancyManagementCidrRange.assign(value); }
-    inline ModifyAccountRequest& WithDedicatedTenancyManagementCidrRange(const Aws::String& value) { SetDedicatedTenancyManagementCidrRange(value); return *this;}
-    inline ModifyAccountRequest& WithDedicatedTenancyManagementCidrRange(Aws::String&& value) { SetDedicatedTenancyManagementCidrRange(std::move(value)); return *this;}
-    inline ModifyAccountRequest& WithDedicatedTenancyManagementCidrRange(const char* value) { SetDedicatedTenancyManagementCidrRange(value); return *this;}
+    template<typename DedicatedTenancyManagementCidrRangeT = Aws::String>
+    void SetDedicatedTenancyManagementCidrRange(DedicatedTenancyManagementCidrRangeT&& value) { m_dedicatedTenancyManagementCidrRangeHasBeenSet = true; m_dedicatedTenancyManagementCidrRange = std::forward<DedicatedTenancyManagementCidrRangeT>(value); }
+    template<typename DedicatedTenancyManagementCidrRangeT = Aws::String>
+    ModifyAccountRequest& WithDedicatedTenancyManagementCidrRange(DedicatedTenancyManagementCidrRangeT&& value) { SetDedicatedTenancyManagementCidrRange(std::forward<DedicatedTenancyManagementCidrRangeT>(value)); return *this;}
     ///@}
   private:
 
-    DedicatedTenancySupportEnum m_dedicatedTenancySupport;
+    DedicatedTenancySupportEnum m_dedicatedTenancySupport{DedicatedTenancySupportEnum::NOT_SET};
     bool m_dedicatedTenancySupportHasBeenSet = false;
 
     Aws::String m_dedicatedTenancyManagementCidrRange;

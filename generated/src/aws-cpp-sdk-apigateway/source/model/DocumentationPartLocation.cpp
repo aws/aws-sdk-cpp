@@ -18,18 +18,7 @@ namespace APIGateway
 namespace Model
 {
 
-DocumentationPartLocation::DocumentationPartLocation() : 
-    m_type(DocumentationPartType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_methodHasBeenSet(false),
-    m_statusCodeHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 DocumentationPartLocation::DocumentationPartLocation(JsonView jsonValue)
-  : DocumentationPartLocation()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ DocumentationPartLocation& DocumentationPartLocation::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("type"))
   {
     m_type = DocumentationPartTypeMapper::GetDocumentationPartTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("path"))
   {
     m_path = jsonValue.GetString("path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("method"))
   {
     m_method = jsonValue.GetString("method");
-
     m_methodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = jsonValue.GetString("statusCode");
-
     m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

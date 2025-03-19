@@ -18,25 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ClusterInstanceGroupSpecification::ClusterInstanceGroupSpecification() : 
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_instanceGroupNameHasBeenSet(false),
-    m_instanceType(ClusterInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_lifeCycleConfigHasBeenSet(false),
-    m_executionRoleHasBeenSet(false),
-    m_threadsPerCore(0),
-    m_threadsPerCoreHasBeenSet(false),
-    m_instanceStorageConfigsHasBeenSet(false),
-    m_onStartDeepHealthChecksHasBeenSet(false),
-    m_trainingPlanArnHasBeenSet(false),
-    m_overrideVpcConfigHasBeenSet(false)
-{
-}
-
 ClusterInstanceGroupSpecification::ClusterInstanceGroupSpecification(JsonView jsonValue)
-  : ClusterInstanceGroupSpecification()
 {
   *this = jsonValue;
 }
@@ -46,45 +28,33 @@ ClusterInstanceGroupSpecification& ClusterInstanceGroupSpecification::operator =
   if(jsonValue.ValueExists("InstanceCount"))
   {
     m_instanceCount = jsonValue.GetInteger("InstanceCount");
-
     m_instanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceGroupName"))
   {
     m_instanceGroupName = jsonValue.GetString("InstanceGroupName");
-
     m_instanceGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = ClusterInstanceTypeMapper::GetClusterInstanceTypeForName(jsonValue.GetString("InstanceType"));
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LifeCycleConfig"))
   {
     m_lifeCycleConfig = jsonValue.GetObject("LifeCycleConfig");
-
     m_lifeCycleConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionRole"))
   {
     m_executionRole = jsonValue.GetString("ExecutionRole");
-
     m_executionRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThreadsPerCore"))
   {
     m_threadsPerCore = jsonValue.GetInteger("ThreadsPerCore");
-
     m_threadsPerCoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceStorageConfigs"))
   {
     Aws::Utils::Array<JsonView> instanceStorageConfigsJsonList = jsonValue.GetArray("InstanceStorageConfigs");
@@ -94,7 +64,6 @@ ClusterInstanceGroupSpecification& ClusterInstanceGroupSpecification::operator =
     }
     m_instanceStorageConfigsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnStartDeepHealthChecks"))
   {
     Aws::Utils::Array<JsonView> onStartDeepHealthChecksJsonList = jsonValue.GetArray("OnStartDeepHealthChecks");
@@ -104,21 +73,16 @@ ClusterInstanceGroupSpecification& ClusterInstanceGroupSpecification::operator =
     }
     m_onStartDeepHealthChecksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingPlanArn"))
   {
     m_trainingPlanArn = jsonValue.GetString("TrainingPlanArn");
-
     m_trainingPlanArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OverrideVpcConfig"))
   {
     m_overrideVpcConfig = jsonValue.GetObject("OverrideVpcConfig");
-
     m_overrideVpcConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-SavingsPlansUtilizationDetail::SavingsPlansUtilizationDetail() : 
-    m_savingsPlanArnHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_utilizationHasBeenSet(false),
-    m_savingsHasBeenSet(false),
-    m_amortizedCommitmentHasBeenSet(false)
-{
-}
-
 SavingsPlansUtilizationDetail::SavingsPlansUtilizationDetail(JsonView jsonValue)
-  : SavingsPlansUtilizationDetail()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ SavingsPlansUtilizationDetail& SavingsPlansUtilizationDetail::operator =(JsonVie
   if(jsonValue.ValueExists("SavingsPlanArn"))
   {
     m_savingsPlanArn = jsonValue.GetString("SavingsPlanArn");
-
     m_savingsPlanArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
@@ -51,28 +39,21 @@ SavingsPlansUtilizationDetail& SavingsPlansUtilizationDetail::operator =(JsonVie
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Utilization"))
   {
     m_utilization = jsonValue.GetObject("Utilization");
-
     m_utilizationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Savings"))
   {
     m_savings = jsonValue.GetObject("Savings");
-
     m_savingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AmortizedCommitment"))
   {
     m_amortizedCommitment = jsonValue.GetObject("AmortizedCommitment");
-
     m_amortizedCommitmentHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class SecondaryClusterInfo
   {
   public:
-    AWS_REDSHIFT_API SecondaryClusterInfo();
+    AWS_REDSHIFT_API SecondaryClusterInfo() = default;
     AWS_REDSHIFT_API SecondaryClusterInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API SecondaryClusterInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,28 +47,26 @@ namespace Model
      * <p>The name of the Availability Zone in which the secondary compute unit of the
      * cluster is located.</p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-    inline SecondaryClusterInfo& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline SecondaryClusterInfo& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline SecondaryClusterInfo& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    SecondaryClusterInfo& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The nodes in the secondary compute unit.</p>
      */
-    inline const Aws::Vector<ClusterNode>& GetClusterNodes() const{ return m_clusterNodes; }
+    inline const Aws::Vector<ClusterNode>& GetClusterNodes() const { return m_clusterNodes; }
     inline bool ClusterNodesHasBeenSet() const { return m_clusterNodesHasBeenSet; }
-    inline void SetClusterNodes(const Aws::Vector<ClusterNode>& value) { m_clusterNodesHasBeenSet = true; m_clusterNodes = value; }
-    inline void SetClusterNodes(Aws::Vector<ClusterNode>&& value) { m_clusterNodesHasBeenSet = true; m_clusterNodes = std::move(value); }
-    inline SecondaryClusterInfo& WithClusterNodes(const Aws::Vector<ClusterNode>& value) { SetClusterNodes(value); return *this;}
-    inline SecondaryClusterInfo& WithClusterNodes(Aws::Vector<ClusterNode>&& value) { SetClusterNodes(std::move(value)); return *this;}
-    inline SecondaryClusterInfo& AddClusterNodes(const ClusterNode& value) { m_clusterNodesHasBeenSet = true; m_clusterNodes.push_back(value); return *this; }
-    inline SecondaryClusterInfo& AddClusterNodes(ClusterNode&& value) { m_clusterNodesHasBeenSet = true; m_clusterNodes.push_back(std::move(value)); return *this; }
+    template<typename ClusterNodesT = Aws::Vector<ClusterNode>>
+    void SetClusterNodes(ClusterNodesT&& value) { m_clusterNodesHasBeenSet = true; m_clusterNodes = std::forward<ClusterNodesT>(value); }
+    template<typename ClusterNodesT = Aws::Vector<ClusterNode>>
+    SecondaryClusterInfo& WithClusterNodes(ClusterNodesT&& value) { SetClusterNodes(std::forward<ClusterNodesT>(value)); return *this;}
+    template<typename ClusterNodesT = ClusterNode>
+    SecondaryClusterInfo& AddClusterNodes(ClusterNodesT&& value) { m_clusterNodesHasBeenSet = true; m_clusterNodes.emplace_back(std::forward<ClusterNodesT>(value)); return *this; }
     ///@}
   private:
 

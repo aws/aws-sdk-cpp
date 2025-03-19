@@ -43,7 +43,7 @@ namespace Model
   class Sequence
   {
   public:
-    AWS_SECURITYHUB_API Sequence();
+    AWS_SECURITYHUB_API Sequence() = default;
     AWS_SECURITYHUB_API Sequence(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Sequence& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,28 +53,26 @@ namespace Model
     /**
      * <p> Unique identifier of the attack sequence. </p>
      */
-    inline const Aws::String& GetUid() const{ return m_uid; }
+    inline const Aws::String& GetUid() const { return m_uid; }
     inline bool UidHasBeenSet() const { return m_uidHasBeenSet; }
-    inline void SetUid(const Aws::String& value) { m_uidHasBeenSet = true; m_uid = value; }
-    inline void SetUid(Aws::String&& value) { m_uidHasBeenSet = true; m_uid = std::move(value); }
-    inline void SetUid(const char* value) { m_uidHasBeenSet = true; m_uid.assign(value); }
-    inline Sequence& WithUid(const Aws::String& value) { SetUid(value); return *this;}
-    inline Sequence& WithUid(Aws::String&& value) { SetUid(std::move(value)); return *this;}
-    inline Sequence& WithUid(const char* value) { SetUid(value); return *this;}
+    template<typename UidT = Aws::String>
+    void SetUid(UidT&& value) { m_uidHasBeenSet = true; m_uid = std::forward<UidT>(value); }
+    template<typename UidT = Aws::String>
+    Sequence& WithUid(UidT&& value) { SetUid(std::forward<UidT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Provides information about the actors involved in the attack sequence. </p>
      */
-    inline const Aws::Vector<Actor>& GetActors() const{ return m_actors; }
+    inline const Aws::Vector<Actor>& GetActors() const { return m_actors; }
     inline bool ActorsHasBeenSet() const { return m_actorsHasBeenSet; }
-    inline void SetActors(const Aws::Vector<Actor>& value) { m_actorsHasBeenSet = true; m_actors = value; }
-    inline void SetActors(Aws::Vector<Actor>&& value) { m_actorsHasBeenSet = true; m_actors = std::move(value); }
-    inline Sequence& WithActors(const Aws::Vector<Actor>& value) { SetActors(value); return *this;}
-    inline Sequence& WithActors(Aws::Vector<Actor>&& value) { SetActors(std::move(value)); return *this;}
-    inline Sequence& AddActors(const Actor& value) { m_actorsHasBeenSet = true; m_actors.push_back(value); return *this; }
-    inline Sequence& AddActors(Actor&& value) { m_actorsHasBeenSet = true; m_actors.push_back(std::move(value)); return *this; }
+    template<typename ActorsT = Aws::Vector<Actor>>
+    void SetActors(ActorsT&& value) { m_actorsHasBeenSet = true; m_actors = std::forward<ActorsT>(value); }
+    template<typename ActorsT = Aws::Vector<Actor>>
+    Sequence& WithActors(ActorsT&& value) { SetActors(std::forward<ActorsT>(value)); return *this;}
+    template<typename ActorsT = Actor>
+    Sequence& AddActors(ActorsT&& value) { m_actorsHasBeenSet = true; m_actors.emplace_back(std::forward<ActorsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -82,28 +80,28 @@ namespace Model
      * <p> Contains information about the network endpoints that were used in the
      * attack sequence. </p>
      */
-    inline const Aws::Vector<NetworkEndpoint>& GetEndpoints() const{ return m_endpoints; }
+    inline const Aws::Vector<NetworkEndpoint>& GetEndpoints() const { return m_endpoints; }
     inline bool EndpointsHasBeenSet() const { return m_endpointsHasBeenSet; }
-    inline void SetEndpoints(const Aws::Vector<NetworkEndpoint>& value) { m_endpointsHasBeenSet = true; m_endpoints = value; }
-    inline void SetEndpoints(Aws::Vector<NetworkEndpoint>&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::move(value); }
-    inline Sequence& WithEndpoints(const Aws::Vector<NetworkEndpoint>& value) { SetEndpoints(value); return *this;}
-    inline Sequence& WithEndpoints(Aws::Vector<NetworkEndpoint>&& value) { SetEndpoints(std::move(value)); return *this;}
-    inline Sequence& AddEndpoints(const NetworkEndpoint& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(value); return *this; }
-    inline Sequence& AddEndpoints(NetworkEndpoint&& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(std::move(value)); return *this; }
+    template<typename EndpointsT = Aws::Vector<NetworkEndpoint>>
+    void SetEndpoints(EndpointsT&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::forward<EndpointsT>(value); }
+    template<typename EndpointsT = Aws::Vector<NetworkEndpoint>>
+    Sequence& WithEndpoints(EndpointsT&& value) { SetEndpoints(std::forward<EndpointsT>(value)); return *this;}
+    template<typename EndpointsT = NetworkEndpoint>
+    Sequence& AddEndpoints(EndpointsT&& value) { m_endpointsHasBeenSet = true; m_endpoints.emplace_back(std::forward<EndpointsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> Contains information about the signals involved in the attack sequence. </p>
      */
-    inline const Aws::Vector<Signal>& GetSignals() const{ return m_signals; }
+    inline const Aws::Vector<Signal>& GetSignals() const { return m_signals; }
     inline bool SignalsHasBeenSet() const { return m_signalsHasBeenSet; }
-    inline void SetSignals(const Aws::Vector<Signal>& value) { m_signalsHasBeenSet = true; m_signals = value; }
-    inline void SetSignals(Aws::Vector<Signal>&& value) { m_signalsHasBeenSet = true; m_signals = std::move(value); }
-    inline Sequence& WithSignals(const Aws::Vector<Signal>& value) { SetSignals(value); return *this;}
-    inline Sequence& WithSignals(Aws::Vector<Signal>&& value) { SetSignals(std::move(value)); return *this;}
-    inline Sequence& AddSignals(const Signal& value) { m_signalsHasBeenSet = true; m_signals.push_back(value); return *this; }
-    inline Sequence& AddSignals(Signal&& value) { m_signalsHasBeenSet = true; m_signals.push_back(std::move(value)); return *this; }
+    template<typename SignalsT = Aws::Vector<Signal>>
+    void SetSignals(SignalsT&& value) { m_signalsHasBeenSet = true; m_signals = std::forward<SignalsT>(value); }
+    template<typename SignalsT = Aws::Vector<Signal>>
+    Sequence& WithSignals(SignalsT&& value) { SetSignals(std::forward<SignalsT>(value)); return *this;}
+    template<typename SignalsT = Signal>
+    Sequence& AddSignals(SignalsT&& value) { m_signalsHasBeenSet = true; m_signals.emplace_back(std::forward<SignalsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -114,14 +112,14 @@ namespace Model
      * are a subset of the values for <code>SequenceIndicators</code>, but the values
      * for these fields don't always match 1:1.</p>
      */
-    inline const Aws::Vector<Indicator>& GetSequenceIndicators() const{ return m_sequenceIndicators; }
+    inline const Aws::Vector<Indicator>& GetSequenceIndicators() const { return m_sequenceIndicators; }
     inline bool SequenceIndicatorsHasBeenSet() const { return m_sequenceIndicatorsHasBeenSet; }
-    inline void SetSequenceIndicators(const Aws::Vector<Indicator>& value) { m_sequenceIndicatorsHasBeenSet = true; m_sequenceIndicators = value; }
-    inline void SetSequenceIndicators(Aws::Vector<Indicator>&& value) { m_sequenceIndicatorsHasBeenSet = true; m_sequenceIndicators = std::move(value); }
-    inline Sequence& WithSequenceIndicators(const Aws::Vector<Indicator>& value) { SetSequenceIndicators(value); return *this;}
-    inline Sequence& WithSequenceIndicators(Aws::Vector<Indicator>&& value) { SetSequenceIndicators(std::move(value)); return *this;}
-    inline Sequence& AddSequenceIndicators(const Indicator& value) { m_sequenceIndicatorsHasBeenSet = true; m_sequenceIndicators.push_back(value); return *this; }
-    inline Sequence& AddSequenceIndicators(Indicator&& value) { m_sequenceIndicatorsHasBeenSet = true; m_sequenceIndicators.push_back(std::move(value)); return *this; }
+    template<typename SequenceIndicatorsT = Aws::Vector<Indicator>>
+    void SetSequenceIndicators(SequenceIndicatorsT&& value) { m_sequenceIndicatorsHasBeenSet = true; m_sequenceIndicators = std::forward<SequenceIndicatorsT>(value); }
+    template<typename SequenceIndicatorsT = Aws::Vector<Indicator>>
+    Sequence& WithSequenceIndicators(SequenceIndicatorsT&& value) { SetSequenceIndicators(std::forward<SequenceIndicatorsT>(value)); return *this;}
+    template<typename SequenceIndicatorsT = Indicator>
+    Sequence& AddSequenceIndicators(SequenceIndicatorsT&& value) { m_sequenceIndicatorsHasBeenSet = true; m_sequenceIndicators.emplace_back(std::forward<SequenceIndicatorsT>(value)); return *this; }
     ///@}
   private:
 

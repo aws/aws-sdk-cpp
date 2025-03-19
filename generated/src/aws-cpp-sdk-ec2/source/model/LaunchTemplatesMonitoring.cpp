@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-LaunchTemplatesMonitoring::LaunchTemplatesMonitoring() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 LaunchTemplatesMonitoring::LaunchTemplatesMonitoring(const XmlNode& xmlNode)
-  : LaunchTemplatesMonitoring()
 {
   *this = xmlNode;
 }

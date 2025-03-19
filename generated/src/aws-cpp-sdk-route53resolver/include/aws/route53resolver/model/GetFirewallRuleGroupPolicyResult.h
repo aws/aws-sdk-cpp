@@ -27,7 +27,7 @@ namespace Model
   class GetFirewallRuleGroupPolicyResult
   {
   public:
-    AWS_ROUTE53RESOLVER_API GetFirewallRuleGroupPolicyResult();
+    AWS_ROUTE53RESOLVER_API GetFirewallRuleGroupPolicyResult() = default;
     AWS_ROUTE53RESOLVER_API GetFirewallRuleGroupPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53RESOLVER_API GetFirewallRuleGroupPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,28 @@ namespace Model
      * sharing the specified rule group. You can use the policy to share the rule group
      * using Resource Access Manager (RAM). </p>
      */
-    inline const Aws::String& GetFirewallRuleGroupPolicy() const{ return m_firewallRuleGroupPolicy; }
-    inline void SetFirewallRuleGroupPolicy(const Aws::String& value) { m_firewallRuleGroupPolicy = value; }
-    inline void SetFirewallRuleGroupPolicy(Aws::String&& value) { m_firewallRuleGroupPolicy = std::move(value); }
-    inline void SetFirewallRuleGroupPolicy(const char* value) { m_firewallRuleGroupPolicy.assign(value); }
-    inline GetFirewallRuleGroupPolicyResult& WithFirewallRuleGroupPolicy(const Aws::String& value) { SetFirewallRuleGroupPolicy(value); return *this;}
-    inline GetFirewallRuleGroupPolicyResult& WithFirewallRuleGroupPolicy(Aws::String&& value) { SetFirewallRuleGroupPolicy(std::move(value)); return *this;}
-    inline GetFirewallRuleGroupPolicyResult& WithFirewallRuleGroupPolicy(const char* value) { SetFirewallRuleGroupPolicy(value); return *this;}
+    inline const Aws::String& GetFirewallRuleGroupPolicy() const { return m_firewallRuleGroupPolicy; }
+    template<typename FirewallRuleGroupPolicyT = Aws::String>
+    void SetFirewallRuleGroupPolicy(FirewallRuleGroupPolicyT&& value) { m_firewallRuleGroupPolicyHasBeenSet = true; m_firewallRuleGroupPolicy = std::forward<FirewallRuleGroupPolicyT>(value); }
+    template<typename FirewallRuleGroupPolicyT = Aws::String>
+    GetFirewallRuleGroupPolicyResult& WithFirewallRuleGroupPolicy(FirewallRuleGroupPolicyT&& value) { SetFirewallRuleGroupPolicy(std::forward<FirewallRuleGroupPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetFirewallRuleGroupPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetFirewallRuleGroupPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetFirewallRuleGroupPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetFirewallRuleGroupPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_firewallRuleGroupPolicy;
+    bool m_firewallRuleGroupPolicyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

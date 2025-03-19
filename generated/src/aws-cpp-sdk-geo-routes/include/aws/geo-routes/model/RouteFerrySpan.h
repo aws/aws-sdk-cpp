@@ -34,7 +34,7 @@ namespace Model
   class RouteFerrySpan
   {
   public:
-    AWS_GEOROUTES_API RouteFerrySpan();
+    AWS_GEOROUTES_API RouteFerrySpan() = default;
     AWS_GEOROUTES_API RouteFerrySpan(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteFerrySpan& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>3 letter Country code corresponding to the Span.</p>
      */
-    inline const Aws::String& GetCountry() const{ return m_country; }
+    inline const Aws::String& GetCountry() const { return m_country; }
     inline bool CountryHasBeenSet() const { return m_countryHasBeenSet; }
-    inline void SetCountry(const Aws::String& value) { m_countryHasBeenSet = true; m_country = value; }
-    inline void SetCountry(Aws::String&& value) { m_countryHasBeenSet = true; m_country = std::move(value); }
-    inline void SetCountry(const char* value) { m_countryHasBeenSet = true; m_country.assign(value); }
-    inline RouteFerrySpan& WithCountry(const Aws::String& value) { SetCountry(value); return *this;}
-    inline RouteFerrySpan& WithCountry(Aws::String&& value) { SetCountry(std::move(value)); return *this;}
-    inline RouteFerrySpan& WithCountry(const char* value) { SetCountry(value); return *this;}
+    template<typename CountryT = Aws::String>
+    void SetCountry(CountryT&& value) { m_countryHasBeenSet = true; m_country = std::forward<CountryT>(value); }
+    template<typename CountryT = Aws::String>
+    RouteFerrySpan& WithCountry(CountryT&& value) { SetCountry(std::forward<CountryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * always computed on a span split by other properties.</p> <p> <b>Unit</b>:
      * <code>meters</code> </p>
      */
-    inline long long GetDistance() const{ return m_distance; }
+    inline long long GetDistance() const { return m_distance; }
     inline bool DistanceHasBeenSet() const { return m_distanceHasBeenSet; }
     inline void SetDistance(long long value) { m_distanceHasBeenSet = true; m_distance = value; }
     inline RouteFerrySpan& WithDistance(long long value) { SetDistance(value); return *this;}
@@ -72,7 +70,7 @@ namespace Model
      * always computed on a span split by other properties.</p> <p> <b>Unit</b>:
      * <code>seconds</code> </p>
      */
-    inline long long GetDuration() const{ return m_duration; }
+    inline long long GetDuration() const { return m_duration; }
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
     inline void SetDuration(long long value) { m_durationHasBeenSet = true; m_duration = value; }
     inline RouteFerrySpan& WithDuration(long long value) { SetDuration(value); return *this;}
@@ -82,7 +80,7 @@ namespace Model
     /**
      * <p>Offset in the leg geometry corresponding to the start of this span.</p>
      */
-    inline int GetGeometryOffset() const{ return m_geometryOffset; }
+    inline int GetGeometryOffset() const { return m_geometryOffset; }
     inline bool GeometryOffsetHasBeenSet() const { return m_geometryOffsetHasBeenSet; }
     inline void SetGeometryOffset(int value) { m_geometryOffsetHasBeenSet = true; m_geometryOffset = value; }
     inline RouteFerrySpan& WithGeometryOffset(int value) { SetGeometryOffset(value); return *this;}
@@ -92,14 +90,14 @@ namespace Model
     /**
      * <p>Provides an array of names of the ferry span in available languages.</p>
      */
-    inline const Aws::Vector<LocalizedString>& GetNames() const{ return m_names; }
+    inline const Aws::Vector<LocalizedString>& GetNames() const { return m_names; }
     inline bool NamesHasBeenSet() const { return m_namesHasBeenSet; }
-    inline void SetNames(const Aws::Vector<LocalizedString>& value) { m_namesHasBeenSet = true; m_names = value; }
-    inline void SetNames(Aws::Vector<LocalizedString>&& value) { m_namesHasBeenSet = true; m_names = std::move(value); }
-    inline RouteFerrySpan& WithNames(const Aws::Vector<LocalizedString>& value) { SetNames(value); return *this;}
-    inline RouteFerrySpan& WithNames(Aws::Vector<LocalizedString>&& value) { SetNames(std::move(value)); return *this;}
-    inline RouteFerrySpan& AddNames(const LocalizedString& value) { m_namesHasBeenSet = true; m_names.push_back(value); return *this; }
-    inline RouteFerrySpan& AddNames(LocalizedString&& value) { m_namesHasBeenSet = true; m_names.push_back(std::move(value)); return *this; }
+    template<typename NamesT = Aws::Vector<LocalizedString>>
+    void SetNames(NamesT&& value) { m_namesHasBeenSet = true; m_names = std::forward<NamesT>(value); }
+    template<typename NamesT = Aws::Vector<LocalizedString>>
+    RouteFerrySpan& WithNames(NamesT&& value) { SetNames(std::forward<NamesT>(value)); return *this;}
+    template<typename NamesT = LocalizedString>
+    RouteFerrySpan& AddNames(NamesT&& value) { m_namesHasBeenSet = true; m_names.emplace_back(std::forward<NamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -107,27 +105,25 @@ namespace Model
      * <p>2-3 letter Region code corresponding to the Span. This is either a province
      * or a state.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline RouteFerrySpan& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline RouteFerrySpan& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline RouteFerrySpan& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    RouteFerrySpan& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_country;
     bool m_countryHasBeenSet = false;
 
-    long long m_distance;
+    long long m_distance{0};
     bool m_distanceHasBeenSet = false;
 
-    long long m_duration;
+    long long m_duration{0};
     bool m_durationHasBeenSet = false;
 
-    int m_geometryOffset;
+    int m_geometryOffset{0};
     bool m_geometryOffsetHasBeenSet = false;
 
     Aws::Vector<LocalizedString> m_names;

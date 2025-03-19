@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-RedshiftProvisionedConfiguration::RedshiftProvisionedConfiguration() : 
-    m_authConfigurationHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false)
-{
-}
-
 RedshiftProvisionedConfiguration::RedshiftProvisionedConfiguration(JsonView jsonValue)
-  : RedshiftProvisionedConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RedshiftProvisionedConfiguration& RedshiftProvisionedConfiguration::operator =(J
   if(jsonValue.ValueExists("authConfiguration"))
   {
     m_authConfiguration = jsonValue.GetObject("authConfiguration");
-
     m_authConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterIdentifier"))
   {
     m_clusterIdentifier = jsonValue.GetString("clusterIdentifier");
-
     m_clusterIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-JobSchedule::JobSchedule() : 
-    m_dayOfTheWeek(JobScheduleDayOfTheWeek::NOT_SET),
-    m_dayOfTheWeekHasBeenSet(false),
-    m_timeHasBeenSet(false)
-{
-}
-
 JobSchedule::JobSchedule(JsonView jsonValue)
-  : JobSchedule()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ JobSchedule& JobSchedule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DayOfTheWeek"))
   {
     m_dayOfTheWeek = JobScheduleDayOfTheWeekMapper::GetJobScheduleDayOfTheWeekForName(jsonValue.GetString("DayOfTheWeek"));
-
     m_dayOfTheWeekHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Time"))
   {
     m_time = jsonValue.GetString("Time");
-
     m_timeHasBeenSet = true;
   }
-
   return *this;
 }
 

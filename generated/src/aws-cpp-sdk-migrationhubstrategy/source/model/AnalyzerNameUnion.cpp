@@ -18,18 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-AnalyzerNameUnion::AnalyzerNameUnion() : 
-    m_binaryAnalyzerName(BinaryAnalyzerName::NOT_SET),
-    m_binaryAnalyzerNameHasBeenSet(false),
-    m_runTimeAnalyzerName(RunTimeAnalyzerName::NOT_SET),
-    m_runTimeAnalyzerNameHasBeenSet(false),
-    m_sourceCodeAnalyzerName(SourceCodeAnalyzerName::NOT_SET),
-    m_sourceCodeAnalyzerNameHasBeenSet(false)
-{
-}
-
 AnalyzerNameUnion::AnalyzerNameUnion(JsonView jsonValue)
-  : AnalyzerNameUnion()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ AnalyzerNameUnion& AnalyzerNameUnion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("binaryAnalyzerName"))
   {
     m_binaryAnalyzerName = BinaryAnalyzerNameMapper::GetBinaryAnalyzerNameForName(jsonValue.GetString("binaryAnalyzerName"));
-
     m_binaryAnalyzerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runTimeAnalyzerName"))
   {
     m_runTimeAnalyzerName = RunTimeAnalyzerNameMapper::GetRunTimeAnalyzerNameForName(jsonValue.GetString("runTimeAnalyzerName"));
-
     m_runTimeAnalyzerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceCodeAnalyzerName"))
   {
     m_sourceCodeAnalyzerName = SourceCodeAnalyzerNameMapper::GetSourceCodeAnalyzerNameForName(jsonValue.GetString("sourceCodeAnalyzerName"));
-
     m_sourceCodeAnalyzerNameHasBeenSet = true;
   }
-
   return *this;
 }
 

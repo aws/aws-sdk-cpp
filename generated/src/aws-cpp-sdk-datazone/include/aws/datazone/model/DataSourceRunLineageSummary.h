@@ -31,7 +31,7 @@ namespace Model
   class DataSourceRunLineageSummary
   {
   public:
-    AWS_DATAZONE_API DataSourceRunLineageSummary();
+    AWS_DATAZONE_API DataSourceRunLineageSummary() = default;
     AWS_DATAZONE_API DataSourceRunLineageSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API DataSourceRunLineageSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
      * <p>The import status that's part of the run lineage summary of a data
      * source.</p>
      */
-    inline const LineageImportStatus& GetImportStatus() const{ return m_importStatus; }
+    inline LineageImportStatus GetImportStatus() const { return m_importStatus; }
     inline bool ImportStatusHasBeenSet() const { return m_importStatusHasBeenSet; }
-    inline void SetImportStatus(const LineageImportStatus& value) { m_importStatusHasBeenSet = true; m_importStatus = value; }
-    inline void SetImportStatus(LineageImportStatus&& value) { m_importStatusHasBeenSet = true; m_importStatus = std::move(value); }
-    inline DataSourceRunLineageSummary& WithImportStatus(const LineageImportStatus& value) { SetImportStatus(value); return *this;}
-    inline DataSourceRunLineageSummary& WithImportStatus(LineageImportStatus&& value) { SetImportStatus(std::move(value)); return *this;}
+    inline void SetImportStatus(LineageImportStatus value) { m_importStatusHasBeenSet = true; m_importStatus = value; }
+    inline DataSourceRunLineageSummary& WithImportStatus(LineageImportStatus value) { SetImportStatus(value); return *this;}
     ///@}
   private:
 
-    LineageImportStatus m_importStatus;
+    LineageImportStatus m_importStatus{LineageImportStatus::NOT_SET};
     bool m_importStatusHasBeenSet = false;
   };
 

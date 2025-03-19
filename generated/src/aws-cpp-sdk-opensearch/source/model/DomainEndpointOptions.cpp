@@ -18,20 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-DomainEndpointOptions::DomainEndpointOptions() : 
-    m_enforceHTTPS(false),
-    m_enforceHTTPSHasBeenSet(false),
-    m_tLSSecurityPolicy(TLSSecurityPolicy::NOT_SET),
-    m_tLSSecurityPolicyHasBeenSet(false),
-    m_customEndpointEnabled(false),
-    m_customEndpointEnabledHasBeenSet(false),
-    m_customEndpointHasBeenSet(false),
-    m_customEndpointCertificateArnHasBeenSet(false)
-{
-}
-
 DomainEndpointOptions::DomainEndpointOptions(JsonView jsonValue)
-  : DomainEndpointOptions()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ DomainEndpointOptions& DomainEndpointOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EnforceHTTPS"))
   {
     m_enforceHTTPS = jsonValue.GetBool("EnforceHTTPS");
-
     m_enforceHTTPSHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TLSSecurityPolicy"))
   {
     m_tLSSecurityPolicy = TLSSecurityPolicyMapper::GetTLSSecurityPolicyForName(jsonValue.GetString("TLSSecurityPolicy"));
-
     m_tLSSecurityPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomEndpointEnabled"))
   {
     m_customEndpointEnabled = jsonValue.GetBool("CustomEndpointEnabled");
-
     m_customEndpointEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomEndpoint"))
   {
     m_customEndpoint = jsonValue.GetString("CustomEndpoint");
-
     m_customEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomEndpointCertificateArn"))
   {
     m_customEndpointCertificateArn = jsonValue.GetString("CustomEndpointCertificateArn");
-
     m_customEndpointCertificateArnHasBeenSet = true;
   }
-
   return *this;
 }
 

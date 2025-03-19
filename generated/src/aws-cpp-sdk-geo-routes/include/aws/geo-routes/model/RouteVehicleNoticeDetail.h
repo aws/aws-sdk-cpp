@@ -32,7 +32,7 @@ namespace Model
   class RouteVehicleNoticeDetail
   {
   public:
-    AWS_GEOROUTES_API RouteVehicleNoticeDetail();
+    AWS_GEOROUTES_API RouteVehicleNoticeDetail() = default;
     AWS_GEOROUTES_API RouteVehicleNoticeDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteVehicleNoticeDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,26 +42,24 @@ namespace Model
     /**
      * <p>The notice title.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline RouteVehicleNoticeDetail& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline RouteVehicleNoticeDetail& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline RouteVehicleNoticeDetail& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    RouteVehicleNoticeDetail& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Any violated constraints.</p>
      */
-    inline const RouteViolatedConstraints& GetViolatedConstraints() const{ return m_violatedConstraints; }
+    inline const RouteViolatedConstraints& GetViolatedConstraints() const { return m_violatedConstraints; }
     inline bool ViolatedConstraintsHasBeenSet() const { return m_violatedConstraintsHasBeenSet; }
-    inline void SetViolatedConstraints(const RouteViolatedConstraints& value) { m_violatedConstraintsHasBeenSet = true; m_violatedConstraints = value; }
-    inline void SetViolatedConstraints(RouteViolatedConstraints&& value) { m_violatedConstraintsHasBeenSet = true; m_violatedConstraints = std::move(value); }
-    inline RouteVehicleNoticeDetail& WithViolatedConstraints(const RouteViolatedConstraints& value) { SetViolatedConstraints(value); return *this;}
-    inline RouteVehicleNoticeDetail& WithViolatedConstraints(RouteViolatedConstraints&& value) { SetViolatedConstraints(std::move(value)); return *this;}
+    template<typename ViolatedConstraintsT = RouteViolatedConstraints>
+    void SetViolatedConstraints(ViolatedConstraintsT&& value) { m_violatedConstraintsHasBeenSet = true; m_violatedConstraints = std::forward<ViolatedConstraintsT>(value); }
+    template<typename ViolatedConstraintsT = RouteViolatedConstraints>
+    RouteVehicleNoticeDetail& WithViolatedConstraints(ViolatedConstraintsT&& value) { SetViolatedConstraints(std::forward<ViolatedConstraintsT>(value)); return *this;}
     ///@}
   private:
 

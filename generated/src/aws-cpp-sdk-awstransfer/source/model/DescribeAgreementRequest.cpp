@@ -12,12 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAgreementRequest::DescribeAgreementRequest() : 
-    m_agreementIdHasBeenSet(false),
-    m_serverIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAgreementRequest::SerializePayload() const
 {
   JsonValue payload;

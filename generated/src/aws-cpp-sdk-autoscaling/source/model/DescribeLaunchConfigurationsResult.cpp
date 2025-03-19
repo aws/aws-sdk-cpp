@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLaunchConfigurationsResult::DescribeLaunchConfigurationsResult()
-{
-}
-
 DescribeLaunchConfigurationsResult::DescribeLaunchConfigurationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeLaunchConfigurationsResult& DescribeLaunchConfigurationsResult::operator
     if(!launchConfigurationsNode.IsNull())
     {
       XmlNode launchConfigurationsMember = launchConfigurationsNode.FirstChild("member");
+      m_launchConfigurationsHasBeenSet = !launchConfigurationsMember.IsNull();
       while(!launchConfigurationsMember.IsNull())
       {
         m_launchConfigurations.push_back(launchConfigurationsMember);
         launchConfigurationsMember = launchConfigurationsMember.NextNode("member");
       }
 
+      m_launchConfigurationsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::DescribeLaunchConfigurationsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

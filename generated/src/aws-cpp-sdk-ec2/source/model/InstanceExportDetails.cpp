@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceExportDetails::InstanceExportDetails() : 
-    m_instanceIdHasBeenSet(false),
-    m_targetEnvironment(ExportEnvironment::NOT_SET),
-    m_targetEnvironmentHasBeenSet(false)
-{
-}
-
 InstanceExportDetails::InstanceExportDetails(const XmlNode& xmlNode)
-  : InstanceExportDetails()
 {
   *this = xmlNode;
 }
@@ -48,7 +40,7 @@ InstanceExportDetails& InstanceExportDetails::operator =(const XmlNode& xmlNode)
     XmlNode targetEnvironmentNode = resultNode.FirstChild("targetEnvironment");
     if(!targetEnvironmentNode.IsNull())
     {
-      m_targetEnvironment = ExportEnvironmentMapper::GetExportEnvironmentForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetEnvironmentNode.GetText()).c_str()).c_str());
+      m_targetEnvironment = ExportEnvironmentMapper::GetExportEnvironmentForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(targetEnvironmentNode.GetText()).c_str()));
       m_targetEnvironmentHasBeenSet = true;
     }
   }

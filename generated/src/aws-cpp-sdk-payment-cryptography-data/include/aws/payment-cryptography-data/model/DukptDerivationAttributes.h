@@ -34,7 +34,7 @@ namespace Model
   class DukptDerivationAttributes
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API DukptDerivationAttributes();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API DukptDerivationAttributes() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API DukptDerivationAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API DukptDerivationAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * encrypting device using DUKPT encryption method. The KSN is derived from the
      * encrypting device unique identifier and an internal transaction counter.</p>
      */
-    inline const Aws::String& GetKeySerialNumber() const{ return m_keySerialNumber; }
+    inline const Aws::String& GetKeySerialNumber() const { return m_keySerialNumber; }
     inline bool KeySerialNumberHasBeenSet() const { return m_keySerialNumberHasBeenSet; }
-    inline void SetKeySerialNumber(const Aws::String& value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber = value; }
-    inline void SetKeySerialNumber(Aws::String&& value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber = std::move(value); }
-    inline void SetKeySerialNumber(const char* value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber.assign(value); }
-    inline DukptDerivationAttributes& WithKeySerialNumber(const Aws::String& value) { SetKeySerialNumber(value); return *this;}
-    inline DukptDerivationAttributes& WithKeySerialNumber(Aws::String&& value) { SetKeySerialNumber(std::move(value)); return *this;}
-    inline DukptDerivationAttributes& WithKeySerialNumber(const char* value) { SetKeySerialNumber(value); return *this;}
+    template<typename KeySerialNumberT = Aws::String>
+    void SetKeySerialNumber(KeySerialNumberT&& value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber = std::forward<KeySerialNumberT>(value); }
+    template<typename KeySerialNumberT = Aws::String>
+    DukptDerivationAttributes& WithKeySerialNumber(KeySerialNumberT&& value) { SetKeySerialNumber(std::forward<KeySerialNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +61,10 @@ namespace Model
      * For example, you can't use <code>AES_128</code> as a derivation type for a BDK
      * of <code>AES_128</code> or <code>TDES_2KEY</code> </p>
      */
-    inline const DukptDerivationType& GetDukptKeyDerivationType() const{ return m_dukptKeyDerivationType; }
+    inline DukptDerivationType GetDukptKeyDerivationType() const { return m_dukptKeyDerivationType; }
     inline bool DukptKeyDerivationTypeHasBeenSet() const { return m_dukptKeyDerivationTypeHasBeenSet; }
-    inline void SetDukptKeyDerivationType(const DukptDerivationType& value) { m_dukptKeyDerivationTypeHasBeenSet = true; m_dukptKeyDerivationType = value; }
-    inline void SetDukptKeyDerivationType(DukptDerivationType&& value) { m_dukptKeyDerivationTypeHasBeenSet = true; m_dukptKeyDerivationType = std::move(value); }
-    inline DukptDerivationAttributes& WithDukptKeyDerivationType(const DukptDerivationType& value) { SetDukptKeyDerivationType(value); return *this;}
-    inline DukptDerivationAttributes& WithDukptKeyDerivationType(DukptDerivationType&& value) { SetDukptKeyDerivationType(std::move(value)); return *this;}
+    inline void SetDukptKeyDerivationType(DukptDerivationType value) { m_dukptKeyDerivationTypeHasBeenSet = true; m_dukptKeyDerivationType = value; }
+    inline DukptDerivationAttributes& WithDukptKeyDerivationType(DukptDerivationType value) { SetDukptKeyDerivationType(value); return *this;}
     ///@}
 
     ///@{
@@ -76,22 +72,20 @@ namespace Model
      * <p>The type of use of DUKPT, which can be for incoming data decryption, outgoing
      * data encryption, or both.</p>
      */
-    inline const DukptKeyVariant& GetDukptKeyVariant() const{ return m_dukptKeyVariant; }
+    inline DukptKeyVariant GetDukptKeyVariant() const { return m_dukptKeyVariant; }
     inline bool DukptKeyVariantHasBeenSet() const { return m_dukptKeyVariantHasBeenSet; }
-    inline void SetDukptKeyVariant(const DukptKeyVariant& value) { m_dukptKeyVariantHasBeenSet = true; m_dukptKeyVariant = value; }
-    inline void SetDukptKeyVariant(DukptKeyVariant&& value) { m_dukptKeyVariantHasBeenSet = true; m_dukptKeyVariant = std::move(value); }
-    inline DukptDerivationAttributes& WithDukptKeyVariant(const DukptKeyVariant& value) { SetDukptKeyVariant(value); return *this;}
-    inline DukptDerivationAttributes& WithDukptKeyVariant(DukptKeyVariant&& value) { SetDukptKeyVariant(std::move(value)); return *this;}
+    inline void SetDukptKeyVariant(DukptKeyVariant value) { m_dukptKeyVariantHasBeenSet = true; m_dukptKeyVariant = value; }
+    inline DukptDerivationAttributes& WithDukptKeyVariant(DukptKeyVariant value) { SetDukptKeyVariant(value); return *this;}
     ///@}
   private:
 
     Aws::String m_keySerialNumber;
     bool m_keySerialNumberHasBeenSet = false;
 
-    DukptDerivationType m_dukptKeyDerivationType;
+    DukptDerivationType m_dukptKeyDerivationType{DukptDerivationType::NOT_SET};
     bool m_dukptKeyDerivationTypeHasBeenSet = false;
 
-    DukptKeyVariant m_dukptKeyVariant;
+    DukptKeyVariant m_dukptKeyVariant{DukptKeyVariant::NOT_SET};
     bool m_dukptKeyVariantHasBeenSet = false;
   };
 

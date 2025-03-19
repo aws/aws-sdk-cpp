@@ -32,7 +32,7 @@ namespace Model
   class TransformOutput
   {
   public:
-    AWS_SAGEMAKER_API TransformOutput();
+    AWS_SAGEMAKER_API TransformOutput() = default;
     AWS_SAGEMAKER_API TransformOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API TransformOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,14 +57,12 @@ namespace Model
      * in the transform job batch transform marks the job as failed to prompt
      * investigation.</p>
      */
-    inline const Aws::String& GetS3OutputPath() const{ return m_s3OutputPath; }
+    inline const Aws::String& GetS3OutputPath() const { return m_s3OutputPath; }
     inline bool S3OutputPathHasBeenSet() const { return m_s3OutputPathHasBeenSet; }
-    inline void SetS3OutputPath(const Aws::String& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = value; }
-    inline void SetS3OutputPath(Aws::String&& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = std::move(value); }
-    inline void SetS3OutputPath(const char* value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath.assign(value); }
-    inline TransformOutput& WithS3OutputPath(const Aws::String& value) { SetS3OutputPath(value); return *this;}
-    inline TransformOutput& WithS3OutputPath(Aws::String&& value) { SetS3OutputPath(std::move(value)); return *this;}
-    inline TransformOutput& WithS3OutputPath(const char* value) { SetS3OutputPath(value); return *this;}
+    template<typename S3OutputPathT = Aws::String>
+    void SetS3OutputPath(S3OutputPathT&& value) { m_s3OutputPathHasBeenSet = true; m_s3OutputPath = std::forward<S3OutputPathT>(value); }
+    template<typename S3OutputPathT = Aws::String>
+    TransformOutput& WithS3OutputPath(S3OutputPathT&& value) { SetS3OutputPath(std::forward<S3OutputPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +70,12 @@ namespace Model
      * <p>The MIME type used to specify the output data. Amazon SageMaker uses the MIME
      * type with each http call to transfer data from the transform job.</p>
      */
-    inline const Aws::String& GetAccept() const{ return m_accept; }
+    inline const Aws::String& GetAccept() const { return m_accept; }
     inline bool AcceptHasBeenSet() const { return m_acceptHasBeenSet; }
-    inline void SetAccept(const Aws::String& value) { m_acceptHasBeenSet = true; m_accept = value; }
-    inline void SetAccept(Aws::String&& value) { m_acceptHasBeenSet = true; m_accept = std::move(value); }
-    inline void SetAccept(const char* value) { m_acceptHasBeenSet = true; m_accept.assign(value); }
-    inline TransformOutput& WithAccept(const Aws::String& value) { SetAccept(value); return *this;}
-    inline TransformOutput& WithAccept(Aws::String&& value) { SetAccept(std::move(value)); return *this;}
-    inline TransformOutput& WithAccept(const char* value) { SetAccept(value); return *this;}
+    template<typename AcceptT = Aws::String>
+    void SetAccept(AcceptT&& value) { m_acceptHasBeenSet = true; m_accept = std::forward<AcceptT>(value); }
+    template<typename AcceptT = Aws::String>
+    TransformOutput& WithAccept(AcceptT&& value) { SetAccept(std::forward<AcceptT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +85,10 @@ namespace Model
      * results in binary format, specify <code>None</code>. To add a newline character
      * at the end of every transformed record, specify <code>Line</code>.</p>
      */
-    inline const AssemblyType& GetAssembleWith() const{ return m_assembleWith; }
+    inline AssemblyType GetAssembleWith() const { return m_assembleWith; }
     inline bool AssembleWithHasBeenSet() const { return m_assembleWithHasBeenSet; }
-    inline void SetAssembleWith(const AssemblyType& value) { m_assembleWithHasBeenSet = true; m_assembleWith = value; }
-    inline void SetAssembleWith(AssemblyType&& value) { m_assembleWithHasBeenSet = true; m_assembleWith = std::move(value); }
-    inline TransformOutput& WithAssembleWith(const AssemblyType& value) { SetAssembleWith(value); return *this;}
-    inline TransformOutput& WithAssembleWith(AssemblyType&& value) { SetAssembleWith(std::move(value)); return *this;}
+    inline void SetAssembleWith(AssemblyType value) { m_assembleWithHasBeenSet = true; m_assembleWith = value; }
+    inline TransformOutput& WithAssembleWith(AssemblyType value) { SetAssembleWith(value); return *this;}
     ///@}
 
     ///@{
@@ -120,14 +114,12 @@ namespace Model
      * Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key
      * Management Service Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline TransformOutput& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline TransformOutput& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline TransformOutput& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    TransformOutput& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -137,7 +129,7 @@ namespace Model
     Aws::String m_accept;
     bool m_acceptHasBeenSet = false;
 
-    AssemblyType m_assembleWith;
+    AssemblyType m_assembleWith{AssemblyType::NOT_SET};
     bool m_assembleWithHasBeenSet = false;
 
     Aws::String m_kmsKeyId;

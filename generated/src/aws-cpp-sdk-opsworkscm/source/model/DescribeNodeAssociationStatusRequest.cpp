@@ -12,12 +12,6 @@ using namespace Aws::OpsWorksCM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeNodeAssociationStatusRequest::DescribeNodeAssociationStatusRequest() : 
-    m_nodeAssociationStatusTokenHasBeenSet(false),
-    m_serverNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeNodeAssociationStatusRequest::SerializePayload() const
 {
   JsonValue payload;

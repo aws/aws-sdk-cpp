@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTemplateAliasResult::DescribeTemplateAliasResult() : 
-    m_status(0)
-{
-}
-
 DescribeTemplateAliasResult::DescribeTemplateAliasResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeTemplateAliasResult()
 {
   *this = result;
 }
@@ -34,19 +28,19 @@ DescribeTemplateAliasResult& DescribeTemplateAliasResult::operator =(const Aws::
   if(jsonValue.ValueExists("TemplateAlias"))
   {
     m_templateAlias = jsonValue.GetObject("TemplateAlias");
-
+    m_templateAliasHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

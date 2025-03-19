@@ -30,7 +30,7 @@ namespace Model
   class BatchGetPolicyResult
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API BatchGetPolicyResult();
+    AWS_VERIFIEDPERMISSIONS_API BatchGetPolicyResult() = default;
     AWS_VERIFIEDPERMISSIONS_API BatchGetPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_VERIFIEDPERMISSIONS_API BatchGetPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>Information about the policies listed in the request that were successfully
      * returned. These results are returned in the order they were requested.</p>
      */
-    inline const Aws::Vector<BatchGetPolicyOutputItem>& GetResults() const{ return m_results; }
-    inline void SetResults(const Aws::Vector<BatchGetPolicyOutputItem>& value) { m_results = value; }
-    inline void SetResults(Aws::Vector<BatchGetPolicyOutputItem>&& value) { m_results = std::move(value); }
-    inline BatchGetPolicyResult& WithResults(const Aws::Vector<BatchGetPolicyOutputItem>& value) { SetResults(value); return *this;}
-    inline BatchGetPolicyResult& WithResults(Aws::Vector<BatchGetPolicyOutputItem>&& value) { SetResults(std::move(value)); return *this;}
-    inline BatchGetPolicyResult& AddResults(const BatchGetPolicyOutputItem& value) { m_results.push_back(value); return *this; }
-    inline BatchGetPolicyResult& AddResults(BatchGetPolicyOutputItem&& value) { m_results.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchGetPolicyOutputItem>& GetResults() const { return m_results; }
+    template<typename ResultsT = Aws::Vector<BatchGetPolicyOutputItem>>
+    void SetResults(ResultsT&& value) { m_resultsHasBeenSet = true; m_results = std::forward<ResultsT>(value); }
+    template<typename ResultsT = Aws::Vector<BatchGetPolicyOutputItem>>
+    BatchGetPolicyResult& WithResults(ResultsT&& value) { SetResults(std::forward<ResultsT>(value)); return *this;}
+    template<typename ResultsT = BatchGetPolicyOutputItem>
+    BatchGetPolicyResult& AddResults(ResultsT&& value) { m_resultsHasBeenSet = true; m_results.emplace_back(std::forward<ResultsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,33 @@ namespace Model
      * <p>Information about the policies from the request that resulted in an error.
      * These results are returned in the order they were requested.</p>
      */
-    inline const Aws::Vector<BatchGetPolicyErrorItem>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<BatchGetPolicyErrorItem>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchGetPolicyErrorItem>&& value) { m_errors = std::move(value); }
-    inline BatchGetPolicyResult& WithErrors(const Aws::Vector<BatchGetPolicyErrorItem>& value) { SetErrors(value); return *this;}
-    inline BatchGetPolicyResult& WithErrors(Aws::Vector<BatchGetPolicyErrorItem>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchGetPolicyResult& AddErrors(const BatchGetPolicyErrorItem& value) { m_errors.push_back(value); return *this; }
-    inline BatchGetPolicyResult& AddErrors(BatchGetPolicyErrorItem&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchGetPolicyErrorItem>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchGetPolicyErrorItem>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchGetPolicyErrorItem>>
+    BatchGetPolicyResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchGetPolicyErrorItem>
+    BatchGetPolicyResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchGetPolicyOutputItem> m_results;
+    bool m_resultsHasBeenSet = false;
 
     Aws::Vector<BatchGetPolicyErrorItem> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

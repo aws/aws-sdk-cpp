@@ -29,7 +29,7 @@ namespace Model
   class ListSecurityConfigurationsResult
   {
   public:
-    AWS_EMRCONTAINERS_API ListSecurityConfigurationsResult();
+    AWS_EMRCONTAINERS_API ListSecurityConfigurationsResult() = default;
     AWS_EMRCONTAINERS_API ListSecurityConfigurationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EMRCONTAINERS_API ListSecurityConfigurationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>The list of returned security configurations.</p>
      */
-    inline const Aws::Vector<SecurityConfiguration>& GetSecurityConfigurations() const{ return m_securityConfigurations; }
-    inline void SetSecurityConfigurations(const Aws::Vector<SecurityConfiguration>& value) { m_securityConfigurations = value; }
-    inline void SetSecurityConfigurations(Aws::Vector<SecurityConfiguration>&& value) { m_securityConfigurations = std::move(value); }
-    inline ListSecurityConfigurationsResult& WithSecurityConfigurations(const Aws::Vector<SecurityConfiguration>& value) { SetSecurityConfigurations(value); return *this;}
-    inline ListSecurityConfigurationsResult& WithSecurityConfigurations(Aws::Vector<SecurityConfiguration>&& value) { SetSecurityConfigurations(std::move(value)); return *this;}
-    inline ListSecurityConfigurationsResult& AddSecurityConfigurations(const SecurityConfiguration& value) { m_securityConfigurations.push_back(value); return *this; }
-    inline ListSecurityConfigurationsResult& AddSecurityConfigurations(SecurityConfiguration&& value) { m_securityConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SecurityConfiguration>& GetSecurityConfigurations() const { return m_securityConfigurations; }
+    template<typename SecurityConfigurationsT = Aws::Vector<SecurityConfiguration>>
+    void SetSecurityConfigurations(SecurityConfigurationsT&& value) { m_securityConfigurationsHasBeenSet = true; m_securityConfigurations = std::forward<SecurityConfigurationsT>(value); }
+    template<typename SecurityConfigurationsT = Aws::Vector<SecurityConfiguration>>
+    ListSecurityConfigurationsResult& WithSecurityConfigurations(SecurityConfigurationsT&& value) { SetSecurityConfigurations(std::forward<SecurityConfigurationsT>(value)); return *this;}
+    template<typename SecurityConfigurationsT = SecurityConfiguration>
+    ListSecurityConfigurationsResult& AddSecurityConfigurations(SecurityConfigurationsT&& value) { m_securityConfigurationsHasBeenSet = true; m_securityConfigurations.emplace_back(std::forward<SecurityConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token for the next set of security configurations to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListSecurityConfigurationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSecurityConfigurationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSecurityConfigurationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSecurityConfigurationsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListSecurityConfigurationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListSecurityConfigurationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListSecurityConfigurationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListSecurityConfigurationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<SecurityConfiguration> m_securityConfigurations;
+    bool m_securityConfigurationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

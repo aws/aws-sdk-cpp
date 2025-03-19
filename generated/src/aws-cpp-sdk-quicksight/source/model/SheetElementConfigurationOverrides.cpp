@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SheetElementConfigurationOverrides::SheetElementConfigurationOverrides() : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
-{
-}
-
 SheetElementConfigurationOverrides::SheetElementConfigurationOverrides(JsonView jsonValue)
-  : SheetElementConfigurationOverrides()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SheetElementConfigurationOverrides& SheetElementConfigurationOverrides::operator
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   return *this;
 }
 

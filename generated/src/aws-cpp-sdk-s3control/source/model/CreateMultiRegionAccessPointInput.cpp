@@ -20,15 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-CreateMultiRegionAccessPointInput::CreateMultiRegionAccessPointInput() : 
-    m_nameHasBeenSet(false),
-    m_publicAccessBlockHasBeenSet(false),
-    m_regionsHasBeenSet(false)
-{
-}
-
 CreateMultiRegionAccessPointInput::CreateMultiRegionAccessPointInput(const XmlNode& xmlNode)
-  : CreateMultiRegionAccessPointInput()
 {
   *this = xmlNode;
 }
@@ -55,6 +47,7 @@ CreateMultiRegionAccessPointInput& CreateMultiRegionAccessPointInput::operator =
     if(!regionsNode.IsNull())
     {
       XmlNode regionsMember = regionsNode.FirstChild("Region");
+      m_regionsHasBeenSet = !regionsMember.IsNull();
       while(!regionsMember.IsNull())
       {
         m_regions.push_back(regionsMember);

@@ -20,24 +20,7 @@ namespace DocDB
 namespace Model
 {
 
-DBEngineVersion::DBEngineVersion() : 
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_dBParameterGroupFamilyHasBeenSet(false),
-    m_dBEngineDescriptionHasBeenSet(false),
-    m_dBEngineVersionDescriptionHasBeenSet(false),
-    m_validUpgradeTargetHasBeenSet(false),
-    m_exportableLogTypesHasBeenSet(false),
-    m_supportsLogExportsToCloudwatchLogs(false),
-    m_supportsLogExportsToCloudwatchLogsHasBeenSet(false),
-    m_supportedCACertificateIdentifiersHasBeenSet(false),
-    m_supportsCertificateRotationWithoutRestart(false),
-    m_supportsCertificateRotationWithoutRestartHasBeenSet(false)
-{
-}
-
 DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode)
-  : DBEngineVersion()
 {
   *this = xmlNode;
 }
@@ -82,6 +65,7 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
     if(!validUpgradeTargetNode.IsNull())
     {
       XmlNode validUpgradeTargetMember = validUpgradeTargetNode.FirstChild("UpgradeTarget");
+      m_validUpgradeTargetHasBeenSet = !validUpgradeTargetMember.IsNull();
       while(!validUpgradeTargetMember.IsNull())
       {
         m_validUpgradeTarget.push_back(validUpgradeTargetMember);
@@ -94,6 +78,7 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
     if(!exportableLogTypesNode.IsNull())
     {
       XmlNode exportableLogTypesMember = exportableLogTypesNode.FirstChild("member");
+      m_exportableLogTypesHasBeenSet = !exportableLogTypesMember.IsNull();
       while(!exportableLogTypesMember.IsNull())
       {
         m_exportableLogTypes.push_back(exportableLogTypesMember.GetText());
@@ -112,6 +97,7 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
     if(!supportedCACertificateIdentifiersNode.IsNull())
     {
       XmlNode supportedCACertificateIdentifiersMember = supportedCACertificateIdentifiersNode.FirstChild("member");
+      m_supportedCACertificateIdentifiersHasBeenSet = !supportedCACertificateIdentifiersMember.IsNull();
       while(!supportedCACertificateIdentifiersMember.IsNull())
       {
         m_supportedCACertificateIdentifiers.push_back(supportedCACertificateIdentifiersMember.GetText());

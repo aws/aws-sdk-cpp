@@ -32,7 +32,7 @@ namespace Model
   class Row
   {
   public:
-    AWS_IOTTWINMAKER_API Row();
+    AWS_IOTTWINMAKER_API Row() = default;
     AWS_IOTTWINMAKER_API Row(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API Row& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>The data in a row of query results.</p>
      */
-    inline const Aws::Vector<Aws::Utils::Document>& GetRowData() const{ return m_rowData; }
+    inline const Aws::Vector<Aws::Utils::Document>& GetRowData() const { return m_rowData; }
     inline bool RowDataHasBeenSet() const { return m_rowDataHasBeenSet; }
-    inline void SetRowData(const Aws::Vector<Aws::Utils::Document>& value) { m_rowDataHasBeenSet = true; m_rowData = value; }
-    inline void SetRowData(Aws::Vector<Aws::Utils::Document>&& value) { m_rowDataHasBeenSet = true; m_rowData = std::move(value); }
-    inline Row& WithRowData(const Aws::Vector<Aws::Utils::Document>& value) { SetRowData(value); return *this;}
-    inline Row& WithRowData(Aws::Vector<Aws::Utils::Document>&& value) { SetRowData(std::move(value)); return *this;}
-    inline Row& AddRowData(const Aws::Utils::Document& value) { m_rowDataHasBeenSet = true; m_rowData.push_back(value); return *this; }
-    inline Row& AddRowData(Aws::Utils::Document&& value) { m_rowDataHasBeenSet = true; m_rowData.push_back(std::move(value)); return *this; }
+    template<typename RowDataT = Aws::Vector<Aws::Utils::Document>>
+    void SetRowData(RowDataT&& value) { m_rowDataHasBeenSet = true; m_rowData = std::forward<RowDataT>(value); }
+    template<typename RowDataT = Aws::Vector<Aws::Utils::Document>>
+    Row& WithRowData(RowDataT&& value) { SetRowData(std::forward<RowDataT>(value)); return *this;}
+    template<typename RowDataT = Aws::Utils::Document>
+    Row& AddRowData(RowDataT&& value) { m_rowDataHasBeenSet = true; m_rowData.emplace_back(std::forward<RowDataT>(value)); return *this; }
     ///@}
   private:
 

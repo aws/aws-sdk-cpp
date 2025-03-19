@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdatePlaceIndexResult::UpdatePlaceIndexResult()
-{
-}
-
 UpdatePlaceIndexResult::UpdatePlaceIndexResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ UpdatePlaceIndexResult& UpdatePlaceIndexResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("IndexName"))
   {
     m_indexName = jsonValue.GetString("IndexName");
-
+    m_indexNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexArn"))
   {
     m_indexArn = jsonValue.GetString("IndexArn");
-
+    m_indexArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateTime"))
   {
     m_updateTime = jsonValue.GetString("UpdateTime");
-
+    m_updateTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -21,7 +21,7 @@ namespace Model
   class ResendOperationAuthorizationRequest : public Route53DomainsRequest
   {
   public:
-    AWS_ROUTE53DOMAINS_API ResendOperationAuthorizationRequest();
+    AWS_ROUTE53DOMAINS_API ResendOperationAuthorizationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p> Operation ID. </p>
      */
-    inline const Aws::String& GetOperationId() const{ return m_operationId; }
+    inline const Aws::String& GetOperationId() const { return m_operationId; }
     inline bool OperationIdHasBeenSet() const { return m_operationIdHasBeenSet; }
-    inline void SetOperationId(const Aws::String& value) { m_operationIdHasBeenSet = true; m_operationId = value; }
-    inline void SetOperationId(Aws::String&& value) { m_operationIdHasBeenSet = true; m_operationId = std::move(value); }
-    inline void SetOperationId(const char* value) { m_operationIdHasBeenSet = true; m_operationId.assign(value); }
-    inline ResendOperationAuthorizationRequest& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
-    inline ResendOperationAuthorizationRequest& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
-    inline ResendOperationAuthorizationRequest& WithOperationId(const char* value) { SetOperationId(value); return *this;}
+    template<typename OperationIdT = Aws::String>
+    void SetOperationId(OperationIdT&& value) { m_operationIdHasBeenSet = true; m_operationId = std::forward<OperationIdT>(value); }
+    template<typename OperationIdT = Aws::String>
+    ResendOperationAuthorizationRequest& WithOperationId(OperationIdT&& value) { SetOperationId(std::forward<OperationIdT>(value)); return *this;}
     ///@}
   private:
 

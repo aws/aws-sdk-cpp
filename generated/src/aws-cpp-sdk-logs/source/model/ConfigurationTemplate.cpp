@@ -18,23 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-ConfigurationTemplate::ConfigurationTemplate() : 
-    m_serviceHasBeenSet(false),
-    m_logTypeHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_deliveryDestinationType(DeliveryDestinationType::NOT_SET),
-    m_deliveryDestinationTypeHasBeenSet(false),
-    m_defaultDeliveryConfigValuesHasBeenSet(false),
-    m_allowedFieldsHasBeenSet(false),
-    m_allowedOutputFormatsHasBeenSet(false),
-    m_allowedActionForAllowVendedLogsDeliveryForResourceHasBeenSet(false),
-    m_allowedFieldDelimitersHasBeenSet(false),
-    m_allowedSuffixPathFieldsHasBeenSet(false)
-{
-}
-
 ConfigurationTemplate::ConfigurationTemplate(JsonView jsonValue)
-  : ConfigurationTemplate()
 {
   *this = jsonValue;
 }
@@ -44,38 +28,28 @@ ConfigurationTemplate& ConfigurationTemplate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("service"))
   {
     m_service = jsonValue.GetString("service");
-
     m_serviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logType"))
   {
     m_logType = jsonValue.GetString("logType");
-
     m_logTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = jsonValue.GetString("resourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deliveryDestinationType"))
   {
     m_deliveryDestinationType = DeliveryDestinationTypeMapper::GetDeliveryDestinationTypeForName(jsonValue.GetString("deliveryDestinationType"));
-
     m_deliveryDestinationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultDeliveryConfigValues"))
   {
     m_defaultDeliveryConfigValues = jsonValue.GetObject("defaultDeliveryConfigValues");
-
     m_defaultDeliveryConfigValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowedFields"))
   {
     Aws::Utils::Array<JsonView> allowedFieldsJsonList = jsonValue.GetArray("allowedFields");
@@ -85,7 +59,6 @@ ConfigurationTemplate& ConfigurationTemplate::operator =(JsonView jsonValue)
     }
     m_allowedFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowedOutputFormats"))
   {
     Aws::Utils::Array<JsonView> allowedOutputFormatsJsonList = jsonValue.GetArray("allowedOutputFormats");
@@ -95,14 +68,11 @@ ConfigurationTemplate& ConfigurationTemplate::operator =(JsonView jsonValue)
     }
     m_allowedOutputFormatsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowedActionForAllowVendedLogsDeliveryForResource"))
   {
     m_allowedActionForAllowVendedLogsDeliveryForResource = jsonValue.GetString("allowedActionForAllowVendedLogsDeliveryForResource");
-
     m_allowedActionForAllowVendedLogsDeliveryForResourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowedFieldDelimiters"))
   {
     Aws::Utils::Array<JsonView> allowedFieldDelimitersJsonList = jsonValue.GetArray("allowedFieldDelimiters");
@@ -112,7 +82,6 @@ ConfigurationTemplate& ConfigurationTemplate::operator =(JsonView jsonValue)
     }
     m_allowedFieldDelimitersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allowedSuffixPathFields"))
   {
     Aws::Utils::Array<JsonView> allowedSuffixPathFieldsJsonList = jsonValue.GetArray("allowedSuffixPathFields");
@@ -122,7 +91,6 @@ ConfigurationTemplate& ConfigurationTemplate::operator =(JsonView jsonValue)
     }
     m_allowedSuffixPathFieldsHasBeenSet = true;
   }
-
   return *this;
 }
 

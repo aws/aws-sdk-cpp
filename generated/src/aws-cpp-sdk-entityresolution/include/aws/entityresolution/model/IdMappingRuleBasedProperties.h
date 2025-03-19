@@ -36,7 +36,7 @@ namespace Model
   class IdMappingRuleBasedProperties
   {
   public:
-    AWS_ENTITYRESOLUTION_API IdMappingRuleBasedProperties();
+    AWS_ENTITYRESOLUTION_API IdMappingRuleBasedProperties() = default;
     AWS_ENTITYRESOLUTION_API IdMappingRuleBasedProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API IdMappingRuleBasedProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,12 +57,10 @@ namespace Model
      * field of Profile A matches the value of the <code>Email</code> field of Profile
      * B.</p>
      */
-    inline const AttributeMatchingModel& GetAttributeMatchingModel() const{ return m_attributeMatchingModel; }
+    inline AttributeMatchingModel GetAttributeMatchingModel() const { return m_attributeMatchingModel; }
     inline bool AttributeMatchingModelHasBeenSet() const { return m_attributeMatchingModelHasBeenSet; }
-    inline void SetAttributeMatchingModel(const AttributeMatchingModel& value) { m_attributeMatchingModelHasBeenSet = true; m_attributeMatchingModel = value; }
-    inline void SetAttributeMatchingModel(AttributeMatchingModel&& value) { m_attributeMatchingModelHasBeenSet = true; m_attributeMatchingModel = std::move(value); }
-    inline IdMappingRuleBasedProperties& WithAttributeMatchingModel(const AttributeMatchingModel& value) { SetAttributeMatchingModel(value); return *this;}
-    inline IdMappingRuleBasedProperties& WithAttributeMatchingModel(AttributeMatchingModel&& value) { SetAttributeMatchingModel(std::move(value)); return *this;}
+    inline void SetAttributeMatchingModel(AttributeMatchingModel value) { m_attributeMatchingModelHasBeenSet = true; m_attributeMatchingModel = value; }
+    inline IdMappingRuleBasedProperties& WithAttributeMatchingModel(AttributeMatchingModel value) { SetAttributeMatchingModel(value); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +71,10 @@ namespace Model
      * target.</p> <p>If the value is set to <code>MANY_SOURCE_TO_ONE_TARGET</code>,
      * multiple records in the source can be matched to one record in the target.</p>
      */
-    inline const RecordMatchingModel& GetRecordMatchingModel() const{ return m_recordMatchingModel; }
+    inline RecordMatchingModel GetRecordMatchingModel() const { return m_recordMatchingModel; }
     inline bool RecordMatchingModelHasBeenSet() const { return m_recordMatchingModelHasBeenSet; }
-    inline void SetRecordMatchingModel(const RecordMatchingModel& value) { m_recordMatchingModelHasBeenSet = true; m_recordMatchingModel = value; }
-    inline void SetRecordMatchingModel(RecordMatchingModel&& value) { m_recordMatchingModelHasBeenSet = true; m_recordMatchingModel = std::move(value); }
-    inline IdMappingRuleBasedProperties& WithRecordMatchingModel(const RecordMatchingModel& value) { SetRecordMatchingModel(value); return *this;}
-    inline IdMappingRuleBasedProperties& WithRecordMatchingModel(RecordMatchingModel&& value) { SetRecordMatchingModel(std::move(value)); return *this;}
+    inline void SetRecordMatchingModel(RecordMatchingModel value) { m_recordMatchingModelHasBeenSet = true; m_recordMatchingModel = value; }
+    inline IdMappingRuleBasedProperties& WithRecordMatchingModel(RecordMatchingModel value) { SetRecordMatchingModel(value); return *this;}
     ///@}
 
     ///@{
@@ -87,36 +83,34 @@ namespace Model
      * specified for the source or target to define the match rules must be
      * compatible.</p>
      */
-    inline const IdMappingWorkflowRuleDefinitionType& GetRuleDefinitionType() const{ return m_ruleDefinitionType; }
+    inline IdMappingWorkflowRuleDefinitionType GetRuleDefinitionType() const { return m_ruleDefinitionType; }
     inline bool RuleDefinitionTypeHasBeenSet() const { return m_ruleDefinitionTypeHasBeenSet; }
-    inline void SetRuleDefinitionType(const IdMappingWorkflowRuleDefinitionType& value) { m_ruleDefinitionTypeHasBeenSet = true; m_ruleDefinitionType = value; }
-    inline void SetRuleDefinitionType(IdMappingWorkflowRuleDefinitionType&& value) { m_ruleDefinitionTypeHasBeenSet = true; m_ruleDefinitionType = std::move(value); }
-    inline IdMappingRuleBasedProperties& WithRuleDefinitionType(const IdMappingWorkflowRuleDefinitionType& value) { SetRuleDefinitionType(value); return *this;}
-    inline IdMappingRuleBasedProperties& WithRuleDefinitionType(IdMappingWorkflowRuleDefinitionType&& value) { SetRuleDefinitionType(std::move(value)); return *this;}
+    inline void SetRuleDefinitionType(IdMappingWorkflowRuleDefinitionType value) { m_ruleDefinitionTypeHasBeenSet = true; m_ruleDefinitionType = value; }
+    inline IdMappingRuleBasedProperties& WithRuleDefinitionType(IdMappingWorkflowRuleDefinitionType value) { SetRuleDefinitionType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The rules that can be used for ID mapping.</p>
      */
-    inline const Aws::Vector<Rule>& GetRules() const{ return m_rules; }
+    inline const Aws::Vector<Rule>& GetRules() const { return m_rules; }
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    inline void SetRules(const Aws::Vector<Rule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-    inline void SetRules(Aws::Vector<Rule>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-    inline IdMappingRuleBasedProperties& WithRules(const Aws::Vector<Rule>& value) { SetRules(value); return *this;}
-    inline IdMappingRuleBasedProperties& WithRules(Aws::Vector<Rule>&& value) { SetRules(std::move(value)); return *this;}
-    inline IdMappingRuleBasedProperties& AddRules(const Rule& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-    inline IdMappingRuleBasedProperties& AddRules(Rule&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    template<typename RulesT = Aws::Vector<Rule>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<Rule>>
+    IdMappingRuleBasedProperties& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = Rule>
+    IdMappingRuleBasedProperties& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
   private:
 
-    AttributeMatchingModel m_attributeMatchingModel;
+    AttributeMatchingModel m_attributeMatchingModel{AttributeMatchingModel::NOT_SET};
     bool m_attributeMatchingModelHasBeenSet = false;
 
-    RecordMatchingModel m_recordMatchingModel;
+    RecordMatchingModel m_recordMatchingModel{RecordMatchingModel::NOT_SET};
     bool m_recordMatchingModelHasBeenSet = false;
 
-    IdMappingWorkflowRuleDefinitionType m_ruleDefinitionType;
+    IdMappingWorkflowRuleDefinitionType m_ruleDefinitionType{IdMappingWorkflowRuleDefinitionType::NOT_SET};
     bool m_ruleDefinitionTypeHasBeenSet = false;
 
     Aws::Vector<Rule> m_rules;

@@ -32,7 +32,7 @@ namespace Model
   class ImageSource
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API ImageSource();
+    AWS_BEDROCKAGENTRUNTIME_API ImageSource() = default;
     AWS_BEDROCKAGENTRUNTIME_API ImageSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API ImageSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,28 @@ namespace Model
      * <p> The raw image bytes for the image. If you use an Amazon Web Services SDK,
      * you don't need to encode the image bytes in base64.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetBytes() const{ return m_bytes; }
+    inline const Aws::Utils::ByteBuffer& GetBytes() const { return m_bytes; }
     inline bool BytesHasBeenSet() const { return m_bytesHasBeenSet; }
-    inline void SetBytes(const Aws::Utils::ByteBuffer& value) { m_bytesHasBeenSet = true; m_bytes = value; }
-    inline void SetBytes(Aws::Utils::ByteBuffer&& value) { m_bytesHasBeenSet = true; m_bytes = std::move(value); }
-    inline ImageSource& WithBytes(const Aws::Utils::ByteBuffer& value) { SetBytes(value); return *this;}
-    inline ImageSource& WithBytes(Aws::Utils::ByteBuffer&& value) { SetBytes(std::move(value)); return *this;}
+    template<typename BytesT = Aws::Utils::ByteBuffer>
+    void SetBytes(BytesT&& value) { m_bytesHasBeenSet = true; m_bytes = std::forward<BytesT>(value); }
+    template<typename BytesT = Aws::Utils::ByteBuffer>
+    ImageSource& WithBytes(BytesT&& value) { SetBytes(std::forward<BytesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The path to the Amazon S3 bucket where the image is stored.</p>
      */
-    inline const S3Location& GetS3Location() const{ return m_s3Location; }
+    inline const S3Location& GetS3Location() const { return m_s3Location; }
     inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
-    inline void SetS3Location(const S3Location& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
-    inline void SetS3Location(S3Location&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::move(value); }
-    inline ImageSource& WithS3Location(const S3Location& value) { SetS3Location(value); return *this;}
-    inline ImageSource& WithS3Location(S3Location&& value) { SetS3Location(std::move(value)); return *this;}
+    template<typename S3LocationT = S3Location>
+    void SetS3Location(S3LocationT&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::forward<S3LocationT>(value); }
+    template<typename S3LocationT = S3Location>
+    ImageSource& WithS3Location(S3LocationT&& value) { SetS3Location(std::forward<S3LocationT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_bytes;
+    Aws::Utils::ByteBuffer m_bytes{};
     bool m_bytesHasBeenSet = false;
 
     S3Location m_s3Location;

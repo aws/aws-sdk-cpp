@@ -18,13 +18,7 @@ namespace AmplifyBackend
 namespace Model
 {
 
-SmsSettings::SmsSettings() : 
-    m_smsMessageHasBeenSet(false)
-{
-}
-
 SmsSettings::SmsSettings(JsonView jsonValue)
-  : SmsSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SmsSettings& SmsSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("smsMessage"))
   {
     m_smsMessage = jsonValue.GetString("smsMessage");
-
     m_smsMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

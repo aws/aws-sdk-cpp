@@ -12,17 +12,6 @@ using namespace Aws::Invoicing::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateInvoiceUnitRequest::CreateInvoiceUnitRequest() : 
-    m_nameHasBeenSet(false),
-    m_invoiceReceiverHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_taxInheritanceDisabled(false),
-    m_taxInheritanceDisabledHasBeenSet(false),
-    m_ruleHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateInvoiceUnitRequest::SerializePayload() const
 {
   JsonValue payload;

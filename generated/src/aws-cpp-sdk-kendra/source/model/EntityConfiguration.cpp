@@ -18,15 +18,7 @@ namespace kendra
 namespace Model
 {
 
-EntityConfiguration::EntityConfiguration() : 
-    m_entityIdHasBeenSet(false),
-    m_entityType(EntityType::NOT_SET),
-    m_entityTypeHasBeenSet(false)
-{
-}
-
 EntityConfiguration::EntityConfiguration(JsonView jsonValue)
-  : EntityConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EntityConfiguration& EntityConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EntityId"))
   {
     m_entityId = jsonValue.GetString("EntityId");
-
     m_entityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntityType"))
   {
     m_entityType = EntityTypeMapper::GetEntityTypeForName(jsonValue.GetString("EntityType"));
-
     m_entityTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

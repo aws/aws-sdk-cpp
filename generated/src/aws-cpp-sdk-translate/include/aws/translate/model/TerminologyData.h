@@ -36,7 +36,7 @@ namespace Model
   class TerminologyData
   {
   public:
-    AWS_TRANSLATE_API TerminologyData();
+    AWS_TRANSLATE_API TerminologyData() = default;
     AWS_TRANSLATE_API TerminologyData(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSLATE_API TerminologyData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,24 +48,22 @@ namespace Model
      * performs a Base64-encoding on this field before sending a request to the AWS
      * service. Users of the SDK should not perform Base64-encoding themselves.</p>
      */
-    inline const Aws::Utils::CryptoBuffer& GetFile() const{ return m_file; }
+    inline const Aws::Utils::CryptoBuffer& GetFile() const { return m_file; }
     inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
-    inline void SetFile(const Aws::Utils::CryptoBuffer& value) { m_fileHasBeenSet = true; m_file = value; }
-    inline void SetFile(Aws::Utils::CryptoBuffer&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
-    inline TerminologyData& WithFile(const Aws::Utils::CryptoBuffer& value) { SetFile(value); return *this;}
-    inline TerminologyData& WithFile(Aws::Utils::CryptoBuffer&& value) { SetFile(std::move(value)); return *this;}
+    template<typename FileT = Aws::Utils::CryptoBuffer>
+    void SetFile(FileT&& value) { m_fileHasBeenSet = true; m_file = std::forward<FileT>(value); }
+    template<typename FileT = Aws::Utils::CryptoBuffer>
+    TerminologyData& WithFile(FileT&& value) { SetFile(std::forward<FileT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data format of the custom terminology.</p>
      */
-    inline const TerminologyDataFormat& GetFormat() const{ return m_format; }
+    inline TerminologyDataFormat GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const TerminologyDataFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(TerminologyDataFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline TerminologyData& WithFormat(const TerminologyDataFormat& value) { SetFormat(value); return *this;}
-    inline TerminologyData& WithFormat(TerminologyDataFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(TerminologyDataFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline TerminologyData& WithFormat(TerminologyDataFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -83,22 +81,20 @@ namespace Model
      * resource without specifying the directionality, it behaves as uni-directional
      * terminology, although this parameter will have a null value.</p>
      */
-    inline const Directionality& GetDirectionality() const{ return m_directionality; }
+    inline Directionality GetDirectionality() const { return m_directionality; }
     inline bool DirectionalityHasBeenSet() const { return m_directionalityHasBeenSet; }
-    inline void SetDirectionality(const Directionality& value) { m_directionalityHasBeenSet = true; m_directionality = value; }
-    inline void SetDirectionality(Directionality&& value) { m_directionalityHasBeenSet = true; m_directionality = std::move(value); }
-    inline TerminologyData& WithDirectionality(const Directionality& value) { SetDirectionality(value); return *this;}
-    inline TerminologyData& WithDirectionality(Directionality&& value) { SetDirectionality(std::move(value)); return *this;}
+    inline void SetDirectionality(Directionality value) { m_directionalityHasBeenSet = true; m_directionality = value; }
+    inline TerminologyData& WithDirectionality(Directionality value) { SetDirectionality(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::CryptoBuffer m_file;
+    Aws::Utils::CryptoBuffer m_file{};
     bool m_fileHasBeenSet = false;
 
-    TerminologyDataFormat m_format;
+    TerminologyDataFormat m_format{TerminologyDataFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
 
-    Directionality m_directionality;
+    Directionality m_directionality{Directionality::NOT_SET};
     bool m_directionalityHasBeenSet = false;
   };
 

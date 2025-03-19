@@ -34,7 +34,7 @@ namespace Model
   class RequestWidget
   {
   public:
-    AWS_CLOUDTRAIL_API RequestWidget();
+    AWS_CLOUDTRAIL_API RequestWidget() = default;
     AWS_CLOUDTRAIL_API RequestWidget(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDTRAIL_API RequestWidget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDTRAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * <code>eventTime</code>, <code>?</code> must be surrounded by single quotes as
      * follows: <code>'?'</code>.</p> 
      */
-    inline const Aws::String& GetQueryStatement() const{ return m_queryStatement; }
+    inline const Aws::String& GetQueryStatement() const { return m_queryStatement; }
     inline bool QueryStatementHasBeenSet() const { return m_queryStatementHasBeenSet; }
-    inline void SetQueryStatement(const Aws::String& value) { m_queryStatementHasBeenSet = true; m_queryStatement = value; }
-    inline void SetQueryStatement(Aws::String&& value) { m_queryStatementHasBeenSet = true; m_queryStatement = std::move(value); }
-    inline void SetQueryStatement(const char* value) { m_queryStatementHasBeenSet = true; m_queryStatement.assign(value); }
-    inline RequestWidget& WithQueryStatement(const Aws::String& value) { SetQueryStatement(value); return *this;}
-    inline RequestWidget& WithQueryStatement(Aws::String&& value) { SetQueryStatement(std::move(value)); return *this;}
-    inline RequestWidget& WithQueryStatement(const char* value) { SetQueryStatement(value); return *this;}
+    template<typename QueryStatementT = Aws::String>
+    void SetQueryStatement(QueryStatementT&& value) { m_queryStatementHasBeenSet = true; m_queryStatement = std::forward<QueryStatementT>(value); }
+    template<typename QueryStatementT = Aws::String>
+    RequestWidget& WithQueryStatement(QueryStatementT&& value) { SetQueryStatement(std::forward<QueryStatementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,15 +62,14 @@ namespace Model
      * <code>$StartTime$</code>, <code>$EndTime$</code>, and <code>$Period$</code>.
      * </p>
      */
-    inline const Aws::Vector<Aws::String>& GetQueryParameters() const{ return m_queryParameters; }
+    inline const Aws::Vector<Aws::String>& GetQueryParameters() const { return m_queryParameters; }
     inline bool QueryParametersHasBeenSet() const { return m_queryParametersHasBeenSet; }
-    inline void SetQueryParameters(const Aws::Vector<Aws::String>& value) { m_queryParametersHasBeenSet = true; m_queryParameters = value; }
-    inline void SetQueryParameters(Aws::Vector<Aws::String>&& value) { m_queryParametersHasBeenSet = true; m_queryParameters = std::move(value); }
-    inline RequestWidget& WithQueryParameters(const Aws::Vector<Aws::String>& value) { SetQueryParameters(value); return *this;}
-    inline RequestWidget& WithQueryParameters(Aws::Vector<Aws::String>&& value) { SetQueryParameters(std::move(value)); return *this;}
-    inline RequestWidget& AddQueryParameters(const Aws::String& value) { m_queryParametersHasBeenSet = true; m_queryParameters.push_back(value); return *this; }
-    inline RequestWidget& AddQueryParameters(Aws::String&& value) { m_queryParametersHasBeenSet = true; m_queryParameters.push_back(std::move(value)); return *this; }
-    inline RequestWidget& AddQueryParameters(const char* value) { m_queryParametersHasBeenSet = true; m_queryParameters.push_back(value); return *this; }
+    template<typename QueryParametersT = Aws::Vector<Aws::String>>
+    void SetQueryParameters(QueryParametersT&& value) { m_queryParametersHasBeenSet = true; m_queryParameters = std::forward<QueryParametersT>(value); }
+    template<typename QueryParametersT = Aws::Vector<Aws::String>>
+    RequestWidget& WithQueryParameters(QueryParametersT&& value) { SetQueryParameters(std::forward<QueryParametersT>(value)); return *this;}
+    template<typename QueryParametersT = Aws::String>
+    RequestWidget& AddQueryParameters(QueryParametersT&& value) { m_queryParametersHasBeenSet = true; m_queryParameters.emplace_back(std::forward<QueryParametersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -82,19 +79,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/lake-widget-properties.html">
      * View properties for widgets </a> in the <i>CloudTrail User Guide</i>. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetViewProperties() const{ return m_viewProperties; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetViewProperties() const { return m_viewProperties; }
     inline bool ViewPropertiesHasBeenSet() const { return m_viewPropertiesHasBeenSet; }
-    inline void SetViewProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_viewPropertiesHasBeenSet = true; m_viewProperties = value; }
-    inline void SetViewProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_viewPropertiesHasBeenSet = true; m_viewProperties = std::move(value); }
-    inline RequestWidget& WithViewProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetViewProperties(value); return *this;}
-    inline RequestWidget& WithViewProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetViewProperties(std::move(value)); return *this;}
-    inline RequestWidget& AddViewProperties(const Aws::String& key, const Aws::String& value) { m_viewPropertiesHasBeenSet = true; m_viewProperties.emplace(key, value); return *this; }
-    inline RequestWidget& AddViewProperties(Aws::String&& key, const Aws::String& value) { m_viewPropertiesHasBeenSet = true; m_viewProperties.emplace(std::move(key), value); return *this; }
-    inline RequestWidget& AddViewProperties(const Aws::String& key, Aws::String&& value) { m_viewPropertiesHasBeenSet = true; m_viewProperties.emplace(key, std::move(value)); return *this; }
-    inline RequestWidget& AddViewProperties(Aws::String&& key, Aws::String&& value) { m_viewPropertiesHasBeenSet = true; m_viewProperties.emplace(std::move(key), std::move(value)); return *this; }
-    inline RequestWidget& AddViewProperties(const char* key, Aws::String&& value) { m_viewPropertiesHasBeenSet = true; m_viewProperties.emplace(key, std::move(value)); return *this; }
-    inline RequestWidget& AddViewProperties(Aws::String&& key, const char* value) { m_viewPropertiesHasBeenSet = true; m_viewProperties.emplace(std::move(key), value); return *this; }
-    inline RequestWidget& AddViewProperties(const char* key, const char* value) { m_viewPropertiesHasBeenSet = true; m_viewProperties.emplace(key, value); return *this; }
+    template<typename ViewPropertiesT = Aws::Map<Aws::String, Aws::String>>
+    void SetViewProperties(ViewPropertiesT&& value) { m_viewPropertiesHasBeenSet = true; m_viewProperties = std::forward<ViewPropertiesT>(value); }
+    template<typename ViewPropertiesT = Aws::Map<Aws::String, Aws::String>>
+    RequestWidget& WithViewProperties(ViewPropertiesT&& value) { SetViewProperties(std::forward<ViewPropertiesT>(value)); return *this;}
+    template<typename ViewPropertiesKeyT = Aws::String, typename ViewPropertiesValueT = Aws::String>
+    RequestWidget& AddViewProperties(ViewPropertiesKeyT&& key, ViewPropertiesValueT&& value) {
+      m_viewPropertiesHasBeenSet = true; m_viewProperties.emplace(std::forward<ViewPropertiesKeyT>(key), std::forward<ViewPropertiesValueT>(value)); return *this;
+    }
     ///@}
   private:
 

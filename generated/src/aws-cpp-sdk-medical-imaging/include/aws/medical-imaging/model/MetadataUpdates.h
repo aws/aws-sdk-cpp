@@ -32,7 +32,7 @@ namespace Model
   class MetadataUpdates
   {
   public:
-    AWS_MEDICALIMAGING_API MetadataUpdates();
+    AWS_MEDICALIMAGING_API MetadataUpdates() = default;
     AWS_MEDICALIMAGING_API MetadataUpdates(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDICALIMAGING_API MetadataUpdates& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDICALIMAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The object containing <code>removableAttributes</code> and
      * <code>updatableAttributes</code>.</p>
      */
-    inline const DICOMUpdates& GetDICOMUpdates() const{ return m_dICOMUpdates; }
+    inline const DICOMUpdates& GetDICOMUpdates() const { return m_dICOMUpdates; }
     inline bool DICOMUpdatesHasBeenSet() const { return m_dICOMUpdatesHasBeenSet; }
-    inline void SetDICOMUpdates(const DICOMUpdates& value) { m_dICOMUpdatesHasBeenSet = true; m_dICOMUpdates = value; }
-    inline void SetDICOMUpdates(DICOMUpdates&& value) { m_dICOMUpdatesHasBeenSet = true; m_dICOMUpdates = std::move(value); }
-    inline MetadataUpdates& WithDICOMUpdates(const DICOMUpdates& value) { SetDICOMUpdates(value); return *this;}
-    inline MetadataUpdates& WithDICOMUpdates(DICOMUpdates&& value) { SetDICOMUpdates(std::move(value)); return *this;}
+    template<typename DICOMUpdatesT = DICOMUpdates>
+    void SetDICOMUpdates(DICOMUpdatesT&& value) { m_dICOMUpdatesHasBeenSet = true; m_dICOMUpdates = std::forward<DICOMUpdatesT>(value); }
+    template<typename DICOMUpdatesT = DICOMUpdates>
+    MetadataUpdates& WithDICOMUpdates(DICOMUpdatesT&& value) { SetDICOMUpdates(std::forward<DICOMUpdatesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +58,12 @@ namespace Model
      * <code>DICOMUpdates</code> in your request. A <code>ValidationException</code>
      * error is thrown if both parameters are provided at the same time.</p> 
      */
-    inline const Aws::String& GetRevertToVersionId() const{ return m_revertToVersionId; }
+    inline const Aws::String& GetRevertToVersionId() const { return m_revertToVersionId; }
     inline bool RevertToVersionIdHasBeenSet() const { return m_revertToVersionIdHasBeenSet; }
-    inline void SetRevertToVersionId(const Aws::String& value) { m_revertToVersionIdHasBeenSet = true; m_revertToVersionId = value; }
-    inline void SetRevertToVersionId(Aws::String&& value) { m_revertToVersionIdHasBeenSet = true; m_revertToVersionId = std::move(value); }
-    inline void SetRevertToVersionId(const char* value) { m_revertToVersionIdHasBeenSet = true; m_revertToVersionId.assign(value); }
-    inline MetadataUpdates& WithRevertToVersionId(const Aws::String& value) { SetRevertToVersionId(value); return *this;}
-    inline MetadataUpdates& WithRevertToVersionId(Aws::String&& value) { SetRevertToVersionId(std::move(value)); return *this;}
-    inline MetadataUpdates& WithRevertToVersionId(const char* value) { SetRevertToVersionId(value); return *this;}
+    template<typename RevertToVersionIdT = Aws::String>
+    void SetRevertToVersionId(RevertToVersionIdT&& value) { m_revertToVersionIdHasBeenSet = true; m_revertToVersionId = std::forward<RevertToVersionIdT>(value); }
+    template<typename RevertToVersionIdT = Aws::String>
+    MetadataUpdates& WithRevertToVersionId(RevertToVersionIdT&& value) { SetRevertToVersionId(std::forward<RevertToVersionIdT>(value)); return *this;}
     ///@}
   private:
 

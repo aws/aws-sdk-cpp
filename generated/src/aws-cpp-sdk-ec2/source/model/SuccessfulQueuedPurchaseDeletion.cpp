@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SuccessfulQueuedPurchaseDeletion::SuccessfulQueuedPurchaseDeletion() : 
-    m_reservedInstancesIdHasBeenSet(false)
-{
-}
-
 SuccessfulQueuedPurchaseDeletion::SuccessfulQueuedPurchaseDeletion(const XmlNode& xmlNode)
-  : SuccessfulQueuedPurchaseDeletion()
 {
   *this = xmlNode;
 }

@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-InternalServerException::InternalServerException() : 
-    m_messageHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 InternalServerException::InternalServerException(JsonView jsonValue)
-  : InternalServerException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InternalServerException& InternalServerException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

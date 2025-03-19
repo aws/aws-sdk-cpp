@@ -18,24 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Statement::Statement() : 
-    m_id(0),
-    m_idHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_state(StatementState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_outputHasBeenSet(false),
-    m_progress(0.0),
-    m_progressHasBeenSet(false),
-    m_startedOn(0),
-    m_startedOnHasBeenSet(false),
-    m_completedOn(0),
-    m_completedOnHasBeenSet(false)
-{
-}
-
 Statement::Statement(JsonView jsonValue)
-  : Statement()
 {
   *this = jsonValue;
 }
@@ -45,52 +28,38 @@ Statement& Statement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetInteger("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetString("Code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = StatementStateMapper::GetStatementStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Output"))
   {
     m_output = jsonValue.GetObject("Output");
-
     m_outputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Progress"))
   {
     m_progress = jsonValue.GetDouble("Progress");
-
     m_progressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedOn"))
   {
     m_startedOn = jsonValue.GetInt64("StartedOn");
-
     m_startedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletedOn"))
   {
     m_completedOn = jsonValue.GetInt64("CompletedOn");
-
     m_completedOnHasBeenSet = true;
   }
-
   return *this;
 }
 

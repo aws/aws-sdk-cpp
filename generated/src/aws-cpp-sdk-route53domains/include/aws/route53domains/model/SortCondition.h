@@ -32,7 +32,7 @@ namespace Model
   class SortCondition
   {
   public:
-    AWS_ROUTE53DOMAINS_API SortCondition();
+    AWS_ROUTE53DOMAINS_API SortCondition() = default;
     AWS_ROUTE53DOMAINS_API SortCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53DOMAINS_API SortCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROUTE53DOMAINS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
      * call, the field used for sorting has to be the same as the field used for
      * filtering.</p>
      */
-    inline const ListDomainsAttributeName& GetName() const{ return m_name; }
+    inline ListDomainsAttributeName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const ListDomainsAttributeName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(ListDomainsAttributeName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline SortCondition& WithName(const ListDomainsAttributeName& value) { SetName(value); return *this;}
-    inline SortCondition& WithName(ListDomainsAttributeName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(ListDomainsAttributeName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline SortCondition& WithName(ListDomainsAttributeName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -60,19 +58,17 @@ namespace Model
      * <p>The sort order for a list of domains. Either ascending (ASC) or descending
      * (DES).</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline SortCondition& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline SortCondition& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline SortCondition& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
   private:
 
-    ListDomainsAttributeName m_name;
+    ListDomainsAttributeName m_name{ListDomainsAttributeName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
   };
 

@@ -12,12 +12,6 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ProvisionByoipCidrRequest::ProvisionByoipCidrRequest() : 
-    m_cidrHasBeenSet(false),
-    m_cidrAuthorizationContextHasBeenSet(false)
-{
-}
-
 Aws::String ProvisionByoipCidrRequest::SerializePayload() const
 {
   JsonValue payload;

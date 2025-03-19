@@ -12,11 +12,6 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateBrowserSettingsRequest::DisassociateBrowserSettingsRequest() : 
-    m_portalArnHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateBrowserSettingsRequest::SerializePayload() const
 {
   return {};

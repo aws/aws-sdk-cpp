@@ -26,7 +26,7 @@ namespace Model
   class QueryPrecedenceRequest : public RestXmlProtocolRequest
   {
   public:
-    AWS_RESTXMLPROTOCOL_API QueryPrecedenceRequest();
+    AWS_RESTXMLPROTOCOL_API QueryPrecedenceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,31 +41,26 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetFoo() const{ return m_foo; }
+    inline const Aws::String& GetFoo() const { return m_foo; }
     inline bool FooHasBeenSet() const { return m_fooHasBeenSet; }
-    inline void SetFoo(const Aws::String& value) { m_fooHasBeenSet = true; m_foo = value; }
-    inline void SetFoo(Aws::String&& value) { m_fooHasBeenSet = true; m_foo = std::move(value); }
-    inline void SetFoo(const char* value) { m_fooHasBeenSet = true; m_foo.assign(value); }
-    inline QueryPrecedenceRequest& WithFoo(const Aws::String& value) { SetFoo(value); return *this;}
-    inline QueryPrecedenceRequest& WithFoo(Aws::String&& value) { SetFoo(std::move(value)); return *this;}
-    inline QueryPrecedenceRequest& WithFoo(const char* value) { SetFoo(value); return *this;}
+    template<typename FooT = Aws::String>
+    void SetFoo(FooT&& value) { m_fooHasBeenSet = true; m_foo = std::forward<FooT>(value); }
+    template<typename FooT = Aws::String>
+    QueryPrecedenceRequest& WithFoo(FooT&& value) { SetFoo(std::forward<FooT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetBaz() const{ return m_baz; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetBaz() const { return m_baz; }
     inline bool BazHasBeenSet() const { return m_bazHasBeenSet; }
-    inline void SetBaz(const Aws::Map<Aws::String, Aws::String>& value) { m_bazHasBeenSet = true; m_baz = value; }
-    inline void SetBaz(Aws::Map<Aws::String, Aws::String>&& value) { m_bazHasBeenSet = true; m_baz = std::move(value); }
-    inline QueryPrecedenceRequest& WithBaz(const Aws::Map<Aws::String, Aws::String>& value) { SetBaz(value); return *this;}
-    inline QueryPrecedenceRequest& WithBaz(Aws::Map<Aws::String, Aws::String>&& value) { SetBaz(std::move(value)); return *this;}
-    inline QueryPrecedenceRequest& AddBaz(const Aws::String& key, const Aws::String& value) { m_bazHasBeenSet = true; m_baz.emplace(key, value); return *this; }
-    inline QueryPrecedenceRequest& AddBaz(Aws::String&& key, const Aws::String& value) { m_bazHasBeenSet = true; m_baz.emplace(std::move(key), value); return *this; }
-    inline QueryPrecedenceRequest& AddBaz(const Aws::String& key, Aws::String&& value) { m_bazHasBeenSet = true; m_baz.emplace(key, std::move(value)); return *this; }
-    inline QueryPrecedenceRequest& AddBaz(Aws::String&& key, Aws::String&& value) { m_bazHasBeenSet = true; m_baz.emplace(std::move(key), std::move(value)); return *this; }
-    inline QueryPrecedenceRequest& AddBaz(const char* key, Aws::String&& value) { m_bazHasBeenSet = true; m_baz.emplace(key, std::move(value)); return *this; }
-    inline QueryPrecedenceRequest& AddBaz(Aws::String&& key, const char* value) { m_bazHasBeenSet = true; m_baz.emplace(std::move(key), value); return *this; }
-    inline QueryPrecedenceRequest& AddBaz(const char* key, const char* value) { m_bazHasBeenSet = true; m_baz.emplace(key, value); return *this; }
+    template<typename BazT = Aws::Map<Aws::String, Aws::String>>
+    void SetBaz(BazT&& value) { m_bazHasBeenSet = true; m_baz = std::forward<BazT>(value); }
+    template<typename BazT = Aws::Map<Aws::String, Aws::String>>
+    QueryPrecedenceRequest& WithBaz(BazT&& value) { SetBaz(std::forward<BazT>(value)); return *this;}
+    template<typename BazKeyT = Aws::String, typename BazValueT = Aws::String>
+    QueryPrecedenceRequest& AddBaz(BazKeyT&& key, BazValueT&& value) {
+      m_bazHasBeenSet = true; m_baz.emplace(std::forward<BazKeyT>(key), std::forward<BazValueT>(value)); return *this;
+    }
     ///@}
   private:
 

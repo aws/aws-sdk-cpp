@@ -31,7 +31,7 @@ namespace Model
   class IndexingRuleValue
   {
   public:
-    AWS_XRAY_API IndexingRuleValue();
+    AWS_XRAY_API IndexingRuleValue() = default;
     AWS_XRAY_API IndexingRuleValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API IndexingRuleValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
      * <p> Indexing rule configuration that is used to probabilistically sample
      * traceIds. </p>
      */
-    inline const ProbabilisticRuleValue& GetProbabilistic() const{ return m_probabilistic; }
+    inline const ProbabilisticRuleValue& GetProbabilistic() const { return m_probabilistic; }
     inline bool ProbabilisticHasBeenSet() const { return m_probabilisticHasBeenSet; }
-    inline void SetProbabilistic(const ProbabilisticRuleValue& value) { m_probabilisticHasBeenSet = true; m_probabilistic = value; }
-    inline void SetProbabilistic(ProbabilisticRuleValue&& value) { m_probabilisticHasBeenSet = true; m_probabilistic = std::move(value); }
-    inline IndexingRuleValue& WithProbabilistic(const ProbabilisticRuleValue& value) { SetProbabilistic(value); return *this;}
-    inline IndexingRuleValue& WithProbabilistic(ProbabilisticRuleValue&& value) { SetProbabilistic(std::move(value)); return *this;}
+    template<typename ProbabilisticT = ProbabilisticRuleValue>
+    void SetProbabilistic(ProbabilisticT&& value) { m_probabilisticHasBeenSet = true; m_probabilistic = std::forward<ProbabilisticT>(value); }
+    template<typename ProbabilisticT = ProbabilisticRuleValue>
+    IndexingRuleValue& WithProbabilistic(ProbabilisticT&& value) { SetProbabilistic(std::forward<ProbabilisticT>(value)); return *this;}
     ///@}
   private:
 

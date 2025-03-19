@@ -34,7 +34,7 @@ namespace Model
   class SnapshotJobResultFileGroup
   {
   public:
-    AWS_QUICKSIGHT_API SnapshotJobResultFileGroup();
+    AWS_QUICKSIGHT_API SnapshotJobResultFileGroup() = default;
     AWS_QUICKSIGHT_API SnapshotJobResultFileGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SnapshotJobResultFileGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,28 @@ namespace Model
     /**
      * <p> A list of <code>SnapshotFile</code> objects.</p>
      */
-    inline const Aws::Vector<SnapshotFile>& GetFiles() const{ return m_files; }
+    inline const Aws::Vector<SnapshotFile>& GetFiles() const { return m_files; }
     inline bool FilesHasBeenSet() const { return m_filesHasBeenSet; }
-    inline void SetFiles(const Aws::Vector<SnapshotFile>& value) { m_filesHasBeenSet = true; m_files = value; }
-    inline void SetFiles(Aws::Vector<SnapshotFile>&& value) { m_filesHasBeenSet = true; m_files = std::move(value); }
-    inline SnapshotJobResultFileGroup& WithFiles(const Aws::Vector<SnapshotFile>& value) { SetFiles(value); return *this;}
-    inline SnapshotJobResultFileGroup& WithFiles(Aws::Vector<SnapshotFile>&& value) { SetFiles(std::move(value)); return *this;}
-    inline SnapshotJobResultFileGroup& AddFiles(const SnapshotFile& value) { m_filesHasBeenSet = true; m_files.push_back(value); return *this; }
-    inline SnapshotJobResultFileGroup& AddFiles(SnapshotFile&& value) { m_filesHasBeenSet = true; m_files.push_back(std::move(value)); return *this; }
+    template<typename FilesT = Aws::Vector<SnapshotFile>>
+    void SetFiles(FilesT&& value) { m_filesHasBeenSet = true; m_files = std::forward<FilesT>(value); }
+    template<typename FilesT = Aws::Vector<SnapshotFile>>
+    SnapshotJobResultFileGroup& WithFiles(FilesT&& value) { SetFiles(std::forward<FilesT>(value)); return *this;}
+    template<typename FilesT = SnapshotFile>
+    SnapshotJobResultFileGroup& AddFiles(FilesT&& value) { m_filesHasBeenSet = true; m_files.emplace_back(std::forward<FilesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> A list of <code>SnapshotJobS3Result</code> objects.</p>
      */
-    inline const Aws::Vector<SnapshotJobS3Result>& GetS3Results() const{ return m_s3Results; }
+    inline const Aws::Vector<SnapshotJobS3Result>& GetS3Results() const { return m_s3Results; }
     inline bool S3ResultsHasBeenSet() const { return m_s3ResultsHasBeenSet; }
-    inline void SetS3Results(const Aws::Vector<SnapshotJobS3Result>& value) { m_s3ResultsHasBeenSet = true; m_s3Results = value; }
-    inline void SetS3Results(Aws::Vector<SnapshotJobS3Result>&& value) { m_s3ResultsHasBeenSet = true; m_s3Results = std::move(value); }
-    inline SnapshotJobResultFileGroup& WithS3Results(const Aws::Vector<SnapshotJobS3Result>& value) { SetS3Results(value); return *this;}
-    inline SnapshotJobResultFileGroup& WithS3Results(Aws::Vector<SnapshotJobS3Result>&& value) { SetS3Results(std::move(value)); return *this;}
-    inline SnapshotJobResultFileGroup& AddS3Results(const SnapshotJobS3Result& value) { m_s3ResultsHasBeenSet = true; m_s3Results.push_back(value); return *this; }
-    inline SnapshotJobResultFileGroup& AddS3Results(SnapshotJobS3Result&& value) { m_s3ResultsHasBeenSet = true; m_s3Results.push_back(std::move(value)); return *this; }
+    template<typename S3ResultsT = Aws::Vector<SnapshotJobS3Result>>
+    void SetS3Results(S3ResultsT&& value) { m_s3ResultsHasBeenSet = true; m_s3Results = std::forward<S3ResultsT>(value); }
+    template<typename S3ResultsT = Aws::Vector<SnapshotJobS3Result>>
+    SnapshotJobResultFileGroup& WithS3Results(S3ResultsT&& value) { SetS3Results(std::forward<S3ResultsT>(value)); return *this;}
+    template<typename S3ResultsT = SnapshotJobS3Result>
+    SnapshotJobResultFileGroup& AddS3Results(S3ResultsT&& value) { m_s3ResultsHasBeenSet = true; m_s3Results.emplace_back(std::forward<S3ResultsT>(value)); return *this; }
     ///@}
   private:
 

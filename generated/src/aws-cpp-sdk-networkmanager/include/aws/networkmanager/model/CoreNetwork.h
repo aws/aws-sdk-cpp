@@ -38,7 +38,7 @@ namespace Model
   class CoreNetwork
   {
   public:
-    AWS_NETWORKMANAGER_API CoreNetwork();
+    AWS_NETWORKMANAGER_API CoreNetwork() = default;
     AWS_NETWORKMANAGER_API CoreNetwork(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API CoreNetwork& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,136 +48,126 @@ namespace Model
     /**
      * <p>The ID of the global network that your core network is a part of. </p>
      */
-    inline const Aws::String& GetGlobalNetworkId() const{ return m_globalNetworkId; }
+    inline const Aws::String& GetGlobalNetworkId() const { return m_globalNetworkId; }
     inline bool GlobalNetworkIdHasBeenSet() const { return m_globalNetworkIdHasBeenSet; }
-    inline void SetGlobalNetworkId(const Aws::String& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = value; }
-    inline void SetGlobalNetworkId(Aws::String&& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = std::move(value); }
-    inline void SetGlobalNetworkId(const char* value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId.assign(value); }
-    inline CoreNetwork& WithGlobalNetworkId(const Aws::String& value) { SetGlobalNetworkId(value); return *this;}
-    inline CoreNetwork& WithGlobalNetworkId(Aws::String&& value) { SetGlobalNetworkId(std::move(value)); return *this;}
-    inline CoreNetwork& WithGlobalNetworkId(const char* value) { SetGlobalNetworkId(value); return *this;}
+    template<typename GlobalNetworkIdT = Aws::String>
+    void SetGlobalNetworkId(GlobalNetworkIdT&& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = std::forward<GlobalNetworkIdT>(value); }
+    template<typename GlobalNetworkIdT = Aws::String>
+    CoreNetwork& WithGlobalNetworkId(GlobalNetworkIdT&& value) { SetGlobalNetworkId(std::forward<GlobalNetworkIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of a core network.</p>
      */
-    inline const Aws::String& GetCoreNetworkId() const{ return m_coreNetworkId; }
+    inline const Aws::String& GetCoreNetworkId() const { return m_coreNetworkId; }
     inline bool CoreNetworkIdHasBeenSet() const { return m_coreNetworkIdHasBeenSet; }
-    inline void SetCoreNetworkId(const Aws::String& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = value; }
-    inline void SetCoreNetworkId(Aws::String&& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = std::move(value); }
-    inline void SetCoreNetworkId(const char* value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId.assign(value); }
-    inline CoreNetwork& WithCoreNetworkId(const Aws::String& value) { SetCoreNetworkId(value); return *this;}
-    inline CoreNetwork& WithCoreNetworkId(Aws::String&& value) { SetCoreNetworkId(std::move(value)); return *this;}
-    inline CoreNetwork& WithCoreNetworkId(const char* value) { SetCoreNetworkId(value); return *this;}
+    template<typename CoreNetworkIdT = Aws::String>
+    void SetCoreNetworkId(CoreNetworkIdT&& value) { m_coreNetworkIdHasBeenSet = true; m_coreNetworkId = std::forward<CoreNetworkIdT>(value); }
+    template<typename CoreNetworkIdT = Aws::String>
+    CoreNetwork& WithCoreNetworkId(CoreNetworkIdT&& value) { SetCoreNetworkId(std::forward<CoreNetworkIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of a core network.</p>
      */
-    inline const Aws::String& GetCoreNetworkArn() const{ return m_coreNetworkArn; }
+    inline const Aws::String& GetCoreNetworkArn() const { return m_coreNetworkArn; }
     inline bool CoreNetworkArnHasBeenSet() const { return m_coreNetworkArnHasBeenSet; }
-    inline void SetCoreNetworkArn(const Aws::String& value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn = value; }
-    inline void SetCoreNetworkArn(Aws::String&& value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn = std::move(value); }
-    inline void SetCoreNetworkArn(const char* value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn.assign(value); }
-    inline CoreNetwork& WithCoreNetworkArn(const Aws::String& value) { SetCoreNetworkArn(value); return *this;}
-    inline CoreNetwork& WithCoreNetworkArn(Aws::String&& value) { SetCoreNetworkArn(std::move(value)); return *this;}
-    inline CoreNetwork& WithCoreNetworkArn(const char* value) { SetCoreNetworkArn(value); return *this;}
+    template<typename CoreNetworkArnT = Aws::String>
+    void SetCoreNetworkArn(CoreNetworkArnT&& value) { m_coreNetworkArnHasBeenSet = true; m_coreNetworkArn = std::forward<CoreNetworkArnT>(value); }
+    template<typename CoreNetworkArnT = Aws::String>
+    CoreNetwork& WithCoreNetworkArn(CoreNetworkArnT&& value) { SetCoreNetworkArn(std::forward<CoreNetworkArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of a core network.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CoreNetwork& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CoreNetwork& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CoreNetwork& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CoreNetwork& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when a core network was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline CoreNetwork& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline CoreNetwork& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    CoreNetwork& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current state of a core network.</p>
      */
-    inline const CoreNetworkState& GetState() const{ return m_state; }
+    inline CoreNetworkState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const CoreNetworkState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(CoreNetworkState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline CoreNetwork& WithState(const CoreNetworkState& value) { SetState(value); return *this;}
-    inline CoreNetwork& WithState(CoreNetworkState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(CoreNetworkState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline CoreNetwork& WithState(CoreNetworkState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The segments within a core network.</p>
      */
-    inline const Aws::Vector<CoreNetworkSegment>& GetSegments() const{ return m_segments; }
+    inline const Aws::Vector<CoreNetworkSegment>& GetSegments() const { return m_segments; }
     inline bool SegmentsHasBeenSet() const { return m_segmentsHasBeenSet; }
-    inline void SetSegments(const Aws::Vector<CoreNetworkSegment>& value) { m_segmentsHasBeenSet = true; m_segments = value; }
-    inline void SetSegments(Aws::Vector<CoreNetworkSegment>&& value) { m_segmentsHasBeenSet = true; m_segments = std::move(value); }
-    inline CoreNetwork& WithSegments(const Aws::Vector<CoreNetworkSegment>& value) { SetSegments(value); return *this;}
-    inline CoreNetwork& WithSegments(Aws::Vector<CoreNetworkSegment>&& value) { SetSegments(std::move(value)); return *this;}
-    inline CoreNetwork& AddSegments(const CoreNetworkSegment& value) { m_segmentsHasBeenSet = true; m_segments.push_back(value); return *this; }
-    inline CoreNetwork& AddSegments(CoreNetworkSegment&& value) { m_segmentsHasBeenSet = true; m_segments.push_back(std::move(value)); return *this; }
+    template<typename SegmentsT = Aws::Vector<CoreNetworkSegment>>
+    void SetSegments(SegmentsT&& value) { m_segmentsHasBeenSet = true; m_segments = std::forward<SegmentsT>(value); }
+    template<typename SegmentsT = Aws::Vector<CoreNetworkSegment>>
+    CoreNetwork& WithSegments(SegmentsT&& value) { SetSegments(std::forward<SegmentsT>(value)); return *this;}
+    template<typename SegmentsT = CoreNetworkSegment>
+    CoreNetwork& AddSegments(SegmentsT&& value) { m_segmentsHasBeenSet = true; m_segments.emplace_back(std::forward<SegmentsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The network function groups associated with a core network.</p>
      */
-    inline const Aws::Vector<CoreNetworkNetworkFunctionGroup>& GetNetworkFunctionGroups() const{ return m_networkFunctionGroups; }
+    inline const Aws::Vector<CoreNetworkNetworkFunctionGroup>& GetNetworkFunctionGroups() const { return m_networkFunctionGroups; }
     inline bool NetworkFunctionGroupsHasBeenSet() const { return m_networkFunctionGroupsHasBeenSet; }
-    inline void SetNetworkFunctionGroups(const Aws::Vector<CoreNetworkNetworkFunctionGroup>& value) { m_networkFunctionGroupsHasBeenSet = true; m_networkFunctionGroups = value; }
-    inline void SetNetworkFunctionGroups(Aws::Vector<CoreNetworkNetworkFunctionGroup>&& value) { m_networkFunctionGroupsHasBeenSet = true; m_networkFunctionGroups = std::move(value); }
-    inline CoreNetwork& WithNetworkFunctionGroups(const Aws::Vector<CoreNetworkNetworkFunctionGroup>& value) { SetNetworkFunctionGroups(value); return *this;}
-    inline CoreNetwork& WithNetworkFunctionGroups(Aws::Vector<CoreNetworkNetworkFunctionGroup>&& value) { SetNetworkFunctionGroups(std::move(value)); return *this;}
-    inline CoreNetwork& AddNetworkFunctionGroups(const CoreNetworkNetworkFunctionGroup& value) { m_networkFunctionGroupsHasBeenSet = true; m_networkFunctionGroups.push_back(value); return *this; }
-    inline CoreNetwork& AddNetworkFunctionGroups(CoreNetworkNetworkFunctionGroup&& value) { m_networkFunctionGroupsHasBeenSet = true; m_networkFunctionGroups.push_back(std::move(value)); return *this; }
+    template<typename NetworkFunctionGroupsT = Aws::Vector<CoreNetworkNetworkFunctionGroup>>
+    void SetNetworkFunctionGroups(NetworkFunctionGroupsT&& value) { m_networkFunctionGroupsHasBeenSet = true; m_networkFunctionGroups = std::forward<NetworkFunctionGroupsT>(value); }
+    template<typename NetworkFunctionGroupsT = Aws::Vector<CoreNetworkNetworkFunctionGroup>>
+    CoreNetwork& WithNetworkFunctionGroups(NetworkFunctionGroupsT&& value) { SetNetworkFunctionGroups(std::forward<NetworkFunctionGroupsT>(value)); return *this;}
+    template<typename NetworkFunctionGroupsT = CoreNetworkNetworkFunctionGroup>
+    CoreNetwork& AddNetworkFunctionGroups(NetworkFunctionGroupsT&& value) { m_networkFunctionGroupsHasBeenSet = true; m_networkFunctionGroups.emplace_back(std::forward<NetworkFunctionGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The edges within a core network.</p>
      */
-    inline const Aws::Vector<CoreNetworkEdge>& GetEdges() const{ return m_edges; }
+    inline const Aws::Vector<CoreNetworkEdge>& GetEdges() const { return m_edges; }
     inline bool EdgesHasBeenSet() const { return m_edgesHasBeenSet; }
-    inline void SetEdges(const Aws::Vector<CoreNetworkEdge>& value) { m_edgesHasBeenSet = true; m_edges = value; }
-    inline void SetEdges(Aws::Vector<CoreNetworkEdge>&& value) { m_edgesHasBeenSet = true; m_edges = std::move(value); }
-    inline CoreNetwork& WithEdges(const Aws::Vector<CoreNetworkEdge>& value) { SetEdges(value); return *this;}
-    inline CoreNetwork& WithEdges(Aws::Vector<CoreNetworkEdge>&& value) { SetEdges(std::move(value)); return *this;}
-    inline CoreNetwork& AddEdges(const CoreNetworkEdge& value) { m_edgesHasBeenSet = true; m_edges.push_back(value); return *this; }
-    inline CoreNetwork& AddEdges(CoreNetworkEdge&& value) { m_edgesHasBeenSet = true; m_edges.push_back(std::move(value)); return *this; }
+    template<typename EdgesT = Aws::Vector<CoreNetworkEdge>>
+    void SetEdges(EdgesT&& value) { m_edgesHasBeenSet = true; m_edges = std::forward<EdgesT>(value); }
+    template<typename EdgesT = Aws::Vector<CoreNetworkEdge>>
+    CoreNetwork& WithEdges(EdgesT&& value) { SetEdges(std::forward<EdgesT>(value)); return *this;}
+    template<typename EdgesT = CoreNetworkEdge>
+    CoreNetwork& AddEdges(EdgesT&& value) { m_edgesHasBeenSet = true; m_edges.emplace_back(std::forward<EdgesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The list of key-value tags associated with a core network.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CoreNetwork& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CoreNetwork& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CoreNetwork& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CoreNetwork& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CoreNetwork& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CoreNetwork& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -193,10 +183,10 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    CoreNetworkState m_state;
+    CoreNetworkState m_state{CoreNetworkState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::Vector<CoreNetworkSegment> m_segments;

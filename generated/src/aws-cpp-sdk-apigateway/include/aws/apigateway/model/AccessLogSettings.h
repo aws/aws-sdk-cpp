@@ -32,7 +32,7 @@ namespace Model
   class AccessLogSettings
   {
   public:
-    AWS_APIGATEWAY_API AccessLogSettings();
+    AWS_APIGATEWAY_API AccessLogSettings() = default;
     AWS_APIGATEWAY_API AccessLogSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_APIGATEWAY_API AccessLogSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * $context variables. The format must include at least
      * <code>$context.requestId</code>.</p>
      */
-    inline const Aws::String& GetFormat() const{ return m_format; }
+    inline const Aws::String& GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
-    inline AccessLogSettings& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
-    inline AccessLogSettings& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
-    inline AccessLogSettings& WithFormat(const char* value) { SetFormat(value); return *this;}
+    template<typename FormatT = Aws::String>
+    void SetFormat(FormatT&& value) { m_formatHasBeenSet = true; m_format = std::forward<FormatT>(value); }
+    template<typename FormatT = Aws::String>
+    AccessLogSettings& WithFormat(FormatT&& value) { SetFormat(std::forward<FormatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * Data Firehose delivery stream, the stream name must begin with
      * <code>amazon-apigateway-</code>.</p>
      */
-    inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
+    inline const Aws::String& GetDestinationArn() const { return m_destinationArn; }
     inline bool DestinationArnHasBeenSet() const { return m_destinationArnHasBeenSet; }
-    inline void SetDestinationArn(const Aws::String& value) { m_destinationArnHasBeenSet = true; m_destinationArn = value; }
-    inline void SetDestinationArn(Aws::String&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::move(value); }
-    inline void SetDestinationArn(const char* value) { m_destinationArnHasBeenSet = true; m_destinationArn.assign(value); }
-    inline AccessLogSettings& WithDestinationArn(const Aws::String& value) { SetDestinationArn(value); return *this;}
-    inline AccessLogSettings& WithDestinationArn(Aws::String&& value) { SetDestinationArn(std::move(value)); return *this;}
-    inline AccessLogSettings& WithDestinationArn(const char* value) { SetDestinationArn(value); return *this;}
+    template<typename DestinationArnT = Aws::String>
+    void SetDestinationArn(DestinationArnT&& value) { m_destinationArnHasBeenSet = true; m_destinationArn = std::forward<DestinationArnT>(value); }
+    template<typename DestinationArnT = Aws::String>
+    AccessLogSettings& WithDestinationArn(DestinationArnT&& value) { SetDestinationArn(std::forward<DestinationArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-DataTransferApi::DataTransferApi() : 
-    m_nameHasBeenSet(false),
-    m_type(DataTransferApiType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 DataTransferApi::DataTransferApi(JsonView jsonValue)
-  : DataTransferApi()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DataTransferApi& DataTransferApi::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = DataTransferApiTypeMapper::GetDataTransferApiTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

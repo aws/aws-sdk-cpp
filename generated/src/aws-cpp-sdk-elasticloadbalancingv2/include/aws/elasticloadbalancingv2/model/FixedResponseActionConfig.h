@@ -32,7 +32,7 @@ namespace Model
   class FixedResponseActionConfig
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API FixedResponseActionConfig();
+    AWS_ELASTICLOADBALANCINGV2_API FixedResponseActionConfig() = default;
     AWS_ELASTICLOADBALANCINGV2_API FixedResponseActionConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCINGV2_API FixedResponseActionConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The message.</p>
      */
-    inline const Aws::String& GetMessageBody() const{ return m_messageBody; }
+    inline const Aws::String& GetMessageBody() const { return m_messageBody; }
     inline bool MessageBodyHasBeenSet() const { return m_messageBodyHasBeenSet; }
-    inline void SetMessageBody(const Aws::String& value) { m_messageBodyHasBeenSet = true; m_messageBody = value; }
-    inline void SetMessageBody(Aws::String&& value) { m_messageBodyHasBeenSet = true; m_messageBody = std::move(value); }
-    inline void SetMessageBody(const char* value) { m_messageBodyHasBeenSet = true; m_messageBody.assign(value); }
-    inline FixedResponseActionConfig& WithMessageBody(const Aws::String& value) { SetMessageBody(value); return *this;}
-    inline FixedResponseActionConfig& WithMessageBody(Aws::String&& value) { SetMessageBody(std::move(value)); return *this;}
-    inline FixedResponseActionConfig& WithMessageBody(const char* value) { SetMessageBody(value); return *this;}
+    template<typename MessageBodyT = Aws::String>
+    void SetMessageBody(MessageBodyT&& value) { m_messageBodyHasBeenSet = true; m_messageBody = std::forward<MessageBodyT>(value); }
+    template<typename MessageBodyT = Aws::String>
+    FixedResponseActionConfig& WithMessageBody(MessageBodyT&& value) { SetMessageBody(std::forward<MessageBodyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HTTP response code (2XX, 4XX, or 5XX).</p>
      */
-    inline const Aws::String& GetStatusCode() const{ return m_statusCode; }
+    inline const Aws::String& GetStatusCode() const { return m_statusCode; }
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
-    inline void SetStatusCode(const Aws::String& value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
-    inline void SetStatusCode(Aws::String&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::move(value); }
-    inline void SetStatusCode(const char* value) { m_statusCodeHasBeenSet = true; m_statusCode.assign(value); }
-    inline FixedResponseActionConfig& WithStatusCode(const Aws::String& value) { SetStatusCode(value); return *this;}
-    inline FixedResponseActionConfig& WithStatusCode(Aws::String&& value) { SetStatusCode(std::move(value)); return *this;}
-    inline FixedResponseActionConfig& WithStatusCode(const char* value) { SetStatusCode(value); return *this;}
+    template<typename StatusCodeT = Aws::String>
+    void SetStatusCode(StatusCodeT&& value) { m_statusCodeHasBeenSet = true; m_statusCode = std::forward<StatusCodeT>(value); }
+    template<typename StatusCodeT = Aws::String>
+    FixedResponseActionConfig& WithStatusCode(StatusCodeT&& value) { SetStatusCode(std::forward<StatusCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p>The content type.</p> <p>Valid Values: text/plain | text/css | text/html |
      * application/javascript | application/json</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
+    inline const Aws::String& GetContentType() const { return m_contentType; }
     inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
-    inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentTypeHasBeenSet = true; m_contentType.assign(value); }
-    inline FixedResponseActionConfig& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline FixedResponseActionConfig& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline FixedResponseActionConfig& WithContentType(const char* value) { SetContentType(value); return *this;}
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    FixedResponseActionConfig& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
   private:
 

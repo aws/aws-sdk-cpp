@@ -12,14 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDeviceStatusRequest::UpdateDeviceStatusRequest() : 
-    m_accessTokenHasBeenSet(false),
-    m_deviceKeyHasBeenSet(false),
-    m_deviceRememberedStatus(DeviceRememberedStatusType::NOT_SET),
-    m_deviceRememberedStatusHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDeviceStatusRequest::SerializePayload() const
 {
   JsonValue payload;

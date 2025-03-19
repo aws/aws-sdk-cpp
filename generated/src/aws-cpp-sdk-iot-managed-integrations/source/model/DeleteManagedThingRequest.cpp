@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteManagedThingRequest::DeleteManagedThingRequest() : 
-    m_identifierHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false)
-{
-}
-
 Aws::String DeleteManagedThingRequest::SerializePayload() const
 {
   return {};

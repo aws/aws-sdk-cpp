@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetBuiltinSlotTypesRequest::GetBuiltinSlotTypesRequest() : 
-    m_locale(Locale::NOT_SET),
-    m_localeHasBeenSet(false),
-    m_signatureContainsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetBuiltinSlotTypesRequest::SerializePayload() const
 {
   return {};

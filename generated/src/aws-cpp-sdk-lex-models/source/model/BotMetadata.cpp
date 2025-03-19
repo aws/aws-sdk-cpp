@@ -18,19 +18,7 @@ namespace LexModelBuildingService
 namespace Model
 {
 
-BotMetadata::BotMetadata() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 BotMetadata::BotMetadata(JsonView jsonValue)
-  : BotMetadata()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ BotMetadata& BotMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDate"))
   {
     m_lastUpdatedDate = jsonValue.GetDouble("lastUpdatedDate");
-
     m_lastUpdatedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetDouble("createdDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

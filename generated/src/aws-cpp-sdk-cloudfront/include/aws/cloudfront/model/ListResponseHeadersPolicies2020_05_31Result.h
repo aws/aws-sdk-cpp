@@ -28,7 +28,7 @@ namespace Model
   class ListResponseHeadersPolicies2020_05_31Result
   {
   public:
-    AWS_CLOUDFRONT_API ListResponseHeadersPolicies2020_05_31Result();
+    AWS_CLOUDFRONT_API ListResponseHeadersPolicies2020_05_31Result() = default;
     AWS_CLOUDFRONT_API ListResponseHeadersPolicies2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFRONT_API ListResponseHeadersPolicies2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>A list of response headers policies.</p>
      */
-    inline const ResponseHeadersPolicyList& GetResponseHeadersPolicyList() const{ return m_responseHeadersPolicyList; }
-    inline void SetResponseHeadersPolicyList(const ResponseHeadersPolicyList& value) { m_responseHeadersPolicyList = value; }
-    inline void SetResponseHeadersPolicyList(ResponseHeadersPolicyList&& value) { m_responseHeadersPolicyList = std::move(value); }
-    inline ListResponseHeadersPolicies2020_05_31Result& WithResponseHeadersPolicyList(const ResponseHeadersPolicyList& value) { SetResponseHeadersPolicyList(value); return *this;}
-    inline ListResponseHeadersPolicies2020_05_31Result& WithResponseHeadersPolicyList(ResponseHeadersPolicyList&& value) { SetResponseHeadersPolicyList(std::move(value)); return *this;}
+    inline const ResponseHeadersPolicyList& GetResponseHeadersPolicyList() const { return m_responseHeadersPolicyList; }
+    template<typename ResponseHeadersPolicyListT = ResponseHeadersPolicyList>
+    void SetResponseHeadersPolicyList(ResponseHeadersPolicyListT&& value) { m_responseHeadersPolicyListHasBeenSet = true; m_responseHeadersPolicyList = std::forward<ResponseHeadersPolicyListT>(value); }
+    template<typename ResponseHeadersPolicyListT = ResponseHeadersPolicyList>
+    ListResponseHeadersPolicies2020_05_31Result& WithResponseHeadersPolicyList(ResponseHeadersPolicyListT&& value) { SetResponseHeadersPolicyList(std::forward<ResponseHeadersPolicyListT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListResponseHeadersPolicies2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListResponseHeadersPolicies2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListResponseHeadersPolicies2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListResponseHeadersPolicies2020_05_31Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ResponseHeadersPolicyList m_responseHeadersPolicyList;
+    bool m_responseHeadersPolicyListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

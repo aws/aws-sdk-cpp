@@ -36,7 +36,7 @@ namespace Model
   class TabularJobConfig
   {
   public:
-    AWS_SAGEMAKER_API TabularJobConfig();
+    AWS_SAGEMAKER_API TabularJobConfig() = default;
     AWS_SAGEMAKER_API TabularJobConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API TabularJobConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,22 +46,22 @@ namespace Model
     /**
      * <p>The configuration information of how model candidates are generated.</p>
      */
-    inline const CandidateGenerationConfig& GetCandidateGenerationConfig() const{ return m_candidateGenerationConfig; }
+    inline const CandidateGenerationConfig& GetCandidateGenerationConfig() const { return m_candidateGenerationConfig; }
     inline bool CandidateGenerationConfigHasBeenSet() const { return m_candidateGenerationConfigHasBeenSet; }
-    inline void SetCandidateGenerationConfig(const CandidateGenerationConfig& value) { m_candidateGenerationConfigHasBeenSet = true; m_candidateGenerationConfig = value; }
-    inline void SetCandidateGenerationConfig(CandidateGenerationConfig&& value) { m_candidateGenerationConfigHasBeenSet = true; m_candidateGenerationConfig = std::move(value); }
-    inline TabularJobConfig& WithCandidateGenerationConfig(const CandidateGenerationConfig& value) { SetCandidateGenerationConfig(value); return *this;}
-    inline TabularJobConfig& WithCandidateGenerationConfig(CandidateGenerationConfig&& value) { SetCandidateGenerationConfig(std::move(value)); return *this;}
+    template<typename CandidateGenerationConfigT = CandidateGenerationConfig>
+    void SetCandidateGenerationConfig(CandidateGenerationConfigT&& value) { m_candidateGenerationConfigHasBeenSet = true; m_candidateGenerationConfig = std::forward<CandidateGenerationConfigT>(value); }
+    template<typename CandidateGenerationConfigT = CandidateGenerationConfig>
+    TabularJobConfig& WithCandidateGenerationConfig(CandidateGenerationConfigT&& value) { SetCandidateGenerationConfig(std::forward<CandidateGenerationConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const AutoMLJobCompletionCriteria& GetCompletionCriteria() const{ return m_completionCriteria; }
+    inline const AutoMLJobCompletionCriteria& GetCompletionCriteria() const { return m_completionCriteria; }
     inline bool CompletionCriteriaHasBeenSet() const { return m_completionCriteriaHasBeenSet; }
-    inline void SetCompletionCriteria(const AutoMLJobCompletionCriteria& value) { m_completionCriteriaHasBeenSet = true; m_completionCriteria = value; }
-    inline void SetCompletionCriteria(AutoMLJobCompletionCriteria&& value) { m_completionCriteriaHasBeenSet = true; m_completionCriteria = std::move(value); }
-    inline TabularJobConfig& WithCompletionCriteria(const AutoMLJobCompletionCriteria& value) { SetCompletionCriteria(value); return *this;}
-    inline TabularJobConfig& WithCompletionCriteria(AutoMLJobCompletionCriteria&& value) { SetCompletionCriteria(std::move(value)); return *this;}
+    template<typename CompletionCriteriaT = AutoMLJobCompletionCriteria>
+    void SetCompletionCriteria(CompletionCriteriaT&& value) { m_completionCriteriaHasBeenSet = true; m_completionCriteria = std::forward<CompletionCriteriaT>(value); }
+    template<typename CompletionCriteriaT = AutoMLJobCompletionCriteria>
+    TabularJobConfig& WithCompletionCriteria(CompletionCriteriaT&& value) { SetCompletionCriteria(std::forward<CompletionCriteriaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +89,12 @@ namespace Model
      * in the input data. The list of columns provided must not include the target
      * column.</p>
      */
-    inline const Aws::String& GetFeatureSpecificationS3Uri() const{ return m_featureSpecificationS3Uri; }
+    inline const Aws::String& GetFeatureSpecificationS3Uri() const { return m_featureSpecificationS3Uri; }
     inline bool FeatureSpecificationS3UriHasBeenSet() const { return m_featureSpecificationS3UriHasBeenSet; }
-    inline void SetFeatureSpecificationS3Uri(const Aws::String& value) { m_featureSpecificationS3UriHasBeenSet = true; m_featureSpecificationS3Uri = value; }
-    inline void SetFeatureSpecificationS3Uri(Aws::String&& value) { m_featureSpecificationS3UriHasBeenSet = true; m_featureSpecificationS3Uri = std::move(value); }
-    inline void SetFeatureSpecificationS3Uri(const char* value) { m_featureSpecificationS3UriHasBeenSet = true; m_featureSpecificationS3Uri.assign(value); }
-    inline TabularJobConfig& WithFeatureSpecificationS3Uri(const Aws::String& value) { SetFeatureSpecificationS3Uri(value); return *this;}
-    inline TabularJobConfig& WithFeatureSpecificationS3Uri(Aws::String&& value) { SetFeatureSpecificationS3Uri(std::move(value)); return *this;}
-    inline TabularJobConfig& WithFeatureSpecificationS3Uri(const char* value) { SetFeatureSpecificationS3Uri(value); return *this;}
+    template<typename FeatureSpecificationS3UriT = Aws::String>
+    void SetFeatureSpecificationS3Uri(FeatureSpecificationS3UriT&& value) { m_featureSpecificationS3UriHasBeenSet = true; m_featureSpecificationS3Uri = std::forward<FeatureSpecificationS3UriT>(value); }
+    template<typename FeatureSpecificationS3UriT = Aws::String>
+    TabularJobConfig& WithFeatureSpecificationS3Uri(FeatureSpecificationS3UriT&& value) { SetFeatureSpecificationS3Uri(std::forward<FeatureSpecificationS3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,12 +122,10 @@ namespace Model
      * algorithm support</a> for a list of algorithms supported by
      * <code>HYPERPARAMETER_TUNING</code> mode.</p>
      */
-    inline const AutoMLMode& GetMode() const{ return m_mode; }
+    inline AutoMLMode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const AutoMLMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(AutoMLMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline TabularJobConfig& WithMode(const AutoMLMode& value) { SetMode(value); return *this;}
-    inline TabularJobConfig& WithMode(AutoMLMode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(AutoMLMode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline TabularJobConfig& WithMode(AutoMLMode value) { SetMode(value); return *this;}
     ///@}
 
     ///@{
@@ -138,7 +134,7 @@ namespace Model
      * is a combination of data preprocessors, algorithms, and algorithm parameter
      * settings.</p>
      */
-    inline bool GetGenerateCandidateDefinitionsOnly() const{ return m_generateCandidateDefinitionsOnly; }
+    inline bool GetGenerateCandidateDefinitionsOnly() const { return m_generateCandidateDefinitionsOnly; }
     inline bool GenerateCandidateDefinitionsOnlyHasBeenSet() const { return m_generateCandidateDefinitionsOnlyHasBeenSet; }
     inline void SetGenerateCandidateDefinitionsOnly(bool value) { m_generateCandidateDefinitionsOnlyHasBeenSet = true; m_generateCandidateDefinitionsOnly = value; }
     inline TabularJobConfig& WithGenerateCandidateDefinitionsOnly(bool value) { SetGenerateCandidateDefinitionsOnly(value); return *this;}
@@ -155,12 +151,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html#sagemaker-CreateAutoMLJobV2-request-AutoMLJobObjective">AutoMLJobObjective</a>
      * metric, or none at all.</p> 
      */
-    inline const ProblemType& GetProblemType() const{ return m_problemType; }
+    inline ProblemType GetProblemType() const { return m_problemType; }
     inline bool ProblemTypeHasBeenSet() const { return m_problemTypeHasBeenSet; }
-    inline void SetProblemType(const ProblemType& value) { m_problemTypeHasBeenSet = true; m_problemType = value; }
-    inline void SetProblemType(ProblemType&& value) { m_problemTypeHasBeenSet = true; m_problemType = std::move(value); }
-    inline TabularJobConfig& WithProblemType(const ProblemType& value) { SetProblemType(value); return *this;}
-    inline TabularJobConfig& WithProblemType(ProblemType&& value) { SetProblemType(std::move(value)); return *this;}
+    inline void SetProblemType(ProblemType value) { m_problemTypeHasBeenSet = true; m_problemType = value; }
+    inline TabularJobConfig& WithProblemType(ProblemType value) { SetProblemType(value); return *this;}
     ///@}
 
     ///@{
@@ -168,14 +162,12 @@ namespace Model
      * <p>The name of the target variable in supervised learning, usually represented
      * by 'y'.</p>
      */
-    inline const Aws::String& GetTargetAttributeName() const{ return m_targetAttributeName; }
+    inline const Aws::String& GetTargetAttributeName() const { return m_targetAttributeName; }
     inline bool TargetAttributeNameHasBeenSet() const { return m_targetAttributeNameHasBeenSet; }
-    inline void SetTargetAttributeName(const Aws::String& value) { m_targetAttributeNameHasBeenSet = true; m_targetAttributeName = value; }
-    inline void SetTargetAttributeName(Aws::String&& value) { m_targetAttributeNameHasBeenSet = true; m_targetAttributeName = std::move(value); }
-    inline void SetTargetAttributeName(const char* value) { m_targetAttributeNameHasBeenSet = true; m_targetAttributeName.assign(value); }
-    inline TabularJobConfig& WithTargetAttributeName(const Aws::String& value) { SetTargetAttributeName(value); return *this;}
-    inline TabularJobConfig& WithTargetAttributeName(Aws::String&& value) { SetTargetAttributeName(std::move(value)); return *this;}
-    inline TabularJobConfig& WithTargetAttributeName(const char* value) { SetTargetAttributeName(value); return *this;}
+    template<typename TargetAttributeNameT = Aws::String>
+    void SetTargetAttributeName(TargetAttributeNameT&& value) { m_targetAttributeNameHasBeenSet = true; m_targetAttributeName = std::forward<TargetAttributeNameT>(value); }
+    template<typename TargetAttributeNameT = Aws::String>
+    TabularJobConfig& WithTargetAttributeName(TargetAttributeNameT&& value) { SetTargetAttributeName(std::forward<TargetAttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -193,14 +185,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a>
      * mode only.</p>
      */
-    inline const Aws::String& GetSampleWeightAttributeName() const{ return m_sampleWeightAttributeName; }
+    inline const Aws::String& GetSampleWeightAttributeName() const { return m_sampleWeightAttributeName; }
     inline bool SampleWeightAttributeNameHasBeenSet() const { return m_sampleWeightAttributeNameHasBeenSet; }
-    inline void SetSampleWeightAttributeName(const Aws::String& value) { m_sampleWeightAttributeNameHasBeenSet = true; m_sampleWeightAttributeName = value; }
-    inline void SetSampleWeightAttributeName(Aws::String&& value) { m_sampleWeightAttributeNameHasBeenSet = true; m_sampleWeightAttributeName = std::move(value); }
-    inline void SetSampleWeightAttributeName(const char* value) { m_sampleWeightAttributeNameHasBeenSet = true; m_sampleWeightAttributeName.assign(value); }
-    inline TabularJobConfig& WithSampleWeightAttributeName(const Aws::String& value) { SetSampleWeightAttributeName(value); return *this;}
-    inline TabularJobConfig& WithSampleWeightAttributeName(Aws::String&& value) { SetSampleWeightAttributeName(std::move(value)); return *this;}
-    inline TabularJobConfig& WithSampleWeightAttributeName(const char* value) { SetSampleWeightAttributeName(value); return *this;}
+    template<typename SampleWeightAttributeNameT = Aws::String>
+    void SetSampleWeightAttributeName(SampleWeightAttributeNameT&& value) { m_sampleWeightAttributeNameHasBeenSet = true; m_sampleWeightAttributeName = std::forward<SampleWeightAttributeNameT>(value); }
+    template<typename SampleWeightAttributeNameT = Aws::String>
+    TabularJobConfig& WithSampleWeightAttributeName(SampleWeightAttributeNameT&& value) { SetSampleWeightAttributeName(std::forward<SampleWeightAttributeNameT>(value)); return *this;}
     ///@}
   private:
 
@@ -213,13 +203,13 @@ namespace Model
     Aws::String m_featureSpecificationS3Uri;
     bool m_featureSpecificationS3UriHasBeenSet = false;
 
-    AutoMLMode m_mode;
+    AutoMLMode m_mode{AutoMLMode::NOT_SET};
     bool m_modeHasBeenSet = false;
 
-    bool m_generateCandidateDefinitionsOnly;
+    bool m_generateCandidateDefinitionsOnly{false};
     bool m_generateCandidateDefinitionsOnlyHasBeenSet = false;
 
-    ProblemType m_problemType;
+    ProblemType m_problemType{ProblemType::NOT_SET};
     bool m_problemTypeHasBeenSet = false;
 
     Aws::String m_targetAttributeName;

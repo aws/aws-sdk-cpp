@@ -45,7 +45,7 @@ namespace Model
   class DocumentAttributeTarget
   {
   public:
-    AWS_KENDRA_API DocumentAttributeTarget();
+    AWS_KENDRA_API DocumentAttributeTarget() = default;
     AWS_KENDRA_API DocumentAttributeTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API DocumentAttributeTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,14 +58,12 @@ namespace Model
      * metadata field that includes the department names associated with the
      * documents.</p>
      */
-    inline const Aws::String& GetTargetDocumentAttributeKey() const{ return m_targetDocumentAttributeKey; }
+    inline const Aws::String& GetTargetDocumentAttributeKey() const { return m_targetDocumentAttributeKey; }
     inline bool TargetDocumentAttributeKeyHasBeenSet() const { return m_targetDocumentAttributeKeyHasBeenSet; }
-    inline void SetTargetDocumentAttributeKey(const Aws::String& value) { m_targetDocumentAttributeKeyHasBeenSet = true; m_targetDocumentAttributeKey = value; }
-    inline void SetTargetDocumentAttributeKey(Aws::String&& value) { m_targetDocumentAttributeKeyHasBeenSet = true; m_targetDocumentAttributeKey = std::move(value); }
-    inline void SetTargetDocumentAttributeKey(const char* value) { m_targetDocumentAttributeKeyHasBeenSet = true; m_targetDocumentAttributeKey.assign(value); }
-    inline DocumentAttributeTarget& WithTargetDocumentAttributeKey(const Aws::String& value) { SetTargetDocumentAttributeKey(value); return *this;}
-    inline DocumentAttributeTarget& WithTargetDocumentAttributeKey(Aws::String&& value) { SetTargetDocumentAttributeKey(std::move(value)); return *this;}
-    inline DocumentAttributeTarget& WithTargetDocumentAttributeKey(const char* value) { SetTargetDocumentAttributeKey(value); return *this;}
+    template<typename TargetDocumentAttributeKeyT = Aws::String>
+    void SetTargetDocumentAttributeKey(TargetDocumentAttributeKeyT&& value) { m_targetDocumentAttributeKeyHasBeenSet = true; m_targetDocumentAttributeKey = std::forward<TargetDocumentAttributeKeyT>(value); }
+    template<typename TargetDocumentAttributeKeyT = Aws::String>
+    DocumentAttributeTarget& WithTargetDocumentAttributeKey(TargetDocumentAttributeKeyT&& value) { SetTargetDocumentAttributeKey(std::forward<TargetDocumentAttributeKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,7 +73,7 @@ namespace Model
      * <code>TRUE</code>. To create a target value
      * (<code>TargetDocumentAttributeValue</code>), set this to <code>FALSE</code>.</p>
      */
-    inline bool GetTargetDocumentAttributeValueDeletion() const{ return m_targetDocumentAttributeValueDeletion; }
+    inline bool GetTargetDocumentAttributeValueDeletion() const { return m_targetDocumentAttributeValueDeletion; }
     inline bool TargetDocumentAttributeValueDeletionHasBeenSet() const { return m_targetDocumentAttributeValueDeletionHasBeenSet; }
     inline void SetTargetDocumentAttributeValueDeletion(bool value) { m_targetDocumentAttributeValueDeletionHasBeenSet = true; m_targetDocumentAttributeValueDeletion = value; }
     inline DocumentAttributeTarget& WithTargetDocumentAttributeValueDeletion(bool value) { SetTargetDocumentAttributeValueDeletion(value); return *this;}
@@ -87,19 +85,19 @@ namespace Model
      * example, 'Finance' could be the target value for the target attribute key
      * 'Department'.</p>
      */
-    inline const DocumentAttributeValue& GetTargetDocumentAttributeValue() const{ return m_targetDocumentAttributeValue; }
+    inline const DocumentAttributeValue& GetTargetDocumentAttributeValue() const { return m_targetDocumentAttributeValue; }
     inline bool TargetDocumentAttributeValueHasBeenSet() const { return m_targetDocumentAttributeValueHasBeenSet; }
-    inline void SetTargetDocumentAttributeValue(const DocumentAttributeValue& value) { m_targetDocumentAttributeValueHasBeenSet = true; m_targetDocumentAttributeValue = value; }
-    inline void SetTargetDocumentAttributeValue(DocumentAttributeValue&& value) { m_targetDocumentAttributeValueHasBeenSet = true; m_targetDocumentAttributeValue = std::move(value); }
-    inline DocumentAttributeTarget& WithTargetDocumentAttributeValue(const DocumentAttributeValue& value) { SetTargetDocumentAttributeValue(value); return *this;}
-    inline DocumentAttributeTarget& WithTargetDocumentAttributeValue(DocumentAttributeValue&& value) { SetTargetDocumentAttributeValue(std::move(value)); return *this;}
+    template<typename TargetDocumentAttributeValueT = DocumentAttributeValue>
+    void SetTargetDocumentAttributeValue(TargetDocumentAttributeValueT&& value) { m_targetDocumentAttributeValueHasBeenSet = true; m_targetDocumentAttributeValue = std::forward<TargetDocumentAttributeValueT>(value); }
+    template<typename TargetDocumentAttributeValueT = DocumentAttributeValue>
+    DocumentAttributeTarget& WithTargetDocumentAttributeValue(TargetDocumentAttributeValueT&& value) { SetTargetDocumentAttributeValue(std::forward<TargetDocumentAttributeValueT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_targetDocumentAttributeKey;
     bool m_targetDocumentAttributeKeyHasBeenSet = false;
 
-    bool m_targetDocumentAttributeValueDeletion;
+    bool m_targetDocumentAttributeValueDeletion{false};
     bool m_targetDocumentAttributeValueDeletionHasBeenSet = false;
 
     DocumentAttributeValue m_targetDocumentAttributeValue;

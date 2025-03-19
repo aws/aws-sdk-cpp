@@ -28,7 +28,7 @@ namespace Model
   class DescribeCacheReportResult
   {
   public:
-    AWS_STORAGEGATEWAY_API DescribeCacheReportResult();
+    AWS_STORAGEGATEWAY_API DescribeCacheReportResult() = default;
     AWS_STORAGEGATEWAY_API DescribeCacheReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_STORAGEGATEWAY_API DescribeCacheReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Contains all informational fields associated with a cache report. Includes
      * name, ARN, tags, status, progress, filters, start time, and end time.</p>
      */
-    inline const CacheReportInfo& GetCacheReportInfo() const{ return m_cacheReportInfo; }
-    inline void SetCacheReportInfo(const CacheReportInfo& value) { m_cacheReportInfo = value; }
-    inline void SetCacheReportInfo(CacheReportInfo&& value) { m_cacheReportInfo = std::move(value); }
-    inline DescribeCacheReportResult& WithCacheReportInfo(const CacheReportInfo& value) { SetCacheReportInfo(value); return *this;}
-    inline DescribeCacheReportResult& WithCacheReportInfo(CacheReportInfo&& value) { SetCacheReportInfo(std::move(value)); return *this;}
+    inline const CacheReportInfo& GetCacheReportInfo() const { return m_cacheReportInfo; }
+    template<typename CacheReportInfoT = CacheReportInfo>
+    void SetCacheReportInfo(CacheReportInfoT&& value) { m_cacheReportInfoHasBeenSet = true; m_cacheReportInfo = std::forward<CacheReportInfoT>(value); }
+    template<typename CacheReportInfoT = CacheReportInfo>
+    DescribeCacheReportResult& WithCacheReportInfo(CacheReportInfoT&& value) { SetCacheReportInfo(std::forward<CacheReportInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeCacheReportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeCacheReportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeCacheReportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeCacheReportResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CacheReportInfo m_cacheReportInfo;
+    bool m_cacheReportInfoHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

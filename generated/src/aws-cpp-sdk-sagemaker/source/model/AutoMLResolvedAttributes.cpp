@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AutoMLResolvedAttributes::AutoMLResolvedAttributes() : 
-    m_autoMLJobObjectiveHasBeenSet(false),
-    m_completionCriteriaHasBeenSet(false),
-    m_autoMLProblemTypeResolvedAttributesHasBeenSet(false)
-{
-}
-
 AutoMLResolvedAttributes::AutoMLResolvedAttributes(JsonView jsonValue)
-  : AutoMLResolvedAttributes()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AutoMLResolvedAttributes& AutoMLResolvedAttributes::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("AutoMLJobObjective"))
   {
     m_autoMLJobObjective = jsonValue.GetObject("AutoMLJobObjective");
-
     m_autoMLJobObjectiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletionCriteria"))
   {
     m_completionCriteria = jsonValue.GetObject("CompletionCriteria");
-
     m_completionCriteriaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoMLProblemTypeResolvedAttributes"))
   {
     m_autoMLProblemTypeResolvedAttributes = jsonValue.GetObject("AutoMLProblemTypeResolvedAttributes");
-
     m_autoMLProblemTypeResolvedAttributesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class AwsRdsDbInstanceAssociatedRole
   {
   public:
-    AWS_SECURITYHUB_API AwsRdsDbInstanceAssociatedRole();
+    AWS_SECURITYHUB_API AwsRdsDbInstanceAssociatedRole() = default;
     AWS_SECURITYHUB_API AwsRdsDbInstanceAssociatedRole(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsRdsDbInstanceAssociatedRole& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The ARN of the IAM role that is associated with the DB instance.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline AwsRdsDbInstanceAssociatedRole& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline AwsRdsDbInstanceAssociatedRole& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline AwsRdsDbInstanceAssociatedRole& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    AwsRdsDbInstanceAssociatedRole& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the feature associated with the IAM role.</p>
      */
-    inline const Aws::String& GetFeatureName() const{ return m_featureName; }
+    inline const Aws::String& GetFeatureName() const { return m_featureName; }
     inline bool FeatureNameHasBeenSet() const { return m_featureNameHasBeenSet; }
-    inline void SetFeatureName(const Aws::String& value) { m_featureNameHasBeenSet = true; m_featureName = value; }
-    inline void SetFeatureName(Aws::String&& value) { m_featureNameHasBeenSet = true; m_featureName = std::move(value); }
-    inline void SetFeatureName(const char* value) { m_featureNameHasBeenSet = true; m_featureName.assign(value); }
-    inline AwsRdsDbInstanceAssociatedRole& WithFeatureName(const Aws::String& value) { SetFeatureName(value); return *this;}
-    inline AwsRdsDbInstanceAssociatedRole& WithFeatureName(Aws::String&& value) { SetFeatureName(std::move(value)); return *this;}
-    inline AwsRdsDbInstanceAssociatedRole& WithFeatureName(const char* value) { SetFeatureName(value); return *this;}
+    template<typename FeatureNameT = Aws::String>
+    void SetFeatureName(FeatureNameT&& value) { m_featureNameHasBeenSet = true; m_featureName = std::forward<FeatureNameT>(value); }
+    template<typename FeatureNameT = Aws::String>
+    AwsRdsDbInstanceAssociatedRole& WithFeatureName(FeatureNameT&& value) { SetFeatureName(std::forward<FeatureNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * the DB instance is unable to assume the IAM role in order to access other Amazon
      * Web Services services on your behalf. </p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline AwsRdsDbInstanceAssociatedRole& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline AwsRdsDbInstanceAssociatedRole& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline AwsRdsDbInstanceAssociatedRole& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    AwsRdsDbInstanceAssociatedRole& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-SchemaEvolutionConfiguration::SchemaEvolutionConfiguration() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 SchemaEvolutionConfiguration::SchemaEvolutionConfiguration(JsonView jsonValue)
-  : SchemaEvolutionConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SchemaEvolutionConfiguration& SchemaEvolutionConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

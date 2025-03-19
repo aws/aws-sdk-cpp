@@ -18,15 +18,7 @@ namespace SimSpaceWeaver
 namespace Model
 {
 
-Domain::Domain() : 
-    m_lifecycle(LifecycleManagementStrategy::NOT_SET),
-    m_lifecycleHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Domain::Domain(JsonView jsonValue)
-  : Domain()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Domain& Domain::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Lifecycle"))
   {
     m_lifecycle = LifecycleManagementStrategyMapper::GetLifecycleManagementStrategyForName(jsonValue.GetString("Lifecycle"));
-
     m_lifecycleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

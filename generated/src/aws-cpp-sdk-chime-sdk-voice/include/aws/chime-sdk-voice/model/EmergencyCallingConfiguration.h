@@ -33,7 +33,7 @@ namespace Model
   class EmergencyCallingConfiguration
   {
   public:
-    AWS_CHIMESDKVOICE_API EmergencyCallingConfiguration();
+    AWS_CHIMESDKVOICE_API EmergencyCallingConfiguration() = default;
     AWS_CHIMESDKVOICE_API EmergencyCallingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API EmergencyCallingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>The Dialed Number Identification Service (DNIS) emergency calling
      * configuration details.</p>
      */
-    inline const Aws::Vector<DNISEmergencyCallingConfiguration>& GetDNIS() const{ return m_dNIS; }
+    inline const Aws::Vector<DNISEmergencyCallingConfiguration>& GetDNIS() const { return m_dNIS; }
     inline bool DNISHasBeenSet() const { return m_dNISHasBeenSet; }
-    inline void SetDNIS(const Aws::Vector<DNISEmergencyCallingConfiguration>& value) { m_dNISHasBeenSet = true; m_dNIS = value; }
-    inline void SetDNIS(Aws::Vector<DNISEmergencyCallingConfiguration>&& value) { m_dNISHasBeenSet = true; m_dNIS = std::move(value); }
-    inline EmergencyCallingConfiguration& WithDNIS(const Aws::Vector<DNISEmergencyCallingConfiguration>& value) { SetDNIS(value); return *this;}
-    inline EmergencyCallingConfiguration& WithDNIS(Aws::Vector<DNISEmergencyCallingConfiguration>&& value) { SetDNIS(std::move(value)); return *this;}
-    inline EmergencyCallingConfiguration& AddDNIS(const DNISEmergencyCallingConfiguration& value) { m_dNISHasBeenSet = true; m_dNIS.push_back(value); return *this; }
-    inline EmergencyCallingConfiguration& AddDNIS(DNISEmergencyCallingConfiguration&& value) { m_dNISHasBeenSet = true; m_dNIS.push_back(std::move(value)); return *this; }
+    template<typename DNIST = Aws::Vector<DNISEmergencyCallingConfiguration>>
+    void SetDNIS(DNIST&& value) { m_dNISHasBeenSet = true; m_dNIS = std::forward<DNIST>(value); }
+    template<typename DNIST = Aws::Vector<DNISEmergencyCallingConfiguration>>
+    EmergencyCallingConfiguration& WithDNIS(DNIST&& value) { SetDNIS(std::forward<DNIST>(value)); return *this;}
+    template<typename DNIST = DNISEmergencyCallingConfiguration>
+    EmergencyCallingConfiguration& AddDNIS(DNIST&& value) { m_dNISHasBeenSet = true; m_dNIS.emplace_back(std::forward<DNIST>(value)); return *this; }
     ///@}
   private:
 

@@ -18,16 +18,7 @@ namespace AppConfig
 namespace Model
 {
 
-Action::Action() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_uriHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 Action::Action(JsonView jsonValue)
-  : Action()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Action& Action::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Uri"))
   {
     m_uri = jsonValue.GetString("Uri");
-
     m_uriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeClientPropertiesRequest::DescribeClientPropertiesRequest() : 
-    m_resourceIdsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeClientPropertiesRequest::SerializePayload() const
 {
   JsonValue payload;

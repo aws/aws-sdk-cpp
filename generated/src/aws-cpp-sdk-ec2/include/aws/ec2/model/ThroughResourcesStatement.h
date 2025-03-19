@@ -31,7 +31,7 @@ namespace Model
   class ThroughResourcesStatement
   {
   public:
-    AWS_EC2_API ThroughResourcesStatement();
+    AWS_EC2_API ThroughResourcesStatement() = default;
     AWS_EC2_API ThroughResourcesStatement(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ThroughResourcesStatement& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The resource statement.</p>
      */
-    inline const ResourceStatement& GetResourceStatement() const{ return m_resourceStatement; }
+    inline const ResourceStatement& GetResourceStatement() const { return m_resourceStatement; }
     inline bool ResourceStatementHasBeenSet() const { return m_resourceStatementHasBeenSet; }
-    inline void SetResourceStatement(const ResourceStatement& value) { m_resourceStatementHasBeenSet = true; m_resourceStatement = value; }
-    inline void SetResourceStatement(ResourceStatement&& value) { m_resourceStatementHasBeenSet = true; m_resourceStatement = std::move(value); }
-    inline ThroughResourcesStatement& WithResourceStatement(const ResourceStatement& value) { SetResourceStatement(value); return *this;}
-    inline ThroughResourcesStatement& WithResourceStatement(ResourceStatement&& value) { SetResourceStatement(std::move(value)); return *this;}
+    template<typename ResourceStatementT = ResourceStatement>
+    void SetResourceStatement(ResourceStatementT&& value) { m_resourceStatementHasBeenSet = true; m_resourceStatement = std::forward<ResourceStatementT>(value); }
+    template<typename ResourceStatementT = ResourceStatement>
+    ThroughResourcesStatement& WithResourceStatement(ResourceStatementT&& value) { SetResourceStatement(std::forward<ResourceStatementT>(value)); return *this;}
     ///@}
   private:
 

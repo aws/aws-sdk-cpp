@@ -32,7 +32,7 @@ namespace Model
   class TableInlineVisualization
   {
   public:
-    AWS_QUICKSIGHT_API TableInlineVisualization();
+    AWS_QUICKSIGHT_API TableInlineVisualization() = default;
     AWS_QUICKSIGHT_API TableInlineVisualization(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TableInlineVisualization& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The configuration of the inline visualization of the data bars within a
      * chart.</p>
      */
-    inline const DataBarsOptions& GetDataBars() const{ return m_dataBars; }
+    inline const DataBarsOptions& GetDataBars() const { return m_dataBars; }
     inline bool DataBarsHasBeenSet() const { return m_dataBarsHasBeenSet; }
-    inline void SetDataBars(const DataBarsOptions& value) { m_dataBarsHasBeenSet = true; m_dataBars = value; }
-    inline void SetDataBars(DataBarsOptions&& value) { m_dataBarsHasBeenSet = true; m_dataBars = std::move(value); }
-    inline TableInlineVisualization& WithDataBars(const DataBarsOptions& value) { SetDataBars(value); return *this;}
-    inline TableInlineVisualization& WithDataBars(DataBarsOptions&& value) { SetDataBars(std::move(value)); return *this;}
+    template<typename DataBarsT = DataBarsOptions>
+    void SetDataBars(DataBarsT&& value) { m_dataBarsHasBeenSet = true; m_dataBars = std::forward<DataBarsT>(value); }
+    template<typename DataBarsT = DataBarsOptions>
+    TableInlineVisualization& WithDataBars(DataBarsT&& value) { SetDataBars(std::forward<DataBarsT>(value)); return *this;}
     ///@}
   private:
 

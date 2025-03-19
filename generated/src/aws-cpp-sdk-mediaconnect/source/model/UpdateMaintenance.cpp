@@ -18,16 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-UpdateMaintenance::UpdateMaintenance() : 
-    m_maintenanceDay(MaintenanceDay::NOT_SET),
-    m_maintenanceDayHasBeenSet(false),
-    m_maintenanceScheduledDateHasBeenSet(false),
-    m_maintenanceStartHourHasBeenSet(false)
-{
-}
-
 UpdateMaintenance::UpdateMaintenance(JsonView jsonValue)
-  : UpdateMaintenance()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ UpdateMaintenance& UpdateMaintenance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("maintenanceDay"))
   {
     m_maintenanceDay = MaintenanceDayMapper::GetMaintenanceDayForName(jsonValue.GetString("maintenanceDay"));
-
     m_maintenanceDayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maintenanceScheduledDate"))
   {
     m_maintenanceScheduledDate = jsonValue.GetString("maintenanceScheduledDate");
-
     m_maintenanceScheduledDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maintenanceStartHour"))
   {
     m_maintenanceStartHour = jsonValue.GetString("maintenanceStartHour");
-
     m_maintenanceStartHourHasBeenSet = true;
   }
-
   return *this;
 }
 

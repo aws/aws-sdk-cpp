@@ -12,15 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartAuditMitigationActionsTaskRequest::StartAuditMitigationActionsTaskRequest() : 
-    m_taskIdHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_auditCheckToActionsMappingHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String StartAuditMitigationActionsTaskRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,11 +12,6 @@ using namespace Aws::Shield::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateProactiveEngagementDetailsRequest::AssociateProactiveEngagementDetailsRequest() : 
-    m_emergencyContactListHasBeenSet(false)
-{
-}
-
 Aws::String AssociateProactiveEngagementDetailsRequest::SerializePayload() const
 {
   JsonValue payload;

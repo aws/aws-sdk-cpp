@@ -40,7 +40,7 @@ namespace Model
   class RateLimitLabelNamespace
   {
   public:
-    AWS_WAFV2_API RateLimitLabelNamespace();
+    AWS_WAFV2_API RateLimitLabelNamespace() = default;
     AWS_WAFV2_API RateLimitLabelNamespace(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API RateLimitLabelNamespace& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
     /**
      * <p>The namespace to use for aggregation. </p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline RateLimitLabelNamespace& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline RateLimitLabelNamespace& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline RateLimitLabelNamespace& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    RateLimitLabelNamespace& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
   private:
 

@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeleteAccessKeyRequest::DeleteAccessKeyRequest() : 
-    m_userNameHasBeenSet(false),
-    m_accessKeyIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAccessKeyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

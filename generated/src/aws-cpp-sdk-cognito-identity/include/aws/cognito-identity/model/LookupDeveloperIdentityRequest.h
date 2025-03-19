@@ -25,7 +25,7 @@ namespace Model
   class LookupDeveloperIdentityRequest : public CognitoIdentityRequest
   {
   public:
-    AWS_COGNITOIDENTITY_API LookupDeveloperIdentityRequest();
+    AWS_COGNITOIDENTITY_API LookupDeveloperIdentityRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
-    inline const Aws::String& GetIdentityPoolId() const{ return m_identityPoolId; }
+    inline const Aws::String& GetIdentityPoolId() const { return m_identityPoolId; }
     inline bool IdentityPoolIdHasBeenSet() const { return m_identityPoolIdHasBeenSet; }
-    inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
-    inline void SetIdentityPoolId(Aws::String&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = std::move(value); }
-    inline void SetIdentityPoolId(const char* value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId.assign(value); }
-    inline LookupDeveloperIdentityRequest& WithIdentityPoolId(const Aws::String& value) { SetIdentityPoolId(value); return *this;}
-    inline LookupDeveloperIdentityRequest& WithIdentityPoolId(Aws::String&& value) { SetIdentityPoolId(std::move(value)); return *this;}
-    inline LookupDeveloperIdentityRequest& WithIdentityPoolId(const char* value) { SetIdentityPoolId(value); return *this;}
+    template<typename IdentityPoolIdT = Aws::String>
+    void SetIdentityPoolId(IdentityPoolIdT&& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = std::forward<IdentityPoolIdT>(value); }
+    template<typename IdentityPoolIdT = Aws::String>
+    LookupDeveloperIdentityRequest& WithIdentityPoolId(IdentityPoolIdT&& value) { SetIdentityPoolId(std::forward<IdentityPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
-    inline const Aws::String& GetIdentityId() const{ return m_identityId; }
+    inline const Aws::String& GetIdentityId() const { return m_identityId; }
     inline bool IdentityIdHasBeenSet() const { return m_identityIdHasBeenSet; }
-    inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
-    inline void SetIdentityId(Aws::String&& value) { m_identityIdHasBeenSet = true; m_identityId = std::move(value); }
-    inline void SetIdentityId(const char* value) { m_identityIdHasBeenSet = true; m_identityId.assign(value); }
-    inline LookupDeveloperIdentityRequest& WithIdentityId(const Aws::String& value) { SetIdentityId(value); return *this;}
-    inline LookupDeveloperIdentityRequest& WithIdentityId(Aws::String&& value) { SetIdentityId(std::move(value)); return *this;}
-    inline LookupDeveloperIdentityRequest& WithIdentityId(const char* value) { SetIdentityId(value); return *this;}
+    template<typename IdentityIdT = Aws::String>
+    void SetIdentityId(IdentityIdT&& value) { m_identityIdHasBeenSet = true; m_identityId = std::forward<IdentityIdT>(value); }
+    template<typename IdentityIdT = Aws::String>
+    LookupDeveloperIdentityRequest& WithIdentityId(IdentityIdT&& value) { SetIdentityId(std::forward<IdentityIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,21 +68,19 @@ namespace Model
      * Typically, a developer identity provider would issue many developer user
      * identifiers, in keeping with the number of users.</p>
      */
-    inline const Aws::String& GetDeveloperUserIdentifier() const{ return m_developerUserIdentifier; }
+    inline const Aws::String& GetDeveloperUserIdentifier() const { return m_developerUserIdentifier; }
     inline bool DeveloperUserIdentifierHasBeenSet() const { return m_developerUserIdentifierHasBeenSet; }
-    inline void SetDeveloperUserIdentifier(const Aws::String& value) { m_developerUserIdentifierHasBeenSet = true; m_developerUserIdentifier = value; }
-    inline void SetDeveloperUserIdentifier(Aws::String&& value) { m_developerUserIdentifierHasBeenSet = true; m_developerUserIdentifier = std::move(value); }
-    inline void SetDeveloperUserIdentifier(const char* value) { m_developerUserIdentifierHasBeenSet = true; m_developerUserIdentifier.assign(value); }
-    inline LookupDeveloperIdentityRequest& WithDeveloperUserIdentifier(const Aws::String& value) { SetDeveloperUserIdentifier(value); return *this;}
-    inline LookupDeveloperIdentityRequest& WithDeveloperUserIdentifier(Aws::String&& value) { SetDeveloperUserIdentifier(std::move(value)); return *this;}
-    inline LookupDeveloperIdentityRequest& WithDeveloperUserIdentifier(const char* value) { SetDeveloperUserIdentifier(value); return *this;}
+    template<typename DeveloperUserIdentifierT = Aws::String>
+    void SetDeveloperUserIdentifier(DeveloperUserIdentifierT&& value) { m_developerUserIdentifierHasBeenSet = true; m_developerUserIdentifier = std::forward<DeveloperUserIdentifierT>(value); }
+    template<typename DeveloperUserIdentifierT = Aws::String>
+    LookupDeveloperIdentityRequest& WithDeveloperUserIdentifier(DeveloperUserIdentifierT&& value) { SetDeveloperUserIdentifier(std::forward<DeveloperUserIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of identities to return.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline LookupDeveloperIdentityRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -101,14 +95,12 @@ namespace Model
      * pagination token as a part of the response. This token can be used to call the
      * API again and get results starting from the 11th match.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline LookupDeveloperIdentityRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline LookupDeveloperIdentityRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline LookupDeveloperIdentityRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    LookupDeveloperIdentityRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -121,7 +113,7 @@ namespace Model
     Aws::String m_developerUserIdentifier;
     bool m_developerUserIdentifierHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

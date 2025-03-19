@@ -33,7 +33,7 @@ namespace Model
   class FargateProfileSelector
   {
   public:
-    AWS_EKS_API FargateProfileSelector();
+    AWS_EKS_API FargateProfileSelector() = default;
     AWS_EKS_API FargateProfileSelector(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API FargateProfileSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Kubernetes <code>namespace</code> that the selector should match.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline FargateProfileSelector& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline FargateProfileSelector& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline FargateProfileSelector& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    FargateProfileSelector& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,19 +57,16 @@ namespace Model
      * of the labels that are specified in the selector for it to be considered a
      * match.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetLabels() const{ return m_labels; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetLabels() const { return m_labels; }
     inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
-    inline void SetLabels(const Aws::Map<Aws::String, Aws::String>& value) { m_labelsHasBeenSet = true; m_labels = value; }
-    inline void SetLabels(Aws::Map<Aws::String, Aws::String>&& value) { m_labelsHasBeenSet = true; m_labels = std::move(value); }
-    inline FargateProfileSelector& WithLabels(const Aws::Map<Aws::String, Aws::String>& value) { SetLabels(value); return *this;}
-    inline FargateProfileSelector& WithLabels(Aws::Map<Aws::String, Aws::String>&& value) { SetLabels(std::move(value)); return *this;}
-    inline FargateProfileSelector& AddLabels(const Aws::String& key, const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.emplace(key, value); return *this; }
-    inline FargateProfileSelector& AddLabels(Aws::String&& key, const Aws::String& value) { m_labelsHasBeenSet = true; m_labels.emplace(std::move(key), value); return *this; }
-    inline FargateProfileSelector& AddLabels(const Aws::String& key, Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.emplace(key, std::move(value)); return *this; }
-    inline FargateProfileSelector& AddLabels(Aws::String&& key, Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.emplace(std::move(key), std::move(value)); return *this; }
-    inline FargateProfileSelector& AddLabels(const char* key, Aws::String&& value) { m_labelsHasBeenSet = true; m_labels.emplace(key, std::move(value)); return *this; }
-    inline FargateProfileSelector& AddLabels(Aws::String&& key, const char* value) { m_labelsHasBeenSet = true; m_labels.emplace(std::move(key), value); return *this; }
-    inline FargateProfileSelector& AddLabels(const char* key, const char* value) { m_labelsHasBeenSet = true; m_labels.emplace(key, value); return *this; }
+    template<typename LabelsT = Aws::Map<Aws::String, Aws::String>>
+    void SetLabels(LabelsT&& value) { m_labelsHasBeenSet = true; m_labels = std::forward<LabelsT>(value); }
+    template<typename LabelsT = Aws::Map<Aws::String, Aws::String>>
+    FargateProfileSelector& WithLabels(LabelsT&& value) { SetLabels(std::forward<LabelsT>(value)); return *this;}
+    template<typename LabelsKeyT = Aws::String, typename LabelsValueT = Aws::String>
+    FargateProfileSelector& AddLabels(LabelsKeyT&& key, LabelsValueT&& value) {
+      m_labelsHasBeenSet = true; m_labels.emplace(std::forward<LabelsKeyT>(key), std::forward<LabelsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

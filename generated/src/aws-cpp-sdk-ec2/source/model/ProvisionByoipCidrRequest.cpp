@@ -10,21 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ProvisionByoipCidrRequest::ProvisionByoipCidrRequest() : 
-    m_cidrHasBeenSet(false),
-    m_cidrAuthorizationContextHasBeenSet(false),
-    m_publiclyAdvertisable(false),
-    m_publiclyAdvertisableHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_poolTagSpecificationsHasBeenSet(false),
-    m_multiRegion(false),
-    m_multiRegionHasBeenSet(false),
-    m_networkBorderGroupHasBeenSet(false)
-{
-}
-
 Aws::String ProvisionByoipCidrRequest::SerializePayload() const
 {
   Aws::StringStream ss;

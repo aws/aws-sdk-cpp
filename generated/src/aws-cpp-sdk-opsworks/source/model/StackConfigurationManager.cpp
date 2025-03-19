@@ -18,14 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-StackConfigurationManager::StackConfigurationManager() : 
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 StackConfigurationManager::StackConfigurationManager(JsonView jsonValue)
-  : StackConfigurationManager()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StackConfigurationManager& StackConfigurationManager::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

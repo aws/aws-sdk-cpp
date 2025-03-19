@@ -12,17 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSpaceRequest::CreateSpaceRequest() : 
-    m_domainIdHasBeenSet(false),
-    m_spaceNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_spaceSettingsHasBeenSet(false),
-    m_ownershipSettingsHasBeenSet(false),
-    m_spaceSharingSettingsHasBeenSet(false),
-    m_spaceDisplayNameHasBeenSet(false)
-{
-}
-
 Aws::String CreateSpaceRequest::SerializePayload() const
 {
   JsonValue payload;

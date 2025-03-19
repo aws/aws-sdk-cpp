@@ -12,13 +12,6 @@ using namespace Aws::AccessAnalyzer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartResourceScanRequest::StartResourceScanRequest() : 
-    m_analyzerArnHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_resourceOwnerAccountHasBeenSet(false)
-{
-}
-
 Aws::String StartResourceScanRequest::SerializePayload() const
 {
   JsonValue payload;

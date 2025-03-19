@@ -28,7 +28,7 @@ namespace Model
   class UpdateDeviceResult
   {
   public:
-    AWS_NETWORKMANAGER_API UpdateDeviceResult();
+    AWS_NETWORKMANAGER_API UpdateDeviceResult() = default;
     AWS_NETWORKMANAGER_API UpdateDeviceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKMANAGER_API UpdateDeviceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the device.</p>
      */
-    inline const Device& GetDevice() const{ return m_device; }
-    inline void SetDevice(const Device& value) { m_device = value; }
-    inline void SetDevice(Device&& value) { m_device = std::move(value); }
-    inline UpdateDeviceResult& WithDevice(const Device& value) { SetDevice(value); return *this;}
-    inline UpdateDeviceResult& WithDevice(Device&& value) { SetDevice(std::move(value)); return *this;}
+    inline const Device& GetDevice() const { return m_device; }
+    template<typename DeviceT = Device>
+    void SetDevice(DeviceT&& value) { m_deviceHasBeenSet = true; m_device = std::forward<DeviceT>(value); }
+    template<typename DeviceT = Device>
+    UpdateDeviceResult& WithDevice(DeviceT&& value) { SetDevice(std::forward<DeviceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateDeviceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateDeviceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateDeviceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateDeviceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Device m_device;
+    bool m_deviceHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

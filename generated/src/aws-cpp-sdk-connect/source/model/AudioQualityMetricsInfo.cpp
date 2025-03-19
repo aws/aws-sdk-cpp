@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-AudioQualityMetricsInfo::AudioQualityMetricsInfo() : 
-    m_qualityScore(0.0),
-    m_qualityScoreHasBeenSet(false),
-    m_potentialQualityIssuesHasBeenSet(false)
-{
-}
-
 AudioQualityMetricsInfo::AudioQualityMetricsInfo(JsonView jsonValue)
-  : AudioQualityMetricsInfo()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AudioQualityMetricsInfo& AudioQualityMetricsInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("QualityScore"))
   {
     m_qualityScore = jsonValue.GetDouble("QualityScore");
-
     m_qualityScoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PotentialQualityIssues"))
   {
     Aws::Utils::Array<JsonView> potentialQualityIssuesJsonList = jsonValue.GetArray("PotentialQualityIssues");
@@ -49,7 +39,6 @@ AudioQualityMetricsInfo& AudioQualityMetricsInfo::operator =(JsonView jsonValue)
     }
     m_potentialQualityIssuesHasBeenSet = true;
   }
-
   return *this;
 }
 

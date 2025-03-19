@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteAppAssessmentResult::DeleteAppAssessmentResult() : 
-    m_assessmentStatus(AssessmentStatus::NOT_SET)
-{
-}
-
 DeleteAppAssessmentResult::DeleteAppAssessmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteAppAssessmentResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ DeleteAppAssessmentResult& DeleteAppAssessmentResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("assessmentArn"))
   {
     m_assessmentArn = jsonValue.GetString("assessmentArn");
-
+    m_assessmentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assessmentStatus"))
   {
     m_assessmentStatus = AssessmentStatusMapper::GetAssessmentStatusForName(jsonValue.GetString("assessmentStatus"));
-
+    m_assessmentStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TablePaginatedReportOptions::TablePaginatedReportOptions() : 
-    m_verticalOverflowVisibility(Visibility::NOT_SET),
-    m_verticalOverflowVisibilityHasBeenSet(false),
-    m_overflowColumnHeaderVisibility(Visibility::NOT_SET),
-    m_overflowColumnHeaderVisibilityHasBeenSet(false)
-{
-}
-
 TablePaginatedReportOptions::TablePaginatedReportOptions(JsonView jsonValue)
-  : TablePaginatedReportOptions()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TablePaginatedReportOptions& TablePaginatedReportOptions::operator =(JsonView js
   if(jsonValue.ValueExists("VerticalOverflowVisibility"))
   {
     m_verticalOverflowVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("VerticalOverflowVisibility"));
-
     m_verticalOverflowVisibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OverflowColumnHeaderVisibility"))
   {
     m_overflowColumnHeaderVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("OverflowColumnHeaderVisibility"));
-
     m_overflowColumnHeaderVisibilityHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class Address
   {
   public:
-    AWS_NETWORKFIREWALL_API Address();
+    AWS_NETWORKFIREWALL_API Address() = default;
     AWS_NETWORKFIREWALL_API Address(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Address& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,14 +57,12 @@ namespace Model
      * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless
      * Inter-Domain Routing</a>.</p>
      */
-    inline const Aws::String& GetAddressDefinition() const{ return m_addressDefinition; }
+    inline const Aws::String& GetAddressDefinition() const { return m_addressDefinition; }
     inline bool AddressDefinitionHasBeenSet() const { return m_addressDefinitionHasBeenSet; }
-    inline void SetAddressDefinition(const Aws::String& value) { m_addressDefinitionHasBeenSet = true; m_addressDefinition = value; }
-    inline void SetAddressDefinition(Aws::String&& value) { m_addressDefinitionHasBeenSet = true; m_addressDefinition = std::move(value); }
-    inline void SetAddressDefinition(const char* value) { m_addressDefinitionHasBeenSet = true; m_addressDefinition.assign(value); }
-    inline Address& WithAddressDefinition(const Aws::String& value) { SetAddressDefinition(value); return *this;}
-    inline Address& WithAddressDefinition(Aws::String&& value) { SetAddressDefinition(std::move(value)); return *this;}
-    inline Address& WithAddressDefinition(const char* value) { SetAddressDefinition(value); return *this;}
+    template<typename AddressDefinitionT = Aws::String>
+    void SetAddressDefinition(AddressDefinitionT&& value) { m_addressDefinitionHasBeenSet = true; m_addressDefinition = std::forward<AddressDefinitionT>(value); }
+    template<typename AddressDefinitionT = Aws::String>
+    Address& WithAddressDefinition(AddressDefinitionT&& value) { SetAddressDefinition(std::forward<AddressDefinitionT>(value)); return *this;}
     ///@}
   private:
 

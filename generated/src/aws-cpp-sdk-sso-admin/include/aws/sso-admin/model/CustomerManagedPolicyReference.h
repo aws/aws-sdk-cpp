@@ -33,7 +33,7 @@ namespace Model
   class CustomerManagedPolicyReference
   {
   public:
-    AWS_SSOADMIN_API CustomerManagedPolicyReference();
+    AWS_SSOADMIN_API CustomerManagedPolicyReference() = default;
     AWS_SSOADMIN_API CustomerManagedPolicyReference(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API CustomerManagedPolicyReference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The name of the IAM policy that you have configured in each account where you
      * want to deploy your permission set.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CustomerManagedPolicyReference& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CustomerManagedPolicyReference& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CustomerManagedPolicyReference& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CustomerManagedPolicyReference& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-friendly-names">Friendly
      * names and paths</a> in the <i>IAM User Guide</i>.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline CustomerManagedPolicyReference& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline CustomerManagedPolicyReference& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline CustomerManagedPolicyReference& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    CustomerManagedPolicyReference& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
   private:
 

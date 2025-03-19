@@ -18,15 +18,7 @@ namespace Route53Domains
 namespace Model
 {
 
-PriceWithCurrency::PriceWithCurrency() : 
-    m_price(0.0),
-    m_priceHasBeenSet(false),
-    m_currencyHasBeenSet(false)
-{
-}
-
 PriceWithCurrency::PriceWithCurrency(JsonView jsonValue)
-  : PriceWithCurrency()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PriceWithCurrency& PriceWithCurrency::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Price"))
   {
     m_price = jsonValue.GetDouble("Price");
-
     m_priceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Currency"))
   {
     m_currency = jsonValue.GetString("Currency");
-
     m_currencyHasBeenSet = true;
   }
-
   return *this;
 }
 

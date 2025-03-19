@@ -35,7 +35,7 @@ namespace Model
   class MicrosoftSQLServerSettings
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API MicrosoftSQLServerSettings();
+    AWS_DATABASEMIGRATIONSERVICE_API MicrosoftSQLServerSettings() = default;
     AWS_DATABASEMIGRATIONSERVICE_API MicrosoftSQLServerSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API MicrosoftSQLServerSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
     /**
      * <p>Endpoint TCP port.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline MicrosoftSQLServerSettings& WithPort(int value) { SetPort(value); return *this;}
@@ -56,7 +56,7 @@ namespace Model
      * <p>The maximum size of the packets (in bytes) used to transfer data using
      * BCP.</p>
      */
-    inline int GetBcpPacketSize() const{ return m_bcpPacketSize; }
+    inline int GetBcpPacketSize() const { return m_bcpPacketSize; }
     inline bool BcpPacketSizeHasBeenSet() const { return m_bcpPacketSizeHasBeenSet; }
     inline void SetBcpPacketSize(int value) { m_bcpPacketSizeHasBeenSet = true; m_bcpPacketSize = value; }
     inline MicrosoftSQLServerSettings& WithBcpPacketSize(int value) { SetBcpPacketSize(value); return *this;}
@@ -66,14 +66,12 @@ namespace Model
     /**
      * <p>Database name for the endpoint.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline MicrosoftSQLServerSettings& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline MicrosoftSQLServerSettings& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline MicrosoftSQLServerSettings& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    MicrosoftSQLServerSettings& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,28 +80,24 @@ namespace Model
      * starts, all the internal DMS control tables (awsdms_ apply_exception,
      * awsdms_apply, awsdms_changes) are created for the specified file group.</p>
      */
-    inline const Aws::String& GetControlTablesFileGroup() const{ return m_controlTablesFileGroup; }
+    inline const Aws::String& GetControlTablesFileGroup() const { return m_controlTablesFileGroup; }
     inline bool ControlTablesFileGroupHasBeenSet() const { return m_controlTablesFileGroupHasBeenSet; }
-    inline void SetControlTablesFileGroup(const Aws::String& value) { m_controlTablesFileGroupHasBeenSet = true; m_controlTablesFileGroup = value; }
-    inline void SetControlTablesFileGroup(Aws::String&& value) { m_controlTablesFileGroupHasBeenSet = true; m_controlTablesFileGroup = std::move(value); }
-    inline void SetControlTablesFileGroup(const char* value) { m_controlTablesFileGroupHasBeenSet = true; m_controlTablesFileGroup.assign(value); }
-    inline MicrosoftSQLServerSettings& WithControlTablesFileGroup(const Aws::String& value) { SetControlTablesFileGroup(value); return *this;}
-    inline MicrosoftSQLServerSettings& WithControlTablesFileGroup(Aws::String&& value) { SetControlTablesFileGroup(std::move(value)); return *this;}
-    inline MicrosoftSQLServerSettings& WithControlTablesFileGroup(const char* value) { SetControlTablesFileGroup(value); return *this;}
+    template<typename ControlTablesFileGroupT = Aws::String>
+    void SetControlTablesFileGroup(ControlTablesFileGroupT&& value) { m_controlTablesFileGroupHasBeenSet = true; m_controlTablesFileGroup = std::forward<ControlTablesFileGroupT>(value); }
+    template<typename ControlTablesFileGroupT = Aws::String>
+    MicrosoftSQLServerSettings& WithControlTablesFileGroup(ControlTablesFileGroupT&& value) { SetControlTablesFileGroup(std::forward<ControlTablesFileGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Endpoint connection password.</p>
      */
-    inline const Aws::String& GetPassword() const{ return m_password; }
+    inline const Aws::String& GetPassword() const { return m_password; }
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
-    inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
-    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
-    inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
-    inline MicrosoftSQLServerSettings& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
-    inline MicrosoftSQLServerSettings& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
-    inline MicrosoftSQLServerSettings& WithPassword(const char* value) { SetPassword(value); return *this;}
+    template<typename PasswordT = Aws::String>
+    void SetPassword(PasswordT&& value) { m_passwordHasBeenSet = true; m_password = std::forward<PasswordT>(value); }
+    template<typename PasswordT = Aws::String>
+    MicrosoftSQLServerSettings& WithPassword(PasswordT&& value) { SetPassword(std::forward<PasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,7 +107,7 @@ namespace Model
      * statement on a table might result in different information about the table
      * cached in the replication instance.</p>
      */
-    inline bool GetQuerySingleAlwaysOnNode() const{ return m_querySingleAlwaysOnNode; }
+    inline bool GetQuerySingleAlwaysOnNode() const { return m_querySingleAlwaysOnNode; }
     inline bool QuerySingleAlwaysOnNodeHasBeenSet() const { return m_querySingleAlwaysOnNodeHasBeenSet; }
     inline void SetQuerySingleAlwaysOnNode(bool value) { m_querySingleAlwaysOnNodeHasBeenSet = true; m_querySingleAlwaysOnNode = value; }
     inline MicrosoftSQLServerSettings& WithQuerySingleAlwaysOnNode(bool value) { SetQuerySingleAlwaysOnNode(value); return *this;}
@@ -128,7 +122,7 @@ namespace Model
      * replication tasks. However, it can add some source latency to ongoing
      * replication.</p>
      */
-    inline bool GetReadBackupOnly() const{ return m_readBackupOnly; }
+    inline bool GetReadBackupOnly() const { return m_readBackupOnly; }
     inline bool ReadBackupOnlyHasBeenSet() const { return m_readBackupOnlyHasBeenSet; }
     inline void SetReadBackupOnly(bool value) { m_readBackupOnlyHasBeenSet = true; m_readBackupOnly = value; }
     inline MicrosoftSQLServerSettings& WithReadBackupOnly(bool value) { SetReadBackupOnly(value); return *this;}
@@ -151,12 +145,10 @@ namespace Model
      * at any given time. Therefore, if you need to run parallel DMS tasks against the
      * same database, use the default method.</p>
      */
-    inline const SafeguardPolicy& GetSafeguardPolicy() const{ return m_safeguardPolicy; }
+    inline SafeguardPolicy GetSafeguardPolicy() const { return m_safeguardPolicy; }
     inline bool SafeguardPolicyHasBeenSet() const { return m_safeguardPolicyHasBeenSet; }
-    inline void SetSafeguardPolicy(const SafeguardPolicy& value) { m_safeguardPolicyHasBeenSet = true; m_safeguardPolicy = value; }
-    inline void SetSafeguardPolicy(SafeguardPolicy&& value) { m_safeguardPolicyHasBeenSet = true; m_safeguardPolicy = std::move(value); }
-    inline MicrosoftSQLServerSettings& WithSafeguardPolicy(const SafeguardPolicy& value) { SetSafeguardPolicy(value); return *this;}
-    inline MicrosoftSQLServerSettings& WithSafeguardPolicy(SafeguardPolicy&& value) { SetSafeguardPolicy(std::move(value)); return *this;}
+    inline void SetSafeguardPolicy(SafeguardPolicy value) { m_safeguardPolicyHasBeenSet = true; m_safeguardPolicy = value; }
+    inline MicrosoftSQLServerSettings& WithSafeguardPolicy(SafeguardPolicy value) { SetSafeguardPolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -168,28 +160,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
      * field.</p>
      */
-    inline const Aws::String& GetServerName() const{ return m_serverName; }
+    inline const Aws::String& GetServerName() const { return m_serverName; }
     inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
-    inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
-    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
-    inline void SetServerName(const char* value) { m_serverNameHasBeenSet = true; m_serverName.assign(value); }
-    inline MicrosoftSQLServerSettings& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
-    inline MicrosoftSQLServerSettings& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
-    inline MicrosoftSQLServerSettings& WithServerName(const char* value) { SetServerName(value); return *this;}
+    template<typename ServerNameT = Aws::String>
+    void SetServerName(ServerNameT&& value) { m_serverNameHasBeenSet = true; m_serverName = std::forward<ServerNameT>(value); }
+    template<typename ServerNameT = Aws::String>
+    MicrosoftSQLServerSettings& WithServerName(ServerNameT&& value) { SetServerName(std::forward<ServerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Endpoint connection user name.</p>
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
+    inline const Aws::String& GetUsername() const { return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-    inline MicrosoftSQLServerSettings& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline MicrosoftSQLServerSettings& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline MicrosoftSQLServerSettings& WithUsername(const char* value) { SetUsername(value); return *this;}
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    MicrosoftSQLServerSettings& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -198,7 +186,7 @@ namespace Model
      * When the target table contains an identity column that does not exist in the
      * source table, you must disable the use BCP for loading table option.</p>
      */
-    inline bool GetUseBcpFullLoad() const{ return m_useBcpFullLoad; }
+    inline bool GetUseBcpFullLoad() const { return m_useBcpFullLoad; }
     inline bool UseBcpFullLoadHasBeenSet() const { return m_useBcpFullLoadHasBeenSet; }
     inline void SetUseBcpFullLoad(bool value) { m_useBcpFullLoadHasBeenSet = true; m_useBcpFullLoad = value; }
     inline MicrosoftSQLServerSettings& WithUseBcpFullLoad(bool value) { SetUseBcpFullLoad(value); return *this;}
@@ -209,7 +197,7 @@ namespace Model
      * <p>When this attribute is set to <code>Y</code>, DMS processes third-party
      * transaction log backups if they are created in native format.</p>
      */
-    inline bool GetUseThirdPartyBackupDevice() const{ return m_useThirdPartyBackupDevice; }
+    inline bool GetUseThirdPartyBackupDevice() const { return m_useThirdPartyBackupDevice; }
     inline bool UseThirdPartyBackupDeviceHasBeenSet() const { return m_useThirdPartyBackupDeviceHasBeenSet; }
     inline void SetUseThirdPartyBackupDevice(bool value) { m_useThirdPartyBackupDeviceHasBeenSet = true; m_useThirdPartyBackupDevice = value; }
     inline MicrosoftSQLServerSettings& WithUseThirdPartyBackupDevice(bool value) { SetUseThirdPartyBackupDevice(value); return *this;}
@@ -234,14 +222,12 @@ namespace Model
      * secrets to access Database Migration Service resources</a> in the <i>Database
      * Migration Service User Guide</i>.</p> 
      */
-    inline const Aws::String& GetSecretsManagerAccessRoleArn() const{ return m_secretsManagerAccessRoleArn; }
+    inline const Aws::String& GetSecretsManagerAccessRoleArn() const { return m_secretsManagerAccessRoleArn; }
     inline bool SecretsManagerAccessRoleArnHasBeenSet() const { return m_secretsManagerAccessRoleArnHasBeenSet; }
-    inline void SetSecretsManagerAccessRoleArn(const Aws::String& value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn = value; }
-    inline void SetSecretsManagerAccessRoleArn(Aws::String&& value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn = std::move(value); }
-    inline void SetSecretsManagerAccessRoleArn(const char* value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn.assign(value); }
-    inline MicrosoftSQLServerSettings& WithSecretsManagerAccessRoleArn(const Aws::String& value) { SetSecretsManagerAccessRoleArn(value); return *this;}
-    inline MicrosoftSQLServerSettings& WithSecretsManagerAccessRoleArn(Aws::String&& value) { SetSecretsManagerAccessRoleArn(std::move(value)); return *this;}
-    inline MicrosoftSQLServerSettings& WithSecretsManagerAccessRoleArn(const char* value) { SetSecretsManagerAccessRoleArn(value); return *this;}
+    template<typename SecretsManagerAccessRoleArnT = Aws::String>
+    void SetSecretsManagerAccessRoleArn(SecretsManagerAccessRoleArnT&& value) { m_secretsManagerAccessRoleArnHasBeenSet = true; m_secretsManagerAccessRoleArn = std::forward<SecretsManagerAccessRoleArnT>(value); }
+    template<typename SecretsManagerAccessRoleArnT = Aws::String>
+    MicrosoftSQLServerSettings& WithSecretsManagerAccessRoleArn(SecretsManagerAccessRoleArnT&& value) { SetSecretsManagerAccessRoleArn(std::forward<SecretsManagerAccessRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -250,14 +236,12 @@ namespace Model
      * <code>SecretsManagerSecret</code> that contains the SQL Server endpoint
      * connection details.</p>
      */
-    inline const Aws::String& GetSecretsManagerSecretId() const{ return m_secretsManagerSecretId; }
+    inline const Aws::String& GetSecretsManagerSecretId() const { return m_secretsManagerSecretId; }
     inline bool SecretsManagerSecretIdHasBeenSet() const { return m_secretsManagerSecretIdHasBeenSet; }
-    inline void SetSecretsManagerSecretId(const Aws::String& value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId = value; }
-    inline void SetSecretsManagerSecretId(Aws::String&& value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId = std::move(value); }
-    inline void SetSecretsManagerSecretId(const char* value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId.assign(value); }
-    inline MicrosoftSQLServerSettings& WithSecretsManagerSecretId(const Aws::String& value) { SetSecretsManagerSecretId(value); return *this;}
-    inline MicrosoftSQLServerSettings& WithSecretsManagerSecretId(Aws::String&& value) { SetSecretsManagerSecretId(std::move(value)); return *this;}
-    inline MicrosoftSQLServerSettings& WithSecretsManagerSecretId(const char* value) { SetSecretsManagerSecretId(value); return *this;}
+    template<typename SecretsManagerSecretIdT = Aws::String>
+    void SetSecretsManagerSecretId(SecretsManagerSecretIdT&& value) { m_secretsManagerSecretIdHasBeenSet = true; m_secretsManagerSecretId = std::forward<SecretsManagerSecretIdT>(value); }
+    template<typename SecretsManagerSecretIdT = Aws::String>
+    MicrosoftSQLServerSettings& WithSecretsManagerSecretId(SecretsManagerSecretIdT&& value) { SetSecretsManagerSecretId(std::forward<SecretsManagerSecretIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -267,7 +251,7 @@ namespace Model
      * <code>TrimSpaceInChar</code> does not left-trim data. The default value is
      * <code>true</code>.</p>
      */
-    inline bool GetTrimSpaceInChar() const{ return m_trimSpaceInChar; }
+    inline bool GetTrimSpaceInChar() const { return m_trimSpaceInChar; }
     inline bool TrimSpaceInCharHasBeenSet() const { return m_trimSpaceInCharHasBeenSet; }
     inline void SetTrimSpaceInChar(bool value) { m_trimSpaceInCharHasBeenSet = true; m_trimSpaceInChar = value; }
     inline MicrosoftSQLServerSettings& WithTrimSpaceInChar(bool value) { SetTrimSpaceInChar(value); return *this;}
@@ -277,19 +261,17 @@ namespace Model
     /**
      * <p>Indicates the mode used to fetch CDC data.</p>
      */
-    inline const TlogAccessMode& GetTlogAccessMode() const{ return m_tlogAccessMode; }
+    inline TlogAccessMode GetTlogAccessMode() const { return m_tlogAccessMode; }
     inline bool TlogAccessModeHasBeenSet() const { return m_tlogAccessModeHasBeenSet; }
-    inline void SetTlogAccessMode(const TlogAccessMode& value) { m_tlogAccessModeHasBeenSet = true; m_tlogAccessMode = value; }
-    inline void SetTlogAccessMode(TlogAccessMode&& value) { m_tlogAccessModeHasBeenSet = true; m_tlogAccessMode = std::move(value); }
-    inline MicrosoftSQLServerSettings& WithTlogAccessMode(const TlogAccessMode& value) { SetTlogAccessMode(value); return *this;}
-    inline MicrosoftSQLServerSettings& WithTlogAccessMode(TlogAccessMode&& value) { SetTlogAccessMode(std::move(value)); return *this;}
+    inline void SetTlogAccessMode(TlogAccessMode value) { m_tlogAccessModeHasBeenSet = true; m_tlogAccessMode = value; }
+    inline MicrosoftSQLServerSettings& WithTlogAccessMode(TlogAccessMode value) { SetTlogAccessMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Forces LOB lookup on inline LOB.</p>
      */
-    inline bool GetForceLobLookup() const{ return m_forceLobLookup; }
+    inline bool GetForceLobLookup() const { return m_forceLobLookup; }
     inline bool ForceLobLookupHasBeenSet() const { return m_forceLobLookupHasBeenSet; }
     inline void SetForceLobLookup(bool value) { m_forceLobLookupHasBeenSet = true; m_forceLobLookup = value; }
     inline MicrosoftSQLServerSettings& WithForceLobLookup(bool value) { SetForceLobLookup(value); return *this;}
@@ -299,19 +281,17 @@ namespace Model
     /**
      * <p>Specifies the authentication method to be used with Microsoft SQL Server.</p>
      */
-    inline const SqlServerAuthenticationMethod& GetAuthenticationMethod() const{ return m_authenticationMethod; }
+    inline SqlServerAuthenticationMethod GetAuthenticationMethod() const { return m_authenticationMethod; }
     inline bool AuthenticationMethodHasBeenSet() const { return m_authenticationMethodHasBeenSet; }
-    inline void SetAuthenticationMethod(const SqlServerAuthenticationMethod& value) { m_authenticationMethodHasBeenSet = true; m_authenticationMethod = value; }
-    inline void SetAuthenticationMethod(SqlServerAuthenticationMethod&& value) { m_authenticationMethodHasBeenSet = true; m_authenticationMethod = std::move(value); }
-    inline MicrosoftSQLServerSettings& WithAuthenticationMethod(const SqlServerAuthenticationMethod& value) { SetAuthenticationMethod(value); return *this;}
-    inline MicrosoftSQLServerSettings& WithAuthenticationMethod(SqlServerAuthenticationMethod&& value) { SetAuthenticationMethod(std::move(value)); return *this;}
+    inline void SetAuthenticationMethod(SqlServerAuthenticationMethod value) { m_authenticationMethodHasBeenSet = true; m_authenticationMethod = value; }
+    inline MicrosoftSQLServerSettings& WithAuthenticationMethod(SqlServerAuthenticationMethod value) { SetAuthenticationMethod(value); return *this;}
     ///@}
   private:
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
-    int m_bcpPacketSize;
+    int m_bcpPacketSize{0};
     bool m_bcpPacketSizeHasBeenSet = false;
 
     Aws::String m_databaseName;
@@ -323,13 +303,13 @@ namespace Model
     Aws::String m_password;
     bool m_passwordHasBeenSet = false;
 
-    bool m_querySingleAlwaysOnNode;
+    bool m_querySingleAlwaysOnNode{false};
     bool m_querySingleAlwaysOnNodeHasBeenSet = false;
 
-    bool m_readBackupOnly;
+    bool m_readBackupOnly{false};
     bool m_readBackupOnlyHasBeenSet = false;
 
-    SafeguardPolicy m_safeguardPolicy;
+    SafeguardPolicy m_safeguardPolicy{SafeguardPolicy::NOT_SET};
     bool m_safeguardPolicyHasBeenSet = false;
 
     Aws::String m_serverName;
@@ -338,10 +318,10 @@ namespace Model
     Aws::String m_username;
     bool m_usernameHasBeenSet = false;
 
-    bool m_useBcpFullLoad;
+    bool m_useBcpFullLoad{false};
     bool m_useBcpFullLoadHasBeenSet = false;
 
-    bool m_useThirdPartyBackupDevice;
+    bool m_useThirdPartyBackupDevice{false};
     bool m_useThirdPartyBackupDeviceHasBeenSet = false;
 
     Aws::String m_secretsManagerAccessRoleArn;
@@ -350,16 +330,16 @@ namespace Model
     Aws::String m_secretsManagerSecretId;
     bool m_secretsManagerSecretIdHasBeenSet = false;
 
-    bool m_trimSpaceInChar;
+    bool m_trimSpaceInChar{false};
     bool m_trimSpaceInCharHasBeenSet = false;
 
-    TlogAccessMode m_tlogAccessMode;
+    TlogAccessMode m_tlogAccessMode{TlogAccessMode::NOT_SET};
     bool m_tlogAccessModeHasBeenSet = false;
 
-    bool m_forceLobLookup;
+    bool m_forceLobLookup{false};
     bool m_forceLobLookupHasBeenSet = false;
 
-    SqlServerAuthenticationMethod m_authenticationMethod;
+    SqlServerAuthenticationMethod m_authenticationMethod{SqlServerAuthenticationMethod::NOT_SET};
     bool m_authenticationMethodHasBeenSet = false;
   };
 

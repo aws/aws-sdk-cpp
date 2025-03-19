@@ -25,7 +25,7 @@ namespace Model
   class StartImportJobRequest : public QConnectRequest
   {
   public:
-    AWS_QCONNECT_API StartImportJobRequest();
+    AWS_QCONNECT_API StartImportJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The tags used to organize, track, or control access for this resource.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline StartImportJobRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline StartImportJobRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline StartImportJobRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    StartImportJobRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,12 +53,12 @@ namespace Model
      * <p>The configuration information of the external source that the resource data
      * are imported from.</p>
      */
-    inline const ExternalSourceConfiguration& GetExternalSourceConfiguration() const{ return m_externalSourceConfiguration; }
+    inline const ExternalSourceConfiguration& GetExternalSourceConfiguration() const { return m_externalSourceConfiguration; }
     inline bool ExternalSourceConfigurationHasBeenSet() const { return m_externalSourceConfigurationHasBeenSet; }
-    inline void SetExternalSourceConfiguration(const ExternalSourceConfiguration& value) { m_externalSourceConfigurationHasBeenSet = true; m_externalSourceConfiguration = value; }
-    inline void SetExternalSourceConfiguration(ExternalSourceConfiguration&& value) { m_externalSourceConfigurationHasBeenSet = true; m_externalSourceConfiguration = std::move(value); }
-    inline StartImportJobRequest& WithExternalSourceConfiguration(const ExternalSourceConfiguration& value) { SetExternalSourceConfiguration(value); return *this;}
-    inline StartImportJobRequest& WithExternalSourceConfiguration(ExternalSourceConfiguration&& value) { SetExternalSourceConfiguration(std::move(value)); return *this;}
+    template<typename ExternalSourceConfigurationT = ExternalSourceConfiguration>
+    void SetExternalSourceConfiguration(ExternalSourceConfigurationT&& value) { m_externalSourceConfigurationHasBeenSet = true; m_externalSourceConfiguration = std::forward<ExternalSourceConfigurationT>(value); }
+    template<typename ExternalSourceConfigurationT = ExternalSourceConfiguration>
+    StartImportJobRequest& WithExternalSourceConfiguration(ExternalSourceConfigurationT&& value) { SetExternalSourceConfiguration(std::forward<ExternalSourceConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,12 +66,10 @@ namespace Model
      * <p>The type of the import job.</p> <ul> <li> <p>For importing quick response
      * resource, set the value to <code>QUICK_RESPONSES</code>.</p> </li> </ul>
      */
-    inline const ImportJobType& GetImportJobType() const{ return m_importJobType; }
+    inline ImportJobType GetImportJobType() const { return m_importJobType; }
     inline bool ImportJobTypeHasBeenSet() const { return m_importJobTypeHasBeenSet; }
-    inline void SetImportJobType(const ImportJobType& value) { m_importJobTypeHasBeenSet = true; m_importJobType = value; }
-    inline void SetImportJobType(ImportJobType&& value) { m_importJobTypeHasBeenSet = true; m_importJobType = std::move(value); }
-    inline StartImportJobRequest& WithImportJobType(const ImportJobType& value) { SetImportJobType(value); return *this;}
-    inline StartImportJobRequest& WithImportJobType(ImportJobType&& value) { SetImportJobType(std::move(value)); return *this;}
+    inline void SetImportJobType(ImportJobType value) { m_importJobTypeHasBeenSet = true; m_importJobType = value; }
+    inline StartImportJobRequest& WithImportJobType(ImportJobType value) { SetImportJobType(value); return *this;}
     ///@}
 
     ///@{
@@ -83,33 +79,28 @@ namespace Model
      * responses, this should be a <code>QUICK_RESPONSES</code> type knowledge
      * base.</p> </li> </ul>
      */
-    inline const Aws::String& GetKnowledgeBaseId() const{ return m_knowledgeBaseId; }
+    inline const Aws::String& GetKnowledgeBaseId() const { return m_knowledgeBaseId; }
     inline bool KnowledgeBaseIdHasBeenSet() const { return m_knowledgeBaseIdHasBeenSet; }
-    inline void SetKnowledgeBaseId(const Aws::String& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = value; }
-    inline void SetKnowledgeBaseId(Aws::String&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::move(value); }
-    inline void SetKnowledgeBaseId(const char* value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId.assign(value); }
-    inline StartImportJobRequest& WithKnowledgeBaseId(const Aws::String& value) { SetKnowledgeBaseId(value); return *this;}
-    inline StartImportJobRequest& WithKnowledgeBaseId(Aws::String&& value) { SetKnowledgeBaseId(std::move(value)); return *this;}
-    inline StartImportJobRequest& WithKnowledgeBaseId(const char* value) { SetKnowledgeBaseId(value); return *this;}
+    template<typename KnowledgeBaseIdT = Aws::String>
+    void SetKnowledgeBaseId(KnowledgeBaseIdT&& value) { m_knowledgeBaseIdHasBeenSet = true; m_knowledgeBaseId = std::forward<KnowledgeBaseIdT>(value); }
+    template<typename KnowledgeBaseIdT = Aws::String>
+    StartImportJobRequest& WithKnowledgeBaseId(KnowledgeBaseIdT&& value) { SetKnowledgeBaseId(std::forward<KnowledgeBaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The metadata fields of the imported Amazon Q in Connect resources.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const{ return m_metadata; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline StartImportJobRequest& WithMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetMetadata(value); return *this;}
-    inline StartImportJobRequest& WithMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetMetadata(std::move(value)); return *this;}
-    inline StartImportJobRequest& AddMetadata(const Aws::String& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
-    inline StartImportJobRequest& AddMetadata(Aws::String&& key, const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
-    inline StartImportJobRequest& AddMetadata(const Aws::String& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
-    inline StartImportJobRequest& AddMetadata(Aws::String&& key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), std::move(value)); return *this; }
-    inline StartImportJobRequest& AddMetadata(const char* key, Aws::String&& value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, std::move(value)); return *this; }
-    inline StartImportJobRequest& AddMetadata(Aws::String&& key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(std::move(key), value); return *this; }
-    inline StartImportJobRequest& AddMetadata(const char* key, const char* value) { m_metadataHasBeenSet = true; m_metadata.emplace(key, value); return *this; }
+    template<typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+    StartImportJobRequest& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
+    template<typename MetadataKeyT = Aws::String, typename MetadataValueT = Aws::String>
+    StartImportJobRequest& AddMetadata(MetadataKeyT&& key, MetadataValueT&& value) {
+      m_metadataHasBeenSet = true; m_metadata.emplace(std::forward<MetadataKeyT>(key), std::forward<MetadataValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -117,14 +108,12 @@ namespace Model
      * <p>A pointer to the uploaded asset. This value is returned by <a
      * href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a>.</p>
      */
-    inline const Aws::String& GetUploadId() const{ return m_uploadId; }
+    inline const Aws::String& GetUploadId() const { return m_uploadId; }
     inline bool UploadIdHasBeenSet() const { return m_uploadIdHasBeenSet; }
-    inline void SetUploadId(const Aws::String& value) { m_uploadIdHasBeenSet = true; m_uploadId = value; }
-    inline void SetUploadId(Aws::String&& value) { m_uploadIdHasBeenSet = true; m_uploadId = std::move(value); }
-    inline void SetUploadId(const char* value) { m_uploadIdHasBeenSet = true; m_uploadId.assign(value); }
-    inline StartImportJobRequest& WithUploadId(const Aws::String& value) { SetUploadId(value); return *this;}
-    inline StartImportJobRequest& WithUploadId(Aws::String&& value) { SetUploadId(std::move(value)); return *this;}
-    inline StartImportJobRequest& WithUploadId(const char* value) { SetUploadId(value); return *this;}
+    template<typename UploadIdT = Aws::String>
+    void SetUploadId(UploadIdT&& value) { m_uploadIdHasBeenSet = true; m_uploadId = std::forward<UploadIdT>(value); }
+    template<typename UploadIdT = Aws::String>
+    StartImportJobRequest& WithUploadId(UploadIdT&& value) { SetUploadId(std::forward<UploadIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -134,7 +123,7 @@ namespace Model
     ExternalSourceConfiguration m_externalSourceConfiguration;
     bool m_externalSourceConfigurationHasBeenSet = false;
 
-    ImportJobType m_importJobType;
+    ImportJobType m_importJobType{ImportJobType::NOT_SET};
     bool m_importJobTypeHasBeenSet = false;
 
     Aws::String m_knowledgeBaseId;

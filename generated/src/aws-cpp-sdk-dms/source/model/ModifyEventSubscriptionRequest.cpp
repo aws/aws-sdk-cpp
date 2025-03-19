@@ -12,16 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ModifyEventSubscriptionRequest::ModifyEventSubscriptionRequest() : 
-    m_subscriptionNameHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false),
-    m_eventCategoriesHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 Aws::String ModifyEventSubscriptionRequest::SerializePayload() const
 {
   JsonValue payload;

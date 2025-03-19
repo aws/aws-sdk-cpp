@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeCapacityReservationBillingRequestsResponse::DescribeCapacityReservationBillingRequestsResponse()
-{
-}
-
 DescribeCapacityReservationBillingRequestsResponse::DescribeCapacityReservationBillingRequestsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeCapacityReservationBillingRequestsResponse& DescribeCapacityReservationB
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode capacityReservationBillingRequestsNode = resultNode.FirstChild("capacityReservationBillingRequestSet");
     if(!capacityReservationBillingRequestsNode.IsNull())
     {
       XmlNode capacityReservationBillingRequestsMember = capacityReservationBillingRequestsNode.FirstChild("item");
+      m_capacityReservationBillingRequestsHasBeenSet = !capacityReservationBillingRequestsMember.IsNull();
       while(!capacityReservationBillingRequestsMember.IsNull())
       {
         m_capacityReservationBillingRequests.push_back(capacityReservationBillingRequestsMember);
         capacityReservationBillingRequestsMember = capacityReservationBillingRequestsMember.NextNode("item");
       }
 
+      m_capacityReservationBillingRequestsHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeCapacityReservationBillingRequestsResponse& DescribeCapacityReservationB
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeCapacityReservationBillingRequestsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

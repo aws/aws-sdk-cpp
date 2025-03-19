@@ -18,25 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-VulnerablePackage::VulnerablePackage() : 
-    m_archHasBeenSet(false),
-    m_epoch(0),
-    m_epochHasBeenSet(false),
-    m_filePathHasBeenSet(false),
-    m_fixedInVersionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_packageManager(PackageManager::NOT_SET),
-    m_packageManagerHasBeenSet(false),
-    m_releaseHasBeenSet(false),
-    m_remediationHasBeenSet(false),
-    m_sourceLambdaLayerArnHasBeenSet(false),
-    m_sourceLayerHashHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 VulnerablePackage::VulnerablePackage(JsonView jsonValue)
-  : VulnerablePackage()
 {
   *this = jsonValue;
 }
@@ -46,80 +28,58 @@ VulnerablePackage& VulnerablePackage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arch"))
   {
     m_arch = jsonValue.GetString("arch");
-
     m_archHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("epoch"))
   {
     m_epoch = jsonValue.GetInteger("epoch");
-
     m_epochHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filePath"))
   {
     m_filePath = jsonValue.GetString("filePath");
-
     m_filePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fixedInVersion"))
   {
     m_fixedInVersion = jsonValue.GetString("fixedInVersion");
-
     m_fixedInVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("packageManager"))
   {
     m_packageManager = PackageManagerMapper::GetPackageManagerForName(jsonValue.GetString("packageManager"));
-
     m_packageManagerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("release"))
   {
     m_release = jsonValue.GetString("release");
-
     m_releaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("remediation"))
   {
     m_remediation = jsonValue.GetString("remediation");
-
     m_remediationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceLambdaLayerArn"))
   {
     m_sourceLambdaLayerArn = jsonValue.GetString("sourceLambdaLayerArn");
-
     m_sourceLambdaLayerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceLayerHash"))
   {
     m_sourceLayerHash = jsonValue.GetString("sourceLayerHash");
-
     m_sourceLayerHashHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

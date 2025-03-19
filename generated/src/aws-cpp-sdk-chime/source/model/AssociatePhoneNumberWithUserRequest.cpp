@@ -12,13 +12,6 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociatePhoneNumberWithUserRequest::AssociatePhoneNumberWithUserRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_e164PhoneNumberHasBeenSet(false)
-{
-}
-
 Aws::String AssociatePhoneNumberWithUserRequest::SerializePayload() const
 {
   JsonValue payload;

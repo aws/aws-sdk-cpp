@@ -18,14 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-UpdateOpenIdConnectAccessTokenConfiguration::UpdateOpenIdConnectAccessTokenConfiguration() : 
-    m_principalIdClaimHasBeenSet(false),
-    m_audiencesHasBeenSet(false)
-{
-}
-
 UpdateOpenIdConnectAccessTokenConfiguration::UpdateOpenIdConnectAccessTokenConfiguration(JsonView jsonValue)
-  : UpdateOpenIdConnectAccessTokenConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ UpdateOpenIdConnectAccessTokenConfiguration& UpdateOpenIdConnectAccessTokenConfi
   if(jsonValue.ValueExists("principalIdClaim"))
   {
     m_principalIdClaim = jsonValue.GetString("principalIdClaim");
-
     m_principalIdClaimHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audiences"))
   {
     Aws::Utils::Array<JsonView> audiencesJsonList = jsonValue.GetArray("audiences");
@@ -48,7 +39,6 @@ UpdateOpenIdConnectAccessTokenConfiguration& UpdateOpenIdConnectAccessTokenConfi
     }
     m_audiencesHasBeenSet = true;
   }
-
   return *this;
 }
 

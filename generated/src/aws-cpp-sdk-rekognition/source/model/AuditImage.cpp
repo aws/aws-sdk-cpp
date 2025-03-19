@@ -19,15 +19,7 @@ namespace Rekognition
 namespace Model
 {
 
-AuditImage::AuditImage() : 
-    m_bytesHasBeenSet(false),
-    m_s3ObjectHasBeenSet(false),
-    m_boundingBoxHasBeenSet(false)
-{
-}
-
 AuditImage::AuditImage(JsonView jsonValue)
-  : AuditImage()
 {
   *this = jsonValue;
 }
@@ -39,21 +31,16 @@ AuditImage& AuditImage::operator =(JsonView jsonValue)
     m_bytes = HashingUtils::Base64Decode(jsonValue.GetString("Bytes"));
     m_bytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Object"))
   {
     m_s3Object = jsonValue.GetObject("S3Object");
-
     m_s3ObjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BoundingBox"))
   {
     m_boundingBox = jsonValue.GetObject("BoundingBox");
-
     m_boundingBoxHasBeenSet = true;
   }
-
   return *this;
 }
 

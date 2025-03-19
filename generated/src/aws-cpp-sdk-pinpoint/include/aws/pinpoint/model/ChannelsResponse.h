@@ -35,7 +35,7 @@ namespace Model
   class ChannelsResponse
   {
   public:
-    AWS_PINPOINT_API ChannelsResponse();
+    AWS_PINPOINT_API ChannelsResponse() = default;
     AWS_PINPOINT_API ChannelsResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API ChannelsResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,18 +46,16 @@ namespace Model
      * <p>A map that contains a multipart response for each channel. For each item in
      * this object, the ChannelType is the key and the Channel is the value.</p>
      */
-    inline const Aws::Map<Aws::String, ChannelResponse>& GetChannels() const{ return m_channels; }
+    inline const Aws::Map<Aws::String, ChannelResponse>& GetChannels() const { return m_channels; }
     inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
-    inline void SetChannels(const Aws::Map<Aws::String, ChannelResponse>& value) { m_channelsHasBeenSet = true; m_channels = value; }
-    inline void SetChannels(Aws::Map<Aws::String, ChannelResponse>&& value) { m_channelsHasBeenSet = true; m_channels = std::move(value); }
-    inline ChannelsResponse& WithChannels(const Aws::Map<Aws::String, ChannelResponse>& value) { SetChannels(value); return *this;}
-    inline ChannelsResponse& WithChannels(Aws::Map<Aws::String, ChannelResponse>&& value) { SetChannels(std::move(value)); return *this;}
-    inline ChannelsResponse& AddChannels(const Aws::String& key, const ChannelResponse& value) { m_channelsHasBeenSet = true; m_channels.emplace(key, value); return *this; }
-    inline ChannelsResponse& AddChannels(Aws::String&& key, const ChannelResponse& value) { m_channelsHasBeenSet = true; m_channels.emplace(std::move(key), value); return *this; }
-    inline ChannelsResponse& AddChannels(const Aws::String& key, ChannelResponse&& value) { m_channelsHasBeenSet = true; m_channels.emplace(key, std::move(value)); return *this; }
-    inline ChannelsResponse& AddChannels(Aws::String&& key, ChannelResponse&& value) { m_channelsHasBeenSet = true; m_channels.emplace(std::move(key), std::move(value)); return *this; }
-    inline ChannelsResponse& AddChannels(const char* key, ChannelResponse&& value) { m_channelsHasBeenSet = true; m_channels.emplace(key, std::move(value)); return *this; }
-    inline ChannelsResponse& AddChannels(const char* key, const ChannelResponse& value) { m_channelsHasBeenSet = true; m_channels.emplace(key, value); return *this; }
+    template<typename ChannelsT = Aws::Map<Aws::String, ChannelResponse>>
+    void SetChannels(ChannelsT&& value) { m_channelsHasBeenSet = true; m_channels = std::forward<ChannelsT>(value); }
+    template<typename ChannelsT = Aws::Map<Aws::String, ChannelResponse>>
+    ChannelsResponse& WithChannels(ChannelsT&& value) { SetChannels(std::forward<ChannelsT>(value)); return *this;}
+    template<typename ChannelsKeyT = Aws::String, typename ChannelsValueT = ChannelResponse>
+    ChannelsResponse& AddChannels(ChannelsKeyT&& key, ChannelsValueT&& value) {
+      m_channelsHasBeenSet = true; m_channels.emplace(std::forward<ChannelsKeyT>(key), std::forward<ChannelsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

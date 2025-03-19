@@ -32,7 +32,7 @@ namespace Model
   class DuplicateConditionExpressionFlowValidationDetails
   {
   public:
-    AWS_BEDROCKAGENT_API DuplicateConditionExpressionFlowValidationDetails();
+    AWS_BEDROCKAGENT_API DuplicateConditionExpressionFlowValidationDetails() = default;
     AWS_BEDROCKAGENT_API DuplicateConditionExpressionFlowValidationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API DuplicateConditionExpressionFlowValidationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The duplicated condition expression.</p>
      */
-    inline const Aws::String& GetExpression() const{ return m_expression; }
+    inline const Aws::String& GetExpression() const { return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
-    inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-    inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
-    inline DuplicateConditionExpressionFlowValidationDetails& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
-    inline DuplicateConditionExpressionFlowValidationDetails& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
-    inline DuplicateConditionExpressionFlowValidationDetails& WithExpression(const char* value) { SetExpression(value); return *this;}
+    template<typename ExpressionT = Aws::String>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Aws::String>
+    DuplicateConditionExpressionFlowValidationDetails& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the node containing the duplicate condition expressions.</p>
      */
-    inline const Aws::String& GetNode() const{ return m_node; }
+    inline const Aws::String& GetNode() const { return m_node; }
     inline bool NodeHasBeenSet() const { return m_nodeHasBeenSet; }
-    inline void SetNode(const Aws::String& value) { m_nodeHasBeenSet = true; m_node = value; }
-    inline void SetNode(Aws::String&& value) { m_nodeHasBeenSet = true; m_node = std::move(value); }
-    inline void SetNode(const char* value) { m_nodeHasBeenSet = true; m_node.assign(value); }
-    inline DuplicateConditionExpressionFlowValidationDetails& WithNode(const Aws::String& value) { SetNode(value); return *this;}
-    inline DuplicateConditionExpressionFlowValidationDetails& WithNode(Aws::String&& value) { SetNode(std::move(value)); return *this;}
-    inline DuplicateConditionExpressionFlowValidationDetails& WithNode(const char* value) { SetNode(value); return *this;}
+    template<typename NodeT = Aws::String>
+    void SetNode(NodeT&& value) { m_nodeHasBeenSet = true; m_node = std::forward<NodeT>(value); }
+    template<typename NodeT = Aws::String>
+    DuplicateConditionExpressionFlowValidationDetails& WithNode(NodeT&& value) { SetNode(std::forward<NodeT>(value)); return *this;}
     ///@}
   private:
 

@@ -35,7 +35,7 @@ namespace Model
   class DirectQueryDataSource
   {
   public:
-    AWS_OPENSEARCHSERVICE_API DirectQueryDataSource();
+    AWS_OPENSEARCHSERVICE_API DirectQueryDataSource() = default;
     AWS_OPENSEARCHSERVICE_API DirectQueryDataSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API DirectQueryDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPENSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p> A unique, user-defined label to identify the data source within your
      * OpenSearch Service environment. </p>
      */
-    inline const Aws::String& GetDataSourceName() const{ return m_dataSourceName; }
+    inline const Aws::String& GetDataSourceName() const { return m_dataSourceName; }
     inline bool DataSourceNameHasBeenSet() const { return m_dataSourceNameHasBeenSet; }
-    inline void SetDataSourceName(const Aws::String& value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName = value; }
-    inline void SetDataSourceName(Aws::String&& value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName = std::move(value); }
-    inline void SetDataSourceName(const char* value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName.assign(value); }
-    inline DirectQueryDataSource& WithDataSourceName(const Aws::String& value) { SetDataSourceName(value); return *this;}
-    inline DirectQueryDataSource& WithDataSourceName(Aws::String&& value) { SetDataSourceName(std::move(value)); return *this;}
-    inline DirectQueryDataSource& WithDataSourceName(const char* value) { SetDataSourceName(value); return *this;}
+    template<typename DataSourceNameT = Aws::String>
+    void SetDataSourceName(DataSourceNameT&& value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName = std::forward<DataSourceNameT>(value); }
+    template<typename DataSourceNameT = Aws::String>
+    DirectQueryDataSource& WithDataSourceName(DataSourceNameT&& value) { SetDataSourceName(std::forward<DataSourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,12 @@ namespace Model
      * <p> The supported Amazon Web Services service that is used as the source for
      * direct queries in OpenSearch Service. </p>
      */
-    inline const DirectQueryDataSourceType& GetDataSourceType() const{ return m_dataSourceType; }
+    inline const DirectQueryDataSourceType& GetDataSourceType() const { return m_dataSourceType; }
     inline bool DataSourceTypeHasBeenSet() const { return m_dataSourceTypeHasBeenSet; }
-    inline void SetDataSourceType(const DirectQueryDataSourceType& value) { m_dataSourceTypeHasBeenSet = true; m_dataSourceType = value; }
-    inline void SetDataSourceType(DirectQueryDataSourceType&& value) { m_dataSourceTypeHasBeenSet = true; m_dataSourceType = std::move(value); }
-    inline DirectQueryDataSource& WithDataSourceType(const DirectQueryDataSourceType& value) { SetDataSourceType(value); return *this;}
-    inline DirectQueryDataSource& WithDataSourceType(DirectQueryDataSourceType&& value) { SetDataSourceType(std::move(value)); return *this;}
+    template<typename DataSourceTypeT = DirectQueryDataSourceType>
+    void SetDataSourceType(DataSourceTypeT&& value) { m_dataSourceTypeHasBeenSet = true; m_dataSourceType = std::forward<DataSourceTypeT>(value); }
+    template<typename DataSourceTypeT = DirectQueryDataSourceType>
+    DirectQueryDataSource& WithDataSourceType(DataSourceTypeT&& value) { SetDataSourceType(std::forward<DataSourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +72,12 @@ namespace Model
      * <p> A description that provides additional context and details about the data
      * source.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline DirectQueryDataSource& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DirectQueryDataSource& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DirectQueryDataSource& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DirectQueryDataSource& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,43 +85,40 @@ namespace Model
      * <p> A list of Amazon Resource Names (ARNs) for the OpenSearch collections that
      * are associated with the direct query data source. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetOpenSearchArns() const{ return m_openSearchArns; }
+    inline const Aws::Vector<Aws::String>& GetOpenSearchArns() const { return m_openSearchArns; }
     inline bool OpenSearchArnsHasBeenSet() const { return m_openSearchArnsHasBeenSet; }
-    inline void SetOpenSearchArns(const Aws::Vector<Aws::String>& value) { m_openSearchArnsHasBeenSet = true; m_openSearchArns = value; }
-    inline void SetOpenSearchArns(Aws::Vector<Aws::String>&& value) { m_openSearchArnsHasBeenSet = true; m_openSearchArns = std::move(value); }
-    inline DirectQueryDataSource& WithOpenSearchArns(const Aws::Vector<Aws::String>& value) { SetOpenSearchArns(value); return *this;}
-    inline DirectQueryDataSource& WithOpenSearchArns(Aws::Vector<Aws::String>&& value) { SetOpenSearchArns(std::move(value)); return *this;}
-    inline DirectQueryDataSource& AddOpenSearchArns(const Aws::String& value) { m_openSearchArnsHasBeenSet = true; m_openSearchArns.push_back(value); return *this; }
-    inline DirectQueryDataSource& AddOpenSearchArns(Aws::String&& value) { m_openSearchArnsHasBeenSet = true; m_openSearchArns.push_back(std::move(value)); return *this; }
-    inline DirectQueryDataSource& AddOpenSearchArns(const char* value) { m_openSearchArnsHasBeenSet = true; m_openSearchArns.push_back(value); return *this; }
+    template<typename OpenSearchArnsT = Aws::Vector<Aws::String>>
+    void SetOpenSearchArns(OpenSearchArnsT&& value) { m_openSearchArnsHasBeenSet = true; m_openSearchArns = std::forward<OpenSearchArnsT>(value); }
+    template<typename OpenSearchArnsT = Aws::Vector<Aws::String>>
+    DirectQueryDataSource& WithOpenSearchArns(OpenSearchArnsT&& value) { SetOpenSearchArns(std::forward<OpenSearchArnsT>(value)); return *this;}
+    template<typename OpenSearchArnsT = Aws::String>
+    DirectQueryDataSource& AddOpenSearchArns(OpenSearchArnsT&& value) { m_openSearchArnsHasBeenSet = true; m_openSearchArns.emplace_back(std::forward<OpenSearchArnsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The unique, system-generated identifier that represents the data source.</p>
      */
-    inline const Aws::String& GetDataSourceArn() const{ return m_dataSourceArn; }
+    inline const Aws::String& GetDataSourceArn() const { return m_dataSourceArn; }
     inline bool DataSourceArnHasBeenSet() const { return m_dataSourceArnHasBeenSet; }
-    inline void SetDataSourceArn(const Aws::String& value) { m_dataSourceArnHasBeenSet = true; m_dataSourceArn = value; }
-    inline void SetDataSourceArn(Aws::String&& value) { m_dataSourceArnHasBeenSet = true; m_dataSourceArn = std::move(value); }
-    inline void SetDataSourceArn(const char* value) { m_dataSourceArnHasBeenSet = true; m_dataSourceArn.assign(value); }
-    inline DirectQueryDataSource& WithDataSourceArn(const Aws::String& value) { SetDataSourceArn(value); return *this;}
-    inline DirectQueryDataSource& WithDataSourceArn(Aws::String&& value) { SetDataSourceArn(std::move(value)); return *this;}
-    inline DirectQueryDataSource& WithDataSourceArn(const char* value) { SetDataSourceArn(value); return *this;}
+    template<typename DataSourceArnT = Aws::String>
+    void SetDataSourceArn(DataSourceArnT&& value) { m_dataSourceArnHasBeenSet = true; m_dataSourceArn = std::forward<DataSourceArnT>(value); }
+    template<typename DataSourceArnT = Aws::String>
+    DirectQueryDataSource& WithDataSourceArn(DataSourceArnT&& value) { SetDataSourceArn(std::forward<DataSourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A list of tags attached to a direct query data source.</p>
      */
-    inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
+    inline const Aws::Vector<Tag>& GetTagList() const { return m_tagList; }
     inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
-    inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
-    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
-    inline DirectQueryDataSource& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
-    inline DirectQueryDataSource& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
-    inline DirectQueryDataSource& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
-    inline DirectQueryDataSource& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
+    template<typename TagListT = Aws::Vector<Tag>>
+    void SetTagList(TagListT&& value) { m_tagListHasBeenSet = true; m_tagList = std::forward<TagListT>(value); }
+    template<typename TagListT = Aws::Vector<Tag>>
+    DirectQueryDataSource& WithTagList(TagListT&& value) { SetTagList(std::forward<TagListT>(value)); return *this;}
+    template<typename TagListT = Tag>
+    DirectQueryDataSource& AddTagList(TagListT&& value) { m_tagListHasBeenSet = true; m_tagList.emplace_back(std::forward<TagListT>(value)); return *this; }
     ///@}
   private:
 

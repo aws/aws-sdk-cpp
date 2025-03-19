@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-ZendeskConnectorProfileProperties::ZendeskConnectorProfileProperties() : 
-    m_instanceUrlHasBeenSet(false)
-{
-}
-
 ZendeskConnectorProfileProperties::ZendeskConnectorProfileProperties(JsonView jsonValue)
-  : ZendeskConnectorProfileProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ZendeskConnectorProfileProperties& ZendeskConnectorProfileProperties::operator =
   if(jsonValue.ValueExists("instanceUrl"))
   {
     m_instanceUrl = jsonValue.GetString("instanceUrl");
-
     m_instanceUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ModifyStreamingPropertiesRequest::ModifyStreamingPropertiesRequest() : 
-    m_resourceIdHasBeenSet(false),
-    m_streamingPropertiesHasBeenSet(false)
-{
-}
-
 Aws::String ModifyStreamingPropertiesRequest::SerializePayload() const
 {
   JsonValue payload;

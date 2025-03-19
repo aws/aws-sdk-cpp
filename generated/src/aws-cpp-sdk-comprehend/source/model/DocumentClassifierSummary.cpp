@@ -18,19 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-DocumentClassifierSummary::DocumentClassifierSummary() : 
-    m_documentClassifierNameHasBeenSet(false),
-    m_numberOfVersions(0),
-    m_numberOfVersionsHasBeenSet(false),
-    m_latestVersionCreatedAtHasBeenSet(false),
-    m_latestVersionNameHasBeenSet(false),
-    m_latestVersionStatus(ModelStatus::NOT_SET),
-    m_latestVersionStatusHasBeenSet(false)
-{
-}
-
 DocumentClassifierSummary::DocumentClassifierSummary(JsonView jsonValue)
-  : DocumentClassifierSummary()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ DocumentClassifierSummary& DocumentClassifierSummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("DocumentClassifierName"))
   {
     m_documentClassifierName = jsonValue.GetString("DocumentClassifierName");
-
     m_documentClassifierNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfVersions"))
   {
     m_numberOfVersions = jsonValue.GetInteger("NumberOfVersions");
-
     m_numberOfVersionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestVersionCreatedAt"))
   {
     m_latestVersionCreatedAt = jsonValue.GetDouble("LatestVersionCreatedAt");
-
     m_latestVersionCreatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestVersionName"))
   {
     m_latestVersionName = jsonValue.GetString("LatestVersionName");
-
     m_latestVersionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestVersionStatus"))
   {
     m_latestVersionStatus = ModelStatusMapper::GetModelStatusForName(jsonValue.GetString("LatestVersionStatus"));
-
     m_latestVersionStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

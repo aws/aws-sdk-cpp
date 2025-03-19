@@ -18,18 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-DeploymentTarget::DeploymentTarget() : 
-    m_deploymentTargetType(DeploymentTargetType::NOT_SET),
-    m_deploymentTargetTypeHasBeenSet(false),
-    m_instanceTargetHasBeenSet(false),
-    m_lambdaTargetHasBeenSet(false),
-    m_ecsTargetHasBeenSet(false),
-    m_cloudFormationTargetHasBeenSet(false)
-{
-}
-
 DeploymentTarget::DeploymentTarget(JsonView jsonValue)
-  : DeploymentTarget()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ DeploymentTarget& DeploymentTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("deploymentTargetType"))
   {
     m_deploymentTargetType = DeploymentTargetTypeMapper::GetDeploymentTargetTypeForName(jsonValue.GetString("deploymentTargetType"));
-
     m_deploymentTargetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceTarget"))
   {
     m_instanceTarget = jsonValue.GetObject("instanceTarget");
-
     m_instanceTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaTarget"))
   {
     m_lambdaTarget = jsonValue.GetObject("lambdaTarget");
-
     m_lambdaTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ecsTarget"))
   {
     m_ecsTarget = jsonValue.GetObject("ecsTarget");
-
     m_ecsTargetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cloudFormationTarget"))
   {
     m_cloudFormationTarget = jsonValue.GetObject("cloudFormationTarget");
-
     m_cloudFormationTargetHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SnapshotFileGroup::SnapshotFileGroup() : 
-    m_filesHasBeenSet(false)
-{
-}
-
 SnapshotFileGroup::SnapshotFileGroup(JsonView jsonValue)
-  : SnapshotFileGroup()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SnapshotFileGroup& SnapshotFileGroup::operator =(JsonView jsonValue)
     }
     m_filesHasBeenSet = true;
   }
-
   return *this;
 }
 

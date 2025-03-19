@@ -28,7 +28,7 @@ namespace Model
   class AssociateIamInstanceProfileResponse
   {
   public:
-    AWS_EC2_API AssociateIamInstanceProfileResponse();
+    AWS_EC2_API AssociateIamInstanceProfileResponse() = default;
     AWS_EC2_API AssociateIamInstanceProfileResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API AssociateIamInstanceProfileResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the IAM instance profile association.</p>
      */
-    inline const IamInstanceProfileAssociation& GetIamInstanceProfileAssociation() const{ return m_iamInstanceProfileAssociation; }
-    inline void SetIamInstanceProfileAssociation(const IamInstanceProfileAssociation& value) { m_iamInstanceProfileAssociation = value; }
-    inline void SetIamInstanceProfileAssociation(IamInstanceProfileAssociation&& value) { m_iamInstanceProfileAssociation = std::move(value); }
-    inline AssociateIamInstanceProfileResponse& WithIamInstanceProfileAssociation(const IamInstanceProfileAssociation& value) { SetIamInstanceProfileAssociation(value); return *this;}
-    inline AssociateIamInstanceProfileResponse& WithIamInstanceProfileAssociation(IamInstanceProfileAssociation&& value) { SetIamInstanceProfileAssociation(std::move(value)); return *this;}
+    inline const IamInstanceProfileAssociation& GetIamInstanceProfileAssociation() const { return m_iamInstanceProfileAssociation; }
+    template<typename IamInstanceProfileAssociationT = IamInstanceProfileAssociation>
+    void SetIamInstanceProfileAssociation(IamInstanceProfileAssociationT&& value) { m_iamInstanceProfileAssociationHasBeenSet = true; m_iamInstanceProfileAssociation = std::forward<IamInstanceProfileAssociationT>(value); }
+    template<typename IamInstanceProfileAssociationT = IamInstanceProfileAssociation>
+    AssociateIamInstanceProfileResponse& WithIamInstanceProfileAssociation(IamInstanceProfileAssociationT&& value) { SetIamInstanceProfileAssociation(std::forward<IamInstanceProfileAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline AssociateIamInstanceProfileResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline AssociateIamInstanceProfileResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    AssociateIamInstanceProfileResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     IamInstanceProfileAssociation m_iamInstanceProfileAssociation;
+    bool m_iamInstanceProfileAssociationHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

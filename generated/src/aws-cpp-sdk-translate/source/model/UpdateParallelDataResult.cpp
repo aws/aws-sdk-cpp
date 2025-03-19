@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateParallelDataResult::UpdateParallelDataResult() : 
-    m_status(ParallelDataStatus::NOT_SET),
-    m_latestUpdateAttemptStatus(ParallelDataStatus::NOT_SET)
-{
-}
-
 UpdateParallelDataResult::UpdateParallelDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateParallelDataResult()
 {
   *this = result;
 }
@@ -35,33 +28,30 @@ UpdateParallelDataResult& UpdateParallelDataResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ParallelDataStatusMapper::GetParallelDataStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestUpdateAttemptStatus"))
   {
     m_latestUpdateAttemptStatus = ParallelDataStatusMapper::GetParallelDataStatusForName(jsonValue.GetString("LatestUpdateAttemptStatus"));
-
+    m_latestUpdateAttemptStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestUpdateAttemptAt"))
   {
     m_latestUpdateAttemptAt = jsonValue.GetDouble("LatestUpdateAttemptAt");
-
+    m_latestUpdateAttemptAtHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

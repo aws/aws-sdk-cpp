@@ -12,11 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMapRequest::DeleteMapRequest() : 
-    m_mapNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMapRequest::SerializePayload() const
 {
   return {};

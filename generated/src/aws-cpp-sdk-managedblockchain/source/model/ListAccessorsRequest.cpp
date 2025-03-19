@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAccessorsRequest::ListAccessorsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_networkType(AccessorNetworkType::NOT_SET),
-    m_networkTypeHasBeenSet(false)
-{
-}
-
 Aws::String ListAccessorsRequest::SerializePayload() const
 {
   return {};

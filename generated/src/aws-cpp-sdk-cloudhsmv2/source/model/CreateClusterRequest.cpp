@@ -12,19 +12,6 @@ using namespace Aws::CloudHSMV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateClusterRequest::CreateClusterRequest() : 
-    m_backupRetentionPolicyHasBeenSet(false),
-    m_hsmTypeHasBeenSet(false),
-    m_sourceBackupIdHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_networkType(NetworkType::NOT_SET),
-    m_networkTypeHasBeenSet(false),
-    m_tagListHasBeenSet(false),
-    m_mode(ClusterMode::NOT_SET),
-    m_modeHasBeenSet(false)
-{
-}
-
 Aws::String CreateClusterRequest::SerializePayload() const
 {
   JsonValue payload;

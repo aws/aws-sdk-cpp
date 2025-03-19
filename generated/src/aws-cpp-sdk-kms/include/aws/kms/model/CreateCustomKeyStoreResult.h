@@ -27,7 +27,7 @@ namespace Model
   class CreateCustomKeyStoreResult
   {
   public:
-    AWS_KMS_API CreateCustomKeyStoreResult();
+    AWS_KMS_API CreateCustomKeyStoreResult() = default;
     AWS_KMS_API CreateCustomKeyStoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KMS_API CreateCustomKeyStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>A unique identifier for the new custom key store.</p>
      */
-    inline const Aws::String& GetCustomKeyStoreId() const{ return m_customKeyStoreId; }
-    inline void SetCustomKeyStoreId(const Aws::String& value) { m_customKeyStoreId = value; }
-    inline void SetCustomKeyStoreId(Aws::String&& value) { m_customKeyStoreId = std::move(value); }
-    inline void SetCustomKeyStoreId(const char* value) { m_customKeyStoreId.assign(value); }
-    inline CreateCustomKeyStoreResult& WithCustomKeyStoreId(const Aws::String& value) { SetCustomKeyStoreId(value); return *this;}
-    inline CreateCustomKeyStoreResult& WithCustomKeyStoreId(Aws::String&& value) { SetCustomKeyStoreId(std::move(value)); return *this;}
-    inline CreateCustomKeyStoreResult& WithCustomKeyStoreId(const char* value) { SetCustomKeyStoreId(value); return *this;}
+    inline const Aws::String& GetCustomKeyStoreId() const { return m_customKeyStoreId; }
+    template<typename CustomKeyStoreIdT = Aws::String>
+    void SetCustomKeyStoreId(CustomKeyStoreIdT&& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = std::forward<CustomKeyStoreIdT>(value); }
+    template<typename CustomKeyStoreIdT = Aws::String>
+    CreateCustomKeyStoreResult& WithCustomKeyStoreId(CustomKeyStoreIdT&& value) { SetCustomKeyStoreId(std::forward<CustomKeyStoreIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateCustomKeyStoreResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateCustomKeyStoreResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateCustomKeyStoreResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateCustomKeyStoreResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_customKeyStoreId;
+    bool m_customKeyStoreIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

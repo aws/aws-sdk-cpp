@@ -18,18 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-AttributeValue::AttributeValue() : 
-    m_sHasBeenSet(false),
-    m_nHasBeenSet(false),
-    m_bHasBeenSet(false),
-    m_sSHasBeenSet(false),
-    m_nSHasBeenSet(false),
-    m_bSHasBeenSet(false)
-{
-}
-
 AttributeValue::AttributeValue(JsonView jsonValue)
-  : AttributeValue()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ AttributeValue& AttributeValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S"))
   {
     m_s = jsonValue.GetString("S");
-
     m_sHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("N"))
   {
     m_n = jsonValue.GetString("N");
-
     m_nHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("B"))
   {
     m_b = jsonValue.GetString("B");
-
     m_bHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SS"))
   {
     Aws::Utils::Array<JsonView> sSJsonList = jsonValue.GetArray("SS");
@@ -66,7 +49,6 @@ AttributeValue& AttributeValue::operator =(JsonView jsonValue)
     }
     m_sSHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NS"))
   {
     Aws::Utils::Array<JsonView> nSJsonList = jsonValue.GetArray("NS");
@@ -76,7 +58,6 @@ AttributeValue& AttributeValue::operator =(JsonView jsonValue)
     }
     m_nSHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BS"))
   {
     Aws::Utils::Array<JsonView> bSJsonList = jsonValue.GetArray("BS");
@@ -86,7 +67,6 @@ AttributeValue& AttributeValue::operator =(JsonView jsonValue)
     }
     m_bSHasBeenSet = true;
   }
-
   return *this;
 }
 

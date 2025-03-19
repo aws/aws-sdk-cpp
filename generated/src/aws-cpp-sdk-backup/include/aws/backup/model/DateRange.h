@@ -36,7 +36,7 @@ namespace Model
   class DateRange
   {
   public:
-    AWS_BACKUP_API DateRange();
+    AWS_BACKUP_API DateRange() = default;
     AWS_BACKUP_API DateRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API DateRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
      * Unix format and Coordinated Universal Time (UTC), and it is accurate to
      * milliseconds (milliseconds are optional).</p>
      */
-    inline const Aws::Utils::DateTime& GetFromDate() const{ return m_fromDate; }
+    inline const Aws::Utils::DateTime& GetFromDate() const { return m_fromDate; }
     inline bool FromDateHasBeenSet() const { return m_fromDateHasBeenSet; }
-    inline void SetFromDate(const Aws::Utils::DateTime& value) { m_fromDateHasBeenSet = true; m_fromDate = value; }
-    inline void SetFromDate(Aws::Utils::DateTime&& value) { m_fromDateHasBeenSet = true; m_fromDate = std::move(value); }
-    inline DateRange& WithFromDate(const Aws::Utils::DateTime& value) { SetFromDate(value); return *this;}
-    inline DateRange& WithFromDate(Aws::Utils::DateTime&& value) { SetFromDate(std::move(value)); return *this;}
+    template<typename FromDateT = Aws::Utils::DateTime>
+    void SetFromDate(FromDateT&& value) { m_fromDateHasBeenSet = true; m_fromDate = std::forward<FromDateT>(value); }
+    template<typename FromDateT = Aws::Utils::DateTime>
+    DateRange& WithFromDate(FromDateT&& value) { SetFromDate(std::forward<FromDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,19 +62,19 @@ namespace Model
      * format and Coordinated Universal Time (UTC), and it is accurate to milliseconds
      * (milliseconds are optional).</p>
      */
-    inline const Aws::Utils::DateTime& GetToDate() const{ return m_toDate; }
+    inline const Aws::Utils::DateTime& GetToDate() const { return m_toDate; }
     inline bool ToDateHasBeenSet() const { return m_toDateHasBeenSet; }
-    inline void SetToDate(const Aws::Utils::DateTime& value) { m_toDateHasBeenSet = true; m_toDate = value; }
-    inline void SetToDate(Aws::Utils::DateTime&& value) { m_toDateHasBeenSet = true; m_toDate = std::move(value); }
-    inline DateRange& WithToDate(const Aws::Utils::DateTime& value) { SetToDate(value); return *this;}
-    inline DateRange& WithToDate(Aws::Utils::DateTime&& value) { SetToDate(std::move(value)); return *this;}
+    template<typename ToDateT = Aws::Utils::DateTime>
+    void SetToDate(ToDateT&& value) { m_toDateHasBeenSet = true; m_toDate = std::forward<ToDateT>(value); }
+    template<typename ToDateT = Aws::Utils::DateTime>
+    DateRange& WithToDate(ToDateT&& value) { SetToDate(std::forward<ToDateT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_fromDate;
+    Aws::Utils::DateTime m_fromDate{};
     bool m_fromDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_toDate;
+    Aws::Utils::DateTime m_toDate{};
     bool m_toDateHasBeenSet = false;
   };
 

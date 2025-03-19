@@ -27,37 +27,35 @@ namespace Model
   class MediaTypeHeaderResult
   {
   public:
-    AWS_RESTJSONPROTOCOL_API MediaTypeHeaderResult();
+    AWS_RESTJSONPROTOCOL_API MediaTypeHeaderResult() = default;
     AWS_RESTJSONPROTOCOL_API MediaTypeHeaderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESTJSONPROTOCOL_API MediaTypeHeaderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetJson() const{ return m_json; }
-    inline void SetJson(const Aws::String& value) { m_json = value; }
-    inline void SetJson(Aws::String&& value) { m_json = std::move(value); }
-    inline void SetJson(const char* value) { m_json.assign(value); }
-    inline MediaTypeHeaderResult& WithJson(const Aws::String& value) { SetJson(value); return *this;}
-    inline MediaTypeHeaderResult& WithJson(Aws::String&& value) { SetJson(std::move(value)); return *this;}
-    inline MediaTypeHeaderResult& WithJson(const char* value) { SetJson(value); return *this;}
+    inline const Aws::String& GetJson() const { return m_json; }
+    template<typename JsonT = Aws::String>
+    void SetJson(JsonT&& value) { m_jsonHasBeenSet = true; m_json = std::forward<JsonT>(value); }
+    template<typename JsonT = Aws::String>
+    MediaTypeHeaderResult& WithJson(JsonT&& value) { SetJson(std::forward<JsonT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline MediaTypeHeaderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline MediaTypeHeaderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline MediaTypeHeaderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    MediaTypeHeaderResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_json;
+    bool m_jsonHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,14 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateWorkerScheduleRequest::UpdateWorkerScheduleRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_workerIdHasBeenSet(false),
-    m_updatedSessionActionsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateWorkerScheduleRequest::SerializePayload() const
 {
   JsonValue payload;

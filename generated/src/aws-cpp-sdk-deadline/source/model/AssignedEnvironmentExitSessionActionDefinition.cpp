@@ -18,13 +18,7 @@ namespace deadline
 namespace Model
 {
 
-AssignedEnvironmentExitSessionActionDefinition::AssignedEnvironmentExitSessionActionDefinition() : 
-    m_environmentIdHasBeenSet(false)
-{
-}
-
 AssignedEnvironmentExitSessionActionDefinition::AssignedEnvironmentExitSessionActionDefinition(JsonView jsonValue)
-  : AssignedEnvironmentExitSessionActionDefinition()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AssignedEnvironmentExitSessionActionDefinition& AssignedEnvironmentExitSessionAc
   if(jsonValue.ValueExists("environmentId"))
   {
     m_environmentId = jsonValue.GetString("environmentId");
-
     m_environmentIdHasBeenSet = true;
   }
-
   return *this;
 }
 

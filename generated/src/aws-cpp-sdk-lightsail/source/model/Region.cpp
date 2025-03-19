@@ -18,19 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-Region::Region() : 
-    m_continentCodeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_name(RegionName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_relationalDatabaseAvailabilityZonesHasBeenSet(false)
-{
-}
-
 Region::Region(JsonView jsonValue)
-  : Region()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ Region& Region::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("continentCode"))
   {
     m_continentCode = jsonValue.GetString("continentCode");
-
     m_continentCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = RegionNameMapper::GetRegionNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("availabilityZones"))
   {
     Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("availabilityZones");
@@ -74,7 +54,6 @@ Region& Region::operator =(JsonView jsonValue)
     }
     m_availabilityZonesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relationalDatabaseAvailabilityZones"))
   {
     Aws::Utils::Array<JsonView> relationalDatabaseAvailabilityZonesJsonList = jsonValue.GetArray("relationalDatabaseAvailabilityZones");
@@ -84,7 +63,6 @@ Region& Region::operator =(JsonView jsonValue)
     }
     m_relationalDatabaseAvailabilityZonesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,12 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetFunction2020_05_31Request::GetFunction2020_05_31Request() : 
-    m_nameHasBeenSet(false),
-    m_stage(FunctionStage::NOT_SET),
-    m_stageHasBeenSet(false)
-{
-}
 
 Aws::String GetFunction2020_05_31Request::SerializePayload() const
 {

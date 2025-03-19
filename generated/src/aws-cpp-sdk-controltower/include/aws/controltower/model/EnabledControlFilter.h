@@ -36,7 +36,7 @@ namespace Model
   class EnabledControlFilter
   {
   public:
-    AWS_CONTROLTOWER_API EnabledControlFilter();
+    AWS_CONTROLTOWER_API EnabledControlFilter() = default;
     AWS_CONTROLTOWER_API EnabledControlFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONTROLTOWER_API EnabledControlFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONTROLTOWER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,43 +46,40 @@ namespace Model
     /**
      * <p>The set of <code>controlIdentifier</code> returned by the filter. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetControlIdentifiers() const{ return m_controlIdentifiers; }
+    inline const Aws::Vector<Aws::String>& GetControlIdentifiers() const { return m_controlIdentifiers; }
     inline bool ControlIdentifiersHasBeenSet() const { return m_controlIdentifiersHasBeenSet; }
-    inline void SetControlIdentifiers(const Aws::Vector<Aws::String>& value) { m_controlIdentifiersHasBeenSet = true; m_controlIdentifiers = value; }
-    inline void SetControlIdentifiers(Aws::Vector<Aws::String>&& value) { m_controlIdentifiersHasBeenSet = true; m_controlIdentifiers = std::move(value); }
-    inline EnabledControlFilter& WithControlIdentifiers(const Aws::Vector<Aws::String>& value) { SetControlIdentifiers(value); return *this;}
-    inline EnabledControlFilter& WithControlIdentifiers(Aws::Vector<Aws::String>&& value) { SetControlIdentifiers(std::move(value)); return *this;}
-    inline EnabledControlFilter& AddControlIdentifiers(const Aws::String& value) { m_controlIdentifiersHasBeenSet = true; m_controlIdentifiers.push_back(value); return *this; }
-    inline EnabledControlFilter& AddControlIdentifiers(Aws::String&& value) { m_controlIdentifiersHasBeenSet = true; m_controlIdentifiers.push_back(std::move(value)); return *this; }
-    inline EnabledControlFilter& AddControlIdentifiers(const char* value) { m_controlIdentifiersHasBeenSet = true; m_controlIdentifiers.push_back(value); return *this; }
+    template<typename ControlIdentifiersT = Aws::Vector<Aws::String>>
+    void SetControlIdentifiers(ControlIdentifiersT&& value) { m_controlIdentifiersHasBeenSet = true; m_controlIdentifiers = std::forward<ControlIdentifiersT>(value); }
+    template<typename ControlIdentifiersT = Aws::Vector<Aws::String>>
+    EnabledControlFilter& WithControlIdentifiers(ControlIdentifiersT&& value) { SetControlIdentifiers(std::forward<ControlIdentifiersT>(value)); return *this;}
+    template<typename ControlIdentifiersT = Aws::String>
+    EnabledControlFilter& AddControlIdentifiers(ControlIdentifiersT&& value) { m_controlIdentifiersHasBeenSet = true; m_controlIdentifiers.emplace_back(std::forward<ControlIdentifiersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of <code>DriftStatus</code> items.</p>
      */
-    inline const Aws::Vector<DriftStatus>& GetDriftStatuses() const{ return m_driftStatuses; }
+    inline const Aws::Vector<DriftStatus>& GetDriftStatuses() const { return m_driftStatuses; }
     inline bool DriftStatusesHasBeenSet() const { return m_driftStatusesHasBeenSet; }
-    inline void SetDriftStatuses(const Aws::Vector<DriftStatus>& value) { m_driftStatusesHasBeenSet = true; m_driftStatuses = value; }
-    inline void SetDriftStatuses(Aws::Vector<DriftStatus>&& value) { m_driftStatusesHasBeenSet = true; m_driftStatuses = std::move(value); }
-    inline EnabledControlFilter& WithDriftStatuses(const Aws::Vector<DriftStatus>& value) { SetDriftStatuses(value); return *this;}
-    inline EnabledControlFilter& WithDriftStatuses(Aws::Vector<DriftStatus>&& value) { SetDriftStatuses(std::move(value)); return *this;}
-    inline EnabledControlFilter& AddDriftStatuses(const DriftStatus& value) { m_driftStatusesHasBeenSet = true; m_driftStatuses.push_back(value); return *this; }
-    inline EnabledControlFilter& AddDriftStatuses(DriftStatus&& value) { m_driftStatusesHasBeenSet = true; m_driftStatuses.push_back(std::move(value)); return *this; }
+    template<typename DriftStatusesT = Aws::Vector<DriftStatus>>
+    void SetDriftStatuses(DriftStatusesT&& value) { m_driftStatusesHasBeenSet = true; m_driftStatuses = std::forward<DriftStatusesT>(value); }
+    template<typename DriftStatusesT = Aws::Vector<DriftStatus>>
+    EnabledControlFilter& WithDriftStatuses(DriftStatusesT&& value) { SetDriftStatuses(std::forward<DriftStatusesT>(value)); return *this;}
+    inline EnabledControlFilter& AddDriftStatuses(DriftStatus value) { m_driftStatusesHasBeenSet = true; m_driftStatuses.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of <code>EnablementStatus</code> items.</p>
      */
-    inline const Aws::Vector<EnablementStatus>& GetStatuses() const{ return m_statuses; }
+    inline const Aws::Vector<EnablementStatus>& GetStatuses() const { return m_statuses; }
     inline bool StatusesHasBeenSet() const { return m_statusesHasBeenSet; }
-    inline void SetStatuses(const Aws::Vector<EnablementStatus>& value) { m_statusesHasBeenSet = true; m_statuses = value; }
-    inline void SetStatuses(Aws::Vector<EnablementStatus>&& value) { m_statusesHasBeenSet = true; m_statuses = std::move(value); }
-    inline EnabledControlFilter& WithStatuses(const Aws::Vector<EnablementStatus>& value) { SetStatuses(value); return *this;}
-    inline EnabledControlFilter& WithStatuses(Aws::Vector<EnablementStatus>&& value) { SetStatuses(std::move(value)); return *this;}
-    inline EnabledControlFilter& AddStatuses(const EnablementStatus& value) { m_statusesHasBeenSet = true; m_statuses.push_back(value); return *this; }
-    inline EnabledControlFilter& AddStatuses(EnablementStatus&& value) { m_statusesHasBeenSet = true; m_statuses.push_back(std::move(value)); return *this; }
+    template<typename StatusesT = Aws::Vector<EnablementStatus>>
+    void SetStatuses(StatusesT&& value) { m_statusesHasBeenSet = true; m_statuses = std::forward<StatusesT>(value); }
+    template<typename StatusesT = Aws::Vector<EnablementStatus>>
+    EnabledControlFilter& WithStatuses(StatusesT&& value) { SetStatuses(std::forward<StatusesT>(value)); return *this;}
+    inline EnabledControlFilter& AddStatuses(EnablementStatus value) { m_statusesHasBeenSet = true; m_statuses.push_back(value); return *this; }
     ///@}
   private:
 

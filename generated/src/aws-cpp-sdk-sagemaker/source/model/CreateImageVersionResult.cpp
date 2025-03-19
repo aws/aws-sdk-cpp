@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateImageVersionResult::CreateImageVersionResult()
-{
-}
-
 CreateImageVersionResult::CreateImageVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateImageVersionResult& CreateImageVersionResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("ImageVersionArn"))
   {
     m_imageVersionArn = jsonValue.GetString("ImageVersionArn");
-
+    m_imageVersionArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

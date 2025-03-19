@@ -34,7 +34,7 @@ namespace Model
   class TargetPlatform
   {
   public:
-    AWS_LOOKOUTFORVISION_API TargetPlatform();
+    AWS_LOOKOUTFORVISION_API TargetPlatform() = default;
     AWS_LOOKOUTFORVISION_API TargetPlatform(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTFORVISION_API TargetPlatform& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * <p>The target operating system for the model. Linux is the only operating system
      * that is currently supported. </p>
      */
-    inline const TargetPlatformOs& GetOs() const{ return m_os; }
+    inline TargetPlatformOs GetOs() const { return m_os; }
     inline bool OsHasBeenSet() const { return m_osHasBeenSet; }
-    inline void SetOs(const TargetPlatformOs& value) { m_osHasBeenSet = true; m_os = value; }
-    inline void SetOs(TargetPlatformOs&& value) { m_osHasBeenSet = true; m_os = std::move(value); }
-    inline TargetPlatform& WithOs(const TargetPlatformOs& value) { SetOs(value); return *this;}
-    inline TargetPlatform& WithOs(TargetPlatformOs&& value) { SetOs(std::move(value)); return *this;}
+    inline void SetOs(TargetPlatformOs value) { m_osHasBeenSet = true; m_os = value; }
+    inline TargetPlatform& WithOs(TargetPlatformOs value) { SetOs(value); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,10 @@ namespace Model
      * are X86_64 (64-bit version of the x86 instruction set) and ARM_64 (ARMv8 64-bit
      * CPU). </p>
      */
-    inline const TargetPlatformArch& GetArch() const{ return m_arch; }
+    inline TargetPlatformArch GetArch() const { return m_arch; }
     inline bool ArchHasBeenSet() const { return m_archHasBeenSet; }
-    inline void SetArch(const TargetPlatformArch& value) { m_archHasBeenSet = true; m_arch = value; }
-    inline void SetArch(TargetPlatformArch&& value) { m_archHasBeenSet = true; m_arch = std::move(value); }
-    inline TargetPlatform& WithArch(const TargetPlatformArch& value) { SetArch(value); return *this;}
-    inline TargetPlatform& WithArch(TargetPlatformArch&& value) { SetArch(std::move(value)); return *this;}
+    inline void SetArch(TargetPlatformArch value) { m_archHasBeenSet = true; m_arch = value; }
+    inline TargetPlatform& WithArch(TargetPlatformArch value) { SetArch(value); return *this;}
     ///@}
 
     ///@{
@@ -81,22 +77,20 @@ namespace Model
      * </p> </li> <li> <p> <code>mattr</code>: CPU flags. For example, <code>{'mattr':
      * ['+neon', '+vfpv4']}</code> </p> </li> </ul>
      */
-    inline const TargetPlatformAccelerator& GetAccelerator() const{ return m_accelerator; }
+    inline TargetPlatformAccelerator GetAccelerator() const { return m_accelerator; }
     inline bool AcceleratorHasBeenSet() const { return m_acceleratorHasBeenSet; }
-    inline void SetAccelerator(const TargetPlatformAccelerator& value) { m_acceleratorHasBeenSet = true; m_accelerator = value; }
-    inline void SetAccelerator(TargetPlatformAccelerator&& value) { m_acceleratorHasBeenSet = true; m_accelerator = std::move(value); }
-    inline TargetPlatform& WithAccelerator(const TargetPlatformAccelerator& value) { SetAccelerator(value); return *this;}
-    inline TargetPlatform& WithAccelerator(TargetPlatformAccelerator&& value) { SetAccelerator(std::move(value)); return *this;}
+    inline void SetAccelerator(TargetPlatformAccelerator value) { m_acceleratorHasBeenSet = true; m_accelerator = value; }
+    inline TargetPlatform& WithAccelerator(TargetPlatformAccelerator value) { SetAccelerator(value); return *this;}
     ///@}
   private:
 
-    TargetPlatformOs m_os;
+    TargetPlatformOs m_os{TargetPlatformOs::NOT_SET};
     bool m_osHasBeenSet = false;
 
-    TargetPlatformArch m_arch;
+    TargetPlatformArch m_arch{TargetPlatformArch::NOT_SET};
     bool m_archHasBeenSet = false;
 
-    TargetPlatformAccelerator m_accelerator;
+    TargetPlatformAccelerator m_accelerator{TargetPlatformAccelerator::NOT_SET};
     bool m_acceleratorHasBeenSet = false;
   };
 

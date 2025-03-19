@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Phase1EncryptionAlgorithmsListValue::Phase1EncryptionAlgorithmsListValue() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 Phase1EncryptionAlgorithmsListValue::Phase1EncryptionAlgorithmsListValue(const XmlNode& xmlNode)
-  : Phase1EncryptionAlgorithmsListValue()
 {
   *this = xmlNode;
 }

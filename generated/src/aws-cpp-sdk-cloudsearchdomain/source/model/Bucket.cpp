@@ -18,15 +18,7 @@ namespace CloudSearchDomain
 namespace Model
 {
 
-Bucket::Bucket() : 
-    m_valueHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
-{
-}
-
 Bucket::Bucket(JsonView jsonValue)
-  : Bucket()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Bucket& Bucket::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetInt64("count");
-
     m_countHasBeenSet = true;
   }
-
   return *this;
 }
 

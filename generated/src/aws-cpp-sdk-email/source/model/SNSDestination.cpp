@@ -20,13 +20,7 @@ namespace SES
 namespace Model
 {
 
-SNSDestination::SNSDestination() : 
-    m_topicARNHasBeenSet(false)
-{
-}
-
 SNSDestination::SNSDestination(const XmlNode& xmlNode)
-  : SNSDestination()
 {
   *this = xmlNode;
 }

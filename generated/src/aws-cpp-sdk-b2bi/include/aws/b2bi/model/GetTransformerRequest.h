@@ -21,7 +21,7 @@ namespace Model
   class GetTransformerRequest : public B2BIRequest
   {
   public:
-    AWS_B2BI_API GetTransformerRequest();
+    AWS_B2BI_API GetTransformerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>Specifies the system-assigned unique identifier for the transformer.</p>
      */
-    inline const Aws::String& GetTransformerId() const{ return m_transformerId; }
+    inline const Aws::String& GetTransformerId() const { return m_transformerId; }
     inline bool TransformerIdHasBeenSet() const { return m_transformerIdHasBeenSet; }
-    inline void SetTransformerId(const Aws::String& value) { m_transformerIdHasBeenSet = true; m_transformerId = value; }
-    inline void SetTransformerId(Aws::String&& value) { m_transformerIdHasBeenSet = true; m_transformerId = std::move(value); }
-    inline void SetTransformerId(const char* value) { m_transformerIdHasBeenSet = true; m_transformerId.assign(value); }
-    inline GetTransformerRequest& WithTransformerId(const Aws::String& value) { SetTransformerId(value); return *this;}
-    inline GetTransformerRequest& WithTransformerId(Aws::String&& value) { SetTransformerId(std::move(value)); return *this;}
-    inline GetTransformerRequest& WithTransformerId(const char* value) { SetTransformerId(value); return *this;}
+    template<typename TransformerIdT = Aws::String>
+    void SetTransformerId(TransformerIdT&& value) { m_transformerIdHasBeenSet = true; m_transformerId = std::forward<TransformerIdT>(value); }
+    template<typename TransformerIdT = Aws::String>
+    GetTransformerRequest& WithTransformerId(TransformerIdT&& value) { SetTransformerId(std::forward<TransformerIdT>(value)); return *this;}
     ///@}
   private:
 

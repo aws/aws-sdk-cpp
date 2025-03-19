@@ -18,15 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-TagFilter::TagFilter() : 
-    m_andConditionsHasBeenSet(false),
-    m_orConditionsHasBeenSet(false),
-    m_tagConditionHasBeenSet(false)
-{
-}
-
 TagFilter::TagFilter(JsonView jsonValue)
-  : TagFilter()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ TagFilter& TagFilter::operator =(JsonView jsonValue)
     }
     m_andConditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("orConditions"))
   {
     Aws::Utils::Array<JsonView> orConditionsJsonList = jsonValue.GetArray("orConditions");
@@ -52,14 +43,11 @@ TagFilter& TagFilter::operator =(JsonView jsonValue)
     }
     m_orConditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tagCondition"))
   {
     m_tagCondition = jsonValue.GetObject("tagCondition");
-
     m_tagConditionHasBeenSet = true;
   }
-
   return *this;
 }
 

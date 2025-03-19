@@ -12,16 +12,6 @@ using namespace Aws::Health::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeEventAggregatesRequest::DescribeEventAggregatesRequest() : 
-    m_filterHasBeenSet(false),
-    m_aggregateField(EventAggregateField::NOT_SET),
-    m_aggregateFieldHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEventAggregatesRequest::SerializePayload() const
 {
   JsonValue payload;

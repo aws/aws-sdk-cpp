@@ -18,14 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-Resource::Resource() : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 Resource::Resource(JsonView jsonValue)
-  : Resource()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Resource& Resource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetObject("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

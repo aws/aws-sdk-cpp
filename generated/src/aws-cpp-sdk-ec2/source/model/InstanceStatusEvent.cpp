@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceStatusEvent::InstanceStatusEvent() : 
-    m_instanceEventIdHasBeenSet(false),
-    m_code(EventCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_notAfterHasBeenSet(false),
-    m_notBeforeHasBeenSet(false),
-    m_notBeforeDeadlineHasBeenSet(false)
-{
-}
-
 InstanceStatusEvent::InstanceStatusEvent(const XmlNode& xmlNode)
-  : InstanceStatusEvent()
 {
   *this = xmlNode;
 }
@@ -52,7 +40,7 @@ InstanceStatusEvent& InstanceStatusEvent::operator =(const XmlNode& xmlNode)
     XmlNode codeNode = resultNode.FirstChild("code");
     if(!codeNode.IsNull())
     {
-      m_code = EventCodeMapper::GetEventCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()).c_str());
+      m_code = EventCodeMapper::GetEventCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()));
       m_codeHasBeenSet = true;
     }
     XmlNode descriptionNode = resultNode.FirstChild("description");

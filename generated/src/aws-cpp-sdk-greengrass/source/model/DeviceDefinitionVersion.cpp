@@ -18,13 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-DeviceDefinitionVersion::DeviceDefinitionVersion() : 
-    m_devicesHasBeenSet(false)
-{
-}
-
 DeviceDefinitionVersion::DeviceDefinitionVersion(JsonView jsonValue)
-  : DeviceDefinitionVersion()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ DeviceDefinitionVersion& DeviceDefinitionVersion::operator =(JsonView jsonValue)
     }
     m_devicesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TransformOutput::TransformOutput() : 
-    m_s3OutputPathHasBeenSet(false),
-    m_acceptHasBeenSet(false),
-    m_assembleWith(AssemblyType::NOT_SET),
-    m_assembleWithHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 TransformOutput::TransformOutput(JsonView jsonValue)
-  : TransformOutput()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ TransformOutput& TransformOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3OutputPath"))
   {
     m_s3OutputPath = jsonValue.GetString("S3OutputPath");
-
     m_s3OutputPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Accept"))
   {
     m_accept = jsonValue.GetString("Accept");
-
     m_acceptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssembleWith"))
   {
     m_assembleWith = AssemblyTypeMapper::GetAssemblyTypeForName(jsonValue.GetString("AssembleWith"));
-
     m_assembleWithHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,23 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ScatterPlotConfiguration::ScatterPlotConfiguration() : 
-    m_fieldWellsHasBeenSet(false),
-    m_sortConfigurationHasBeenSet(false),
-    m_xAxisLabelOptionsHasBeenSet(false),
-    m_xAxisDisplayOptionsHasBeenSet(false),
-    m_yAxisLabelOptionsHasBeenSet(false),
-    m_yAxisDisplayOptionsHasBeenSet(false),
-    m_legendHasBeenSet(false),
-    m_dataLabelsHasBeenSet(false),
-    m_tooltipHasBeenSet(false),
-    m_visualPaletteHasBeenSet(false),
-    m_interactionsHasBeenSet(false)
-{
-}
-
 ScatterPlotConfiguration::ScatterPlotConfiguration(JsonView jsonValue)
-  : ScatterPlotConfiguration()
 {
   *this = jsonValue;
 }
@@ -44,80 +28,58 @@ ScatterPlotConfiguration& ScatterPlotConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("FieldWells"))
   {
     m_fieldWells = jsonValue.GetObject("FieldWells");
-
     m_fieldWellsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SortConfiguration"))
   {
     m_sortConfiguration = jsonValue.GetObject("SortConfiguration");
-
     m_sortConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("XAxisLabelOptions"))
   {
     m_xAxisLabelOptions = jsonValue.GetObject("XAxisLabelOptions");
-
     m_xAxisLabelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("XAxisDisplayOptions"))
   {
     m_xAxisDisplayOptions = jsonValue.GetObject("XAxisDisplayOptions");
-
     m_xAxisDisplayOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("YAxisLabelOptions"))
   {
     m_yAxisLabelOptions = jsonValue.GetObject("YAxisLabelOptions");
-
     m_yAxisLabelOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("YAxisDisplayOptions"))
   {
     m_yAxisDisplayOptions = jsonValue.GetObject("YAxisDisplayOptions");
-
     m_yAxisDisplayOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Legend"))
   {
     m_legend = jsonValue.GetObject("Legend");
-
     m_legendHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataLabels"))
   {
     m_dataLabels = jsonValue.GetObject("DataLabels");
-
     m_dataLabelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tooltip"))
   {
     m_tooltip = jsonValue.GetObject("Tooltip");
-
     m_tooltipHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisualPalette"))
   {
     m_visualPalette = jsonValue.GetObject("VisualPalette");
-
     m_visualPaletteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interactions"))
   {
     m_interactions = jsonValue.GetObject("Interactions");
-
     m_interactionsHasBeenSet = true;
   }
-
   return *this;
 }
 

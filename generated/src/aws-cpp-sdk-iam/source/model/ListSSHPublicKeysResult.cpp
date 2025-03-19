@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListSSHPublicKeysResult::ListSSHPublicKeysResult() : 
-    m_isTruncated(false)
-{
-}
-
 ListSSHPublicKeysResult::ListSSHPublicKeysResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ListSSHPublicKeysResult()
 {
   *this = result;
 }
@@ -44,28 +38,33 @@ ListSSHPublicKeysResult& ListSSHPublicKeysResult::operator =(const Aws::AmazonWe
     if(!sSHPublicKeysNode.IsNull())
     {
       XmlNode sSHPublicKeysMember = sSHPublicKeysNode.FirstChild("member");
+      m_sSHPublicKeysHasBeenSet = !sSHPublicKeysMember.IsNull();
       while(!sSHPublicKeysMember.IsNull())
       {
         m_sSHPublicKeys.push_back(sSHPublicKeysMember);
         sSHPublicKeysMember = sSHPublicKeysMember.NextNode("member");
       }
 
+      m_sSHPublicKeysHasBeenSet = true;
     }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
     if(!isTruncatedNode.IsNull())
     {
       m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
+      m_isTruncatedHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::ListSSHPublicKeysResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -12,15 +12,6 @@ using namespace Aws::RAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateResourceShareRequest::UpdateResourceShareRequest() : 
-    m_resourceShareArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_allowExternalPrincipals(false),
-    m_allowExternalPrincipalsHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
-{
-}
-
 Aws::String UpdateResourceShareRequest::SerializePayload() const
 {
   JsonValue payload;

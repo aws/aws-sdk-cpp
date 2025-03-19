@@ -9,8 +9,8 @@
 #include <aws/deadline/model/ParameterFilterExpression.h>
 #include <aws/deadline/model/SearchTermFilterExpression.h>
 #include <aws/deadline/model/StringFilterExpression.h>
+#include <aws/core/utils/memory/stl/AWSAllocator.h>
 #include <utility>
-#include <memory>
 
 namespace Aws
 {
@@ -36,7 +36,7 @@ namespace Model
   class SearchFilterExpression
   {
   public:
-    AWS_DEADLINE_API SearchFilterExpression();
+    AWS_DEADLINE_API SearchFilterExpression() = default;
     AWS_DEADLINE_API SearchFilterExpression(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API SearchFilterExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,60 +46,65 @@ namespace Model
     /**
      * <p>Filters based on date and time.</p>
      */
-    inline const DateTimeFilterExpression& GetDateTimeFilter() const{ return m_dateTimeFilter; }
+    inline const DateTimeFilterExpression& GetDateTimeFilter() const { return m_dateTimeFilter; }
     inline bool DateTimeFilterHasBeenSet() const { return m_dateTimeFilterHasBeenSet; }
-    inline void SetDateTimeFilter(const DateTimeFilterExpression& value) { m_dateTimeFilterHasBeenSet = true; m_dateTimeFilter = value; }
-    inline void SetDateTimeFilter(DateTimeFilterExpression&& value) { m_dateTimeFilterHasBeenSet = true; m_dateTimeFilter = std::move(value); }
-    inline SearchFilterExpression& WithDateTimeFilter(const DateTimeFilterExpression& value) { SetDateTimeFilter(value); return *this;}
-    inline SearchFilterExpression& WithDateTimeFilter(DateTimeFilterExpression&& value) { SetDateTimeFilter(std::move(value)); return *this;}
+    template<typename DateTimeFilterT = DateTimeFilterExpression>
+    void SetDateTimeFilter(DateTimeFilterT&& value) { m_dateTimeFilterHasBeenSet = true; m_dateTimeFilter = std::forward<DateTimeFilterT>(value); }
+    template<typename DateTimeFilterT = DateTimeFilterExpression>
+    SearchFilterExpression& WithDateTimeFilter(DateTimeFilterT&& value) { SetDateTimeFilter(std::forward<DateTimeFilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filters by parameter.</p>
      */
-    inline const ParameterFilterExpression& GetParameterFilter() const{ return m_parameterFilter; }
+    inline const ParameterFilterExpression& GetParameterFilter() const { return m_parameterFilter; }
     inline bool ParameterFilterHasBeenSet() const { return m_parameterFilterHasBeenSet; }
-    inline void SetParameterFilter(const ParameterFilterExpression& value) { m_parameterFilterHasBeenSet = true; m_parameterFilter = value; }
-    inline void SetParameterFilter(ParameterFilterExpression&& value) { m_parameterFilterHasBeenSet = true; m_parameterFilter = std::move(value); }
-    inline SearchFilterExpression& WithParameterFilter(const ParameterFilterExpression& value) { SetParameterFilter(value); return *this;}
-    inline SearchFilterExpression& WithParameterFilter(ParameterFilterExpression&& value) { SetParameterFilter(std::move(value)); return *this;}
+    template<typename ParameterFilterT = ParameterFilterExpression>
+    void SetParameterFilter(ParameterFilterT&& value) { m_parameterFilterHasBeenSet = true; m_parameterFilter = std::forward<ParameterFilterT>(value); }
+    template<typename ParameterFilterT = ParameterFilterExpression>
+    SearchFilterExpression& WithParameterFilter(ParameterFilterT&& value) { SetParameterFilter(std::forward<ParameterFilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filters by a specified search term.</p>
      */
-    inline const SearchTermFilterExpression& GetSearchTermFilter() const{ return m_searchTermFilter; }
+    inline const SearchTermFilterExpression& GetSearchTermFilter() const { return m_searchTermFilter; }
     inline bool SearchTermFilterHasBeenSet() const { return m_searchTermFilterHasBeenSet; }
-    inline void SetSearchTermFilter(const SearchTermFilterExpression& value) { m_searchTermFilterHasBeenSet = true; m_searchTermFilter = value; }
-    inline void SetSearchTermFilter(SearchTermFilterExpression&& value) { m_searchTermFilterHasBeenSet = true; m_searchTermFilter = std::move(value); }
-    inline SearchFilterExpression& WithSearchTermFilter(const SearchTermFilterExpression& value) { SetSearchTermFilter(value); return *this;}
-    inline SearchFilterExpression& WithSearchTermFilter(SearchTermFilterExpression&& value) { SetSearchTermFilter(std::move(value)); return *this;}
+    template<typename SearchTermFilterT = SearchTermFilterExpression>
+    void SetSearchTermFilter(SearchTermFilterT&& value) { m_searchTermFilterHasBeenSet = true; m_searchTermFilter = std::forward<SearchTermFilterT>(value); }
+    template<typename SearchTermFilterT = SearchTermFilterExpression>
+    SearchFilterExpression& WithSearchTermFilter(SearchTermFilterT&& value) { SetSearchTermFilter(std::forward<SearchTermFilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filters by a string.</p>
      */
-    inline const StringFilterExpression& GetStringFilter() const{ return m_stringFilter; }
+    inline const StringFilterExpression& GetStringFilter() const { return m_stringFilter; }
     inline bool StringFilterHasBeenSet() const { return m_stringFilterHasBeenSet; }
-    inline void SetStringFilter(const StringFilterExpression& value) { m_stringFilterHasBeenSet = true; m_stringFilter = value; }
-    inline void SetStringFilter(StringFilterExpression&& value) { m_stringFilterHasBeenSet = true; m_stringFilter = std::move(value); }
-    inline SearchFilterExpression& WithStringFilter(const StringFilterExpression& value) { SetStringFilter(value); return *this;}
-    inline SearchFilterExpression& WithStringFilter(StringFilterExpression&& value) { SetStringFilter(std::move(value)); return *this;}
+    template<typename StringFilterT = StringFilterExpression>
+    void SetStringFilter(StringFilterT&& value) { m_stringFilterHasBeenSet = true; m_stringFilter = std::forward<StringFilterT>(value); }
+    template<typename StringFilterT = StringFilterExpression>
+    SearchFilterExpression& WithStringFilter(StringFilterT&& value) { SetStringFilter(std::forward<StringFilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filters by group.</p>
      */
-    AWS_DEADLINE_API const SearchGroupedFilterExpressions& GetGroupFilter() const;
-    AWS_DEADLINE_API bool GroupFilterHasBeenSet() const;
-    AWS_DEADLINE_API void SetGroupFilter(const SearchGroupedFilterExpressions& value);
-    AWS_DEADLINE_API void SetGroupFilter(SearchGroupedFilterExpressions&& value);
-    AWS_DEADLINE_API SearchFilterExpression& WithGroupFilter(const SearchGroupedFilterExpressions& value);
-    AWS_DEADLINE_API SearchFilterExpression& WithGroupFilter(SearchGroupedFilterExpressions&& value);
+    inline const SearchGroupedFilterExpressions& GetGroupFilter() const{
+      return *m_groupFilter;
+    }
+    inline bool GroupFilterHasBeenSet() const { return m_groupFilterHasBeenSet; }
+    template<typename GroupFilterT = SearchGroupedFilterExpressions>
+    void SetGroupFilter(GroupFilterT&& value) {
+      m_groupFilterHasBeenSet = true; 
+      m_groupFilter = Aws::MakeShared<SearchGroupedFilterExpressions>("SearchFilterExpression", std::forward<GroupFilterT>(value));
+    }
+    template<typename GroupFilterT = SearchGroupedFilterExpressions>
+    SearchFilterExpression& WithGroupFilter(GroupFilterT&& value) { SetGroupFilter(std::forward<GroupFilterT>(value)); return *this;}
     ///@}
   private:
 

@@ -34,7 +34,7 @@ namespace Model
   class AppInstanceUserMembershipSummary
   {
   public:
-    AWS_CHIMESDKMESSAGING_API AppInstanceUserMembershipSummary();
+    AWS_CHIMESDKMESSAGING_API AppInstanceUserMembershipSummary() = default;
     AWS_CHIMESDKMESSAGING_API AppInstanceUserMembershipSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMESSAGING_API AppInstanceUserMembershipSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>The type of <code>ChannelMembership</code>.</p>
      */
-    inline const ChannelMembershipType& GetType() const{ return m_type; }
+    inline ChannelMembershipType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ChannelMembershipType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ChannelMembershipType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline AppInstanceUserMembershipSummary& WithType(const ChannelMembershipType& value) { SetType(value); return *this;}
-    inline AppInstanceUserMembershipSummary& WithType(ChannelMembershipType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ChannelMembershipType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline AppInstanceUserMembershipSummary& WithType(ChannelMembershipType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +55,12 @@ namespace Model
      * <p>The time at which an <code>AppInstanceUser</code> last marked a channel as
      * read.</p>
      */
-    inline const Aws::Utils::DateTime& GetReadMarkerTimestamp() const{ return m_readMarkerTimestamp; }
+    inline const Aws::Utils::DateTime& GetReadMarkerTimestamp() const { return m_readMarkerTimestamp; }
     inline bool ReadMarkerTimestampHasBeenSet() const { return m_readMarkerTimestampHasBeenSet; }
-    inline void SetReadMarkerTimestamp(const Aws::Utils::DateTime& value) { m_readMarkerTimestampHasBeenSet = true; m_readMarkerTimestamp = value; }
-    inline void SetReadMarkerTimestamp(Aws::Utils::DateTime&& value) { m_readMarkerTimestampHasBeenSet = true; m_readMarkerTimestamp = std::move(value); }
-    inline AppInstanceUserMembershipSummary& WithReadMarkerTimestamp(const Aws::Utils::DateTime& value) { SetReadMarkerTimestamp(value); return *this;}
-    inline AppInstanceUserMembershipSummary& WithReadMarkerTimestamp(Aws::Utils::DateTime&& value) { SetReadMarkerTimestamp(std::move(value)); return *this;}
+    template<typename ReadMarkerTimestampT = Aws::Utils::DateTime>
+    void SetReadMarkerTimestamp(ReadMarkerTimestampT&& value) { m_readMarkerTimestampHasBeenSet = true; m_readMarkerTimestamp = std::forward<ReadMarkerTimestampT>(value); }
+    template<typename ReadMarkerTimestampT = Aws::Utils::DateTime>
+    AppInstanceUserMembershipSummary& WithReadMarkerTimestamp(ReadMarkerTimestampT&& value) { SetReadMarkerTimestamp(std::forward<ReadMarkerTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,21 +68,19 @@ namespace Model
      * <p>The ID of the SubChannel that the <code>AppInstanceUser</code> is a member
      * of.</p>
      */
-    inline const Aws::String& GetSubChannelId() const{ return m_subChannelId; }
+    inline const Aws::String& GetSubChannelId() const { return m_subChannelId; }
     inline bool SubChannelIdHasBeenSet() const { return m_subChannelIdHasBeenSet; }
-    inline void SetSubChannelId(const Aws::String& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = value; }
-    inline void SetSubChannelId(Aws::String&& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = std::move(value); }
-    inline void SetSubChannelId(const char* value) { m_subChannelIdHasBeenSet = true; m_subChannelId.assign(value); }
-    inline AppInstanceUserMembershipSummary& WithSubChannelId(const Aws::String& value) { SetSubChannelId(value); return *this;}
-    inline AppInstanceUserMembershipSummary& WithSubChannelId(Aws::String&& value) { SetSubChannelId(std::move(value)); return *this;}
-    inline AppInstanceUserMembershipSummary& WithSubChannelId(const char* value) { SetSubChannelId(value); return *this;}
+    template<typename SubChannelIdT = Aws::String>
+    void SetSubChannelId(SubChannelIdT&& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = std::forward<SubChannelIdT>(value); }
+    template<typename SubChannelIdT = Aws::String>
+    AppInstanceUserMembershipSummary& WithSubChannelId(SubChannelIdT&& value) { SetSubChannelId(std::forward<SubChannelIdT>(value)); return *this;}
     ///@}
   private:
 
-    ChannelMembershipType m_type;
+    ChannelMembershipType m_type{ChannelMembershipType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_readMarkerTimestamp;
+    Aws::Utils::DateTime m_readMarkerTimestamp{};
     bool m_readMarkerTimestampHasBeenSet = false;
 
     Aws::String m_subChannelId;

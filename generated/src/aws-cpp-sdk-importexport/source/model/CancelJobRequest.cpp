@@ -10,12 +10,6 @@
 using namespace Aws::ImportExport::Model;
 using namespace Aws::Utils;
 
-CancelJobRequest::CancelJobRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_aPIVersionHasBeenSet(false)
-{
-}
-
 Aws::String CancelJobRequest::SerializePayload() const
 {
   Aws::StringStream ss;

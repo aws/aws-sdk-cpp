@@ -21,7 +21,7 @@ namespace Model
   class UpdateEnvironmentAccountConnectionRequest : public ProtonRequest
   {
   public:
-    AWS_PROTON_API UpdateEnvironmentAccountConnectionRequest();
+    AWS_PROTON_API UpdateEnvironmentAccountConnectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * account. Proton uses this role to provision infrastructure resources using
      * CodeBuild-based provisioning in the associated environment account.</p>
      */
-    inline const Aws::String& GetCodebuildRoleArn() const{ return m_codebuildRoleArn; }
+    inline const Aws::String& GetCodebuildRoleArn() const { return m_codebuildRoleArn; }
     inline bool CodebuildRoleArnHasBeenSet() const { return m_codebuildRoleArnHasBeenSet; }
-    inline void SetCodebuildRoleArn(const Aws::String& value) { m_codebuildRoleArnHasBeenSet = true; m_codebuildRoleArn = value; }
-    inline void SetCodebuildRoleArn(Aws::String&& value) { m_codebuildRoleArnHasBeenSet = true; m_codebuildRoleArn = std::move(value); }
-    inline void SetCodebuildRoleArn(const char* value) { m_codebuildRoleArnHasBeenSet = true; m_codebuildRoleArn.assign(value); }
-    inline UpdateEnvironmentAccountConnectionRequest& WithCodebuildRoleArn(const Aws::String& value) { SetCodebuildRoleArn(value); return *this;}
-    inline UpdateEnvironmentAccountConnectionRequest& WithCodebuildRoleArn(Aws::String&& value) { SetCodebuildRoleArn(std::move(value)); return *this;}
-    inline UpdateEnvironmentAccountConnectionRequest& WithCodebuildRoleArn(const char* value) { SetCodebuildRoleArn(value); return *this;}
+    template<typename CodebuildRoleArnT = Aws::String>
+    void SetCodebuildRoleArn(CodebuildRoleArnT&& value) { m_codebuildRoleArnHasBeenSet = true; m_codebuildRoleArn = std::forward<CodebuildRoleArnT>(value); }
+    template<typename CodebuildRoleArnT = Aws::String>
+    UpdateEnvironmentAccountConnectionRequest& WithCodebuildRoleArn(CodebuildRoleArnT&& value) { SetCodebuildRoleArn(std::forward<CodebuildRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,28 +60,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/proton/latest/userguide/ag-components.html">Proton
      * components</a> in the <i>Proton User Guide</i>.</p>
      */
-    inline const Aws::String& GetComponentRoleArn() const{ return m_componentRoleArn; }
+    inline const Aws::String& GetComponentRoleArn() const { return m_componentRoleArn; }
     inline bool ComponentRoleArnHasBeenSet() const { return m_componentRoleArnHasBeenSet; }
-    inline void SetComponentRoleArn(const Aws::String& value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn = value; }
-    inline void SetComponentRoleArn(Aws::String&& value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn = std::move(value); }
-    inline void SetComponentRoleArn(const char* value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn.assign(value); }
-    inline UpdateEnvironmentAccountConnectionRequest& WithComponentRoleArn(const Aws::String& value) { SetComponentRoleArn(value); return *this;}
-    inline UpdateEnvironmentAccountConnectionRequest& WithComponentRoleArn(Aws::String&& value) { SetComponentRoleArn(std::move(value)); return *this;}
-    inline UpdateEnvironmentAccountConnectionRequest& WithComponentRoleArn(const char* value) { SetComponentRoleArn(value); return *this;}
+    template<typename ComponentRoleArnT = Aws::String>
+    void SetComponentRoleArn(ComponentRoleArnT&& value) { m_componentRoleArnHasBeenSet = true; m_componentRoleArn = std::forward<ComponentRoleArnT>(value); }
+    template<typename ComponentRoleArnT = Aws::String>
+    UpdateEnvironmentAccountConnectionRequest& WithComponentRoleArn(ComponentRoleArnT&& value) { SetComponentRoleArn(std::forward<ComponentRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the environment account connection to update.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateEnvironmentAccountConnectionRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateEnvironmentAccountConnectionRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateEnvironmentAccountConnectionRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateEnvironmentAccountConnectionRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +85,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM service role that's associated with
      * the environment account connection to update.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline UpdateEnvironmentAccountConnectionRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline UpdateEnvironmentAccountConnectionRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline UpdateEnvironmentAccountConnectionRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    UpdateEnvironmentAccountConnectionRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

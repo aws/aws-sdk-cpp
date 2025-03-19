@@ -23,7 +23,7 @@ namespace Model
   class BatchDisassociateProjectAssetsRequest : public IoTSiteWiseRequest
   {
   public:
-    AWS_IOTSITEWISE_API BatchDisassociateProjectAssetsRequest();
+    AWS_IOTSITEWISE_API BatchDisassociateProjectAssetsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,29 +38,26 @@ namespace Model
     /**
      * <p>The ID of the project from which to disassociate the assets.</p>
      */
-    inline const Aws::String& GetProjectId() const{ return m_projectId; }
+    inline const Aws::String& GetProjectId() const { return m_projectId; }
     inline bool ProjectIdHasBeenSet() const { return m_projectIdHasBeenSet; }
-    inline void SetProjectId(const Aws::String& value) { m_projectIdHasBeenSet = true; m_projectId = value; }
-    inline void SetProjectId(Aws::String&& value) { m_projectIdHasBeenSet = true; m_projectId = std::move(value); }
-    inline void SetProjectId(const char* value) { m_projectIdHasBeenSet = true; m_projectId.assign(value); }
-    inline BatchDisassociateProjectAssetsRequest& WithProjectId(const Aws::String& value) { SetProjectId(value); return *this;}
-    inline BatchDisassociateProjectAssetsRequest& WithProjectId(Aws::String&& value) { SetProjectId(std::move(value)); return *this;}
-    inline BatchDisassociateProjectAssetsRequest& WithProjectId(const char* value) { SetProjectId(value); return *this;}
+    template<typename ProjectIdT = Aws::String>
+    void SetProjectId(ProjectIdT&& value) { m_projectIdHasBeenSet = true; m_projectId = std::forward<ProjectIdT>(value); }
+    template<typename ProjectIdT = Aws::String>
+    BatchDisassociateProjectAssetsRequest& WithProjectId(ProjectIdT&& value) { SetProjectId(std::forward<ProjectIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IDs of the assets to be disassociated from the project.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAssetIds() const{ return m_assetIds; }
+    inline const Aws::Vector<Aws::String>& GetAssetIds() const { return m_assetIds; }
     inline bool AssetIdsHasBeenSet() const { return m_assetIdsHasBeenSet; }
-    inline void SetAssetIds(const Aws::Vector<Aws::String>& value) { m_assetIdsHasBeenSet = true; m_assetIds = value; }
-    inline void SetAssetIds(Aws::Vector<Aws::String>&& value) { m_assetIdsHasBeenSet = true; m_assetIds = std::move(value); }
-    inline BatchDisassociateProjectAssetsRequest& WithAssetIds(const Aws::Vector<Aws::String>& value) { SetAssetIds(value); return *this;}
-    inline BatchDisassociateProjectAssetsRequest& WithAssetIds(Aws::Vector<Aws::String>&& value) { SetAssetIds(std::move(value)); return *this;}
-    inline BatchDisassociateProjectAssetsRequest& AddAssetIds(const Aws::String& value) { m_assetIdsHasBeenSet = true; m_assetIds.push_back(value); return *this; }
-    inline BatchDisassociateProjectAssetsRequest& AddAssetIds(Aws::String&& value) { m_assetIdsHasBeenSet = true; m_assetIds.push_back(std::move(value)); return *this; }
-    inline BatchDisassociateProjectAssetsRequest& AddAssetIds(const char* value) { m_assetIdsHasBeenSet = true; m_assetIds.push_back(value); return *this; }
+    template<typename AssetIdsT = Aws::Vector<Aws::String>>
+    void SetAssetIds(AssetIdsT&& value) { m_assetIdsHasBeenSet = true; m_assetIds = std::forward<AssetIdsT>(value); }
+    template<typename AssetIdsT = Aws::Vector<Aws::String>>
+    BatchDisassociateProjectAssetsRequest& WithAssetIds(AssetIdsT&& value) { SetAssetIds(std::forward<AssetIdsT>(value)); return *this;}
+    template<typename AssetIdsT = Aws::String>
+    BatchDisassociateProjectAssetsRequest& AddAssetIds(AssetIdsT&& value) { m_assetIdsHasBeenSet = true; m_assetIds.emplace_back(std::forward<AssetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -69,14 +66,12 @@ namespace Model
      * idempotency of the request. Don't reuse this client token if a new idempotent
      * request is required.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline BatchDisassociateProjectAssetsRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline BatchDisassociateProjectAssetsRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline BatchDisassociateProjectAssetsRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    BatchDisassociateProjectAssetsRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

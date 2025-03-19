@@ -32,7 +32,7 @@ namespace Model
   class DeviceSummary
   {
   public:
-    AWS_WORKLINK_API DeviceSummary();
+    AWS_WORKLINK_API DeviceSummary() = default;
     AWS_WORKLINK_API DeviceSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKLINK_API DeviceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKLINK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>The ID of the device.</p>
      */
-    inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
+    inline const Aws::String& GetDeviceId() const { return m_deviceId; }
     inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
-    inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
-    inline void SetDeviceId(Aws::String&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::move(value); }
-    inline void SetDeviceId(const char* value) { m_deviceIdHasBeenSet = true; m_deviceId.assign(value); }
-    inline DeviceSummary& WithDeviceId(const Aws::String& value) { SetDeviceId(value); return *this;}
-    inline DeviceSummary& WithDeviceId(Aws::String&& value) { SetDeviceId(std::move(value)); return *this;}
-    inline DeviceSummary& WithDeviceId(const char* value) { SetDeviceId(value); return *this;}
+    template<typename DeviceIdT = Aws::String>
+    void SetDeviceId(DeviceIdT&& value) { m_deviceIdHasBeenSet = true; m_deviceId = std::forward<DeviceIdT>(value); }
+    template<typename DeviceIdT = Aws::String>
+    DeviceSummary& WithDeviceId(DeviceIdT&& value) { SetDeviceId(std::forward<DeviceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the device.</p>
      */
-    inline const DeviceStatus& GetDeviceStatus() const{ return m_deviceStatus; }
+    inline DeviceStatus GetDeviceStatus() const { return m_deviceStatus; }
     inline bool DeviceStatusHasBeenSet() const { return m_deviceStatusHasBeenSet; }
-    inline void SetDeviceStatus(const DeviceStatus& value) { m_deviceStatusHasBeenSet = true; m_deviceStatus = value; }
-    inline void SetDeviceStatus(DeviceStatus&& value) { m_deviceStatusHasBeenSet = true; m_deviceStatus = std::move(value); }
-    inline DeviceSummary& WithDeviceStatus(const DeviceStatus& value) { SetDeviceStatus(value); return *this;}
-    inline DeviceSummary& WithDeviceStatus(DeviceStatus&& value) { SetDeviceStatus(std::move(value)); return *this;}
+    inline void SetDeviceStatus(DeviceStatus value) { m_deviceStatusHasBeenSet = true; m_deviceStatus = value; }
+    inline DeviceSummary& WithDeviceStatus(DeviceStatus value) { SetDeviceStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_deviceId;
     bool m_deviceIdHasBeenSet = false;
 
-    DeviceStatus m_deviceStatus;
+    DeviceStatus m_deviceStatus{DeviceStatus::NOT_SET};
     bool m_deviceStatusHasBeenSet = false;
   };
 

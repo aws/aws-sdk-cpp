@@ -35,7 +35,7 @@ namespace Model
   class MutualTlsAuthentication
   {
   public:
-    AWS_APIGATEWAY_API MutualTlsAuthentication();
+    AWS_APIGATEWAY_API MutualTlsAuthentication() = default;
     AWS_APIGATEWAY_API MutualTlsAuthentication(Aws::Utils::Json::JsonView jsonValue);
     AWS_APIGATEWAY_API MutualTlsAuthentication& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * to use the new version. To update the truststore, you must have permissions to
      * access the S3 object.</p>
      */
-    inline const Aws::String& GetTruststoreUri() const{ return m_truststoreUri; }
+    inline const Aws::String& GetTruststoreUri() const { return m_truststoreUri; }
     inline bool TruststoreUriHasBeenSet() const { return m_truststoreUriHasBeenSet; }
-    inline void SetTruststoreUri(const Aws::String& value) { m_truststoreUriHasBeenSet = true; m_truststoreUri = value; }
-    inline void SetTruststoreUri(Aws::String&& value) { m_truststoreUriHasBeenSet = true; m_truststoreUri = std::move(value); }
-    inline void SetTruststoreUri(const char* value) { m_truststoreUriHasBeenSet = true; m_truststoreUri.assign(value); }
-    inline MutualTlsAuthentication& WithTruststoreUri(const Aws::String& value) { SetTruststoreUri(value); return *this;}
-    inline MutualTlsAuthentication& WithTruststoreUri(Aws::String&& value) { SetTruststoreUri(std::move(value)); return *this;}
-    inline MutualTlsAuthentication& WithTruststoreUri(const char* value) { SetTruststoreUri(value); return *this;}
+    template<typename TruststoreUriT = Aws::String>
+    void SetTruststoreUri(TruststoreUriT&& value) { m_truststoreUriHasBeenSet = true; m_truststoreUri = std::forward<TruststoreUriT>(value); }
+    template<typename TruststoreUriT = Aws::String>
+    MutualTlsAuthentication& WithTruststoreUri(TruststoreUriT&& value) { SetTruststoreUri(std::forward<TruststoreUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * <p>The version of the S3 object that contains your truststore. To specify a
      * version, you must have versioning enabled for the S3 bucket.</p>
      */
-    inline const Aws::String& GetTruststoreVersion() const{ return m_truststoreVersion; }
+    inline const Aws::String& GetTruststoreVersion() const { return m_truststoreVersion; }
     inline bool TruststoreVersionHasBeenSet() const { return m_truststoreVersionHasBeenSet; }
-    inline void SetTruststoreVersion(const Aws::String& value) { m_truststoreVersionHasBeenSet = true; m_truststoreVersion = value; }
-    inline void SetTruststoreVersion(Aws::String&& value) { m_truststoreVersionHasBeenSet = true; m_truststoreVersion = std::move(value); }
-    inline void SetTruststoreVersion(const char* value) { m_truststoreVersionHasBeenSet = true; m_truststoreVersion.assign(value); }
-    inline MutualTlsAuthentication& WithTruststoreVersion(const Aws::String& value) { SetTruststoreVersion(value); return *this;}
-    inline MutualTlsAuthentication& WithTruststoreVersion(Aws::String&& value) { SetTruststoreVersion(std::move(value)); return *this;}
-    inline MutualTlsAuthentication& WithTruststoreVersion(const char* value) { SetTruststoreVersion(value); return *this;}
+    template<typename TruststoreVersionT = Aws::String>
+    void SetTruststoreVersion(TruststoreVersionT&& value) { m_truststoreVersionHasBeenSet = true; m_truststoreVersion = std::forward<TruststoreVersionT>(value); }
+    template<typename TruststoreVersionT = Aws::String>
+    MutualTlsAuthentication& WithTruststoreVersion(TruststoreVersionT&& value) { SetTruststoreVersion(std::forward<TruststoreVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,15 +78,14 @@ namespace Model
      * clients might not be able to access your API. To resolve warnings, upload a new
      * truststore to S3, and then update you domain name to use the new version.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTruststoreWarnings() const{ return m_truststoreWarnings; }
+    inline const Aws::Vector<Aws::String>& GetTruststoreWarnings() const { return m_truststoreWarnings; }
     inline bool TruststoreWarningsHasBeenSet() const { return m_truststoreWarningsHasBeenSet; }
-    inline void SetTruststoreWarnings(const Aws::Vector<Aws::String>& value) { m_truststoreWarningsHasBeenSet = true; m_truststoreWarnings = value; }
-    inline void SetTruststoreWarnings(Aws::Vector<Aws::String>&& value) { m_truststoreWarningsHasBeenSet = true; m_truststoreWarnings = std::move(value); }
-    inline MutualTlsAuthentication& WithTruststoreWarnings(const Aws::Vector<Aws::String>& value) { SetTruststoreWarnings(value); return *this;}
-    inline MutualTlsAuthentication& WithTruststoreWarnings(Aws::Vector<Aws::String>&& value) { SetTruststoreWarnings(std::move(value)); return *this;}
-    inline MutualTlsAuthentication& AddTruststoreWarnings(const Aws::String& value) { m_truststoreWarningsHasBeenSet = true; m_truststoreWarnings.push_back(value); return *this; }
-    inline MutualTlsAuthentication& AddTruststoreWarnings(Aws::String&& value) { m_truststoreWarningsHasBeenSet = true; m_truststoreWarnings.push_back(std::move(value)); return *this; }
-    inline MutualTlsAuthentication& AddTruststoreWarnings(const char* value) { m_truststoreWarningsHasBeenSet = true; m_truststoreWarnings.push_back(value); return *this; }
+    template<typename TruststoreWarningsT = Aws::Vector<Aws::String>>
+    void SetTruststoreWarnings(TruststoreWarningsT&& value) { m_truststoreWarningsHasBeenSet = true; m_truststoreWarnings = std::forward<TruststoreWarningsT>(value); }
+    template<typename TruststoreWarningsT = Aws::Vector<Aws::String>>
+    MutualTlsAuthentication& WithTruststoreWarnings(TruststoreWarningsT&& value) { SetTruststoreWarnings(std::forward<TruststoreWarningsT>(value)); return *this;}
+    template<typename TruststoreWarningsT = Aws::String>
+    MutualTlsAuthentication& AddTruststoreWarnings(TruststoreWarningsT&& value) { m_truststoreWarningsHasBeenSet = true; m_truststoreWarnings.emplace_back(std::forward<TruststoreWarningsT>(value)); return *this; }
     ///@}
   private:
 

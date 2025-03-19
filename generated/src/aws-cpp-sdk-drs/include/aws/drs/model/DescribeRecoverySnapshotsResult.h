@@ -29,7 +29,7 @@ namespace Model
   class DescribeRecoverySnapshotsResult
   {
   public:
-    AWS_DRS_API DescribeRecoverySnapshotsResult();
+    AWS_DRS_API DescribeRecoverySnapshotsResult() = default;
     AWS_DRS_API DescribeRecoverySnapshotsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DRS_API DescribeRecoverySnapshotsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>An array of Recovery Snapshots.</p>
      */
-    inline const Aws::Vector<RecoverySnapshot>& GetItems() const{ return m_items; }
-    inline void SetItems(const Aws::Vector<RecoverySnapshot>& value) { m_items = value; }
-    inline void SetItems(Aws::Vector<RecoverySnapshot>&& value) { m_items = std::move(value); }
-    inline DescribeRecoverySnapshotsResult& WithItems(const Aws::Vector<RecoverySnapshot>& value) { SetItems(value); return *this;}
-    inline DescribeRecoverySnapshotsResult& WithItems(Aws::Vector<RecoverySnapshot>&& value) { SetItems(std::move(value)); return *this;}
-    inline DescribeRecoverySnapshotsResult& AddItems(const RecoverySnapshot& value) { m_items.push_back(value); return *this; }
-    inline DescribeRecoverySnapshotsResult& AddItems(RecoverySnapshot&& value) { m_items.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RecoverySnapshot>& GetItems() const { return m_items; }
+    template<typename ItemsT = Aws::Vector<RecoverySnapshot>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<RecoverySnapshot>>
+    DescribeRecoverySnapshotsResult& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = RecoverySnapshot>
+    DescribeRecoverySnapshotsResult& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token of the next Recovery Snapshot to retrieve.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeRecoverySnapshotsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeRecoverySnapshotsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeRecoverySnapshotsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeRecoverySnapshotsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeRecoverySnapshotsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeRecoverySnapshotsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeRecoverySnapshotsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeRecoverySnapshotsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<RecoverySnapshot> m_items;
+    bool m_itemsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListTypesByAssociationRequest::ListTypesByAssociationRequest() : 
-    m_mergedApiIdentifierHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_format(TypeDefinitionFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListTypesByAssociationRequest::SerializePayload() const
 {
   return {};

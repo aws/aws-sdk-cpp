@@ -32,7 +32,7 @@ namespace Model
   class ActionRemotePortDetails
   {
   public:
-    AWS_SECURITYHUB_API ActionRemotePortDetails();
+    AWS_SECURITYHUB_API ActionRemotePortDetails() = default;
     AWS_SECURITYHUB_API ActionRemotePortDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API ActionRemotePortDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The number of the port.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline ActionRemotePortDetails& WithPort(int value) { SetPort(value); return *this;}
@@ -52,18 +52,16 @@ namespace Model
     /**
      * <p>The port name of the remote connection.</p> <p>Length Constraints: 128.</p>
      */
-    inline const Aws::String& GetPortName() const{ return m_portName; }
+    inline const Aws::String& GetPortName() const { return m_portName; }
     inline bool PortNameHasBeenSet() const { return m_portNameHasBeenSet; }
-    inline void SetPortName(const Aws::String& value) { m_portNameHasBeenSet = true; m_portName = value; }
-    inline void SetPortName(Aws::String&& value) { m_portNameHasBeenSet = true; m_portName = std::move(value); }
-    inline void SetPortName(const char* value) { m_portNameHasBeenSet = true; m_portName.assign(value); }
-    inline ActionRemotePortDetails& WithPortName(const Aws::String& value) { SetPortName(value); return *this;}
-    inline ActionRemotePortDetails& WithPortName(Aws::String&& value) { SetPortName(std::move(value)); return *this;}
-    inline ActionRemotePortDetails& WithPortName(const char* value) { SetPortName(value); return *this;}
+    template<typename PortNameT = Aws::String>
+    void SetPortName(PortNameT&& value) { m_portNameHasBeenSet = true; m_portName = std::forward<PortNameT>(value); }
+    template<typename PortNameT = Aws::String>
+    ActionRemotePortDetails& WithPortName(PortNameT&& value) { SetPortName(std::forward<PortNameT>(value)); return *this;}
     ///@}
   private:
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
     Aws::String m_portName;

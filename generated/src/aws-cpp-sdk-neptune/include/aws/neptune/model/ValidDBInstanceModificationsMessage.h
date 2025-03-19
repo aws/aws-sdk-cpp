@@ -35,7 +35,7 @@ namespace Model
   class ValidDBInstanceModificationsMessage
   {
   public:
-    AWS_NEPTUNE_API ValidDBInstanceModificationsMessage();
+    AWS_NEPTUNE_API ValidDBInstanceModificationsMessage() = default;
     AWS_NEPTUNE_API ValidDBInstanceModificationsMessage(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_NEPTUNE_API ValidDBInstanceModificationsMessage& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,14 +47,14 @@ namespace Model
     /**
      * <p>Valid storage options for your DB instance.</p>
      */
-    inline const Aws::Vector<ValidStorageOptions>& GetStorage() const{ return m_storage; }
+    inline const Aws::Vector<ValidStorageOptions>& GetStorage() const { return m_storage; }
     inline bool StorageHasBeenSet() const { return m_storageHasBeenSet; }
-    inline void SetStorage(const Aws::Vector<ValidStorageOptions>& value) { m_storageHasBeenSet = true; m_storage = value; }
-    inline void SetStorage(Aws::Vector<ValidStorageOptions>&& value) { m_storageHasBeenSet = true; m_storage = std::move(value); }
-    inline ValidDBInstanceModificationsMessage& WithStorage(const Aws::Vector<ValidStorageOptions>& value) { SetStorage(value); return *this;}
-    inline ValidDBInstanceModificationsMessage& WithStorage(Aws::Vector<ValidStorageOptions>&& value) { SetStorage(std::move(value)); return *this;}
-    inline ValidDBInstanceModificationsMessage& AddStorage(const ValidStorageOptions& value) { m_storageHasBeenSet = true; m_storage.push_back(value); return *this; }
-    inline ValidDBInstanceModificationsMessage& AddStorage(ValidStorageOptions&& value) { m_storageHasBeenSet = true; m_storage.push_back(std::move(value)); return *this; }
+    template<typename StorageT = Aws::Vector<ValidStorageOptions>>
+    void SetStorage(StorageT&& value) { m_storageHasBeenSet = true; m_storage = std::forward<StorageT>(value); }
+    template<typename StorageT = Aws::Vector<ValidStorageOptions>>
+    ValidDBInstanceModificationsMessage& WithStorage(StorageT&& value) { SetStorage(std::forward<StorageT>(value)); return *this;}
+    template<typename StorageT = ValidStorageOptions>
+    ValidDBInstanceModificationsMessage& AddStorage(StorageT&& value) { m_storageHasBeenSet = true; m_storage.emplace_back(std::forward<StorageT>(value)); return *this; }
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class File
   {
   public:
-    AWS_CODECOMMIT_API File();
+    AWS_CODECOMMIT_API File() = default;
     AWS_CODECOMMIT_API File(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API File& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODECOMMIT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The blob ID that contains the file information.</p>
      */
-    inline const Aws::String& GetBlobId() const{ return m_blobId; }
+    inline const Aws::String& GetBlobId() const { return m_blobId; }
     inline bool BlobIdHasBeenSet() const { return m_blobIdHasBeenSet; }
-    inline void SetBlobId(const Aws::String& value) { m_blobIdHasBeenSet = true; m_blobId = value; }
-    inline void SetBlobId(Aws::String&& value) { m_blobIdHasBeenSet = true; m_blobId = std::move(value); }
-    inline void SetBlobId(const char* value) { m_blobIdHasBeenSet = true; m_blobId.assign(value); }
-    inline File& WithBlobId(const Aws::String& value) { SetBlobId(value); return *this;}
-    inline File& WithBlobId(Aws::String&& value) { SetBlobId(std::move(value)); return *this;}
-    inline File& WithBlobId(const char* value) { SetBlobId(value); return *this;}
+    template<typename BlobIdT = Aws::String>
+    void SetBlobId(BlobIdT&& value) { m_blobIdHasBeenSet = true; m_blobId = std::forward<BlobIdT>(value); }
+    template<typename BlobIdT = Aws::String>
+    File& WithBlobId(BlobIdT&& value) { SetBlobId(std::forward<BlobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The fully qualified path to the file in the repository.</p>
      */
-    inline const Aws::String& GetAbsolutePath() const{ return m_absolutePath; }
+    inline const Aws::String& GetAbsolutePath() const { return m_absolutePath; }
     inline bool AbsolutePathHasBeenSet() const { return m_absolutePathHasBeenSet; }
-    inline void SetAbsolutePath(const Aws::String& value) { m_absolutePathHasBeenSet = true; m_absolutePath = value; }
-    inline void SetAbsolutePath(Aws::String&& value) { m_absolutePathHasBeenSet = true; m_absolutePath = std::move(value); }
-    inline void SetAbsolutePath(const char* value) { m_absolutePathHasBeenSet = true; m_absolutePath.assign(value); }
-    inline File& WithAbsolutePath(const Aws::String& value) { SetAbsolutePath(value); return *this;}
-    inline File& WithAbsolutePath(Aws::String&& value) { SetAbsolutePath(std::move(value)); return *this;}
-    inline File& WithAbsolutePath(const char* value) { SetAbsolutePath(value); return *this;}
+    template<typename AbsolutePathT = Aws::String>
+    void SetAbsolutePath(AbsolutePathT&& value) { m_absolutePathHasBeenSet = true; m_absolutePath = std::forward<AbsolutePathT>(value); }
+    template<typename AbsolutePathT = Aws::String>
+    File& WithAbsolutePath(AbsolutePathT&& value) { SetAbsolutePath(std::forward<AbsolutePathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The relative path of the file from the folder where the query originated.</p>
      */
-    inline const Aws::String& GetRelativePath() const{ return m_relativePath; }
+    inline const Aws::String& GetRelativePath() const { return m_relativePath; }
     inline bool RelativePathHasBeenSet() const { return m_relativePathHasBeenSet; }
-    inline void SetRelativePath(const Aws::String& value) { m_relativePathHasBeenSet = true; m_relativePath = value; }
-    inline void SetRelativePath(Aws::String&& value) { m_relativePathHasBeenSet = true; m_relativePath = std::move(value); }
-    inline void SetRelativePath(const char* value) { m_relativePathHasBeenSet = true; m_relativePath.assign(value); }
-    inline File& WithRelativePath(const Aws::String& value) { SetRelativePath(value); return *this;}
-    inline File& WithRelativePath(Aws::String&& value) { SetRelativePath(std::move(value)); return *this;}
-    inline File& WithRelativePath(const char* value) { SetRelativePath(value); return *this;}
+    template<typename RelativePathT = Aws::String>
+    void SetRelativePath(RelativePathT&& value) { m_relativePathHasBeenSet = true; m_relativePath = std::forward<RelativePathT>(value); }
+    template<typename RelativePathT = Aws::String>
+    File& WithRelativePath(RelativePathT&& value) { SetRelativePath(std::forward<RelativePathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +79,10 @@ namespace Model
      * <p>The extrapolated file mode permissions for the file. Valid values include
      * EXECUTABLE and NORMAL.</p>
      */
-    inline const FileModeTypeEnum& GetFileMode() const{ return m_fileMode; }
+    inline FileModeTypeEnum GetFileMode() const { return m_fileMode; }
     inline bool FileModeHasBeenSet() const { return m_fileModeHasBeenSet; }
-    inline void SetFileMode(const FileModeTypeEnum& value) { m_fileModeHasBeenSet = true; m_fileMode = value; }
-    inline void SetFileMode(FileModeTypeEnum&& value) { m_fileModeHasBeenSet = true; m_fileMode = std::move(value); }
-    inline File& WithFileMode(const FileModeTypeEnum& value) { SetFileMode(value); return *this;}
-    inline File& WithFileMode(FileModeTypeEnum&& value) { SetFileMode(std::move(value)); return *this;}
+    inline void SetFileMode(FileModeTypeEnum value) { m_fileModeHasBeenSet = true; m_fileMode = value; }
+    inline File& WithFileMode(FileModeTypeEnum value) { SetFileMode(value); return *this;}
     ///@}
   private:
 
@@ -103,7 +95,7 @@ namespace Model
     Aws::String m_relativePath;
     bool m_relativePathHasBeenSet = false;
 
-    FileModeTypeEnum m_fileMode;
+    FileModeTypeEnum m_fileMode{FileModeTypeEnum::NOT_SET};
     bool m_fileModeHasBeenSet = false;
   };
 

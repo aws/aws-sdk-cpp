@@ -18,17 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-CognitoOptions::CognitoOptions() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_userPoolIdHasBeenSet(false),
-    m_identityPoolIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
-{
-}
-
 CognitoOptions::CognitoOptions(JsonView jsonValue)
-  : CognitoOptions()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ CognitoOptions& CognitoOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserPoolId"))
   {
     m_userPoolId = jsonValue.GetString("UserPoolId");
-
     m_userPoolIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityPoolId"))
   {
     m_identityPoolId = jsonValue.GetString("IdentityPoolId");
-
     m_identityPoolIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

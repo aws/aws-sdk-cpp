@@ -18,31 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-Scan::Scan() : 
-    m_detectorIdHasBeenSet(false),
-    m_adminDetectorIdHasBeenSet(false),
-    m_scanIdHasBeenSet(false),
-    m_scanStatus(ScanStatus::NOT_SET),
-    m_scanStatusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_scanStartTimeHasBeenSet(false),
-    m_scanEndTimeHasBeenSet(false),
-    m_triggerDetailsHasBeenSet(false),
-    m_resourceDetailsHasBeenSet(false),
-    m_scanResultDetailsHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_totalBytes(0),
-    m_totalBytesHasBeenSet(false),
-    m_fileCount(0),
-    m_fileCountHasBeenSet(false),
-    m_attachedVolumesHasBeenSet(false),
-    m_scanType(ScanType::NOT_SET),
-    m_scanTypeHasBeenSet(false)
-{
-}
-
 Scan::Scan(JsonView jsonValue)
-  : Scan()
 {
   *this = jsonValue;
 }
@@ -52,94 +28,68 @@ Scan& Scan::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("detectorId"))
   {
     m_detectorId = jsonValue.GetString("detectorId");
-
     m_detectorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("adminDetectorId"))
   {
     m_adminDetectorId = jsonValue.GetString("adminDetectorId");
-
     m_adminDetectorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanId"))
   {
     m_scanId = jsonValue.GetString("scanId");
-
     m_scanIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanStatus"))
   {
     m_scanStatus = ScanStatusMapper::GetScanStatusForName(jsonValue.GetString("scanStatus"));
-
     m_scanStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanStartTime"))
   {
     m_scanStartTime = jsonValue.GetDouble("scanStartTime");
-
     m_scanStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanEndTime"))
   {
     m_scanEndTime = jsonValue.GetDouble("scanEndTime");
-
     m_scanEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("triggerDetails"))
   {
     m_triggerDetails = jsonValue.GetObject("triggerDetails");
-
     m_triggerDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceDetails"))
   {
     m_resourceDetails = jsonValue.GetObject("resourceDetails");
-
     m_resourceDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanResultDetails"))
   {
     m_scanResultDetails = jsonValue.GetObject("scanResultDetails");
-
     m_scanResultDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalBytes"))
   {
     m_totalBytes = jsonValue.GetInt64("totalBytes");
-
     m_totalBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileCount"))
   {
     m_fileCount = jsonValue.GetInt64("fileCount");
-
     m_fileCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attachedVolumes"))
   {
     Aws::Utils::Array<JsonView> attachedVolumesJsonList = jsonValue.GetArray("attachedVolumes");
@@ -149,14 +99,11 @@ Scan& Scan::operator =(JsonView jsonValue)
     }
     m_attachedVolumesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanType"))
   {
     m_scanType = ScanTypeMapper::GetScanTypeForName(jsonValue.GetString("scanType"));
-
     m_scanTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

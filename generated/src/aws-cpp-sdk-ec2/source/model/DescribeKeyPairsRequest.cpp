@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeKeyPairsRequest::DescribeKeyPairsRequest() : 
-    m_keyNamesHasBeenSet(false),
-    m_keyPairIdsHasBeenSet(false),
-    m_includePublicKey(false),
-    m_includePublicKeyHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String DescribeKeyPairsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

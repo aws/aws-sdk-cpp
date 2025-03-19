@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssumeRoleWithSAMLResult::AssumeRoleWithSAMLResult() : 
-    m_packedPolicySize(0)
-{
-}
-
 AssumeRoleWithSAMLResult::AssumeRoleWithSAMLResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : AssumeRoleWithSAMLResult()
 {
   *this = result;
 }
@@ -44,52 +38,62 @@ AssumeRoleWithSAMLResult& AssumeRoleWithSAMLResult::operator =(const Aws::Amazon
     if(!credentialsNode.IsNull())
     {
       m_credentials = credentialsNode;
+      m_credentialsHasBeenSet = true;
     }
     XmlNode assumedRoleUserNode = resultNode.FirstChild("AssumedRoleUser");
     if(!assumedRoleUserNode.IsNull())
     {
       m_assumedRoleUser = assumedRoleUserNode;
+      m_assumedRoleUserHasBeenSet = true;
     }
     XmlNode packedPolicySizeNode = resultNode.FirstChild("PackedPolicySize");
     if(!packedPolicySizeNode.IsNull())
     {
       m_packedPolicySize = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(packedPolicySizeNode.GetText()).c_str()).c_str());
+      m_packedPolicySizeHasBeenSet = true;
     }
     XmlNode subjectNode = resultNode.FirstChild("Subject");
     if(!subjectNode.IsNull())
     {
       m_subject = Aws::Utils::Xml::DecodeEscapedXmlText(subjectNode.GetText());
+      m_subjectHasBeenSet = true;
     }
     XmlNode subjectTypeNode = resultNode.FirstChild("SubjectType");
     if(!subjectTypeNode.IsNull())
     {
       m_subjectType = Aws::Utils::Xml::DecodeEscapedXmlText(subjectTypeNode.GetText());
+      m_subjectTypeHasBeenSet = true;
     }
     XmlNode issuerNode = resultNode.FirstChild("Issuer");
     if(!issuerNode.IsNull())
     {
       m_issuer = Aws::Utils::Xml::DecodeEscapedXmlText(issuerNode.GetText());
+      m_issuerHasBeenSet = true;
     }
     XmlNode audienceNode = resultNode.FirstChild("Audience");
     if(!audienceNode.IsNull())
     {
       m_audience = Aws::Utils::Xml::DecodeEscapedXmlText(audienceNode.GetText());
+      m_audienceHasBeenSet = true;
     }
     XmlNode nameQualifierNode = resultNode.FirstChild("NameQualifier");
     if(!nameQualifierNode.IsNull())
     {
       m_nameQualifier = Aws::Utils::Xml::DecodeEscapedXmlText(nameQualifierNode.GetText());
+      m_nameQualifierHasBeenSet = true;
     }
     XmlNode sourceIdentityNode = resultNode.FirstChild("SourceIdentity");
     if(!sourceIdentityNode.IsNull())
     {
       m_sourceIdentity = Aws::Utils::Xml::DecodeEscapedXmlText(sourceIdentityNode.GetText());
+      m_sourceIdentityHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::STS::Model::AssumeRoleWithSAMLResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

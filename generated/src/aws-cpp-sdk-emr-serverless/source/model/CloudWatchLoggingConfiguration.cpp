@@ -18,18 +18,7 @@ namespace EMRServerless
 namespace Model
 {
 
-CloudWatchLoggingConfiguration::CloudWatchLoggingConfiguration() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_logStreamNamePrefixHasBeenSet(false),
-    m_encryptionKeyArnHasBeenSet(false),
-    m_logTypesHasBeenSet(false)
-{
-}
-
 CloudWatchLoggingConfiguration::CloudWatchLoggingConfiguration(JsonView jsonValue)
-  : CloudWatchLoggingConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ CloudWatchLoggingConfiguration& CloudWatchLoggingConfiguration::operator =(JsonV
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logGroupName"))
   {
     m_logGroupName = jsonValue.GetString("logGroupName");
-
     m_logGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logStreamNamePrefix"))
   {
     m_logStreamNamePrefix = jsonValue.GetString("logStreamNamePrefix");
-
     m_logStreamNamePrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionKeyArn"))
   {
     m_encryptionKeyArn = jsonValue.GetString("encryptionKeyArn");
-
     m_encryptionKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logTypes"))
   {
     Aws::Map<Aws::String, JsonView> logTypesJsonMap = jsonValue.GetObject("logTypes").GetAllObjects();
@@ -80,7 +61,6 @@ CloudWatchLoggingConfiguration& CloudWatchLoggingConfiguration::operator =(JsonV
     }
     m_logTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

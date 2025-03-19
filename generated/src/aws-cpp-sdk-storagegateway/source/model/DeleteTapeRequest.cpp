@@ -12,14 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTapeRequest::DeleteTapeRequest() : 
-    m_gatewayARNHasBeenSet(false),
-    m_tapeARNHasBeenSet(false),
-    m_bypassGovernanceRetention(false),
-    m_bypassGovernanceRetentionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTapeRequest::SerializePayload() const
 {
   JsonValue payload;

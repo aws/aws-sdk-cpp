@@ -14,11 +14,6 @@ using namespace Aws::Route53::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateHealthCheckRequest::CreateHealthCheckRequest() : 
-    m_callerReferenceHasBeenSet(false),
-    m_healthCheckConfigHasBeenSet(false)
-{
-}
 
 Aws::String CreateHealthCheckRequest::SerializePayload() const
 {

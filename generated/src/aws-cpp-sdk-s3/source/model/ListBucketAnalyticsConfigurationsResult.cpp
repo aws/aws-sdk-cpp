@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListBucketAnalyticsConfigurationsResult::ListBucketAnalyticsConfigurationsResult() : 
-    m_isTruncated(false)
-{
-}
-
 ListBucketAnalyticsConfigurationsResult::ListBucketAnalyticsConfigurationsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ListBucketAnalyticsConfigurationsResult()
 {
   *this = result;
 }
@@ -38,27 +32,32 @@ ListBucketAnalyticsConfigurationsResult& ListBucketAnalyticsConfigurationsResult
     if(!isTruncatedNode.IsNull())
     {
       m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
+      m_isTruncatedHasBeenSet = true;
     }
     XmlNode continuationTokenNode = resultNode.FirstChild("ContinuationToken");
     if(!continuationTokenNode.IsNull())
     {
       m_continuationToken = Aws::Utils::Xml::DecodeEscapedXmlText(continuationTokenNode.GetText());
+      m_continuationTokenHasBeenSet = true;
     }
     XmlNode nextContinuationTokenNode = resultNode.FirstChild("NextContinuationToken");
     if(!nextContinuationTokenNode.IsNull())
     {
       m_nextContinuationToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextContinuationTokenNode.GetText());
+      m_nextContinuationTokenHasBeenSet = true;
     }
     XmlNode analyticsConfigurationListNode = resultNode.FirstChild("AnalyticsConfiguration");
     if(!analyticsConfigurationListNode.IsNull())
     {
       XmlNode analyticsConfigurationMember = analyticsConfigurationListNode;
+      m_analyticsConfigurationListHasBeenSet = !analyticsConfigurationMember.IsNull();
       while(!analyticsConfigurationMember.IsNull())
       {
         m_analyticsConfigurationList.push_back(analyticsConfigurationMember);
         analyticsConfigurationMember = analyticsConfigurationMember.NextNode("AnalyticsConfiguration");
       }
 
+      m_analyticsConfigurationListHasBeenSet = true;
     }
   }
 
@@ -67,6 +66,7 @@ ListBucketAnalyticsConfigurationsResult& ListBucketAnalyticsConfigurationsResult
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

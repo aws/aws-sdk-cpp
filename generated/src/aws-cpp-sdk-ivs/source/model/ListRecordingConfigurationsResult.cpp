@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListRecordingConfigurationsResult::ListRecordingConfigurationsResult()
-{
-}
-
 ListRecordingConfigurationsResult::ListRecordingConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListRecordingConfigurationsResult& ListRecordingConfigurationsResult::operator =
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recordingConfigurations"))
   {
     Aws::Utils::Array<JsonView> recordingConfigurationsJsonList = jsonValue.GetArray("recordingConfigurations");
@@ -42,14 +37,15 @@ ListRecordingConfigurationsResult& ListRecordingConfigurationsResult::operator =
     {
       m_recordingConfigurations.push_back(recordingConfigurationsJsonList[recordingConfigurationsIndex].AsObject());
     }
+    m_recordingConfigurationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

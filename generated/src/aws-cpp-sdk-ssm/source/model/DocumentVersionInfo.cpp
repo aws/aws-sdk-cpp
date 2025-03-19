@@ -18,26 +18,7 @@ namespace SSM
 namespace Model
 {
 
-DocumentVersionInfo::DocumentVersionInfo() : 
-    m_nameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_versionNameHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_isDefaultVersion(false),
-    m_isDefaultVersionHasBeenSet(false),
-    m_documentFormat(DocumentFormat::NOT_SET),
-    m_documentFormatHasBeenSet(false),
-    m_status(DocumentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusInformationHasBeenSet(false),
-    m_reviewStatus(ReviewStatus::NOT_SET),
-    m_reviewStatusHasBeenSet(false)
-{
-}
-
 DocumentVersionInfo::DocumentVersionInfo(JsonView jsonValue)
-  : DocumentVersionInfo()
 {
   *this = jsonValue;
 }
@@ -47,73 +28,53 @@ DocumentVersionInfo& DocumentVersionInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentVersion"))
   {
     m_documentVersion = jsonValue.GetString("DocumentVersion");
-
     m_documentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionName"))
   {
     m_versionName = jsonValue.GetString("VersionName");
-
     m_versionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedDate"))
   {
     m_createdDate = jsonValue.GetDouble("CreatedDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsDefaultVersion"))
   {
     m_isDefaultVersion = jsonValue.GetBool("IsDefaultVersion");
-
     m_isDefaultVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentFormat"))
   {
     m_documentFormat = DocumentFormatMapper::GetDocumentFormatForName(jsonValue.GetString("DocumentFormat"));
-
     m_documentFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = DocumentStatusMapper::GetDocumentStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusInformation"))
   {
     m_statusInformation = jsonValue.GetString("StatusInformation");
-
     m_statusInformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReviewStatus"))
   {
     m_reviewStatus = ReviewStatusMapper::GetReviewStatusForName(jsonValue.GetString("ReviewStatus"));
-
     m_reviewStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

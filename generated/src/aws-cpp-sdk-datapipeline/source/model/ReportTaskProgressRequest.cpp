@@ -12,12 +12,6 @@ using namespace Aws::DataPipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ReportTaskProgressRequest::ReportTaskProgressRequest() : 
-    m_taskIdHasBeenSet(false),
-    m_fieldsHasBeenSet(false)
-{
-}
-
 Aws::String ReportTaskProgressRequest::SerializePayload() const
 {
   JsonValue payload;

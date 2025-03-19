@@ -18,29 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-TaskProcessingDetails::TaskProcessingDetails() : 
-    m_numberOfCanceledThings(0),
-    m_numberOfCanceledThingsHasBeenSet(false),
-    m_numberOfFailedThings(0),
-    m_numberOfFailedThingsHasBeenSet(false),
-    m_numberOfInProgressThings(0),
-    m_numberOfInProgressThingsHasBeenSet(false),
-    m_numberOfQueuedThings(0),
-    m_numberOfQueuedThingsHasBeenSet(false),
-    m_numberOfRejectedThings(0),
-    m_numberOfRejectedThingsHasBeenSet(false),
-    m_numberOfRemovedThings(0),
-    m_numberOfRemovedThingsHasBeenSet(false),
-    m_numberOfSucceededThings(0),
-    m_numberOfSucceededThingsHasBeenSet(false),
-    m_numberOfTimedOutThings(0),
-    m_numberOfTimedOutThingsHasBeenSet(false),
-    m_processingTargetsHasBeenSet(false)
-{
-}
-
 TaskProcessingDetails::TaskProcessingDetails(JsonView jsonValue)
-  : TaskProcessingDetails()
 {
   *this = jsonValue;
 }
@@ -50,59 +28,43 @@ TaskProcessingDetails& TaskProcessingDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NumberOfCanceledThings"))
   {
     m_numberOfCanceledThings = jsonValue.GetInteger("NumberOfCanceledThings");
-
     m_numberOfCanceledThingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfFailedThings"))
   {
     m_numberOfFailedThings = jsonValue.GetInteger("NumberOfFailedThings");
-
     m_numberOfFailedThingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfInProgressThings"))
   {
     m_numberOfInProgressThings = jsonValue.GetInteger("NumberOfInProgressThings");
-
     m_numberOfInProgressThingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfQueuedThings"))
   {
     m_numberOfQueuedThings = jsonValue.GetInteger("numberOfQueuedThings");
-
     m_numberOfQueuedThingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfRejectedThings"))
   {
     m_numberOfRejectedThings = jsonValue.GetInteger("numberOfRejectedThings");
-
     m_numberOfRejectedThingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfRemovedThings"))
   {
     m_numberOfRemovedThings = jsonValue.GetInteger("numberOfRemovedThings");
-
     m_numberOfRemovedThingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfSucceededThings"))
   {
     m_numberOfSucceededThings = jsonValue.GetInteger("numberOfSucceededThings");
-
     m_numberOfSucceededThingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfTimedOutThings"))
   {
     m_numberOfTimedOutThings = jsonValue.GetInteger("numberOfTimedOutThings");
-
     m_numberOfTimedOutThingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("processingTargets"))
   {
     Aws::Utils::Array<JsonView> processingTargetsJsonList = jsonValue.GetArray("processingTargets");
@@ -112,7 +74,6 @@ TaskProcessingDetails& TaskProcessingDetails::operator =(JsonView jsonValue)
     }
     m_processingTargetsHasBeenSet = true;
   }
-
   return *this;
 }
 

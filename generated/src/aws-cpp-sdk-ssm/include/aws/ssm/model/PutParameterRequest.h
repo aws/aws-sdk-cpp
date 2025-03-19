@@ -25,7 +25,7 @@ namespace Model
   class PutParameterRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API PutParameterRequest();
+    AWS_SSM_API PutParameterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -66,14 +66,12 @@ namespace Model
      * specify, such as <code>arn:aws:ssm:us-east-2:111122223333:parameter/</code>.</p>
      * 
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PutParameterRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PutParameterRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PutParameterRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PutParameterRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +80,12 @@ namespace Model
      * but recommended.</p>  <p>Don't enter personally identifiable
      * information in this field.</p> 
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline PutParameterRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline PutParameterRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline PutParameterRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    PutParameterRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +97,12 @@ namespace Model
      * <code>{{}}</code> or <code>{{ssm:<i>parameter-name</i>}}</code> in a parameter
      * value.</p> 
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline PutParameterRequest& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline PutParameterRequest& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline PutParameterRequest& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    PutParameterRequest& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,12 +116,10 @@ namespace Model
      * type isn't required when updating a parameter. You must specify a parameter type
      * when creating a parameter.</p> 
      */
-    inline const ParameterType& GetType() const{ return m_type; }
+    inline ParameterType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ParameterType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ParameterType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline PutParameterRequest& WithType(const ParameterType& value) { SetType(value); return *this;}
-    inline PutParameterRequest& WithType(ParameterType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ParameterType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline PutParameterRequest& WithType(ParameterType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -140,21 +132,19 @@ namespace Model
      * custom KMS key, choose the <code>SecureString</code> data type with the
      * <code>Key ID</code> parameter.</p> </li> </ul>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
-    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
-    inline PutParameterRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline PutParameterRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline PutParameterRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    PutParameterRequest& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Overwrite an existing parameter. The default value is <code>false</code>.</p>
      */
-    inline bool GetOverwrite() const{ return m_overwrite; }
+    inline bool GetOverwrite() const { return m_overwrite; }
     inline bool OverwriteHasBeenSet() const { return m_overwriteHasBeenSet; }
     inline void SetOverwrite(bool value) { m_overwriteHasBeenSet = true; m_overwrite = value; }
     inline PutParameterRequest& WithOverwrite(bool value) { SetOverwrite(value); return *this;}
@@ -166,14 +156,12 @@ namespace Model
      * String types with values restricted to numbers, you can specify the following:
      * AllowedPattern=^\d+$ </p>
      */
-    inline const Aws::String& GetAllowedPattern() const{ return m_allowedPattern; }
+    inline const Aws::String& GetAllowedPattern() const { return m_allowedPattern; }
     inline bool AllowedPatternHasBeenSet() const { return m_allowedPatternHasBeenSet; }
-    inline void SetAllowedPattern(const Aws::String& value) { m_allowedPatternHasBeenSet = true; m_allowedPattern = value; }
-    inline void SetAllowedPattern(Aws::String&& value) { m_allowedPatternHasBeenSet = true; m_allowedPattern = std::move(value); }
-    inline void SetAllowedPattern(const char* value) { m_allowedPatternHasBeenSet = true; m_allowedPattern.assign(value); }
-    inline PutParameterRequest& WithAllowedPattern(const Aws::String& value) { SetAllowedPattern(value); return *this;}
-    inline PutParameterRequest& WithAllowedPattern(Aws::String&& value) { SetAllowedPattern(std::move(value)); return *this;}
-    inline PutParameterRequest& WithAllowedPattern(const char* value) { SetAllowedPattern(value); return *this;}
+    template<typename AllowedPatternT = Aws::String>
+    void SetAllowedPattern(AllowedPatternT&& value) { m_allowedPatternHasBeenSet = true; m_allowedPattern = std::forward<AllowedPatternT>(value); }
+    template<typename AllowedPatternT = Aws::String>
+    PutParameterRequest& WithAllowedPattern(AllowedPatternT&& value) { SetAllowedPattern(std::forward<AllowedPatternT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -190,14 +178,14 @@ namespace Model
      * add tags to an existing Systems Manager parameter, use the
      * <a>AddTagsToResource</a> operation.</p> 
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline PutParameterRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline PutParameterRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline PutParameterRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline PutParameterRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    PutParameterRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    PutParameterRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -249,12 +237,10 @@ namespace Model
      * a default parameter tier</a> in the <i>Amazon Web Services Systems Manager User
      * Guide</i>.</p>
      */
-    inline const ParameterTier& GetTier() const{ return m_tier; }
+    inline ParameterTier GetTier() const { return m_tier; }
     inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
-    inline void SetTier(const ParameterTier& value) { m_tierHasBeenSet = true; m_tier = value; }
-    inline void SetTier(ParameterTier&& value) { m_tierHasBeenSet = true; m_tier = std::move(value); }
-    inline PutParameterRequest& WithTier(const ParameterTier& value) { SetTier(value); return *this;}
-    inline PutParameterRequest& WithTier(ParameterTier&& value) { SetTier(std::move(value)); return *this;}
+    inline void SetTier(ParameterTier value) { m_tierHasBeenSet = true; m_tier = value; }
+    inline PutParameterRequest& WithTier(ParameterTier value) { SetTier(value); return *this;}
     ///@}
 
     ///@{
@@ -278,14 +264,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-policies.html">Assigning
      * parameter policies</a>. </p>
      */
-    inline const Aws::String& GetPolicies() const{ return m_policies; }
+    inline const Aws::String& GetPolicies() const { return m_policies; }
     inline bool PoliciesHasBeenSet() const { return m_policiesHasBeenSet; }
-    inline void SetPolicies(const Aws::String& value) { m_policiesHasBeenSet = true; m_policies = value; }
-    inline void SetPolicies(Aws::String&& value) { m_policiesHasBeenSet = true; m_policies = std::move(value); }
-    inline void SetPolicies(const char* value) { m_policiesHasBeenSet = true; m_policies.assign(value); }
-    inline PutParameterRequest& WithPolicies(const Aws::String& value) { SetPolicies(value); return *this;}
-    inline PutParameterRequest& WithPolicies(Aws::String&& value) { SetPolicies(std::move(value)); return *this;}
-    inline PutParameterRequest& WithPolicies(const char* value) { SetPolicies(value); return *this;}
+    template<typename PoliciesT = Aws::String>
+    void SetPolicies(PoliciesT&& value) { m_policiesHasBeenSet = true; m_policies = std::forward<PoliciesT>(value); }
+    template<typename PoliciesT = Aws::String>
+    PutParameterRequest& WithPolicies(PoliciesT&& value) { SetPolicies(std::forward<PoliciesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -316,14 +300,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/parameter-store-ec2-aliases.html">Native
      * parameter support for Amazon Machine Image IDs</a>. </p> 
      */
-    inline const Aws::String& GetDataType() const{ return m_dataType; }
+    inline const Aws::String& GetDataType() const { return m_dataType; }
     inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
-    inline void SetDataType(const Aws::String& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
-    inline void SetDataType(Aws::String&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
-    inline void SetDataType(const char* value) { m_dataTypeHasBeenSet = true; m_dataType.assign(value); }
-    inline PutParameterRequest& WithDataType(const Aws::String& value) { SetDataType(value); return *this;}
-    inline PutParameterRequest& WithDataType(Aws::String&& value) { SetDataType(std::move(value)); return *this;}
-    inline PutParameterRequest& WithDataType(const char* value) { SetDataType(value); return *this;}
+    template<typename DataTypeT = Aws::String>
+    void SetDataType(DataTypeT&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::forward<DataTypeT>(value); }
+    template<typename DataTypeT = Aws::String>
+    PutParameterRequest& WithDataType(DataTypeT&& value) { SetDataType(std::forward<DataTypeT>(value)); return *this;}
     ///@}
   private:
 
@@ -336,13 +318,13 @@ namespace Model
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
 
-    ParameterType m_type;
+    ParameterType m_type{ParameterType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_keyId;
     bool m_keyIdHasBeenSet = false;
 
-    bool m_overwrite;
+    bool m_overwrite{false};
     bool m_overwriteHasBeenSet = false;
 
     Aws::String m_allowedPattern;
@@ -351,7 +333,7 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    ParameterTier m_tier;
+    ParameterTier m_tier{ParameterTier::NOT_SET};
     bool m_tierHasBeenSet = false;
 
     Aws::String m_policies;

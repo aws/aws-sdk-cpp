@@ -18,21 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-ExecutionRecord::ExecutionRecord() : 
-    m_executionIdHasBeenSet(false),
-    m_executionStatus(ExecutionStatus::NOT_SET),
-    m_executionStatusHasBeenSet(false),
-    m_executionResultHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_dataPullStartTimeHasBeenSet(false),
-    m_dataPullEndTimeHasBeenSet(false),
-    m_metadataCatalogDetailsHasBeenSet(false)
-{
-}
-
 ExecutionRecord::ExecutionRecord(JsonView jsonValue)
-  : ExecutionRecord()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ ExecutionRecord& ExecutionRecord::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("executionId"))
   {
     m_executionId = jsonValue.GetString("executionId");
-
     m_executionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionStatus"))
   {
     m_executionStatus = ExecutionStatusMapper::GetExecutionStatusForName(jsonValue.GetString("executionStatus"));
-
     m_executionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionResult"))
   {
     m_executionResult = jsonValue.GetObject("executionResult");
-
     m_executionResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetDouble("startedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataPullStartTime"))
   {
     m_dataPullStartTime = jsonValue.GetDouble("dataPullStartTime");
-
     m_dataPullStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataPullEndTime"))
   {
     m_dataPullEndTime = jsonValue.GetDouble("dataPullEndTime");
-
     m_dataPullEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadataCatalogDetails"))
   {
     Aws::Utils::Array<JsonView> metadataCatalogDetailsJsonList = jsonValue.GetArray("metadataCatalogDetails");
@@ -97,7 +69,6 @@ ExecutionRecord& ExecutionRecord::operator =(JsonView jsonValue)
     }
     m_metadataCatalogDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

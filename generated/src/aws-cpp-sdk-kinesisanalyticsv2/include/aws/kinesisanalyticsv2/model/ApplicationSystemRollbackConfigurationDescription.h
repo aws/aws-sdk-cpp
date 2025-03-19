@@ -30,7 +30,7 @@ namespace Model
   class ApplicationSystemRollbackConfigurationDescription
   {
   public:
-    AWS_KINESISANALYTICSV2_API ApplicationSystemRollbackConfigurationDescription();
+    AWS_KINESISANALYTICSV2_API ApplicationSystemRollbackConfigurationDescription() = default;
     AWS_KINESISANALYTICSV2_API ApplicationSystemRollbackConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API ApplicationSystemRollbackConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * Describes whether system rollbacks are enabled for a Managed Service for Apache
      * Flink application
      */
-    inline bool GetRollbackEnabled() const{ return m_rollbackEnabled; }
+    inline bool GetRollbackEnabled() const { return m_rollbackEnabled; }
     inline bool RollbackEnabledHasBeenSet() const { return m_rollbackEnabledHasBeenSet; }
     inline void SetRollbackEnabled(bool value) { m_rollbackEnabledHasBeenSet = true; m_rollbackEnabled = value; }
     inline ApplicationSystemRollbackConfigurationDescription& WithRollbackEnabled(bool value) { SetRollbackEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_rollbackEnabled;
+    bool m_rollbackEnabled{false};
     bool m_rollbackEnabledHasBeenSet = false;
   };
 

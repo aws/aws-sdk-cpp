@@ -32,7 +32,7 @@ namespace Model
   class ApplicationTheme
   {
   public:
-    AWS_QUICKSIGHT_API ApplicationTheme();
+    AWS_QUICKSIGHT_API ApplicationTheme() = default;
     AWS_QUICKSIGHT_API ApplicationTheme(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ApplicationTheme& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The color palette.</p>
      */
-    inline const BrandColorPalette& GetBrandColorPalette() const{ return m_brandColorPalette; }
+    inline const BrandColorPalette& GetBrandColorPalette() const { return m_brandColorPalette; }
     inline bool BrandColorPaletteHasBeenSet() const { return m_brandColorPaletteHasBeenSet; }
-    inline void SetBrandColorPalette(const BrandColorPalette& value) { m_brandColorPaletteHasBeenSet = true; m_brandColorPalette = value; }
-    inline void SetBrandColorPalette(BrandColorPalette&& value) { m_brandColorPaletteHasBeenSet = true; m_brandColorPalette = std::move(value); }
-    inline ApplicationTheme& WithBrandColorPalette(const BrandColorPalette& value) { SetBrandColorPalette(value); return *this;}
-    inline ApplicationTheme& WithBrandColorPalette(BrandColorPalette&& value) { SetBrandColorPalette(std::move(value)); return *this;}
+    template<typename BrandColorPaletteT = BrandColorPalette>
+    void SetBrandColorPalette(BrandColorPaletteT&& value) { m_brandColorPaletteHasBeenSet = true; m_brandColorPalette = std::forward<BrandColorPaletteT>(value); }
+    template<typename BrandColorPaletteT = BrandColorPalette>
+    ApplicationTheme& WithBrandColorPalette(BrandColorPaletteT&& value) { SetBrandColorPalette(std::forward<BrandColorPaletteT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The element style.</p>
      */
-    inline const BrandElementStyle& GetBrandElementStyle() const{ return m_brandElementStyle; }
+    inline const BrandElementStyle& GetBrandElementStyle() const { return m_brandElementStyle; }
     inline bool BrandElementStyleHasBeenSet() const { return m_brandElementStyleHasBeenSet; }
-    inline void SetBrandElementStyle(const BrandElementStyle& value) { m_brandElementStyleHasBeenSet = true; m_brandElementStyle = value; }
-    inline void SetBrandElementStyle(BrandElementStyle&& value) { m_brandElementStyleHasBeenSet = true; m_brandElementStyle = std::move(value); }
-    inline ApplicationTheme& WithBrandElementStyle(const BrandElementStyle& value) { SetBrandElementStyle(value); return *this;}
-    inline ApplicationTheme& WithBrandElementStyle(BrandElementStyle&& value) { SetBrandElementStyle(std::move(value)); return *this;}
+    template<typename BrandElementStyleT = BrandElementStyle>
+    void SetBrandElementStyle(BrandElementStyleT&& value) { m_brandElementStyleHasBeenSet = true; m_brandElementStyle = std::forward<BrandElementStyleT>(value); }
+    template<typename BrandElementStyleT = BrandElementStyle>
+    ApplicationTheme& WithBrandElementStyle(BrandElementStyleT&& value) { SetBrandElementStyle(std::forward<BrandElementStyleT>(value)); return *this;}
     ///@}
   private:
 

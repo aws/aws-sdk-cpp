@@ -12,13 +12,6 @@ using namespace Aws::kendra::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateEntitiesToExperienceRequest::AssociateEntitiesToExperienceRequest() : 
-    m_idHasBeenSet(false),
-    m_indexIdHasBeenSet(false),
-    m_entityListHasBeenSet(false)
-{
-}
-
 Aws::String AssociateEntitiesToExperienceRequest::SerializePayload() const
 {
   JsonValue payload;

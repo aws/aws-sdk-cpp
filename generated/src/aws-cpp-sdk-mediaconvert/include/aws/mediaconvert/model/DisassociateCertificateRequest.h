@@ -21,7 +21,7 @@ namespace Model
   class DisassociateCertificateRequest : public MediaConvertRequest
   {
   public:
-    AWS_MEDIACONVERT_API DisassociateCertificateRequest();
+    AWS_MEDIACONVERT_API DisassociateCertificateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * The ARN of the ACM certificate that you want to disassociate from your
      * MediaConvert resource.
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline DisassociateCertificateRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DisassociateCertificateRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DisassociateCertificateRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DisassociateCertificateRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
   private:
 

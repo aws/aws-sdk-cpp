@@ -33,7 +33,7 @@ namespace Model
   class TestRunSummary
   {
   public:
-    AWS_APPTEST_API TestRunSummary();
+    AWS_APPTEST_API TestRunSummary() = default;
     AWS_APPTEST_API TestRunSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API TestRunSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,49 +43,43 @@ namespace Model
     /**
      * <p>The test run ID of the test run summary.</p>
      */
-    inline const Aws::String& GetTestRunId() const{ return m_testRunId; }
+    inline const Aws::String& GetTestRunId() const { return m_testRunId; }
     inline bool TestRunIdHasBeenSet() const { return m_testRunIdHasBeenSet; }
-    inline void SetTestRunId(const Aws::String& value) { m_testRunIdHasBeenSet = true; m_testRunId = value; }
-    inline void SetTestRunId(Aws::String&& value) { m_testRunIdHasBeenSet = true; m_testRunId = std::move(value); }
-    inline void SetTestRunId(const char* value) { m_testRunIdHasBeenSet = true; m_testRunId.assign(value); }
-    inline TestRunSummary& WithTestRunId(const Aws::String& value) { SetTestRunId(value); return *this;}
-    inline TestRunSummary& WithTestRunId(Aws::String&& value) { SetTestRunId(std::move(value)); return *this;}
-    inline TestRunSummary& WithTestRunId(const char* value) { SetTestRunId(value); return *this;}
+    template<typename TestRunIdT = Aws::String>
+    void SetTestRunId(TestRunIdT&& value) { m_testRunIdHasBeenSet = true; m_testRunId = std::forward<TestRunIdT>(value); }
+    template<typename TestRunIdT = Aws::String>
+    TestRunSummary& WithTestRunId(TestRunIdT&& value) { SetTestRunId(std::forward<TestRunIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The test run ARN of the test run summary.</p>
      */
-    inline const Aws::String& GetTestRunArn() const{ return m_testRunArn; }
+    inline const Aws::String& GetTestRunArn() const { return m_testRunArn; }
     inline bool TestRunArnHasBeenSet() const { return m_testRunArnHasBeenSet; }
-    inline void SetTestRunArn(const Aws::String& value) { m_testRunArnHasBeenSet = true; m_testRunArn = value; }
-    inline void SetTestRunArn(Aws::String&& value) { m_testRunArnHasBeenSet = true; m_testRunArn = std::move(value); }
-    inline void SetTestRunArn(const char* value) { m_testRunArnHasBeenSet = true; m_testRunArn.assign(value); }
-    inline TestRunSummary& WithTestRunArn(const Aws::String& value) { SetTestRunArn(value); return *this;}
-    inline TestRunSummary& WithTestRunArn(Aws::String&& value) { SetTestRunArn(std::move(value)); return *this;}
-    inline TestRunSummary& WithTestRunArn(const char* value) { SetTestRunArn(value); return *this;}
+    template<typename TestRunArnT = Aws::String>
+    void SetTestRunArn(TestRunArnT&& value) { m_testRunArnHasBeenSet = true; m_testRunArn = std::forward<TestRunArnT>(value); }
+    template<typename TestRunArnT = Aws::String>
+    TestRunSummary& WithTestRunArn(TestRunArnT&& value) { SetTestRunArn(std::forward<TestRunArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The test suite ID of the test run summary.</p>
      */
-    inline const Aws::String& GetTestSuiteId() const{ return m_testSuiteId; }
+    inline const Aws::String& GetTestSuiteId() const { return m_testSuiteId; }
     inline bool TestSuiteIdHasBeenSet() const { return m_testSuiteIdHasBeenSet; }
-    inline void SetTestSuiteId(const Aws::String& value) { m_testSuiteIdHasBeenSet = true; m_testSuiteId = value; }
-    inline void SetTestSuiteId(Aws::String&& value) { m_testSuiteIdHasBeenSet = true; m_testSuiteId = std::move(value); }
-    inline void SetTestSuiteId(const char* value) { m_testSuiteIdHasBeenSet = true; m_testSuiteId.assign(value); }
-    inline TestRunSummary& WithTestSuiteId(const Aws::String& value) { SetTestSuiteId(value); return *this;}
-    inline TestRunSummary& WithTestSuiteId(Aws::String&& value) { SetTestSuiteId(std::move(value)); return *this;}
-    inline TestRunSummary& WithTestSuiteId(const char* value) { SetTestSuiteId(value); return *this;}
+    template<typename TestSuiteIdT = Aws::String>
+    void SetTestSuiteId(TestSuiteIdT&& value) { m_testSuiteIdHasBeenSet = true; m_testSuiteId = std::forward<TestSuiteIdT>(value); }
+    template<typename TestSuiteIdT = Aws::String>
+    TestRunSummary& WithTestSuiteId(TestSuiteIdT&& value) { SetTestSuiteId(std::forward<TestSuiteIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The test suite version of the test run summary.</p>
      */
-    inline int GetTestSuiteVersion() const{ return m_testSuiteVersion; }
+    inline int GetTestSuiteVersion() const { return m_testSuiteVersion; }
     inline bool TestSuiteVersionHasBeenSet() const { return m_testSuiteVersionHasBeenSet; }
     inline void SetTestSuiteVersion(int value) { m_testSuiteVersionHasBeenSet = true; m_testSuiteVersion = value; }
     inline TestRunSummary& WithTestSuiteVersion(int value) { SetTestSuiteVersion(value); return *this;}
@@ -95,21 +89,19 @@ namespace Model
     /**
      * <p>The test configuration ID of the test run summary.</p>
      */
-    inline const Aws::String& GetTestConfigurationId() const{ return m_testConfigurationId; }
+    inline const Aws::String& GetTestConfigurationId() const { return m_testConfigurationId; }
     inline bool TestConfigurationIdHasBeenSet() const { return m_testConfigurationIdHasBeenSet; }
-    inline void SetTestConfigurationId(const Aws::String& value) { m_testConfigurationIdHasBeenSet = true; m_testConfigurationId = value; }
-    inline void SetTestConfigurationId(Aws::String&& value) { m_testConfigurationIdHasBeenSet = true; m_testConfigurationId = std::move(value); }
-    inline void SetTestConfigurationId(const char* value) { m_testConfigurationIdHasBeenSet = true; m_testConfigurationId.assign(value); }
-    inline TestRunSummary& WithTestConfigurationId(const Aws::String& value) { SetTestConfigurationId(value); return *this;}
-    inline TestRunSummary& WithTestConfigurationId(Aws::String&& value) { SetTestConfigurationId(std::move(value)); return *this;}
-    inline TestRunSummary& WithTestConfigurationId(const char* value) { SetTestConfigurationId(value); return *this;}
+    template<typename TestConfigurationIdT = Aws::String>
+    void SetTestConfigurationId(TestConfigurationIdT&& value) { m_testConfigurationIdHasBeenSet = true; m_testConfigurationId = std::forward<TestConfigurationIdT>(value); }
+    template<typename TestConfigurationIdT = Aws::String>
+    TestRunSummary& WithTestConfigurationId(TestConfigurationIdT&& value) { SetTestConfigurationId(std::forward<TestConfigurationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The test configuration version of the test run summary.</p>
      */
-    inline int GetTestConfigurationVersion() const{ return m_testConfigurationVersion; }
+    inline int GetTestConfigurationVersion() const { return m_testConfigurationVersion; }
     inline bool TestConfigurationVersionHasBeenSet() const { return m_testConfigurationVersionHasBeenSet; }
     inline void SetTestConfigurationVersion(int value) { m_testConfigurationVersionHasBeenSet = true; m_testConfigurationVersion = value; }
     inline TestRunSummary& WithTestConfigurationVersion(int value) { SetTestConfigurationVersion(value); return *this;}
@@ -119,50 +111,46 @@ namespace Model
     /**
      * <p>The status of the test run summary.</p>
      */
-    inline const TestRunStatus& GetStatus() const{ return m_status; }
+    inline TestRunStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const TestRunStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(TestRunStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline TestRunSummary& WithStatus(const TestRunStatus& value) { SetStatus(value); return *this;}
-    inline TestRunSummary& WithStatus(TestRunStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(TestRunStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline TestRunSummary& WithStatus(TestRunStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status reason of the test run summary.</p>
      */
-    inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+    inline const Aws::String& GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-    inline void SetStatusReason(const Aws::String& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-    inline void SetStatusReason(Aws::String&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-    inline void SetStatusReason(const char* value) { m_statusReasonHasBeenSet = true; m_statusReason.assign(value); }
-    inline TestRunSummary& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
-    inline TestRunSummary& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
-    inline TestRunSummary& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
+    template<typename StatusReasonT = Aws::String>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = Aws::String>
+    TestRunSummary& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The run start time of the test run summary.</p>
      */
-    inline const Aws::Utils::DateTime& GetRunStartTime() const{ return m_runStartTime; }
+    inline const Aws::Utils::DateTime& GetRunStartTime() const { return m_runStartTime; }
     inline bool RunStartTimeHasBeenSet() const { return m_runStartTimeHasBeenSet; }
-    inline void SetRunStartTime(const Aws::Utils::DateTime& value) { m_runStartTimeHasBeenSet = true; m_runStartTime = value; }
-    inline void SetRunStartTime(Aws::Utils::DateTime&& value) { m_runStartTimeHasBeenSet = true; m_runStartTime = std::move(value); }
-    inline TestRunSummary& WithRunStartTime(const Aws::Utils::DateTime& value) { SetRunStartTime(value); return *this;}
-    inline TestRunSummary& WithRunStartTime(Aws::Utils::DateTime&& value) { SetRunStartTime(std::move(value)); return *this;}
+    template<typename RunStartTimeT = Aws::Utils::DateTime>
+    void SetRunStartTime(RunStartTimeT&& value) { m_runStartTimeHasBeenSet = true; m_runStartTime = std::forward<RunStartTimeT>(value); }
+    template<typename RunStartTimeT = Aws::Utils::DateTime>
+    TestRunSummary& WithRunStartTime(RunStartTimeT&& value) { SetRunStartTime(std::forward<RunStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The run end time of the test run summary.</p>
      */
-    inline const Aws::Utils::DateTime& GetRunEndTime() const{ return m_runEndTime; }
+    inline const Aws::Utils::DateTime& GetRunEndTime() const { return m_runEndTime; }
     inline bool RunEndTimeHasBeenSet() const { return m_runEndTimeHasBeenSet; }
-    inline void SetRunEndTime(const Aws::Utils::DateTime& value) { m_runEndTimeHasBeenSet = true; m_runEndTime = value; }
-    inline void SetRunEndTime(Aws::Utils::DateTime&& value) { m_runEndTimeHasBeenSet = true; m_runEndTime = std::move(value); }
-    inline TestRunSummary& WithRunEndTime(const Aws::Utils::DateTime& value) { SetRunEndTime(value); return *this;}
-    inline TestRunSummary& WithRunEndTime(Aws::Utils::DateTime&& value) { SetRunEndTime(std::move(value)); return *this;}
+    template<typename RunEndTimeT = Aws::Utils::DateTime>
+    void SetRunEndTime(RunEndTimeT&& value) { m_runEndTimeHasBeenSet = true; m_runEndTime = std::forward<RunEndTimeT>(value); }
+    template<typename RunEndTimeT = Aws::Utils::DateTime>
+    TestRunSummary& WithRunEndTime(RunEndTimeT&& value) { SetRunEndTime(std::forward<RunEndTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -175,25 +163,25 @@ namespace Model
     Aws::String m_testSuiteId;
     bool m_testSuiteIdHasBeenSet = false;
 
-    int m_testSuiteVersion;
+    int m_testSuiteVersion{0};
     bool m_testSuiteVersionHasBeenSet = false;
 
     Aws::String m_testConfigurationId;
     bool m_testConfigurationIdHasBeenSet = false;
 
-    int m_testConfigurationVersion;
+    int m_testConfigurationVersion{0};
     bool m_testConfigurationVersionHasBeenSet = false;
 
-    TestRunStatus m_status;
+    TestRunStatus m_status{TestRunStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusReason;
     bool m_statusReasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_runStartTime;
+    Aws::Utils::DateTime m_runStartTime{};
     bool m_runStartTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_runEndTime;
+    Aws::Utils::DateTime m_runEndTime{};
     bool m_runEndTimeHasBeenSet = false;
   };
 

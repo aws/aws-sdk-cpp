@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateVocabularyResult::CreateVocabularyResult() : 
-    m_languageCode(LanguageCode::NOT_SET),
-    m_vocabularyState(VocabularyState::NOT_SET)
-{
-}
-
 CreateVocabularyResult::CreateVocabularyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateVocabularyResult()
 {
   *this = result;
 }
@@ -35,39 +28,35 @@ CreateVocabularyResult& CreateVocabularyResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("VocabularyName"))
   {
     m_vocabularyName = jsonValue.GetString("VocabularyName");
-
+    m_vocabularyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LanguageCode"))
   {
     m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("LanguageCode"));
-
+    m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VocabularyState"))
   {
     m_vocabularyState = VocabularyStateMapper::GetVocabularyStateForName(jsonValue.GetString("VocabularyState"));
-
+    m_vocabularyStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
+    m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
+    m_failureReasonHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

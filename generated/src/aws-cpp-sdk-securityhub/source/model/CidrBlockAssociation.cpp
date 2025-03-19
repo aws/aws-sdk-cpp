@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-CidrBlockAssociation::CidrBlockAssociation() : 
-    m_associationIdHasBeenSet(false),
-    m_cidrBlockHasBeenSet(false),
-    m_cidrBlockStateHasBeenSet(false)
-{
-}
-
 CidrBlockAssociation::CidrBlockAssociation(JsonView jsonValue)
-  : CidrBlockAssociation()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CidrBlockAssociation& CidrBlockAssociation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AssociationId"))
   {
     m_associationId = jsonValue.GetString("AssociationId");
-
     m_associationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CidrBlock"))
   {
     m_cidrBlock = jsonValue.GetString("CidrBlock");
-
     m_cidrBlockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CidrBlockState"))
   {
     m_cidrBlockState = jsonValue.GetString("CidrBlockState");
-
     m_cidrBlockStateHasBeenSet = true;
   }
-
   return *this;
 }
 

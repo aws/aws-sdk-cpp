@@ -37,7 +37,7 @@ namespace Model
   class StudioWebPortalSettings
   {
   public:
-    AWS_SAGEMAKER_API StudioWebPortalSettings();
+    AWS_SAGEMAKER_API StudioWebPortalSettings() = default;
     AWS_SAGEMAKER_API StudioWebPortalSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API StudioWebPortalSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,13 @@ namespace Model
      * <p>The machine learning tools that are hidden from the Studio left navigation
      * pane.</p>
      */
-    inline const Aws::Vector<MlTools>& GetHiddenMlTools() const{ return m_hiddenMlTools; }
+    inline const Aws::Vector<MlTools>& GetHiddenMlTools() const { return m_hiddenMlTools; }
     inline bool HiddenMlToolsHasBeenSet() const { return m_hiddenMlToolsHasBeenSet; }
-    inline void SetHiddenMlTools(const Aws::Vector<MlTools>& value) { m_hiddenMlToolsHasBeenSet = true; m_hiddenMlTools = value; }
-    inline void SetHiddenMlTools(Aws::Vector<MlTools>&& value) { m_hiddenMlToolsHasBeenSet = true; m_hiddenMlTools = std::move(value); }
-    inline StudioWebPortalSettings& WithHiddenMlTools(const Aws::Vector<MlTools>& value) { SetHiddenMlTools(value); return *this;}
-    inline StudioWebPortalSettings& WithHiddenMlTools(Aws::Vector<MlTools>&& value) { SetHiddenMlTools(std::move(value)); return *this;}
-    inline StudioWebPortalSettings& AddHiddenMlTools(const MlTools& value) { m_hiddenMlToolsHasBeenSet = true; m_hiddenMlTools.push_back(value); return *this; }
-    inline StudioWebPortalSettings& AddHiddenMlTools(MlTools&& value) { m_hiddenMlToolsHasBeenSet = true; m_hiddenMlTools.push_back(std::move(value)); return *this; }
+    template<typename HiddenMlToolsT = Aws::Vector<MlTools>>
+    void SetHiddenMlTools(HiddenMlToolsT&& value) { m_hiddenMlToolsHasBeenSet = true; m_hiddenMlTools = std::forward<HiddenMlToolsT>(value); }
+    template<typename HiddenMlToolsT = Aws::Vector<MlTools>>
+    StudioWebPortalSettings& WithHiddenMlTools(HiddenMlToolsT&& value) { SetHiddenMlTools(std::forward<HiddenMlToolsT>(value)); return *this;}
+    inline StudioWebPortalSettings& AddHiddenMlTools(MlTools value) { m_hiddenMlToolsHasBeenSet = true; m_hiddenMlTools.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -65,42 +64,40 @@ namespace Model
      * supported in Studio</a> that are hidden from the Studio left navigation
      * pane.</p>
      */
-    inline const Aws::Vector<AppType>& GetHiddenAppTypes() const{ return m_hiddenAppTypes; }
+    inline const Aws::Vector<AppType>& GetHiddenAppTypes() const { return m_hiddenAppTypes; }
     inline bool HiddenAppTypesHasBeenSet() const { return m_hiddenAppTypesHasBeenSet; }
-    inline void SetHiddenAppTypes(const Aws::Vector<AppType>& value) { m_hiddenAppTypesHasBeenSet = true; m_hiddenAppTypes = value; }
-    inline void SetHiddenAppTypes(Aws::Vector<AppType>&& value) { m_hiddenAppTypesHasBeenSet = true; m_hiddenAppTypes = std::move(value); }
-    inline StudioWebPortalSettings& WithHiddenAppTypes(const Aws::Vector<AppType>& value) { SetHiddenAppTypes(value); return *this;}
-    inline StudioWebPortalSettings& WithHiddenAppTypes(Aws::Vector<AppType>&& value) { SetHiddenAppTypes(std::move(value)); return *this;}
-    inline StudioWebPortalSettings& AddHiddenAppTypes(const AppType& value) { m_hiddenAppTypesHasBeenSet = true; m_hiddenAppTypes.push_back(value); return *this; }
-    inline StudioWebPortalSettings& AddHiddenAppTypes(AppType&& value) { m_hiddenAppTypesHasBeenSet = true; m_hiddenAppTypes.push_back(std::move(value)); return *this; }
+    template<typename HiddenAppTypesT = Aws::Vector<AppType>>
+    void SetHiddenAppTypes(HiddenAppTypesT&& value) { m_hiddenAppTypesHasBeenSet = true; m_hiddenAppTypes = std::forward<HiddenAppTypesT>(value); }
+    template<typename HiddenAppTypesT = Aws::Vector<AppType>>
+    StudioWebPortalSettings& WithHiddenAppTypes(HiddenAppTypesT&& value) { SetHiddenAppTypes(std::forward<HiddenAppTypesT>(value)); return *this;}
+    inline StudioWebPortalSettings& AddHiddenAppTypes(AppType value) { m_hiddenAppTypesHasBeenSet = true; m_hiddenAppTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The instance types you are hiding from the Studio user interface. </p>
      */
-    inline const Aws::Vector<AppInstanceType>& GetHiddenInstanceTypes() const{ return m_hiddenInstanceTypes; }
+    inline const Aws::Vector<AppInstanceType>& GetHiddenInstanceTypes() const { return m_hiddenInstanceTypes; }
     inline bool HiddenInstanceTypesHasBeenSet() const { return m_hiddenInstanceTypesHasBeenSet; }
-    inline void SetHiddenInstanceTypes(const Aws::Vector<AppInstanceType>& value) { m_hiddenInstanceTypesHasBeenSet = true; m_hiddenInstanceTypes = value; }
-    inline void SetHiddenInstanceTypes(Aws::Vector<AppInstanceType>&& value) { m_hiddenInstanceTypesHasBeenSet = true; m_hiddenInstanceTypes = std::move(value); }
-    inline StudioWebPortalSettings& WithHiddenInstanceTypes(const Aws::Vector<AppInstanceType>& value) { SetHiddenInstanceTypes(value); return *this;}
-    inline StudioWebPortalSettings& WithHiddenInstanceTypes(Aws::Vector<AppInstanceType>&& value) { SetHiddenInstanceTypes(std::move(value)); return *this;}
-    inline StudioWebPortalSettings& AddHiddenInstanceTypes(const AppInstanceType& value) { m_hiddenInstanceTypesHasBeenSet = true; m_hiddenInstanceTypes.push_back(value); return *this; }
-    inline StudioWebPortalSettings& AddHiddenInstanceTypes(AppInstanceType&& value) { m_hiddenInstanceTypesHasBeenSet = true; m_hiddenInstanceTypes.push_back(std::move(value)); return *this; }
+    template<typename HiddenInstanceTypesT = Aws::Vector<AppInstanceType>>
+    void SetHiddenInstanceTypes(HiddenInstanceTypesT&& value) { m_hiddenInstanceTypesHasBeenSet = true; m_hiddenInstanceTypes = std::forward<HiddenInstanceTypesT>(value); }
+    template<typename HiddenInstanceTypesT = Aws::Vector<AppInstanceType>>
+    StudioWebPortalSettings& WithHiddenInstanceTypes(HiddenInstanceTypesT&& value) { SetHiddenInstanceTypes(std::forward<HiddenInstanceTypesT>(value)); return *this;}
+    inline StudioWebPortalSettings& AddHiddenInstanceTypes(AppInstanceType value) { m_hiddenInstanceTypesHasBeenSet = true; m_hiddenInstanceTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p> The version aliases you are hiding from the Studio user interface. </p>
      */
-    inline const Aws::Vector<HiddenSageMakerImage>& GetHiddenSageMakerImageVersionAliases() const{ return m_hiddenSageMakerImageVersionAliases; }
+    inline const Aws::Vector<HiddenSageMakerImage>& GetHiddenSageMakerImageVersionAliases() const { return m_hiddenSageMakerImageVersionAliases; }
     inline bool HiddenSageMakerImageVersionAliasesHasBeenSet() const { return m_hiddenSageMakerImageVersionAliasesHasBeenSet; }
-    inline void SetHiddenSageMakerImageVersionAliases(const Aws::Vector<HiddenSageMakerImage>& value) { m_hiddenSageMakerImageVersionAliasesHasBeenSet = true; m_hiddenSageMakerImageVersionAliases = value; }
-    inline void SetHiddenSageMakerImageVersionAliases(Aws::Vector<HiddenSageMakerImage>&& value) { m_hiddenSageMakerImageVersionAliasesHasBeenSet = true; m_hiddenSageMakerImageVersionAliases = std::move(value); }
-    inline StudioWebPortalSettings& WithHiddenSageMakerImageVersionAliases(const Aws::Vector<HiddenSageMakerImage>& value) { SetHiddenSageMakerImageVersionAliases(value); return *this;}
-    inline StudioWebPortalSettings& WithHiddenSageMakerImageVersionAliases(Aws::Vector<HiddenSageMakerImage>&& value) { SetHiddenSageMakerImageVersionAliases(std::move(value)); return *this;}
-    inline StudioWebPortalSettings& AddHiddenSageMakerImageVersionAliases(const HiddenSageMakerImage& value) { m_hiddenSageMakerImageVersionAliasesHasBeenSet = true; m_hiddenSageMakerImageVersionAliases.push_back(value); return *this; }
-    inline StudioWebPortalSettings& AddHiddenSageMakerImageVersionAliases(HiddenSageMakerImage&& value) { m_hiddenSageMakerImageVersionAliasesHasBeenSet = true; m_hiddenSageMakerImageVersionAliases.push_back(std::move(value)); return *this; }
+    template<typename HiddenSageMakerImageVersionAliasesT = Aws::Vector<HiddenSageMakerImage>>
+    void SetHiddenSageMakerImageVersionAliases(HiddenSageMakerImageVersionAliasesT&& value) { m_hiddenSageMakerImageVersionAliasesHasBeenSet = true; m_hiddenSageMakerImageVersionAliases = std::forward<HiddenSageMakerImageVersionAliasesT>(value); }
+    template<typename HiddenSageMakerImageVersionAliasesT = Aws::Vector<HiddenSageMakerImage>>
+    StudioWebPortalSettings& WithHiddenSageMakerImageVersionAliases(HiddenSageMakerImageVersionAliasesT&& value) { SetHiddenSageMakerImageVersionAliases(std::forward<HiddenSageMakerImageVersionAliasesT>(value)); return *this;}
+    template<typename HiddenSageMakerImageVersionAliasesT = HiddenSageMakerImage>
+    StudioWebPortalSettings& AddHiddenSageMakerImageVersionAliases(HiddenSageMakerImageVersionAliasesT&& value) { m_hiddenSageMakerImageVersionAliasesHasBeenSet = true; m_hiddenSageMakerImageVersionAliases.emplace_back(std::forward<HiddenSageMakerImageVersionAliasesT>(value)); return *this; }
     ///@}
   private:
 

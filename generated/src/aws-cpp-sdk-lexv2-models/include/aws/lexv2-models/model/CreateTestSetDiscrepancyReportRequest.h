@@ -22,7 +22,7 @@ namespace Model
   class CreateTestSetDiscrepancyReportRequest : public LexModelsV2Request
   {
   public:
-    AWS_LEXMODELSV2_API CreateTestSetDiscrepancyReportRequest();
+    AWS_LEXMODELSV2_API CreateTestSetDiscrepancyReportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,26 +37,24 @@ namespace Model
     /**
      * <p>The test set Id for the test set discrepancy report.</p>
      */
-    inline const Aws::String& GetTestSetId() const{ return m_testSetId; }
+    inline const Aws::String& GetTestSetId() const { return m_testSetId; }
     inline bool TestSetIdHasBeenSet() const { return m_testSetIdHasBeenSet; }
-    inline void SetTestSetId(const Aws::String& value) { m_testSetIdHasBeenSet = true; m_testSetId = value; }
-    inline void SetTestSetId(Aws::String&& value) { m_testSetIdHasBeenSet = true; m_testSetId = std::move(value); }
-    inline void SetTestSetId(const char* value) { m_testSetIdHasBeenSet = true; m_testSetId.assign(value); }
-    inline CreateTestSetDiscrepancyReportRequest& WithTestSetId(const Aws::String& value) { SetTestSetId(value); return *this;}
-    inline CreateTestSetDiscrepancyReportRequest& WithTestSetId(Aws::String&& value) { SetTestSetId(std::move(value)); return *this;}
-    inline CreateTestSetDiscrepancyReportRequest& WithTestSetId(const char* value) { SetTestSetId(value); return *this;}
+    template<typename TestSetIdT = Aws::String>
+    void SetTestSetId(TestSetIdT&& value) { m_testSetIdHasBeenSet = true; m_testSetId = std::forward<TestSetIdT>(value); }
+    template<typename TestSetIdT = Aws::String>
+    CreateTestSetDiscrepancyReportRequest& WithTestSetId(TestSetIdT&& value) { SetTestSetId(std::forward<TestSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The target bot for the test set discrepancy report.</p>
      */
-    inline const TestSetDiscrepancyReportResourceTarget& GetTarget() const{ return m_target; }
+    inline const TestSetDiscrepancyReportResourceTarget& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const TestSetDiscrepancyReportResourceTarget& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(TestSetDiscrepancyReportResourceTarget&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline CreateTestSetDiscrepancyReportRequest& WithTarget(const TestSetDiscrepancyReportResourceTarget& value) { SetTarget(value); return *this;}
-    inline CreateTestSetDiscrepancyReportRequest& WithTarget(TestSetDiscrepancyReportResourceTarget&& value) { SetTarget(std::move(value)); return *this;}
+    template<typename TargetT = TestSetDiscrepancyReportResourceTarget>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = TestSetDiscrepancyReportResourceTarget>
+    CreateTestSetDiscrepancyReportRequest& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
   private:
 

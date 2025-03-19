@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-LoggingOptionsPayload::LoggingOptionsPayload() : 
-    m_roleArnHasBeenSet(false),
-    m_logLevel(LogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false)
-{
-}
-
 LoggingOptionsPayload::LoggingOptionsPayload(JsonView jsonValue)
-  : LoggingOptionsPayload()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LoggingOptionsPayload& LoggingOptionsPayload::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logLevel"))
   {
     m_logLevel = LogLevelMapper::GetLogLevelForName(jsonValue.GetString("logLevel"));
-
     m_logLevelHasBeenSet = true;
   }
-
   return *this;
 }
 

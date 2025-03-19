@@ -20,16 +20,7 @@ namespace Route53
 namespace Model
 {
 
-AliasTarget::AliasTarget() : 
-    m_hostedZoneIdHasBeenSet(false),
-    m_dNSNameHasBeenSet(false),
-    m_evaluateTargetHealth(false),
-    m_evaluateTargetHealthHasBeenSet(false)
-{
-}
-
 AliasTarget::AliasTarget(const XmlNode& xmlNode)
-  : AliasTarget()
 {
   *this = xmlNode;
 }

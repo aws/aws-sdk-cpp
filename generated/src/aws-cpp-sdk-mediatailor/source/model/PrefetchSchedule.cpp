@@ -18,18 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-PrefetchSchedule::PrefetchSchedule() : 
-    m_arnHasBeenSet(false),
-    m_consumptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_playbackConfigurationNameHasBeenSet(false),
-    m_retrievalHasBeenSet(false),
-    m_streamIdHasBeenSet(false)
-{
-}
-
 PrefetchSchedule::PrefetchSchedule(JsonView jsonValue)
-  : PrefetchSchedule()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ PrefetchSchedule& PrefetchSchedule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Consumption"))
   {
     m_consumption = jsonValue.GetObject("Consumption");
-
     m_consumptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlaybackConfigurationName"))
   {
     m_playbackConfigurationName = jsonValue.GetString("PlaybackConfigurationName");
-
     m_playbackConfigurationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Retrieval"))
   {
     m_retrieval = jsonValue.GetObject("Retrieval");
-
     m_retrievalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamId"))
   {
     m_streamId = jsonValue.GetString("StreamId");
-
     m_streamIdHasBeenSet = true;
   }
-
   return *this;
 }
 

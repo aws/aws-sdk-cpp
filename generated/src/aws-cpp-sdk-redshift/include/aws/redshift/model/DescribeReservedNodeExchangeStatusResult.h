@@ -30,7 +30,7 @@ namespace Model
   class DescribeReservedNodeExchangeStatusResult
   {
   public:
-    AWS_REDSHIFT_API DescribeReservedNodeExchangeStatusResult();
+    AWS_REDSHIFT_API DescribeReservedNodeExchangeStatusResult() = default;
     AWS_REDSHIFT_API DescribeReservedNodeExchangeStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_REDSHIFT_API DescribeReservedNodeExchangeStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>The details of the reserved-node exchange request, including the status,
      * request time, source reserved-node identifier, and additional details.</p>
      */
-    inline const Aws::Vector<ReservedNodeExchangeStatus>& GetReservedNodeExchangeStatusDetails() const{ return m_reservedNodeExchangeStatusDetails; }
-    inline void SetReservedNodeExchangeStatusDetails(const Aws::Vector<ReservedNodeExchangeStatus>& value) { m_reservedNodeExchangeStatusDetails = value; }
-    inline void SetReservedNodeExchangeStatusDetails(Aws::Vector<ReservedNodeExchangeStatus>&& value) { m_reservedNodeExchangeStatusDetails = std::move(value); }
-    inline DescribeReservedNodeExchangeStatusResult& WithReservedNodeExchangeStatusDetails(const Aws::Vector<ReservedNodeExchangeStatus>& value) { SetReservedNodeExchangeStatusDetails(value); return *this;}
-    inline DescribeReservedNodeExchangeStatusResult& WithReservedNodeExchangeStatusDetails(Aws::Vector<ReservedNodeExchangeStatus>&& value) { SetReservedNodeExchangeStatusDetails(std::move(value)); return *this;}
-    inline DescribeReservedNodeExchangeStatusResult& AddReservedNodeExchangeStatusDetails(const ReservedNodeExchangeStatus& value) { m_reservedNodeExchangeStatusDetails.push_back(value); return *this; }
-    inline DescribeReservedNodeExchangeStatusResult& AddReservedNodeExchangeStatusDetails(ReservedNodeExchangeStatus&& value) { m_reservedNodeExchangeStatusDetails.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReservedNodeExchangeStatus>& GetReservedNodeExchangeStatusDetails() const { return m_reservedNodeExchangeStatusDetails; }
+    template<typename ReservedNodeExchangeStatusDetailsT = Aws::Vector<ReservedNodeExchangeStatus>>
+    void SetReservedNodeExchangeStatusDetails(ReservedNodeExchangeStatusDetailsT&& value) { m_reservedNodeExchangeStatusDetailsHasBeenSet = true; m_reservedNodeExchangeStatusDetails = std::forward<ReservedNodeExchangeStatusDetailsT>(value); }
+    template<typename ReservedNodeExchangeStatusDetailsT = Aws::Vector<ReservedNodeExchangeStatus>>
+    DescribeReservedNodeExchangeStatusResult& WithReservedNodeExchangeStatusDetails(ReservedNodeExchangeStatusDetailsT&& value) { SetReservedNodeExchangeStatusDetails(std::forward<ReservedNodeExchangeStatusDetailsT>(value)); return *this;}
+    template<typename ReservedNodeExchangeStatusDetailsT = ReservedNodeExchangeStatus>
+    DescribeReservedNodeExchangeStatusResult& AddReservedNodeExchangeStatusDetails(ReservedNodeExchangeStatusDetailsT&& value) { m_reservedNodeExchangeStatusDetailsHasBeenSet = true; m_reservedNodeExchangeStatusDetails.emplace_back(std::forward<ReservedNodeExchangeStatusDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,30 +54,31 @@ namespace Model
      * <p>A pagination token provided by a previous
      * <code>DescribeReservedNodeExchangeStatus</code> request.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeReservedNodeExchangeStatusResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeReservedNodeExchangeStatusResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeReservedNodeExchangeStatusResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeReservedNodeExchangeStatusResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeReservedNodeExchangeStatusResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeReservedNodeExchangeStatusResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeReservedNodeExchangeStatusResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ReservedNodeExchangeStatus> m_reservedNodeExchangeStatusDetails;
+    bool m_reservedNodeExchangeStatusDetailsHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

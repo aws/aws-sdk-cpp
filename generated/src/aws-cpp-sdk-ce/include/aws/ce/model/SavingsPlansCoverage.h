@@ -36,7 +36,7 @@ namespace Model
   class SavingsPlansCoverage
   {
   public:
-    AWS_COSTEXPLORER_API SavingsPlansCoverage();
+    AWS_COSTEXPLORER_API SavingsPlansCoverage() = default;
     AWS_COSTEXPLORER_API SavingsPlansCoverage(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API SavingsPlansCoverage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,19 +46,16 @@ namespace Model
     /**
      * <p>The attribute that applies to a specific <code>Dimension</code>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline SavingsPlansCoverage& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
-    inline SavingsPlansCoverage& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline SavingsPlansCoverage& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
-    inline SavingsPlansCoverage& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline SavingsPlansCoverage& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline SavingsPlansCoverage& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline SavingsPlansCoverage& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline SavingsPlansCoverage& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline SavingsPlansCoverage& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    SavingsPlansCoverage& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesKeyT = Aws::String, typename AttributesValueT = Aws::String>
+    SavingsPlansCoverage& AddAttributes(AttributesKeyT&& key, AttributesValueT&& value) {
+      m_attributesHasBeenSet = true; m_attributes.emplace(std::forward<AttributesKeyT>(key), std::forward<AttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -66,22 +63,22 @@ namespace Model
      * <p>The amount of Savings Plans eligible usage that the Savings Plans
      * covered.</p>
      */
-    inline const SavingsPlansCoverageData& GetCoverage() const{ return m_coverage; }
+    inline const SavingsPlansCoverageData& GetCoverage() const { return m_coverage; }
     inline bool CoverageHasBeenSet() const { return m_coverageHasBeenSet; }
-    inline void SetCoverage(const SavingsPlansCoverageData& value) { m_coverageHasBeenSet = true; m_coverage = value; }
-    inline void SetCoverage(SavingsPlansCoverageData&& value) { m_coverageHasBeenSet = true; m_coverage = std::move(value); }
-    inline SavingsPlansCoverage& WithCoverage(const SavingsPlansCoverageData& value) { SetCoverage(value); return *this;}
-    inline SavingsPlansCoverage& WithCoverage(SavingsPlansCoverageData&& value) { SetCoverage(std::move(value)); return *this;}
+    template<typename CoverageT = SavingsPlansCoverageData>
+    void SetCoverage(CoverageT&& value) { m_coverageHasBeenSet = true; m_coverage = std::forward<CoverageT>(value); }
+    template<typename CoverageT = SavingsPlansCoverageData>
+    SavingsPlansCoverage& WithCoverage(CoverageT&& value) { SetCoverage(std::forward<CoverageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DateInterval& GetTimePeriod() const{ return m_timePeriod; }
+    inline const DateInterval& GetTimePeriod() const { return m_timePeriod; }
     inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
-    inline void SetTimePeriod(const DateInterval& value) { m_timePeriodHasBeenSet = true; m_timePeriod = value; }
-    inline void SetTimePeriod(DateInterval&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::move(value); }
-    inline SavingsPlansCoverage& WithTimePeriod(const DateInterval& value) { SetTimePeriod(value); return *this;}
-    inline SavingsPlansCoverage& WithTimePeriod(DateInterval&& value) { SetTimePeriod(std::move(value)); return *this;}
+    template<typename TimePeriodT = DateInterval>
+    void SetTimePeriod(TimePeriodT&& value) { m_timePeriodHasBeenSet = true; m_timePeriod = std::forward<TimePeriodT>(value); }
+    template<typename TimePeriodT = DateInterval>
+    SavingsPlansCoverage& WithTimePeriod(TimePeriodT&& value) { SetTimePeriod(std::forward<TimePeriodT>(value)); return *this;}
     ///@}
   private:
 

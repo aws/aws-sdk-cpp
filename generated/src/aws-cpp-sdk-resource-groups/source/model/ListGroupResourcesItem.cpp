@@ -18,14 +18,7 @@ namespace ResourceGroups
 namespace Model
 {
 
-ListGroupResourcesItem::ListGroupResourcesItem() : 
-    m_identifierHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 ListGroupResourcesItem::ListGroupResourcesItem(JsonView jsonValue)
-  : ListGroupResourcesItem()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ListGroupResourcesItem& ListGroupResourcesItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Identifier"))
   {
     m_identifier = jsonValue.GetObject("Identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetObject("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

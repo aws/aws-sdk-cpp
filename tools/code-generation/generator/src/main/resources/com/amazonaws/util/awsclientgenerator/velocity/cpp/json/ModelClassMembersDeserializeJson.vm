@@ -20,7 +20,6 @@
 #end
 #if($member.shape.enum)
   ${spaces}${memberVarName} = ${member.shape.name}Mapper::Get${member.shape.name}ForName(jsonValue.GetString("${memberName}"));
-
 #elseif($member.shape.list || $member.shape.map)
 #set($currentSpaces = $spaces)
 #set($currentShape = $member.shape)
@@ -43,15 +42,11 @@
 #else
   ${spaces}${memberVarName} = jsonValue.Get${CppViewHelper.computeJsonCppType($member.shape)}("${memberName}");
 #end
-
 #end
 #end
+  ${spaces}$varNameHasBeenSet = true;
 #if(!$member.required && !$memberIsWholePayload)
-#if($useRequiredField)
-    $varNameHasBeenSet = true;
-#end
   }
-
 #end
 #end
 #end

@@ -33,7 +33,7 @@ namespace Model
   class CustomOrchestrationTrace
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API CustomOrchestrationTrace();
+    AWS_BEDROCKAGENTRUNTIME_API CustomOrchestrationTrace() = default;
     AWS_BEDROCKAGENTRUNTIME_API CustomOrchestrationTrace(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API CustomOrchestrationTrace& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,26 +43,24 @@ namespace Model
     /**
      * <p> The event details used with the custom orchestration. </p>
      */
-    inline const CustomOrchestrationTraceEvent& GetEvent() const{ return m_event; }
+    inline const CustomOrchestrationTraceEvent& GetEvent() const { return m_event; }
     inline bool EventHasBeenSet() const { return m_eventHasBeenSet; }
-    inline void SetEvent(const CustomOrchestrationTraceEvent& value) { m_eventHasBeenSet = true; m_event = value; }
-    inline void SetEvent(CustomOrchestrationTraceEvent&& value) { m_eventHasBeenSet = true; m_event = std::move(value); }
-    inline CustomOrchestrationTrace& WithEvent(const CustomOrchestrationTraceEvent& value) { SetEvent(value); return *this;}
-    inline CustomOrchestrationTrace& WithEvent(CustomOrchestrationTraceEvent&& value) { SetEvent(std::move(value)); return *this;}
+    template<typename EventT = CustomOrchestrationTraceEvent>
+    void SetEvent(EventT&& value) { m_eventHasBeenSet = true; m_event = std::forward<EventT>(value); }
+    template<typename EventT = CustomOrchestrationTraceEvent>
+    CustomOrchestrationTrace& WithEvent(EventT&& value) { SetEvent(std::forward<EventT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The unique identifier of the trace. </p>
      */
-    inline const Aws::String& GetTraceId() const{ return m_traceId; }
+    inline const Aws::String& GetTraceId() const { return m_traceId; }
     inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
-    inline void SetTraceId(const Aws::String& value) { m_traceIdHasBeenSet = true; m_traceId = value; }
-    inline void SetTraceId(Aws::String&& value) { m_traceIdHasBeenSet = true; m_traceId = std::move(value); }
-    inline void SetTraceId(const char* value) { m_traceIdHasBeenSet = true; m_traceId.assign(value); }
-    inline CustomOrchestrationTrace& WithTraceId(const Aws::String& value) { SetTraceId(value); return *this;}
-    inline CustomOrchestrationTrace& WithTraceId(Aws::String&& value) { SetTraceId(std::move(value)); return *this;}
-    inline CustomOrchestrationTrace& WithTraceId(const char* value) { SetTraceId(value); return *this;}
+    template<typename TraceIdT = Aws::String>
+    void SetTraceId(TraceIdT&& value) { m_traceIdHasBeenSet = true; m_traceId = std::forward<TraceIdT>(value); }
+    template<typename TraceIdT = Aws::String>
+    CustomOrchestrationTrace& WithTraceId(TraceIdT&& value) { SetTraceId(std::forward<TraceIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,12 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetachElasticLoadBalancerRequest::DetachElasticLoadBalancerRequest() : 
-    m_elasticLoadBalancerNameHasBeenSet(false),
-    m_layerIdHasBeenSet(false)
-{
-}
-
 Aws::String DetachElasticLoadBalancerRequest::SerializePayload() const
 {
   JsonValue payload;

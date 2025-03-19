@@ -18,14 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-S3DataAccessDetails::S3DataAccessDetails() : 
-    m_keyPrefixesHasBeenSet(false),
-    m_keysHasBeenSet(false)
-{
-}
-
 S3DataAccessDetails::S3DataAccessDetails(JsonView jsonValue)
-  : S3DataAccessDetails()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ S3DataAccessDetails& S3DataAccessDetails::operator =(JsonView jsonValue)
     }
     m_keyPrefixesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Keys"))
   {
     Aws::Utils::Array<JsonView> keysJsonList = jsonValue.GetArray("Keys");
@@ -51,7 +43,6 @@ S3DataAccessDetails& S3DataAccessDetails::operator =(JsonView jsonValue)
     }
     m_keysHasBeenSet = true;
   }
-
   return *this;
 }
 

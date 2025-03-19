@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ProcessorInfo::ProcessorInfo() : 
-    m_supportedArchitecturesHasBeenSet(false),
-    m_sustainedClockSpeedInGhz(0.0),
-    m_sustainedClockSpeedInGhzHasBeenSet(false),
-    m_supportedFeaturesHasBeenSet(false),
-    m_manufacturerHasBeenSet(false)
-{
-}
-
 ProcessorInfo::ProcessorInfo(const XmlNode& xmlNode)
-  : ProcessorInfo()
 {
   *this = xmlNode;
 }
@@ -45,6 +35,7 @@ ProcessorInfo& ProcessorInfo::operator =(const XmlNode& xmlNode)
     if(!supportedArchitecturesNode.IsNull())
     {
       XmlNode supportedArchitecturesMember = supportedArchitecturesNode.FirstChild("item");
+      m_supportedArchitecturesHasBeenSet = !supportedArchitecturesMember.IsNull();
       while(!supportedArchitecturesMember.IsNull())
       {
         m_supportedArchitectures.push_back(ArchitectureTypeMapper::GetArchitectureTypeForName(StringUtils::Trim(supportedArchitecturesMember.GetText().c_str())));
@@ -63,6 +54,7 @@ ProcessorInfo& ProcessorInfo::operator =(const XmlNode& xmlNode)
     if(!supportedFeaturesNode.IsNull())
     {
       XmlNode supportedFeaturesMember = supportedFeaturesNode.FirstChild("item");
+      m_supportedFeaturesHasBeenSet = !supportedFeaturesMember.IsNull();
       while(!supportedFeaturesMember.IsNull())
       {
         m_supportedFeatures.push_back(SupportedAdditionalProcessorFeatureMapper::GetSupportedAdditionalProcessorFeatureForName(StringUtils::Trim(supportedFeaturesMember.GetText().c_str())));

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeployWorkspaceApplicationsResult::DeployWorkspaceApplicationsResult()
-{
-}
-
 DeployWorkspaceApplicationsResult::DeployWorkspaceApplicationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DeployWorkspaceApplicationsResult& DeployWorkspaceApplicationsResult::operator =
   if(jsonValue.ValueExists("Deployment"))
   {
     m_deployment = jsonValue.GetObject("Deployment");
-
+    m_deploymentHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

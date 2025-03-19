@@ -32,7 +32,7 @@ namespace Model
   class CloudWatchLogsDestinationConfiguration
   {
   public:
-    AWS_IVSCHAT_API CloudWatchLogsDestinationConfiguration();
+    AWS_IVSCHAT_API CloudWatchLogsDestinationConfiguration() = default;
     AWS_IVSCHAT_API CloudWatchLogsDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSCHAT_API CloudWatchLogsDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSCHAT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>Name of the Amazon Cloudwatch Logs destination where chat activity will be
      * logged.</p>
      */
-    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+    inline const Aws::String& GetLogGroupName() const { return m_logGroupName; }
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-    inline CloudWatchLogsDestinationConfiguration& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-    inline CloudWatchLogsDestinationConfiguration& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-    inline CloudWatchLogsDestinationConfiguration& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+    template<typename LogGroupNameT = Aws::String>
+    void SetLogGroupName(LogGroupNameT&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::forward<LogGroupNameT>(value); }
+    template<typename LogGroupNameT = Aws::String>
+    CloudWatchLogsDestinationConfiguration& WithLogGroupName(LogGroupNameT&& value) { SetLogGroupName(std::forward<LogGroupNameT>(value)); return *this;}
     ///@}
   private:
 

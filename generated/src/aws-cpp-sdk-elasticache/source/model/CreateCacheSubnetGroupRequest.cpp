@@ -10,14 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-CreateCacheSubnetGroupRequest::CreateCacheSubnetGroupRequest() : 
-    m_cacheSubnetGroupNameHasBeenSet(false),
-    m_cacheSubnetGroupDescriptionHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateCacheSubnetGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

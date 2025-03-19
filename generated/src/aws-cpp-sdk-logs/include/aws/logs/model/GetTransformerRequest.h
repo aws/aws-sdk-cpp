@@ -21,7 +21,7 @@ namespace Model
   class GetTransformerRequest : public CloudWatchLogsRequest
   {
   public:
-    AWS_CLOUDWATCHLOGS_API GetTransformerRequest();
+    AWS_CLOUDWATCHLOGS_API GetTransformerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * information for. If the log group is in a source account and you are using a
      * monitoring account, you must use the log group ARN.</p>
      */
-    inline const Aws::String& GetLogGroupIdentifier() const{ return m_logGroupIdentifier; }
+    inline const Aws::String& GetLogGroupIdentifier() const { return m_logGroupIdentifier; }
     inline bool LogGroupIdentifierHasBeenSet() const { return m_logGroupIdentifierHasBeenSet; }
-    inline void SetLogGroupIdentifier(const Aws::String& value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier = value; }
-    inline void SetLogGroupIdentifier(Aws::String&& value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier = std::move(value); }
-    inline void SetLogGroupIdentifier(const char* value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier.assign(value); }
-    inline GetTransformerRequest& WithLogGroupIdentifier(const Aws::String& value) { SetLogGroupIdentifier(value); return *this;}
-    inline GetTransformerRequest& WithLogGroupIdentifier(Aws::String&& value) { SetLogGroupIdentifier(std::move(value)); return *this;}
-    inline GetTransformerRequest& WithLogGroupIdentifier(const char* value) { SetLogGroupIdentifier(value); return *this;}
+    template<typename LogGroupIdentifierT = Aws::String>
+    void SetLogGroupIdentifier(LogGroupIdentifierT&& value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier = std::forward<LogGroupIdentifierT>(value); }
+    template<typename LogGroupIdentifierT = Aws::String>
+    GetTransformerRequest& WithLogGroupIdentifier(LogGroupIdentifierT&& value) { SetLogGroupIdentifier(std::forward<LogGroupIdentifierT>(value)); return *this;}
     ///@}
   private:
 

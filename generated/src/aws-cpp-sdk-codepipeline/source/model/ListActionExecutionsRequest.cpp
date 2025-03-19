@@ -12,15 +12,6 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListActionExecutionsRequest::ListActionExecutionsRequest() : 
-    m_pipelineNameHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListActionExecutionsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-RetryConfiguration::RetryConfiguration() : 
-    m_retryMode(StageRetryMode::NOT_SET),
-    m_retryModeHasBeenSet(false)
-{
-}
-
 RetryConfiguration::RetryConfiguration(JsonView jsonValue)
-  : RetryConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RetryConfiguration& RetryConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("retryMode"))
   {
     m_retryMode = StageRetryModeMapper::GetStageRetryModeForName(jsonValue.GetString("retryMode"));
-
     m_retryModeHasBeenSet = true;
   }
-
   return *this;
 }
 

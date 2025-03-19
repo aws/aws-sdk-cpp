@@ -18,14 +18,7 @@ namespace tnb
 namespace Model
 {
 
-ErrorInfo::ErrorInfo() : 
-    m_causeHasBeenSet(false),
-    m_detailsHasBeenSet(false)
-{
-}
-
 ErrorInfo::ErrorInfo(JsonView jsonValue)
-  : ErrorInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ErrorInfo& ErrorInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cause"))
   {
     m_cause = jsonValue.GetString("cause");
-
     m_causeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("details"))
   {
     m_details = jsonValue.GetString("details");
-
     m_detailsHasBeenSet = true;
   }
-
   return *this;
 }
 

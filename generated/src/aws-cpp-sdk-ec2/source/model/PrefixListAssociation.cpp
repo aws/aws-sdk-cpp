@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PrefixListAssociation::PrefixListAssociation() : 
-    m_resourceIdHasBeenSet(false),
-    m_resourceOwnerHasBeenSet(false)
-{
-}
-
 PrefixListAssociation::PrefixListAssociation(const XmlNode& xmlNode)
-  : PrefixListAssociation()
 {
   *this = xmlNode;
 }

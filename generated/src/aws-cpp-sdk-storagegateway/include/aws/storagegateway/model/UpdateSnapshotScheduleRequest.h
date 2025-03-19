@@ -31,7 +31,7 @@ namespace Model
   class UpdateSnapshotScheduleRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API UpdateSnapshotScheduleRequest();
+    AWS_STORAGEGATEWAY_API UpdateSnapshotScheduleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,14 +49,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
      * operation to return a list of gateway volumes.</p>
      */
-    inline const Aws::String& GetVolumeARN() const{ return m_volumeARN; }
+    inline const Aws::String& GetVolumeARN() const { return m_volumeARN; }
     inline bool VolumeARNHasBeenSet() const { return m_volumeARNHasBeenSet; }
-    inline void SetVolumeARN(const Aws::String& value) { m_volumeARNHasBeenSet = true; m_volumeARN = value; }
-    inline void SetVolumeARN(Aws::String&& value) { m_volumeARNHasBeenSet = true; m_volumeARN = std::move(value); }
-    inline void SetVolumeARN(const char* value) { m_volumeARNHasBeenSet = true; m_volumeARN.assign(value); }
-    inline UpdateSnapshotScheduleRequest& WithVolumeARN(const Aws::String& value) { SetVolumeARN(value); return *this;}
-    inline UpdateSnapshotScheduleRequest& WithVolumeARN(Aws::String&& value) { SetVolumeARN(std::move(value)); return *this;}
-    inline UpdateSnapshotScheduleRequest& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
+    template<typename VolumeARNT = Aws::String>
+    void SetVolumeARN(VolumeARNT&& value) { m_volumeARNHasBeenSet = true; m_volumeARN = std::forward<VolumeARNT>(value); }
+    template<typename VolumeARNT = Aws::String>
+    UpdateSnapshotScheduleRequest& WithVolumeARN(VolumeARNT&& value) { SetVolumeARN(std::forward<VolumeARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,7 +63,7 @@ namespace Model
      * <i>hh</i>, where <i>hh</i> is the hour (0 to 23). The hour of the day is in the
      * time zone of the gateway.</p>
      */
-    inline int GetStartAt() const{ return m_startAt; }
+    inline int GetStartAt() const { return m_startAt; }
     inline bool StartAtHasBeenSet() const { return m_startAtHasBeenSet; }
     inline void SetStartAt(int value) { m_startAtHasBeenSet = true; m_startAt = value; }
     inline UpdateSnapshotScheduleRequest& WithStartAt(int value) { SetStartAt(value); return *this;}
@@ -75,7 +73,7 @@ namespace Model
     /**
      * <p>Frequency of snapshots. Specify the number of hours between snapshots.</p>
      */
-    inline int GetRecurrenceInHours() const{ return m_recurrenceInHours; }
+    inline int GetRecurrenceInHours() const { return m_recurrenceInHours; }
     inline bool RecurrenceInHoursHasBeenSet() const { return m_recurrenceInHoursHasBeenSet; }
     inline void SetRecurrenceInHours(int value) { m_recurrenceInHoursHasBeenSet = true; m_recurrenceInHours = value; }
     inline UpdateSnapshotScheduleRequest& WithRecurrenceInHours(int value) { SetRecurrenceInHours(value); return *this;}
@@ -86,14 +84,12 @@ namespace Model
      * <p>Optional description of the snapshot that overwrites the existing
      * description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateSnapshotScheduleRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateSnapshotScheduleRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateSnapshotScheduleRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateSnapshotScheduleRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,24 +100,24 @@ namespace Model
      * characters: + - = . _ : / @. The maximum length of a tag's key is 128
      * characters, and the maximum length for a tag's value is 256.</p> 
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline UpdateSnapshotScheduleRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline UpdateSnapshotScheduleRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline UpdateSnapshotScheduleRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline UpdateSnapshotScheduleRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    UpdateSnapshotScheduleRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    UpdateSnapshotScheduleRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_volumeARN;
     bool m_volumeARNHasBeenSet = false;
 
-    int m_startAt;
+    int m_startAt{0};
     bool m_startAtHasBeenSet = false;
 
-    int m_recurrenceInHours;
+    int m_recurrenceInHours{0};
     bool m_recurrenceInHoursHasBeenSet = false;
 
     Aws::String m_description;

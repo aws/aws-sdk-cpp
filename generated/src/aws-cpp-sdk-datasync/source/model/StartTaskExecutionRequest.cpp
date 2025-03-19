@@ -12,17 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartTaskExecutionRequest::StartTaskExecutionRequest() : 
-    m_taskArnHasBeenSet(false),
-    m_overrideOptionsHasBeenSet(false),
-    m_includesHasBeenSet(false),
-    m_excludesHasBeenSet(false),
-    m_manifestConfigHasBeenSet(false),
-    m_taskReportConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartTaskExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

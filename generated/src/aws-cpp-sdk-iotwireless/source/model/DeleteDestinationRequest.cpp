@@ -12,11 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDestinationRequest::DeleteDestinationRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDestinationRequest::SerializePayload() const
 {
   return {};

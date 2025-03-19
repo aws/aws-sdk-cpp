@@ -18,16 +18,7 @@ namespace ECS
 namespace Model
 {
 
-ProtectedTask::ProtectedTask() : 
-    m_taskArnHasBeenSet(false),
-    m_protectionEnabled(false),
-    m_protectionEnabledHasBeenSet(false),
-    m_expirationDateHasBeenSet(false)
-{
-}
-
 ProtectedTask::ProtectedTask(JsonView jsonValue)
-  : ProtectedTask()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ProtectedTask& ProtectedTask::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("taskArn"))
   {
     m_taskArn = jsonValue.GetString("taskArn");
-
     m_taskArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("protectionEnabled"))
   {
     m_protectionEnabled = jsonValue.GetBool("protectionEnabled");
-
     m_protectionEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expirationDate"))
   {
     m_expirationDate = jsonValue.GetDouble("expirationDate");
-
     m_expirationDateHasBeenSet = true;
   }
-
   return *this;
 }
 

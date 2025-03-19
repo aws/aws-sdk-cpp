@@ -18,17 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-ConnectorFileTransferResult::ConnectorFileTransferResult() : 
-    m_filePathHasBeenSet(false),
-    m_statusCode(TransferTableStatus::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_failureCodeHasBeenSet(false),
-    m_failureMessageHasBeenSet(false)
-{
-}
-
 ConnectorFileTransferResult::ConnectorFileTransferResult(JsonView jsonValue)
-  : ConnectorFileTransferResult()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ConnectorFileTransferResult& ConnectorFileTransferResult::operator =(JsonView js
   if(jsonValue.ValueExists("FilePath"))
   {
     m_filePath = jsonValue.GetString("FilePath");
-
     m_filePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusCode"))
   {
     m_statusCode = TransferTableStatusMapper::GetTransferTableStatusForName(jsonValue.GetString("StatusCode"));
-
     m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureCode"))
   {
     m_failureCode = jsonValue.GetString("FailureCode");
-
     m_failureCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureMessage"))
   {
     m_failureMessage = jsonValue.GetString("FailureMessage");
-
     m_failureMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

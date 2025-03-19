@@ -12,13 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeCommandsRequest::DescribeCommandsRequest() : 
-    m_deploymentIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_commandIdsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCommandsRequest::SerializePayload() const
 {
   JsonValue payload;

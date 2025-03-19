@@ -18,18 +18,7 @@ namespace MainframeModernization
 namespace Model
 {
 
-VsamAttributes::VsamAttributes() : 
-    m_alternateKeysHasBeenSet(false),
-    m_compressed(false),
-    m_compressedHasBeenSet(false),
-    m_encodingHasBeenSet(false),
-    m_formatHasBeenSet(false),
-    m_primaryKeyHasBeenSet(false)
-{
-}
-
 VsamAttributes::VsamAttributes(JsonView jsonValue)
-  : VsamAttributes()
 {
   *this = jsonValue;
 }
@@ -45,35 +34,26 @@ VsamAttributes& VsamAttributes::operator =(JsonView jsonValue)
     }
     m_alternateKeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("compressed"))
   {
     m_compressed = jsonValue.GetBool("compressed");
-
     m_compressedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encoding"))
   {
     m_encoding = jsonValue.GetString("encoding");
-
     m_encodingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("format"))
   {
     m_format = jsonValue.GetString("format");
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("primaryKey"))
   {
     m_primaryKey = jsonValue.GetObject("primaryKey");
-
     m_primaryKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

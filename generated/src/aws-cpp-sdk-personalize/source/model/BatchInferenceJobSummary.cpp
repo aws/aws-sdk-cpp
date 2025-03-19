@@ -18,21 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-BatchInferenceJobSummary::BatchInferenceJobSummary() : 
-    m_batchInferenceJobArnHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_solutionVersionArnHasBeenSet(false),
-    m_batchInferenceJobMode(BatchInferenceJobMode::NOT_SET),
-    m_batchInferenceJobModeHasBeenSet(false)
-{
-}
-
 BatchInferenceJobSummary::BatchInferenceJobSummary(JsonView jsonValue)
-  : BatchInferenceJobSummary()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ BatchInferenceJobSummary& BatchInferenceJobSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("batchInferenceJobArn"))
   {
     m_batchInferenceJobArn = jsonValue.GetString("batchInferenceJobArn");
-
     m_batchInferenceJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobName"))
   {
     m_jobName = jsonValue.GetString("jobName");
-
     m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetString("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureReason"))
   {
     m_failureReason = jsonValue.GetString("failureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("solutionVersionArn"))
   {
     m_solutionVersionArn = jsonValue.GetString("solutionVersionArn");
-
     m_solutionVersionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("batchInferenceJobMode"))
   {
     m_batchInferenceJobMode = BatchInferenceJobModeMapper::GetBatchInferenceJobModeForName(jsonValue.GetString("batchInferenceJobMode"));
-
     m_batchInferenceJobModeHasBeenSet = true;
   }
-
   return *this;
 }
 

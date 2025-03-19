@@ -12,23 +12,6 @@ using namespace Aws::chatbot::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMicrosoftTeamsChannelConfigurationRequest::CreateMicrosoftTeamsChannelConfigurationRequest() : 
-    m_channelIdHasBeenSet(false),
-    m_channelNameHasBeenSet(false),
-    m_teamIdHasBeenSet(false),
-    m_teamNameHasBeenSet(false),
-    m_tenantIdHasBeenSet(false),
-    m_snsTopicArnsHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_configurationNameHasBeenSet(false),
-    m_loggingLevelHasBeenSet(false),
-    m_guardrailPolicyArnsHasBeenSet(false),
-    m_userAuthorizationRequired(false),
-    m_userAuthorizationRequiredHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateMicrosoftTeamsChannelConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

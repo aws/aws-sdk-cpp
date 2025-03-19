@@ -33,7 +33,7 @@ namespace Model
   class CacheUsageLimits
   {
   public:
-    AWS_ELASTICACHE_API CacheUsageLimits();
+    AWS_ELASTICACHE_API CacheUsageLimits() = default;
     AWS_ELASTICACHE_API CacheUsageLimits(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICACHE_API CacheUsageLimits& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,22 +45,22 @@ namespace Model
     /**
      * <p> The maximum data storage limit in the cache, expressed in Gigabytes. </p>
      */
-    inline const DataStorage& GetDataStorage() const{ return m_dataStorage; }
+    inline const DataStorage& GetDataStorage() const { return m_dataStorage; }
     inline bool DataStorageHasBeenSet() const { return m_dataStorageHasBeenSet; }
-    inline void SetDataStorage(const DataStorage& value) { m_dataStorageHasBeenSet = true; m_dataStorage = value; }
-    inline void SetDataStorage(DataStorage&& value) { m_dataStorageHasBeenSet = true; m_dataStorage = std::move(value); }
-    inline CacheUsageLimits& WithDataStorage(const DataStorage& value) { SetDataStorage(value); return *this;}
-    inline CacheUsageLimits& WithDataStorage(DataStorage&& value) { SetDataStorage(std::move(value)); return *this;}
+    template<typename DataStorageT = DataStorage>
+    void SetDataStorage(DataStorageT&& value) { m_dataStorageHasBeenSet = true; m_dataStorage = std::forward<DataStorageT>(value); }
+    template<typename DataStorageT = DataStorage>
+    CacheUsageLimits& WithDataStorage(DataStorageT&& value) { SetDataStorage(std::forward<DataStorageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ECPUPerSecond& GetECPUPerSecond() const{ return m_eCPUPerSecond; }
+    inline const ECPUPerSecond& GetECPUPerSecond() const { return m_eCPUPerSecond; }
     inline bool ECPUPerSecondHasBeenSet() const { return m_eCPUPerSecondHasBeenSet; }
-    inline void SetECPUPerSecond(const ECPUPerSecond& value) { m_eCPUPerSecondHasBeenSet = true; m_eCPUPerSecond = value; }
-    inline void SetECPUPerSecond(ECPUPerSecond&& value) { m_eCPUPerSecondHasBeenSet = true; m_eCPUPerSecond = std::move(value); }
-    inline CacheUsageLimits& WithECPUPerSecond(const ECPUPerSecond& value) { SetECPUPerSecond(value); return *this;}
-    inline CacheUsageLimits& WithECPUPerSecond(ECPUPerSecond&& value) { SetECPUPerSecond(std::move(value)); return *this;}
+    template<typename ECPUPerSecondT = ECPUPerSecond>
+    void SetECPUPerSecond(ECPUPerSecondT&& value) { m_eCPUPerSecondHasBeenSet = true; m_eCPUPerSecond = std::forward<ECPUPerSecondT>(value); }
+    template<typename ECPUPerSecondT = ECPUPerSecond>
+    CacheUsageLimits& WithECPUPerSecond(ECPUPerSecondT&& value) { SetECPUPerSecond(std::forward<ECPUPerSecondT>(value)); return *this;}
     ///@}
   private:
 

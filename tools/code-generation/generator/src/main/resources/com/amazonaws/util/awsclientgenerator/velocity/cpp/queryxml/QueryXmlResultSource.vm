@@ -20,12 +20,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-#set($useRequiredField = false)
-#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassMembersGenerateInitializers.vm")
-${typeInfo.className}::${typeInfo.className}()$initializers
-{
-}
-
 ${typeInfo.className}::${typeInfo.className}(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 #if($initializers)
   : ${typeInfo.className}()
@@ -56,10 +50,12 @@ ${typeInfo.className}& ${typeInfo.className}::operator =(const Aws::AmazonWebSer
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
 #else
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
 #end
     AWS_LOGSTREAM_DEBUG("Aws::${metadata.namespace}::Model::${typeInfo.className}", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
@@ -68,7 +64,7 @@ ${typeInfo.className}& ${typeInfo.className}::operator =(const Aws::AmazonWebSer
 #foreach($memberEntry in $shape.members.entrySet())
 #if($memberEntry.value.usedForHttpStatusCode)
   ${CppViewHelper.computeMemberVariableName($memberEntry.key)} = static_cast<int>(result.GetResponseCode());
-
+  ${CppViewHelper.computeVariableHasBeenSetName($memberEntry.key)} = true;
 #end
 #end
 #end

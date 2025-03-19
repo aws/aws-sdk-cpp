@@ -22,7 +22,7 @@ namespace Model
   class DescribeUserProfilesRequest : public OpsWorksRequest
   {
   public:
-    AWS_OPSWORKS_API DescribeUserProfilesRequest();
+    AWS_OPSWORKS_API DescribeUserProfilesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,15 +40,14 @@ namespace Model
      * <p>An array of IAM or federated user ARNs that identify the users to be
      * described.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIamUserArns() const{ return m_iamUserArns; }
+    inline const Aws::Vector<Aws::String>& GetIamUserArns() const { return m_iamUserArns; }
     inline bool IamUserArnsHasBeenSet() const { return m_iamUserArnsHasBeenSet; }
-    inline void SetIamUserArns(const Aws::Vector<Aws::String>& value) { m_iamUserArnsHasBeenSet = true; m_iamUserArns = value; }
-    inline void SetIamUserArns(Aws::Vector<Aws::String>&& value) { m_iamUserArnsHasBeenSet = true; m_iamUserArns = std::move(value); }
-    inline DescribeUserProfilesRequest& WithIamUserArns(const Aws::Vector<Aws::String>& value) { SetIamUserArns(value); return *this;}
-    inline DescribeUserProfilesRequest& WithIamUserArns(Aws::Vector<Aws::String>&& value) { SetIamUserArns(std::move(value)); return *this;}
-    inline DescribeUserProfilesRequest& AddIamUserArns(const Aws::String& value) { m_iamUserArnsHasBeenSet = true; m_iamUserArns.push_back(value); return *this; }
-    inline DescribeUserProfilesRequest& AddIamUserArns(Aws::String&& value) { m_iamUserArnsHasBeenSet = true; m_iamUserArns.push_back(std::move(value)); return *this; }
-    inline DescribeUserProfilesRequest& AddIamUserArns(const char* value) { m_iamUserArnsHasBeenSet = true; m_iamUserArns.push_back(value); return *this; }
+    template<typename IamUserArnsT = Aws::Vector<Aws::String>>
+    void SetIamUserArns(IamUserArnsT&& value) { m_iamUserArnsHasBeenSet = true; m_iamUserArns = std::forward<IamUserArnsT>(value); }
+    template<typename IamUserArnsT = Aws::Vector<Aws::String>>
+    DescribeUserProfilesRequest& WithIamUserArns(IamUserArnsT&& value) { SetIamUserArns(std::forward<IamUserArnsT>(value)); return *this;}
+    template<typename IamUserArnsT = Aws::String>
+    DescribeUserProfilesRequest& AddIamUserArns(IamUserArnsT&& value) { m_iamUserArnsHasBeenSet = true; m_iamUserArns.emplace_back(std::forward<IamUserArnsT>(value)); return *this; }
     ///@}
   private:
 

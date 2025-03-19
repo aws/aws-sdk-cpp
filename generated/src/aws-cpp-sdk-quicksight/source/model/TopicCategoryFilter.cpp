@@ -18,19 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TopicCategoryFilter::TopicCategoryFilter() : 
-    m_categoryFilterFunction(CategoryFilterFunction::NOT_SET),
-    m_categoryFilterFunctionHasBeenSet(false),
-    m_categoryFilterType(CategoryFilterType::NOT_SET),
-    m_categoryFilterTypeHasBeenSet(false),
-    m_constantHasBeenSet(false),
-    m_inverse(false),
-    m_inverseHasBeenSet(false)
-{
-}
-
 TopicCategoryFilter::TopicCategoryFilter(JsonView jsonValue)
-  : TopicCategoryFilter()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ TopicCategoryFilter& TopicCategoryFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CategoryFilterFunction"))
   {
     m_categoryFilterFunction = CategoryFilterFunctionMapper::GetCategoryFilterFunctionForName(jsonValue.GetString("CategoryFilterFunction"));
-
     m_categoryFilterFunctionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CategoryFilterType"))
   {
     m_categoryFilterType = CategoryFilterTypeMapper::GetCategoryFilterTypeForName(jsonValue.GetString("CategoryFilterType"));
-
     m_categoryFilterTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Constant"))
   {
     m_constant = jsonValue.GetObject("Constant");
-
     m_constantHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Inverse"))
   {
     m_inverse = jsonValue.GetBool("Inverse");
-
     m_inverseHasBeenSet = true;
   }
-
   return *this;
 }
 

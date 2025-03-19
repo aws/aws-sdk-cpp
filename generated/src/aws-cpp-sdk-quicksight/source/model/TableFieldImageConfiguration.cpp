@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TableFieldImageConfiguration::TableFieldImageConfiguration() : 
-    m_sizingOptionsHasBeenSet(false)
-{
-}
-
 TableFieldImageConfiguration::TableFieldImageConfiguration(JsonView jsonValue)
-  : TableFieldImageConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TableFieldImageConfiguration& TableFieldImageConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("SizingOptions"))
   {
     m_sizingOptions = jsonValue.GetObject("SizingOptions");
-
     m_sizingOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

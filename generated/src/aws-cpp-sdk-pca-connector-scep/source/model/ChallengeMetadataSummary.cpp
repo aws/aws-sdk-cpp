@@ -18,16 +18,7 @@ namespace PcaConnectorScep
 namespace Model
 {
 
-ChallengeMetadataSummary::ChallengeMetadataSummary() : 
-    m_arnHasBeenSet(false),
-    m_connectorArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 ChallengeMetadataSummary::ChallengeMetadataSummary(JsonView jsonValue)
-  : ChallengeMetadataSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ChallengeMetadataSummary& ChallengeMetadataSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectorArn"))
   {
     m_connectorArn = jsonValue.GetString("ConnectorArn");
-
     m_connectorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

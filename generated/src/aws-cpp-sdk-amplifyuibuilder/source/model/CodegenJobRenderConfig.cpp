@@ -18,13 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-CodegenJobRenderConfig::CodegenJobRenderConfig() : 
-    m_reactHasBeenSet(false)
-{
-}
-
 CodegenJobRenderConfig::CodegenJobRenderConfig(JsonView jsonValue)
-  : CodegenJobRenderConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CodegenJobRenderConfig& CodegenJobRenderConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("react"))
   {
     m_react = jsonValue.GetObject("react");
-
     m_reactHasBeenSet = true;
   }
-
   return *this;
 }
 

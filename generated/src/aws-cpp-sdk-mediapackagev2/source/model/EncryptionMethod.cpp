@@ -18,16 +18,7 @@ namespace mediapackagev2
 namespace Model
 {
 
-EncryptionMethod::EncryptionMethod() : 
-    m_tsEncryptionMethod(TsEncryptionMethod::NOT_SET),
-    m_tsEncryptionMethodHasBeenSet(false),
-    m_cmafEncryptionMethod(CmafEncryptionMethod::NOT_SET),
-    m_cmafEncryptionMethodHasBeenSet(false)
-{
-}
-
 EncryptionMethod::EncryptionMethod(JsonView jsonValue)
-  : EncryptionMethod()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ EncryptionMethod& EncryptionMethod::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TsEncryptionMethod"))
   {
     m_tsEncryptionMethod = TsEncryptionMethodMapper::GetTsEncryptionMethodForName(jsonValue.GetString("TsEncryptionMethod"));
-
     m_tsEncryptionMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CmafEncryptionMethod"))
   {
     m_cmafEncryptionMethod = CmafEncryptionMethodMapper::GetCmafEncryptionMethodForName(jsonValue.GetString("CmafEncryptionMethod"));
-
     m_cmafEncryptionMethodHasBeenSet = true;
   }
-
   return *this;
 }
 

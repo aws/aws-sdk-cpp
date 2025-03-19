@@ -25,7 +25,7 @@ namespace Model
   class CreateOrderRequest : public OutpostsRequest
   {
   public:
-    AWS_OUTPOSTS_API CreateOrderRequest();
+    AWS_OUTPOSTS_API CreateOrderRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,52 +40,46 @@ namespace Model
     /**
      * <p> The ID or the Amazon Resource Name (ARN) of the Outpost. </p>
      */
-    inline const Aws::String& GetOutpostIdentifier() const{ return m_outpostIdentifier; }
+    inline const Aws::String& GetOutpostIdentifier() const { return m_outpostIdentifier; }
     inline bool OutpostIdentifierHasBeenSet() const { return m_outpostIdentifierHasBeenSet; }
-    inline void SetOutpostIdentifier(const Aws::String& value) { m_outpostIdentifierHasBeenSet = true; m_outpostIdentifier = value; }
-    inline void SetOutpostIdentifier(Aws::String&& value) { m_outpostIdentifierHasBeenSet = true; m_outpostIdentifier = std::move(value); }
-    inline void SetOutpostIdentifier(const char* value) { m_outpostIdentifierHasBeenSet = true; m_outpostIdentifier.assign(value); }
-    inline CreateOrderRequest& WithOutpostIdentifier(const Aws::String& value) { SetOutpostIdentifier(value); return *this;}
-    inline CreateOrderRequest& WithOutpostIdentifier(Aws::String&& value) { SetOutpostIdentifier(std::move(value)); return *this;}
-    inline CreateOrderRequest& WithOutpostIdentifier(const char* value) { SetOutpostIdentifier(value); return *this;}
+    template<typename OutpostIdentifierT = Aws::String>
+    void SetOutpostIdentifier(OutpostIdentifierT&& value) { m_outpostIdentifierHasBeenSet = true; m_outpostIdentifier = std::forward<OutpostIdentifierT>(value); }
+    template<typename OutpostIdentifierT = Aws::String>
+    CreateOrderRequest& WithOutpostIdentifier(OutpostIdentifierT&& value) { SetOutpostIdentifier(std::forward<OutpostIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The line items that make up the order.</p>
      */
-    inline const Aws::Vector<LineItemRequest>& GetLineItems() const{ return m_lineItems; }
+    inline const Aws::Vector<LineItemRequest>& GetLineItems() const { return m_lineItems; }
     inline bool LineItemsHasBeenSet() const { return m_lineItemsHasBeenSet; }
-    inline void SetLineItems(const Aws::Vector<LineItemRequest>& value) { m_lineItemsHasBeenSet = true; m_lineItems = value; }
-    inline void SetLineItems(Aws::Vector<LineItemRequest>&& value) { m_lineItemsHasBeenSet = true; m_lineItems = std::move(value); }
-    inline CreateOrderRequest& WithLineItems(const Aws::Vector<LineItemRequest>& value) { SetLineItems(value); return *this;}
-    inline CreateOrderRequest& WithLineItems(Aws::Vector<LineItemRequest>&& value) { SetLineItems(std::move(value)); return *this;}
-    inline CreateOrderRequest& AddLineItems(const LineItemRequest& value) { m_lineItemsHasBeenSet = true; m_lineItems.push_back(value); return *this; }
-    inline CreateOrderRequest& AddLineItems(LineItemRequest&& value) { m_lineItemsHasBeenSet = true; m_lineItems.push_back(std::move(value)); return *this; }
+    template<typename LineItemsT = Aws::Vector<LineItemRequest>>
+    void SetLineItems(LineItemsT&& value) { m_lineItemsHasBeenSet = true; m_lineItems = std::forward<LineItemsT>(value); }
+    template<typename LineItemsT = Aws::Vector<LineItemRequest>>
+    CreateOrderRequest& WithLineItems(LineItemsT&& value) { SetLineItems(std::forward<LineItemsT>(value)); return *this;}
+    template<typename LineItemsT = LineItemRequest>
+    CreateOrderRequest& AddLineItems(LineItemsT&& value) { m_lineItemsHasBeenSet = true; m_lineItems.emplace_back(std::forward<LineItemsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The payment option.</p>
      */
-    inline const PaymentOption& GetPaymentOption() const{ return m_paymentOption; }
+    inline PaymentOption GetPaymentOption() const { return m_paymentOption; }
     inline bool PaymentOptionHasBeenSet() const { return m_paymentOptionHasBeenSet; }
-    inline void SetPaymentOption(const PaymentOption& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = value; }
-    inline void SetPaymentOption(PaymentOption&& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = std::move(value); }
-    inline CreateOrderRequest& WithPaymentOption(const PaymentOption& value) { SetPaymentOption(value); return *this;}
-    inline CreateOrderRequest& WithPaymentOption(PaymentOption&& value) { SetPaymentOption(std::move(value)); return *this;}
+    inline void SetPaymentOption(PaymentOption value) { m_paymentOptionHasBeenSet = true; m_paymentOption = value; }
+    inline CreateOrderRequest& WithPaymentOption(PaymentOption value) { SetPaymentOption(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The payment terms.</p>
      */
-    inline const PaymentTerm& GetPaymentTerm() const{ return m_paymentTerm; }
+    inline PaymentTerm GetPaymentTerm() const { return m_paymentTerm; }
     inline bool PaymentTermHasBeenSet() const { return m_paymentTermHasBeenSet; }
-    inline void SetPaymentTerm(const PaymentTerm& value) { m_paymentTermHasBeenSet = true; m_paymentTerm = value; }
-    inline void SetPaymentTerm(PaymentTerm&& value) { m_paymentTermHasBeenSet = true; m_paymentTerm = std::move(value); }
-    inline CreateOrderRequest& WithPaymentTerm(const PaymentTerm& value) { SetPaymentTerm(value); return *this;}
-    inline CreateOrderRequest& WithPaymentTerm(PaymentTerm&& value) { SetPaymentTerm(std::move(value)); return *this;}
+    inline void SetPaymentTerm(PaymentTerm value) { m_paymentTermHasBeenSet = true; m_paymentTerm = value; }
+    inline CreateOrderRequest& WithPaymentTerm(PaymentTerm value) { SetPaymentTerm(value); return *this;}
     ///@}
   private:
 
@@ -95,10 +89,10 @@ namespace Model
     Aws::Vector<LineItemRequest> m_lineItems;
     bool m_lineItemsHasBeenSet = false;
 
-    PaymentOption m_paymentOption;
+    PaymentOption m_paymentOption{PaymentOption::NOT_SET};
     bool m_paymentOptionHasBeenSet = false;
 
-    PaymentTerm m_paymentTerm;
+    PaymentTerm m_paymentTerm{PaymentTerm::NOT_SET};
     bool m_paymentTermHasBeenSet = false;
   };
 

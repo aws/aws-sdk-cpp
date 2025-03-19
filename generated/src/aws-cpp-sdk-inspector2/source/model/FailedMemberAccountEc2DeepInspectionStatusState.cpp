@@ -18,16 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-FailedMemberAccountEc2DeepInspectionStatusState::FailedMemberAccountEc2DeepInspectionStatusState() : 
-    m_accountIdHasBeenSet(false),
-    m_ec2ScanStatus(Status::NOT_SET),
-    m_ec2ScanStatusHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 FailedMemberAccountEc2DeepInspectionStatusState::FailedMemberAccountEc2DeepInspectionStatusState(JsonView jsonValue)
-  : FailedMemberAccountEc2DeepInspectionStatusState()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ FailedMemberAccountEc2DeepInspectionStatusState& FailedMemberAccountEc2DeepInspe
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ec2ScanStatus"))
   {
     m_ec2ScanStatus = StatusMapper::GetStatusForName(jsonValue.GetString("ec2ScanStatus"));
-
     m_ec2ScanStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

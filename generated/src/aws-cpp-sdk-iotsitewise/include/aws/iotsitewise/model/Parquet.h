@@ -29,7 +29,7 @@ namespace Model
   class Parquet
   {
   public:
-    AWS_IOTSITEWISE_API Parquet();
+    AWS_IOTSITEWISE_API Parquet() = default;
     AWS_IOTSITEWISE_API Parquet(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Parquet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;

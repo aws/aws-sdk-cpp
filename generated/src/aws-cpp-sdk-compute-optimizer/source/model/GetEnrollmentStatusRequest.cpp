@@ -12,10 +12,6 @@ using namespace Aws::ComputeOptimizer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEnrollmentStatusRequest::GetEnrollmentStatusRequest()
-{
-}
-
 Aws::String GetEnrollmentStatusRequest::SerializePayload() const
 {
   return "{}";

@@ -29,7 +29,7 @@ namespace Model
   class ListVPCAssociationAuthorizationsRequest : public Route53Request
   {
   public:
-    AWS_ROUTE53_API ListVPCAssociationAuthorizationsRequest();
+    AWS_ROUTE53_API ListVPCAssociationAuthorizationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
      * <p>The ID of the hosted zone for which you want a list of VPCs that can be
      * associated with the hosted zone.</p>
      */
-    inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
+    inline const Aws::String& GetHostedZoneId() const { return m_hostedZoneId; }
     inline bool HostedZoneIdHasBeenSet() const { return m_hostedZoneIdHasBeenSet; }
-    inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
-    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
-    inline void SetHostedZoneId(const char* value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId.assign(value); }
-    inline ListVPCAssociationAuthorizationsRequest& WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
-    inline ListVPCAssociationAuthorizationsRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
-    inline ListVPCAssociationAuthorizationsRequest& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
+    template<typename HostedZoneIdT = Aws::String>
+    void SetHostedZoneId(HostedZoneIdT&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::forward<HostedZoneIdT>(value); }
+    template<typename HostedZoneIdT = Aws::String>
+    ListVPCAssociationAuthorizationsRequest& WithHostedZoneId(HostedZoneIdT&& value) { SetHostedZoneId(std::forward<HostedZoneIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * <code>NextToken</code> from the response in the <code>nexttoken</code> parameter
      * in another <code>ListVPCAssociationAuthorizations</code> request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListVPCAssociationAuthorizationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListVPCAssociationAuthorizationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListVPCAssociationAuthorizationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListVPCAssociationAuthorizationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,12 @@ namespace Model
      * you want Amazon Route 53 to return. If you don't specify a value for
      * <code>MaxResults</code>, Route 53 returns up to 50 VPCs per page.</p>
      */
-    inline const Aws::String& GetMaxResults() const{ return m_maxResults; }
+    inline const Aws::String& GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-    inline void SetMaxResults(const Aws::String& value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-    inline void SetMaxResults(Aws::String&& value) { m_maxResultsHasBeenSet = true; m_maxResults = std::move(value); }
-    inline void SetMaxResults(const char* value) { m_maxResultsHasBeenSet = true; m_maxResults.assign(value); }
-    inline ListVPCAssociationAuthorizationsRequest& WithMaxResults(const Aws::String& value) { SetMaxResults(value); return *this;}
-    inline ListVPCAssociationAuthorizationsRequest& WithMaxResults(Aws::String&& value) { SetMaxResults(std::move(value)); return *this;}
-    inline ListVPCAssociationAuthorizationsRequest& WithMaxResults(const char* value) { SetMaxResults(value); return *this;}
+    template<typename MaxResultsT = Aws::String>
+    void SetMaxResults(MaxResultsT&& value) { m_maxResultsHasBeenSet = true; m_maxResults = std::forward<MaxResultsT>(value); }
+    template<typename MaxResultsT = Aws::String>
+    ListVPCAssociationAuthorizationsRequest& WithMaxResults(MaxResultsT&& value) { SetMaxResults(std::forward<MaxResultsT>(value)); return *this;}
     ///@}
   private:
 

@@ -31,7 +31,7 @@ namespace Model
   class PromptSearchFilter
   {
   public:
-    AWS_CONNECT_API PromptSearchFilter();
+    AWS_CONNECT_API PromptSearchFilter() = default;
     AWS_CONNECT_API PromptSearchFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API PromptSearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,12 +39,12 @@ namespace Model
 
     ///@{
     
-    inline const ControlPlaneTagFilter& GetTagFilter() const{ return m_tagFilter; }
+    inline const ControlPlaneTagFilter& GetTagFilter() const { return m_tagFilter; }
     inline bool TagFilterHasBeenSet() const { return m_tagFilterHasBeenSet; }
-    inline void SetTagFilter(const ControlPlaneTagFilter& value) { m_tagFilterHasBeenSet = true; m_tagFilter = value; }
-    inline void SetTagFilter(ControlPlaneTagFilter&& value) { m_tagFilterHasBeenSet = true; m_tagFilter = std::move(value); }
-    inline PromptSearchFilter& WithTagFilter(const ControlPlaneTagFilter& value) { SetTagFilter(value); return *this;}
-    inline PromptSearchFilter& WithTagFilter(ControlPlaneTagFilter&& value) { SetTagFilter(std::move(value)); return *this;}
+    template<typename TagFilterT = ControlPlaneTagFilter>
+    void SetTagFilter(TagFilterT&& value) { m_tagFilterHasBeenSet = true; m_tagFilter = std::forward<TagFilterT>(value); }
+    template<typename TagFilterT = ControlPlaneTagFilter>
+    PromptSearchFilter& WithTagFilter(TagFilterT&& value) { SetTagFilter(std::forward<TagFilterT>(value)); return *this;}
     ///@}
   private:
 

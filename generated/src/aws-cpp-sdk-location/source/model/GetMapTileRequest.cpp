@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetMapTileRequest::GetMapTileRequest() : 
-    m_mapNameHasBeenSet(false),
-    m_zHasBeenSet(false),
-    m_xHasBeenSet(false),
-    m_yHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 Aws::String GetMapTileRequest::SerializePayload() const
 {
   return {};

@@ -33,7 +33,7 @@ namespace Model
   class IdMappingTableInputReferenceProperties
   {
   public:
-    AWS_CLEANROOMS_API IdMappingTableInputReferenceProperties();
+    AWS_CLEANROOMS_API IdMappingTableInputReferenceProperties() = default;
     AWS_CLEANROOMS_API IdMappingTableInputReferenceProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API IdMappingTableInputReferenceProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>The input source of the ID mapping table.</p>
      */
-    inline const Aws::Vector<IdMappingTableInputSource>& GetIdMappingTableInputSource() const{ return m_idMappingTableInputSource; }
+    inline const Aws::Vector<IdMappingTableInputSource>& GetIdMappingTableInputSource() const { return m_idMappingTableInputSource; }
     inline bool IdMappingTableInputSourceHasBeenSet() const { return m_idMappingTableInputSourceHasBeenSet; }
-    inline void SetIdMappingTableInputSource(const Aws::Vector<IdMappingTableInputSource>& value) { m_idMappingTableInputSourceHasBeenSet = true; m_idMappingTableInputSource = value; }
-    inline void SetIdMappingTableInputSource(Aws::Vector<IdMappingTableInputSource>&& value) { m_idMappingTableInputSourceHasBeenSet = true; m_idMappingTableInputSource = std::move(value); }
-    inline IdMappingTableInputReferenceProperties& WithIdMappingTableInputSource(const Aws::Vector<IdMappingTableInputSource>& value) { SetIdMappingTableInputSource(value); return *this;}
-    inline IdMappingTableInputReferenceProperties& WithIdMappingTableInputSource(Aws::Vector<IdMappingTableInputSource>&& value) { SetIdMappingTableInputSource(std::move(value)); return *this;}
-    inline IdMappingTableInputReferenceProperties& AddIdMappingTableInputSource(const IdMappingTableInputSource& value) { m_idMappingTableInputSourceHasBeenSet = true; m_idMappingTableInputSource.push_back(value); return *this; }
-    inline IdMappingTableInputReferenceProperties& AddIdMappingTableInputSource(IdMappingTableInputSource&& value) { m_idMappingTableInputSourceHasBeenSet = true; m_idMappingTableInputSource.push_back(std::move(value)); return *this; }
+    template<typename IdMappingTableInputSourceT = Aws::Vector<IdMappingTableInputSource>>
+    void SetIdMappingTableInputSource(IdMappingTableInputSourceT&& value) { m_idMappingTableInputSourceHasBeenSet = true; m_idMappingTableInputSource = std::forward<IdMappingTableInputSourceT>(value); }
+    template<typename IdMappingTableInputSourceT = Aws::Vector<IdMappingTableInputSource>>
+    IdMappingTableInputReferenceProperties& WithIdMappingTableInputSource(IdMappingTableInputSourceT&& value) { SetIdMappingTableInputSource(std::forward<IdMappingTableInputSourceT>(value)); return *this;}
+    template<typename IdMappingTableInputSourceT = IdMappingTableInputSource>
+    IdMappingTableInputReferenceProperties& AddIdMappingTableInputSource(IdMappingTableInputSourceT&& value) { m_idMappingTableInputSourceHasBeenSet = true; m_idMappingTableInputSource.emplace_back(std::forward<IdMappingTableInputSourceT>(value)); return *this; }
     ///@}
   private:
 

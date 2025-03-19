@@ -30,7 +30,7 @@ namespace Model
   class SensorsWithShortDateRange
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API SensorsWithShortDateRange();
+    AWS_LOOKOUTEQUIPMENT_API SensorsWithShortDateRange() = default;
     AWS_LOOKOUTEQUIPMENT_API SensorsWithShortDateRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API SensorsWithShortDateRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p> Indicates the number of sensors that have less than 14 days of data. </p>
      */
-    inline int GetAffectedSensorCount() const{ return m_affectedSensorCount; }
+    inline int GetAffectedSensorCount() const { return m_affectedSensorCount; }
     inline bool AffectedSensorCountHasBeenSet() const { return m_affectedSensorCountHasBeenSet; }
     inline void SetAffectedSensorCount(int value) { m_affectedSensorCountHasBeenSet = true; m_affectedSensorCount = value; }
     inline SensorsWithShortDateRange& WithAffectedSensorCount(int value) { SetAffectedSensorCount(value); return *this;}
     ///@}
   private:
 
-    int m_affectedSensorCount;
+    int m_affectedSensorCount{0};
     bool m_affectedSensorCountHasBeenSet = false;
   };
 

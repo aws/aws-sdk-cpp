@@ -12,22 +12,6 @@ using namespace Aws::Route53Resolver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateResolverEndpointRequest::CreateResolverEndpointRequest() : 
-    m_creatorRequestIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_direction(ResolverEndpointDirection::NOT_SET),
-    m_directionHasBeenSet(false),
-    m_ipAddressesHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_preferredInstanceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_resolverEndpointType(ResolverEndpointType::NOT_SET),
-    m_resolverEndpointTypeHasBeenSet(false),
-    m_protocolsHasBeenSet(false)
-{
-}
-
 Aws::String CreateResolverEndpointRequest::SerializePayload() const
 {
   JsonValue payload;

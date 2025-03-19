@@ -12,11 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetHostnameSuggestionRequest::GetHostnameSuggestionRequest() : 
-    m_layerIdHasBeenSet(false)
-{
-}
-
 Aws::String GetHostnameSuggestionRequest::SerializePayload() const
 {
   JsonValue payload;

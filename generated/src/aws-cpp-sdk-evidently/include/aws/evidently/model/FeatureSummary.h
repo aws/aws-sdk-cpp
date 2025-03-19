@@ -38,7 +38,7 @@ namespace Model
   class FeatureSummary
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API FeatureSummary();
+    AWS_CLOUDWATCHEVIDENTLY_API FeatureSummary() = default;
     AWS_CLOUDWATCHEVIDENTLY_API FeatureSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHEVIDENTLY_API FeatureSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHEVIDENTLY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,26 +48,24 @@ namespace Model
     /**
      * <p>The ARN of the feature.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline FeatureSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline FeatureSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline FeatureSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    FeatureSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the feature is created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-    inline FeatureSummary& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-    inline FeatureSummary& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    FeatureSummary& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,28 +74,26 @@ namespace Model
      * variation is served to users who are not allocated to any ongoing launches or
      * experiments of this feature.</p>
      */
-    inline const Aws::String& GetDefaultVariation() const{ return m_defaultVariation; }
+    inline const Aws::String& GetDefaultVariation() const { return m_defaultVariation; }
     inline bool DefaultVariationHasBeenSet() const { return m_defaultVariationHasBeenSet; }
-    inline void SetDefaultVariation(const Aws::String& value) { m_defaultVariationHasBeenSet = true; m_defaultVariation = value; }
-    inline void SetDefaultVariation(Aws::String&& value) { m_defaultVariationHasBeenSet = true; m_defaultVariation = std::move(value); }
-    inline void SetDefaultVariation(const char* value) { m_defaultVariationHasBeenSet = true; m_defaultVariation.assign(value); }
-    inline FeatureSummary& WithDefaultVariation(const Aws::String& value) { SetDefaultVariation(value); return *this;}
-    inline FeatureSummary& WithDefaultVariation(Aws::String&& value) { SetDefaultVariation(std::move(value)); return *this;}
-    inline FeatureSummary& WithDefaultVariation(const char* value) { SetDefaultVariation(value); return *this;}
+    template<typename DefaultVariationT = Aws::String>
+    void SetDefaultVariation(DefaultVariationT&& value) { m_defaultVariationHasBeenSet = true; m_defaultVariation = std::forward<DefaultVariationT>(value); }
+    template<typename DefaultVariationT = Aws::String>
+    FeatureSummary& WithDefaultVariation(DefaultVariationT&& value) { SetDefaultVariation(std::forward<DefaultVariationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of structures that define</p>
      */
-    inline const Aws::Vector<EvaluationRule>& GetEvaluationRules() const{ return m_evaluationRules; }
+    inline const Aws::Vector<EvaluationRule>& GetEvaluationRules() const { return m_evaluationRules; }
     inline bool EvaluationRulesHasBeenSet() const { return m_evaluationRulesHasBeenSet; }
-    inline void SetEvaluationRules(const Aws::Vector<EvaluationRule>& value) { m_evaluationRulesHasBeenSet = true; m_evaluationRules = value; }
-    inline void SetEvaluationRules(Aws::Vector<EvaluationRule>&& value) { m_evaluationRulesHasBeenSet = true; m_evaluationRules = std::move(value); }
-    inline FeatureSummary& WithEvaluationRules(const Aws::Vector<EvaluationRule>& value) { SetEvaluationRules(value); return *this;}
-    inline FeatureSummary& WithEvaluationRules(Aws::Vector<EvaluationRule>&& value) { SetEvaluationRules(std::move(value)); return *this;}
-    inline FeatureSummary& AddEvaluationRules(const EvaluationRule& value) { m_evaluationRulesHasBeenSet = true; m_evaluationRules.push_back(value); return *this; }
-    inline FeatureSummary& AddEvaluationRules(EvaluationRule&& value) { m_evaluationRulesHasBeenSet = true; m_evaluationRules.push_back(std::move(value)); return *this; }
+    template<typename EvaluationRulesT = Aws::Vector<EvaluationRule>>
+    void SetEvaluationRules(EvaluationRulesT&& value) { m_evaluationRulesHasBeenSet = true; m_evaluationRules = std::forward<EvaluationRulesT>(value); }
+    template<typename EvaluationRulesT = Aws::Vector<EvaluationRule>>
+    FeatureSummary& WithEvaluationRules(EvaluationRulesT&& value) { SetEvaluationRules(std::forward<EvaluationRulesT>(value)); return *this;}
+    template<typename EvaluationRulesT = EvaluationRule>
+    FeatureSummary& AddEvaluationRules(EvaluationRulesT&& value) { m_evaluationRulesHasBeenSet = true; m_evaluationRules.emplace_back(std::forward<EvaluationRulesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -107,90 +103,79 @@ namespace Model
      * <code>DEFAULT_VARIATION</code>, the default variation is being served to all
      * users.</p>
      */
-    inline const FeatureEvaluationStrategy& GetEvaluationStrategy() const{ return m_evaluationStrategy; }
+    inline FeatureEvaluationStrategy GetEvaluationStrategy() const { return m_evaluationStrategy; }
     inline bool EvaluationStrategyHasBeenSet() const { return m_evaluationStrategyHasBeenSet; }
-    inline void SetEvaluationStrategy(const FeatureEvaluationStrategy& value) { m_evaluationStrategyHasBeenSet = true; m_evaluationStrategy = value; }
-    inline void SetEvaluationStrategy(FeatureEvaluationStrategy&& value) { m_evaluationStrategyHasBeenSet = true; m_evaluationStrategy = std::move(value); }
-    inline FeatureSummary& WithEvaluationStrategy(const FeatureEvaluationStrategy& value) { SetEvaluationStrategy(value); return *this;}
-    inline FeatureSummary& WithEvaluationStrategy(FeatureEvaluationStrategy&& value) { SetEvaluationStrategy(std::move(value)); return *this;}
+    inline void SetEvaluationStrategy(FeatureEvaluationStrategy value) { m_evaluationStrategyHasBeenSet = true; m_evaluationStrategy = value; }
+    inline FeatureSummary& WithEvaluationStrategy(FeatureEvaluationStrategy value) { SetEvaluationStrategy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the feature was most recently updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedTime() const { return m_lastUpdatedTime; }
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
-    inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
-    inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
-    inline FeatureSummary& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
-    inline FeatureSummary& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedTime(LastUpdatedTimeT&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::forward<LastUpdatedTimeT>(value); }
+    template<typename LastUpdatedTimeT = Aws::Utils::DateTime>
+    FeatureSummary& WithLastUpdatedTime(LastUpdatedTimeT&& value) { SetLastUpdatedTime(std::forward<LastUpdatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the feature.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline FeatureSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline FeatureSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline FeatureSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    FeatureSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name or ARN of the project that contains the feature.</p>
      */
-    inline const Aws::String& GetProject() const{ return m_project; }
+    inline const Aws::String& GetProject() const { return m_project; }
     inline bool ProjectHasBeenSet() const { return m_projectHasBeenSet; }
-    inline void SetProject(const Aws::String& value) { m_projectHasBeenSet = true; m_project = value; }
-    inline void SetProject(Aws::String&& value) { m_projectHasBeenSet = true; m_project = std::move(value); }
-    inline void SetProject(const char* value) { m_projectHasBeenSet = true; m_project.assign(value); }
-    inline FeatureSummary& WithProject(const Aws::String& value) { SetProject(value); return *this;}
-    inline FeatureSummary& WithProject(Aws::String&& value) { SetProject(std::move(value)); return *this;}
-    inline FeatureSummary& WithProject(const char* value) { SetProject(value); return *this;}
+    template<typename ProjectT = Aws::String>
+    void SetProject(ProjectT&& value) { m_projectHasBeenSet = true; m_project = std::forward<ProjectT>(value); }
+    template<typename ProjectT = Aws::String>
+    FeatureSummary& WithProject(ProjectT&& value) { SetProject(std::forward<ProjectT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current state of the feature.</p>
      */
-    inline const FeatureStatus& GetStatus() const{ return m_status; }
+    inline FeatureStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const FeatureStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(FeatureStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline FeatureSummary& WithStatus(const FeatureStatus& value) { SetStatus(value); return *this;}
-    inline FeatureSummary& WithStatus(FeatureStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(FeatureStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline FeatureSummary& WithStatus(FeatureStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of tag keys and values associated with this feature.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline FeatureSummary& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline FeatureSummary& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline FeatureSummary& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline FeatureSummary& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline FeatureSummary& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline FeatureSummary& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline FeatureSummary& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline FeatureSummary& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline FeatureSummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    FeatureSummary& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    FeatureSummary& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTime;
+    Aws::Utils::DateTime m_createdTime{};
     bool m_createdTimeHasBeenSet = false;
 
     Aws::String m_defaultVariation;
@@ -199,10 +184,10 @@ namespace Model
     Aws::Vector<EvaluationRule> m_evaluationRules;
     bool m_evaluationRulesHasBeenSet = false;
 
-    FeatureEvaluationStrategy m_evaluationStrategy;
+    FeatureEvaluationStrategy m_evaluationStrategy{FeatureEvaluationStrategy::NOT_SET};
     bool m_evaluationStrategyHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedTime;
+    Aws::Utils::DateTime m_lastUpdatedTime{};
     bool m_lastUpdatedTimeHasBeenSet = false;
 
     Aws::String m_name;
@@ -211,7 +196,7 @@ namespace Model
     Aws::String m_project;
     bool m_projectHasBeenSet = false;
 
-    FeatureStatus m_status;
+    FeatureStatus m_status{FeatureStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;

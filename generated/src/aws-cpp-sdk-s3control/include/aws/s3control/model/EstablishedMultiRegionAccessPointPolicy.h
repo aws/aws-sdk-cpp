@@ -35,7 +35,7 @@ namespace Model
   class EstablishedMultiRegionAccessPointPolicy
   {
   public:
-    AWS_S3CONTROL_API EstablishedMultiRegionAccessPointPolicy();
+    AWS_S3CONTROL_API EstablishedMultiRegionAccessPointPolicy() = default;
     AWS_S3CONTROL_API EstablishedMultiRegionAccessPointPolicy(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API EstablishedMultiRegionAccessPointPolicy& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The details of the last established policy.</p>
      */
-    inline const Aws::String& GetPolicy() const{ return m_policy; }
+    inline const Aws::String& GetPolicy() const { return m_policy; }
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
-    inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
-    inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
-    inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
-    inline EstablishedMultiRegionAccessPointPolicy& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
-    inline EstablishedMultiRegionAccessPointPolicy& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
-    inline EstablishedMultiRegionAccessPointPolicy& WithPolicy(const char* value) { SetPolicy(value); return *this;}
+    template<typename PolicyT = Aws::String>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Aws::String>
+    EstablishedMultiRegionAccessPointPolicy& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
   private:
 

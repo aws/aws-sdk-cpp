@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetContainerLogResult::GetContainerLogResult()
-{
-}
-
 GetContainerLogResult::GetContainerLogResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ GetContainerLogResult& GetContainerLogResult::operator =(const Aws::AmazonWebSer
     {
       m_logEvents.push_back(logEventsJsonList[logEventsIndex].AsObject());
     }
+    m_logEventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextPageToken"))
   {
     m_nextPageToken = jsonValue.GetString("nextPageToken");
-
+    m_nextPageTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

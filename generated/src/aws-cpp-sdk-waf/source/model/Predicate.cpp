@@ -18,17 +18,7 @@ namespace WAF
 namespace Model
 {
 
-Predicate::Predicate() : 
-    m_negated(false),
-    m_negatedHasBeenSet(false),
-    m_type(PredicateType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_dataIdHasBeenSet(false)
-{
-}
-
 Predicate::Predicate(JsonView jsonValue)
-  : Predicate()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ Predicate& Predicate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Negated"))
   {
     m_negated = jsonValue.GetBool("Negated");
-
     m_negatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = PredicateTypeMapper::GetPredicateTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataId"))
   {
     m_dataId = jsonValue.GetString("DataId");
-
     m_dataIdHasBeenSet = true;
   }
-
   return *this;
 }
 

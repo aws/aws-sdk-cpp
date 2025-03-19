@@ -28,7 +28,7 @@ namespace Model
   class UpdateApiResult
   {
   public:
-    AWS_APPSYNC_API UpdateApiResult();
+    AWS_APPSYNC_API UpdateApiResult() = default;
     AWS_APPSYNC_API UpdateApiResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSYNC_API UpdateApiResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The <code>Api</code> object.</p>
      */
-    inline const Api& GetApi() const{ return m_api; }
-    inline void SetApi(const Api& value) { m_api = value; }
-    inline void SetApi(Api&& value) { m_api = std::move(value); }
-    inline UpdateApiResult& WithApi(const Api& value) { SetApi(value); return *this;}
-    inline UpdateApiResult& WithApi(Api&& value) { SetApi(std::move(value)); return *this;}
+    inline const Api& GetApi() const { return m_api; }
+    template<typename ApiT = Api>
+    void SetApi(ApiT&& value) { m_apiHasBeenSet = true; m_api = std::forward<ApiT>(value); }
+    template<typename ApiT = Api>
+    UpdateApiResult& WithApi(ApiT&& value) { SetApi(std::forward<ApiT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateApiResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateApiResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateApiResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateApiResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Api m_api;
+    bool m_apiHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

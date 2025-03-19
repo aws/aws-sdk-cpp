@@ -31,7 +31,7 @@ namespace Model
   class ListTagOptionsFilters
   {
   public:
-    AWS_SERVICECATALOG_API ListTagOptionsFilters();
+    AWS_SERVICECATALOG_API ListTagOptionsFilters() = default;
     AWS_SERVICECATALOG_API ListTagOptionsFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API ListTagOptionsFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,35 +41,31 @@ namespace Model
     /**
      * <p>The TagOption key.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline ListTagOptionsFilters& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline ListTagOptionsFilters& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline ListTagOptionsFilters& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    ListTagOptionsFilters& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The TagOption value.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline ListTagOptionsFilters& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline ListTagOptionsFilters& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline ListTagOptionsFilters& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    ListTagOptionsFilters& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The active state.</p>
      */
-    inline bool GetActive() const{ return m_active; }
+    inline bool GetActive() const { return m_active; }
     inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
     inline void SetActive(bool value) { m_activeHasBeenSet = true; m_active = value; }
     inline ListTagOptionsFilters& WithActive(bool value) { SetActive(value); return *this;}
@@ -82,7 +78,7 @@ namespace Model
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
 
-    bool m_active;
+    bool m_active{false};
     bool m_activeHasBeenSet = false;
   };
 

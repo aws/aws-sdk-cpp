@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TableSideBorderOptions::TableSideBorderOptions() : 
-    m_innerVerticalHasBeenSet(false),
-    m_innerHorizontalHasBeenSet(false),
-    m_leftHasBeenSet(false),
-    m_rightHasBeenSet(false),
-    m_topHasBeenSet(false),
-    m_bottomHasBeenSet(false)
-{
-}
-
 TableSideBorderOptions::TableSideBorderOptions(JsonView jsonValue)
-  : TableSideBorderOptions()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ TableSideBorderOptions& TableSideBorderOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InnerVertical"))
   {
     m_innerVertical = jsonValue.GetObject("InnerVertical");
-
     m_innerVerticalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InnerHorizontal"))
   {
     m_innerHorizontal = jsonValue.GetObject("InnerHorizontal");
-
     m_innerHorizontalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Left"))
   {
     m_left = jsonValue.GetObject("Left");
-
     m_leftHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Right"))
   {
     m_right = jsonValue.GetObject("Right");
-
     m_rightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Top"))
   {
     m_top = jsonValue.GetObject("Top");
-
     m_topHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Bottom"))
   {
     m_bottom = jsonValue.GetObject("Bottom");
-
     m_bottomHasBeenSet = true;
   }
-
   return *this;
 }
 

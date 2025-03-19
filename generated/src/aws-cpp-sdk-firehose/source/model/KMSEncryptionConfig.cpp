@@ -18,13 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-KMSEncryptionConfig::KMSEncryptionConfig() : 
-    m_aWSKMSKeyARNHasBeenSet(false)
-{
-}
-
 KMSEncryptionConfig::KMSEncryptionConfig(JsonView jsonValue)
-  : KMSEncryptionConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ KMSEncryptionConfig& KMSEncryptionConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AWSKMSKeyARN"))
   {
     m_aWSKMSKeyARN = jsonValue.GetString("AWSKMSKeyARN");
-
     m_aWSKMSKeyARNHasBeenSet = true;
   }
-
   return *this;
 }
 

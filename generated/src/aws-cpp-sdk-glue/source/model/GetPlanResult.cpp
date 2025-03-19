@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPlanResult::GetPlanResult()
-{
-}
-
 GetPlanResult::GetPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetPlanResult& GetPlanResult::operator =(const Aws::AmazonWebServiceResult<JsonV
   if(jsonValue.ValueExists("PythonScript"))
   {
     m_pythonScript = jsonValue.GetString("PythonScript");
-
+    m_pythonScriptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalaCode"))
   {
     m_scalaCode = jsonValue.GetString("ScalaCode");
-
+    m_scalaCodeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

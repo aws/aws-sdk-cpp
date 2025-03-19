@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSoftwareSetResult::GetSoftwareSetResult()
-{
-}
-
 GetSoftwareSetResult::GetSoftwareSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetSoftwareSetResult& GetSoftwareSetResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("softwareSet"))
   {
     m_softwareSet = jsonValue.GetObject("softwareSet");
-
+    m_softwareSetHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

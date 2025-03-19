@@ -39,7 +39,7 @@ namespace Model
   class AmazonOpenSearchServerlessDestinationDescription
   {
   public:
-    AWS_FIREHOSE_API AmazonOpenSearchServerlessDestinationDescription();
+    AWS_FIREHOSE_API AmazonOpenSearchServerlessDestinationDescription() = default;
     AWS_FIREHOSE_API AmazonOpenSearchServerlessDestinationDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API AmazonOpenSearchServerlessDestinationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Web Services credentials.</p>
      */
-    inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+    inline const Aws::String& GetRoleARN() const { return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
-    inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
-    inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
-    inline AmazonOpenSearchServerlessDestinationDescription& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
-    inline AmazonOpenSearchServerlessDestinationDescription& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
-    inline AmazonOpenSearchServerlessDestinationDescription& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+    template<typename RoleARNT = Aws::String>
+    void SetRoleARN(RoleARNT&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::forward<RoleARNT>(value); }
+    template<typename RoleARNT = Aws::String>
+    AmazonOpenSearchServerlessDestinationDescription& WithRoleARN(RoleARNT&& value) { SetRoleARN(std::forward<RoleARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,104 +62,98 @@ namespace Model
      * <p>The endpoint to use when communicating with the collection in the Serverless
      * offering for Amazon OpenSearch Service.</p>
      */
-    inline const Aws::String& GetCollectionEndpoint() const{ return m_collectionEndpoint; }
+    inline const Aws::String& GetCollectionEndpoint() const { return m_collectionEndpoint; }
     inline bool CollectionEndpointHasBeenSet() const { return m_collectionEndpointHasBeenSet; }
-    inline void SetCollectionEndpoint(const Aws::String& value) { m_collectionEndpointHasBeenSet = true; m_collectionEndpoint = value; }
-    inline void SetCollectionEndpoint(Aws::String&& value) { m_collectionEndpointHasBeenSet = true; m_collectionEndpoint = std::move(value); }
-    inline void SetCollectionEndpoint(const char* value) { m_collectionEndpointHasBeenSet = true; m_collectionEndpoint.assign(value); }
-    inline AmazonOpenSearchServerlessDestinationDescription& WithCollectionEndpoint(const Aws::String& value) { SetCollectionEndpoint(value); return *this;}
-    inline AmazonOpenSearchServerlessDestinationDescription& WithCollectionEndpoint(Aws::String&& value) { SetCollectionEndpoint(std::move(value)); return *this;}
-    inline AmazonOpenSearchServerlessDestinationDescription& WithCollectionEndpoint(const char* value) { SetCollectionEndpoint(value); return *this;}
+    template<typename CollectionEndpointT = Aws::String>
+    void SetCollectionEndpoint(CollectionEndpointT&& value) { m_collectionEndpointHasBeenSet = true; m_collectionEndpoint = std::forward<CollectionEndpointT>(value); }
+    template<typename CollectionEndpointT = Aws::String>
+    AmazonOpenSearchServerlessDestinationDescription& WithCollectionEndpoint(CollectionEndpointT&& value) { SetCollectionEndpoint(std::forward<CollectionEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Serverless offering for Amazon OpenSearch Service index name.</p>
      */
-    inline const Aws::String& GetIndexName() const{ return m_indexName; }
+    inline const Aws::String& GetIndexName() const { return m_indexName; }
     inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
-    inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
-    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
-    inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
-    inline AmazonOpenSearchServerlessDestinationDescription& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-    inline AmazonOpenSearchServerlessDestinationDescription& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-    inline AmazonOpenSearchServerlessDestinationDescription& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+    template<typename IndexNameT = Aws::String>
+    void SetIndexName(IndexNameT&& value) { m_indexNameHasBeenSet = true; m_indexName = std::forward<IndexNameT>(value); }
+    template<typename IndexNameT = Aws::String>
+    AmazonOpenSearchServerlessDestinationDescription& WithIndexName(IndexNameT&& value) { SetIndexName(std::forward<IndexNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The buffering options.</p>
      */
-    inline const AmazonOpenSearchServerlessBufferingHints& GetBufferingHints() const{ return m_bufferingHints; }
+    inline const AmazonOpenSearchServerlessBufferingHints& GetBufferingHints() const { return m_bufferingHints; }
     inline bool BufferingHintsHasBeenSet() const { return m_bufferingHintsHasBeenSet; }
-    inline void SetBufferingHints(const AmazonOpenSearchServerlessBufferingHints& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = value; }
-    inline void SetBufferingHints(AmazonOpenSearchServerlessBufferingHints&& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = std::move(value); }
-    inline AmazonOpenSearchServerlessDestinationDescription& WithBufferingHints(const AmazonOpenSearchServerlessBufferingHints& value) { SetBufferingHints(value); return *this;}
-    inline AmazonOpenSearchServerlessDestinationDescription& WithBufferingHints(AmazonOpenSearchServerlessBufferingHints&& value) { SetBufferingHints(std::move(value)); return *this;}
+    template<typename BufferingHintsT = AmazonOpenSearchServerlessBufferingHints>
+    void SetBufferingHints(BufferingHintsT&& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = std::forward<BufferingHintsT>(value); }
+    template<typename BufferingHintsT = AmazonOpenSearchServerlessBufferingHints>
+    AmazonOpenSearchServerlessDestinationDescription& WithBufferingHints(BufferingHintsT&& value) { SetBufferingHints(std::forward<BufferingHintsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Serverless offering for Amazon OpenSearch Service retry options.</p>
      */
-    inline const AmazonOpenSearchServerlessRetryOptions& GetRetryOptions() const{ return m_retryOptions; }
+    inline const AmazonOpenSearchServerlessRetryOptions& GetRetryOptions() const { return m_retryOptions; }
     inline bool RetryOptionsHasBeenSet() const { return m_retryOptionsHasBeenSet; }
-    inline void SetRetryOptions(const AmazonOpenSearchServerlessRetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
-    inline void SetRetryOptions(AmazonOpenSearchServerlessRetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = std::move(value); }
-    inline AmazonOpenSearchServerlessDestinationDescription& WithRetryOptions(const AmazonOpenSearchServerlessRetryOptions& value) { SetRetryOptions(value); return *this;}
-    inline AmazonOpenSearchServerlessDestinationDescription& WithRetryOptions(AmazonOpenSearchServerlessRetryOptions&& value) { SetRetryOptions(std::move(value)); return *this;}
+    template<typename RetryOptionsT = AmazonOpenSearchServerlessRetryOptions>
+    void SetRetryOptions(RetryOptionsT&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = std::forward<RetryOptionsT>(value); }
+    template<typename RetryOptionsT = AmazonOpenSearchServerlessRetryOptions>
+    AmazonOpenSearchServerlessDestinationDescription& WithRetryOptions(RetryOptionsT&& value) { SetRetryOptions(std::forward<RetryOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 backup mode.</p>
      */
-    inline const AmazonOpenSearchServerlessS3BackupMode& GetS3BackupMode() const{ return m_s3BackupMode; }
+    inline AmazonOpenSearchServerlessS3BackupMode GetS3BackupMode() const { return m_s3BackupMode; }
     inline bool S3BackupModeHasBeenSet() const { return m_s3BackupModeHasBeenSet; }
-    inline void SetS3BackupMode(const AmazonOpenSearchServerlessS3BackupMode& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = value; }
-    inline void SetS3BackupMode(AmazonOpenSearchServerlessS3BackupMode&& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = std::move(value); }
-    inline AmazonOpenSearchServerlessDestinationDescription& WithS3BackupMode(const AmazonOpenSearchServerlessS3BackupMode& value) { SetS3BackupMode(value); return *this;}
-    inline AmazonOpenSearchServerlessDestinationDescription& WithS3BackupMode(AmazonOpenSearchServerlessS3BackupMode&& value) { SetS3BackupMode(std::move(value)); return *this;}
+    inline void SetS3BackupMode(AmazonOpenSearchServerlessS3BackupMode value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = value; }
+    inline AmazonOpenSearchServerlessDestinationDescription& WithS3BackupMode(AmazonOpenSearchServerlessS3BackupMode value) { SetS3BackupMode(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const S3DestinationDescription& GetS3DestinationDescription() const{ return m_s3DestinationDescription; }
+    inline const S3DestinationDescription& GetS3DestinationDescription() const { return m_s3DestinationDescription; }
     inline bool S3DestinationDescriptionHasBeenSet() const { return m_s3DestinationDescriptionHasBeenSet; }
-    inline void SetS3DestinationDescription(const S3DestinationDescription& value) { m_s3DestinationDescriptionHasBeenSet = true; m_s3DestinationDescription = value; }
-    inline void SetS3DestinationDescription(S3DestinationDescription&& value) { m_s3DestinationDescriptionHasBeenSet = true; m_s3DestinationDescription = std::move(value); }
-    inline AmazonOpenSearchServerlessDestinationDescription& WithS3DestinationDescription(const S3DestinationDescription& value) { SetS3DestinationDescription(value); return *this;}
-    inline AmazonOpenSearchServerlessDestinationDescription& WithS3DestinationDescription(S3DestinationDescription&& value) { SetS3DestinationDescription(std::move(value)); return *this;}
+    template<typename S3DestinationDescriptionT = S3DestinationDescription>
+    void SetS3DestinationDescription(S3DestinationDescriptionT&& value) { m_s3DestinationDescriptionHasBeenSet = true; m_s3DestinationDescription = std::forward<S3DestinationDescriptionT>(value); }
+    template<typename S3DestinationDescriptionT = S3DestinationDescription>
+    AmazonOpenSearchServerlessDestinationDescription& WithS3DestinationDescription(S3DestinationDescriptionT&& value) { SetS3DestinationDescription(std::forward<S3DestinationDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ProcessingConfiguration& GetProcessingConfiguration() const{ return m_processingConfiguration; }
+    inline const ProcessingConfiguration& GetProcessingConfiguration() const { return m_processingConfiguration; }
     inline bool ProcessingConfigurationHasBeenSet() const { return m_processingConfigurationHasBeenSet; }
-    inline void SetProcessingConfiguration(const ProcessingConfiguration& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = value; }
-    inline void SetProcessingConfiguration(ProcessingConfiguration&& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = std::move(value); }
-    inline AmazonOpenSearchServerlessDestinationDescription& WithProcessingConfiguration(const ProcessingConfiguration& value) { SetProcessingConfiguration(value); return *this;}
-    inline AmazonOpenSearchServerlessDestinationDescription& WithProcessingConfiguration(ProcessingConfiguration&& value) { SetProcessingConfiguration(std::move(value)); return *this;}
+    template<typename ProcessingConfigurationT = ProcessingConfiguration>
+    void SetProcessingConfiguration(ProcessingConfigurationT&& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = std::forward<ProcessingConfigurationT>(value); }
+    template<typename ProcessingConfigurationT = ProcessingConfiguration>
+    AmazonOpenSearchServerlessDestinationDescription& WithProcessingConfiguration(ProcessingConfigurationT&& value) { SetProcessingConfiguration(std::forward<ProcessingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
+    inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const { return m_cloudWatchLoggingOptions; }
     inline bool CloudWatchLoggingOptionsHasBeenSet() const { return m_cloudWatchLoggingOptionsHasBeenSet; }
-    inline void SetCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
-    inline void SetCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = std::move(value); }
-    inline AmazonOpenSearchServerlessDestinationDescription& WithCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { SetCloudWatchLoggingOptions(value); return *this;}
-    inline AmazonOpenSearchServerlessDestinationDescription& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(std::move(value)); return *this;}
+    template<typename CloudWatchLoggingOptionsT = CloudWatchLoggingOptions>
+    void SetCloudWatchLoggingOptions(CloudWatchLoggingOptionsT&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = std::forward<CloudWatchLoggingOptionsT>(value); }
+    template<typename CloudWatchLoggingOptionsT = CloudWatchLoggingOptions>
+    AmazonOpenSearchServerlessDestinationDescription& WithCloudWatchLoggingOptions(CloudWatchLoggingOptionsT&& value) { SetCloudWatchLoggingOptions(std::forward<CloudWatchLoggingOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const VpcConfigurationDescription& GetVpcConfigurationDescription() const{ return m_vpcConfigurationDescription; }
+    inline const VpcConfigurationDescription& GetVpcConfigurationDescription() const { return m_vpcConfigurationDescription; }
     inline bool VpcConfigurationDescriptionHasBeenSet() const { return m_vpcConfigurationDescriptionHasBeenSet; }
-    inline void SetVpcConfigurationDescription(const VpcConfigurationDescription& value) { m_vpcConfigurationDescriptionHasBeenSet = true; m_vpcConfigurationDescription = value; }
-    inline void SetVpcConfigurationDescription(VpcConfigurationDescription&& value) { m_vpcConfigurationDescriptionHasBeenSet = true; m_vpcConfigurationDescription = std::move(value); }
-    inline AmazonOpenSearchServerlessDestinationDescription& WithVpcConfigurationDescription(const VpcConfigurationDescription& value) { SetVpcConfigurationDescription(value); return *this;}
-    inline AmazonOpenSearchServerlessDestinationDescription& WithVpcConfigurationDescription(VpcConfigurationDescription&& value) { SetVpcConfigurationDescription(std::move(value)); return *this;}
+    template<typename VpcConfigurationDescriptionT = VpcConfigurationDescription>
+    void SetVpcConfigurationDescription(VpcConfigurationDescriptionT&& value) { m_vpcConfigurationDescriptionHasBeenSet = true; m_vpcConfigurationDescription = std::forward<VpcConfigurationDescriptionT>(value); }
+    template<typename VpcConfigurationDescriptionT = VpcConfigurationDescription>
+    AmazonOpenSearchServerlessDestinationDescription& WithVpcConfigurationDescription(VpcConfigurationDescriptionT&& value) { SetVpcConfigurationDescription(std::forward<VpcConfigurationDescriptionT>(value)); return *this;}
     ///@}
   private:
 
@@ -180,7 +172,7 @@ namespace Model
     AmazonOpenSearchServerlessRetryOptions m_retryOptions;
     bool m_retryOptionsHasBeenSet = false;
 
-    AmazonOpenSearchServerlessS3BackupMode m_s3BackupMode;
+    AmazonOpenSearchServerlessS3BackupMode m_s3BackupMode{AmazonOpenSearchServerlessS3BackupMode::NOT_SET};
     bool m_s3BackupModeHasBeenSet = false;
 
     S3DestinationDescription m_s3DestinationDescription;

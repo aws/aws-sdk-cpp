@@ -18,19 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-WeeklyAutoScalingSchedule::WeeklyAutoScalingSchedule() : 
-    m_mondayHasBeenSet(false),
-    m_tuesdayHasBeenSet(false),
-    m_wednesdayHasBeenSet(false),
-    m_thursdayHasBeenSet(false),
-    m_fridayHasBeenSet(false),
-    m_saturdayHasBeenSet(false),
-    m_sundayHasBeenSet(false)
-{
-}
-
 WeeklyAutoScalingSchedule::WeeklyAutoScalingSchedule(JsonView jsonValue)
-  : WeeklyAutoScalingSchedule()
 {
   *this = jsonValue;
 }
@@ -46,7 +34,6 @@ WeeklyAutoScalingSchedule& WeeklyAutoScalingSchedule::operator =(JsonView jsonVa
     }
     m_mondayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tuesday"))
   {
     Aws::Map<Aws::String, JsonView> tuesdayJsonMap = jsonValue.GetObject("Tuesday").GetAllObjects();
@@ -56,7 +43,6 @@ WeeklyAutoScalingSchedule& WeeklyAutoScalingSchedule::operator =(JsonView jsonVa
     }
     m_tuesdayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Wednesday"))
   {
     Aws::Map<Aws::String, JsonView> wednesdayJsonMap = jsonValue.GetObject("Wednesday").GetAllObjects();
@@ -66,7 +52,6 @@ WeeklyAutoScalingSchedule& WeeklyAutoScalingSchedule::operator =(JsonView jsonVa
     }
     m_wednesdayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Thursday"))
   {
     Aws::Map<Aws::String, JsonView> thursdayJsonMap = jsonValue.GetObject("Thursday").GetAllObjects();
@@ -76,7 +61,6 @@ WeeklyAutoScalingSchedule& WeeklyAutoScalingSchedule::operator =(JsonView jsonVa
     }
     m_thursdayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Friday"))
   {
     Aws::Map<Aws::String, JsonView> fridayJsonMap = jsonValue.GetObject("Friday").GetAllObjects();
@@ -86,7 +70,6 @@ WeeklyAutoScalingSchedule& WeeklyAutoScalingSchedule::operator =(JsonView jsonVa
     }
     m_fridayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Saturday"))
   {
     Aws::Map<Aws::String, JsonView> saturdayJsonMap = jsonValue.GetObject("Saturday").GetAllObjects();
@@ -96,7 +79,6 @@ WeeklyAutoScalingSchedule& WeeklyAutoScalingSchedule::operator =(JsonView jsonVa
     }
     m_saturdayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sunday"))
   {
     Aws::Map<Aws::String, JsonView> sundayJsonMap = jsonValue.GetObject("Sunday").GetAllObjects();
@@ -106,7 +88,6 @@ WeeklyAutoScalingSchedule& WeeklyAutoScalingSchedule::operator =(JsonView jsonVa
     }
     m_sundayHasBeenSet = true;
   }
-
   return *this;
 }
 

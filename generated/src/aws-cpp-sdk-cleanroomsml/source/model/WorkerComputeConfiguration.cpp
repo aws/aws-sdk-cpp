@@ -18,16 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-WorkerComputeConfiguration::WorkerComputeConfiguration() : 
-    m_type(WorkerComputeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_number(0),
-    m_numberHasBeenSet(false)
-{
-}
-
 WorkerComputeConfiguration::WorkerComputeConfiguration(JsonView jsonValue)
-  : WorkerComputeConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ WorkerComputeConfiguration& WorkerComputeConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("type"))
   {
     m_type = WorkerComputeTypeMapper::GetWorkerComputeTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("number"))
   {
     m_number = jsonValue.GetInteger("number");
-
     m_numberHasBeenSet = true;
   }
-
   return *this;
 }
 

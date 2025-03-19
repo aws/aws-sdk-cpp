@@ -18,10 +18,6 @@ namespace Appflow
 namespace Model
 {
 
-TrendmicroMetadata::TrendmicroMetadata()
-{
-}
-
 TrendmicroMetadata::TrendmicroMetadata(JsonView jsonValue)
 {
   *this = jsonValue;

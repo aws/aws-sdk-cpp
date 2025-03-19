@@ -35,7 +35,7 @@ namespace Model
   class AttributeSuggestionsGetConfig
   {
   public:
-    AWS_KENDRA_API AttributeSuggestionsGetConfig();
+    AWS_KENDRA_API AttributeSuggestionsGetConfig() = default;
     AWS_KENDRA_API AttributeSuggestionsGetConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API AttributeSuggestionsGetConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,15 +48,14 @@ namespace Model
      * typing as their query, then the field content is returned as a query
      * suggestion.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSuggestionAttributes() const{ return m_suggestionAttributes; }
+    inline const Aws::Vector<Aws::String>& GetSuggestionAttributes() const { return m_suggestionAttributes; }
     inline bool SuggestionAttributesHasBeenSet() const { return m_suggestionAttributesHasBeenSet; }
-    inline void SetSuggestionAttributes(const Aws::Vector<Aws::String>& value) { m_suggestionAttributesHasBeenSet = true; m_suggestionAttributes = value; }
-    inline void SetSuggestionAttributes(Aws::Vector<Aws::String>&& value) { m_suggestionAttributesHasBeenSet = true; m_suggestionAttributes = std::move(value); }
-    inline AttributeSuggestionsGetConfig& WithSuggestionAttributes(const Aws::Vector<Aws::String>& value) { SetSuggestionAttributes(value); return *this;}
-    inline AttributeSuggestionsGetConfig& WithSuggestionAttributes(Aws::Vector<Aws::String>&& value) { SetSuggestionAttributes(std::move(value)); return *this;}
-    inline AttributeSuggestionsGetConfig& AddSuggestionAttributes(const Aws::String& value) { m_suggestionAttributesHasBeenSet = true; m_suggestionAttributes.push_back(value); return *this; }
-    inline AttributeSuggestionsGetConfig& AddSuggestionAttributes(Aws::String&& value) { m_suggestionAttributesHasBeenSet = true; m_suggestionAttributes.push_back(std::move(value)); return *this; }
-    inline AttributeSuggestionsGetConfig& AddSuggestionAttributes(const char* value) { m_suggestionAttributesHasBeenSet = true; m_suggestionAttributes.push_back(value); return *this; }
+    template<typename SuggestionAttributesT = Aws::Vector<Aws::String>>
+    void SetSuggestionAttributes(SuggestionAttributesT&& value) { m_suggestionAttributesHasBeenSet = true; m_suggestionAttributes = std::forward<SuggestionAttributesT>(value); }
+    template<typename SuggestionAttributesT = Aws::Vector<Aws::String>>
+    AttributeSuggestionsGetConfig& WithSuggestionAttributes(SuggestionAttributesT&& value) { SetSuggestionAttributes(std::forward<SuggestionAttributesT>(value)); return *this;}
+    template<typename SuggestionAttributesT = Aws::String>
+    AttributeSuggestionsGetConfig& AddSuggestionAttributes(SuggestionAttributesT&& value) { m_suggestionAttributesHasBeenSet = true; m_suggestionAttributes.emplace_back(std::forward<SuggestionAttributesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -66,27 +65,26 @@ namespace Model
      * information in the response. Additional fields are not used to based suggestions
      * on.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAdditionalResponseAttributes() const{ return m_additionalResponseAttributes; }
+    inline const Aws::Vector<Aws::String>& GetAdditionalResponseAttributes() const { return m_additionalResponseAttributes; }
     inline bool AdditionalResponseAttributesHasBeenSet() const { return m_additionalResponseAttributesHasBeenSet; }
-    inline void SetAdditionalResponseAttributes(const Aws::Vector<Aws::String>& value) { m_additionalResponseAttributesHasBeenSet = true; m_additionalResponseAttributes = value; }
-    inline void SetAdditionalResponseAttributes(Aws::Vector<Aws::String>&& value) { m_additionalResponseAttributesHasBeenSet = true; m_additionalResponseAttributes = std::move(value); }
-    inline AttributeSuggestionsGetConfig& WithAdditionalResponseAttributes(const Aws::Vector<Aws::String>& value) { SetAdditionalResponseAttributes(value); return *this;}
-    inline AttributeSuggestionsGetConfig& WithAdditionalResponseAttributes(Aws::Vector<Aws::String>&& value) { SetAdditionalResponseAttributes(std::move(value)); return *this;}
-    inline AttributeSuggestionsGetConfig& AddAdditionalResponseAttributes(const Aws::String& value) { m_additionalResponseAttributesHasBeenSet = true; m_additionalResponseAttributes.push_back(value); return *this; }
-    inline AttributeSuggestionsGetConfig& AddAdditionalResponseAttributes(Aws::String&& value) { m_additionalResponseAttributesHasBeenSet = true; m_additionalResponseAttributes.push_back(std::move(value)); return *this; }
-    inline AttributeSuggestionsGetConfig& AddAdditionalResponseAttributes(const char* value) { m_additionalResponseAttributesHasBeenSet = true; m_additionalResponseAttributes.push_back(value); return *this; }
+    template<typename AdditionalResponseAttributesT = Aws::Vector<Aws::String>>
+    void SetAdditionalResponseAttributes(AdditionalResponseAttributesT&& value) { m_additionalResponseAttributesHasBeenSet = true; m_additionalResponseAttributes = std::forward<AdditionalResponseAttributesT>(value); }
+    template<typename AdditionalResponseAttributesT = Aws::Vector<Aws::String>>
+    AttributeSuggestionsGetConfig& WithAdditionalResponseAttributes(AdditionalResponseAttributesT&& value) { SetAdditionalResponseAttributes(std::forward<AdditionalResponseAttributesT>(value)); return *this;}
+    template<typename AdditionalResponseAttributesT = Aws::String>
+    AttributeSuggestionsGetConfig& AddAdditionalResponseAttributes(AdditionalResponseAttributesT&& value) { m_additionalResponseAttributesHasBeenSet = true; m_additionalResponseAttributes.emplace_back(std::forward<AdditionalResponseAttributesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Filters the search results based on document fields/attributes.</p>
      */
-    inline const AttributeFilter& GetAttributeFilter() const{ return m_attributeFilter; }
+    inline const AttributeFilter& GetAttributeFilter() const { return m_attributeFilter; }
     inline bool AttributeFilterHasBeenSet() const { return m_attributeFilterHasBeenSet; }
-    inline void SetAttributeFilter(const AttributeFilter& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = value; }
-    inline void SetAttributeFilter(AttributeFilter&& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = std::move(value); }
-    inline AttributeSuggestionsGetConfig& WithAttributeFilter(const AttributeFilter& value) { SetAttributeFilter(value); return *this;}
-    inline AttributeSuggestionsGetConfig& WithAttributeFilter(AttributeFilter&& value) { SetAttributeFilter(std::move(value)); return *this;}
+    template<typename AttributeFilterT = AttributeFilter>
+    void SetAttributeFilter(AttributeFilterT&& value) { m_attributeFilterHasBeenSet = true; m_attributeFilter = std::forward<AttributeFilterT>(value); }
+    template<typename AttributeFilterT = AttributeFilter>
+    AttributeSuggestionsGetConfig& WithAttributeFilter(AttributeFilterT&& value) { SetAttributeFilter(std::forward<AttributeFilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,12 +92,12 @@ namespace Model
      * <p>Applies user context filtering so that only users who are given access to
      * certain documents see these document in their search results.</p>
      */
-    inline const UserContext& GetUserContext() const{ return m_userContext; }
+    inline const UserContext& GetUserContext() const { return m_userContext; }
     inline bool UserContextHasBeenSet() const { return m_userContextHasBeenSet; }
-    inline void SetUserContext(const UserContext& value) { m_userContextHasBeenSet = true; m_userContext = value; }
-    inline void SetUserContext(UserContext&& value) { m_userContextHasBeenSet = true; m_userContext = std::move(value); }
-    inline AttributeSuggestionsGetConfig& WithUserContext(const UserContext& value) { SetUserContext(value); return *this;}
-    inline AttributeSuggestionsGetConfig& WithUserContext(UserContext&& value) { SetUserContext(std::move(value)); return *this;}
+    template<typename UserContextT = UserContext>
+    void SetUserContext(UserContextT&& value) { m_userContextHasBeenSet = true; m_userContext = std::forward<UserContextT>(value); }
+    template<typename UserContextT = UserContext>
+    AttributeSuggestionsGetConfig& WithUserContext(UserContextT&& value) { SetUserContext(std::forward<UserContextT>(value)); return *this;}
     ///@}
   private:
 

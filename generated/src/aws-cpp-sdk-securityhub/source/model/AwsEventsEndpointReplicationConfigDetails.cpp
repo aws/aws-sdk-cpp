@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEventsEndpointReplicationConfigDetails::AwsEventsEndpointReplicationConfigDetails() : 
-    m_stateHasBeenSet(false)
-{
-}
-
 AwsEventsEndpointReplicationConfigDetails::AwsEventsEndpointReplicationConfigDetails(JsonView jsonValue)
-  : AwsEventsEndpointReplicationConfigDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsEventsEndpointReplicationConfigDetails& AwsEventsEndpointReplicationConfigDet
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetString("State");
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

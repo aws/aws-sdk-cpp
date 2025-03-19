@@ -12,17 +12,6 @@ using namespace Aws::Budgets::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeBudgetActionHistoriesRequest::DescribeBudgetActionHistoriesRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_budgetNameHasBeenSet(false),
-    m_actionIdHasBeenSet(false),
-    m_timePeriodHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeBudgetActionHistoriesRequest::SerializePayload() const
 {
   JsonValue payload;

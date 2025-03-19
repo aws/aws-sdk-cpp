@@ -18,15 +18,7 @@ namespace Support
 namespace Model
 {
 
-SupportedLanguage::SupportedLanguage() : 
-    m_codeHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_displayHasBeenSet(false)
-{
-}
-
 SupportedLanguage::SupportedLanguage(JsonView jsonValue)
-  : SupportedLanguage()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SupportedLanguage& SupportedLanguage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("language"))
   {
     m_language = jsonValue.GetString("language");
-
     m_languageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("display"))
   {
     m_display = jsonValue.GetString("display");
-
     m_displayHasBeenSet = true;
   }
-
   return *this;
 }
 

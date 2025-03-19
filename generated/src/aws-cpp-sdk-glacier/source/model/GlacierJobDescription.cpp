@@ -19,39 +19,7 @@ namespace Glacier
 namespace Model
 {
 
-GlacierJobDescription::GlacierJobDescription() : 
-    m_jobIdHasBeenSet(false),
-    m_jobDescriptionHasBeenSet(false),
-    m_action(ActionCode::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_archiveIdHasBeenSet(false),
-    m_vaultARNHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_completed(false),
-    m_completedHasBeenSet(false),
-    m_statusCode(StatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_archiveSizeInBytes(0),
-    m_archiveSizeInBytesHasBeenSet(false),
-    m_inventorySizeInBytes(0),
-    m_inventorySizeInBytesHasBeenSet(false),
-    m_sNSTopicHasBeenSet(false),
-    m_completionDateHasBeenSet(false),
-    m_sHA256TreeHashHasBeenSet(false),
-    m_archiveSHA256TreeHashHasBeenSet(false),
-    m_retrievalByteRangeHasBeenSet(false),
-    m_tierHasBeenSet(false),
-    m_inventoryRetrievalParametersHasBeenSet(false),
-    m_jobOutputPathHasBeenSet(false),
-    m_selectParametersHasBeenSet(false),
-    m_outputLocationHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 GlacierJobDescription::GlacierJobDescription(JsonView jsonValue)
-  : GlacierJobDescription()
 {
   *this = jsonValue;
 }
@@ -61,150 +29,108 @@ GlacierJobDescription& GlacierJobDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobDescription"))
   {
     m_jobDescription = jsonValue.GetString("JobDescription");
-
     m_jobDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Action"))
   {
     m_action = ActionCodeMapper::GetActionCodeForName(jsonValue.GetString("Action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ArchiveId"))
   {
     m_archiveId = jsonValue.GetString("ArchiveId");
-
     m_archiveIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VaultARN"))
   {
     m_vaultARN = jsonValue.GetString("VaultARN");
-
     m_vaultARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetString("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Completed"))
   {
     m_completed = jsonValue.GetBool("Completed");
-
     m_completedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusCode"))
   {
     m_statusCode = StatusCodeMapper::GetStatusCodeForName(jsonValue.GetString("StatusCode"));
-
     m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ArchiveSizeInBytes"))
   {
     m_archiveSizeInBytes = jsonValue.GetInt64("ArchiveSizeInBytes");
-
     m_archiveSizeInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InventorySizeInBytes"))
   {
     m_inventorySizeInBytes = jsonValue.GetInt64("InventorySizeInBytes");
-
     m_inventorySizeInBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SNSTopic"))
   {
     m_sNSTopic = jsonValue.GetString("SNSTopic");
-
     m_sNSTopicHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletionDate"))
   {
     m_completionDate = jsonValue.GetString("CompletionDate");
-
     m_completionDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SHA256TreeHash"))
   {
     m_sHA256TreeHash = jsonValue.GetString("SHA256TreeHash");
-
     m_sHA256TreeHashHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ArchiveSHA256TreeHash"))
   {
     m_archiveSHA256TreeHash = jsonValue.GetString("ArchiveSHA256TreeHash");
-
     m_archiveSHA256TreeHashHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetrievalByteRange"))
   {
     m_retrievalByteRange = jsonValue.GetString("RetrievalByteRange");
-
     m_retrievalByteRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tier"))
   {
     m_tier = jsonValue.GetString("Tier");
-
     m_tierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InventoryRetrievalParameters"))
   {
     m_inventoryRetrievalParameters = jsonValue.GetObject("InventoryRetrievalParameters");
-
     m_inventoryRetrievalParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobOutputPath"))
   {
     m_jobOutputPath = jsonValue.GetString("JobOutputPath");
-
     m_jobOutputPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SelectParameters"))
   {
     m_selectParameters = jsonValue.GetObject("SelectParameters");
-
     m_selectParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputLocation"))
   {
     m_outputLocation = jsonValue.GetObject("OutputLocation");
-
     m_outputLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

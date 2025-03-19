@@ -18,19 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-ConditionCheck::ConditionCheck() : 
-    m_keyHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_conditionExpressionHasBeenSet(false),
-    m_expressionAttributeNamesHasBeenSet(false),
-    m_expressionAttributeValuesHasBeenSet(false),
-    m_returnValuesOnConditionCheckFailure(ReturnValuesOnConditionCheckFailure::NOT_SET),
-    m_returnValuesOnConditionCheckFailureHasBeenSet(false)
-{
-}
-
 ConditionCheck::ConditionCheck(JsonView jsonValue)
-  : ConditionCheck()
 {
   *this = jsonValue;
 }
@@ -46,21 +34,16 @@ ConditionCheck& ConditionCheck::operator =(JsonView jsonValue)
     }
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConditionExpression"))
   {
     m_conditionExpression = jsonValue.GetString("ConditionExpression");
-
     m_conditionExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpressionAttributeNames"))
   {
     Aws::Map<Aws::String, JsonView> expressionAttributeNamesJsonMap = jsonValue.GetObject("ExpressionAttributeNames").GetAllObjects();
@@ -70,7 +53,6 @@ ConditionCheck& ConditionCheck::operator =(JsonView jsonValue)
     }
     m_expressionAttributeNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpressionAttributeValues"))
   {
     Aws::Map<Aws::String, JsonView> expressionAttributeValuesJsonMap = jsonValue.GetObject("ExpressionAttributeValues").GetAllObjects();
@@ -80,14 +62,11 @@ ConditionCheck& ConditionCheck::operator =(JsonView jsonValue)
     }
     m_expressionAttributeValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReturnValuesOnConditionCheckFailure"))
   {
     m_returnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailureMapper::GetReturnValuesOnConditionCheckFailureForName(jsonValue.GetString("ReturnValuesOnConditionCheckFailure"));
-
     m_returnValuesOnConditionCheckFailureHasBeenSet = true;
   }
-
   return *this;
 }
 

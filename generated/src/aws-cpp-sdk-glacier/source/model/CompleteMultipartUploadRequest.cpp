@@ -13,15 +13,6 @@ using namespace Aws::Glacier::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CompleteMultipartUploadRequest::CompleteMultipartUploadRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_vaultNameHasBeenSet(false),
-    m_uploadIdHasBeenSet(false),
-    m_archiveSizeHasBeenSet(false),
-    m_checksumHasBeenSet(false)
-{
-}
-
 Aws::String CompleteMultipartUploadRequest::SerializePayload() const
 {
   return {};

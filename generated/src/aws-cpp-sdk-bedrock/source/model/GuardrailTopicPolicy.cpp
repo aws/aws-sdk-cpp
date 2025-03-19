@@ -18,13 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-GuardrailTopicPolicy::GuardrailTopicPolicy() : 
-    m_topicsHasBeenSet(false)
-{
-}
-
 GuardrailTopicPolicy::GuardrailTopicPolicy(JsonView jsonValue)
-  : GuardrailTopicPolicy()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ GuardrailTopicPolicy& GuardrailTopicPolicy::operator =(JsonView jsonValue)
     }
     m_topicsHasBeenSet = true;
   }
-
   return *this;
 }
 

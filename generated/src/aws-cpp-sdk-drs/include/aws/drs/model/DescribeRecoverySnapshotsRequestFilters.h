@@ -32,7 +32,7 @@ namespace Model
   class DescribeRecoverySnapshotsRequestFilters
   {
   public:
-    AWS_DRS_API DescribeRecoverySnapshotsRequestFilters();
+    AWS_DRS_API DescribeRecoverySnapshotsRequestFilters() = default;
     AWS_DRS_API DescribeRecoverySnapshotsRequestFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API DescribeRecoverySnapshotsRequestFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The start date in a date range query.</p>
      */
-    inline const Aws::String& GetFromDateTime() const{ return m_fromDateTime; }
+    inline const Aws::String& GetFromDateTime() const { return m_fromDateTime; }
     inline bool FromDateTimeHasBeenSet() const { return m_fromDateTimeHasBeenSet; }
-    inline void SetFromDateTime(const Aws::String& value) { m_fromDateTimeHasBeenSet = true; m_fromDateTime = value; }
-    inline void SetFromDateTime(Aws::String&& value) { m_fromDateTimeHasBeenSet = true; m_fromDateTime = std::move(value); }
-    inline void SetFromDateTime(const char* value) { m_fromDateTimeHasBeenSet = true; m_fromDateTime.assign(value); }
-    inline DescribeRecoverySnapshotsRequestFilters& WithFromDateTime(const Aws::String& value) { SetFromDateTime(value); return *this;}
-    inline DescribeRecoverySnapshotsRequestFilters& WithFromDateTime(Aws::String&& value) { SetFromDateTime(std::move(value)); return *this;}
-    inline DescribeRecoverySnapshotsRequestFilters& WithFromDateTime(const char* value) { SetFromDateTime(value); return *this;}
+    template<typename FromDateTimeT = Aws::String>
+    void SetFromDateTime(FromDateTimeT&& value) { m_fromDateTimeHasBeenSet = true; m_fromDateTime = std::forward<FromDateTimeT>(value); }
+    template<typename FromDateTimeT = Aws::String>
+    DescribeRecoverySnapshotsRequestFilters& WithFromDateTime(FromDateTimeT&& value) { SetFromDateTime(std::forward<FromDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The end date in a date range query.</p>
      */
-    inline const Aws::String& GetToDateTime() const{ return m_toDateTime; }
+    inline const Aws::String& GetToDateTime() const { return m_toDateTime; }
     inline bool ToDateTimeHasBeenSet() const { return m_toDateTimeHasBeenSet; }
-    inline void SetToDateTime(const Aws::String& value) { m_toDateTimeHasBeenSet = true; m_toDateTime = value; }
-    inline void SetToDateTime(Aws::String&& value) { m_toDateTimeHasBeenSet = true; m_toDateTime = std::move(value); }
-    inline void SetToDateTime(const char* value) { m_toDateTimeHasBeenSet = true; m_toDateTime.assign(value); }
-    inline DescribeRecoverySnapshotsRequestFilters& WithToDateTime(const Aws::String& value) { SetToDateTime(value); return *this;}
-    inline DescribeRecoverySnapshotsRequestFilters& WithToDateTime(Aws::String&& value) { SetToDateTime(std::move(value)); return *this;}
-    inline DescribeRecoverySnapshotsRequestFilters& WithToDateTime(const char* value) { SetToDateTime(value); return *this;}
+    template<typename ToDateTimeT = Aws::String>
+    void SetToDateTime(ToDateTimeT&& value) { m_toDateTimeHasBeenSet = true; m_toDateTime = std::forward<ToDateTimeT>(value); }
+    template<typename ToDateTimeT = Aws::String>
+    DescribeRecoverySnapshotsRequestFilters& WithToDateTime(ToDateTimeT&& value) { SetToDateTime(std::forward<ToDateTimeT>(value)); return *this;}
     ///@}
   private:
 

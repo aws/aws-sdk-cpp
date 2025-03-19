@@ -36,7 +36,7 @@ namespace Model
   class InsightRuleContributorDatapoint
   {
   public:
-    AWS_CLOUDWATCH_API InsightRuleContributorDatapoint();
+    AWS_CLOUDWATCH_API InsightRuleContributorDatapoint() = default;
     AWS_CLOUDWATCH_API InsightRuleContributorDatapoint(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDWATCH_API InsightRuleContributorDatapoint& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -48,29 +48,29 @@ namespace Model
     /**
      * <p>The timestamp of the data point.</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline InsightRuleContributorDatapoint& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline InsightRuleContributorDatapoint& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    InsightRuleContributorDatapoint& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The approximate value that this contributor added during this timestamp.</p>
      */
-    inline double GetApproximateValue() const{ return m_approximateValue; }
+    inline double GetApproximateValue() const { return m_approximateValue; }
     inline bool ApproximateValueHasBeenSet() const { return m_approximateValueHasBeenSet; }
     inline void SetApproximateValue(double value) { m_approximateValueHasBeenSet = true; m_approximateValue = value; }
     inline InsightRuleContributorDatapoint& WithApproximateValue(double value) { SetApproximateValue(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
 
-    double m_approximateValue;
+    double m_approximateValue{0.0};
     bool m_approximateValueHasBeenSet = false;
   };
 

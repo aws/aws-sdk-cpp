@@ -18,15 +18,7 @@ namespace ManagedGrafana
 namespace Model
 {
 
-User::User() : 
-    m_idHasBeenSet(false),
-    m_type(UserType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 User::User(JsonView jsonValue)
-  : User()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ User& User::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = UserTypeMapper::GetUserTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

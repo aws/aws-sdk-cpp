@@ -34,7 +34,7 @@ namespace Model
   class DependentEntity
   {
   public:
-    AWS_SSMCONTACTS_API DependentEntity();
+    AWS_SSMCONTACTS_API DependentEntity() = default;
     AWS_SSMCONTACTS_API DependentEntity(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMCONTACTS_API DependentEntity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMCONTACTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,29 +45,26 @@ namespace Model
      * <p>The type of relationship between one resource and the other resource that it
      * is related to or depends on.</p>
      */
-    inline const Aws::String& GetRelationType() const{ return m_relationType; }
+    inline const Aws::String& GetRelationType() const { return m_relationType; }
     inline bool RelationTypeHasBeenSet() const { return m_relationTypeHasBeenSet; }
-    inline void SetRelationType(const Aws::String& value) { m_relationTypeHasBeenSet = true; m_relationType = value; }
-    inline void SetRelationType(Aws::String&& value) { m_relationTypeHasBeenSet = true; m_relationType = std::move(value); }
-    inline void SetRelationType(const char* value) { m_relationTypeHasBeenSet = true; m_relationType.assign(value); }
-    inline DependentEntity& WithRelationType(const Aws::String& value) { SetRelationType(value); return *this;}
-    inline DependentEntity& WithRelationType(Aws::String&& value) { SetRelationType(std::move(value)); return *this;}
-    inline DependentEntity& WithRelationType(const char* value) { SetRelationType(value); return *this;}
+    template<typename RelationTypeT = Aws::String>
+    void SetRelationType(RelationTypeT&& value) { m_relationTypeHasBeenSet = true; m_relationType = std::forward<RelationTypeT>(value); }
+    template<typename RelationTypeT = Aws::String>
+    DependentEntity& WithRelationType(RelationTypeT&& value) { SetRelationType(std::forward<RelationTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Names (ARNs) of the dependent resources.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDependentResourceIds() const{ return m_dependentResourceIds; }
+    inline const Aws::Vector<Aws::String>& GetDependentResourceIds() const { return m_dependentResourceIds; }
     inline bool DependentResourceIdsHasBeenSet() const { return m_dependentResourceIdsHasBeenSet; }
-    inline void SetDependentResourceIds(const Aws::Vector<Aws::String>& value) { m_dependentResourceIdsHasBeenSet = true; m_dependentResourceIds = value; }
-    inline void SetDependentResourceIds(Aws::Vector<Aws::String>&& value) { m_dependentResourceIdsHasBeenSet = true; m_dependentResourceIds = std::move(value); }
-    inline DependentEntity& WithDependentResourceIds(const Aws::Vector<Aws::String>& value) { SetDependentResourceIds(value); return *this;}
-    inline DependentEntity& WithDependentResourceIds(Aws::Vector<Aws::String>&& value) { SetDependentResourceIds(std::move(value)); return *this;}
-    inline DependentEntity& AddDependentResourceIds(const Aws::String& value) { m_dependentResourceIdsHasBeenSet = true; m_dependentResourceIds.push_back(value); return *this; }
-    inline DependentEntity& AddDependentResourceIds(Aws::String&& value) { m_dependentResourceIdsHasBeenSet = true; m_dependentResourceIds.push_back(std::move(value)); return *this; }
-    inline DependentEntity& AddDependentResourceIds(const char* value) { m_dependentResourceIdsHasBeenSet = true; m_dependentResourceIds.push_back(value); return *this; }
+    template<typename DependentResourceIdsT = Aws::Vector<Aws::String>>
+    void SetDependentResourceIds(DependentResourceIdsT&& value) { m_dependentResourceIdsHasBeenSet = true; m_dependentResourceIds = std::forward<DependentResourceIdsT>(value); }
+    template<typename DependentResourceIdsT = Aws::Vector<Aws::String>>
+    DependentEntity& WithDependentResourceIds(DependentResourceIdsT&& value) { SetDependentResourceIds(std::forward<DependentResourceIdsT>(value)); return *this;}
+    template<typename DependentResourceIdsT = Aws::String>
+    DependentEntity& AddDependentResourceIds(DependentResourceIdsT&& value) { m_dependentResourceIdsHasBeenSet = true; m_dependentResourceIds.emplace_back(std::forward<DependentResourceIdsT>(value)); return *this; }
     ///@}
   private:
 

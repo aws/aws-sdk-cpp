@@ -18,15 +18,7 @@ namespace CodeGuruProfiler
 namespace Model
 {
 
-Anomaly::Anomaly() : 
-    m_instancesHasBeenSet(false),
-    m_metricHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 Anomaly::Anomaly(JsonView jsonValue)
-  : Anomaly()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ Anomaly& Anomaly::operator =(JsonView jsonValue)
     }
     m_instancesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metric"))
   {
     m_metric = jsonValue.GetObject("metric");
-
     m_metricHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

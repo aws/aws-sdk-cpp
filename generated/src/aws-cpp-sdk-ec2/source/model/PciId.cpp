@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PciId::PciId() : 
-    m_deviceIdHasBeenSet(false),
-    m_vendorIdHasBeenSet(false),
-    m_subsystemIdHasBeenSet(false),
-    m_subsystemVendorIdHasBeenSet(false)
-{
-}
-
 PciId::PciId(const XmlNode& xmlNode)
-  : PciId()
 {
   *this = xmlNode;
 }

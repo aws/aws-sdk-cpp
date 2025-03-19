@@ -21,7 +21,7 @@ namespace Model
   class DeleteSupplementalTaxRegistrationRequest : public TaxSettingsRequest
   {
   public:
-    AWS_TAXSETTINGS_API DeleteSupplementalTaxRegistrationRequest();
+    AWS_TAXSETTINGS_API DeleteSupplementalTaxRegistrationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p> The unique authority Id for the supplemental TRN information that needs to
      * be deleted. </p>
      */
-    inline const Aws::String& GetAuthorityId() const{ return m_authorityId; }
+    inline const Aws::String& GetAuthorityId() const { return m_authorityId; }
     inline bool AuthorityIdHasBeenSet() const { return m_authorityIdHasBeenSet; }
-    inline void SetAuthorityId(const Aws::String& value) { m_authorityIdHasBeenSet = true; m_authorityId = value; }
-    inline void SetAuthorityId(Aws::String&& value) { m_authorityIdHasBeenSet = true; m_authorityId = std::move(value); }
-    inline void SetAuthorityId(const char* value) { m_authorityIdHasBeenSet = true; m_authorityId.assign(value); }
-    inline DeleteSupplementalTaxRegistrationRequest& WithAuthorityId(const Aws::String& value) { SetAuthorityId(value); return *this;}
-    inline DeleteSupplementalTaxRegistrationRequest& WithAuthorityId(Aws::String&& value) { SetAuthorityId(std::move(value)); return *this;}
-    inline DeleteSupplementalTaxRegistrationRequest& WithAuthorityId(const char* value) { SetAuthorityId(value); return *this;}
+    template<typename AuthorityIdT = Aws::String>
+    void SetAuthorityId(AuthorityIdT&& value) { m_authorityIdHasBeenSet = true; m_authorityId = std::forward<AuthorityIdT>(value); }
+    template<typename AuthorityIdT = Aws::String>
+    DeleteSupplementalTaxRegistrationRequest& WithAuthorityId(AuthorityIdT&& value) { SetAuthorityId(std::forward<AuthorityIdT>(value)); return *this;}
     ///@}
   private:
 

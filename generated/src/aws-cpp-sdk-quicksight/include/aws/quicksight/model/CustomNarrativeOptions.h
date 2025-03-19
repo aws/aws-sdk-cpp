@@ -31,7 +31,7 @@ namespace Model
   class CustomNarrativeOptions
   {
   public:
-    AWS_QUICKSIGHT_API CustomNarrativeOptions();
+    AWS_QUICKSIGHT_API CustomNarrativeOptions() = default;
     AWS_QUICKSIGHT_API CustomNarrativeOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API CustomNarrativeOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The string input of custom narrative.</p>
      */
-    inline const Aws::String& GetNarrative() const{ return m_narrative; }
+    inline const Aws::String& GetNarrative() const { return m_narrative; }
     inline bool NarrativeHasBeenSet() const { return m_narrativeHasBeenSet; }
-    inline void SetNarrative(const Aws::String& value) { m_narrativeHasBeenSet = true; m_narrative = value; }
-    inline void SetNarrative(Aws::String&& value) { m_narrativeHasBeenSet = true; m_narrative = std::move(value); }
-    inline void SetNarrative(const char* value) { m_narrativeHasBeenSet = true; m_narrative.assign(value); }
-    inline CustomNarrativeOptions& WithNarrative(const Aws::String& value) { SetNarrative(value); return *this;}
-    inline CustomNarrativeOptions& WithNarrative(Aws::String&& value) { SetNarrative(std::move(value)); return *this;}
-    inline CustomNarrativeOptions& WithNarrative(const char* value) { SetNarrative(value); return *this;}
+    template<typename NarrativeT = Aws::String>
+    void SetNarrative(NarrativeT&& value) { m_narrativeHasBeenSet = true; m_narrative = std::forward<NarrativeT>(value); }
+    template<typename NarrativeT = Aws::String>
+    CustomNarrativeOptions& WithNarrative(NarrativeT&& value) { SetNarrative(std::forward<NarrativeT>(value)); return *this;}
     ///@}
   private:
 

@@ -10,11 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-DeleteEventSubscriptionRequest::DeleteEventSubscriptionRequest() : 
-    m_subscriptionNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEventSubscriptionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FreeFormSectionLayoutConfiguration::FreeFormSectionLayoutConfiguration() : 
-    m_elementsHasBeenSet(false)
-{
-}
-
 FreeFormSectionLayoutConfiguration::FreeFormSectionLayoutConfiguration(JsonView jsonValue)
-  : FreeFormSectionLayoutConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ FreeFormSectionLayoutConfiguration& FreeFormSectionLayoutConfiguration::operator
     }
     m_elementsHasBeenSet = true;
   }
-
   return *this;
 }
 

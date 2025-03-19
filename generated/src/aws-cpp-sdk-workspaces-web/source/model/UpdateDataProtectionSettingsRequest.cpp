@@ -12,16 +12,6 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDataProtectionSettingsRequest::UpdateDataProtectionSettingsRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_dataProtectionSettingsArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_inlineRedactionConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDataProtectionSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

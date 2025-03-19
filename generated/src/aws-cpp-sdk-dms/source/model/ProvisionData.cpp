@@ -18,20 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-ProvisionData::ProvisionData() : 
-    m_provisionStateHasBeenSet(false),
-    m_provisionedCapacityUnits(0),
-    m_provisionedCapacityUnitsHasBeenSet(false),
-    m_dateProvisionedHasBeenSet(false),
-    m_isNewProvisioningAvailable(false),
-    m_isNewProvisioningAvailableHasBeenSet(false),
-    m_dateNewProvisioningDataAvailableHasBeenSet(false),
-    m_reasonForNewProvisioningDataHasBeenSet(false)
-{
-}
-
 ProvisionData::ProvisionData(JsonView jsonValue)
-  : ProvisionData()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ ProvisionData& ProvisionData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ProvisionState"))
   {
     m_provisionState = jsonValue.GetString("ProvisionState");
-
     m_provisionStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProvisionedCapacityUnits"))
   {
     m_provisionedCapacityUnits = jsonValue.GetInteger("ProvisionedCapacityUnits");
-
     m_provisionedCapacityUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateProvisioned"))
   {
     m_dateProvisioned = jsonValue.GetDouble("DateProvisioned");
-
     m_dateProvisionedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsNewProvisioningAvailable"))
   {
     m_isNewProvisioningAvailable = jsonValue.GetBool("IsNewProvisioningAvailable");
-
     m_isNewProvisioningAvailableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateNewProvisioningDataAvailable"))
   {
     m_dateNewProvisioningDataAvailable = jsonValue.GetDouble("DateNewProvisioningDataAvailable");
-
     m_dateNewProvisioningDataAvailableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReasonForNewProvisioningData"))
   {
     m_reasonForNewProvisioningData = jsonValue.GetString("ReasonForNewProvisioningData");
-
     m_reasonForNewProvisioningDataHasBeenSet = true;
   }
-
   return *this;
 }
 

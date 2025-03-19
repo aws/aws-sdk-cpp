@@ -18,15 +18,7 @@ namespace Detective
 namespace Model
 {
 
-MembershipDatasources::MembershipDatasources() : 
-    m_accountIdHasBeenSet(false),
-    m_graphArnHasBeenSet(false),
-    m_datasourcePackageIngestHistoryHasBeenSet(false)
-{
-}
-
 MembershipDatasources::MembershipDatasources(JsonView jsonValue)
-  : MembershipDatasources()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ MembershipDatasources& MembershipDatasources::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GraphArn"))
   {
     m_graphArn = jsonValue.GetString("GraphArn");
-
     m_graphArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatasourcePackageIngestHistory"))
   {
     Aws::Map<Aws::String, JsonView> datasourcePackageIngestHistoryJsonMap = jsonValue.GetObject("DatasourcePackageIngestHistory").GetAllObjects();
@@ -62,7 +50,6 @@ MembershipDatasources& MembershipDatasources::operator =(JsonView jsonValue)
     }
     m_datasourcePackageIngestHistoryHasBeenSet = true;
   }
-
   return *this;
 }
 

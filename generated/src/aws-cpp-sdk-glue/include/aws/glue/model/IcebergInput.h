@@ -33,7 +33,7 @@ namespace Model
   class IcebergInput
   {
   public:
-    AWS_GLUE_API IcebergInput();
+    AWS_GLUE_API IcebergInput() = default;
     AWS_GLUE_API IcebergInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API IcebergInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,26 @@ namespace Model
     /**
      * <p>A required metadata operation. Can only be set to <code>CREATE</code>.</p>
      */
-    inline const MetadataOperation& GetMetadataOperation() const{ return m_metadataOperation; }
+    inline MetadataOperation GetMetadataOperation() const { return m_metadataOperation; }
     inline bool MetadataOperationHasBeenSet() const { return m_metadataOperationHasBeenSet; }
-    inline void SetMetadataOperation(const MetadataOperation& value) { m_metadataOperationHasBeenSet = true; m_metadataOperation = value; }
-    inline void SetMetadataOperation(MetadataOperation&& value) { m_metadataOperationHasBeenSet = true; m_metadataOperation = std::move(value); }
-    inline IcebergInput& WithMetadataOperation(const MetadataOperation& value) { SetMetadataOperation(value); return *this;}
-    inline IcebergInput& WithMetadataOperation(MetadataOperation&& value) { SetMetadataOperation(std::move(value)); return *this;}
+    inline void SetMetadataOperation(MetadataOperation value) { m_metadataOperationHasBeenSet = true; m_metadataOperation = value; }
+    inline IcebergInput& WithMetadataOperation(MetadataOperation value) { SetMetadataOperation(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The table version for the Iceberg table. Defaults to 2.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline IcebergInput& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline IcebergInput& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline IcebergInput& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    IcebergInput& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
   private:
 
-    MetadataOperation m_metadataOperation;
+    MetadataOperation m_metadataOperation{MetadataOperation::NOT_SET};
     bool m_metadataOperationHasBeenSet = false;
 
     Aws::String m_version;

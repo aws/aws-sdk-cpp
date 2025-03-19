@@ -36,7 +36,7 @@ namespace Model
   class SubscribeToShardEvent
   {
   public:
-    AWS_KINESIS_API SubscribeToShardEvent();
+    AWS_KINESIS_API SubscribeToShardEvent() = default;
     AWS_KINESIS_API SubscribeToShardEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESIS_API SubscribeToShardEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESIS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
     /**
      * <p/>
      */
-    inline const Aws::Vector<Record>& GetRecords() const{ return m_records; }
+    inline const Aws::Vector<Record>& GetRecords() const { return m_records; }
     inline bool RecordsHasBeenSet() const { return m_recordsHasBeenSet; }
-    inline void SetRecords(const Aws::Vector<Record>& value) { m_recordsHasBeenSet = true; m_records = value; }
-    inline void SetRecords(Aws::Vector<Record>&& value) { m_recordsHasBeenSet = true; m_records = std::move(value); }
-    inline SubscribeToShardEvent& WithRecords(const Aws::Vector<Record>& value) { SetRecords(value); return *this;}
-    inline SubscribeToShardEvent& WithRecords(Aws::Vector<Record>&& value) { SetRecords(std::move(value)); return *this;}
-    inline SubscribeToShardEvent& AddRecords(const Record& value) { m_recordsHasBeenSet = true; m_records.push_back(value); return *this; }
-    inline SubscribeToShardEvent& AddRecords(Record&& value) { m_recordsHasBeenSet = true; m_records.push_back(std::move(value)); return *this; }
+    template<typename RecordsT = Aws::Vector<Record>>
+    void SetRecords(RecordsT&& value) { m_recordsHasBeenSet = true; m_records = std::forward<RecordsT>(value); }
+    template<typename RecordsT = Aws::Vector<Record>>
+    SubscribeToShardEvent& WithRecords(RecordsT&& value) { SetRecords(std::forward<RecordsT>(value)); return *this;}
+    template<typename RecordsT = Record>
+    SubscribeToShardEvent& AddRecords(RecordsT&& value) { m_recordsHasBeenSet = true; m_records.emplace_back(std::forward<RecordsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -64,14 +64,12 @@ namespace Model
      * <code>ContinuationSequenceNumber</code> for checkpointing because it captures
      * your shard progress even when no data is written to the shard.</p>
      */
-    inline const Aws::String& GetContinuationSequenceNumber() const{ return m_continuationSequenceNumber; }
+    inline const Aws::String& GetContinuationSequenceNumber() const { return m_continuationSequenceNumber; }
     inline bool ContinuationSequenceNumberHasBeenSet() const { return m_continuationSequenceNumberHasBeenSet; }
-    inline void SetContinuationSequenceNumber(const Aws::String& value) { m_continuationSequenceNumberHasBeenSet = true; m_continuationSequenceNumber = value; }
-    inline void SetContinuationSequenceNumber(Aws::String&& value) { m_continuationSequenceNumberHasBeenSet = true; m_continuationSequenceNumber = std::move(value); }
-    inline void SetContinuationSequenceNumber(const char* value) { m_continuationSequenceNumberHasBeenSet = true; m_continuationSequenceNumber.assign(value); }
-    inline SubscribeToShardEvent& WithContinuationSequenceNumber(const Aws::String& value) { SetContinuationSequenceNumber(value); return *this;}
-    inline SubscribeToShardEvent& WithContinuationSequenceNumber(Aws::String&& value) { SetContinuationSequenceNumber(std::move(value)); return *this;}
-    inline SubscribeToShardEvent& WithContinuationSequenceNumber(const char* value) { SetContinuationSequenceNumber(value); return *this;}
+    template<typename ContinuationSequenceNumberT = Aws::String>
+    void SetContinuationSequenceNumber(ContinuationSequenceNumberT&& value) { m_continuationSequenceNumberHasBeenSet = true; m_continuationSequenceNumber = std::forward<ContinuationSequenceNumberT>(value); }
+    template<typename ContinuationSequenceNumberT = Aws::String>
+    SubscribeToShardEvent& WithContinuationSequenceNumber(ContinuationSequenceNumberT&& value) { SetContinuationSequenceNumber(std::forward<ContinuationSequenceNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,7 +79,7 @@ namespace Model
      * indicates that record processing is caught up, and there are no new records to
      * process at this moment.</p>
      */
-    inline long long GetMillisBehindLatest() const{ return m_millisBehindLatest; }
+    inline long long GetMillisBehindLatest() const { return m_millisBehindLatest; }
     inline bool MillisBehindLatestHasBeenSet() const { return m_millisBehindLatestHasBeenSet; }
     inline void SetMillisBehindLatest(long long value) { m_millisBehindLatestHasBeenSet = true; m_millisBehindLatest = value; }
     inline SubscribeToShardEvent& WithMillisBehindLatest(long long value) { SetMillisBehindLatest(value); return *this;}
@@ -92,14 +90,14 @@ namespace Model
      * <p>The list of the child shards of the current shard, returned only at the end
      * of the current shard.</p>
      */
-    inline const Aws::Vector<ChildShard>& GetChildShards() const{ return m_childShards; }
+    inline const Aws::Vector<ChildShard>& GetChildShards() const { return m_childShards; }
     inline bool ChildShardsHasBeenSet() const { return m_childShardsHasBeenSet; }
-    inline void SetChildShards(const Aws::Vector<ChildShard>& value) { m_childShardsHasBeenSet = true; m_childShards = value; }
-    inline void SetChildShards(Aws::Vector<ChildShard>&& value) { m_childShardsHasBeenSet = true; m_childShards = std::move(value); }
-    inline SubscribeToShardEvent& WithChildShards(const Aws::Vector<ChildShard>& value) { SetChildShards(value); return *this;}
-    inline SubscribeToShardEvent& WithChildShards(Aws::Vector<ChildShard>&& value) { SetChildShards(std::move(value)); return *this;}
-    inline SubscribeToShardEvent& AddChildShards(const ChildShard& value) { m_childShardsHasBeenSet = true; m_childShards.push_back(value); return *this; }
-    inline SubscribeToShardEvent& AddChildShards(ChildShard&& value) { m_childShardsHasBeenSet = true; m_childShards.push_back(std::move(value)); return *this; }
+    template<typename ChildShardsT = Aws::Vector<ChildShard>>
+    void SetChildShards(ChildShardsT&& value) { m_childShardsHasBeenSet = true; m_childShards = std::forward<ChildShardsT>(value); }
+    template<typename ChildShardsT = Aws::Vector<ChildShard>>
+    SubscribeToShardEvent& WithChildShards(ChildShardsT&& value) { SetChildShards(std::forward<ChildShardsT>(value)); return *this;}
+    template<typename ChildShardsT = ChildShard>
+    SubscribeToShardEvent& AddChildShards(ChildShardsT&& value) { m_childShardsHasBeenSet = true; m_childShards.emplace_back(std::forward<ChildShardsT>(value)); return *this; }
     ///@}
   private:
 
@@ -109,7 +107,7 @@ namespace Model
     Aws::String m_continuationSequenceNumber;
     bool m_continuationSequenceNumberHasBeenSet = false;
 
-    long long m_millisBehindLatest;
+    long long m_millisBehindLatest{0};
     bool m_millisBehindLatestHasBeenSet = false;
 
     Aws::Vector<ChildShard> m_childShards;

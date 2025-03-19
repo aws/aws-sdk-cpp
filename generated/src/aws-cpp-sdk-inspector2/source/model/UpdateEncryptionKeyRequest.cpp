@@ -12,15 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEncryptionKeyRequest::UpdateEncryptionKeyRequest() : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_scanType(ScanType::NOT_SET),
-    m_scanTypeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEncryptionKeyRequest::SerializePayload() const
 {
   JsonValue payload;

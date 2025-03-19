@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateForecastExportJobResult::CreateForecastExportJobResult()
-{
-}
-
 CreateForecastExportJobResult::CreateForecastExportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateForecastExportJobResult& CreateForecastExportJobResult::operator =(const A
   if(jsonValue.ValueExists("ForecastExportJobArn"))
   {
     m_forecastExportJobArn = jsonValue.GetString("ForecastExportJobArn");
-
+    m_forecastExportJobArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

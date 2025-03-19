@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyInstanceNetworkPerformanceOptionsRequest::ModifyInstanceNetworkPerformanceOptionsRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_bandwidthWeighting(InstanceBandwidthWeighting::NOT_SET),
-    m_bandwidthWeightingHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ModifyInstanceNetworkPerformanceOptionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -17,12 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListDistributionsByResponseHeadersPolicyId2020_05_31Request::ListDistributionsByResponseHeadersPolicyId2020_05_31Request() : 
-    m_markerHasBeenSet(false),
-    m_maxItemsHasBeenSet(false),
-    m_responseHeadersPolicyIdHasBeenSet(false)
-{
-}
 
 Aws::String ListDistributionsByResponseHeadersPolicyId2020_05_31Request::SerializePayload() const
 {

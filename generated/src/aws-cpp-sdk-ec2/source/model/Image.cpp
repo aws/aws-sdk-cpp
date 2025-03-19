@@ -20,61 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Image::Image() : 
-    m_platformDetailsHasBeenSet(false),
-    m_usageOperationHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_enaSupport(false),
-    m_enaSupportHasBeenSet(false),
-    m_hypervisor(HypervisorType::NOT_SET),
-    m_hypervisorHasBeenSet(false),
-    m_imageOwnerAliasHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_rootDeviceNameHasBeenSet(false),
-    m_rootDeviceType(DeviceType::NOT_SET),
-    m_rootDeviceTypeHasBeenSet(false),
-    m_sriovNetSupportHasBeenSet(false),
-    m_stateReasonHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_virtualizationType(VirtualizationType::NOT_SET),
-    m_virtualizationTypeHasBeenSet(false),
-    m_bootMode(BootModeValues::NOT_SET),
-    m_bootModeHasBeenSet(false),
-    m_tpmSupport(TpmSupportValues::NOT_SET),
-    m_tpmSupportHasBeenSet(false),
-    m_deprecationTimeHasBeenSet(false),
-    m_imdsSupport(ImdsSupportValues::NOT_SET),
-    m_imdsSupportHasBeenSet(false),
-    m_sourceInstanceIdHasBeenSet(false),
-    m_deregistrationProtectionHasBeenSet(false),
-    m_lastLaunchedTimeHasBeenSet(false),
-    m_imageAllowed(false),
-    m_imageAllowedHasBeenSet(false),
-    m_sourceImageIdHasBeenSet(false),
-    m_sourceImageRegionHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_imageLocationHasBeenSet(false),
-    m_state(ImageState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_public(false),
-    m_publicHasBeenSet(false),
-    m_productCodesHasBeenSet(false),
-    m_architecture(ArchitectureValues::NOT_SET),
-    m_architectureHasBeenSet(false),
-    m_imageType(ImageTypeValues::NOT_SET),
-    m_imageTypeHasBeenSet(false),
-    m_kernelIdHasBeenSet(false),
-    m_ramdiskIdHasBeenSet(false),
-    m_platform(PlatformValues::NOT_SET),
-    m_platformHasBeenSet(false)
-{
-}
-
 Image::Image(const XmlNode& xmlNode)
-  : Image()
 {
   *this = xmlNode;
 }
@@ -101,6 +47,7 @@ Image& Image::operator =(const XmlNode& xmlNode)
     if(!blockDeviceMappingsNode.IsNull())
     {
       XmlNode blockDeviceMappingsMember = blockDeviceMappingsNode.FirstChild("item");
+      m_blockDeviceMappingsHasBeenSet = !blockDeviceMappingsMember.IsNull();
       while(!blockDeviceMappingsMember.IsNull())
       {
         m_blockDeviceMappings.push_back(blockDeviceMappingsMember);
@@ -124,7 +71,7 @@ Image& Image::operator =(const XmlNode& xmlNode)
     XmlNode hypervisorNode = resultNode.FirstChild("hypervisor");
     if(!hypervisorNode.IsNull())
     {
-      m_hypervisor = HypervisorTypeMapper::GetHypervisorTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hypervisorNode.GetText()).c_str()).c_str());
+      m_hypervisor = HypervisorTypeMapper::GetHypervisorTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hypervisorNode.GetText()).c_str()));
       m_hypervisorHasBeenSet = true;
     }
     XmlNode imageOwnerAliasNode = resultNode.FirstChild("imageOwnerAlias");
@@ -148,7 +95,7 @@ Image& Image::operator =(const XmlNode& xmlNode)
     XmlNode rootDeviceTypeNode = resultNode.FirstChild("rootDeviceType");
     if(!rootDeviceTypeNode.IsNull())
     {
-      m_rootDeviceType = DeviceTypeMapper::GetDeviceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(rootDeviceTypeNode.GetText()).c_str()).c_str());
+      m_rootDeviceType = DeviceTypeMapper::GetDeviceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(rootDeviceTypeNode.GetText()).c_str()));
       m_rootDeviceTypeHasBeenSet = true;
     }
     XmlNode sriovNetSupportNode = resultNode.FirstChild("sriovNetSupport");
@@ -167,6 +114,7 @@ Image& Image::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -178,19 +126,19 @@ Image& Image::operator =(const XmlNode& xmlNode)
     XmlNode virtualizationTypeNode = resultNode.FirstChild("virtualizationType");
     if(!virtualizationTypeNode.IsNull())
     {
-      m_virtualizationType = VirtualizationTypeMapper::GetVirtualizationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(virtualizationTypeNode.GetText()).c_str()).c_str());
+      m_virtualizationType = VirtualizationTypeMapper::GetVirtualizationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(virtualizationTypeNode.GetText()).c_str()));
       m_virtualizationTypeHasBeenSet = true;
     }
     XmlNode bootModeNode = resultNode.FirstChild("bootMode");
     if(!bootModeNode.IsNull())
     {
-      m_bootMode = BootModeValuesMapper::GetBootModeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bootModeNode.GetText()).c_str()).c_str());
+      m_bootMode = BootModeValuesMapper::GetBootModeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(bootModeNode.GetText()).c_str()));
       m_bootModeHasBeenSet = true;
     }
     XmlNode tpmSupportNode = resultNode.FirstChild("tpmSupport");
     if(!tpmSupportNode.IsNull())
     {
-      m_tpmSupport = TpmSupportValuesMapper::GetTpmSupportValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tpmSupportNode.GetText()).c_str()).c_str());
+      m_tpmSupport = TpmSupportValuesMapper::GetTpmSupportValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(tpmSupportNode.GetText()).c_str()));
       m_tpmSupportHasBeenSet = true;
     }
     XmlNode deprecationTimeNode = resultNode.FirstChild("deprecationTime");
@@ -202,7 +150,7 @@ Image& Image::operator =(const XmlNode& xmlNode)
     XmlNode imdsSupportNode = resultNode.FirstChild("imdsSupport");
     if(!imdsSupportNode.IsNull())
     {
-      m_imdsSupport = ImdsSupportValuesMapper::GetImdsSupportValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(imdsSupportNode.GetText()).c_str()).c_str());
+      m_imdsSupport = ImdsSupportValuesMapper::GetImdsSupportValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(imdsSupportNode.GetText()).c_str()));
       m_imdsSupportHasBeenSet = true;
     }
     XmlNode sourceInstanceIdNode = resultNode.FirstChild("sourceInstanceId");
@@ -256,7 +204,7 @@ Image& Image::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("imageState");
     if(!stateNode.IsNull())
     {
-      m_state = ImageStateMapper::GetImageStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = ImageStateMapper::GetImageStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode ownerIdNode = resultNode.FirstChild("imageOwnerId");
@@ -281,6 +229,7 @@ Image& Image::operator =(const XmlNode& xmlNode)
     if(!productCodesNode.IsNull())
     {
       XmlNode productCodesMember = productCodesNode.FirstChild("item");
+      m_productCodesHasBeenSet = !productCodesMember.IsNull();
       while(!productCodesMember.IsNull())
       {
         m_productCodes.push_back(productCodesMember);
@@ -292,13 +241,13 @@ Image& Image::operator =(const XmlNode& xmlNode)
     XmlNode architectureNode = resultNode.FirstChild("architecture");
     if(!architectureNode.IsNull())
     {
-      m_architecture = ArchitectureValuesMapper::GetArchitectureValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(architectureNode.GetText()).c_str()).c_str());
+      m_architecture = ArchitectureValuesMapper::GetArchitectureValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(architectureNode.GetText()).c_str()));
       m_architectureHasBeenSet = true;
     }
     XmlNode imageTypeNode = resultNode.FirstChild("imageType");
     if(!imageTypeNode.IsNull())
     {
-      m_imageType = ImageTypeValuesMapper::GetImageTypeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(imageTypeNode.GetText()).c_str()).c_str());
+      m_imageType = ImageTypeValuesMapper::GetImageTypeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(imageTypeNode.GetText()).c_str()));
       m_imageTypeHasBeenSet = true;
     }
     XmlNode kernelIdNode = resultNode.FirstChild("kernelId");
@@ -316,7 +265,7 @@ Image& Image::operator =(const XmlNode& xmlNode)
     XmlNode platformNode = resultNode.FirstChild("platform");
     if(!platformNode.IsNull())
     {
-      m_platform = PlatformValuesMapper::GetPlatformValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(platformNode.GetText()).c_str()).c_str());
+      m_platform = PlatformValuesMapper::GetPlatformValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(platformNode.GetText()).c_str()));
       m_platformHasBeenSet = true;
     }
   }

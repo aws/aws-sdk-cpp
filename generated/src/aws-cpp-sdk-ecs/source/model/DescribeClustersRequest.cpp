@@ -12,12 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeClustersRequest::DescribeClustersRequest() : 
-    m_clustersHasBeenSet(false),
-    m_includeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeClustersRequest::SerializePayload() const
 {
   JsonValue payload;

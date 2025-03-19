@@ -12,14 +12,6 @@ using namespace Aws::OpenSearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PurchaseReservedInstanceOfferingRequest::PurchaseReservedInstanceOfferingRequest() : 
-    m_reservedInstanceOfferingIdHasBeenSet(false),
-    m_reservationNameHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false)
-{
-}
-
 Aws::String PurchaseReservedInstanceOfferingRequest::SerializePayload() const
 {
   JsonValue payload;

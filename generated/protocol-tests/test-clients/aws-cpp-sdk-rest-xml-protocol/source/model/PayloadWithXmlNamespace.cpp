@@ -20,13 +20,7 @@ namespace RestXmlProtocol
 namespace Model
 {
 
-PayloadWithXmlNamespace::PayloadWithXmlNamespace() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 PayloadWithXmlNamespace::PayloadWithXmlNamespace(const XmlNode& xmlNode)
-  : PayloadWithXmlNamespace()
 {
   *this = xmlNode;
 }

@@ -18,19 +18,7 @@ namespace BackupGateway
 namespace Model
 {
 
-VirtualMachineDetails::VirtualMachineDetails() : 
-    m_hostNameHasBeenSet(false),
-    m_hypervisorIdHasBeenSet(false),
-    m_lastBackupDateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_vmwareTagsHasBeenSet(false)
-{
-}
-
 VirtualMachineDetails::VirtualMachineDetails(JsonView jsonValue)
-  : VirtualMachineDetails()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ VirtualMachineDetails& VirtualMachineDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HostName"))
   {
     m_hostName = jsonValue.GetString("HostName");
-
     m_hostNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HypervisorId"))
   {
     m_hypervisorId = jsonValue.GetString("HypervisorId");
-
     m_hypervisorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastBackupDate"))
   {
     m_lastBackupDate = jsonValue.GetDouble("LastBackupDate");
-
     m_lastBackupDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VmwareTags"))
   {
     Aws::Utils::Array<JsonView> vmwareTagsJsonList = jsonValue.GetArray("VmwareTags");
@@ -88,7 +64,6 @@ VirtualMachineDetails& VirtualMachineDetails::operator =(JsonView jsonValue)
     }
     m_vmwareTagsHasBeenSet = true;
   }
-
   return *this;
 }
 

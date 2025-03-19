@@ -18,15 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-OtaaV1_1::OtaaV1_1() : 
-    m_appKeyHasBeenSet(false),
-    m_nwkKeyHasBeenSet(false),
-    m_joinEuiHasBeenSet(false)
-{
-}
-
 OtaaV1_1::OtaaV1_1(JsonView jsonValue)
-  : OtaaV1_1()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ OtaaV1_1& OtaaV1_1::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AppKey"))
   {
     m_appKey = jsonValue.GetString("AppKey");
-
     m_appKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NwkKey"))
   {
     m_nwkKey = jsonValue.GetString("NwkKey");
-
     m_nwkKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JoinEui"))
   {
     m_joinEui = jsonValue.GetString("JoinEui");
-
     m_joinEuiHasBeenSet = true;
   }
-
   return *this;
 }
 

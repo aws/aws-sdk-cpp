@@ -27,7 +27,7 @@ namespace Model
   class CancelStepsRequest : public EMRRequest
   {
   public:
-    AWS_EMR_API CancelStepsRequest();
+    AWS_EMR_API CancelStepsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * <p>The <code>ClusterID</code> for the specified steps that will be canceled. Use
      * <a>RunJobFlow</a> and <a>ListClusters</a> to get ClusterIDs. </p>
      */
-    inline const Aws::String& GetClusterId() const{ return m_clusterId; }
+    inline const Aws::String& GetClusterId() const { return m_clusterId; }
     inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
-    inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
-    inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
-    inline CancelStepsRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
-    inline CancelStepsRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
-    inline CancelStepsRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+    template<typename ClusterIdT = Aws::String>
+    void SetClusterId(ClusterIdT&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::forward<ClusterIdT>(value); }
+    template<typename ClusterIdT = Aws::String>
+    CancelStepsRequest& WithClusterId(ClusterIdT&& value) { SetClusterId(std::forward<ClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,15 +58,14 @@ namespace Model
      * <p>The list of <code>StepIDs</code> to cancel. Use <a>ListSteps</a> to get steps
      * and their states for the specified cluster.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStepIds() const{ return m_stepIds; }
+    inline const Aws::Vector<Aws::String>& GetStepIds() const { return m_stepIds; }
     inline bool StepIdsHasBeenSet() const { return m_stepIdsHasBeenSet; }
-    inline void SetStepIds(const Aws::Vector<Aws::String>& value) { m_stepIdsHasBeenSet = true; m_stepIds = value; }
-    inline void SetStepIds(Aws::Vector<Aws::String>&& value) { m_stepIdsHasBeenSet = true; m_stepIds = std::move(value); }
-    inline CancelStepsRequest& WithStepIds(const Aws::Vector<Aws::String>& value) { SetStepIds(value); return *this;}
-    inline CancelStepsRequest& WithStepIds(Aws::Vector<Aws::String>&& value) { SetStepIds(std::move(value)); return *this;}
-    inline CancelStepsRequest& AddStepIds(const Aws::String& value) { m_stepIdsHasBeenSet = true; m_stepIds.push_back(value); return *this; }
-    inline CancelStepsRequest& AddStepIds(Aws::String&& value) { m_stepIdsHasBeenSet = true; m_stepIds.push_back(std::move(value)); return *this; }
-    inline CancelStepsRequest& AddStepIds(const char* value) { m_stepIdsHasBeenSet = true; m_stepIds.push_back(value); return *this; }
+    template<typename StepIdsT = Aws::Vector<Aws::String>>
+    void SetStepIds(StepIdsT&& value) { m_stepIdsHasBeenSet = true; m_stepIds = std::forward<StepIdsT>(value); }
+    template<typename StepIdsT = Aws::Vector<Aws::String>>
+    CancelStepsRequest& WithStepIds(StepIdsT&& value) { SetStepIds(std::forward<StepIdsT>(value)); return *this;}
+    template<typename StepIdsT = Aws::String>
+    CancelStepsRequest& AddStepIds(StepIdsT&& value) { m_stepIdsHasBeenSet = true; m_stepIds.emplace_back(std::forward<StepIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -76,12 +73,10 @@ namespace Model
      * <p>The option to choose to cancel <code>RUNNING</code> steps. By default, the
      * value is <code>SEND_INTERRUPT</code>.</p>
      */
-    inline const StepCancellationOption& GetStepCancellationOption() const{ return m_stepCancellationOption; }
+    inline StepCancellationOption GetStepCancellationOption() const { return m_stepCancellationOption; }
     inline bool StepCancellationOptionHasBeenSet() const { return m_stepCancellationOptionHasBeenSet; }
-    inline void SetStepCancellationOption(const StepCancellationOption& value) { m_stepCancellationOptionHasBeenSet = true; m_stepCancellationOption = value; }
-    inline void SetStepCancellationOption(StepCancellationOption&& value) { m_stepCancellationOptionHasBeenSet = true; m_stepCancellationOption = std::move(value); }
-    inline CancelStepsRequest& WithStepCancellationOption(const StepCancellationOption& value) { SetStepCancellationOption(value); return *this;}
-    inline CancelStepsRequest& WithStepCancellationOption(StepCancellationOption&& value) { SetStepCancellationOption(std::move(value)); return *this;}
+    inline void SetStepCancellationOption(StepCancellationOption value) { m_stepCancellationOptionHasBeenSet = true; m_stepCancellationOption = value; }
+    inline CancelStepsRequest& WithStepCancellationOption(StepCancellationOption value) { SetStepCancellationOption(value); return *this;}
     ///@}
   private:
 
@@ -91,7 +86,7 @@ namespace Model
     Aws::Vector<Aws::String> m_stepIds;
     bool m_stepIdsHasBeenSet = false;
 
-    StepCancellationOption m_stepCancellationOption;
+    StepCancellationOption m_stepCancellationOption{StepCancellationOption::NOT_SET};
     bool m_stepCancellationOptionHasBeenSet = false;
   };
 

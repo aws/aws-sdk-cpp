@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRecommendationsResult::GetRecommendationsResult()
-{
-}
-
 GetRecommendationsResult::GetRecommendationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,26 +32,23 @@ GetRecommendationsResult& GetRecommendationsResult::operator =(const Aws::Amazon
     {
       m_anomalies.push_back(anomaliesJsonList[anomaliesIndex].AsObject());
     }
+    m_anomaliesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profileEndTime"))
   {
     m_profileEndTime = jsonValue.GetString("profileEndTime");
-
+    m_profileEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profileStartTime"))
   {
     m_profileStartTime = jsonValue.GetString("profileStartTime");
-
+    m_profileStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("profilingGroupName"))
   {
     m_profilingGroupName = jsonValue.GetString("profilingGroupName");
-
+    m_profilingGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recommendations"))
   {
     Aws::Utils::Array<JsonView> recommendationsJsonList = jsonValue.GetArray("recommendations");
@@ -63,14 +56,15 @@ GetRecommendationsResult& GetRecommendationsResult::operator =(const Aws::Amazon
     {
       m_recommendations.push_back(recommendationsJsonList[recommendationsIndex].AsObject());
     }
+    m_recommendationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

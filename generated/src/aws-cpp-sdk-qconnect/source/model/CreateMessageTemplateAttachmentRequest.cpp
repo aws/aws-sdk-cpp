@@ -12,17 +12,6 @@ using namespace Aws::QConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMessageTemplateAttachmentRequest::CreateMessageTemplateAttachmentRequest() : 
-    m_clientTokenHasBeenSet(false),
-    m_contentDisposition(ContentDisposition::NOT_SET),
-    m_contentDispositionHasBeenSet(false),
-    m_knowledgeBaseIdHasBeenSet(false),
-    m_messageTemplateIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_requestBodyHasBeenSet(false)
-{
-}
-
 Aws::String CreateMessageTemplateAttachmentRequest::SerializePayload() const
 {
   JsonValue payload;

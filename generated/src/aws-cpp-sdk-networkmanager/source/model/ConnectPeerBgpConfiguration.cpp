@@ -18,18 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-ConnectPeerBgpConfiguration::ConnectPeerBgpConfiguration() : 
-    m_coreNetworkAsn(0),
-    m_coreNetworkAsnHasBeenSet(false),
-    m_peerAsn(0),
-    m_peerAsnHasBeenSet(false),
-    m_coreNetworkAddressHasBeenSet(false),
-    m_peerAddressHasBeenSet(false)
-{
-}
-
 ConnectPeerBgpConfiguration::ConnectPeerBgpConfiguration(JsonView jsonValue)
-  : ConnectPeerBgpConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ConnectPeerBgpConfiguration& ConnectPeerBgpConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("CoreNetworkAsn"))
   {
     m_coreNetworkAsn = jsonValue.GetInt64("CoreNetworkAsn");
-
     m_coreNetworkAsnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PeerAsn"))
   {
     m_peerAsn = jsonValue.GetInt64("PeerAsn");
-
     m_peerAsnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CoreNetworkAddress"))
   {
     m_coreNetworkAddress = jsonValue.GetString("CoreNetworkAddress");
-
     m_coreNetworkAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PeerAddress"))
   {
     m_peerAddress = jsonValue.GetString("PeerAddress");
-
     m_peerAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

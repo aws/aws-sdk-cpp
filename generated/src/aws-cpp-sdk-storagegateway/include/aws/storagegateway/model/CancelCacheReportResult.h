@@ -27,7 +27,7 @@ namespace Model
   class CancelCacheReportResult
   {
   public:
-    AWS_STORAGEGATEWAY_API CancelCacheReportResult();
+    AWS_STORAGEGATEWAY_API CancelCacheReportResult() = default;
     AWS_STORAGEGATEWAY_API CancelCacheReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_STORAGEGATEWAY_API CancelCacheReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the cache report you want to cancel.</p>
      */
-    inline const Aws::String& GetCacheReportARN() const{ return m_cacheReportARN; }
-    inline void SetCacheReportARN(const Aws::String& value) { m_cacheReportARN = value; }
-    inline void SetCacheReportARN(Aws::String&& value) { m_cacheReportARN = std::move(value); }
-    inline void SetCacheReportARN(const char* value) { m_cacheReportARN.assign(value); }
-    inline CancelCacheReportResult& WithCacheReportARN(const Aws::String& value) { SetCacheReportARN(value); return *this;}
-    inline CancelCacheReportResult& WithCacheReportARN(Aws::String&& value) { SetCacheReportARN(std::move(value)); return *this;}
-    inline CancelCacheReportResult& WithCacheReportARN(const char* value) { SetCacheReportARN(value); return *this;}
+    inline const Aws::String& GetCacheReportARN() const { return m_cacheReportARN; }
+    template<typename CacheReportARNT = Aws::String>
+    void SetCacheReportARN(CacheReportARNT&& value) { m_cacheReportARNHasBeenSet = true; m_cacheReportARN = std::forward<CacheReportARNT>(value); }
+    template<typename CacheReportARNT = Aws::String>
+    CancelCacheReportResult& WithCacheReportARN(CacheReportARNT&& value) { SetCacheReportARN(std::forward<CacheReportARNT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CancelCacheReportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CancelCacheReportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CancelCacheReportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CancelCacheReportResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_cacheReportARN;
+    bool m_cacheReportARNHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

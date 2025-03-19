@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-PauseStateScheduleActionSettings::PauseStateScheduleActionSettings() : 
-    m_pipelinesHasBeenSet(false)
-{
-}
-
 PauseStateScheduleActionSettings::PauseStateScheduleActionSettings(JsonView jsonValue)
-  : PauseStateScheduleActionSettings()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ PauseStateScheduleActionSettings& PauseStateScheduleActionSettings::operator =(J
     }
     m_pipelinesHasBeenSet = true;
   }
-
   return *this;
 }
 

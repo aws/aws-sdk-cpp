@@ -34,7 +34,7 @@ namespace Model
   class VoiceConnectorItem
   {
   public:
-    AWS_CHIMESDKVOICE_API VoiceConnectorItem();
+    AWS_CHIMESDKVOICE_API VoiceConnectorItem() = default;
     AWS_CHIMESDKVOICE_API VoiceConnectorItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API VoiceConnectorItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The Voice Connector ID.</p>
      */
-    inline const Aws::String& GetVoiceConnectorId() const{ return m_voiceConnectorId; }
+    inline const Aws::String& GetVoiceConnectorId() const { return m_voiceConnectorId; }
     inline bool VoiceConnectorIdHasBeenSet() const { return m_voiceConnectorIdHasBeenSet; }
-    inline void SetVoiceConnectorId(const Aws::String& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = value; }
-    inline void SetVoiceConnectorId(Aws::String&& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = std::move(value); }
-    inline void SetVoiceConnectorId(const char* value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId.assign(value); }
-    inline VoiceConnectorItem& WithVoiceConnectorId(const Aws::String& value) { SetVoiceConnectorId(value); return *this;}
-    inline VoiceConnectorItem& WithVoiceConnectorId(Aws::String&& value) { SetVoiceConnectorId(std::move(value)); return *this;}
-    inline VoiceConnectorItem& WithVoiceConnectorId(const char* value) { SetVoiceConnectorId(value); return *this;}
+    template<typename VoiceConnectorIdT = Aws::String>
+    void SetVoiceConnectorId(VoiceConnectorIdT&& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = std::forward<VoiceConnectorIdT>(value); }
+    template<typename VoiceConnectorIdT = Aws::String>
+    VoiceConnectorItem& WithVoiceConnectorId(VoiceConnectorIdT&& value) { SetVoiceConnectorId(std::forward<VoiceConnectorIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * priority order, with 1 as the highest priority. When hosts have equal priority,
      * the system distributes calls among them based on their relative weight.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline VoiceConnectorItem& WithPriority(int value) { SetPriority(value); return *this;}
@@ -70,7 +68,7 @@ namespace Model
     Aws::String m_voiceConnectorId;
     bool m_voiceConnectorIdHasBeenSet = false;
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
   };
 

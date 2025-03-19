@@ -19,21 +19,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-ResourceNotFoundException::ResourceNotFoundException() : 
-    m_accessControlAllowOriginHasBeenSet(false),
-    m_accessControlExposeHeadersHasBeenSet(false),
-    m_cacheControlHasBeenSet(false),
-    m_contentSecurityPolicyHasBeenSet(false),
-    m_strictTransportSecurityHasBeenSet(false),
-    m_xContentTypeOptionsHasBeenSet(false),
-    m_xFrameOptionsHasBeenSet(false),
-    m_xAmznErrorTypeHasBeenSet(false),
-    m_exceptionMessageHasBeenSet(false)
-{
-}
-
 ResourceNotFoundException::ResourceNotFoundException(JsonView jsonValue)
-  : ResourceNotFoundException()
 {
   *this = jsonValue;
 }
@@ -43,10 +29,8 @@ ResourceNotFoundException& ResourceNotFoundException::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("exceptionMessage"))
   {
     m_exceptionMessage = jsonValue.GetString("exceptionMessage");
-
     m_exceptionMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

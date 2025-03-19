@@ -34,7 +34,7 @@ namespace Model
   class PlatformFilter
   {
   public:
-    AWS_ELASTICBEANSTALK_API PlatformFilter();
+    AWS_ELASTICBEANSTALK_API PlatformFilter() = default;
     AWS_ELASTICBEANSTALK_API PlatformFilter(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICBEANSTALK_API PlatformFilter& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -51,14 +51,12 @@ namespace Model
      * <code>SupportedTier</code> | <code>SupportedAddon</code> |
      * <code>ProgrammingLanguageName</code> | <code>OperatingSystemName</code> </p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline PlatformFilter& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline PlatformFilter& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline PlatformFilter& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    PlatformFilter& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * <code>&lt;</code> | <code>&lt;=</code> | <code>&gt;</code> | <code>&gt;=</code>
      * | <code>contains</code> | <code>begins_with</code> | <code>ends_with</code> </p>
      */
-    inline const Aws::String& GetOperator() const{ return m_operator; }
+    inline const Aws::String& GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const Aws::String& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(Aws::String&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline void SetOperator(const char* value) { m_operatorHasBeenSet = true; m_operator.assign(value); }
-    inline PlatformFilter& WithOperator(const Aws::String& value) { SetOperator(value); return *this;}
-    inline PlatformFilter& WithOperator(Aws::String&& value) { SetOperator(std::move(value)); return *this;}
-    inline PlatformFilter& WithOperator(const char* value) { SetOperator(value); return *this;}
+    template<typename OperatorT = Aws::String>
+    void SetOperator(OperatorT&& value) { m_operatorHasBeenSet = true; m_operator = std::forward<OperatorT>(value); }
+    template<typename OperatorT = Aws::String>
+    PlatformFilter& WithOperator(OperatorT&& value) { SetOperator(std::forward<OperatorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,15 +87,14 @@ namespace Model
      * <code>Log/S3</code> | <code>Monitoring/Healthd</code> |
      * <code>WorkerDaemon/SQSD</code> </p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline PlatformFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline PlatformFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline PlatformFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline PlatformFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline PlatformFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    PlatformFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    PlatformFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 

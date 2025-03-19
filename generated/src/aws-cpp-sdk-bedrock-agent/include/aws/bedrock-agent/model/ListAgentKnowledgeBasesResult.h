@@ -29,7 +29,7 @@ namespace Model
   class ListAgentKnowledgeBasesResult
   {
   public:
-    AWS_BEDROCKAGENT_API ListAgentKnowledgeBasesResult();
+    AWS_BEDROCKAGENT_API ListAgentKnowledgeBasesResult() = default;
     AWS_BEDROCKAGENT_API ListAgentKnowledgeBasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKAGENT_API ListAgentKnowledgeBasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A list of objects, each of which contains information about a knowledge base
      * associated with the agent.</p>
      */
-    inline const Aws::Vector<AgentKnowledgeBaseSummary>& GetAgentKnowledgeBaseSummaries() const{ return m_agentKnowledgeBaseSummaries; }
-    inline void SetAgentKnowledgeBaseSummaries(const Aws::Vector<AgentKnowledgeBaseSummary>& value) { m_agentKnowledgeBaseSummaries = value; }
-    inline void SetAgentKnowledgeBaseSummaries(Aws::Vector<AgentKnowledgeBaseSummary>&& value) { m_agentKnowledgeBaseSummaries = std::move(value); }
-    inline ListAgentKnowledgeBasesResult& WithAgentKnowledgeBaseSummaries(const Aws::Vector<AgentKnowledgeBaseSummary>& value) { SetAgentKnowledgeBaseSummaries(value); return *this;}
-    inline ListAgentKnowledgeBasesResult& WithAgentKnowledgeBaseSummaries(Aws::Vector<AgentKnowledgeBaseSummary>&& value) { SetAgentKnowledgeBaseSummaries(std::move(value)); return *this;}
-    inline ListAgentKnowledgeBasesResult& AddAgentKnowledgeBaseSummaries(const AgentKnowledgeBaseSummary& value) { m_agentKnowledgeBaseSummaries.push_back(value); return *this; }
-    inline ListAgentKnowledgeBasesResult& AddAgentKnowledgeBaseSummaries(AgentKnowledgeBaseSummary&& value) { m_agentKnowledgeBaseSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AgentKnowledgeBaseSummary>& GetAgentKnowledgeBaseSummaries() const { return m_agentKnowledgeBaseSummaries; }
+    template<typename AgentKnowledgeBaseSummariesT = Aws::Vector<AgentKnowledgeBaseSummary>>
+    void SetAgentKnowledgeBaseSummaries(AgentKnowledgeBaseSummariesT&& value) { m_agentKnowledgeBaseSummariesHasBeenSet = true; m_agentKnowledgeBaseSummaries = std::forward<AgentKnowledgeBaseSummariesT>(value); }
+    template<typename AgentKnowledgeBaseSummariesT = Aws::Vector<AgentKnowledgeBaseSummary>>
+    ListAgentKnowledgeBasesResult& WithAgentKnowledgeBaseSummaries(AgentKnowledgeBaseSummariesT&& value) { SetAgentKnowledgeBaseSummaries(std::forward<AgentKnowledgeBaseSummariesT>(value)); return *this;}
+    template<typename AgentKnowledgeBaseSummariesT = AgentKnowledgeBaseSummary>
+    ListAgentKnowledgeBasesResult& AddAgentKnowledgeBaseSummaries(AgentKnowledgeBaseSummariesT&& value) { m_agentKnowledgeBaseSummariesHasBeenSet = true; m_agentKnowledgeBaseSummaries.emplace_back(std::forward<AgentKnowledgeBaseSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,31 @@ namespace Model
      * value provided in the request, use this token when making another request in the
      * <code>nextToken</code> field to return the next batch of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAgentKnowledgeBasesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAgentKnowledgeBasesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAgentKnowledgeBasesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAgentKnowledgeBasesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAgentKnowledgeBasesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAgentKnowledgeBasesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAgentKnowledgeBasesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAgentKnowledgeBasesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AgentKnowledgeBaseSummary> m_agentKnowledgeBaseSummaries;
+    bool m_agentKnowledgeBaseSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

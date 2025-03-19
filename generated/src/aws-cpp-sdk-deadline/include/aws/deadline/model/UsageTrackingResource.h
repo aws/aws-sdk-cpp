@@ -31,7 +31,7 @@ namespace Model
   class UsageTrackingResource
   {
   public:
-    AWS_DEADLINE_API UsageTrackingResource();
+    AWS_DEADLINE_API UsageTrackingResource() = default;
     AWS_DEADLINE_API UsageTrackingResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API UsageTrackingResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The queue ID.</p>
      */
-    inline const Aws::String& GetQueueId() const{ return m_queueId; }
+    inline const Aws::String& GetQueueId() const { return m_queueId; }
     inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
-    inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
-    inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
-    inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
-    inline UsageTrackingResource& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
-    inline UsageTrackingResource& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
-    inline UsageTrackingResource& WithQueueId(const char* value) { SetQueueId(value); return *this;}
+    template<typename QueueIdT = Aws::String>
+    void SetQueueId(QueueIdT&& value) { m_queueIdHasBeenSet = true; m_queueId = std::forward<QueueIdT>(value); }
+    template<typename QueueIdT = Aws::String>
+    UsageTrackingResource& WithQueueId(QueueIdT&& value) { SetQueueId(std::forward<QueueIdT>(value)); return *this;}
     ///@}
   private:
 

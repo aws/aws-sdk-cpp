@@ -36,7 +36,7 @@ namespace Model
   class ListAvailableSolutionStacksResult
   {
   public:
-    AWS_ELASTICBEANSTALK_API ListAvailableSolutionStacksResult();
+    AWS_ELASTICBEANSTALK_API ListAvailableSolutionStacksResult() = default;
     AWS_ELASTICBEANSTALK_API ListAvailableSolutionStacksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICBEANSTALK_API ListAvailableSolutionStacksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -45,14 +45,13 @@ namespace Model
     /**
      * <p>A list of available solution stacks.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSolutionStacks() const{ return m_solutionStacks; }
-    inline void SetSolutionStacks(const Aws::Vector<Aws::String>& value) { m_solutionStacks = value; }
-    inline void SetSolutionStacks(Aws::Vector<Aws::String>&& value) { m_solutionStacks = std::move(value); }
-    inline ListAvailableSolutionStacksResult& WithSolutionStacks(const Aws::Vector<Aws::String>& value) { SetSolutionStacks(value); return *this;}
-    inline ListAvailableSolutionStacksResult& WithSolutionStacks(Aws::Vector<Aws::String>&& value) { SetSolutionStacks(std::move(value)); return *this;}
-    inline ListAvailableSolutionStacksResult& AddSolutionStacks(const Aws::String& value) { m_solutionStacks.push_back(value); return *this; }
-    inline ListAvailableSolutionStacksResult& AddSolutionStacks(Aws::String&& value) { m_solutionStacks.push_back(std::move(value)); return *this; }
-    inline ListAvailableSolutionStacksResult& AddSolutionStacks(const char* value) { m_solutionStacks.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetSolutionStacks() const { return m_solutionStacks; }
+    template<typename SolutionStacksT = Aws::Vector<Aws::String>>
+    void SetSolutionStacks(SolutionStacksT&& value) { m_solutionStacksHasBeenSet = true; m_solutionStacks = std::forward<SolutionStacksT>(value); }
+    template<typename SolutionStacksT = Aws::Vector<Aws::String>>
+    ListAvailableSolutionStacksResult& WithSolutionStacks(SolutionStacksT&& value) { SetSolutionStacks(std::forward<SolutionStacksT>(value)); return *this;}
+    template<typename SolutionStacksT = Aws::String>
+    ListAvailableSolutionStacksResult& AddSolutionStacks(SolutionStacksT&& value) { m_solutionStacksHasBeenSet = true; m_solutionStacks.emplace_back(std::forward<SolutionStacksT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,30 +59,33 @@ namespace Model
      * <p> A list of available solution stacks and their
      * <a>SolutionStackDescription</a>. </p>
      */
-    inline const Aws::Vector<SolutionStackDescription>& GetSolutionStackDetails() const{ return m_solutionStackDetails; }
-    inline void SetSolutionStackDetails(const Aws::Vector<SolutionStackDescription>& value) { m_solutionStackDetails = value; }
-    inline void SetSolutionStackDetails(Aws::Vector<SolutionStackDescription>&& value) { m_solutionStackDetails = std::move(value); }
-    inline ListAvailableSolutionStacksResult& WithSolutionStackDetails(const Aws::Vector<SolutionStackDescription>& value) { SetSolutionStackDetails(value); return *this;}
-    inline ListAvailableSolutionStacksResult& WithSolutionStackDetails(Aws::Vector<SolutionStackDescription>&& value) { SetSolutionStackDetails(std::move(value)); return *this;}
-    inline ListAvailableSolutionStacksResult& AddSolutionStackDetails(const SolutionStackDescription& value) { m_solutionStackDetails.push_back(value); return *this; }
-    inline ListAvailableSolutionStacksResult& AddSolutionStackDetails(SolutionStackDescription&& value) { m_solutionStackDetails.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SolutionStackDescription>& GetSolutionStackDetails() const { return m_solutionStackDetails; }
+    template<typename SolutionStackDetailsT = Aws::Vector<SolutionStackDescription>>
+    void SetSolutionStackDetails(SolutionStackDetailsT&& value) { m_solutionStackDetailsHasBeenSet = true; m_solutionStackDetails = std::forward<SolutionStackDetailsT>(value); }
+    template<typename SolutionStackDetailsT = Aws::Vector<SolutionStackDescription>>
+    ListAvailableSolutionStacksResult& WithSolutionStackDetails(SolutionStackDetailsT&& value) { SetSolutionStackDetails(std::forward<SolutionStackDetailsT>(value)); return *this;}
+    template<typename SolutionStackDetailsT = SolutionStackDescription>
+    ListAvailableSolutionStacksResult& AddSolutionStackDetails(SolutionStackDetailsT&& value) { m_solutionStackDetailsHasBeenSet = true; m_solutionStackDetails.emplace_back(std::forward<SolutionStackDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ListAvailableSolutionStacksResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ListAvailableSolutionStacksResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ListAvailableSolutionStacksResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_solutionStacks;
+    bool m_solutionStacksHasBeenSet = false;
 
     Aws::Vector<SolutionStackDescription> m_solutionStackDetails;
+    bool m_solutionStackDetailsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

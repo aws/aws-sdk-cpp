@@ -18,15 +18,7 @@ namespace Notifications
 namespace Model
 {
 
-EventRuleStatusSummary::EventRuleStatusSummary() : 
-    m_status(EventRuleStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 EventRuleStatusSummary::EventRuleStatusSummary(JsonView jsonValue)
-  : EventRuleStatusSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EventRuleStatusSummary& EventRuleStatusSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = EventRuleStatusMapper::GetEventRuleStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

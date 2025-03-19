@@ -18,16 +18,7 @@ namespace InternetMonitor
 namespace Model
 {
 
-NetworkImpairment::NetworkImpairment() : 
-    m_networksHasBeenSet(false),
-    m_asPathHasBeenSet(false),
-    m_networkEventType(TriangulationEventType::NOT_SET),
-    m_networkEventTypeHasBeenSet(false)
-{
-}
-
 NetworkImpairment::NetworkImpairment(JsonView jsonValue)
-  : NetworkImpairment()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ NetworkImpairment& NetworkImpairment::operator =(JsonView jsonValue)
     }
     m_networksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AsPath"))
   {
     Aws::Utils::Array<JsonView> asPathJsonList = jsonValue.GetArray("AsPath");
@@ -53,14 +43,11 @@ NetworkImpairment& NetworkImpairment::operator =(JsonView jsonValue)
     }
     m_asPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkEventType"))
   {
     m_networkEventType = TriangulationEventTypeMapper::GetTriangulationEventTypeForName(jsonValue.GetString("NetworkEventType"));
-
     m_networkEventTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

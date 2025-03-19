@@ -12,13 +12,6 @@ using namespace Aws::ConnectCases::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchPutFieldOptionsRequest::BatchPutFieldOptionsRequest() : 
-    m_domainIdHasBeenSet(false),
-    m_fieldIdHasBeenSet(false),
-    m_optionsHasBeenSet(false)
-{
-}
-
 Aws::String BatchPutFieldOptionsRequest::SerializePayload() const
 {
   JsonValue payload;

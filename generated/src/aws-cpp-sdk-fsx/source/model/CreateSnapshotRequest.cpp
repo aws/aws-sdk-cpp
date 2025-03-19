@@ -12,15 +12,6 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSnapshotRequest::CreateSnapshotRequest() : 
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_nameHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

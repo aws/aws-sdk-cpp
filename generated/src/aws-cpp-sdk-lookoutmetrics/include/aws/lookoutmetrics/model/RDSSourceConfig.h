@@ -33,7 +33,7 @@ namespace Model
   class RDSSourceConfig
   {
   public:
-    AWS_LOOKOUTMETRICS_API RDSSourceConfig();
+    AWS_LOOKOUTMETRICS_API RDSSourceConfig() = default;
     AWS_LOOKOUTMETRICS_API RDSSourceConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API RDSSourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,35 +43,31 @@ namespace Model
     /**
      * <p>A string identifying the database instance.</p>
      */
-    inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
+    inline const Aws::String& GetDBInstanceIdentifier() const { return m_dBInstanceIdentifier; }
     inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
-    inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
-    inline void SetDBInstanceIdentifier(Aws::String&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::move(value); }
-    inline void SetDBInstanceIdentifier(const char* value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier.assign(value); }
-    inline RDSSourceConfig& WithDBInstanceIdentifier(const Aws::String& value) { SetDBInstanceIdentifier(value); return *this;}
-    inline RDSSourceConfig& WithDBInstanceIdentifier(Aws::String&& value) { SetDBInstanceIdentifier(std::move(value)); return *this;}
-    inline RDSSourceConfig& WithDBInstanceIdentifier(const char* value) { SetDBInstanceIdentifier(value); return *this;}
+    template<typename DBInstanceIdentifierT = Aws::String>
+    void SetDBInstanceIdentifier(DBInstanceIdentifierT&& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = std::forward<DBInstanceIdentifierT>(value); }
+    template<typename DBInstanceIdentifierT = Aws::String>
+    RDSSourceConfig& WithDBInstanceIdentifier(DBInstanceIdentifierT&& value) { SetDBInstanceIdentifier(std::forward<DBInstanceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The host name of the database.</p>
      */
-    inline const Aws::String& GetDatabaseHost() const{ return m_databaseHost; }
+    inline const Aws::String& GetDatabaseHost() const { return m_databaseHost; }
     inline bool DatabaseHostHasBeenSet() const { return m_databaseHostHasBeenSet; }
-    inline void SetDatabaseHost(const Aws::String& value) { m_databaseHostHasBeenSet = true; m_databaseHost = value; }
-    inline void SetDatabaseHost(Aws::String&& value) { m_databaseHostHasBeenSet = true; m_databaseHost = std::move(value); }
-    inline void SetDatabaseHost(const char* value) { m_databaseHostHasBeenSet = true; m_databaseHost.assign(value); }
-    inline RDSSourceConfig& WithDatabaseHost(const Aws::String& value) { SetDatabaseHost(value); return *this;}
-    inline RDSSourceConfig& WithDatabaseHost(Aws::String&& value) { SetDatabaseHost(std::move(value)); return *this;}
-    inline RDSSourceConfig& WithDatabaseHost(const char* value) { SetDatabaseHost(value); return *this;}
+    template<typename DatabaseHostT = Aws::String>
+    void SetDatabaseHost(DatabaseHostT&& value) { m_databaseHostHasBeenSet = true; m_databaseHost = std::forward<DatabaseHostT>(value); }
+    template<typename DatabaseHostT = Aws::String>
+    RDSSourceConfig& WithDatabaseHost(DatabaseHostT&& value) { SetDatabaseHost(std::forward<DatabaseHostT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The port number where the database can be accessed.</p>
      */
-    inline int GetDatabasePort() const{ return m_databasePort; }
+    inline int GetDatabasePort() const { return m_databasePort; }
     inline bool DatabasePortHasBeenSet() const { return m_databasePortHasBeenSet; }
     inline void SetDatabasePort(int value) { m_databasePortHasBeenSet = true; m_databasePort = value; }
     inline RDSSourceConfig& WithDatabasePort(int value) { SetDatabasePort(value); return *this;}
@@ -81,56 +77,48 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Secrets Manager role.</p>
      */
-    inline const Aws::String& GetSecretManagerArn() const{ return m_secretManagerArn; }
+    inline const Aws::String& GetSecretManagerArn() const { return m_secretManagerArn; }
     inline bool SecretManagerArnHasBeenSet() const { return m_secretManagerArnHasBeenSet; }
-    inline void SetSecretManagerArn(const Aws::String& value) { m_secretManagerArnHasBeenSet = true; m_secretManagerArn = value; }
-    inline void SetSecretManagerArn(Aws::String&& value) { m_secretManagerArnHasBeenSet = true; m_secretManagerArn = std::move(value); }
-    inline void SetSecretManagerArn(const char* value) { m_secretManagerArnHasBeenSet = true; m_secretManagerArn.assign(value); }
-    inline RDSSourceConfig& WithSecretManagerArn(const Aws::String& value) { SetSecretManagerArn(value); return *this;}
-    inline RDSSourceConfig& WithSecretManagerArn(Aws::String&& value) { SetSecretManagerArn(std::move(value)); return *this;}
-    inline RDSSourceConfig& WithSecretManagerArn(const char* value) { SetSecretManagerArn(value); return *this;}
+    template<typename SecretManagerArnT = Aws::String>
+    void SetSecretManagerArn(SecretManagerArnT&& value) { m_secretManagerArnHasBeenSet = true; m_secretManagerArn = std::forward<SecretManagerArnT>(value); }
+    template<typename SecretManagerArnT = Aws::String>
+    RDSSourceConfig& WithSecretManagerArn(SecretManagerArnT&& value) { SetSecretManagerArn(std::forward<SecretManagerArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the RDS database.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline RDSSourceConfig& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline RDSSourceConfig& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline RDSSourceConfig& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    RDSSourceConfig& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the table in the database.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline RDSSourceConfig& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline RDSSourceConfig& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline RDSSourceConfig& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    RDSSourceConfig& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the role.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline RDSSourceConfig& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline RDSSourceConfig& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline RDSSourceConfig& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    RDSSourceConfig& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,12 +126,12 @@ namespace Model
      * <p>An object containing information about the Amazon Virtual Private Cloud (VPC)
      * configuration.</p>
      */
-    inline const VpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
+    inline const VpcConfiguration& GetVpcConfiguration() const { return m_vpcConfiguration; }
     inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
-    inline void SetVpcConfiguration(const VpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
-    inline void SetVpcConfiguration(VpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
-    inline RDSSourceConfig& WithVpcConfiguration(const VpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
-    inline RDSSourceConfig& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
+    template<typename VpcConfigurationT = VpcConfiguration>
+    void SetVpcConfiguration(VpcConfigurationT&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::forward<VpcConfigurationT>(value); }
+    template<typename VpcConfigurationT = VpcConfiguration>
+    RDSSourceConfig& WithVpcConfiguration(VpcConfigurationT&& value) { SetVpcConfiguration(std::forward<VpcConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -153,7 +141,7 @@ namespace Model
     Aws::String m_databaseHost;
     bool m_databaseHostHasBeenSet = false;
 
-    int m_databasePort;
+    int m_databasePort{0};
     bool m_databasePortHasBeenSet = false;
 
     Aws::String m_secretManagerArn;

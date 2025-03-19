@@ -32,7 +32,7 @@ namespace Model
   class TimerFiredEventAttributes
   {
   public:
-    AWS_SWF_API TimerFiredEventAttributes();
+    AWS_SWF_API TimerFiredEventAttributes() = default;
     AWS_SWF_API TimerFiredEventAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API TimerFiredEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The unique ID of the timer that fired.</p>
      */
-    inline const Aws::String& GetTimerId() const{ return m_timerId; }
+    inline const Aws::String& GetTimerId() const { return m_timerId; }
     inline bool TimerIdHasBeenSet() const { return m_timerIdHasBeenSet; }
-    inline void SetTimerId(const Aws::String& value) { m_timerIdHasBeenSet = true; m_timerId = value; }
-    inline void SetTimerId(Aws::String&& value) { m_timerIdHasBeenSet = true; m_timerId = std::move(value); }
-    inline void SetTimerId(const char* value) { m_timerIdHasBeenSet = true; m_timerId.assign(value); }
-    inline TimerFiredEventAttributes& WithTimerId(const Aws::String& value) { SetTimerId(value); return *this;}
-    inline TimerFiredEventAttributes& WithTimerId(Aws::String&& value) { SetTimerId(std::move(value)); return *this;}
-    inline TimerFiredEventAttributes& WithTimerId(const char* value) { SetTimerId(value); return *this;}
+    template<typename TimerIdT = Aws::String>
+    void SetTimerId(TimerIdT&& value) { m_timerIdHasBeenSet = true; m_timerId = std::forward<TimerIdT>(value); }
+    template<typename TimerIdT = Aws::String>
+    TimerFiredEventAttributes& WithTimerId(TimerIdT&& value) { SetTimerId(std::forward<TimerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * timer was started. This information can be useful for diagnosing problems by
      * tracing back the chain of events leading up to this event.</p>
      */
-    inline long long GetStartedEventId() const{ return m_startedEventId; }
+    inline long long GetStartedEventId() const { return m_startedEventId; }
     inline bool StartedEventIdHasBeenSet() const { return m_startedEventIdHasBeenSet; }
     inline void SetStartedEventId(long long value) { m_startedEventIdHasBeenSet = true; m_startedEventId = value; }
     inline TimerFiredEventAttributes& WithStartedEventId(long long value) { SetStartedEventId(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     Aws::String m_timerId;
     bool m_timerIdHasBeenSet = false;
 
-    long long m_startedEventId;
+    long long m_startedEventId{0};
     bool m_startedEventIdHasBeenSet = false;
   };
 

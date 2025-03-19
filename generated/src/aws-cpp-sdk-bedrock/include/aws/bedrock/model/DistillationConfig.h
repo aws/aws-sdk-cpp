@@ -32,7 +32,7 @@ namespace Model
   class DistillationConfig
   {
   public:
-    AWS_BEDROCK_API DistillationConfig();
+    AWS_BEDROCK_API DistillationConfig() = default;
     AWS_BEDROCK_API DistillationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API DistillationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The teacher model configuration.</p>
      */
-    inline const TeacherModelConfig& GetTeacherModelConfig() const{ return m_teacherModelConfig; }
+    inline const TeacherModelConfig& GetTeacherModelConfig() const { return m_teacherModelConfig; }
     inline bool TeacherModelConfigHasBeenSet() const { return m_teacherModelConfigHasBeenSet; }
-    inline void SetTeacherModelConfig(const TeacherModelConfig& value) { m_teacherModelConfigHasBeenSet = true; m_teacherModelConfig = value; }
-    inline void SetTeacherModelConfig(TeacherModelConfig&& value) { m_teacherModelConfigHasBeenSet = true; m_teacherModelConfig = std::move(value); }
-    inline DistillationConfig& WithTeacherModelConfig(const TeacherModelConfig& value) { SetTeacherModelConfig(value); return *this;}
-    inline DistillationConfig& WithTeacherModelConfig(TeacherModelConfig&& value) { SetTeacherModelConfig(std::move(value)); return *this;}
+    template<typename TeacherModelConfigT = TeacherModelConfig>
+    void SetTeacherModelConfig(TeacherModelConfigT&& value) { m_teacherModelConfigHasBeenSet = true; m_teacherModelConfig = std::forward<TeacherModelConfigT>(value); }
+    template<typename TeacherModelConfigT = TeacherModelConfig>
+    DistillationConfig& WithTeacherModelConfig(TeacherModelConfigT&& value) { SetTeacherModelConfig(std::forward<TeacherModelConfigT>(value)); return *this;}
     ///@}
   private:
 

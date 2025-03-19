@@ -18,15 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-CoreNetworkNetworkFunctionGroupIdentifier::CoreNetworkNetworkFunctionGroupIdentifier() : 
-    m_coreNetworkIdHasBeenSet(false),
-    m_networkFunctionGroupNameHasBeenSet(false),
-    m_edgeLocationHasBeenSet(false)
-{
-}
-
 CoreNetworkNetworkFunctionGroupIdentifier::CoreNetworkNetworkFunctionGroupIdentifier(JsonView jsonValue)
-  : CoreNetworkNetworkFunctionGroupIdentifier()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CoreNetworkNetworkFunctionGroupIdentifier& CoreNetworkNetworkFunctionGroupIdenti
   if(jsonValue.ValueExists("CoreNetworkId"))
   {
     m_coreNetworkId = jsonValue.GetString("CoreNetworkId");
-
     m_coreNetworkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkFunctionGroupName"))
   {
     m_networkFunctionGroupName = jsonValue.GetString("NetworkFunctionGroupName");
-
     m_networkFunctionGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EdgeLocation"))
   {
     m_edgeLocation = jsonValue.GetString("EdgeLocation");
-
     m_edgeLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

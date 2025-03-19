@@ -12,12 +12,6 @@ using namespace Aws::MediaStore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutCorsPolicyRequest::PutCorsPolicyRequest() : 
-    m_containerNameHasBeenSet(false),
-    m_corsPolicyHasBeenSet(false)
-{
-}
-
 Aws::String PutCorsPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

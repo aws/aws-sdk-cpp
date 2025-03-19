@@ -34,7 +34,7 @@ namespace Model
   class SampleDataS3SourceConfig
   {
   public:
-    AWS_LOOKOUTMETRICS_API SampleDataS3SourceConfig();
+    AWS_LOOKOUTMETRICS_API SampleDataS3SourceConfig() = default;
     AWS_LOOKOUTMETRICS_API SampleDataS3SourceConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API SampleDataS3SourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,54 +44,50 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the role.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline SampleDataS3SourceConfig& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline SampleDataS3SourceConfig& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline SampleDataS3SourceConfig& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    SampleDataS3SourceConfig& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of strings containing the list of templated paths.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTemplatedPathList() const{ return m_templatedPathList; }
+    inline const Aws::Vector<Aws::String>& GetTemplatedPathList() const { return m_templatedPathList; }
     inline bool TemplatedPathListHasBeenSet() const { return m_templatedPathListHasBeenSet; }
-    inline void SetTemplatedPathList(const Aws::Vector<Aws::String>& value) { m_templatedPathListHasBeenSet = true; m_templatedPathList = value; }
-    inline void SetTemplatedPathList(Aws::Vector<Aws::String>&& value) { m_templatedPathListHasBeenSet = true; m_templatedPathList = std::move(value); }
-    inline SampleDataS3SourceConfig& WithTemplatedPathList(const Aws::Vector<Aws::String>& value) { SetTemplatedPathList(value); return *this;}
-    inline SampleDataS3SourceConfig& WithTemplatedPathList(Aws::Vector<Aws::String>&& value) { SetTemplatedPathList(std::move(value)); return *this;}
-    inline SampleDataS3SourceConfig& AddTemplatedPathList(const Aws::String& value) { m_templatedPathListHasBeenSet = true; m_templatedPathList.push_back(value); return *this; }
-    inline SampleDataS3SourceConfig& AddTemplatedPathList(Aws::String&& value) { m_templatedPathListHasBeenSet = true; m_templatedPathList.push_back(std::move(value)); return *this; }
-    inline SampleDataS3SourceConfig& AddTemplatedPathList(const char* value) { m_templatedPathListHasBeenSet = true; m_templatedPathList.push_back(value); return *this; }
+    template<typename TemplatedPathListT = Aws::Vector<Aws::String>>
+    void SetTemplatedPathList(TemplatedPathListT&& value) { m_templatedPathListHasBeenSet = true; m_templatedPathList = std::forward<TemplatedPathListT>(value); }
+    template<typename TemplatedPathListT = Aws::Vector<Aws::String>>
+    SampleDataS3SourceConfig& WithTemplatedPathList(TemplatedPathListT&& value) { SetTemplatedPathList(std::forward<TemplatedPathListT>(value)); return *this;}
+    template<typename TemplatedPathListT = Aws::String>
+    SampleDataS3SourceConfig& AddTemplatedPathList(TemplatedPathListT&& value) { m_templatedPathListHasBeenSet = true; m_templatedPathList.emplace_back(std::forward<TemplatedPathListT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>An array of strings containing the historical set of data paths.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetHistoricalDataPathList() const{ return m_historicalDataPathList; }
+    inline const Aws::Vector<Aws::String>& GetHistoricalDataPathList() const { return m_historicalDataPathList; }
     inline bool HistoricalDataPathListHasBeenSet() const { return m_historicalDataPathListHasBeenSet; }
-    inline void SetHistoricalDataPathList(const Aws::Vector<Aws::String>& value) { m_historicalDataPathListHasBeenSet = true; m_historicalDataPathList = value; }
-    inline void SetHistoricalDataPathList(Aws::Vector<Aws::String>&& value) { m_historicalDataPathListHasBeenSet = true; m_historicalDataPathList = std::move(value); }
-    inline SampleDataS3SourceConfig& WithHistoricalDataPathList(const Aws::Vector<Aws::String>& value) { SetHistoricalDataPathList(value); return *this;}
-    inline SampleDataS3SourceConfig& WithHistoricalDataPathList(Aws::Vector<Aws::String>&& value) { SetHistoricalDataPathList(std::move(value)); return *this;}
-    inline SampleDataS3SourceConfig& AddHistoricalDataPathList(const Aws::String& value) { m_historicalDataPathListHasBeenSet = true; m_historicalDataPathList.push_back(value); return *this; }
-    inline SampleDataS3SourceConfig& AddHistoricalDataPathList(Aws::String&& value) { m_historicalDataPathListHasBeenSet = true; m_historicalDataPathList.push_back(std::move(value)); return *this; }
-    inline SampleDataS3SourceConfig& AddHistoricalDataPathList(const char* value) { m_historicalDataPathListHasBeenSet = true; m_historicalDataPathList.push_back(value); return *this; }
+    template<typename HistoricalDataPathListT = Aws::Vector<Aws::String>>
+    void SetHistoricalDataPathList(HistoricalDataPathListT&& value) { m_historicalDataPathListHasBeenSet = true; m_historicalDataPathList = std::forward<HistoricalDataPathListT>(value); }
+    template<typename HistoricalDataPathListT = Aws::Vector<Aws::String>>
+    SampleDataS3SourceConfig& WithHistoricalDataPathList(HistoricalDataPathListT&& value) { SetHistoricalDataPathList(std::forward<HistoricalDataPathListT>(value)); return *this;}
+    template<typename HistoricalDataPathListT = Aws::String>
+    SampleDataS3SourceConfig& AddHistoricalDataPathList(HistoricalDataPathListT&& value) { m_historicalDataPathListHasBeenSet = true; m_historicalDataPathList.emplace_back(std::forward<HistoricalDataPathListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const FileFormatDescriptor& GetFileFormatDescriptor() const{ return m_fileFormatDescriptor; }
+    inline const FileFormatDescriptor& GetFileFormatDescriptor() const { return m_fileFormatDescriptor; }
     inline bool FileFormatDescriptorHasBeenSet() const { return m_fileFormatDescriptorHasBeenSet; }
-    inline void SetFileFormatDescriptor(const FileFormatDescriptor& value) { m_fileFormatDescriptorHasBeenSet = true; m_fileFormatDescriptor = value; }
-    inline void SetFileFormatDescriptor(FileFormatDescriptor&& value) { m_fileFormatDescriptorHasBeenSet = true; m_fileFormatDescriptor = std::move(value); }
-    inline SampleDataS3SourceConfig& WithFileFormatDescriptor(const FileFormatDescriptor& value) { SetFileFormatDescriptor(value); return *this;}
-    inline SampleDataS3SourceConfig& WithFileFormatDescriptor(FileFormatDescriptor&& value) { SetFileFormatDescriptor(std::move(value)); return *this;}
+    template<typename FileFormatDescriptorT = FileFormatDescriptor>
+    void SetFileFormatDescriptor(FileFormatDescriptorT&& value) { m_fileFormatDescriptorHasBeenSet = true; m_fileFormatDescriptor = std::forward<FileFormatDescriptorT>(value); }
+    template<typename FileFormatDescriptorT = FileFormatDescriptor>
+    SampleDataS3SourceConfig& WithFileFormatDescriptor(FileFormatDescriptorT&& value) { SetFileFormatDescriptor(std::forward<FileFormatDescriptorT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,13 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAggregationAuthorizationsRequest::DescribeAggregationAuthorizationsRequest() : 
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAggregationAuthorizationsRequest::SerializePayload() const
 {
   JsonValue payload;

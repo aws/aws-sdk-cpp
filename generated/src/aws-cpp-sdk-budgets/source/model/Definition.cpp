@@ -18,15 +18,7 @@ namespace Budgets
 namespace Model
 {
 
-Definition::Definition() : 
-    m_iamActionDefinitionHasBeenSet(false),
-    m_scpActionDefinitionHasBeenSet(false),
-    m_ssmActionDefinitionHasBeenSet(false)
-{
-}
-
 Definition::Definition(JsonView jsonValue)
-  : Definition()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Definition& Definition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IamActionDefinition"))
   {
     m_iamActionDefinition = jsonValue.GetObject("IamActionDefinition");
-
     m_iamActionDefinitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScpActionDefinition"))
   {
     m_scpActionDefinition = jsonValue.GetObject("ScpActionDefinition");
-
     m_scpActionDefinitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SsmActionDefinition"))
   {
     m_ssmActionDefinition = jsonValue.GetObject("SsmActionDefinition");
-
     m_ssmActionDefinitionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,19 +12,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendDestinationNumberVerificationCodeRequest::SendDestinationNumberVerificationCodeRequest() : 
-    m_verifiedDestinationNumberIdHasBeenSet(false),
-    m_verificationChannel(VerificationChannel::NOT_SET),
-    m_verificationChannelHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_originationIdentityHasBeenSet(false),
-    m_configurationSetNameHasBeenSet(false),
-    m_contextHasBeenSet(false),
-    m_destinationCountryParametersHasBeenSet(false)
-{
-}
-
 Aws::String SendDestinationNumberVerificationCodeRequest::SerializePayload() const
 {
   JsonValue payload;

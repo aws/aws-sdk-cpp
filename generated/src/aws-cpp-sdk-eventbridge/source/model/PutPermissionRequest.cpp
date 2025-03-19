@@ -12,16 +12,6 @@ using namespace Aws::EventBridge::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutPermissionRequest::PutPermissionRequest() : 
-    m_eventBusNameHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_statementIdHasBeenSet(false),
-    m_conditionHasBeenSet(false),
-    m_policyHasBeenSet(false)
-{
-}
-
 Aws::String PutPermissionRequest::SerializePayload() const
 {
   JsonValue payload;

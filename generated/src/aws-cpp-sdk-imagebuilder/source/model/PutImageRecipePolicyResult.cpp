@@ -16,10 +16,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutImageRecipePolicyResult::PutImageRecipePolicyResult()
-{
-}
-
 PutImageRecipePolicyResult::PutImageRecipePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -31,15 +27,13 @@ PutImageRecipePolicyResult& PutImageRecipePolicyResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
+    m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageRecipeArn"))
   {
     m_imageRecipeArn = jsonValue.GetString("imageRecipeArn");
-
+    m_imageRecipeArnHasBeenSet = true;
   }
-
 
 
   return *this;

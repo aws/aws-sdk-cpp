@@ -25,7 +25,7 @@ namespace Model
   class GetSessionRequest : public LexRuntimeServiceRequest
   {
   public:
-    AWS_LEXRUNTIMESERVICE_API GetSessionRequest();
+    AWS_LEXRUNTIMESERVICE_API GetSessionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of the bot that contains the session data.</p>
      */
-    inline const Aws::String& GetBotName() const{ return m_botName; }
+    inline const Aws::String& GetBotName() const { return m_botName; }
     inline bool BotNameHasBeenSet() const { return m_botNameHasBeenSet; }
-    inline void SetBotName(const Aws::String& value) { m_botNameHasBeenSet = true; m_botName = value; }
-    inline void SetBotName(Aws::String&& value) { m_botNameHasBeenSet = true; m_botName = std::move(value); }
-    inline void SetBotName(const char* value) { m_botNameHasBeenSet = true; m_botName.assign(value); }
-    inline GetSessionRequest& WithBotName(const Aws::String& value) { SetBotName(value); return *this;}
-    inline GetSessionRequest& WithBotName(Aws::String&& value) { SetBotName(std::move(value)); return *this;}
-    inline GetSessionRequest& WithBotName(const char* value) { SetBotName(value); return *this;}
+    template<typename BotNameT = Aws::String>
+    void SetBotName(BotNameT&& value) { m_botNameHasBeenSet = true; m_botName = std::forward<BotNameT>(value); }
+    template<typename BotNameT = Aws::String>
+    GetSessionRequest& WithBotName(BotNameT&& value) { SetBotName(std::forward<BotNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The alias in use for the bot that contains the session data.</p>
      */
-    inline const Aws::String& GetBotAlias() const{ return m_botAlias; }
+    inline const Aws::String& GetBotAlias() const { return m_botAlias; }
     inline bool BotAliasHasBeenSet() const { return m_botAliasHasBeenSet; }
-    inline void SetBotAlias(const Aws::String& value) { m_botAliasHasBeenSet = true; m_botAlias = value; }
-    inline void SetBotAlias(Aws::String&& value) { m_botAliasHasBeenSet = true; m_botAlias = std::move(value); }
-    inline void SetBotAlias(const char* value) { m_botAliasHasBeenSet = true; m_botAlias.assign(value); }
-    inline GetSessionRequest& WithBotAlias(const Aws::String& value) { SetBotAlias(value); return *this;}
-    inline GetSessionRequest& WithBotAlias(Aws::String&& value) { SetBotAlias(std::move(value)); return *this;}
-    inline GetSessionRequest& WithBotAlias(const char* value) { SetBotAlias(value); return *this;}
+    template<typename BotAliasT = Aws::String>
+    void SetBotAlias(BotAliasT&& value) { m_botAliasHasBeenSet = true; m_botAlias = std::forward<BotAliasT>(value); }
+    template<typename BotAliasT = Aws::String>
+    GetSessionRequest& WithBotAlias(BotAliasT&& value) { SetBotAlias(std::forward<BotAliasT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +67,12 @@ namespace Model
      * <p>The ID of the client application user. Amazon Lex uses this to identify a
      * user's conversation with your bot. </p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline GetSessionRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline GetSessionRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline GetSessionRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    GetSessionRequest& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +82,12 @@ namespace Model
      * filter, only intents with their <code>checkpointLabel</code> field set to that
      * string are returned.</p>
      */
-    inline const Aws::String& GetCheckpointLabelFilter() const{ return m_checkpointLabelFilter; }
+    inline const Aws::String& GetCheckpointLabelFilter() const { return m_checkpointLabelFilter; }
     inline bool CheckpointLabelFilterHasBeenSet() const { return m_checkpointLabelFilterHasBeenSet; }
-    inline void SetCheckpointLabelFilter(const Aws::String& value) { m_checkpointLabelFilterHasBeenSet = true; m_checkpointLabelFilter = value; }
-    inline void SetCheckpointLabelFilter(Aws::String&& value) { m_checkpointLabelFilterHasBeenSet = true; m_checkpointLabelFilter = std::move(value); }
-    inline void SetCheckpointLabelFilter(const char* value) { m_checkpointLabelFilterHasBeenSet = true; m_checkpointLabelFilter.assign(value); }
-    inline GetSessionRequest& WithCheckpointLabelFilter(const Aws::String& value) { SetCheckpointLabelFilter(value); return *this;}
-    inline GetSessionRequest& WithCheckpointLabelFilter(Aws::String&& value) { SetCheckpointLabelFilter(std::move(value)); return *this;}
-    inline GetSessionRequest& WithCheckpointLabelFilter(const char* value) { SetCheckpointLabelFilter(value); return *this;}
+    template<typename CheckpointLabelFilterT = Aws::String>
+    void SetCheckpointLabelFilter(CheckpointLabelFilterT&& value) { m_checkpointLabelFilterHasBeenSet = true; m_checkpointLabelFilter = std::forward<CheckpointLabelFilterT>(value); }
+    template<typename CheckpointLabelFilterT = Aws::String>
+    GetSessionRequest& WithCheckpointLabelFilter(CheckpointLabelFilterT&& value) { SetCheckpointLabelFilter(std::forward<CheckpointLabelFilterT>(value)); return *this;}
     ///@}
   private:
 

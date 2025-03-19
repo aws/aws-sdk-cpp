@@ -22,7 +22,7 @@ namespace Model
   class BatchGetMembershipDatasourcesRequest : public DetectiveRequest
   {
   public:
-    AWS_DETECTIVE_API BatchGetMembershipDatasourcesRequest();
+    AWS_DETECTIVE_API BatchGetMembershipDatasourcesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,15 +37,14 @@ namespace Model
     /**
      * <p>The ARN of the behavior graph.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetGraphArns() const{ return m_graphArns; }
+    inline const Aws::Vector<Aws::String>& GetGraphArns() const { return m_graphArns; }
     inline bool GraphArnsHasBeenSet() const { return m_graphArnsHasBeenSet; }
-    inline void SetGraphArns(const Aws::Vector<Aws::String>& value) { m_graphArnsHasBeenSet = true; m_graphArns = value; }
-    inline void SetGraphArns(Aws::Vector<Aws::String>&& value) { m_graphArnsHasBeenSet = true; m_graphArns = std::move(value); }
-    inline BatchGetMembershipDatasourcesRequest& WithGraphArns(const Aws::Vector<Aws::String>& value) { SetGraphArns(value); return *this;}
-    inline BatchGetMembershipDatasourcesRequest& WithGraphArns(Aws::Vector<Aws::String>&& value) { SetGraphArns(std::move(value)); return *this;}
-    inline BatchGetMembershipDatasourcesRequest& AddGraphArns(const Aws::String& value) { m_graphArnsHasBeenSet = true; m_graphArns.push_back(value); return *this; }
-    inline BatchGetMembershipDatasourcesRequest& AddGraphArns(Aws::String&& value) { m_graphArnsHasBeenSet = true; m_graphArns.push_back(std::move(value)); return *this; }
-    inline BatchGetMembershipDatasourcesRequest& AddGraphArns(const char* value) { m_graphArnsHasBeenSet = true; m_graphArns.push_back(value); return *this; }
+    template<typename GraphArnsT = Aws::Vector<Aws::String>>
+    void SetGraphArns(GraphArnsT&& value) { m_graphArnsHasBeenSet = true; m_graphArns = std::forward<GraphArnsT>(value); }
+    template<typename GraphArnsT = Aws::Vector<Aws::String>>
+    BatchGetMembershipDatasourcesRequest& WithGraphArns(GraphArnsT&& value) { SetGraphArns(std::forward<GraphArnsT>(value)); return *this;}
+    template<typename GraphArnsT = Aws::String>
+    BatchGetMembershipDatasourcesRequest& AddGraphArns(GraphArnsT&& value) { m_graphArnsHasBeenSet = true; m_graphArns.emplace_back(std::forward<GraphArnsT>(value)); return *this; }
     ///@}
   private:
 

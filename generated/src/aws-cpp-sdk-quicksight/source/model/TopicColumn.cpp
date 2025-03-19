@@ -18,36 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TopicColumn::TopicColumn() : 
-    m_columnNameHasBeenSet(false),
-    m_columnFriendlyNameHasBeenSet(false),
-    m_columnDescriptionHasBeenSet(false),
-    m_columnSynonymsHasBeenSet(false),
-    m_columnDataRole(ColumnDataRole::NOT_SET),
-    m_columnDataRoleHasBeenSet(false),
-    m_aggregation(DefaultAggregation::NOT_SET),
-    m_aggregationHasBeenSet(false),
-    m_isIncludedInTopic(false),
-    m_isIncludedInTopicHasBeenSet(false),
-    m_disableIndexing(false),
-    m_disableIndexingHasBeenSet(false),
-    m_comparativeOrderHasBeenSet(false),
-    m_semanticTypeHasBeenSet(false),
-    m_timeGranularity(TopicTimeGranularity::NOT_SET),
-    m_timeGranularityHasBeenSet(false),
-    m_allowedAggregationsHasBeenSet(false),
-    m_notAllowedAggregationsHasBeenSet(false),
-    m_defaultFormattingHasBeenSet(false),
-    m_neverAggregateInFilter(false),
-    m_neverAggregateInFilterHasBeenSet(false),
-    m_cellValueSynonymsHasBeenSet(false),
-    m_nonAdditive(false),
-    m_nonAdditiveHasBeenSet(false)
-{
-}
-
 TopicColumn::TopicColumn(JsonView jsonValue)
-  : TopicColumn()
 {
   *this = jsonValue;
 }
@@ -57,24 +28,18 @@ TopicColumn& TopicColumn::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ColumnName"))
   {
     m_columnName = jsonValue.GetString("ColumnName");
-
     m_columnNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnFriendlyName"))
   {
     m_columnFriendlyName = jsonValue.GetString("ColumnFriendlyName");
-
     m_columnFriendlyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnDescription"))
   {
     m_columnDescription = jsonValue.GetString("ColumnDescription");
-
     m_columnDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnSynonyms"))
   {
     Aws::Utils::Array<JsonView> columnSynonymsJsonList = jsonValue.GetArray("ColumnSynonyms");
@@ -84,56 +49,41 @@ TopicColumn& TopicColumn::operator =(JsonView jsonValue)
     }
     m_columnSynonymsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnDataRole"))
   {
     m_columnDataRole = ColumnDataRoleMapper::GetColumnDataRoleForName(jsonValue.GetString("ColumnDataRole"));
-
     m_columnDataRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Aggregation"))
   {
     m_aggregation = DefaultAggregationMapper::GetDefaultAggregationForName(jsonValue.GetString("Aggregation"));
-
     m_aggregationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsIncludedInTopic"))
   {
     m_isIncludedInTopic = jsonValue.GetBool("IsIncludedInTopic");
-
     m_isIncludedInTopicHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisableIndexing"))
   {
     m_disableIndexing = jsonValue.GetBool("DisableIndexing");
-
     m_disableIndexingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComparativeOrder"))
   {
     m_comparativeOrder = jsonValue.GetObject("ComparativeOrder");
-
     m_comparativeOrderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SemanticType"))
   {
     m_semanticType = jsonValue.GetObject("SemanticType");
-
     m_semanticTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeGranularity"))
   {
     m_timeGranularity = TopicTimeGranularityMapper::GetTopicTimeGranularityForName(jsonValue.GetString("TimeGranularity"));
-
     m_timeGranularityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowedAggregations"))
   {
     Aws::Utils::Array<JsonView> allowedAggregationsJsonList = jsonValue.GetArray("AllowedAggregations");
@@ -143,7 +93,6 @@ TopicColumn& TopicColumn::operator =(JsonView jsonValue)
     }
     m_allowedAggregationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotAllowedAggregations"))
   {
     Aws::Utils::Array<JsonView> notAllowedAggregationsJsonList = jsonValue.GetArray("NotAllowedAggregations");
@@ -153,21 +102,16 @@ TopicColumn& TopicColumn::operator =(JsonView jsonValue)
     }
     m_notAllowedAggregationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultFormatting"))
   {
     m_defaultFormatting = jsonValue.GetObject("DefaultFormatting");
-
     m_defaultFormattingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NeverAggregateInFilter"))
   {
     m_neverAggregateInFilter = jsonValue.GetBool("NeverAggregateInFilter");
-
     m_neverAggregateInFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CellValueSynonyms"))
   {
     Aws::Utils::Array<JsonView> cellValueSynonymsJsonList = jsonValue.GetArray("CellValueSynonyms");
@@ -177,14 +121,11 @@ TopicColumn& TopicColumn::operator =(JsonView jsonValue)
     }
     m_cellValueSynonymsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NonAdditive"))
   {
     m_nonAdditive = jsonValue.GetBool("NonAdditive");
-
     m_nonAdditiveHasBeenSet = true;
   }
-
   return *this;
 }
 

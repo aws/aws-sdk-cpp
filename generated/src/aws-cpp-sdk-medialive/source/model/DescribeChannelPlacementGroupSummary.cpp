@@ -18,20 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-DescribeChannelPlacementGroupSummary::DescribeChannelPlacementGroupSummary() : 
-    m_arnHasBeenSet(false),
-    m_channelsHasBeenSet(false),
-    m_clusterIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_nodesHasBeenSet(false),
-    m_state(ChannelPlacementGroupState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 DescribeChannelPlacementGroupSummary::DescribeChannelPlacementGroupSummary(JsonView jsonValue)
-  : DescribeChannelPlacementGroupSummary()
 {
   *this = jsonValue;
 }
@@ -41,10 +28,8 @@ DescribeChannelPlacementGroupSummary& DescribeChannelPlacementGroupSummary::oper
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("channels"))
   {
     Aws::Utils::Array<JsonView> channelsJsonList = jsonValue.GetArray("channels");
@@ -54,28 +39,21 @@ DescribeChannelPlacementGroupSummary& DescribeChannelPlacementGroupSummary::oper
     }
     m_channelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterId"))
   {
     m_clusterId = jsonValue.GetString("clusterId");
-
     m_clusterIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodes"))
   {
     Aws::Utils::Array<JsonView> nodesJsonList = jsonValue.GetArray("nodes");
@@ -85,14 +63,11 @@ DescribeChannelPlacementGroupSummary& DescribeChannelPlacementGroupSummary::oper
     }
     m_nodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = ChannelPlacementGroupStateMapper::GetChannelPlacementGroupStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

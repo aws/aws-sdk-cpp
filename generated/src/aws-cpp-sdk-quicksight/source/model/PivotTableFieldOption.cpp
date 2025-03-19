@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-PivotTableFieldOption::PivotTableFieldOption() : 
-    m_fieldIdHasBeenSet(false),
-    m_customLabelHasBeenSet(false),
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
-{
-}
-
 PivotTableFieldOption::PivotTableFieldOption(JsonView jsonValue)
-  : PivotTableFieldOption()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ PivotTableFieldOption& PivotTableFieldOption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldId"))
   {
     m_fieldId = jsonValue.GetString("FieldId");
-
     m_fieldIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomLabel"))
   {
     m_customLabel = jsonValue.GetString("CustomLabel");
-
     m_customLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   return *this;
 }
 

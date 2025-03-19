@@ -18,37 +18,7 @@ namespace WorkSpacesThinClient
 namespace Model
 {
 
-Device::Device() : 
-    m_idHasBeenSet(false),
-    m_serialNumberHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_environmentIdHasBeenSet(false),
-    m_status(DeviceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_currentSoftwareSetIdHasBeenSet(false),
-    m_currentSoftwareSetVersionHasBeenSet(false),
-    m_desiredSoftwareSetIdHasBeenSet(false),
-    m_pendingSoftwareSetIdHasBeenSet(false),
-    m_pendingSoftwareSetVersionHasBeenSet(false),
-    m_softwareSetUpdateSchedule(SoftwareSetUpdateSchedule::NOT_SET),
-    m_softwareSetUpdateScheduleHasBeenSet(false),
-    m_softwareSetComplianceStatus(DeviceSoftwareSetComplianceStatus::NOT_SET),
-    m_softwareSetComplianceStatusHasBeenSet(false),
-    m_softwareSetUpdateStatus(SoftwareSetUpdateStatus::NOT_SET),
-    m_softwareSetUpdateStatusHasBeenSet(false),
-    m_lastConnectedAtHasBeenSet(false),
-    m_lastPostureAtHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Device::Device(JsonView jsonValue)
-  : Device()
 {
   *this = jsonValue;
 }
@@ -58,143 +28,103 @@ Device& Device::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serialNumber"))
   {
     m_serialNumber = jsonValue.GetString("serialNumber");
-
     m_serialNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("model"))
   {
     m_model = jsonValue.GetString("model");
-
     m_modelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentId"))
   {
     m_environmentId = jsonValue.GetString("environmentId");
-
     m_environmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DeviceStatusMapper::GetDeviceStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentSoftwareSetId"))
   {
     m_currentSoftwareSetId = jsonValue.GetString("currentSoftwareSetId");
-
     m_currentSoftwareSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentSoftwareSetVersion"))
   {
     m_currentSoftwareSetVersion = jsonValue.GetString("currentSoftwareSetVersion");
-
     m_currentSoftwareSetVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("desiredSoftwareSetId"))
   {
     m_desiredSoftwareSetId = jsonValue.GetString("desiredSoftwareSetId");
-
     m_desiredSoftwareSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pendingSoftwareSetId"))
   {
     m_pendingSoftwareSetId = jsonValue.GetString("pendingSoftwareSetId");
-
     m_pendingSoftwareSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pendingSoftwareSetVersion"))
   {
     m_pendingSoftwareSetVersion = jsonValue.GetString("pendingSoftwareSetVersion");
-
     m_pendingSoftwareSetVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("softwareSetUpdateSchedule"))
   {
     m_softwareSetUpdateSchedule = SoftwareSetUpdateScheduleMapper::GetSoftwareSetUpdateScheduleForName(jsonValue.GetString("softwareSetUpdateSchedule"));
-
     m_softwareSetUpdateScheduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("softwareSetComplianceStatus"))
   {
     m_softwareSetComplianceStatus = DeviceSoftwareSetComplianceStatusMapper::GetDeviceSoftwareSetComplianceStatusForName(jsonValue.GetString("softwareSetComplianceStatus"));
-
     m_softwareSetComplianceStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("softwareSetUpdateStatus"))
   {
     m_softwareSetUpdateStatus = SoftwareSetUpdateStatusMapper::GetSoftwareSetUpdateStatusForName(jsonValue.GetString("softwareSetUpdateStatus"));
-
     m_softwareSetUpdateStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastConnectedAt"))
   {
     m_lastConnectedAt = jsonValue.GetDouble("lastConnectedAt");
-
     m_lastConnectedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastPostureAt"))
   {
     m_lastPostureAt = jsonValue.GetDouble("lastPostureAt");
-
     m_lastPostureAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -204,7 +134,6 @@ Device& Device::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

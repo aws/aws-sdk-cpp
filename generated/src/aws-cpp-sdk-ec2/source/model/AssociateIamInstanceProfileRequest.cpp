@@ -10,12 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-AssociateIamInstanceProfileRequest::AssociateIamInstanceProfileRequest() : 
-    m_iamInstanceProfileHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 Aws::String AssociateIamInstanceProfileRequest::SerializePayload() const
 {
   Aws::StringStream ss;

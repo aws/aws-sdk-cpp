@@ -34,7 +34,7 @@ namespace Model
   class LoggingFormat
   {
   public:
-    AWS_APPMESH_API LoggingFormat();
+    AWS_APPMESH_API LoggingFormat() = default;
     AWS_APPMESH_API LoggingFormat(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API LoggingFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,26 @@ namespace Model
     /**
      * <p/>
      */
-    inline const Aws::Vector<JsonFormatRef>& GetJson() const{ return m_json; }
+    inline const Aws::Vector<JsonFormatRef>& GetJson() const { return m_json; }
     inline bool JsonHasBeenSet() const { return m_jsonHasBeenSet; }
-    inline void SetJson(const Aws::Vector<JsonFormatRef>& value) { m_jsonHasBeenSet = true; m_json = value; }
-    inline void SetJson(Aws::Vector<JsonFormatRef>&& value) { m_jsonHasBeenSet = true; m_json = std::move(value); }
-    inline LoggingFormat& WithJson(const Aws::Vector<JsonFormatRef>& value) { SetJson(value); return *this;}
-    inline LoggingFormat& WithJson(Aws::Vector<JsonFormatRef>&& value) { SetJson(std::move(value)); return *this;}
-    inline LoggingFormat& AddJson(const JsonFormatRef& value) { m_jsonHasBeenSet = true; m_json.push_back(value); return *this; }
-    inline LoggingFormat& AddJson(JsonFormatRef&& value) { m_jsonHasBeenSet = true; m_json.push_back(std::move(value)); return *this; }
+    template<typename JsonT = Aws::Vector<JsonFormatRef>>
+    void SetJson(JsonT&& value) { m_jsonHasBeenSet = true; m_json = std::forward<JsonT>(value); }
+    template<typename JsonT = Aws::Vector<JsonFormatRef>>
+    LoggingFormat& WithJson(JsonT&& value) { SetJson(std::forward<JsonT>(value)); return *this;}
+    template<typename JsonT = JsonFormatRef>
+    LoggingFormat& AddJson(JsonT&& value) { m_jsonHasBeenSet = true; m_json.emplace_back(std::forward<JsonT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline LoggingFormat& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline LoggingFormat& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline LoggingFormat& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    LoggingFormat& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
   private:
 

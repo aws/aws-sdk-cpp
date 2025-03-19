@@ -27,7 +27,7 @@ namespace Model
   class PutPackageOriginConfigurationRequest : public CodeArtifactRequest
   {
   public:
-    AWS_CODEARTIFACT_API PutPackageOriginConfigurationRequest();
+    AWS_CODEARTIFACT_API PutPackageOriginConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * <p>The name of the domain that contains the repository that contains the
      * package.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline PutPackageOriginConfigurationRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline PutPackageOriginConfigurationRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline PutPackageOriginConfigurationRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    PutPackageOriginConfigurationRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,40 +58,34 @@ namespace Model
      * <p> The 12-digit account number of the Amazon Web Services account that owns the
      * domain. It does not include dashes or spaces. </p>
      */
-    inline const Aws::String& GetDomainOwner() const{ return m_domainOwner; }
+    inline const Aws::String& GetDomainOwner() const { return m_domainOwner; }
     inline bool DomainOwnerHasBeenSet() const { return m_domainOwnerHasBeenSet; }
-    inline void SetDomainOwner(const Aws::String& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = value; }
-    inline void SetDomainOwner(Aws::String&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::move(value); }
-    inline void SetDomainOwner(const char* value) { m_domainOwnerHasBeenSet = true; m_domainOwner.assign(value); }
-    inline PutPackageOriginConfigurationRequest& WithDomainOwner(const Aws::String& value) { SetDomainOwner(value); return *this;}
-    inline PutPackageOriginConfigurationRequest& WithDomainOwner(Aws::String&& value) { SetDomainOwner(std::move(value)); return *this;}
-    inline PutPackageOriginConfigurationRequest& WithDomainOwner(const char* value) { SetDomainOwner(value); return *this;}
+    template<typename DomainOwnerT = Aws::String>
+    void SetDomainOwner(DomainOwnerT&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::forward<DomainOwnerT>(value); }
+    template<typename DomainOwnerT = Aws::String>
+    PutPackageOriginConfigurationRequest& WithDomainOwner(DomainOwnerT&& value) { SetDomainOwner(std::forward<DomainOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the repository that contains the package.</p>
      */
-    inline const Aws::String& GetRepository() const{ return m_repository; }
+    inline const Aws::String& GetRepository() const { return m_repository; }
     inline bool RepositoryHasBeenSet() const { return m_repositoryHasBeenSet; }
-    inline void SetRepository(const Aws::String& value) { m_repositoryHasBeenSet = true; m_repository = value; }
-    inline void SetRepository(Aws::String&& value) { m_repositoryHasBeenSet = true; m_repository = std::move(value); }
-    inline void SetRepository(const char* value) { m_repositoryHasBeenSet = true; m_repository.assign(value); }
-    inline PutPackageOriginConfigurationRequest& WithRepository(const Aws::String& value) { SetRepository(value); return *this;}
-    inline PutPackageOriginConfigurationRequest& WithRepository(Aws::String&& value) { SetRepository(std::move(value)); return *this;}
-    inline PutPackageOriginConfigurationRequest& WithRepository(const char* value) { SetRepository(value); return *this;}
+    template<typename RepositoryT = Aws::String>
+    void SetRepository(RepositoryT&& value) { m_repositoryHasBeenSet = true; m_repository = std::forward<RepositoryT>(value); }
+    template<typename RepositoryT = Aws::String>
+    PutPackageOriginConfigurationRequest& WithRepository(RepositoryT&& value) { SetRepository(std::forward<RepositoryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A format that specifies the type of the package to be updated.</p>
      */
-    inline const PackageFormat& GetFormat() const{ return m_format; }
+    inline PackageFormat GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const PackageFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(PackageFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline PutPackageOriginConfigurationRequest& WithFormat(const PackageFormat& value) { SetFormat(value); return *this;}
-    inline PutPackageOriginConfigurationRequest& WithFormat(PackageFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(PackageFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline PutPackageOriginConfigurationRequest& WithFormat(PackageFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -107,28 +99,24 @@ namespace Model
      * package versions do not contain a corresponding component, package versions of
      * those formats do not have a namespace. </p> </li> </ul>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline PutPackageOriginConfigurationRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline PutPackageOriginConfigurationRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline PutPackageOriginConfigurationRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    PutPackageOriginConfigurationRequest& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the package to be updated.</p>
      */
-    inline const Aws::String& GetPackage() const{ return m_package; }
+    inline const Aws::String& GetPackage() const { return m_package; }
     inline bool PackageHasBeenSet() const { return m_packageHasBeenSet; }
-    inline void SetPackage(const Aws::String& value) { m_packageHasBeenSet = true; m_package = value; }
-    inline void SetPackage(Aws::String&& value) { m_packageHasBeenSet = true; m_package = std::move(value); }
-    inline void SetPackage(const char* value) { m_packageHasBeenSet = true; m_package.assign(value); }
-    inline PutPackageOriginConfigurationRequest& WithPackage(const Aws::String& value) { SetPackage(value); return *this;}
-    inline PutPackageOriginConfigurationRequest& WithPackage(Aws::String&& value) { SetPackage(std::move(value)); return *this;}
-    inline PutPackageOriginConfigurationRequest& WithPackage(const char* value) { SetPackage(value); return *this;}
+    template<typename PackageT = Aws::String>
+    void SetPackage(PackageT&& value) { m_packageHasBeenSet = true; m_package = std::forward<PackageT>(value); }
+    template<typename PackageT = Aws::String>
+    PutPackageOriginConfigurationRequest& WithPackage(PackageT&& value) { SetPackage(std::forward<PackageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,12 +131,12 @@ namespace Model
      * repository.</p> <p>You must include both the desired <code>upstream</code> and
      * <code>publish</code> restrictions.</p>
      */
-    inline const PackageOriginRestrictions& GetRestrictions() const{ return m_restrictions; }
+    inline const PackageOriginRestrictions& GetRestrictions() const { return m_restrictions; }
     inline bool RestrictionsHasBeenSet() const { return m_restrictionsHasBeenSet; }
-    inline void SetRestrictions(const PackageOriginRestrictions& value) { m_restrictionsHasBeenSet = true; m_restrictions = value; }
-    inline void SetRestrictions(PackageOriginRestrictions&& value) { m_restrictionsHasBeenSet = true; m_restrictions = std::move(value); }
-    inline PutPackageOriginConfigurationRequest& WithRestrictions(const PackageOriginRestrictions& value) { SetRestrictions(value); return *this;}
-    inline PutPackageOriginConfigurationRequest& WithRestrictions(PackageOriginRestrictions&& value) { SetRestrictions(std::move(value)); return *this;}
+    template<typename RestrictionsT = PackageOriginRestrictions>
+    void SetRestrictions(RestrictionsT&& value) { m_restrictionsHasBeenSet = true; m_restrictions = std::forward<RestrictionsT>(value); }
+    template<typename RestrictionsT = PackageOriginRestrictions>
+    PutPackageOriginConfigurationRequest& WithRestrictions(RestrictionsT&& value) { SetRestrictions(std::forward<RestrictionsT>(value)); return *this;}
     ///@}
   private:
 
@@ -161,7 +149,7 @@ namespace Model
     Aws::String m_repository;
     bool m_repositoryHasBeenSet = false;
 
-    PackageFormat m_format;
+    PackageFormat m_format{PackageFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
 
     Aws::String m_namespace;

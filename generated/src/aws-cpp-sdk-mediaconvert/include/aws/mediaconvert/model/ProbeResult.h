@@ -34,7 +34,7 @@ namespace Model
   class ProbeResult
   {
   public:
-    AWS_MEDIACONVERT_API ProbeResult();
+    AWS_MEDIACONVERT_API ProbeResult() = default;
     AWS_MEDIACONVERT_API ProbeResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API ProbeResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,38 +44,38 @@ namespace Model
     /**
      * Information about the container format of the media file.
      */
-    inline const Container& GetContainer() const{ return m_container; }
+    inline const Container& GetContainer() const { return m_container; }
     inline bool ContainerHasBeenSet() const { return m_containerHasBeenSet; }
-    inline void SetContainer(const Container& value) { m_containerHasBeenSet = true; m_container = value; }
-    inline void SetContainer(Container&& value) { m_containerHasBeenSet = true; m_container = std::move(value); }
-    inline ProbeResult& WithContainer(const Container& value) { SetContainer(value); return *this;}
-    inline ProbeResult& WithContainer(Container&& value) { SetContainer(std::move(value)); return *this;}
+    template<typename ContainerT = Container>
+    void SetContainer(ContainerT&& value) { m_containerHasBeenSet = true; m_container = std::forward<ContainerT>(value); }
+    template<typename ContainerT = Container>
+    ProbeResult& WithContainer(ContainerT&& value) { SetContainer(std::forward<ContainerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Metadata about the file.
      */
-    inline const Metadata& GetMetadata() const{ return m_metadata; }
+    inline const Metadata& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const Metadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(Metadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline ProbeResult& WithMetadata(const Metadata& value) { SetMetadata(value); return *this;}
-    inline ProbeResult& WithMetadata(Metadata&& value) { SetMetadata(std::move(value)); return *this;}
+    template<typename MetadataT = Metadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Metadata>
+    ProbeResult& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * List of Track mapping objects.
      */
-    inline const Aws::Vector<TrackMapping>& GetTrackMappings() const{ return m_trackMappings; }
+    inline const Aws::Vector<TrackMapping>& GetTrackMappings() const { return m_trackMappings; }
     inline bool TrackMappingsHasBeenSet() const { return m_trackMappingsHasBeenSet; }
-    inline void SetTrackMappings(const Aws::Vector<TrackMapping>& value) { m_trackMappingsHasBeenSet = true; m_trackMappings = value; }
-    inline void SetTrackMappings(Aws::Vector<TrackMapping>&& value) { m_trackMappingsHasBeenSet = true; m_trackMappings = std::move(value); }
-    inline ProbeResult& WithTrackMappings(const Aws::Vector<TrackMapping>& value) { SetTrackMappings(value); return *this;}
-    inline ProbeResult& WithTrackMappings(Aws::Vector<TrackMapping>&& value) { SetTrackMappings(std::move(value)); return *this;}
-    inline ProbeResult& AddTrackMappings(const TrackMapping& value) { m_trackMappingsHasBeenSet = true; m_trackMappings.push_back(value); return *this; }
-    inline ProbeResult& AddTrackMappings(TrackMapping&& value) { m_trackMappingsHasBeenSet = true; m_trackMappings.push_back(std::move(value)); return *this; }
+    template<typename TrackMappingsT = Aws::Vector<TrackMapping>>
+    void SetTrackMappings(TrackMappingsT&& value) { m_trackMappingsHasBeenSet = true; m_trackMappings = std::forward<TrackMappingsT>(value); }
+    template<typename TrackMappingsT = Aws::Vector<TrackMapping>>
+    ProbeResult& WithTrackMappings(TrackMappingsT&& value) { SetTrackMappings(std::forward<TrackMappingsT>(value)); return *this;}
+    template<typename TrackMappingsT = TrackMapping>
+    ProbeResult& AddTrackMappings(TrackMappingsT&& value) { m_trackMappingsHasBeenSet = true; m_trackMappings.emplace_back(std::forward<TrackMappingsT>(value)); return *this; }
     ///@}
   private:
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeScheduleResult::DescribeScheduleResult()
-{
-}
-
 DescribeScheduleResult::DescribeScheduleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeScheduleResult& DescribeScheduleResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scheduleActions"))
   {
     Aws::Utils::Array<JsonView> scheduleActionsJsonList = jsonValue.GetArray("scheduleActions");
@@ -42,14 +37,15 @@ DescribeScheduleResult& DescribeScheduleResult::operator =(const Aws::AmazonWebS
     {
       m_scheduleActions.push_back(scheduleActionsJsonList[scheduleActionsIndex].AsObject());
     }
+    m_scheduleActionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,16 +18,7 @@ namespace ApiGatewayV2
 namespace Model
 {
 
-ApiMapping::ApiMapping() : 
-    m_apiIdHasBeenSet(false),
-    m_apiMappingIdHasBeenSet(false),
-    m_apiMappingKeyHasBeenSet(false),
-    m_stageHasBeenSet(false)
-{
-}
-
 ApiMapping::ApiMapping(JsonView jsonValue)
-  : ApiMapping()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ApiMapping& ApiMapping::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("apiId"))
   {
     m_apiId = jsonValue.GetString("apiId");
-
     m_apiIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiMappingId"))
   {
     m_apiMappingId = jsonValue.GetString("apiMappingId");
-
     m_apiMappingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiMappingKey"))
   {
     m_apiMappingKey = jsonValue.GetString("apiMappingKey");
-
     m_apiMappingKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stage"))
   {
     m_stage = jsonValue.GetString("stage");
-
     m_stageHasBeenSet = true;
   }
-
   return *this;
 }
 

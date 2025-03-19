@@ -10,11 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-ListPhoneNumbersOptedOutRequest::ListPhoneNumbersOptedOutRequest() : 
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListPhoneNumbersOptedOutRequest::SerializePayload() const
 {
   Aws::StringStream ss;

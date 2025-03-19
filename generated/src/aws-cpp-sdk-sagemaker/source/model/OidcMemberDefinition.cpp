@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-OidcMemberDefinition::OidcMemberDefinition() : 
-    m_groupsHasBeenSet(false)
-{
-}
-
 OidcMemberDefinition::OidcMemberDefinition(JsonView jsonValue)
-  : OidcMemberDefinition()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ OidcMemberDefinition& OidcMemberDefinition::operator =(JsonView jsonValue)
     }
     m_groupsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ScalingPolicyObjective::ScalingPolicyObjective() : 
-    m_minInvocationsPerMinute(0),
-    m_minInvocationsPerMinuteHasBeenSet(false),
-    m_maxInvocationsPerMinute(0),
-    m_maxInvocationsPerMinuteHasBeenSet(false)
-{
-}
-
 ScalingPolicyObjective::ScalingPolicyObjective(JsonView jsonValue)
-  : ScalingPolicyObjective()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ScalingPolicyObjective& ScalingPolicyObjective::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MinInvocationsPerMinute"))
   {
     m_minInvocationsPerMinute = jsonValue.GetInteger("MinInvocationsPerMinute");
-
     m_minInvocationsPerMinuteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxInvocationsPerMinute"))
   {
     m_maxInvocationsPerMinute = jsonValue.GetInteger("MaxInvocationsPerMinute");
-
     m_maxInvocationsPerMinuteHasBeenSet = true;
   }
-
   return *this;
 }
 

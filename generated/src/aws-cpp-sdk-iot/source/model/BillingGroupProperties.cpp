@@ -18,13 +18,7 @@ namespace IoT
 namespace Model
 {
 
-BillingGroupProperties::BillingGroupProperties() : 
-    m_billingGroupDescriptionHasBeenSet(false)
-{
-}
-
 BillingGroupProperties::BillingGroupProperties(JsonView jsonValue)
-  : BillingGroupProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BillingGroupProperties& BillingGroupProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("billingGroupDescription"))
   {
     m_billingGroupDescription = jsonValue.GetString("billingGroupDescription");
-
     m_billingGroupDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

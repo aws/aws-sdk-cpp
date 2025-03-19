@@ -12,27 +12,6 @@ using namespace Aws::neptunedata::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartMLDataProcessingJobRequest::StartMLDataProcessingJobRequest() : 
-    m_idHasBeenSet(false),
-    m_previousDataProcessingJobIdHasBeenSet(false),
-    m_inputDataS3LocationHasBeenSet(false),
-    m_processedDataS3LocationHasBeenSet(false),
-    m_sagemakerIamRoleArnHasBeenSet(false),
-    m_neptuneIamRoleArnHasBeenSet(false),
-    m_processingInstanceTypeHasBeenSet(false),
-    m_processingInstanceVolumeSizeInGB(0),
-    m_processingInstanceVolumeSizeInGBHasBeenSet(false),
-    m_processingTimeOutInSeconds(0),
-    m_processingTimeOutInSecondsHasBeenSet(false),
-    m_modelTypeHasBeenSet(false),
-    m_configFileNameHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_volumeEncryptionKMSKeyHasBeenSet(false),
-    m_s3OutputEncryptionKMSKeyHasBeenSet(false)
-{
-}
-
 Aws::String StartMLDataProcessingJobRequest::SerializePayload() const
 {
   JsonValue payload;

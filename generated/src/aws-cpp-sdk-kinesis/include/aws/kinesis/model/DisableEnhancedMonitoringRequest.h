@@ -27,7 +27,7 @@ namespace Model
   class DisableEnhancedMonitoringRequest : public KinesisRequest
   {
   public:
-    AWS_KINESIS_API DisableEnhancedMonitoringRequest();
+    AWS_KINESIS_API DisableEnhancedMonitoringRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,14 +49,12 @@ namespace Model
      * <p>The name of the Kinesis data stream for which to disable enhanced
      * monitoring.</p>
      */
-    inline const Aws::String& GetStreamName() const{ return m_streamName; }
+    inline const Aws::String& GetStreamName() const { return m_streamName; }
     inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
-    inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
-    inline void SetStreamName(Aws::String&& value) { m_streamNameHasBeenSet = true; m_streamName = std::move(value); }
-    inline void SetStreamName(const char* value) { m_streamNameHasBeenSet = true; m_streamName.assign(value); }
-    inline DisableEnhancedMonitoringRequest& WithStreamName(const Aws::String& value) { SetStreamName(value); return *this;}
-    inline DisableEnhancedMonitoringRequest& WithStreamName(Aws::String&& value) { SetStreamName(std::move(value)); return *this;}
-    inline DisableEnhancedMonitoringRequest& WithStreamName(const char* value) { SetStreamName(value); return *this;}
+    template<typename StreamNameT = Aws::String>
+    void SetStreamName(StreamNameT&& value) { m_streamNameHasBeenSet = true; m_streamName = std::forward<StreamNameT>(value); }
+    template<typename StreamNameT = Aws::String>
+    DisableEnhancedMonitoringRequest& WithStreamName(StreamNameT&& value) { SetStreamName(std::forward<StreamNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,28 +72,25 @@ namespace Model
      * the Amazon Kinesis Data Streams Service with Amazon CloudWatch</a> in the
      * <i>Amazon Kinesis Data Streams Developer Guide</i>.</p>
      */
-    inline const Aws::Vector<MetricsName>& GetShardLevelMetrics() const{ return m_shardLevelMetrics; }
+    inline const Aws::Vector<MetricsName>& GetShardLevelMetrics() const { return m_shardLevelMetrics; }
     inline bool ShardLevelMetricsHasBeenSet() const { return m_shardLevelMetricsHasBeenSet; }
-    inline void SetShardLevelMetrics(const Aws::Vector<MetricsName>& value) { m_shardLevelMetricsHasBeenSet = true; m_shardLevelMetrics = value; }
-    inline void SetShardLevelMetrics(Aws::Vector<MetricsName>&& value) { m_shardLevelMetricsHasBeenSet = true; m_shardLevelMetrics = std::move(value); }
-    inline DisableEnhancedMonitoringRequest& WithShardLevelMetrics(const Aws::Vector<MetricsName>& value) { SetShardLevelMetrics(value); return *this;}
-    inline DisableEnhancedMonitoringRequest& WithShardLevelMetrics(Aws::Vector<MetricsName>&& value) { SetShardLevelMetrics(std::move(value)); return *this;}
-    inline DisableEnhancedMonitoringRequest& AddShardLevelMetrics(const MetricsName& value) { m_shardLevelMetricsHasBeenSet = true; m_shardLevelMetrics.push_back(value); return *this; }
-    inline DisableEnhancedMonitoringRequest& AddShardLevelMetrics(MetricsName&& value) { m_shardLevelMetricsHasBeenSet = true; m_shardLevelMetrics.push_back(std::move(value)); return *this; }
+    template<typename ShardLevelMetricsT = Aws::Vector<MetricsName>>
+    void SetShardLevelMetrics(ShardLevelMetricsT&& value) { m_shardLevelMetricsHasBeenSet = true; m_shardLevelMetrics = std::forward<ShardLevelMetricsT>(value); }
+    template<typename ShardLevelMetricsT = Aws::Vector<MetricsName>>
+    DisableEnhancedMonitoringRequest& WithShardLevelMetrics(ShardLevelMetricsT&& value) { SetShardLevelMetrics(std::forward<ShardLevelMetricsT>(value)); return *this;}
+    inline DisableEnhancedMonitoringRequest& AddShardLevelMetrics(MetricsName value) { m_shardLevelMetricsHasBeenSet = true; m_shardLevelMetrics.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the stream.</p>
      */
-    inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
+    inline const Aws::String& GetStreamARN() const { return m_streamARN; }
     inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
-    inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
-    inline void SetStreamARN(Aws::String&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::move(value); }
-    inline void SetStreamARN(const char* value) { m_streamARNHasBeenSet = true; m_streamARN.assign(value); }
-    inline DisableEnhancedMonitoringRequest& WithStreamARN(const Aws::String& value) { SetStreamARN(value); return *this;}
-    inline DisableEnhancedMonitoringRequest& WithStreamARN(Aws::String&& value) { SetStreamARN(std::move(value)); return *this;}
-    inline DisableEnhancedMonitoringRequest& WithStreamARN(const char* value) { SetStreamARN(value); return *this;}
+    template<typename StreamARNT = Aws::String>
+    void SetStreamARN(StreamARNT&& value) { m_streamARNHasBeenSet = true; m_streamARN = std::forward<StreamARNT>(value); }
+    template<typename StreamARNT = Aws::String>
+    DisableEnhancedMonitoringRequest& WithStreamARN(StreamARNT&& value) { SetStreamARN(std::forward<StreamARNT>(value)); return *this;}
     ///@}
   private:
 

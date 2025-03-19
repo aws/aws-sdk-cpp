@@ -31,7 +31,7 @@ namespace Model
   class BatchGetServiceLevelObjectiveBudgetReportResult
   {
   public:
-    AWS_APPLICATIONSIGNALS_API BatchGetServiceLevelObjectiveBudgetReportResult();
+    AWS_APPLICATIONSIGNALS_API BatchGetServiceLevelObjectiveBudgetReportResult() = default;
     AWS_APPLICATIONSIGNALS_API BatchGetServiceLevelObjectiveBudgetReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONSIGNALS_API BatchGetServiceLevelObjectiveBudgetReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,24 +41,24 @@ namespace Model
      * <p>The date and time that the report is for. It is expressed as the number of
      * milliseconds since Jan 1, 1970 00:00:00 UTC.</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestamp = std::move(value); }
-    inline BatchGetServiceLevelObjectiveBudgetReportResult& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline BatchGetServiceLevelObjectiveBudgetReportResult& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    BatchGetServiceLevelObjectiveBudgetReportResult& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of structures, where each structure is one budget report.</p>
      */
-    inline const Aws::Vector<ServiceLevelObjectiveBudgetReport>& GetReports() const{ return m_reports; }
-    inline void SetReports(const Aws::Vector<ServiceLevelObjectiveBudgetReport>& value) { m_reports = value; }
-    inline void SetReports(Aws::Vector<ServiceLevelObjectiveBudgetReport>&& value) { m_reports = std::move(value); }
-    inline BatchGetServiceLevelObjectiveBudgetReportResult& WithReports(const Aws::Vector<ServiceLevelObjectiveBudgetReport>& value) { SetReports(value); return *this;}
-    inline BatchGetServiceLevelObjectiveBudgetReportResult& WithReports(Aws::Vector<ServiceLevelObjectiveBudgetReport>&& value) { SetReports(std::move(value)); return *this;}
-    inline BatchGetServiceLevelObjectiveBudgetReportResult& AddReports(const ServiceLevelObjectiveBudgetReport& value) { m_reports.push_back(value); return *this; }
-    inline BatchGetServiceLevelObjectiveBudgetReportResult& AddReports(ServiceLevelObjectiveBudgetReport&& value) { m_reports.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ServiceLevelObjectiveBudgetReport>& GetReports() const { return m_reports; }
+    template<typename ReportsT = Aws::Vector<ServiceLevelObjectiveBudgetReport>>
+    void SetReports(ReportsT&& value) { m_reportsHasBeenSet = true; m_reports = std::forward<ReportsT>(value); }
+    template<typename ReportsT = Aws::Vector<ServiceLevelObjectiveBudgetReport>>
+    BatchGetServiceLevelObjectiveBudgetReportResult& WithReports(ReportsT&& value) { SetReports(std::forward<ReportsT>(value)); return *this;}
+    template<typename ReportsT = ServiceLevelObjectiveBudgetReport>
+    BatchGetServiceLevelObjectiveBudgetReportResult& AddReports(ReportsT&& value) { m_reportsHasBeenSet = true; m_reports.emplace_back(std::forward<ReportsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -66,34 +66,36 @@ namespace Model
      * <p>An array of structures, where each structure includes an error indicating
      * that one of the requests in the array was not valid.</p>
      */
-    inline const Aws::Vector<ServiceLevelObjectiveBudgetReportError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<ServiceLevelObjectiveBudgetReportError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<ServiceLevelObjectiveBudgetReportError>&& value) { m_errors = std::move(value); }
-    inline BatchGetServiceLevelObjectiveBudgetReportResult& WithErrors(const Aws::Vector<ServiceLevelObjectiveBudgetReportError>& value) { SetErrors(value); return *this;}
-    inline BatchGetServiceLevelObjectiveBudgetReportResult& WithErrors(Aws::Vector<ServiceLevelObjectiveBudgetReportError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchGetServiceLevelObjectiveBudgetReportResult& AddErrors(const ServiceLevelObjectiveBudgetReportError& value) { m_errors.push_back(value); return *this; }
-    inline BatchGetServiceLevelObjectiveBudgetReportResult& AddErrors(ServiceLevelObjectiveBudgetReportError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ServiceLevelObjectiveBudgetReportError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<ServiceLevelObjectiveBudgetReportError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<ServiceLevelObjectiveBudgetReportError>>
+    BatchGetServiceLevelObjectiveBudgetReportResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = ServiceLevelObjectiveBudgetReportError>
+    BatchGetServiceLevelObjectiveBudgetReportResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetServiceLevelObjectiveBudgetReportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetServiceLevelObjectiveBudgetReportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetServiceLevelObjectiveBudgetReportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetServiceLevelObjectiveBudgetReportResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
+    bool m_timestampHasBeenSet = false;
 
     Aws::Vector<ServiceLevelObjectiveBudgetReport> m_reports;
+    bool m_reportsHasBeenSet = false;
 
     Aws::Vector<ServiceLevelObjectiveBudgetReportError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

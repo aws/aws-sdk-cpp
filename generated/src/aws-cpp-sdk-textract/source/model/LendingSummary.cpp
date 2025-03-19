@@ -18,14 +18,7 @@ namespace Textract
 namespace Model
 {
 
-LendingSummary::LendingSummary() : 
-    m_documentGroupsHasBeenSet(false),
-    m_undetectedDocumentTypesHasBeenSet(false)
-{
-}
-
 LendingSummary::LendingSummary(JsonView jsonValue)
-  : LendingSummary()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ LendingSummary& LendingSummary::operator =(JsonView jsonValue)
     }
     m_documentGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UndetectedDocumentTypes"))
   {
     Aws::Utils::Array<JsonView> undetectedDocumentTypesJsonList = jsonValue.GetArray("UndetectedDocumentTypes");
@@ -51,7 +43,6 @@ LendingSummary& LendingSummary::operator =(JsonView jsonValue)
     }
     m_undetectedDocumentTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

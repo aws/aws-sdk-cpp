@@ -32,7 +32,7 @@ namespace Model
   class EncryptionEntity
   {
   public:
-    AWS_CLOUDFRONT_API EncryptionEntity();
+    AWS_CLOUDFRONT_API EncryptionEntity() = default;
     AWS_CLOUDFRONT_API EncryptionEntity(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API EncryptionEntity& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
      * <p>The public key associated with a set of field-level encryption patterns, to
      * be used when encrypting the fields that match the patterns.</p>
      */
-    inline const Aws::String& GetPublicKeyId() const{ return m_publicKeyId; }
+    inline const Aws::String& GetPublicKeyId() const { return m_publicKeyId; }
     inline bool PublicKeyIdHasBeenSet() const { return m_publicKeyIdHasBeenSet; }
-    inline void SetPublicKeyId(const Aws::String& value) { m_publicKeyIdHasBeenSet = true; m_publicKeyId = value; }
-    inline void SetPublicKeyId(Aws::String&& value) { m_publicKeyIdHasBeenSet = true; m_publicKeyId = std::move(value); }
-    inline void SetPublicKeyId(const char* value) { m_publicKeyIdHasBeenSet = true; m_publicKeyId.assign(value); }
-    inline EncryptionEntity& WithPublicKeyId(const Aws::String& value) { SetPublicKeyId(value); return *this;}
-    inline EncryptionEntity& WithPublicKeyId(Aws::String&& value) { SetPublicKeyId(std::move(value)); return *this;}
-    inline EncryptionEntity& WithPublicKeyId(const char* value) { SetPublicKeyId(value); return *this;}
+    template<typename PublicKeyIdT = Aws::String>
+    void SetPublicKeyId(PublicKeyIdT&& value) { m_publicKeyIdHasBeenSet = true; m_publicKeyId = std::forward<PublicKeyIdT>(value); }
+    template<typename PublicKeyIdT = Aws::String>
+    EncryptionEntity& WithPublicKeyId(PublicKeyIdT&& value) { SetPublicKeyId(std::forward<PublicKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * value must also be provided with the private key for applications to be able to
      * decrypt data.</p>
      */
-    inline const Aws::String& GetProviderId() const{ return m_providerId; }
+    inline const Aws::String& GetProviderId() const { return m_providerId; }
     inline bool ProviderIdHasBeenSet() const { return m_providerIdHasBeenSet; }
-    inline void SetProviderId(const Aws::String& value) { m_providerIdHasBeenSet = true; m_providerId = value; }
-    inline void SetProviderId(Aws::String&& value) { m_providerIdHasBeenSet = true; m_providerId = std::move(value); }
-    inline void SetProviderId(const char* value) { m_providerIdHasBeenSet = true; m_providerId.assign(value); }
-    inline EncryptionEntity& WithProviderId(const Aws::String& value) { SetProviderId(value); return *this;}
-    inline EncryptionEntity& WithProviderId(Aws::String&& value) { SetProviderId(std::move(value)); return *this;}
-    inline EncryptionEntity& WithProviderId(const char* value) { SetProviderId(value); return *this;}
+    template<typename ProviderIdT = Aws::String>
+    void SetProviderId(ProviderIdT&& value) { m_providerIdHasBeenSet = true; m_providerId = std::forward<ProviderIdT>(value); }
+    template<typename ProviderIdT = Aws::String>
+    EncryptionEntity& WithProviderId(ProviderIdT&& value) { SetProviderId(std::forward<ProviderIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,12 +74,12 @@ namespace Model
      * patterns. For example, you can't have both ABC* and AB*. Note that field
      * patterns are case-sensitive.</p>
      */
-    inline const FieldPatterns& GetFieldPatterns() const{ return m_fieldPatterns; }
+    inline const FieldPatterns& GetFieldPatterns() const { return m_fieldPatterns; }
     inline bool FieldPatternsHasBeenSet() const { return m_fieldPatternsHasBeenSet; }
-    inline void SetFieldPatterns(const FieldPatterns& value) { m_fieldPatternsHasBeenSet = true; m_fieldPatterns = value; }
-    inline void SetFieldPatterns(FieldPatterns&& value) { m_fieldPatternsHasBeenSet = true; m_fieldPatterns = std::move(value); }
-    inline EncryptionEntity& WithFieldPatterns(const FieldPatterns& value) { SetFieldPatterns(value); return *this;}
-    inline EncryptionEntity& WithFieldPatterns(FieldPatterns&& value) { SetFieldPatterns(std::move(value)); return *this;}
+    template<typename FieldPatternsT = FieldPatterns>
+    void SetFieldPatterns(FieldPatternsT&& value) { m_fieldPatternsHasBeenSet = true; m_fieldPatterns = std::forward<FieldPatternsT>(value); }
+    template<typename FieldPatternsT = FieldPatterns>
+    EncryptionEntity& WithFieldPatterns(FieldPatternsT&& value) { SetFieldPatterns(std::forward<FieldPatternsT>(value)); return *this;}
     ///@}
   private:
 

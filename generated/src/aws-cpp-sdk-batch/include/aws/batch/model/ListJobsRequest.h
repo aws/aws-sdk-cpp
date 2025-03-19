@@ -28,7 +28,7 @@ namespace Model
   class ListJobsRequest : public BatchRequest
   {
   public:
-    AWS_BATCH_API ListJobsRequest();
+    AWS_BATCH_API ListJobsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * <p>The name or full Amazon Resource Name (ARN) of the job queue used to list
      * jobs.</p>
      */
-    inline const Aws::String& GetJobQueue() const{ return m_jobQueue; }
+    inline const Aws::String& GetJobQueue() const { return m_jobQueue; }
     inline bool JobQueueHasBeenSet() const { return m_jobQueueHasBeenSet; }
-    inline void SetJobQueue(const Aws::String& value) { m_jobQueueHasBeenSet = true; m_jobQueue = value; }
-    inline void SetJobQueue(Aws::String&& value) { m_jobQueueHasBeenSet = true; m_jobQueue = std::move(value); }
-    inline void SetJobQueue(const char* value) { m_jobQueueHasBeenSet = true; m_jobQueue.assign(value); }
-    inline ListJobsRequest& WithJobQueue(const Aws::String& value) { SetJobQueue(value); return *this;}
-    inline ListJobsRequest& WithJobQueue(Aws::String&& value) { SetJobQueue(std::move(value)); return *this;}
-    inline ListJobsRequest& WithJobQueue(const char* value) { SetJobQueue(value); return *this;}
+    template<typename JobQueueT = Aws::String>
+    void SetJobQueue(JobQueueT&& value) { m_jobQueueHasBeenSet = true; m_jobQueue = std::forward<JobQueueT>(value); }
+    template<typename JobQueueT = Aws::String>
+    ListJobsRequest& WithJobQueue(JobQueueT&& value) { SetJobQueue(std::forward<JobQueueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The job ID for an array job. Specifying an array job ID with this parameter
      * lists all child jobs from within the specified array.</p>
      */
-    inline const Aws::String& GetArrayJobId() const{ return m_arrayJobId; }
+    inline const Aws::String& GetArrayJobId() const { return m_arrayJobId; }
     inline bool ArrayJobIdHasBeenSet() const { return m_arrayJobIdHasBeenSet; }
-    inline void SetArrayJobId(const Aws::String& value) { m_arrayJobIdHasBeenSet = true; m_arrayJobId = value; }
-    inline void SetArrayJobId(Aws::String&& value) { m_arrayJobIdHasBeenSet = true; m_arrayJobId = std::move(value); }
-    inline void SetArrayJobId(const char* value) { m_arrayJobIdHasBeenSet = true; m_arrayJobId.assign(value); }
-    inline ListJobsRequest& WithArrayJobId(const Aws::String& value) { SetArrayJobId(value); return *this;}
-    inline ListJobsRequest& WithArrayJobId(Aws::String&& value) { SetArrayJobId(std::move(value)); return *this;}
-    inline ListJobsRequest& WithArrayJobId(const char* value) { SetArrayJobId(value); return *this;}
+    template<typename ArrayJobIdT = Aws::String>
+    void SetArrayJobId(ArrayJobIdT&& value) { m_arrayJobIdHasBeenSet = true; m_arrayJobId = std::forward<ArrayJobIdT>(value); }
+    template<typename ArrayJobIdT = Aws::String>
+    ListJobsRequest& WithArrayJobId(ArrayJobIdT&& value) { SetArrayJobId(std::forward<ArrayJobIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * job ID with this parameter lists all nodes that are associated with the
      * specified job.</p>
      */
-    inline const Aws::String& GetMultiNodeJobId() const{ return m_multiNodeJobId; }
+    inline const Aws::String& GetMultiNodeJobId() const { return m_multiNodeJobId; }
     inline bool MultiNodeJobIdHasBeenSet() const { return m_multiNodeJobIdHasBeenSet; }
-    inline void SetMultiNodeJobId(const Aws::String& value) { m_multiNodeJobIdHasBeenSet = true; m_multiNodeJobId = value; }
-    inline void SetMultiNodeJobId(Aws::String&& value) { m_multiNodeJobIdHasBeenSet = true; m_multiNodeJobId = std::move(value); }
-    inline void SetMultiNodeJobId(const char* value) { m_multiNodeJobIdHasBeenSet = true; m_multiNodeJobId.assign(value); }
-    inline ListJobsRequest& WithMultiNodeJobId(const Aws::String& value) { SetMultiNodeJobId(value); return *this;}
-    inline ListJobsRequest& WithMultiNodeJobId(Aws::String&& value) { SetMultiNodeJobId(std::move(value)); return *this;}
-    inline ListJobsRequest& WithMultiNodeJobId(const char* value) { SetMultiNodeJobId(value); return *this;}
+    template<typename MultiNodeJobIdT = Aws::String>
+    void SetMultiNodeJobId(MultiNodeJobIdT&& value) { m_multiNodeJobIdHasBeenSet = true; m_multiNodeJobId = std::forward<MultiNodeJobIdT>(value); }
+    template<typename MultiNodeJobIdT = Aws::String>
+    ListJobsRequest& WithMultiNodeJobId(MultiNodeJobIdT&& value) { SetMultiNodeJobId(std::forward<MultiNodeJobIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,12 +86,10 @@ namespace Model
      * parameter is ignored and jobs with any status are returned. If you don't specify
      * a status, only <code>RUNNING</code> jobs are returned.</p>
      */
-    inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
+    inline JobStatus GetJobStatus() const { return m_jobStatus; }
     inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
-    inline void SetJobStatus(const JobStatus& value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
-    inline void SetJobStatus(JobStatus&& value) { m_jobStatusHasBeenSet = true; m_jobStatus = std::move(value); }
-    inline ListJobsRequest& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
-    inline ListJobsRequest& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
+    inline void SetJobStatus(JobStatus value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
+    inline ListJobsRequest& WithJobStatus(JobStatus value) { SetJobStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -115,7 +107,7 @@ namespace Model
      * up to 1000 results (jobs that are in the <code>RUNNING</code> status) and a
      * <code>nextToken</code> value, if applicable.</p> </li> </ul>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -131,14 +123,12 @@ namespace Model
      * <p>Treat this token as an opaque identifier that's only used to retrieve the
      * next items in a list and not for other programmatic purposes.</p> 
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListJobsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListJobsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListJobsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListJobsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -177,14 +167,14 @@ namespace Model
      * representation of the number of milliseconds since 00:00:00 UTC (midnight) on
      * January 1, 1970.</p> </dd> </dl>
      */
-    inline const Aws::Vector<KeyValuesPair>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<KeyValuesPair>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<KeyValuesPair>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<KeyValuesPair>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListJobsRequest& WithFilters(const Aws::Vector<KeyValuesPair>& value) { SetFilters(value); return *this;}
-    inline ListJobsRequest& WithFilters(Aws::Vector<KeyValuesPair>&& value) { SetFilters(std::move(value)); return *this;}
-    inline ListJobsRequest& AddFilters(const KeyValuesPair& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline ListJobsRequest& AddFilters(KeyValuesPair&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<KeyValuesPair>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<KeyValuesPair>>
+    ListJobsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = KeyValuesPair>
+    ListJobsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
   private:
 
@@ -197,10 +187,10 @@ namespace Model
     Aws::String m_multiNodeJobId;
     bool m_multiNodeJobIdHasBeenSet = false;
 
-    JobStatus m_jobStatus;
+    JobStatus m_jobStatus{JobStatus::NOT_SET};
     bool m_jobStatusHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

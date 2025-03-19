@@ -32,7 +32,7 @@ namespace Model
   class TermRelations
   {
   public:
-    AWS_DATAZONE_API TermRelations();
+    AWS_DATAZONE_API TermRelations() = default;
     AWS_DATAZONE_API TermRelations(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API TermRelations& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,30 +42,28 @@ namespace Model
     /**
      * <p>The classifies of the term relations.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetClassifies() const{ return m_classifies; }
+    inline const Aws::Vector<Aws::String>& GetClassifies() const { return m_classifies; }
     inline bool ClassifiesHasBeenSet() const { return m_classifiesHasBeenSet; }
-    inline void SetClassifies(const Aws::Vector<Aws::String>& value) { m_classifiesHasBeenSet = true; m_classifies = value; }
-    inline void SetClassifies(Aws::Vector<Aws::String>&& value) { m_classifiesHasBeenSet = true; m_classifies = std::move(value); }
-    inline TermRelations& WithClassifies(const Aws::Vector<Aws::String>& value) { SetClassifies(value); return *this;}
-    inline TermRelations& WithClassifies(Aws::Vector<Aws::String>&& value) { SetClassifies(std::move(value)); return *this;}
-    inline TermRelations& AddClassifies(const Aws::String& value) { m_classifiesHasBeenSet = true; m_classifies.push_back(value); return *this; }
-    inline TermRelations& AddClassifies(Aws::String&& value) { m_classifiesHasBeenSet = true; m_classifies.push_back(std::move(value)); return *this; }
-    inline TermRelations& AddClassifies(const char* value) { m_classifiesHasBeenSet = true; m_classifies.push_back(value); return *this; }
+    template<typename ClassifiesT = Aws::Vector<Aws::String>>
+    void SetClassifies(ClassifiesT&& value) { m_classifiesHasBeenSet = true; m_classifies = std::forward<ClassifiesT>(value); }
+    template<typename ClassifiesT = Aws::Vector<Aws::String>>
+    TermRelations& WithClassifies(ClassifiesT&& value) { SetClassifies(std::forward<ClassifiesT>(value)); return *this;}
+    template<typename ClassifiesT = Aws::String>
+    TermRelations& AddClassifies(ClassifiesT&& value) { m_classifiesHasBeenSet = true; m_classifies.emplace_back(std::forward<ClassifiesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The <code>isA</code> property of the term relations.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetIsA() const{ return m_isA; }
+    inline const Aws::Vector<Aws::String>& GetIsA() const { return m_isA; }
     inline bool IsAHasBeenSet() const { return m_isAHasBeenSet; }
-    inline void SetIsA(const Aws::Vector<Aws::String>& value) { m_isAHasBeenSet = true; m_isA = value; }
-    inline void SetIsA(Aws::Vector<Aws::String>&& value) { m_isAHasBeenSet = true; m_isA = std::move(value); }
-    inline TermRelations& WithIsA(const Aws::Vector<Aws::String>& value) { SetIsA(value); return *this;}
-    inline TermRelations& WithIsA(Aws::Vector<Aws::String>&& value) { SetIsA(std::move(value)); return *this;}
-    inline TermRelations& AddIsA(const Aws::String& value) { m_isAHasBeenSet = true; m_isA.push_back(value); return *this; }
-    inline TermRelations& AddIsA(Aws::String&& value) { m_isAHasBeenSet = true; m_isA.push_back(std::move(value)); return *this; }
-    inline TermRelations& AddIsA(const char* value) { m_isAHasBeenSet = true; m_isA.push_back(value); return *this; }
+    template<typename IsAT = Aws::Vector<Aws::String>>
+    void SetIsA(IsAT&& value) { m_isAHasBeenSet = true; m_isA = std::forward<IsAT>(value); }
+    template<typename IsAT = Aws::Vector<Aws::String>>
+    TermRelations& WithIsA(IsAT&& value) { SetIsA(std::forward<IsAT>(value)); return *this;}
+    template<typename IsAT = Aws::String>
+    TermRelations& AddIsA(IsAT&& value) { m_isAHasBeenSet = true; m_isA.emplace_back(std::forward<IsAT>(value)); return *this; }
     ///@}
   private:
 

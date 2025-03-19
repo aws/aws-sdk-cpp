@@ -18,17 +18,7 @@ namespace FMS
 namespace Model
 {
 
-DeleteNetworkAclEntriesAction::DeleteNetworkAclEntriesAction() : 
-    m_descriptionHasBeenSet(false),
-    m_networkAclIdHasBeenSet(false),
-    m_networkAclEntriesToBeDeletedHasBeenSet(false),
-    m_fMSCanRemediate(false),
-    m_fMSCanRemediateHasBeenSet(false)
-{
-}
-
 DeleteNetworkAclEntriesAction::DeleteNetworkAclEntriesAction(JsonView jsonValue)
-  : DeleteNetworkAclEntriesAction()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ DeleteNetworkAclEntriesAction& DeleteNetworkAclEntriesAction::operator =(JsonVie
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkAclId"))
   {
     m_networkAclId = jsonValue.GetObject("NetworkAclId");
-
     m_networkAclIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkAclEntriesToBeDeleted"))
   {
     Aws::Utils::Array<JsonView> networkAclEntriesToBeDeletedJsonList = jsonValue.GetArray("NetworkAclEntriesToBeDeleted");
@@ -58,14 +44,11 @@ DeleteNetworkAclEntriesAction& DeleteNetworkAclEntriesAction::operator =(JsonVie
     }
     m_networkAclEntriesToBeDeletedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FMSCanRemediate"))
   {
     m_fMSCanRemediate = jsonValue.GetBool("FMSCanRemediate");
-
     m_fMSCanRemediateHasBeenSet = true;
   }
-
   return *this;
 }
 

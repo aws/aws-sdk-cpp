@@ -20,14 +20,7 @@ namespace SimpleDB
 namespace Model
 {
 
-InvalidQueryExpression::InvalidQueryExpression() : 
-    m_boxUsage(0.0),
-    m_boxUsageHasBeenSet(false)
-{
-}
-
 InvalidQueryExpression::InvalidQueryExpression(const XmlNode& xmlNode)
-  : InvalidQueryExpression()
 {
   *this = xmlNode;
 }

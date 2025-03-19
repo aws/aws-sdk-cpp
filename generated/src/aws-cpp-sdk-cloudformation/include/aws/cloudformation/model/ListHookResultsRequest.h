@@ -22,7 +22,7 @@ namespace Model
   class ListHookResultsRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API ListHookResultsRequest();
+    AWS_CLOUDFORMATION_API ListHookResultsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,12 +41,10 @@ namespace Model
     /**
      * <p>The type of operation being targeted by the Hook.</p>
      */
-    inline const ListHookResultsTargetType& GetTargetType() const{ return m_targetType; }
+    inline ListHookResultsTargetType GetTargetType() const { return m_targetType; }
     inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
-    inline void SetTargetType(const ListHookResultsTargetType& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
-    inline void SetTargetType(ListHookResultsTargetType&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
-    inline ListHookResultsRequest& WithTargetType(const ListHookResultsTargetType& value) { SetTargetType(value); return *this;}
-    inline ListHookResultsRequest& WithTargetType(ListHookResultsTargetType&& value) { SetTargetType(std::move(value)); return *this;}
+    inline void SetTargetType(ListHookResultsTargetType value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
+    inline ListHookResultsRequest& WithTargetType(ListHookResultsTargetType value) { SetTargetType(value); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <code>HookRequestToken</code>, see <a
      * href="https://docs.aws.amazon.com/cloudcontrolapi/latest/APIReference/API_ProgressEvent.html">ProgressEvent</a>.</p>
      */
-    inline const Aws::String& GetTargetId() const{ return m_targetId; }
+    inline const Aws::String& GetTargetId() const { return m_targetId; }
     inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
-    inline void SetTargetId(const Aws::String& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
-    inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = std::move(value); }
-    inline void SetTargetId(const char* value) { m_targetIdHasBeenSet = true; m_targetId.assign(value); }
-    inline ListHookResultsRequest& WithTargetId(const Aws::String& value) { SetTargetId(value); return *this;}
-    inline ListHookResultsRequest& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
-    inline ListHookResultsRequest& WithTargetId(const char* value) { SetTargetId(value); return *this;}
+    template<typename TargetIdT = Aws::String>
+    void SetTargetId(TargetIdT&& value) { m_targetIdHasBeenSet = true; m_targetId = std::forward<TargetIdT>(value); }
+    template<typename TargetIdT = Aws::String>
+    ListHookResultsRequest& WithTargetId(TargetIdT&& value) { SetTargetId(std::forward<TargetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,18 +69,16 @@ namespace Model
      * <p>A string that identifies the next page of events that you want to
      * retrieve.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListHookResultsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListHookResultsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListHookResultsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListHookResultsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
-    ListHookResultsTargetType m_targetType;
+    ListHookResultsTargetType m_targetType{ListHookResultsTargetType::NOT_SET};
     bool m_targetTypeHasBeenSet = false;
 
     Aws::String m_targetId;

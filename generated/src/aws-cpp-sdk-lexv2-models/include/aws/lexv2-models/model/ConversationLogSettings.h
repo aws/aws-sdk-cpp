@@ -34,7 +34,7 @@ namespace Model
   class ConversationLogSettings
   {
   public:
-    AWS_LEXMODELSV2_API ConversationLogSettings();
+    AWS_LEXMODELSV2_API ConversationLogSettings() = default;
     AWS_LEXMODELSV2_API ConversationLogSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API ConversationLogSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,28 @@ namespace Model
     /**
      * <p>The Amazon CloudWatch Logs settings for logging text and metadata.</p>
      */
-    inline const Aws::Vector<TextLogSetting>& GetTextLogSettings() const{ return m_textLogSettings; }
+    inline const Aws::Vector<TextLogSetting>& GetTextLogSettings() const { return m_textLogSettings; }
     inline bool TextLogSettingsHasBeenSet() const { return m_textLogSettingsHasBeenSet; }
-    inline void SetTextLogSettings(const Aws::Vector<TextLogSetting>& value) { m_textLogSettingsHasBeenSet = true; m_textLogSettings = value; }
-    inline void SetTextLogSettings(Aws::Vector<TextLogSetting>&& value) { m_textLogSettingsHasBeenSet = true; m_textLogSettings = std::move(value); }
-    inline ConversationLogSettings& WithTextLogSettings(const Aws::Vector<TextLogSetting>& value) { SetTextLogSettings(value); return *this;}
-    inline ConversationLogSettings& WithTextLogSettings(Aws::Vector<TextLogSetting>&& value) { SetTextLogSettings(std::move(value)); return *this;}
-    inline ConversationLogSettings& AddTextLogSettings(const TextLogSetting& value) { m_textLogSettingsHasBeenSet = true; m_textLogSettings.push_back(value); return *this; }
-    inline ConversationLogSettings& AddTextLogSettings(TextLogSetting&& value) { m_textLogSettingsHasBeenSet = true; m_textLogSettings.push_back(std::move(value)); return *this; }
+    template<typename TextLogSettingsT = Aws::Vector<TextLogSetting>>
+    void SetTextLogSettings(TextLogSettingsT&& value) { m_textLogSettingsHasBeenSet = true; m_textLogSettings = std::forward<TextLogSettingsT>(value); }
+    template<typename TextLogSettingsT = Aws::Vector<TextLogSetting>>
+    ConversationLogSettings& WithTextLogSettings(TextLogSettingsT&& value) { SetTextLogSettings(std::forward<TextLogSettingsT>(value)); return *this;}
+    template<typename TextLogSettingsT = TextLogSetting>
+    ConversationLogSettings& AddTextLogSettings(TextLogSettingsT&& value) { m_textLogSettingsHasBeenSet = true; m_textLogSettings.emplace_back(std::forward<TextLogSettingsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Amazon S3 settings for logging audio to an S3 bucket.</p>
      */
-    inline const Aws::Vector<AudioLogSetting>& GetAudioLogSettings() const{ return m_audioLogSettings; }
+    inline const Aws::Vector<AudioLogSetting>& GetAudioLogSettings() const { return m_audioLogSettings; }
     inline bool AudioLogSettingsHasBeenSet() const { return m_audioLogSettingsHasBeenSet; }
-    inline void SetAudioLogSettings(const Aws::Vector<AudioLogSetting>& value) { m_audioLogSettingsHasBeenSet = true; m_audioLogSettings = value; }
-    inline void SetAudioLogSettings(Aws::Vector<AudioLogSetting>&& value) { m_audioLogSettingsHasBeenSet = true; m_audioLogSettings = std::move(value); }
-    inline ConversationLogSettings& WithAudioLogSettings(const Aws::Vector<AudioLogSetting>& value) { SetAudioLogSettings(value); return *this;}
-    inline ConversationLogSettings& WithAudioLogSettings(Aws::Vector<AudioLogSetting>&& value) { SetAudioLogSettings(std::move(value)); return *this;}
-    inline ConversationLogSettings& AddAudioLogSettings(const AudioLogSetting& value) { m_audioLogSettingsHasBeenSet = true; m_audioLogSettings.push_back(value); return *this; }
-    inline ConversationLogSettings& AddAudioLogSettings(AudioLogSetting&& value) { m_audioLogSettingsHasBeenSet = true; m_audioLogSettings.push_back(std::move(value)); return *this; }
+    template<typename AudioLogSettingsT = Aws::Vector<AudioLogSetting>>
+    void SetAudioLogSettings(AudioLogSettingsT&& value) { m_audioLogSettingsHasBeenSet = true; m_audioLogSettings = std::forward<AudioLogSettingsT>(value); }
+    template<typename AudioLogSettingsT = Aws::Vector<AudioLogSetting>>
+    ConversationLogSettings& WithAudioLogSettings(AudioLogSettingsT&& value) { SetAudioLogSettings(std::forward<AudioLogSettingsT>(value)); return *this;}
+    template<typename AudioLogSettingsT = AudioLogSetting>
+    ConversationLogSettings& AddAudioLogSettings(AudioLogSettingsT&& value) { m_audioLogSettingsHasBeenSet = true; m_audioLogSettings.emplace_back(std::forward<AudioLogSettingsT>(value)); return *this; }
     ///@}
   private:
 

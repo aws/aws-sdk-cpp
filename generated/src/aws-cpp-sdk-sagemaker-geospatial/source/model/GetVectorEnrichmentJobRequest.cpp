@@ -12,11 +12,6 @@ using namespace Aws::SageMakerGeospatial::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetVectorEnrichmentJobRequest::GetVectorEnrichmentJobRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String GetVectorEnrichmentJobRequest::SerializePayload() const
 {
   return {};

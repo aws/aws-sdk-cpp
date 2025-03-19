@@ -33,7 +33,7 @@ namespace Model
   class AuthorizedTokenIssuer
   {
   public:
-    AWS_REDSHIFT_API AuthorizedTokenIssuer();
+    AWS_REDSHIFT_API AuthorizedTokenIssuer() = default;
     AWS_REDSHIFT_API AuthorizedTokenIssuer(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API AuthorizedTokenIssuer& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,14 +46,12 @@ namespace Model
      * <p>The ARN for the authorized token issuer for integrating Amazon Redshift with
      * IDC Identity Center.</p>
      */
-    inline const Aws::String& GetTrustedTokenIssuerArn() const{ return m_trustedTokenIssuerArn; }
+    inline const Aws::String& GetTrustedTokenIssuerArn() const { return m_trustedTokenIssuerArn; }
     inline bool TrustedTokenIssuerArnHasBeenSet() const { return m_trustedTokenIssuerArnHasBeenSet; }
-    inline void SetTrustedTokenIssuerArn(const Aws::String& value) { m_trustedTokenIssuerArnHasBeenSet = true; m_trustedTokenIssuerArn = value; }
-    inline void SetTrustedTokenIssuerArn(Aws::String&& value) { m_trustedTokenIssuerArnHasBeenSet = true; m_trustedTokenIssuerArn = std::move(value); }
-    inline void SetTrustedTokenIssuerArn(const char* value) { m_trustedTokenIssuerArnHasBeenSet = true; m_trustedTokenIssuerArn.assign(value); }
-    inline AuthorizedTokenIssuer& WithTrustedTokenIssuerArn(const Aws::String& value) { SetTrustedTokenIssuerArn(value); return *this;}
-    inline AuthorizedTokenIssuer& WithTrustedTokenIssuerArn(Aws::String&& value) { SetTrustedTokenIssuerArn(std::move(value)); return *this;}
-    inline AuthorizedTokenIssuer& WithTrustedTokenIssuerArn(const char* value) { SetTrustedTokenIssuerArn(value); return *this;}
+    template<typename TrustedTokenIssuerArnT = Aws::String>
+    void SetTrustedTokenIssuerArn(TrustedTokenIssuerArnT&& value) { m_trustedTokenIssuerArnHasBeenSet = true; m_trustedTokenIssuerArn = std::forward<TrustedTokenIssuerArnT>(value); }
+    template<typename TrustedTokenIssuerArnT = Aws::String>
+    AuthorizedTokenIssuer& WithTrustedTokenIssuerArn(TrustedTokenIssuerArnT&& value) { SetTrustedTokenIssuerArn(std::forward<TrustedTokenIssuerArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,15 +59,14 @@ namespace Model
      * <p>The list of audiences for the authorized token issuer for integrating Amazon
      * Redshift with IDC Identity Center.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAuthorizedAudiencesList() const{ return m_authorizedAudiencesList; }
+    inline const Aws::Vector<Aws::String>& GetAuthorizedAudiencesList() const { return m_authorizedAudiencesList; }
     inline bool AuthorizedAudiencesListHasBeenSet() const { return m_authorizedAudiencesListHasBeenSet; }
-    inline void SetAuthorizedAudiencesList(const Aws::Vector<Aws::String>& value) { m_authorizedAudiencesListHasBeenSet = true; m_authorizedAudiencesList = value; }
-    inline void SetAuthorizedAudiencesList(Aws::Vector<Aws::String>&& value) { m_authorizedAudiencesListHasBeenSet = true; m_authorizedAudiencesList = std::move(value); }
-    inline AuthorizedTokenIssuer& WithAuthorizedAudiencesList(const Aws::Vector<Aws::String>& value) { SetAuthorizedAudiencesList(value); return *this;}
-    inline AuthorizedTokenIssuer& WithAuthorizedAudiencesList(Aws::Vector<Aws::String>&& value) { SetAuthorizedAudiencesList(std::move(value)); return *this;}
-    inline AuthorizedTokenIssuer& AddAuthorizedAudiencesList(const Aws::String& value) { m_authorizedAudiencesListHasBeenSet = true; m_authorizedAudiencesList.push_back(value); return *this; }
-    inline AuthorizedTokenIssuer& AddAuthorizedAudiencesList(Aws::String&& value) { m_authorizedAudiencesListHasBeenSet = true; m_authorizedAudiencesList.push_back(std::move(value)); return *this; }
-    inline AuthorizedTokenIssuer& AddAuthorizedAudiencesList(const char* value) { m_authorizedAudiencesListHasBeenSet = true; m_authorizedAudiencesList.push_back(value); return *this; }
+    template<typename AuthorizedAudiencesListT = Aws::Vector<Aws::String>>
+    void SetAuthorizedAudiencesList(AuthorizedAudiencesListT&& value) { m_authorizedAudiencesListHasBeenSet = true; m_authorizedAudiencesList = std::forward<AuthorizedAudiencesListT>(value); }
+    template<typename AuthorizedAudiencesListT = Aws::Vector<Aws::String>>
+    AuthorizedTokenIssuer& WithAuthorizedAudiencesList(AuthorizedAudiencesListT&& value) { SetAuthorizedAudiencesList(std::forward<AuthorizedAudiencesListT>(value)); return *this;}
+    template<typename AuthorizedAudiencesListT = Aws::String>
+    AuthorizedTokenIssuer& AddAuthorizedAudiencesList(AuthorizedAudiencesListT&& value) { m_authorizedAudiencesListHasBeenSet = true; m_authorizedAudiencesList.emplace_back(std::forward<AuthorizedAudiencesListT>(value)); return *this; }
     ///@}
   private:
 

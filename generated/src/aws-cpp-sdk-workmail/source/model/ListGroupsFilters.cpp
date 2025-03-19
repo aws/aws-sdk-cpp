@@ -18,16 +18,7 @@ namespace WorkMail
 namespace Model
 {
 
-ListGroupsFilters::ListGroupsFilters() : 
-    m_namePrefixHasBeenSet(false),
-    m_primaryEmailPrefixHasBeenSet(false),
-    m_state(EntityState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 ListGroupsFilters::ListGroupsFilters(JsonView jsonValue)
-  : ListGroupsFilters()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ListGroupsFilters& ListGroupsFilters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NamePrefix"))
   {
     m_namePrefix = jsonValue.GetString("NamePrefix");
-
     m_namePrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryEmailPrefix"))
   {
     m_primaryEmailPrefix = jsonValue.GetString("PrimaryEmailPrefix");
-
     m_primaryEmailPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = EntityStateMapper::GetEntityStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

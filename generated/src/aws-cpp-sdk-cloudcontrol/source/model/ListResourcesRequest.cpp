@@ -12,17 +12,6 @@ using namespace Aws::CloudControlApi::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListResourcesRequest::ListResourcesRequest() : 
-    m_typeNameHasBeenSet(false),
-    m_typeVersionIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_resourceModelHasBeenSet(false)
-{
-}
-
 Aws::String ListResourcesRequest::SerializePayload() const
 {
   JsonValue payload;

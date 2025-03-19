@@ -22,7 +22,7 @@ namespace Model
   class GetTaskProtectionRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API GetTaskProtectionRequest();
+    AWS_ECS_API GetTaskProtectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,29 +40,26 @@ namespace Model
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
      * the service that the task sets exist in.</p>
      */
-    inline const Aws::String& GetCluster() const{ return m_cluster; }
+    inline const Aws::String& GetCluster() const { return m_cluster; }
     inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
-    inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
-    inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
-    inline GetTaskProtectionRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
-    inline GetTaskProtectionRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
-    inline GetTaskProtectionRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+    template<typename ClusterT = Aws::String>
+    void SetCluster(ClusterT&& value) { m_clusterHasBeenSet = true; m_cluster = std::forward<ClusterT>(value); }
+    template<typename ClusterT = Aws::String>
+    GetTaskProtectionRequest& WithCluster(ClusterT&& value) { SetCluster(std::forward<ClusterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of up to 100 task IDs or full ARN entries.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTasks() const{ return m_tasks; }
+    inline const Aws::Vector<Aws::String>& GetTasks() const { return m_tasks; }
     inline bool TasksHasBeenSet() const { return m_tasksHasBeenSet; }
-    inline void SetTasks(const Aws::Vector<Aws::String>& value) { m_tasksHasBeenSet = true; m_tasks = value; }
-    inline void SetTasks(Aws::Vector<Aws::String>&& value) { m_tasksHasBeenSet = true; m_tasks = std::move(value); }
-    inline GetTaskProtectionRequest& WithTasks(const Aws::Vector<Aws::String>& value) { SetTasks(value); return *this;}
-    inline GetTaskProtectionRequest& WithTasks(Aws::Vector<Aws::String>&& value) { SetTasks(std::move(value)); return *this;}
-    inline GetTaskProtectionRequest& AddTasks(const Aws::String& value) { m_tasksHasBeenSet = true; m_tasks.push_back(value); return *this; }
-    inline GetTaskProtectionRequest& AddTasks(Aws::String&& value) { m_tasksHasBeenSet = true; m_tasks.push_back(std::move(value)); return *this; }
-    inline GetTaskProtectionRequest& AddTasks(const char* value) { m_tasksHasBeenSet = true; m_tasks.push_back(value); return *this; }
+    template<typename TasksT = Aws::Vector<Aws::String>>
+    void SetTasks(TasksT&& value) { m_tasksHasBeenSet = true; m_tasks = std::forward<TasksT>(value); }
+    template<typename TasksT = Aws::Vector<Aws::String>>
+    GetTaskProtectionRequest& WithTasks(TasksT&& value) { SetTasks(std::forward<TasksT>(value)); return *this;}
+    template<typename TasksT = Aws::String>
+    GetTaskProtectionRequest& AddTasks(TasksT&& value) { m_tasksHasBeenSet = true; m_tasks.emplace_back(std::forward<TasksT>(value)); return *this; }
     ///@}
   private:
 

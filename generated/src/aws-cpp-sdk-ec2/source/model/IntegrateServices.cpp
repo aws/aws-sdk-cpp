@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-IntegrateServices::IntegrateServices() : 
-    m_athenaIntegrationsHasBeenSet(false)
-{
-}
-
 IntegrateServices::IntegrateServices(const XmlNode& xmlNode)
-  : IntegrateServices()
 {
   *this = xmlNode;
 }
@@ -41,6 +35,7 @@ IntegrateServices& IntegrateServices::operator =(const XmlNode& xmlNode)
     if(!athenaIntegrationsNode.IsNull())
     {
       XmlNode athenaIntegrationsMember = athenaIntegrationsNode.FirstChild("item");
+      m_athenaIntegrationsHasBeenSet = !athenaIntegrationsMember.IsNull();
       while(!athenaIntegrationsMember.IsNull())
       {
         m_athenaIntegrations.push_back(athenaIntegrationsMember);

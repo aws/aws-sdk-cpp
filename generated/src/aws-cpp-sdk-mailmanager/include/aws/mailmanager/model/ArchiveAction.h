@@ -33,7 +33,7 @@ namespace Model
   class ArchiveAction
   {
   public:
-    AWS_MAILMANAGER_API ArchiveAction();
+    AWS_MAILMANAGER_API ArchiveAction() = default;
     AWS_MAILMANAGER_API ArchiveAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API ArchiveAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,30 +45,26 @@ namespace Model
      * if there are configuration errors. For example, the specified archive has been
      * deleted.</p>
      */
-    inline const ActionFailurePolicy& GetActionFailurePolicy() const{ return m_actionFailurePolicy; }
+    inline ActionFailurePolicy GetActionFailurePolicy() const { return m_actionFailurePolicy; }
     inline bool ActionFailurePolicyHasBeenSet() const { return m_actionFailurePolicyHasBeenSet; }
-    inline void SetActionFailurePolicy(const ActionFailurePolicy& value) { m_actionFailurePolicyHasBeenSet = true; m_actionFailurePolicy = value; }
-    inline void SetActionFailurePolicy(ActionFailurePolicy&& value) { m_actionFailurePolicyHasBeenSet = true; m_actionFailurePolicy = std::move(value); }
-    inline ArchiveAction& WithActionFailurePolicy(const ActionFailurePolicy& value) { SetActionFailurePolicy(value); return *this;}
-    inline ArchiveAction& WithActionFailurePolicy(ActionFailurePolicy&& value) { SetActionFailurePolicy(std::move(value)); return *this;}
+    inline void SetActionFailurePolicy(ActionFailurePolicy value) { m_actionFailurePolicyHasBeenSet = true; m_actionFailurePolicy = value; }
+    inline ArchiveAction& WithActionFailurePolicy(ActionFailurePolicy value) { SetActionFailurePolicy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the archive to send the email to.</p>
      */
-    inline const Aws::String& GetTargetArchive() const{ return m_targetArchive; }
+    inline const Aws::String& GetTargetArchive() const { return m_targetArchive; }
     inline bool TargetArchiveHasBeenSet() const { return m_targetArchiveHasBeenSet; }
-    inline void SetTargetArchive(const Aws::String& value) { m_targetArchiveHasBeenSet = true; m_targetArchive = value; }
-    inline void SetTargetArchive(Aws::String&& value) { m_targetArchiveHasBeenSet = true; m_targetArchive = std::move(value); }
-    inline void SetTargetArchive(const char* value) { m_targetArchiveHasBeenSet = true; m_targetArchive.assign(value); }
-    inline ArchiveAction& WithTargetArchive(const Aws::String& value) { SetTargetArchive(value); return *this;}
-    inline ArchiveAction& WithTargetArchive(Aws::String&& value) { SetTargetArchive(std::move(value)); return *this;}
-    inline ArchiveAction& WithTargetArchive(const char* value) { SetTargetArchive(value); return *this;}
+    template<typename TargetArchiveT = Aws::String>
+    void SetTargetArchive(TargetArchiveT&& value) { m_targetArchiveHasBeenSet = true; m_targetArchive = std::forward<TargetArchiveT>(value); }
+    template<typename TargetArchiveT = Aws::String>
+    ArchiveAction& WithTargetArchive(TargetArchiveT&& value) { SetTargetArchive(std::forward<TargetArchiveT>(value)); return *this;}
     ///@}
   private:
 
-    ActionFailurePolicy m_actionFailurePolicy;
+    ActionFailurePolicy m_actionFailurePolicy{ActionFailurePolicy::NOT_SET};
     bool m_actionFailurePolicyHasBeenSet = false;
 
     Aws::String m_targetArchive;

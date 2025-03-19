@@ -32,7 +32,7 @@ namespace Model
   class InventoryRetrievalJobDescription
   {
   public:
-    AWS_GLACIER_API InventoryRetrievalJobDescription();
+    AWS_GLACIER_API InventoryRetrievalJobDescription() = default;
     AWS_GLACIER_API InventoryRetrievalJobDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLACIER_API InventoryRetrievalJobDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLACIER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <b>InitiateJob</b> request when initiating a job to retrieve a vault inventory.
      * Valid values are <code>CSV</code> and <code>JSON</code>.</p>
      */
-    inline const Aws::String& GetFormat() const{ return m_format; }
+    inline const Aws::String& GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(Aws::String&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline void SetFormat(const char* value) { m_formatHasBeenSet = true; m_format.assign(value); }
-    inline InventoryRetrievalJobDescription& WithFormat(const Aws::String& value) { SetFormat(value); return *this;}
-    inline InventoryRetrievalJobDescription& WithFormat(Aws::String&& value) { SetFormat(std::move(value)); return *this;}
-    inline InventoryRetrievalJobDescription& WithFormat(const char* value) { SetFormat(value); return *this;}
+    template<typename FormatT = Aws::String>
+    void SetFormat(FormatT&& value) { m_formatHasBeenSet = true; m_format = std::forward<FormatT>(value); }
+    template<typename FormatT = Aws::String>
+    InventoryRetrievalJobDescription& WithFormat(FormatT&& value) { SetFormat(std::forward<FormatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * value should be a string in the ISO 8601 date format, for example
      * <code>2013-03-20T17:03:43Z</code>.</p>
      */
-    inline const Aws::String& GetStartDate() const{ return m_startDate; }
+    inline const Aws::String& GetStartDate() const { return m_startDate; }
     inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
-    inline void SetStartDate(const Aws::String& value) { m_startDateHasBeenSet = true; m_startDate = value; }
-    inline void SetStartDate(Aws::String&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
-    inline void SetStartDate(const char* value) { m_startDateHasBeenSet = true; m_startDate.assign(value); }
-    inline InventoryRetrievalJobDescription& WithStartDate(const Aws::String& value) { SetStartDate(value); return *this;}
-    inline InventoryRetrievalJobDescription& WithStartDate(Aws::String&& value) { SetStartDate(std::move(value)); return *this;}
-    inline InventoryRetrievalJobDescription& WithStartDate(const char* value) { SetStartDate(value); return *this;}
+    template<typename StartDateT = Aws::String>
+    void SetStartDate(StartDateT&& value) { m_startDateHasBeenSet = true; m_startDate = std::forward<StartDateT>(value); }
+    template<typename StartDateT = Aws::String>
+    InventoryRetrievalJobDescription& WithStartDate(StartDateT&& value) { SetStartDate(std::forward<StartDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * archives created before this date. This value should be a string in the ISO 8601
      * date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
-    inline const Aws::String& GetEndDate() const{ return m_endDate; }
+    inline const Aws::String& GetEndDate() const { return m_endDate; }
     inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
-    inline void SetEndDate(const Aws::String& value) { m_endDateHasBeenSet = true; m_endDate = value; }
-    inline void SetEndDate(Aws::String&& value) { m_endDateHasBeenSet = true; m_endDate = std::move(value); }
-    inline void SetEndDate(const char* value) { m_endDateHasBeenSet = true; m_endDate.assign(value); }
-    inline InventoryRetrievalJobDescription& WithEndDate(const Aws::String& value) { SetEndDate(value); return *this;}
-    inline InventoryRetrievalJobDescription& WithEndDate(Aws::String&& value) { SetEndDate(std::move(value)); return *this;}
-    inline InventoryRetrievalJobDescription& WithEndDate(const char* value) { SetEndDate(value); return *this;}
+    template<typename EndDateT = Aws::String>
+    void SetEndDate(EndDateT&& value) { m_endDateHasBeenSet = true; m_endDate = std::forward<EndDateT>(value); }
+    template<typename EndDateT = Aws::String>
+    InventoryRetrievalJobDescription& WithEndDate(EndDateT&& value) { SetEndDate(std::forward<EndDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,14 +87,12 @@ namespace Model
      * request. This limit is set when initiating the job with the a <b>InitiateJob</b>
      * request. </p>
      */
-    inline const Aws::String& GetLimit() const{ return m_limit; }
+    inline const Aws::String& GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
-    inline void SetLimit(const Aws::String& value) { m_limitHasBeenSet = true; m_limit = value; }
-    inline void SetLimit(Aws::String&& value) { m_limitHasBeenSet = true; m_limit = std::move(value); }
-    inline void SetLimit(const char* value) { m_limitHasBeenSet = true; m_limit.assign(value); }
-    inline InventoryRetrievalJobDescription& WithLimit(const Aws::String& value) { SetLimit(value); return *this;}
-    inline InventoryRetrievalJobDescription& WithLimit(Aws::String&& value) { SetLimit(std::move(value)); return *this;}
-    inline InventoryRetrievalJobDescription& WithLimit(const char* value) { SetLimit(value); return *this;}
+    template<typename LimitT = Aws::String>
+    void SetLimit(LimitT&& value) { m_limitHasBeenSet = true; m_limit = std::forward<LimitT>(value); }
+    template<typename LimitT = Aws::String>
+    InventoryRetrievalJobDescription& WithLimit(LimitT&& value) { SetLimit(std::forward<LimitT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,14 +104,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html#api-initiate-job-post-vault-inventory-list-filtering">
      * Range Inventory Retrieval</a>.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline InventoryRetrievalJobDescription& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline InventoryRetrievalJobDescription& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline InventoryRetrievalJobDescription& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    InventoryRetrievalJobDescription& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
   private:
 

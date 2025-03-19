@@ -28,7 +28,7 @@ namespace Model
   class ImportDatasetResult
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API ImportDatasetResult();
+    AWS_LOOKOUTEQUIPMENT_API ImportDatasetResult() = default;
     AWS_LOOKOUTEQUIPMENT_API ImportDatasetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOOKOUTEQUIPMENT_API ImportDatasetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,73 +37,68 @@ namespace Model
     /**
      * <p>The name of the created machine learning dataset.</p>
      */
-    inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
-    inline void SetDatasetName(const Aws::String& value) { m_datasetName = value; }
-    inline void SetDatasetName(Aws::String&& value) { m_datasetName = std::move(value); }
-    inline void SetDatasetName(const char* value) { m_datasetName.assign(value); }
-    inline ImportDatasetResult& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
-    inline ImportDatasetResult& WithDatasetName(Aws::String&& value) { SetDatasetName(std::move(value)); return *this;}
-    inline ImportDatasetResult& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
+    inline const Aws::String& GetDatasetName() const { return m_datasetName; }
+    template<typename DatasetNameT = Aws::String>
+    void SetDatasetName(DatasetNameT&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::forward<DatasetNameT>(value); }
+    template<typename DatasetNameT = Aws::String>
+    ImportDatasetResult& WithDatasetName(DatasetNameT&& value) { SetDatasetName(std::forward<DatasetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the dataset that was imported.</p>
      */
-    inline const Aws::String& GetDatasetArn() const{ return m_datasetArn; }
-    inline void SetDatasetArn(const Aws::String& value) { m_datasetArn = value; }
-    inline void SetDatasetArn(Aws::String&& value) { m_datasetArn = std::move(value); }
-    inline void SetDatasetArn(const char* value) { m_datasetArn.assign(value); }
-    inline ImportDatasetResult& WithDatasetArn(const Aws::String& value) { SetDatasetArn(value); return *this;}
-    inline ImportDatasetResult& WithDatasetArn(Aws::String&& value) { SetDatasetArn(std::move(value)); return *this;}
-    inline ImportDatasetResult& WithDatasetArn(const char* value) { SetDatasetArn(value); return *this;}
+    inline const Aws::String& GetDatasetArn() const { return m_datasetArn; }
+    template<typename DatasetArnT = Aws::String>
+    void SetDatasetArn(DatasetArnT&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::forward<DatasetArnT>(value); }
+    template<typename DatasetArnT = Aws::String>
+    ImportDatasetResult& WithDatasetArn(DatasetArnT&& value) { SetDatasetArn(std::forward<DatasetArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the <code>ImportDataset</code> operation.</p>
      */
-    inline const DatasetStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const DatasetStatus& value) { m_status = value; }
-    inline void SetStatus(DatasetStatus&& value) { m_status = std::move(value); }
-    inline ImportDatasetResult& WithStatus(const DatasetStatus& value) { SetStatus(value); return *this;}
-    inline ImportDatasetResult& WithStatus(DatasetStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline DatasetStatus GetStatus() const { return m_status; }
+    inline void SetStatus(DatasetStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ImportDatasetResult& WithStatus(DatasetStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the job of importing the dataset.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
-    inline void SetJobId(const Aws::String& value) { m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobId.assign(value); }
-    inline ImportDatasetResult& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline ImportDatasetResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline ImportDatasetResult& WithJobId(const char* value) { SetJobId(value); return *this;}
+    inline const Aws::String& GetJobId() const { return m_jobId; }
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    ImportDatasetResult& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ImportDatasetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ImportDatasetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ImportDatasetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ImportDatasetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_datasetName;
+    bool m_datasetNameHasBeenSet = false;
 
     Aws::String m_datasetArn;
+    bool m_datasetArnHasBeenSet = false;
 
-    DatasetStatus m_status;
+    DatasetStatus m_status{DatasetStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_jobId;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

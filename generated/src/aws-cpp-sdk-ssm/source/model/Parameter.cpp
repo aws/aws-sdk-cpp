@@ -18,23 +18,7 @@ namespace SSM
 namespace Model
 {
 
-Parameter::Parameter() : 
-    m_nameHasBeenSet(false),
-    m_type(ParameterType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_selectorHasBeenSet(false),
-    m_sourceResultHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_dataTypeHasBeenSet(false)
-{
-}
-
 Parameter::Parameter(JsonView jsonValue)
-  : Parameter()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ Parameter& Parameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ParameterTypeMapper::GetParameterTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetInt64("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Selector"))
   {
     m_selector = jsonValue.GetString("Selector");
-
     m_selectorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceResult"))
   {
     m_sourceResult = jsonValue.GetString("SourceResult");
-
     m_sourceResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataType"))
   {
     m_dataType = jsonValue.GetString("DataType");
-
     m_dataTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

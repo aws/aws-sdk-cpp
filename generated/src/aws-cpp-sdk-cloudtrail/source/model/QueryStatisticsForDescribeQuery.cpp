@@ -18,21 +18,7 @@ namespace CloudTrail
 namespace Model
 {
 
-QueryStatisticsForDescribeQuery::QueryStatisticsForDescribeQuery() : 
-    m_eventsMatched(0),
-    m_eventsMatchedHasBeenSet(false),
-    m_eventsScanned(0),
-    m_eventsScannedHasBeenSet(false),
-    m_bytesScanned(0),
-    m_bytesScannedHasBeenSet(false),
-    m_executionTimeInMillis(0),
-    m_executionTimeInMillisHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
-{
-}
-
 QueryStatisticsForDescribeQuery::QueryStatisticsForDescribeQuery(JsonView jsonValue)
-  : QueryStatisticsForDescribeQuery()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ QueryStatisticsForDescribeQuery& QueryStatisticsForDescribeQuery::operator =(Jso
   if(jsonValue.ValueExists("EventsMatched"))
   {
     m_eventsMatched = jsonValue.GetInt64("EventsMatched");
-
     m_eventsMatchedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventsScanned"))
   {
     m_eventsScanned = jsonValue.GetInt64("EventsScanned");
-
     m_eventsScannedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BytesScanned"))
   {
     m_bytesScanned = jsonValue.GetInt64("BytesScanned");
-
     m_bytesScannedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionTimeInMillis"))
   {
     m_executionTimeInMillis = jsonValue.GetInteger("ExecutionTimeInMillis");
-
     m_executionTimeInMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

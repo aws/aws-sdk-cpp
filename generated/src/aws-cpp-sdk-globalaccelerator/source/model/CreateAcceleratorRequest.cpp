@@ -12,19 +12,6 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAcceleratorRequest::CreateAcceleratorRequest() : 
-    m_nameHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false),
-    m_ipAddressesHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_idempotencyTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateAcceleratorRequest::SerializePayload() const
 {
   JsonValue payload;

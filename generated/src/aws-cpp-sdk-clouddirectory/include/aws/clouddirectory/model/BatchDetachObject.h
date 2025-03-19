@@ -33,7 +33,7 @@ namespace Model
   class BatchDetachObject
   {
   public:
-    AWS_CLOUDDIRECTORY_API BatchDetachObject();
+    AWS_CLOUDDIRECTORY_API BatchDetachObject() = default;
     AWS_CLOUDDIRECTORY_API BatchDetachObject(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API BatchDetachObject& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,24 @@ namespace Model
      * <p>Parent reference from which the object with the specified link name is
      * detached.</p>
      */
-    inline const ObjectReference& GetParentReference() const{ return m_parentReference; }
+    inline const ObjectReference& GetParentReference() const { return m_parentReference; }
     inline bool ParentReferenceHasBeenSet() const { return m_parentReferenceHasBeenSet; }
-    inline void SetParentReference(const ObjectReference& value) { m_parentReferenceHasBeenSet = true; m_parentReference = value; }
-    inline void SetParentReference(ObjectReference&& value) { m_parentReferenceHasBeenSet = true; m_parentReference = std::move(value); }
-    inline BatchDetachObject& WithParentReference(const ObjectReference& value) { SetParentReference(value); return *this;}
-    inline BatchDetachObject& WithParentReference(ObjectReference&& value) { SetParentReference(std::move(value)); return *this;}
+    template<typename ParentReferenceT = ObjectReference>
+    void SetParentReference(ParentReferenceT&& value) { m_parentReferenceHasBeenSet = true; m_parentReference = std::forward<ParentReferenceT>(value); }
+    template<typename ParentReferenceT = ObjectReference>
+    BatchDetachObject& WithParentReference(ParentReferenceT&& value) { SetParentReference(std::forward<ParentReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the link.</p>
      */
-    inline const Aws::String& GetLinkName() const{ return m_linkName; }
+    inline const Aws::String& GetLinkName() const { return m_linkName; }
     inline bool LinkNameHasBeenSet() const { return m_linkNameHasBeenSet; }
-    inline void SetLinkName(const Aws::String& value) { m_linkNameHasBeenSet = true; m_linkName = value; }
-    inline void SetLinkName(Aws::String&& value) { m_linkNameHasBeenSet = true; m_linkName = std::move(value); }
-    inline void SetLinkName(const char* value) { m_linkNameHasBeenSet = true; m_linkName.assign(value); }
-    inline BatchDetachObject& WithLinkName(const Aws::String& value) { SetLinkName(value); return *this;}
-    inline BatchDetachObject& WithLinkName(Aws::String&& value) { SetLinkName(std::move(value)); return *this;}
-    inline BatchDetachObject& WithLinkName(const char* value) { SetLinkName(value); return *this;}
+    template<typename LinkNameT = Aws::String>
+    void SetLinkName(LinkNameT&& value) { m_linkNameHasBeenSet = true; m_linkName = std::forward<LinkNameT>(value); }
+    template<typename LinkNameT = Aws::String>
+    BatchDetachObject& WithLinkName(LinkNameT&& value) { SetLinkName(std::forward<LinkNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +70,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction
      * Support</a> for more information.</p>
      */
-    inline const Aws::String& GetBatchReferenceName() const{ return m_batchReferenceName; }
+    inline const Aws::String& GetBatchReferenceName() const { return m_batchReferenceName; }
     inline bool BatchReferenceNameHasBeenSet() const { return m_batchReferenceNameHasBeenSet; }
-    inline void SetBatchReferenceName(const Aws::String& value) { m_batchReferenceNameHasBeenSet = true; m_batchReferenceName = value; }
-    inline void SetBatchReferenceName(Aws::String&& value) { m_batchReferenceNameHasBeenSet = true; m_batchReferenceName = std::move(value); }
-    inline void SetBatchReferenceName(const char* value) { m_batchReferenceNameHasBeenSet = true; m_batchReferenceName.assign(value); }
-    inline BatchDetachObject& WithBatchReferenceName(const Aws::String& value) { SetBatchReferenceName(value); return *this;}
-    inline BatchDetachObject& WithBatchReferenceName(Aws::String&& value) { SetBatchReferenceName(std::move(value)); return *this;}
-    inline BatchDetachObject& WithBatchReferenceName(const char* value) { SetBatchReferenceName(value); return *this;}
+    template<typename BatchReferenceNameT = Aws::String>
+    void SetBatchReferenceName(BatchReferenceNameT&& value) { m_batchReferenceNameHasBeenSet = true; m_batchReferenceName = std::forward<BatchReferenceNameT>(value); }
+    template<typename BatchReferenceNameT = Aws::String>
+    BatchDetachObject& WithBatchReferenceName(BatchReferenceNameT&& value) { SetBatchReferenceName(std::forward<BatchReferenceNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -31,7 +31,7 @@ namespace Model
   class DnsEntry
   {
   public:
-    AWS_EC2_API DnsEntry();
+    AWS_EC2_API DnsEntry() = default;
     AWS_EC2_API DnsEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API DnsEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The DNS name.</p>
      */
-    inline const Aws::String& GetDnsName() const{ return m_dnsName; }
+    inline const Aws::String& GetDnsName() const { return m_dnsName; }
     inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }
-    inline void SetDnsName(const Aws::String& value) { m_dnsNameHasBeenSet = true; m_dnsName = value; }
-    inline void SetDnsName(Aws::String&& value) { m_dnsNameHasBeenSet = true; m_dnsName = std::move(value); }
-    inline void SetDnsName(const char* value) { m_dnsNameHasBeenSet = true; m_dnsName.assign(value); }
-    inline DnsEntry& WithDnsName(const Aws::String& value) { SetDnsName(value); return *this;}
-    inline DnsEntry& WithDnsName(Aws::String&& value) { SetDnsName(std::move(value)); return *this;}
-    inline DnsEntry& WithDnsName(const char* value) { SetDnsName(value); return *this;}
+    template<typename DnsNameT = Aws::String>
+    void SetDnsName(DnsNameT&& value) { m_dnsNameHasBeenSet = true; m_dnsName = std::forward<DnsNameT>(value); }
+    template<typename DnsNameT = Aws::String>
+    DnsEntry& WithDnsName(DnsNameT&& value) { SetDnsName(std::forward<DnsNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the private hosted zone.</p>
      */
-    inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
+    inline const Aws::String& GetHostedZoneId() const { return m_hostedZoneId; }
     inline bool HostedZoneIdHasBeenSet() const { return m_hostedZoneIdHasBeenSet; }
-    inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
-    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
-    inline void SetHostedZoneId(const char* value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId.assign(value); }
-    inline DnsEntry& WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
-    inline DnsEntry& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
-    inline DnsEntry& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
+    template<typename HostedZoneIdT = Aws::String>
+    void SetHostedZoneId(HostedZoneIdT&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::forward<HostedZoneIdT>(value); }
+    template<typename HostedZoneIdT = Aws::String>
+    DnsEntry& WithHostedZoneId(HostedZoneIdT&& value) { SetHostedZoneId(std::forward<HostedZoneIdT>(value)); return *this;}
     ///@}
   private:
 

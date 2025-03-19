@@ -21,7 +21,7 @@ namespace Model
   class DeleteIpamPoolRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DeleteIpamPoolRequest();
+    AWS_EC2_API DeleteIpamPoolRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DeleteIpamPoolRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -53,14 +53,12 @@ namespace Model
     /**
      * <p>The ID of the pool to delete.</p>
      */
-    inline const Aws::String& GetIpamPoolId() const{ return m_ipamPoolId; }
+    inline const Aws::String& GetIpamPoolId() const { return m_ipamPoolId; }
     inline bool IpamPoolIdHasBeenSet() const { return m_ipamPoolIdHasBeenSet; }
-    inline void SetIpamPoolId(const Aws::String& value) { m_ipamPoolIdHasBeenSet = true; m_ipamPoolId = value; }
-    inline void SetIpamPoolId(Aws::String&& value) { m_ipamPoolIdHasBeenSet = true; m_ipamPoolId = std::move(value); }
-    inline void SetIpamPoolId(const char* value) { m_ipamPoolIdHasBeenSet = true; m_ipamPoolId.assign(value); }
-    inline DeleteIpamPoolRequest& WithIpamPoolId(const Aws::String& value) { SetIpamPoolId(value); return *this;}
-    inline DeleteIpamPoolRequest& WithIpamPoolId(Aws::String&& value) { SetIpamPoolId(std::move(value)); return *this;}
-    inline DeleteIpamPoolRequest& WithIpamPoolId(const char* value) { SetIpamPoolId(value); return *this;}
+    template<typename IpamPoolIdT = Aws::String>
+    void SetIpamPoolId(IpamPoolIdT&& value) { m_ipamPoolIdHasBeenSet = true; m_ipamPoolId = std::forward<IpamPoolIdT>(value); }
+    template<typename IpamPoolIdT = Aws::String>
+    DeleteIpamPoolRequest& WithIpamPoolId(IpamPoolIdT&& value) { SetIpamPoolId(std::forward<IpamPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,20 +69,20 @@ namespace Model
      * the public scope with a source resource. A source resource is a resource used to
      * provision CIDRs to a resource planning pool.</p> 
      */
-    inline bool GetCascade() const{ return m_cascade; }
+    inline bool GetCascade() const { return m_cascade; }
     inline bool CascadeHasBeenSet() const { return m_cascadeHasBeenSet; }
     inline void SetCascade(bool value) { m_cascadeHasBeenSet = true; m_cascade = value; }
     inline DeleteIpamPoolRequest& WithCascade(bool value) { SetCascade(value); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_ipamPoolId;
     bool m_ipamPoolIdHasBeenSet = false;
 
-    bool m_cascade;
+    bool m_cascade{false};
     bool m_cascadeHasBeenSet = false;
   };
 

@@ -29,7 +29,7 @@ namespace Model
   class ListShardsResult
   {
   public:
-    AWS_KINESIS_API ListShardsResult();
+    AWS_KINESIS_API ListShardsResult() = default;
     AWS_KINESIS_API ListShardsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KINESIS_API ListShardsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,13 +41,13 @@ namespace Model
      * shard's parent. Each object also contains the starting and ending hash keys and
      * the starting and ending sequence numbers for the shard.</p>
      */
-    inline const Aws::Vector<Shard>& GetShards() const{ return m_shards; }
-    inline void SetShards(const Aws::Vector<Shard>& value) { m_shards = value; }
-    inline void SetShards(Aws::Vector<Shard>&& value) { m_shards = std::move(value); }
-    inline ListShardsResult& WithShards(const Aws::Vector<Shard>& value) { SetShards(value); return *this;}
-    inline ListShardsResult& WithShards(Aws::Vector<Shard>&& value) { SetShards(std::move(value)); return *this;}
-    inline ListShardsResult& AddShards(const Shard& value) { m_shards.push_back(value); return *this; }
-    inline ListShardsResult& AddShards(Shard&& value) { m_shards.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Shard>& GetShards() const { return m_shards; }
+    template<typename ShardsT = Aws::Vector<Shard>>
+    void SetShards(ShardsT&& value) { m_shardsHasBeenSet = true; m_shards = std::forward<ShardsT>(value); }
+    template<typename ShardsT = Aws::Vector<Shard>>
+    ListShardsResult& WithShards(ShardsT&& value) { SetShards(std::forward<ShardsT>(value)); return *this;}
+    template<typename ShardsT = Shard>
+    ListShardsResult& AddShards(ShardsT&& value) { m_shardsHasBeenSet = true; m_shards.emplace_back(std::forward<ShardsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -66,32 +66,31 @@ namespace Model
      * <code>ListShards</code>, you get <code>ExpiredNextTokenException</code>.</p>
      * 
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListShardsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListShardsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListShardsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListShardsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListShardsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListShardsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListShardsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListShardsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Shard> m_shards;
+    bool m_shardsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

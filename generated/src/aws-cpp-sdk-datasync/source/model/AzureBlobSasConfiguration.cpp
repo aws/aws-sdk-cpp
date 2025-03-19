@@ -18,13 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-AzureBlobSasConfiguration::AzureBlobSasConfiguration() : 
-    m_tokenHasBeenSet(false)
-{
-}
-
 AzureBlobSasConfiguration::AzureBlobSasConfiguration(JsonView jsonValue)
-  : AzureBlobSasConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AzureBlobSasConfiguration& AzureBlobSasConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Token"))
   {
     m_token = jsonValue.GetString("Token");
-
     m_tokenHasBeenSet = true;
   }
-
   return *this;
 }
 

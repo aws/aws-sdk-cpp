@@ -12,11 +12,6 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTrustStoreRequest::GetTrustStoreRequest() : 
-    m_trustStoreArnHasBeenSet(false)
-{
-}
-
 Aws::String GetTrustStoreRequest::SerializePayload() const
 {
   return {};

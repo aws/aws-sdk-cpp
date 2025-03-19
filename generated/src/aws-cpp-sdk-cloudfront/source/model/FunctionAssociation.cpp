@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-FunctionAssociation::FunctionAssociation() : 
-    m_functionARNHasBeenSet(false),
-    m_eventType(EventType::NOT_SET),
-    m_eventTypeHasBeenSet(false)
-{
-}
-
 FunctionAssociation::FunctionAssociation(const XmlNode& xmlNode)
-  : FunctionAssociation()
 {
   *this = xmlNode;
 }
@@ -48,7 +40,7 @@ FunctionAssociation& FunctionAssociation::operator =(const XmlNode& xmlNode)
     XmlNode eventTypeNode = resultNode.FirstChild("EventType");
     if(!eventTypeNode.IsNull())
     {
-      m_eventType = EventTypeMapper::GetEventTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(eventTypeNode.GetText()).c_str()).c_str());
+      m_eventType = EventTypeMapper::GetEventTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(eventTypeNode.GetText()).c_str()));
       m_eventTypeHasBeenSet = true;
     }
   }

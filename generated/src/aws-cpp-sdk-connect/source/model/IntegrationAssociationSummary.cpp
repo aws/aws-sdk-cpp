@@ -18,22 +18,7 @@ namespace Connect
 namespace Model
 {
 
-IntegrationAssociationSummary::IntegrationAssociationSummary() : 
-    m_integrationAssociationIdHasBeenSet(false),
-    m_integrationAssociationArnHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_integrationType(IntegrationType::NOT_SET),
-    m_integrationTypeHasBeenSet(false),
-    m_integrationArnHasBeenSet(false),
-    m_sourceApplicationUrlHasBeenSet(false),
-    m_sourceApplicationNameHasBeenSet(false),
-    m_sourceType(SourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false)
-{
-}
-
 IntegrationAssociationSummary::IntegrationAssociationSummary(JsonView jsonValue)
-  : IntegrationAssociationSummary()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ IntegrationAssociationSummary& IntegrationAssociationSummary::operator =(JsonVie
   if(jsonValue.ValueExists("IntegrationAssociationId"))
   {
     m_integrationAssociationId = jsonValue.GetString("IntegrationAssociationId");
-
     m_integrationAssociationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IntegrationAssociationArn"))
   {
     m_integrationAssociationArn = jsonValue.GetString("IntegrationAssociationArn");
-
     m_integrationAssociationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IntegrationType"))
   {
     m_integrationType = IntegrationTypeMapper::GetIntegrationTypeForName(jsonValue.GetString("IntegrationType"));
-
     m_integrationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IntegrationArn"))
   {
     m_integrationArn = jsonValue.GetString("IntegrationArn");
-
     m_integrationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceApplicationUrl"))
   {
     m_sourceApplicationUrl = jsonValue.GetString("SourceApplicationUrl");
-
     m_sourceApplicationUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceApplicationName"))
   {
     m_sourceApplicationName = jsonValue.GetString("SourceApplicationName");
-
     m_sourceApplicationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceType"))
   {
     m_sourceType = SourceTypeMapper::GetSourceTypeForName(jsonValue.GetString("SourceType"));
-
     m_sourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

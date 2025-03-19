@@ -29,7 +29,7 @@ namespace Model
   class ListResourceTelemetryResult
   {
   public:
-    AWS_OBSERVABILITYADMIN_API ListResourceTelemetryResult();
+    AWS_OBSERVABILITYADMIN_API ListResourceTelemetryResult() = default;
     AWS_OBSERVABILITYADMIN_API ListResourceTelemetryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OBSERVABILITYADMIN_API ListResourceTelemetryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p> A list of telemetry configurations for AWS resources supported by telemetry
      * config in the caller's account. </p>
      */
-    inline const Aws::Vector<TelemetryConfiguration>& GetTelemetryConfigurations() const{ return m_telemetryConfigurations; }
-    inline void SetTelemetryConfigurations(const Aws::Vector<TelemetryConfiguration>& value) { m_telemetryConfigurations = value; }
-    inline void SetTelemetryConfigurations(Aws::Vector<TelemetryConfiguration>&& value) { m_telemetryConfigurations = std::move(value); }
-    inline ListResourceTelemetryResult& WithTelemetryConfigurations(const Aws::Vector<TelemetryConfiguration>& value) { SetTelemetryConfigurations(value); return *this;}
-    inline ListResourceTelemetryResult& WithTelemetryConfigurations(Aws::Vector<TelemetryConfiguration>&& value) { SetTelemetryConfigurations(std::move(value)); return *this;}
-    inline ListResourceTelemetryResult& AddTelemetryConfigurations(const TelemetryConfiguration& value) { m_telemetryConfigurations.push_back(value); return *this; }
-    inline ListResourceTelemetryResult& AddTelemetryConfigurations(TelemetryConfiguration&& value) { m_telemetryConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TelemetryConfiguration>& GetTelemetryConfigurations() const { return m_telemetryConfigurations; }
+    template<typename TelemetryConfigurationsT = Aws::Vector<TelemetryConfiguration>>
+    void SetTelemetryConfigurations(TelemetryConfigurationsT&& value) { m_telemetryConfigurationsHasBeenSet = true; m_telemetryConfigurations = std::forward<TelemetryConfigurationsT>(value); }
+    template<typename TelemetryConfigurationsT = Aws::Vector<TelemetryConfiguration>>
+    ListResourceTelemetryResult& WithTelemetryConfigurations(TelemetryConfigurationsT&& value) { SetTelemetryConfigurations(std::forward<TelemetryConfigurationsT>(value)); return *this;}
+    template<typename TelemetryConfigurationsT = TelemetryConfiguration>
+    ListResourceTelemetryResult& AddTelemetryConfigurations(TelemetryConfigurationsT&& value) { m_telemetryConfigurationsHasBeenSet = true; m_telemetryConfigurations.emplace_back(std::forward<TelemetryConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p> The token for the next set of items to return. A previous call generates
      * this token. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListResourceTelemetryResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListResourceTelemetryResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListResourceTelemetryResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListResourceTelemetryResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListResourceTelemetryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListResourceTelemetryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListResourceTelemetryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListResourceTelemetryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TelemetryConfiguration> m_telemetryConfigurations;
+    bool m_telemetryConfigurationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

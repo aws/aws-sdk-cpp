@@ -33,7 +33,7 @@ namespace Model
   class ExecutionAttempt
   {
   public:
-    AWS_GLUE_API ExecutionAttempt();
+    AWS_GLUE_API ExecutionAttempt() = default;
     AWS_GLUE_API ExecutionAttempt(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API ExecutionAttempt& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,62 +43,56 @@ namespace Model
     /**
      * <p>The status of the last column statistics task run.</p>
      */
-    inline const ExecutionStatus& GetStatus() const{ return m_status; }
+    inline ExecutionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ExecutionAttempt& WithStatus(const ExecutionStatus& value) { SetStatus(value); return *this;}
-    inline ExecutionAttempt& WithStatus(ExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ExecutionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ExecutionAttempt& WithStatus(ExecutionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A task run ID for the last column statistics task run.</p>
      */
-    inline const Aws::String& GetColumnStatisticsTaskRunId() const{ return m_columnStatisticsTaskRunId; }
+    inline const Aws::String& GetColumnStatisticsTaskRunId() const { return m_columnStatisticsTaskRunId; }
     inline bool ColumnStatisticsTaskRunIdHasBeenSet() const { return m_columnStatisticsTaskRunIdHasBeenSet; }
-    inline void SetColumnStatisticsTaskRunId(const Aws::String& value) { m_columnStatisticsTaskRunIdHasBeenSet = true; m_columnStatisticsTaskRunId = value; }
-    inline void SetColumnStatisticsTaskRunId(Aws::String&& value) { m_columnStatisticsTaskRunIdHasBeenSet = true; m_columnStatisticsTaskRunId = std::move(value); }
-    inline void SetColumnStatisticsTaskRunId(const char* value) { m_columnStatisticsTaskRunIdHasBeenSet = true; m_columnStatisticsTaskRunId.assign(value); }
-    inline ExecutionAttempt& WithColumnStatisticsTaskRunId(const Aws::String& value) { SetColumnStatisticsTaskRunId(value); return *this;}
-    inline ExecutionAttempt& WithColumnStatisticsTaskRunId(Aws::String&& value) { SetColumnStatisticsTaskRunId(std::move(value)); return *this;}
-    inline ExecutionAttempt& WithColumnStatisticsTaskRunId(const char* value) { SetColumnStatisticsTaskRunId(value); return *this;}
+    template<typename ColumnStatisticsTaskRunIdT = Aws::String>
+    void SetColumnStatisticsTaskRunId(ColumnStatisticsTaskRunIdT&& value) { m_columnStatisticsTaskRunIdHasBeenSet = true; m_columnStatisticsTaskRunId = std::forward<ColumnStatisticsTaskRunIdT>(value); }
+    template<typename ColumnStatisticsTaskRunIdT = Aws::String>
+    ExecutionAttempt& WithColumnStatisticsTaskRunId(ColumnStatisticsTaskRunIdT&& value) { SetColumnStatisticsTaskRunId(std::forward<ColumnStatisticsTaskRunIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp when the last column statistics task run occurred.</p>
      */
-    inline const Aws::Utils::DateTime& GetExecutionTimestamp() const{ return m_executionTimestamp; }
+    inline const Aws::Utils::DateTime& GetExecutionTimestamp() const { return m_executionTimestamp; }
     inline bool ExecutionTimestampHasBeenSet() const { return m_executionTimestampHasBeenSet; }
-    inline void SetExecutionTimestamp(const Aws::Utils::DateTime& value) { m_executionTimestampHasBeenSet = true; m_executionTimestamp = value; }
-    inline void SetExecutionTimestamp(Aws::Utils::DateTime&& value) { m_executionTimestampHasBeenSet = true; m_executionTimestamp = std::move(value); }
-    inline ExecutionAttempt& WithExecutionTimestamp(const Aws::Utils::DateTime& value) { SetExecutionTimestamp(value); return *this;}
-    inline ExecutionAttempt& WithExecutionTimestamp(Aws::Utils::DateTime&& value) { SetExecutionTimestamp(std::move(value)); return *this;}
+    template<typename ExecutionTimestampT = Aws::Utils::DateTime>
+    void SetExecutionTimestamp(ExecutionTimestampT&& value) { m_executionTimestampHasBeenSet = true; m_executionTimestamp = std::forward<ExecutionTimestampT>(value); }
+    template<typename ExecutionTimestampT = Aws::Utils::DateTime>
+    ExecutionAttempt& WithExecutionTimestamp(ExecutionTimestampT&& value) { SetExecutionTimestamp(std::forward<ExecutionTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An error message associated with the last column statistics task run.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline ExecutionAttempt& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline ExecutionAttempt& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline ExecutionAttempt& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    ExecutionAttempt& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
   private:
 
-    ExecutionStatus m_status;
+    ExecutionStatus m_status{ExecutionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_columnStatisticsTaskRunId;
     bool m_columnStatisticsTaskRunIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_executionTimestamp;
+    Aws::Utils::DateTime m_executionTimestamp{};
     bool m_executionTimestampHasBeenSet = false;
 
     Aws::String m_errorMessage;

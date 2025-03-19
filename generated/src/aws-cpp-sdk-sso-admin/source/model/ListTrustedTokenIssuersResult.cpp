@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTrustedTokenIssuersResult::ListTrustedTokenIssuersResult()
-{
-}
-
 ListTrustedTokenIssuersResult::ListTrustedTokenIssuersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListTrustedTokenIssuersResult& ListTrustedTokenIssuersResult::operator =(const A
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrustedTokenIssuers"))
   {
     Aws::Utils::Array<JsonView> trustedTokenIssuersJsonList = jsonValue.GetArray("TrustedTokenIssuers");
@@ -42,14 +37,15 @@ ListTrustedTokenIssuersResult& ListTrustedTokenIssuersResult::operator =(const A
     {
       m_trustedTokenIssuers.push_back(trustedTokenIssuersJsonList[trustedTokenIssuersIndex].AsObject());
     }
+    m_trustedTokenIssuersHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

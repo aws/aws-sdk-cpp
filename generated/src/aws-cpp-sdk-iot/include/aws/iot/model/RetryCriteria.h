@@ -32,7 +32,7 @@ namespace Model
   class RetryCriteria
   {
   public:
-    AWS_IOT_API RetryCriteria();
+    AWS_IOT_API RetryCriteria() = default;
     AWS_IOT_API RetryCriteria(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API RetryCriteria& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,29 +42,27 @@ namespace Model
     /**
      * <p>The type of job execution failures that can initiate a job retry.</p>
      */
-    inline const RetryableFailureType& GetFailureType() const{ return m_failureType; }
+    inline RetryableFailureType GetFailureType() const { return m_failureType; }
     inline bool FailureTypeHasBeenSet() const { return m_failureTypeHasBeenSet; }
-    inline void SetFailureType(const RetryableFailureType& value) { m_failureTypeHasBeenSet = true; m_failureType = value; }
-    inline void SetFailureType(RetryableFailureType&& value) { m_failureTypeHasBeenSet = true; m_failureType = std::move(value); }
-    inline RetryCriteria& WithFailureType(const RetryableFailureType& value) { SetFailureType(value); return *this;}
-    inline RetryCriteria& WithFailureType(RetryableFailureType&& value) { SetFailureType(std::move(value)); return *this;}
+    inline void SetFailureType(RetryableFailureType value) { m_failureTypeHasBeenSet = true; m_failureType = value; }
+    inline RetryCriteria& WithFailureType(RetryableFailureType value) { SetFailureType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of retries allowed for a failure type for the job.</p>
      */
-    inline int GetNumberOfRetries() const{ return m_numberOfRetries; }
+    inline int GetNumberOfRetries() const { return m_numberOfRetries; }
     inline bool NumberOfRetriesHasBeenSet() const { return m_numberOfRetriesHasBeenSet; }
     inline void SetNumberOfRetries(int value) { m_numberOfRetriesHasBeenSet = true; m_numberOfRetries = value; }
     inline RetryCriteria& WithNumberOfRetries(int value) { SetNumberOfRetries(value); return *this;}
     ///@}
   private:
 
-    RetryableFailureType m_failureType;
+    RetryableFailureType m_failureType{RetryableFailureType::NOT_SET};
     bool m_failureTypeHasBeenSet = false;
 
-    int m_numberOfRetries;
+    int m_numberOfRetries{0};
     bool m_numberOfRetriesHasBeenSet = false;
   };
 

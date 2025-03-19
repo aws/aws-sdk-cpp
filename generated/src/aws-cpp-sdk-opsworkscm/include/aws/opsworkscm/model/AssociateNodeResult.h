@@ -27,7 +27,7 @@ namespace Model
   class AssociateNodeResult
   {
   public:
-    AWS_OPSWORKSCM_API AssociateNodeResult();
+    AWS_OPSWORKSCM_API AssociateNodeResult() = default;
     AWS_OPSWORKSCM_API AssociateNodeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPSWORKSCM_API AssociateNodeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,28 @@ namespace Model
      * <code>DescribeNodeAssociationStatus</code> API call to get the status of the
      * association request. </p>
      */
-    inline const Aws::String& GetNodeAssociationStatusToken() const{ return m_nodeAssociationStatusToken; }
-    inline void SetNodeAssociationStatusToken(const Aws::String& value) { m_nodeAssociationStatusToken = value; }
-    inline void SetNodeAssociationStatusToken(Aws::String&& value) { m_nodeAssociationStatusToken = std::move(value); }
-    inline void SetNodeAssociationStatusToken(const char* value) { m_nodeAssociationStatusToken.assign(value); }
-    inline AssociateNodeResult& WithNodeAssociationStatusToken(const Aws::String& value) { SetNodeAssociationStatusToken(value); return *this;}
-    inline AssociateNodeResult& WithNodeAssociationStatusToken(Aws::String&& value) { SetNodeAssociationStatusToken(std::move(value)); return *this;}
-    inline AssociateNodeResult& WithNodeAssociationStatusToken(const char* value) { SetNodeAssociationStatusToken(value); return *this;}
+    inline const Aws::String& GetNodeAssociationStatusToken() const { return m_nodeAssociationStatusToken; }
+    template<typename NodeAssociationStatusTokenT = Aws::String>
+    void SetNodeAssociationStatusToken(NodeAssociationStatusTokenT&& value) { m_nodeAssociationStatusTokenHasBeenSet = true; m_nodeAssociationStatusToken = std::forward<NodeAssociationStatusTokenT>(value); }
+    template<typename NodeAssociationStatusTokenT = Aws::String>
+    AssociateNodeResult& WithNodeAssociationStatusToken(NodeAssociationStatusTokenT&& value) { SetNodeAssociationStatusToken(std::forward<NodeAssociationStatusTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AssociateNodeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AssociateNodeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AssociateNodeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AssociateNodeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nodeAssociationStatusToken;
+    bool m_nodeAssociationStatusTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

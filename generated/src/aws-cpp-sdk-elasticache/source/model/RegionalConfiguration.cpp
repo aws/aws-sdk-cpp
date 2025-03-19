@@ -20,15 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-RegionalConfiguration::RegionalConfiguration() : 
-    m_replicationGroupIdHasBeenSet(false),
-    m_replicationGroupRegionHasBeenSet(false),
-    m_reshardingConfigurationHasBeenSet(false)
-{
-}
-
 RegionalConfiguration::RegionalConfiguration(const XmlNode& xmlNode)
-  : RegionalConfiguration()
 {
   *this = xmlNode;
 }
@@ -55,6 +47,7 @@ RegionalConfiguration& RegionalConfiguration::operator =(const XmlNode& xmlNode)
     if(!reshardingConfigurationNode.IsNull())
     {
       XmlNode reshardingConfigurationMember = reshardingConfigurationNode.FirstChild("ReshardingConfiguration");
+      m_reshardingConfigurationHasBeenSet = !reshardingConfigurationMember.IsNull();
       while(!reshardingConfigurationMember.IsNull())
       {
         m_reshardingConfiguration.push_back(reshardingConfigurationMember);

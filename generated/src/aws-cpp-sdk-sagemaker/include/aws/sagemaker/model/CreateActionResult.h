@@ -27,7 +27,7 @@ namespace Model
   class CreateActionResult
   {
   public:
-    AWS_SAGEMAKER_API CreateActionResult();
+    AWS_SAGEMAKER_API CreateActionResult() = default;
     AWS_SAGEMAKER_API CreateActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API CreateActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the action.</p>
      */
-    inline const Aws::String& GetActionArn() const{ return m_actionArn; }
-    inline void SetActionArn(const Aws::String& value) { m_actionArn = value; }
-    inline void SetActionArn(Aws::String&& value) { m_actionArn = std::move(value); }
-    inline void SetActionArn(const char* value) { m_actionArn.assign(value); }
-    inline CreateActionResult& WithActionArn(const Aws::String& value) { SetActionArn(value); return *this;}
-    inline CreateActionResult& WithActionArn(Aws::String&& value) { SetActionArn(std::move(value)); return *this;}
-    inline CreateActionResult& WithActionArn(const char* value) { SetActionArn(value); return *this;}
+    inline const Aws::String& GetActionArn() const { return m_actionArn; }
+    template<typename ActionArnT = Aws::String>
+    void SetActionArn(ActionArnT&& value) { m_actionArnHasBeenSet = true; m_actionArn = std::forward<ActionArnT>(value); }
+    template<typename ActionArnT = Aws::String>
+    CreateActionResult& WithActionArn(ActionArnT&& value) { SetActionArn(std::forward<ActionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateActionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateActionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateActionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateActionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_actionArn;
+    bool m_actionArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

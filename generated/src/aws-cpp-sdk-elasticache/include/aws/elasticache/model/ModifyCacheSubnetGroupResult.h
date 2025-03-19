@@ -28,33 +28,35 @@ namespace Model
   class ModifyCacheSubnetGroupResult
   {
   public:
-    AWS_ELASTICACHE_API ModifyCacheSubnetGroupResult();
+    AWS_ELASTICACHE_API ModifyCacheSubnetGroupResult() = default;
     AWS_ELASTICACHE_API ModifyCacheSubnetGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICACHE_API ModifyCacheSubnetGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const CacheSubnetGroup& GetCacheSubnetGroup() const{ return m_cacheSubnetGroup; }
-    inline void SetCacheSubnetGroup(const CacheSubnetGroup& value) { m_cacheSubnetGroup = value; }
-    inline void SetCacheSubnetGroup(CacheSubnetGroup&& value) { m_cacheSubnetGroup = std::move(value); }
-    inline ModifyCacheSubnetGroupResult& WithCacheSubnetGroup(const CacheSubnetGroup& value) { SetCacheSubnetGroup(value); return *this;}
-    inline ModifyCacheSubnetGroupResult& WithCacheSubnetGroup(CacheSubnetGroup&& value) { SetCacheSubnetGroup(std::move(value)); return *this;}
+    inline const CacheSubnetGroup& GetCacheSubnetGroup() const { return m_cacheSubnetGroup; }
+    template<typename CacheSubnetGroupT = CacheSubnetGroup>
+    void SetCacheSubnetGroup(CacheSubnetGroupT&& value) { m_cacheSubnetGroupHasBeenSet = true; m_cacheSubnetGroup = std::forward<CacheSubnetGroupT>(value); }
+    template<typename CacheSubnetGroupT = CacheSubnetGroup>
+    ModifyCacheSubnetGroupResult& WithCacheSubnetGroup(CacheSubnetGroupT&& value) { SetCacheSubnetGroup(std::forward<CacheSubnetGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ModifyCacheSubnetGroupResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ModifyCacheSubnetGroupResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ModifyCacheSubnetGroupResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     CacheSubnetGroup m_cacheSubnetGroup;
+    bool m_cacheSubnetGroupHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

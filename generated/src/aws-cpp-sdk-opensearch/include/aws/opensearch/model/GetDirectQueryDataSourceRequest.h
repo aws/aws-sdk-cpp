@@ -21,7 +21,7 @@ namespace Model
   class GetDirectQueryDataSourceRequest : public OpenSearchServiceRequest
   {
   public:
-    AWS_OPENSEARCHSERVICE_API GetDirectQueryDataSourceRequest();
+    AWS_OPENSEARCHSERVICE_API GetDirectQueryDataSourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p> A unique, user-defined label that identifies the data source within your
      * OpenSearch Service environment. </p>
      */
-    inline const Aws::String& GetDataSourceName() const{ return m_dataSourceName; }
+    inline const Aws::String& GetDataSourceName() const { return m_dataSourceName; }
     inline bool DataSourceNameHasBeenSet() const { return m_dataSourceNameHasBeenSet; }
-    inline void SetDataSourceName(const Aws::String& value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName = value; }
-    inline void SetDataSourceName(Aws::String&& value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName = std::move(value); }
-    inline void SetDataSourceName(const char* value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName.assign(value); }
-    inline GetDirectQueryDataSourceRequest& WithDataSourceName(const Aws::String& value) { SetDataSourceName(value); return *this;}
-    inline GetDirectQueryDataSourceRequest& WithDataSourceName(Aws::String&& value) { SetDataSourceName(std::move(value)); return *this;}
-    inline GetDirectQueryDataSourceRequest& WithDataSourceName(const char* value) { SetDataSourceName(value); return *this;}
+    template<typename DataSourceNameT = Aws::String>
+    void SetDataSourceName(DataSourceNameT&& value) { m_dataSourceNameHasBeenSet = true; m_dataSourceName = std::forward<DataSourceNameT>(value); }
+    template<typename DataSourceNameT = Aws::String>
+    GetDirectQueryDataSourceRequest& WithDataSourceName(DataSourceNameT&& value) { SetDataSourceName(std::forward<DataSourceNameT>(value)); return *this;}
     ///@}
   private:
 

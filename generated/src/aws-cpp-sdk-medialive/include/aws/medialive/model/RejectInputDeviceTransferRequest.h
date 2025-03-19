@@ -25,7 +25,7 @@ namespace Model
   class RejectInputDeviceTransferRequest : public MediaLiveRequest
   {
   public:
-    AWS_MEDIALIVE_API RejectInputDeviceTransferRequest();
+    AWS_MEDIALIVE_API RejectInputDeviceTransferRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * The unique ID of the input device to reject. For example, hd-123456789abcdef.
      */
-    inline const Aws::String& GetInputDeviceId() const{ return m_inputDeviceId; }
+    inline const Aws::String& GetInputDeviceId() const { return m_inputDeviceId; }
     inline bool InputDeviceIdHasBeenSet() const { return m_inputDeviceIdHasBeenSet; }
-    inline void SetInputDeviceId(const Aws::String& value) { m_inputDeviceIdHasBeenSet = true; m_inputDeviceId = value; }
-    inline void SetInputDeviceId(Aws::String&& value) { m_inputDeviceIdHasBeenSet = true; m_inputDeviceId = std::move(value); }
-    inline void SetInputDeviceId(const char* value) { m_inputDeviceIdHasBeenSet = true; m_inputDeviceId.assign(value); }
-    inline RejectInputDeviceTransferRequest& WithInputDeviceId(const Aws::String& value) { SetInputDeviceId(value); return *this;}
-    inline RejectInputDeviceTransferRequest& WithInputDeviceId(Aws::String&& value) { SetInputDeviceId(std::move(value)); return *this;}
-    inline RejectInputDeviceTransferRequest& WithInputDeviceId(const char* value) { SetInputDeviceId(value); return *this;}
+    template<typename InputDeviceIdT = Aws::String>
+    void SetInputDeviceId(InputDeviceIdT&& value) { m_inputDeviceIdHasBeenSet = true; m_inputDeviceId = std::forward<InputDeviceIdT>(value); }
+    template<typename InputDeviceIdT = Aws::String>
+    RejectInputDeviceTransferRequest& WithInputDeviceId(InputDeviceIdT&& value) { SetInputDeviceId(std::forward<InputDeviceIdT>(value)); return *this;}
     ///@}
   private:
 

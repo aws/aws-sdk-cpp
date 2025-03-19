@@ -12,10 +12,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAccountDefaultProtectConfigurationRequest::DeleteAccountDefaultProtectConfigurationRequest()
-{
-}
-
 Aws::String DeleteAccountDefaultProtectConfigurationRequest::SerializePayload() const
 {
   return "{}";

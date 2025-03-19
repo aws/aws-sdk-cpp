@@ -18,22 +18,7 @@ namespace IoT
 namespace Model
 {
 
-DetectMitigationActionExecution::DetectMitigationActionExecution() : 
-    m_taskIdHasBeenSet(false),
-    m_violationIdHasBeenSet(false),
-    m_actionNameHasBeenSet(false),
-    m_thingNameHasBeenSet(false),
-    m_executionStartDateHasBeenSet(false),
-    m_executionEndDateHasBeenSet(false),
-    m_status(DetectMitigationActionExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 DetectMitigationActionExecution::DetectMitigationActionExecution(JsonView jsonValue)
-  : DetectMitigationActionExecution()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ DetectMitigationActionExecution& DetectMitigationActionExecution::operator =(Jso
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");
-
     m_taskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("violationId"))
   {
     m_violationId = jsonValue.GetString("violationId");
-
     m_violationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionName"))
   {
     m_actionName = jsonValue.GetString("actionName");
-
     m_actionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("thingName"))
   {
     m_thingName = jsonValue.GetString("thingName");
-
     m_thingNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionStartDate"))
   {
     m_executionStartDate = jsonValue.GetDouble("executionStartDate");
-
     m_executionStartDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionEndDate"))
   {
     m_executionEndDate = jsonValue.GetDouble("executionEndDate");
-
     m_executionEndDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DetectMitigationActionExecutionStatusMapper::GetDetectMitigationActionExecutionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = jsonValue.GetString("errorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

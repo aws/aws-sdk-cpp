@@ -27,7 +27,7 @@ namespace Model
   class CreateDocumentClassifierResult
   {
   public:
-    AWS_COMPREHEND_API CreateDocumentClassifierResult();
+    AWS_COMPREHEND_API CreateDocumentClassifierResult() = default;
     AWS_COMPREHEND_API CreateDocumentClassifierResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHEND_API CreateDocumentClassifierResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the document classifier.</p>
      */
-    inline const Aws::String& GetDocumentClassifierArn() const{ return m_documentClassifierArn; }
-    inline void SetDocumentClassifierArn(const Aws::String& value) { m_documentClassifierArn = value; }
-    inline void SetDocumentClassifierArn(Aws::String&& value) { m_documentClassifierArn = std::move(value); }
-    inline void SetDocumentClassifierArn(const char* value) { m_documentClassifierArn.assign(value); }
-    inline CreateDocumentClassifierResult& WithDocumentClassifierArn(const Aws::String& value) { SetDocumentClassifierArn(value); return *this;}
-    inline CreateDocumentClassifierResult& WithDocumentClassifierArn(Aws::String&& value) { SetDocumentClassifierArn(std::move(value)); return *this;}
-    inline CreateDocumentClassifierResult& WithDocumentClassifierArn(const char* value) { SetDocumentClassifierArn(value); return *this;}
+    inline const Aws::String& GetDocumentClassifierArn() const { return m_documentClassifierArn; }
+    template<typename DocumentClassifierArnT = Aws::String>
+    void SetDocumentClassifierArn(DocumentClassifierArnT&& value) { m_documentClassifierArnHasBeenSet = true; m_documentClassifierArn = std::forward<DocumentClassifierArnT>(value); }
+    template<typename DocumentClassifierArnT = Aws::String>
+    CreateDocumentClassifierResult& WithDocumentClassifierArn(DocumentClassifierArnT&& value) { SetDocumentClassifierArn(std::forward<DocumentClassifierArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateDocumentClassifierResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateDocumentClassifierResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateDocumentClassifierResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateDocumentClassifierResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_documentClassifierArn;
+    bool m_documentClassifierArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

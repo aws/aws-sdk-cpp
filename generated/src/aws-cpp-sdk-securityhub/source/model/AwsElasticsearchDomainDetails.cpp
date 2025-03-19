@@ -18,25 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsElasticsearchDomainDetails::AwsElasticsearchDomainDetails() : 
-    m_accessPoliciesHasBeenSet(false),
-    m_domainEndpointOptionsHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_endpointsHasBeenSet(false),
-    m_elasticsearchVersionHasBeenSet(false),
-    m_elasticsearchClusterConfigHasBeenSet(false),
-    m_encryptionAtRestOptionsHasBeenSet(false),
-    m_logPublishingOptionsHasBeenSet(false),
-    m_nodeToNodeEncryptionOptionsHasBeenSet(false),
-    m_serviceSoftwareOptionsHasBeenSet(false),
-    m_vPCOptionsHasBeenSet(false)
-{
-}
-
 AwsElasticsearchDomainDetails::AwsElasticsearchDomainDetails(JsonView jsonValue)
-  : AwsElasticsearchDomainDetails()
 {
   *this = jsonValue;
 }
@@ -46,38 +28,28 @@ AwsElasticsearchDomainDetails& AwsElasticsearchDomainDetails::operator =(JsonVie
   if(jsonValue.ValueExists("AccessPolicies"))
   {
     m_accessPolicies = jsonValue.GetString("AccessPolicies");
-
     m_accessPoliciesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainEndpointOptions"))
   {
     m_domainEndpointOptions = jsonValue.GetObject("DomainEndpointOptions");
-
     m_domainEndpointOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainId"))
   {
     m_domainId = jsonValue.GetString("DomainId");
-
     m_domainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainName"))
   {
     m_domainName = jsonValue.GetString("DomainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Endpoint"))
   {
     m_endpoint = jsonValue.GetString("Endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Endpoints"))
   {
     Aws::Map<Aws::String, JsonView> endpointsJsonMap = jsonValue.GetObject("Endpoints").GetAllObjects();
@@ -87,56 +59,41 @@ AwsElasticsearchDomainDetails& AwsElasticsearchDomainDetails::operator =(JsonVie
     }
     m_endpointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ElasticsearchVersion"))
   {
     m_elasticsearchVersion = jsonValue.GetString("ElasticsearchVersion");
-
     m_elasticsearchVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ElasticsearchClusterConfig"))
   {
     m_elasticsearchClusterConfig = jsonValue.GetObject("ElasticsearchClusterConfig");
-
     m_elasticsearchClusterConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionAtRestOptions"))
   {
     m_encryptionAtRestOptions = jsonValue.GetObject("EncryptionAtRestOptions");
-
     m_encryptionAtRestOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogPublishingOptions"))
   {
     m_logPublishingOptions = jsonValue.GetObject("LogPublishingOptions");
-
     m_logPublishingOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeToNodeEncryptionOptions"))
   {
     m_nodeToNodeEncryptionOptions = jsonValue.GetObject("NodeToNodeEncryptionOptions");
-
     m_nodeToNodeEncryptionOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceSoftwareOptions"))
   {
     m_serviceSoftwareOptions = jsonValue.GetObject("ServiceSoftwareOptions");
-
     m_serviceSoftwareOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VPCOptions"))
   {
     m_vPCOptions = jsonValue.GetObject("VPCOptions");
-
     m_vPCOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

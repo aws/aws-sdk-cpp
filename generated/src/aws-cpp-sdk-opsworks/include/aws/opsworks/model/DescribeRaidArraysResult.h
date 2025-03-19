@@ -35,7 +35,7 @@ namespace Model
   class DescribeRaidArraysResult
   {
   public:
-    AWS_OPSWORKS_API DescribeRaidArraysResult();
+    AWS_OPSWORKS_API DescribeRaidArraysResult() = default;
     AWS_OPSWORKS_API DescribeRaidArraysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OPSWORKS_API DescribeRaidArraysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,30 +45,30 @@ namespace Model
      * <p>A <code>RaidArrays</code> object that describes the specified RAID
      * arrays.</p>
      */
-    inline const Aws::Vector<RaidArray>& GetRaidArrays() const{ return m_raidArrays; }
-    inline void SetRaidArrays(const Aws::Vector<RaidArray>& value) { m_raidArrays = value; }
-    inline void SetRaidArrays(Aws::Vector<RaidArray>&& value) { m_raidArrays = std::move(value); }
-    inline DescribeRaidArraysResult& WithRaidArrays(const Aws::Vector<RaidArray>& value) { SetRaidArrays(value); return *this;}
-    inline DescribeRaidArraysResult& WithRaidArrays(Aws::Vector<RaidArray>&& value) { SetRaidArrays(std::move(value)); return *this;}
-    inline DescribeRaidArraysResult& AddRaidArrays(const RaidArray& value) { m_raidArrays.push_back(value); return *this; }
-    inline DescribeRaidArraysResult& AddRaidArrays(RaidArray&& value) { m_raidArrays.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RaidArray>& GetRaidArrays() const { return m_raidArrays; }
+    template<typename RaidArraysT = Aws::Vector<RaidArray>>
+    void SetRaidArrays(RaidArraysT&& value) { m_raidArraysHasBeenSet = true; m_raidArrays = std::forward<RaidArraysT>(value); }
+    template<typename RaidArraysT = Aws::Vector<RaidArray>>
+    DescribeRaidArraysResult& WithRaidArrays(RaidArraysT&& value) { SetRaidArrays(std::forward<RaidArraysT>(value)); return *this;}
+    template<typename RaidArraysT = RaidArray>
+    DescribeRaidArraysResult& AddRaidArrays(RaidArraysT&& value) { m_raidArraysHasBeenSet = true; m_raidArrays.emplace_back(std::forward<RaidArraysT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeRaidArraysResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeRaidArraysResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeRaidArraysResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeRaidArraysResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<RaidArray> m_raidArrays;
+    bool m_raidArraysHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

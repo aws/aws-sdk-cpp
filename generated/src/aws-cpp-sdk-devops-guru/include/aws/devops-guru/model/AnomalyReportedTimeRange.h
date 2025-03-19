@@ -34,7 +34,7 @@ namespace Model
   class AnomalyReportedTimeRange
   {
   public:
-    AWS_DEVOPSGURU_API AnomalyReportedTimeRange();
+    AWS_DEVOPSGURU_API AnomalyReportedTimeRange() = default;
     AWS_DEVOPSGURU_API AnomalyReportedTimeRange(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API AnomalyReportedTimeRange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,31 +44,31 @@ namespace Model
     /**
      * <p> The time when an anomaly is opened. </p>
      */
-    inline const Aws::Utils::DateTime& GetOpenTime() const{ return m_openTime; }
+    inline const Aws::Utils::DateTime& GetOpenTime() const { return m_openTime; }
     inline bool OpenTimeHasBeenSet() const { return m_openTimeHasBeenSet; }
-    inline void SetOpenTime(const Aws::Utils::DateTime& value) { m_openTimeHasBeenSet = true; m_openTime = value; }
-    inline void SetOpenTime(Aws::Utils::DateTime&& value) { m_openTimeHasBeenSet = true; m_openTime = std::move(value); }
-    inline AnomalyReportedTimeRange& WithOpenTime(const Aws::Utils::DateTime& value) { SetOpenTime(value); return *this;}
-    inline AnomalyReportedTimeRange& WithOpenTime(Aws::Utils::DateTime&& value) { SetOpenTime(std::move(value)); return *this;}
+    template<typename OpenTimeT = Aws::Utils::DateTime>
+    void SetOpenTime(OpenTimeT&& value) { m_openTimeHasBeenSet = true; m_openTime = std::forward<OpenTimeT>(value); }
+    template<typename OpenTimeT = Aws::Utils::DateTime>
+    AnomalyReportedTimeRange& WithOpenTime(OpenTimeT&& value) { SetOpenTime(std::forward<OpenTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The time when an anomaly is closed. </p>
      */
-    inline const Aws::Utils::DateTime& GetCloseTime() const{ return m_closeTime; }
+    inline const Aws::Utils::DateTime& GetCloseTime() const { return m_closeTime; }
     inline bool CloseTimeHasBeenSet() const { return m_closeTimeHasBeenSet; }
-    inline void SetCloseTime(const Aws::Utils::DateTime& value) { m_closeTimeHasBeenSet = true; m_closeTime = value; }
-    inline void SetCloseTime(Aws::Utils::DateTime&& value) { m_closeTimeHasBeenSet = true; m_closeTime = std::move(value); }
-    inline AnomalyReportedTimeRange& WithCloseTime(const Aws::Utils::DateTime& value) { SetCloseTime(value); return *this;}
-    inline AnomalyReportedTimeRange& WithCloseTime(Aws::Utils::DateTime&& value) { SetCloseTime(std::move(value)); return *this;}
+    template<typename CloseTimeT = Aws::Utils::DateTime>
+    void SetCloseTime(CloseTimeT&& value) { m_closeTimeHasBeenSet = true; m_closeTime = std::forward<CloseTimeT>(value); }
+    template<typename CloseTimeT = Aws::Utils::DateTime>
+    AnomalyReportedTimeRange& WithCloseTime(CloseTimeT&& value) { SetCloseTime(std::forward<CloseTimeT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_openTime;
+    Aws::Utils::DateTime m_openTime{};
     bool m_openTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_closeTime;
+    Aws::Utils::DateTime m_closeTime{};
     bool m_closeTimeHasBeenSet = false;
   };
 

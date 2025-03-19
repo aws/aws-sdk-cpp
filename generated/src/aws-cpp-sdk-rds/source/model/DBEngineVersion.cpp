@@ -20,56 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DBEngineVersion::DBEngineVersion() : 
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_dBParameterGroupFamilyHasBeenSet(false),
-    m_dBEngineDescriptionHasBeenSet(false),
-    m_dBEngineVersionDescriptionHasBeenSet(false),
-    m_defaultCharacterSetHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_dBEngineMediaTypeHasBeenSet(false),
-    m_supportedCharacterSetsHasBeenSet(false),
-    m_supportedNcharCharacterSetsHasBeenSet(false),
-    m_validUpgradeTargetHasBeenSet(false),
-    m_supportedTimezonesHasBeenSet(false),
-    m_exportableLogTypesHasBeenSet(false),
-    m_supportsLogExportsToCloudwatchLogs(false),
-    m_supportsLogExportsToCloudwatchLogsHasBeenSet(false),
-    m_supportsReadReplica(false),
-    m_supportsReadReplicaHasBeenSet(false),
-    m_supportedEngineModesHasBeenSet(false),
-    m_supportedFeatureNamesHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_supportsParallelQuery(false),
-    m_supportsParallelQueryHasBeenSet(false),
-    m_supportsGlobalDatabases(false),
-    m_supportsGlobalDatabasesHasBeenSet(false),
-    m_majorEngineVersionHasBeenSet(false),
-    m_databaseInstallationFilesS3BucketNameHasBeenSet(false),
-    m_databaseInstallationFilesS3PrefixHasBeenSet(false),
-    m_dBEngineVersionArnHasBeenSet(false),
-    m_kMSKeyIdHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_tagListHasBeenSet(false),
-    m_supportsBabelfish(false),
-    m_supportsBabelfishHasBeenSet(false),
-    m_customDBEngineVersionManifestHasBeenSet(false),
-    m_supportsLimitlessDatabase(false),
-    m_supportsLimitlessDatabaseHasBeenSet(false),
-    m_supportsCertificateRotationWithoutRestart(false),
-    m_supportsCertificateRotationWithoutRestartHasBeenSet(false),
-    m_supportedCACertificateIdentifiersHasBeenSet(false),
-    m_supportsLocalWriteForwarding(false),
-    m_supportsLocalWriteForwardingHasBeenSet(false),
-    m_supportsIntegrations(false),
-    m_supportsIntegrationsHasBeenSet(false),
-    m_serverlessV2FeaturesSupportHasBeenSet(false)
-{
-}
-
 DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode)
-  : DBEngineVersion()
 {
   *this = xmlNode;
 }
@@ -132,6 +83,7 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
     if(!supportedCharacterSetsNode.IsNull())
     {
       XmlNode supportedCharacterSetsMember = supportedCharacterSetsNode.FirstChild("CharacterSet");
+      m_supportedCharacterSetsHasBeenSet = !supportedCharacterSetsMember.IsNull();
       while(!supportedCharacterSetsMember.IsNull())
       {
         m_supportedCharacterSets.push_back(supportedCharacterSetsMember);
@@ -144,6 +96,7 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
     if(!supportedNcharCharacterSetsNode.IsNull())
     {
       XmlNode supportedNcharCharacterSetsMember = supportedNcharCharacterSetsNode.FirstChild("CharacterSet");
+      m_supportedNcharCharacterSetsHasBeenSet = !supportedNcharCharacterSetsMember.IsNull();
       while(!supportedNcharCharacterSetsMember.IsNull())
       {
         m_supportedNcharCharacterSets.push_back(supportedNcharCharacterSetsMember);
@@ -156,6 +109,7 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
     if(!validUpgradeTargetNode.IsNull())
     {
       XmlNode validUpgradeTargetMember = validUpgradeTargetNode.FirstChild("UpgradeTarget");
+      m_validUpgradeTargetHasBeenSet = !validUpgradeTargetMember.IsNull();
       while(!validUpgradeTargetMember.IsNull())
       {
         m_validUpgradeTarget.push_back(validUpgradeTargetMember);
@@ -168,6 +122,7 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
     if(!supportedTimezonesNode.IsNull())
     {
       XmlNode supportedTimezonesMember = supportedTimezonesNode.FirstChild("Timezone");
+      m_supportedTimezonesHasBeenSet = !supportedTimezonesMember.IsNull();
       while(!supportedTimezonesMember.IsNull())
       {
         m_supportedTimezones.push_back(supportedTimezonesMember);
@@ -180,6 +135,7 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
     if(!exportableLogTypesNode.IsNull())
     {
       XmlNode exportableLogTypesMember = exportableLogTypesNode.FirstChild("member");
+      m_exportableLogTypesHasBeenSet = !exportableLogTypesMember.IsNull();
       while(!exportableLogTypesMember.IsNull())
       {
         m_exportableLogTypes.push_back(exportableLogTypesMember.GetText());
@@ -204,6 +160,7 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
     if(!supportedEngineModesNode.IsNull())
     {
       XmlNode supportedEngineModesMember = supportedEngineModesNode.FirstChild("member");
+      m_supportedEngineModesHasBeenSet = !supportedEngineModesMember.IsNull();
       while(!supportedEngineModesMember.IsNull())
       {
         m_supportedEngineModes.push_back(supportedEngineModesMember.GetText());
@@ -216,6 +173,7 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
     if(!supportedFeatureNamesNode.IsNull())
     {
       XmlNode supportedFeatureNamesMember = supportedFeatureNamesNode.FirstChild("member");
+      m_supportedFeatureNamesHasBeenSet = !supportedFeatureNamesMember.IsNull();
       while(!supportedFeatureNamesMember.IsNull())
       {
         m_supportedFeatureNames.push_back(supportedFeatureNamesMember.GetText());
@@ -282,6 +240,7 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
     if(!tagListNode.IsNull())
     {
       XmlNode tagListMember = tagListNode.FirstChild("Tag");
+      m_tagListHasBeenSet = !tagListMember.IsNull();
       while(!tagListMember.IsNull())
       {
         m_tagList.push_back(tagListMember);
@@ -318,6 +277,7 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
     if(!supportedCACertificateIdentifiersNode.IsNull())
     {
       XmlNode supportedCACertificateIdentifiersMember = supportedCACertificateIdentifiersNode.FirstChild("member");
+      m_supportedCACertificateIdentifiersHasBeenSet = !supportedCACertificateIdentifiersMember.IsNull();
       while(!supportedCACertificateIdentifiersMember.IsNull())
       {
         m_supportedCACertificateIdentifiers.push_back(supportedCACertificateIdentifiersMember.GetText());

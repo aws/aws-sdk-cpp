@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetExportSnapshotRecordsResult::GetExportSnapshotRecordsResult()
-{
-}
-
 GetExportSnapshotRecordsResult::GetExportSnapshotRecordsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ GetExportSnapshotRecordsResult& GetExportSnapshotRecordsResult::operator =(const
     {
       m_exportSnapshotRecords.push_back(exportSnapshotRecordsJsonList[exportSnapshotRecordsIndex].AsObject());
     }
+    m_exportSnapshotRecordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextPageToken"))
   {
     m_nextPageToken = jsonValue.GetString("nextPageToken");
-
+    m_nextPageTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

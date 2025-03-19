@@ -18,14 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-WeeklySchedule::WeeklySchedule() : 
-    m_daysHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
-{
-}
-
 WeeklySchedule::WeeklySchedule(JsonView jsonValue)
-  : WeeklySchedule()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ WeeklySchedule& WeeklySchedule::operator =(JsonView jsonValue)
     }
     m_daysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetObject("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

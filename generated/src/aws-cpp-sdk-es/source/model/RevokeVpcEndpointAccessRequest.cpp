@@ -12,12 +12,6 @@ using namespace Aws::ElasticsearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RevokeVpcEndpointAccessRequest::RevokeVpcEndpointAccessRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_accountHasBeenSet(false)
-{
-}
-
 Aws::String RevokeVpcEndpointAccessRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-NextStepsHistory::NextStepsHistory() : 
-    m_timeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 NextStepsHistory::NextStepsHistory(JsonView jsonValue)
-  : NextStepsHistory()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NextStepsHistory& NextStepsHistory::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Time"))
   {
     m_time = jsonValue.GetString("Time");
-
     m_timeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

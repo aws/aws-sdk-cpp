@@ -12,12 +12,6 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRoomRequest::DeleteRoomRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_roomIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRoomRequest::SerializePayload() const
 {
   return {};

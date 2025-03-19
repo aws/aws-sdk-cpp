@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-NetworkConnection::NetworkConnection() : 
-    m_direction(NetworkDirection::NOT_SET),
-    m_directionHasBeenSet(false)
-{
-}
-
 NetworkConnection::NetworkConnection(JsonView jsonValue)
-  : NetworkConnection()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ NetworkConnection& NetworkConnection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("direction"))
   {
     m_direction = NetworkDirectionMapper::GetNetworkDirectionForName(jsonValue.GetString("direction"));
-
     m_directionHasBeenSet = true;
   }
-
   return *this;
 }
 

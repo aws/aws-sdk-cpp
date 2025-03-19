@@ -18,15 +18,7 @@ namespace deadline
 namespace Model
 {
 
-WorkerAmountCapability::WorkerAmountCapability() : 
-    m_nameHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 WorkerAmountCapability::WorkerAmountCapability(JsonView jsonValue)
-  : WorkerAmountCapability()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ WorkerAmountCapability& WorkerAmountCapability::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetDouble("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -35,7 +35,7 @@ namespace Model
   class IdentityResolutionJob
   {
   public:
-    AWS_CUSTOMERPROFILES_API IdentityResolutionJob();
+    AWS_CUSTOMERPROFILES_API IdentityResolutionJob() = default;
     AWS_CUSTOMERPROFILES_API IdentityResolutionJob(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API IdentityResolutionJob& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The unique name of the domain.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline IdentityResolutionJob& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline IdentityResolutionJob& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline IdentityResolutionJob& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    IdentityResolutionJob& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the Identity Resolution Job.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline IdentityResolutionJob& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline IdentityResolutionJob& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline IdentityResolutionJob& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    IdentityResolutionJob& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,60 +83,58 @@ namespace Model
      * did not merge any data. It writes a message indicating the source of the
      * problem.</p> </li> </ul>
      */
-    inline const IdentityResolutionJobStatus& GetStatus() const{ return m_status; }
+    inline IdentityResolutionJobStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const IdentityResolutionJobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(IdentityResolutionJobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline IdentityResolutionJob& WithStatus(const IdentityResolutionJobStatus& value) { SetStatus(value); return *this;}
-    inline IdentityResolutionJob& WithStatus(IdentityResolutionJobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(IdentityResolutionJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline IdentityResolutionJob& WithStatus(IdentityResolutionJobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the job was started or will be started.</p>
      */
-    inline const Aws::Utils::DateTime& GetJobStartTime() const{ return m_jobStartTime; }
+    inline const Aws::Utils::DateTime& GetJobStartTime() const { return m_jobStartTime; }
     inline bool JobStartTimeHasBeenSet() const { return m_jobStartTimeHasBeenSet; }
-    inline void SetJobStartTime(const Aws::Utils::DateTime& value) { m_jobStartTimeHasBeenSet = true; m_jobStartTime = value; }
-    inline void SetJobStartTime(Aws::Utils::DateTime&& value) { m_jobStartTimeHasBeenSet = true; m_jobStartTime = std::move(value); }
-    inline IdentityResolutionJob& WithJobStartTime(const Aws::Utils::DateTime& value) { SetJobStartTime(value); return *this;}
-    inline IdentityResolutionJob& WithJobStartTime(Aws::Utils::DateTime&& value) { SetJobStartTime(std::move(value)); return *this;}
+    template<typename JobStartTimeT = Aws::Utils::DateTime>
+    void SetJobStartTime(JobStartTimeT&& value) { m_jobStartTimeHasBeenSet = true; m_jobStartTime = std::forward<JobStartTimeT>(value); }
+    template<typename JobStartTimeT = Aws::Utils::DateTime>
+    IdentityResolutionJob& WithJobStartTime(JobStartTimeT&& value) { SetJobStartTime(std::forward<JobStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the job was completed.</p>
      */
-    inline const Aws::Utils::DateTime& GetJobEndTime() const{ return m_jobEndTime; }
+    inline const Aws::Utils::DateTime& GetJobEndTime() const { return m_jobEndTime; }
     inline bool JobEndTimeHasBeenSet() const { return m_jobEndTimeHasBeenSet; }
-    inline void SetJobEndTime(const Aws::Utils::DateTime& value) { m_jobEndTimeHasBeenSet = true; m_jobEndTime = value; }
-    inline void SetJobEndTime(Aws::Utils::DateTime&& value) { m_jobEndTimeHasBeenSet = true; m_jobEndTime = std::move(value); }
-    inline IdentityResolutionJob& WithJobEndTime(const Aws::Utils::DateTime& value) { SetJobEndTime(value); return *this;}
-    inline IdentityResolutionJob& WithJobEndTime(Aws::Utils::DateTime&& value) { SetJobEndTime(std::move(value)); return *this;}
+    template<typename JobEndTimeT = Aws::Utils::DateTime>
+    void SetJobEndTime(JobEndTimeT&& value) { m_jobEndTimeHasBeenSet = true; m_jobEndTime = std::forward<JobEndTimeT>(value); }
+    template<typename JobEndTimeT = Aws::Utils::DateTime>
+    IdentityResolutionJob& WithJobEndTime(JobEndTimeT&& value) { SetJobEndTime(std::forward<JobEndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Statistics about an Identity Resolution Job.</p>
      */
-    inline const JobStats& GetJobStats() const{ return m_jobStats; }
+    inline const JobStats& GetJobStats() const { return m_jobStats; }
     inline bool JobStatsHasBeenSet() const { return m_jobStatsHasBeenSet; }
-    inline void SetJobStats(const JobStats& value) { m_jobStatsHasBeenSet = true; m_jobStats = value; }
-    inline void SetJobStats(JobStats&& value) { m_jobStatsHasBeenSet = true; m_jobStats = std::move(value); }
-    inline IdentityResolutionJob& WithJobStats(const JobStats& value) { SetJobStats(value); return *this;}
-    inline IdentityResolutionJob& WithJobStats(JobStats&& value) { SetJobStats(std::move(value)); return *this;}
+    template<typename JobStatsT = JobStats>
+    void SetJobStats(JobStatsT&& value) { m_jobStatsHasBeenSet = true; m_jobStats = std::forward<JobStatsT>(value); }
+    template<typename JobStatsT = JobStats>
+    IdentityResolutionJob& WithJobStats(JobStatsT&& value) { SetJobStats(std::forward<JobStatsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The S3 location where the Identity Resolution Job writes result files.</p>
      */
-    inline const ExportingLocation& GetExportingLocation() const{ return m_exportingLocation; }
+    inline const ExportingLocation& GetExportingLocation() const { return m_exportingLocation; }
     inline bool ExportingLocationHasBeenSet() const { return m_exportingLocationHasBeenSet; }
-    inline void SetExportingLocation(const ExportingLocation& value) { m_exportingLocationHasBeenSet = true; m_exportingLocation = value; }
-    inline void SetExportingLocation(ExportingLocation&& value) { m_exportingLocationHasBeenSet = true; m_exportingLocation = std::move(value); }
-    inline IdentityResolutionJob& WithExportingLocation(const ExportingLocation& value) { SetExportingLocation(value); return *this;}
-    inline IdentityResolutionJob& WithExportingLocation(ExportingLocation&& value) { SetExportingLocation(std::move(value)); return *this;}
+    template<typename ExportingLocationT = ExportingLocation>
+    void SetExportingLocation(ExportingLocationT&& value) { m_exportingLocationHasBeenSet = true; m_exportingLocation = std::forward<ExportingLocationT>(value); }
+    template<typename ExportingLocationT = ExportingLocation>
+    IdentityResolutionJob& WithExportingLocation(ExportingLocationT&& value) { SetExportingLocation(std::forward<ExportingLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -148,14 +142,12 @@ namespace Model
      * <p>The error messages that are generated when the Identity Resolution Job
      * runs.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline IdentityResolutionJob& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline IdentityResolutionJob& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline IdentityResolutionJob& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    IdentityResolutionJob& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
@@ -165,13 +157,13 @@ namespace Model
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet = false;
 
-    IdentityResolutionJobStatus m_status;
+    IdentityResolutionJobStatus m_status{IdentityResolutionJobStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_jobStartTime;
+    Aws::Utils::DateTime m_jobStartTime{};
     bool m_jobStartTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_jobEndTime;
+    Aws::Utils::DateTime m_jobEndTime{};
     bool m_jobEndTimeHasBeenSet = false;
 
     JobStats m_jobStats;

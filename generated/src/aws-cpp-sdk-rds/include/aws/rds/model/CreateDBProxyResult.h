@@ -28,7 +28,7 @@ namespace Model
   class CreateDBProxyResult
   {
   public:
-    AWS_RDS_API CreateDBProxyResult();
+    AWS_RDS_API CreateDBProxyResult() = default;
     AWS_RDS_API CreateDBProxyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RDS_API CreateDBProxyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>The <code>DBProxy</code> structure corresponding to the new proxy.</p>
      */
-    inline const DBProxy& GetDBProxy() const{ return m_dBProxy; }
-    inline void SetDBProxy(const DBProxy& value) { m_dBProxy = value; }
-    inline void SetDBProxy(DBProxy&& value) { m_dBProxy = std::move(value); }
-    inline CreateDBProxyResult& WithDBProxy(const DBProxy& value) { SetDBProxy(value); return *this;}
-    inline CreateDBProxyResult& WithDBProxy(DBProxy&& value) { SetDBProxy(std::move(value)); return *this;}
+    inline const DBProxy& GetDBProxy() const { return m_dBProxy; }
+    template<typename DBProxyT = DBProxy>
+    void SetDBProxy(DBProxyT&& value) { m_dBProxyHasBeenSet = true; m_dBProxy = std::forward<DBProxyT>(value); }
+    template<typename DBProxyT = DBProxy>
+    CreateDBProxyResult& WithDBProxy(DBProxyT&& value) { SetDBProxy(std::forward<DBProxyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateDBProxyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateDBProxyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateDBProxyResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     DBProxy m_dBProxy;
+    bool m_dBProxyHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

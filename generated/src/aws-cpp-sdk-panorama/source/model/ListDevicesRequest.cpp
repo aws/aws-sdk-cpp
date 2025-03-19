@@ -15,20 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListDevicesRequest::ListDevicesRequest() : 
-    m_deviceAggregatedStatusFilter(DeviceAggregatedStatus::NOT_SET),
-    m_deviceAggregatedStatusFilterHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nameFilterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sortBy(ListDevicesSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 Aws::String ListDevicesRequest::SerializePayload() const
 {
   return {};

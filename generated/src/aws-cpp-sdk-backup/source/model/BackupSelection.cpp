@@ -18,18 +18,7 @@ namespace Backup
 namespace Model
 {
 
-BackupSelection::BackupSelection() : 
-    m_selectionNameHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_resourcesHasBeenSet(false),
-    m_listOfTagsHasBeenSet(false),
-    m_notResourcesHasBeenSet(false),
-    m_conditionsHasBeenSet(false)
-{
-}
-
 BackupSelection::BackupSelection(JsonView jsonValue)
-  : BackupSelection()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ BackupSelection& BackupSelection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SelectionName"))
   {
     m_selectionName = jsonValue.GetString("SelectionName");
-
     m_selectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamRoleArn"))
   {
     m_iamRoleArn = jsonValue.GetString("IamRoleArn");
-
     m_iamRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Resources"))
   {
     Aws::Utils::Array<JsonView> resourcesJsonList = jsonValue.GetArray("Resources");
@@ -59,7 +44,6 @@ BackupSelection& BackupSelection::operator =(JsonView jsonValue)
     }
     m_resourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ListOfTags"))
   {
     Aws::Utils::Array<JsonView> listOfTagsJsonList = jsonValue.GetArray("ListOfTags");
@@ -69,7 +53,6 @@ BackupSelection& BackupSelection::operator =(JsonView jsonValue)
     }
     m_listOfTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotResources"))
   {
     Aws::Utils::Array<JsonView> notResourcesJsonList = jsonValue.GetArray("NotResources");
@@ -79,14 +62,11 @@ BackupSelection& BackupSelection::operator =(JsonView jsonValue)
     }
     m_notResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Conditions"))
   {
     m_conditions = jsonValue.GetObject("Conditions");
-
     m_conditionsHasBeenSet = true;
   }
-
   return *this;
 }
 

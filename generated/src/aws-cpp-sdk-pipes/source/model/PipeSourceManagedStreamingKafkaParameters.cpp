@@ -18,21 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-PipeSourceManagedStreamingKafkaParameters::PipeSourceManagedStreamingKafkaParameters() : 
-    m_topicNameHasBeenSet(false),
-    m_startingPosition(MSKStartPosition::NOT_SET),
-    m_startingPositionHasBeenSet(false),
-    m_batchSize(0),
-    m_batchSizeHasBeenSet(false),
-    m_maximumBatchingWindowInSeconds(0),
-    m_maximumBatchingWindowInSecondsHasBeenSet(false),
-    m_consumerGroupIDHasBeenSet(false),
-    m_credentialsHasBeenSet(false)
-{
-}
-
 PipeSourceManagedStreamingKafkaParameters::PipeSourceManagedStreamingKafkaParameters(JsonView jsonValue)
-  : PipeSourceManagedStreamingKafkaParameters()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ PipeSourceManagedStreamingKafkaParameters& PipeSourceManagedStreamingKafkaParame
   if(jsonValue.ValueExists("TopicName"))
   {
     m_topicName = jsonValue.GetString("TopicName");
-
     m_topicNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartingPosition"))
   {
     m_startingPosition = MSKStartPositionMapper::GetMSKStartPositionForName(jsonValue.GetString("StartingPosition"));
-
     m_startingPositionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BatchSize"))
   {
     m_batchSize = jsonValue.GetInteger("BatchSize");
-
     m_batchSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumBatchingWindowInSeconds"))
   {
     m_maximumBatchingWindowInSeconds = jsonValue.GetInteger("MaximumBatchingWindowInSeconds");
-
     m_maximumBatchingWindowInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConsumerGroupID"))
   {
     m_consumerGroupID = jsonValue.GetString("ConsumerGroupID");
-
     m_consumerGroupIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Credentials"))
   {
     m_credentials = jsonValue.GetObject("Credentials");
-
     m_credentialsHasBeenSet = true;
   }
-
   return *this;
 }
 

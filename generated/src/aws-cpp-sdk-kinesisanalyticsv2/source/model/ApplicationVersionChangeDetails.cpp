@@ -18,16 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-ApplicationVersionChangeDetails::ApplicationVersionChangeDetails() : 
-    m_applicationVersionUpdatedFrom(0),
-    m_applicationVersionUpdatedFromHasBeenSet(false),
-    m_applicationVersionUpdatedTo(0),
-    m_applicationVersionUpdatedToHasBeenSet(false)
-{
-}
-
 ApplicationVersionChangeDetails::ApplicationVersionChangeDetails(JsonView jsonValue)
-  : ApplicationVersionChangeDetails()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ApplicationVersionChangeDetails& ApplicationVersionChangeDetails::operator =(Jso
   if(jsonValue.ValueExists("ApplicationVersionUpdatedFrom"))
   {
     m_applicationVersionUpdatedFrom = jsonValue.GetInt64("ApplicationVersionUpdatedFrom");
-
     m_applicationVersionUpdatedFromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationVersionUpdatedTo"))
   {
     m_applicationVersionUpdatedTo = jsonValue.GetInt64("ApplicationVersionUpdatedTo");
-
     m_applicationVersionUpdatedToHasBeenSet = true;
   }
-
   return *this;
 }
 

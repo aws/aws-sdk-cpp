@@ -20,29 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SnapshotInfo::SnapshotInfo() : 
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_state(SnapshotState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_volumeSize(0),
-    m_volumeSizeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_progressHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_sseType(SSEType::NOT_SET),
-    m_sseTypeHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false)
-{
-}
-
 SnapshotInfo::SnapshotInfo(const XmlNode& xmlNode)
-  : SnapshotInfo()
 {
   *this = xmlNode;
 }
@@ -63,6 +41,7 @@ SnapshotInfo& SnapshotInfo::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -86,7 +65,7 @@ SnapshotInfo& SnapshotInfo::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = SnapshotStateMapper::GetSnapshotStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = SnapshotStateMapper::GetSnapshotStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode volumeSizeNode = resultNode.FirstChild("volumeSize");
@@ -128,7 +107,7 @@ SnapshotInfo& SnapshotInfo::operator =(const XmlNode& xmlNode)
     XmlNode sseTypeNode = resultNode.FirstChild("sseType");
     if(!sseTypeNode.IsNull())
     {
-      m_sseType = SSETypeMapper::GetSSETypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sseTypeNode.GetText()).c_str()).c_str());
+      m_sseType = SSETypeMapper::GetSSETypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sseTypeNode.GetText()).c_str()));
       m_sseTypeHasBeenSet = true;
     }
     XmlNode availabilityZoneNode = resultNode.FirstChild("availabilityZone");

@@ -32,7 +32,7 @@ namespace Model
   class SecurityConfigurationData
   {
   public:
-    AWS_EMRCONTAINERS_API SecurityConfigurationData();
+    AWS_EMRCONTAINERS_API SecurityConfigurationData() = default;
     AWS_EMRCONTAINERS_API SecurityConfigurationData(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRCONTAINERS_API SecurityConfigurationData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Authorization-related configuration input for the security configuration.</p>
      */
-    inline const AuthorizationConfiguration& GetAuthorizationConfiguration() const{ return m_authorizationConfiguration; }
+    inline const AuthorizationConfiguration& GetAuthorizationConfiguration() const { return m_authorizationConfiguration; }
     inline bool AuthorizationConfigurationHasBeenSet() const { return m_authorizationConfigurationHasBeenSet; }
-    inline void SetAuthorizationConfiguration(const AuthorizationConfiguration& value) { m_authorizationConfigurationHasBeenSet = true; m_authorizationConfiguration = value; }
-    inline void SetAuthorizationConfiguration(AuthorizationConfiguration&& value) { m_authorizationConfigurationHasBeenSet = true; m_authorizationConfiguration = std::move(value); }
-    inline SecurityConfigurationData& WithAuthorizationConfiguration(const AuthorizationConfiguration& value) { SetAuthorizationConfiguration(value); return *this;}
-    inline SecurityConfigurationData& WithAuthorizationConfiguration(AuthorizationConfiguration&& value) { SetAuthorizationConfiguration(std::move(value)); return *this;}
+    template<typename AuthorizationConfigurationT = AuthorizationConfiguration>
+    void SetAuthorizationConfiguration(AuthorizationConfigurationT&& value) { m_authorizationConfigurationHasBeenSet = true; m_authorizationConfiguration = std::forward<AuthorizationConfigurationT>(value); }
+    template<typename AuthorizationConfigurationT = AuthorizationConfiguration>
+    SecurityConfigurationData& WithAuthorizationConfiguration(AuthorizationConfigurationT&& value) { SetAuthorizationConfiguration(std::forward<AuthorizationConfigurationT>(value)); return *this;}
     ///@}
   private:
 

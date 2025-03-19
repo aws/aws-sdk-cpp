@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ColumnDescription::ColumnDescription() : 
-    m_textHasBeenSet(false)
-{
-}
-
 ColumnDescription::ColumnDescription(JsonView jsonValue)
-  : ColumnDescription()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ColumnDescription& ColumnDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Text"))
   {
     m_text = jsonValue.GetString("Text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

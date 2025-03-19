@@ -12,12 +12,6 @@ using namespace Aws::NetworkFlowMonitor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetQueryStatusWorkloadInsightsTopContributorsDataRequest::GetQueryStatusWorkloadInsightsTopContributorsDataRequest() : 
-    m_scopeIdHasBeenSet(false),
-    m_queryIdHasBeenSet(false)
-{
-}
-
 Aws::String GetQueryStatusWorkloadInsightsTopContributorsDataRequest::SerializePayload() const
 {
   return {};

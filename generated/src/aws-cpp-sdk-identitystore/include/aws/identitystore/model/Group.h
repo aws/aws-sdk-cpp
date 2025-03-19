@@ -34,7 +34,7 @@ namespace Model
   class Group
   {
   public:
-    AWS_IDENTITYSTORE_API Group();
+    AWS_IDENTITYSTORE_API Group() = default;
     AWS_IDENTITYSTORE_API Group(Aws::Utils::Json::JsonView jsonValue);
     AWS_IDENTITYSTORE_API Group& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IDENTITYSTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The identifier for a group in the identity store.</p>
      */
-    inline const Aws::String& GetGroupId() const{ return m_groupId; }
+    inline const Aws::String& GetGroupId() const { return m_groupId; }
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-    inline Group& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-    inline Group& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-    inline Group& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    template<typename GroupIdT = Aws::String>
+    void SetGroupId(GroupIdT&& value) { m_groupIdHasBeenSet = true; m_groupId = std::forward<GroupIdT>(value); }
+    template<typename GroupIdT = Aws::String>
+    Group& WithGroupId(GroupIdT&& value) { SetGroupId(std::forward<GroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * this attribute. This value is specified at the time the group is created and
      * stored as an attribute of the group object in the identity store.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline Group& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline Group& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline Group& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    Group& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,42 +73,38 @@ namespace Model
      * <p>A list of <code>ExternalId</code> objects that contains the identifiers
      * issued to this resource by an external identity provider.</p>
      */
-    inline const Aws::Vector<ExternalId>& GetExternalIds() const{ return m_externalIds; }
+    inline const Aws::Vector<ExternalId>& GetExternalIds() const { return m_externalIds; }
     inline bool ExternalIdsHasBeenSet() const { return m_externalIdsHasBeenSet; }
-    inline void SetExternalIds(const Aws::Vector<ExternalId>& value) { m_externalIdsHasBeenSet = true; m_externalIds = value; }
-    inline void SetExternalIds(Aws::Vector<ExternalId>&& value) { m_externalIdsHasBeenSet = true; m_externalIds = std::move(value); }
-    inline Group& WithExternalIds(const Aws::Vector<ExternalId>& value) { SetExternalIds(value); return *this;}
-    inline Group& WithExternalIds(Aws::Vector<ExternalId>&& value) { SetExternalIds(std::move(value)); return *this;}
-    inline Group& AddExternalIds(const ExternalId& value) { m_externalIdsHasBeenSet = true; m_externalIds.push_back(value); return *this; }
-    inline Group& AddExternalIds(ExternalId&& value) { m_externalIdsHasBeenSet = true; m_externalIds.push_back(std::move(value)); return *this; }
+    template<typename ExternalIdsT = Aws::Vector<ExternalId>>
+    void SetExternalIds(ExternalIdsT&& value) { m_externalIdsHasBeenSet = true; m_externalIds = std::forward<ExternalIdsT>(value); }
+    template<typename ExternalIdsT = Aws::Vector<ExternalId>>
+    Group& WithExternalIds(ExternalIdsT&& value) { SetExternalIds(std::forward<ExternalIdsT>(value)); return *this;}
+    template<typename ExternalIdsT = ExternalId>
+    Group& AddExternalIds(ExternalIdsT&& value) { m_externalIdsHasBeenSet = true; m_externalIds.emplace_back(std::forward<ExternalIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A string containing a description of the specified group.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Group& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Group& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Group& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Group& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The globally unique identifier for the identity store.</p>
      */
-    inline const Aws::String& GetIdentityStoreId() const{ return m_identityStoreId; }
+    inline const Aws::String& GetIdentityStoreId() const { return m_identityStoreId; }
     inline bool IdentityStoreIdHasBeenSet() const { return m_identityStoreIdHasBeenSet; }
-    inline void SetIdentityStoreId(const Aws::String& value) { m_identityStoreIdHasBeenSet = true; m_identityStoreId = value; }
-    inline void SetIdentityStoreId(Aws::String&& value) { m_identityStoreIdHasBeenSet = true; m_identityStoreId = std::move(value); }
-    inline void SetIdentityStoreId(const char* value) { m_identityStoreIdHasBeenSet = true; m_identityStoreId.assign(value); }
-    inline Group& WithIdentityStoreId(const Aws::String& value) { SetIdentityStoreId(value); return *this;}
-    inline Group& WithIdentityStoreId(Aws::String&& value) { SetIdentityStoreId(std::move(value)); return *this;}
-    inline Group& WithIdentityStoreId(const char* value) { SetIdentityStoreId(value); return *this;}
+    template<typename IdentityStoreIdT = Aws::String>
+    void SetIdentityStoreId(IdentityStoreIdT&& value) { m_identityStoreIdHasBeenSet = true; m_identityStoreId = std::forward<IdentityStoreIdT>(value); }
+    template<typename IdentityStoreIdT = Aws::String>
+    Group& WithIdentityStoreId(IdentityStoreIdT&& value) { SetIdentityStoreId(std::forward<IdentityStoreIdT>(value)); return *this;}
     ///@}
   private:
 

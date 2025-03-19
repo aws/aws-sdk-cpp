@@ -12,15 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ReplicateInstanceRequest::ReplicateInstanceRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_replicaRegionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_replicaAliasHasBeenSet(false)
-{
-}
-
 Aws::String ReplicateInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

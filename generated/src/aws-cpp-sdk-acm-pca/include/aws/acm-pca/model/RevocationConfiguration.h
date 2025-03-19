@@ -45,7 +45,7 @@ namespace Model
   class RevocationConfiguration
   {
   public:
-    AWS_ACMPCA_API RevocationConfiguration();
+    AWS_ACMPCA_API RevocationConfiguration() = default;
     AWS_ACMPCA_API RevocationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACMPCA_API RevocationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,12 +58,12 @@ namespace Model
      * certificate is revoked. If for any reason a CRL update fails, Amazon Web
      * Services Private CA makes further attempts every 15 minutes.</p>
      */
-    inline const CrlConfiguration& GetCrlConfiguration() const{ return m_crlConfiguration; }
+    inline const CrlConfiguration& GetCrlConfiguration() const { return m_crlConfiguration; }
     inline bool CrlConfigurationHasBeenSet() const { return m_crlConfigurationHasBeenSet; }
-    inline void SetCrlConfiguration(const CrlConfiguration& value) { m_crlConfigurationHasBeenSet = true; m_crlConfiguration = value; }
-    inline void SetCrlConfiguration(CrlConfiguration&& value) { m_crlConfigurationHasBeenSet = true; m_crlConfiguration = std::move(value); }
-    inline RevocationConfiguration& WithCrlConfiguration(const CrlConfiguration& value) { SetCrlConfiguration(value); return *this;}
-    inline RevocationConfiguration& WithCrlConfiguration(CrlConfiguration&& value) { SetCrlConfiguration(std::move(value)); return *this;}
+    template<typename CrlConfigurationT = CrlConfiguration>
+    void SetCrlConfiguration(CrlConfigurationT&& value) { m_crlConfigurationHasBeenSet = true; m_crlConfiguration = std::forward<CrlConfigurationT>(value); }
+    template<typename CrlConfigurationT = CrlConfiguration>
+    RevocationConfiguration& WithCrlConfiguration(CrlConfigurationT&& value) { SetCrlConfiguration(std::forward<CrlConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +72,12 @@ namespace Model
      * maintained by your private CA. When you revoke a certificate, OCSP responses may
      * take up to 60 minutes to reflect the new status.</p>
      */
-    inline const OcspConfiguration& GetOcspConfiguration() const{ return m_ocspConfiguration; }
+    inline const OcspConfiguration& GetOcspConfiguration() const { return m_ocspConfiguration; }
     inline bool OcspConfigurationHasBeenSet() const { return m_ocspConfigurationHasBeenSet; }
-    inline void SetOcspConfiguration(const OcspConfiguration& value) { m_ocspConfigurationHasBeenSet = true; m_ocspConfiguration = value; }
-    inline void SetOcspConfiguration(OcspConfiguration&& value) { m_ocspConfigurationHasBeenSet = true; m_ocspConfiguration = std::move(value); }
-    inline RevocationConfiguration& WithOcspConfiguration(const OcspConfiguration& value) { SetOcspConfiguration(value); return *this;}
-    inline RevocationConfiguration& WithOcspConfiguration(OcspConfiguration&& value) { SetOcspConfiguration(std::move(value)); return *this;}
+    template<typename OcspConfigurationT = OcspConfiguration>
+    void SetOcspConfiguration(OcspConfigurationT&& value) { m_ocspConfigurationHasBeenSet = true; m_ocspConfiguration = std::forward<OcspConfigurationT>(value); }
+    template<typename OcspConfigurationT = OcspConfiguration>
+    RevocationConfiguration& WithOcspConfiguration(OcspConfigurationT&& value) { SetOcspConfiguration(std::forward<OcspConfigurationT>(value)); return *this;}
     ///@}
   private:
 

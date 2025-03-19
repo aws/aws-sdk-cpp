@@ -30,7 +30,7 @@ namespace Model
   class DescribePublishingDestinationResult
   {
   public:
-    AWS_GUARDDUTY_API DescribePublishingDestinationResult();
+    AWS_GUARDDUTY_API DescribePublishingDestinationResult() = default;
     AWS_GUARDDUTY_API DescribePublishingDestinationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GUARDDUTY_API DescribePublishingDestinationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
     /**
      * <p>The ID of the publishing destination.</p>
      */
-    inline const Aws::String& GetDestinationId() const{ return m_destinationId; }
-    inline void SetDestinationId(const Aws::String& value) { m_destinationId = value; }
-    inline void SetDestinationId(Aws::String&& value) { m_destinationId = std::move(value); }
-    inline void SetDestinationId(const char* value) { m_destinationId.assign(value); }
-    inline DescribePublishingDestinationResult& WithDestinationId(const Aws::String& value) { SetDestinationId(value); return *this;}
-    inline DescribePublishingDestinationResult& WithDestinationId(Aws::String&& value) { SetDestinationId(std::move(value)); return *this;}
-    inline DescribePublishingDestinationResult& WithDestinationId(const char* value) { SetDestinationId(value); return *this;}
+    inline const Aws::String& GetDestinationId() const { return m_destinationId; }
+    template<typename DestinationIdT = Aws::String>
+    void SetDestinationId(DestinationIdT&& value) { m_destinationIdHasBeenSet = true; m_destinationId = std::forward<DestinationIdT>(value); }
+    template<typename DestinationIdT = Aws::String>
+    DescribePublishingDestinationResult& WithDestinationId(DestinationIdT&& value) { SetDestinationId(std::forward<DestinationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,22 +51,18 @@ namespace Model
      * <p>The type of publishing destination. Currently, only Amazon S3 buckets are
      * supported.</p>
      */
-    inline const DestinationType& GetDestinationType() const{ return m_destinationType; }
-    inline void SetDestinationType(const DestinationType& value) { m_destinationType = value; }
-    inline void SetDestinationType(DestinationType&& value) { m_destinationType = std::move(value); }
-    inline DescribePublishingDestinationResult& WithDestinationType(const DestinationType& value) { SetDestinationType(value); return *this;}
-    inline DescribePublishingDestinationResult& WithDestinationType(DestinationType&& value) { SetDestinationType(std::move(value)); return *this;}
+    inline DestinationType GetDestinationType() const { return m_destinationType; }
+    inline void SetDestinationType(DestinationType value) { m_destinationTypeHasBeenSet = true; m_destinationType = value; }
+    inline DescribePublishingDestinationResult& WithDestinationType(DestinationType value) { SetDestinationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the publishing destination.</p>
      */
-    inline const PublishingStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const PublishingStatus& value) { m_status = value; }
-    inline void SetStatus(PublishingStatus&& value) { m_status = std::move(value); }
-    inline DescribePublishingDestinationResult& WithStatus(const PublishingStatus& value) { SetStatus(value); return *this;}
-    inline DescribePublishingDestinationResult& WithStatus(PublishingStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline PublishingStatus GetStatus() const { return m_status; }
+    inline void SetStatus(PublishingStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DescribePublishingDestinationResult& WithStatus(PublishingStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -76,8 +70,8 @@ namespace Model
      * <p>The time, in epoch millisecond format, at which GuardDuty was first unable to
      * publish findings to the destination.</p>
      */
-    inline long long GetPublishingFailureStartTimestamp() const{ return m_publishingFailureStartTimestamp; }
-    inline void SetPublishingFailureStartTimestamp(long long value) { m_publishingFailureStartTimestamp = value; }
+    inline long long GetPublishingFailureStartTimestamp() const { return m_publishingFailureStartTimestamp; }
+    inline void SetPublishingFailureStartTimestamp(long long value) { m_publishingFailureStartTimestampHasBeenSet = true; m_publishingFailureStartTimestamp = value; }
     inline DescribePublishingDestinationResult& WithPublishingFailureStartTimestamp(long long value) { SetPublishingFailureStartTimestamp(value); return *this;}
     ///@}
 
@@ -87,36 +81,40 @@ namespace Model
      * <code>DestinationArn</code> and <code>KmsKeyArn</code> of the publishing
      * destination.</p>
      */
-    inline const DestinationProperties& GetDestinationProperties() const{ return m_destinationProperties; }
-    inline void SetDestinationProperties(const DestinationProperties& value) { m_destinationProperties = value; }
-    inline void SetDestinationProperties(DestinationProperties&& value) { m_destinationProperties = std::move(value); }
-    inline DescribePublishingDestinationResult& WithDestinationProperties(const DestinationProperties& value) { SetDestinationProperties(value); return *this;}
-    inline DescribePublishingDestinationResult& WithDestinationProperties(DestinationProperties&& value) { SetDestinationProperties(std::move(value)); return *this;}
+    inline const DestinationProperties& GetDestinationProperties() const { return m_destinationProperties; }
+    template<typename DestinationPropertiesT = DestinationProperties>
+    void SetDestinationProperties(DestinationPropertiesT&& value) { m_destinationPropertiesHasBeenSet = true; m_destinationProperties = std::forward<DestinationPropertiesT>(value); }
+    template<typename DestinationPropertiesT = DestinationProperties>
+    DescribePublishingDestinationResult& WithDestinationProperties(DestinationPropertiesT&& value) { SetDestinationProperties(std::forward<DestinationPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribePublishingDestinationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribePublishingDestinationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribePublishingDestinationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribePublishingDestinationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_destinationId;
+    bool m_destinationIdHasBeenSet = false;
 
-    DestinationType m_destinationType;
+    DestinationType m_destinationType{DestinationType::NOT_SET};
+    bool m_destinationTypeHasBeenSet = false;
 
-    PublishingStatus m_status;
+    PublishingStatus m_status{PublishingStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    long long m_publishingFailureStartTimestamp;
+    long long m_publishingFailureStartTimestamp{0};
+    bool m_publishingFailureStartTimestampHasBeenSet = false;
 
     DestinationProperties m_destinationProperties;
+    bool m_destinationPropertiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

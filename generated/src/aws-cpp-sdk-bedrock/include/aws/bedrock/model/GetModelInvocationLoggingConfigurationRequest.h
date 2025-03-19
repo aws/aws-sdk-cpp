@@ -19,7 +19,7 @@ namespace Model
   class GetModelInvocationLoggingConfigurationRequest : public BedrockRequest
   {
   public:
-    AWS_BEDROCK_API GetModelInvocationLoggingConfigurationRequest();
+    AWS_BEDROCK_API GetModelInvocationLoggingConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

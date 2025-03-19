@@ -18,16 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-ResourceEvaluationFilters::ResourceEvaluationFilters() : 
-    m_evaluationMode(EvaluationMode::NOT_SET),
-    m_evaluationModeHasBeenSet(false),
-    m_timeWindowHasBeenSet(false),
-    m_evaluationContextIdentifierHasBeenSet(false)
-{
-}
-
 ResourceEvaluationFilters::ResourceEvaluationFilters(JsonView jsonValue)
-  : ResourceEvaluationFilters()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ResourceEvaluationFilters& ResourceEvaluationFilters::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("EvaluationMode"))
   {
     m_evaluationMode = EvaluationModeMapper::GetEvaluationModeForName(jsonValue.GetString("EvaluationMode"));
-
     m_evaluationModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeWindow"))
   {
     m_timeWindow = jsonValue.GetObject("TimeWindow");
-
     m_timeWindowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationContextIdentifier"))
   {
     m_evaluationContextIdentifier = jsonValue.GetString("EvaluationContextIdentifier");
-
     m_evaluationContextIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

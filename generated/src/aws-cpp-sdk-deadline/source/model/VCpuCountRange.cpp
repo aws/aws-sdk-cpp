@@ -18,16 +18,7 @@ namespace deadline
 namespace Model
 {
 
-VCpuCountRange::VCpuCountRange() : 
-    m_min(0),
-    m_minHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false)
-{
-}
-
 VCpuCountRange::VCpuCountRange(JsonView jsonValue)
-  : VCpuCountRange()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ VCpuCountRange& VCpuCountRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("min"))
   {
     m_min = jsonValue.GetInteger("min");
-
     m_minHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("max"))
   {
     m_max = jsonValue.GetInteger("max");
-
     m_maxHasBeenSet = true;
   }
-
   return *this;
 }
 

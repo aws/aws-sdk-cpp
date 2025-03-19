@@ -20,17 +20,7 @@ namespace SES
 namespace Model
 {
 
-ReputationOptions::ReputationOptions() : 
-    m_sendingEnabled(false),
-    m_sendingEnabledHasBeenSet(false),
-    m_reputationMetricsEnabled(false),
-    m_reputationMetricsEnabledHasBeenSet(false),
-    m_lastFreshStartHasBeenSet(false)
-{
-}
-
 ReputationOptions::ReputationOptions(const XmlNode& xmlNode)
-  : ReputationOptions()
 {
   *this = xmlNode;
 }

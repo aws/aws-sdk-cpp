@@ -31,7 +31,7 @@ namespace Model
   class LifecycleEventConfiguration
   {
   public:
-    AWS_OPSWORKS_API LifecycleEventConfiguration();
+    AWS_OPSWORKS_API LifecycleEventConfiguration() = default;
     AWS_OPSWORKS_API LifecycleEventConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API LifecycleEventConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
      * <p>A <code>ShutdownEventConfiguration</code> object that specifies the Shutdown
      * event configuration.</p>
      */
-    inline const ShutdownEventConfiguration& GetShutdown() const{ return m_shutdown; }
+    inline const ShutdownEventConfiguration& GetShutdown() const { return m_shutdown; }
     inline bool ShutdownHasBeenSet() const { return m_shutdownHasBeenSet; }
-    inline void SetShutdown(const ShutdownEventConfiguration& value) { m_shutdownHasBeenSet = true; m_shutdown = value; }
-    inline void SetShutdown(ShutdownEventConfiguration&& value) { m_shutdownHasBeenSet = true; m_shutdown = std::move(value); }
-    inline LifecycleEventConfiguration& WithShutdown(const ShutdownEventConfiguration& value) { SetShutdown(value); return *this;}
-    inline LifecycleEventConfiguration& WithShutdown(ShutdownEventConfiguration&& value) { SetShutdown(std::move(value)); return *this;}
+    template<typename ShutdownT = ShutdownEventConfiguration>
+    void SetShutdown(ShutdownT&& value) { m_shutdownHasBeenSet = true; m_shutdown = std::forward<ShutdownT>(value); }
+    template<typename ShutdownT = ShutdownEventConfiguration>
+    LifecycleEventConfiguration& WithShutdown(ShutdownT&& value) { SetShutdown(std::forward<ShutdownT>(value)); return *this;}
     ///@}
   private:
 

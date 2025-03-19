@@ -18,24 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-FunnelChartDataLabelOptions::FunnelChartDataLabelOptions() : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_categoryLabelVisibility(Visibility::NOT_SET),
-    m_categoryLabelVisibilityHasBeenSet(false),
-    m_measureLabelVisibility(Visibility::NOT_SET),
-    m_measureLabelVisibilityHasBeenSet(false),
-    m_position(DataLabelPosition::NOT_SET),
-    m_positionHasBeenSet(false),
-    m_labelFontConfigurationHasBeenSet(false),
-    m_labelColorHasBeenSet(false),
-    m_measureDataLabelStyle(FunnelChartMeasureDataLabelStyle::NOT_SET),
-    m_measureDataLabelStyleHasBeenSet(false)
-{
-}
-
 FunnelChartDataLabelOptions::FunnelChartDataLabelOptions(JsonView jsonValue)
-  : FunnelChartDataLabelOptions()
 {
   *this = jsonValue;
 }
@@ -45,52 +28,38 @@ FunnelChartDataLabelOptions& FunnelChartDataLabelOptions::operator =(JsonView js
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CategoryLabelVisibility"))
   {
     m_categoryLabelVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("CategoryLabelVisibility"));
-
     m_categoryLabelVisibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MeasureLabelVisibility"))
   {
     m_measureLabelVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("MeasureLabelVisibility"));
-
     m_measureLabelVisibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Position"))
   {
     m_position = DataLabelPositionMapper::GetDataLabelPositionForName(jsonValue.GetString("Position"));
-
     m_positionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LabelFontConfiguration"))
   {
     m_labelFontConfiguration = jsonValue.GetObject("LabelFontConfiguration");
-
     m_labelFontConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LabelColor"))
   {
     m_labelColor = jsonValue.GetString("LabelColor");
-
     m_labelColorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MeasureDataLabelStyle"))
   {
     m_measureDataLabelStyle = FunnelChartMeasureDataLabelStyleMapper::GetFunnelChartMeasureDataLabelStyleForName(jsonValue.GetString("MeasureDataLabelStyle"));
-
     m_measureDataLabelStyleHasBeenSet = true;
   }
-
   return *this;
 }
 

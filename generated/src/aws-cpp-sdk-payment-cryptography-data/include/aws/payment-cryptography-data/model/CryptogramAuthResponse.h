@@ -34,7 +34,7 @@ namespace Model
   class CryptogramAuthResponse
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API CryptogramAuthResponse();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API CryptogramAuthResponse() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API CryptogramAuthResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API CryptogramAuthResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>Parameters that are required for ARPC response generation using method1 after
      * ARQC verification is successful.</p>
      */
-    inline const CryptogramVerificationArpcMethod1& GetArpcMethod1() const{ return m_arpcMethod1; }
+    inline const CryptogramVerificationArpcMethod1& GetArpcMethod1() const { return m_arpcMethod1; }
     inline bool ArpcMethod1HasBeenSet() const { return m_arpcMethod1HasBeenSet; }
-    inline void SetArpcMethod1(const CryptogramVerificationArpcMethod1& value) { m_arpcMethod1HasBeenSet = true; m_arpcMethod1 = value; }
-    inline void SetArpcMethod1(CryptogramVerificationArpcMethod1&& value) { m_arpcMethod1HasBeenSet = true; m_arpcMethod1 = std::move(value); }
-    inline CryptogramAuthResponse& WithArpcMethod1(const CryptogramVerificationArpcMethod1& value) { SetArpcMethod1(value); return *this;}
-    inline CryptogramAuthResponse& WithArpcMethod1(CryptogramVerificationArpcMethod1&& value) { SetArpcMethod1(std::move(value)); return *this;}
+    template<typename ArpcMethod1T = CryptogramVerificationArpcMethod1>
+    void SetArpcMethod1(ArpcMethod1T&& value) { m_arpcMethod1HasBeenSet = true; m_arpcMethod1 = std::forward<ArpcMethod1T>(value); }
+    template<typename ArpcMethod1T = CryptogramVerificationArpcMethod1>
+    CryptogramAuthResponse& WithArpcMethod1(ArpcMethod1T&& value) { SetArpcMethod1(std::forward<ArpcMethod1T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +58,12 @@ namespace Model
      * <p>Parameters that are required for ARPC response generation using method2 after
      * ARQC verification is successful.</p>
      */
-    inline const CryptogramVerificationArpcMethod2& GetArpcMethod2() const{ return m_arpcMethod2; }
+    inline const CryptogramVerificationArpcMethod2& GetArpcMethod2() const { return m_arpcMethod2; }
     inline bool ArpcMethod2HasBeenSet() const { return m_arpcMethod2HasBeenSet; }
-    inline void SetArpcMethod2(const CryptogramVerificationArpcMethod2& value) { m_arpcMethod2HasBeenSet = true; m_arpcMethod2 = value; }
-    inline void SetArpcMethod2(CryptogramVerificationArpcMethod2&& value) { m_arpcMethod2HasBeenSet = true; m_arpcMethod2 = std::move(value); }
-    inline CryptogramAuthResponse& WithArpcMethod2(const CryptogramVerificationArpcMethod2& value) { SetArpcMethod2(value); return *this;}
-    inline CryptogramAuthResponse& WithArpcMethod2(CryptogramVerificationArpcMethod2&& value) { SetArpcMethod2(std::move(value)); return *this;}
+    template<typename ArpcMethod2T = CryptogramVerificationArpcMethod2>
+    void SetArpcMethod2(ArpcMethod2T&& value) { m_arpcMethod2HasBeenSet = true; m_arpcMethod2 = std::forward<ArpcMethod2T>(value); }
+    template<typename ArpcMethod2T = CryptogramVerificationArpcMethod2>
+    CryptogramAuthResponse& WithArpcMethod2(ArpcMethod2T&& value) { SetArpcMethod2(std::forward<ArpcMethod2T>(value)); return *this;}
     ///@}
   private:
 

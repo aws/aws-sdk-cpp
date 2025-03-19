@@ -12,11 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutAccountSuppressionAttributesRequest::PutAccountSuppressionAttributesRequest() : 
-    m_suppressedReasonsHasBeenSet(false)
-{
-}
-
 Aws::String PutAccountSuppressionAttributesRequest::SerializePayload() const
 {
   JsonValue payload;

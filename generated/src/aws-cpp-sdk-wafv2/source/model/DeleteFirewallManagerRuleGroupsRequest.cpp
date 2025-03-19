@@ -12,12 +12,6 @@ using namespace Aws::WAFV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFirewallManagerRuleGroupsRequest::DeleteFirewallManagerRuleGroupsRequest() : 
-    m_webACLArnHasBeenSet(false),
-    m_webACLLockTokenHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFirewallManagerRuleGroupsRequest::SerializePayload() const
 {
   JsonValue payload;

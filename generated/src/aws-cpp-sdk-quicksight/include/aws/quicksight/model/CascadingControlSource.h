@@ -33,7 +33,7 @@ namespace Model
   class CascadingControlSource
   {
   public:
-    AWS_QUICKSIGHT_API CascadingControlSource();
+    AWS_QUICKSIGHT_API CascadingControlSource() = default;
     AWS_QUICKSIGHT_API CascadingControlSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API CascadingControlSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The source sheet control ID of a <code>CascadingControlSource</code>.</p>
      */
-    inline const Aws::String& GetSourceSheetControlId() const{ return m_sourceSheetControlId; }
+    inline const Aws::String& GetSourceSheetControlId() const { return m_sourceSheetControlId; }
     inline bool SourceSheetControlIdHasBeenSet() const { return m_sourceSheetControlIdHasBeenSet; }
-    inline void SetSourceSheetControlId(const Aws::String& value) { m_sourceSheetControlIdHasBeenSet = true; m_sourceSheetControlId = value; }
-    inline void SetSourceSheetControlId(Aws::String&& value) { m_sourceSheetControlIdHasBeenSet = true; m_sourceSheetControlId = std::move(value); }
-    inline void SetSourceSheetControlId(const char* value) { m_sourceSheetControlIdHasBeenSet = true; m_sourceSheetControlId.assign(value); }
-    inline CascadingControlSource& WithSourceSheetControlId(const Aws::String& value) { SetSourceSheetControlId(value); return *this;}
-    inline CascadingControlSource& WithSourceSheetControlId(Aws::String&& value) { SetSourceSheetControlId(std::move(value)); return *this;}
-    inline CascadingControlSource& WithSourceSheetControlId(const char* value) { SetSourceSheetControlId(value); return *this;}
+    template<typename SourceSheetControlIdT = Aws::String>
+    void SetSourceSheetControlId(SourceSheetControlIdT&& value) { m_sourceSheetControlIdHasBeenSet = true; m_sourceSheetControlId = std::forward<SourceSheetControlIdT>(value); }
+    template<typename SourceSheetControlIdT = Aws::String>
+    CascadingControlSource& WithSourceSheetControlId(SourceSheetControlIdT&& value) { SetSourceSheetControlId(std::forward<SourceSheetControlIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,12 @@ namespace Model
      * <p>The column identifier that determines which column to look up for the source
      * sheet control.</p>
      */
-    inline const ColumnIdentifier& GetColumnToMatch() const{ return m_columnToMatch; }
+    inline const ColumnIdentifier& GetColumnToMatch() const { return m_columnToMatch; }
     inline bool ColumnToMatchHasBeenSet() const { return m_columnToMatchHasBeenSet; }
-    inline void SetColumnToMatch(const ColumnIdentifier& value) { m_columnToMatchHasBeenSet = true; m_columnToMatch = value; }
-    inline void SetColumnToMatch(ColumnIdentifier&& value) { m_columnToMatchHasBeenSet = true; m_columnToMatch = std::move(value); }
-    inline CascadingControlSource& WithColumnToMatch(const ColumnIdentifier& value) { SetColumnToMatch(value); return *this;}
-    inline CascadingControlSource& WithColumnToMatch(ColumnIdentifier&& value) { SetColumnToMatch(std::move(value)); return *this;}
+    template<typename ColumnToMatchT = ColumnIdentifier>
+    void SetColumnToMatch(ColumnToMatchT&& value) { m_columnToMatchHasBeenSet = true; m_columnToMatch = std::forward<ColumnToMatchT>(value); }
+    template<typename ColumnToMatchT = ColumnIdentifier>
+    CascadingControlSource& WithColumnToMatch(ColumnToMatchT&& value) { SetColumnToMatch(std::forward<ColumnToMatchT>(value)); return *this;}
     ///@}
   private:
 

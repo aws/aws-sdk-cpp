@@ -25,7 +25,7 @@ namespace Model
   class GetSlotTypesRequest : public LexModelBuildingServiceRequest
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API GetSlotTypesRequest();
+    AWS_LEXMODELBUILDINGSERVICE_API GetSlotTypesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
      * response. To fetch next page of slot types, specify the pagination token in the
      * next request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetSlotTypesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetSlotTypesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetSlotTypesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetSlotTypesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * <p>The maximum number of slot types to return in the response. The default is
      * 10.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetSlotTypesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -72,21 +70,19 @@ namespace Model
      * part of its name matches the substring. For example, "xyz" matches both "xyzabc"
      * and "abcxyz."</p>
      */
-    inline const Aws::String& GetNameContains() const{ return m_nameContains; }
+    inline const Aws::String& GetNameContains() const { return m_nameContains; }
     inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
-    inline void SetNameContains(const Aws::String& value) { m_nameContainsHasBeenSet = true; m_nameContains = value; }
-    inline void SetNameContains(Aws::String&& value) { m_nameContainsHasBeenSet = true; m_nameContains = std::move(value); }
-    inline void SetNameContains(const char* value) { m_nameContainsHasBeenSet = true; m_nameContains.assign(value); }
-    inline GetSlotTypesRequest& WithNameContains(const Aws::String& value) { SetNameContains(value); return *this;}
-    inline GetSlotTypesRequest& WithNameContains(Aws::String&& value) { SetNameContains(std::move(value)); return *this;}
-    inline GetSlotTypesRequest& WithNameContains(const char* value) { SetNameContains(value); return *this;}
+    template<typename NameContainsT = Aws::String>
+    void SetNameContains(NameContainsT&& value) { m_nameContainsHasBeenSet = true; m_nameContains = std::forward<NameContainsT>(value); }
+    template<typename NameContainsT = Aws::String>
+    GetSlotTypesRequest& WithNameContains(NameContainsT&& value) { SetNameContains(std::forward<NameContainsT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nameContains;

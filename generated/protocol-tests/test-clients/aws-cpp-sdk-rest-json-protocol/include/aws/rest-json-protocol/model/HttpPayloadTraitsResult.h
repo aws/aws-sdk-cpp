@@ -22,10 +22,9 @@ namespace Model
   class HttpPayloadTraitsResult
   {
   public:
-    AWS_RESTJSONPROTOCOL_API HttpPayloadTraitsResult();
-    //We have to define these because Microsoft doesn't auto generate them
-    AWS_RESTJSONPROTOCOL_API HttpPayloadTraitsResult(HttpPayloadTraitsResult&&);
-    AWS_RESTJSONPROTOCOL_API HttpPayloadTraitsResult& operator=(HttpPayloadTraitsResult&&);
+    AWS_RESTJSONPROTOCOL_API HttpPayloadTraitsResult() = default;
+    AWS_RESTJSONPROTOCOL_API HttpPayloadTraitsResult(HttpPayloadTraitsResult&&) = default;
+    AWS_RESTJSONPROTOCOL_API HttpPayloadTraitsResult& operator=(HttpPayloadTraitsResult&&) = default;
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     HttpPayloadTraitsResult(const HttpPayloadTraitsResult&) = delete;
@@ -39,13 +38,11 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetFoo() const{ return m_foo; }
-    inline void SetFoo(const Aws::String& value) { m_foo = value; }
-    inline void SetFoo(Aws::String&& value) { m_foo = std::move(value); }
-    inline void SetFoo(const char* value) { m_foo.assign(value); }
-    inline HttpPayloadTraitsResult& WithFoo(const Aws::String& value) { SetFoo(value); return *this;}
-    inline HttpPayloadTraitsResult& WithFoo(Aws::String&& value) { SetFoo(std::move(value)); return *this;}
-    inline HttpPayloadTraitsResult& WithFoo(const char* value) { SetFoo(value); return *this;}
+    inline const Aws::String& GetFoo() const { return m_foo; }
+    template<typename FooT = Aws::String>
+    void SetFoo(FooT&& value) { m_fooHasBeenSet = true; m_foo = std::forward<FooT>(value); }
+    template<typename FooT = Aws::String>
+    HttpPayloadTraitsResult& WithFoo(FooT&& value) { SetFoo(std::forward<FooT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,21 +54,22 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline HttpPayloadTraitsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline HttpPayloadTraitsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline HttpPayloadTraitsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    HttpPayloadTraitsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_foo;
+    bool m_fooHasBeenSet = false;
 
-    Aws::Utils::Stream::ResponseStream m_blob;
+    Aws::Utils::Stream::ResponseStream m_blob{};
+    bool m_blobHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

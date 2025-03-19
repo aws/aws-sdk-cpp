@@ -32,7 +32,7 @@ namespace Model
   class ContentDataDetails
   {
   public:
-    AWS_QCONNECT_API ContentDataDetails();
+    AWS_QCONNECT_API ContentDataDetails() = default;
     AWS_QCONNECT_API ContentDataDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API ContentDataDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>Details about the content ranking data.</p>
      */
-    inline const RankingData& GetRankingData() const{ return m_rankingData; }
+    inline const RankingData& GetRankingData() const { return m_rankingData; }
     inline bool RankingDataHasBeenSet() const { return m_rankingDataHasBeenSet; }
-    inline void SetRankingData(const RankingData& value) { m_rankingDataHasBeenSet = true; m_rankingData = value; }
-    inline void SetRankingData(RankingData&& value) { m_rankingDataHasBeenSet = true; m_rankingData = std::move(value); }
-    inline ContentDataDetails& WithRankingData(const RankingData& value) { SetRankingData(value); return *this;}
-    inline ContentDataDetails& WithRankingData(RankingData&& value) { SetRankingData(std::move(value)); return *this;}
+    template<typename RankingDataT = RankingData>
+    void SetRankingData(RankingDataT&& value) { m_rankingDataHasBeenSet = true; m_rankingData = std::forward<RankingDataT>(value); }
+    template<typename RankingDataT = RankingData>
+    ContentDataDetails& WithRankingData(RankingDataT&& value) { SetRankingData(std::forward<RankingDataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about the content text data.</p>
      */
-    inline const TextData& GetTextData() const{ return m_textData; }
+    inline const TextData& GetTextData() const { return m_textData; }
     inline bool TextDataHasBeenSet() const { return m_textDataHasBeenSet; }
-    inline void SetTextData(const TextData& value) { m_textDataHasBeenSet = true; m_textData = value; }
-    inline void SetTextData(TextData&& value) { m_textDataHasBeenSet = true; m_textData = std::move(value); }
-    inline ContentDataDetails& WithTextData(const TextData& value) { SetTextData(value); return *this;}
-    inline ContentDataDetails& WithTextData(TextData&& value) { SetTextData(std::move(value)); return *this;}
+    template<typename TextDataT = TextData>
+    void SetTextData(TextDataT&& value) { m_textDataHasBeenSet = true; m_textData = std::forward<TextDataT>(value); }
+    template<typename TextDataT = TextData>
+    ContentDataDetails& WithTextData(TextDataT&& value) { SetTextData(std::forward<TextDataT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-AssetBundleImportJobResourceIdOverrideConfiguration::AssetBundleImportJobResourceIdOverrideConfiguration() : 
-    m_prefixForAllResourcesHasBeenSet(false)
-{
-}
-
 AssetBundleImportJobResourceIdOverrideConfiguration::AssetBundleImportJobResourceIdOverrideConfiguration(JsonView jsonValue)
-  : AssetBundleImportJobResourceIdOverrideConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AssetBundleImportJobResourceIdOverrideConfiguration& AssetBundleImportJobResourc
   if(jsonValue.ValueExists("PrefixForAllResources"))
   {
     m_prefixForAllResources = jsonValue.GetString("PrefixForAllResources");
-
     m_prefixForAllResourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-FailedRequest::FailedRequest() : 
-    m_requestIdentifierHasBeenSet(false),
-    m_failureReasonCode(FailureReasonCode::NOT_SET),
-    m_failureReasonCodeHasBeenSet(false),
-    m_failureReasonMessageHasBeenSet(false)
-{
-}
-
 FailedRequest::FailedRequest(JsonView jsonValue)
-  : FailedRequest()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ FailedRequest& FailedRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RequestIdentifier"))
   {
     m_requestIdentifier = jsonValue.GetString("RequestIdentifier");
-
     m_requestIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReasonCode"))
   {
     m_failureReasonCode = FailureReasonCodeMapper::GetFailureReasonCodeForName(jsonValue.GetString("FailureReasonCode"));
-
     m_failureReasonCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReasonMessage"))
   {
     m_failureReasonMessage = jsonValue.GetString("FailureReasonMessage");
-
     m_failureReasonMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

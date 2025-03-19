@@ -12,18 +12,6 @@ using namespace Aws::ChimeSDKMediaPipelines::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMediaInsightsPipelineRequest::CreateMediaInsightsPipelineRequest() : 
-    m_mediaInsightsPipelineConfigurationArnHasBeenSet(false),
-    m_kinesisVideoStreamSourceRuntimeConfigurationHasBeenSet(false),
-    m_mediaInsightsRuntimeMetadataHasBeenSet(false),
-    m_kinesisVideoStreamRecordingSourceRuntimeConfigurationHasBeenSet(false),
-    m_s3RecordingSinkRuntimeConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateMediaInsightsPipelineRequest::SerializePayload() const
 {
   JsonValue payload;

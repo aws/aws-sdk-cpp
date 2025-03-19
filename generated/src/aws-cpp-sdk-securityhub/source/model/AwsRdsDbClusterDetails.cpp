@@ -18,61 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRdsDbClusterDetails::AwsRdsDbClusterDetails() : 
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_backupRetentionPeriod(0),
-    m_backupRetentionPeriodHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_readerEndpointHasBeenSet(false),
-    m_customEndpointsHasBeenSet(false),
-    m_multiAz(false),
-    m_multiAzHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_masterUsernameHasBeenSet(false),
-    m_preferredBackupWindowHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_readReplicaIdentifiersHasBeenSet(false),
-    m_vpcSecurityGroupsHasBeenSet(false),
-    m_hostedZoneIdHasBeenSet(false),
-    m_storageEncrypted(false),
-    m_storageEncryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_dbClusterResourceIdHasBeenSet(false),
-    m_associatedRolesHasBeenSet(false),
-    m_clusterCreateTimeHasBeenSet(false),
-    m_enabledCloudWatchLogsExportsHasBeenSet(false),
-    m_engineModeHasBeenSet(false),
-    m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false),
-    m_httpEndpointEnabled(false),
-    m_httpEndpointEnabledHasBeenSet(false),
-    m_activityStreamStatusHasBeenSet(false),
-    m_copyTagsToSnapshot(false),
-    m_copyTagsToSnapshotHasBeenSet(false),
-    m_crossAccountClone(false),
-    m_crossAccountCloneHasBeenSet(false),
-    m_domainMembershipsHasBeenSet(false),
-    m_dbClusterParameterGroupHasBeenSet(false),
-    m_dbSubnetGroupHasBeenSet(false),
-    m_dbClusterOptionGroupMembershipsHasBeenSet(false),
-    m_dbClusterIdentifierHasBeenSet(false),
-    m_dbClusterMembersHasBeenSet(false),
-    m_iamDatabaseAuthenticationEnabled(false),
-    m_iamDatabaseAuthenticationEnabledHasBeenSet(false),
-    m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false)
-{
-}
-
 AwsRdsDbClusterDetails::AwsRdsDbClusterDetails(JsonView jsonValue)
-  : AwsRdsDbClusterDetails()
 {
   *this = jsonValue;
 }
@@ -82,10 +28,8 @@ AwsRdsDbClusterDetails& AwsRdsDbClusterDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AllocatedStorage"))
   {
     m_allocatedStorage = jsonValue.GetInteger("AllocatedStorage");
-
     m_allocatedStorageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZones"))
   {
     Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
@@ -95,42 +39,31 @@ AwsRdsDbClusterDetails& AwsRdsDbClusterDetails::operator =(JsonView jsonValue)
     }
     m_availabilityZonesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupRetentionPeriod"))
   {
     m_backupRetentionPeriod = jsonValue.GetInteger("BackupRetentionPeriod");
-
     m_backupRetentionPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Endpoint"))
   {
     m_endpoint = jsonValue.GetString("Endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReaderEndpoint"))
   {
     m_readerEndpoint = jsonValue.GetString("ReaderEndpoint");
-
     m_readerEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomEndpoints"))
   {
     Aws::Utils::Array<JsonView> customEndpointsJsonList = jsonValue.GetArray("CustomEndpoints");
@@ -140,56 +73,41 @@ AwsRdsDbClusterDetails& AwsRdsDbClusterDetails::operator =(JsonView jsonValue)
     }
     m_customEndpointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MultiAz"))
   {
     m_multiAz = jsonValue.GetBool("MultiAz");
-
     m_multiAzHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Engine"))
   {
     m_engine = jsonValue.GetString("Engine");
-
     m_engineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineVersion"))
   {
     m_engineVersion = jsonValue.GetString("EngineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MasterUsername"))
   {
     m_masterUsername = jsonValue.GetString("MasterUsername");
-
     m_masterUsernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreferredBackupWindow"))
   {
     m_preferredBackupWindow = jsonValue.GetString("PreferredBackupWindow");
-
     m_preferredBackupWindowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreferredMaintenanceWindow"))
   {
     m_preferredMaintenanceWindow = jsonValue.GetString("PreferredMaintenanceWindow");
-
     m_preferredMaintenanceWindowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReadReplicaIdentifiers"))
   {
     Aws::Utils::Array<JsonView> readReplicaIdentifiersJsonList = jsonValue.GetArray("ReadReplicaIdentifiers");
@@ -199,7 +117,6 @@ AwsRdsDbClusterDetails& AwsRdsDbClusterDetails::operator =(JsonView jsonValue)
     }
     m_readReplicaIdentifiersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcSecurityGroups"))
   {
     Aws::Utils::Array<JsonView> vpcSecurityGroupsJsonList = jsonValue.GetArray("VpcSecurityGroups");
@@ -209,35 +126,26 @@ AwsRdsDbClusterDetails& AwsRdsDbClusterDetails::operator =(JsonView jsonValue)
     }
     m_vpcSecurityGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HostedZoneId"))
   {
     m_hostedZoneId = jsonValue.GetString("HostedZoneId");
-
     m_hostedZoneIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageEncrypted"))
   {
     m_storageEncrypted = jsonValue.GetBool("StorageEncrypted");
-
     m_storageEncryptedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DbClusterResourceId"))
   {
     m_dbClusterResourceId = jsonValue.GetString("DbClusterResourceId");
-
     m_dbClusterResourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AssociatedRoles"))
   {
     Aws::Utils::Array<JsonView> associatedRolesJsonList = jsonValue.GetArray("AssociatedRoles");
@@ -247,14 +155,11 @@ AwsRdsDbClusterDetails& AwsRdsDbClusterDetails::operator =(JsonView jsonValue)
     }
     m_associatedRolesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterCreateTime"))
   {
     m_clusterCreateTime = jsonValue.GetString("ClusterCreateTime");
-
     m_clusterCreateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnabledCloudWatchLogsExports"))
   {
     Aws::Utils::Array<JsonView> enabledCloudWatchLogsExportsJsonList = jsonValue.GetArray("EnabledCloudWatchLogsExports");
@@ -264,49 +169,36 @@ AwsRdsDbClusterDetails& AwsRdsDbClusterDetails::operator =(JsonView jsonValue)
     }
     m_enabledCloudWatchLogsExportsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineMode"))
   {
     m_engineMode = jsonValue.GetString("EngineMode");
-
     m_engineModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeletionProtection"))
   {
     m_deletionProtection = jsonValue.GetBool("DeletionProtection");
-
     m_deletionProtectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HttpEndpointEnabled"))
   {
     m_httpEndpointEnabled = jsonValue.GetBool("HttpEndpointEnabled");
-
     m_httpEndpointEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActivityStreamStatus"))
   {
     m_activityStreamStatus = jsonValue.GetString("ActivityStreamStatus");
-
     m_activityStreamStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CopyTagsToSnapshot"))
   {
     m_copyTagsToSnapshot = jsonValue.GetBool("CopyTagsToSnapshot");
-
     m_copyTagsToSnapshotHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrossAccountClone"))
   {
     m_crossAccountClone = jsonValue.GetBool("CrossAccountClone");
-
     m_crossAccountCloneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainMemberships"))
   {
     Aws::Utils::Array<JsonView> domainMembershipsJsonList = jsonValue.GetArray("DomainMemberships");
@@ -316,21 +208,16 @@ AwsRdsDbClusterDetails& AwsRdsDbClusterDetails::operator =(JsonView jsonValue)
     }
     m_domainMembershipsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DbClusterParameterGroup"))
   {
     m_dbClusterParameterGroup = jsonValue.GetString("DbClusterParameterGroup");
-
     m_dbClusterParameterGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DbSubnetGroup"))
   {
     m_dbSubnetGroup = jsonValue.GetString("DbSubnetGroup");
-
     m_dbSubnetGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DbClusterOptionGroupMemberships"))
   {
     Aws::Utils::Array<JsonView> dbClusterOptionGroupMembershipsJsonList = jsonValue.GetArray("DbClusterOptionGroupMemberships");
@@ -340,14 +227,11 @@ AwsRdsDbClusterDetails& AwsRdsDbClusterDetails::operator =(JsonView jsonValue)
     }
     m_dbClusterOptionGroupMembershipsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DbClusterIdentifier"))
   {
     m_dbClusterIdentifier = jsonValue.GetString("DbClusterIdentifier");
-
     m_dbClusterIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DbClusterMembers"))
   {
     Aws::Utils::Array<JsonView> dbClusterMembersJsonList = jsonValue.GetArray("DbClusterMembers");
@@ -357,21 +241,16 @@ AwsRdsDbClusterDetails& AwsRdsDbClusterDetails::operator =(JsonView jsonValue)
     }
     m_dbClusterMembersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamDatabaseAuthenticationEnabled"))
   {
     m_iamDatabaseAuthenticationEnabled = jsonValue.GetBool("IamDatabaseAuthenticationEnabled");
-
     m_iamDatabaseAuthenticationEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoMinorVersionUpgrade"))
   {
     m_autoMinorVersionUpgrade = jsonValue.GetBool("AutoMinorVersionUpgrade");
-
     m_autoMinorVersionUpgradeHasBeenSet = true;
   }
-
   return *this;
 }
 

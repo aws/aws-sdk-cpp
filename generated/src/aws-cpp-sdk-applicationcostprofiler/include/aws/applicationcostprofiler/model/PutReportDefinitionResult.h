@@ -27,7 +27,7 @@ namespace Model
   class PutReportDefinitionResult
   {
   public:
-    AWS_APPLICATIONCOSTPROFILER_API PutReportDefinitionResult();
+    AWS_APPLICATIONCOSTPROFILER_API PutReportDefinitionResult() = default;
     AWS_APPLICATIONCOSTPROFILER_API PutReportDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONCOSTPROFILER_API PutReportDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>ID of the report.</p>
      */
-    inline const Aws::String& GetReportId() const{ return m_reportId; }
-    inline void SetReportId(const Aws::String& value) { m_reportId = value; }
-    inline void SetReportId(Aws::String&& value) { m_reportId = std::move(value); }
-    inline void SetReportId(const char* value) { m_reportId.assign(value); }
-    inline PutReportDefinitionResult& WithReportId(const Aws::String& value) { SetReportId(value); return *this;}
-    inline PutReportDefinitionResult& WithReportId(Aws::String&& value) { SetReportId(std::move(value)); return *this;}
-    inline PutReportDefinitionResult& WithReportId(const char* value) { SetReportId(value); return *this;}
+    inline const Aws::String& GetReportId() const { return m_reportId; }
+    template<typename ReportIdT = Aws::String>
+    void SetReportId(ReportIdT&& value) { m_reportIdHasBeenSet = true; m_reportId = std::forward<ReportIdT>(value); }
+    template<typename ReportIdT = Aws::String>
+    PutReportDefinitionResult& WithReportId(ReportIdT&& value) { SetReportId(std::forward<ReportIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutReportDefinitionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutReportDefinitionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutReportDefinitionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutReportDefinitionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_reportId;
+    bool m_reportIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ namespace Model
   class BatchAttachPolicyResponse
   {
   public:
-    AWS_CLOUDDIRECTORY_API BatchAttachPolicyResponse();
+    AWS_CLOUDDIRECTORY_API BatchAttachPolicyResponse() = default;
     AWS_CLOUDDIRECTORY_API BatchAttachPolicyResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API BatchAttachPolicyResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;

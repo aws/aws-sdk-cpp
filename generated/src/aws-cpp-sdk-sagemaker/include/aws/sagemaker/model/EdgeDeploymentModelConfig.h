@@ -32,7 +32,7 @@ namespace Model
   class EdgeDeploymentModelConfig
   {
   public:
-    AWS_SAGEMAKER_API EdgeDeploymentModelConfig();
+    AWS_SAGEMAKER_API EdgeDeploymentModelConfig() = default;
     AWS_SAGEMAKER_API EdgeDeploymentModelConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API EdgeDeploymentModelConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name the device application uses to reference this model.</p>
      */
-    inline const Aws::String& GetModelHandle() const{ return m_modelHandle; }
+    inline const Aws::String& GetModelHandle() const { return m_modelHandle; }
     inline bool ModelHandleHasBeenSet() const { return m_modelHandleHasBeenSet; }
-    inline void SetModelHandle(const Aws::String& value) { m_modelHandleHasBeenSet = true; m_modelHandle = value; }
-    inline void SetModelHandle(Aws::String&& value) { m_modelHandleHasBeenSet = true; m_modelHandle = std::move(value); }
-    inline void SetModelHandle(const char* value) { m_modelHandleHasBeenSet = true; m_modelHandle.assign(value); }
-    inline EdgeDeploymentModelConfig& WithModelHandle(const Aws::String& value) { SetModelHandle(value); return *this;}
-    inline EdgeDeploymentModelConfig& WithModelHandle(Aws::String&& value) { SetModelHandle(std::move(value)); return *this;}
-    inline EdgeDeploymentModelConfig& WithModelHandle(const char* value) { SetModelHandle(value); return *this;}
+    template<typename ModelHandleT = Aws::String>
+    void SetModelHandle(ModelHandleT&& value) { m_modelHandleHasBeenSet = true; m_modelHandle = std::forward<ModelHandleT>(value); }
+    template<typename ModelHandleT = Aws::String>
+    EdgeDeploymentModelConfig& WithModelHandle(ModelHandleT&& value) { SetModelHandle(std::forward<ModelHandleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The edge packaging job associated with this deployment.</p>
      */
-    inline const Aws::String& GetEdgePackagingJobName() const{ return m_edgePackagingJobName; }
+    inline const Aws::String& GetEdgePackagingJobName() const { return m_edgePackagingJobName; }
     inline bool EdgePackagingJobNameHasBeenSet() const { return m_edgePackagingJobNameHasBeenSet; }
-    inline void SetEdgePackagingJobName(const Aws::String& value) { m_edgePackagingJobNameHasBeenSet = true; m_edgePackagingJobName = value; }
-    inline void SetEdgePackagingJobName(Aws::String&& value) { m_edgePackagingJobNameHasBeenSet = true; m_edgePackagingJobName = std::move(value); }
-    inline void SetEdgePackagingJobName(const char* value) { m_edgePackagingJobNameHasBeenSet = true; m_edgePackagingJobName.assign(value); }
-    inline EdgeDeploymentModelConfig& WithEdgePackagingJobName(const Aws::String& value) { SetEdgePackagingJobName(value); return *this;}
-    inline EdgeDeploymentModelConfig& WithEdgePackagingJobName(Aws::String&& value) { SetEdgePackagingJobName(std::move(value)); return *this;}
-    inline EdgeDeploymentModelConfig& WithEdgePackagingJobName(const char* value) { SetEdgePackagingJobName(value); return *this;}
+    template<typename EdgePackagingJobNameT = Aws::String>
+    void SetEdgePackagingJobName(EdgePackagingJobNameT&& value) { m_edgePackagingJobNameHasBeenSet = true; m_edgePackagingJobName = std::forward<EdgePackagingJobNameT>(value); }
+    template<typename EdgePackagingJobNameT = Aws::String>
+    EdgeDeploymentModelConfig& WithEdgePackagingJobName(EdgePackagingJobNameT&& value) { SetEdgePackagingJobName(std::forward<EdgePackagingJobNameT>(value)); return *this;}
     ///@}
   private:
 

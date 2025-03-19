@@ -35,7 +35,7 @@ namespace Model
   class DatasetEntityRecognizerEntityList
   {
   public:
-    AWS_COMPREHEND_API DatasetEntityRecognizerEntityList();
+    AWS_COMPREHEND_API DatasetEntityRecognizerEntityList() = default;
     AWS_COMPREHEND_API DatasetEntityRecognizerEntityList(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API DatasetEntityRecognizerEntityList& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>Specifies the Amazon S3 location where the entity list is located.</p>
      */
-    inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+    inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-    inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-    inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-    inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-    inline DatasetEntityRecognizerEntityList& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-    inline DatasetEntityRecognizerEntityList& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-    inline DatasetEntityRecognizerEntityList& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    template<typename S3UriT = Aws::String>
+    void SetS3Uri(S3UriT&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::forward<S3UriT>(value); }
+    template<typename S3UriT = Aws::String>
+    DatasetEntityRecognizerEntityList& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
     ///@}
   private:
 

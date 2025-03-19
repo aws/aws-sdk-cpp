@@ -18,21 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-CaptionSourceSettings::CaptionSourceSettings() : 
-    m_ancillarySourceSettingsHasBeenSet(false),
-    m_dvbSubSourceSettingsHasBeenSet(false),
-    m_embeddedSourceSettingsHasBeenSet(false),
-    m_fileSourceSettingsHasBeenSet(false),
-    m_sourceType(CaptionSourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_teletextSourceSettingsHasBeenSet(false),
-    m_trackSourceSettingsHasBeenSet(false),
-    m_webvttHlsSourceSettingsHasBeenSet(false)
-{
-}
-
 CaptionSourceSettings::CaptionSourceSettings(JsonView jsonValue)
-  : CaptionSourceSettings()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ CaptionSourceSettings& CaptionSourceSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ancillarySourceSettings"))
   {
     m_ancillarySourceSettings = jsonValue.GetObject("ancillarySourceSettings");
-
     m_ancillarySourceSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dvbSubSourceSettings"))
   {
     m_dvbSubSourceSettings = jsonValue.GetObject("dvbSubSourceSettings");
-
     m_dvbSubSourceSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("embeddedSourceSettings"))
   {
     m_embeddedSourceSettings = jsonValue.GetObject("embeddedSourceSettings");
-
     m_embeddedSourceSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileSourceSettings"))
   {
     m_fileSourceSettings = jsonValue.GetObject("fileSourceSettings");
-
     m_fileSourceSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceType"))
   {
     m_sourceType = CaptionSourceTypeMapper::GetCaptionSourceTypeForName(jsonValue.GetString("sourceType"));
-
     m_sourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("teletextSourceSettings"))
   {
     m_teletextSourceSettings = jsonValue.GetObject("teletextSourceSettings");
-
     m_teletextSourceSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trackSourceSettings"))
   {
     m_trackSourceSettings = jsonValue.GetObject("trackSourceSettings");
-
     m_trackSourceSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("webvttHlsSourceSettings"))
   {
     m_webvttHlsSourceSettings = jsonValue.GetObject("webvttHlsSourceSettings");
-
     m_webvttHlsSourceSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

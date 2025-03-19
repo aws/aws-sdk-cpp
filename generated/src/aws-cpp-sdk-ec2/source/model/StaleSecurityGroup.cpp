@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-StaleSecurityGroup::StaleSecurityGroup() : 
-    m_descriptionHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_staleIpPermissionsHasBeenSet(false),
-    m_staleIpPermissionsEgressHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 StaleSecurityGroup::StaleSecurityGroup(const XmlNode& xmlNode)
-  : StaleSecurityGroup()
 {
   *this = xmlNode;
 }
@@ -64,6 +53,7 @@ StaleSecurityGroup& StaleSecurityGroup::operator =(const XmlNode& xmlNode)
     if(!staleIpPermissionsNode.IsNull())
     {
       XmlNode staleIpPermissionsMember = staleIpPermissionsNode.FirstChild("item");
+      m_staleIpPermissionsHasBeenSet = !staleIpPermissionsMember.IsNull();
       while(!staleIpPermissionsMember.IsNull())
       {
         m_staleIpPermissions.push_back(staleIpPermissionsMember);
@@ -76,6 +66,7 @@ StaleSecurityGroup& StaleSecurityGroup::operator =(const XmlNode& xmlNode)
     if(!staleIpPermissionsEgressNode.IsNull())
     {
       XmlNode staleIpPermissionsEgressMember = staleIpPermissionsEgressNode.FirstChild("item");
+      m_staleIpPermissionsEgressHasBeenSet = !staleIpPermissionsEgressMember.IsNull();
       while(!staleIpPermissionsEgressMember.IsNull())
       {
         m_staleIpPermissionsEgress.push_back(staleIpPermissionsEgressMember);

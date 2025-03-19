@@ -18,17 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-AttributeValue::AttributeValue() : 
-    m_sHasBeenSet(false),
-    m_n(0.0),
-    m_nHasBeenSet(false),
-    m_sLHasBeenSet(false),
-    m_sDMHasBeenSet(false)
-{
-}
-
 AttributeValue::AttributeValue(JsonView jsonValue)
-  : AttributeValue()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ AttributeValue& AttributeValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S"))
   {
     m_s = jsonValue.GetString("S");
-
     m_sHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("N"))
   {
     m_n = jsonValue.GetDouble("N");
-
     m_nHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SL"))
   {
     Aws::Utils::Array<JsonView> sLJsonList = jsonValue.GetArray("SL");
@@ -58,7 +44,6 @@ AttributeValue& AttributeValue::operator =(JsonView jsonValue)
     }
     m_sLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SDM"))
   {
     Aws::Map<Aws::String, JsonView> sDMJsonMap = jsonValue.GetObject("SDM").GetAllObjects();
@@ -68,7 +53,6 @@ AttributeValue& AttributeValue::operator =(JsonView jsonValue)
     }
     m_sDMHasBeenSet = true;
   }
-
   return *this;
 }
 

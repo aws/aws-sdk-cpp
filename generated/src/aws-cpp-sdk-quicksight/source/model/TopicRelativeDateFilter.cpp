@@ -18,17 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TopicRelativeDateFilter::TopicRelativeDateFilter() : 
-    m_timeGranularity(TopicTimeGranularity::NOT_SET),
-    m_timeGranularityHasBeenSet(false),
-    m_relativeDateFilterFunction(TopicRelativeDateFilterFunction::NOT_SET),
-    m_relativeDateFilterFunctionHasBeenSet(false),
-    m_constantHasBeenSet(false)
-{
-}
-
 TopicRelativeDateFilter::TopicRelativeDateFilter(JsonView jsonValue)
-  : TopicRelativeDateFilter()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ TopicRelativeDateFilter& TopicRelativeDateFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TimeGranularity"))
   {
     m_timeGranularity = TopicTimeGranularityMapper::GetTopicTimeGranularityForName(jsonValue.GetString("TimeGranularity"));
-
     m_timeGranularityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelativeDateFilterFunction"))
   {
     m_relativeDateFilterFunction = TopicRelativeDateFilterFunctionMapper::GetTopicRelativeDateFilterFunctionForName(jsonValue.GetString("RelativeDateFilterFunction"));
-
     m_relativeDateFilterFunctionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Constant"))
   {
     m_constant = jsonValue.GetObject("Constant");
-
     m_constantHasBeenSet = true;
   }
-
   return *this;
 }
 

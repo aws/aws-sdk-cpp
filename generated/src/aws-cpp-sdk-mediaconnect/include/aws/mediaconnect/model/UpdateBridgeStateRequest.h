@@ -25,7 +25,7 @@ namespace Model
   class UpdateBridgeStateRequest : public MediaConnectRequest
   {
   public:
-    AWS_MEDIACONNECT_API UpdateBridgeStateRequest();
+    AWS_MEDIACONNECT_API UpdateBridgeStateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,31 +40,27 @@ namespace Model
     /**
      * The ARN of the bridge that you want to update.
      */
-    inline const Aws::String& GetBridgeArn() const{ return m_bridgeArn; }
+    inline const Aws::String& GetBridgeArn() const { return m_bridgeArn; }
     inline bool BridgeArnHasBeenSet() const { return m_bridgeArnHasBeenSet; }
-    inline void SetBridgeArn(const Aws::String& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = value; }
-    inline void SetBridgeArn(Aws::String&& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = std::move(value); }
-    inline void SetBridgeArn(const char* value) { m_bridgeArnHasBeenSet = true; m_bridgeArn.assign(value); }
-    inline UpdateBridgeStateRequest& WithBridgeArn(const Aws::String& value) { SetBridgeArn(value); return *this;}
-    inline UpdateBridgeStateRequest& WithBridgeArn(Aws::String&& value) { SetBridgeArn(std::move(value)); return *this;}
-    inline UpdateBridgeStateRequest& WithBridgeArn(const char* value) { SetBridgeArn(value); return *this;}
+    template<typename BridgeArnT = Aws::String>
+    void SetBridgeArn(BridgeArnT&& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = std::forward<BridgeArnT>(value); }
+    template<typename BridgeArnT = Aws::String>
+    UpdateBridgeStateRequest& WithBridgeArn(BridgeArnT&& value) { SetBridgeArn(std::forward<BridgeArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DesiredState& GetDesiredState() const{ return m_desiredState; }
+    inline DesiredState GetDesiredState() const { return m_desiredState; }
     inline bool DesiredStateHasBeenSet() const { return m_desiredStateHasBeenSet; }
-    inline void SetDesiredState(const DesiredState& value) { m_desiredStateHasBeenSet = true; m_desiredState = value; }
-    inline void SetDesiredState(DesiredState&& value) { m_desiredStateHasBeenSet = true; m_desiredState = std::move(value); }
-    inline UpdateBridgeStateRequest& WithDesiredState(const DesiredState& value) { SetDesiredState(value); return *this;}
-    inline UpdateBridgeStateRequest& WithDesiredState(DesiredState&& value) { SetDesiredState(std::move(value)); return *this;}
+    inline void SetDesiredState(DesiredState value) { m_desiredStateHasBeenSet = true; m_desiredState = value; }
+    inline UpdateBridgeStateRequest& WithDesiredState(DesiredState value) { SetDesiredState(value); return *this;}
     ///@}
   private:
 
     Aws::String m_bridgeArn;
     bool m_bridgeArnHasBeenSet = false;
 
-    DesiredState m_desiredState;
+    DesiredState m_desiredState{DesiredState::NOT_SET};
     bool m_desiredStateHasBeenSet = false;
   };
 

@@ -18,15 +18,7 @@ namespace ControlCatalog
 namespace Model
 {
 
-ControlSummary::ControlSummary() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 ControlSummary::ControlSummary(JsonView jsonValue)
-  : ControlSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ControlSummary& ControlSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

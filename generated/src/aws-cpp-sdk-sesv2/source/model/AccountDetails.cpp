@@ -18,20 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-AccountDetails::AccountDetails() : 
-    m_mailType(MailType::NOT_SET),
-    m_mailTypeHasBeenSet(false),
-    m_websiteURLHasBeenSet(false),
-    m_contactLanguage(ContactLanguage::NOT_SET),
-    m_contactLanguageHasBeenSet(false),
-    m_useCaseDescriptionHasBeenSet(false),
-    m_additionalContactEmailAddressesHasBeenSet(false),
-    m_reviewDetailsHasBeenSet(false)
-{
-}
-
 AccountDetails::AccountDetails(JsonView jsonValue)
-  : AccountDetails()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ AccountDetails& AccountDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MailType"))
   {
     m_mailType = MailTypeMapper::GetMailTypeForName(jsonValue.GetString("MailType"));
-
     m_mailTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WebsiteURL"))
   {
     m_websiteURL = jsonValue.GetString("WebsiteURL");
-
     m_websiteURLHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContactLanguage"))
   {
     m_contactLanguage = ContactLanguageMapper::GetContactLanguageForName(jsonValue.GetString("ContactLanguage"));
-
     m_contactLanguageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UseCaseDescription"))
   {
     m_useCaseDescription = jsonValue.GetString("UseCaseDescription");
-
     m_useCaseDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalContactEmailAddresses"))
   {
     Aws::Utils::Array<JsonView> additionalContactEmailAddressesJsonList = jsonValue.GetArray("AdditionalContactEmailAddresses");
@@ -75,14 +54,11 @@ AccountDetails& AccountDetails::operator =(JsonView jsonValue)
     }
     m_additionalContactEmailAddressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReviewDetails"))
   {
     m_reviewDetails = jsonValue.GetObject("ReviewDetails");
-
     m_reviewDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

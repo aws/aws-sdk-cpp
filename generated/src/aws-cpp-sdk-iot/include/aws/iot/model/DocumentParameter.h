@@ -37,7 +37,7 @@ namespace Model
   class DocumentParameter
   {
   public:
-    AWS_IOT_API DocumentParameter();
+    AWS_IOT_API DocumentParameter() = default;
     AWS_IOT_API DocumentParameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API DocumentParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * <p>Key of the map field containing the patterns that need to be replaced in a
      * managed template job document schema.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline DocumentParameter& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline DocumentParameter& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline DocumentParameter& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    DocumentParameter& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * <p>Description of the map field containing the patterns that need to be replaced
      * in a managed template job document schema.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline DocumentParameter& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DocumentParameter& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DocumentParameter& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DocumentParameter& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +74,12 @@ namespace Model
      * <p>A regular expression of the patterns that need to be replaced in a managed
      * template job document schema.</p>
      */
-    inline const Aws::String& GetRegex() const{ return m_regex; }
+    inline const Aws::String& GetRegex() const { return m_regex; }
     inline bool RegexHasBeenSet() const { return m_regexHasBeenSet; }
-    inline void SetRegex(const Aws::String& value) { m_regexHasBeenSet = true; m_regex = value; }
-    inline void SetRegex(Aws::String&& value) { m_regexHasBeenSet = true; m_regex = std::move(value); }
-    inline void SetRegex(const char* value) { m_regexHasBeenSet = true; m_regex.assign(value); }
-    inline DocumentParameter& WithRegex(const Aws::String& value) { SetRegex(value); return *this;}
-    inline DocumentParameter& WithRegex(Aws::String&& value) { SetRegex(std::move(value)); return *this;}
-    inline DocumentParameter& WithRegex(const char* value) { SetRegex(value); return *this;}
+    template<typename RegexT = Aws::String>
+    void SetRegex(RegexT&& value) { m_regexHasBeenSet = true; m_regex = std::forward<RegexT>(value); }
+    template<typename RegexT = Aws::String>
+    DocumentParameter& WithRegex(RegexT&& value) { SetRegex(std::forward<RegexT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,14 +87,12 @@ namespace Model
      * <p>An example illustrating a pattern that need to be replaced in a managed
      * template job document schema.</p>
      */
-    inline const Aws::String& GetExample() const{ return m_example; }
+    inline const Aws::String& GetExample() const { return m_example; }
     inline bool ExampleHasBeenSet() const { return m_exampleHasBeenSet; }
-    inline void SetExample(const Aws::String& value) { m_exampleHasBeenSet = true; m_example = value; }
-    inline void SetExample(Aws::String&& value) { m_exampleHasBeenSet = true; m_example = std::move(value); }
-    inline void SetExample(const char* value) { m_exampleHasBeenSet = true; m_example.assign(value); }
-    inline DocumentParameter& WithExample(const Aws::String& value) { SetExample(value); return *this;}
-    inline DocumentParameter& WithExample(Aws::String&& value) { SetExample(std::move(value)); return *this;}
-    inline DocumentParameter& WithExample(const char* value) { SetExample(value); return *this;}
+    template<typename ExampleT = Aws::String>
+    void SetExample(ExampleT&& value) { m_exampleHasBeenSet = true; m_example = std::forward<ExampleT>(value); }
+    template<typename ExampleT = Aws::String>
+    DocumentParameter& WithExample(ExampleT&& value) { SetExample(std::forward<ExampleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,7 +100,7 @@ namespace Model
      * <p>Specifies whether a pattern that needs to be replaced in a managed template
      * job document schema is optional or required.</p>
      */
-    inline bool GetOptional() const{ return m_optional; }
+    inline bool GetOptional() const { return m_optional; }
     inline bool OptionalHasBeenSet() const { return m_optionalHasBeenSet; }
     inline void SetOptional(bool value) { m_optionalHasBeenSet = true; m_optional = value; }
     inline DocumentParameter& WithOptional(bool value) { SetOptional(value); return *this;}
@@ -127,7 +119,7 @@ namespace Model
     Aws::String m_example;
     bool m_exampleHasBeenSet = false;
 
-    bool m_optional;
+    bool m_optional{false};
     bool m_optionalHasBeenSet = false;
   };
 

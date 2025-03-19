@@ -18,30 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-Vc3Settings::Vc3Settings() : 
-    m_framerateControl(Vc3FramerateControl::NOT_SET),
-    m_framerateControlHasBeenSet(false),
-    m_framerateConversionAlgorithm(Vc3FramerateConversionAlgorithm::NOT_SET),
-    m_framerateConversionAlgorithmHasBeenSet(false),
-    m_framerateDenominator(0),
-    m_framerateDenominatorHasBeenSet(false),
-    m_framerateNumerator(0),
-    m_framerateNumeratorHasBeenSet(false),
-    m_interlaceMode(Vc3InterlaceMode::NOT_SET),
-    m_interlaceModeHasBeenSet(false),
-    m_scanTypeConversionMode(Vc3ScanTypeConversionMode::NOT_SET),
-    m_scanTypeConversionModeHasBeenSet(false),
-    m_slowPal(Vc3SlowPal::NOT_SET),
-    m_slowPalHasBeenSet(false),
-    m_telecine(Vc3Telecine::NOT_SET),
-    m_telecineHasBeenSet(false),
-    m_vc3Class(Vc3Class::NOT_SET),
-    m_vc3ClassHasBeenSet(false)
-{
-}
-
 Vc3Settings::Vc3Settings(JsonView jsonValue)
-  : Vc3Settings()
 {
   *this = jsonValue;
 }
@@ -51,66 +28,48 @@ Vc3Settings& Vc3Settings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("framerateControl"))
   {
     m_framerateControl = Vc3FramerateControlMapper::GetVc3FramerateControlForName(jsonValue.GetString("framerateControl"));
-
     m_framerateControlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("framerateConversionAlgorithm"))
   {
     m_framerateConversionAlgorithm = Vc3FramerateConversionAlgorithmMapper::GetVc3FramerateConversionAlgorithmForName(jsonValue.GetString("framerateConversionAlgorithm"));
-
     m_framerateConversionAlgorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("framerateDenominator"))
   {
     m_framerateDenominator = jsonValue.GetInteger("framerateDenominator");
-
     m_framerateDenominatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("framerateNumerator"))
   {
     m_framerateNumerator = jsonValue.GetInteger("framerateNumerator");
-
     m_framerateNumeratorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("interlaceMode"))
   {
     m_interlaceMode = Vc3InterlaceModeMapper::GetVc3InterlaceModeForName(jsonValue.GetString("interlaceMode"));
-
     m_interlaceModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanTypeConversionMode"))
   {
     m_scanTypeConversionMode = Vc3ScanTypeConversionModeMapper::GetVc3ScanTypeConversionModeForName(jsonValue.GetString("scanTypeConversionMode"));
-
     m_scanTypeConversionModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slowPal"))
   {
     m_slowPal = Vc3SlowPalMapper::GetVc3SlowPalForName(jsonValue.GetString("slowPal"));
-
     m_slowPalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("telecine"))
   {
     m_telecine = Vc3TelecineMapper::GetVc3TelecineForName(jsonValue.GetString("telecine"));
-
     m_telecineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vc3Class"))
   {
     m_vc3Class = Vc3ClassMapper::GetVc3ClassForName(jsonValue.GetString("vc3Class"));
-
     m_vc3ClassHasBeenSet = true;
   }
-
   return *this;
 }
 

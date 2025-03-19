@@ -12,17 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SearchContactsRequest::SearchContactsRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_timeRangeHasBeenSet(false),
-    m_searchCriteriaHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_sortHasBeenSet(false)
-{
-}
-
 Aws::String SearchContactsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -40,7 +40,7 @@ namespace Model
   class DatasetSource
   {
   public:
-    AWS_REKOGNITION_API DatasetSource();
+    AWS_REKOGNITION_API DatasetSource() = default;
     AWS_REKOGNITION_API DatasetSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API DatasetSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
 
     ///@{
     
-    inline const GroundTruthManifest& GetGroundTruthManifest() const{ return m_groundTruthManifest; }
+    inline const GroundTruthManifest& GetGroundTruthManifest() const { return m_groundTruthManifest; }
     inline bool GroundTruthManifestHasBeenSet() const { return m_groundTruthManifestHasBeenSet; }
-    inline void SetGroundTruthManifest(const GroundTruthManifest& value) { m_groundTruthManifestHasBeenSet = true; m_groundTruthManifest = value; }
-    inline void SetGroundTruthManifest(GroundTruthManifest&& value) { m_groundTruthManifestHasBeenSet = true; m_groundTruthManifest = std::move(value); }
-    inline DatasetSource& WithGroundTruthManifest(const GroundTruthManifest& value) { SetGroundTruthManifest(value); return *this;}
-    inline DatasetSource& WithGroundTruthManifest(GroundTruthManifest&& value) { SetGroundTruthManifest(std::move(value)); return *this;}
+    template<typename GroundTruthManifestT = GroundTruthManifest>
+    void SetGroundTruthManifest(GroundTruthManifestT&& value) { m_groundTruthManifestHasBeenSet = true; m_groundTruthManifest = std::forward<GroundTruthManifestT>(value); }
+    template<typename GroundTruthManifestT = GroundTruthManifest>
+    DatasetSource& WithGroundTruthManifest(GroundTruthManifestT&& value) { SetGroundTruthManifest(std::forward<GroundTruthManifestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +61,12 @@ namespace Model
      * <p> The ARN of an Amazon Rekognition Custom Labels dataset that you want to
      * copy. </p>
      */
-    inline const Aws::String& GetDatasetArn() const{ return m_datasetArn; }
+    inline const Aws::String& GetDatasetArn() const { return m_datasetArn; }
     inline bool DatasetArnHasBeenSet() const { return m_datasetArnHasBeenSet; }
-    inline void SetDatasetArn(const Aws::String& value) { m_datasetArnHasBeenSet = true; m_datasetArn = value; }
-    inline void SetDatasetArn(Aws::String&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::move(value); }
-    inline void SetDatasetArn(const char* value) { m_datasetArnHasBeenSet = true; m_datasetArn.assign(value); }
-    inline DatasetSource& WithDatasetArn(const Aws::String& value) { SetDatasetArn(value); return *this;}
-    inline DatasetSource& WithDatasetArn(Aws::String&& value) { SetDatasetArn(std::move(value)); return *this;}
-    inline DatasetSource& WithDatasetArn(const char* value) { SetDatasetArn(value); return *this;}
+    template<typename DatasetArnT = Aws::String>
+    void SetDatasetArn(DatasetArnT&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::forward<DatasetArnT>(value); }
+    template<typename DatasetArnT = Aws::String>
+    DatasetSource& WithDatasetArn(DatasetArnT&& value) { SetDatasetArn(std::forward<DatasetArnT>(value)); return *this;}
     ///@}
   private:
 

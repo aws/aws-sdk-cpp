@@ -15,23 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListCommandExecutionsRequest::ListCommandExecutionsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_namespace(CommandNamespace::NOT_SET),
-    m_namespaceHasBeenSet(false),
-    m_status(CommandExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_startedTimeFilterHasBeenSet(false),
-    m_completedTimeFilterHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_commandArnHasBeenSet(false)
-{
-}
-
 Aws::String ListCommandExecutionsRequest::SerializePayload() const
 {
   JsonValue payload;

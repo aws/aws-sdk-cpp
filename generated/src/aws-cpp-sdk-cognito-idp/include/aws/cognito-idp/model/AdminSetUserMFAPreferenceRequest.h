@@ -24,7 +24,7 @@ namespace Model
   class AdminSetUserMFAPreferenceRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API AdminSetUserMFAPreferenceRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API AdminSetUserMFAPreferenceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,12 +42,12 @@ namespace Model
      * <p>User preferences for SMS message MFA. Activates or deactivates SMS MFA and
      * sets it as the preferred MFA method when multiple methods are available.</p>
      */
-    inline const SMSMfaSettingsType& GetSMSMfaSettings() const{ return m_sMSMfaSettings; }
+    inline const SMSMfaSettingsType& GetSMSMfaSettings() const { return m_sMSMfaSettings; }
     inline bool SMSMfaSettingsHasBeenSet() const { return m_sMSMfaSettingsHasBeenSet; }
-    inline void SetSMSMfaSettings(const SMSMfaSettingsType& value) { m_sMSMfaSettingsHasBeenSet = true; m_sMSMfaSettings = value; }
-    inline void SetSMSMfaSettings(SMSMfaSettingsType&& value) { m_sMSMfaSettingsHasBeenSet = true; m_sMSMfaSettings = std::move(value); }
-    inline AdminSetUserMFAPreferenceRequest& WithSMSMfaSettings(const SMSMfaSettingsType& value) { SetSMSMfaSettings(value); return *this;}
-    inline AdminSetUserMFAPreferenceRequest& WithSMSMfaSettings(SMSMfaSettingsType&& value) { SetSMSMfaSettings(std::move(value)); return *this;}
+    template<typename SMSMfaSettingsT = SMSMfaSettingsType>
+    void SetSMSMfaSettings(SMSMfaSettingsT&& value) { m_sMSMfaSettingsHasBeenSet = true; m_sMSMfaSettings = std::forward<SMSMfaSettingsT>(value); }
+    template<typename SMSMfaSettingsT = SMSMfaSettingsType>
+    AdminSetUserMFAPreferenceRequest& WithSMSMfaSettings(SMSMfaSettingsT&& value) { SetSMSMfaSettings(std::forward<SMSMfaSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +57,12 @@ namespace Model
      * methods are available. This operation can set TOTP as a user's preferred MFA
      * method before they register a TOTP authenticator.</p>
      */
-    inline const SoftwareTokenMfaSettingsType& GetSoftwareTokenMfaSettings() const{ return m_softwareTokenMfaSettings; }
+    inline const SoftwareTokenMfaSettingsType& GetSoftwareTokenMfaSettings() const { return m_softwareTokenMfaSettings; }
     inline bool SoftwareTokenMfaSettingsHasBeenSet() const { return m_softwareTokenMfaSettingsHasBeenSet; }
-    inline void SetSoftwareTokenMfaSettings(const SoftwareTokenMfaSettingsType& value) { m_softwareTokenMfaSettingsHasBeenSet = true; m_softwareTokenMfaSettings = value; }
-    inline void SetSoftwareTokenMfaSettings(SoftwareTokenMfaSettingsType&& value) { m_softwareTokenMfaSettingsHasBeenSet = true; m_softwareTokenMfaSettings = std::move(value); }
-    inline AdminSetUserMFAPreferenceRequest& WithSoftwareTokenMfaSettings(const SoftwareTokenMfaSettingsType& value) { SetSoftwareTokenMfaSettings(value); return *this;}
-    inline AdminSetUserMFAPreferenceRequest& WithSoftwareTokenMfaSettings(SoftwareTokenMfaSettingsType&& value) { SetSoftwareTokenMfaSettings(std::move(value)); return *this;}
+    template<typename SoftwareTokenMfaSettingsT = SoftwareTokenMfaSettingsType>
+    void SetSoftwareTokenMfaSettings(SoftwareTokenMfaSettingsT&& value) { m_softwareTokenMfaSettingsHasBeenSet = true; m_softwareTokenMfaSettings = std::forward<SoftwareTokenMfaSettingsT>(value); }
+    template<typename SoftwareTokenMfaSettingsT = SoftwareTokenMfaSettingsType>
+    AdminSetUserMFAPreferenceRequest& WithSoftwareTokenMfaSettings(SoftwareTokenMfaSettingsT&& value) { SetSoftwareTokenMfaSettings(std::forward<SoftwareTokenMfaSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +73,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-essentials.html">
      * Essentials tier</a> or higher.</p>
      */
-    inline const EmailMfaSettingsType& GetEmailMfaSettings() const{ return m_emailMfaSettings; }
+    inline const EmailMfaSettingsType& GetEmailMfaSettings() const { return m_emailMfaSettings; }
     inline bool EmailMfaSettingsHasBeenSet() const { return m_emailMfaSettingsHasBeenSet; }
-    inline void SetEmailMfaSettings(const EmailMfaSettingsType& value) { m_emailMfaSettingsHasBeenSet = true; m_emailMfaSettings = value; }
-    inline void SetEmailMfaSettings(EmailMfaSettingsType&& value) { m_emailMfaSettingsHasBeenSet = true; m_emailMfaSettings = std::move(value); }
-    inline AdminSetUserMFAPreferenceRequest& WithEmailMfaSettings(const EmailMfaSettingsType& value) { SetEmailMfaSettings(value); return *this;}
-    inline AdminSetUserMFAPreferenceRequest& WithEmailMfaSettings(EmailMfaSettingsType&& value) { SetEmailMfaSettings(std::move(value)); return *this;}
+    template<typename EmailMfaSettingsT = EmailMfaSettingsType>
+    void SetEmailMfaSettings(EmailMfaSettingsT&& value) { m_emailMfaSettingsHasBeenSet = true; m_emailMfaSettings = std::forward<EmailMfaSettingsT>(value); }
+    template<typename EmailMfaSettingsT = EmailMfaSettingsType>
+    AdminSetUserMFAPreferenceRequest& WithEmailMfaSettings(EmailMfaSettingsT&& value) { SetEmailMfaSettings(std::forward<EmailMfaSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,28 +89,24 @@ namespace Model
      * this value must be the <code>sub</code> of a local user or the username of a
      * user from a third-party IdP.</p>
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
+    inline const Aws::String& GetUsername() const { return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-    inline AdminSetUserMFAPreferenceRequest& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline AdminSetUserMFAPreferenceRequest& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline AdminSetUserMFAPreferenceRequest& WithUsername(const char* value) { SetUsername(value); return *this;}
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    AdminSetUserMFAPreferenceRequest& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the user pool where you want to set a user's MFA preferences.</p>
      */
-    inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+    inline const Aws::String& GetUserPoolId() const { return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-    inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-    inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-    inline AdminSetUserMFAPreferenceRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-    inline AdminSetUserMFAPreferenceRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-    inline AdminSetUserMFAPreferenceRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    template<typename UserPoolIdT = Aws::String>
+    void SetUserPoolId(UserPoolIdT&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::forward<UserPoolIdT>(value); }
+    template<typename UserPoolIdT = Aws::String>
+    AdminSetUserMFAPreferenceRequest& WithUserPoolId(UserPoolIdT&& value) { SetUserPoolId(std::forward<UserPoolIdT>(value)); return *this;}
     ///@}
   private:
 

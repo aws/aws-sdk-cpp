@@ -12,10 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAccountRequest::DescribeAccountRequest()
-{
-}
-
 Aws::String DescribeAccountRequest::SerializePayload() const
 {
   return "{}";

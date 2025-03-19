@@ -18,18 +18,7 @@ namespace Batch
 namespace Model
 {
 
-NodePropertiesSummary::NodePropertiesSummary() : 
-    m_isMainNode(false),
-    m_isMainNodeHasBeenSet(false),
-    m_numNodes(0),
-    m_numNodesHasBeenSet(false),
-    m_nodeIndex(0),
-    m_nodeIndexHasBeenSet(false)
-{
-}
-
 NodePropertiesSummary::NodePropertiesSummary(JsonView jsonValue)
-  : NodePropertiesSummary()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ NodePropertiesSummary& NodePropertiesSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("isMainNode"))
   {
     m_isMainNode = jsonValue.GetBool("isMainNode");
-
     m_isMainNodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numNodes"))
   {
     m_numNodes = jsonValue.GetInteger("numNodes");
-
     m_numNodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nodeIndex"))
   {
     m_nodeIndex = jsonValue.GetInteger("nodeIndex");
-
     m_nodeIndexHasBeenSet = true;
   }
-
   return *this;
 }
 

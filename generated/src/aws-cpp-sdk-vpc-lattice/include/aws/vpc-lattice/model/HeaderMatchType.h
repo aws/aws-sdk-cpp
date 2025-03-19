@@ -31,7 +31,7 @@ namespace Model
   class HeaderMatchType
   {
   public:
-    AWS_VPCLATTICE_API HeaderMatchType();
+    AWS_VPCLATTICE_API HeaderMatchType() = default;
     AWS_VPCLATTICE_API HeaderMatchType(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API HeaderMatchType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,42 +41,36 @@ namespace Model
     /**
      * <p>A contains type match.</p>
      */
-    inline const Aws::String& GetContains() const{ return m_contains; }
+    inline const Aws::String& GetContains() const { return m_contains; }
     inline bool ContainsHasBeenSet() const { return m_containsHasBeenSet; }
-    inline void SetContains(const Aws::String& value) { m_containsHasBeenSet = true; m_contains = value; }
-    inline void SetContains(Aws::String&& value) { m_containsHasBeenSet = true; m_contains = std::move(value); }
-    inline void SetContains(const char* value) { m_containsHasBeenSet = true; m_contains.assign(value); }
-    inline HeaderMatchType& WithContains(const Aws::String& value) { SetContains(value); return *this;}
-    inline HeaderMatchType& WithContains(Aws::String&& value) { SetContains(std::move(value)); return *this;}
-    inline HeaderMatchType& WithContains(const char* value) { SetContains(value); return *this;}
+    template<typename ContainsT = Aws::String>
+    void SetContains(ContainsT&& value) { m_containsHasBeenSet = true; m_contains = std::forward<ContainsT>(value); }
+    template<typename ContainsT = Aws::String>
+    HeaderMatchType& WithContains(ContainsT&& value) { SetContains(std::forward<ContainsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An exact type match.</p>
      */
-    inline const Aws::String& GetExact() const{ return m_exact; }
+    inline const Aws::String& GetExact() const { return m_exact; }
     inline bool ExactHasBeenSet() const { return m_exactHasBeenSet; }
-    inline void SetExact(const Aws::String& value) { m_exactHasBeenSet = true; m_exact = value; }
-    inline void SetExact(Aws::String&& value) { m_exactHasBeenSet = true; m_exact = std::move(value); }
-    inline void SetExact(const char* value) { m_exactHasBeenSet = true; m_exact.assign(value); }
-    inline HeaderMatchType& WithExact(const Aws::String& value) { SetExact(value); return *this;}
-    inline HeaderMatchType& WithExact(Aws::String&& value) { SetExact(std::move(value)); return *this;}
-    inline HeaderMatchType& WithExact(const char* value) { SetExact(value); return *this;}
+    template<typename ExactT = Aws::String>
+    void SetExact(ExactT&& value) { m_exactHasBeenSet = true; m_exact = std::forward<ExactT>(value); }
+    template<typename ExactT = Aws::String>
+    HeaderMatchType& WithExact(ExactT&& value) { SetExact(std::forward<ExactT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A prefix type match. Matches the value with the prefix.</p>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline HeaderMatchType& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline HeaderMatchType& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline HeaderMatchType& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    HeaderMatchType& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
   private:
 

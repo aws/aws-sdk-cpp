@@ -12,11 +12,6 @@ using namespace Aws::WAF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetGeoMatchSetRequest::GetGeoMatchSetRequest() : 
-    m_geoMatchSetIdHasBeenSet(false)
-{
-}
-
 Aws::String GetGeoMatchSetRequest::SerializePayload() const
 {
   JsonValue payload;

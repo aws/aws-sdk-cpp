@@ -18,16 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-ImageScanFindingAggregation::ImageScanFindingAggregation() : 
-    m_accountAggregationHasBeenSet(false),
-    m_imageAggregationHasBeenSet(false),
-    m_imagePipelineAggregationHasBeenSet(false),
-    m_vulnerabilityIdAggregationHasBeenSet(false)
-{
-}
-
 ImageScanFindingAggregation::ImageScanFindingAggregation(JsonView jsonValue)
-  : ImageScanFindingAggregation()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ImageScanFindingAggregation& ImageScanFindingAggregation::operator =(JsonView js
   if(jsonValue.ValueExists("accountAggregation"))
   {
     m_accountAggregation = jsonValue.GetObject("accountAggregation");
-
     m_accountAggregationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageAggregation"))
   {
     m_imageAggregation = jsonValue.GetObject("imageAggregation");
-
     m_imageAggregationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imagePipelineAggregation"))
   {
     m_imagePipelineAggregation = jsonValue.GetObject("imagePipelineAggregation");
-
     m_imagePipelineAggregationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vulnerabilityIdAggregation"))
   {
     m_vulnerabilityIdAggregation = jsonValue.GetObject("vulnerabilityIdAggregation");
-
     m_vulnerabilityIdAggregationHasBeenSet = true;
   }
-
   return *this;
 }
 

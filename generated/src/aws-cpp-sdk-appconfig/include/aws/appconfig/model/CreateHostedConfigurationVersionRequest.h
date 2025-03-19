@@ -22,7 +22,7 @@ namespace Model
   class CreateHostedConfigurationVersionRequest : public StreamingAppConfigRequest
   {
   public:
-    AWS_APPCONFIG_API CreateHostedConfigurationVersionRequest();
+    AWS_APPCONFIG_API CreateHostedConfigurationVersionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,42 +37,36 @@ namespace Model
     /**
      * <p>The application ID.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline CreateHostedConfigurationVersionRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline CreateHostedConfigurationVersionRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline CreateHostedConfigurationVersionRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    CreateHostedConfigurationVersionRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration profile ID.</p>
      */
-    inline const Aws::String& GetConfigurationProfileId() const{ return m_configurationProfileId; }
+    inline const Aws::String& GetConfigurationProfileId() const { return m_configurationProfileId; }
     inline bool ConfigurationProfileIdHasBeenSet() const { return m_configurationProfileIdHasBeenSet; }
-    inline void SetConfigurationProfileId(const Aws::String& value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId = value; }
-    inline void SetConfigurationProfileId(Aws::String&& value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId = std::move(value); }
-    inline void SetConfigurationProfileId(const char* value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId.assign(value); }
-    inline CreateHostedConfigurationVersionRequest& WithConfigurationProfileId(const Aws::String& value) { SetConfigurationProfileId(value); return *this;}
-    inline CreateHostedConfigurationVersionRequest& WithConfigurationProfileId(Aws::String&& value) { SetConfigurationProfileId(std::move(value)); return *this;}
-    inline CreateHostedConfigurationVersionRequest& WithConfigurationProfileId(const char* value) { SetConfigurationProfileId(value); return *this;}
+    template<typename ConfigurationProfileIdT = Aws::String>
+    void SetConfigurationProfileId(ConfigurationProfileIdT&& value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId = std::forward<ConfigurationProfileIdT>(value); }
+    template<typename ConfigurationProfileIdT = Aws::String>
+    CreateHostedConfigurationVersionRequest& WithConfigurationProfileId(ConfigurationProfileIdT&& value) { SetConfigurationProfileId(std::forward<ConfigurationProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the configuration.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateHostedConfigurationVersionRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateHostedConfigurationVersionRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateHostedConfigurationVersionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateHostedConfigurationVersionRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,7 +77,7 @@ namespace Model
      * succession, specify the version number of the latest hosted configuration
      * version.</p>
      */
-    inline int GetLatestVersionNumber() const{ return m_latestVersionNumber; }
+    inline int GetLatestVersionNumber() const { return m_latestVersionNumber; }
     inline bool LatestVersionNumberHasBeenSet() const { return m_latestVersionNumberHasBeenSet; }
     inline void SetLatestVersionNumber(int value) { m_latestVersionNumberHasBeenSet = true; m_latestVersionNumber = value; }
     inline CreateHostedConfigurationVersionRequest& WithLatestVersionNumber(int value) { SetLatestVersionNumber(value); return *this;}
@@ -95,14 +89,12 @@ namespace Model
      * version. This value must contain at least one non-numeric character. For
      * example, "v2.2.0".</p>
      */
-    inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
+    inline const Aws::String& GetVersionLabel() const { return m_versionLabel; }
     inline bool VersionLabelHasBeenSet() const { return m_versionLabelHasBeenSet; }
-    inline void SetVersionLabel(const Aws::String& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
-    inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = std::move(value); }
-    inline void SetVersionLabel(const char* value) { m_versionLabelHasBeenSet = true; m_versionLabel.assign(value); }
-    inline CreateHostedConfigurationVersionRequest& WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
-    inline CreateHostedConfigurationVersionRequest& WithVersionLabel(Aws::String&& value) { SetVersionLabel(std::move(value)); return *this;}
-    inline CreateHostedConfigurationVersionRequest& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
+    template<typename VersionLabelT = Aws::String>
+    void SetVersionLabel(VersionLabelT&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = std::forward<VersionLabelT>(value); }
+    template<typename VersionLabelT = Aws::String>
+    CreateHostedConfigurationVersionRequest& WithVersionLabel(VersionLabelT&& value) { SetVersionLabel(std::forward<VersionLabelT>(value)); return *this;}
     ///@}
   private:
 
@@ -116,7 +108,7 @@ namespace Model
     bool m_descriptionHasBeenSet = false;
 
 
-    int m_latestVersionNumber;
+    int m_latestVersionNumber{0};
     bool m_latestVersionNumberHasBeenSet = false;
 
     Aws::String m_versionLabel;

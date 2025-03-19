@@ -41,7 +41,7 @@ namespace Model
   class HeaderObject
   {
   public:
-    AWS_LIGHTSAIL_API HeaderObject();
+    AWS_LIGHTSAIL_API HeaderObject() = default;
     AWS_LIGHTSAIL_API HeaderObject(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API HeaderObject& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,30 +57,27 @@ namespace Model
      * only the headers you specify using the <code>headersAllowList</code>
      * parameter.</p> </li> </ul>
      */
-    inline const ForwardValues& GetOption() const{ return m_option; }
+    inline ForwardValues GetOption() const { return m_option; }
     inline bool OptionHasBeenSet() const { return m_optionHasBeenSet; }
-    inline void SetOption(const ForwardValues& value) { m_optionHasBeenSet = true; m_option = value; }
-    inline void SetOption(ForwardValues&& value) { m_optionHasBeenSet = true; m_option = std::move(value); }
-    inline HeaderObject& WithOption(const ForwardValues& value) { SetOption(value); return *this;}
-    inline HeaderObject& WithOption(ForwardValues&& value) { SetOption(std::move(value)); return *this;}
+    inline void SetOption(ForwardValues value) { m_optionHasBeenSet = true; m_option = value; }
+    inline HeaderObject& WithOption(ForwardValues value) { SetOption(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The specific headers to forward to your distribution's origin.</p>
      */
-    inline const Aws::Vector<HeaderEnum>& GetHeadersAllowList() const{ return m_headersAllowList; }
+    inline const Aws::Vector<HeaderEnum>& GetHeadersAllowList() const { return m_headersAllowList; }
     inline bool HeadersAllowListHasBeenSet() const { return m_headersAllowListHasBeenSet; }
-    inline void SetHeadersAllowList(const Aws::Vector<HeaderEnum>& value) { m_headersAllowListHasBeenSet = true; m_headersAllowList = value; }
-    inline void SetHeadersAllowList(Aws::Vector<HeaderEnum>&& value) { m_headersAllowListHasBeenSet = true; m_headersAllowList = std::move(value); }
-    inline HeaderObject& WithHeadersAllowList(const Aws::Vector<HeaderEnum>& value) { SetHeadersAllowList(value); return *this;}
-    inline HeaderObject& WithHeadersAllowList(Aws::Vector<HeaderEnum>&& value) { SetHeadersAllowList(std::move(value)); return *this;}
-    inline HeaderObject& AddHeadersAllowList(const HeaderEnum& value) { m_headersAllowListHasBeenSet = true; m_headersAllowList.push_back(value); return *this; }
-    inline HeaderObject& AddHeadersAllowList(HeaderEnum&& value) { m_headersAllowListHasBeenSet = true; m_headersAllowList.push_back(std::move(value)); return *this; }
+    template<typename HeadersAllowListT = Aws::Vector<HeaderEnum>>
+    void SetHeadersAllowList(HeadersAllowListT&& value) { m_headersAllowListHasBeenSet = true; m_headersAllowList = std::forward<HeadersAllowListT>(value); }
+    template<typename HeadersAllowListT = Aws::Vector<HeaderEnum>>
+    HeaderObject& WithHeadersAllowList(HeadersAllowListT&& value) { SetHeadersAllowList(std::forward<HeadersAllowListT>(value)); return *this;}
+    inline HeaderObject& AddHeadersAllowList(HeaderEnum value) { m_headersAllowListHasBeenSet = true; m_headersAllowList.push_back(value); return *this; }
     ///@}
   private:
 
-    ForwardValues m_option;
+    ForwardValues m_option{ForwardValues::NOT_SET};
     bool m_optionHasBeenSet = false;
 
     Aws::Vector<HeaderEnum> m_headersAllowList;

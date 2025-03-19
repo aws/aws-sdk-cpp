@@ -32,7 +32,7 @@ namespace Model
   class CatalogConfiguration
   {
   public:
-    AWS_FIREHOSE_API CatalogConfiguration();
+    AWS_FIREHOSE_API CatalogConfiguration() = default;
     AWS_FIREHOSE_API CatalogConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API CatalogConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * Tables. You must specify the ARN in the format
      * <code>arn:aws:glue:region:account-id:catalog</code>. </p>
      */
-    inline const Aws::String& GetCatalogARN() const{ return m_catalogARN; }
+    inline const Aws::String& GetCatalogARN() const { return m_catalogARN; }
     inline bool CatalogARNHasBeenSet() const { return m_catalogARNHasBeenSet; }
-    inline void SetCatalogARN(const Aws::String& value) { m_catalogARNHasBeenSet = true; m_catalogARN = value; }
-    inline void SetCatalogARN(Aws::String&& value) { m_catalogARNHasBeenSet = true; m_catalogARN = std::move(value); }
-    inline void SetCatalogARN(const char* value) { m_catalogARNHasBeenSet = true; m_catalogARN.assign(value); }
-    inline CatalogConfiguration& WithCatalogARN(const Aws::String& value) { SetCatalogARN(value); return *this;}
-    inline CatalogConfiguration& WithCatalogARN(Aws::String&& value) { SetCatalogARN(std::move(value)); return *this;}
-    inline CatalogConfiguration& WithCatalogARN(const char* value) { SetCatalogARN(value); return *this;}
+    template<typename CatalogARNT = Aws::String>
+    void SetCatalogARN(CatalogARNT&& value) { m_catalogARNHasBeenSet = true; m_catalogARN = std::forward<CatalogARNT>(value); }
+    template<typename CatalogARNT = Aws::String>
+    CatalogConfiguration& WithCatalogARN(CatalogARNT&& value) { SetCatalogARN(std::forward<CatalogARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * when schema evolution and table creation is enabled.</p> <p>Amazon Data Firehose
      * is in preview release and is subject to change.</p>
      */
-    inline const Aws::String& GetWarehouseLocation() const{ return m_warehouseLocation; }
+    inline const Aws::String& GetWarehouseLocation() const { return m_warehouseLocation; }
     inline bool WarehouseLocationHasBeenSet() const { return m_warehouseLocationHasBeenSet; }
-    inline void SetWarehouseLocation(const Aws::String& value) { m_warehouseLocationHasBeenSet = true; m_warehouseLocation = value; }
-    inline void SetWarehouseLocation(Aws::String&& value) { m_warehouseLocationHasBeenSet = true; m_warehouseLocation = std::move(value); }
-    inline void SetWarehouseLocation(const char* value) { m_warehouseLocationHasBeenSet = true; m_warehouseLocation.assign(value); }
-    inline CatalogConfiguration& WithWarehouseLocation(const Aws::String& value) { SetWarehouseLocation(value); return *this;}
-    inline CatalogConfiguration& WithWarehouseLocation(Aws::String&& value) { SetWarehouseLocation(std::move(value)); return *this;}
-    inline CatalogConfiguration& WithWarehouseLocation(const char* value) { SetWarehouseLocation(value); return *this;}
+    template<typename WarehouseLocationT = Aws::String>
+    void SetWarehouseLocation(WarehouseLocationT&& value) { m_warehouseLocationHasBeenSet = true; m_warehouseLocation = std::forward<WarehouseLocationT>(value); }
+    template<typename WarehouseLocationT = Aws::String>
+    CatalogConfiguration& WithWarehouseLocation(WarehouseLocationT&& value) { SetWarehouseLocation(std::forward<WarehouseLocationT>(value)); return *this;}
     ///@}
   private:
 

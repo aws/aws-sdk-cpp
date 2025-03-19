@@ -12,17 +12,6 @@ using namespace Aws::GeoMaps::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSpritesRequest::GetSpritesRequest() : 
-    m_fileNameHasBeenSet(false),
-    m_style(MapStyle::NOT_SET),
-    m_styleHasBeenSet(false),
-    m_colorScheme(ColorScheme::NOT_SET),
-    m_colorSchemeHasBeenSet(false),
-    m_variant(Variant::NOT_SET),
-    m_variantHasBeenSet(false)
-{
-}
-
 Aws::String GetSpritesRequest::SerializePayload() const
 {
   return {};

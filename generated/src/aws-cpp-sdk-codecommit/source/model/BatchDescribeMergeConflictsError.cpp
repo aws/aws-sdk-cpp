@@ -18,15 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-BatchDescribeMergeConflictsError::BatchDescribeMergeConflictsError() : 
-    m_filePathHasBeenSet(false),
-    m_exceptionNameHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 BatchDescribeMergeConflictsError::BatchDescribeMergeConflictsError(JsonView jsonValue)
-  : BatchDescribeMergeConflictsError()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BatchDescribeMergeConflictsError& BatchDescribeMergeConflictsError::operator =(J
   if(jsonValue.ValueExists("filePath"))
   {
     m_filePath = jsonValue.GetString("filePath");
-
     m_filePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exceptionName"))
   {
     m_exceptionName = jsonValue.GetString("exceptionName");
-
     m_exceptionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

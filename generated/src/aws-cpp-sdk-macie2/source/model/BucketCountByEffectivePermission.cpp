@@ -18,20 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-BucketCountByEffectivePermission::BucketCountByEffectivePermission() : 
-    m_publiclyAccessible(0),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_publiclyReadable(0),
-    m_publiclyReadableHasBeenSet(false),
-    m_publiclyWritable(0),
-    m_publiclyWritableHasBeenSet(false),
-    m_unknown(0),
-    m_unknownHasBeenSet(false)
-{
-}
-
 BucketCountByEffectivePermission::BucketCountByEffectivePermission(JsonView jsonValue)
-  : BucketCountByEffectivePermission()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ BucketCountByEffectivePermission& BucketCountByEffectivePermission::operator =(J
   if(jsonValue.ValueExists("publiclyAccessible"))
   {
     m_publiclyAccessible = jsonValue.GetInt64("publiclyAccessible");
-
     m_publiclyAccessibleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publiclyReadable"))
   {
     m_publiclyReadable = jsonValue.GetInt64("publiclyReadable");
-
     m_publiclyReadableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publiclyWritable"))
   {
     m_publiclyWritable = jsonValue.GetInt64("publiclyWritable");
-
     m_publiclyWritableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unknown"))
   {
     m_unknown = jsonValue.GetInt64("unknown");
-
     m_unknownHasBeenSet = true;
   }
-
   return *this;
 }
 

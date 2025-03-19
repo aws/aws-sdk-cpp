@@ -32,7 +32,7 @@ namespace Model
   class SessionKeyMastercard
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API SessionKeyMastercard();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API SessionKeyMastercard() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API SessionKeyMastercard(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API SessionKeyMastercard& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * identifier for a payment credit or debit card and associates the card to a
      * specific account holder.</p>
      */
-    inline const Aws::String& GetPrimaryAccountNumber() const{ return m_primaryAccountNumber; }
+    inline const Aws::String& GetPrimaryAccountNumber() const { return m_primaryAccountNumber; }
     inline bool PrimaryAccountNumberHasBeenSet() const { return m_primaryAccountNumberHasBeenSet; }
-    inline void SetPrimaryAccountNumber(const Aws::String& value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber = value; }
-    inline void SetPrimaryAccountNumber(Aws::String&& value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber = std::move(value); }
-    inline void SetPrimaryAccountNumber(const char* value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber.assign(value); }
-    inline SessionKeyMastercard& WithPrimaryAccountNumber(const Aws::String& value) { SetPrimaryAccountNumber(value); return *this;}
-    inline SessionKeyMastercard& WithPrimaryAccountNumber(Aws::String&& value) { SetPrimaryAccountNumber(std::move(value)); return *this;}
-    inline SessionKeyMastercard& WithPrimaryAccountNumber(const char* value) { SetPrimaryAccountNumber(value); return *this;}
+    template<typename PrimaryAccountNumberT = Aws::String>
+    void SetPrimaryAccountNumber(PrimaryAccountNumberT&& value) { m_primaryAccountNumberHasBeenSet = true; m_primaryAccountNumber = std::forward<PrimaryAccountNumberT>(value); }
+    template<typename PrimaryAccountNumberT = Aws::String>
+    SessionKeyMastercard& WithPrimaryAccountNumber(PrimaryAccountNumberT&& value) { SetPrimaryAccountNumber(std::forward<PrimaryAccountNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>A number that identifies and differentiates payment cards with the same
      * Primary Account Number (PAN).</p>
      */
-    inline const Aws::String& GetPanSequenceNumber() const{ return m_panSequenceNumber; }
+    inline const Aws::String& GetPanSequenceNumber() const { return m_panSequenceNumber; }
     inline bool PanSequenceNumberHasBeenSet() const { return m_panSequenceNumberHasBeenSet; }
-    inline void SetPanSequenceNumber(const Aws::String& value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber = value; }
-    inline void SetPanSequenceNumber(Aws::String&& value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber = std::move(value); }
-    inline void SetPanSequenceNumber(const char* value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber.assign(value); }
-    inline SessionKeyMastercard& WithPanSequenceNumber(const Aws::String& value) { SetPanSequenceNumber(value); return *this;}
-    inline SessionKeyMastercard& WithPanSequenceNumber(Aws::String&& value) { SetPanSequenceNumber(std::move(value)); return *this;}
-    inline SessionKeyMastercard& WithPanSequenceNumber(const char* value) { SetPanSequenceNumber(value); return *this;}
+    template<typename PanSequenceNumberT = Aws::String>
+    void SetPanSequenceNumber(PanSequenceNumberT&& value) { m_panSequenceNumberHasBeenSet = true; m_panSequenceNumber = std::forward<PanSequenceNumberT>(value); }
+    template<typename PanSequenceNumberT = Aws::String>
+    SessionKeyMastercard& WithPanSequenceNumber(PanSequenceNumberT&& value) { SetPanSequenceNumber(std::forward<PanSequenceNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,28 +70,24 @@ namespace Model
      * <p>The transaction counter that is provided by the terminal during transaction
      * processing.</p>
      */
-    inline const Aws::String& GetApplicationTransactionCounter() const{ return m_applicationTransactionCounter; }
+    inline const Aws::String& GetApplicationTransactionCounter() const { return m_applicationTransactionCounter; }
     inline bool ApplicationTransactionCounterHasBeenSet() const { return m_applicationTransactionCounterHasBeenSet; }
-    inline void SetApplicationTransactionCounter(const Aws::String& value) { m_applicationTransactionCounterHasBeenSet = true; m_applicationTransactionCounter = value; }
-    inline void SetApplicationTransactionCounter(Aws::String&& value) { m_applicationTransactionCounterHasBeenSet = true; m_applicationTransactionCounter = std::move(value); }
-    inline void SetApplicationTransactionCounter(const char* value) { m_applicationTransactionCounterHasBeenSet = true; m_applicationTransactionCounter.assign(value); }
-    inline SessionKeyMastercard& WithApplicationTransactionCounter(const Aws::String& value) { SetApplicationTransactionCounter(value); return *this;}
-    inline SessionKeyMastercard& WithApplicationTransactionCounter(Aws::String&& value) { SetApplicationTransactionCounter(std::move(value)); return *this;}
-    inline SessionKeyMastercard& WithApplicationTransactionCounter(const char* value) { SetApplicationTransactionCounter(value); return *this;}
+    template<typename ApplicationTransactionCounterT = Aws::String>
+    void SetApplicationTransactionCounter(ApplicationTransactionCounterT&& value) { m_applicationTransactionCounterHasBeenSet = true; m_applicationTransactionCounter = std::forward<ApplicationTransactionCounterT>(value); }
+    template<typename ApplicationTransactionCounterT = Aws::String>
+    SessionKeyMastercard& WithApplicationTransactionCounter(ApplicationTransactionCounterT&& value) { SetApplicationTransactionCounter(std::forward<ApplicationTransactionCounterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A random number generated by the issuer.</p>
      */
-    inline const Aws::String& GetUnpredictableNumber() const{ return m_unpredictableNumber; }
+    inline const Aws::String& GetUnpredictableNumber() const { return m_unpredictableNumber; }
     inline bool UnpredictableNumberHasBeenSet() const { return m_unpredictableNumberHasBeenSet; }
-    inline void SetUnpredictableNumber(const Aws::String& value) { m_unpredictableNumberHasBeenSet = true; m_unpredictableNumber = value; }
-    inline void SetUnpredictableNumber(Aws::String&& value) { m_unpredictableNumberHasBeenSet = true; m_unpredictableNumber = std::move(value); }
-    inline void SetUnpredictableNumber(const char* value) { m_unpredictableNumberHasBeenSet = true; m_unpredictableNumber.assign(value); }
-    inline SessionKeyMastercard& WithUnpredictableNumber(const Aws::String& value) { SetUnpredictableNumber(value); return *this;}
-    inline SessionKeyMastercard& WithUnpredictableNumber(Aws::String&& value) { SetUnpredictableNumber(std::move(value)); return *this;}
-    inline SessionKeyMastercard& WithUnpredictableNumber(const char* value) { SetUnpredictableNumber(value); return *this;}
+    template<typename UnpredictableNumberT = Aws::String>
+    void SetUnpredictableNumber(UnpredictableNumberT&& value) { m_unpredictableNumberHasBeenSet = true; m_unpredictableNumber = std::forward<UnpredictableNumberT>(value); }
+    template<typename UnpredictableNumberT = Aws::String>
+    SessionKeyMastercard& WithUnpredictableNumber(UnpredictableNumberT&& value) { SetUnpredictableNumber(std::forward<UnpredictableNumberT>(value)); return *this;}
     ///@}
   private:
 

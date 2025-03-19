@@ -12,11 +12,6 @@ using namespace Aws::OpenSearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDomainConfigRequest::DescribeDomainConfigRequest() : 
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDomainConfigRequest::SerializePayload() const
 {
   return {};

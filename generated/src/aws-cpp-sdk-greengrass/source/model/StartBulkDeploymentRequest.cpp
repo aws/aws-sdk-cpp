@@ -13,14 +13,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartBulkDeploymentRequest::StartBulkDeploymentRequest() : 
-    m_amznClientTokenHasBeenSet(false),
-    m_executionRoleArnHasBeenSet(false),
-    m_inputFileUriHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartBulkDeploymentRequest::SerializePayload() const
 {
   JsonValue payload;

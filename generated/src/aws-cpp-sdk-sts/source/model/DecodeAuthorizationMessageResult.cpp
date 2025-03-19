@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DecodeAuthorizationMessageResult::DecodeAuthorizationMessageResult()
-{
-}
-
 DecodeAuthorizationMessageResult::DecodeAuthorizationMessageResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ DecodeAuthorizationMessageResult& DecodeAuthorizationMessageResult::operator =(c
     if(!decodedMessageNode.IsNull())
     {
       m_decodedMessage = Aws::Utils::Xml::DecodeEscapedXmlText(decodedMessageNode.GetText());
+      m_decodedMessageHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::STS::Model::DecodeAuthorizationMessageResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeClientVpnConnectionsResponse::DescribeClientVpnConnectionsResponse()
-{
-}
-
 DescribeClientVpnConnectionsResponse::DescribeClientVpnConnectionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeClientVpnConnectionsResponse& DescribeClientVpnConnectionsResponse::oper
     if(!connectionsNode.IsNull())
     {
       XmlNode connectionsMember = connectionsNode.FirstChild("item");
+      m_connectionsHasBeenSet = !connectionsMember.IsNull();
       while(!connectionsMember.IsNull())
       {
         m_connections.push_back(connectionsMember);
         connectionsMember = connectionsMember.NextNode("item");
       }
 
+      m_connectionsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeClientVpnConnectionsResponse& DescribeClientVpnConnectionsResponse::oper
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeClientVpnConnectionsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

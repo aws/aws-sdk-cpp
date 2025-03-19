@@ -10,12 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-GetInstanceMetadataDefaultsRequest::GetInstanceMetadataDefaultsRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String GetInstanceMetadataDefaultsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -35,7 +35,7 @@ namespace Model
   class AccountSettings
   {
   public:
-    AWS_CHIME_API AccountSettings();
+    AWS_CHIME_API AccountSettings() = default;
     AWS_CHIME_API AccountSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIME_API AccountSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,7 +46,7 @@ namespace Model
      * <p>Setting that stops or starts remote control of shared screens during
      * meetings.</p>
      */
-    inline bool GetDisableRemoteControl() const{ return m_disableRemoteControl; }
+    inline bool GetDisableRemoteControl() const { return m_disableRemoteControl; }
     inline bool DisableRemoteControlHasBeenSet() const { return m_disableRemoteControlHasBeenSet; }
     inline void SetDisableRemoteControl(bool value) { m_disableRemoteControlHasBeenSet = true; m_disableRemoteControl = value; }
     inline AccountSettings& WithDisableRemoteControl(bool value) { SetDisableRemoteControl(value); return *this;}
@@ -59,17 +59,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join
      * a Meeting without the Amazon Chime App</a>.</p>
      */
-    inline bool GetEnableDialOut() const{ return m_enableDialOut; }
+    inline bool GetEnableDialOut() const { return m_enableDialOut; }
     inline bool EnableDialOutHasBeenSet() const { return m_enableDialOutHasBeenSet; }
     inline void SetEnableDialOut(bool value) { m_enableDialOutHasBeenSet = true; m_enableDialOut = value; }
     inline AccountSettings& WithEnableDialOut(bool value) { SetEnableDialOut(value); return *this;}
     ///@}
   private:
 
-    bool m_disableRemoteControl;
+    bool m_disableRemoteControl{false};
     bool m_disableRemoteControlHasBeenSet = false;
 
-    bool m_enableDialOut;
+    bool m_enableDialOut{false};
     bool m_enableDialOutHasBeenSet = false;
   };
 

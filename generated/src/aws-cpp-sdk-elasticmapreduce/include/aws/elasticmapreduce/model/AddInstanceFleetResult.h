@@ -27,7 +27,7 @@ namespace Model
   class AddInstanceFleetResult
   {
   public:
-    AWS_EMR_API AddInstanceFleetResult();
+    AWS_EMR_API AddInstanceFleetResult() = default;
     AWS_EMR_API AddInstanceFleetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EMR_API AddInstanceFleetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,60 +36,56 @@ namespace Model
     /**
      * <p>The unique identifier of the cluster.</p>
      */
-    inline const Aws::String& GetClusterId() const{ return m_clusterId; }
-    inline void SetClusterId(const Aws::String& value) { m_clusterId = value; }
-    inline void SetClusterId(Aws::String&& value) { m_clusterId = std::move(value); }
-    inline void SetClusterId(const char* value) { m_clusterId.assign(value); }
-    inline AddInstanceFleetResult& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
-    inline AddInstanceFleetResult& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
-    inline AddInstanceFleetResult& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+    inline const Aws::String& GetClusterId() const { return m_clusterId; }
+    template<typename ClusterIdT = Aws::String>
+    void SetClusterId(ClusterIdT&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::forward<ClusterIdT>(value); }
+    template<typename ClusterIdT = Aws::String>
+    AddInstanceFleetResult& WithClusterId(ClusterIdT&& value) { SetClusterId(std::forward<ClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the instance fleet.</p>
      */
-    inline const Aws::String& GetInstanceFleetId() const{ return m_instanceFleetId; }
-    inline void SetInstanceFleetId(const Aws::String& value) { m_instanceFleetId = value; }
-    inline void SetInstanceFleetId(Aws::String&& value) { m_instanceFleetId = std::move(value); }
-    inline void SetInstanceFleetId(const char* value) { m_instanceFleetId.assign(value); }
-    inline AddInstanceFleetResult& WithInstanceFleetId(const Aws::String& value) { SetInstanceFleetId(value); return *this;}
-    inline AddInstanceFleetResult& WithInstanceFleetId(Aws::String&& value) { SetInstanceFleetId(std::move(value)); return *this;}
-    inline AddInstanceFleetResult& WithInstanceFleetId(const char* value) { SetInstanceFleetId(value); return *this;}
+    inline const Aws::String& GetInstanceFleetId() const { return m_instanceFleetId; }
+    template<typename InstanceFleetIdT = Aws::String>
+    void SetInstanceFleetId(InstanceFleetIdT&& value) { m_instanceFleetIdHasBeenSet = true; m_instanceFleetId = std::forward<InstanceFleetIdT>(value); }
+    template<typename InstanceFleetIdT = Aws::String>
+    AddInstanceFleetResult& WithInstanceFleetId(InstanceFleetIdT&& value) { SetInstanceFleetId(std::forward<InstanceFleetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name of the cluster.</p>
      */
-    inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
-    inline void SetClusterArn(const Aws::String& value) { m_clusterArn = value; }
-    inline void SetClusterArn(Aws::String&& value) { m_clusterArn = std::move(value); }
-    inline void SetClusterArn(const char* value) { m_clusterArn.assign(value); }
-    inline AddInstanceFleetResult& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
-    inline AddInstanceFleetResult& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
-    inline AddInstanceFleetResult& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+    inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
+    template<typename ClusterArnT = Aws::String>
+    void SetClusterArn(ClusterArnT&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::forward<ClusterArnT>(value); }
+    template<typename ClusterArnT = Aws::String>
+    AddInstanceFleetResult& WithClusterArn(ClusterArnT&& value) { SetClusterArn(std::forward<ClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AddInstanceFleetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AddInstanceFleetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AddInstanceFleetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AddInstanceFleetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_clusterId;
+    bool m_clusterIdHasBeenSet = false;
 
     Aws::String m_instanceFleetId;
+    bool m_instanceFleetIdHasBeenSet = false;
 
     Aws::String m_clusterArn;
+    bool m_clusterArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

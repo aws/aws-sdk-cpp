@@ -30,7 +30,7 @@ namespace Model
   class RenderMessageTemplateResult
   {
   public:
-    AWS_QCONNECT_API RenderMessageTemplateResult();
+    AWS_QCONNECT_API RenderMessageTemplateResult() = default;
     AWS_QCONNECT_API RenderMessageTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QCONNECT_API RenderMessageTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,59 +39,60 @@ namespace Model
     /**
      * <p>The message template attachments.</p>
      */
-    inline const Aws::Vector<MessageTemplateAttachment>& GetAttachments() const{ return m_attachments; }
-    inline void SetAttachments(const Aws::Vector<MessageTemplateAttachment>& value) { m_attachments = value; }
-    inline void SetAttachments(Aws::Vector<MessageTemplateAttachment>&& value) { m_attachments = std::move(value); }
-    inline RenderMessageTemplateResult& WithAttachments(const Aws::Vector<MessageTemplateAttachment>& value) { SetAttachments(value); return *this;}
-    inline RenderMessageTemplateResult& WithAttachments(Aws::Vector<MessageTemplateAttachment>&& value) { SetAttachments(std::move(value)); return *this;}
-    inline RenderMessageTemplateResult& AddAttachments(const MessageTemplateAttachment& value) { m_attachments.push_back(value); return *this; }
-    inline RenderMessageTemplateResult& AddAttachments(MessageTemplateAttachment&& value) { m_attachments.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MessageTemplateAttachment>& GetAttachments() const { return m_attachments; }
+    template<typename AttachmentsT = Aws::Vector<MessageTemplateAttachment>>
+    void SetAttachments(AttachmentsT&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::forward<AttachmentsT>(value); }
+    template<typename AttachmentsT = Aws::Vector<MessageTemplateAttachment>>
+    RenderMessageTemplateResult& WithAttachments(AttachmentsT&& value) { SetAttachments(std::forward<AttachmentsT>(value)); return *this;}
+    template<typename AttachmentsT = MessageTemplateAttachment>
+    RenderMessageTemplateResult& AddAttachments(AttachmentsT&& value) { m_attachmentsHasBeenSet = true; m_attachments.emplace_back(std::forward<AttachmentsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The attribute keys that are not resolved.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAttributesNotInterpolated() const{ return m_attributesNotInterpolated; }
-    inline void SetAttributesNotInterpolated(const Aws::Vector<Aws::String>& value) { m_attributesNotInterpolated = value; }
-    inline void SetAttributesNotInterpolated(Aws::Vector<Aws::String>&& value) { m_attributesNotInterpolated = std::move(value); }
-    inline RenderMessageTemplateResult& WithAttributesNotInterpolated(const Aws::Vector<Aws::String>& value) { SetAttributesNotInterpolated(value); return *this;}
-    inline RenderMessageTemplateResult& WithAttributesNotInterpolated(Aws::Vector<Aws::String>&& value) { SetAttributesNotInterpolated(std::move(value)); return *this;}
-    inline RenderMessageTemplateResult& AddAttributesNotInterpolated(const Aws::String& value) { m_attributesNotInterpolated.push_back(value); return *this; }
-    inline RenderMessageTemplateResult& AddAttributesNotInterpolated(Aws::String&& value) { m_attributesNotInterpolated.push_back(std::move(value)); return *this; }
-    inline RenderMessageTemplateResult& AddAttributesNotInterpolated(const char* value) { m_attributesNotInterpolated.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetAttributesNotInterpolated() const { return m_attributesNotInterpolated; }
+    template<typename AttributesNotInterpolatedT = Aws::Vector<Aws::String>>
+    void SetAttributesNotInterpolated(AttributesNotInterpolatedT&& value) { m_attributesNotInterpolatedHasBeenSet = true; m_attributesNotInterpolated = std::forward<AttributesNotInterpolatedT>(value); }
+    template<typename AttributesNotInterpolatedT = Aws::Vector<Aws::String>>
+    RenderMessageTemplateResult& WithAttributesNotInterpolated(AttributesNotInterpolatedT&& value) { SetAttributesNotInterpolated(std::forward<AttributesNotInterpolatedT>(value)); return *this;}
+    template<typename AttributesNotInterpolatedT = Aws::String>
+    RenderMessageTemplateResult& AddAttributesNotInterpolated(AttributesNotInterpolatedT&& value) { m_attributesNotInterpolatedHasBeenSet = true; m_attributesNotInterpolated.emplace_back(std::forward<AttributesNotInterpolatedT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The content of the message template.</p>
      */
-    inline const MessageTemplateContentProvider& GetContent() const{ return m_content; }
-    inline void SetContent(const MessageTemplateContentProvider& value) { m_content = value; }
-    inline void SetContent(MessageTemplateContentProvider&& value) { m_content = std::move(value); }
-    inline RenderMessageTemplateResult& WithContent(const MessageTemplateContentProvider& value) { SetContent(value); return *this;}
-    inline RenderMessageTemplateResult& WithContent(MessageTemplateContentProvider&& value) { SetContent(std::move(value)); return *this;}
+    inline const MessageTemplateContentProvider& GetContent() const { return m_content; }
+    template<typename ContentT = MessageTemplateContentProvider>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = MessageTemplateContentProvider>
+    RenderMessageTemplateResult& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RenderMessageTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RenderMessageTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RenderMessageTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RenderMessageTemplateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<MessageTemplateAttachment> m_attachments;
+    bool m_attachmentsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_attributesNotInterpolated;
+    bool m_attributesNotInterpolatedHasBeenSet = false;
 
     MessageTemplateContentProvider m_content;
+    bool m_contentHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-MonitoringJobDefinitionSummary::MonitoringJobDefinitionSummary() : 
-    m_monitoringJobDefinitionNameHasBeenSet(false),
-    m_monitoringJobDefinitionArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_endpointNameHasBeenSet(false)
-{
-}
-
 MonitoringJobDefinitionSummary::MonitoringJobDefinitionSummary(JsonView jsonValue)
-  : MonitoringJobDefinitionSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ MonitoringJobDefinitionSummary& MonitoringJobDefinitionSummary::operator =(JsonV
   if(jsonValue.ValueExists("MonitoringJobDefinitionName"))
   {
     m_monitoringJobDefinitionName = jsonValue.GetString("MonitoringJobDefinitionName");
-
     m_monitoringJobDefinitionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitoringJobDefinitionArn"))
   {
     m_monitoringJobDefinitionArn = jsonValue.GetString("MonitoringJobDefinitionArn");
-
     m_monitoringJobDefinitionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointName"))
   {
     m_endpointName = jsonValue.GetString("EndpointName");
-
     m_endpointNameHasBeenSet = true;
   }
-
   return *this;
 }
 

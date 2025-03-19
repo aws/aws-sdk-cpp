@@ -12,11 +12,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAliasRequest::DeleteAliasRequest() : 
-    m_aliasNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAliasRequest::SerializePayload() const
 {
   JsonValue payload;

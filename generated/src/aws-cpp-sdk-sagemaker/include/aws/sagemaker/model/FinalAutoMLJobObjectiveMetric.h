@@ -33,7 +33,7 @@ namespace Model
   class FinalAutoMLJobObjectiveMetric
   {
   public:
-    AWS_SAGEMAKER_API FinalAutoMLJobObjectiveMetric();
+    AWS_SAGEMAKER_API FinalAutoMLJobObjectiveMetric() = default;
     AWS_SAGEMAKER_API FinalAutoMLJobObjectiveMetric(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API FinalAutoMLJobObjectiveMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>The type of metric with the best result.</p>
      */
-    inline const AutoMLJobObjectiveType& GetType() const{ return m_type; }
+    inline AutoMLJobObjectiveType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const AutoMLJobObjectiveType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(AutoMLJobObjectiveType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline FinalAutoMLJobObjectiveMetric& WithType(const AutoMLJobObjectiveType& value) { SetType(value); return *this;}
-    inline FinalAutoMLJobObjectiveMetric& WithType(AutoMLJobObjectiveType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(AutoMLJobObjectiveType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline FinalAutoMLJobObjectiveMetric& WithType(AutoMLJobObjectiveType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -57,19 +55,17 @@ namespace Model
      * possible objective metrics, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>.</p>
      */
-    inline const AutoMLMetricEnum& GetMetricName() const{ return m_metricName; }
+    inline AutoMLMetricEnum GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const AutoMLMetricEnum& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(AutoMLMetricEnum&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline FinalAutoMLJobObjectiveMetric& WithMetricName(const AutoMLMetricEnum& value) { SetMetricName(value); return *this;}
-    inline FinalAutoMLJobObjectiveMetric& WithMetricName(AutoMLMetricEnum&& value) { SetMetricName(std::move(value)); return *this;}
+    inline void SetMetricName(AutoMLMetricEnum value) { m_metricNameHasBeenSet = true; m_metricName = value; }
+    inline FinalAutoMLJobObjectiveMetric& WithMetricName(AutoMLMetricEnum value) { SetMetricName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the metric with the best result.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline FinalAutoMLJobObjectiveMetric& WithValue(double value) { SetValue(value); return *this;}
@@ -82,25 +78,23 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html#autopilot-metrics">Autopilot
      * candidate metrics</a>.</p>
      */
-    inline const AutoMLMetricEnum& GetStandardMetricName() const{ return m_standardMetricName; }
+    inline AutoMLMetricEnum GetStandardMetricName() const { return m_standardMetricName; }
     inline bool StandardMetricNameHasBeenSet() const { return m_standardMetricNameHasBeenSet; }
-    inline void SetStandardMetricName(const AutoMLMetricEnum& value) { m_standardMetricNameHasBeenSet = true; m_standardMetricName = value; }
-    inline void SetStandardMetricName(AutoMLMetricEnum&& value) { m_standardMetricNameHasBeenSet = true; m_standardMetricName = std::move(value); }
-    inline FinalAutoMLJobObjectiveMetric& WithStandardMetricName(const AutoMLMetricEnum& value) { SetStandardMetricName(value); return *this;}
-    inline FinalAutoMLJobObjectiveMetric& WithStandardMetricName(AutoMLMetricEnum&& value) { SetStandardMetricName(std::move(value)); return *this;}
+    inline void SetStandardMetricName(AutoMLMetricEnum value) { m_standardMetricNameHasBeenSet = true; m_standardMetricName = value; }
+    inline FinalAutoMLJobObjectiveMetric& WithStandardMetricName(AutoMLMetricEnum value) { SetStandardMetricName(value); return *this;}
     ///@}
   private:
 
-    AutoMLJobObjectiveType m_type;
+    AutoMLJobObjectiveType m_type{AutoMLJobObjectiveType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    AutoMLMetricEnum m_metricName;
+    AutoMLMetricEnum m_metricName{AutoMLMetricEnum::NOT_SET};
     bool m_metricNameHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
 
-    AutoMLMetricEnum m_standardMetricName;
+    AutoMLMetricEnum m_standardMetricName{AutoMLMetricEnum::NOT_SET};
     bool m_standardMetricNameHasBeenSet = false;
   };
 

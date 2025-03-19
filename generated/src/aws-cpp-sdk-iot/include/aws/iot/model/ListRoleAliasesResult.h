@@ -28,7 +28,7 @@ namespace Model
   class ListRoleAliasesResult
   {
   public:
-    AWS_IOT_API ListRoleAliasesResult();
+    AWS_IOT_API ListRoleAliasesResult() = default;
     AWS_IOT_API ListRoleAliasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API ListRoleAliasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,46 +37,44 @@ namespace Model
     /**
      * <p>The role aliases.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRoleAliases() const{ return m_roleAliases; }
-    inline void SetRoleAliases(const Aws::Vector<Aws::String>& value) { m_roleAliases = value; }
-    inline void SetRoleAliases(Aws::Vector<Aws::String>&& value) { m_roleAliases = std::move(value); }
-    inline ListRoleAliasesResult& WithRoleAliases(const Aws::Vector<Aws::String>& value) { SetRoleAliases(value); return *this;}
-    inline ListRoleAliasesResult& WithRoleAliases(Aws::Vector<Aws::String>&& value) { SetRoleAliases(std::move(value)); return *this;}
-    inline ListRoleAliasesResult& AddRoleAliases(const Aws::String& value) { m_roleAliases.push_back(value); return *this; }
-    inline ListRoleAliasesResult& AddRoleAliases(Aws::String&& value) { m_roleAliases.push_back(std::move(value)); return *this; }
-    inline ListRoleAliasesResult& AddRoleAliases(const char* value) { m_roleAliases.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetRoleAliases() const { return m_roleAliases; }
+    template<typename RoleAliasesT = Aws::Vector<Aws::String>>
+    void SetRoleAliases(RoleAliasesT&& value) { m_roleAliasesHasBeenSet = true; m_roleAliases = std::forward<RoleAliasesT>(value); }
+    template<typename RoleAliasesT = Aws::Vector<Aws::String>>
+    ListRoleAliasesResult& WithRoleAliases(RoleAliasesT&& value) { SetRoleAliases(std::forward<RoleAliasesT>(value)); return *this;}
+    template<typename RoleAliasesT = Aws::String>
+    ListRoleAliasesResult& AddRoleAliases(RoleAliasesT&& value) { m_roleAliasesHasBeenSet = true; m_roleAliases.emplace_back(std::forward<RoleAliasesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A marker used to get the next set of results.</p>
      */
-    inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
-    inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
-    inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
-    inline ListRoleAliasesResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-    inline ListRoleAliasesResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-    inline ListRoleAliasesResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
+    template<typename NextMarkerT = Aws::String>
+    void SetNextMarker(NextMarkerT&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::forward<NextMarkerT>(value); }
+    template<typename NextMarkerT = Aws::String>
+    ListRoleAliasesResult& WithNextMarker(NextMarkerT&& value) { SetNextMarker(std::forward<NextMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListRoleAliasesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListRoleAliasesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListRoleAliasesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListRoleAliasesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_roleAliases;
+    bool m_roleAliasesHasBeenSet = false;
 
     Aws::String m_nextMarker;
+    bool m_nextMarkerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

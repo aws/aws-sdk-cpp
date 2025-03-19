@@ -18,20 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-PackageFilter::PackageFilter() : 
-    m_architectureHasBeenSet(false),
-    m_epochHasBeenSet(false),
-    m_filePathHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_releaseHasBeenSet(false),
-    m_sourceLambdaLayerArnHasBeenSet(false),
-    m_sourceLayerHashHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 PackageFilter::PackageFilter(JsonView jsonValue)
-  : PackageFilter()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ PackageFilter& PackageFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("architecture"))
   {
     m_architecture = jsonValue.GetObject("architecture");
-
     m_architectureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("epoch"))
   {
     m_epoch = jsonValue.GetObject("epoch");
-
     m_epochHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filePath"))
   {
     m_filePath = jsonValue.GetObject("filePath");
-
     m_filePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetObject("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("release"))
   {
     m_release = jsonValue.GetObject("release");
-
     m_releaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceLambdaLayerArn"))
   {
     m_sourceLambdaLayerArn = jsonValue.GetObject("sourceLambdaLayerArn");
-
     m_sourceLambdaLayerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceLayerHash"))
   {
     m_sourceLayerHash = jsonValue.GetObject("sourceLayerHash");
-
     m_sourceLayerHashHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetObject("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListInferenceExecutionsResult::ListInferenceExecutionsResult()
-{
-}
-
 ListInferenceExecutionsResult::ListInferenceExecutionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListInferenceExecutionsResult& ListInferenceExecutionsResult::operator =(const A
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InferenceExecutionSummaries"))
   {
     Aws::Utils::Array<JsonView> inferenceExecutionSummariesJsonList = jsonValue.GetArray("InferenceExecutionSummaries");
@@ -42,14 +37,15 @@ ListInferenceExecutionsResult& ListInferenceExecutionsResult::operator =(const A
     {
       m_inferenceExecutionSummaries.push_back(inferenceExecutionSummariesJsonList[inferenceExecutionSummariesIndex].AsObject());
     }
+    m_inferenceExecutionSummariesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,28 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-App::App() : 
-    m_appIdHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_shortnameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_dataSourcesHasBeenSet(false),
-    m_type(AppType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_appSourceHasBeenSet(false),
-    m_domainsHasBeenSet(false),
-    m_enableSsl(false),
-    m_enableSslHasBeenSet(false),
-    m_sslConfigurationHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_environmentHasBeenSet(false)
-{
-}
-
 App::App(JsonView jsonValue)
-  : App()
 {
   *this = jsonValue;
 }
@@ -49,38 +28,28 @@ App& App::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AppId"))
   {
     m_appId = jsonValue.GetString("AppId");
-
     m_appIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StackId"))
   {
     m_stackId = jsonValue.GetString("StackId");
-
     m_stackIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Shortname"))
   {
     m_shortname = jsonValue.GetString("Shortname");
-
     m_shortnameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSources"))
   {
     Aws::Utils::Array<JsonView> dataSourcesJsonList = jsonValue.GetArray("DataSources");
@@ -90,21 +59,16 @@ App& App::operator =(JsonView jsonValue)
     }
     m_dataSourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = AppTypeMapper::GetAppTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppSource"))
   {
     m_appSource = jsonValue.GetObject("AppSource");
-
     m_appSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Domains"))
   {
     Aws::Utils::Array<JsonView> domainsJsonList = jsonValue.GetArray("Domains");
@@ -114,21 +78,16 @@ App& App::operator =(JsonView jsonValue)
     }
     m_domainsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableSsl"))
   {
     m_enableSsl = jsonValue.GetBool("EnableSsl");
-
     m_enableSslHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SslConfiguration"))
   {
     m_sslConfiguration = jsonValue.GetObject("SslConfiguration");
-
     m_sslConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
@@ -138,14 +97,11 @@ App& App::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Environment"))
   {
     Aws::Utils::Array<JsonView> environmentJsonList = jsonValue.GetArray("Environment");
@@ -155,7 +111,6 @@ App& App::operator =(JsonView jsonValue)
     }
     m_environmentHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace Connect
 namespace Model
 {
 
-DeviceInfo::DeviceInfo() : 
-    m_platformNameHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_operatingSystemHasBeenSet(false)
-{
-}
-
 DeviceInfo::DeviceInfo(JsonView jsonValue)
-  : DeviceInfo()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DeviceInfo& DeviceInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PlatformName"))
   {
     m_platformName = jsonValue.GetString("PlatformName");
-
     m_platformNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlatformVersion"))
   {
     m_platformVersion = jsonValue.GetString("PlatformVersion");
-
     m_platformVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperatingSystem"))
   {
     m_operatingSystem = jsonValue.GetString("OperatingSystem");
-
     m_operatingSystemHasBeenSet = true;
   }
-
   return *this;
 }
 

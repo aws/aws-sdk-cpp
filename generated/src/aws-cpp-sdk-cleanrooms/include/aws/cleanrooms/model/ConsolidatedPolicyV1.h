@@ -34,7 +34,7 @@ namespace Model
   class ConsolidatedPolicyV1
   {
   public:
-    AWS_CLEANROOMS_API ConsolidatedPolicyV1();
+    AWS_CLEANROOMS_API ConsolidatedPolicyV1() = default;
     AWS_CLEANROOMS_API ConsolidatedPolicyV1(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ConsolidatedPolicyV1& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,36 +44,36 @@ namespace Model
     /**
      * <p> The list of consolidated policies.</p>
      */
-    inline const ConsolidatedPolicyList& GetList() const{ return m_list; }
+    inline const ConsolidatedPolicyList& GetList() const { return m_list; }
     inline bool ListHasBeenSet() const { return m_listHasBeenSet; }
-    inline void SetList(const ConsolidatedPolicyList& value) { m_listHasBeenSet = true; m_list = value; }
-    inline void SetList(ConsolidatedPolicyList&& value) { m_listHasBeenSet = true; m_list = std::move(value); }
-    inline ConsolidatedPolicyV1& WithList(const ConsolidatedPolicyList& value) { SetList(value); return *this;}
-    inline ConsolidatedPolicyV1& WithList(ConsolidatedPolicyList&& value) { SetList(std::move(value)); return *this;}
+    template<typename ListT = ConsolidatedPolicyList>
+    void SetList(ListT&& value) { m_listHasBeenSet = true; m_list = std::forward<ListT>(value); }
+    template<typename ListT = ConsolidatedPolicyList>
+    ConsolidatedPolicyV1& WithList(ListT&& value) { SetList(std::forward<ListT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The aggregation setting for the consolidated policy.</p>
      */
-    inline const ConsolidatedPolicyAggregation& GetAggregation() const{ return m_aggregation; }
+    inline const ConsolidatedPolicyAggregation& GetAggregation() const { return m_aggregation; }
     inline bool AggregationHasBeenSet() const { return m_aggregationHasBeenSet; }
-    inline void SetAggregation(const ConsolidatedPolicyAggregation& value) { m_aggregationHasBeenSet = true; m_aggregation = value; }
-    inline void SetAggregation(ConsolidatedPolicyAggregation&& value) { m_aggregationHasBeenSet = true; m_aggregation = std::move(value); }
-    inline ConsolidatedPolicyV1& WithAggregation(const ConsolidatedPolicyAggregation& value) { SetAggregation(value); return *this;}
-    inline ConsolidatedPolicyV1& WithAggregation(ConsolidatedPolicyAggregation&& value) { SetAggregation(std::move(value)); return *this;}
+    template<typename AggregationT = ConsolidatedPolicyAggregation>
+    void SetAggregation(AggregationT&& value) { m_aggregationHasBeenSet = true; m_aggregation = std::forward<AggregationT>(value); }
+    template<typename AggregationT = ConsolidatedPolicyAggregation>
+    ConsolidatedPolicyV1& WithAggregation(AggregationT&& value) { SetAggregation(std::forward<AggregationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Custom policy</p>
      */
-    inline const ConsolidatedPolicyCustom& GetCustom() const{ return m_custom; }
+    inline const ConsolidatedPolicyCustom& GetCustom() const { return m_custom; }
     inline bool CustomHasBeenSet() const { return m_customHasBeenSet; }
-    inline void SetCustom(const ConsolidatedPolicyCustom& value) { m_customHasBeenSet = true; m_custom = value; }
-    inline void SetCustom(ConsolidatedPolicyCustom&& value) { m_customHasBeenSet = true; m_custom = std::move(value); }
-    inline ConsolidatedPolicyV1& WithCustom(const ConsolidatedPolicyCustom& value) { SetCustom(value); return *this;}
-    inline ConsolidatedPolicyV1& WithCustom(ConsolidatedPolicyCustom&& value) { SetCustom(std::move(value)); return *this;}
+    template<typename CustomT = ConsolidatedPolicyCustom>
+    void SetCustom(CustomT&& value) { m_customHasBeenSet = true; m_custom = std::forward<CustomT>(value); }
+    template<typename CustomT = ConsolidatedPolicyCustom>
+    ConsolidatedPolicyV1& WithCustom(CustomT&& value) { SetCustom(std::forward<CustomT>(value)); return *this;}
     ///@}
   private:
 

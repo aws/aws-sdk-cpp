@@ -18,23 +18,7 @@ namespace TranscribeStreamingService
 namespace Model
 {
 
-MedicalScribeTranscriptItem::MedicalScribeTranscriptItem() : 
-    m_beginAudioTime(0.0),
-    m_beginAudioTimeHasBeenSet(false),
-    m_endAudioTime(0.0),
-    m_endAudioTimeHasBeenSet(false),
-    m_type(MedicalScribeTranscriptItemType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_vocabularyFilterMatch(false),
-    m_vocabularyFilterMatchHasBeenSet(false)
-{
-}
-
 MedicalScribeTranscriptItem::MedicalScribeTranscriptItem(JsonView jsonValue)
-  : MedicalScribeTranscriptItem()
 {
   *this = jsonValue;
 }
@@ -44,45 +28,33 @@ MedicalScribeTranscriptItem& MedicalScribeTranscriptItem::operator =(JsonView js
   if(jsonValue.ValueExists("BeginAudioTime"))
   {
     m_beginAudioTime = jsonValue.GetDouble("BeginAudioTime");
-
     m_beginAudioTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndAudioTime"))
   {
     m_endAudioTime = jsonValue.GetDouble("EndAudioTime");
-
     m_endAudioTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = MedicalScribeTranscriptItemTypeMapper::GetMedicalScribeTranscriptItemTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetString("Content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VocabularyFilterMatch"))
   {
     m_vocabularyFilterMatch = jsonValue.GetBool("VocabularyFilterMatch");
-
     m_vocabularyFilterMatchHasBeenSet = true;
   }
-
   return *this;
 }
 

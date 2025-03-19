@@ -18,19 +18,7 @@ namespace ApplicationAutoScaling
 namespace Model
 {
 
-NotScaledReason::NotScaledReason() : 
-    m_codeHasBeenSet(false),
-    m_maxCapacity(0),
-    m_maxCapacityHasBeenSet(false),
-    m_minCapacity(0),
-    m_minCapacityHasBeenSet(false),
-    m_currentCapacity(0),
-    m_currentCapacityHasBeenSet(false)
-{
-}
-
 NotScaledReason::NotScaledReason(JsonView jsonValue)
-  : NotScaledReason()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ NotScaledReason& NotScaledReason::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetString("Code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxCapacity"))
   {
     m_maxCapacity = jsonValue.GetInteger("MaxCapacity");
-
     m_maxCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinCapacity"))
   {
     m_minCapacity = jsonValue.GetInteger("MinCapacity");
-
     m_minCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentCapacity"))
   {
     m_currentCapacity = jsonValue.GetInteger("CurrentCapacity");
-
     m_currentCapacityHasBeenSet = true;
   }
-
   return *this;
 }
 

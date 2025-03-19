@@ -26,7 +26,7 @@ namespace Model
   class DeleteMessageBatchRequest : public SQSRequest
   {
   public:
-    AWS_SQS_API DeleteMessageBatchRequest();
+    AWS_SQS_API DeleteMessageBatchRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,28 +44,26 @@ namespace Model
      * <p>The URL of the Amazon SQS queue from which messages are deleted.</p> <p>Queue
      * URLs and names are case-sensitive.</p>
      */
-    inline const Aws::String& GetQueueUrl() const{ return m_queueUrl; }
+    inline const Aws::String& GetQueueUrl() const { return m_queueUrl; }
     inline bool QueueUrlHasBeenSet() const { return m_queueUrlHasBeenSet; }
-    inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
-    inline void SetQueueUrl(Aws::String&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = std::move(value); }
-    inline void SetQueueUrl(const char* value) { m_queueUrlHasBeenSet = true; m_queueUrl.assign(value); }
-    inline DeleteMessageBatchRequest& WithQueueUrl(const Aws::String& value) { SetQueueUrl(value); return *this;}
-    inline DeleteMessageBatchRequest& WithQueueUrl(Aws::String&& value) { SetQueueUrl(std::move(value)); return *this;}
-    inline DeleteMessageBatchRequest& WithQueueUrl(const char* value) { SetQueueUrl(value); return *this;}
+    template<typename QueueUrlT = Aws::String>
+    void SetQueueUrl(QueueUrlT&& value) { m_queueUrlHasBeenSet = true; m_queueUrl = std::forward<QueueUrlT>(value); }
+    template<typename QueueUrlT = Aws::String>
+    DeleteMessageBatchRequest& WithQueueUrl(QueueUrlT&& value) { SetQueueUrl(std::forward<QueueUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Lists the receipt handles for the messages to be deleted.</p>
      */
-    inline const Aws::Vector<DeleteMessageBatchRequestEntry>& GetEntries() const{ return m_entries; }
+    inline const Aws::Vector<DeleteMessageBatchRequestEntry>& GetEntries() const { return m_entries; }
     inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
-    inline void SetEntries(const Aws::Vector<DeleteMessageBatchRequestEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
-    inline void SetEntries(Aws::Vector<DeleteMessageBatchRequestEntry>&& value) { m_entriesHasBeenSet = true; m_entries = std::move(value); }
-    inline DeleteMessageBatchRequest& WithEntries(const Aws::Vector<DeleteMessageBatchRequestEntry>& value) { SetEntries(value); return *this;}
-    inline DeleteMessageBatchRequest& WithEntries(Aws::Vector<DeleteMessageBatchRequestEntry>&& value) { SetEntries(std::move(value)); return *this;}
-    inline DeleteMessageBatchRequest& AddEntries(const DeleteMessageBatchRequestEntry& value) { m_entriesHasBeenSet = true; m_entries.push_back(value); return *this; }
-    inline DeleteMessageBatchRequest& AddEntries(DeleteMessageBatchRequestEntry&& value) { m_entriesHasBeenSet = true; m_entries.push_back(std::move(value)); return *this; }
+    template<typename EntriesT = Aws::Vector<DeleteMessageBatchRequestEntry>>
+    void SetEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries = std::forward<EntriesT>(value); }
+    template<typename EntriesT = Aws::Vector<DeleteMessageBatchRequestEntry>>
+    DeleteMessageBatchRequest& WithEntries(EntriesT&& value) { SetEntries(std::forward<EntriesT>(value)); return *this;}
+    template<typename EntriesT = DeleteMessageBatchRequestEntry>
+    DeleteMessageBatchRequest& AddEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries.emplace_back(std::forward<EntriesT>(value)); return *this; }
     ///@}
   private:
 

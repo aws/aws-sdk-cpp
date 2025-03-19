@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListGatewayInstancesRequest::ListGatewayInstancesRequest() : 
-    m_filterArnHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListGatewayInstancesRequest::SerializePayload() const
 {
   return {};

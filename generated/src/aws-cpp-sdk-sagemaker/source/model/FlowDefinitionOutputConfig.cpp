@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-FlowDefinitionOutputConfig::FlowDefinitionOutputConfig() : 
-    m_s3OutputPathHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 FlowDefinitionOutputConfig::FlowDefinitionOutputConfig(JsonView jsonValue)
-  : FlowDefinitionOutputConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FlowDefinitionOutputConfig& FlowDefinitionOutputConfig::operator =(JsonView json
   if(jsonValue.ValueExists("S3OutputPath"))
   {
     m_s3OutputPath = jsonValue.GetString("S3OutputPath");
-
     m_s3OutputPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

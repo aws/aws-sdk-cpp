@@ -27,7 +27,7 @@ namespace Model
   class AttachToIndexResult
   {
   public:
-    AWS_CLOUDDIRECTORY_API AttachToIndexResult();
+    AWS_CLOUDDIRECTORY_API AttachToIndexResult() = default;
     AWS_CLOUDDIRECTORY_API AttachToIndexResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDDIRECTORY_API AttachToIndexResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The <code>ObjectIdentifier</code> of the object that was attached to the
      * index.</p>
      */
-    inline const Aws::String& GetAttachedObjectIdentifier() const{ return m_attachedObjectIdentifier; }
-    inline void SetAttachedObjectIdentifier(const Aws::String& value) { m_attachedObjectIdentifier = value; }
-    inline void SetAttachedObjectIdentifier(Aws::String&& value) { m_attachedObjectIdentifier = std::move(value); }
-    inline void SetAttachedObjectIdentifier(const char* value) { m_attachedObjectIdentifier.assign(value); }
-    inline AttachToIndexResult& WithAttachedObjectIdentifier(const Aws::String& value) { SetAttachedObjectIdentifier(value); return *this;}
-    inline AttachToIndexResult& WithAttachedObjectIdentifier(Aws::String&& value) { SetAttachedObjectIdentifier(std::move(value)); return *this;}
-    inline AttachToIndexResult& WithAttachedObjectIdentifier(const char* value) { SetAttachedObjectIdentifier(value); return *this;}
+    inline const Aws::String& GetAttachedObjectIdentifier() const { return m_attachedObjectIdentifier; }
+    template<typename AttachedObjectIdentifierT = Aws::String>
+    void SetAttachedObjectIdentifier(AttachedObjectIdentifierT&& value) { m_attachedObjectIdentifierHasBeenSet = true; m_attachedObjectIdentifier = std::forward<AttachedObjectIdentifierT>(value); }
+    template<typename AttachedObjectIdentifierT = Aws::String>
+    AttachToIndexResult& WithAttachedObjectIdentifier(AttachedObjectIdentifierT&& value) { SetAttachedObjectIdentifier(std::forward<AttachedObjectIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AttachToIndexResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AttachToIndexResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AttachToIndexResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AttachToIndexResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_attachedObjectIdentifier;
+    bool m_attachedObjectIdentifierHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

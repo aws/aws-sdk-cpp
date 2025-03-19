@@ -20,15 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-AccountLimit::AccountLimit() : 
-    m_nameHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
-{
-}
-
 AccountLimit::AccountLimit(const XmlNode& xmlNode)
-  : AccountLimit()
 {
   *this = xmlNode;
 }

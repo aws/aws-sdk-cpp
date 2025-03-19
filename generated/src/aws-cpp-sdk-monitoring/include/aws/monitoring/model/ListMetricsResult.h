@@ -30,7 +30,7 @@ namespace Model
   class ListMetricsResult
   {
   public:
-    AWS_CLOUDWATCH_API ListMetricsResult();
+    AWS_CLOUDWATCH_API ListMetricsResult() = default;
     AWS_CLOUDWATCH_API ListMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDWATCH_API ListMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,26 +39,24 @@ namespace Model
     /**
      * <p>The metrics that match your request. </p>
      */
-    inline const Aws::Vector<Metric>& GetMetrics() const{ return m_metrics; }
-    inline void SetMetrics(const Aws::Vector<Metric>& value) { m_metrics = value; }
-    inline void SetMetrics(Aws::Vector<Metric>&& value) { m_metrics = std::move(value); }
-    inline ListMetricsResult& WithMetrics(const Aws::Vector<Metric>& value) { SetMetrics(value); return *this;}
-    inline ListMetricsResult& WithMetrics(Aws::Vector<Metric>&& value) { SetMetrics(std::move(value)); return *this;}
-    inline ListMetricsResult& AddMetrics(const Metric& value) { m_metrics.push_back(value); return *this; }
-    inline ListMetricsResult& AddMetrics(Metric&& value) { m_metrics.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Metric>& GetMetrics() const { return m_metrics; }
+    template<typename MetricsT = Aws::Vector<Metric>>
+    void SetMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics = std::forward<MetricsT>(value); }
+    template<typename MetricsT = Aws::Vector<Metric>>
+    ListMetricsResult& WithMetrics(MetricsT&& value) { SetMetrics(std::forward<MetricsT>(value)); return *this;}
+    template<typename MetricsT = Metric>
+    ListMetricsResult& AddMetrics(MetricsT&& value) { m_metricsHasBeenSet = true; m_metrics.emplace_back(std::forward<MetricsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token that marks the start of the next batch of returned results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListMetricsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMetricsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMetricsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMetricsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,33 +66,36 @@ namespace Model
      * are from.</p> <p>This field is a 1:1 mapping between each metric that is
      * returned and the ID of the owning account.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetOwningAccounts() const{ return m_owningAccounts; }
-    inline void SetOwningAccounts(const Aws::Vector<Aws::String>& value) { m_owningAccounts = value; }
-    inline void SetOwningAccounts(Aws::Vector<Aws::String>&& value) { m_owningAccounts = std::move(value); }
-    inline ListMetricsResult& WithOwningAccounts(const Aws::Vector<Aws::String>& value) { SetOwningAccounts(value); return *this;}
-    inline ListMetricsResult& WithOwningAccounts(Aws::Vector<Aws::String>&& value) { SetOwningAccounts(std::move(value)); return *this;}
-    inline ListMetricsResult& AddOwningAccounts(const Aws::String& value) { m_owningAccounts.push_back(value); return *this; }
-    inline ListMetricsResult& AddOwningAccounts(Aws::String&& value) { m_owningAccounts.push_back(std::move(value)); return *this; }
-    inline ListMetricsResult& AddOwningAccounts(const char* value) { m_owningAccounts.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetOwningAccounts() const { return m_owningAccounts; }
+    template<typename OwningAccountsT = Aws::Vector<Aws::String>>
+    void SetOwningAccounts(OwningAccountsT&& value) { m_owningAccountsHasBeenSet = true; m_owningAccounts = std::forward<OwningAccountsT>(value); }
+    template<typename OwningAccountsT = Aws::Vector<Aws::String>>
+    ListMetricsResult& WithOwningAccounts(OwningAccountsT&& value) { SetOwningAccounts(std::forward<OwningAccountsT>(value)); return *this;}
+    template<typename OwningAccountsT = Aws::String>
+    ListMetricsResult& AddOwningAccounts(OwningAccountsT&& value) { m_owningAccountsHasBeenSet = true; m_owningAccounts.emplace_back(std::forward<OwningAccountsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ListMetricsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ListMetricsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ListMetricsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Metric> m_metrics;
+    bool m_metricsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_owningAccounts;
+    bool m_owningAccountsHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

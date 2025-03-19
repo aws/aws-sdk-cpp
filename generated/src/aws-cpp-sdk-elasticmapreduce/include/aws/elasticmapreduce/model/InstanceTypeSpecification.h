@@ -37,7 +37,7 @@ namespace Model
   class InstanceTypeSpecification
   {
   public:
-    AWS_EMR_API InstanceTypeSpecification();
+    AWS_EMR_API InstanceTypeSpecification() = default;
     AWS_EMR_API InstanceTypeSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API InstanceTypeSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline InstanceTypeSpecification& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline InstanceTypeSpecification& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline InstanceTypeSpecification& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    InstanceTypeSpecification& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,7 +62,7 @@ namespace Model
      * values represent performance characteristics such as vCPUs, memory, or I/O. If
      * not specified, the default value is 1.</p>
      */
-    inline int GetWeightedCapacity() const{ return m_weightedCapacity; }
+    inline int GetWeightedCapacity() const { return m_weightedCapacity; }
     inline bool WeightedCapacityHasBeenSet() const { return m_weightedCapacityHasBeenSet; }
     inline void SetWeightedCapacity(int value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity = value; }
     inline InstanceTypeSpecification& WithWeightedCapacity(int value) { SetWeightedCapacity(value); return *this;}
@@ -75,14 +73,12 @@ namespace Model
      * <p>The bid price for each Amazon EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD.</p>
      */
-    inline const Aws::String& GetBidPrice() const{ return m_bidPrice; }
+    inline const Aws::String& GetBidPrice() const { return m_bidPrice; }
     inline bool BidPriceHasBeenSet() const { return m_bidPriceHasBeenSet; }
-    inline void SetBidPrice(const Aws::String& value) { m_bidPriceHasBeenSet = true; m_bidPrice = value; }
-    inline void SetBidPrice(Aws::String&& value) { m_bidPriceHasBeenSet = true; m_bidPrice = std::move(value); }
-    inline void SetBidPrice(const char* value) { m_bidPriceHasBeenSet = true; m_bidPrice.assign(value); }
-    inline InstanceTypeSpecification& WithBidPrice(const Aws::String& value) { SetBidPrice(value); return *this;}
-    inline InstanceTypeSpecification& WithBidPrice(Aws::String&& value) { SetBidPrice(std::move(value)); return *this;}
-    inline InstanceTypeSpecification& WithBidPrice(const char* value) { SetBidPrice(value); return *this;}
+    template<typename BidPriceT = Aws::String>
+    void SetBidPrice(BidPriceT&& value) { m_bidPriceHasBeenSet = true; m_bidPrice = std::forward<BidPriceT>(value); }
+    template<typename BidPriceT = Aws::String>
+    InstanceTypeSpecification& WithBidPrice(BidPriceT&& value) { SetBidPrice(std::forward<BidPriceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,7 +87,7 @@ namespace Model
      * Instance as defined by <code>InstanceType</code>. Expressed as a number (for
      * example, 20 specifies 20%).</p>
      */
-    inline double GetBidPriceAsPercentageOfOnDemandPrice() const{ return m_bidPriceAsPercentageOfOnDemandPrice; }
+    inline double GetBidPriceAsPercentageOfOnDemandPrice() const { return m_bidPriceAsPercentageOfOnDemandPrice; }
     inline bool BidPriceAsPercentageOfOnDemandPriceHasBeenSet() const { return m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet; }
     inline void SetBidPriceAsPercentageOfOnDemandPrice(double value) { m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet = true; m_bidPriceAsPercentageOfOnDemandPrice = value; }
     inline InstanceTypeSpecification& WithBidPriceAsPercentageOfOnDemandPrice(double value) { SetBidPriceAsPercentageOfOnDemandPrice(value); return *this;}
@@ -103,14 +99,14 @@ namespace Model
      * instances, which can include configurations for applications and software
      * bundled with Amazon EMR.</p>
      */
-    inline const Aws::Vector<Configuration>& GetConfigurations() const{ return m_configurations; }
+    inline const Aws::Vector<Configuration>& GetConfigurations() const { return m_configurations; }
     inline bool ConfigurationsHasBeenSet() const { return m_configurationsHasBeenSet; }
-    inline void SetConfigurations(const Aws::Vector<Configuration>& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
-    inline void SetConfigurations(Aws::Vector<Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = std::move(value); }
-    inline InstanceTypeSpecification& WithConfigurations(const Aws::Vector<Configuration>& value) { SetConfigurations(value); return *this;}
-    inline InstanceTypeSpecification& WithConfigurations(Aws::Vector<Configuration>&& value) { SetConfigurations(std::move(value)); return *this;}
-    inline InstanceTypeSpecification& AddConfigurations(const Configuration& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
-    inline InstanceTypeSpecification& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
+    template<typename ConfigurationsT = Aws::Vector<Configuration>>
+    void SetConfigurations(ConfigurationsT&& value) { m_configurationsHasBeenSet = true; m_configurations = std::forward<ConfigurationsT>(value); }
+    template<typename ConfigurationsT = Aws::Vector<Configuration>>
+    InstanceTypeSpecification& WithConfigurations(ConfigurationsT&& value) { SetConfigurations(std::forward<ConfigurationsT>(value)); return *this;}
+    template<typename ConfigurationsT = Configuration>
+    InstanceTypeSpecification& AddConfigurations(ConfigurationsT&& value) { m_configurationsHasBeenSet = true; m_configurations.emplace_back(std::forward<ConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -118,14 +114,14 @@ namespace Model
      * <p>The configuration of Amazon Elastic Block Store (Amazon EBS) attached to each
      * instance as defined by <code>InstanceType</code>.</p>
      */
-    inline const Aws::Vector<EbsBlockDevice>& GetEbsBlockDevices() const{ return m_ebsBlockDevices; }
+    inline const Aws::Vector<EbsBlockDevice>& GetEbsBlockDevices() const { return m_ebsBlockDevices; }
     inline bool EbsBlockDevicesHasBeenSet() const { return m_ebsBlockDevicesHasBeenSet; }
-    inline void SetEbsBlockDevices(const Aws::Vector<EbsBlockDevice>& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices = value; }
-    inline void SetEbsBlockDevices(Aws::Vector<EbsBlockDevice>&& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices = std::move(value); }
-    inline InstanceTypeSpecification& WithEbsBlockDevices(const Aws::Vector<EbsBlockDevice>& value) { SetEbsBlockDevices(value); return *this;}
-    inline InstanceTypeSpecification& WithEbsBlockDevices(Aws::Vector<EbsBlockDevice>&& value) { SetEbsBlockDevices(std::move(value)); return *this;}
-    inline InstanceTypeSpecification& AddEbsBlockDevices(const EbsBlockDevice& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices.push_back(value); return *this; }
-    inline InstanceTypeSpecification& AddEbsBlockDevices(EbsBlockDevice&& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices.push_back(std::move(value)); return *this; }
+    template<typename EbsBlockDevicesT = Aws::Vector<EbsBlockDevice>>
+    void SetEbsBlockDevices(EbsBlockDevicesT&& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices = std::forward<EbsBlockDevicesT>(value); }
+    template<typename EbsBlockDevicesT = Aws::Vector<EbsBlockDevice>>
+    InstanceTypeSpecification& WithEbsBlockDevices(EbsBlockDevicesT&& value) { SetEbsBlockDevices(std::forward<EbsBlockDevicesT>(value)); return *this;}
+    template<typename EbsBlockDevicesT = EbsBlockDevice>
+    InstanceTypeSpecification& AddEbsBlockDevices(EbsBlockDevicesT&& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices.emplace_back(std::forward<EbsBlockDevicesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -133,7 +129,7 @@ namespace Model
      * <p>Evaluates to <code>TRUE</code> when the specified <code>InstanceType</code>
      * is EBS-optimized.</p>
      */
-    inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
+    inline bool GetEbsOptimized() const { return m_ebsOptimized; }
     inline bool EbsOptimizedHasBeenSet() const { return m_ebsOptimizedHasBeenSet; }
     inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
     inline InstanceTypeSpecification& WithEbsOptimized(bool value) { SetEbsOptimized(value); return *this;}
@@ -143,14 +139,12 @@ namespace Model
     /**
      * <p>The custom AMI ID to use for the instance type.</p>
      */
-    inline const Aws::String& GetCustomAmiId() const{ return m_customAmiId; }
+    inline const Aws::String& GetCustomAmiId() const { return m_customAmiId; }
     inline bool CustomAmiIdHasBeenSet() const { return m_customAmiIdHasBeenSet; }
-    inline void SetCustomAmiId(const Aws::String& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = value; }
-    inline void SetCustomAmiId(Aws::String&& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = std::move(value); }
-    inline void SetCustomAmiId(const char* value) { m_customAmiIdHasBeenSet = true; m_customAmiId.assign(value); }
-    inline InstanceTypeSpecification& WithCustomAmiId(const Aws::String& value) { SetCustomAmiId(value); return *this;}
-    inline InstanceTypeSpecification& WithCustomAmiId(Aws::String&& value) { SetCustomAmiId(std::move(value)); return *this;}
-    inline InstanceTypeSpecification& WithCustomAmiId(const char* value) { SetCustomAmiId(value); return *this;}
+    template<typename CustomAmiIdT = Aws::String>
+    void SetCustomAmiId(CustomAmiIdT&& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = std::forward<CustomAmiIdT>(value); }
+    template<typename CustomAmiIdT = Aws::String>
+    InstanceTypeSpecification& WithCustomAmiId(CustomAmiIdT&& value) { SetCustomAmiId(std::forward<CustomAmiIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -159,7 +153,7 @@ namespace Model
      * instance type. Priority starts at 0, which is the highest priority. Amazon EMR
      * considers the highest priority first.</p>
      */
-    inline double GetPriority() const{ return m_priority; }
+    inline double GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(double value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline InstanceTypeSpecification& WithPriority(double value) { SetPriority(value); return *this;}
@@ -169,13 +163,13 @@ namespace Model
     Aws::String m_instanceType;
     bool m_instanceTypeHasBeenSet = false;
 
-    int m_weightedCapacity;
+    int m_weightedCapacity{0};
     bool m_weightedCapacityHasBeenSet = false;
 
     Aws::String m_bidPrice;
     bool m_bidPriceHasBeenSet = false;
 
-    double m_bidPriceAsPercentageOfOnDemandPrice;
+    double m_bidPriceAsPercentageOfOnDemandPrice{0.0};
     bool m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet = false;
 
     Aws::Vector<Configuration> m_configurations;
@@ -184,13 +178,13 @@ namespace Model
     Aws::Vector<EbsBlockDevice> m_ebsBlockDevices;
     bool m_ebsBlockDevicesHasBeenSet = false;
 
-    bool m_ebsOptimized;
+    bool m_ebsOptimized{false};
     bool m_ebsOptimizedHasBeenSet = false;
 
     Aws::String m_customAmiId;
     bool m_customAmiIdHasBeenSet = false;
 
-    double m_priority;
+    double m_priority{0.0};
     bool m_priorityHasBeenSet = false;
   };
 

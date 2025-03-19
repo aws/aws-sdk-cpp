@@ -18,19 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-LambdaFunctionMemoryRecommendationOption::LambdaFunctionMemoryRecommendationOption() : 
-    m_rank(0),
-    m_rankHasBeenSet(false),
-    m_memorySize(0),
-    m_memorySizeHasBeenSet(false),
-    m_projectedUtilizationMetricsHasBeenSet(false),
-    m_savingsOpportunityHasBeenSet(false),
-    m_savingsOpportunityAfterDiscountsHasBeenSet(false)
-{
-}
-
 LambdaFunctionMemoryRecommendationOption::LambdaFunctionMemoryRecommendationOption(JsonView jsonValue)
-  : LambdaFunctionMemoryRecommendationOption()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ LambdaFunctionMemoryRecommendationOption& LambdaFunctionMemoryRecommendationOpti
   if(jsonValue.ValueExists("rank"))
   {
     m_rank = jsonValue.GetInteger("rank");
-
     m_rankHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memorySize"))
   {
     m_memorySize = jsonValue.GetInteger("memorySize");
-
     m_memorySizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectedUtilizationMetrics"))
   {
     Aws::Utils::Array<JsonView> projectedUtilizationMetricsJsonList = jsonValue.GetArray("projectedUtilizationMetrics");
@@ -60,21 +44,16 @@ LambdaFunctionMemoryRecommendationOption& LambdaFunctionMemoryRecommendationOpti
     }
     m_projectedUtilizationMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("savingsOpportunity"))
   {
     m_savingsOpportunity = jsonValue.GetObject("savingsOpportunity");
-
     m_savingsOpportunityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("savingsOpportunityAfterDiscounts"))
   {
     m_savingsOpportunityAfterDiscounts = jsonValue.GetObject("savingsOpportunityAfterDiscounts");
-
     m_savingsOpportunityAfterDiscountsHasBeenSet = true;
   }
-
   return *this;
 }
 

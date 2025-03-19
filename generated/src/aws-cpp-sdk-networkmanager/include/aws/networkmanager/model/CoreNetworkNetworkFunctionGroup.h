@@ -33,7 +33,7 @@ namespace Model
   class CoreNetworkNetworkFunctionGroup
   {
   public:
-    AWS_NETWORKMANAGER_API CoreNetworkNetworkFunctionGroup();
+    AWS_NETWORKMANAGER_API CoreNetworkNetworkFunctionGroup() = default;
     AWS_NETWORKMANAGER_API CoreNetworkNetworkFunctionGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API CoreNetworkNetworkFunctionGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,41 +43,38 @@ namespace Model
     /**
      * <p>The name of the network function group.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CoreNetworkNetworkFunctionGroup& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CoreNetworkNetworkFunctionGroup& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CoreNetworkNetworkFunctionGroup& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CoreNetworkNetworkFunctionGroup& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The core network edge locations.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEdgeLocations() const{ return m_edgeLocations; }
+    inline const Aws::Vector<Aws::String>& GetEdgeLocations() const { return m_edgeLocations; }
     inline bool EdgeLocationsHasBeenSet() const { return m_edgeLocationsHasBeenSet; }
-    inline void SetEdgeLocations(const Aws::Vector<Aws::String>& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations = value; }
-    inline void SetEdgeLocations(Aws::Vector<Aws::String>&& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations = std::move(value); }
-    inline CoreNetworkNetworkFunctionGroup& WithEdgeLocations(const Aws::Vector<Aws::String>& value) { SetEdgeLocations(value); return *this;}
-    inline CoreNetworkNetworkFunctionGroup& WithEdgeLocations(Aws::Vector<Aws::String>&& value) { SetEdgeLocations(std::move(value)); return *this;}
-    inline CoreNetworkNetworkFunctionGroup& AddEdgeLocations(const Aws::String& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations.push_back(value); return *this; }
-    inline CoreNetworkNetworkFunctionGroup& AddEdgeLocations(Aws::String&& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations.push_back(std::move(value)); return *this; }
-    inline CoreNetworkNetworkFunctionGroup& AddEdgeLocations(const char* value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations.push_back(value); return *this; }
+    template<typename EdgeLocationsT = Aws::Vector<Aws::String>>
+    void SetEdgeLocations(EdgeLocationsT&& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations = std::forward<EdgeLocationsT>(value); }
+    template<typename EdgeLocationsT = Aws::Vector<Aws::String>>
+    CoreNetworkNetworkFunctionGroup& WithEdgeLocations(EdgeLocationsT&& value) { SetEdgeLocations(std::forward<EdgeLocationsT>(value)); return *this;}
+    template<typename EdgeLocationsT = Aws::String>
+    CoreNetworkNetworkFunctionGroup& AddEdgeLocations(EdgeLocationsT&& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations.emplace_back(std::forward<EdgeLocationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The segments associated with the network function group.</p>
      */
-    inline const ServiceInsertionSegments& GetSegments() const{ return m_segments; }
+    inline const ServiceInsertionSegments& GetSegments() const { return m_segments; }
     inline bool SegmentsHasBeenSet() const { return m_segmentsHasBeenSet; }
-    inline void SetSegments(const ServiceInsertionSegments& value) { m_segmentsHasBeenSet = true; m_segments = value; }
-    inline void SetSegments(ServiceInsertionSegments&& value) { m_segmentsHasBeenSet = true; m_segments = std::move(value); }
-    inline CoreNetworkNetworkFunctionGroup& WithSegments(const ServiceInsertionSegments& value) { SetSegments(value); return *this;}
-    inline CoreNetworkNetworkFunctionGroup& WithSegments(ServiceInsertionSegments&& value) { SetSegments(std::move(value)); return *this;}
+    template<typename SegmentsT = ServiceInsertionSegments>
+    void SetSegments(SegmentsT&& value) { m_segmentsHasBeenSet = true; m_segments = std::forward<SegmentsT>(value); }
+    template<typename SegmentsT = ServiceInsertionSegments>
+    CoreNetworkNetworkFunctionGroup& WithSegments(SegmentsT&& value) { SetSegments(std::forward<SegmentsT>(value)); return *this;}
     ///@}
   private:
 

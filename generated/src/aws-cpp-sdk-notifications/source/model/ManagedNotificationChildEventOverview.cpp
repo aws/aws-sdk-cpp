@@ -18,19 +18,7 @@ namespace Notifications
 namespace Model
 {
 
-ManagedNotificationChildEventOverview::ManagedNotificationChildEventOverview() : 
-    m_arnHasBeenSet(false),
-    m_managedNotificationConfigurationArnHasBeenSet(false),
-    m_relatedAccountHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_childEventHasBeenSet(false),
-    m_aggregateManagedNotificationEventArnHasBeenSet(false),
-    m_organizationalUnitIdHasBeenSet(false)
-{
-}
-
 ManagedNotificationChildEventOverview::ManagedNotificationChildEventOverview(JsonView jsonValue)
-  : ManagedNotificationChildEventOverview()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ ManagedNotificationChildEventOverview& ManagedNotificationChildEventOverview::op
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedNotificationConfigurationArn"))
   {
     m_managedNotificationConfigurationArn = jsonValue.GetString("managedNotificationConfigurationArn");
-
     m_managedNotificationConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relatedAccount"))
   {
     m_relatedAccount = jsonValue.GetString("relatedAccount");
-
     m_relatedAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("childEvent"))
   {
     m_childEvent = jsonValue.GetObject("childEvent");
-
     m_childEventHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregateManagedNotificationEventArn"))
   {
     m_aggregateManagedNotificationEventArn = jsonValue.GetString("aggregateManagedNotificationEventArn");
-
     m_aggregateManagedNotificationEventArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("organizationalUnitId"))
   {
     m_organizationalUnitId = jsonValue.GetString("organizationalUnitId");
-
     m_organizationalUnitIdHasBeenSet = true;
   }
-
   return *this;
 }
 

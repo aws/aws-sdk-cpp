@@ -18,15 +18,7 @@ namespace SupplyChain
 namespace Model
 {
 
-DataIntegrationFlowTransformation::DataIntegrationFlowTransformation() : 
-    m_transformationType(DataIntegrationFlowTransformationType::NOT_SET),
-    m_transformationTypeHasBeenSet(false),
-    m_sqlTransformationHasBeenSet(false)
-{
-}
-
 DataIntegrationFlowTransformation::DataIntegrationFlowTransformation(JsonView jsonValue)
-  : DataIntegrationFlowTransformation()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ DataIntegrationFlowTransformation& DataIntegrationFlowTransformation::operator =
   if(jsonValue.ValueExists("transformationType"))
   {
     m_transformationType = DataIntegrationFlowTransformationTypeMapper::GetDataIntegrationFlowTransformationTypeForName(jsonValue.GetString("transformationType"));
-
     m_transformationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sqlTransformation"))
   {
     m_sqlTransformation = jsonValue.GetObject("sqlTransformation");
-
     m_sqlTransformationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::Route53RecoveryReadiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCrossAccountAuthorizationRequest::CreateCrossAccountAuthorizationRequest() : 
-    m_crossAccountAuthorizationHasBeenSet(false)
-{
-}
-
 Aws::String CreateCrossAccountAuthorizationRequest::SerializePayload() const
 {
   JsonValue payload;

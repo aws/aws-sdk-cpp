@@ -18,19 +18,7 @@ namespace ManagedBlockchain
 namespace Model
 {
 
-Invitation::Invitation() : 
-    m_invitationIdHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_expirationDateHasBeenSet(false),
-    m_status(InvitationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_networkSummaryHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 Invitation::Invitation(JsonView jsonValue)
-  : Invitation()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ Invitation& Invitation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InvitationId"))
   {
     m_invitationId = jsonValue.GetString("InvitationId");
-
     m_invitationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetString("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpirationDate"))
   {
     m_expirationDate = jsonValue.GetString("ExpirationDate");
-
     m_expirationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = InvitationStatusMapper::GetInvitationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkSummary"))
   {
     m_networkSummary = jsonValue.GetObject("NetworkSummary");
-
     m_networkSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class StartExecutionRequest : public SFNRequest
   {
   public:
-    AWS_SFN_API StartExecutionRequest();
+    AWS_SFN_API StartExecutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -59,14 +59,12 @@ namespace Model
      * with that alias and the state machine version used for that execution.</p> </li>
      * </ul>
      */
-    inline const Aws::String& GetStateMachineArn() const{ return m_stateMachineArn; }
+    inline const Aws::String& GetStateMachineArn() const { return m_stateMachineArn; }
     inline bool StateMachineArnHasBeenSet() const { return m_stateMachineArnHasBeenSet; }
-    inline void SetStateMachineArn(const Aws::String& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = value; }
-    inline void SetStateMachineArn(Aws::String&& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = std::move(value); }
-    inline void SetStateMachineArn(const char* value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn.assign(value); }
-    inline StartExecutionRequest& WithStateMachineArn(const Aws::String& value) { SetStateMachineArn(value); return *this;}
-    inline StartExecutionRequest& WithStateMachineArn(Aws::String&& value) { SetStateMachineArn(std::move(value)); return *this;}
-    inline StartExecutionRequest& WithStateMachineArn(const char* value) { SetStateMachineArn(value); return *this;}
+    template<typename StateMachineArnT = Aws::String>
+    void SetStateMachineArn(StateMachineArnT&& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = std::forward<StateMachineArnT>(value); }
+    template<typename StateMachineArnT = Aws::String>
+    StartExecutionRequest& WithStateMachineArn(StateMachineArnT&& value) { SetStateMachineArn(std::forward<StateMachineArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +84,12 @@ namespace Model
      * <p>To enable logging with CloudWatch Logs, the name should only contain 0-9,
      * A-Z, a-z, - and _.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline StartExecutionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline StartExecutionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline StartExecutionRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    StartExecutionRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +101,12 @@ namespace Model
      * constraints apply to the payload size, and are expressed as bytes in UTF-8
      * encoding.</p>
      */
-    inline const Aws::String& GetInput() const{ return m_input; }
+    inline const Aws::String& GetInput() const { return m_input; }
     inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
-    inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
-    inline void SetInput(Aws::String&& value) { m_inputHasBeenSet = true; m_input = std::move(value); }
-    inline void SetInput(const char* value) { m_inputHasBeenSet = true; m_input.assign(value); }
-    inline StartExecutionRequest& WithInput(const Aws::String& value) { SetInput(value); return *this;}
-    inline StartExecutionRequest& WithInput(Aws::String&& value) { SetInput(std::move(value)); return *this;}
-    inline StartExecutionRequest& WithInput(const char* value) { SetInput(value); return *this;}
+    template<typename InputT = Aws::String>
+    void SetInput(InputT&& value) { m_inputHasBeenSet = true; m_input = std::forward<InputT>(value); }
+    template<typename InputT = Aws::String>
+    StartExecutionRequest& WithInput(InputT&& value) { SetInput(std::forward<InputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,14 +114,12 @@ namespace Model
      * <p>Passes the X-Ray trace header. The trace header can also be passed in the
      * request payload.</p>
      */
-    inline const Aws::String& GetTraceHeader() const{ return m_traceHeader; }
+    inline const Aws::String& GetTraceHeader() const { return m_traceHeader; }
     inline bool TraceHeaderHasBeenSet() const { return m_traceHeaderHasBeenSet; }
-    inline void SetTraceHeader(const Aws::String& value) { m_traceHeaderHasBeenSet = true; m_traceHeader = value; }
-    inline void SetTraceHeader(Aws::String&& value) { m_traceHeaderHasBeenSet = true; m_traceHeader = std::move(value); }
-    inline void SetTraceHeader(const char* value) { m_traceHeaderHasBeenSet = true; m_traceHeader.assign(value); }
-    inline StartExecutionRequest& WithTraceHeader(const Aws::String& value) { SetTraceHeader(value); return *this;}
-    inline StartExecutionRequest& WithTraceHeader(Aws::String&& value) { SetTraceHeader(std::move(value)); return *this;}
-    inline StartExecutionRequest& WithTraceHeader(const char* value) { SetTraceHeader(value); return *this;}
+    template<typename TraceHeaderT = Aws::String>
+    void SetTraceHeader(TraceHeaderT&& value) { m_traceHeaderHasBeenSet = true; m_traceHeader = std::forward<TraceHeaderT>(value); }
+    template<typename TraceHeaderT = Aws::String>
+    StartExecutionRequest& WithTraceHeader(TraceHeaderT&& value) { SetTraceHeader(std::forward<TraceHeaderT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,22 +18,7 @@ namespace Connect
 namespace Model
 {
 
-AgentContactReference::AgentContactReference() : 
-    m_contactIdHasBeenSet(false),
-    m_channel(Channel::NOT_SET),
-    m_channelHasBeenSet(false),
-    m_initiationMethod(ContactInitiationMethod::NOT_SET),
-    m_initiationMethodHasBeenSet(false),
-    m_agentContactState(ContactState::NOT_SET),
-    m_agentContactStateHasBeenSet(false),
-    m_stateStartTimestampHasBeenSet(false),
-    m_connectedToAgentTimestampHasBeenSet(false),
-    m_queueHasBeenSet(false)
-{
-}
-
 AgentContactReference::AgentContactReference(JsonView jsonValue)
-  : AgentContactReference()
 {
   *this = jsonValue;
 }
@@ -43,52 +28,38 @@ AgentContactReference& AgentContactReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ContactId"))
   {
     m_contactId = jsonValue.GetString("ContactId");
-
     m_contactIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Channel"))
   {
     m_channel = ChannelMapper::GetChannelForName(jsonValue.GetString("Channel"));
-
     m_channelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InitiationMethod"))
   {
     m_initiationMethod = ContactInitiationMethodMapper::GetContactInitiationMethodForName(jsonValue.GetString("InitiationMethod"));
-
     m_initiationMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AgentContactState"))
   {
     m_agentContactState = ContactStateMapper::GetContactStateForName(jsonValue.GetString("AgentContactState"));
-
     m_agentContactStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateStartTimestamp"))
   {
     m_stateStartTimestamp = jsonValue.GetDouble("StateStartTimestamp");
-
     m_stateStartTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectedToAgentTimestamp"))
   {
     m_connectedToAgentTimestamp = jsonValue.GetDouble("ConnectedToAgentTimestamp");
-
     m_connectedToAgentTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Queue"))
   {
     m_queue = jsonValue.GetObject("Queue");
-
     m_queueHasBeenSet = true;
   }
-
   return *this;
 }
 

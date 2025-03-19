@@ -21,7 +21,7 @@ namespace Model
   class UpdateAccessGrantsLocationRequest : public S3ControlRequest
   {
   public:
-    AWS_S3CONTROL_API UpdateAccessGrantsLocationRequest();
+    AWS_S3CONTROL_API UpdateAccessGrantsLocationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline UpdateAccessGrantsLocationRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline UpdateAccessGrantsLocationRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline UpdateAccessGrantsLocationRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    UpdateAccessGrantsLocationRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,12 @@ namespace Model
      * the entire default location. You must also specify a bucket or a bucket and
      * prefix in the <code>Subprefix</code> field. </p>
      */
-    inline const Aws::String& GetAccessGrantsLocationId() const{ return m_accessGrantsLocationId; }
+    inline const Aws::String& GetAccessGrantsLocationId() const { return m_accessGrantsLocationId; }
     inline bool AccessGrantsLocationIdHasBeenSet() const { return m_accessGrantsLocationIdHasBeenSet; }
-    inline void SetAccessGrantsLocationId(const Aws::String& value) { m_accessGrantsLocationIdHasBeenSet = true; m_accessGrantsLocationId = value; }
-    inline void SetAccessGrantsLocationId(Aws::String&& value) { m_accessGrantsLocationIdHasBeenSet = true; m_accessGrantsLocationId = std::move(value); }
-    inline void SetAccessGrantsLocationId(const char* value) { m_accessGrantsLocationIdHasBeenSet = true; m_accessGrantsLocationId.assign(value); }
-    inline UpdateAccessGrantsLocationRequest& WithAccessGrantsLocationId(const Aws::String& value) { SetAccessGrantsLocationId(value); return *this;}
-    inline UpdateAccessGrantsLocationRequest& WithAccessGrantsLocationId(Aws::String&& value) { SetAccessGrantsLocationId(std::move(value)); return *this;}
-    inline UpdateAccessGrantsLocationRequest& WithAccessGrantsLocationId(const char* value) { SetAccessGrantsLocationId(value); return *this;}
+    template<typename AccessGrantsLocationIdT = Aws::String>
+    void SetAccessGrantsLocationId(AccessGrantsLocationIdT&& value) { m_accessGrantsLocationIdHasBeenSet = true; m_accessGrantsLocationId = std::forward<AccessGrantsLocationIdT>(value); }
+    template<typename AccessGrantsLocationIdT = Aws::String>
+    UpdateAccessGrantsLocationRequest& WithAccessGrantsLocationId(AccessGrantsLocationIdT&& value) { SetAccessGrantsLocationId(std::forward<AccessGrantsLocationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +80,12 @@ namespace Model
      * S3 Access Grants assumes this role to manage access to the registered location.
      * </p>
      */
-    inline const Aws::String& GetIAMRoleArn() const{ return m_iAMRoleArn; }
+    inline const Aws::String& GetIAMRoleArn() const { return m_iAMRoleArn; }
     inline bool IAMRoleArnHasBeenSet() const { return m_iAMRoleArnHasBeenSet; }
-    inline void SetIAMRoleArn(const Aws::String& value) { m_iAMRoleArnHasBeenSet = true; m_iAMRoleArn = value; }
-    inline void SetIAMRoleArn(Aws::String&& value) { m_iAMRoleArnHasBeenSet = true; m_iAMRoleArn = std::move(value); }
-    inline void SetIAMRoleArn(const char* value) { m_iAMRoleArnHasBeenSet = true; m_iAMRoleArn.assign(value); }
-    inline UpdateAccessGrantsLocationRequest& WithIAMRoleArn(const Aws::String& value) { SetIAMRoleArn(value); return *this;}
-    inline UpdateAccessGrantsLocationRequest& WithIAMRoleArn(Aws::String&& value) { SetIAMRoleArn(std::move(value)); return *this;}
-    inline UpdateAccessGrantsLocationRequest& WithIAMRoleArn(const char* value) { SetIAMRoleArn(value); return *this;}
+    template<typename IAMRoleArnT = Aws::String>
+    void SetIAMRoleArn(IAMRoleArnT&& value) { m_iAMRoleArnHasBeenSet = true; m_iAMRoleArn = std::forward<IAMRoleArnT>(value); }
+    template<typename IAMRoleArnT = Aws::String>
+    UpdateAccessGrantsLocationRequest& WithIAMRoleArn(IAMRoleArnT&& value) { SetIAMRoleArn(std::forward<IAMRoleArnT>(value)); return *this;}
     ///@}
   private:
 

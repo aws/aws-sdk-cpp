@@ -12,13 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartFleetActionsRequest::StartFleetActionsRequest() : 
-    m_fleetIdHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_locationHasBeenSet(false)
-{
-}
-
 Aws::String StartFleetActionsRequest::SerializePayload() const
 {
   JsonValue payload;

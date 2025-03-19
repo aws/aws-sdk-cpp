@@ -30,7 +30,7 @@ namespace Model
   class StartMedicalStreamTranscriptionRequest : public TranscribeStreamingServiceRequest
   {
   public:
-    AWS_TRANSCRIBESTREAMINGSERVICE_API StartMedicalStreamTranscriptionRequest();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API StartMedicalStreamTranscriptionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -73,12 +73,10 @@ namespace Model
      * audio.</p>  <p>Amazon Transcribe Medical only supports US English
      * (<code>en-US</code>).</p> 
      */
-    inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline LanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline StartMedicalStreamTranscriptionRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline StartMedicalStreamTranscriptionRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(LanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline StartMedicalStreamTranscriptionRequest& WithLanguageCode(LanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
@@ -87,7 +85,7 @@ namespace Model
      * supports a range from 16,000 Hz to 48,000 Hz. Note that the sample rate you
      * specify must match that of your audio.</p>
      */
-    inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
+    inline int GetMediaSampleRateHertz() const { return m_mediaSampleRateHertz; }
     inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
     inline StartMedicalStreamTranscriptionRequest& WithMediaSampleRateHertz(int value) { SetMediaSampleRateHertz(value); return *this;}
@@ -102,12 +100,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media
      * formats</a>.</p>
      */
-    inline const MediaEncoding& GetMediaEncoding() const{ return m_mediaEncoding; }
+    inline MediaEncoding GetMediaEncoding() const { return m_mediaEncoding; }
     inline bool MediaEncodingHasBeenSet() const { return m_mediaEncodingHasBeenSet; }
-    inline void SetMediaEncoding(const MediaEncoding& value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = value; }
-    inline void SetMediaEncoding(MediaEncoding&& value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = std::move(value); }
-    inline StartMedicalStreamTranscriptionRequest& WithMediaEncoding(const MediaEncoding& value) { SetMediaEncoding(value); return *this;}
-    inline StartMedicalStreamTranscriptionRequest& WithMediaEncoding(MediaEncoding&& value) { SetMediaEncoding(std::move(value)); return *this;}
+    inline void SetMediaEncoding(MediaEncoding value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = value; }
+    inline StartMedicalStreamTranscriptionRequest& WithMediaEncoding(MediaEncoding value) { SetMediaEncoding(value); return *this;}
     ///@}
 
     ///@{
@@ -116,26 +112,22 @@ namespace Model
      * processing your transcription. Note that vocabulary names are case
      * sensitive.</p>
      */
-    inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
+    inline const Aws::String& GetVocabularyName() const { return m_vocabularyName; }
     inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
-    inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
-    inline void SetVocabularyName(Aws::String&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::move(value); }
-    inline void SetVocabularyName(const char* value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName.assign(value); }
-    inline StartMedicalStreamTranscriptionRequest& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
-    inline StartMedicalStreamTranscriptionRequest& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
-    inline StartMedicalStreamTranscriptionRequest& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
+    template<typename VocabularyNameT = Aws::String>
+    void SetVocabularyName(VocabularyNameT&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::forward<VocabularyNameT>(value); }
+    template<typename VocabularyNameT = Aws::String>
+    StartMedicalStreamTranscriptionRequest& WithVocabularyName(VocabularyNameT&& value) { SetVocabularyName(std::forward<VocabularyNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specify the medical specialty contained in your audio.</p>
      */
-    inline const Specialty& GetSpecialty() const{ return m_specialty; }
+    inline Specialty GetSpecialty() const { return m_specialty; }
     inline bool SpecialtyHasBeenSet() const { return m_specialtyHasBeenSet; }
-    inline void SetSpecialty(const Specialty& value) { m_specialtyHasBeenSet = true; m_specialty = value; }
-    inline void SetSpecialty(Specialty&& value) { m_specialtyHasBeenSet = true; m_specialty = std::move(value); }
-    inline StartMedicalStreamTranscriptionRequest& WithSpecialty(const Specialty& value) { SetSpecialty(value); return *this;}
-    inline StartMedicalStreamTranscriptionRequest& WithSpecialty(Specialty&& value) { SetSpecialty(std::move(value)); return *this;}
+    inline void SetSpecialty(Specialty value) { m_specialtyHasBeenSet = true; m_specialty = value; }
+    inline StartMedicalStreamTranscriptionRequest& WithSpecialty(Specialty value) { SetSpecialty(value); return *this;}
     ///@}
 
     ///@{
@@ -144,12 +136,10 @@ namespace Model
      * for a provider dictating patient notes and <code>CONVERSATION</code> for a
      * dialogue between a patient and a medical professional.</p>
      */
-    inline const Type& GetType() const{ return m_type; }
+    inline Type GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline StartMedicalStreamTranscriptionRequest& WithType(const Type& value) { SetType(value); return *this;}
-    inline StartMedicalStreamTranscriptionRequest& WithType(Type&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(Type value) { m_typeHasBeenSet = true; m_type = value; }
+    inline StartMedicalStreamTranscriptionRequest& WithType(Type value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -160,7 +150,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning
      * speakers (diarization)</a>.</p>
      */
-    inline bool GetShowSpeakerLabel() const{ return m_showSpeakerLabel; }
+    inline bool GetShowSpeakerLabel() const { return m_showSpeakerLabel; }
     inline bool ShowSpeakerLabelHasBeenSet() const { return m_showSpeakerLabelHasBeenSet; }
     inline void SetShowSpeakerLabel(bool value) { m_showSpeakerLabelHasBeenSet = true; m_showSpeakerLabel = value; }
     inline StartMedicalStreamTranscriptionRequest& WithShowSpeakerLabel(bool value) { SetShowSpeakerLabel(value); return *this;}
@@ -172,20 +162,18 @@ namespace Model
      * parameter in your request, Amazon Transcribe Medical generates an ID and returns
      * it in the response.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline StartMedicalStreamTranscriptionRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline StartMedicalStreamTranscriptionRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline StartMedicalStreamTranscriptionRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    StartMedicalStreamTranscriptionRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    AWS_TRANSCRIBESTREAMINGSERVICE_API std::shared_ptr<AudioStream> GetAudioStream() const { return m_audioStream; }
-    AWS_TRANSCRIBESTREAMINGSERVICE_API void SetAudioStream(const std::shared_ptr<AudioStream>& value) { m_audioStream = value; }
+    AWS_TRANSCRIBESTREAMINGSERVICE_API std::shared_ptr<AudioStream> GetAudioStream() const  { return m_audioStream; }
+    AWS_TRANSCRIBESTREAMINGSERVICE_API void SetAudioStream(const std::shared_ptr<AudioStream>& value) { m_audioStreamHasBeenSet = true; m_audioStream = value; }
     AWS_TRANSCRIBESTREAMINGSERVICE_API StartMedicalStreamTranscriptionRequest& WithAudioStream(const std::shared_ptr<AudioStream>& value) { SetAudioStream(value); return *this;}
 
     ///@}
@@ -203,7 +191,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing
      * multi-channel audio</a>.</p>
      */
-    inline bool GetEnableChannelIdentification() const{ return m_enableChannelIdentification; }
+    inline bool GetEnableChannelIdentification() const { return m_enableChannelIdentification; }
     inline bool EnableChannelIdentificationHasBeenSet() const { return m_enableChannelIdentificationHasBeenSet; }
     inline void SetEnableChannelIdentification(bool value) { m_enableChannelIdentificationHasBeenSet = true; m_enableChannelIdentification = value; }
     inline StartMedicalStreamTranscriptionRequest& WithEnableChannelIdentification(bool value) { SetEnableChannelIdentification(value); return *this;}
@@ -217,7 +205,7 @@ namespace Model
      * <p>If you include <code>NumberOfChannels</code> in your request, you must also
      * include <code>EnableChannelIdentification</code>.</p>
      */
-    inline int GetNumberOfChannels() const{ return m_numberOfChannels; }
+    inline int GetNumberOfChannels() const { return m_numberOfChannels; }
     inline bool NumberOfChannelsHasBeenSet() const { return m_numberOfChannelsHasBeenSet; }
     inline void SetNumberOfChannels(int value) { m_numberOfChannelsHasBeenSet = true; m_numberOfChannels = value; }
     inline StartMedicalStreamTranscriptionRequest& WithNumberOfChannels(int value) { SetNumberOfChannels(value); return *this;}
@@ -232,51 +220,50 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/phi-id.html">Identifying
      * personal health information (PHI) in a transcription</a>.</p>
      */
-    inline const MedicalContentIdentificationType& GetContentIdentificationType() const{ return m_contentIdentificationType; }
+    inline MedicalContentIdentificationType GetContentIdentificationType() const { return m_contentIdentificationType; }
     inline bool ContentIdentificationTypeHasBeenSet() const { return m_contentIdentificationTypeHasBeenSet; }
-    inline void SetContentIdentificationType(const MedicalContentIdentificationType& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = value; }
-    inline void SetContentIdentificationType(MedicalContentIdentificationType&& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = std::move(value); }
-    inline StartMedicalStreamTranscriptionRequest& WithContentIdentificationType(const MedicalContentIdentificationType& value) { SetContentIdentificationType(value); return *this;}
-    inline StartMedicalStreamTranscriptionRequest& WithContentIdentificationType(MedicalContentIdentificationType&& value) { SetContentIdentificationType(std::move(value)); return *this;}
+    inline void SetContentIdentificationType(MedicalContentIdentificationType value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = value; }
+    inline StartMedicalStreamTranscriptionRequest& WithContentIdentificationType(MedicalContentIdentificationType value) { SetContentIdentificationType(value); return *this;}
     ///@}
   private:
 
-    LanguageCode m_languageCode;
+    LanguageCode m_languageCode{LanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
 
-    int m_mediaSampleRateHertz;
+    int m_mediaSampleRateHertz{0};
     bool m_mediaSampleRateHertzHasBeenSet = false;
 
-    MediaEncoding m_mediaEncoding;
+    MediaEncoding m_mediaEncoding{MediaEncoding::NOT_SET};
     bool m_mediaEncodingHasBeenSet = false;
 
     Aws::String m_vocabularyName;
     bool m_vocabularyNameHasBeenSet = false;
 
-    Specialty m_specialty;
+    Specialty m_specialty{Specialty::NOT_SET};
     bool m_specialtyHasBeenSet = false;
 
-    Type m_type;
+    Type m_type{Type::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    bool m_showSpeakerLabel;
+    bool m_showSpeakerLabel{false};
     bool m_showSpeakerLabelHasBeenSet = false;
 
     Aws::String m_sessionId;
     bool m_sessionIdHasBeenSet = false;
 
     std::shared_ptr<AudioStream> m_audioStream;
+    bool m_audioStreamHasBeenSet = false;
 
-    bool m_enableChannelIdentification;
+    bool m_enableChannelIdentification{false};
     bool m_enableChannelIdentificationHasBeenSet = false;
 
-    int m_numberOfChannels;
+    int m_numberOfChannels{0};
     bool m_numberOfChannelsHasBeenSet = false;
 
-    MedicalContentIdentificationType m_contentIdentificationType;
+    MedicalContentIdentificationType m_contentIdentificationType{MedicalContentIdentificationType::NOT_SET};
     bool m_contentIdentificationTypeHasBeenSet = false;
     StartMedicalStreamTranscriptionHandler m_handler;
-    Aws::Utils::Event::EventStreamDecoder m_decoder;
+    Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
   };
 

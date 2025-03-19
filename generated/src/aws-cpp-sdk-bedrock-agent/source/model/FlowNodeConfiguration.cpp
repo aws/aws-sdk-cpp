@@ -18,24 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-FlowNodeConfiguration::FlowNodeConfiguration() : 
-    m_agentHasBeenSet(false),
-    m_collectorHasBeenSet(false),
-    m_conditionHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_iteratorHasBeenSet(false),
-    m_knowledgeBaseHasBeenSet(false),
-    m_lambdaFunctionHasBeenSet(false),
-    m_lexHasBeenSet(false),
-    m_outputHasBeenSet(false),
-    m_promptHasBeenSet(false),
-    m_retrievalHasBeenSet(false),
-    m_storageHasBeenSet(false)
-{
-}
-
 FlowNodeConfiguration::FlowNodeConfiguration(JsonView jsonValue)
-  : FlowNodeConfiguration()
 {
   *this = jsonValue;
 }
@@ -45,87 +28,63 @@ FlowNodeConfiguration& FlowNodeConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("agent"))
   {
     m_agent = jsonValue.GetObject("agent");
-
     m_agentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collector"))
   {
     m_collector = jsonValue.GetObject("collector");
-
     m_collectorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("condition"))
   {
     m_condition = jsonValue.GetObject("condition");
-
     m_conditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("input"))
   {
     m_input = jsonValue.GetObject("input");
-
     m_inputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iterator"))
   {
     m_iterator = jsonValue.GetObject("iterator");
-
     m_iteratorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("knowledgeBase"))
   {
     m_knowledgeBase = jsonValue.GetObject("knowledgeBase");
-
     m_knowledgeBaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambdaFunction"))
   {
     m_lambdaFunction = jsonValue.GetObject("lambdaFunction");
-
     m_lambdaFunctionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lex"))
   {
     m_lex = jsonValue.GetObject("lex");
-
     m_lexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("output"))
   {
     m_output = jsonValue.GetObject("output");
-
     m_outputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prompt"))
   {
     m_prompt = jsonValue.GetObject("prompt");
-
     m_promptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("retrieval"))
   {
     m_retrieval = jsonValue.GetObject("retrieval");
-
     m_retrievalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storage"))
   {
     m_storage = jsonValue.GetObject("storage");
-
     m_storageHasBeenSet = true;
   }
-
   return *this;
 }
 

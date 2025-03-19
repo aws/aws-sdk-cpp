@@ -12,13 +12,6 @@ using namespace Aws::Shield::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateProtectionRequest::CreateProtectionRequest() : 
-    m_nameHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateProtectionRequest::SerializePayload() const
 {
   JsonValue payload;

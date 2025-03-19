@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-HoursOfOperationOverrideConfig::HoursOfOperationOverrideConfig() : 
-    m_day(OverrideDays::NOT_SET),
-    m_dayHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 HoursOfOperationOverrideConfig::HoursOfOperationOverrideConfig(JsonView jsonValue)
-  : HoursOfOperationOverrideConfig()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ HoursOfOperationOverrideConfig& HoursOfOperationOverrideConfig::operator =(JsonV
   if(jsonValue.ValueExists("Day"))
   {
     m_day = OverrideDaysMapper::GetOverrideDaysForName(jsonValue.GetString("Day"));
-
     m_dayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetObject("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetObject("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

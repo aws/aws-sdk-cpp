@@ -38,7 +38,7 @@ namespace Model
   class Evaluation
   {
   public:
-    AWS_CONNECT_API Evaluation();
+    AWS_CONNECT_API Evaluation() = default;
     AWS_CONNECT_API Evaluation(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Evaluation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,130 +48,118 @@ namespace Model
     /**
      * <p>A unique identifier for the contact evaluation.</p>
      */
-    inline const Aws::String& GetEvaluationId() const{ return m_evaluationId; }
+    inline const Aws::String& GetEvaluationId() const { return m_evaluationId; }
     inline bool EvaluationIdHasBeenSet() const { return m_evaluationIdHasBeenSet; }
-    inline void SetEvaluationId(const Aws::String& value) { m_evaluationIdHasBeenSet = true; m_evaluationId = value; }
-    inline void SetEvaluationId(Aws::String&& value) { m_evaluationIdHasBeenSet = true; m_evaluationId = std::move(value); }
-    inline void SetEvaluationId(const char* value) { m_evaluationIdHasBeenSet = true; m_evaluationId.assign(value); }
-    inline Evaluation& WithEvaluationId(const Aws::String& value) { SetEvaluationId(value); return *this;}
-    inline Evaluation& WithEvaluationId(Aws::String&& value) { SetEvaluationId(std::move(value)); return *this;}
-    inline Evaluation& WithEvaluationId(const char* value) { SetEvaluationId(value); return *this;}
+    template<typename EvaluationIdT = Aws::String>
+    void SetEvaluationId(EvaluationIdT&& value) { m_evaluationIdHasBeenSet = true; m_evaluationId = std::forward<EvaluationIdT>(value); }
+    template<typename EvaluationIdT = Aws::String>
+    Evaluation& WithEvaluationId(EvaluationIdT&& value) { SetEvaluationId(std::forward<EvaluationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
      */
-    inline const Aws::String& GetEvaluationArn() const{ return m_evaluationArn; }
+    inline const Aws::String& GetEvaluationArn() const { return m_evaluationArn; }
     inline bool EvaluationArnHasBeenSet() const { return m_evaluationArnHasBeenSet; }
-    inline void SetEvaluationArn(const Aws::String& value) { m_evaluationArnHasBeenSet = true; m_evaluationArn = value; }
-    inline void SetEvaluationArn(Aws::String&& value) { m_evaluationArnHasBeenSet = true; m_evaluationArn = std::move(value); }
-    inline void SetEvaluationArn(const char* value) { m_evaluationArnHasBeenSet = true; m_evaluationArn.assign(value); }
-    inline Evaluation& WithEvaluationArn(const Aws::String& value) { SetEvaluationArn(value); return *this;}
-    inline Evaluation& WithEvaluationArn(Aws::String&& value) { SetEvaluationArn(std::move(value)); return *this;}
-    inline Evaluation& WithEvaluationArn(const char* value) { SetEvaluationArn(value); return *this;}
+    template<typename EvaluationArnT = Aws::String>
+    void SetEvaluationArn(EvaluationArnT&& value) { m_evaluationArnHasBeenSet = true; m_evaluationArn = std::forward<EvaluationArnT>(value); }
+    template<typename EvaluationArnT = Aws::String>
+    Evaluation& WithEvaluationArn(EvaluationArnT&& value) { SetEvaluationArn(std::forward<EvaluationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Metadata about the contact evaluation.</p>
      */
-    inline const EvaluationMetadata& GetMetadata() const{ return m_metadata; }
+    inline const EvaluationMetadata& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const EvaluationMetadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(EvaluationMetadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline Evaluation& WithMetadata(const EvaluationMetadata& value) { SetMetadata(value); return *this;}
-    inline Evaluation& WithMetadata(EvaluationMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+    template<typename MetadataT = EvaluationMetadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = EvaluationMetadata>
+    Evaluation& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A map of question identifiers to answer value.</p>
      */
-    inline const Aws::Map<Aws::String, EvaluationAnswerOutput>& GetAnswers() const{ return m_answers; }
+    inline const Aws::Map<Aws::String, EvaluationAnswerOutput>& GetAnswers() const { return m_answers; }
     inline bool AnswersHasBeenSet() const { return m_answersHasBeenSet; }
-    inline void SetAnswers(const Aws::Map<Aws::String, EvaluationAnswerOutput>& value) { m_answersHasBeenSet = true; m_answers = value; }
-    inline void SetAnswers(Aws::Map<Aws::String, EvaluationAnswerOutput>&& value) { m_answersHasBeenSet = true; m_answers = std::move(value); }
-    inline Evaluation& WithAnswers(const Aws::Map<Aws::String, EvaluationAnswerOutput>& value) { SetAnswers(value); return *this;}
-    inline Evaluation& WithAnswers(Aws::Map<Aws::String, EvaluationAnswerOutput>&& value) { SetAnswers(std::move(value)); return *this;}
-    inline Evaluation& AddAnswers(const Aws::String& key, const EvaluationAnswerOutput& value) { m_answersHasBeenSet = true; m_answers.emplace(key, value); return *this; }
-    inline Evaluation& AddAnswers(Aws::String&& key, const EvaluationAnswerOutput& value) { m_answersHasBeenSet = true; m_answers.emplace(std::move(key), value); return *this; }
-    inline Evaluation& AddAnswers(const Aws::String& key, EvaluationAnswerOutput&& value) { m_answersHasBeenSet = true; m_answers.emplace(key, std::move(value)); return *this; }
-    inline Evaluation& AddAnswers(Aws::String&& key, EvaluationAnswerOutput&& value) { m_answersHasBeenSet = true; m_answers.emplace(std::move(key), std::move(value)); return *this; }
-    inline Evaluation& AddAnswers(const char* key, EvaluationAnswerOutput&& value) { m_answersHasBeenSet = true; m_answers.emplace(key, std::move(value)); return *this; }
-    inline Evaluation& AddAnswers(const char* key, const EvaluationAnswerOutput& value) { m_answersHasBeenSet = true; m_answers.emplace(key, value); return *this; }
+    template<typename AnswersT = Aws::Map<Aws::String, EvaluationAnswerOutput>>
+    void SetAnswers(AnswersT&& value) { m_answersHasBeenSet = true; m_answers = std::forward<AnswersT>(value); }
+    template<typename AnswersT = Aws::Map<Aws::String, EvaluationAnswerOutput>>
+    Evaluation& WithAnswers(AnswersT&& value) { SetAnswers(std::forward<AnswersT>(value)); return *this;}
+    template<typename AnswersKeyT = Aws::String, typename AnswersValueT = EvaluationAnswerOutput>
+    Evaluation& AddAnswers(AnswersKeyT&& key, AnswersValueT&& value) {
+      m_answersHasBeenSet = true; m_answers.emplace(std::forward<AnswersKeyT>(key), std::forward<AnswersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>A map of question identifiers to note value.</p>
      */
-    inline const Aws::Map<Aws::String, EvaluationNote>& GetNotes() const{ return m_notes; }
+    inline const Aws::Map<Aws::String, EvaluationNote>& GetNotes() const { return m_notes; }
     inline bool NotesHasBeenSet() const { return m_notesHasBeenSet; }
-    inline void SetNotes(const Aws::Map<Aws::String, EvaluationNote>& value) { m_notesHasBeenSet = true; m_notes = value; }
-    inline void SetNotes(Aws::Map<Aws::String, EvaluationNote>&& value) { m_notesHasBeenSet = true; m_notes = std::move(value); }
-    inline Evaluation& WithNotes(const Aws::Map<Aws::String, EvaluationNote>& value) { SetNotes(value); return *this;}
-    inline Evaluation& WithNotes(Aws::Map<Aws::String, EvaluationNote>&& value) { SetNotes(std::move(value)); return *this;}
-    inline Evaluation& AddNotes(const Aws::String& key, const EvaluationNote& value) { m_notesHasBeenSet = true; m_notes.emplace(key, value); return *this; }
-    inline Evaluation& AddNotes(Aws::String&& key, const EvaluationNote& value) { m_notesHasBeenSet = true; m_notes.emplace(std::move(key), value); return *this; }
-    inline Evaluation& AddNotes(const Aws::String& key, EvaluationNote&& value) { m_notesHasBeenSet = true; m_notes.emplace(key, std::move(value)); return *this; }
-    inline Evaluation& AddNotes(Aws::String&& key, EvaluationNote&& value) { m_notesHasBeenSet = true; m_notes.emplace(std::move(key), std::move(value)); return *this; }
-    inline Evaluation& AddNotes(const char* key, EvaluationNote&& value) { m_notesHasBeenSet = true; m_notes.emplace(key, std::move(value)); return *this; }
-    inline Evaluation& AddNotes(const char* key, const EvaluationNote& value) { m_notesHasBeenSet = true; m_notes.emplace(key, value); return *this; }
+    template<typename NotesT = Aws::Map<Aws::String, EvaluationNote>>
+    void SetNotes(NotesT&& value) { m_notesHasBeenSet = true; m_notes = std::forward<NotesT>(value); }
+    template<typename NotesT = Aws::Map<Aws::String, EvaluationNote>>
+    Evaluation& WithNotes(NotesT&& value) { SetNotes(std::forward<NotesT>(value)); return *this;}
+    template<typename NotesKeyT = Aws::String, typename NotesValueT = EvaluationNote>
+    Evaluation& AddNotes(NotesKeyT&& key, NotesValueT&& value) {
+      m_notesHasBeenSet = true; m_notes.emplace(std::forward<NotesKeyT>(key), std::forward<NotesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The status of the contact evaluation.</p>
      */
-    inline const EvaluationStatus& GetStatus() const{ return m_status; }
+    inline EvaluationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const EvaluationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(EvaluationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Evaluation& WithStatus(const EvaluationStatus& value) { SetStatus(value); return *this;}
-    inline Evaluation& WithStatus(EvaluationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(EvaluationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline Evaluation& WithStatus(EvaluationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A map of item (section or question) identifiers to score value.</p>
      */
-    inline const Aws::Map<Aws::String, EvaluationScore>& GetScores() const{ return m_scores; }
+    inline const Aws::Map<Aws::String, EvaluationScore>& GetScores() const { return m_scores; }
     inline bool ScoresHasBeenSet() const { return m_scoresHasBeenSet; }
-    inline void SetScores(const Aws::Map<Aws::String, EvaluationScore>& value) { m_scoresHasBeenSet = true; m_scores = value; }
-    inline void SetScores(Aws::Map<Aws::String, EvaluationScore>&& value) { m_scoresHasBeenSet = true; m_scores = std::move(value); }
-    inline Evaluation& WithScores(const Aws::Map<Aws::String, EvaluationScore>& value) { SetScores(value); return *this;}
-    inline Evaluation& WithScores(Aws::Map<Aws::String, EvaluationScore>&& value) { SetScores(std::move(value)); return *this;}
-    inline Evaluation& AddScores(const Aws::String& key, const EvaluationScore& value) { m_scoresHasBeenSet = true; m_scores.emplace(key, value); return *this; }
-    inline Evaluation& AddScores(Aws::String&& key, const EvaluationScore& value) { m_scoresHasBeenSet = true; m_scores.emplace(std::move(key), value); return *this; }
-    inline Evaluation& AddScores(const Aws::String& key, EvaluationScore&& value) { m_scoresHasBeenSet = true; m_scores.emplace(key, std::move(value)); return *this; }
-    inline Evaluation& AddScores(Aws::String&& key, EvaluationScore&& value) { m_scoresHasBeenSet = true; m_scores.emplace(std::move(key), std::move(value)); return *this; }
-    inline Evaluation& AddScores(const char* key, EvaluationScore&& value) { m_scoresHasBeenSet = true; m_scores.emplace(key, std::move(value)); return *this; }
-    inline Evaluation& AddScores(const char* key, const EvaluationScore& value) { m_scoresHasBeenSet = true; m_scores.emplace(key, value); return *this; }
+    template<typename ScoresT = Aws::Map<Aws::String, EvaluationScore>>
+    void SetScores(ScoresT&& value) { m_scoresHasBeenSet = true; m_scores = std::forward<ScoresT>(value); }
+    template<typename ScoresT = Aws::Map<Aws::String, EvaluationScore>>
+    Evaluation& WithScores(ScoresT&& value) { SetScores(std::forward<ScoresT>(value)); return *this;}
+    template<typename ScoresKeyT = Aws::String, typename ScoresValueT = EvaluationScore>
+    Evaluation& AddScores(ScoresKeyT&& key, ScoresValueT&& value) {
+      m_scoresHasBeenSet = true; m_scores.emplace(std::forward<ScoresKeyT>(key), std::forward<ScoresValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The timestamp for when the evaluation was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+    inline const Aws::Utils::DateTime& GetCreatedTime() const { return m_createdTime; }
     inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
-    inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
-    inline void SetCreatedTime(Aws::Utils::DateTime&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::move(value); }
-    inline Evaluation& WithCreatedTime(const Aws::Utils::DateTime& value) { SetCreatedTime(value); return *this;}
-    inline Evaluation& WithCreatedTime(Aws::Utils::DateTime&& value) { SetCreatedTime(std::move(value)); return *this;}
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    void SetCreatedTime(CreatedTimeT&& value) { m_createdTimeHasBeenSet = true; m_createdTime = std::forward<CreatedTimeT>(value); }
+    template<typename CreatedTimeT = Aws::Utils::DateTime>
+    Evaluation& WithCreatedTime(CreatedTimeT&& value) { SetCreatedTime(std::forward<CreatedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp for when the evaluation was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline Evaluation& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline Evaluation& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    Evaluation& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -179,19 +167,16 @@ namespace Model
      * <p>The tags used to organize, track, or control access for this resource. For
      * example, { "Tags": {"key1":"value1", "key2":"value2"} }.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline Evaluation& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline Evaluation& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline Evaluation& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline Evaluation& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Evaluation& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Evaluation& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline Evaluation& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline Evaluation& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline Evaluation& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    Evaluation& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    Evaluation& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -210,16 +195,16 @@ namespace Model
     Aws::Map<Aws::String, EvaluationNote> m_notes;
     bool m_notesHasBeenSet = false;
 
-    EvaluationStatus m_status;
+    EvaluationStatus m_status{EvaluationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Map<Aws::String, EvaluationScore> m_scores;
     bool m_scoresHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTime;
+    Aws::Utils::DateTime m_createdTime{};
     bool m_createdTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;

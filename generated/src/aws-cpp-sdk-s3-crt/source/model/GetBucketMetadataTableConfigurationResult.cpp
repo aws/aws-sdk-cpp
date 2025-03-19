@@ -20,15 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-GetBucketMetadataTableConfigurationResult::GetBucketMetadataTableConfigurationResult() : 
-    m_metadataTableConfigurationResultHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_errorHasBeenSet(false)
-{
-}
-
 GetBucketMetadataTableConfigurationResult::GetBucketMetadataTableConfigurationResult(const XmlNode& xmlNode)
-  : GetBucketMetadataTableConfigurationResult()
 {
   *this = xmlNode;
 }

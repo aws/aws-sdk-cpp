@@ -18,42 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-CampaignResponse::CampaignResponse() : 
-    m_additionalTreatmentsHasBeenSet(false),
-    m_applicationIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_customDeliveryConfigurationHasBeenSet(false),
-    m_defaultStateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_holdoutPercent(0),
-    m_holdoutPercentHasBeenSet(false),
-    m_hookHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_isPaused(false),
-    m_isPausedHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_limitsHasBeenSet(false),
-    m_messageConfigurationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_segmentIdHasBeenSet(false),
-    m_segmentVersion(0),
-    m_segmentVersionHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_templateConfigurationHasBeenSet(false),
-    m_treatmentDescriptionHasBeenSet(false),
-    m_treatmentNameHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false)
-{
-}
-
 CampaignResponse::CampaignResponse(JsonView jsonValue)
-  : CampaignResponse()
 {
   *this = jsonValue;
 }
@@ -69,133 +34,96 @@ CampaignResponse& CampaignResponse::operator =(JsonView jsonValue)
     }
     m_additionalTreatmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationId"))
   {
     m_applicationId = jsonValue.GetString("ApplicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetString("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomDeliveryConfiguration"))
   {
     m_customDeliveryConfiguration = jsonValue.GetObject("CustomDeliveryConfiguration");
-
     m_customDeliveryConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultState"))
   {
     m_defaultState = jsonValue.GetObject("DefaultState");
-
     m_defaultStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HoldoutPercent"))
   {
     m_holdoutPercent = jsonValue.GetInteger("HoldoutPercent");
-
     m_holdoutPercentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Hook"))
   {
     m_hook = jsonValue.GetObject("Hook");
-
     m_hookHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsPaused"))
   {
     m_isPaused = jsonValue.GetBool("IsPaused");
-
     m_isPausedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetString("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Limits"))
   {
     m_limits = jsonValue.GetObject("Limits");
-
     m_limitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageConfiguration"))
   {
     m_messageConfiguration = jsonValue.GetObject("MessageConfiguration");
-
     m_messageConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Schedule"))
   {
     m_schedule = jsonValue.GetObject("Schedule");
-
     m_scheduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SegmentId"))
   {
     m_segmentId = jsonValue.GetString("SegmentId");
-
     m_segmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SegmentVersion"))
   {
     m_segmentVersion = jsonValue.GetInteger("SegmentVersion");
-
     m_segmentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetObject("State");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -205,42 +133,31 @@ CampaignResponse& CampaignResponse::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateConfiguration"))
   {
     m_templateConfiguration = jsonValue.GetObject("TemplateConfiguration");
-
     m_templateConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TreatmentDescription"))
   {
     m_treatmentDescription = jsonValue.GetString("TreatmentDescription");
-
     m_treatmentDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TreatmentName"))
   {
     m_treatmentName = jsonValue.GetString("TreatmentName");
-
     m_treatmentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetInteger("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Priority"))
   {
     m_priority = jsonValue.GetInteger("Priority");
-
     m_priorityHasBeenSet = true;
   }
-
   return *this;
 }
 

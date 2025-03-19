@@ -27,7 +27,7 @@ namespace Model
   class TestAvailabilityConfigurationResult
   {
   public:
-    AWS_WORKMAIL_API TestAvailabilityConfigurationResult();
+    AWS_WORKMAIL_API TestAvailabilityConfigurationResult() = default;
     AWS_WORKMAIL_API TestAvailabilityConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKMAIL_API TestAvailabilityConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,8 +36,8 @@ namespace Model
     /**
      * <p>Boolean indicating whether the test passed or failed.</p>
      */
-    inline bool GetTestPassed() const{ return m_testPassed; }
-    inline void SetTestPassed(bool value) { m_testPassed = value; }
+    inline bool GetTestPassed() const { return m_testPassed; }
+    inline void SetTestPassed(bool value) { m_testPassedHasBeenSet = true; m_testPassed = value; }
     inline TestAvailabilityConfigurationResult& WithTestPassed(bool value) { SetTestPassed(value); return *this;}
     ///@}
 
@@ -46,32 +46,31 @@ namespace Model
      * <p>String containing the reason for a failed test if <code>TestPassed</code> is
      * false.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
-    inline TestAvailabilityConfigurationResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline TestAvailabilityConfigurationResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline TestAvailabilityConfigurationResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    TestAvailabilityConfigurationResult& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline TestAvailabilityConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline TestAvailabilityConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline TestAvailabilityConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    TestAvailabilityConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_testPassed;
+    bool m_testPassed{false};
+    bool m_testPassedHasBeenSet = false;
 
     Aws::String m_failureReason;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

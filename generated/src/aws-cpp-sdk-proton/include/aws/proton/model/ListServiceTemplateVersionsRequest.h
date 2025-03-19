@@ -21,7 +21,7 @@ namespace Model
   class ListServiceTemplateVersionsRequest : public ProtonRequest
   {
   public:
-    AWS_PROTON_API ListServiceTemplateVersionsRequest();
+    AWS_PROTON_API ListServiceTemplateVersionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * template, include <code>major Version</code>.</p> <p>To view a list of major
      * versions of a service template, <i>exclude</i> <code>major Version</code>.</p>
      */
-    inline const Aws::String& GetMajorVersion() const{ return m_majorVersion; }
+    inline const Aws::String& GetMajorVersion() const { return m_majorVersion; }
     inline bool MajorVersionHasBeenSet() const { return m_majorVersionHasBeenSet; }
-    inline void SetMajorVersion(const Aws::String& value) { m_majorVersionHasBeenSet = true; m_majorVersion = value; }
-    inline void SetMajorVersion(Aws::String&& value) { m_majorVersionHasBeenSet = true; m_majorVersion = std::move(value); }
-    inline void SetMajorVersion(const char* value) { m_majorVersionHasBeenSet = true; m_majorVersion.assign(value); }
-    inline ListServiceTemplateVersionsRequest& WithMajorVersion(const Aws::String& value) { SetMajorVersion(value); return *this;}
-    inline ListServiceTemplateVersionsRequest& WithMajorVersion(Aws::String&& value) { SetMajorVersion(std::move(value)); return *this;}
-    inline ListServiceTemplateVersionsRequest& WithMajorVersion(const char* value) { SetMajorVersion(value); return *this;}
+    template<typename MajorVersionT = Aws::String>
+    void SetMajorVersion(MajorVersionT&& value) { m_majorVersionHasBeenSet = true; m_majorVersion = std::forward<MajorVersionT>(value); }
+    template<typename MajorVersionT = Aws::String>
+    ListServiceTemplateVersionsRequest& WithMajorVersion(MajorVersionT&& value) { SetMajorVersion(std::forward<MajorVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,7 +53,7 @@ namespace Model
      * <p>The maximum number of major or minor versions of a service template to
      * list.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListServiceTemplateVersionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -67,35 +65,31 @@ namespace Model
      * array of major or minor versions of a service template, after the list of major
      * or minor versions that was previously requested.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListServiceTemplateVersionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListServiceTemplateVersionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListServiceTemplateVersionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListServiceTemplateVersionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the service template.</p>
      */
-    inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+    inline const Aws::String& GetTemplateName() const { return m_templateName; }
     inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
-    inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
-    inline void SetTemplateName(Aws::String&& value) { m_templateNameHasBeenSet = true; m_templateName = std::move(value); }
-    inline void SetTemplateName(const char* value) { m_templateNameHasBeenSet = true; m_templateName.assign(value); }
-    inline ListServiceTemplateVersionsRequest& WithTemplateName(const Aws::String& value) { SetTemplateName(value); return *this;}
-    inline ListServiceTemplateVersionsRequest& WithTemplateName(Aws::String&& value) { SetTemplateName(std::move(value)); return *this;}
-    inline ListServiceTemplateVersionsRequest& WithTemplateName(const char* value) { SetTemplateName(value); return *this;}
+    template<typename TemplateNameT = Aws::String>
+    void SetTemplateName(TemplateNameT&& value) { m_templateNameHasBeenSet = true; m_templateName = std::forward<TemplateNameT>(value); }
+    template<typename TemplateNameT = Aws::String>
+    ListServiceTemplateVersionsRequest& WithTemplateName(TemplateNameT&& value) { SetTemplateName(std::forward<TemplateNameT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_majorVersion;
     bool m_majorVersionHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

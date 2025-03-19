@@ -36,7 +36,7 @@ namespace Model
   class GetClientCertificateResult
   {
   public:
-    AWS_APIGATEWAY_API GetClientCertificateResult();
+    AWS_APIGATEWAY_API GetClientCertificateResult() = default;
     AWS_APIGATEWAY_API GetClientCertificateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APIGATEWAY_API GetClientCertificateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,26 +45,22 @@ namespace Model
     /**
      * <p>The identifier of the client certificate.</p>
      */
-    inline const Aws::String& GetClientCertificateId() const{ return m_clientCertificateId; }
-    inline void SetClientCertificateId(const Aws::String& value) { m_clientCertificateId = value; }
-    inline void SetClientCertificateId(Aws::String&& value) { m_clientCertificateId = std::move(value); }
-    inline void SetClientCertificateId(const char* value) { m_clientCertificateId.assign(value); }
-    inline GetClientCertificateResult& WithClientCertificateId(const Aws::String& value) { SetClientCertificateId(value); return *this;}
-    inline GetClientCertificateResult& WithClientCertificateId(Aws::String&& value) { SetClientCertificateId(std::move(value)); return *this;}
-    inline GetClientCertificateResult& WithClientCertificateId(const char* value) { SetClientCertificateId(value); return *this;}
+    inline const Aws::String& GetClientCertificateId() const { return m_clientCertificateId; }
+    template<typename ClientCertificateIdT = Aws::String>
+    void SetClientCertificateId(ClientCertificateIdT&& value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId = std::forward<ClientCertificateIdT>(value); }
+    template<typename ClientCertificateIdT = Aws::String>
+    GetClientCertificateResult& WithClientCertificateId(ClientCertificateIdT&& value) { SetClientCertificateId(std::forward<ClientCertificateIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the client certificate.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetClientCertificateResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetClientCertificateResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetClientCertificateResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetClientCertificateResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,35 +68,33 @@ namespace Model
      * <p>The PEM-encoded public key of the client certificate, which can be used to
      * configure certificate authentication in the integration endpoint .</p>
      */
-    inline const Aws::String& GetPemEncodedCertificate() const{ return m_pemEncodedCertificate; }
-    inline void SetPemEncodedCertificate(const Aws::String& value) { m_pemEncodedCertificate = value; }
-    inline void SetPemEncodedCertificate(Aws::String&& value) { m_pemEncodedCertificate = std::move(value); }
-    inline void SetPemEncodedCertificate(const char* value) { m_pemEncodedCertificate.assign(value); }
-    inline GetClientCertificateResult& WithPemEncodedCertificate(const Aws::String& value) { SetPemEncodedCertificate(value); return *this;}
-    inline GetClientCertificateResult& WithPemEncodedCertificate(Aws::String&& value) { SetPemEncodedCertificate(std::move(value)); return *this;}
-    inline GetClientCertificateResult& WithPemEncodedCertificate(const char* value) { SetPemEncodedCertificate(value); return *this;}
+    inline const Aws::String& GetPemEncodedCertificate() const { return m_pemEncodedCertificate; }
+    template<typename PemEncodedCertificateT = Aws::String>
+    void SetPemEncodedCertificate(PemEncodedCertificateT&& value) { m_pemEncodedCertificateHasBeenSet = true; m_pemEncodedCertificate = std::forward<PemEncodedCertificateT>(value); }
+    template<typename PemEncodedCertificateT = Aws::String>
+    GetClientCertificateResult& WithPemEncodedCertificate(PemEncodedCertificateT&& value) { SetPemEncodedCertificate(std::forward<PemEncodedCertificateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when the client certificate was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
-    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDate = value; }
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = std::move(value); }
-    inline GetClientCertificateResult& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
-    inline GetClientCertificateResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    GetClientCertificateResult& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when the client certificate will expire.</p>
      */
-    inline const Aws::Utils::DateTime& GetExpirationDate() const{ return m_expirationDate; }
-    inline void SetExpirationDate(const Aws::Utils::DateTime& value) { m_expirationDate = value; }
-    inline void SetExpirationDate(Aws::Utils::DateTime&& value) { m_expirationDate = std::move(value); }
-    inline GetClientCertificateResult& WithExpirationDate(const Aws::Utils::DateTime& value) { SetExpirationDate(value); return *this;}
-    inline GetClientCertificateResult& WithExpirationDate(Aws::Utils::DateTime&& value) { SetExpirationDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetExpirationDate() const { return m_expirationDate; }
+    template<typename ExpirationDateT = Aws::Utils::DateTime>
+    void SetExpirationDate(ExpirationDateT&& value) { m_expirationDateHasBeenSet = true; m_expirationDate = std::forward<ExpirationDateT>(value); }
+    template<typename ExpirationDateT = Aws::Utils::DateTime>
+    GetClientCertificateResult& WithExpirationDate(ExpirationDateT&& value) { SetExpirationDate(std::forward<ExpirationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,45 +102,47 @@ namespace Model
      * <p>The collection of tags. Each tag element is associated with a given
      * resource.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetClientCertificateResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetClientCertificateResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetClientCertificateResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetClientCertificateResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetClientCertificateResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetClientCertificateResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetClientCertificateResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetClientCertificateResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetClientCertificateResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetClientCertificateResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetClientCertificateResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetClientCertificateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetClientCertificateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetClientCertificateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetClientCertificateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_clientCertificateId;
+    bool m_clientCertificateIdHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_pemEncodedCertificate;
+    bool m_pemEncodedCertificateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdDate;
+    Aws::Utils::DateTime m_createdDate{};
+    bool m_createdDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expirationDate;
+    Aws::Utils::DateTime m_expirationDate{};
+    bool m_expirationDateHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

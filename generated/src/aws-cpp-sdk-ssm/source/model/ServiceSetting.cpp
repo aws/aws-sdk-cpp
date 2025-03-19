@@ -18,18 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ServiceSetting::ServiceSetting() : 
-    m_settingIdHasBeenSet(false),
-    m_settingValueHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_lastModifiedUserHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 ServiceSetting::ServiceSetting(JsonView jsonValue)
-  : ServiceSetting()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ ServiceSetting& ServiceSetting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SettingId"))
   {
     m_settingId = jsonValue.GetString("SettingId");
-
     m_settingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SettingValue"))
   {
     m_settingValue = jsonValue.GetString("SettingValue");
-
     m_settingValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedUser"))
   {
     m_lastModifiedUser = jsonValue.GetString("LastModifiedUser");
-
     m_lastModifiedUserHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

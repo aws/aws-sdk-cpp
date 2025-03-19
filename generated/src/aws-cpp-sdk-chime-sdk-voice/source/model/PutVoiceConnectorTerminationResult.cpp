@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutVoiceConnectorTerminationResult::PutVoiceConnectorTerminationResult()
-{
-}
-
 PutVoiceConnectorTerminationResult::PutVoiceConnectorTerminationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ PutVoiceConnectorTerminationResult& PutVoiceConnectorTerminationResult::operator
   if(jsonValue.ValueExists("Termination"))
   {
     m_termination = jsonValue.GetObject("Termination");
-
+    m_terminationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

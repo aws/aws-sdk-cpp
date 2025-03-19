@@ -18,14 +18,7 @@ namespace IoT
 namespace Model
 {
 
-TimestreamDimension::TimestreamDimension() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 TimestreamDimension::TimestreamDimension(JsonView jsonValue)
-  : TimestreamDimension()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TimestreamDimension& TimestreamDimension::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

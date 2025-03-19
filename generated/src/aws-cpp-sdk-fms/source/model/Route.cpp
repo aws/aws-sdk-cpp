@@ -18,18 +18,7 @@ namespace FMS
 namespace Model
 {
 
-Route::Route() : 
-    m_destinationType(DestinationType::NOT_SET),
-    m_destinationTypeHasBeenSet(false),
-    m_targetType(TargetType::NOT_SET),
-    m_targetTypeHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_targetHasBeenSet(false)
-{
-}
-
 Route::Route(JsonView jsonValue)
-  : Route()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ Route& Route::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DestinationType"))
   {
     m_destinationType = DestinationTypeMapper::GetDestinationTypeForName(jsonValue.GetString("DestinationType"));
-
     m_destinationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetType"))
   {
     m_targetType = TargetTypeMapper::GetTargetTypeForName(jsonValue.GetString("TargetType"));
-
     m_targetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Destination"))
   {
     m_destination = jsonValue.GetString("Destination");
-
     m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Target"))
   {
     m_target = jsonValue.GetString("Target");
-
     m_targetHasBeenSet = true;
   }
-
   return *this;
 }
 

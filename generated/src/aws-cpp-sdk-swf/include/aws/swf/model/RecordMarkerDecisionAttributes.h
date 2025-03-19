@@ -45,7 +45,7 @@ namespace Model
   class RecordMarkerDecisionAttributes
   {
   public:
-    AWS_SWF_API RecordMarkerDecisionAttributes();
+    AWS_SWF_API RecordMarkerDecisionAttributes() = default;
     AWS_SWF_API RecordMarkerDecisionAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API RecordMarkerDecisionAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,28 +55,24 @@ namespace Model
     /**
      * <p> The name of the marker.</p>
      */
-    inline const Aws::String& GetMarkerName() const{ return m_markerName; }
+    inline const Aws::String& GetMarkerName() const { return m_markerName; }
     inline bool MarkerNameHasBeenSet() const { return m_markerNameHasBeenSet; }
-    inline void SetMarkerName(const Aws::String& value) { m_markerNameHasBeenSet = true; m_markerName = value; }
-    inline void SetMarkerName(Aws::String&& value) { m_markerNameHasBeenSet = true; m_markerName = std::move(value); }
-    inline void SetMarkerName(const char* value) { m_markerNameHasBeenSet = true; m_markerName.assign(value); }
-    inline RecordMarkerDecisionAttributes& WithMarkerName(const Aws::String& value) { SetMarkerName(value); return *this;}
-    inline RecordMarkerDecisionAttributes& WithMarkerName(Aws::String&& value) { SetMarkerName(std::move(value)); return *this;}
-    inline RecordMarkerDecisionAttributes& WithMarkerName(const char* value) { SetMarkerName(value); return *this;}
+    template<typename MarkerNameT = Aws::String>
+    void SetMarkerName(MarkerNameT&& value) { m_markerNameHasBeenSet = true; m_markerName = std::forward<MarkerNameT>(value); }
+    template<typename MarkerNameT = Aws::String>
+    RecordMarkerDecisionAttributes& WithMarkerName(MarkerNameT&& value) { SetMarkerName(std::forward<MarkerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The details of the marker.</p>
      */
-    inline const Aws::String& GetDetails() const{ return m_details; }
+    inline const Aws::String& GetDetails() const { return m_details; }
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
-    inline void SetDetails(const Aws::String& value) { m_detailsHasBeenSet = true; m_details = value; }
-    inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
-    inline void SetDetails(const char* value) { m_detailsHasBeenSet = true; m_details.assign(value); }
-    inline RecordMarkerDecisionAttributes& WithDetails(const Aws::String& value) { SetDetails(value); return *this;}
-    inline RecordMarkerDecisionAttributes& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
-    inline RecordMarkerDecisionAttributes& WithDetails(const char* value) { SetDetails(value); return *this;}
+    template<typename DetailsT = Aws::String>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = Aws::String>
+    RecordMarkerDecisionAttributes& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
     ///@}
   private:
 

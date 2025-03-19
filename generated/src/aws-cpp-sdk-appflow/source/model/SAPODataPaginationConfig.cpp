@@ -18,14 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-SAPODataPaginationConfig::SAPODataPaginationConfig() : 
-    m_maxPageSize(0),
-    m_maxPageSizeHasBeenSet(false)
-{
-}
-
 SAPODataPaginationConfig::SAPODataPaginationConfig(JsonView jsonValue)
-  : SAPODataPaginationConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SAPODataPaginationConfig& SAPODataPaginationConfig::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("maxPageSize"))
   {
     m_maxPageSize = jsonValue.GetInteger("maxPageSize");
-
     m_maxPageSizeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeregisterInstanceEventNotificationAttributesResponse::DeregisterInstanceEventNotificationAttributesResponse()
-{
-}
-
 DeregisterInstanceEventNotificationAttributesResponse::DeregisterInstanceEventNotificationAttributesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ DeregisterInstanceEventNotificationAttributesResponse& DeregisterInstanceEventNo
     if(!instanceTagAttributeNode.IsNull())
     {
       m_instanceTagAttribute = instanceTagAttributeNode;
+      m_instanceTagAttributeHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ DeregisterInstanceEventNotificationAttributesResponse& DeregisterInstanceEventNo
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeregisterInstanceEventNotificationAttributesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

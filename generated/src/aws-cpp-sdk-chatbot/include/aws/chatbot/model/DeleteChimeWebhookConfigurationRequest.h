@@ -21,7 +21,7 @@ namespace Model
   class DeleteChimeWebhookConfigurationRequest : public ChatbotRequest
   {
   public:
-    AWS_CHATBOT_API DeleteChimeWebhookConfigurationRequest();
+    AWS_CHATBOT_API DeleteChimeWebhookConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the ChimeWebhookConfiguration to
      * delete.</p>
      */
-    inline const Aws::String& GetChatConfigurationArn() const{ return m_chatConfigurationArn; }
+    inline const Aws::String& GetChatConfigurationArn() const { return m_chatConfigurationArn; }
     inline bool ChatConfigurationArnHasBeenSet() const { return m_chatConfigurationArnHasBeenSet; }
-    inline void SetChatConfigurationArn(const Aws::String& value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn = value; }
-    inline void SetChatConfigurationArn(Aws::String&& value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn = std::move(value); }
-    inline void SetChatConfigurationArn(const char* value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn.assign(value); }
-    inline DeleteChimeWebhookConfigurationRequest& WithChatConfigurationArn(const Aws::String& value) { SetChatConfigurationArn(value); return *this;}
-    inline DeleteChimeWebhookConfigurationRequest& WithChatConfigurationArn(Aws::String&& value) { SetChatConfigurationArn(std::move(value)); return *this;}
-    inline DeleteChimeWebhookConfigurationRequest& WithChatConfigurationArn(const char* value) { SetChatConfigurationArn(value); return *this;}
+    template<typename ChatConfigurationArnT = Aws::String>
+    void SetChatConfigurationArn(ChatConfigurationArnT&& value) { m_chatConfigurationArnHasBeenSet = true; m_chatConfigurationArn = std::forward<ChatConfigurationArnT>(value); }
+    template<typename ChatConfigurationArnT = Aws::String>
+    DeleteChimeWebhookConfigurationRequest& WithChatConfigurationArn(ChatConfigurationArnT&& value) { SetChatConfigurationArn(std::forward<ChatConfigurationArnT>(value)); return *this;}
     ///@}
   private:
 

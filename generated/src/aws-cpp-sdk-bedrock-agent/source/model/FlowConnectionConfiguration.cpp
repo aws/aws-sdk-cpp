@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-FlowConnectionConfiguration::FlowConnectionConfiguration() : 
-    m_conditionalHasBeenSet(false),
-    m_dataHasBeenSet(false)
-{
-}
-
 FlowConnectionConfiguration::FlowConnectionConfiguration(JsonView jsonValue)
-  : FlowConnectionConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FlowConnectionConfiguration& FlowConnectionConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("conditional"))
   {
     m_conditional = jsonValue.GetObject("conditional");
-
     m_conditionalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("data"))
   {
     m_data = jsonValue.GetObject("data");
-
     m_dataHasBeenSet = true;
   }
-
   return *this;
 }
 

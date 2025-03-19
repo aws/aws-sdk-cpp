@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsTaskDefinitionPlacementConstraintsDetails::AwsEcsTaskDefinitionPlacementConstraintsDetails() : 
-    m_expressionHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 AwsEcsTaskDefinitionPlacementConstraintsDetails::AwsEcsTaskDefinitionPlacementConstraintsDetails(JsonView jsonValue)
-  : AwsEcsTaskDefinitionPlacementConstraintsDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsEcsTaskDefinitionPlacementConstraintsDetails& AwsEcsTaskDefinitionPlacementCo
   if(jsonValue.ValueExists("Expression"))
   {
     m_expression = jsonValue.GetString("Expression");
-
     m_expressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

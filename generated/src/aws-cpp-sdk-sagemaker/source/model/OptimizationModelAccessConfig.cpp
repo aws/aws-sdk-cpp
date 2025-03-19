@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-OptimizationModelAccessConfig::OptimizationModelAccessConfig() : 
-    m_acceptEula(false),
-    m_acceptEulaHasBeenSet(false)
-{
-}
-
 OptimizationModelAccessConfig::OptimizationModelAccessConfig(JsonView jsonValue)
-  : OptimizationModelAccessConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ OptimizationModelAccessConfig& OptimizationModelAccessConfig::operator =(JsonVie
   if(jsonValue.ValueExists("AcceptEula"))
   {
     m_acceptEula = jsonValue.GetBool("AcceptEula");
-
     m_acceptEulaHasBeenSet = true;
   }
-
   return *this;
 }
 

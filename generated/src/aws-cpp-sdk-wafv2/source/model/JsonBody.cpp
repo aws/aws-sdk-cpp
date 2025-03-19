@@ -18,19 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-JsonBody::JsonBody() : 
-    m_matchPatternHasBeenSet(false),
-    m_matchScope(JsonMatchScope::NOT_SET),
-    m_matchScopeHasBeenSet(false),
-    m_invalidFallbackBehavior(BodyParsingFallbackBehavior::NOT_SET),
-    m_invalidFallbackBehaviorHasBeenSet(false),
-    m_oversizeHandling(OversizeHandling::NOT_SET),
-    m_oversizeHandlingHasBeenSet(false)
-{
-}
-
 JsonBody::JsonBody(JsonView jsonValue)
-  : JsonBody()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ JsonBody& JsonBody::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MatchPattern"))
   {
     m_matchPattern = jsonValue.GetObject("MatchPattern");
-
     m_matchPatternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MatchScope"))
   {
     m_matchScope = JsonMatchScopeMapper::GetJsonMatchScopeForName(jsonValue.GetString("MatchScope"));
-
     m_matchScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvalidFallbackBehavior"))
   {
     m_invalidFallbackBehavior = BodyParsingFallbackBehaviorMapper::GetBodyParsingFallbackBehaviorForName(jsonValue.GetString("InvalidFallbackBehavior"));
-
     m_invalidFallbackBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OversizeHandling"))
   {
     m_oversizeHandling = OversizeHandlingMapper::GetOversizeHandlingForName(jsonValue.GetString("OversizeHandling"));
-
     m_oversizeHandlingHasBeenSet = true;
   }
-
   return *this;
 }
 

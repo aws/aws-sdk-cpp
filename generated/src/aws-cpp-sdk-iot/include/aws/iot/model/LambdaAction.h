@@ -31,7 +31,7 @@ namespace Model
   class LambdaAction
   {
   public:
-    AWS_IOT_API LambdaAction();
+    AWS_IOT_API LambdaAction() = default;
     AWS_IOT_API LambdaAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API LambdaAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The ARN of the Lambda function.</p>
      */
-    inline const Aws::String& GetFunctionArn() const{ return m_functionArn; }
+    inline const Aws::String& GetFunctionArn() const { return m_functionArn; }
     inline bool FunctionArnHasBeenSet() const { return m_functionArnHasBeenSet; }
-    inline void SetFunctionArn(const Aws::String& value) { m_functionArnHasBeenSet = true; m_functionArn = value; }
-    inline void SetFunctionArn(Aws::String&& value) { m_functionArnHasBeenSet = true; m_functionArn = std::move(value); }
-    inline void SetFunctionArn(const char* value) { m_functionArnHasBeenSet = true; m_functionArn.assign(value); }
-    inline LambdaAction& WithFunctionArn(const Aws::String& value) { SetFunctionArn(value); return *this;}
-    inline LambdaAction& WithFunctionArn(Aws::String&& value) { SetFunctionArn(std::move(value)); return *this;}
-    inline LambdaAction& WithFunctionArn(const char* value) { SetFunctionArn(value); return *this;}
+    template<typename FunctionArnT = Aws::String>
+    void SetFunctionArn(FunctionArnT&& value) { m_functionArnHasBeenSet = true; m_functionArn = std::forward<FunctionArnT>(value); }
+    template<typename FunctionArnT = Aws::String>
+    LambdaAction& WithFunctionArn(FunctionArnT&& value) { SetFunctionArn(std::forward<FunctionArnT>(value)); return *this;}
     ///@}
   private:
 

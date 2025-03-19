@@ -34,7 +34,7 @@ namespace Model
   class GetEmailIdentityPoliciesResult
   {
   public:
-    AWS_SESV2_API GetEmailIdentityPoliciesResult();
+    AWS_SESV2_API GetEmailIdentityPoliciesResult() = default;
     AWS_SESV2_API GetEmailIdentityPoliciesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SESV2_API GetEmailIdentityPoliciesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,35 +43,32 @@ namespace Model
     /**
      * <p>A map of policy names to policies.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetPolicies() const{ return m_policies; }
-    inline void SetPolicies(const Aws::Map<Aws::String, Aws::String>& value) { m_policies = value; }
-    inline void SetPolicies(Aws::Map<Aws::String, Aws::String>&& value) { m_policies = std::move(value); }
-    inline GetEmailIdentityPoliciesResult& WithPolicies(const Aws::Map<Aws::String, Aws::String>& value) { SetPolicies(value); return *this;}
-    inline GetEmailIdentityPoliciesResult& WithPolicies(Aws::Map<Aws::String, Aws::String>&& value) { SetPolicies(std::move(value)); return *this;}
-    inline GetEmailIdentityPoliciesResult& AddPolicies(const Aws::String& key, const Aws::String& value) { m_policies.emplace(key, value); return *this; }
-    inline GetEmailIdentityPoliciesResult& AddPolicies(Aws::String&& key, const Aws::String& value) { m_policies.emplace(std::move(key), value); return *this; }
-    inline GetEmailIdentityPoliciesResult& AddPolicies(const Aws::String& key, Aws::String&& value) { m_policies.emplace(key, std::move(value)); return *this; }
-    inline GetEmailIdentityPoliciesResult& AddPolicies(Aws::String&& key, Aws::String&& value) { m_policies.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetEmailIdentityPoliciesResult& AddPolicies(const char* key, Aws::String&& value) { m_policies.emplace(key, std::move(value)); return *this; }
-    inline GetEmailIdentityPoliciesResult& AddPolicies(Aws::String&& key, const char* value) { m_policies.emplace(std::move(key), value); return *this; }
-    inline GetEmailIdentityPoliciesResult& AddPolicies(const char* key, const char* value) { m_policies.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetPolicies() const { return m_policies; }
+    template<typename PoliciesT = Aws::Map<Aws::String, Aws::String>>
+    void SetPolicies(PoliciesT&& value) { m_policiesHasBeenSet = true; m_policies = std::forward<PoliciesT>(value); }
+    template<typename PoliciesT = Aws::Map<Aws::String, Aws::String>>
+    GetEmailIdentityPoliciesResult& WithPolicies(PoliciesT&& value) { SetPolicies(std::forward<PoliciesT>(value)); return *this;}
+    template<typename PoliciesKeyT = Aws::String, typename PoliciesValueT = Aws::String>
+    GetEmailIdentityPoliciesResult& AddPolicies(PoliciesKeyT&& key, PoliciesValueT&& value) {
+      m_policiesHasBeenSet = true; m_policies.emplace(std::forward<PoliciesKeyT>(key), std::forward<PoliciesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetEmailIdentityPoliciesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetEmailIdentityPoliciesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetEmailIdentityPoliciesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetEmailIdentityPoliciesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_policies;
+    bool m_policiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

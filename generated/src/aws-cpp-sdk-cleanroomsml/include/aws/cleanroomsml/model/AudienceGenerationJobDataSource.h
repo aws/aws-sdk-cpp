@@ -35,7 +35,7 @@ namespace Model
   class AudienceGenerationJobDataSource
   {
   public:
-    AWS_CLEANROOMSML_API AudienceGenerationJobDataSource();
+    AWS_CLEANROOMSML_API AudienceGenerationJobDataSource() = default;
     AWS_CLEANROOMSML_API AudienceGenerationJobDataSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API AudienceGenerationJobDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
      * format:</p> <p> <code>{"user_id": "111111"}</code> </p> <p> <code>{"user_id":
      * "222222"}</code> </p> <p> <code>...</code> </p>
      */
-    inline const S3ConfigMap& GetDataSource() const{ return m_dataSource; }
+    inline const S3ConfigMap& GetDataSource() const { return m_dataSource; }
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-    inline void SetDataSource(const S3ConfigMap& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-    inline void SetDataSource(S3ConfigMap&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-    inline AudienceGenerationJobDataSource& WithDataSource(const S3ConfigMap& value) { SetDataSource(value); return *this;}
-    inline AudienceGenerationJobDataSource& WithDataSource(S3ConfigMap&& value) { SetDataSource(std::move(value)); return *this;}
+    template<typename DataSourceT = S3ConfigMap>
+    void SetDataSource(DataSourceT&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::forward<DataSourceT>(value); }
+    template<typename DataSourceT = S3ConfigMap>
+    AudienceGenerationJobDataSource& WithDataSource(DataSourceT&& value) { SetDataSource(std::forward<DataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,36 +61,34 @@ namespace Model
      * <p>The ARN of the IAM role that can read the Amazon S3 bucket where the seed
      * audience is stored.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline AudienceGenerationJobDataSource& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline AudienceGenerationJobDataSource& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline AudienceGenerationJobDataSource& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    AudienceGenerationJobDataSource& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The protected SQL query parameters.</p>
      */
-    inline const ProtectedQuerySQLParameters& GetSqlParameters() const{ return m_sqlParameters; }
+    inline const ProtectedQuerySQLParameters& GetSqlParameters() const { return m_sqlParameters; }
     inline bool SqlParametersHasBeenSet() const { return m_sqlParametersHasBeenSet; }
-    inline void SetSqlParameters(const ProtectedQuerySQLParameters& value) { m_sqlParametersHasBeenSet = true; m_sqlParameters = value; }
-    inline void SetSqlParameters(ProtectedQuerySQLParameters&& value) { m_sqlParametersHasBeenSet = true; m_sqlParameters = std::move(value); }
-    inline AudienceGenerationJobDataSource& WithSqlParameters(const ProtectedQuerySQLParameters& value) { SetSqlParameters(value); return *this;}
-    inline AudienceGenerationJobDataSource& WithSqlParameters(ProtectedQuerySQLParameters&& value) { SetSqlParameters(std::move(value)); return *this;}
+    template<typename SqlParametersT = ProtectedQuerySQLParameters>
+    void SetSqlParameters(SqlParametersT&& value) { m_sqlParametersHasBeenSet = true; m_sqlParameters = std::forward<SqlParametersT>(value); }
+    template<typename SqlParametersT = ProtectedQuerySQLParameters>
+    AudienceGenerationJobDataSource& WithSqlParameters(SqlParametersT&& value) { SetSqlParameters(std::forward<SqlParametersT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ComputeConfiguration& GetSqlComputeConfiguration() const{ return m_sqlComputeConfiguration; }
+    inline const ComputeConfiguration& GetSqlComputeConfiguration() const { return m_sqlComputeConfiguration; }
     inline bool SqlComputeConfigurationHasBeenSet() const { return m_sqlComputeConfigurationHasBeenSet; }
-    inline void SetSqlComputeConfiguration(const ComputeConfiguration& value) { m_sqlComputeConfigurationHasBeenSet = true; m_sqlComputeConfiguration = value; }
-    inline void SetSqlComputeConfiguration(ComputeConfiguration&& value) { m_sqlComputeConfigurationHasBeenSet = true; m_sqlComputeConfiguration = std::move(value); }
-    inline AudienceGenerationJobDataSource& WithSqlComputeConfiguration(const ComputeConfiguration& value) { SetSqlComputeConfiguration(value); return *this;}
-    inline AudienceGenerationJobDataSource& WithSqlComputeConfiguration(ComputeConfiguration&& value) { SetSqlComputeConfiguration(std::move(value)); return *this;}
+    template<typename SqlComputeConfigurationT = ComputeConfiguration>
+    void SetSqlComputeConfiguration(SqlComputeConfigurationT&& value) { m_sqlComputeConfigurationHasBeenSet = true; m_sqlComputeConfiguration = std::forward<SqlComputeConfigurationT>(value); }
+    template<typename SqlComputeConfigurationT = ComputeConfiguration>
+    AudienceGenerationJobDataSource& WithSqlComputeConfiguration(SqlComputeConfigurationT&& value) { SetSqlComputeConfiguration(std::forward<SqlComputeConfigurationT>(value)); return *this;}
     ///@}
   private:
 

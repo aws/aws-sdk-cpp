@@ -32,7 +32,7 @@ namespace Model
   class SoftwareUpdatePreferences
   {
   public:
-    AWS_STORAGEGATEWAY_API SoftwareUpdatePreferences();
+    AWS_STORAGEGATEWAY_API SoftwareUpdatePreferences() = default;
     AWS_STORAGEGATEWAY_API SoftwareUpdatePreferences(Aws::Utils::Json::JsonView jsonValue);
     AWS_STORAGEGATEWAY_API SoftwareUpdatePreferences& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_STORAGEGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,16 +48,14 @@ namespace Model
      * You will be notified before an emergency version update is applied. These
      * updates are applied during your gateway's scheduled maintenance window.</p>
      */
-    inline const AutomaticUpdatePolicy& GetAutomaticUpdatePolicy() const{ return m_automaticUpdatePolicy; }
+    inline AutomaticUpdatePolicy GetAutomaticUpdatePolicy() const { return m_automaticUpdatePolicy; }
     inline bool AutomaticUpdatePolicyHasBeenSet() const { return m_automaticUpdatePolicyHasBeenSet; }
-    inline void SetAutomaticUpdatePolicy(const AutomaticUpdatePolicy& value) { m_automaticUpdatePolicyHasBeenSet = true; m_automaticUpdatePolicy = value; }
-    inline void SetAutomaticUpdatePolicy(AutomaticUpdatePolicy&& value) { m_automaticUpdatePolicyHasBeenSet = true; m_automaticUpdatePolicy = std::move(value); }
-    inline SoftwareUpdatePreferences& WithAutomaticUpdatePolicy(const AutomaticUpdatePolicy& value) { SetAutomaticUpdatePolicy(value); return *this;}
-    inline SoftwareUpdatePreferences& WithAutomaticUpdatePolicy(AutomaticUpdatePolicy&& value) { SetAutomaticUpdatePolicy(std::move(value)); return *this;}
+    inline void SetAutomaticUpdatePolicy(AutomaticUpdatePolicy value) { m_automaticUpdatePolicyHasBeenSet = true; m_automaticUpdatePolicy = value; }
+    inline SoftwareUpdatePreferences& WithAutomaticUpdatePolicy(AutomaticUpdatePolicy value) { SetAutomaticUpdatePolicy(value); return *this;}
     ///@}
   private:
 
-    AutomaticUpdatePolicy m_automaticUpdatePolicy;
+    AutomaticUpdatePolicy m_automaticUpdatePolicy{AutomaticUpdatePolicy::NOT_SET};
     bool m_automaticUpdatePolicyHasBeenSet = false;
   };
 

@@ -25,7 +25,7 @@ namespace Model
   class ListDistributionsByVpcOriginId2020_05_31Request : public CloudFrontRequest
   {
   public:
-    AWS_CLOUDFRONT_API ListDistributionsByVpcOriginId2020_05_31Request();
+    AWS_CLOUDFRONT_API ListDistributionsByVpcOriginId2020_05_31Request() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The marker associated with the VPC origin distributions list.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline ListDistributionsByVpcOriginId2020_05_31Request& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListDistributionsByVpcOriginId2020_05_31Request& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListDistributionsByVpcOriginId2020_05_31Request& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListDistributionsByVpcOriginId2020_05_31Request& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of items included in the list.</p>
      */
-    inline const Aws::String& GetMaxItems() const{ return m_maxItems; }
+    inline const Aws::String& GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
-    inline void SetMaxItems(const Aws::String& value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
-    inline void SetMaxItems(Aws::String&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::move(value); }
-    inline void SetMaxItems(const char* value) { m_maxItemsHasBeenSet = true; m_maxItems.assign(value); }
-    inline ListDistributionsByVpcOriginId2020_05_31Request& WithMaxItems(const Aws::String& value) { SetMaxItems(value); return *this;}
-    inline ListDistributionsByVpcOriginId2020_05_31Request& WithMaxItems(Aws::String&& value) { SetMaxItems(std::move(value)); return *this;}
-    inline ListDistributionsByVpcOriginId2020_05_31Request& WithMaxItems(const char* value) { SetMaxItems(value); return *this;}
+    template<typename MaxItemsT = Aws::String>
+    void SetMaxItems(MaxItemsT&& value) { m_maxItemsHasBeenSet = true; m_maxItems = std::forward<MaxItemsT>(value); }
+    template<typename MaxItemsT = Aws::String>
+    ListDistributionsByVpcOriginId2020_05_31Request& WithMaxItems(MaxItemsT&& value) { SetMaxItems(std::forward<MaxItemsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The VPC origin ID.</p>
      */
-    inline const Aws::String& GetVpcOriginId() const{ return m_vpcOriginId; }
+    inline const Aws::String& GetVpcOriginId() const { return m_vpcOriginId; }
     inline bool VpcOriginIdHasBeenSet() const { return m_vpcOriginIdHasBeenSet; }
-    inline void SetVpcOriginId(const Aws::String& value) { m_vpcOriginIdHasBeenSet = true; m_vpcOriginId = value; }
-    inline void SetVpcOriginId(Aws::String&& value) { m_vpcOriginIdHasBeenSet = true; m_vpcOriginId = std::move(value); }
-    inline void SetVpcOriginId(const char* value) { m_vpcOriginIdHasBeenSet = true; m_vpcOriginId.assign(value); }
-    inline ListDistributionsByVpcOriginId2020_05_31Request& WithVpcOriginId(const Aws::String& value) { SetVpcOriginId(value); return *this;}
-    inline ListDistributionsByVpcOriginId2020_05_31Request& WithVpcOriginId(Aws::String&& value) { SetVpcOriginId(std::move(value)); return *this;}
-    inline ListDistributionsByVpcOriginId2020_05_31Request& WithVpcOriginId(const char* value) { SetVpcOriginId(value); return *this;}
+    template<typename VpcOriginIdT = Aws::String>
+    void SetVpcOriginId(VpcOriginIdT&& value) { m_vpcOriginIdHasBeenSet = true; m_vpcOriginId = std::forward<VpcOriginIdT>(value); }
+    template<typename VpcOriginIdT = Aws::String>
+    ListDistributionsByVpcOriginId2020_05_31Request& WithVpcOriginId(VpcOriginIdT&& value) { SetVpcOriginId(std::forward<VpcOriginIdT>(value)); return *this;}
     ///@}
   private:
 

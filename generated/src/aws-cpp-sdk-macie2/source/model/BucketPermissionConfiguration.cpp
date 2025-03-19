@@ -18,14 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-BucketPermissionConfiguration::BucketPermissionConfiguration() : 
-    m_accountLevelPermissionsHasBeenSet(false),
-    m_bucketLevelPermissionsHasBeenSet(false)
-{
-}
-
 BucketPermissionConfiguration::BucketPermissionConfiguration(JsonView jsonValue)
-  : BucketPermissionConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BucketPermissionConfiguration& BucketPermissionConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("accountLevelPermissions"))
   {
     m_accountLevelPermissions = jsonValue.GetObject("accountLevelPermissions");
-
     m_accountLevelPermissionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bucketLevelPermissions"))
   {
     m_bucketLevelPermissions = jsonValue.GetObject("bucketLevelPermissions");
-
     m_bucketLevelPermissionsHasBeenSet = true;
   }
-
   return *this;
 }
 

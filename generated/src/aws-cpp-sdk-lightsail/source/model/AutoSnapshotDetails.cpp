@@ -18,17 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-AutoSnapshotDetails::AutoSnapshotDetails() : 
-    m_dateHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_status(AutoSnapshotStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_fromAttachedDisksHasBeenSet(false)
-{
-}
-
 AutoSnapshotDetails::AutoSnapshotDetails(JsonView jsonValue)
-  : AutoSnapshotDetails()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ AutoSnapshotDetails& AutoSnapshotDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("date"))
   {
     m_date = jsonValue.GetString("date");
-
     m_dateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = AutoSnapshotStatusMapper::GetAutoSnapshotStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fromAttachedDisks"))
   {
     Aws::Utils::Array<JsonView> fromAttachedDisksJsonList = jsonValue.GetArray("fromAttachedDisks");
@@ -65,7 +49,6 @@ AutoSnapshotDetails& AutoSnapshotDetails::operator =(JsonView jsonValue)
     }
     m_fromAttachedDisksHasBeenSet = true;
   }
-
   return *this;
 }
 

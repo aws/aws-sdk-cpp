@@ -29,7 +29,7 @@ namespace Model
   class DescribeEntityAggregatesResult
   {
   public:
-    AWS_HEALTH_API DescribeEntityAggregatesResult();
+    AWS_HEALTH_API DescribeEntityAggregatesResult() = default;
     AWS_HEALTH_API DescribeEntityAggregatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_HEALTH_API DescribeEntityAggregatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>The number of entities that are affected by each of the specified events.</p>
      */
-    inline const Aws::Vector<EntityAggregate>& GetEntityAggregates() const{ return m_entityAggregates; }
-    inline void SetEntityAggregates(const Aws::Vector<EntityAggregate>& value) { m_entityAggregates = value; }
-    inline void SetEntityAggregates(Aws::Vector<EntityAggregate>&& value) { m_entityAggregates = std::move(value); }
-    inline DescribeEntityAggregatesResult& WithEntityAggregates(const Aws::Vector<EntityAggregate>& value) { SetEntityAggregates(value); return *this;}
-    inline DescribeEntityAggregatesResult& WithEntityAggregates(Aws::Vector<EntityAggregate>&& value) { SetEntityAggregates(std::move(value)); return *this;}
-    inline DescribeEntityAggregatesResult& AddEntityAggregates(const EntityAggregate& value) { m_entityAggregates.push_back(value); return *this; }
-    inline DescribeEntityAggregatesResult& AddEntityAggregates(EntityAggregate&& value) { m_entityAggregates.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EntityAggregate>& GetEntityAggregates() const { return m_entityAggregates; }
+    template<typename EntityAggregatesT = Aws::Vector<EntityAggregate>>
+    void SetEntityAggregates(EntityAggregatesT&& value) { m_entityAggregatesHasBeenSet = true; m_entityAggregates = std::forward<EntityAggregatesT>(value); }
+    template<typename EntityAggregatesT = Aws::Vector<EntityAggregate>>
+    DescribeEntityAggregatesResult& WithEntityAggregates(EntityAggregatesT&& value) { SetEntityAggregates(std::forward<EntityAggregatesT>(value)); return *this;}
+    template<typename EntityAggregatesT = EntityAggregate>
+    DescribeEntityAggregatesResult& AddEntityAggregates(EntityAggregatesT&& value) { m_entityAggregatesHasBeenSet = true; m_entityAggregates.emplace_back(std::forward<EntityAggregatesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeEntityAggregatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeEntityAggregatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeEntityAggregatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeEntityAggregatesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EntityAggregate> m_entityAggregates;
+    bool m_entityAggregatesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

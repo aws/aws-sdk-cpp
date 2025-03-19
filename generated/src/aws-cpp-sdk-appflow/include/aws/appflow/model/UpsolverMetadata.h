@@ -29,7 +29,7 @@ namespace Model
   class UpsolverMetadata
   {
   public:
-    AWS_APPFLOW_API UpsolverMetadata();
+    AWS_APPFLOW_API UpsolverMetadata() = default;
     AWS_APPFLOW_API UpsolverMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API UpsolverMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;

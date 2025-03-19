@@ -12,15 +12,6 @@ using namespace Aws::LicenseManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateServiceSettingsRequest::UpdateServiceSettingsRequest() : 
-    m_s3BucketArnHasBeenSet(false),
-    m_snsTopicArnHasBeenSet(false),
-    m_organizationConfigurationHasBeenSet(false),
-    m_enableCrossAccountsDiscovery(false),
-    m_enableCrossAccountsDiscoveryHasBeenSet(false)
-{
-}
-
 Aws::String UpdateServiceSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

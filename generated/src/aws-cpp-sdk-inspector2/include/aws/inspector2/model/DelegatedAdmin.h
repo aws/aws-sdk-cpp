@@ -33,7 +33,7 @@ namespace Model
   class DelegatedAdmin
   {
   public:
-    AWS_INSPECTOR2_API DelegatedAdmin();
+    AWS_INSPECTOR2_API DelegatedAdmin() = default;
     AWS_INSPECTOR2_API DelegatedAdmin(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API DelegatedAdmin& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,33 +44,29 @@ namespace Model
      * <p>The Amazon Web Services account ID of the Amazon Inspector delegated
      * administrator for your organization.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline DelegatedAdmin& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline DelegatedAdmin& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline DelegatedAdmin& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    DelegatedAdmin& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the Amazon Inspector delegated administrator.</p>
      */
-    inline const RelationshipStatus& GetRelationshipStatus() const{ return m_relationshipStatus; }
+    inline RelationshipStatus GetRelationshipStatus() const { return m_relationshipStatus; }
     inline bool RelationshipStatusHasBeenSet() const { return m_relationshipStatusHasBeenSet; }
-    inline void SetRelationshipStatus(const RelationshipStatus& value) { m_relationshipStatusHasBeenSet = true; m_relationshipStatus = value; }
-    inline void SetRelationshipStatus(RelationshipStatus&& value) { m_relationshipStatusHasBeenSet = true; m_relationshipStatus = std::move(value); }
-    inline DelegatedAdmin& WithRelationshipStatus(const RelationshipStatus& value) { SetRelationshipStatus(value); return *this;}
-    inline DelegatedAdmin& WithRelationshipStatus(RelationshipStatus&& value) { SetRelationshipStatus(std::move(value)); return *this;}
+    inline void SetRelationshipStatus(RelationshipStatus value) { m_relationshipStatusHasBeenSet = true; m_relationshipStatus = value; }
+    inline DelegatedAdmin& WithRelationshipStatus(RelationshipStatus value) { SetRelationshipStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    RelationshipStatus m_relationshipStatus;
+    RelationshipStatus m_relationshipStatus{RelationshipStatus::NOT_SET};
     bool m_relationshipStatusHasBeenSet = false;
   };
 

@@ -20,31 +20,7 @@ namespace EC2
 namespace Model
 {
 
-HostReservation::HostReservation() : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_currencyCode(CurrencyCodeValues::NOT_SET),
-    m_currencyCodeHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_endHasBeenSet(false),
-    m_hostIdSetHasBeenSet(false),
-    m_hostReservationIdHasBeenSet(false),
-    m_hourlyPriceHasBeenSet(false),
-    m_instanceFamilyHasBeenSet(false),
-    m_offeringIdHasBeenSet(false),
-    m_paymentOption(PaymentOption::NOT_SET),
-    m_paymentOptionHasBeenSet(false),
-    m_startHasBeenSet(false),
-    m_state(ReservationState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_upfrontPriceHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 HostReservation::HostReservation(const XmlNode& xmlNode)
-  : HostReservation()
 {
   *this = xmlNode;
 }
@@ -64,7 +40,7 @@ HostReservation& HostReservation::operator =(const XmlNode& xmlNode)
     XmlNode currencyCodeNode = resultNode.FirstChild("currencyCode");
     if(!currencyCodeNode.IsNull())
     {
-      m_currencyCode = CurrencyCodeValuesMapper::GetCurrencyCodeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currencyCodeNode.GetText()).c_str()).c_str());
+      m_currencyCode = CurrencyCodeValuesMapper::GetCurrencyCodeValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currencyCodeNode.GetText()).c_str()));
       m_currencyCodeHasBeenSet = true;
     }
     XmlNode durationNode = resultNode.FirstChild("duration");
@@ -83,6 +59,7 @@ HostReservation& HostReservation::operator =(const XmlNode& xmlNode)
     if(!hostIdSetNode.IsNull())
     {
       XmlNode hostIdSetMember = hostIdSetNode.FirstChild("item");
+      m_hostIdSetHasBeenSet = !hostIdSetMember.IsNull();
       while(!hostIdSetMember.IsNull())
       {
         m_hostIdSet.push_back(hostIdSetMember.GetText());
@@ -118,7 +95,7 @@ HostReservation& HostReservation::operator =(const XmlNode& xmlNode)
     XmlNode paymentOptionNode = resultNode.FirstChild("paymentOption");
     if(!paymentOptionNode.IsNull())
     {
-      m_paymentOption = PaymentOptionMapper::GetPaymentOptionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(paymentOptionNode.GetText()).c_str()).c_str());
+      m_paymentOption = PaymentOptionMapper::GetPaymentOptionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(paymentOptionNode.GetText()).c_str()));
       m_paymentOptionHasBeenSet = true;
     }
     XmlNode startNode = resultNode.FirstChild("start");
@@ -130,7 +107,7 @@ HostReservation& HostReservation::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = ReservationStateMapper::GetReservationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = ReservationStateMapper::GetReservationStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode upfrontPriceNode = resultNode.FirstChild("upfrontPrice");
@@ -143,6 +120,7 @@ HostReservation& HostReservation::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

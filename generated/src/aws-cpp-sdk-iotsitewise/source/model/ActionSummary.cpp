@@ -18,15 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-ActionSummary::ActionSummary() : 
-    m_actionIdHasBeenSet(false),
-    m_actionDefinitionIdHasBeenSet(false),
-    m_targetResourceHasBeenSet(false)
-{
-}
-
 ActionSummary::ActionSummary(JsonView jsonValue)
-  : ActionSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ActionSummary& ActionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actionId"))
   {
     m_actionId = jsonValue.GetString("actionId");
-
     m_actionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionDefinitionId"))
   {
     m_actionDefinitionId = jsonValue.GetString("actionDefinitionId");
-
     m_actionDefinitionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetResource"))
   {
     m_targetResource = jsonValue.GetObject("targetResource");
-
     m_targetResourceHasBeenSet = true;
   }
-
   return *this;
 }
 

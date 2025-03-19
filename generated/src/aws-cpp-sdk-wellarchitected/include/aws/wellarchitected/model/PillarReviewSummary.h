@@ -33,7 +33,7 @@ namespace Model
   class PillarReviewSummary
   {
   public:
-    AWS_WELLARCHITECTED_API PillarReviewSummary();
+    AWS_WELLARCHITECTED_API PillarReviewSummary() = default;
     AWS_WELLARCHITECTED_API PillarReviewSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API PillarReviewSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,62 +41,58 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetPillarId() const{ return m_pillarId; }
+    inline const Aws::String& GetPillarId() const { return m_pillarId; }
     inline bool PillarIdHasBeenSet() const { return m_pillarIdHasBeenSet; }
-    inline void SetPillarId(const Aws::String& value) { m_pillarIdHasBeenSet = true; m_pillarId = value; }
-    inline void SetPillarId(Aws::String&& value) { m_pillarIdHasBeenSet = true; m_pillarId = std::move(value); }
-    inline void SetPillarId(const char* value) { m_pillarIdHasBeenSet = true; m_pillarId.assign(value); }
-    inline PillarReviewSummary& WithPillarId(const Aws::String& value) { SetPillarId(value); return *this;}
-    inline PillarReviewSummary& WithPillarId(Aws::String&& value) { SetPillarId(std::move(value)); return *this;}
-    inline PillarReviewSummary& WithPillarId(const char* value) { SetPillarId(value); return *this;}
+    template<typename PillarIdT = Aws::String>
+    void SetPillarId(PillarIdT&& value) { m_pillarIdHasBeenSet = true; m_pillarId = std::forward<PillarIdT>(value); }
+    template<typename PillarIdT = Aws::String>
+    PillarReviewSummary& WithPillarId(PillarIdT&& value) { SetPillarId(std::forward<PillarIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetPillarName() const{ return m_pillarName; }
+    inline const Aws::String& GetPillarName() const { return m_pillarName; }
     inline bool PillarNameHasBeenSet() const { return m_pillarNameHasBeenSet; }
-    inline void SetPillarName(const Aws::String& value) { m_pillarNameHasBeenSet = true; m_pillarName = value; }
-    inline void SetPillarName(Aws::String&& value) { m_pillarNameHasBeenSet = true; m_pillarName = std::move(value); }
-    inline void SetPillarName(const char* value) { m_pillarNameHasBeenSet = true; m_pillarName.assign(value); }
-    inline PillarReviewSummary& WithPillarName(const Aws::String& value) { SetPillarName(value); return *this;}
-    inline PillarReviewSummary& WithPillarName(Aws::String&& value) { SetPillarName(std::move(value)); return *this;}
-    inline PillarReviewSummary& WithPillarName(const char* value) { SetPillarName(value); return *this;}
+    template<typename PillarNameT = Aws::String>
+    void SetPillarName(PillarNameT&& value) { m_pillarNameHasBeenSet = true; m_pillarName = std::forward<PillarNameT>(value); }
+    template<typename PillarNameT = Aws::String>
+    PillarReviewSummary& WithPillarName(PillarNameT&& value) { SetPillarName(std::forward<PillarNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetNotes() const{ return m_notes; }
+    inline const Aws::String& GetNotes() const { return m_notes; }
     inline bool NotesHasBeenSet() const { return m_notesHasBeenSet; }
-    inline void SetNotes(const Aws::String& value) { m_notesHasBeenSet = true; m_notes = value; }
-    inline void SetNotes(Aws::String&& value) { m_notesHasBeenSet = true; m_notes = std::move(value); }
-    inline void SetNotes(const char* value) { m_notesHasBeenSet = true; m_notes.assign(value); }
-    inline PillarReviewSummary& WithNotes(const Aws::String& value) { SetNotes(value); return *this;}
-    inline PillarReviewSummary& WithNotes(Aws::String&& value) { SetNotes(std::move(value)); return *this;}
-    inline PillarReviewSummary& WithNotes(const char* value) { SetNotes(value); return *this;}
+    template<typename NotesT = Aws::String>
+    void SetNotes(NotesT&& value) { m_notesHasBeenSet = true; m_notes = std::forward<NotesT>(value); }
+    template<typename NotesT = Aws::String>
+    PillarReviewSummary& WithNotes(NotesT&& value) { SetNotes(std::forward<NotesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Risk, int>& GetRiskCounts() const{ return m_riskCounts; }
+    inline const Aws::Map<Risk, int>& GetRiskCounts() const { return m_riskCounts; }
     inline bool RiskCountsHasBeenSet() const { return m_riskCountsHasBeenSet; }
-    inline void SetRiskCounts(const Aws::Map<Risk, int>& value) { m_riskCountsHasBeenSet = true; m_riskCounts = value; }
-    inline void SetRiskCounts(Aws::Map<Risk, int>&& value) { m_riskCountsHasBeenSet = true; m_riskCounts = std::move(value); }
-    inline PillarReviewSummary& WithRiskCounts(const Aws::Map<Risk, int>& value) { SetRiskCounts(value); return *this;}
-    inline PillarReviewSummary& WithRiskCounts(Aws::Map<Risk, int>&& value) { SetRiskCounts(std::move(value)); return *this;}
-    inline PillarReviewSummary& AddRiskCounts(const Risk& key, int value) { m_riskCountsHasBeenSet = true; m_riskCounts.emplace(key, value); return *this; }
-    inline PillarReviewSummary& AddRiskCounts(Risk&& key, int value) { m_riskCountsHasBeenSet = true; m_riskCounts.emplace(std::move(key), value); return *this; }
+    template<typename RiskCountsT = Aws::Map<Risk, int>>
+    void SetRiskCounts(RiskCountsT&& value) { m_riskCountsHasBeenSet = true; m_riskCounts = std::forward<RiskCountsT>(value); }
+    template<typename RiskCountsT = Aws::Map<Risk, int>>
+    PillarReviewSummary& WithRiskCounts(RiskCountsT&& value) { SetRiskCounts(std::forward<RiskCountsT>(value)); return *this;}
+    inline PillarReviewSummary& AddRiskCounts(Risk key, int value) {
+      m_riskCountsHasBeenSet = true; m_riskCounts.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Risk, int>& GetPrioritizedRiskCounts() const{ return m_prioritizedRiskCounts; }
+    inline const Aws::Map<Risk, int>& GetPrioritizedRiskCounts() const { return m_prioritizedRiskCounts; }
     inline bool PrioritizedRiskCountsHasBeenSet() const { return m_prioritizedRiskCountsHasBeenSet; }
-    inline void SetPrioritizedRiskCounts(const Aws::Map<Risk, int>& value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts = value; }
-    inline void SetPrioritizedRiskCounts(Aws::Map<Risk, int>&& value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts = std::move(value); }
-    inline PillarReviewSummary& WithPrioritizedRiskCounts(const Aws::Map<Risk, int>& value) { SetPrioritizedRiskCounts(value); return *this;}
-    inline PillarReviewSummary& WithPrioritizedRiskCounts(Aws::Map<Risk, int>&& value) { SetPrioritizedRiskCounts(std::move(value)); return *this;}
-    inline PillarReviewSummary& AddPrioritizedRiskCounts(const Risk& key, int value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts.emplace(key, value); return *this; }
-    inline PillarReviewSummary& AddPrioritizedRiskCounts(Risk&& key, int value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts.emplace(std::move(key), value); return *this; }
+    template<typename PrioritizedRiskCountsT = Aws::Map<Risk, int>>
+    void SetPrioritizedRiskCounts(PrioritizedRiskCountsT&& value) { m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts = std::forward<PrioritizedRiskCountsT>(value); }
+    template<typename PrioritizedRiskCountsT = Aws::Map<Risk, int>>
+    PillarReviewSummary& WithPrioritizedRiskCounts(PrioritizedRiskCountsT&& value) { SetPrioritizedRiskCounts(std::forward<PrioritizedRiskCountsT>(value)); return *this;}
+    inline PillarReviewSummary& AddPrioritizedRiskCounts(Risk key, int value) {
+      m_prioritizedRiskCountsHasBeenSet = true; m_prioritizedRiskCounts.emplace(key, value); return *this;
+    }
     ///@}
   private:
 

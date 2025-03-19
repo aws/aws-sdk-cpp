@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPredictiveScalingForecastResult::GetPredictiveScalingForecastResult()
-{
-}
-
 GetPredictiveScalingForecastResult::GetPredictiveScalingForecastResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,28 +38,33 @@ GetPredictiveScalingForecastResult& GetPredictiveScalingForecastResult::operator
     if(!loadForecastNode.IsNull())
     {
       XmlNode loadForecastMember = loadForecastNode.FirstChild("member");
+      m_loadForecastHasBeenSet = !loadForecastMember.IsNull();
       while(!loadForecastMember.IsNull())
       {
         m_loadForecast.push_back(loadForecastMember);
         loadForecastMember = loadForecastMember.NextNode("member");
       }
 
+      m_loadForecastHasBeenSet = true;
     }
     XmlNode capacityForecastNode = resultNode.FirstChild("CapacityForecast");
     if(!capacityForecastNode.IsNull())
     {
       m_capacityForecast = capacityForecastNode;
+      m_capacityForecastHasBeenSet = true;
     }
     XmlNode updateTimeNode = resultNode.FirstChild("UpdateTime");
     if(!updateTimeNode.IsNull())
     {
       m_updateTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_updateTimeHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::GetPredictiveScalingForecastResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

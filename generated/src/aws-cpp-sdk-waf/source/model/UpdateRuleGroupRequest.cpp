@@ -12,13 +12,6 @@ using namespace Aws::WAF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRuleGroupRequest::UpdateRuleGroupRequest() : 
-    m_ruleGroupIdHasBeenSet(false),
-    m_updatesHasBeenSet(false),
-    m_changeTokenHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRuleGroupRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -20,14 +20,7 @@ namespace SES
 namespace Model
 {
 
-InvalidCloudWatchDestinationException::InvalidCloudWatchDestinationException() : 
-    m_configurationSetNameHasBeenSet(false),
-    m_eventDestinationNameHasBeenSet(false)
-{
-}
-
 InvalidCloudWatchDestinationException::InvalidCloudWatchDestinationException(const XmlNode& xmlNode)
-  : InvalidCloudWatchDestinationException()
 {
   *this = xmlNode;
 }

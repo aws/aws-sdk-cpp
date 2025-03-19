@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TransformResources::TransformResources() : 
-    m_instanceType(TransformInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_volumeKmsKeyIdHasBeenSet(false)
-{
-}
-
 TransformResources::TransformResources(JsonView jsonValue)
-  : TransformResources()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ TransformResources& TransformResources::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = TransformInstanceTypeMapper::GetTransformInstanceTypeForName(jsonValue.GetString("InstanceType"));
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceCount"))
   {
     m_instanceCount = jsonValue.GetInteger("InstanceCount");
-
     m_instanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeKmsKeyId"))
   {
     m_volumeKmsKeyId = jsonValue.GetString("VolumeKmsKeyId");
-
     m_volumeKmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

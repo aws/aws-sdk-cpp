@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateOutpostResult::CreateOutpostResult()
-{
-}
-
 CreateOutpostResult::CreateOutpostResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateOutpostResult& CreateOutpostResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("Outpost"))
   {
     m_outpost = jsonValue.GetObject("Outpost");
-
+    m_outpostHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

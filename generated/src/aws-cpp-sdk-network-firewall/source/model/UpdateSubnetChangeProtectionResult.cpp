@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateSubnetChangeProtectionResult::UpdateSubnetChangeProtectionResult() : 
-    m_subnetChangeProtection(false)
-{
-}
-
 UpdateSubnetChangeProtectionResult::UpdateSubnetChangeProtectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateSubnetChangeProtectionResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ UpdateSubnetChangeProtectionResult& UpdateSubnetChangeProtectionResult::operator
   if(jsonValue.ValueExists("UpdateToken"))
   {
     m_updateToken = jsonValue.GetString("UpdateToken");
-
+    m_updateTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirewallArn"))
   {
     m_firewallArn = jsonValue.GetString("FirewallArn");
-
+    m_firewallArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirewallName"))
   {
     m_firewallName = jsonValue.GetString("FirewallName");
-
+    m_firewallNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetChangeProtection"))
   {
     m_subnetChangeProtection = jsonValue.GetBool("SubnetChangeProtection");
-
+    m_subnetChangeProtectionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

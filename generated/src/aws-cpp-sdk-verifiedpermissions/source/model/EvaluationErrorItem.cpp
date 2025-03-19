@@ -18,13 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-EvaluationErrorItem::EvaluationErrorItem() : 
-    m_errorDescriptionHasBeenSet(false)
-{
-}
-
 EvaluationErrorItem::EvaluationErrorItem(JsonView jsonValue)
-  : EvaluationErrorItem()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EvaluationErrorItem& EvaluationErrorItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("errorDescription"))
   {
     m_errorDescription = jsonValue.GetString("errorDescription");
-
     m_errorDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

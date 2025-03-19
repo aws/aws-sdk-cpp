@@ -18,15 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-AllowListStatus::AllowListStatus() : 
-    m_code(AllowListStatusCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 AllowListStatus::AllowListStatus(JsonView jsonValue)
-  : AllowListStatus()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AllowListStatus& AllowListStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("code"))
   {
     m_code = AllowListStatusCodeMapper::GetAllowListStatusCodeForName(jsonValue.GetString("code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

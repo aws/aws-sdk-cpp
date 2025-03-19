@@ -12,12 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateResourceTypesRequest::AssociateResourceTypesRequest() : 
-    m_configurationRecorderArnHasBeenSet(false),
-    m_resourceTypesHasBeenSet(false)
-{
-}
-
 Aws::String AssociateResourceTypesRequest::SerializePayload() const
 {
   JsonValue payload;

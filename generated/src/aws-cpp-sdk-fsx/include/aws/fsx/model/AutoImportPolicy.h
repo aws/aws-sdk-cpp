@@ -37,7 +37,7 @@ namespace Model
   class AutoImportPolicy
   {
   public:
-    AWS_FSX_API AutoImportPolicy();
+    AWS_FSX_API AutoImportPolicy() = default;
     AWS_FSX_API AutoImportPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API AutoImportPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,14 +55,13 @@ namespace Model
      * files are deleted in the data repository.</p> </li> </ul> <p>You can define any
      * combination of event types for your <code>AutoImportPolicy</code>.</p>
      */
-    inline const Aws::Vector<EventType>& GetEvents() const{ return m_events; }
+    inline const Aws::Vector<EventType>& GetEvents() const { return m_events; }
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
-    inline void SetEvents(const Aws::Vector<EventType>& value) { m_eventsHasBeenSet = true; m_events = value; }
-    inline void SetEvents(Aws::Vector<EventType>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
-    inline AutoImportPolicy& WithEvents(const Aws::Vector<EventType>& value) { SetEvents(value); return *this;}
-    inline AutoImportPolicy& WithEvents(Aws::Vector<EventType>&& value) { SetEvents(std::move(value)); return *this;}
-    inline AutoImportPolicy& AddEvents(const EventType& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
-    inline AutoImportPolicy& AddEvents(EventType&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
+    template<typename EventsT = Aws::Vector<EventType>>
+    void SetEvents(EventsT&& value) { m_eventsHasBeenSet = true; m_events = std::forward<EventsT>(value); }
+    template<typename EventsT = Aws::Vector<EventType>>
+    AutoImportPolicy& WithEvents(EventsT&& value) { SetEvents(std::forward<EventsT>(value)); return *this;}
+    inline AutoImportPolicy& AddEvents(EventType value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
     ///@}
   private:
 

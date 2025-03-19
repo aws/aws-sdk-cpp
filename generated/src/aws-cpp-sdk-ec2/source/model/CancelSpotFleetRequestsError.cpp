@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CancelSpotFleetRequestsError::CancelSpotFleetRequestsError() : 
-    m_code(CancelBatchErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 CancelSpotFleetRequestsError::CancelSpotFleetRequestsError(const XmlNode& xmlNode)
-  : CancelSpotFleetRequestsError()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ CancelSpotFleetRequestsError& CancelSpotFleetRequestsError::operator =(const Xml
     XmlNode codeNode = resultNode.FirstChild("code");
     if(!codeNode.IsNull())
     {
-      m_code = CancelBatchErrorCodeMapper::GetCancelBatchErrorCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()).c_str());
+      m_code = CancelBatchErrorCodeMapper::GetCancelBatchErrorCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()));
       m_codeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("message");

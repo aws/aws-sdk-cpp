@@ -21,7 +21,7 @@ namespace Model
   class ValidateResourcePolicyRequest : public SecretsManagerRequest
   {
   public:
-    AWS_SECRETSMANAGER_API ValidateResourcePolicyRequest();
+    AWS_SECRETSMANAGER_API ValidateResourcePolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The ARN or name of the secret with the resource-based policy you want to
      * validate.</p>
      */
-    inline const Aws::String& GetSecretId() const{ return m_secretId; }
+    inline const Aws::String& GetSecretId() const { return m_secretId; }
     inline bool SecretIdHasBeenSet() const { return m_secretIdHasBeenSet; }
-    inline void SetSecretId(const Aws::String& value) { m_secretIdHasBeenSet = true; m_secretId = value; }
-    inline void SetSecretId(Aws::String&& value) { m_secretIdHasBeenSet = true; m_secretId = std::move(value); }
-    inline void SetSecretId(const char* value) { m_secretIdHasBeenSet = true; m_secretId.assign(value); }
-    inline ValidateResourcePolicyRequest& WithSecretId(const Aws::String& value) { SetSecretId(value); return *this;}
-    inline ValidateResourcePolicyRequest& WithSecretId(Aws::String&& value) { SetSecretId(std::move(value)); return *this;}
-    inline ValidateResourcePolicyRequest& WithSecretId(const char* value) { SetSecretId(value); return *this;}
+    template<typename SecretIdT = Aws::String>
+    void SetSecretId(SecretIdT&& value) { m_secretIdHasBeenSet = true; m_secretId = std::forward<SecretIdT>(value); }
+    template<typename SecretIdT = Aws::String>
+    ValidateResourcePolicyRequest& WithSecretId(SecretIdT&& value) { SetSecretId(std::forward<SecretIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/auth-and-access_examples.html">Permissions
      * policy examples</a>.</p>
      */
-    inline const Aws::String& GetResourcePolicy() const{ return m_resourcePolicy; }
+    inline const Aws::String& GetResourcePolicy() const { return m_resourcePolicy; }
     inline bool ResourcePolicyHasBeenSet() const { return m_resourcePolicyHasBeenSet; }
-    inline void SetResourcePolicy(const Aws::String& value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy = value; }
-    inline void SetResourcePolicy(Aws::String&& value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy = std::move(value); }
-    inline void SetResourcePolicy(const char* value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy.assign(value); }
-    inline ValidateResourcePolicyRequest& WithResourcePolicy(const Aws::String& value) { SetResourcePolicy(value); return *this;}
-    inline ValidateResourcePolicyRequest& WithResourcePolicy(Aws::String&& value) { SetResourcePolicy(std::move(value)); return *this;}
-    inline ValidateResourcePolicyRequest& WithResourcePolicy(const char* value) { SetResourcePolicy(value); return *this;}
+    template<typename ResourcePolicyT = Aws::String>
+    void SetResourcePolicy(ResourcePolicyT&& value) { m_resourcePolicyHasBeenSet = true; m_resourcePolicy = std::forward<ResourcePolicyT>(value); }
+    template<typename ResourcePolicyT = Aws::String>
+    ValidateResourcePolicyRequest& WithResourcePolicy(ResourcePolicyT&& value) { SetResourcePolicy(std::forward<ResourcePolicyT>(value)); return *this;}
     ///@}
   private:
 

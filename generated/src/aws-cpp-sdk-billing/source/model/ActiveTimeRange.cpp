@@ -18,14 +18,7 @@ namespace Billing
 namespace Model
 {
 
-ActiveTimeRange::ActiveTimeRange() : 
-    m_activeAfterInclusiveHasBeenSet(false),
-    m_activeBeforeInclusiveHasBeenSet(false)
-{
-}
-
 ActiveTimeRange::ActiveTimeRange(JsonView jsonValue)
-  : ActiveTimeRange()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ActiveTimeRange& ActiveTimeRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("activeAfterInclusive"))
   {
     m_activeAfterInclusive = jsonValue.GetDouble("activeAfterInclusive");
-
     m_activeAfterInclusiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("activeBeforeInclusive"))
   {
     m_activeBeforeInclusive = jsonValue.GetDouble("activeBeforeInclusive");
-
     m_activeBeforeInclusiveHasBeenSet = true;
   }
-
   return *this;
 }
 

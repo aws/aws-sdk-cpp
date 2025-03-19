@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetResourceRequest::GetResourceRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_embedHasBeenSet(false)
-{
-}
-
 Aws::String GetResourceRequest::SerializePayload() const
 {
   return {};

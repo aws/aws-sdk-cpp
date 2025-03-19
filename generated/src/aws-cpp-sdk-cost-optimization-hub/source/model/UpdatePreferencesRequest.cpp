@@ -12,14 +12,6 @@ using namespace Aws::CostOptimizationHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePreferencesRequest::UpdatePreferencesRequest() : 
-    m_savingsEstimationMode(SavingsEstimationMode::NOT_SET),
-    m_savingsEstimationModeHasBeenSet(false),
-    m_memberAccountDiscountVisibility(MemberAccountDiscountVisibility::NOT_SET),
-    m_memberAccountDiscountVisibilityHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePreferencesRequest::SerializePayload() const
 {
   JsonValue payload;

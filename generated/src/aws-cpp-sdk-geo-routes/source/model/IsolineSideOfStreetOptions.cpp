@@ -18,15 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-IsolineSideOfStreetOptions::IsolineSideOfStreetOptions() : 
-    m_positionHasBeenSet(false),
-    m_useWith(SideOfStreetMatchingStrategy::NOT_SET),
-    m_useWithHasBeenSet(false)
-{
-}
-
 IsolineSideOfStreetOptions::IsolineSideOfStreetOptions(JsonView jsonValue)
-  : IsolineSideOfStreetOptions()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ IsolineSideOfStreetOptions& IsolineSideOfStreetOptions::operator =(JsonView json
     }
     m_positionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UseWith"))
   {
     m_useWith = SideOfStreetMatchingStrategyMapper::GetSideOfStreetMatchingStrategyForName(jsonValue.GetString("UseWith"));
-
     m_useWithHasBeenSet = true;
   }
-
   return *this;
 }
 

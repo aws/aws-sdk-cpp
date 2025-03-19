@@ -32,7 +32,7 @@ namespace Model
   class CreateArchiveResult
   {
   public:
-    AWS_MAILMANAGER_API CreateArchiveResult();
+    AWS_MAILMANAGER_API CreateArchiveResult() = default;
     AWS_MAILMANAGER_API CreateArchiveResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MAILMANAGER_API CreateArchiveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,30 +41,28 @@ namespace Model
     /**
      * <p>The unique identifier for the newly created archive.</p>
      */
-    inline const Aws::String& GetArchiveId() const{ return m_archiveId; }
-    inline void SetArchiveId(const Aws::String& value) { m_archiveId = value; }
-    inline void SetArchiveId(Aws::String&& value) { m_archiveId = std::move(value); }
-    inline void SetArchiveId(const char* value) { m_archiveId.assign(value); }
-    inline CreateArchiveResult& WithArchiveId(const Aws::String& value) { SetArchiveId(value); return *this;}
-    inline CreateArchiveResult& WithArchiveId(Aws::String&& value) { SetArchiveId(std::move(value)); return *this;}
-    inline CreateArchiveResult& WithArchiveId(const char* value) { SetArchiveId(value); return *this;}
+    inline const Aws::String& GetArchiveId() const { return m_archiveId; }
+    template<typename ArchiveIdT = Aws::String>
+    void SetArchiveId(ArchiveIdT&& value) { m_archiveIdHasBeenSet = true; m_archiveId = std::forward<ArchiveIdT>(value); }
+    template<typename ArchiveIdT = Aws::String>
+    CreateArchiveResult& WithArchiveId(ArchiveIdT&& value) { SetArchiveId(std::forward<ArchiveIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateArchiveResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateArchiveResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateArchiveResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateArchiveResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_archiveId;
+    bool m_archiveIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SendMessageBatchResult::SendMessageBatchResult()
-{
-}
-
 SendMessageBatchResult::SendMessageBatchResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ SendMessageBatchResult& SendMessageBatchResult::operator =(const Aws::AmazonWebS
     {
       m_successful.push_back(successfulJsonList[successfulIndex].AsObject());
     }
+    m_successfulHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Failed"))
   {
     Aws::Utils::Array<JsonView> failedJsonList = jsonValue.GetArray("Failed");
@@ -45,19 +41,21 @@ SendMessageBatchResult& SendMessageBatchResult::operator =(const Aws::AmazonWebS
     {
       m_failed.push_back(failedJsonList[failedIndex].AsObject());
     }
+    m_failedHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& responseMetadataIter = headers.find("x-amzn-requestid");
   if(responseMetadataIter != headers.end())
   {
+    m_responseMetadataHasBeenSet = true;
      // for backward compatibility for customers used to an old XML Client interface
      m_responseMetadata.SetRequestId(responseMetadataIter->second);
   }

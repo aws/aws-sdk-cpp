@@ -29,7 +29,7 @@ namespace Model
   class DescribeReplicationConfigurationTemplatesResult
   {
   public:
-    AWS_MGN_API DescribeReplicationConfigurationTemplatesResult();
+    AWS_MGN_API DescribeReplicationConfigurationTemplatesResult() = default;
     AWS_MGN_API DescribeReplicationConfigurationTemplatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MGN_API DescribeReplicationConfigurationTemplatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>Request to describe Replication Configuration template by items.</p>
      */
-    inline const Aws::Vector<ReplicationConfigurationTemplate>& GetItems() const{ return m_items; }
-    inline void SetItems(const Aws::Vector<ReplicationConfigurationTemplate>& value) { m_items = value; }
-    inline void SetItems(Aws::Vector<ReplicationConfigurationTemplate>&& value) { m_items = std::move(value); }
-    inline DescribeReplicationConfigurationTemplatesResult& WithItems(const Aws::Vector<ReplicationConfigurationTemplate>& value) { SetItems(value); return *this;}
-    inline DescribeReplicationConfigurationTemplatesResult& WithItems(Aws::Vector<ReplicationConfigurationTemplate>&& value) { SetItems(std::move(value)); return *this;}
-    inline DescribeReplicationConfigurationTemplatesResult& AddItems(const ReplicationConfigurationTemplate& value) { m_items.push_back(value); return *this; }
-    inline DescribeReplicationConfigurationTemplatesResult& AddItems(ReplicationConfigurationTemplate&& value) { m_items.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ReplicationConfigurationTemplate>& GetItems() const { return m_items; }
+    template<typename ItemsT = Aws::Vector<ReplicationConfigurationTemplate>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<ReplicationConfigurationTemplate>>
+    DescribeReplicationConfigurationTemplatesResult& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = ReplicationConfigurationTemplate>
+    DescribeReplicationConfigurationTemplatesResult& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Request to describe Replication Configuration template by next token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeReplicationConfigurationTemplatesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeReplicationConfigurationTemplatesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeReplicationConfigurationTemplatesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeReplicationConfigurationTemplatesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeReplicationConfigurationTemplatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeReplicationConfigurationTemplatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeReplicationConfigurationTemplatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeReplicationConfigurationTemplatesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ReplicationConfigurationTemplate> m_items;
+    bool m_itemsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

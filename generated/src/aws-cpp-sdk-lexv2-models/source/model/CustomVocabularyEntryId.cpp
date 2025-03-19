@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-CustomVocabularyEntryId::CustomVocabularyEntryId() : 
-    m_itemIdHasBeenSet(false)
-{
-}
-
 CustomVocabularyEntryId::CustomVocabularyEntryId(JsonView jsonValue)
-  : CustomVocabularyEntryId()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CustomVocabularyEntryId& CustomVocabularyEntryId::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("itemId"))
   {
     m_itemId = jsonValue.GetString("itemId");
-
     m_itemIdHasBeenSet = true;
   }
-
   return *this;
 }
 

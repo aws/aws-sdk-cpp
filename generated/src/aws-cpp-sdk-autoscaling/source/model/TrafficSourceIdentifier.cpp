@@ -20,14 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-TrafficSourceIdentifier::TrafficSourceIdentifier() : 
-    m_identifierHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 TrafficSourceIdentifier::TrafficSourceIdentifier(const XmlNode& xmlNode)
-  : TrafficSourceIdentifier()
 {
   *this = xmlNode;
 }

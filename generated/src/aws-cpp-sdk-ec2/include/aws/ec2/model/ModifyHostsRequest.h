@@ -25,7 +25,7 @@ namespace Model
   class ModifyHostsRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ModifyHostsRequest();
+    AWS_EC2_API ModifyHostsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,12 +47,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-recovery.html">Host
      * recovery</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
-    inline const HostRecovery& GetHostRecovery() const{ return m_hostRecovery; }
+    inline HostRecovery GetHostRecovery() const { return m_hostRecovery; }
     inline bool HostRecoveryHasBeenSet() const { return m_hostRecoveryHasBeenSet; }
-    inline void SetHostRecovery(const HostRecovery& value) { m_hostRecoveryHasBeenSet = true; m_hostRecovery = value; }
-    inline void SetHostRecovery(HostRecovery&& value) { m_hostRecoveryHasBeenSet = true; m_hostRecovery = std::move(value); }
-    inline ModifyHostsRequest& WithHostRecovery(const HostRecovery& value) { SetHostRecovery(value); return *this;}
-    inline ModifyHostsRequest& WithHostRecovery(HostRecovery&& value) { SetHostRecovery(std::move(value)); return *this;}
+    inline void SetHostRecovery(HostRecovery value) { m_hostRecoveryHasBeenSet = true; m_hostRecovery = value; }
+    inline ModifyHostsRequest& WithHostRecovery(HostRecovery value) { SetHostRecovery(value); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * <b>InstanceFamily</b> instead. You cannot specify <b>InstanceType</b> and
      * <b>InstanceFamily</b> in the same request.</p>
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline ModifyHostsRequest& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline ModifyHostsRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline ModifyHostsRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    ModifyHostsRequest& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +79,12 @@ namespace Model
      * <b>InstanceType</b> instead. You cannot specify <b>InstanceFamily</b> and
      * <b>InstanceType</b> in the same request.</p>
      */
-    inline const Aws::String& GetInstanceFamily() const{ return m_instanceFamily; }
+    inline const Aws::String& GetInstanceFamily() const { return m_instanceFamily; }
     inline bool InstanceFamilyHasBeenSet() const { return m_instanceFamilyHasBeenSet; }
-    inline void SetInstanceFamily(const Aws::String& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = value; }
-    inline void SetInstanceFamily(Aws::String&& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = std::move(value); }
-    inline void SetInstanceFamily(const char* value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily.assign(value); }
-    inline ModifyHostsRequest& WithInstanceFamily(const Aws::String& value) { SetInstanceFamily(value); return *this;}
-    inline ModifyHostsRequest& WithInstanceFamily(Aws::String&& value) { SetInstanceFamily(std::move(value)); return *this;}
-    inline ModifyHostsRequest& WithInstanceFamily(const char* value) { SetInstanceFamily(value); return *this;}
+    template<typename InstanceFamilyT = Aws::String>
+    void SetInstanceFamily(InstanceFamilyT&& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = std::forward<InstanceFamilyT>(value); }
+    template<typename InstanceFamilyT = Aws::String>
+    ModifyHostsRequest& WithInstanceFamily(InstanceFamilyT&& value) { SetInstanceFamily(std::forward<InstanceFamilyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,43 +94,38 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/dedicated-hosts-maintenance.html">Host
      * maintenance</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
-    inline const HostMaintenance& GetHostMaintenance() const{ return m_hostMaintenance; }
+    inline HostMaintenance GetHostMaintenance() const { return m_hostMaintenance; }
     inline bool HostMaintenanceHasBeenSet() const { return m_hostMaintenanceHasBeenSet; }
-    inline void SetHostMaintenance(const HostMaintenance& value) { m_hostMaintenanceHasBeenSet = true; m_hostMaintenance = value; }
-    inline void SetHostMaintenance(HostMaintenance&& value) { m_hostMaintenanceHasBeenSet = true; m_hostMaintenance = std::move(value); }
-    inline ModifyHostsRequest& WithHostMaintenance(const HostMaintenance& value) { SetHostMaintenance(value); return *this;}
-    inline ModifyHostsRequest& WithHostMaintenance(HostMaintenance&& value) { SetHostMaintenance(std::move(value)); return *this;}
+    inline void SetHostMaintenance(HostMaintenance value) { m_hostMaintenanceHasBeenSet = true; m_hostMaintenance = value; }
+    inline ModifyHostsRequest& WithHostMaintenance(HostMaintenance value) { SetHostMaintenance(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IDs of the Dedicated Hosts to modify.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetHostIds() const{ return m_hostIds; }
+    inline const Aws::Vector<Aws::String>& GetHostIds() const { return m_hostIds; }
     inline bool HostIdsHasBeenSet() const { return m_hostIdsHasBeenSet; }
-    inline void SetHostIds(const Aws::Vector<Aws::String>& value) { m_hostIdsHasBeenSet = true; m_hostIds = value; }
-    inline void SetHostIds(Aws::Vector<Aws::String>&& value) { m_hostIdsHasBeenSet = true; m_hostIds = std::move(value); }
-    inline ModifyHostsRequest& WithHostIds(const Aws::Vector<Aws::String>& value) { SetHostIds(value); return *this;}
-    inline ModifyHostsRequest& WithHostIds(Aws::Vector<Aws::String>&& value) { SetHostIds(std::move(value)); return *this;}
-    inline ModifyHostsRequest& AddHostIds(const Aws::String& value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(value); return *this; }
-    inline ModifyHostsRequest& AddHostIds(Aws::String&& value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(std::move(value)); return *this; }
-    inline ModifyHostsRequest& AddHostIds(const char* value) { m_hostIdsHasBeenSet = true; m_hostIds.push_back(value); return *this; }
+    template<typename HostIdsT = Aws::Vector<Aws::String>>
+    void SetHostIds(HostIdsT&& value) { m_hostIdsHasBeenSet = true; m_hostIds = std::forward<HostIdsT>(value); }
+    template<typename HostIdsT = Aws::Vector<Aws::String>>
+    ModifyHostsRequest& WithHostIds(HostIdsT&& value) { SetHostIds(std::forward<HostIdsT>(value)); return *this;}
+    template<typename HostIdsT = Aws::String>
+    ModifyHostsRequest& AddHostIds(HostIdsT&& value) { m_hostIdsHasBeenSet = true; m_hostIds.emplace_back(std::forward<HostIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specify whether to enable or disable auto-placement.</p>
      */
-    inline const AutoPlacement& GetAutoPlacement() const{ return m_autoPlacement; }
+    inline AutoPlacement GetAutoPlacement() const { return m_autoPlacement; }
     inline bool AutoPlacementHasBeenSet() const { return m_autoPlacementHasBeenSet; }
-    inline void SetAutoPlacement(const AutoPlacement& value) { m_autoPlacementHasBeenSet = true; m_autoPlacement = value; }
-    inline void SetAutoPlacement(AutoPlacement&& value) { m_autoPlacementHasBeenSet = true; m_autoPlacement = std::move(value); }
-    inline ModifyHostsRequest& WithAutoPlacement(const AutoPlacement& value) { SetAutoPlacement(value); return *this;}
-    inline ModifyHostsRequest& WithAutoPlacement(AutoPlacement&& value) { SetAutoPlacement(std::move(value)); return *this;}
+    inline void SetAutoPlacement(AutoPlacement value) { m_autoPlacementHasBeenSet = true; m_autoPlacement = value; }
+    inline ModifyHostsRequest& WithAutoPlacement(AutoPlacement value) { SetAutoPlacement(value); return *this;}
     ///@}
   private:
 
-    HostRecovery m_hostRecovery;
+    HostRecovery m_hostRecovery{HostRecovery::NOT_SET};
     bool m_hostRecoveryHasBeenSet = false;
 
     Aws::String m_instanceType;
@@ -145,13 +134,13 @@ namespace Model
     Aws::String m_instanceFamily;
     bool m_instanceFamilyHasBeenSet = false;
 
-    HostMaintenance m_hostMaintenance;
+    HostMaintenance m_hostMaintenance{HostMaintenance::NOT_SET};
     bool m_hostMaintenanceHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_hostIds;
     bool m_hostIdsHasBeenSet = false;
 
-    AutoPlacement m_autoPlacement;
+    AutoPlacement m_autoPlacement{AutoPlacement::NOT_SET};
     bool m_autoPlacementHasBeenSet = false;
   };
 

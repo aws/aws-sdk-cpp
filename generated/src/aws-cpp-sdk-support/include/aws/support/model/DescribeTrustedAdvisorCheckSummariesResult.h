@@ -36,7 +36,7 @@ namespace Model
   class DescribeTrustedAdvisorCheckSummariesResult
   {
   public:
-    AWS_SUPPORT_API DescribeTrustedAdvisorCheckSummariesResult();
+    AWS_SUPPORT_API DescribeTrustedAdvisorCheckSummariesResult() = default;
     AWS_SUPPORT_API DescribeTrustedAdvisorCheckSummariesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SUPPORT_API DescribeTrustedAdvisorCheckSummariesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,30 +45,30 @@ namespace Model
     /**
      * <p>The summary information for the requested Trusted Advisor checks.</p>
      */
-    inline const Aws::Vector<TrustedAdvisorCheckSummary>& GetSummaries() const{ return m_summaries; }
-    inline void SetSummaries(const Aws::Vector<TrustedAdvisorCheckSummary>& value) { m_summaries = value; }
-    inline void SetSummaries(Aws::Vector<TrustedAdvisorCheckSummary>&& value) { m_summaries = std::move(value); }
-    inline DescribeTrustedAdvisorCheckSummariesResult& WithSummaries(const Aws::Vector<TrustedAdvisorCheckSummary>& value) { SetSummaries(value); return *this;}
-    inline DescribeTrustedAdvisorCheckSummariesResult& WithSummaries(Aws::Vector<TrustedAdvisorCheckSummary>&& value) { SetSummaries(std::move(value)); return *this;}
-    inline DescribeTrustedAdvisorCheckSummariesResult& AddSummaries(const TrustedAdvisorCheckSummary& value) { m_summaries.push_back(value); return *this; }
-    inline DescribeTrustedAdvisorCheckSummariesResult& AddSummaries(TrustedAdvisorCheckSummary&& value) { m_summaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TrustedAdvisorCheckSummary>& GetSummaries() const { return m_summaries; }
+    template<typename SummariesT = Aws::Vector<TrustedAdvisorCheckSummary>>
+    void SetSummaries(SummariesT&& value) { m_summariesHasBeenSet = true; m_summaries = std::forward<SummariesT>(value); }
+    template<typename SummariesT = Aws::Vector<TrustedAdvisorCheckSummary>>
+    DescribeTrustedAdvisorCheckSummariesResult& WithSummaries(SummariesT&& value) { SetSummaries(std::forward<SummariesT>(value)); return *this;}
+    template<typename SummariesT = TrustedAdvisorCheckSummary>
+    DescribeTrustedAdvisorCheckSummariesResult& AddSummaries(SummariesT&& value) { m_summariesHasBeenSet = true; m_summaries.emplace_back(std::forward<SummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeTrustedAdvisorCheckSummariesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeTrustedAdvisorCheckSummariesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeTrustedAdvisorCheckSummariesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeTrustedAdvisorCheckSummariesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<TrustedAdvisorCheckSummary> m_summaries;
+    bool m_summariesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

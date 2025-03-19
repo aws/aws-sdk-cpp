@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyInstanceEventStartTimeRequest::ModifyInstanceEventStartTimeRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceEventIdHasBeenSet(false),
-    m_notBeforeHasBeenSet(false)
-{
-}
-
 Aws::String ModifyInstanceEventStartTimeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

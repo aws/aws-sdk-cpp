@@ -10,15 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-PurchaseReservedCacheNodesOfferingRequest::PurchaseReservedCacheNodesOfferingRequest() : 
-    m_reservedCacheNodesOfferingIdHasBeenSet(false),
-    m_reservedCacheNodeIdHasBeenSet(false),
-    m_cacheNodeCount(0),
-    m_cacheNodeCountHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String PurchaseReservedCacheNodesOfferingRequest::SerializePayload() const
 {
   Aws::StringStream ss;

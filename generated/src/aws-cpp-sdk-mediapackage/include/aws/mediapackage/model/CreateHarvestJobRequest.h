@@ -26,7 +26,7 @@ namespace Model
   class CreateHarvestJobRequest : public MediaPackageRequest
   {
   public:
-    AWS_MEDIAPACKAGE_API CreateHarvestJobRequest();
+    AWS_MEDIAPACKAGE_API CreateHarvestJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * The end of the time-window which will be harvested
 
      */
-    inline const Aws::String& GetEndTime() const{ return m_endTime; }
+    inline const Aws::String& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::String& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::String&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline void SetEndTime(const char* value) { m_endTimeHasBeenSet = true; m_endTime.assign(value); }
-    inline CreateHarvestJobRequest& WithEndTime(const Aws::String& value) { SetEndTime(value); return *this;}
-    inline CreateHarvestJobRequest& WithEndTime(Aws::String&& value) { SetEndTime(std::move(value)); return *this;}
-    inline CreateHarvestJobRequest& WithEndTime(const char* value) { SetEndTime(value); return *this;}
+    template<typename EndTimeT = Aws::String>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::String>
+    CreateHarvestJobRequest& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ and it cannot
      * be changed after the HarvestJob is submitted
 
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline CreateHarvestJobRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline CreateHarvestJobRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline CreateHarvestJobRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    CreateHarvestJobRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,24 +72,22 @@ This cannot
      * be changed after the HarvestJob is submitted.
 
      */
-    inline const Aws::String& GetOriginEndpointId() const{ return m_originEndpointId; }
+    inline const Aws::String& GetOriginEndpointId() const { return m_originEndpointId; }
     inline bool OriginEndpointIdHasBeenSet() const { return m_originEndpointIdHasBeenSet; }
-    inline void SetOriginEndpointId(const Aws::String& value) { m_originEndpointIdHasBeenSet = true; m_originEndpointId = value; }
-    inline void SetOriginEndpointId(Aws::String&& value) { m_originEndpointIdHasBeenSet = true; m_originEndpointId = std::move(value); }
-    inline void SetOriginEndpointId(const char* value) { m_originEndpointIdHasBeenSet = true; m_originEndpointId.assign(value); }
-    inline CreateHarvestJobRequest& WithOriginEndpointId(const Aws::String& value) { SetOriginEndpointId(value); return *this;}
-    inline CreateHarvestJobRequest& WithOriginEndpointId(Aws::String&& value) { SetOriginEndpointId(std::move(value)); return *this;}
-    inline CreateHarvestJobRequest& WithOriginEndpointId(const char* value) { SetOriginEndpointId(value); return *this;}
+    template<typename OriginEndpointIdT = Aws::String>
+    void SetOriginEndpointId(OriginEndpointIdT&& value) { m_originEndpointIdHasBeenSet = true; m_originEndpointId = std::forward<OriginEndpointIdT>(value); }
+    template<typename OriginEndpointIdT = Aws::String>
+    CreateHarvestJobRequest& WithOriginEndpointId(OriginEndpointIdT&& value) { SetOriginEndpointId(std::forward<OriginEndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const S3Destination& GetS3Destination() const{ return m_s3Destination; }
+    inline const S3Destination& GetS3Destination() const { return m_s3Destination; }
     inline bool S3DestinationHasBeenSet() const { return m_s3DestinationHasBeenSet; }
-    inline void SetS3Destination(const S3Destination& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = value; }
-    inline void SetS3Destination(S3Destination&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::move(value); }
-    inline CreateHarvestJobRequest& WithS3Destination(const S3Destination& value) { SetS3Destination(value); return *this;}
-    inline CreateHarvestJobRequest& WithS3Destination(S3Destination&& value) { SetS3Destination(std::move(value)); return *this;}
+    template<typename S3DestinationT = S3Destination>
+    void SetS3Destination(S3DestinationT&& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = std::forward<S3DestinationT>(value); }
+    template<typename S3DestinationT = S3Destination>
+    CreateHarvestJobRequest& WithS3Destination(S3DestinationT&& value) { SetS3Destination(std::forward<S3DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +95,12 @@ This cannot
      * The start of the time-window which will be harvested
 
      */
-    inline const Aws::String& GetStartTime() const{ return m_startTime; }
+    inline const Aws::String& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::String& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::String&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline void SetStartTime(const char* value) { m_startTimeHasBeenSet = true; m_startTime.assign(value); }
-    inline CreateHarvestJobRequest& WithStartTime(const Aws::String& value) { SetStartTime(value); return *this;}
-    inline CreateHarvestJobRequest& WithStartTime(Aws::String&& value) { SetStartTime(std::move(value)); return *this;}
-    inline CreateHarvestJobRequest& WithStartTime(const char* value) { SetStartTime(value); return *this;}
+    template<typename StartTimeT = Aws::String>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::String>
+    CreateHarvestJobRequest& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
   private:
 

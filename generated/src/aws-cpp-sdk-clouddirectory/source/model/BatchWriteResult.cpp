@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchWriteResult::BatchWriteResult()
-{
-}
-
 BatchWriteResult::BatchWriteResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ BatchWriteResult& BatchWriteResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_responses.push_back(responsesJsonList[responsesIndex].AsObject());
     }
+    m_responsesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CreateVolumePermission::CreateVolumePermission() : 
-    m_userIdHasBeenSet(false),
-    m_group(PermissionGroup::NOT_SET),
-    m_groupHasBeenSet(false)
-{
-}
-
 CreateVolumePermission::CreateVolumePermission(const XmlNode& xmlNode)
-  : CreateVolumePermission()
 {
   *this = xmlNode;
 }
@@ -48,7 +40,7 @@ CreateVolumePermission& CreateVolumePermission::operator =(const XmlNode& xmlNod
     XmlNode groupNode = resultNode.FirstChild("group");
     if(!groupNode.IsNull())
     {
-      m_group = PermissionGroupMapper::GetPermissionGroupForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(groupNode.GetText()).c_str()).c_str());
+      m_group = PermissionGroupMapper::GetPermissionGroupForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(groupNode.GetText()).c_str()));
       m_groupHasBeenSet = true;
     }
   }

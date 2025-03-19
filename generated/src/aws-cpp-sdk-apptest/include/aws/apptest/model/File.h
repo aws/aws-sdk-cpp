@@ -31,7 +31,7 @@ namespace Model
   class File
   {
   public:
-    AWS_APPTEST_API File();
+    AWS_APPTEST_API File() = default;
     AWS_APPTEST_API File(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API File& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The file type of the file.</p>
      */
-    inline const CompareFileType& GetFileType() const{ return m_fileType; }
+    inline const CompareFileType& GetFileType() const { return m_fileType; }
     inline bool FileTypeHasBeenSet() const { return m_fileTypeHasBeenSet; }
-    inline void SetFileType(const CompareFileType& value) { m_fileTypeHasBeenSet = true; m_fileType = value; }
-    inline void SetFileType(CompareFileType&& value) { m_fileTypeHasBeenSet = true; m_fileType = std::move(value); }
-    inline File& WithFileType(const CompareFileType& value) { SetFileType(value); return *this;}
-    inline File& WithFileType(CompareFileType&& value) { SetFileType(std::move(value)); return *this;}
+    template<typename FileTypeT = CompareFileType>
+    void SetFileType(FileTypeT&& value) { m_fileTypeHasBeenSet = true; m_fileType = std::forward<FileTypeT>(value); }
+    template<typename FileTypeT = CompareFileType>
+    File& WithFileType(FileTypeT&& value) { SetFileType(std::forward<FileTypeT>(value)); return *this;}
     ///@}
   private:
 

@@ -25,7 +25,7 @@ namespace Model
   class DeregisterOnPremisesInstanceRequest : public CodeDeployRequest
   {
   public:
-    AWS_CODEDEPLOY_API DeregisterOnPremisesInstanceRequest();
+    AWS_CODEDEPLOY_API DeregisterOnPremisesInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the on-premises instance to deregister.</p>
      */
-    inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
+    inline const Aws::String& GetInstanceName() const { return m_instanceName; }
     inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
-    inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
-    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::move(value); }
-    inline void SetInstanceName(const char* value) { m_instanceNameHasBeenSet = true; m_instanceName.assign(value); }
-    inline DeregisterOnPremisesInstanceRequest& WithInstanceName(const Aws::String& value) { SetInstanceName(value); return *this;}
-    inline DeregisterOnPremisesInstanceRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(std::move(value)); return *this;}
-    inline DeregisterOnPremisesInstanceRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
+    template<typename InstanceNameT = Aws::String>
+    void SetInstanceName(InstanceNameT&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::forward<InstanceNameT>(value); }
+    template<typename InstanceNameT = Aws::String>
+    DeregisterOnPremisesInstanceRequest& WithInstanceName(InstanceNameT&& value) { SetInstanceName(std::forward<InstanceNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class LogPattern
   {
   public:
-    AWS_APPLICATIONINSIGHTS_API LogPattern();
+    AWS_APPLICATIONINSIGHTS_API LogPattern() = default;
     AWS_APPLICATIONINSIGHTS_API LogPattern(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONINSIGHTS_API LogPattern& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONINSIGHTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * characters, and it cannot be empty. The characters can be Unicode letters,
      * digits, or one of the following symbols: period, dash, underscore.</p>
      */
-    inline const Aws::String& GetPatternSetName() const{ return m_patternSetName; }
+    inline const Aws::String& GetPatternSetName() const { return m_patternSetName; }
     inline bool PatternSetNameHasBeenSet() const { return m_patternSetNameHasBeenSet; }
-    inline void SetPatternSetName(const Aws::String& value) { m_patternSetNameHasBeenSet = true; m_patternSetName = value; }
-    inline void SetPatternSetName(Aws::String&& value) { m_patternSetNameHasBeenSet = true; m_patternSetName = std::move(value); }
-    inline void SetPatternSetName(const char* value) { m_patternSetNameHasBeenSet = true; m_patternSetName.assign(value); }
-    inline LogPattern& WithPatternSetName(const Aws::String& value) { SetPatternSetName(value); return *this;}
-    inline LogPattern& WithPatternSetName(Aws::String&& value) { SetPatternSetName(std::move(value)); return *this;}
-    inline LogPattern& WithPatternSetName(const char* value) { SetPatternSetName(value); return *this;}
+    template<typename PatternSetNameT = Aws::String>
+    void SetPatternSetName(PatternSetNameT&& value) { m_patternSetNameHasBeenSet = true; m_patternSetName = std::forward<PatternSetNameT>(value); }
+    template<typename PatternSetNameT = Aws::String>
+    LogPattern& WithPatternSetName(PatternSetNameT&& value) { SetPatternSetName(std::forward<PatternSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * characters, and it cannot be empty. The characters can be Unicode letters,
      * digits, or one of the following symbols: period, dash, underscore.</p>
      */
-    inline const Aws::String& GetPatternName() const{ return m_patternName; }
+    inline const Aws::String& GetPatternName() const { return m_patternName; }
     inline bool PatternNameHasBeenSet() const { return m_patternNameHasBeenSet; }
-    inline void SetPatternName(const Aws::String& value) { m_patternNameHasBeenSet = true; m_patternName = value; }
-    inline void SetPatternName(Aws::String&& value) { m_patternNameHasBeenSet = true; m_patternName = std::move(value); }
-    inline void SetPatternName(const char* value) { m_patternNameHasBeenSet = true; m_patternName.assign(value); }
-    inline LogPattern& WithPatternName(const Aws::String& value) { SetPatternName(value); return *this;}
-    inline LogPattern& WithPatternName(Aws::String&& value) { SetPatternName(std::move(value)); return *this;}
-    inline LogPattern& WithPatternName(const char* value) { SetPatternName(value); return *this;}
+    template<typename PatternNameT = Aws::String>
+    void SetPatternName(PatternNameT&& value) { m_patternNameHasBeenSet = true; m_patternName = std::forward<PatternNameT>(value); }
+    template<typename PatternNameT = Aws::String>
+    LogPattern& WithPatternName(PatternNameT&& value) { SetPatternName(std::forward<PatternNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * compatible. Patterns that utilize forward lookahead or backreference
      * constructions are not supported.</p>
      */
-    inline const Aws::String& GetPattern() const{ return m_pattern; }
+    inline const Aws::String& GetPattern() const { return m_pattern; }
     inline bool PatternHasBeenSet() const { return m_patternHasBeenSet; }
-    inline void SetPattern(const Aws::String& value) { m_patternHasBeenSet = true; m_pattern = value; }
-    inline void SetPattern(Aws::String&& value) { m_patternHasBeenSet = true; m_pattern = std::move(value); }
-    inline void SetPattern(const char* value) { m_patternHasBeenSet = true; m_pattern.assign(value); }
-    inline LogPattern& WithPattern(const Aws::String& value) { SetPattern(value); return *this;}
-    inline LogPattern& WithPattern(Aws::String&& value) { SetPattern(std::move(value)); return *this;}
-    inline LogPattern& WithPattern(const char* value) { SetPattern(value); return *this;}
+    template<typename PatternT = Aws::String>
+    void SetPattern(PatternT&& value) { m_patternHasBeenSet = true; m_pattern = std::forward<PatternT>(value); }
+    template<typename PatternT = Aws::String>
+    LogPattern& WithPattern(PatternT&& value) { SetPattern(std::forward<PatternT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,7 +95,7 @@ namespace Model
      * or greater than <code>1,000,000</code> are reserved for Amazon Web Services
      * provided patterns. </p>
      */
-    inline int GetRank() const{ return m_rank; }
+    inline int GetRank() const { return m_rank; }
     inline bool RankHasBeenSet() const { return m_rankHasBeenSet; }
     inline void SetRank(int value) { m_rankHasBeenSet = true; m_rank = value; }
     inline LogPattern& WithRank(int value) { SetRank(value); return *this;}
@@ -117,7 +111,7 @@ namespace Model
     Aws::String m_pattern;
     bool m_patternHasBeenSet = false;
 
-    int m_rank;
+    int m_rank{0};
     bool m_rankHasBeenSet = false;
   };
 

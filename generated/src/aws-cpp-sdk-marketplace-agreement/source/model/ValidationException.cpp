@@ -18,17 +18,7 @@ namespace AgreementService
 namespace Model
 {
 
-ValidationException::ValidationException() : 
-    m_fieldsHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_reason(ValidationExceptionReason::NOT_SET),
-    m_reasonHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 ValidationException::ValidationException(JsonView jsonValue)
-  : ValidationException()
 {
   *this = jsonValue;
 }
@@ -44,28 +34,21 @@ ValidationException& ValidationException::operator =(JsonView jsonValue)
     }
     m_fieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = ValidationExceptionReasonMapper::GetValidationExceptionReasonForName(jsonValue.GetString("reason"));
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   return *this;
 }
 

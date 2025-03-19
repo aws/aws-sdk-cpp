@@ -12,11 +12,6 @@ using namespace Aws::WAF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRuleRequest::GetRuleRequest() : 
-    m_ruleIdHasBeenSet(false)
-{
-}
-
 Aws::String GetRuleRequest::SerializePayload() const
 {
   JsonValue payload;

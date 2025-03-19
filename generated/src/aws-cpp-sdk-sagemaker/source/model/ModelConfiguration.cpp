@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelConfiguration::ModelConfiguration() : 
-    m_inferenceSpecificationNameHasBeenSet(false),
-    m_environmentParametersHasBeenSet(false),
-    m_compilationJobNameHasBeenSet(false)
-{
-}
-
 ModelConfiguration::ModelConfiguration(JsonView jsonValue)
-  : ModelConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ModelConfiguration& ModelConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InferenceSpecificationName"))
   {
     m_inferenceSpecificationName = jsonValue.GetString("InferenceSpecificationName");
-
     m_inferenceSpecificationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnvironmentParameters"))
   {
     Aws::Utils::Array<JsonView> environmentParametersJsonList = jsonValue.GetArray("EnvironmentParameters");
@@ -49,14 +39,11 @@ ModelConfiguration& ModelConfiguration::operator =(JsonView jsonValue)
     }
     m_environmentParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompilationJobName"))
   {
     m_compilationJobName = jsonValue.GetString("CompilationJobName");
-
     m_compilationJobNameHasBeenSet = true;
   }
-
   return *this;
 }
 

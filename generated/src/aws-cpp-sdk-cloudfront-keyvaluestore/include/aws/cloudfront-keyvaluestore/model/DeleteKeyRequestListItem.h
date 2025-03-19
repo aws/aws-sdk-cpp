@@ -31,7 +31,7 @@ namespace Model
   class DeleteKeyRequestListItem
   {
   public:
-    AWS_CLOUDFRONTKEYVALUESTORE_API DeleteKeyRequestListItem();
+    AWS_CLOUDFRONTKEYVALUESTORE_API DeleteKeyRequestListItem() = default;
     AWS_CLOUDFRONTKEYVALUESTORE_API DeleteKeyRequestListItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDFRONTKEYVALUESTORE_API DeleteKeyRequestListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDFRONTKEYVALUESTORE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The key of the key value pair to be deleted.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline DeleteKeyRequestListItem& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline DeleteKeyRequestListItem& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline DeleteKeyRequestListItem& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    DeleteKeyRequestListItem& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
   private:
 

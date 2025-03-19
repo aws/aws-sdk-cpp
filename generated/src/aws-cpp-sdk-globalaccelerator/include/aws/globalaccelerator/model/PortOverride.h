@@ -36,7 +36,7 @@ namespace Model
   class PortOverride
   {
   public:
-    AWS_GLOBALACCELERATOR_API PortOverride();
+    AWS_GLOBALACCELERATOR_API PortOverride() = default;
     AWS_GLOBALACCELERATOR_API PortOverride(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLOBALACCELERATOR_API PortOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,7 +47,7 @@ namespace Model
      * <p>The listener port that you want to map to a specific endpoint port. This is
      * the port that user traffic arrives to the Global Accelerator on.</p>
      */
-    inline int GetListenerPort() const{ return m_listenerPort; }
+    inline int GetListenerPort() const { return m_listenerPort; }
     inline bool ListenerPortHasBeenSet() const { return m_listenerPortHasBeenSet; }
     inline void SetListenerPort(int value) { m_listenerPortHasBeenSet = true; m_listenerPort = value; }
     inline PortOverride& WithListenerPort(int value) { SetListenerPort(value); return *this;}
@@ -59,17 +59,17 @@ namespace Model
      * port on the endpoint, such as the Application Load Balancer or Amazon EC2
      * instance.</p>
      */
-    inline int GetEndpointPort() const{ return m_endpointPort; }
+    inline int GetEndpointPort() const { return m_endpointPort; }
     inline bool EndpointPortHasBeenSet() const { return m_endpointPortHasBeenSet; }
     inline void SetEndpointPort(int value) { m_endpointPortHasBeenSet = true; m_endpointPort = value; }
     inline PortOverride& WithEndpointPort(int value) { SetEndpointPort(value); return *this;}
     ///@}
   private:
 
-    int m_listenerPort;
+    int m_listenerPort{0};
     bool m_listenerPortHasBeenSet = false;
 
-    int m_endpointPort;
+    int m_endpointPort{0};
     bool m_endpointPortHasBeenSet = false;
   };
 

@@ -31,7 +31,7 @@ namespace Model
   class MultiplexContainerSettings
   {
   public:
-    AWS_MEDIALIVE_API MultiplexContainerSettings();
+    AWS_MEDIALIVE_API MultiplexContainerSettings() = default;
     AWS_MEDIALIVE_API MultiplexContainerSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API MultiplexContainerSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,12 +39,12 @@ namespace Model
 
     ///@{
     
-    inline const MultiplexM2tsSettings& GetMultiplexM2tsSettings() const{ return m_multiplexM2tsSettings; }
+    inline const MultiplexM2tsSettings& GetMultiplexM2tsSettings() const { return m_multiplexM2tsSettings; }
     inline bool MultiplexM2tsSettingsHasBeenSet() const { return m_multiplexM2tsSettingsHasBeenSet; }
-    inline void SetMultiplexM2tsSettings(const MultiplexM2tsSettings& value) { m_multiplexM2tsSettingsHasBeenSet = true; m_multiplexM2tsSettings = value; }
-    inline void SetMultiplexM2tsSettings(MultiplexM2tsSettings&& value) { m_multiplexM2tsSettingsHasBeenSet = true; m_multiplexM2tsSettings = std::move(value); }
-    inline MultiplexContainerSettings& WithMultiplexM2tsSettings(const MultiplexM2tsSettings& value) { SetMultiplexM2tsSettings(value); return *this;}
-    inline MultiplexContainerSettings& WithMultiplexM2tsSettings(MultiplexM2tsSettings&& value) { SetMultiplexM2tsSettings(std::move(value)); return *this;}
+    template<typename MultiplexM2tsSettingsT = MultiplexM2tsSettings>
+    void SetMultiplexM2tsSettings(MultiplexM2tsSettingsT&& value) { m_multiplexM2tsSettingsHasBeenSet = true; m_multiplexM2tsSettings = std::forward<MultiplexM2tsSettingsT>(value); }
+    template<typename MultiplexM2tsSettingsT = MultiplexM2tsSettings>
+    MultiplexContainerSettings& WithMultiplexM2tsSettings(MultiplexM2tsSettingsT&& value) { SetMultiplexM2tsSettings(std::forward<MultiplexM2tsSettingsT>(value)); return *this;}
     ///@}
   private:
 

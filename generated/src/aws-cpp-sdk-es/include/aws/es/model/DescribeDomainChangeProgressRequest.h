@@ -30,7 +30,7 @@ namespace Model
   class DescribeDomainChangeProgressRequest : public ElasticsearchServiceRequest
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API DescribeDomainChangeProgressRequest();
+    AWS_ELASTICSEARCHSERVICE_API DescribeDomainChangeProgressRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The domain you want to get the progress information about.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline DescribeDomainChangeProgressRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline DescribeDomainChangeProgressRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline DescribeDomainChangeProgressRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    DescribeDomainChangeProgressRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * is an optional parameter. If omitted, the service returns information about the
      * most recent configuration change. </p>
      */
-    inline const Aws::String& GetChangeId() const{ return m_changeId; }
+    inline const Aws::String& GetChangeId() const { return m_changeId; }
     inline bool ChangeIdHasBeenSet() const { return m_changeIdHasBeenSet; }
-    inline void SetChangeId(const Aws::String& value) { m_changeIdHasBeenSet = true; m_changeId = value; }
-    inline void SetChangeId(Aws::String&& value) { m_changeIdHasBeenSet = true; m_changeId = std::move(value); }
-    inline void SetChangeId(const char* value) { m_changeIdHasBeenSet = true; m_changeId.assign(value); }
-    inline DescribeDomainChangeProgressRequest& WithChangeId(const Aws::String& value) { SetChangeId(value); return *this;}
-    inline DescribeDomainChangeProgressRequest& WithChangeId(Aws::String&& value) { SetChangeId(std::move(value)); return *this;}
-    inline DescribeDomainChangeProgressRequest& WithChangeId(const char* value) { SetChangeId(value); return *this;}
+    template<typename ChangeIdT = Aws::String>
+    void SetChangeId(ChangeIdT&& value) { m_changeIdHasBeenSet = true; m_changeId = std::forward<ChangeIdT>(value); }
+    template<typename ChangeIdT = Aws::String>
+    DescribeDomainChangeProgressRequest& WithChangeId(ChangeIdT&& value) { SetChangeId(std::forward<ChangeIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,12 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveTagsFromResourceRequest::RemoveTagsFromResourceRequest() : 
-    m_resourceARNHasBeenSet(false),
-    m_tagKeysHasBeenSet(false)
-{
-}
-
 Aws::String RemoveTagsFromResourceRequest::SerializePayload() const
 {
   JsonValue payload;

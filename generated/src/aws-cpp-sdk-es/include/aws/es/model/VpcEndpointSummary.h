@@ -33,7 +33,7 @@ namespace Model
   class VpcEndpointSummary
   {
   public:
-    AWS_ELASTICSEARCHSERVICE_API VpcEndpointSummary();
+    AWS_ELASTICSEARCHSERVICE_API VpcEndpointSummary() = default;
     AWS_ELASTICSEARCHSERVICE_API VpcEndpointSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API VpcEndpointSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICSEARCHSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The unique identifier of the endpoint.</p>
      */
-    inline const Aws::String& GetVpcEndpointId() const{ return m_vpcEndpointId; }
+    inline const Aws::String& GetVpcEndpointId() const { return m_vpcEndpointId; }
     inline bool VpcEndpointIdHasBeenSet() const { return m_vpcEndpointIdHasBeenSet; }
-    inline void SetVpcEndpointId(const Aws::String& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = value; }
-    inline void SetVpcEndpointId(Aws::String&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::move(value); }
-    inline void SetVpcEndpointId(const char* value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId.assign(value); }
-    inline VpcEndpointSummary& WithVpcEndpointId(const Aws::String& value) { SetVpcEndpointId(value); return *this;}
-    inline VpcEndpointSummary& WithVpcEndpointId(Aws::String&& value) { SetVpcEndpointId(std::move(value)); return *this;}
-    inline VpcEndpointSummary& WithVpcEndpointId(const char* value) { SetVpcEndpointId(value); return *this;}
+    template<typename VpcEndpointIdT = Aws::String>
+    void SetVpcEndpointId(VpcEndpointIdT&& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = std::forward<VpcEndpointIdT>(value); }
+    template<typename VpcEndpointIdT = Aws::String>
+    VpcEndpointSummary& WithVpcEndpointId(VpcEndpointIdT&& value) { SetVpcEndpointId(std::forward<VpcEndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The creator of the endpoint.</p>
      */
-    inline const Aws::String& GetVpcEndpointOwner() const{ return m_vpcEndpointOwner; }
+    inline const Aws::String& GetVpcEndpointOwner() const { return m_vpcEndpointOwner; }
     inline bool VpcEndpointOwnerHasBeenSet() const { return m_vpcEndpointOwnerHasBeenSet; }
-    inline void SetVpcEndpointOwner(const Aws::String& value) { m_vpcEndpointOwnerHasBeenSet = true; m_vpcEndpointOwner = value; }
-    inline void SetVpcEndpointOwner(Aws::String&& value) { m_vpcEndpointOwnerHasBeenSet = true; m_vpcEndpointOwner = std::move(value); }
-    inline void SetVpcEndpointOwner(const char* value) { m_vpcEndpointOwnerHasBeenSet = true; m_vpcEndpointOwner.assign(value); }
-    inline VpcEndpointSummary& WithVpcEndpointOwner(const Aws::String& value) { SetVpcEndpointOwner(value); return *this;}
-    inline VpcEndpointSummary& WithVpcEndpointOwner(Aws::String&& value) { SetVpcEndpointOwner(std::move(value)); return *this;}
-    inline VpcEndpointSummary& WithVpcEndpointOwner(const char* value) { SetVpcEndpointOwner(value); return *this;}
+    template<typename VpcEndpointOwnerT = Aws::String>
+    void SetVpcEndpointOwner(VpcEndpointOwnerT&& value) { m_vpcEndpointOwnerHasBeenSet = true; m_vpcEndpointOwner = std::forward<VpcEndpointOwnerT>(value); }
+    template<typename VpcEndpointOwnerT = Aws::String>
+    VpcEndpointSummary& WithVpcEndpointOwner(VpcEndpointOwnerT&& value) { SetVpcEndpointOwner(std::forward<VpcEndpointOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,26 +68,22 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the domain associated with the
      * endpoint.</p>
      */
-    inline const Aws::String& GetDomainArn() const{ return m_domainArn; }
+    inline const Aws::String& GetDomainArn() const { return m_domainArn; }
     inline bool DomainArnHasBeenSet() const { return m_domainArnHasBeenSet; }
-    inline void SetDomainArn(const Aws::String& value) { m_domainArnHasBeenSet = true; m_domainArn = value; }
-    inline void SetDomainArn(Aws::String&& value) { m_domainArnHasBeenSet = true; m_domainArn = std::move(value); }
-    inline void SetDomainArn(const char* value) { m_domainArnHasBeenSet = true; m_domainArn.assign(value); }
-    inline VpcEndpointSummary& WithDomainArn(const Aws::String& value) { SetDomainArn(value); return *this;}
-    inline VpcEndpointSummary& WithDomainArn(Aws::String&& value) { SetDomainArn(std::move(value)); return *this;}
-    inline VpcEndpointSummary& WithDomainArn(const char* value) { SetDomainArn(value); return *this;}
+    template<typename DomainArnT = Aws::String>
+    void SetDomainArn(DomainArnT&& value) { m_domainArnHasBeenSet = true; m_domainArn = std::forward<DomainArnT>(value); }
+    template<typename DomainArnT = Aws::String>
+    VpcEndpointSummary& WithDomainArn(DomainArnT&& value) { SetDomainArn(std::forward<DomainArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the endpoint.</p>
      */
-    inline const VpcEndpointStatus& GetStatus() const{ return m_status; }
+    inline VpcEndpointStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const VpcEndpointStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(VpcEndpointStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline VpcEndpointSummary& WithStatus(const VpcEndpointStatus& value) { SetStatus(value); return *this;}
-    inline VpcEndpointSummary& WithStatus(VpcEndpointStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(VpcEndpointStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline VpcEndpointSummary& WithStatus(VpcEndpointStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -104,7 +96,7 @@ namespace Model
     Aws::String m_domainArn;
     bool m_domainArnHasBeenSet = false;
 
-    VpcEndpointStatus m_status;
+    VpcEndpointStatus m_status{VpcEndpointStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

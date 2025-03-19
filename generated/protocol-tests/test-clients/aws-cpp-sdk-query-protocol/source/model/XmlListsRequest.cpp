@@ -10,10 +10,6 @@
 using namespace Aws::QueryProtocol::Model;
 using namespace Aws::Utils;
 
-XmlListsRequest::XmlListsRequest()
-{
-}
-
 Aws::String XmlListsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

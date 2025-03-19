@@ -12,11 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeFileSystemAssociationsRequest::DescribeFileSystemAssociationsRequest() : 
-    m_fileSystemAssociationARNListHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFileSystemAssociationsRequest::SerializePayload() const
 {
   JsonValue payload;

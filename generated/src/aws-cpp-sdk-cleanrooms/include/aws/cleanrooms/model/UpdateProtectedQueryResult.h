@@ -28,7 +28,7 @@ namespace Model
   class UpdateProtectedQueryResult
   {
   public:
-    AWS_CLEANROOMS_API UpdateProtectedQueryResult();
+    AWS_CLEANROOMS_API UpdateProtectedQueryResult() = default;
     AWS_CLEANROOMS_API UpdateProtectedQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLEANROOMS_API UpdateProtectedQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The protected query output.</p>
      */
-    inline const ProtectedQuery& GetProtectedQuery() const{ return m_protectedQuery; }
-    inline void SetProtectedQuery(const ProtectedQuery& value) { m_protectedQuery = value; }
-    inline void SetProtectedQuery(ProtectedQuery&& value) { m_protectedQuery = std::move(value); }
-    inline UpdateProtectedQueryResult& WithProtectedQuery(const ProtectedQuery& value) { SetProtectedQuery(value); return *this;}
-    inline UpdateProtectedQueryResult& WithProtectedQuery(ProtectedQuery&& value) { SetProtectedQuery(std::move(value)); return *this;}
+    inline const ProtectedQuery& GetProtectedQuery() const { return m_protectedQuery; }
+    template<typename ProtectedQueryT = ProtectedQuery>
+    void SetProtectedQuery(ProtectedQueryT&& value) { m_protectedQueryHasBeenSet = true; m_protectedQuery = std::forward<ProtectedQueryT>(value); }
+    template<typename ProtectedQueryT = ProtectedQuery>
+    UpdateProtectedQueryResult& WithProtectedQuery(ProtectedQueryT&& value) { SetProtectedQuery(std::forward<ProtectedQueryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateProtectedQueryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateProtectedQueryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateProtectedQueryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateProtectedQueryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ProtectedQuery m_protectedQuery;
+    bool m_protectedQueryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

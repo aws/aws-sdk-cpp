@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ImportInstanceTaskDetails::ImportInstanceTaskDetails() : 
-    m_descriptionHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_platform(PlatformValues::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_volumesHasBeenSet(false)
-{
-}
-
 ImportInstanceTaskDetails::ImportInstanceTaskDetails(const XmlNode& xmlNode)
-  : ImportInstanceTaskDetails()
 {
   *this = xmlNode;
 }
@@ -56,13 +46,14 @@ ImportInstanceTaskDetails& ImportInstanceTaskDetails::operator =(const XmlNode& 
     XmlNode platformNode = resultNode.FirstChild("platform");
     if(!platformNode.IsNull())
     {
-      m_platform = PlatformValuesMapper::GetPlatformValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(platformNode.GetText()).c_str()).c_str());
+      m_platform = PlatformValuesMapper::GetPlatformValuesForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(platformNode.GetText()).c_str()));
       m_platformHasBeenSet = true;
     }
     XmlNode volumesNode = resultNode.FirstChild("volumes");
     if(!volumesNode.IsNull())
     {
       XmlNode volumesMember = volumesNode.FirstChild("item");
+      m_volumesHasBeenSet = !volumesMember.IsNull();
       while(!volumesMember.IsNull())
       {
         m_volumes.push_back(volumesMember);

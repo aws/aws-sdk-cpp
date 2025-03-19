@@ -18,19 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-DateTimeConverter::DateTimeConverter() : 
-    m_sourceHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_targetFormatHasBeenSet(false),
-    m_matchPatternsHasBeenSet(false),
-    m_sourceTimezoneHasBeenSet(false),
-    m_targetTimezoneHasBeenSet(false),
-    m_localeHasBeenSet(false)
-{
-}
-
 DateTimeConverter::DateTimeConverter(JsonView jsonValue)
-  : DateTimeConverter()
 {
   *this = jsonValue;
 }
@@ -40,24 +28,18 @@ DateTimeConverter& DateTimeConverter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetString("source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("target"))
   {
     m_target = jsonValue.GetString("target");
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetFormat"))
   {
     m_targetFormat = jsonValue.GetString("targetFormat");
-
     m_targetFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("matchPatterns"))
   {
     Aws::Utils::Array<JsonView> matchPatternsJsonList = jsonValue.GetArray("matchPatterns");
@@ -67,28 +49,21 @@ DateTimeConverter& DateTimeConverter::operator =(JsonView jsonValue)
     }
     m_matchPatternsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceTimezone"))
   {
     m_sourceTimezone = jsonValue.GetString("sourceTimezone");
-
     m_sourceTimezoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetTimezone"))
   {
     m_targetTimezone = jsonValue.GetString("targetTimezone");
-
     m_targetTimezoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("locale"))
   {
     m_locale = jsonValue.GetString("locale");
-
     m_localeHasBeenSet = true;
   }
-
   return *this;
 }
 

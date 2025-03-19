@@ -18,14 +18,7 @@ namespace ControlTower
 namespace Model
 {
 
-LandingZoneOperationFilter::LandingZoneOperationFilter() : 
-    m_statusesHasBeenSet(false),
-    m_typesHasBeenSet(false)
-{
-}
-
 LandingZoneOperationFilter::LandingZoneOperationFilter(JsonView jsonValue)
-  : LandingZoneOperationFilter()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ LandingZoneOperationFilter& LandingZoneOperationFilter::operator =(JsonView json
     }
     m_statusesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("types"))
   {
     Aws::Utils::Array<JsonView> typesJsonList = jsonValue.GetArray("types");
@@ -51,7 +43,6 @@ LandingZoneOperationFilter& LandingZoneOperationFilter::operator =(JsonView json
     }
     m_typesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,27 +20,7 @@ namespace IAM
 namespace Model
 {
 
-Policy::Policy() : 
-    m_policyNameHasBeenSet(false),
-    m_policyIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_defaultVersionIdHasBeenSet(false),
-    m_attachmentCount(0),
-    m_attachmentCountHasBeenSet(false),
-    m_permissionsBoundaryUsageCount(0),
-    m_permissionsBoundaryUsageCountHasBeenSet(false),
-    m_isAttachable(false),
-    m_isAttachableHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_updateDateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Policy::Policy(const XmlNode& xmlNode)
-  : Policy()
 {
   *this = xmlNode;
 }
@@ -121,6 +101,7 @@ Policy& Policy::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("member");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

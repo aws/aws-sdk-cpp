@@ -33,7 +33,7 @@ namespace Model
   class DNISEmergencyCallingConfiguration
   {
   public:
-    AWS_CHIMESDKVOICE_API DNISEmergencyCallingConfiguration();
+    AWS_CHIMESDKVOICE_API DNISEmergencyCallingConfiguration() = default;
     AWS_CHIMESDKVOICE_API DNISEmergencyCallingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API DNISEmergencyCallingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The DNIS phone number that you route emergency calls to, in E.164 format.</p>
      */
-    inline const Aws::String& GetEmergencyPhoneNumber() const{ return m_emergencyPhoneNumber; }
+    inline const Aws::String& GetEmergencyPhoneNumber() const { return m_emergencyPhoneNumber; }
     inline bool EmergencyPhoneNumberHasBeenSet() const { return m_emergencyPhoneNumberHasBeenSet; }
-    inline void SetEmergencyPhoneNumber(const Aws::String& value) { m_emergencyPhoneNumberHasBeenSet = true; m_emergencyPhoneNumber = value; }
-    inline void SetEmergencyPhoneNumber(Aws::String&& value) { m_emergencyPhoneNumberHasBeenSet = true; m_emergencyPhoneNumber = std::move(value); }
-    inline void SetEmergencyPhoneNumber(const char* value) { m_emergencyPhoneNumberHasBeenSet = true; m_emergencyPhoneNumber.assign(value); }
-    inline DNISEmergencyCallingConfiguration& WithEmergencyPhoneNumber(const Aws::String& value) { SetEmergencyPhoneNumber(value); return *this;}
-    inline DNISEmergencyCallingConfiguration& WithEmergencyPhoneNumber(Aws::String&& value) { SetEmergencyPhoneNumber(std::move(value)); return *this;}
-    inline DNISEmergencyCallingConfiguration& WithEmergencyPhoneNumber(const char* value) { SetEmergencyPhoneNumber(value); return *this;}
+    template<typename EmergencyPhoneNumberT = Aws::String>
+    void SetEmergencyPhoneNumber(EmergencyPhoneNumberT&& value) { m_emergencyPhoneNumberHasBeenSet = true; m_emergencyPhoneNumber = std::forward<EmergencyPhoneNumberT>(value); }
+    template<typename EmergencyPhoneNumberT = Aws::String>
+    DNISEmergencyCallingConfiguration& WithEmergencyPhoneNumber(EmergencyPhoneNumberT&& value) { SetEmergencyPhoneNumber(std::forward<EmergencyPhoneNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The DNIS phone number for routing test emergency calls to, in E.164
      * format.</p>
      */
-    inline const Aws::String& GetTestPhoneNumber() const{ return m_testPhoneNumber; }
+    inline const Aws::String& GetTestPhoneNumber() const { return m_testPhoneNumber; }
     inline bool TestPhoneNumberHasBeenSet() const { return m_testPhoneNumberHasBeenSet; }
-    inline void SetTestPhoneNumber(const Aws::String& value) { m_testPhoneNumberHasBeenSet = true; m_testPhoneNumber = value; }
-    inline void SetTestPhoneNumber(Aws::String&& value) { m_testPhoneNumberHasBeenSet = true; m_testPhoneNumber = std::move(value); }
-    inline void SetTestPhoneNumber(const char* value) { m_testPhoneNumberHasBeenSet = true; m_testPhoneNumber.assign(value); }
-    inline DNISEmergencyCallingConfiguration& WithTestPhoneNumber(const Aws::String& value) { SetTestPhoneNumber(value); return *this;}
-    inline DNISEmergencyCallingConfiguration& WithTestPhoneNumber(Aws::String&& value) { SetTestPhoneNumber(std::move(value)); return *this;}
-    inline DNISEmergencyCallingConfiguration& WithTestPhoneNumber(const char* value) { SetTestPhoneNumber(value); return *this;}
+    template<typename TestPhoneNumberT = Aws::String>
+    void SetTestPhoneNumber(TestPhoneNumberT&& value) { m_testPhoneNumberHasBeenSet = true; m_testPhoneNumber = std::forward<TestPhoneNumberT>(value); }
+    template<typename TestPhoneNumberT = Aws::String>
+    DNISEmergencyCallingConfiguration& WithTestPhoneNumber(TestPhoneNumberT&& value) { SetTestPhoneNumber(std::forward<TestPhoneNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p>The country from which emergency calls are allowed, in ISO 3166-1 alpha-2
      * format.</p>
      */
-    inline const Aws::String& GetCallingCountry() const{ return m_callingCountry; }
+    inline const Aws::String& GetCallingCountry() const { return m_callingCountry; }
     inline bool CallingCountryHasBeenSet() const { return m_callingCountryHasBeenSet; }
-    inline void SetCallingCountry(const Aws::String& value) { m_callingCountryHasBeenSet = true; m_callingCountry = value; }
-    inline void SetCallingCountry(Aws::String&& value) { m_callingCountryHasBeenSet = true; m_callingCountry = std::move(value); }
-    inline void SetCallingCountry(const char* value) { m_callingCountryHasBeenSet = true; m_callingCountry.assign(value); }
-    inline DNISEmergencyCallingConfiguration& WithCallingCountry(const Aws::String& value) { SetCallingCountry(value); return *this;}
-    inline DNISEmergencyCallingConfiguration& WithCallingCountry(Aws::String&& value) { SetCallingCountry(std::move(value)); return *this;}
-    inline DNISEmergencyCallingConfiguration& WithCallingCountry(const char* value) { SetCallingCountry(value); return *this;}
+    template<typename CallingCountryT = Aws::String>
+    void SetCallingCountry(CallingCountryT&& value) { m_callingCountryHasBeenSet = true; m_callingCountry = std::forward<CallingCountryT>(value); }
+    template<typename CallingCountryT = Aws::String>
+    DNISEmergencyCallingConfiguration& WithCallingCountry(CallingCountryT&& value) { SetCallingCountry(std::forward<CallingCountryT>(value)); return *this;}
     ///@}
   private:
 

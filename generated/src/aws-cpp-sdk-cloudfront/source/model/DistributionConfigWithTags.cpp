@@ -20,14 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-DistributionConfigWithTags::DistributionConfigWithTags() : 
-    m_distributionConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 DistributionConfigWithTags::DistributionConfigWithTags(const XmlNode& xmlNode)
-  : DistributionConfigWithTags()
 {
   *this = xmlNode;
 }

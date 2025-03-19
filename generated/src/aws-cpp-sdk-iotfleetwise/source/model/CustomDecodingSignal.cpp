@@ -18,13 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-CustomDecodingSignal::CustomDecodingSignal() : 
-    m_idHasBeenSet(false)
-{
-}
-
 CustomDecodingSignal::CustomDecodingSignal(JsonView jsonValue)
-  : CustomDecodingSignal()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CustomDecodingSignal& CustomDecodingSignal::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

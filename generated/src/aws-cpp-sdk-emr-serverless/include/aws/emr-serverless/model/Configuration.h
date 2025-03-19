@@ -37,7 +37,7 @@ namespace Model
   class Configuration
   {
   public:
-    AWS_EMRSERVERLESS_API Configuration();
+    AWS_EMRSERVERLESS_API Configuration() = default;
     AWS_EMRSERVERLESS_API Configuration(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,33 +47,28 @@ namespace Model
     /**
      * <p>The classification within a configuration.</p>
      */
-    inline const Aws::String& GetClassification() const{ return m_classification; }
+    inline const Aws::String& GetClassification() const { return m_classification; }
     inline bool ClassificationHasBeenSet() const { return m_classificationHasBeenSet; }
-    inline void SetClassification(const Aws::String& value) { m_classificationHasBeenSet = true; m_classification = value; }
-    inline void SetClassification(Aws::String&& value) { m_classificationHasBeenSet = true; m_classification = std::move(value); }
-    inline void SetClassification(const char* value) { m_classificationHasBeenSet = true; m_classification.assign(value); }
-    inline Configuration& WithClassification(const Aws::String& value) { SetClassification(value); return *this;}
-    inline Configuration& WithClassification(Aws::String&& value) { SetClassification(std::move(value)); return *this;}
-    inline Configuration& WithClassification(const char* value) { SetClassification(value); return *this;}
+    template<typename ClassificationT = Aws::String>
+    void SetClassification(ClassificationT&& value) { m_classificationHasBeenSet = true; m_classification = std::forward<ClassificationT>(value); }
+    template<typename ClassificationT = Aws::String>
+    Configuration& WithClassification(ClassificationT&& value) { SetClassification(std::forward<ClassificationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A set of properties specified within a configuration classification.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetProperties() const{ return m_properties; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetProperties() const { return m_properties; }
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
-    inline void SetProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_propertiesHasBeenSet = true; m_properties = value; }
-    inline void SetProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
-    inline Configuration& WithProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetProperties(value); return *this;}
-    inline Configuration& WithProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetProperties(std::move(value)); return *this;}
-    inline Configuration& AddProperties(const Aws::String& key, const Aws::String& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
-    inline Configuration& AddProperties(Aws::String&& key, const Aws::String& value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), value); return *this; }
-    inline Configuration& AddProperties(const Aws::String& key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, std::move(value)); return *this; }
-    inline Configuration& AddProperties(Aws::String&& key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), std::move(value)); return *this; }
-    inline Configuration& AddProperties(const char* key, Aws::String&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, std::move(value)); return *this; }
-    inline Configuration& AddProperties(Aws::String&& key, const char* value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), value); return *this; }
-    inline Configuration& AddProperties(const char* key, const char* value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
+    template<typename PropertiesT = Aws::Map<Aws::String, Aws::String>>
+    void SetProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties = std::forward<PropertiesT>(value); }
+    template<typename PropertiesT = Aws::Map<Aws::String, Aws::String>>
+    Configuration& WithProperties(PropertiesT&& value) { SetProperties(std::forward<PropertiesT>(value)); return *this;}
+    template<typename PropertiesKeyT = Aws::String, typename PropertiesValueT = Aws::String>
+    Configuration& AddProperties(PropertiesKeyT&& key, PropertiesValueT&& value) {
+      m_propertiesHasBeenSet = true; m_properties.emplace(std::forward<PropertiesKeyT>(key), std::forward<PropertiesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -81,14 +76,14 @@ namespace Model
      * <p>A list of additional configurations to apply within a configuration
      * object.</p>
      */
-    inline const Aws::Vector<Configuration>& GetConfigurations() const{ return m_configurations; }
+    inline const Aws::Vector<Configuration>& GetConfigurations() const { return m_configurations; }
     inline bool ConfigurationsHasBeenSet() const { return m_configurationsHasBeenSet; }
-    inline void SetConfigurations(const Aws::Vector<Configuration>& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
-    inline void SetConfigurations(Aws::Vector<Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = std::move(value); }
-    inline Configuration& WithConfigurations(const Aws::Vector<Configuration>& value) { SetConfigurations(value); return *this;}
-    inline Configuration& WithConfigurations(Aws::Vector<Configuration>&& value) { SetConfigurations(std::move(value)); return *this;}
-    inline Configuration& AddConfigurations(const Configuration& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
-    inline Configuration& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
+    template<typename ConfigurationsT = Aws::Vector<Configuration>>
+    void SetConfigurations(ConfigurationsT&& value) { m_configurationsHasBeenSet = true; m_configurations = std::forward<ConfigurationsT>(value); }
+    template<typename ConfigurationsT = Aws::Vector<Configuration>>
+    Configuration& WithConfigurations(ConfigurationsT&& value) { SetConfigurations(std::forward<ConfigurationsT>(value)); return *this;}
+    template<typename ConfigurationsT = Configuration>
+    Configuration& AddConfigurations(ConfigurationsT&& value) { m_configurationsHasBeenSet = true; m_configurations.emplace_back(std::forward<ConfigurationsT>(value)); return *this; }
     ///@}
   private:
 

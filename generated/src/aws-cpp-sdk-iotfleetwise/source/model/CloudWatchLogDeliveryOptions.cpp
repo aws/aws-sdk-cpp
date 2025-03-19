@@ -18,15 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-CloudWatchLogDeliveryOptions::CloudWatchLogDeliveryOptions() : 
-    m_logType(LogType::NOT_SET),
-    m_logTypeHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false)
-{
-}
-
 CloudWatchLogDeliveryOptions::CloudWatchLogDeliveryOptions(JsonView jsonValue)
-  : CloudWatchLogDeliveryOptions()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CloudWatchLogDeliveryOptions& CloudWatchLogDeliveryOptions::operator =(JsonView 
   if(jsonValue.ValueExists("logType"))
   {
     m_logType = LogTypeMapper::GetLogTypeForName(jsonValue.GetString("logType"));
-
     m_logTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logGroupName"))
   {
     m_logGroupName = jsonValue.GetString("logGroupName");
-
     m_logGroupNameHasBeenSet = true;
   }
-
   return *this;
 }
 

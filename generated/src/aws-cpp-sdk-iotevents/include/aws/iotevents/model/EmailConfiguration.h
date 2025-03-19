@@ -34,7 +34,7 @@ namespace Model
   class EmailConfiguration
   {
   public:
-    AWS_IOTEVENTS_API EmailConfiguration();
+    AWS_IOTEVENTS_API EmailConfiguration() = default;
     AWS_IOTEVENTS_API EmailConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API EmailConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,26 +47,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-email-addresses.html">verify
      * the email address that sends emails in Amazon SES</a>.</p> 
      */
-    inline const Aws::String& GetFrom() const{ return m_from; }
+    inline const Aws::String& GetFrom() const { return m_from; }
     inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
-    inline void SetFrom(const Aws::String& value) { m_fromHasBeenSet = true; m_from = value; }
-    inline void SetFrom(Aws::String&& value) { m_fromHasBeenSet = true; m_from = std::move(value); }
-    inline void SetFrom(const char* value) { m_fromHasBeenSet = true; m_from.assign(value); }
-    inline EmailConfiguration& WithFrom(const Aws::String& value) { SetFrom(value); return *this;}
-    inline EmailConfiguration& WithFrom(Aws::String&& value) { SetFrom(std::move(value)); return *this;}
-    inline EmailConfiguration& WithFrom(const char* value) { SetFrom(value); return *this;}
+    template<typename FromT = Aws::String>
+    void SetFrom(FromT&& value) { m_fromHasBeenSet = true; m_from = std::forward<FromT>(value); }
+    template<typename FromT = Aws::String>
+    EmailConfiguration& WithFrom(FromT&& value) { SetFrom(std::forward<FromT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains the subject and message of an email.</p>
      */
-    inline const EmailContent& GetContent() const{ return m_content; }
+    inline const EmailContent& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const EmailContent& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(EmailContent&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline EmailConfiguration& WithContent(const EmailContent& value) { SetContent(value); return *this;}
-    inline EmailConfiguration& WithContent(EmailContent&& value) { SetContent(std::move(value)); return *this;}
+    template<typename ContentT = EmailContent>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = EmailContent>
+    EmailConfiguration& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +74,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/singlesignon/latest/userguide/addusers.html">add
      * the users that receive emails to your AWS SSO store</a>.</p> 
      */
-    inline const EmailRecipients& GetRecipients() const{ return m_recipients; }
+    inline const EmailRecipients& GetRecipients() const { return m_recipients; }
     inline bool RecipientsHasBeenSet() const { return m_recipientsHasBeenSet; }
-    inline void SetRecipients(const EmailRecipients& value) { m_recipientsHasBeenSet = true; m_recipients = value; }
-    inline void SetRecipients(EmailRecipients&& value) { m_recipientsHasBeenSet = true; m_recipients = std::move(value); }
-    inline EmailConfiguration& WithRecipients(const EmailRecipients& value) { SetRecipients(value); return *this;}
-    inline EmailConfiguration& WithRecipients(EmailRecipients&& value) { SetRecipients(std::move(value)); return *this;}
+    template<typename RecipientsT = EmailRecipients>
+    void SetRecipients(RecipientsT&& value) { m_recipientsHasBeenSet = true; m_recipients = std::forward<RecipientsT>(value); }
+    template<typename RecipientsT = EmailRecipients>
+    EmailConfiguration& WithRecipients(RecipientsT&& value) { SetRecipients(std::forward<RecipientsT>(value)); return *this;}
     ///@}
   private:
 

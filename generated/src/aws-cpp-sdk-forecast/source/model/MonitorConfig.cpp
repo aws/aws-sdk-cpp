@@ -18,13 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-MonitorConfig::MonitorConfig() : 
-    m_monitorNameHasBeenSet(false)
-{
-}
-
 MonitorConfig::MonitorConfig(JsonView jsonValue)
-  : MonitorConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MonitorConfig& MonitorConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MonitorName"))
   {
     m_monitorName = jsonValue.GetString("MonitorName");
-
     m_monitorNameHasBeenSet = true;
   }
-
   return *this;
 }
 

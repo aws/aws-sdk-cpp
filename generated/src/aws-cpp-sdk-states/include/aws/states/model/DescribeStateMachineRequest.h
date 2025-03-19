@@ -22,7 +22,7 @@ namespace Model
   class DescribeStateMachineRequest : public SFNRequest
   {
   public:
-    AWS_SFN_API DescribeStateMachineRequest();
+    AWS_SFN_API DescribeStateMachineRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * ARN and the version number separated by a colon (:). For example,
      * <code>stateMachineARN:1</code>.</p>
      */
-    inline const Aws::String& GetStateMachineArn() const{ return m_stateMachineArn; }
+    inline const Aws::String& GetStateMachineArn() const { return m_stateMachineArn; }
     inline bool StateMachineArnHasBeenSet() const { return m_stateMachineArnHasBeenSet; }
-    inline void SetStateMachineArn(const Aws::String& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = value; }
-    inline void SetStateMachineArn(Aws::String&& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = std::move(value); }
-    inline void SetStateMachineArn(const char* value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn.assign(value); }
-    inline DescribeStateMachineRequest& WithStateMachineArn(const Aws::String& value) { SetStateMachineArn(value); return *this;}
-    inline DescribeStateMachineRequest& WithStateMachineArn(Aws::String&& value) { SetStateMachineArn(std::move(value)); return *this;}
-    inline DescribeStateMachineRequest& WithStateMachineArn(const char* value) { SetStateMachineArn(value); return *this;}
+    template<typename StateMachineArnT = Aws::String>
+    void SetStateMachineArn(StateMachineArnT&& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = std::forward<StateMachineArnT>(value); }
+    template<typename StateMachineArnT = Aws::String>
+    DescribeStateMachineRequest& WithStateMachineArn(StateMachineArnT&& value) { SetStateMachineArn(std::forward<StateMachineArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,19 +63,17 @@ namespace Model
      * get the Distributed Map state’s definition. In this case, the API caller needs
      * to have <code>kms:Decrypt</code> permission. </p> 
      */
-    inline const IncludedData& GetIncludedData() const{ return m_includedData; }
+    inline IncludedData GetIncludedData() const { return m_includedData; }
     inline bool IncludedDataHasBeenSet() const { return m_includedDataHasBeenSet; }
-    inline void SetIncludedData(const IncludedData& value) { m_includedDataHasBeenSet = true; m_includedData = value; }
-    inline void SetIncludedData(IncludedData&& value) { m_includedDataHasBeenSet = true; m_includedData = std::move(value); }
-    inline DescribeStateMachineRequest& WithIncludedData(const IncludedData& value) { SetIncludedData(value); return *this;}
-    inline DescribeStateMachineRequest& WithIncludedData(IncludedData&& value) { SetIncludedData(std::move(value)); return *this;}
+    inline void SetIncludedData(IncludedData value) { m_includedDataHasBeenSet = true; m_includedData = value; }
+    inline DescribeStateMachineRequest& WithIncludedData(IncludedData value) { SetIncludedData(value); return *this;}
     ///@}
   private:
 
     Aws::String m_stateMachineArn;
     bool m_stateMachineArnHasBeenSet = false;
 
-    IncludedData m_includedData;
+    IncludedData m_includedData{IncludedData::NOT_SET};
     bool m_includedDataHasBeenSet = false;
   };
 

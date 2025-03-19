@@ -12,13 +12,6 @@ using namespace Aws::WAFV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListResourcesForWebACLRequest::ListResourcesForWebACLRequest() : 
-    m_webACLArnHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 Aws::String ListResourcesForWebACLRequest::SerializePayload() const
 {
   JsonValue payload;

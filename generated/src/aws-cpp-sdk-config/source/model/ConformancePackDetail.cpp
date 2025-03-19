@@ -18,21 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-ConformancePackDetail::ConformancePackDetail() : 
-    m_conformancePackNameHasBeenSet(false),
-    m_conformancePackArnHasBeenSet(false),
-    m_conformancePackIdHasBeenSet(false),
-    m_deliveryS3BucketHasBeenSet(false),
-    m_deliveryS3KeyPrefixHasBeenSet(false),
-    m_conformancePackInputParametersHasBeenSet(false),
-    m_lastUpdateRequestedTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_templateSSMDocumentDetailsHasBeenSet(false)
-{
-}
-
 ConformancePackDetail::ConformancePackDetail(JsonView jsonValue)
-  : ConformancePackDetail()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ ConformancePackDetail& ConformancePackDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConformancePackName"))
   {
     m_conformancePackName = jsonValue.GetString("ConformancePackName");
-
     m_conformancePackNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConformancePackArn"))
   {
     m_conformancePackArn = jsonValue.GetString("ConformancePackArn");
-
     m_conformancePackArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConformancePackId"))
   {
     m_conformancePackId = jsonValue.GetString("ConformancePackId");
-
     m_conformancePackIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeliveryS3Bucket"))
   {
     m_deliveryS3Bucket = jsonValue.GetString("DeliveryS3Bucket");
-
     m_deliveryS3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeliveryS3KeyPrefix"))
   {
     m_deliveryS3KeyPrefix = jsonValue.GetString("DeliveryS3KeyPrefix");
-
     m_deliveryS3KeyPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConformancePackInputParameters"))
   {
     Aws::Utils::Array<JsonView> conformancePackInputParametersJsonList = jsonValue.GetArray("ConformancePackInputParameters");
@@ -83,28 +59,21 @@ ConformancePackDetail& ConformancePackDetail::operator =(JsonView jsonValue)
     }
     m_conformancePackInputParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdateRequestedTime"))
   {
     m_lastUpdateRequestedTime = jsonValue.GetDouble("LastUpdateRequestedTime");
-
     m_lastUpdateRequestedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetString("CreatedBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateSSMDocumentDetails"))
   {
     m_templateSSMDocumentDetails = jsonValue.GetObject("TemplateSSMDocumentDetails");
-
     m_templateSSMDocumentDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

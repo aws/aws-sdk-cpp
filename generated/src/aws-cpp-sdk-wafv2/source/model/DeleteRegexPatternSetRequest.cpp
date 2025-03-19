@@ -12,15 +12,6 @@ using namespace Aws::WAFV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRegexPatternSetRequest::DeleteRegexPatternSetRequest() : 
-    m_nameHasBeenSet(false),
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lockTokenHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRegexPatternSetRequest::SerializePayload() const
 {
   JsonValue payload;

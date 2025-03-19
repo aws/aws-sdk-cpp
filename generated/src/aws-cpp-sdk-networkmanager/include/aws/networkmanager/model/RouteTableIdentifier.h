@@ -33,7 +33,7 @@ namespace Model
   class RouteTableIdentifier
   {
   public:
-    AWS_NETWORKMANAGER_API RouteTableIdentifier();
+    AWS_NETWORKMANAGER_API RouteTableIdentifier() = default;
     AWS_NETWORKMANAGER_API RouteTableIdentifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API RouteTableIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,38 +45,36 @@ namespace Model
      * example, <code>"TransitGatewayRouteTableArn":
      * "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.</p>
      */
-    inline const Aws::String& GetTransitGatewayRouteTableArn() const{ return m_transitGatewayRouteTableArn; }
+    inline const Aws::String& GetTransitGatewayRouteTableArn() const { return m_transitGatewayRouteTableArn; }
     inline bool TransitGatewayRouteTableArnHasBeenSet() const { return m_transitGatewayRouteTableArnHasBeenSet; }
-    inline void SetTransitGatewayRouteTableArn(const Aws::String& value) { m_transitGatewayRouteTableArnHasBeenSet = true; m_transitGatewayRouteTableArn = value; }
-    inline void SetTransitGatewayRouteTableArn(Aws::String&& value) { m_transitGatewayRouteTableArnHasBeenSet = true; m_transitGatewayRouteTableArn = std::move(value); }
-    inline void SetTransitGatewayRouteTableArn(const char* value) { m_transitGatewayRouteTableArnHasBeenSet = true; m_transitGatewayRouteTableArn.assign(value); }
-    inline RouteTableIdentifier& WithTransitGatewayRouteTableArn(const Aws::String& value) { SetTransitGatewayRouteTableArn(value); return *this;}
-    inline RouteTableIdentifier& WithTransitGatewayRouteTableArn(Aws::String&& value) { SetTransitGatewayRouteTableArn(std::move(value)); return *this;}
-    inline RouteTableIdentifier& WithTransitGatewayRouteTableArn(const char* value) { SetTransitGatewayRouteTableArn(value); return *this;}
+    template<typename TransitGatewayRouteTableArnT = Aws::String>
+    void SetTransitGatewayRouteTableArn(TransitGatewayRouteTableArnT&& value) { m_transitGatewayRouteTableArnHasBeenSet = true; m_transitGatewayRouteTableArn = std::forward<TransitGatewayRouteTableArnT>(value); }
+    template<typename TransitGatewayRouteTableArnT = Aws::String>
+    RouteTableIdentifier& WithTransitGatewayRouteTableArn(TransitGatewayRouteTableArnT&& value) { SetTransitGatewayRouteTableArn(std::forward<TransitGatewayRouteTableArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The segment edge in a core network.</p>
      */
-    inline const CoreNetworkSegmentEdgeIdentifier& GetCoreNetworkSegmentEdge() const{ return m_coreNetworkSegmentEdge; }
+    inline const CoreNetworkSegmentEdgeIdentifier& GetCoreNetworkSegmentEdge() const { return m_coreNetworkSegmentEdge; }
     inline bool CoreNetworkSegmentEdgeHasBeenSet() const { return m_coreNetworkSegmentEdgeHasBeenSet; }
-    inline void SetCoreNetworkSegmentEdge(const CoreNetworkSegmentEdgeIdentifier& value) { m_coreNetworkSegmentEdgeHasBeenSet = true; m_coreNetworkSegmentEdge = value; }
-    inline void SetCoreNetworkSegmentEdge(CoreNetworkSegmentEdgeIdentifier&& value) { m_coreNetworkSegmentEdgeHasBeenSet = true; m_coreNetworkSegmentEdge = std::move(value); }
-    inline RouteTableIdentifier& WithCoreNetworkSegmentEdge(const CoreNetworkSegmentEdgeIdentifier& value) { SetCoreNetworkSegmentEdge(value); return *this;}
-    inline RouteTableIdentifier& WithCoreNetworkSegmentEdge(CoreNetworkSegmentEdgeIdentifier&& value) { SetCoreNetworkSegmentEdge(std::move(value)); return *this;}
+    template<typename CoreNetworkSegmentEdgeT = CoreNetworkSegmentEdgeIdentifier>
+    void SetCoreNetworkSegmentEdge(CoreNetworkSegmentEdgeT&& value) { m_coreNetworkSegmentEdgeHasBeenSet = true; m_coreNetworkSegmentEdge = std::forward<CoreNetworkSegmentEdgeT>(value); }
+    template<typename CoreNetworkSegmentEdgeT = CoreNetworkSegmentEdgeIdentifier>
+    RouteTableIdentifier& WithCoreNetworkSegmentEdge(CoreNetworkSegmentEdgeT&& value) { SetCoreNetworkSegmentEdge(std::forward<CoreNetworkSegmentEdgeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The route table identifier associated with the network function group.</p>
      */
-    inline const CoreNetworkNetworkFunctionGroupIdentifier& GetCoreNetworkNetworkFunctionGroup() const{ return m_coreNetworkNetworkFunctionGroup; }
+    inline const CoreNetworkNetworkFunctionGroupIdentifier& GetCoreNetworkNetworkFunctionGroup() const { return m_coreNetworkNetworkFunctionGroup; }
     inline bool CoreNetworkNetworkFunctionGroupHasBeenSet() const { return m_coreNetworkNetworkFunctionGroupHasBeenSet; }
-    inline void SetCoreNetworkNetworkFunctionGroup(const CoreNetworkNetworkFunctionGroupIdentifier& value) { m_coreNetworkNetworkFunctionGroupHasBeenSet = true; m_coreNetworkNetworkFunctionGroup = value; }
-    inline void SetCoreNetworkNetworkFunctionGroup(CoreNetworkNetworkFunctionGroupIdentifier&& value) { m_coreNetworkNetworkFunctionGroupHasBeenSet = true; m_coreNetworkNetworkFunctionGroup = std::move(value); }
-    inline RouteTableIdentifier& WithCoreNetworkNetworkFunctionGroup(const CoreNetworkNetworkFunctionGroupIdentifier& value) { SetCoreNetworkNetworkFunctionGroup(value); return *this;}
-    inline RouteTableIdentifier& WithCoreNetworkNetworkFunctionGroup(CoreNetworkNetworkFunctionGroupIdentifier&& value) { SetCoreNetworkNetworkFunctionGroup(std::move(value)); return *this;}
+    template<typename CoreNetworkNetworkFunctionGroupT = CoreNetworkNetworkFunctionGroupIdentifier>
+    void SetCoreNetworkNetworkFunctionGroup(CoreNetworkNetworkFunctionGroupT&& value) { m_coreNetworkNetworkFunctionGroupHasBeenSet = true; m_coreNetworkNetworkFunctionGroup = std::forward<CoreNetworkNetworkFunctionGroupT>(value); }
+    template<typename CoreNetworkNetworkFunctionGroupT = CoreNetworkNetworkFunctionGroupIdentifier>
+    RouteTableIdentifier& WithCoreNetworkNetworkFunctionGroup(CoreNetworkNetworkFunctionGroupT&& value) { SetCoreNetworkNetworkFunctionGroup(std::forward<CoreNetworkNetworkFunctionGroupT>(value)); return *this;}
     ///@}
   private:
 

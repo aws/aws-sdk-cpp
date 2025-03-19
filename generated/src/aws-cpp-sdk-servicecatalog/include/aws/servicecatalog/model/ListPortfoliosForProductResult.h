@@ -29,7 +29,7 @@ namespace Model
   class ListPortfoliosForProductResult
   {
   public:
-    AWS_SERVICECATALOG_API ListPortfoliosForProductResult();
+    AWS_SERVICECATALOG_API ListPortfoliosForProductResult() = default;
     AWS_SERVICECATALOG_API ListPortfoliosForProductResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVICECATALOG_API ListPortfoliosForProductResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Information about the portfolios.</p>
      */
-    inline const Aws::Vector<PortfolioDetail>& GetPortfolioDetails() const{ return m_portfolioDetails; }
-    inline void SetPortfolioDetails(const Aws::Vector<PortfolioDetail>& value) { m_portfolioDetails = value; }
-    inline void SetPortfolioDetails(Aws::Vector<PortfolioDetail>&& value) { m_portfolioDetails = std::move(value); }
-    inline ListPortfoliosForProductResult& WithPortfolioDetails(const Aws::Vector<PortfolioDetail>& value) { SetPortfolioDetails(value); return *this;}
-    inline ListPortfoliosForProductResult& WithPortfolioDetails(Aws::Vector<PortfolioDetail>&& value) { SetPortfolioDetails(std::move(value)); return *this;}
-    inline ListPortfoliosForProductResult& AddPortfolioDetails(const PortfolioDetail& value) { m_portfolioDetails.push_back(value); return *this; }
-    inline ListPortfoliosForProductResult& AddPortfolioDetails(PortfolioDetail&& value) { m_portfolioDetails.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PortfolioDetail>& GetPortfolioDetails() const { return m_portfolioDetails; }
+    template<typename PortfolioDetailsT = Aws::Vector<PortfolioDetail>>
+    void SetPortfolioDetails(PortfolioDetailsT&& value) { m_portfolioDetailsHasBeenSet = true; m_portfolioDetails = std::forward<PortfolioDetailsT>(value); }
+    template<typename PortfolioDetailsT = Aws::Vector<PortfolioDetail>>
+    ListPortfoliosForProductResult& WithPortfolioDetails(PortfolioDetailsT&& value) { SetPortfolioDetails(std::forward<PortfolioDetailsT>(value)); return *this;}
+    template<typename PortfolioDetailsT = PortfolioDetail>
+    ListPortfoliosForProductResult& AddPortfolioDetails(PortfolioDetailsT&& value) { m_portfolioDetailsHasBeenSet = true; m_portfolioDetails.emplace_back(std::forward<PortfolioDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The page token to use to retrieve the next set of results. If there are no
      * additional results, this value is null.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-    inline ListPortfoliosForProductResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline ListPortfoliosForProductResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline ListPortfoliosForProductResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    ListPortfoliosForProductResult& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListPortfoliosForProductResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListPortfoliosForProductResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListPortfoliosForProductResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListPortfoliosForProductResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<PortfolioDetail> m_portfolioDetails;
+    bool m_portfolioDetailsHasBeenSet = false;
 
     Aws::String m_nextPageToken;
+    bool m_nextPageTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

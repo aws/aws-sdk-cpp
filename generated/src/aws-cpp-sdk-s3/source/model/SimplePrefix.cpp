@@ -20,10 +20,6 @@ namespace S3
 namespace Model
 {
 
-SimplePrefix::SimplePrefix()
-{
-}
-
 SimplePrefix::SimplePrefix(const XmlNode& xmlNode)
 {
   *this = xmlNode;

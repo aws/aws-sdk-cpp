@@ -18,10 +18,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-XmlBlobsResult::XmlBlobsResult()
-{
-}
-
 XmlBlobsResult::XmlBlobsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -43,12 +39,14 @@ XmlBlobsResult& XmlBlobsResult::operator =(const Aws::AmazonWebServiceResult<Xml
     if(!dataNode.IsNull())
     {
       m_data = HashingUtils::Base64Decode(Aws::Utils::Xml::DecodeEscapedXmlText(dataNode.GetText()));
+      m_dataHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::QueryProtocol::Model::XmlBlobsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

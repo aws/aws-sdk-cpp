@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeRecordResult::DescribeRecordResult()
-{
-}
-
 DescribeRecordResult::DescribeRecordResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeRecordResult& DescribeRecordResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("RecordDetail"))
   {
     m_recordDetail = jsonValue.GetObject("RecordDetail");
-
+    m_recordDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordOutputs"))
   {
     Aws::Utils::Array<JsonView> recordOutputsJsonList = jsonValue.GetArray("RecordOutputs");
@@ -42,20 +37,20 @@ DescribeRecordResult& DescribeRecordResult::operator =(const Aws::AmazonWebServi
     {
       m_recordOutputs.push_back(recordOutputsJsonList[recordOutputsIndex].AsObject());
     }
+    m_recordOutputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextPageToken"))
   {
     m_nextPageToken = jsonValue.GetString("NextPageToken");
-
+    m_nextPageTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

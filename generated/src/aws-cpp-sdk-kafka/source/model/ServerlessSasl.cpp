@@ -18,13 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-ServerlessSasl::ServerlessSasl() : 
-    m_iamHasBeenSet(false)
-{
-}
-
 ServerlessSasl::ServerlessSasl(JsonView jsonValue)
-  : ServerlessSasl()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ServerlessSasl& ServerlessSasl::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("iam"))
   {
     m_iam = jsonValue.GetObject("iam");
-
     m_iamHasBeenSet = true;
   }
-
   return *this;
 }
 

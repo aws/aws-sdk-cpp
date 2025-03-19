@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-EbsInfo::EbsInfo() : 
-    m_ebsOptimizedSupport(EbsOptimizedSupport::NOT_SET),
-    m_ebsOptimizedSupportHasBeenSet(false),
-    m_encryptionSupport(EbsEncryptionSupport::NOT_SET),
-    m_encryptionSupportHasBeenSet(false),
-    m_ebsOptimizedInfoHasBeenSet(false),
-    m_nvmeSupport(EbsNvmeSupport::NOT_SET),
-    m_nvmeSupportHasBeenSet(false)
-{
-}
-
 EbsInfo::EbsInfo(const XmlNode& xmlNode)
-  : EbsInfo()
 {
   *this = xmlNode;
 }
@@ -46,13 +34,13 @@ EbsInfo& EbsInfo::operator =(const XmlNode& xmlNode)
     XmlNode ebsOptimizedSupportNode = resultNode.FirstChild("ebsOptimizedSupport");
     if(!ebsOptimizedSupportNode.IsNull())
     {
-      m_ebsOptimizedSupport = EbsOptimizedSupportMapper::GetEbsOptimizedSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ebsOptimizedSupportNode.GetText()).c_str()).c_str());
+      m_ebsOptimizedSupport = EbsOptimizedSupportMapper::GetEbsOptimizedSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ebsOptimizedSupportNode.GetText()).c_str()));
       m_ebsOptimizedSupportHasBeenSet = true;
     }
     XmlNode encryptionSupportNode = resultNode.FirstChild("encryptionSupport");
     if(!encryptionSupportNode.IsNull())
     {
-      m_encryptionSupport = EbsEncryptionSupportMapper::GetEbsEncryptionSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encryptionSupportNode.GetText()).c_str()).c_str());
+      m_encryptionSupport = EbsEncryptionSupportMapper::GetEbsEncryptionSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encryptionSupportNode.GetText()).c_str()));
       m_encryptionSupportHasBeenSet = true;
     }
     XmlNode ebsOptimizedInfoNode = resultNode.FirstChild("ebsOptimizedInfo");
@@ -64,7 +52,7 @@ EbsInfo& EbsInfo::operator =(const XmlNode& xmlNode)
     XmlNode nvmeSupportNode = resultNode.FirstChild("nvmeSupport");
     if(!nvmeSupportNode.IsNull())
     {
-      m_nvmeSupport = EbsNvmeSupportMapper::GetEbsNvmeSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nvmeSupportNode.GetText()).c_str()).c_str());
+      m_nvmeSupport = EbsNvmeSupportMapper::GetEbsNvmeSupportForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nvmeSupportNode.GetText()).c_str()));
       m_nvmeSupportHasBeenSet = true;
     }
   }

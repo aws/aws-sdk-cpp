@@ -12,12 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RetrieveTapeRecoveryPointRequest::RetrieveTapeRecoveryPointRequest() : 
-    m_tapeARNHasBeenSet(false),
-    m_gatewayARNHasBeenSet(false)
-{
-}
-
 Aws::String RetrieveTapeRecoveryPointRequest::SerializePayload() const
 {
   JsonValue payload;

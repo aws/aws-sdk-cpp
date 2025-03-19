@@ -34,7 +34,7 @@ namespace Model
   class Resource
   {
   public:
-    AWS_GLOBALACCELERATOR_API Resource();
+    AWS_GLOBALACCELERATOR_API Resource() = default;
     AWS_GLOBALACCELERATOR_API Resource(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLOBALACCELERATOR_API Resource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * Amazon Web Services resource, such as a Network Load Balancer, that Global
      * Accelerator supports as an endpoint for an accelerator.</p>
      */
-    inline const Aws::String& GetEndpointId() const{ return m_endpointId; }
+    inline const Aws::String& GetEndpointId() const { return m_endpointId; }
     inline bool EndpointIdHasBeenSet() const { return m_endpointIdHasBeenSet; }
-    inline void SetEndpointId(const Aws::String& value) { m_endpointIdHasBeenSet = true; m_endpointId = value; }
-    inline void SetEndpointId(Aws::String&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::move(value); }
-    inline void SetEndpointId(const char* value) { m_endpointIdHasBeenSet = true; m_endpointId.assign(value); }
-    inline Resource& WithEndpointId(const Aws::String& value) { SetEndpointId(value); return *this;}
-    inline Resource& WithEndpointId(Aws::String&& value) { SetEndpointId(std::move(value)); return *this;}
-    inline Resource& WithEndpointId(const char* value) { SetEndpointId(value); return *this;}
+    template<typename EndpointIdT = Aws::String>
+    void SetEndpointId(EndpointIdT&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::forward<EndpointIdT>(value); }
+    template<typename EndpointIdT = Aws::String>
+    Resource& WithEndpointId(EndpointIdT&& value) { SetEndpointId(std::forward<EndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/global-accelerator/latest/dg/using-byoip.html">Bring
      * your own IP addresses (BYOIP)</a> in the Global Accelerator Developer Guide.</p>
      */
-    inline const Aws::String& GetCidr() const{ return m_cidr; }
+    inline const Aws::String& GetCidr() const { return m_cidr; }
     inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
-    inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
-    inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
-    inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
-    inline Resource& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
-    inline Resource& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
-    inline Resource& WithCidr(const char* value) { SetCidr(value); return *this;}
+    template<typename CidrT = Aws::String>
+    void SetCidr(CidrT&& value) { m_cidrHasBeenSet = true; m_cidr = std::forward<CidrT>(value); }
+    template<typename CidrT = Aws::String>
+    Resource& WithCidr(CidrT&& value) { SetCidr(std::forward<CidrT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,12 @@ namespace Model
      * <p>The Amazon Web Services Region where a shared endpoint resource is
      * located.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline Resource& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline Resource& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline Resource& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    Resource& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
   private:
 

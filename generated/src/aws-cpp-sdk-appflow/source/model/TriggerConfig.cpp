@@ -18,15 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-TriggerConfig::TriggerConfig() : 
-    m_triggerType(TriggerType::NOT_SET),
-    m_triggerTypeHasBeenSet(false),
-    m_triggerPropertiesHasBeenSet(false)
-{
-}
-
 TriggerConfig::TriggerConfig(JsonView jsonValue)
-  : TriggerConfig()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TriggerConfig& TriggerConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("triggerType"))
   {
     m_triggerType = TriggerTypeMapper::GetTriggerTypeForName(jsonValue.GetString("triggerType"));
-
     m_triggerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("triggerProperties"))
   {
     m_triggerProperties = jsonValue.GetObject("triggerProperties");
-
     m_triggerPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

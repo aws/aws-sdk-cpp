@@ -35,7 +35,7 @@ namespace Model
   class AssessmentFramework
   {
   public:
-    AWS_AUDITMANAGER_API AssessmentFramework();
+    AWS_AUDITMANAGER_API AssessmentFramework() = default;
     AWS_AUDITMANAGER_API AssessmentFramework(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API AssessmentFramework& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,52 +45,48 @@ namespace Model
     /**
      * <p> The unique identifier for the framework. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline AssessmentFramework& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline AssessmentFramework& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline AssessmentFramework& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    AssessmentFramework& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Amazon Resource Name (ARN) of the framework. </p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline AssessmentFramework& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline AssessmentFramework& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline AssessmentFramework& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    AssessmentFramework& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const FrameworkMetadata& GetMetadata() const{ return m_metadata; }
+    inline const FrameworkMetadata& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const FrameworkMetadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(FrameworkMetadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline AssessmentFramework& WithMetadata(const FrameworkMetadata& value) { SetMetadata(value); return *this;}
-    inline AssessmentFramework& WithMetadata(FrameworkMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+    template<typename MetadataT = FrameworkMetadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = FrameworkMetadata>
+    AssessmentFramework& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The control sets that are associated with the framework. </p>
      */
-    inline const Aws::Vector<AssessmentControlSet>& GetControlSets() const{ return m_controlSets; }
+    inline const Aws::Vector<AssessmentControlSet>& GetControlSets() const { return m_controlSets; }
     inline bool ControlSetsHasBeenSet() const { return m_controlSetsHasBeenSet; }
-    inline void SetControlSets(const Aws::Vector<AssessmentControlSet>& value) { m_controlSetsHasBeenSet = true; m_controlSets = value; }
-    inline void SetControlSets(Aws::Vector<AssessmentControlSet>&& value) { m_controlSetsHasBeenSet = true; m_controlSets = std::move(value); }
-    inline AssessmentFramework& WithControlSets(const Aws::Vector<AssessmentControlSet>& value) { SetControlSets(value); return *this;}
-    inline AssessmentFramework& WithControlSets(Aws::Vector<AssessmentControlSet>&& value) { SetControlSets(std::move(value)); return *this;}
-    inline AssessmentFramework& AddControlSets(const AssessmentControlSet& value) { m_controlSetsHasBeenSet = true; m_controlSets.push_back(value); return *this; }
-    inline AssessmentFramework& AddControlSets(AssessmentControlSet&& value) { m_controlSetsHasBeenSet = true; m_controlSets.push_back(std::move(value)); return *this; }
+    template<typename ControlSetsT = Aws::Vector<AssessmentControlSet>>
+    void SetControlSets(ControlSetsT&& value) { m_controlSetsHasBeenSet = true; m_controlSets = std::forward<ControlSetsT>(value); }
+    template<typename ControlSetsT = Aws::Vector<AssessmentControlSet>>
+    AssessmentFramework& WithControlSets(ControlSetsT&& value) { SetControlSets(std::forward<ControlSetsT>(value)); return *this;}
+    template<typename ControlSetsT = AssessmentControlSet>
+    AssessmentFramework& AddControlSets(ControlSetsT&& value) { m_controlSetsHasBeenSet = true; m_controlSets.emplace_back(std::forward<ControlSetsT>(value)); return *this; }
     ///@}
   private:
 

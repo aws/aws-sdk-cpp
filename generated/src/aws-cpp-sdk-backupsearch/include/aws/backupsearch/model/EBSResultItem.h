@@ -33,7 +33,7 @@ namespace Model
   class EBSResultItem
   {
   public:
-    AWS_BACKUPSEARCH_API EBSResultItem();
+    AWS_BACKUPSEARCH_API EBSResultItem() = default;
     AWS_BACKUPSEARCH_API EBSResultItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUPSEARCH_API EBSResultItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUPSEARCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * Resource Name (ARN) of recovery points returned in a search of Amazon EBS backup
      * metadata.</p>
      */
-    inline const Aws::String& GetBackupResourceArn() const{ return m_backupResourceArn; }
+    inline const Aws::String& GetBackupResourceArn() const { return m_backupResourceArn; }
     inline bool BackupResourceArnHasBeenSet() const { return m_backupResourceArnHasBeenSet; }
-    inline void SetBackupResourceArn(const Aws::String& value) { m_backupResourceArnHasBeenSet = true; m_backupResourceArn = value; }
-    inline void SetBackupResourceArn(Aws::String&& value) { m_backupResourceArnHasBeenSet = true; m_backupResourceArn = std::move(value); }
-    inline void SetBackupResourceArn(const char* value) { m_backupResourceArnHasBeenSet = true; m_backupResourceArn.assign(value); }
-    inline EBSResultItem& WithBackupResourceArn(const Aws::String& value) { SetBackupResourceArn(value); return *this;}
-    inline EBSResultItem& WithBackupResourceArn(Aws::String&& value) { SetBackupResourceArn(std::move(value)); return *this;}
-    inline EBSResultItem& WithBackupResourceArn(const char* value) { SetBackupResourceArn(value); return *this;}
+    template<typename BackupResourceArnT = Aws::String>
+    void SetBackupResourceArn(BackupResourceArnT&& value) { m_backupResourceArnHasBeenSet = true; m_backupResourceArn = std::forward<BackupResourceArnT>(value); }
+    template<typename BackupResourceArnT = Aws::String>
+    EBSResultItem& WithBackupResourceArn(BackupResourceArnT&& value) { SetBackupResourceArn(std::forward<BackupResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,28 +59,24 @@ namespace Model
      * Resource Name (ARN) of source resources returned in a search of Amazon EBS
      * backup metadata.</p>
      */
-    inline const Aws::String& GetSourceResourceArn() const{ return m_sourceResourceArn; }
+    inline const Aws::String& GetSourceResourceArn() const { return m_sourceResourceArn; }
     inline bool SourceResourceArnHasBeenSet() const { return m_sourceResourceArnHasBeenSet; }
-    inline void SetSourceResourceArn(const Aws::String& value) { m_sourceResourceArnHasBeenSet = true; m_sourceResourceArn = value; }
-    inline void SetSourceResourceArn(Aws::String&& value) { m_sourceResourceArnHasBeenSet = true; m_sourceResourceArn = std::move(value); }
-    inline void SetSourceResourceArn(const char* value) { m_sourceResourceArnHasBeenSet = true; m_sourceResourceArn.assign(value); }
-    inline EBSResultItem& WithSourceResourceArn(const Aws::String& value) { SetSourceResourceArn(value); return *this;}
-    inline EBSResultItem& WithSourceResourceArn(Aws::String&& value) { SetSourceResourceArn(std::move(value)); return *this;}
-    inline EBSResultItem& WithSourceResourceArn(const char* value) { SetSourceResourceArn(value); return *this;}
+    template<typename SourceResourceArnT = Aws::String>
+    void SetSourceResourceArn(SourceResourceArnT&& value) { m_sourceResourceArnHasBeenSet = true; m_sourceResourceArn = std::forward<SourceResourceArnT>(value); }
+    template<typename SourceResourceArnT = Aws::String>
+    EBSResultItem& WithSourceResourceArn(SourceResourceArnT&& value) { SetSourceResourceArn(std::forward<SourceResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the backup vault.</p>
      */
-    inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
+    inline const Aws::String& GetBackupVaultName() const { return m_backupVaultName; }
     inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
-    inline void SetBackupVaultName(const Aws::String& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = value; }
-    inline void SetBackupVaultName(Aws::String&& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = std::move(value); }
-    inline void SetBackupVaultName(const char* value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName.assign(value); }
-    inline EBSResultItem& WithBackupVaultName(const Aws::String& value) { SetBackupVaultName(value); return *this;}
-    inline EBSResultItem& WithBackupVaultName(Aws::String&& value) { SetBackupVaultName(std::move(value)); return *this;}
-    inline EBSResultItem& WithBackupVaultName(const char* value) { SetBackupVaultName(value); return *this;}
+    template<typename BackupVaultNameT = Aws::String>
+    void SetBackupVaultName(BackupVaultNameT&& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = std::forward<BackupVaultNameT>(value); }
+    template<typename BackupVaultNameT = Aws::String>
+    EBSResultItem& WithBackupVaultName(BackupVaultNameT&& value) { SetBackupVaultName(std::forward<BackupVaultNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +84,12 @@ namespace Model
      * <p>These are one or more items in the results that match values for file systems
      * returned in a search of Amazon EBS backup metadata.</p>
      */
-    inline const Aws::String& GetFileSystemIdentifier() const{ return m_fileSystemIdentifier; }
+    inline const Aws::String& GetFileSystemIdentifier() const { return m_fileSystemIdentifier; }
     inline bool FileSystemIdentifierHasBeenSet() const { return m_fileSystemIdentifierHasBeenSet; }
-    inline void SetFileSystemIdentifier(const Aws::String& value) { m_fileSystemIdentifierHasBeenSet = true; m_fileSystemIdentifier = value; }
-    inline void SetFileSystemIdentifier(Aws::String&& value) { m_fileSystemIdentifierHasBeenSet = true; m_fileSystemIdentifier = std::move(value); }
-    inline void SetFileSystemIdentifier(const char* value) { m_fileSystemIdentifierHasBeenSet = true; m_fileSystemIdentifier.assign(value); }
-    inline EBSResultItem& WithFileSystemIdentifier(const Aws::String& value) { SetFileSystemIdentifier(value); return *this;}
-    inline EBSResultItem& WithFileSystemIdentifier(Aws::String&& value) { SetFileSystemIdentifier(std::move(value)); return *this;}
-    inline EBSResultItem& WithFileSystemIdentifier(const char* value) { SetFileSystemIdentifier(value); return *this;}
+    template<typename FileSystemIdentifierT = Aws::String>
+    void SetFileSystemIdentifier(FileSystemIdentifierT&& value) { m_fileSystemIdentifierHasBeenSet = true; m_fileSystemIdentifier = std::forward<FileSystemIdentifierT>(value); }
+    template<typename FileSystemIdentifierT = Aws::String>
+    EBSResultItem& WithFileSystemIdentifier(FileSystemIdentifierT&& value) { SetFileSystemIdentifier(std::forward<FileSystemIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +97,12 @@ namespace Model
      * <p>These are one or more items in the results that match values for file paths
      * returned in a search of Amazon EBS backup metadata.</p>
      */
-    inline const Aws::String& GetFilePath() const{ return m_filePath; }
+    inline const Aws::String& GetFilePath() const { return m_filePath; }
     inline bool FilePathHasBeenSet() const { return m_filePathHasBeenSet; }
-    inline void SetFilePath(const Aws::String& value) { m_filePathHasBeenSet = true; m_filePath = value; }
-    inline void SetFilePath(Aws::String&& value) { m_filePathHasBeenSet = true; m_filePath = std::move(value); }
-    inline void SetFilePath(const char* value) { m_filePathHasBeenSet = true; m_filePath.assign(value); }
-    inline EBSResultItem& WithFilePath(const Aws::String& value) { SetFilePath(value); return *this;}
-    inline EBSResultItem& WithFilePath(Aws::String&& value) { SetFilePath(std::move(value)); return *this;}
-    inline EBSResultItem& WithFilePath(const char* value) { SetFilePath(value); return *this;}
+    template<typename FilePathT = Aws::String>
+    void SetFilePath(FilePathT&& value) { m_filePathHasBeenSet = true; m_filePath = std::forward<FilePathT>(value); }
+    template<typename FilePathT = Aws::String>
+    EBSResultItem& WithFilePath(FilePathT&& value) { SetFilePath(std::forward<FilePathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,7 +110,7 @@ namespace Model
      * <p>These are one or more items in the results that match values for file sizes
      * returned in a search of Amazon EBS backup metadata.</p>
      */
-    inline long long GetFileSize() const{ return m_fileSize; }
+    inline long long GetFileSize() const { return m_fileSize; }
     inline bool FileSizeHasBeenSet() const { return m_fileSizeHasBeenSet; }
     inline void SetFileSize(long long value) { m_fileSizeHasBeenSet = true; m_fileSize = value; }
     inline EBSResultItem& WithFileSize(long long value) { SetFileSize(value); return *this;}
@@ -131,12 +121,12 @@ namespace Model
      * <p>These are one or more items in the results that match values for creation
      * times returned in a search of Amazon EBS backup metadata.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline EBSResultItem& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline EBSResultItem& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    EBSResultItem& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -144,12 +134,12 @@ namespace Model
      * <p>These are one or more items in the results that match values for Last
      * Modified Time returned in a search of Amazon EBS backup metadata.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline EBSResultItem& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline EBSResultItem& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    EBSResultItem& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -168,13 +158,13 @@ namespace Model
     Aws::String m_filePath;
     bool m_filePathHasBeenSet = false;
 
-    long long m_fileSize;
+    long long m_fileSize{0};
     bool m_fileSizeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
   };
 

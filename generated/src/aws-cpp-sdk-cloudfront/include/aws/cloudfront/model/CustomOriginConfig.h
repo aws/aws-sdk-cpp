@@ -35,7 +35,7 @@ namespace Model
   class CustomOriginConfig
   {
   public:
-    AWS_CLOUDFRONT_API CustomOriginConfig();
+    AWS_CLOUDFRONT_API CustomOriginConfig() = default;
     AWS_CLOUDFRONT_API CustomOriginConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API CustomOriginConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,7 +47,7 @@ namespace Model
      * <p>The HTTP port that CloudFront uses to connect to the origin. Specify the HTTP
      * port that the origin listens on.</p>
      */
-    inline int GetHTTPPort() const{ return m_hTTPPort; }
+    inline int GetHTTPPort() const { return m_hTTPPort; }
     inline bool HTTPPortHasBeenSet() const { return m_hTTPPortHasBeenSet; }
     inline void SetHTTPPort(int value) { m_hTTPPortHasBeenSet = true; m_hTTPPort = value; }
     inline CustomOriginConfig& WithHTTPPort(int value) { SetHTTPPort(value); return *this;}
@@ -58,7 +58,7 @@ namespace Model
      * <p>The HTTPS port that CloudFront uses to connect to the origin. Specify the
      * HTTPS port that the origin listens on.</p>
      */
-    inline int GetHTTPSPort() const{ return m_hTTPSPort; }
+    inline int GetHTTPSPort() const { return m_hTTPSPort; }
     inline bool HTTPSPortHasBeenSet() const { return m_hTTPSPortHasBeenSet; }
     inline void SetHTTPSPort(int value) { m_hTTPSPortHasBeenSet = true; m_hTTPSPort = value; }
     inline CustomOriginConfig& WithHTTPSPort(int value) { SetHTTPSPort(value); return *this;}
@@ -74,12 +74,10 @@ namespace Model
      * <code>https-only</code> – CloudFront always uses HTTPS to connect to the
      * origin.</p> </li> </ul>
      */
-    inline const OriginProtocolPolicy& GetOriginProtocolPolicy() const{ return m_originProtocolPolicy; }
+    inline OriginProtocolPolicy GetOriginProtocolPolicy() const { return m_originProtocolPolicy; }
     inline bool OriginProtocolPolicyHasBeenSet() const { return m_originProtocolPolicyHasBeenSet; }
-    inline void SetOriginProtocolPolicy(const OriginProtocolPolicy& value) { m_originProtocolPolicyHasBeenSet = true; m_originProtocolPolicy = value; }
-    inline void SetOriginProtocolPolicy(OriginProtocolPolicy&& value) { m_originProtocolPolicyHasBeenSet = true; m_originProtocolPolicy = std::move(value); }
-    inline CustomOriginConfig& WithOriginProtocolPolicy(const OriginProtocolPolicy& value) { SetOriginProtocolPolicy(value); return *this;}
-    inline CustomOriginConfig& WithOriginProtocolPolicy(OriginProtocolPolicy&& value) { SetOriginProtocolPolicy(std::move(value)); return *this;}
+    inline void SetOriginProtocolPolicy(OriginProtocolPolicy value) { m_originProtocolPolicyHasBeenSet = true; m_originProtocolPolicy = value; }
+    inline CustomOriginConfig& WithOriginProtocolPolicy(OriginProtocolPolicy value) { SetOriginProtocolPolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -91,12 +89,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/distribution-web-values-specify.html#DownloadDistValuesOriginSSLProtocols">Minimum
      * Origin SSL Protocol</a> in the <i>Amazon CloudFront Developer Guide</i>.</p>
      */
-    inline const OriginSslProtocols& GetOriginSslProtocols() const{ return m_originSslProtocols; }
+    inline const OriginSslProtocols& GetOriginSslProtocols() const { return m_originSslProtocols; }
     inline bool OriginSslProtocolsHasBeenSet() const { return m_originSslProtocolsHasBeenSet; }
-    inline void SetOriginSslProtocols(const OriginSslProtocols& value) { m_originSslProtocolsHasBeenSet = true; m_originSslProtocols = value; }
-    inline void SetOriginSslProtocols(OriginSslProtocols&& value) { m_originSslProtocolsHasBeenSet = true; m_originSslProtocols = std::move(value); }
-    inline CustomOriginConfig& WithOriginSslProtocols(const OriginSslProtocols& value) { SetOriginSslProtocols(value); return *this;}
-    inline CustomOriginConfig& WithOriginSslProtocols(OriginSslProtocols&& value) { SetOriginSslProtocols(std::move(value)); return *this;}
+    template<typename OriginSslProtocolsT = OriginSslProtocols>
+    void SetOriginSslProtocols(OriginSslProtocolsT&& value) { m_originSslProtocolsHasBeenSet = true; m_originSslProtocols = std::forward<OriginSslProtocolsT>(value); }
+    template<typename OriginSslProtocolsT = OriginSslProtocols>
+    CustomOriginConfig& WithOriginSslProtocols(OriginSslProtocolsT&& value) { SetOriginSslProtocols(std::forward<OriginSslProtocolsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,7 +107,7 @@ namespace Model
      * timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>
      */
-    inline int GetOriginReadTimeout() const{ return m_originReadTimeout; }
+    inline int GetOriginReadTimeout() const { return m_originReadTimeout; }
     inline bool OriginReadTimeoutHasBeenSet() const { return m_originReadTimeoutHasBeenSet; }
     inline void SetOriginReadTimeout(int value) { m_originReadTimeoutHasBeenSet = true; m_originReadTimeout = value; }
     inline CustomOriginConfig& WithOriginReadTimeout(int value) { SetOriginReadTimeout(value); return *this;}
@@ -125,29 +123,29 @@ namespace Model
      * timeout (custom origins only)</a> in the <i>Amazon CloudFront Developer
      * Guide</i>.</p>
      */
-    inline int GetOriginKeepaliveTimeout() const{ return m_originKeepaliveTimeout; }
+    inline int GetOriginKeepaliveTimeout() const { return m_originKeepaliveTimeout; }
     inline bool OriginKeepaliveTimeoutHasBeenSet() const { return m_originKeepaliveTimeoutHasBeenSet; }
     inline void SetOriginKeepaliveTimeout(int value) { m_originKeepaliveTimeoutHasBeenSet = true; m_originKeepaliveTimeout = value; }
     inline CustomOriginConfig& WithOriginKeepaliveTimeout(int value) { SetOriginKeepaliveTimeout(value); return *this;}
     ///@}
   private:
 
-    int m_hTTPPort;
+    int m_hTTPPort{0};
     bool m_hTTPPortHasBeenSet = false;
 
-    int m_hTTPSPort;
+    int m_hTTPSPort{0};
     bool m_hTTPSPortHasBeenSet = false;
 
-    OriginProtocolPolicy m_originProtocolPolicy;
+    OriginProtocolPolicy m_originProtocolPolicy{OriginProtocolPolicy::NOT_SET};
     bool m_originProtocolPolicyHasBeenSet = false;
 
     OriginSslProtocols m_originSslProtocols;
     bool m_originSslProtocolsHasBeenSet = false;
 
-    int m_originReadTimeout;
+    int m_originReadTimeout{0};
     bool m_originReadTimeoutHasBeenSet = false;
 
-    int m_originKeepaliveTimeout;
+    int m_originKeepaliveTimeout{0};
     bool m_originKeepaliveTimeoutHasBeenSet = false;
   };
 

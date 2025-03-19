@@ -18,13 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-OtaTaskExecutionRetryConfig::OtaTaskExecutionRetryConfig() : 
-    m_retryConfigCriteriaHasBeenSet(false)
-{
-}
-
 OtaTaskExecutionRetryConfig::OtaTaskExecutionRetryConfig(JsonView jsonValue)
-  : OtaTaskExecutionRetryConfig()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ OtaTaskExecutionRetryConfig& OtaTaskExecutionRetryConfig::operator =(JsonView js
     }
     m_retryConfigCriteriaHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAcceleratorResult::CreateAcceleratorResult()
-{
-}
-
 CreateAcceleratorResult::CreateAcceleratorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateAcceleratorResult& CreateAcceleratorResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("Accelerator"))
   {
     m_accelerator = jsonValue.GetObject("Accelerator");
-
+    m_acceleratorHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

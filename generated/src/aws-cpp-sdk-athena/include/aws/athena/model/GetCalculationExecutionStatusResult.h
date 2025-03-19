@@ -29,7 +29,7 @@ namespace Model
   class GetCalculationExecutionStatusResult
   {
   public:
-    AWS_ATHENA_API GetCalculationExecutionStatusResult();
+    AWS_ATHENA_API GetCalculationExecutionStatusResult() = default;
     AWS_ATHENA_API GetCalculationExecutionStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ATHENA_API GetCalculationExecutionStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,41 +38,42 @@ namespace Model
     /**
      * <p>Contains information about the calculation execution status.</p>
      */
-    inline const CalculationStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const CalculationStatus& value) { m_status = value; }
-    inline void SetStatus(CalculationStatus&& value) { m_status = std::move(value); }
-    inline GetCalculationExecutionStatusResult& WithStatus(const CalculationStatus& value) { SetStatus(value); return *this;}
-    inline GetCalculationExecutionStatusResult& WithStatus(CalculationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline const CalculationStatus& GetStatus() const { return m_status; }
+    template<typename StatusT = CalculationStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = CalculationStatus>
+    GetCalculationExecutionStatusResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains information about the DPU execution time and progress.</p>
      */
-    inline const CalculationStatistics& GetStatistics() const{ return m_statistics; }
-    inline void SetStatistics(const CalculationStatistics& value) { m_statistics = value; }
-    inline void SetStatistics(CalculationStatistics&& value) { m_statistics = std::move(value); }
-    inline GetCalculationExecutionStatusResult& WithStatistics(const CalculationStatistics& value) { SetStatistics(value); return *this;}
-    inline GetCalculationExecutionStatusResult& WithStatistics(CalculationStatistics&& value) { SetStatistics(std::move(value)); return *this;}
+    inline const CalculationStatistics& GetStatistics() const { return m_statistics; }
+    template<typename StatisticsT = CalculationStatistics>
+    void SetStatistics(StatisticsT&& value) { m_statisticsHasBeenSet = true; m_statistics = std::forward<StatisticsT>(value); }
+    template<typename StatisticsT = CalculationStatistics>
+    GetCalculationExecutionStatusResult& WithStatistics(StatisticsT&& value) { SetStatistics(std::forward<StatisticsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetCalculationExecutionStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetCalculationExecutionStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetCalculationExecutionStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetCalculationExecutionStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     CalculationStatus m_status;
+    bool m_statusHasBeenSet = false;
 
     CalculationStatistics m_statistics;
+    bool m_statisticsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,7 +28,7 @@ namespace Model
   class GetScheduledActionResult
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API GetScheduledActionResult();
+    AWS_REDSHIFTSERVERLESS_API GetScheduledActionResult() = default;
     AWS_REDSHIFTSERVERLESS_API GetScheduledActionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REDSHIFTSERVERLESS_API GetScheduledActionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The returned scheduled action object.</p>
      */
-    inline const ScheduledActionResponse& GetScheduledAction() const{ return m_scheduledAction; }
-    inline void SetScheduledAction(const ScheduledActionResponse& value) { m_scheduledAction = value; }
-    inline void SetScheduledAction(ScheduledActionResponse&& value) { m_scheduledAction = std::move(value); }
-    inline GetScheduledActionResult& WithScheduledAction(const ScheduledActionResponse& value) { SetScheduledAction(value); return *this;}
-    inline GetScheduledActionResult& WithScheduledAction(ScheduledActionResponse&& value) { SetScheduledAction(std::move(value)); return *this;}
+    inline const ScheduledActionResponse& GetScheduledAction() const { return m_scheduledAction; }
+    template<typename ScheduledActionT = ScheduledActionResponse>
+    void SetScheduledAction(ScheduledActionT&& value) { m_scheduledActionHasBeenSet = true; m_scheduledAction = std::forward<ScheduledActionT>(value); }
+    template<typename ScheduledActionT = ScheduledActionResponse>
+    GetScheduledActionResult& WithScheduledAction(ScheduledActionT&& value) { SetScheduledAction(std::forward<ScheduledActionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetScheduledActionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetScheduledActionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetScheduledActionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetScheduledActionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ScheduledActionResponse m_scheduledAction;
+    bool m_scheduledActionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

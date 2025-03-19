@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DateTimeHierarchy::DateTimeHierarchy() : 
-    m_hierarchyIdHasBeenSet(false),
-    m_drillDownFiltersHasBeenSet(false)
-{
-}
-
 DateTimeHierarchy::DateTimeHierarchy(JsonView jsonValue)
-  : DateTimeHierarchy()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DateTimeHierarchy& DateTimeHierarchy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HierarchyId"))
   {
     m_hierarchyId = jsonValue.GetString("HierarchyId");
-
     m_hierarchyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DrillDownFilters"))
   {
     Aws::Utils::Array<JsonView> drillDownFiltersJsonList = jsonValue.GetArray("DrillDownFilters");
@@ -48,7 +39,6 @@ DateTimeHierarchy& DateTimeHierarchy::operator =(JsonView jsonValue)
     }
     m_drillDownFiltersHasBeenSet = true;
   }
-
   return *this;
 }
 

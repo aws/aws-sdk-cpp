@@ -32,7 +32,7 @@ namespace Model
   class FailureDetails
   {
   public:
-    AWS_CODEPIPELINE_API FailureDetails();
+    AWS_CODEPIPELINE_API FailureDetails() = default;
     AWS_CODEPIPELINE_API FailureDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API FailureDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,44 +42,38 @@ namespace Model
     /**
      * <p>The type of the failure.</p>
      */
-    inline const FailureType& GetType() const{ return m_type; }
+    inline FailureType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const FailureType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(FailureType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline FailureDetails& WithType(const FailureType& value) { SetType(value); return *this;}
-    inline FailureDetails& WithType(FailureType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(FailureType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline FailureDetails& WithType(FailureType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The message about the failure.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline FailureDetails& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline FailureDetails& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline FailureDetails& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    FailureDetails& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The external ID of the run of the action that failed.</p>
      */
-    inline const Aws::String& GetExternalExecutionId() const{ return m_externalExecutionId; }
+    inline const Aws::String& GetExternalExecutionId() const { return m_externalExecutionId; }
     inline bool ExternalExecutionIdHasBeenSet() const { return m_externalExecutionIdHasBeenSet; }
-    inline void SetExternalExecutionId(const Aws::String& value) { m_externalExecutionIdHasBeenSet = true; m_externalExecutionId = value; }
-    inline void SetExternalExecutionId(Aws::String&& value) { m_externalExecutionIdHasBeenSet = true; m_externalExecutionId = std::move(value); }
-    inline void SetExternalExecutionId(const char* value) { m_externalExecutionIdHasBeenSet = true; m_externalExecutionId.assign(value); }
-    inline FailureDetails& WithExternalExecutionId(const Aws::String& value) { SetExternalExecutionId(value); return *this;}
-    inline FailureDetails& WithExternalExecutionId(Aws::String&& value) { SetExternalExecutionId(std::move(value)); return *this;}
-    inline FailureDetails& WithExternalExecutionId(const char* value) { SetExternalExecutionId(value); return *this;}
+    template<typename ExternalExecutionIdT = Aws::String>
+    void SetExternalExecutionId(ExternalExecutionIdT&& value) { m_externalExecutionIdHasBeenSet = true; m_externalExecutionId = std::forward<ExternalExecutionIdT>(value); }
+    template<typename ExternalExecutionIdT = Aws::String>
+    FailureDetails& WithExternalExecutionId(ExternalExecutionIdT&& value) { SetExternalExecutionId(std::forward<ExternalExecutionIdT>(value)); return *this;}
     ///@}
   private:
 
-    FailureType m_type;
+    FailureType m_type{FailureType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_message;

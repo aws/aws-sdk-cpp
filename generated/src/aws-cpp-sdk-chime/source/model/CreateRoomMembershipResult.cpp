@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateRoomMembershipResult::CreateRoomMembershipResult()
-{
-}
-
 CreateRoomMembershipResult::CreateRoomMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateRoomMembershipResult& CreateRoomMembershipResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("RoomMembership"))
   {
     m_roomMembership = jsonValue.GetObject("RoomMembership");
-
+    m_roomMembershipHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

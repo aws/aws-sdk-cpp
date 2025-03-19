@@ -20,18 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-CacheParameterGroup::CacheParameterGroup() : 
-    m_cacheParameterGroupNameHasBeenSet(false),
-    m_cacheParameterGroupFamilyHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_isGlobal(false),
-    m_isGlobalHasBeenSet(false),
-    m_aRNHasBeenSet(false)
-{
-}
-
 CacheParameterGroup::CacheParameterGroup(const XmlNode& xmlNode)
-  : CacheParameterGroup()
 {
   *this = xmlNode;
 }

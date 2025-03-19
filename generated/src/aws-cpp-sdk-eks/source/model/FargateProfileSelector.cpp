@@ -18,14 +18,7 @@ namespace EKS
 namespace Model
 {
 
-FargateProfileSelector::FargateProfileSelector() : 
-    m_namespaceHasBeenSet(false),
-    m_labelsHasBeenSet(false)
-{
-}
-
 FargateProfileSelector::FargateProfileSelector(JsonView jsonValue)
-  : FargateProfileSelector()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ FargateProfileSelector& FargateProfileSelector::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("namespace"))
   {
     m_namespace = jsonValue.GetString("namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("labels"))
   {
     Aws::Map<Aws::String, JsonView> labelsJsonMap = jsonValue.GetObject("labels").GetAllObjects();
@@ -48,7 +39,6 @@ FargateProfileSelector& FargateProfileSelector::operator =(JsonView jsonValue)
     }
     m_labelsHasBeenSet = true;
   }
-
   return *this;
 }
 

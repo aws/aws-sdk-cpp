@@ -28,7 +28,7 @@ namespace Model
   class GetRegexPatternSetResult
   {
   public:
-    AWS_WAFV2_API GetRegexPatternSetResult();
+    AWS_WAFV2_API GetRegexPatternSetResult() = default;
     AWS_WAFV2_API GetRegexPatternSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WAFV2_API GetRegexPatternSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,11 +37,11 @@ namespace Model
     /**
      * <p/>
      */
-    inline const RegexPatternSet& GetRegexPatternSet() const{ return m_regexPatternSet; }
-    inline void SetRegexPatternSet(const RegexPatternSet& value) { m_regexPatternSet = value; }
-    inline void SetRegexPatternSet(RegexPatternSet&& value) { m_regexPatternSet = std::move(value); }
-    inline GetRegexPatternSetResult& WithRegexPatternSet(const RegexPatternSet& value) { SetRegexPatternSet(value); return *this;}
-    inline GetRegexPatternSetResult& WithRegexPatternSet(RegexPatternSet&& value) { SetRegexPatternSet(std::move(value)); return *this;}
+    inline const RegexPatternSet& GetRegexPatternSet() const { return m_regexPatternSet; }
+    template<typename RegexPatternSetT = RegexPatternSet>
+    void SetRegexPatternSet(RegexPatternSetT&& value) { m_regexPatternSetHasBeenSet = true; m_regexPatternSet = std::forward<RegexPatternSetT>(value); }
+    template<typename RegexPatternSetT = RegexPatternSet>
+    GetRegexPatternSetResult& WithRegexPatternSet(RegexPatternSetT&& value) { SetRegexPatternSet(std::forward<RegexPatternSetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * fails with a <code>WAFOptimisticLockException</code>. If this happens, perform
      * another <code>get</code>, and use the new token returned by that operation. </p>
      */
-    inline const Aws::String& GetLockToken() const{ return m_lockToken; }
-    inline void SetLockToken(const Aws::String& value) { m_lockToken = value; }
-    inline void SetLockToken(Aws::String&& value) { m_lockToken = std::move(value); }
-    inline void SetLockToken(const char* value) { m_lockToken.assign(value); }
-    inline GetRegexPatternSetResult& WithLockToken(const Aws::String& value) { SetLockToken(value); return *this;}
-    inline GetRegexPatternSetResult& WithLockToken(Aws::String&& value) { SetLockToken(std::move(value)); return *this;}
-    inline GetRegexPatternSetResult& WithLockToken(const char* value) { SetLockToken(value); return *this;}
+    inline const Aws::String& GetLockToken() const { return m_lockToken; }
+    template<typename LockTokenT = Aws::String>
+    void SetLockToken(LockTokenT&& value) { m_lockTokenHasBeenSet = true; m_lockToken = std::forward<LockTokenT>(value); }
+    template<typename LockTokenT = Aws::String>
+    GetRegexPatternSetResult& WithLockToken(LockTokenT&& value) { SetLockToken(std::forward<LockTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRegexPatternSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRegexPatternSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRegexPatternSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRegexPatternSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RegexPatternSet m_regexPatternSet;
+    bool m_regexPatternSetHasBeenSet = false;
 
     Aws::String m_lockToken;
+    bool m_lockTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

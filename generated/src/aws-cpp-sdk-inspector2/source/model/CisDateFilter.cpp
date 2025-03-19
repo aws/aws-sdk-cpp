@@ -18,14 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-CisDateFilter::CisDateFilter() : 
-    m_earliestScanStartTimeHasBeenSet(false),
-    m_latestScanStartTimeHasBeenSet(false)
-{
-}
-
 CisDateFilter::CisDateFilter(JsonView jsonValue)
-  : CisDateFilter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CisDateFilter& CisDateFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("earliestScanStartTime"))
   {
     m_earliestScanStartTime = jsonValue.GetDouble("earliestScanStartTime");
-
     m_earliestScanStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestScanStartTime"))
   {
     m_latestScanStartTime = jsonValue.GetDouble("latestScanStartTime");
-
     m_latestScanStartTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

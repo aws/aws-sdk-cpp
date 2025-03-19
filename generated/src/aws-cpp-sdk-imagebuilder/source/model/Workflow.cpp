@@ -18,26 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-Workflow::Workflow() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_changeDescriptionHasBeenSet(false),
-    m_type(WorkflowType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 Workflow::Workflow(JsonView jsonValue)
-  : Workflow()
 {
   *this = jsonValue;
 }
@@ -47,80 +28,58 @@ Workflow& Workflow::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("changeDescription"))
   {
     m_changeDescription = jsonValue.GetString("changeDescription");
-
     m_changeDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = WorkflowTypeMapper::GetWorkflowTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetObject("state");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owner"))
   {
     m_owner = jsonValue.GetString("owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("data"))
   {
     m_data = jsonValue.GetString("data");
-
     m_dataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dateCreated"))
   {
     m_dateCreated = jsonValue.GetString("dateCreated");
-
     m_dateCreatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -130,7 +89,6 @@ Workflow& Workflow::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("parameters");
@@ -140,7 +98,6 @@ Workflow& Workflow::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

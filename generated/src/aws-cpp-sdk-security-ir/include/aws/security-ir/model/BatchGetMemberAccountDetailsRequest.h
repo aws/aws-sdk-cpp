@@ -22,7 +22,7 @@ namespace Model
   class BatchGetMemberAccountDetailsRequest : public SecurityIRRequest
   {
   public:
-    AWS_SECURITYIR_API BatchGetMemberAccountDetailsRequest();
+    AWS_SECURITYIR_API BatchGetMemberAccountDetailsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * <p>Required element used in combination with BatchGetMemberAccountDetails to
      * identify the membership ID to query. </p>
      */
-    inline const Aws::String& GetMembershipId() const{ return m_membershipId; }
+    inline const Aws::String& GetMembershipId() const { return m_membershipId; }
     inline bool MembershipIdHasBeenSet() const { return m_membershipIdHasBeenSet; }
-    inline void SetMembershipId(const Aws::String& value) { m_membershipIdHasBeenSet = true; m_membershipId = value; }
-    inline void SetMembershipId(Aws::String&& value) { m_membershipIdHasBeenSet = true; m_membershipId = std::move(value); }
-    inline void SetMembershipId(const char* value) { m_membershipIdHasBeenSet = true; m_membershipId.assign(value); }
-    inline BatchGetMemberAccountDetailsRequest& WithMembershipId(const Aws::String& value) { SetMembershipId(value); return *this;}
-    inline BatchGetMemberAccountDetailsRequest& WithMembershipId(Aws::String&& value) { SetMembershipId(std::move(value)); return *this;}
-    inline BatchGetMemberAccountDetailsRequest& WithMembershipId(const char* value) { SetMembershipId(value); return *this;}
+    template<typename MembershipIdT = Aws::String>
+    void SetMembershipId(MembershipIdT&& value) { m_membershipIdHasBeenSet = true; m_membershipId = std::forward<MembershipIdT>(value); }
+    template<typename MembershipIdT = Aws::String>
+    BatchGetMemberAccountDetailsRequest& WithMembershipId(MembershipIdT&& value) { SetMembershipId(std::forward<MembershipIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,15 +51,14 @@ namespace Model
      * <p>Optional element to query the membership relationship status to a provided
      * list of account IDs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
+    inline const Aws::Vector<Aws::String>& GetAccountIds() const { return m_accountIds; }
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
-    inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
-    inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
-    inline BatchGetMemberAccountDetailsRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
-    inline BatchGetMemberAccountDetailsRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
-    inline BatchGetMemberAccountDetailsRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-    inline BatchGetMemberAccountDetailsRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
-    inline BatchGetMemberAccountDetailsRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
+    template<typename AccountIdsT = Aws::Vector<Aws::String>>
+    void SetAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::forward<AccountIdsT>(value); }
+    template<typename AccountIdsT = Aws::Vector<Aws::String>>
+    BatchGetMemberAccountDetailsRequest& WithAccountIds(AccountIdsT&& value) { SetAccountIds(std::forward<AccountIdsT>(value)); return *this;}
+    template<typename AccountIdsT = Aws::String>
+    BatchGetMemberAccountDetailsRequest& AddAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds.emplace_back(std::forward<AccountIdsT>(value)); return *this; }
     ///@}
   private:
 

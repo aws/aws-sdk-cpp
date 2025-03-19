@@ -46,7 +46,7 @@ namespace Model
   class BarChartConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API BarChartConfiguration();
+    AWS_QUICKSIGHT_API BarChartConfiguration() = default;
     AWS_QUICKSIGHT_API BarChartConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API BarChartConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,24 +56,24 @@ namespace Model
     /**
      * <p>The field wells of the visual.</p>
      */
-    inline const BarChartFieldWells& GetFieldWells() const{ return m_fieldWells; }
+    inline const BarChartFieldWells& GetFieldWells() const { return m_fieldWells; }
     inline bool FieldWellsHasBeenSet() const { return m_fieldWellsHasBeenSet; }
-    inline void SetFieldWells(const BarChartFieldWells& value) { m_fieldWellsHasBeenSet = true; m_fieldWells = value; }
-    inline void SetFieldWells(BarChartFieldWells&& value) { m_fieldWellsHasBeenSet = true; m_fieldWells = std::move(value); }
-    inline BarChartConfiguration& WithFieldWells(const BarChartFieldWells& value) { SetFieldWells(value); return *this;}
-    inline BarChartConfiguration& WithFieldWells(BarChartFieldWells&& value) { SetFieldWells(std::move(value)); return *this;}
+    template<typename FieldWellsT = BarChartFieldWells>
+    void SetFieldWells(FieldWellsT&& value) { m_fieldWellsHasBeenSet = true; m_fieldWells = std::forward<FieldWellsT>(value); }
+    template<typename FieldWellsT = BarChartFieldWells>
+    BarChartConfiguration& WithFieldWells(FieldWellsT&& value) { SetFieldWells(std::forward<FieldWellsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sort configuration of a <code>BarChartVisual</code>.</p>
      */
-    inline const BarChartSortConfiguration& GetSortConfiguration() const{ return m_sortConfiguration; }
+    inline const BarChartSortConfiguration& GetSortConfiguration() const { return m_sortConfiguration; }
     inline bool SortConfigurationHasBeenSet() const { return m_sortConfigurationHasBeenSet; }
-    inline void SetSortConfiguration(const BarChartSortConfiguration& value) { m_sortConfigurationHasBeenSet = true; m_sortConfiguration = value; }
-    inline void SetSortConfiguration(BarChartSortConfiguration&& value) { m_sortConfigurationHasBeenSet = true; m_sortConfiguration = std::move(value); }
-    inline BarChartConfiguration& WithSortConfiguration(const BarChartSortConfiguration& value) { SetSortConfiguration(value); return *this;}
-    inline BarChartConfiguration& WithSortConfiguration(BarChartSortConfiguration&& value) { SetSortConfiguration(std::move(value)); return *this;}
+    template<typename SortConfigurationT = BarChartSortConfiguration>
+    void SetSortConfiguration(SortConfigurationT&& value) { m_sortConfigurationHasBeenSet = true; m_sortConfiguration = std::forward<SortConfigurationT>(value); }
+    template<typename SortConfigurationT = BarChartSortConfiguration>
+    BarChartConfiguration& WithSortConfiguration(SortConfigurationT&& value) { SetSortConfiguration(std::forward<SortConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +86,10 @@ namespace Model
      * vertical bars. Visuals that use this value are vertical bar charts, vertical
      * stacked bar charts, and vertical stacked 100% bar charts.</p> </li> </ul>
      */
-    inline const BarChartOrientation& GetOrientation() const{ return m_orientation; }
+    inline BarChartOrientation GetOrientation() const { return m_orientation; }
     inline bool OrientationHasBeenSet() const { return m_orientationHasBeenSet; }
-    inline void SetOrientation(const BarChartOrientation& value) { m_orientationHasBeenSet = true; m_orientation = value; }
-    inline void SetOrientation(BarChartOrientation&& value) { m_orientationHasBeenSet = true; m_orientation = std::move(value); }
-    inline BarChartConfiguration& WithOrientation(const BarChartOrientation& value) { SetOrientation(value); return *this;}
-    inline BarChartConfiguration& WithOrientation(BarChartOrientation&& value) { SetOrientation(std::move(value)); return *this;}
+    inline void SetOrientation(BarChartOrientation value) { m_orientationHasBeenSet = true; m_orientation = value; }
+    inline BarChartConfiguration& WithOrientation(BarChartOrientation value) { SetOrientation(value); return *this;}
     ///@}
 
     ///@{
@@ -99,36 +97,34 @@ namespace Model
      * <p>Determines the arrangement of the bars. The orientation and arrangement of
      * bars determine the type of bar that is used in the visual.</p>
      */
-    inline const BarsArrangement& GetBarsArrangement() const{ return m_barsArrangement; }
+    inline BarsArrangement GetBarsArrangement() const { return m_barsArrangement; }
     inline bool BarsArrangementHasBeenSet() const { return m_barsArrangementHasBeenSet; }
-    inline void SetBarsArrangement(const BarsArrangement& value) { m_barsArrangementHasBeenSet = true; m_barsArrangement = value; }
-    inline void SetBarsArrangement(BarsArrangement&& value) { m_barsArrangementHasBeenSet = true; m_barsArrangement = std::move(value); }
-    inline BarChartConfiguration& WithBarsArrangement(const BarsArrangement& value) { SetBarsArrangement(value); return *this;}
-    inline BarChartConfiguration& WithBarsArrangement(BarsArrangement&& value) { SetBarsArrangement(std::move(value)); return *this;}
+    inline void SetBarsArrangement(BarsArrangement value) { m_barsArrangementHasBeenSet = true; m_barsArrangement = value; }
+    inline BarChartConfiguration& WithBarsArrangement(BarsArrangement value) { SetBarsArrangement(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The palette (chart color) display setup of the visual.</p>
      */
-    inline const VisualPalette& GetVisualPalette() const{ return m_visualPalette; }
+    inline const VisualPalette& GetVisualPalette() const { return m_visualPalette; }
     inline bool VisualPaletteHasBeenSet() const { return m_visualPaletteHasBeenSet; }
-    inline void SetVisualPalette(const VisualPalette& value) { m_visualPaletteHasBeenSet = true; m_visualPalette = value; }
-    inline void SetVisualPalette(VisualPalette&& value) { m_visualPaletteHasBeenSet = true; m_visualPalette = std::move(value); }
-    inline BarChartConfiguration& WithVisualPalette(const VisualPalette& value) { SetVisualPalette(value); return *this;}
-    inline BarChartConfiguration& WithVisualPalette(VisualPalette&& value) { SetVisualPalette(std::move(value)); return *this;}
+    template<typename VisualPaletteT = VisualPalette>
+    void SetVisualPalette(VisualPaletteT&& value) { m_visualPaletteHasBeenSet = true; m_visualPalette = std::forward<VisualPaletteT>(value); }
+    template<typename VisualPaletteT = VisualPalette>
+    BarChartConfiguration& WithVisualPalette(VisualPaletteT&& value) { SetVisualPalette(std::forward<VisualPaletteT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The small multiples setup for the visual.</p>
      */
-    inline const SmallMultiplesOptions& GetSmallMultiplesOptions() const{ return m_smallMultiplesOptions; }
+    inline const SmallMultiplesOptions& GetSmallMultiplesOptions() const { return m_smallMultiplesOptions; }
     inline bool SmallMultiplesOptionsHasBeenSet() const { return m_smallMultiplesOptionsHasBeenSet; }
-    inline void SetSmallMultiplesOptions(const SmallMultiplesOptions& value) { m_smallMultiplesOptionsHasBeenSet = true; m_smallMultiplesOptions = value; }
-    inline void SetSmallMultiplesOptions(SmallMultiplesOptions&& value) { m_smallMultiplesOptionsHasBeenSet = true; m_smallMultiplesOptions = std::move(value); }
-    inline BarChartConfiguration& WithSmallMultiplesOptions(const SmallMultiplesOptions& value) { SetSmallMultiplesOptions(value); return *this;}
-    inline BarChartConfiguration& WithSmallMultiplesOptions(SmallMultiplesOptions&& value) { SetSmallMultiplesOptions(std::move(value)); return *this;}
+    template<typename SmallMultiplesOptionsT = SmallMultiplesOptions>
+    void SetSmallMultiplesOptions(SmallMultiplesOptionsT&& value) { m_smallMultiplesOptionsHasBeenSet = true; m_smallMultiplesOptions = std::forward<SmallMultiplesOptionsT>(value); }
+    template<typename SmallMultiplesOptionsT = SmallMultiplesOptions>
+    BarChartConfiguration& WithSmallMultiplesOptions(SmallMultiplesOptionsT&& value) { SetSmallMultiplesOptions(std::forward<SmallMultiplesOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -136,12 +132,12 @@ namespace Model
      * <p>The label display options (grid line, range, scale, axis step) for bar chart
      * category.</p>
      */
-    inline const AxisDisplayOptions& GetCategoryAxis() const{ return m_categoryAxis; }
+    inline const AxisDisplayOptions& GetCategoryAxis() const { return m_categoryAxis; }
     inline bool CategoryAxisHasBeenSet() const { return m_categoryAxisHasBeenSet; }
-    inline void SetCategoryAxis(const AxisDisplayOptions& value) { m_categoryAxisHasBeenSet = true; m_categoryAxis = value; }
-    inline void SetCategoryAxis(AxisDisplayOptions&& value) { m_categoryAxisHasBeenSet = true; m_categoryAxis = std::move(value); }
-    inline BarChartConfiguration& WithCategoryAxis(const AxisDisplayOptions& value) { SetCategoryAxis(value); return *this;}
-    inline BarChartConfiguration& WithCategoryAxis(AxisDisplayOptions&& value) { SetCategoryAxis(std::move(value)); return *this;}
+    template<typename CategoryAxisT = AxisDisplayOptions>
+    void SetCategoryAxis(CategoryAxisT&& value) { m_categoryAxisHasBeenSet = true; m_categoryAxis = std::forward<CategoryAxisT>(value); }
+    template<typename CategoryAxisT = AxisDisplayOptions>
+    BarChartConfiguration& WithCategoryAxis(CategoryAxisT&& value) { SetCategoryAxis(std::forward<CategoryAxisT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -149,12 +145,12 @@ namespace Model
      * <p>The label options (label text, label visibility and sort icon visibility) for
      * a bar chart.</p>
      */
-    inline const ChartAxisLabelOptions& GetCategoryLabelOptions() const{ return m_categoryLabelOptions; }
+    inline const ChartAxisLabelOptions& GetCategoryLabelOptions() const { return m_categoryLabelOptions; }
     inline bool CategoryLabelOptionsHasBeenSet() const { return m_categoryLabelOptionsHasBeenSet; }
-    inline void SetCategoryLabelOptions(const ChartAxisLabelOptions& value) { m_categoryLabelOptionsHasBeenSet = true; m_categoryLabelOptions = value; }
-    inline void SetCategoryLabelOptions(ChartAxisLabelOptions&& value) { m_categoryLabelOptionsHasBeenSet = true; m_categoryLabelOptions = std::move(value); }
-    inline BarChartConfiguration& WithCategoryLabelOptions(const ChartAxisLabelOptions& value) { SetCategoryLabelOptions(value); return *this;}
-    inline BarChartConfiguration& WithCategoryLabelOptions(ChartAxisLabelOptions&& value) { SetCategoryLabelOptions(std::move(value)); return *this;}
+    template<typename CategoryLabelOptionsT = ChartAxisLabelOptions>
+    void SetCategoryLabelOptions(CategoryLabelOptionsT&& value) { m_categoryLabelOptionsHasBeenSet = true; m_categoryLabelOptions = std::forward<CategoryLabelOptionsT>(value); }
+    template<typename CategoryLabelOptionsT = ChartAxisLabelOptions>
+    BarChartConfiguration& WithCategoryLabelOptions(CategoryLabelOptionsT&& value) { SetCategoryLabelOptions(std::forward<CategoryLabelOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,12 +158,12 @@ namespace Model
      * <p>The label display options (grid line, range, scale, axis step) for a bar
      * chart value.</p>
      */
-    inline const AxisDisplayOptions& GetValueAxis() const{ return m_valueAxis; }
+    inline const AxisDisplayOptions& GetValueAxis() const { return m_valueAxis; }
     inline bool ValueAxisHasBeenSet() const { return m_valueAxisHasBeenSet; }
-    inline void SetValueAxis(const AxisDisplayOptions& value) { m_valueAxisHasBeenSet = true; m_valueAxis = value; }
-    inline void SetValueAxis(AxisDisplayOptions&& value) { m_valueAxisHasBeenSet = true; m_valueAxis = std::move(value); }
-    inline BarChartConfiguration& WithValueAxis(const AxisDisplayOptions& value) { SetValueAxis(value); return *this;}
-    inline BarChartConfiguration& WithValueAxis(AxisDisplayOptions&& value) { SetValueAxis(std::move(value)); return *this;}
+    template<typename ValueAxisT = AxisDisplayOptions>
+    void SetValueAxis(ValueAxisT&& value) { m_valueAxisHasBeenSet = true; m_valueAxis = std::forward<ValueAxisT>(value); }
+    template<typename ValueAxisT = AxisDisplayOptions>
+    BarChartConfiguration& WithValueAxis(ValueAxisT&& value) { SetValueAxis(std::forward<ValueAxisT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -175,12 +171,12 @@ namespace Model
      * <p>The label options (label text, label visibility and sort icon visibility) for
      * a bar chart value.</p>
      */
-    inline const ChartAxisLabelOptions& GetValueLabelOptions() const{ return m_valueLabelOptions; }
+    inline const ChartAxisLabelOptions& GetValueLabelOptions() const { return m_valueLabelOptions; }
     inline bool ValueLabelOptionsHasBeenSet() const { return m_valueLabelOptionsHasBeenSet; }
-    inline void SetValueLabelOptions(const ChartAxisLabelOptions& value) { m_valueLabelOptionsHasBeenSet = true; m_valueLabelOptions = value; }
-    inline void SetValueLabelOptions(ChartAxisLabelOptions&& value) { m_valueLabelOptionsHasBeenSet = true; m_valueLabelOptions = std::move(value); }
-    inline BarChartConfiguration& WithValueLabelOptions(const ChartAxisLabelOptions& value) { SetValueLabelOptions(value); return *this;}
-    inline BarChartConfiguration& WithValueLabelOptions(ChartAxisLabelOptions&& value) { SetValueLabelOptions(std::move(value)); return *this;}
+    template<typename ValueLabelOptionsT = ChartAxisLabelOptions>
+    void SetValueLabelOptions(ValueLabelOptionsT&& value) { m_valueLabelOptionsHasBeenSet = true; m_valueLabelOptions = std::forward<ValueLabelOptionsT>(value); }
+    template<typename ValueLabelOptionsT = ChartAxisLabelOptions>
+    BarChartConfiguration& WithValueLabelOptions(ValueLabelOptionsT&& value) { SetValueLabelOptions(std::forward<ValueLabelOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -188,88 +184,88 @@ namespace Model
      * <p>The label options (label text, label visibility and sort icon visibility) for
      * a color that is used in a bar chart.</p>
      */
-    inline const ChartAxisLabelOptions& GetColorLabelOptions() const{ return m_colorLabelOptions; }
+    inline const ChartAxisLabelOptions& GetColorLabelOptions() const { return m_colorLabelOptions; }
     inline bool ColorLabelOptionsHasBeenSet() const { return m_colorLabelOptionsHasBeenSet; }
-    inline void SetColorLabelOptions(const ChartAxisLabelOptions& value) { m_colorLabelOptionsHasBeenSet = true; m_colorLabelOptions = value; }
-    inline void SetColorLabelOptions(ChartAxisLabelOptions&& value) { m_colorLabelOptionsHasBeenSet = true; m_colorLabelOptions = std::move(value); }
-    inline BarChartConfiguration& WithColorLabelOptions(const ChartAxisLabelOptions& value) { SetColorLabelOptions(value); return *this;}
-    inline BarChartConfiguration& WithColorLabelOptions(ChartAxisLabelOptions&& value) { SetColorLabelOptions(std::move(value)); return *this;}
+    template<typename ColorLabelOptionsT = ChartAxisLabelOptions>
+    void SetColorLabelOptions(ColorLabelOptionsT&& value) { m_colorLabelOptionsHasBeenSet = true; m_colorLabelOptions = std::forward<ColorLabelOptionsT>(value); }
+    template<typename ColorLabelOptionsT = ChartAxisLabelOptions>
+    BarChartConfiguration& WithColorLabelOptions(ColorLabelOptionsT&& value) { SetColorLabelOptions(std::forward<ColorLabelOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The legend display setup of the visual.</p>
      */
-    inline const LegendOptions& GetLegend() const{ return m_legend; }
+    inline const LegendOptions& GetLegend() const { return m_legend; }
     inline bool LegendHasBeenSet() const { return m_legendHasBeenSet; }
-    inline void SetLegend(const LegendOptions& value) { m_legendHasBeenSet = true; m_legend = value; }
-    inline void SetLegend(LegendOptions&& value) { m_legendHasBeenSet = true; m_legend = std::move(value); }
-    inline BarChartConfiguration& WithLegend(const LegendOptions& value) { SetLegend(value); return *this;}
-    inline BarChartConfiguration& WithLegend(LegendOptions&& value) { SetLegend(std::move(value)); return *this;}
+    template<typename LegendT = LegendOptions>
+    void SetLegend(LegendT&& value) { m_legendHasBeenSet = true; m_legend = std::forward<LegendT>(value); }
+    template<typename LegendT = LegendOptions>
+    BarChartConfiguration& WithLegend(LegendT&& value) { SetLegend(std::forward<LegendT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The options that determine if visual data labels are displayed.</p>
      */
-    inline const DataLabelOptions& GetDataLabels() const{ return m_dataLabels; }
+    inline const DataLabelOptions& GetDataLabels() const { return m_dataLabels; }
     inline bool DataLabelsHasBeenSet() const { return m_dataLabelsHasBeenSet; }
-    inline void SetDataLabels(const DataLabelOptions& value) { m_dataLabelsHasBeenSet = true; m_dataLabels = value; }
-    inline void SetDataLabels(DataLabelOptions&& value) { m_dataLabelsHasBeenSet = true; m_dataLabels = std::move(value); }
-    inline BarChartConfiguration& WithDataLabels(const DataLabelOptions& value) { SetDataLabels(value); return *this;}
-    inline BarChartConfiguration& WithDataLabels(DataLabelOptions&& value) { SetDataLabels(std::move(value)); return *this;}
+    template<typename DataLabelsT = DataLabelOptions>
+    void SetDataLabels(DataLabelsT&& value) { m_dataLabelsHasBeenSet = true; m_dataLabels = std::forward<DataLabelsT>(value); }
+    template<typename DataLabelsT = DataLabelOptions>
+    BarChartConfiguration& WithDataLabels(DataLabelsT&& value) { SetDataLabels(std::forward<DataLabelsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tooltip display setup of the visual.</p>
      */
-    inline const TooltipOptions& GetTooltip() const{ return m_tooltip; }
+    inline const TooltipOptions& GetTooltip() const { return m_tooltip; }
     inline bool TooltipHasBeenSet() const { return m_tooltipHasBeenSet; }
-    inline void SetTooltip(const TooltipOptions& value) { m_tooltipHasBeenSet = true; m_tooltip = value; }
-    inline void SetTooltip(TooltipOptions&& value) { m_tooltipHasBeenSet = true; m_tooltip = std::move(value); }
-    inline BarChartConfiguration& WithTooltip(const TooltipOptions& value) { SetTooltip(value); return *this;}
-    inline BarChartConfiguration& WithTooltip(TooltipOptions&& value) { SetTooltip(std::move(value)); return *this;}
+    template<typename TooltipT = TooltipOptions>
+    void SetTooltip(TooltipT&& value) { m_tooltipHasBeenSet = true; m_tooltip = std::forward<TooltipT>(value); }
+    template<typename TooltipT = TooltipOptions>
+    BarChartConfiguration& WithTooltip(TooltipT&& value) { SetTooltip(std::forward<TooltipT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reference line setup of the visual.</p>
      */
-    inline const Aws::Vector<ReferenceLine>& GetReferenceLines() const{ return m_referenceLines; }
+    inline const Aws::Vector<ReferenceLine>& GetReferenceLines() const { return m_referenceLines; }
     inline bool ReferenceLinesHasBeenSet() const { return m_referenceLinesHasBeenSet; }
-    inline void SetReferenceLines(const Aws::Vector<ReferenceLine>& value) { m_referenceLinesHasBeenSet = true; m_referenceLines = value; }
-    inline void SetReferenceLines(Aws::Vector<ReferenceLine>&& value) { m_referenceLinesHasBeenSet = true; m_referenceLines = std::move(value); }
-    inline BarChartConfiguration& WithReferenceLines(const Aws::Vector<ReferenceLine>& value) { SetReferenceLines(value); return *this;}
-    inline BarChartConfiguration& WithReferenceLines(Aws::Vector<ReferenceLine>&& value) { SetReferenceLines(std::move(value)); return *this;}
-    inline BarChartConfiguration& AddReferenceLines(const ReferenceLine& value) { m_referenceLinesHasBeenSet = true; m_referenceLines.push_back(value); return *this; }
-    inline BarChartConfiguration& AddReferenceLines(ReferenceLine&& value) { m_referenceLinesHasBeenSet = true; m_referenceLines.push_back(std::move(value)); return *this; }
+    template<typename ReferenceLinesT = Aws::Vector<ReferenceLine>>
+    void SetReferenceLines(ReferenceLinesT&& value) { m_referenceLinesHasBeenSet = true; m_referenceLines = std::forward<ReferenceLinesT>(value); }
+    template<typename ReferenceLinesT = Aws::Vector<ReferenceLine>>
+    BarChartConfiguration& WithReferenceLines(ReferenceLinesT&& value) { SetReferenceLines(std::forward<ReferenceLinesT>(value)); return *this;}
+    template<typename ReferenceLinesT = ReferenceLine>
+    BarChartConfiguration& AddReferenceLines(ReferenceLinesT&& value) { m_referenceLinesHasBeenSet = true; m_referenceLines.emplace_back(std::forward<ReferenceLinesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The contribution analysis (anomaly configuration) setup of the visual.</p>
      */
-    inline const Aws::Vector<ContributionAnalysisDefault>& GetContributionAnalysisDefaults() const{ return m_contributionAnalysisDefaults; }
+    inline const Aws::Vector<ContributionAnalysisDefault>& GetContributionAnalysisDefaults() const { return m_contributionAnalysisDefaults; }
     inline bool ContributionAnalysisDefaultsHasBeenSet() const { return m_contributionAnalysisDefaultsHasBeenSet; }
-    inline void SetContributionAnalysisDefaults(const Aws::Vector<ContributionAnalysisDefault>& value) { m_contributionAnalysisDefaultsHasBeenSet = true; m_contributionAnalysisDefaults = value; }
-    inline void SetContributionAnalysisDefaults(Aws::Vector<ContributionAnalysisDefault>&& value) { m_contributionAnalysisDefaultsHasBeenSet = true; m_contributionAnalysisDefaults = std::move(value); }
-    inline BarChartConfiguration& WithContributionAnalysisDefaults(const Aws::Vector<ContributionAnalysisDefault>& value) { SetContributionAnalysisDefaults(value); return *this;}
-    inline BarChartConfiguration& WithContributionAnalysisDefaults(Aws::Vector<ContributionAnalysisDefault>&& value) { SetContributionAnalysisDefaults(std::move(value)); return *this;}
-    inline BarChartConfiguration& AddContributionAnalysisDefaults(const ContributionAnalysisDefault& value) { m_contributionAnalysisDefaultsHasBeenSet = true; m_contributionAnalysisDefaults.push_back(value); return *this; }
-    inline BarChartConfiguration& AddContributionAnalysisDefaults(ContributionAnalysisDefault&& value) { m_contributionAnalysisDefaultsHasBeenSet = true; m_contributionAnalysisDefaults.push_back(std::move(value)); return *this; }
+    template<typename ContributionAnalysisDefaultsT = Aws::Vector<ContributionAnalysisDefault>>
+    void SetContributionAnalysisDefaults(ContributionAnalysisDefaultsT&& value) { m_contributionAnalysisDefaultsHasBeenSet = true; m_contributionAnalysisDefaults = std::forward<ContributionAnalysisDefaultsT>(value); }
+    template<typename ContributionAnalysisDefaultsT = Aws::Vector<ContributionAnalysisDefault>>
+    BarChartConfiguration& WithContributionAnalysisDefaults(ContributionAnalysisDefaultsT&& value) { SetContributionAnalysisDefaults(std::forward<ContributionAnalysisDefaultsT>(value)); return *this;}
+    template<typename ContributionAnalysisDefaultsT = ContributionAnalysisDefault>
+    BarChartConfiguration& AddContributionAnalysisDefaults(ContributionAnalysisDefaultsT&& value) { m_contributionAnalysisDefaultsHasBeenSet = true; m_contributionAnalysisDefaults.emplace_back(std::forward<ContributionAnalysisDefaultsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The general visual interactions setup for a visual.</p>
      */
-    inline const VisualInteractionOptions& GetInteractions() const{ return m_interactions; }
+    inline const VisualInteractionOptions& GetInteractions() const { return m_interactions; }
     inline bool InteractionsHasBeenSet() const { return m_interactionsHasBeenSet; }
-    inline void SetInteractions(const VisualInteractionOptions& value) { m_interactionsHasBeenSet = true; m_interactions = value; }
-    inline void SetInteractions(VisualInteractionOptions&& value) { m_interactionsHasBeenSet = true; m_interactions = std::move(value); }
-    inline BarChartConfiguration& WithInteractions(const VisualInteractionOptions& value) { SetInteractions(value); return *this;}
-    inline BarChartConfiguration& WithInteractions(VisualInteractionOptions&& value) { SetInteractions(std::move(value)); return *this;}
+    template<typename InteractionsT = VisualInteractionOptions>
+    void SetInteractions(InteractionsT&& value) { m_interactionsHasBeenSet = true; m_interactions = std::forward<InteractionsT>(value); }
+    template<typename InteractionsT = VisualInteractionOptions>
+    BarChartConfiguration& WithInteractions(InteractionsT&& value) { SetInteractions(std::forward<InteractionsT>(value)); return *this;}
     ///@}
   private:
 
@@ -279,10 +275,10 @@ namespace Model
     BarChartSortConfiguration m_sortConfiguration;
     bool m_sortConfigurationHasBeenSet = false;
 
-    BarChartOrientation m_orientation;
+    BarChartOrientation m_orientation{BarChartOrientation::NOT_SET};
     bool m_orientationHasBeenSet = false;
 
-    BarsArrangement m_barsArrangement;
+    BarsArrangement m_barsArrangement{BarsArrangement::NOT_SET};
     bool m_barsArrangementHasBeenSet = false;
 
     VisualPalette m_visualPalette;

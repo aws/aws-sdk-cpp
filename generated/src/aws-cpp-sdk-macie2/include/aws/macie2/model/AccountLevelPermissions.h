@@ -32,7 +32,7 @@ namespace Model
   class AccountLevelPermissions
   {
   public:
-    AWS_MACIE2_API AccountLevelPermissions();
+    AWS_MACIE2_API AccountLevelPermissions() = default;
     AWS_MACIE2_API AccountLevelPermissions(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API AccountLevelPermissions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The block public access settings for the Amazon Web Services account that
      * owns the bucket.</p>
      */
-    inline const BlockPublicAccess& GetBlockPublicAccess() const{ return m_blockPublicAccess; }
+    inline const BlockPublicAccess& GetBlockPublicAccess() const { return m_blockPublicAccess; }
     inline bool BlockPublicAccessHasBeenSet() const { return m_blockPublicAccessHasBeenSet; }
-    inline void SetBlockPublicAccess(const BlockPublicAccess& value) { m_blockPublicAccessHasBeenSet = true; m_blockPublicAccess = value; }
-    inline void SetBlockPublicAccess(BlockPublicAccess&& value) { m_blockPublicAccessHasBeenSet = true; m_blockPublicAccess = std::move(value); }
-    inline AccountLevelPermissions& WithBlockPublicAccess(const BlockPublicAccess& value) { SetBlockPublicAccess(value); return *this;}
-    inline AccountLevelPermissions& WithBlockPublicAccess(BlockPublicAccess&& value) { SetBlockPublicAccess(std::move(value)); return *this;}
+    template<typename BlockPublicAccessT = BlockPublicAccess>
+    void SetBlockPublicAccess(BlockPublicAccessT&& value) { m_blockPublicAccessHasBeenSet = true; m_blockPublicAccess = std::forward<BlockPublicAccessT>(value); }
+    template<typename BlockPublicAccessT = BlockPublicAccess>
+    AccountLevelPermissions& WithBlockPublicAccess(BlockPublicAccessT&& value) { SetBlockPublicAccess(std::forward<BlockPublicAccessT>(value)); return *this;}
     ///@}
   private:
 

@@ -48,7 +48,7 @@ namespace Model
   class SNSAction
   {
   public:
-    AWS_SES_API SNSAction();
+    AWS_SES_API SNSAction() = default;
     AWS_SES_API SNSAction(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SES_API SNSAction& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -66,14 +66,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
-    inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+    inline const Aws::String& GetTopicArn() const { return m_topicArn; }
     inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
-    inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
-    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
-    inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
-    inline SNSAction& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
-    inline SNSAction& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
-    inline SNSAction& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
+    template<typename TopicArnT = Aws::String>
+    void SetTopicArn(TopicArnT&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::forward<TopicArnT>(value); }
+    template<typename TopicArnT = Aws::String>
+    SNSAction& WithTopicArn(TopicArnT&& value) { SetTopicArn(std::forward<TopicArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,19 +81,17 @@ namespace Model
      * encoded with a different encoding format. Base64 preserves all special
      * characters. The default value is UTF-8.</p>
      */
-    inline const SNSActionEncoding& GetEncoding() const{ return m_encoding; }
+    inline SNSActionEncoding GetEncoding() const { return m_encoding; }
     inline bool EncodingHasBeenSet() const { return m_encodingHasBeenSet; }
-    inline void SetEncoding(const SNSActionEncoding& value) { m_encodingHasBeenSet = true; m_encoding = value; }
-    inline void SetEncoding(SNSActionEncoding&& value) { m_encodingHasBeenSet = true; m_encoding = std::move(value); }
-    inline SNSAction& WithEncoding(const SNSActionEncoding& value) { SetEncoding(value); return *this;}
-    inline SNSAction& WithEncoding(SNSActionEncoding&& value) { SetEncoding(std::move(value)); return *this;}
+    inline void SetEncoding(SNSActionEncoding value) { m_encodingHasBeenSet = true; m_encoding = value; }
+    inline SNSAction& WithEncoding(SNSActionEncoding value) { SetEncoding(value); return *this;}
     ///@}
   private:
 
     Aws::String m_topicArn;
     bool m_topicArnHasBeenSet = false;
 
-    SNSActionEncoding m_encoding;
+    SNSActionEncoding m_encoding{SNSActionEncoding::NOT_SET};
     bool m_encodingHasBeenSet = false;
   };
 

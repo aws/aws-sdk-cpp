@@ -29,7 +29,7 @@ namespace Model
   class GetRevealConfigurationResult
   {
   public:
-    AWS_MACIE2_API GetRevealConfigurationResult();
+    AWS_MACIE2_API GetRevealConfigurationResult() = default;
     AWS_MACIE2_API GetRevealConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MACIE2_API GetRevealConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,11 +39,11 @@ namespace Model
      * <p>The KMS key that's used to encrypt the sensitive data, and the status of the
      * configuration for the Amazon Macie account.</p>
      */
-    inline const RevealConfiguration& GetConfiguration() const{ return m_configuration; }
-    inline void SetConfiguration(const RevealConfiguration& value) { m_configuration = value; }
-    inline void SetConfiguration(RevealConfiguration&& value) { m_configuration = std::move(value); }
-    inline GetRevealConfigurationResult& WithConfiguration(const RevealConfiguration& value) { SetConfiguration(value); return *this;}
-    inline GetRevealConfigurationResult& WithConfiguration(RevealConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    inline const RevealConfiguration& GetConfiguration() const { return m_configuration; }
+    template<typename ConfigurationT = RevealConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = RevealConfiguration>
+    GetRevealConfigurationResult& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,30 +51,31 @@ namespace Model
      * <p>The access method and settings that are used to retrieve the sensitive
      * data.</p>
      */
-    inline const RetrievalConfiguration& GetRetrievalConfiguration() const{ return m_retrievalConfiguration; }
-    inline void SetRetrievalConfiguration(const RetrievalConfiguration& value) { m_retrievalConfiguration = value; }
-    inline void SetRetrievalConfiguration(RetrievalConfiguration&& value) { m_retrievalConfiguration = std::move(value); }
-    inline GetRevealConfigurationResult& WithRetrievalConfiguration(const RetrievalConfiguration& value) { SetRetrievalConfiguration(value); return *this;}
-    inline GetRevealConfigurationResult& WithRetrievalConfiguration(RetrievalConfiguration&& value) { SetRetrievalConfiguration(std::move(value)); return *this;}
+    inline const RetrievalConfiguration& GetRetrievalConfiguration() const { return m_retrievalConfiguration; }
+    template<typename RetrievalConfigurationT = RetrievalConfiguration>
+    void SetRetrievalConfiguration(RetrievalConfigurationT&& value) { m_retrievalConfigurationHasBeenSet = true; m_retrievalConfiguration = std::forward<RetrievalConfigurationT>(value); }
+    template<typename RetrievalConfigurationT = RetrievalConfiguration>
+    GetRevealConfigurationResult& WithRetrievalConfiguration(RetrievalConfigurationT&& value) { SetRetrievalConfiguration(std::forward<RetrievalConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRevealConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRevealConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRevealConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRevealConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RevealConfiguration m_configuration;
+    bool m_configurationHasBeenSet = false;
 
     RetrievalConfiguration m_retrievalConfiguration;
+    bool m_retrievalConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

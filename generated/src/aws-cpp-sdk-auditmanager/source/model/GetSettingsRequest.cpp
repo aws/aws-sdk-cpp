@@ -12,12 +12,6 @@ using namespace Aws::AuditManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSettingsRequest::GetSettingsRequest() : 
-    m_attribute(SettingAttribute::NOT_SET),
-    m_attributeHasBeenSet(false)
-{
-}
-
 Aws::String GetSettingsRequest::SerializePayload() const
 {
   return {};

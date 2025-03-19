@@ -37,7 +37,7 @@ namespace Model
   class InstanceDetails
   {
   public:
-    AWS_COSTEXPLORER_API InstanceDetails();
+    AWS_COSTEXPLORER_API InstanceDetails() = default;
     AWS_COSTEXPLORER_API InstanceDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API InstanceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
      * <p>The Amazon EC2 reservations that Amazon Web Services recommends that you
      * purchase.</p>
      */
-    inline const EC2InstanceDetails& GetEC2InstanceDetails() const{ return m_eC2InstanceDetails; }
+    inline const EC2InstanceDetails& GetEC2InstanceDetails() const { return m_eC2InstanceDetails; }
     inline bool EC2InstanceDetailsHasBeenSet() const { return m_eC2InstanceDetailsHasBeenSet; }
-    inline void SetEC2InstanceDetails(const EC2InstanceDetails& value) { m_eC2InstanceDetailsHasBeenSet = true; m_eC2InstanceDetails = value; }
-    inline void SetEC2InstanceDetails(EC2InstanceDetails&& value) { m_eC2InstanceDetailsHasBeenSet = true; m_eC2InstanceDetails = std::move(value); }
-    inline InstanceDetails& WithEC2InstanceDetails(const EC2InstanceDetails& value) { SetEC2InstanceDetails(value); return *this;}
-    inline InstanceDetails& WithEC2InstanceDetails(EC2InstanceDetails&& value) { SetEC2InstanceDetails(std::move(value)); return *this;}
+    template<typename EC2InstanceDetailsT = EC2InstanceDetails>
+    void SetEC2InstanceDetails(EC2InstanceDetailsT&& value) { m_eC2InstanceDetailsHasBeenSet = true; m_eC2InstanceDetails = std::forward<EC2InstanceDetailsT>(value); }
+    template<typename EC2InstanceDetailsT = EC2InstanceDetails>
+    InstanceDetails& WithEC2InstanceDetails(EC2InstanceDetailsT&& value) { SetEC2InstanceDetails(std::forward<EC2InstanceDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +61,12 @@ namespace Model
      * <p>The Amazon RDS reservations that Amazon Web Services recommends that you
      * purchase.</p>
      */
-    inline const RDSInstanceDetails& GetRDSInstanceDetails() const{ return m_rDSInstanceDetails; }
+    inline const RDSInstanceDetails& GetRDSInstanceDetails() const { return m_rDSInstanceDetails; }
     inline bool RDSInstanceDetailsHasBeenSet() const { return m_rDSInstanceDetailsHasBeenSet; }
-    inline void SetRDSInstanceDetails(const RDSInstanceDetails& value) { m_rDSInstanceDetailsHasBeenSet = true; m_rDSInstanceDetails = value; }
-    inline void SetRDSInstanceDetails(RDSInstanceDetails&& value) { m_rDSInstanceDetailsHasBeenSet = true; m_rDSInstanceDetails = std::move(value); }
-    inline InstanceDetails& WithRDSInstanceDetails(const RDSInstanceDetails& value) { SetRDSInstanceDetails(value); return *this;}
-    inline InstanceDetails& WithRDSInstanceDetails(RDSInstanceDetails&& value) { SetRDSInstanceDetails(std::move(value)); return *this;}
+    template<typename RDSInstanceDetailsT = RDSInstanceDetails>
+    void SetRDSInstanceDetails(RDSInstanceDetailsT&& value) { m_rDSInstanceDetailsHasBeenSet = true; m_rDSInstanceDetails = std::forward<RDSInstanceDetailsT>(value); }
+    template<typename RDSInstanceDetailsT = RDSInstanceDetails>
+    InstanceDetails& WithRDSInstanceDetails(RDSInstanceDetailsT&& value) { SetRDSInstanceDetails(std::forward<RDSInstanceDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +74,12 @@ namespace Model
      * <p>The Amazon Redshift reservations that Amazon Web Services recommends that you
      * purchase.</p>
      */
-    inline const RedshiftInstanceDetails& GetRedshiftInstanceDetails() const{ return m_redshiftInstanceDetails; }
+    inline const RedshiftInstanceDetails& GetRedshiftInstanceDetails() const { return m_redshiftInstanceDetails; }
     inline bool RedshiftInstanceDetailsHasBeenSet() const { return m_redshiftInstanceDetailsHasBeenSet; }
-    inline void SetRedshiftInstanceDetails(const RedshiftInstanceDetails& value) { m_redshiftInstanceDetailsHasBeenSet = true; m_redshiftInstanceDetails = value; }
-    inline void SetRedshiftInstanceDetails(RedshiftInstanceDetails&& value) { m_redshiftInstanceDetailsHasBeenSet = true; m_redshiftInstanceDetails = std::move(value); }
-    inline InstanceDetails& WithRedshiftInstanceDetails(const RedshiftInstanceDetails& value) { SetRedshiftInstanceDetails(value); return *this;}
-    inline InstanceDetails& WithRedshiftInstanceDetails(RedshiftInstanceDetails&& value) { SetRedshiftInstanceDetails(std::move(value)); return *this;}
+    template<typename RedshiftInstanceDetailsT = RedshiftInstanceDetails>
+    void SetRedshiftInstanceDetails(RedshiftInstanceDetailsT&& value) { m_redshiftInstanceDetailsHasBeenSet = true; m_redshiftInstanceDetails = std::forward<RedshiftInstanceDetailsT>(value); }
+    template<typename RedshiftInstanceDetailsT = RedshiftInstanceDetails>
+    InstanceDetails& WithRedshiftInstanceDetails(RedshiftInstanceDetailsT&& value) { SetRedshiftInstanceDetails(std::forward<RedshiftInstanceDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +87,12 @@ namespace Model
      * <p>The ElastiCache reservations that Amazon Web Services recommends that you
      * purchase.</p>
      */
-    inline const ElastiCacheInstanceDetails& GetElastiCacheInstanceDetails() const{ return m_elastiCacheInstanceDetails; }
+    inline const ElastiCacheInstanceDetails& GetElastiCacheInstanceDetails() const { return m_elastiCacheInstanceDetails; }
     inline bool ElastiCacheInstanceDetailsHasBeenSet() const { return m_elastiCacheInstanceDetailsHasBeenSet; }
-    inline void SetElastiCacheInstanceDetails(const ElastiCacheInstanceDetails& value) { m_elastiCacheInstanceDetailsHasBeenSet = true; m_elastiCacheInstanceDetails = value; }
-    inline void SetElastiCacheInstanceDetails(ElastiCacheInstanceDetails&& value) { m_elastiCacheInstanceDetailsHasBeenSet = true; m_elastiCacheInstanceDetails = std::move(value); }
-    inline InstanceDetails& WithElastiCacheInstanceDetails(const ElastiCacheInstanceDetails& value) { SetElastiCacheInstanceDetails(value); return *this;}
-    inline InstanceDetails& WithElastiCacheInstanceDetails(ElastiCacheInstanceDetails&& value) { SetElastiCacheInstanceDetails(std::move(value)); return *this;}
+    template<typename ElastiCacheInstanceDetailsT = ElastiCacheInstanceDetails>
+    void SetElastiCacheInstanceDetails(ElastiCacheInstanceDetailsT&& value) { m_elastiCacheInstanceDetailsHasBeenSet = true; m_elastiCacheInstanceDetails = std::forward<ElastiCacheInstanceDetailsT>(value); }
+    template<typename ElastiCacheInstanceDetailsT = ElastiCacheInstanceDetails>
+    InstanceDetails& WithElastiCacheInstanceDetails(ElastiCacheInstanceDetailsT&& value) { SetElastiCacheInstanceDetails(std::forward<ElastiCacheInstanceDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,12 +100,12 @@ namespace Model
      * <p>The Amazon OpenSearch Service reservations that Amazon Web Services
      * recommends that you purchase.</p>
      */
-    inline const ESInstanceDetails& GetESInstanceDetails() const{ return m_eSInstanceDetails; }
+    inline const ESInstanceDetails& GetESInstanceDetails() const { return m_eSInstanceDetails; }
     inline bool ESInstanceDetailsHasBeenSet() const { return m_eSInstanceDetailsHasBeenSet; }
-    inline void SetESInstanceDetails(const ESInstanceDetails& value) { m_eSInstanceDetailsHasBeenSet = true; m_eSInstanceDetails = value; }
-    inline void SetESInstanceDetails(ESInstanceDetails&& value) { m_eSInstanceDetailsHasBeenSet = true; m_eSInstanceDetails = std::move(value); }
-    inline InstanceDetails& WithESInstanceDetails(const ESInstanceDetails& value) { SetESInstanceDetails(value); return *this;}
-    inline InstanceDetails& WithESInstanceDetails(ESInstanceDetails&& value) { SetESInstanceDetails(std::move(value)); return *this;}
+    template<typename ESInstanceDetailsT = ESInstanceDetails>
+    void SetESInstanceDetails(ESInstanceDetailsT&& value) { m_eSInstanceDetailsHasBeenSet = true; m_eSInstanceDetails = std::forward<ESInstanceDetailsT>(value); }
+    template<typename ESInstanceDetailsT = ESInstanceDetails>
+    InstanceDetails& WithESInstanceDetails(ESInstanceDetailsT&& value) { SetESInstanceDetails(std::forward<ESInstanceDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,12 +113,12 @@ namespace Model
      * <p>The MemoryDB reservations that Amazon Web Services recommends that you
      * purchase.</p>
      */
-    inline const MemoryDBInstanceDetails& GetMemoryDBInstanceDetails() const{ return m_memoryDBInstanceDetails; }
+    inline const MemoryDBInstanceDetails& GetMemoryDBInstanceDetails() const { return m_memoryDBInstanceDetails; }
     inline bool MemoryDBInstanceDetailsHasBeenSet() const { return m_memoryDBInstanceDetailsHasBeenSet; }
-    inline void SetMemoryDBInstanceDetails(const MemoryDBInstanceDetails& value) { m_memoryDBInstanceDetailsHasBeenSet = true; m_memoryDBInstanceDetails = value; }
-    inline void SetMemoryDBInstanceDetails(MemoryDBInstanceDetails&& value) { m_memoryDBInstanceDetailsHasBeenSet = true; m_memoryDBInstanceDetails = std::move(value); }
-    inline InstanceDetails& WithMemoryDBInstanceDetails(const MemoryDBInstanceDetails& value) { SetMemoryDBInstanceDetails(value); return *this;}
-    inline InstanceDetails& WithMemoryDBInstanceDetails(MemoryDBInstanceDetails&& value) { SetMemoryDBInstanceDetails(std::move(value)); return *this;}
+    template<typename MemoryDBInstanceDetailsT = MemoryDBInstanceDetails>
+    void SetMemoryDBInstanceDetails(MemoryDBInstanceDetailsT&& value) { m_memoryDBInstanceDetailsHasBeenSet = true; m_memoryDBInstanceDetails = std::forward<MemoryDBInstanceDetailsT>(value); }
+    template<typename MemoryDBInstanceDetailsT = MemoryDBInstanceDetails>
+    InstanceDetails& WithMemoryDBInstanceDetails(MemoryDBInstanceDetailsT&& value) { SetMemoryDBInstanceDetails(std::forward<MemoryDBInstanceDetailsT>(value)); return *this;}
     ///@}
   private:
 

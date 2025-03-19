@@ -12,11 +12,6 @@ using namespace Aws::ServiceDiscovery::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetNamespaceRequest::GetNamespaceRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetNamespaceRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -40,7 +40,7 @@ namespace Model
   class GetPlaceResult
   {
   public:
-    AWS_GEOPLACES_API GetPlaceResult();
+    AWS_GEOPLACES_API GetPlaceResult() = default;
     AWS_GEOPLACES_API GetPlaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GEOPLACES_API GetPlaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -50,13 +50,11 @@ namespace Model
      * <p>The <code>PlaceId</code> of the place you wish to receive the information
      * for.</p>
      */
-    inline const Aws::String& GetPlaceId() const{ return m_placeId; }
-    inline void SetPlaceId(const Aws::String& value) { m_placeId = value; }
-    inline void SetPlaceId(Aws::String&& value) { m_placeId = std::move(value); }
-    inline void SetPlaceId(const char* value) { m_placeId.assign(value); }
-    inline GetPlaceResult& WithPlaceId(const Aws::String& value) { SetPlaceId(value); return *this;}
-    inline GetPlaceResult& WithPlaceId(Aws::String&& value) { SetPlaceId(std::move(value)); return *this;}
-    inline GetPlaceResult& WithPlaceId(const char* value) { SetPlaceId(value); return *this;}
+    inline const Aws::String& GetPlaceId() const { return m_placeId; }
+    template<typename PlaceIdT = Aws::String>
+    void SetPlaceId(PlaceIdT&& value) { m_placeIdHasBeenSet = true; m_placeId = std::forward<PlaceIdT>(value); }
+    template<typename PlaceIdT = Aws::String>
+    GetPlaceResult& WithPlaceId(PlaceIdT&& value) { SetPlaceId(std::forward<PlaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,11 +62,9 @@ namespace Model
      * <p>A <code>PlaceType</code> is a category that the result place must belong
      * to.</p>
      */
-    inline const PlaceType& GetPlaceType() const{ return m_placeType; }
-    inline void SetPlaceType(const PlaceType& value) { m_placeType = value; }
-    inline void SetPlaceType(PlaceType&& value) { m_placeType = std::move(value); }
-    inline GetPlaceResult& WithPlaceType(const PlaceType& value) { SetPlaceType(value); return *this;}
-    inline GetPlaceResult& WithPlaceType(PlaceType&& value) { SetPlaceType(std::move(value)); return *this;}
+    inline PlaceType GetPlaceType() const { return m_placeType; }
+    inline void SetPlaceType(PlaceType value) { m_placeTypeHasBeenSet = true; m_placeType = value; }
+    inline GetPlaceResult& WithPlaceType(PlaceType value) { SetPlaceType(value); return *this;}
     ///@}
 
     ///@{
@@ -76,13 +72,11 @@ namespace Model
      * <p>The localized display name of this result item based on request parameter
      * <code>language</code>. </p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
-    inline void SetTitle(const Aws::String& value) { m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_title.assign(value); }
-    inline GetPlaceResult& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline GetPlaceResult& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline GetPlaceResult& WithTitle(const char* value) { SetTitle(value); return *this;}
+    inline const Aws::String& GetTitle() const { return m_title; }
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    GetPlaceResult& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,32 +86,30 @@ namespace Model
      * href="https://aws.amazon.com/location/pricing/">Amazon Location Service
      * Pricing</a>.</p>
      */
-    inline const Aws::String& GetPricingBucket() const{ return m_pricingBucket; }
-    inline void SetPricingBucket(const Aws::String& value) { m_pricingBucket = value; }
-    inline void SetPricingBucket(Aws::String&& value) { m_pricingBucket = std::move(value); }
-    inline void SetPricingBucket(const char* value) { m_pricingBucket.assign(value); }
-    inline GetPlaceResult& WithPricingBucket(const Aws::String& value) { SetPricingBucket(value); return *this;}
-    inline GetPlaceResult& WithPricingBucket(Aws::String&& value) { SetPricingBucket(std::move(value)); return *this;}
-    inline GetPlaceResult& WithPricingBucket(const char* value) { SetPricingBucket(value); return *this;}
+    inline const Aws::String& GetPricingBucket() const { return m_pricingBucket; }
+    template<typename PricingBucketT = Aws::String>
+    void SetPricingBucket(PricingBucketT&& value) { m_pricingBucketHasBeenSet = true; m_pricingBucket = std::forward<PricingBucketT>(value); }
+    template<typename PricingBucketT = Aws::String>
+    GetPlaceResult& WithPricingBucket(PricingBucketT&& value) { SetPricingBucket(std::forward<PricingBucketT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The place's address.</p>
      */
-    inline const Address& GetAddress() const{ return m_address; }
-    inline void SetAddress(const Address& value) { m_address = value; }
-    inline void SetAddress(Address&& value) { m_address = std::move(value); }
-    inline GetPlaceResult& WithAddress(const Address& value) { SetAddress(value); return *this;}
-    inline GetPlaceResult& WithAddress(Address&& value) { SetAddress(std::move(value)); return *this;}
+    inline const Address& GetAddress() const { return m_address; }
+    template<typename AddressT = Address>
+    void SetAddress(AddressT&& value) { m_addressHasBeenSet = true; m_address = std::forward<AddressT>(value); }
+    template<typename AddressT = Address>
+    GetPlaceResult& WithAddress(AddressT&& value) { SetAddress(std::forward<AddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Boolean indicating if the address provided has been corrected.</p>
      */
-    inline bool GetAddressNumberCorrected() const{ return m_addressNumberCorrected; }
-    inline void SetAddressNumberCorrected(bool value) { m_addressNumberCorrected = value; }
+    inline bool GetAddressNumberCorrected() const { return m_addressNumberCorrected; }
+    inline void SetAddressNumberCorrected(bool value) { m_addressNumberCorrectedHasBeenSet = true; m_addressNumberCorrected = value; }
     inline GetPlaceResult& WithAddressNumberCorrected(bool value) { SetAddressNumberCorrected(value); return *this;}
     ///@}
 
@@ -125,25 +117,25 @@ namespace Model
     /**
      * <p>Contains details about the postal code of the place/result. </p>
      */
-    inline const Aws::Vector<PostalCodeDetails>& GetPostalCodeDetails() const{ return m_postalCodeDetails; }
-    inline void SetPostalCodeDetails(const Aws::Vector<PostalCodeDetails>& value) { m_postalCodeDetails = value; }
-    inline void SetPostalCodeDetails(Aws::Vector<PostalCodeDetails>&& value) { m_postalCodeDetails = std::move(value); }
-    inline GetPlaceResult& WithPostalCodeDetails(const Aws::Vector<PostalCodeDetails>& value) { SetPostalCodeDetails(value); return *this;}
-    inline GetPlaceResult& WithPostalCodeDetails(Aws::Vector<PostalCodeDetails>&& value) { SetPostalCodeDetails(std::move(value)); return *this;}
-    inline GetPlaceResult& AddPostalCodeDetails(const PostalCodeDetails& value) { m_postalCodeDetails.push_back(value); return *this; }
-    inline GetPlaceResult& AddPostalCodeDetails(PostalCodeDetails&& value) { m_postalCodeDetails.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PostalCodeDetails>& GetPostalCodeDetails() const { return m_postalCodeDetails; }
+    template<typename PostalCodeDetailsT = Aws::Vector<PostalCodeDetails>>
+    void SetPostalCodeDetails(PostalCodeDetailsT&& value) { m_postalCodeDetailsHasBeenSet = true; m_postalCodeDetails = std::forward<PostalCodeDetailsT>(value); }
+    template<typename PostalCodeDetailsT = Aws::Vector<PostalCodeDetails>>
+    GetPlaceResult& WithPostalCodeDetails(PostalCodeDetailsT&& value) { SetPostalCodeDetails(std::forward<PostalCodeDetailsT>(value)); return *this;}
+    template<typename PostalCodeDetailsT = PostalCodeDetails>
+    GetPlaceResult& AddPostalCodeDetails(PostalCodeDetailsT&& value) { m_postalCodeDetailsHasBeenSet = true; m_postalCodeDetails.emplace_back(std::forward<PostalCodeDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The position, in longitude and latitude.</p>
      */
-    inline const Aws::Vector<double>& GetPosition() const{ return m_position; }
-    inline void SetPosition(const Aws::Vector<double>& value) { m_position = value; }
-    inline void SetPosition(Aws::Vector<double>&& value) { m_position = std::move(value); }
-    inline GetPlaceResult& WithPosition(const Aws::Vector<double>& value) { SetPosition(value); return *this;}
-    inline GetPlaceResult& WithPosition(Aws::Vector<double>&& value) { SetPosition(std::move(value)); return *this;}
-    inline GetPlaceResult& AddPosition(double value) { m_position.push_back(value); return *this; }
+    inline const Aws::Vector<double>& GetPosition() const { return m_position; }
+    template<typename PositionT = Aws::Vector<double>>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Aws::Vector<double>>
+    GetPlaceResult& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
+    inline GetPlaceResult& AddPosition(double value) { m_positionHasBeenSet = true; m_position.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -153,88 +145,88 @@ namespace Model
      * four coordinates: <code>[{westward lng}, {southern lat}, {eastward lng},
      * {northern lat}]</code> </p>
      */
-    inline const Aws::Vector<double>& GetMapView() const{ return m_mapView; }
-    inline void SetMapView(const Aws::Vector<double>& value) { m_mapView = value; }
-    inline void SetMapView(Aws::Vector<double>&& value) { m_mapView = std::move(value); }
-    inline GetPlaceResult& WithMapView(const Aws::Vector<double>& value) { SetMapView(value); return *this;}
-    inline GetPlaceResult& WithMapView(Aws::Vector<double>&& value) { SetMapView(std::move(value)); return *this;}
-    inline GetPlaceResult& AddMapView(double value) { m_mapView.push_back(value); return *this; }
+    inline const Aws::Vector<double>& GetMapView() const { return m_mapView; }
+    template<typename MapViewT = Aws::Vector<double>>
+    void SetMapView(MapViewT&& value) { m_mapViewHasBeenSet = true; m_mapView = std::forward<MapViewT>(value); }
+    template<typename MapViewT = Aws::Vector<double>>
+    GetPlaceResult& WithMapView(MapViewT&& value) { SetMapView(std::forward<MapViewT>(value)); return *this;}
+    inline GetPlaceResult& AddMapView(double value) { m_mapViewHasBeenSet = true; m_mapView.push_back(value); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Categories of results that results must belong to.</p>
      */
-    inline const Aws::Vector<Category>& GetCategories() const{ return m_categories; }
-    inline void SetCategories(const Aws::Vector<Category>& value) { m_categories = value; }
-    inline void SetCategories(Aws::Vector<Category>&& value) { m_categories = std::move(value); }
-    inline GetPlaceResult& WithCategories(const Aws::Vector<Category>& value) { SetCategories(value); return *this;}
-    inline GetPlaceResult& WithCategories(Aws::Vector<Category>&& value) { SetCategories(std::move(value)); return *this;}
-    inline GetPlaceResult& AddCategories(const Category& value) { m_categories.push_back(value); return *this; }
-    inline GetPlaceResult& AddCategories(Category&& value) { m_categories.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Category>& GetCategories() const { return m_categories; }
+    template<typename CategoriesT = Aws::Vector<Category>>
+    void SetCategories(CategoriesT&& value) { m_categoriesHasBeenSet = true; m_categories = std::forward<CategoriesT>(value); }
+    template<typename CategoriesT = Aws::Vector<Category>>
+    GetPlaceResult& WithCategories(CategoriesT&& value) { SetCategories(std::forward<CategoriesT>(value)); return *this;}
+    template<typename CategoriesT = Category>
+    GetPlaceResult& AddCategories(CategoriesT&& value) { m_categoriesHasBeenSet = true; m_categories.emplace_back(std::forward<CategoriesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>List of food types offered by this result.</p>
      */
-    inline const Aws::Vector<FoodType>& GetFoodTypes() const{ return m_foodTypes; }
-    inline void SetFoodTypes(const Aws::Vector<FoodType>& value) { m_foodTypes = value; }
-    inline void SetFoodTypes(Aws::Vector<FoodType>&& value) { m_foodTypes = std::move(value); }
-    inline GetPlaceResult& WithFoodTypes(const Aws::Vector<FoodType>& value) { SetFoodTypes(value); return *this;}
-    inline GetPlaceResult& WithFoodTypes(Aws::Vector<FoodType>&& value) { SetFoodTypes(std::move(value)); return *this;}
-    inline GetPlaceResult& AddFoodTypes(const FoodType& value) { m_foodTypes.push_back(value); return *this; }
-    inline GetPlaceResult& AddFoodTypes(FoodType&& value) { m_foodTypes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FoodType>& GetFoodTypes() const { return m_foodTypes; }
+    template<typename FoodTypesT = Aws::Vector<FoodType>>
+    void SetFoodTypes(FoodTypesT&& value) { m_foodTypesHasBeenSet = true; m_foodTypes = std::forward<FoodTypesT>(value); }
+    template<typename FoodTypesT = Aws::Vector<FoodType>>
+    GetPlaceResult& WithFoodTypes(FoodTypesT&& value) { SetFoodTypes(std::forward<FoodTypesT>(value)); return *this;}
+    template<typename FoodTypesT = FoodType>
+    GetPlaceResult& AddFoodTypes(FoodTypesT&& value) { m_foodTypesHasBeenSet = true; m_foodTypes.emplace_back(std::forward<FoodTypesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Business Chains associated with the place.</p>
      */
-    inline const Aws::Vector<BusinessChain>& GetBusinessChains() const{ return m_businessChains; }
-    inline void SetBusinessChains(const Aws::Vector<BusinessChain>& value) { m_businessChains = value; }
-    inline void SetBusinessChains(Aws::Vector<BusinessChain>&& value) { m_businessChains = std::move(value); }
-    inline GetPlaceResult& WithBusinessChains(const Aws::Vector<BusinessChain>& value) { SetBusinessChains(value); return *this;}
-    inline GetPlaceResult& WithBusinessChains(Aws::Vector<BusinessChain>&& value) { SetBusinessChains(std::move(value)); return *this;}
-    inline GetPlaceResult& AddBusinessChains(const BusinessChain& value) { m_businessChains.push_back(value); return *this; }
-    inline GetPlaceResult& AddBusinessChains(BusinessChain&& value) { m_businessChains.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BusinessChain>& GetBusinessChains() const { return m_businessChains; }
+    template<typename BusinessChainsT = Aws::Vector<BusinessChain>>
+    void SetBusinessChains(BusinessChainsT&& value) { m_businessChainsHasBeenSet = true; m_businessChains = std::forward<BusinessChainsT>(value); }
+    template<typename BusinessChainsT = Aws::Vector<BusinessChain>>
+    GetPlaceResult& WithBusinessChains(BusinessChainsT&& value) { SetBusinessChains(std::forward<BusinessChainsT>(value)); return *this;}
+    template<typename BusinessChainsT = BusinessChain>
+    GetPlaceResult& AddBusinessChains(BusinessChainsT&& value) { m_businessChainsHasBeenSet = true; m_businessChains.emplace_back(std::forward<BusinessChainsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>List of potential contact methods for the result/place.</p>
      */
-    inline const Contacts& GetContacts() const{ return m_contacts; }
-    inline void SetContacts(const Contacts& value) { m_contacts = value; }
-    inline void SetContacts(Contacts&& value) { m_contacts = std::move(value); }
-    inline GetPlaceResult& WithContacts(const Contacts& value) { SetContacts(value); return *this;}
-    inline GetPlaceResult& WithContacts(Contacts&& value) { SetContacts(std::move(value)); return *this;}
+    inline const Contacts& GetContacts() const { return m_contacts; }
+    template<typename ContactsT = Contacts>
+    void SetContacts(ContactsT&& value) { m_contactsHasBeenSet = true; m_contacts = std::forward<ContactsT>(value); }
+    template<typename ContactsT = Contacts>
+    GetPlaceResult& WithContacts(ContactsT&& value) { SetContacts(std::forward<ContactsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>List of opening hours objects.</p>
      */
-    inline const Aws::Vector<OpeningHours>& GetOpeningHours() const{ return m_openingHours; }
-    inline void SetOpeningHours(const Aws::Vector<OpeningHours>& value) { m_openingHours = value; }
-    inline void SetOpeningHours(Aws::Vector<OpeningHours>&& value) { m_openingHours = std::move(value); }
-    inline GetPlaceResult& WithOpeningHours(const Aws::Vector<OpeningHours>& value) { SetOpeningHours(value); return *this;}
-    inline GetPlaceResult& WithOpeningHours(Aws::Vector<OpeningHours>&& value) { SetOpeningHours(std::move(value)); return *this;}
-    inline GetPlaceResult& AddOpeningHours(const OpeningHours& value) { m_openingHours.push_back(value); return *this; }
-    inline GetPlaceResult& AddOpeningHours(OpeningHours&& value) { m_openingHours.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<OpeningHours>& GetOpeningHours() const { return m_openingHours; }
+    template<typename OpeningHoursT = Aws::Vector<OpeningHours>>
+    void SetOpeningHours(OpeningHoursT&& value) { m_openingHoursHasBeenSet = true; m_openingHours = std::forward<OpeningHoursT>(value); }
+    template<typename OpeningHoursT = Aws::Vector<OpeningHours>>
+    GetPlaceResult& WithOpeningHours(OpeningHoursT&& value) { SetOpeningHours(std::forward<OpeningHoursT>(value)); return *this;}
+    template<typename OpeningHoursT = OpeningHours>
+    GetPlaceResult& AddOpeningHours(OpeningHoursT&& value) { m_openingHoursHasBeenSet = true; m_openingHours.emplace_back(std::forward<OpeningHoursT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Position of the access point in <code>(lng,lat)</code>.</p>
      */
-    inline const Aws::Vector<AccessPoint>& GetAccessPoints() const{ return m_accessPoints; }
-    inline void SetAccessPoints(const Aws::Vector<AccessPoint>& value) { m_accessPoints = value; }
-    inline void SetAccessPoints(Aws::Vector<AccessPoint>&& value) { m_accessPoints = std::move(value); }
-    inline GetPlaceResult& WithAccessPoints(const Aws::Vector<AccessPoint>& value) { SetAccessPoints(value); return *this;}
-    inline GetPlaceResult& WithAccessPoints(Aws::Vector<AccessPoint>&& value) { SetAccessPoints(std::move(value)); return *this;}
-    inline GetPlaceResult& AddAccessPoints(const AccessPoint& value) { m_accessPoints.push_back(value); return *this; }
-    inline GetPlaceResult& AddAccessPoints(AccessPoint&& value) { m_accessPoints.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AccessPoint>& GetAccessPoints() const { return m_accessPoints; }
+    template<typename AccessPointsT = Aws::Vector<AccessPoint>>
+    void SetAccessPoints(AccessPointsT&& value) { m_accessPointsHasBeenSet = true; m_accessPoints = std::forward<AccessPointsT>(value); }
+    template<typename AccessPointsT = Aws::Vector<AccessPoint>>
+    GetPlaceResult& WithAccessPoints(AccessPointsT&& value) { SetAccessPoints(std::forward<AccessPointsT>(value)); return *this;}
+    template<typename AccessPointsT = AccessPoint>
+    GetPlaceResult& AddAccessPoints(AccessPointsT&& value) { m_accessPointsHasBeenSet = true; m_accessPoints.emplace_back(std::forward<AccessPointsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -243,24 +235,24 @@ namespace Model
      * correlates to an access point and indicates if access through this point has
      * some form of restriction.</p>
      */
-    inline const Aws::Vector<AccessRestriction>& GetAccessRestrictions() const{ return m_accessRestrictions; }
-    inline void SetAccessRestrictions(const Aws::Vector<AccessRestriction>& value) { m_accessRestrictions = value; }
-    inline void SetAccessRestrictions(Aws::Vector<AccessRestriction>&& value) { m_accessRestrictions = std::move(value); }
-    inline GetPlaceResult& WithAccessRestrictions(const Aws::Vector<AccessRestriction>& value) { SetAccessRestrictions(value); return *this;}
-    inline GetPlaceResult& WithAccessRestrictions(Aws::Vector<AccessRestriction>&& value) { SetAccessRestrictions(std::move(value)); return *this;}
-    inline GetPlaceResult& AddAccessRestrictions(const AccessRestriction& value) { m_accessRestrictions.push_back(value); return *this; }
-    inline GetPlaceResult& AddAccessRestrictions(AccessRestriction&& value) { m_accessRestrictions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AccessRestriction>& GetAccessRestrictions() const { return m_accessRestrictions; }
+    template<typename AccessRestrictionsT = Aws::Vector<AccessRestriction>>
+    void SetAccessRestrictions(AccessRestrictionsT&& value) { m_accessRestrictionsHasBeenSet = true; m_accessRestrictions = std::forward<AccessRestrictionsT>(value); }
+    template<typename AccessRestrictionsT = Aws::Vector<AccessRestriction>>
+    GetPlaceResult& WithAccessRestrictions(AccessRestrictionsT&& value) { SetAccessRestrictions(std::forward<AccessRestrictionsT>(value)); return *this;}
+    template<typename AccessRestrictionsT = AccessRestriction>
+    GetPlaceResult& AddAccessRestrictions(AccessRestrictionsT&& value) { m_accessRestrictionsHasBeenSet = true; m_accessRestrictions.emplace_back(std::forward<AccessRestrictionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The time zone in which the place is located.</p>
      */
-    inline const TimeZone& GetTimeZone() const{ return m_timeZone; }
-    inline void SetTimeZone(const TimeZone& value) { m_timeZone = value; }
-    inline void SetTimeZone(TimeZone&& value) { m_timeZone = std::move(value); }
-    inline GetPlaceResult& WithTimeZone(const TimeZone& value) { SetTimeZone(value); return *this;}
-    inline GetPlaceResult& WithTimeZone(TimeZone&& value) { SetTimeZone(std::move(value)); return *this;}
+    inline const TimeZone& GetTimeZone() const { return m_timeZone; }
+    template<typename TimeZoneT = TimeZone>
+    void SetTimeZone(TimeZoneT&& value) { m_timeZoneHasBeenSet = true; m_timeZone = std::forward<TimeZoneT>(value); }
+    template<typename TimeZoneT = TimeZone>
+    GetPlaceResult& WithTimeZone(TimeZoneT&& value) { SetTimeZone(std::forward<TimeZoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -269,13 +261,11 @@ namespace Model
      * The political view applies to the results of the request to represent unresolved
      * territorial claims through the point of view of the specified country.</p>
      */
-    inline const Aws::String& GetPoliticalView() const{ return m_politicalView; }
-    inline void SetPoliticalView(const Aws::String& value) { m_politicalView = value; }
-    inline void SetPoliticalView(Aws::String&& value) { m_politicalView = std::move(value); }
-    inline void SetPoliticalView(const char* value) { m_politicalView.assign(value); }
-    inline GetPlaceResult& WithPoliticalView(const Aws::String& value) { SetPoliticalView(value); return *this;}
-    inline GetPlaceResult& WithPoliticalView(Aws::String&& value) { SetPoliticalView(std::move(value)); return *this;}
-    inline GetPlaceResult& WithPoliticalView(const char* value) { SetPoliticalView(value); return *this;}
+    inline const Aws::String& GetPoliticalView() const { return m_politicalView; }
+    template<typename PoliticalViewT = Aws::String>
+    void SetPoliticalView(PoliticalViewT&& value) { m_politicalViewHasBeenSet = true; m_politicalView = std::forward<PoliticalViewT>(value); }
+    template<typename PoliticalViewT = Aws::String>
+    GetPlaceResult& WithPoliticalView(PoliticalViewT&& value) { SetPoliticalView(std::forward<PoliticalViewT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -283,64 +273,82 @@ namespace Model
      * <p>How the various components of the result's address are pronounced in various
      * languages.</p>
      */
-    inline const PhonemeDetails& GetPhonemes() const{ return m_phonemes; }
-    inline void SetPhonemes(const PhonemeDetails& value) { m_phonemes = value; }
-    inline void SetPhonemes(PhonemeDetails&& value) { m_phonemes = std::move(value); }
-    inline GetPlaceResult& WithPhonemes(const PhonemeDetails& value) { SetPhonemes(value); return *this;}
-    inline GetPlaceResult& WithPhonemes(PhonemeDetails&& value) { SetPhonemes(std::move(value)); return *this;}
+    inline const PhonemeDetails& GetPhonemes() const { return m_phonemes; }
+    template<typename PhonemesT = PhonemeDetails>
+    void SetPhonemes(PhonemesT&& value) { m_phonemesHasBeenSet = true; m_phonemes = std::forward<PhonemesT>(value); }
+    template<typename PhonemesT = PhonemeDetails>
+    GetPlaceResult& WithPhonemes(PhonemesT&& value) { SetPhonemes(std::forward<PhonemesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPlaceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPlaceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPlaceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPlaceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_placeId;
+    bool m_placeIdHasBeenSet = false;
 
-    PlaceType m_placeType;
+    PlaceType m_placeType{PlaceType::NOT_SET};
+    bool m_placeTypeHasBeenSet = false;
 
     Aws::String m_title;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_pricingBucket;
+    bool m_pricingBucketHasBeenSet = false;
 
     Address m_address;
+    bool m_addressHasBeenSet = false;
 
-    bool m_addressNumberCorrected;
+    bool m_addressNumberCorrected{false};
+    bool m_addressNumberCorrectedHasBeenSet = false;
 
     Aws::Vector<PostalCodeDetails> m_postalCodeDetails;
+    bool m_postalCodeDetailsHasBeenSet = false;
 
     Aws::Vector<double> m_position;
+    bool m_positionHasBeenSet = false;
 
     Aws::Vector<double> m_mapView;
+    bool m_mapViewHasBeenSet = false;
 
     Aws::Vector<Category> m_categories;
+    bool m_categoriesHasBeenSet = false;
 
     Aws::Vector<FoodType> m_foodTypes;
+    bool m_foodTypesHasBeenSet = false;
 
     Aws::Vector<BusinessChain> m_businessChains;
+    bool m_businessChainsHasBeenSet = false;
 
     Contacts m_contacts;
+    bool m_contactsHasBeenSet = false;
 
     Aws::Vector<OpeningHours> m_openingHours;
+    bool m_openingHoursHasBeenSet = false;
 
     Aws::Vector<AccessPoint> m_accessPoints;
+    bool m_accessPointsHasBeenSet = false;
 
     Aws::Vector<AccessRestriction> m_accessRestrictions;
+    bool m_accessRestrictionsHasBeenSet = false;
 
     TimeZone m_timeZone;
+    bool m_timeZoneHasBeenSet = false;
 
     Aws::String m_politicalView;
+    bool m_politicalViewHasBeenSet = false;
 
     PhonemeDetails m_phonemes;
+    bool m_phonemesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

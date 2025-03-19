@@ -18,13 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-JSONMappingParameters::JSONMappingParameters() : 
-    m_recordRowPathHasBeenSet(false)
-{
-}
-
 JSONMappingParameters::JSONMappingParameters(JsonView jsonValue)
-  : JSONMappingParameters()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ JSONMappingParameters& JSONMappingParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RecordRowPath"))
   {
     m_recordRowPath = jsonValue.GetString("RecordRowPath");
-
     m_recordRowPathHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::JSONRPC10::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-JsonUnionsRequest::JsonUnionsRequest() : 
-    m_contentsHasBeenSet(false)
-{
-}
-
 Aws::String JsonUnionsRequest::SerializePayload() const
 {
   JsonValue payload;

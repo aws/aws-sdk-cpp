@@ -26,7 +26,7 @@ namespace Model
   class ExportLicenseRecommendationsRequest : public ComputeOptimizerRequest
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API ExportLicenseRecommendationsRequest();
+    AWS_COMPUTEOPTIMIZER_API ExportLicenseRecommendationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,15 +50,14 @@ namespace Model
      * accounts aren't included in the export.</p> <p>You can specify multiple account
      * IDs per request.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAccountIds() const{ return m_accountIds; }
+    inline const Aws::Vector<Aws::String>& GetAccountIds() const { return m_accountIds; }
     inline bool AccountIdsHasBeenSet() const { return m_accountIdsHasBeenSet; }
-    inline void SetAccountIds(const Aws::Vector<Aws::String>& value) { m_accountIdsHasBeenSet = true; m_accountIds = value; }
-    inline void SetAccountIds(Aws::Vector<Aws::String>&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::move(value); }
-    inline ExportLicenseRecommendationsRequest& WithAccountIds(const Aws::Vector<Aws::String>& value) { SetAccountIds(value); return *this;}
-    inline ExportLicenseRecommendationsRequest& WithAccountIds(Aws::Vector<Aws::String>&& value) { SetAccountIds(std::move(value)); return *this;}
-    inline ExportLicenseRecommendationsRequest& AddAccountIds(const Aws::String& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
-    inline ExportLicenseRecommendationsRequest& AddAccountIds(Aws::String&& value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(std::move(value)); return *this; }
-    inline ExportLicenseRecommendationsRequest& AddAccountIds(const char* value) { m_accountIdsHasBeenSet = true; m_accountIds.push_back(value); return *this; }
+    template<typename AccountIdsT = Aws::Vector<Aws::String>>
+    void SetAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds = std::forward<AccountIdsT>(value); }
+    template<typename AccountIdsT = Aws::Vector<Aws::String>>
+    ExportLicenseRecommendationsRequest& WithAccountIds(AccountIdsT&& value) { SetAccountIds(std::forward<AccountIdsT>(value)); return *this;}
+    template<typename AccountIdsT = Aws::String>
+    ExportLicenseRecommendationsRequest& AddAccountIds(AccountIdsT&& value) { m_accountIdsHasBeenSet = true; m_accountIds.emplace_back(std::forward<AccountIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -66,14 +65,14 @@ namespace Model
      * <p> An array of objects to specify a filter that exports a more specific set of
      * license recommendations. </p>
      */
-    inline const Aws::Vector<LicenseRecommendationFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<LicenseRecommendationFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<LicenseRecommendationFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<LicenseRecommendationFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ExportLicenseRecommendationsRequest& WithFilters(const Aws::Vector<LicenseRecommendationFilter>& value) { SetFilters(value); return *this;}
-    inline ExportLicenseRecommendationsRequest& WithFilters(Aws::Vector<LicenseRecommendationFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline ExportLicenseRecommendationsRequest& AddFilters(const LicenseRecommendationFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline ExportLicenseRecommendationsRequest& AddFilters(LicenseRecommendationFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<LicenseRecommendationFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<LicenseRecommendationFilter>>
+    ExportLicenseRecommendationsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = LicenseRecommendationFilter>
+    ExportLicenseRecommendationsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -83,24 +82,23 @@ namespace Model
      * href="https://docs.aws.amazon.com/compute-optimizer/latest/ug/exporting-recommendations.html#exported-files">Exported
      * files</a> in the <i>Compute Optimizer User Guide</i>.</p>
      */
-    inline const Aws::Vector<ExportableLicenseField>& GetFieldsToExport() const{ return m_fieldsToExport; }
+    inline const Aws::Vector<ExportableLicenseField>& GetFieldsToExport() const { return m_fieldsToExport; }
     inline bool FieldsToExportHasBeenSet() const { return m_fieldsToExportHasBeenSet; }
-    inline void SetFieldsToExport(const Aws::Vector<ExportableLicenseField>& value) { m_fieldsToExportHasBeenSet = true; m_fieldsToExport = value; }
-    inline void SetFieldsToExport(Aws::Vector<ExportableLicenseField>&& value) { m_fieldsToExportHasBeenSet = true; m_fieldsToExport = std::move(value); }
-    inline ExportLicenseRecommendationsRequest& WithFieldsToExport(const Aws::Vector<ExportableLicenseField>& value) { SetFieldsToExport(value); return *this;}
-    inline ExportLicenseRecommendationsRequest& WithFieldsToExport(Aws::Vector<ExportableLicenseField>&& value) { SetFieldsToExport(std::move(value)); return *this;}
-    inline ExportLicenseRecommendationsRequest& AddFieldsToExport(const ExportableLicenseField& value) { m_fieldsToExportHasBeenSet = true; m_fieldsToExport.push_back(value); return *this; }
-    inline ExportLicenseRecommendationsRequest& AddFieldsToExport(ExportableLicenseField&& value) { m_fieldsToExportHasBeenSet = true; m_fieldsToExport.push_back(std::move(value)); return *this; }
+    template<typename FieldsToExportT = Aws::Vector<ExportableLicenseField>>
+    void SetFieldsToExport(FieldsToExportT&& value) { m_fieldsToExportHasBeenSet = true; m_fieldsToExport = std::forward<FieldsToExportT>(value); }
+    template<typename FieldsToExportT = Aws::Vector<ExportableLicenseField>>
+    ExportLicenseRecommendationsRequest& WithFieldsToExport(FieldsToExportT&& value) { SetFieldsToExport(std::forward<FieldsToExportT>(value)); return *this;}
+    inline ExportLicenseRecommendationsRequest& AddFieldsToExport(ExportableLicenseField value) { m_fieldsToExportHasBeenSet = true; m_fieldsToExport.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const S3DestinationConfig& GetS3DestinationConfig() const{ return m_s3DestinationConfig; }
+    inline const S3DestinationConfig& GetS3DestinationConfig() const { return m_s3DestinationConfig; }
     inline bool S3DestinationConfigHasBeenSet() const { return m_s3DestinationConfigHasBeenSet; }
-    inline void SetS3DestinationConfig(const S3DestinationConfig& value) { m_s3DestinationConfigHasBeenSet = true; m_s3DestinationConfig = value; }
-    inline void SetS3DestinationConfig(S3DestinationConfig&& value) { m_s3DestinationConfigHasBeenSet = true; m_s3DestinationConfig = std::move(value); }
-    inline ExportLicenseRecommendationsRequest& WithS3DestinationConfig(const S3DestinationConfig& value) { SetS3DestinationConfig(value); return *this;}
-    inline ExportLicenseRecommendationsRequest& WithS3DestinationConfig(S3DestinationConfig&& value) { SetS3DestinationConfig(std::move(value)); return *this;}
+    template<typename S3DestinationConfigT = S3DestinationConfig>
+    void SetS3DestinationConfig(S3DestinationConfigT&& value) { m_s3DestinationConfigHasBeenSet = true; m_s3DestinationConfig = std::forward<S3DestinationConfigT>(value); }
+    template<typename S3DestinationConfigT = S3DestinationConfig>
+    ExportLicenseRecommendationsRequest& WithS3DestinationConfig(S3DestinationConfigT&& value) { SetS3DestinationConfig(std::forward<S3DestinationConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,12 +106,10 @@ namespace Model
      * <p>The format of the export file.</p> <p>A CSV file is the only export format
      * currently supported.</p>
      */
-    inline const FileFormat& GetFileFormat() const{ return m_fileFormat; }
+    inline FileFormat GetFileFormat() const { return m_fileFormat; }
     inline bool FileFormatHasBeenSet() const { return m_fileFormatHasBeenSet; }
-    inline void SetFileFormat(const FileFormat& value) { m_fileFormatHasBeenSet = true; m_fileFormat = value; }
-    inline void SetFileFormat(FileFormat&& value) { m_fileFormatHasBeenSet = true; m_fileFormat = std::move(value); }
-    inline ExportLicenseRecommendationsRequest& WithFileFormat(const FileFormat& value) { SetFileFormat(value); return *this;}
-    inline ExportLicenseRecommendationsRequest& WithFileFormat(FileFormat&& value) { SetFileFormat(std::move(value)); return *this;}
+    inline void SetFileFormat(FileFormat value) { m_fileFormatHasBeenSet = true; m_fileFormat = value; }
+    inline ExportLicenseRecommendationsRequest& WithFileFormat(FileFormat value) { SetFileFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -130,7 +126,7 @@ namespace Model
      * export file .</p> <p>This parameter cannot be specified together with the
      * account IDs parameter. The parameters are mutually exclusive.</p>
      */
-    inline bool GetIncludeMemberAccounts() const{ return m_includeMemberAccounts; }
+    inline bool GetIncludeMemberAccounts() const { return m_includeMemberAccounts; }
     inline bool IncludeMemberAccountsHasBeenSet() const { return m_includeMemberAccountsHasBeenSet; }
     inline void SetIncludeMemberAccounts(bool value) { m_includeMemberAccountsHasBeenSet = true; m_includeMemberAccounts = value; }
     inline ExportLicenseRecommendationsRequest& WithIncludeMemberAccounts(bool value) { SetIncludeMemberAccounts(value); return *this;}
@@ -149,10 +145,10 @@ namespace Model
     S3DestinationConfig m_s3DestinationConfig;
     bool m_s3DestinationConfigHasBeenSet = false;
 
-    FileFormat m_fileFormat;
+    FileFormat m_fileFormat{FileFormat::NOT_SET};
     bool m_fileFormatHasBeenSet = false;
 
-    bool m_includeMemberAccounts;
+    bool m_includeMemberAccounts{false};
     bool m_includeMemberAccountsHasBeenSet = false;
   };
 

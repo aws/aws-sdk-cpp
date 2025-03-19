@@ -32,7 +32,7 @@ namespace Model
   class ProductViewAggregationValue
   {
   public:
-    AWS_SERVICECATALOG_API ProductViewAggregationValue();
+    AWS_SERVICECATALOG_API ProductViewAggregationValue() = default;
     AWS_SERVICECATALOG_API ProductViewAggregationValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API ProductViewAggregationValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The value of the product view aggregation.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline ProductViewAggregationValue& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline ProductViewAggregationValue& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline ProductViewAggregationValue& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    ProductViewAggregationValue& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An approximate count of the products that match the value.</p>
      */
-    inline int GetApproximateCount() const{ return m_approximateCount; }
+    inline int GetApproximateCount() const { return m_approximateCount; }
     inline bool ApproximateCountHasBeenSet() const { return m_approximateCountHasBeenSet; }
     inline void SetApproximateCount(int value) { m_approximateCountHasBeenSet = true; m_approximateCount = value; }
     inline ProductViewAggregationValue& WithApproximateCount(int value) { SetApproximateCount(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
 
-    int m_approximateCount;
+    int m_approximateCount{0};
     bool m_approximateCountHasBeenSet = false;
   };
 

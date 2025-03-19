@@ -26,7 +26,7 @@ namespace Model
   class CreateSoftwareUpdateJobRequest : public GreengrassRequest
   {
   public:
-    AWS_GREENGRASS_API CreateSoftwareUpdateJobRequest();
+    AWS_GREENGRASS_API CreateSoftwareUpdateJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,79 +43,66 @@ namespace Model
     /**
      * A client token used to correlate requests and responses.
      */
-    inline const Aws::String& GetAmznClientToken() const{ return m_amznClientToken; }
+    inline const Aws::String& GetAmznClientToken() const { return m_amznClientToken; }
     inline bool AmznClientTokenHasBeenSet() const { return m_amznClientTokenHasBeenSet; }
-    inline void SetAmznClientToken(const Aws::String& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = value; }
-    inline void SetAmznClientToken(Aws::String&& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = std::move(value); }
-    inline void SetAmznClientToken(const char* value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken.assign(value); }
-    inline CreateSoftwareUpdateJobRequest& WithAmznClientToken(const Aws::String& value) { SetAmznClientToken(value); return *this;}
-    inline CreateSoftwareUpdateJobRequest& WithAmznClientToken(Aws::String&& value) { SetAmznClientToken(std::move(value)); return *this;}
-    inline CreateSoftwareUpdateJobRequest& WithAmznClientToken(const char* value) { SetAmznClientToken(value); return *this;}
+    template<typename AmznClientTokenT = Aws::String>
+    void SetAmznClientToken(AmznClientTokenT&& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = std::forward<AmznClientTokenT>(value); }
+    template<typename AmznClientTokenT = Aws::String>
+    CreateSoftwareUpdateJobRequest& WithAmznClientToken(AmznClientTokenT&& value) { SetAmznClientToken(std::forward<AmznClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetS3UrlSignerRole() const{ return m_s3UrlSignerRole; }
+    inline const Aws::String& GetS3UrlSignerRole() const { return m_s3UrlSignerRole; }
     inline bool S3UrlSignerRoleHasBeenSet() const { return m_s3UrlSignerRoleHasBeenSet; }
-    inline void SetS3UrlSignerRole(const Aws::String& value) { m_s3UrlSignerRoleHasBeenSet = true; m_s3UrlSignerRole = value; }
-    inline void SetS3UrlSignerRole(Aws::String&& value) { m_s3UrlSignerRoleHasBeenSet = true; m_s3UrlSignerRole = std::move(value); }
-    inline void SetS3UrlSignerRole(const char* value) { m_s3UrlSignerRoleHasBeenSet = true; m_s3UrlSignerRole.assign(value); }
-    inline CreateSoftwareUpdateJobRequest& WithS3UrlSignerRole(const Aws::String& value) { SetS3UrlSignerRole(value); return *this;}
-    inline CreateSoftwareUpdateJobRequest& WithS3UrlSignerRole(Aws::String&& value) { SetS3UrlSignerRole(std::move(value)); return *this;}
-    inline CreateSoftwareUpdateJobRequest& WithS3UrlSignerRole(const char* value) { SetS3UrlSignerRole(value); return *this;}
+    template<typename S3UrlSignerRoleT = Aws::String>
+    void SetS3UrlSignerRole(S3UrlSignerRoleT&& value) { m_s3UrlSignerRoleHasBeenSet = true; m_s3UrlSignerRole = std::forward<S3UrlSignerRoleT>(value); }
+    template<typename S3UrlSignerRoleT = Aws::String>
+    CreateSoftwareUpdateJobRequest& WithS3UrlSignerRole(S3UrlSignerRoleT&& value) { SetS3UrlSignerRole(std::forward<S3UrlSignerRoleT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const SoftwareToUpdate& GetSoftwareToUpdate() const{ return m_softwareToUpdate; }
+    inline SoftwareToUpdate GetSoftwareToUpdate() const { return m_softwareToUpdate; }
     inline bool SoftwareToUpdateHasBeenSet() const { return m_softwareToUpdateHasBeenSet; }
-    inline void SetSoftwareToUpdate(const SoftwareToUpdate& value) { m_softwareToUpdateHasBeenSet = true; m_softwareToUpdate = value; }
-    inline void SetSoftwareToUpdate(SoftwareToUpdate&& value) { m_softwareToUpdateHasBeenSet = true; m_softwareToUpdate = std::move(value); }
-    inline CreateSoftwareUpdateJobRequest& WithSoftwareToUpdate(const SoftwareToUpdate& value) { SetSoftwareToUpdate(value); return *this;}
-    inline CreateSoftwareUpdateJobRequest& WithSoftwareToUpdate(SoftwareToUpdate&& value) { SetSoftwareToUpdate(std::move(value)); return *this;}
+    inline void SetSoftwareToUpdate(SoftwareToUpdate value) { m_softwareToUpdateHasBeenSet = true; m_softwareToUpdate = value; }
+    inline CreateSoftwareUpdateJobRequest& WithSoftwareToUpdate(SoftwareToUpdate value) { SetSoftwareToUpdate(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const UpdateAgentLogLevel& GetUpdateAgentLogLevel() const{ return m_updateAgentLogLevel; }
+    inline UpdateAgentLogLevel GetUpdateAgentLogLevel() const { return m_updateAgentLogLevel; }
     inline bool UpdateAgentLogLevelHasBeenSet() const { return m_updateAgentLogLevelHasBeenSet; }
-    inline void SetUpdateAgentLogLevel(const UpdateAgentLogLevel& value) { m_updateAgentLogLevelHasBeenSet = true; m_updateAgentLogLevel = value; }
-    inline void SetUpdateAgentLogLevel(UpdateAgentLogLevel&& value) { m_updateAgentLogLevelHasBeenSet = true; m_updateAgentLogLevel = std::move(value); }
-    inline CreateSoftwareUpdateJobRequest& WithUpdateAgentLogLevel(const UpdateAgentLogLevel& value) { SetUpdateAgentLogLevel(value); return *this;}
-    inline CreateSoftwareUpdateJobRequest& WithUpdateAgentLogLevel(UpdateAgentLogLevel&& value) { SetUpdateAgentLogLevel(std::move(value)); return *this;}
+    inline void SetUpdateAgentLogLevel(UpdateAgentLogLevel value) { m_updateAgentLogLevelHasBeenSet = true; m_updateAgentLogLevel = value; }
+    inline CreateSoftwareUpdateJobRequest& WithUpdateAgentLogLevel(UpdateAgentLogLevel value) { SetUpdateAgentLogLevel(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Aws::String>& GetUpdateTargets() const{ return m_updateTargets; }
+    inline const Aws::Vector<Aws::String>& GetUpdateTargets() const { return m_updateTargets; }
     inline bool UpdateTargetsHasBeenSet() const { return m_updateTargetsHasBeenSet; }
-    inline void SetUpdateTargets(const Aws::Vector<Aws::String>& value) { m_updateTargetsHasBeenSet = true; m_updateTargets = value; }
-    inline void SetUpdateTargets(Aws::Vector<Aws::String>&& value) { m_updateTargetsHasBeenSet = true; m_updateTargets = std::move(value); }
-    inline CreateSoftwareUpdateJobRequest& WithUpdateTargets(const Aws::Vector<Aws::String>& value) { SetUpdateTargets(value); return *this;}
-    inline CreateSoftwareUpdateJobRequest& WithUpdateTargets(Aws::Vector<Aws::String>&& value) { SetUpdateTargets(std::move(value)); return *this;}
-    inline CreateSoftwareUpdateJobRequest& AddUpdateTargets(const Aws::String& value) { m_updateTargetsHasBeenSet = true; m_updateTargets.push_back(value); return *this; }
-    inline CreateSoftwareUpdateJobRequest& AddUpdateTargets(Aws::String&& value) { m_updateTargetsHasBeenSet = true; m_updateTargets.push_back(std::move(value)); return *this; }
-    inline CreateSoftwareUpdateJobRequest& AddUpdateTargets(const char* value) { m_updateTargetsHasBeenSet = true; m_updateTargets.push_back(value); return *this; }
+    template<typename UpdateTargetsT = Aws::Vector<Aws::String>>
+    void SetUpdateTargets(UpdateTargetsT&& value) { m_updateTargetsHasBeenSet = true; m_updateTargets = std::forward<UpdateTargetsT>(value); }
+    template<typename UpdateTargetsT = Aws::Vector<Aws::String>>
+    CreateSoftwareUpdateJobRequest& WithUpdateTargets(UpdateTargetsT&& value) { SetUpdateTargets(std::forward<UpdateTargetsT>(value)); return *this;}
+    template<typename UpdateTargetsT = Aws::String>
+    CreateSoftwareUpdateJobRequest& AddUpdateTargets(UpdateTargetsT&& value) { m_updateTargetsHasBeenSet = true; m_updateTargets.emplace_back(std::forward<UpdateTargetsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const UpdateTargetsArchitecture& GetUpdateTargetsArchitecture() const{ return m_updateTargetsArchitecture; }
+    inline UpdateTargetsArchitecture GetUpdateTargetsArchitecture() const { return m_updateTargetsArchitecture; }
     inline bool UpdateTargetsArchitectureHasBeenSet() const { return m_updateTargetsArchitectureHasBeenSet; }
-    inline void SetUpdateTargetsArchitecture(const UpdateTargetsArchitecture& value) { m_updateTargetsArchitectureHasBeenSet = true; m_updateTargetsArchitecture = value; }
-    inline void SetUpdateTargetsArchitecture(UpdateTargetsArchitecture&& value) { m_updateTargetsArchitectureHasBeenSet = true; m_updateTargetsArchitecture = std::move(value); }
-    inline CreateSoftwareUpdateJobRequest& WithUpdateTargetsArchitecture(const UpdateTargetsArchitecture& value) { SetUpdateTargetsArchitecture(value); return *this;}
-    inline CreateSoftwareUpdateJobRequest& WithUpdateTargetsArchitecture(UpdateTargetsArchitecture&& value) { SetUpdateTargetsArchitecture(std::move(value)); return *this;}
+    inline void SetUpdateTargetsArchitecture(UpdateTargetsArchitecture value) { m_updateTargetsArchitectureHasBeenSet = true; m_updateTargetsArchitecture = value; }
+    inline CreateSoftwareUpdateJobRequest& WithUpdateTargetsArchitecture(UpdateTargetsArchitecture value) { SetUpdateTargetsArchitecture(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const UpdateTargetsOperatingSystem& GetUpdateTargetsOperatingSystem() const{ return m_updateTargetsOperatingSystem; }
+    inline UpdateTargetsOperatingSystem GetUpdateTargetsOperatingSystem() const { return m_updateTargetsOperatingSystem; }
     inline bool UpdateTargetsOperatingSystemHasBeenSet() const { return m_updateTargetsOperatingSystemHasBeenSet; }
-    inline void SetUpdateTargetsOperatingSystem(const UpdateTargetsOperatingSystem& value) { m_updateTargetsOperatingSystemHasBeenSet = true; m_updateTargetsOperatingSystem = value; }
-    inline void SetUpdateTargetsOperatingSystem(UpdateTargetsOperatingSystem&& value) { m_updateTargetsOperatingSystemHasBeenSet = true; m_updateTargetsOperatingSystem = std::move(value); }
-    inline CreateSoftwareUpdateJobRequest& WithUpdateTargetsOperatingSystem(const UpdateTargetsOperatingSystem& value) { SetUpdateTargetsOperatingSystem(value); return *this;}
-    inline CreateSoftwareUpdateJobRequest& WithUpdateTargetsOperatingSystem(UpdateTargetsOperatingSystem&& value) { SetUpdateTargetsOperatingSystem(std::move(value)); return *this;}
+    inline void SetUpdateTargetsOperatingSystem(UpdateTargetsOperatingSystem value) { m_updateTargetsOperatingSystemHasBeenSet = true; m_updateTargetsOperatingSystem = value; }
+    inline CreateSoftwareUpdateJobRequest& WithUpdateTargetsOperatingSystem(UpdateTargetsOperatingSystem value) { SetUpdateTargetsOperatingSystem(value); return *this;}
     ///@}
   private:
 
@@ -125,19 +112,19 @@ namespace Model
     Aws::String m_s3UrlSignerRole;
     bool m_s3UrlSignerRoleHasBeenSet = false;
 
-    SoftwareToUpdate m_softwareToUpdate;
+    SoftwareToUpdate m_softwareToUpdate{SoftwareToUpdate::NOT_SET};
     bool m_softwareToUpdateHasBeenSet = false;
 
-    UpdateAgentLogLevel m_updateAgentLogLevel;
+    UpdateAgentLogLevel m_updateAgentLogLevel{UpdateAgentLogLevel::NOT_SET};
     bool m_updateAgentLogLevelHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_updateTargets;
     bool m_updateTargetsHasBeenSet = false;
 
-    UpdateTargetsArchitecture m_updateTargetsArchitecture;
+    UpdateTargetsArchitecture m_updateTargetsArchitecture{UpdateTargetsArchitecture::NOT_SET};
     bool m_updateTargetsArchitectureHasBeenSet = false;
 
-    UpdateTargetsOperatingSystem m_updateTargetsOperatingSystem;
+    UpdateTargetsOperatingSystem m_updateTargetsOperatingSystem{UpdateTargetsOperatingSystem::NOT_SET};
     bool m_updateTargetsOperatingSystemHasBeenSet = false;
   };
 

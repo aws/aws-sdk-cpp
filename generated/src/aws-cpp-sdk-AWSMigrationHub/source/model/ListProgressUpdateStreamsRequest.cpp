@@ -12,13 +12,6 @@ using namespace Aws::MigrationHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListProgressUpdateStreamsRequest::ListProgressUpdateStreamsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListProgressUpdateStreamsRequest::SerializePayload() const
 {
   JsonValue payload;

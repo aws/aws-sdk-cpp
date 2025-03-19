@@ -32,7 +32,7 @@ namespace Model
   class PartnerAppMaintenanceConfig
   {
   public:
-    AWS_SAGEMAKER_API PartnerAppMaintenanceConfig();
+    AWS_SAGEMAKER_API PartnerAppMaintenanceConfig() = default;
     AWS_SAGEMAKER_API PartnerAppMaintenanceConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API PartnerAppMaintenanceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * take the following format: <code>3-letter-day:24-h-hour:minute</code>. For
      * example: <code>TUE:03:30</code>.</p>
      */
-    inline const Aws::String& GetMaintenanceWindowStart() const{ return m_maintenanceWindowStart; }
+    inline const Aws::String& GetMaintenanceWindowStart() const { return m_maintenanceWindowStart; }
     inline bool MaintenanceWindowStartHasBeenSet() const { return m_maintenanceWindowStartHasBeenSet; }
-    inline void SetMaintenanceWindowStart(const Aws::String& value) { m_maintenanceWindowStartHasBeenSet = true; m_maintenanceWindowStart = value; }
-    inline void SetMaintenanceWindowStart(Aws::String&& value) { m_maintenanceWindowStartHasBeenSet = true; m_maintenanceWindowStart = std::move(value); }
-    inline void SetMaintenanceWindowStart(const char* value) { m_maintenanceWindowStartHasBeenSet = true; m_maintenanceWindowStart.assign(value); }
-    inline PartnerAppMaintenanceConfig& WithMaintenanceWindowStart(const Aws::String& value) { SetMaintenanceWindowStart(value); return *this;}
-    inline PartnerAppMaintenanceConfig& WithMaintenanceWindowStart(Aws::String&& value) { SetMaintenanceWindowStart(std::move(value)); return *this;}
-    inline PartnerAppMaintenanceConfig& WithMaintenanceWindowStart(const char* value) { SetMaintenanceWindowStart(value); return *this;}
+    template<typename MaintenanceWindowStartT = Aws::String>
+    void SetMaintenanceWindowStart(MaintenanceWindowStartT&& value) { m_maintenanceWindowStartHasBeenSet = true; m_maintenanceWindowStart = std::forward<MaintenanceWindowStartT>(value); }
+    template<typename MaintenanceWindowStartT = Aws::String>
+    PartnerAppMaintenanceConfig& WithMaintenanceWindowStart(MaintenanceWindowStartT&& value) { SetMaintenanceWindowStart(std::forward<MaintenanceWindowStartT>(value)); return *this;}
     ///@}
   private:
 

@@ -34,7 +34,7 @@ namespace Model
   class SubjectAlternativeNameMatchers
   {
   public:
-    AWS_APPMESH_API SubjectAlternativeNameMatchers();
+    AWS_APPMESH_API SubjectAlternativeNameMatchers() = default;
     AWS_APPMESH_API SubjectAlternativeNameMatchers(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API SubjectAlternativeNameMatchers& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,15 +44,14 @@ namespace Model
     /**
      * <p>The values sent must match the specified values exactly.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExact() const{ return m_exact; }
+    inline const Aws::Vector<Aws::String>& GetExact() const { return m_exact; }
     inline bool ExactHasBeenSet() const { return m_exactHasBeenSet; }
-    inline void SetExact(const Aws::Vector<Aws::String>& value) { m_exactHasBeenSet = true; m_exact = value; }
-    inline void SetExact(Aws::Vector<Aws::String>&& value) { m_exactHasBeenSet = true; m_exact = std::move(value); }
-    inline SubjectAlternativeNameMatchers& WithExact(const Aws::Vector<Aws::String>& value) { SetExact(value); return *this;}
-    inline SubjectAlternativeNameMatchers& WithExact(Aws::Vector<Aws::String>&& value) { SetExact(std::move(value)); return *this;}
-    inline SubjectAlternativeNameMatchers& AddExact(const Aws::String& value) { m_exactHasBeenSet = true; m_exact.push_back(value); return *this; }
-    inline SubjectAlternativeNameMatchers& AddExact(Aws::String&& value) { m_exactHasBeenSet = true; m_exact.push_back(std::move(value)); return *this; }
-    inline SubjectAlternativeNameMatchers& AddExact(const char* value) { m_exactHasBeenSet = true; m_exact.push_back(value); return *this; }
+    template<typename ExactT = Aws::Vector<Aws::String>>
+    void SetExact(ExactT&& value) { m_exactHasBeenSet = true; m_exact = std::forward<ExactT>(value); }
+    template<typename ExactT = Aws::Vector<Aws::String>>
+    SubjectAlternativeNameMatchers& WithExact(ExactT&& value) { SetExact(std::forward<ExactT>(value)); return *this;}
+    template<typename ExactT = Aws::String>
+    SubjectAlternativeNameMatchers& AddExact(ExactT&& value) { m_exactHasBeenSet = true; m_exact.emplace_back(std::forward<ExactT>(value)); return *this; }
     ///@}
   private:
 

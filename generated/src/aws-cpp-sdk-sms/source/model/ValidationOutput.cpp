@@ -18,20 +18,7 @@ namespace SMS
 namespace Model
 {
 
-ValidationOutput::ValidationOutput() : 
-    m_validationIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(ValidationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_latestValidationTimeHasBeenSet(false),
-    m_appValidationOutputHasBeenSet(false),
-    m_serverValidationOutputHasBeenSet(false)
-{
-}
-
 ValidationOutput::ValidationOutput(JsonView jsonValue)
-  : ValidationOutput()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ ValidationOutput& ValidationOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("validationId"))
   {
     m_validationId = jsonValue.GetString("validationId");
-
     m_validationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ValidationStatusMapper::GetValidationStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestValidationTime"))
   {
     m_latestValidationTime = jsonValue.GetDouble("latestValidationTime");
-
     m_latestValidationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appValidationOutput"))
   {
     m_appValidationOutput = jsonValue.GetObject("appValidationOutput");
-
     m_appValidationOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverValidationOutput"))
   {
     m_serverValidationOutput = jsonValue.GetObject("serverValidationOutput");
-
     m_serverValidationOutputHasBeenSet = true;
   }
-
   return *this;
 }
 

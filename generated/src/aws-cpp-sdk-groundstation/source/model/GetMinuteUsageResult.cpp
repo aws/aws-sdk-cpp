@@ -17,17 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMinuteUsageResult::GetMinuteUsageResult() : 
-    m_estimatedMinutesRemaining(0),
-    m_isReservedMinutesCustomer(false),
-    m_totalReservedMinuteAllocation(0),
-    m_totalScheduledMinutes(0),
-    m_upcomingMinutesScheduled(0)
-{
-}
-
 GetMinuteUsageResult::GetMinuteUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetMinuteUsageResult()
 {
   *this = result;
 }
@@ -38,39 +28,35 @@ GetMinuteUsageResult& GetMinuteUsageResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("estimatedMinutesRemaining"))
   {
     m_estimatedMinutesRemaining = jsonValue.GetInteger("estimatedMinutesRemaining");
-
+    m_estimatedMinutesRemainingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isReservedMinutesCustomer"))
   {
     m_isReservedMinutesCustomer = jsonValue.GetBool("isReservedMinutesCustomer");
-
+    m_isReservedMinutesCustomerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalReservedMinuteAllocation"))
   {
     m_totalReservedMinuteAllocation = jsonValue.GetInteger("totalReservedMinuteAllocation");
-
+    m_totalReservedMinuteAllocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("totalScheduledMinutes"))
   {
     m_totalScheduledMinutes = jsonValue.GetInteger("totalScheduledMinutes");
-
+    m_totalScheduledMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("upcomingMinutesScheduled"))
   {
     m_upcomingMinutesScheduled = jsonValue.GetInteger("upcomingMinutesScheduled");
-
+    m_upcomingMinutesScheduledHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

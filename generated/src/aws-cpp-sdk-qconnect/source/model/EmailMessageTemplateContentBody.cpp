@@ -18,14 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-EmailMessageTemplateContentBody::EmailMessageTemplateContentBody() : 
-    m_htmlHasBeenSet(false),
-    m_plainTextHasBeenSet(false)
-{
-}
-
 EmailMessageTemplateContentBody::EmailMessageTemplateContentBody(JsonView jsonValue)
-  : EmailMessageTemplateContentBody()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EmailMessageTemplateContentBody& EmailMessageTemplateContentBody::operator =(Jso
   if(jsonValue.ValueExists("html"))
   {
     m_html = jsonValue.GetObject("html");
-
     m_htmlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("plainText"))
   {
     m_plainText = jsonValue.GetObject("plainText");
-
     m_plainTextHasBeenSet = true;
   }
-
   return *this;
 }
 

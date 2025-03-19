@@ -18,16 +18,7 @@ namespace AppRunner
 namespace Model
 {
 
-NetworkConfiguration::NetworkConfiguration() : 
-    m_egressConfigurationHasBeenSet(false),
-    m_ingressConfigurationHasBeenSet(false),
-    m_ipAddressType(IpAddressType::NOT_SET),
-    m_ipAddressTypeHasBeenSet(false)
-{
-}
-
 NetworkConfiguration::NetworkConfiguration(JsonView jsonValue)
-  : NetworkConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ NetworkConfiguration& NetworkConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EgressConfiguration"))
   {
     m_egressConfiguration = jsonValue.GetObject("EgressConfiguration");
-
     m_egressConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IngressConfiguration"))
   {
     m_ingressConfiguration = jsonValue.GetObject("IngressConfiguration");
-
     m_ingressConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpAddressType"))
   {
     m_ipAddressType = IpAddressTypeMapper::GetIpAddressTypeForName(jsonValue.GetString("IpAddressType"));
-
     m_ipAddressTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

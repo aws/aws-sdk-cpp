@@ -12,14 +12,6 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateFileSystemAliasesRequest::AssociateFileSystemAliasesRequest() : 
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_fileSystemIdHasBeenSet(false),
-    m_aliasesHasBeenSet(false)
-{
-}
-
 Aws::String AssociateFileSystemAliasesRequest::SerializePayload() const
 {
   JsonValue payload;

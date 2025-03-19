@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-DescribeIntegrationsFilter::DescribeIntegrationsFilter() : 
-    m_name(DescribeIntegrationsFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 DescribeIntegrationsFilter::DescribeIntegrationsFilter(const XmlNode& xmlNode)
-  : DescribeIntegrationsFilter()
 {
   *this = xmlNode;
 }
@@ -42,13 +34,14 @@ DescribeIntegrationsFilter& DescribeIntegrationsFilter::operator =(const XmlNode
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = DescribeIntegrationsFilterNameMapper::GetDescribeIntegrationsFilterNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText()).c_str()).c_str());
+      m_name = DescribeIntegrationsFilterNameMapper::GetDescribeIntegrationsFilterNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText()).c_str()));
       m_nameHasBeenSet = true;
     }
     XmlNode valuesNode = resultNode.FirstChild("Values");
     if(!valuesNode.IsNull())
     {
       XmlNode valuesMember = valuesNode.FirstChild("Value");
+      m_valuesHasBeenSet = !valuesMember.IsNull();
       while(!valuesMember.IsNull())
       {
         m_values.push_back(valuesMember.GetText());

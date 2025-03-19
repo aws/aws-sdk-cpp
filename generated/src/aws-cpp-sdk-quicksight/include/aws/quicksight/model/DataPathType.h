@@ -31,7 +31,7 @@ namespace Model
   class DataPathType
   {
   public:
-    AWS_QUICKSIGHT_API DataPathType();
+    AWS_QUICKSIGHT_API DataPathType() = default;
     AWS_QUICKSIGHT_API DataPathType(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DataPathType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,16 +52,14 @@ namespace Model
      * <code>COUNT</code> as the metric, when there is no field in the
      * <code>ValuesFieldWell</code>.</p> </li> </ul>
      */
-    inline const PivotTableDataPathType& GetPivotTableDataPathType() const{ return m_pivotTableDataPathType; }
+    inline PivotTableDataPathType GetPivotTableDataPathType() const { return m_pivotTableDataPathType; }
     inline bool PivotTableDataPathTypeHasBeenSet() const { return m_pivotTableDataPathTypeHasBeenSet; }
-    inline void SetPivotTableDataPathType(const PivotTableDataPathType& value) { m_pivotTableDataPathTypeHasBeenSet = true; m_pivotTableDataPathType = value; }
-    inline void SetPivotTableDataPathType(PivotTableDataPathType&& value) { m_pivotTableDataPathTypeHasBeenSet = true; m_pivotTableDataPathType = std::move(value); }
-    inline DataPathType& WithPivotTableDataPathType(const PivotTableDataPathType& value) { SetPivotTableDataPathType(value); return *this;}
-    inline DataPathType& WithPivotTableDataPathType(PivotTableDataPathType&& value) { SetPivotTableDataPathType(std::move(value)); return *this;}
+    inline void SetPivotTableDataPathType(PivotTableDataPathType value) { m_pivotTableDataPathTypeHasBeenSet = true; m_pivotTableDataPathType = value; }
+    inline DataPathType& WithPivotTableDataPathType(PivotTableDataPathType value) { SetPivotTableDataPathType(value); return *this;}
     ///@}
   private:
 
-    PivotTableDataPathType m_pivotTableDataPathType;
+    PivotTableDataPathType m_pivotTableDataPathType{PivotTableDataPathType::NOT_SET};
     bool m_pivotTableDataPathTypeHasBeenSet = false;
   };
 

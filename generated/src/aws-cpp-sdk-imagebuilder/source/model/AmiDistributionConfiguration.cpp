@@ -18,18 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-AmiDistributionConfiguration::AmiDistributionConfiguration() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_targetAccountIdsHasBeenSet(false),
-    m_amiTagsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_launchPermissionHasBeenSet(false)
-{
-}
-
 AmiDistributionConfiguration::AmiDistributionConfiguration(JsonView jsonValue)
-  : AmiDistributionConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ AmiDistributionConfiguration& AmiDistributionConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetAccountIds"))
   {
     Aws::Utils::Array<JsonView> targetAccountIdsJsonList = jsonValue.GetArray("targetAccountIds");
@@ -59,7 +44,6 @@ AmiDistributionConfiguration& AmiDistributionConfiguration::operator =(JsonView 
     }
     m_targetAccountIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("amiTags"))
   {
     Aws::Map<Aws::String, JsonView> amiTagsJsonMap = jsonValue.GetObject("amiTags").GetAllObjects();
@@ -69,21 +53,16 @@ AmiDistributionConfiguration& AmiDistributionConfiguration::operator =(JsonView 
     }
     m_amiTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("launchPermission"))
   {
     m_launchPermission = jsonValue.GetObject("launchPermission");
-
     m_launchPermissionHasBeenSet = true;
   }
-
   return *this;
 }
 

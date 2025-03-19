@@ -36,7 +36,7 @@ namespace Model
   class PipeEnrichmentHttpParameters
   {
   public:
-    AWS_PIPES_API PipeEnrichmentHttpParameters();
+    AWS_PIPES_API PipeEnrichmentHttpParameters() = default;
     AWS_PIPES_API PipeEnrichmentHttpParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API PipeEnrichmentHttpParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,15 +47,14 @@ namespace Model
      * <p>The path parameter values to be used to populate API Gateway REST API or
      * EventBridge ApiDestination path wildcards ("*").</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPathParameterValues() const{ return m_pathParameterValues; }
+    inline const Aws::Vector<Aws::String>& GetPathParameterValues() const { return m_pathParameterValues; }
     inline bool PathParameterValuesHasBeenSet() const { return m_pathParameterValuesHasBeenSet; }
-    inline void SetPathParameterValues(const Aws::Vector<Aws::String>& value) { m_pathParameterValuesHasBeenSet = true; m_pathParameterValues = value; }
-    inline void SetPathParameterValues(Aws::Vector<Aws::String>&& value) { m_pathParameterValuesHasBeenSet = true; m_pathParameterValues = std::move(value); }
-    inline PipeEnrichmentHttpParameters& WithPathParameterValues(const Aws::Vector<Aws::String>& value) { SetPathParameterValues(value); return *this;}
-    inline PipeEnrichmentHttpParameters& WithPathParameterValues(Aws::Vector<Aws::String>&& value) { SetPathParameterValues(std::move(value)); return *this;}
-    inline PipeEnrichmentHttpParameters& AddPathParameterValues(const Aws::String& value) { m_pathParameterValuesHasBeenSet = true; m_pathParameterValues.push_back(value); return *this; }
-    inline PipeEnrichmentHttpParameters& AddPathParameterValues(Aws::String&& value) { m_pathParameterValuesHasBeenSet = true; m_pathParameterValues.push_back(std::move(value)); return *this; }
-    inline PipeEnrichmentHttpParameters& AddPathParameterValues(const char* value) { m_pathParameterValuesHasBeenSet = true; m_pathParameterValues.push_back(value); return *this; }
+    template<typename PathParameterValuesT = Aws::Vector<Aws::String>>
+    void SetPathParameterValues(PathParameterValuesT&& value) { m_pathParameterValuesHasBeenSet = true; m_pathParameterValues = std::forward<PathParameterValuesT>(value); }
+    template<typename PathParameterValuesT = Aws::Vector<Aws::String>>
+    PipeEnrichmentHttpParameters& WithPathParameterValues(PathParameterValuesT&& value) { SetPathParameterValues(std::forward<PathParameterValuesT>(value)); return *this;}
+    template<typename PathParameterValuesT = Aws::String>
+    PipeEnrichmentHttpParameters& AddPathParameterValues(PathParameterValuesT&& value) { m_pathParameterValuesHasBeenSet = true; m_pathParameterValues.emplace_back(std::forward<PathParameterValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,19 +62,16 @@ namespace Model
      * <p>The headers that need to be sent as part of request invoking the API Gateway
      * REST API or EventBridge ApiDestination.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetHeaderParameters() const{ return m_headerParameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetHeaderParameters() const { return m_headerParameters; }
     inline bool HeaderParametersHasBeenSet() const { return m_headerParametersHasBeenSet; }
-    inline void SetHeaderParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_headerParametersHasBeenSet = true; m_headerParameters = value; }
-    inline void SetHeaderParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_headerParametersHasBeenSet = true; m_headerParameters = std::move(value); }
-    inline PipeEnrichmentHttpParameters& WithHeaderParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetHeaderParameters(value); return *this;}
-    inline PipeEnrichmentHttpParameters& WithHeaderParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetHeaderParameters(std::move(value)); return *this;}
-    inline PipeEnrichmentHttpParameters& AddHeaderParameters(const Aws::String& key, const Aws::String& value) { m_headerParametersHasBeenSet = true; m_headerParameters.emplace(key, value); return *this; }
-    inline PipeEnrichmentHttpParameters& AddHeaderParameters(Aws::String&& key, const Aws::String& value) { m_headerParametersHasBeenSet = true; m_headerParameters.emplace(std::move(key), value); return *this; }
-    inline PipeEnrichmentHttpParameters& AddHeaderParameters(const Aws::String& key, Aws::String&& value) { m_headerParametersHasBeenSet = true; m_headerParameters.emplace(key, std::move(value)); return *this; }
-    inline PipeEnrichmentHttpParameters& AddHeaderParameters(Aws::String&& key, Aws::String&& value) { m_headerParametersHasBeenSet = true; m_headerParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline PipeEnrichmentHttpParameters& AddHeaderParameters(const char* key, Aws::String&& value) { m_headerParametersHasBeenSet = true; m_headerParameters.emplace(key, std::move(value)); return *this; }
-    inline PipeEnrichmentHttpParameters& AddHeaderParameters(Aws::String&& key, const char* value) { m_headerParametersHasBeenSet = true; m_headerParameters.emplace(std::move(key), value); return *this; }
-    inline PipeEnrichmentHttpParameters& AddHeaderParameters(const char* key, const char* value) { m_headerParametersHasBeenSet = true; m_headerParameters.emplace(key, value); return *this; }
+    template<typename HeaderParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetHeaderParameters(HeaderParametersT&& value) { m_headerParametersHasBeenSet = true; m_headerParameters = std::forward<HeaderParametersT>(value); }
+    template<typename HeaderParametersT = Aws::Map<Aws::String, Aws::String>>
+    PipeEnrichmentHttpParameters& WithHeaderParameters(HeaderParametersT&& value) { SetHeaderParameters(std::forward<HeaderParametersT>(value)); return *this;}
+    template<typename HeaderParametersKeyT = Aws::String, typename HeaderParametersValueT = Aws::String>
+    PipeEnrichmentHttpParameters& AddHeaderParameters(HeaderParametersKeyT&& key, HeaderParametersValueT&& value) {
+      m_headerParametersHasBeenSet = true; m_headerParameters.emplace(std::forward<HeaderParametersKeyT>(key), std::forward<HeaderParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -83,19 +79,16 @@ namespace Model
      * <p>The query string keys/values that need to be sent as part of request invoking
      * the API Gateway REST API or EventBridge ApiDestination.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetQueryStringParameters() const{ return m_queryStringParameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetQueryStringParameters() const { return m_queryStringParameters; }
     inline bool QueryStringParametersHasBeenSet() const { return m_queryStringParametersHasBeenSet; }
-    inline void SetQueryStringParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_queryStringParametersHasBeenSet = true; m_queryStringParameters = value; }
-    inline void SetQueryStringParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_queryStringParametersHasBeenSet = true; m_queryStringParameters = std::move(value); }
-    inline PipeEnrichmentHttpParameters& WithQueryStringParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetQueryStringParameters(value); return *this;}
-    inline PipeEnrichmentHttpParameters& WithQueryStringParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetQueryStringParameters(std::move(value)); return *this;}
-    inline PipeEnrichmentHttpParameters& AddQueryStringParameters(const Aws::String& key, const Aws::String& value) { m_queryStringParametersHasBeenSet = true; m_queryStringParameters.emplace(key, value); return *this; }
-    inline PipeEnrichmentHttpParameters& AddQueryStringParameters(Aws::String&& key, const Aws::String& value) { m_queryStringParametersHasBeenSet = true; m_queryStringParameters.emplace(std::move(key), value); return *this; }
-    inline PipeEnrichmentHttpParameters& AddQueryStringParameters(const Aws::String& key, Aws::String&& value) { m_queryStringParametersHasBeenSet = true; m_queryStringParameters.emplace(key, std::move(value)); return *this; }
-    inline PipeEnrichmentHttpParameters& AddQueryStringParameters(Aws::String&& key, Aws::String&& value) { m_queryStringParametersHasBeenSet = true; m_queryStringParameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline PipeEnrichmentHttpParameters& AddQueryStringParameters(const char* key, Aws::String&& value) { m_queryStringParametersHasBeenSet = true; m_queryStringParameters.emplace(key, std::move(value)); return *this; }
-    inline PipeEnrichmentHttpParameters& AddQueryStringParameters(Aws::String&& key, const char* value) { m_queryStringParametersHasBeenSet = true; m_queryStringParameters.emplace(std::move(key), value); return *this; }
-    inline PipeEnrichmentHttpParameters& AddQueryStringParameters(const char* key, const char* value) { m_queryStringParametersHasBeenSet = true; m_queryStringParameters.emplace(key, value); return *this; }
+    template<typename QueryStringParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetQueryStringParameters(QueryStringParametersT&& value) { m_queryStringParametersHasBeenSet = true; m_queryStringParameters = std::forward<QueryStringParametersT>(value); }
+    template<typename QueryStringParametersT = Aws::Map<Aws::String, Aws::String>>
+    PipeEnrichmentHttpParameters& WithQueryStringParameters(QueryStringParametersT&& value) { SetQueryStringParameters(std::forward<QueryStringParametersT>(value)); return *this;}
+    template<typename QueryStringParametersKeyT = Aws::String, typename QueryStringParametersValueT = Aws::String>
+    PipeEnrichmentHttpParameters& AddQueryStringParameters(QueryStringParametersKeyT&& key, QueryStringParametersValueT&& value) {
+      m_queryStringParametersHasBeenSet = true; m_queryStringParameters.emplace(std::forward<QueryStringParametersKeyT>(key), std::forward<QueryStringParametersValueT>(value)); return *this;
+    }
     ///@}
   private:
 

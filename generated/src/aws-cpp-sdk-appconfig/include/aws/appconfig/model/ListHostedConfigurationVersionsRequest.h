@@ -25,7 +25,7 @@ namespace Model
   class ListHostedConfigurationVersionsRequest : public AppConfigRequest
   {
   public:
-    AWS_APPCONFIG_API ListHostedConfigurationVersionsRequest();
+    AWS_APPCONFIG_API ListHostedConfigurationVersionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The application ID.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline ListHostedConfigurationVersionsRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline ListHostedConfigurationVersionsRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline ListHostedConfigurationVersionsRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    ListHostedConfigurationVersionsRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration profile ID.</p>
      */
-    inline const Aws::String& GetConfigurationProfileId() const{ return m_configurationProfileId; }
+    inline const Aws::String& GetConfigurationProfileId() const { return m_configurationProfileId; }
     inline bool ConfigurationProfileIdHasBeenSet() const { return m_configurationProfileIdHasBeenSet; }
-    inline void SetConfigurationProfileId(const Aws::String& value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId = value; }
-    inline void SetConfigurationProfileId(Aws::String&& value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId = std::move(value); }
-    inline void SetConfigurationProfileId(const char* value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId.assign(value); }
-    inline ListHostedConfigurationVersionsRequest& WithConfigurationProfileId(const Aws::String& value) { SetConfigurationProfileId(value); return *this;}
-    inline ListHostedConfigurationVersionsRequest& WithConfigurationProfileId(Aws::String&& value) { SetConfigurationProfileId(std::move(value)); return *this;}
-    inline ListHostedConfigurationVersionsRequest& WithConfigurationProfileId(const char* value) { SetConfigurationProfileId(value); return *this;}
+    template<typename ConfigurationProfileIdT = Aws::String>
+    void SetConfigurationProfileId(ConfigurationProfileIdT&& value) { m_configurationProfileIdHasBeenSet = true; m_configurationProfileId = std::forward<ConfigurationProfileIdT>(value); }
+    template<typename ConfigurationProfileIdT = Aws::String>
+    ListHostedConfigurationVersionsRequest& WithConfigurationProfileId(ConfigurationProfileIdT&& value) { SetConfigurationProfileId(std::forward<ConfigurationProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,7 +69,7 @@ namespace Model
      * maximum of 50. The call also returns a token that you can specify in a
      * subsequent call to get the next set of results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListHostedConfigurationVersionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -84,14 +80,12 @@ namespace Model
      * <p>A token to start the list. Use this token to get the next set of results.
      * </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListHostedConfigurationVersionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListHostedConfigurationVersionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListHostedConfigurationVersionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListHostedConfigurationVersionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +95,12 @@ namespace Model
      * prefix using a wildcard, for example "v2*". If you don't specify an asterisk at
      * the end of the value, only an exact match is returned.</p>
      */
-    inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
+    inline const Aws::String& GetVersionLabel() const { return m_versionLabel; }
     inline bool VersionLabelHasBeenSet() const { return m_versionLabelHasBeenSet; }
-    inline void SetVersionLabel(const Aws::String& value) { m_versionLabelHasBeenSet = true; m_versionLabel = value; }
-    inline void SetVersionLabel(Aws::String&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = std::move(value); }
-    inline void SetVersionLabel(const char* value) { m_versionLabelHasBeenSet = true; m_versionLabel.assign(value); }
-    inline ListHostedConfigurationVersionsRequest& WithVersionLabel(const Aws::String& value) { SetVersionLabel(value); return *this;}
-    inline ListHostedConfigurationVersionsRequest& WithVersionLabel(Aws::String&& value) { SetVersionLabel(std::move(value)); return *this;}
-    inline ListHostedConfigurationVersionsRequest& WithVersionLabel(const char* value) { SetVersionLabel(value); return *this;}
+    template<typename VersionLabelT = Aws::String>
+    void SetVersionLabel(VersionLabelT&& value) { m_versionLabelHasBeenSet = true; m_versionLabel = std::forward<VersionLabelT>(value); }
+    template<typename VersionLabelT = Aws::String>
+    ListHostedConfigurationVersionsRequest& WithVersionLabel(VersionLabelT&& value) { SetVersionLabel(std::forward<VersionLabelT>(value)); return *this;}
     ///@}
   private:
 
@@ -118,7 +110,7 @@ namespace Model
     Aws::String m_configurationProfileId;
     bool m_configurationProfileIdHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetIdentityMailFromDomainAttributesResult::GetIdentityMailFromDomainAttributesResult()
-{
-}
-
 GetIdentityMailFromDomainAttributesResult::GetIdentityMailFromDomainAttributesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -43,6 +39,7 @@ GetIdentityMailFromDomainAttributesResult& GetIdentityMailFromDomainAttributesRe
     if(!mailFromDomainAttributesNode.IsNull())
     {
       XmlNode mailFromDomainAttributesEntry = mailFromDomainAttributesNode.FirstChild("entry");
+      m_mailFromDomainAttributesHasBeenSet = !mailFromDomainAttributesEntry.IsNull();
       while(!mailFromDomainAttributesEntry.IsNull())
       {
         XmlNode keyNode = mailFromDomainAttributesEntry.FirstChild("key");
@@ -52,12 +49,14 @@ GetIdentityMailFromDomainAttributesResult& GetIdentityMailFromDomainAttributesRe
         mailFromDomainAttributesEntry = mailFromDomainAttributesEntry.NextNode("entry");
       }
 
+      m_mailFromDomainAttributesHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SES::Model::GetIdentityMailFromDomainAttributesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

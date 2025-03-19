@@ -18,13 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-ObjectReference::ObjectReference() : 
-    m_selectorHasBeenSet(false)
-{
-}
-
 ObjectReference::ObjectReference(JsonView jsonValue)
-  : ObjectReference()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ObjectReference& ObjectReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Selector"))
   {
     m_selector = jsonValue.GetString("Selector");
-
     m_selectorHasBeenSet = true;
   }
-
   return *this;
 }
 

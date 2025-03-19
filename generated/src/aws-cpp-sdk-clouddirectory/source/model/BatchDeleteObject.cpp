@@ -18,13 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchDeleteObject::BatchDeleteObject() : 
-    m_objectReferenceHasBeenSet(false)
-{
-}
-
 BatchDeleteObject::BatchDeleteObject(JsonView jsonValue)
-  : BatchDeleteObject()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BatchDeleteObject& BatchDeleteObject::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ObjectReference"))
   {
     m_objectReference = jsonValue.GetObject("ObjectReference");
-
     m_objectReferenceHasBeenSet = true;
   }
-
   return *this;
 }
 

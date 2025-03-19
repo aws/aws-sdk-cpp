@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DomainSettingsForUpdate::DomainSettingsForUpdate() : 
-    m_rStudioServerProDomainSettingsForUpdateHasBeenSet(false),
-    m_executionRoleIdentityConfig(ExecutionRoleIdentityConfig::NOT_SET),
-    m_executionRoleIdentityConfigHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_dockerSettingsHasBeenSet(false),
-    m_amazonQSettingsHasBeenSet(false)
-{
-}
-
 DomainSettingsForUpdate::DomainSettingsForUpdate(JsonView jsonValue)
-  : DomainSettingsForUpdate()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ DomainSettingsForUpdate& DomainSettingsForUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RStudioServerProDomainSettingsForUpdate"))
   {
     m_rStudioServerProDomainSettingsForUpdate = jsonValue.GetObject("RStudioServerProDomainSettingsForUpdate");
-
     m_rStudioServerProDomainSettingsForUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionRoleIdentityConfig"))
   {
     m_executionRoleIdentityConfig = ExecutionRoleIdentityConfigMapper::GetExecutionRoleIdentityConfigForName(jsonValue.GetString("ExecutionRoleIdentityConfig"));
-
     m_executionRoleIdentityConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
@@ -59,21 +44,16 @@ DomainSettingsForUpdate& DomainSettingsForUpdate::operator =(JsonView jsonValue)
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DockerSettings"))
   {
     m_dockerSettings = jsonValue.GetObject("DockerSettings");
-
     m_dockerSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AmazonQSettings"))
   {
     m_amazonQSettings = jsonValue.GetObject("AmazonQSettings");
-
     m_amazonQSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

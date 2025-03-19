@@ -37,7 +37,7 @@ namespace Model
   class CookieObject
   {
   public:
-    AWS_LIGHTSAIL_API CookieObject();
+    AWS_LIGHTSAIL_API CookieObject() = default;
     AWS_LIGHTSAIL_API CookieObject(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API CookieObject& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,31 +50,28 @@ namespace Model
      * forward only the cookies specified in the <code>cookiesAllowList</code>
      * parameter.</p>
      */
-    inline const ForwardValues& GetOption() const{ return m_option; }
+    inline ForwardValues GetOption() const { return m_option; }
     inline bool OptionHasBeenSet() const { return m_optionHasBeenSet; }
-    inline void SetOption(const ForwardValues& value) { m_optionHasBeenSet = true; m_option = value; }
-    inline void SetOption(ForwardValues&& value) { m_optionHasBeenSet = true; m_option = std::move(value); }
-    inline CookieObject& WithOption(const ForwardValues& value) { SetOption(value); return *this;}
-    inline CookieObject& WithOption(ForwardValues&& value) { SetOption(std::move(value)); return *this;}
+    inline void SetOption(ForwardValues value) { m_optionHasBeenSet = true; m_option = value; }
+    inline CookieObject& WithOption(ForwardValues value) { SetOption(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The specific cookies to forward to your distribution's origin.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCookiesAllowList() const{ return m_cookiesAllowList; }
+    inline const Aws::Vector<Aws::String>& GetCookiesAllowList() const { return m_cookiesAllowList; }
     inline bool CookiesAllowListHasBeenSet() const { return m_cookiesAllowListHasBeenSet; }
-    inline void SetCookiesAllowList(const Aws::Vector<Aws::String>& value) { m_cookiesAllowListHasBeenSet = true; m_cookiesAllowList = value; }
-    inline void SetCookiesAllowList(Aws::Vector<Aws::String>&& value) { m_cookiesAllowListHasBeenSet = true; m_cookiesAllowList = std::move(value); }
-    inline CookieObject& WithCookiesAllowList(const Aws::Vector<Aws::String>& value) { SetCookiesAllowList(value); return *this;}
-    inline CookieObject& WithCookiesAllowList(Aws::Vector<Aws::String>&& value) { SetCookiesAllowList(std::move(value)); return *this;}
-    inline CookieObject& AddCookiesAllowList(const Aws::String& value) { m_cookiesAllowListHasBeenSet = true; m_cookiesAllowList.push_back(value); return *this; }
-    inline CookieObject& AddCookiesAllowList(Aws::String&& value) { m_cookiesAllowListHasBeenSet = true; m_cookiesAllowList.push_back(std::move(value)); return *this; }
-    inline CookieObject& AddCookiesAllowList(const char* value) { m_cookiesAllowListHasBeenSet = true; m_cookiesAllowList.push_back(value); return *this; }
+    template<typename CookiesAllowListT = Aws::Vector<Aws::String>>
+    void SetCookiesAllowList(CookiesAllowListT&& value) { m_cookiesAllowListHasBeenSet = true; m_cookiesAllowList = std::forward<CookiesAllowListT>(value); }
+    template<typename CookiesAllowListT = Aws::Vector<Aws::String>>
+    CookieObject& WithCookiesAllowList(CookiesAllowListT&& value) { SetCookiesAllowList(std::forward<CookiesAllowListT>(value)); return *this;}
+    template<typename CookiesAllowListT = Aws::String>
+    CookieObject& AddCookiesAllowList(CookiesAllowListT&& value) { m_cookiesAllowListHasBeenSet = true; m_cookiesAllowList.emplace_back(std::forward<CookiesAllowListT>(value)); return *this; }
     ///@}
   private:
 
-    ForwardValues m_option;
+    ForwardValues m_option{ForwardValues::NOT_SET};
     bool m_optionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_cookiesAllowList;

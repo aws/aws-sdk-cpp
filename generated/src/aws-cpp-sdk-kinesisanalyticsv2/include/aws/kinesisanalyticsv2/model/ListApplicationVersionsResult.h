@@ -29,7 +29,7 @@ namespace Model
   class ListApplicationVersionsResult
   {
   public:
-    AWS_KINESISANALYTICSV2_API ListApplicationVersionsResult();
+    AWS_KINESISANALYTICSV2_API ListApplicationVersionsResult() = default;
     AWS_KINESISANALYTICSV2_API ListApplicationVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KINESISANALYTICSV2_API ListApplicationVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,13 +41,13 @@ namespace Model
      * <p>To get the complete description of a specific application version, invoke the
      * <a>DescribeApplicationVersion</a> operation.</p>
      */
-    inline const Aws::Vector<ApplicationVersionSummary>& GetApplicationVersionSummaries() const{ return m_applicationVersionSummaries; }
-    inline void SetApplicationVersionSummaries(const Aws::Vector<ApplicationVersionSummary>& value) { m_applicationVersionSummaries = value; }
-    inline void SetApplicationVersionSummaries(Aws::Vector<ApplicationVersionSummary>&& value) { m_applicationVersionSummaries = std::move(value); }
-    inline ListApplicationVersionsResult& WithApplicationVersionSummaries(const Aws::Vector<ApplicationVersionSummary>& value) { SetApplicationVersionSummaries(value); return *this;}
-    inline ListApplicationVersionsResult& WithApplicationVersionSummaries(Aws::Vector<ApplicationVersionSummary>&& value) { SetApplicationVersionSummaries(std::move(value)); return *this;}
-    inline ListApplicationVersionsResult& AddApplicationVersionSummaries(const ApplicationVersionSummary& value) { m_applicationVersionSummaries.push_back(value); return *this; }
-    inline ListApplicationVersionsResult& AddApplicationVersionSummaries(ApplicationVersionSummary&& value) { m_applicationVersionSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ApplicationVersionSummary>& GetApplicationVersionSummaries() const { return m_applicationVersionSummaries; }
+    template<typename ApplicationVersionSummariesT = Aws::Vector<ApplicationVersionSummary>>
+    void SetApplicationVersionSummaries(ApplicationVersionSummariesT&& value) { m_applicationVersionSummariesHasBeenSet = true; m_applicationVersionSummaries = std::forward<ApplicationVersionSummariesT>(value); }
+    template<typename ApplicationVersionSummariesT = Aws::Vector<ApplicationVersionSummary>>
+    ListApplicationVersionsResult& WithApplicationVersionSummaries(ApplicationVersionSummariesT&& value) { SetApplicationVersionSummaries(std::forward<ApplicationVersionSummariesT>(value)); return *this;}
+    template<typename ApplicationVersionSummariesT = ApplicationVersionSummary>
+    ListApplicationVersionsResult& AddApplicationVersionSummaries(ApplicationVersionSummariesT&& value) { m_applicationVersionSummariesHasBeenSet = true; m_applicationVersionSummaries.emplace_back(std::forward<ApplicationVersionSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,32 +59,31 @@ namespace Model
      * href="https://docs.aws.amazon.com/cli/latest/userguide/pagination.html">Using
      * the Amazon Command Line Interface's Pagination Options</a>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListApplicationVersionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListApplicationVersionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListApplicationVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListApplicationVersionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListApplicationVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListApplicationVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListApplicationVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListApplicationVersionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ApplicationVersionSummary> m_applicationVersionSummaries;
+    bool m_applicationVersionSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

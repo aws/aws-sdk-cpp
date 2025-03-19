@@ -12,11 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTransformerRequest::DeleteTransformerRequest() : 
-    m_logGroupIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTransformerRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetTermForReportRequest::GetTermForReportRequest() : 
-    m_reportIdHasBeenSet(false),
-    m_reportVersion(0),
-    m_reportVersionHasBeenSet(false)
-{
-}
-
 Aws::String GetTermForReportRequest::SerializePayload() const
 {
   return {};

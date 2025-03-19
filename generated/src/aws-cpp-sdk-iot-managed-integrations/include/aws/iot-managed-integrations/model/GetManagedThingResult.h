@@ -32,7 +32,7 @@ namespace Model
   class GetManagedThingResult
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API GetManagedThingResult();
+    AWS_IOTMANAGEDINTEGRATIONS_API GetManagedThingResult() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API GetManagedThingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTMANAGEDINTEGRATIONS_API GetManagedThingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,26 +41,22 @@ namespace Model
     /**
      * <p>The id of the managed thing.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetManagedThingResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetManagedThingResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetManagedThingResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetManagedThingResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the managed thing.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline GetManagedThingResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetManagedThingResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetManagedThingResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetManagedThingResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,39 +64,33 @@ namespace Model
      * <p>Owner of the device, usually an indication of whom the device belongs to.
      * This value should not contain personal identifiable information.</p>
      */
-    inline const Aws::String& GetOwner() const{ return m_owner; }
-    inline void SetOwner(const Aws::String& value) { m_owner = value; }
-    inline void SetOwner(Aws::String&& value) { m_owner = std::move(value); }
-    inline void SetOwner(const char* value) { m_owner.assign(value); }
-    inline GetManagedThingResult& WithOwner(const Aws::String& value) { SetOwner(value); return *this;}
-    inline GetManagedThingResult& WithOwner(Aws::String&& value) { SetOwner(std::move(value)); return *this;}
-    inline GetManagedThingResult& WithOwner(const char* value) { SetOwner(value); return *this;}
+    inline const Aws::String& GetOwner() const { return m_owner; }
+    template<typename OwnerT = Aws::String>
+    void SetOwner(OwnerT&& value) { m_ownerHasBeenSet = true; m_owner = std::forward<OwnerT>(value); }
+    template<typename OwnerT = Aws::String>
+    GetManagedThingResult& WithOwner(OwnerT&& value) { SetOwner(std::forward<OwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the credential locker for the managed thing.</p>
      */
-    inline const Aws::String& GetCredentialLockerId() const{ return m_credentialLockerId; }
-    inline void SetCredentialLockerId(const Aws::String& value) { m_credentialLockerId = value; }
-    inline void SetCredentialLockerId(Aws::String&& value) { m_credentialLockerId = std::move(value); }
-    inline void SetCredentialLockerId(const char* value) { m_credentialLockerId.assign(value); }
-    inline GetManagedThingResult& WithCredentialLockerId(const Aws::String& value) { SetCredentialLockerId(value); return *this;}
-    inline GetManagedThingResult& WithCredentialLockerId(Aws::String&& value) { SetCredentialLockerId(std::move(value)); return *this;}
-    inline GetManagedThingResult& WithCredentialLockerId(const char* value) { SetCredentialLockerId(value); return *this;}
+    inline const Aws::String& GetCredentialLockerId() const { return m_credentialLockerId; }
+    template<typename CredentialLockerIdT = Aws::String>
+    void SetCredentialLockerId(CredentialLockerIdT&& value) { m_credentialLockerIdHasBeenSet = true; m_credentialLockerId = std::forward<CredentialLockerIdT>(value); }
+    template<typename CredentialLockerIdT = Aws::String>
+    GetManagedThingResult& WithCredentialLockerId(CredentialLockerIdT&& value) { SetCredentialLockerId(std::forward<CredentialLockerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The id of the advertised product.</p>
      */
-    inline const Aws::String& GetAdvertisedProductId() const{ return m_advertisedProductId; }
-    inline void SetAdvertisedProductId(const Aws::String& value) { m_advertisedProductId = value; }
-    inline void SetAdvertisedProductId(Aws::String&& value) { m_advertisedProductId = std::move(value); }
-    inline void SetAdvertisedProductId(const char* value) { m_advertisedProductId.assign(value); }
-    inline GetManagedThingResult& WithAdvertisedProductId(const Aws::String& value) { SetAdvertisedProductId(value); return *this;}
-    inline GetManagedThingResult& WithAdvertisedProductId(Aws::String&& value) { SetAdvertisedProductId(std::move(value)); return *this;}
-    inline GetManagedThingResult& WithAdvertisedProductId(const char* value) { SetAdvertisedProductId(value); return *this;}
+    inline const Aws::String& GetAdvertisedProductId() const { return m_advertisedProductId; }
+    template<typename AdvertisedProductIdT = Aws::String>
+    void SetAdvertisedProductId(AdvertisedProductIdT&& value) { m_advertisedProductIdHasBeenSet = true; m_advertisedProductId = std::forward<AdvertisedProductIdT>(value); }
+    template<typename AdvertisedProductIdT = Aws::String>
+    GetManagedThingResult& WithAdvertisedProductId(AdvertisedProductIdT&& value) { SetAdvertisedProductId(std::forward<AdvertisedProductIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,11 +98,9 @@ namespace Model
      * <p>The type of device used. This will be the Amazon Web Services hub controller,
      * cloud device, or IoT device.</p>
      */
-    inline const Role& GetRole() const{ return m_role; }
-    inline void SetRole(const Role& value) { m_role = value; }
-    inline void SetRole(Role&& value) { m_role = std::move(value); }
-    inline GetManagedThingResult& WithRole(const Role& value) { SetRole(value); return *this;}
-    inline GetManagedThingResult& WithRole(Role&& value) { SetRole(std::move(value)); return *this;}
+    inline Role GetRole() const { return m_role; }
+    inline void SetRole(Role value) { m_roleHasBeenSet = true; m_role = value; }
+    inline GetManagedThingResult& WithRole(Role value) { SetRole(value); return *this;}
     ///@}
 
     ///@{
@@ -120,63 +108,53 @@ namespace Model
      * <p>The provisioning status of the device in the provisioning workflow for
      * onboarding to IoT managed integrations.</p>
      */
-    inline const ProvisioningStatus& GetProvisioningStatus() const{ return m_provisioningStatus; }
-    inline void SetProvisioningStatus(const ProvisioningStatus& value) { m_provisioningStatus = value; }
-    inline void SetProvisioningStatus(ProvisioningStatus&& value) { m_provisioningStatus = std::move(value); }
-    inline GetManagedThingResult& WithProvisioningStatus(const ProvisioningStatus& value) { SetProvisioningStatus(value); return *this;}
-    inline GetManagedThingResult& WithProvisioningStatus(ProvisioningStatus&& value) { SetProvisioningStatus(std::move(value)); return *this;}
+    inline ProvisioningStatus GetProvisioningStatus() const { return m_provisioningStatus; }
+    inline void SetProvisioningStatus(ProvisioningStatus value) { m_provisioningStatusHasBeenSet = true; m_provisioningStatus = value; }
+    inline GetManagedThingResult& WithProvisioningStatus(ProvisioningStatus value) { SetProvisioningStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the managed thing representing the physical device.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetManagedThingResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetManagedThingResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetManagedThingResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetManagedThingResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The model of the device.</p>
      */
-    inline const Aws::String& GetModel() const{ return m_model; }
-    inline void SetModel(const Aws::String& value) { m_model = value; }
-    inline void SetModel(Aws::String&& value) { m_model = std::move(value); }
-    inline void SetModel(const char* value) { m_model.assign(value); }
-    inline GetManagedThingResult& WithModel(const Aws::String& value) { SetModel(value); return *this;}
-    inline GetManagedThingResult& WithModel(Aws::String&& value) { SetModel(std::move(value)); return *this;}
-    inline GetManagedThingResult& WithModel(const char* value) { SetModel(value); return *this;}
+    inline const Aws::String& GetModel() const { return m_model; }
+    template<typename ModelT = Aws::String>
+    void SetModel(ModelT&& value) { m_modelHasBeenSet = true; m_model = std::forward<ModelT>(value); }
+    template<typename ModelT = Aws::String>
+    GetManagedThingResult& WithModel(ModelT&& value) { SetModel(std::forward<ModelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The brand of the device.</p>
      */
-    inline const Aws::String& GetBrand() const{ return m_brand; }
-    inline void SetBrand(const Aws::String& value) { m_brand = value; }
-    inline void SetBrand(Aws::String&& value) { m_brand = std::move(value); }
-    inline void SetBrand(const char* value) { m_brand.assign(value); }
-    inline GetManagedThingResult& WithBrand(const Aws::String& value) { SetBrand(value); return *this;}
-    inline GetManagedThingResult& WithBrand(Aws::String&& value) { SetBrand(std::move(value)); return *this;}
-    inline GetManagedThingResult& WithBrand(const char* value) { SetBrand(value); return *this;}
+    inline const Aws::String& GetBrand() const { return m_brand; }
+    template<typename BrandT = Aws::String>
+    void SetBrand(BrandT&& value) { m_brandHasBeenSet = true; m_brand = std::forward<BrandT>(value); }
+    template<typename BrandT = Aws::String>
+    GetManagedThingResult& WithBrand(BrandT&& value) { SetBrand(std::forward<BrandT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The serial number of the device.</p>
      */
-    inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
-    inline void SetSerialNumber(const Aws::String& value) { m_serialNumber = value; }
-    inline void SetSerialNumber(Aws::String&& value) { m_serialNumber = std::move(value); }
-    inline void SetSerialNumber(const char* value) { m_serialNumber.assign(value); }
-    inline GetManagedThingResult& WithSerialNumber(const Aws::String& value) { SetSerialNumber(value); return *this;}
-    inline GetManagedThingResult& WithSerialNumber(Aws::String&& value) { SetSerialNumber(std::move(value)); return *this;}
-    inline GetManagedThingResult& WithSerialNumber(const char* value) { SetSerialNumber(value); return *this;}
+    inline const Aws::String& GetSerialNumber() const { return m_serialNumber; }
+    template<typename SerialNumberT = Aws::String>
+    void SetSerialNumber(SerialNumberT&& value) { m_serialNumberHasBeenSet = true; m_serialNumber = std::forward<SerialNumberT>(value); }
+    template<typename SerialNumberT = Aws::String>
+    GetManagedThingResult& WithSerialNumber(SerialNumberT&& value) { SetSerialNumber(std::forward<SerialNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -184,26 +162,22 @@ namespace Model
      * <p>The universal product code (UPC) of the device model. The UPC is typically
      * used in the United States of America and Canada.</p>
      */
-    inline const Aws::String& GetUniversalProductCode() const{ return m_universalProductCode; }
-    inline void SetUniversalProductCode(const Aws::String& value) { m_universalProductCode = value; }
-    inline void SetUniversalProductCode(Aws::String&& value) { m_universalProductCode = std::move(value); }
-    inline void SetUniversalProductCode(const char* value) { m_universalProductCode.assign(value); }
-    inline GetManagedThingResult& WithUniversalProductCode(const Aws::String& value) { SetUniversalProductCode(value); return *this;}
-    inline GetManagedThingResult& WithUniversalProductCode(Aws::String&& value) { SetUniversalProductCode(std::move(value)); return *this;}
-    inline GetManagedThingResult& WithUniversalProductCode(const char* value) { SetUniversalProductCode(value); return *this;}
+    inline const Aws::String& GetUniversalProductCode() const { return m_universalProductCode; }
+    template<typename UniversalProductCodeT = Aws::String>
+    void SetUniversalProductCode(UniversalProductCodeT&& value) { m_universalProductCodeHasBeenSet = true; m_universalProductCode = std::forward<UniversalProductCodeT>(value); }
+    template<typename UniversalProductCodeT = Aws::String>
+    GetManagedThingResult& WithUniversalProductCode(UniversalProductCodeT&& value) { SetUniversalProductCode(std::forward<UniversalProductCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique 13 digit number that identifies the managed thing.</p>
      */
-    inline const Aws::String& GetInternationalArticleNumber() const{ return m_internationalArticleNumber; }
-    inline void SetInternationalArticleNumber(const Aws::String& value) { m_internationalArticleNumber = value; }
-    inline void SetInternationalArticleNumber(Aws::String&& value) { m_internationalArticleNumber = std::move(value); }
-    inline void SetInternationalArticleNumber(const char* value) { m_internationalArticleNumber.assign(value); }
-    inline GetManagedThingResult& WithInternationalArticleNumber(const Aws::String& value) { SetInternationalArticleNumber(value); return *this;}
-    inline GetManagedThingResult& WithInternationalArticleNumber(Aws::String&& value) { SetInternationalArticleNumber(std::move(value)); return *this;}
-    inline GetManagedThingResult& WithInternationalArticleNumber(const char* value) { SetInternationalArticleNumber(value); return *this;}
+    inline const Aws::String& GetInternationalArticleNumber() const { return m_internationalArticleNumber; }
+    template<typename InternationalArticleNumberT = Aws::String>
+    void SetInternationalArticleNumber(InternationalArticleNumberT&& value) { m_internationalArticleNumberHasBeenSet = true; m_internationalArticleNumber = std::forward<InternationalArticleNumberT>(value); }
+    template<typename InternationalArticleNumberT = Aws::String>
+    GetManagedThingResult& WithInternationalArticleNumber(InternationalArticleNumberT&& value) { SetInternationalArticleNumber(std::forward<InternationalArticleNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -211,13 +185,11 @@ namespace Model
      * <p>The id of the connector policy.</p>  <p>This parameter is used for
      * cloud-to-cloud devices only.</p> 
      */
-    inline const Aws::String& GetConnectorPolicyId() const{ return m_connectorPolicyId; }
-    inline void SetConnectorPolicyId(const Aws::String& value) { m_connectorPolicyId = value; }
-    inline void SetConnectorPolicyId(Aws::String&& value) { m_connectorPolicyId = std::move(value); }
-    inline void SetConnectorPolicyId(const char* value) { m_connectorPolicyId.assign(value); }
-    inline GetManagedThingResult& WithConnectorPolicyId(const Aws::String& value) { SetConnectorPolicyId(value); return *this;}
-    inline GetManagedThingResult& WithConnectorPolicyId(Aws::String&& value) { SetConnectorPolicyId(std::move(value)); return *this;}
-    inline GetManagedThingResult& WithConnectorPolicyId(const char* value) { SetConnectorPolicyId(value); return *this;}
+    inline const Aws::String& GetConnectorPolicyId() const { return m_connectorPolicyId; }
+    template<typename ConnectorPolicyIdT = Aws::String>
+    void SetConnectorPolicyId(ConnectorPolicyIdT&& value) { m_connectorPolicyIdHasBeenSet = true; m_connectorPolicyId = std::forward<ConnectorPolicyIdT>(value); }
+    template<typename ConnectorPolicyIdT = Aws::String>
+    GetManagedThingResult& WithConnectorPolicyId(ConnectorPolicyIdT&& value) { SetConnectorPolicyId(std::forward<ConnectorPolicyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -226,13 +198,11 @@ namespace Model
      * not contain personal identifiable information (PII).</p>  <p>This
      * parameter is used for cloud-to-cloud devices only.</p> 
      */
-    inline const Aws::String& GetConnectorDeviceId() const{ return m_connectorDeviceId; }
-    inline void SetConnectorDeviceId(const Aws::String& value) { m_connectorDeviceId = value; }
-    inline void SetConnectorDeviceId(Aws::String&& value) { m_connectorDeviceId = std::move(value); }
-    inline void SetConnectorDeviceId(const char* value) { m_connectorDeviceId.assign(value); }
-    inline GetManagedThingResult& WithConnectorDeviceId(const Aws::String& value) { SetConnectorDeviceId(value); return *this;}
-    inline GetManagedThingResult& WithConnectorDeviceId(Aws::String&& value) { SetConnectorDeviceId(std::move(value)); return *this;}
-    inline GetManagedThingResult& WithConnectorDeviceId(const char* value) { SetConnectorDeviceId(value); return *this;}
+    inline const Aws::String& GetConnectorDeviceId() const { return m_connectorDeviceId; }
+    template<typename ConnectorDeviceIdT = Aws::String>
+    void SetConnectorDeviceId(ConnectorDeviceIdT&& value) { m_connectorDeviceIdHasBeenSet = true; m_connectorDeviceId = std::forward<ConnectorDeviceIdT>(value); }
+    template<typename ConnectorDeviceIdT = Aws::String>
+    GetManagedThingResult& WithConnectorDeviceId(ConnectorDeviceIdT&& value) { SetConnectorDeviceId(std::forward<ConnectorDeviceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -240,13 +210,11 @@ namespace Model
      * <p>A Zwave device-specific key used during device activation.</p>  <p>This
      * parameter is used for Zwave devices only.</p> 
      */
-    inline const Aws::String& GetDeviceSpecificKey() const{ return m_deviceSpecificKey; }
-    inline void SetDeviceSpecificKey(const Aws::String& value) { m_deviceSpecificKey = value; }
-    inline void SetDeviceSpecificKey(Aws::String&& value) { m_deviceSpecificKey = std::move(value); }
-    inline void SetDeviceSpecificKey(const char* value) { m_deviceSpecificKey.assign(value); }
-    inline GetManagedThingResult& WithDeviceSpecificKey(const Aws::String& value) { SetDeviceSpecificKey(value); return *this;}
-    inline GetManagedThingResult& WithDeviceSpecificKey(Aws::String&& value) { SetDeviceSpecificKey(std::move(value)); return *this;}
-    inline GetManagedThingResult& WithDeviceSpecificKey(const char* value) { SetDeviceSpecificKey(value); return *this;}
+    inline const Aws::String& GetDeviceSpecificKey() const { return m_deviceSpecificKey; }
+    template<typename DeviceSpecificKeyT = Aws::String>
+    void SetDeviceSpecificKey(DeviceSpecificKeyT&& value) { m_deviceSpecificKeyHasBeenSet = true; m_deviceSpecificKey = std::forward<DeviceSpecificKeyT>(value); }
+    template<typename DeviceSpecificKeyT = Aws::String>
+    GetManagedThingResult& WithDeviceSpecificKey(DeviceSpecificKeyT&& value) { SetDeviceSpecificKey(std::forward<DeviceSpecificKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -255,184 +223,194 @@ namespace Model
      * managed thing.</p>  <p>This parameter is used for Zigbee devices only.</p>
      * 
      */
-    inline const Aws::String& GetMacAddress() const{ return m_macAddress; }
-    inline void SetMacAddress(const Aws::String& value) { m_macAddress = value; }
-    inline void SetMacAddress(Aws::String&& value) { m_macAddress = std::move(value); }
-    inline void SetMacAddress(const char* value) { m_macAddress.assign(value); }
-    inline GetManagedThingResult& WithMacAddress(const Aws::String& value) { SetMacAddress(value); return *this;}
-    inline GetManagedThingResult& WithMacAddress(Aws::String&& value) { SetMacAddress(std::move(value)); return *this;}
-    inline GetManagedThingResult& WithMacAddress(const char* value) { SetMacAddress(value); return *this;}
+    inline const Aws::String& GetMacAddress() const { return m_macAddress; }
+    template<typename MacAddressT = Aws::String>
+    void SetMacAddress(MacAddressT&& value) { m_macAddressHasBeenSet = true; m_macAddress = std::forward<MacAddressT>(value); }
+    template<typename MacAddressT = Aws::String>
+    GetManagedThingResult& WithMacAddress(MacAddressT&& value) { SetMacAddress(std::forward<MacAddressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Id of the controller device used for the discovery job.</p>
      */
-    inline const Aws::String& GetParentControllerId() const{ return m_parentControllerId; }
-    inline void SetParentControllerId(const Aws::String& value) { m_parentControllerId = value; }
-    inline void SetParentControllerId(Aws::String&& value) { m_parentControllerId = std::move(value); }
-    inline void SetParentControllerId(const char* value) { m_parentControllerId.assign(value); }
-    inline GetManagedThingResult& WithParentControllerId(const Aws::String& value) { SetParentControllerId(value); return *this;}
-    inline GetManagedThingResult& WithParentControllerId(Aws::String&& value) { SetParentControllerId(std::move(value)); return *this;}
-    inline GetManagedThingResult& WithParentControllerId(const char* value) { SetParentControllerId(value); return *this;}
+    inline const Aws::String& GetParentControllerId() const { return m_parentControllerId; }
+    template<typename ParentControllerIdT = Aws::String>
+    void SetParentControllerId(ParentControllerIdT&& value) { m_parentControllerIdHasBeenSet = true; m_parentControllerId = std::forward<ParentControllerIdT>(value); }
+    template<typename ParentControllerIdT = Aws::String>
+    GetManagedThingResult& WithParentControllerId(ParentControllerIdT&& value) { SetParentControllerId(std::forward<ParentControllerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The classification of the managed thing such as light bulb or thermostat.</p>
      */
-    inline const Aws::String& GetClassification() const{ return m_classification; }
-    inline void SetClassification(const Aws::String& value) { m_classification = value; }
-    inline void SetClassification(Aws::String&& value) { m_classification = std::move(value); }
-    inline void SetClassification(const char* value) { m_classification.assign(value); }
-    inline GetManagedThingResult& WithClassification(const Aws::String& value) { SetClassification(value); return *this;}
-    inline GetManagedThingResult& WithClassification(Aws::String&& value) { SetClassification(std::move(value)); return *this;}
-    inline GetManagedThingResult& WithClassification(const char* value) { SetClassification(value); return *this;}
+    inline const Aws::String& GetClassification() const { return m_classification; }
+    template<typename ClassificationT = Aws::String>
+    void SetClassification(ClassificationT&& value) { m_classificationHasBeenSet = true; m_classification = std::forward<ClassificationT>(value); }
+    template<typename ClassificationT = Aws::String>
+    GetManagedThingResult& WithClassification(ClassificationT&& value) { SetClassification(std::forward<ClassificationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp value of when the device creation request occurred.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline GetManagedThingResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetManagedThingResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetManagedThingResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp value of when the managed thing was last updated at.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAt = std::move(value); }
-    inline GetManagedThingResult& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline GetManagedThingResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    GetManagedThingResult& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestampe value of when the device was activated.</p>
      */
-    inline const Aws::Utils::DateTime& GetActivatedAt() const{ return m_activatedAt; }
-    inline void SetActivatedAt(const Aws::Utils::DateTime& value) { m_activatedAt = value; }
-    inline void SetActivatedAt(Aws::Utils::DateTime&& value) { m_activatedAt = std::move(value); }
-    inline GetManagedThingResult& WithActivatedAt(const Aws::Utils::DateTime& value) { SetActivatedAt(value); return *this;}
-    inline GetManagedThingResult& WithActivatedAt(Aws::Utils::DateTime&& value) { SetActivatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetActivatedAt() const { return m_activatedAt; }
+    template<typename ActivatedAtT = Aws::Utils::DateTime>
+    void SetActivatedAt(ActivatedAtT&& value) { m_activatedAtHasBeenSet = true; m_activatedAt = std::forward<ActivatedAtT>(value); }
+    template<typename ActivatedAtT = Aws::Utils::DateTime>
+    GetManagedThingResult& WithActivatedAt(ActivatedAtT&& value) { SetActivatedAt(std::forward<ActivatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The network mode for the hub-connected device.</p>
      */
-    inline const HubNetworkMode& GetHubNetworkMode() const{ return m_hubNetworkMode; }
-    inline void SetHubNetworkMode(const HubNetworkMode& value) { m_hubNetworkMode = value; }
-    inline void SetHubNetworkMode(HubNetworkMode&& value) { m_hubNetworkMode = std::move(value); }
-    inline GetManagedThingResult& WithHubNetworkMode(const HubNetworkMode& value) { SetHubNetworkMode(value); return *this;}
-    inline GetManagedThingResult& WithHubNetworkMode(HubNetworkMode&& value) { SetHubNetworkMode(std::move(value)); return *this;}
+    inline HubNetworkMode GetHubNetworkMode() const { return m_hubNetworkMode; }
+    inline void SetHubNetworkMode(HubNetworkMode value) { m_hubNetworkModeHasBeenSet = true; m_hubNetworkMode = value; }
+    inline GetManagedThingResult& WithHubNetworkMode(HubNetworkMode value) { SetHubNetworkMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The metadata for the managed thing.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetMetaData() const{ return m_metaData; }
-    inline void SetMetaData(const Aws::Map<Aws::String, Aws::String>& value) { m_metaData = value; }
-    inline void SetMetaData(Aws::Map<Aws::String, Aws::String>&& value) { m_metaData = std::move(value); }
-    inline GetManagedThingResult& WithMetaData(const Aws::Map<Aws::String, Aws::String>& value) { SetMetaData(value); return *this;}
-    inline GetManagedThingResult& WithMetaData(Aws::Map<Aws::String, Aws::String>&& value) { SetMetaData(std::move(value)); return *this;}
-    inline GetManagedThingResult& AddMetaData(const Aws::String& key, const Aws::String& value) { m_metaData.emplace(key, value); return *this; }
-    inline GetManagedThingResult& AddMetaData(Aws::String&& key, const Aws::String& value) { m_metaData.emplace(std::move(key), value); return *this; }
-    inline GetManagedThingResult& AddMetaData(const Aws::String& key, Aws::String&& value) { m_metaData.emplace(key, std::move(value)); return *this; }
-    inline GetManagedThingResult& AddMetaData(Aws::String&& key, Aws::String&& value) { m_metaData.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetManagedThingResult& AddMetaData(const char* key, Aws::String&& value) { m_metaData.emplace(key, std::move(value)); return *this; }
-    inline GetManagedThingResult& AddMetaData(Aws::String&& key, const char* value) { m_metaData.emplace(std::move(key), value); return *this; }
-    inline GetManagedThingResult& AddMetaData(const char* key, const char* value) { m_metaData.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetMetaData() const { return m_metaData; }
+    template<typename MetaDataT = Aws::Map<Aws::String, Aws::String>>
+    void SetMetaData(MetaDataT&& value) { m_metaDataHasBeenSet = true; m_metaData = std::forward<MetaDataT>(value); }
+    template<typename MetaDataT = Aws::Map<Aws::String, Aws::String>>
+    GetManagedThingResult& WithMetaData(MetaDataT&& value) { SetMetaData(std::forward<MetaDataT>(value)); return *this;}
+    template<typename MetaDataKeyT = Aws::String, typename MetaDataValueT = Aws::String>
+    GetManagedThingResult& AddMetaData(MetaDataKeyT&& key, MetaDataValueT&& value) {
+      m_metaDataHasBeenSet = true; m_metaData.emplace(std::forward<MetaDataKeyT>(key), std::forward<MetaDataValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>A set of key/value pairs that are used to manage the managed thing.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetManagedThingResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetManagedThingResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetManagedThingResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetManagedThingResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetManagedThingResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetManagedThingResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetManagedThingResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetManagedThingResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetManagedThingResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetManagedThingResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetManagedThingResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetManagedThingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetManagedThingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetManagedThingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetManagedThingResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_owner;
+    bool m_ownerHasBeenSet = false;
 
     Aws::String m_credentialLockerId;
+    bool m_credentialLockerIdHasBeenSet = false;
 
     Aws::String m_advertisedProductId;
+    bool m_advertisedProductIdHasBeenSet = false;
 
-    Role m_role;
+    Role m_role{Role::NOT_SET};
+    bool m_roleHasBeenSet = false;
 
-    ProvisioningStatus m_provisioningStatus;
+    ProvisioningStatus m_provisioningStatus{ProvisioningStatus::NOT_SET};
+    bool m_provisioningStatusHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_model;
+    bool m_modelHasBeenSet = false;
 
     Aws::String m_brand;
+    bool m_brandHasBeenSet = false;
 
     Aws::String m_serialNumber;
+    bool m_serialNumberHasBeenSet = false;
 
     Aws::String m_universalProductCode;
+    bool m_universalProductCodeHasBeenSet = false;
 
     Aws::String m_internationalArticleNumber;
+    bool m_internationalArticleNumberHasBeenSet = false;
 
     Aws::String m_connectorPolicyId;
+    bool m_connectorPolicyIdHasBeenSet = false;
 
     Aws::String m_connectorDeviceId;
+    bool m_connectorDeviceIdHasBeenSet = false;
 
     Aws::String m_deviceSpecificKey;
+    bool m_deviceSpecificKeyHasBeenSet = false;
 
     Aws::String m_macAddress;
+    bool m_macAddressHasBeenSet = false;
 
     Aws::String m_parentControllerId;
+    bool m_parentControllerIdHasBeenSet = false;
 
     Aws::String m_classification;
+    bool m_classificationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
+    bool m_updatedAtHasBeenSet = false;
 
-    Aws::Utils::DateTime m_activatedAt;
+    Aws::Utils::DateTime m_activatedAt{};
+    bool m_activatedAtHasBeenSet = false;
 
-    HubNetworkMode m_hubNetworkMode;
+    HubNetworkMode m_hubNetworkMode{HubNetworkMode::NOT_SET};
+    bool m_hubNetworkModeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_metaData;
+    bool m_metaDataHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

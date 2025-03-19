@@ -18,19 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-ChannelSummary::ChannelSummary() : 
-    m_channelNameHasBeenSet(false),
-    m_channelStorageHasBeenSet(false),
-    m_status(ChannelStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_lastMessageArrivalTimeHasBeenSet(false)
-{
-}
-
 ChannelSummary::ChannelSummary(JsonView jsonValue)
-  : ChannelSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ ChannelSummary& ChannelSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("channelName"))
   {
     m_channelName = jsonValue.GetString("channelName");
-
     m_channelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("channelStorage"))
   {
     m_channelStorage = jsonValue.GetObject("channelStorage");
-
     m_channelStorageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ChannelStatusMapper::GetChannelStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetDouble("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("lastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastMessageArrivalTime"))
   {
     m_lastMessageArrivalTime = jsonValue.GetDouble("lastMessageArrivalTime");
-
     m_lastMessageArrivalTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetModelRequest::GetModelRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_modelNameHasBeenSet(false),
-    m_flatten(false),
-    m_flattenHasBeenSet(false)
-{
-}
-
 Aws::String GetModelRequest::SerializePayload() const
 {
   return {};

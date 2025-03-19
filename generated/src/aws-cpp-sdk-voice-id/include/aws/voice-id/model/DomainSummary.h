@@ -37,7 +37,7 @@ namespace Model
   class DomainSummary
   {
   public:
-    AWS_VOICEID_API DomainSummary();
+    AWS_VOICEID_API DomainSummary() = default;
     AWS_VOICEID_API DomainSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_VOICEID_API DomainSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,80 +47,70 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the domain.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline DomainSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DomainSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DomainSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DomainSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the domain was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline DomainSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline DomainSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    DomainSummary& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the domain.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline DomainSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DomainSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DomainSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DomainSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the domain.</p>
      */
-    inline const Aws::String& GetDomainId() const{ return m_domainId; }
+    inline const Aws::String& GetDomainId() const { return m_domainId; }
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
-    inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
-    inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
-    inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
-    inline DomainSummary& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
-    inline DomainSummary& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
-    inline DomainSummary& WithDomainId(const char* value) { SetDomainId(value); return *this;}
+    template<typename DomainIdT = Aws::String>
+    void SetDomainId(DomainIdT&& value) { m_domainIdHasBeenSet = true; m_domainId = std::forward<DomainIdT>(value); }
+    template<typename DomainIdT = Aws::String>
+    DomainSummary& WithDomainId(DomainIdT&& value) { SetDomainId(std::forward<DomainIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the domain.</p>
      */
-    inline const DomainStatus& GetDomainStatus() const{ return m_domainStatus; }
+    inline DomainStatus GetDomainStatus() const { return m_domainStatus; }
     inline bool DomainStatusHasBeenSet() const { return m_domainStatusHasBeenSet; }
-    inline void SetDomainStatus(const DomainStatus& value) { m_domainStatusHasBeenSet = true; m_domainStatus = value; }
-    inline void SetDomainStatus(DomainStatus&& value) { m_domainStatusHasBeenSet = true; m_domainStatus = std::move(value); }
-    inline DomainSummary& WithDomainStatus(const DomainStatus& value) { SetDomainStatus(value); return *this;}
-    inline DomainSummary& WithDomainStatus(DomainStatus&& value) { SetDomainStatus(std::move(value)); return *this;}
+    inline void SetDomainStatus(DomainStatus value) { m_domainStatusHasBeenSet = true; m_domainStatus = value; }
+    inline DomainSummary& WithDomainStatus(DomainStatus value) { SetDomainStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The client-provided name for the domain.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DomainSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DomainSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DomainSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DomainSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,12 +118,12 @@ namespace Model
      * <p>The server-side encryption configuration containing the KMS key identifier
      * you want Voice ID to use to encrypt your data.</p>
      */
-    inline const ServerSideEncryptionConfiguration& GetServerSideEncryptionConfiguration() const{ return m_serverSideEncryptionConfiguration; }
+    inline const ServerSideEncryptionConfiguration& GetServerSideEncryptionConfiguration() const { return m_serverSideEncryptionConfiguration; }
     inline bool ServerSideEncryptionConfigurationHasBeenSet() const { return m_serverSideEncryptionConfigurationHasBeenSet; }
-    inline void SetServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = value; }
-    inline void SetServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = std::move(value); }
-    inline DomainSummary& WithServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { SetServerSideEncryptionConfiguration(value); return *this;}
-    inline DomainSummary& WithServerSideEncryptionConfiguration(ServerSideEncryptionConfiguration&& value) { SetServerSideEncryptionConfiguration(std::move(value)); return *this;}
+    template<typename ServerSideEncryptionConfigurationT = ServerSideEncryptionConfiguration>
+    void SetServerSideEncryptionConfiguration(ServerSideEncryptionConfigurationT&& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = std::forward<ServerSideEncryptionConfigurationT>(value); }
+    template<typename ServerSideEncryptionConfigurationT = ServerSideEncryptionConfiguration>
+    DomainSummary& WithServerSideEncryptionConfiguration(ServerSideEncryptionConfigurationT&& value) { SetServerSideEncryptionConfiguration(std::forward<ServerSideEncryptionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -143,24 +133,24 @@ namespace Model
      * KMS key is removed through an asynchronous process. When this update is
      * complete, the domain's data can only be accessed using the new KMS key.</p>
      */
-    inline const ServerSideEncryptionUpdateDetails& GetServerSideEncryptionUpdateDetails() const{ return m_serverSideEncryptionUpdateDetails; }
+    inline const ServerSideEncryptionUpdateDetails& GetServerSideEncryptionUpdateDetails() const { return m_serverSideEncryptionUpdateDetails; }
     inline bool ServerSideEncryptionUpdateDetailsHasBeenSet() const { return m_serverSideEncryptionUpdateDetailsHasBeenSet; }
-    inline void SetServerSideEncryptionUpdateDetails(const ServerSideEncryptionUpdateDetails& value) { m_serverSideEncryptionUpdateDetailsHasBeenSet = true; m_serverSideEncryptionUpdateDetails = value; }
-    inline void SetServerSideEncryptionUpdateDetails(ServerSideEncryptionUpdateDetails&& value) { m_serverSideEncryptionUpdateDetailsHasBeenSet = true; m_serverSideEncryptionUpdateDetails = std::move(value); }
-    inline DomainSummary& WithServerSideEncryptionUpdateDetails(const ServerSideEncryptionUpdateDetails& value) { SetServerSideEncryptionUpdateDetails(value); return *this;}
-    inline DomainSummary& WithServerSideEncryptionUpdateDetails(ServerSideEncryptionUpdateDetails&& value) { SetServerSideEncryptionUpdateDetails(std::move(value)); return *this;}
+    template<typename ServerSideEncryptionUpdateDetailsT = ServerSideEncryptionUpdateDetails>
+    void SetServerSideEncryptionUpdateDetails(ServerSideEncryptionUpdateDetailsT&& value) { m_serverSideEncryptionUpdateDetailsHasBeenSet = true; m_serverSideEncryptionUpdateDetails = std::forward<ServerSideEncryptionUpdateDetailsT>(value); }
+    template<typename ServerSideEncryptionUpdateDetailsT = ServerSideEncryptionUpdateDetails>
+    DomainSummary& WithServerSideEncryptionUpdateDetails(ServerSideEncryptionUpdateDetailsT&& value) { SetServerSideEncryptionUpdateDetails(std::forward<ServerSideEncryptionUpdateDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the domain was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline DomainSummary& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline DomainSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    DomainSummary& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -168,19 +158,19 @@ namespace Model
      * <p>Provides information about <code>watchlistDetails</code> and
      * <code>DefaultWatchlistID</code>. </p>
      */
-    inline const WatchlistDetails& GetWatchlistDetails() const{ return m_watchlistDetails; }
+    inline const WatchlistDetails& GetWatchlistDetails() const { return m_watchlistDetails; }
     inline bool WatchlistDetailsHasBeenSet() const { return m_watchlistDetailsHasBeenSet; }
-    inline void SetWatchlistDetails(const WatchlistDetails& value) { m_watchlistDetailsHasBeenSet = true; m_watchlistDetails = value; }
-    inline void SetWatchlistDetails(WatchlistDetails&& value) { m_watchlistDetailsHasBeenSet = true; m_watchlistDetails = std::move(value); }
-    inline DomainSummary& WithWatchlistDetails(const WatchlistDetails& value) { SetWatchlistDetails(value); return *this;}
-    inline DomainSummary& WithWatchlistDetails(WatchlistDetails&& value) { SetWatchlistDetails(std::move(value)); return *this;}
+    template<typename WatchlistDetailsT = WatchlistDetails>
+    void SetWatchlistDetails(WatchlistDetailsT&& value) { m_watchlistDetailsHasBeenSet = true; m_watchlistDetails = std::forward<WatchlistDetailsT>(value); }
+    template<typename WatchlistDetailsT = WatchlistDetails>
+    DomainSummary& WithWatchlistDetails(WatchlistDetailsT&& value) { SetWatchlistDetails(std::forward<WatchlistDetailsT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     Aws::String m_description;
@@ -189,7 +179,7 @@ namespace Model
     Aws::String m_domainId;
     bool m_domainIdHasBeenSet = false;
 
-    DomainStatus m_domainStatus;
+    DomainStatus m_domainStatus{DomainStatus::NOT_SET};
     bool m_domainStatusHasBeenSet = false;
 
     Aws::String m_name;
@@ -201,7 +191,7 @@ namespace Model
     ServerSideEncryptionUpdateDetails m_serverSideEncryptionUpdateDetails;
     bool m_serverSideEncryptionUpdateDetailsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
 
     WatchlistDetails m_watchlistDetails;

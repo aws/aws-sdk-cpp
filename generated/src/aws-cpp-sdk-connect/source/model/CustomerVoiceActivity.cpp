@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-CustomerVoiceActivity::CustomerVoiceActivity() : 
-    m_greetingStartTimestampHasBeenSet(false),
-    m_greetingEndTimestampHasBeenSet(false)
-{
-}
-
 CustomerVoiceActivity::CustomerVoiceActivity(JsonView jsonValue)
-  : CustomerVoiceActivity()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CustomerVoiceActivity& CustomerVoiceActivity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GreetingStartTimestamp"))
   {
     m_greetingStartTimestamp = jsonValue.GetDouble("GreetingStartTimestamp");
-
     m_greetingStartTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GreetingEndTimestamp"))
   {
     m_greetingEndTimestamp = jsonValue.GetDouble("GreetingEndTimestamp");
-
     m_greetingEndTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

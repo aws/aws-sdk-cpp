@@ -18,15 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-EbsVolumeConfiguration::EbsVolumeConfiguration() : 
-    m_storageHasBeenSet(false),
-    m_performanceHasBeenSet(false),
-    m_attachmentStateHasBeenSet(false)
-{
-}
-
 EbsVolumeConfiguration::EbsVolumeConfiguration(JsonView jsonValue)
-  : EbsVolumeConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ EbsVolumeConfiguration& EbsVolumeConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("storage"))
   {
     m_storage = jsonValue.GetObject("storage");
-
     m_storageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("performance"))
   {
     m_performance = jsonValue.GetObject("performance");
-
     m_performanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attachmentState"))
   {
     m_attachmentState = jsonValue.GetString("attachmentState");
-
     m_attachmentStateHasBeenSet = true;
   }
-
   return *this;
 }
 

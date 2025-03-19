@@ -12,22 +12,6 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateComputeEnvironmentRequest::CreateComputeEnvironmentRequest() : 
-    m_computeEnvironmentNameHasBeenSet(false),
-    m_type(CEType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_state(CEState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_unmanagedvCpus(0),
-    m_unmanagedvCpusHasBeenSet(false),
-    m_computeResourcesHasBeenSet(false),
-    m_serviceRoleHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_eksConfigurationHasBeenSet(false),
-    m_contextHasBeenSet(false)
-{
-}
-
 Aws::String CreateComputeEnvironmentRequest::SerializePayload() const
 {
   JsonValue payload;

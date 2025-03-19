@@ -30,7 +30,7 @@ namespace Model
   class BatchGetProfileResult
   {
   public:
-    AWS_CUSTOMERPROFILES_API BatchGetProfileResult();
+    AWS_CUSTOMERPROFILES_API BatchGetProfileResult() = default;
     AWS_CUSTOMERPROFILES_API BatchGetProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CUSTOMERPROFILES_API BatchGetProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,45 +41,46 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/APIReference/CommonErrors.html">Common
      * Errors</a>.</p>
      */
-    inline const Aws::Vector<BatchGetProfileError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<BatchGetProfileError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchGetProfileError>&& value) { m_errors = std::move(value); }
-    inline BatchGetProfileResult& WithErrors(const Aws::Vector<BatchGetProfileError>& value) { SetErrors(value); return *this;}
-    inline BatchGetProfileResult& WithErrors(Aws::Vector<BatchGetProfileError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchGetProfileResult& AddErrors(const BatchGetProfileError& value) { m_errors.push_back(value); return *this; }
-    inline BatchGetProfileResult& AddErrors(BatchGetProfileError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchGetProfileError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchGetProfileError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchGetProfileError>>
+    BatchGetProfileResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchGetProfileError>
+    BatchGetProfileResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Array of Profile Objects.</p>
      */
-    inline const Aws::Vector<Profile>& GetProfiles() const{ return m_profiles; }
-    inline void SetProfiles(const Aws::Vector<Profile>& value) { m_profiles = value; }
-    inline void SetProfiles(Aws::Vector<Profile>&& value) { m_profiles = std::move(value); }
-    inline BatchGetProfileResult& WithProfiles(const Aws::Vector<Profile>& value) { SetProfiles(value); return *this;}
-    inline BatchGetProfileResult& WithProfiles(Aws::Vector<Profile>&& value) { SetProfiles(std::move(value)); return *this;}
-    inline BatchGetProfileResult& AddProfiles(const Profile& value) { m_profiles.push_back(value); return *this; }
-    inline BatchGetProfileResult& AddProfiles(Profile&& value) { m_profiles.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Profile>& GetProfiles() const { return m_profiles; }
+    template<typename ProfilesT = Aws::Vector<Profile>>
+    void SetProfiles(ProfilesT&& value) { m_profilesHasBeenSet = true; m_profiles = std::forward<ProfilesT>(value); }
+    template<typename ProfilesT = Aws::Vector<Profile>>
+    BatchGetProfileResult& WithProfiles(ProfilesT&& value) { SetProfiles(std::forward<ProfilesT>(value)); return *this;}
+    template<typename ProfilesT = Profile>
+    BatchGetProfileResult& AddProfiles(ProfilesT&& value) { m_profilesHasBeenSet = true; m_profiles.emplace_back(std::forward<ProfilesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetProfileResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchGetProfileError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::Vector<Profile> m_profiles;
+    bool m_profilesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

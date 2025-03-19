@@ -28,7 +28,7 @@ namespace Model
   class CreateConnectPeerResult
   {
   public:
-    AWS_NETWORKMANAGER_API CreateConnectPeerResult();
+    AWS_NETWORKMANAGER_API CreateConnectPeerResult() = default;
     AWS_NETWORKMANAGER_API CreateConnectPeerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKMANAGER_API CreateConnectPeerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The response to the request.</p>
      */
-    inline const ConnectPeer& GetConnectPeer() const{ return m_connectPeer; }
-    inline void SetConnectPeer(const ConnectPeer& value) { m_connectPeer = value; }
-    inline void SetConnectPeer(ConnectPeer&& value) { m_connectPeer = std::move(value); }
-    inline CreateConnectPeerResult& WithConnectPeer(const ConnectPeer& value) { SetConnectPeer(value); return *this;}
-    inline CreateConnectPeerResult& WithConnectPeer(ConnectPeer&& value) { SetConnectPeer(std::move(value)); return *this;}
+    inline const ConnectPeer& GetConnectPeer() const { return m_connectPeer; }
+    template<typename ConnectPeerT = ConnectPeer>
+    void SetConnectPeer(ConnectPeerT&& value) { m_connectPeerHasBeenSet = true; m_connectPeer = std::forward<ConnectPeerT>(value); }
+    template<typename ConnectPeerT = ConnectPeer>
+    CreateConnectPeerResult& WithConnectPeer(ConnectPeerT&& value) { SetConnectPeer(std::forward<ConnectPeerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateConnectPeerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateConnectPeerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateConnectPeerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateConnectPeerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ConnectPeer m_connectPeer;
+    bool m_connectPeerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

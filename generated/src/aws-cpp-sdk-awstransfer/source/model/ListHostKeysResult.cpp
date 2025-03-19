@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListHostKeysResult::ListHostKeysResult()
-{
-}
-
 ListHostKeysResult::ListHostKeysResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ ListHostKeysResult& ListHostKeysResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServerId"))
   {
     m_serverId = jsonValue.GetString("ServerId");
-
+    m_serverIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HostKeys"))
   {
     Aws::Utils::Array<JsonView> hostKeysJsonList = jsonValue.GetArray("HostKeys");
@@ -48,14 +42,15 @@ ListHostKeysResult& ListHostKeysResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_hostKeys.push_back(hostKeysJsonList[hostKeysIndex].AsObject());
     }
+    m_hostKeysHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

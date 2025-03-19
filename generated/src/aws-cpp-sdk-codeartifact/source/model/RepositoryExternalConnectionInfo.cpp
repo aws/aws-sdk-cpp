@@ -18,17 +18,7 @@ namespace CodeArtifact
 namespace Model
 {
 
-RepositoryExternalConnectionInfo::RepositoryExternalConnectionInfo() : 
-    m_externalConnectionNameHasBeenSet(false),
-    m_packageFormat(PackageFormat::NOT_SET),
-    m_packageFormatHasBeenSet(false),
-    m_status(ExternalConnectionStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 RepositoryExternalConnectionInfo::RepositoryExternalConnectionInfo(JsonView jsonValue)
-  : RepositoryExternalConnectionInfo()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ RepositoryExternalConnectionInfo& RepositoryExternalConnectionInfo::operator =(J
   if(jsonValue.ValueExists("externalConnectionName"))
   {
     m_externalConnectionName = jsonValue.GetString("externalConnectionName");
-
     m_externalConnectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("packageFormat"))
   {
     m_packageFormat = PackageFormatMapper::GetPackageFormatForName(jsonValue.GetString("packageFormat"));
-
     m_packageFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ExternalConnectionStatusMapper::GetExternalConnectionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

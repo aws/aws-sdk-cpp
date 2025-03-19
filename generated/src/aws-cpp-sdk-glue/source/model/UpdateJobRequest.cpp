@@ -12,12 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateJobRequest::UpdateJobRequest() : 
-    m_jobNameHasBeenSet(false),
-    m_jobUpdateHasBeenSet(false)
-{
-}
-
 Aws::String UpdateJobRequest::SerializePayload() const
 {
   JsonValue payload;

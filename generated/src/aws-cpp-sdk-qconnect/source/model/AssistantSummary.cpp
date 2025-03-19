@@ -18,25 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-AssistantSummary::AssistantSummary() : 
-    m_aiAgentConfigurationHasBeenSet(false),
-    m_assistantArnHasBeenSet(false),
-    m_assistantIdHasBeenSet(false),
-    m_capabilityConfigurationHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_integrationConfigurationHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_serverSideEncryptionConfigurationHasBeenSet(false),
-    m_status(AssistantStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_type(AssistantType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 AssistantSummary::AssistantSummary(JsonView jsonValue)
-  : AssistantSummary()
 {
   *this = jsonValue;
 }
@@ -52,63 +34,46 @@ AssistantSummary& AssistantSummary::operator =(JsonView jsonValue)
     }
     m_aiAgentConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assistantArn"))
   {
     m_assistantArn = jsonValue.GetString("assistantArn");
-
     m_assistantArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assistantId"))
   {
     m_assistantId = jsonValue.GetString("assistantId");
-
     m_assistantIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("capabilityConfiguration"))
   {
     m_capabilityConfiguration = jsonValue.GetObject("capabilityConfiguration");
-
     m_capabilityConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("integrationConfiguration"))
   {
     m_integrationConfiguration = jsonValue.GetObject("integrationConfiguration");
-
     m_integrationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serverSideEncryptionConfiguration"))
   {
     m_serverSideEncryptionConfiguration = jsonValue.GetObject("serverSideEncryptionConfiguration");
-
     m_serverSideEncryptionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = AssistantStatusMapper::GetAssistantStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -118,14 +83,11 @@ AssistantSummary& AssistantSummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = AssistantTypeMapper::GetAssistantTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ContactSearchSummaryAgentInfo::ContactSearchSummaryAgentInfo() : 
-    m_idHasBeenSet(false),
-    m_connectedToAgentTimestampHasBeenSet(false)
-{
-}
-
 ContactSearchSummaryAgentInfo::ContactSearchSummaryAgentInfo(JsonView jsonValue)
-  : ContactSearchSummaryAgentInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ContactSearchSummaryAgentInfo& ContactSearchSummaryAgentInfo::operator =(JsonVie
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectedToAgentTimestamp"))
   {
     m_connectedToAgentTimestamp = jsonValue.GetDouble("ConnectedToAgentTimestamp");
-
     m_connectedToAgentTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

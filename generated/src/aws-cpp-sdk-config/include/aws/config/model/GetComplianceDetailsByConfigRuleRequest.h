@@ -26,7 +26,7 @@ namespace Model
   class GetComplianceDetailsByConfigRuleRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API GetComplianceDetailsByConfigRuleRequest();
+    AWS_CONFIGSERVICE_API GetComplianceDetailsByConfigRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the Config rule for which you want compliance information.</p>
      */
-    inline const Aws::String& GetConfigRuleName() const{ return m_configRuleName; }
+    inline const Aws::String& GetConfigRuleName() const { return m_configRuleName; }
     inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
-    inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
-    inline void SetConfigRuleName(Aws::String&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::move(value); }
-    inline void SetConfigRuleName(const char* value) { m_configRuleNameHasBeenSet = true; m_configRuleName.assign(value); }
-    inline GetComplianceDetailsByConfigRuleRequest& WithConfigRuleName(const Aws::String& value) { SetConfigRuleName(value); return *this;}
-    inline GetComplianceDetailsByConfigRuleRequest& WithConfigRuleName(Aws::String&& value) { SetConfigRuleName(std::move(value)); return *this;}
-    inline GetComplianceDetailsByConfigRuleRequest& WithConfigRuleName(const char* value) { SetConfigRuleName(value); return *this;}
+    template<typename ConfigRuleNameT = Aws::String>
+    void SetConfigRuleName(ConfigRuleNameT&& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = std::forward<ConfigRuleNameT>(value); }
+    template<typename ConfigRuleNameT = Aws::String>
+    GetComplianceDetailsByConfigRuleRequest& WithConfigRuleName(ConfigRuleNameT&& value) { SetConfigRuleName(std::forward<ConfigRuleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,13 @@ namespace Model
      * be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot be used as a
      * <code>ComplianceType</code> for filtering results.</p>
      */
-    inline const Aws::Vector<ComplianceType>& GetComplianceTypes() const{ return m_complianceTypes; }
+    inline const Aws::Vector<ComplianceType>& GetComplianceTypes() const { return m_complianceTypes; }
     inline bool ComplianceTypesHasBeenSet() const { return m_complianceTypesHasBeenSet; }
-    inline void SetComplianceTypes(const Aws::Vector<ComplianceType>& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes = value; }
-    inline void SetComplianceTypes(Aws::Vector<ComplianceType>&& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes = std::move(value); }
-    inline GetComplianceDetailsByConfigRuleRequest& WithComplianceTypes(const Aws::Vector<ComplianceType>& value) { SetComplianceTypes(value); return *this;}
-    inline GetComplianceDetailsByConfigRuleRequest& WithComplianceTypes(Aws::Vector<ComplianceType>&& value) { SetComplianceTypes(std::move(value)); return *this;}
-    inline GetComplianceDetailsByConfigRuleRequest& AddComplianceTypes(const ComplianceType& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes.push_back(value); return *this; }
-    inline GetComplianceDetailsByConfigRuleRequest& AddComplianceTypes(ComplianceType&& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes.push_back(std::move(value)); return *this; }
+    template<typename ComplianceTypesT = Aws::Vector<ComplianceType>>
+    void SetComplianceTypes(ComplianceTypesT&& value) { m_complianceTypesHasBeenSet = true; m_complianceTypes = std::forward<ComplianceTypesT>(value); }
+    template<typename ComplianceTypesT = Aws::Vector<ComplianceType>>
+    GetComplianceDetailsByConfigRuleRequest& WithComplianceTypes(ComplianceTypesT&& value) { SetComplianceTypes(std::forward<ComplianceTypesT>(value)); return *this;}
+    inline GetComplianceDetailsByConfigRuleRequest& AddComplianceTypes(ComplianceType value) { m_complianceTypesHasBeenSet = true; m_complianceTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -76,7 +73,7 @@ namespace Model
      * is 10. You cannot specify a number greater than 100. If you specify 0, Config
      * uses the default.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline GetComplianceDetailsByConfigRuleRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -87,14 +84,12 @@ namespace Model
      * <p>The <code>nextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetComplianceDetailsByConfigRuleRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetComplianceDetailsByConfigRuleRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetComplianceDetailsByConfigRuleRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetComplianceDetailsByConfigRuleRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -104,7 +99,7 @@ namespace Model
     Aws::Vector<ComplianceType> m_complianceTypes;
     bool m_complianceTypesHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;

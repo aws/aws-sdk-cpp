@@ -21,7 +21,7 @@ namespace Model
   class DeleteAddressListRequest : public MailManagerRequest
   {
   public:
-    AWS_MAILMANAGER_API DeleteAddressListRequest();
+    AWS_MAILMANAGER_API DeleteAddressListRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The identifier of an existing address list resource to delete.</p>
      */
-    inline const Aws::String& GetAddressListId() const{ return m_addressListId; }
+    inline const Aws::String& GetAddressListId() const { return m_addressListId; }
     inline bool AddressListIdHasBeenSet() const { return m_addressListIdHasBeenSet; }
-    inline void SetAddressListId(const Aws::String& value) { m_addressListIdHasBeenSet = true; m_addressListId = value; }
-    inline void SetAddressListId(Aws::String&& value) { m_addressListIdHasBeenSet = true; m_addressListId = std::move(value); }
-    inline void SetAddressListId(const char* value) { m_addressListIdHasBeenSet = true; m_addressListId.assign(value); }
-    inline DeleteAddressListRequest& WithAddressListId(const Aws::String& value) { SetAddressListId(value); return *this;}
-    inline DeleteAddressListRequest& WithAddressListId(Aws::String&& value) { SetAddressListId(std::move(value)); return *this;}
-    inline DeleteAddressListRequest& WithAddressListId(const char* value) { SetAddressListId(value); return *this;}
+    template<typename AddressListIdT = Aws::String>
+    void SetAddressListId(AddressListIdT&& value) { m_addressListIdHasBeenSet = true; m_addressListId = std::forward<AddressListIdT>(value); }
+    template<typename AddressListIdT = Aws::String>
+    DeleteAddressListRequest& WithAddressListId(AddressListIdT&& value) { SetAddressListId(std::forward<AddressListIdT>(value)); return *this;}
     ///@}
   private:
 

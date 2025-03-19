@@ -18,13 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-EcsServiceConfiguration::EcsServiceConfiguration() : 
-    m_computeHasBeenSet(false)
-{
-}
-
 EcsServiceConfiguration::EcsServiceConfiguration(JsonView jsonValue)
-  : EcsServiceConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EcsServiceConfiguration& EcsServiceConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("compute"))
   {
     m_compute = jsonValue.GetObject("compute");
-
     m_computeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-Scram::Scram() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 Scram::Scram(JsonView jsonValue)
-  : Scram()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ Scram& Scram::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

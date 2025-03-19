@@ -10,16 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-IncreaseNodeGroupsInGlobalReplicationGroupRequest::IncreaseNodeGroupsInGlobalReplicationGroupRequest() : 
-    m_globalReplicationGroupIdHasBeenSet(false),
-    m_nodeGroupCount(0),
-    m_nodeGroupCountHasBeenSet(false),
-    m_regionalConfigurationsHasBeenSet(false),
-    m_applyImmediately(false),
-    m_applyImmediatelyHasBeenSet(false)
-{
-}
-
 Aws::String IncreaseNodeGroupsInGlobalReplicationGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -22,7 +22,7 @@ namespace Model
   class ListProtectionGroupsRequest : public ShieldRequest
   {
   public:
-    AWS_SHIELD_API ListProtectionGroupsRequest();
+    AWS_SHIELD_API ListProtectionGroupsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,14 +50,12 @@ namespace Model
      * value.</p> <p>On your first call to a list operation, leave this setting
      * empty.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListProtectionGroupsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListProtectionGroupsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListProtectionGroupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListProtectionGroupsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,7 +66,7 @@ namespace Model
      * remaining, Shield Advanced will always also return a <code>NextToken</code>
      * value in the response.</p> <p>The default setting is 20.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListProtectionGroupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -83,19 +81,19 @@ namespace Model
      * returns the protection groups that exactly match all of the search criteria that
      * you provide.</p>
      */
-    inline const InclusionProtectionGroupFilters& GetInclusionFilters() const{ return m_inclusionFilters; }
+    inline const InclusionProtectionGroupFilters& GetInclusionFilters() const { return m_inclusionFilters; }
     inline bool InclusionFiltersHasBeenSet() const { return m_inclusionFiltersHasBeenSet; }
-    inline void SetInclusionFilters(const InclusionProtectionGroupFilters& value) { m_inclusionFiltersHasBeenSet = true; m_inclusionFilters = value; }
-    inline void SetInclusionFilters(InclusionProtectionGroupFilters&& value) { m_inclusionFiltersHasBeenSet = true; m_inclusionFilters = std::move(value); }
-    inline ListProtectionGroupsRequest& WithInclusionFilters(const InclusionProtectionGroupFilters& value) { SetInclusionFilters(value); return *this;}
-    inline ListProtectionGroupsRequest& WithInclusionFilters(InclusionProtectionGroupFilters&& value) { SetInclusionFilters(std::move(value)); return *this;}
+    template<typename InclusionFiltersT = InclusionProtectionGroupFilters>
+    void SetInclusionFilters(InclusionFiltersT&& value) { m_inclusionFiltersHasBeenSet = true; m_inclusionFilters = std::forward<InclusionFiltersT>(value); }
+    template<typename InclusionFiltersT = InclusionProtectionGroupFilters>
+    ListProtectionGroupsRequest& WithInclusionFilters(InclusionFiltersT&& value) { SetInclusionFilters(std::forward<InclusionFiltersT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     InclusionProtectionGroupFilters m_inclusionFilters;

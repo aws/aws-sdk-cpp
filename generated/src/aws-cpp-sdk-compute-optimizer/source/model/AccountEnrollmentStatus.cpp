@@ -18,17 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-AccountEnrollmentStatus::AccountEnrollmentStatus() : 
-    m_accountIdHasBeenSet(false),
-    m_status(Status::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false)
-{
-}
-
 AccountEnrollmentStatus::AccountEnrollmentStatus(JsonView jsonValue)
-  : AccountEnrollmentStatus()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AccountEnrollmentStatus& AccountEnrollmentStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTimestamp"))
   {
     m_lastUpdatedTimestamp = jsonValue.GetDouble("lastUpdatedTimestamp");
-
     m_lastUpdatedTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

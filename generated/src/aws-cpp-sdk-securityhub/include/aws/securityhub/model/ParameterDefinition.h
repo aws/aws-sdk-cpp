@@ -33,7 +33,7 @@ namespace Model
   class ParameterDefinition
   {
   public:
-    AWS_SECURITYHUB_API ParameterDefinition();
+    AWS_SECURITYHUB_API ParameterDefinition() = default;
     AWS_SECURITYHUB_API ParameterDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API ParameterDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p> Description of a control parameter. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ParameterDefinition& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ParameterDefinition& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ParameterDefinition& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ParameterDefinition& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +56,12 @@ namespace Model
      * <p> The options for customizing a control parameter. Customization options vary
      * based on the data type of the parameter. </p>
      */
-    inline const ConfigurationOptions& GetConfigurationOptions() const{ return m_configurationOptions; }
+    inline const ConfigurationOptions& GetConfigurationOptions() const { return m_configurationOptions; }
     inline bool ConfigurationOptionsHasBeenSet() const { return m_configurationOptionsHasBeenSet; }
-    inline void SetConfigurationOptions(const ConfigurationOptions& value) { m_configurationOptionsHasBeenSet = true; m_configurationOptions = value; }
-    inline void SetConfigurationOptions(ConfigurationOptions&& value) { m_configurationOptionsHasBeenSet = true; m_configurationOptions = std::move(value); }
-    inline ParameterDefinition& WithConfigurationOptions(const ConfigurationOptions& value) { SetConfigurationOptions(value); return *this;}
-    inline ParameterDefinition& WithConfigurationOptions(ConfigurationOptions&& value) { SetConfigurationOptions(std::move(value)); return *this;}
+    template<typename ConfigurationOptionsT = ConfigurationOptions>
+    void SetConfigurationOptions(ConfigurationOptionsT&& value) { m_configurationOptionsHasBeenSet = true; m_configurationOptions = std::forward<ConfigurationOptionsT>(value); }
+    template<typename ConfigurationOptionsT = ConfigurationOptions>
+    ParameterDefinition& WithConfigurationOptions(ConfigurationOptionsT&& value) { SetConfigurationOptions(std::forward<ConfigurationOptionsT>(value)); return *this;}
     ///@}
   private:
 

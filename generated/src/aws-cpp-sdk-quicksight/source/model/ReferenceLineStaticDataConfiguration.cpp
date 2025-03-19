@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ReferenceLineStaticDataConfiguration::ReferenceLineStaticDataConfiguration() : 
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 ReferenceLineStaticDataConfiguration::ReferenceLineStaticDataConfiguration(JsonView jsonValue)
-  : ReferenceLineStaticDataConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ReferenceLineStaticDataConfiguration& ReferenceLineStaticDataConfiguration::oper
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetDouble("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-CostCategorySplitChargeRule::CostCategorySplitChargeRule() : 
-    m_sourceHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_method(CostCategorySplitChargeMethod::NOT_SET),
-    m_methodHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 CostCategorySplitChargeRule::CostCategorySplitChargeRule(JsonView jsonValue)
-  : CostCategorySplitChargeRule()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ CostCategorySplitChargeRule& CostCategorySplitChargeRule::operator =(JsonView js
   if(jsonValue.ValueExists("Source"))
   {
     m_source = jsonValue.GetString("Source");
-
     m_sourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Targets"))
   {
     Aws::Utils::Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
@@ -51,14 +39,11 @@ CostCategorySplitChargeRule& CostCategorySplitChargeRule::operator =(JsonView js
     }
     m_targetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Method"))
   {
     m_method = CostCategorySplitChargeMethodMapper::GetCostCategorySplitChargeMethodForName(jsonValue.GetString("Method"));
-
     m_methodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
@@ -68,7 +53,6 @@ CostCategorySplitChargeRule& CostCategorySplitChargeRule::operator =(JsonView js
     }
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

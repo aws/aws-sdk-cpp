@@ -12,11 +12,6 @@ using namespace Aws::ControlTower::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetBaselineOperationRequest::GetBaselineOperationRequest() : 
-    m_operationIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetBaselineOperationRequest::SerializePayload() const
 {
   JsonValue payload;

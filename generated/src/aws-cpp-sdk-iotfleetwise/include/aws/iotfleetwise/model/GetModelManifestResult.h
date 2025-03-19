@@ -29,7 +29,7 @@ namespace Model
   class GetModelManifestResult
   {
   public:
-    AWS_IOTFLEETWISE_API GetModelManifestResult();
+    AWS_IOTFLEETWISE_API GetModelManifestResult() = default;
     AWS_IOTFLEETWISE_API GetModelManifestResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTFLEETWISE_API GetModelManifestResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,52 +38,44 @@ namespace Model
     /**
      * <p> The name of the vehicle model. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetModelManifestResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetModelManifestResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetModelManifestResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetModelManifestResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Amazon Resource Name (ARN) of the vehicle model. </p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline GetModelManifestResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetModelManifestResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetModelManifestResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetModelManifestResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A brief description of the vehicle model. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetModelManifestResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetModelManifestResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetModelManifestResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetModelManifestResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The ARN of the signal catalog associated with the vehicle model. </p>
      */
-    inline const Aws::String& GetSignalCatalogArn() const{ return m_signalCatalogArn; }
-    inline void SetSignalCatalogArn(const Aws::String& value) { m_signalCatalogArn = value; }
-    inline void SetSignalCatalogArn(Aws::String&& value) { m_signalCatalogArn = std::move(value); }
-    inline void SetSignalCatalogArn(const char* value) { m_signalCatalogArn.assign(value); }
-    inline GetModelManifestResult& WithSignalCatalogArn(const Aws::String& value) { SetSignalCatalogArn(value); return *this;}
-    inline GetModelManifestResult& WithSignalCatalogArn(Aws::String&& value) { SetSignalCatalogArn(std::move(value)); return *this;}
-    inline GetModelManifestResult& WithSignalCatalogArn(const char* value) { SetSignalCatalogArn(value); return *this;}
+    inline const Aws::String& GetSignalCatalogArn() const { return m_signalCatalogArn; }
+    template<typename SignalCatalogArnT = Aws::String>
+    void SetSignalCatalogArn(SignalCatalogArnT&& value) { m_signalCatalogArnHasBeenSet = true; m_signalCatalogArn = std::forward<SignalCatalogArnT>(value); }
+    template<typename SignalCatalogArnT = Aws::String>
+    GetModelManifestResult& WithSignalCatalogArn(SignalCatalogArnT&& value) { SetSignalCatalogArn(std::forward<SignalCatalogArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,11 +84,9 @@ namespace Model
      * vehicle model can't be edited. You can edit the vehicle model if the status is
      * marked <code>DRAFT</code>.</p>
      */
-    inline const ManifestStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ManifestStatus& value) { m_status = value; }
-    inline void SetStatus(ManifestStatus&& value) { m_status = std::move(value); }
-    inline GetModelManifestResult& WithStatus(const ManifestStatus& value) { SetStatus(value); return *this;}
-    inline GetModelManifestResult& WithStatus(ManifestStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ManifestStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ManifestStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetModelManifestResult& WithStatus(ManifestStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -104,51 +94,57 @@ namespace Model
      * <p>The time the vehicle model was created, in seconds since epoch (January 1,
      * 1970 at midnight UTC time).</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline GetModelManifestResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline GetModelManifestResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    GetModelManifestResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last time the vehicle model was modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
-    inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTime = value; }
-    inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTime = std::move(value); }
-    inline GetModelManifestResult& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
-    inline GetModelManifestResult& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModificationTime() const { return m_lastModificationTime; }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    void SetLastModificationTime(LastModificationTimeT&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::forward<LastModificationTimeT>(value); }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    GetModelManifestResult& WithLastModificationTime(LastModificationTimeT&& value) { SetLastModificationTime(std::forward<LastModificationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetModelManifestResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetModelManifestResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetModelManifestResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetModelManifestResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_signalCatalogArn;
+    bool m_signalCatalogArnHasBeenSet = false;
 
-    ManifestStatus m_status;
+    ManifestStatus m_status{ManifestStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModificationTime;
+    Aws::Utils::DateTime m_lastModificationTime{};
+    bool m_lastModificationTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

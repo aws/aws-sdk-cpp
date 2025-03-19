@@ -31,7 +31,7 @@ namespace Model
   class ResourceValue
   {
   public:
-    AWS_CONFIGSERVICE_API ResourceValue();
+    AWS_CONFIGSERVICE_API ResourceValue() = default;
     AWS_CONFIGSERVICE_API ResourceValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API ResourceValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>The value is a resource ID.</p>
      */
-    inline const ResourceValueType& GetValue() const{ return m_value; }
+    inline ResourceValueType GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const ResourceValueType& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(ResourceValueType&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline ResourceValue& WithValue(const ResourceValueType& value) { SetValue(value); return *this;}
-    inline ResourceValue& WithValue(ResourceValueType&& value) { SetValue(std::move(value)); return *this;}
+    inline void SetValue(ResourceValueType value) { m_valueHasBeenSet = true; m_value = value; }
+    inline ResourceValue& WithValue(ResourceValueType value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    ResourceValueType m_value;
+    ResourceValueType m_value{ResourceValueType::NOT_SET};
     bool m_valueHasBeenSet = false;
   };
 

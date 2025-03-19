@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateMapResult::CreateMapResult()
-{
-}
-
 CreateMapResult::CreateMapResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ CreateMapResult& CreateMapResult::operator =(const Aws::AmazonWebServiceResult<J
   if(jsonValue.ValueExists("MapName"))
   {
     m_mapName = jsonValue.GetString("MapName");
-
+    m_mapNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MapArn"))
   {
     m_mapArn = jsonValue.GetString("MapArn");
-
+    m_mapArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTime"))
   {
     m_createTime = jsonValue.GetString("CreateTime");
-
+    m_createTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -20,14 +20,7 @@ namespace Route53
 namespace Model
 {
 
-CidrRoutingConfig::CidrRoutingConfig() : 
-    m_collectionIdHasBeenSet(false),
-    m_locationNameHasBeenSet(false)
-{
-}
-
 CidrRoutingConfig::CidrRoutingConfig(const XmlNode& xmlNode)
-  : CidrRoutingConfig()
 {
   *this = xmlNode;
 }

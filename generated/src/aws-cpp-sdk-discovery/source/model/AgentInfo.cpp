@@ -18,23 +18,7 @@ namespace ApplicationDiscoveryService
 namespace Model
 {
 
-AgentInfo::AgentInfo() : 
-    m_agentIdHasBeenSet(false),
-    m_hostNameHasBeenSet(false),
-    m_agentNetworkInfoListHasBeenSet(false),
-    m_connectorIdHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_health(AgentStatus::NOT_SET),
-    m_healthHasBeenSet(false),
-    m_lastHealthPingTimeHasBeenSet(false),
-    m_collectionStatusHasBeenSet(false),
-    m_agentTypeHasBeenSet(false),
-    m_registeredTimeHasBeenSet(false)
-{
-}
-
 AgentInfo::AgentInfo(JsonView jsonValue)
-  : AgentInfo()
 {
   *this = jsonValue;
 }
@@ -44,17 +28,13 @@ AgentInfo& AgentInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("agentId"))
   {
     m_agentId = jsonValue.GetString("agentId");
-
     m_agentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hostName"))
   {
     m_hostName = jsonValue.GetString("hostName");
-
     m_hostNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentNetworkInfoList"))
   {
     Aws::Utils::Array<JsonView> agentNetworkInfoListJsonList = jsonValue.GetArray("agentNetworkInfoList");
@@ -64,56 +44,41 @@ AgentInfo& AgentInfo::operator =(JsonView jsonValue)
     }
     m_agentNetworkInfoListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectorId"))
   {
     m_connectorId = jsonValue.GetString("connectorId");
-
     m_connectorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("health"))
   {
     m_health = AgentStatusMapper::GetAgentStatusForName(jsonValue.GetString("health"));
-
     m_healthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastHealthPingTime"))
   {
     m_lastHealthPingTime = jsonValue.GetString("lastHealthPingTime");
-
     m_lastHealthPingTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collectionStatus"))
   {
     m_collectionStatus = jsonValue.GetString("collectionStatus");
-
     m_collectionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentType"))
   {
     m_agentType = jsonValue.GetString("agentType");
-
     m_agentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registeredTime"))
   {
     m_registeredTime = jsonValue.GetString("registeredTime");
-
     m_registeredTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

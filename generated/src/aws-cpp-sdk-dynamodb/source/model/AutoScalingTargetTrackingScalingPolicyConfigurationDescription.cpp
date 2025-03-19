@@ -18,20 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-AutoScalingTargetTrackingScalingPolicyConfigurationDescription::AutoScalingTargetTrackingScalingPolicyConfigurationDescription() : 
-    m_disableScaleIn(false),
-    m_disableScaleInHasBeenSet(false),
-    m_scaleInCooldown(0),
-    m_scaleInCooldownHasBeenSet(false),
-    m_scaleOutCooldown(0),
-    m_scaleOutCooldownHasBeenSet(false),
-    m_targetValue(0.0),
-    m_targetValueHasBeenSet(false)
-{
-}
-
 AutoScalingTargetTrackingScalingPolicyConfigurationDescription::AutoScalingTargetTrackingScalingPolicyConfigurationDescription(JsonView jsonValue)
-  : AutoScalingTargetTrackingScalingPolicyConfigurationDescription()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ AutoScalingTargetTrackingScalingPolicyConfigurationDescription& AutoScalingTarge
   if(jsonValue.ValueExists("DisableScaleIn"))
   {
     m_disableScaleIn = jsonValue.GetBool("DisableScaleIn");
-
     m_disableScaleInHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScaleInCooldown"))
   {
     m_scaleInCooldown = jsonValue.GetInteger("ScaleInCooldown");
-
     m_scaleInCooldownHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScaleOutCooldown"))
   {
     m_scaleOutCooldown = jsonValue.GetInteger("ScaleOutCooldown");
-
     m_scaleOutCooldownHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetValue"))
   {
     m_targetValue = jsonValue.GetDouble("TargetValue");
-
     m_targetValueHasBeenSet = true;
   }
-
   return *this;
 }
 

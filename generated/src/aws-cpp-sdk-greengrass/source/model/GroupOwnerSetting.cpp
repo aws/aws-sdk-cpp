@@ -18,15 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-GroupOwnerSetting::GroupOwnerSetting() : 
-    m_autoAddGroupOwner(false),
-    m_autoAddGroupOwnerHasBeenSet(false),
-    m_groupOwnerHasBeenSet(false)
-{
-}
-
 GroupOwnerSetting::GroupOwnerSetting(JsonView jsonValue)
-  : GroupOwnerSetting()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GroupOwnerSetting& GroupOwnerSetting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AutoAddGroupOwner"))
   {
     m_autoAddGroupOwner = jsonValue.GetBool("AutoAddGroupOwner");
-
     m_autoAddGroupOwnerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupOwner"))
   {
     m_groupOwner = jsonValue.GetString("GroupOwner");
-
     m_groupOwnerHasBeenSet = true;
   }
-
   return *this;
 }
 

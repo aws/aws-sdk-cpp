@@ -17,18 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTrainingPlanResult::DescribeTrainingPlanResult() : 
-    m_status(TrainingPlanStatus::NOT_SET),
-    m_durationHours(0),
-    m_durationMinutes(0),
-    m_totalInstanceCount(0),
-    m_availableInstanceCount(0),
-    m_inUseInstanceCount(0)
-{
-}
-
 DescribeTrainingPlanResult::DescribeTrainingPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeTrainingPlanResult()
 {
   *this = result;
 }
@@ -39,81 +28,68 @@ DescribeTrainingPlanResult& DescribeTrainingPlanResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("TrainingPlanArn"))
   {
     m_trainingPlanArn = jsonValue.GetString("TrainingPlanArn");
-
+    m_trainingPlanArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrainingPlanName"))
   {
     m_trainingPlanName = jsonValue.GetString("TrainingPlanName");
-
+    m_trainingPlanNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = TrainingPlanStatusMapper::GetTrainingPlanStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
+    m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DurationHours"))
   {
     m_durationHours = jsonValue.GetInt64("DurationHours");
-
+    m_durationHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DurationMinutes"))
   {
     m_durationMinutes = jsonValue.GetInt64("DurationMinutes");
-
+    m_durationMinutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
+    m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
+    m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpfrontFee"))
   {
     m_upfrontFee = jsonValue.GetString("UpfrontFee");
-
+    m_upfrontFeeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrencyCode"))
   {
     m_currencyCode = jsonValue.GetString("CurrencyCode");
-
+    m_currencyCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalInstanceCount"))
   {
     m_totalInstanceCount = jsonValue.GetInteger("TotalInstanceCount");
-
+    m_totalInstanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailableInstanceCount"))
   {
     m_availableInstanceCount = jsonValue.GetInteger("AvailableInstanceCount");
-
+    m_availableInstanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InUseInstanceCount"))
   {
     m_inUseInstanceCount = jsonValue.GetInteger("InUseInstanceCount");
-
+    m_inUseInstanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetResources"))
   {
     Aws::Utils::Array<JsonView> targetResourcesJsonList = jsonValue.GetArray("TargetResources");
@@ -121,8 +97,8 @@ DescribeTrainingPlanResult& DescribeTrainingPlanResult::operator =(const Aws::Am
     {
       m_targetResources.push_back(SageMakerResourceNameMapper::GetSageMakerResourceNameForName(targetResourcesJsonList[targetResourcesIndex].AsString()));
     }
+    m_targetResourcesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReservedCapacitySummaries"))
   {
     Aws::Utils::Array<JsonView> reservedCapacitySummariesJsonList = jsonValue.GetArray("ReservedCapacitySummaries");
@@ -130,14 +106,15 @@ DescribeTrainingPlanResult& DescribeTrainingPlanResult::operator =(const Aws::Am
     {
       m_reservedCapacitySummaries.push_back(reservedCapacitySummariesJsonList[reservedCapacitySummariesIndex].AsObject());
     }
+    m_reservedCapacitySummariesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -25,7 +25,7 @@ namespace Model
   class UpdateDefaultBranchRequest : public CodeCommitRequest
   {
   public:
-    AWS_CODECOMMIT_API UpdateDefaultBranchRequest();
+    AWS_CODECOMMIT_API UpdateDefaultBranchRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,28 +43,24 @@ namespace Model
      * <p>The name of the repository for which you want to set or change the default
      * branch.</p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-    inline UpdateDefaultBranchRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline UpdateDefaultBranchRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline UpdateDefaultBranchRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    UpdateDefaultBranchRequest& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the branch to set as the default branch.</p>
      */
-    inline const Aws::String& GetDefaultBranchName() const{ return m_defaultBranchName; }
+    inline const Aws::String& GetDefaultBranchName() const { return m_defaultBranchName; }
     inline bool DefaultBranchNameHasBeenSet() const { return m_defaultBranchNameHasBeenSet; }
-    inline void SetDefaultBranchName(const Aws::String& value) { m_defaultBranchNameHasBeenSet = true; m_defaultBranchName = value; }
-    inline void SetDefaultBranchName(Aws::String&& value) { m_defaultBranchNameHasBeenSet = true; m_defaultBranchName = std::move(value); }
-    inline void SetDefaultBranchName(const char* value) { m_defaultBranchNameHasBeenSet = true; m_defaultBranchName.assign(value); }
-    inline UpdateDefaultBranchRequest& WithDefaultBranchName(const Aws::String& value) { SetDefaultBranchName(value); return *this;}
-    inline UpdateDefaultBranchRequest& WithDefaultBranchName(Aws::String&& value) { SetDefaultBranchName(std::move(value)); return *this;}
-    inline UpdateDefaultBranchRequest& WithDefaultBranchName(const char* value) { SetDefaultBranchName(value); return *this;}
+    template<typename DefaultBranchNameT = Aws::String>
+    void SetDefaultBranchName(DefaultBranchNameT&& value) { m_defaultBranchNameHasBeenSet = true; m_defaultBranchName = std::forward<DefaultBranchNameT>(value); }
+    template<typename DefaultBranchNameT = Aws::String>
+    UpdateDefaultBranchRequest& WithDefaultBranchName(DefaultBranchNameT&& value) { SetDefaultBranchName(std::forward<DefaultBranchNameT>(value)); return *this;}
     ///@}
   private:
 

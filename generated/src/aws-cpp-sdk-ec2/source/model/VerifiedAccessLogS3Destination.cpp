@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessLogS3Destination::VerifiedAccessLogS3Destination() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_deliveryStatusHasBeenSet(false),
-    m_bucketNameHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_bucketOwnerHasBeenSet(false)
-{
-}
-
 VerifiedAccessLogS3Destination::VerifiedAccessLogS3Destination(const XmlNode& xmlNode)
-  : VerifiedAccessLogS3Destination()
 {
   *this = xmlNode;
 }

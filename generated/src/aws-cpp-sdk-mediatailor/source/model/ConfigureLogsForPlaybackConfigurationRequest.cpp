@@ -12,14 +12,6 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ConfigureLogsForPlaybackConfigurationRequest::ConfigureLogsForPlaybackConfigurationRequest() : 
-    m_percentEnabled(0),
-    m_percentEnabledHasBeenSet(false),
-    m_playbackConfigurationNameHasBeenSet(false),
-    m_enabledLoggingStrategiesHasBeenSet(false)
-{
-}
-
 Aws::String ConfigureLogsForPlaybackConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteVolumeResult::DeleteVolumeResult() : 
-    m_lifecycle(VolumeLifecycle::NOT_SET)
-{
-}
-
 DeleteVolumeResult::DeleteVolumeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteVolumeResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ DeleteVolumeResult& DeleteVolumeResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("VolumeId"))
   {
     m_volumeId = jsonValue.GetString("VolumeId");
-
+    m_volumeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lifecycle"))
   {
     m_lifecycle = VolumeLifecycleMapper::GetVolumeLifecycleForName(jsonValue.GetString("Lifecycle"));
-
+    m_lifecycleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OntapResponse"))
   {
     m_ontapResponse = jsonValue.GetObject("OntapResponse");
-
+    m_ontapResponseHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,11 +12,6 @@ using namespace Aws::GroundStation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMissionProfileRequest::GetMissionProfileRequest() : 
-    m_missionProfileIdHasBeenSet(false)
-{
-}
-
 Aws::String GetMissionProfileRequest::SerializePayload() const
 {
   return {};

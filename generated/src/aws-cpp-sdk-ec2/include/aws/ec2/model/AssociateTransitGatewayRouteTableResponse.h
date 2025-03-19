@@ -28,7 +28,7 @@ namespace Model
   class AssociateTransitGatewayRouteTableResponse
   {
   public:
-    AWS_EC2_API AssociateTransitGatewayRouteTableResponse();
+    AWS_EC2_API AssociateTransitGatewayRouteTableResponse() = default;
     AWS_EC2_API AssociateTransitGatewayRouteTableResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API AssociateTransitGatewayRouteTableResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>The ID of the association.</p>
      */
-    inline const TransitGatewayAssociation& GetAssociation() const{ return m_association; }
-    inline void SetAssociation(const TransitGatewayAssociation& value) { m_association = value; }
-    inline void SetAssociation(TransitGatewayAssociation&& value) { m_association = std::move(value); }
-    inline AssociateTransitGatewayRouteTableResponse& WithAssociation(const TransitGatewayAssociation& value) { SetAssociation(value); return *this;}
-    inline AssociateTransitGatewayRouteTableResponse& WithAssociation(TransitGatewayAssociation&& value) { SetAssociation(std::move(value)); return *this;}
+    inline const TransitGatewayAssociation& GetAssociation() const { return m_association; }
+    template<typename AssociationT = TransitGatewayAssociation>
+    void SetAssociation(AssociationT&& value) { m_associationHasBeenSet = true; m_association = std::forward<AssociationT>(value); }
+    template<typename AssociationT = TransitGatewayAssociation>
+    AssociateTransitGatewayRouteTableResponse& WithAssociation(AssociationT&& value) { SetAssociation(std::forward<AssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline AssociateTransitGatewayRouteTableResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline AssociateTransitGatewayRouteTableResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    AssociateTransitGatewayRouteTableResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     TransitGatewayAssociation m_association;
+    bool m_associationHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -10,13 +10,6 @@
 using namespace Aws::SNS::Model;
 using namespace Aws::Utils;
 
-ListOriginationNumbersRequest::ListOriginationNumbersRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListOriginationNumbersRequest::SerializePayload() const
 {
   Aws::StringStream ss;

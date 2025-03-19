@@ -25,7 +25,7 @@ namespace Model
   class DeleteResourcePolicyRequest : public SchemasRequest
   {
   public:
-    AWS_SCHEMAS_API DeleteResourcePolicyRequest();
+    AWS_SCHEMAS_API DeleteResourcePolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the registry.</p>
      */
-    inline const Aws::String& GetRegistryName() const{ return m_registryName; }
+    inline const Aws::String& GetRegistryName() const { return m_registryName; }
     inline bool RegistryNameHasBeenSet() const { return m_registryNameHasBeenSet; }
-    inline void SetRegistryName(const Aws::String& value) { m_registryNameHasBeenSet = true; m_registryName = value; }
-    inline void SetRegistryName(Aws::String&& value) { m_registryNameHasBeenSet = true; m_registryName = std::move(value); }
-    inline void SetRegistryName(const char* value) { m_registryNameHasBeenSet = true; m_registryName.assign(value); }
-    inline DeleteResourcePolicyRequest& WithRegistryName(const Aws::String& value) { SetRegistryName(value); return *this;}
-    inline DeleteResourcePolicyRequest& WithRegistryName(Aws::String&& value) { SetRegistryName(std::move(value)); return *this;}
-    inline DeleteResourcePolicyRequest& WithRegistryName(const char* value) { SetRegistryName(value); return *this;}
+    template<typename RegistryNameT = Aws::String>
+    void SetRegistryName(RegistryNameT&& value) { m_registryNameHasBeenSet = true; m_registryName = std::forward<RegistryNameT>(value); }
+    template<typename RegistryNameT = Aws::String>
+    DeleteResourcePolicyRequest& WithRegistryName(RegistryNameT&& value) { SetRegistryName(std::forward<RegistryNameT>(value)); return *this;}
     ///@}
   private:
 

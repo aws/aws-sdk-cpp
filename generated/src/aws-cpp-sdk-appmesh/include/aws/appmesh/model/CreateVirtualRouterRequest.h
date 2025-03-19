@@ -32,7 +32,7 @@ namespace Model
   class CreateVirtualRouterRequest : public AppMeshRequest
   {
   public:
-    AWS_APPMESH_API CreateVirtualRouterRequest();
+    AWS_APPMESH_API CreateVirtualRouterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -51,28 +51,24 @@ namespace Model
      * of the request. Up to 36 letters, numbers, hyphens, and underscores are
      * allowed.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateVirtualRouterRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateVirtualRouterRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateVirtualRouterRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateVirtualRouterRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the service mesh to create the virtual router in.</p>
      */
-    inline const Aws::String& GetMeshName() const{ return m_meshName; }
+    inline const Aws::String& GetMeshName() const { return m_meshName; }
     inline bool MeshNameHasBeenSet() const { return m_meshNameHasBeenSet; }
-    inline void SetMeshName(const Aws::String& value) { m_meshNameHasBeenSet = true; m_meshName = value; }
-    inline void SetMeshName(Aws::String&& value) { m_meshNameHasBeenSet = true; m_meshName = std::move(value); }
-    inline void SetMeshName(const char* value) { m_meshNameHasBeenSet = true; m_meshName.assign(value); }
-    inline CreateVirtualRouterRequest& WithMeshName(const Aws::String& value) { SetMeshName(value); return *this;}
-    inline CreateVirtualRouterRequest& WithMeshName(Aws::String&& value) { SetMeshName(std::move(value)); return *this;}
-    inline CreateVirtualRouterRequest& WithMeshName(const char* value) { SetMeshName(value); return *this;}
+    template<typename MeshNameT = Aws::String>
+    void SetMeshName(MeshNameT&& value) { m_meshNameHasBeenSet = true; m_meshName = std::forward<MeshNameT>(value); }
+    template<typename MeshNameT = Aws::String>
+    CreateVirtualRouterRequest& WithMeshName(MeshNameT&& value) { SetMeshName(std::forward<MeshNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,26 +80,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/sharing.html">Working
      * with shared meshes</a>.</p>
      */
-    inline const Aws::String& GetMeshOwner() const{ return m_meshOwner; }
+    inline const Aws::String& GetMeshOwner() const { return m_meshOwner; }
     inline bool MeshOwnerHasBeenSet() const { return m_meshOwnerHasBeenSet; }
-    inline void SetMeshOwner(const Aws::String& value) { m_meshOwnerHasBeenSet = true; m_meshOwner = value; }
-    inline void SetMeshOwner(Aws::String&& value) { m_meshOwnerHasBeenSet = true; m_meshOwner = std::move(value); }
-    inline void SetMeshOwner(const char* value) { m_meshOwnerHasBeenSet = true; m_meshOwner.assign(value); }
-    inline CreateVirtualRouterRequest& WithMeshOwner(const Aws::String& value) { SetMeshOwner(value); return *this;}
-    inline CreateVirtualRouterRequest& WithMeshOwner(Aws::String&& value) { SetMeshOwner(std::move(value)); return *this;}
-    inline CreateVirtualRouterRequest& WithMeshOwner(const char* value) { SetMeshOwner(value); return *this;}
+    template<typename MeshOwnerT = Aws::String>
+    void SetMeshOwner(MeshOwnerT&& value) { m_meshOwnerHasBeenSet = true; m_meshOwner = std::forward<MeshOwnerT>(value); }
+    template<typename MeshOwnerT = Aws::String>
+    CreateVirtualRouterRequest& WithMeshOwner(MeshOwnerT&& value) { SetMeshOwner(std::forward<MeshOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The virtual router specification to apply.</p>
      */
-    inline const VirtualRouterSpec& GetSpec() const{ return m_spec; }
+    inline const VirtualRouterSpec& GetSpec() const { return m_spec; }
     inline bool SpecHasBeenSet() const { return m_specHasBeenSet; }
-    inline void SetSpec(const VirtualRouterSpec& value) { m_specHasBeenSet = true; m_spec = value; }
-    inline void SetSpec(VirtualRouterSpec&& value) { m_specHasBeenSet = true; m_spec = std::move(value); }
-    inline CreateVirtualRouterRequest& WithSpec(const VirtualRouterSpec& value) { SetSpec(value); return *this;}
-    inline CreateVirtualRouterRequest& WithSpec(VirtualRouterSpec&& value) { SetSpec(std::move(value)); return *this;}
+    template<typename SpecT = VirtualRouterSpec>
+    void SetSpec(SpecT&& value) { m_specHasBeenSet = true; m_spec = std::forward<SpecT>(value); }
+    template<typename SpecT = VirtualRouterSpec>
+    CreateVirtualRouterRequest& WithSpec(SpecT&& value) { SetSpec(std::forward<SpecT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,28 +107,26 @@ namespace Model
      * value, both of which you define. Tag keys can have a maximum character length of
      * 128 characters, and tag values can have a maximum length of 256 characters.</p>
      */
-    inline const Aws::Vector<TagRef>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<TagRef>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<TagRef>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<TagRef>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateVirtualRouterRequest& WithTags(const Aws::Vector<TagRef>& value) { SetTags(value); return *this;}
-    inline CreateVirtualRouterRequest& WithTags(Aws::Vector<TagRef>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateVirtualRouterRequest& AddTags(const TagRef& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateVirtualRouterRequest& AddTags(TagRef&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<TagRef>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<TagRef>>
+    CreateVirtualRouterRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = TagRef>
+    CreateVirtualRouterRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name to use for the virtual router.</p>
      */
-    inline const Aws::String& GetVirtualRouterName() const{ return m_virtualRouterName; }
+    inline const Aws::String& GetVirtualRouterName() const { return m_virtualRouterName; }
     inline bool VirtualRouterNameHasBeenSet() const { return m_virtualRouterNameHasBeenSet; }
-    inline void SetVirtualRouterName(const Aws::String& value) { m_virtualRouterNameHasBeenSet = true; m_virtualRouterName = value; }
-    inline void SetVirtualRouterName(Aws::String&& value) { m_virtualRouterNameHasBeenSet = true; m_virtualRouterName = std::move(value); }
-    inline void SetVirtualRouterName(const char* value) { m_virtualRouterNameHasBeenSet = true; m_virtualRouterName.assign(value); }
-    inline CreateVirtualRouterRequest& WithVirtualRouterName(const Aws::String& value) { SetVirtualRouterName(value); return *this;}
-    inline CreateVirtualRouterRequest& WithVirtualRouterName(Aws::String&& value) { SetVirtualRouterName(std::move(value)); return *this;}
-    inline CreateVirtualRouterRequest& WithVirtualRouterName(const char* value) { SetVirtualRouterName(value); return *this;}
+    template<typename VirtualRouterNameT = Aws::String>
+    void SetVirtualRouterName(VirtualRouterNameT&& value) { m_virtualRouterNameHasBeenSet = true; m_virtualRouterName = std::forward<VirtualRouterNameT>(value); }
+    template<typename VirtualRouterNameT = Aws::String>
+    CreateVirtualRouterRequest& WithVirtualRouterName(VirtualRouterNameT&& value) { SetVirtualRouterName(std::forward<VirtualRouterNameT>(value)); return *this;}
     ///@}
   private:
 

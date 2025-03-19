@@ -27,7 +27,7 @@ namespace Model
   class CreateMembershipRequest : public CleanRoomsRequest
   {
   public:
-    AWS_CLEANROOMS_API CreateMembershipRequest();
+    AWS_CLEANROOMS_API CreateMembershipRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The unique ID for the associated collaboration.</p>
      */
-    inline const Aws::String& GetCollaborationIdentifier() const{ return m_collaborationIdentifier; }
+    inline const Aws::String& GetCollaborationIdentifier() const { return m_collaborationIdentifier; }
     inline bool CollaborationIdentifierHasBeenSet() const { return m_collaborationIdentifierHasBeenSet; }
-    inline void SetCollaborationIdentifier(const Aws::String& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = value; }
-    inline void SetCollaborationIdentifier(Aws::String&& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = std::move(value); }
-    inline void SetCollaborationIdentifier(const char* value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier.assign(value); }
-    inline CreateMembershipRequest& WithCollaborationIdentifier(const Aws::String& value) { SetCollaborationIdentifier(value); return *this;}
-    inline CreateMembershipRequest& WithCollaborationIdentifier(Aws::String&& value) { SetCollaborationIdentifier(std::move(value)); return *this;}
-    inline CreateMembershipRequest& WithCollaborationIdentifier(const char* value) { SetCollaborationIdentifier(value); return *this;}
+    template<typename CollaborationIdentifierT = Aws::String>
+    void SetCollaborationIdentifier(CollaborationIdentifierT&& value) { m_collaborationIdentifierHasBeenSet = true; m_collaborationIdentifier = std::forward<CollaborationIdentifierT>(value); }
+    template<typename CollaborationIdentifierT = Aws::String>
+    CreateMembershipRequest& WithCollaborationIdentifier(CollaborationIdentifierT&& value) { SetCollaborationIdentifier(std::forward<CollaborationIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,10 @@ namespace Model
      * queries run within this collaboration and those logs can be viewed in Amazon
      * CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
      */
-    inline const MembershipQueryLogStatus& GetQueryLogStatus() const{ return m_queryLogStatus; }
+    inline MembershipQueryLogStatus GetQueryLogStatus() const { return m_queryLogStatus; }
     inline bool QueryLogStatusHasBeenSet() const { return m_queryLogStatusHasBeenSet; }
-    inline void SetQueryLogStatus(const MembershipQueryLogStatus& value) { m_queryLogStatusHasBeenSet = true; m_queryLogStatus = value; }
-    inline void SetQueryLogStatus(MembershipQueryLogStatus&& value) { m_queryLogStatusHasBeenSet = true; m_queryLogStatus = std::move(value); }
-    inline CreateMembershipRequest& WithQueryLogStatus(const MembershipQueryLogStatus& value) { SetQueryLogStatus(value); return *this;}
-    inline CreateMembershipRequest& WithQueryLogStatus(MembershipQueryLogStatus&& value) { SetQueryLogStatus(std::move(value)); return *this;}
+    inline void SetQueryLogStatus(MembershipQueryLogStatus value) { m_queryLogStatusHasBeenSet = true; m_queryLogStatus = value; }
+    inline CreateMembershipRequest& WithQueryLogStatus(MembershipQueryLogStatus value) { SetQueryLogStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +70,10 @@ namespace Model
      * jobs run within this collaboration and those logs can be viewed in Amazon
      * CloudWatch Logs. The default value is <code>DISABLED</code>.</p>
      */
-    inline const MembershipJobLogStatus& GetJobLogStatus() const{ return m_jobLogStatus; }
+    inline MembershipJobLogStatus GetJobLogStatus() const { return m_jobLogStatus; }
     inline bool JobLogStatusHasBeenSet() const { return m_jobLogStatusHasBeenSet; }
-    inline void SetJobLogStatus(const MembershipJobLogStatus& value) { m_jobLogStatusHasBeenSet = true; m_jobLogStatus = value; }
-    inline void SetJobLogStatus(MembershipJobLogStatus&& value) { m_jobLogStatusHasBeenSet = true; m_jobLogStatus = std::move(value); }
-    inline CreateMembershipRequest& WithJobLogStatus(const MembershipJobLogStatus& value) { SetJobLogStatus(value); return *this;}
-    inline CreateMembershipRequest& WithJobLogStatus(MembershipJobLogStatus&& value) { SetJobLogStatus(std::move(value)); return *this;}
+    inline void SetJobLogStatus(MembershipJobLogStatus value) { m_jobLogStatusHasBeenSet = true; m_jobLogStatus = value; }
+    inline CreateMembershipRequest& WithJobLogStatus(MembershipJobLogStatus value) { SetJobLogStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -89,19 +83,16 @@ namespace Model
      * use tagging, you can also use tag-based access control in IAM policies to
      * control access to this resource.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateMembershipRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateMembershipRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateMembershipRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateMembershipRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateMembershipRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateMembershipRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateMembershipRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateMembershipRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateMembershipRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateMembershipRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateMembershipRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -109,12 +100,12 @@ namespace Model
      * <p>The default protected query result configuration as specified by the member
      * who can receive results.</p>
      */
-    inline const MembershipProtectedQueryResultConfiguration& GetDefaultResultConfiguration() const{ return m_defaultResultConfiguration; }
+    inline const MembershipProtectedQueryResultConfiguration& GetDefaultResultConfiguration() const { return m_defaultResultConfiguration; }
     inline bool DefaultResultConfigurationHasBeenSet() const { return m_defaultResultConfigurationHasBeenSet; }
-    inline void SetDefaultResultConfiguration(const MembershipProtectedQueryResultConfiguration& value) { m_defaultResultConfigurationHasBeenSet = true; m_defaultResultConfiguration = value; }
-    inline void SetDefaultResultConfiguration(MembershipProtectedQueryResultConfiguration&& value) { m_defaultResultConfigurationHasBeenSet = true; m_defaultResultConfiguration = std::move(value); }
-    inline CreateMembershipRequest& WithDefaultResultConfiguration(const MembershipProtectedQueryResultConfiguration& value) { SetDefaultResultConfiguration(value); return *this;}
-    inline CreateMembershipRequest& WithDefaultResultConfiguration(MembershipProtectedQueryResultConfiguration&& value) { SetDefaultResultConfiguration(std::move(value)); return *this;}
+    template<typename DefaultResultConfigurationT = MembershipProtectedQueryResultConfiguration>
+    void SetDefaultResultConfiguration(DefaultResultConfigurationT&& value) { m_defaultResultConfigurationHasBeenSet = true; m_defaultResultConfiguration = std::forward<DefaultResultConfigurationT>(value); }
+    template<typename DefaultResultConfigurationT = MembershipProtectedQueryResultConfiguration>
+    CreateMembershipRequest& WithDefaultResultConfiguration(DefaultResultConfigurationT&& value) { SetDefaultResultConfiguration(std::forward<DefaultResultConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,12 +114,12 @@ namespace Model
      * protected and managed within this membership. This configuration applies to all
      * jobs.</p>
      */
-    inline const MembershipProtectedJobResultConfiguration& GetDefaultJobResultConfiguration() const{ return m_defaultJobResultConfiguration; }
+    inline const MembershipProtectedJobResultConfiguration& GetDefaultJobResultConfiguration() const { return m_defaultJobResultConfiguration; }
     inline bool DefaultJobResultConfigurationHasBeenSet() const { return m_defaultJobResultConfigurationHasBeenSet; }
-    inline void SetDefaultJobResultConfiguration(const MembershipProtectedJobResultConfiguration& value) { m_defaultJobResultConfigurationHasBeenSet = true; m_defaultJobResultConfiguration = value; }
-    inline void SetDefaultJobResultConfiguration(MembershipProtectedJobResultConfiguration&& value) { m_defaultJobResultConfigurationHasBeenSet = true; m_defaultJobResultConfiguration = std::move(value); }
-    inline CreateMembershipRequest& WithDefaultJobResultConfiguration(const MembershipProtectedJobResultConfiguration& value) { SetDefaultJobResultConfiguration(value); return *this;}
-    inline CreateMembershipRequest& WithDefaultJobResultConfiguration(MembershipProtectedJobResultConfiguration&& value) { SetDefaultJobResultConfiguration(std::move(value)); return *this;}
+    template<typename DefaultJobResultConfigurationT = MembershipProtectedJobResultConfiguration>
+    void SetDefaultJobResultConfiguration(DefaultJobResultConfigurationT&& value) { m_defaultJobResultConfigurationHasBeenSet = true; m_defaultJobResultConfiguration = std::forward<DefaultJobResultConfigurationT>(value); }
+    template<typename DefaultJobResultConfigurationT = MembershipProtectedJobResultConfiguration>
+    CreateMembershipRequest& WithDefaultJobResultConfiguration(DefaultJobResultConfigurationT&& value) { SetDefaultJobResultConfiguration(std::forward<DefaultJobResultConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,22 +129,22 @@ namespace Model
      * <p>Required if the collaboration member doesn't have the member ability to run
      * queries but is configured as a payer by the collaboration creator. </p>
      */
-    inline const MembershipPaymentConfiguration& GetPaymentConfiguration() const{ return m_paymentConfiguration; }
+    inline const MembershipPaymentConfiguration& GetPaymentConfiguration() const { return m_paymentConfiguration; }
     inline bool PaymentConfigurationHasBeenSet() const { return m_paymentConfigurationHasBeenSet; }
-    inline void SetPaymentConfiguration(const MembershipPaymentConfiguration& value) { m_paymentConfigurationHasBeenSet = true; m_paymentConfiguration = value; }
-    inline void SetPaymentConfiguration(MembershipPaymentConfiguration&& value) { m_paymentConfigurationHasBeenSet = true; m_paymentConfiguration = std::move(value); }
-    inline CreateMembershipRequest& WithPaymentConfiguration(const MembershipPaymentConfiguration& value) { SetPaymentConfiguration(value); return *this;}
-    inline CreateMembershipRequest& WithPaymentConfiguration(MembershipPaymentConfiguration&& value) { SetPaymentConfiguration(std::move(value)); return *this;}
+    template<typename PaymentConfigurationT = MembershipPaymentConfiguration>
+    void SetPaymentConfiguration(PaymentConfigurationT&& value) { m_paymentConfigurationHasBeenSet = true; m_paymentConfiguration = std::forward<PaymentConfigurationT>(value); }
+    template<typename PaymentConfigurationT = MembershipPaymentConfiguration>
+    CreateMembershipRequest& WithPaymentConfiguration(PaymentConfigurationT&& value) { SetPaymentConfiguration(std::forward<PaymentConfigurationT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_collaborationIdentifier;
     bool m_collaborationIdentifierHasBeenSet = false;
 
-    MembershipQueryLogStatus m_queryLogStatus;
+    MembershipQueryLogStatus m_queryLogStatus{MembershipQueryLogStatus::NOT_SET};
     bool m_queryLogStatusHasBeenSet = false;
 
-    MembershipJobLogStatus m_jobLogStatus;
+    MembershipJobLogStatus m_jobLogStatus{MembershipJobLogStatus::NOT_SET};
     bool m_jobLogStatusHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;

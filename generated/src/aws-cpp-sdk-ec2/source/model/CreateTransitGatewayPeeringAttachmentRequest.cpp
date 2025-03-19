@@ -10,18 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateTransitGatewayPeeringAttachmentRequest::CreateTransitGatewayPeeringAttachmentRequest() : 
-    m_transitGatewayIdHasBeenSet(false),
-    m_peerTransitGatewayIdHasBeenSet(false),
-    m_peerAccountIdHasBeenSet(false),
-    m_peerRegionHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateTransitGatewayPeeringAttachmentRequest::SerializePayload() const
 {
   Aws::StringStream ss;

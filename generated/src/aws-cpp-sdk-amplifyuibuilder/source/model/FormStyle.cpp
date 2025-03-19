@@ -18,15 +18,7 @@ namespace AmplifyUIBuilder
 namespace Model
 {
 
-FormStyle::FormStyle() : 
-    m_horizontalGapHasBeenSet(false),
-    m_verticalGapHasBeenSet(false),
-    m_outerPaddingHasBeenSet(false)
-{
-}
-
 FormStyle::FormStyle(JsonView jsonValue)
-  : FormStyle()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ FormStyle& FormStyle::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("horizontalGap"))
   {
     m_horizontalGap = jsonValue.GetObject("horizontalGap");
-
     m_horizontalGapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("verticalGap"))
   {
     m_verticalGap = jsonValue.GetObject("verticalGap");
-
     m_verticalGapHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outerPadding"))
   {
     m_outerPadding = jsonValue.GetObject("outerPadding");
-
     m_outerPaddingHasBeenSet = true;
   }
-
   return *this;
 }
 

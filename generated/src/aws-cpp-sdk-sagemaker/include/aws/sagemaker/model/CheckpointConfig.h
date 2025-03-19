@@ -32,7 +32,7 @@ namespace Model
   class CheckpointConfig
   {
   public:
-    AWS_SAGEMAKER_API CheckpointConfig();
+    AWS_SAGEMAKER_API CheckpointConfig() = default;
     AWS_SAGEMAKER_API CheckpointConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API CheckpointConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>Identifies the S3 path where you want SageMaker to store checkpoints. For
      * example, <code>s3://bucket-name/key-name-prefix</code>.</p>
      */
-    inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+    inline const Aws::String& GetS3Uri() const { return m_s3Uri; }
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
-    inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
-    inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
-    inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
-    inline CheckpointConfig& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
-    inline CheckpointConfig& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
-    inline CheckpointConfig& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
+    template<typename S3UriT = Aws::String>
+    void SetS3Uri(S3UriT&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::forward<S3UriT>(value); }
+    template<typename S3UriT = Aws::String>
+    CheckpointConfig& WithS3Uri(S3UriT&& value) { SetS3Uri(std::forward<S3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>(Optional) The local directory where checkpoints are written. The default
      * directory is <code>/opt/ml/checkpoints/</code>. </p>
      */
-    inline const Aws::String& GetLocalPath() const{ return m_localPath; }
+    inline const Aws::String& GetLocalPath() const { return m_localPath; }
     inline bool LocalPathHasBeenSet() const { return m_localPathHasBeenSet; }
-    inline void SetLocalPath(const Aws::String& value) { m_localPathHasBeenSet = true; m_localPath = value; }
-    inline void SetLocalPath(Aws::String&& value) { m_localPathHasBeenSet = true; m_localPath = std::move(value); }
-    inline void SetLocalPath(const char* value) { m_localPathHasBeenSet = true; m_localPath.assign(value); }
-    inline CheckpointConfig& WithLocalPath(const Aws::String& value) { SetLocalPath(value); return *this;}
-    inline CheckpointConfig& WithLocalPath(Aws::String&& value) { SetLocalPath(std::move(value)); return *this;}
-    inline CheckpointConfig& WithLocalPath(const char* value) { SetLocalPath(value); return *this;}
+    template<typename LocalPathT = Aws::String>
+    void SetLocalPath(LocalPathT&& value) { m_localPathHasBeenSet = true; m_localPath = std::forward<LocalPathT>(value); }
+    template<typename LocalPathT = Aws::String>
+    CheckpointConfig& WithLocalPath(LocalPathT&& value) { SetLocalPath(std::forward<LocalPathT>(value)); return *this;}
     ///@}
   private:
 

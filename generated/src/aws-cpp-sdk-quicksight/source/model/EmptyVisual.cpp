@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-EmptyVisual::EmptyVisual() : 
-    m_visualIdHasBeenSet(false),
-    m_dataSetIdentifierHasBeenSet(false),
-    m_actionsHasBeenSet(false)
-{
-}
-
 EmptyVisual::EmptyVisual(JsonView jsonValue)
-  : EmptyVisual()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EmptyVisual& EmptyVisual::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VisualId"))
   {
     m_visualId = jsonValue.GetString("VisualId");
-
     m_visualIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetIdentifier"))
   {
     m_dataSetIdentifier = jsonValue.GetString("DataSetIdentifier");
-
     m_dataSetIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Actions"))
   {
     Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");
@@ -56,7 +44,6 @@ EmptyVisual& EmptyVisual::operator =(JsonView jsonValue)
     }
     m_actionsHasBeenSet = true;
   }
-
   return *this;
 }
 

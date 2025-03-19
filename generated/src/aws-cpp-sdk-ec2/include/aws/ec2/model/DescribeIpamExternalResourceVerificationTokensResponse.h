@@ -30,7 +30,7 @@ namespace Model
   class DescribeIpamExternalResourceVerificationTokensResponse
   {
   public:
-    AWS_EC2_API DescribeIpamExternalResourceVerificationTokensResponse();
+    AWS_EC2_API DescribeIpamExternalResourceVerificationTokensResponse() = default;
     AWS_EC2_API DescribeIpamExternalResourceVerificationTokensResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeIpamExternalResourceVerificationTokensResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,43 +40,44 @@ namespace Model
      * <p>The token to use to retrieve the next page of results. This value is
      * <code>null</code> when there are no more results to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeIpamExternalResourceVerificationTokensResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeIpamExternalResourceVerificationTokensResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeIpamExternalResourceVerificationTokensResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeIpamExternalResourceVerificationTokensResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Verification tokens.</p>
      */
-    inline const Aws::Vector<IpamExternalResourceVerificationToken>& GetIpamExternalResourceVerificationTokens() const{ return m_ipamExternalResourceVerificationTokens; }
-    inline void SetIpamExternalResourceVerificationTokens(const Aws::Vector<IpamExternalResourceVerificationToken>& value) { m_ipamExternalResourceVerificationTokens = value; }
-    inline void SetIpamExternalResourceVerificationTokens(Aws::Vector<IpamExternalResourceVerificationToken>&& value) { m_ipamExternalResourceVerificationTokens = std::move(value); }
-    inline DescribeIpamExternalResourceVerificationTokensResponse& WithIpamExternalResourceVerificationTokens(const Aws::Vector<IpamExternalResourceVerificationToken>& value) { SetIpamExternalResourceVerificationTokens(value); return *this;}
-    inline DescribeIpamExternalResourceVerificationTokensResponse& WithIpamExternalResourceVerificationTokens(Aws::Vector<IpamExternalResourceVerificationToken>&& value) { SetIpamExternalResourceVerificationTokens(std::move(value)); return *this;}
-    inline DescribeIpamExternalResourceVerificationTokensResponse& AddIpamExternalResourceVerificationTokens(const IpamExternalResourceVerificationToken& value) { m_ipamExternalResourceVerificationTokens.push_back(value); return *this; }
-    inline DescribeIpamExternalResourceVerificationTokensResponse& AddIpamExternalResourceVerificationTokens(IpamExternalResourceVerificationToken&& value) { m_ipamExternalResourceVerificationTokens.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<IpamExternalResourceVerificationToken>& GetIpamExternalResourceVerificationTokens() const { return m_ipamExternalResourceVerificationTokens; }
+    template<typename IpamExternalResourceVerificationTokensT = Aws::Vector<IpamExternalResourceVerificationToken>>
+    void SetIpamExternalResourceVerificationTokens(IpamExternalResourceVerificationTokensT&& value) { m_ipamExternalResourceVerificationTokensHasBeenSet = true; m_ipamExternalResourceVerificationTokens = std::forward<IpamExternalResourceVerificationTokensT>(value); }
+    template<typename IpamExternalResourceVerificationTokensT = Aws::Vector<IpamExternalResourceVerificationToken>>
+    DescribeIpamExternalResourceVerificationTokensResponse& WithIpamExternalResourceVerificationTokens(IpamExternalResourceVerificationTokensT&& value) { SetIpamExternalResourceVerificationTokens(std::forward<IpamExternalResourceVerificationTokensT>(value)); return *this;}
+    template<typename IpamExternalResourceVerificationTokensT = IpamExternalResourceVerificationToken>
+    DescribeIpamExternalResourceVerificationTokensResponse& AddIpamExternalResourceVerificationTokens(IpamExternalResourceVerificationTokensT&& value) { m_ipamExternalResourceVerificationTokensHasBeenSet = true; m_ipamExternalResourceVerificationTokens.emplace_back(std::forward<IpamExternalResourceVerificationTokensT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeIpamExternalResourceVerificationTokensResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeIpamExternalResourceVerificationTokensResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeIpamExternalResourceVerificationTokensResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<IpamExternalResourceVerificationToken> m_ipamExternalResourceVerificationTokens;
+    bool m_ipamExternalResourceVerificationTokensHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,33 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateInstanceRequest::CreateInstanceRequest() : 
-    m_stackIdHasBeenSet(false),
-    m_layerIdsHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_autoScalingType(AutoScalingType::NOT_SET),
-    m_autoScalingTypeHasBeenSet(false),
-    m_hostnameHasBeenSet(false),
-    m_osHasBeenSet(false),
-    m_amiIdHasBeenSet(false),
-    m_sshKeyNameHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_virtualizationTypeHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_architecture(Architecture::NOT_SET),
-    m_architectureHasBeenSet(false),
-    m_rootDeviceType(RootDeviceType::NOT_SET),
-    m_rootDeviceTypeHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_installUpdatesOnBoot(false),
-    m_installUpdatesOnBootHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_agentVersionHasBeenSet(false),
-    m_tenancyHasBeenSet(false)
-{
-}
-
 Aws::String CreateInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

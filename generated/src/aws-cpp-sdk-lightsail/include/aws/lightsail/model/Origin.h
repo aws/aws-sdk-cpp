@@ -38,7 +38,7 @@ namespace Model
   class Origin
   {
   public:
-    AWS_LIGHTSAIL_API Origin();
+    AWS_LIGHTSAIL_API Origin() = default;
     AWS_LIGHTSAIL_API Origin(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Origin& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,38 +48,32 @@ namespace Model
     /**
      * <p>The name of the origin resource.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Origin& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Origin& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Origin& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Origin& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource type of the origin resource (<i>Instance</i>).</p>
      */
-    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+    inline ResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline Origin& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-    inline Origin& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline Origin& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The AWS Region name of the origin resource.</p>
      */
-    inline const RegionName& GetRegionName() const{ return m_regionName; }
+    inline RegionName GetRegionName() const { return m_regionName; }
     inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
-    inline void SetRegionName(const RegionName& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
-    inline void SetRegionName(RegionName&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
-    inline Origin& WithRegionName(const RegionName& value) { SetRegionName(value); return *this;}
-    inline Origin& WithRegionName(RegionName&& value) { SetRegionName(std::move(value)); return *this;}
+    inline void SetRegionName(RegionName value) { m_regionNameHasBeenSet = true; m_regionName = value; }
+    inline Origin& WithRegionName(RegionName value) { SetRegionName(value); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +81,10 @@ namespace Model
      * <p>The protocol that your Amazon Lightsail distribution uses when establishing a
      * connection with your origin to pull content.</p>
      */
-    inline const OriginProtocolPolicyEnum& GetProtocolPolicy() const{ return m_protocolPolicy; }
+    inline OriginProtocolPolicyEnum GetProtocolPolicy() const { return m_protocolPolicy; }
     inline bool ProtocolPolicyHasBeenSet() const { return m_protocolPolicyHasBeenSet; }
-    inline void SetProtocolPolicy(const OriginProtocolPolicyEnum& value) { m_protocolPolicyHasBeenSet = true; m_protocolPolicy = value; }
-    inline void SetProtocolPolicy(OriginProtocolPolicyEnum&& value) { m_protocolPolicyHasBeenSet = true; m_protocolPolicy = std::move(value); }
-    inline Origin& WithProtocolPolicy(const OriginProtocolPolicyEnum& value) { SetProtocolPolicy(value); return *this;}
-    inline Origin& WithProtocolPolicy(OriginProtocolPolicyEnum&& value) { SetProtocolPolicy(std::move(value)); return *this;}
+    inline void SetProtocolPolicy(OriginProtocolPolicyEnum value) { m_protocolPolicyHasBeenSet = true; m_protocolPolicy = value; }
+    inline Origin& WithProtocolPolicy(OriginProtocolPolicyEnum value) { SetProtocolPolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -102,7 +94,7 @@ namespace Model
      * maximum is 60 seconds, and the default (if you don't specify otherwise) is 30
      * seconds.</p>
      */
-    inline int GetResponseTimeout() const{ return m_responseTimeout; }
+    inline int GetResponseTimeout() const { return m_responseTimeout; }
     inline bool ResponseTimeoutHasBeenSet() const { return m_responseTimeoutHasBeenSet; }
     inline void SetResponseTimeout(int value) { m_responseTimeoutHasBeenSet = true; m_responseTimeout = value; }
     inline Origin& WithResponseTimeout(int value) { SetResponseTimeout(value); return *this;}
@@ -112,16 +104,16 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    ResourceType m_resourceType;
+    ResourceType m_resourceType{ResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
-    RegionName m_regionName;
+    RegionName m_regionName{RegionName::NOT_SET};
     bool m_regionNameHasBeenSet = false;
 
-    OriginProtocolPolicyEnum m_protocolPolicy;
+    OriginProtocolPolicyEnum m_protocolPolicy{OriginProtocolPolicyEnum::NOT_SET};
     bool m_protocolPolicyHasBeenSet = false;
 
-    int m_responseTimeout;
+    int m_responseTimeout{0};
     bool m_responseTimeoutHasBeenSet = false;
   };
 

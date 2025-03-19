@@ -38,7 +38,7 @@ namespace Model
   class OrchestrationConfiguration
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API OrchestrationConfiguration();
+    AWS_BEDROCKAGENTRUNTIME_API OrchestrationConfiguration() = default;
     AWS_BEDROCKAGENTRUNTIME_API OrchestrationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API OrchestrationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,18 +50,16 @@ namespace Model
      * textInferenceConfig structure for a knowledge base. This allows users to provide
      * custom model parameters specific to the language model being used. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::Utils::Document>& GetAdditionalModelRequestFields() const{ return m_additionalModelRequestFields; }
+    inline const Aws::Map<Aws::String, Aws::Utils::Document>& GetAdditionalModelRequestFields() const { return m_additionalModelRequestFields; }
     inline bool AdditionalModelRequestFieldsHasBeenSet() const { return m_additionalModelRequestFieldsHasBeenSet; }
-    inline void SetAdditionalModelRequestFields(const Aws::Map<Aws::String, Aws::Utils::Document>& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields = value; }
-    inline void SetAdditionalModelRequestFields(Aws::Map<Aws::String, Aws::Utils::Document>&& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields = std::move(value); }
-    inline OrchestrationConfiguration& WithAdditionalModelRequestFields(const Aws::Map<Aws::String, Aws::Utils::Document>& value) { SetAdditionalModelRequestFields(value); return *this;}
-    inline OrchestrationConfiguration& WithAdditionalModelRequestFields(Aws::Map<Aws::String, Aws::Utils::Document>&& value) { SetAdditionalModelRequestFields(std::move(value)); return *this;}
-    inline OrchestrationConfiguration& AddAdditionalModelRequestFields(const Aws::String& key, const Aws::Utils::Document& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields.emplace(key, value); return *this; }
-    inline OrchestrationConfiguration& AddAdditionalModelRequestFields(Aws::String&& key, const Aws::Utils::Document& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields.emplace(std::move(key), value); return *this; }
-    inline OrchestrationConfiguration& AddAdditionalModelRequestFields(const Aws::String& key, Aws::Utils::Document&& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields.emplace(key, std::move(value)); return *this; }
-    inline OrchestrationConfiguration& AddAdditionalModelRequestFields(Aws::String&& key, Aws::Utils::Document&& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields.emplace(std::move(key), std::move(value)); return *this; }
-    inline OrchestrationConfiguration& AddAdditionalModelRequestFields(const char* key, Aws::Utils::Document&& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields.emplace(key, std::move(value)); return *this; }
-    inline OrchestrationConfiguration& AddAdditionalModelRequestFields(const char* key, const Aws::Utils::Document& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields.emplace(key, value); return *this; }
+    template<typename AdditionalModelRequestFieldsT = Aws::Map<Aws::String, Aws::Utils::Document>>
+    void SetAdditionalModelRequestFields(AdditionalModelRequestFieldsT&& value) { m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields = std::forward<AdditionalModelRequestFieldsT>(value); }
+    template<typename AdditionalModelRequestFieldsT = Aws::Map<Aws::String, Aws::Utils::Document>>
+    OrchestrationConfiguration& WithAdditionalModelRequestFields(AdditionalModelRequestFieldsT&& value) { SetAdditionalModelRequestFields(std::forward<AdditionalModelRequestFieldsT>(value)); return *this;}
+    template<typename AdditionalModelRequestFieldsKeyT = Aws::String, typename AdditionalModelRequestFieldsValueT = Aws::Utils::Document>
+    OrchestrationConfiguration& AddAdditionalModelRequestFields(AdditionalModelRequestFieldsKeyT&& key, AdditionalModelRequestFieldsValueT&& value) {
+      m_additionalModelRequestFieldsHasBeenSet = true; m_additionalModelRequestFields.emplace(std::forward<AdditionalModelRequestFieldsKeyT>(key), std::forward<AdditionalModelRequestFieldsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -69,24 +67,24 @@ namespace Model
      * <p> Configuration settings for inference when using RetrieveAndGenerate to
      * generate responses while using a knowledge base as a source. </p>
      */
-    inline const InferenceConfig& GetInferenceConfig() const{ return m_inferenceConfig; }
+    inline const InferenceConfig& GetInferenceConfig() const { return m_inferenceConfig; }
     inline bool InferenceConfigHasBeenSet() const { return m_inferenceConfigHasBeenSet; }
-    inline void SetInferenceConfig(const InferenceConfig& value) { m_inferenceConfigHasBeenSet = true; m_inferenceConfig = value; }
-    inline void SetInferenceConfig(InferenceConfig&& value) { m_inferenceConfigHasBeenSet = true; m_inferenceConfig = std::move(value); }
-    inline OrchestrationConfiguration& WithInferenceConfig(const InferenceConfig& value) { SetInferenceConfig(value); return *this;}
-    inline OrchestrationConfiguration& WithInferenceConfig(InferenceConfig&& value) { SetInferenceConfig(std::move(value)); return *this;}
+    template<typename InferenceConfigT = InferenceConfig>
+    void SetInferenceConfig(InferenceConfigT&& value) { m_inferenceConfigHasBeenSet = true; m_inferenceConfig = std::forward<InferenceConfigT>(value); }
+    template<typename InferenceConfigT = InferenceConfig>
+    OrchestrationConfiguration& WithInferenceConfig(InferenceConfigT&& value) { SetInferenceConfig(std::forward<InferenceConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The latency configuration for the model.</p>
      */
-    inline const PerformanceConfiguration& GetPerformanceConfig() const{ return m_performanceConfig; }
+    inline const PerformanceConfiguration& GetPerformanceConfig() const { return m_performanceConfig; }
     inline bool PerformanceConfigHasBeenSet() const { return m_performanceConfigHasBeenSet; }
-    inline void SetPerformanceConfig(const PerformanceConfiguration& value) { m_performanceConfigHasBeenSet = true; m_performanceConfig = value; }
-    inline void SetPerformanceConfig(PerformanceConfiguration&& value) { m_performanceConfigHasBeenSet = true; m_performanceConfig = std::move(value); }
-    inline OrchestrationConfiguration& WithPerformanceConfig(const PerformanceConfiguration& value) { SetPerformanceConfig(value); return *this;}
-    inline OrchestrationConfiguration& WithPerformanceConfig(PerformanceConfiguration&& value) { SetPerformanceConfig(std::move(value)); return *this;}
+    template<typename PerformanceConfigT = PerformanceConfiguration>
+    void SetPerformanceConfig(PerformanceConfigT&& value) { m_performanceConfigHasBeenSet = true; m_performanceConfig = std::forward<PerformanceConfigT>(value); }
+    template<typename PerformanceConfigT = PerformanceConfiguration>
+    OrchestrationConfiguration& WithPerformanceConfig(PerformanceConfigT&& value) { SetPerformanceConfig(std::forward<PerformanceConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,12 +96,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/prompt-placeholders.html">Use
      * placeholder variables</a> in the user guide.</p>
      */
-    inline const PromptTemplate& GetPromptTemplate() const{ return m_promptTemplate; }
+    inline const PromptTemplate& GetPromptTemplate() const { return m_promptTemplate; }
     inline bool PromptTemplateHasBeenSet() const { return m_promptTemplateHasBeenSet; }
-    inline void SetPromptTemplate(const PromptTemplate& value) { m_promptTemplateHasBeenSet = true; m_promptTemplate = value; }
-    inline void SetPromptTemplate(PromptTemplate&& value) { m_promptTemplateHasBeenSet = true; m_promptTemplate = std::move(value); }
-    inline OrchestrationConfiguration& WithPromptTemplate(const PromptTemplate& value) { SetPromptTemplate(value); return *this;}
-    inline OrchestrationConfiguration& WithPromptTemplate(PromptTemplate&& value) { SetPromptTemplate(std::move(value)); return *this;}
+    template<typename PromptTemplateT = PromptTemplate>
+    void SetPromptTemplate(PromptTemplateT&& value) { m_promptTemplateHasBeenSet = true; m_promptTemplate = std::forward<PromptTemplateT>(value); }
+    template<typename PromptTemplateT = PromptTemplate>
+    OrchestrationConfiguration& WithPromptTemplate(PromptTemplateT&& value) { SetPromptTemplate(std::forward<PromptTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,12 +109,12 @@ namespace Model
      * <p>To split up the prompt and retrieve multiple sources, set the transformation
      * type to <code>QUERY_DECOMPOSITION</code>.</p>
      */
-    inline const QueryTransformationConfiguration& GetQueryTransformationConfiguration() const{ return m_queryTransformationConfiguration; }
+    inline const QueryTransformationConfiguration& GetQueryTransformationConfiguration() const { return m_queryTransformationConfiguration; }
     inline bool QueryTransformationConfigurationHasBeenSet() const { return m_queryTransformationConfigurationHasBeenSet; }
-    inline void SetQueryTransformationConfiguration(const QueryTransformationConfiguration& value) { m_queryTransformationConfigurationHasBeenSet = true; m_queryTransformationConfiguration = value; }
-    inline void SetQueryTransformationConfiguration(QueryTransformationConfiguration&& value) { m_queryTransformationConfigurationHasBeenSet = true; m_queryTransformationConfiguration = std::move(value); }
-    inline OrchestrationConfiguration& WithQueryTransformationConfiguration(const QueryTransformationConfiguration& value) { SetQueryTransformationConfiguration(value); return *this;}
-    inline OrchestrationConfiguration& WithQueryTransformationConfiguration(QueryTransformationConfiguration&& value) { SetQueryTransformationConfiguration(std::move(value)); return *this;}
+    template<typename QueryTransformationConfigurationT = QueryTransformationConfiguration>
+    void SetQueryTransformationConfiguration(QueryTransformationConfigurationT&& value) { m_queryTransformationConfigurationHasBeenSet = true; m_queryTransformationConfiguration = std::forward<QueryTransformationConfigurationT>(value); }
+    template<typename QueryTransformationConfigurationT = QueryTransformationConfiguration>
+    OrchestrationConfiguration& WithQueryTransformationConfiguration(QueryTransformationConfigurationT&& value) { SetQueryTransformationConfiguration(std::forward<QueryTransformationConfigurationT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,11 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListCloudFrontOriginAccessIdentities2020_05_31Request::ListCloudFrontOriginAccessIdentities2020_05_31Request() : 
-    m_markerHasBeenSet(false),
-    m_maxItemsHasBeenSet(false)
-{
-}
 
 Aws::String ListCloudFrontOriginAccessIdentities2020_05_31Request::SerializePayload() const
 {

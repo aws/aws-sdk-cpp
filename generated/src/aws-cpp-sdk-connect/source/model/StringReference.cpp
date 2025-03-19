@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-StringReference::StringReference() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 StringReference::StringReference(JsonView jsonValue)
-  : StringReference()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StringReference& StringReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

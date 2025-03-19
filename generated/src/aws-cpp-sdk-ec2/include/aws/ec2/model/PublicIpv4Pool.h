@@ -34,7 +34,7 @@ namespace Model
   class PublicIpv4Pool
   {
   public:
-    AWS_EC2_API PublicIpv4Pool();
+    AWS_EC2_API PublicIpv4Pool() = default;
     AWS_EC2_API PublicIpv4Pool(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API PublicIpv4Pool& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,49 +46,45 @@ namespace Model
     /**
      * <p>The ID of the address pool.</p>
      */
-    inline const Aws::String& GetPoolId() const{ return m_poolId; }
+    inline const Aws::String& GetPoolId() const { return m_poolId; }
     inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
-    inline void SetPoolId(const Aws::String& value) { m_poolIdHasBeenSet = true; m_poolId = value; }
-    inline void SetPoolId(Aws::String&& value) { m_poolIdHasBeenSet = true; m_poolId = std::move(value); }
-    inline void SetPoolId(const char* value) { m_poolIdHasBeenSet = true; m_poolId.assign(value); }
-    inline PublicIpv4Pool& WithPoolId(const Aws::String& value) { SetPoolId(value); return *this;}
-    inline PublicIpv4Pool& WithPoolId(Aws::String&& value) { SetPoolId(std::move(value)); return *this;}
-    inline PublicIpv4Pool& WithPoolId(const char* value) { SetPoolId(value); return *this;}
+    template<typename PoolIdT = Aws::String>
+    void SetPoolId(PoolIdT&& value) { m_poolIdHasBeenSet = true; m_poolId = std::forward<PoolIdT>(value); }
+    template<typename PoolIdT = Aws::String>
+    PublicIpv4Pool& WithPoolId(PoolIdT&& value) { SetPoolId(std::forward<PoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the address pool.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline PublicIpv4Pool& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline PublicIpv4Pool& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline PublicIpv4Pool& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    PublicIpv4Pool& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The address ranges.</p>
      */
-    inline const Aws::Vector<PublicIpv4PoolRange>& GetPoolAddressRanges() const{ return m_poolAddressRanges; }
+    inline const Aws::Vector<PublicIpv4PoolRange>& GetPoolAddressRanges() const { return m_poolAddressRanges; }
     inline bool PoolAddressRangesHasBeenSet() const { return m_poolAddressRangesHasBeenSet; }
-    inline void SetPoolAddressRanges(const Aws::Vector<PublicIpv4PoolRange>& value) { m_poolAddressRangesHasBeenSet = true; m_poolAddressRanges = value; }
-    inline void SetPoolAddressRanges(Aws::Vector<PublicIpv4PoolRange>&& value) { m_poolAddressRangesHasBeenSet = true; m_poolAddressRanges = std::move(value); }
-    inline PublicIpv4Pool& WithPoolAddressRanges(const Aws::Vector<PublicIpv4PoolRange>& value) { SetPoolAddressRanges(value); return *this;}
-    inline PublicIpv4Pool& WithPoolAddressRanges(Aws::Vector<PublicIpv4PoolRange>&& value) { SetPoolAddressRanges(std::move(value)); return *this;}
-    inline PublicIpv4Pool& AddPoolAddressRanges(const PublicIpv4PoolRange& value) { m_poolAddressRangesHasBeenSet = true; m_poolAddressRanges.push_back(value); return *this; }
-    inline PublicIpv4Pool& AddPoolAddressRanges(PublicIpv4PoolRange&& value) { m_poolAddressRangesHasBeenSet = true; m_poolAddressRanges.push_back(std::move(value)); return *this; }
+    template<typename PoolAddressRangesT = Aws::Vector<PublicIpv4PoolRange>>
+    void SetPoolAddressRanges(PoolAddressRangesT&& value) { m_poolAddressRangesHasBeenSet = true; m_poolAddressRanges = std::forward<PoolAddressRangesT>(value); }
+    template<typename PoolAddressRangesT = Aws::Vector<PublicIpv4PoolRange>>
+    PublicIpv4Pool& WithPoolAddressRanges(PoolAddressRangesT&& value) { SetPoolAddressRanges(std::forward<PoolAddressRangesT>(value)); return *this;}
+    template<typename PoolAddressRangesT = PublicIpv4PoolRange>
+    PublicIpv4Pool& AddPoolAddressRanges(PoolAddressRangesT&& value) { m_poolAddressRangesHasBeenSet = true; m_poolAddressRanges.emplace_back(std::forward<PoolAddressRangesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The total number of addresses.</p>
      */
-    inline int GetTotalAddressCount() const{ return m_totalAddressCount; }
+    inline int GetTotalAddressCount() const { return m_totalAddressCount; }
     inline bool TotalAddressCountHasBeenSet() const { return m_totalAddressCountHasBeenSet; }
     inline void SetTotalAddressCount(int value) { m_totalAddressCountHasBeenSet = true; m_totalAddressCount = value; }
     inline PublicIpv4Pool& WithTotalAddressCount(int value) { SetTotalAddressCount(value); return *this;}
@@ -98,7 +94,7 @@ namespace Model
     /**
      * <p>The total number of available addresses.</p>
      */
-    inline int GetTotalAvailableAddressCount() const{ return m_totalAvailableAddressCount; }
+    inline int GetTotalAvailableAddressCount() const { return m_totalAvailableAddressCount; }
     inline bool TotalAvailableAddressCountHasBeenSet() const { return m_totalAvailableAddressCountHasBeenSet; }
     inline void SetTotalAvailableAddressCount(int value) { m_totalAvailableAddressCountHasBeenSet = true; m_totalAvailableAddressCount = value; }
     inline PublicIpv4Pool& WithTotalAvailableAddressCount(int value) { SetTotalAvailableAddressCount(value); return *this;}
@@ -110,28 +106,26 @@ namespace Model
      * border group is a unique set of Availability Zones or Local Zones from where
      * Amazon Web Services advertises public IP addresses.</p>
      */
-    inline const Aws::String& GetNetworkBorderGroup() const{ return m_networkBorderGroup; }
+    inline const Aws::String& GetNetworkBorderGroup() const { return m_networkBorderGroup; }
     inline bool NetworkBorderGroupHasBeenSet() const { return m_networkBorderGroupHasBeenSet; }
-    inline void SetNetworkBorderGroup(const Aws::String& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = value; }
-    inline void SetNetworkBorderGroup(Aws::String&& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = std::move(value); }
-    inline void SetNetworkBorderGroup(const char* value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup.assign(value); }
-    inline PublicIpv4Pool& WithNetworkBorderGroup(const Aws::String& value) { SetNetworkBorderGroup(value); return *this;}
-    inline PublicIpv4Pool& WithNetworkBorderGroup(Aws::String&& value) { SetNetworkBorderGroup(std::move(value)); return *this;}
-    inline PublicIpv4Pool& WithNetworkBorderGroup(const char* value) { SetNetworkBorderGroup(value); return *this;}
+    template<typename NetworkBorderGroupT = Aws::String>
+    void SetNetworkBorderGroup(NetworkBorderGroupT&& value) { m_networkBorderGroupHasBeenSet = true; m_networkBorderGroup = std::forward<NetworkBorderGroupT>(value); }
+    template<typename NetworkBorderGroupT = Aws::String>
+    PublicIpv4Pool& WithNetworkBorderGroup(NetworkBorderGroupT&& value) { SetNetworkBorderGroup(std::forward<NetworkBorderGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Any tags for the address pool.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline PublicIpv4Pool& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline PublicIpv4Pool& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline PublicIpv4Pool& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline PublicIpv4Pool& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    PublicIpv4Pool& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    PublicIpv4Pool& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -144,10 +138,10 @@ namespace Model
     Aws::Vector<PublicIpv4PoolRange> m_poolAddressRanges;
     bool m_poolAddressRangesHasBeenSet = false;
 
-    int m_totalAddressCount;
+    int m_totalAddressCount{0};
     bool m_totalAddressCountHasBeenSet = false;
 
-    int m_totalAvailableAddressCount;
+    int m_totalAvailableAddressCount{0};
     bool m_totalAvailableAddressCountHasBeenSet = false;
 
     Aws::String m_networkBorderGroup;

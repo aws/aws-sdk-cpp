@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PtrUpdateStatus::PtrUpdateStatus() : 
-    m_valueHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 PtrUpdateStatus::PtrUpdateStatus(const XmlNode& xmlNode)
-  : PtrUpdateStatus()
 {
   *this = xmlNode;
 }

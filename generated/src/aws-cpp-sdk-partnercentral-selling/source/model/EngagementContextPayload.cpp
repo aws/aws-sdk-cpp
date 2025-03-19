@@ -18,13 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-EngagementContextPayload::EngagementContextPayload() : 
-    m_customerProjectHasBeenSet(false)
-{
-}
-
 EngagementContextPayload::EngagementContextPayload(JsonView jsonValue)
-  : EngagementContextPayload()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EngagementContextPayload& EngagementContextPayload::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("CustomerProject"))
   {
     m_customerProject = jsonValue.GetObject("CustomerProject");
-
     m_customerProjectHasBeenSet = true;
   }
-
   return *this;
 }
 

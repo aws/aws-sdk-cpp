@@ -23,7 +23,7 @@ namespace Model
   class ListServicesRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API ListServicesRequest();
+    AWS_ECS_API ListServicesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * filtering the <code>ListServices</code> results. If you do not specify a
      * cluster, the default cluster is assumed.</p>
      */
-    inline const Aws::String& GetCluster() const{ return m_cluster; }
+    inline const Aws::String& GetCluster() const { return m_cluster; }
     inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
-    inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
-    inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
-    inline ListServicesRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
-    inline ListServicesRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
-    inline ListServicesRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+    template<typename ClusterT = Aws::String>
+    void SetCluster(ClusterT&& value) { m_clusterHasBeenSet = true; m_cluster = std::forward<ClusterT>(value); }
+    template<typename ClusterT = Aws::String>
+    ListServicesRequest& WithCluster(ClusterT&& value) { SetCluster(std::forward<ClusterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * to retrieve the next items in a list and not for other programmatic
      * purposes.</p> 
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListServicesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListServicesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListServicesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListServicesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,7 +79,7 @@ namespace Model
      * If this parameter isn't used, then <code>ListServices</code> returns up to 10
      * results and a <code>nextToken</code> value if applicable.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListServicesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -94,12 +90,10 @@ namespace Model
      * <p>The launch type to use when filtering the <code>ListServices</code>
      * results.</p>
      */
-    inline const LaunchType& GetLaunchType() const{ return m_launchType; }
+    inline LaunchType GetLaunchType() const { return m_launchType; }
     inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
-    inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
-    inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
-    inline ListServicesRequest& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
-    inline ListServicesRequest& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
+    inline void SetLaunchType(LaunchType value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
+    inline ListServicesRequest& WithLaunchType(LaunchType value) { SetLaunchType(value); return *this;}
     ///@}
 
     ///@{
@@ -107,12 +101,10 @@ namespace Model
      * <p>The scheduling strategy to use when filtering the <code>ListServices</code>
      * results.</p>
      */
-    inline const SchedulingStrategy& GetSchedulingStrategy() const{ return m_schedulingStrategy; }
+    inline SchedulingStrategy GetSchedulingStrategy() const { return m_schedulingStrategy; }
     inline bool SchedulingStrategyHasBeenSet() const { return m_schedulingStrategyHasBeenSet; }
-    inline void SetSchedulingStrategy(const SchedulingStrategy& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = value; }
-    inline void SetSchedulingStrategy(SchedulingStrategy&& value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = std::move(value); }
-    inline ListServicesRequest& WithSchedulingStrategy(const SchedulingStrategy& value) { SetSchedulingStrategy(value); return *this;}
-    inline ListServicesRequest& WithSchedulingStrategy(SchedulingStrategy&& value) { SetSchedulingStrategy(std::move(value)); return *this;}
+    inline void SetSchedulingStrategy(SchedulingStrategy value) { m_schedulingStrategyHasBeenSet = true; m_schedulingStrategy = value; }
+    inline ListServicesRequest& WithSchedulingStrategy(SchedulingStrategy value) { SetSchedulingStrategy(value); return *this;}
     ///@}
   private:
 
@@ -122,13 +114,13 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    LaunchType m_launchType;
+    LaunchType m_launchType{LaunchType::NOT_SET};
     bool m_launchTypeHasBeenSet = false;
 
-    SchedulingStrategy m_schedulingStrategy;
+    SchedulingStrategy m_schedulingStrategy{SchedulingStrategy::NOT_SET};
     bool m_schedulingStrategyHasBeenSet = false;
   };
 

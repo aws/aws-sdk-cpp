@@ -12,14 +12,6 @@ using namespace Aws::SMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetServersRequest::GetServersRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_vmServerAddressListHasBeenSet(false)
-{
-}
-
 Aws::String GetServersRequest::SerializePayload() const
 {
   JsonValue payload;

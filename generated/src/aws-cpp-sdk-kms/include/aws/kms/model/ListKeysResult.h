@@ -29,7 +29,7 @@ namespace Model
   class ListKeysResult
   {
   public:
-    AWS_KMS_API ListKeysResult();
+    AWS_KMS_API ListKeysResult() = default;
     AWS_KMS_API ListKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KMS_API ListKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of KMS keys.</p>
      */
-    inline const Aws::Vector<KeyListEntry>& GetKeys() const{ return m_keys; }
-    inline void SetKeys(const Aws::Vector<KeyListEntry>& value) { m_keys = value; }
-    inline void SetKeys(Aws::Vector<KeyListEntry>&& value) { m_keys = std::move(value); }
-    inline ListKeysResult& WithKeys(const Aws::Vector<KeyListEntry>& value) { SetKeys(value); return *this;}
-    inline ListKeysResult& WithKeys(Aws::Vector<KeyListEntry>&& value) { SetKeys(std::move(value)); return *this;}
-    inline ListKeysResult& AddKeys(const KeyListEntry& value) { m_keys.push_back(value); return *this; }
-    inline ListKeysResult& AddKeys(KeyListEntry&& value) { m_keys.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<KeyListEntry>& GetKeys() const { return m_keys; }
+    template<typename KeysT = Aws::Vector<KeyListEntry>>
+    void SetKeys(KeysT&& value) { m_keysHasBeenSet = true; m_keys = std::forward<KeysT>(value); }
+    template<typename KeysT = Aws::Vector<KeyListEntry>>
+    ListKeysResult& WithKeys(KeysT&& value) { SetKeys(std::forward<KeysT>(value)); return *this;}
+    template<typename KeysT = KeyListEntry>
+    ListKeysResult& AddKeys(KeysT&& value) { m_keysHasBeenSet = true; m_keys.emplace_back(std::forward<KeysT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,13 +52,11 @@ namespace Model
      * <p>When <code>Truncated</code> is true, this element is present and contains the
      * value to use for the <code>Marker</code> parameter in a subsequent request.</p>
      */
-    inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
-    inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
-    inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
-    inline ListKeysResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-    inline ListKeysResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-    inline ListKeysResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
+    template<typename NextMarkerT = Aws::String>
+    void SetNextMarker(NextMarkerT&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::forward<NextMarkerT>(value); }
+    template<typename NextMarkerT = Aws::String>
+    ListKeysResult& WithNextMarker(NextMarkerT&& value) { SetNextMarker(std::forward<NextMarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,30 +66,32 @@ namespace Model
      * the value of the <code>NextMarker</code> element in this response to the
      * <code>Marker</code> parameter in a subsequent request.</p>
      */
-    inline bool GetTruncated() const{ return m_truncated; }
-    inline void SetTruncated(bool value) { m_truncated = value; }
+    inline bool GetTruncated() const { return m_truncated; }
+    inline void SetTruncated(bool value) { m_truncatedHasBeenSet = true; m_truncated = value; }
     inline ListKeysResult& WithTruncated(bool value) { SetTruncated(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListKeysResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListKeysResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListKeysResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListKeysResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<KeyListEntry> m_keys;
+    bool m_keysHasBeenSet = false;
 
     Aws::String m_nextMarker;
+    bool m_nextMarkerHasBeenSet = false;
 
-    bool m_truncated;
+    bool m_truncated{false};
+    bool m_truncatedHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

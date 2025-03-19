@@ -23,7 +23,7 @@ namespace Model
   class UpdateConfiguredTableAssociationAnalysisRuleRequest : public CleanRoomsRequest
   {
   public:
-    AWS_CLEANROOMS_API UpdateConfiguredTableAssociationAnalysisRuleRequest();
+    AWS_CLEANROOMS_API UpdateConfiguredTableAssociationAnalysisRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,52 +39,46 @@ namespace Model
      * <p> A unique identifier for the membership that the configured table association
      * belongs to. Currently accepts the membership ID.</p>
      */
-    inline const Aws::String& GetMembershipIdentifier() const{ return m_membershipIdentifier; }
+    inline const Aws::String& GetMembershipIdentifier() const { return m_membershipIdentifier; }
     inline bool MembershipIdentifierHasBeenSet() const { return m_membershipIdentifierHasBeenSet; }
-    inline void SetMembershipIdentifier(const Aws::String& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = value; }
-    inline void SetMembershipIdentifier(Aws::String&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::move(value); }
-    inline void SetMembershipIdentifier(const char* value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier.assign(value); }
-    inline UpdateConfiguredTableAssociationAnalysisRuleRequest& WithMembershipIdentifier(const Aws::String& value) { SetMembershipIdentifier(value); return *this;}
-    inline UpdateConfiguredTableAssociationAnalysisRuleRequest& WithMembershipIdentifier(Aws::String&& value) { SetMembershipIdentifier(std::move(value)); return *this;}
-    inline UpdateConfiguredTableAssociationAnalysisRuleRequest& WithMembershipIdentifier(const char* value) { SetMembershipIdentifier(value); return *this;}
+    template<typename MembershipIdentifierT = Aws::String>
+    void SetMembershipIdentifier(MembershipIdentifierT&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::forward<MembershipIdentifierT>(value); }
+    template<typename MembershipIdentifierT = Aws::String>
+    UpdateConfiguredTableAssociationAnalysisRuleRequest& WithMembershipIdentifier(MembershipIdentifierT&& value) { SetMembershipIdentifier(std::forward<MembershipIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The identifier for the configured table association to update.</p>
      */
-    inline const Aws::String& GetConfiguredTableAssociationIdentifier() const{ return m_configuredTableAssociationIdentifier; }
+    inline const Aws::String& GetConfiguredTableAssociationIdentifier() const { return m_configuredTableAssociationIdentifier; }
     inline bool ConfiguredTableAssociationIdentifierHasBeenSet() const { return m_configuredTableAssociationIdentifierHasBeenSet; }
-    inline void SetConfiguredTableAssociationIdentifier(const Aws::String& value) { m_configuredTableAssociationIdentifierHasBeenSet = true; m_configuredTableAssociationIdentifier = value; }
-    inline void SetConfiguredTableAssociationIdentifier(Aws::String&& value) { m_configuredTableAssociationIdentifierHasBeenSet = true; m_configuredTableAssociationIdentifier = std::move(value); }
-    inline void SetConfiguredTableAssociationIdentifier(const char* value) { m_configuredTableAssociationIdentifierHasBeenSet = true; m_configuredTableAssociationIdentifier.assign(value); }
-    inline UpdateConfiguredTableAssociationAnalysisRuleRequest& WithConfiguredTableAssociationIdentifier(const Aws::String& value) { SetConfiguredTableAssociationIdentifier(value); return *this;}
-    inline UpdateConfiguredTableAssociationAnalysisRuleRequest& WithConfiguredTableAssociationIdentifier(Aws::String&& value) { SetConfiguredTableAssociationIdentifier(std::move(value)); return *this;}
-    inline UpdateConfiguredTableAssociationAnalysisRuleRequest& WithConfiguredTableAssociationIdentifier(const char* value) { SetConfiguredTableAssociationIdentifier(value); return *this;}
+    template<typename ConfiguredTableAssociationIdentifierT = Aws::String>
+    void SetConfiguredTableAssociationIdentifier(ConfiguredTableAssociationIdentifierT&& value) { m_configuredTableAssociationIdentifierHasBeenSet = true; m_configuredTableAssociationIdentifier = std::forward<ConfiguredTableAssociationIdentifierT>(value); }
+    template<typename ConfiguredTableAssociationIdentifierT = Aws::String>
+    UpdateConfiguredTableAssociationAnalysisRuleRequest& WithConfiguredTableAssociationIdentifier(ConfiguredTableAssociationIdentifierT&& value) { SetConfiguredTableAssociationIdentifier(std::forward<ConfiguredTableAssociationIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The analysis rule type that you want to update.</p>
      */
-    inline const ConfiguredTableAssociationAnalysisRuleType& GetAnalysisRuleType() const{ return m_analysisRuleType; }
+    inline ConfiguredTableAssociationAnalysisRuleType GetAnalysisRuleType() const { return m_analysisRuleType; }
     inline bool AnalysisRuleTypeHasBeenSet() const { return m_analysisRuleTypeHasBeenSet; }
-    inline void SetAnalysisRuleType(const ConfiguredTableAssociationAnalysisRuleType& value) { m_analysisRuleTypeHasBeenSet = true; m_analysisRuleType = value; }
-    inline void SetAnalysisRuleType(ConfiguredTableAssociationAnalysisRuleType&& value) { m_analysisRuleTypeHasBeenSet = true; m_analysisRuleType = std::move(value); }
-    inline UpdateConfiguredTableAssociationAnalysisRuleRequest& WithAnalysisRuleType(const ConfiguredTableAssociationAnalysisRuleType& value) { SetAnalysisRuleType(value); return *this;}
-    inline UpdateConfiguredTableAssociationAnalysisRuleRequest& WithAnalysisRuleType(ConfiguredTableAssociationAnalysisRuleType&& value) { SetAnalysisRuleType(std::move(value)); return *this;}
+    inline void SetAnalysisRuleType(ConfiguredTableAssociationAnalysisRuleType value) { m_analysisRuleTypeHasBeenSet = true; m_analysisRuleType = value; }
+    inline UpdateConfiguredTableAssociationAnalysisRuleRequest& WithAnalysisRuleType(ConfiguredTableAssociationAnalysisRuleType value) { SetAnalysisRuleType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The updated analysis rule policy for the conﬁgured table association.</p>
      */
-    inline const ConfiguredTableAssociationAnalysisRulePolicy& GetAnalysisRulePolicy() const{ return m_analysisRulePolicy; }
+    inline const ConfiguredTableAssociationAnalysisRulePolicy& GetAnalysisRulePolicy() const { return m_analysisRulePolicy; }
     inline bool AnalysisRulePolicyHasBeenSet() const { return m_analysisRulePolicyHasBeenSet; }
-    inline void SetAnalysisRulePolicy(const ConfiguredTableAssociationAnalysisRulePolicy& value) { m_analysisRulePolicyHasBeenSet = true; m_analysisRulePolicy = value; }
-    inline void SetAnalysisRulePolicy(ConfiguredTableAssociationAnalysisRulePolicy&& value) { m_analysisRulePolicyHasBeenSet = true; m_analysisRulePolicy = std::move(value); }
-    inline UpdateConfiguredTableAssociationAnalysisRuleRequest& WithAnalysisRulePolicy(const ConfiguredTableAssociationAnalysisRulePolicy& value) { SetAnalysisRulePolicy(value); return *this;}
-    inline UpdateConfiguredTableAssociationAnalysisRuleRequest& WithAnalysisRulePolicy(ConfiguredTableAssociationAnalysisRulePolicy&& value) { SetAnalysisRulePolicy(std::move(value)); return *this;}
+    template<typename AnalysisRulePolicyT = ConfiguredTableAssociationAnalysisRulePolicy>
+    void SetAnalysisRulePolicy(AnalysisRulePolicyT&& value) { m_analysisRulePolicyHasBeenSet = true; m_analysisRulePolicy = std::forward<AnalysisRulePolicyT>(value); }
+    template<typename AnalysisRulePolicyT = ConfiguredTableAssociationAnalysisRulePolicy>
+    UpdateConfiguredTableAssociationAnalysisRuleRequest& WithAnalysisRulePolicy(AnalysisRulePolicyT&& value) { SetAnalysisRulePolicy(std::forward<AnalysisRulePolicyT>(value)); return *this;}
     ///@}
   private:
 
@@ -94,7 +88,7 @@ namespace Model
     Aws::String m_configuredTableAssociationIdentifier;
     bool m_configuredTableAssociationIdentifierHasBeenSet = false;
 
-    ConfiguredTableAssociationAnalysisRuleType m_analysisRuleType;
+    ConfiguredTableAssociationAnalysisRuleType m_analysisRuleType{ConfiguredTableAssociationAnalysisRuleType::NOT_SET};
     bool m_analysisRuleTypeHasBeenSet = false;
 
     ConfiguredTableAssociationAnalysisRulePolicy m_analysisRulePolicy;

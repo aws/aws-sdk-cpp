@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NetworkCardInfo::NetworkCardInfo() : 
-    m_networkCardIndex(0),
-    m_networkCardIndexHasBeenSet(false),
-    m_networkPerformanceHasBeenSet(false),
-    m_maximumNetworkInterfaces(0),
-    m_maximumNetworkInterfacesHasBeenSet(false),
-    m_baselineBandwidthInGbps(0.0),
-    m_baselineBandwidthInGbpsHasBeenSet(false),
-    m_peakBandwidthInGbps(0.0),
-    m_peakBandwidthInGbpsHasBeenSet(false)
-{
-}
-
 NetworkCardInfo::NetworkCardInfo(const XmlNode& xmlNode)
-  : NetworkCardInfo()
 {
   *this = xmlNode;
 }

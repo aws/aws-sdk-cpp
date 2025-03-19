@@ -29,7 +29,7 @@ namespace Model
   class StartBotResourceGenerationResult
   {
   public:
-    AWS_LEXMODELSV2_API StartBotResourceGenerationResult();
+    AWS_LEXMODELSV2_API StartBotResourceGenerationResult() = default;
     AWS_LEXMODELSV2_API StartBotResourceGenerationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELSV2_API StartBotResourceGenerationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,26 +39,22 @@ namespace Model
      * <p>The prompt that was used generate intents and slot types for the bot
      * locale.</p>
      */
-    inline const Aws::String& GetGenerationInputPrompt() const{ return m_generationInputPrompt; }
-    inline void SetGenerationInputPrompt(const Aws::String& value) { m_generationInputPrompt = value; }
-    inline void SetGenerationInputPrompt(Aws::String&& value) { m_generationInputPrompt = std::move(value); }
-    inline void SetGenerationInputPrompt(const char* value) { m_generationInputPrompt.assign(value); }
-    inline StartBotResourceGenerationResult& WithGenerationInputPrompt(const Aws::String& value) { SetGenerationInputPrompt(value); return *this;}
-    inline StartBotResourceGenerationResult& WithGenerationInputPrompt(Aws::String&& value) { SetGenerationInputPrompt(std::move(value)); return *this;}
-    inline StartBotResourceGenerationResult& WithGenerationInputPrompt(const char* value) { SetGenerationInputPrompt(value); return *this;}
+    inline const Aws::String& GetGenerationInputPrompt() const { return m_generationInputPrompt; }
+    template<typename GenerationInputPromptT = Aws::String>
+    void SetGenerationInputPrompt(GenerationInputPromptT&& value) { m_generationInputPromptHasBeenSet = true; m_generationInputPrompt = std::forward<GenerationInputPromptT>(value); }
+    template<typename GenerationInputPromptT = Aws::String>
+    StartBotResourceGenerationResult& WithGenerationInputPrompt(GenerationInputPromptT&& value) { SetGenerationInputPrompt(std::forward<GenerationInputPromptT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the generation request.</p>
      */
-    inline const Aws::String& GetGenerationId() const{ return m_generationId; }
-    inline void SetGenerationId(const Aws::String& value) { m_generationId = value; }
-    inline void SetGenerationId(Aws::String&& value) { m_generationId = std::move(value); }
-    inline void SetGenerationId(const char* value) { m_generationId.assign(value); }
-    inline StartBotResourceGenerationResult& WithGenerationId(const Aws::String& value) { SetGenerationId(value); return *this;}
-    inline StartBotResourceGenerationResult& WithGenerationId(Aws::String&& value) { SetGenerationId(std::move(value)); return *this;}
-    inline StartBotResourceGenerationResult& WithGenerationId(const char* value) { SetGenerationId(value); return *this;}
+    inline const Aws::String& GetGenerationId() const { return m_generationId; }
+    template<typename GenerationIdT = Aws::String>
+    void SetGenerationId(GenerationIdT&& value) { m_generationIdHasBeenSet = true; m_generationId = std::forward<GenerationIdT>(value); }
+    template<typename GenerationIdT = Aws::String>
+    StartBotResourceGenerationResult& WithGenerationId(GenerationIdT&& value) { SetGenerationId(std::forward<GenerationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,90 +62,88 @@ namespace Model
      * <p>The unique identifier of the bot for which the generation request was
      * made.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
-    inline void SetBotId(const Aws::String& value) { m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botId.assign(value); }
-    inline StartBotResourceGenerationResult& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline StartBotResourceGenerationResult& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline StartBotResourceGenerationResult& WithBotId(const char* value) { SetBotId(value); return *this;}
+    inline const Aws::String& GetBotId() const { return m_botId; }
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    StartBotResourceGenerationResult& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the bot for which the generation request was made.</p>
      */
-    inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
-    inline void SetBotVersion(const Aws::String& value) { m_botVersion = value; }
-    inline void SetBotVersion(Aws::String&& value) { m_botVersion = std::move(value); }
-    inline void SetBotVersion(const char* value) { m_botVersion.assign(value); }
-    inline StartBotResourceGenerationResult& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
-    inline StartBotResourceGenerationResult& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
-    inline StartBotResourceGenerationResult& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
+    inline const Aws::String& GetBotVersion() const { return m_botVersion; }
+    template<typename BotVersionT = Aws::String>
+    void SetBotVersion(BotVersionT&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::forward<BotVersionT>(value); }
+    template<typename BotVersionT = Aws::String>
+    StartBotResourceGenerationResult& WithBotVersion(BotVersionT&& value) { SetBotVersion(std::forward<BotVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The locale of the bot for which the generation request was made.</p>
      */
-    inline const Aws::String& GetLocaleId() const{ return m_localeId; }
-    inline void SetLocaleId(const Aws::String& value) { m_localeId = value; }
-    inline void SetLocaleId(Aws::String&& value) { m_localeId = std::move(value); }
-    inline void SetLocaleId(const char* value) { m_localeId.assign(value); }
-    inline StartBotResourceGenerationResult& WithLocaleId(const Aws::String& value) { SetLocaleId(value); return *this;}
-    inline StartBotResourceGenerationResult& WithLocaleId(Aws::String&& value) { SetLocaleId(std::move(value)); return *this;}
-    inline StartBotResourceGenerationResult& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
+    inline const Aws::String& GetLocaleId() const { return m_localeId; }
+    template<typename LocaleIdT = Aws::String>
+    void SetLocaleId(LocaleIdT&& value) { m_localeIdHasBeenSet = true; m_localeId = std::forward<LocaleIdT>(value); }
+    template<typename LocaleIdT = Aws::String>
+    StartBotResourceGenerationResult& WithLocaleId(LocaleIdT&& value) { SetLocaleId(std::forward<LocaleIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the generation request.</p>
      */
-    inline const GenerationStatus& GetGenerationStatus() const{ return m_generationStatus; }
-    inline void SetGenerationStatus(const GenerationStatus& value) { m_generationStatus = value; }
-    inline void SetGenerationStatus(GenerationStatus&& value) { m_generationStatus = std::move(value); }
-    inline StartBotResourceGenerationResult& WithGenerationStatus(const GenerationStatus& value) { SetGenerationStatus(value); return *this;}
-    inline StartBotResourceGenerationResult& WithGenerationStatus(GenerationStatus&& value) { SetGenerationStatus(std::move(value)); return *this;}
+    inline GenerationStatus GetGenerationStatus() const { return m_generationStatus; }
+    inline void SetGenerationStatus(GenerationStatus value) { m_generationStatusHasBeenSet = true; m_generationStatus = value; }
+    inline StartBotResourceGenerationResult& WithGenerationStatus(GenerationStatus value) { SetGenerationStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time at which the generation request was made.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
-    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTime = value; }
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTime = std::move(value); }
-    inline StartBotResourceGenerationResult& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-    inline StartBotResourceGenerationResult& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    StartBotResourceGenerationResult& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartBotResourceGenerationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartBotResourceGenerationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartBotResourceGenerationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartBotResourceGenerationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_generationInputPrompt;
+    bool m_generationInputPromptHasBeenSet = false;
 
     Aws::String m_generationId;
+    bool m_generationIdHasBeenSet = false;
 
     Aws::String m_botId;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_botVersion;
+    bool m_botVersionHasBeenSet = false;
 
     Aws::String m_localeId;
+    bool m_localeIdHasBeenSet = false;
 
-    GenerationStatus m_generationStatus;
+    GenerationStatus m_generationStatus{GenerationStatus::NOT_SET};
+    bool m_generationStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDateTime;
+    Aws::Utils::DateTime m_creationDateTime{};
+    bool m_creationDateTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

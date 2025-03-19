@@ -32,7 +32,7 @@ namespace Model
   class RuntimeSessionDataValue
   {
   public:
-    AWS_QCONNECT_API RuntimeSessionDataValue();
+    AWS_QCONNECT_API RuntimeSessionDataValue() = default;
     AWS_QCONNECT_API RuntimeSessionDataValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API RuntimeSessionDataValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The string value of the data stored on the session.</p>
      */
-    inline const Aws::String& GetStringValue() const{ return m_stringValue; }
+    inline const Aws::String& GetStringValue() const { return m_stringValue; }
     inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
-    inline void SetStringValue(const Aws::String& value) { m_stringValueHasBeenSet = true; m_stringValue = value; }
-    inline void SetStringValue(Aws::String&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::move(value); }
-    inline void SetStringValue(const char* value) { m_stringValueHasBeenSet = true; m_stringValue.assign(value); }
-    inline RuntimeSessionDataValue& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
-    inline RuntimeSessionDataValue& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
-    inline RuntimeSessionDataValue& WithStringValue(const char* value) { SetStringValue(value); return *this;}
+    template<typename StringValueT = Aws::String>
+    void SetStringValue(StringValueT&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::forward<StringValueT>(value); }
+    template<typename StringValueT = Aws::String>
+    RuntimeSessionDataValue& WithStringValue(StringValueT&& value) { SetStringValue(std::forward<StringValueT>(value)); return *this;}
     ///@}
   private:
 

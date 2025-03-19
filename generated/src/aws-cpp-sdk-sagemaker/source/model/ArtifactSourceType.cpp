@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ArtifactSourceType::ArtifactSourceType() : 
-    m_sourceIdType(ArtifactSourceIdType::NOT_SET),
-    m_sourceIdTypeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 ArtifactSourceType::ArtifactSourceType(JsonView jsonValue)
-  : ArtifactSourceType()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ArtifactSourceType& ArtifactSourceType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceIdType"))
   {
     m_sourceIdType = ArtifactSourceIdTypeMapper::GetArtifactSourceIdTypeForName(jsonValue.GetString("SourceIdType"));
-
     m_sourceIdTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

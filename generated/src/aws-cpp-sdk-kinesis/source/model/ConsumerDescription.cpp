@@ -18,18 +18,7 @@ namespace Kinesis
 namespace Model
 {
 
-ConsumerDescription::ConsumerDescription() : 
-    m_consumerNameHasBeenSet(false),
-    m_consumerARNHasBeenSet(false),
-    m_consumerStatus(ConsumerStatus::NOT_SET),
-    m_consumerStatusHasBeenSet(false),
-    m_consumerCreationTimestampHasBeenSet(false),
-    m_streamARNHasBeenSet(false)
-{
-}
-
 ConsumerDescription::ConsumerDescription(JsonView jsonValue)
-  : ConsumerDescription()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ ConsumerDescription& ConsumerDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConsumerName"))
   {
     m_consumerName = jsonValue.GetString("ConsumerName");
-
     m_consumerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConsumerARN"))
   {
     m_consumerARN = jsonValue.GetString("ConsumerARN");
-
     m_consumerARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConsumerStatus"))
   {
     m_consumerStatus = ConsumerStatusMapper::GetConsumerStatusForName(jsonValue.GetString("ConsumerStatus"));
-
     m_consumerStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConsumerCreationTimestamp"))
   {
     m_consumerCreationTimestamp = jsonValue.GetDouble("ConsumerCreationTimestamp");
-
     m_consumerCreationTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamARN"))
   {
     m_streamARN = jsonValue.GetString("StreamARN");
-
     m_streamARNHasBeenSet = true;
   }
-
   return *this;
 }
 

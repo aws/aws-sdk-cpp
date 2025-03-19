@@ -18,13 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-AllowedStatistics::AllowedStatistics() : 
-    m_statisticsHasBeenSet(false)
-{
-}
-
 AllowedStatistics::AllowedStatistics(JsonView jsonValue)
-  : AllowedStatistics()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AllowedStatistics& AllowedStatistics::operator =(JsonView jsonValue)
     }
     m_statisticsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace Textract
 namespace Model
 {
 
-DocumentGroup::DocumentGroup() : 
-    m_typeHasBeenSet(false),
-    m_splitDocumentsHasBeenSet(false),
-    m_detectedSignaturesHasBeenSet(false),
-    m_undetectedSignaturesHasBeenSet(false)
-{
-}
-
 DocumentGroup::DocumentGroup(JsonView jsonValue)
-  : DocumentGroup()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ DocumentGroup& DocumentGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SplitDocuments"))
   {
     Aws::Utils::Array<JsonView> splitDocumentsJsonList = jsonValue.GetArray("SplitDocuments");
@@ -50,7 +39,6 @@ DocumentGroup& DocumentGroup::operator =(JsonView jsonValue)
     }
     m_splitDocumentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DetectedSignatures"))
   {
     Aws::Utils::Array<JsonView> detectedSignaturesJsonList = jsonValue.GetArray("DetectedSignatures");
@@ -60,7 +48,6 @@ DocumentGroup& DocumentGroup::operator =(JsonView jsonValue)
     }
     m_detectedSignaturesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UndetectedSignatures"))
   {
     Aws::Utils::Array<JsonView> undetectedSignaturesJsonList = jsonValue.GetArray("UndetectedSignatures");
@@ -70,7 +57,6 @@ DocumentGroup& DocumentGroup::operator =(JsonView jsonValue)
     }
     m_undetectedSignaturesHasBeenSet = true;
   }
-
   return *this;
 }
 

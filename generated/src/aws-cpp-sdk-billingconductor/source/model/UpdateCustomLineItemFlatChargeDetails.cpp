@@ -18,14 +18,7 @@ namespace BillingConductor
 namespace Model
 {
 
-UpdateCustomLineItemFlatChargeDetails::UpdateCustomLineItemFlatChargeDetails() : 
-    m_chargeValue(0.0),
-    m_chargeValueHasBeenSet(false)
-{
-}
-
 UpdateCustomLineItemFlatChargeDetails::UpdateCustomLineItemFlatChargeDetails(JsonView jsonValue)
-  : UpdateCustomLineItemFlatChargeDetails()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ UpdateCustomLineItemFlatChargeDetails& UpdateCustomLineItemFlatChargeDetails::op
   if(jsonValue.ValueExists("ChargeValue"))
   {
     m_chargeValue = jsonValue.GetDouble("ChargeValue");
-
     m_chargeValueHasBeenSet = true;
   }
-
   return *this;
 }
 

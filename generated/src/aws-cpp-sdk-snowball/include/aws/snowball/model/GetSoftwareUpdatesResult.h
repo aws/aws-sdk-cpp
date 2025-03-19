@@ -27,7 +27,7 @@ namespace Model
   class GetSoftwareUpdatesResult
   {
   public:
-    AWS_SNOWBALL_API GetSoftwareUpdatesResult();
+    AWS_SNOWBALL_API GetSoftwareUpdatesResult() = default;
     AWS_SNOWBALL_API GetSoftwareUpdatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SNOWBALL_API GetSoftwareUpdatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,28 @@ namespace Model
      * this request is made. To access an update after the 2 days have passed, you'll
      * have to make another call to <code>GetSoftwareUpdates</code>.</p>
      */
-    inline const Aws::String& GetUpdatesURI() const{ return m_updatesURI; }
-    inline void SetUpdatesURI(const Aws::String& value) { m_updatesURI = value; }
-    inline void SetUpdatesURI(Aws::String&& value) { m_updatesURI = std::move(value); }
-    inline void SetUpdatesURI(const char* value) { m_updatesURI.assign(value); }
-    inline GetSoftwareUpdatesResult& WithUpdatesURI(const Aws::String& value) { SetUpdatesURI(value); return *this;}
-    inline GetSoftwareUpdatesResult& WithUpdatesURI(Aws::String&& value) { SetUpdatesURI(std::move(value)); return *this;}
-    inline GetSoftwareUpdatesResult& WithUpdatesURI(const char* value) { SetUpdatesURI(value); return *this;}
+    inline const Aws::String& GetUpdatesURI() const { return m_updatesURI; }
+    template<typename UpdatesURIT = Aws::String>
+    void SetUpdatesURI(UpdatesURIT&& value) { m_updatesURIHasBeenSet = true; m_updatesURI = std::forward<UpdatesURIT>(value); }
+    template<typename UpdatesURIT = Aws::String>
+    GetSoftwareUpdatesResult& WithUpdatesURI(UpdatesURIT&& value) { SetUpdatesURI(std::forward<UpdatesURIT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSoftwareUpdatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSoftwareUpdatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSoftwareUpdatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSoftwareUpdatesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_updatesURI;
+    bool m_updatesURIHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

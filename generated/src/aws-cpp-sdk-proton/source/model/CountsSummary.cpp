@@ -18,19 +18,7 @@ namespace Proton
 namespace Model
 {
 
-CountsSummary::CountsSummary() : 
-    m_componentsHasBeenSet(false),
-    m_environmentTemplatesHasBeenSet(false),
-    m_environmentsHasBeenSet(false),
-    m_pipelinesHasBeenSet(false),
-    m_serviceInstancesHasBeenSet(false),
-    m_serviceTemplatesHasBeenSet(false),
-    m_servicesHasBeenSet(false)
-{
-}
-
 CountsSummary::CountsSummary(JsonView jsonValue)
-  : CountsSummary()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ CountsSummary& CountsSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("components"))
   {
     m_components = jsonValue.GetObject("components");
-
     m_componentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentTemplates"))
   {
     m_environmentTemplates = jsonValue.GetObject("environmentTemplates");
-
     m_environmentTemplatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environments"))
   {
     m_environments = jsonValue.GetObject("environments");
-
     m_environmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipelines"))
   {
     m_pipelines = jsonValue.GetObject("pipelines");
-
     m_pipelinesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceInstances"))
   {
     m_serviceInstances = jsonValue.GetObject("serviceInstances");
-
     m_serviceInstancesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceTemplates"))
   {
     m_serviceTemplates = jsonValue.GetObject("serviceTemplates");
-
     m_serviceTemplatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("services"))
   {
     m_services = jsonValue.GetObject("services");
-
     m_servicesHasBeenSet = true;
   }
-
   return *this;
 }
 

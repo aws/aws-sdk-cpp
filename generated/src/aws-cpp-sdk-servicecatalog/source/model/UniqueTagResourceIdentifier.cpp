@@ -18,14 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-UniqueTagResourceIdentifier::UniqueTagResourceIdentifier() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 UniqueTagResourceIdentifier::UniqueTagResourceIdentifier(JsonView jsonValue)
-  : UniqueTagResourceIdentifier()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UniqueTagResourceIdentifier& UniqueTagResourceIdentifier::operator =(JsonView js
   if(jsonValue.ValueExists("Key"))
   {
     m_key = jsonValue.GetString("Key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

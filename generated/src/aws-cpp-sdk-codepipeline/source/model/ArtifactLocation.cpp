@@ -18,15 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ArtifactLocation::ArtifactLocation() : 
-    m_type(ArtifactLocationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_s3LocationHasBeenSet(false)
-{
-}
-
 ArtifactLocation::ArtifactLocation(JsonView jsonValue)
-  : ArtifactLocation()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ArtifactLocation& ArtifactLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = ArtifactLocationTypeMapper::GetArtifactLocationTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Location"))
   {
     m_s3Location = jsonValue.GetObject("s3Location");
-
     m_s3LocationHasBeenSet = true;
   }
-
   return *this;
 }
 

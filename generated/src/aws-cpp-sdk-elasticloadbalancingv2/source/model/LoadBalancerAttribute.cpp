@@ -20,14 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-LoadBalancerAttribute::LoadBalancerAttribute() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 LoadBalancerAttribute::LoadBalancerAttribute(const XmlNode& xmlNode)
-  : LoadBalancerAttribute()
 {
   *this = xmlNode;
 }

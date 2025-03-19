@@ -27,7 +27,7 @@ namespace Model
   class CreateHumanTaskUiResult
   {
   public:
-    AWS_SAGEMAKER_API CreateHumanTaskUiResult();
+    AWS_SAGEMAKER_API CreateHumanTaskUiResult() = default;
     AWS_SAGEMAKER_API CreateHumanTaskUiResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API CreateHumanTaskUiResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the human review workflow user interface
      * you create.</p>
      */
-    inline const Aws::String& GetHumanTaskUiArn() const{ return m_humanTaskUiArn; }
-    inline void SetHumanTaskUiArn(const Aws::String& value) { m_humanTaskUiArn = value; }
-    inline void SetHumanTaskUiArn(Aws::String&& value) { m_humanTaskUiArn = std::move(value); }
-    inline void SetHumanTaskUiArn(const char* value) { m_humanTaskUiArn.assign(value); }
-    inline CreateHumanTaskUiResult& WithHumanTaskUiArn(const Aws::String& value) { SetHumanTaskUiArn(value); return *this;}
-    inline CreateHumanTaskUiResult& WithHumanTaskUiArn(Aws::String&& value) { SetHumanTaskUiArn(std::move(value)); return *this;}
-    inline CreateHumanTaskUiResult& WithHumanTaskUiArn(const char* value) { SetHumanTaskUiArn(value); return *this;}
+    inline const Aws::String& GetHumanTaskUiArn() const { return m_humanTaskUiArn; }
+    template<typename HumanTaskUiArnT = Aws::String>
+    void SetHumanTaskUiArn(HumanTaskUiArnT&& value) { m_humanTaskUiArnHasBeenSet = true; m_humanTaskUiArn = std::forward<HumanTaskUiArnT>(value); }
+    template<typename HumanTaskUiArnT = Aws::String>
+    CreateHumanTaskUiResult& WithHumanTaskUiArn(HumanTaskUiArnT&& value) { SetHumanTaskUiArn(std::forward<HumanTaskUiArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateHumanTaskUiResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateHumanTaskUiResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateHumanTaskUiResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateHumanTaskUiResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_humanTaskUiArn;
+    bool m_humanTaskUiArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

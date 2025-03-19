@@ -29,7 +29,7 @@ namespace Model
   class ListJobsByStatusRequest : public ElasticTranscoderRequest
   {
   public:
-    AWS_ELASTICTRANSCODER_API ListJobsByStatusRequest();
+    AWS_ELASTICTRANSCODER_API ListJobsByStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,14 +49,12 @@ namespace Model
      * <code>Submitted</code>, <code>Progressing</code>, <code>Complete</code>,
      * <code>Canceled</code>, or <code>Error</code>.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline ListJobsByStatusRequest& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline ListJobsByStatusRequest& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline ListJobsByStatusRequest& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    ListJobsByStatusRequest& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * submitted, enter <code>true</code>. To list jobs in reverse chronological order,
      * enter <code>false</code>. </p>
      */
-    inline const Aws::String& GetAscending() const{ return m_ascending; }
+    inline const Aws::String& GetAscending() const { return m_ascending; }
     inline bool AscendingHasBeenSet() const { return m_ascendingHasBeenSet; }
-    inline void SetAscending(const Aws::String& value) { m_ascendingHasBeenSet = true; m_ascending = value; }
-    inline void SetAscending(Aws::String&& value) { m_ascendingHasBeenSet = true; m_ascending = std::move(value); }
-    inline void SetAscending(const char* value) { m_ascendingHasBeenSet = true; m_ascending.assign(value); }
-    inline ListJobsByStatusRequest& WithAscending(const Aws::String& value) { SetAscending(value); return *this;}
-    inline ListJobsByStatusRequest& WithAscending(Aws::String&& value) { SetAscending(std::move(value)); return *this;}
-    inline ListJobsByStatusRequest& WithAscending(const char* value) { SetAscending(value); return *this;}
+    template<typename AscendingT = Aws::String>
+    void SetAscending(AscendingT&& value) { m_ascendingHasBeenSet = true; m_ascending = std::forward<AscendingT>(value); }
+    template<typename AscendingT = Aws::String>
+    ListJobsByStatusRequest& WithAscending(AscendingT&& value) { SetAscending(std::forward<AscendingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,12 @@ namespace Model
      * <code>pageToken</code> in subsequent <code>GET</code> requests to get each
      * successive page of results. </p>
      */
-    inline const Aws::String& GetPageToken() const{ return m_pageToken; }
+    inline const Aws::String& GetPageToken() const { return m_pageToken; }
     inline bool PageTokenHasBeenSet() const { return m_pageTokenHasBeenSet; }
-    inline void SetPageToken(const Aws::String& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
-    inline void SetPageToken(Aws::String&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::move(value); }
-    inline void SetPageToken(const char* value) { m_pageTokenHasBeenSet = true; m_pageToken.assign(value); }
-    inline ListJobsByStatusRequest& WithPageToken(const Aws::String& value) { SetPageToken(value); return *this;}
-    inline ListJobsByStatusRequest& WithPageToken(Aws::String&& value) { SetPageToken(std::move(value)); return *this;}
-    inline ListJobsByStatusRequest& WithPageToken(const char* value) { SetPageToken(value); return *this;}
+    template<typename PageTokenT = Aws::String>
+    void SetPageToken(PageTokenT&& value) { m_pageTokenHasBeenSet = true; m_pageToken = std::forward<PageTokenT>(value); }
+    template<typename PageTokenT = Aws::String>
+    ListJobsByStatusRequest& WithPageToken(PageTokenT&& value) { SetPageToken(std::forward<PageTokenT>(value)); return *this;}
     ///@}
   private:
 

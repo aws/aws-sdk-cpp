@@ -32,7 +32,7 @@ namespace Model
   class InstanceSavingsEstimationMode
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API InstanceSavingsEstimationMode();
+    AWS_COMPUTEOPTIMIZER_API InstanceSavingsEstimationMode() = default;
     AWS_COMPUTEOPTIMIZER_API InstanceSavingsEstimationMode(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API InstanceSavingsEstimationMode& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p> Describes the source for calculating the savings opportunity for Amazon EC2
      * instances. </p>
      */
-    inline const InstanceSavingsEstimationModeSource& GetSource() const{ return m_source; }
+    inline InstanceSavingsEstimationModeSource GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const InstanceSavingsEstimationModeSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(InstanceSavingsEstimationModeSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline InstanceSavingsEstimationMode& WithSource(const InstanceSavingsEstimationModeSource& value) { SetSource(value); return *this;}
-    inline InstanceSavingsEstimationMode& WithSource(InstanceSavingsEstimationModeSource&& value) { SetSource(std::move(value)); return *this;}
+    inline void SetSource(InstanceSavingsEstimationModeSource value) { m_sourceHasBeenSet = true; m_source = value; }
+    inline InstanceSavingsEstimationMode& WithSource(InstanceSavingsEstimationModeSource value) { SetSource(value); return *this;}
     ///@}
   private:
 
-    InstanceSavingsEstimationModeSource m_source;
+    InstanceSavingsEstimationModeSource m_source{InstanceSavingsEstimationModeSource::NOT_SET};
     bool m_sourceHasBeenSet = false;
   };
 

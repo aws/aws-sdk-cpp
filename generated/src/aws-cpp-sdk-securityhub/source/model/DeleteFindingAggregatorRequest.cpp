@@ -12,11 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFindingAggregatorRequest::DeleteFindingAggregatorRequest() : 
-    m_findingAggregatorArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFindingAggregatorRequest::SerializePayload() const
 {
   return {};

@@ -21,7 +21,7 @@ namespace Model
   class ListAvailableManagementCidrRangesRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API ListAvailableManagementCidrRangesRequest();
+    AWS_WORKSPACES_API ListAvailableManagementCidrRangesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,21 +40,19 @@ namespace Model
      * compatible with your network and in CIDR notation (that is, specify the range as
      * an IPv4 CIDR block).</p>
      */
-    inline const Aws::String& GetManagementCidrRangeConstraint() const{ return m_managementCidrRangeConstraint; }
+    inline const Aws::String& GetManagementCidrRangeConstraint() const { return m_managementCidrRangeConstraint; }
     inline bool ManagementCidrRangeConstraintHasBeenSet() const { return m_managementCidrRangeConstraintHasBeenSet; }
-    inline void SetManagementCidrRangeConstraint(const Aws::String& value) { m_managementCidrRangeConstraintHasBeenSet = true; m_managementCidrRangeConstraint = value; }
-    inline void SetManagementCidrRangeConstraint(Aws::String&& value) { m_managementCidrRangeConstraintHasBeenSet = true; m_managementCidrRangeConstraint = std::move(value); }
-    inline void SetManagementCidrRangeConstraint(const char* value) { m_managementCidrRangeConstraintHasBeenSet = true; m_managementCidrRangeConstraint.assign(value); }
-    inline ListAvailableManagementCidrRangesRequest& WithManagementCidrRangeConstraint(const Aws::String& value) { SetManagementCidrRangeConstraint(value); return *this;}
-    inline ListAvailableManagementCidrRangesRequest& WithManagementCidrRangeConstraint(Aws::String&& value) { SetManagementCidrRangeConstraint(std::move(value)); return *this;}
-    inline ListAvailableManagementCidrRangesRequest& WithManagementCidrRangeConstraint(const char* value) { SetManagementCidrRangeConstraint(value); return *this;}
+    template<typename ManagementCidrRangeConstraintT = Aws::String>
+    void SetManagementCidrRangeConstraint(ManagementCidrRangeConstraintT&& value) { m_managementCidrRangeConstraintHasBeenSet = true; m_managementCidrRangeConstraint = std::forward<ManagementCidrRangeConstraintT>(value); }
+    template<typename ManagementCidrRangeConstraintT = Aws::String>
+    ListAvailableManagementCidrRangesRequest& WithManagementCidrRangeConstraint(ManagementCidrRangeConstraintT&& value) { SetManagementCidrRangeConstraint(std::forward<ManagementCidrRangeConstraintT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of items to return.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListAvailableManagementCidrRangesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -65,21 +63,19 @@ namespace Model
      * <p>If you received a <code>NextToken</code> from a previous call that was
      * paginated, provide this token to receive the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAvailableManagementCidrRangesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAvailableManagementCidrRangesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAvailableManagementCidrRangesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAvailableManagementCidrRangesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_managementCidrRangeConstraint;
     bool m_managementCidrRangeConstraintHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

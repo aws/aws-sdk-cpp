@@ -18,13 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-ErrorDetail::ErrorDetail() : 
-    m_messageHasBeenSet(false)
-{
-}
-
 ErrorDetail::ErrorDetail(JsonView jsonValue)
-  : ErrorDetail()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ErrorDetail& ErrorDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

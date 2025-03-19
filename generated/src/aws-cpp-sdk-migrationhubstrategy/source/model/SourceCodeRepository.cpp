@@ -18,16 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-SourceCodeRepository::SourceCodeRepository() : 
-    m_branchHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_repositoryHasBeenSet(false),
-    m_versionControlTypeHasBeenSet(false)
-{
-}
-
 SourceCodeRepository::SourceCodeRepository(JsonView jsonValue)
-  : SourceCodeRepository()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ SourceCodeRepository& SourceCodeRepository::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("branch"))
   {
     m_branch = jsonValue.GetString("branch");
-
     m_branchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectName"))
   {
     m_projectName = jsonValue.GetString("projectName");
-
     m_projectNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repository"))
   {
     m_repository = jsonValue.GetString("repository");
-
     m_repositoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionControlType"))
   {
     m_versionControlType = jsonValue.GetString("versionControlType");
-
     m_versionControlTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

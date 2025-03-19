@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MultiplexProgramServiceDescriptor::MultiplexProgramServiceDescriptor() : 
-    m_providerNameHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
-{
-}
-
 MultiplexProgramServiceDescriptor::MultiplexProgramServiceDescriptor(JsonView jsonValue)
-  : MultiplexProgramServiceDescriptor()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MultiplexProgramServiceDescriptor& MultiplexProgramServiceDescriptor::operator =
   if(jsonValue.ValueExists("providerName"))
   {
     m_providerName = jsonValue.GetString("providerName");
-
     m_providerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceName"))
   {
     m_serviceName = jsonValue.GetString("serviceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

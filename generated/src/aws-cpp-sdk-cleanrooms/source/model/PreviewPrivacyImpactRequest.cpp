@@ -12,12 +12,6 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PreviewPrivacyImpactRequest::PreviewPrivacyImpactRequest() : 
-    m_membershipIdentifierHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 Aws::String PreviewPrivacyImpactRequest::SerializePayload() const
 {
   JsonValue payload;

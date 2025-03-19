@@ -31,7 +31,7 @@ namespace Model
   class DescribeDimensionKeysResult
   {
   public:
-    AWS_PI_API DescribeDimensionKeysResult();
+    AWS_PI_API DescribeDimensionKeysResult() = default;
     AWS_PI_API DescribeDimensionKeysResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PI_API DescribeDimensionKeysResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,11 +43,11 @@ namespace Model
      * <code>AlignedStartTime</code> will be less than or equal to the value of the
      * user-specified <code>StartTime</code>. </p>
      */
-    inline const Aws::Utils::DateTime& GetAlignedStartTime() const{ return m_alignedStartTime; }
-    inline void SetAlignedStartTime(const Aws::Utils::DateTime& value) { m_alignedStartTime = value; }
-    inline void SetAlignedStartTime(Aws::Utils::DateTime&& value) { m_alignedStartTime = std::move(value); }
-    inline DescribeDimensionKeysResult& WithAlignedStartTime(const Aws::Utils::DateTime& value) { SetAlignedStartTime(value); return *this;}
-    inline DescribeDimensionKeysResult& WithAlignedStartTime(Aws::Utils::DateTime&& value) { SetAlignedStartTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetAlignedStartTime() const { return m_alignedStartTime; }
+    template<typename AlignedStartTimeT = Aws::Utils::DateTime>
+    void SetAlignedStartTime(AlignedStartTimeT&& value) { m_alignedStartTimeHasBeenSet = true; m_alignedStartTime = std::forward<AlignedStartTimeT>(value); }
+    template<typename AlignedStartTimeT = Aws::Utils::DateTime>
+    DescribeDimensionKeysResult& WithAlignedStartTime(AlignedStartTimeT&& value) { SetAlignedStartTime(std::forward<AlignedStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,11 +57,11 @@ namespace Model
      * <code>AlignedEndTime</code> will be greater than or equal to the value of the
      * user-specified <code>Endtime</code>. </p>
      */
-    inline const Aws::Utils::DateTime& GetAlignedEndTime() const{ return m_alignedEndTime; }
-    inline void SetAlignedEndTime(const Aws::Utils::DateTime& value) { m_alignedEndTime = value; }
-    inline void SetAlignedEndTime(Aws::Utils::DateTime&& value) { m_alignedEndTime = std::move(value); }
-    inline DescribeDimensionKeysResult& WithAlignedEndTime(const Aws::Utils::DateTime& value) { SetAlignedEndTime(value); return *this;}
-    inline DescribeDimensionKeysResult& WithAlignedEndTime(Aws::Utils::DateTime&& value) { SetAlignedEndTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetAlignedEndTime() const { return m_alignedEndTime; }
+    template<typename AlignedEndTimeT = Aws::Utils::DateTime>
+    void SetAlignedEndTime(AlignedEndTimeT&& value) { m_alignedEndTimeHasBeenSet = true; m_alignedEndTime = std::forward<AlignedEndTimeT>(value); }
+    template<typename AlignedEndTimeT = Aws::Utils::DateTime>
+    DescribeDimensionKeysResult& WithAlignedEndTime(AlignedEndTimeT&& value) { SetAlignedEndTime(std::forward<AlignedEndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,26 +70,26 @@ namespace Model
      * <code>PartitionKeys</code> contains the breakdown of dimension keys by the
      * specified partitions. </p>
      */
-    inline const Aws::Vector<ResponsePartitionKey>& GetPartitionKeys() const{ return m_partitionKeys; }
-    inline void SetPartitionKeys(const Aws::Vector<ResponsePartitionKey>& value) { m_partitionKeys = value; }
-    inline void SetPartitionKeys(Aws::Vector<ResponsePartitionKey>&& value) { m_partitionKeys = std::move(value); }
-    inline DescribeDimensionKeysResult& WithPartitionKeys(const Aws::Vector<ResponsePartitionKey>& value) { SetPartitionKeys(value); return *this;}
-    inline DescribeDimensionKeysResult& WithPartitionKeys(Aws::Vector<ResponsePartitionKey>&& value) { SetPartitionKeys(std::move(value)); return *this;}
-    inline DescribeDimensionKeysResult& AddPartitionKeys(const ResponsePartitionKey& value) { m_partitionKeys.push_back(value); return *this; }
-    inline DescribeDimensionKeysResult& AddPartitionKeys(ResponsePartitionKey&& value) { m_partitionKeys.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ResponsePartitionKey>& GetPartitionKeys() const { return m_partitionKeys; }
+    template<typename PartitionKeysT = Aws::Vector<ResponsePartitionKey>>
+    void SetPartitionKeys(PartitionKeysT&& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys = std::forward<PartitionKeysT>(value); }
+    template<typename PartitionKeysT = Aws::Vector<ResponsePartitionKey>>
+    DescribeDimensionKeysResult& WithPartitionKeys(PartitionKeysT&& value) { SetPartitionKeys(std::forward<PartitionKeysT>(value)); return *this;}
+    template<typename PartitionKeysT = ResponsePartitionKey>
+    DescribeDimensionKeysResult& AddPartitionKeys(PartitionKeysT&& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys.emplace_back(std::forward<PartitionKeysT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The dimension keys that were requested.</p>
      */
-    inline const Aws::Vector<DimensionKeyDescription>& GetKeys() const{ return m_keys; }
-    inline void SetKeys(const Aws::Vector<DimensionKeyDescription>& value) { m_keys = value; }
-    inline void SetKeys(Aws::Vector<DimensionKeyDescription>&& value) { m_keys = std::move(value); }
-    inline DescribeDimensionKeysResult& WithKeys(const Aws::Vector<DimensionKeyDescription>& value) { SetKeys(value); return *this;}
-    inline DescribeDimensionKeysResult& WithKeys(Aws::Vector<DimensionKeyDescription>&& value) { SetKeys(std::move(value)); return *this;}
-    inline DescribeDimensionKeysResult& AddKeys(const DimensionKeyDescription& value) { m_keys.push_back(value); return *this; }
-    inline DescribeDimensionKeysResult& AddKeys(DimensionKeyDescription&& value) { m_keys.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DimensionKeyDescription>& GetKeys() const { return m_keys; }
+    template<typename KeysT = Aws::Vector<DimensionKeyDescription>>
+    void SetKeys(KeysT&& value) { m_keysHasBeenSet = true; m_keys = std::forward<KeysT>(value); }
+    template<typename KeysT = Aws::Vector<DimensionKeyDescription>>
+    DescribeDimensionKeysResult& WithKeys(KeysT&& value) { SetKeys(std::forward<KeysT>(value)); return *this;}
+    template<typename KeysT = DimensionKeyDescription>
+    DescribeDimensionKeysResult& AddKeys(KeysT&& value) { m_keysHasBeenSet = true; m_keys.emplace_back(std::forward<KeysT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -99,38 +99,40 @@ namespace Model
      * To get the remaining records, specify <code>NextToken</code> in a separate
      * request with this value. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeDimensionKeysResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeDimensionKeysResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeDimensionKeysResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeDimensionKeysResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDimensionKeysResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDimensionKeysResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDimensionKeysResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDimensionKeysResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_alignedStartTime;
+    Aws::Utils::DateTime m_alignedStartTime{};
+    bool m_alignedStartTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_alignedEndTime;
+    Aws::Utils::DateTime m_alignedEndTime{};
+    bool m_alignedEndTimeHasBeenSet = false;
 
     Aws::Vector<ResponsePartitionKey> m_partitionKeys;
+    bool m_partitionKeysHasBeenSet = false;
 
     Aws::Vector<DimensionKeyDescription> m_keys;
+    bool m_keysHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

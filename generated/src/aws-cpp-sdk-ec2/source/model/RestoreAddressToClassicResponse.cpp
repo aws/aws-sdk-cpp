@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RestoreAddressToClassicResponse::RestoreAddressToClassicResponse() : 
-    m_status(Status::NOT_SET)
-{
-}
-
 RestoreAddressToClassicResponse::RestoreAddressToClassicResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : RestoreAddressToClassicResponse()
 {
   *this = result;
 }
@@ -44,11 +38,13 @@ RestoreAddressToClassicResponse& RestoreAddressToClassicResponse::operator =(con
     if(!publicIpNode.IsNull())
     {
       m_publicIp = Aws::Utils::Xml::DecodeEscapedXmlText(publicIpNode.GetText());
+      m_publicIpHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = StatusMapper::GetStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = StatusMapper::GetStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
+      m_statusHasBeenSet = true;
     }
   }
 
@@ -57,6 +53,7 @@ RestoreAddressToClassicResponse& RestoreAddressToClassicResponse::operator =(con
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::RestoreAddressToClassicResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

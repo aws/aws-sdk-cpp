@@ -18,13 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-CsvOutputOptions::CsvOutputOptions() : 
-    m_delimiterHasBeenSet(false)
-{
-}
-
 CsvOutputOptions::CsvOutputOptions(JsonView jsonValue)
-  : CsvOutputOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CsvOutputOptions& CsvOutputOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Delimiter"))
   {
     m_delimiter = jsonValue.GetString("Delimiter");
-
     m_delimiterHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPricingPlanResult::GetPricingPlanResult()
-{
-}
-
 GetPricingPlanResult::GetPricingPlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetPricingPlanResult& GetPricingPlanResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("currentPricingPlan"))
   {
     m_currentPricingPlan = jsonValue.GetObject("currentPricingPlan");
-
+    m_currentPricingPlanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pendingPricingPlan"))
   {
     m_pendingPricingPlan = jsonValue.GetObject("pendingPricingPlan");
-
+    m_pendingPricingPlanHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

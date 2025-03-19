@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateResourceSnapshotResult::CreateResourceSnapshotResult() : 
-    m_revision(0)
-{
-}
-
 CreateResourceSnapshotResult::CreateResourceSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateResourceSnapshotResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ CreateResourceSnapshotResult& CreateResourceSnapshotResult::operator =(const Aws
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Revision"))
   {
     m_revision = jsonValue.GetInteger("Revision");
-
+    m_revisionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -31,7 +31,7 @@ namespace Model
   class Datatype
   {
   public:
-    AWS_GLUE_API Datatype();
+    AWS_GLUE_API Datatype() = default;
     AWS_GLUE_API Datatype(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Datatype& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The datatype of the value.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Datatype& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Datatype& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Datatype& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Datatype& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A label assigned to the datatype.</p>
      */
-    inline const Aws::String& GetLabel() const{ return m_label; }
+    inline const Aws::String& GetLabel() const { return m_label; }
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
-    inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
-    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
-    inline void SetLabel(const char* value) { m_labelHasBeenSet = true; m_label.assign(value); }
-    inline Datatype& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
-    inline Datatype& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
-    inline Datatype& WithLabel(const char* value) { SetLabel(value); return *this;}
+    template<typename LabelT = Aws::String>
+    void SetLabel(LabelT&& value) { m_labelHasBeenSet = true; m_label = std::forward<LabelT>(value); }
+    template<typename LabelT = Aws::String>
+    Datatype& WithLabel(LabelT&& value) { SetLabel(std::forward<LabelT>(value)); return *this;}
     ///@}
   private:
 

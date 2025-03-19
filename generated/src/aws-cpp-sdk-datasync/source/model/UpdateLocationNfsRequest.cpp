@@ -12,15 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateLocationNfsRequest::UpdateLocationNfsRequest() : 
-    m_locationArnHasBeenSet(false),
-    m_subdirectoryHasBeenSet(false),
-    m_serverHostnameHasBeenSet(false),
-    m_onPremConfigHasBeenSet(false),
-    m_mountOptionsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateLocationNfsRequest::SerializePayload() const
 {
   JsonValue payload;

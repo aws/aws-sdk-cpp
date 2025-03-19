@@ -34,7 +34,7 @@ namespace Model
   class AddJobFlowStepsResult
   {
   public:
-    AWS_EMR_API AddJobFlowStepsResult();
+    AWS_EMR_API AddJobFlowStepsResult() = default;
     AWS_EMR_API AddJobFlowStepsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EMR_API AddJobFlowStepsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,31 +43,30 @@ namespace Model
     /**
      * <p>The identifiers of the list of steps added to the job flow.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetStepIds() const{ return m_stepIds; }
-    inline void SetStepIds(const Aws::Vector<Aws::String>& value) { m_stepIds = value; }
-    inline void SetStepIds(Aws::Vector<Aws::String>&& value) { m_stepIds = std::move(value); }
-    inline AddJobFlowStepsResult& WithStepIds(const Aws::Vector<Aws::String>& value) { SetStepIds(value); return *this;}
-    inline AddJobFlowStepsResult& WithStepIds(Aws::Vector<Aws::String>&& value) { SetStepIds(std::move(value)); return *this;}
-    inline AddJobFlowStepsResult& AddStepIds(const Aws::String& value) { m_stepIds.push_back(value); return *this; }
-    inline AddJobFlowStepsResult& AddStepIds(Aws::String&& value) { m_stepIds.push_back(std::move(value)); return *this; }
-    inline AddJobFlowStepsResult& AddStepIds(const char* value) { m_stepIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetStepIds() const { return m_stepIds; }
+    template<typename StepIdsT = Aws::Vector<Aws::String>>
+    void SetStepIds(StepIdsT&& value) { m_stepIdsHasBeenSet = true; m_stepIds = std::forward<StepIdsT>(value); }
+    template<typename StepIdsT = Aws::Vector<Aws::String>>
+    AddJobFlowStepsResult& WithStepIds(StepIdsT&& value) { SetStepIds(std::forward<StepIdsT>(value)); return *this;}
+    template<typename StepIdsT = Aws::String>
+    AddJobFlowStepsResult& AddStepIds(StepIdsT&& value) { m_stepIdsHasBeenSet = true; m_stepIds.emplace_back(std::forward<StepIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AddJobFlowStepsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AddJobFlowStepsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AddJobFlowStepsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AddJobFlowStepsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_stepIds;
+    bool m_stepIdsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

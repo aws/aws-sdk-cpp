@@ -18,17 +18,7 @@ namespace SocialMessaging
 namespace Model
 {
 
-LinkedWhatsAppBusinessAccountIdMetaData::LinkedWhatsAppBusinessAccountIdMetaData() : 
-    m_accountNameHasBeenSet(false),
-    m_registrationStatus(RegistrationStatus::NOT_SET),
-    m_registrationStatusHasBeenSet(false),
-    m_unregisteredWhatsAppPhoneNumbersHasBeenSet(false),
-    m_wabaIdHasBeenSet(false)
-{
-}
-
 LinkedWhatsAppBusinessAccountIdMetaData::LinkedWhatsAppBusinessAccountIdMetaData(JsonView jsonValue)
-  : LinkedWhatsAppBusinessAccountIdMetaData()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ LinkedWhatsAppBusinessAccountIdMetaData& LinkedWhatsAppBusinessAccountIdMetaData
   if(jsonValue.ValueExists("accountName"))
   {
     m_accountName = jsonValue.GetString("accountName");
-
     m_accountNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("registrationStatus"))
   {
     m_registrationStatus = RegistrationStatusMapper::GetRegistrationStatusForName(jsonValue.GetString("registrationStatus"));
-
     m_registrationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unregisteredWhatsAppPhoneNumbers"))
   {
     Aws::Utils::Array<JsonView> unregisteredWhatsAppPhoneNumbersJsonList = jsonValue.GetArray("unregisteredWhatsAppPhoneNumbers");
@@ -58,14 +44,11 @@ LinkedWhatsAppBusinessAccountIdMetaData& LinkedWhatsAppBusinessAccountIdMetaData
     }
     m_unregisteredWhatsAppPhoneNumbersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("wabaId"))
   {
     m_wabaId = jsonValue.GetString("wabaId");
-
     m_wabaIdHasBeenSet = true;
   }
-
   return *this;
 }
 

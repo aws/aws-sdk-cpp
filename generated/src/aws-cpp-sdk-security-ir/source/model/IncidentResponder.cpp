@@ -18,15 +18,7 @@ namespace SecurityIR
 namespace Model
 {
 
-IncidentResponder::IncidentResponder() : 
-    m_nameHasBeenSet(false),
-    m_jobTitleHasBeenSet(false),
-    m_emailHasBeenSet(false)
-{
-}
-
 IncidentResponder::IncidentResponder(JsonView jsonValue)
-  : IncidentResponder()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ IncidentResponder& IncidentResponder::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobTitle"))
   {
     m_jobTitle = jsonValue.GetString("jobTitle");
-
     m_jobTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("email"))
   {
     m_email = jsonValue.GetString("email");
-
     m_emailHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -23,7 +23,7 @@ namespace Model
   class ClassifyDocumentRequest : public ComprehendRequest
   {
   public:
-    AWS_COMPREHEND_API ClassifyDocumentRequest();
+    AWS_COMPREHEND_API ClassifyDocumentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The document text to be analyzed. If you enter text using this parameter, do
      * not use the <code>Bytes</code> parameter.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline ClassifyDocumentRequest& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline ClassifyDocumentRequest& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline ClassifyDocumentRequest& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    ClassifyDocumentRequest& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/comprehend/latest/dg/using-endpoints.html">Using
      * Amazon Comprehend endpoints</a>.</p>
      */
-    inline const Aws::String& GetEndpointArn() const{ return m_endpointArn; }
+    inline const Aws::String& GetEndpointArn() const { return m_endpointArn; }
     inline bool EndpointArnHasBeenSet() const { return m_endpointArnHasBeenSet; }
-    inline void SetEndpointArn(const Aws::String& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
-    inline void SetEndpointArn(Aws::String&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::move(value); }
-    inline void SetEndpointArn(const char* value) { m_endpointArnHasBeenSet = true; m_endpointArn.assign(value); }
-    inline ClassifyDocumentRequest& WithEndpointArn(const Aws::String& value) { SetEndpointArn(value); return *this;}
-    inline ClassifyDocumentRequest& WithEndpointArn(Aws::String&& value) { SetEndpointArn(std::move(value)); return *this;}
-    inline ClassifyDocumentRequest& WithEndpointArn(const char* value) { SetEndpointArn(value); return *this;}
+    template<typename EndpointArnT = Aws::String>
+    void SetEndpointArn(EndpointArnT&& value) { m_endpointArnHasBeenSet = true; m_endpointArn = std::forward<EndpointArnT>(value); }
+    template<typename EndpointArnT = Aws::String>
+    ClassifyDocumentRequest& WithEndpointArn(EndpointArnT&& value) { SetEndpointArn(std::forward<EndpointArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,12 +86,12 @@ namespace Model
      * <p>If you use the <code>Bytes</code> parameter, do not use the <code>Text</code>
      * parameter.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetBytes() const{ return m_bytes; }
+    inline const Aws::Utils::ByteBuffer& GetBytes() const { return m_bytes; }
     inline bool BytesHasBeenSet() const { return m_bytesHasBeenSet; }
-    inline void SetBytes(const Aws::Utils::ByteBuffer& value) { m_bytesHasBeenSet = true; m_bytes = value; }
-    inline void SetBytes(Aws::Utils::ByteBuffer&& value) { m_bytesHasBeenSet = true; m_bytes = std::move(value); }
-    inline ClassifyDocumentRequest& WithBytes(const Aws::Utils::ByteBuffer& value) { SetBytes(value); return *this;}
-    inline ClassifyDocumentRequest& WithBytes(Aws::Utils::ByteBuffer&& value) { SetBytes(std::move(value)); return *this;}
+    template<typename BytesT = Aws::Utils::ByteBuffer>
+    void SetBytes(BytesT&& value) { m_bytesHasBeenSet = true; m_bytes = std::forward<BytesT>(value); }
+    template<typename BytesT = Aws::Utils::ByteBuffer>
+    ClassifyDocumentRequest& WithBytes(BytesT&& value) { SetBytes(std::forward<BytesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,12 +99,12 @@ namespace Model
      * <p>Provides configuration parameters to override the default actions for
      * extracting text from PDF documents and image files.</p>
      */
-    inline const DocumentReaderConfig& GetDocumentReaderConfig() const{ return m_documentReaderConfig; }
+    inline const DocumentReaderConfig& GetDocumentReaderConfig() const { return m_documentReaderConfig; }
     inline bool DocumentReaderConfigHasBeenSet() const { return m_documentReaderConfigHasBeenSet; }
-    inline void SetDocumentReaderConfig(const DocumentReaderConfig& value) { m_documentReaderConfigHasBeenSet = true; m_documentReaderConfig = value; }
-    inline void SetDocumentReaderConfig(DocumentReaderConfig&& value) { m_documentReaderConfigHasBeenSet = true; m_documentReaderConfig = std::move(value); }
-    inline ClassifyDocumentRequest& WithDocumentReaderConfig(const DocumentReaderConfig& value) { SetDocumentReaderConfig(value); return *this;}
-    inline ClassifyDocumentRequest& WithDocumentReaderConfig(DocumentReaderConfig&& value) { SetDocumentReaderConfig(std::move(value)); return *this;}
+    template<typename DocumentReaderConfigT = DocumentReaderConfig>
+    void SetDocumentReaderConfig(DocumentReaderConfigT&& value) { m_documentReaderConfigHasBeenSet = true; m_documentReaderConfig = std::forward<DocumentReaderConfigT>(value); }
+    template<typename DocumentReaderConfigT = DocumentReaderConfig>
+    ClassifyDocumentRequest& WithDocumentReaderConfig(DocumentReaderConfigT&& value) { SetDocumentReaderConfig(std::forward<DocumentReaderConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -118,7 +114,7 @@ namespace Model
     Aws::String m_endpointArn;
     bool m_endpointArnHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_bytes;
+    Aws::Utils::ByteBuffer m_bytes{};
     bool m_bytesHasBeenSet = false;
 
     DocumentReaderConfig m_documentReaderConfig;

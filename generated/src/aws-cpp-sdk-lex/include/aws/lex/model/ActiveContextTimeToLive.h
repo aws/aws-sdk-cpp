@@ -30,7 +30,7 @@ namespace Model
   class ActiveContextTimeToLive
   {
   public:
-    AWS_LEXRUNTIMESERVICE_API ActiveContextTimeToLive();
+    AWS_LEXRUNTIMESERVICE_API ActiveContextTimeToLive() = default;
     AWS_LEXRUNTIMESERVICE_API ActiveContextTimeToLive(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMESERVICE_API ActiveContextTimeToLive& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * sent in a <code>PostContent</code> or <code>PostText</code> response. You can
      * set the value between 5 and 86,400 seconds (24 hours).</p>
      */
-    inline int GetTimeToLiveInSeconds() const{ return m_timeToLiveInSeconds; }
+    inline int GetTimeToLiveInSeconds() const { return m_timeToLiveInSeconds; }
     inline bool TimeToLiveInSecondsHasBeenSet() const { return m_timeToLiveInSecondsHasBeenSet; }
     inline void SetTimeToLiveInSeconds(int value) { m_timeToLiveInSecondsHasBeenSet = true; m_timeToLiveInSeconds = value; }
     inline ActiveContextTimeToLive& WithTimeToLiveInSeconds(int value) { SetTimeToLiveInSeconds(value); return *this;}
@@ -54,17 +54,17 @@ namespace Model
      * conversation turn is one <code>PostContent</code> or <code>PostText</code>
      * request and the corresponding response from Amazon Lex.</p>
      */
-    inline int GetTurnsToLive() const{ return m_turnsToLive; }
+    inline int GetTurnsToLive() const { return m_turnsToLive; }
     inline bool TurnsToLiveHasBeenSet() const { return m_turnsToLiveHasBeenSet; }
     inline void SetTurnsToLive(int value) { m_turnsToLiveHasBeenSet = true; m_turnsToLive = value; }
     inline ActiveContextTimeToLive& WithTurnsToLive(int value) { SetTurnsToLive(value); return *this;}
     ///@}
   private:
 
-    int m_timeToLiveInSeconds;
+    int m_timeToLiveInSeconds{0};
     bool m_timeToLiveInSecondsHasBeenSet = false;
 
-    int m_turnsToLive;
+    int m_turnsToLive{0};
     bool m_turnsToLiveHasBeenSet = false;
   };
 

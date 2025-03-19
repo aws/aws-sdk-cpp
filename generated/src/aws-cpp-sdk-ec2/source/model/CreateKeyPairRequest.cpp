@@ -10,18 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateKeyPairRequest::CreateKeyPairRequest() : 
-    m_keyNameHasBeenSet(false),
-    m_keyType(KeyType::NOT_SET),
-    m_keyTypeHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_keyFormat(KeyFormat::NOT_SET),
-    m_keyFormatHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String CreateKeyPairRequest::SerializePayload() const
 {
   Aws::StringStream ss;

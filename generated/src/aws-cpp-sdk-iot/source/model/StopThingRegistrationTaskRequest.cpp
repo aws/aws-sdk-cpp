@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopThingRegistrationTaskRequest::StopThingRegistrationTaskRequest() : 
-    m_taskIdHasBeenSet(false)
-{
-}
-
 Aws::String StopThingRegistrationTaskRequest::SerializePayload() const
 {
   return {};

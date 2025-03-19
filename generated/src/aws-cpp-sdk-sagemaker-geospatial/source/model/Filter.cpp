@@ -18,18 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-Filter::Filter() : 
-    m_maximum(0.0),
-    m_maximumHasBeenSet(false),
-    m_minimum(0.0),
-    m_minimumHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 Filter::Filter(JsonView jsonValue)
-  : Filter()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ Filter& Filter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Maximum"))
   {
     m_maximum = jsonValue.GetDouble("Maximum");
-
     m_maximumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Minimum"))
   {
     m_minimum = jsonValue.GetDouble("Minimum");
-
     m_minimumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

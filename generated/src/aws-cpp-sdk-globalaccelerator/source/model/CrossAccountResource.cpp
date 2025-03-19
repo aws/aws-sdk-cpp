@@ -18,15 +18,7 @@ namespace GlobalAccelerator
 namespace Model
 {
 
-CrossAccountResource::CrossAccountResource() : 
-    m_endpointIdHasBeenSet(false),
-    m_cidrHasBeenSet(false),
-    m_attachmentArnHasBeenSet(false)
-{
-}
-
 CrossAccountResource::CrossAccountResource(JsonView jsonValue)
-  : CrossAccountResource()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CrossAccountResource& CrossAccountResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EndpointId"))
   {
     m_endpointId = jsonValue.GetString("EndpointId");
-
     m_endpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Cidr"))
   {
     m_cidr = jsonValue.GetString("Cidr");
-
     m_cidrHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttachmentArn"))
   {
     m_attachmentArn = jsonValue.GetString("AttachmentArn");
-
     m_attachmentArnHasBeenSet = true;
   }
-
   return *this;
 }
 

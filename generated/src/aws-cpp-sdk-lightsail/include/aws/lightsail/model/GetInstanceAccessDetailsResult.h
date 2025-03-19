@@ -28,7 +28,7 @@ namespace Model
   class GetInstanceAccessDetailsResult
   {
   public:
-    AWS_LIGHTSAIL_API GetInstanceAccessDetailsResult();
+    AWS_LIGHTSAIL_API GetInstanceAccessDetailsResult() = default;
     AWS_LIGHTSAIL_API GetInstanceAccessDetailsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetInstanceAccessDetailsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>An array of key-value pairs containing information about a get instance
      * access request.</p>
      */
-    inline const InstanceAccessDetails& GetAccessDetails() const{ return m_accessDetails; }
-    inline void SetAccessDetails(const InstanceAccessDetails& value) { m_accessDetails = value; }
-    inline void SetAccessDetails(InstanceAccessDetails&& value) { m_accessDetails = std::move(value); }
-    inline GetInstanceAccessDetailsResult& WithAccessDetails(const InstanceAccessDetails& value) { SetAccessDetails(value); return *this;}
-    inline GetInstanceAccessDetailsResult& WithAccessDetails(InstanceAccessDetails&& value) { SetAccessDetails(std::move(value)); return *this;}
+    inline const InstanceAccessDetails& GetAccessDetails() const { return m_accessDetails; }
+    template<typename AccessDetailsT = InstanceAccessDetails>
+    void SetAccessDetails(AccessDetailsT&& value) { m_accessDetailsHasBeenSet = true; m_accessDetails = std::forward<AccessDetailsT>(value); }
+    template<typename AccessDetailsT = InstanceAccessDetails>
+    GetInstanceAccessDetailsResult& WithAccessDetails(AccessDetailsT&& value) { SetAccessDetails(std::forward<AccessDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetInstanceAccessDetailsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetInstanceAccessDetailsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetInstanceAccessDetailsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetInstanceAccessDetailsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     InstanceAccessDetails m_accessDetails;
+    bool m_accessDetailsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

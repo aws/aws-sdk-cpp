@@ -28,35 +28,35 @@ namespace Model
   class RestoreTableFromRecoveryPointResult
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API RestoreTableFromRecoveryPointResult();
+    AWS_REDSHIFTSERVERLESS_API RestoreTableFromRecoveryPointResult() = default;
     AWS_REDSHIFTSERVERLESS_API RestoreTableFromRecoveryPointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REDSHIFTSERVERLESS_API RestoreTableFromRecoveryPointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const TableRestoreStatus& GetTableRestoreStatus() const{ return m_tableRestoreStatus; }
-    inline void SetTableRestoreStatus(const TableRestoreStatus& value) { m_tableRestoreStatus = value; }
-    inline void SetTableRestoreStatus(TableRestoreStatus&& value) { m_tableRestoreStatus = std::move(value); }
-    inline RestoreTableFromRecoveryPointResult& WithTableRestoreStatus(const TableRestoreStatus& value) { SetTableRestoreStatus(value); return *this;}
-    inline RestoreTableFromRecoveryPointResult& WithTableRestoreStatus(TableRestoreStatus&& value) { SetTableRestoreStatus(std::move(value)); return *this;}
+    inline const TableRestoreStatus& GetTableRestoreStatus() const { return m_tableRestoreStatus; }
+    template<typename TableRestoreStatusT = TableRestoreStatus>
+    void SetTableRestoreStatus(TableRestoreStatusT&& value) { m_tableRestoreStatusHasBeenSet = true; m_tableRestoreStatus = std::forward<TableRestoreStatusT>(value); }
+    template<typename TableRestoreStatusT = TableRestoreStatus>
+    RestoreTableFromRecoveryPointResult& WithTableRestoreStatus(TableRestoreStatusT&& value) { SetTableRestoreStatus(std::forward<TableRestoreStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RestoreTableFromRecoveryPointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RestoreTableFromRecoveryPointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RestoreTableFromRecoveryPointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RestoreTableFromRecoveryPointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TableRestoreStatus m_tableRestoreStatus;
+    bool m_tableRestoreStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,20 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateThreatIntelSetRequest::CreateThreatIntelSetRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_format(ThreatIntelSetFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_activate(false),
-    m_activateHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateThreatIntelSetRequest::SerializePayload() const
 {
   JsonValue payload;

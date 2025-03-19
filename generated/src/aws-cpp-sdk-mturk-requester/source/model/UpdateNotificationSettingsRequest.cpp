@@ -12,14 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateNotificationSettingsRequest::UpdateNotificationSettingsRequest() : 
-    m_hITTypeIdHasBeenSet(false),
-    m_notificationHasBeenSet(false),
-    m_active(false),
-    m_activeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateNotificationSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

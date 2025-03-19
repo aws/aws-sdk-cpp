@@ -18,16 +18,7 @@ namespace LookoutEquipment
 namespace Model
 {
 
-LabelGroupSummary::LabelGroupSummary() : 
-    m_labelGroupNameHasBeenSet(false),
-    m_labelGroupArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 LabelGroupSummary::LabelGroupSummary(JsonView jsonValue)
-  : LabelGroupSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ LabelGroupSummary& LabelGroupSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LabelGroupName"))
   {
     m_labelGroupName = jsonValue.GetString("LabelGroupName");
-
     m_labelGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LabelGroupArn"))
   {
     m_labelGroupArn = jsonValue.GetString("LabelGroupArn");
-
     m_labelGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

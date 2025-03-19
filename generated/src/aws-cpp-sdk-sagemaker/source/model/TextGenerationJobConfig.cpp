@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TextGenerationJobConfig::TextGenerationJobConfig() : 
-    m_completionCriteriaHasBeenSet(false),
-    m_baseModelNameHasBeenSet(false),
-    m_textGenerationHyperParametersHasBeenSet(false),
-    m_modelAccessConfigHasBeenSet(false)
-{
-}
-
 TextGenerationJobConfig::TextGenerationJobConfig(JsonView jsonValue)
-  : TextGenerationJobConfig()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TextGenerationJobConfig& TextGenerationJobConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CompletionCriteria"))
   {
     m_completionCriteria = jsonValue.GetObject("CompletionCriteria");
-
     m_completionCriteriaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BaseModelName"))
   {
     m_baseModelName = jsonValue.GetString("BaseModelName");
-
     m_baseModelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextGenerationHyperParameters"))
   {
     Aws::Map<Aws::String, JsonView> textGenerationHyperParametersJsonMap = jsonValue.GetObject("TextGenerationHyperParameters").GetAllObjects();
@@ -57,14 +44,11 @@ TextGenerationJobConfig& TextGenerationJobConfig::operator =(JsonView jsonValue)
     }
     m_textGenerationHyperParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelAccessConfig"))
   {
     m_modelAccessConfig = jsonValue.GetObject("ModelAccessConfig");
-
     m_modelAccessConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

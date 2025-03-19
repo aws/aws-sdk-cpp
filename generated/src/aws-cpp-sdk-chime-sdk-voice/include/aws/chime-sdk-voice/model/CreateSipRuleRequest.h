@@ -24,7 +24,7 @@ namespace Model
   class CreateSipRuleRequest : public ChimeSDKVoiceRequest
   {
   public:
-    AWS_CHIMESDKVOICE_API CreateSipRuleRequest();
+    AWS_CHIMESDKVOICE_API CreateSipRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The name of the SIP rule.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateSipRuleRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateSipRuleRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateSipRuleRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateSipRuleRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,12 +52,10 @@ namespace Model
      * <p>The type of trigger assigned to the SIP rule in <code>TriggerValue</code>,
      * currently <code>RequestUriHostname</code> or <code>ToPhoneNumber</code>.</p>
      */
-    inline const SipRuleTriggerType& GetTriggerType() const{ return m_triggerType; }
+    inline SipRuleTriggerType GetTriggerType() const { return m_triggerType; }
     inline bool TriggerTypeHasBeenSet() const { return m_triggerTypeHasBeenSet; }
-    inline void SetTriggerType(const SipRuleTriggerType& value) { m_triggerTypeHasBeenSet = true; m_triggerType = value; }
-    inline void SetTriggerType(SipRuleTriggerType&& value) { m_triggerTypeHasBeenSet = true; m_triggerType = std::move(value); }
-    inline CreateSipRuleRequest& WithTriggerType(const SipRuleTriggerType& value) { SetTriggerType(value); return *this;}
-    inline CreateSipRuleRequest& WithTriggerType(SipRuleTriggerType&& value) { SetTriggerType(std::move(value)); return *this;}
+    inline void SetTriggerType(SipRuleTriggerType value) { m_triggerTypeHasBeenSet = true; m_triggerType = value; }
+    inline CreateSipRuleRequest& WithTriggerType(SipRuleTriggerType value) { SetTriggerType(value); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * matches the <code>RequestUriHostname</code>, or if the <code>To</code> header in
      * the incoming SIP request matches the <code>ToPhoneNumber</code> value.</p>
      */
-    inline const Aws::String& GetTriggerValue() const{ return m_triggerValue; }
+    inline const Aws::String& GetTriggerValue() const { return m_triggerValue; }
     inline bool TriggerValueHasBeenSet() const { return m_triggerValueHasBeenSet; }
-    inline void SetTriggerValue(const Aws::String& value) { m_triggerValueHasBeenSet = true; m_triggerValue = value; }
-    inline void SetTriggerValue(Aws::String&& value) { m_triggerValueHasBeenSet = true; m_triggerValue = std::move(value); }
-    inline void SetTriggerValue(const char* value) { m_triggerValueHasBeenSet = true; m_triggerValue.assign(value); }
-    inline CreateSipRuleRequest& WithTriggerValue(const Aws::String& value) { SetTriggerValue(value); return *this;}
-    inline CreateSipRuleRequest& WithTriggerValue(Aws::String&& value) { SetTriggerValue(std::move(value)); return *this;}
-    inline CreateSipRuleRequest& WithTriggerValue(const char* value) { SetTriggerValue(value); return *this;}
+    template<typename TriggerValueT = Aws::String>
+    void SetTriggerValue(TriggerValueT&& value) { m_triggerValueHasBeenSet = true; m_triggerValue = std::forward<TriggerValueT>(value); }
+    template<typename TriggerValueT = Aws::String>
+    CreateSipRuleRequest& WithTriggerValue(TriggerValueT&& value) { SetTriggerValue(std::forward<TriggerValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,7 +81,7 @@ namespace Model
      * <p>Disables or enables a SIP rule. You must disable SIP rules before you can
      * delete them.</p>
      */
-    inline bool GetDisabled() const{ return m_disabled; }
+    inline bool GetDisabled() const { return m_disabled; }
     inline bool DisabledHasBeenSet() const { return m_disabledHasBeenSet; }
     inline void SetDisabled(bool value) { m_disabledHasBeenSet = true; m_disabled = value; }
     inline CreateSipRuleRequest& WithDisabled(bool value) { SetDisabled(value); return *this;}
@@ -98,27 +92,27 @@ namespace Model
      * <p>List of SIP media applications, with priority and AWS Region. Only one SIP
      * application per AWS Region can be used.</p>
      */
-    inline const Aws::Vector<SipRuleTargetApplication>& GetTargetApplications() const{ return m_targetApplications; }
+    inline const Aws::Vector<SipRuleTargetApplication>& GetTargetApplications() const { return m_targetApplications; }
     inline bool TargetApplicationsHasBeenSet() const { return m_targetApplicationsHasBeenSet; }
-    inline void SetTargetApplications(const Aws::Vector<SipRuleTargetApplication>& value) { m_targetApplicationsHasBeenSet = true; m_targetApplications = value; }
-    inline void SetTargetApplications(Aws::Vector<SipRuleTargetApplication>&& value) { m_targetApplicationsHasBeenSet = true; m_targetApplications = std::move(value); }
-    inline CreateSipRuleRequest& WithTargetApplications(const Aws::Vector<SipRuleTargetApplication>& value) { SetTargetApplications(value); return *this;}
-    inline CreateSipRuleRequest& WithTargetApplications(Aws::Vector<SipRuleTargetApplication>&& value) { SetTargetApplications(std::move(value)); return *this;}
-    inline CreateSipRuleRequest& AddTargetApplications(const SipRuleTargetApplication& value) { m_targetApplicationsHasBeenSet = true; m_targetApplications.push_back(value); return *this; }
-    inline CreateSipRuleRequest& AddTargetApplications(SipRuleTargetApplication&& value) { m_targetApplicationsHasBeenSet = true; m_targetApplications.push_back(std::move(value)); return *this; }
+    template<typename TargetApplicationsT = Aws::Vector<SipRuleTargetApplication>>
+    void SetTargetApplications(TargetApplicationsT&& value) { m_targetApplicationsHasBeenSet = true; m_targetApplications = std::forward<TargetApplicationsT>(value); }
+    template<typename TargetApplicationsT = Aws::Vector<SipRuleTargetApplication>>
+    CreateSipRuleRequest& WithTargetApplications(TargetApplicationsT&& value) { SetTargetApplications(std::forward<TargetApplicationsT>(value)); return *this;}
+    template<typename TargetApplicationsT = SipRuleTargetApplication>
+    CreateSipRuleRequest& AddTargetApplications(TargetApplicationsT&& value) { m_targetApplicationsHasBeenSet = true; m_targetApplications.emplace_back(std::forward<TargetApplicationsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    SipRuleTriggerType m_triggerType;
+    SipRuleTriggerType m_triggerType{SipRuleTriggerType::NOT_SET};
     bool m_triggerTypeHasBeenSet = false;
 
     Aws::String m_triggerValue;
     bool m_triggerValueHasBeenSet = false;
 
-    bool m_disabled;
+    bool m_disabled{false};
     bool m_disabledHasBeenSet = false;
 
     Aws::Vector<SipRuleTargetApplication> m_targetApplications;

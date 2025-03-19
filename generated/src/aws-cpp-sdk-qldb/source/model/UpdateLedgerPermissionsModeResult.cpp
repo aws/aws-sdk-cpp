@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateLedgerPermissionsModeResult::UpdateLedgerPermissionsModeResult() : 
-    m_permissionsMode(PermissionsMode::NOT_SET)
-{
-}
-
 UpdateLedgerPermissionsModeResult::UpdateLedgerPermissionsModeResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateLedgerPermissionsModeResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ UpdateLedgerPermissionsModeResult& UpdateLedgerPermissionsModeResult::operator =
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PermissionsMode"))
   {
     m_permissionsMode = PermissionsModeMapper::GetPermissionsModeForName(jsonValue.GetString("PermissionsMode"));
-
+    m_permissionsModeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

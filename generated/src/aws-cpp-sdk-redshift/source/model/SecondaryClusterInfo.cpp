@@ -20,14 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-SecondaryClusterInfo::SecondaryClusterInfo() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_clusterNodesHasBeenSet(false)
-{
-}
-
 SecondaryClusterInfo::SecondaryClusterInfo(const XmlNode& xmlNode)
-  : SecondaryClusterInfo()
 {
   *this = xmlNode;
 }
@@ -48,6 +41,7 @@ SecondaryClusterInfo& SecondaryClusterInfo::operator =(const XmlNode& xmlNode)
     if(!clusterNodesNode.IsNull())
     {
       XmlNode clusterNodesMember = clusterNodesNode.FirstChild("member");
+      m_clusterNodesHasBeenSet = !clusterNodesMember.IsNull();
       while(!clusterNodesMember.IsNull())
       {
         m_clusterNodes.push_back(clusterNodesMember);

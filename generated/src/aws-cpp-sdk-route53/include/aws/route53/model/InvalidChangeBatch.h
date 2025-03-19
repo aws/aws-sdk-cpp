@@ -33,7 +33,7 @@ namespace Model
   class InvalidChangeBatch
   {
   public:
-    AWS_ROUTE53_API InvalidChangeBatch();
+    AWS_ROUTE53_API InvalidChangeBatch() = default;
     AWS_ROUTE53_API InvalidChangeBatch(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ROUTE53_API InvalidChangeBatch& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,27 +44,24 @@ namespace Model
     /**
      * <p/>
      */
-    inline const Aws::Vector<Aws::String>& GetMessages() const{ return m_messages; }
+    inline const Aws::Vector<Aws::String>& GetMessages() const { return m_messages; }
     inline bool MessagesHasBeenSet() const { return m_messagesHasBeenSet; }
-    inline void SetMessages(const Aws::Vector<Aws::String>& value) { m_messagesHasBeenSet = true; m_messages = value; }
-    inline void SetMessages(Aws::Vector<Aws::String>&& value) { m_messagesHasBeenSet = true; m_messages = std::move(value); }
-    inline InvalidChangeBatch& WithMessages(const Aws::Vector<Aws::String>& value) { SetMessages(value); return *this;}
-    inline InvalidChangeBatch& WithMessages(Aws::Vector<Aws::String>&& value) { SetMessages(std::move(value)); return *this;}
-    inline InvalidChangeBatch& AddMessages(const Aws::String& value) { m_messagesHasBeenSet = true; m_messages.push_back(value); return *this; }
-    inline InvalidChangeBatch& AddMessages(Aws::String&& value) { m_messagesHasBeenSet = true; m_messages.push_back(std::move(value)); return *this; }
-    inline InvalidChangeBatch& AddMessages(const char* value) { m_messagesHasBeenSet = true; m_messages.push_back(value); return *this; }
+    template<typename MessagesT = Aws::Vector<Aws::String>>
+    void SetMessages(MessagesT&& value) { m_messagesHasBeenSet = true; m_messages = std::forward<MessagesT>(value); }
+    template<typename MessagesT = Aws::Vector<Aws::String>>
+    InvalidChangeBatch& WithMessages(MessagesT&& value) { SetMessages(std::forward<MessagesT>(value)); return *this;}
+    template<typename MessagesT = Aws::String>
+    InvalidChangeBatch& AddMessages(MessagesT&& value) { m_messagesHasBeenSet = true; m_messages.emplace_back(std::forward<MessagesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline InvalidChangeBatch& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline InvalidChangeBatch& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline InvalidChangeBatch& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    InvalidChangeBatch& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

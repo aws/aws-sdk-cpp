@@ -12,11 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-NotifyWhenUploadedRequest::NotifyWhenUploadedRequest() : 
-    m_fileShareARNHasBeenSet(false)
-{
-}
-
 Aws::String NotifyWhenUploadedRequest::SerializePayload() const
 {
   JsonValue payload;

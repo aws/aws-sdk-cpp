@@ -12,11 +12,6 @@ using namespace Aws::PcaConnectorScep::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteChallengeRequest::DeleteChallengeRequest() : 
-    m_challengeArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteChallengeRequest::SerializePayload() const
 {
   return {};

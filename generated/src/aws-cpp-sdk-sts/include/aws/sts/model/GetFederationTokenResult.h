@@ -36,7 +36,7 @@ namespace Model
   class GetFederationTokenResult
   {
   public:
-    AWS_STS_API GetFederationTokenResult();
+    AWS_STS_API GetFederationTokenResult() = default;
     AWS_STS_API GetFederationTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_STS_API GetFederationTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -48,11 +48,11 @@ namespace Model
      * security token that STS API operations return is not fixed. We strongly
      * recommend that you make no assumptions about the maximum size.</p> 
      */
-    inline const Credentials& GetCredentials() const{ return m_credentials; }
-    inline void SetCredentials(const Credentials& value) { m_credentials = value; }
-    inline void SetCredentials(Credentials&& value) { m_credentials = std::move(value); }
-    inline GetFederationTokenResult& WithCredentials(const Credentials& value) { SetCredentials(value); return *this;}
-    inline GetFederationTokenResult& WithCredentials(Credentials&& value) { SetCredentials(std::move(value)); return *this;}
+    inline const Credentials& GetCredentials() const { return m_credentials; }
+    template<typename CredentialsT = Credentials>
+    void SetCredentials(CredentialsT&& value) { m_credentialsHasBeenSet = true; m_credentials = std::forward<CredentialsT>(value); }
+    template<typename CredentialsT = Credentials>
+    GetFederationTokenResult& WithCredentials(CredentialsT&& value) { SetCredentials(std::forward<CredentialsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,11 +62,11 @@ namespace Model
      * <code>123456789012:Bob</code>). You can use the federated user's ARN in your
      * resource-based policies, such as an Amazon S3 bucket policy. </p>
      */
-    inline const FederatedUser& GetFederatedUser() const{ return m_federatedUser; }
-    inline void SetFederatedUser(const FederatedUser& value) { m_federatedUser = value; }
-    inline void SetFederatedUser(FederatedUser&& value) { m_federatedUser = std::move(value); }
-    inline GetFederationTokenResult& WithFederatedUser(const FederatedUser& value) { SetFederatedUser(value); return *this;}
-    inline GetFederationTokenResult& WithFederatedUser(FederatedUser&& value) { SetFederatedUser(std::move(value)); return *this;}
+    inline const FederatedUser& GetFederatedUser() const { return m_federatedUser; }
+    template<typename FederatedUserT = FederatedUser>
+    void SetFederatedUser(FederatedUserT&& value) { m_federatedUserHasBeenSet = true; m_federatedUser = std::forward<FederatedUserT>(value); }
+    template<typename FederatedUserT = FederatedUser>
+    GetFederationTokenResult& WithFederatedUser(FederatedUserT&& value) { SetFederatedUser(std::forward<FederatedUserT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,28 +76,32 @@ namespace Model
      * size is greater than 100 percent, which means the policies and tags exceeded the
      * allowed space.</p>
      */
-    inline int GetPackedPolicySize() const{ return m_packedPolicySize; }
-    inline void SetPackedPolicySize(int value) { m_packedPolicySize = value; }
+    inline int GetPackedPolicySize() const { return m_packedPolicySize; }
+    inline void SetPackedPolicySize(int value) { m_packedPolicySizeHasBeenSet = true; m_packedPolicySize = value; }
     inline GetFederationTokenResult& WithPackedPolicySize(int value) { SetPackedPolicySize(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetFederationTokenResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetFederationTokenResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetFederationTokenResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Credentials m_credentials;
+    bool m_credentialsHasBeenSet = false;
 
     FederatedUser m_federatedUser;
+    bool m_federatedUserHasBeenSet = false;
 
-    int m_packedPolicySize;
+    int m_packedPolicySize{0};
+    bool m_packedPolicySizeHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

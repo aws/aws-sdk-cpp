@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2NetworkInterfaceSecurityGroup::AwsEc2NetworkInterfaceSecurityGroup() : 
-    m_groupNameHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
-{
-}
-
 AwsEc2NetworkInterfaceSecurityGroup::AwsEc2NetworkInterfaceSecurityGroup(JsonView jsonValue)
-  : AwsEc2NetworkInterfaceSecurityGroup()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsEc2NetworkInterfaceSecurityGroup& AwsEc2NetworkInterfaceSecurityGroup::operat
   if(jsonValue.ValueExists("GroupName"))
   {
     m_groupName = jsonValue.GetString("GroupName");
-
     m_groupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupId"))
   {
     m_groupId = jsonValue.GetString("GroupId");
-
     m_groupIdHasBeenSet = true;
   }
-
   return *this;
 }
 

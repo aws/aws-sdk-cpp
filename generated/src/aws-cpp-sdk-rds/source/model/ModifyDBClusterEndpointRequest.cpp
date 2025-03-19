@@ -10,14 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-ModifyDBClusterEndpointRequest::ModifyDBClusterEndpointRequest() : 
-    m_dBClusterEndpointIdentifierHasBeenSet(false),
-    m_endpointTypeHasBeenSet(false),
-    m_staticMembersHasBeenSet(false),
-    m_excludedMembersHasBeenSet(false)
-{
-}
-
 Aws::String ModifyDBClusterEndpointRequest::SerializePayload() const
 {
   Aws::StringStream ss;

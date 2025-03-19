@@ -18,13 +18,7 @@ namespace SSOAdmin
 namespace Model
 {
 
-ResourceServerConfig::ResourceServerConfig() : 
-    m_scopesHasBeenSet(false)
-{
-}
-
 ResourceServerConfig::ResourceServerConfig(JsonView jsonValue)
-  : ResourceServerConfig()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ResourceServerConfig& ResourceServerConfig::operator =(JsonView jsonValue)
     }
     m_scopesHasBeenSet = true;
   }
-
   return *this;
 }
 

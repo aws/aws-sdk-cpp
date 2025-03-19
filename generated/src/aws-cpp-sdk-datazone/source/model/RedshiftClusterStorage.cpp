@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-RedshiftClusterStorage::RedshiftClusterStorage() : 
-    m_clusterNameHasBeenSet(false)
-{
-}
-
 RedshiftClusterStorage::RedshiftClusterStorage(JsonView jsonValue)
-  : RedshiftClusterStorage()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RedshiftClusterStorage& RedshiftClusterStorage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("clusterName"))
   {
     m_clusterName = jsonValue.GetString("clusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   return *this;
 }
 

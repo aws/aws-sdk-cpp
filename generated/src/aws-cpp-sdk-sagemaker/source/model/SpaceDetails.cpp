@@ -18,22 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-SpaceDetails::SpaceDetails() : 
-    m_domainIdHasBeenSet(false),
-    m_spaceNameHasBeenSet(false),
-    m_status(SpaceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_spaceSettingsSummaryHasBeenSet(false),
-    m_spaceSharingSettingsSummaryHasBeenSet(false),
-    m_ownershipSettingsSummaryHasBeenSet(false),
-    m_spaceDisplayNameHasBeenSet(false)
-{
-}
-
 SpaceDetails::SpaceDetails(JsonView jsonValue)
-  : SpaceDetails()
 {
   *this = jsonValue;
 }
@@ -43,66 +28,48 @@ SpaceDetails& SpaceDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DomainId"))
   {
     m_domainId = jsonValue.GetString("DomainId");
-
     m_domainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpaceName"))
   {
     m_spaceName = jsonValue.GetString("SpaceName");
-
     m_spaceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = SpaceStatusMapper::GetSpaceStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpaceSettingsSummary"))
   {
     m_spaceSettingsSummary = jsonValue.GetObject("SpaceSettingsSummary");
-
     m_spaceSettingsSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpaceSharingSettingsSummary"))
   {
     m_spaceSharingSettingsSummary = jsonValue.GetObject("SpaceSharingSettingsSummary");
-
     m_spaceSharingSettingsSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnershipSettingsSummary"))
   {
     m_ownershipSettingsSummary = jsonValue.GetObject("OwnershipSettingsSummary");
-
     m_ownershipSettingsSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpaceDisplayName"))
   {
     m_spaceDisplayName = jsonValue.GetString("SpaceDisplayName");
-
     m_spaceDisplayNameHasBeenSet = true;
   }
-
   return *this;
 }
 

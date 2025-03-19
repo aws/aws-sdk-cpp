@@ -24,7 +24,7 @@ namespace Model
   class DescribeNodeRequest : public MediaLiveRequest
   {
   public:
-    AWS_MEDIALIVE_API DescribeNodeRequest();
+    AWS_MEDIALIVE_API DescribeNodeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
     /**
      * The ID of the cluster
      */
-    inline const Aws::String& GetClusterId() const{ return m_clusterId; }
+    inline const Aws::String& GetClusterId() const { return m_clusterId; }
     inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
-    inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
-    inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
-    inline DescribeNodeRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
-    inline DescribeNodeRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
-    inline DescribeNodeRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+    template<typename ClusterIdT = Aws::String>
+    void SetClusterId(ClusterIdT&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::forward<ClusterIdT>(value); }
+    template<typename ClusterIdT = Aws::String>
+    DescribeNodeRequest& WithClusterId(ClusterIdT&& value) { SetClusterId(std::forward<ClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The ID of the node.
      */
-    inline const Aws::String& GetNodeId() const{ return m_nodeId; }
+    inline const Aws::String& GetNodeId() const { return m_nodeId; }
     inline bool NodeIdHasBeenSet() const { return m_nodeIdHasBeenSet; }
-    inline void SetNodeId(const Aws::String& value) { m_nodeIdHasBeenSet = true; m_nodeId = value; }
-    inline void SetNodeId(Aws::String&& value) { m_nodeIdHasBeenSet = true; m_nodeId = std::move(value); }
-    inline void SetNodeId(const char* value) { m_nodeIdHasBeenSet = true; m_nodeId.assign(value); }
-    inline DescribeNodeRequest& WithNodeId(const Aws::String& value) { SetNodeId(value); return *this;}
-    inline DescribeNodeRequest& WithNodeId(Aws::String&& value) { SetNodeId(std::move(value)); return *this;}
-    inline DescribeNodeRequest& WithNodeId(const char* value) { SetNodeId(value); return *this;}
+    template<typename NodeIdT = Aws::String>
+    void SetNodeId(NodeIdT&& value) { m_nodeIdHasBeenSet = true; m_nodeId = std::forward<NodeIdT>(value); }
+    template<typename NodeIdT = Aws::String>
+    DescribeNodeRequest& WithNodeId(NodeIdT&& value) { SetNodeId(std::forward<NodeIdT>(value)); return *this;}
     ///@}
   private:
 

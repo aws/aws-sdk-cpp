@@ -36,7 +36,7 @@ namespace Model
   class DatasetSummary
   {
   public:
-    AWS_IOTANALYTICS_API DatasetSummary();
+    AWS_IOTANALYTICS_API DatasetSummary() = default;
     AWS_IOTANALYTICS_API DatasetSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API DatasetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,50 +46,46 @@ namespace Model
     /**
      * <p>The name of the dataset.</p>
      */
-    inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
+    inline const Aws::String& GetDatasetName() const { return m_datasetName; }
     inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
-    inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
-    inline void SetDatasetName(Aws::String&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::move(value); }
-    inline void SetDatasetName(const char* value) { m_datasetNameHasBeenSet = true; m_datasetName.assign(value); }
-    inline DatasetSummary& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
-    inline DatasetSummary& WithDatasetName(Aws::String&& value) { SetDatasetName(std::move(value)); return *this;}
-    inline DatasetSummary& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
+    template<typename DatasetNameT = Aws::String>
+    void SetDatasetName(DatasetNameT&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::forward<DatasetNameT>(value); }
+    template<typename DatasetNameT = Aws::String>
+    DatasetSummary& WithDatasetName(DatasetNameT&& value) { SetDatasetName(std::forward<DatasetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the dataset.</p>
      */
-    inline const DatasetStatus& GetStatus() const{ return m_status; }
+    inline DatasetStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const DatasetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(DatasetStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline DatasetSummary& WithStatus(const DatasetStatus& value) { SetStatus(value); return *this;}
-    inline DatasetSummary& WithStatus(DatasetStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(DatasetStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DatasetSummary& WithStatus(DatasetStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time the dataset was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline DatasetSummary& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DatasetSummary& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DatasetSummary& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last time the dataset was updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdateTime() const { return m_lastUpdateTime; }
     inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
-    inline void SetLastUpdateTime(const Aws::Utils::DateTime& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = value; }
-    inline void SetLastUpdateTime(Aws::Utils::DateTime&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::move(value); }
-    inline DatasetSummary& WithLastUpdateTime(const Aws::Utils::DateTime& value) { SetLastUpdateTime(value); return *this;}
-    inline DatasetSummary& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdateTime(LastUpdateTimeT&& value) { m_lastUpdateTimeHasBeenSet = true; m_lastUpdateTime = std::forward<LastUpdateTimeT>(value); }
+    template<typename LastUpdateTimeT = Aws::Utils::DateTime>
+    DatasetSummary& WithLastUpdateTime(LastUpdateTimeT&& value) { SetLastUpdateTime(std::forward<LastUpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,41 +95,41 @@ namespace Model
      * triggers can be empty or contain up to five <code>DataSetTrigger</code>
      * objects</p>
      */
-    inline const Aws::Vector<DatasetTrigger>& GetTriggers() const{ return m_triggers; }
+    inline const Aws::Vector<DatasetTrigger>& GetTriggers() const { return m_triggers; }
     inline bool TriggersHasBeenSet() const { return m_triggersHasBeenSet; }
-    inline void SetTriggers(const Aws::Vector<DatasetTrigger>& value) { m_triggersHasBeenSet = true; m_triggers = value; }
-    inline void SetTriggers(Aws::Vector<DatasetTrigger>&& value) { m_triggersHasBeenSet = true; m_triggers = std::move(value); }
-    inline DatasetSummary& WithTriggers(const Aws::Vector<DatasetTrigger>& value) { SetTriggers(value); return *this;}
-    inline DatasetSummary& WithTriggers(Aws::Vector<DatasetTrigger>&& value) { SetTriggers(std::move(value)); return *this;}
-    inline DatasetSummary& AddTriggers(const DatasetTrigger& value) { m_triggersHasBeenSet = true; m_triggers.push_back(value); return *this; }
-    inline DatasetSummary& AddTriggers(DatasetTrigger&& value) { m_triggersHasBeenSet = true; m_triggers.push_back(std::move(value)); return *this; }
+    template<typename TriggersT = Aws::Vector<DatasetTrigger>>
+    void SetTriggers(TriggersT&& value) { m_triggersHasBeenSet = true; m_triggers = std::forward<TriggersT>(value); }
+    template<typename TriggersT = Aws::Vector<DatasetTrigger>>
+    DatasetSummary& WithTriggers(TriggersT&& value) { SetTriggers(std::forward<TriggersT>(value)); return *this;}
+    template<typename TriggersT = DatasetTrigger>
+    DatasetSummary& AddTriggers(TriggersT&& value) { m_triggersHasBeenSet = true; m_triggers.emplace_back(std::forward<TriggersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of <code>DataActionSummary</code> objects.</p>
      */
-    inline const Aws::Vector<DatasetActionSummary>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<DatasetActionSummary>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<DatasetActionSummary>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<DatasetActionSummary>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline DatasetSummary& WithActions(const Aws::Vector<DatasetActionSummary>& value) { SetActions(value); return *this;}
-    inline DatasetSummary& WithActions(Aws::Vector<DatasetActionSummary>&& value) { SetActions(std::move(value)); return *this;}
-    inline DatasetSummary& AddActions(const DatasetActionSummary& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline DatasetSummary& AddActions(DatasetActionSummary&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+    template<typename ActionsT = Aws::Vector<DatasetActionSummary>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<DatasetActionSummary>>
+    DatasetSummary& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = DatasetActionSummary>
+    DatasetSummary& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_datasetName;
     bool m_datasetNameHasBeenSet = false;
 
-    DatasetStatus m_status;
+    DatasetStatus m_status{DatasetStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdateTime;
+    Aws::Utils::DateTime m_lastUpdateTime{};
     bool m_lastUpdateTimeHasBeenSet = false;
 
     Aws::Vector<DatasetTrigger> m_triggers;

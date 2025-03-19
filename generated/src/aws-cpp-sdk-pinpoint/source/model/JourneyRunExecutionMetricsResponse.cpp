@@ -18,17 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-JourneyRunExecutionMetricsResponse::JourneyRunExecutionMetricsResponse() : 
-    m_applicationIdHasBeenSet(false),
-    m_journeyIdHasBeenSet(false),
-    m_lastEvaluatedTimeHasBeenSet(false),
-    m_metricsHasBeenSet(false),
-    m_runIdHasBeenSet(false)
-{
-}
-
 JourneyRunExecutionMetricsResponse::JourneyRunExecutionMetricsResponse(JsonView jsonValue)
-  : JourneyRunExecutionMetricsResponse()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ JourneyRunExecutionMetricsResponse& JourneyRunExecutionMetricsResponse::operator
   if(jsonValue.ValueExists("ApplicationId"))
   {
     m_applicationId = jsonValue.GetString("ApplicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JourneyId"))
   {
     m_journeyId = jsonValue.GetString("JourneyId");
-
     m_journeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastEvaluatedTime"))
   {
     m_lastEvaluatedTime = jsonValue.GetString("LastEvaluatedTime");
-
     m_lastEvaluatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Metrics"))
   {
     Aws::Map<Aws::String, JsonView> metricsJsonMap = jsonValue.GetObject("Metrics").GetAllObjects();
@@ -65,14 +49,11 @@ JourneyRunExecutionMetricsResponse& JourneyRunExecutionMetricsResponse::operator
     }
     m_metricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RunId"))
   {
     m_runId = jsonValue.GetString("RunId");
-
     m_runIdHasBeenSet = true;
   }
-
   return *this;
 }
 

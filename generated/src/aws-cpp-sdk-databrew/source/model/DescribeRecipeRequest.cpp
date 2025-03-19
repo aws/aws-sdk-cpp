@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeRecipeRequest::DescribeRecipeRequest() : 
-    m_nameHasBeenSet(false),
-    m_recipeVersionHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRecipeRequest::SerializePayload() const
 {
   return {};

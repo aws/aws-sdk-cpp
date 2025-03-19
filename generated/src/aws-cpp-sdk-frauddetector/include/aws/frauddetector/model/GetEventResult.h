@@ -28,7 +28,7 @@ namespace Model
   class GetEventResult
   {
   public:
-    AWS_FRAUDDETECTOR_API GetEventResult();
+    AWS_FRAUDDETECTOR_API GetEventResult() = default;
     AWS_FRAUDDETECTOR_API GetEventResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FRAUDDETECTOR_API GetEventResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The details of the event.</p>
      */
-    inline const Event& GetEvent() const{ return m_event; }
-    inline void SetEvent(const Event& value) { m_event = value; }
-    inline void SetEvent(Event&& value) { m_event = std::move(value); }
-    inline GetEventResult& WithEvent(const Event& value) { SetEvent(value); return *this;}
-    inline GetEventResult& WithEvent(Event&& value) { SetEvent(std::move(value)); return *this;}
+    inline const Event& GetEvent() const { return m_event; }
+    template<typename EventT = Event>
+    void SetEvent(EventT&& value) { m_eventHasBeenSet = true; m_event = std::forward<EventT>(value); }
+    template<typename EventT = Event>
+    GetEventResult& WithEvent(EventT&& value) { SetEvent(std::forward<EventT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetEventResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetEventResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetEventResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetEventResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Event m_event;
+    bool m_eventHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

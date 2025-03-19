@@ -34,7 +34,7 @@ namespace Model
   class PublicAccessBlockConfiguration
   {
   public:
-    AWS_S3CONTROL_API PublicAccessBlockConfiguration();
+    AWS_S3CONTROL_API PublicAccessBlockConfiguration() = default;
     AWS_S3CONTROL_API PublicAccessBlockConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API PublicAccessBlockConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,7 +52,7 @@ namespace Model
      * </ul> <p>Enabling this setting doesn't affect existing policies or ACLs.</p>
      * <p>This property is not supported for Amazon S3 on Outposts.</p>
      */
-    inline bool GetBlockPublicAcls() const{ return m_blockPublicAcls; }
+    inline bool GetBlockPublicAcls() const { return m_blockPublicAcls; }
     inline bool BlockPublicAclsHasBeenSet() const { return m_blockPublicAclsHasBeenSet; }
     inline void SetBlockPublicAcls(bool value) { m_blockPublicAclsHasBeenSet = true; m_blockPublicAcls = value; }
     inline PublicAccessBlockConfiguration& WithBlockPublicAcls(bool value) { SetBlockPublicAcls(value); return *this;}
@@ -67,7 +67,7 @@ namespace Model
      * ACLs and doesn't prevent new public ACLs from being set.</p> <p>This property is
      * not supported for Amazon S3 on Outposts.</p>
      */
-    inline bool GetIgnorePublicAcls() const{ return m_ignorePublicAcls; }
+    inline bool GetIgnorePublicAcls() const { return m_ignorePublicAcls; }
     inline bool IgnorePublicAclsHasBeenSet() const { return m_ignorePublicAclsHasBeenSet; }
     inline void SetIgnorePublicAcls(bool value) { m_ignorePublicAclsHasBeenSet = true; m_ignorePublicAcls = value; }
     inline PublicAccessBlockConfiguration& WithIgnorePublicAcls(bool value) { SetIgnorePublicAcls(value); return *this;}
@@ -81,7 +81,7 @@ namespace Model
      * access. </p> <p>Enabling this setting doesn't affect existing bucket
      * policies.</p> <p>This property is not supported for Amazon S3 on Outposts.</p>
      */
-    inline bool GetBlockPublicPolicy() const{ return m_blockPublicPolicy; }
+    inline bool GetBlockPublicPolicy() const { return m_blockPublicPolicy; }
     inline bool BlockPublicPolicyHasBeenSet() const { return m_blockPublicPolicyHasBeenSet; }
     inline void SetBlockPublicPolicy(bool value) { m_blockPublicPolicyHasBeenSet = true; m_blockPublicPolicy = value; }
     inline PublicAccessBlockConfiguration& WithBlockPublicPolicy(bool value) { SetBlockPublicPolicy(value); return *this;}
@@ -98,23 +98,23 @@ namespace Model
      * delegation to specific accounts, is blocked.</p> <p>This property is not
      * supported for Amazon S3 on Outposts.</p>
      */
-    inline bool GetRestrictPublicBuckets() const{ return m_restrictPublicBuckets; }
+    inline bool GetRestrictPublicBuckets() const { return m_restrictPublicBuckets; }
     inline bool RestrictPublicBucketsHasBeenSet() const { return m_restrictPublicBucketsHasBeenSet; }
     inline void SetRestrictPublicBuckets(bool value) { m_restrictPublicBucketsHasBeenSet = true; m_restrictPublicBuckets = value; }
     inline PublicAccessBlockConfiguration& WithRestrictPublicBuckets(bool value) { SetRestrictPublicBuckets(value); return *this;}
     ///@}
   private:
 
-    bool m_blockPublicAcls;
+    bool m_blockPublicAcls{false};
     bool m_blockPublicAclsHasBeenSet = false;
 
-    bool m_ignorePublicAcls;
+    bool m_ignorePublicAcls{false};
     bool m_ignorePublicAclsHasBeenSet = false;
 
-    bool m_blockPublicPolicy;
+    bool m_blockPublicPolicy{false};
     bool m_blockPublicPolicyHasBeenSet = false;
 
-    bool m_restrictPublicBuckets;
+    bool m_restrictPublicBuckets{false};
     bool m_restrictPublicBucketsHasBeenSet = false;
   };
 

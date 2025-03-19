@@ -18,28 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-JobSettings::JobSettings() : 
-    m_adAvailOffset(0),
-    m_adAvailOffsetHasBeenSet(false),
-    m_availBlankingHasBeenSet(false),
-    m_colorConversion3DLUTSettingsHasBeenSet(false),
-    m_esamHasBeenSet(false),
-    m_extendedDataServicesHasBeenSet(false),
-    m_followSource(0),
-    m_followSourceHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_kantarWatermarkHasBeenSet(false),
-    m_motionImageInserterHasBeenSet(false),
-    m_nielsenConfigurationHasBeenSet(false),
-    m_nielsenNonLinearWatermarkHasBeenSet(false),
-    m_outputGroupsHasBeenSet(false),
-    m_timecodeConfigHasBeenSet(false),
-    m_timedMetadataInsertionHasBeenSet(false)
-{
-}
-
 JobSettings::JobSettings(JsonView jsonValue)
-  : JobSettings()
 {
   *this = jsonValue;
 }
@@ -49,17 +28,13 @@ JobSettings& JobSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("adAvailOffset"))
   {
     m_adAvailOffset = jsonValue.GetInteger("adAvailOffset");
-
     m_adAvailOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("availBlanking"))
   {
     m_availBlanking = jsonValue.GetObject("availBlanking");
-
     m_availBlankingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("colorConversion3DLUTSettings"))
   {
     Aws::Utils::Array<JsonView> colorConversion3DLUTSettingsJsonList = jsonValue.GetArray("colorConversion3DLUTSettings");
@@ -69,28 +44,21 @@ JobSettings& JobSettings::operator =(JsonView jsonValue)
     }
     m_colorConversion3DLUTSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("esam"))
   {
     m_esam = jsonValue.GetObject("esam");
-
     m_esamHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("extendedDataServices"))
   {
     m_extendedDataServices = jsonValue.GetObject("extendedDataServices");
-
     m_extendedDataServicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("followSource"))
   {
     m_followSource = jsonValue.GetInteger("followSource");
-
     m_followSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputs"))
   {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("inputs");
@@ -100,35 +68,26 @@ JobSettings& JobSettings::operator =(JsonView jsonValue)
     }
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kantarWatermark"))
   {
     m_kantarWatermark = jsonValue.GetObject("kantarWatermark");
-
     m_kantarWatermarkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("motionImageInserter"))
   {
     m_motionImageInserter = jsonValue.GetObject("motionImageInserter");
-
     m_motionImageInserterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nielsenConfiguration"))
   {
     m_nielsenConfiguration = jsonValue.GetObject("nielsenConfiguration");
-
     m_nielsenConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nielsenNonLinearWatermark"))
   {
     m_nielsenNonLinearWatermark = jsonValue.GetObject("nielsenNonLinearWatermark");
-
     m_nielsenNonLinearWatermarkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputGroups"))
   {
     Aws::Utils::Array<JsonView> outputGroupsJsonList = jsonValue.GetArray("outputGroups");
@@ -138,21 +97,16 @@ JobSettings& JobSettings::operator =(JsonView jsonValue)
     }
     m_outputGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timecodeConfig"))
   {
     m_timecodeConfig = jsonValue.GetObject("timecodeConfig");
-
     m_timecodeConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timedMetadataInsertion"))
   {
     m_timedMetadataInsertion = jsonValue.GetObject("timedMetadataInsertion");
-
     m_timedMetadataInsertionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-Entity::Entity() : 
-    m_keyAttributesHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 Entity::Entity(JsonView jsonValue)
-  : Entity()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ Entity& Entity::operator =(JsonView jsonValue)
     }
     m_keyAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
@@ -51,7 +43,6 @@ Entity& Entity::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -25,7 +25,7 @@ namespace Model
   class DeleteNetworkInterfacePermissionRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DeleteNetworkInterfacePermissionRequest();
+    AWS_EC2_API DeleteNetworkInterfacePermissionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The ID of the network interface permission.</p>
      */
-    inline const Aws::String& GetNetworkInterfacePermissionId() const{ return m_networkInterfacePermissionId; }
+    inline const Aws::String& GetNetworkInterfacePermissionId() const { return m_networkInterfacePermissionId; }
     inline bool NetworkInterfacePermissionIdHasBeenSet() const { return m_networkInterfacePermissionIdHasBeenSet; }
-    inline void SetNetworkInterfacePermissionId(const Aws::String& value) { m_networkInterfacePermissionIdHasBeenSet = true; m_networkInterfacePermissionId = value; }
-    inline void SetNetworkInterfacePermissionId(Aws::String&& value) { m_networkInterfacePermissionIdHasBeenSet = true; m_networkInterfacePermissionId = std::move(value); }
-    inline void SetNetworkInterfacePermissionId(const char* value) { m_networkInterfacePermissionIdHasBeenSet = true; m_networkInterfacePermissionId.assign(value); }
-    inline DeleteNetworkInterfacePermissionRequest& WithNetworkInterfacePermissionId(const Aws::String& value) { SetNetworkInterfacePermissionId(value); return *this;}
-    inline DeleteNetworkInterfacePermissionRequest& WithNetworkInterfacePermissionId(Aws::String&& value) { SetNetworkInterfacePermissionId(std::move(value)); return *this;}
-    inline DeleteNetworkInterfacePermissionRequest& WithNetworkInterfacePermissionId(const char* value) { SetNetworkInterfacePermissionId(value); return *this;}
+    template<typename NetworkInterfacePermissionIdT = Aws::String>
+    void SetNetworkInterfacePermissionId(NetworkInterfacePermissionIdT&& value) { m_networkInterfacePermissionIdHasBeenSet = true; m_networkInterfacePermissionId = std::forward<NetworkInterfacePermissionIdT>(value); }
+    template<typename NetworkInterfacePermissionIdT = Aws::String>
+    DeleteNetworkInterfacePermissionRequest& WithNetworkInterfacePermissionId(NetworkInterfacePermissionIdT&& value) { SetNetworkInterfacePermissionId(std::forward<NetworkInterfacePermissionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * <p>Specify <code>true</code> to remove the permission even if the network
      * interface is attached to an instance.</p>
      */
-    inline bool GetForce() const{ return m_force; }
+    inline bool GetForce() const { return m_force; }
     inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
     inline DeleteNetworkInterfacePermissionRequest& WithForce(bool value) { SetForce(value); return *this;}
@@ -72,7 +70,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DeleteNetworkInterfacePermissionRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -82,10 +80,10 @@ namespace Model
     Aws::String m_networkInterfacePermissionId;
     bool m_networkInterfacePermissionIdHasBeenSet = false;
 
-    bool m_force;
+    bool m_force{false};
     bool m_forceHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

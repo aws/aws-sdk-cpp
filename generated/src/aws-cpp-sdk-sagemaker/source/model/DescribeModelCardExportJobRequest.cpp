@@ -12,11 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeModelCardExportJobRequest::DescribeModelCardExportJobRequest() : 
-    m_modelCardExportJobArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeModelCardExportJobRequest::SerializePayload() const
 {
   JsonValue payload;

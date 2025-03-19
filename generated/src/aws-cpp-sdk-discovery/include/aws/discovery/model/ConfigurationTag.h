@@ -34,7 +34,7 @@ namespace Model
   class ConfigurationTag
   {
   public:
-    AWS_APPLICATIONDISCOVERYSERVICE_API ConfigurationTag();
+    AWS_APPLICATIONDISCOVERYSERVICE_API ConfigurationTag() = default;
     AWS_APPLICATIONDISCOVERYSERVICE_API ConfigurationTag(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONDISCOVERYSERVICE_API ConfigurationTag& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONDISCOVERYSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>A type of IT asset to tag.</p>
      */
-    inline const ConfigurationItemType& GetConfigurationType() const{ return m_configurationType; }
+    inline ConfigurationItemType GetConfigurationType() const { return m_configurationType; }
     inline bool ConfigurationTypeHasBeenSet() const { return m_configurationTypeHasBeenSet; }
-    inline void SetConfigurationType(const ConfigurationItemType& value) { m_configurationTypeHasBeenSet = true; m_configurationType = value; }
-    inline void SetConfigurationType(ConfigurationItemType&& value) { m_configurationTypeHasBeenSet = true; m_configurationType = std::move(value); }
-    inline ConfigurationTag& WithConfigurationType(const ConfigurationItemType& value) { SetConfigurationType(value); return *this;}
-    inline ConfigurationTag& WithConfigurationType(ConfigurationItemType&& value) { SetConfigurationType(std::move(value)); return *this;}
+    inline void SetConfigurationType(ConfigurationItemType value) { m_configurationTypeHasBeenSet = true; m_configurationType = value; }
+    inline ConfigurationTag& WithConfigurationType(ConfigurationItemType value) { SetConfigurationType(value); return *this;}
     ///@}
 
     ///@{
@@ -57,28 +55,24 @@ namespace Model
      * <p>The configuration ID for the item to tag. You can specify a list of keys and
      * values.</p>
      */
-    inline const Aws::String& GetConfigurationId() const{ return m_configurationId; }
+    inline const Aws::String& GetConfigurationId() const { return m_configurationId; }
     inline bool ConfigurationIdHasBeenSet() const { return m_configurationIdHasBeenSet; }
-    inline void SetConfigurationId(const Aws::String& value) { m_configurationIdHasBeenSet = true; m_configurationId = value; }
-    inline void SetConfigurationId(Aws::String&& value) { m_configurationIdHasBeenSet = true; m_configurationId = std::move(value); }
-    inline void SetConfigurationId(const char* value) { m_configurationIdHasBeenSet = true; m_configurationId.assign(value); }
-    inline ConfigurationTag& WithConfigurationId(const Aws::String& value) { SetConfigurationId(value); return *this;}
-    inline ConfigurationTag& WithConfigurationId(Aws::String&& value) { SetConfigurationId(std::move(value)); return *this;}
-    inline ConfigurationTag& WithConfigurationId(const char* value) { SetConfigurationId(value); return *this;}
+    template<typename ConfigurationIdT = Aws::String>
+    void SetConfigurationId(ConfigurationIdT&& value) { m_configurationIdHasBeenSet = true; m_configurationId = std::forward<ConfigurationIdT>(value); }
+    template<typename ConfigurationIdT = Aws::String>
+    ConfigurationTag& WithConfigurationId(ConfigurationIdT&& value) { SetConfigurationId(std::forward<ConfigurationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A type of tag on which to filter. For example, <i>serverType</i>.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline ConfigurationTag& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline ConfigurationTag& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline ConfigurationTag& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    ConfigurationTag& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +80,12 @@ namespace Model
      * <p>A value on which to filter. For example <i>key = serverType</i> and <i>value
      * = web server</i>.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline ConfigurationTag& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline ConfigurationTag& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline ConfigurationTag& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    ConfigurationTag& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,16 +93,16 @@ namespace Model
      * <p>The time the configuration tag was created in Coordinated Universal Time
      * (UTC).</p>
      */
-    inline const Aws::Utils::DateTime& GetTimeOfCreation() const{ return m_timeOfCreation; }
+    inline const Aws::Utils::DateTime& GetTimeOfCreation() const { return m_timeOfCreation; }
     inline bool TimeOfCreationHasBeenSet() const { return m_timeOfCreationHasBeenSet; }
-    inline void SetTimeOfCreation(const Aws::Utils::DateTime& value) { m_timeOfCreationHasBeenSet = true; m_timeOfCreation = value; }
-    inline void SetTimeOfCreation(Aws::Utils::DateTime&& value) { m_timeOfCreationHasBeenSet = true; m_timeOfCreation = std::move(value); }
-    inline ConfigurationTag& WithTimeOfCreation(const Aws::Utils::DateTime& value) { SetTimeOfCreation(value); return *this;}
-    inline ConfigurationTag& WithTimeOfCreation(Aws::Utils::DateTime&& value) { SetTimeOfCreation(std::move(value)); return *this;}
+    template<typename TimeOfCreationT = Aws::Utils::DateTime>
+    void SetTimeOfCreation(TimeOfCreationT&& value) { m_timeOfCreationHasBeenSet = true; m_timeOfCreation = std::forward<TimeOfCreationT>(value); }
+    template<typename TimeOfCreationT = Aws::Utils::DateTime>
+    ConfigurationTag& WithTimeOfCreation(TimeOfCreationT&& value) { SetTimeOfCreation(std::forward<TimeOfCreationT>(value)); return *this;}
     ///@}
   private:
 
-    ConfigurationItemType m_configurationType;
+    ConfigurationItemType m_configurationType{ConfigurationItemType::NOT_SET};
     bool m_configurationTypeHasBeenSet = false;
 
     Aws::String m_configurationId;
@@ -122,7 +114,7 @@ namespace Model
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timeOfCreation;
+    Aws::Utils::DateTime m_timeOfCreation{};
     bool m_timeOfCreationHasBeenSet = false;
   };
 

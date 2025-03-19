@@ -28,7 +28,7 @@ namespace Model
   class DescribeLoggingOptionsResult
   {
   public:
-    AWS_IOTEVENTS_API DescribeLoggingOptionsResult();
+    AWS_IOTEVENTS_API DescribeLoggingOptionsResult() = default;
     AWS_IOTEVENTS_API DescribeLoggingOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTEVENTS_API DescribeLoggingOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The current settings of the AWS IoT Events logging options.</p>
      */
-    inline const LoggingOptions& GetLoggingOptions() const{ return m_loggingOptions; }
-    inline void SetLoggingOptions(const LoggingOptions& value) { m_loggingOptions = value; }
-    inline void SetLoggingOptions(LoggingOptions&& value) { m_loggingOptions = std::move(value); }
-    inline DescribeLoggingOptionsResult& WithLoggingOptions(const LoggingOptions& value) { SetLoggingOptions(value); return *this;}
-    inline DescribeLoggingOptionsResult& WithLoggingOptions(LoggingOptions&& value) { SetLoggingOptions(std::move(value)); return *this;}
+    inline const LoggingOptions& GetLoggingOptions() const { return m_loggingOptions; }
+    template<typename LoggingOptionsT = LoggingOptions>
+    void SetLoggingOptions(LoggingOptionsT&& value) { m_loggingOptionsHasBeenSet = true; m_loggingOptions = std::forward<LoggingOptionsT>(value); }
+    template<typename LoggingOptionsT = LoggingOptions>
+    DescribeLoggingOptionsResult& WithLoggingOptions(LoggingOptionsT&& value) { SetLoggingOptions(std::forward<LoggingOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeLoggingOptionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeLoggingOptionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeLoggingOptionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeLoggingOptionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     LoggingOptions m_loggingOptions;
+    bool m_loggingOptionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

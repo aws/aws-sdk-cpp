@@ -18,18 +18,7 @@ namespace MediaPackage
 namespace Model
 {
 
-StreamSelection::StreamSelection() : 
-    m_maxVideoBitsPerSecond(0),
-    m_maxVideoBitsPerSecondHasBeenSet(false),
-    m_minVideoBitsPerSecond(0),
-    m_minVideoBitsPerSecondHasBeenSet(false),
-    m_streamOrder(StreamOrder::NOT_SET),
-    m_streamOrderHasBeenSet(false)
-{
-}
-
 StreamSelection::StreamSelection(JsonView jsonValue)
-  : StreamSelection()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ StreamSelection& StreamSelection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("maxVideoBitsPerSecond"))
   {
     m_maxVideoBitsPerSecond = jsonValue.GetInteger("maxVideoBitsPerSecond");
-
     m_maxVideoBitsPerSecondHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minVideoBitsPerSecond"))
   {
     m_minVideoBitsPerSecond = jsonValue.GetInteger("minVideoBitsPerSecond");
-
     m_minVideoBitsPerSecondHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamOrder"))
   {
     m_streamOrder = StreamOrderMapper::GetStreamOrderForName(jsonValue.GetString("streamOrder"));
-
     m_streamOrderHasBeenSet = true;
   }
-
   return *this;
 }
 

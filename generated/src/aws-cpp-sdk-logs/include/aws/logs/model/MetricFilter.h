@@ -35,7 +35,7 @@ namespace Model
   class MetricFilter
   {
   public:
-    AWS_CLOUDWATCHLOGS_API MetricFilter();
+    AWS_CLOUDWATCHLOGS_API MetricFilter() = default;
     AWS_CLOUDWATCHLOGS_API MetricFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API MetricFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,40 +45,36 @@ namespace Model
     /**
      * <p>The name of the metric filter.</p>
      */
-    inline const Aws::String& GetFilterName() const{ return m_filterName; }
+    inline const Aws::String& GetFilterName() const { return m_filterName; }
     inline bool FilterNameHasBeenSet() const { return m_filterNameHasBeenSet; }
-    inline void SetFilterName(const Aws::String& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
-    inline void SetFilterName(Aws::String&& value) { m_filterNameHasBeenSet = true; m_filterName = std::move(value); }
-    inline void SetFilterName(const char* value) { m_filterNameHasBeenSet = true; m_filterName.assign(value); }
-    inline MetricFilter& WithFilterName(const Aws::String& value) { SetFilterName(value); return *this;}
-    inline MetricFilter& WithFilterName(Aws::String&& value) { SetFilterName(std::move(value)); return *this;}
-    inline MetricFilter& WithFilterName(const char* value) { SetFilterName(value); return *this;}
+    template<typename FilterNameT = Aws::String>
+    void SetFilterName(FilterNameT&& value) { m_filterNameHasBeenSet = true; m_filterName = std::forward<FilterNameT>(value); }
+    template<typename FilterNameT = Aws::String>
+    MetricFilter& WithFilterName(FilterNameT&& value) { SetFilterName(std::forward<FilterNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetFilterPattern() const{ return m_filterPattern; }
+    inline const Aws::String& GetFilterPattern() const { return m_filterPattern; }
     inline bool FilterPatternHasBeenSet() const { return m_filterPatternHasBeenSet; }
-    inline void SetFilterPattern(const Aws::String& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
-    inline void SetFilterPattern(Aws::String&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = std::move(value); }
-    inline void SetFilterPattern(const char* value) { m_filterPatternHasBeenSet = true; m_filterPattern.assign(value); }
-    inline MetricFilter& WithFilterPattern(const Aws::String& value) { SetFilterPattern(value); return *this;}
-    inline MetricFilter& WithFilterPattern(Aws::String&& value) { SetFilterPattern(std::move(value)); return *this;}
-    inline MetricFilter& WithFilterPattern(const char* value) { SetFilterPattern(value); return *this;}
+    template<typename FilterPatternT = Aws::String>
+    void SetFilterPattern(FilterPatternT&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = std::forward<FilterPatternT>(value); }
+    template<typename FilterPatternT = Aws::String>
+    MetricFilter& WithFilterPattern(FilterPatternT&& value) { SetFilterPattern(std::forward<FilterPatternT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The metric transformations.</p>
      */
-    inline const Aws::Vector<MetricTransformation>& GetMetricTransformations() const{ return m_metricTransformations; }
+    inline const Aws::Vector<MetricTransformation>& GetMetricTransformations() const { return m_metricTransformations; }
     inline bool MetricTransformationsHasBeenSet() const { return m_metricTransformationsHasBeenSet; }
-    inline void SetMetricTransformations(const Aws::Vector<MetricTransformation>& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations = value; }
-    inline void SetMetricTransformations(Aws::Vector<MetricTransformation>&& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations = std::move(value); }
-    inline MetricFilter& WithMetricTransformations(const Aws::Vector<MetricTransformation>& value) { SetMetricTransformations(value); return *this;}
-    inline MetricFilter& WithMetricTransformations(Aws::Vector<MetricTransformation>&& value) { SetMetricTransformations(std::move(value)); return *this;}
-    inline MetricFilter& AddMetricTransformations(const MetricTransformation& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations.push_back(value); return *this; }
-    inline MetricFilter& AddMetricTransformations(MetricTransformation&& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations.push_back(std::move(value)); return *this; }
+    template<typename MetricTransformationsT = Aws::Vector<MetricTransformation>>
+    void SetMetricTransformations(MetricTransformationsT&& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations = std::forward<MetricTransformationsT>(value); }
+    template<typename MetricTransformationsT = Aws::Vector<MetricTransformation>>
+    MetricFilter& WithMetricTransformations(MetricTransformationsT&& value) { SetMetricTransformations(std::forward<MetricTransformationsT>(value)); return *this;}
+    template<typename MetricTransformationsT = MetricTransformation>
+    MetricFilter& AddMetricTransformations(MetricTransformationsT&& value) { m_metricTransformationsHasBeenSet = true; m_metricTransformations.emplace_back(std::forward<MetricTransformationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -86,7 +82,7 @@ namespace Model
      * <p>The creation time of the metric filter, expressed as the number of
      * milliseconds after <code>Jan 1, 1970 00:00:00 UTC</code>.</p>
      */
-    inline long long GetCreationTime() const{ return m_creationTime; }
+    inline long long GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
     inline void SetCreationTime(long long value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
     inline MetricFilter& WithCreationTime(long long value) { SetCreationTime(value); return *this;}
@@ -96,14 +92,12 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
-    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+    inline const Aws::String& GetLogGroupName() const { return m_logGroupName; }
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-    inline MetricFilter& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-    inline MetricFilter& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-    inline MetricFilter& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+    template<typename LogGroupNameT = Aws::String>
+    void SetLogGroupName(LogGroupNameT&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::forward<LogGroupNameT>(value); }
+    template<typename LogGroupNameT = Aws::String>
+    MetricFilter& WithLogGroupName(LogGroupNameT&& value) { SetLogGroupName(std::forward<LogGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,7 +109,7 @@ namespace Model
      * transformed version of the log events instead of the original ingested log
      * events.</p>
      */
-    inline bool GetApplyOnTransformedLogs() const{ return m_applyOnTransformedLogs; }
+    inline bool GetApplyOnTransformedLogs() const { return m_applyOnTransformedLogs; }
     inline bool ApplyOnTransformedLogsHasBeenSet() const { return m_applyOnTransformedLogsHasBeenSet; }
     inline void SetApplyOnTransformedLogs(bool value) { m_applyOnTransformedLogsHasBeenSet = true; m_applyOnTransformedLogs = value; }
     inline MetricFilter& WithApplyOnTransformedLogs(bool value) { SetApplyOnTransformedLogs(value); return *this;}
@@ -131,13 +125,13 @@ namespace Model
     Aws::Vector<MetricTransformation> m_metricTransformations;
     bool m_metricTransformationsHasBeenSet = false;
 
-    long long m_creationTime;
+    long long m_creationTime{0};
     bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_logGroupName;
     bool m_logGroupNameHasBeenSet = false;
 
-    bool m_applyOnTransformedLogs;
+    bool m_applyOnTransformedLogs{false};
     bool m_applyOnTransformedLogsHasBeenSet = false;
   };
 

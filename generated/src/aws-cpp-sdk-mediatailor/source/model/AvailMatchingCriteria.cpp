@@ -18,15 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-AvailMatchingCriteria::AvailMatchingCriteria() : 
-    m_dynamicVariableHasBeenSet(false),
-    m_operator(Operator::NOT_SET),
-    m_operatorHasBeenSet(false)
-{
-}
-
 AvailMatchingCriteria::AvailMatchingCriteria(JsonView jsonValue)
-  : AvailMatchingCriteria()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AvailMatchingCriteria& AvailMatchingCriteria::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DynamicVariable"))
   {
     m_dynamicVariable = jsonValue.GetString("DynamicVariable");
-
     m_dynamicVariableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = OperatorMapper::GetOperatorForName(jsonValue.GetString("Operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   return *this;
 }
 

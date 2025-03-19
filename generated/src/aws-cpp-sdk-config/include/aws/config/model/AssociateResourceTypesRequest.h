@@ -23,7 +23,7 @@ namespace Model
   class AssociateResourceTypesRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API AssociateResourceTypesRequest();
+    AWS_CONFIGSERVICE_API AssociateResourceTypesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the specified configuration recorder.</p>
      */
-    inline const Aws::String& GetConfigurationRecorderArn() const{ return m_configurationRecorderArn; }
+    inline const Aws::String& GetConfigurationRecorderArn() const { return m_configurationRecorderArn; }
     inline bool ConfigurationRecorderArnHasBeenSet() const { return m_configurationRecorderArnHasBeenSet; }
-    inline void SetConfigurationRecorderArn(const Aws::String& value) { m_configurationRecorderArnHasBeenSet = true; m_configurationRecorderArn = value; }
-    inline void SetConfigurationRecorderArn(Aws::String&& value) { m_configurationRecorderArnHasBeenSet = true; m_configurationRecorderArn = std::move(value); }
-    inline void SetConfigurationRecorderArn(const char* value) { m_configurationRecorderArnHasBeenSet = true; m_configurationRecorderArn.assign(value); }
-    inline AssociateResourceTypesRequest& WithConfigurationRecorderArn(const Aws::String& value) { SetConfigurationRecorderArn(value); return *this;}
-    inline AssociateResourceTypesRequest& WithConfigurationRecorderArn(Aws::String&& value) { SetConfigurationRecorderArn(std::move(value)); return *this;}
-    inline AssociateResourceTypesRequest& WithConfigurationRecorderArn(const char* value) { SetConfigurationRecorderArn(value); return *this;}
+    template<typename ConfigurationRecorderArnT = Aws::String>
+    void SetConfigurationRecorderArn(ConfigurationRecorderArnT&& value) { m_configurationRecorderArnHasBeenSet = true; m_configurationRecorderArn = std::forward<ConfigurationRecorderArnT>(value); }
+    template<typename ConfigurationRecorderArnT = Aws::String>
+    AssociateResourceTypesRequest& WithConfigurationRecorderArn(ConfigurationRecorderArnT&& value) { SetConfigurationRecorderArn(std::forward<ConfigurationRecorderArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,13 @@ namespace Model
      * <p>The list of resource types you want to add to the recording group of the
      * specified configuration recorder.</p>
      */
-    inline const Aws::Vector<ResourceType>& GetResourceTypes() const{ return m_resourceTypes; }
+    inline const Aws::Vector<ResourceType>& GetResourceTypes() const { return m_resourceTypes; }
     inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
-    inline void SetResourceTypes(const Aws::Vector<ResourceType>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
-    inline void SetResourceTypes(Aws::Vector<ResourceType>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
-    inline AssociateResourceTypesRequest& WithResourceTypes(const Aws::Vector<ResourceType>& value) { SetResourceTypes(value); return *this;}
-    inline AssociateResourceTypesRequest& WithResourceTypes(Aws::Vector<ResourceType>&& value) { SetResourceTypes(std::move(value)); return *this;}
-    inline AssociateResourceTypesRequest& AddResourceTypes(const ResourceType& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
-    inline AssociateResourceTypesRequest& AddResourceTypes(ResourceType&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }
+    template<typename ResourceTypesT = Aws::Vector<ResourceType>>
+    void SetResourceTypes(ResourceTypesT&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::forward<ResourceTypesT>(value); }
+    template<typename ResourceTypesT = Aws::Vector<ResourceType>>
+    AssociateResourceTypesRequest& WithResourceTypes(ResourceTypesT&& value) { SetResourceTypes(std::forward<ResourceTypesT>(value)); return *this;}
+    inline AssociateResourceTypesRequest& AddResourceTypes(ResourceType value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
     ///@}
   private:
 

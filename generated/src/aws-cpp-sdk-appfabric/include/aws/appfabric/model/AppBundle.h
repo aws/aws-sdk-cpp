@@ -31,7 +31,7 @@ namespace Model
   class AppBundle
   {
   public:
-    AWS_APPFABRIC_API AppBundle();
+    AWS_APPFABRIC_API AppBundle() = default;
     AWS_APPFABRIC_API AppBundle(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFABRIC_API AppBundle& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFABRIC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the app bundle.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline AppBundle& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline AppBundle& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline AppBundle& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    AppBundle& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Key Management Service (KMS) key used
      * to encrypt the application data.</p>
      */
-    inline const Aws::String& GetCustomerManagedKeyArn() const{ return m_customerManagedKeyArn; }
+    inline const Aws::String& GetCustomerManagedKeyArn() const { return m_customerManagedKeyArn; }
     inline bool CustomerManagedKeyArnHasBeenSet() const { return m_customerManagedKeyArnHasBeenSet; }
-    inline void SetCustomerManagedKeyArn(const Aws::String& value) { m_customerManagedKeyArnHasBeenSet = true; m_customerManagedKeyArn = value; }
-    inline void SetCustomerManagedKeyArn(Aws::String&& value) { m_customerManagedKeyArnHasBeenSet = true; m_customerManagedKeyArn = std::move(value); }
-    inline void SetCustomerManagedKeyArn(const char* value) { m_customerManagedKeyArnHasBeenSet = true; m_customerManagedKeyArn.assign(value); }
-    inline AppBundle& WithCustomerManagedKeyArn(const Aws::String& value) { SetCustomerManagedKeyArn(value); return *this;}
-    inline AppBundle& WithCustomerManagedKeyArn(Aws::String&& value) { SetCustomerManagedKeyArn(std::move(value)); return *this;}
-    inline AppBundle& WithCustomerManagedKeyArn(const char* value) { SetCustomerManagedKeyArn(value); return *this;}
+    template<typename CustomerManagedKeyArnT = Aws::String>
+    void SetCustomerManagedKeyArn(CustomerManagedKeyArnT&& value) { m_customerManagedKeyArnHasBeenSet = true; m_customerManagedKeyArn = std::forward<CustomerManagedKeyArnT>(value); }
+    template<typename CustomerManagedKeyArnT = Aws::String>
+    AppBundle& WithCustomerManagedKeyArn(CustomerManagedKeyArnT&& value) { SetCustomerManagedKeyArn(std::forward<CustomerManagedKeyArnT>(value)); return *this;}
     ///@}
   private:
 

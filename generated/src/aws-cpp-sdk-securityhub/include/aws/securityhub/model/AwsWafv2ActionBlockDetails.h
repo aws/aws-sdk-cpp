@@ -33,7 +33,7 @@ namespace Model
   class AwsWafv2ActionBlockDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsWafv2ActionBlockDetails();
+    AWS_SECURITYHUB_API AwsWafv2ActionBlockDetails() = default;
     AWS_SECURITYHUB_API AwsWafv2ActionBlockDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsWafv2ActionBlockDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
      * web requests and responses in WAF</a> in the <i>WAF Developer Guide.</i>. </p>
      */
-    inline const AwsWafv2CustomResponseDetails& GetCustomResponse() const{ return m_customResponse; }
+    inline const AwsWafv2CustomResponseDetails& GetCustomResponse() const { return m_customResponse; }
     inline bool CustomResponseHasBeenSet() const { return m_customResponseHasBeenSet; }
-    inline void SetCustomResponse(const AwsWafv2CustomResponseDetails& value) { m_customResponseHasBeenSet = true; m_customResponse = value; }
-    inline void SetCustomResponse(AwsWafv2CustomResponseDetails&& value) { m_customResponseHasBeenSet = true; m_customResponse = std::move(value); }
-    inline AwsWafv2ActionBlockDetails& WithCustomResponse(const AwsWafv2CustomResponseDetails& value) { SetCustomResponse(value); return *this;}
-    inline AwsWafv2ActionBlockDetails& WithCustomResponse(AwsWafv2CustomResponseDetails&& value) { SetCustomResponse(std::move(value)); return *this;}
+    template<typename CustomResponseT = AwsWafv2CustomResponseDetails>
+    void SetCustomResponse(CustomResponseT&& value) { m_customResponseHasBeenSet = true; m_customResponse = std::forward<CustomResponseT>(value); }
+    template<typename CustomResponseT = AwsWafv2CustomResponseDetails>
+    AwsWafv2ActionBlockDetails& WithCustomResponse(CustomResponseT&& value) { SetCustomResponse(std::forward<CustomResponseT>(value)); return *this;}
     ///@}
   private:
 

@@ -39,7 +39,7 @@ namespace Model
   class MetricStreamStatisticsConfiguration
   {
   public:
-    AWS_CLOUDWATCH_API MetricStreamStatisticsConfiguration();
+    AWS_CLOUDWATCH_API MetricStreamStatisticsConfiguration() = default;
     AWS_CLOUDWATCH_API MetricStreamStatisticsConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDWATCH_API MetricStreamStatisticsConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -55,14 +55,14 @@ namespace Model
      * that match the combination of metric name and namespace will be streamed with
      * the additional statistics, no matter their dimensions.</p>
      */
-    inline const Aws::Vector<MetricStreamStatisticsMetric>& GetIncludeMetrics() const{ return m_includeMetrics; }
+    inline const Aws::Vector<MetricStreamStatisticsMetric>& GetIncludeMetrics() const { return m_includeMetrics; }
     inline bool IncludeMetricsHasBeenSet() const { return m_includeMetricsHasBeenSet; }
-    inline void SetIncludeMetrics(const Aws::Vector<MetricStreamStatisticsMetric>& value) { m_includeMetricsHasBeenSet = true; m_includeMetrics = value; }
-    inline void SetIncludeMetrics(Aws::Vector<MetricStreamStatisticsMetric>&& value) { m_includeMetricsHasBeenSet = true; m_includeMetrics = std::move(value); }
-    inline MetricStreamStatisticsConfiguration& WithIncludeMetrics(const Aws::Vector<MetricStreamStatisticsMetric>& value) { SetIncludeMetrics(value); return *this;}
-    inline MetricStreamStatisticsConfiguration& WithIncludeMetrics(Aws::Vector<MetricStreamStatisticsMetric>&& value) { SetIncludeMetrics(std::move(value)); return *this;}
-    inline MetricStreamStatisticsConfiguration& AddIncludeMetrics(const MetricStreamStatisticsMetric& value) { m_includeMetricsHasBeenSet = true; m_includeMetrics.push_back(value); return *this; }
-    inline MetricStreamStatisticsConfiguration& AddIncludeMetrics(MetricStreamStatisticsMetric&& value) { m_includeMetricsHasBeenSet = true; m_includeMetrics.push_back(std::move(value)); return *this; }
+    template<typename IncludeMetricsT = Aws::Vector<MetricStreamStatisticsMetric>>
+    void SetIncludeMetrics(IncludeMetricsT&& value) { m_includeMetricsHasBeenSet = true; m_includeMetrics = std::forward<IncludeMetricsT>(value); }
+    template<typename IncludeMetricsT = Aws::Vector<MetricStreamStatisticsMetric>>
+    MetricStreamStatisticsConfiguration& WithIncludeMetrics(IncludeMetricsT&& value) { SetIncludeMetrics(std::forward<IncludeMetricsT>(value)); return *this;}
+    template<typename IncludeMetricsT = MetricStreamStatisticsMetric>
+    MetricStreamStatisticsConfiguration& AddIncludeMetrics(IncludeMetricsT&& value) { m_includeMetricsHasBeenSet = true; m_includeMetrics.emplace_back(std::forward<IncludeMetricsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -79,15 +79,14 @@ namespace Model
      * CloudWatch statistics definitions</a>. For example, this includes <code>tm98,
      * </code> <code>wm90</code>, <code>PR(:300)</code>, and so on.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAdditionalStatistics() const{ return m_additionalStatistics; }
+    inline const Aws::Vector<Aws::String>& GetAdditionalStatistics() const { return m_additionalStatistics; }
     inline bool AdditionalStatisticsHasBeenSet() const { return m_additionalStatisticsHasBeenSet; }
-    inline void SetAdditionalStatistics(const Aws::Vector<Aws::String>& value) { m_additionalStatisticsHasBeenSet = true; m_additionalStatistics = value; }
-    inline void SetAdditionalStatistics(Aws::Vector<Aws::String>&& value) { m_additionalStatisticsHasBeenSet = true; m_additionalStatistics = std::move(value); }
-    inline MetricStreamStatisticsConfiguration& WithAdditionalStatistics(const Aws::Vector<Aws::String>& value) { SetAdditionalStatistics(value); return *this;}
-    inline MetricStreamStatisticsConfiguration& WithAdditionalStatistics(Aws::Vector<Aws::String>&& value) { SetAdditionalStatistics(std::move(value)); return *this;}
-    inline MetricStreamStatisticsConfiguration& AddAdditionalStatistics(const Aws::String& value) { m_additionalStatisticsHasBeenSet = true; m_additionalStatistics.push_back(value); return *this; }
-    inline MetricStreamStatisticsConfiguration& AddAdditionalStatistics(Aws::String&& value) { m_additionalStatisticsHasBeenSet = true; m_additionalStatistics.push_back(std::move(value)); return *this; }
-    inline MetricStreamStatisticsConfiguration& AddAdditionalStatistics(const char* value) { m_additionalStatisticsHasBeenSet = true; m_additionalStatistics.push_back(value); return *this; }
+    template<typename AdditionalStatisticsT = Aws::Vector<Aws::String>>
+    void SetAdditionalStatistics(AdditionalStatisticsT&& value) { m_additionalStatisticsHasBeenSet = true; m_additionalStatistics = std::forward<AdditionalStatisticsT>(value); }
+    template<typename AdditionalStatisticsT = Aws::Vector<Aws::String>>
+    MetricStreamStatisticsConfiguration& WithAdditionalStatistics(AdditionalStatisticsT&& value) { SetAdditionalStatistics(std::forward<AdditionalStatisticsT>(value)); return *this;}
+    template<typename AdditionalStatisticsT = Aws::String>
+    MetricStreamStatisticsConfiguration& AddAdditionalStatistics(AdditionalStatisticsT&& value) { m_additionalStatisticsHasBeenSet = true; m_additionalStatistics.emplace_back(std::forward<AdditionalStatisticsT>(value)); return *this; }
     ///@}
   private:
 

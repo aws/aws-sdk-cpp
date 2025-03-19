@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetSchemaVersionRequest::GetSchemaVersionRequest() : 
-    m_type(SchemaVersionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_schemaVersionedIdHasBeenSet(false),
-    m_format(SchemaVersionFormat::NOT_SET),
-    m_formatHasBeenSet(false)
-{
-}
-
 Aws::String GetSchemaVersionRequest::SerializePayload() const
 {
   return {};

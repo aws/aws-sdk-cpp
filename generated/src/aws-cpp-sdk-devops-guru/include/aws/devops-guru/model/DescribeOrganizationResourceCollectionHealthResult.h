@@ -32,7 +32,7 @@ namespace Model
   class DescribeOrganizationResourceCollectionHealthResult
   {
   public:
-    AWS_DEVOPSGURU_API DescribeOrganizationResourceCollectionHealthResult();
+    AWS_DEVOPSGURU_API DescribeOrganizationResourceCollectionHealthResult() = default;
     AWS_DEVOPSGURU_API DescribeOrganizationResourceCollectionHealthResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEVOPSGURU_API DescribeOrganizationResourceCollectionHealthResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,13 +43,13 @@ namespace Model
      * an <code>InsightHealthOverview</code> object with the requested system health
      * information.</p>
      */
-    inline const Aws::Vector<CloudFormationHealth>& GetCloudFormation() const{ return m_cloudFormation; }
-    inline void SetCloudFormation(const Aws::Vector<CloudFormationHealth>& value) { m_cloudFormation = value; }
-    inline void SetCloudFormation(Aws::Vector<CloudFormationHealth>&& value) { m_cloudFormation = std::move(value); }
-    inline DescribeOrganizationResourceCollectionHealthResult& WithCloudFormation(const Aws::Vector<CloudFormationHealth>& value) { SetCloudFormation(value); return *this;}
-    inline DescribeOrganizationResourceCollectionHealthResult& WithCloudFormation(Aws::Vector<CloudFormationHealth>&& value) { SetCloudFormation(std::move(value)); return *this;}
-    inline DescribeOrganizationResourceCollectionHealthResult& AddCloudFormation(const CloudFormationHealth& value) { m_cloudFormation.push_back(value); return *this; }
-    inline DescribeOrganizationResourceCollectionHealthResult& AddCloudFormation(CloudFormationHealth&& value) { m_cloudFormation.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CloudFormationHealth>& GetCloudFormation() const { return m_cloudFormation; }
+    template<typename CloudFormationT = Aws::Vector<CloudFormationHealth>>
+    void SetCloudFormation(CloudFormationT&& value) { m_cloudFormationHasBeenSet = true; m_cloudFormation = std::forward<CloudFormationT>(value); }
+    template<typename CloudFormationT = Aws::Vector<CloudFormationHealth>>
+    DescribeOrganizationResourceCollectionHealthResult& WithCloudFormation(CloudFormationT&& value) { SetCloudFormation(std::forward<CloudFormationT>(value)); return *this;}
+    template<typename CloudFormationT = CloudFormationHealth>
+    DescribeOrganizationResourceCollectionHealthResult& AddCloudFormation(CloudFormationT&& value) { m_cloudFormationHasBeenSet = true; m_cloudFormation.emplace_back(std::forward<CloudFormationT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,26 +58,26 @@ namespace Model
      * the Amazon Web Services services associated with the resources in the
      * collection.</p>
      */
-    inline const Aws::Vector<ServiceHealth>& GetService() const{ return m_service; }
-    inline void SetService(const Aws::Vector<ServiceHealth>& value) { m_service = value; }
-    inline void SetService(Aws::Vector<ServiceHealth>&& value) { m_service = std::move(value); }
-    inline DescribeOrganizationResourceCollectionHealthResult& WithService(const Aws::Vector<ServiceHealth>& value) { SetService(value); return *this;}
-    inline DescribeOrganizationResourceCollectionHealthResult& WithService(Aws::Vector<ServiceHealth>&& value) { SetService(std::move(value)); return *this;}
-    inline DescribeOrganizationResourceCollectionHealthResult& AddService(const ServiceHealth& value) { m_service.push_back(value); return *this; }
-    inline DescribeOrganizationResourceCollectionHealthResult& AddService(ServiceHealth&& value) { m_service.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ServiceHealth>& GetService() const { return m_service; }
+    template<typename ServiceT = Aws::Vector<ServiceHealth>>
+    void SetService(ServiceT&& value) { m_serviceHasBeenSet = true; m_service = std::forward<ServiceT>(value); }
+    template<typename ServiceT = Aws::Vector<ServiceHealth>>
+    DescribeOrganizationResourceCollectionHealthResult& WithService(ServiceT&& value) { SetService(std::forward<ServiceT>(value)); return *this;}
+    template<typename ServiceT = ServiceHealth>
+    DescribeOrganizationResourceCollectionHealthResult& AddService(ServiceT&& value) { m_serviceHasBeenSet = true; m_service.emplace_back(std::forward<ServiceT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the organization's account.</p>
      */
-    inline const Aws::Vector<AccountHealth>& GetAccount() const{ return m_account; }
-    inline void SetAccount(const Aws::Vector<AccountHealth>& value) { m_account = value; }
-    inline void SetAccount(Aws::Vector<AccountHealth>&& value) { m_account = std::move(value); }
-    inline DescribeOrganizationResourceCollectionHealthResult& WithAccount(const Aws::Vector<AccountHealth>& value) { SetAccount(value); return *this;}
-    inline DescribeOrganizationResourceCollectionHealthResult& WithAccount(Aws::Vector<AccountHealth>&& value) { SetAccount(std::move(value)); return *this;}
-    inline DescribeOrganizationResourceCollectionHealthResult& AddAccount(const AccountHealth& value) { m_account.push_back(value); return *this; }
-    inline DescribeOrganizationResourceCollectionHealthResult& AddAccount(AccountHealth&& value) { m_account.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AccountHealth>& GetAccount() const { return m_account; }
+    template<typename AccountT = Aws::Vector<AccountHealth>>
+    void SetAccount(AccountT&& value) { m_accountHasBeenSet = true; m_account = std::forward<AccountT>(value); }
+    template<typename AccountT = Aws::Vector<AccountHealth>>
+    DescribeOrganizationResourceCollectionHealthResult& WithAccount(AccountT&& value) { SetAccount(std::forward<AccountT>(value)); return *this;}
+    template<typename AccountT = AccountHealth>
+    DescribeOrganizationResourceCollectionHealthResult& AddAccount(AccountT&& value) { m_accountHasBeenSet = true; m_account.emplace_back(std::forward<AccountT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -85,13 +85,11 @@ namespace Model
      * <p>The pagination token to use to retrieve the next page of results for this
      * operation. If there are no more pages, this value is null.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeOrganizationResourceCollectionHealthResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeOrganizationResourceCollectionHealthResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeOrganizationResourceCollectionHealthResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeOrganizationResourceCollectionHealthResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,38 +122,42 @@ namespace Model
      * <code>Devops-Guru-production-application/RDS</code> or
      * <code>Devops-Guru-production-application/containers</code>.</p> 
      */
-    inline const Aws::Vector<TagHealth>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Vector<TagHealth>& value) { m_tags = value; }
-    inline void SetTags(Aws::Vector<TagHealth>&& value) { m_tags = std::move(value); }
-    inline DescribeOrganizationResourceCollectionHealthResult& WithTags(const Aws::Vector<TagHealth>& value) { SetTags(value); return *this;}
-    inline DescribeOrganizationResourceCollectionHealthResult& WithTags(Aws::Vector<TagHealth>&& value) { SetTags(std::move(value)); return *this;}
-    inline DescribeOrganizationResourceCollectionHealthResult& AddTags(const TagHealth& value) { m_tags.push_back(value); return *this; }
-    inline DescribeOrganizationResourceCollectionHealthResult& AddTags(TagHealth&& value) { m_tags.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<TagHealth>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Vector<TagHealth>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<TagHealth>>
+    DescribeOrganizationResourceCollectionHealthResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = TagHealth>
+    DescribeOrganizationResourceCollectionHealthResult& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeOrganizationResourceCollectionHealthResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeOrganizationResourceCollectionHealthResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeOrganizationResourceCollectionHealthResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeOrganizationResourceCollectionHealthResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CloudFormationHealth> m_cloudFormation;
+    bool m_cloudFormationHasBeenSet = false;
 
     Aws::Vector<ServiceHealth> m_service;
+    bool m_serviceHasBeenSet = false;
 
     Aws::Vector<AccountHealth> m_account;
+    bool m_accountHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<TagHealth> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

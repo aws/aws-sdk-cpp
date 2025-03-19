@@ -20,14 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-RequestProgress::RequestProgress() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 RequestProgress::RequestProgress(const XmlNode& xmlNode)
-  : RequestProgress()
 {
   *this = xmlNode;
 }

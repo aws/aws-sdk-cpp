@@ -12,11 +12,6 @@ using namespace Aws::LookoutMetrics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BackTestAnomalyDetectorRequest::BackTestAnomalyDetectorRequest() : 
-    m_anomalyDetectorArnHasBeenSet(false)
-{
-}
-
 Aws::String BackTestAnomalyDetectorRequest::SerializePayload() const
 {
   JsonValue payload;

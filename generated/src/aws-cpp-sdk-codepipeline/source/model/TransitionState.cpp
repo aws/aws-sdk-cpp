@@ -18,17 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-TransitionState::TransitionState() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_lastChangedByHasBeenSet(false),
-    m_lastChangedAtHasBeenSet(false),
-    m_disabledReasonHasBeenSet(false)
-{
-}
-
 TransitionState::TransitionState(JsonView jsonValue)
-  : TransitionState()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ TransitionState& TransitionState::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastChangedBy"))
   {
     m_lastChangedBy = jsonValue.GetString("lastChangedBy");
-
     m_lastChangedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastChangedAt"))
   {
     m_lastChangedAt = jsonValue.GetDouble("lastChangedAt");
-
     m_lastChangedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("disabledReason"))
   {
     m_disabledReason = jsonValue.GetString("disabledReason");
-
     m_disabledReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

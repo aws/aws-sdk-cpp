@@ -34,7 +34,7 @@ namespace Model
   class CustomRoutingDestinationDescription
   {
   public:
-    AWS_GLOBALACCELERATOR_API CustomRoutingDestinationDescription();
+    AWS_GLOBALACCELERATOR_API CustomRoutingDestinationDescription() = default;
     AWS_GLOBALACCELERATOR_API CustomRoutingDestinationDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLOBALACCELERATOR_API CustomRoutingDestinationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLOBALACCELERATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * <p>The first port, inclusive, in the range of ports for the endpoint group that
      * is associated with a custom routing accelerator.</p>
      */
-    inline int GetFromPort() const{ return m_fromPort; }
+    inline int GetFromPort() const { return m_fromPort; }
     inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
     inline CustomRoutingDestinationDescription& WithFromPort(int value) { SetFromPort(value); return *this;}
@@ -56,7 +56,7 @@ namespace Model
      * <p>The last port, inclusive, in the range of ports for the endpoint group that
      * is associated with a custom routing accelerator.</p>
      */
-    inline int GetToPort() const{ return m_toPort; }
+    inline int GetToPort() const { return m_toPort; }
     inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
     inline CustomRoutingDestinationDescription& WithToPort(int value) { SetToPort(value); return *this;}
@@ -67,21 +67,20 @@ namespace Model
      * <p>The protocol for the endpoint group that is associated with a custom routing
      * accelerator. The protocol can be either TCP or UDP.</p>
      */
-    inline const Aws::Vector<Protocol>& GetProtocols() const{ return m_protocols; }
+    inline const Aws::Vector<Protocol>& GetProtocols() const { return m_protocols; }
     inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }
-    inline void SetProtocols(const Aws::Vector<Protocol>& value) { m_protocolsHasBeenSet = true; m_protocols = value; }
-    inline void SetProtocols(Aws::Vector<Protocol>&& value) { m_protocolsHasBeenSet = true; m_protocols = std::move(value); }
-    inline CustomRoutingDestinationDescription& WithProtocols(const Aws::Vector<Protocol>& value) { SetProtocols(value); return *this;}
-    inline CustomRoutingDestinationDescription& WithProtocols(Aws::Vector<Protocol>&& value) { SetProtocols(std::move(value)); return *this;}
-    inline CustomRoutingDestinationDescription& AddProtocols(const Protocol& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
-    inline CustomRoutingDestinationDescription& AddProtocols(Protocol&& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(std::move(value)); return *this; }
+    template<typename ProtocolsT = Aws::Vector<Protocol>>
+    void SetProtocols(ProtocolsT&& value) { m_protocolsHasBeenSet = true; m_protocols = std::forward<ProtocolsT>(value); }
+    template<typename ProtocolsT = Aws::Vector<Protocol>>
+    CustomRoutingDestinationDescription& WithProtocols(ProtocolsT&& value) { SetProtocols(std::forward<ProtocolsT>(value)); return *this;}
+    inline CustomRoutingDestinationDescription& AddProtocols(Protocol value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
     ///@}
   private:
 
-    int m_fromPort;
+    int m_fromPort{0};
     bool m_fromPortHasBeenSet = false;
 
-    int m_toPort;
+    int m_toPort{0};
     bool m_toPortHasBeenSet = false;
 
     Aws::Vector<Protocol> m_protocols;

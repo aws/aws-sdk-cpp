@@ -27,7 +27,7 @@ namespace Model
   class CreatePresignedNotebookInstanceUrlResult
   {
   public:
-    AWS_SAGEMAKER_API CreatePresignedNotebookInstanceUrlResult();
+    AWS_SAGEMAKER_API CreatePresignedNotebookInstanceUrlResult() = default;
     AWS_SAGEMAKER_API CreatePresignedNotebookInstanceUrlResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API CreatePresignedNotebookInstanceUrlResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>A JSON object that contains the URL string. </p>
      */
-    inline const Aws::String& GetAuthorizedUrl() const{ return m_authorizedUrl; }
-    inline void SetAuthorizedUrl(const Aws::String& value) { m_authorizedUrl = value; }
-    inline void SetAuthorizedUrl(Aws::String&& value) { m_authorizedUrl = std::move(value); }
-    inline void SetAuthorizedUrl(const char* value) { m_authorizedUrl.assign(value); }
-    inline CreatePresignedNotebookInstanceUrlResult& WithAuthorizedUrl(const Aws::String& value) { SetAuthorizedUrl(value); return *this;}
-    inline CreatePresignedNotebookInstanceUrlResult& WithAuthorizedUrl(Aws::String&& value) { SetAuthorizedUrl(std::move(value)); return *this;}
-    inline CreatePresignedNotebookInstanceUrlResult& WithAuthorizedUrl(const char* value) { SetAuthorizedUrl(value); return *this;}
+    inline const Aws::String& GetAuthorizedUrl() const { return m_authorizedUrl; }
+    template<typename AuthorizedUrlT = Aws::String>
+    void SetAuthorizedUrl(AuthorizedUrlT&& value) { m_authorizedUrlHasBeenSet = true; m_authorizedUrl = std::forward<AuthorizedUrlT>(value); }
+    template<typename AuthorizedUrlT = Aws::String>
+    CreatePresignedNotebookInstanceUrlResult& WithAuthorizedUrl(AuthorizedUrlT&& value) { SetAuthorizedUrl(std::forward<AuthorizedUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreatePresignedNotebookInstanceUrlResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreatePresignedNotebookInstanceUrlResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreatePresignedNotebookInstanceUrlResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreatePresignedNotebookInstanceUrlResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_authorizedUrl;
+    bool m_authorizedUrlHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

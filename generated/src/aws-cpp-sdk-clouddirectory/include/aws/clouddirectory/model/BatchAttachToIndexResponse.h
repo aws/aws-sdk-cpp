@@ -32,7 +32,7 @@ namespace Model
   class BatchAttachToIndexResponse
   {
   public:
-    AWS_CLOUDDIRECTORY_API BatchAttachToIndexResponse();
+    AWS_CLOUDDIRECTORY_API BatchAttachToIndexResponse() = default;
     AWS_CLOUDDIRECTORY_API BatchAttachToIndexResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API BatchAttachToIndexResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The <code>ObjectIdentifier</code> of the object that was attached to the
      * index.</p>
      */
-    inline const Aws::String& GetAttachedObjectIdentifier() const{ return m_attachedObjectIdentifier; }
+    inline const Aws::String& GetAttachedObjectIdentifier() const { return m_attachedObjectIdentifier; }
     inline bool AttachedObjectIdentifierHasBeenSet() const { return m_attachedObjectIdentifierHasBeenSet; }
-    inline void SetAttachedObjectIdentifier(const Aws::String& value) { m_attachedObjectIdentifierHasBeenSet = true; m_attachedObjectIdentifier = value; }
-    inline void SetAttachedObjectIdentifier(Aws::String&& value) { m_attachedObjectIdentifierHasBeenSet = true; m_attachedObjectIdentifier = std::move(value); }
-    inline void SetAttachedObjectIdentifier(const char* value) { m_attachedObjectIdentifierHasBeenSet = true; m_attachedObjectIdentifier.assign(value); }
-    inline BatchAttachToIndexResponse& WithAttachedObjectIdentifier(const Aws::String& value) { SetAttachedObjectIdentifier(value); return *this;}
-    inline BatchAttachToIndexResponse& WithAttachedObjectIdentifier(Aws::String&& value) { SetAttachedObjectIdentifier(std::move(value)); return *this;}
-    inline BatchAttachToIndexResponse& WithAttachedObjectIdentifier(const char* value) { SetAttachedObjectIdentifier(value); return *this;}
+    template<typename AttachedObjectIdentifierT = Aws::String>
+    void SetAttachedObjectIdentifier(AttachedObjectIdentifierT&& value) { m_attachedObjectIdentifierHasBeenSet = true; m_attachedObjectIdentifier = std::forward<AttachedObjectIdentifierT>(value); }
+    template<typename AttachedObjectIdentifierT = Aws::String>
+    BatchAttachToIndexResponse& WithAttachedObjectIdentifier(AttachedObjectIdentifierT&& value) { SetAttachedObjectIdentifier(std::forward<AttachedObjectIdentifierT>(value)); return *this;}
     ///@}
   private:
 

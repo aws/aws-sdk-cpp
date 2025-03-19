@@ -28,7 +28,7 @@ namespace Model
   class GetPolicyResult
   {
   public:
-    AWS_FMS_API GetPolicyResult();
+    AWS_FMS_API GetPolicyResult() = default;
     AWS_FMS_API GetPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FMS_API GetPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,42 @@ namespace Model
     /**
      * <p>Information about the specified Firewall Manager policy.</p>
      */
-    inline const Policy& GetPolicy() const{ return m_policy; }
-    inline void SetPolicy(const Policy& value) { m_policy = value; }
-    inline void SetPolicy(Policy&& value) { m_policy = std::move(value); }
-    inline GetPolicyResult& WithPolicy(const Policy& value) { SetPolicy(value); return *this;}
-    inline GetPolicyResult& WithPolicy(Policy&& value) { SetPolicy(std::move(value)); return *this;}
+    inline const Policy& GetPolicy() const { return m_policy; }
+    template<typename PolicyT = Policy>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Policy>
+    GetPolicyResult& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the specified policy.</p>
      */
-    inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
-    inline void SetPolicyArn(const Aws::String& value) { m_policyArn = value; }
-    inline void SetPolicyArn(Aws::String&& value) { m_policyArn = std::move(value); }
-    inline void SetPolicyArn(const char* value) { m_policyArn.assign(value); }
-    inline GetPolicyResult& WithPolicyArn(const Aws::String& value) { SetPolicyArn(value); return *this;}
-    inline GetPolicyResult& WithPolicyArn(Aws::String&& value) { SetPolicyArn(std::move(value)); return *this;}
-    inline GetPolicyResult& WithPolicyArn(const char* value) { SetPolicyArn(value); return *this;}
+    inline const Aws::String& GetPolicyArn() const { return m_policyArn; }
+    template<typename PolicyArnT = Aws::String>
+    void SetPolicyArn(PolicyArnT&& value) { m_policyArnHasBeenSet = true; m_policyArn = std::forward<PolicyArnT>(value); }
+    template<typename PolicyArnT = Aws::String>
+    GetPolicyResult& WithPolicyArn(PolicyArnT&& value) { SetPolicyArn(std::forward<PolicyArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Policy m_policy;
+    bool m_policyHasBeenSet = false;
 
     Aws::String m_policyArn;
+    bool m_policyArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

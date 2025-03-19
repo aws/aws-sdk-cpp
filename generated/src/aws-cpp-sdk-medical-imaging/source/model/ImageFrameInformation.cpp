@@ -18,13 +18,7 @@ namespace MedicalImaging
 namespace Model
 {
 
-ImageFrameInformation::ImageFrameInformation() : 
-    m_imageFrameIdHasBeenSet(false)
-{
-}
-
 ImageFrameInformation::ImageFrameInformation(JsonView jsonValue)
-  : ImageFrameInformation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ImageFrameInformation& ImageFrameInformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("imageFrameId"))
   {
     m_imageFrameId = jsonValue.GetString("imageFrameId");
-
     m_imageFrameIdHasBeenSet = true;
   }
-
   return *this;
 }
 

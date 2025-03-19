@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpcPeeringConnection::VpcPeeringConnection() : 
-    m_accepterVpcInfoHasBeenSet(false),
-    m_expirationTimeHasBeenSet(false),
-    m_requesterVpcInfoHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false)
-{
-}
-
 VpcPeeringConnection::VpcPeeringConnection(const XmlNode& xmlNode)
-  : VpcPeeringConnection()
 {
   *this = xmlNode;
 }
@@ -70,6 +59,7 @@ VpcPeeringConnection& VpcPeeringConnection::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

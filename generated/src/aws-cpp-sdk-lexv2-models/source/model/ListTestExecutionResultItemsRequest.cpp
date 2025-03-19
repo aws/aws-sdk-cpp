@@ -12,15 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTestExecutionResultItemsRequest::ListTestExecutionResultItemsRequest() : 
-    m_testExecutionIdHasBeenSet(false),
-    m_resultFilterByHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListTestExecutionResultItemsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -10,20 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-AuthorizeClientVpnIngressRequest::AuthorizeClientVpnIngressRequest() : 
-    m_clientVpnEndpointIdHasBeenSet(false),
-    m_targetNetworkCidrHasBeenSet(false),
-    m_accessGroupIdHasBeenSet(false),
-    m_authorizeAllGroups(false),
-    m_authorizeAllGroupsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String AuthorizeClientVpnIngressRequest::SerializePayload() const
 {
   Aws::StringStream ss;

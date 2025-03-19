@@ -18,19 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SnowflakeParameters::SnowflakeParameters() : 
-    m_hostHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_warehouseHasBeenSet(false),
-    m_authenticationType(AuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false),
-    m_databaseAccessControlRoleHasBeenSet(false),
-    m_oAuthParametersHasBeenSet(false)
-{
-}
-
 SnowflakeParameters::SnowflakeParameters(JsonView jsonValue)
-  : SnowflakeParameters()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ SnowflakeParameters& SnowflakeParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Host"))
   {
     m_host = jsonValue.GetString("Host");
-
     m_hostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Database"))
   {
     m_database = jsonValue.GetString("Database");
-
     m_databaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Warehouse"))
   {
     m_warehouse = jsonValue.GetString("Warehouse");
-
     m_warehouseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthenticationType"))
   {
     m_authenticationType = AuthenticationTypeMapper::GetAuthenticationTypeForName(jsonValue.GetString("AuthenticationType"));
-
     m_authenticationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseAccessControlRole"))
   {
     m_databaseAccessControlRole = jsonValue.GetString("DatabaseAccessControlRole");
-
     m_databaseAccessControlRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OAuthParameters"))
   {
     m_oAuthParameters = jsonValue.GetObject("OAuthParameters");
-
     m_oAuthParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

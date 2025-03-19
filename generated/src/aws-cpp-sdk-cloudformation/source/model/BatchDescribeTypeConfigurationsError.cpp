@@ -20,15 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-BatchDescribeTypeConfigurationsError::BatchDescribeTypeConfigurationsError() : 
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_typeConfigurationIdentifierHasBeenSet(false)
-{
-}
-
 BatchDescribeTypeConfigurationsError::BatchDescribeTypeConfigurationsError(const XmlNode& xmlNode)
-  : BatchDescribeTypeConfigurationsError()
 {
   *this = xmlNode;
 }

@@ -12,12 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RevokeIpRulesRequest::RevokeIpRulesRequest() : 
-    m_groupIdHasBeenSet(false),
-    m_userRulesHasBeenSet(false)
-{
-}
-
 Aws::String RevokeIpRulesRequest::SerializePayload() const
 {
   JsonValue payload;

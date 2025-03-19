@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-RealTimeContactAnalysisTranscriptItemWithCharacterOffsets::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets() : 
-    m_idHasBeenSet(false),
-    m_characterOffsetsHasBeenSet(false)
-{
-}
-
 RealTimeContactAnalysisTranscriptItemWithCharacterOffsets::RealTimeContactAnalysisTranscriptItemWithCharacterOffsets(JsonView jsonValue)
-  : RealTimeContactAnalysisTranscriptItemWithCharacterOffsets()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RealTimeContactAnalysisTranscriptItemWithCharacterOffsets& RealTimeContactAnalys
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CharacterOffsets"))
   {
     m_characterOffsets = jsonValue.GetObject("CharacterOffsets");
-
     m_characterOffsetsHasBeenSet = true;
   }
-
   return *this;
 }
 

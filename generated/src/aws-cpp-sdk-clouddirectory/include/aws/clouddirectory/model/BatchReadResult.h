@@ -29,7 +29,7 @@ namespace Model
   class BatchReadResult
   {
   public:
-    AWS_CLOUDDIRECTORY_API BatchReadResult();
+    AWS_CLOUDDIRECTORY_API BatchReadResult() = default;
     AWS_CLOUDDIRECTORY_API BatchReadResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDDIRECTORY_API BatchReadResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>A list of all the responses for each batch read.</p>
      */
-    inline const Aws::Vector<BatchReadOperationResponse>& GetResponses() const{ return m_responses; }
-    inline void SetResponses(const Aws::Vector<BatchReadOperationResponse>& value) { m_responses = value; }
-    inline void SetResponses(Aws::Vector<BatchReadOperationResponse>&& value) { m_responses = std::move(value); }
-    inline BatchReadResult& WithResponses(const Aws::Vector<BatchReadOperationResponse>& value) { SetResponses(value); return *this;}
-    inline BatchReadResult& WithResponses(Aws::Vector<BatchReadOperationResponse>&& value) { SetResponses(std::move(value)); return *this;}
-    inline BatchReadResult& AddResponses(const BatchReadOperationResponse& value) { m_responses.push_back(value); return *this; }
-    inline BatchReadResult& AddResponses(BatchReadOperationResponse&& value) { m_responses.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchReadOperationResponse>& GetResponses() const { return m_responses; }
+    template<typename ResponsesT = Aws::Vector<BatchReadOperationResponse>>
+    void SetResponses(ResponsesT&& value) { m_responsesHasBeenSet = true; m_responses = std::forward<ResponsesT>(value); }
+    template<typename ResponsesT = Aws::Vector<BatchReadOperationResponse>>
+    BatchReadResult& WithResponses(ResponsesT&& value) { SetResponses(std::forward<ResponsesT>(value)); return *this;}
+    template<typename ResponsesT = BatchReadOperationResponse>
+    BatchReadResult& AddResponses(ResponsesT&& value) { m_responsesHasBeenSet = true; m_responses.emplace_back(std::forward<ResponsesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchReadResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchReadResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchReadResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchReadResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchReadOperationResponse> m_responses;
+    bool m_responsesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

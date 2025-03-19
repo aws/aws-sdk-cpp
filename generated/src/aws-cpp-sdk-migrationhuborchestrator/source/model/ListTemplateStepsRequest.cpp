@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListTemplateStepsRequest::ListTemplateStepsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_templateIdHasBeenSet(false),
-    m_stepGroupIdHasBeenSet(false)
-{
-}
-
 Aws::String ListTemplateStepsRequest::SerializePayload() const
 {
   return {};

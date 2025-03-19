@@ -18,15 +18,7 @@ namespace Snowball
 namespace Model
 {
 
-JobLogs::JobLogs() : 
-    m_jobCompletionReportURIHasBeenSet(false),
-    m_jobSuccessLogURIHasBeenSet(false),
-    m_jobFailureLogURIHasBeenSet(false)
-{
-}
-
 JobLogs::JobLogs(JsonView jsonValue)
-  : JobLogs()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ JobLogs& JobLogs::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("JobCompletionReportURI"))
   {
     m_jobCompletionReportURI = jsonValue.GetString("JobCompletionReportURI");
-
     m_jobCompletionReportURIHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobSuccessLogURI"))
   {
     m_jobSuccessLogURI = jsonValue.GetString("JobSuccessLogURI");
-
     m_jobSuccessLogURIHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobFailureLogURI"))
   {
     m_jobFailureLogURI = jsonValue.GetString("JobFailureLogURI");
-
     m_jobFailureLogURIHasBeenSet = true;
   }
-
   return *this;
 }
 

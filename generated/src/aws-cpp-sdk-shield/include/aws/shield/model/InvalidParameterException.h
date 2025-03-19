@@ -36,7 +36,7 @@ namespace Model
   class InvalidParameterException
   {
   public:
-    AWS_SHIELD_API InvalidParameterException();
+    AWS_SHIELD_API InvalidParameterException() = default;
     AWS_SHIELD_API InvalidParameterException(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API InvalidParameterException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,47 +44,43 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline InvalidParameterException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline InvalidParameterException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline InvalidParameterException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    InvalidParameterException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Additional information about the exception.</p>
      */
-    inline const ValidationExceptionReason& GetReason() const{ return m_reason; }
+    inline ValidationExceptionReason GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const ValidationExceptionReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(ValidationExceptionReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline InvalidParameterException& WithReason(const ValidationExceptionReason& value) { SetReason(value); return *this;}
-    inline InvalidParameterException& WithReason(ValidationExceptionReason&& value) { SetReason(std::move(value)); return *this;}
+    inline void SetReason(ValidationExceptionReason value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline InvalidParameterException& WithReason(ValidationExceptionReason value) { SetReason(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Fields that caused the exception.</p>
      */
-    inline const Aws::Vector<ValidationExceptionField>& GetFields() const{ return m_fields; }
+    inline const Aws::Vector<ValidationExceptionField>& GetFields() const { return m_fields; }
     inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
-    inline void SetFields(const Aws::Vector<ValidationExceptionField>& value) { m_fieldsHasBeenSet = true; m_fields = value; }
-    inline void SetFields(Aws::Vector<ValidationExceptionField>&& value) { m_fieldsHasBeenSet = true; m_fields = std::move(value); }
-    inline InvalidParameterException& WithFields(const Aws::Vector<ValidationExceptionField>& value) { SetFields(value); return *this;}
-    inline InvalidParameterException& WithFields(Aws::Vector<ValidationExceptionField>&& value) { SetFields(std::move(value)); return *this;}
-    inline InvalidParameterException& AddFields(const ValidationExceptionField& value) { m_fieldsHasBeenSet = true; m_fields.push_back(value); return *this; }
-    inline InvalidParameterException& AddFields(ValidationExceptionField&& value) { m_fieldsHasBeenSet = true; m_fields.push_back(std::move(value)); return *this; }
+    template<typename FieldsT = Aws::Vector<ValidationExceptionField>>
+    void SetFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields = std::forward<FieldsT>(value); }
+    template<typename FieldsT = Aws::Vector<ValidationExceptionField>>
+    InvalidParameterException& WithFields(FieldsT&& value) { SetFields(std::forward<FieldsT>(value)); return *this;}
+    template<typename FieldsT = ValidationExceptionField>
+    InvalidParameterException& AddFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields.emplace_back(std::forward<FieldsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    ValidationExceptionReason m_reason;
+    ValidationExceptionReason m_reason{ValidationExceptionReason::NOT_SET};
     bool m_reasonHasBeenSet = false;
 
     Aws::Vector<ValidationExceptionField> m_fields;

@@ -12,14 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UnlabelParameterVersionRequest::UnlabelParameterVersionRequest() : 
-    m_nameHasBeenSet(false),
-    m_parameterVersion(0),
-    m_parameterVersionHasBeenSet(false),
-    m_labelsHasBeenSet(false)
-{
-}
-
 Aws::String UnlabelParameterVersionRequest::SerializePayload() const
 {
   JsonValue payload;

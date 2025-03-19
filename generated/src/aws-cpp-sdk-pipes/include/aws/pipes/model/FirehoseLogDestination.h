@@ -32,7 +32,7 @@ namespace Model
   class FirehoseLogDestination
   {
   public:
-    AWS_PIPES_API FirehoseLogDestination();
+    AWS_PIPES_API FirehoseLogDestination() = default;
     AWS_PIPES_API FirehoseLogDestination(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API FirehoseLogDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Firehose delivery stream to which
      * EventBridge delivers the pipe log records.</p>
      */
-    inline const Aws::String& GetDeliveryStreamArn() const{ return m_deliveryStreamArn; }
+    inline const Aws::String& GetDeliveryStreamArn() const { return m_deliveryStreamArn; }
     inline bool DeliveryStreamArnHasBeenSet() const { return m_deliveryStreamArnHasBeenSet; }
-    inline void SetDeliveryStreamArn(const Aws::String& value) { m_deliveryStreamArnHasBeenSet = true; m_deliveryStreamArn = value; }
-    inline void SetDeliveryStreamArn(Aws::String&& value) { m_deliveryStreamArnHasBeenSet = true; m_deliveryStreamArn = std::move(value); }
-    inline void SetDeliveryStreamArn(const char* value) { m_deliveryStreamArnHasBeenSet = true; m_deliveryStreamArn.assign(value); }
-    inline FirehoseLogDestination& WithDeliveryStreamArn(const Aws::String& value) { SetDeliveryStreamArn(value); return *this;}
-    inline FirehoseLogDestination& WithDeliveryStreamArn(Aws::String&& value) { SetDeliveryStreamArn(std::move(value)); return *this;}
-    inline FirehoseLogDestination& WithDeliveryStreamArn(const char* value) { SetDeliveryStreamArn(value); return *this;}
+    template<typename DeliveryStreamArnT = Aws::String>
+    void SetDeliveryStreamArn(DeliveryStreamArnT&& value) { m_deliveryStreamArnHasBeenSet = true; m_deliveryStreamArn = std::forward<DeliveryStreamArnT>(value); }
+    template<typename DeliveryStreamArnT = Aws::String>
+    FirehoseLogDestination& WithDeliveryStreamArn(DeliveryStreamArnT&& value) { SetDeliveryStreamArn(std::forward<DeliveryStreamArnT>(value)); return *this;}
     ///@}
   private:
 

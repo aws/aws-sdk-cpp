@@ -21,7 +21,7 @@ namespace Model
   class DescribeFlowDefinitionRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API DescribeFlowDefinitionRequest();
+    AWS_SAGEMAKER_API DescribeFlowDefinitionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the flow definition.</p>
      */
-    inline const Aws::String& GetFlowDefinitionName() const{ return m_flowDefinitionName; }
+    inline const Aws::String& GetFlowDefinitionName() const { return m_flowDefinitionName; }
     inline bool FlowDefinitionNameHasBeenSet() const { return m_flowDefinitionNameHasBeenSet; }
-    inline void SetFlowDefinitionName(const Aws::String& value) { m_flowDefinitionNameHasBeenSet = true; m_flowDefinitionName = value; }
-    inline void SetFlowDefinitionName(Aws::String&& value) { m_flowDefinitionNameHasBeenSet = true; m_flowDefinitionName = std::move(value); }
-    inline void SetFlowDefinitionName(const char* value) { m_flowDefinitionNameHasBeenSet = true; m_flowDefinitionName.assign(value); }
-    inline DescribeFlowDefinitionRequest& WithFlowDefinitionName(const Aws::String& value) { SetFlowDefinitionName(value); return *this;}
-    inline DescribeFlowDefinitionRequest& WithFlowDefinitionName(Aws::String&& value) { SetFlowDefinitionName(std::move(value)); return *this;}
-    inline DescribeFlowDefinitionRequest& WithFlowDefinitionName(const char* value) { SetFlowDefinitionName(value); return *this;}
+    template<typename FlowDefinitionNameT = Aws::String>
+    void SetFlowDefinitionName(FlowDefinitionNameT&& value) { m_flowDefinitionNameHasBeenSet = true; m_flowDefinitionName = std::forward<FlowDefinitionNameT>(value); }
+    template<typename FlowDefinitionNameT = Aws::String>
+    DescribeFlowDefinitionRequest& WithFlowDefinitionName(FlowDefinitionNameT&& value) { SetFlowDefinitionName(std::forward<FlowDefinitionNameT>(value)); return *this;}
     ///@}
   private:
 

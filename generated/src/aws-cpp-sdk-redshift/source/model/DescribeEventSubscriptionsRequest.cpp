@@ -10,16 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribeEventSubscriptionsRequest::DescribeEventSubscriptionsRequest() : 
-    m_subscriptionNameHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_tagKeysHasBeenSet(false),
-    m_tagValuesHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEventSubscriptionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

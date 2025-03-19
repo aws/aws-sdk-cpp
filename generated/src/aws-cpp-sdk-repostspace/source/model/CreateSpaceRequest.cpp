@@ -12,18 +12,6 @@ using namespace Aws::repostspace::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSpaceRequest::CreateSpaceRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_subdomainHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_tier(TierLevel::NOT_SET),
-    m_tierHasBeenSet(false),
-    m_userKMSKeyHasBeenSet(false)
-{
-}
-
 Aws::String CreateSpaceRequest::SerializePayload() const
 {
   JsonValue payload;

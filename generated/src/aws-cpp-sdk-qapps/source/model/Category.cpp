@@ -18,17 +18,7 @@ namespace QApps
 namespace Model
 {
 
-Category::Category() : 
-    m_idHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_colorHasBeenSet(false),
-    m_appCount(0),
-    m_appCountHasBeenSet(false)
-{
-}
-
 Category::Category(JsonView jsonValue)
-  : Category()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Category& Category::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("color"))
   {
     m_color = jsonValue.GetString("color");
-
     m_colorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appCount"))
   {
     m_appCount = jsonValue.GetInteger("appCount");
-
     m_appCountHasBeenSet = true;
   }
-
   return *this;
 }
 

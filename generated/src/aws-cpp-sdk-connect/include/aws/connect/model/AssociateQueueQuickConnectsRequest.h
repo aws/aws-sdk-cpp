@@ -22,7 +22,7 @@ namespace Model
   class AssociateQueueQuickConnectsRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API AssociateQueueQuickConnectsRequest();
+    AWS_CONNECT_API AssociateQueueQuickConnectsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,43 +39,38 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline AssociateQueueQuickConnectsRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline AssociateQueueQuickConnectsRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline AssociateQueueQuickConnectsRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    AssociateQueueQuickConnectsRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier for the queue.</p>
      */
-    inline const Aws::String& GetQueueId() const{ return m_queueId; }
+    inline const Aws::String& GetQueueId() const { return m_queueId; }
     inline bool QueueIdHasBeenSet() const { return m_queueIdHasBeenSet; }
-    inline void SetQueueId(const Aws::String& value) { m_queueIdHasBeenSet = true; m_queueId = value; }
-    inline void SetQueueId(Aws::String&& value) { m_queueIdHasBeenSet = true; m_queueId = std::move(value); }
-    inline void SetQueueId(const char* value) { m_queueIdHasBeenSet = true; m_queueId.assign(value); }
-    inline AssociateQueueQuickConnectsRequest& WithQueueId(const Aws::String& value) { SetQueueId(value); return *this;}
-    inline AssociateQueueQuickConnectsRequest& WithQueueId(Aws::String&& value) { SetQueueId(std::move(value)); return *this;}
-    inline AssociateQueueQuickConnectsRequest& WithQueueId(const char* value) { SetQueueId(value); return *this;}
+    template<typename QueueIdT = Aws::String>
+    void SetQueueId(QueueIdT&& value) { m_queueIdHasBeenSet = true; m_queueId = std::forward<QueueIdT>(value); }
+    template<typename QueueIdT = Aws::String>
+    AssociateQueueQuickConnectsRequest& WithQueueId(QueueIdT&& value) { SetQueueId(std::forward<QueueIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The quick connects to associate with this queue.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetQuickConnectIds() const{ return m_quickConnectIds; }
+    inline const Aws::Vector<Aws::String>& GetQuickConnectIds() const { return m_quickConnectIds; }
     inline bool QuickConnectIdsHasBeenSet() const { return m_quickConnectIdsHasBeenSet; }
-    inline void SetQuickConnectIds(const Aws::Vector<Aws::String>& value) { m_quickConnectIdsHasBeenSet = true; m_quickConnectIds = value; }
-    inline void SetQuickConnectIds(Aws::Vector<Aws::String>&& value) { m_quickConnectIdsHasBeenSet = true; m_quickConnectIds = std::move(value); }
-    inline AssociateQueueQuickConnectsRequest& WithQuickConnectIds(const Aws::Vector<Aws::String>& value) { SetQuickConnectIds(value); return *this;}
-    inline AssociateQueueQuickConnectsRequest& WithQuickConnectIds(Aws::Vector<Aws::String>&& value) { SetQuickConnectIds(std::move(value)); return *this;}
-    inline AssociateQueueQuickConnectsRequest& AddQuickConnectIds(const Aws::String& value) { m_quickConnectIdsHasBeenSet = true; m_quickConnectIds.push_back(value); return *this; }
-    inline AssociateQueueQuickConnectsRequest& AddQuickConnectIds(Aws::String&& value) { m_quickConnectIdsHasBeenSet = true; m_quickConnectIds.push_back(std::move(value)); return *this; }
-    inline AssociateQueueQuickConnectsRequest& AddQuickConnectIds(const char* value) { m_quickConnectIdsHasBeenSet = true; m_quickConnectIds.push_back(value); return *this; }
+    template<typename QuickConnectIdsT = Aws::Vector<Aws::String>>
+    void SetQuickConnectIds(QuickConnectIdsT&& value) { m_quickConnectIdsHasBeenSet = true; m_quickConnectIds = std::forward<QuickConnectIdsT>(value); }
+    template<typename QuickConnectIdsT = Aws::Vector<Aws::String>>
+    AssociateQueueQuickConnectsRequest& WithQuickConnectIds(QuickConnectIdsT&& value) { SetQuickConnectIds(std::forward<QuickConnectIdsT>(value)); return *this;}
+    template<typename QuickConnectIdsT = Aws::String>
+    AssociateQueueQuickConnectsRequest& AddQuickConnectIds(QuickConnectIdsT&& value) { m_quickConnectIdsHasBeenSet = true; m_quickConnectIds.emplace_back(std::forward<QuickConnectIdsT>(value)); return *this; }
     ///@}
   private:
 

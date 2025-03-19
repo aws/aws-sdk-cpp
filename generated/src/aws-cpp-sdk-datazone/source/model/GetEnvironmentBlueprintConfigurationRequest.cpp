@@ -12,12 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetEnvironmentBlueprintConfigurationRequest::GetEnvironmentBlueprintConfigurationRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_environmentBlueprintIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetEnvironmentBlueprintConfigurationRequest::SerializePayload() const
 {
   return {};

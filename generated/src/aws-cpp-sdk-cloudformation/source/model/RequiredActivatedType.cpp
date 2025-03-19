@@ -20,16 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-RequiredActivatedType::RequiredActivatedType() : 
-    m_typeNameAliasHasBeenSet(false),
-    m_originalTypeNameHasBeenSet(false),
-    m_publisherIdHasBeenSet(false),
-    m_supportedMajorVersionsHasBeenSet(false)
-{
-}
-
 RequiredActivatedType::RequiredActivatedType(const XmlNode& xmlNode)
-  : RequiredActivatedType()
 {
   *this = xmlNode;
 }
@@ -62,6 +53,7 @@ RequiredActivatedType& RequiredActivatedType::operator =(const XmlNode& xmlNode)
     if(!supportedMajorVersionsNode.IsNull())
     {
       XmlNode supportedMajorVersionsMember = supportedMajorVersionsNode.FirstChild("member");
+      m_supportedMajorVersionsHasBeenSet = !supportedMajorVersionsMember.IsNull();
       while(!supportedMajorVersionsMember.IsNull())
       {
         m_supportedMajorVersions.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(supportedMajorVersionsMember.GetText().c_str()).c_str()));

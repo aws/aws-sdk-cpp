@@ -18,22 +18,7 @@ namespace GlueDataBrew
 namespace Model
 {
 
-Schedule::Schedule() : 
-    m_accountIdHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_jobNamesHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false),
-    m_resourceArnHasBeenSet(false),
-    m_cronExpressionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Schedule::Schedule(JsonView jsonValue)
-  : Schedule()
 {
   *this = jsonValue;
 }
@@ -43,24 +28,18 @@ Schedule& Schedule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetString("CreatedBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateDate"))
   {
     m_createDate = jsonValue.GetDouble("CreateDate");
-
     m_createDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobNames"))
   {
     Aws::Utils::Array<JsonView> jobNamesJsonList = jsonValue.GetArray("JobNames");
@@ -70,35 +49,26 @@ Schedule& Schedule::operator =(JsonView jsonValue)
     }
     m_jobNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedBy"))
   {
     m_lastModifiedBy = jsonValue.GetString("LastModifiedBy");
-
     m_lastModifiedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CronExpression"))
   {
     m_cronExpression = jsonValue.GetString("CronExpression");
-
     m_cronExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -108,14 +78,11 @@ Schedule& Schedule::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-StreamingDataPreviewOptions::StreamingDataPreviewOptions() : 
-    m_pollingTime(0),
-    m_pollingTimeHasBeenSet(false),
-    m_recordPollingLimit(0),
-    m_recordPollingLimitHasBeenSet(false)
-{
-}
-
 StreamingDataPreviewOptions::StreamingDataPreviewOptions(JsonView jsonValue)
-  : StreamingDataPreviewOptions()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ StreamingDataPreviewOptions& StreamingDataPreviewOptions::operator =(JsonView js
   if(jsonValue.ValueExists("PollingTime"))
   {
     m_pollingTime = jsonValue.GetInt64("PollingTime");
-
     m_pollingTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordPollingLimit"))
   {
     m_recordPollingLimit = jsonValue.GetInt64("RecordPollingLimit");
-
     m_recordPollingLimitHasBeenSet = true;
   }
-
   return *this;
 }
 

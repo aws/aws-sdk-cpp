@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateFeaturedResultsSetResult::CreateFeaturedResultsSetResult()
-{
-}
-
 CreateFeaturedResultsSetResult::CreateFeaturedResultsSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateFeaturedResultsSetResult& CreateFeaturedResultsSetResult::operator =(const
   if(jsonValue.ValueExists("FeaturedResultsSet"))
   {
     m_featuredResultsSet = jsonValue.GetObject("FeaturedResultsSet");
-
+    m_featuredResultsSetHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

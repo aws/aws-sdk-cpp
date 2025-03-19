@@ -12,16 +12,6 @@ using namespace Aws::ECS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExecuteCommandRequest::ExecuteCommandRequest() : 
-    m_clusterHasBeenSet(false),
-    m_containerHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_interactive(false),
-    m_interactiveHasBeenSet(false),
-    m_taskHasBeenSet(false)
-{
-}
-
 Aws::String ExecuteCommandRequest::SerializePayload() const
 {
   JsonValue payload;

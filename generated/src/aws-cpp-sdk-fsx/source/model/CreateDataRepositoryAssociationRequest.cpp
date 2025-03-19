@@ -12,21 +12,6 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDataRepositoryAssociationRequest::CreateDataRepositoryAssociationRequest() : 
-    m_fileSystemIdHasBeenSet(false),
-    m_fileSystemPathHasBeenSet(false),
-    m_dataRepositoryPathHasBeenSet(false),
-    m_batchImportMetaDataOnCreate(false),
-    m_batchImportMetaDataOnCreateHasBeenSet(false),
-    m_importedFileChunkSize(0),
-    m_importedFileChunkSizeHasBeenSet(false),
-    m_s3HasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDataRepositoryAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

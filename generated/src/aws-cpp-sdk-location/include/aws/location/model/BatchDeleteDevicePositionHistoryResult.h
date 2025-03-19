@@ -29,7 +29,7 @@ namespace Model
   class BatchDeleteDevicePositionHistoryResult
   {
   public:
-    AWS_LOCATIONSERVICE_API BatchDeleteDevicePositionHistoryResult();
+    AWS_LOCATIONSERVICE_API BatchDeleteDevicePositionHistoryResult() = default;
     AWS_LOCATIONSERVICE_API BatchDeleteDevicePositionHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOCATIONSERVICE_API BatchDeleteDevicePositionHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>Contains error details for each device history that failed to delete.</p>
      */
-    inline const Aws::Vector<BatchDeleteDevicePositionHistoryError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<BatchDeleteDevicePositionHistoryError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchDeleteDevicePositionHistoryError>&& value) { m_errors = std::move(value); }
-    inline BatchDeleteDevicePositionHistoryResult& WithErrors(const Aws::Vector<BatchDeleteDevicePositionHistoryError>& value) { SetErrors(value); return *this;}
-    inline BatchDeleteDevicePositionHistoryResult& WithErrors(Aws::Vector<BatchDeleteDevicePositionHistoryError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchDeleteDevicePositionHistoryResult& AddErrors(const BatchDeleteDevicePositionHistoryError& value) { m_errors.push_back(value); return *this; }
-    inline BatchDeleteDevicePositionHistoryResult& AddErrors(BatchDeleteDevicePositionHistoryError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchDeleteDevicePositionHistoryError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchDeleteDevicePositionHistoryError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchDeleteDevicePositionHistoryError>>
+    BatchDeleteDevicePositionHistoryResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchDeleteDevicePositionHistoryError>
+    BatchDeleteDevicePositionHistoryResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchDeleteDevicePositionHistoryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchDeleteDevicePositionHistoryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchDeleteDevicePositionHistoryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchDeleteDevicePositionHistoryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchDeleteDevicePositionHistoryError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -32,7 +32,7 @@ namespace Model
   class DataAutomationProjectFilter
   {
   public:
-    AWS_BEDROCKDATAAUTOMATION_API DataAutomationProjectFilter();
+    AWS_BEDROCKDATAAUTOMATION_API DataAutomationProjectFilter() = default;
     AWS_BEDROCKDATAAUTOMATION_API DataAutomationProjectFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API DataAutomationProjectFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,31 +40,27 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetProjectArn() const{ return m_projectArn; }
+    inline const Aws::String& GetProjectArn() const { return m_projectArn; }
     inline bool ProjectArnHasBeenSet() const { return m_projectArnHasBeenSet; }
-    inline void SetProjectArn(const Aws::String& value) { m_projectArnHasBeenSet = true; m_projectArn = value; }
-    inline void SetProjectArn(Aws::String&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::move(value); }
-    inline void SetProjectArn(const char* value) { m_projectArnHasBeenSet = true; m_projectArn.assign(value); }
-    inline DataAutomationProjectFilter& WithProjectArn(const Aws::String& value) { SetProjectArn(value); return *this;}
-    inline DataAutomationProjectFilter& WithProjectArn(Aws::String&& value) { SetProjectArn(std::move(value)); return *this;}
-    inline DataAutomationProjectFilter& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
+    template<typename ProjectArnT = Aws::String>
+    void SetProjectArn(ProjectArnT&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::forward<ProjectArnT>(value); }
+    template<typename ProjectArnT = Aws::String>
+    DataAutomationProjectFilter& WithProjectArn(ProjectArnT&& value) { SetProjectArn(std::forward<ProjectArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DataAutomationProjectStage& GetProjectStage() const{ return m_projectStage; }
+    inline DataAutomationProjectStage GetProjectStage() const { return m_projectStage; }
     inline bool ProjectStageHasBeenSet() const { return m_projectStageHasBeenSet; }
-    inline void SetProjectStage(const DataAutomationProjectStage& value) { m_projectStageHasBeenSet = true; m_projectStage = value; }
-    inline void SetProjectStage(DataAutomationProjectStage&& value) { m_projectStageHasBeenSet = true; m_projectStage = std::move(value); }
-    inline DataAutomationProjectFilter& WithProjectStage(const DataAutomationProjectStage& value) { SetProjectStage(value); return *this;}
-    inline DataAutomationProjectFilter& WithProjectStage(DataAutomationProjectStage&& value) { SetProjectStage(std::move(value)); return *this;}
+    inline void SetProjectStage(DataAutomationProjectStage value) { m_projectStageHasBeenSet = true; m_projectStage = value; }
+    inline DataAutomationProjectFilter& WithProjectStage(DataAutomationProjectStage value) { SetProjectStage(value); return *this;}
     ///@}
   private:
 
     Aws::String m_projectArn;
     bool m_projectArnHasBeenSet = false;
 
-    DataAutomationProjectStage m_projectStage;
+    DataAutomationProjectStage m_projectStage{DataAutomationProjectStage::NOT_SET};
     bool m_projectStageHasBeenSet = false;
   };
 

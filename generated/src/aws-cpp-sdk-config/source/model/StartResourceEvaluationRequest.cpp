@@ -12,17 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartResourceEvaluationRequest::StartResourceEvaluationRequest() : 
-    m_resourceDetailsHasBeenSet(false),
-    m_evaluationContextHasBeenSet(false),
-    m_evaluationMode(EvaluationMode::NOT_SET),
-    m_evaluationModeHasBeenSet(false),
-    m_evaluationTimeout(0),
-    m_evaluationTimeoutHasBeenSet(false),
-    m_clientTokenHasBeenSet(false)
-{
-}
-
 Aws::String StartResourceEvaluationRequest::SerializePayload() const
 {
   JsonValue payload;

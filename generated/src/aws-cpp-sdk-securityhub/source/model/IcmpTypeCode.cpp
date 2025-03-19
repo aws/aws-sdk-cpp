@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-IcmpTypeCode::IcmpTypeCode() : 
-    m_code(0),
-    m_codeHasBeenSet(false),
-    m_type(0),
-    m_typeHasBeenSet(false)
-{
-}
-
 IcmpTypeCode::IcmpTypeCode(JsonView jsonValue)
-  : IcmpTypeCode()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ IcmpTypeCode& IcmpTypeCode::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetInteger("Code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetInteger("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

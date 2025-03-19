@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetInferenceProfileResult::GetInferenceProfileResult() : 
-    m_status(InferenceProfileStatus::NOT_SET),
-    m_type(InferenceProfileType::NOT_SET)
-{
-}
-
 GetInferenceProfileResult::GetInferenceProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetInferenceProfileResult()
 {
   *this = result;
 }
@@ -35,33 +28,28 @@ GetInferenceProfileResult& GetInferenceProfileResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("inferenceProfileName"))
   {
     m_inferenceProfileName = jsonValue.GetString("inferenceProfileName");
-
+    m_inferenceProfileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetString("updatedAt");
-
+    m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inferenceProfileArn"))
   {
     m_inferenceProfileArn = jsonValue.GetString("inferenceProfileArn");
-
+    m_inferenceProfileArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("models"))
   {
     Aws::Utils::Array<JsonView> modelsJsonList = jsonValue.GetArray("models");
@@ -69,32 +57,30 @@ GetInferenceProfileResult& GetInferenceProfileResult::operator =(const Aws::Amaz
     {
       m_models.push_back(modelsJsonList[modelsIndex].AsObject());
     }
+    m_modelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inferenceProfileId"))
   {
     m_inferenceProfileId = jsonValue.GetString("inferenceProfileId");
-
+    m_inferenceProfileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = InferenceProfileStatusMapper::GetInferenceProfileStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = InferenceProfileTypeMapper::GetInferenceProfileTypeForName(jsonValue.GetString("type"));
-
+    m_typeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

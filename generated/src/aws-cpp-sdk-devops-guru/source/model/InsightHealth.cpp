@@ -18,18 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-InsightHealth::InsightHealth() : 
-    m_openProactiveInsights(0),
-    m_openProactiveInsightsHasBeenSet(false),
-    m_openReactiveInsights(0),
-    m_openReactiveInsightsHasBeenSet(false),
-    m_meanTimeToRecoverInMilliseconds(0),
-    m_meanTimeToRecoverInMillisecondsHasBeenSet(false)
-{
-}
-
 InsightHealth::InsightHealth(JsonView jsonValue)
-  : InsightHealth()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ InsightHealth& InsightHealth::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OpenProactiveInsights"))
   {
     m_openProactiveInsights = jsonValue.GetInteger("OpenProactiveInsights");
-
     m_openProactiveInsightsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OpenReactiveInsights"))
   {
     m_openReactiveInsights = jsonValue.GetInteger("OpenReactiveInsights");
-
     m_openReactiveInsightsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MeanTimeToRecoverInMilliseconds"))
   {
     m_meanTimeToRecoverInMilliseconds = jsonValue.GetInt64("MeanTimeToRecoverInMilliseconds");
-
     m_meanTimeToRecoverInMillisecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

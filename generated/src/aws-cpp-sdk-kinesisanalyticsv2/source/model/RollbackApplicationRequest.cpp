@@ -12,13 +12,6 @@ using namespace Aws::KinesisAnalyticsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RollbackApplicationRequest::RollbackApplicationRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_currentApplicationVersionId(0),
-    m_currentApplicationVersionIdHasBeenSet(false)
-{
-}
-
 Aws::String RollbackApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

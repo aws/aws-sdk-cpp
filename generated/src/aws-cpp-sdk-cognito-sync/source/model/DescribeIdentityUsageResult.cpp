@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeIdentityUsageResult::DescribeIdentityUsageResult()
-{
-}
-
 DescribeIdentityUsageResult::DescribeIdentityUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeIdentityUsageResult& DescribeIdentityUsageResult::operator =(const Aws::
   if(jsonValue.ValueExists("IdentityUsage"))
   {
     m_identityUsage = jsonValue.GetObject("IdentityUsage");
-
+    m_identityUsageHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

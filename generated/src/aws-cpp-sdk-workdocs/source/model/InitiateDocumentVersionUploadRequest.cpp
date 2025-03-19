@@ -13,19 +13,6 @@ using namespace Aws::WorkDocs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-InitiateDocumentVersionUploadRequest::InitiateDocumentVersionUploadRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_contentCreatedTimestampHasBeenSet(false),
-    m_contentModifiedTimestampHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_documentSizeInBytes(0),
-    m_documentSizeInBytesHasBeenSet(false),
-    m_parentFolderIdHasBeenSet(false)
-{
-}
-
 Aws::String InitiateDocumentVersionUploadRequest::SerializePayload() const
 {
   JsonValue payload;

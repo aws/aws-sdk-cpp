@@ -18,13 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-CaptchaAction::CaptchaAction() : 
-    m_customRequestHandlingHasBeenSet(false)
-{
-}
-
 CaptchaAction::CaptchaAction(JsonView jsonValue)
-  : CaptchaAction()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CaptchaAction& CaptchaAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CustomRequestHandling"))
   {
     m_customRequestHandling = jsonValue.GetObject("CustomRequestHandling");
-
     m_customRequestHandlingHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -40,7 +40,7 @@ namespace Model
   class DashboardVisualId
   {
   public:
-    AWS_QUICKSIGHT_API DashboardVisualId();
+    AWS_QUICKSIGHT_API DashboardVisualId() = default;
     AWS_QUICKSIGHT_API DashboardVisualId(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DashboardVisualId& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,14 +54,12 @@ namespace Model
      * the Amazon QuickSight console. You can also get the <code>DashboardId</code>
      * with a <code>ListDashboards</code> API operation.</p>
      */
-    inline const Aws::String& GetDashboardId() const{ return m_dashboardId; }
+    inline const Aws::String& GetDashboardId() const { return m_dashboardId; }
     inline bool DashboardIdHasBeenSet() const { return m_dashboardIdHasBeenSet; }
-    inline void SetDashboardId(const Aws::String& value) { m_dashboardIdHasBeenSet = true; m_dashboardId = value; }
-    inline void SetDashboardId(Aws::String&& value) { m_dashboardIdHasBeenSet = true; m_dashboardId = std::move(value); }
-    inline void SetDashboardId(const char* value) { m_dashboardIdHasBeenSet = true; m_dashboardId.assign(value); }
-    inline DashboardVisualId& WithDashboardId(const Aws::String& value) { SetDashboardId(value); return *this;}
-    inline DashboardVisualId& WithDashboardId(Aws::String&& value) { SetDashboardId(std::move(value)); return *this;}
-    inline DashboardVisualId& WithDashboardId(const char* value) { SetDashboardId(value); return *this;}
+    template<typename DashboardIdT = Aws::String>
+    void SetDashboardId(DashboardIdT&& value) { m_dashboardIdHasBeenSet = true; m_dashboardId = std::forward<DashboardIdT>(value); }
+    template<typename DashboardIdT = Aws::String>
+    DashboardVisualId& WithDashboardId(DashboardIdT&& value) { SetDashboardId(std::forward<DashboardIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * of the <code>Embed visual</code> pane of the visual's on-visual menu of the
      * Amazon QuickSight console.</p>
      */
-    inline const Aws::String& GetSheetId() const{ return m_sheetId; }
+    inline const Aws::String& GetSheetId() const { return m_sheetId; }
     inline bool SheetIdHasBeenSet() const { return m_sheetIdHasBeenSet; }
-    inline void SetSheetId(const Aws::String& value) { m_sheetIdHasBeenSet = true; m_sheetId = value; }
-    inline void SetSheetId(Aws::String&& value) { m_sheetIdHasBeenSet = true; m_sheetId = std::move(value); }
-    inline void SetSheetId(const char* value) { m_sheetIdHasBeenSet = true; m_sheetId.assign(value); }
-    inline DashboardVisualId& WithSheetId(const Aws::String& value) { SetSheetId(value); return *this;}
-    inline DashboardVisualId& WithSheetId(Aws::String&& value) { SetSheetId(std::move(value)); return *this;}
-    inline DashboardVisualId& WithSheetId(const char* value) { SetSheetId(value); return *this;}
+    template<typename SheetIdT = Aws::String>
+    void SetSheetId(SheetIdT&& value) { m_sheetIdHasBeenSet = true; m_sheetId = std::forward<SheetIdT>(value); }
+    template<typename SheetIdT = Aws::String>
+    DashboardVisualId& WithSheetId(SheetIdT&& value) { SetSheetId(std::forward<SheetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +84,12 @@ namespace Model
      * visual</code> pane of the visual's on-visual menu of the Amazon QuickSight
      * console.</p>
      */
-    inline const Aws::String& GetVisualId() const{ return m_visualId; }
+    inline const Aws::String& GetVisualId() const { return m_visualId; }
     inline bool VisualIdHasBeenSet() const { return m_visualIdHasBeenSet; }
-    inline void SetVisualId(const Aws::String& value) { m_visualIdHasBeenSet = true; m_visualId = value; }
-    inline void SetVisualId(Aws::String&& value) { m_visualIdHasBeenSet = true; m_visualId = std::move(value); }
-    inline void SetVisualId(const char* value) { m_visualIdHasBeenSet = true; m_visualId.assign(value); }
-    inline DashboardVisualId& WithVisualId(const Aws::String& value) { SetVisualId(value); return *this;}
-    inline DashboardVisualId& WithVisualId(Aws::String&& value) { SetVisualId(std::move(value)); return *this;}
-    inline DashboardVisualId& WithVisualId(const char* value) { SetVisualId(value); return *this;}
+    template<typename VisualIdT = Aws::String>
+    void SetVisualId(VisualIdT&& value) { m_visualIdHasBeenSet = true; m_visualId = std::forward<VisualIdT>(value); }
+    template<typename VisualIdT = Aws::String>
+    DashboardVisualId& WithVisualId(VisualIdT&& value) { SetVisualId(std::forward<VisualIdT>(value)); return *this;}
     ///@}
   private:
 

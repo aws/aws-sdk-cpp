@@ -18,16 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-EntityRecognizerMetadataEntityTypesListItem::EntityRecognizerMetadataEntityTypesListItem() : 
-    m_typeHasBeenSet(false),
-    m_evaluationMetricsHasBeenSet(false),
-    m_numberOfTrainMentions(0),
-    m_numberOfTrainMentionsHasBeenSet(false)
-{
-}
-
 EntityRecognizerMetadataEntityTypesListItem::EntityRecognizerMetadataEntityTypesListItem(JsonView jsonValue)
-  : EntityRecognizerMetadataEntityTypesListItem()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ EntityRecognizerMetadataEntityTypesListItem& EntityRecognizerMetadataEntityTypes
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationMetrics"))
   {
     m_evaluationMetrics = jsonValue.GetObject("EvaluationMetrics");
-
     m_evaluationMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfTrainMentions"))
   {
     m_numberOfTrainMentions = jsonValue.GetInteger("NumberOfTrainMentions");
-
     m_numberOfTrainMentionsHasBeenSet = true;
   }
-
   return *this;
 }
 

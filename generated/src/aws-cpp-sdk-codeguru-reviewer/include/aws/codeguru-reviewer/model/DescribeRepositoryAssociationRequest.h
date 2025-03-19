@@ -21,7 +21,7 @@ namespace Model
   class DescribeRepositoryAssociationRequest : public CodeGuruReviewerRequest
   {
   public:
-    AWS_CODEGURUREVIEWER_API DescribeRepositoryAssociationRequest();
+    AWS_CODEGURUREVIEWER_API DescribeRepositoryAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * object. You can retrieve this ARN by calling <a
      * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_ListRepositoryAssociations.html">ListRepositoryAssociations</a>.</p>
      */
-    inline const Aws::String& GetAssociationArn() const{ return m_associationArn; }
+    inline const Aws::String& GetAssociationArn() const { return m_associationArn; }
     inline bool AssociationArnHasBeenSet() const { return m_associationArnHasBeenSet; }
-    inline void SetAssociationArn(const Aws::String& value) { m_associationArnHasBeenSet = true; m_associationArn = value; }
-    inline void SetAssociationArn(Aws::String&& value) { m_associationArnHasBeenSet = true; m_associationArn = std::move(value); }
-    inline void SetAssociationArn(const char* value) { m_associationArnHasBeenSet = true; m_associationArn.assign(value); }
-    inline DescribeRepositoryAssociationRequest& WithAssociationArn(const Aws::String& value) { SetAssociationArn(value); return *this;}
-    inline DescribeRepositoryAssociationRequest& WithAssociationArn(Aws::String&& value) { SetAssociationArn(std::move(value)); return *this;}
-    inline DescribeRepositoryAssociationRequest& WithAssociationArn(const char* value) { SetAssociationArn(value); return *this;}
+    template<typename AssociationArnT = Aws::String>
+    void SetAssociationArn(AssociationArnT&& value) { m_associationArnHasBeenSet = true; m_associationArn = std::forward<AssociationArnT>(value); }
+    template<typename AssociationArnT = Aws::String>
+    DescribeRepositoryAssociationRequest& WithAssociationArn(AssociationArnT&& value) { SetAssociationArn(std::forward<AssociationArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -29,7 +29,7 @@ namespace Model
   class MediaPackageOutputSettings
   {
   public:
-    AWS_MEDIALIVE_API MediaPackageOutputSettings();
+    AWS_MEDIALIVE_API MediaPackageOutputSettings() = default;
     AWS_MEDIALIVE_API MediaPackageOutputSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API MediaPackageOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;

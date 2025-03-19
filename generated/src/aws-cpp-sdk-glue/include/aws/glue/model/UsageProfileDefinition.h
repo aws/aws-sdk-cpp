@@ -32,7 +32,7 @@ namespace Model
   class UsageProfileDefinition
   {
   public:
-    AWS_GLUE_API UsageProfileDefinition();
+    AWS_GLUE_API UsageProfileDefinition() = default;
     AWS_GLUE_API UsageProfileDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API UsageProfileDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,52 +42,48 @@ namespace Model
     /**
      * <p>The name of the usage profile.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UsageProfileDefinition& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UsageProfileDefinition& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UsageProfileDefinition& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UsageProfileDefinition& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the usage profile.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UsageProfileDefinition& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UsageProfileDefinition& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UsageProfileDefinition& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UsageProfileDefinition& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the usage profile was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedOn() const{ return m_createdOn; }
+    inline const Aws::Utils::DateTime& GetCreatedOn() const { return m_createdOn; }
     inline bool CreatedOnHasBeenSet() const { return m_createdOnHasBeenSet; }
-    inline void SetCreatedOn(const Aws::Utils::DateTime& value) { m_createdOnHasBeenSet = true; m_createdOn = value; }
-    inline void SetCreatedOn(Aws::Utils::DateTime&& value) { m_createdOnHasBeenSet = true; m_createdOn = std::move(value); }
-    inline UsageProfileDefinition& WithCreatedOn(const Aws::Utils::DateTime& value) { SetCreatedOn(value); return *this;}
-    inline UsageProfileDefinition& WithCreatedOn(Aws::Utils::DateTime&& value) { SetCreatedOn(std::move(value)); return *this;}
+    template<typename CreatedOnT = Aws::Utils::DateTime>
+    void SetCreatedOn(CreatedOnT&& value) { m_createdOnHasBeenSet = true; m_createdOn = std::forward<CreatedOnT>(value); }
+    template<typename CreatedOnT = Aws::Utils::DateTime>
+    UsageProfileDefinition& WithCreatedOn(CreatedOnT&& value) { SetCreatedOn(std::forward<CreatedOnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the usage profile was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedOn() const{ return m_lastModifiedOn; }
+    inline const Aws::Utils::DateTime& GetLastModifiedOn() const { return m_lastModifiedOn; }
     inline bool LastModifiedOnHasBeenSet() const { return m_lastModifiedOnHasBeenSet; }
-    inline void SetLastModifiedOn(const Aws::Utils::DateTime& value) { m_lastModifiedOnHasBeenSet = true; m_lastModifiedOn = value; }
-    inline void SetLastModifiedOn(Aws::Utils::DateTime&& value) { m_lastModifiedOnHasBeenSet = true; m_lastModifiedOn = std::move(value); }
-    inline UsageProfileDefinition& WithLastModifiedOn(const Aws::Utils::DateTime& value) { SetLastModifiedOn(value); return *this;}
-    inline UsageProfileDefinition& WithLastModifiedOn(Aws::Utils::DateTime&& value) { SetLastModifiedOn(std::move(value)); return *this;}
+    template<typename LastModifiedOnT = Aws::Utils::DateTime>
+    void SetLastModifiedOn(LastModifiedOnT&& value) { m_lastModifiedOnHasBeenSet = true; m_lastModifiedOn = std::forward<LastModifiedOnT>(value); }
+    template<typename LastModifiedOnT = Aws::Utils::DateTime>
+    UsageProfileDefinition& WithLastModifiedOn(LastModifiedOnT&& value) { SetLastModifiedOn(std::forward<LastModifiedOnT>(value)); return *this;}
     ///@}
   private:
 
@@ -97,10 +93,10 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdOn;
+    Aws::Utils::DateTime m_createdOn{};
     bool m_createdOnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedOn;
+    Aws::Utils::DateTime m_lastModifiedOn{};
     bool m_lastModifiedOnHasBeenSet = false;
   };
 

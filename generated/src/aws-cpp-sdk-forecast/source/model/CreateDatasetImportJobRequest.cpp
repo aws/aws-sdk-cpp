@@ -12,22 +12,6 @@ using namespace Aws::ForecastService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDatasetImportJobRequest::CreateDatasetImportJobRequest() : 
-    m_datasetImportJobNameHasBeenSet(false),
-    m_datasetArnHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
-    m_timestampFormatHasBeenSet(false),
-    m_timeZoneHasBeenSet(false),
-    m_useGeolocationForTimeZone(false),
-    m_useGeolocationForTimeZoneHasBeenSet(false),
-    m_geolocationFormatHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_formatHasBeenSet(false),
-    m_importMode(ImportMode::NOT_SET),
-    m_importModeHasBeenSet(false)
-{
-}
-
 Aws::String CreateDatasetImportJobRequest::SerializePayload() const
 {
   JsonValue payload;

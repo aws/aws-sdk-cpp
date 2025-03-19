@@ -12,14 +12,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePullThroughCacheRuleRequest::UpdatePullThroughCacheRuleRequest() : 
-    m_registryIdHasBeenSet(false),
-    m_ecrRepositoryPrefixHasBeenSet(false),
-    m_credentialArnHasBeenSet(false),
-    m_customRoleArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePullThroughCacheRuleRequest::SerializePayload() const
 {
   JsonValue payload;

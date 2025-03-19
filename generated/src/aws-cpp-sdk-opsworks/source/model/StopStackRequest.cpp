@@ -12,11 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopStackRequest::StopStackRequest() : 
-    m_stackIdHasBeenSet(false)
-{
-}
-
 Aws::String StopStackRequest::SerializePayload() const
 {
   JsonValue payload;

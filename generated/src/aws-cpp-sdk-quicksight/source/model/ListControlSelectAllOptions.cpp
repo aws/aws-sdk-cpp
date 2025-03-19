@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ListControlSelectAllOptions::ListControlSelectAllOptions() : 
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
-{
-}
-
 ListControlSelectAllOptions::ListControlSelectAllOptions(JsonView jsonValue)
-  : ListControlSelectAllOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ListControlSelectAllOptions& ListControlSelectAllOptions::operator =(JsonView js
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   return *this;
 }
 

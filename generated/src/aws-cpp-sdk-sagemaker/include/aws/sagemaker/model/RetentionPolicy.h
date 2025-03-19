@@ -32,7 +32,7 @@ namespace Model
   class RetentionPolicy
   {
   public:
-    AWS_SAGEMAKER_API RetentionPolicy();
+    AWS_SAGEMAKER_API RetentionPolicy() = default;
     AWS_SAGEMAKER_API RetentionPolicy(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API RetentionPolicy& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,16 +44,14 @@ namespace Model
      * on the Amazon EFS volume.</p> <p>Specify <code>Delete</code> to delete the data
      * stored on the Amazon EFS volume.</p>
      */
-    inline const RetentionType& GetHomeEfsFileSystem() const{ return m_homeEfsFileSystem; }
+    inline RetentionType GetHomeEfsFileSystem() const { return m_homeEfsFileSystem; }
     inline bool HomeEfsFileSystemHasBeenSet() const { return m_homeEfsFileSystemHasBeenSet; }
-    inline void SetHomeEfsFileSystem(const RetentionType& value) { m_homeEfsFileSystemHasBeenSet = true; m_homeEfsFileSystem = value; }
-    inline void SetHomeEfsFileSystem(RetentionType&& value) { m_homeEfsFileSystemHasBeenSet = true; m_homeEfsFileSystem = std::move(value); }
-    inline RetentionPolicy& WithHomeEfsFileSystem(const RetentionType& value) { SetHomeEfsFileSystem(value); return *this;}
-    inline RetentionPolicy& WithHomeEfsFileSystem(RetentionType&& value) { SetHomeEfsFileSystem(std::move(value)); return *this;}
+    inline void SetHomeEfsFileSystem(RetentionType value) { m_homeEfsFileSystemHasBeenSet = true; m_homeEfsFileSystem = value; }
+    inline RetentionPolicy& WithHomeEfsFileSystem(RetentionType value) { SetHomeEfsFileSystem(value); return *this;}
     ///@}
   private:
 
-    RetentionType m_homeEfsFileSystem;
+    RetentionType m_homeEfsFileSystem{RetentionType::NOT_SET};
     bool m_homeEfsFileSystemHasBeenSet = false;
   };
 

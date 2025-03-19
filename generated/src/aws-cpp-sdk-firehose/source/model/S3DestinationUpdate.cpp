@@ -18,21 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-S3DestinationUpdate::S3DestinationUpdate() : 
-    m_roleARNHasBeenSet(false),
-    m_bucketARNHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_errorOutputPrefixHasBeenSet(false),
-    m_bufferingHintsHasBeenSet(false),
-    m_compressionFormat(CompressionFormat::NOT_SET),
-    m_compressionFormatHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false)
-{
-}
-
 S3DestinationUpdate::S3DestinationUpdate(JsonView jsonValue)
-  : S3DestinationUpdate()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ S3DestinationUpdate& S3DestinationUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RoleARN"))
   {
     m_roleARN = jsonValue.GetString("RoleARN");
-
     m_roleARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BucketARN"))
   {
     m_bucketARN = jsonValue.GetString("BucketARN");
-
     m_bucketARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Prefix"))
   {
     m_prefix = jsonValue.GetString("Prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorOutputPrefix"))
   {
     m_errorOutputPrefix = jsonValue.GetString("ErrorOutputPrefix");
-
     m_errorOutputPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BufferingHints"))
   {
     m_bufferingHints = jsonValue.GetObject("BufferingHints");
-
     m_bufferingHintsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompressionFormat"))
   {
     m_compressionFormat = CompressionFormatMapper::GetCompressionFormatForName(jsonValue.GetString("CompressionFormat"));
-
     m_compressionFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionConfiguration"))
   {
     m_encryptionConfiguration = jsonValue.GetObject("EncryptionConfiguration");
-
     m_encryptionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchLoggingOptions"))
   {
     m_cloudWatchLoggingOptions = jsonValue.GetObject("CloudWatchLoggingOptions");
-
     m_cloudWatchLoggingOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

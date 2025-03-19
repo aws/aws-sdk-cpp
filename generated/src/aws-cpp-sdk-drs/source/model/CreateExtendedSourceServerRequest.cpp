@@ -12,12 +12,6 @@ using namespace Aws::drs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateExtendedSourceServerRequest::CreateExtendedSourceServerRequest() : 
-    m_sourceServerArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateExtendedSourceServerRequest::SerializePayload() const
 {
   JsonValue payload;

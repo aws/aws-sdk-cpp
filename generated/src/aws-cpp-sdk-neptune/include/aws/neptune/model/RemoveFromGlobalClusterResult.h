@@ -28,33 +28,35 @@ namespace Model
   class RemoveFromGlobalClusterResult
   {
   public:
-    AWS_NEPTUNE_API RemoveFromGlobalClusterResult();
+    AWS_NEPTUNE_API RemoveFromGlobalClusterResult() = default;
     AWS_NEPTUNE_API RemoveFromGlobalClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_NEPTUNE_API RemoveFromGlobalClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const GlobalCluster& GetGlobalCluster() const{ return m_globalCluster; }
-    inline void SetGlobalCluster(const GlobalCluster& value) { m_globalCluster = value; }
-    inline void SetGlobalCluster(GlobalCluster&& value) { m_globalCluster = std::move(value); }
-    inline RemoveFromGlobalClusterResult& WithGlobalCluster(const GlobalCluster& value) { SetGlobalCluster(value); return *this;}
-    inline RemoveFromGlobalClusterResult& WithGlobalCluster(GlobalCluster&& value) { SetGlobalCluster(std::move(value)); return *this;}
+    inline const GlobalCluster& GetGlobalCluster() const { return m_globalCluster; }
+    template<typename GlobalClusterT = GlobalCluster>
+    void SetGlobalCluster(GlobalClusterT&& value) { m_globalClusterHasBeenSet = true; m_globalCluster = std::forward<GlobalClusterT>(value); }
+    template<typename GlobalClusterT = GlobalCluster>
+    RemoveFromGlobalClusterResult& WithGlobalCluster(GlobalClusterT&& value) { SetGlobalCluster(std::forward<GlobalClusterT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline RemoveFromGlobalClusterResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline RemoveFromGlobalClusterResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    RemoveFromGlobalClusterResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     GlobalCluster m_globalCluster;
+    bool m_globalClusterHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,11 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteResourceGatewayRequest::DeleteResourceGatewayRequest() : 
-    m_resourceGatewayIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteResourceGatewayRequest::SerializePayload() const
 {
   return {};

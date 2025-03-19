@@ -33,7 +33,7 @@ namespace Model
   class PipeEnrichmentParameters
   {
   public:
-    AWS_PIPES_API PipeEnrichmentParameters();
+    AWS_PIPES_API PipeEnrichmentParameters() = default;
     AWS_PIPES_API PipeEnrichmentParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API PipeEnrichmentParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * (JSON) Data Interchange Format</a>.</p> <p>To remove an input template, specify
      * an empty string.</p>
      */
-    inline const Aws::String& GetInputTemplate() const{ return m_inputTemplate; }
+    inline const Aws::String& GetInputTemplate() const { return m_inputTemplate; }
     inline bool InputTemplateHasBeenSet() const { return m_inputTemplateHasBeenSet; }
-    inline void SetInputTemplate(const Aws::String& value) { m_inputTemplateHasBeenSet = true; m_inputTemplate = value; }
-    inline void SetInputTemplate(Aws::String&& value) { m_inputTemplateHasBeenSet = true; m_inputTemplate = std::move(value); }
-    inline void SetInputTemplate(const char* value) { m_inputTemplateHasBeenSet = true; m_inputTemplate.assign(value); }
-    inline PipeEnrichmentParameters& WithInputTemplate(const Aws::String& value) { SetInputTemplate(value); return *this;}
-    inline PipeEnrichmentParameters& WithInputTemplate(Aws::String&& value) { SetInputTemplate(std::move(value)); return *this;}
-    inline PipeEnrichmentParameters& WithInputTemplate(const char* value) { SetInputTemplate(value); return *this;}
+    template<typename InputTemplateT = Aws::String>
+    void SetInputTemplate(InputTemplateT&& value) { m_inputTemplateHasBeenSet = true; m_inputTemplate = std::forward<InputTemplateT>(value); }
+    template<typename InputTemplateT = Aws::String>
+    PipeEnrichmentParameters& WithInputTemplate(InputTemplateT&& value) { SetInputTemplate(std::forward<InputTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,12 +65,12 @@ namespace Model
      * Connection can also have these values configured. In case of any conflicting
      * keys, values from the Connection take precedence.</p>
      */
-    inline const PipeEnrichmentHttpParameters& GetHttpParameters() const{ return m_httpParameters; }
+    inline const PipeEnrichmentHttpParameters& GetHttpParameters() const { return m_httpParameters; }
     inline bool HttpParametersHasBeenSet() const { return m_httpParametersHasBeenSet; }
-    inline void SetHttpParameters(const PipeEnrichmentHttpParameters& value) { m_httpParametersHasBeenSet = true; m_httpParameters = value; }
-    inline void SetHttpParameters(PipeEnrichmentHttpParameters&& value) { m_httpParametersHasBeenSet = true; m_httpParameters = std::move(value); }
-    inline PipeEnrichmentParameters& WithHttpParameters(const PipeEnrichmentHttpParameters& value) { SetHttpParameters(value); return *this;}
-    inline PipeEnrichmentParameters& WithHttpParameters(PipeEnrichmentHttpParameters&& value) { SetHttpParameters(std::move(value)); return *this;}
+    template<typename HttpParametersT = PipeEnrichmentHttpParameters>
+    void SetHttpParameters(HttpParametersT&& value) { m_httpParametersHasBeenSet = true; m_httpParameters = std::forward<HttpParametersT>(value); }
+    template<typename HttpParametersT = PipeEnrichmentHttpParameters>
+    PipeEnrichmentParameters& WithHttpParameters(HttpParametersT&& value) { SetHttpParameters(std::forward<HttpParametersT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,15 +18,7 @@ namespace CloudWatchEvidently
 namespace Model
 {
 
-ProjectAppConfigResource::ProjectAppConfigResource() : 
-    m_applicationIdHasBeenSet(false),
-    m_configurationProfileIdHasBeenSet(false),
-    m_environmentIdHasBeenSet(false)
-{
-}
-
 ProjectAppConfigResource::ProjectAppConfigResource(JsonView jsonValue)
-  : ProjectAppConfigResource()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ProjectAppConfigResource& ProjectAppConfigResource::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("applicationId"))
   {
     m_applicationId = jsonValue.GetString("applicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configurationProfileId"))
   {
     m_configurationProfileId = jsonValue.GetString("configurationProfileId");
-
     m_configurationProfileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentId"))
   {
     m_environmentId = jsonValue.GetString("environmentId");
-
     m_environmentIdHasBeenSet = true;
   }
-
   return *this;
 }
 

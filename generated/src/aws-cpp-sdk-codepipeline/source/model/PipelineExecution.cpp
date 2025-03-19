@@ -18,27 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-PipelineExecution::PipelineExecution() : 
-    m_pipelineNameHasBeenSet(false),
-    m_pipelineVersion(0),
-    m_pipelineVersionHasBeenSet(false),
-    m_pipelineExecutionIdHasBeenSet(false),
-    m_status(PipelineExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusSummaryHasBeenSet(false),
-    m_artifactRevisionsHasBeenSet(false),
-    m_variablesHasBeenSet(false),
-    m_triggerHasBeenSet(false),
-    m_executionMode(ExecutionMode::NOT_SET),
-    m_executionModeHasBeenSet(false),
-    m_executionType(ExecutionType::NOT_SET),
-    m_executionTypeHasBeenSet(false),
-    m_rollbackMetadataHasBeenSet(false)
-{
-}
-
 PipelineExecution::PipelineExecution(JsonView jsonValue)
-  : PipelineExecution()
 {
   *this = jsonValue;
 }
@@ -48,38 +28,28 @@ PipelineExecution& PipelineExecution::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("pipelineName"))
   {
     m_pipelineName = jsonValue.GetString("pipelineName");
-
     m_pipelineNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipelineVersion"))
   {
     m_pipelineVersion = jsonValue.GetInteger("pipelineVersion");
-
     m_pipelineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipelineExecutionId"))
   {
     m_pipelineExecutionId = jsonValue.GetString("pipelineExecutionId");
-
     m_pipelineExecutionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = PipelineExecutionStatusMapper::GetPipelineExecutionStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusSummary"))
   {
     m_statusSummary = jsonValue.GetString("statusSummary");
-
     m_statusSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("artifactRevisions"))
   {
     Aws::Utils::Array<JsonView> artifactRevisionsJsonList = jsonValue.GetArray("artifactRevisions");
@@ -89,7 +59,6 @@ PipelineExecution& PipelineExecution::operator =(JsonView jsonValue)
     }
     m_artifactRevisionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("variables"))
   {
     Aws::Utils::Array<JsonView> variablesJsonList = jsonValue.GetArray("variables");
@@ -99,35 +68,26 @@ PipelineExecution& PipelineExecution::operator =(JsonView jsonValue)
     }
     m_variablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("trigger"))
   {
     m_trigger = jsonValue.GetObject("trigger");
-
     m_triggerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionMode"))
   {
     m_executionMode = ExecutionModeMapper::GetExecutionModeForName(jsonValue.GetString("executionMode"));
-
     m_executionModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("executionType"))
   {
     m_executionType = ExecutionTypeMapper::GetExecutionTypeForName(jsonValue.GetString("executionType"));
-
     m_executionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rollbackMetadata"))
   {
     m_rollbackMetadata = jsonValue.GetObject("rollbackMetadata");
-
     m_rollbackMetadataHasBeenSet = true;
   }
-
   return *this;
 }
 

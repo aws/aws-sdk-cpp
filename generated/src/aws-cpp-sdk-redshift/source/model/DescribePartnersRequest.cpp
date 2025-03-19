@@ -10,14 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribePartnersRequest::DescribePartnersRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_clusterIdentifierHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_partnerNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribePartnersRequest::SerializePayload() const
 {
   Aws::StringStream ss;

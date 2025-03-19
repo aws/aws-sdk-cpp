@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-ClusterNode::ClusterNode() : 
-    m_nodeRoleHasBeenSet(false),
-    m_privateIPAddressHasBeenSet(false),
-    m_publicIPAddressHasBeenSet(false)
-{
-}
-
 ClusterNode::ClusterNode(const XmlNode& xmlNode)
-  : ClusterNode()
 {
   *this = xmlNode;
 }

@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ScheduleRefreshOnEntity::ScheduleRefreshOnEntity() : 
-    m_dayOfWeek(DayOfWeek::NOT_SET),
-    m_dayOfWeekHasBeenSet(false),
-    m_dayOfMonthHasBeenSet(false)
-{
-}
-
 ScheduleRefreshOnEntity::ScheduleRefreshOnEntity(JsonView jsonValue)
-  : ScheduleRefreshOnEntity()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ScheduleRefreshOnEntity& ScheduleRefreshOnEntity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DayOfWeek"))
   {
     m_dayOfWeek = DayOfWeekMapper::GetDayOfWeekForName(jsonValue.GetString("DayOfWeek"));
-
     m_dayOfWeekHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DayOfMonth"))
   {
     m_dayOfMonth = jsonValue.GetString("DayOfMonth");
-
     m_dayOfMonthHasBeenSet = true;
   }
-
   return *this;
 }
 

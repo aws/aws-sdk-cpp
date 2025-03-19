@@ -14,11 +14,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-GetRealtimeLogConfig2020_05_31Request::GetRealtimeLogConfig2020_05_31Request() : 
-    m_nameHasBeenSet(false),
-    m_aRNHasBeenSet(false)
-{
-}
 
 Aws::String GetRealtimeLogConfig2020_05_31Request::SerializePayload() const
 {

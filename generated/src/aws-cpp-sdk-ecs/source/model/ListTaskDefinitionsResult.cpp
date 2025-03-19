@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTaskDefinitionsResult::ListTaskDefinitionsResult()
-{
-}
-
 ListTaskDefinitionsResult::ListTaskDefinitionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListTaskDefinitionsResult& ListTaskDefinitionsResult::operator =(const Aws::Amaz
     {
       m_taskDefinitionArns.push_back(taskDefinitionArnsJsonList[taskDefinitionArnsIndex].AsString());
     }
+    m_taskDefinitionArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

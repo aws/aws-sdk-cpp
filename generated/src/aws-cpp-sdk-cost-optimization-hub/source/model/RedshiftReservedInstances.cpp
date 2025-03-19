@@ -18,14 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-RedshiftReservedInstances::RedshiftReservedInstances() : 
-    m_configurationHasBeenSet(false),
-    m_costCalculationHasBeenSet(false)
-{
-}
-
 RedshiftReservedInstances::RedshiftReservedInstances(JsonView jsonValue)
-  : RedshiftReservedInstances()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RedshiftReservedInstances& RedshiftReservedInstances::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("configuration"))
   {
     m_configuration = jsonValue.GetObject("configuration");
-
     m_configurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("costCalculation"))
   {
     m_costCalculation = jsonValue.GetObject("costCalculation");
-
     m_costCalculationHasBeenSet = true;
   }
-
   return *this;
 }
 

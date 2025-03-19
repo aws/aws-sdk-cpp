@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ImportPhoneNumberResult::ImportPhoneNumberResult()
-{
-}
-
 ImportPhoneNumberResult::ImportPhoneNumberResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ ImportPhoneNumberResult& ImportPhoneNumberResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("PhoneNumberId"))
   {
     m_phoneNumberId = jsonValue.GetString("PhoneNumberId");
-
+    m_phoneNumberIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhoneNumberArn"))
   {
     m_phoneNumberArn = jsonValue.GetString("PhoneNumberArn");
-
+    m_phoneNumberArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -33,7 +33,7 @@ namespace Model
   class OIDC
   {
   public:
-    AWS_EKS_API OIDC();
+    AWS_EKS_API OIDC() = default;
     AWS_EKS_API OIDC(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API OIDC& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EKS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The issuer URL for the OIDC identity provider.</p>
      */
-    inline const Aws::String& GetIssuer() const{ return m_issuer; }
+    inline const Aws::String& GetIssuer() const { return m_issuer; }
     inline bool IssuerHasBeenSet() const { return m_issuerHasBeenSet; }
-    inline void SetIssuer(const Aws::String& value) { m_issuerHasBeenSet = true; m_issuer = value; }
-    inline void SetIssuer(Aws::String&& value) { m_issuerHasBeenSet = true; m_issuer = std::move(value); }
-    inline void SetIssuer(const char* value) { m_issuerHasBeenSet = true; m_issuer.assign(value); }
-    inline OIDC& WithIssuer(const Aws::String& value) { SetIssuer(value); return *this;}
-    inline OIDC& WithIssuer(Aws::String&& value) { SetIssuer(std::move(value)); return *this;}
-    inline OIDC& WithIssuer(const char* value) { SetIssuer(value); return *this;}
+    template<typename IssuerT = Aws::String>
+    void SetIssuer(IssuerT&& value) { m_issuerHasBeenSet = true; m_issuer = std::forward<IssuerT>(value); }
+    template<typename IssuerT = Aws::String>
+    OIDC& WithIssuer(IssuerT&& value) { SetIssuer(std::forward<IssuerT>(value)); return *this;}
     ///@}
   private:
 

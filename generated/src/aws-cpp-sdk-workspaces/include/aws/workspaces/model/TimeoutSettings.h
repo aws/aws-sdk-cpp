@@ -30,7 +30,7 @@ namespace Model
   class TimeoutSettings
   {
   public:
-    AWS_WORKSPACES_API TimeoutSettings();
+    AWS_WORKSPACES_API TimeoutSettings() = default;
     AWS_WORKSPACES_API TimeoutSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API TimeoutSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * are connected to their previous session. Otherwise, they are connected to a new
      * session with a new streaming instance.</p>
      */
-    inline int GetDisconnectTimeoutInSeconds() const{ return m_disconnectTimeoutInSeconds; }
+    inline int GetDisconnectTimeoutInSeconds() const { return m_disconnectTimeoutInSeconds; }
     inline bool DisconnectTimeoutInSecondsHasBeenSet() const { return m_disconnectTimeoutInSecondsHasBeenSet; }
     inline void SetDisconnectTimeoutInSeconds(int value) { m_disconnectTimeoutInSecondsHasBeenSet = true; m_disconnectTimeoutInSeconds = value; }
     inline TimeoutSettings& WithDisconnectTimeoutInSeconds(int value) { SetDisconnectTimeoutInSeconds(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
     /**
      * <p>The amount of time in seconds a connection will stay active while idle.</p>
      */
-    inline int GetIdleDisconnectTimeoutInSeconds() const{ return m_idleDisconnectTimeoutInSeconds; }
+    inline int GetIdleDisconnectTimeoutInSeconds() const { return m_idleDisconnectTimeoutInSeconds; }
     inline bool IdleDisconnectTimeoutInSecondsHasBeenSet() const { return m_idleDisconnectTimeoutInSecondsHasBeenSet; }
     inline void SetIdleDisconnectTimeoutInSeconds(int value) { m_idleDisconnectTimeoutInSecondsHasBeenSet = true; m_idleDisconnectTimeoutInSeconds = value; }
     inline TimeoutSettings& WithIdleDisconnectTimeoutInSeconds(int value) { SetIdleDisconnectTimeoutInSeconds(value); return *this;}
@@ -68,20 +68,20 @@ namespace Model
      * documents before being disconnected. After this time elapses, the instance is
      * terminated and replaced by a new instance.</p>
      */
-    inline int GetMaxUserDurationInSeconds() const{ return m_maxUserDurationInSeconds; }
+    inline int GetMaxUserDurationInSeconds() const { return m_maxUserDurationInSeconds; }
     inline bool MaxUserDurationInSecondsHasBeenSet() const { return m_maxUserDurationInSecondsHasBeenSet; }
     inline void SetMaxUserDurationInSeconds(int value) { m_maxUserDurationInSecondsHasBeenSet = true; m_maxUserDurationInSeconds = value; }
     inline TimeoutSettings& WithMaxUserDurationInSeconds(int value) { SetMaxUserDurationInSeconds(value); return *this;}
     ///@}
   private:
 
-    int m_disconnectTimeoutInSeconds;
+    int m_disconnectTimeoutInSeconds{0};
     bool m_disconnectTimeoutInSecondsHasBeenSet = false;
 
-    int m_idleDisconnectTimeoutInSeconds;
+    int m_idleDisconnectTimeoutInSeconds{0};
     bool m_idleDisconnectTimeoutInSecondsHasBeenSet = false;
 
-    int m_maxUserDurationInSeconds;
+    int m_maxUserDurationInSeconds{0};
     bool m_maxUserDurationInSecondsHasBeenSet = false;
   };
 

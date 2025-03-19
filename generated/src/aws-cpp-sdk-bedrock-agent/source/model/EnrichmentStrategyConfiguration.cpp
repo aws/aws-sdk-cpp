@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-EnrichmentStrategyConfiguration::EnrichmentStrategyConfiguration() : 
-    m_method(EnrichmentStrategyMethod::NOT_SET),
-    m_methodHasBeenSet(false)
-{
-}
-
 EnrichmentStrategyConfiguration::EnrichmentStrategyConfiguration(JsonView jsonValue)
-  : EnrichmentStrategyConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ EnrichmentStrategyConfiguration& EnrichmentStrategyConfiguration::operator =(Jso
   if(jsonValue.ValueExists("method"))
   {
     m_method = EnrichmentStrategyMethodMapper::GetEnrichmentStrategyMethodForName(jsonValue.GetString("method"));
-
     m_methodHasBeenSet = true;
   }
-
   return *this;
 }
 

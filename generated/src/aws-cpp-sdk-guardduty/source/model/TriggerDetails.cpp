@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-TriggerDetails::TriggerDetails() : 
-    m_guardDutyFindingIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 TriggerDetails::TriggerDetails(JsonView jsonValue)
-  : TriggerDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TriggerDetails& TriggerDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("guardDutyFindingId"))
   {
     m_guardDutyFindingId = jsonValue.GetString("guardDutyFindingId");
-
     m_guardDutyFindingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

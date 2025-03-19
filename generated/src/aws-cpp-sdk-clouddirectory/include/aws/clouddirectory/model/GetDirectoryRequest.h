@@ -21,7 +21,7 @@ namespace Model
   class GetDirectoryRequest : public CloudDirectoryRequest
   {
   public:
-    AWS_CLOUDDIRECTORY_API GetDirectoryRequest();
+    AWS_CLOUDDIRECTORY_API GetDirectoryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ARN of the directory.</p>
      */
-    inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
+    inline const Aws::String& GetDirectoryArn() const { return m_directoryArn; }
     inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
-    inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
-    inline void SetDirectoryArn(const char* value) { m_directoryArnHasBeenSet = true; m_directoryArn.assign(value); }
-    inline GetDirectoryRequest& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
-    inline GetDirectoryRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
-    inline GetDirectoryRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
+    template<typename DirectoryArnT = Aws::String>
+    void SetDirectoryArn(DirectoryArnT&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::forward<DirectoryArnT>(value); }
+    template<typename DirectoryArnT = Aws::String>
+    GetDirectoryRequest& WithDirectoryArn(DirectoryArnT&& value) { SetDirectoryArn(std::forward<DirectoryArnT>(value)); return *this;}
     ///@}
   private:
 

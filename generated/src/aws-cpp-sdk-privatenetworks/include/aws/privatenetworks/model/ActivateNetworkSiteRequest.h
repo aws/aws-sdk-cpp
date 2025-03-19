@@ -23,7 +23,7 @@ namespace Model
   class ActivateNetworkSiteRequest : public PrivateNetworksRequest
   {
   public:
-    AWS_PRIVATENETWORKS_API ActivateNetworkSiteRequest();
+    AWS_PRIVATENETWORKS_API ActivateNetworkSiteRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to ensure idempotency</a>.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline ActivateNetworkSiteRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline ActivateNetworkSiteRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline ActivateNetworkSiteRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    ActivateNetworkSiteRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,38 +63,36 @@ namespace Model
      * in the <code>ActivateNetworkSiteRequest</code> action, the commitment period is
      * set to 60-days.</p>
      */
-    inline const CommitmentConfiguration& GetCommitmentConfiguration() const{ return m_commitmentConfiguration; }
+    inline const CommitmentConfiguration& GetCommitmentConfiguration() const { return m_commitmentConfiguration; }
     inline bool CommitmentConfigurationHasBeenSet() const { return m_commitmentConfigurationHasBeenSet; }
-    inline void SetCommitmentConfiguration(const CommitmentConfiguration& value) { m_commitmentConfigurationHasBeenSet = true; m_commitmentConfiguration = value; }
-    inline void SetCommitmentConfiguration(CommitmentConfiguration&& value) { m_commitmentConfigurationHasBeenSet = true; m_commitmentConfiguration = std::move(value); }
-    inline ActivateNetworkSiteRequest& WithCommitmentConfiguration(const CommitmentConfiguration& value) { SetCommitmentConfiguration(value); return *this;}
-    inline ActivateNetworkSiteRequest& WithCommitmentConfiguration(CommitmentConfiguration&& value) { SetCommitmentConfiguration(std::move(value)); return *this;}
+    template<typename CommitmentConfigurationT = CommitmentConfiguration>
+    void SetCommitmentConfiguration(CommitmentConfigurationT&& value) { m_commitmentConfigurationHasBeenSet = true; m_commitmentConfiguration = std::forward<CommitmentConfigurationT>(value); }
+    template<typename CommitmentConfigurationT = CommitmentConfiguration>
+    ActivateNetworkSiteRequest& WithCommitmentConfiguration(CommitmentConfigurationT&& value) { SetCommitmentConfiguration(std::forward<CommitmentConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the network site.</p>
      */
-    inline const Aws::String& GetNetworkSiteArn() const{ return m_networkSiteArn; }
+    inline const Aws::String& GetNetworkSiteArn() const { return m_networkSiteArn; }
     inline bool NetworkSiteArnHasBeenSet() const { return m_networkSiteArnHasBeenSet; }
-    inline void SetNetworkSiteArn(const Aws::String& value) { m_networkSiteArnHasBeenSet = true; m_networkSiteArn = value; }
-    inline void SetNetworkSiteArn(Aws::String&& value) { m_networkSiteArnHasBeenSet = true; m_networkSiteArn = std::move(value); }
-    inline void SetNetworkSiteArn(const char* value) { m_networkSiteArnHasBeenSet = true; m_networkSiteArn.assign(value); }
-    inline ActivateNetworkSiteRequest& WithNetworkSiteArn(const Aws::String& value) { SetNetworkSiteArn(value); return *this;}
-    inline ActivateNetworkSiteRequest& WithNetworkSiteArn(Aws::String&& value) { SetNetworkSiteArn(std::move(value)); return *this;}
-    inline ActivateNetworkSiteRequest& WithNetworkSiteArn(const char* value) { SetNetworkSiteArn(value); return *this;}
+    template<typename NetworkSiteArnT = Aws::String>
+    void SetNetworkSiteArn(NetworkSiteArnT&& value) { m_networkSiteArnHasBeenSet = true; m_networkSiteArn = std::forward<NetworkSiteArnT>(value); }
+    template<typename NetworkSiteArnT = Aws::String>
+    ActivateNetworkSiteRequest& WithNetworkSiteArn(NetworkSiteArnT&& value) { SetNetworkSiteArn(std::forward<NetworkSiteArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The shipping address of the network site.</p>
      */
-    inline const Address& GetShippingAddress() const{ return m_shippingAddress; }
+    inline const Address& GetShippingAddress() const { return m_shippingAddress; }
     inline bool ShippingAddressHasBeenSet() const { return m_shippingAddressHasBeenSet; }
-    inline void SetShippingAddress(const Address& value) { m_shippingAddressHasBeenSet = true; m_shippingAddress = value; }
-    inline void SetShippingAddress(Address&& value) { m_shippingAddressHasBeenSet = true; m_shippingAddress = std::move(value); }
-    inline ActivateNetworkSiteRequest& WithShippingAddress(const Address& value) { SetShippingAddress(value); return *this;}
-    inline ActivateNetworkSiteRequest& WithShippingAddress(Address&& value) { SetShippingAddress(std::move(value)); return *this;}
+    template<typename ShippingAddressT = Address>
+    void SetShippingAddress(ShippingAddressT&& value) { m_shippingAddressHasBeenSet = true; m_shippingAddress = std::forward<ShippingAddressT>(value); }
+    template<typename ShippingAddressT = Address>
+    ActivateNetworkSiteRequest& WithShippingAddress(ShippingAddressT&& value) { SetShippingAddress(std::forward<ShippingAddressT>(value)); return *this;}
     ///@}
   private:
 

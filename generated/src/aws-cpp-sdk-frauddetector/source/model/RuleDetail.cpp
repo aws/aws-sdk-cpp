@@ -18,23 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-RuleDetail::RuleDetail() : 
-    m_ruleIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_detectorIdHasBeenSet(false),
-    m_ruleVersionHasBeenSet(false),
-    m_expressionHasBeenSet(false),
-    m_language(Language::NOT_SET),
-    m_languageHasBeenSet(false),
-    m_outcomesHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_arnHasBeenSet(false)
-{
-}
-
 RuleDetail::RuleDetail(JsonView jsonValue)
-  : RuleDetail()
 {
   *this = jsonValue;
 }
@@ -44,45 +28,33 @@ RuleDetail& RuleDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ruleId"))
   {
     m_ruleId = jsonValue.GetString("ruleId");
-
     m_ruleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detectorId"))
   {
     m_detectorId = jsonValue.GetString("detectorId");
-
     m_detectorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ruleVersion"))
   {
     m_ruleVersion = jsonValue.GetString("ruleVersion");
-
     m_ruleVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expression"))
   {
     m_expression = jsonValue.GetString("expression");
-
     m_expressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("language"))
   {
     m_language = LanguageMapper::GetLanguageForName(jsonValue.GetString("language"));
-
     m_languageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outcomes"))
   {
     Aws::Utils::Array<JsonView> outcomesJsonList = jsonValue.GetArray("outcomes");
@@ -92,28 +64,21 @@ RuleDetail& RuleDetail::operator =(JsonView jsonValue)
     }
     m_outcomesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetString("lastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTime"))
   {
     m_createdTime = jsonValue.GetString("createdTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   return *this;
 }
 

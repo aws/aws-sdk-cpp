@@ -36,7 +36,7 @@ namespace Model
   class AliasTarget
   {
   public:
-    AWS_ROUTE53_API AliasTarget();
+    AWS_ROUTE53_API AliasTarget() = default;
     AWS_ROUTE53_API AliasTarget(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ROUTE53_API AliasTarget& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -104,14 +104,12 @@ namespace Model
      * resource record set can't reference a resource record set in a different hosted
      * zone.)</p> </dd> </dl>
      */
-    inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
+    inline const Aws::String& GetHostedZoneId() const { return m_hostedZoneId; }
     inline bool HostedZoneIdHasBeenSet() const { return m_hostedZoneIdHasBeenSet; }
-    inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
-    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
-    inline void SetHostedZoneId(const char* value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId.assign(value); }
-    inline AliasTarget& WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
-    inline AliasTarget& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
-    inline AliasTarget& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
+    template<typename HostedZoneIdT = Aws::String>
+    void SetHostedZoneId(HostedZoneIdT&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::forward<HostedZoneIdT>(value); }
+    template<typename HostedZoneIdT = Aws::String>
+    AliasTarget& WithHostedZoneId(HostedZoneIdT&& value) { SetHostedZoneId(std::forward<HostedZoneIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -225,14 +223,12 @@ namespace Model
      * the record that you're routing traffic to, and creating a CNAME record for the
      * zone apex isn't supported even for an alias record.</p>  </dd> </dl>
      */
-    inline const Aws::String& GetDNSName() const{ return m_dNSName; }
+    inline const Aws::String& GetDNSName() const { return m_dNSName; }
     inline bool DNSNameHasBeenSet() const { return m_dNSNameHasBeenSet; }
-    inline void SetDNSName(const Aws::String& value) { m_dNSNameHasBeenSet = true; m_dNSName = value; }
-    inline void SetDNSName(Aws::String&& value) { m_dNSNameHasBeenSet = true; m_dNSName = std::move(value); }
-    inline void SetDNSName(const char* value) { m_dNSNameHasBeenSet = true; m_dNSName.assign(value); }
-    inline AliasTarget& WithDNSName(const Aws::String& value) { SetDNSName(value); return *this;}
-    inline AliasTarget& WithDNSName(Aws::String&& value) { SetDNSName(std::move(value)); return *this;}
-    inline AliasTarget& WithDNSName(const char* value) { SetDNSName(value); return *this;}
+    template<typename DNSNameT = Aws::String>
+    void SetDNSName(DNSNameT&& value) { m_dNSNameHasBeenSet = true; m_dNSName = std::forward<DNSNameT>(value); }
+    template<typename DNSNameT = Aws::String>
+    AliasTarget& WithDNSName(DNSNameT&& value) { SetDNSName(std::forward<DNSNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -290,7 +286,7 @@ namespace Model
      * Route 53 Health Checks and DNS Failover</a> in the <i>Amazon Route 53 Developer
      * Guide</i>.</p>
      */
-    inline bool GetEvaluateTargetHealth() const{ return m_evaluateTargetHealth; }
+    inline bool GetEvaluateTargetHealth() const { return m_evaluateTargetHealth; }
     inline bool EvaluateTargetHealthHasBeenSet() const { return m_evaluateTargetHealthHasBeenSet; }
     inline void SetEvaluateTargetHealth(bool value) { m_evaluateTargetHealthHasBeenSet = true; m_evaluateTargetHealth = value; }
     inline AliasTarget& WithEvaluateTargetHealth(bool value) { SetEvaluateTargetHealth(value); return *this;}
@@ -303,7 +299,7 @@ namespace Model
     Aws::String m_dNSName;
     bool m_dNSNameHasBeenSet = false;
 
-    bool m_evaluateTargetHealth;
+    bool m_evaluateTargetHealth{false};
     bool m_evaluateTargetHealthHasBeenSet = false;
   };
 

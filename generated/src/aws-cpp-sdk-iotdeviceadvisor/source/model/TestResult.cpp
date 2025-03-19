@@ -18,13 +18,7 @@ namespace IoTDeviceAdvisor
 namespace Model
 {
 
-TestResult::TestResult() : 
-    m_groupsHasBeenSet(false)
-{
-}
-
 TestResult::TestResult(JsonView jsonValue)
-  : TestResult()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ TestResult& TestResult::operator =(JsonView jsonValue)
     }
     m_groupsHasBeenSet = true;
   }
-
   return *this;
 }
 

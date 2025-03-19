@@ -18,13 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-MultiLayerStorage::MultiLayerStorage() : 
-    m_customerManagedS3StorageHasBeenSet(false)
-{
-}
-
 MultiLayerStorage::MultiLayerStorage(JsonView jsonValue)
-  : MultiLayerStorage()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MultiLayerStorage& MultiLayerStorage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("customerManagedS3Storage"))
   {
     m_customerManagedS3Storage = jsonValue.GetObject("customerManagedS3Storage");
-
     m_customerManagedS3StorageHasBeenSet = true;
   }
-
   return *this;
 }
 

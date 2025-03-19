@@ -31,7 +31,7 @@ namespace Model
   class ContentFeedbackData
   {
   public:
-    AWS_QCONNECT_API ContentFeedbackData();
+    AWS_QCONNECT_API ContentFeedbackData() = default;
     AWS_QCONNECT_API ContentFeedbackData(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API ContentFeedbackData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>Information about the feedback for a generative target type.</p>
      */
-    inline const GenerativeContentFeedbackData& GetGenerativeContentFeedbackData() const{ return m_generativeContentFeedbackData; }
+    inline const GenerativeContentFeedbackData& GetGenerativeContentFeedbackData() const { return m_generativeContentFeedbackData; }
     inline bool GenerativeContentFeedbackDataHasBeenSet() const { return m_generativeContentFeedbackDataHasBeenSet; }
-    inline void SetGenerativeContentFeedbackData(const GenerativeContentFeedbackData& value) { m_generativeContentFeedbackDataHasBeenSet = true; m_generativeContentFeedbackData = value; }
-    inline void SetGenerativeContentFeedbackData(GenerativeContentFeedbackData&& value) { m_generativeContentFeedbackDataHasBeenSet = true; m_generativeContentFeedbackData = std::move(value); }
-    inline ContentFeedbackData& WithGenerativeContentFeedbackData(const GenerativeContentFeedbackData& value) { SetGenerativeContentFeedbackData(value); return *this;}
-    inline ContentFeedbackData& WithGenerativeContentFeedbackData(GenerativeContentFeedbackData&& value) { SetGenerativeContentFeedbackData(std::move(value)); return *this;}
+    template<typename GenerativeContentFeedbackDataT = GenerativeContentFeedbackData>
+    void SetGenerativeContentFeedbackData(GenerativeContentFeedbackDataT&& value) { m_generativeContentFeedbackDataHasBeenSet = true; m_generativeContentFeedbackData = std::forward<GenerativeContentFeedbackDataT>(value); }
+    template<typename GenerativeContentFeedbackDataT = GenerativeContentFeedbackData>
+    ContentFeedbackData& WithGenerativeContentFeedbackData(GenerativeContentFeedbackDataT&& value) { SetGenerativeContentFeedbackData(std::forward<GenerativeContentFeedbackDataT>(value)); return *this;}
     ///@}
   private:
 

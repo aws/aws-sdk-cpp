@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDataSharesForConsumerResult::DescribeDataSharesForConsumerResult()
-{
-}
-
 DescribeDataSharesForConsumerResult::DescribeDataSharesForConsumerResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeDataSharesForConsumerResult& DescribeDataSharesForConsumerResult::operat
     if(!dataSharesNode.IsNull())
     {
       XmlNode dataSharesMember = dataSharesNode.FirstChild("member");
+      m_dataSharesHasBeenSet = !dataSharesMember.IsNull();
       while(!dataSharesMember.IsNull())
       {
         m_dataShares.push_back(dataSharesMember);
         dataSharesMember = dataSharesMember.NextNode("member");
       }
 
+      m_dataSharesHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeDataSharesForConsumerResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

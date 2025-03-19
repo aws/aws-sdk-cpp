@@ -22,7 +22,7 @@ namespace Model
   class ListFlywheelIterationHistoryRequest : public ComprehendRequest
   {
   public:
-    AWS_COMPREHEND_API ListFlywheelIterationHistoryRequest();
+    AWS_COMPREHEND_API ListFlywheelIterationHistoryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,47 +39,43 @@ namespace Model
     /**
      * <p>The ARN of the flywheel.</p>
      */
-    inline const Aws::String& GetFlywheelArn() const{ return m_flywheelArn; }
+    inline const Aws::String& GetFlywheelArn() const { return m_flywheelArn; }
     inline bool FlywheelArnHasBeenSet() const { return m_flywheelArnHasBeenSet; }
-    inline void SetFlywheelArn(const Aws::String& value) { m_flywheelArnHasBeenSet = true; m_flywheelArn = value; }
-    inline void SetFlywheelArn(Aws::String&& value) { m_flywheelArnHasBeenSet = true; m_flywheelArn = std::move(value); }
-    inline void SetFlywheelArn(const char* value) { m_flywheelArnHasBeenSet = true; m_flywheelArn.assign(value); }
-    inline ListFlywheelIterationHistoryRequest& WithFlywheelArn(const Aws::String& value) { SetFlywheelArn(value); return *this;}
-    inline ListFlywheelIterationHistoryRequest& WithFlywheelArn(Aws::String&& value) { SetFlywheelArn(std::move(value)); return *this;}
-    inline ListFlywheelIterationHistoryRequest& WithFlywheelArn(const char* value) { SetFlywheelArn(value); return *this;}
+    template<typename FlywheelArnT = Aws::String>
+    void SetFlywheelArn(FlywheelArnT&& value) { m_flywheelArnHasBeenSet = true; m_flywheelArn = std::forward<FlywheelArnT>(value); }
+    template<typename FlywheelArnT = Aws::String>
+    ListFlywheelIterationHistoryRequest& WithFlywheelArn(FlywheelArnT&& value) { SetFlywheelArn(std::forward<FlywheelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Filter the flywheel iteration history based on creation time.</p>
      */
-    inline const FlywheelIterationFilter& GetFilter() const{ return m_filter; }
+    inline const FlywheelIterationFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const FlywheelIterationFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(FlywheelIterationFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline ListFlywheelIterationHistoryRequest& WithFilter(const FlywheelIterationFilter& value) { SetFilter(value); return *this;}
-    inline ListFlywheelIterationHistoryRequest& WithFilter(FlywheelIterationFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = FlywheelIterationFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = FlywheelIterationFilter>
+    ListFlywheelIterationHistoryRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Next token</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListFlywheelIterationHistoryRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListFlywheelIterationHistoryRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListFlywheelIterationHistoryRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListFlywheelIterationHistoryRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Maximum number of iteration history results to return</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListFlywheelIterationHistoryRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -95,7 +91,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

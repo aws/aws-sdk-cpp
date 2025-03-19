@@ -18,14 +18,7 @@ namespace SSMContacts
 namespace Model
 {
 
-Target::Target() : 
-    m_channelTargetInfoHasBeenSet(false),
-    m_contactTargetInfoHasBeenSet(false)
-{
-}
-
 Target::Target(JsonView jsonValue)
-  : Target()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Target& Target::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ChannelTargetInfo"))
   {
     m_channelTargetInfo = jsonValue.GetObject("ChannelTargetInfo");
-
     m_channelTargetInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContactTargetInfo"))
   {
     m_contactTargetInfo = jsonValue.GetObject("ContactTargetInfo");
-
     m_contactTargetInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

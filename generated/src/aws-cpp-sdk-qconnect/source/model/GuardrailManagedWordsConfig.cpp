@@ -18,14 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-GuardrailManagedWordsConfig::GuardrailManagedWordsConfig() : 
-    m_type(GuardrailManagedWordsType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 GuardrailManagedWordsConfig::GuardrailManagedWordsConfig(JsonView jsonValue)
-  : GuardrailManagedWordsConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ GuardrailManagedWordsConfig& GuardrailManagedWordsConfig::operator =(JsonView js
   if(jsonValue.ValueExists("type"))
   {
     m_type = GuardrailManagedWordsTypeMapper::GetGuardrailManagedWordsTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

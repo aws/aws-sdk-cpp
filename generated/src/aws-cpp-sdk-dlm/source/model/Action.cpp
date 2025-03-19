@@ -18,14 +18,7 @@ namespace DLM
 namespace Model
 {
 
-Action::Action() : 
-    m_nameHasBeenSet(false),
-    m_crossRegionCopyHasBeenSet(false)
-{
-}
-
 Action::Action(JsonView jsonValue)
-  : Action()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ Action& Action::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrossRegionCopy"))
   {
     Aws::Utils::Array<JsonView> crossRegionCopyJsonList = jsonValue.GetArray("CrossRegionCopy");
@@ -48,7 +39,6 @@ Action& Action::operator =(JsonView jsonValue)
     }
     m_crossRegionCopyHasBeenSet = true;
   }
-
   return *this;
 }
 

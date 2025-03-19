@@ -18,13 +18,7 @@ namespace MediaPackage
 namespace Model
 {
 
-HlsIngest::HlsIngest() : 
-    m_ingestEndpointsHasBeenSet(false)
-{
-}
-
 HlsIngest::HlsIngest(JsonView jsonValue)
-  : HlsIngest()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ HlsIngest& HlsIngest::operator =(JsonView jsonValue)
     }
     m_ingestEndpointsHasBeenSet = true;
   }
-
   return *this;
 }
 

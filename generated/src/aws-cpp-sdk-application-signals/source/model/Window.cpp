@@ -18,16 +18,7 @@ namespace ApplicationSignals
 namespace Model
 {
 
-Window::Window() : 
-    m_durationUnit(DurationUnit::NOT_SET),
-    m_durationUnitHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false)
-{
-}
-
 Window::Window(JsonView jsonValue)
-  : Window()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Window& Window::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DurationUnit"))
   {
     m_durationUnit = DurationUnitMapper::GetDurationUnitForName(jsonValue.GetString("DurationUnit"));
-
     m_durationUnitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Duration"))
   {
     m_duration = jsonValue.GetInteger("Duration");
-
     m_durationHasBeenSet = true;
   }
-
   return *this;
 }
 

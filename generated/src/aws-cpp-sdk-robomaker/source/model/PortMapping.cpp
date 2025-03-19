@@ -18,18 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-PortMapping::PortMapping() : 
-    m_jobPort(0),
-    m_jobPortHasBeenSet(false),
-    m_applicationPort(0),
-    m_applicationPortHasBeenSet(false),
-    m_enableOnPublicIp(false),
-    m_enableOnPublicIpHasBeenSet(false)
-{
-}
-
 PortMapping::PortMapping(JsonView jsonValue)
-  : PortMapping()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ PortMapping& PortMapping::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobPort"))
   {
     m_jobPort = jsonValue.GetInteger("jobPort");
-
     m_jobPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationPort"))
   {
     m_applicationPort = jsonValue.GetInteger("applicationPort");
-
     m_applicationPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enableOnPublicIp"))
   {
     m_enableOnPublicIp = jsonValue.GetBool("enableOnPublicIp");
-
     m_enableOnPublicIpHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-SummaryMetricsResult::SummaryMetricsResult() : 
-    m_savingsPercentageHasBeenSet(false)
-{
-}
-
 SummaryMetricsResult::SummaryMetricsResult(JsonView jsonValue)
-  : SummaryMetricsResult()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SummaryMetricsResult& SummaryMetricsResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("savingsPercentage"))
   {
     m_savingsPercentage = jsonValue.GetString("savingsPercentage");
-
     m_savingsPercentageHasBeenSet = true;
   }
-
   return *this;
 }
 

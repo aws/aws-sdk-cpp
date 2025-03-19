@@ -23,7 +23,7 @@ namespace Model
   class BatchGetRecordRequest : public SageMakerFeatureStoreRuntimeRequest
   {
   public:
-    AWS_SAGEMAKERFEATURESTORERUNTIME_API BatchGetRecordRequest();
+    AWS_SAGEMAKERFEATURESTORERUNTIME_API BatchGetRecordRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,14 @@ namespace Model
      * retrieved, and the corresponding <code>RecordIdentifier</code> values as
      * strings.</p>
      */
-    inline const Aws::Vector<BatchGetRecordIdentifier>& GetIdentifiers() const{ return m_identifiers; }
+    inline const Aws::Vector<BatchGetRecordIdentifier>& GetIdentifiers() const { return m_identifiers; }
     inline bool IdentifiersHasBeenSet() const { return m_identifiersHasBeenSet; }
-    inline void SetIdentifiers(const Aws::Vector<BatchGetRecordIdentifier>& value) { m_identifiersHasBeenSet = true; m_identifiers = value; }
-    inline void SetIdentifiers(Aws::Vector<BatchGetRecordIdentifier>&& value) { m_identifiersHasBeenSet = true; m_identifiers = std::move(value); }
-    inline BatchGetRecordRequest& WithIdentifiers(const Aws::Vector<BatchGetRecordIdentifier>& value) { SetIdentifiers(value); return *this;}
-    inline BatchGetRecordRequest& WithIdentifiers(Aws::Vector<BatchGetRecordIdentifier>&& value) { SetIdentifiers(std::move(value)); return *this;}
-    inline BatchGetRecordRequest& AddIdentifiers(const BatchGetRecordIdentifier& value) { m_identifiersHasBeenSet = true; m_identifiers.push_back(value); return *this; }
-    inline BatchGetRecordRequest& AddIdentifiers(BatchGetRecordIdentifier&& value) { m_identifiersHasBeenSet = true; m_identifiers.push_back(std::move(value)); return *this; }
+    template<typename IdentifiersT = Aws::Vector<BatchGetRecordIdentifier>>
+    void SetIdentifiers(IdentifiersT&& value) { m_identifiersHasBeenSet = true; m_identifiers = std::forward<IdentifiersT>(value); }
+    template<typename IdentifiersT = Aws::Vector<BatchGetRecordIdentifier>>
+    BatchGetRecordRequest& WithIdentifiers(IdentifiersT&& value) { SetIdentifiers(std::forward<IdentifiersT>(value)); return *this;}
+    template<typename IdentifiersT = BatchGetRecordIdentifier>
+    BatchGetRecordRequest& AddIdentifiers(IdentifiersT&& value) { m_identifiersHasBeenSet = true; m_identifiers.emplace_back(std::forward<IdentifiersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,19 +58,17 @@ namespace Model
      * <code>ExpiresAt</code>, if it is not null. If <code>Disabled</code> and null,
      * <code>BatchGetRecord</code> will return null.</p>
      */
-    inline const ExpirationTimeResponse& GetExpirationTimeResponse() const{ return m_expirationTimeResponse; }
+    inline ExpirationTimeResponse GetExpirationTimeResponse() const { return m_expirationTimeResponse; }
     inline bool ExpirationTimeResponseHasBeenSet() const { return m_expirationTimeResponseHasBeenSet; }
-    inline void SetExpirationTimeResponse(const ExpirationTimeResponse& value) { m_expirationTimeResponseHasBeenSet = true; m_expirationTimeResponse = value; }
-    inline void SetExpirationTimeResponse(ExpirationTimeResponse&& value) { m_expirationTimeResponseHasBeenSet = true; m_expirationTimeResponse = std::move(value); }
-    inline BatchGetRecordRequest& WithExpirationTimeResponse(const ExpirationTimeResponse& value) { SetExpirationTimeResponse(value); return *this;}
-    inline BatchGetRecordRequest& WithExpirationTimeResponse(ExpirationTimeResponse&& value) { SetExpirationTimeResponse(std::move(value)); return *this;}
+    inline void SetExpirationTimeResponse(ExpirationTimeResponse value) { m_expirationTimeResponseHasBeenSet = true; m_expirationTimeResponse = value; }
+    inline BatchGetRecordRequest& WithExpirationTimeResponse(ExpirationTimeResponse value) { SetExpirationTimeResponse(value); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchGetRecordIdentifier> m_identifiers;
     bool m_identifiersHasBeenSet = false;
 
-    ExpirationTimeResponse m_expirationTimeResponse;
+    ExpirationTimeResponse m_expirationTimeResponse{ExpirationTimeResponse::NOT_SET};
     bool m_expirationTimeResponseHasBeenSet = false;
   };
 

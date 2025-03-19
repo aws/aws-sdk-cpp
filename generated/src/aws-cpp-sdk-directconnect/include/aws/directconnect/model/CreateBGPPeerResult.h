@@ -28,7 +28,7 @@ namespace Model
   class CreateBGPPeerResult
   {
   public:
-    AWS_DIRECTCONNECT_API CreateBGPPeerResult();
+    AWS_DIRECTCONNECT_API CreateBGPPeerResult() = default;
     AWS_DIRECTCONNECT_API CreateBGPPeerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DIRECTCONNECT_API CreateBGPPeerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The virtual interface.</p>
      */
-    inline const VirtualInterface& GetVirtualInterface() const{ return m_virtualInterface; }
-    inline void SetVirtualInterface(const VirtualInterface& value) { m_virtualInterface = value; }
-    inline void SetVirtualInterface(VirtualInterface&& value) { m_virtualInterface = std::move(value); }
-    inline CreateBGPPeerResult& WithVirtualInterface(const VirtualInterface& value) { SetVirtualInterface(value); return *this;}
-    inline CreateBGPPeerResult& WithVirtualInterface(VirtualInterface&& value) { SetVirtualInterface(std::move(value)); return *this;}
+    inline const VirtualInterface& GetVirtualInterface() const { return m_virtualInterface; }
+    template<typename VirtualInterfaceT = VirtualInterface>
+    void SetVirtualInterface(VirtualInterfaceT&& value) { m_virtualInterfaceHasBeenSet = true; m_virtualInterface = std::forward<VirtualInterfaceT>(value); }
+    template<typename VirtualInterfaceT = VirtualInterface>
+    CreateBGPPeerResult& WithVirtualInterface(VirtualInterfaceT&& value) { SetVirtualInterface(std::forward<VirtualInterfaceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateBGPPeerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateBGPPeerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateBGPPeerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateBGPPeerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     VirtualInterface m_virtualInterface;
+    bool m_virtualInterfaceHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

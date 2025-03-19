@@ -29,7 +29,7 @@ namespace Model
   class AssociatePersonasToEntitiesResult
   {
   public:
-    AWS_KENDRA_API AssociatePersonasToEntitiesResult();
+    AWS_KENDRA_API AssociatePersonasToEntitiesResult() = default;
     AWS_KENDRA_API AssociatePersonasToEntitiesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KENDRA_API AssociatePersonasToEntitiesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p>Lists the users or groups in your IAM Identity Center identity source that
      * failed to properly configure with your Amazon Kendra experience.</p>
      */
-    inline const Aws::Vector<FailedEntity>& GetFailedEntityList() const{ return m_failedEntityList; }
-    inline void SetFailedEntityList(const Aws::Vector<FailedEntity>& value) { m_failedEntityList = value; }
-    inline void SetFailedEntityList(Aws::Vector<FailedEntity>&& value) { m_failedEntityList = std::move(value); }
-    inline AssociatePersonasToEntitiesResult& WithFailedEntityList(const Aws::Vector<FailedEntity>& value) { SetFailedEntityList(value); return *this;}
-    inline AssociatePersonasToEntitiesResult& WithFailedEntityList(Aws::Vector<FailedEntity>&& value) { SetFailedEntityList(std::move(value)); return *this;}
-    inline AssociatePersonasToEntitiesResult& AddFailedEntityList(const FailedEntity& value) { m_failedEntityList.push_back(value); return *this; }
-    inline AssociatePersonasToEntitiesResult& AddFailedEntityList(FailedEntity&& value) { m_failedEntityList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FailedEntity>& GetFailedEntityList() const { return m_failedEntityList; }
+    template<typename FailedEntityListT = Aws::Vector<FailedEntity>>
+    void SetFailedEntityList(FailedEntityListT&& value) { m_failedEntityListHasBeenSet = true; m_failedEntityList = std::forward<FailedEntityListT>(value); }
+    template<typename FailedEntityListT = Aws::Vector<FailedEntity>>
+    AssociatePersonasToEntitiesResult& WithFailedEntityList(FailedEntityListT&& value) { SetFailedEntityList(std::forward<FailedEntityListT>(value)); return *this;}
+    template<typename FailedEntityListT = FailedEntity>
+    AssociatePersonasToEntitiesResult& AddFailedEntityList(FailedEntityListT&& value) { m_failedEntityListHasBeenSet = true; m_failedEntityList.emplace_back(std::forward<FailedEntityListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline AssociatePersonasToEntitiesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AssociatePersonasToEntitiesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AssociatePersonasToEntitiesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AssociatePersonasToEntitiesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FailedEntity> m_failedEntityList;
+    bool m_failedEntityListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

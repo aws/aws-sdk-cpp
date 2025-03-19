@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PrepareQueryResult::PrepareQueryResult()
-{
-}
-
 PrepareQueryResult::PrepareQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ PrepareQueryResult& PrepareQueryResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("QueryString"))
   {
     m_queryString = jsonValue.GetString("QueryString");
-
+    m_queryStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Columns"))
   {
     Aws::Utils::Array<JsonView> columnsJsonList = jsonValue.GetArray("Columns");
@@ -42,8 +37,8 @@ PrepareQueryResult& PrepareQueryResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_columns.push_back(columnsJsonList[columnsIndex].AsObject());
     }
+    m_columnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
@@ -51,14 +46,15 @@ PrepareQueryResult& PrepareQueryResult::operator =(const Aws::AmazonWebServiceRe
     {
       m_parameters.push_back(parametersJsonList[parametersIndex].AsObject());
     }
+    m_parametersHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

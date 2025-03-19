@@ -18,15 +18,7 @@ namespace DynamoDBStreams
 namespace Model
 {
 
-Stream::Stream() : 
-    m_streamArnHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_streamLabelHasBeenSet(false)
-{
-}
-
 Stream::Stream(JsonView jsonValue)
-  : Stream()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Stream& Stream::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StreamArn"))
   {
     m_streamArn = jsonValue.GetString("StreamArn");
-
     m_streamArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamLabel"))
   {
     m_streamLabel = jsonValue.GetString("StreamLabel");
-
     m_streamLabelHasBeenSet = true;
   }
-
   return *this;
 }
 

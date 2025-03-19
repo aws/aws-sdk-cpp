@@ -31,7 +31,7 @@ namespace Model
   class UpdateQAppResult
   {
   public:
-    AWS_QAPPS_API UpdateQAppResult();
+    AWS_QAPPS_API UpdateQAppResult() = default;
     AWS_QAPPS_API UpdateQAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QAPPS_API UpdateQAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,73 +40,63 @@ namespace Model
     /**
      * <p>The unique identifier of the updated Q App.</p>
      */
-    inline const Aws::String& GetAppId() const{ return m_appId; }
-    inline void SetAppId(const Aws::String& value) { m_appId = value; }
-    inline void SetAppId(Aws::String&& value) { m_appId = std::move(value); }
-    inline void SetAppId(const char* value) { m_appId.assign(value); }
-    inline UpdateQAppResult& WithAppId(const Aws::String& value) { SetAppId(value); return *this;}
-    inline UpdateQAppResult& WithAppId(Aws::String&& value) { SetAppId(std::move(value)); return *this;}
-    inline UpdateQAppResult& WithAppId(const char* value) { SetAppId(value); return *this;}
+    inline const Aws::String& GetAppId() const { return m_appId; }
+    template<typename AppIdT = Aws::String>
+    void SetAppId(AppIdT&& value) { m_appIdHasBeenSet = true; m_appId = std::forward<AppIdT>(value); }
+    template<typename AppIdT = Aws::String>
+    UpdateQAppResult& WithAppId(AppIdT&& value) { SetAppId(std::forward<AppIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the updated Q App.</p>
      */
-    inline const Aws::String& GetAppArn() const{ return m_appArn; }
-    inline void SetAppArn(const Aws::String& value) { m_appArn = value; }
-    inline void SetAppArn(Aws::String&& value) { m_appArn = std::move(value); }
-    inline void SetAppArn(const char* value) { m_appArn.assign(value); }
-    inline UpdateQAppResult& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
-    inline UpdateQAppResult& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
-    inline UpdateQAppResult& WithAppArn(const char* value) { SetAppArn(value); return *this;}
+    inline const Aws::String& GetAppArn() const { return m_appArn; }
+    template<typename AppArnT = Aws::String>
+    void SetAppArn(AppArnT&& value) { m_appArnHasBeenSet = true; m_appArn = std::forward<AppArnT>(value); }
+    template<typename AppArnT = Aws::String>
+    UpdateQAppResult& WithAppArn(AppArnT&& value) { SetAppArn(std::forward<AppArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new title of the updated Q App.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
-    inline void SetTitle(const Aws::String& value) { m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_title.assign(value); }
-    inline UpdateQAppResult& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline UpdateQAppResult& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline UpdateQAppResult& WithTitle(const char* value) { SetTitle(value); return *this;}
+    inline const Aws::String& GetTitle() const { return m_title; }
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    UpdateQAppResult& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new description of the updated Q App.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline UpdateQAppResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateQAppResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateQAppResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateQAppResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The initial prompt for the updated Q App.</p>
      */
-    inline const Aws::String& GetInitialPrompt() const{ return m_initialPrompt; }
-    inline void SetInitialPrompt(const Aws::String& value) { m_initialPrompt = value; }
-    inline void SetInitialPrompt(Aws::String&& value) { m_initialPrompt = std::move(value); }
-    inline void SetInitialPrompt(const char* value) { m_initialPrompt.assign(value); }
-    inline UpdateQAppResult& WithInitialPrompt(const Aws::String& value) { SetInitialPrompt(value); return *this;}
-    inline UpdateQAppResult& WithInitialPrompt(Aws::String&& value) { SetInitialPrompt(std::move(value)); return *this;}
-    inline UpdateQAppResult& WithInitialPrompt(const char* value) { SetInitialPrompt(value); return *this;}
+    inline const Aws::String& GetInitialPrompt() const { return m_initialPrompt; }
+    template<typename InitialPromptT = Aws::String>
+    void SetInitialPrompt(InitialPromptT&& value) { m_initialPromptHasBeenSet = true; m_initialPrompt = std::forward<InitialPromptT>(value); }
+    template<typename InitialPromptT = Aws::String>
+    UpdateQAppResult& WithInitialPrompt(InitialPromptT&& value) { SetInitialPrompt(std::forward<InitialPromptT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new version of the updated Q App.</p>
      */
-    inline int GetAppVersion() const{ return m_appVersion; }
-    inline void SetAppVersion(int value) { m_appVersion = value; }
+    inline int GetAppVersion() const { return m_appVersion; }
+    inline void SetAppVersion(int value) { m_appVersionHasBeenSet = true; m_appVersion = value; }
     inline UpdateQAppResult& WithAppVersion(int value) { SetAppVersion(value); return *this;}
     ///@}
 
@@ -114,111 +104,115 @@ namespace Model
     /**
      * <p>The status of the updated Q App.</p>
      */
-    inline const AppStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const AppStatus& value) { m_status = value; }
-    inline void SetStatus(AppStatus&& value) { m_status = std::move(value); }
-    inline UpdateQAppResult& WithStatus(const AppStatus& value) { SetStatus(value); return *this;}
-    inline UpdateQAppResult& WithStatus(AppStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline AppStatus GetStatus() const { return m_status; }
+    inline void SetStatus(AppStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateQAppResult& WithStatus(AppStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the Q App was originally created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline UpdateQAppResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline UpdateQAppResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    UpdateQAppResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user who originally created the Q App.</p>
      */
-    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
-    inline void SetCreatedBy(const Aws::String& value) { m_createdBy = value; }
-    inline void SetCreatedBy(Aws::String&& value) { m_createdBy = std::move(value); }
-    inline void SetCreatedBy(const char* value) { m_createdBy.assign(value); }
-    inline UpdateQAppResult& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
-    inline UpdateQAppResult& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
-    inline UpdateQAppResult& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+    template<typename CreatedByT = Aws::String>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = Aws::String>
+    UpdateQAppResult& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the Q App was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAt = std::move(value); }
-    inline UpdateQAppResult& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline UpdateQAppResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    UpdateQAppResult& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user who last updated the Q App.</p>
      */
-    inline const Aws::String& GetUpdatedBy() const{ return m_updatedBy; }
-    inline void SetUpdatedBy(const Aws::String& value) { m_updatedBy = value; }
-    inline void SetUpdatedBy(Aws::String&& value) { m_updatedBy = std::move(value); }
-    inline void SetUpdatedBy(const char* value) { m_updatedBy.assign(value); }
-    inline UpdateQAppResult& WithUpdatedBy(const Aws::String& value) { SetUpdatedBy(value); return *this;}
-    inline UpdateQAppResult& WithUpdatedBy(Aws::String&& value) { SetUpdatedBy(std::move(value)); return *this;}
-    inline UpdateQAppResult& WithUpdatedBy(const char* value) { SetUpdatedBy(value); return *this;}
+    inline const Aws::String& GetUpdatedBy() const { return m_updatedBy; }
+    template<typename UpdatedByT = Aws::String>
+    void SetUpdatedBy(UpdatedByT&& value) { m_updatedByHasBeenSet = true; m_updatedBy = std::forward<UpdatedByT>(value); }
+    template<typename UpdatedByT = Aws::String>
+    UpdateQAppResult& WithUpdatedBy(UpdatedByT&& value) { SetUpdatedBy(std::forward<UpdatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The capabilities required for the updated Q App.</p>
      */
-    inline const Aws::Vector<AppRequiredCapability>& GetRequiredCapabilities() const{ return m_requiredCapabilities; }
-    inline void SetRequiredCapabilities(const Aws::Vector<AppRequiredCapability>& value) { m_requiredCapabilities = value; }
-    inline void SetRequiredCapabilities(Aws::Vector<AppRequiredCapability>&& value) { m_requiredCapabilities = std::move(value); }
-    inline UpdateQAppResult& WithRequiredCapabilities(const Aws::Vector<AppRequiredCapability>& value) { SetRequiredCapabilities(value); return *this;}
-    inline UpdateQAppResult& WithRequiredCapabilities(Aws::Vector<AppRequiredCapability>&& value) { SetRequiredCapabilities(std::move(value)); return *this;}
-    inline UpdateQAppResult& AddRequiredCapabilities(const AppRequiredCapability& value) { m_requiredCapabilities.push_back(value); return *this; }
-    inline UpdateQAppResult& AddRequiredCapabilities(AppRequiredCapability&& value) { m_requiredCapabilities.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AppRequiredCapability>& GetRequiredCapabilities() const { return m_requiredCapabilities; }
+    template<typename RequiredCapabilitiesT = Aws::Vector<AppRequiredCapability>>
+    void SetRequiredCapabilities(RequiredCapabilitiesT&& value) { m_requiredCapabilitiesHasBeenSet = true; m_requiredCapabilities = std::forward<RequiredCapabilitiesT>(value); }
+    template<typename RequiredCapabilitiesT = Aws::Vector<AppRequiredCapability>>
+    UpdateQAppResult& WithRequiredCapabilities(RequiredCapabilitiesT&& value) { SetRequiredCapabilities(std::forward<RequiredCapabilitiesT>(value)); return *this;}
+    inline UpdateQAppResult& AddRequiredCapabilities(AppRequiredCapability value) { m_requiredCapabilitiesHasBeenSet = true; m_requiredCapabilities.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateQAppResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateQAppResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateQAppResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateQAppResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_appId;
+    bool m_appIdHasBeenSet = false;
 
     Aws::String m_appArn;
+    bool m_appArnHasBeenSet = false;
 
     Aws::String m_title;
+    bool m_titleHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_initialPrompt;
+    bool m_initialPromptHasBeenSet = false;
 
-    int m_appVersion;
+    int m_appVersion{0};
+    bool m_appVersionHasBeenSet = false;
 
-    AppStatus m_status;
+    AppStatus m_status{AppStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_createdBy;
+    bool m_createdByHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_updatedBy;
+    bool m_updatedByHasBeenSet = false;
 
     Aws::Vector<AppRequiredCapability> m_requiredCapabilities;
+    bool m_requiredCapabilitiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

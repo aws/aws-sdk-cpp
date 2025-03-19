@@ -10,19 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-ListTypeRegistrationsRequest::ListTypeRegistrationsRequest() : 
-    m_type(RegistryType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_typeArnHasBeenSet(false),
-    m_registrationStatusFilter(RegistrationStatus::NOT_SET),
-    m_registrationStatusFilterHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListTypeRegistrationsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

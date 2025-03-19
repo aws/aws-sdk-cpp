@@ -18,15 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-BatchDeleteTaxRegistrationError::BatchDeleteTaxRegistrationError() : 
-    m_accountIdHasBeenSet(false),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 BatchDeleteTaxRegistrationError::BatchDeleteTaxRegistrationError(JsonView jsonValue)
-  : BatchDeleteTaxRegistrationError()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BatchDeleteTaxRegistrationError& BatchDeleteTaxRegistrationError::operator =(Jso
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

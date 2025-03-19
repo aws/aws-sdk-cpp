@@ -21,7 +21,7 @@ namespace Model
   class AttachElasticLoadBalancerRequest : public OpsWorksRequest
   {
   public:
-    AWS_OPSWORKS_API AttachElasticLoadBalancerRequest();
+    AWS_OPSWORKS_API AttachElasticLoadBalancerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The Elastic Load Balancing instance's name.</p>
      */
-    inline const Aws::String& GetElasticLoadBalancerName() const{ return m_elasticLoadBalancerName; }
+    inline const Aws::String& GetElasticLoadBalancerName() const { return m_elasticLoadBalancerName; }
     inline bool ElasticLoadBalancerNameHasBeenSet() const { return m_elasticLoadBalancerNameHasBeenSet; }
-    inline void SetElasticLoadBalancerName(const Aws::String& value) { m_elasticLoadBalancerNameHasBeenSet = true; m_elasticLoadBalancerName = value; }
-    inline void SetElasticLoadBalancerName(Aws::String&& value) { m_elasticLoadBalancerNameHasBeenSet = true; m_elasticLoadBalancerName = std::move(value); }
-    inline void SetElasticLoadBalancerName(const char* value) { m_elasticLoadBalancerNameHasBeenSet = true; m_elasticLoadBalancerName.assign(value); }
-    inline AttachElasticLoadBalancerRequest& WithElasticLoadBalancerName(const Aws::String& value) { SetElasticLoadBalancerName(value); return *this;}
-    inline AttachElasticLoadBalancerRequest& WithElasticLoadBalancerName(Aws::String&& value) { SetElasticLoadBalancerName(std::move(value)); return *this;}
-    inline AttachElasticLoadBalancerRequest& WithElasticLoadBalancerName(const char* value) { SetElasticLoadBalancerName(value); return *this;}
+    template<typename ElasticLoadBalancerNameT = Aws::String>
+    void SetElasticLoadBalancerName(ElasticLoadBalancerNameT&& value) { m_elasticLoadBalancerNameHasBeenSet = true; m_elasticLoadBalancerName = std::forward<ElasticLoadBalancerNameT>(value); }
+    template<typename ElasticLoadBalancerNameT = Aws::String>
+    AttachElasticLoadBalancerRequest& WithElasticLoadBalancerName(ElasticLoadBalancerNameT&& value) { SetElasticLoadBalancerName(std::forward<ElasticLoadBalancerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * <p>The ID of the layer to which the Elastic Load Balancing instance is to be
      * attached.</p>
      */
-    inline const Aws::String& GetLayerId() const{ return m_layerId; }
+    inline const Aws::String& GetLayerId() const { return m_layerId; }
     inline bool LayerIdHasBeenSet() const { return m_layerIdHasBeenSet; }
-    inline void SetLayerId(const Aws::String& value) { m_layerIdHasBeenSet = true; m_layerId = value; }
-    inline void SetLayerId(Aws::String&& value) { m_layerIdHasBeenSet = true; m_layerId = std::move(value); }
-    inline void SetLayerId(const char* value) { m_layerIdHasBeenSet = true; m_layerId.assign(value); }
-    inline AttachElasticLoadBalancerRequest& WithLayerId(const Aws::String& value) { SetLayerId(value); return *this;}
-    inline AttachElasticLoadBalancerRequest& WithLayerId(Aws::String&& value) { SetLayerId(std::move(value)); return *this;}
-    inline AttachElasticLoadBalancerRequest& WithLayerId(const char* value) { SetLayerId(value); return *this;}
+    template<typename LayerIdT = Aws::String>
+    void SetLayerId(LayerIdT&& value) { m_layerIdHasBeenSet = true; m_layerId = std::forward<LayerIdT>(value); }
+    template<typename LayerIdT = Aws::String>
+    AttachElasticLoadBalancerRequest& WithLayerId(LayerIdT&& value) { SetLayerId(std::forward<LayerIdT>(value)); return *this;}
     ///@}
   private:
 

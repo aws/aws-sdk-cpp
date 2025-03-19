@@ -12,21 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAddonRequest::CreateAddonRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_addonNameHasBeenSet(false),
-    m_addonVersionHasBeenSet(false),
-    m_serviceAccountRoleArnHasBeenSet(false),
-    m_resolveConflicts(ResolveConflicts::NOT_SET),
-    m_resolveConflictsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false),
-    m_configurationValuesHasBeenSet(false),
-    m_podIdentityAssociationsHasBeenSet(false)
-{
-}
-
 Aws::String CreateAddonRequest::SerializePayload() const
 {
   JsonValue payload;

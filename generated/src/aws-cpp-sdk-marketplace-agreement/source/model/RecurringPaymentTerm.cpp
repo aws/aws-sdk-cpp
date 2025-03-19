@@ -18,16 +18,7 @@ namespace AgreementService
 namespace Model
 {
 
-RecurringPaymentTerm::RecurringPaymentTerm() : 
-    m_billingPeriodHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false),
-    m_priceHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 RecurringPaymentTerm::RecurringPaymentTerm(JsonView jsonValue)
-  : RecurringPaymentTerm()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ RecurringPaymentTerm& RecurringPaymentTerm::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("billingPeriod"))
   {
     m_billingPeriod = jsonValue.GetString("billingPeriod");
-
     m_billingPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currencyCode"))
   {
     m_currencyCode = jsonValue.GetString("currencyCode");
-
     m_currencyCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("price"))
   {
     m_price = jsonValue.GetString("price");
-
     m_priceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

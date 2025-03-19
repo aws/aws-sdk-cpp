@@ -30,7 +30,7 @@ namespace Model
   class TrafficMirrorPortRangeRequest
   {
   public:
-    AWS_EC2_API TrafficMirrorPortRangeRequest();
+    AWS_EC2_API TrafficMirrorPortRangeRequest() = default;
     AWS_EC2_API TrafficMirrorPortRangeRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API TrafficMirrorPortRangeRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,7 +43,7 @@ namespace Model
      * <p>The first port in the Traffic Mirror port range. This applies to the TCP and
      * UDP protocols.</p>
      */
-    inline int GetFromPort() const{ return m_fromPort; }
+    inline int GetFromPort() const { return m_fromPort; }
     inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
     inline TrafficMirrorPortRangeRequest& WithFromPort(int value) { SetFromPort(value); return *this;}
@@ -54,17 +54,17 @@ namespace Model
      * <p>The last port in the Traffic Mirror port range. This applies to the TCP and
      * UDP protocols.</p>
      */
-    inline int GetToPort() const{ return m_toPort; }
+    inline int GetToPort() const { return m_toPort; }
     inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
     inline TrafficMirrorPortRangeRequest& WithToPort(int value) { SetToPort(value); return *this;}
     ///@}
   private:
 
-    int m_fromPort;
+    int m_fromPort{0};
     bool m_fromPortHasBeenSet = false;
 
-    int m_toPort;
+    int m_toPort{0};
     bool m_toPortHasBeenSet = false;
   };
 

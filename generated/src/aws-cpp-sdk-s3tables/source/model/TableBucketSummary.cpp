@@ -18,16 +18,7 @@ namespace S3Tables
 namespace Model
 {
 
-TableBucketSummary::TableBucketSummary() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
-{
-}
-
 TableBucketSummary::TableBucketSummary(JsonView jsonValue)
-  : TableBucketSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ TableBucketSummary& TableBucketSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ownerAccountId"))
   {
     m_ownerAccountId = jsonValue.GetString("ownerAccountId");
-
     m_ownerAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   return *this;
 }
 

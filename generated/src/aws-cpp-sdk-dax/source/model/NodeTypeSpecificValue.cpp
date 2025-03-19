@@ -18,14 +18,7 @@ namespace DAX
 namespace Model
 {
 
-NodeTypeSpecificValue::NodeTypeSpecificValue() : 
-    m_nodeTypeHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 NodeTypeSpecificValue::NodeTypeSpecificValue(JsonView jsonValue)
-  : NodeTypeSpecificValue()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NodeTypeSpecificValue& NodeTypeSpecificValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("NodeType"))
   {
     m_nodeType = jsonValue.GetString("NodeType");
-
     m_nodeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

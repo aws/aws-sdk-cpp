@@ -33,7 +33,7 @@ namespace Model
   class Query
   {
   public:
-    AWS_TEXTRACT_API Query();
+    AWS_TEXTRACT_API Query() = default;
     AWS_TEXTRACT_API Query(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Query& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
      * <p>Question that Amazon Textract will apply to the document. An example would be
      * "What is the customer's SSN?"</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline Query& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline Query& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline Query& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    Query& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Alias attached to the query, for ease of location.</p>
      */
-    inline const Aws::String& GetAlias() const{ return m_alias; }
+    inline const Aws::String& GetAlias() const { return m_alias; }
     inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
-    inline void SetAlias(const Aws::String& value) { m_aliasHasBeenSet = true; m_alias = value; }
-    inline void SetAlias(Aws::String&& value) { m_aliasHasBeenSet = true; m_alias = std::move(value); }
-    inline void SetAlias(const char* value) { m_aliasHasBeenSet = true; m_alias.assign(value); }
-    inline Query& WithAlias(const Aws::String& value) { SetAlias(value); return *this;}
-    inline Query& WithAlias(Aws::String&& value) { SetAlias(std::move(value)); return *this;}
-    inline Query& WithAlias(const char* value) { SetAlias(value); return *this;}
+    template<typename AliasT = Aws::String>
+    void SetAlias(AliasT&& value) { m_aliasHasBeenSet = true; m_alias = std::forward<AliasT>(value); }
+    template<typename AliasT = Aws::String>
+    Query& WithAlias(AliasT&& value) { SetAlias(std::forward<AliasT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,15 +77,14 @@ namespace Model
      * document.</p> </li> <li> <p>Specified pages must be greater than 0 and less than
      * or equal to the number of pages in the document.</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetPages() const{ return m_pages; }
+    inline const Aws::Vector<Aws::String>& GetPages() const { return m_pages; }
     inline bool PagesHasBeenSet() const { return m_pagesHasBeenSet; }
-    inline void SetPages(const Aws::Vector<Aws::String>& value) { m_pagesHasBeenSet = true; m_pages = value; }
-    inline void SetPages(Aws::Vector<Aws::String>&& value) { m_pagesHasBeenSet = true; m_pages = std::move(value); }
-    inline Query& WithPages(const Aws::Vector<Aws::String>& value) { SetPages(value); return *this;}
-    inline Query& WithPages(Aws::Vector<Aws::String>&& value) { SetPages(std::move(value)); return *this;}
-    inline Query& AddPages(const Aws::String& value) { m_pagesHasBeenSet = true; m_pages.push_back(value); return *this; }
-    inline Query& AddPages(Aws::String&& value) { m_pagesHasBeenSet = true; m_pages.push_back(std::move(value)); return *this; }
-    inline Query& AddPages(const char* value) { m_pagesHasBeenSet = true; m_pages.push_back(value); return *this; }
+    template<typename PagesT = Aws::Vector<Aws::String>>
+    void SetPages(PagesT&& value) { m_pagesHasBeenSet = true; m_pages = std::forward<PagesT>(value); }
+    template<typename PagesT = Aws::Vector<Aws::String>>
+    Query& WithPages(PagesT&& value) { SetPages(std::forward<PagesT>(value)); return *this;}
+    template<typename PagesT = Aws::String>
+    Query& AddPages(PagesT&& value) { m_pagesHasBeenSet = true; m_pages.emplace_back(std::forward<PagesT>(value)); return *this; }
     ///@}
   private:
 

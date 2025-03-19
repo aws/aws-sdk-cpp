@@ -18,15 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-DataPartition::DataPartition() : 
-    m_idHasBeenSet(false),
-    m_storageOptionsHasBeenSet(false),
-    m_uploadOptionsHasBeenSet(false)
-{
-}
-
 DataPartition::DataPartition(JsonView jsonValue)
-  : DataPartition()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DataPartition& DataPartition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageOptions"))
   {
     m_storageOptions = jsonValue.GetObject("storageOptions");
-
     m_storageOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("uploadOptions"))
   {
     m_uploadOptions = jsonValue.GetObject("uploadOptions");
-
     m_uploadOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -23,7 +23,7 @@ namespace Model
   class DescribeAutomationStepExecutionsRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API DescribeAutomationStepExecutionsRequest();
+    AWS_SSM_API DescribeAutomationStepExecutionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The Automation execution ID for which you want step execution
      * descriptions.</p>
      */
-    inline const Aws::String& GetAutomationExecutionId() const{ return m_automationExecutionId; }
+    inline const Aws::String& GetAutomationExecutionId() const { return m_automationExecutionId; }
     inline bool AutomationExecutionIdHasBeenSet() const { return m_automationExecutionIdHasBeenSet; }
-    inline void SetAutomationExecutionId(const Aws::String& value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId = value; }
-    inline void SetAutomationExecutionId(Aws::String&& value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId = std::move(value); }
-    inline void SetAutomationExecutionId(const char* value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId.assign(value); }
-    inline DescribeAutomationStepExecutionsRequest& WithAutomationExecutionId(const Aws::String& value) { SetAutomationExecutionId(value); return *this;}
-    inline DescribeAutomationStepExecutionsRequest& WithAutomationExecutionId(Aws::String&& value) { SetAutomationExecutionId(std::move(value)); return *this;}
-    inline DescribeAutomationStepExecutionsRequest& WithAutomationExecutionId(const char* value) { SetAutomationExecutionId(value); return *this;}
+    template<typename AutomationExecutionIdT = Aws::String>
+    void SetAutomationExecutionId(AutomationExecutionIdT&& value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId = std::forward<AutomationExecutionIdT>(value); }
+    template<typename AutomationExecutionIdT = Aws::String>
+    DescribeAutomationStepExecutionsRequest& WithAutomationExecutionId(AutomationExecutionIdT&& value) { SetAutomationExecutionId(std::forward<AutomationExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,14 @@ namespace Model
      * <p>One or more filters to limit the number of step executions returned by the
      * request.</p>
      */
-    inline const Aws::Vector<StepExecutionFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<StepExecutionFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<StepExecutionFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<StepExecutionFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeAutomationStepExecutionsRequest& WithFilters(const Aws::Vector<StepExecutionFilter>& value) { SetFilters(value); return *this;}
-    inline DescribeAutomationStepExecutionsRequest& WithFilters(Aws::Vector<StepExecutionFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline DescribeAutomationStepExecutionsRequest& AddFilters(const StepExecutionFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline DescribeAutomationStepExecutionsRequest& AddFilters(StepExecutionFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<StepExecutionFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<StepExecutionFilter>>
+    DescribeAutomationStepExecutionsRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = StepExecutionFilter>
+    DescribeAutomationStepExecutionsRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeAutomationStepExecutionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeAutomationStepExecutionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeAutomationStepExecutionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeAutomationStepExecutionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,7 +83,7 @@ namespace Model
      * token that you can specify in a subsequent call to get the next set of
      * results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeAutomationStepExecutionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -98,7 +94,7 @@ namespace Model
      * <p>Indicates whether to list step executions in reverse order by start time. The
      * default value is 'false'.</p>
      */
-    inline bool GetReverseOrder() const{ return m_reverseOrder; }
+    inline bool GetReverseOrder() const { return m_reverseOrder; }
     inline bool ReverseOrderHasBeenSet() const { return m_reverseOrderHasBeenSet; }
     inline void SetReverseOrder(bool value) { m_reverseOrderHasBeenSet = true; m_reverseOrder = value; }
     inline DescribeAutomationStepExecutionsRequest& WithReverseOrder(bool value) { SetReverseOrder(value); return *this;}
@@ -114,10 +110,10 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    bool m_reverseOrder;
+    bool m_reverseOrder{false};
     bool m_reverseOrderHasBeenSet = false;
   };
 

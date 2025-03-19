@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSegmentSnapshotResult::GetSegmentSnapshotResult() : 
-    m_status(SegmentSnapshotStatus::NOT_SET),
-    m_dataFormat(DataFormat::NOT_SET)
-{
-}
-
 GetSegmentSnapshotResult::GetSegmentSnapshotResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetSegmentSnapshotResult()
 {
   *this = result;
 }
@@ -35,51 +28,45 @@ GetSegmentSnapshotResult& GetSegmentSnapshotResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("SnapshotId"))
   {
     m_snapshotId = jsonValue.GetString("SnapshotId");
-
+    m_snapshotIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = SegmentSnapshotStatusMapper::GetSegmentSnapshotStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
+    m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataFormat"))
   {
     m_dataFormat = DataFormatMapper::GetDataFormatForName(jsonValue.GetString("DataFormat"));
-
+    m_dataFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionKey"))
   {
     m_encryptionKey = jsonValue.GetString("EncryptionKey");
-
+    m_encryptionKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RoleArn"))
   {
     m_roleArn = jsonValue.GetString("RoleArn");
-
+    m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationUri"))
   {
     m_destinationUri = jsonValue.GetString("DestinationUri");
-
+    m_destinationUriHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

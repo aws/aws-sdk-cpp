@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VpcCidrBlockAssociation::VpcCidrBlockAssociation() : 
-    m_associationIdHasBeenSet(false),
-    m_cidrBlockHasBeenSet(false),
-    m_cidrBlockStateHasBeenSet(false)
-{
-}
-
 VpcCidrBlockAssociation::VpcCidrBlockAssociation(const XmlNode& xmlNode)
-  : VpcCidrBlockAssociation()
 {
   *this = xmlNode;
 }

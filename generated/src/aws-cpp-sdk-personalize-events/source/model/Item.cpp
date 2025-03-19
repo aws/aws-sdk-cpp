@@ -18,14 +18,7 @@ namespace PersonalizeEvents
 namespace Model
 {
 
-Item::Item() : 
-    m_itemIdHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
-{
-}
-
 Item::Item(JsonView jsonValue)
-  : Item()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Item& Item::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("itemId"))
   {
     m_itemId = jsonValue.GetString("itemId");
-
     m_itemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("properties"))
   {
     m_properties = jsonValue.GetString("properties");
-
     m_propertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

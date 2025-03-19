@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeEndpointSettingsResult::DescribeEndpointSettingsResult()
-{
-}
-
 DescribeEndpointSettingsResult::DescribeEndpointSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeEndpointSettingsResult& DescribeEndpointSettingsResult::operator =(const
   if(jsonValue.ValueExists("Marker"))
   {
     m_marker = jsonValue.GetString("Marker");
-
+    m_markerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointSettings"))
   {
     Aws::Utils::Array<JsonView> endpointSettingsJsonList = jsonValue.GetArray("EndpointSettings");
@@ -42,14 +37,15 @@ DescribeEndpointSettingsResult& DescribeEndpointSettingsResult::operator =(const
     {
       m_endpointSettings.push_back(endpointSettingsJsonList[endpointSettingsIndex].AsObject());
     }
+    m_endpointSettingsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

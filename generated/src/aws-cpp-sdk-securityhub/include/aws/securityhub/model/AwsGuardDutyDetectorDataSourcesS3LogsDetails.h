@@ -32,7 +32,7 @@ namespace Model
   class AwsGuardDutyDetectorDataSourcesS3LogsDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsGuardDutyDetectorDataSourcesS3LogsDetails();
+    AWS_SECURITYHUB_API AwsGuardDutyDetectorDataSourcesS3LogsDetails() = default;
     AWS_SECURITYHUB_API AwsGuardDutyDetectorDataSourcesS3LogsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsGuardDutyDetectorDataSourcesS3LogsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p> A value that describes whether S3 data event logs are automatically enabled
      * for new members of an organization. </p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline AwsGuardDutyDetectorDataSourcesS3LogsDetails& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline AwsGuardDutyDetectorDataSourcesS3LogsDetails& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline AwsGuardDutyDetectorDataSourcesS3LogsDetails& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    AwsGuardDutyDetectorDataSourcesS3LogsDetails& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

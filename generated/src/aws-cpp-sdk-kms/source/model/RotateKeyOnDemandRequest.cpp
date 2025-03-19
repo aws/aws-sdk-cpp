@@ -12,11 +12,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RotateKeyOnDemandRequest::RotateKeyOnDemandRequest() : 
-    m_keyIdHasBeenSet(false)
-{
-}
-
 Aws::String RotateKeyOnDemandRequest::SerializePayload() const
 {
   JsonValue payload;

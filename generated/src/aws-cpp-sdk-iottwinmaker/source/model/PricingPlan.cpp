@@ -18,21 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-PricingPlan::PricingPlan() : 
-    m_billableEntityCount(0),
-    m_billableEntityCountHasBeenSet(false),
-    m_bundleInformationHasBeenSet(false),
-    m_effectiveDateTimeHasBeenSet(false),
-    m_pricingMode(PricingMode::NOT_SET),
-    m_pricingModeHasBeenSet(false),
-    m_updateDateTimeHasBeenSet(false),
-    m_updateReason(UpdateReason::NOT_SET),
-    m_updateReasonHasBeenSet(false)
-{
-}
-
 PricingPlan::PricingPlan(JsonView jsonValue)
-  : PricingPlan()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ PricingPlan& PricingPlan::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("billableEntityCount"))
   {
     m_billableEntityCount = jsonValue.GetInt64("billableEntityCount");
-
     m_billableEntityCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bundleInformation"))
   {
     m_bundleInformation = jsonValue.GetObject("bundleInformation");
-
     m_bundleInformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("effectiveDateTime"))
   {
     m_effectiveDateTime = jsonValue.GetDouble("effectiveDateTime");
-
     m_effectiveDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pricingMode"))
   {
     m_pricingMode = PricingModeMapper::GetPricingModeForName(jsonValue.GetString("pricingMode"));
-
     m_pricingModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateDateTime"))
   {
     m_updateDateTime = jsonValue.GetDouble("updateDateTime");
-
     m_updateDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateReason"))
   {
     m_updateReason = UpdateReasonMapper::GetUpdateReasonForName(jsonValue.GetString("updateReason"));
-
     m_updateReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

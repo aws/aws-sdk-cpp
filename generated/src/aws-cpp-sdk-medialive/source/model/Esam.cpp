@@ -18,19 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-Esam::Esam() : 
-    m_acquisitionPointIdHasBeenSet(false),
-    m_adAvailOffset(0),
-    m_adAvailOffsetHasBeenSet(false),
-    m_passwordParamHasBeenSet(false),
-    m_poisEndpointHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_zoneIdentityHasBeenSet(false)
-{
-}
-
 Esam::Esam(JsonView jsonValue)
-  : Esam()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ Esam& Esam::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("acquisitionPointId"))
   {
     m_acquisitionPointId = jsonValue.GetString("acquisitionPointId");
-
     m_acquisitionPointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("adAvailOffset"))
   {
     m_adAvailOffset = jsonValue.GetInteger("adAvailOffset");
-
     m_adAvailOffsetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("passwordParam"))
   {
     m_passwordParam = jsonValue.GetString("passwordParam");
-
     m_passwordParamHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("poisEndpoint"))
   {
     m_poisEndpoint = jsonValue.GetString("poisEndpoint");
-
     m_poisEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("username"))
   {
     m_username = jsonValue.GetString("username");
-
     m_usernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("zoneIdentity"))
   {
     m_zoneIdentity = jsonValue.GetString("zoneIdentity");
-
     m_zoneIdentityHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,17 +18,7 @@ namespace deadline
 namespace Model
 {
 
-StepDetailsEntity::StepDetailsEntity() : 
-    m_jobIdHasBeenSet(false),
-    m_stepIdHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false),
-    m_templateHasBeenSet(false),
-    m_dependenciesHasBeenSet(false)
-{
-}
-
 StepDetailsEntity::StepDetailsEntity(JsonView jsonValue)
-  : StepDetailsEntity()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ StepDetailsEntity& StepDetailsEntity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stepId"))
   {
     m_stepId = jsonValue.GetString("stepId");
-
     m_stepIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schemaVersion"))
   {
     m_schemaVersion = jsonValue.GetString("schemaVersion");
-
     m_schemaVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("template"))
   {
     m_template = jsonValue.GetObject("template");
-
     m_templateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dependencies"))
   {
     Aws::Utils::Array<JsonView> dependenciesJsonList = jsonValue.GetArray("dependencies");
@@ -72,7 +54,6 @@ StepDetailsEntity& StepDetailsEntity::operator =(JsonView jsonValue)
     }
     m_dependenciesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,11 +12,6 @@ using namespace Aws::drs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetLaunchConfigurationRequest::GetLaunchConfigurationRequest() : 
-    m_sourceServerIDHasBeenSet(false)
-{
-}
-
 Aws::String GetLaunchConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

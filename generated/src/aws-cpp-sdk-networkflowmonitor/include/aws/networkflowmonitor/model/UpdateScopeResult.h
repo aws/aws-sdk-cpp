@@ -29,7 +29,7 @@ namespace Model
   class UpdateScopeResult
   {
   public:
-    AWS_NETWORKFLOWMONITOR_API UpdateScopeResult();
+    AWS_NETWORKFLOWMONITOR_API UpdateScopeResult() = default;
     AWS_NETWORKFLOWMONITOR_API UpdateScopeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKFLOWMONITOR_API UpdateScopeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,11 @@ namespace Model
      * results for. A scope ID is an internally-generated identifier that includes all
      * the resources for a specific root account.</p>
      */
-    inline const Aws::String& GetScopeId() const{ return m_scopeId; }
-    inline void SetScopeId(const Aws::String& value) { m_scopeId = value; }
-    inline void SetScopeId(Aws::String&& value) { m_scopeId = std::move(value); }
-    inline void SetScopeId(const char* value) { m_scopeId.assign(value); }
-    inline UpdateScopeResult& WithScopeId(const Aws::String& value) { SetScopeId(value); return *this;}
-    inline UpdateScopeResult& WithScopeId(Aws::String&& value) { SetScopeId(std::move(value)); return *this;}
-    inline UpdateScopeResult& WithScopeId(const char* value) { SetScopeId(value); return *this;}
+    inline const Aws::String& GetScopeId() const { return m_scopeId; }
+    template<typename ScopeIdT = Aws::String>
+    void SetScopeId(ScopeIdT&& value) { m_scopeIdHasBeenSet = true; m_scopeId = std::forward<ScopeIdT>(value); }
+    template<typename ScopeIdT = Aws::String>
+    UpdateScopeResult& WithScopeId(ScopeIdT&& value) { SetScopeId(std::forward<ScopeIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,65 +53,61 @@ namespace Model
      * following: <code>SUCCEEDED</code>, <code>IN_PROGRESS</code>, or
      * <code>FAILED</code>.</p>
      */
-    inline const ScopeStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ScopeStatus& value) { m_status = value; }
-    inline void SetStatus(ScopeStatus&& value) { m_status = std::move(value); }
-    inline UpdateScopeResult& WithStatus(const ScopeStatus& value) { SetStatus(value); return *this;}
-    inline UpdateScopeResult& WithStatus(ScopeStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ScopeStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ScopeStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline UpdateScopeResult& WithStatus(ScopeStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the scope.</p>
      */
-    inline const Aws::String& GetScopeArn() const{ return m_scopeArn; }
-    inline void SetScopeArn(const Aws::String& value) { m_scopeArn = value; }
-    inline void SetScopeArn(Aws::String&& value) { m_scopeArn = std::move(value); }
-    inline void SetScopeArn(const char* value) { m_scopeArn.assign(value); }
-    inline UpdateScopeResult& WithScopeArn(const Aws::String& value) { SetScopeArn(value); return *this;}
-    inline UpdateScopeResult& WithScopeArn(Aws::String&& value) { SetScopeArn(std::move(value)); return *this;}
-    inline UpdateScopeResult& WithScopeArn(const char* value) { SetScopeArn(value); return *this;}
+    inline const Aws::String& GetScopeArn() const { return m_scopeArn; }
+    template<typename ScopeArnT = Aws::String>
+    void SetScopeArn(ScopeArnT&& value) { m_scopeArnHasBeenSet = true; m_scopeArn = std::forward<ScopeArnT>(value); }
+    template<typename ScopeArnT = Aws::String>
+    UpdateScopeResult& WithScopeArn(ScopeArnT&& value) { SetScopeArn(std::forward<ScopeArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags for a scope.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline UpdateScopeResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline UpdateScopeResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline UpdateScopeResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline UpdateScopeResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline UpdateScopeResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline UpdateScopeResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateScopeResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline UpdateScopeResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline UpdateScopeResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    UpdateScopeResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    UpdateScopeResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateScopeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateScopeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateScopeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateScopeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_scopeId;
+    bool m_scopeIdHasBeenSet = false;
 
-    ScopeStatus m_status;
+    ScopeStatus m_status{ScopeStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_scopeArn;
+    bool m_scopeArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

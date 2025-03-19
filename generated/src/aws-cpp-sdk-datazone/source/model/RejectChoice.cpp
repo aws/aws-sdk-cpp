@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-RejectChoice::RejectChoice() : 
-    m_predictionChoicesHasBeenSet(false),
-    m_predictionTargetHasBeenSet(false)
-{
-}
-
 RejectChoice::RejectChoice(JsonView jsonValue)
-  : RejectChoice()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ RejectChoice& RejectChoice::operator =(JsonView jsonValue)
     }
     m_predictionChoicesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("predictionTarget"))
   {
     m_predictionTarget = jsonValue.GetString("predictionTarget");
-
     m_predictionTargetHasBeenSet = true;
   }
-
   return *this;
 }
 

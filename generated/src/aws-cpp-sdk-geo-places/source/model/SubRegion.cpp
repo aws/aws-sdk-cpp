@@ -18,14 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-SubRegion::SubRegion() : 
-    m_codeHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 SubRegion::SubRegion(JsonView jsonValue)
-  : SubRegion()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SubRegion& SubRegion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = jsonValue.GetString("Code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

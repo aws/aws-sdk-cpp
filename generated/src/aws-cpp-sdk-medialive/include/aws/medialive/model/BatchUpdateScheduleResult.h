@@ -35,7 +35,7 @@ namespace Model
   class BatchUpdateScheduleResult
   {
   public:
-    AWS_MEDIALIVE_API BatchUpdateScheduleResult();
+    AWS_MEDIALIVE_API BatchUpdateScheduleResult() = default;
     AWS_MEDIALIVE_API BatchUpdateScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIALIVE_API BatchUpdateScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,41 +44,42 @@ namespace Model
     /**
      * Schedule actions created in the schedule.
      */
-    inline const BatchScheduleActionCreateResult& GetCreates() const{ return m_creates; }
-    inline void SetCreates(const BatchScheduleActionCreateResult& value) { m_creates = value; }
-    inline void SetCreates(BatchScheduleActionCreateResult&& value) { m_creates = std::move(value); }
-    inline BatchUpdateScheduleResult& WithCreates(const BatchScheduleActionCreateResult& value) { SetCreates(value); return *this;}
-    inline BatchUpdateScheduleResult& WithCreates(BatchScheduleActionCreateResult&& value) { SetCreates(std::move(value)); return *this;}
+    inline const BatchScheduleActionCreateResult& GetCreates() const { return m_creates; }
+    template<typename CreatesT = BatchScheduleActionCreateResult>
+    void SetCreates(CreatesT&& value) { m_createsHasBeenSet = true; m_creates = std::forward<CreatesT>(value); }
+    template<typename CreatesT = BatchScheduleActionCreateResult>
+    BatchUpdateScheduleResult& WithCreates(CreatesT&& value) { SetCreates(std::forward<CreatesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Schedule actions deleted from the schedule.
      */
-    inline const BatchScheduleActionDeleteResult& GetDeletes() const{ return m_deletes; }
-    inline void SetDeletes(const BatchScheduleActionDeleteResult& value) { m_deletes = value; }
-    inline void SetDeletes(BatchScheduleActionDeleteResult&& value) { m_deletes = std::move(value); }
-    inline BatchUpdateScheduleResult& WithDeletes(const BatchScheduleActionDeleteResult& value) { SetDeletes(value); return *this;}
-    inline BatchUpdateScheduleResult& WithDeletes(BatchScheduleActionDeleteResult&& value) { SetDeletes(std::move(value)); return *this;}
+    inline const BatchScheduleActionDeleteResult& GetDeletes() const { return m_deletes; }
+    template<typename DeletesT = BatchScheduleActionDeleteResult>
+    void SetDeletes(DeletesT&& value) { m_deletesHasBeenSet = true; m_deletes = std::forward<DeletesT>(value); }
+    template<typename DeletesT = BatchScheduleActionDeleteResult>
+    BatchUpdateScheduleResult& WithDeletes(DeletesT&& value) { SetDeletes(std::forward<DeletesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchUpdateScheduleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchUpdateScheduleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchUpdateScheduleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchUpdateScheduleResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     BatchScheduleActionCreateResult m_creates;
+    bool m_createsHasBeenSet = false;
 
     BatchScheduleActionDeleteResult m_deletes;
+    bool m_deletesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

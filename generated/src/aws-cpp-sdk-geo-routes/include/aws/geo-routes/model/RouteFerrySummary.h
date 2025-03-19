@@ -34,7 +34,7 @@ namespace Model
   class RouteFerrySummary
   {
   public:
-    AWS_GEOROUTES_API RouteFerrySummary();
+    AWS_GEOROUTES_API RouteFerrySummary() = default;
     AWS_GEOROUTES_API RouteFerrySummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteFerrySummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>Summarized details for the leg including before travel, travel and after
      * travel steps.</p>
      */
-    inline const RouteFerryOverviewSummary& GetOverview() const{ return m_overview; }
+    inline const RouteFerryOverviewSummary& GetOverview() const { return m_overview; }
     inline bool OverviewHasBeenSet() const { return m_overviewHasBeenSet; }
-    inline void SetOverview(const RouteFerryOverviewSummary& value) { m_overviewHasBeenSet = true; m_overview = value; }
-    inline void SetOverview(RouteFerryOverviewSummary&& value) { m_overviewHasBeenSet = true; m_overview = std::move(value); }
-    inline RouteFerrySummary& WithOverview(const RouteFerryOverviewSummary& value) { SetOverview(value); return *this;}
-    inline RouteFerrySummary& WithOverview(RouteFerryOverviewSummary&& value) { SetOverview(std::move(value)); return *this;}
+    template<typename OverviewT = RouteFerryOverviewSummary>
+    void SetOverview(OverviewT&& value) { m_overviewHasBeenSet = true; m_overview = std::forward<OverviewT>(value); }
+    template<typename OverviewT = RouteFerryOverviewSummary>
+    RouteFerrySummary& WithOverview(OverviewT&& value) { SetOverview(std::forward<OverviewT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +58,12 @@ namespace Model
      * <p>Summarized details for the leg including travel steps only. The Distance for
      * the travel only portion of the journey is in meters</p>
      */
-    inline const RouteFerryTravelOnlySummary& GetTravelOnly() const{ return m_travelOnly; }
+    inline const RouteFerryTravelOnlySummary& GetTravelOnly() const { return m_travelOnly; }
     inline bool TravelOnlyHasBeenSet() const { return m_travelOnlyHasBeenSet; }
-    inline void SetTravelOnly(const RouteFerryTravelOnlySummary& value) { m_travelOnlyHasBeenSet = true; m_travelOnly = value; }
-    inline void SetTravelOnly(RouteFerryTravelOnlySummary&& value) { m_travelOnlyHasBeenSet = true; m_travelOnly = std::move(value); }
-    inline RouteFerrySummary& WithTravelOnly(const RouteFerryTravelOnlySummary& value) { SetTravelOnly(value); return *this;}
-    inline RouteFerrySummary& WithTravelOnly(RouteFerryTravelOnlySummary&& value) { SetTravelOnly(std::move(value)); return *this;}
+    template<typename TravelOnlyT = RouteFerryTravelOnlySummary>
+    void SetTravelOnly(TravelOnlyT&& value) { m_travelOnlyHasBeenSet = true; m_travelOnly = std::forward<TravelOnlyT>(value); }
+    template<typename TravelOnlyT = RouteFerryTravelOnlySummary>
+    RouteFerrySummary& WithTravelOnly(TravelOnlyT&& value) { SetTravelOnly(std::forward<TravelOnlyT>(value)); return *this;}
     ///@}
   private:
 

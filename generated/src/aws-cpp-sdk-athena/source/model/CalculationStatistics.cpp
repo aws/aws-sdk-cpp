@@ -18,15 +18,7 @@ namespace Athena
 namespace Model
 {
 
-CalculationStatistics::CalculationStatistics() : 
-    m_dpuExecutionInMillis(0),
-    m_dpuExecutionInMillisHasBeenSet(false),
-    m_progressHasBeenSet(false)
-{
-}
-
 CalculationStatistics::CalculationStatistics(JsonView jsonValue)
-  : CalculationStatistics()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CalculationStatistics& CalculationStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DpuExecutionInMillis"))
   {
     m_dpuExecutionInMillis = jsonValue.GetInt64("DpuExecutionInMillis");
-
     m_dpuExecutionInMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Progress"))
   {
     m_progress = jsonValue.GetString("Progress");
-
     m_progressHasBeenSet = true;
   }
-
   return *this;
 }
 

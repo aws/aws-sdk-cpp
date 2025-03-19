@@ -20,18 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TransitGatewayMulticastDomainOptions::TransitGatewayMulticastDomainOptions() : 
-    m_igmpv2Support(Igmpv2SupportValue::NOT_SET),
-    m_igmpv2SupportHasBeenSet(false),
-    m_staticSourcesSupport(StaticSourcesSupportValue::NOT_SET),
-    m_staticSourcesSupportHasBeenSet(false),
-    m_autoAcceptSharedAssociations(AutoAcceptSharedAssociationsValue::NOT_SET),
-    m_autoAcceptSharedAssociationsHasBeenSet(false)
-{
-}
-
 TransitGatewayMulticastDomainOptions::TransitGatewayMulticastDomainOptions(const XmlNode& xmlNode)
-  : TransitGatewayMulticastDomainOptions()
 {
   *this = xmlNode;
 }
@@ -45,19 +34,19 @@ TransitGatewayMulticastDomainOptions& TransitGatewayMulticastDomainOptions::oper
     XmlNode igmpv2SupportNode = resultNode.FirstChild("igmpv2Support");
     if(!igmpv2SupportNode.IsNull())
     {
-      m_igmpv2Support = Igmpv2SupportValueMapper::GetIgmpv2SupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(igmpv2SupportNode.GetText()).c_str()).c_str());
+      m_igmpv2Support = Igmpv2SupportValueMapper::GetIgmpv2SupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(igmpv2SupportNode.GetText()).c_str()));
       m_igmpv2SupportHasBeenSet = true;
     }
     XmlNode staticSourcesSupportNode = resultNode.FirstChild("staticSourcesSupport");
     if(!staticSourcesSupportNode.IsNull())
     {
-      m_staticSourcesSupport = StaticSourcesSupportValueMapper::GetStaticSourcesSupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(staticSourcesSupportNode.GetText()).c_str()).c_str());
+      m_staticSourcesSupport = StaticSourcesSupportValueMapper::GetStaticSourcesSupportValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(staticSourcesSupportNode.GetText()).c_str()));
       m_staticSourcesSupportHasBeenSet = true;
     }
     XmlNode autoAcceptSharedAssociationsNode = resultNode.FirstChild("autoAcceptSharedAssociations");
     if(!autoAcceptSharedAssociationsNode.IsNull())
     {
-      m_autoAcceptSharedAssociations = AutoAcceptSharedAssociationsValueMapper::GetAutoAcceptSharedAssociationsValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoAcceptSharedAssociationsNode.GetText()).c_str()).c_str());
+      m_autoAcceptSharedAssociations = AutoAcceptSharedAssociationsValueMapper::GetAutoAcceptSharedAssociationsValueForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(autoAcceptSharedAssociationsNode.GetText()).c_str()));
       m_autoAcceptSharedAssociationsHasBeenSet = true;
     }
   }

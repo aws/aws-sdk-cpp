@@ -34,7 +34,7 @@ namespace Model
   class JobDriver
   {
   public:
-    AWS_EMRCONTAINERS_API JobDriver();
+    AWS_EMRCONTAINERS_API JobDriver() = default;
     AWS_EMRCONTAINERS_API JobDriver(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRCONTAINERS_API JobDriver& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMRCONTAINERS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
     /**
      * <p>The job driver parameters specified for spark submit.</p>
      */
-    inline const SparkSubmitJobDriver& GetSparkSubmitJobDriver() const{ return m_sparkSubmitJobDriver; }
+    inline const SparkSubmitJobDriver& GetSparkSubmitJobDriver() const { return m_sparkSubmitJobDriver; }
     inline bool SparkSubmitJobDriverHasBeenSet() const { return m_sparkSubmitJobDriverHasBeenSet; }
-    inline void SetSparkSubmitJobDriver(const SparkSubmitJobDriver& value) { m_sparkSubmitJobDriverHasBeenSet = true; m_sparkSubmitJobDriver = value; }
-    inline void SetSparkSubmitJobDriver(SparkSubmitJobDriver&& value) { m_sparkSubmitJobDriverHasBeenSet = true; m_sparkSubmitJobDriver = std::move(value); }
-    inline JobDriver& WithSparkSubmitJobDriver(const SparkSubmitJobDriver& value) { SetSparkSubmitJobDriver(value); return *this;}
-    inline JobDriver& WithSparkSubmitJobDriver(SparkSubmitJobDriver&& value) { SetSparkSubmitJobDriver(std::move(value)); return *this;}
+    template<typename SparkSubmitJobDriverT = SparkSubmitJobDriver>
+    void SetSparkSubmitJobDriver(SparkSubmitJobDriverT&& value) { m_sparkSubmitJobDriverHasBeenSet = true; m_sparkSubmitJobDriver = std::forward<SparkSubmitJobDriverT>(value); }
+    template<typename SparkSubmitJobDriverT = SparkSubmitJobDriver>
+    JobDriver& WithSparkSubmitJobDriver(SparkSubmitJobDriverT&& value) { SetSparkSubmitJobDriver(std::forward<SparkSubmitJobDriverT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The job driver for job type.</p>
      */
-    inline const SparkSqlJobDriver& GetSparkSqlJobDriver() const{ return m_sparkSqlJobDriver; }
+    inline const SparkSqlJobDriver& GetSparkSqlJobDriver() const { return m_sparkSqlJobDriver; }
     inline bool SparkSqlJobDriverHasBeenSet() const { return m_sparkSqlJobDriverHasBeenSet; }
-    inline void SetSparkSqlJobDriver(const SparkSqlJobDriver& value) { m_sparkSqlJobDriverHasBeenSet = true; m_sparkSqlJobDriver = value; }
-    inline void SetSparkSqlJobDriver(SparkSqlJobDriver&& value) { m_sparkSqlJobDriverHasBeenSet = true; m_sparkSqlJobDriver = std::move(value); }
-    inline JobDriver& WithSparkSqlJobDriver(const SparkSqlJobDriver& value) { SetSparkSqlJobDriver(value); return *this;}
-    inline JobDriver& WithSparkSqlJobDriver(SparkSqlJobDriver&& value) { SetSparkSqlJobDriver(std::move(value)); return *this;}
+    template<typename SparkSqlJobDriverT = SparkSqlJobDriver>
+    void SetSparkSqlJobDriver(SparkSqlJobDriverT&& value) { m_sparkSqlJobDriverHasBeenSet = true; m_sparkSqlJobDriver = std::forward<SparkSqlJobDriverT>(value); }
+    template<typename SparkSqlJobDriverT = SparkSqlJobDriver>
+    JobDriver& WithSparkSqlJobDriver(SparkSqlJobDriverT&& value) { SetSparkSqlJobDriver(std::forward<SparkSqlJobDriverT>(value)); return *this;}
     ///@}
   private:
 

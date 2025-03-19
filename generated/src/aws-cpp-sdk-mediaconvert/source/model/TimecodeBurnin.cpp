@@ -18,17 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-TimecodeBurnin::TimecodeBurnin() : 
-    m_fontSize(0),
-    m_fontSizeHasBeenSet(false),
-    m_position(TimecodeBurninPosition::NOT_SET),
-    m_positionHasBeenSet(false),
-    m_prefixHasBeenSet(false)
-{
-}
-
 TimecodeBurnin::TimecodeBurnin(JsonView jsonValue)
-  : TimecodeBurnin()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ TimecodeBurnin& TimecodeBurnin::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fontSize"))
   {
     m_fontSize = jsonValue.GetInteger("fontSize");
-
     m_fontSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("position"))
   {
     m_position = TimecodeBurninPositionMapper::GetTimecodeBurninPositionForName(jsonValue.GetString("position"));
-
     m_positionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prefix"))
   {
     m_prefix = jsonValue.GetString("prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   return *this;
 }
 

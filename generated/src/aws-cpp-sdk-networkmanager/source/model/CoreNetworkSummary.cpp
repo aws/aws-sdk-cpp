@@ -18,20 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-CoreNetworkSummary::CoreNetworkSummary() : 
-    m_coreNetworkIdHasBeenSet(false),
-    m_coreNetworkArnHasBeenSet(false),
-    m_globalNetworkIdHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false),
-    m_state(CoreNetworkState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 CoreNetworkSummary::CoreNetworkSummary(JsonView jsonValue)
-  : CoreNetworkSummary()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ CoreNetworkSummary& CoreNetworkSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CoreNetworkId"))
   {
     m_coreNetworkId = jsonValue.GetString("CoreNetworkId");
-
     m_coreNetworkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CoreNetworkArn"))
   {
     m_coreNetworkArn = jsonValue.GetString("CoreNetworkArn");
-
     m_coreNetworkArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlobalNetworkId"))
   {
     m_globalNetworkId = jsonValue.GetString("GlobalNetworkId");
-
     m_globalNetworkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerAccountId"))
   {
     m_ownerAccountId = jsonValue.GetString("OwnerAccountId");
-
     m_ownerAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = CoreNetworkStateMapper::GetCoreNetworkStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -89,7 +64,6 @@ CoreNetworkSummary& CoreNetworkSummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

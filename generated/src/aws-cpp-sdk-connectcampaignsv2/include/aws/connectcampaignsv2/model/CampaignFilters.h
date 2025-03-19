@@ -31,7 +31,7 @@ namespace Model
   class CampaignFilters
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API CampaignFilters();
+    AWS_CONNECTCAMPAIGNSV2_API CampaignFilters() = default;
     AWS_CONNECTCAMPAIGNSV2_API CampaignFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API CampaignFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,12 +39,12 @@ namespace Model
 
     ///@{
     
-    inline const InstanceIdFilter& GetInstanceIdFilter() const{ return m_instanceIdFilter; }
+    inline const InstanceIdFilter& GetInstanceIdFilter() const { return m_instanceIdFilter; }
     inline bool InstanceIdFilterHasBeenSet() const { return m_instanceIdFilterHasBeenSet; }
-    inline void SetInstanceIdFilter(const InstanceIdFilter& value) { m_instanceIdFilterHasBeenSet = true; m_instanceIdFilter = value; }
-    inline void SetInstanceIdFilter(InstanceIdFilter&& value) { m_instanceIdFilterHasBeenSet = true; m_instanceIdFilter = std::move(value); }
-    inline CampaignFilters& WithInstanceIdFilter(const InstanceIdFilter& value) { SetInstanceIdFilter(value); return *this;}
-    inline CampaignFilters& WithInstanceIdFilter(InstanceIdFilter&& value) { SetInstanceIdFilter(std::move(value)); return *this;}
+    template<typename InstanceIdFilterT = InstanceIdFilter>
+    void SetInstanceIdFilter(InstanceIdFilterT&& value) { m_instanceIdFilterHasBeenSet = true; m_instanceIdFilter = std::forward<InstanceIdFilterT>(value); }
+    template<typename InstanceIdFilterT = InstanceIdFilter>
+    CampaignFilters& WithInstanceIdFilter(InstanceIdFilterT&& value) { SetInstanceIdFilter(std::forward<InstanceIdFilterT>(value)); return *this;}
     ///@}
   private:
 

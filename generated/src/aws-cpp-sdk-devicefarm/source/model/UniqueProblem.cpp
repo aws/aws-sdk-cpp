@@ -18,14 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-UniqueProblem::UniqueProblem() : 
-    m_messageHasBeenSet(false),
-    m_problemsHasBeenSet(false)
-{
-}
-
 UniqueProblem::UniqueProblem(JsonView jsonValue)
-  : UniqueProblem()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ UniqueProblem& UniqueProblem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("problems"))
   {
     Aws::Utils::Array<JsonView> problemsJsonList = jsonValue.GetArray("problems");
@@ -48,7 +39,6 @@ UniqueProblem& UniqueProblem::operator =(JsonView jsonValue)
     }
     m_problemsHasBeenSet = true;
   }
-
   return *this;
 }
 

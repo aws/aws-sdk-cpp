@@ -18,15 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-DatabaseMigrationPreference::DatabaseMigrationPreference() : 
-    m_heterogeneousHasBeenSet(false),
-    m_homogeneousHasBeenSet(false),
-    m_noPreferenceHasBeenSet(false)
-{
-}
-
 DatabaseMigrationPreference::DatabaseMigrationPreference(JsonView jsonValue)
-  : DatabaseMigrationPreference()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DatabaseMigrationPreference& DatabaseMigrationPreference::operator =(JsonView js
   if(jsonValue.ValueExists("heterogeneous"))
   {
     m_heterogeneous = jsonValue.GetObject("heterogeneous");
-
     m_heterogeneousHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("homogeneous"))
   {
     m_homogeneous = jsonValue.GetObject("homogeneous");
-
     m_homogeneousHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("noPreference"))
   {
     m_noPreference = jsonValue.GetObject("noPreference");
-
     m_noPreferenceHasBeenSet = true;
   }
-
   return *this;
 }
 

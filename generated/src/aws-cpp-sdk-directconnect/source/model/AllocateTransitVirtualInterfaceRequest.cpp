@@ -12,13 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AllocateTransitVirtualInterfaceRequest::AllocateTransitVirtualInterfaceRequest() : 
-    m_connectionIdHasBeenSet(false),
-    m_ownerAccountHasBeenSet(false),
-    m_newTransitVirtualInterfaceAllocationHasBeenSet(false)
-{
-}
-
 Aws::String AllocateTransitVirtualInterfaceRequest::SerializePayload() const
 {
   JsonValue payload;

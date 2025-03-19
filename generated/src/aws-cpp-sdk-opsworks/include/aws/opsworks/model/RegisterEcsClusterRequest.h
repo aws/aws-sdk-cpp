@@ -21,7 +21,7 @@ namespace Model
   class RegisterEcsClusterRequest : public OpsWorksRequest
   {
   public:
-    AWS_OPSWORKS_API RegisterEcsClusterRequest();
+    AWS_OPSWORKS_API RegisterEcsClusterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The cluster's ARN.</p>
      */
-    inline const Aws::String& GetEcsClusterArn() const{ return m_ecsClusterArn; }
+    inline const Aws::String& GetEcsClusterArn() const { return m_ecsClusterArn; }
     inline bool EcsClusterArnHasBeenSet() const { return m_ecsClusterArnHasBeenSet; }
-    inline void SetEcsClusterArn(const Aws::String& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = value; }
-    inline void SetEcsClusterArn(Aws::String&& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = std::move(value); }
-    inline void SetEcsClusterArn(const char* value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn.assign(value); }
-    inline RegisterEcsClusterRequest& WithEcsClusterArn(const Aws::String& value) { SetEcsClusterArn(value); return *this;}
-    inline RegisterEcsClusterRequest& WithEcsClusterArn(Aws::String&& value) { SetEcsClusterArn(std::move(value)); return *this;}
-    inline RegisterEcsClusterRequest& WithEcsClusterArn(const char* value) { SetEcsClusterArn(value); return *this;}
+    template<typename EcsClusterArnT = Aws::String>
+    void SetEcsClusterArn(EcsClusterArnT&& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = std::forward<EcsClusterArnT>(value); }
+    template<typename EcsClusterArnT = Aws::String>
+    RegisterEcsClusterRequest& WithEcsClusterArn(EcsClusterArnT&& value) { SetEcsClusterArn(std::forward<EcsClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The stack ID.</p>
      */
-    inline const Aws::String& GetStackId() const{ return m_stackId; }
+    inline const Aws::String& GetStackId() const { return m_stackId; }
     inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
-    inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
-    inline void SetStackId(Aws::String&& value) { m_stackIdHasBeenSet = true; m_stackId = std::move(value); }
-    inline void SetStackId(const char* value) { m_stackIdHasBeenSet = true; m_stackId.assign(value); }
-    inline RegisterEcsClusterRequest& WithStackId(const Aws::String& value) { SetStackId(value); return *this;}
-    inline RegisterEcsClusterRequest& WithStackId(Aws::String&& value) { SetStackId(std::move(value)); return *this;}
-    inline RegisterEcsClusterRequest& WithStackId(const char* value) { SetStackId(value); return *this;}
+    template<typename StackIdT = Aws::String>
+    void SetStackId(StackIdT&& value) { m_stackIdHasBeenSet = true; m_stackId = std::forward<StackIdT>(value); }
+    template<typename StackIdT = Aws::String>
+    RegisterEcsClusterRequest& WithStackId(StackIdT&& value) { SetStackId(std::forward<StackIdT>(value)); return *this;}
     ///@}
   private:
 

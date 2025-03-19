@@ -12,12 +12,6 @@ using namespace Aws::MediaTailor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteProgramRequest::DeleteProgramRequest() : 
-    m_channelNameHasBeenSet(false),
-    m_programNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteProgramRequest::SerializePayload() const
 {
   return {};

@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-ProtectedQueryResultConfiguration::ProtectedQueryResultConfiguration() : 
-    m_outputConfigurationHasBeenSet(false)
-{
-}
-
 ProtectedQueryResultConfiguration::ProtectedQueryResultConfiguration(JsonView jsonValue)
-  : ProtectedQueryResultConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ProtectedQueryResultConfiguration& ProtectedQueryResultConfiguration::operator =
   if(jsonValue.ValueExists("outputConfiguration"))
   {
     m_outputConfiguration = jsonValue.GetObject("outputConfiguration");
-
     m_outputConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

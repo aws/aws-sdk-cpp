@@ -33,7 +33,7 @@ namespace Model
   class CustomActionURLOperation
   {
   public:
-    AWS_QUICKSIGHT_API CustomActionURLOperation();
+    AWS_QUICKSIGHT_API CustomActionURLOperation() = default;
     AWS_QUICKSIGHT_API CustomActionURLOperation(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API CustomActionURLOperation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>THe URL link of the <code>CustomActionURLOperation</code>.</p>
      */
-    inline const Aws::String& GetURLTemplate() const{ return m_uRLTemplate; }
+    inline const Aws::String& GetURLTemplate() const { return m_uRLTemplate; }
     inline bool URLTemplateHasBeenSet() const { return m_uRLTemplateHasBeenSet; }
-    inline void SetURLTemplate(const Aws::String& value) { m_uRLTemplateHasBeenSet = true; m_uRLTemplate = value; }
-    inline void SetURLTemplate(Aws::String&& value) { m_uRLTemplateHasBeenSet = true; m_uRLTemplate = std::move(value); }
-    inline void SetURLTemplate(const char* value) { m_uRLTemplateHasBeenSet = true; m_uRLTemplate.assign(value); }
-    inline CustomActionURLOperation& WithURLTemplate(const Aws::String& value) { SetURLTemplate(value); return *this;}
-    inline CustomActionURLOperation& WithURLTemplate(Aws::String&& value) { SetURLTemplate(std::move(value)); return *this;}
-    inline CustomActionURLOperation& WithURLTemplate(const char* value) { SetURLTemplate(value); return *this;}
+    template<typename URLTemplateT = Aws::String>
+    void SetURLTemplate(URLTemplateT&& value) { m_uRLTemplateHasBeenSet = true; m_uRLTemplate = std::forward<URLTemplateT>(value); }
+    template<typename URLTemplateT = Aws::String>
+    CustomActionURLOperation& WithURLTemplate(URLTemplateT&& value) { SetURLTemplate(std::forward<URLTemplateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,19 +59,17 @@ namespace Model
      * target URL in a new browser window.</p> </li> <li> <p> <code>SAME_TAB</code>:
      * Opens the target URL in the same browser tab.</p> </li> </ul>
      */
-    inline const URLTargetConfiguration& GetURLTarget() const{ return m_uRLTarget; }
+    inline URLTargetConfiguration GetURLTarget() const { return m_uRLTarget; }
     inline bool URLTargetHasBeenSet() const { return m_uRLTargetHasBeenSet; }
-    inline void SetURLTarget(const URLTargetConfiguration& value) { m_uRLTargetHasBeenSet = true; m_uRLTarget = value; }
-    inline void SetURLTarget(URLTargetConfiguration&& value) { m_uRLTargetHasBeenSet = true; m_uRLTarget = std::move(value); }
-    inline CustomActionURLOperation& WithURLTarget(const URLTargetConfiguration& value) { SetURLTarget(value); return *this;}
-    inline CustomActionURLOperation& WithURLTarget(URLTargetConfiguration&& value) { SetURLTarget(std::move(value)); return *this;}
+    inline void SetURLTarget(URLTargetConfiguration value) { m_uRLTargetHasBeenSet = true; m_uRLTarget = value; }
+    inline CustomActionURLOperation& WithURLTarget(URLTargetConfiguration value) { SetURLTarget(value); return *this;}
     ///@}
   private:
 
     Aws::String m_uRLTemplate;
     bool m_uRLTemplateHasBeenSet = false;
 
-    URLTargetConfiguration m_uRLTarget;
+    URLTargetConfiguration m_uRLTarget{URLTargetConfiguration::NOT_SET};
     bool m_uRLTargetHasBeenSet = false;
   };
 

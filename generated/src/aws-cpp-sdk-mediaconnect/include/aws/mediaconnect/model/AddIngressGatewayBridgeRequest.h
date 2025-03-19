@@ -24,7 +24,7 @@ namespace Model
   class AddIngressGatewayBridgeRequest
   {
   public:
-    AWS_MEDIACONNECT_API AddIngressGatewayBridgeRequest();
+    AWS_MEDIACONNECT_API AddIngressGatewayBridgeRequest() = default;
     AWS_MEDIACONNECT_API AddIngressGatewayBridgeRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API AddIngressGatewayBridgeRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -34,7 +34,7 @@ namespace Model
     /**
      * The maximum expected bitrate (in bps).
      */
-    inline int GetMaxBitrate() const{ return m_maxBitrate; }
+    inline int GetMaxBitrate() const { return m_maxBitrate; }
     inline bool MaxBitrateHasBeenSet() const { return m_maxBitrateHasBeenSet; }
     inline void SetMaxBitrate(int value) { m_maxBitrateHasBeenSet = true; m_maxBitrate = value; }
     inline AddIngressGatewayBridgeRequest& WithMaxBitrate(int value) { SetMaxBitrate(value); return *this;}
@@ -44,17 +44,17 @@ namespace Model
     /**
      * The maximum number of expected outputs.
      */
-    inline int GetMaxOutputs() const{ return m_maxOutputs; }
+    inline int GetMaxOutputs() const { return m_maxOutputs; }
     inline bool MaxOutputsHasBeenSet() const { return m_maxOutputsHasBeenSet; }
     inline void SetMaxOutputs(int value) { m_maxOutputsHasBeenSet = true; m_maxOutputs = value; }
     inline AddIngressGatewayBridgeRequest& WithMaxOutputs(int value) { SetMaxOutputs(value); return *this;}
     ///@}
   private:
 
-    int m_maxBitrate;
+    int m_maxBitrate{0};
     bool m_maxBitrateHasBeenSet = false;
 
-    int m_maxOutputs;
+    int m_maxOutputs{0};
     bool m_maxOutputsHasBeenSet = false;
   };
 

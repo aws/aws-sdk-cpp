@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSampledRequestsResult::GetSampledRequestsResult() : 
-    m_populationSize(0)
-{
-}
-
 GetSampledRequestsResult::GetSampledRequestsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetSampledRequestsResult()
 {
   *this = result;
 }
@@ -38,26 +32,25 @@ GetSampledRequestsResult& GetSampledRequestsResult::operator =(const Aws::Amazon
     {
       m_sampledRequests.push_back(sampledRequestsJsonList[sampledRequestsIndex].AsObject());
     }
+    m_sampledRequestsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PopulationSize"))
   {
     m_populationSize = jsonValue.GetInt64("PopulationSize");
-
+    m_populationSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeWindow"))
   {
     m_timeWindow = jsonValue.GetObject("TimeWindow");
-
+    m_timeWindowHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

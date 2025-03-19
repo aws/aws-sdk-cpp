@@ -35,7 +35,7 @@ namespace Model
   class ExternalSourcesRetrieveAndGenerateConfiguration
   {
   public:
-    AWS_BEDROCK_API ExternalSourcesRetrieveAndGenerateConfiguration();
+    AWS_BEDROCK_API ExternalSourcesRetrieveAndGenerateConfiguration() = default;
     AWS_BEDROCK_API ExternalSourcesRetrieveAndGenerateConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API ExternalSourcesRetrieveAndGenerateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/cross-region-inference.html">inference
      * profile</a> used to generate responses. </p>
      */
-    inline const Aws::String& GetModelArn() const{ return m_modelArn; }
+    inline const Aws::String& GetModelArn() const { return m_modelArn; }
     inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }
-    inline void SetModelArn(const Aws::String& value) { m_modelArnHasBeenSet = true; m_modelArn = value; }
-    inline void SetModelArn(Aws::String&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::move(value); }
-    inline void SetModelArn(const char* value) { m_modelArnHasBeenSet = true; m_modelArn.assign(value); }
-    inline ExternalSourcesRetrieveAndGenerateConfiguration& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
-    inline ExternalSourcesRetrieveAndGenerateConfiguration& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
-    inline ExternalSourcesRetrieveAndGenerateConfiguration& WithModelArn(const char* value) { SetModelArn(value); return *this;}
+    template<typename ModelArnT = Aws::String>
+    void SetModelArn(ModelArnT&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::forward<ModelArnT>(value); }
+    template<typename ModelArnT = Aws::String>
+    ExternalSourcesRetrieveAndGenerateConfiguration& WithModelArn(ModelArnT&& value) { SetModelArn(std::forward<ModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,14 @@ namespace Model
      * <p>The document for the external source wrapper object in the
      * <code>retrieveAndGenerate</code> function.</p>
      */
-    inline const Aws::Vector<ExternalSource>& GetSources() const{ return m_sources; }
+    inline const Aws::Vector<ExternalSource>& GetSources() const { return m_sources; }
     inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
-    inline void SetSources(const Aws::Vector<ExternalSource>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
-    inline void SetSources(Aws::Vector<ExternalSource>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
-    inline ExternalSourcesRetrieveAndGenerateConfiguration& WithSources(const Aws::Vector<ExternalSource>& value) { SetSources(value); return *this;}
-    inline ExternalSourcesRetrieveAndGenerateConfiguration& WithSources(Aws::Vector<ExternalSource>&& value) { SetSources(std::move(value)); return *this;}
-    inline ExternalSourcesRetrieveAndGenerateConfiguration& AddSources(const ExternalSource& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
-    inline ExternalSourcesRetrieveAndGenerateConfiguration& AddSources(ExternalSource&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
+    template<typename SourcesT = Aws::Vector<ExternalSource>>
+    void SetSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources = std::forward<SourcesT>(value); }
+    template<typename SourcesT = Aws::Vector<ExternalSource>>
+    ExternalSourcesRetrieveAndGenerateConfiguration& WithSources(SourcesT&& value) { SetSources(std::forward<SourcesT>(value)); return *this;}
+    template<typename SourcesT = ExternalSource>
+    ExternalSourcesRetrieveAndGenerateConfiguration& AddSources(SourcesT&& value) { m_sourcesHasBeenSet = true; m_sources.emplace_back(std::forward<SourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -77,12 +75,12 @@ namespace Model
      * <p>Contains configurations details for response generation based on retrieved
      * text chunks.</p>
      */
-    inline const ExternalSourcesGenerationConfiguration& GetGenerationConfiguration() const{ return m_generationConfiguration; }
+    inline const ExternalSourcesGenerationConfiguration& GetGenerationConfiguration() const { return m_generationConfiguration; }
     inline bool GenerationConfigurationHasBeenSet() const { return m_generationConfigurationHasBeenSet; }
-    inline void SetGenerationConfiguration(const ExternalSourcesGenerationConfiguration& value) { m_generationConfigurationHasBeenSet = true; m_generationConfiguration = value; }
-    inline void SetGenerationConfiguration(ExternalSourcesGenerationConfiguration&& value) { m_generationConfigurationHasBeenSet = true; m_generationConfiguration = std::move(value); }
-    inline ExternalSourcesRetrieveAndGenerateConfiguration& WithGenerationConfiguration(const ExternalSourcesGenerationConfiguration& value) { SetGenerationConfiguration(value); return *this;}
-    inline ExternalSourcesRetrieveAndGenerateConfiguration& WithGenerationConfiguration(ExternalSourcesGenerationConfiguration&& value) { SetGenerationConfiguration(std::move(value)); return *this;}
+    template<typename GenerationConfigurationT = ExternalSourcesGenerationConfiguration>
+    void SetGenerationConfiguration(GenerationConfigurationT&& value) { m_generationConfigurationHasBeenSet = true; m_generationConfiguration = std::forward<GenerationConfigurationT>(value); }
+    template<typename GenerationConfigurationT = ExternalSourcesGenerationConfiguration>
+    ExternalSourcesRetrieveAndGenerateConfiguration& WithGenerationConfiguration(GenerationConfigurationT&& value) { SetGenerationConfiguration(std::forward<GenerationConfigurationT>(value)); return *this;}
     ///@}
   private:
 

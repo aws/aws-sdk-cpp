@@ -39,7 +39,7 @@ namespace Model
   class IngestConfigurations
   {
   public:
-    AWS_IVS_API IngestConfigurations();
+    AWS_IVS_API IngestConfigurations() = default;
     AWS_IVS_API IngestConfigurations(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVS_API IngestConfigurations& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,28 +49,28 @@ namespace Model
     /**
      * <p>Encoder settings for audio.</p>
      */
-    inline const Aws::Vector<AudioConfiguration>& GetAudioConfigurations() const{ return m_audioConfigurations; }
+    inline const Aws::Vector<AudioConfiguration>& GetAudioConfigurations() const { return m_audioConfigurations; }
     inline bool AudioConfigurationsHasBeenSet() const { return m_audioConfigurationsHasBeenSet; }
-    inline void SetAudioConfigurations(const Aws::Vector<AudioConfiguration>& value) { m_audioConfigurationsHasBeenSet = true; m_audioConfigurations = value; }
-    inline void SetAudioConfigurations(Aws::Vector<AudioConfiguration>&& value) { m_audioConfigurationsHasBeenSet = true; m_audioConfigurations = std::move(value); }
-    inline IngestConfigurations& WithAudioConfigurations(const Aws::Vector<AudioConfiguration>& value) { SetAudioConfigurations(value); return *this;}
-    inline IngestConfigurations& WithAudioConfigurations(Aws::Vector<AudioConfiguration>&& value) { SetAudioConfigurations(std::move(value)); return *this;}
-    inline IngestConfigurations& AddAudioConfigurations(const AudioConfiguration& value) { m_audioConfigurationsHasBeenSet = true; m_audioConfigurations.push_back(value); return *this; }
-    inline IngestConfigurations& AddAudioConfigurations(AudioConfiguration&& value) { m_audioConfigurationsHasBeenSet = true; m_audioConfigurations.push_back(std::move(value)); return *this; }
+    template<typename AudioConfigurationsT = Aws::Vector<AudioConfiguration>>
+    void SetAudioConfigurations(AudioConfigurationsT&& value) { m_audioConfigurationsHasBeenSet = true; m_audioConfigurations = std::forward<AudioConfigurationsT>(value); }
+    template<typename AudioConfigurationsT = Aws::Vector<AudioConfiguration>>
+    IngestConfigurations& WithAudioConfigurations(AudioConfigurationsT&& value) { SetAudioConfigurations(std::forward<AudioConfigurationsT>(value)); return *this;}
+    template<typename AudioConfigurationsT = AudioConfiguration>
+    IngestConfigurations& AddAudioConfigurations(AudioConfigurationsT&& value) { m_audioConfigurationsHasBeenSet = true; m_audioConfigurations.emplace_back(std::forward<AudioConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Encoder settings for video</p>
      */
-    inline const Aws::Vector<VideoConfiguration>& GetVideoConfigurations() const{ return m_videoConfigurations; }
+    inline const Aws::Vector<VideoConfiguration>& GetVideoConfigurations() const { return m_videoConfigurations; }
     inline bool VideoConfigurationsHasBeenSet() const { return m_videoConfigurationsHasBeenSet; }
-    inline void SetVideoConfigurations(const Aws::Vector<VideoConfiguration>& value) { m_videoConfigurationsHasBeenSet = true; m_videoConfigurations = value; }
-    inline void SetVideoConfigurations(Aws::Vector<VideoConfiguration>&& value) { m_videoConfigurationsHasBeenSet = true; m_videoConfigurations = std::move(value); }
-    inline IngestConfigurations& WithVideoConfigurations(const Aws::Vector<VideoConfiguration>& value) { SetVideoConfigurations(value); return *this;}
-    inline IngestConfigurations& WithVideoConfigurations(Aws::Vector<VideoConfiguration>&& value) { SetVideoConfigurations(std::move(value)); return *this;}
-    inline IngestConfigurations& AddVideoConfigurations(const VideoConfiguration& value) { m_videoConfigurationsHasBeenSet = true; m_videoConfigurations.push_back(value); return *this; }
-    inline IngestConfigurations& AddVideoConfigurations(VideoConfiguration&& value) { m_videoConfigurationsHasBeenSet = true; m_videoConfigurations.push_back(std::move(value)); return *this; }
+    template<typename VideoConfigurationsT = Aws::Vector<VideoConfiguration>>
+    void SetVideoConfigurations(VideoConfigurationsT&& value) { m_videoConfigurationsHasBeenSet = true; m_videoConfigurations = std::forward<VideoConfigurationsT>(value); }
+    template<typename VideoConfigurationsT = Aws::Vector<VideoConfiguration>>
+    IngestConfigurations& WithVideoConfigurations(VideoConfigurationsT&& value) { SetVideoConfigurations(std::forward<VideoConfigurationsT>(value)); return *this;}
+    template<typename VideoConfigurationsT = VideoConfiguration>
+    IngestConfigurations& AddVideoConfigurations(VideoConfigurationsT&& value) { m_videoConfigurationsHasBeenSet = true; m_videoConfigurations.emplace_back(std::forward<VideoConfigurationsT>(value)); return *this; }
     ///@}
   private:
 

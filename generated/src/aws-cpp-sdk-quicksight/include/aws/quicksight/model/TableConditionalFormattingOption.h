@@ -33,7 +33,7 @@ namespace Model
   class TableConditionalFormattingOption
   {
   public:
-    AWS_QUICKSIGHT_API TableConditionalFormattingOption();
+    AWS_QUICKSIGHT_API TableConditionalFormattingOption() = default;
     AWS_QUICKSIGHT_API TableConditionalFormattingOption(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TableConditionalFormattingOption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The cell conditional formatting option for a table.</p>
      */
-    inline const TableCellConditionalFormatting& GetCell() const{ return m_cell; }
+    inline const TableCellConditionalFormatting& GetCell() const { return m_cell; }
     inline bool CellHasBeenSet() const { return m_cellHasBeenSet; }
-    inline void SetCell(const TableCellConditionalFormatting& value) { m_cellHasBeenSet = true; m_cell = value; }
-    inline void SetCell(TableCellConditionalFormatting&& value) { m_cellHasBeenSet = true; m_cell = std::move(value); }
-    inline TableConditionalFormattingOption& WithCell(const TableCellConditionalFormatting& value) { SetCell(value); return *this;}
-    inline TableConditionalFormattingOption& WithCell(TableCellConditionalFormatting&& value) { SetCell(std::move(value)); return *this;}
+    template<typename CellT = TableCellConditionalFormatting>
+    void SetCell(CellT&& value) { m_cellHasBeenSet = true; m_cell = std::forward<CellT>(value); }
+    template<typename CellT = TableCellConditionalFormatting>
+    TableConditionalFormattingOption& WithCell(CellT&& value) { SetCell(std::forward<CellT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The row conditional formatting option for a table.</p>
      */
-    inline const TableRowConditionalFormatting& GetRow() const{ return m_row; }
+    inline const TableRowConditionalFormatting& GetRow() const { return m_row; }
     inline bool RowHasBeenSet() const { return m_rowHasBeenSet; }
-    inline void SetRow(const TableRowConditionalFormatting& value) { m_rowHasBeenSet = true; m_row = value; }
-    inline void SetRow(TableRowConditionalFormatting&& value) { m_rowHasBeenSet = true; m_row = std::move(value); }
-    inline TableConditionalFormattingOption& WithRow(const TableRowConditionalFormatting& value) { SetRow(value); return *this;}
-    inline TableConditionalFormattingOption& WithRow(TableRowConditionalFormatting&& value) { SetRow(std::move(value)); return *this;}
+    template<typename RowT = TableRowConditionalFormatting>
+    void SetRow(RowT&& value) { m_rowHasBeenSet = true; m_row = std::forward<RowT>(value); }
+    template<typename RowT = TableRowConditionalFormatting>
+    TableConditionalFormattingOption& WithRow(RowT&& value) { SetRow(std::forward<RowT>(value)); return *this;}
     ///@}
   private:
 

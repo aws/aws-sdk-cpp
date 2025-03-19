@@ -20,31 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-StackSet::StackSet() : 
-    m_stackSetNameHasBeenSet(false),
-    m_stackSetIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(StackSetStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_templateBodyHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_stackSetARNHasBeenSet(false),
-    m_administrationRoleARNHasBeenSet(false),
-    m_executionRoleNameHasBeenSet(false),
-    m_stackSetDriftDetectionDetailsHasBeenSet(false),
-    m_autoDeploymentHasBeenSet(false),
-    m_permissionModel(PermissionModels::NOT_SET),
-    m_permissionModelHasBeenSet(false),
-    m_organizationalUnitIdsHasBeenSet(false),
-    m_managedExecutionHasBeenSet(false),
-    m_regionsHasBeenSet(false)
-{
-}
-
 StackSet::StackSet(const XmlNode& xmlNode)
-  : StackSet()
 {
   *this = xmlNode;
 }
@@ -76,7 +52,7 @@ StackSet& StackSet::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StackSetStatusMapper::GetStackSetStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = StackSetStatusMapper::GetStackSetStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode templateBodyNode = resultNode.FirstChild("TemplateBody");
@@ -89,6 +65,7 @@ StackSet& StackSet::operator =(const XmlNode& xmlNode)
     if(!parametersNode.IsNull())
     {
       XmlNode parametersMember = parametersNode.FirstChild("member");
+      m_parametersHasBeenSet = !parametersMember.IsNull();
       while(!parametersMember.IsNull())
       {
         m_parameters.push_back(parametersMember);
@@ -101,6 +78,7 @@ StackSet& StackSet::operator =(const XmlNode& xmlNode)
     if(!capabilitiesNode.IsNull())
     {
       XmlNode capabilitiesMember = capabilitiesNode.FirstChild("member");
+      m_capabilitiesHasBeenSet = !capabilitiesMember.IsNull();
       while(!capabilitiesMember.IsNull())
       {
         m_capabilities.push_back(CapabilityMapper::GetCapabilityForName(StringUtils::Trim(capabilitiesMember.GetText().c_str())));
@@ -113,6 +91,7 @@ StackSet& StackSet::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("member");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -154,13 +133,14 @@ StackSet& StackSet::operator =(const XmlNode& xmlNode)
     XmlNode permissionModelNode = resultNode.FirstChild("PermissionModel");
     if(!permissionModelNode.IsNull())
     {
-      m_permissionModel = PermissionModelsMapper::GetPermissionModelsForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionModelNode.GetText()).c_str()).c_str());
+      m_permissionModel = PermissionModelsMapper::GetPermissionModelsForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionModelNode.GetText()).c_str()));
       m_permissionModelHasBeenSet = true;
     }
     XmlNode organizationalUnitIdsNode = resultNode.FirstChild("OrganizationalUnitIds");
     if(!organizationalUnitIdsNode.IsNull())
     {
       XmlNode organizationalUnitIdsMember = organizationalUnitIdsNode.FirstChild("member");
+      m_organizationalUnitIdsHasBeenSet = !organizationalUnitIdsMember.IsNull();
       while(!organizationalUnitIdsMember.IsNull())
       {
         m_organizationalUnitIds.push_back(organizationalUnitIdsMember.GetText());
@@ -179,6 +159,7 @@ StackSet& StackSet::operator =(const XmlNode& xmlNode)
     if(!regionsNode.IsNull())
     {
       XmlNode regionsMember = regionsNode.FirstChild("member");
+      m_regionsHasBeenSet = !regionsMember.IsNull();
       while(!regionsMember.IsNull())
       {
         m_regions.push_back(regionsMember.GetText());

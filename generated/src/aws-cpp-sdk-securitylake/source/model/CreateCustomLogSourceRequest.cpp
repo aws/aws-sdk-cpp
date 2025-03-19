@@ -12,14 +12,6 @@ using namespace Aws::SecurityLake::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCustomLogSourceRequest::CreateCustomLogSourceRequest() : 
-    m_configurationHasBeenSet(false),
-    m_eventClassesHasBeenSet(false),
-    m_sourceNameHasBeenSet(false),
-    m_sourceVersionHasBeenSet(false)
-{
-}
-
 Aws::String CreateCustomLogSourceRequest::SerializePayload() const
 {
   JsonValue payload;

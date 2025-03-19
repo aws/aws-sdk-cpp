@@ -36,7 +36,7 @@ namespace Model
   class VpcConnection
   {
   public:
-    AWS_KAFKA_API VpcConnection();
+    AWS_KAFKA_API VpcConnection() = default;
     AWS_KAFKA_API VpcConnection(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API VpcConnection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
             <p>The ARN that identifies the Vpc Connection.</p>
          
      */
-    inline const Aws::String& GetVpcConnectionArn() const{ return m_vpcConnectionArn; }
+    inline const Aws::String& GetVpcConnectionArn() const { return m_vpcConnectionArn; }
     inline bool VpcConnectionArnHasBeenSet() const { return m_vpcConnectionArnHasBeenSet; }
-    inline void SetVpcConnectionArn(const Aws::String& value) { m_vpcConnectionArnHasBeenSet = true; m_vpcConnectionArn = value; }
-    inline void SetVpcConnectionArn(Aws::String&& value) { m_vpcConnectionArnHasBeenSet = true; m_vpcConnectionArn = std::move(value); }
-    inline void SetVpcConnectionArn(const char* value) { m_vpcConnectionArnHasBeenSet = true; m_vpcConnectionArn.assign(value); }
-    inline VpcConnection& WithVpcConnectionArn(const Aws::String& value) { SetVpcConnectionArn(value); return *this;}
-    inline VpcConnection& WithVpcConnectionArn(Aws::String&& value) { SetVpcConnectionArn(std::move(value)); return *this;}
-    inline VpcConnection& WithVpcConnectionArn(const char* value) { SetVpcConnectionArn(value); return *this;}
+    template<typename VpcConnectionArnT = Aws::String>
+    void SetVpcConnectionArn(VpcConnectionArnT&& value) { m_vpcConnectionArnHasBeenSet = true; m_vpcConnectionArn = std::forward<VpcConnectionArnT>(value); }
+    template<typename VpcConnectionArnT = Aws::String>
+    VpcConnection& WithVpcConnectionArn(VpcConnectionArnT&& value) { SetVpcConnectionArn(std::forward<VpcConnectionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * belongs to.</p>
          
      */
-    inline const Aws::String& GetTargetClusterArn() const{ return m_targetClusterArn; }
+    inline const Aws::String& GetTargetClusterArn() const { return m_targetClusterArn; }
     inline bool TargetClusterArnHasBeenSet() const { return m_targetClusterArnHasBeenSet; }
-    inline void SetTargetClusterArn(const Aws::String& value) { m_targetClusterArnHasBeenSet = true; m_targetClusterArn = value; }
-    inline void SetTargetClusterArn(Aws::String&& value) { m_targetClusterArnHasBeenSet = true; m_targetClusterArn = std::move(value); }
-    inline void SetTargetClusterArn(const char* value) { m_targetClusterArnHasBeenSet = true; m_targetClusterArn.assign(value); }
-    inline VpcConnection& WithTargetClusterArn(const Aws::String& value) { SetTargetClusterArn(value); return *this;}
-    inline VpcConnection& WithTargetClusterArn(Aws::String&& value) { SetTargetClusterArn(std::move(value)); return *this;}
-    inline VpcConnection& WithTargetClusterArn(const char* value) { SetTargetClusterArn(value); return *this;}
+    template<typename TargetClusterArnT = Aws::String>
+    void SetTargetClusterArn(TargetClusterArnT&& value) { m_targetClusterArnHasBeenSet = true; m_targetClusterArn = std::forward<TargetClusterArnT>(value); }
+    template<typename TargetClusterArnT = Aws::String>
+    VpcConnection& WithTargetClusterArn(TargetClusterArnT&& value) { SetTargetClusterArn(std::forward<TargetClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,12 +77,12 @@ namespace Model
             <p>Creation time of the Vpc Connection.</p>
          
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline VpcConnection& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline VpcConnection& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    VpcConnection& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +92,12 @@ namespace Model
        
      *  
      */
-    inline const Aws::String& GetAuthentication() const{ return m_authentication; }
+    inline const Aws::String& GetAuthentication() const { return m_authentication; }
     inline bool AuthenticationHasBeenSet() const { return m_authenticationHasBeenSet; }
-    inline void SetAuthentication(const Aws::String& value) { m_authenticationHasBeenSet = true; m_authentication = value; }
-    inline void SetAuthentication(Aws::String&& value) { m_authenticationHasBeenSet = true; m_authentication = std::move(value); }
-    inline void SetAuthentication(const char* value) { m_authenticationHasBeenSet = true; m_authentication.assign(value); }
-    inline VpcConnection& WithAuthentication(const Aws::String& value) { SetAuthentication(value); return *this;}
-    inline VpcConnection& WithAuthentication(Aws::String&& value) { SetAuthentication(std::move(value)); return *this;}
-    inline VpcConnection& WithAuthentication(const char* value) { SetAuthentication(value); return *this;}
+    template<typename AuthenticationT = Aws::String>
+    void SetAuthentication(AuthenticationT&& value) { m_authenticationHasBeenSet = true; m_authentication = std::forward<AuthenticationT>(value); }
+    template<typename AuthenticationT = Aws::String>
+    VpcConnection& WithAuthentication(AuthenticationT&& value) { SetAuthentication(std::forward<AuthenticationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,14 +106,12 @@ namespace Model
             <p>The vpcId that belongs to the Vpc Connection.</p>
          
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline VpcConnection& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline VpcConnection& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline VpcConnection& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    VpcConnection& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,12 +120,10 @@ namespace Model
             <p>State of the Vpc Connection.</p>
          
      */
-    inline const VpcConnectionState& GetState() const{ return m_state; }
+    inline VpcConnectionState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const VpcConnectionState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(VpcConnectionState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline VpcConnection& WithState(const VpcConnectionState& value) { SetState(value); return *this;}
-    inline VpcConnection& WithState(VpcConnectionState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(VpcConnectionState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline VpcConnection& WithState(VpcConnectionState value) { SetState(value); return *this;}
     ///@}
   private:
 
@@ -143,7 +133,7 @@ namespace Model
     Aws::String m_targetClusterArn;
     bool m_targetClusterArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_authentication;
@@ -152,7 +142,7 @@ namespace Model
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet = false;
 
-    VpcConnectionState m_state;
+    VpcConnectionState m_state{VpcConnectionState::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

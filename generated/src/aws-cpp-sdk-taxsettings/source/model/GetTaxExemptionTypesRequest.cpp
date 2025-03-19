@@ -12,10 +12,6 @@ using namespace Aws::TaxSettings::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTaxExemptionTypesRequest::GetTaxExemptionTypesRequest()
-{
-}
-
 Aws::String GetTaxExemptionTypesRequest::SerializePayload() const
 {
   return {};

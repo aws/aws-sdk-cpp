@@ -37,7 +37,7 @@ namespace Model
   class SourceIpConfig
   {
   public:
-    AWS_SAGEMAKER_API SourceIpConfig();
+    AWS_SAGEMAKER_API SourceIpConfig() = default;
     AWS_SAGEMAKER_API SourceIpConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API SourceIpConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,15 +51,14 @@ namespace Model
      *  <p>The following Length Constraints apply to individual CIDR values in
      * the CIDR value list.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetCidrs() const{ return m_cidrs; }
+    inline const Aws::Vector<Aws::String>& GetCidrs() const { return m_cidrs; }
     inline bool CidrsHasBeenSet() const { return m_cidrsHasBeenSet; }
-    inline void SetCidrs(const Aws::Vector<Aws::String>& value) { m_cidrsHasBeenSet = true; m_cidrs = value; }
-    inline void SetCidrs(Aws::Vector<Aws::String>&& value) { m_cidrsHasBeenSet = true; m_cidrs = std::move(value); }
-    inline SourceIpConfig& WithCidrs(const Aws::Vector<Aws::String>& value) { SetCidrs(value); return *this;}
-    inline SourceIpConfig& WithCidrs(Aws::Vector<Aws::String>&& value) { SetCidrs(std::move(value)); return *this;}
-    inline SourceIpConfig& AddCidrs(const Aws::String& value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(value); return *this; }
-    inline SourceIpConfig& AddCidrs(Aws::String&& value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(std::move(value)); return *this; }
-    inline SourceIpConfig& AddCidrs(const char* value) { m_cidrsHasBeenSet = true; m_cidrs.push_back(value); return *this; }
+    template<typename CidrsT = Aws::Vector<Aws::String>>
+    void SetCidrs(CidrsT&& value) { m_cidrsHasBeenSet = true; m_cidrs = std::forward<CidrsT>(value); }
+    template<typename CidrsT = Aws::Vector<Aws::String>>
+    SourceIpConfig& WithCidrs(CidrsT&& value) { SetCidrs(std::forward<CidrsT>(value)); return *this;}
+    template<typename CidrsT = Aws::String>
+    SourceIpConfig& AddCidrs(CidrsT&& value) { m_cidrsHasBeenSet = true; m_cidrs.emplace_back(std::forward<CidrsT>(value)); return *this; }
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class MetricDataV2
   {
   public:
-    AWS_CONNECT_API MetricDataV2();
+    AWS_CONNECT_API MetricDataV2() = default;
     AWS_CONNECT_API MetricDataV2(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API MetricDataV2& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,19 +42,19 @@ namespace Model
     /**
      * <p>The metric name, thresholds, and metric filters of the returned metric.</p>
      */
-    inline const MetricV2& GetMetric() const{ return m_metric; }
+    inline const MetricV2& GetMetric() const { return m_metric; }
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
-    inline void SetMetric(const MetricV2& value) { m_metricHasBeenSet = true; m_metric = value; }
-    inline void SetMetric(MetricV2&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
-    inline MetricDataV2& WithMetric(const MetricV2& value) { SetMetric(value); return *this;}
-    inline MetricDataV2& WithMetric(MetricV2&& value) { SetMetric(std::move(value)); return *this;}
+    template<typename MetricT = MetricV2>
+    void SetMetric(MetricT&& value) { m_metricHasBeenSet = true; m_metric = std::forward<MetricT>(value); }
+    template<typename MetricT = MetricV2>
+    MetricDataV2& WithMetric(MetricT&& value) { SetMetric(std::forward<MetricT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The corresponding value of the metric returned in the response.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline MetricDataV2& WithValue(double value) { SetValue(value); return *this;}
@@ -64,7 +64,7 @@ namespace Model
     MetricV2 m_metric;
     bool m_metricHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

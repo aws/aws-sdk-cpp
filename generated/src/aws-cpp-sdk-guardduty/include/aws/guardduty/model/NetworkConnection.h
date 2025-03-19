@@ -32,7 +32,7 @@ namespace Model
   class NetworkConnection
   {
   public:
-    AWS_GUARDDUTY_API NetworkConnection();
+    AWS_GUARDDUTY_API NetworkConnection() = default;
     AWS_GUARDDUTY_API NetworkConnection(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API NetworkConnection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The direction in which the network traffic is flowing.</p>
      */
-    inline const NetworkDirection& GetDirection() const{ return m_direction; }
+    inline NetworkDirection GetDirection() const { return m_direction; }
     inline bool DirectionHasBeenSet() const { return m_directionHasBeenSet; }
-    inline void SetDirection(const NetworkDirection& value) { m_directionHasBeenSet = true; m_direction = value; }
-    inline void SetDirection(NetworkDirection&& value) { m_directionHasBeenSet = true; m_direction = std::move(value); }
-    inline NetworkConnection& WithDirection(const NetworkDirection& value) { SetDirection(value); return *this;}
-    inline NetworkConnection& WithDirection(NetworkDirection&& value) { SetDirection(std::move(value)); return *this;}
+    inline void SetDirection(NetworkDirection value) { m_directionHasBeenSet = true; m_direction = value; }
+    inline NetworkConnection& WithDirection(NetworkDirection value) { SetDirection(value); return *this;}
     ///@}
   private:
 
-    NetworkDirection m_direction;
+    NetworkDirection m_direction{NetworkDirection::NOT_SET};
     bool m_directionHasBeenSet = false;
   };
 

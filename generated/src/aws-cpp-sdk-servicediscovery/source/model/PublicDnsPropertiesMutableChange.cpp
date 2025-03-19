@@ -18,13 +18,7 @@ namespace ServiceDiscovery
 namespace Model
 {
 
-PublicDnsPropertiesMutableChange::PublicDnsPropertiesMutableChange() : 
-    m_sOAHasBeenSet(false)
-{
-}
-
 PublicDnsPropertiesMutableChange::PublicDnsPropertiesMutableChange(JsonView jsonValue)
-  : PublicDnsPropertiesMutableChange()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PublicDnsPropertiesMutableChange& PublicDnsPropertiesMutableChange::operator =(J
   if(jsonValue.ValueExists("SOA"))
   {
     m_sOA = jsonValue.GetObject("SOA");
-
     m_sOAHasBeenSet = true;
   }
-
   return *this;
 }
 

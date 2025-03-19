@@ -35,7 +35,7 @@ namespace Model
   class ConnectivityInfo
   {
   public:
-    AWS_KAFKA_API ConnectivityInfo();
+    AWS_KAFKA_API ConnectivityInfo() = default;
     AWS_KAFKA_API ConnectivityInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API ConnectivityInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
             <p>Public access control for brokers.</p>
          
      */
-    inline const PublicAccess& GetPublicAccess() const{ return m_publicAccess; }
+    inline const PublicAccess& GetPublicAccess() const { return m_publicAccess; }
     inline bool PublicAccessHasBeenSet() const { return m_publicAccessHasBeenSet; }
-    inline void SetPublicAccess(const PublicAccess& value) { m_publicAccessHasBeenSet = true; m_publicAccess = value; }
-    inline void SetPublicAccess(PublicAccess&& value) { m_publicAccessHasBeenSet = true; m_publicAccess = std::move(value); }
-    inline ConnectivityInfo& WithPublicAccess(const PublicAccess& value) { SetPublicAccess(value); return *this;}
-    inline ConnectivityInfo& WithPublicAccess(PublicAccess&& value) { SetPublicAccess(std::move(value)); return *this;}
+    template<typename PublicAccessT = PublicAccess>
+    void SetPublicAccess(PublicAccessT&& value) { m_publicAccessHasBeenSet = true; m_publicAccess = std::forward<PublicAccessT>(value); }
+    template<typename PublicAccessT = PublicAccess>
+    ConnectivityInfo& WithPublicAccess(PublicAccessT&& value) { SetPublicAccess(std::forward<PublicAccessT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +61,12 @@ namespace Model
             <p>VPC connectivity access control for brokers.</p>
          
      */
-    inline const VpcConnectivity& GetVpcConnectivity() const{ return m_vpcConnectivity; }
+    inline const VpcConnectivity& GetVpcConnectivity() const { return m_vpcConnectivity; }
     inline bool VpcConnectivityHasBeenSet() const { return m_vpcConnectivityHasBeenSet; }
-    inline void SetVpcConnectivity(const VpcConnectivity& value) { m_vpcConnectivityHasBeenSet = true; m_vpcConnectivity = value; }
-    inline void SetVpcConnectivity(VpcConnectivity&& value) { m_vpcConnectivityHasBeenSet = true; m_vpcConnectivity = std::move(value); }
-    inline ConnectivityInfo& WithVpcConnectivity(const VpcConnectivity& value) { SetVpcConnectivity(value); return *this;}
-    inline ConnectivityInfo& WithVpcConnectivity(VpcConnectivity&& value) { SetVpcConnectivity(std::move(value)); return *this;}
+    template<typename VpcConnectivityT = VpcConnectivity>
+    void SetVpcConnectivity(VpcConnectivityT&& value) { m_vpcConnectivityHasBeenSet = true; m_vpcConnectivity = std::forward<VpcConnectivityT>(value); }
+    template<typename VpcConnectivityT = VpcConnectivity>
+    ConnectivityInfo& WithVpcConnectivity(VpcConnectivityT&& value) { SetVpcConnectivity(std::forward<VpcConnectivityT>(value)); return *this;}
     ///@}
   private:
 

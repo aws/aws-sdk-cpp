@@ -18,20 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-ManagedLoginBrandingType::ManagedLoginBrandingType() : 
-    m_managedLoginBrandingIdHasBeenSet(false),
-    m_userPoolIdHasBeenSet(false),
-    m_useCognitoProvidedValues(false),
-    m_useCognitoProvidedValuesHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_assetsHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastModifiedDateHasBeenSet(false)
-{
-}
-
 ManagedLoginBrandingType::ManagedLoginBrandingType(JsonView jsonValue)
-  : ManagedLoginBrandingType()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ ManagedLoginBrandingType& ManagedLoginBrandingType::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("ManagedLoginBrandingId"))
   {
     m_managedLoginBrandingId = jsonValue.GetString("ManagedLoginBrandingId");
-
     m_managedLoginBrandingIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserPoolId"))
   {
     m_userPoolId = jsonValue.GetString("UserPoolId");
-
     m_userPoolIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UseCognitoProvidedValues"))
   {
     m_useCognitoProvidedValues = jsonValue.GetBool("UseCognitoProvidedValues");
-
     m_useCognitoProvidedValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Settings"))
   {
     m_settings = jsonValue.GetObject("Settings");
-
     m_settingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Assets"))
   {
     Aws::Utils::Array<JsonView> assetsJsonList = jsonValue.GetArray("Assets");
@@ -75,21 +54,16 @@ ManagedLoginBrandingType& ManagedLoginBrandingType::operator =(JsonView jsonValu
     }
     m_assetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
-
     m_lastModifiedDateHasBeenSet = true;
   }
-
   return *this;
 }
 

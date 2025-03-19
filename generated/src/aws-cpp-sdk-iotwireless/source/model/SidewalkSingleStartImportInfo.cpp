@@ -18,13 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-SidewalkSingleStartImportInfo::SidewalkSingleStartImportInfo() : 
-    m_sidewalkManufacturingSnHasBeenSet(false)
-{
-}
-
 SidewalkSingleStartImportInfo::SidewalkSingleStartImportInfo(JsonView jsonValue)
-  : SidewalkSingleStartImportInfo()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SidewalkSingleStartImportInfo& SidewalkSingleStartImportInfo::operator =(JsonVie
   if(jsonValue.ValueExists("SidewalkManufacturingSn"))
   {
     m_sidewalkManufacturingSn = jsonValue.GetString("SidewalkManufacturingSn");
-
     m_sidewalkManufacturingSnHasBeenSet = true;
   }
-
   return *this;
 }
 

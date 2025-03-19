@@ -18,16 +18,7 @@ namespace DataPipeline
 namespace Model
 {
 
-TaskObject::TaskObject() : 
-    m_taskIdHasBeenSet(false),
-    m_pipelineIdHasBeenSet(false),
-    m_attemptIdHasBeenSet(false),
-    m_objectsHasBeenSet(false)
-{
-}
-
 TaskObject::TaskObject(JsonView jsonValue)
-  : TaskObject()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ TaskObject& TaskObject::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("taskId"))
   {
     m_taskId = jsonValue.GetString("taskId");
-
     m_taskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipelineId"))
   {
     m_pipelineId = jsonValue.GetString("pipelineId");
-
     m_pipelineIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attemptId"))
   {
     m_attemptId = jsonValue.GetString("attemptId");
-
     m_attemptIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("objects"))
   {
     Aws::Map<Aws::String, JsonView> objectsJsonMap = jsonValue.GetObject("objects").GetAllObjects();
@@ -64,7 +49,6 @@ TaskObject& TaskObject::operator =(JsonView jsonValue)
     }
     m_objectsHasBeenSet = true;
   }
-
   return *this;
 }
 

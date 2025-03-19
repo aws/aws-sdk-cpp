@@ -33,7 +33,7 @@ namespace Model
   class ProtectedQueryInputParameters
   {
   public:
-    AWS_CLEANROOMSML_API ProtectedQueryInputParameters();
+    AWS_CLEANROOMSML_API ProtectedQueryInputParameters() = default;
     AWS_CLEANROOMSML_API ProtectedQueryInputParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API ProtectedQueryInputParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
 
     ///@{
     
-    inline const ProtectedQuerySQLParameters& GetSqlParameters() const{ return m_sqlParameters; }
+    inline const ProtectedQuerySQLParameters& GetSqlParameters() const { return m_sqlParameters; }
     inline bool SqlParametersHasBeenSet() const { return m_sqlParametersHasBeenSet; }
-    inline void SetSqlParameters(const ProtectedQuerySQLParameters& value) { m_sqlParametersHasBeenSet = true; m_sqlParameters = value; }
-    inline void SetSqlParameters(ProtectedQuerySQLParameters&& value) { m_sqlParametersHasBeenSet = true; m_sqlParameters = std::move(value); }
-    inline ProtectedQueryInputParameters& WithSqlParameters(const ProtectedQuerySQLParameters& value) { SetSqlParameters(value); return *this;}
-    inline ProtectedQueryInputParameters& WithSqlParameters(ProtectedQuerySQLParameters&& value) { SetSqlParameters(std::move(value)); return *this;}
+    template<typename SqlParametersT = ProtectedQuerySQLParameters>
+    void SetSqlParameters(SqlParametersT&& value) { m_sqlParametersHasBeenSet = true; m_sqlParameters = std::forward<SqlParametersT>(value); }
+    template<typename SqlParametersT = ProtectedQuerySQLParameters>
+    ProtectedQueryInputParameters& WithSqlParameters(SqlParametersT&& value) { SetSqlParameters(std::forward<SqlParametersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,12 +54,12 @@ namespace Model
      * <p>Provides configuration information for the workers that will perform the
      * protected query.</p>
      */
-    inline const ComputeConfiguration& GetComputeConfiguration() const{ return m_computeConfiguration; }
+    inline const ComputeConfiguration& GetComputeConfiguration() const { return m_computeConfiguration; }
     inline bool ComputeConfigurationHasBeenSet() const { return m_computeConfigurationHasBeenSet; }
-    inline void SetComputeConfiguration(const ComputeConfiguration& value) { m_computeConfigurationHasBeenSet = true; m_computeConfiguration = value; }
-    inline void SetComputeConfiguration(ComputeConfiguration&& value) { m_computeConfigurationHasBeenSet = true; m_computeConfiguration = std::move(value); }
-    inline ProtectedQueryInputParameters& WithComputeConfiguration(const ComputeConfiguration& value) { SetComputeConfiguration(value); return *this;}
-    inline ProtectedQueryInputParameters& WithComputeConfiguration(ComputeConfiguration&& value) { SetComputeConfiguration(std::move(value)); return *this;}
+    template<typename ComputeConfigurationT = ComputeConfiguration>
+    void SetComputeConfiguration(ComputeConfigurationT&& value) { m_computeConfigurationHasBeenSet = true; m_computeConfiguration = std::forward<ComputeConfigurationT>(value); }
+    template<typename ComputeConfigurationT = ComputeConfiguration>
+    ProtectedQueryInputParameters& WithComputeConfiguration(ComputeConfigurationT&& value) { SetComputeConfiguration(std::forward<ComputeConfigurationT>(value)); return *this;}
     ///@}
   private:
 

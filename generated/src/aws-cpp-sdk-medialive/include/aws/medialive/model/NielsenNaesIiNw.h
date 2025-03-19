@@ -32,7 +32,7 @@ namespace Model
   class NielsenNaesIiNw
   {
   public:
-    AWS_MEDIALIVE_API NielsenNaesIiNw();
+    AWS_MEDIALIVE_API NielsenNaesIiNw() = default;
     AWS_MEDIALIVE_API NielsenNaesIiNw(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API NielsenNaesIiNw& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * Enter the check digit string for the watermark
      */
-    inline const Aws::String& GetCheckDigitString() const{ return m_checkDigitString; }
+    inline const Aws::String& GetCheckDigitString() const { return m_checkDigitString; }
     inline bool CheckDigitStringHasBeenSet() const { return m_checkDigitStringHasBeenSet; }
-    inline void SetCheckDigitString(const Aws::String& value) { m_checkDigitStringHasBeenSet = true; m_checkDigitString = value; }
-    inline void SetCheckDigitString(Aws::String&& value) { m_checkDigitStringHasBeenSet = true; m_checkDigitString = std::move(value); }
-    inline void SetCheckDigitString(const char* value) { m_checkDigitStringHasBeenSet = true; m_checkDigitString.assign(value); }
-    inline NielsenNaesIiNw& WithCheckDigitString(const Aws::String& value) { SetCheckDigitString(value); return *this;}
-    inline NielsenNaesIiNw& WithCheckDigitString(Aws::String&& value) { SetCheckDigitString(std::move(value)); return *this;}
-    inline NielsenNaesIiNw& WithCheckDigitString(const char* value) { SetCheckDigitString(value); return *this;}
+    template<typename CheckDigitStringT = Aws::String>
+    void SetCheckDigitString(CheckDigitStringT&& value) { m_checkDigitStringHasBeenSet = true; m_checkDigitString = std::forward<CheckDigitStringT>(value); }
+    template<typename CheckDigitStringT = Aws::String>
+    NielsenNaesIiNw& WithCheckDigitString(CheckDigitStringT&& value) { SetCheckDigitString(std::forward<CheckDigitStringT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Enter the Nielsen Source ID (SID) to include in the watermark
      */
-    inline double GetSid() const{ return m_sid; }
+    inline double GetSid() const { return m_sid; }
     inline bool SidHasBeenSet() const { return m_sidHasBeenSet; }
     inline void SetSid(double value) { m_sidHasBeenSet = true; m_sid = value; }
     inline NielsenNaesIiNw& WithSid(double value) { SetSid(value); return *this;}
@@ -68,22 +66,20 @@ namespace Model
 the
      * timestamps will be in Coordinated Universal Time (UTC)
      */
-    inline const NielsenWatermarkTimezones& GetTimezone() const{ return m_timezone; }
+    inline NielsenWatermarkTimezones GetTimezone() const { return m_timezone; }
     inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
-    inline void SetTimezone(const NielsenWatermarkTimezones& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
-    inline void SetTimezone(NielsenWatermarkTimezones&& value) { m_timezoneHasBeenSet = true; m_timezone = std::move(value); }
-    inline NielsenNaesIiNw& WithTimezone(const NielsenWatermarkTimezones& value) { SetTimezone(value); return *this;}
-    inline NielsenNaesIiNw& WithTimezone(NielsenWatermarkTimezones&& value) { SetTimezone(std::move(value)); return *this;}
+    inline void SetTimezone(NielsenWatermarkTimezones value) { m_timezoneHasBeenSet = true; m_timezone = value; }
+    inline NielsenNaesIiNw& WithTimezone(NielsenWatermarkTimezones value) { SetTimezone(value); return *this;}
     ///@}
   private:
 
     Aws::String m_checkDigitString;
     bool m_checkDigitStringHasBeenSet = false;
 
-    double m_sid;
+    double m_sid{0.0};
     bool m_sidHasBeenSet = false;
 
-    NielsenWatermarkTimezones m_timezone;
+    NielsenWatermarkTimezones m_timezone{NielsenWatermarkTimezones::NOT_SET};
     bool m_timezoneHasBeenSet = false;
   };
 

@@ -18,20 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-ECSServiceProjectedUtilizationMetric::ECSServiceProjectedUtilizationMetric() : 
-    m_name(ECSServiceMetricName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_statistic(ECSServiceMetricStatistic::NOT_SET),
-    m_statisticHasBeenSet(false),
-    m_lowerBoundValue(0.0),
-    m_lowerBoundValueHasBeenSet(false),
-    m_upperBoundValue(0.0),
-    m_upperBoundValueHasBeenSet(false)
-{
-}
-
 ECSServiceProjectedUtilizationMetric::ECSServiceProjectedUtilizationMetric(JsonView jsonValue)
-  : ECSServiceProjectedUtilizationMetric()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ ECSServiceProjectedUtilizationMetric& ECSServiceProjectedUtilizationMetric::oper
   if(jsonValue.ValueExists("name"))
   {
     m_name = ECSServiceMetricNameMapper::GetECSServiceMetricNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statistic"))
   {
     m_statistic = ECSServiceMetricStatisticMapper::GetECSServiceMetricStatisticForName(jsonValue.GetString("statistic"));
-
     m_statisticHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lowerBoundValue"))
   {
     m_lowerBoundValue = jsonValue.GetDouble("lowerBoundValue");
-
     m_lowerBoundValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("upperBoundValue"))
   {
     m_upperBoundValue = jsonValue.GetDouble("upperBoundValue");
-
     m_upperBoundValueHasBeenSet = true;
   }
-
   return *this;
 }
 

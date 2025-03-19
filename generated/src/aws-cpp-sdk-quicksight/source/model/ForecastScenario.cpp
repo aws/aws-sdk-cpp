@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ForecastScenario::ForecastScenario() : 
-    m_whatIfPointScenarioHasBeenSet(false),
-    m_whatIfRangeScenarioHasBeenSet(false)
-{
-}
-
 ForecastScenario::ForecastScenario(JsonView jsonValue)
-  : ForecastScenario()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ForecastScenario& ForecastScenario::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WhatIfPointScenario"))
   {
     m_whatIfPointScenario = jsonValue.GetObject("WhatIfPointScenario");
-
     m_whatIfPointScenarioHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WhatIfRangeScenario"))
   {
     m_whatIfRangeScenario = jsonValue.GetObject("WhatIfRangeScenario");
-
     m_whatIfRangeScenarioHasBeenSet = true;
   }
-
   return *this;
 }
 

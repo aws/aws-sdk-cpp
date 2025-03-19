@@ -30,7 +30,7 @@ namespace Model
   class InstanceMonitoring
   {
   public:
-    AWS_AUTOSCALING_API InstanceMonitoring();
+    AWS_AUTOSCALING_API InstanceMonitoring() = default;
     AWS_AUTOSCALING_API InstanceMonitoring(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API InstanceMonitoring& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,14 @@ namespace Model
      * <p>If <code>true</code>, detailed monitoring is enabled. Otherwise, basic
      * monitoring is enabled.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline InstanceMonitoring& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

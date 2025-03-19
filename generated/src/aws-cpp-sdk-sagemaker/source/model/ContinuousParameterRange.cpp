@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ContinuousParameterRange::ContinuousParameterRange() : 
-    m_nameHasBeenSet(false),
-    m_minValueHasBeenSet(false),
-    m_maxValueHasBeenSet(false),
-    m_scalingType(HyperParameterScalingType::NOT_SET),
-    m_scalingTypeHasBeenSet(false)
-{
-}
-
 ContinuousParameterRange::ContinuousParameterRange(JsonView jsonValue)
-  : ContinuousParameterRange()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ContinuousParameterRange& ContinuousParameterRange::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinValue"))
   {
     m_minValue = jsonValue.GetString("MinValue");
-
     m_minValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxValue"))
   {
     m_maxValue = jsonValue.GetString("MaxValue");
-
     m_maxValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScalingType"))
   {
     m_scalingType = HyperParameterScalingTypeMapper::GetHyperParameterScalingTypeForName(jsonValue.GetString("ScalingType"));
-
     m_scalingTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

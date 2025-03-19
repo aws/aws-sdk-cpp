@@ -32,7 +32,7 @@ namespace Model
   class Exclude
   {
   public:
-    AWS_S3CONTROL_API Exclude();
+    AWS_S3CONTROL_API Exclude() = default;
     AWS_S3CONTROL_API Exclude(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API Exclude& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,30 +43,28 @@ namespace Model
     /**
      * <p>A container for the S3 Storage Lens bucket excludes.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetBuckets() const{ return m_buckets; }
+    inline const Aws::Vector<Aws::String>& GetBuckets() const { return m_buckets; }
     inline bool BucketsHasBeenSet() const { return m_bucketsHasBeenSet; }
-    inline void SetBuckets(const Aws::Vector<Aws::String>& value) { m_bucketsHasBeenSet = true; m_buckets = value; }
-    inline void SetBuckets(Aws::Vector<Aws::String>&& value) { m_bucketsHasBeenSet = true; m_buckets = std::move(value); }
-    inline Exclude& WithBuckets(const Aws::Vector<Aws::String>& value) { SetBuckets(value); return *this;}
-    inline Exclude& WithBuckets(Aws::Vector<Aws::String>&& value) { SetBuckets(std::move(value)); return *this;}
-    inline Exclude& AddBuckets(const Aws::String& value) { m_bucketsHasBeenSet = true; m_buckets.push_back(value); return *this; }
-    inline Exclude& AddBuckets(Aws::String&& value) { m_bucketsHasBeenSet = true; m_buckets.push_back(std::move(value)); return *this; }
-    inline Exclude& AddBuckets(const char* value) { m_bucketsHasBeenSet = true; m_buckets.push_back(value); return *this; }
+    template<typename BucketsT = Aws::Vector<Aws::String>>
+    void SetBuckets(BucketsT&& value) { m_bucketsHasBeenSet = true; m_buckets = std::forward<BucketsT>(value); }
+    template<typename BucketsT = Aws::Vector<Aws::String>>
+    Exclude& WithBuckets(BucketsT&& value) { SetBuckets(std::forward<BucketsT>(value)); return *this;}
+    template<typename BucketsT = Aws::String>
+    Exclude& AddBuckets(BucketsT&& value) { m_bucketsHasBeenSet = true; m_buckets.emplace_back(std::forward<BucketsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A container for the S3 Storage Lens Region excludes.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
+    inline const Aws::Vector<Aws::String>& GetRegions() const { return m_regions; }
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
-    inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
-    inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
-    inline Exclude& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
-    inline Exclude& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
-    inline Exclude& AddRegions(const Aws::String& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
-    inline Exclude& AddRegions(Aws::String&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
-    inline Exclude& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
+    template<typename RegionsT = Aws::Vector<Aws::String>>
+    void SetRegions(RegionsT&& value) { m_regionsHasBeenSet = true; m_regions = std::forward<RegionsT>(value); }
+    template<typename RegionsT = Aws::Vector<Aws::String>>
+    Exclude& WithRegions(RegionsT&& value) { SetRegions(std::forward<RegionsT>(value)); return *this;}
+    template<typename RegionsT = Aws::String>
+    Exclude& AddRegions(RegionsT&& value) { m_regionsHasBeenSet = true; m_regions.emplace_back(std::forward<RegionsT>(value)); return *this; }
     ///@}
   private:
 

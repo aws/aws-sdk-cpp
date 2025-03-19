@@ -12,12 +12,6 @@ using namespace Aws::NetworkFlowMonitor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetQueryStatusMonitorTopContributorsRequest::GetQueryStatusMonitorTopContributorsRequest() : 
-    m_monitorNameHasBeenSet(false),
-    m_queryIdHasBeenSet(false)
-{
-}
-
 Aws::String GetQueryStatusMonitorTopContributorsRequest::SerializePayload() const
 {
   return {};

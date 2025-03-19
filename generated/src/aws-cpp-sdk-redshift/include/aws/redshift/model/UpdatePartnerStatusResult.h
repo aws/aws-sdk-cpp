@@ -28,7 +28,7 @@ namespace Model
   class UpdatePartnerStatusResult
   {
   public:
-    AWS_REDSHIFT_API UpdatePartnerStatusResult();
+    AWS_REDSHIFT_API UpdatePartnerStatusResult() = default;
     AWS_REDSHIFT_API UpdatePartnerStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_REDSHIFT_API UpdatePartnerStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,43 +37,42 @@ namespace Model
     /**
      * <p>The name of the database that receives data from the partner.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseName.assign(value); }
-    inline UpdatePartnerStatusResult& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline UpdatePartnerStatusResult& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline UpdatePartnerStatusResult& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    UpdatePartnerStatusResult& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the partner that is authorized to send data.</p>
      */
-    inline const Aws::String& GetPartnerName() const{ return m_partnerName; }
-    inline void SetPartnerName(const Aws::String& value) { m_partnerName = value; }
-    inline void SetPartnerName(Aws::String&& value) { m_partnerName = std::move(value); }
-    inline void SetPartnerName(const char* value) { m_partnerName.assign(value); }
-    inline UpdatePartnerStatusResult& WithPartnerName(const Aws::String& value) { SetPartnerName(value); return *this;}
-    inline UpdatePartnerStatusResult& WithPartnerName(Aws::String&& value) { SetPartnerName(std::move(value)); return *this;}
-    inline UpdatePartnerStatusResult& WithPartnerName(const char* value) { SetPartnerName(value); return *this;}
+    inline const Aws::String& GetPartnerName() const { return m_partnerName; }
+    template<typename PartnerNameT = Aws::String>
+    void SetPartnerName(PartnerNameT&& value) { m_partnerNameHasBeenSet = true; m_partnerName = std::forward<PartnerNameT>(value); }
+    template<typename PartnerNameT = Aws::String>
+    UpdatePartnerStatusResult& WithPartnerName(PartnerNameT&& value) { SetPartnerName(std::forward<PartnerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline UpdatePartnerStatusResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline UpdatePartnerStatusResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    UpdatePartnerStatusResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_databaseName;
+    bool m_databaseNameHasBeenSet = false;
 
     Aws::String m_partnerName;
+    bool m_partnerNameHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

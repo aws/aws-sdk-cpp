@@ -12,14 +12,6 @@ using namespace Aws::Amplify::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GenerateAccessLogsRequest::GenerateAccessLogsRequest() : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_appIdHasBeenSet(false)
-{
-}
-
 Aws::String GenerateAccessLogsRequest::SerializePayload() const
 {
   JsonValue payload;

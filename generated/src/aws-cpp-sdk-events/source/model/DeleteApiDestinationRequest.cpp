@@ -12,11 +12,6 @@ using namespace Aws::CloudWatchEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteApiDestinationRequest::DeleteApiDestinationRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteApiDestinationRequest::SerializePayload() const
 {
   JsonValue payload;

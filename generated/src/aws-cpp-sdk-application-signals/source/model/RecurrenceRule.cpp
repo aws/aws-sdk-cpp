@@ -18,13 +18,7 @@ namespace ApplicationSignals
 namespace Model
 {
 
-RecurrenceRule::RecurrenceRule() : 
-    m_expressionHasBeenSet(false)
-{
-}
-
 RecurrenceRule::RecurrenceRule(JsonView jsonValue)
-  : RecurrenceRule()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RecurrenceRule& RecurrenceRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Expression"))
   {
     m_expression = jsonValue.GetString("Expression");
-
     m_expressionHasBeenSet = true;
   }
-
   return *this;
 }
 

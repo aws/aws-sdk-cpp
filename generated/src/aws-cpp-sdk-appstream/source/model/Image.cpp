@@ -18,40 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-Image::Image() : 
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_baseImageArnHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_state(ImageState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_visibility(VisibilityType::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_imageBuilderSupported(false),
-    m_imageBuilderSupportedHasBeenSet(false),
-    m_imageBuilderNameHasBeenSet(false),
-    m_platform(PlatformType::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_stateChangeReasonHasBeenSet(false),
-    m_applicationsHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_publicBaseImageReleasedDateHasBeenSet(false),
-    m_appstreamAgentVersionHasBeenSet(false),
-    m_imagePermissionsHasBeenSet(false),
-    m_imageErrorsHasBeenSet(false),
-    m_latestAppstreamAgentVersion(LatestAppstreamAgentVersion::NOT_SET),
-    m_latestAppstreamAgentVersionHasBeenSet(false),
-    m_supportedInstanceFamiliesHasBeenSet(false),
-    m_dynamicAppProvidersEnabled(DynamicAppProvidersEnabled::NOT_SET),
-    m_dynamicAppProvidersEnabledHasBeenSet(false),
-    m_imageSharedWithOthers(ImageSharedWithOthers::NOT_SET),
-    m_imageSharedWithOthersHasBeenSet(false)
-{
-}
-
 Image::Image(JsonView jsonValue)
-  : Image()
 {
   *this = jsonValue;
 }
@@ -61,80 +28,58 @@ Image& Image::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BaseImageArn"))
   {
     m_baseImageArn = jsonValue.GetString("BaseImageArn");
-
     m_baseImageArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = ImageStateMapper::GetImageStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityTypeMapper::GetVisibilityTypeForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageBuilderSupported"))
   {
     m_imageBuilderSupported = jsonValue.GetBool("ImageBuilderSupported");
-
     m_imageBuilderSupportedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageBuilderName"))
   {
     m_imageBuilderName = jsonValue.GetString("ImageBuilderName");
-
     m_imageBuilderNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Platform"))
   {
     m_platform = PlatformTypeMapper::GetPlatformTypeForName(jsonValue.GetString("Platform"));
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StateChangeReason"))
   {
     m_stateChangeReason = jsonValue.GetObject("StateChangeReason");
-
     m_stateChangeReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Applications"))
   {
     Aws::Utils::Array<JsonView> applicationsJsonList = jsonValue.GetArray("Applications");
@@ -144,35 +89,26 @@ Image& Image::operator =(JsonView jsonValue)
     }
     m_applicationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PublicBaseImageReleasedDate"))
   {
     m_publicBaseImageReleasedDate = jsonValue.GetDouble("PublicBaseImageReleasedDate");
-
     m_publicBaseImageReleasedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppstreamAgentVersion"))
   {
     m_appstreamAgentVersion = jsonValue.GetString("AppstreamAgentVersion");
-
     m_appstreamAgentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImagePermissions"))
   {
     m_imagePermissions = jsonValue.GetObject("ImagePermissions");
-
     m_imagePermissionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageErrors"))
   {
     Aws::Utils::Array<JsonView> imageErrorsJsonList = jsonValue.GetArray("ImageErrors");
@@ -182,14 +118,11 @@ Image& Image::operator =(JsonView jsonValue)
     }
     m_imageErrorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatestAppstreamAgentVersion"))
   {
     m_latestAppstreamAgentVersion = LatestAppstreamAgentVersionMapper::GetLatestAppstreamAgentVersionForName(jsonValue.GetString("LatestAppstreamAgentVersion"));
-
     m_latestAppstreamAgentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportedInstanceFamilies"))
   {
     Aws::Utils::Array<JsonView> supportedInstanceFamiliesJsonList = jsonValue.GetArray("SupportedInstanceFamilies");
@@ -199,21 +132,16 @@ Image& Image::operator =(JsonView jsonValue)
     }
     m_supportedInstanceFamiliesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DynamicAppProvidersEnabled"))
   {
     m_dynamicAppProvidersEnabled = DynamicAppProvidersEnabledMapper::GetDynamicAppProvidersEnabledForName(jsonValue.GetString("DynamicAppProvidersEnabled"));
-
     m_dynamicAppProvidersEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageSharedWithOthers"))
   {
     m_imageSharedWithOthers = ImageSharedWithOthersMapper::GetImageSharedWithOthersForName(jsonValue.GetString("ImageSharedWithOthers"));
-
     m_imageSharedWithOthersHasBeenSet = true;
   }
-
   return *this;
 }
 

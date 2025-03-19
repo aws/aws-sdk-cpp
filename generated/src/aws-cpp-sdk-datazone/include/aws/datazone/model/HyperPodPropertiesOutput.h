@@ -33,7 +33,7 @@ namespace Model
   class HyperPodPropertiesOutput
   {
   public:
-    AWS_DATAZONE_API HyperPodPropertiesOutput();
+    AWS_DATAZONE_API HyperPodPropertiesOutput() = default;
     AWS_DATAZONE_API HyperPodPropertiesOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API HyperPodPropertiesOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,40 +43,34 @@ namespace Model
     /**
      * <p>The cluster ARN of the hyper pod properties.</p>
      */
-    inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
+    inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
     inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
-    inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
-    inline void SetClusterArn(Aws::String&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::move(value); }
-    inline void SetClusterArn(const char* value) { m_clusterArnHasBeenSet = true; m_clusterArn.assign(value); }
-    inline HyperPodPropertiesOutput& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
-    inline HyperPodPropertiesOutput& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
-    inline HyperPodPropertiesOutput& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+    template<typename ClusterArnT = Aws::String>
+    void SetClusterArn(ClusterArnT&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::forward<ClusterArnT>(value); }
+    template<typename ClusterArnT = Aws::String>
+    HyperPodPropertiesOutput& WithClusterArn(ClusterArnT&& value) { SetClusterArn(std::forward<ClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The cluster name the hyper pod properties.</p>
      */
-    inline const Aws::String& GetClusterName() const{ return m_clusterName; }
+    inline const Aws::String& GetClusterName() const { return m_clusterName; }
     inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
-    inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
-    inline void SetClusterName(Aws::String&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::move(value); }
-    inline void SetClusterName(const char* value) { m_clusterNameHasBeenSet = true; m_clusterName.assign(value); }
-    inline HyperPodPropertiesOutput& WithClusterName(const Aws::String& value) { SetClusterName(value); return *this;}
-    inline HyperPodPropertiesOutput& WithClusterName(Aws::String&& value) { SetClusterName(std::move(value)); return *this;}
-    inline HyperPodPropertiesOutput& WithClusterName(const char* value) { SetClusterName(value); return *this;}
+    template<typename ClusterNameT = Aws::String>
+    void SetClusterName(ClusterNameT&& value) { m_clusterNameHasBeenSet = true; m_clusterName = std::forward<ClusterNameT>(value); }
+    template<typename ClusterNameT = Aws::String>
+    HyperPodPropertiesOutput& WithClusterName(ClusterNameT&& value) { SetClusterName(std::forward<ClusterNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The orchestrator of the hyper pod properties.</p>
      */
-    inline const HyperPodOrchestrator& GetOrchestrator() const{ return m_orchestrator; }
+    inline HyperPodOrchestrator GetOrchestrator() const { return m_orchestrator; }
     inline bool OrchestratorHasBeenSet() const { return m_orchestratorHasBeenSet; }
-    inline void SetOrchestrator(const HyperPodOrchestrator& value) { m_orchestratorHasBeenSet = true; m_orchestrator = value; }
-    inline void SetOrchestrator(HyperPodOrchestrator&& value) { m_orchestratorHasBeenSet = true; m_orchestrator = std::move(value); }
-    inline HyperPodPropertiesOutput& WithOrchestrator(const HyperPodOrchestrator& value) { SetOrchestrator(value); return *this;}
-    inline HyperPodPropertiesOutput& WithOrchestrator(HyperPodOrchestrator&& value) { SetOrchestrator(std::move(value)); return *this;}
+    inline void SetOrchestrator(HyperPodOrchestrator value) { m_orchestratorHasBeenSet = true; m_orchestrator = value; }
+    inline HyperPodPropertiesOutput& WithOrchestrator(HyperPodOrchestrator value) { SetOrchestrator(value); return *this;}
     ///@}
   private:
 
@@ -86,7 +80,7 @@ namespace Model
     Aws::String m_clusterName;
     bool m_clusterNameHasBeenSet = false;
 
-    HyperPodOrchestrator m_orchestrator;
+    HyperPodOrchestrator m_orchestrator{HyperPodOrchestrator::NOT_SET};
     bool m_orchestratorHasBeenSet = false;
   };
 

@@ -18,14 +18,7 @@ namespace LookoutEquipment
 namespace Model
 {
 
-ModelDiagnosticsOutputConfiguration::ModelDiagnosticsOutputConfiguration() : 
-    m_s3OutputConfigurationHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 ModelDiagnosticsOutputConfiguration::ModelDiagnosticsOutputConfiguration(JsonView jsonValue)
-  : ModelDiagnosticsOutputConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ModelDiagnosticsOutputConfiguration& ModelDiagnosticsOutputConfiguration::operat
   if(jsonValue.ValueExists("S3OutputConfiguration"))
   {
     m_s3OutputConfiguration = jsonValue.GetObject("S3OutputConfiguration");
-
     m_s3OutputConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

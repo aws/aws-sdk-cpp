@@ -32,7 +32,7 @@ namespace Model
   class KnownFraudsterRisk
   {
   public:
-    AWS_VOICEID_API KnownFraudsterRisk();
+    AWS_VOICEID_API KnownFraudsterRisk() = default;
     AWS_VOICEID_API KnownFraudsterRisk(Aws::Utils::Json::JsonView jsonValue);
     AWS_VOICEID_API KnownFraudsterRisk& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VOICEID_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,21 +44,19 @@ namespace Model
      * there are no fraudsters registered in a given domain, or if there are no
      * fraudsters with a non-zero RiskScore, this value is <code>null</code>.</p>
      */
-    inline const Aws::String& GetGeneratedFraudsterId() const{ return m_generatedFraudsterId; }
+    inline const Aws::String& GetGeneratedFraudsterId() const { return m_generatedFraudsterId; }
     inline bool GeneratedFraudsterIdHasBeenSet() const { return m_generatedFraudsterIdHasBeenSet; }
-    inline void SetGeneratedFraudsterId(const Aws::String& value) { m_generatedFraudsterIdHasBeenSet = true; m_generatedFraudsterId = value; }
-    inline void SetGeneratedFraudsterId(Aws::String&& value) { m_generatedFraudsterIdHasBeenSet = true; m_generatedFraudsterId = std::move(value); }
-    inline void SetGeneratedFraudsterId(const char* value) { m_generatedFraudsterIdHasBeenSet = true; m_generatedFraudsterId.assign(value); }
-    inline KnownFraudsterRisk& WithGeneratedFraudsterId(const Aws::String& value) { SetGeneratedFraudsterId(value); return *this;}
-    inline KnownFraudsterRisk& WithGeneratedFraudsterId(Aws::String&& value) { SetGeneratedFraudsterId(std::move(value)); return *this;}
-    inline KnownFraudsterRisk& WithGeneratedFraudsterId(const char* value) { SetGeneratedFraudsterId(value); return *this;}
+    template<typename GeneratedFraudsterIdT = Aws::String>
+    void SetGeneratedFraudsterId(GeneratedFraudsterIdT&& value) { m_generatedFraudsterIdHasBeenSet = true; m_generatedFraudsterId = std::forward<GeneratedFraudsterIdT>(value); }
+    template<typename GeneratedFraudsterIdT = Aws::String>
+    KnownFraudsterRisk& WithGeneratedFraudsterId(GeneratedFraudsterIdT&& value) { SetGeneratedFraudsterId(std::forward<GeneratedFraudsterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The score indicating the likelihood the speaker is a known fraudster.</p>
      */
-    inline int GetRiskScore() const{ return m_riskScore; }
+    inline int GetRiskScore() const { return m_riskScore; }
     inline bool RiskScoreHasBeenSet() const { return m_riskScoreHasBeenSet; }
     inline void SetRiskScore(int value) { m_riskScoreHasBeenSet = true; m_riskScore = value; }
     inline KnownFraudsterRisk& WithRiskScore(int value) { SetRiskScore(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     Aws::String m_generatedFraudsterId;
     bool m_generatedFraudsterIdHasBeenSet = false;
 
-    int m_riskScore;
+    int m_riskScore{0};
     bool m_riskScoreHasBeenSet = false;
   };
 

@@ -31,7 +31,7 @@ namespace Model
   class TaskContainerDependency
   {
   public:
-    AWS_BATCH_API TaskContainerDependency();
+    AWS_BATCH_API TaskContainerDependency() = default;
     AWS_BATCH_API TaskContainerDependency(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API TaskContainerDependency& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BATCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>A unique identifier for the container.</p>
      */
-    inline const Aws::String& GetContainerName() const{ return m_containerName; }
+    inline const Aws::String& GetContainerName() const { return m_containerName; }
     inline bool ContainerNameHasBeenSet() const { return m_containerNameHasBeenSet; }
-    inline void SetContainerName(const Aws::String& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
-    inline void SetContainerName(Aws::String&& value) { m_containerNameHasBeenSet = true; m_containerName = std::move(value); }
-    inline void SetContainerName(const char* value) { m_containerNameHasBeenSet = true; m_containerName.assign(value); }
-    inline TaskContainerDependency& WithContainerName(const Aws::String& value) { SetContainerName(value); return *this;}
-    inline TaskContainerDependency& WithContainerName(Aws::String&& value) { SetContainerName(std::move(value)); return *this;}
-    inline TaskContainerDependency& WithContainerName(const char* value) { SetContainerName(value); return *this;}
+    template<typename ContainerNameT = Aws::String>
+    void SetContainerName(ContainerNameT&& value) { m_containerNameHasBeenSet = true; m_containerName = std::forward<ContainerNameT>(value); }
+    template<typename ContainerNameT = Aws::String>
+    TaskContainerDependency& WithContainerName(ContainerNameT&& value) { SetContainerName(std::forward<ContainerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * it also requires that the container exits with a zero status. This condition
      * can't be set on an essential container. </p> </li> </ul>
      */
-    inline const Aws::String& GetCondition() const{ return m_condition; }
+    inline const Aws::String& GetCondition() const { return m_condition; }
     inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
-    inline void SetCondition(const Aws::String& value) { m_conditionHasBeenSet = true; m_condition = value; }
-    inline void SetCondition(Aws::String&& value) { m_conditionHasBeenSet = true; m_condition = std::move(value); }
-    inline void SetCondition(const char* value) { m_conditionHasBeenSet = true; m_condition.assign(value); }
-    inline TaskContainerDependency& WithCondition(const Aws::String& value) { SetCondition(value); return *this;}
-    inline TaskContainerDependency& WithCondition(Aws::String&& value) { SetCondition(std::move(value)); return *this;}
-    inline TaskContainerDependency& WithCondition(const char* value) { SetCondition(value); return *this;}
+    template<typename ConditionT = Aws::String>
+    void SetCondition(ConditionT&& value) { m_conditionHasBeenSet = true; m_condition = std::forward<ConditionT>(value); }
+    template<typename ConditionT = Aws::String>
+    TaskContainerDependency& WithCondition(ConditionT&& value) { SetCondition(std::forward<ConditionT>(value)); return *this;}
     ///@}
   private:
 

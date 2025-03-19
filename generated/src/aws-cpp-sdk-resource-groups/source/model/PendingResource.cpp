@@ -18,13 +18,7 @@ namespace ResourceGroups
 namespace Model
 {
 
-PendingResource::PendingResource() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 PendingResource::PendingResource(JsonView jsonValue)
-  : PendingResource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PendingResource& PendingResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

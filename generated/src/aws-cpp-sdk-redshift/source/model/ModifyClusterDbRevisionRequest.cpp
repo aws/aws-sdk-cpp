@@ -10,12 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-ModifyClusterDbRevisionRequest::ModifyClusterDbRevisionRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_revisionTargetHasBeenSet(false)
-{
-}
-
 Aws::String ModifyClusterDbRevisionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

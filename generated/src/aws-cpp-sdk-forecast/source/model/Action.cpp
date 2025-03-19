@@ -18,17 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-Action::Action() : 
-    m_attributeNameHasBeenSet(false),
-    m_operation(Operation::NOT_SET),
-    m_operationHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 Action::Action(JsonView jsonValue)
-  : Action()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ Action& Action::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AttributeName"))
   {
     m_attributeName = jsonValue.GetString("AttributeName");
-
     m_attributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operation"))
   {
     m_operation = OperationMapper::GetOperationForName(jsonValue.GetString("Operation"));
-
     m_operationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetDouble("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

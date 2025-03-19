@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteVpcConnectionResult::DeleteVpcConnectionResult() : 
-    m_state(VpcConnectionState::NOT_SET)
-{
-}
-
 DeleteVpcConnectionResult::DeleteVpcConnectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteVpcConnectionResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ DeleteVpcConnectionResult& DeleteVpcConnectionResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("vpcConnectionArn"))
   {
     m_vpcConnectionArn = jsonValue.GetString("vpcConnectionArn");
-
+    m_vpcConnectionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = VpcConnectionStateMapper::GetVpcConnectionStateForName(jsonValue.GetString("state"));
-
+    m_stateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

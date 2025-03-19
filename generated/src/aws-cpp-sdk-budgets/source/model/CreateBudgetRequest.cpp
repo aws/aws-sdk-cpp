@@ -12,14 +12,6 @@ using namespace Aws::Budgets::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateBudgetRequest::CreateBudgetRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_budgetHasBeenSet(false),
-    m_notificationsWithSubscribersHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateBudgetRequest::SerializePayload() const
 {
   JsonValue payload;

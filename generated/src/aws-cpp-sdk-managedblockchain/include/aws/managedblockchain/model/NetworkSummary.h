@@ -34,7 +34,7 @@ namespace Model
   class NetworkSummary
   {
   public:
-    AWS_MANAGEDBLOCKCHAIN_API NetworkSummary();
+    AWS_MANAGEDBLOCKCHAIN_API NetworkSummary() = default;
     AWS_MANAGEDBLOCKCHAIN_API NetworkSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API NetworkSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,92 +44,80 @@ namespace Model
     /**
      * <p>The unique identifier of the network.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline NetworkSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline NetworkSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline NetworkSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    NetworkSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the network.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline NetworkSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline NetworkSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline NetworkSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    NetworkSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An optional description of the network.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline NetworkSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline NetworkSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline NetworkSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    NetworkSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The blockchain framework that the network uses.</p>
      */
-    inline const Framework& GetFramework() const{ return m_framework; }
+    inline Framework GetFramework() const { return m_framework; }
     inline bool FrameworkHasBeenSet() const { return m_frameworkHasBeenSet; }
-    inline void SetFramework(const Framework& value) { m_frameworkHasBeenSet = true; m_framework = value; }
-    inline void SetFramework(Framework&& value) { m_frameworkHasBeenSet = true; m_framework = std::move(value); }
-    inline NetworkSummary& WithFramework(const Framework& value) { SetFramework(value); return *this;}
-    inline NetworkSummary& WithFramework(Framework&& value) { SetFramework(std::move(value)); return *this;}
+    inline void SetFramework(Framework value) { m_frameworkHasBeenSet = true; m_framework = value; }
+    inline NetworkSummary& WithFramework(Framework value) { SetFramework(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the blockchain framework that the network uses.</p>
      */
-    inline const Aws::String& GetFrameworkVersion() const{ return m_frameworkVersion; }
+    inline const Aws::String& GetFrameworkVersion() const { return m_frameworkVersion; }
     inline bool FrameworkVersionHasBeenSet() const { return m_frameworkVersionHasBeenSet; }
-    inline void SetFrameworkVersion(const Aws::String& value) { m_frameworkVersionHasBeenSet = true; m_frameworkVersion = value; }
-    inline void SetFrameworkVersion(Aws::String&& value) { m_frameworkVersionHasBeenSet = true; m_frameworkVersion = std::move(value); }
-    inline void SetFrameworkVersion(const char* value) { m_frameworkVersionHasBeenSet = true; m_frameworkVersion.assign(value); }
-    inline NetworkSummary& WithFrameworkVersion(const Aws::String& value) { SetFrameworkVersion(value); return *this;}
-    inline NetworkSummary& WithFrameworkVersion(Aws::String&& value) { SetFrameworkVersion(std::move(value)); return *this;}
-    inline NetworkSummary& WithFrameworkVersion(const char* value) { SetFrameworkVersion(value); return *this;}
+    template<typename FrameworkVersionT = Aws::String>
+    void SetFrameworkVersion(FrameworkVersionT&& value) { m_frameworkVersionHasBeenSet = true; m_frameworkVersion = std::forward<FrameworkVersionT>(value); }
+    template<typename FrameworkVersionT = Aws::String>
+    NetworkSummary& WithFrameworkVersion(FrameworkVersionT&& value) { SetFrameworkVersion(std::forward<FrameworkVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the network.</p>
      */
-    inline const NetworkStatus& GetStatus() const{ return m_status; }
+    inline NetworkStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const NetworkStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(NetworkStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline NetworkSummary& WithStatus(const NetworkStatus& value) { SetStatus(value); return *this;}
-    inline NetworkSummary& WithStatus(NetworkStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(NetworkStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline NetworkSummary& WithStatus(NetworkStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the network was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline NetworkSummary& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline NetworkSummary& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    NetworkSummary& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,14 +128,12 @@ namespace Model
      * Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i>.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline NetworkSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline NetworkSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline NetworkSummary& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    NetworkSummary& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -160,16 +146,16 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Framework m_framework;
+    Framework m_framework{Framework::NOT_SET};
     bool m_frameworkHasBeenSet = false;
 
     Aws::String m_frameworkVersion;
     bool m_frameworkVersionHasBeenSet = false;
 
-    NetworkStatus m_status;
+    NetworkStatus m_status{NetworkStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
     bool m_creationDateHasBeenSet = false;
 
     Aws::String m_arn;

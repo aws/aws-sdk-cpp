@@ -12,30 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterTaskWithMaintenanceWindowRequest::RegisterTaskWithMaintenanceWindowRequest() : 
-    m_windowIdHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_taskArnHasBeenSet(false),
-    m_serviceRoleArnHasBeenSet(false),
-    m_taskType(MaintenanceWindowTaskType::NOT_SET),
-    m_taskTypeHasBeenSet(false),
-    m_taskParametersHasBeenSet(false),
-    m_taskInvocationParametersHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_maxConcurrencyHasBeenSet(false),
-    m_maxErrorsHasBeenSet(false),
-    m_loggingInfoHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_cutoffBehavior(MaintenanceWindowTaskCutoffBehavior::NOT_SET),
-    m_cutoffBehaviorHasBeenSet(false),
-    m_alarmConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String RegisterTaskWithMaintenanceWindowRequest::SerializePayload() const
 {
   JsonValue payload;

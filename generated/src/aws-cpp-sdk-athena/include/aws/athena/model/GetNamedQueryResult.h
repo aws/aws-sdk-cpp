@@ -28,7 +28,7 @@ namespace Model
   class GetNamedQueryResult
   {
   public:
-    AWS_ATHENA_API GetNamedQueryResult();
+    AWS_ATHENA_API GetNamedQueryResult() = default;
     AWS_ATHENA_API GetNamedQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ATHENA_API GetNamedQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the query.</p>
      */
-    inline const NamedQuery& GetNamedQuery() const{ return m_namedQuery; }
-    inline void SetNamedQuery(const NamedQuery& value) { m_namedQuery = value; }
-    inline void SetNamedQuery(NamedQuery&& value) { m_namedQuery = std::move(value); }
-    inline GetNamedQueryResult& WithNamedQuery(const NamedQuery& value) { SetNamedQuery(value); return *this;}
-    inline GetNamedQueryResult& WithNamedQuery(NamedQuery&& value) { SetNamedQuery(std::move(value)); return *this;}
+    inline const NamedQuery& GetNamedQuery() const { return m_namedQuery; }
+    template<typename NamedQueryT = NamedQuery>
+    void SetNamedQuery(NamedQueryT&& value) { m_namedQueryHasBeenSet = true; m_namedQuery = std::forward<NamedQueryT>(value); }
+    template<typename NamedQueryT = NamedQuery>
+    GetNamedQueryResult& WithNamedQuery(NamedQueryT&& value) { SetNamedQuery(std::forward<NamedQueryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetNamedQueryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetNamedQueryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetNamedQueryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetNamedQueryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     NamedQuery m_namedQuery;
+    bool m_namedQueryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

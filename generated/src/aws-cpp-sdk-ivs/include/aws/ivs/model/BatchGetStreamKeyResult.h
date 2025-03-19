@@ -30,7 +30,7 @@ namespace Model
   class BatchGetStreamKeyResult
   {
   public:
-    AWS_IVS_API BatchGetStreamKeyResult();
+    AWS_IVS_API BatchGetStreamKeyResult() = default;
     AWS_IVS_API BatchGetStreamKeyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IVS_API BatchGetStreamKeyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,46 @@ namespace Model
     /**
      * <p/>
      */
-    inline const Aws::Vector<BatchError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<BatchError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchError>&& value) { m_errors = std::move(value); }
-    inline BatchGetStreamKeyResult& WithErrors(const Aws::Vector<BatchError>& value) { SetErrors(value); return *this;}
-    inline BatchGetStreamKeyResult& WithErrors(Aws::Vector<BatchError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchGetStreamKeyResult& AddErrors(const BatchError& value) { m_errors.push_back(value); return *this; }
-    inline BatchGetStreamKeyResult& AddErrors(BatchError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchError>>
+    BatchGetStreamKeyResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchError>
+    BatchGetStreamKeyResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::Vector<StreamKey>& GetStreamKeys() const{ return m_streamKeys; }
-    inline void SetStreamKeys(const Aws::Vector<StreamKey>& value) { m_streamKeys = value; }
-    inline void SetStreamKeys(Aws::Vector<StreamKey>&& value) { m_streamKeys = std::move(value); }
-    inline BatchGetStreamKeyResult& WithStreamKeys(const Aws::Vector<StreamKey>& value) { SetStreamKeys(value); return *this;}
-    inline BatchGetStreamKeyResult& WithStreamKeys(Aws::Vector<StreamKey>&& value) { SetStreamKeys(std::move(value)); return *this;}
-    inline BatchGetStreamKeyResult& AddStreamKeys(const StreamKey& value) { m_streamKeys.push_back(value); return *this; }
-    inline BatchGetStreamKeyResult& AddStreamKeys(StreamKey&& value) { m_streamKeys.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<StreamKey>& GetStreamKeys() const { return m_streamKeys; }
+    template<typename StreamKeysT = Aws::Vector<StreamKey>>
+    void SetStreamKeys(StreamKeysT&& value) { m_streamKeysHasBeenSet = true; m_streamKeys = std::forward<StreamKeysT>(value); }
+    template<typename StreamKeysT = Aws::Vector<StreamKey>>
+    BatchGetStreamKeyResult& WithStreamKeys(StreamKeysT&& value) { SetStreamKeys(std::forward<StreamKeysT>(value)); return *this;}
+    template<typename StreamKeysT = StreamKey>
+    BatchGetStreamKeyResult& AddStreamKeys(StreamKeysT&& value) { m_streamKeysHasBeenSet = true; m_streamKeys.emplace_back(std::forward<StreamKeysT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetStreamKeyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetStreamKeyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetStreamKeyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetStreamKeyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::Vector<StreamKey> m_streamKeys;
+    bool m_streamKeysHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

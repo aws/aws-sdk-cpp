@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateCampaignResult::UpdateCampaignResult() : 
-    m_status(CampaignStatus::NOT_SET)
-{
-}
-
 UpdateCampaignResult::UpdateCampaignResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateCampaignResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ UpdateCampaignResult& UpdateCampaignResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = CampaignStatusMapper::GetCampaignStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -28,35 +28,35 @@ namespace Model
   class UpdateOutpostResult
   {
   public:
-    AWS_OUTPOSTS_API UpdateOutpostResult();
+    AWS_OUTPOSTS_API UpdateOutpostResult() = default;
     AWS_OUTPOSTS_API UpdateOutpostResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OUTPOSTS_API UpdateOutpostResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Outpost& GetOutpost() const{ return m_outpost; }
-    inline void SetOutpost(const Outpost& value) { m_outpost = value; }
-    inline void SetOutpost(Outpost&& value) { m_outpost = std::move(value); }
-    inline UpdateOutpostResult& WithOutpost(const Outpost& value) { SetOutpost(value); return *this;}
-    inline UpdateOutpostResult& WithOutpost(Outpost&& value) { SetOutpost(std::move(value)); return *this;}
+    inline const Outpost& GetOutpost() const { return m_outpost; }
+    template<typename OutpostT = Outpost>
+    void SetOutpost(OutpostT&& value) { m_outpostHasBeenSet = true; m_outpost = std::forward<OutpostT>(value); }
+    template<typename OutpostT = Outpost>
+    UpdateOutpostResult& WithOutpost(OutpostT&& value) { SetOutpost(std::forward<OutpostT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateOutpostResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateOutpostResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateOutpostResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateOutpostResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Outpost m_outpost;
+    bool m_outpostHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

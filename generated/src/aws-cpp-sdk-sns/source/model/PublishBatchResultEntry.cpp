@@ -20,15 +20,7 @@ namespace SNS
 namespace Model
 {
 
-PublishBatchResultEntry::PublishBatchResultEntry() : 
-    m_idHasBeenSet(false),
-    m_messageIdHasBeenSet(false),
-    m_sequenceNumberHasBeenSet(false)
-{
-}
-
 PublishBatchResultEntry::PublishBatchResultEntry(const XmlNode& xmlNode)
-  : PublishBatchResultEntry()
 {
   *this = xmlNode;
 }

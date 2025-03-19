@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-BorderStyle::BorderStyle() : 
-    m_show(false),
-    m_showHasBeenSet(false)
-{
-}
-
 BorderStyle::BorderStyle(JsonView jsonValue)
-  : BorderStyle()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ BorderStyle& BorderStyle::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Show"))
   {
     m_show = jsonValue.GetBool("Show");
-
     m_showHasBeenSet = true;
   }
-
   return *this;
 }
 

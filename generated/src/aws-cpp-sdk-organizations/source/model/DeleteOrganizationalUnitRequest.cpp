@@ -12,11 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteOrganizationalUnitRequest::DeleteOrganizationalUnitRequest() : 
-    m_organizationalUnitIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteOrganizationalUnitRequest::SerializePayload() const
 {
   JsonValue payload;

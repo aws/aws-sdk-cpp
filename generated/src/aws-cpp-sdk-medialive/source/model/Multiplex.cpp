@@ -18,25 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-Multiplex::Multiplex() : 
-    m_arnHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_destinationsHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_multiplexSettingsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_pipelinesRunningCount(0),
-    m_pipelinesRunningCountHasBeenSet(false),
-    m_programCount(0),
-    m_programCountHasBeenSet(false),
-    m_state(MultiplexState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Multiplex::Multiplex(JsonView jsonValue)
-  : Multiplex()
 {
   *this = jsonValue;
 }
@@ -46,10 +28,8 @@ Multiplex& Multiplex::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("availabilityZones"))
   {
     Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("availabilityZones");
@@ -59,7 +39,6 @@ Multiplex& Multiplex::operator =(JsonView jsonValue)
     }
     m_availabilityZonesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinations"))
   {
     Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("destinations");
@@ -69,49 +48,36 @@ Multiplex& Multiplex::operator =(JsonView jsonValue)
     }
     m_destinationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("multiplexSettings"))
   {
     m_multiplexSettings = jsonValue.GetObject("multiplexSettings");
-
     m_multiplexSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("pipelinesRunningCount"))
   {
     m_pipelinesRunningCount = jsonValue.GetInteger("pipelinesRunningCount");
-
     m_pipelinesRunningCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("programCount"))
   {
     m_programCount = jsonValue.GetInteger("programCount");
-
     m_programCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = MultiplexStateMapper::GetMultiplexStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -121,7 +87,6 @@ Multiplex& Multiplex::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

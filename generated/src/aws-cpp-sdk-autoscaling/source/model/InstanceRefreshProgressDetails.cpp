@@ -20,14 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-InstanceRefreshProgressDetails::InstanceRefreshProgressDetails() : 
-    m_livePoolProgressHasBeenSet(false),
-    m_warmPoolProgressHasBeenSet(false)
-{
-}
-
 InstanceRefreshProgressDetails::InstanceRefreshProgressDetails(const XmlNode& xmlNode)
-  : InstanceRefreshProgressDetails()
 {
   *this = xmlNode;
 }

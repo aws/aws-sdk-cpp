@@ -18,13 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-EvaluationContext::EvaluationContext() : 
-    m_evaluationContextIdentifierHasBeenSet(false)
-{
-}
-
 EvaluationContext::EvaluationContext(JsonView jsonValue)
-  : EvaluationContext()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EvaluationContext& EvaluationContext::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EvaluationContextIdentifier"))
   {
     m_evaluationContextIdentifier = jsonValue.GetString("EvaluationContextIdentifier");
-
     m_evaluationContextIdentifierHasBeenSet = true;
   }
-
   return *this;
 }
 

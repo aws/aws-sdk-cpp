@@ -23,7 +23,7 @@ namespace Model
   class PutStoredQueryRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API PutStoredQueryRequest();
+    AWS_CONFIGSERVICE_API PutStoredQueryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,26 +44,26 @@ namespace Model
      * updating a query, you must provide a query name but updating the description is
      * optional.</p> 
      */
-    inline const StoredQuery& GetStoredQuery() const{ return m_storedQuery; }
+    inline const StoredQuery& GetStoredQuery() const { return m_storedQuery; }
     inline bool StoredQueryHasBeenSet() const { return m_storedQueryHasBeenSet; }
-    inline void SetStoredQuery(const StoredQuery& value) { m_storedQueryHasBeenSet = true; m_storedQuery = value; }
-    inline void SetStoredQuery(StoredQuery&& value) { m_storedQueryHasBeenSet = true; m_storedQuery = std::move(value); }
-    inline PutStoredQueryRequest& WithStoredQuery(const StoredQuery& value) { SetStoredQuery(value); return *this;}
-    inline PutStoredQueryRequest& WithStoredQuery(StoredQuery&& value) { SetStoredQuery(std::move(value)); return *this;}
+    template<typename StoredQueryT = StoredQuery>
+    void SetStoredQuery(StoredQueryT&& value) { m_storedQueryHasBeenSet = true; m_storedQuery = std::forward<StoredQueryT>(value); }
+    template<typename StoredQueryT = StoredQuery>
+    PutStoredQueryRequest& WithStoredQuery(StoredQueryT&& value) { SetStoredQuery(std::forward<StoredQueryT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of <code>Tags</code> object.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline PutStoredQueryRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline PutStoredQueryRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline PutStoredQueryRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline PutStoredQueryRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    PutStoredQueryRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    PutStoredQueryRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

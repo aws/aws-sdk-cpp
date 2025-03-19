@@ -18,13 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-SnsTopicSinkConfiguration::SnsTopicSinkConfiguration() : 
-    m_insightsTargetHasBeenSet(false)
-{
-}
-
 SnsTopicSinkConfiguration::SnsTopicSinkConfiguration(JsonView jsonValue)
-  : SnsTopicSinkConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SnsTopicSinkConfiguration& SnsTopicSinkConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("InsightsTarget"))
   {
     m_insightsTarget = jsonValue.GetString("InsightsTarget");
-
     m_insightsTargetHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -30,7 +30,7 @@ namespace Model
   class ListCustomLineItemPercentageChargeDetails
   {
   public:
-    AWS_BILLINGCONDUCTOR_API ListCustomLineItemPercentageChargeDetails();
+    AWS_BILLINGCONDUCTOR_API ListCustomLineItemPercentageChargeDetails() = default;
     AWS_BILLINGCONDUCTOR_API ListCustomLineItemPercentageChargeDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API ListCustomLineItemPercentageChargeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * <p> The custom line item's percentage value. This will be multiplied against the
      * combined value of its associated resources to determine its charge value. </p>
      */
-    inline double GetPercentageValue() const{ return m_percentageValue; }
+    inline double GetPercentageValue() const { return m_percentageValue; }
     inline bool PercentageValueHasBeenSet() const { return m_percentageValueHasBeenSet; }
     inline void SetPercentageValue(double value) { m_percentageValueHasBeenSet = true; m_percentageValue = value; }
     inline ListCustomLineItemPercentageChargeDetails& WithPercentageValue(double value) { SetPercentageValue(value); return *this;}
     ///@}
   private:
 
-    double m_percentageValue;
+    double m_percentageValue{0.0};
     bool m_percentageValueHasBeenSet = false;
   };
 

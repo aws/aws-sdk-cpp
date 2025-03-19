@@ -28,7 +28,7 @@ namespace Model
   class ListAccessEntriesResult
   {
   public:
-    AWS_EKS_API ListAccessEntriesResult();
+    AWS_EKS_API ListAccessEntriesResult() = default;
     AWS_EKS_API ListAccessEntriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EKS_API ListAccessEntriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,14 +37,13 @@ namespace Model
     /**
      * <p>The list of access entries that exist for the cluster.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAccessEntries() const{ return m_accessEntries; }
-    inline void SetAccessEntries(const Aws::Vector<Aws::String>& value) { m_accessEntries = value; }
-    inline void SetAccessEntries(Aws::Vector<Aws::String>&& value) { m_accessEntries = std::move(value); }
-    inline ListAccessEntriesResult& WithAccessEntries(const Aws::Vector<Aws::String>& value) { SetAccessEntries(value); return *this;}
-    inline ListAccessEntriesResult& WithAccessEntries(Aws::Vector<Aws::String>&& value) { SetAccessEntries(std::move(value)); return *this;}
-    inline ListAccessEntriesResult& AddAccessEntries(const Aws::String& value) { m_accessEntries.push_back(value); return *this; }
-    inline ListAccessEntriesResult& AddAccessEntries(Aws::String&& value) { m_accessEntries.push_back(std::move(value)); return *this; }
-    inline ListAccessEntriesResult& AddAccessEntries(const char* value) { m_accessEntries.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetAccessEntries() const { return m_accessEntries; }
+    template<typename AccessEntriesT = Aws::Vector<Aws::String>>
+    void SetAccessEntries(AccessEntriesT&& value) { m_accessEntriesHasBeenSet = true; m_accessEntries = std::forward<AccessEntriesT>(value); }
+    template<typename AccessEntriesT = Aws::Vector<Aws::String>>
+    ListAccessEntriesResult& WithAccessEntries(AccessEntriesT&& value) { SetAccessEntries(std::forward<AccessEntriesT>(value)); return *this;}
+    template<typename AccessEntriesT = Aws::String>
+    ListAccessEntriesResult& AddAccessEntries(AccessEntriesT&& value) { m_accessEntriesHasBeenSet = true; m_accessEntries.emplace_back(std::forward<AccessEntriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,32 +56,31 @@ namespace Model
      * identifier that is used only to retrieve the next items in a list and not for
      * other programmatic purposes.</p> 
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAccessEntriesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAccessEntriesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAccessEntriesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAccessEntriesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAccessEntriesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAccessEntriesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAccessEntriesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAccessEntriesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_accessEntries;
+    bool m_accessEntriesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

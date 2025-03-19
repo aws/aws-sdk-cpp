@@ -12,15 +12,6 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListCustomRoutingPortMappingsRequest::ListCustomRoutingPortMappingsRequest() : 
-    m_acceleratorArnHasBeenSet(false),
-    m_endpointGroupArnHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListCustomRoutingPortMappingsRequest::SerializePayload() const
 {
   JsonValue payload;

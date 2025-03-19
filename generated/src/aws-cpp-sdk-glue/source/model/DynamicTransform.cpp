@@ -18,20 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DynamicTransform::DynamicTransform() : 
-    m_nameHasBeenSet(false),
-    m_transformNameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_functionNameHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_outputSchemasHasBeenSet(false)
-{
-}
-
 DynamicTransform::DynamicTransform(JsonView jsonValue)
-  : DynamicTransform()
 {
   *this = jsonValue;
 }
@@ -41,17 +28,13 @@ DynamicTransform& DynamicTransform::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransformName"))
   {
     m_transformName = jsonValue.GetString("TransformName");
-
     m_transformNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Inputs"))
   {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
@@ -61,7 +44,6 @@ DynamicTransform& DynamicTransform::operator =(JsonView jsonValue)
     }
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
@@ -71,28 +53,21 @@ DynamicTransform& DynamicTransform::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FunctionName"))
   {
     m_functionName = jsonValue.GetString("FunctionName");
-
     m_functionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Version"))
   {
     m_version = jsonValue.GetString("Version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputSchemas"))
   {
     Aws::Utils::Array<JsonView> outputSchemasJsonList = jsonValue.GetArray("OutputSchemas");
@@ -102,7 +77,6 @@ DynamicTransform& DynamicTransform::operator =(JsonView jsonValue)
     }
     m_outputSchemasHasBeenSet = true;
   }
-
   return *this;
 }
 

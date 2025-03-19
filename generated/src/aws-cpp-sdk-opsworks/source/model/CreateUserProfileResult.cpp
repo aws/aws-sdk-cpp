@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateUserProfileResult::CreateUserProfileResult()
-{
-}
-
 CreateUserProfileResult::CreateUserProfileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateUserProfileResult& CreateUserProfileResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("IamUserArn"))
   {
     m_iamUserArn = jsonValue.GetString("IamUserArn");
-
+    m_iamUserArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -34,7 +34,7 @@ namespace Model
   class DescribeStreamResult
   {
   public:
-    AWS_DYNAMODBSTREAMS_API DescribeStreamResult();
+    AWS_DYNAMODBSTREAMS_API DescribeStreamResult() = default;
     AWS_DYNAMODBSTREAMS_API DescribeStreamResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DYNAMODBSTREAMS_API DescribeStreamResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -46,28 +46,28 @@ namespace Model
      * and the beginning and ending sequence numbers of stream records within the
      * shards.</p>
      */
-    inline const StreamDescription& GetStreamDescription() const{ return m_streamDescription; }
-    inline void SetStreamDescription(const StreamDescription& value) { m_streamDescription = value; }
-    inline void SetStreamDescription(StreamDescription&& value) { m_streamDescription = std::move(value); }
-    inline DescribeStreamResult& WithStreamDescription(const StreamDescription& value) { SetStreamDescription(value); return *this;}
-    inline DescribeStreamResult& WithStreamDescription(StreamDescription&& value) { SetStreamDescription(std::move(value)); return *this;}
+    inline const StreamDescription& GetStreamDescription() const { return m_streamDescription; }
+    template<typename StreamDescriptionT = StreamDescription>
+    void SetStreamDescription(StreamDescriptionT&& value) { m_streamDescriptionHasBeenSet = true; m_streamDescription = std::forward<StreamDescriptionT>(value); }
+    template<typename StreamDescriptionT = StreamDescription>
+    DescribeStreamResult& WithStreamDescription(StreamDescriptionT&& value) { SetStreamDescription(std::forward<StreamDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeStreamResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeStreamResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeStreamResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeStreamResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     StreamDescription m_streamDescription;
+    bool m_streamDescriptionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

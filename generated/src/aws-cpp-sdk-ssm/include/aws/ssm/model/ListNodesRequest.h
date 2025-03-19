@@ -23,7 +23,7 @@ namespace Model
   class ListNodesRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API ListNodesRequest();
+    AWS_SSM_API ListNodesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * <code>AWS-QuickSetup-ManagedNode</code>.</p> <p>For single account/single-Region
      * configurations, the parameter is not required.</p>
      */
-    inline const Aws::String& GetSyncName() const{ return m_syncName; }
+    inline const Aws::String& GetSyncName() const { return m_syncName; }
     inline bool SyncNameHasBeenSet() const { return m_syncNameHasBeenSet; }
-    inline void SetSyncName(const Aws::String& value) { m_syncNameHasBeenSet = true; m_syncName = value; }
-    inline void SetSyncName(Aws::String&& value) { m_syncNameHasBeenSet = true; m_syncName = std::move(value); }
-    inline void SetSyncName(const char* value) { m_syncNameHasBeenSet = true; m_syncName.assign(value); }
-    inline ListNodesRequest& WithSyncName(const Aws::String& value) { SetSyncName(value); return *this;}
-    inline ListNodesRequest& WithSyncName(Aws::String&& value) { SetSyncName(std::move(value)); return *this;}
-    inline ListNodesRequest& WithSyncName(const char* value) { SetSyncName(value); return *this;}
+    template<typename SyncNameT = Aws::String>
+    void SetSyncName(SyncNameT&& value) { m_syncNameHasBeenSet = true; m_syncName = std::forward<SyncNameT>(value); }
+    template<typename SyncNameT = Aws::String>
+    ListNodesRequest& WithSyncName(SyncNameT&& value) { SetSyncName(std::forward<SyncNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,14 @@ namespace Model
      * <p>One or more filters. Use a filter to return a more specific list of managed
      * nodes.</p>
      */
-    inline const Aws::Vector<NodeFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<NodeFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<NodeFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<NodeFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListNodesRequest& WithFilters(const Aws::Vector<NodeFilter>& value) { SetFilters(value); return *this;}
-    inline ListNodesRequest& WithFilters(Aws::Vector<NodeFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline ListNodesRequest& AddFilters(const NodeFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline ListNodesRequest& AddFilters(NodeFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<NodeFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<NodeFilter>>
+    ListNodesRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = NodeFilter>
+    ListNodesRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -74,14 +72,12 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListNodesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListNodesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListNodesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListNodesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,7 +86,7 @@ namespace Model
      * token that you can specify in a subsequent call to get the next set of
      * results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListNodesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -106,7 +102,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

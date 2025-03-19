@@ -20,14 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-LoadBalancerState::LoadBalancerState() : 
-    m_loadBalancerNameHasBeenSet(false),
-    m_stateHasBeenSet(false)
-{
-}
-
 LoadBalancerState::LoadBalancerState(const XmlNode& xmlNode)
-  : LoadBalancerState()
 {
   *this = xmlNode;
 }

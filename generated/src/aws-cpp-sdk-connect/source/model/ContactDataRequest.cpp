@@ -18,18 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ContactDataRequest::ContactDataRequest() : 
-    m_systemEndpointHasBeenSet(false),
-    m_customerEndpointHasBeenSet(false),
-    m_requestIdentifierHasBeenSet(false),
-    m_queueIdHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_campaignHasBeenSet(false)
-{
-}
-
 ContactDataRequest::ContactDataRequest(JsonView jsonValue)
-  : ContactDataRequest()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ ContactDataRequest& ContactDataRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SystemEndpoint"))
   {
     m_systemEndpoint = jsonValue.GetObject("SystemEndpoint");
-
     m_systemEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomerEndpoint"))
   {
     m_customerEndpoint = jsonValue.GetObject("CustomerEndpoint");
-
     m_customerEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestIdentifier"))
   {
     m_requestIdentifier = jsonValue.GetString("RequestIdentifier");
-
     m_requestIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueueId"))
   {
     m_queueId = jsonValue.GetString("QueueId");
-
     m_queueIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
@@ -73,14 +54,11 @@ ContactDataRequest& ContactDataRequest::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Campaign"))
   {
     m_campaign = jsonValue.GetObject("Campaign");
-
     m_campaignHasBeenSet = true;
   }
-
   return *this;
 }
 

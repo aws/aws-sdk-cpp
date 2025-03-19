@@ -21,7 +21,7 @@ namespace Model
   class GetIdentitySourceRequest : public VerifiedPermissionsRequest
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API GetIdentitySourceRequest();
+    AWS_VERIFIEDPERMISSIONS_API GetIdentitySourceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
      * <p>Specifies the ID of the policy store that contains the identity source you
      * want information about.</p>
      */
-    inline const Aws::String& GetPolicyStoreId() const{ return m_policyStoreId; }
+    inline const Aws::String& GetPolicyStoreId() const { return m_policyStoreId; }
     inline bool PolicyStoreIdHasBeenSet() const { return m_policyStoreIdHasBeenSet; }
-    inline void SetPolicyStoreId(const Aws::String& value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId = value; }
-    inline void SetPolicyStoreId(Aws::String&& value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId = std::move(value); }
-    inline void SetPolicyStoreId(const char* value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId.assign(value); }
-    inline GetIdentitySourceRequest& WithPolicyStoreId(const Aws::String& value) { SetPolicyStoreId(value); return *this;}
-    inline GetIdentitySourceRequest& WithPolicyStoreId(Aws::String&& value) { SetPolicyStoreId(std::move(value)); return *this;}
-    inline GetIdentitySourceRequest& WithPolicyStoreId(const char* value) { SetPolicyStoreId(value); return *this;}
+    template<typename PolicyStoreIdT = Aws::String>
+    void SetPolicyStoreId(PolicyStoreIdT&& value) { m_policyStoreIdHasBeenSet = true; m_policyStoreId = std::forward<PolicyStoreIdT>(value); }
+    template<typename PolicyStoreIdT = Aws::String>
+    GetIdentitySourceRequest& WithPolicyStoreId(PolicyStoreIdT&& value) { SetPolicyStoreId(std::forward<PolicyStoreIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the ID of the identity source you want information about.</p>
      */
-    inline const Aws::String& GetIdentitySourceId() const{ return m_identitySourceId; }
+    inline const Aws::String& GetIdentitySourceId() const { return m_identitySourceId; }
     inline bool IdentitySourceIdHasBeenSet() const { return m_identitySourceIdHasBeenSet; }
-    inline void SetIdentitySourceId(const Aws::String& value) { m_identitySourceIdHasBeenSet = true; m_identitySourceId = value; }
-    inline void SetIdentitySourceId(Aws::String&& value) { m_identitySourceIdHasBeenSet = true; m_identitySourceId = std::move(value); }
-    inline void SetIdentitySourceId(const char* value) { m_identitySourceIdHasBeenSet = true; m_identitySourceId.assign(value); }
-    inline GetIdentitySourceRequest& WithIdentitySourceId(const Aws::String& value) { SetIdentitySourceId(value); return *this;}
-    inline GetIdentitySourceRequest& WithIdentitySourceId(Aws::String&& value) { SetIdentitySourceId(std::move(value)); return *this;}
-    inline GetIdentitySourceRequest& WithIdentitySourceId(const char* value) { SetIdentitySourceId(value); return *this;}
+    template<typename IdentitySourceIdT = Aws::String>
+    void SetIdentitySourceId(IdentitySourceIdT&& value) { m_identitySourceIdHasBeenSet = true; m_identitySourceId = std::forward<IdentitySourceIdT>(value); }
+    template<typename IdentitySourceIdT = Aws::String>
+    GetIdentitySourceRequest& WithIdentitySourceId(IdentitySourceIdT&& value) { SetIdentitySourceId(std::forward<IdentitySourceIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,22 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTaskTemplateRequest::CreateTaskTemplateRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_contactFlowIdHasBeenSet(false),
-    m_selfAssignFlowIdHasBeenSet(false),
-    m_constraintsHasBeenSet(false),
-    m_defaultsHasBeenSet(false),
-    m_status(TaskTemplateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_fieldsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateTaskTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

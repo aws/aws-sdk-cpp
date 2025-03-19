@@ -35,7 +35,7 @@ namespace Model
   class EventDestinationDefinition
   {
   public:
-    AWS_PINPOINTSMSVOICE_API EventDestinationDefinition();
+    AWS_PINPOINTSMSVOICE_API EventDestinationDefinition() = default;
     AWS_PINPOINTSMSVOICE_API EventDestinationDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICE_API EventDestinationDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTSMSVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
 
     ///@{
     
-    inline const CloudWatchLogsDestination& GetCloudWatchLogsDestination() const{ return m_cloudWatchLogsDestination; }
+    inline const CloudWatchLogsDestination& GetCloudWatchLogsDestination() const { return m_cloudWatchLogsDestination; }
     inline bool CloudWatchLogsDestinationHasBeenSet() const { return m_cloudWatchLogsDestinationHasBeenSet; }
-    inline void SetCloudWatchLogsDestination(const CloudWatchLogsDestination& value) { m_cloudWatchLogsDestinationHasBeenSet = true; m_cloudWatchLogsDestination = value; }
-    inline void SetCloudWatchLogsDestination(CloudWatchLogsDestination&& value) { m_cloudWatchLogsDestinationHasBeenSet = true; m_cloudWatchLogsDestination = std::move(value); }
-    inline EventDestinationDefinition& WithCloudWatchLogsDestination(const CloudWatchLogsDestination& value) { SetCloudWatchLogsDestination(value); return *this;}
-    inline EventDestinationDefinition& WithCloudWatchLogsDestination(CloudWatchLogsDestination&& value) { SetCloudWatchLogsDestination(std::move(value)); return *this;}
+    template<typename CloudWatchLogsDestinationT = CloudWatchLogsDestination>
+    void SetCloudWatchLogsDestination(CloudWatchLogsDestinationT&& value) { m_cloudWatchLogsDestinationHasBeenSet = true; m_cloudWatchLogsDestination = std::forward<CloudWatchLogsDestinationT>(value); }
+    template<typename CloudWatchLogsDestinationT = CloudWatchLogsDestination>
+    EventDestinationDefinition& WithCloudWatchLogsDestination(CloudWatchLogsDestinationT&& value) { SetCloudWatchLogsDestination(std::forward<CloudWatchLogsDestinationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +57,7 @@ namespace Model
      * destination is enabled, then Amazon Pinpoint sends response data to the
      * specified event destination.
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline EventDestinationDefinition& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -65,41 +65,40 @@ namespace Model
 
     ///@{
     
-    inline const KinesisFirehoseDestination& GetKinesisFirehoseDestination() const{ return m_kinesisFirehoseDestination; }
+    inline const KinesisFirehoseDestination& GetKinesisFirehoseDestination() const { return m_kinesisFirehoseDestination; }
     inline bool KinesisFirehoseDestinationHasBeenSet() const { return m_kinesisFirehoseDestinationHasBeenSet; }
-    inline void SetKinesisFirehoseDestination(const KinesisFirehoseDestination& value) { m_kinesisFirehoseDestinationHasBeenSet = true; m_kinesisFirehoseDestination = value; }
-    inline void SetKinesisFirehoseDestination(KinesisFirehoseDestination&& value) { m_kinesisFirehoseDestinationHasBeenSet = true; m_kinesisFirehoseDestination = std::move(value); }
-    inline EventDestinationDefinition& WithKinesisFirehoseDestination(const KinesisFirehoseDestination& value) { SetKinesisFirehoseDestination(value); return *this;}
-    inline EventDestinationDefinition& WithKinesisFirehoseDestination(KinesisFirehoseDestination&& value) { SetKinesisFirehoseDestination(std::move(value)); return *this;}
+    template<typename KinesisFirehoseDestinationT = KinesisFirehoseDestination>
+    void SetKinesisFirehoseDestination(KinesisFirehoseDestinationT&& value) { m_kinesisFirehoseDestinationHasBeenSet = true; m_kinesisFirehoseDestination = std::forward<KinesisFirehoseDestinationT>(value); }
+    template<typename KinesisFirehoseDestinationT = KinesisFirehoseDestination>
+    EventDestinationDefinition& WithKinesisFirehoseDestination(KinesisFirehoseDestinationT&& value) { SetKinesisFirehoseDestination(std::forward<KinesisFirehoseDestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<EventType>& GetMatchingEventTypes() const{ return m_matchingEventTypes; }
+    inline const Aws::Vector<EventType>& GetMatchingEventTypes() const { return m_matchingEventTypes; }
     inline bool MatchingEventTypesHasBeenSet() const { return m_matchingEventTypesHasBeenSet; }
-    inline void SetMatchingEventTypes(const Aws::Vector<EventType>& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes = value; }
-    inline void SetMatchingEventTypes(Aws::Vector<EventType>&& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes = std::move(value); }
-    inline EventDestinationDefinition& WithMatchingEventTypes(const Aws::Vector<EventType>& value) { SetMatchingEventTypes(value); return *this;}
-    inline EventDestinationDefinition& WithMatchingEventTypes(Aws::Vector<EventType>&& value) { SetMatchingEventTypes(std::move(value)); return *this;}
-    inline EventDestinationDefinition& AddMatchingEventTypes(const EventType& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes.push_back(value); return *this; }
-    inline EventDestinationDefinition& AddMatchingEventTypes(EventType&& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes.push_back(std::move(value)); return *this; }
+    template<typename MatchingEventTypesT = Aws::Vector<EventType>>
+    void SetMatchingEventTypes(MatchingEventTypesT&& value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes = std::forward<MatchingEventTypesT>(value); }
+    template<typename MatchingEventTypesT = Aws::Vector<EventType>>
+    EventDestinationDefinition& WithMatchingEventTypes(MatchingEventTypesT&& value) { SetMatchingEventTypes(std::forward<MatchingEventTypesT>(value)); return *this;}
+    inline EventDestinationDefinition& AddMatchingEventTypes(EventType value) { m_matchingEventTypesHasBeenSet = true; m_matchingEventTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const SnsDestination& GetSnsDestination() const{ return m_snsDestination; }
+    inline const SnsDestination& GetSnsDestination() const { return m_snsDestination; }
     inline bool SnsDestinationHasBeenSet() const { return m_snsDestinationHasBeenSet; }
-    inline void SetSnsDestination(const SnsDestination& value) { m_snsDestinationHasBeenSet = true; m_snsDestination = value; }
-    inline void SetSnsDestination(SnsDestination&& value) { m_snsDestinationHasBeenSet = true; m_snsDestination = std::move(value); }
-    inline EventDestinationDefinition& WithSnsDestination(const SnsDestination& value) { SetSnsDestination(value); return *this;}
-    inline EventDestinationDefinition& WithSnsDestination(SnsDestination&& value) { SetSnsDestination(std::move(value)); return *this;}
+    template<typename SnsDestinationT = SnsDestination>
+    void SetSnsDestination(SnsDestinationT&& value) { m_snsDestinationHasBeenSet = true; m_snsDestination = std::forward<SnsDestinationT>(value); }
+    template<typename SnsDestinationT = SnsDestination>
+    EventDestinationDefinition& WithSnsDestination(SnsDestinationT&& value) { SetSnsDestination(std::forward<SnsDestinationT>(value)); return *this;}
     ///@}
   private:
 
     CloudWatchLogsDestination m_cloudWatchLogsDestination;
     bool m_cloudWatchLogsDestinationHasBeenSet = false;
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     KinesisFirehoseDestination m_kinesisFirehoseDestination;

@@ -15,12 +15,6 @@ using namespace Aws::S3Control::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-PutBucketLifecycleConfigurationRequest::PutBucketLifecycleConfigurationRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_lifecycleConfigurationHasBeenSet(false)
-{
-}
 
 Aws::String PutBucketLifecycleConfigurationRequest::SerializePayload() const
 {

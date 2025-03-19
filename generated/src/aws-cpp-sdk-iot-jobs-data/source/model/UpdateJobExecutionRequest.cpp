@@ -12,25 +12,6 @@ using namespace Aws::IoTJobsDataPlane::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateJobExecutionRequest::UpdateJobExecutionRequest() : 
-    m_jobIdHasBeenSet(false),
-    m_thingNameHasBeenSet(false),
-    m_status(JobExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false),
-    m_stepTimeoutInMinutes(0),
-    m_stepTimeoutInMinutesHasBeenSet(false),
-    m_expectedVersion(0),
-    m_expectedVersionHasBeenSet(false),
-    m_includeJobExecutionState(false),
-    m_includeJobExecutionStateHasBeenSet(false),
-    m_includeJobDocument(false),
-    m_includeJobDocumentHasBeenSet(false),
-    m_executionNumber(0),
-    m_executionNumberHasBeenSet(false)
-{
-}
-
 Aws::String UpdateJobExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

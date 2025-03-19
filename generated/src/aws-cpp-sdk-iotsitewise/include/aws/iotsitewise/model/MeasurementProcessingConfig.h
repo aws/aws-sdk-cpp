@@ -34,7 +34,7 @@ namespace Model
   class MeasurementProcessingConfig
   {
   public:
-    AWS_IOTSITEWISE_API MeasurementProcessingConfig();
+    AWS_IOTSITEWISE_API MeasurementProcessingConfig() = default;
     AWS_IOTSITEWISE_API MeasurementProcessingConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API MeasurementProcessingConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>The forwarding configuration for the given measurement property. </p>
      */
-    inline const ForwardingConfig& GetForwardingConfig() const{ return m_forwardingConfig; }
+    inline const ForwardingConfig& GetForwardingConfig() const { return m_forwardingConfig; }
     inline bool ForwardingConfigHasBeenSet() const { return m_forwardingConfigHasBeenSet; }
-    inline void SetForwardingConfig(const ForwardingConfig& value) { m_forwardingConfigHasBeenSet = true; m_forwardingConfig = value; }
-    inline void SetForwardingConfig(ForwardingConfig&& value) { m_forwardingConfigHasBeenSet = true; m_forwardingConfig = std::move(value); }
-    inline MeasurementProcessingConfig& WithForwardingConfig(const ForwardingConfig& value) { SetForwardingConfig(value); return *this;}
-    inline MeasurementProcessingConfig& WithForwardingConfig(ForwardingConfig&& value) { SetForwardingConfig(std::move(value)); return *this;}
+    template<typename ForwardingConfigT = ForwardingConfig>
+    void SetForwardingConfig(ForwardingConfigT&& value) { m_forwardingConfigHasBeenSet = true; m_forwardingConfig = std::forward<ForwardingConfigT>(value); }
+    template<typename ForwardingConfigT = ForwardingConfig>
+    MeasurementProcessingConfig& WithForwardingConfig(ForwardingConfigT&& value) { SetForwardingConfig(std::forward<ForwardingConfigT>(value)); return *this;}
     ///@}
   private:
 

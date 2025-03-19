@@ -21,7 +21,7 @@ namespace Model
   class EvaluateFeatureRequest : public CloudWatchEvidentlyRequest
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API EvaluateFeatureRequest();
+    AWS_CLOUDWATCHEVIDENTLY_API EvaluateFeatureRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * <code>entityID</code> is checked against any override rules assigned for this
      * feature.</p>
      */
-    inline const Aws::String& GetEntityId() const{ return m_entityId; }
+    inline const Aws::String& GetEntityId() const { return m_entityId; }
     inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
-    inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
-    inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
-    inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
-    inline EvaluateFeatureRequest& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
-    inline EvaluateFeatureRequest& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
-    inline EvaluateFeatureRequest& WithEntityId(const char* value) { SetEntityId(value); return *this;}
+    template<typename EntityIdT = Aws::String>
+    void SetEntityId(EntityIdT&& value) { m_entityIdHasBeenSet = true; m_entityId = std::forward<EntityIdT>(value); }
+    template<typename EntityIdT = Aws::String>
+    EvaluateFeatureRequest& WithEntityId(EntityIdT&& value) { SetEntityId(std::forward<EntityIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,42 +56,36 @@ namespace Model
      * segments to focus your audience</a>.</p> <p>If you include this parameter, the
      * value must be a JSON object. A JSON array is not supported.</p>
      */
-    inline const Aws::String& GetEvaluationContext() const{ return m_evaluationContext; }
+    inline const Aws::String& GetEvaluationContext() const { return m_evaluationContext; }
     inline bool EvaluationContextHasBeenSet() const { return m_evaluationContextHasBeenSet; }
-    inline void SetEvaluationContext(const Aws::String& value) { m_evaluationContextHasBeenSet = true; m_evaluationContext = value; }
-    inline void SetEvaluationContext(Aws::String&& value) { m_evaluationContextHasBeenSet = true; m_evaluationContext = std::move(value); }
-    inline void SetEvaluationContext(const char* value) { m_evaluationContextHasBeenSet = true; m_evaluationContext.assign(value); }
-    inline EvaluateFeatureRequest& WithEvaluationContext(const Aws::String& value) { SetEvaluationContext(value); return *this;}
-    inline EvaluateFeatureRequest& WithEvaluationContext(Aws::String&& value) { SetEvaluationContext(std::move(value)); return *this;}
-    inline EvaluateFeatureRequest& WithEvaluationContext(const char* value) { SetEvaluationContext(value); return *this;}
+    template<typename EvaluationContextT = Aws::String>
+    void SetEvaluationContext(EvaluationContextT&& value) { m_evaluationContextHasBeenSet = true; m_evaluationContext = std::forward<EvaluationContextT>(value); }
+    template<typename EvaluationContextT = Aws::String>
+    EvaluateFeatureRequest& WithEvaluationContext(EvaluationContextT&& value) { SetEvaluationContext(std::forward<EvaluationContextT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the feature being evaluated.</p>
      */
-    inline const Aws::String& GetFeature() const{ return m_feature; }
+    inline const Aws::String& GetFeature() const { return m_feature; }
     inline bool FeatureHasBeenSet() const { return m_featureHasBeenSet; }
-    inline void SetFeature(const Aws::String& value) { m_featureHasBeenSet = true; m_feature = value; }
-    inline void SetFeature(Aws::String&& value) { m_featureHasBeenSet = true; m_feature = std::move(value); }
-    inline void SetFeature(const char* value) { m_featureHasBeenSet = true; m_feature.assign(value); }
-    inline EvaluateFeatureRequest& WithFeature(const Aws::String& value) { SetFeature(value); return *this;}
-    inline EvaluateFeatureRequest& WithFeature(Aws::String&& value) { SetFeature(std::move(value)); return *this;}
-    inline EvaluateFeatureRequest& WithFeature(const char* value) { SetFeature(value); return *this;}
+    template<typename FeatureT = Aws::String>
+    void SetFeature(FeatureT&& value) { m_featureHasBeenSet = true; m_feature = std::forward<FeatureT>(value); }
+    template<typename FeatureT = Aws::String>
+    EvaluateFeatureRequest& WithFeature(FeatureT&& value) { SetFeature(std::forward<FeatureT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name or ARN of the project that contains this feature.</p>
      */
-    inline const Aws::String& GetProject() const{ return m_project; }
+    inline const Aws::String& GetProject() const { return m_project; }
     inline bool ProjectHasBeenSet() const { return m_projectHasBeenSet; }
-    inline void SetProject(const Aws::String& value) { m_projectHasBeenSet = true; m_project = value; }
-    inline void SetProject(Aws::String&& value) { m_projectHasBeenSet = true; m_project = std::move(value); }
-    inline void SetProject(const char* value) { m_projectHasBeenSet = true; m_project.assign(value); }
-    inline EvaluateFeatureRequest& WithProject(const Aws::String& value) { SetProject(value); return *this;}
-    inline EvaluateFeatureRequest& WithProject(Aws::String&& value) { SetProject(std::move(value)); return *this;}
-    inline EvaluateFeatureRequest& WithProject(const char* value) { SetProject(value); return *this;}
+    template<typename ProjectT = Aws::String>
+    void SetProject(ProjectT&& value) { m_projectHasBeenSet = true; m_project = std::forward<ProjectT>(value); }
+    template<typename ProjectT = Aws::String>
+    EvaluateFeatureRequest& WithProject(ProjectT&& value) { SetProject(std::forward<ProjectT>(value)); return *this;}
     ///@}
   private:
 

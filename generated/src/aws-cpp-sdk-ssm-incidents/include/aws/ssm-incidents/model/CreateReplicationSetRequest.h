@@ -24,7 +24,7 @@ namespace Model
   class CreateReplicationSetRequest : public SSMIncidentsRequest
   {
   public:
-    AWS_SSMINCIDENTS_API CreateReplicationSetRequest();
+    AWS_SSMINCIDENTS_API CreateReplicationSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>A token that ensures that the operation is called only once with the
      * specified details.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateReplicationSetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateReplicationSetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateReplicationSetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateReplicationSetRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,37 +53,32 @@ namespace Model
      * <p>The Regions that Incident Manager replicates your data to. You can have up to
      * three Regions in your replication set.</p>
      */
-    inline const Aws::Map<Aws::String, RegionMapInputValue>& GetRegions() const{ return m_regions; }
+    inline const Aws::Map<Aws::String, RegionMapInputValue>& GetRegions() const { return m_regions; }
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
-    inline void SetRegions(const Aws::Map<Aws::String, RegionMapInputValue>& value) { m_regionsHasBeenSet = true; m_regions = value; }
-    inline void SetRegions(Aws::Map<Aws::String, RegionMapInputValue>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
-    inline CreateReplicationSetRequest& WithRegions(const Aws::Map<Aws::String, RegionMapInputValue>& value) { SetRegions(value); return *this;}
-    inline CreateReplicationSetRequest& WithRegions(Aws::Map<Aws::String, RegionMapInputValue>&& value) { SetRegions(std::move(value)); return *this;}
-    inline CreateReplicationSetRequest& AddRegions(const Aws::String& key, const RegionMapInputValue& value) { m_regionsHasBeenSet = true; m_regions.emplace(key, value); return *this; }
-    inline CreateReplicationSetRequest& AddRegions(Aws::String&& key, const RegionMapInputValue& value) { m_regionsHasBeenSet = true; m_regions.emplace(std::move(key), value); return *this; }
-    inline CreateReplicationSetRequest& AddRegions(const Aws::String& key, RegionMapInputValue&& value) { m_regionsHasBeenSet = true; m_regions.emplace(key, std::move(value)); return *this; }
-    inline CreateReplicationSetRequest& AddRegions(Aws::String&& key, RegionMapInputValue&& value) { m_regionsHasBeenSet = true; m_regions.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateReplicationSetRequest& AddRegions(const char* key, RegionMapInputValue&& value) { m_regionsHasBeenSet = true; m_regions.emplace(key, std::move(value)); return *this; }
-    inline CreateReplicationSetRequest& AddRegions(const char* key, const RegionMapInputValue& value) { m_regionsHasBeenSet = true; m_regions.emplace(key, value); return *this; }
+    template<typename RegionsT = Aws::Map<Aws::String, RegionMapInputValue>>
+    void SetRegions(RegionsT&& value) { m_regionsHasBeenSet = true; m_regions = std::forward<RegionsT>(value); }
+    template<typename RegionsT = Aws::Map<Aws::String, RegionMapInputValue>>
+    CreateReplicationSetRequest& WithRegions(RegionsT&& value) { SetRegions(std::forward<RegionsT>(value)); return *this;}
+    template<typename RegionsKeyT = Aws::String, typename RegionsValueT = RegionMapInputValue>
+    CreateReplicationSetRequest& AddRegions(RegionsKeyT&& key, RegionsValueT&& value) {
+      m_regionsHasBeenSet = true; m_regions.emplace(std::forward<RegionsKeyT>(key), std::forward<RegionsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>A list of tags to add to the replication set.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateReplicationSetRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateReplicationSetRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateReplicationSetRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateReplicationSetRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateReplicationSetRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateReplicationSetRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateReplicationSetRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateReplicationSetRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateReplicationSetRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateReplicationSetRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateReplicationSetRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

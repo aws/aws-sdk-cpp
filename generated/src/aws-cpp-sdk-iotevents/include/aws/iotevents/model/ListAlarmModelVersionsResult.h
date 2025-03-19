@@ -29,7 +29,7 @@ namespace Model
   class ListAlarmModelVersionsResult
   {
   public:
-    AWS_IOTEVENTS_API ListAlarmModelVersionsResult();
+    AWS_IOTEVENTS_API ListAlarmModelVersionsResult() = default;
     AWS_IOTEVENTS_API ListAlarmModelVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOTEVENTS_API ListAlarmModelVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list that summarizes each alarm model version.</p>
      */
-    inline const Aws::Vector<AlarmModelVersionSummary>& GetAlarmModelVersionSummaries() const{ return m_alarmModelVersionSummaries; }
-    inline void SetAlarmModelVersionSummaries(const Aws::Vector<AlarmModelVersionSummary>& value) { m_alarmModelVersionSummaries = value; }
-    inline void SetAlarmModelVersionSummaries(Aws::Vector<AlarmModelVersionSummary>&& value) { m_alarmModelVersionSummaries = std::move(value); }
-    inline ListAlarmModelVersionsResult& WithAlarmModelVersionSummaries(const Aws::Vector<AlarmModelVersionSummary>& value) { SetAlarmModelVersionSummaries(value); return *this;}
-    inline ListAlarmModelVersionsResult& WithAlarmModelVersionSummaries(Aws::Vector<AlarmModelVersionSummary>&& value) { SetAlarmModelVersionSummaries(std::move(value)); return *this;}
-    inline ListAlarmModelVersionsResult& AddAlarmModelVersionSummaries(const AlarmModelVersionSummary& value) { m_alarmModelVersionSummaries.push_back(value); return *this; }
-    inline ListAlarmModelVersionsResult& AddAlarmModelVersionSummaries(AlarmModelVersionSummary&& value) { m_alarmModelVersionSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AlarmModelVersionSummary>& GetAlarmModelVersionSummaries() const { return m_alarmModelVersionSummaries; }
+    template<typename AlarmModelVersionSummariesT = Aws::Vector<AlarmModelVersionSummary>>
+    void SetAlarmModelVersionSummaries(AlarmModelVersionSummariesT&& value) { m_alarmModelVersionSummariesHasBeenSet = true; m_alarmModelVersionSummaries = std::forward<AlarmModelVersionSummariesT>(value); }
+    template<typename AlarmModelVersionSummariesT = Aws::Vector<AlarmModelVersionSummary>>
+    ListAlarmModelVersionsResult& WithAlarmModelVersionSummaries(AlarmModelVersionSummariesT&& value) { SetAlarmModelVersionSummaries(std::forward<AlarmModelVersionSummariesT>(value)); return *this;}
+    template<typename AlarmModelVersionSummariesT = AlarmModelVersionSummary>
+    ListAlarmModelVersionsResult& AddAlarmModelVersionSummaries(AlarmModelVersionSummariesT&& value) { m_alarmModelVersionSummariesHasBeenSet = true; m_alarmModelVersionSummaries.emplace_back(std::forward<AlarmModelVersionSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The token that you can use to return the next set of results, or
      * <code>null</code> if there are no more results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAlarmModelVersionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAlarmModelVersionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAlarmModelVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAlarmModelVersionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAlarmModelVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAlarmModelVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAlarmModelVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAlarmModelVersionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AlarmModelVersionSummary> m_alarmModelVersionSummaries;
+    bool m_alarmModelVersionSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

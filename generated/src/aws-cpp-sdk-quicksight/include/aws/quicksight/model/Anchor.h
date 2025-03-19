@@ -32,7 +32,7 @@ namespace Model
   class Anchor
   {
   public:
-    AWS_QUICKSIGHT_API Anchor();
+    AWS_QUICKSIGHT_API Anchor() = default;
     AWS_QUICKSIGHT_API Anchor(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Anchor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,44 +42,40 @@ namespace Model
     /**
      * <p>The <code>AnchorType</code> for the Anchor.</p>
      */
-    inline const AnchorType& GetAnchorType() const{ return m_anchorType; }
+    inline AnchorType GetAnchorType() const { return m_anchorType; }
     inline bool AnchorTypeHasBeenSet() const { return m_anchorTypeHasBeenSet; }
-    inline void SetAnchorType(const AnchorType& value) { m_anchorTypeHasBeenSet = true; m_anchorType = value; }
-    inline void SetAnchorType(AnchorType&& value) { m_anchorTypeHasBeenSet = true; m_anchorType = std::move(value); }
-    inline Anchor& WithAnchorType(const AnchorType& value) { SetAnchorType(value); return *this;}
-    inline Anchor& WithAnchorType(AnchorType&& value) { SetAnchorType(std::move(value)); return *this;}
+    inline void SetAnchorType(AnchorType value) { m_anchorTypeHasBeenSet = true; m_anchorType = value; }
+    inline Anchor& WithAnchorType(AnchorType value) { SetAnchorType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The <code>TimeGranularity</code> of the Anchor.</p>
      */
-    inline const TimeGranularity& GetTimeGranularity() const{ return m_timeGranularity; }
+    inline TimeGranularity GetTimeGranularity() const { return m_timeGranularity; }
     inline bool TimeGranularityHasBeenSet() const { return m_timeGranularityHasBeenSet; }
-    inline void SetTimeGranularity(const TimeGranularity& value) { m_timeGranularityHasBeenSet = true; m_timeGranularity = value; }
-    inline void SetTimeGranularity(TimeGranularity&& value) { m_timeGranularityHasBeenSet = true; m_timeGranularity = std::move(value); }
-    inline Anchor& WithTimeGranularity(const TimeGranularity& value) { SetTimeGranularity(value); return *this;}
-    inline Anchor& WithTimeGranularity(TimeGranularity&& value) { SetTimeGranularity(std::move(value)); return *this;}
+    inline void SetTimeGranularity(TimeGranularity value) { m_timeGranularityHasBeenSet = true; m_timeGranularity = value; }
+    inline Anchor& WithTimeGranularity(TimeGranularity value) { SetTimeGranularity(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The offset of the Anchor.</p>
      */
-    inline int GetOffset() const{ return m_offset; }
+    inline int GetOffset() const { return m_offset; }
     inline bool OffsetHasBeenSet() const { return m_offsetHasBeenSet; }
     inline void SetOffset(int value) { m_offsetHasBeenSet = true; m_offset = value; }
     inline Anchor& WithOffset(int value) { SetOffset(value); return *this;}
     ///@}
   private:
 
-    AnchorType m_anchorType;
+    AnchorType m_anchorType{AnchorType::NOT_SET};
     bool m_anchorTypeHasBeenSet = false;
 
-    TimeGranularity m_timeGranularity;
+    TimeGranularity m_timeGranularity{TimeGranularity::NOT_SET};
     bool m_timeGranularityHasBeenSet = false;
 
-    int m_offset;
+    int m_offset{0};
     bool m_offsetHasBeenSet = false;
   };
 

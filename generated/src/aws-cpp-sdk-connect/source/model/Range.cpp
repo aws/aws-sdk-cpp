@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-Range::Range() : 
-    m_minProficiencyLevel(0.0),
-    m_minProficiencyLevelHasBeenSet(false),
-    m_maxProficiencyLevel(0.0),
-    m_maxProficiencyLevelHasBeenSet(false)
-{
-}
-
 Range::Range(JsonView jsonValue)
-  : Range()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Range& Range::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MinProficiencyLevel"))
   {
     m_minProficiencyLevel = jsonValue.GetDouble("MinProficiencyLevel");
-
     m_minProficiencyLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxProficiencyLevel"))
   {
     m_maxProficiencyLevel = jsonValue.GetDouble("MaxProficiencyLevel");
-
     m_maxProficiencyLevelHasBeenSet = true;
   }
-
   return *this;
 }
 

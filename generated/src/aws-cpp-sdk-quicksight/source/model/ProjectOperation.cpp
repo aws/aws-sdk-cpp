@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ProjectOperation::ProjectOperation() : 
-    m_projectedColumnsHasBeenSet(false)
-{
-}
-
 ProjectOperation::ProjectOperation(JsonView jsonValue)
-  : ProjectOperation()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ProjectOperation& ProjectOperation::operator =(JsonView jsonValue)
     }
     m_projectedColumnsHasBeenSet = true;
   }
-
   return *this;
 }
 

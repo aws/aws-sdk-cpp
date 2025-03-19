@@ -18,14 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-TaxInheritanceDetails::TaxInheritanceDetails() : 
-    m_inheritanceObtainedReasonHasBeenSet(false),
-    m_parentEntityIdHasBeenSet(false)
-{
-}
-
 TaxInheritanceDetails::TaxInheritanceDetails(JsonView jsonValue)
-  : TaxInheritanceDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TaxInheritanceDetails& TaxInheritanceDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("inheritanceObtainedReason"))
   {
     m_inheritanceObtainedReason = jsonValue.GetString("inheritanceObtainedReason");
-
     m_inheritanceObtainedReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parentEntityId"))
   {
     m_parentEntityId = jsonValue.GetString("parentEntityId");
-
     m_parentEntityIdHasBeenSet = true;
   }
-
   return *this;
 }
 

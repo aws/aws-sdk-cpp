@@ -18,16 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-ConnectionCredentials::ConnectionCredentials() : 
-    m_accessKeyIdHasBeenSet(false),
-    m_expirationHasBeenSet(false),
-    m_secretAccessKeyHasBeenSet(false),
-    m_sessionTokenHasBeenSet(false)
-{
-}
-
 ConnectionCredentials::ConnectionCredentials(JsonView jsonValue)
-  : ConnectionCredentials()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ConnectionCredentials& ConnectionCredentials::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accessKeyId"))
   {
     m_accessKeyId = jsonValue.GetString("accessKeyId");
-
     m_accessKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expiration"))
   {
     m_expiration = jsonValue.GetString("expiration");
-
     m_expirationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secretAccessKey"))
   {
     m_secretAccessKey = jsonValue.GetString("secretAccessKey");
-
     m_secretAccessKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sessionToken"))
   {
     m_sessionToken = jsonValue.GetString("sessionToken");
-
     m_sessionTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

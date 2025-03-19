@@ -29,7 +29,7 @@ namespace Model
   class DescribeConformancePacksResult
   {
   public:
-    AWS_CONFIGSERVICE_API DescribeConformancePacksResult();
+    AWS_CONFIGSERVICE_API DescribeConformancePacksResult() = default;
     AWS_CONFIGSERVICE_API DescribeConformancePacksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API DescribeConformancePacksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Returns a list of <code>ConformancePackDetail</code> objects.</p>
      */
-    inline const Aws::Vector<ConformancePackDetail>& GetConformancePackDetails() const{ return m_conformancePackDetails; }
-    inline void SetConformancePackDetails(const Aws::Vector<ConformancePackDetail>& value) { m_conformancePackDetails = value; }
-    inline void SetConformancePackDetails(Aws::Vector<ConformancePackDetail>&& value) { m_conformancePackDetails = std::move(value); }
-    inline DescribeConformancePacksResult& WithConformancePackDetails(const Aws::Vector<ConformancePackDetail>& value) { SetConformancePackDetails(value); return *this;}
-    inline DescribeConformancePacksResult& WithConformancePackDetails(Aws::Vector<ConformancePackDetail>&& value) { SetConformancePackDetails(std::move(value)); return *this;}
-    inline DescribeConformancePacksResult& AddConformancePackDetails(const ConformancePackDetail& value) { m_conformancePackDetails.push_back(value); return *this; }
-    inline DescribeConformancePacksResult& AddConformancePackDetails(ConformancePackDetail&& value) { m_conformancePackDetails.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ConformancePackDetail>& GetConformancePackDetails() const { return m_conformancePackDetails; }
+    template<typename ConformancePackDetailsT = Aws::Vector<ConformancePackDetail>>
+    void SetConformancePackDetails(ConformancePackDetailsT&& value) { m_conformancePackDetailsHasBeenSet = true; m_conformancePackDetails = std::forward<ConformancePackDetailsT>(value); }
+    template<typename ConformancePackDetailsT = Aws::Vector<ConformancePackDetail>>
+    DescribeConformancePacksResult& WithConformancePackDetails(ConformancePackDetailsT&& value) { SetConformancePackDetails(std::forward<ConformancePackDetailsT>(value)); return *this;}
+    template<typename ConformancePackDetailsT = ConformancePackDetail>
+    DescribeConformancePacksResult& AddConformancePackDetails(ConformancePackDetailsT&& value) { m_conformancePackDetailsHasBeenSet = true; m_conformancePackDetails.emplace_back(std::forward<ConformancePackDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The <code>nextToken</code> string returned in a previous request that you use
      * to request the next page of results in a paginated response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeConformancePacksResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeConformancePacksResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeConformancePacksResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeConformancePacksResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeConformancePacksResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeConformancePacksResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeConformancePacksResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeConformancePacksResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ConformancePackDetail> m_conformancePackDetails;
+    bool m_conformancePackDetailsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

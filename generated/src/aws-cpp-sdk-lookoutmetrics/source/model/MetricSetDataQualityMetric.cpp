@@ -18,14 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-MetricSetDataQualityMetric::MetricSetDataQualityMetric() : 
-    m_metricSetArnHasBeenSet(false),
-    m_dataQualityMetricListHasBeenSet(false)
-{
-}
-
 MetricSetDataQualityMetric::MetricSetDataQualityMetric(JsonView jsonValue)
-  : MetricSetDataQualityMetric()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ MetricSetDataQualityMetric& MetricSetDataQualityMetric::operator =(JsonView json
   if(jsonValue.ValueExists("MetricSetArn"))
   {
     m_metricSetArn = jsonValue.GetString("MetricSetArn");
-
     m_metricSetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataQualityMetricList"))
   {
     Aws::Utils::Array<JsonView> dataQualityMetricListJsonList = jsonValue.GetArray("DataQualityMetricList");
@@ -48,7 +39,6 @@ MetricSetDataQualityMetric& MetricSetDataQualityMetric::operator =(JsonView json
     }
     m_dataQualityMetricListHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::PinpointEmail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutAccountSendingAttributesRequest::PutAccountSendingAttributesRequest() : 
-    m_sendingEnabled(false),
-    m_sendingEnabledHasBeenSet(false)
-{
-}
-
 Aws::String PutAccountSendingAttributesRequest::SerializePayload() const
 {
   JsonValue payload;

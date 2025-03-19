@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-AlgorithmValidationSpecification::AlgorithmValidationSpecification() : 
-    m_validationRoleHasBeenSet(false),
-    m_validationProfilesHasBeenSet(false)
-{
-}
-
 AlgorithmValidationSpecification::AlgorithmValidationSpecification(JsonView jsonValue)
-  : AlgorithmValidationSpecification()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AlgorithmValidationSpecification& AlgorithmValidationSpecification::operator =(J
   if(jsonValue.ValueExists("ValidationRole"))
   {
     m_validationRole = jsonValue.GetString("ValidationRole");
-
     m_validationRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidationProfiles"))
   {
     Aws::Utils::Array<JsonView> validationProfilesJsonList = jsonValue.GetArray("ValidationProfiles");
@@ -48,7 +39,6 @@ AlgorithmValidationSpecification& AlgorithmValidationSpecification::operator =(J
     }
     m_validationProfilesHasBeenSet = true;
   }
-
   return *this;
 }
 

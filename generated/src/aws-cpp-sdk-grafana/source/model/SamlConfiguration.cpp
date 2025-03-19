@@ -18,18 +18,7 @@ namespace ManagedGrafana
 namespace Model
 {
 
-SamlConfiguration::SamlConfiguration() : 
-    m_allowedOrganizationsHasBeenSet(false),
-    m_assertionAttributesHasBeenSet(false),
-    m_idpMetadataHasBeenSet(false),
-    m_loginValidityDuration(0),
-    m_loginValidityDurationHasBeenSet(false),
-    m_roleValuesHasBeenSet(false)
-{
-}
-
 SamlConfiguration::SamlConfiguration(JsonView jsonValue)
-  : SamlConfiguration()
 {
   *this = jsonValue;
 }
@@ -45,35 +34,26 @@ SamlConfiguration& SamlConfiguration::operator =(JsonView jsonValue)
     }
     m_allowedOrganizationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assertionAttributes"))
   {
     m_assertionAttributes = jsonValue.GetObject("assertionAttributes");
-
     m_assertionAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("idpMetadata"))
   {
     m_idpMetadata = jsonValue.GetObject("idpMetadata");
-
     m_idpMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("loginValidityDuration"))
   {
     m_loginValidityDuration = jsonValue.GetInteger("loginValidityDuration");
-
     m_loginValidityDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleValues"))
   {
     m_roleValues = jsonValue.GetObject("roleValues");
-
     m_roleValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

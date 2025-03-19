@@ -39,7 +39,7 @@ namespace Model
   class ParseJSON
   {
   public:
-    AWS_CLOUDWATCHLOGS_API ParseJSON();
+    AWS_CLOUDWATCHLOGS_API ParseJSON() = default;
     AWS_CLOUDWATCHLOGS_API ParseJSON(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API ParseJSON& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * <p>Path to the field in the log event that will be parsed. Use dot notation to
      * access child fields. For example, <code>store.book</code> </p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline ParseJSON& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline ParseJSON& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline ParseJSON& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    ParseJSON& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * <p>The location to put the parsed key value pair into. If you omit this
      * parameter, it is placed under the root node.</p>
      */
-    inline const Aws::String& GetDestination() const{ return m_destination; }
+    inline const Aws::String& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
-    inline ParseJSON& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-    inline ParseJSON& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-    inline ParseJSON& WithDestination(const char* value) { SetDestination(value); return *this;}
+    template<typename DestinationT = Aws::String>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Aws::String>
+    ParseJSON& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
   private:
 

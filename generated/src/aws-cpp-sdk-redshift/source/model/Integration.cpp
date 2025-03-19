@@ -20,24 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-Integration::Integration() : 
-    m_integrationArnHasBeenSet(false),
-    m_integrationNameHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_targetArnHasBeenSet(false),
-    m_status(ZeroETLIntegrationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorsHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_kMSKeyIdHasBeenSet(false),
-    m_additionalEncryptionContextHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Integration::Integration(const XmlNode& xmlNode)
-  : Integration()
 {
   *this = xmlNode;
 }
@@ -75,13 +58,14 @@ Integration& Integration::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = ZeroETLIntegrationStatusMapper::GetZeroETLIntegrationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = ZeroETLIntegrationStatusMapper::GetZeroETLIntegrationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode errorsNode = resultNode.FirstChild("Errors");
     if(!errorsNode.IsNull())
     {
       XmlNode errorsMember = errorsNode.FirstChild("IntegrationError");
+      m_errorsHasBeenSet = !errorsMember.IsNull();
       while(!errorsMember.IsNull())
       {
         m_errors.push_back(errorsMember);
@@ -113,6 +97,7 @@ Integration& Integration::operator =(const XmlNode& xmlNode)
     if(!additionalEncryptionContextNode.IsNull())
     {
       XmlNode additionalEncryptionContextEntry = additionalEncryptionContextNode.FirstChild("entry");
+      m_additionalEncryptionContextHasBeenSet = !additionalEncryptionContextEntry.IsNull();
       while(!additionalEncryptionContextEntry.IsNull())
       {
         XmlNode keyNode = additionalEncryptionContextEntry.FirstChild("key");
@@ -128,6 +113,7 @@ Integration& Integration::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("Tag");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

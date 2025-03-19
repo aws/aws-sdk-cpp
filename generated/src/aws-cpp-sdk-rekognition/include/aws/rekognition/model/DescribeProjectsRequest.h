@@ -23,7 +23,7 @@ namespace Model
   class DescribeProjectsRequest : public RekognitionRequest
   {
   public:
-    AWS_REKOGNITION_API DescribeProjectsRequest();
+    AWS_REKOGNITION_API DescribeProjectsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * retrieve), Rekognition returns a pagination token in the response. You can use
      * this pagination token to retrieve the next set of results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeProjectsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeProjectsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeProjectsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeProjectsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * you can specify is 100. If you specify a value greater than 100, a
      * ValidationException error occurs. The default value is 100. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeProjectsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -70,15 +68,14 @@ namespace Model
      * specify a value, the response includes descriptions for all the projects in your
      * AWS account.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetProjectNames() const{ return m_projectNames; }
+    inline const Aws::Vector<Aws::String>& GetProjectNames() const { return m_projectNames; }
     inline bool ProjectNamesHasBeenSet() const { return m_projectNamesHasBeenSet; }
-    inline void SetProjectNames(const Aws::Vector<Aws::String>& value) { m_projectNamesHasBeenSet = true; m_projectNames = value; }
-    inline void SetProjectNames(Aws::Vector<Aws::String>&& value) { m_projectNamesHasBeenSet = true; m_projectNames = std::move(value); }
-    inline DescribeProjectsRequest& WithProjectNames(const Aws::Vector<Aws::String>& value) { SetProjectNames(value); return *this;}
-    inline DescribeProjectsRequest& WithProjectNames(Aws::Vector<Aws::String>&& value) { SetProjectNames(std::move(value)); return *this;}
-    inline DescribeProjectsRequest& AddProjectNames(const Aws::String& value) { m_projectNamesHasBeenSet = true; m_projectNames.push_back(value); return *this; }
-    inline DescribeProjectsRequest& AddProjectNames(Aws::String&& value) { m_projectNamesHasBeenSet = true; m_projectNames.push_back(std::move(value)); return *this; }
-    inline DescribeProjectsRequest& AddProjectNames(const char* value) { m_projectNamesHasBeenSet = true; m_projectNames.push_back(value); return *this; }
+    template<typename ProjectNamesT = Aws::Vector<Aws::String>>
+    void SetProjectNames(ProjectNamesT&& value) { m_projectNamesHasBeenSet = true; m_projectNames = std::forward<ProjectNamesT>(value); }
+    template<typename ProjectNamesT = Aws::Vector<Aws::String>>
+    DescribeProjectsRequest& WithProjectNames(ProjectNamesT&& value) { SetProjectNames(std::forward<ProjectNamesT>(value)); return *this;}
+    template<typename ProjectNamesT = Aws::String>
+    DescribeProjectsRequest& AddProjectNames(ProjectNamesT&& value) { m_projectNamesHasBeenSet = true; m_projectNames.emplace_back(std::forward<ProjectNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -86,21 +83,20 @@ namespace Model
      * <p>Specifies the type of customization to filter projects by. If no value is
      * specified, CUSTOM_LABELS is used as a default.</p>
      */
-    inline const Aws::Vector<CustomizationFeature>& GetFeatures() const{ return m_features; }
+    inline const Aws::Vector<CustomizationFeature>& GetFeatures() const { return m_features; }
     inline bool FeaturesHasBeenSet() const { return m_featuresHasBeenSet; }
-    inline void SetFeatures(const Aws::Vector<CustomizationFeature>& value) { m_featuresHasBeenSet = true; m_features = value; }
-    inline void SetFeatures(Aws::Vector<CustomizationFeature>&& value) { m_featuresHasBeenSet = true; m_features = std::move(value); }
-    inline DescribeProjectsRequest& WithFeatures(const Aws::Vector<CustomizationFeature>& value) { SetFeatures(value); return *this;}
-    inline DescribeProjectsRequest& WithFeatures(Aws::Vector<CustomizationFeature>&& value) { SetFeatures(std::move(value)); return *this;}
-    inline DescribeProjectsRequest& AddFeatures(const CustomizationFeature& value) { m_featuresHasBeenSet = true; m_features.push_back(value); return *this; }
-    inline DescribeProjectsRequest& AddFeatures(CustomizationFeature&& value) { m_featuresHasBeenSet = true; m_features.push_back(std::move(value)); return *this; }
+    template<typename FeaturesT = Aws::Vector<CustomizationFeature>>
+    void SetFeatures(FeaturesT&& value) { m_featuresHasBeenSet = true; m_features = std::forward<FeaturesT>(value); }
+    template<typename FeaturesT = Aws::Vector<CustomizationFeature>>
+    DescribeProjectsRequest& WithFeatures(FeaturesT&& value) { SetFeatures(std::forward<FeaturesT>(value)); return *this;}
+    inline DescribeProjectsRequest& AddFeatures(CustomizationFeature value) { m_featuresHasBeenSet = true; m_features.push_back(value); return *this; }
     ///@}
   private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_projectNames;

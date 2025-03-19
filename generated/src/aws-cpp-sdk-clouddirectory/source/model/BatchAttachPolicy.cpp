@@ -18,14 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchAttachPolicy::BatchAttachPolicy() : 
-    m_policyReferenceHasBeenSet(false),
-    m_objectReferenceHasBeenSet(false)
-{
-}
-
 BatchAttachPolicy::BatchAttachPolicy(JsonView jsonValue)
-  : BatchAttachPolicy()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BatchAttachPolicy& BatchAttachPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PolicyReference"))
   {
     m_policyReference = jsonValue.GetObject("PolicyReference");
-
     m_policyReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectReference"))
   {
     m_objectReference = jsonValue.GetObject("ObjectReference");
-
     m_objectReferenceHasBeenSet = true;
   }
-
   return *this;
 }
 

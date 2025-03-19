@@ -21,7 +21,7 @@ namespace Model
   class ModifyVpcBlockPublicAccessOptionsRequest : public EC2Request
   {
   public:
-    AWS_EC2_API ModifyVpcBlockPublicAccessOptionsRequest();
+    AWS_EC2_API ModifyVpcBlockPublicAccessOptionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline ModifyVpcBlockPublicAccessOptionsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -62,19 +62,17 @@ namespace Model
      * gateways is allowed because these gateways only allow outbound connections to be
      * established.</p> </li> </ul>
      */
-    inline const InternetGatewayBlockMode& GetInternetGatewayBlockMode() const{ return m_internetGatewayBlockMode; }
+    inline InternetGatewayBlockMode GetInternetGatewayBlockMode() const { return m_internetGatewayBlockMode; }
     inline bool InternetGatewayBlockModeHasBeenSet() const { return m_internetGatewayBlockModeHasBeenSet; }
-    inline void SetInternetGatewayBlockMode(const InternetGatewayBlockMode& value) { m_internetGatewayBlockModeHasBeenSet = true; m_internetGatewayBlockMode = value; }
-    inline void SetInternetGatewayBlockMode(InternetGatewayBlockMode&& value) { m_internetGatewayBlockModeHasBeenSet = true; m_internetGatewayBlockMode = std::move(value); }
-    inline ModifyVpcBlockPublicAccessOptionsRequest& WithInternetGatewayBlockMode(const InternetGatewayBlockMode& value) { SetInternetGatewayBlockMode(value); return *this;}
-    inline ModifyVpcBlockPublicAccessOptionsRequest& WithInternetGatewayBlockMode(InternetGatewayBlockMode&& value) { SetInternetGatewayBlockMode(std::move(value)); return *this;}
+    inline void SetInternetGatewayBlockMode(InternetGatewayBlockMode value) { m_internetGatewayBlockModeHasBeenSet = true; m_internetGatewayBlockMode = value; }
+    inline ModifyVpcBlockPublicAccessOptionsRequest& WithInternetGatewayBlockMode(InternetGatewayBlockMode value) { SetInternetGatewayBlockMode(value); return *this;}
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
-    InternetGatewayBlockMode m_internetGatewayBlockMode;
+    InternetGatewayBlockMode m_internetGatewayBlockMode{InternetGatewayBlockMode::NOT_SET};
     bool m_internetGatewayBlockModeHasBeenSet = false;
   };
 

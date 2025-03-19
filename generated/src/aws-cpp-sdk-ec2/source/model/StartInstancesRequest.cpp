@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-StartInstancesRequest::StartInstancesRequest() : 
-    m_instanceIdsHasBeenSet(false),
-    m_additionalInfoHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String StartInstancesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

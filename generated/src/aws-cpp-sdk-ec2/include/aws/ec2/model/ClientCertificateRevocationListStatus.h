@@ -33,7 +33,7 @@ namespace Model
   class ClientCertificateRevocationListStatus
   {
   public:
-    AWS_EC2_API ClientCertificateRevocationListStatus();
+    AWS_EC2_API ClientCertificateRevocationListStatus() = default;
     AWS_EC2_API ClientCertificateRevocationListStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ClientCertificateRevocationListStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,12 +45,10 @@ namespace Model
     /**
      * <p>The state of the client certificate revocation list.</p>
      */
-    inline const ClientCertificateRevocationListStatusCode& GetCode() const{ return m_code; }
+    inline ClientCertificateRevocationListStatusCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const ClientCertificateRevocationListStatusCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(ClientCertificateRevocationListStatusCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline ClientCertificateRevocationListStatus& WithCode(const ClientCertificateRevocationListStatusCode& value) { SetCode(value); return *this;}
-    inline ClientCertificateRevocationListStatus& WithCode(ClientCertificateRevocationListStatusCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(ClientCertificateRevocationListStatusCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline ClientCertificateRevocationListStatus& WithCode(ClientCertificateRevocationListStatusCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
@@ -58,18 +56,16 @@ namespace Model
      * <p>A message about the status of the client certificate revocation list, if
      * applicable.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ClientCertificateRevocationListStatus& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ClientCertificateRevocationListStatus& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ClientCertificateRevocationListStatus& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ClientCertificateRevocationListStatus& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
-    ClientCertificateRevocationListStatusCode m_code;
+    ClientCertificateRevocationListStatusCode m_code{ClientCertificateRevocationListStatusCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
     Aws::String m_message;

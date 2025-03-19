@@ -34,7 +34,7 @@ namespace Model
   class OverallVolume
   {
   public:
-    AWS_SESV2_API OverallVolume();
+    AWS_SESV2_API OverallVolume() = default;
     AWS_SESV2_API OverallVolume(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API OverallVolume& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>An object that contains information about the numbers of messages that
      * arrived in recipients' inboxes and junk mail folders.</p>
      */
-    inline const VolumeStatistics& GetVolumeStatistics() const{ return m_volumeStatistics; }
+    inline const VolumeStatistics& GetVolumeStatistics() const { return m_volumeStatistics; }
     inline bool VolumeStatisticsHasBeenSet() const { return m_volumeStatisticsHasBeenSet; }
-    inline void SetVolumeStatistics(const VolumeStatistics& value) { m_volumeStatisticsHasBeenSet = true; m_volumeStatistics = value; }
-    inline void SetVolumeStatistics(VolumeStatistics&& value) { m_volumeStatisticsHasBeenSet = true; m_volumeStatistics = std::move(value); }
-    inline OverallVolume& WithVolumeStatistics(const VolumeStatistics& value) { SetVolumeStatistics(value); return *this;}
-    inline OverallVolume& WithVolumeStatistics(VolumeStatistics&& value) { SetVolumeStatistics(std::move(value)); return *this;}
+    template<typename VolumeStatisticsT = VolumeStatistics>
+    void SetVolumeStatistics(VolumeStatisticsT&& value) { m_volumeStatisticsHasBeenSet = true; m_volumeStatistics = std::forward<VolumeStatisticsT>(value); }
+    template<typename VolumeStatisticsT = VolumeStatistics>
+    OverallVolume& WithVolumeStatistics(VolumeStatisticsT&& value) { SetVolumeStatistics(std::forward<VolumeStatisticsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +58,7 @@ namespace Model
      * <p>The percentage of emails that were sent from the domain that were read by
      * their recipients.</p>
      */
-    inline double GetReadRatePercent() const{ return m_readRatePercent; }
+    inline double GetReadRatePercent() const { return m_readRatePercent; }
     inline bool ReadRatePercentHasBeenSet() const { return m_readRatePercentHasBeenSet; }
     inline void SetReadRatePercent(double value) { m_readRatePercentHasBeenSet = true; m_readRatePercent = value; }
     inline OverallVolume& WithReadRatePercent(double value) { SetReadRatePercent(value); return *this;}
@@ -69,21 +69,21 @@ namespace Model
      * <p>An object that contains inbox and junk mail placement metrics for individual
      * email providers.</p>
      */
-    inline const Aws::Vector<DomainIspPlacement>& GetDomainIspPlacements() const{ return m_domainIspPlacements; }
+    inline const Aws::Vector<DomainIspPlacement>& GetDomainIspPlacements() const { return m_domainIspPlacements; }
     inline bool DomainIspPlacementsHasBeenSet() const { return m_domainIspPlacementsHasBeenSet; }
-    inline void SetDomainIspPlacements(const Aws::Vector<DomainIspPlacement>& value) { m_domainIspPlacementsHasBeenSet = true; m_domainIspPlacements = value; }
-    inline void SetDomainIspPlacements(Aws::Vector<DomainIspPlacement>&& value) { m_domainIspPlacementsHasBeenSet = true; m_domainIspPlacements = std::move(value); }
-    inline OverallVolume& WithDomainIspPlacements(const Aws::Vector<DomainIspPlacement>& value) { SetDomainIspPlacements(value); return *this;}
-    inline OverallVolume& WithDomainIspPlacements(Aws::Vector<DomainIspPlacement>&& value) { SetDomainIspPlacements(std::move(value)); return *this;}
-    inline OverallVolume& AddDomainIspPlacements(const DomainIspPlacement& value) { m_domainIspPlacementsHasBeenSet = true; m_domainIspPlacements.push_back(value); return *this; }
-    inline OverallVolume& AddDomainIspPlacements(DomainIspPlacement&& value) { m_domainIspPlacementsHasBeenSet = true; m_domainIspPlacements.push_back(std::move(value)); return *this; }
+    template<typename DomainIspPlacementsT = Aws::Vector<DomainIspPlacement>>
+    void SetDomainIspPlacements(DomainIspPlacementsT&& value) { m_domainIspPlacementsHasBeenSet = true; m_domainIspPlacements = std::forward<DomainIspPlacementsT>(value); }
+    template<typename DomainIspPlacementsT = Aws::Vector<DomainIspPlacement>>
+    OverallVolume& WithDomainIspPlacements(DomainIspPlacementsT&& value) { SetDomainIspPlacements(std::forward<DomainIspPlacementsT>(value)); return *this;}
+    template<typename DomainIspPlacementsT = DomainIspPlacement>
+    OverallVolume& AddDomainIspPlacements(DomainIspPlacementsT&& value) { m_domainIspPlacementsHasBeenSet = true; m_domainIspPlacements.emplace_back(std::forward<DomainIspPlacementsT>(value)); return *this; }
     ///@}
   private:
 
     VolumeStatistics m_volumeStatistics;
     bool m_volumeStatisticsHasBeenSet = false;
 
-    double m_readRatePercent;
+    double m_readRatePercent{0.0};
     bool m_readRatePercentHasBeenSet = false;
 
     Aws::Vector<DomainIspPlacement> m_domainIspPlacements;

@@ -12,12 +12,6 @@ using namespace Aws::DevOpsGuru::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeOrganizationHealthRequest::DescribeOrganizationHealthRequest() : 
-    m_accountIdsHasBeenSet(false),
-    m_organizationalUnitIdsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeOrganizationHealthRequest::SerializePayload() const
 {
   JsonValue payload;

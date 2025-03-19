@@ -32,7 +32,7 @@ namespace Model
   class CreateNFSFileShareResult
   {
   public:
-    AWS_STORAGEGATEWAY_API CreateNFSFileShareResult();
+    AWS_STORAGEGATEWAY_API CreateNFSFileShareResult() = default;
     AWS_STORAGEGATEWAY_API CreateNFSFileShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_STORAGEGATEWAY_API CreateNFSFileShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,30 +41,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the newly created file share.</p>
      */
-    inline const Aws::String& GetFileShareARN() const{ return m_fileShareARN; }
-    inline void SetFileShareARN(const Aws::String& value) { m_fileShareARN = value; }
-    inline void SetFileShareARN(Aws::String&& value) { m_fileShareARN = std::move(value); }
-    inline void SetFileShareARN(const char* value) { m_fileShareARN.assign(value); }
-    inline CreateNFSFileShareResult& WithFileShareARN(const Aws::String& value) { SetFileShareARN(value); return *this;}
-    inline CreateNFSFileShareResult& WithFileShareARN(Aws::String&& value) { SetFileShareARN(std::move(value)); return *this;}
-    inline CreateNFSFileShareResult& WithFileShareARN(const char* value) { SetFileShareARN(value); return *this;}
+    inline const Aws::String& GetFileShareARN() const { return m_fileShareARN; }
+    template<typename FileShareARNT = Aws::String>
+    void SetFileShareARN(FileShareARNT&& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = std::forward<FileShareARNT>(value); }
+    template<typename FileShareARNT = Aws::String>
+    CreateNFSFileShareResult& WithFileShareARN(FileShareARNT&& value) { SetFileShareARN(std::forward<FileShareARNT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateNFSFileShareResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateNFSFileShareResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateNFSFileShareResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateNFSFileShareResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_fileShareARN;
+    bool m_fileShareARNHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

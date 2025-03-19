@@ -18,14 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-UnindexedFace::UnindexedFace() : 
-    m_reasonsHasBeenSet(false),
-    m_faceDetailHasBeenSet(false)
-{
-}
-
 UnindexedFace::UnindexedFace(JsonView jsonValue)
-  : UnindexedFace()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ UnindexedFace& UnindexedFace::operator =(JsonView jsonValue)
     }
     m_reasonsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FaceDetail"))
   {
     m_faceDetail = jsonValue.GetObject("FaceDetail");
-
     m_faceDetailHasBeenSet = true;
   }
-
   return *this;
 }
 

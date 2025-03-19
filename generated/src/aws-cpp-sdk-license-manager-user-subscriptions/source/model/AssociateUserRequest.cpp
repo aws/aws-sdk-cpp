@@ -12,15 +12,6 @@ using namespace Aws::LicenseManagerUserSubscriptions::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateUserRequest::AssociateUserRequest() : 
-    m_domainHasBeenSet(false),
-    m_identityProviderHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_usernameHasBeenSet(false)
-{
-}
-
 Aws::String AssociateUserRequest::SerializePayload() const
 {
   JsonValue payload;

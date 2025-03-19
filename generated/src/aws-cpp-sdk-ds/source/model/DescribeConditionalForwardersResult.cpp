@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeConditionalForwardersResult::DescribeConditionalForwardersResult()
-{
-}
-
 DescribeConditionalForwardersResult::DescribeConditionalForwardersResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DescribeConditionalForwardersResult& DescribeConditionalForwardersResult::operat
     {
       m_conditionalForwarders.push_back(conditionalForwardersJsonList[conditionalForwardersIndex].AsObject());
     }
+    m_conditionalForwardersHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

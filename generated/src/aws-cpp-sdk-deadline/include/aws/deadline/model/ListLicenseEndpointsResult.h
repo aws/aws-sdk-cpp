@@ -29,7 +29,7 @@ namespace Model
   class ListLicenseEndpointsResult
   {
   public:
-    AWS_DEADLINE_API ListLicenseEndpointsResult();
+    AWS_DEADLINE_API ListLicenseEndpointsResult() = default;
     AWS_DEADLINE_API ListLicenseEndpointsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEADLINE_API ListLicenseEndpointsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The license endpoints.</p>
      */
-    inline const Aws::Vector<LicenseEndpointSummary>& GetLicenseEndpoints() const{ return m_licenseEndpoints; }
-    inline void SetLicenseEndpoints(const Aws::Vector<LicenseEndpointSummary>& value) { m_licenseEndpoints = value; }
-    inline void SetLicenseEndpoints(Aws::Vector<LicenseEndpointSummary>&& value) { m_licenseEndpoints = std::move(value); }
-    inline ListLicenseEndpointsResult& WithLicenseEndpoints(const Aws::Vector<LicenseEndpointSummary>& value) { SetLicenseEndpoints(value); return *this;}
-    inline ListLicenseEndpointsResult& WithLicenseEndpoints(Aws::Vector<LicenseEndpointSummary>&& value) { SetLicenseEndpoints(std::move(value)); return *this;}
-    inline ListLicenseEndpointsResult& AddLicenseEndpoints(const LicenseEndpointSummary& value) { m_licenseEndpoints.push_back(value); return *this; }
-    inline ListLicenseEndpointsResult& AddLicenseEndpoints(LicenseEndpointSummary&& value) { m_licenseEndpoints.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<LicenseEndpointSummary>& GetLicenseEndpoints() const { return m_licenseEndpoints; }
+    template<typename LicenseEndpointsT = Aws::Vector<LicenseEndpointSummary>>
+    void SetLicenseEndpoints(LicenseEndpointsT&& value) { m_licenseEndpointsHasBeenSet = true; m_licenseEndpoints = std::forward<LicenseEndpointsT>(value); }
+    template<typename LicenseEndpointsT = Aws::Vector<LicenseEndpointSummary>>
+    ListLicenseEndpointsResult& WithLicenseEndpoints(LicenseEndpointsT&& value) { SetLicenseEndpoints(std::forward<LicenseEndpointsT>(value)); return *this;}
+    template<typename LicenseEndpointsT = LicenseEndpointSummary>
+    ListLicenseEndpointsResult& AddLicenseEndpoints(LicenseEndpointsT&& value) { m_licenseEndpointsHasBeenSet = true; m_licenseEndpoints.emplace_back(std::forward<LicenseEndpointsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,32 +57,31 @@ namespace Model
      * expires after 24 hours. If you provide a token that isn't valid, then you
      * receive an HTTP 400 <code>ValidationException</code> error.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListLicenseEndpointsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListLicenseEndpointsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListLicenseEndpointsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListLicenseEndpointsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListLicenseEndpointsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListLicenseEndpointsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListLicenseEndpointsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListLicenseEndpointsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<LicenseEndpointSummary> m_licenseEndpoints;
+    bool m_licenseEndpointsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

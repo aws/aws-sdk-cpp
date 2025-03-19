@@ -20,17 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-RecommendedAction::RecommendedAction() : 
-    m_textHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_commandHasBeenSet(false),
-    m_type(RecommendedActionType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 RecommendedAction::RecommendedAction(const XmlNode& xmlNode)
-  : RecommendedAction()
 {
   *this = xmlNode;
 }
@@ -62,7 +52,7 @@ RecommendedAction& RecommendedAction::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = RecommendedActionTypeMapper::GetRecommendedActionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = RecommendedActionTypeMapper::GetRecommendedActionTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
   }

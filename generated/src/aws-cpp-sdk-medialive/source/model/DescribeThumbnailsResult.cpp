@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeThumbnailsResult::DescribeThumbnailsResult()
-{
-}
-
 DescribeThumbnailsResult::DescribeThumbnailsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DescribeThumbnailsResult& DescribeThumbnailsResult::operator =(const Aws::Amazon
     {
       m_thumbnailDetails.push_back(thumbnailDetailsJsonList[thumbnailDetailsIndex].AsObject());
     }
+    m_thumbnailDetailsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

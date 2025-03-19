@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRDSDatabaseRecommendationProjectedMetricsResult::GetRDSDatabaseRecommendationProjectedMetricsResult()
-{
-}
-
 GetRDSDatabaseRecommendationProjectedMetricsResult::GetRDSDatabaseRecommendationProjectedMetricsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ GetRDSDatabaseRecommendationProjectedMetricsResult& GetRDSDatabaseRecommendation
     {
       m_recommendedOptionProjectedMetrics.push_back(recommendedOptionProjectedMetricsJsonList[recommendedOptionProjectedMetricsIndex].AsObject());
     }
+    m_recommendedOptionProjectedMetricsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

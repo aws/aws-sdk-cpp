@@ -28,7 +28,7 @@ namespace Model
   class UpdateServiceSyncBlockerResult
   {
   public:
-    AWS_PROTON_API UpdateServiceSyncBlockerResult();
+    AWS_PROTON_API UpdateServiceSyncBlockerResult() = default;
     AWS_PROTON_API UpdateServiceSyncBlockerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PROTON_API UpdateServiceSyncBlockerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
      * <p>The name of the service instance that you want to update the service sync
      * blocker for.</p>
      */
-    inline const Aws::String& GetServiceInstanceName() const{ return m_serviceInstanceName; }
-    inline void SetServiceInstanceName(const Aws::String& value) { m_serviceInstanceName = value; }
-    inline void SetServiceInstanceName(Aws::String&& value) { m_serviceInstanceName = std::move(value); }
-    inline void SetServiceInstanceName(const char* value) { m_serviceInstanceName.assign(value); }
-    inline UpdateServiceSyncBlockerResult& WithServiceInstanceName(const Aws::String& value) { SetServiceInstanceName(value); return *this;}
-    inline UpdateServiceSyncBlockerResult& WithServiceInstanceName(Aws::String&& value) { SetServiceInstanceName(std::move(value)); return *this;}
-    inline UpdateServiceSyncBlockerResult& WithServiceInstanceName(const char* value) { SetServiceInstanceName(value); return *this;}
+    inline const Aws::String& GetServiceInstanceName() const { return m_serviceInstanceName; }
+    template<typename ServiceInstanceNameT = Aws::String>
+    void SetServiceInstanceName(ServiceInstanceNameT&& value) { m_serviceInstanceNameHasBeenSet = true; m_serviceInstanceName = std::forward<ServiceInstanceNameT>(value); }
+    template<typename ServiceInstanceNameT = Aws::String>
+    UpdateServiceSyncBlockerResult& WithServiceInstanceName(ServiceInstanceNameT&& value) { SetServiceInstanceName(std::forward<ServiceInstanceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,45 +50,45 @@ namespace Model
      * <p>The name of the service that you want to update the service sync blocker
      * for.</p>
      */
-    inline const Aws::String& GetServiceName() const{ return m_serviceName; }
-    inline void SetServiceName(const Aws::String& value) { m_serviceName = value; }
-    inline void SetServiceName(Aws::String&& value) { m_serviceName = std::move(value); }
-    inline void SetServiceName(const char* value) { m_serviceName.assign(value); }
-    inline UpdateServiceSyncBlockerResult& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-    inline UpdateServiceSyncBlockerResult& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-    inline UpdateServiceSyncBlockerResult& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+    inline const Aws::String& GetServiceName() const { return m_serviceName; }
+    template<typename ServiceNameT = Aws::String>
+    void SetServiceName(ServiceNameT&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::forward<ServiceNameT>(value); }
+    template<typename ServiceNameT = Aws::String>
+    UpdateServiceSyncBlockerResult& WithServiceName(ServiceNameT&& value) { SetServiceName(std::forward<ServiceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The detailed data on the service sync blocker that was updated.</p>
      */
-    inline const SyncBlocker& GetServiceSyncBlocker() const{ return m_serviceSyncBlocker; }
-    inline void SetServiceSyncBlocker(const SyncBlocker& value) { m_serviceSyncBlocker = value; }
-    inline void SetServiceSyncBlocker(SyncBlocker&& value) { m_serviceSyncBlocker = std::move(value); }
-    inline UpdateServiceSyncBlockerResult& WithServiceSyncBlocker(const SyncBlocker& value) { SetServiceSyncBlocker(value); return *this;}
-    inline UpdateServiceSyncBlockerResult& WithServiceSyncBlocker(SyncBlocker&& value) { SetServiceSyncBlocker(std::move(value)); return *this;}
+    inline const SyncBlocker& GetServiceSyncBlocker() const { return m_serviceSyncBlocker; }
+    template<typename ServiceSyncBlockerT = SyncBlocker>
+    void SetServiceSyncBlocker(ServiceSyncBlockerT&& value) { m_serviceSyncBlockerHasBeenSet = true; m_serviceSyncBlocker = std::forward<ServiceSyncBlockerT>(value); }
+    template<typename ServiceSyncBlockerT = SyncBlocker>
+    UpdateServiceSyncBlockerResult& WithServiceSyncBlocker(ServiceSyncBlockerT&& value) { SetServiceSyncBlocker(std::forward<ServiceSyncBlockerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateServiceSyncBlockerResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateServiceSyncBlockerResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateServiceSyncBlockerResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateServiceSyncBlockerResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_serviceInstanceName;
+    bool m_serviceInstanceNameHasBeenSet = false;
 
     Aws::String m_serviceName;
+    bool m_serviceNameHasBeenSet = false;
 
     SyncBlocker m_serviceSyncBlocker;
+    bool m_serviceSyncBlockerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

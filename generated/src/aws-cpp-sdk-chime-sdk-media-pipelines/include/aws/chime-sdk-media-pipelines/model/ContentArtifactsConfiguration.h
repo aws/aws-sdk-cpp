@@ -32,7 +32,7 @@ namespace Model
   class ContentArtifactsConfiguration
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API ContentArtifactsConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API ContentArtifactsConfiguration() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API ContentArtifactsConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API ContentArtifactsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,31 +42,27 @@ namespace Model
     /**
      * <p>Indicates whether the content artifact is enabled or disabled.</p>
      */
-    inline const ArtifactsState& GetState() const{ return m_state; }
+    inline ArtifactsState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ArtifactsState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ArtifactsState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline ContentArtifactsConfiguration& WithState(const ArtifactsState& value) { SetState(value); return *this;}
-    inline ContentArtifactsConfiguration& WithState(ArtifactsState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(ArtifactsState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline ContentArtifactsConfiguration& WithState(ArtifactsState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The MUX type of the artifact configuration.</p>
      */
-    inline const ContentMuxType& GetMuxType() const{ return m_muxType; }
+    inline ContentMuxType GetMuxType() const { return m_muxType; }
     inline bool MuxTypeHasBeenSet() const { return m_muxTypeHasBeenSet; }
-    inline void SetMuxType(const ContentMuxType& value) { m_muxTypeHasBeenSet = true; m_muxType = value; }
-    inline void SetMuxType(ContentMuxType&& value) { m_muxTypeHasBeenSet = true; m_muxType = std::move(value); }
-    inline ContentArtifactsConfiguration& WithMuxType(const ContentMuxType& value) { SetMuxType(value); return *this;}
-    inline ContentArtifactsConfiguration& WithMuxType(ContentMuxType&& value) { SetMuxType(std::move(value)); return *this;}
+    inline void SetMuxType(ContentMuxType value) { m_muxTypeHasBeenSet = true; m_muxType = value; }
+    inline ContentArtifactsConfiguration& WithMuxType(ContentMuxType value) { SetMuxType(value); return *this;}
     ///@}
   private:
 
-    ArtifactsState m_state;
+    ArtifactsState m_state{ArtifactsState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    ContentMuxType m_muxType;
+    ContentMuxType m_muxType{ContentMuxType::NOT_SET};
     bool m_muxTypeHasBeenSet = false;
   };
 

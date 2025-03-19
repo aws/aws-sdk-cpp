@@ -32,7 +32,7 @@ namespace Model
   class CustomLogSourceCrawlerConfiguration
   {
   public:
-    AWS_SECURITYLAKE_API CustomLogSourceCrawlerConfiguration();
+    AWS_SECURITYLAKE_API CustomLogSourceCrawlerConfiguration() = default;
     AWS_SECURITYLAKE_API CustomLogSourceCrawlerConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API CustomLogSourceCrawlerConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <li> <p>The managed policy <code>AWSGlueServiceRole</code> </p> </li> <li> <p>A
      * custom policy granting access to your Amazon S3 Data Lake</p> </li> </ul>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline CustomLogSourceCrawlerConfiguration& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CustomLogSourceCrawlerConfiguration& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CustomLogSourceCrawlerConfiguration& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CustomLogSourceCrawlerConfiguration& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

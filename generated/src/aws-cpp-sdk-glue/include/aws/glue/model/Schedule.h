@@ -33,7 +33,7 @@ namespace Model
   class Schedule
   {
   public:
-    AWS_GLUE_API Schedule();
+    AWS_GLUE_API Schedule() = default;
     AWS_GLUE_API Schedule(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Schedule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,33 +46,29 @@ namespace Model
      * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
      * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
      */
-    inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
+    inline const Aws::String& GetScheduleExpression() const { return m_scheduleExpression; }
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
-    inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
-    inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
-    inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
-    inline Schedule& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
-    inline Schedule& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
-    inline Schedule& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
+    template<typename ScheduleExpressionT = Aws::String>
+    void SetScheduleExpression(ScheduleExpressionT&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::forward<ScheduleExpressionT>(value); }
+    template<typename ScheduleExpressionT = Aws::String>
+    Schedule& WithScheduleExpression(ScheduleExpressionT&& value) { SetScheduleExpression(std::forward<ScheduleExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the schedule.</p>
      */
-    inline const ScheduleState& GetState() const{ return m_state; }
+    inline ScheduleState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ScheduleState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ScheduleState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline Schedule& WithState(const ScheduleState& value) { SetState(value); return *this;}
-    inline Schedule& WithState(ScheduleState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(ScheduleState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline Schedule& WithState(ScheduleState value) { SetState(value); return *this;}
     ///@}
   private:
 
     Aws::String m_scheduleExpression;
     bool m_scheduleExpressionHasBeenSet = false;
 
-    ScheduleState m_state;
+    ScheduleState m_state{ScheduleState::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

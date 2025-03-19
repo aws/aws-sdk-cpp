@@ -18,13 +18,7 @@ namespace CognitoIdentityProvider
 namespace Model
 {
 
-CloudWatchLogsConfigurationType::CloudWatchLogsConfigurationType() : 
-    m_logGroupArnHasBeenSet(false)
-{
-}
-
 CloudWatchLogsConfigurationType::CloudWatchLogsConfigurationType(JsonView jsonValue)
-  : CloudWatchLogsConfigurationType()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CloudWatchLogsConfigurationType& CloudWatchLogsConfigurationType::operator =(Jso
   if(jsonValue.ValueExists("LogGroupArn"))
   {
     m_logGroupArn = jsonValue.GetString("LogGroupArn");
-
     m_logGroupArnHasBeenSet = true;
   }
-
   return *this;
 }
 

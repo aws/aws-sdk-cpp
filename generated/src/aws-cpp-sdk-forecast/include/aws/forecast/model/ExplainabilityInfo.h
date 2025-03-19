@@ -32,7 +32,7 @@ namespace Model
   class ExplainabilityInfo
   {
   public:
-    AWS_FORECASTSERVICE_API ExplainabilityInfo();
+    AWS_FORECASTSERVICE_API ExplainabilityInfo() = default;
     AWS_FORECASTSERVICE_API ExplainabilityInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API ExplainabilityInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Explainability.</p>
      */
-    inline const Aws::String& GetExplainabilityArn() const{ return m_explainabilityArn; }
+    inline const Aws::String& GetExplainabilityArn() const { return m_explainabilityArn; }
     inline bool ExplainabilityArnHasBeenSet() const { return m_explainabilityArnHasBeenSet; }
-    inline void SetExplainabilityArn(const Aws::String& value) { m_explainabilityArnHasBeenSet = true; m_explainabilityArn = value; }
-    inline void SetExplainabilityArn(Aws::String&& value) { m_explainabilityArnHasBeenSet = true; m_explainabilityArn = std::move(value); }
-    inline void SetExplainabilityArn(const char* value) { m_explainabilityArnHasBeenSet = true; m_explainabilityArn.assign(value); }
-    inline ExplainabilityInfo& WithExplainabilityArn(const Aws::String& value) { SetExplainabilityArn(value); return *this;}
-    inline ExplainabilityInfo& WithExplainabilityArn(Aws::String&& value) { SetExplainabilityArn(std::move(value)); return *this;}
-    inline ExplainabilityInfo& WithExplainabilityArn(const char* value) { SetExplainabilityArn(value); return *this;}
+    template<typename ExplainabilityArnT = Aws::String>
+    void SetExplainabilityArn(ExplainabilityArnT&& value) { m_explainabilityArnHasBeenSet = true; m_explainabilityArn = std::forward<ExplainabilityArnT>(value); }
+    template<typename ExplainabilityArnT = Aws::String>
+    ExplainabilityInfo& WithExplainabilityArn(ExplainabilityArnT&& value) { SetExplainabilityArn(std::forward<ExplainabilityArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>,
      * <code>DELETE_FAILED</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline ExplainabilityInfo& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline ExplainabilityInfo& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline ExplainabilityInfo& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    ExplainabilityInfo& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

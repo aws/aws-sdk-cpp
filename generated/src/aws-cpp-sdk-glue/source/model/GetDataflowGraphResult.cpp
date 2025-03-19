@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDataflowGraphResult::GetDataflowGraphResult()
-{
-}
-
 GetDataflowGraphResult::GetDataflowGraphResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ GetDataflowGraphResult& GetDataflowGraphResult::operator =(const Aws::AmazonWebS
     {
       m_dagNodes.push_back(dagNodesJsonList[dagNodesIndex].AsObject());
     }
+    m_dagNodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DagEdges"))
   {
     Aws::Utils::Array<JsonView> dagEdgesJsonList = jsonValue.GetArray("DagEdges");
@@ -45,14 +41,15 @@ GetDataflowGraphResult& GetDataflowGraphResult::operator =(const Aws::AmazonWebS
     {
       m_dagEdges.push_back(dagEdgesJsonList[dagEdgesIndex].AsObject());
     }
+    m_dagEdgesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

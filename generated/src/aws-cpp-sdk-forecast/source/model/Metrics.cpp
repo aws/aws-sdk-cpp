@@ -18,16 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-Metrics::Metrics() : 
-    m_weightedQuantileLossesHasBeenSet(false),
-    m_errorMetricsHasBeenSet(false),
-    m_averageWeightedQuantileLoss(0.0),
-    m_averageWeightedQuantileLossHasBeenSet(false)
-{
-}
-
 Metrics::Metrics(JsonView jsonValue)
-  : Metrics()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ Metrics& Metrics::operator =(JsonView jsonValue)
     }
     m_weightedQuantileLossesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMetrics"))
   {
     Aws::Utils::Array<JsonView> errorMetricsJsonList = jsonValue.GetArray("ErrorMetrics");
@@ -53,14 +43,11 @@ Metrics& Metrics::operator =(JsonView jsonValue)
     }
     m_errorMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AverageWeightedQuantileLoss"))
   {
     m_averageWeightedQuantileLoss = jsonValue.GetDouble("AverageWeightedQuantileLoss");
-
     m_averageWeightedQuantileLossHasBeenSet = true;
   }
-
   return *this;
 }
 

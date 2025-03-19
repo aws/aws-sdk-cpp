@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchDeleteTopicReviewedAnswerResult::BatchDeleteTopicReviewedAnswerResult() : 
-    m_status(0)
-{
-}
-
 BatchDeleteTopicReviewedAnswerResult::BatchDeleteTopicReviewedAnswerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : BatchDeleteTopicReviewedAnswerResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ BatchDeleteTopicReviewedAnswerResult& BatchDeleteTopicReviewedAnswerResult::oper
   if(jsonValue.ValueExists("TopicId"))
   {
     m_topicId = jsonValue.GetString("TopicId");
-
+    m_topicIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TopicArn"))
   {
     m_topicArn = jsonValue.GetString("TopicArn");
-
+    m_topicArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SucceededAnswers"))
   {
     Aws::Utils::Array<JsonView> succeededAnswersJsonList = jsonValue.GetArray("SucceededAnswers");
@@ -50,8 +42,8 @@ BatchDeleteTopicReviewedAnswerResult& BatchDeleteTopicReviewedAnswerResult::oper
     {
       m_succeededAnswers.push_back(succeededAnswersJsonList[succeededAnswersIndex].AsObject());
     }
+    m_succeededAnswersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvalidAnswers"))
   {
     Aws::Utils::Array<JsonView> invalidAnswersJsonList = jsonValue.GetArray("InvalidAnswers");
@@ -59,18 +51,19 @@ BatchDeleteTopicReviewedAnswerResult& BatchDeleteTopicReviewedAnswerResult::oper
     {
       m_invalidAnswers.push_back(invalidAnswersJsonList[invalidAnswersIndex].AsObject());
     }
+    m_invalidAnswersHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

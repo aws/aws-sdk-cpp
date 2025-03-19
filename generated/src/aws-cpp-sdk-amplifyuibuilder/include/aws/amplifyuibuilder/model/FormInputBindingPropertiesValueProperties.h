@@ -34,7 +34,7 @@ namespace Model
   class FormInputBindingPropertiesValueProperties
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API FormInputBindingPropertiesValueProperties();
+    AWS_AMPLIFYUIBUILDER_API FormInputBindingPropertiesValueProperties() = default;
     AWS_AMPLIFYUIBUILDER_API FormInputBindingPropertiesValueProperties(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API FormInputBindingPropertiesValueProperties& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>An Amplify DataStore model.</p>
      */
-    inline const Aws::String& GetModel() const{ return m_model; }
+    inline const Aws::String& GetModel() const { return m_model; }
     inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
-    inline void SetModel(const Aws::String& value) { m_modelHasBeenSet = true; m_model = value; }
-    inline void SetModel(Aws::String&& value) { m_modelHasBeenSet = true; m_model = std::move(value); }
-    inline void SetModel(const char* value) { m_modelHasBeenSet = true; m_model.assign(value); }
-    inline FormInputBindingPropertiesValueProperties& WithModel(const Aws::String& value) { SetModel(value); return *this;}
-    inline FormInputBindingPropertiesValueProperties& WithModel(Aws::String&& value) { SetModel(std::move(value)); return *this;}
-    inline FormInputBindingPropertiesValueProperties& WithModel(const char* value) { SetModel(value); return *this;}
+    template<typename ModelT = Aws::String>
+    void SetModel(ModelT&& value) { m_modelHasBeenSet = true; m_model = std::forward<ModelT>(value); }
+    template<typename ModelT = Aws::String>
+    FormInputBindingPropertiesValueProperties& WithModel(ModelT&& value) { SetModel(std::forward<ModelT>(value)); return *this;}
     ///@}
   private:
 

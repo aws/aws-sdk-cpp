@@ -29,7 +29,7 @@ namespace Model
   class StoppingCondition
   {
   public:
-    AWS_CLEANROOMSML_API StoppingCondition();
+    AWS_CLEANROOMSML_API StoppingCondition() = default;
     AWS_CLEANROOMSML_API StoppingCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API StoppingCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
      * <p>The maximum amount of time, in seconds, that model training can run before it
      * is terminated.</p>
      */
-    inline int GetMaxRuntimeInSeconds() const{ return m_maxRuntimeInSeconds; }
+    inline int GetMaxRuntimeInSeconds() const { return m_maxRuntimeInSeconds; }
     inline bool MaxRuntimeInSecondsHasBeenSet() const { return m_maxRuntimeInSecondsHasBeenSet; }
     inline void SetMaxRuntimeInSeconds(int value) { m_maxRuntimeInSecondsHasBeenSet = true; m_maxRuntimeInSeconds = value; }
     inline StoppingCondition& WithMaxRuntimeInSeconds(int value) { SetMaxRuntimeInSeconds(value); return *this;}
     ///@}
   private:
 
-    int m_maxRuntimeInSeconds;
+    int m_maxRuntimeInSeconds{0};
     bool m_maxRuntimeInSecondsHasBeenSet = false;
   };
 

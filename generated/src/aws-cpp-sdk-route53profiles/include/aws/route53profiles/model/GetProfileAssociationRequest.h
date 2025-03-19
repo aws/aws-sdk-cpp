@@ -21,7 +21,7 @@ namespace Model
   class GetProfileAssociationRequest : public Route53ProfilesRequest
   {
   public:
-    AWS_ROUTE53PROFILES_API GetProfileAssociationRequest();
+    AWS_ROUTE53PROFILES_API GetProfileAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p> The identifier of the association you want to get information about. </p>
      */
-    inline const Aws::String& GetProfileAssociationId() const{ return m_profileAssociationId; }
+    inline const Aws::String& GetProfileAssociationId() const { return m_profileAssociationId; }
     inline bool ProfileAssociationIdHasBeenSet() const { return m_profileAssociationIdHasBeenSet; }
-    inline void SetProfileAssociationId(const Aws::String& value) { m_profileAssociationIdHasBeenSet = true; m_profileAssociationId = value; }
-    inline void SetProfileAssociationId(Aws::String&& value) { m_profileAssociationIdHasBeenSet = true; m_profileAssociationId = std::move(value); }
-    inline void SetProfileAssociationId(const char* value) { m_profileAssociationIdHasBeenSet = true; m_profileAssociationId.assign(value); }
-    inline GetProfileAssociationRequest& WithProfileAssociationId(const Aws::String& value) { SetProfileAssociationId(value); return *this;}
-    inline GetProfileAssociationRequest& WithProfileAssociationId(Aws::String&& value) { SetProfileAssociationId(std::move(value)); return *this;}
-    inline GetProfileAssociationRequest& WithProfileAssociationId(const char* value) { SetProfileAssociationId(value); return *this;}
+    template<typename ProfileAssociationIdT = Aws::String>
+    void SetProfileAssociationId(ProfileAssociationIdT&& value) { m_profileAssociationIdHasBeenSet = true; m_profileAssociationId = std::forward<ProfileAssociationIdT>(value); }
+    template<typename ProfileAssociationIdT = Aws::String>
+    GetProfileAssociationRequest& WithProfileAssociationId(ProfileAssociationIdT&& value) { SetProfileAssociationId(std::forward<ProfileAssociationIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -37,7 +37,7 @@ namespace Model
   class ServerlessTrack
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API ServerlessTrack();
+    AWS_REDSHIFTSERVERLESS_API ServerlessTrack() = default;
     AWS_REDSHIFTSERVERLESS_API ServerlessTrack(Aws::Utils::Json::JsonView jsonValue);
     AWS_REDSHIFTSERVERLESS_API ServerlessTrack& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,42 +48,38 @@ namespace Model
      * <p>The name of the track. Valid values are <code>current</code> and
      * <code>trailing</code>.</p>
      */
-    inline const Aws::String& GetTrackName() const{ return m_trackName; }
+    inline const Aws::String& GetTrackName() const { return m_trackName; }
     inline bool TrackNameHasBeenSet() const { return m_trackNameHasBeenSet; }
-    inline void SetTrackName(const Aws::String& value) { m_trackNameHasBeenSet = true; m_trackName = value; }
-    inline void SetTrackName(Aws::String&& value) { m_trackNameHasBeenSet = true; m_trackName = std::move(value); }
-    inline void SetTrackName(const char* value) { m_trackNameHasBeenSet = true; m_trackName.assign(value); }
-    inline ServerlessTrack& WithTrackName(const Aws::String& value) { SetTrackName(value); return *this;}
-    inline ServerlessTrack& WithTrackName(Aws::String&& value) { SetTrackName(std::move(value)); return *this;}
-    inline ServerlessTrack& WithTrackName(const char* value) { SetTrackName(value); return *this;}
+    template<typename TrackNameT = Aws::String>
+    void SetTrackName(TrackNameT&& value) { m_trackNameHasBeenSet = true; m_trackName = std::forward<TrackNameT>(value); }
+    template<typename TrackNameT = Aws::String>
+    ServerlessTrack& WithTrackName(TrackNameT&& value) { SetTrackName(std::forward<TrackNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An array of <code>UpdateTarget</code> objects to update with the track.</p>
      */
-    inline const Aws::Vector<UpdateTarget>& GetUpdateTargets() const{ return m_updateTargets; }
+    inline const Aws::Vector<UpdateTarget>& GetUpdateTargets() const { return m_updateTargets; }
     inline bool UpdateTargetsHasBeenSet() const { return m_updateTargetsHasBeenSet; }
-    inline void SetUpdateTargets(const Aws::Vector<UpdateTarget>& value) { m_updateTargetsHasBeenSet = true; m_updateTargets = value; }
-    inline void SetUpdateTargets(Aws::Vector<UpdateTarget>&& value) { m_updateTargetsHasBeenSet = true; m_updateTargets = std::move(value); }
-    inline ServerlessTrack& WithUpdateTargets(const Aws::Vector<UpdateTarget>& value) { SetUpdateTargets(value); return *this;}
-    inline ServerlessTrack& WithUpdateTargets(Aws::Vector<UpdateTarget>&& value) { SetUpdateTargets(std::move(value)); return *this;}
-    inline ServerlessTrack& AddUpdateTargets(const UpdateTarget& value) { m_updateTargetsHasBeenSet = true; m_updateTargets.push_back(value); return *this; }
-    inline ServerlessTrack& AddUpdateTargets(UpdateTarget&& value) { m_updateTargetsHasBeenSet = true; m_updateTargets.push_back(std::move(value)); return *this; }
+    template<typename UpdateTargetsT = Aws::Vector<UpdateTarget>>
+    void SetUpdateTargets(UpdateTargetsT&& value) { m_updateTargetsHasBeenSet = true; m_updateTargets = std::forward<UpdateTargetsT>(value); }
+    template<typename UpdateTargetsT = Aws::Vector<UpdateTarget>>
+    ServerlessTrack& WithUpdateTargets(UpdateTargetsT&& value) { SetUpdateTargets(std::forward<UpdateTargetsT>(value)); return *this;}
+    template<typename UpdateTargetsT = UpdateTarget>
+    ServerlessTrack& AddUpdateTargets(UpdateTargetsT&& value) { m_updateTargetsHasBeenSet = true; m_updateTargets.emplace_back(std::forward<UpdateTargetsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The workgroup version number for the workgroup release.</p>
      */
-    inline const Aws::String& GetWorkgroupVersion() const{ return m_workgroupVersion; }
+    inline const Aws::String& GetWorkgroupVersion() const { return m_workgroupVersion; }
     inline bool WorkgroupVersionHasBeenSet() const { return m_workgroupVersionHasBeenSet; }
-    inline void SetWorkgroupVersion(const Aws::String& value) { m_workgroupVersionHasBeenSet = true; m_workgroupVersion = value; }
-    inline void SetWorkgroupVersion(Aws::String&& value) { m_workgroupVersionHasBeenSet = true; m_workgroupVersion = std::move(value); }
-    inline void SetWorkgroupVersion(const char* value) { m_workgroupVersionHasBeenSet = true; m_workgroupVersion.assign(value); }
-    inline ServerlessTrack& WithWorkgroupVersion(const Aws::String& value) { SetWorkgroupVersion(value); return *this;}
-    inline ServerlessTrack& WithWorkgroupVersion(Aws::String&& value) { SetWorkgroupVersion(std::move(value)); return *this;}
-    inline ServerlessTrack& WithWorkgroupVersion(const char* value) { SetWorkgroupVersion(value); return *this;}
+    template<typename WorkgroupVersionT = Aws::String>
+    void SetWorkgroupVersion(WorkgroupVersionT&& value) { m_workgroupVersionHasBeenSet = true; m_workgroupVersion = std::forward<WorkgroupVersionT>(value); }
+    template<typename WorkgroupVersionT = Aws::String>
+    ServerlessTrack& WithWorkgroupVersion(WorkgroupVersionT&& value) { SetWorkgroupVersion(std::forward<WorkgroupVersionT>(value)); return *this;}
     ///@}
   private:
 

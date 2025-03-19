@@ -20,16 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-BaselineEbsBandwidthMbpsRequest::BaselineEbsBandwidthMbpsRequest() : 
-    m_min(0),
-    m_minHasBeenSet(false),
-    m_max(0),
-    m_maxHasBeenSet(false)
-{
-}
-
 BaselineEbsBandwidthMbpsRequest::BaselineEbsBandwidthMbpsRequest(const XmlNode& xmlNode)
-  : BaselineEbsBandwidthMbpsRequest()
 {
   *this = xmlNode;
 }

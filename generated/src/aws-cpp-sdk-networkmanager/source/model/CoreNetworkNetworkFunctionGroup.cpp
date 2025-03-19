@@ -18,15 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-CoreNetworkNetworkFunctionGroup::CoreNetworkNetworkFunctionGroup() : 
-    m_nameHasBeenSet(false),
-    m_edgeLocationsHasBeenSet(false),
-    m_segmentsHasBeenSet(false)
-{
-}
-
 CoreNetworkNetworkFunctionGroup::CoreNetworkNetworkFunctionGroup(JsonView jsonValue)
-  : CoreNetworkNetworkFunctionGroup()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ CoreNetworkNetworkFunctionGroup& CoreNetworkNetworkFunctionGroup::operator =(Jso
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EdgeLocations"))
   {
     Aws::Utils::Array<JsonView> edgeLocationsJsonList = jsonValue.GetArray("EdgeLocations");
@@ -49,14 +39,11 @@ CoreNetworkNetworkFunctionGroup& CoreNetworkNetworkFunctionGroup::operator =(Jso
     }
     m_edgeLocationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Segments"))
   {
     m_segments = jsonValue.GetObject("Segments");
-
     m_segmentsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -30,7 +30,7 @@ namespace Model
   class ObjectLockLegalHold
   {
   public:
-    AWS_S3_API ObjectLockLegalHold();
+    AWS_S3_API ObjectLockLegalHold() = default;
     AWS_S3_API ObjectLockLegalHold(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API ObjectLockLegalHold& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -41,16 +41,14 @@ namespace Model
     /**
      * <p>Indicates whether the specified object has a legal hold in place.</p>
      */
-    inline const ObjectLockLegalHoldStatus& GetStatus() const{ return m_status; }
+    inline ObjectLockLegalHoldStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ObjectLockLegalHoldStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ObjectLockLegalHoldStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ObjectLockLegalHold& WithStatus(const ObjectLockLegalHoldStatus& value) { SetStatus(value); return *this;}
-    inline ObjectLockLegalHold& WithStatus(ObjectLockLegalHoldStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ObjectLockLegalHoldStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ObjectLockLegalHold& WithStatus(ObjectLockLegalHoldStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
-    ObjectLockLegalHoldStatus m_status;
+    ObjectLockLegalHoldStatus m_status{ObjectLockLegalHoldStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

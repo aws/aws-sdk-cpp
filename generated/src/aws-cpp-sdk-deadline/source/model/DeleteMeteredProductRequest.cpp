@@ -12,12 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMeteredProductRequest::DeleteMeteredProductRequest() : 
-    m_licenseEndpointIdHasBeenSet(false),
-    m_productIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMeteredProductRequest::SerializePayload() const
 {
   return {};

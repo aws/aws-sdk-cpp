@@ -32,7 +32,7 @@ namespace Model
   class MSKAccessCredentials
   {
   public:
-    AWS_PIPES_API MSKAccessCredentials();
+    AWS_PIPES_API MSKAccessCredentials() = default;
     AWS_PIPES_API MSKAccessCredentials(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API MSKAccessCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The ARN of the Secrets Manager secret.</p>
      */
-    inline const Aws::String& GetSaslScram512Auth() const{ return m_saslScram512Auth; }
+    inline const Aws::String& GetSaslScram512Auth() const { return m_saslScram512Auth; }
     inline bool SaslScram512AuthHasBeenSet() const { return m_saslScram512AuthHasBeenSet; }
-    inline void SetSaslScram512Auth(const Aws::String& value) { m_saslScram512AuthHasBeenSet = true; m_saslScram512Auth = value; }
-    inline void SetSaslScram512Auth(Aws::String&& value) { m_saslScram512AuthHasBeenSet = true; m_saslScram512Auth = std::move(value); }
-    inline void SetSaslScram512Auth(const char* value) { m_saslScram512AuthHasBeenSet = true; m_saslScram512Auth.assign(value); }
-    inline MSKAccessCredentials& WithSaslScram512Auth(const Aws::String& value) { SetSaslScram512Auth(value); return *this;}
-    inline MSKAccessCredentials& WithSaslScram512Auth(Aws::String&& value) { SetSaslScram512Auth(std::move(value)); return *this;}
-    inline MSKAccessCredentials& WithSaslScram512Auth(const char* value) { SetSaslScram512Auth(value); return *this;}
+    template<typename SaslScram512AuthT = Aws::String>
+    void SetSaslScram512Auth(SaslScram512AuthT&& value) { m_saslScram512AuthHasBeenSet = true; m_saslScram512Auth = std::forward<SaslScram512AuthT>(value); }
+    template<typename SaslScram512AuthT = Aws::String>
+    MSKAccessCredentials& WithSaslScram512Auth(SaslScram512AuthT&& value) { SetSaslScram512Auth(std::forward<SaslScram512AuthT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the Secrets Manager secret.</p>
      */
-    inline const Aws::String& GetClientCertificateTlsAuth() const{ return m_clientCertificateTlsAuth; }
+    inline const Aws::String& GetClientCertificateTlsAuth() const { return m_clientCertificateTlsAuth; }
     inline bool ClientCertificateTlsAuthHasBeenSet() const { return m_clientCertificateTlsAuthHasBeenSet; }
-    inline void SetClientCertificateTlsAuth(const Aws::String& value) { m_clientCertificateTlsAuthHasBeenSet = true; m_clientCertificateTlsAuth = value; }
-    inline void SetClientCertificateTlsAuth(Aws::String&& value) { m_clientCertificateTlsAuthHasBeenSet = true; m_clientCertificateTlsAuth = std::move(value); }
-    inline void SetClientCertificateTlsAuth(const char* value) { m_clientCertificateTlsAuthHasBeenSet = true; m_clientCertificateTlsAuth.assign(value); }
-    inline MSKAccessCredentials& WithClientCertificateTlsAuth(const Aws::String& value) { SetClientCertificateTlsAuth(value); return *this;}
-    inline MSKAccessCredentials& WithClientCertificateTlsAuth(Aws::String&& value) { SetClientCertificateTlsAuth(std::move(value)); return *this;}
-    inline MSKAccessCredentials& WithClientCertificateTlsAuth(const char* value) { SetClientCertificateTlsAuth(value); return *this;}
+    template<typename ClientCertificateTlsAuthT = Aws::String>
+    void SetClientCertificateTlsAuth(ClientCertificateTlsAuthT&& value) { m_clientCertificateTlsAuthHasBeenSet = true; m_clientCertificateTlsAuth = std::forward<ClientCertificateTlsAuthT>(value); }
+    template<typename ClientCertificateTlsAuthT = Aws::String>
+    MSKAccessCredentials& WithClientCertificateTlsAuth(ClientCertificateTlsAuthT&& value) { SetClientCertificateTlsAuth(std::forward<ClientCertificateTlsAuthT>(value)); return *this;}
     ///@}
   private:
 

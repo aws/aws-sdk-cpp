@@ -21,7 +21,7 @@ namespace Model
   class DescribeCertificateAuthorityAuditReportRequest : public ACMPCARequest
   {
   public:
-    AWS_ACMPCA_API DescribeCertificateAuthorityAuditReportRequest();
+    AWS_ACMPCA_API DescribeCertificateAuthorityAuditReportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
      */
-    inline const Aws::String& GetCertificateAuthorityArn() const{ return m_certificateAuthorityArn; }
+    inline const Aws::String& GetCertificateAuthorityArn() const { return m_certificateAuthorityArn; }
     inline bool CertificateAuthorityArnHasBeenSet() const { return m_certificateAuthorityArnHasBeenSet; }
-    inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
-    inline void SetCertificateAuthorityArn(Aws::String&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::move(value); }
-    inline void SetCertificateAuthorityArn(const char* value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn.assign(value); }
-    inline DescribeCertificateAuthorityAuditReportRequest& WithCertificateAuthorityArn(const Aws::String& value) { SetCertificateAuthorityArn(value); return *this;}
-    inline DescribeCertificateAuthorityAuditReportRequest& WithCertificateAuthorityArn(Aws::String&& value) { SetCertificateAuthorityArn(std::move(value)); return *this;}
-    inline DescribeCertificateAuthorityAuditReportRequest& WithCertificateAuthorityArn(const char* value) { SetCertificateAuthorityArn(value); return *this;}
+    template<typename CertificateAuthorityArnT = Aws::String>
+    void SetCertificateAuthorityArn(CertificateAuthorityArnT&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::forward<CertificateAuthorityArnT>(value); }
+    template<typename CertificateAuthorityArnT = Aws::String>
+    DescribeCertificateAuthorityAuditReportRequest& WithCertificateAuthorityArn(CertificateAuthorityArnT&& value) { SetCertificateAuthorityArn(std::forward<CertificateAuthorityArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a>
      * action.</p>
      */
-    inline const Aws::String& GetAuditReportId() const{ return m_auditReportId; }
+    inline const Aws::String& GetAuditReportId() const { return m_auditReportId; }
     inline bool AuditReportIdHasBeenSet() const { return m_auditReportIdHasBeenSet; }
-    inline void SetAuditReportId(const Aws::String& value) { m_auditReportIdHasBeenSet = true; m_auditReportId = value; }
-    inline void SetAuditReportId(Aws::String&& value) { m_auditReportIdHasBeenSet = true; m_auditReportId = std::move(value); }
-    inline void SetAuditReportId(const char* value) { m_auditReportIdHasBeenSet = true; m_auditReportId.assign(value); }
-    inline DescribeCertificateAuthorityAuditReportRequest& WithAuditReportId(const Aws::String& value) { SetAuditReportId(value); return *this;}
-    inline DescribeCertificateAuthorityAuditReportRequest& WithAuditReportId(Aws::String&& value) { SetAuditReportId(std::move(value)); return *this;}
-    inline DescribeCertificateAuthorityAuditReportRequest& WithAuditReportId(const char* value) { SetAuditReportId(value); return *this;}
+    template<typename AuditReportIdT = Aws::String>
+    void SetAuditReportId(AuditReportIdT&& value) { m_auditReportIdHasBeenSet = true; m_auditReportId = std::forward<AuditReportIdT>(value); }
+    template<typename AuditReportIdT = Aws::String>
+    DescribeCertificateAuthorityAuditReportRequest& WithAuditReportId(AuditReportIdT&& value) { SetAuditReportId(std::forward<AuditReportIdT>(value)); return *this;}
     ///@}
   private:
 

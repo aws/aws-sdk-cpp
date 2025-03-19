@@ -24,7 +24,7 @@ namespace Model
   class CreateConnectionRequest : public AppRunnerRequest
   {
   public:
-    AWS_APPRUNNER_API CreateConnectionRequest();
+    AWS_APPRUNNER_API CreateConnectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,26 +43,22 @@ namespace Model
      * connections for the Amazon Web Services account in the Amazon Web Services
      * Region.</p>
      */
-    inline const Aws::String& GetConnectionName() const{ return m_connectionName; }
+    inline const Aws::String& GetConnectionName() const { return m_connectionName; }
     inline bool ConnectionNameHasBeenSet() const { return m_connectionNameHasBeenSet; }
-    inline void SetConnectionName(const Aws::String& value) { m_connectionNameHasBeenSet = true; m_connectionName = value; }
-    inline void SetConnectionName(Aws::String&& value) { m_connectionNameHasBeenSet = true; m_connectionName = std::move(value); }
-    inline void SetConnectionName(const char* value) { m_connectionNameHasBeenSet = true; m_connectionName.assign(value); }
-    inline CreateConnectionRequest& WithConnectionName(const Aws::String& value) { SetConnectionName(value); return *this;}
-    inline CreateConnectionRequest& WithConnectionName(Aws::String&& value) { SetConnectionName(std::move(value)); return *this;}
-    inline CreateConnectionRequest& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
+    template<typename ConnectionNameT = Aws::String>
+    void SetConnectionName(ConnectionNameT&& value) { m_connectionNameHasBeenSet = true; m_connectionName = std::forward<ConnectionNameT>(value); }
+    template<typename ConnectionNameT = Aws::String>
+    CreateConnectionRequest& WithConnectionName(ConnectionNameT&& value) { SetConnectionName(std::forward<ConnectionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source repository provider.</p>
      */
-    inline const ProviderType& GetProviderType() const{ return m_providerType; }
+    inline ProviderType GetProviderType() const { return m_providerType; }
     inline bool ProviderTypeHasBeenSet() const { return m_providerTypeHasBeenSet; }
-    inline void SetProviderType(const ProviderType& value) { m_providerTypeHasBeenSet = true; m_providerType = value; }
-    inline void SetProviderType(ProviderType&& value) { m_providerTypeHasBeenSet = true; m_providerType = std::move(value); }
-    inline CreateConnectionRequest& WithProviderType(const ProviderType& value) { SetProviderType(value); return *this;}
-    inline CreateConnectionRequest& WithProviderType(ProviderType&& value) { SetProviderType(std::move(value)); return *this;}
+    inline void SetProviderType(ProviderType value) { m_providerTypeHasBeenSet = true; m_providerType = value; }
+    inline CreateConnectionRequest& WithProviderType(ProviderType value) { SetProviderType(value); return *this;}
     ///@}
 
     ///@{
@@ -70,21 +66,21 @@ namespace Model
      * <p>A list of metadata items that you can associate with your connection
      * resource. A tag is a key-value pair.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateConnectionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateConnectionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateConnectionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateConnectionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateConnectionRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateConnectionRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_connectionName;
     bool m_connectionNameHasBeenSet = false;
 
-    ProviderType m_providerType;
+    ProviderType m_providerType{ProviderType::NOT_SET};
     bool m_providerTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

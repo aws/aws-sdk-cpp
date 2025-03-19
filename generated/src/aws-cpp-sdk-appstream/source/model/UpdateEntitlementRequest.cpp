@@ -12,16 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEntitlementRequest::UpdateEntitlementRequest() : 
-    m_nameHasBeenSet(false),
-    m_stackNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_appVisibility(AppVisibility::NOT_SET),
-    m_appVisibilityHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEntitlementRequest::SerializePayload() const
 {
   JsonValue payload;

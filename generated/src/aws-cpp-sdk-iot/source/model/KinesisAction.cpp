@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-KinesisAction::KinesisAction() : 
-    m_roleArnHasBeenSet(false),
-    m_streamNameHasBeenSet(false),
-    m_partitionKeyHasBeenSet(false)
-{
-}
-
 KinesisAction::KinesisAction(JsonView jsonValue)
-  : KinesisAction()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ KinesisAction& KinesisAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("streamName"))
   {
     m_streamName = jsonValue.GetString("streamName");
-
     m_streamNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("partitionKey"))
   {
     m_partitionKey = jsonValue.GetString("partitionKey");
-
     m_partitionKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

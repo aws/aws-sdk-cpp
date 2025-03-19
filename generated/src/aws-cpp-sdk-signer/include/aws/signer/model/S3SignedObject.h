@@ -32,7 +32,7 @@ namespace Model
   class S3SignedObject
   {
   public:
-    AWS_SIGNER_API S3SignedObject();
+    AWS_SIGNER_API S3SignedObject() = default;
     AWS_SIGNER_API S3SignedObject(Aws::Utils::Json::JsonView jsonValue);
     AWS_SIGNER_API S3SignedObject& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SIGNER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>Name of the S3 bucket.</p>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline S3SignedObject& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline S3SignedObject& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline S3SignedObject& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    S3SignedObject& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Key name that uniquely identifies a signed code image in your bucket.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline S3SignedObject& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline S3SignedObject& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline S3SignedObject& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    S3SignedObject& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
   private:
 

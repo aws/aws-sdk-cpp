@@ -21,7 +21,7 @@ namespace Model
   class DescribeApplicationFleetAssociationsRequest : public AppStreamRequest
   {
   public:
-    AWS_APPSTREAM_API DescribeApplicationFleetAssociationsRequest();
+    AWS_APPSTREAM_API DescribeApplicationFleetAssociationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,35 +38,31 @@ namespace Model
     /**
      * <p>The name of the fleet.</p>
      */
-    inline const Aws::String& GetFleetName() const{ return m_fleetName; }
+    inline const Aws::String& GetFleetName() const { return m_fleetName; }
     inline bool FleetNameHasBeenSet() const { return m_fleetNameHasBeenSet; }
-    inline void SetFleetName(const Aws::String& value) { m_fleetNameHasBeenSet = true; m_fleetName = value; }
-    inline void SetFleetName(Aws::String&& value) { m_fleetNameHasBeenSet = true; m_fleetName = std::move(value); }
-    inline void SetFleetName(const char* value) { m_fleetNameHasBeenSet = true; m_fleetName.assign(value); }
-    inline DescribeApplicationFleetAssociationsRequest& WithFleetName(const Aws::String& value) { SetFleetName(value); return *this;}
-    inline DescribeApplicationFleetAssociationsRequest& WithFleetName(Aws::String&& value) { SetFleetName(std::move(value)); return *this;}
-    inline DescribeApplicationFleetAssociationsRequest& WithFleetName(const char* value) { SetFleetName(value); return *this;}
+    template<typename FleetNameT = Aws::String>
+    void SetFleetName(FleetNameT&& value) { m_fleetNameHasBeenSet = true; m_fleetName = std::forward<FleetNameT>(value); }
+    template<typename FleetNameT = Aws::String>
+    DescribeApplicationFleetAssociationsRequest& WithFleetName(FleetNameT&& value) { SetFleetName(std::forward<FleetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the application.</p>
      */
-    inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
+    inline const Aws::String& GetApplicationArn() const { return m_applicationArn; }
     inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
-    inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
-    inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
-    inline void SetApplicationArn(const char* value) { m_applicationArnHasBeenSet = true; m_applicationArn.assign(value); }
-    inline DescribeApplicationFleetAssociationsRequest& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
-    inline DescribeApplicationFleetAssociationsRequest& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
-    inline DescribeApplicationFleetAssociationsRequest& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
+    template<typename ApplicationArnT = Aws::String>
+    void SetApplicationArn(ApplicationArnT&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::forward<ApplicationArnT>(value); }
+    template<typename ApplicationArnT = Aws::String>
+    DescribeApplicationFleetAssociationsRequest& WithApplicationArn(ApplicationArnT&& value) { SetApplicationArn(std::forward<ApplicationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum size of each page of results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeApplicationFleetAssociationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -77,14 +73,12 @@ namespace Model
      * <p>The pagination token used to retrieve the next page of results for this
      * operation.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeApplicationFleetAssociationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeApplicationFleetAssociationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeApplicationFleetAssociationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeApplicationFleetAssociationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -94,7 +88,7 @@ namespace Model
     Aws::String m_applicationArn;
     bool m_applicationArnHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

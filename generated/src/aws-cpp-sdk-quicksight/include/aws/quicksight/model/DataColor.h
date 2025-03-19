@@ -32,7 +32,7 @@ namespace Model
   class DataColor
   {
   public:
-    AWS_QUICKSIGHT_API DataColor();
+    AWS_QUICKSIGHT_API DataColor() = default;
     AWS_QUICKSIGHT_API DataColor(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DataColor& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The color that is applied to the data value.</p>
      */
-    inline const Aws::String& GetColor() const{ return m_color; }
+    inline const Aws::String& GetColor() const { return m_color; }
     inline bool ColorHasBeenSet() const { return m_colorHasBeenSet; }
-    inline void SetColor(const Aws::String& value) { m_colorHasBeenSet = true; m_color = value; }
-    inline void SetColor(Aws::String&& value) { m_colorHasBeenSet = true; m_color = std::move(value); }
-    inline void SetColor(const char* value) { m_colorHasBeenSet = true; m_color.assign(value); }
-    inline DataColor& WithColor(const Aws::String& value) { SetColor(value); return *this;}
-    inline DataColor& WithColor(Aws::String&& value) { SetColor(std::move(value)); return *this;}
-    inline DataColor& WithColor(const char* value) { SetColor(value); return *this;}
+    template<typename ColorT = Aws::String>
+    void SetColor(ColorT&& value) { m_colorHasBeenSet = true; m_color = std::forward<ColorT>(value); }
+    template<typename ColorT = Aws::String>
+    DataColor& WithColor(ColorT&& value) { SetColor(std::forward<ColorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data value that the color is applied to.</p>
      */
-    inline double GetDataValue() const{ return m_dataValue; }
+    inline double GetDataValue() const { return m_dataValue; }
     inline bool DataValueHasBeenSet() const { return m_dataValueHasBeenSet; }
     inline void SetDataValue(double value) { m_dataValueHasBeenSet = true; m_dataValue = value; }
     inline DataColor& WithDataValue(double value) { SetDataValue(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     Aws::String m_color;
     bool m_colorHasBeenSet = false;
 
-    double m_dataValue;
+    double m_dataValue{0.0};
     bool m_dataValueHasBeenSet = false;
   };
 

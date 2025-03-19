@@ -18,17 +18,7 @@ namespace ResourceGroups
 namespace Model
 {
 
-GroupConfiguration::GroupConfiguration() : 
-    m_configurationHasBeenSet(false),
-    m_proposedConfigurationHasBeenSet(false),
-    m_status(GroupConfigurationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
-{
-}
-
 GroupConfiguration::GroupConfiguration(JsonView jsonValue)
-  : GroupConfiguration()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ GroupConfiguration& GroupConfiguration::operator =(JsonView jsonValue)
     }
     m_configurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProposedConfiguration"))
   {
     Aws::Utils::Array<JsonView> proposedConfigurationJsonList = jsonValue.GetArray("ProposedConfiguration");
@@ -54,21 +43,16 @@ GroupConfiguration& GroupConfiguration::operator =(JsonView jsonValue)
     }
     m_proposedConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = GroupConfigurationStatusMapper::GetGroupConfigurationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

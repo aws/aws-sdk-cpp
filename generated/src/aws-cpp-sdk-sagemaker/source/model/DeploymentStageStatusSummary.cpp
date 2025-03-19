@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DeploymentStageStatusSummary::DeploymentStageStatusSummary() : 
-    m_stageNameHasBeenSet(false),
-    m_deviceSelectionConfigHasBeenSet(false),
-    m_deploymentConfigHasBeenSet(false),
-    m_deploymentStatusHasBeenSet(false)
-{
-}
-
 DeploymentStageStatusSummary::DeploymentStageStatusSummary(JsonView jsonValue)
-  : DeploymentStageStatusSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ DeploymentStageStatusSummary& DeploymentStageStatusSummary::operator =(JsonView 
   if(jsonValue.ValueExists("StageName"))
   {
     m_stageName = jsonValue.GetString("StageName");
-
     m_stageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceSelectionConfig"))
   {
     m_deviceSelectionConfig = jsonValue.GetObject("DeviceSelectionConfig");
-
     m_deviceSelectionConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentConfig"))
   {
     m_deploymentConfig = jsonValue.GetObject("DeploymentConfig");
-
     m_deploymentConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentStatus"))
   {
     m_deploymentStatus = jsonValue.GetObject("DeploymentStatus");
-
     m_deploymentStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

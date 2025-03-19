@@ -18,20 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-ClassificationResult::ClassificationResult() : 
-    m_additionalOccurrences(false),
-    m_additionalOccurrencesHasBeenSet(false),
-    m_customDataIdentifiersHasBeenSet(false),
-    m_mimeTypeHasBeenSet(false),
-    m_sensitiveDataHasBeenSet(false),
-    m_sizeClassified(0),
-    m_sizeClassifiedHasBeenSet(false),
-    m_statusHasBeenSet(false)
-{
-}
-
 ClassificationResult::ClassificationResult(JsonView jsonValue)
-  : ClassificationResult()
 {
   *this = jsonValue;
 }
@@ -41,24 +28,18 @@ ClassificationResult& ClassificationResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("additionalOccurrences"))
   {
     m_additionalOccurrences = jsonValue.GetBool("additionalOccurrences");
-
     m_additionalOccurrencesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customDataIdentifiers"))
   {
     m_customDataIdentifiers = jsonValue.GetObject("customDataIdentifiers");
-
     m_customDataIdentifiersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mimeType"))
   {
     m_mimeType = jsonValue.GetString("mimeType");
-
     m_mimeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sensitiveData"))
   {
     Aws::Utils::Array<JsonView> sensitiveDataJsonList = jsonValue.GetArray("sensitiveData");
@@ -68,21 +49,16 @@ ClassificationResult& ClassificationResult::operator =(JsonView jsonValue)
     }
     m_sensitiveDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sizeClassified"))
   {
     m_sizeClassified = jsonValue.GetInt64("sizeClassified");
-
     m_sizeClassifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

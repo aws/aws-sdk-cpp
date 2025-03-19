@@ -34,7 +34,7 @@ namespace Model
   class RecoveryLifeCycle
   {
   public:
-    AWS_DRS_API RecoveryLifeCycle();
+    AWS_DRS_API RecoveryLifeCycle() = default;
     AWS_DRS_API RecoveryLifeCycle(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API RecoveryLifeCycle& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,48 +44,44 @@ namespace Model
     /**
      * <p>The date and time the last Source Network recovery was initiated.</p>
      */
-    inline const Aws::Utils::DateTime& GetApiCallDateTime() const{ return m_apiCallDateTime; }
+    inline const Aws::Utils::DateTime& GetApiCallDateTime() const { return m_apiCallDateTime; }
     inline bool ApiCallDateTimeHasBeenSet() const { return m_apiCallDateTimeHasBeenSet; }
-    inline void SetApiCallDateTime(const Aws::Utils::DateTime& value) { m_apiCallDateTimeHasBeenSet = true; m_apiCallDateTime = value; }
-    inline void SetApiCallDateTime(Aws::Utils::DateTime&& value) { m_apiCallDateTimeHasBeenSet = true; m_apiCallDateTime = std::move(value); }
-    inline RecoveryLifeCycle& WithApiCallDateTime(const Aws::Utils::DateTime& value) { SetApiCallDateTime(value); return *this;}
-    inline RecoveryLifeCycle& WithApiCallDateTime(Aws::Utils::DateTime&& value) { SetApiCallDateTime(std::move(value)); return *this;}
+    template<typename ApiCallDateTimeT = Aws::Utils::DateTime>
+    void SetApiCallDateTime(ApiCallDateTimeT&& value) { m_apiCallDateTimeHasBeenSet = true; m_apiCallDateTime = std::forward<ApiCallDateTimeT>(value); }
+    template<typename ApiCallDateTimeT = Aws::Utils::DateTime>
+    RecoveryLifeCycle& WithApiCallDateTime(ApiCallDateTimeT&& value) { SetApiCallDateTime(std::forward<ApiCallDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Job that was used to last recover the Source Network.</p>
      */
-    inline const Aws::String& GetJobID() const{ return m_jobID; }
+    inline const Aws::String& GetJobID() const { return m_jobID; }
     inline bool JobIDHasBeenSet() const { return m_jobIDHasBeenSet; }
-    inline void SetJobID(const Aws::String& value) { m_jobIDHasBeenSet = true; m_jobID = value; }
-    inline void SetJobID(Aws::String&& value) { m_jobIDHasBeenSet = true; m_jobID = std::move(value); }
-    inline void SetJobID(const char* value) { m_jobIDHasBeenSet = true; m_jobID.assign(value); }
-    inline RecoveryLifeCycle& WithJobID(const Aws::String& value) { SetJobID(value); return *this;}
-    inline RecoveryLifeCycle& WithJobID(Aws::String&& value) { SetJobID(std::move(value)); return *this;}
-    inline RecoveryLifeCycle& WithJobID(const char* value) { SetJobID(value); return *this;}
+    template<typename JobIDT = Aws::String>
+    void SetJobID(JobIDT&& value) { m_jobIDHasBeenSet = true; m_jobID = std::forward<JobIDT>(value); }
+    template<typename JobIDT = Aws::String>
+    RecoveryLifeCycle& WithJobID(JobIDT&& value) { SetJobID(std::forward<JobIDT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the last recovery status of this Source Network.</p>
      */
-    inline const RecoveryResult& GetLastRecoveryResult() const{ return m_lastRecoveryResult; }
+    inline RecoveryResult GetLastRecoveryResult() const { return m_lastRecoveryResult; }
     inline bool LastRecoveryResultHasBeenSet() const { return m_lastRecoveryResultHasBeenSet; }
-    inline void SetLastRecoveryResult(const RecoveryResult& value) { m_lastRecoveryResultHasBeenSet = true; m_lastRecoveryResult = value; }
-    inline void SetLastRecoveryResult(RecoveryResult&& value) { m_lastRecoveryResultHasBeenSet = true; m_lastRecoveryResult = std::move(value); }
-    inline RecoveryLifeCycle& WithLastRecoveryResult(const RecoveryResult& value) { SetLastRecoveryResult(value); return *this;}
-    inline RecoveryLifeCycle& WithLastRecoveryResult(RecoveryResult&& value) { SetLastRecoveryResult(std::move(value)); return *this;}
+    inline void SetLastRecoveryResult(RecoveryResult value) { m_lastRecoveryResultHasBeenSet = true; m_lastRecoveryResult = value; }
+    inline RecoveryLifeCycle& WithLastRecoveryResult(RecoveryResult value) { SetLastRecoveryResult(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_apiCallDateTime;
+    Aws::Utils::DateTime m_apiCallDateTime{};
     bool m_apiCallDateTimeHasBeenSet = false;
 
     Aws::String m_jobID;
     bool m_jobIDHasBeenSet = false;
 
-    RecoveryResult m_lastRecoveryResult;
+    RecoveryResult m_lastRecoveryResult{RecoveryResult::NOT_SET};
     bool m_lastRecoveryResultHasBeenSet = false;
   };
 

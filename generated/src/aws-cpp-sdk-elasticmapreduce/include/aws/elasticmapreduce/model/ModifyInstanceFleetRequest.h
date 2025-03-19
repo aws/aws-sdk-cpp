@@ -22,7 +22,7 @@ namespace Model
   class ModifyInstanceFleetRequest : public EMRRequest
   {
   public:
-    AWS_EMR_API ModifyInstanceFleetRequest();
+    AWS_EMR_API ModifyInstanceFleetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,26 +39,24 @@ namespace Model
     /**
      * <p>The unique identifier of the cluster.</p>
      */
-    inline const Aws::String& GetClusterId() const{ return m_clusterId; }
+    inline const Aws::String& GetClusterId() const { return m_clusterId; }
     inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
-    inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
-    inline void SetClusterId(Aws::String&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::move(value); }
-    inline void SetClusterId(const char* value) { m_clusterIdHasBeenSet = true; m_clusterId.assign(value); }
-    inline ModifyInstanceFleetRequest& WithClusterId(const Aws::String& value) { SetClusterId(value); return *this;}
-    inline ModifyInstanceFleetRequest& WithClusterId(Aws::String&& value) { SetClusterId(std::move(value)); return *this;}
-    inline ModifyInstanceFleetRequest& WithClusterId(const char* value) { SetClusterId(value); return *this;}
+    template<typename ClusterIdT = Aws::String>
+    void SetClusterId(ClusterIdT&& value) { m_clusterIdHasBeenSet = true; m_clusterId = std::forward<ClusterIdT>(value); }
+    template<typename ClusterIdT = Aws::String>
+    ModifyInstanceFleetRequest& WithClusterId(ClusterIdT&& value) { SetClusterId(std::forward<ClusterIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration parameters of the instance fleet.</p>
      */
-    inline const InstanceFleetModifyConfig& GetInstanceFleet() const{ return m_instanceFleet; }
+    inline const InstanceFleetModifyConfig& GetInstanceFleet() const { return m_instanceFleet; }
     inline bool InstanceFleetHasBeenSet() const { return m_instanceFleetHasBeenSet; }
-    inline void SetInstanceFleet(const InstanceFleetModifyConfig& value) { m_instanceFleetHasBeenSet = true; m_instanceFleet = value; }
-    inline void SetInstanceFleet(InstanceFleetModifyConfig&& value) { m_instanceFleetHasBeenSet = true; m_instanceFleet = std::move(value); }
-    inline ModifyInstanceFleetRequest& WithInstanceFleet(const InstanceFleetModifyConfig& value) { SetInstanceFleet(value); return *this;}
-    inline ModifyInstanceFleetRequest& WithInstanceFleet(InstanceFleetModifyConfig&& value) { SetInstanceFleet(std::move(value)); return *this;}
+    template<typename InstanceFleetT = InstanceFleetModifyConfig>
+    void SetInstanceFleet(InstanceFleetT&& value) { m_instanceFleetHasBeenSet = true; m_instanceFleet = std::forward<InstanceFleetT>(value); }
+    template<typename InstanceFleetT = InstanceFleetModifyConfig>
+    ModifyInstanceFleetRequest& WithInstanceFleet(InstanceFleetT&& value) { SetInstanceFleet(std::forward<InstanceFleetT>(value)); return *this;}
     ///@}
   private:
 

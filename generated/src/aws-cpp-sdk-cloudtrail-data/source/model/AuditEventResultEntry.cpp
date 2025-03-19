@@ -18,14 +18,7 @@ namespace CloudTrailData
 namespace Model
 {
 
-AuditEventResultEntry::AuditEventResultEntry() : 
-    m_eventIDHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 AuditEventResultEntry::AuditEventResultEntry(JsonView jsonValue)
-  : AuditEventResultEntry()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AuditEventResultEntry& AuditEventResultEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eventID"))
   {
     m_eventID = jsonValue.GetString("eventID");
-
     m_eventIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

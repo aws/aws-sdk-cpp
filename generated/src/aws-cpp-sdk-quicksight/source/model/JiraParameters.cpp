@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-JiraParameters::JiraParameters() : 
-    m_siteBaseUrlHasBeenSet(false)
-{
-}
-
 JiraParameters::JiraParameters(JsonView jsonValue)
-  : JiraParameters()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ JiraParameters& JiraParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SiteBaseUrl"))
   {
     m_siteBaseUrl = jsonValue.GetString("SiteBaseUrl");
-
     m_siteBaseUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class GetAdapterRequest : public TextractRequest
   {
   public:
-    AWS_TEXTRACT_API GetAdapterRequest();
+    AWS_TEXTRACT_API GetAdapterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>A string containing a unique ID for the adapter.</p>
      */
-    inline const Aws::String& GetAdapterId() const{ return m_adapterId; }
+    inline const Aws::String& GetAdapterId() const { return m_adapterId; }
     inline bool AdapterIdHasBeenSet() const { return m_adapterIdHasBeenSet; }
-    inline void SetAdapterId(const Aws::String& value) { m_adapterIdHasBeenSet = true; m_adapterId = value; }
-    inline void SetAdapterId(Aws::String&& value) { m_adapterIdHasBeenSet = true; m_adapterId = std::move(value); }
-    inline void SetAdapterId(const char* value) { m_adapterIdHasBeenSet = true; m_adapterId.assign(value); }
-    inline GetAdapterRequest& WithAdapterId(const Aws::String& value) { SetAdapterId(value); return *this;}
-    inline GetAdapterRequest& WithAdapterId(Aws::String&& value) { SetAdapterId(std::move(value)); return *this;}
-    inline GetAdapterRequest& WithAdapterId(const char* value) { SetAdapterId(value); return *this;}
+    template<typename AdapterIdT = Aws::String>
+    void SetAdapterId(AdapterIdT&& value) { m_adapterIdHasBeenSet = true; m_adapterId = std::forward<AdapterIdT>(value); }
+    template<typename AdapterIdT = Aws::String>
+    GetAdapterRequest& WithAdapterId(AdapterIdT&& value) { SetAdapterId(std::forward<AdapterIdT>(value)); return *this;}
     ///@}
   private:
 

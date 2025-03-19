@@ -12,14 +12,6 @@ using namespace Aws::EventBridge::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEventBusRequest::UpdateEventBusRequest() : 
-    m_nameHasBeenSet(false),
-    m_kmsKeyIdentifierHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_deadLetterConfigHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEventBusRequest::SerializePayload() const
 {
   JsonValue payload;

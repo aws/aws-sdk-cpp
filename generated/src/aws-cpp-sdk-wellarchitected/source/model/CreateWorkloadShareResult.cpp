@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateWorkloadShareResult::CreateWorkloadShareResult()
-{
-}
-
 CreateWorkloadShareResult::CreateWorkloadShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateWorkloadShareResult& CreateWorkloadShareResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("WorkloadId"))
   {
     m_workloadId = jsonValue.GetString("WorkloadId");
-
+    m_workloadIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShareId"))
   {
     m_shareId = jsonValue.GetString("ShareId");
-
+    m_shareIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

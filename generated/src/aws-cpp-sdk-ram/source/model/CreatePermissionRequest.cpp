@@ -12,15 +12,6 @@ using namespace Aws::RAM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePermissionRequest::CreatePermissionRequest() : 
-    m_nameHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_policyTemplateHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreatePermissionRequest::SerializePayload() const
 {
   JsonValue payload;

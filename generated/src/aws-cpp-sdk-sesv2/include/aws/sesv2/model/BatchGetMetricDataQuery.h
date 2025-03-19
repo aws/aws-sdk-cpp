@@ -37,7 +37,7 @@ namespace Model
   class BatchGetMetricDataQuery
   {
   public:
-    AWS_SESV2_API BatchGetMetricDataQuery();
+    AWS_SESV2_API BatchGetMetricDataQuery() = default;
     AWS_SESV2_API BatchGetMetricDataQuery(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API BatchGetMetricDataQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,26 +47,22 @@ namespace Model
     /**
      * <p>The query identifier.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline BatchGetMetricDataQuery& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline BatchGetMetricDataQuery& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline BatchGetMetricDataQuery& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    BatchGetMetricDataQuery& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The query namespace - e.g. <code>VDM</code> </p>
      */
-    inline const MetricNamespace& GetNamespace() const{ return m_namespace; }
+    inline MetricNamespace GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const MetricNamespace& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(MetricNamespace&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline BatchGetMetricDataQuery& WithNamespace(const MetricNamespace& value) { SetNamespace(value); return *this;}
-    inline BatchGetMetricDataQuery& WithNamespace(MetricNamespace&& value) { SetNamespace(std::move(value)); return *this;}
+    inline void SetNamespace(MetricNamespace value) { m_namespaceHasBeenSet = true; m_namespace = value; }
+    inline BatchGetMetricDataQuery& WithNamespace(MetricNamespace value) { SetNamespace(value); return *this;}
     ///@}
 
     ///@{
@@ -103,12 +99,10 @@ namespace Model
      * more than one recipient, and emails addressed to recipients hosted by ISPs with
      * which Amazon SES does not have a feedback loop agreement.</p> </li> </ul>
      */
-    inline const Metric& GetMetric() const{ return m_metric; }
+    inline Metric GetMetric() const { return m_metric; }
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
-    inline void SetMetric(const Metric& value) { m_metricHasBeenSet = true; m_metric = value; }
-    inline void SetMetric(Metric&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
-    inline BatchGetMetricDataQuery& WithMetric(const Metric& value) { SetMetric(value); return *this;}
-    inline BatchGetMetricDataQuery& WithMetric(Metric&& value) { SetMetric(std::move(value)); return *this;}
+    inline void SetMetric(Metric value) { m_metricHasBeenSet = true; m_metric = value; }
+    inline BatchGetMetricDataQuery& WithMetric(Metric value) { SetMetric(value); return *this;}
     ///@}
 
     ///@{
@@ -116,61 +110,58 @@ namespace Model
      * <p>An object that contains mapping between <code>MetricDimensionName</code> and
      * <code>MetricDimensionValue</code> to filter metrics by.</p>
      */
-    inline const Aws::Map<MetricDimensionName, Aws::String>& GetDimensions() const{ return m_dimensions; }
+    inline const Aws::Map<MetricDimensionName, Aws::String>& GetDimensions() const { return m_dimensions; }
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-    inline void SetDimensions(const Aws::Map<MetricDimensionName, Aws::String>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-    inline void SetDimensions(Aws::Map<MetricDimensionName, Aws::String>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-    inline BatchGetMetricDataQuery& WithDimensions(const Aws::Map<MetricDimensionName, Aws::String>& value) { SetDimensions(value); return *this;}
-    inline BatchGetMetricDataQuery& WithDimensions(Aws::Map<MetricDimensionName, Aws::String>&& value) { SetDimensions(std::move(value)); return *this;}
-    inline BatchGetMetricDataQuery& AddDimensions(const MetricDimensionName& key, const Aws::String& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, value); return *this; }
-    inline BatchGetMetricDataQuery& AddDimensions(MetricDimensionName&& key, const Aws::String& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(std::move(key), value); return *this; }
-    inline BatchGetMetricDataQuery& AddDimensions(const MetricDimensionName& key, Aws::String&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, std::move(value)); return *this; }
-    inline BatchGetMetricDataQuery& AddDimensions(MetricDimensionName&& key, Aws::String&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(std::move(key), std::move(value)); return *this; }
-    inline BatchGetMetricDataQuery& AddDimensions(MetricDimensionName&& key, const char* value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(std::move(key), value); return *this; }
-    inline BatchGetMetricDataQuery& AddDimensions(const MetricDimensionName& key, const char* value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, value); return *this; }
+    template<typename DimensionsT = Aws::Map<MetricDimensionName, Aws::String>>
+    void SetDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::forward<DimensionsT>(value); }
+    template<typename DimensionsT = Aws::Map<MetricDimensionName, Aws::String>>
+    BatchGetMetricDataQuery& WithDimensions(DimensionsT&& value) { SetDimensions(std::forward<DimensionsT>(value)); return *this;}
+    inline BatchGetMetricDataQuery& AddDimensions(MetricDimensionName key, Aws::String value) {
+      m_dimensionsHasBeenSet = true; m_dimensions.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Represents the start date for the query interval.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartDate() const{ return m_startDate; }
+    inline const Aws::Utils::DateTime& GetStartDate() const { return m_startDate; }
     inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
-    inline void SetStartDate(const Aws::Utils::DateTime& value) { m_startDateHasBeenSet = true; m_startDate = value; }
-    inline void SetStartDate(Aws::Utils::DateTime&& value) { m_startDateHasBeenSet = true; m_startDate = std::move(value); }
-    inline BatchGetMetricDataQuery& WithStartDate(const Aws::Utils::DateTime& value) { SetStartDate(value); return *this;}
-    inline BatchGetMetricDataQuery& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
+    template<typename StartDateT = Aws::Utils::DateTime>
+    void SetStartDate(StartDateT&& value) { m_startDateHasBeenSet = true; m_startDate = std::forward<StartDateT>(value); }
+    template<typename StartDateT = Aws::Utils::DateTime>
+    BatchGetMetricDataQuery& WithStartDate(StartDateT&& value) { SetStartDate(std::forward<StartDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Represents the end date for the query interval.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndDate() const{ return m_endDate; }
+    inline const Aws::Utils::DateTime& GetEndDate() const { return m_endDate; }
     inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
-    inline void SetEndDate(const Aws::Utils::DateTime& value) { m_endDateHasBeenSet = true; m_endDate = value; }
-    inline void SetEndDate(Aws::Utils::DateTime&& value) { m_endDateHasBeenSet = true; m_endDate = std::move(value); }
-    inline BatchGetMetricDataQuery& WithEndDate(const Aws::Utils::DateTime& value) { SetEndDate(value); return *this;}
-    inline BatchGetMetricDataQuery& WithEndDate(Aws::Utils::DateTime&& value) { SetEndDate(std::move(value)); return *this;}
+    template<typename EndDateT = Aws::Utils::DateTime>
+    void SetEndDate(EndDateT&& value) { m_endDateHasBeenSet = true; m_endDate = std::forward<EndDateT>(value); }
+    template<typename EndDateT = Aws::Utils::DateTime>
+    BatchGetMetricDataQuery& WithEndDate(EndDateT&& value) { SetEndDate(std::forward<EndDateT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    MetricNamespace m_namespace;
+    MetricNamespace m_namespace{MetricNamespace::NOT_SET};
     bool m_namespaceHasBeenSet = false;
 
-    Metric m_metric;
+    Metric m_metric{Metric::NOT_SET};
     bool m_metricHasBeenSet = false;
 
     Aws::Map<MetricDimensionName, Aws::String> m_dimensions;
     bool m_dimensionsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startDate;
+    Aws::Utils::DateTime m_startDate{};
     bool m_startDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endDate;
+    Aws::Utils::DateTime m_endDate{};
     bool m_endDateHasBeenSet = false;
   };
 

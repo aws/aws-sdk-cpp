@@ -28,35 +28,35 @@ namespace Model
   class GetSecurityControlDefinitionResult
   {
   public:
-    AWS_SECURITYHUB_API GetSecurityControlDefinitionResult();
+    AWS_SECURITYHUB_API GetSecurityControlDefinitionResult() = default;
     AWS_SECURITYHUB_API GetSecurityControlDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECURITYHUB_API GetSecurityControlDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const SecurityControlDefinition& GetSecurityControlDefinition() const{ return m_securityControlDefinition; }
-    inline void SetSecurityControlDefinition(const SecurityControlDefinition& value) { m_securityControlDefinition = value; }
-    inline void SetSecurityControlDefinition(SecurityControlDefinition&& value) { m_securityControlDefinition = std::move(value); }
-    inline GetSecurityControlDefinitionResult& WithSecurityControlDefinition(const SecurityControlDefinition& value) { SetSecurityControlDefinition(value); return *this;}
-    inline GetSecurityControlDefinitionResult& WithSecurityControlDefinition(SecurityControlDefinition&& value) { SetSecurityControlDefinition(std::move(value)); return *this;}
+    inline const SecurityControlDefinition& GetSecurityControlDefinition() const { return m_securityControlDefinition; }
+    template<typename SecurityControlDefinitionT = SecurityControlDefinition>
+    void SetSecurityControlDefinition(SecurityControlDefinitionT&& value) { m_securityControlDefinitionHasBeenSet = true; m_securityControlDefinition = std::forward<SecurityControlDefinitionT>(value); }
+    template<typename SecurityControlDefinitionT = SecurityControlDefinition>
+    GetSecurityControlDefinitionResult& WithSecurityControlDefinition(SecurityControlDefinitionT&& value) { SetSecurityControlDefinition(std::forward<SecurityControlDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSecurityControlDefinitionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSecurityControlDefinitionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSecurityControlDefinitionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSecurityControlDefinitionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     SecurityControlDefinition m_securityControlDefinition;
+    bool m_securityControlDefinitionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

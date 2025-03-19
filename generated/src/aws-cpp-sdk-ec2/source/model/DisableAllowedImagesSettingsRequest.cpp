@@ -10,12 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DisableAllowedImagesSettingsRequest::DisableAllowedImagesSettingsRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DisableAllowedImagesSettingsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

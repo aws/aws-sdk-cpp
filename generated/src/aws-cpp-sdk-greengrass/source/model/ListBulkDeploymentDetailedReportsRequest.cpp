@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListBulkDeploymentDetailedReportsRequest::ListBulkDeploymentDetailedReportsRequest() : 
-    m_bulkDeploymentIdHasBeenSet(false),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListBulkDeploymentDetailedReportsRequest::SerializePayload() const
 {
   return {};

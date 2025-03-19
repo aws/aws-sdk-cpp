@@ -12,21 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ForecastGeofenceEventsRequest::ForecastGeofenceEventsRequest() : 
-    m_collectionNameHasBeenSet(false),
-    m_deviceStateHasBeenSet(false),
-    m_timeHorizonMinutes(0.0),
-    m_timeHorizonMinutesHasBeenSet(false),
-    m_distanceUnit(DistanceUnit::NOT_SET),
-    m_distanceUnitHasBeenSet(false),
-    m_speedUnit(SpeedUnit::NOT_SET),
-    m_speedUnitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ForecastGeofenceEventsRequest::SerializePayload() const
 {
   JsonValue payload;

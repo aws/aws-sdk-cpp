@@ -41,7 +41,7 @@ namespace Model
   class IpamDiscoveredResourceCidr
   {
   public:
-    AWS_EC2_API IpamDiscoveredResourceCidr();
+    AWS_EC2_API IpamDiscoveredResourceCidr() = default;
     AWS_EC2_API IpamDiscoveredResourceCidr(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API IpamDiscoveredResourceCidr& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -53,70 +53,60 @@ namespace Model
     /**
      * <p>The resource discovery ID.</p>
      */
-    inline const Aws::String& GetIpamResourceDiscoveryId() const{ return m_ipamResourceDiscoveryId; }
+    inline const Aws::String& GetIpamResourceDiscoveryId() const { return m_ipamResourceDiscoveryId; }
     inline bool IpamResourceDiscoveryIdHasBeenSet() const { return m_ipamResourceDiscoveryIdHasBeenSet; }
-    inline void SetIpamResourceDiscoveryId(const Aws::String& value) { m_ipamResourceDiscoveryIdHasBeenSet = true; m_ipamResourceDiscoveryId = value; }
-    inline void SetIpamResourceDiscoveryId(Aws::String&& value) { m_ipamResourceDiscoveryIdHasBeenSet = true; m_ipamResourceDiscoveryId = std::move(value); }
-    inline void SetIpamResourceDiscoveryId(const char* value) { m_ipamResourceDiscoveryIdHasBeenSet = true; m_ipamResourceDiscoveryId.assign(value); }
-    inline IpamDiscoveredResourceCidr& WithIpamResourceDiscoveryId(const Aws::String& value) { SetIpamResourceDiscoveryId(value); return *this;}
-    inline IpamDiscoveredResourceCidr& WithIpamResourceDiscoveryId(Aws::String&& value) { SetIpamResourceDiscoveryId(std::move(value)); return *this;}
-    inline IpamDiscoveredResourceCidr& WithIpamResourceDiscoveryId(const char* value) { SetIpamResourceDiscoveryId(value); return *this;}
+    template<typename IpamResourceDiscoveryIdT = Aws::String>
+    void SetIpamResourceDiscoveryId(IpamResourceDiscoveryIdT&& value) { m_ipamResourceDiscoveryIdHasBeenSet = true; m_ipamResourceDiscoveryId = std::forward<IpamResourceDiscoveryIdT>(value); }
+    template<typename IpamResourceDiscoveryIdT = Aws::String>
+    IpamDiscoveredResourceCidr& WithIpamResourceDiscoveryId(IpamResourceDiscoveryIdT&& value) { SetIpamResourceDiscoveryId(std::forward<IpamResourceDiscoveryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource Region.</p>
      */
-    inline const Aws::String& GetResourceRegion() const{ return m_resourceRegion; }
+    inline const Aws::String& GetResourceRegion() const { return m_resourceRegion; }
     inline bool ResourceRegionHasBeenSet() const { return m_resourceRegionHasBeenSet; }
-    inline void SetResourceRegion(const Aws::String& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion = value; }
-    inline void SetResourceRegion(Aws::String&& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion = std::move(value); }
-    inline void SetResourceRegion(const char* value) { m_resourceRegionHasBeenSet = true; m_resourceRegion.assign(value); }
-    inline IpamDiscoveredResourceCidr& WithResourceRegion(const Aws::String& value) { SetResourceRegion(value); return *this;}
-    inline IpamDiscoveredResourceCidr& WithResourceRegion(Aws::String&& value) { SetResourceRegion(std::move(value)); return *this;}
-    inline IpamDiscoveredResourceCidr& WithResourceRegion(const char* value) { SetResourceRegion(value); return *this;}
+    template<typename ResourceRegionT = Aws::String>
+    void SetResourceRegion(ResourceRegionT&& value) { m_resourceRegionHasBeenSet = true; m_resourceRegion = std::forward<ResourceRegionT>(value); }
+    template<typename ResourceRegionT = Aws::String>
+    IpamDiscoveredResourceCidr& WithResourceRegion(ResourceRegionT&& value) { SetResourceRegion(std::forward<ResourceRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource ID.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline IpamDiscoveredResourceCidr& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline IpamDiscoveredResourceCidr& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline IpamDiscoveredResourceCidr& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    IpamDiscoveredResourceCidr& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource owner ID.</p>
      */
-    inline const Aws::String& GetResourceOwnerId() const{ return m_resourceOwnerId; }
+    inline const Aws::String& GetResourceOwnerId() const { return m_resourceOwnerId; }
     inline bool ResourceOwnerIdHasBeenSet() const { return m_resourceOwnerIdHasBeenSet; }
-    inline void SetResourceOwnerId(const Aws::String& value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId = value; }
-    inline void SetResourceOwnerId(Aws::String&& value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId = std::move(value); }
-    inline void SetResourceOwnerId(const char* value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId.assign(value); }
-    inline IpamDiscoveredResourceCidr& WithResourceOwnerId(const Aws::String& value) { SetResourceOwnerId(value); return *this;}
-    inline IpamDiscoveredResourceCidr& WithResourceOwnerId(Aws::String&& value) { SetResourceOwnerId(std::move(value)); return *this;}
-    inline IpamDiscoveredResourceCidr& WithResourceOwnerId(const char* value) { SetResourceOwnerId(value); return *this;}
+    template<typename ResourceOwnerIdT = Aws::String>
+    void SetResourceOwnerId(ResourceOwnerIdT&& value) { m_resourceOwnerIdHasBeenSet = true; m_resourceOwnerId = std::forward<ResourceOwnerIdT>(value); }
+    template<typename ResourceOwnerIdT = Aws::String>
+    IpamDiscoveredResourceCidr& WithResourceOwnerId(ResourceOwnerIdT&& value) { SetResourceOwnerId(std::forward<ResourceOwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource CIDR.</p>
      */
-    inline const Aws::String& GetResourceCidr() const{ return m_resourceCidr; }
+    inline const Aws::String& GetResourceCidr() const { return m_resourceCidr; }
     inline bool ResourceCidrHasBeenSet() const { return m_resourceCidrHasBeenSet; }
-    inline void SetResourceCidr(const Aws::String& value) { m_resourceCidrHasBeenSet = true; m_resourceCidr = value; }
-    inline void SetResourceCidr(Aws::String&& value) { m_resourceCidrHasBeenSet = true; m_resourceCidr = std::move(value); }
-    inline void SetResourceCidr(const char* value) { m_resourceCidrHasBeenSet = true; m_resourceCidr.assign(value); }
-    inline IpamDiscoveredResourceCidr& WithResourceCidr(const Aws::String& value) { SetResourceCidr(value); return *this;}
-    inline IpamDiscoveredResourceCidr& WithResourceCidr(Aws::String&& value) { SetResourceCidr(std::move(value)); return *this;}
-    inline IpamDiscoveredResourceCidr& WithResourceCidr(const char* value) { SetResourceCidr(value); return *this;}
+    template<typename ResourceCidrT = Aws::String>
+    void SetResourceCidr(ResourceCidrT&& value) { m_resourceCidrHasBeenSet = true; m_resourceCidr = std::forward<ResourceCidrT>(value); }
+    template<typename ResourceCidrT = Aws::String>
+    IpamDiscoveredResourceCidr& WithResourceCidr(ResourceCidrT&& value) { SetResourceCidr(std::forward<ResourceCidrT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -126,38 +116,34 @@ namespace Model
      * space that you have allocated with Bring your own IP (BYOIP). <code>none</code>
      * indicates private space.</p>
      */
-    inline const IpamResourceCidrIpSource& GetIpSource() const{ return m_ipSource; }
+    inline IpamResourceCidrIpSource GetIpSource() const { return m_ipSource; }
     inline bool IpSourceHasBeenSet() const { return m_ipSourceHasBeenSet; }
-    inline void SetIpSource(const IpamResourceCidrIpSource& value) { m_ipSourceHasBeenSet = true; m_ipSource = value; }
-    inline void SetIpSource(IpamResourceCidrIpSource&& value) { m_ipSourceHasBeenSet = true; m_ipSource = std::move(value); }
-    inline IpamDiscoveredResourceCidr& WithIpSource(const IpamResourceCidrIpSource& value) { SetIpSource(value); return *this;}
-    inline IpamDiscoveredResourceCidr& WithIpSource(IpamResourceCidrIpSource&& value) { SetIpSource(std::move(value)); return *this;}
+    inline void SetIpSource(IpamResourceCidrIpSource value) { m_ipSourceHasBeenSet = true; m_ipSource = value; }
+    inline IpamDiscoveredResourceCidr& WithIpSource(IpamResourceCidrIpSource value) { SetIpSource(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource type.</p>
      */
-    inline const IpamResourceType& GetResourceType() const{ return m_resourceType; }
+    inline IpamResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const IpamResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(IpamResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline IpamDiscoveredResourceCidr& WithResourceType(const IpamResourceType& value) { SetResourceType(value); return *this;}
-    inline IpamDiscoveredResourceCidr& WithResourceType(IpamResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(IpamResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline IpamDiscoveredResourceCidr& WithResourceType(IpamResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource tags.</p>
      */
-    inline const Aws::Vector<IpamResourceTag>& GetResourceTags() const{ return m_resourceTags; }
+    inline const Aws::Vector<IpamResourceTag>& GetResourceTags() const { return m_resourceTags; }
     inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
-    inline void SetResourceTags(const Aws::Vector<IpamResourceTag>& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = value; }
-    inline void SetResourceTags(Aws::Vector<IpamResourceTag>&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::move(value); }
-    inline IpamDiscoveredResourceCidr& WithResourceTags(const Aws::Vector<IpamResourceTag>& value) { SetResourceTags(value); return *this;}
-    inline IpamDiscoveredResourceCidr& WithResourceTags(Aws::Vector<IpamResourceTag>&& value) { SetResourceTags(std::move(value)); return *this;}
-    inline IpamDiscoveredResourceCidr& AddResourceTags(const IpamResourceTag& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(value); return *this; }
-    inline IpamDiscoveredResourceCidr& AddResourceTags(IpamResourceTag&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.push_back(std::move(value)); return *this; }
+    template<typename ResourceTagsT = Aws::Vector<IpamResourceTag>>
+    void SetResourceTags(ResourceTagsT&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags = std::forward<ResourceTagsT>(value); }
+    template<typename ResourceTagsT = Aws::Vector<IpamResourceTag>>
+    IpamDiscoveredResourceCidr& WithResourceTags(ResourceTagsT&& value) { SetResourceTags(std::forward<ResourceTagsT>(value)); return *this;}
+    template<typename ResourceTagsT = IpamResourceTag>
+    IpamDiscoveredResourceCidr& AddResourceTags(ResourceTagsT&& value) { m_resourceTagsHasBeenSet = true; m_resourceTags.emplace_back(std::forward<ResourceTagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -174,7 +160,7 @@ namespace Model
      * the percentage of IP address space in the pool that's been allocated to Elastic
      * IP addresses (EIPs). </p> </li> </ul>
      */
-    inline double GetIpUsage() const{ return m_ipUsage; }
+    inline double GetIpUsage() const { return m_ipUsage; }
     inline bool IpUsageHasBeenSet() const { return m_ipUsageHasBeenSet; }
     inline void SetIpUsage(double value) { m_ipUsageHasBeenSet = true; m_ipUsage = value; }
     inline IpamDiscoveredResourceCidr& WithIpUsage(double value) { SetIpUsage(value); return *this;}
@@ -184,28 +170,24 @@ namespace Model
     /**
      * <p>The VPC ID.</p>
      */
-    inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+    inline const Aws::String& GetVpcId() const { return m_vpcId; }
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
-    inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
-    inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
-    inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
-    inline IpamDiscoveredResourceCidr& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
-    inline IpamDiscoveredResourceCidr& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
-    inline IpamDiscoveredResourceCidr& WithVpcId(const char* value) { SetVpcId(value); return *this;}
+    template<typename VpcIdT = Aws::String>
+    void SetVpcId(VpcIdT&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::forward<VpcIdT>(value); }
+    template<typename VpcIdT = Aws::String>
+    IpamDiscoveredResourceCidr& WithVpcId(VpcIdT&& value) { SetVpcId(std::forward<VpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The subnet ID.</p>
      */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+    inline const Aws::String& GetSubnetId() const { return m_subnetId; }
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-    inline IpamDiscoveredResourceCidr& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-    inline IpamDiscoveredResourceCidr& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-    inline IpamDiscoveredResourceCidr& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    template<typename SubnetIdT = Aws::String>
+    void SetSubnetId(SubnetIdT&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::forward<SubnetIdT>(value); }
+    template<typename SubnetIdT = Aws::String>
+    IpamDiscoveredResourceCidr& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -213,38 +195,34 @@ namespace Model
      * <p>For elastic network interfaces, this is the status of whether or not the
      * elastic network interface is attached.</p>
      */
-    inline const IpamNetworkInterfaceAttachmentStatus& GetNetworkInterfaceAttachmentStatus() const{ return m_networkInterfaceAttachmentStatus; }
+    inline IpamNetworkInterfaceAttachmentStatus GetNetworkInterfaceAttachmentStatus() const { return m_networkInterfaceAttachmentStatus; }
     inline bool NetworkInterfaceAttachmentStatusHasBeenSet() const { return m_networkInterfaceAttachmentStatusHasBeenSet; }
-    inline void SetNetworkInterfaceAttachmentStatus(const IpamNetworkInterfaceAttachmentStatus& value) { m_networkInterfaceAttachmentStatusHasBeenSet = true; m_networkInterfaceAttachmentStatus = value; }
-    inline void SetNetworkInterfaceAttachmentStatus(IpamNetworkInterfaceAttachmentStatus&& value) { m_networkInterfaceAttachmentStatusHasBeenSet = true; m_networkInterfaceAttachmentStatus = std::move(value); }
-    inline IpamDiscoveredResourceCidr& WithNetworkInterfaceAttachmentStatus(const IpamNetworkInterfaceAttachmentStatus& value) { SetNetworkInterfaceAttachmentStatus(value); return *this;}
-    inline IpamDiscoveredResourceCidr& WithNetworkInterfaceAttachmentStatus(IpamNetworkInterfaceAttachmentStatus&& value) { SetNetworkInterfaceAttachmentStatus(std::move(value)); return *this;}
+    inline void SetNetworkInterfaceAttachmentStatus(IpamNetworkInterfaceAttachmentStatus value) { m_networkInterfaceAttachmentStatusHasBeenSet = true; m_networkInterfaceAttachmentStatus = value; }
+    inline IpamDiscoveredResourceCidr& WithNetworkInterfaceAttachmentStatus(IpamNetworkInterfaceAttachmentStatus value) { SetNetworkInterfaceAttachmentStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The last successful resource discovery time.</p>
      */
-    inline const Aws::Utils::DateTime& GetSampleTime() const{ return m_sampleTime; }
+    inline const Aws::Utils::DateTime& GetSampleTime() const { return m_sampleTime; }
     inline bool SampleTimeHasBeenSet() const { return m_sampleTimeHasBeenSet; }
-    inline void SetSampleTime(const Aws::Utils::DateTime& value) { m_sampleTimeHasBeenSet = true; m_sampleTime = value; }
-    inline void SetSampleTime(Aws::Utils::DateTime&& value) { m_sampleTimeHasBeenSet = true; m_sampleTime = std::move(value); }
-    inline IpamDiscoveredResourceCidr& WithSampleTime(const Aws::Utils::DateTime& value) { SetSampleTime(value); return *this;}
-    inline IpamDiscoveredResourceCidr& WithSampleTime(Aws::Utils::DateTime&& value) { SetSampleTime(std::move(value)); return *this;}
+    template<typename SampleTimeT = Aws::Utils::DateTime>
+    void SetSampleTime(SampleTimeT&& value) { m_sampleTimeHasBeenSet = true; m_sampleTime = std::forward<SampleTimeT>(value); }
+    template<typename SampleTimeT = Aws::Utils::DateTime>
+    IpamDiscoveredResourceCidr& WithSampleTime(SampleTimeT&& value) { SetSampleTime(std::forward<SampleTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Availability Zone ID.</p>
      */
-    inline const Aws::String& GetAvailabilityZoneId() const{ return m_availabilityZoneId; }
+    inline const Aws::String& GetAvailabilityZoneId() const { return m_availabilityZoneId; }
     inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
-    inline void SetAvailabilityZoneId(const Aws::String& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = value; }
-    inline void SetAvailabilityZoneId(Aws::String&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::move(value); }
-    inline void SetAvailabilityZoneId(const char* value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId.assign(value); }
-    inline IpamDiscoveredResourceCidr& WithAvailabilityZoneId(const Aws::String& value) { SetAvailabilityZoneId(value); return *this;}
-    inline IpamDiscoveredResourceCidr& WithAvailabilityZoneId(Aws::String&& value) { SetAvailabilityZoneId(std::move(value)); return *this;}
-    inline IpamDiscoveredResourceCidr& WithAvailabilityZoneId(const char* value) { SetAvailabilityZoneId(value); return *this;}
+    template<typename AvailabilityZoneIdT = Aws::String>
+    void SetAvailabilityZoneId(AvailabilityZoneIdT&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::forward<AvailabilityZoneIdT>(value); }
+    template<typename AvailabilityZoneIdT = Aws::String>
+    IpamDiscoveredResourceCidr& WithAvailabilityZoneId(AvailabilityZoneIdT&& value) { SetAvailabilityZoneId(std::forward<AvailabilityZoneIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -263,16 +241,16 @@ namespace Model
     Aws::String m_resourceCidr;
     bool m_resourceCidrHasBeenSet = false;
 
-    IpamResourceCidrIpSource m_ipSource;
+    IpamResourceCidrIpSource m_ipSource{IpamResourceCidrIpSource::NOT_SET};
     bool m_ipSourceHasBeenSet = false;
 
-    IpamResourceType m_resourceType;
+    IpamResourceType m_resourceType{IpamResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<IpamResourceTag> m_resourceTags;
     bool m_resourceTagsHasBeenSet = false;
 
-    double m_ipUsage;
+    double m_ipUsage{0.0};
     bool m_ipUsageHasBeenSet = false;
 
     Aws::String m_vpcId;
@@ -281,10 +259,10 @@ namespace Model
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet = false;
 
-    IpamNetworkInterfaceAttachmentStatus m_networkInterfaceAttachmentStatus;
+    IpamNetworkInterfaceAttachmentStatus m_networkInterfaceAttachmentStatus{IpamNetworkInterfaceAttachmentStatus::NOT_SET};
     bool m_networkInterfaceAttachmentStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_sampleTime;
+    Aws::Utils::DateTime m_sampleTime{};
     bool m_sampleTimeHasBeenSet = false;
 
     Aws::String m_availabilityZoneId;

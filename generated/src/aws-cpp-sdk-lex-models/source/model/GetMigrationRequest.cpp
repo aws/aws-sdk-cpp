@@ -12,11 +12,6 @@ using namespace Aws::LexModelBuildingService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMigrationRequest::GetMigrationRequest() : 
-    m_migrationIdHasBeenSet(false)
-{
-}
-
 Aws::String GetMigrationRequest::SerializePayload() const
 {
   return {};

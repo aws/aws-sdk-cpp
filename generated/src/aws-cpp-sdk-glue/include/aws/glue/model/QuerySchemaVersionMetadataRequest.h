@@ -25,7 +25,7 @@ namespace Model
   class QuerySchemaVersionMetadataRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API QuerySchemaVersionMetadataRequest();
+    AWS_GLUE_API QuerySchemaVersionMetadataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,38 +43,36 @@ namespace Model
      * <p>A wrapper structure that may contain the schema name and Amazon Resource Name
      * (ARN).</p>
      */
-    inline const SchemaId& GetSchemaId() const{ return m_schemaId; }
+    inline const SchemaId& GetSchemaId() const { return m_schemaId; }
     inline bool SchemaIdHasBeenSet() const { return m_schemaIdHasBeenSet; }
-    inline void SetSchemaId(const SchemaId& value) { m_schemaIdHasBeenSet = true; m_schemaId = value; }
-    inline void SetSchemaId(SchemaId&& value) { m_schemaIdHasBeenSet = true; m_schemaId = std::move(value); }
-    inline QuerySchemaVersionMetadataRequest& WithSchemaId(const SchemaId& value) { SetSchemaId(value); return *this;}
-    inline QuerySchemaVersionMetadataRequest& WithSchemaId(SchemaId&& value) { SetSchemaId(std::move(value)); return *this;}
+    template<typename SchemaIdT = SchemaId>
+    void SetSchemaId(SchemaIdT&& value) { m_schemaIdHasBeenSet = true; m_schemaId = std::forward<SchemaIdT>(value); }
+    template<typename SchemaIdT = SchemaId>
+    QuerySchemaVersionMetadataRequest& WithSchemaId(SchemaIdT&& value) { SetSchemaId(std::forward<SchemaIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version number of the schema.</p>
      */
-    inline const SchemaVersionNumber& GetSchemaVersionNumber() const{ return m_schemaVersionNumber; }
+    inline const SchemaVersionNumber& GetSchemaVersionNumber() const { return m_schemaVersionNumber; }
     inline bool SchemaVersionNumberHasBeenSet() const { return m_schemaVersionNumberHasBeenSet; }
-    inline void SetSchemaVersionNumber(const SchemaVersionNumber& value) { m_schemaVersionNumberHasBeenSet = true; m_schemaVersionNumber = value; }
-    inline void SetSchemaVersionNumber(SchemaVersionNumber&& value) { m_schemaVersionNumberHasBeenSet = true; m_schemaVersionNumber = std::move(value); }
-    inline QuerySchemaVersionMetadataRequest& WithSchemaVersionNumber(const SchemaVersionNumber& value) { SetSchemaVersionNumber(value); return *this;}
-    inline QuerySchemaVersionMetadataRequest& WithSchemaVersionNumber(SchemaVersionNumber&& value) { SetSchemaVersionNumber(std::move(value)); return *this;}
+    template<typename SchemaVersionNumberT = SchemaVersionNumber>
+    void SetSchemaVersionNumber(SchemaVersionNumberT&& value) { m_schemaVersionNumberHasBeenSet = true; m_schemaVersionNumber = std::forward<SchemaVersionNumberT>(value); }
+    template<typename SchemaVersionNumberT = SchemaVersionNumber>
+    QuerySchemaVersionMetadataRequest& WithSchemaVersionNumber(SchemaVersionNumberT&& value) { SetSchemaVersionNumber(std::forward<SchemaVersionNumberT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique version ID of the schema version.</p>
      */
-    inline const Aws::String& GetSchemaVersionId() const{ return m_schemaVersionId; }
+    inline const Aws::String& GetSchemaVersionId() const { return m_schemaVersionId; }
     inline bool SchemaVersionIdHasBeenSet() const { return m_schemaVersionIdHasBeenSet; }
-    inline void SetSchemaVersionId(const Aws::String& value) { m_schemaVersionIdHasBeenSet = true; m_schemaVersionId = value; }
-    inline void SetSchemaVersionId(Aws::String&& value) { m_schemaVersionIdHasBeenSet = true; m_schemaVersionId = std::move(value); }
-    inline void SetSchemaVersionId(const char* value) { m_schemaVersionIdHasBeenSet = true; m_schemaVersionId.assign(value); }
-    inline QuerySchemaVersionMetadataRequest& WithSchemaVersionId(const Aws::String& value) { SetSchemaVersionId(value); return *this;}
-    inline QuerySchemaVersionMetadataRequest& WithSchemaVersionId(Aws::String&& value) { SetSchemaVersionId(std::move(value)); return *this;}
-    inline QuerySchemaVersionMetadataRequest& WithSchemaVersionId(const char* value) { SetSchemaVersionId(value); return *this;}
+    template<typename SchemaVersionIdT = Aws::String>
+    void SetSchemaVersionId(SchemaVersionIdT&& value) { m_schemaVersionIdHasBeenSet = true; m_schemaVersionId = std::forward<SchemaVersionIdT>(value); }
+    template<typename SchemaVersionIdT = Aws::String>
+    QuerySchemaVersionMetadataRequest& WithSchemaVersionId(SchemaVersionIdT&& value) { SetSchemaVersionId(std::forward<SchemaVersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +80,14 @@ namespace Model
      * <p>Search key-value pairs for metadata, if they are not provided all the
      * metadata information will be fetched.</p>
      */
-    inline const Aws::Vector<MetadataKeyValuePair>& GetMetadataList() const{ return m_metadataList; }
+    inline const Aws::Vector<MetadataKeyValuePair>& GetMetadataList() const { return m_metadataList; }
     inline bool MetadataListHasBeenSet() const { return m_metadataListHasBeenSet; }
-    inline void SetMetadataList(const Aws::Vector<MetadataKeyValuePair>& value) { m_metadataListHasBeenSet = true; m_metadataList = value; }
-    inline void SetMetadataList(Aws::Vector<MetadataKeyValuePair>&& value) { m_metadataListHasBeenSet = true; m_metadataList = std::move(value); }
-    inline QuerySchemaVersionMetadataRequest& WithMetadataList(const Aws::Vector<MetadataKeyValuePair>& value) { SetMetadataList(value); return *this;}
-    inline QuerySchemaVersionMetadataRequest& WithMetadataList(Aws::Vector<MetadataKeyValuePair>&& value) { SetMetadataList(std::move(value)); return *this;}
-    inline QuerySchemaVersionMetadataRequest& AddMetadataList(const MetadataKeyValuePair& value) { m_metadataListHasBeenSet = true; m_metadataList.push_back(value); return *this; }
-    inline QuerySchemaVersionMetadataRequest& AddMetadataList(MetadataKeyValuePair&& value) { m_metadataListHasBeenSet = true; m_metadataList.push_back(std::move(value)); return *this; }
+    template<typename MetadataListT = Aws::Vector<MetadataKeyValuePair>>
+    void SetMetadataList(MetadataListT&& value) { m_metadataListHasBeenSet = true; m_metadataList = std::forward<MetadataListT>(value); }
+    template<typename MetadataListT = Aws::Vector<MetadataKeyValuePair>>
+    QuerySchemaVersionMetadataRequest& WithMetadataList(MetadataListT&& value) { SetMetadataList(std::forward<MetadataListT>(value)); return *this;}
+    template<typename MetadataListT = MetadataKeyValuePair>
+    QuerySchemaVersionMetadataRequest& AddMetadataList(MetadataListT&& value) { m_metadataListHasBeenSet = true; m_metadataList.emplace_back(std::forward<MetadataListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -97,7 +95,7 @@ namespace Model
      * <p>Maximum number of results required per page. If the value is not supplied,
      * this will be defaulted to 25 per page.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline QuerySchemaVersionMetadataRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -107,14 +105,12 @@ namespace Model
     /**
      * <p>A continuation token, if this is a continuation call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline QuerySchemaVersionMetadataRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline QuerySchemaVersionMetadataRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline QuerySchemaVersionMetadataRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    QuerySchemaVersionMetadataRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -130,7 +126,7 @@ namespace Model
     Aws::Vector<MetadataKeyValuePair> m_metadataList;
     bool m_metadataListHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

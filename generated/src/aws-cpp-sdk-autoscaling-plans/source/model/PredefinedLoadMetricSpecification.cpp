@@ -18,15 +18,7 @@ namespace AutoScalingPlans
 namespace Model
 {
 
-PredefinedLoadMetricSpecification::PredefinedLoadMetricSpecification() : 
-    m_predefinedLoadMetricType(LoadMetricType::NOT_SET),
-    m_predefinedLoadMetricTypeHasBeenSet(false),
-    m_resourceLabelHasBeenSet(false)
-{
-}
-
 PredefinedLoadMetricSpecification::PredefinedLoadMetricSpecification(JsonView jsonValue)
-  : PredefinedLoadMetricSpecification()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PredefinedLoadMetricSpecification& PredefinedLoadMetricSpecification::operator =
   if(jsonValue.ValueExists("PredefinedLoadMetricType"))
   {
     m_predefinedLoadMetricType = LoadMetricTypeMapper::GetLoadMetricTypeForName(jsonValue.GetString("PredefinedLoadMetricType"));
-
     m_predefinedLoadMetricTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceLabel"))
   {
     m_resourceLabel = jsonValue.GetString("ResourceLabel");
-
     m_resourceLabelHasBeenSet = true;
   }
-
   return *this;
 }
 

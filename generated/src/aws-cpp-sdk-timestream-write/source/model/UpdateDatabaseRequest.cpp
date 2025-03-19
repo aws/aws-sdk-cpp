@@ -12,12 +12,6 @@ using namespace Aws::TimestreamWrite::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDatabaseRequest::UpdateDatabaseRequest() : 
-    m_databaseNameHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDatabaseRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace AppRegistry
 namespace Model
 {
 
-ResourceDetails::ResourceDetails() : 
-    m_tagValueHasBeenSet(false)
-{
-}
-
 ResourceDetails::ResourceDetails(JsonView jsonValue)
-  : ResourceDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("tagValue"))
   {
     m_tagValue = jsonValue.GetString("tagValue");
-
     m_tagValueHasBeenSet = true;
   }
-
   return *this;
 }
 

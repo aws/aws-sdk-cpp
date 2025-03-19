@@ -33,7 +33,7 @@ namespace Model
   class DataProductSummary
   {
   public:
-    AWS_MARKETPLACECATALOG_API DataProductSummary();
+    AWS_MARKETPLACECATALOG_API DataProductSummary() = default;
     AWS_MARKETPLACECATALOG_API DataProductSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API DataProductSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p>The title of the data product.</p>
      */
-    inline const Aws::String& GetProductTitle() const{ return m_productTitle; }
+    inline const Aws::String& GetProductTitle() const { return m_productTitle; }
     inline bool ProductTitleHasBeenSet() const { return m_productTitleHasBeenSet; }
-    inline void SetProductTitle(const Aws::String& value) { m_productTitleHasBeenSet = true; m_productTitle = value; }
-    inline void SetProductTitle(Aws::String&& value) { m_productTitleHasBeenSet = true; m_productTitle = std::move(value); }
-    inline void SetProductTitle(const char* value) { m_productTitleHasBeenSet = true; m_productTitle.assign(value); }
-    inline DataProductSummary& WithProductTitle(const Aws::String& value) { SetProductTitle(value); return *this;}
-    inline DataProductSummary& WithProductTitle(Aws::String&& value) { SetProductTitle(std::move(value)); return *this;}
-    inline DataProductSummary& WithProductTitle(const char* value) { SetProductTitle(value); return *this;}
+    template<typename ProductTitleT = Aws::String>
+    void SetProductTitle(ProductTitleT&& value) { m_productTitleHasBeenSet = true; m_productTitle = std::forward<ProductTitleT>(value); }
+    template<typename ProductTitleT = Aws::String>
+    DataProductSummary& WithProductTitle(ProductTitleT&& value) { SetProductTitle(std::forward<ProductTitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The lifecycle of the data product.</p>
      */
-    inline const DataProductVisibilityString& GetVisibility() const{ return m_visibility; }
+    inline DataProductVisibilityString GetVisibility() const { return m_visibility; }
     inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
-    inline void SetVisibility(const DataProductVisibilityString& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
-    inline void SetVisibility(DataProductVisibilityString&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
-    inline DataProductSummary& WithVisibility(const DataProductVisibilityString& value) { SetVisibility(value); return *this;}
-    inline DataProductSummary& WithVisibility(DataProductVisibilityString&& value) { SetVisibility(std::move(value)); return *this;}
+    inline void SetVisibility(DataProductVisibilityString value) { m_visibilityHasBeenSet = true; m_visibility = value; }
+    inline DataProductSummary& WithVisibility(DataProductVisibilityString value) { SetVisibility(value); return *this;}
     ///@}
   private:
 
     Aws::String m_productTitle;
     bool m_productTitleHasBeenSet = false;
 
-    DataProductVisibilityString m_visibility;
+    DataProductVisibilityString m_visibility{DataProductVisibilityString::NOT_SET};
     bool m_visibilityHasBeenSet = false;
   };
 

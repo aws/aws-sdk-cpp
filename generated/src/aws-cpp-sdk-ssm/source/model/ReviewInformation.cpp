@@ -18,16 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ReviewInformation::ReviewInformation() : 
-    m_reviewedTimeHasBeenSet(false),
-    m_status(ReviewStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_reviewerHasBeenSet(false)
-{
-}
-
 ReviewInformation::ReviewInformation(JsonView jsonValue)
-  : ReviewInformation()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ReviewInformation& ReviewInformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReviewedTime"))
   {
     m_reviewedTime = jsonValue.GetDouble("ReviewedTime");
-
     m_reviewedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ReviewStatusMapper::GetReviewStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reviewer"))
   {
     m_reviewer = jsonValue.GetString("Reviewer");
-
     m_reviewerHasBeenSet = true;
   }
-
   return *this;
 }
 

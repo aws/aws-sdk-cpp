@@ -12,15 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartVoiceToneAnalysisTaskRequest::StartVoiceToneAnalysisTaskRequest() : 
-    m_voiceConnectorIdHasBeenSet(false),
-    m_transactionIdHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false)
-{
-}
-
 Aws::String StartVoiceToneAnalysisTaskRequest::SerializePayload() const
 {
   JsonValue payload;

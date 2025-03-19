@@ -27,52 +27,49 @@ namespace Model
   class CreateProfileShareResult
   {
   public:
-    AWS_WELLARCHITECTED_API CreateProfileShareResult();
+    AWS_WELLARCHITECTED_API CreateProfileShareResult() = default;
     AWS_WELLARCHITECTED_API CreateProfileShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WELLARCHITECTED_API CreateProfileShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetShareId() const{ return m_shareId; }
-    inline void SetShareId(const Aws::String& value) { m_shareId = value; }
-    inline void SetShareId(Aws::String&& value) { m_shareId = std::move(value); }
-    inline void SetShareId(const char* value) { m_shareId.assign(value); }
-    inline CreateProfileShareResult& WithShareId(const Aws::String& value) { SetShareId(value); return *this;}
-    inline CreateProfileShareResult& WithShareId(Aws::String&& value) { SetShareId(std::move(value)); return *this;}
-    inline CreateProfileShareResult& WithShareId(const char* value) { SetShareId(value); return *this;}
+    inline const Aws::String& GetShareId() const { return m_shareId; }
+    template<typename ShareIdT = Aws::String>
+    void SetShareId(ShareIdT&& value) { m_shareIdHasBeenSet = true; m_shareId = std::forward<ShareIdT>(value); }
+    template<typename ShareIdT = Aws::String>
+    CreateProfileShareResult& WithShareId(ShareIdT&& value) { SetShareId(std::forward<ShareIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The profile ARN.</p>
      */
-    inline const Aws::String& GetProfileArn() const{ return m_profileArn; }
-    inline void SetProfileArn(const Aws::String& value) { m_profileArn = value; }
-    inline void SetProfileArn(Aws::String&& value) { m_profileArn = std::move(value); }
-    inline void SetProfileArn(const char* value) { m_profileArn.assign(value); }
-    inline CreateProfileShareResult& WithProfileArn(const Aws::String& value) { SetProfileArn(value); return *this;}
-    inline CreateProfileShareResult& WithProfileArn(Aws::String&& value) { SetProfileArn(std::move(value)); return *this;}
-    inline CreateProfileShareResult& WithProfileArn(const char* value) { SetProfileArn(value); return *this;}
+    inline const Aws::String& GetProfileArn() const { return m_profileArn; }
+    template<typename ProfileArnT = Aws::String>
+    void SetProfileArn(ProfileArnT&& value) { m_profileArnHasBeenSet = true; m_profileArn = std::forward<ProfileArnT>(value); }
+    template<typename ProfileArnT = Aws::String>
+    CreateProfileShareResult& WithProfileArn(ProfileArnT&& value) { SetProfileArn(std::forward<ProfileArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateProfileShareResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateProfileShareResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateProfileShareResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateProfileShareResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_shareId;
+    bool m_shareIdHasBeenSet = false;
 
     Aws::String m_profileArn;
+    bool m_profileArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

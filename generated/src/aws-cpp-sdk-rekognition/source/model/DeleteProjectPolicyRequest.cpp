@@ -12,13 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteProjectPolicyRequest::DeleteProjectPolicyRequest() : 
-    m_projectArnHasBeenSet(false),
-    m_policyNameHasBeenSet(false),
-    m_policyRevisionIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteProjectPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

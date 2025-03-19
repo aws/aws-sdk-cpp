@@ -18,19 +18,7 @@ namespace IoT1ClickProjects
 namespace Model
 {
 
-ProjectDescription::ProjectDescription() : 
-    m_arnHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_updatedDateHasBeenSet(false),
-    m_placementTemplateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 ProjectDescription::ProjectDescription(JsonView jsonValue)
-  : ProjectDescription()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ ProjectDescription& ProjectDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectName"))
   {
     m_projectName = jsonValue.GetString("projectName");
-
     m_projectNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetDouble("createdDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedDate"))
   {
     m_updatedDate = jsonValue.GetDouble("updatedDate");
-
     m_updatedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("placementTemplate"))
   {
     m_placementTemplate = jsonValue.GetObject("placementTemplate");
-
     m_placementTemplateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -88,7 +64,6 @@ ProjectDescription& ProjectDescription::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -30,7 +30,7 @@ namespace Model
   class DescribeInstanceCreditSpecificationsResponse
   {
   public:
-    AWS_EC2_API DescribeInstanceCreditSpecificationsResponse();
+    AWS_EC2_API DescribeInstanceCreditSpecificationsResponse() = default;
     AWS_EC2_API DescribeInstanceCreditSpecificationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeInstanceCreditSpecificationsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>Information about the credit option for CPU usage of an instance.</p>
      */
-    inline const Aws::Vector<InstanceCreditSpecification>& GetInstanceCreditSpecifications() const{ return m_instanceCreditSpecifications; }
-    inline void SetInstanceCreditSpecifications(const Aws::Vector<InstanceCreditSpecification>& value) { m_instanceCreditSpecifications = value; }
-    inline void SetInstanceCreditSpecifications(Aws::Vector<InstanceCreditSpecification>&& value) { m_instanceCreditSpecifications = std::move(value); }
-    inline DescribeInstanceCreditSpecificationsResponse& WithInstanceCreditSpecifications(const Aws::Vector<InstanceCreditSpecification>& value) { SetInstanceCreditSpecifications(value); return *this;}
-    inline DescribeInstanceCreditSpecificationsResponse& WithInstanceCreditSpecifications(Aws::Vector<InstanceCreditSpecification>&& value) { SetInstanceCreditSpecifications(std::move(value)); return *this;}
-    inline DescribeInstanceCreditSpecificationsResponse& AddInstanceCreditSpecifications(const InstanceCreditSpecification& value) { m_instanceCreditSpecifications.push_back(value); return *this; }
-    inline DescribeInstanceCreditSpecificationsResponse& AddInstanceCreditSpecifications(InstanceCreditSpecification&& value) { m_instanceCreditSpecifications.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<InstanceCreditSpecification>& GetInstanceCreditSpecifications() const { return m_instanceCreditSpecifications; }
+    template<typename InstanceCreditSpecificationsT = Aws::Vector<InstanceCreditSpecification>>
+    void SetInstanceCreditSpecifications(InstanceCreditSpecificationsT&& value) { m_instanceCreditSpecificationsHasBeenSet = true; m_instanceCreditSpecifications = std::forward<InstanceCreditSpecificationsT>(value); }
+    template<typename InstanceCreditSpecificationsT = Aws::Vector<InstanceCreditSpecification>>
+    DescribeInstanceCreditSpecificationsResponse& WithInstanceCreditSpecifications(InstanceCreditSpecificationsT&& value) { SetInstanceCreditSpecifications(std::forward<InstanceCreditSpecificationsT>(value)); return *this;}
+    template<typename InstanceCreditSpecificationsT = InstanceCreditSpecification>
+    DescribeInstanceCreditSpecificationsResponse& AddInstanceCreditSpecifications(InstanceCreditSpecificationsT&& value) { m_instanceCreditSpecificationsHasBeenSet = true; m_instanceCreditSpecifications.emplace_back(std::forward<InstanceCreditSpecificationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * <p>The token to include in another request to get the next page of items. This
      * value is <code>null</code> when there are no more items to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeInstanceCreditSpecificationsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeInstanceCreditSpecificationsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeInstanceCreditSpecificationsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeInstanceCreditSpecificationsResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeInstanceCreditSpecificationsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeInstanceCreditSpecificationsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeInstanceCreditSpecificationsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<InstanceCreditSpecification> m_instanceCreditSpecifications;
+    bool m_instanceCreditSpecificationsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

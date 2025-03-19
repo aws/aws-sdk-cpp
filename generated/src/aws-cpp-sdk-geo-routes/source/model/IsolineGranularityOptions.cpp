@@ -18,16 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-IsolineGranularityOptions::IsolineGranularityOptions() : 
-    m_maxPoints(0),
-    m_maxPointsHasBeenSet(false),
-    m_maxResolution(0),
-    m_maxResolutionHasBeenSet(false)
-{
-}
-
 IsolineGranularityOptions::IsolineGranularityOptions(JsonView jsonValue)
-  : IsolineGranularityOptions()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ IsolineGranularityOptions& IsolineGranularityOptions::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("MaxPoints"))
   {
     m_maxPoints = jsonValue.GetInteger("MaxPoints");
-
     m_maxPointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxResolution"))
   {
     m_maxResolution = jsonValue.GetInt64("MaxResolution");
-
     m_maxResolutionHasBeenSet = true;
   }
-
   return *this;
 }
 

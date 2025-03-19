@@ -28,7 +28,7 @@ namespace Model
   class GetTrackResult
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API GetTrackResult();
+    AWS_REDSHIFTSERVERLESS_API GetTrackResult() = default;
     AWS_REDSHIFTSERVERLESS_API GetTrackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_REDSHIFTSERVERLESS_API GetTrackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The version of the specified track.</p>
      */
-    inline const ServerlessTrack& GetTrack() const{ return m_track; }
-    inline void SetTrack(const ServerlessTrack& value) { m_track = value; }
-    inline void SetTrack(ServerlessTrack&& value) { m_track = std::move(value); }
-    inline GetTrackResult& WithTrack(const ServerlessTrack& value) { SetTrack(value); return *this;}
-    inline GetTrackResult& WithTrack(ServerlessTrack&& value) { SetTrack(std::move(value)); return *this;}
+    inline const ServerlessTrack& GetTrack() const { return m_track; }
+    template<typename TrackT = ServerlessTrack>
+    void SetTrack(TrackT&& value) { m_trackHasBeenSet = true; m_track = std::forward<TrackT>(value); }
+    template<typename TrackT = ServerlessTrack>
+    GetTrackResult& WithTrack(TrackT&& value) { SetTrack(std::forward<TrackT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTrackResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTrackResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTrackResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTrackResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ServerlessTrack m_track;
+    bool m_trackHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,11 +12,6 @@ using namespace Aws::chatbot::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSlackWorkspaceAuthorizationRequest::DeleteSlackWorkspaceAuthorizationRequest() : 
-    m_slackTeamIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSlackWorkspaceAuthorizationRequest::SerializePayload() const
 {
   JsonValue payload;

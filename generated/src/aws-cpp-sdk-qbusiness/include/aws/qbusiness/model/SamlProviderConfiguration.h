@@ -33,7 +33,7 @@ namespace Model
   class SamlProviderConfiguration
   {
   public:
-    AWS_QBUSINESS_API SamlProviderConfiguration();
+    AWS_QBUSINESS_API SamlProviderConfiguration() = default;
     AWS_QBUSINESS_API SamlProviderConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API SamlProviderConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The URL where Amazon Q Business end users will be redirected for
      * authentication. </p>
      */
-    inline const Aws::String& GetAuthenticationUrl() const{ return m_authenticationUrl; }
+    inline const Aws::String& GetAuthenticationUrl() const { return m_authenticationUrl; }
     inline bool AuthenticationUrlHasBeenSet() const { return m_authenticationUrlHasBeenSet; }
-    inline void SetAuthenticationUrl(const Aws::String& value) { m_authenticationUrlHasBeenSet = true; m_authenticationUrl = value; }
-    inline void SetAuthenticationUrl(Aws::String&& value) { m_authenticationUrlHasBeenSet = true; m_authenticationUrl = std::move(value); }
-    inline void SetAuthenticationUrl(const char* value) { m_authenticationUrlHasBeenSet = true; m_authenticationUrl.assign(value); }
-    inline SamlProviderConfiguration& WithAuthenticationUrl(const Aws::String& value) { SetAuthenticationUrl(value); return *this;}
-    inline SamlProviderConfiguration& WithAuthenticationUrl(Aws::String&& value) { SetAuthenticationUrl(std::move(value)); return *this;}
-    inline SamlProviderConfiguration& WithAuthenticationUrl(const char* value) { SetAuthenticationUrl(value); return *this;}
+    template<typename AuthenticationUrlT = Aws::String>
+    void SetAuthenticationUrl(AuthenticationUrlT&& value) { m_authenticationUrlHasBeenSet = true; m_authenticationUrl = std::forward<AuthenticationUrlT>(value); }
+    template<typename AuthenticationUrlT = Aws::String>
+    SamlProviderConfiguration& WithAuthenticationUrl(AuthenticationUrlT&& value) { SetAuthenticationUrl(std::forward<AuthenticationUrlT>(value)); return *this;}
     ///@}
   private:
 

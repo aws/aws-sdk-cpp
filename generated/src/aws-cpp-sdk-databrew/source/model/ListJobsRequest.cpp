@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListJobsRequest::ListJobsRequest() : 
-    m_datasetNameHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_projectNameHasBeenSet(false)
-{
-}
-
 Aws::String ListJobsRequest::SerializePayload() const
 {
   return {};

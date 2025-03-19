@@ -40,7 +40,7 @@ namespace Model
   class TargetTrackingMetricDataQuery
   {
   public:
-    AWS_APPLICATIONAUTOSCALING_API TargetTrackingMetricDataQuery();
+    AWS_APPLICATIONAUTOSCALING_API TargetTrackingMetricDataQuery() = default;
     AWS_APPLICATIONAUTOSCALING_API TargetTrackingMetricDataQuery(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONAUTOSCALING_API TargetTrackingMetricDataQuery& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONAUTOSCALING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,14 +55,12 @@ namespace Model
      * Within each <code>TargetTrackingMetricDataQuery</code> object, you must specify
      * either <code>Expression</code> or <code>MetricStat</code>, but not both.</p>
      */
-    inline const Aws::String& GetExpression() const{ return m_expression; }
+    inline const Aws::String& GetExpression() const { return m_expression; }
     inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
-    inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
-    inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
-    inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
-    inline TargetTrackingMetricDataQuery& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
-    inline TargetTrackingMetricDataQuery& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
-    inline TargetTrackingMetricDataQuery& WithExpression(const char* value) { SetExpression(value); return *this;}
+    template<typename ExpressionT = Aws::String>
+    void SetExpression(ExpressionT&& value) { m_expressionHasBeenSet = true; m_expression = std::forward<ExpressionT>(value); }
+    template<typename ExpressionT = Aws::String>
+    TargetTrackingMetricDataQuery& WithExpression(ExpressionT&& value) { SetExpression(std::forward<ExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +72,12 @@ namespace Model
      * mathematical expression. The valid characters are letters, numbers, and
      * underscores. The first character must be a lowercase letter. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline TargetTrackingMetricDataQuery& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline TargetTrackingMetricDataQuery& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline TargetTrackingMetricDataQuery& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    TargetTrackingMetricDataQuery& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +86,12 @@ namespace Model
      * useful if this is a math expression, so that you know what the value
      * represents.</p>
      */
-    inline const Aws::String& GetLabel() const{ return m_label; }
+    inline const Aws::String& GetLabel() const { return m_label; }
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
-    inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
-    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
-    inline void SetLabel(const char* value) { m_labelHasBeenSet = true; m_label.assign(value); }
-    inline TargetTrackingMetricDataQuery& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
-    inline TargetTrackingMetricDataQuery& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
-    inline TargetTrackingMetricDataQuery& WithLabel(const char* value) { SetLabel(value); return *this;}
+    template<typename LabelT = Aws::String>
+    void SetLabel(LabelT&& value) { m_labelHasBeenSet = true; m_label = std::forward<LabelT>(value); }
+    template<typename LabelT = Aws::String>
+    TargetTrackingMetricDataQuery& WithLabel(LabelT&& value) { SetLabel(std::forward<LabelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -106,12 +100,12 @@ namespace Model
      * <code>MetricDataQuery</code> object, you must specify either
      * <code>Expression</code> or <code>MetricStat</code>, but not both.</p>
      */
-    inline const TargetTrackingMetricStat& GetMetricStat() const{ return m_metricStat; }
+    inline const TargetTrackingMetricStat& GetMetricStat() const { return m_metricStat; }
     inline bool MetricStatHasBeenSet() const { return m_metricStatHasBeenSet; }
-    inline void SetMetricStat(const TargetTrackingMetricStat& value) { m_metricStatHasBeenSet = true; m_metricStat = value; }
-    inline void SetMetricStat(TargetTrackingMetricStat&& value) { m_metricStatHasBeenSet = true; m_metricStat = std::move(value); }
-    inline TargetTrackingMetricDataQuery& WithMetricStat(const TargetTrackingMetricStat& value) { SetMetricStat(value); return *this;}
-    inline TargetTrackingMetricDataQuery& WithMetricStat(TargetTrackingMetricStat&& value) { SetMetricStat(std::move(value)); return *this;}
+    template<typename MetricStatT = TargetTrackingMetricStat>
+    void SetMetricStat(MetricStatT&& value) { m_metricStatHasBeenSet = true; m_metricStat = std::forward<MetricStatT>(value); }
+    template<typename MetricStatT = TargetTrackingMetricStat>
+    TargetTrackingMetricDataQuery& WithMetricStat(MetricStatT&& value) { SetMetricStat(std::forward<MetricStatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,7 +119,7 @@ namespace Model
      * do not specify anything for <code>ReturnData</code>. This sets it to its default
      * (<code>true</code>).</p>
      */
-    inline bool GetReturnData() const{ return m_returnData; }
+    inline bool GetReturnData() const { return m_returnData; }
     inline bool ReturnDataHasBeenSet() const { return m_returnDataHasBeenSet; }
     inline void SetReturnData(bool value) { m_returnDataHasBeenSet = true; m_returnData = value; }
     inline TargetTrackingMetricDataQuery& WithReturnData(bool value) { SetReturnData(value); return *this;}
@@ -144,7 +138,7 @@ namespace Model
     TargetTrackingMetricStat m_metricStat;
     bool m_metricStatHasBeenSet = false;
 
-    bool m_returnData;
+    bool m_returnData{false};
     bool m_returnDataHasBeenSet = false;
   };
 

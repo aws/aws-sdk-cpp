@@ -34,7 +34,7 @@ namespace Model
   class CalculationStatus
   {
   public:
-    AWS_ATHENA_API CalculationStatus();
+    AWS_ATHENA_API CalculationStatus() = default;
     AWS_ATHENA_API CalculationStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API CalculationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,24 @@ namespace Model
     /**
      * <p>The date and time the calculation was submitted for processing.</p>
      */
-    inline const Aws::Utils::DateTime& GetSubmissionDateTime() const{ return m_submissionDateTime; }
+    inline const Aws::Utils::DateTime& GetSubmissionDateTime() const { return m_submissionDateTime; }
     inline bool SubmissionDateTimeHasBeenSet() const { return m_submissionDateTimeHasBeenSet; }
-    inline void SetSubmissionDateTime(const Aws::Utils::DateTime& value) { m_submissionDateTimeHasBeenSet = true; m_submissionDateTime = value; }
-    inline void SetSubmissionDateTime(Aws::Utils::DateTime&& value) { m_submissionDateTimeHasBeenSet = true; m_submissionDateTime = std::move(value); }
-    inline CalculationStatus& WithSubmissionDateTime(const Aws::Utils::DateTime& value) { SetSubmissionDateTime(value); return *this;}
-    inline CalculationStatus& WithSubmissionDateTime(Aws::Utils::DateTime&& value) { SetSubmissionDateTime(std::move(value)); return *this;}
+    template<typename SubmissionDateTimeT = Aws::Utils::DateTime>
+    void SetSubmissionDateTime(SubmissionDateTimeT&& value) { m_submissionDateTimeHasBeenSet = true; m_submissionDateTime = std::forward<SubmissionDateTimeT>(value); }
+    template<typename SubmissionDateTimeT = Aws::Utils::DateTime>
+    CalculationStatus& WithSubmissionDateTime(SubmissionDateTimeT&& value) { SetSubmissionDateTime(std::forward<SubmissionDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the calculation completed processing.</p>
      */
-    inline const Aws::Utils::DateTime& GetCompletionDateTime() const{ return m_completionDateTime; }
+    inline const Aws::Utils::DateTime& GetCompletionDateTime() const { return m_completionDateTime; }
     inline bool CompletionDateTimeHasBeenSet() const { return m_completionDateTimeHasBeenSet; }
-    inline void SetCompletionDateTime(const Aws::Utils::DateTime& value) { m_completionDateTimeHasBeenSet = true; m_completionDateTime = value; }
-    inline void SetCompletionDateTime(Aws::Utils::DateTime&& value) { m_completionDateTimeHasBeenSet = true; m_completionDateTime = std::move(value); }
-    inline CalculationStatus& WithCompletionDateTime(const Aws::Utils::DateTime& value) { SetCompletionDateTime(value); return *this;}
-    inline CalculationStatus& WithCompletionDateTime(Aws::Utils::DateTime&& value) { SetCompletionDateTime(std::move(value)); return *this;}
+    template<typename CompletionDateTimeT = Aws::Utils::DateTime>
+    void SetCompletionDateTime(CompletionDateTimeT&& value) { m_completionDateTimeHasBeenSet = true; m_completionDateTime = std::forward<CompletionDateTimeT>(value); }
+    template<typename CompletionDateTimeT = Aws::Utils::DateTime>
+    CalculationStatus& WithCompletionDateTime(CompletionDateTimeT&& value) { SetCompletionDateTime(std::forward<CompletionDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,12 +78,10 @@ namespace Model
      * without error.</p> <p> <code>FAILED</code> - The calculation failed and is no
      * longer running.</p>
      */
-    inline const CalculationExecutionState& GetState() const{ return m_state; }
+    inline CalculationExecutionState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const CalculationExecutionState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(CalculationExecutionState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline CalculationStatus& WithState(const CalculationExecutionState& value) { SetState(value); return *this;}
-    inline CalculationStatus& WithState(CalculationExecutionState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(CalculationExecutionState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline CalculationStatus& WithState(CalculationExecutionState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -91,24 +89,22 @@ namespace Model
      * <p>The reason for the calculation state change (for example, the calculation was
      * canceled because the session was terminated).</p>
      */
-    inline const Aws::String& GetStateChangeReason() const{ return m_stateChangeReason; }
+    inline const Aws::String& GetStateChangeReason() const { return m_stateChangeReason; }
     inline bool StateChangeReasonHasBeenSet() const { return m_stateChangeReasonHasBeenSet; }
-    inline void SetStateChangeReason(const Aws::String& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = value; }
-    inline void SetStateChangeReason(Aws::String&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = std::move(value); }
-    inline void SetStateChangeReason(const char* value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason.assign(value); }
-    inline CalculationStatus& WithStateChangeReason(const Aws::String& value) { SetStateChangeReason(value); return *this;}
-    inline CalculationStatus& WithStateChangeReason(Aws::String&& value) { SetStateChangeReason(std::move(value)); return *this;}
-    inline CalculationStatus& WithStateChangeReason(const char* value) { SetStateChangeReason(value); return *this;}
+    template<typename StateChangeReasonT = Aws::String>
+    void SetStateChangeReason(StateChangeReasonT&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = std::forward<StateChangeReasonT>(value); }
+    template<typename StateChangeReasonT = Aws::String>
+    CalculationStatus& WithStateChangeReason(StateChangeReasonT&& value) { SetStateChangeReason(std::forward<StateChangeReasonT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_submissionDateTime;
+    Aws::Utils::DateTime m_submissionDateTime{};
     bool m_submissionDateTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_completionDateTime;
+    Aws::Utils::DateTime m_completionDateTime{};
     bool m_completionDateTimeHasBeenSet = false;
 
-    CalculationExecutionState m_state;
+    CalculationExecutionState m_state{CalculationExecutionState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::String m_stateChangeReason;

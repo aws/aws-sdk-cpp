@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsIamInstanceProfile::AwsIamInstanceProfile() : 
-    m_arnHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_instanceProfileIdHasBeenSet(false),
-    m_instanceProfileNameHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_rolesHasBeenSet(false)
-{
-}
-
 AwsIamInstanceProfile::AwsIamInstanceProfile(JsonView jsonValue)
-  : AwsIamInstanceProfile()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ AwsIamInstanceProfile& AwsIamInstanceProfile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateDate"))
   {
     m_createDate = jsonValue.GetString("CreateDate");
-
     m_createDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceProfileId"))
   {
     m_instanceProfileId = jsonValue.GetString("InstanceProfileId");
-
     m_instanceProfileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceProfileName"))
   {
     m_instanceProfileName = jsonValue.GetString("InstanceProfileName");
-
     m_instanceProfileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Roles"))
   {
     Aws::Utils::Array<JsonView> rolesJsonList = jsonValue.GetArray("Roles");
@@ -80,7 +59,6 @@ AwsIamInstanceProfile& AwsIamInstanceProfile::operator =(JsonView jsonValue)
     }
     m_rolesHasBeenSet = true;
   }
-
   return *this;
 }
 

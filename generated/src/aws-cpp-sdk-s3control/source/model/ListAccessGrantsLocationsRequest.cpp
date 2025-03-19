@@ -17,14 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAccessGrantsLocationsRequest::ListAccessGrantsLocationsRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_locationScopeHasBeenSet(false)
-{
-}
 
 Aws::String ListAccessGrantsLocationsRequest::SerializePayload() const
 {

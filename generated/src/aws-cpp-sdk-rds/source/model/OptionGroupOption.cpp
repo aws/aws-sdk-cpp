@@ -20,37 +20,7 @@ namespace RDS
 namespace Model
 {
 
-OptionGroupOption::OptionGroupOption() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_engineNameHasBeenSet(false),
-    m_majorEngineVersionHasBeenSet(false),
-    m_minimumRequiredMinorEngineVersionHasBeenSet(false),
-    m_portRequired(false),
-    m_portRequiredHasBeenSet(false),
-    m_defaultPort(0),
-    m_defaultPortHasBeenSet(false),
-    m_optionsDependedOnHasBeenSet(false),
-    m_optionsConflictsWithHasBeenSet(false),
-    m_persistent(false),
-    m_persistentHasBeenSet(false),
-    m_permanent(false),
-    m_permanentHasBeenSet(false),
-    m_requiresAutoMinorEngineVersionUpgrade(false),
-    m_requiresAutoMinorEngineVersionUpgradeHasBeenSet(false),
-    m_vpcOnly(false),
-    m_vpcOnlyHasBeenSet(false),
-    m_supportsOptionVersionDowngrade(false),
-    m_supportsOptionVersionDowngradeHasBeenSet(false),
-    m_optionGroupOptionSettingsHasBeenSet(false),
-    m_optionGroupOptionVersionsHasBeenSet(false),
-    m_copyableCrossAccount(false),
-    m_copyableCrossAccountHasBeenSet(false)
-{
-}
-
 OptionGroupOption::OptionGroupOption(const XmlNode& xmlNode)
-  : OptionGroupOption()
 {
   *this = xmlNode;
 }
@@ -107,6 +77,7 @@ OptionGroupOption& OptionGroupOption::operator =(const XmlNode& xmlNode)
     if(!optionsDependedOnNode.IsNull())
     {
       XmlNode optionsDependedOnMember = optionsDependedOnNode.FirstChild("OptionName");
+      m_optionsDependedOnHasBeenSet = !optionsDependedOnMember.IsNull();
       while(!optionsDependedOnMember.IsNull())
       {
         m_optionsDependedOn.push_back(optionsDependedOnMember.GetText());
@@ -119,6 +90,7 @@ OptionGroupOption& OptionGroupOption::operator =(const XmlNode& xmlNode)
     if(!optionsConflictsWithNode.IsNull())
     {
       XmlNode optionsConflictsWithMember = optionsConflictsWithNode.FirstChild("OptionConflictName");
+      m_optionsConflictsWithHasBeenSet = !optionsConflictsWithMember.IsNull();
       while(!optionsConflictsWithMember.IsNull())
       {
         m_optionsConflictsWith.push_back(optionsConflictsWithMember.GetText());
@@ -161,6 +133,7 @@ OptionGroupOption& OptionGroupOption::operator =(const XmlNode& xmlNode)
     if(!optionGroupOptionSettingsNode.IsNull())
     {
       XmlNode optionGroupOptionSettingsMember = optionGroupOptionSettingsNode.FirstChild("OptionGroupOptionSetting");
+      m_optionGroupOptionSettingsHasBeenSet = !optionGroupOptionSettingsMember.IsNull();
       while(!optionGroupOptionSettingsMember.IsNull())
       {
         m_optionGroupOptionSettings.push_back(optionGroupOptionSettingsMember);
@@ -173,6 +146,7 @@ OptionGroupOption& OptionGroupOption::operator =(const XmlNode& xmlNode)
     if(!optionGroupOptionVersionsNode.IsNull())
     {
       XmlNode optionGroupOptionVersionsMember = optionGroupOptionVersionsNode.FirstChild("OptionVersion");
+      m_optionGroupOptionVersionsHasBeenSet = !optionGroupOptionVersionsMember.IsNull();
       while(!optionGroupOptionVersionsMember.IsNull())
       {
         m_optionGroupOptionVersions.push_back(optionGroupOptionVersionsMember);

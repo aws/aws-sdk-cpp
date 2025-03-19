@@ -17,13 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DisassociateTrunkInterfaceResponse::DisassociateTrunkInterfaceResponse() : 
-    m_return(false)
-{
-}
-
 DisassociateTrunkInterfaceResponse::DisassociateTrunkInterfaceResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : DisassociateTrunkInterfaceResponse()
 {
   *this = result;
 }
@@ -44,11 +38,13 @@ DisassociateTrunkInterfaceResponse& DisassociateTrunkInterfaceResponse::operator
     if(!returnNode.IsNull())
     {
       m_return = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(returnNode.GetText()).c_str()).c_str());
+      m_returnHasBeenSet = true;
     }
     XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
     if(!clientTokenNode.IsNull())
     {
       m_clientToken = Aws::Utils::Xml::DecodeEscapedXmlText(clientTokenNode.GetText());
+      m_clientTokenHasBeenSet = true;
     }
   }
 
@@ -57,6 +53,7 @@ DisassociateTrunkInterfaceResponse& DisassociateTrunkInterfaceResponse::operator
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DisassociateTrunkInterfaceResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

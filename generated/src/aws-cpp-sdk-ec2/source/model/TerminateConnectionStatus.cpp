@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TerminateConnectionStatus::TerminateConnectionStatus() : 
-    m_connectionIdHasBeenSet(false),
-    m_previousStatusHasBeenSet(false),
-    m_currentStatusHasBeenSet(false)
-{
-}
-
 TerminateConnectionStatus::TerminateConnectionStatus(const XmlNode& xmlNode)
-  : TerminateConnectionStatus()
 {
   *this = xmlNode;
 }

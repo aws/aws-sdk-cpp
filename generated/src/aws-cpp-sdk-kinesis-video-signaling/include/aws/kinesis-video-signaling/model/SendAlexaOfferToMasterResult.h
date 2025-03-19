@@ -27,7 +27,7 @@ namespace Model
   class SendAlexaOfferToMasterResult
   {
   public:
-    AWS_KINESISVIDEOSIGNALINGCHANNELS_API SendAlexaOfferToMasterResult();
+    AWS_KINESISVIDEOSIGNALINGCHANNELS_API SendAlexaOfferToMasterResult() = default;
     AWS_KINESISVIDEOSIGNALINGCHANNELS_API SendAlexaOfferToMasterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KINESISVIDEOSIGNALINGCHANNELS_API SendAlexaOfferToMasterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The base64-encoded SDP answer content.</p>
      */
-    inline const Aws::String& GetAnswer() const{ return m_answer; }
-    inline void SetAnswer(const Aws::String& value) { m_answer = value; }
-    inline void SetAnswer(Aws::String&& value) { m_answer = std::move(value); }
-    inline void SetAnswer(const char* value) { m_answer.assign(value); }
-    inline SendAlexaOfferToMasterResult& WithAnswer(const Aws::String& value) { SetAnswer(value); return *this;}
-    inline SendAlexaOfferToMasterResult& WithAnswer(Aws::String&& value) { SetAnswer(std::move(value)); return *this;}
-    inline SendAlexaOfferToMasterResult& WithAnswer(const char* value) { SetAnswer(value); return *this;}
+    inline const Aws::String& GetAnswer() const { return m_answer; }
+    template<typename AnswerT = Aws::String>
+    void SetAnswer(AnswerT&& value) { m_answerHasBeenSet = true; m_answer = std::forward<AnswerT>(value); }
+    template<typename AnswerT = Aws::String>
+    SendAlexaOfferToMasterResult& WithAnswer(AnswerT&& value) { SetAnswer(std::forward<AnswerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline SendAlexaOfferToMasterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline SendAlexaOfferToMasterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline SendAlexaOfferToMasterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    SendAlexaOfferToMasterResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_answer;
+    bool m_answerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -23,7 +23,7 @@ namespace Model
   class PutWarmPoolRequest : public AutoScalingRequest
   {
   public:
-    AWS_AUTOSCALING_API PutWarmPoolRequest();
+    AWS_AUTOSCALING_API PutWarmPoolRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
-    inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+    inline const Aws::String& GetAutoScalingGroupName() const { return m_autoScalingGroupName; }
     inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
-    inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
-    inline void SetAutoScalingGroupName(Aws::String&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::move(value); }
-    inline void SetAutoScalingGroupName(const char* value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName.assign(value); }
-    inline PutWarmPoolRequest& WithAutoScalingGroupName(const Aws::String& value) { SetAutoScalingGroupName(value); return *this;}
-    inline PutWarmPoolRequest& WithAutoScalingGroupName(Aws::String&& value) { SetAutoScalingGroupName(std::move(value)); return *this;}
-    inline PutWarmPoolRequest& WithAutoScalingGroupName(const char* value) { SetAutoScalingGroupName(value); return *this;}
+    template<typename AutoScalingGroupNameT = Aws::String>
+    void SetAutoScalingGroupName(AutoScalingGroupNameT&& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = std::forward<AutoScalingGroupNameT>(value); }
+    template<typename AutoScalingGroupNameT = Aws::String>
+    PutWarmPoolRequest& WithAutoScalingGroupName(AutoScalingGroupNameT&& value) { SetAutoScalingGroupName(std::forward<AutoScalingGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +70,7 @@ namespace Model
      * unless you specify a value for <code>MinSize</code>. To remove a value that you
      * previously set, include the property but specify -1 for the value. </p>
      */
-    inline int GetMaxGroupPreparedCapacity() const{ return m_maxGroupPreparedCapacity; }
+    inline int GetMaxGroupPreparedCapacity() const { return m_maxGroupPreparedCapacity; }
     inline bool MaxGroupPreparedCapacityHasBeenSet() const { return m_maxGroupPreparedCapacityHasBeenSet; }
     inline void SetMaxGroupPreparedCapacity(int value) { m_maxGroupPreparedCapacityHasBeenSet = true; m_maxGroupPreparedCapacity = value; }
     inline PutWarmPoolRequest& WithMaxGroupPreparedCapacity(int value) { SetMaxGroupPreparedCapacity(value); return *this;}
@@ -84,7 +82,7 @@ namespace Model
      * helps you to ensure that there is always a certain number of warmed instances
      * available to handle traffic spikes. Defaults to 0 if not specified.</p>
      */
-    inline int GetMinSize() const{ return m_minSize; }
+    inline int GetMinSize() const { return m_minSize; }
     inline bool MinSizeHasBeenSet() const { return m_minSizeHasBeenSet; }
     inline void SetMinSize(int value) { m_minSizeHasBeenSet = true; m_minSize = value; }
     inline PutWarmPoolRequest& WithMinSize(int value) { SetMinSize(value); return *this;}
@@ -95,12 +93,10 @@ namespace Model
      * <p>Sets the instance state to transition to after the lifecycle actions are
      * complete. Default is <code>Stopped</code>.</p>
      */
-    inline const WarmPoolState& GetPoolState() const{ return m_poolState; }
+    inline WarmPoolState GetPoolState() const { return m_poolState; }
     inline bool PoolStateHasBeenSet() const { return m_poolStateHasBeenSet; }
-    inline void SetPoolState(const WarmPoolState& value) { m_poolStateHasBeenSet = true; m_poolState = value; }
-    inline void SetPoolState(WarmPoolState&& value) { m_poolStateHasBeenSet = true; m_poolState = std::move(value); }
-    inline PutWarmPoolRequest& WithPoolState(const WarmPoolState& value) { SetPoolState(value); return *this;}
-    inline PutWarmPoolRequest& WithPoolState(WarmPoolState&& value) { SetPoolState(std::move(value)); return *this;}
+    inline void SetPoolState(WarmPoolState value) { m_poolStateHasBeenSet = true; m_poolState = value; }
+    inline PutWarmPoolRequest& WithPoolState(WarmPoolState value) { SetPoolState(value); return *this;}
     ///@}
 
     ///@{
@@ -109,25 +105,25 @@ namespace Model
      * warm pool on scale in. The default is to terminate instances in the Auto Scaling
      * group when the group scales in.</p>
      */
-    inline const InstanceReusePolicy& GetInstanceReusePolicy() const{ return m_instanceReusePolicy; }
+    inline const InstanceReusePolicy& GetInstanceReusePolicy() const { return m_instanceReusePolicy; }
     inline bool InstanceReusePolicyHasBeenSet() const { return m_instanceReusePolicyHasBeenSet; }
-    inline void SetInstanceReusePolicy(const InstanceReusePolicy& value) { m_instanceReusePolicyHasBeenSet = true; m_instanceReusePolicy = value; }
-    inline void SetInstanceReusePolicy(InstanceReusePolicy&& value) { m_instanceReusePolicyHasBeenSet = true; m_instanceReusePolicy = std::move(value); }
-    inline PutWarmPoolRequest& WithInstanceReusePolicy(const InstanceReusePolicy& value) { SetInstanceReusePolicy(value); return *this;}
-    inline PutWarmPoolRequest& WithInstanceReusePolicy(InstanceReusePolicy&& value) { SetInstanceReusePolicy(std::move(value)); return *this;}
+    template<typename InstanceReusePolicyT = InstanceReusePolicy>
+    void SetInstanceReusePolicy(InstanceReusePolicyT&& value) { m_instanceReusePolicyHasBeenSet = true; m_instanceReusePolicy = std::forward<InstanceReusePolicyT>(value); }
+    template<typename InstanceReusePolicyT = InstanceReusePolicy>
+    PutWarmPoolRequest& WithInstanceReusePolicy(InstanceReusePolicyT&& value) { SetInstanceReusePolicy(std::forward<InstanceReusePolicyT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_autoScalingGroupName;
     bool m_autoScalingGroupNameHasBeenSet = false;
 
-    int m_maxGroupPreparedCapacity;
+    int m_maxGroupPreparedCapacity{0};
     bool m_maxGroupPreparedCapacityHasBeenSet = false;
 
-    int m_minSize;
+    int m_minSize{0};
     bool m_minSizeHasBeenSet = false;
 
-    WarmPoolState m_poolState;
+    WarmPoolState m_poolState{WarmPoolState::NOT_SET};
     bool m_poolStateHasBeenSet = false;
 
     InstanceReusePolicy m_instanceReusePolicy;

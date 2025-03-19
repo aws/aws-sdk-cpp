@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-ActionLocalIpDetails::ActionLocalIpDetails() : 
-    m_ipAddressV4HasBeenSet(false)
-{
-}
-
 ActionLocalIpDetails::ActionLocalIpDetails(JsonView jsonValue)
-  : ActionLocalIpDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ActionLocalIpDetails& ActionLocalIpDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IpAddressV4"))
   {
     m_ipAddressV4 = jsonValue.GetString("IpAddressV4");
-
     m_ipAddressV4HasBeenSet = true;
   }
-
   return *this;
 }
 

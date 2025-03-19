@@ -18,15 +18,7 @@ namespace KinesisAnalytics
 namespace Model
 {
 
-UnableToDetectSchemaException::UnableToDetectSchemaException() : 
-    m_messageHasBeenSet(false),
-    m_rawInputRecordsHasBeenSet(false),
-    m_processedInputRecordsHasBeenSet(false)
-{
-}
-
 UnableToDetectSchemaException::UnableToDetectSchemaException(JsonView jsonValue)
-  : UnableToDetectSchemaException()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ UnableToDetectSchemaException& UnableToDetectSchemaException::operator =(JsonVie
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RawInputRecords"))
   {
     Aws::Utils::Array<JsonView> rawInputRecordsJsonList = jsonValue.GetArray("RawInputRecords");
@@ -49,7 +39,6 @@ UnableToDetectSchemaException& UnableToDetectSchemaException::operator =(JsonVie
     }
     m_rawInputRecordsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProcessedInputRecords"))
   {
     Aws::Utils::Array<JsonView> processedInputRecordsJsonList = jsonValue.GetArray("ProcessedInputRecords");
@@ -59,7 +48,6 @@ UnableToDetectSchemaException& UnableToDetectSchemaException::operator =(JsonVie
     }
     m_processedInputRecordsHasBeenSet = true;
   }
-
   return *this;
 }
 

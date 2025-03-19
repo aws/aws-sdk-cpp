@@ -12,11 +12,6 @@ using namespace Aws::MigrationHubStrategyRecommendations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetImportFileTaskRequest::GetImportFileTaskRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetImportFileTaskRequest::SerializePayload() const
 {
   return {};

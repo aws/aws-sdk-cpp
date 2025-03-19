@@ -18,14 +18,7 @@ namespace RedshiftServerless
 namespace Model
 {
 
-ResourcePolicy::ResourcePolicy() : 
-    m_policyHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 ResourcePolicy::ResourcePolicy(JsonView jsonValue)
-  : ResourcePolicy()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ResourcePolicy& ResourcePolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("policy"))
   {
     m_policy = jsonValue.GetString("policy");
-
     m_policyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceArn"))
   {
     m_resourceArn = jsonValue.GetString("resourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

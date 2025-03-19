@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociateIamInstanceProfileResponse::AssociateIamInstanceProfileResponse()
-{
-}
-
 AssociateIamInstanceProfileResponse::AssociateIamInstanceProfileResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ AssociateIamInstanceProfileResponse& AssociateIamInstanceProfileResponse::operat
     if(!iamInstanceProfileAssociationNode.IsNull())
     {
       m_iamInstanceProfileAssociation = iamInstanceProfileAssociationNode;
+      m_iamInstanceProfileAssociationHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ AssociateIamInstanceProfileResponse& AssociateIamInstanceProfileResponse::operat
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::AssociateIamInstanceProfileResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

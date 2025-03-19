@@ -12,11 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRuleSetRequest::DeleteRuleSetRequest() : 
-    m_ruleSetIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRuleSetRequest::SerializePayload() const
 {
   JsonValue payload;

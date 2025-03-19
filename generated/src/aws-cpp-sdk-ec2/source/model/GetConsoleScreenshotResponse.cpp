@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetConsoleScreenshotResponse::GetConsoleScreenshotResponse()
-{
-}
-
 GetConsoleScreenshotResponse::GetConsoleScreenshotResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ GetConsoleScreenshotResponse& GetConsoleScreenshotResponse::operator =(const Aws
     if(!imageDataNode.IsNull())
     {
       m_imageData = Aws::Utils::Xml::DecodeEscapedXmlText(imageDataNode.GetText());
+      m_imageDataHasBeenSet = true;
     }
     XmlNode instanceIdNode = resultNode.FirstChild("instanceId");
     if(!instanceIdNode.IsNull())
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
+      m_instanceIdHasBeenSet = true;
     }
   }
 
@@ -55,6 +53,7 @@ GetConsoleScreenshotResponse& GetConsoleScreenshotResponse::operator =(const Aws
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetConsoleScreenshotResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

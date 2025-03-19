@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetHypervisorPropertyMappingsResult::GetHypervisorPropertyMappingsResult()
-{
-}
-
 GetHypervisorPropertyMappingsResult::GetHypervisorPropertyMappingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ GetHypervisorPropertyMappingsResult& GetHypervisorPropertyMappingsResult::operat
   if(jsonValue.ValueExists("HypervisorArn"))
   {
     m_hypervisorArn = jsonValue.GetString("HypervisorArn");
-
+    m_hypervisorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamRoleArn"))
   {
     m_iamRoleArn = jsonValue.GetString("IamRoleArn");
-
+    m_iamRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VmwareToAwsTagMappings"))
   {
     Aws::Utils::Array<JsonView> vmwareToAwsTagMappingsJsonList = jsonValue.GetArray("VmwareToAwsTagMappings");
@@ -48,14 +42,15 @@ GetHypervisorPropertyMappingsResult& GetHypervisorPropertyMappingsResult::operat
     {
       m_vmwareToAwsTagMappings.push_back(vmwareToAwsTagMappingsJsonList[vmwareToAwsTagMappingsIndex].AsObject());
     }
+    m_vmwareToAwsTagMappingsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

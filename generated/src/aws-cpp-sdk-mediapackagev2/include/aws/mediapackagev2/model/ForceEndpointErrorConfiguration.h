@@ -32,7 +32,7 @@ namespace Model
   class ForceEndpointErrorConfiguration
   {
   public:
-    AWS_MEDIAPACKAGEV2_API ForceEndpointErrorConfiguration();
+    AWS_MEDIAPACKAGEV2_API ForceEndpointErrorConfiguration() = default;
     AWS_MEDIAPACKAGEV2_API ForceEndpointErrorConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API ForceEndpointErrorConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,13 @@ namespace Model
      * </li> <li> <p> <code>SLATE_INPUT</code> - The segments which contain slate
      * content are considered to be missing content.</p> </li> </ul>
      */
-    inline const Aws::Vector<EndpointErrorCondition>& GetEndpointErrorConditions() const{ return m_endpointErrorConditions; }
+    inline const Aws::Vector<EndpointErrorCondition>& GetEndpointErrorConditions() const { return m_endpointErrorConditions; }
     inline bool EndpointErrorConditionsHasBeenSet() const { return m_endpointErrorConditionsHasBeenSet; }
-    inline void SetEndpointErrorConditions(const Aws::Vector<EndpointErrorCondition>& value) { m_endpointErrorConditionsHasBeenSet = true; m_endpointErrorConditions = value; }
-    inline void SetEndpointErrorConditions(Aws::Vector<EndpointErrorCondition>&& value) { m_endpointErrorConditionsHasBeenSet = true; m_endpointErrorConditions = std::move(value); }
-    inline ForceEndpointErrorConfiguration& WithEndpointErrorConditions(const Aws::Vector<EndpointErrorCondition>& value) { SetEndpointErrorConditions(value); return *this;}
-    inline ForceEndpointErrorConfiguration& WithEndpointErrorConditions(Aws::Vector<EndpointErrorCondition>&& value) { SetEndpointErrorConditions(std::move(value)); return *this;}
-    inline ForceEndpointErrorConfiguration& AddEndpointErrorConditions(const EndpointErrorCondition& value) { m_endpointErrorConditionsHasBeenSet = true; m_endpointErrorConditions.push_back(value); return *this; }
-    inline ForceEndpointErrorConfiguration& AddEndpointErrorConditions(EndpointErrorCondition&& value) { m_endpointErrorConditionsHasBeenSet = true; m_endpointErrorConditions.push_back(std::move(value)); return *this; }
+    template<typename EndpointErrorConditionsT = Aws::Vector<EndpointErrorCondition>>
+    void SetEndpointErrorConditions(EndpointErrorConditionsT&& value) { m_endpointErrorConditionsHasBeenSet = true; m_endpointErrorConditions = std::forward<EndpointErrorConditionsT>(value); }
+    template<typename EndpointErrorConditionsT = Aws::Vector<EndpointErrorCondition>>
+    ForceEndpointErrorConfiguration& WithEndpointErrorConditions(EndpointErrorConditionsT&& value) { SetEndpointErrorConditions(std::forward<EndpointErrorConditionsT>(value)); return *this;}
+    inline ForceEndpointErrorConfiguration& AddEndpointErrorConditions(EndpointErrorCondition value) { m_endpointErrorConditionsHasBeenSet = true; m_endpointErrorConditions.push_back(value); return *this; }
     ///@}
   private:
 

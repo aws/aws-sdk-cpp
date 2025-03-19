@@ -18,18 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-ConsumerGroupReplicationUpdate::ConsumerGroupReplicationUpdate() : 
-    m_consumerGroupsToExcludeHasBeenSet(false),
-    m_consumerGroupsToReplicateHasBeenSet(false),
-    m_detectAndCopyNewConsumerGroups(false),
-    m_detectAndCopyNewConsumerGroupsHasBeenSet(false),
-    m_synchroniseConsumerGroupOffsets(false),
-    m_synchroniseConsumerGroupOffsetsHasBeenSet(false)
-{
-}
-
 ConsumerGroupReplicationUpdate::ConsumerGroupReplicationUpdate(JsonView jsonValue)
-  : ConsumerGroupReplicationUpdate()
 {
   *this = jsonValue;
 }
@@ -45,7 +34,6 @@ ConsumerGroupReplicationUpdate& ConsumerGroupReplicationUpdate::operator =(JsonV
     }
     m_consumerGroupsToExcludeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("consumerGroupsToReplicate"))
   {
     Aws::Utils::Array<JsonView> consumerGroupsToReplicateJsonList = jsonValue.GetArray("consumerGroupsToReplicate");
@@ -55,21 +43,16 @@ ConsumerGroupReplicationUpdate& ConsumerGroupReplicationUpdate::operator =(JsonV
     }
     m_consumerGroupsToReplicateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("detectAndCopyNewConsumerGroups"))
   {
     m_detectAndCopyNewConsumerGroups = jsonValue.GetBool("detectAndCopyNewConsumerGroups");
-
     m_detectAndCopyNewConsumerGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("synchroniseConsumerGroupOffsets"))
   {
     m_synchroniseConsumerGroupOffsets = jsonValue.GetBool("synchroniseConsumerGroupOffsets");
-
     m_synchroniseConsumerGroupOffsetsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class StartExecutionResult
   {
   public:
-    AWS_SFN_API StartExecutionResult();
+    AWS_SFN_API StartExecutionResult() = default;
     AWS_SFN_API StartExecutionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SFN_API StartExecutionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,42 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the execution.</p>
      */
-    inline const Aws::String& GetExecutionArn() const{ return m_executionArn; }
-    inline void SetExecutionArn(const Aws::String& value) { m_executionArn = value; }
-    inline void SetExecutionArn(Aws::String&& value) { m_executionArn = std::move(value); }
-    inline void SetExecutionArn(const char* value) { m_executionArn.assign(value); }
-    inline StartExecutionResult& WithExecutionArn(const Aws::String& value) { SetExecutionArn(value); return *this;}
-    inline StartExecutionResult& WithExecutionArn(Aws::String&& value) { SetExecutionArn(std::move(value)); return *this;}
-    inline StartExecutionResult& WithExecutionArn(const char* value) { SetExecutionArn(value); return *this;}
+    inline const Aws::String& GetExecutionArn() const { return m_executionArn; }
+    template<typename ExecutionArnT = Aws::String>
+    void SetExecutionArn(ExecutionArnT&& value) { m_executionArnHasBeenSet = true; m_executionArn = std::forward<ExecutionArnT>(value); }
+    template<typename ExecutionArnT = Aws::String>
+    StartExecutionResult& WithExecutionArn(ExecutionArnT&& value) { SetExecutionArn(std::forward<ExecutionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date the execution is started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartDate() const{ return m_startDate; }
-    inline void SetStartDate(const Aws::Utils::DateTime& value) { m_startDate = value; }
-    inline void SetStartDate(Aws::Utils::DateTime&& value) { m_startDate = std::move(value); }
-    inline StartExecutionResult& WithStartDate(const Aws::Utils::DateTime& value) { SetStartDate(value); return *this;}
-    inline StartExecutionResult& WithStartDate(Aws::Utils::DateTime&& value) { SetStartDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartDate() const { return m_startDate; }
+    template<typename StartDateT = Aws::Utils::DateTime>
+    void SetStartDate(StartDateT&& value) { m_startDateHasBeenSet = true; m_startDate = std::forward<StartDateT>(value); }
+    template<typename StartDateT = Aws::Utils::DateTime>
+    StartExecutionResult& WithStartDate(StartDateT&& value) { SetStartDate(std::forward<StartDateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartExecutionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartExecutionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartExecutionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartExecutionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_executionArn;
+    bool m_executionArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startDate;
+    Aws::Utils::DateTime m_startDate{};
+    bool m_startDateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

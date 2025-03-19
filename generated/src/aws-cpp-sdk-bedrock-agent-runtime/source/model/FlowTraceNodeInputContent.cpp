@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-FlowTraceNodeInputContent::FlowTraceNodeInputContent() : 
-    m_documentHasBeenSet(false)
-{
-}
-
 FlowTraceNodeInputContent::FlowTraceNodeInputContent(JsonView jsonValue)
-  : FlowTraceNodeInputContent()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FlowTraceNodeInputContent& FlowTraceNodeInputContent::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("document"))
   {
     m_document = jsonValue.GetObject("document");
-
     m_documentHasBeenSet = true;
   }
-
   return *this;
 }
 

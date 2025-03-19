@@ -28,35 +28,35 @@ namespace Model
   class GetGcmChannelResult
   {
   public:
-    AWS_PINPOINT_API GetGcmChannelResult();
+    AWS_PINPOINT_API GetGcmChannelResult() = default;
     AWS_PINPOINT_API GetGcmChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API GetGcmChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const GCMChannelResponse& GetGCMChannelResponse() const{ return m_gCMChannelResponse; }
-    inline void SetGCMChannelResponse(const GCMChannelResponse& value) { m_gCMChannelResponse = value; }
-    inline void SetGCMChannelResponse(GCMChannelResponse&& value) { m_gCMChannelResponse = std::move(value); }
-    inline GetGcmChannelResult& WithGCMChannelResponse(const GCMChannelResponse& value) { SetGCMChannelResponse(value); return *this;}
-    inline GetGcmChannelResult& WithGCMChannelResponse(GCMChannelResponse&& value) { SetGCMChannelResponse(std::move(value)); return *this;}
+    inline const GCMChannelResponse& GetGCMChannelResponse() const { return m_gCMChannelResponse; }
+    template<typename GCMChannelResponseT = GCMChannelResponse>
+    void SetGCMChannelResponse(GCMChannelResponseT&& value) { m_gCMChannelResponseHasBeenSet = true; m_gCMChannelResponse = std::forward<GCMChannelResponseT>(value); }
+    template<typename GCMChannelResponseT = GCMChannelResponse>
+    GetGcmChannelResult& WithGCMChannelResponse(GCMChannelResponseT&& value) { SetGCMChannelResponse(std::forward<GCMChannelResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetGcmChannelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetGcmChannelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetGcmChannelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetGcmChannelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     GCMChannelResponse m_gCMChannelResponse;
+    bool m_gCMChannelResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

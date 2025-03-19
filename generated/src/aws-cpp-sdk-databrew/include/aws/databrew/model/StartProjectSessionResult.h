@@ -27,7 +27,7 @@ namespace Model
   class StartProjectSessionResult
   {
   public:
-    AWS_GLUEDATABREW_API StartProjectSessionResult();
+    AWS_GLUEDATABREW_API StartProjectSessionResult() = default;
     AWS_GLUEDATABREW_API StartProjectSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUEDATABREW_API StartProjectSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>The name of the project to be acted upon.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline StartProjectSessionResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline StartProjectSessionResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline StartProjectSessionResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    StartProjectSessionResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A system-generated identifier for the session.</p>
      */
-    inline const Aws::String& GetClientSessionId() const{ return m_clientSessionId; }
-    inline void SetClientSessionId(const Aws::String& value) { m_clientSessionId = value; }
-    inline void SetClientSessionId(Aws::String&& value) { m_clientSessionId = std::move(value); }
-    inline void SetClientSessionId(const char* value) { m_clientSessionId.assign(value); }
-    inline StartProjectSessionResult& WithClientSessionId(const Aws::String& value) { SetClientSessionId(value); return *this;}
-    inline StartProjectSessionResult& WithClientSessionId(Aws::String&& value) { SetClientSessionId(std::move(value)); return *this;}
-    inline StartProjectSessionResult& WithClientSessionId(const char* value) { SetClientSessionId(value); return *this;}
+    inline const Aws::String& GetClientSessionId() const { return m_clientSessionId; }
+    template<typename ClientSessionIdT = Aws::String>
+    void SetClientSessionId(ClientSessionIdT&& value) { m_clientSessionIdHasBeenSet = true; m_clientSessionId = std::forward<ClientSessionIdT>(value); }
+    template<typename ClientSessionIdT = Aws::String>
+    StartProjectSessionResult& WithClientSessionId(ClientSessionIdT&& value) { SetClientSessionId(std::forward<ClientSessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartProjectSessionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartProjectSessionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartProjectSessionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartProjectSessionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_clientSessionId;
+    bool m_clientSessionIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

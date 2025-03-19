@@ -12,14 +12,6 @@ using namespace Aws::SFN::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartExecutionRequest::StartExecutionRequest() : 
-    m_stateMachineArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_traceHeaderHasBeenSet(false)
-{
-}
-
 Aws::String StartExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

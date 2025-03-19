@@ -12,16 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDataCatalogRequest::CreateDataCatalogRequest() : 
-    m_nameHasBeenSet(false),
-    m_type(DataCatalogType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDataCatalogRequest::SerializePayload() const
 {
   JsonValue payload;

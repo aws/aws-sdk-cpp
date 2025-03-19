@@ -28,7 +28,7 @@ namespace Model
   class DescribeAccountAssignmentDeletionStatusResult
   {
   public:
-    AWS_SSOADMIN_API DescribeAccountAssignmentDeletionStatusResult();
+    AWS_SSOADMIN_API DescribeAccountAssignmentDeletionStatusResult() = default;
     AWS_SSOADMIN_API DescribeAccountAssignmentDeletionStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SSOADMIN_API DescribeAccountAssignmentDeletionStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The status object for the account assignment deletion operation.</p>
      */
-    inline const AccountAssignmentOperationStatus& GetAccountAssignmentDeletionStatus() const{ return m_accountAssignmentDeletionStatus; }
-    inline void SetAccountAssignmentDeletionStatus(const AccountAssignmentOperationStatus& value) { m_accountAssignmentDeletionStatus = value; }
-    inline void SetAccountAssignmentDeletionStatus(AccountAssignmentOperationStatus&& value) { m_accountAssignmentDeletionStatus = std::move(value); }
-    inline DescribeAccountAssignmentDeletionStatusResult& WithAccountAssignmentDeletionStatus(const AccountAssignmentOperationStatus& value) { SetAccountAssignmentDeletionStatus(value); return *this;}
-    inline DescribeAccountAssignmentDeletionStatusResult& WithAccountAssignmentDeletionStatus(AccountAssignmentOperationStatus&& value) { SetAccountAssignmentDeletionStatus(std::move(value)); return *this;}
+    inline const AccountAssignmentOperationStatus& GetAccountAssignmentDeletionStatus() const { return m_accountAssignmentDeletionStatus; }
+    template<typename AccountAssignmentDeletionStatusT = AccountAssignmentOperationStatus>
+    void SetAccountAssignmentDeletionStatus(AccountAssignmentDeletionStatusT&& value) { m_accountAssignmentDeletionStatusHasBeenSet = true; m_accountAssignmentDeletionStatus = std::forward<AccountAssignmentDeletionStatusT>(value); }
+    template<typename AccountAssignmentDeletionStatusT = AccountAssignmentOperationStatus>
+    DescribeAccountAssignmentDeletionStatusResult& WithAccountAssignmentDeletionStatus(AccountAssignmentDeletionStatusT&& value) { SetAccountAssignmentDeletionStatus(std::forward<AccountAssignmentDeletionStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAccountAssignmentDeletionStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAccountAssignmentDeletionStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAccountAssignmentDeletionStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAccountAssignmentDeletionStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     AccountAssignmentOperationStatus m_accountAssignmentDeletionStatus;
+    bool m_accountAssignmentDeletionStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

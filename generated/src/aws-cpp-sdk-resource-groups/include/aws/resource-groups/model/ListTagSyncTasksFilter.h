@@ -32,7 +32,7 @@ namespace Model
   class ListTagSyncTasksFilter
   {
   public:
-    AWS_RESOURCEGROUPS_API ListTagSyncTasksFilter();
+    AWS_RESOURCEGROUPS_API ListTagSyncTasksFilter() = default;
     AWS_RESOURCEGROUPS_API ListTagSyncTasksFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPS_API ListTagSyncTasksFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The Amazon resource name (ARN) of the application group. </p>
      */
-    inline const Aws::String& GetGroupArn() const{ return m_groupArn; }
+    inline const Aws::String& GetGroupArn() const { return m_groupArn; }
     inline bool GroupArnHasBeenSet() const { return m_groupArnHasBeenSet; }
-    inline void SetGroupArn(const Aws::String& value) { m_groupArnHasBeenSet = true; m_groupArn = value; }
-    inline void SetGroupArn(Aws::String&& value) { m_groupArnHasBeenSet = true; m_groupArn = std::move(value); }
-    inline void SetGroupArn(const char* value) { m_groupArnHasBeenSet = true; m_groupArn.assign(value); }
-    inline ListTagSyncTasksFilter& WithGroupArn(const Aws::String& value) { SetGroupArn(value); return *this;}
-    inline ListTagSyncTasksFilter& WithGroupArn(Aws::String&& value) { SetGroupArn(std::move(value)); return *this;}
-    inline ListTagSyncTasksFilter& WithGroupArn(const char* value) { SetGroupArn(value); return *this;}
+    template<typename GroupArnT = Aws::String>
+    void SetGroupArn(GroupArnT&& value) { m_groupArnHasBeenSet = true; m_groupArn = std::forward<GroupArnT>(value); }
+    template<typename GroupArnT = Aws::String>
+    ListTagSyncTasksFilter& WithGroupArn(GroupArnT&& value) { SetGroupArn(std::forward<GroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the application group. </p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline ListTagSyncTasksFilter& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline ListTagSyncTasksFilter& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline ListTagSyncTasksFilter& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    ListTagSyncTasksFilter& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
   private:
 

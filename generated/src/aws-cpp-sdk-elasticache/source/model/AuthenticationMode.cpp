@@ -20,15 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-AuthenticationMode::AuthenticationMode() : 
-    m_type(InputAuthenticationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_passwordsHasBeenSet(false)
-{
-}
-
 AuthenticationMode::AuthenticationMode(const XmlNode& xmlNode)
-  : AuthenticationMode()
 {
   *this = xmlNode;
 }
@@ -42,13 +34,14 @@ AuthenticationMode& AuthenticationMode::operator =(const XmlNode& xmlNode)
     XmlNode typeNode = resultNode.FirstChild("Type");
     if(!typeNode.IsNull())
     {
-      m_type = InputAuthenticationTypeMapper::GetInputAuthenticationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()).c_str());
+      m_type = InputAuthenticationTypeMapper::GetInputAuthenticationTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText()).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode passwordsNode = resultNode.FirstChild("Passwords");
     if(!passwordsNode.IsNull())
     {
       XmlNode passwordsMember = passwordsNode.FirstChild("member");
+      m_passwordsHasBeenSet = !passwordsMember.IsNull();
       while(!passwordsMember.IsNull())
       {
         m_passwords.push_back(passwordsMember.GetText());

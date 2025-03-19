@@ -18,13 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-TextSegment::TextSegment() : 
-    m_textHasBeenSet(false)
-{
-}
-
 TextSegment::TextSegment(JsonView jsonValue)
-  : TextSegment()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TextSegment& TextSegment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Text"))
   {
     m_text = jsonValue.GetString("Text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

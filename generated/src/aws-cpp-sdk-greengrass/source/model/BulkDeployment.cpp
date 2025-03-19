@@ -18,15 +18,7 @@ namespace Greengrass
 namespace Model
 {
 
-BulkDeployment::BulkDeployment() : 
-    m_bulkDeploymentArnHasBeenSet(false),
-    m_bulkDeploymentIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
-{
-}
-
 BulkDeployment::BulkDeployment(JsonView jsonValue)
-  : BulkDeployment()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ BulkDeployment& BulkDeployment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BulkDeploymentArn"))
   {
     m_bulkDeploymentArn = jsonValue.GetString("BulkDeploymentArn");
-
     m_bulkDeploymentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BulkDeploymentId"))
   {
     m_bulkDeploymentId = jsonValue.GetString("BulkDeploymentId");
-
     m_bulkDeploymentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   return *this;
 }
 

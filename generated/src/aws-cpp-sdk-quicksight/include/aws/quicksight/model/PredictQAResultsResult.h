@@ -29,7 +29,7 @@ namespace Model
   class PredictQAResultsResult
   {
   public:
-    AWS_QUICKSIGHT_API PredictQAResultsResult();
+    AWS_QUICKSIGHT_API PredictQAResultsResult() = default;
     AWS_QUICKSIGHT_API PredictQAResultsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API PredictQAResultsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,54 +38,56 @@ namespace Model
     /**
      * <p>The primary visual response.</p>
      */
-    inline const QAResult& GetPrimaryResult() const{ return m_primaryResult; }
-    inline void SetPrimaryResult(const QAResult& value) { m_primaryResult = value; }
-    inline void SetPrimaryResult(QAResult&& value) { m_primaryResult = std::move(value); }
-    inline PredictQAResultsResult& WithPrimaryResult(const QAResult& value) { SetPrimaryResult(value); return *this;}
-    inline PredictQAResultsResult& WithPrimaryResult(QAResult&& value) { SetPrimaryResult(std::move(value)); return *this;}
+    inline const QAResult& GetPrimaryResult() const { return m_primaryResult; }
+    template<typename PrimaryResultT = QAResult>
+    void SetPrimaryResult(PrimaryResultT&& value) { m_primaryResultHasBeenSet = true; m_primaryResult = std::forward<PrimaryResultT>(value); }
+    template<typename PrimaryResultT = QAResult>
+    PredictQAResultsResult& WithPrimaryResult(PrimaryResultT&& value) { SetPrimaryResult(std::forward<PrimaryResultT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Additional visual responses.</p>
      */
-    inline const Aws::Vector<QAResult>& GetAdditionalResults() const{ return m_additionalResults; }
-    inline void SetAdditionalResults(const Aws::Vector<QAResult>& value) { m_additionalResults = value; }
-    inline void SetAdditionalResults(Aws::Vector<QAResult>&& value) { m_additionalResults = std::move(value); }
-    inline PredictQAResultsResult& WithAdditionalResults(const Aws::Vector<QAResult>& value) { SetAdditionalResults(value); return *this;}
-    inline PredictQAResultsResult& WithAdditionalResults(Aws::Vector<QAResult>&& value) { SetAdditionalResults(std::move(value)); return *this;}
-    inline PredictQAResultsResult& AddAdditionalResults(const QAResult& value) { m_additionalResults.push_back(value); return *this; }
-    inline PredictQAResultsResult& AddAdditionalResults(QAResult&& value) { m_additionalResults.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<QAResult>& GetAdditionalResults() const { return m_additionalResults; }
+    template<typename AdditionalResultsT = Aws::Vector<QAResult>>
+    void SetAdditionalResults(AdditionalResultsT&& value) { m_additionalResultsHasBeenSet = true; m_additionalResults = std::forward<AdditionalResultsT>(value); }
+    template<typename AdditionalResultsT = Aws::Vector<QAResult>>
+    PredictQAResultsResult& WithAdditionalResults(AdditionalResultsT&& value) { SetAdditionalResults(std::forward<AdditionalResultsT>(value)); return *this;}
+    template<typename AdditionalResultsT = QAResult>
+    PredictQAResultsResult& AddAdditionalResults(AdditionalResultsT&& value) { m_additionalResultsHasBeenSet = true; m_additionalResults.emplace_back(std::forward<AdditionalResultsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PredictQAResultsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PredictQAResultsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PredictQAResultsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PredictQAResultsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline PredictQAResultsResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     QAResult m_primaryResult;
+    bool m_primaryResultHasBeenSet = false;
 
     Aws::Vector<QAResult> m_additionalResults;
+    bool m_additionalResultsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

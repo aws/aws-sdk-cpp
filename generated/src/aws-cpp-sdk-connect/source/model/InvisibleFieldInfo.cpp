@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-InvisibleFieldInfo::InvisibleFieldInfo() : 
-    m_idHasBeenSet(false)
-{
-}
-
 InvisibleFieldInfo::InvisibleFieldInfo(JsonView jsonValue)
-  : InvisibleFieldInfo()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InvisibleFieldInfo& InvisibleFieldInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetObject("Id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

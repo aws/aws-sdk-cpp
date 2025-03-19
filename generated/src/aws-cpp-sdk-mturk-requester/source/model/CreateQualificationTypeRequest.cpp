@@ -12,25 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateQualificationTypeRequest::CreateQualificationTypeRequest() : 
-    m_nameHasBeenSet(false),
-    m_keywordsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_qualificationTypeStatus(QualificationTypeStatus::NOT_SET),
-    m_qualificationTypeStatusHasBeenSet(false),
-    m_retryDelayInSeconds(0),
-    m_retryDelayInSecondsHasBeenSet(false),
-    m_testHasBeenSet(false),
-    m_answerKeyHasBeenSet(false),
-    m_testDurationInSeconds(0),
-    m_testDurationInSecondsHasBeenSet(false),
-    m_autoGranted(false),
-    m_autoGrantedHasBeenSet(false),
-    m_autoGrantedValue(0),
-    m_autoGrantedValueHasBeenSet(false)
-{
-}
-
 Aws::String CreateQualificationTypeRequest::SerializePayload() const
 {
   JsonValue payload;

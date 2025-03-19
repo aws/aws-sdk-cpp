@@ -18,26 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-WorkspaceBundle::WorkspaceBundle() : 
-    m_bundleIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_rootStorageHasBeenSet(false),
-    m_userStorageHasBeenSet(false),
-    m_computeTypeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_state(WorkspaceBundleState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_bundleType(BundleType::NOT_SET),
-    m_bundleTypeHasBeenSet(false)
-{
-}
-
 WorkspaceBundle::WorkspaceBundle(JsonView jsonValue)
-  : WorkspaceBundle()
 {
   *this = jsonValue;
 }
@@ -47,87 +28,63 @@ WorkspaceBundle& WorkspaceBundle::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BundleId"))
   {
     m_bundleId = jsonValue.GetString("BundleId");
-
     m_bundleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Owner"))
   {
     m_owner = jsonValue.GetString("Owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageId"))
   {
     m_imageId = jsonValue.GetString("ImageId");
-
     m_imageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RootStorage"))
   {
     m_rootStorage = jsonValue.GetObject("RootStorage");
-
     m_rootStorageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserStorage"))
   {
     m_userStorage = jsonValue.GetObject("UserStorage");
-
     m_userStorageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComputeType"))
   {
     m_computeType = jsonValue.GetObject("ComputeType");
-
     m_computeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = WorkspaceBundleStateMapper::GetWorkspaceBundleStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BundleType"))
   {
     m_bundleType = BundleTypeMapper::GetBundleTypeForName(jsonValue.GetString("BundleType"));
-
     m_bundleTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

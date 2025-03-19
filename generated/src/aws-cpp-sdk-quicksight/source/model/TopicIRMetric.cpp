@@ -18,22 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TopicIRMetric::TopicIRMetric() : 
-    m_metricIdHasBeenSet(false),
-    m_functionHasBeenSet(false),
-    m_operandsHasBeenSet(false),
-    m_comparisonMethodHasBeenSet(false),
-    m_expressionHasBeenSet(false),
-    m_calculatedFieldReferencesHasBeenSet(false),
-    m_displayFormat(DisplayFormat::NOT_SET),
-    m_displayFormatHasBeenSet(false),
-    m_displayFormatOptionsHasBeenSet(false),
-    m_namedEntityHasBeenSet(false)
-{
-}
-
 TopicIRMetric::TopicIRMetric(JsonView jsonValue)
-  : TopicIRMetric()
 {
   *this = jsonValue;
 }
@@ -43,17 +28,13 @@ TopicIRMetric& TopicIRMetric::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MetricId"))
   {
     m_metricId = jsonValue.GetObject("MetricId");
-
     m_metricIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Function"))
   {
     m_function = jsonValue.GetObject("Function");
-
     m_functionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operands"))
   {
     Aws::Utils::Array<JsonView> operandsJsonList = jsonValue.GetArray("Operands");
@@ -63,21 +44,16 @@ TopicIRMetric& TopicIRMetric::operator =(JsonView jsonValue)
     }
     m_operandsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComparisonMethod"))
   {
     m_comparisonMethod = jsonValue.GetObject("ComparisonMethod");
-
     m_comparisonMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Expression"))
   {
     m_expression = jsonValue.GetString("Expression");
-
     m_expressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CalculatedFieldReferences"))
   {
     Aws::Utils::Array<JsonView> calculatedFieldReferencesJsonList = jsonValue.GetArray("CalculatedFieldReferences");
@@ -87,28 +63,21 @@ TopicIRMetric& TopicIRMetric::operator =(JsonView jsonValue)
     }
     m_calculatedFieldReferencesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayFormat"))
   {
     m_displayFormat = DisplayFormatMapper::GetDisplayFormatForName(jsonValue.GetString("DisplayFormat"));
-
     m_displayFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayFormatOptions"))
   {
     m_displayFormatOptions = jsonValue.GetObject("DisplayFormatOptions");
-
     m_displayFormatOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NamedEntity"))
   {
     m_namedEntity = jsonValue.GetObject("NamedEntity");
-
     m_namedEntityHasBeenSet = true;
   }
-
   return *this;
 }
 

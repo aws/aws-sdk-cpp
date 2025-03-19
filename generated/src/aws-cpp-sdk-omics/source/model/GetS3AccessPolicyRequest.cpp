@@ -12,11 +12,6 @@ using namespace Aws::Omics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetS3AccessPolicyRequest::GetS3AccessPolicyRequest() : 
-    m_s3AccessPointArnHasBeenSet(false)
-{
-}
-
 Aws::String GetS3AccessPolicyRequest::SerializePayload() const
 {
   return {};

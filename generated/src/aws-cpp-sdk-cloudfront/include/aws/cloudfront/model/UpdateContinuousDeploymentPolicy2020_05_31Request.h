@@ -22,7 +22,7 @@ namespace Model
   class UpdateContinuousDeploymentPolicy2020_05_31Request : public CloudFrontRequest
   {
   public:
-    AWS_CLOUDFRONT_API UpdateContinuousDeploymentPolicy2020_05_31Request();
+    AWS_CLOUDFRONT_API UpdateContinuousDeploymentPolicy2020_05_31Request() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,26 +39,24 @@ namespace Model
     /**
      * <p>The continuous deployment policy configuration.</p>
      */
-    inline const ContinuousDeploymentPolicyConfig& GetContinuousDeploymentPolicyConfig() const{ return m_continuousDeploymentPolicyConfig; }
+    inline const ContinuousDeploymentPolicyConfig& GetContinuousDeploymentPolicyConfig() const { return m_continuousDeploymentPolicyConfig; }
     inline bool ContinuousDeploymentPolicyConfigHasBeenSet() const { return m_continuousDeploymentPolicyConfigHasBeenSet; }
-    inline void SetContinuousDeploymentPolicyConfig(const ContinuousDeploymentPolicyConfig& value) { m_continuousDeploymentPolicyConfigHasBeenSet = true; m_continuousDeploymentPolicyConfig = value; }
-    inline void SetContinuousDeploymentPolicyConfig(ContinuousDeploymentPolicyConfig&& value) { m_continuousDeploymentPolicyConfigHasBeenSet = true; m_continuousDeploymentPolicyConfig = std::move(value); }
-    inline UpdateContinuousDeploymentPolicy2020_05_31Request& WithContinuousDeploymentPolicyConfig(const ContinuousDeploymentPolicyConfig& value) { SetContinuousDeploymentPolicyConfig(value); return *this;}
-    inline UpdateContinuousDeploymentPolicy2020_05_31Request& WithContinuousDeploymentPolicyConfig(ContinuousDeploymentPolicyConfig&& value) { SetContinuousDeploymentPolicyConfig(std::move(value)); return *this;}
+    template<typename ContinuousDeploymentPolicyConfigT = ContinuousDeploymentPolicyConfig>
+    void SetContinuousDeploymentPolicyConfig(ContinuousDeploymentPolicyConfigT&& value) { m_continuousDeploymentPolicyConfigHasBeenSet = true; m_continuousDeploymentPolicyConfig = std::forward<ContinuousDeploymentPolicyConfigT>(value); }
+    template<typename ContinuousDeploymentPolicyConfigT = ContinuousDeploymentPolicyConfig>
+    UpdateContinuousDeploymentPolicy2020_05_31Request& WithContinuousDeploymentPolicyConfig(ContinuousDeploymentPolicyConfigT&& value) { SetContinuousDeploymentPolicyConfig(std::forward<ContinuousDeploymentPolicyConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the continuous deployment policy that you are updating.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateContinuousDeploymentPolicy2020_05_31Request& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateContinuousDeploymentPolicy2020_05_31Request& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateContinuousDeploymentPolicy2020_05_31Request& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateContinuousDeploymentPolicy2020_05_31Request& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * <p>The current version (<code>ETag</code> value) of the continuous deployment
      * policy that you are updating.</p>
      */
-    inline const Aws::String& GetIfMatch() const{ return m_ifMatch; }
+    inline const Aws::String& GetIfMatch() const { return m_ifMatch; }
     inline bool IfMatchHasBeenSet() const { return m_ifMatchHasBeenSet; }
-    inline void SetIfMatch(const Aws::String& value) { m_ifMatchHasBeenSet = true; m_ifMatch = value; }
-    inline void SetIfMatch(Aws::String&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::move(value); }
-    inline void SetIfMatch(const char* value) { m_ifMatchHasBeenSet = true; m_ifMatch.assign(value); }
-    inline UpdateContinuousDeploymentPolicy2020_05_31Request& WithIfMatch(const Aws::String& value) { SetIfMatch(value); return *this;}
-    inline UpdateContinuousDeploymentPolicy2020_05_31Request& WithIfMatch(Aws::String&& value) { SetIfMatch(std::move(value)); return *this;}
-    inline UpdateContinuousDeploymentPolicy2020_05_31Request& WithIfMatch(const char* value) { SetIfMatch(value); return *this;}
+    template<typename IfMatchT = Aws::String>
+    void SetIfMatch(IfMatchT&& value) { m_ifMatchHasBeenSet = true; m_ifMatch = std::forward<IfMatchT>(value); }
+    template<typename IfMatchT = Aws::String>
+    UpdateContinuousDeploymentPolicy2020_05_31Request& WithIfMatch(IfMatchT&& value) { SetIfMatch(std::forward<IfMatchT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-SmbMountOptions::SmbMountOptions() : 
-    m_version(SmbVersion::NOT_SET),
-    m_versionHasBeenSet(false)
-{
-}
-
 SmbMountOptions::SmbMountOptions(JsonView jsonValue)
-  : SmbMountOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SmbMountOptions& SmbMountOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Version"))
   {
     m_version = SmbVersionMapper::GetSmbVersionForName(jsonValue.GetString("Version"));
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

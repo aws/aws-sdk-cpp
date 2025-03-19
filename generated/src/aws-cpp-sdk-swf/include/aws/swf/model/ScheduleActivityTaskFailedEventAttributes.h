@@ -34,7 +34,7 @@ namespace Model
   class ScheduleActivityTaskFailedEventAttributes
   {
   public:
-    AWS_SWF_API ScheduleActivityTaskFailedEventAttributes();
+    AWS_SWF_API ScheduleActivityTaskFailedEventAttributes() = default;
     AWS_SWF_API ScheduleActivityTaskFailedEventAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API ScheduleActivityTaskFailedEventAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>The activity type provided in the <code>ScheduleActivityTask</code> decision
      * that failed.</p>
      */
-    inline const ActivityType& GetActivityType() const{ return m_activityType; }
+    inline const ActivityType& GetActivityType() const { return m_activityType; }
     inline bool ActivityTypeHasBeenSet() const { return m_activityTypeHasBeenSet; }
-    inline void SetActivityType(const ActivityType& value) { m_activityTypeHasBeenSet = true; m_activityType = value; }
-    inline void SetActivityType(ActivityType&& value) { m_activityTypeHasBeenSet = true; m_activityType = std::move(value); }
-    inline ScheduleActivityTaskFailedEventAttributes& WithActivityType(const ActivityType& value) { SetActivityType(value); return *this;}
-    inline ScheduleActivityTaskFailedEventAttributes& WithActivityType(ActivityType&& value) { SetActivityType(std::move(value)); return *this;}
+    template<typename ActivityTypeT = ActivityType>
+    void SetActivityType(ActivityTypeT&& value) { m_activityTypeHasBeenSet = true; m_activityType = std::forward<ActivityTypeT>(value); }
+    template<typename ActivityTypeT = ActivityType>
+    ScheduleActivityTaskFailedEventAttributes& WithActivityType(ActivityTypeT&& value) { SetActivityType(std::forward<ActivityTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +58,12 @@ namespace Model
      * <p>The activityId provided in the <code>ScheduleActivityTask</code> decision
      * that failed.</p>
      */
-    inline const Aws::String& GetActivityId() const{ return m_activityId; }
+    inline const Aws::String& GetActivityId() const { return m_activityId; }
     inline bool ActivityIdHasBeenSet() const { return m_activityIdHasBeenSet; }
-    inline void SetActivityId(const Aws::String& value) { m_activityIdHasBeenSet = true; m_activityId = value; }
-    inline void SetActivityId(Aws::String&& value) { m_activityIdHasBeenSet = true; m_activityId = std::move(value); }
-    inline void SetActivityId(const char* value) { m_activityIdHasBeenSet = true; m_activityId.assign(value); }
-    inline ScheduleActivityTaskFailedEventAttributes& WithActivityId(const Aws::String& value) { SetActivityId(value); return *this;}
-    inline ScheduleActivityTaskFailedEventAttributes& WithActivityId(Aws::String&& value) { SetActivityId(std::move(value)); return *this;}
-    inline ScheduleActivityTaskFailedEventAttributes& WithActivityId(const char* value) { SetActivityId(value); return *this;}
+    template<typename ActivityIdT = Aws::String>
+    void SetActivityId(ActivityIdT&& value) { m_activityIdHasBeenSet = true; m_activityId = std::forward<ActivityIdT>(value); }
+    template<typename ActivityIdT = Aws::String>
+    ScheduleActivityTaskFailedEventAttributes& WithActivityId(ActivityIdT&& value) { SetActivityId(std::forward<ActivityIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,12 +76,10 @@ namespace Model
      * IAM to Manage Access to Amazon SWF Workflows</a> in the <i>Amazon SWF Developer
      * Guide</i>.</p> 
      */
-    inline const ScheduleActivityTaskFailedCause& GetCause() const{ return m_cause; }
+    inline ScheduleActivityTaskFailedCause GetCause() const { return m_cause; }
     inline bool CauseHasBeenSet() const { return m_causeHasBeenSet; }
-    inline void SetCause(const ScheduleActivityTaskFailedCause& value) { m_causeHasBeenSet = true; m_cause = value; }
-    inline void SetCause(ScheduleActivityTaskFailedCause&& value) { m_causeHasBeenSet = true; m_cause = std::move(value); }
-    inline ScheduleActivityTaskFailedEventAttributes& WithCause(const ScheduleActivityTaskFailedCause& value) { SetCause(value); return *this;}
-    inline ScheduleActivityTaskFailedEventAttributes& WithCause(ScheduleActivityTaskFailedCause&& value) { SetCause(std::move(value)); return *this;}
+    inline void SetCause(ScheduleActivityTaskFailedCause value) { m_causeHasBeenSet = true; m_cause = value; }
+    inline ScheduleActivityTaskFailedEventAttributes& WithCause(ScheduleActivityTaskFailedCause value) { SetCause(value); return *this;}
     ///@}
 
     ///@{
@@ -93,7 +89,7 @@ namespace Model
      * can be useful for diagnosing problems by tracing back the chain of events
      * leading up to this event.</p>
      */
-    inline long long GetDecisionTaskCompletedEventId() const{ return m_decisionTaskCompletedEventId; }
+    inline long long GetDecisionTaskCompletedEventId() const { return m_decisionTaskCompletedEventId; }
     inline bool DecisionTaskCompletedEventIdHasBeenSet() const { return m_decisionTaskCompletedEventIdHasBeenSet; }
     inline void SetDecisionTaskCompletedEventId(long long value) { m_decisionTaskCompletedEventIdHasBeenSet = true; m_decisionTaskCompletedEventId = value; }
     inline ScheduleActivityTaskFailedEventAttributes& WithDecisionTaskCompletedEventId(long long value) { SetDecisionTaskCompletedEventId(value); return *this;}
@@ -106,10 +102,10 @@ namespace Model
     Aws::String m_activityId;
     bool m_activityIdHasBeenSet = false;
 
-    ScheduleActivityTaskFailedCause m_cause;
+    ScheduleActivityTaskFailedCause m_cause{ScheduleActivityTaskFailedCause::NOT_SET};
     bool m_causeHasBeenSet = false;
 
-    long long m_decisionTaskCompletedEventId;
+    long long m_decisionTaskCompletedEventId{0};
     bool m_decisionTaskCompletedEventIdHasBeenSet = false;
   };
 

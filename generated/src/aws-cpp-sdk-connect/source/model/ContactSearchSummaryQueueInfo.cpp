@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-ContactSearchSummaryQueueInfo::ContactSearchSummaryQueueInfo() : 
-    m_idHasBeenSet(false),
-    m_enqueueTimestampHasBeenSet(false)
-{
-}
-
 ContactSearchSummaryQueueInfo::ContactSearchSummaryQueueInfo(JsonView jsonValue)
-  : ContactSearchSummaryQueueInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ContactSearchSummaryQueueInfo& ContactSearchSummaryQueueInfo::operator =(JsonVie
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnqueueTimestamp"))
   {
     m_enqueueTimestamp = jsonValue.GetDouble("EnqueueTimestamp");
-
     m_enqueueTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

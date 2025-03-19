@@ -18,20 +18,7 @@ namespace IoT
 namespace Model
 {
 
-MetricValue::MetricValue() : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_cidrsHasBeenSet(false),
-    m_portsHasBeenSet(false),
-    m_number(0.0),
-    m_numberHasBeenSet(false),
-    m_numbersHasBeenSet(false),
-    m_stringsHasBeenSet(false)
-{
-}
-
 MetricValue::MetricValue(JsonView jsonValue)
-  : MetricValue()
 {
   *this = jsonValue;
 }
@@ -41,10 +28,8 @@ MetricValue& MetricValue::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetInt64("count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cidrs"))
   {
     Aws::Utils::Array<JsonView> cidrsJsonList = jsonValue.GetArray("cidrs");
@@ -54,7 +39,6 @@ MetricValue& MetricValue::operator =(JsonView jsonValue)
     }
     m_cidrsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ports"))
   {
     Aws::Utils::Array<JsonView> portsJsonList = jsonValue.GetArray("ports");
@@ -64,14 +48,11 @@ MetricValue& MetricValue::operator =(JsonView jsonValue)
     }
     m_portsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("number"))
   {
     m_number = jsonValue.GetDouble("number");
-
     m_numberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numbers"))
   {
     Aws::Utils::Array<JsonView> numbersJsonList = jsonValue.GetArray("numbers");
@@ -81,7 +62,6 @@ MetricValue& MetricValue::operator =(JsonView jsonValue)
     }
     m_numbersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("strings"))
   {
     Aws::Utils::Array<JsonView> stringsJsonList = jsonValue.GetArray("strings");
@@ -91,7 +71,6 @@ MetricValue& MetricValue::operator =(JsonView jsonValue)
     }
     m_stringsHasBeenSet = true;
   }
-
   return *this;
 }
 

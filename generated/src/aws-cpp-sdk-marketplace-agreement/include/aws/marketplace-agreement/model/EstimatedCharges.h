@@ -31,7 +31,7 @@ namespace Model
   class EstimatedCharges
   {
   public:
-    AWS_AGREEMENTSERVICE_API EstimatedCharges();
+    AWS_AGREEMENTSERVICE_API EstimatedCharges() = default;
     AWS_AGREEMENTSERVICE_API EstimatedCharges(Aws::Utils::Json::JsonView jsonValue);
     AWS_AGREEMENTSERVICE_API EstimatedCharges& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AGREEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,28 +58,24 @@ namespace Model
      * SaaS metered or AMI/container hourly or monthly), because the exact usage is not
      * known upfront.</p> 
      */
-    inline const Aws::String& GetAgreementValue() const{ return m_agreementValue; }
+    inline const Aws::String& GetAgreementValue() const { return m_agreementValue; }
     inline bool AgreementValueHasBeenSet() const { return m_agreementValueHasBeenSet; }
-    inline void SetAgreementValue(const Aws::String& value) { m_agreementValueHasBeenSet = true; m_agreementValue = value; }
-    inline void SetAgreementValue(Aws::String&& value) { m_agreementValueHasBeenSet = true; m_agreementValue = std::move(value); }
-    inline void SetAgreementValue(const char* value) { m_agreementValueHasBeenSet = true; m_agreementValue.assign(value); }
-    inline EstimatedCharges& WithAgreementValue(const Aws::String& value) { SetAgreementValue(value); return *this;}
-    inline EstimatedCharges& WithAgreementValue(Aws::String&& value) { SetAgreementValue(std::move(value)); return *this;}
-    inline EstimatedCharges& WithAgreementValue(const char* value) { SetAgreementValue(value); return *this;}
+    template<typename AgreementValueT = Aws::String>
+    void SetAgreementValue(AgreementValueT&& value) { m_agreementValueHasBeenSet = true; m_agreementValue = std::forward<AgreementValueT>(value); }
+    template<typename AgreementValueT = Aws::String>
+    EstimatedCharges& WithAgreementValue(AgreementValueT&& value) { SetAgreementValue(std::forward<AgreementValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Defines the currency code for the charge.</p>
      */
-    inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
+    inline const Aws::String& GetCurrencyCode() const { return m_currencyCode; }
     inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
-    inline void SetCurrencyCode(const Aws::String& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
-    inline void SetCurrencyCode(Aws::String&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
-    inline void SetCurrencyCode(const char* value) { m_currencyCodeHasBeenSet = true; m_currencyCode.assign(value); }
-    inline EstimatedCharges& WithCurrencyCode(const Aws::String& value) { SetCurrencyCode(value); return *this;}
-    inline EstimatedCharges& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(std::move(value)); return *this;}
-    inline EstimatedCharges& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
+    template<typename CurrencyCodeT = Aws::String>
+    void SetCurrencyCode(CurrencyCodeT&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::forward<CurrencyCodeT>(value); }
+    template<typename CurrencyCodeT = Aws::String>
+    EstimatedCharges& WithCurrencyCode(CurrencyCodeT&& value) { SetCurrencyCode(std::forward<CurrencyCodeT>(value)); return *this;}
     ///@}
   private:
 

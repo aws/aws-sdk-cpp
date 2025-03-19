@@ -18,23 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-CoveredResource::CoveredResource() : 
-    m_accountIdHasBeenSet(false),
-    m_lastScannedAtHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_resourceMetadataHasBeenSet(false),
-    m_resourceType(CoverageResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_scanMode(ScanMode::NOT_SET),
-    m_scanModeHasBeenSet(false),
-    m_scanStatusHasBeenSet(false),
-    m_scanType(ScanType::NOT_SET),
-    m_scanTypeHasBeenSet(false)
-{
-}
-
 CoveredResource::CoveredResource(JsonView jsonValue)
-  : CoveredResource()
 {
   *this = jsonValue;
 }
@@ -44,59 +28,43 @@ CoveredResource& CoveredResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastScannedAt"))
   {
     m_lastScannedAt = jsonValue.GetDouble("lastScannedAt");
-
     m_lastScannedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceMetadata"))
   {
     m_resourceMetadata = jsonValue.GetObject("resourceMetadata");
-
     m_resourceMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = CoverageResourceTypeMapper::GetCoverageResourceTypeForName(jsonValue.GetString("resourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanMode"))
   {
     m_scanMode = ScanModeMapper::GetScanModeForName(jsonValue.GetString("scanMode"));
-
     m_scanModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanStatus"))
   {
     m_scanStatus = jsonValue.GetObject("scanStatus");
-
     m_scanStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanType"))
   {
     m_scanType = ScanTypeMapper::GetScanTypeForName(jsonValue.GetString("scanType"));
-
     m_scanTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

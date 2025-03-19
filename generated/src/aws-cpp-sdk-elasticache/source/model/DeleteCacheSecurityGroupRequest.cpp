@@ -10,11 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-DeleteCacheSecurityGroupRequest::DeleteCacheSecurityGroupRequest() : 
-    m_cacheSecurityGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCacheSecurityGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

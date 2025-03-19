@@ -32,7 +32,7 @@ namespace Model
   class TimeToLiveSpecification
   {
   public:
-    AWS_DYNAMODB_API TimeToLiveSpecification();
+    AWS_DYNAMODB_API TimeToLiveSpecification() = default;
     AWS_DYNAMODB_API TimeToLiveSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API TimeToLiveSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>Indicates whether TTL is to be enabled (true) or disabled (false) on the
      * table.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline TimeToLiveSpecification& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -54,18 +54,16 @@ namespace Model
      * <p>The name of the TTL attribute used to store the expiration time for items in
      * the table.</p>
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline TimeToLiveSpecification& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline TimeToLiveSpecification& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline TimeToLiveSpecification& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    TimeToLiveSpecification& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::String m_attributeName;

@@ -18,30 +18,7 @@ namespace LocationService
 namespace Model
 {
 
-Place::Place() : 
-    m_labelHasBeenSet(false),
-    m_geometryHasBeenSet(false),
-    m_addressNumberHasBeenSet(false),
-    m_streetHasBeenSet(false),
-    m_neighborhoodHasBeenSet(false),
-    m_municipalityHasBeenSet(false),
-    m_subRegionHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_postalCodeHasBeenSet(false),
-    m_interpolated(false),
-    m_interpolatedHasBeenSet(false),
-    m_timeZoneHasBeenSet(false),
-    m_unitTypeHasBeenSet(false),
-    m_unitNumberHasBeenSet(false),
-    m_categoriesHasBeenSet(false),
-    m_supplementalCategoriesHasBeenSet(false),
-    m_subMunicipalityHasBeenSet(false)
-{
-}
-
 Place::Place(JsonView jsonValue)
-  : Place()
 {
   *this = jsonValue;
 }
@@ -51,101 +28,73 @@ Place& Place::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Label"))
   {
     m_label = jsonValue.GetString("Label");
-
     m_labelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Geometry"))
   {
     m_geometry = jsonValue.GetObject("Geometry");
-
     m_geometryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddressNumber"))
   {
     m_addressNumber = jsonValue.GetString("AddressNumber");
-
     m_addressNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Street"))
   {
     m_street = jsonValue.GetString("Street");
-
     m_streetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Neighborhood"))
   {
     m_neighborhood = jsonValue.GetString("Neighborhood");
-
     m_neighborhoodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Municipality"))
   {
     m_municipality = jsonValue.GetString("Municipality");
-
     m_municipalityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubRegion"))
   {
     m_subRegion = jsonValue.GetString("SubRegion");
-
     m_subRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetString("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Country"))
   {
     m_country = jsonValue.GetString("Country");
-
     m_countryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostalCode"))
   {
     m_postalCode = jsonValue.GetString("PostalCode");
-
     m_postalCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Interpolated"))
   {
     m_interpolated = jsonValue.GetBool("Interpolated");
-
     m_interpolatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeZone"))
   {
     m_timeZone = jsonValue.GetObject("TimeZone");
-
     m_timeZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnitType"))
   {
     m_unitType = jsonValue.GetString("UnitType");
-
     m_unitTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UnitNumber"))
   {
     m_unitNumber = jsonValue.GetString("UnitNumber");
-
     m_unitNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Categories"))
   {
     Aws::Utils::Array<JsonView> categoriesJsonList = jsonValue.GetArray("Categories");
@@ -155,7 +104,6 @@ Place& Place::operator =(JsonView jsonValue)
     }
     m_categoriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupplementalCategories"))
   {
     Aws::Utils::Array<JsonView> supplementalCategoriesJsonList = jsonValue.GetArray("SupplementalCategories");
@@ -165,14 +113,11 @@ Place& Place::operator =(JsonView jsonValue)
     }
     m_supplementalCategoriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubMunicipality"))
   {
     m_subMunicipality = jsonValue.GetString("SubMunicipality");
-
     m_subMunicipalityHasBeenSet = true;
   }
-
   return *this;
 }
 

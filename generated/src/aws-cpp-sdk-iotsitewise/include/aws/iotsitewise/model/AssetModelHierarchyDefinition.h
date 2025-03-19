@@ -33,7 +33,7 @@ namespace Model
   class AssetModelHierarchyDefinition
   {
   public:
-    AWS_IOTSITEWISE_API AssetModelHierarchyDefinition();
+    AWS_IOTSITEWISE_API AssetModelHierarchyDefinition() = default;
     AWS_IOTSITEWISE_API AssetModelHierarchyDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API AssetModelHierarchyDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * it here in UUID format. If you specify your own ID, it must be globally
      * unique.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline AssetModelHierarchyDefinition& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline AssetModelHierarchyDefinition& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline AssetModelHierarchyDefinition& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    AssetModelHierarchyDefinition& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-ids">Using
      * external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
-    inline const Aws::String& GetExternalId() const{ return m_externalId; }
+    inline const Aws::String& GetExternalId() const { return m_externalId; }
     inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
-    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
-    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
-    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
-    inline AssetModelHierarchyDefinition& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
-    inline AssetModelHierarchyDefinition& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
-    inline AssetModelHierarchyDefinition& WithExternalId(const char* value) { SetExternalId(value); return *this;}
+    template<typename ExternalIdT = Aws::String>
+    void SetExternalId(ExternalIdT&& value) { m_externalIdHasBeenSet = true; m_externalId = std::forward<ExternalIdT>(value); }
+    template<typename ExternalIdT = Aws::String>
+    AssetModelHierarchyDefinition& WithExternalId(ExternalIdT&& value) { SetExternalId(std::forward<ExternalIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +79,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_UpdateAssetModel.html">UpdateAssetModel</a>
      * API operation).</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AssetModelHierarchyDefinition& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AssetModelHierarchyDefinition& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AssetModelHierarchyDefinition& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AssetModelHierarchyDefinition& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +95,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/object-ids.html#external-id-references">Referencing
      * objects with external IDs</a> in the <i>IoT SiteWise User Guide</i>.</p>
      */
-    inline const Aws::String& GetChildAssetModelId() const{ return m_childAssetModelId; }
+    inline const Aws::String& GetChildAssetModelId() const { return m_childAssetModelId; }
     inline bool ChildAssetModelIdHasBeenSet() const { return m_childAssetModelIdHasBeenSet; }
-    inline void SetChildAssetModelId(const Aws::String& value) { m_childAssetModelIdHasBeenSet = true; m_childAssetModelId = value; }
-    inline void SetChildAssetModelId(Aws::String&& value) { m_childAssetModelIdHasBeenSet = true; m_childAssetModelId = std::move(value); }
-    inline void SetChildAssetModelId(const char* value) { m_childAssetModelIdHasBeenSet = true; m_childAssetModelId.assign(value); }
-    inline AssetModelHierarchyDefinition& WithChildAssetModelId(const Aws::String& value) { SetChildAssetModelId(value); return *this;}
-    inline AssetModelHierarchyDefinition& WithChildAssetModelId(Aws::String&& value) { SetChildAssetModelId(std::move(value)); return *this;}
-    inline AssetModelHierarchyDefinition& WithChildAssetModelId(const char* value) { SetChildAssetModelId(value); return *this;}
+    template<typename ChildAssetModelIdT = Aws::String>
+    void SetChildAssetModelId(ChildAssetModelIdT&& value) { m_childAssetModelIdHasBeenSet = true; m_childAssetModelId = std::forward<ChildAssetModelIdT>(value); }
+    template<typename ChildAssetModelIdT = Aws::String>
+    AssetModelHierarchyDefinition& WithChildAssetModelId(ChildAssetModelIdT&& value) { SetChildAssetModelId(std::forward<ChildAssetModelIdT>(value)); return *this;}
     ///@}
   private:
 

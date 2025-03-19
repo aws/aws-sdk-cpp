@@ -12,14 +12,6 @@ using namespace Aws::EFS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMountTargetRequest::CreateMountTargetRequest() : 
-    m_fileSystemIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_ipAddressHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false)
-{
-}
-
 Aws::String CreateMountTargetRequest::SerializePayload() const
 {
   JsonValue payload;

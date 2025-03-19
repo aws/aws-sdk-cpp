@@ -18,29 +18,7 @@ namespace FinSpaceData
 namespace Model
 {
 
-DataViewSummary::DataViewSummary() : 
-    m_dataViewIdHasBeenSet(false),
-    m_dataViewArnHasBeenSet(false),
-    m_datasetIdHasBeenSet(false),
-    m_asOfTimestamp(0),
-    m_asOfTimestampHasBeenSet(false),
-    m_partitionColumnsHasBeenSet(false),
-    m_sortColumnsHasBeenSet(false),
-    m_status(DataViewStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorInfoHasBeenSet(false),
-    m_destinationTypePropertiesHasBeenSet(false),
-    m_autoUpdate(false),
-    m_autoUpdateHasBeenSet(false),
-    m_createTime(0),
-    m_createTimeHasBeenSet(false),
-    m_lastModifiedTime(0),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 DataViewSummary::DataViewSummary(JsonView jsonValue)
-  : DataViewSummary()
 {
   *this = jsonValue;
 }
@@ -50,31 +28,23 @@ DataViewSummary& DataViewSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dataViewId"))
   {
     m_dataViewId = jsonValue.GetString("dataViewId");
-
     m_dataViewIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataViewArn"))
   {
     m_dataViewArn = jsonValue.GetString("dataViewArn");
-
     m_dataViewArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datasetId"))
   {
     m_datasetId = jsonValue.GetString("datasetId");
-
     m_datasetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("asOfTimestamp"))
   {
     m_asOfTimestamp = jsonValue.GetInt64("asOfTimestamp");
-
     m_asOfTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("partitionColumns"))
   {
     Aws::Utils::Array<JsonView> partitionColumnsJsonList = jsonValue.GetArray("partitionColumns");
@@ -84,7 +54,6 @@ DataViewSummary& DataViewSummary::operator =(JsonView jsonValue)
     }
     m_partitionColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sortColumns"))
   {
     Aws::Utils::Array<JsonView> sortColumnsJsonList = jsonValue.GetArray("sortColumns");
@@ -94,49 +63,36 @@ DataViewSummary& DataViewSummary::operator =(JsonView jsonValue)
     }
     m_sortColumnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DataViewStatusMapper::GetDataViewStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorInfo"))
   {
     m_errorInfo = jsonValue.GetObject("errorInfo");
-
     m_errorInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationTypeProperties"))
   {
     m_destinationTypeProperties = jsonValue.GetObject("destinationTypeProperties");
-
     m_destinationTypePropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoUpdate"))
   {
     m_autoUpdate = jsonValue.GetBool("autoUpdate");
-
     m_autoUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetInt64("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetInt64("lastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

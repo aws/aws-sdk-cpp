@@ -12,14 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSensitivityInspectionTemplateRequest::UpdateSensitivityInspectionTemplateRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_excludesHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_includesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSensitivityInspectionTemplateRequest::SerializePayload() const
 {
   JsonValue payload;

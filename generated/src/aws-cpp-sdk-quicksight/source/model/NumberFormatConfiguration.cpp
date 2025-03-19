@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-NumberFormatConfiguration::NumberFormatConfiguration() : 
-    m_formatConfigurationHasBeenSet(false)
-{
-}
-
 NumberFormatConfiguration::NumberFormatConfiguration(JsonView jsonValue)
-  : NumberFormatConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ NumberFormatConfiguration& NumberFormatConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("FormatConfiguration"))
   {
     m_formatConfiguration = jsonValue.GetObject("FormatConfiguration");
-
     m_formatConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

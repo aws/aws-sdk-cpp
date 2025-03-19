@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-NetworkInterfaceAttachmentChanges::NetworkInterfaceAttachmentChanges() : 
-    m_attachmentIdHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false)
-{
-}
-
 NetworkInterfaceAttachmentChanges::NetworkInterfaceAttachmentChanges(const XmlNode& xmlNode)
-  : NetworkInterfaceAttachmentChanges()
 {
   *this = xmlNode;
 }

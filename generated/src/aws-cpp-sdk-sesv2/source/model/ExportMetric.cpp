@@ -18,16 +18,7 @@ namespace SESV2
 namespace Model
 {
 
-ExportMetric::ExportMetric() : 
-    m_name(Metric::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_aggregation(MetricAggregation::NOT_SET),
-    m_aggregationHasBeenSet(false)
-{
-}
-
 ExportMetric::ExportMetric(JsonView jsonValue)
-  : ExportMetric()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ExportMetric& ExportMetric::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = MetricMapper::GetMetricForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Aggregation"))
   {
     m_aggregation = MetricAggregationMapper::GetMetricAggregationForName(jsonValue.GetString("Aggregation"));
-
     m_aggregationHasBeenSet = true;
   }
-
   return *this;
 }
 

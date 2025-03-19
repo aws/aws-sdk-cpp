@@ -10,12 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-RegisterTargetsRequest::RegisterTargetsRequest() : 
-    m_targetGroupArnHasBeenSet(false),
-    m_targetsHasBeenSet(false)
-{
-}
-
 Aws::String RegisterTargetsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

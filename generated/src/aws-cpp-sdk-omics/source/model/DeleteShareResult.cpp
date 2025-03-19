@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteShareResult::DeleteShareResult() : 
-    m_status(ShareStatus::NOT_SET)
-{
-}
-
 DeleteShareResult::DeleteShareResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteShareResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ DeleteShareResult& DeleteShareResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("status"))
   {
     m_status = ShareStatusMapper::GetShareStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

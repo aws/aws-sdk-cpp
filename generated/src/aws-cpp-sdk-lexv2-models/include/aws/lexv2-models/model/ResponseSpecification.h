@@ -33,7 +33,7 @@ namespace Model
   class ResponseSpecification
   {
   public:
-    AWS_LEXMODELSV2_API ResponseSpecification();
+    AWS_LEXMODELSV2_API ResponseSpecification() = default;
     AWS_LEXMODELSV2_API ResponseSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API ResponseSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
      * <p>A collection of responses that Amazon Lex can send to the user. Amazon Lex
      * chooses the actual response to send at runtime.</p>
      */
-    inline const Aws::Vector<MessageGroup>& GetMessageGroups() const{ return m_messageGroups; }
+    inline const Aws::Vector<MessageGroup>& GetMessageGroups() const { return m_messageGroups; }
     inline bool MessageGroupsHasBeenSet() const { return m_messageGroupsHasBeenSet; }
-    inline void SetMessageGroups(const Aws::Vector<MessageGroup>& value) { m_messageGroupsHasBeenSet = true; m_messageGroups = value; }
-    inline void SetMessageGroups(Aws::Vector<MessageGroup>&& value) { m_messageGroupsHasBeenSet = true; m_messageGroups = std::move(value); }
-    inline ResponseSpecification& WithMessageGroups(const Aws::Vector<MessageGroup>& value) { SetMessageGroups(value); return *this;}
-    inline ResponseSpecification& WithMessageGroups(Aws::Vector<MessageGroup>&& value) { SetMessageGroups(std::move(value)); return *this;}
-    inline ResponseSpecification& AddMessageGroups(const MessageGroup& value) { m_messageGroupsHasBeenSet = true; m_messageGroups.push_back(value); return *this; }
-    inline ResponseSpecification& AddMessageGroups(MessageGroup&& value) { m_messageGroupsHasBeenSet = true; m_messageGroups.push_back(std::move(value)); return *this; }
+    template<typename MessageGroupsT = Aws::Vector<MessageGroup>>
+    void SetMessageGroups(MessageGroupsT&& value) { m_messageGroupsHasBeenSet = true; m_messageGroups = std::forward<MessageGroupsT>(value); }
+    template<typename MessageGroupsT = Aws::Vector<MessageGroup>>
+    ResponseSpecification& WithMessageGroups(MessageGroupsT&& value) { SetMessageGroups(std::forward<MessageGroupsT>(value)); return *this;}
+    template<typename MessageGroupsT = MessageGroup>
+    ResponseSpecification& AddMessageGroups(MessageGroupsT&& value) { m_messageGroupsHasBeenSet = true; m_messageGroups.emplace_back(std::forward<MessageGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,7 +59,7 @@ namespace Model
      * <p>Indicates whether the user can interrupt a speech response from Amazon
      * Lex.</p>
      */
-    inline bool GetAllowInterrupt() const{ return m_allowInterrupt; }
+    inline bool GetAllowInterrupt() const { return m_allowInterrupt; }
     inline bool AllowInterruptHasBeenSet() const { return m_allowInterruptHasBeenSet; }
     inline void SetAllowInterrupt(bool value) { m_allowInterruptHasBeenSet = true; m_allowInterrupt = value; }
     inline ResponseSpecification& WithAllowInterrupt(bool value) { SetAllowInterrupt(value); return *this;}
@@ -69,7 +69,7 @@ namespace Model
     Aws::Vector<MessageGroup> m_messageGroups;
     bool m_messageGroupsHasBeenSet = false;
 
-    bool m_allowInterrupt;
+    bool m_allowInterrupt{false};
     bool m_allowInterruptHasBeenSet = false;
   };
 

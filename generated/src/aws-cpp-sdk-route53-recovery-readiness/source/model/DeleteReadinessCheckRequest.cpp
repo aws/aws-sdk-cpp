@@ -12,11 +12,6 @@ using namespace Aws::Route53RecoveryReadiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteReadinessCheckRequest::DeleteReadinessCheckRequest() : 
-    m_readinessCheckNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteReadinessCheckRequest::SerializePayload() const
 {
   return {};

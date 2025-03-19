@@ -12,15 +12,6 @@ using namespace Aws::OpenSearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartServiceSoftwareUpdateRequest::StartServiceSoftwareUpdateRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_scheduleAt(ScheduleAt::NOT_SET),
-    m_scheduleAtHasBeenSet(false),
-    m_desiredStartTime(0),
-    m_desiredStartTimeHasBeenSet(false)
-{
-}
-
 Aws::String StartServiceSoftwareUpdateRequest::SerializePayload() const
 {
   JsonValue payload;

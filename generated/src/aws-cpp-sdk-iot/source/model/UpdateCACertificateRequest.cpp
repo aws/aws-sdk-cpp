@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdateCACertificateRequest::UpdateCACertificateRequest() : 
-    m_certificateIdHasBeenSet(false),
-    m_newStatus(CACertificateStatus::NOT_SET),
-    m_newStatusHasBeenSet(false),
-    m_newAutoRegistrationStatus(AutoRegistrationStatus::NOT_SET),
-    m_newAutoRegistrationStatusHasBeenSet(false),
-    m_registrationConfigHasBeenSet(false),
-    m_removeAutoRegistration(false),
-    m_removeAutoRegistrationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCACertificateRequest::SerializePayload() const
 {
   JsonValue payload;

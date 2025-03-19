@@ -34,7 +34,7 @@ namespace Model
   class ExtendedKeyUsage
   {
   public:
-    AWS_ACMPCA_API ExtendedKeyUsage();
+    AWS_ACMPCA_API ExtendedKeyUsage() = default;
     AWS_ACMPCA_API ExtendedKeyUsage(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACMPCA_API ExtendedKeyUsage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACMPCA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * href="https://datatracker.ietf.org/doc/html/rfc5280#section-4.2.1.12">RFC
      * 5280</a>.</p>
      */
-    inline const ExtendedKeyUsageType& GetExtendedKeyUsageType() const{ return m_extendedKeyUsageType; }
+    inline ExtendedKeyUsageType GetExtendedKeyUsageType() const { return m_extendedKeyUsageType; }
     inline bool ExtendedKeyUsageTypeHasBeenSet() const { return m_extendedKeyUsageTypeHasBeenSet; }
-    inline void SetExtendedKeyUsageType(const ExtendedKeyUsageType& value) { m_extendedKeyUsageTypeHasBeenSet = true; m_extendedKeyUsageType = value; }
-    inline void SetExtendedKeyUsageType(ExtendedKeyUsageType&& value) { m_extendedKeyUsageTypeHasBeenSet = true; m_extendedKeyUsageType = std::move(value); }
-    inline ExtendedKeyUsage& WithExtendedKeyUsageType(const ExtendedKeyUsageType& value) { SetExtendedKeyUsageType(value); return *this;}
-    inline ExtendedKeyUsage& WithExtendedKeyUsageType(ExtendedKeyUsageType&& value) { SetExtendedKeyUsageType(std::move(value)); return *this;}
+    inline void SetExtendedKeyUsageType(ExtendedKeyUsageType value) { m_extendedKeyUsageTypeHasBeenSet = true; m_extendedKeyUsageType = value; }
+    inline ExtendedKeyUsage& WithExtendedKeyUsageType(ExtendedKeyUsageType value) { SetExtendedKeyUsageType(value); return *this;}
     ///@}
 
     ///@{
@@ -59,18 +57,16 @@ namespace Model
      * <p>Specifies a custom <code>ExtendedKeyUsage</code> with an object identifier
      * (OID).</p>
      */
-    inline const Aws::String& GetExtendedKeyUsageObjectIdentifier() const{ return m_extendedKeyUsageObjectIdentifier; }
+    inline const Aws::String& GetExtendedKeyUsageObjectIdentifier() const { return m_extendedKeyUsageObjectIdentifier; }
     inline bool ExtendedKeyUsageObjectIdentifierHasBeenSet() const { return m_extendedKeyUsageObjectIdentifierHasBeenSet; }
-    inline void SetExtendedKeyUsageObjectIdentifier(const Aws::String& value) { m_extendedKeyUsageObjectIdentifierHasBeenSet = true; m_extendedKeyUsageObjectIdentifier = value; }
-    inline void SetExtendedKeyUsageObjectIdentifier(Aws::String&& value) { m_extendedKeyUsageObjectIdentifierHasBeenSet = true; m_extendedKeyUsageObjectIdentifier = std::move(value); }
-    inline void SetExtendedKeyUsageObjectIdentifier(const char* value) { m_extendedKeyUsageObjectIdentifierHasBeenSet = true; m_extendedKeyUsageObjectIdentifier.assign(value); }
-    inline ExtendedKeyUsage& WithExtendedKeyUsageObjectIdentifier(const Aws::String& value) { SetExtendedKeyUsageObjectIdentifier(value); return *this;}
-    inline ExtendedKeyUsage& WithExtendedKeyUsageObjectIdentifier(Aws::String&& value) { SetExtendedKeyUsageObjectIdentifier(std::move(value)); return *this;}
-    inline ExtendedKeyUsage& WithExtendedKeyUsageObjectIdentifier(const char* value) { SetExtendedKeyUsageObjectIdentifier(value); return *this;}
+    template<typename ExtendedKeyUsageObjectIdentifierT = Aws::String>
+    void SetExtendedKeyUsageObjectIdentifier(ExtendedKeyUsageObjectIdentifierT&& value) { m_extendedKeyUsageObjectIdentifierHasBeenSet = true; m_extendedKeyUsageObjectIdentifier = std::forward<ExtendedKeyUsageObjectIdentifierT>(value); }
+    template<typename ExtendedKeyUsageObjectIdentifierT = Aws::String>
+    ExtendedKeyUsage& WithExtendedKeyUsageObjectIdentifier(ExtendedKeyUsageObjectIdentifierT&& value) { SetExtendedKeyUsageObjectIdentifier(std::forward<ExtendedKeyUsageObjectIdentifierT>(value)); return *this;}
     ///@}
   private:
 
-    ExtendedKeyUsageType m_extendedKeyUsageType;
+    ExtendedKeyUsageType m_extendedKeyUsageType{ExtendedKeyUsageType::NOT_SET};
     bool m_extendedKeyUsageTypeHasBeenSet = false;
 
     Aws::String m_extendedKeyUsageObjectIdentifier;

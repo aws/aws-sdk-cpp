@@ -12,16 +12,6 @@ using namespace Aws::LookoutEquipment::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRetrainingSchedulerRequest::UpdateRetrainingSchedulerRequest() : 
-    m_modelNameHasBeenSet(false),
-    m_retrainingStartDateHasBeenSet(false),
-    m_retrainingFrequencyHasBeenSet(false),
-    m_lookbackWindowHasBeenSet(false),
-    m_promoteMode(ModelPromoteMode::NOT_SET),
-    m_promoteModeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRetrainingSchedulerRequest::SerializePayload() const
 {
   JsonValue payload;

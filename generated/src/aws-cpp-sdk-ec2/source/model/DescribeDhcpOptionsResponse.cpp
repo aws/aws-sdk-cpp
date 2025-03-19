@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDhcpOptionsResponse::DescribeDhcpOptionsResponse()
-{
-}
-
 DescribeDhcpOptionsResponse::DescribeDhcpOptionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeDhcpOptionsResponse& DescribeDhcpOptionsResponse::operator =(const Aws::
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
     XmlNode dhcpOptionsNode = resultNode.FirstChild("dhcpOptionsSet");
     if(!dhcpOptionsNode.IsNull())
     {
       XmlNode dhcpOptionsMember = dhcpOptionsNode.FirstChild("item");
+      m_dhcpOptionsHasBeenSet = !dhcpOptionsMember.IsNull();
       while(!dhcpOptionsMember.IsNull())
       {
         m_dhcpOptions.push_back(dhcpOptionsMember);
         dhcpOptionsMember = dhcpOptionsMember.NextNode("item");
       }
 
+      m_dhcpOptionsHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeDhcpOptionsResponse& DescribeDhcpOptionsResponse::operator =(const Aws::
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeDhcpOptionsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

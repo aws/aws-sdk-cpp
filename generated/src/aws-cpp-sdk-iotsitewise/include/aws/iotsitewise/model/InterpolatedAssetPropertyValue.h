@@ -33,7 +33,7 @@ namespace Model
   class InterpolatedAssetPropertyValue
   {
   public:
-    AWS_IOTSITEWISE_API InterpolatedAssetPropertyValue();
+    AWS_IOTSITEWISE_API InterpolatedAssetPropertyValue() = default;
     AWS_IOTSITEWISE_API InterpolatedAssetPropertyValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API InterpolatedAssetPropertyValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,22 +41,22 @@ namespace Model
 
     ///@{
     
-    inline const TimeInNanos& GetTimestamp() const{ return m_timestamp; }
+    inline const TimeInNanos& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const TimeInNanos& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(TimeInNanos&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline InterpolatedAssetPropertyValue& WithTimestamp(const TimeInNanos& value) { SetTimestamp(value); return *this;}
-    inline InterpolatedAssetPropertyValue& WithTimestamp(TimeInNanos&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = TimeInNanos>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = TimeInNanos>
+    InterpolatedAssetPropertyValue& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Variant& GetValue() const{ return m_value; }
+    inline const Variant& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Variant& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Variant&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline InterpolatedAssetPropertyValue& WithValue(const Variant& value) { SetValue(value); return *this;}
-    inline InterpolatedAssetPropertyValue& WithValue(Variant&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = Variant>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Variant>
+    InterpolatedAssetPropertyValue& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

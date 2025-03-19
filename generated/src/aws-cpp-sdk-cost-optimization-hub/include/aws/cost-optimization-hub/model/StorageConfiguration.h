@@ -32,7 +32,7 @@ namespace Model
   class StorageConfiguration
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API StorageConfiguration();
+    AWS_COSTOPTIMIZATIONHUB_API StorageConfiguration() = default;
     AWS_COSTOPTIMIZATIONHUB_API StorageConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API StorageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The storage type.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline StorageConfiguration& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline StorageConfiguration& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline StorageConfiguration& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    StorageConfiguration& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The storage volume.</p>
      */
-    inline double GetSizeInGb() const{ return m_sizeInGb; }
+    inline double GetSizeInGb() const { return m_sizeInGb; }
     inline bool SizeInGbHasBeenSet() const { return m_sizeInGbHasBeenSet; }
     inline void SetSizeInGb(double value) { m_sizeInGbHasBeenSet = true; m_sizeInGb = value; }
     inline StorageConfiguration& WithSizeInGb(double value) { SetSizeInGb(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     Aws::String m_type;
     bool m_typeHasBeenSet = false;
 
-    double m_sizeInGb;
+    double m_sizeInGb{0.0};
     bool m_sizeInGbHasBeenSet = false;
   };
 

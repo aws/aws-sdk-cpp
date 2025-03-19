@@ -10,11 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-VerifyDomainDkimRequest::VerifyDomainDkimRequest() : 
-    m_domainHasBeenSet(false)
-{
-}
-
 Aws::String VerifyDomainDkimRequest::SerializePayload() const
 {
   Aws::StringStream ss;

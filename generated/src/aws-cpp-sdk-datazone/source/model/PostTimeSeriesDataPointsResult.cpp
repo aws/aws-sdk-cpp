@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PostTimeSeriesDataPointsResult::PostTimeSeriesDataPointsResult() : 
-    m_entityType(TimeSeriesEntityType::NOT_SET)
-{
-}
-
 PostTimeSeriesDataPointsResult::PostTimeSeriesDataPointsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PostTimeSeriesDataPointsResult()
 {
   *this = result;
 }
@@ -34,21 +28,18 @@ PostTimeSeriesDataPointsResult& PostTimeSeriesDataPointsResult::operator =(const
   if(jsonValue.ValueExists("domainId"))
   {
     m_domainId = jsonValue.GetString("domainId");
-
+    m_domainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entityId"))
   {
     m_entityId = jsonValue.GetString("entityId");
-
+    m_entityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("entityType"))
   {
     m_entityType = TimeSeriesEntityTypeMapper::GetTimeSeriesEntityTypeForName(jsonValue.GetString("entityType"));
-
+    m_entityTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("forms"))
   {
     Aws::Utils::Array<JsonView> formsJsonList = jsonValue.GetArray("forms");
@@ -56,14 +47,15 @@ PostTimeSeriesDataPointsResult& PostTimeSeriesDataPointsResult::operator =(const
     {
       m_forms.push_back(formsJsonList[formsIndex].AsObject());
     }
+    m_formsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

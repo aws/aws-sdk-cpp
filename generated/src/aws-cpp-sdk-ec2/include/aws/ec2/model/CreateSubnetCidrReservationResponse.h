@@ -28,7 +28,7 @@ namespace Model
   class CreateSubnetCidrReservationResponse
   {
   public:
-    AWS_EC2_API CreateSubnetCidrReservationResponse();
+    AWS_EC2_API CreateSubnetCidrReservationResponse() = default;
     AWS_EC2_API CreateSubnetCidrReservationResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API CreateSubnetCidrReservationResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the created subnet CIDR reservation.</p>
      */
-    inline const SubnetCidrReservation& GetSubnetCidrReservation() const{ return m_subnetCidrReservation; }
-    inline void SetSubnetCidrReservation(const SubnetCidrReservation& value) { m_subnetCidrReservation = value; }
-    inline void SetSubnetCidrReservation(SubnetCidrReservation&& value) { m_subnetCidrReservation = std::move(value); }
-    inline CreateSubnetCidrReservationResponse& WithSubnetCidrReservation(const SubnetCidrReservation& value) { SetSubnetCidrReservation(value); return *this;}
-    inline CreateSubnetCidrReservationResponse& WithSubnetCidrReservation(SubnetCidrReservation&& value) { SetSubnetCidrReservation(std::move(value)); return *this;}
+    inline const SubnetCidrReservation& GetSubnetCidrReservation() const { return m_subnetCidrReservation; }
+    template<typename SubnetCidrReservationT = SubnetCidrReservation>
+    void SetSubnetCidrReservation(SubnetCidrReservationT&& value) { m_subnetCidrReservationHasBeenSet = true; m_subnetCidrReservation = std::forward<SubnetCidrReservationT>(value); }
+    template<typename SubnetCidrReservationT = SubnetCidrReservation>
+    CreateSubnetCidrReservationResponse& WithSubnetCidrReservation(SubnetCidrReservationT&& value) { SetSubnetCidrReservation(std::forward<SubnetCidrReservationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateSubnetCidrReservationResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateSubnetCidrReservationResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateSubnetCidrReservationResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     SubnetCidrReservation m_subnetCidrReservation;
+    bool m_subnetCidrReservationHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,16 +18,7 @@ namespace SsmSap
 namespace Model
 {
 
-Filter::Filter() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_operator(FilterOperator::NOT_SET),
-    m_operatorHasBeenSet(false)
-{
-}
-
 Filter::Filter(JsonView jsonValue)
-  : Filter()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ Filter& Filter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = FilterOperatorMapper::GetFilterOperatorForName(jsonValue.GetString("Operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   return *this;
 }
 

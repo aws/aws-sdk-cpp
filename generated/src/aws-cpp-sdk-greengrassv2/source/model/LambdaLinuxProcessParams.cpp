@@ -18,15 +18,7 @@ namespace GreengrassV2
 namespace Model
 {
 
-LambdaLinuxProcessParams::LambdaLinuxProcessParams() : 
-    m_isolationMode(LambdaIsolationMode::NOT_SET),
-    m_isolationModeHasBeenSet(false),
-    m_containerParamsHasBeenSet(false)
-{
-}
-
 LambdaLinuxProcessParams::LambdaLinuxProcessParams(JsonView jsonValue)
-  : LambdaLinuxProcessParams()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LambdaLinuxProcessParams& LambdaLinuxProcessParams::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("isolationMode"))
   {
     m_isolationMode = LambdaIsolationModeMapper::GetLambdaIsolationModeForName(jsonValue.GetString("isolationMode"));
-
     m_isolationModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerParams"))
   {
     m_containerParams = jsonValue.GetObject("containerParams");
-
     m_containerParamsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -27,7 +27,7 @@ namespace Model
   class CreateMLTransformResult
   {
   public:
-    AWS_GLUE_API CreateMLTransformResult();
+    AWS_GLUE_API CreateMLTransformResult() = default;
     AWS_GLUE_API CreateMLTransformResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API CreateMLTransformResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>A unique identifier that is generated for the transform.</p>
      */
-    inline const Aws::String& GetTransformId() const{ return m_transformId; }
-    inline void SetTransformId(const Aws::String& value) { m_transformId = value; }
-    inline void SetTransformId(Aws::String&& value) { m_transformId = std::move(value); }
-    inline void SetTransformId(const char* value) { m_transformId.assign(value); }
-    inline CreateMLTransformResult& WithTransformId(const Aws::String& value) { SetTransformId(value); return *this;}
-    inline CreateMLTransformResult& WithTransformId(Aws::String&& value) { SetTransformId(std::move(value)); return *this;}
-    inline CreateMLTransformResult& WithTransformId(const char* value) { SetTransformId(value); return *this;}
+    inline const Aws::String& GetTransformId() const { return m_transformId; }
+    template<typename TransformIdT = Aws::String>
+    void SetTransformId(TransformIdT&& value) { m_transformIdHasBeenSet = true; m_transformId = std::forward<TransformIdT>(value); }
+    template<typename TransformIdT = Aws::String>
+    CreateMLTransformResult& WithTransformId(TransformIdT&& value) { SetTransformId(std::forward<TransformIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateMLTransformResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateMLTransformResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateMLTransformResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateMLTransformResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_transformId;
+    bool m_transformIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceBlockDeviceMappingSpecification::InstanceBlockDeviceMappingSpecification() : 
-    m_deviceNameHasBeenSet(false),
-    m_ebsHasBeenSet(false),
-    m_virtualNameHasBeenSet(false),
-    m_noDeviceHasBeenSet(false)
-{
-}
-
 InstanceBlockDeviceMappingSpecification::InstanceBlockDeviceMappingSpecification(const XmlNode& xmlNode)
-  : InstanceBlockDeviceMappingSpecification()
 {
   *this = xmlNode;
 }

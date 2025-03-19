@@ -36,7 +36,7 @@ namespace Model
   class InstanceFleetProvisioningSpecifications
   {
   public:
-    AWS_EMR_API InstanceFleetProvisioningSpecifications();
+    AWS_EMR_API InstanceFleetProvisioningSpecifications() = default;
     AWS_EMR_API InstanceFleetProvisioningSpecifications(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API InstanceFleetProvisioningSpecifications& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
      * the allocation strategy, defined duration, and provisioning timeout
      * behavior.</p>
      */
-    inline const SpotProvisioningSpecification& GetSpotSpecification() const{ return m_spotSpecification; }
+    inline const SpotProvisioningSpecification& GetSpotSpecification() const { return m_spotSpecification; }
     inline bool SpotSpecificationHasBeenSet() const { return m_spotSpecificationHasBeenSet; }
-    inline void SetSpotSpecification(const SpotProvisioningSpecification& value) { m_spotSpecificationHasBeenSet = true; m_spotSpecification = value; }
-    inline void SetSpotSpecification(SpotProvisioningSpecification&& value) { m_spotSpecificationHasBeenSet = true; m_spotSpecification = std::move(value); }
-    inline InstanceFleetProvisioningSpecifications& WithSpotSpecification(const SpotProvisioningSpecification& value) { SetSpotSpecification(value); return *this;}
-    inline InstanceFleetProvisioningSpecifications& WithSpotSpecification(SpotProvisioningSpecification&& value) { SetSpotSpecification(std::move(value)); return *this;}
+    template<typename SpotSpecificationT = SpotProvisioningSpecification>
+    void SetSpotSpecification(SpotSpecificationT&& value) { m_spotSpecificationHasBeenSet = true; m_spotSpecification = std::forward<SpotSpecificationT>(value); }
+    template<typename SpotSpecificationT = SpotProvisioningSpecification>
+    InstanceFleetProvisioningSpecifications& WithSpotSpecification(SpotSpecificationT&& value) { SetSpotSpecification(std::forward<SpotSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,12 +65,12 @@ namespace Model
      * allocation strategy is available in Amazon EMR releases 5.12.1 and later.</p>
      * 
      */
-    inline const OnDemandProvisioningSpecification& GetOnDemandSpecification() const{ return m_onDemandSpecification; }
+    inline const OnDemandProvisioningSpecification& GetOnDemandSpecification() const { return m_onDemandSpecification; }
     inline bool OnDemandSpecificationHasBeenSet() const { return m_onDemandSpecificationHasBeenSet; }
-    inline void SetOnDemandSpecification(const OnDemandProvisioningSpecification& value) { m_onDemandSpecificationHasBeenSet = true; m_onDemandSpecification = value; }
-    inline void SetOnDemandSpecification(OnDemandProvisioningSpecification&& value) { m_onDemandSpecificationHasBeenSet = true; m_onDemandSpecification = std::move(value); }
-    inline InstanceFleetProvisioningSpecifications& WithOnDemandSpecification(const OnDemandProvisioningSpecification& value) { SetOnDemandSpecification(value); return *this;}
-    inline InstanceFleetProvisioningSpecifications& WithOnDemandSpecification(OnDemandProvisioningSpecification&& value) { SetOnDemandSpecification(std::move(value)); return *this;}
+    template<typename OnDemandSpecificationT = OnDemandProvisioningSpecification>
+    void SetOnDemandSpecification(OnDemandSpecificationT&& value) { m_onDemandSpecificationHasBeenSet = true; m_onDemandSpecification = std::forward<OnDemandSpecificationT>(value); }
+    template<typename OnDemandSpecificationT = OnDemandProvisioningSpecification>
+    InstanceFleetProvisioningSpecifications& WithOnDemandSpecification(OnDemandSpecificationT&& value) { SetOnDemandSpecification(std::forward<OnDemandSpecificationT>(value)); return *this;}
     ///@}
   private:
 

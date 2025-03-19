@@ -12,12 +12,6 @@ using namespace Aws::KinesisAnalyticsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateApplicationSnapshotRequest::CreateApplicationSnapshotRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_snapshotNameHasBeenSet(false)
-{
-}
-
 Aws::String CreateApplicationSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetNetworkResult::GetNetworkResult()
-{
-}
-
 GetNetworkResult::GetNetworkResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetNetworkResult& GetNetworkResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("network"))
   {
     m_network = jsonValue.GetObject("network");
-
+    m_networkHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -42,14 +37,15 @@ GetNetworkResult& GetNetworkResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

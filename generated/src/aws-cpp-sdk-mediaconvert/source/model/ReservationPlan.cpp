@@ -18,22 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-ReservationPlan::ReservationPlan() : 
-    m_commitment(Commitment::NOT_SET),
-    m_commitmentHasBeenSet(false),
-    m_expiresAtHasBeenSet(false),
-    m_purchasedAtHasBeenSet(false),
-    m_renewalType(RenewalType::NOT_SET),
-    m_renewalTypeHasBeenSet(false),
-    m_reservedSlots(0),
-    m_reservedSlotsHasBeenSet(false),
-    m_status(ReservationPlanStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ReservationPlan::ReservationPlan(JsonView jsonValue)
-  : ReservationPlan()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ ReservationPlan& ReservationPlan::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("commitment"))
   {
     m_commitment = CommitmentMapper::GetCommitmentForName(jsonValue.GetString("commitment"));
-
     m_commitmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expiresAt"))
   {
     m_expiresAt = jsonValue.GetDouble("expiresAt");
-
     m_expiresAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("purchasedAt"))
   {
     m_purchasedAt = jsonValue.GetDouble("purchasedAt");
-
     m_purchasedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("renewalType"))
   {
     m_renewalType = RenewalTypeMapper::GetRenewalTypeForName(jsonValue.GetString("renewalType"));
-
     m_renewalTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reservedSlots"))
   {
     m_reservedSlots = jsonValue.GetInteger("reservedSlots");
-
     m_reservedSlotsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ReservationPlanStatusMapper::GetReservationPlanStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

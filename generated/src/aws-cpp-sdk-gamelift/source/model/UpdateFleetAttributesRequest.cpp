@@ -12,18 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateFleetAttributesRequest::UpdateFleetAttributesRequest() : 
-    m_fleetIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_newGameSessionProtectionPolicy(ProtectionPolicy::NOT_SET),
-    m_newGameSessionProtectionPolicyHasBeenSet(false),
-    m_resourceCreationLimitPolicyHasBeenSet(false),
-    m_metricGroupsHasBeenSet(false),
-    m_anywhereConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateFleetAttributesRequest::SerializePayload() const
 {
   JsonValue payload;

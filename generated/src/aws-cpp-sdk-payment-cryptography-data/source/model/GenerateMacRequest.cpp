@@ -12,15 +12,6 @@ using namespace Aws::PaymentCryptographyData::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GenerateMacRequest::GenerateMacRequest() : 
-    m_keyIdentifierHasBeenSet(false),
-    m_messageDataHasBeenSet(false),
-    m_generationAttributesHasBeenSet(false),
-    m_macLength(0),
-    m_macLengthHasBeenSet(false)
-{
-}
-
 Aws::String GenerateMacRequest::SerializePayload() const
 {
   JsonValue payload;

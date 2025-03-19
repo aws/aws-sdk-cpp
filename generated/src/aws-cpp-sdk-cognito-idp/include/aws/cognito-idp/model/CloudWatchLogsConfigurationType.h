@@ -33,7 +33,7 @@ namespace Model
   class CloudWatchLogsConfigurationType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API CloudWatchLogsConfigurationType();
+    AWS_COGNITOIDENTITYPROVIDER_API CloudWatchLogsConfigurationType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API CloudWatchLogsConfigurationType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API CloudWatchLogsConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AWS-logs-and-resource-policy.html">Enabling
      * logging from certain Amazon Web Services services</a>.</p>
      */
-    inline const Aws::String& GetLogGroupArn() const{ return m_logGroupArn; }
+    inline const Aws::String& GetLogGroupArn() const { return m_logGroupArn; }
     inline bool LogGroupArnHasBeenSet() const { return m_logGroupArnHasBeenSet; }
-    inline void SetLogGroupArn(const Aws::String& value) { m_logGroupArnHasBeenSet = true; m_logGroupArn = value; }
-    inline void SetLogGroupArn(Aws::String&& value) { m_logGroupArnHasBeenSet = true; m_logGroupArn = std::move(value); }
-    inline void SetLogGroupArn(const char* value) { m_logGroupArnHasBeenSet = true; m_logGroupArn.assign(value); }
-    inline CloudWatchLogsConfigurationType& WithLogGroupArn(const Aws::String& value) { SetLogGroupArn(value); return *this;}
-    inline CloudWatchLogsConfigurationType& WithLogGroupArn(Aws::String&& value) { SetLogGroupArn(std::move(value)); return *this;}
-    inline CloudWatchLogsConfigurationType& WithLogGroupArn(const char* value) { SetLogGroupArn(value); return *this;}
+    template<typename LogGroupArnT = Aws::String>
+    void SetLogGroupArn(LogGroupArnT&& value) { m_logGroupArnHasBeenSet = true; m_logGroupArn = std::forward<LogGroupArnT>(value); }
+    template<typename LogGroupArnT = Aws::String>
+    CloudWatchLogsConfigurationType& WithLogGroupArn(LogGroupArnT&& value) { SetLogGroupArn(std::forward<LogGroupArnT>(value)); return *this;}
     ///@}
   private:
 

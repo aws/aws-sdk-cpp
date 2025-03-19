@@ -27,7 +27,7 @@ namespace Model
   class CreateAnalysisTemplateRequest : public CleanRoomsRequest
   {
   public:
-    AWS_CLEANROOMS_API CreateAnalysisTemplateRequest();
+    AWS_CLEANROOMS_API CreateAnalysisTemplateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,54 +42,46 @@ namespace Model
     /**
      * <p>The description of the analysis template.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateAnalysisTemplateRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateAnalysisTemplateRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateAnalysisTemplateRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateAnalysisTemplateRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier for a membership resource.</p>
      */
-    inline const Aws::String& GetMembershipIdentifier() const{ return m_membershipIdentifier; }
+    inline const Aws::String& GetMembershipIdentifier() const { return m_membershipIdentifier; }
     inline bool MembershipIdentifierHasBeenSet() const { return m_membershipIdentifierHasBeenSet; }
-    inline void SetMembershipIdentifier(const Aws::String& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = value; }
-    inline void SetMembershipIdentifier(Aws::String&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::move(value); }
-    inline void SetMembershipIdentifier(const char* value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier.assign(value); }
-    inline CreateAnalysisTemplateRequest& WithMembershipIdentifier(const Aws::String& value) { SetMembershipIdentifier(value); return *this;}
-    inline CreateAnalysisTemplateRequest& WithMembershipIdentifier(Aws::String&& value) { SetMembershipIdentifier(std::move(value)); return *this;}
-    inline CreateAnalysisTemplateRequest& WithMembershipIdentifier(const char* value) { SetMembershipIdentifier(value); return *this;}
+    template<typename MembershipIdentifierT = Aws::String>
+    void SetMembershipIdentifier(MembershipIdentifierT&& value) { m_membershipIdentifierHasBeenSet = true; m_membershipIdentifier = std::forward<MembershipIdentifierT>(value); }
+    template<typename MembershipIdentifierT = Aws::String>
+    CreateAnalysisTemplateRequest& WithMembershipIdentifier(MembershipIdentifierT&& value) { SetMembershipIdentifier(std::forward<MembershipIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the analysis template.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateAnalysisTemplateRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateAnalysisTemplateRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateAnalysisTemplateRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateAnalysisTemplateRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format of the analysis template.</p>
      */
-    inline const AnalysisFormat& GetFormat() const{ return m_format; }
+    inline AnalysisFormat GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const AnalysisFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(AnalysisFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline CreateAnalysisTemplateRequest& WithFormat(const AnalysisFormat& value) { SetFormat(value); return *this;}
-    inline CreateAnalysisTemplateRequest& WithFormat(AnalysisFormat&& value) { SetFormat(std::move(value)); return *this;}
+    inline void SetFormat(AnalysisFormat value) { m_formatHasBeenSet = true; m_format = value; }
+    inline CreateAnalysisTemplateRequest& WithFormat(AnalysisFormat value) { SetFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -97,12 +89,12 @@ namespace Model
      * <p>The information in the analysis template. Currently supports
      * <code>text</code>, the query text for the analysis template.</p>
      */
-    inline const AnalysisSource& GetSource() const{ return m_source; }
+    inline const AnalysisSource& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const AnalysisSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(AnalysisSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline CreateAnalysisTemplateRequest& WithSource(const AnalysisSource& value) { SetSource(value); return *this;}
-    inline CreateAnalysisTemplateRequest& WithSource(AnalysisSource&& value) { SetSource(std::move(value)); return *this;}
+    template<typename SourceT = AnalysisSource>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = AnalysisSource>
+    CreateAnalysisTemplateRequest& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,43 +104,40 @@ namespace Model
      * use tagging, you can also use tag-based access control in IAM policies to
      * control access to this resource.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateAnalysisTemplateRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateAnalysisTemplateRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateAnalysisTemplateRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateAnalysisTemplateRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateAnalysisTemplateRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateAnalysisTemplateRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateAnalysisTemplateRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateAnalysisTemplateRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateAnalysisTemplateRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateAnalysisTemplateRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateAnalysisTemplateRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The parameters of the analysis template.</p>
      */
-    inline const Aws::Vector<AnalysisParameter>& GetAnalysisParameters() const{ return m_analysisParameters; }
+    inline const Aws::Vector<AnalysisParameter>& GetAnalysisParameters() const { return m_analysisParameters; }
     inline bool AnalysisParametersHasBeenSet() const { return m_analysisParametersHasBeenSet; }
-    inline void SetAnalysisParameters(const Aws::Vector<AnalysisParameter>& value) { m_analysisParametersHasBeenSet = true; m_analysisParameters = value; }
-    inline void SetAnalysisParameters(Aws::Vector<AnalysisParameter>&& value) { m_analysisParametersHasBeenSet = true; m_analysisParameters = std::move(value); }
-    inline CreateAnalysisTemplateRequest& WithAnalysisParameters(const Aws::Vector<AnalysisParameter>& value) { SetAnalysisParameters(value); return *this;}
-    inline CreateAnalysisTemplateRequest& WithAnalysisParameters(Aws::Vector<AnalysisParameter>&& value) { SetAnalysisParameters(std::move(value)); return *this;}
-    inline CreateAnalysisTemplateRequest& AddAnalysisParameters(const AnalysisParameter& value) { m_analysisParametersHasBeenSet = true; m_analysisParameters.push_back(value); return *this; }
-    inline CreateAnalysisTemplateRequest& AddAnalysisParameters(AnalysisParameter&& value) { m_analysisParametersHasBeenSet = true; m_analysisParameters.push_back(std::move(value)); return *this; }
+    template<typename AnalysisParametersT = Aws::Vector<AnalysisParameter>>
+    void SetAnalysisParameters(AnalysisParametersT&& value) { m_analysisParametersHasBeenSet = true; m_analysisParameters = std::forward<AnalysisParametersT>(value); }
+    template<typename AnalysisParametersT = Aws::Vector<AnalysisParameter>>
+    CreateAnalysisTemplateRequest& WithAnalysisParameters(AnalysisParametersT&& value) { SetAnalysisParameters(std::forward<AnalysisParametersT>(value)); return *this;}
+    template<typename AnalysisParametersT = AnalysisParameter>
+    CreateAnalysisTemplateRequest& AddAnalysisParameters(AnalysisParametersT&& value) { m_analysisParametersHasBeenSet = true; m_analysisParameters.emplace_back(std::forward<AnalysisParametersT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const AnalysisSchema& GetSchema() const{ return m_schema; }
+    inline const AnalysisSchema& GetSchema() const { return m_schema; }
     inline bool SchemaHasBeenSet() const { return m_schemaHasBeenSet; }
-    inline void SetSchema(const AnalysisSchema& value) { m_schemaHasBeenSet = true; m_schema = value; }
-    inline void SetSchema(AnalysisSchema&& value) { m_schemaHasBeenSet = true; m_schema = std::move(value); }
-    inline CreateAnalysisTemplateRequest& WithSchema(const AnalysisSchema& value) { SetSchema(value); return *this;}
-    inline CreateAnalysisTemplateRequest& WithSchema(AnalysisSchema&& value) { SetSchema(std::move(value)); return *this;}
+    template<typename SchemaT = AnalysisSchema>
+    void SetSchema(SchemaT&& value) { m_schemaHasBeenSet = true; m_schema = std::forward<SchemaT>(value); }
+    template<typename SchemaT = AnalysisSchema>
+    CreateAnalysisTemplateRequest& WithSchema(SchemaT&& value) { SetSchema(std::forward<SchemaT>(value)); return *this;}
     ///@}
   private:
 
@@ -161,7 +150,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    AnalysisFormat m_format;
+    AnalysisFormat m_format{AnalysisFormat::NOT_SET};
     bool m_formatHasBeenSet = false;
 
     AnalysisSource m_source;

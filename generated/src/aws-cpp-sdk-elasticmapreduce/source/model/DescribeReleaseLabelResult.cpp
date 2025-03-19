@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeReleaseLabelResult::DescribeReleaseLabelResult()
-{
-}
-
 DescribeReleaseLabelResult::DescribeReleaseLabelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeReleaseLabelResult& DescribeReleaseLabelResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("ReleaseLabel"))
   {
     m_releaseLabel = jsonValue.GetString("ReleaseLabel");
-
+    m_releaseLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Applications"))
   {
     Aws::Utils::Array<JsonView> applicationsJsonList = jsonValue.GetArray("Applications");
@@ -42,14 +37,13 @@ DescribeReleaseLabelResult& DescribeReleaseLabelResult::operator =(const Aws::Am
     {
       m_applications.push_back(applicationsJsonList[applicationsIndex].AsObject());
     }
+    m_applicationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailableOSReleases"))
   {
     Aws::Utils::Array<JsonView> availableOSReleasesJsonList = jsonValue.GetArray("AvailableOSReleases");
@@ -57,14 +51,15 @@ DescribeReleaseLabelResult& DescribeReleaseLabelResult::operator =(const Aws::Am
     {
       m_availableOSReleases.push_back(availableOSReleasesJsonList[availableOSReleasesIndex].AsObject());
     }
+    m_availableOSReleasesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

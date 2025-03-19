@@ -32,7 +32,7 @@ namespace Model
   class ItemizedMetricStats
   {
   public:
-    AWS_LOOKOUTMETRICS_API ItemizedMetricStats();
+    AWS_LOOKOUTMETRICS_API ItemizedMetricStats() = default;
     AWS_LOOKOUTMETRICS_API ItemizedMetricStats(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API ItemizedMetricStats& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTMETRICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The name of the measure.</p>
      */
-    inline const Aws::String& GetMetricName() const{ return m_metricName; }
+    inline const Aws::String& GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
-    inline ItemizedMetricStats& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-    inline ItemizedMetricStats& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-    inline ItemizedMetricStats& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+    template<typename MetricNameT = Aws::String>
+    void SetMetricName(MetricNameT&& value) { m_metricNameHasBeenSet = true; m_metricName = std::forward<MetricNameT>(value); }
+    template<typename MetricNameT = Aws::String>
+    ItemizedMetricStats& WithMetricName(MetricNameT&& value) { SetMetricName(std::forward<MetricNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of times that the measure appears.</p>
      */
-    inline int GetOccurrenceCount() const{ return m_occurrenceCount; }
+    inline int GetOccurrenceCount() const { return m_occurrenceCount; }
     inline bool OccurrenceCountHasBeenSet() const { return m_occurrenceCountHasBeenSet; }
     inline void SetOccurrenceCount(int value) { m_occurrenceCountHasBeenSet = true; m_occurrenceCount = value; }
     inline ItemizedMetricStats& WithOccurrenceCount(int value) { SetOccurrenceCount(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     Aws::String m_metricName;
     bool m_metricNameHasBeenSet = false;
 
-    int m_occurrenceCount;
+    int m_occurrenceCount{0};
     bool m_occurrenceCountHasBeenSet = false;
   };
 

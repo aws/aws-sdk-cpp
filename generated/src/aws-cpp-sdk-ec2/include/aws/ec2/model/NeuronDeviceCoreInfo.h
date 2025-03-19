@@ -30,7 +30,7 @@ namespace Model
   class NeuronDeviceCoreInfo
   {
   public:
-    AWS_EC2_API NeuronDeviceCoreInfo();
+    AWS_EC2_API NeuronDeviceCoreInfo() = default;
     AWS_EC2_API NeuronDeviceCoreInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API NeuronDeviceCoreInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>The number of cores available to the neuron accelerator.</p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline NeuronDeviceCoreInfo& WithCount(int value) { SetCount(value); return *this;}
@@ -52,17 +52,17 @@ namespace Model
     /**
      * <p>The version of the neuron accelerator.</p>
      */
-    inline int GetVersion() const{ return m_version; }
+    inline int GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
     inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
     inline NeuronDeviceCoreInfo& WithVersion(int value) { SetVersion(value); return *this;}
     ///@}
   private:
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
 
-    int m_version;
+    int m_version{0};
     bool m_versionHasBeenSet = false;
   };
 

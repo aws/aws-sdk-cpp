@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetRecommendationsRequest::GetRecommendationsRequest() : 
-    m_endTimeHasBeenSet(false),
-    m_localeHasBeenSet(false),
-    m_profilingGroupNameHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
-{
-}
-
 Aws::String GetRecommendationsRequest::SerializePayload() const
 {
   return {};

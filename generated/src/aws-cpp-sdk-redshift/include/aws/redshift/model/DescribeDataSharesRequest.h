@@ -21,7 +21,7 @@ namespace Model
   class DescribeDataSharesRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API DescribeDataSharesRequest();
+    AWS_REDSHIFT_API DescribeDataSharesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The Amazon resource name (ARN) of the datashare to describe details of.</p>
      */
-    inline const Aws::String& GetDataShareArn() const{ return m_dataShareArn; }
+    inline const Aws::String& GetDataShareArn() const { return m_dataShareArn; }
     inline bool DataShareArnHasBeenSet() const { return m_dataShareArnHasBeenSet; }
-    inline void SetDataShareArn(const Aws::String& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = value; }
-    inline void SetDataShareArn(Aws::String&& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = std::move(value); }
-    inline void SetDataShareArn(const char* value) { m_dataShareArnHasBeenSet = true; m_dataShareArn.assign(value); }
-    inline DescribeDataSharesRequest& WithDataShareArn(const Aws::String& value) { SetDataShareArn(value); return *this;}
-    inline DescribeDataSharesRequest& WithDataShareArn(Aws::String&& value) { SetDataShareArn(std::move(value)); return *this;}
-    inline DescribeDataSharesRequest& WithDataShareArn(const char* value) { SetDataShareArn(value); return *this;}
+    template<typename DataShareArnT = Aws::String>
+    void SetDataShareArn(DataShareArnT&& value) { m_dataShareArnHasBeenSet = true; m_dataShareArn = std::forward<DataShareArnT>(value); }
+    template<typename DataShareArnT = Aws::String>
+    DescribeDataSharesRequest& WithDataShareArn(DataShareArnT&& value) { SetDataShareArn(std::forward<DataShareArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * can retrieve the next set of records by retrying the command with the returned
      * marker value. </p>
      */
-    inline int GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
     inline DescribeDataSharesRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
@@ -73,21 +71,19 @@ namespace Model
      * next set of response records by providing the returned marker value in the
      * <code>Marker</code> parameter and retrying the request. </p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline DescribeDataSharesRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeDataSharesRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeDataSharesRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeDataSharesRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_dataShareArn;
     bool m_dataShareArnHasBeenSet = false;
 
-    int m_maxRecords;
+    int m_maxRecords{0};
     bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;

@@ -21,7 +21,7 @@ namespace Model
   class GetSolNetworkOperationRequest : public TnbRequest
   {
   public:
-    AWS_TNB_API GetSolNetworkOperationRequest();
+    AWS_TNB_API GetSolNetworkOperationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The identifier of the network operation.</p>
      */
-    inline const Aws::String& GetNsLcmOpOccId() const{ return m_nsLcmOpOccId; }
+    inline const Aws::String& GetNsLcmOpOccId() const { return m_nsLcmOpOccId; }
     inline bool NsLcmOpOccIdHasBeenSet() const { return m_nsLcmOpOccIdHasBeenSet; }
-    inline void SetNsLcmOpOccId(const Aws::String& value) { m_nsLcmOpOccIdHasBeenSet = true; m_nsLcmOpOccId = value; }
-    inline void SetNsLcmOpOccId(Aws::String&& value) { m_nsLcmOpOccIdHasBeenSet = true; m_nsLcmOpOccId = std::move(value); }
-    inline void SetNsLcmOpOccId(const char* value) { m_nsLcmOpOccIdHasBeenSet = true; m_nsLcmOpOccId.assign(value); }
-    inline GetSolNetworkOperationRequest& WithNsLcmOpOccId(const Aws::String& value) { SetNsLcmOpOccId(value); return *this;}
-    inline GetSolNetworkOperationRequest& WithNsLcmOpOccId(Aws::String&& value) { SetNsLcmOpOccId(std::move(value)); return *this;}
-    inline GetSolNetworkOperationRequest& WithNsLcmOpOccId(const char* value) { SetNsLcmOpOccId(value); return *this;}
+    template<typename NsLcmOpOccIdT = Aws::String>
+    void SetNsLcmOpOccId(NsLcmOpOccIdT&& value) { m_nsLcmOpOccIdHasBeenSet = true; m_nsLcmOpOccId = std::forward<NsLcmOpOccIdT>(value); }
+    template<typename NsLcmOpOccIdT = Aws::String>
+    GetSolNetworkOperationRequest& WithNsLcmOpOccId(NsLcmOpOccIdT&& value) { SetNsLcmOpOccId(std::forward<NsLcmOpOccIdT>(value)); return *this;}
     ///@}
   private:
 

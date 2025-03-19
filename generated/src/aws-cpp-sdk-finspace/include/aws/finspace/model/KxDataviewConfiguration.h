@@ -34,7 +34,7 @@ namespace Model
   class KxDataviewConfiguration
   {
   public:
-    AWS_FINSPACE_API KxDataviewConfiguration();
+    AWS_FINSPACE_API KxDataviewConfiguration() = default;
     AWS_FINSPACE_API KxDataviewConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API KxDataviewConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,56 +44,50 @@ namespace Model
     /**
      * <p> The unique identifier of the dataview.</p>
      */
-    inline const Aws::String& GetDataviewName() const{ return m_dataviewName; }
+    inline const Aws::String& GetDataviewName() const { return m_dataviewName; }
     inline bool DataviewNameHasBeenSet() const { return m_dataviewNameHasBeenSet; }
-    inline void SetDataviewName(const Aws::String& value) { m_dataviewNameHasBeenSet = true; m_dataviewName = value; }
-    inline void SetDataviewName(Aws::String&& value) { m_dataviewNameHasBeenSet = true; m_dataviewName = std::move(value); }
-    inline void SetDataviewName(const char* value) { m_dataviewNameHasBeenSet = true; m_dataviewName.assign(value); }
-    inline KxDataviewConfiguration& WithDataviewName(const Aws::String& value) { SetDataviewName(value); return *this;}
-    inline KxDataviewConfiguration& WithDataviewName(Aws::String&& value) { SetDataviewName(std::move(value)); return *this;}
-    inline KxDataviewConfiguration& WithDataviewName(const char* value) { SetDataviewName(value); return *this;}
+    template<typename DataviewNameT = Aws::String>
+    void SetDataviewName(DataviewNameT&& value) { m_dataviewNameHasBeenSet = true; m_dataviewName = std::forward<DataviewNameT>(value); }
+    template<typename DataviewNameT = Aws::String>
+    KxDataviewConfiguration& WithDataviewName(DataviewNameT&& value) { SetDataviewName(std::forward<DataviewNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The version of the dataview corresponding to a given changeset. </p>
      */
-    inline const Aws::String& GetDataviewVersionId() const{ return m_dataviewVersionId; }
+    inline const Aws::String& GetDataviewVersionId() const { return m_dataviewVersionId; }
     inline bool DataviewVersionIdHasBeenSet() const { return m_dataviewVersionIdHasBeenSet; }
-    inline void SetDataviewVersionId(const Aws::String& value) { m_dataviewVersionIdHasBeenSet = true; m_dataviewVersionId = value; }
-    inline void SetDataviewVersionId(Aws::String&& value) { m_dataviewVersionIdHasBeenSet = true; m_dataviewVersionId = std::move(value); }
-    inline void SetDataviewVersionId(const char* value) { m_dataviewVersionIdHasBeenSet = true; m_dataviewVersionId.assign(value); }
-    inline KxDataviewConfiguration& WithDataviewVersionId(const Aws::String& value) { SetDataviewVersionId(value); return *this;}
-    inline KxDataviewConfiguration& WithDataviewVersionId(Aws::String&& value) { SetDataviewVersionId(std::move(value)); return *this;}
-    inline KxDataviewConfiguration& WithDataviewVersionId(const char* value) { SetDataviewVersionId(value); return *this;}
+    template<typename DataviewVersionIdT = Aws::String>
+    void SetDataviewVersionId(DataviewVersionIdT&& value) { m_dataviewVersionIdHasBeenSet = true; m_dataviewVersionId = std::forward<DataviewVersionIdT>(value); }
+    template<typename DataviewVersionIdT = Aws::String>
+    KxDataviewConfiguration& WithDataviewVersionId(DataviewVersionIdT&& value) { SetDataviewVersionId(std::forward<DataviewVersionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the changeset.</p>
      */
-    inline const Aws::String& GetChangesetId() const{ return m_changesetId; }
+    inline const Aws::String& GetChangesetId() const { return m_changesetId; }
     inline bool ChangesetIdHasBeenSet() const { return m_changesetIdHasBeenSet; }
-    inline void SetChangesetId(const Aws::String& value) { m_changesetIdHasBeenSet = true; m_changesetId = value; }
-    inline void SetChangesetId(Aws::String&& value) { m_changesetIdHasBeenSet = true; m_changesetId = std::move(value); }
-    inline void SetChangesetId(const char* value) { m_changesetIdHasBeenSet = true; m_changesetId.assign(value); }
-    inline KxDataviewConfiguration& WithChangesetId(const Aws::String& value) { SetChangesetId(value); return *this;}
-    inline KxDataviewConfiguration& WithChangesetId(Aws::String&& value) { SetChangesetId(std::move(value)); return *this;}
-    inline KxDataviewConfiguration& WithChangesetId(const char* value) { SetChangesetId(value); return *this;}
+    template<typename ChangesetIdT = Aws::String>
+    void SetChangesetId(ChangesetIdT&& value) { m_changesetIdHasBeenSet = true; m_changesetId = std::forward<ChangesetIdT>(value); }
+    template<typename ChangesetIdT = Aws::String>
+    KxDataviewConfiguration& WithChangesetId(ChangesetIdT&& value) { SetChangesetId(std::forward<ChangesetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The db path and volume configuration for the segmented database.</p>
      */
-    inline const Aws::Vector<KxDataviewSegmentConfiguration>& GetSegmentConfigurations() const{ return m_segmentConfigurations; }
+    inline const Aws::Vector<KxDataviewSegmentConfiguration>& GetSegmentConfigurations() const { return m_segmentConfigurations; }
     inline bool SegmentConfigurationsHasBeenSet() const { return m_segmentConfigurationsHasBeenSet; }
-    inline void SetSegmentConfigurations(const Aws::Vector<KxDataviewSegmentConfiguration>& value) { m_segmentConfigurationsHasBeenSet = true; m_segmentConfigurations = value; }
-    inline void SetSegmentConfigurations(Aws::Vector<KxDataviewSegmentConfiguration>&& value) { m_segmentConfigurationsHasBeenSet = true; m_segmentConfigurations = std::move(value); }
-    inline KxDataviewConfiguration& WithSegmentConfigurations(const Aws::Vector<KxDataviewSegmentConfiguration>& value) { SetSegmentConfigurations(value); return *this;}
-    inline KxDataviewConfiguration& WithSegmentConfigurations(Aws::Vector<KxDataviewSegmentConfiguration>&& value) { SetSegmentConfigurations(std::move(value)); return *this;}
-    inline KxDataviewConfiguration& AddSegmentConfigurations(const KxDataviewSegmentConfiguration& value) { m_segmentConfigurationsHasBeenSet = true; m_segmentConfigurations.push_back(value); return *this; }
-    inline KxDataviewConfiguration& AddSegmentConfigurations(KxDataviewSegmentConfiguration&& value) { m_segmentConfigurationsHasBeenSet = true; m_segmentConfigurations.push_back(std::move(value)); return *this; }
+    template<typename SegmentConfigurationsT = Aws::Vector<KxDataviewSegmentConfiguration>>
+    void SetSegmentConfigurations(SegmentConfigurationsT&& value) { m_segmentConfigurationsHasBeenSet = true; m_segmentConfigurations = std::forward<SegmentConfigurationsT>(value); }
+    template<typename SegmentConfigurationsT = Aws::Vector<KxDataviewSegmentConfiguration>>
+    KxDataviewConfiguration& WithSegmentConfigurations(SegmentConfigurationsT&& value) { SetSegmentConfigurations(std::forward<SegmentConfigurationsT>(value)); return *this;}
+    template<typename SegmentConfigurationsT = KxDataviewSegmentConfiguration>
+    KxDataviewConfiguration& AddSegmentConfigurations(SegmentConfigurationsT&& value) { m_segmentConfigurationsHasBeenSet = true; m_segmentConfigurations.emplace_back(std::forward<SegmentConfigurationsT>(value)); return *this; }
     ///@}
   private:
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CancelFindingsReportResult::CancelFindingsReportResult()
-{
-}
-
 CancelFindingsReportResult::CancelFindingsReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CancelFindingsReportResult& CancelFindingsReportResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("reportId"))
   {
     m_reportId = jsonValue.GetString("reportId");
-
+    m_reportIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

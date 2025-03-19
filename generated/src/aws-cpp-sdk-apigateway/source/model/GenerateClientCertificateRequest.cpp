@@ -12,12 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GenerateClientCertificateRequest::GenerateClientCertificateRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String GenerateClientCertificateRequest::SerializePayload() const
 {
   JsonValue payload;

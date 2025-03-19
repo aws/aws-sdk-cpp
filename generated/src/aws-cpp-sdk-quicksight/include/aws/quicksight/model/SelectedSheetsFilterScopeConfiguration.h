@@ -36,7 +36,7 @@ namespace Model
   class SelectedSheetsFilterScopeConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API SelectedSheetsFilterScopeConfiguration();
+    AWS_QUICKSIGHT_API SelectedSheetsFilterScopeConfiguration() = default;
     AWS_QUICKSIGHT_API SelectedSheetsFilterScopeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API SelectedSheetsFilterScopeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,14 @@ namespace Model
      * <p>The sheet ID and visual IDs of the sheet and visuals that the filter is
      * applied to.</p>
      */
-    inline const Aws::Vector<SheetVisualScopingConfiguration>& GetSheetVisualScopingConfigurations() const{ return m_sheetVisualScopingConfigurations; }
+    inline const Aws::Vector<SheetVisualScopingConfiguration>& GetSheetVisualScopingConfigurations() const { return m_sheetVisualScopingConfigurations; }
     inline bool SheetVisualScopingConfigurationsHasBeenSet() const { return m_sheetVisualScopingConfigurationsHasBeenSet; }
-    inline void SetSheetVisualScopingConfigurations(const Aws::Vector<SheetVisualScopingConfiguration>& value) { m_sheetVisualScopingConfigurationsHasBeenSet = true; m_sheetVisualScopingConfigurations = value; }
-    inline void SetSheetVisualScopingConfigurations(Aws::Vector<SheetVisualScopingConfiguration>&& value) { m_sheetVisualScopingConfigurationsHasBeenSet = true; m_sheetVisualScopingConfigurations = std::move(value); }
-    inline SelectedSheetsFilterScopeConfiguration& WithSheetVisualScopingConfigurations(const Aws::Vector<SheetVisualScopingConfiguration>& value) { SetSheetVisualScopingConfigurations(value); return *this;}
-    inline SelectedSheetsFilterScopeConfiguration& WithSheetVisualScopingConfigurations(Aws::Vector<SheetVisualScopingConfiguration>&& value) { SetSheetVisualScopingConfigurations(std::move(value)); return *this;}
-    inline SelectedSheetsFilterScopeConfiguration& AddSheetVisualScopingConfigurations(const SheetVisualScopingConfiguration& value) { m_sheetVisualScopingConfigurationsHasBeenSet = true; m_sheetVisualScopingConfigurations.push_back(value); return *this; }
-    inline SelectedSheetsFilterScopeConfiguration& AddSheetVisualScopingConfigurations(SheetVisualScopingConfiguration&& value) { m_sheetVisualScopingConfigurationsHasBeenSet = true; m_sheetVisualScopingConfigurations.push_back(std::move(value)); return *this; }
+    template<typename SheetVisualScopingConfigurationsT = Aws::Vector<SheetVisualScopingConfiguration>>
+    void SetSheetVisualScopingConfigurations(SheetVisualScopingConfigurationsT&& value) { m_sheetVisualScopingConfigurationsHasBeenSet = true; m_sheetVisualScopingConfigurations = std::forward<SheetVisualScopingConfigurationsT>(value); }
+    template<typename SheetVisualScopingConfigurationsT = Aws::Vector<SheetVisualScopingConfiguration>>
+    SelectedSheetsFilterScopeConfiguration& WithSheetVisualScopingConfigurations(SheetVisualScopingConfigurationsT&& value) { SetSheetVisualScopingConfigurations(std::forward<SheetVisualScopingConfigurationsT>(value)); return *this;}
+    template<typename SheetVisualScopingConfigurationsT = SheetVisualScopingConfiguration>
+    SelectedSheetsFilterScopeConfiguration& AddSheetVisualScopingConfigurations(SheetVisualScopingConfigurationsT&& value) { m_sheetVisualScopingConfigurationsHasBeenSet = true; m_sheetVisualScopingConfigurations.emplace_back(std::forward<SheetVisualScopingConfigurationsT>(value)); return *this; }
     ///@}
   private:
 

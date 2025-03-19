@@ -18,16 +18,7 @@ namespace AmplifyBackend
 namespace Model
 {
 
-SocialProviderSettings::SocialProviderSettings() : 
-    m_facebookHasBeenSet(false),
-    m_googleHasBeenSet(false),
-    m_loginWithAmazonHasBeenSet(false),
-    m_signInWithAppleHasBeenSet(false)
-{
-}
-
 SocialProviderSettings::SocialProviderSettings(JsonView jsonValue)
-  : SocialProviderSettings()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ SocialProviderSettings& SocialProviderSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Facebook"))
   {
     m_facebook = jsonValue.GetObject("Facebook");
-
     m_facebookHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Google"))
   {
     m_google = jsonValue.GetObject("Google");
-
     m_googleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoginWithAmazon"))
   {
     m_loginWithAmazon = jsonValue.GetObject("LoginWithAmazon");
-
     m_loginWithAmazonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SignInWithApple"))
   {
     m_signInWithApple = jsonValue.GetObject("SignInWithApple");
-
     m_signInWithAppleHasBeenSet = true;
   }
-
   return *this;
 }
 

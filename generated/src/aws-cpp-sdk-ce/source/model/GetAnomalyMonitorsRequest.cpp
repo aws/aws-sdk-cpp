@@ -12,14 +12,6 @@ using namespace Aws::CostExplorer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAnomalyMonitorsRequest::GetAnomalyMonitorsRequest() : 
-    m_monitorArnListHasBeenSet(false),
-    m_nextPageTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String GetAnomalyMonitorsRequest::SerializePayload() const
 {
   JsonValue payload;

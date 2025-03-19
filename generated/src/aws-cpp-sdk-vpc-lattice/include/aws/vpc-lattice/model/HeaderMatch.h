@@ -34,7 +34,7 @@ namespace Model
   class HeaderMatch
   {
   public:
-    AWS_VPCLATTICE_API HeaderMatch();
+    AWS_VPCLATTICE_API HeaderMatch() = default;
     AWS_VPCLATTICE_API HeaderMatch(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API HeaderMatch& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>Indicates whether the match is case sensitive.</p>
      */
-    inline bool GetCaseSensitive() const{ return m_caseSensitive; }
+    inline bool GetCaseSensitive() const { return m_caseSensitive; }
     inline bool CaseSensitiveHasBeenSet() const { return m_caseSensitiveHasBeenSet; }
     inline void SetCaseSensitive(bool value) { m_caseSensitiveHasBeenSet = true; m_caseSensitive = value; }
     inline HeaderMatch& WithCaseSensitive(bool value) { SetCaseSensitive(value); return *this;}
@@ -54,30 +54,28 @@ namespace Model
     /**
      * <p>The header match type.</p>
      */
-    inline const HeaderMatchType& GetMatch() const{ return m_match; }
+    inline const HeaderMatchType& GetMatch() const { return m_match; }
     inline bool MatchHasBeenSet() const { return m_matchHasBeenSet; }
-    inline void SetMatch(const HeaderMatchType& value) { m_matchHasBeenSet = true; m_match = value; }
-    inline void SetMatch(HeaderMatchType&& value) { m_matchHasBeenSet = true; m_match = std::move(value); }
-    inline HeaderMatch& WithMatch(const HeaderMatchType& value) { SetMatch(value); return *this;}
-    inline HeaderMatch& WithMatch(HeaderMatchType&& value) { SetMatch(std::move(value)); return *this;}
+    template<typename MatchT = HeaderMatchType>
+    void SetMatch(MatchT&& value) { m_matchHasBeenSet = true; m_match = std::forward<MatchT>(value); }
+    template<typename MatchT = HeaderMatchType>
+    HeaderMatch& WithMatch(MatchT&& value) { SetMatch(std::forward<MatchT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the header.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline HeaderMatch& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline HeaderMatch& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline HeaderMatch& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    HeaderMatch& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_caseSensitive;
+    bool m_caseSensitive{false};
     bool m_caseSensitiveHasBeenSet = false;
 
     HeaderMatchType m_match;

@@ -37,7 +37,7 @@ namespace Model
   class JournalS3ExportDescription
   {
   public:
-    AWS_QLDB_API JournalS3ExportDescription();
+    AWS_QLDB_API JournalS3ExportDescription() = default;
     AWS_QLDB_API JournalS3ExportDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_QLDB_API JournalS3ExportDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QLDB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,28 +47,24 @@ namespace Model
     /**
      * <p>The name of the ledger.</p>
      */
-    inline const Aws::String& GetLedgerName() const{ return m_ledgerName; }
+    inline const Aws::String& GetLedgerName() const { return m_ledgerName; }
     inline bool LedgerNameHasBeenSet() const { return m_ledgerNameHasBeenSet; }
-    inline void SetLedgerName(const Aws::String& value) { m_ledgerNameHasBeenSet = true; m_ledgerName = value; }
-    inline void SetLedgerName(Aws::String&& value) { m_ledgerNameHasBeenSet = true; m_ledgerName = std::move(value); }
-    inline void SetLedgerName(const char* value) { m_ledgerNameHasBeenSet = true; m_ledgerName.assign(value); }
-    inline JournalS3ExportDescription& WithLedgerName(const Aws::String& value) { SetLedgerName(value); return *this;}
-    inline JournalS3ExportDescription& WithLedgerName(Aws::String&& value) { SetLedgerName(std::move(value)); return *this;}
-    inline JournalS3ExportDescription& WithLedgerName(const char* value) { SetLedgerName(value); return *this;}
+    template<typename LedgerNameT = Aws::String>
+    void SetLedgerName(LedgerNameT&& value) { m_ledgerNameHasBeenSet = true; m_ledgerName = std::forward<LedgerNameT>(value); }
+    template<typename LedgerNameT = Aws::String>
+    JournalS3ExportDescription& WithLedgerName(LedgerNameT&& value) { SetLedgerName(std::forward<LedgerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The UUID (represented in Base62-encoded text) of the journal export job.</p>
      */
-    inline const Aws::String& GetExportId() const{ return m_exportId; }
+    inline const Aws::String& GetExportId() const { return m_exportId; }
     inline bool ExportIdHasBeenSet() const { return m_exportIdHasBeenSet; }
-    inline void SetExportId(const Aws::String& value) { m_exportIdHasBeenSet = true; m_exportId = value; }
-    inline void SetExportId(Aws::String&& value) { m_exportIdHasBeenSet = true; m_exportId = std::move(value); }
-    inline void SetExportId(const char* value) { m_exportIdHasBeenSet = true; m_exportId.assign(value); }
-    inline JournalS3ExportDescription& WithExportId(const Aws::String& value) { SetExportId(value); return *this;}
-    inline JournalS3ExportDescription& WithExportId(Aws::String&& value) { SetExportId(std::move(value)); return *this;}
-    inline JournalS3ExportDescription& WithExportId(const char* value) { SetExportId(value); return *this;}
+    template<typename ExportIdT = Aws::String>
+    void SetExportId(ExportIdT&& value) { m_exportIdHasBeenSet = true; m_exportId = std::forward<ExportIdT>(value); }
+    template<typename ExportIdT = Aws::String>
+    JournalS3ExportDescription& WithExportId(ExportIdT&& value) { SetExportId(std::forward<ExportIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,24 +73,22 @@ namespace Model
      * (Epoch time format is the number of seconds elapsed since 12:00:00 AM January 1,
      * 1970 UTC.)</p>
      */
-    inline const Aws::Utils::DateTime& GetExportCreationTime() const{ return m_exportCreationTime; }
+    inline const Aws::Utils::DateTime& GetExportCreationTime() const { return m_exportCreationTime; }
     inline bool ExportCreationTimeHasBeenSet() const { return m_exportCreationTimeHasBeenSet; }
-    inline void SetExportCreationTime(const Aws::Utils::DateTime& value) { m_exportCreationTimeHasBeenSet = true; m_exportCreationTime = value; }
-    inline void SetExportCreationTime(Aws::Utils::DateTime&& value) { m_exportCreationTimeHasBeenSet = true; m_exportCreationTime = std::move(value); }
-    inline JournalS3ExportDescription& WithExportCreationTime(const Aws::Utils::DateTime& value) { SetExportCreationTime(value); return *this;}
-    inline JournalS3ExportDescription& WithExportCreationTime(Aws::Utils::DateTime&& value) { SetExportCreationTime(std::move(value)); return *this;}
+    template<typename ExportCreationTimeT = Aws::Utils::DateTime>
+    void SetExportCreationTime(ExportCreationTimeT&& value) { m_exportCreationTimeHasBeenSet = true; m_exportCreationTime = std::forward<ExportCreationTimeT>(value); }
+    template<typename ExportCreationTimeT = Aws::Utils::DateTime>
+    JournalS3ExportDescription& WithExportCreationTime(ExportCreationTimeT&& value) { SetExportCreationTime(std::forward<ExportCreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current state of the journal export job.</p>
      */
-    inline const ExportStatus& GetStatus() const{ return m_status; }
+    inline ExportStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ExportStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ExportStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline JournalS3ExportDescription& WithStatus(const ExportStatus& value) { SetStatus(value); return *this;}
-    inline JournalS3ExportDescription& WithStatus(ExportStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ExportStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline JournalS3ExportDescription& WithStatus(ExportStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +96,12 @@ namespace Model
      * <p>The inclusive start date and time for the range of journal contents that was
      * specified in the original export request.</p>
      */
-    inline const Aws::Utils::DateTime& GetInclusiveStartTime() const{ return m_inclusiveStartTime; }
+    inline const Aws::Utils::DateTime& GetInclusiveStartTime() const { return m_inclusiveStartTime; }
     inline bool InclusiveStartTimeHasBeenSet() const { return m_inclusiveStartTimeHasBeenSet; }
-    inline void SetInclusiveStartTime(const Aws::Utils::DateTime& value) { m_inclusiveStartTimeHasBeenSet = true; m_inclusiveStartTime = value; }
-    inline void SetInclusiveStartTime(Aws::Utils::DateTime&& value) { m_inclusiveStartTimeHasBeenSet = true; m_inclusiveStartTime = std::move(value); }
-    inline JournalS3ExportDescription& WithInclusiveStartTime(const Aws::Utils::DateTime& value) { SetInclusiveStartTime(value); return *this;}
-    inline JournalS3ExportDescription& WithInclusiveStartTime(Aws::Utils::DateTime&& value) { SetInclusiveStartTime(std::move(value)); return *this;}
+    template<typename InclusiveStartTimeT = Aws::Utils::DateTime>
+    void SetInclusiveStartTime(InclusiveStartTimeT&& value) { m_inclusiveStartTimeHasBeenSet = true; m_inclusiveStartTime = std::forward<InclusiveStartTimeT>(value); }
+    template<typename InclusiveStartTimeT = Aws::Utils::DateTime>
+    JournalS3ExportDescription& WithInclusiveStartTime(InclusiveStartTimeT&& value) { SetInclusiveStartTime(std::forward<InclusiveStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,22 +109,22 @@ namespace Model
      * <p>The exclusive end date and time for the range of journal contents that was
      * specified in the original export request.</p>
      */
-    inline const Aws::Utils::DateTime& GetExclusiveEndTime() const{ return m_exclusiveEndTime; }
+    inline const Aws::Utils::DateTime& GetExclusiveEndTime() const { return m_exclusiveEndTime; }
     inline bool ExclusiveEndTimeHasBeenSet() const { return m_exclusiveEndTimeHasBeenSet; }
-    inline void SetExclusiveEndTime(const Aws::Utils::DateTime& value) { m_exclusiveEndTimeHasBeenSet = true; m_exclusiveEndTime = value; }
-    inline void SetExclusiveEndTime(Aws::Utils::DateTime&& value) { m_exclusiveEndTimeHasBeenSet = true; m_exclusiveEndTime = std::move(value); }
-    inline JournalS3ExportDescription& WithExclusiveEndTime(const Aws::Utils::DateTime& value) { SetExclusiveEndTime(value); return *this;}
-    inline JournalS3ExportDescription& WithExclusiveEndTime(Aws::Utils::DateTime&& value) { SetExclusiveEndTime(std::move(value)); return *this;}
+    template<typename ExclusiveEndTimeT = Aws::Utils::DateTime>
+    void SetExclusiveEndTime(ExclusiveEndTimeT&& value) { m_exclusiveEndTimeHasBeenSet = true; m_exclusiveEndTime = std::forward<ExclusiveEndTimeT>(value); }
+    template<typename ExclusiveEndTimeT = Aws::Utils::DateTime>
+    JournalS3ExportDescription& WithExclusiveEndTime(ExclusiveEndTimeT&& value) { SetExclusiveEndTime(std::forward<ExclusiveEndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const S3ExportConfiguration& GetS3ExportConfiguration() const{ return m_s3ExportConfiguration; }
+    inline const S3ExportConfiguration& GetS3ExportConfiguration() const { return m_s3ExportConfiguration; }
     inline bool S3ExportConfigurationHasBeenSet() const { return m_s3ExportConfigurationHasBeenSet; }
-    inline void SetS3ExportConfiguration(const S3ExportConfiguration& value) { m_s3ExportConfigurationHasBeenSet = true; m_s3ExportConfiguration = value; }
-    inline void SetS3ExportConfiguration(S3ExportConfiguration&& value) { m_s3ExportConfigurationHasBeenSet = true; m_s3ExportConfiguration = std::move(value); }
-    inline JournalS3ExportDescription& WithS3ExportConfiguration(const S3ExportConfiguration& value) { SetS3ExportConfiguration(value); return *this;}
-    inline JournalS3ExportDescription& WithS3ExportConfiguration(S3ExportConfiguration&& value) { SetS3ExportConfiguration(std::move(value)); return *this;}
+    template<typename S3ExportConfigurationT = S3ExportConfiguration>
+    void SetS3ExportConfiguration(S3ExportConfigurationT&& value) { m_s3ExportConfigurationHasBeenSet = true; m_s3ExportConfiguration = std::forward<S3ExportConfigurationT>(value); }
+    template<typename S3ExportConfigurationT = S3ExportConfiguration>
+    JournalS3ExportDescription& WithS3ExportConfiguration(S3ExportConfigurationT&& value) { SetS3ExportConfiguration(std::forward<S3ExportConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,26 +135,22 @@ namespace Model
      * <p>(Optional) Use your customer managed key in Key Management Service (KMS) for
      * server-side encryption of your exported data.</p> </li> </ul>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline JournalS3ExportDescription& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline JournalS3ExportDescription& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline JournalS3ExportDescription& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    JournalS3ExportDescription& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The output format of the exported journal data.</p>
      */
-    inline const OutputFormat& GetOutputFormat() const{ return m_outputFormat; }
+    inline OutputFormat GetOutputFormat() const { return m_outputFormat; }
     inline bool OutputFormatHasBeenSet() const { return m_outputFormatHasBeenSet; }
-    inline void SetOutputFormat(const OutputFormat& value) { m_outputFormatHasBeenSet = true; m_outputFormat = value; }
-    inline void SetOutputFormat(OutputFormat&& value) { m_outputFormatHasBeenSet = true; m_outputFormat = std::move(value); }
-    inline JournalS3ExportDescription& WithOutputFormat(const OutputFormat& value) { SetOutputFormat(value); return *this;}
-    inline JournalS3ExportDescription& WithOutputFormat(OutputFormat&& value) { SetOutputFormat(std::move(value)); return *this;}
+    inline void SetOutputFormat(OutputFormat value) { m_outputFormatHasBeenSet = true; m_outputFormat = value; }
+    inline JournalS3ExportDescription& WithOutputFormat(OutputFormat value) { SetOutputFormat(value); return *this;}
     ///@}
   private:
 
@@ -170,16 +160,16 @@ namespace Model
     Aws::String m_exportId;
     bool m_exportIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_exportCreationTime;
+    Aws::Utils::DateTime m_exportCreationTime{};
     bool m_exportCreationTimeHasBeenSet = false;
 
-    ExportStatus m_status;
+    ExportStatus m_status{ExportStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_inclusiveStartTime;
+    Aws::Utils::DateTime m_inclusiveStartTime{};
     bool m_inclusiveStartTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_exclusiveEndTime;
+    Aws::Utils::DateTime m_exclusiveEndTime{};
     bool m_exclusiveEndTimeHasBeenSet = false;
 
     S3ExportConfiguration m_s3ExportConfiguration;
@@ -188,7 +178,7 @@ namespace Model
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
 
-    OutputFormat m_outputFormat;
+    OutputFormat m_outputFormat{OutputFormat::NOT_SET};
     bool m_outputFormatHasBeenSet = false;
   };
 

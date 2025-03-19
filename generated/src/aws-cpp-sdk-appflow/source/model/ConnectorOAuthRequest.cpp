@@ -18,14 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-ConnectorOAuthRequest::ConnectorOAuthRequest() : 
-    m_authCodeHasBeenSet(false),
-    m_redirectUriHasBeenSet(false)
-{
-}
-
 ConnectorOAuthRequest::ConnectorOAuthRequest(JsonView jsonValue)
-  : ConnectorOAuthRequest()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ConnectorOAuthRequest& ConnectorOAuthRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("authCode"))
   {
     m_authCode = jsonValue.GetString("authCode");
-
     m_authCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("redirectUri"))
   {
     m_redirectUri = jsonValue.GetString("redirectUri");
-
     m_redirectUriHasBeenSet = true;
   }
-
   return *this;
 }
 

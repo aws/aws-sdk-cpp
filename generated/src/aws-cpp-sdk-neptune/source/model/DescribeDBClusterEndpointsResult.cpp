@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeDBClusterEndpointsResult::DescribeDBClusterEndpointsResult()
-{
-}
-
 DescribeDBClusterEndpointsResult::DescribeDBClusterEndpointsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeDBClusterEndpointsResult& DescribeDBClusterEndpointsResult::operator =(c
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode dBClusterEndpointsNode = resultNode.FirstChild("DBClusterEndpoints");
     if(!dBClusterEndpointsNode.IsNull())
     {
       XmlNode dBClusterEndpointsMember = dBClusterEndpointsNode.FirstChild("DBClusterEndpointList");
+      m_dBClusterEndpointsHasBeenSet = !dBClusterEndpointsMember.IsNull();
       while(!dBClusterEndpointsMember.IsNull())
       {
         m_dBClusterEndpoints.push_back(dBClusterEndpointsMember);
         dBClusterEndpointsMember = dBClusterEndpointsMember.NextNode("DBClusterEndpointList");
       }
 
+      m_dBClusterEndpointsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Neptune::Model::DescribeDBClusterEndpointsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

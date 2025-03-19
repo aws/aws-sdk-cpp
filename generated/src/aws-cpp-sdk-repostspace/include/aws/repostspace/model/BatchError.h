@@ -32,7 +32,7 @@ namespace Model
   class BatchError
   {
   public:
-    AWS_REPOSTSPACE_API BatchError();
+    AWS_REPOSTSPACE_API BatchError() = default;
     AWS_REPOSTSPACE_API BatchError(Aws::Utils::Json::JsonView jsonValue);
     AWS_REPOSTSPACE_API BatchError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REPOSTSPACE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The accessor identifier that's related to the error.</p>
      */
-    inline const Aws::String& GetAccessorId() const{ return m_accessorId; }
+    inline const Aws::String& GetAccessorId() const { return m_accessorId; }
     inline bool AccessorIdHasBeenSet() const { return m_accessorIdHasBeenSet; }
-    inline void SetAccessorId(const Aws::String& value) { m_accessorIdHasBeenSet = true; m_accessorId = value; }
-    inline void SetAccessorId(Aws::String&& value) { m_accessorIdHasBeenSet = true; m_accessorId = std::move(value); }
-    inline void SetAccessorId(const char* value) { m_accessorIdHasBeenSet = true; m_accessorId.assign(value); }
-    inline BatchError& WithAccessorId(const Aws::String& value) { SetAccessorId(value); return *this;}
-    inline BatchError& WithAccessorId(Aws::String&& value) { SetAccessorId(std::move(value)); return *this;}
-    inline BatchError& WithAccessorId(const char* value) { SetAccessorId(value); return *this;}
+    template<typename AccessorIdT = Aws::String>
+    void SetAccessorId(AccessorIdT&& value) { m_accessorIdHasBeenSet = true; m_accessorId = std::forward<AccessorIdT>(value); }
+    template<typename AccessorIdT = Aws::String>
+    BatchError& WithAccessorId(AccessorIdT&& value) { SetAccessorId(std::forward<AccessorIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The error code.</p>
      */
-    inline int GetError() const{ return m_error; }
+    inline int GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
     inline void SetError(int value) { m_errorHasBeenSet = true; m_error = value; }
     inline BatchError& WithError(int value) { SetError(value); return *this;}
@@ -66,21 +64,19 @@ namespace Model
     /**
      * <p>Description of the error.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline BatchError& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline BatchError& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline BatchError& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    BatchError& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_accessorId;
     bool m_accessorIdHasBeenSet = false;
 
-    int m_error;
+    int m_error{0};
     bool m_errorHasBeenSet = false;
 
     Aws::String m_message;

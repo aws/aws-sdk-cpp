@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-NumericAxisOptions::NumericAxisOptions() : 
-    m_scaleHasBeenSet(false),
-    m_rangeHasBeenSet(false)
-{
-}
-
 NumericAxisOptions::NumericAxisOptions(JsonView jsonValue)
-  : NumericAxisOptions()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NumericAxisOptions& NumericAxisOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Scale"))
   {
     m_scale = jsonValue.GetObject("Scale");
-
     m_scaleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Range"))
   {
     m_range = jsonValue.GetObject("Range");
-
     m_rangeHasBeenSet = true;
   }
-
   return *this;
 }
 

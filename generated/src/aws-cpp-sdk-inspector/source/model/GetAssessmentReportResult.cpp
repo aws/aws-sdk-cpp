@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAssessmentReportResult::GetAssessmentReportResult() : 
-    m_status(ReportStatus::NOT_SET)
-{
-}
-
 GetAssessmentReportResult::GetAssessmentReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetAssessmentReportResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ GetAssessmentReportResult& GetAssessmentReportResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("status"))
   {
     m_status = ReportStatusMapper::GetReportStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
+    m_urlHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TerminateSolNetworkInstanceResult::TerminateSolNetworkInstanceResult()
-{
-}
-
 TerminateSolNetworkInstanceResult::TerminateSolNetworkInstanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ TerminateSolNetworkInstanceResult& TerminateSolNetworkInstanceResult::operator =
   if(jsonValue.ValueExists("nsLcmOpOccId"))
   {
     m_nsLcmOpOccId = jsonValue.GetString("nsLcmOpOccId");
-
+    m_nsLcmOpOccIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -42,14 +37,15 @@ TerminateSolNetworkInstanceResult& TerminateSolNetworkInstanceResult::operator =
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

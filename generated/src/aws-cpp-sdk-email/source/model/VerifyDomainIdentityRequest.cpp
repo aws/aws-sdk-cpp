@@ -10,11 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-VerifyDomainIdentityRequest::VerifyDomainIdentityRequest() : 
-    m_domainHasBeenSet(false)
-{
-}
-
 Aws::String VerifyDomainIdentityRequest::SerializePayload() const
 {
   Aws::StringStream ss;

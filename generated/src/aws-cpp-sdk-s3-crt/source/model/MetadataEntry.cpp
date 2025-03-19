@@ -20,14 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-MetadataEntry::MetadataEntry() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 MetadataEntry::MetadataEntry(const XmlNode& xmlNode)
-  : MetadataEntry()
 {
   *this = xmlNode;
 }

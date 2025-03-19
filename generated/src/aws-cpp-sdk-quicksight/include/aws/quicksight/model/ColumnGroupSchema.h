@@ -33,7 +33,7 @@ namespace Model
   class ColumnGroupSchema
   {
   public:
-    AWS_QUICKSIGHT_API ColumnGroupSchema();
+    AWS_QUICKSIGHT_API ColumnGroupSchema() = default;
     AWS_QUICKSIGHT_API ColumnGroupSchema(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ColumnGroupSchema& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,26 @@ namespace Model
     /**
      * <p>The name of the column group schema.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ColumnGroupSchema& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ColumnGroupSchema& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ColumnGroupSchema& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ColumnGroupSchema& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A structure containing the list of schemas for column group columns.</p>
      */
-    inline const Aws::Vector<ColumnGroupColumnSchema>& GetColumnGroupColumnSchemaList() const{ return m_columnGroupColumnSchemaList; }
+    inline const Aws::Vector<ColumnGroupColumnSchema>& GetColumnGroupColumnSchemaList() const { return m_columnGroupColumnSchemaList; }
     inline bool ColumnGroupColumnSchemaListHasBeenSet() const { return m_columnGroupColumnSchemaListHasBeenSet; }
-    inline void SetColumnGroupColumnSchemaList(const Aws::Vector<ColumnGroupColumnSchema>& value) { m_columnGroupColumnSchemaListHasBeenSet = true; m_columnGroupColumnSchemaList = value; }
-    inline void SetColumnGroupColumnSchemaList(Aws::Vector<ColumnGroupColumnSchema>&& value) { m_columnGroupColumnSchemaListHasBeenSet = true; m_columnGroupColumnSchemaList = std::move(value); }
-    inline ColumnGroupSchema& WithColumnGroupColumnSchemaList(const Aws::Vector<ColumnGroupColumnSchema>& value) { SetColumnGroupColumnSchemaList(value); return *this;}
-    inline ColumnGroupSchema& WithColumnGroupColumnSchemaList(Aws::Vector<ColumnGroupColumnSchema>&& value) { SetColumnGroupColumnSchemaList(std::move(value)); return *this;}
-    inline ColumnGroupSchema& AddColumnGroupColumnSchemaList(const ColumnGroupColumnSchema& value) { m_columnGroupColumnSchemaListHasBeenSet = true; m_columnGroupColumnSchemaList.push_back(value); return *this; }
-    inline ColumnGroupSchema& AddColumnGroupColumnSchemaList(ColumnGroupColumnSchema&& value) { m_columnGroupColumnSchemaListHasBeenSet = true; m_columnGroupColumnSchemaList.push_back(std::move(value)); return *this; }
+    template<typename ColumnGroupColumnSchemaListT = Aws::Vector<ColumnGroupColumnSchema>>
+    void SetColumnGroupColumnSchemaList(ColumnGroupColumnSchemaListT&& value) { m_columnGroupColumnSchemaListHasBeenSet = true; m_columnGroupColumnSchemaList = std::forward<ColumnGroupColumnSchemaListT>(value); }
+    template<typename ColumnGroupColumnSchemaListT = Aws::Vector<ColumnGroupColumnSchema>>
+    ColumnGroupSchema& WithColumnGroupColumnSchemaList(ColumnGroupColumnSchemaListT&& value) { SetColumnGroupColumnSchemaList(std::forward<ColumnGroupColumnSchemaListT>(value)); return *this;}
+    template<typename ColumnGroupColumnSchemaListT = ColumnGroupColumnSchema>
+    ColumnGroupSchema& AddColumnGroupColumnSchemaList(ColumnGroupColumnSchemaListT&& value) { m_columnGroupColumnSchemaListHasBeenSet = true; m_columnGroupColumnSchemaList.emplace_back(std::forward<ColumnGroupColumnSchemaListT>(value)); return *this; }
     ///@}
   private:
 

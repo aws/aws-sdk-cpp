@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListControlInsightsByControlDomainRequest::ListControlInsightsByControlDomainRequest() : 
-    m_controlDomainIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListControlInsightsByControlDomainRequest::SerializePayload() const
 {
   return {};

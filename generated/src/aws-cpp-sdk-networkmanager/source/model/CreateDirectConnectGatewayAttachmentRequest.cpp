@@ -12,16 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDirectConnectGatewayAttachmentRequest::CreateDirectConnectGatewayAttachmentRequest() : 
-    m_coreNetworkIdHasBeenSet(false),
-    m_directConnectGatewayArnHasBeenSet(false),
-    m_edgeLocationsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateDirectConnectGatewayAttachmentRequest::SerializePayload() const
 {
   JsonValue payload;

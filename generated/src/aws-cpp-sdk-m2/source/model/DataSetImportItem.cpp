@@ -18,14 +18,7 @@ namespace MainframeModernization
 namespace Model
 {
 
-DataSetImportItem::DataSetImportItem() : 
-    m_dataSetHasBeenSet(false),
-    m_externalLocationHasBeenSet(false)
-{
-}
-
 DataSetImportItem::DataSetImportItem(JsonView jsonValue)
-  : DataSetImportItem()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DataSetImportItem& DataSetImportItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("dataSet"))
   {
     m_dataSet = jsonValue.GetObject("dataSet");
-
     m_dataSetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalLocation"))
   {
     m_externalLocation = jsonValue.GetObject("externalLocation");
-
     m_externalLocationHasBeenSet = true;
   }
-
   return *this;
 }
 

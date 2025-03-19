@@ -10,14 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-GetAccountAuthorizationDetailsRequest::GetAccountAuthorizationDetailsRequest() : 
-    m_filterHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String GetAccountAuthorizationDetailsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

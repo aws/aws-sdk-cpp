@@ -18,18 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MultiplexStatmuxVideoSettings::MultiplexStatmuxVideoSettings() : 
-    m_maximumBitrate(0),
-    m_maximumBitrateHasBeenSet(false),
-    m_minimumBitrate(0),
-    m_minimumBitrateHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false)
-{
-}
-
 MultiplexStatmuxVideoSettings::MultiplexStatmuxVideoSettings(JsonView jsonValue)
-  : MultiplexStatmuxVideoSettings()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ MultiplexStatmuxVideoSettings& MultiplexStatmuxVideoSettings::operator =(JsonVie
   if(jsonValue.ValueExists("maximumBitrate"))
   {
     m_maximumBitrate = jsonValue.GetInteger("maximumBitrate");
-
     m_maximumBitrateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minimumBitrate"))
   {
     m_minimumBitrate = jsonValue.GetInteger("minimumBitrate");
-
     m_minimumBitrateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("priority"))
   {
     m_priority = jsonValue.GetInteger("priority");
-
     m_priorityHasBeenSet = true;
   }
-
   return *this;
 }
 

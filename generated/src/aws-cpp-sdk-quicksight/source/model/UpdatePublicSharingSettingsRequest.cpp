@@ -12,13 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdatePublicSharingSettingsRequest::UpdatePublicSharingSettingsRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_publicSharingEnabled(false),
-    m_publicSharingEnabledHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePublicSharingSettingsRequest::SerializePayload() const
 {
   JsonValue payload;

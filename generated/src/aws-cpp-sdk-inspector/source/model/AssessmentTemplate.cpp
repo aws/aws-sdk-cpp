@@ -18,23 +18,7 @@ namespace Inspector
 namespace Model
 {
 
-AssessmentTemplate::AssessmentTemplate() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_assessmentTargetArnHasBeenSet(false),
-    m_durationInSeconds(0),
-    m_durationInSecondsHasBeenSet(false),
-    m_rulesPackageArnsHasBeenSet(false),
-    m_userAttributesForFindingsHasBeenSet(false),
-    m_lastAssessmentRunArnHasBeenSet(false),
-    m_assessmentRunCount(0),
-    m_assessmentRunCountHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
-{
-}
-
 AssessmentTemplate::AssessmentTemplate(JsonView jsonValue)
-  : AssessmentTemplate()
 {
   *this = jsonValue;
 }
@@ -44,31 +28,23 @@ AssessmentTemplate& AssessmentTemplate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assessmentTargetArn"))
   {
     m_assessmentTargetArn = jsonValue.GetString("assessmentTargetArn");
-
     m_assessmentTargetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("durationInSeconds"))
   {
     m_durationInSeconds = jsonValue.GetInteger("durationInSeconds");
-
     m_durationInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rulesPackageArns"))
   {
     Aws::Utils::Array<JsonView> rulesPackageArnsJsonList = jsonValue.GetArray("rulesPackageArns");
@@ -78,7 +54,6 @@ AssessmentTemplate& AssessmentTemplate::operator =(JsonView jsonValue)
     }
     m_rulesPackageArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userAttributesForFindings"))
   {
     Aws::Utils::Array<JsonView> userAttributesForFindingsJsonList = jsonValue.GetArray("userAttributesForFindings");
@@ -88,28 +63,21 @@ AssessmentTemplate& AssessmentTemplate::operator =(JsonView jsonValue)
     }
     m_userAttributesForFindingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastAssessmentRunArn"))
   {
     m_lastAssessmentRunArn = jsonValue.GetString("lastAssessmentRunArn");
-
     m_lastAssessmentRunArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assessmentRunCount"))
   {
     m_assessmentRunCount = jsonValue.GetInteger("assessmentRunCount");
-
     m_assessmentRunCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   return *this;
 }
 

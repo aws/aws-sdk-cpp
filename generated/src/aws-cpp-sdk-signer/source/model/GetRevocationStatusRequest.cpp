@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetRevocationStatusRequest::GetRevocationStatusRequest() : 
-    m_signatureTimestampHasBeenSet(false),
-    m_platformIdHasBeenSet(false),
-    m_profileVersionArnHasBeenSet(false),
-    m_jobArnHasBeenSet(false),
-    m_certificateHashesHasBeenSet(false)
-{
-}
-
 Aws::String GetRevocationStatusRequest::SerializePayload() const
 {
   return {};

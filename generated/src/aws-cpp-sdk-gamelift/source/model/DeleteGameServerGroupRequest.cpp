@@ -12,13 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteGameServerGroupRequest::DeleteGameServerGroupRequest() : 
-    m_gameServerGroupNameHasBeenSet(false),
-    m_deleteOption(GameServerGroupDeleteOption::NOT_SET),
-    m_deleteOptionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteGameServerGroupRequest::SerializePayload() const
 {
   JsonValue payload;

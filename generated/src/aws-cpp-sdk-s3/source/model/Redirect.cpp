@@ -20,18 +20,7 @@ namespace S3
 namespace Model
 {
 
-Redirect::Redirect() : 
-    m_hostNameHasBeenSet(false),
-    m_httpRedirectCodeHasBeenSet(false),
-    m_protocol(Protocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_replaceKeyPrefixWithHasBeenSet(false),
-    m_replaceKeyWithHasBeenSet(false)
-{
-}
-
 Redirect::Redirect(const XmlNode& xmlNode)
-  : Redirect()
 {
   *this = xmlNode;
 }
@@ -57,7 +46,7 @@ Redirect& Redirect::operator =(const XmlNode& xmlNode)
     XmlNode protocolNode = resultNode.FirstChild("Protocol");
     if(!protocolNode.IsNull())
     {
-      m_protocol = ProtocolMapper::GetProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()).c_str());
+      m_protocol = ProtocolMapper::GetProtocolForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(protocolNode.GetText()).c_str()));
       m_protocolHasBeenSet = true;
     }
     XmlNode replaceKeyPrefixWithNode = resultNode.FirstChild("ReplaceKeyPrefixWith");

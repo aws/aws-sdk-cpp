@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetListingRequest::GetListingRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_listingRevisionHasBeenSet(false)
-{
-}
-
 Aws::String GetListingRequest::SerializePayload() const
 {
   return {};

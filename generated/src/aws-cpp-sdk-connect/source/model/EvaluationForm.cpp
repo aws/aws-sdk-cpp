@@ -18,29 +18,7 @@ namespace Connect
 namespace Model
 {
 
-EvaluationForm::EvaluationForm() : 
-    m_evaluationFormIdHasBeenSet(false),
-    m_evaluationFormVersion(0),
-    m_evaluationFormVersionHasBeenSet(false),
-    m_locked(false),
-    m_lockedHasBeenSet(false),
-    m_evaluationFormArnHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(EvaluationFormVersionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_itemsHasBeenSet(false),
-    m_scoringStrategyHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 EvaluationForm::EvaluationForm(JsonView jsonValue)
-  : EvaluationForm()
 {
   *this = jsonValue;
 }
@@ -50,52 +28,38 @@ EvaluationForm& EvaluationForm::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EvaluationFormId"))
   {
     m_evaluationFormId = jsonValue.GetString("EvaluationFormId");
-
     m_evaluationFormIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationFormVersion"))
   {
     m_evaluationFormVersion = jsonValue.GetInteger("EvaluationFormVersion");
-
     m_evaluationFormVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Locked"))
   {
     m_locked = jsonValue.GetBool("Locked");
-
     m_lockedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EvaluationFormArn"))
   {
     m_evaluationFormArn = jsonValue.GetString("EvaluationFormArn");
-
     m_evaluationFormArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = EvaluationFormVersionStatusMapper::GetEvaluationFormVersionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Items"))
   {
     Aws::Utils::Array<JsonView> itemsJsonList = jsonValue.GetArray("Items");
@@ -105,42 +69,31 @@ EvaluationForm& EvaluationForm::operator =(JsonView jsonValue)
     }
     m_itemsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScoringStrategy"))
   {
     m_scoringStrategy = jsonValue.GetObject("ScoringStrategy");
-
     m_scoringStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetString("CreatedBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedBy"))
   {
     m_lastModifiedBy = jsonValue.GetString("LastModifiedBy");
-
     m_lastModifiedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -150,7 +103,6 @@ EvaluationForm& EvaluationForm::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

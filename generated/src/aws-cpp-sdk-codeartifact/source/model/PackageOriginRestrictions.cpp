@@ -18,16 +18,7 @@ namespace CodeArtifact
 namespace Model
 {
 
-PackageOriginRestrictions::PackageOriginRestrictions() : 
-    m_publish(AllowPublish::NOT_SET),
-    m_publishHasBeenSet(false),
-    m_upstream(AllowUpstream::NOT_SET),
-    m_upstreamHasBeenSet(false)
-{
-}
-
 PackageOriginRestrictions::PackageOriginRestrictions(JsonView jsonValue)
-  : PackageOriginRestrictions()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ PackageOriginRestrictions& PackageOriginRestrictions::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("publish"))
   {
     m_publish = AllowPublishMapper::GetAllowPublishForName(jsonValue.GetString("publish"));
-
     m_publishHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("upstream"))
   {
     m_upstream = AllowUpstreamMapper::GetAllowUpstreamForName(jsonValue.GetString("upstream"));
-
     m_upstreamHasBeenSet = true;
   }
-
   return *this;
 }
 

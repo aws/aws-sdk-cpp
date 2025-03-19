@@ -18,21 +18,7 @@ namespace SSM
 namespace Model
 {
 
-Runbook::Runbook() : 
-    m_documentNameHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_targetParameterNameHasBeenSet(false),
-    m_targetsHasBeenSet(false),
-    m_targetMapsHasBeenSet(false),
-    m_maxConcurrencyHasBeenSet(false),
-    m_maxErrorsHasBeenSet(false),
-    m_targetLocationsHasBeenSet(false)
-{
-}
-
 Runbook::Runbook(JsonView jsonValue)
-  : Runbook()
 {
   *this = jsonValue;
 }
@@ -42,17 +28,13 @@ Runbook& Runbook::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DocumentName"))
   {
     m_documentName = jsonValue.GetString("DocumentName");
-
     m_documentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentVersion"))
   {
     m_documentVersion = jsonValue.GetString("DocumentVersion");
-
     m_documentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -69,14 +51,11 @@ Runbook& Runbook::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetParameterName"))
   {
     m_targetParameterName = jsonValue.GetString("TargetParameterName");
-
     m_targetParameterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Targets"))
   {
     Aws::Utils::Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
@@ -86,7 +65,6 @@ Runbook& Runbook::operator =(JsonView jsonValue)
     }
     m_targetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetMaps"))
   {
     Aws::Utils::Array<JsonView> targetMapsJsonList = jsonValue.GetArray("TargetMaps");
@@ -109,21 +87,16 @@ Runbook& Runbook::operator =(JsonView jsonValue)
     }
     m_targetMapsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxConcurrency"))
   {
     m_maxConcurrency = jsonValue.GetString("MaxConcurrency");
-
     m_maxConcurrencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxErrors"))
   {
     m_maxErrors = jsonValue.GetString("MaxErrors");
-
     m_maxErrorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetLocations"))
   {
     Aws::Utils::Array<JsonView> targetLocationsJsonList = jsonValue.GetArray("TargetLocations");
@@ -133,7 +106,6 @@ Runbook& Runbook::operator =(JsonView jsonValue)
     }
     m_targetLocationsHasBeenSet = true;
   }
-
   return *this;
 }
 

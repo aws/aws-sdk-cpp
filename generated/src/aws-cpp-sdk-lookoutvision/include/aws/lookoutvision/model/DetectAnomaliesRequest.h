@@ -22,7 +22,7 @@ namespace Model
   class DetectAnomaliesRequest : public StreamingLookoutforVisionRequest
   {
   public:
-    AWS_LOOKOUTFORVISION_API DetectAnomaliesRequest();
+    AWS_LOOKOUTFORVISION_API DetectAnomaliesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
      * <p>The name of the project that contains the model version that you want to
      * use.</p>
      */
-    inline const Aws::String& GetProjectName() const{ return m_projectName; }
+    inline const Aws::String& GetProjectName() const { return m_projectName; }
     inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
-    inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
-    inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
-    inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
-    inline DetectAnomaliesRequest& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-    inline DetectAnomaliesRequest& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-    inline DetectAnomaliesRequest& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+    template<typename ProjectNameT = Aws::String>
+    void SetProjectName(ProjectNameT&& value) { m_projectNameHasBeenSet = true; m_projectName = std::forward<ProjectNameT>(value); }
+    template<typename ProjectNameT = Aws::String>
+    DetectAnomaliesRequest& WithProjectName(ProjectNameT&& value) { SetProjectName(std::forward<ProjectNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the model that you want to use.</p>
      */
-    inline const Aws::String& GetModelVersion() const{ return m_modelVersion; }
+    inline const Aws::String& GetModelVersion() const { return m_modelVersion; }
     inline bool ModelVersionHasBeenSet() const { return m_modelVersionHasBeenSet; }
-    inline void SetModelVersion(const Aws::String& value) { m_modelVersionHasBeenSet = true; m_modelVersion = value; }
-    inline void SetModelVersion(Aws::String&& value) { m_modelVersionHasBeenSet = true; m_modelVersion = std::move(value); }
-    inline void SetModelVersion(const char* value) { m_modelVersionHasBeenSet = true; m_modelVersion.assign(value); }
-    inline DetectAnomaliesRequest& WithModelVersion(const Aws::String& value) { SetModelVersion(value); return *this;}
-    inline DetectAnomaliesRequest& WithModelVersion(Aws::String&& value) { SetModelVersion(std::move(value)); return *this;}
-    inline DetectAnomaliesRequest& WithModelVersion(const char* value) { SetModelVersion(value); return *this;}
+    template<typename ModelVersionT = Aws::String>
+    void SetModelVersion(ModelVersionT&& value) { m_modelVersionHasBeenSet = true; m_modelVersion = std::forward<ModelVersionT>(value); }
+    template<typename ModelVersionT = Aws::String>
+    DetectAnomaliesRequest& WithModelVersion(ModelVersionT&& value) { SetModelVersion(std::forward<ModelVersionT>(value)); return *this;}
     ///@}
   private:
 

@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutBucketLifecycleConfigurationResult::PutBucketLifecycleConfigurationResult() : 
-    m_transitionDefaultMinimumObjectSize(TransitionDefaultMinimumObjectSize::NOT_SET)
-{
-}
-
 PutBucketLifecycleConfigurationResult::PutBucketLifecycleConfigurationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : PutBucketLifecycleConfigurationResult()
 {
   *this = result;
 }
@@ -41,12 +35,14 @@ PutBucketLifecycleConfigurationResult& PutBucketLifecycleConfigurationResult::op
   if(transitionDefaultMinimumObjectSizeIter != headers.end())
   {
     m_transitionDefaultMinimumObjectSize = TransitionDefaultMinimumObjectSizeMapper::GetTransitionDefaultMinimumObjectSizeForName(transitionDefaultMinimumObjectSizeIter->second);
+    m_transitionDefaultMinimumObjectSizeHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amz-request-id");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

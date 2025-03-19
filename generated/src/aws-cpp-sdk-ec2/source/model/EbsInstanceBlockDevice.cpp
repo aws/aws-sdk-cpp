@@ -20,21 +20,7 @@ namespace EC2
 namespace Model
 {
 
-EbsInstanceBlockDevice::EbsInstanceBlockDevice() : 
-    m_attachTimeHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false),
-    m_status(AttachmentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_associatedResourceHasBeenSet(false),
-    m_volumeOwnerIdHasBeenSet(false),
-    m_operatorHasBeenSet(false)
-{
-}
-
 EbsInstanceBlockDevice::EbsInstanceBlockDevice(const XmlNode& xmlNode)
-  : EbsInstanceBlockDevice()
 {
   *this = xmlNode;
 }
@@ -60,7 +46,7 @@ EbsInstanceBlockDevice& EbsInstanceBlockDevice::operator =(const XmlNode& xmlNod
     XmlNode statusNode = resultNode.FirstChild("status");
     if(!statusNode.IsNull())
     {
-      m_status = AttachmentStatusMapper::GetAttachmentStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = AttachmentStatusMapper::GetAttachmentStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode volumeIdNode = resultNode.FirstChild("volumeId");

@@ -18,16 +18,7 @@ namespace ECS
 namespace Model
 {
 
-TimeoutConfiguration::TimeoutConfiguration() : 
-    m_idleTimeoutSeconds(0),
-    m_idleTimeoutSecondsHasBeenSet(false),
-    m_perRequestTimeoutSeconds(0),
-    m_perRequestTimeoutSecondsHasBeenSet(false)
-{
-}
-
 TimeoutConfiguration::TimeoutConfiguration(JsonView jsonValue)
-  : TimeoutConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TimeoutConfiguration& TimeoutConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("idleTimeoutSeconds"))
   {
     m_idleTimeoutSeconds = jsonValue.GetInteger("idleTimeoutSeconds");
-
     m_idleTimeoutSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("perRequestTimeoutSeconds"))
   {
     m_perRequestTimeoutSeconds = jsonValue.GetInteger("perRequestTimeoutSeconds");
-
     m_perRequestTimeoutSecondsHasBeenSet = true;
   }
-
   return *this;
 }
 

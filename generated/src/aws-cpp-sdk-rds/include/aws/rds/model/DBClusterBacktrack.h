@@ -34,7 +34,7 @@ namespace Model
   class DBClusterBacktrack
   {
   public:
-    AWS_RDS_API DBClusterBacktrack();
+    AWS_RDS_API DBClusterBacktrack() = default;
     AWS_RDS_API DBClusterBacktrack(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_RDS_API DBClusterBacktrack& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,64 +47,60 @@ namespace Model
      * <p>Contains a user-supplied DB cluster identifier. This identifier is the unique
      * key that identifies a DB cluster.</p>
      */
-    inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
+    inline const Aws::String& GetDBClusterIdentifier() const { return m_dBClusterIdentifier; }
     inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
-    inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
-    inline void SetDBClusterIdentifier(Aws::String&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::move(value); }
-    inline void SetDBClusterIdentifier(const char* value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier.assign(value); }
-    inline DBClusterBacktrack& WithDBClusterIdentifier(const Aws::String& value) { SetDBClusterIdentifier(value); return *this;}
-    inline DBClusterBacktrack& WithDBClusterIdentifier(Aws::String&& value) { SetDBClusterIdentifier(std::move(value)); return *this;}
-    inline DBClusterBacktrack& WithDBClusterIdentifier(const char* value) { SetDBClusterIdentifier(value); return *this;}
+    template<typename DBClusterIdentifierT = Aws::String>
+    void SetDBClusterIdentifier(DBClusterIdentifierT&& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = std::forward<DBClusterIdentifierT>(value); }
+    template<typename DBClusterIdentifierT = Aws::String>
+    DBClusterBacktrack& WithDBClusterIdentifier(DBClusterIdentifierT&& value) { SetDBClusterIdentifier(std::forward<DBClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains the backtrack identifier.</p>
      */
-    inline const Aws::String& GetBacktrackIdentifier() const{ return m_backtrackIdentifier; }
+    inline const Aws::String& GetBacktrackIdentifier() const { return m_backtrackIdentifier; }
     inline bool BacktrackIdentifierHasBeenSet() const { return m_backtrackIdentifierHasBeenSet; }
-    inline void SetBacktrackIdentifier(const Aws::String& value) { m_backtrackIdentifierHasBeenSet = true; m_backtrackIdentifier = value; }
-    inline void SetBacktrackIdentifier(Aws::String&& value) { m_backtrackIdentifierHasBeenSet = true; m_backtrackIdentifier = std::move(value); }
-    inline void SetBacktrackIdentifier(const char* value) { m_backtrackIdentifierHasBeenSet = true; m_backtrackIdentifier.assign(value); }
-    inline DBClusterBacktrack& WithBacktrackIdentifier(const Aws::String& value) { SetBacktrackIdentifier(value); return *this;}
-    inline DBClusterBacktrack& WithBacktrackIdentifier(Aws::String&& value) { SetBacktrackIdentifier(std::move(value)); return *this;}
-    inline DBClusterBacktrack& WithBacktrackIdentifier(const char* value) { SetBacktrackIdentifier(value); return *this;}
+    template<typename BacktrackIdentifierT = Aws::String>
+    void SetBacktrackIdentifier(BacktrackIdentifierT&& value) { m_backtrackIdentifierHasBeenSet = true; m_backtrackIdentifier = std::forward<BacktrackIdentifierT>(value); }
+    template<typename BacktrackIdentifierT = Aws::String>
+    DBClusterBacktrack& WithBacktrackIdentifier(BacktrackIdentifierT&& value) { SetBacktrackIdentifier(std::forward<BacktrackIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of the time to which the DB cluster was backtracked.</p>
      */
-    inline const Aws::Utils::DateTime& GetBacktrackTo() const{ return m_backtrackTo; }
+    inline const Aws::Utils::DateTime& GetBacktrackTo() const { return m_backtrackTo; }
     inline bool BacktrackToHasBeenSet() const { return m_backtrackToHasBeenSet; }
-    inline void SetBacktrackTo(const Aws::Utils::DateTime& value) { m_backtrackToHasBeenSet = true; m_backtrackTo = value; }
-    inline void SetBacktrackTo(Aws::Utils::DateTime&& value) { m_backtrackToHasBeenSet = true; m_backtrackTo = std::move(value); }
-    inline DBClusterBacktrack& WithBacktrackTo(const Aws::Utils::DateTime& value) { SetBacktrackTo(value); return *this;}
-    inline DBClusterBacktrack& WithBacktrackTo(Aws::Utils::DateTime&& value) { SetBacktrackTo(std::move(value)); return *this;}
+    template<typename BacktrackToT = Aws::Utils::DateTime>
+    void SetBacktrackTo(BacktrackToT&& value) { m_backtrackToHasBeenSet = true; m_backtrackTo = std::forward<BacktrackToT>(value); }
+    template<typename BacktrackToT = Aws::Utils::DateTime>
+    DBClusterBacktrack& WithBacktrackTo(BacktrackToT&& value) { SetBacktrackTo(std::forward<BacktrackToT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of the time from which the DB cluster was backtracked.</p>
      */
-    inline const Aws::Utils::DateTime& GetBacktrackedFrom() const{ return m_backtrackedFrom; }
+    inline const Aws::Utils::DateTime& GetBacktrackedFrom() const { return m_backtrackedFrom; }
     inline bool BacktrackedFromHasBeenSet() const { return m_backtrackedFromHasBeenSet; }
-    inline void SetBacktrackedFrom(const Aws::Utils::DateTime& value) { m_backtrackedFromHasBeenSet = true; m_backtrackedFrom = value; }
-    inline void SetBacktrackedFrom(Aws::Utils::DateTime&& value) { m_backtrackedFromHasBeenSet = true; m_backtrackedFrom = std::move(value); }
-    inline DBClusterBacktrack& WithBacktrackedFrom(const Aws::Utils::DateTime& value) { SetBacktrackedFrom(value); return *this;}
-    inline DBClusterBacktrack& WithBacktrackedFrom(Aws::Utils::DateTime&& value) { SetBacktrackedFrom(std::move(value)); return *this;}
+    template<typename BacktrackedFromT = Aws::Utils::DateTime>
+    void SetBacktrackedFrom(BacktrackedFromT&& value) { m_backtrackedFromHasBeenSet = true; m_backtrackedFrom = std::forward<BacktrackedFromT>(value); }
+    template<typename BacktrackedFromT = Aws::Utils::DateTime>
+    DBClusterBacktrack& WithBacktrackedFrom(BacktrackedFromT&& value) { SetBacktrackedFrom(std::forward<BacktrackedFromT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of the time at which the backtrack was requested.</p>
      */
-    inline const Aws::Utils::DateTime& GetBacktrackRequestCreationTime() const{ return m_backtrackRequestCreationTime; }
+    inline const Aws::Utils::DateTime& GetBacktrackRequestCreationTime() const { return m_backtrackRequestCreationTime; }
     inline bool BacktrackRequestCreationTimeHasBeenSet() const { return m_backtrackRequestCreationTimeHasBeenSet; }
-    inline void SetBacktrackRequestCreationTime(const Aws::Utils::DateTime& value) { m_backtrackRequestCreationTimeHasBeenSet = true; m_backtrackRequestCreationTime = value; }
-    inline void SetBacktrackRequestCreationTime(Aws::Utils::DateTime&& value) { m_backtrackRequestCreationTimeHasBeenSet = true; m_backtrackRequestCreationTime = std::move(value); }
-    inline DBClusterBacktrack& WithBacktrackRequestCreationTime(const Aws::Utils::DateTime& value) { SetBacktrackRequestCreationTime(value); return *this;}
-    inline DBClusterBacktrack& WithBacktrackRequestCreationTime(Aws::Utils::DateTime&& value) { SetBacktrackRequestCreationTime(std::move(value)); return *this;}
+    template<typename BacktrackRequestCreationTimeT = Aws::Utils::DateTime>
+    void SetBacktrackRequestCreationTime(BacktrackRequestCreationTimeT&& value) { m_backtrackRequestCreationTimeHasBeenSet = true; m_backtrackRequestCreationTime = std::forward<BacktrackRequestCreationTimeT>(value); }
+    template<typename BacktrackRequestCreationTimeT = Aws::Utils::DateTime>
+    DBClusterBacktrack& WithBacktrackRequestCreationTime(BacktrackRequestCreationTimeT&& value) { SetBacktrackRequestCreationTime(std::forward<BacktrackRequestCreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,23 +114,21 @@ namespace Model
      * cluster.</p> </li> <li> <p> <code>pending</code> - The backtrack is currently
      * pending application to or rollback from the DB cluster.</p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline DBClusterBacktrack& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline DBClusterBacktrack& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline DBClusterBacktrack& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    DBClusterBacktrack& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DBClusterBacktrack& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DBClusterBacktrack& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DBClusterBacktrack& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
@@ -144,19 +138,20 @@ namespace Model
     Aws::String m_backtrackIdentifier;
     bool m_backtrackIdentifierHasBeenSet = false;
 
-    Aws::Utils::DateTime m_backtrackTo;
+    Aws::Utils::DateTime m_backtrackTo{};
     bool m_backtrackToHasBeenSet = false;
 
-    Aws::Utils::DateTime m_backtrackedFrom;
+    Aws::Utils::DateTime m_backtrackedFrom{};
     bool m_backtrackedFromHasBeenSet = false;
 
-    Aws::Utils::DateTime m_backtrackRequestCreationTime;
+    Aws::Utils::DateTime m_backtrackRequestCreationTime{};
     bool m_backtrackRequestCreationTimeHasBeenSet = false;
 
     Aws::String m_status;
     bool m_statusHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = true;
   };
 
 } // namespace Model

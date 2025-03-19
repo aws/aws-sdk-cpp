@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteAccountCustomizationResult::DeleteAccountCustomizationResult() : 
-    m_status(0)
-{
-}
-
 DeleteAccountCustomizationResult::DeleteAccountCustomizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteAccountCustomizationResult()
 {
   *this = result;
 }
@@ -37,10 +31,11 @@ DeleteAccountCustomizationResult& DeleteAccountCustomizationResult::operator =(c
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

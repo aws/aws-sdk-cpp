@@ -32,7 +32,7 @@ namespace Model
   class EndpointItemResponse
   {
   public:
-    AWS_PINPOINT_API EndpointItemResponse();
+    AWS_PINPOINT_API EndpointItemResponse() = default;
     AWS_PINPOINT_API EndpointItemResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API EndpointItemResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The custom message that's returned in the response as a result of processing
      * the endpoint data.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline EndpointItemResponse& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline EndpointItemResponse& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline EndpointItemResponse& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    EndpointItemResponse& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * <p>The status code that's returned in the response as a result of processing the
      * endpoint data.</p>
      */
-    inline int GetStatusCode() const{ return m_statusCode; }
+    inline int GetStatusCode() const { return m_statusCode; }
     inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
     inline void SetStatusCode(int value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
     inline EndpointItemResponse& WithStatusCode(int value) { SetStatusCode(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    int m_statusCode;
+    int m_statusCode{0};
     bool m_statusCodeHasBeenSet = false;
   };
 

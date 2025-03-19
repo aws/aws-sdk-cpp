@@ -18,14 +18,7 @@ namespace AppFabric
 namespace Model
 {
 
-S3Bucket::S3Bucket() : 
-    m_bucketNameHasBeenSet(false),
-    m_prefixHasBeenSet(false)
-{
-}
-
 S3Bucket::S3Bucket(JsonView jsonValue)
-  : S3Bucket()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3Bucket& S3Bucket::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucketName"))
   {
     m_bucketName = jsonValue.GetString("bucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("prefix"))
   {
     m_prefix = jsonValue.GetString("prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   return *this;
 }
 

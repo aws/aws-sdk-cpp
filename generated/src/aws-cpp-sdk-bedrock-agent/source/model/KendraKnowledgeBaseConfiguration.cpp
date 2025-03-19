@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-KendraKnowledgeBaseConfiguration::KendraKnowledgeBaseConfiguration() : 
-    m_kendraIndexArnHasBeenSet(false)
-{
-}
-
 KendraKnowledgeBaseConfiguration::KendraKnowledgeBaseConfiguration(JsonView jsonValue)
-  : KendraKnowledgeBaseConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ KendraKnowledgeBaseConfiguration& KendraKnowledgeBaseConfiguration::operator =(J
   if(jsonValue.ValueExists("kendraIndexArn"))
   {
     m_kendraIndexArn = jsonValue.GetString("kendraIndexArn");
-
     m_kendraIndexArnHasBeenSet = true;
   }
-
   return *this;
 }
 

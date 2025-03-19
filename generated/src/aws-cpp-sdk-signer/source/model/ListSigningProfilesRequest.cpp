@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListSigningProfilesRequest::ListSigningProfilesRequest() : 
-    m_includeCanceled(false),
-    m_includeCanceledHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_platformIdHasBeenSet(false),
-    m_statusesHasBeenSet(false)
-{
-}
-
 Aws::String ListSigningProfilesRequest::SerializePayload() const
 {
   return {};

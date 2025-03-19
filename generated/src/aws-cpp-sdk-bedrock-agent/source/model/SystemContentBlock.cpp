@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-SystemContentBlock::SystemContentBlock() : 
-    m_cachePointHasBeenSet(false),
-    m_textHasBeenSet(false)
-{
-}
-
 SystemContentBlock::SystemContentBlock(JsonView jsonValue)
-  : SystemContentBlock()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SystemContentBlock& SystemContentBlock::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cachePoint"))
   {
     m_cachePoint = jsonValue.GetObject("cachePoint");
-
     m_cachePointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

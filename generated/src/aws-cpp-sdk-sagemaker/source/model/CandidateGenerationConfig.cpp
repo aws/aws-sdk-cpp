@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-CandidateGenerationConfig::CandidateGenerationConfig() : 
-    m_algorithmsConfigHasBeenSet(false)
-{
-}
-
 CandidateGenerationConfig::CandidateGenerationConfig(JsonView jsonValue)
-  : CandidateGenerationConfig()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ CandidateGenerationConfig& CandidateGenerationConfig::operator =(JsonView jsonVa
     }
     m_algorithmsConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

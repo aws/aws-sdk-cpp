@@ -23,7 +23,7 @@ namespace Model
   class DeregisterNamespaceRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API DeregisterNamespaceRequest();
+    AWS_REDSHIFT_API DeregisterNamespaceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,12 +43,12 @@ namespace Model
      * <p>The unique identifier of the cluster or serverless namespace that you want to
      * deregister.</p>
      */
-    inline const NamespaceIdentifierUnion& GetNamespaceIdentifier() const{ return m_namespaceIdentifier; }
+    inline const NamespaceIdentifierUnion& GetNamespaceIdentifier() const { return m_namespaceIdentifier; }
     inline bool NamespaceIdentifierHasBeenSet() const { return m_namespaceIdentifierHasBeenSet; }
-    inline void SetNamespaceIdentifier(const NamespaceIdentifierUnion& value) { m_namespaceIdentifierHasBeenSet = true; m_namespaceIdentifier = value; }
-    inline void SetNamespaceIdentifier(NamespaceIdentifierUnion&& value) { m_namespaceIdentifierHasBeenSet = true; m_namespaceIdentifier = std::move(value); }
-    inline DeregisterNamespaceRequest& WithNamespaceIdentifier(const NamespaceIdentifierUnion& value) { SetNamespaceIdentifier(value); return *this;}
-    inline DeregisterNamespaceRequest& WithNamespaceIdentifier(NamespaceIdentifierUnion&& value) { SetNamespaceIdentifier(std::move(value)); return *this;}
+    template<typename NamespaceIdentifierT = NamespaceIdentifierUnion>
+    void SetNamespaceIdentifier(NamespaceIdentifierT&& value) { m_namespaceIdentifierHasBeenSet = true; m_namespaceIdentifier = std::forward<NamespaceIdentifierT>(value); }
+    template<typename NamespaceIdentifierT = NamespaceIdentifierUnion>
+    DeregisterNamespaceRequest& WithNamespaceIdentifier(NamespaceIdentifierT&& value) { SetNamespaceIdentifier(std::forward<NamespaceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,15 +56,14 @@ namespace Model
      * <p>An array containing the ID of the consumer account that you want to
      * deregister the cluster or serverless namespace from.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetConsumerIdentifiers() const{ return m_consumerIdentifiers; }
+    inline const Aws::Vector<Aws::String>& GetConsumerIdentifiers() const { return m_consumerIdentifiers; }
     inline bool ConsumerIdentifiersHasBeenSet() const { return m_consumerIdentifiersHasBeenSet; }
-    inline void SetConsumerIdentifiers(const Aws::Vector<Aws::String>& value) { m_consumerIdentifiersHasBeenSet = true; m_consumerIdentifiers = value; }
-    inline void SetConsumerIdentifiers(Aws::Vector<Aws::String>&& value) { m_consumerIdentifiersHasBeenSet = true; m_consumerIdentifiers = std::move(value); }
-    inline DeregisterNamespaceRequest& WithConsumerIdentifiers(const Aws::Vector<Aws::String>& value) { SetConsumerIdentifiers(value); return *this;}
-    inline DeregisterNamespaceRequest& WithConsumerIdentifiers(Aws::Vector<Aws::String>&& value) { SetConsumerIdentifiers(std::move(value)); return *this;}
-    inline DeregisterNamespaceRequest& AddConsumerIdentifiers(const Aws::String& value) { m_consumerIdentifiersHasBeenSet = true; m_consumerIdentifiers.push_back(value); return *this; }
-    inline DeregisterNamespaceRequest& AddConsumerIdentifiers(Aws::String&& value) { m_consumerIdentifiersHasBeenSet = true; m_consumerIdentifiers.push_back(std::move(value)); return *this; }
-    inline DeregisterNamespaceRequest& AddConsumerIdentifiers(const char* value) { m_consumerIdentifiersHasBeenSet = true; m_consumerIdentifiers.push_back(value); return *this; }
+    template<typename ConsumerIdentifiersT = Aws::Vector<Aws::String>>
+    void SetConsumerIdentifiers(ConsumerIdentifiersT&& value) { m_consumerIdentifiersHasBeenSet = true; m_consumerIdentifiers = std::forward<ConsumerIdentifiersT>(value); }
+    template<typename ConsumerIdentifiersT = Aws::Vector<Aws::String>>
+    DeregisterNamespaceRequest& WithConsumerIdentifiers(ConsumerIdentifiersT&& value) { SetConsumerIdentifiers(std::forward<ConsumerIdentifiersT>(value)); return *this;}
+    template<typename ConsumerIdentifiersT = Aws::String>
+    DeregisterNamespaceRequest& AddConsumerIdentifiers(ConsumerIdentifiersT&& value) { m_consumerIdentifiersHasBeenSet = true; m_consumerIdentifiers.emplace_back(std::forward<ConsumerIdentifiersT>(value)); return *this; }
     ///@}
   private:
 

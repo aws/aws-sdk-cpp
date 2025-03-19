@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDataflowGraphRequest::GetDataflowGraphRequest() : 
-    m_pythonScriptHasBeenSet(false)
-{
-}
-
 Aws::String GetDataflowGraphRequest::SerializePayload() const
 {
   JsonValue payload;

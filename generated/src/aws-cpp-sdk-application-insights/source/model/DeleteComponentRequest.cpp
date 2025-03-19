@@ -12,12 +12,6 @@ using namespace Aws::ApplicationInsights::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteComponentRequest::DeleteComponentRequest() : 
-    m_resourceGroupNameHasBeenSet(false),
-    m_componentNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteComponentRequest::SerializePayload() const
 {
   JsonValue payload;

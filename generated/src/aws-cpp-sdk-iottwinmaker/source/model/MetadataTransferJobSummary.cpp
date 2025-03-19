@@ -18,18 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-MetadataTransferJobSummary::MetadataTransferJobSummary() : 
-    m_metadataTransferJobIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_creationDateTimeHasBeenSet(false),
-    m_updateDateTimeHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_progressHasBeenSet(false)
-{
-}
-
 MetadataTransferJobSummary::MetadataTransferJobSummary(JsonView jsonValue)
-  : MetadataTransferJobSummary()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ MetadataTransferJobSummary& MetadataTransferJobSummary::operator =(JsonView json
   if(jsonValue.ValueExists("metadataTransferJobId"))
   {
     m_metadataTransferJobId = jsonValue.GetString("metadataTransferJobId");
-
     m_metadataTransferJobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetDouble("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateDateTime"))
   {
     m_updateDateTime = jsonValue.GetDouble("updateDateTime");
-
     m_updateDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("progress"))
   {
     m_progress = jsonValue.GetObject("progress");
-
     m_progressHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace WorkMail
 namespace Model
 {
 
-EwsAvailabilityProvider::EwsAvailabilityProvider() : 
-    m_ewsEndpointHasBeenSet(false),
-    m_ewsUsernameHasBeenSet(false),
-    m_ewsPasswordHasBeenSet(false)
-{
-}
-
 EwsAvailabilityProvider::EwsAvailabilityProvider(JsonView jsonValue)
-  : EwsAvailabilityProvider()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ EwsAvailabilityProvider& EwsAvailabilityProvider::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EwsEndpoint"))
   {
     m_ewsEndpoint = jsonValue.GetString("EwsEndpoint");
-
     m_ewsEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EwsUsername"))
   {
     m_ewsUsername = jsonValue.GetString("EwsUsername");
-
     m_ewsUsernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EwsPassword"))
   {
     m_ewsPassword = jsonValue.GetString("EwsPassword");
-
     m_ewsPasswordHasBeenSet = true;
   }
-
   return *this;
 }
 

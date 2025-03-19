@@ -34,7 +34,7 @@ namespace Model
   class DeleteFileSystemOpenZFSConfiguration
   {
   public:
-    AWS_FSX_API DeleteFileSystemOpenZFSConfiguration();
+    AWS_FSX_API DeleteFileSystemOpenZFSConfiguration() = default;
     AWS_FSX_API DeleteFileSystemOpenZFSConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API DeleteFileSystemOpenZFSConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,7 +47,7 @@ namespace Model
      * you from data loss, and we highly recommend taking the final backup. If you want
      * to skip taking a final backup, set this value to <code>true</code>.</p>
      */
-    inline bool GetSkipFinalBackup() const{ return m_skipFinalBackup; }
+    inline bool GetSkipFinalBackup() const { return m_skipFinalBackup; }
     inline bool SkipFinalBackupHasBeenSet() const { return m_skipFinalBackupHasBeenSet; }
     inline void SetSkipFinalBackup(bool value) { m_skipFinalBackupHasBeenSet = true; m_skipFinalBackup = value; }
     inline DeleteFileSystemOpenZFSConfiguration& WithSkipFinalBackup(bool value) { SetSkipFinalBackup(value); return *this;}
@@ -57,14 +57,14 @@ namespace Model
     /**
      * <p>A list of tags to apply to the file system's final backup.</p>
      */
-    inline const Aws::Vector<Tag>& GetFinalBackupTags() const{ return m_finalBackupTags; }
+    inline const Aws::Vector<Tag>& GetFinalBackupTags() const { return m_finalBackupTags; }
     inline bool FinalBackupTagsHasBeenSet() const { return m_finalBackupTagsHasBeenSet; }
-    inline void SetFinalBackupTags(const Aws::Vector<Tag>& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags = value; }
-    inline void SetFinalBackupTags(Aws::Vector<Tag>&& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags = std::move(value); }
-    inline DeleteFileSystemOpenZFSConfiguration& WithFinalBackupTags(const Aws::Vector<Tag>& value) { SetFinalBackupTags(value); return *this;}
-    inline DeleteFileSystemOpenZFSConfiguration& WithFinalBackupTags(Aws::Vector<Tag>&& value) { SetFinalBackupTags(std::move(value)); return *this;}
-    inline DeleteFileSystemOpenZFSConfiguration& AddFinalBackupTags(const Tag& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags.push_back(value); return *this; }
-    inline DeleteFileSystemOpenZFSConfiguration& AddFinalBackupTags(Tag&& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags.push_back(std::move(value)); return *this; }
+    template<typename FinalBackupTagsT = Aws::Vector<Tag>>
+    void SetFinalBackupTags(FinalBackupTagsT&& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags = std::forward<FinalBackupTagsT>(value); }
+    template<typename FinalBackupTagsT = Aws::Vector<Tag>>
+    DeleteFileSystemOpenZFSConfiguration& WithFinalBackupTags(FinalBackupTagsT&& value) { SetFinalBackupTags(std::forward<FinalBackupTagsT>(value)); return *this;}
+    template<typename FinalBackupTagsT = Tag>
+    DeleteFileSystemOpenZFSConfiguration& AddFinalBackupTags(FinalBackupTagsT&& value) { m_finalBackupTagsHasBeenSet = true; m_finalBackupTags.emplace_back(std::forward<FinalBackupTagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -74,18 +74,17 @@ namespace Model
      * file system has child volumes and you don't use this option, the delete request
      * will fail.</p>
      */
-    inline const Aws::Vector<DeleteFileSystemOpenZFSOption>& GetOptions() const{ return m_options; }
+    inline const Aws::Vector<DeleteFileSystemOpenZFSOption>& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const Aws::Vector<DeleteFileSystemOpenZFSOption>& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(Aws::Vector<DeleteFileSystemOpenZFSOption>&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline DeleteFileSystemOpenZFSConfiguration& WithOptions(const Aws::Vector<DeleteFileSystemOpenZFSOption>& value) { SetOptions(value); return *this;}
-    inline DeleteFileSystemOpenZFSConfiguration& WithOptions(Aws::Vector<DeleteFileSystemOpenZFSOption>&& value) { SetOptions(std::move(value)); return *this;}
-    inline DeleteFileSystemOpenZFSConfiguration& AddOptions(const DeleteFileSystemOpenZFSOption& value) { m_optionsHasBeenSet = true; m_options.push_back(value); return *this; }
-    inline DeleteFileSystemOpenZFSConfiguration& AddOptions(DeleteFileSystemOpenZFSOption&& value) { m_optionsHasBeenSet = true; m_options.push_back(std::move(value)); return *this; }
+    template<typename OptionsT = Aws::Vector<DeleteFileSystemOpenZFSOption>>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = Aws::Vector<DeleteFileSystemOpenZFSOption>>
+    DeleteFileSystemOpenZFSConfiguration& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
+    inline DeleteFileSystemOpenZFSConfiguration& AddOptions(DeleteFileSystemOpenZFSOption value) { m_optionsHasBeenSet = true; m_options.push_back(value); return *this; }
     ///@}
   private:
 
-    bool m_skipFinalBackup;
+    bool m_skipFinalBackup{false};
     bool m_skipFinalBackupHasBeenSet = false;
 
     Aws::Vector<Tag> m_finalBackupTags;

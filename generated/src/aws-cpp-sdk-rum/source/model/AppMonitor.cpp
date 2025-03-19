@@ -18,25 +18,7 @@ namespace CloudWatchRUM
 namespace Model
 {
 
-AppMonitor::AppMonitor() : 
-    m_appMonitorConfigurationHasBeenSet(false),
-    m_createdHasBeenSet(false),
-    m_customEventsHasBeenSet(false),
-    m_dataStorageHasBeenSet(false),
-    m_deobfuscationConfigurationHasBeenSet(false),
-    m_domainHasBeenSet(false),
-    m_domainListHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_state(StateEnum::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 AppMonitor::AppMonitor(JsonView jsonValue)
-  : AppMonitor()
 {
   *this = jsonValue;
 }
@@ -46,45 +28,33 @@ AppMonitor& AppMonitor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AppMonitorConfiguration"))
   {
     m_appMonitorConfiguration = jsonValue.GetObject("AppMonitorConfiguration");
-
     m_appMonitorConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Created"))
   {
     m_created = jsonValue.GetString("Created");
-
     m_createdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomEvents"))
   {
     m_customEvents = jsonValue.GetObject("CustomEvents");
-
     m_customEventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataStorage"))
   {
     m_dataStorage = jsonValue.GetObject("DataStorage");
-
     m_dataStorageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeobfuscationConfiguration"))
   {
     m_deobfuscationConfiguration = jsonValue.GetObject("DeobfuscationConfiguration");
-
     m_deobfuscationConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Domain"))
   {
     m_domain = jsonValue.GetString("Domain");
-
     m_domainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainList"))
   {
     Aws::Utils::Array<JsonView> domainListJsonList = jsonValue.GetArray("DomainList");
@@ -94,35 +64,26 @@ AppMonitor& AppMonitor::operator =(JsonView jsonValue)
     }
     m_domainListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModified"))
   {
     m_lastModified = jsonValue.GetString("LastModified");
-
     m_lastModifiedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = StateEnumMapper::GetStateEnumForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -132,7 +93,6 @@ AppMonitor& AppMonitor::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

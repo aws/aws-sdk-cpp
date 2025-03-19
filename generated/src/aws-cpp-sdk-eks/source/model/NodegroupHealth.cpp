@@ -18,13 +18,7 @@ namespace EKS
 namespace Model
 {
 
-NodegroupHealth::NodegroupHealth() : 
-    m_issuesHasBeenSet(false)
-{
-}
-
 NodegroupHealth::NodegroupHealth(JsonView jsonValue)
-  : NodegroupHealth()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ NodegroupHealth& NodegroupHealth::operator =(JsonView jsonValue)
     }
     m_issuesHasBeenSet = true;
   }
-
   return *this;
 }
 

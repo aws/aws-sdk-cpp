@@ -35,7 +35,7 @@ namespace Model
   class AwsWafRegionalRuleGroupDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsWafRegionalRuleGroupDetails();
+    AWS_SECURITYHUB_API AwsWafRegionalRuleGroupDetails() = default;
     AWS_SECURITYHUB_API AwsWafRegionalRuleGroupDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsWafRegionalRuleGroupDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,42 +45,36 @@ namespace Model
     /**
      * <p>A name for the metrics for this rule group. </p>
      */
-    inline const Aws::String& GetMetricName() const{ return m_metricName; }
+    inline const Aws::String& GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
-    inline AwsWafRegionalRuleGroupDetails& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-    inline AwsWafRegionalRuleGroupDetails& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-    inline AwsWafRegionalRuleGroupDetails& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+    template<typename MetricNameT = Aws::String>
+    void SetMetricName(MetricNameT&& value) { m_metricNameHasBeenSet = true; m_metricName = std::forward<MetricNameT>(value); }
+    template<typename MetricNameT = Aws::String>
+    AwsWafRegionalRuleGroupDetails& WithMetricName(MetricNameT&& value) { SetMetricName(std::forward<MetricNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The descriptive name of the rule group. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AwsWafRegionalRuleGroupDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AwsWafRegionalRuleGroupDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AwsWafRegionalRuleGroupDetails& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AwsWafRegionalRuleGroupDetails& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the rule group. </p>
      */
-    inline const Aws::String& GetRuleGroupId() const{ return m_ruleGroupId; }
+    inline const Aws::String& GetRuleGroupId() const { return m_ruleGroupId; }
     inline bool RuleGroupIdHasBeenSet() const { return m_ruleGroupIdHasBeenSet; }
-    inline void SetRuleGroupId(const Aws::String& value) { m_ruleGroupIdHasBeenSet = true; m_ruleGroupId = value; }
-    inline void SetRuleGroupId(Aws::String&& value) { m_ruleGroupIdHasBeenSet = true; m_ruleGroupId = std::move(value); }
-    inline void SetRuleGroupId(const char* value) { m_ruleGroupIdHasBeenSet = true; m_ruleGroupId.assign(value); }
-    inline AwsWafRegionalRuleGroupDetails& WithRuleGroupId(const Aws::String& value) { SetRuleGroupId(value); return *this;}
-    inline AwsWafRegionalRuleGroupDetails& WithRuleGroupId(Aws::String&& value) { SetRuleGroupId(std::move(value)); return *this;}
-    inline AwsWafRegionalRuleGroupDetails& WithRuleGroupId(const char* value) { SetRuleGroupId(value); return *this;}
+    template<typename RuleGroupIdT = Aws::String>
+    void SetRuleGroupId(RuleGroupIdT&& value) { m_ruleGroupIdHasBeenSet = true; m_ruleGroupId = std::forward<RuleGroupIdT>(value); }
+    template<typename RuleGroupIdT = Aws::String>
+    AwsWafRegionalRuleGroupDetails& WithRuleGroupId(RuleGroupIdT&& value) { SetRuleGroupId(std::forward<RuleGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +82,14 @@ namespace Model
      * <p>Provides information about the rule statements used to identify the web
      * requests that you want to allow, block, or count. </p>
      */
-    inline const Aws::Vector<AwsWafRegionalRuleGroupRulesDetails>& GetRules() const{ return m_rules; }
+    inline const Aws::Vector<AwsWafRegionalRuleGroupRulesDetails>& GetRules() const { return m_rules; }
     inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
-    inline void SetRules(const Aws::Vector<AwsWafRegionalRuleGroupRulesDetails>& value) { m_rulesHasBeenSet = true; m_rules = value; }
-    inline void SetRules(Aws::Vector<AwsWafRegionalRuleGroupRulesDetails>&& value) { m_rulesHasBeenSet = true; m_rules = std::move(value); }
-    inline AwsWafRegionalRuleGroupDetails& WithRules(const Aws::Vector<AwsWafRegionalRuleGroupRulesDetails>& value) { SetRules(value); return *this;}
-    inline AwsWafRegionalRuleGroupDetails& WithRules(Aws::Vector<AwsWafRegionalRuleGroupRulesDetails>&& value) { SetRules(std::move(value)); return *this;}
-    inline AwsWafRegionalRuleGroupDetails& AddRules(const AwsWafRegionalRuleGroupRulesDetails& value) { m_rulesHasBeenSet = true; m_rules.push_back(value); return *this; }
-    inline AwsWafRegionalRuleGroupDetails& AddRules(AwsWafRegionalRuleGroupRulesDetails&& value) { m_rulesHasBeenSet = true; m_rules.push_back(std::move(value)); return *this; }
+    template<typename RulesT = Aws::Vector<AwsWafRegionalRuleGroupRulesDetails>>
+    void SetRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules = std::forward<RulesT>(value); }
+    template<typename RulesT = Aws::Vector<AwsWafRegionalRuleGroupRulesDetails>>
+    AwsWafRegionalRuleGroupDetails& WithRules(RulesT&& value) { SetRules(std::forward<RulesT>(value)); return *this;}
+    template<typename RulesT = AwsWafRegionalRuleGroupRulesDetails>
+    AwsWafRegionalRuleGroupDetails& AddRules(RulesT&& value) { m_rulesHasBeenSet = true; m_rules.emplace_back(std::forward<RulesT>(value)); return *this; }
     ///@}
   private:
 

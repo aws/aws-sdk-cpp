@@ -21,7 +21,7 @@ namespace Model
   class DeleteProtectionRequest : public ShieldRequest
   {
   public:
-    AWS_SHIELD_API DeleteProtectionRequest();
+    AWS_SHIELD_API DeleteProtectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The unique identifier (ID) for the <a>Protection</a> object to be
      * deleted.</p>
      */
-    inline const Aws::String& GetProtectionId() const{ return m_protectionId; }
+    inline const Aws::String& GetProtectionId() const { return m_protectionId; }
     inline bool ProtectionIdHasBeenSet() const { return m_protectionIdHasBeenSet; }
-    inline void SetProtectionId(const Aws::String& value) { m_protectionIdHasBeenSet = true; m_protectionId = value; }
-    inline void SetProtectionId(Aws::String&& value) { m_protectionIdHasBeenSet = true; m_protectionId = std::move(value); }
-    inline void SetProtectionId(const char* value) { m_protectionIdHasBeenSet = true; m_protectionId.assign(value); }
-    inline DeleteProtectionRequest& WithProtectionId(const Aws::String& value) { SetProtectionId(value); return *this;}
-    inline DeleteProtectionRequest& WithProtectionId(Aws::String&& value) { SetProtectionId(std::move(value)); return *this;}
-    inline DeleteProtectionRequest& WithProtectionId(const char* value) { SetProtectionId(value); return *this;}
+    template<typename ProtectionIdT = Aws::String>
+    void SetProtectionId(ProtectionIdT&& value) { m_protectionIdHasBeenSet = true; m_protectionId = std::forward<ProtectionIdT>(value); }
+    template<typename ProtectionIdT = Aws::String>
+    DeleteProtectionRequest& WithProtectionId(ProtectionIdT&& value) { SetProtectionId(std::forward<ProtectionIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,12 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteContainerImageRequest::DeleteContainerImageRequest() : 
-    m_serviceNameHasBeenSet(false),
-    m_imageHasBeenSet(false)
-{
-}
-
 Aws::String DeleteContainerImageRequest::SerializePayload() const
 {
   JsonValue payload;

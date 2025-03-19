@@ -30,7 +30,7 @@ namespace Model
   class SOAChange
   {
   public:
-    AWS_SERVICEDISCOVERY_API SOAChange();
+    AWS_SERVICEDISCOVERY_API SOAChange() = default;
     AWS_SERVICEDISCOVERY_API SOAChange(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API SOAChange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>The updated time to live (TTL) for purposes of negative caching.</p>
      */
-    inline long long GetTTL() const{ return m_tTL; }
+    inline long long GetTTL() const { return m_tTL; }
     inline bool TTLHasBeenSet() const { return m_tTLHasBeenSet; }
     inline void SetTTL(long long value) { m_tTLHasBeenSet = true; m_tTL = value; }
     inline SOAChange& WithTTL(long long value) { SetTTL(value); return *this;}
     ///@}
   private:
 
-    long long m_tTL;
+    long long m_tTL{0};
     bool m_tTLHasBeenSet = false;
   };
 

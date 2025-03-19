@@ -21,7 +21,7 @@ namespace Model
   class StartOnDemandReplicationRunRequest : public SMSRequest
   {
   public:
-    AWS_SMS_API StartOnDemandReplicationRunRequest();
+    AWS_SMS_API StartOnDemandReplicationRunRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The ID of the replication job.</p>
      */
-    inline const Aws::String& GetReplicationJobId() const{ return m_replicationJobId; }
+    inline const Aws::String& GetReplicationJobId() const { return m_replicationJobId; }
     inline bool ReplicationJobIdHasBeenSet() const { return m_replicationJobIdHasBeenSet; }
-    inline void SetReplicationJobId(const Aws::String& value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId = value; }
-    inline void SetReplicationJobId(Aws::String&& value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId = std::move(value); }
-    inline void SetReplicationJobId(const char* value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId.assign(value); }
-    inline StartOnDemandReplicationRunRequest& WithReplicationJobId(const Aws::String& value) { SetReplicationJobId(value); return *this;}
-    inline StartOnDemandReplicationRunRequest& WithReplicationJobId(Aws::String&& value) { SetReplicationJobId(std::move(value)); return *this;}
-    inline StartOnDemandReplicationRunRequest& WithReplicationJobId(const char* value) { SetReplicationJobId(value); return *this;}
+    template<typename ReplicationJobIdT = Aws::String>
+    void SetReplicationJobId(ReplicationJobIdT&& value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId = std::forward<ReplicationJobIdT>(value); }
+    template<typename ReplicationJobIdT = Aws::String>
+    StartOnDemandReplicationRunRequest& WithReplicationJobId(ReplicationJobIdT&& value) { SetReplicationJobId(std::forward<ReplicationJobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the replication run.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline StartOnDemandReplicationRunRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline StartOnDemandReplicationRunRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline StartOnDemandReplicationRunRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    StartOnDemandReplicationRunRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 

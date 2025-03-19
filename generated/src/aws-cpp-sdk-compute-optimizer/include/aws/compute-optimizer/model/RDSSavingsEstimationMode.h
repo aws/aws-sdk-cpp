@@ -32,7 +32,7 @@ namespace Model
   class RDSSavingsEstimationMode
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API RDSSavingsEstimationMode();
+    AWS_COMPUTEOPTIMIZER_API RDSSavingsEstimationMode() = default;
     AWS_COMPUTEOPTIMIZER_API RDSSavingsEstimationMode(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API RDSSavingsEstimationMode& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p> Describes the source for calculating the savings opportunity for Amazon RDS.
      * </p>
      */
-    inline const RDSSavingsEstimationModeSource& GetSource() const{ return m_source; }
+    inline RDSSavingsEstimationModeSource GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const RDSSavingsEstimationModeSource& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(RDSSavingsEstimationModeSource&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline RDSSavingsEstimationMode& WithSource(const RDSSavingsEstimationModeSource& value) { SetSource(value); return *this;}
-    inline RDSSavingsEstimationMode& WithSource(RDSSavingsEstimationModeSource&& value) { SetSource(std::move(value)); return *this;}
+    inline void SetSource(RDSSavingsEstimationModeSource value) { m_sourceHasBeenSet = true; m_source = value; }
+    inline RDSSavingsEstimationMode& WithSource(RDSSavingsEstimationModeSource value) { SetSource(value); return *this;}
     ///@}
   private:
 
-    RDSSavingsEstimationModeSource m_source;
+    RDSSavingsEstimationModeSource m_source{RDSSavingsEstimationModeSource::NOT_SET};
     bool m_sourceHasBeenSet = false;
   };
 

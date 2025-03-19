@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-EvaluationFormScoringStrategy::EvaluationFormScoringStrategy() : 
-    m_mode(EvaluationFormScoringMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_status(EvaluationFormScoringStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 EvaluationFormScoringStrategy::EvaluationFormScoringStrategy(JsonView jsonValue)
-  : EvaluationFormScoringStrategy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ EvaluationFormScoringStrategy& EvaluationFormScoringStrategy::operator =(JsonVie
   if(jsonValue.ValueExists("Mode"))
   {
     m_mode = EvaluationFormScoringModeMapper::GetEvaluationFormScoringModeForName(jsonValue.GetString("Mode"));
-
     m_modeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = EvaluationFormScoringStatusMapper::GetEvaluationFormScoringStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

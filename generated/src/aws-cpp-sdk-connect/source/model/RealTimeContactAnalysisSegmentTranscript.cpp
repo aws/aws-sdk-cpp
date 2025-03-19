@@ -18,23 +18,7 @@ namespace Connect
 namespace Model
 {
 
-RealTimeContactAnalysisSegmentTranscript::RealTimeContactAnalysisSegmentTranscript() : 
-    m_idHasBeenSet(false),
-    m_participantIdHasBeenSet(false),
-    m_participantRole(ParticipantRole::NOT_SET),
-    m_participantRoleHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_timeHasBeenSet(false),
-    m_redactionHasBeenSet(false),
-    m_sentiment(RealTimeContactAnalysisSentimentLabel::NOT_SET),
-    m_sentimentHasBeenSet(false)
-{
-}
-
 RealTimeContactAnalysisSegmentTranscript::RealTimeContactAnalysisSegmentTranscript(JsonView jsonValue)
-  : RealTimeContactAnalysisSegmentTranscript()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ RealTimeContactAnalysisSegmentTranscript& RealTimeContactAnalysisSegmentTranscri
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParticipantId"))
   {
     m_participantId = jsonValue.GetString("ParticipantId");
-
     m_participantIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParticipantRole"))
   {
     m_participantRole = ParticipantRoleMapper::GetParticipantRoleForName(jsonValue.GetString("ParticipantRole"));
-
     m_participantRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetString("Content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentType"))
   {
     m_contentType = jsonValue.GetString("ContentType");
-
     m_contentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Time"))
   {
     m_time = jsonValue.GetObject("Time");
-
     m_timeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Redaction"))
   {
     m_redaction = jsonValue.GetObject("Redaction");
-
     m_redactionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sentiment"))
   {
     m_sentiment = RealTimeContactAnalysisSentimentLabelMapper::GetRealTimeContactAnalysisSentimentLabelForName(jsonValue.GetString("Sentiment"));
-
     m_sentimentHasBeenSet = true;
   }
-
   return *this;
 }
 

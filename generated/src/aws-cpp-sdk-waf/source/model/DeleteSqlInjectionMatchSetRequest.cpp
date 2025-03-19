@@ -12,12 +12,6 @@ using namespace Aws::WAF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSqlInjectionMatchSetRequest::DeleteSqlInjectionMatchSetRequest() : 
-    m_sqlInjectionMatchSetIdHasBeenSet(false),
-    m_changeTokenHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSqlInjectionMatchSetRequest::SerializePayload() const
 {
   JsonValue payload;

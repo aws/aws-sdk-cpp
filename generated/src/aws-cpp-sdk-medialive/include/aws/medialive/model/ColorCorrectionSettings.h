@@ -33,7 +33,7 @@ namespace Model
   class ColorCorrectionSettings
   {
   public:
-    AWS_MEDIALIVE_API ColorCorrectionSettings();
+    AWS_MEDIALIVE_API ColorCorrectionSettings() = default;
     AWS_MEDIALIVE_API ColorCorrectionSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API ColorCorrectionSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,14 @@ namespace Model
      * space that you have specified for the output, and finds and uses the LUT file
      * that applies to this combination.
      */
-    inline const Aws::Vector<ColorCorrection>& GetGlobalColorCorrections() const{ return m_globalColorCorrections; }
+    inline const Aws::Vector<ColorCorrection>& GetGlobalColorCorrections() const { return m_globalColorCorrections; }
     inline bool GlobalColorCorrectionsHasBeenSet() const { return m_globalColorCorrectionsHasBeenSet; }
-    inline void SetGlobalColorCorrections(const Aws::Vector<ColorCorrection>& value) { m_globalColorCorrectionsHasBeenSet = true; m_globalColorCorrections = value; }
-    inline void SetGlobalColorCorrections(Aws::Vector<ColorCorrection>&& value) { m_globalColorCorrectionsHasBeenSet = true; m_globalColorCorrections = std::move(value); }
-    inline ColorCorrectionSettings& WithGlobalColorCorrections(const Aws::Vector<ColorCorrection>& value) { SetGlobalColorCorrections(value); return *this;}
-    inline ColorCorrectionSettings& WithGlobalColorCorrections(Aws::Vector<ColorCorrection>&& value) { SetGlobalColorCorrections(std::move(value)); return *this;}
-    inline ColorCorrectionSettings& AddGlobalColorCorrections(const ColorCorrection& value) { m_globalColorCorrectionsHasBeenSet = true; m_globalColorCorrections.push_back(value); return *this; }
-    inline ColorCorrectionSettings& AddGlobalColorCorrections(ColorCorrection&& value) { m_globalColorCorrectionsHasBeenSet = true; m_globalColorCorrections.push_back(std::move(value)); return *this; }
+    template<typename GlobalColorCorrectionsT = Aws::Vector<ColorCorrection>>
+    void SetGlobalColorCorrections(GlobalColorCorrectionsT&& value) { m_globalColorCorrectionsHasBeenSet = true; m_globalColorCorrections = std::forward<GlobalColorCorrectionsT>(value); }
+    template<typename GlobalColorCorrectionsT = Aws::Vector<ColorCorrection>>
+    ColorCorrectionSettings& WithGlobalColorCorrections(GlobalColorCorrectionsT&& value) { SetGlobalColorCorrections(std::forward<GlobalColorCorrectionsT>(value)); return *this;}
+    template<typename GlobalColorCorrectionsT = ColorCorrection>
+    ColorCorrectionSettings& AddGlobalColorCorrections(GlobalColorCorrectionsT&& value) { m_globalColorCorrectionsHasBeenSet = true; m_globalColorCorrections.emplace_back(std::forward<GlobalColorCorrectionsT>(value)); return *this; }
     ///@}
   private:
 

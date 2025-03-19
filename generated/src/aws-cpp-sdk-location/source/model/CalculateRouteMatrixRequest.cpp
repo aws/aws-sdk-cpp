@@ -15,23 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CalculateRouteMatrixRequest::CalculateRouteMatrixRequest() : 
-    m_calculatorNameHasBeenSet(false),
-    m_departurePositionsHasBeenSet(false),
-    m_destinationPositionsHasBeenSet(false),
-    m_travelMode(TravelMode::NOT_SET),
-    m_travelModeHasBeenSet(false),
-    m_departureTimeHasBeenSet(false),
-    m_departNow(false),
-    m_departNowHasBeenSet(false),
-    m_distanceUnit(DistanceUnit::NOT_SET),
-    m_distanceUnitHasBeenSet(false),
-    m_carModeOptionsHasBeenSet(false),
-    m_truckModeOptionsHasBeenSet(false),
-    m_keyHasBeenSet(false)
-{
-}
-
 Aws::String CalculateRouteMatrixRequest::SerializePayload() const
 {
   JsonValue payload;

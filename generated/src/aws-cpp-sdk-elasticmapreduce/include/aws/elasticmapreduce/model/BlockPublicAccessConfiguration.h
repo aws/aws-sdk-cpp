@@ -38,7 +38,7 @@ namespace Model
   class BlockPublicAccessConfiguration
   {
   public:
-    AWS_EMR_API BlockPublicAccessConfiguration();
+    AWS_EMR_API BlockPublicAccessConfiguration() = default;
     AWS_EMR_API BlockPublicAccessConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API BlockPublicAccessConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,7 +52,7 @@ namespace Model
      * July 2019. For accounts created after this, the default is
      * <code>true</code>.</p>
      */
-    inline bool GetBlockPublicSecurityGroupRules() const{ return m_blockPublicSecurityGroupRules; }
+    inline bool GetBlockPublicSecurityGroupRules() const { return m_blockPublicSecurityGroupRules; }
     inline bool BlockPublicSecurityGroupRulesHasBeenSet() const { return m_blockPublicSecurityGroupRulesHasBeenSet; }
     inline void SetBlockPublicSecurityGroupRules(bool value) { m_blockPublicSecurityGroupRulesHasBeenSet = true; m_blockPublicSecurityGroupRules = value; }
     inline BlockPublicAccessConfiguration& WithBlockPublicSecurityGroupRules(bool value) { SetBlockPublicSecurityGroupRules(value); return *this;}
@@ -70,18 +70,18 @@ namespace Model
      * Amazon EC2 instances, is in the list of
      * <code>PermittedPublicSecurityGroupRuleRanges</code>.</p>
      */
-    inline const Aws::Vector<PortRange>& GetPermittedPublicSecurityGroupRuleRanges() const{ return m_permittedPublicSecurityGroupRuleRanges; }
+    inline const Aws::Vector<PortRange>& GetPermittedPublicSecurityGroupRuleRanges() const { return m_permittedPublicSecurityGroupRuleRanges; }
     inline bool PermittedPublicSecurityGroupRuleRangesHasBeenSet() const { return m_permittedPublicSecurityGroupRuleRangesHasBeenSet; }
-    inline void SetPermittedPublicSecurityGroupRuleRanges(const Aws::Vector<PortRange>& value) { m_permittedPublicSecurityGroupRuleRangesHasBeenSet = true; m_permittedPublicSecurityGroupRuleRanges = value; }
-    inline void SetPermittedPublicSecurityGroupRuleRanges(Aws::Vector<PortRange>&& value) { m_permittedPublicSecurityGroupRuleRangesHasBeenSet = true; m_permittedPublicSecurityGroupRuleRanges = std::move(value); }
-    inline BlockPublicAccessConfiguration& WithPermittedPublicSecurityGroupRuleRanges(const Aws::Vector<PortRange>& value) { SetPermittedPublicSecurityGroupRuleRanges(value); return *this;}
-    inline BlockPublicAccessConfiguration& WithPermittedPublicSecurityGroupRuleRanges(Aws::Vector<PortRange>&& value) { SetPermittedPublicSecurityGroupRuleRanges(std::move(value)); return *this;}
-    inline BlockPublicAccessConfiguration& AddPermittedPublicSecurityGroupRuleRanges(const PortRange& value) { m_permittedPublicSecurityGroupRuleRangesHasBeenSet = true; m_permittedPublicSecurityGroupRuleRanges.push_back(value); return *this; }
-    inline BlockPublicAccessConfiguration& AddPermittedPublicSecurityGroupRuleRanges(PortRange&& value) { m_permittedPublicSecurityGroupRuleRangesHasBeenSet = true; m_permittedPublicSecurityGroupRuleRanges.push_back(std::move(value)); return *this; }
+    template<typename PermittedPublicSecurityGroupRuleRangesT = Aws::Vector<PortRange>>
+    void SetPermittedPublicSecurityGroupRuleRanges(PermittedPublicSecurityGroupRuleRangesT&& value) { m_permittedPublicSecurityGroupRuleRangesHasBeenSet = true; m_permittedPublicSecurityGroupRuleRanges = std::forward<PermittedPublicSecurityGroupRuleRangesT>(value); }
+    template<typename PermittedPublicSecurityGroupRuleRangesT = Aws::Vector<PortRange>>
+    BlockPublicAccessConfiguration& WithPermittedPublicSecurityGroupRuleRanges(PermittedPublicSecurityGroupRuleRangesT&& value) { SetPermittedPublicSecurityGroupRuleRanges(std::forward<PermittedPublicSecurityGroupRuleRangesT>(value)); return *this;}
+    template<typename PermittedPublicSecurityGroupRuleRangesT = PortRange>
+    BlockPublicAccessConfiguration& AddPermittedPublicSecurityGroupRuleRanges(PermittedPublicSecurityGroupRuleRangesT&& value) { m_permittedPublicSecurityGroupRuleRangesHasBeenSet = true; m_permittedPublicSecurityGroupRuleRanges.emplace_back(std::forward<PermittedPublicSecurityGroupRuleRangesT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_blockPublicSecurityGroupRules;
+    bool m_blockPublicSecurityGroupRules{false};
     bool m_blockPublicSecurityGroupRulesHasBeenSet = false;
 
     Aws::Vector<PortRange> m_permittedPublicSecurityGroupRuleRanges;

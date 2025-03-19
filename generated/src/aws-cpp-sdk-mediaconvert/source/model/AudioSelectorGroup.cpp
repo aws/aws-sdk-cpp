@@ -18,13 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-AudioSelectorGroup::AudioSelectorGroup() : 
-    m_audioSelectorNamesHasBeenSet(false)
-{
-}
-
 AudioSelectorGroup::AudioSelectorGroup(JsonView jsonValue)
-  : AudioSelectorGroup()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AudioSelectorGroup& AudioSelectorGroup::operator =(JsonView jsonValue)
     }
     m_audioSelectorNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

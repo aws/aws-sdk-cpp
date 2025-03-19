@@ -20,23 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceImageMetadata::InstanceImageMetadata() : 
-    m_instanceIdHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_launchTimeHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_zoneIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_imageMetadataHasBeenSet(false),
-    m_operatorHasBeenSet(false)
-{
-}
-
 InstanceImageMetadata::InstanceImageMetadata(const XmlNode& xmlNode)
-  : InstanceImageMetadata()
 {
   *this = xmlNode;
 }
@@ -56,7 +40,7 @@ InstanceImageMetadata& InstanceImageMetadata::operator =(const XmlNode& xmlNode)
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()).c_str());
+      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()));
       m_instanceTypeHasBeenSet = true;
     }
     XmlNode launchTimeNode = resultNode.FirstChild("launchTime");
@@ -93,6 +77,7 @@ InstanceImageMetadata& InstanceImageMetadata::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

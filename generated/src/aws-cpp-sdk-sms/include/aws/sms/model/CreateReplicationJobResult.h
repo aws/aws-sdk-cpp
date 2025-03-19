@@ -27,7 +27,7 @@ namespace Model
   class CreateReplicationJobResult
   {
   public:
-    AWS_SMS_API CreateReplicationJobResult();
+    AWS_SMS_API CreateReplicationJobResult() = default;
     AWS_SMS_API CreateReplicationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SMS_API CreateReplicationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The unique identifier of the replication job.</p>
      */
-    inline const Aws::String& GetReplicationJobId() const{ return m_replicationJobId; }
-    inline void SetReplicationJobId(const Aws::String& value) { m_replicationJobId = value; }
-    inline void SetReplicationJobId(Aws::String&& value) { m_replicationJobId = std::move(value); }
-    inline void SetReplicationJobId(const char* value) { m_replicationJobId.assign(value); }
-    inline CreateReplicationJobResult& WithReplicationJobId(const Aws::String& value) { SetReplicationJobId(value); return *this;}
-    inline CreateReplicationJobResult& WithReplicationJobId(Aws::String&& value) { SetReplicationJobId(std::move(value)); return *this;}
-    inline CreateReplicationJobResult& WithReplicationJobId(const char* value) { SetReplicationJobId(value); return *this;}
+    inline const Aws::String& GetReplicationJobId() const { return m_replicationJobId; }
+    template<typename ReplicationJobIdT = Aws::String>
+    void SetReplicationJobId(ReplicationJobIdT&& value) { m_replicationJobIdHasBeenSet = true; m_replicationJobId = std::forward<ReplicationJobIdT>(value); }
+    template<typename ReplicationJobIdT = Aws::String>
+    CreateReplicationJobResult& WithReplicationJobId(ReplicationJobIdT&& value) { SetReplicationJobId(std::forward<ReplicationJobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateReplicationJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateReplicationJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateReplicationJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateReplicationJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_replicationJobId;
+    bool m_replicationJobIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

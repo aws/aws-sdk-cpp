@@ -37,7 +37,7 @@ namespace Model
   class ApiRequestBody
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API ApiRequestBody();
+    AWS_BEDROCKAGENTRUNTIME_API ApiRequestBody() = default;
     AWS_BEDROCKAGENTRUNTIME_API ApiRequestBody(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API ApiRequestBody& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,18 +48,16 @@ namespace Model
      * <p>The content of the request body. The key of the object in this field is a
      * media type defining the format of the request body.</p>
      */
-    inline const Aws::Map<Aws::String, PropertyParameters>& GetContent() const{ return m_content; }
+    inline const Aws::Map<Aws::String, PropertyParameters>& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::Map<Aws::String, PropertyParameters>& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::Map<Aws::String, PropertyParameters>&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline ApiRequestBody& WithContent(const Aws::Map<Aws::String, PropertyParameters>& value) { SetContent(value); return *this;}
-    inline ApiRequestBody& WithContent(Aws::Map<Aws::String, PropertyParameters>&& value) { SetContent(std::move(value)); return *this;}
-    inline ApiRequestBody& AddContent(const Aws::String& key, const PropertyParameters& value) { m_contentHasBeenSet = true; m_content.emplace(key, value); return *this; }
-    inline ApiRequestBody& AddContent(Aws::String&& key, const PropertyParameters& value) { m_contentHasBeenSet = true; m_content.emplace(std::move(key), value); return *this; }
-    inline ApiRequestBody& AddContent(const Aws::String& key, PropertyParameters&& value) { m_contentHasBeenSet = true; m_content.emplace(key, std::move(value)); return *this; }
-    inline ApiRequestBody& AddContent(Aws::String&& key, PropertyParameters&& value) { m_contentHasBeenSet = true; m_content.emplace(std::move(key), std::move(value)); return *this; }
-    inline ApiRequestBody& AddContent(const char* key, PropertyParameters&& value) { m_contentHasBeenSet = true; m_content.emplace(key, std::move(value)); return *this; }
-    inline ApiRequestBody& AddContent(const char* key, const PropertyParameters& value) { m_contentHasBeenSet = true; m_content.emplace(key, value); return *this; }
+    template<typename ContentT = Aws::Map<Aws::String, PropertyParameters>>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::Map<Aws::String, PropertyParameters>>
+    ApiRequestBody& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
+    template<typename ContentKeyT = Aws::String, typename ContentValueT = PropertyParameters>
+    ApiRequestBody& AddContent(ContentKeyT&& key, ContentValueT&& value) {
+      m_contentHasBeenSet = true; m_content.emplace(std::forward<ContentKeyT>(key), std::forward<ContentValueT>(value)); return *this;
+    }
     ///@}
   private:
 

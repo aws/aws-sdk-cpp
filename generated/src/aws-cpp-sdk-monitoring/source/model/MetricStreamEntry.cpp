@@ -20,20 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-MetricStreamEntry::MetricStreamEntry() : 
-    m_arnHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_lastUpdateDateHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_firehoseArnHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_outputFormat(MetricStreamOutputFormat::NOT_SET),
-    m_outputFormatHasBeenSet(false)
-{
-}
-
 MetricStreamEntry::MetricStreamEntry(const XmlNode& xmlNode)
-  : MetricStreamEntry()
 {
   *this = xmlNode;
 }
@@ -83,7 +70,7 @@ MetricStreamEntry& MetricStreamEntry::operator =(const XmlNode& xmlNode)
     XmlNode outputFormatNode = resultNode.FirstChild("OutputFormat");
     if(!outputFormatNode.IsNull())
     {
-      m_outputFormat = MetricStreamOutputFormatMapper::GetMetricStreamOutputFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(outputFormatNode.GetText()).c_str()).c_str());
+      m_outputFormat = MetricStreamOutputFormatMapper::GetMetricStreamOutputFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(outputFormatNode.GetText()).c_str()));
       m_outputFormatHasBeenSet = true;
     }
   }

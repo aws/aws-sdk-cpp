@@ -12,19 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateResourceRequest::UpdateResourceRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_bookingOptionsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(ResourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_hiddenFromGlobalAddressList(false),
-    m_hiddenFromGlobalAddressListHasBeenSet(false)
-{
-}
-
 Aws::String UpdateResourceRequest::SerializePayload() const
 {
   JsonValue payload;

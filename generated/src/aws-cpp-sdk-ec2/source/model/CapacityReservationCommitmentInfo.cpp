@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CapacityReservationCommitmentInfo::CapacityReservationCommitmentInfo() : 
-    m_committedInstanceCount(0),
-    m_committedInstanceCountHasBeenSet(false),
-    m_commitmentEndDateHasBeenSet(false)
-{
-}
-
 CapacityReservationCommitmentInfo::CapacityReservationCommitmentInfo(const XmlNode& xmlNode)
-  : CapacityReservationCommitmentInfo()
 {
   *this = xmlNode;
 }

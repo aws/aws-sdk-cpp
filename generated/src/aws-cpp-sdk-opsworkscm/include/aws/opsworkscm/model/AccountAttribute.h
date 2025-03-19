@@ -31,7 +31,7 @@ namespace Model
   class AccountAttribute
   {
   public:
-    AWS_OPSWORKSCM_API AccountAttribute();
+    AWS_OPSWORKSCM_API AccountAttribute() = default;
     AWS_OPSWORKSCM_API AccountAttribute(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKSCM_API AccountAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OPSWORKSCM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,21 +46,19 @@ namespace Model
      * number of backups allowed. By default, you can have a maximum of 50 manual
      * backups saved. </p> </li> </ul>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AccountAttribute& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AccountAttribute& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AccountAttribute& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AccountAttribute& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The maximum allowed value. </p>
      */
-    inline int GetMaximum() const{ return m_maximum; }
+    inline int GetMaximum() const { return m_maximum; }
     inline bool MaximumHasBeenSet() const { return m_maximumHasBeenSet; }
     inline void SetMaximum(int value) { m_maximumHasBeenSet = true; m_maximum = value; }
     inline AccountAttribute& WithMaximum(int value) { SetMaximum(value); return *this;}
@@ -71,7 +69,7 @@ namespace Model
      * <p> The current usage, such as the current number of servers that are associated
      * with the account. </p>
      */
-    inline int GetUsed() const{ return m_used; }
+    inline int GetUsed() const { return m_used; }
     inline bool UsedHasBeenSet() const { return m_usedHasBeenSet; }
     inline void SetUsed(int value) { m_usedHasBeenSet = true; m_used = value; }
     inline AccountAttribute& WithUsed(int value) { SetUsed(value); return *this;}
@@ -81,10 +79,10 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_maximum;
+    int m_maximum{0};
     bool m_maximumHasBeenSet = false;
 
-    int m_used;
+    int m_used{0};
     bool m_usedHasBeenSet = false;
   };
 

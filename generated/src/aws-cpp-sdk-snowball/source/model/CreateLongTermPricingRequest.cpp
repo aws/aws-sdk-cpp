@@ -12,16 +12,6 @@ using namespace Aws::Snowball::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLongTermPricingRequest::CreateLongTermPricingRequest() : 
-    m_longTermPricingType(LongTermPricingType::NOT_SET),
-    m_longTermPricingTypeHasBeenSet(false),
-    m_isLongTermPricingAutoRenew(false),
-    m_isLongTermPricingAutoRenewHasBeenSet(false),
-    m_snowballType(SnowballType::NOT_SET),
-    m_snowballTypeHasBeenSet(false)
-{
-}
-
 Aws::String CreateLongTermPricingRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,18 +18,7 @@ namespace IoT
 namespace Model
 {
 
-KafkaAction::KafkaAction() : 
-    m_destinationArnHasBeenSet(false),
-    m_topicHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_partitionHasBeenSet(false),
-    m_clientPropertiesHasBeenSet(false),
-    m_headersHasBeenSet(false)
-{
-}
-
 KafkaAction::KafkaAction(JsonView jsonValue)
-  : KafkaAction()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ KafkaAction& KafkaAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("destinationArn"))
   {
     m_destinationArn = jsonValue.GetString("destinationArn");
-
     m_destinationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("topic"))
   {
     m_topic = jsonValue.GetString("topic");
-
     m_topicHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("partition"))
   {
     m_partition = jsonValue.GetString("partition");
-
     m_partitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientProperties"))
   {
     Aws::Map<Aws::String, JsonView> clientPropertiesJsonMap = jsonValue.GetObject("clientProperties").GetAllObjects();
@@ -73,7 +54,6 @@ KafkaAction& KafkaAction::operator =(JsonView jsonValue)
     }
     m_clientPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("headers"))
   {
     Aws::Utils::Array<JsonView> headersJsonList = jsonValue.GetArray("headers");
@@ -83,7 +63,6 @@ KafkaAction& KafkaAction::operator =(JsonView jsonValue)
     }
     m_headersHasBeenSet = true;
   }
-
   return *this;
 }
 

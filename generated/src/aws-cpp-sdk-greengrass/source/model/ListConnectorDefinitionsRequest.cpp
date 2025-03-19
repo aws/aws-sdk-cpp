@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListConnectorDefinitionsRequest::ListConnectorDefinitionsRequest() : 
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListConnectorDefinitionsRequest::SerializePayload() const
 {
   return {};

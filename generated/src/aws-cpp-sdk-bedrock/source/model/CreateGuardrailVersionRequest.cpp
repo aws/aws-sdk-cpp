@@ -12,14 +12,6 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateGuardrailVersionRequest::CreateGuardrailVersionRequest() : 
-    m_guardrailIdentifierHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateGuardrailVersionRequest::SerializePayload() const
 {
   JsonValue payload;

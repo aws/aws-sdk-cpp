@@ -18,20 +18,7 @@ namespace GlobalAccelerator
 namespace Model
 {
 
-PortMapping::PortMapping() : 
-    m_acceleratorPort(0),
-    m_acceleratorPortHasBeenSet(false),
-    m_endpointGroupArnHasBeenSet(false),
-    m_endpointIdHasBeenSet(false),
-    m_destinationSocketAddressHasBeenSet(false),
-    m_protocolsHasBeenSet(false),
-    m_destinationTrafficState(CustomRoutingDestinationTrafficState::NOT_SET),
-    m_destinationTrafficStateHasBeenSet(false)
-{
-}
-
 PortMapping::PortMapping(JsonView jsonValue)
-  : PortMapping()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ PortMapping& PortMapping::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AcceleratorPort"))
   {
     m_acceleratorPort = jsonValue.GetInteger("AcceleratorPort");
-
     m_acceleratorPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointGroupArn"))
   {
     m_endpointGroupArn = jsonValue.GetString("EndpointGroupArn");
-
     m_endpointGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointId"))
   {
     m_endpointId = jsonValue.GetString("EndpointId");
-
     m_endpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationSocketAddress"))
   {
     m_destinationSocketAddress = jsonValue.GetObject("DestinationSocketAddress");
-
     m_destinationSocketAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Protocols"))
   {
     Aws::Utils::Array<JsonView> protocolsJsonList = jsonValue.GetArray("Protocols");
@@ -75,14 +54,11 @@ PortMapping& PortMapping::operator =(JsonView jsonValue)
     }
     m_protocolsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationTrafficState"))
   {
     m_destinationTrafficState = CustomRoutingDestinationTrafficStateMapper::GetCustomRoutingDestinationTrafficStateForName(jsonValue.GetString("DestinationTrafficState"));
-
     m_destinationTrafficStateHasBeenSet = true;
   }
-
   return *this;
 }
 

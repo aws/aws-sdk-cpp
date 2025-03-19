@@ -12,14 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateUpdatedWorkspaceImageRequest::CreateUpdatedWorkspaceImageRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sourceImageIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateUpdatedWorkspaceImageRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -36,7 +36,7 @@ namespace Model
   class AttributeValue
   {
   public:
-    AWS_DIRECTORYSERVICEDATA_API AttributeValue();
+    AWS_DIRECTORYSERVICEDATA_API AttributeValue() = default;
     AWS_DIRECTORYSERVICEDATA_API AttributeValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICEDATA_API AttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTORYSERVICEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,7 +47,7 @@ namespace Model
      * <p> Indicates that the attribute type value is a boolean. For example: </p> <p>
      * <code>"BOOL": true</code> </p>
      */
-    inline bool GetBOOL() const{ return m_bOOL; }
+    inline bool GetBOOL() const { return m_bOOL; }
     inline bool BOOLHasBeenSet() const { return m_bOOLHasBeenSet; }
     inline void SetBOOL(bool value) { m_bOOLHasBeenSet = true; m_bOOL = value; }
     inline AttributeValue& WithBOOL(bool value) { SetBOOL(value); return *this;}
@@ -58,7 +58,7 @@ namespace Model
      * <p> Indicates that the attribute type value is a number. For example: </p> <p>
      * <code>"N": "16"</code> </p>
      */
-    inline long long GetN() const{ return m_n; }
+    inline long long GetN() const { return m_n; }
     inline bool NHasBeenSet() const { return m_nHasBeenSet; }
     inline void SetN(long long value) { m_nHasBeenSet = true; m_n = value; }
     inline AttributeValue& WithN(long long value) { SetN(value); return *this;}
@@ -69,14 +69,12 @@ namespace Model
      * <p> Indicates that the attribute type value is a string. For example: </p> <p>
      * <code>"S": "S Group"</code> </p>
      */
-    inline const Aws::String& GetS() const{ return m_s; }
+    inline const Aws::String& GetS() const { return m_s; }
     inline bool SHasBeenSet() const { return m_sHasBeenSet; }
-    inline void SetS(const Aws::String& value) { m_sHasBeenSet = true; m_s = value; }
-    inline void SetS(Aws::String&& value) { m_sHasBeenSet = true; m_s = std::move(value); }
-    inline void SetS(const char* value) { m_sHasBeenSet = true; m_s.assign(value); }
-    inline AttributeValue& WithS(const Aws::String& value) { SetS(value); return *this;}
-    inline AttributeValue& WithS(Aws::String&& value) { SetS(std::move(value)); return *this;}
-    inline AttributeValue& WithS(const char* value) { SetS(value); return *this;}
+    template<typename ST = Aws::String>
+    void SetS(ST&& value) { m_sHasBeenSet = true; m_s = std::forward<ST>(value); }
+    template<typename ST = Aws::String>
+    AttributeValue& WithS(ST&& value) { SetS(std::forward<ST>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,22 +84,21 @@ namespace Model
      * ["sample_service_class/host.sample.com:1234/sample_service_name_1",
      * "sample_service_class/host.sample.com:1234/sample_service_name_2"]</code> </p>
      */
-    inline const Aws::Vector<Aws::String>& GetSS() const{ return m_sS; }
+    inline const Aws::Vector<Aws::String>& GetSS() const { return m_sS; }
     inline bool SSHasBeenSet() const { return m_sSHasBeenSet; }
-    inline void SetSS(const Aws::Vector<Aws::String>& value) { m_sSHasBeenSet = true; m_sS = value; }
-    inline void SetSS(Aws::Vector<Aws::String>&& value) { m_sSHasBeenSet = true; m_sS = std::move(value); }
-    inline AttributeValue& WithSS(const Aws::Vector<Aws::String>& value) { SetSS(value); return *this;}
-    inline AttributeValue& WithSS(Aws::Vector<Aws::String>&& value) { SetSS(std::move(value)); return *this;}
-    inline AttributeValue& AddSS(const Aws::String& value) { m_sSHasBeenSet = true; m_sS.push_back(value); return *this; }
-    inline AttributeValue& AddSS(Aws::String&& value) { m_sSHasBeenSet = true; m_sS.push_back(std::move(value)); return *this; }
-    inline AttributeValue& AddSS(const char* value) { m_sSHasBeenSet = true; m_sS.push_back(value); return *this; }
+    template<typename SST = Aws::Vector<Aws::String>>
+    void SetSS(SST&& value) { m_sSHasBeenSet = true; m_sS = std::forward<SST>(value); }
+    template<typename SST = Aws::Vector<Aws::String>>
+    AttributeValue& WithSS(SST&& value) { SetSS(std::forward<SST>(value)); return *this;}
+    template<typename SST = Aws::String>
+    AttributeValue& AddSS(SST&& value) { m_sSHasBeenSet = true; m_sS.emplace_back(std::forward<SST>(value)); return *this; }
     ///@}
   private:
 
-    bool m_bOOL;
+    bool m_bOOL{false};
     bool m_bOOLHasBeenSet = false;
 
-    long long m_n;
+    long long m_n{0};
     bool m_nHasBeenSet = false;
 
     Aws::String m_s;

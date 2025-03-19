@@ -22,7 +22,7 @@ namespace Model
   class GenerateRandomRequest : public KMSRequest
   {
   public:
-    AWS_KMS_API GenerateRandomRequest();
+    AWS_KMS_API GenerateRandomRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>The length of the random byte string. This parameter is required.</p>
      */
-    inline int GetNumberOfBytes() const{ return m_numberOfBytes; }
+    inline int GetNumberOfBytes() const { return m_numberOfBytes; }
     inline bool NumberOfBytesHasBeenSet() const { return m_numberOfBytesHasBeenSet; }
     inline void SetNumberOfBytes(int value) { m_numberOfBytesHasBeenSet = true; m_numberOfBytes = value; }
     inline GenerateRandomRequest& WithNumberOfBytes(int value) { SetNumberOfBytes(value); return *this;}
@@ -54,14 +54,12 @@ namespace Model
      * <code>GenerateRandom</code> throws an
      * <code>UnsupportedOperationException</code>.</p>
      */
-    inline const Aws::String& GetCustomKeyStoreId() const{ return m_customKeyStoreId; }
+    inline const Aws::String& GetCustomKeyStoreId() const { return m_customKeyStoreId; }
     inline bool CustomKeyStoreIdHasBeenSet() const { return m_customKeyStoreIdHasBeenSet; }
-    inline void SetCustomKeyStoreId(const Aws::String& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = value; }
-    inline void SetCustomKeyStoreId(Aws::String&& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = std::move(value); }
-    inline void SetCustomKeyStoreId(const char* value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId.assign(value); }
-    inline GenerateRandomRequest& WithCustomKeyStoreId(const Aws::String& value) { SetCustomKeyStoreId(value); return *this;}
-    inline GenerateRandomRequest& WithCustomKeyStoreId(Aws::String&& value) { SetCustomKeyStoreId(std::move(value)); return *this;}
-    inline GenerateRandomRequest& WithCustomKeyStoreId(const char* value) { SetCustomKeyStoreId(value); return *this;}
+    template<typename CustomKeyStoreIdT = Aws::String>
+    void SetCustomKeyStoreId(CustomKeyStoreIdT&& value) { m_customKeyStoreIdHasBeenSet = true; m_customKeyStoreId = std::forward<CustomKeyStoreIdT>(value); }
+    template<typename CustomKeyStoreIdT = Aws::String>
+    GenerateRandomRequest& WithCustomKeyStoreId(CustomKeyStoreIdT&& value) { SetCustomKeyStoreId(std::forward<CustomKeyStoreIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,16 +84,16 @@ namespace Model
      * Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service
      * Developer Guide</i>.</p>
      */
-    inline const RecipientInfo& GetRecipient() const{ return m_recipient; }
+    inline const RecipientInfo& GetRecipient() const { return m_recipient; }
     inline bool RecipientHasBeenSet() const { return m_recipientHasBeenSet; }
-    inline void SetRecipient(const RecipientInfo& value) { m_recipientHasBeenSet = true; m_recipient = value; }
-    inline void SetRecipient(RecipientInfo&& value) { m_recipientHasBeenSet = true; m_recipient = std::move(value); }
-    inline GenerateRandomRequest& WithRecipient(const RecipientInfo& value) { SetRecipient(value); return *this;}
-    inline GenerateRandomRequest& WithRecipient(RecipientInfo&& value) { SetRecipient(std::move(value)); return *this;}
+    template<typename RecipientT = RecipientInfo>
+    void SetRecipient(RecipientT&& value) { m_recipientHasBeenSet = true; m_recipient = std::forward<RecipientT>(value); }
+    template<typename RecipientT = RecipientInfo>
+    GenerateRandomRequest& WithRecipient(RecipientT&& value) { SetRecipient(std::forward<RecipientT>(value)); return *this;}
     ///@}
   private:
 
-    int m_numberOfBytes;
+    int m_numberOfBytes{0};
     bool m_numberOfBytesHasBeenSet = false;
 
     Aws::String m_customKeyStoreId;

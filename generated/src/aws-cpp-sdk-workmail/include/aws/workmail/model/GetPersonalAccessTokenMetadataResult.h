@@ -29,7 +29,7 @@ namespace Model
   class GetPersonalAccessTokenMetadataResult
   {
   public:
-    AWS_WORKMAIL_API GetPersonalAccessTokenMetadataResult();
+    AWS_WORKMAIL_API GetPersonalAccessTokenMetadataResult() = default;
     AWS_WORKMAIL_API GetPersonalAccessTokenMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKMAIL_API GetPersonalAccessTokenMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,115 +38,114 @@ namespace Model
     /**
      * <p> The Personal Access Token ID.</p>
      */
-    inline const Aws::String& GetPersonalAccessTokenId() const{ return m_personalAccessTokenId; }
-    inline void SetPersonalAccessTokenId(const Aws::String& value) { m_personalAccessTokenId = value; }
-    inline void SetPersonalAccessTokenId(Aws::String&& value) { m_personalAccessTokenId = std::move(value); }
-    inline void SetPersonalAccessTokenId(const char* value) { m_personalAccessTokenId.assign(value); }
-    inline GetPersonalAccessTokenMetadataResult& WithPersonalAccessTokenId(const Aws::String& value) { SetPersonalAccessTokenId(value); return *this;}
-    inline GetPersonalAccessTokenMetadataResult& WithPersonalAccessTokenId(Aws::String&& value) { SetPersonalAccessTokenId(std::move(value)); return *this;}
-    inline GetPersonalAccessTokenMetadataResult& WithPersonalAccessTokenId(const char* value) { SetPersonalAccessTokenId(value); return *this;}
+    inline const Aws::String& GetPersonalAccessTokenId() const { return m_personalAccessTokenId; }
+    template<typename PersonalAccessTokenIdT = Aws::String>
+    void SetPersonalAccessTokenId(PersonalAccessTokenIdT&& value) { m_personalAccessTokenIdHasBeenSet = true; m_personalAccessTokenId = std::forward<PersonalAccessTokenIdT>(value); }
+    template<typename PersonalAccessTokenIdT = Aws::String>
+    GetPersonalAccessTokenMetadataResult& WithPersonalAccessTokenId(PersonalAccessTokenIdT&& value) { SetPersonalAccessTokenId(std::forward<PersonalAccessTokenIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The WorkMail User ID. </p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
-    inline void SetUserId(const Aws::String& value) { m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userId.assign(value); }
-    inline GetPersonalAccessTokenMetadataResult& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline GetPersonalAccessTokenMetadataResult& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline GetPersonalAccessTokenMetadataResult& WithUserId(const char* value) { SetUserId(value); return *this;}
+    inline const Aws::String& GetUserId() const { return m_userId; }
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    GetPersonalAccessTokenMetadataResult& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Personal Access Token name. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetPersonalAccessTokenMetadataResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetPersonalAccessTokenMetadataResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetPersonalAccessTokenMetadataResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetPersonalAccessTokenMetadataResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The date when the Personal Access Token ID was created. </p>
      */
-    inline const Aws::Utils::DateTime& GetDateCreated() const{ return m_dateCreated; }
-    inline void SetDateCreated(const Aws::Utils::DateTime& value) { m_dateCreated = value; }
-    inline void SetDateCreated(Aws::Utils::DateTime&& value) { m_dateCreated = std::move(value); }
-    inline GetPersonalAccessTokenMetadataResult& WithDateCreated(const Aws::Utils::DateTime& value) { SetDateCreated(value); return *this;}
-    inline GetPersonalAccessTokenMetadataResult& WithDateCreated(Aws::Utils::DateTime&& value) { SetDateCreated(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetDateCreated() const { return m_dateCreated; }
+    template<typename DateCreatedT = Aws::Utils::DateTime>
+    void SetDateCreated(DateCreatedT&& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = std::forward<DateCreatedT>(value); }
+    template<typename DateCreatedT = Aws::Utils::DateTime>
+    GetPersonalAccessTokenMetadataResult& WithDateCreated(DateCreatedT&& value) { SetDateCreated(std::forward<DateCreatedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The date when the Personal Access Token ID was last used. </p>
      */
-    inline const Aws::Utils::DateTime& GetDateLastUsed() const{ return m_dateLastUsed; }
-    inline void SetDateLastUsed(const Aws::Utils::DateTime& value) { m_dateLastUsed = value; }
-    inline void SetDateLastUsed(Aws::Utils::DateTime&& value) { m_dateLastUsed = std::move(value); }
-    inline GetPersonalAccessTokenMetadataResult& WithDateLastUsed(const Aws::Utils::DateTime& value) { SetDateLastUsed(value); return *this;}
-    inline GetPersonalAccessTokenMetadataResult& WithDateLastUsed(Aws::Utils::DateTime&& value) { SetDateLastUsed(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetDateLastUsed() const { return m_dateLastUsed; }
+    template<typename DateLastUsedT = Aws::Utils::DateTime>
+    void SetDateLastUsed(DateLastUsedT&& value) { m_dateLastUsedHasBeenSet = true; m_dateLastUsed = std::forward<DateLastUsedT>(value); }
+    template<typename DateLastUsedT = Aws::Utils::DateTime>
+    GetPersonalAccessTokenMetadataResult& WithDateLastUsed(DateLastUsedT&& value) { SetDateLastUsed(std::forward<DateLastUsedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The time when the Personal Access Token ID will expire. </p>
      */
-    inline const Aws::Utils::DateTime& GetExpiresTime() const{ return m_expiresTime; }
-    inline void SetExpiresTime(const Aws::Utils::DateTime& value) { m_expiresTime = value; }
-    inline void SetExpiresTime(Aws::Utils::DateTime&& value) { m_expiresTime = std::move(value); }
-    inline GetPersonalAccessTokenMetadataResult& WithExpiresTime(const Aws::Utils::DateTime& value) { SetExpiresTime(value); return *this;}
-    inline GetPersonalAccessTokenMetadataResult& WithExpiresTime(Aws::Utils::DateTime&& value) { SetExpiresTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetExpiresTime() const { return m_expiresTime; }
+    template<typename ExpiresTimeT = Aws::Utils::DateTime>
+    void SetExpiresTime(ExpiresTimeT&& value) { m_expiresTimeHasBeenSet = true; m_expiresTime = std::forward<ExpiresTimeT>(value); }
+    template<typename ExpiresTimeT = Aws::Utils::DateTime>
+    GetPersonalAccessTokenMetadataResult& WithExpiresTime(ExpiresTimeT&& value) { SetExpiresTime(std::forward<ExpiresTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Lists all the Personal Access Token permissions for a mailbox. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetScopes() const{ return m_scopes; }
-    inline void SetScopes(const Aws::Vector<Aws::String>& value) { m_scopes = value; }
-    inline void SetScopes(Aws::Vector<Aws::String>&& value) { m_scopes = std::move(value); }
-    inline GetPersonalAccessTokenMetadataResult& WithScopes(const Aws::Vector<Aws::String>& value) { SetScopes(value); return *this;}
-    inline GetPersonalAccessTokenMetadataResult& WithScopes(Aws::Vector<Aws::String>&& value) { SetScopes(std::move(value)); return *this;}
-    inline GetPersonalAccessTokenMetadataResult& AddScopes(const Aws::String& value) { m_scopes.push_back(value); return *this; }
-    inline GetPersonalAccessTokenMetadataResult& AddScopes(Aws::String&& value) { m_scopes.push_back(std::move(value)); return *this; }
-    inline GetPersonalAccessTokenMetadataResult& AddScopes(const char* value) { m_scopes.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetScopes() const { return m_scopes; }
+    template<typename ScopesT = Aws::Vector<Aws::String>>
+    void SetScopes(ScopesT&& value) { m_scopesHasBeenSet = true; m_scopes = std::forward<ScopesT>(value); }
+    template<typename ScopesT = Aws::Vector<Aws::String>>
+    GetPersonalAccessTokenMetadataResult& WithScopes(ScopesT&& value) { SetScopes(std::forward<ScopesT>(value)); return *this;}
+    template<typename ScopesT = Aws::String>
+    GetPersonalAccessTokenMetadataResult& AddScopes(ScopesT&& value) { m_scopesHasBeenSet = true; m_scopes.emplace_back(std::forward<ScopesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPersonalAccessTokenMetadataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPersonalAccessTokenMetadataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPersonalAccessTokenMetadataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPersonalAccessTokenMetadataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_personalAccessTokenId;
+    bool m_personalAccessTokenIdHasBeenSet = false;
 
     Aws::String m_userId;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_dateCreated;
+    Aws::Utils::DateTime m_dateCreated{};
+    bool m_dateCreatedHasBeenSet = false;
 
-    Aws::Utils::DateTime m_dateLastUsed;
+    Aws::Utils::DateTime m_dateLastUsed{};
+    bool m_dateLastUsedHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expiresTime;
+    Aws::Utils::DateTime m_expiresTime{};
+    bool m_expiresTimeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_scopes;
+    bool m_scopesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

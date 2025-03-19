@@ -18,10 +18,6 @@ namespace SSMIncidents
 namespace Model
 {
 
-EmptyChatChannel::EmptyChatChannel()
-{
-}
-
 EmptyChatChannel::EmptyChatChannel(JsonView jsonValue)
 {
   *this = jsonValue;

@@ -12,11 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAllowListRequest::GetAllowListRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetAllowListRequest::SerializePayload() const
 {
   return {};

@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-ConversationLevelSlotResolutionResultItem::ConversationLevelSlotResolutionResultItem() : 
-    m_intentNameHasBeenSet(false),
-    m_slotNameHasBeenSet(false),
-    m_matchResult(TestResultMatchStatus::NOT_SET),
-    m_matchResultHasBeenSet(false)
-{
-}
-
 ConversationLevelSlotResolutionResultItem::ConversationLevelSlotResolutionResultItem(JsonView jsonValue)
-  : ConversationLevelSlotResolutionResultItem()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ConversationLevelSlotResolutionResultItem& ConversationLevelSlotResolutionResult
   if(jsonValue.ValueExists("intentName"))
   {
     m_intentName = jsonValue.GetString("intentName");
-
     m_intentNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slotName"))
   {
     m_slotName = jsonValue.GetString("slotName");
-
     m_slotNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("matchResult"))
   {
     m_matchResult = TestResultMatchStatusMapper::GetTestResultMatchStatusForName(jsonValue.GetString("matchResult"));
-
     m_matchResultHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class ListDbInstancesForClusterResult
   {
   public:
-    AWS_TIMESTREAMINFLUXDB_API ListDbInstancesForClusterResult();
+    AWS_TIMESTREAMINFLUXDB_API ListDbInstancesForClusterResult() = default;
     AWS_TIMESTREAMINFLUXDB_API ListDbInstancesForClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TIMESTREAMINFLUXDB_API ListDbInstancesForClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>A list of Timestream for InfluxDB instance summaries belonging to the
      * cluster.</p>
      */
-    inline const Aws::Vector<DbInstanceForClusterSummary>& GetItems() const{ return m_items; }
-    inline void SetItems(const Aws::Vector<DbInstanceForClusterSummary>& value) { m_items = value; }
-    inline void SetItems(Aws::Vector<DbInstanceForClusterSummary>&& value) { m_items = std::move(value); }
-    inline ListDbInstancesForClusterResult& WithItems(const Aws::Vector<DbInstanceForClusterSummary>& value) { SetItems(value); return *this;}
-    inline ListDbInstancesForClusterResult& WithItems(Aws::Vector<DbInstanceForClusterSummary>&& value) { SetItems(std::move(value)); return *this;}
-    inline ListDbInstancesForClusterResult& AddItems(const DbInstanceForClusterSummary& value) { m_items.push_back(value); return *this; }
-    inline ListDbInstancesForClusterResult& AddItems(DbInstanceForClusterSummary&& value) { m_items.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DbInstanceForClusterSummary>& GetItems() const { return m_items; }
+    template<typename ItemsT = Aws::Vector<DbInstanceForClusterSummary>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<DbInstanceForClusterSummary>>
+    ListDbInstancesForClusterResult& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = DbInstanceForClusterSummary>
+    ListDbInstancesForClusterResult& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>Token from a previous call of the operation. When this value is provided, the
      * service returns results from where the previous response left off.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListDbInstancesForClusterResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDbInstancesForClusterResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDbInstancesForClusterResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDbInstancesForClusterResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListDbInstancesForClusterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListDbInstancesForClusterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListDbInstancesForClusterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListDbInstancesForClusterResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DbInstanceForClusterSummary> m_items;
+    bool m_itemsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEncryptionConfigResult::GetEncryptionConfigResult()
-{
-}
-
 GetEncryptionConfigResult::GetEncryptionConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetEncryptionConfigResult& GetEncryptionConfigResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("EncryptionConfig"))
   {
     m_encryptionConfig = jsonValue.GetObject("EncryptionConfig");
-
+    m_encryptionConfigHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -25,7 +25,7 @@ namespace Model
   class StartEngagementFromOpportunityTaskRequest : public PartnerCentralSellingRequest
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API StartEngagementFromOpportunityTaskRequest();
+    AWS_PARTNERCENTRALSELLING_API StartEngagementFromOpportunityTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const AwsSubmission& GetAwsSubmission() const{ return m_awsSubmission; }
+    inline const AwsSubmission& GetAwsSubmission() const { return m_awsSubmission; }
     inline bool AwsSubmissionHasBeenSet() const { return m_awsSubmissionHasBeenSet; }
-    inline void SetAwsSubmission(const AwsSubmission& value) { m_awsSubmissionHasBeenSet = true; m_awsSubmission = value; }
-    inline void SetAwsSubmission(AwsSubmission&& value) { m_awsSubmissionHasBeenSet = true; m_awsSubmission = std::move(value); }
-    inline StartEngagementFromOpportunityTaskRequest& WithAwsSubmission(const AwsSubmission& value) { SetAwsSubmission(value); return *this;}
-    inline StartEngagementFromOpportunityTaskRequest& WithAwsSubmission(AwsSubmission&& value) { SetAwsSubmission(std::move(value)); return *this;}
+    template<typename AwsSubmissionT = AwsSubmission>
+    void SetAwsSubmission(AwsSubmissionT&& value) { m_awsSubmissionHasBeenSet = true; m_awsSubmission = std::forward<AwsSubmissionT>(value); }
+    template<typename AwsSubmissionT = AwsSubmission>
+    StartEngagementFromOpportunityTaskRequest& WithAwsSubmission(AwsSubmissionT&& value) { SetAwsSubmission(std::forward<AwsSubmissionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +54,12 @@ namespace Model
      * include <code>AWS</code> for production and <code>Sandbox</code> for testing
      * environments.</p>
      */
-    inline const Aws::String& GetCatalog() const{ return m_catalog; }
+    inline const Aws::String& GetCatalog() const { return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
-    inline void SetCatalog(const Aws::String& value) { m_catalogHasBeenSet = true; m_catalog = value; }
-    inline void SetCatalog(Aws::String&& value) { m_catalogHasBeenSet = true; m_catalog = std::move(value); }
-    inline void SetCatalog(const char* value) { m_catalogHasBeenSet = true; m_catalog.assign(value); }
-    inline StartEngagementFromOpportunityTaskRequest& WithCatalog(const Aws::String& value) { SetCatalog(value); return *this;}
-    inline StartEngagementFromOpportunityTaskRequest& WithCatalog(Aws::String&& value) { SetCatalog(std::move(value)); return *this;}
-    inline StartEngagementFromOpportunityTaskRequest& WithCatalog(const char* value) { SetCatalog(value); return *this;}
+    template<typename CatalogT = Aws::String>
+    void SetCatalog(CatalogT&& value) { m_catalogHasBeenSet = true; m_catalog = std::forward<CatalogT>(value); }
+    template<typename CatalogT = Aws::String>
+    StartEngagementFromOpportunityTaskRequest& WithCatalog(CatalogT&& value) { SetCatalog(std::forward<CatalogT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * <p>A unique token provided by the client to help ensure the idempotency of the
      * request. It helps prevent the same task from being performed multiple times.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline StartEngagementFromOpportunityTaskRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline StartEngagementFromOpportunityTaskRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline StartEngagementFromOpportunityTaskRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    StartEngagementFromOpportunityTaskRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,28 +81,26 @@ namespace Model
      * be initiated. This helps ensure that the task is applied to the correct
      * opportunity.</p>
      */
-    inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+    inline const Aws::String& GetIdentifier() const { return m_identifier; }
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
-    inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
-    inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
-    inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
-    inline StartEngagementFromOpportunityTaskRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
-    inline StartEngagementFromOpportunityTaskRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
-    inline StartEngagementFromOpportunityTaskRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}
+    template<typename IdentifierT = Aws::String>
+    void SetIdentifier(IdentifierT&& value) { m_identifierHasBeenSet = true; m_identifier = std::forward<IdentifierT>(value); }
+    template<typename IdentifierT = Aws::String>
+    StartEngagementFromOpportunityTaskRequest& WithIdentifier(IdentifierT&& value) { SetIdentifier(std::forward<IdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of objects specifying each tag name and value.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline StartEngagementFromOpportunityTaskRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline StartEngagementFromOpportunityTaskRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline StartEngagementFromOpportunityTaskRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline StartEngagementFromOpportunityTaskRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    StartEngagementFromOpportunityTaskRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    StartEngagementFromOpportunityTaskRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

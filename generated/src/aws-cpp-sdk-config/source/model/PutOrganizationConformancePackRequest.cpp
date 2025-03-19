@@ -12,17 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutOrganizationConformancePackRequest::PutOrganizationConformancePackRequest() : 
-    m_organizationConformancePackNameHasBeenSet(false),
-    m_templateS3UriHasBeenSet(false),
-    m_templateBodyHasBeenSet(false),
-    m_deliveryS3BucketHasBeenSet(false),
-    m_deliveryS3KeyPrefixHasBeenSet(false),
-    m_conformancePackInputParametersHasBeenSet(false),
-    m_excludedAccountsHasBeenSet(false)
-{
-}
-
 Aws::String PutOrganizationConformancePackRequest::SerializePayload() const
 {
   JsonValue payload;

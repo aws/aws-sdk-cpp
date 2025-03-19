@@ -27,7 +27,7 @@ namespace Model
   class CreateScheduleResult
   {
   public:
-    AWS_SCHEDULER_API CreateScheduleResult();
+    AWS_SCHEDULER_API CreateScheduleResult() = default;
     AWS_SCHEDULER_API CreateScheduleResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SCHEDULER_API CreateScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the schedule.</p>
      */
-    inline const Aws::String& GetScheduleArn() const{ return m_scheduleArn; }
-    inline void SetScheduleArn(const Aws::String& value) { m_scheduleArn = value; }
-    inline void SetScheduleArn(Aws::String&& value) { m_scheduleArn = std::move(value); }
-    inline void SetScheduleArn(const char* value) { m_scheduleArn.assign(value); }
-    inline CreateScheduleResult& WithScheduleArn(const Aws::String& value) { SetScheduleArn(value); return *this;}
-    inline CreateScheduleResult& WithScheduleArn(Aws::String&& value) { SetScheduleArn(std::move(value)); return *this;}
-    inline CreateScheduleResult& WithScheduleArn(const char* value) { SetScheduleArn(value); return *this;}
+    inline const Aws::String& GetScheduleArn() const { return m_scheduleArn; }
+    template<typename ScheduleArnT = Aws::String>
+    void SetScheduleArn(ScheduleArnT&& value) { m_scheduleArnHasBeenSet = true; m_scheduleArn = std::forward<ScheduleArnT>(value); }
+    template<typename ScheduleArnT = Aws::String>
+    CreateScheduleResult& WithScheduleArn(ScheduleArnT&& value) { SetScheduleArn(std::forward<ScheduleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateScheduleResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateScheduleResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateScheduleResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateScheduleResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_scheduleArn;
+    bool m_scheduleArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

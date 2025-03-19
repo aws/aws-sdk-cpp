@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListCollaborationConfiguredModelAlgorithmAssociationsRequest::ListCollaborationConfiguredModelAlgorithmAssociationsRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_collaborationIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String ListCollaborationConfiguredModelAlgorithmAssociationsRequest::SerializePayload() const
 {
   return {};

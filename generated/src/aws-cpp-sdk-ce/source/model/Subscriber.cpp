@@ -18,17 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-Subscriber::Subscriber() : 
-    m_addressHasBeenSet(false),
-    m_type(SubscriberType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(SubscriberStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Subscriber::Subscriber(JsonView jsonValue)
-  : Subscriber()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ Subscriber& Subscriber::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Address"))
   {
     m_address = jsonValue.GetString("Address");
-
     m_addressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = SubscriberTypeMapper::GetSubscriberTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = SubscriberStatusMapper::GetSubscriberStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

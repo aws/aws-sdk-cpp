@@ -18,14 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-RemediationParameterValue::RemediationParameterValue() : 
-    m_resourceValueHasBeenSet(false),
-    m_staticValueHasBeenSet(false)
-{
-}
-
 RemediationParameterValue::RemediationParameterValue(JsonView jsonValue)
-  : RemediationParameterValue()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RemediationParameterValue& RemediationParameterValue::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ResourceValue"))
   {
     m_resourceValue = jsonValue.GetObject("ResourceValue");
-
     m_resourceValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StaticValue"))
   {
     m_staticValue = jsonValue.GetObject("StaticValue");
-
     m_staticValueHasBeenSet = true;
   }
-
   return *this;
 }
 

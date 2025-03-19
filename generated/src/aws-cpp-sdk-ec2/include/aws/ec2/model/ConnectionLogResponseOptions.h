@@ -32,7 +32,7 @@ namespace Model
   class ConnectionLogResponseOptions
   {
   public:
-    AWS_EC2_API ConnectionLogResponseOptions();
+    AWS_EC2_API ConnectionLogResponseOptions() = default;
     AWS_EC2_API ConnectionLogResponseOptions(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API ConnectionLogResponseOptions& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,7 +45,7 @@ namespace Model
      * <p>Indicates whether client connection logging is enabled for the Client VPN
      * endpoint.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline ConnectionLogResponseOptions& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -56,14 +56,12 @@ namespace Model
      * <p>The name of the Amazon CloudWatch Logs log group to which connection logging
      * data is published.</p>
      */
-    inline const Aws::String& GetCloudwatchLogGroup() const{ return m_cloudwatchLogGroup; }
+    inline const Aws::String& GetCloudwatchLogGroup() const { return m_cloudwatchLogGroup; }
     inline bool CloudwatchLogGroupHasBeenSet() const { return m_cloudwatchLogGroupHasBeenSet; }
-    inline void SetCloudwatchLogGroup(const Aws::String& value) { m_cloudwatchLogGroupHasBeenSet = true; m_cloudwatchLogGroup = value; }
-    inline void SetCloudwatchLogGroup(Aws::String&& value) { m_cloudwatchLogGroupHasBeenSet = true; m_cloudwatchLogGroup = std::move(value); }
-    inline void SetCloudwatchLogGroup(const char* value) { m_cloudwatchLogGroupHasBeenSet = true; m_cloudwatchLogGroup.assign(value); }
-    inline ConnectionLogResponseOptions& WithCloudwatchLogGroup(const Aws::String& value) { SetCloudwatchLogGroup(value); return *this;}
-    inline ConnectionLogResponseOptions& WithCloudwatchLogGroup(Aws::String&& value) { SetCloudwatchLogGroup(std::move(value)); return *this;}
-    inline ConnectionLogResponseOptions& WithCloudwatchLogGroup(const char* value) { SetCloudwatchLogGroup(value); return *this;}
+    template<typename CloudwatchLogGroupT = Aws::String>
+    void SetCloudwatchLogGroup(CloudwatchLogGroupT&& value) { m_cloudwatchLogGroupHasBeenSet = true; m_cloudwatchLogGroup = std::forward<CloudwatchLogGroupT>(value); }
+    template<typename CloudwatchLogGroupT = Aws::String>
+    ConnectionLogResponseOptions& WithCloudwatchLogGroup(CloudwatchLogGroupT&& value) { SetCloudwatchLogGroup(std::forward<CloudwatchLogGroupT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,18 +69,16 @@ namespace Model
      * <p>The name of the Amazon CloudWatch Logs log stream to which connection logging
      * data is published.</p>
      */
-    inline const Aws::String& GetCloudwatchLogStream() const{ return m_cloudwatchLogStream; }
+    inline const Aws::String& GetCloudwatchLogStream() const { return m_cloudwatchLogStream; }
     inline bool CloudwatchLogStreamHasBeenSet() const { return m_cloudwatchLogStreamHasBeenSet; }
-    inline void SetCloudwatchLogStream(const Aws::String& value) { m_cloudwatchLogStreamHasBeenSet = true; m_cloudwatchLogStream = value; }
-    inline void SetCloudwatchLogStream(Aws::String&& value) { m_cloudwatchLogStreamHasBeenSet = true; m_cloudwatchLogStream = std::move(value); }
-    inline void SetCloudwatchLogStream(const char* value) { m_cloudwatchLogStreamHasBeenSet = true; m_cloudwatchLogStream.assign(value); }
-    inline ConnectionLogResponseOptions& WithCloudwatchLogStream(const Aws::String& value) { SetCloudwatchLogStream(value); return *this;}
-    inline ConnectionLogResponseOptions& WithCloudwatchLogStream(Aws::String&& value) { SetCloudwatchLogStream(std::move(value)); return *this;}
-    inline ConnectionLogResponseOptions& WithCloudwatchLogStream(const char* value) { SetCloudwatchLogStream(value); return *this;}
+    template<typename CloudwatchLogStreamT = Aws::String>
+    void SetCloudwatchLogStream(CloudwatchLogStreamT&& value) { m_cloudwatchLogStreamHasBeenSet = true; m_cloudwatchLogStream = std::forward<CloudwatchLogStreamT>(value); }
+    template<typename CloudwatchLogStreamT = Aws::String>
+    ConnectionLogResponseOptions& WithCloudwatchLogStream(CloudwatchLogStreamT&& value) { SetCloudwatchLogStream(std::forward<CloudwatchLogStreamT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     Aws::String m_cloudwatchLogGroup;

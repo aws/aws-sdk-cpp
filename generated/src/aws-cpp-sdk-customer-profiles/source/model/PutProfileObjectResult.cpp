@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutProfileObjectResult::PutProfileObjectResult()
-{
-}
-
 PutProfileObjectResult::PutProfileObjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ PutProfileObjectResult& PutProfileObjectResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("ProfileObjectUniqueKey"))
   {
     m_profileObjectUniqueKey = jsonValue.GetString("ProfileObjectUniqueKey");
-
+    m_profileObjectUniqueKeyHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

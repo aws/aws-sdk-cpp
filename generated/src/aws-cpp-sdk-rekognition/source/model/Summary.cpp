@@ -18,13 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-Summary::Summary() : 
-    m_s3ObjectHasBeenSet(false)
-{
-}
-
 Summary::Summary(JsonView jsonValue)
-  : Summary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Summary& Summary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("S3Object"))
   {
     m_s3Object = jsonValue.GetObject("S3Object");
-
     m_s3ObjectHasBeenSet = true;
   }
-
   return *this;
 }
 

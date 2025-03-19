@@ -34,7 +34,7 @@ namespace Model
   class DescribeAccountAttributesResult
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API DescribeAccountAttributesResult();
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeAccountAttributesResult() = default;
     AWS_DATABASEMIGRATIONSERVICE_API DescribeAccountAttributesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATABASEMIGRATIONSERVICE_API DescribeAccountAttributesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,13 +43,13 @@ namespace Model
     /**
      * <p>Account quota information.</p>
      */
-    inline const Aws::Vector<AccountQuota>& GetAccountQuotas() const{ return m_accountQuotas; }
-    inline void SetAccountQuotas(const Aws::Vector<AccountQuota>& value) { m_accountQuotas = value; }
-    inline void SetAccountQuotas(Aws::Vector<AccountQuota>&& value) { m_accountQuotas = std::move(value); }
-    inline DescribeAccountAttributesResult& WithAccountQuotas(const Aws::Vector<AccountQuota>& value) { SetAccountQuotas(value); return *this;}
-    inline DescribeAccountAttributesResult& WithAccountQuotas(Aws::Vector<AccountQuota>&& value) { SetAccountQuotas(std::move(value)); return *this;}
-    inline DescribeAccountAttributesResult& AddAccountQuotas(const AccountQuota& value) { m_accountQuotas.push_back(value); return *this; }
-    inline DescribeAccountAttributesResult& AddAccountQuotas(AccountQuota&& value) { m_accountQuotas.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AccountQuota>& GetAccountQuotas() const { return m_accountQuotas; }
+    template<typename AccountQuotasT = Aws::Vector<AccountQuota>>
+    void SetAccountQuotas(AccountQuotasT&& value) { m_accountQuotasHasBeenSet = true; m_accountQuotas = std::forward<AccountQuotasT>(value); }
+    template<typename AccountQuotasT = Aws::Vector<AccountQuota>>
+    DescribeAccountAttributesResult& WithAccountQuotas(AccountQuotasT&& value) { SetAccountQuotas(std::forward<AccountQuotasT>(value)); return *this;}
+    template<typename AccountQuotasT = AccountQuota>
+    DescribeAccountAttributesResult& AddAccountQuotas(AccountQuotasT&& value) { m_accountQuotasHasBeenSet = true; m_accountQuotas.emplace_back(std::forward<AccountQuotasT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -66,32 +66,31 @@ namespace Model
      * <code>UniqueAccountIdentifier</code> parameter in versions 3.1.4 and later.</p>
      * 
      */
-    inline const Aws::String& GetUniqueAccountIdentifier() const{ return m_uniqueAccountIdentifier; }
-    inline void SetUniqueAccountIdentifier(const Aws::String& value) { m_uniqueAccountIdentifier = value; }
-    inline void SetUniqueAccountIdentifier(Aws::String&& value) { m_uniqueAccountIdentifier = std::move(value); }
-    inline void SetUniqueAccountIdentifier(const char* value) { m_uniqueAccountIdentifier.assign(value); }
-    inline DescribeAccountAttributesResult& WithUniqueAccountIdentifier(const Aws::String& value) { SetUniqueAccountIdentifier(value); return *this;}
-    inline DescribeAccountAttributesResult& WithUniqueAccountIdentifier(Aws::String&& value) { SetUniqueAccountIdentifier(std::move(value)); return *this;}
-    inline DescribeAccountAttributesResult& WithUniqueAccountIdentifier(const char* value) { SetUniqueAccountIdentifier(value); return *this;}
+    inline const Aws::String& GetUniqueAccountIdentifier() const { return m_uniqueAccountIdentifier; }
+    template<typename UniqueAccountIdentifierT = Aws::String>
+    void SetUniqueAccountIdentifier(UniqueAccountIdentifierT&& value) { m_uniqueAccountIdentifierHasBeenSet = true; m_uniqueAccountIdentifier = std::forward<UniqueAccountIdentifierT>(value); }
+    template<typename UniqueAccountIdentifierT = Aws::String>
+    DescribeAccountAttributesResult& WithUniqueAccountIdentifier(UniqueAccountIdentifierT&& value) { SetUniqueAccountIdentifier(std::forward<UniqueAccountIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAccountAttributesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAccountAttributesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAccountAttributesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAccountAttributesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AccountQuota> m_accountQuotas;
+    bool m_accountQuotasHasBeenSet = false;
 
     Aws::String m_uniqueAccountIdentifier;
+    bool m_uniqueAccountIdentifierHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

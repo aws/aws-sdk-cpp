@@ -32,7 +32,7 @@ namespace Model
   class DocumentServiceException
   {
   public:
-    AWS_CLOUDSEARCHDOMAIN_API DocumentServiceException();
+    AWS_CLOUDSEARCHDOMAIN_API DocumentServiceException() = default;
     AWS_CLOUDSEARCHDOMAIN_API DocumentServiceException(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDSEARCHDOMAIN_API DocumentServiceException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDSEARCHDOMAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
      * <p>The return status of a document upload request, <code>error</code> or
      * <code>success</code>.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline DocumentServiceException& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline DocumentServiceException& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline DocumentServiceException& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    DocumentServiceException& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the errors returned by the document service.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline DocumentServiceException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline DocumentServiceException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline DocumentServiceException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    DocumentServiceException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

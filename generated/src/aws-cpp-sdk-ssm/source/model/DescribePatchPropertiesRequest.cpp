@@ -12,19 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribePatchPropertiesRequest::DescribePatchPropertiesRequest() : 
-    m_operatingSystem(OperatingSystem::NOT_SET),
-    m_operatingSystemHasBeenSet(false),
-    m_property(PatchProperty::NOT_SET),
-    m_propertyHasBeenSet(false),
-    m_patchSet(PatchSet::NOT_SET),
-    m_patchSetHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribePatchPropertiesRequest::SerializePayload() const
 {
   JsonValue payload;

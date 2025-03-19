@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-QueryPrecedenceRequest::QueryPrecedenceRequest() : 
-    m_fooHasBeenSet(false),
-    m_bazHasBeenSet(false)
-{
-}
-
 Aws::String QueryPrecedenceRequest::SerializePayload() const
 {
   return {};

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetEnabledBaselineResult::GetEnabledBaselineResult()
-{
-}
-
 GetEnabledBaselineResult::GetEnabledBaselineResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetEnabledBaselineResult& GetEnabledBaselineResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("enabledBaselineDetails"))
   {
     m_enabledBaselineDetails = jsonValue.GetObject("enabledBaselineDetails");
-
+    m_enabledBaselineDetailsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

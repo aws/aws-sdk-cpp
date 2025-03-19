@@ -23,7 +23,7 @@ namespace Model
   class DescribeLogGroupsRequest : public CloudWatchLogsRequest
   {
   public:
-    AWS_CLOUDWATCHLOGS_API DescribeLogGroupsRequest();
+    AWS_CLOUDWATCHLOGS_API DescribeLogGroupsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,15 +42,14 @@ namespace Model
      * parameter to specify the list of accounts to search. You can specify as many as
      * 20 account IDs in the array. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetAccountIdentifiers() const{ return m_accountIdentifiers; }
+    inline const Aws::Vector<Aws::String>& GetAccountIdentifiers() const { return m_accountIdentifiers; }
     inline bool AccountIdentifiersHasBeenSet() const { return m_accountIdentifiersHasBeenSet; }
-    inline void SetAccountIdentifiers(const Aws::Vector<Aws::String>& value) { m_accountIdentifiersHasBeenSet = true; m_accountIdentifiers = value; }
-    inline void SetAccountIdentifiers(Aws::Vector<Aws::String>&& value) { m_accountIdentifiersHasBeenSet = true; m_accountIdentifiers = std::move(value); }
-    inline DescribeLogGroupsRequest& WithAccountIdentifiers(const Aws::Vector<Aws::String>& value) { SetAccountIdentifiers(value); return *this;}
-    inline DescribeLogGroupsRequest& WithAccountIdentifiers(Aws::Vector<Aws::String>&& value) { SetAccountIdentifiers(std::move(value)); return *this;}
-    inline DescribeLogGroupsRequest& AddAccountIdentifiers(const Aws::String& value) { m_accountIdentifiersHasBeenSet = true; m_accountIdentifiers.push_back(value); return *this; }
-    inline DescribeLogGroupsRequest& AddAccountIdentifiers(Aws::String&& value) { m_accountIdentifiersHasBeenSet = true; m_accountIdentifiers.push_back(std::move(value)); return *this; }
-    inline DescribeLogGroupsRequest& AddAccountIdentifiers(const char* value) { m_accountIdentifiersHasBeenSet = true; m_accountIdentifiers.push_back(value); return *this; }
+    template<typename AccountIdentifiersT = Aws::Vector<Aws::String>>
+    void SetAccountIdentifiers(AccountIdentifiersT&& value) { m_accountIdentifiersHasBeenSet = true; m_accountIdentifiers = std::forward<AccountIdentifiersT>(value); }
+    template<typename AccountIdentifiersT = Aws::Vector<Aws::String>>
+    DescribeLogGroupsRequest& WithAccountIdentifiers(AccountIdentifiersT&& value) { SetAccountIdentifiers(std::forward<AccountIdentifiersT>(value)); return *this;}
+    template<typename AccountIdentifiersT = Aws::String>
+    DescribeLogGroupsRequest& AddAccountIdentifiers(AccountIdentifiersT&& value) { m_accountIdentifiersHasBeenSet = true; m_accountIdentifiers.emplace_back(std::forward<AccountIdentifiersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,14 +58,12 @@ namespace Model
      * <code>logGroupNamePattern</code> are mutually exclusive. Only one of these
      * parameters can be passed. </p> 
      */
-    inline const Aws::String& GetLogGroupNamePrefix() const{ return m_logGroupNamePrefix; }
+    inline const Aws::String& GetLogGroupNamePrefix() const { return m_logGroupNamePrefix; }
     inline bool LogGroupNamePrefixHasBeenSet() const { return m_logGroupNamePrefixHasBeenSet; }
-    inline void SetLogGroupNamePrefix(const Aws::String& value) { m_logGroupNamePrefixHasBeenSet = true; m_logGroupNamePrefix = value; }
-    inline void SetLogGroupNamePrefix(Aws::String&& value) { m_logGroupNamePrefixHasBeenSet = true; m_logGroupNamePrefix = std::move(value); }
-    inline void SetLogGroupNamePrefix(const char* value) { m_logGroupNamePrefixHasBeenSet = true; m_logGroupNamePrefix.assign(value); }
-    inline DescribeLogGroupsRequest& WithLogGroupNamePrefix(const Aws::String& value) { SetLogGroupNamePrefix(value); return *this;}
-    inline DescribeLogGroupsRequest& WithLogGroupNamePrefix(Aws::String&& value) { SetLogGroupNamePrefix(std::move(value)); return *this;}
-    inline DescribeLogGroupsRequest& WithLogGroupNamePrefix(const char* value) { SetLogGroupNamePrefix(value); return *this;}
+    template<typename LogGroupNamePrefixT = Aws::String>
+    void SetLogGroupNamePrefix(LogGroupNamePrefixT&& value) { m_logGroupNamePrefixHasBeenSet = true; m_logGroupNamePrefix = std::forward<LogGroupNamePrefixT>(value); }
+    template<typename LogGroupNamePrefixT = Aws::String>
+    DescribeLogGroupsRequest& WithLogGroupNamePrefix(LogGroupNamePrefixT&& value) { SetLogGroupNamePrefix(std::forward<LogGroupNamePrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +79,12 @@ namespace Model
      * <code>logGroupNamePattern</code> and <code>logGroupNamePrefix</code> are
      * mutually exclusive. Only one of these parameters can be passed. </p> 
      */
-    inline const Aws::String& GetLogGroupNamePattern() const{ return m_logGroupNamePattern; }
+    inline const Aws::String& GetLogGroupNamePattern() const { return m_logGroupNamePattern; }
     inline bool LogGroupNamePatternHasBeenSet() const { return m_logGroupNamePatternHasBeenSet; }
-    inline void SetLogGroupNamePattern(const Aws::String& value) { m_logGroupNamePatternHasBeenSet = true; m_logGroupNamePattern = value; }
-    inline void SetLogGroupNamePattern(Aws::String&& value) { m_logGroupNamePatternHasBeenSet = true; m_logGroupNamePattern = std::move(value); }
-    inline void SetLogGroupNamePattern(const char* value) { m_logGroupNamePatternHasBeenSet = true; m_logGroupNamePattern.assign(value); }
-    inline DescribeLogGroupsRequest& WithLogGroupNamePattern(const Aws::String& value) { SetLogGroupNamePattern(value); return *this;}
-    inline DescribeLogGroupsRequest& WithLogGroupNamePattern(Aws::String&& value) { SetLogGroupNamePattern(std::move(value)); return *this;}
-    inline DescribeLogGroupsRequest& WithLogGroupNamePattern(const char* value) { SetLogGroupNamePattern(value); return *this;}
+    template<typename LogGroupNamePatternT = Aws::String>
+    void SetLogGroupNamePattern(LogGroupNamePatternT&& value) { m_logGroupNamePatternHasBeenSet = true; m_logGroupNamePattern = std::forward<LogGroupNamePatternT>(value); }
+    template<typename LogGroupNamePatternT = Aws::String>
+    DescribeLogGroupsRequest& WithLogGroupNamePattern(LogGroupNamePatternT&& value) { SetLogGroupNamePattern(std::forward<LogGroupNamePatternT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,14 +92,12 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeLogGroupsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeLogGroupsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeLogGroupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeLogGroupsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,7 +105,7 @@ namespace Model
      * <p>The maximum number of items returned. If you don't specify a value, the
      * default is up to 50 items.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline DescribeLogGroupsRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -127,7 +120,7 @@ namespace Model
      * operation returns all log groups in the monitoring account and all log groups in
      * all source accounts that are linked to the monitoring account. </p>
      */
-    inline bool GetIncludeLinkedAccounts() const{ return m_includeLinkedAccounts; }
+    inline bool GetIncludeLinkedAccounts() const { return m_includeLinkedAccounts; }
     inline bool IncludeLinkedAccountsHasBeenSet() const { return m_includeLinkedAccountsHasBeenSet; }
     inline void SetIncludeLinkedAccounts(bool value) { m_includeLinkedAccountsHasBeenSet = true; m_includeLinkedAccounts = value; }
     inline DescribeLogGroupsRequest& WithIncludeLinkedAccounts(bool value) { SetIncludeLinkedAccounts(value); return *this;}
@@ -143,12 +136,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CloudWatch_Logs_Log_Classes.html">Log
      * classes</a> </p>
      */
-    inline const LogGroupClass& GetLogGroupClass() const{ return m_logGroupClass; }
+    inline LogGroupClass GetLogGroupClass() const { return m_logGroupClass; }
     inline bool LogGroupClassHasBeenSet() const { return m_logGroupClassHasBeenSet; }
-    inline void SetLogGroupClass(const LogGroupClass& value) { m_logGroupClassHasBeenSet = true; m_logGroupClass = value; }
-    inline void SetLogGroupClass(LogGroupClass&& value) { m_logGroupClassHasBeenSet = true; m_logGroupClass = std::move(value); }
-    inline DescribeLogGroupsRequest& WithLogGroupClass(const LogGroupClass& value) { SetLogGroupClass(value); return *this;}
-    inline DescribeLogGroupsRequest& WithLogGroupClass(LogGroupClass&& value) { SetLogGroupClass(std::move(value)); return *this;}
+    inline void SetLogGroupClass(LogGroupClass value) { m_logGroupClassHasBeenSet = true; m_logGroupClass = value; }
+    inline DescribeLogGroupsRequest& WithLogGroupClass(LogGroupClass value) { SetLogGroupClass(value); return *this;}
     ///@}
   private:
 
@@ -164,13 +155,13 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
-    bool m_includeLinkedAccounts;
+    bool m_includeLinkedAccounts{false};
     bool m_includeLinkedAccountsHasBeenSet = false;
 
-    LogGroupClass m_logGroupClass;
+    LogGroupClass m_logGroupClass{LogGroupClass::NOT_SET};
     bool m_logGroupClassHasBeenSet = false;
   };
 

@@ -18,13 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-City::City() : 
-    m_cityNameHasBeenSet(false)
-{
-}
-
 City::City(JsonView jsonValue)
-  : City()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ City& City::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cityName"))
   {
     m_cityName = jsonValue.GetString("cityName");
-
     m_cityNameHasBeenSet = true;
   }
-
   return *this;
 }
 

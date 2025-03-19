@@ -31,7 +31,7 @@ namespace Model
   class FecOutputSettings
   {
   public:
-    AWS_MEDIALIVE_API FecOutputSettings();
+    AWS_MEDIALIVE_API FecOutputSettings() = default;
     AWS_MEDIALIVE_API FecOutputSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API FecOutputSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * number of transport stream packets per column error correction packet. Must be
      * between 4 and 20, inclusive.
      */
-    inline int GetColumnDepth() const{ return m_columnDepth; }
+    inline int GetColumnDepth() const { return m_columnDepth; }
     inline bool ColumnDepthHasBeenSet() const { return m_columnDepthHasBeenSet; }
     inline void SetColumnDepth(int value) { m_columnDepthHasBeenSet = true; m_columnDepth = value; }
     inline FecOutputSettings& WithColumnDepth(int value) { SetColumnDepth(value); return *this;}
@@ -53,12 +53,10 @@ namespace Model
     /**
      * Enables column only or column and row based FEC
      */
-    inline const FecOutputIncludeFec& GetIncludeFec() const{ return m_includeFec; }
+    inline FecOutputIncludeFec GetIncludeFec() const { return m_includeFec; }
     inline bool IncludeFecHasBeenSet() const { return m_includeFecHasBeenSet; }
-    inline void SetIncludeFec(const FecOutputIncludeFec& value) { m_includeFecHasBeenSet = true; m_includeFec = value; }
-    inline void SetIncludeFec(FecOutputIncludeFec&& value) { m_includeFecHasBeenSet = true; m_includeFec = std::move(value); }
-    inline FecOutputSettings& WithIncludeFec(const FecOutputIncludeFec& value) { SetIncludeFec(value); return *this;}
-    inline FecOutputSettings& WithIncludeFec(FecOutputIncludeFec&& value) { SetIncludeFec(std::move(value)); return *this;}
+    inline void SetIncludeFec(FecOutputIncludeFec value) { m_includeFecHasBeenSet = true; m_includeFec = value; }
+    inline FecOutputSettings& WithIncludeFec(FecOutputIncludeFec value) { SetIncludeFec(value); return *this;}
     ///@}
 
     ///@{
@@ -70,20 +68,20 @@ namespace Model
      * and 20, inclusive, if includeFec is columnAndRow. If includeFec is column, this
      * value must be 1 to 20, inclusive.
      */
-    inline int GetRowLength() const{ return m_rowLength; }
+    inline int GetRowLength() const { return m_rowLength; }
     inline bool RowLengthHasBeenSet() const { return m_rowLengthHasBeenSet; }
     inline void SetRowLength(int value) { m_rowLengthHasBeenSet = true; m_rowLength = value; }
     inline FecOutputSettings& WithRowLength(int value) { SetRowLength(value); return *this;}
     ///@}
   private:
 
-    int m_columnDepth;
+    int m_columnDepth{0};
     bool m_columnDepthHasBeenSet = false;
 
-    FecOutputIncludeFec m_includeFec;
+    FecOutputIncludeFec m_includeFec{FecOutputIncludeFec::NOT_SET};
     bool m_includeFecHasBeenSet = false;
 
-    int m_rowLength;
+    int m_rowLength{0};
     bool m_rowLengthHasBeenSet = false;
   };
 

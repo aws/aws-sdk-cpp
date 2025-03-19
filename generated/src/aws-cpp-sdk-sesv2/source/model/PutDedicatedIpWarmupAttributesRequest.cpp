@@ -12,13 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutDedicatedIpWarmupAttributesRequest::PutDedicatedIpWarmupAttributesRequest() : 
-    m_ipHasBeenSet(false),
-    m_warmupPercentage(0),
-    m_warmupPercentageHasBeenSet(false)
-{
-}
-
 Aws::String PutDedicatedIpWarmupAttributesRequest::SerializePayload() const
 {
   JsonValue payload;

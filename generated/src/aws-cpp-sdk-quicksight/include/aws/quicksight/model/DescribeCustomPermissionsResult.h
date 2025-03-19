@@ -28,7 +28,7 @@ namespace Model
   class DescribeCustomPermissionsResult
   {
   public:
-    AWS_QUICKSIGHT_API DescribeCustomPermissionsResult();
+    AWS_QUICKSIGHT_API DescribeCustomPermissionsResult() = default;
     AWS_QUICKSIGHT_API DescribeCustomPermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API DescribeCustomPermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,8 +37,8 @@ namespace Model
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline DescribeCustomPermissionsResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
 
@@ -46,30 +46,31 @@ namespace Model
     /**
      * <p>The custom permissions profile.</p>
      */
-    inline const CustomPermissions& GetCustomPermissions() const{ return m_customPermissions; }
-    inline void SetCustomPermissions(const CustomPermissions& value) { m_customPermissions = value; }
-    inline void SetCustomPermissions(CustomPermissions&& value) { m_customPermissions = std::move(value); }
-    inline DescribeCustomPermissionsResult& WithCustomPermissions(const CustomPermissions& value) { SetCustomPermissions(value); return *this;}
-    inline DescribeCustomPermissionsResult& WithCustomPermissions(CustomPermissions&& value) { SetCustomPermissions(std::move(value)); return *this;}
+    inline const CustomPermissions& GetCustomPermissions() const { return m_customPermissions; }
+    template<typename CustomPermissionsT = CustomPermissions>
+    void SetCustomPermissions(CustomPermissionsT&& value) { m_customPermissionsHasBeenSet = true; m_customPermissions = std::forward<CustomPermissionsT>(value); }
+    template<typename CustomPermissionsT = CustomPermissions>
+    DescribeCustomPermissionsResult& WithCustomPermissions(CustomPermissionsT&& value) { SetCustomPermissions(std::forward<CustomPermissionsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeCustomPermissionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeCustomPermissionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeCustomPermissionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeCustomPermissionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
 
     CustomPermissions m_customPermissions;
+    bool m_customPermissionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

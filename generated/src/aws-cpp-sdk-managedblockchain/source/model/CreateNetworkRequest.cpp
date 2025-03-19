@@ -12,21 +12,6 @@ using namespace Aws::ManagedBlockchain::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateNetworkRequest::CreateNetworkRequest() : 
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_framework(Framework::NOT_SET),
-    m_frameworkHasBeenSet(false),
-    m_frameworkVersionHasBeenSet(false),
-    m_frameworkConfigurationHasBeenSet(false),
-    m_votingPolicyHasBeenSet(false),
-    m_memberConfigurationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateNetworkRequest::SerializePayload() const
 {
   JsonValue payload;

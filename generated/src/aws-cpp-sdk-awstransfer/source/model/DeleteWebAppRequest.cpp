@@ -12,11 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteWebAppRequest::DeleteWebAppRequest() : 
-    m_webAppIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteWebAppRequest::SerializePayload() const
 {
   JsonValue payload;

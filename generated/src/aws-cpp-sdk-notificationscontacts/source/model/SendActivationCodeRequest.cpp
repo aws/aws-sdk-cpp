@@ -12,11 +12,6 @@ using namespace Aws::NotificationsContacts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendActivationCodeRequest::SendActivationCodeRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String SendActivationCodeRequest::SerializePayload() const
 {
   return {};

@@ -34,7 +34,7 @@ namespace Model
   class SecurityGroupForVpc
   {
   public:
-    AWS_EC2_API SecurityGroupForVpc();
+    AWS_EC2_API SecurityGroupForVpc() = default;
     AWS_EC2_API SecurityGroupForVpc(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API SecurityGroupForVpc& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,84 +46,74 @@ namespace Model
     /**
      * <p>The security group's description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline SecurityGroupForVpc& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline SecurityGroupForVpc& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline SecurityGroupForVpc& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    SecurityGroupForVpc& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The security group name.</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline SecurityGroupForVpc& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline SecurityGroupForVpc& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline SecurityGroupForVpc& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    SecurityGroupForVpc& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The security group owner ID.</p>
      */
-    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+    inline const Aws::String& GetOwnerId() const { return m_ownerId; }
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
-    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
-    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
-    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
-    inline SecurityGroupForVpc& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
-    inline SecurityGroupForVpc& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
-    inline SecurityGroupForVpc& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+    template<typename OwnerIdT = Aws::String>
+    void SetOwnerId(OwnerIdT&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::forward<OwnerIdT>(value); }
+    template<typename OwnerIdT = Aws::String>
+    SecurityGroupForVpc& WithOwnerId(OwnerIdT&& value) { SetOwnerId(std::forward<OwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The security group ID.</p>
      */
-    inline const Aws::String& GetGroupId() const{ return m_groupId; }
+    inline const Aws::String& GetGroupId() const { return m_groupId; }
     inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
-    inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
-    inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
-    inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
-    inline SecurityGroupForVpc& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-    inline SecurityGroupForVpc& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-    inline SecurityGroupForVpc& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    template<typename GroupIdT = Aws::String>
+    void SetGroupId(GroupIdT&& value) { m_groupIdHasBeenSet = true; m_groupId = std::forward<GroupIdT>(value); }
+    template<typename GroupIdT = Aws::String>
+    SecurityGroupForVpc& WithGroupId(GroupIdT&& value) { SetGroupId(std::forward<GroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The security group tags.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline SecurityGroupForVpc& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline SecurityGroupForVpc& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline SecurityGroupForVpc& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline SecurityGroupForVpc& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    SecurityGroupForVpc& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    SecurityGroupForVpc& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The VPC ID in which the security group was created.</p>
      */
-    inline const Aws::String& GetPrimaryVpcId() const{ return m_primaryVpcId; }
+    inline const Aws::String& GetPrimaryVpcId() const { return m_primaryVpcId; }
     inline bool PrimaryVpcIdHasBeenSet() const { return m_primaryVpcIdHasBeenSet; }
-    inline void SetPrimaryVpcId(const Aws::String& value) { m_primaryVpcIdHasBeenSet = true; m_primaryVpcId = value; }
-    inline void SetPrimaryVpcId(Aws::String&& value) { m_primaryVpcIdHasBeenSet = true; m_primaryVpcId = std::move(value); }
-    inline void SetPrimaryVpcId(const char* value) { m_primaryVpcIdHasBeenSet = true; m_primaryVpcId.assign(value); }
-    inline SecurityGroupForVpc& WithPrimaryVpcId(const Aws::String& value) { SetPrimaryVpcId(value); return *this;}
-    inline SecurityGroupForVpc& WithPrimaryVpcId(Aws::String&& value) { SetPrimaryVpcId(std::move(value)); return *this;}
-    inline SecurityGroupForVpc& WithPrimaryVpcId(const char* value) { SetPrimaryVpcId(value); return *this;}
+    template<typename PrimaryVpcIdT = Aws::String>
+    void SetPrimaryVpcId(PrimaryVpcIdT&& value) { m_primaryVpcIdHasBeenSet = true; m_primaryVpcId = std::forward<PrimaryVpcIdT>(value); }
+    template<typename PrimaryVpcIdT = Aws::String>
+    SecurityGroupForVpc& WithPrimaryVpcId(PrimaryVpcIdT&& value) { SetPrimaryVpcId(std::forward<PrimaryVpcIdT>(value)); return *this;}
     ///@}
   private:
 

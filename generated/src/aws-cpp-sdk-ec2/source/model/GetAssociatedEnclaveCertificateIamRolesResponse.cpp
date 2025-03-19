@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAssociatedEnclaveCertificateIamRolesResponse::GetAssociatedEnclaveCertificateIamRolesResponse()
-{
-}
-
 GetAssociatedEnclaveCertificateIamRolesResponse::GetAssociatedEnclaveCertificateIamRolesResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ GetAssociatedEnclaveCertificateIamRolesResponse& GetAssociatedEnclaveCertificate
     if(!associatedRolesNode.IsNull())
     {
       XmlNode associatedRolesMember = associatedRolesNode.FirstChild("item");
+      m_associatedRolesHasBeenSet = !associatedRolesMember.IsNull();
       while(!associatedRolesMember.IsNull())
       {
         m_associatedRoles.push_back(associatedRolesMember);
         associatedRolesMember = associatedRolesMember.NextNode("item");
       }
 
+      m_associatedRolesHasBeenSet = true;
     }
   }
 
@@ -56,6 +54,7 @@ GetAssociatedEnclaveCertificateIamRolesResponse& GetAssociatedEnclaveCertificate
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetAssociatedEnclaveCertificateIamRolesResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

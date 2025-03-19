@@ -12,14 +12,6 @@ using namespace Aws::MarketplaceMetering::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterUsageRequest::RegisterUsageRequest() : 
-    m_productCodeHasBeenSet(false),
-    m_publicKeyVersion(0),
-    m_publicKeyVersionHasBeenSet(false),
-    m_nonceHasBeenSet(false)
-{
-}
-
 Aws::String RegisterUsageRequest::SerializePayload() const
 {
   JsonValue payload;

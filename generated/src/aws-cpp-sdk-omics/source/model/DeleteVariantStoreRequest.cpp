@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteVariantStoreRequest::DeleteVariantStoreRequest() : 
-    m_nameHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVariantStoreRequest::SerializePayload() const
 {
   return {};

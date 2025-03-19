@@ -32,7 +32,7 @@ namespace Model
   class UpdateWirelessGatewayTaskCreate
   {
   public:
-    AWS_IOTWIRELESS_API UpdateWirelessGatewayTaskCreate();
+    AWS_IOTWIRELESS_API UpdateWirelessGatewayTaskCreate() = default;
     AWS_IOTWIRELESS_API UpdateWirelessGatewayTaskCreate(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API UpdateWirelessGatewayTaskCreate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,40 +42,36 @@ namespace Model
     /**
      * <p>The link to the S3 bucket.</p>
      */
-    inline const Aws::String& GetUpdateDataSource() const{ return m_updateDataSource; }
+    inline const Aws::String& GetUpdateDataSource() const { return m_updateDataSource; }
     inline bool UpdateDataSourceHasBeenSet() const { return m_updateDataSourceHasBeenSet; }
-    inline void SetUpdateDataSource(const Aws::String& value) { m_updateDataSourceHasBeenSet = true; m_updateDataSource = value; }
-    inline void SetUpdateDataSource(Aws::String&& value) { m_updateDataSourceHasBeenSet = true; m_updateDataSource = std::move(value); }
-    inline void SetUpdateDataSource(const char* value) { m_updateDataSourceHasBeenSet = true; m_updateDataSource.assign(value); }
-    inline UpdateWirelessGatewayTaskCreate& WithUpdateDataSource(const Aws::String& value) { SetUpdateDataSource(value); return *this;}
-    inline UpdateWirelessGatewayTaskCreate& WithUpdateDataSource(Aws::String&& value) { SetUpdateDataSource(std::move(value)); return *this;}
-    inline UpdateWirelessGatewayTaskCreate& WithUpdateDataSource(const char* value) { SetUpdateDataSource(value); return *this;}
+    template<typename UpdateDataSourceT = Aws::String>
+    void SetUpdateDataSource(UpdateDataSourceT&& value) { m_updateDataSourceHasBeenSet = true; m_updateDataSource = std::forward<UpdateDataSourceT>(value); }
+    template<typename UpdateDataSourceT = Aws::String>
+    UpdateWirelessGatewayTaskCreate& WithUpdateDataSource(UpdateDataSourceT&& value) { SetUpdateDataSource(std::forward<UpdateDataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IAM role used to read data from the S3 bucket.</p>
      */
-    inline const Aws::String& GetUpdateDataRole() const{ return m_updateDataRole; }
+    inline const Aws::String& GetUpdateDataRole() const { return m_updateDataRole; }
     inline bool UpdateDataRoleHasBeenSet() const { return m_updateDataRoleHasBeenSet; }
-    inline void SetUpdateDataRole(const Aws::String& value) { m_updateDataRoleHasBeenSet = true; m_updateDataRole = value; }
-    inline void SetUpdateDataRole(Aws::String&& value) { m_updateDataRoleHasBeenSet = true; m_updateDataRole = std::move(value); }
-    inline void SetUpdateDataRole(const char* value) { m_updateDataRoleHasBeenSet = true; m_updateDataRole.assign(value); }
-    inline UpdateWirelessGatewayTaskCreate& WithUpdateDataRole(const Aws::String& value) { SetUpdateDataRole(value); return *this;}
-    inline UpdateWirelessGatewayTaskCreate& WithUpdateDataRole(Aws::String&& value) { SetUpdateDataRole(std::move(value)); return *this;}
-    inline UpdateWirelessGatewayTaskCreate& WithUpdateDataRole(const char* value) { SetUpdateDataRole(value); return *this;}
+    template<typename UpdateDataRoleT = Aws::String>
+    void SetUpdateDataRole(UpdateDataRoleT&& value) { m_updateDataRoleHasBeenSet = true; m_updateDataRole = std::forward<UpdateDataRoleT>(value); }
+    template<typename UpdateDataRoleT = Aws::String>
+    UpdateWirelessGatewayTaskCreate& WithUpdateDataRole(UpdateDataRoleT&& value) { SetUpdateDataRole(std::forward<UpdateDataRoleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The properties that relate to the LoRaWAN wireless gateway.</p>
      */
-    inline const LoRaWANUpdateGatewayTaskCreate& GetLoRaWAN() const{ return m_loRaWAN; }
+    inline const LoRaWANUpdateGatewayTaskCreate& GetLoRaWAN() const { return m_loRaWAN; }
     inline bool LoRaWANHasBeenSet() const { return m_loRaWANHasBeenSet; }
-    inline void SetLoRaWAN(const LoRaWANUpdateGatewayTaskCreate& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = value; }
-    inline void SetLoRaWAN(LoRaWANUpdateGatewayTaskCreate&& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = std::move(value); }
-    inline UpdateWirelessGatewayTaskCreate& WithLoRaWAN(const LoRaWANUpdateGatewayTaskCreate& value) { SetLoRaWAN(value); return *this;}
-    inline UpdateWirelessGatewayTaskCreate& WithLoRaWAN(LoRaWANUpdateGatewayTaskCreate&& value) { SetLoRaWAN(std::move(value)); return *this;}
+    template<typename LoRaWANT = LoRaWANUpdateGatewayTaskCreate>
+    void SetLoRaWAN(LoRaWANT&& value) { m_loRaWANHasBeenSet = true; m_loRaWAN = std::forward<LoRaWANT>(value); }
+    template<typename LoRaWANT = LoRaWANUpdateGatewayTaskCreate>
+    UpdateWirelessGatewayTaskCreate& WithLoRaWAN(LoRaWANT&& value) { SetLoRaWAN(std::forward<LoRaWANT>(value)); return *this;}
     ///@}
   private:
 

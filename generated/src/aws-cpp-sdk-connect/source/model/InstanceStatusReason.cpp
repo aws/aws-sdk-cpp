@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-InstanceStatusReason::InstanceStatusReason() : 
-    m_messageHasBeenSet(false)
-{
-}
-
 InstanceStatusReason::InstanceStatusReason(JsonView jsonValue)
-  : InstanceStatusReason()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InstanceStatusReason& InstanceStatusReason::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class ListAnomaliesForInsightFilters
   {
   public:
-    AWS_DEVOPSGURU_API ListAnomaliesForInsightFilters();
+    AWS_DEVOPSGURU_API ListAnomaliesForInsightFilters() = default;
     AWS_DEVOPSGURU_API ListAnomaliesForInsightFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API ListAnomaliesForInsightFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const ServiceCollection& GetServiceCollection() const{ return m_serviceCollection; }
+    inline const ServiceCollection& GetServiceCollection() const { return m_serviceCollection; }
     inline bool ServiceCollectionHasBeenSet() const { return m_serviceCollectionHasBeenSet; }
-    inline void SetServiceCollection(const ServiceCollection& value) { m_serviceCollectionHasBeenSet = true; m_serviceCollection = value; }
-    inline void SetServiceCollection(ServiceCollection&& value) { m_serviceCollectionHasBeenSet = true; m_serviceCollection = std::move(value); }
-    inline ListAnomaliesForInsightFilters& WithServiceCollection(const ServiceCollection& value) { SetServiceCollection(value); return *this;}
-    inline ListAnomaliesForInsightFilters& WithServiceCollection(ServiceCollection&& value) { SetServiceCollection(std::move(value)); return *this;}
+    template<typename ServiceCollectionT = ServiceCollection>
+    void SetServiceCollection(ServiceCollectionT&& value) { m_serviceCollectionHasBeenSet = true; m_serviceCollection = std::forward<ServiceCollectionT>(value); }
+    template<typename ServiceCollectionT = ServiceCollection>
+    ListAnomaliesForInsightFilters& WithServiceCollection(ServiceCollectionT&& value) { SetServiceCollection(std::forward<ServiceCollectionT>(value)); return *this;}
     ///@}
   private:
 

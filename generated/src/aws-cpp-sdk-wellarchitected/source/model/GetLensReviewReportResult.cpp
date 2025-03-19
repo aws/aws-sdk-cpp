@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetLensReviewReportResult::GetLensReviewReportResult() : 
-    m_milestoneNumber(0)
-{
-}
-
 GetLensReviewReportResult::GetLensReviewReportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetLensReviewReportResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ GetLensReviewReportResult& GetLensReviewReportResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("WorkloadId"))
   {
     m_workloadId = jsonValue.GetString("WorkloadId");
-
+    m_workloadIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MilestoneNumber"))
   {
     m_milestoneNumber = jsonValue.GetInteger("MilestoneNumber");
-
+    m_milestoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LensReviewReport"))
   {
     m_lensReviewReport = jsonValue.GetObject("LensReviewReport");
-
+    m_lensReviewReportHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

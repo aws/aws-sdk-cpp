@@ -18,18 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-CustomMessageActivity::CustomMessageActivity() : 
-    m_deliveryUriHasBeenSet(false),
-    m_endpointTypesHasBeenSet(false),
-    m_messageConfigHasBeenSet(false),
-    m_nextActivityHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_templateVersionHasBeenSet(false)
-{
-}
-
 CustomMessageActivity::CustomMessageActivity(JsonView jsonValue)
-  : CustomMessageActivity()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ CustomMessageActivity& CustomMessageActivity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DeliveryUri"))
   {
     m_deliveryUri = jsonValue.GetString("DeliveryUri");
-
     m_deliveryUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointTypes"))
   {
     Aws::Utils::Array<JsonView> endpointTypesJsonList = jsonValue.GetArray("EndpointTypes");
@@ -52,35 +39,26 @@ CustomMessageActivity& CustomMessageActivity::operator =(JsonView jsonValue)
     }
     m_endpointTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageConfig"))
   {
     m_messageConfig = jsonValue.GetObject("MessageConfig");
-
     m_messageConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextActivity"))
   {
     m_nextActivity = jsonValue.GetString("NextActivity");
-
     m_nextActivityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateName"))
   {
     m_templateName = jsonValue.GetString("TemplateName");
-
     m_templateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateVersion"))
   {
     m_templateVersion = jsonValue.GetString("TemplateVersion");
-
     m_templateVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

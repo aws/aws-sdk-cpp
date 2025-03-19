@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateDomainUnitResult::UpdateDomainUnitResult()
-{
-}
-
 UpdateDomainUnitResult::UpdateDomainUnitResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,51 +28,43 @@ UpdateDomainUnitResult& UpdateDomainUnitResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
+    m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainId"))
   {
     m_domainId = jsonValue.GetString("domainId");
-
+    m_domainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
-
+    m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedBy"))
   {
     m_lastUpdatedBy = jsonValue.GetString("lastUpdatedBy");
-
+    m_lastUpdatedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owners"))
   {
     Aws::Utils::Array<JsonView> ownersJsonList = jsonValue.GetArray("owners");
@@ -84,20 +72,20 @@ UpdateDomainUnitResult& UpdateDomainUnitResult::operator =(const Aws::AmazonWebS
     {
       m_owners.push_back(ownersJsonList[ownersIndex].AsObject());
     }
+    m_ownersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parentDomainUnitId"))
   {
     m_parentDomainUnitId = jsonValue.GetString("parentDomainUnitId");
-
+    m_parentDomainUnitIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-DuplicateConditionExpressionFlowValidationDetails::DuplicateConditionExpressionFlowValidationDetails() : 
-    m_expressionHasBeenSet(false),
-    m_nodeHasBeenSet(false)
-{
-}
-
 DuplicateConditionExpressionFlowValidationDetails::DuplicateConditionExpressionFlowValidationDetails(JsonView jsonValue)
-  : DuplicateConditionExpressionFlowValidationDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DuplicateConditionExpressionFlowValidationDetails& DuplicateConditionExpressionF
   if(jsonValue.ValueExists("expression"))
   {
     m_expression = jsonValue.GetString("expression");
-
     m_expressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("node"))
   {
     m_node = jsonValue.GetString("node");
-
     m_nodeHasBeenSet = true;
   }
-
   return *this;
 }
 

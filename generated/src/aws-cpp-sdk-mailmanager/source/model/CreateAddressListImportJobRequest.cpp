@@ -12,15 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAddressListImportJobRequest::CreateAddressListImportJobRequest() : 
-    m_addressListIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_importDataFormatHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String CreateAddressListImportJobRequest::SerializePayload() const
 {
   JsonValue payload;

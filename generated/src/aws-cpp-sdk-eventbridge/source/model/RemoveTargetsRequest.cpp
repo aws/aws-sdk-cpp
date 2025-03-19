@@ -12,15 +12,6 @@ using namespace Aws::EventBridge::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveTargetsRequest::RemoveTargetsRequest() : 
-    m_ruleHasBeenSet(false),
-    m_eventBusNameHasBeenSet(false),
-    m_idsHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false)
-{
-}
-
 Aws::String RemoveTargetsRequest::SerializePayload() const
 {
   JsonValue payload;

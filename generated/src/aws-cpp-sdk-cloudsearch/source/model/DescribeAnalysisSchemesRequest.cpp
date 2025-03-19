@@ -10,14 +10,6 @@
 using namespace Aws::CloudSearch::Model;
 using namespace Aws::Utils;
 
-DescribeAnalysisSchemesRequest::DescribeAnalysisSchemesRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_analysisSchemeNamesHasBeenSet(false),
-    m_deployed(false),
-    m_deployedHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAnalysisSchemesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

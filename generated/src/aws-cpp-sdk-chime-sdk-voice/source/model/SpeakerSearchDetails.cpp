@@ -18,14 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-SpeakerSearchDetails::SpeakerSearchDetails() : 
-    m_resultsHasBeenSet(false),
-    m_voiceprintGenerationStatusHasBeenSet(false)
-{
-}
-
 SpeakerSearchDetails::SpeakerSearchDetails(JsonView jsonValue)
-  : SpeakerSearchDetails()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ SpeakerSearchDetails& SpeakerSearchDetails::operator =(JsonView jsonValue)
     }
     m_resultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VoiceprintGenerationStatus"))
   {
     m_voiceprintGenerationStatus = jsonValue.GetString("VoiceprintGenerationStatus");
-
     m_voiceprintGenerationStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

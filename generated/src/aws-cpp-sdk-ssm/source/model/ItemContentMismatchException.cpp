@@ -18,14 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ItemContentMismatchException::ItemContentMismatchException() : 
-    m_typeNameHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ItemContentMismatchException::ItemContentMismatchException(JsonView jsonValue)
-  : ItemContentMismatchException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ItemContentMismatchException& ItemContentMismatchException::operator =(JsonView 
   if(jsonValue.ValueExists("TypeName"))
   {
     m_typeName = jsonValue.GetString("TypeName");
-
     m_typeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

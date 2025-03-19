@@ -10,12 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-DeregisterTargetsRequest::DeregisterTargetsRequest() : 
-    m_targetGroupArnHasBeenSet(false),
-    m_targetsHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterTargetsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

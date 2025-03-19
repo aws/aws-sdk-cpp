@@ -18,15 +18,7 @@ namespace Inspector
 namespace Model
 {
 
-AssessmentRunStateChange::AssessmentRunStateChange() : 
-    m_stateChangedAtHasBeenSet(false),
-    m_state(AssessmentRunState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 AssessmentRunStateChange::AssessmentRunStateChange(JsonView jsonValue)
-  : AssessmentRunStateChange()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AssessmentRunStateChange& AssessmentRunStateChange::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("stateChangedAt"))
   {
     m_stateChangedAt = jsonValue.GetDouble("stateChangedAt");
-
     m_stateChangedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = AssessmentRunStateMapper::GetAssessmentRunStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   return *this;
 }
 

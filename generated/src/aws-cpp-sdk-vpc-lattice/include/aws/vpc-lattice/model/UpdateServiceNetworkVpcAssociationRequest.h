@@ -22,7 +22,7 @@ namespace Model
   class UpdateServiceNetworkVpcAssociationRequest : public VPCLatticeRequest
   {
   public:
-    AWS_VPCLATTICE_API UpdateServiceNetworkVpcAssociationRequest();
+    AWS_VPCLATTICE_API UpdateServiceNetworkVpcAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,29 +37,26 @@ namespace Model
     /**
      * <p>The IDs of the security groups.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-    inline UpdateServiceNetworkVpcAssociationRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline UpdateServiceNetworkVpcAssociationRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline UpdateServiceNetworkVpcAssociationRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-    inline UpdateServiceNetworkVpcAssociationRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline UpdateServiceNetworkVpcAssociationRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    UpdateServiceNetworkVpcAssociationRequest& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    UpdateServiceNetworkVpcAssociationRequest& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID or ARN of the association.</p>
      */
-    inline const Aws::String& GetServiceNetworkVpcAssociationIdentifier() const{ return m_serviceNetworkVpcAssociationIdentifier; }
+    inline const Aws::String& GetServiceNetworkVpcAssociationIdentifier() const { return m_serviceNetworkVpcAssociationIdentifier; }
     inline bool ServiceNetworkVpcAssociationIdentifierHasBeenSet() const { return m_serviceNetworkVpcAssociationIdentifierHasBeenSet; }
-    inline void SetServiceNetworkVpcAssociationIdentifier(const Aws::String& value) { m_serviceNetworkVpcAssociationIdentifierHasBeenSet = true; m_serviceNetworkVpcAssociationIdentifier = value; }
-    inline void SetServiceNetworkVpcAssociationIdentifier(Aws::String&& value) { m_serviceNetworkVpcAssociationIdentifierHasBeenSet = true; m_serviceNetworkVpcAssociationIdentifier = std::move(value); }
-    inline void SetServiceNetworkVpcAssociationIdentifier(const char* value) { m_serviceNetworkVpcAssociationIdentifierHasBeenSet = true; m_serviceNetworkVpcAssociationIdentifier.assign(value); }
-    inline UpdateServiceNetworkVpcAssociationRequest& WithServiceNetworkVpcAssociationIdentifier(const Aws::String& value) { SetServiceNetworkVpcAssociationIdentifier(value); return *this;}
-    inline UpdateServiceNetworkVpcAssociationRequest& WithServiceNetworkVpcAssociationIdentifier(Aws::String&& value) { SetServiceNetworkVpcAssociationIdentifier(std::move(value)); return *this;}
-    inline UpdateServiceNetworkVpcAssociationRequest& WithServiceNetworkVpcAssociationIdentifier(const char* value) { SetServiceNetworkVpcAssociationIdentifier(value); return *this;}
+    template<typename ServiceNetworkVpcAssociationIdentifierT = Aws::String>
+    void SetServiceNetworkVpcAssociationIdentifier(ServiceNetworkVpcAssociationIdentifierT&& value) { m_serviceNetworkVpcAssociationIdentifierHasBeenSet = true; m_serviceNetworkVpcAssociationIdentifier = std::forward<ServiceNetworkVpcAssociationIdentifierT>(value); }
+    template<typename ServiceNetworkVpcAssociationIdentifierT = Aws::String>
+    UpdateServiceNetworkVpcAssociationRequest& WithServiceNetworkVpcAssociationIdentifier(ServiceNetworkVpcAssociationIdentifierT&& value) { SetServiceNetworkVpcAssociationIdentifier(std::forward<ServiceNetworkVpcAssociationIdentifierT>(value)); return *this;}
     ///@}
   private:
 

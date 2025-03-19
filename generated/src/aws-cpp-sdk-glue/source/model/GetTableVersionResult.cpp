@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTableVersionResult::GetTableVersionResult()
-{
-}
-
 GetTableVersionResult::GetTableVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetTableVersionResult& GetTableVersionResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("TableVersion"))
   {
     m_tableVersion = jsonValue.GetObject("TableVersion");
-
+    m_tableVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

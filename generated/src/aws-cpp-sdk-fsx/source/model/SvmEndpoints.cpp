@@ -18,16 +18,7 @@ namespace FSx
 namespace Model
 {
 
-SvmEndpoints::SvmEndpoints() : 
-    m_iscsiHasBeenSet(false),
-    m_managementHasBeenSet(false),
-    m_nfsHasBeenSet(false),
-    m_smbHasBeenSet(false)
-{
-}
-
 SvmEndpoints::SvmEndpoints(JsonView jsonValue)
-  : SvmEndpoints()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ SvmEndpoints& SvmEndpoints::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Iscsi"))
   {
     m_iscsi = jsonValue.GetObject("Iscsi");
-
     m_iscsiHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Management"))
   {
     m_management = jsonValue.GetObject("Management");
-
     m_managementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Nfs"))
   {
     m_nfs = jsonValue.GetObject("Nfs");
-
     m_nfsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Smb"))
   {
     m_smb = jsonValue.GetObject("Smb");
-
     m_smbHasBeenSet = true;
   }
-
   return *this;
 }
 

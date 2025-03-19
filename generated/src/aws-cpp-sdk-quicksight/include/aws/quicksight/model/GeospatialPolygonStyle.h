@@ -31,7 +31,7 @@ namespace Model
   class GeospatialPolygonStyle
   {
   public:
-    AWS_QUICKSIGHT_API GeospatialPolygonStyle();
+    AWS_QUICKSIGHT_API GeospatialPolygonStyle() = default;
     AWS_QUICKSIGHT_API GeospatialPolygonStyle(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GeospatialPolygonStyle& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The polygon symbol style for a polygon layer.</p>
      */
-    inline const GeospatialPolygonSymbolStyle& GetPolygonSymbolStyle() const{ return m_polygonSymbolStyle; }
+    inline const GeospatialPolygonSymbolStyle& GetPolygonSymbolStyle() const { return m_polygonSymbolStyle; }
     inline bool PolygonSymbolStyleHasBeenSet() const { return m_polygonSymbolStyleHasBeenSet; }
-    inline void SetPolygonSymbolStyle(const GeospatialPolygonSymbolStyle& value) { m_polygonSymbolStyleHasBeenSet = true; m_polygonSymbolStyle = value; }
-    inline void SetPolygonSymbolStyle(GeospatialPolygonSymbolStyle&& value) { m_polygonSymbolStyleHasBeenSet = true; m_polygonSymbolStyle = std::move(value); }
-    inline GeospatialPolygonStyle& WithPolygonSymbolStyle(const GeospatialPolygonSymbolStyle& value) { SetPolygonSymbolStyle(value); return *this;}
-    inline GeospatialPolygonStyle& WithPolygonSymbolStyle(GeospatialPolygonSymbolStyle&& value) { SetPolygonSymbolStyle(std::move(value)); return *this;}
+    template<typename PolygonSymbolStyleT = GeospatialPolygonSymbolStyle>
+    void SetPolygonSymbolStyle(PolygonSymbolStyleT&& value) { m_polygonSymbolStyleHasBeenSet = true; m_polygonSymbolStyle = std::forward<PolygonSymbolStyleT>(value); }
+    template<typename PolygonSymbolStyleT = GeospatialPolygonSymbolStyle>
+    GeospatialPolygonStyle& WithPolygonSymbolStyle(PolygonSymbolStyleT&& value) { SetPolygonSymbolStyle(std::forward<PolygonSymbolStyleT>(value)); return *this;}
     ///@}
   private:
 

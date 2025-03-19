@@ -34,7 +34,7 @@ namespace Model
   class UpdateApplicationVersionResult
   {
   public:
-    AWS_ELASTICBEANSTALK_API UpdateApplicationVersionResult();
+    AWS_ELASTICBEANSTALK_API UpdateApplicationVersionResult() = default;
     AWS_ELASTICBEANSTALK_API UpdateApplicationVersionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICBEANSTALK_API UpdateApplicationVersionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -43,26 +43,28 @@ namespace Model
     /**
      * <p> The <a>ApplicationVersionDescription</a> of the application version. </p>
      */
-    inline const ApplicationVersionDescription& GetApplicationVersion() const{ return m_applicationVersion; }
-    inline void SetApplicationVersion(const ApplicationVersionDescription& value) { m_applicationVersion = value; }
-    inline void SetApplicationVersion(ApplicationVersionDescription&& value) { m_applicationVersion = std::move(value); }
-    inline UpdateApplicationVersionResult& WithApplicationVersion(const ApplicationVersionDescription& value) { SetApplicationVersion(value); return *this;}
-    inline UpdateApplicationVersionResult& WithApplicationVersion(ApplicationVersionDescription&& value) { SetApplicationVersion(std::move(value)); return *this;}
+    inline const ApplicationVersionDescription& GetApplicationVersion() const { return m_applicationVersion; }
+    template<typename ApplicationVersionT = ApplicationVersionDescription>
+    void SetApplicationVersion(ApplicationVersionT&& value) { m_applicationVersionHasBeenSet = true; m_applicationVersion = std::forward<ApplicationVersionT>(value); }
+    template<typename ApplicationVersionT = ApplicationVersionDescription>
+    UpdateApplicationVersionResult& WithApplicationVersion(ApplicationVersionT&& value) { SetApplicationVersion(std::forward<ApplicationVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline UpdateApplicationVersionResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline UpdateApplicationVersionResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    UpdateApplicationVersionResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     ApplicationVersionDescription m_applicationVersion;
+    bool m_applicationVersionHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

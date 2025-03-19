@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-RecipeReference::RecipeReference() : 
-    m_recipeArnHasBeenSet(false),
-    m_recipeVersionHasBeenSet(false)
-{
-}
-
 RecipeReference::RecipeReference(JsonView jsonValue)
-  : RecipeReference()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RecipeReference& RecipeReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RecipeArn"))
   {
     m_recipeArn = jsonValue.GetString("RecipeArn");
-
     m_recipeArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecipeVersion"))
   {
     m_recipeVersion = jsonValue.GetString("RecipeVersion");
-
     m_recipeVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

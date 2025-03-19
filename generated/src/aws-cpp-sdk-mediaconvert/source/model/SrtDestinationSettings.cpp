@@ -18,14 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-SrtDestinationSettings::SrtDestinationSettings() : 
-    m_stylePassthrough(SrtStylePassthrough::NOT_SET),
-    m_stylePassthroughHasBeenSet(false)
-{
-}
-
 SrtDestinationSettings::SrtDestinationSettings(JsonView jsonValue)
-  : SrtDestinationSettings()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ SrtDestinationSettings& SrtDestinationSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("stylePassthrough"))
   {
     m_stylePassthrough = SrtStylePassthroughMapper::GetSrtStylePassthroughForName(jsonValue.GetString("stylePassthrough"));
-
     m_stylePassthroughHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,12 +12,6 @@ using namespace Aws::KinesisVideo::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeImageGenerationConfigurationRequest::DescribeImageGenerationConfigurationRequest() : 
-    m_streamNameHasBeenSet(false),
-    m_streamARNHasBeenSet(false)
-{
-}
-
 Aws::String DescribeImageGenerationConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

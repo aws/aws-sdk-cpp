@@ -18,17 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-CompositedVideoArtifactsConfiguration::CompositedVideoArtifactsConfiguration() : 
-    m_layout(LayoutOption::NOT_SET),
-    m_layoutHasBeenSet(false),
-    m_resolution(ResolutionOption::NOT_SET),
-    m_resolutionHasBeenSet(false),
-    m_gridViewConfigurationHasBeenSet(false)
-{
-}
-
 CompositedVideoArtifactsConfiguration::CompositedVideoArtifactsConfiguration(JsonView jsonValue)
-  : CompositedVideoArtifactsConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ CompositedVideoArtifactsConfiguration& CompositedVideoArtifactsConfiguration::op
   if(jsonValue.ValueExists("Layout"))
   {
     m_layout = LayoutOptionMapper::GetLayoutOptionForName(jsonValue.GetString("Layout"));
-
     m_layoutHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Resolution"))
   {
     m_resolution = ResolutionOptionMapper::GetResolutionOptionForName(jsonValue.GetString("Resolution"));
-
     m_resolutionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GridViewConfiguration"))
   {
     m_gridViewConfiguration = jsonValue.GetObject("GridViewConfiguration");
-
     m_gridViewConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,15 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-ServerlessCacheConfiguration::ServerlessCacheConfiguration() : 
-    m_serverlessCacheNameHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_majorEngineVersionHasBeenSet(false)
-{
-}
-
 ServerlessCacheConfiguration::ServerlessCacheConfiguration(const XmlNode& xmlNode)
-  : ServerlessCacheConfiguration()
 {
   *this = xmlNode;
 }

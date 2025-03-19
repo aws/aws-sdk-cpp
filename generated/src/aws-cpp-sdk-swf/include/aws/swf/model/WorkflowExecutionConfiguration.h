@@ -36,7 +36,7 @@ namespace Model
   class WorkflowExecutionConfiguration
   {
   public:
-    AWS_SWF_API WorkflowExecutionConfiguration();
+    AWS_SWF_API WorkflowExecutionConfiguration() = default;
     AWS_SWF_API WorkflowExecutionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API WorkflowExecutionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SWF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited
      * duration.</p>
      */
-    inline const Aws::String& GetTaskStartToCloseTimeout() const{ return m_taskStartToCloseTimeout; }
+    inline const Aws::String& GetTaskStartToCloseTimeout() const { return m_taskStartToCloseTimeout; }
     inline bool TaskStartToCloseTimeoutHasBeenSet() const { return m_taskStartToCloseTimeoutHasBeenSet; }
-    inline void SetTaskStartToCloseTimeout(const Aws::String& value) { m_taskStartToCloseTimeoutHasBeenSet = true; m_taskStartToCloseTimeout = value; }
-    inline void SetTaskStartToCloseTimeout(Aws::String&& value) { m_taskStartToCloseTimeoutHasBeenSet = true; m_taskStartToCloseTimeout = std::move(value); }
-    inline void SetTaskStartToCloseTimeout(const char* value) { m_taskStartToCloseTimeoutHasBeenSet = true; m_taskStartToCloseTimeout.assign(value); }
-    inline WorkflowExecutionConfiguration& WithTaskStartToCloseTimeout(const Aws::String& value) { SetTaskStartToCloseTimeout(value); return *this;}
-    inline WorkflowExecutionConfiguration& WithTaskStartToCloseTimeout(Aws::String&& value) { SetTaskStartToCloseTimeout(std::move(value)); return *this;}
-    inline WorkflowExecutionConfiguration& WithTaskStartToCloseTimeout(const char* value) { SetTaskStartToCloseTimeout(value); return *this;}
+    template<typename TaskStartToCloseTimeoutT = Aws::String>
+    void SetTaskStartToCloseTimeout(TaskStartToCloseTimeoutT&& value) { m_taskStartToCloseTimeoutHasBeenSet = true; m_taskStartToCloseTimeout = std::forward<TaskStartToCloseTimeoutT>(value); }
+    template<typename TaskStartToCloseTimeoutT = Aws::String>
+    WorkflowExecutionConfiguration& WithTaskStartToCloseTimeout(TaskStartToCloseTimeoutT&& value) { SetTaskStartToCloseTimeout(std::forward<TaskStartToCloseTimeoutT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * specified in seconds, an integer greater than or equal to <code>0</code>. You
      * can use <code>NONE</code> to specify unlimited duration.</p>
      */
-    inline const Aws::String& GetExecutionStartToCloseTimeout() const{ return m_executionStartToCloseTimeout; }
+    inline const Aws::String& GetExecutionStartToCloseTimeout() const { return m_executionStartToCloseTimeout; }
     inline bool ExecutionStartToCloseTimeoutHasBeenSet() const { return m_executionStartToCloseTimeoutHasBeenSet; }
-    inline void SetExecutionStartToCloseTimeout(const Aws::String& value) { m_executionStartToCloseTimeoutHasBeenSet = true; m_executionStartToCloseTimeout = value; }
-    inline void SetExecutionStartToCloseTimeout(Aws::String&& value) { m_executionStartToCloseTimeoutHasBeenSet = true; m_executionStartToCloseTimeout = std::move(value); }
-    inline void SetExecutionStartToCloseTimeout(const char* value) { m_executionStartToCloseTimeoutHasBeenSet = true; m_executionStartToCloseTimeout.assign(value); }
-    inline WorkflowExecutionConfiguration& WithExecutionStartToCloseTimeout(const Aws::String& value) { SetExecutionStartToCloseTimeout(value); return *this;}
-    inline WorkflowExecutionConfiguration& WithExecutionStartToCloseTimeout(Aws::String&& value) { SetExecutionStartToCloseTimeout(std::move(value)); return *this;}
-    inline WorkflowExecutionConfiguration& WithExecutionStartToCloseTimeout(const char* value) { SetExecutionStartToCloseTimeout(value); return *this;}
+    template<typename ExecutionStartToCloseTimeoutT = Aws::String>
+    void SetExecutionStartToCloseTimeout(ExecutionStartToCloseTimeoutT&& value) { m_executionStartToCloseTimeoutHasBeenSet = true; m_executionStartToCloseTimeout = std::forward<ExecutionStartToCloseTimeoutT>(value); }
+    template<typename ExecutionStartToCloseTimeoutT = Aws::String>
+    WorkflowExecutionConfiguration& WithExecutionStartToCloseTimeout(ExecutionStartToCloseTimeoutT&& value) { SetExecutionStartToCloseTimeout(std::forward<ExecutionStartToCloseTimeoutT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,12 +76,12 @@ namespace Model
      * <p>The task list used for the decision tasks generated for this workflow
      * execution.</p>
      */
-    inline const TaskList& GetTaskList() const{ return m_taskList; }
+    inline const TaskList& GetTaskList() const { return m_taskList; }
     inline bool TaskListHasBeenSet() const { return m_taskListHasBeenSet; }
-    inline void SetTaskList(const TaskList& value) { m_taskListHasBeenSet = true; m_taskList = value; }
-    inline void SetTaskList(TaskList&& value) { m_taskListHasBeenSet = true; m_taskList = std::move(value); }
-    inline WorkflowExecutionConfiguration& WithTaskList(const TaskList& value) { SetTaskList(value); return *this;}
-    inline WorkflowExecutionConfiguration& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
+    template<typename TaskListT = TaskList>
+    void SetTaskList(TaskListT&& value) { m_taskListHasBeenSet = true; m_taskList = std::forward<TaskListT>(value); }
+    template<typename TaskListT = TaskList>
+    WorkflowExecutionConfiguration& WithTaskList(TaskListT&& value) { SetTaskList(std::forward<TaskListT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +94,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetTaskPriority() const{ return m_taskPriority; }
+    inline const Aws::String& GetTaskPriority() const { return m_taskPriority; }
     inline bool TaskPriorityHasBeenSet() const { return m_taskPriorityHasBeenSet; }
-    inline void SetTaskPriority(const Aws::String& value) { m_taskPriorityHasBeenSet = true; m_taskPriority = value; }
-    inline void SetTaskPriority(Aws::String&& value) { m_taskPriorityHasBeenSet = true; m_taskPriority = std::move(value); }
-    inline void SetTaskPriority(const char* value) { m_taskPriorityHasBeenSet = true; m_taskPriority.assign(value); }
-    inline WorkflowExecutionConfiguration& WithTaskPriority(const Aws::String& value) { SetTaskPriority(value); return *this;}
-    inline WorkflowExecutionConfiguration& WithTaskPriority(Aws::String&& value) { SetTaskPriority(std::move(value)); return *this;}
-    inline WorkflowExecutionConfiguration& WithTaskPriority(const char* value) { SetTaskPriority(value); return *this;}
+    template<typename TaskPriorityT = Aws::String>
+    void SetTaskPriority(TaskPriorityT&& value) { m_taskPriorityHasBeenSet = true; m_taskPriority = std::forward<TaskPriorityT>(value); }
+    template<typename TaskPriorityT = Aws::String>
+    WorkflowExecutionConfiguration& WithTaskPriority(TaskPriorityT&& value) { SetTaskPriority(std::forward<TaskPriorityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -121,26 +115,22 @@ namespace Model
      * with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken.
      * The child executions continue to run.</p> </li> </ul>
      */
-    inline const ChildPolicy& GetChildPolicy() const{ return m_childPolicy; }
+    inline ChildPolicy GetChildPolicy() const { return m_childPolicy; }
     inline bool ChildPolicyHasBeenSet() const { return m_childPolicyHasBeenSet; }
-    inline void SetChildPolicy(const ChildPolicy& value) { m_childPolicyHasBeenSet = true; m_childPolicy = value; }
-    inline void SetChildPolicy(ChildPolicy&& value) { m_childPolicyHasBeenSet = true; m_childPolicy = std::move(value); }
-    inline WorkflowExecutionConfiguration& WithChildPolicy(const ChildPolicy& value) { SetChildPolicy(value); return *this;}
-    inline WorkflowExecutionConfiguration& WithChildPolicy(ChildPolicy&& value) { SetChildPolicy(std::move(value)); return *this;}
+    inline void SetChildPolicy(ChildPolicy value) { m_childPolicyHasBeenSet = true; m_childPolicy = value; }
+    inline WorkflowExecutionConfiguration& WithChildPolicy(ChildPolicy value) { SetChildPolicy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IAM role attached to the child workflow execution.</p>
      */
-    inline const Aws::String& GetLambdaRole() const{ return m_lambdaRole; }
+    inline const Aws::String& GetLambdaRole() const { return m_lambdaRole; }
     inline bool LambdaRoleHasBeenSet() const { return m_lambdaRoleHasBeenSet; }
-    inline void SetLambdaRole(const Aws::String& value) { m_lambdaRoleHasBeenSet = true; m_lambdaRole = value; }
-    inline void SetLambdaRole(Aws::String&& value) { m_lambdaRoleHasBeenSet = true; m_lambdaRole = std::move(value); }
-    inline void SetLambdaRole(const char* value) { m_lambdaRoleHasBeenSet = true; m_lambdaRole.assign(value); }
-    inline WorkflowExecutionConfiguration& WithLambdaRole(const Aws::String& value) { SetLambdaRole(value); return *this;}
-    inline WorkflowExecutionConfiguration& WithLambdaRole(Aws::String&& value) { SetLambdaRole(std::move(value)); return *this;}
-    inline WorkflowExecutionConfiguration& WithLambdaRole(const char* value) { SetLambdaRole(value); return *this;}
+    template<typename LambdaRoleT = Aws::String>
+    void SetLambdaRole(LambdaRoleT&& value) { m_lambdaRoleHasBeenSet = true; m_lambdaRole = std::forward<LambdaRoleT>(value); }
+    template<typename LambdaRoleT = Aws::String>
+    WorkflowExecutionConfiguration& WithLambdaRole(LambdaRoleT&& value) { SetLambdaRole(std::forward<LambdaRoleT>(value)); return *this;}
     ///@}
   private:
 
@@ -156,7 +146,7 @@ namespace Model
     Aws::String m_taskPriority;
     bool m_taskPriorityHasBeenSet = false;
 
-    ChildPolicy m_childPolicy;
+    ChildPolicy m_childPolicy{ChildPolicy::NOT_SET};
     bool m_childPolicyHasBeenSet = false;
 
     Aws::String m_lambdaRole;

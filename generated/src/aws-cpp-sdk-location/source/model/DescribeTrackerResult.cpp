@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTrackerResult::DescribeTrackerResult() : 
-    m_positionFiltering(PositionFiltering::NOT_SET),
-    m_eventBridgeEnabled(false),
-    m_kmsKeyEnableGeospatialQueries(false)
-{
-}
-
 DescribeTrackerResult::DescribeTrackerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeTrackerResult()
 {
   *this = result;
 }
@@ -36,21 +28,18 @@ DescribeTrackerResult& DescribeTrackerResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("TrackerName"))
   {
     m_trackerName = jsonValue.GetString("TrackerName");
-
+    m_trackerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrackerArn"))
   {
     m_trackerArn = jsonValue.GetString("TrackerArn");
-
+    m_trackerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
+    m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -58,50 +47,45 @@ DescribeTrackerResult& DescribeTrackerResult::operator =(const Aws::AmazonWebSer
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTime"))
   {
     m_createTime = jsonValue.GetString("CreateTime");
-
+    m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateTime"))
   {
     m_updateTime = jsonValue.GetString("UpdateTime");
-
+    m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
+    m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PositionFiltering"))
   {
     m_positionFiltering = PositionFilteringMapper::GetPositionFilteringForName(jsonValue.GetString("PositionFiltering"));
-
+    m_positionFilteringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventBridgeEnabled"))
   {
     m_eventBridgeEnabled = jsonValue.GetBool("EventBridgeEnabled");
-
+    m_eventBridgeEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyEnableGeospatialQueries"))
   {
     m_kmsKeyEnableGeospatialQueries = jsonValue.GetBool("KmsKeyEnableGeospatialQueries");
-
+    m_kmsKeyEnableGeospatialQueriesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

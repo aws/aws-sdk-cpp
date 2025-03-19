@@ -12,11 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeGameSessionPlacementRequest::DescribeGameSessionPlacementRequest() : 
-    m_placementIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeGameSessionPlacementRequest::SerializePayload() const
 {
   JsonValue payload;

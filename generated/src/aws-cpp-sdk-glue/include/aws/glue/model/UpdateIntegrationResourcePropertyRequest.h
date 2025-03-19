@@ -23,7 +23,7 @@ namespace Model
   class UpdateIntegrationResourcePropertyRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API UpdateIntegrationResourcePropertyRequest();
+    AWS_GLUE_API UpdateIntegrationResourcePropertyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,38 +40,36 @@ namespace Model
     /**
      * <p>The connection ARN of the source, or the database ARN of the target.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline UpdateIntegrationResourcePropertyRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline UpdateIntegrationResourcePropertyRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline UpdateIntegrationResourcePropertyRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    UpdateIntegrationResourcePropertyRequest& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource properties associated with the integration source.</p>
      */
-    inline const SourceProcessingProperties& GetSourceProcessingProperties() const{ return m_sourceProcessingProperties; }
+    inline const SourceProcessingProperties& GetSourceProcessingProperties() const { return m_sourceProcessingProperties; }
     inline bool SourceProcessingPropertiesHasBeenSet() const { return m_sourceProcessingPropertiesHasBeenSet; }
-    inline void SetSourceProcessingProperties(const SourceProcessingProperties& value) { m_sourceProcessingPropertiesHasBeenSet = true; m_sourceProcessingProperties = value; }
-    inline void SetSourceProcessingProperties(SourceProcessingProperties&& value) { m_sourceProcessingPropertiesHasBeenSet = true; m_sourceProcessingProperties = std::move(value); }
-    inline UpdateIntegrationResourcePropertyRequest& WithSourceProcessingProperties(const SourceProcessingProperties& value) { SetSourceProcessingProperties(value); return *this;}
-    inline UpdateIntegrationResourcePropertyRequest& WithSourceProcessingProperties(SourceProcessingProperties&& value) { SetSourceProcessingProperties(std::move(value)); return *this;}
+    template<typename SourceProcessingPropertiesT = SourceProcessingProperties>
+    void SetSourceProcessingProperties(SourceProcessingPropertiesT&& value) { m_sourceProcessingPropertiesHasBeenSet = true; m_sourceProcessingProperties = std::forward<SourceProcessingPropertiesT>(value); }
+    template<typename SourceProcessingPropertiesT = SourceProcessingProperties>
+    UpdateIntegrationResourcePropertyRequest& WithSourceProcessingProperties(SourceProcessingPropertiesT&& value) { SetSourceProcessingProperties(std::forward<SourceProcessingPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The resource properties associated with the integration target.</p>
      */
-    inline const TargetProcessingProperties& GetTargetProcessingProperties() const{ return m_targetProcessingProperties; }
+    inline const TargetProcessingProperties& GetTargetProcessingProperties() const { return m_targetProcessingProperties; }
     inline bool TargetProcessingPropertiesHasBeenSet() const { return m_targetProcessingPropertiesHasBeenSet; }
-    inline void SetTargetProcessingProperties(const TargetProcessingProperties& value) { m_targetProcessingPropertiesHasBeenSet = true; m_targetProcessingProperties = value; }
-    inline void SetTargetProcessingProperties(TargetProcessingProperties&& value) { m_targetProcessingPropertiesHasBeenSet = true; m_targetProcessingProperties = std::move(value); }
-    inline UpdateIntegrationResourcePropertyRequest& WithTargetProcessingProperties(const TargetProcessingProperties& value) { SetTargetProcessingProperties(value); return *this;}
-    inline UpdateIntegrationResourcePropertyRequest& WithTargetProcessingProperties(TargetProcessingProperties&& value) { SetTargetProcessingProperties(std::move(value)); return *this;}
+    template<typename TargetProcessingPropertiesT = TargetProcessingProperties>
+    void SetTargetProcessingProperties(TargetProcessingPropertiesT&& value) { m_targetProcessingPropertiesHasBeenSet = true; m_targetProcessingProperties = std::forward<TargetProcessingPropertiesT>(value); }
+    template<typename TargetProcessingPropertiesT = TargetProcessingProperties>
+    UpdateIntegrationResourcePropertyRequest& WithTargetProcessingProperties(TargetProcessingPropertiesT&& value) { SetTargetProcessingProperties(std::forward<TargetProcessingPropertiesT>(value)); return *this;}
     ///@}
   private:
 

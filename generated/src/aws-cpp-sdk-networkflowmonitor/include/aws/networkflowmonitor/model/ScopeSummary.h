@@ -33,7 +33,7 @@ namespace Model
   class ScopeSummary
   {
   public:
-    AWS_NETWORKFLOWMONITOR_API ScopeSummary();
+    AWS_NETWORKFLOWMONITOR_API ScopeSummary() = default;
     AWS_NETWORKFLOWMONITOR_API ScopeSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFLOWMONITOR_API ScopeSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFLOWMONITOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * results for. A scope ID is an internally-generated identifier that includes all
      * the resources for a specific root account.</p>
      */
-    inline const Aws::String& GetScopeId() const{ return m_scopeId; }
+    inline const Aws::String& GetScopeId() const { return m_scopeId; }
     inline bool ScopeIdHasBeenSet() const { return m_scopeIdHasBeenSet; }
-    inline void SetScopeId(const Aws::String& value) { m_scopeIdHasBeenSet = true; m_scopeId = value; }
-    inline void SetScopeId(Aws::String&& value) { m_scopeIdHasBeenSet = true; m_scopeId = std::move(value); }
-    inline void SetScopeId(const char* value) { m_scopeIdHasBeenSet = true; m_scopeId.assign(value); }
-    inline ScopeSummary& WithScopeId(const Aws::String& value) { SetScopeId(value); return *this;}
-    inline ScopeSummary& WithScopeId(Aws::String&& value) { SetScopeId(std::move(value)); return *this;}
-    inline ScopeSummary& WithScopeId(const char* value) { SetScopeId(value); return *this;}
+    template<typename ScopeIdT = Aws::String>
+    void SetScopeId(ScopeIdT&& value) { m_scopeIdHasBeenSet = true; m_scopeId = std::forward<ScopeIdT>(value); }
+    template<typename ScopeIdT = Aws::String>
+    ScopeSummary& WithScopeId(ScopeIdT&& value) { SetScopeId(std::forward<ScopeIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,33 +59,29 @@ namespace Model
      * the state of scope creation: <code>SUCCEEDED</code>, <code>IN_PROGRESS</code>,
      * or <code>FAILED</code>.</p>
      */
-    inline const ScopeStatus& GetStatus() const{ return m_status; }
+    inline ScopeStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ScopeStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ScopeStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ScopeSummary& WithStatus(const ScopeStatus& value) { SetStatus(value); return *this;}
-    inline ScopeSummary& WithStatus(ScopeStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ScopeStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ScopeSummary& WithStatus(ScopeStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the scope.</p>
      */
-    inline const Aws::String& GetScopeArn() const{ return m_scopeArn; }
+    inline const Aws::String& GetScopeArn() const { return m_scopeArn; }
     inline bool ScopeArnHasBeenSet() const { return m_scopeArnHasBeenSet; }
-    inline void SetScopeArn(const Aws::String& value) { m_scopeArnHasBeenSet = true; m_scopeArn = value; }
-    inline void SetScopeArn(Aws::String&& value) { m_scopeArnHasBeenSet = true; m_scopeArn = std::move(value); }
-    inline void SetScopeArn(const char* value) { m_scopeArnHasBeenSet = true; m_scopeArn.assign(value); }
-    inline ScopeSummary& WithScopeArn(const Aws::String& value) { SetScopeArn(value); return *this;}
-    inline ScopeSummary& WithScopeArn(Aws::String&& value) { SetScopeArn(std::move(value)); return *this;}
-    inline ScopeSummary& WithScopeArn(const char* value) { SetScopeArn(value); return *this;}
+    template<typename ScopeArnT = Aws::String>
+    void SetScopeArn(ScopeArnT&& value) { m_scopeArnHasBeenSet = true; m_scopeArn = std::forward<ScopeArnT>(value); }
+    template<typename ScopeArnT = Aws::String>
+    ScopeSummary& WithScopeArn(ScopeArnT&& value) { SetScopeArn(std::forward<ScopeArnT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_scopeId;
     bool m_scopeIdHasBeenSet = false;
 
-    ScopeStatus m_status;
+    ScopeStatus m_status{ScopeStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_scopeArn;

@@ -37,7 +37,7 @@ namespace Model
   class CustomerAction
   {
   public:
-    AWS_IOTEVENTSDATA_API CustomerAction();
+    AWS_IOTEVENTSDATA_API CustomerAction() = default;
     AWS_IOTEVENTSDATA_API CustomerAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTSDATA_API CustomerAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTEVENTSDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -58,76 +58,74 @@ namespace Model
      * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_AlarmState.html">AlarmState</a>
      * API.</p>
      */
-    inline const CustomerActionName& GetActionName() const{ return m_actionName; }
+    inline CustomerActionName GetActionName() const { return m_actionName; }
     inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
-    inline void SetActionName(const CustomerActionName& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
-    inline void SetActionName(CustomerActionName&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
-    inline CustomerAction& WithActionName(const CustomerActionName& value) { SetActionName(value); return *this;}
-    inline CustomerAction& WithActionName(CustomerActionName&& value) { SetActionName(std::move(value)); return *this;}
+    inline void SetActionName(CustomerActionName value) { m_actionNameHasBeenSet = true; m_actionName = value; }
+    inline CustomerAction& WithActionName(CustomerActionName value) { SetActionName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains the configuration information of a snooze action.</p>
      */
-    inline const SnoozeActionConfiguration& GetSnoozeActionConfiguration() const{ return m_snoozeActionConfiguration; }
+    inline const SnoozeActionConfiguration& GetSnoozeActionConfiguration() const { return m_snoozeActionConfiguration; }
     inline bool SnoozeActionConfigurationHasBeenSet() const { return m_snoozeActionConfigurationHasBeenSet; }
-    inline void SetSnoozeActionConfiguration(const SnoozeActionConfiguration& value) { m_snoozeActionConfigurationHasBeenSet = true; m_snoozeActionConfiguration = value; }
-    inline void SetSnoozeActionConfiguration(SnoozeActionConfiguration&& value) { m_snoozeActionConfigurationHasBeenSet = true; m_snoozeActionConfiguration = std::move(value); }
-    inline CustomerAction& WithSnoozeActionConfiguration(const SnoozeActionConfiguration& value) { SetSnoozeActionConfiguration(value); return *this;}
-    inline CustomerAction& WithSnoozeActionConfiguration(SnoozeActionConfiguration&& value) { SetSnoozeActionConfiguration(std::move(value)); return *this;}
+    template<typename SnoozeActionConfigurationT = SnoozeActionConfiguration>
+    void SetSnoozeActionConfiguration(SnoozeActionConfigurationT&& value) { m_snoozeActionConfigurationHasBeenSet = true; m_snoozeActionConfiguration = std::forward<SnoozeActionConfigurationT>(value); }
+    template<typename SnoozeActionConfigurationT = SnoozeActionConfiguration>
+    CustomerAction& WithSnoozeActionConfiguration(SnoozeActionConfigurationT&& value) { SetSnoozeActionConfiguration(std::forward<SnoozeActionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains the configuration information of an enable action.</p>
      */
-    inline const EnableActionConfiguration& GetEnableActionConfiguration() const{ return m_enableActionConfiguration; }
+    inline const EnableActionConfiguration& GetEnableActionConfiguration() const { return m_enableActionConfiguration; }
     inline bool EnableActionConfigurationHasBeenSet() const { return m_enableActionConfigurationHasBeenSet; }
-    inline void SetEnableActionConfiguration(const EnableActionConfiguration& value) { m_enableActionConfigurationHasBeenSet = true; m_enableActionConfiguration = value; }
-    inline void SetEnableActionConfiguration(EnableActionConfiguration&& value) { m_enableActionConfigurationHasBeenSet = true; m_enableActionConfiguration = std::move(value); }
-    inline CustomerAction& WithEnableActionConfiguration(const EnableActionConfiguration& value) { SetEnableActionConfiguration(value); return *this;}
-    inline CustomerAction& WithEnableActionConfiguration(EnableActionConfiguration&& value) { SetEnableActionConfiguration(std::move(value)); return *this;}
+    template<typename EnableActionConfigurationT = EnableActionConfiguration>
+    void SetEnableActionConfiguration(EnableActionConfigurationT&& value) { m_enableActionConfigurationHasBeenSet = true; m_enableActionConfiguration = std::forward<EnableActionConfigurationT>(value); }
+    template<typename EnableActionConfigurationT = EnableActionConfiguration>
+    CustomerAction& WithEnableActionConfiguration(EnableActionConfigurationT&& value) { SetEnableActionConfiguration(std::forward<EnableActionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains the configuration information of a disable action.</p>
      */
-    inline const DisableActionConfiguration& GetDisableActionConfiguration() const{ return m_disableActionConfiguration; }
+    inline const DisableActionConfiguration& GetDisableActionConfiguration() const { return m_disableActionConfiguration; }
     inline bool DisableActionConfigurationHasBeenSet() const { return m_disableActionConfigurationHasBeenSet; }
-    inline void SetDisableActionConfiguration(const DisableActionConfiguration& value) { m_disableActionConfigurationHasBeenSet = true; m_disableActionConfiguration = value; }
-    inline void SetDisableActionConfiguration(DisableActionConfiguration&& value) { m_disableActionConfigurationHasBeenSet = true; m_disableActionConfiguration = std::move(value); }
-    inline CustomerAction& WithDisableActionConfiguration(const DisableActionConfiguration& value) { SetDisableActionConfiguration(value); return *this;}
-    inline CustomerAction& WithDisableActionConfiguration(DisableActionConfiguration&& value) { SetDisableActionConfiguration(std::move(value)); return *this;}
+    template<typename DisableActionConfigurationT = DisableActionConfiguration>
+    void SetDisableActionConfiguration(DisableActionConfigurationT&& value) { m_disableActionConfigurationHasBeenSet = true; m_disableActionConfiguration = std::forward<DisableActionConfigurationT>(value); }
+    template<typename DisableActionConfigurationT = DisableActionConfiguration>
+    CustomerAction& WithDisableActionConfiguration(DisableActionConfigurationT&& value) { SetDisableActionConfiguration(std::forward<DisableActionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains the configuration information of an acknowledge action.</p>
      */
-    inline const AcknowledgeActionConfiguration& GetAcknowledgeActionConfiguration() const{ return m_acknowledgeActionConfiguration; }
+    inline const AcknowledgeActionConfiguration& GetAcknowledgeActionConfiguration() const { return m_acknowledgeActionConfiguration; }
     inline bool AcknowledgeActionConfigurationHasBeenSet() const { return m_acknowledgeActionConfigurationHasBeenSet; }
-    inline void SetAcknowledgeActionConfiguration(const AcknowledgeActionConfiguration& value) { m_acknowledgeActionConfigurationHasBeenSet = true; m_acknowledgeActionConfiguration = value; }
-    inline void SetAcknowledgeActionConfiguration(AcknowledgeActionConfiguration&& value) { m_acknowledgeActionConfigurationHasBeenSet = true; m_acknowledgeActionConfiguration = std::move(value); }
-    inline CustomerAction& WithAcknowledgeActionConfiguration(const AcknowledgeActionConfiguration& value) { SetAcknowledgeActionConfiguration(value); return *this;}
-    inline CustomerAction& WithAcknowledgeActionConfiguration(AcknowledgeActionConfiguration&& value) { SetAcknowledgeActionConfiguration(std::move(value)); return *this;}
+    template<typename AcknowledgeActionConfigurationT = AcknowledgeActionConfiguration>
+    void SetAcknowledgeActionConfiguration(AcknowledgeActionConfigurationT&& value) { m_acknowledgeActionConfigurationHasBeenSet = true; m_acknowledgeActionConfiguration = std::forward<AcknowledgeActionConfigurationT>(value); }
+    template<typename AcknowledgeActionConfigurationT = AcknowledgeActionConfiguration>
+    CustomerAction& WithAcknowledgeActionConfiguration(AcknowledgeActionConfigurationT&& value) { SetAcknowledgeActionConfiguration(std::forward<AcknowledgeActionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains the configuration information of a reset action.</p>
      */
-    inline const ResetActionConfiguration& GetResetActionConfiguration() const{ return m_resetActionConfiguration; }
+    inline const ResetActionConfiguration& GetResetActionConfiguration() const { return m_resetActionConfiguration; }
     inline bool ResetActionConfigurationHasBeenSet() const { return m_resetActionConfigurationHasBeenSet; }
-    inline void SetResetActionConfiguration(const ResetActionConfiguration& value) { m_resetActionConfigurationHasBeenSet = true; m_resetActionConfiguration = value; }
-    inline void SetResetActionConfiguration(ResetActionConfiguration&& value) { m_resetActionConfigurationHasBeenSet = true; m_resetActionConfiguration = std::move(value); }
-    inline CustomerAction& WithResetActionConfiguration(const ResetActionConfiguration& value) { SetResetActionConfiguration(value); return *this;}
-    inline CustomerAction& WithResetActionConfiguration(ResetActionConfiguration&& value) { SetResetActionConfiguration(std::move(value)); return *this;}
+    template<typename ResetActionConfigurationT = ResetActionConfiguration>
+    void SetResetActionConfiguration(ResetActionConfigurationT&& value) { m_resetActionConfigurationHasBeenSet = true; m_resetActionConfiguration = std::forward<ResetActionConfigurationT>(value); }
+    template<typename ResetActionConfigurationT = ResetActionConfiguration>
+    CustomerAction& WithResetActionConfiguration(ResetActionConfigurationT&& value) { SetResetActionConfiguration(std::forward<ResetActionConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    CustomerActionName m_actionName;
+    CustomerActionName m_actionName{CustomerActionName::NOT_SET};
     bool m_actionNameHasBeenSet = false;
 
     SnoozeActionConfiguration m_snoozeActionConfiguration;

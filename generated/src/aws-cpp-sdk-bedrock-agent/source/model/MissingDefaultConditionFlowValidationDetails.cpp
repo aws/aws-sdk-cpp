@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-MissingDefaultConditionFlowValidationDetails::MissingDefaultConditionFlowValidationDetails() : 
-    m_nodeHasBeenSet(false)
-{
-}
-
 MissingDefaultConditionFlowValidationDetails::MissingDefaultConditionFlowValidationDetails(JsonView jsonValue)
-  : MissingDefaultConditionFlowValidationDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MissingDefaultConditionFlowValidationDetails& MissingDefaultConditionFlowValidat
   if(jsonValue.ValueExists("node"))
   {
     m_node = jsonValue.GetString("node");
-
     m_nodeHasBeenSet = true;
   }
-
   return *this;
 }
 

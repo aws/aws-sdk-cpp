@@ -20,14 +20,7 @@ namespace CloudSearch
 namespace Model
 {
 
-Suggester::Suggester() : 
-    m_suggesterNameHasBeenSet(false),
-    m_documentSuggesterOptionsHasBeenSet(false)
-{
-}
-
 Suggester::Suggester(const XmlNode& xmlNode)
-  : Suggester()
 {
   *this = xmlNode;
 }

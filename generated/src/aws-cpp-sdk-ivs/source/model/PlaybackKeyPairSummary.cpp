@@ -18,15 +18,7 @@ namespace IVS
 namespace Model
 {
 
-PlaybackKeyPairSummary::PlaybackKeyPairSummary() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 PlaybackKeyPairSummary::PlaybackKeyPairSummary(JsonView jsonValue)
-  : PlaybackKeyPairSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PlaybackKeyPairSummary& PlaybackKeyPairSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -56,7 +44,6 @@ PlaybackKeyPairSummary& PlaybackKeyPairSummary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

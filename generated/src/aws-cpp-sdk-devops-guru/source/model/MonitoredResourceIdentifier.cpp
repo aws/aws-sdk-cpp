@@ -18,18 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-MonitoredResourceIdentifier::MonitoredResourceIdentifier() : 
-    m_monitoredResourceNameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_resourcePermission(ResourcePermission::NOT_SET),
-    m_resourcePermissionHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_resourceCollectionHasBeenSet(false)
-{
-}
-
 MonitoredResourceIdentifier::MonitoredResourceIdentifier(JsonView jsonValue)
-  : MonitoredResourceIdentifier()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ MonitoredResourceIdentifier& MonitoredResourceIdentifier::operator =(JsonView js
   if(jsonValue.ValueExists("MonitoredResourceName"))
   {
     m_monitoredResourceName = jsonValue.GetString("MonitoredResourceName");
-
     m_monitoredResourceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourcePermission"))
   {
     m_resourcePermission = ResourcePermissionMapper::GetResourcePermissionForName(jsonValue.GetString("ResourcePermission"));
-
     m_resourcePermissionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdated"))
   {
     m_lastUpdated = jsonValue.GetDouble("LastUpdated");
-
     m_lastUpdatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceCollection"))
   {
     m_resourceCollection = jsonValue.GetObject("ResourceCollection");
-
     m_resourceCollectionHasBeenSet = true;
   }
-
   return *this;
 }
 

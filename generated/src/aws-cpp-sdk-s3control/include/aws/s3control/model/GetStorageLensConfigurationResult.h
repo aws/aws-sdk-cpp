@@ -28,7 +28,7 @@ namespace Model
   class GetStorageLensConfigurationResult
   {
   public:
-    AWS_S3CONTROL_API GetStorageLensConfigurationResult();
+    AWS_S3CONTROL_API GetStorageLensConfigurationResult() = default;
     AWS_S3CONTROL_API GetStorageLensConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3CONTROL_API GetStorageLensConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,45 +37,44 @@ namespace Model
     /**
      * <p>The S3 Storage Lens configuration requested.</p>
      */
-    inline const StorageLensConfiguration& GetStorageLensConfiguration() const{ return m_storageLensConfiguration; }
-    inline void SetStorageLensConfiguration(const StorageLensConfiguration& value) { m_storageLensConfiguration = value; }
-    inline void SetStorageLensConfiguration(StorageLensConfiguration&& value) { m_storageLensConfiguration = std::move(value); }
-    inline GetStorageLensConfigurationResult& WithStorageLensConfiguration(const StorageLensConfiguration& value) { SetStorageLensConfiguration(value); return *this;}
-    inline GetStorageLensConfigurationResult& WithStorageLensConfiguration(StorageLensConfiguration&& value) { SetStorageLensConfiguration(std::move(value)); return *this;}
+    inline const StorageLensConfiguration& GetStorageLensConfiguration() const { return m_storageLensConfiguration; }
+    template<typename StorageLensConfigurationT = StorageLensConfiguration>
+    void SetStorageLensConfiguration(StorageLensConfigurationT&& value) { m_storageLensConfigurationHasBeenSet = true; m_storageLensConfiguration = std::forward<StorageLensConfigurationT>(value); }
+    template<typename StorageLensConfigurationT = StorageLensConfiguration>
+    GetStorageLensConfigurationResult& WithStorageLensConfiguration(StorageLensConfigurationT&& value) { SetStorageLensConfiguration(std::forward<StorageLensConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * AWS Request Id value
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetStorageLensConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetStorageLensConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetStorageLensConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetStorageLensConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * x-amz-id-2 header value, also known as Host Id
      */
-    inline const Aws::String& GetHostId() const{ return m_hostId; }
-    inline void SetHostId(const Aws::String& value) { m_hostId = value; }
-    inline void SetHostId(Aws::String&& value) { m_hostId = std::move(value); }
-    inline void SetHostId(const char* value) { m_hostId.assign(value); }
-    inline GetStorageLensConfigurationResult& WithHostId(const Aws::String& value) { SetHostId(value); return *this;}
-    inline GetStorageLensConfigurationResult& WithHostId(Aws::String&& value) { SetHostId(std::move(value)); return *this;}
-    inline GetStorageLensConfigurationResult& WithHostId(const char* value) { SetHostId(value); return *this;}
+    inline const Aws::String& GetHostId() const { return m_hostId; }
+    template<typename HostIdT = Aws::String>
+    void SetHostId(HostIdT&& value) { m_hostIdHasBeenSet = true; m_hostId = std::forward<HostIdT>(value); }
+    template<typename HostIdT = Aws::String>
+    GetStorageLensConfigurationResult& WithHostId(HostIdT&& value) { SetHostId(std::forward<HostIdT>(value)); return *this;}
     ///@}
   private:
 
     StorageLensConfiguration m_storageLensConfiguration;
+    bool m_storageLensConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     Aws::String m_hostId;
+    bool m_hostIdHasBeenSet = false;
   };
 
 } // namespace Model

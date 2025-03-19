@@ -18,16 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-GeneratedPolicyProperties::GeneratedPolicyProperties() : 
-    m_isComplete(false),
-    m_isCompleteHasBeenSet(false),
-    m_principalArnHasBeenSet(false),
-    m_cloudTrailPropertiesHasBeenSet(false)
-{
-}
-
 GeneratedPolicyProperties::GeneratedPolicyProperties(JsonView jsonValue)
-  : GeneratedPolicyProperties()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ GeneratedPolicyProperties& GeneratedPolicyProperties::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("isComplete"))
   {
     m_isComplete = jsonValue.GetBool("isComplete");
-
     m_isCompleteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principalArn"))
   {
     m_principalArn = jsonValue.GetString("principalArn");
-
     m_principalArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cloudTrailProperties"))
   {
     m_cloudTrailProperties = jsonValue.GetObject("cloudTrailProperties");
-
     m_cloudTrailPropertiesHasBeenSet = true;
   }
-
   return *this;
 }
 

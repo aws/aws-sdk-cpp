@@ -33,7 +33,7 @@ namespace Model
   class SuccessfulMonitorDeployment
   {
   public:
-    AWS_MEDIALIVE_API SuccessfulMonitorDeployment();
+    AWS_MEDIALIVE_API SuccessfulMonitorDeployment() = default;
     AWS_MEDIALIVE_API SuccessfulMonitorDeployment(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API SuccessfulMonitorDeployment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,27 @@ namespace Model
     /**
      * URI associated with a signal map's monitor deployment.
      */
-    inline const Aws::String& GetDetailsUri() const{ return m_detailsUri; }
+    inline const Aws::String& GetDetailsUri() const { return m_detailsUri; }
     inline bool DetailsUriHasBeenSet() const { return m_detailsUriHasBeenSet; }
-    inline void SetDetailsUri(const Aws::String& value) { m_detailsUriHasBeenSet = true; m_detailsUri = value; }
-    inline void SetDetailsUri(Aws::String&& value) { m_detailsUriHasBeenSet = true; m_detailsUri = std::move(value); }
-    inline void SetDetailsUri(const char* value) { m_detailsUriHasBeenSet = true; m_detailsUri.assign(value); }
-    inline SuccessfulMonitorDeployment& WithDetailsUri(const Aws::String& value) { SetDetailsUri(value); return *this;}
-    inline SuccessfulMonitorDeployment& WithDetailsUri(Aws::String&& value) { SetDetailsUri(std::move(value)); return *this;}
-    inline SuccessfulMonitorDeployment& WithDetailsUri(const char* value) { SetDetailsUri(value); return *this;}
+    template<typename DetailsUriT = Aws::String>
+    void SetDetailsUri(DetailsUriT&& value) { m_detailsUriHasBeenSet = true; m_detailsUri = std::forward<DetailsUriT>(value); }
+    template<typename DetailsUriT = Aws::String>
+    SuccessfulMonitorDeployment& WithDetailsUri(DetailsUriT&& value) { SetDetailsUri(std::forward<DetailsUriT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const SignalMapMonitorDeploymentStatus& GetStatus() const{ return m_status; }
+    inline SignalMapMonitorDeploymentStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const SignalMapMonitorDeploymentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(SignalMapMonitorDeploymentStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline SuccessfulMonitorDeployment& WithStatus(const SignalMapMonitorDeploymentStatus& value) { SetStatus(value); return *this;}
-    inline SuccessfulMonitorDeployment& WithStatus(SignalMapMonitorDeploymentStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(SignalMapMonitorDeploymentStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline SuccessfulMonitorDeployment& WithStatus(SignalMapMonitorDeploymentStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_detailsUri;
     bool m_detailsUriHasBeenSet = false;
 
-    SignalMapMonitorDeploymentStatus m_status;
+    SignalMapMonitorDeploymentStatus m_status{SignalMapMonitorDeploymentStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

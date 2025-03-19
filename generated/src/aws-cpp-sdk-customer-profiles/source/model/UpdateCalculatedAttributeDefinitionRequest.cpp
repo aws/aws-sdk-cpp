@@ -12,15 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCalculatedAttributeDefinitionRequest::UpdateCalculatedAttributeDefinitionRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_calculatedAttributeNameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_conditionsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCalculatedAttributeDefinitionRequest::SerializePayload() const
 {
   JsonValue payload;

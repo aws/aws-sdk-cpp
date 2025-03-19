@@ -22,7 +22,7 @@ namespace Model
   class GetInstanceAccessDetailsRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API GetInstanceAccessDetailsRequest();
+    AWS_LIGHTSAIL_API GetInstanceAccessDetailsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The name of the instance to access.</p>
      */
-    inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
+    inline const Aws::String& GetInstanceName() const { return m_instanceName; }
     inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
-    inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
-    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::move(value); }
-    inline void SetInstanceName(const char* value) { m_instanceNameHasBeenSet = true; m_instanceName.assign(value); }
-    inline GetInstanceAccessDetailsRequest& WithInstanceName(const Aws::String& value) { SetInstanceName(value); return *this;}
-    inline GetInstanceAccessDetailsRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(std::move(value)); return *this;}
-    inline GetInstanceAccessDetailsRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
+    template<typename InstanceNameT = Aws::String>
+    void SetInstanceName(InstanceNameT&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::forward<InstanceNameT>(value); }
+    template<typename InstanceNameT = Aws::String>
+    GetInstanceAccessDetailsRequest& WithInstanceName(InstanceNameT&& value) { SetInstanceName(std::forward<InstanceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,19 +52,17 @@ namespace Model
      * <p>The protocol to use to connect to your instance. Defaults to
      * <code>ssh</code>.</p>
      */
-    inline const InstanceAccessProtocol& GetProtocol() const{ return m_protocol; }
+    inline InstanceAccessProtocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const InstanceAccessProtocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(InstanceAccessProtocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline GetInstanceAccessDetailsRequest& WithProtocol(const InstanceAccessProtocol& value) { SetProtocol(value); return *this;}
-    inline GetInstanceAccessDetailsRequest& WithProtocol(InstanceAccessProtocol&& value) { SetProtocol(std::move(value)); return *this;}
+    inline void SetProtocol(InstanceAccessProtocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline GetInstanceAccessDetailsRequest& WithProtocol(InstanceAccessProtocol value) { SetProtocol(value); return *this;}
     ///@}
   private:
 
     Aws::String m_instanceName;
     bool m_instanceNameHasBeenSet = false;
 
-    InstanceAccessProtocol m_protocol;
+    InstanceAccessProtocol m_protocol{InstanceAccessProtocol::NOT_SET};
     bool m_protocolHasBeenSet = false;
   };
 

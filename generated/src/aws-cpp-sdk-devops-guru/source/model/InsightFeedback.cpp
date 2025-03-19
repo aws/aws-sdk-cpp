@@ -18,15 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-InsightFeedback::InsightFeedback() : 
-    m_idHasBeenSet(false),
-    m_feedback(InsightFeedbackOption::NOT_SET),
-    m_feedbackHasBeenSet(false)
-{
-}
-
 InsightFeedback::InsightFeedback(JsonView jsonValue)
-  : InsightFeedback()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ InsightFeedback& InsightFeedback::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Feedback"))
   {
     m_feedback = InsightFeedbackOptionMapper::GetInsightFeedbackOptionForName(jsonValue.GetString("Feedback"));
-
     m_feedbackHasBeenSet = true;
   }
-
   return *this;
 }
 

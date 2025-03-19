@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteFileResult::DeleteFileResult()
-{
-}
-
 DeleteFileResult::DeleteFileResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,30 @@ DeleteFileResult& DeleteFileResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("commitId"))
   {
     m_commitId = jsonValue.GetString("commitId");
-
+    m_commitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("blobId"))
   {
     m_blobId = jsonValue.GetString("blobId");
-
+    m_blobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("treeId"))
   {
     m_treeId = jsonValue.GetString("treeId");
-
+    m_treeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filePath"))
   {
     m_filePath = jsonValue.GetString("filePath");
-
+    m_filePathHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

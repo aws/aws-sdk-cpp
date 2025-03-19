@@ -12,12 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListTagsRequest::ListTagsRequest() : 
-    m_resourceIdListHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListTagsRequest::SerializePayload() const
 {
   JsonValue payload;

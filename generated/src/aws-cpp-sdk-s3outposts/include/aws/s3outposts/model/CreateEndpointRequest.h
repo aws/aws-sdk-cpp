@@ -22,7 +22,7 @@ namespace Model
   class CreateEndpointRequest : public S3OutpostsRequest
   {
   public:
-    AWS_S3OUTPOSTS_API CreateEndpointRequest();
+    AWS_S3OUTPOSTS_API CreateEndpointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
     /**
      * <p>The ID of the Outposts. </p>
      */
-    inline const Aws::String& GetOutpostId() const{ return m_outpostId; }
+    inline const Aws::String& GetOutpostId() const { return m_outpostId; }
     inline bool OutpostIdHasBeenSet() const { return m_outpostIdHasBeenSet; }
-    inline void SetOutpostId(const Aws::String& value) { m_outpostIdHasBeenSet = true; m_outpostId = value; }
-    inline void SetOutpostId(Aws::String&& value) { m_outpostIdHasBeenSet = true; m_outpostId = std::move(value); }
-    inline void SetOutpostId(const char* value) { m_outpostIdHasBeenSet = true; m_outpostId.assign(value); }
-    inline CreateEndpointRequest& WithOutpostId(const Aws::String& value) { SetOutpostId(value); return *this;}
-    inline CreateEndpointRequest& WithOutpostId(Aws::String&& value) { SetOutpostId(std::move(value)); return *this;}
-    inline CreateEndpointRequest& WithOutpostId(const char* value) { SetOutpostId(value); return *this;}
+    template<typename OutpostIdT = Aws::String>
+    void SetOutpostId(OutpostIdT&& value) { m_outpostIdHasBeenSet = true; m_outpostId = std::forward<OutpostIdT>(value); }
+    template<typename OutpostIdT = Aws::String>
+    CreateEndpointRequest& WithOutpostId(OutpostIdT&& value) { SetOutpostId(std::forward<OutpostIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,28 +50,24 @@ namespace Model
      * <p>The ID of the subnet in the selected VPC. The endpoint subnet must belong to
      * the Outpost that has Amazon S3 on Outposts provisioned.</p>
      */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+    inline const Aws::String& GetSubnetId() const { return m_subnetId; }
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-    inline CreateEndpointRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-    inline CreateEndpointRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-    inline CreateEndpointRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    template<typename SubnetIdT = Aws::String>
+    void SetSubnetId(SubnetIdT&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::forward<SubnetIdT>(value); }
+    template<typename SubnetIdT = Aws::String>
+    CreateEndpointRequest& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the security group to use with the endpoint.</p>
      */
-    inline const Aws::String& GetSecurityGroupId() const{ return m_securityGroupId; }
+    inline const Aws::String& GetSecurityGroupId() const { return m_securityGroupId; }
     inline bool SecurityGroupIdHasBeenSet() const { return m_securityGroupIdHasBeenSet; }
-    inline void SetSecurityGroupId(const Aws::String& value) { m_securityGroupIdHasBeenSet = true; m_securityGroupId = value; }
-    inline void SetSecurityGroupId(Aws::String&& value) { m_securityGroupIdHasBeenSet = true; m_securityGroupId = std::move(value); }
-    inline void SetSecurityGroupId(const char* value) { m_securityGroupIdHasBeenSet = true; m_securityGroupId.assign(value); }
-    inline CreateEndpointRequest& WithSecurityGroupId(const Aws::String& value) { SetSecurityGroupId(value); return *this;}
-    inline CreateEndpointRequest& WithSecurityGroupId(Aws::String&& value) { SetSecurityGroupId(std::move(value)); return *this;}
-    inline CreateEndpointRequest& WithSecurityGroupId(const char* value) { SetSecurityGroupId(value); return *this;}
+    template<typename SecurityGroupIdT = Aws::String>
+    void SetSecurityGroupId(SecurityGroupIdT&& value) { m_securityGroupIdHasBeenSet = true; m_securityGroupId = std::forward<SecurityGroupIdT>(value); }
+    template<typename SecurityGroupIdT = Aws::String>
+    CreateEndpointRequest& WithSecurityGroupId(SecurityGroupIdT&& value) { SetSecurityGroupId(std::forward<SecurityGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,12 +79,10 @@ namespace Model
      * must also provide the customer-owned IP address pool (CoIP pool).</p>  <p>
      * <code>Private</code> is the default access type value.</p> 
      */
-    inline const EndpointAccessType& GetAccessType() const{ return m_accessType; }
+    inline EndpointAccessType GetAccessType() const { return m_accessType; }
     inline bool AccessTypeHasBeenSet() const { return m_accessTypeHasBeenSet; }
-    inline void SetAccessType(const EndpointAccessType& value) { m_accessTypeHasBeenSet = true; m_accessType = value; }
-    inline void SetAccessType(EndpointAccessType&& value) { m_accessTypeHasBeenSet = true; m_accessType = std::move(value); }
-    inline CreateEndpointRequest& WithAccessType(const EndpointAccessType& value) { SetAccessType(value); return *this;}
-    inline CreateEndpointRequest& WithAccessType(EndpointAccessType&& value) { SetAccessType(std::move(value)); return *this;}
+    inline void SetAccessType(EndpointAccessType value) { m_accessTypeHasBeenSet = true; m_accessType = value; }
+    inline CreateEndpointRequest& WithAccessType(EndpointAccessType value) { SetAccessType(value); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +90,12 @@ namespace Model
      * <p>The ID of the customer-owned IPv4 address pool (CoIP pool) for the endpoint.
      * IP addresses are allocated from this pool for the endpoint.</p>
      */
-    inline const Aws::String& GetCustomerOwnedIpv4Pool() const{ return m_customerOwnedIpv4Pool; }
+    inline const Aws::String& GetCustomerOwnedIpv4Pool() const { return m_customerOwnedIpv4Pool; }
     inline bool CustomerOwnedIpv4PoolHasBeenSet() const { return m_customerOwnedIpv4PoolHasBeenSet; }
-    inline void SetCustomerOwnedIpv4Pool(const Aws::String& value) { m_customerOwnedIpv4PoolHasBeenSet = true; m_customerOwnedIpv4Pool = value; }
-    inline void SetCustomerOwnedIpv4Pool(Aws::String&& value) { m_customerOwnedIpv4PoolHasBeenSet = true; m_customerOwnedIpv4Pool = std::move(value); }
-    inline void SetCustomerOwnedIpv4Pool(const char* value) { m_customerOwnedIpv4PoolHasBeenSet = true; m_customerOwnedIpv4Pool.assign(value); }
-    inline CreateEndpointRequest& WithCustomerOwnedIpv4Pool(const Aws::String& value) { SetCustomerOwnedIpv4Pool(value); return *this;}
-    inline CreateEndpointRequest& WithCustomerOwnedIpv4Pool(Aws::String&& value) { SetCustomerOwnedIpv4Pool(std::move(value)); return *this;}
-    inline CreateEndpointRequest& WithCustomerOwnedIpv4Pool(const char* value) { SetCustomerOwnedIpv4Pool(value); return *this;}
+    template<typename CustomerOwnedIpv4PoolT = Aws::String>
+    void SetCustomerOwnedIpv4Pool(CustomerOwnedIpv4PoolT&& value) { m_customerOwnedIpv4PoolHasBeenSet = true; m_customerOwnedIpv4Pool = std::forward<CustomerOwnedIpv4PoolT>(value); }
+    template<typename CustomerOwnedIpv4PoolT = Aws::String>
+    CreateEndpointRequest& WithCustomerOwnedIpv4Pool(CustomerOwnedIpv4PoolT&& value) { SetCustomerOwnedIpv4Pool(std::forward<CustomerOwnedIpv4PoolT>(value)); return *this;}
     ///@}
   private:
 
@@ -118,7 +108,7 @@ namespace Model
     Aws::String m_securityGroupId;
     bool m_securityGroupIdHasBeenSet = false;
 
-    EndpointAccessType m_accessType;
+    EndpointAccessType m_accessType{EndpointAccessType::NOT_SET};
     bool m_accessTypeHasBeenSet = false;
 
     Aws::String m_customerOwnedIpv4Pool;

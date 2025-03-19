@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-KubernetesDetails::KubernetesDetails() : 
-    m_kubernetesUserDetailsHasBeenSet(false),
-    m_kubernetesWorkloadDetailsHasBeenSet(false)
-{
-}
-
 KubernetesDetails::KubernetesDetails(JsonView jsonValue)
-  : KubernetesDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ KubernetesDetails& KubernetesDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("kubernetesUserDetails"))
   {
     m_kubernetesUserDetails = jsonValue.GetObject("kubernetesUserDetails");
-
     m_kubernetesUserDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kubernetesWorkloadDetails"))
   {
     m_kubernetesWorkloadDetails = jsonValue.GetObject("kubernetesWorkloadDetails");
-
     m_kubernetesWorkloadDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-Palette::Palette() : 
-    m_foregroundHasBeenSet(false),
-    m_backgroundHasBeenSet(false)
-{
-}
-
 Palette::Palette(JsonView jsonValue)
-  : Palette()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Palette& Palette::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Foreground"))
   {
     m_foreground = jsonValue.GetString("Foreground");
-
     m_foregroundHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Background"))
   {
     m_background = jsonValue.GetString("Background");
-
     m_backgroundHasBeenSet = true;
   }
-
   return *this;
 }
 

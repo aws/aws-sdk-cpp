@@ -33,7 +33,7 @@ namespace Model
   class DataSet
   {
   public:
-    AWS_MAINFRAMEMODERNIZATION_API DataSet();
+    AWS_MAINFRAMEMODERNIZATION_API DataSet() = default;
     AWS_MAINFRAMEMODERNIZATION_API DataSet(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API DataSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,52 +43,48 @@ namespace Model
     /**
      * <p>The logical identifier for a specific data set (in mainframe format).</p>
      */
-    inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
+    inline const Aws::String& GetDatasetName() const { return m_datasetName; }
     inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
-    inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
-    inline void SetDatasetName(Aws::String&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::move(value); }
-    inline void SetDatasetName(const char* value) { m_datasetNameHasBeenSet = true; m_datasetName.assign(value); }
-    inline DataSet& WithDatasetName(const Aws::String& value) { SetDatasetName(value); return *this;}
-    inline DataSet& WithDatasetName(Aws::String&& value) { SetDatasetName(std::move(value)); return *this;}
-    inline DataSet& WithDatasetName(const char* value) { SetDatasetName(value); return *this;}
+    template<typename DatasetNameT = Aws::String>
+    void SetDatasetName(DatasetNameT&& value) { m_datasetNameHasBeenSet = true; m_datasetName = std::forward<DatasetNameT>(value); }
+    template<typename DatasetNameT = Aws::String>
+    DataSet& WithDatasetName(DatasetNameT&& value) { SetDatasetName(std::forward<DatasetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of dataset. The only supported value is VSAM.</p>
      */
-    inline const DatasetOrgAttributes& GetDatasetOrg() const{ return m_datasetOrg; }
+    inline const DatasetOrgAttributes& GetDatasetOrg() const { return m_datasetOrg; }
     inline bool DatasetOrgHasBeenSet() const { return m_datasetOrgHasBeenSet; }
-    inline void SetDatasetOrg(const DatasetOrgAttributes& value) { m_datasetOrgHasBeenSet = true; m_datasetOrg = value; }
-    inline void SetDatasetOrg(DatasetOrgAttributes&& value) { m_datasetOrgHasBeenSet = true; m_datasetOrg = std::move(value); }
-    inline DataSet& WithDatasetOrg(const DatasetOrgAttributes& value) { SetDatasetOrg(value); return *this;}
-    inline DataSet& WithDatasetOrg(DatasetOrgAttributes&& value) { SetDatasetOrg(std::move(value)); return *this;}
+    template<typename DatasetOrgT = DatasetOrgAttributes>
+    void SetDatasetOrg(DatasetOrgT&& value) { m_datasetOrgHasBeenSet = true; m_datasetOrg = std::forward<DatasetOrgT>(value); }
+    template<typename DatasetOrgT = DatasetOrgAttributes>
+    DataSet& WithDatasetOrg(DatasetOrgT&& value) { SetDatasetOrg(std::forward<DatasetOrgT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The length of a record.</p>
      */
-    inline const RecordLength& GetRecordLength() const{ return m_recordLength; }
+    inline const RecordLength& GetRecordLength() const { return m_recordLength; }
     inline bool RecordLengthHasBeenSet() const { return m_recordLengthHasBeenSet; }
-    inline void SetRecordLength(const RecordLength& value) { m_recordLengthHasBeenSet = true; m_recordLength = value; }
-    inline void SetRecordLength(RecordLength&& value) { m_recordLengthHasBeenSet = true; m_recordLength = std::move(value); }
-    inline DataSet& WithRecordLength(const RecordLength& value) { SetRecordLength(value); return *this;}
-    inline DataSet& WithRecordLength(RecordLength&& value) { SetRecordLength(std::move(value)); return *this;}
+    template<typename RecordLengthT = RecordLength>
+    void SetRecordLength(RecordLengthT&& value) { m_recordLengthHasBeenSet = true; m_recordLength = std::forward<RecordLengthT>(value); }
+    template<typename RecordLengthT = RecordLength>
+    DataSet& WithRecordLength(RecordLengthT&& value) { SetRecordLength(std::forward<RecordLengthT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The relative location of the data set in the database or file system. </p>
      */
-    inline const Aws::String& GetRelativePath() const{ return m_relativePath; }
+    inline const Aws::String& GetRelativePath() const { return m_relativePath; }
     inline bool RelativePathHasBeenSet() const { return m_relativePathHasBeenSet; }
-    inline void SetRelativePath(const Aws::String& value) { m_relativePathHasBeenSet = true; m_relativePath = value; }
-    inline void SetRelativePath(Aws::String&& value) { m_relativePathHasBeenSet = true; m_relativePath = std::move(value); }
-    inline void SetRelativePath(const char* value) { m_relativePathHasBeenSet = true; m_relativePath.assign(value); }
-    inline DataSet& WithRelativePath(const Aws::String& value) { SetRelativePath(value); return *this;}
-    inline DataSet& WithRelativePath(Aws::String&& value) { SetRelativePath(std::move(value)); return *this;}
-    inline DataSet& WithRelativePath(const char* value) { SetRelativePath(value); return *this;}
+    template<typename RelativePathT = Aws::String>
+    void SetRelativePath(RelativePathT&& value) { m_relativePathHasBeenSet = true; m_relativePath = std::forward<RelativePathT>(value); }
+    template<typename RelativePathT = Aws::String>
+    DataSet& WithRelativePath(RelativePathT&& value) { SetRelativePath(std::forward<RelativePathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,14 +94,12 @@ namespace Model
      * Blu Age, there is no support of file system and database corresponds to Blusam.
      * </p>
      */
-    inline const Aws::String& GetStorageType() const{ return m_storageType; }
+    inline const Aws::String& GetStorageType() const { return m_storageType; }
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
-    inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
-    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
-    inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
-    inline DataSet& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
-    inline DataSet& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
-    inline DataSet& WithStorageType(const char* value) { SetStorageType(value); return *this;}
+    template<typename StorageTypeT = Aws::String>
+    void SetStorageType(StorageTypeT&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::forward<StorageTypeT>(value); }
+    template<typename StorageTypeT = Aws::String>
+    DataSet& WithStorageType(StorageTypeT&& value) { SetStorageType(std::forward<StorageTypeT>(value)); return *this;}
     ///@}
   private:
 

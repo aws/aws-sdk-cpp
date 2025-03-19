@@ -18,16 +18,7 @@ namespace MigrationHubOrchestrator
 namespace Model
 {
 
-WorkflowStepOutputUnion::WorkflowStepOutputUnion() : 
-    m_integerValue(0),
-    m_integerValueHasBeenSet(false),
-    m_stringValueHasBeenSet(false),
-    m_listOfStringValueHasBeenSet(false)
-{
-}
-
 WorkflowStepOutputUnion::WorkflowStepOutputUnion(JsonView jsonValue)
-  : WorkflowStepOutputUnion()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ WorkflowStepOutputUnion& WorkflowStepOutputUnion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("integerValue"))
   {
     m_integerValue = jsonValue.GetInteger("integerValue");
-
     m_integerValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stringValue"))
   {
     m_stringValue = jsonValue.GetString("stringValue");
-
     m_stringValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listOfStringValue"))
   {
     Aws::Utils::Array<JsonView> listOfStringValueJsonList = jsonValue.GetArray("listOfStringValue");
@@ -57,7 +44,6 @@ WorkflowStepOutputUnion& WorkflowStepOutputUnion::operator =(JsonView jsonValue)
     }
     m_listOfStringValueHasBeenSet = true;
   }
-
   return *this;
 }
 

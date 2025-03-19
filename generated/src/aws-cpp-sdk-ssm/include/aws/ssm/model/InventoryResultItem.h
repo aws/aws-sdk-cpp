@@ -33,7 +33,7 @@ namespace Model
   class InventoryResultItem
   {
   public:
-    AWS_SSM_API InventoryResultItem();
+    AWS_SSM_API InventoryResultItem() = default;
     AWS_SSM_API InventoryResultItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API InventoryResultItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,42 +43,36 @@ namespace Model
     /**
      * <p>The name of the inventory result item type.</p>
      */
-    inline const Aws::String& GetTypeName() const{ return m_typeName; }
+    inline const Aws::String& GetTypeName() const { return m_typeName; }
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
-    inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
-    inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
-    inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
-    inline InventoryResultItem& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
-    inline InventoryResultItem& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
-    inline InventoryResultItem& WithTypeName(const char* value) { SetTypeName(value); return *this;}
+    template<typename TypeNameT = Aws::String>
+    void SetTypeName(TypeNameT&& value) { m_typeNameHasBeenSet = true; m_typeName = std::forward<TypeNameT>(value); }
+    template<typename TypeNameT = Aws::String>
+    InventoryResultItem& WithTypeName(TypeNameT&& value) { SetTypeName(std::forward<TypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The schema version for the inventory result item/</p>
      */
-    inline const Aws::String& GetSchemaVersion() const{ return m_schemaVersion; }
+    inline const Aws::String& GetSchemaVersion() const { return m_schemaVersion; }
     inline bool SchemaVersionHasBeenSet() const { return m_schemaVersionHasBeenSet; }
-    inline void SetSchemaVersion(const Aws::String& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = value; }
-    inline void SetSchemaVersion(Aws::String&& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = std::move(value); }
-    inline void SetSchemaVersion(const char* value) { m_schemaVersionHasBeenSet = true; m_schemaVersion.assign(value); }
-    inline InventoryResultItem& WithSchemaVersion(const Aws::String& value) { SetSchemaVersion(value); return *this;}
-    inline InventoryResultItem& WithSchemaVersion(Aws::String&& value) { SetSchemaVersion(std::move(value)); return *this;}
-    inline InventoryResultItem& WithSchemaVersion(const char* value) { SetSchemaVersion(value); return *this;}
+    template<typename SchemaVersionT = Aws::String>
+    void SetSchemaVersion(SchemaVersionT&& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = std::forward<SchemaVersionT>(value); }
+    template<typename SchemaVersionT = Aws::String>
+    InventoryResultItem& WithSchemaVersion(SchemaVersionT&& value) { SetSchemaVersion(std::forward<SchemaVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time inventory item data was captured.</p>
      */
-    inline const Aws::String& GetCaptureTime() const{ return m_captureTime; }
+    inline const Aws::String& GetCaptureTime() const { return m_captureTime; }
     inline bool CaptureTimeHasBeenSet() const { return m_captureTimeHasBeenSet; }
-    inline void SetCaptureTime(const Aws::String& value) { m_captureTimeHasBeenSet = true; m_captureTime = value; }
-    inline void SetCaptureTime(Aws::String&& value) { m_captureTimeHasBeenSet = true; m_captureTime = std::move(value); }
-    inline void SetCaptureTime(const char* value) { m_captureTimeHasBeenSet = true; m_captureTime.assign(value); }
-    inline InventoryResultItem& WithCaptureTime(const Aws::String& value) { SetCaptureTime(value); return *this;}
-    inline InventoryResultItem& WithCaptureTime(Aws::String&& value) { SetCaptureTime(std::move(value)); return *this;}
-    inline InventoryResultItem& WithCaptureTime(const char* value) { SetCaptureTime(value); return *this;}
+    template<typename CaptureTimeT = Aws::String>
+    void SetCaptureTime(CaptureTimeT&& value) { m_captureTimeHasBeenSet = true; m_captureTime = std::forward<CaptureTimeT>(value); }
+    template<typename CaptureTimeT = Aws::String>
+    InventoryResultItem& WithCaptureTime(CaptureTimeT&& value) { SetCaptureTime(std::forward<CaptureTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +82,12 @@ namespace Model
      * update the inventory item type contents if the MD5 hash hasn't changed since
      * last update. </p>
      */
-    inline const Aws::String& GetContentHash() const{ return m_contentHash; }
+    inline const Aws::String& GetContentHash() const { return m_contentHash; }
     inline bool ContentHashHasBeenSet() const { return m_contentHashHasBeenSet; }
-    inline void SetContentHash(const Aws::String& value) { m_contentHashHasBeenSet = true; m_contentHash = value; }
-    inline void SetContentHash(Aws::String&& value) { m_contentHashHasBeenSet = true; m_contentHash = std::move(value); }
-    inline void SetContentHash(const char* value) { m_contentHashHasBeenSet = true; m_contentHash.assign(value); }
-    inline InventoryResultItem& WithContentHash(const Aws::String& value) { SetContentHash(value); return *this;}
-    inline InventoryResultItem& WithContentHash(Aws::String&& value) { SetContentHash(std::move(value)); return *this;}
-    inline InventoryResultItem& WithContentHash(const char* value) { SetContentHash(value); return *this;}
+    template<typename ContentHashT = Aws::String>
+    void SetContentHash(ContentHashT&& value) { m_contentHashHasBeenSet = true; m_contentHash = std::forward<ContentHashT>(value); }
+    template<typename ContentHashT = Aws::String>
+    InventoryResultItem& WithContentHash(ContentHashT&& value) { SetContentHash(std::forward<ContentHashT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +95,14 @@ namespace Model
      * <p>Contains all the inventory data of the item type. Results include attribute
      * names and values. </p>
      */
-    inline const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& GetContent() const{ return m_content; }
+    inline const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& GetContent() const { return m_content; }
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
-    inline void SetContent(const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& value) { m_contentHasBeenSet = true; m_content = value; }
-    inline void SetContent(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
-    inline InventoryResultItem& WithContent(const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& value) { SetContent(value); return *this;}
-    inline InventoryResultItem& WithContent(Aws::Vector<Aws::Map<Aws::String, Aws::String>>&& value) { SetContent(std::move(value)); return *this;}
-    inline InventoryResultItem& AddContent(const Aws::Map<Aws::String, Aws::String>& value) { m_contentHasBeenSet = true; m_content.push_back(value); return *this; }
-    inline InventoryResultItem& AddContent(Aws::Map<Aws::String, Aws::String>&& value) { m_contentHasBeenSet = true; m_content.push_back(std::move(value)); return *this; }
+    template<typename ContentT = Aws::Vector<Aws::Map<Aws::String, Aws::String>>>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::Vector<Aws::Map<Aws::String, Aws::String>>>
+    InventoryResultItem& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
+    template<typename ContentT = Aws::Map<Aws::String, Aws::String>>
+    InventoryResultItem& AddContent(ContentT&& value) { m_contentHasBeenSet = true; m_content.emplace_back(std::forward<ContentT>(value)); return *this; }
     ///@}
   private:
 

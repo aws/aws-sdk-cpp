@@ -18,15 +18,7 @@ namespace QLDB
 namespace Model
 {
 
-S3ExportConfiguration::S3ExportConfiguration() : 
-    m_bucketHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false)
-{
-}
-
 S3ExportConfiguration::S3ExportConfiguration(JsonView jsonValue)
-  : S3ExportConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ S3ExportConfiguration& S3ExportConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Bucket"))
   {
     m_bucket = jsonValue.GetString("Bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Prefix"))
   {
     m_prefix = jsonValue.GetString("Prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionConfiguration"))
   {
     m_encryptionConfiguration = jsonValue.GetObject("EncryptionConfiguration");
-
     m_encryptionConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

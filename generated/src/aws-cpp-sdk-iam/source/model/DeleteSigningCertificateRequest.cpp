@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-DeleteSigningCertificateRequest::DeleteSigningCertificateRequest() : 
-    m_userNameHasBeenSet(false),
-    m_certificateIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSigningCertificateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

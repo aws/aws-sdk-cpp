@@ -37,7 +37,7 @@ namespace Model
   class Connection
   {
   public:
-    AWS_DIRECTCONNECT_API Connection();
+    AWS_DIRECTCONNECT_API Connection() = default;
     AWS_DIRECTCONNECT_API Connection(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTCONNECT_API Connection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DIRECTCONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,42 +47,36 @@ namespace Model
     /**
      * <p>The ID of the Amazon Web Services account that owns the connection.</p>
      */
-    inline const Aws::String& GetOwnerAccount() const{ return m_ownerAccount; }
+    inline const Aws::String& GetOwnerAccount() const { return m_ownerAccount; }
     inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
-    inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
-    inline void SetOwnerAccount(Aws::String&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::move(value); }
-    inline void SetOwnerAccount(const char* value) { m_ownerAccountHasBeenSet = true; m_ownerAccount.assign(value); }
-    inline Connection& WithOwnerAccount(const Aws::String& value) { SetOwnerAccount(value); return *this;}
-    inline Connection& WithOwnerAccount(Aws::String&& value) { SetOwnerAccount(std::move(value)); return *this;}
-    inline Connection& WithOwnerAccount(const char* value) { SetOwnerAccount(value); return *this;}
+    template<typename OwnerAccountT = Aws::String>
+    void SetOwnerAccount(OwnerAccountT&& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = std::forward<OwnerAccountT>(value); }
+    template<typename OwnerAccountT = Aws::String>
+    Connection& WithOwnerAccount(OwnerAccountT&& value) { SetOwnerAccount(std::forward<OwnerAccountT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the connection.</p>
      */
-    inline const Aws::String& GetConnectionId() const{ return m_connectionId; }
+    inline const Aws::String& GetConnectionId() const { return m_connectionId; }
     inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
-    inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
-    inline void SetConnectionId(Aws::String&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::move(value); }
-    inline void SetConnectionId(const char* value) { m_connectionIdHasBeenSet = true; m_connectionId.assign(value); }
-    inline Connection& WithConnectionId(const Aws::String& value) { SetConnectionId(value); return *this;}
-    inline Connection& WithConnectionId(Aws::String&& value) { SetConnectionId(std::move(value)); return *this;}
-    inline Connection& WithConnectionId(const char* value) { SetConnectionId(value); return *this;}
+    template<typename ConnectionIdT = Aws::String>
+    void SetConnectionId(ConnectionIdT&& value) { m_connectionIdHasBeenSet = true; m_connectionId = std::forward<ConnectionIdT>(value); }
+    template<typename ConnectionIdT = Aws::String>
+    Connection& WithConnectionId(ConnectionIdT&& value) { SetConnectionId(std::forward<ConnectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the connection.</p>
      */
-    inline const Aws::String& GetConnectionName() const{ return m_connectionName; }
+    inline const Aws::String& GetConnectionName() const { return m_connectionName; }
     inline bool ConnectionNameHasBeenSet() const { return m_connectionNameHasBeenSet; }
-    inline void SetConnectionName(const Aws::String& value) { m_connectionNameHasBeenSet = true; m_connectionName = value; }
-    inline void SetConnectionName(Aws::String&& value) { m_connectionNameHasBeenSet = true; m_connectionName = std::move(value); }
-    inline void SetConnectionName(const char* value) { m_connectionNameHasBeenSet = true; m_connectionName.assign(value); }
-    inline Connection& WithConnectionName(const Aws::String& value) { SetConnectionName(value); return *this;}
-    inline Connection& WithConnectionName(Aws::String&& value) { SetConnectionName(std::move(value)); return *this;}
-    inline Connection& WithConnectionName(const char* value) { SetConnectionName(value); return *this;}
+    template<typename ConnectionNameT = Aws::String>
+    void SetConnectionName(ConnectionNameT&& value) { m_connectionNameHasBeenSet = true; m_connectionName = std::forward<ConnectionNameT>(value); }
+    template<typename ConnectionNameT = Aws::String>
+    Connection& WithConnectionName(ConnectionNameT&& value) { SetConnectionName(std::forward<ConnectionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,61 +98,53 @@ namespace Model
      * deleted by the customer.</p> </li> <li> <p> <code>unknown</code>: The state of
      * the connection is not available.</p> </li> </ul>
      */
-    inline const ConnectionState& GetConnectionState() const{ return m_connectionState; }
+    inline ConnectionState GetConnectionState() const { return m_connectionState; }
     inline bool ConnectionStateHasBeenSet() const { return m_connectionStateHasBeenSet; }
-    inline void SetConnectionState(const ConnectionState& value) { m_connectionStateHasBeenSet = true; m_connectionState = value; }
-    inline void SetConnectionState(ConnectionState&& value) { m_connectionStateHasBeenSet = true; m_connectionState = std::move(value); }
-    inline Connection& WithConnectionState(const ConnectionState& value) { SetConnectionState(value); return *this;}
-    inline Connection& WithConnectionState(ConnectionState&& value) { SetConnectionState(std::move(value)); return *this;}
+    inline void SetConnectionState(ConnectionState value) { m_connectionStateHasBeenSet = true; m_connectionState = value; }
+    inline Connection& WithConnectionState(ConnectionState value) { SetConnectionState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Web Services Region where the connection is located.</p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline Connection& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline Connection& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline Connection& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    Connection& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The location of the connection.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline Connection& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline Connection& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline Connection& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    Connection& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The bandwidth of the connection.</p>
      */
-    inline const Aws::String& GetBandwidth() const{ return m_bandwidth; }
+    inline const Aws::String& GetBandwidth() const { return m_bandwidth; }
     inline bool BandwidthHasBeenSet() const { return m_bandwidthHasBeenSet; }
-    inline void SetBandwidth(const Aws::String& value) { m_bandwidthHasBeenSet = true; m_bandwidth = value; }
-    inline void SetBandwidth(Aws::String&& value) { m_bandwidthHasBeenSet = true; m_bandwidth = std::move(value); }
-    inline void SetBandwidth(const char* value) { m_bandwidthHasBeenSet = true; m_bandwidth.assign(value); }
-    inline Connection& WithBandwidth(const Aws::String& value) { SetBandwidth(value); return *this;}
-    inline Connection& WithBandwidth(Aws::String&& value) { SetBandwidth(std::move(value)); return *this;}
-    inline Connection& WithBandwidth(const char* value) { SetBandwidth(value); return *this;}
+    template<typename BandwidthT = Aws::String>
+    void SetBandwidth(BandwidthT&& value) { m_bandwidthHasBeenSet = true; m_bandwidth = std::forward<BandwidthT>(value); }
+    template<typename BandwidthT = Aws::String>
+    Connection& WithBandwidth(BandwidthT&& value) { SetBandwidth(std::forward<BandwidthT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the VLAN.</p>
      */
-    inline int GetVlan() const{ return m_vlan; }
+    inline int GetVlan() const { return m_vlan; }
     inline bool VlanHasBeenSet() const { return m_vlanHasBeenSet; }
     inline void SetVlan(int value) { m_vlanHasBeenSet = true; m_vlan = value; }
     inline Connection& WithVlan(int value) { SetVlan(value); return *this;}
@@ -169,14 +155,12 @@ namespace Model
      * <p>The name of the Direct Connect service provider associated with the
      * connection.</p>
      */
-    inline const Aws::String& GetPartnerName() const{ return m_partnerName; }
+    inline const Aws::String& GetPartnerName() const { return m_partnerName; }
     inline bool PartnerNameHasBeenSet() const { return m_partnerNameHasBeenSet; }
-    inline void SetPartnerName(const Aws::String& value) { m_partnerNameHasBeenSet = true; m_partnerName = value; }
-    inline void SetPartnerName(Aws::String&& value) { m_partnerNameHasBeenSet = true; m_partnerName = std::move(value); }
-    inline void SetPartnerName(const char* value) { m_partnerNameHasBeenSet = true; m_partnerName.assign(value); }
-    inline Connection& WithPartnerName(const Aws::String& value) { SetPartnerName(value); return *this;}
-    inline Connection& WithPartnerName(Aws::String&& value) { SetPartnerName(std::move(value)); return *this;}
-    inline Connection& WithPartnerName(const char* value) { SetPartnerName(value); return *this;}
+    template<typename PartnerNameT = Aws::String>
+    void SetPartnerName(PartnerNameT&& value) { m_partnerNameHasBeenSet = true; m_partnerName = std::forward<PartnerNameT>(value); }
+    template<typename PartnerNameT = Aws::String>
+    Connection& WithPartnerName(PartnerNameT&& value) { SetPartnerName(std::forward<PartnerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -184,47 +168,43 @@ namespace Model
      * <p>The time of the most recent call to <a>DescribeLoa</a> for this
      * connection.</p>
      */
-    inline const Aws::Utils::DateTime& GetLoaIssueTime() const{ return m_loaIssueTime; }
+    inline const Aws::Utils::DateTime& GetLoaIssueTime() const { return m_loaIssueTime; }
     inline bool LoaIssueTimeHasBeenSet() const { return m_loaIssueTimeHasBeenSet; }
-    inline void SetLoaIssueTime(const Aws::Utils::DateTime& value) { m_loaIssueTimeHasBeenSet = true; m_loaIssueTime = value; }
-    inline void SetLoaIssueTime(Aws::Utils::DateTime&& value) { m_loaIssueTimeHasBeenSet = true; m_loaIssueTime = std::move(value); }
-    inline Connection& WithLoaIssueTime(const Aws::Utils::DateTime& value) { SetLoaIssueTime(value); return *this;}
-    inline Connection& WithLoaIssueTime(Aws::Utils::DateTime&& value) { SetLoaIssueTime(std::move(value)); return *this;}
+    template<typename LoaIssueTimeT = Aws::Utils::DateTime>
+    void SetLoaIssueTime(LoaIssueTimeT&& value) { m_loaIssueTimeHasBeenSet = true; m_loaIssueTime = std::forward<LoaIssueTimeT>(value); }
+    template<typename LoaIssueTimeT = Aws::Utils::DateTime>
+    Connection& WithLoaIssueTime(LoaIssueTimeT&& value) { SetLoaIssueTime(std::forward<LoaIssueTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the LAG.</p>
      */
-    inline const Aws::String& GetLagId() const{ return m_lagId; }
+    inline const Aws::String& GetLagId() const { return m_lagId; }
     inline bool LagIdHasBeenSet() const { return m_lagIdHasBeenSet; }
-    inline void SetLagId(const Aws::String& value) { m_lagIdHasBeenSet = true; m_lagId = value; }
-    inline void SetLagId(Aws::String&& value) { m_lagIdHasBeenSet = true; m_lagId = std::move(value); }
-    inline void SetLagId(const char* value) { m_lagIdHasBeenSet = true; m_lagId.assign(value); }
-    inline Connection& WithLagId(const Aws::String& value) { SetLagId(value); return *this;}
-    inline Connection& WithLagId(Aws::String&& value) { SetLagId(std::move(value)); return *this;}
-    inline Connection& WithLagId(const char* value) { SetLagId(value); return *this;}
+    template<typename LagIdT = Aws::String>
+    void SetLagId(LagIdT&& value) { m_lagIdHasBeenSet = true; m_lagId = std::forward<LagIdT>(value); }
+    template<typename LagIdT = Aws::String>
+    Connection& WithLagId(LagIdT&& value) { SetLagId(std::forward<LagIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Direct Connect endpoint on which the physical connection terminates.</p>
      */
-    inline const Aws::String& GetAwsDevice() const{ return m_awsDevice; }
+    inline const Aws::String& GetAwsDevice() const { return m_awsDevice; }
     inline bool AwsDeviceHasBeenSet() const { return m_awsDeviceHasBeenSet; }
-    inline void SetAwsDevice(const Aws::String& value) { m_awsDeviceHasBeenSet = true; m_awsDevice = value; }
-    inline void SetAwsDevice(Aws::String&& value) { m_awsDeviceHasBeenSet = true; m_awsDevice = std::move(value); }
-    inline void SetAwsDevice(const char* value) { m_awsDeviceHasBeenSet = true; m_awsDevice.assign(value); }
-    inline Connection& WithAwsDevice(const Aws::String& value) { SetAwsDevice(value); return *this;}
-    inline Connection& WithAwsDevice(Aws::String&& value) { SetAwsDevice(std::move(value)); return *this;}
-    inline Connection& WithAwsDevice(const char* value) { SetAwsDevice(value); return *this;}
+    template<typename AwsDeviceT = Aws::String>
+    void SetAwsDevice(AwsDeviceT&& value) { m_awsDeviceHasBeenSet = true; m_awsDevice = std::forward<AwsDeviceT>(value); }
+    template<typename AwsDeviceT = Aws::String>
+    Connection& WithAwsDevice(AwsDeviceT&& value) { SetAwsDevice(std::forward<AwsDeviceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether jumbo frames are supported.</p>
      */
-    inline bool GetJumboFrameCapable() const{ return m_jumboFrameCapable; }
+    inline bool GetJumboFrameCapable() const { return m_jumboFrameCapable; }
     inline bool JumboFrameCapableHasBeenSet() const { return m_jumboFrameCapableHasBeenSet; }
     inline void SetJumboFrameCapable(bool value) { m_jumboFrameCapableHasBeenSet = true; m_jumboFrameCapable = value; }
     inline Connection& WithJumboFrameCapable(bool value) { SetJumboFrameCapable(value); return *this;}
@@ -234,14 +214,12 @@ namespace Model
     /**
      * <p>The Direct Connect endpoint that terminates the physical connection.</p>
      */
-    inline const Aws::String& GetAwsDeviceV2() const{ return m_awsDeviceV2; }
+    inline const Aws::String& GetAwsDeviceV2() const { return m_awsDeviceV2; }
     inline bool AwsDeviceV2HasBeenSet() const { return m_awsDeviceV2HasBeenSet; }
-    inline void SetAwsDeviceV2(const Aws::String& value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2 = value; }
-    inline void SetAwsDeviceV2(Aws::String&& value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2 = std::move(value); }
-    inline void SetAwsDeviceV2(const char* value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2.assign(value); }
-    inline Connection& WithAwsDeviceV2(const Aws::String& value) { SetAwsDeviceV2(value); return *this;}
-    inline Connection& WithAwsDeviceV2(Aws::String&& value) { SetAwsDeviceV2(std::move(value)); return *this;}
-    inline Connection& WithAwsDeviceV2(const char* value) { SetAwsDeviceV2(value); return *this;}
+    template<typename AwsDeviceV2T = Aws::String>
+    void SetAwsDeviceV2(AwsDeviceV2T&& value) { m_awsDeviceV2HasBeenSet = true; m_awsDeviceV2 = std::forward<AwsDeviceV2T>(value); }
+    template<typename AwsDeviceV2T = Aws::String>
+    Connection& WithAwsDeviceV2(AwsDeviceV2T&& value) { SetAwsDeviceV2(std::forward<AwsDeviceV2T>(value)); return *this;}
     ///@}
 
     ///@{
@@ -250,14 +228,12 @@ namespace Model
      * device might be different than the device that terminates the physical
      * connection.</p>
      */
-    inline const Aws::String& GetAwsLogicalDeviceId() const{ return m_awsLogicalDeviceId; }
+    inline const Aws::String& GetAwsLogicalDeviceId() const { return m_awsLogicalDeviceId; }
     inline bool AwsLogicalDeviceIdHasBeenSet() const { return m_awsLogicalDeviceIdHasBeenSet; }
-    inline void SetAwsLogicalDeviceId(const Aws::String& value) { m_awsLogicalDeviceIdHasBeenSet = true; m_awsLogicalDeviceId = value; }
-    inline void SetAwsLogicalDeviceId(Aws::String&& value) { m_awsLogicalDeviceIdHasBeenSet = true; m_awsLogicalDeviceId = std::move(value); }
-    inline void SetAwsLogicalDeviceId(const char* value) { m_awsLogicalDeviceIdHasBeenSet = true; m_awsLogicalDeviceId.assign(value); }
-    inline Connection& WithAwsLogicalDeviceId(const Aws::String& value) { SetAwsLogicalDeviceId(value); return *this;}
-    inline Connection& WithAwsLogicalDeviceId(Aws::String&& value) { SetAwsLogicalDeviceId(std::move(value)); return *this;}
-    inline Connection& WithAwsLogicalDeviceId(const char* value) { SetAwsLogicalDeviceId(value); return *this;}
+    template<typename AwsLogicalDeviceIdT = Aws::String>
+    void SetAwsLogicalDeviceId(AwsLogicalDeviceIdT&& value) { m_awsLogicalDeviceIdHasBeenSet = true; m_awsLogicalDeviceId = std::forward<AwsLogicalDeviceIdT>(value); }
+    template<typename AwsLogicalDeviceIdT = Aws::String>
+    Connection& WithAwsLogicalDeviceId(AwsLogicalDeviceIdT&& value) { SetAwsLogicalDeviceId(std::forward<AwsLogicalDeviceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -265,47 +241,43 @@ namespace Model
      * <p>Indicates whether the connection supports a secondary BGP peer in the same
      * address family (IPv4/IPv6).</p>
      */
-    inline const HasLogicalRedundancy& GetHasLogicalRedundancy() const{ return m_hasLogicalRedundancy; }
+    inline HasLogicalRedundancy GetHasLogicalRedundancy() const { return m_hasLogicalRedundancy; }
     inline bool HasLogicalRedundancyHasBeenSet() const { return m_hasLogicalRedundancyHasBeenSet; }
-    inline void SetHasLogicalRedundancy(const HasLogicalRedundancy& value) { m_hasLogicalRedundancyHasBeenSet = true; m_hasLogicalRedundancy = value; }
-    inline void SetHasLogicalRedundancy(HasLogicalRedundancy&& value) { m_hasLogicalRedundancyHasBeenSet = true; m_hasLogicalRedundancy = std::move(value); }
-    inline Connection& WithHasLogicalRedundancy(const HasLogicalRedundancy& value) { SetHasLogicalRedundancy(value); return *this;}
-    inline Connection& WithHasLogicalRedundancy(HasLogicalRedundancy&& value) { SetHasLogicalRedundancy(std::move(value)); return *this;}
+    inline void SetHasLogicalRedundancy(HasLogicalRedundancy value) { m_hasLogicalRedundancyHasBeenSet = true; m_hasLogicalRedundancy = value; }
+    inline Connection& WithHasLogicalRedundancy(HasLogicalRedundancy value) { SetHasLogicalRedundancy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags associated with the connection.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline Connection& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline Connection& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline Connection& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline Connection& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    Connection& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    Connection& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the service provider associated with the connection.</p>
      */
-    inline const Aws::String& GetProviderName() const{ return m_providerName; }
+    inline const Aws::String& GetProviderName() const { return m_providerName; }
     inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
-    inline void SetProviderName(const Aws::String& value) { m_providerNameHasBeenSet = true; m_providerName = value; }
-    inline void SetProviderName(Aws::String&& value) { m_providerNameHasBeenSet = true; m_providerName = std::move(value); }
-    inline void SetProviderName(const char* value) { m_providerNameHasBeenSet = true; m_providerName.assign(value); }
-    inline Connection& WithProviderName(const Aws::String& value) { SetProviderName(value); return *this;}
-    inline Connection& WithProviderName(Aws::String&& value) { SetProviderName(std::move(value)); return *this;}
-    inline Connection& WithProviderName(const char* value) { SetProviderName(value); return *this;}
+    template<typename ProviderNameT = Aws::String>
+    void SetProviderName(ProviderNameT&& value) { m_providerNameHasBeenSet = true; m_providerName = std::forward<ProviderNameT>(value); }
+    template<typename ProviderNameT = Aws::String>
+    Connection& WithProviderName(ProviderNameT&& value) { SetProviderName(std::forward<ProviderNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the connection supports MAC Security (MACsec).</p>
      */
-    inline bool GetMacSecCapable() const{ return m_macSecCapable; }
+    inline bool GetMacSecCapable() const { return m_macSecCapable; }
     inline bool MacSecCapableHasBeenSet() const { return m_macSecCapableHasBeenSet; }
     inline void SetMacSecCapable(bool value) { m_macSecCapableHasBeenSet = true; m_macSecCapable = value; }
     inline Connection& WithMacSecCapable(bool value) { SetMacSecCapable(value); return *this;}
@@ -317,14 +289,12 @@ namespace Model
      * valid values are <code>Encryption Up</code>, which means that there is an active
      * Connection Key Name, or <code>Encryption Down</code>.</p>
      */
-    inline const Aws::String& GetPortEncryptionStatus() const{ return m_portEncryptionStatus; }
+    inline const Aws::String& GetPortEncryptionStatus() const { return m_portEncryptionStatus; }
     inline bool PortEncryptionStatusHasBeenSet() const { return m_portEncryptionStatusHasBeenSet; }
-    inline void SetPortEncryptionStatus(const Aws::String& value) { m_portEncryptionStatusHasBeenSet = true; m_portEncryptionStatus = value; }
-    inline void SetPortEncryptionStatus(Aws::String&& value) { m_portEncryptionStatusHasBeenSet = true; m_portEncryptionStatus = std::move(value); }
-    inline void SetPortEncryptionStatus(const char* value) { m_portEncryptionStatusHasBeenSet = true; m_portEncryptionStatus.assign(value); }
-    inline Connection& WithPortEncryptionStatus(const Aws::String& value) { SetPortEncryptionStatus(value); return *this;}
-    inline Connection& WithPortEncryptionStatus(Aws::String&& value) { SetPortEncryptionStatus(std::move(value)); return *this;}
-    inline Connection& WithPortEncryptionStatus(const char* value) { SetPortEncryptionStatus(value); return *this;}
+    template<typename PortEncryptionStatusT = Aws::String>
+    void SetPortEncryptionStatus(PortEncryptionStatusT&& value) { m_portEncryptionStatusHasBeenSet = true; m_portEncryptionStatus = std::forward<PortEncryptionStatusT>(value); }
+    template<typename PortEncryptionStatusT = Aws::String>
+    Connection& WithPortEncryptionStatus(PortEncryptionStatusT&& value) { SetPortEncryptionStatus(std::forward<PortEncryptionStatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -333,40 +303,36 @@ namespace Model
      * are <code>no_encrypt</code>, <code>should_encrypt</code>, and
      * <code>must_encrypt</code>.</p>
      */
-    inline const Aws::String& GetEncryptionMode() const{ return m_encryptionMode; }
+    inline const Aws::String& GetEncryptionMode() const { return m_encryptionMode; }
     inline bool EncryptionModeHasBeenSet() const { return m_encryptionModeHasBeenSet; }
-    inline void SetEncryptionMode(const Aws::String& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = value; }
-    inline void SetEncryptionMode(Aws::String&& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = std::move(value); }
-    inline void SetEncryptionMode(const char* value) { m_encryptionModeHasBeenSet = true; m_encryptionMode.assign(value); }
-    inline Connection& WithEncryptionMode(const Aws::String& value) { SetEncryptionMode(value); return *this;}
-    inline Connection& WithEncryptionMode(Aws::String&& value) { SetEncryptionMode(std::move(value)); return *this;}
-    inline Connection& WithEncryptionMode(const char* value) { SetEncryptionMode(value); return *this;}
+    template<typename EncryptionModeT = Aws::String>
+    void SetEncryptionMode(EncryptionModeT&& value) { m_encryptionModeHasBeenSet = true; m_encryptionMode = std::forward<EncryptionModeT>(value); }
+    template<typename EncryptionModeT = Aws::String>
+    Connection& WithEncryptionMode(EncryptionModeT&& value) { SetEncryptionMode(std::forward<EncryptionModeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The MAC Security (MACsec) security keys associated with the connection.</p>
      */
-    inline const Aws::Vector<MacSecKey>& GetMacSecKeys() const{ return m_macSecKeys; }
+    inline const Aws::Vector<MacSecKey>& GetMacSecKeys() const { return m_macSecKeys; }
     inline bool MacSecKeysHasBeenSet() const { return m_macSecKeysHasBeenSet; }
-    inline void SetMacSecKeys(const Aws::Vector<MacSecKey>& value) { m_macSecKeysHasBeenSet = true; m_macSecKeys = value; }
-    inline void SetMacSecKeys(Aws::Vector<MacSecKey>&& value) { m_macSecKeysHasBeenSet = true; m_macSecKeys = std::move(value); }
-    inline Connection& WithMacSecKeys(const Aws::Vector<MacSecKey>& value) { SetMacSecKeys(value); return *this;}
-    inline Connection& WithMacSecKeys(Aws::Vector<MacSecKey>&& value) { SetMacSecKeys(std::move(value)); return *this;}
-    inline Connection& AddMacSecKeys(const MacSecKey& value) { m_macSecKeysHasBeenSet = true; m_macSecKeys.push_back(value); return *this; }
-    inline Connection& AddMacSecKeys(MacSecKey&& value) { m_macSecKeysHasBeenSet = true; m_macSecKeys.push_back(std::move(value)); return *this; }
+    template<typename MacSecKeysT = Aws::Vector<MacSecKey>>
+    void SetMacSecKeys(MacSecKeysT&& value) { m_macSecKeysHasBeenSet = true; m_macSecKeys = std::forward<MacSecKeysT>(value); }
+    template<typename MacSecKeysT = Aws::Vector<MacSecKey>>
+    Connection& WithMacSecKeys(MacSecKeysT&& value) { SetMacSecKeys(std::forward<MacSecKeysT>(value)); return *this;}
+    template<typename MacSecKeysT = MacSecKey>
+    Connection& AddMacSecKeys(MacSecKeysT&& value) { m_macSecKeysHasBeenSet = true; m_macSecKeys.emplace_back(std::forward<MacSecKeysT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline Connection& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline Connection& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline Connection& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    Connection& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -379,7 +345,7 @@ namespace Model
     Aws::String m_connectionName;
     bool m_connectionNameHasBeenSet = false;
 
-    ConnectionState m_connectionState;
+    ConnectionState m_connectionState{ConnectionState::NOT_SET};
     bool m_connectionStateHasBeenSet = false;
 
     Aws::String m_region;
@@ -391,13 +357,13 @@ namespace Model
     Aws::String m_bandwidth;
     bool m_bandwidthHasBeenSet = false;
 
-    int m_vlan;
+    int m_vlan{0};
     bool m_vlanHasBeenSet = false;
 
     Aws::String m_partnerName;
     bool m_partnerNameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_loaIssueTime;
+    Aws::Utils::DateTime m_loaIssueTime{};
     bool m_loaIssueTimeHasBeenSet = false;
 
     Aws::String m_lagId;
@@ -406,7 +372,7 @@ namespace Model
     Aws::String m_awsDevice;
     bool m_awsDeviceHasBeenSet = false;
 
-    bool m_jumboFrameCapable;
+    bool m_jumboFrameCapable{false};
     bool m_jumboFrameCapableHasBeenSet = false;
 
     Aws::String m_awsDeviceV2;
@@ -415,7 +381,7 @@ namespace Model
     Aws::String m_awsLogicalDeviceId;
     bool m_awsLogicalDeviceIdHasBeenSet = false;
 
-    HasLogicalRedundancy m_hasLogicalRedundancy;
+    HasLogicalRedundancy m_hasLogicalRedundancy{HasLogicalRedundancy::NOT_SET};
     bool m_hasLogicalRedundancyHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
@@ -424,7 +390,7 @@ namespace Model
     Aws::String m_providerName;
     bool m_providerNameHasBeenSet = false;
 
-    bool m_macSecCapable;
+    bool m_macSecCapable{false};
     bool m_macSecCapableHasBeenSet = false;
 
     Aws::String m_portEncryptionStatus;

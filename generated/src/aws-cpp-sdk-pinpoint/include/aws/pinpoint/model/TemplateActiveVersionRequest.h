@@ -32,7 +32,7 @@ namespace Model
   class TemplateActiveVersionRequest
   {
   public:
-    AWS_PINPOINT_API TemplateActiveVersionRequest();
+    AWS_PINPOINT_API TemplateActiveVersionRequest() = default;
     AWS_PINPOINT_API TemplateActiveVersionRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API TemplateActiveVersionRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * linkend="templates-template-name-template-type-versions">Template
      * Versions</link> resource.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline TemplateActiveVersionRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline TemplateActiveVersionRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline TemplateActiveVersionRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    TemplateActiveVersionRequest& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
   private:
 

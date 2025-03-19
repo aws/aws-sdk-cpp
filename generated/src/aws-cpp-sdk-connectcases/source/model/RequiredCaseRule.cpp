@@ -18,15 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-RequiredCaseRule::RequiredCaseRule() : 
-    m_conditionsHasBeenSet(false),
-    m_defaultValue(false),
-    m_defaultValueHasBeenSet(false)
-{
-}
-
 RequiredCaseRule::RequiredCaseRule(JsonView jsonValue)
-  : RequiredCaseRule()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ RequiredCaseRule& RequiredCaseRule::operator =(JsonView jsonValue)
     }
     m_conditionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultValue"))
   {
     m_defaultValue = jsonValue.GetBool("defaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   return *this;
 }
 

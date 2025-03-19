@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetFaceDetectionResult::GetFaceDetectionResult() : 
-    m_jobStatus(VideoJobStatus::NOT_SET)
-{
-}
-
 GetFaceDetectionResult::GetFaceDetectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetFaceDetectionResult()
 {
   *this = result;
 }
@@ -34,27 +28,23 @@ GetFaceDetectionResult& GetFaceDetectionResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("JobStatus"))
   {
     m_jobStatus = VideoJobStatusMapper::GetVideoJobStatusForName(jsonValue.GetString("JobStatus"));
-
+    m_jobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
+    m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VideoMetadata"))
   {
     m_videoMetadata = jsonValue.GetObject("VideoMetadata");
-
+    m_videoMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Faces"))
   {
     Aws::Utils::Array<JsonView> facesJsonList = jsonValue.GetArray("Faces");
@@ -62,32 +52,30 @@ GetFaceDetectionResult& GetFaceDetectionResult::operator =(const Aws::AmazonWebS
     {
       m_faces.push_back(facesJsonList[facesIndex].AsObject());
     }
+    m_facesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
-
+    m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Video"))
   {
     m_video = jsonValue.GetObject("Video");
-
+    m_videoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobTag"))
   {
     m_jobTag = jsonValue.GetString("JobTag");
-
+    m_jobTagHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

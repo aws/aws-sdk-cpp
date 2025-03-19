@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEcsServicePlacementConstraintsDetails::AwsEcsServicePlacementConstraintsDetails() : 
-    m_expressionHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 AwsEcsServicePlacementConstraintsDetails::AwsEcsServicePlacementConstraintsDetails(JsonView jsonValue)
-  : AwsEcsServicePlacementConstraintsDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsEcsServicePlacementConstraintsDetails& AwsEcsServicePlacementConstraintsDetai
   if(jsonValue.ValueExists("Expression"))
   {
     m_expression = jsonValue.GetString("Expression");
-
     m_expressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

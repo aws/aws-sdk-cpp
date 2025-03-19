@@ -18,14 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-SubscriptionPrincipal::SubscriptionPrincipal() : 
-    m_userHasBeenSet(false),
-    m_groupHasBeenSet(false)
-{
-}
-
 SubscriptionPrincipal::SubscriptionPrincipal(JsonView jsonValue)
-  : SubscriptionPrincipal()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SubscriptionPrincipal& SubscriptionPrincipal::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("user"))
   {
     m_user = jsonValue.GetString("user");
-
     m_userHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("group"))
   {
     m_group = jsonValue.GetString("group");
-
     m_groupHasBeenSet = true;
   }
-
   return *this;
 }
 

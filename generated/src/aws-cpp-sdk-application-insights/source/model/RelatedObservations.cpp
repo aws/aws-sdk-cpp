@@ -18,13 +18,7 @@ namespace ApplicationInsights
 namespace Model
 {
 
-RelatedObservations::RelatedObservations() : 
-    m_observationListHasBeenSet(false)
-{
-}
-
 RelatedObservations::RelatedObservations(JsonView jsonValue)
-  : RelatedObservations()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ RelatedObservations& RelatedObservations::operator =(JsonView jsonValue)
     }
     m_observationListHasBeenSet = true;
   }
-
   return *this;
 }
 

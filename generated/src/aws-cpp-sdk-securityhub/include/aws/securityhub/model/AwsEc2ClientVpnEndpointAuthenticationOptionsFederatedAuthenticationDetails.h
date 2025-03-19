@@ -32,7 +32,7 @@ namespace Model
   class AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails();
+    AWS_SECURITYHUB_API AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails() = default;
     AWS_SECURITYHUB_API AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (ARN) of the IAM SAML identity provider. </p>
      */
-    inline const Aws::String& GetSamlProviderArn() const{ return m_samlProviderArn; }
+    inline const Aws::String& GetSamlProviderArn() const { return m_samlProviderArn; }
     inline bool SamlProviderArnHasBeenSet() const { return m_samlProviderArnHasBeenSet; }
-    inline void SetSamlProviderArn(const Aws::String& value) { m_samlProviderArnHasBeenSet = true; m_samlProviderArn = value; }
-    inline void SetSamlProviderArn(Aws::String&& value) { m_samlProviderArnHasBeenSet = true; m_samlProviderArn = std::move(value); }
-    inline void SetSamlProviderArn(const char* value) { m_samlProviderArnHasBeenSet = true; m_samlProviderArn.assign(value); }
-    inline AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails& WithSamlProviderArn(const Aws::String& value) { SetSamlProviderArn(value); return *this;}
-    inline AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails& WithSamlProviderArn(Aws::String&& value) { SetSamlProviderArn(std::move(value)); return *this;}
-    inline AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails& WithSamlProviderArn(const char* value) { SetSamlProviderArn(value); return *this;}
+    template<typename SamlProviderArnT = Aws::String>
+    void SetSamlProviderArn(SamlProviderArnT&& value) { m_samlProviderArnHasBeenSet = true; m_samlProviderArn = std::forward<SamlProviderArnT>(value); }
+    template<typename SamlProviderArnT = Aws::String>
+    AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails& WithSamlProviderArn(SamlProviderArnT&& value) { SetSamlProviderArn(std::forward<SamlProviderArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the IAM SAML identity provider for the
      * self-service portal. </p>
      */
-    inline const Aws::String& GetSelfServiceSamlProviderArn() const{ return m_selfServiceSamlProviderArn; }
+    inline const Aws::String& GetSelfServiceSamlProviderArn() const { return m_selfServiceSamlProviderArn; }
     inline bool SelfServiceSamlProviderArnHasBeenSet() const { return m_selfServiceSamlProviderArnHasBeenSet; }
-    inline void SetSelfServiceSamlProviderArn(const Aws::String& value) { m_selfServiceSamlProviderArnHasBeenSet = true; m_selfServiceSamlProviderArn = value; }
-    inline void SetSelfServiceSamlProviderArn(Aws::String&& value) { m_selfServiceSamlProviderArnHasBeenSet = true; m_selfServiceSamlProviderArn = std::move(value); }
-    inline void SetSelfServiceSamlProviderArn(const char* value) { m_selfServiceSamlProviderArnHasBeenSet = true; m_selfServiceSamlProviderArn.assign(value); }
-    inline AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails& WithSelfServiceSamlProviderArn(const Aws::String& value) { SetSelfServiceSamlProviderArn(value); return *this;}
-    inline AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails& WithSelfServiceSamlProviderArn(Aws::String&& value) { SetSelfServiceSamlProviderArn(std::move(value)); return *this;}
-    inline AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails& WithSelfServiceSamlProviderArn(const char* value) { SetSelfServiceSamlProviderArn(value); return *this;}
+    template<typename SelfServiceSamlProviderArnT = Aws::String>
+    void SetSelfServiceSamlProviderArn(SelfServiceSamlProviderArnT&& value) { m_selfServiceSamlProviderArnHasBeenSet = true; m_selfServiceSamlProviderArn = std::forward<SelfServiceSamlProviderArnT>(value); }
+    template<typename SelfServiceSamlProviderArnT = Aws::String>
+    AwsEc2ClientVpnEndpointAuthenticationOptionsFederatedAuthenticationDetails& WithSelfServiceSamlProviderArn(SelfServiceSamlProviderArnT&& value) { SetSelfServiceSamlProviderArn(std::forward<SelfServiceSamlProviderArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -35,7 +35,7 @@ namespace Model
   class MetricReference
   {
   public:
-    AWS_APPLICATIONSIGNALS_API MetricReference();
+    AWS_APPLICATIONSIGNALS_API MetricReference() = default;
     AWS_APPLICATIONSIGNALS_API MetricReference(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API MetricReference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPLICATIONSIGNALS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
      * <p>The namespace of the metric. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Namespace">CloudWatchNamespaces</a>.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline MetricReference& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline MetricReference& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline MetricReference& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    MetricReference& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Used to display the appropriate statistics in the CloudWatch console.</p>
      */
-    inline const Aws::String& GetMetricType() const{ return m_metricType; }
+    inline const Aws::String& GetMetricType() const { return m_metricType; }
     inline bool MetricTypeHasBeenSet() const { return m_metricTypeHasBeenSet; }
-    inline void SetMetricType(const Aws::String& value) { m_metricTypeHasBeenSet = true; m_metricType = value; }
-    inline void SetMetricType(Aws::String&& value) { m_metricTypeHasBeenSet = true; m_metricType = std::move(value); }
-    inline void SetMetricType(const char* value) { m_metricTypeHasBeenSet = true; m_metricType.assign(value); }
-    inline MetricReference& WithMetricType(const Aws::String& value) { SetMetricType(value); return *this;}
-    inline MetricReference& WithMetricType(Aws::String&& value) { SetMetricType(std::move(value)); return *this;}
-    inline MetricReference& WithMetricType(const char* value) { SetMetricType(value); return *this;}
+    template<typename MetricTypeT = Aws::String>
+    void SetMetricType(MetricTypeT&& value) { m_metricTypeHasBeenSet = true; m_metricType = std::forward<MetricTypeT>(value); }
+    template<typename MetricTypeT = Aws::String>
+    MetricReference& WithMetricType(MetricTypeT&& value) { SetMetricType(std::forward<MetricTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,42 +72,38 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_concepts.html#Dimension">CloudWatchDimensions</a>.</p>
      */
-    inline const Aws::Vector<Dimension>& GetDimensions() const{ return m_dimensions; }
+    inline const Aws::Vector<Dimension>& GetDimensions() const { return m_dimensions; }
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-    inline void SetDimensions(const Aws::Vector<Dimension>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-    inline void SetDimensions(Aws::Vector<Dimension>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-    inline MetricReference& WithDimensions(const Aws::Vector<Dimension>& value) { SetDimensions(value); return *this;}
-    inline MetricReference& WithDimensions(Aws::Vector<Dimension>&& value) { SetDimensions(std::move(value)); return *this;}
-    inline MetricReference& AddDimensions(const Dimension& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
-    inline MetricReference& AddDimensions(Dimension&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
+    template<typename DimensionsT = Aws::Vector<Dimension>>
+    void SetDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::forward<DimensionsT>(value); }
+    template<typename DimensionsT = Aws::Vector<Dimension>>
+    MetricReference& WithDimensions(DimensionsT&& value) { SetDimensions(std::forward<DimensionsT>(value)); return *this;}
+    template<typename DimensionsT = Dimension>
+    MetricReference& AddDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace_back(std::forward<DimensionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The name of the metric.</p>
      */
-    inline const Aws::String& GetMetricName() const{ return m_metricName; }
+    inline const Aws::String& GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
-    inline MetricReference& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-    inline MetricReference& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-    inline MetricReference& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+    template<typename MetricNameT = Aws::String>
+    void SetMetricName(MetricNameT&& value) { m_metricNameHasBeenSet = true; m_metricName = std::forward<MetricNameT>(value); }
+    template<typename MetricNameT = Aws::String>
+    MetricReference& WithMetricName(MetricNameT&& value) { SetMetricName(std::forward<MetricNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Amazon Web Services account ID.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline MetricReference& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline MetricReference& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline MetricReference& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    MetricReference& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
   private:
 

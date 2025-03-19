@@ -12,12 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ReplaceTopicRuleRequest::ReplaceTopicRuleRequest() : 
-    m_ruleNameHasBeenSet(false),
-    m_topicRulePayloadHasBeenSet(false)
-{
-}
-
 Aws::String ReplaceTopicRuleRequest::SerializePayload() const
 {
   JsonValue payload;

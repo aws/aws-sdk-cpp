@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-VirtualGatewayTlsValidationContextSdsTrust::VirtualGatewayTlsValidationContextSdsTrust() : 
-    m_secretNameHasBeenSet(false)
-{
-}
-
 VirtualGatewayTlsValidationContextSdsTrust::VirtualGatewayTlsValidationContextSdsTrust(JsonView jsonValue)
-  : VirtualGatewayTlsValidationContextSdsTrust()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ VirtualGatewayTlsValidationContextSdsTrust& VirtualGatewayTlsValidationContextSd
   if(jsonValue.ValueExists("secretName"))
   {
     m_secretName = jsonValue.GetString("secretName");
-
     m_secretNameHasBeenSet = true;
   }
-
   return *this;
 }
 

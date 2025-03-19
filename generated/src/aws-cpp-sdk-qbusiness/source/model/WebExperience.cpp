@@ -18,18 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-WebExperience::WebExperience() : 
-    m_webExperienceIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_defaultEndpointHasBeenSet(false),
-    m_status(WebExperienceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 WebExperience::WebExperience(JsonView jsonValue)
-  : WebExperience()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ WebExperience& WebExperience::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("webExperienceId"))
   {
     m_webExperienceId = jsonValue.GetString("webExperienceId");
-
     m_webExperienceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultEndpoint"))
   {
     m_defaultEndpoint = jsonValue.GetString("defaultEndpoint");
-
     m_defaultEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = WebExperienceStatusMapper::GetWebExperienceStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

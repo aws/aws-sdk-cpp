@@ -12,11 +12,6 @@ using namespace Aws::IVS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteChannelRequest::DeleteChannelRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteChannelRequest::SerializePayload() const
 {
   JsonValue payload;

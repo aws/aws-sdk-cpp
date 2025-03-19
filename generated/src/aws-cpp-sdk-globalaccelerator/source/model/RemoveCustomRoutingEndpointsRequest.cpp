@@ -12,12 +12,6 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveCustomRoutingEndpointsRequest::RemoveCustomRoutingEndpointsRequest() : 
-    m_endpointIdsHasBeenSet(false),
-    m_endpointGroupArnHasBeenSet(false)
-{
-}
-
 Aws::String RemoveCustomRoutingEndpointsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,21 +12,6 @@ using namespace Aws::Translate::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartTextTranslationJobRequest::StartTextTranslationJobRequest() : 
-    m_jobNameHasBeenSet(false),
-    m_inputDataConfigHasBeenSet(false),
-    m_outputDataConfigHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_sourceLanguageCodeHasBeenSet(false),
-    m_targetLanguageCodesHasBeenSet(false),
-    m_terminologyNamesHasBeenSet(false),
-    m_parallelDataNamesHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_settingsHasBeenSet(false)
-{
-}
-
 Aws::String StartTextTranslationJobRequest::SerializePayload() const
 {
   JsonValue payload;

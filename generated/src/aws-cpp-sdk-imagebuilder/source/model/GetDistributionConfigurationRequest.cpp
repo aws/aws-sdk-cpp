@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetDistributionConfigurationRequest::GetDistributionConfigurationRequest() : 
-    m_distributionConfigurationArnHasBeenSet(false)
-{
-}
-
 Aws::String GetDistributionConfigurationRequest::SerializePayload() const
 {
   return {};

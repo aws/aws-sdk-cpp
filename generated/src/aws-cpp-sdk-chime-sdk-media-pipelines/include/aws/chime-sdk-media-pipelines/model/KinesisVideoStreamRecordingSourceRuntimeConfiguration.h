@@ -34,7 +34,7 @@ namespace Model
   class KinesisVideoStreamRecordingSourceRuntimeConfiguration
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API KinesisVideoStreamRecordingSourceRuntimeConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API KinesisVideoStreamRecordingSourceRuntimeConfiguration() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API KinesisVideoStreamRecordingSourceRuntimeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API KinesisVideoStreamRecordingSourceRuntimeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
     /**
      * <p>The stream or streams to be recorded.</p>
      */
-    inline const Aws::Vector<RecordingStreamConfiguration>& GetStreams() const{ return m_streams; }
+    inline const Aws::Vector<RecordingStreamConfiguration>& GetStreams() const { return m_streams; }
     inline bool StreamsHasBeenSet() const { return m_streamsHasBeenSet; }
-    inline void SetStreams(const Aws::Vector<RecordingStreamConfiguration>& value) { m_streamsHasBeenSet = true; m_streams = value; }
-    inline void SetStreams(Aws::Vector<RecordingStreamConfiguration>&& value) { m_streamsHasBeenSet = true; m_streams = std::move(value); }
-    inline KinesisVideoStreamRecordingSourceRuntimeConfiguration& WithStreams(const Aws::Vector<RecordingStreamConfiguration>& value) { SetStreams(value); return *this;}
-    inline KinesisVideoStreamRecordingSourceRuntimeConfiguration& WithStreams(Aws::Vector<RecordingStreamConfiguration>&& value) { SetStreams(std::move(value)); return *this;}
-    inline KinesisVideoStreamRecordingSourceRuntimeConfiguration& AddStreams(const RecordingStreamConfiguration& value) { m_streamsHasBeenSet = true; m_streams.push_back(value); return *this; }
-    inline KinesisVideoStreamRecordingSourceRuntimeConfiguration& AddStreams(RecordingStreamConfiguration&& value) { m_streamsHasBeenSet = true; m_streams.push_back(std::move(value)); return *this; }
+    template<typename StreamsT = Aws::Vector<RecordingStreamConfiguration>>
+    void SetStreams(StreamsT&& value) { m_streamsHasBeenSet = true; m_streams = std::forward<StreamsT>(value); }
+    template<typename StreamsT = Aws::Vector<RecordingStreamConfiguration>>
+    KinesisVideoStreamRecordingSourceRuntimeConfiguration& WithStreams(StreamsT&& value) { SetStreams(std::forward<StreamsT>(value)); return *this;}
+    template<typename StreamsT = RecordingStreamConfiguration>
+    KinesisVideoStreamRecordingSourceRuntimeConfiguration& AddStreams(StreamsT&& value) { m_streamsHasBeenSet = true; m_streams.emplace_back(std::forward<StreamsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,12 +59,12 @@ namespace Model
      * <p>Describes the timestamp range and timestamp origin of a range of fragments in
      * the Kinesis video stream.</p>
      */
-    inline const FragmentSelector& GetFragmentSelector() const{ return m_fragmentSelector; }
+    inline const FragmentSelector& GetFragmentSelector() const { return m_fragmentSelector; }
     inline bool FragmentSelectorHasBeenSet() const { return m_fragmentSelectorHasBeenSet; }
-    inline void SetFragmentSelector(const FragmentSelector& value) { m_fragmentSelectorHasBeenSet = true; m_fragmentSelector = value; }
-    inline void SetFragmentSelector(FragmentSelector&& value) { m_fragmentSelectorHasBeenSet = true; m_fragmentSelector = std::move(value); }
-    inline KinesisVideoStreamRecordingSourceRuntimeConfiguration& WithFragmentSelector(const FragmentSelector& value) { SetFragmentSelector(value); return *this;}
-    inline KinesisVideoStreamRecordingSourceRuntimeConfiguration& WithFragmentSelector(FragmentSelector&& value) { SetFragmentSelector(std::move(value)); return *this;}
+    template<typename FragmentSelectorT = FragmentSelector>
+    void SetFragmentSelector(FragmentSelectorT&& value) { m_fragmentSelectorHasBeenSet = true; m_fragmentSelector = std::forward<FragmentSelectorT>(value); }
+    template<typename FragmentSelectorT = FragmentSelector>
+    KinesisVideoStreamRecordingSourceRuntimeConfiguration& WithFragmentSelector(FragmentSelectorT&& value) { SetFragmentSelector(std::forward<FragmentSelectorT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,16 +18,7 @@ namespace KMS
 namespace Model
 {
 
-RotationsListEntry::RotationsListEntry() : 
-    m_keyIdHasBeenSet(false),
-    m_rotationDateHasBeenSet(false),
-    m_rotationType(RotationType::NOT_SET),
-    m_rotationTypeHasBeenSet(false)
-{
-}
-
 RotationsListEntry::RotationsListEntry(JsonView jsonValue)
-  : RotationsListEntry()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ RotationsListEntry& RotationsListEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KeyId"))
   {
     m_keyId = jsonValue.GetString("KeyId");
-
     m_keyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RotationDate"))
   {
     m_rotationDate = jsonValue.GetDouble("RotationDate");
-
     m_rotationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RotationType"))
   {
     m_rotationType = RotationTypeMapper::GetRotationTypeForName(jsonValue.GetString("RotationType"));
-
     m_rotationTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

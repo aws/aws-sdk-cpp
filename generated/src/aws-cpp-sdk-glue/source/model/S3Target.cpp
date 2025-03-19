@@ -18,19 +18,7 @@ namespace Glue
 namespace Model
 {
 
-S3Target::S3Target() : 
-    m_pathHasBeenSet(false),
-    m_exclusionsHasBeenSet(false),
-    m_connectionNameHasBeenSet(false),
-    m_sampleSize(0),
-    m_sampleSizeHasBeenSet(false),
-    m_eventQueueArnHasBeenSet(false),
-    m_dlqEventQueueArnHasBeenSet(false)
-{
-}
-
 S3Target::S3Target(JsonView jsonValue)
-  : S3Target()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ S3Target& S3Target::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Exclusions"))
   {
     Aws::Utils::Array<JsonView> exclusionsJsonList = jsonValue.GetArray("Exclusions");
@@ -53,35 +39,26 @@ S3Target& S3Target::operator =(JsonView jsonValue)
     }
     m_exclusionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionName"))
   {
     m_connectionName = jsonValue.GetString("ConnectionName");
-
     m_connectionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SampleSize"))
   {
     m_sampleSize = jsonValue.GetInteger("SampleSize");
-
     m_sampleSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventQueueArn"))
   {
     m_eventQueueArn = jsonValue.GetString("EventQueueArn");
-
     m_eventQueueArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DlqEventQueueArn"))
   {
     m_dlqEventQueueArn = jsonValue.GetString("DlqEventQueueArn");
-
     m_dlqEventQueueArnHasBeenSet = true;
   }
-
   return *this;
 }
 

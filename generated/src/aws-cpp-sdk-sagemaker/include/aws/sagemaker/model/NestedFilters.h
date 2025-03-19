@@ -45,7 +45,7 @@ namespace Model
   class NestedFilters
   {
   public:
-    AWS_SAGEMAKER_API NestedFilters();
+    AWS_SAGEMAKER_API NestedFilters() = default;
     AWS_SAGEMAKER_API NestedFilters(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API NestedFilters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,14 +56,12 @@ namespace Model
      * <p>The name of the property to use in the nested filters. The value must match a
      * listed property name, such as <code>InputDataConfig</code>.</p>
      */
-    inline const Aws::String& GetNestedPropertyName() const{ return m_nestedPropertyName; }
+    inline const Aws::String& GetNestedPropertyName() const { return m_nestedPropertyName; }
     inline bool NestedPropertyNameHasBeenSet() const { return m_nestedPropertyNameHasBeenSet; }
-    inline void SetNestedPropertyName(const Aws::String& value) { m_nestedPropertyNameHasBeenSet = true; m_nestedPropertyName = value; }
-    inline void SetNestedPropertyName(Aws::String&& value) { m_nestedPropertyNameHasBeenSet = true; m_nestedPropertyName = std::move(value); }
-    inline void SetNestedPropertyName(const char* value) { m_nestedPropertyNameHasBeenSet = true; m_nestedPropertyName.assign(value); }
-    inline NestedFilters& WithNestedPropertyName(const Aws::String& value) { SetNestedPropertyName(value); return *this;}
-    inline NestedFilters& WithNestedPropertyName(Aws::String&& value) { SetNestedPropertyName(std::move(value)); return *this;}
-    inline NestedFilters& WithNestedPropertyName(const char* value) { SetNestedPropertyName(value); return *this;}
+    template<typename NestedPropertyNameT = Aws::String>
+    void SetNestedPropertyName(NestedPropertyNameT&& value) { m_nestedPropertyNameHasBeenSet = true; m_nestedPropertyName = std::forward<NestedPropertyNameT>(value); }
+    template<typename NestedPropertyNameT = Aws::String>
+    NestedFilters& WithNestedPropertyName(NestedPropertyNameT&& value) { SetNestedPropertyName(std::forward<NestedPropertyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +72,14 @@ namespace Model
      * <code>InputDataConfig</code> property:
      * <code>InputDataConfig.DataSource.S3DataSource.S3Uri</code>.</p>
      */
-    inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline NestedFilters& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
-    inline NestedFilters& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline NestedFilters& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline NestedFilters& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<Filter>>
+    NestedFilters& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = Filter>
+    NestedFilters& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
   private:
 

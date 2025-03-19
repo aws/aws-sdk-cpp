@@ -18,16 +18,7 @@ namespace ApplicationDiscoveryService
 namespace Model
 {
 
-FailedConfiguration::FailedConfiguration() : 
-    m_configurationIdHasBeenSet(false),
-    m_errorStatusCode(0),
-    m_errorStatusCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 FailedConfiguration::FailedConfiguration(JsonView jsonValue)
-  : FailedConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ FailedConfiguration& FailedConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("configurationId"))
   {
     m_configurationId = jsonValue.GetString("configurationId");
-
     m_configurationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorStatusCode"))
   {
     m_errorStatusCode = jsonValue.GetInteger("errorStatusCode");
-
     m_errorStatusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

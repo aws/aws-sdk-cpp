@@ -18,16 +18,7 @@ namespace ConnectCampaigns
 namespace Model
 {
 
-DialRequest::DialRequest() : 
-    m_clientTokenHasBeenSet(false),
-    m_phoneNumberHasBeenSet(false),
-    m_expirationTimeHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 DialRequest::DialRequest(JsonView jsonValue)
-  : DialRequest()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DialRequest& DialRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("clientToken"))
   {
     m_clientToken = jsonValue.GetString("clientToken");
-
     m_clientTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("phoneNumber"))
   {
     m_phoneNumber = jsonValue.GetString("phoneNumber");
-
     m_phoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expirationTime"))
   {
     m_expirationTime = jsonValue.GetString("expirationTime");
-
     m_expirationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
@@ -64,7 +49,6 @@ DialRequest& DialRequest::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   return *this;
 }
 

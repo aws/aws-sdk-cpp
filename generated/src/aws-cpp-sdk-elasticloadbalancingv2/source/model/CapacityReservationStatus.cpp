@@ -20,15 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-CapacityReservationStatus::CapacityReservationStatus() : 
-    m_code(CapacityReservationStateEnum::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 CapacityReservationStatus::CapacityReservationStatus(const XmlNode& xmlNode)
-  : CapacityReservationStatus()
 {
   *this = xmlNode;
 }
@@ -42,7 +34,7 @@ CapacityReservationStatus& CapacityReservationStatus::operator =(const XmlNode& 
     XmlNode codeNode = resultNode.FirstChild("Code");
     if(!codeNode.IsNull())
     {
-      m_code = CapacityReservationStateEnumMapper::GetCapacityReservationStateEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()).c_str());
+      m_code = CapacityReservationStateEnumMapper::GetCapacityReservationStateEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText()).c_str()));
       m_codeHasBeenSet = true;
     }
     XmlNode reasonNode = resultNode.FirstChild("Reason");

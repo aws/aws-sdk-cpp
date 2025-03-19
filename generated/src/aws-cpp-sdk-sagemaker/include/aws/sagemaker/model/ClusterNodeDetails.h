@@ -40,7 +40,7 @@ namespace Model
   class ClusterNodeDetails
   {
   public:
-    AWS_SAGEMAKER_API ClusterNodeDetails();
+    AWS_SAGEMAKER_API ClusterNodeDetails() = default;
     AWS_SAGEMAKER_API ClusterNodeDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ClusterNodeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,76 +50,70 @@ namespace Model
     /**
      * <p>The instance group name in which the instance is.</p>
      */
-    inline const Aws::String& GetInstanceGroupName() const{ return m_instanceGroupName; }
+    inline const Aws::String& GetInstanceGroupName() const { return m_instanceGroupName; }
     inline bool InstanceGroupNameHasBeenSet() const { return m_instanceGroupNameHasBeenSet; }
-    inline void SetInstanceGroupName(const Aws::String& value) { m_instanceGroupNameHasBeenSet = true; m_instanceGroupName = value; }
-    inline void SetInstanceGroupName(Aws::String&& value) { m_instanceGroupNameHasBeenSet = true; m_instanceGroupName = std::move(value); }
-    inline void SetInstanceGroupName(const char* value) { m_instanceGroupNameHasBeenSet = true; m_instanceGroupName.assign(value); }
-    inline ClusterNodeDetails& WithInstanceGroupName(const Aws::String& value) { SetInstanceGroupName(value); return *this;}
-    inline ClusterNodeDetails& WithInstanceGroupName(Aws::String&& value) { SetInstanceGroupName(std::move(value)); return *this;}
-    inline ClusterNodeDetails& WithInstanceGroupName(const char* value) { SetInstanceGroupName(value); return *this;}
+    template<typename InstanceGroupNameT = Aws::String>
+    void SetInstanceGroupName(InstanceGroupNameT&& value) { m_instanceGroupNameHasBeenSet = true; m_instanceGroupName = std::forward<InstanceGroupNameT>(value); }
+    template<typename InstanceGroupNameT = Aws::String>
+    ClusterNodeDetails& WithInstanceGroupName(InstanceGroupNameT&& value) { SetInstanceGroupName(std::forward<InstanceGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline ClusterNodeDetails& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline ClusterNodeDetails& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline ClusterNodeDetails& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    ClusterNodeDetails& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the instance.</p>
      */
-    inline const ClusterInstanceStatusDetails& GetInstanceStatus() const{ return m_instanceStatus; }
+    inline const ClusterInstanceStatusDetails& GetInstanceStatus() const { return m_instanceStatus; }
     inline bool InstanceStatusHasBeenSet() const { return m_instanceStatusHasBeenSet; }
-    inline void SetInstanceStatus(const ClusterInstanceStatusDetails& value) { m_instanceStatusHasBeenSet = true; m_instanceStatus = value; }
-    inline void SetInstanceStatus(ClusterInstanceStatusDetails&& value) { m_instanceStatusHasBeenSet = true; m_instanceStatus = std::move(value); }
-    inline ClusterNodeDetails& WithInstanceStatus(const ClusterInstanceStatusDetails& value) { SetInstanceStatus(value); return *this;}
-    inline ClusterNodeDetails& WithInstanceStatus(ClusterInstanceStatusDetails&& value) { SetInstanceStatus(std::move(value)); return *this;}
+    template<typename InstanceStatusT = ClusterInstanceStatusDetails>
+    void SetInstanceStatus(InstanceStatusT&& value) { m_instanceStatusHasBeenSet = true; m_instanceStatus = std::forward<InstanceStatusT>(value); }
+    template<typename InstanceStatusT = ClusterInstanceStatusDetails>
+    ClusterNodeDetails& WithInstanceStatus(InstanceStatusT&& value) { SetInstanceStatus(std::forward<InstanceStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the instance.</p>
      */
-    inline const ClusterInstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline ClusterInstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const ClusterInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(ClusterInstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline ClusterNodeDetails& WithInstanceType(const ClusterInstanceType& value) { SetInstanceType(value); return *this;}
-    inline ClusterNodeDetails& WithInstanceType(ClusterInstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(ClusterInstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline ClusterNodeDetails& WithInstanceType(ClusterInstanceType value) { SetInstanceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the instance is launched.</p>
      */
-    inline const Aws::Utils::DateTime& GetLaunchTime() const{ return m_launchTime; }
+    inline const Aws::Utils::DateTime& GetLaunchTime() const { return m_launchTime; }
     inline bool LaunchTimeHasBeenSet() const { return m_launchTimeHasBeenSet; }
-    inline void SetLaunchTime(const Aws::Utils::DateTime& value) { m_launchTimeHasBeenSet = true; m_launchTime = value; }
-    inline void SetLaunchTime(Aws::Utils::DateTime&& value) { m_launchTimeHasBeenSet = true; m_launchTime = std::move(value); }
-    inline ClusterNodeDetails& WithLaunchTime(const Aws::Utils::DateTime& value) { SetLaunchTime(value); return *this;}
-    inline ClusterNodeDetails& WithLaunchTime(Aws::Utils::DateTime&& value) { SetLaunchTime(std::move(value)); return *this;}
+    template<typename LaunchTimeT = Aws::Utils::DateTime>
+    void SetLaunchTime(LaunchTimeT&& value) { m_launchTimeHasBeenSet = true; m_launchTime = std::forward<LaunchTimeT>(value); }
+    template<typename LaunchTimeT = Aws::Utils::DateTime>
+    ClusterNodeDetails& WithLaunchTime(LaunchTimeT&& value) { SetLaunchTime(std::forward<LaunchTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The LifeCycle configuration applied to the instance.</p>
      */
-    inline const ClusterLifeCycleConfig& GetLifeCycleConfig() const{ return m_lifeCycleConfig; }
+    inline const ClusterLifeCycleConfig& GetLifeCycleConfig() const { return m_lifeCycleConfig; }
     inline bool LifeCycleConfigHasBeenSet() const { return m_lifeCycleConfigHasBeenSet; }
-    inline void SetLifeCycleConfig(const ClusterLifeCycleConfig& value) { m_lifeCycleConfigHasBeenSet = true; m_lifeCycleConfig = value; }
-    inline void SetLifeCycleConfig(ClusterLifeCycleConfig&& value) { m_lifeCycleConfigHasBeenSet = true; m_lifeCycleConfig = std::move(value); }
-    inline ClusterNodeDetails& WithLifeCycleConfig(const ClusterLifeCycleConfig& value) { SetLifeCycleConfig(value); return *this;}
-    inline ClusterNodeDetails& WithLifeCycleConfig(ClusterLifeCycleConfig&& value) { SetLifeCycleConfig(std::move(value)); return *this;}
+    template<typename LifeCycleConfigT = ClusterLifeCycleConfig>
+    void SetLifeCycleConfig(LifeCycleConfigT&& value) { m_lifeCycleConfigHasBeenSet = true; m_lifeCycleConfig = std::forward<LifeCycleConfigT>(value); }
+    template<typename LifeCycleConfigT = ClusterLifeCycleConfig>
+    ClusterNodeDetails& WithLifeCycleConfig(LifeCycleConfigT&& value) { SetLifeCycleConfig(std::forward<LifeCycleConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,12 +122,12 @@ namespace Model
      * overrides the default Amazon VPC configuration of the SageMaker HyperPod
      * cluster.</p>
      */
-    inline const VpcConfig& GetOverrideVpcConfig() const{ return m_overrideVpcConfig; }
+    inline const VpcConfig& GetOverrideVpcConfig() const { return m_overrideVpcConfig; }
     inline bool OverrideVpcConfigHasBeenSet() const { return m_overrideVpcConfigHasBeenSet; }
-    inline void SetOverrideVpcConfig(const VpcConfig& value) { m_overrideVpcConfigHasBeenSet = true; m_overrideVpcConfig = value; }
-    inline void SetOverrideVpcConfig(VpcConfig&& value) { m_overrideVpcConfigHasBeenSet = true; m_overrideVpcConfig = std::move(value); }
-    inline ClusterNodeDetails& WithOverrideVpcConfig(const VpcConfig& value) { SetOverrideVpcConfig(value); return *this;}
-    inline ClusterNodeDetails& WithOverrideVpcConfig(VpcConfig&& value) { SetOverrideVpcConfig(std::move(value)); return *this;}
+    template<typename OverrideVpcConfigT = VpcConfig>
+    void SetOverrideVpcConfig(OverrideVpcConfigT&& value) { m_overrideVpcConfigHasBeenSet = true; m_overrideVpcConfig = std::forward<OverrideVpcConfigT>(value); }
+    template<typename OverrideVpcConfigT = VpcConfig>
+    ClusterNodeDetails& WithOverrideVpcConfig(OverrideVpcConfigT&& value) { SetOverrideVpcConfig(std::forward<OverrideVpcConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -141,7 +135,7 @@ namespace Model
      * <p>The number of threads per CPU core you specified under
      * <code>CreateCluster</code>.</p>
      */
-    inline int GetThreadsPerCore() const{ return m_threadsPerCore; }
+    inline int GetThreadsPerCore() const { return m_threadsPerCore; }
     inline bool ThreadsPerCoreHasBeenSet() const { return m_threadsPerCoreHasBeenSet; }
     inline void SetThreadsPerCore(int value) { m_threadsPerCoreHasBeenSet = true; m_threadsPerCore = value; }
     inline ClusterNodeDetails& WithThreadsPerCore(int value) { SetThreadsPerCore(value); return *this;}
@@ -152,28 +146,26 @@ namespace Model
      * <p>The configurations of additional storage specified to the instance group
      * where the instance (node) is launched.</p>
      */
-    inline const Aws::Vector<ClusterInstanceStorageConfig>& GetInstanceStorageConfigs() const{ return m_instanceStorageConfigs; }
+    inline const Aws::Vector<ClusterInstanceStorageConfig>& GetInstanceStorageConfigs() const { return m_instanceStorageConfigs; }
     inline bool InstanceStorageConfigsHasBeenSet() const { return m_instanceStorageConfigsHasBeenSet; }
-    inline void SetInstanceStorageConfigs(const Aws::Vector<ClusterInstanceStorageConfig>& value) { m_instanceStorageConfigsHasBeenSet = true; m_instanceStorageConfigs = value; }
-    inline void SetInstanceStorageConfigs(Aws::Vector<ClusterInstanceStorageConfig>&& value) { m_instanceStorageConfigsHasBeenSet = true; m_instanceStorageConfigs = std::move(value); }
-    inline ClusterNodeDetails& WithInstanceStorageConfigs(const Aws::Vector<ClusterInstanceStorageConfig>& value) { SetInstanceStorageConfigs(value); return *this;}
-    inline ClusterNodeDetails& WithInstanceStorageConfigs(Aws::Vector<ClusterInstanceStorageConfig>&& value) { SetInstanceStorageConfigs(std::move(value)); return *this;}
-    inline ClusterNodeDetails& AddInstanceStorageConfigs(const ClusterInstanceStorageConfig& value) { m_instanceStorageConfigsHasBeenSet = true; m_instanceStorageConfigs.push_back(value); return *this; }
-    inline ClusterNodeDetails& AddInstanceStorageConfigs(ClusterInstanceStorageConfig&& value) { m_instanceStorageConfigsHasBeenSet = true; m_instanceStorageConfigs.push_back(std::move(value)); return *this; }
+    template<typename InstanceStorageConfigsT = Aws::Vector<ClusterInstanceStorageConfig>>
+    void SetInstanceStorageConfigs(InstanceStorageConfigsT&& value) { m_instanceStorageConfigsHasBeenSet = true; m_instanceStorageConfigs = std::forward<InstanceStorageConfigsT>(value); }
+    template<typename InstanceStorageConfigsT = Aws::Vector<ClusterInstanceStorageConfig>>
+    ClusterNodeDetails& WithInstanceStorageConfigs(InstanceStorageConfigsT&& value) { SetInstanceStorageConfigs(std::forward<InstanceStorageConfigsT>(value)); return *this;}
+    template<typename InstanceStorageConfigsT = ClusterInstanceStorageConfig>
+    ClusterNodeDetails& AddInstanceStorageConfigs(InstanceStorageConfigsT&& value) { m_instanceStorageConfigsHasBeenSet = true; m_instanceStorageConfigs.emplace_back(std::forward<InstanceStorageConfigsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The private primary IP address of the SageMaker HyperPod cluster node.</p>
      */
-    inline const Aws::String& GetPrivatePrimaryIp() const{ return m_privatePrimaryIp; }
+    inline const Aws::String& GetPrivatePrimaryIp() const { return m_privatePrimaryIp; }
     inline bool PrivatePrimaryIpHasBeenSet() const { return m_privatePrimaryIpHasBeenSet; }
-    inline void SetPrivatePrimaryIp(const Aws::String& value) { m_privatePrimaryIpHasBeenSet = true; m_privatePrimaryIp = value; }
-    inline void SetPrivatePrimaryIp(Aws::String&& value) { m_privatePrimaryIpHasBeenSet = true; m_privatePrimaryIp = std::move(value); }
-    inline void SetPrivatePrimaryIp(const char* value) { m_privatePrimaryIpHasBeenSet = true; m_privatePrimaryIp.assign(value); }
-    inline ClusterNodeDetails& WithPrivatePrimaryIp(const Aws::String& value) { SetPrivatePrimaryIp(value); return *this;}
-    inline ClusterNodeDetails& WithPrivatePrimaryIp(Aws::String&& value) { SetPrivatePrimaryIp(std::move(value)); return *this;}
-    inline ClusterNodeDetails& WithPrivatePrimaryIp(const char* value) { SetPrivatePrimaryIp(value); return *this;}
+    template<typename PrivatePrimaryIpT = Aws::String>
+    void SetPrivatePrimaryIp(PrivatePrimaryIpT&& value) { m_privatePrimaryIpHasBeenSet = true; m_privatePrimaryIp = std::forward<PrivatePrimaryIpT>(value); }
+    template<typename PrivatePrimaryIpT = Aws::String>
+    ClusterNodeDetails& WithPrivatePrimaryIp(PrivatePrimaryIpT&& value) { SetPrivatePrimaryIp(std::forward<PrivatePrimaryIpT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -183,40 +175,36 @@ namespace Model
      * addressing enabled in either the cluster Amazon VPC configuration or the
      * instance group Amazon VPC configuration.</p>
      */
-    inline const Aws::String& GetPrivatePrimaryIpv6() const{ return m_privatePrimaryIpv6; }
+    inline const Aws::String& GetPrivatePrimaryIpv6() const { return m_privatePrimaryIpv6; }
     inline bool PrivatePrimaryIpv6HasBeenSet() const { return m_privatePrimaryIpv6HasBeenSet; }
-    inline void SetPrivatePrimaryIpv6(const Aws::String& value) { m_privatePrimaryIpv6HasBeenSet = true; m_privatePrimaryIpv6 = value; }
-    inline void SetPrivatePrimaryIpv6(Aws::String&& value) { m_privatePrimaryIpv6HasBeenSet = true; m_privatePrimaryIpv6 = std::move(value); }
-    inline void SetPrivatePrimaryIpv6(const char* value) { m_privatePrimaryIpv6HasBeenSet = true; m_privatePrimaryIpv6.assign(value); }
-    inline ClusterNodeDetails& WithPrivatePrimaryIpv6(const Aws::String& value) { SetPrivatePrimaryIpv6(value); return *this;}
-    inline ClusterNodeDetails& WithPrivatePrimaryIpv6(Aws::String&& value) { SetPrivatePrimaryIpv6(std::move(value)); return *this;}
-    inline ClusterNodeDetails& WithPrivatePrimaryIpv6(const char* value) { SetPrivatePrimaryIpv6(value); return *this;}
+    template<typename PrivatePrimaryIpv6T = Aws::String>
+    void SetPrivatePrimaryIpv6(PrivatePrimaryIpv6T&& value) { m_privatePrimaryIpv6HasBeenSet = true; m_privatePrimaryIpv6 = std::forward<PrivatePrimaryIpv6T>(value); }
+    template<typename PrivatePrimaryIpv6T = Aws::String>
+    ClusterNodeDetails& WithPrivatePrimaryIpv6(PrivatePrimaryIpv6T&& value) { SetPrivatePrimaryIpv6(std::forward<PrivatePrimaryIpv6T>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The private DNS hostname of the SageMaker HyperPod cluster node.</p>
      */
-    inline const Aws::String& GetPrivateDnsHostname() const{ return m_privateDnsHostname; }
+    inline const Aws::String& GetPrivateDnsHostname() const { return m_privateDnsHostname; }
     inline bool PrivateDnsHostnameHasBeenSet() const { return m_privateDnsHostnameHasBeenSet; }
-    inline void SetPrivateDnsHostname(const Aws::String& value) { m_privateDnsHostnameHasBeenSet = true; m_privateDnsHostname = value; }
-    inline void SetPrivateDnsHostname(Aws::String&& value) { m_privateDnsHostnameHasBeenSet = true; m_privateDnsHostname = std::move(value); }
-    inline void SetPrivateDnsHostname(const char* value) { m_privateDnsHostnameHasBeenSet = true; m_privateDnsHostname.assign(value); }
-    inline ClusterNodeDetails& WithPrivateDnsHostname(const Aws::String& value) { SetPrivateDnsHostname(value); return *this;}
-    inline ClusterNodeDetails& WithPrivateDnsHostname(Aws::String&& value) { SetPrivateDnsHostname(std::move(value)); return *this;}
-    inline ClusterNodeDetails& WithPrivateDnsHostname(const char* value) { SetPrivateDnsHostname(value); return *this;}
+    template<typename PrivateDnsHostnameT = Aws::String>
+    void SetPrivateDnsHostname(PrivateDnsHostnameT&& value) { m_privateDnsHostnameHasBeenSet = true; m_privateDnsHostname = std::forward<PrivateDnsHostnameT>(value); }
+    template<typename PrivateDnsHostnameT = Aws::String>
+    ClusterNodeDetails& WithPrivateDnsHostname(PrivateDnsHostnameT&& value) { SetPrivateDnsHostname(std::forward<PrivateDnsHostnameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The placement details of the SageMaker HyperPod cluster node.</p>
      */
-    inline const ClusterInstancePlacement& GetPlacement() const{ return m_placement; }
+    inline const ClusterInstancePlacement& GetPlacement() const { return m_placement; }
     inline bool PlacementHasBeenSet() const { return m_placementHasBeenSet; }
-    inline void SetPlacement(const ClusterInstancePlacement& value) { m_placementHasBeenSet = true; m_placement = value; }
-    inline void SetPlacement(ClusterInstancePlacement&& value) { m_placementHasBeenSet = true; m_placement = std::move(value); }
-    inline ClusterNodeDetails& WithPlacement(const ClusterInstancePlacement& value) { SetPlacement(value); return *this;}
-    inline ClusterNodeDetails& WithPlacement(ClusterInstancePlacement&& value) { SetPlacement(std::move(value)); return *this;}
+    template<typename PlacementT = ClusterInstancePlacement>
+    void SetPlacement(PlacementT&& value) { m_placementHasBeenSet = true; m_placement = std::forward<PlacementT>(value); }
+    template<typename PlacementT = ClusterInstancePlacement>
+    ClusterNodeDetails& WithPlacement(PlacementT&& value) { SetPlacement(std::forward<PlacementT>(value)); return *this;}
     ///@}
   private:
 
@@ -229,10 +217,10 @@ namespace Model
     ClusterInstanceStatusDetails m_instanceStatus;
     bool m_instanceStatusHasBeenSet = false;
 
-    ClusterInstanceType m_instanceType;
+    ClusterInstanceType m_instanceType{ClusterInstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_launchTime;
+    Aws::Utils::DateTime m_launchTime{};
     bool m_launchTimeHasBeenSet = false;
 
     ClusterLifeCycleConfig m_lifeCycleConfig;
@@ -241,7 +229,7 @@ namespace Model
     VpcConfig m_overrideVpcConfig;
     bool m_overrideVpcConfigHasBeenSet = false;
 
-    int m_threadsPerCore;
+    int m_threadsPerCore{0};
     bool m_threadsPerCoreHasBeenSet = false;
 
     Aws::Vector<ClusterInstanceStorageConfig> m_instanceStorageConfigs;

@@ -33,7 +33,7 @@ namespace Model
   class ArchiveBooleanExpression
   {
   public:
-    AWS_MAILMANAGER_API ArchiveBooleanExpression();
+    AWS_MAILMANAGER_API ArchiveBooleanExpression() = default;
     AWS_MAILMANAGER_API ArchiveBooleanExpression(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API ArchiveBooleanExpression& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,31 +43,29 @@ namespace Model
     /**
      * <p>The email attribute value to evaluate.</p>
      */
-    inline const ArchiveBooleanToEvaluate& GetEvaluate() const{ return m_evaluate; }
+    inline const ArchiveBooleanToEvaluate& GetEvaluate() const { return m_evaluate; }
     inline bool EvaluateHasBeenSet() const { return m_evaluateHasBeenSet; }
-    inline void SetEvaluate(const ArchiveBooleanToEvaluate& value) { m_evaluateHasBeenSet = true; m_evaluate = value; }
-    inline void SetEvaluate(ArchiveBooleanToEvaluate&& value) { m_evaluateHasBeenSet = true; m_evaluate = std::move(value); }
-    inline ArchiveBooleanExpression& WithEvaluate(const ArchiveBooleanToEvaluate& value) { SetEvaluate(value); return *this;}
-    inline ArchiveBooleanExpression& WithEvaluate(ArchiveBooleanToEvaluate&& value) { SetEvaluate(std::move(value)); return *this;}
+    template<typename EvaluateT = ArchiveBooleanToEvaluate>
+    void SetEvaluate(EvaluateT&& value) { m_evaluateHasBeenSet = true; m_evaluate = std::forward<EvaluateT>(value); }
+    template<typename EvaluateT = ArchiveBooleanToEvaluate>
+    ArchiveBooleanExpression& WithEvaluate(EvaluateT&& value) { SetEvaluate(std::forward<EvaluateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The boolean operator to use for evaluation.</p>
      */
-    inline const ArchiveBooleanOperator& GetOperator() const{ return m_operator; }
+    inline ArchiveBooleanOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const ArchiveBooleanOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(ArchiveBooleanOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline ArchiveBooleanExpression& WithOperator(const ArchiveBooleanOperator& value) { SetOperator(value); return *this;}
-    inline ArchiveBooleanExpression& WithOperator(ArchiveBooleanOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(ArchiveBooleanOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline ArchiveBooleanExpression& WithOperator(ArchiveBooleanOperator value) { SetOperator(value); return *this;}
     ///@}
   private:
 
     ArchiveBooleanToEvaluate m_evaluate;
     bool m_evaluateHasBeenSet = false;
 
-    ArchiveBooleanOperator m_operator;
+    ArchiveBooleanOperator m_operator{ArchiveBooleanOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
   };
 

@@ -12,13 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateMonitoringScheduleRequest::CreateMonitoringScheduleRequest() : 
-    m_monitoringScheduleNameHasBeenSet(false),
-    m_monitoringScheduleConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateMonitoringScheduleRequest::SerializePayload() const
 {
   JsonValue payload;

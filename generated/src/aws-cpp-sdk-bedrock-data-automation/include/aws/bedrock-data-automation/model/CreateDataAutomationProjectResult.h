@@ -34,59 +34,55 @@ namespace Model
   class CreateDataAutomationProjectResult
   {
   public:
-    AWS_BEDROCKDATAAUTOMATION_API CreateDataAutomationProjectResult();
+    AWS_BEDROCKDATAAUTOMATION_API CreateDataAutomationProjectResult() = default;
     AWS_BEDROCKDATAAUTOMATION_API CreateDataAutomationProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKDATAAUTOMATION_API CreateDataAutomationProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetProjectArn() const{ return m_projectArn; }
-    inline void SetProjectArn(const Aws::String& value) { m_projectArn = value; }
-    inline void SetProjectArn(Aws::String&& value) { m_projectArn = std::move(value); }
-    inline void SetProjectArn(const char* value) { m_projectArn.assign(value); }
-    inline CreateDataAutomationProjectResult& WithProjectArn(const Aws::String& value) { SetProjectArn(value); return *this;}
-    inline CreateDataAutomationProjectResult& WithProjectArn(Aws::String&& value) { SetProjectArn(std::move(value)); return *this;}
-    inline CreateDataAutomationProjectResult& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
+    inline const Aws::String& GetProjectArn() const { return m_projectArn; }
+    template<typename ProjectArnT = Aws::String>
+    void SetProjectArn(ProjectArnT&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::forward<ProjectArnT>(value); }
+    template<typename ProjectArnT = Aws::String>
+    CreateDataAutomationProjectResult& WithProjectArn(ProjectArnT&& value) { SetProjectArn(std::forward<ProjectArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DataAutomationProjectStage& GetProjectStage() const{ return m_projectStage; }
-    inline void SetProjectStage(const DataAutomationProjectStage& value) { m_projectStage = value; }
-    inline void SetProjectStage(DataAutomationProjectStage&& value) { m_projectStage = std::move(value); }
-    inline CreateDataAutomationProjectResult& WithProjectStage(const DataAutomationProjectStage& value) { SetProjectStage(value); return *this;}
-    inline CreateDataAutomationProjectResult& WithProjectStage(DataAutomationProjectStage&& value) { SetProjectStage(std::move(value)); return *this;}
+    inline DataAutomationProjectStage GetProjectStage() const { return m_projectStage; }
+    inline void SetProjectStage(DataAutomationProjectStage value) { m_projectStageHasBeenSet = true; m_projectStage = value; }
+    inline CreateDataAutomationProjectResult& WithProjectStage(DataAutomationProjectStage value) { SetProjectStage(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const DataAutomationProjectStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const DataAutomationProjectStatus& value) { m_status = value; }
-    inline void SetStatus(DataAutomationProjectStatus&& value) { m_status = std::move(value); }
-    inline CreateDataAutomationProjectResult& WithStatus(const DataAutomationProjectStatus& value) { SetStatus(value); return *this;}
-    inline CreateDataAutomationProjectResult& WithStatus(DataAutomationProjectStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline DataAutomationProjectStatus GetStatus() const { return m_status; }
+    inline void SetStatus(DataAutomationProjectStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CreateDataAutomationProjectResult& WithStatus(DataAutomationProjectStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateDataAutomationProjectResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateDataAutomationProjectResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateDataAutomationProjectResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateDataAutomationProjectResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_projectArn;
+    bool m_projectArnHasBeenSet = false;
 
-    DataAutomationProjectStage m_projectStage;
+    DataAutomationProjectStage m_projectStage{DataAutomationProjectStage::NOT_SET};
+    bool m_projectStageHasBeenSet = false;
 
-    DataAutomationProjectStatus m_status;
+    DataAutomationProjectStatus m_status{DataAutomationProjectStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

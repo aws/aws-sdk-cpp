@@ -37,7 +37,7 @@ namespace Model
   class KMSKeyDetails
   {
   public:
-    AWS_CODEGURUREVIEWER_API KMSKeyDetails();
+    AWS_CODEGURUREVIEWER_API KMSKeyDetails() = default;
     AWS_CODEGURUREVIEWER_API KMSKeyDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API KMSKeyDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * <p>The ID of the Amazon Web Services KMS key that is associated with a
      * repository association.</p>
      */
-    inline const Aws::String& GetKMSKeyId() const{ return m_kMSKeyId; }
+    inline const Aws::String& GetKMSKeyId() const { return m_kMSKeyId; }
     inline bool KMSKeyIdHasBeenSet() const { return m_kMSKeyIdHasBeenSet; }
-    inline void SetKMSKeyId(const Aws::String& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = value; }
-    inline void SetKMSKeyId(Aws::String&& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = std::move(value); }
-    inline void SetKMSKeyId(const char* value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId.assign(value); }
-    inline KMSKeyDetails& WithKMSKeyId(const Aws::String& value) { SetKMSKeyId(value); return *this;}
-    inline KMSKeyDetails& WithKMSKeyId(Aws::String&& value) { SetKMSKeyId(std::move(value)); return *this;}
-    inline KMSKeyDetails& WithKMSKeyId(const char* value) { SetKMSKeyId(value); return *this;}
+    template<typename KMSKeyIdT = Aws::String>
+    void SetKMSKeyId(KMSKeyIdT&& value) { m_kMSKeyIdHasBeenSet = true; m_kMSKeyId = std::forward<KMSKeyIdT>(value); }
+    template<typename KMSKeyIdT = Aws::String>
+    KMSKeyDetails& WithKMSKeyId(KMSKeyIdT&& value) { SetKMSKeyId(std::forward<KMSKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,19 +62,17 @@ namespace Model
      * Amazon Web Services Key Management Service (KMS) (<code>AWS_OWNED_CMK</code>) or
      * customer managed (<code>CUSTOMER_MANAGED_CMK</code>).</p>
      */
-    inline const EncryptionOption& GetEncryptionOption() const{ return m_encryptionOption; }
+    inline EncryptionOption GetEncryptionOption() const { return m_encryptionOption; }
     inline bool EncryptionOptionHasBeenSet() const { return m_encryptionOptionHasBeenSet; }
-    inline void SetEncryptionOption(const EncryptionOption& value) { m_encryptionOptionHasBeenSet = true; m_encryptionOption = value; }
-    inline void SetEncryptionOption(EncryptionOption&& value) { m_encryptionOptionHasBeenSet = true; m_encryptionOption = std::move(value); }
-    inline KMSKeyDetails& WithEncryptionOption(const EncryptionOption& value) { SetEncryptionOption(value); return *this;}
-    inline KMSKeyDetails& WithEncryptionOption(EncryptionOption&& value) { SetEncryptionOption(std::move(value)); return *this;}
+    inline void SetEncryptionOption(EncryptionOption value) { m_encryptionOptionHasBeenSet = true; m_encryptionOption = value; }
+    inline KMSKeyDetails& WithEncryptionOption(EncryptionOption value) { SetEncryptionOption(value); return *this;}
     ///@}
   private:
 
     Aws::String m_kMSKeyId;
     bool m_kMSKeyIdHasBeenSet = false;
 
-    EncryptionOption m_encryptionOption;
+    EncryptionOption m_encryptionOption{EncryptionOption::NOT_SET};
     bool m_encryptionOptionHasBeenSet = false;
   };
 

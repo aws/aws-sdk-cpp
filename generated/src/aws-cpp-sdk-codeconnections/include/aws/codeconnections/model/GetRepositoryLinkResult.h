@@ -28,7 +28,7 @@ namespace Model
   class GetRepositoryLinkResult
   {
   public:
-    AWS_CODECONNECTIONS_API GetRepositoryLinkResult();
+    AWS_CODECONNECTIONS_API GetRepositoryLinkResult() = default;
     AWS_CODECONNECTIONS_API GetRepositoryLinkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECONNECTIONS_API GetRepositoryLinkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The information returned for a specified repository link.</p>
      */
-    inline const RepositoryLinkInfo& GetRepositoryLinkInfo() const{ return m_repositoryLinkInfo; }
-    inline void SetRepositoryLinkInfo(const RepositoryLinkInfo& value) { m_repositoryLinkInfo = value; }
-    inline void SetRepositoryLinkInfo(RepositoryLinkInfo&& value) { m_repositoryLinkInfo = std::move(value); }
-    inline GetRepositoryLinkResult& WithRepositoryLinkInfo(const RepositoryLinkInfo& value) { SetRepositoryLinkInfo(value); return *this;}
-    inline GetRepositoryLinkResult& WithRepositoryLinkInfo(RepositoryLinkInfo&& value) { SetRepositoryLinkInfo(std::move(value)); return *this;}
+    inline const RepositoryLinkInfo& GetRepositoryLinkInfo() const { return m_repositoryLinkInfo; }
+    template<typename RepositoryLinkInfoT = RepositoryLinkInfo>
+    void SetRepositoryLinkInfo(RepositoryLinkInfoT&& value) { m_repositoryLinkInfoHasBeenSet = true; m_repositoryLinkInfo = std::forward<RepositoryLinkInfoT>(value); }
+    template<typename RepositoryLinkInfoT = RepositoryLinkInfo>
+    GetRepositoryLinkResult& WithRepositoryLinkInfo(RepositoryLinkInfoT&& value) { SetRepositoryLinkInfo(std::forward<RepositoryLinkInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRepositoryLinkResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRepositoryLinkResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRepositoryLinkResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRepositoryLinkResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RepositoryLinkInfo m_repositoryLinkInfo;
+    bool m_repositoryLinkInfoHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,14 +18,7 @@ namespace PCS
 namespace Model
 {
 
-Networking::Networking() : 
-    m_subnetIdsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false)
-{
-}
-
 Networking::Networking(JsonView jsonValue)
-  : Networking()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ Networking& Networking::operator =(JsonView jsonValue)
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
@@ -51,7 +43,6 @@ Networking& Networking::operator =(JsonView jsonValue)
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

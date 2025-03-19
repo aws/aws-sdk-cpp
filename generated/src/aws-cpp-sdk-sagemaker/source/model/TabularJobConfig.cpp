@@ -18,23 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TabularJobConfig::TabularJobConfig() : 
-    m_candidateGenerationConfigHasBeenSet(false),
-    m_completionCriteriaHasBeenSet(false),
-    m_featureSpecificationS3UriHasBeenSet(false),
-    m_mode(AutoMLMode::NOT_SET),
-    m_modeHasBeenSet(false),
-    m_generateCandidateDefinitionsOnly(false),
-    m_generateCandidateDefinitionsOnlyHasBeenSet(false),
-    m_problemType(ProblemType::NOT_SET),
-    m_problemTypeHasBeenSet(false),
-    m_targetAttributeNameHasBeenSet(false),
-    m_sampleWeightAttributeNameHasBeenSet(false)
-{
-}
-
 TabularJobConfig::TabularJobConfig(JsonView jsonValue)
-  : TabularJobConfig()
 {
   *this = jsonValue;
 }
@@ -44,59 +28,43 @@ TabularJobConfig& TabularJobConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CandidateGenerationConfig"))
   {
     m_candidateGenerationConfig = jsonValue.GetObject("CandidateGenerationConfig");
-
     m_candidateGenerationConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletionCriteria"))
   {
     m_completionCriteria = jsonValue.GetObject("CompletionCriteria");
-
     m_completionCriteriaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FeatureSpecificationS3Uri"))
   {
     m_featureSpecificationS3Uri = jsonValue.GetString("FeatureSpecificationS3Uri");
-
     m_featureSpecificationS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Mode"))
   {
     m_mode = AutoMLModeMapper::GetAutoMLModeForName(jsonValue.GetString("Mode"));
-
     m_modeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GenerateCandidateDefinitionsOnly"))
   {
     m_generateCandidateDefinitionsOnly = jsonValue.GetBool("GenerateCandidateDefinitionsOnly");
-
     m_generateCandidateDefinitionsOnlyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProblemType"))
   {
     m_problemType = ProblemTypeMapper::GetProblemTypeForName(jsonValue.GetString("ProblemType"));
-
     m_problemTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetAttributeName"))
   {
     m_targetAttributeName = jsonValue.GetString("TargetAttributeName");
-
     m_targetAttributeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SampleWeightAttributeName"))
   {
     m_sampleWeightAttributeName = jsonValue.GetString("SampleWeightAttributeName");
-
     m_sampleWeightAttributeNameHasBeenSet = true;
   }
-
   return *this;
 }
 

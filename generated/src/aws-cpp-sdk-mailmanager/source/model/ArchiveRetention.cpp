@@ -18,14 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-ArchiveRetention::ArchiveRetention() : 
-    m_retentionPeriod(RetentionPeriod::NOT_SET),
-    m_retentionPeriodHasBeenSet(false)
-{
-}
-
 ArchiveRetention::ArchiveRetention(JsonView jsonValue)
-  : ArchiveRetention()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ArchiveRetention& ArchiveRetention::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RetentionPeriod"))
   {
     m_retentionPeriod = RetentionPeriodMapper::GetRetentionPeriodForName(jsonValue.GetString("RetentionPeriod"));
-
     m_retentionPeriodHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class InterpolationParameters
   {
   public:
-    AWS_IOTTWINMAKER_API InterpolationParameters();
+    AWS_IOTTWINMAKER_API InterpolationParameters() = default;
     AWS_IOTTWINMAKER_API InterpolationParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API InterpolationParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,29 +42,27 @@ namespace Model
     /**
      * <p>The interpolation type.</p>
      */
-    inline const InterpolationType& GetInterpolationType() const{ return m_interpolationType; }
+    inline InterpolationType GetInterpolationType() const { return m_interpolationType; }
     inline bool InterpolationTypeHasBeenSet() const { return m_interpolationTypeHasBeenSet; }
-    inline void SetInterpolationType(const InterpolationType& value) { m_interpolationTypeHasBeenSet = true; m_interpolationType = value; }
-    inline void SetInterpolationType(InterpolationType&& value) { m_interpolationTypeHasBeenSet = true; m_interpolationType = std::move(value); }
-    inline InterpolationParameters& WithInterpolationType(const InterpolationType& value) { SetInterpolationType(value); return *this;}
-    inline InterpolationParameters& WithInterpolationType(InterpolationType&& value) { SetInterpolationType(std::move(value)); return *this;}
+    inline void SetInterpolationType(InterpolationType value) { m_interpolationTypeHasBeenSet = true; m_interpolationType = value; }
+    inline InterpolationParameters& WithInterpolationType(InterpolationType value) { SetInterpolationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The interpolation time interval in seconds.</p>
      */
-    inline long long GetIntervalInSeconds() const{ return m_intervalInSeconds; }
+    inline long long GetIntervalInSeconds() const { return m_intervalInSeconds; }
     inline bool IntervalInSecondsHasBeenSet() const { return m_intervalInSecondsHasBeenSet; }
     inline void SetIntervalInSeconds(long long value) { m_intervalInSecondsHasBeenSet = true; m_intervalInSeconds = value; }
     inline InterpolationParameters& WithIntervalInSeconds(long long value) { SetIntervalInSeconds(value); return *this;}
     ///@}
   private:
 
-    InterpolationType m_interpolationType;
+    InterpolationType m_interpolationType{InterpolationType::NOT_SET};
     bool m_interpolationTypeHasBeenSet = false;
 
-    long long m_intervalInSeconds;
+    long long m_intervalInSeconds{0};
     bool m_intervalInSecondsHasBeenSet = false;
   };
 

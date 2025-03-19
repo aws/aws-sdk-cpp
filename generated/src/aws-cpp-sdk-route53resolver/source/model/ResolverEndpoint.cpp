@@ -18,32 +18,7 @@ namespace Route53Resolver
 namespace Model
 {
 
-ResolverEndpoint::ResolverEndpoint() : 
-    m_idHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_direction(ResolverEndpointDirection::NOT_SET),
-    m_directionHasBeenSet(false),
-    m_ipAddressCount(0),
-    m_ipAddressCountHasBeenSet(false),
-    m_hostVPCIdHasBeenSet(false),
-    m_status(ResolverEndpointStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_modificationTimeHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_preferredInstanceTypeHasBeenSet(false),
-    m_resolverEndpointType(ResolverEndpointType::NOT_SET),
-    m_resolverEndpointTypeHasBeenSet(false),
-    m_protocolsHasBeenSet(false)
-{
-}
-
 ResolverEndpoint::ResolverEndpoint(JsonView jsonValue)
-  : ResolverEndpoint()
 {
   *this = jsonValue;
 }
@@ -53,31 +28,23 @@ ResolverEndpoint& ResolverEndpoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatorRequestId"))
   {
     m_creatorRequestId = jsonValue.GetString("CreatorRequestId");
-
     m_creatorRequestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("SecurityGroupIds");
@@ -87,77 +54,56 @@ ResolverEndpoint& ResolverEndpoint::operator =(JsonView jsonValue)
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Direction"))
   {
     m_direction = ResolverEndpointDirectionMapper::GetResolverEndpointDirectionForName(jsonValue.GetString("Direction"));
-
     m_directionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpAddressCount"))
   {
     m_ipAddressCount = jsonValue.GetInteger("IpAddressCount");
-
     m_ipAddressCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HostVPCId"))
   {
     m_hostVPCId = jsonValue.GetString("HostVPCId");
-
     m_hostVPCIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ResolverEndpointStatusMapper::GetResolverEndpointStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetString("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModificationTime"))
   {
     m_modificationTime = jsonValue.GetString("ModificationTime");
-
     m_modificationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutpostArn"))
   {
     m_outpostArn = jsonValue.GetString("OutpostArn");
-
     m_outpostArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreferredInstanceType"))
   {
     m_preferredInstanceType = jsonValue.GetString("PreferredInstanceType");
-
     m_preferredInstanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResolverEndpointType"))
   {
     m_resolverEndpointType = ResolverEndpointTypeMapper::GetResolverEndpointTypeForName(jsonValue.GetString("ResolverEndpointType"));
-
     m_resolverEndpointTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Protocols"))
   {
     Aws::Utils::Array<JsonView> protocolsJsonList = jsonValue.GetArray("Protocols");
@@ -167,7 +113,6 @@ ResolverEndpoint& ResolverEndpoint::operator =(JsonView jsonValue)
     }
     m_protocolsHasBeenSet = true;
   }
-
   return *this;
 }
 

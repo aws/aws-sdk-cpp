@@ -31,7 +31,7 @@ namespace Model
   class Configuration
   {
   public:
-    AWS_CHIMESDKIDENTITY_API Configuration();
+    AWS_CHIMESDKIDENTITY_API Configuration() = default;
     AWS_CHIMESDKIDENTITY_API Configuration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKIDENTITY_API Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKIDENTITY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The configuration for an Amazon Lex V2 bot.</p>
      */
-    inline const LexConfiguration& GetLex() const{ return m_lex; }
+    inline const LexConfiguration& GetLex() const { return m_lex; }
     inline bool LexHasBeenSet() const { return m_lexHasBeenSet; }
-    inline void SetLex(const LexConfiguration& value) { m_lexHasBeenSet = true; m_lex = value; }
-    inline void SetLex(LexConfiguration&& value) { m_lexHasBeenSet = true; m_lex = std::move(value); }
-    inline Configuration& WithLex(const LexConfiguration& value) { SetLex(value); return *this;}
-    inline Configuration& WithLex(LexConfiguration&& value) { SetLex(std::move(value)); return *this;}
+    template<typename LexT = LexConfiguration>
+    void SetLex(LexT&& value) { m_lexHasBeenSet = true; m_lex = std::forward<LexT>(value); }
+    template<typename LexT = LexConfiguration>
+    Configuration& WithLex(LexT&& value) { SetLex(std::forward<LexT>(value)); return *this;}
     ///@}
   private:
 

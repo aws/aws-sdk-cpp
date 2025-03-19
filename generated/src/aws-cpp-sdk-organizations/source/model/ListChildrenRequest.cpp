@@ -12,16 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListChildrenRequest::ListChildrenRequest() : 
-    m_parentIdHasBeenSet(false),
-    m_childType(ChildType::NOT_SET),
-    m_childTypeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListChildrenRequest::SerializePayload() const
 {
   JsonValue payload;

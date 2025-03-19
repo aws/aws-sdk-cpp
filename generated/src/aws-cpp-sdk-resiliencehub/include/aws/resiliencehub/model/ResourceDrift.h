@@ -34,7 +34,7 @@ namespace Model
   class ResourceDrift
   {
   public:
-    AWS_RESILIENCEHUB_API ResourceDrift();
+    AWS_RESILIENCEHUB_API ResourceDrift() = default;
     AWS_RESILIENCEHUB_API ResourceDrift(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API ResourceDrift& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,66 +50,58 @@ namespace Model
      * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i> guide.</p>
      */
-    inline const Aws::String& GetAppArn() const{ return m_appArn; }
+    inline const Aws::String& GetAppArn() const { return m_appArn; }
     inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
-    inline void SetAppArn(const Aws::String& value) { m_appArnHasBeenSet = true; m_appArn = value; }
-    inline void SetAppArn(Aws::String&& value) { m_appArnHasBeenSet = true; m_appArn = std::move(value); }
-    inline void SetAppArn(const char* value) { m_appArnHasBeenSet = true; m_appArn.assign(value); }
-    inline ResourceDrift& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
-    inline ResourceDrift& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
-    inline ResourceDrift& WithAppArn(const char* value) { SetAppArn(value); return *this;}
+    template<typename AppArnT = Aws::String>
+    void SetAppArn(AppArnT&& value) { m_appArnHasBeenSet = true; m_appArn = std::forward<AppArnT>(value); }
+    template<typename AppArnT = Aws::String>
+    ResourceDrift& WithAppArn(AppArnT&& value) { SetAppArn(std::forward<AppArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Version of the application whose resources have drifted.</p>
      */
-    inline const Aws::String& GetAppVersion() const{ return m_appVersion; }
+    inline const Aws::String& GetAppVersion() const { return m_appVersion; }
     inline bool AppVersionHasBeenSet() const { return m_appVersionHasBeenSet; }
-    inline void SetAppVersion(const Aws::String& value) { m_appVersionHasBeenSet = true; m_appVersion = value; }
-    inline void SetAppVersion(Aws::String&& value) { m_appVersionHasBeenSet = true; m_appVersion = std::move(value); }
-    inline void SetAppVersion(const char* value) { m_appVersionHasBeenSet = true; m_appVersion.assign(value); }
-    inline ResourceDrift& WithAppVersion(const Aws::String& value) { SetAppVersion(value); return *this;}
-    inline ResourceDrift& WithAppVersion(Aws::String&& value) { SetAppVersion(std::move(value)); return *this;}
-    inline ResourceDrift& WithAppVersion(const char* value) { SetAppVersion(value); return *this;}
+    template<typename AppVersionT = Aws::String>
+    void SetAppVersion(AppVersionT&& value) { m_appVersionHasBeenSet = true; m_appVersion = std::forward<AppVersionT>(value); }
+    template<typename AppVersionT = Aws::String>
+    ResourceDrift& WithAppVersion(AppVersionT&& value) { SetAppVersion(std::forward<AppVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates if the resource was added or removed.</p>
      */
-    inline const DifferenceType& GetDiffType() const{ return m_diffType; }
+    inline DifferenceType GetDiffType() const { return m_diffType; }
     inline bool DiffTypeHasBeenSet() const { return m_diffTypeHasBeenSet; }
-    inline void SetDiffType(const DifferenceType& value) { m_diffTypeHasBeenSet = true; m_diffType = value; }
-    inline void SetDiffType(DifferenceType&& value) { m_diffTypeHasBeenSet = true; m_diffType = std::move(value); }
-    inline ResourceDrift& WithDiffType(const DifferenceType& value) { SetDiffType(value); return *this;}
-    inline ResourceDrift& WithDiffType(DifferenceType&& value) { SetDiffType(std::move(value)); return *this;}
+    inline void SetDiffType(DifferenceType value) { m_diffTypeHasBeenSet = true; m_diffType = value; }
+    inline ResourceDrift& WithDiffType(DifferenceType value) { SetDiffType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Reference identifier of the resource drift.</p>
      */
-    inline const Aws::String& GetReferenceId() const{ return m_referenceId; }
+    inline const Aws::String& GetReferenceId() const { return m_referenceId; }
     inline bool ReferenceIdHasBeenSet() const { return m_referenceIdHasBeenSet; }
-    inline void SetReferenceId(const Aws::String& value) { m_referenceIdHasBeenSet = true; m_referenceId = value; }
-    inline void SetReferenceId(Aws::String&& value) { m_referenceIdHasBeenSet = true; m_referenceId = std::move(value); }
-    inline void SetReferenceId(const char* value) { m_referenceIdHasBeenSet = true; m_referenceId.assign(value); }
-    inline ResourceDrift& WithReferenceId(const Aws::String& value) { SetReferenceId(value); return *this;}
-    inline ResourceDrift& WithReferenceId(Aws::String&& value) { SetReferenceId(std::move(value)); return *this;}
-    inline ResourceDrift& WithReferenceId(const char* value) { SetReferenceId(value); return *this;}
+    template<typename ReferenceIdT = Aws::String>
+    void SetReferenceId(ReferenceIdT&& value) { m_referenceIdHasBeenSet = true; m_referenceId = std::forward<ReferenceIdT>(value); }
+    template<typename ReferenceIdT = Aws::String>
+    ResourceDrift& WithReferenceId(ReferenceIdT&& value) { SetReferenceId(std::forward<ReferenceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Identifier of the drifted resource.</p>
      */
-    inline const ResourceIdentifier& GetResourceIdentifier() const{ return m_resourceIdentifier; }
+    inline const ResourceIdentifier& GetResourceIdentifier() const { return m_resourceIdentifier; }
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
-    inline void SetResourceIdentifier(const ResourceIdentifier& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
-    inline void SetResourceIdentifier(ResourceIdentifier&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
-    inline ResourceDrift& WithResourceIdentifier(const ResourceIdentifier& value) { SetResourceIdentifier(value); return *this;}
-    inline ResourceDrift& WithResourceIdentifier(ResourceIdentifier&& value) { SetResourceIdentifier(std::move(value)); return *this;}
+    template<typename ResourceIdentifierT = ResourceIdentifier>
+    void SetResourceIdentifier(ResourceIdentifierT&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::forward<ResourceIdentifierT>(value); }
+    template<typename ResourceIdentifierT = ResourceIdentifier>
+    ResourceDrift& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
     ///@}
   private:
 
@@ -119,7 +111,7 @@ namespace Model
     Aws::String m_appVersion;
     bool m_appVersionHasBeenSet = false;
 
-    DifferenceType m_diffType;
+    DifferenceType m_diffType{DifferenceType::NOT_SET};
     bool m_diffTypeHasBeenSet = false;
 
     Aws::String m_referenceId;

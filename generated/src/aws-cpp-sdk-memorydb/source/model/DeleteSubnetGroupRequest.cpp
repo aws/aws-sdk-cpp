@@ -12,11 +12,6 @@ using namespace Aws::MemoryDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSubnetGroupRequest::DeleteSubnetGroupRequest() : 
-    m_subnetGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSubnetGroupRequest::SerializePayload() const
 {
   JsonValue payload;

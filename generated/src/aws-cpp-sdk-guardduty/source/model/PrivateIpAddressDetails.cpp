@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-PrivateIpAddressDetails::PrivateIpAddressDetails() : 
-    m_privateDnsNameHasBeenSet(false),
-    m_privateIpAddressHasBeenSet(false)
-{
-}
-
 PrivateIpAddressDetails::PrivateIpAddressDetails(JsonView jsonValue)
-  : PrivateIpAddressDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PrivateIpAddressDetails& PrivateIpAddressDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("privateDnsName"))
   {
     m_privateDnsName = jsonValue.GetString("privateDnsName");
-
     m_privateDnsNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("privateIpAddress"))
   {
     m_privateIpAddress = jsonValue.GetString("privateIpAddress");
-
     m_privateIpAddressHasBeenSet = true;
   }
-
   return *this;
 }
 

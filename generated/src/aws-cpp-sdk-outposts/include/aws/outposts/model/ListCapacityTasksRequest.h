@@ -27,7 +27,7 @@ namespace Model
   class ListCapacityTasksRequest : public OutpostsRequest
   {
   public:
-    AWS_OUTPOSTS_API ListCapacityTasksRequest();
+    AWS_OUTPOSTS_API ListCapacityTasksRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,19 +44,17 @@ namespace Model
     /**
      * <p>Filters the results by an Outpost ID or an Outpost ARN.</p>
      */
-    inline const Aws::String& GetOutpostIdentifierFilter() const{ return m_outpostIdentifierFilter; }
+    inline const Aws::String& GetOutpostIdentifierFilter() const { return m_outpostIdentifierFilter; }
     inline bool OutpostIdentifierFilterHasBeenSet() const { return m_outpostIdentifierFilterHasBeenSet; }
-    inline void SetOutpostIdentifierFilter(const Aws::String& value) { m_outpostIdentifierFilterHasBeenSet = true; m_outpostIdentifierFilter = value; }
-    inline void SetOutpostIdentifierFilter(Aws::String&& value) { m_outpostIdentifierFilterHasBeenSet = true; m_outpostIdentifierFilter = std::move(value); }
-    inline void SetOutpostIdentifierFilter(const char* value) { m_outpostIdentifierFilterHasBeenSet = true; m_outpostIdentifierFilter.assign(value); }
-    inline ListCapacityTasksRequest& WithOutpostIdentifierFilter(const Aws::String& value) { SetOutpostIdentifierFilter(value); return *this;}
-    inline ListCapacityTasksRequest& WithOutpostIdentifierFilter(Aws::String&& value) { SetOutpostIdentifierFilter(std::move(value)); return *this;}
-    inline ListCapacityTasksRequest& WithOutpostIdentifierFilter(const char* value) { SetOutpostIdentifierFilter(value); return *this;}
+    template<typename OutpostIdentifierFilterT = Aws::String>
+    void SetOutpostIdentifierFilter(OutpostIdentifierFilterT&& value) { m_outpostIdentifierFilterHasBeenSet = true; m_outpostIdentifierFilter = std::forward<OutpostIdentifierFilterT>(value); }
+    template<typename OutpostIdentifierFilterT = Aws::String>
+    ListCapacityTasksRequest& WithOutpostIdentifierFilter(OutpostIdentifierFilterT&& value) { SetOutpostIdentifierFilter(std::forward<OutpostIdentifierFilterT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListCapacityTasksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -64,14 +62,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListCapacityTasksRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCapacityTasksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCapacityTasksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCapacityTasksRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,21 +75,20 @@ namespace Model
      * <p>A list of statuses. For example, <code>REQUESTED</code> or
      * <code>WAITING_FOR_EVACUATION</code>.</p>
      */
-    inline const Aws::Vector<CapacityTaskStatus>& GetCapacityTaskStatusFilter() const{ return m_capacityTaskStatusFilter; }
+    inline const Aws::Vector<CapacityTaskStatus>& GetCapacityTaskStatusFilter() const { return m_capacityTaskStatusFilter; }
     inline bool CapacityTaskStatusFilterHasBeenSet() const { return m_capacityTaskStatusFilterHasBeenSet; }
-    inline void SetCapacityTaskStatusFilter(const Aws::Vector<CapacityTaskStatus>& value) { m_capacityTaskStatusFilterHasBeenSet = true; m_capacityTaskStatusFilter = value; }
-    inline void SetCapacityTaskStatusFilter(Aws::Vector<CapacityTaskStatus>&& value) { m_capacityTaskStatusFilterHasBeenSet = true; m_capacityTaskStatusFilter = std::move(value); }
-    inline ListCapacityTasksRequest& WithCapacityTaskStatusFilter(const Aws::Vector<CapacityTaskStatus>& value) { SetCapacityTaskStatusFilter(value); return *this;}
-    inline ListCapacityTasksRequest& WithCapacityTaskStatusFilter(Aws::Vector<CapacityTaskStatus>&& value) { SetCapacityTaskStatusFilter(std::move(value)); return *this;}
-    inline ListCapacityTasksRequest& AddCapacityTaskStatusFilter(const CapacityTaskStatus& value) { m_capacityTaskStatusFilterHasBeenSet = true; m_capacityTaskStatusFilter.push_back(value); return *this; }
-    inline ListCapacityTasksRequest& AddCapacityTaskStatusFilter(CapacityTaskStatus&& value) { m_capacityTaskStatusFilterHasBeenSet = true; m_capacityTaskStatusFilter.push_back(std::move(value)); return *this; }
+    template<typename CapacityTaskStatusFilterT = Aws::Vector<CapacityTaskStatus>>
+    void SetCapacityTaskStatusFilter(CapacityTaskStatusFilterT&& value) { m_capacityTaskStatusFilterHasBeenSet = true; m_capacityTaskStatusFilter = std::forward<CapacityTaskStatusFilterT>(value); }
+    template<typename CapacityTaskStatusFilterT = Aws::Vector<CapacityTaskStatus>>
+    ListCapacityTasksRequest& WithCapacityTaskStatusFilter(CapacityTaskStatusFilterT&& value) { SetCapacityTaskStatusFilter(std::forward<CapacityTaskStatusFilterT>(value)); return *this;}
+    inline ListCapacityTasksRequest& AddCapacityTaskStatusFilter(CapacityTaskStatus value) { m_capacityTaskStatusFilterHasBeenSet = true; m_capacityTaskStatusFilter.push_back(value); return *this; }
     ///@}
   private:
 
     Aws::String m_outpostIdentifierFilter;
     bool m_outpostIdentifierFilterHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

@@ -32,7 +32,7 @@ namespace Model
   class ImportDataFormat
   {
   public:
-    AWS_MAILMANAGER_API ImportDataFormat();
+    AWS_MAILMANAGER_API ImportDataFormat() = default;
     AWS_MAILMANAGER_API ImportDataFormat(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API ImportDataFormat& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
      * <p>The type of file that would be passed as an input for the address list import
      * job.</p>
      */
-    inline const ImportDataType& GetImportDataType() const{ return m_importDataType; }
+    inline ImportDataType GetImportDataType() const { return m_importDataType; }
     inline bool ImportDataTypeHasBeenSet() const { return m_importDataTypeHasBeenSet; }
-    inline void SetImportDataType(const ImportDataType& value) { m_importDataTypeHasBeenSet = true; m_importDataType = value; }
-    inline void SetImportDataType(ImportDataType&& value) { m_importDataTypeHasBeenSet = true; m_importDataType = std::move(value); }
-    inline ImportDataFormat& WithImportDataType(const ImportDataType& value) { SetImportDataType(value); return *this;}
-    inline ImportDataFormat& WithImportDataType(ImportDataType&& value) { SetImportDataType(std::move(value)); return *this;}
+    inline void SetImportDataType(ImportDataType value) { m_importDataTypeHasBeenSet = true; m_importDataType = value; }
+    inline ImportDataFormat& WithImportDataType(ImportDataType value) { SetImportDataType(value); return *this;}
     ///@}
   private:
 
-    ImportDataType m_importDataType;
+    ImportDataType m_importDataType{ImportDataType::NOT_SET};
     bool m_importDataTypeHasBeenSet = false;
   };
 

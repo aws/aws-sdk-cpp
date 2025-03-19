@@ -28,7 +28,7 @@ namespace Model
   class ListNamedQueriesResult
   {
   public:
-    AWS_ATHENA_API ListNamedQueriesResult();
+    AWS_ATHENA_API ListNamedQueriesResult() = default;
     AWS_ATHENA_API ListNamedQueriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ATHENA_API ListNamedQueriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,14 +37,13 @@ namespace Model
     /**
      * <p>The list of unique query IDs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNamedQueryIds() const{ return m_namedQueryIds; }
-    inline void SetNamedQueryIds(const Aws::Vector<Aws::String>& value) { m_namedQueryIds = value; }
-    inline void SetNamedQueryIds(Aws::Vector<Aws::String>&& value) { m_namedQueryIds = std::move(value); }
-    inline ListNamedQueriesResult& WithNamedQueryIds(const Aws::Vector<Aws::String>& value) { SetNamedQueryIds(value); return *this;}
-    inline ListNamedQueriesResult& WithNamedQueryIds(Aws::Vector<Aws::String>&& value) { SetNamedQueryIds(std::move(value)); return *this;}
-    inline ListNamedQueriesResult& AddNamedQueryIds(const Aws::String& value) { m_namedQueryIds.push_back(value); return *this; }
-    inline ListNamedQueriesResult& AddNamedQueryIds(Aws::String&& value) { m_namedQueryIds.push_back(std::move(value)); return *this; }
-    inline ListNamedQueriesResult& AddNamedQueryIds(const char* value) { m_namedQueryIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetNamedQueryIds() const { return m_namedQueryIds; }
+    template<typename NamedQueryIdsT = Aws::Vector<Aws::String>>
+    void SetNamedQueryIds(NamedQueryIdsT&& value) { m_namedQueryIdsHasBeenSet = true; m_namedQueryIds = std::forward<NamedQueryIdsT>(value); }
+    template<typename NamedQueryIdsT = Aws::Vector<Aws::String>>
+    ListNamedQueriesResult& WithNamedQueryIds(NamedQueryIdsT&& value) { SetNamedQueryIds(std::forward<NamedQueryIdsT>(value)); return *this;}
+    template<typename NamedQueryIdsT = Aws::String>
+    ListNamedQueriesResult& AddNamedQueryIds(NamedQueryIdsT&& value) { m_namedQueryIdsHasBeenSet = true; m_namedQueryIds.emplace_back(std::forward<NamedQueryIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +53,31 @@ namespace Model
      * pass in the <code>NextToken</code> from the response object of the previous page
      * call.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListNamedQueriesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListNamedQueriesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListNamedQueriesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListNamedQueriesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListNamedQueriesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListNamedQueriesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListNamedQueriesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListNamedQueriesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_namedQueryIds;
+    bool m_namedQueryIdsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

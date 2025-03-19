@@ -35,7 +35,7 @@ namespace Model
   class ErrorResponse
   {
   public:
-    AWS_MIGRATIONHUBREFACTORSPACES_API ErrorResponse();
+    AWS_MIGRATIONHUBREFACTORSPACES_API ErrorResponse() = default;
     AWS_MIGRATIONHUBREFACTORSPACES_API ErrorResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBREFACTORSPACES_API ErrorResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBREFACTORSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,85 +45,72 @@ namespace Model
     /**
      * <p>The Amazon Web Services account ID of the resource owner. </p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline ErrorResponse& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline ErrorResponse& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline ErrorResponse& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    ErrorResponse& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Additional details about the error. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalDetails() const{ return m_additionalDetails; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalDetails() const { return m_additionalDetails; }
     inline bool AdditionalDetailsHasBeenSet() const { return m_additionalDetailsHasBeenSet; }
-    inline void SetAdditionalDetails(const Aws::Map<Aws::String, Aws::String>& value) { m_additionalDetailsHasBeenSet = true; m_additionalDetails = value; }
-    inline void SetAdditionalDetails(Aws::Map<Aws::String, Aws::String>&& value) { m_additionalDetailsHasBeenSet = true; m_additionalDetails = std::move(value); }
-    inline ErrorResponse& WithAdditionalDetails(const Aws::Map<Aws::String, Aws::String>& value) { SetAdditionalDetails(value); return *this;}
-    inline ErrorResponse& WithAdditionalDetails(Aws::Map<Aws::String, Aws::String>&& value) { SetAdditionalDetails(std::move(value)); return *this;}
-    inline ErrorResponse& AddAdditionalDetails(const Aws::String& key, const Aws::String& value) { m_additionalDetailsHasBeenSet = true; m_additionalDetails.emplace(key, value); return *this; }
-    inline ErrorResponse& AddAdditionalDetails(Aws::String&& key, const Aws::String& value) { m_additionalDetailsHasBeenSet = true; m_additionalDetails.emplace(std::move(key), value); return *this; }
-    inline ErrorResponse& AddAdditionalDetails(const Aws::String& key, Aws::String&& value) { m_additionalDetailsHasBeenSet = true; m_additionalDetails.emplace(key, std::move(value)); return *this; }
-    inline ErrorResponse& AddAdditionalDetails(Aws::String&& key, Aws::String&& value) { m_additionalDetailsHasBeenSet = true; m_additionalDetails.emplace(std::move(key), std::move(value)); return *this; }
-    inline ErrorResponse& AddAdditionalDetails(const char* key, Aws::String&& value) { m_additionalDetailsHasBeenSet = true; m_additionalDetails.emplace(key, std::move(value)); return *this; }
-    inline ErrorResponse& AddAdditionalDetails(Aws::String&& key, const char* value) { m_additionalDetailsHasBeenSet = true; m_additionalDetails.emplace(std::move(key), value); return *this; }
-    inline ErrorResponse& AddAdditionalDetails(const char* key, const char* value) { m_additionalDetailsHasBeenSet = true; m_additionalDetails.emplace(key, value); return *this; }
+    template<typename AdditionalDetailsT = Aws::Map<Aws::String, Aws::String>>
+    void SetAdditionalDetails(AdditionalDetailsT&& value) { m_additionalDetailsHasBeenSet = true; m_additionalDetails = std::forward<AdditionalDetailsT>(value); }
+    template<typename AdditionalDetailsT = Aws::Map<Aws::String, Aws::String>>
+    ErrorResponse& WithAdditionalDetails(AdditionalDetailsT&& value) { SetAdditionalDetails(std::forward<AdditionalDetailsT>(value)); return *this;}
+    template<typename AdditionalDetailsKeyT = Aws::String, typename AdditionalDetailsValueT = Aws::String>
+    ErrorResponse& AddAdditionalDetails(AdditionalDetailsKeyT&& key, AdditionalDetailsValueT&& value) {
+      m_additionalDetailsHasBeenSet = true; m_additionalDetails.emplace(std::forward<AdditionalDetailsKeyT>(key), std::forward<AdditionalDetailsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The error code associated with the error. </p>
      */
-    inline const ErrorCode& GetCode() const{ return m_code; }
+    inline ErrorCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const ErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(ErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline ErrorResponse& WithCode(const ErrorCode& value) { SetCode(value); return *this;}
-    inline ErrorResponse& WithCode(ErrorCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(ErrorCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline ErrorResponse& WithCode(ErrorCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The message associated with the error. </p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline ErrorResponse& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline ErrorResponse& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline ErrorResponse& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    ErrorResponse& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the resource. </p>
      */
-    inline const Aws::String& GetResourceIdentifier() const{ return m_resourceIdentifier; }
+    inline const Aws::String& GetResourceIdentifier() const { return m_resourceIdentifier; }
     inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
-    inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
-    inline void SetResourceIdentifier(Aws::String&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::move(value); }
-    inline void SetResourceIdentifier(const char* value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier.assign(value); }
-    inline ErrorResponse& WithResourceIdentifier(const Aws::String& value) { SetResourceIdentifier(value); return *this;}
-    inline ErrorResponse& WithResourceIdentifier(Aws::String&& value) { SetResourceIdentifier(std::move(value)); return *this;}
-    inline ErrorResponse& WithResourceIdentifier(const char* value) { SetResourceIdentifier(value); return *this;}
+    template<typename ResourceIdentifierT = Aws::String>
+    void SetResourceIdentifier(ResourceIdentifierT&& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = std::forward<ResourceIdentifierT>(value); }
+    template<typename ResourceIdentifierT = Aws::String>
+    ErrorResponse& WithResourceIdentifier(ResourceIdentifierT&& value) { SetResourceIdentifier(std::forward<ResourceIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of resource. </p>
      */
-    inline const ErrorResourceType& GetResourceType() const{ return m_resourceType; }
+    inline ErrorResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const ErrorResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(ErrorResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline ErrorResponse& WithResourceType(const ErrorResourceType& value) { SetResourceType(value); return *this;}
-    inline ErrorResponse& WithResourceType(ErrorResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(ErrorResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline ErrorResponse& WithResourceType(ErrorResourceType value) { SetResourceType(value); return *this;}
     ///@}
   private:
 
@@ -133,7 +120,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_additionalDetails;
     bool m_additionalDetailsHasBeenSet = false;
 
-    ErrorCode m_code;
+    ErrorCode m_code{ErrorCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
@@ -142,7 +129,7 @@ namespace Model
     Aws::String m_resourceIdentifier;
     bool m_resourceIdentifierHasBeenSet = false;
 
-    ErrorResourceType m_resourceType;
+    ErrorResourceType m_resourceType{ErrorResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
   };
 

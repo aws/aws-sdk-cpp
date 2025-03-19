@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/timestream-query/TimestreamQuery_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSAllocator.h>
 #include <utility>
-#include <memory>
 
 namespace Aws
 {
@@ -37,7 +37,7 @@ namespace Model
   class TimeSeriesDataPoint
   {
   public:
-    AWS_TIMESTREAMQUERY_API TimeSeriesDataPoint();
+    AWS_TIMESTREAMQUERY_API TimeSeriesDataPoint() = default;
     AWS_TIMESTREAMQUERY_API TimeSeriesDataPoint(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API TimeSeriesDataPoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,26 +47,29 @@ namespace Model
     /**
      * <p>The timestamp when the measure value was collected.</p>
      */
-    inline const Aws::String& GetTime() const{ return m_time; }
+    inline const Aws::String& GetTime() const { return m_time; }
     inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
-    inline void SetTime(const Aws::String& value) { m_timeHasBeenSet = true; m_time = value; }
-    inline void SetTime(Aws::String&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
-    inline void SetTime(const char* value) { m_timeHasBeenSet = true; m_time.assign(value); }
-    inline TimeSeriesDataPoint& WithTime(const Aws::String& value) { SetTime(value); return *this;}
-    inline TimeSeriesDataPoint& WithTime(Aws::String&& value) { SetTime(std::move(value)); return *this;}
-    inline TimeSeriesDataPoint& WithTime(const char* value) { SetTime(value); return *this;}
+    template<typename TimeT = Aws::String>
+    void SetTime(TimeT&& value) { m_timeHasBeenSet = true; m_time = std::forward<TimeT>(value); }
+    template<typename TimeT = Aws::String>
+    TimeSeriesDataPoint& WithTime(TimeT&& value) { SetTime(std::forward<TimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The measure value for the data point.</p>
      */
-    AWS_TIMESTREAMQUERY_API const Datum& GetValue() const;
-    AWS_TIMESTREAMQUERY_API bool ValueHasBeenSet() const;
-    AWS_TIMESTREAMQUERY_API void SetValue(const Datum& value);
-    AWS_TIMESTREAMQUERY_API void SetValue(Datum&& value);
-    AWS_TIMESTREAMQUERY_API TimeSeriesDataPoint& WithValue(const Datum& value);
-    AWS_TIMESTREAMQUERY_API TimeSeriesDataPoint& WithValue(Datum&& value);
+    inline const Datum& GetValue() const{
+      return *m_value;
+    }
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+    template<typename ValueT = Datum>
+    void SetValue(ValueT&& value) {
+      m_valueHasBeenSet = true; 
+      m_value = Aws::MakeShared<Datum>("TimeSeriesDataPoint", std::forward<ValueT>(value));
+    }
+    template<typename ValueT = Datum>
+    TimeSeriesDataPoint& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

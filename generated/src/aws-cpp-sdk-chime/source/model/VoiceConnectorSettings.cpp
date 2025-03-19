@@ -18,13 +18,7 @@ namespace Chime
 namespace Model
 {
 
-VoiceConnectorSettings::VoiceConnectorSettings() : 
-    m_cdrBucketHasBeenSet(false)
-{
-}
-
 VoiceConnectorSettings::VoiceConnectorSettings(JsonView jsonValue)
-  : VoiceConnectorSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ VoiceConnectorSettings& VoiceConnectorSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CdrBucket"))
   {
     m_cdrBucket = jsonValue.GetString("CdrBucket");
-
     m_cdrBucketHasBeenSet = true;
   }
-
   return *this;
 }
 

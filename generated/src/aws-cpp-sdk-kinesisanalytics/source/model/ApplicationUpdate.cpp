@@ -18,17 +18,7 @@ namespace KinesisAnalytics
 namespace Model
 {
 
-ApplicationUpdate::ApplicationUpdate() : 
-    m_inputUpdatesHasBeenSet(false),
-    m_applicationCodeUpdateHasBeenSet(false),
-    m_outputUpdatesHasBeenSet(false),
-    m_referenceDataSourceUpdatesHasBeenSet(false),
-    m_cloudWatchLoggingOptionUpdatesHasBeenSet(false)
-{
-}
-
 ApplicationUpdate::ApplicationUpdate(JsonView jsonValue)
-  : ApplicationUpdate()
 {
   *this = jsonValue;
 }
@@ -44,14 +34,11 @@ ApplicationUpdate& ApplicationUpdate::operator =(JsonView jsonValue)
     }
     m_inputUpdatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationCodeUpdate"))
   {
     m_applicationCodeUpdate = jsonValue.GetString("ApplicationCodeUpdate");
-
     m_applicationCodeUpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputUpdates"))
   {
     Aws::Utils::Array<JsonView> outputUpdatesJsonList = jsonValue.GetArray("OutputUpdates");
@@ -61,7 +48,6 @@ ApplicationUpdate& ApplicationUpdate::operator =(JsonView jsonValue)
     }
     m_outputUpdatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReferenceDataSourceUpdates"))
   {
     Aws::Utils::Array<JsonView> referenceDataSourceUpdatesJsonList = jsonValue.GetArray("ReferenceDataSourceUpdates");
@@ -71,7 +57,6 @@ ApplicationUpdate& ApplicationUpdate::operator =(JsonView jsonValue)
     }
     m_referenceDataSourceUpdatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchLoggingOptionUpdates"))
   {
     Aws::Utils::Array<JsonView> cloudWatchLoggingOptionUpdatesJsonList = jsonValue.GetArray("CloudWatchLoggingOptionUpdates");
@@ -81,7 +66,6 @@ ApplicationUpdate& ApplicationUpdate::operator =(JsonView jsonValue)
     }
     m_cloudWatchLoggingOptionUpdatesHasBeenSet = true;
   }
-
   return *this;
 }
 

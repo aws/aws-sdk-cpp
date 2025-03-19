@@ -20,22 +20,7 @@ namespace EC2
 namespace Model
 {
 
-OnDemandOptionsRequest::OnDemandOptionsRequest() : 
-    m_allocationStrategy(FleetOnDemandAllocationStrategy::NOT_SET),
-    m_allocationStrategyHasBeenSet(false),
-    m_capacityReservationOptionsHasBeenSet(false),
-    m_singleInstanceType(false),
-    m_singleInstanceTypeHasBeenSet(false),
-    m_singleAvailabilityZone(false),
-    m_singleAvailabilityZoneHasBeenSet(false),
-    m_minTargetCapacity(0),
-    m_minTargetCapacityHasBeenSet(false),
-    m_maxTotalPriceHasBeenSet(false)
-{
-}
-
 OnDemandOptionsRequest::OnDemandOptionsRequest(const XmlNode& xmlNode)
-  : OnDemandOptionsRequest()
 {
   *this = xmlNode;
 }
@@ -49,7 +34,7 @@ OnDemandOptionsRequest& OnDemandOptionsRequest::operator =(const XmlNode& xmlNod
     XmlNode allocationStrategyNode = resultNode.FirstChild("AllocationStrategy");
     if(!allocationStrategyNode.IsNull())
     {
-      m_allocationStrategy = FleetOnDemandAllocationStrategyMapper::GetFleetOnDemandAllocationStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allocationStrategyNode.GetText()).c_str()).c_str());
+      m_allocationStrategy = FleetOnDemandAllocationStrategyMapper::GetFleetOnDemandAllocationStrategyForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(allocationStrategyNode.GetText()).c_str()));
       m_allocationStrategyHasBeenSet = true;
     }
     XmlNode capacityReservationOptionsNode = resultNode.FirstChild("CapacityReservationOptions");

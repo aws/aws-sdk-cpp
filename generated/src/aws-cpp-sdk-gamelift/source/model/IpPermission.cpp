@@ -18,19 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-IpPermission::IpPermission() : 
-    m_fromPort(0),
-    m_fromPortHasBeenSet(false),
-    m_toPort(0),
-    m_toPortHasBeenSet(false),
-    m_ipRangeHasBeenSet(false),
-    m_protocol(IpProtocol::NOT_SET),
-    m_protocolHasBeenSet(false)
-{
-}
-
 IpPermission::IpPermission(JsonView jsonValue)
-  : IpPermission()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ IpPermission& IpPermission::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FromPort"))
   {
     m_fromPort = jsonValue.GetInteger("FromPort");
-
     m_fromPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ToPort"))
   {
     m_toPort = jsonValue.GetInteger("ToPort");
-
     m_toPortHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IpRange"))
   {
     m_ipRange = jsonValue.GetString("IpRange");
-
     m_ipRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Protocol"))
   {
     m_protocol = IpProtocolMapper::GetIpProtocolForName(jsonValue.GetString("Protocol"));
-
     m_protocolHasBeenSet = true;
   }
-
   return *this;
 }
 

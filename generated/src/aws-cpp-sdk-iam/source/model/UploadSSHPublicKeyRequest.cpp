@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-UploadSSHPublicKeyRequest::UploadSSHPublicKeyRequest() : 
-    m_userNameHasBeenSet(false),
-    m_sSHPublicKeyBodyHasBeenSet(false)
-{
-}
-
 Aws::String UploadSSHPublicKeyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

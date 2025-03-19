@@ -18,14 +18,7 @@ namespace Support
 namespace Model
 {
 
-SupportedHour::SupportedHour() : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 SupportedHour::SupportedHour(JsonView jsonValue)
-  : SupportedHour()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SupportedHour& SupportedHour::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

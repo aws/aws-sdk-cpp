@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateDirectoryConfigResult::UpdateDirectoryConfigResult()
-{
-}
-
 UpdateDirectoryConfigResult::UpdateDirectoryConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ UpdateDirectoryConfigResult& UpdateDirectoryConfigResult::operator =(const Aws::
   if(jsonValue.ValueExists("DirectoryConfig"))
   {
     m_directoryConfig = jsonValue.GetObject("DirectoryConfig");
-
+    m_directoryConfigHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

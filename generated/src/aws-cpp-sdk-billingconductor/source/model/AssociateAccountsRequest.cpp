@@ -12,12 +12,6 @@ using namespace Aws::BillingConductor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateAccountsRequest::AssociateAccountsRequest() : 
-    m_arnHasBeenSet(false),
-    m_accountIdsHasBeenSet(false)
-{
-}
-
 Aws::String AssociateAccountsRequest::SerializePayload() const
 {
   JsonValue payload;

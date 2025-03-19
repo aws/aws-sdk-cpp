@@ -18,20 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DataCaptureConfigSummary::DataCaptureConfigSummary() : 
-    m_enableCapture(false),
-    m_enableCaptureHasBeenSet(false),
-    m_captureStatus(CaptureStatus::NOT_SET),
-    m_captureStatusHasBeenSet(false),
-    m_currentSamplingPercentage(0),
-    m_currentSamplingPercentageHasBeenSet(false),
-    m_destinationS3UriHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 DataCaptureConfigSummary::DataCaptureConfigSummary(JsonView jsonValue)
-  : DataCaptureConfigSummary()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ DataCaptureConfigSummary& DataCaptureConfigSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("EnableCapture"))
   {
     m_enableCapture = jsonValue.GetBool("EnableCapture");
-
     m_enableCaptureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CaptureStatus"))
   {
     m_captureStatus = CaptureStatusMapper::GetCaptureStatusForName(jsonValue.GetString("CaptureStatus"));
-
     m_captureStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentSamplingPercentage"))
   {
     m_currentSamplingPercentage = jsonValue.GetInteger("CurrentSamplingPercentage");
-
     m_currentSamplingPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationS3Uri"))
   {
     m_destinationS3Uri = jsonValue.GetString("DestinationS3Uri");
-
     m_destinationS3UriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

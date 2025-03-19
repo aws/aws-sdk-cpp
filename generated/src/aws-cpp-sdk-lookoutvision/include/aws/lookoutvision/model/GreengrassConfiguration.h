@@ -41,7 +41,7 @@ namespace Model
   class GreengrassConfiguration
   {
   public:
-    AWS_LOOKOUTFORVISION_API GreengrassConfiguration();
+    AWS_LOOKOUTFORVISION_API GreengrassConfiguration() = default;
     AWS_LOOKOUTFORVISION_API GreengrassConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTFORVISION_API GreengrassConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTFORVISION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,14 +55,12 @@ namespace Model
      * <code>CompilerOptions</code>.</p> <p>For more information, see <i>Compiler
      * options</i> in the Amazon Lookout for Vision Developer Guide. </p>
      */
-    inline const Aws::String& GetCompilerOptions() const{ return m_compilerOptions; }
+    inline const Aws::String& GetCompilerOptions() const { return m_compilerOptions; }
     inline bool CompilerOptionsHasBeenSet() const { return m_compilerOptionsHasBeenSet; }
-    inline void SetCompilerOptions(const Aws::String& value) { m_compilerOptionsHasBeenSet = true; m_compilerOptions = value; }
-    inline void SetCompilerOptions(Aws::String&& value) { m_compilerOptionsHasBeenSet = true; m_compilerOptions = std::move(value); }
-    inline void SetCompilerOptions(const char* value) { m_compilerOptionsHasBeenSet = true; m_compilerOptions.assign(value); }
-    inline GreengrassConfiguration& WithCompilerOptions(const Aws::String& value) { SetCompilerOptions(value); return *this;}
-    inline GreengrassConfiguration& WithCompilerOptions(Aws::String&& value) { SetCompilerOptions(std::move(value)); return *this;}
-    inline GreengrassConfiguration& WithCompilerOptions(const char* value) { SetCompilerOptions(value); return *this;}
+    template<typename CompilerOptionsT = Aws::String>
+    void SetCompilerOptions(CompilerOptionsT&& value) { m_compilerOptionsHasBeenSet = true; m_compilerOptions = std::forward<CompilerOptionsT>(value); }
+    template<typename CompilerOptionsT = Aws::String>
+    GreengrassConfiguration& WithCompilerOptions(CompilerOptionsT&& value) { SetCompilerOptions(std::forward<CompilerOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +69,10 @@ namespace Model
      * <code>jetson_xavier</code>. If you specify <code>TargetDevice</code>, you can't
      * specify <code>TargetPlatform</code>. </p>
      */
-    inline const TargetDevice& GetTargetDevice() const{ return m_targetDevice; }
+    inline TargetDevice GetTargetDevice() const { return m_targetDevice; }
     inline bool TargetDeviceHasBeenSet() const { return m_targetDeviceHasBeenSet; }
-    inline void SetTargetDevice(const TargetDevice& value) { m_targetDeviceHasBeenSet = true; m_targetDevice = value; }
-    inline void SetTargetDevice(TargetDevice&& value) { m_targetDeviceHasBeenSet = true; m_targetDevice = std::move(value); }
-    inline GreengrassConfiguration& WithTargetDevice(const TargetDevice& value) { SetTargetDevice(value); return *this;}
-    inline GreengrassConfiguration& WithTargetDevice(TargetDevice&& value) { SetTargetDevice(std::move(value)); return *this;}
+    inline void SetTargetDevice(TargetDevice value) { m_targetDeviceHasBeenSet = true; m_targetDevice = value; }
+    inline GreengrassConfiguration& WithTargetDevice(TargetDevice value) { SetTargetDevice(value); return *this;}
     ///@}
 
     ///@{
@@ -84,12 +80,12 @@ namespace Model
      * <p>The target platform for the model. If you specify
      * <code>TargetPlatform</code>, you can't specify <code>TargetDevice</code>. </p>
      */
-    inline const TargetPlatform& GetTargetPlatform() const{ return m_targetPlatform; }
+    inline const TargetPlatform& GetTargetPlatform() const { return m_targetPlatform; }
     inline bool TargetPlatformHasBeenSet() const { return m_targetPlatformHasBeenSet; }
-    inline void SetTargetPlatform(const TargetPlatform& value) { m_targetPlatformHasBeenSet = true; m_targetPlatform = value; }
-    inline void SetTargetPlatform(TargetPlatform&& value) { m_targetPlatformHasBeenSet = true; m_targetPlatform = std::move(value); }
-    inline GreengrassConfiguration& WithTargetPlatform(const TargetPlatform& value) { SetTargetPlatform(value); return *this;}
-    inline GreengrassConfiguration& WithTargetPlatform(TargetPlatform&& value) { SetTargetPlatform(std::move(value)); return *this;}
+    template<typename TargetPlatformT = TargetPlatform>
+    void SetTargetPlatform(TargetPlatformT&& value) { m_targetPlatformHasBeenSet = true; m_targetPlatform = std::forward<TargetPlatformT>(value); }
+    template<typename TargetPlatformT = TargetPlatform>
+    GreengrassConfiguration& WithTargetPlatform(TargetPlatformT&& value) { SetTargetPlatform(std::forward<TargetPlatformT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,26 +93,24 @@ namespace Model
      * <p> An S3 location in which Lookout for Vision stores the component artifacts.
      * </p>
      */
-    inline const S3Location& GetS3OutputLocation() const{ return m_s3OutputLocation; }
+    inline const S3Location& GetS3OutputLocation() const { return m_s3OutputLocation; }
     inline bool S3OutputLocationHasBeenSet() const { return m_s3OutputLocationHasBeenSet; }
-    inline void SetS3OutputLocation(const S3Location& value) { m_s3OutputLocationHasBeenSet = true; m_s3OutputLocation = value; }
-    inline void SetS3OutputLocation(S3Location&& value) { m_s3OutputLocationHasBeenSet = true; m_s3OutputLocation = std::move(value); }
-    inline GreengrassConfiguration& WithS3OutputLocation(const S3Location& value) { SetS3OutputLocation(value); return *this;}
-    inline GreengrassConfiguration& WithS3OutputLocation(S3Location&& value) { SetS3OutputLocation(std::move(value)); return *this;}
+    template<typename S3OutputLocationT = S3Location>
+    void SetS3OutputLocation(S3OutputLocationT&& value) { m_s3OutputLocationHasBeenSet = true; m_s3OutputLocation = std::forward<S3OutputLocationT>(value); }
+    template<typename S3OutputLocationT = S3Location>
+    GreengrassConfiguration& WithS3OutputLocation(S3OutputLocationT&& value) { SetS3OutputLocation(std::forward<S3OutputLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A name for the AWS IoT Greengrass component. </p>
      */
-    inline const Aws::String& GetComponentName() const{ return m_componentName; }
+    inline const Aws::String& GetComponentName() const { return m_componentName; }
     inline bool ComponentNameHasBeenSet() const { return m_componentNameHasBeenSet; }
-    inline void SetComponentName(const Aws::String& value) { m_componentNameHasBeenSet = true; m_componentName = value; }
-    inline void SetComponentName(Aws::String&& value) { m_componentNameHasBeenSet = true; m_componentName = std::move(value); }
-    inline void SetComponentName(const char* value) { m_componentNameHasBeenSet = true; m_componentName.assign(value); }
-    inline GreengrassConfiguration& WithComponentName(const Aws::String& value) { SetComponentName(value); return *this;}
-    inline GreengrassConfiguration& WithComponentName(Aws::String&& value) { SetComponentName(std::move(value)); return *this;}
-    inline GreengrassConfiguration& WithComponentName(const char* value) { SetComponentName(value); return *this;}
+    template<typename ComponentNameT = Aws::String>
+    void SetComponentName(ComponentNameT&& value) { m_componentNameHasBeenSet = true; m_componentName = std::forward<ComponentNameT>(value); }
+    template<typename ComponentNameT = Aws::String>
+    GreengrassConfiguration& WithComponentName(ComponentNameT&& value) { SetComponentName(std::forward<ComponentNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,28 +118,24 @@ namespace Model
      * <p>A Version for the AWS IoT Greengrass component. If you don't provide a value,
      * a default value of <code> <i>Model Version</i>.0.0</code> is used. </p>
      */
-    inline const Aws::String& GetComponentVersion() const{ return m_componentVersion; }
+    inline const Aws::String& GetComponentVersion() const { return m_componentVersion; }
     inline bool ComponentVersionHasBeenSet() const { return m_componentVersionHasBeenSet; }
-    inline void SetComponentVersion(const Aws::String& value) { m_componentVersionHasBeenSet = true; m_componentVersion = value; }
-    inline void SetComponentVersion(Aws::String&& value) { m_componentVersionHasBeenSet = true; m_componentVersion = std::move(value); }
-    inline void SetComponentVersion(const char* value) { m_componentVersionHasBeenSet = true; m_componentVersion.assign(value); }
-    inline GreengrassConfiguration& WithComponentVersion(const Aws::String& value) { SetComponentVersion(value); return *this;}
-    inline GreengrassConfiguration& WithComponentVersion(Aws::String&& value) { SetComponentVersion(std::move(value)); return *this;}
-    inline GreengrassConfiguration& WithComponentVersion(const char* value) { SetComponentVersion(value); return *this;}
+    template<typename ComponentVersionT = Aws::String>
+    void SetComponentVersion(ComponentVersionT&& value) { m_componentVersionHasBeenSet = true; m_componentVersion = std::forward<ComponentVersionT>(value); }
+    template<typename ComponentVersionT = Aws::String>
+    GreengrassConfiguration& WithComponentVersion(ComponentVersionT&& value) { SetComponentVersion(std::forward<ComponentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A description for the AWS IoT Greengrass component. </p>
      */
-    inline const Aws::String& GetComponentDescription() const{ return m_componentDescription; }
+    inline const Aws::String& GetComponentDescription() const { return m_componentDescription; }
     inline bool ComponentDescriptionHasBeenSet() const { return m_componentDescriptionHasBeenSet; }
-    inline void SetComponentDescription(const Aws::String& value) { m_componentDescriptionHasBeenSet = true; m_componentDescription = value; }
-    inline void SetComponentDescription(Aws::String&& value) { m_componentDescriptionHasBeenSet = true; m_componentDescription = std::move(value); }
-    inline void SetComponentDescription(const char* value) { m_componentDescriptionHasBeenSet = true; m_componentDescription.assign(value); }
-    inline GreengrassConfiguration& WithComponentDescription(const Aws::String& value) { SetComponentDescription(value); return *this;}
-    inline GreengrassConfiguration& WithComponentDescription(Aws::String&& value) { SetComponentDescription(std::move(value)); return *this;}
-    inline GreengrassConfiguration& WithComponentDescription(const char* value) { SetComponentDescription(value); return *this;}
+    template<typename ComponentDescriptionT = Aws::String>
+    void SetComponentDescription(ComponentDescriptionT&& value) { m_componentDescriptionHasBeenSet = true; m_componentDescription = std::forward<ComponentDescriptionT>(value); }
+    template<typename ComponentDescriptionT = Aws::String>
+    GreengrassConfiguration& WithComponentDescription(ComponentDescriptionT&& value) { SetComponentDescription(std::forward<ComponentDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,21 +143,21 @@ namespace Model
      * <p> A set of tags (key-value pairs) that you want to attach to the AWS IoT
      * Greengrass component. </p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline GreengrassConfiguration& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline GreengrassConfiguration& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline GreengrassConfiguration& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline GreengrassConfiguration& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    GreengrassConfiguration& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    GreengrassConfiguration& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_compilerOptions;
     bool m_compilerOptionsHasBeenSet = false;
 
-    TargetDevice m_targetDevice;
+    TargetDevice m_targetDevice{TargetDevice::NOT_SET};
     bool m_targetDeviceHasBeenSet = false;
 
     TargetPlatform m_targetPlatform;

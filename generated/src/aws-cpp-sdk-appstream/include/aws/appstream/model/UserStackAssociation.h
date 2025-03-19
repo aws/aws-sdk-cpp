@@ -33,7 +33,7 @@ namespace Model
   class UserStackAssociation
   {
   public:
-    AWS_APPSTREAM_API UserStackAssociation();
+    AWS_APPSTREAM_API UserStackAssociation() = default;
     AWS_APPSTREAM_API UserStackAssociation(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSTREAM_API UserStackAssociation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSTREAM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the stack that is associated with the user.</p>
      */
-    inline const Aws::String& GetStackName() const{ return m_stackName; }
+    inline const Aws::String& GetStackName() const { return m_stackName; }
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-    inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
-    inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
-    inline UserStackAssociation& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-    inline UserStackAssociation& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-    inline UserStackAssociation& WithStackName(const char* value) { SetStackName(value); return *this;}
+    template<typename StackNameT = Aws::String>
+    void SetStackName(StackNameT&& value) { m_stackNameHasBeenSet = true; m_stackName = std::forward<StackNameT>(value); }
+    template<typename StackNameT = Aws::String>
+    UserStackAssociation& WithStackName(StackNameT&& value) { SetStackName(std::forward<StackNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,26 +56,22 @@ namespace Model
      * <p>The email address of the user who is associated with the stack.</p> 
      * <p>Users' email addresses are case-sensitive.</p> 
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
+    inline const Aws::String& GetUserName() const { return m_userName; }
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-    inline UserStackAssociation& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline UserStackAssociation& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline UserStackAssociation& WithUserName(const char* value) { SetUserName(value); return *this;}
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    UserStackAssociation& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The authentication type for the user.</p>
      */
-    inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
+    inline AuthenticationType GetAuthenticationType() const { return m_authenticationType; }
     inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
-    inline void SetAuthenticationType(const AuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
-    inline void SetAuthenticationType(AuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
-    inline UserStackAssociation& WithAuthenticationType(const AuthenticationType& value) { SetAuthenticationType(value); return *this;}
-    inline UserStackAssociation& WithAuthenticationType(AuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
+    inline void SetAuthenticationType(AuthenticationType value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
+    inline UserStackAssociation& WithAuthenticationType(AuthenticationType value) { SetAuthenticationType(value); return *this;}
     ///@}
 
     ///@{
@@ -85,7 +79,7 @@ namespace Model
      * <p>Specifies whether a welcome email is sent to a user after the user is created
      * in the user pool.</p>
      */
-    inline bool GetSendEmailNotification() const{ return m_sendEmailNotification; }
+    inline bool GetSendEmailNotification() const { return m_sendEmailNotification; }
     inline bool SendEmailNotificationHasBeenSet() const { return m_sendEmailNotificationHasBeenSet; }
     inline void SetSendEmailNotification(bool value) { m_sendEmailNotificationHasBeenSet = true; m_sendEmailNotification = value; }
     inline UserStackAssociation& WithSendEmailNotification(bool value) { SetSendEmailNotification(value); return *this;}
@@ -98,10 +92,10 @@ namespace Model
     Aws::String m_userName;
     bool m_userNameHasBeenSet = false;
 
-    AuthenticationType m_authenticationType;
+    AuthenticationType m_authenticationType{AuthenticationType::NOT_SET};
     bool m_authenticationTypeHasBeenSet = false;
 
-    bool m_sendEmailNotification;
+    bool m_sendEmailNotification{false};
     bool m_sendEmailNotificationHasBeenSet = false;
   };
 

@@ -20,13 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-OriginGroupMember::OriginGroupMember() : 
-    m_originIdHasBeenSet(false)
-{
-}
-
 OriginGroupMember::OriginGroupMember(const XmlNode& xmlNode)
-  : OriginGroupMember()
 {
   *this = xmlNode;
 }

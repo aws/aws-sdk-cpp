@@ -30,7 +30,7 @@ namespace Model
   class LandCoverSegmentationConfigInput
   {
   public:
-    AWS_SAGEMAKERGEOSPATIAL_API LandCoverSegmentationConfigInput();
+    AWS_SAGEMAKERGEOSPATIAL_API LandCoverSegmentationConfigInput() = default;
     AWS_SAGEMAKERGEOSPATIAL_API LandCoverSegmentationConfigInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API LandCoverSegmentationConfigInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKERGEOSPATIAL_API Aws::Utils::Json::JsonValue Jsonize() const;

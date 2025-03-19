@@ -18,18 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-ChallengeResponse::ChallengeResponse() : 
-    m_responseCode(0),
-    m_responseCodeHasBeenSet(false),
-    m_solveTimestamp(0),
-    m_solveTimestampHasBeenSet(false),
-    m_failureReason(FailureReason::NOT_SET),
-    m_failureReasonHasBeenSet(false)
-{
-}
-
 ChallengeResponse::ChallengeResponse(JsonView jsonValue)
-  : ChallengeResponse()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ ChallengeResponse& ChallengeResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResponseCode"))
   {
     m_responseCode = jsonValue.GetInteger("ResponseCode");
-
     m_responseCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SolveTimestamp"))
   {
     m_solveTimestamp = jsonValue.GetInt64("SolveTimestamp");
-
     m_solveTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = FailureReasonMapper::GetFailureReasonForName(jsonValue.GetString("FailureReason"));
-
     m_failureReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

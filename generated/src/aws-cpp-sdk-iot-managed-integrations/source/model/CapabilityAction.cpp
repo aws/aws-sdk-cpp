@@ -18,16 +18,7 @@ namespace IoTManagedIntegrations
 namespace Model
 {
 
-CapabilityAction::CapabilityAction() : 
-    m_nameHasBeenSet(false),
-    m_refHasBeenSet(false),
-    m_actionTraceIdHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 CapabilityAction::CapabilityAction(JsonView jsonValue)
-  : CapabilityAction()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ CapabilityAction& CapabilityAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ref"))
   {
     m_ref = jsonValue.GetString("ref");
-
     m_refHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionTraceId"))
   {
     m_actionTraceId = jsonValue.GetString("actionTraceId");
-
     m_actionTraceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     m_parameters = jsonValue.GetObject("parameters");
-
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

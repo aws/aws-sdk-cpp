@@ -18,15 +18,7 @@ namespace KinesisAnalytics
 namespace Model
 {
 
-S3Configuration::S3Configuration() : 
-    m_roleARNHasBeenSet(false),
-    m_bucketARNHasBeenSet(false),
-    m_fileKeyHasBeenSet(false)
-{
-}
-
 S3Configuration::S3Configuration(JsonView jsonValue)
-  : S3Configuration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ S3Configuration& S3Configuration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RoleARN"))
   {
     m_roleARN = jsonValue.GetString("RoleARN");
-
     m_roleARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BucketARN"))
   {
     m_bucketARN = jsonValue.GetString("BucketARN");
-
     m_bucketARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileKey"))
   {
     m_fileKey = jsonValue.GetString("FileKey");
-
     m_fileKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

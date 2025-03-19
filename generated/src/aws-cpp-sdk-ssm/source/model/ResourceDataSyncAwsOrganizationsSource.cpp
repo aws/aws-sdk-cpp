@@ -18,14 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ResourceDataSyncAwsOrganizationsSource::ResourceDataSyncAwsOrganizationsSource() : 
-    m_organizationSourceTypeHasBeenSet(false),
-    m_organizationalUnitsHasBeenSet(false)
-{
-}
-
 ResourceDataSyncAwsOrganizationsSource::ResourceDataSyncAwsOrganizationsSource(JsonView jsonValue)
-  : ResourceDataSyncAwsOrganizationsSource()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ResourceDataSyncAwsOrganizationsSource& ResourceDataSyncAwsOrganizationsSource::
   if(jsonValue.ValueExists("OrganizationSourceType"))
   {
     m_organizationSourceType = jsonValue.GetString("OrganizationSourceType");
-
     m_organizationSourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrganizationalUnits"))
   {
     Aws::Utils::Array<JsonView> organizationalUnitsJsonList = jsonValue.GetArray("OrganizationalUnits");
@@ -48,7 +39,6 @@ ResourceDataSyncAwsOrganizationsSource& ResourceDataSyncAwsOrganizationsSource::
     }
     m_organizationalUnitsHasBeenSet = true;
   }
-
   return *this;
 }
 

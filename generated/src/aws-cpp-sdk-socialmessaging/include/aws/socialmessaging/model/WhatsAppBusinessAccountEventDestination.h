@@ -31,7 +31,7 @@ namespace Model
   class WhatsAppBusinessAccountEventDestination
   {
   public:
-    AWS_SOCIALMESSAGING_API WhatsAppBusinessAccountEventDestination();
+    AWS_SOCIALMESSAGING_API WhatsAppBusinessAccountEventDestination() = default;
     AWS_SOCIALMESSAGING_API WhatsAppBusinessAccountEventDestination(Aws::Utils::Json::JsonView jsonValue);
     AWS_SOCIALMESSAGING_API WhatsAppBusinessAccountEventDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SOCIALMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The ARN of the event destination.</p>
      */
-    inline const Aws::String& GetEventDestinationArn() const{ return m_eventDestinationArn; }
+    inline const Aws::String& GetEventDestinationArn() const { return m_eventDestinationArn; }
     inline bool EventDestinationArnHasBeenSet() const { return m_eventDestinationArnHasBeenSet; }
-    inline void SetEventDestinationArn(const Aws::String& value) { m_eventDestinationArnHasBeenSet = true; m_eventDestinationArn = value; }
-    inline void SetEventDestinationArn(Aws::String&& value) { m_eventDestinationArnHasBeenSet = true; m_eventDestinationArn = std::move(value); }
-    inline void SetEventDestinationArn(const char* value) { m_eventDestinationArnHasBeenSet = true; m_eventDestinationArn.assign(value); }
-    inline WhatsAppBusinessAccountEventDestination& WithEventDestinationArn(const Aws::String& value) { SetEventDestinationArn(value); return *this;}
-    inline WhatsAppBusinessAccountEventDestination& WithEventDestinationArn(Aws::String&& value) { SetEventDestinationArn(std::move(value)); return *this;}
-    inline WhatsAppBusinessAccountEventDestination& WithEventDestinationArn(const char* value) { SetEventDestinationArn(value); return *this;}
+    template<typename EventDestinationArnT = Aws::String>
+    void SetEventDestinationArn(EventDestinationArnT&& value) { m_eventDestinationArnHasBeenSet = true; m_eventDestinationArn = std::forward<EventDestinationArnT>(value); }
+    template<typename EventDestinationArnT = Aws::String>
+    WhatsAppBusinessAccountEventDestination& WithEventDestinationArn(EventDestinationArnT&& value) { SetEventDestinationArn(std::forward<EventDestinationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of an Identity and Access Management role that
      * is able to import phone numbers and write events.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline WhatsAppBusinessAccountEventDestination& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline WhatsAppBusinessAccountEventDestination& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline WhatsAppBusinessAccountEventDestination& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    WhatsAppBusinessAccountEventDestination& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
   private:
 

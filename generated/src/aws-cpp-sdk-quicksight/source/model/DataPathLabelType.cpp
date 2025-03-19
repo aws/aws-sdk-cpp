@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DataPathLabelType::DataPathLabelType() : 
-    m_fieldIdHasBeenSet(false),
-    m_fieldValueHasBeenSet(false),
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
-{
-}
-
 DataPathLabelType::DataPathLabelType(JsonView jsonValue)
-  : DataPathLabelType()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DataPathLabelType& DataPathLabelType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldId"))
   {
     m_fieldId = jsonValue.GetString("FieldId");
-
     m_fieldIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FieldValue"))
   {
     m_fieldValue = jsonValue.GetString("FieldValue");
-
     m_fieldValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   return *this;
 }
 

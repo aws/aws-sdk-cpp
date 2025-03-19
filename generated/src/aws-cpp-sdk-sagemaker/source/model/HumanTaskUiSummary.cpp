@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-HumanTaskUiSummary::HumanTaskUiSummary() : 
-    m_humanTaskUiNameHasBeenSet(false),
-    m_humanTaskUiArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
-{
-}
-
 HumanTaskUiSummary::HumanTaskUiSummary(JsonView jsonValue)
-  : HumanTaskUiSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ HumanTaskUiSummary& HumanTaskUiSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HumanTaskUiName"))
   {
     m_humanTaskUiName = jsonValue.GetString("HumanTaskUiName");
-
     m_humanTaskUiNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HumanTaskUiArn"))
   {
     m_humanTaskUiArn = jsonValue.GetString("HumanTaskUiArn");
-
     m_humanTaskUiArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

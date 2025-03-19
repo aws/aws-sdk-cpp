@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetResponsePlanResult::GetResponsePlanResult()
-{
-}
-
 GetResponsePlanResult::GetResponsePlanResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,26 +32,23 @@ GetResponsePlanResult& GetResponsePlanResult::operator =(const Aws::AmazonWebSer
     {
       m_actions.push_back(actionsJsonList[actionsIndex].AsObject());
     }
+    m_actionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("chatChannel"))
   {
     m_chatChannel = jsonValue.GetObject("chatChannel");
-
+    m_chatChannelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
+    m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("engagements"))
   {
     Aws::Utils::Array<JsonView> engagementsJsonList = jsonValue.GetArray("engagements");
@@ -63,14 +56,13 @@ GetResponsePlanResult& GetResponsePlanResult::operator =(const Aws::AmazonWebSer
     {
       m_engagements.push_back(engagementsJsonList[engagementsIndex].AsString());
     }
+    m_engagementsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("incidentTemplate"))
   {
     m_incidentTemplate = jsonValue.GetObject("incidentTemplate");
-
+    m_incidentTemplateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("integrations"))
   {
     Aws::Utils::Array<JsonView> integrationsJsonList = jsonValue.GetArray("integrations");
@@ -78,20 +70,20 @@ GetResponsePlanResult& GetResponsePlanResult::operator =(const Aws::AmazonWebSer
     {
       m_integrations.push_back(integrationsJsonList[integrationsIndex].AsObject());
     }
+    m_integrationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

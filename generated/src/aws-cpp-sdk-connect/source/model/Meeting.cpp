@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-Meeting::Meeting() : 
-    m_mediaRegionHasBeenSet(false),
-    m_mediaPlacementHasBeenSet(false),
-    m_meetingFeaturesHasBeenSet(false),
-    m_meetingIdHasBeenSet(false)
-{
-}
-
 Meeting::Meeting(JsonView jsonValue)
-  : Meeting()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ Meeting& Meeting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MediaRegion"))
   {
     m_mediaRegion = jsonValue.GetString("MediaRegion");
-
     m_mediaRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MediaPlacement"))
   {
     m_mediaPlacement = jsonValue.GetObject("MediaPlacement");
-
     m_mediaPlacementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MeetingFeatures"))
   {
     m_meetingFeatures = jsonValue.GetObject("MeetingFeatures");
-
     m_meetingFeaturesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MeetingId"))
   {
     m_meetingId = jsonValue.GetString("MeetingId");
-
     m_meetingIdHasBeenSet = true;
   }
-
   return *this;
 }
 

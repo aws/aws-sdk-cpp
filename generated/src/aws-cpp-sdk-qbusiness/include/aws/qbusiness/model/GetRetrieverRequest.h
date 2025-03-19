@@ -21,7 +21,7 @@ namespace Model
   class GetRetrieverRequest : public QBusinessRequest
   {
   public:
-    AWS_QBUSINESS_API GetRetrieverRequest();
+    AWS_QBUSINESS_API GetRetrieverRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The identifier of the Amazon Q Business application using the retriever.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline GetRetrieverRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline GetRetrieverRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline GetRetrieverRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    GetRetrieverRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the retriever.</p>
      */
-    inline const Aws::String& GetRetrieverId() const{ return m_retrieverId; }
+    inline const Aws::String& GetRetrieverId() const { return m_retrieverId; }
     inline bool RetrieverIdHasBeenSet() const { return m_retrieverIdHasBeenSet; }
-    inline void SetRetrieverId(const Aws::String& value) { m_retrieverIdHasBeenSet = true; m_retrieverId = value; }
-    inline void SetRetrieverId(Aws::String&& value) { m_retrieverIdHasBeenSet = true; m_retrieverId = std::move(value); }
-    inline void SetRetrieverId(const char* value) { m_retrieverIdHasBeenSet = true; m_retrieverId.assign(value); }
-    inline GetRetrieverRequest& WithRetrieverId(const Aws::String& value) { SetRetrieverId(value); return *this;}
-    inline GetRetrieverRequest& WithRetrieverId(Aws::String&& value) { SetRetrieverId(std::move(value)); return *this;}
-    inline GetRetrieverRequest& WithRetrieverId(const char* value) { SetRetrieverId(value); return *this;}
+    template<typename RetrieverIdT = Aws::String>
+    void SetRetrieverId(RetrieverIdT&& value) { m_retrieverIdHasBeenSet = true; m_retrieverId = std::forward<RetrieverIdT>(value); }
+    template<typename RetrieverIdT = Aws::String>
+    GetRetrieverRequest& WithRetrieverId(RetrieverIdT&& value) { SetRetrieverId(std::forward<RetrieverIdT>(value)); return *this;}
     ///@}
   private:
 

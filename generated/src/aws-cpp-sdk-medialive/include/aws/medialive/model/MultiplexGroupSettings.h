@@ -29,7 +29,7 @@ namespace Model
   class MultiplexGroupSettings
   {
   public:
-    AWS_MEDIALIVE_API MultiplexGroupSettings();
+    AWS_MEDIALIVE_API MultiplexGroupSettings() = default;
     AWS_MEDIALIVE_API MultiplexGroupSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API MultiplexGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;

@@ -22,7 +22,7 @@ namespace Model
   class UpdateFirewallConfigRequest : public Route53ResolverRequest
   {
   public:
-    AWS_ROUTE53RESOLVER_API UpdateFirewallConfigRequest();
+    AWS_ROUTE53RESOLVER_API UpdateFirewallConfigRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The ID of the VPC that the configuration is for.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline UpdateFirewallConfigRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline UpdateFirewallConfigRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline UpdateFirewallConfigRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    UpdateFirewallConfigRequest& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,19 +59,17 @@ namespace Model
      * evaluate them. </p> </li> </ul> <p>This behavior is only enforced for VPCs that
      * have at least one DNS Firewall rule group association. </p>
      */
-    inline const FirewallFailOpenStatus& GetFirewallFailOpen() const{ return m_firewallFailOpen; }
+    inline FirewallFailOpenStatus GetFirewallFailOpen() const { return m_firewallFailOpen; }
     inline bool FirewallFailOpenHasBeenSet() const { return m_firewallFailOpenHasBeenSet; }
-    inline void SetFirewallFailOpen(const FirewallFailOpenStatus& value) { m_firewallFailOpenHasBeenSet = true; m_firewallFailOpen = value; }
-    inline void SetFirewallFailOpen(FirewallFailOpenStatus&& value) { m_firewallFailOpenHasBeenSet = true; m_firewallFailOpen = std::move(value); }
-    inline UpdateFirewallConfigRequest& WithFirewallFailOpen(const FirewallFailOpenStatus& value) { SetFirewallFailOpen(value); return *this;}
-    inline UpdateFirewallConfigRequest& WithFirewallFailOpen(FirewallFailOpenStatus&& value) { SetFirewallFailOpen(std::move(value)); return *this;}
+    inline void SetFirewallFailOpen(FirewallFailOpenStatus value) { m_firewallFailOpenHasBeenSet = true; m_firewallFailOpen = value; }
+    inline UpdateFirewallConfigRequest& WithFirewallFailOpen(FirewallFailOpenStatus value) { SetFirewallFailOpen(value); return *this;}
     ///@}
   private:
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
-    FirewallFailOpenStatus m_firewallFailOpen;
+    FirewallFailOpenStatus m_firewallFailOpen{FirewallFailOpenStatus::NOT_SET};
     bool m_firewallFailOpenHasBeenSet = false;
   };
 

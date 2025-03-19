@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-ResourceUri::ResourceUri() : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_uriHasBeenSet(false)
-{
-}
-
 ResourceUri::ResourceUri(JsonView jsonValue)
-  : ResourceUri()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ResourceUri& ResourceUri::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Uri"))
   {
     m_uri = jsonValue.GetString("Uri");
-
     m_uriHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,21 +18,7 @@ namespace MediaTailor
 namespace Model
 {
 
-SourceLocation::SourceLocation() : 
-    m_accessConfigurationHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_defaultSegmentDeliveryConfigurationHasBeenSet(false),
-    m_httpConfigurationHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_segmentDeliveryConfigurationsHasBeenSet(false),
-    m_sourceLocationNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 SourceLocation::SourceLocation(JsonView jsonValue)
-  : SourceLocation()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ SourceLocation& SourceLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccessConfiguration"))
   {
     m_accessConfiguration = jsonValue.GetObject("AccessConfiguration");
-
     m_accessConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultSegmentDeliveryConfiguration"))
   {
     m_defaultSegmentDeliveryConfiguration = jsonValue.GetObject("DefaultSegmentDeliveryConfiguration");
-
     m_defaultSegmentDeliveryConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HttpConfiguration"))
   {
     m_httpConfiguration = jsonValue.GetObject("HttpConfiguration");
-
     m_httpConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SegmentDeliveryConfigurations"))
   {
     Aws::Utils::Array<JsonView> segmentDeliveryConfigurationsJsonList = jsonValue.GetArray("SegmentDeliveryConfigurations");
@@ -90,14 +64,11 @@ SourceLocation& SourceLocation::operator =(JsonView jsonValue)
     }
     m_segmentDeliveryConfigurationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceLocationName"))
   {
     m_sourceLocationName = jsonValue.GetString("SourceLocationName");
-
     m_sourceLocationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -107,7 +78,6 @@ SourceLocation& SourceLocation::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

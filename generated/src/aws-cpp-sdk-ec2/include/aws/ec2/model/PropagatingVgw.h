@@ -32,7 +32,7 @@ namespace Model
   class PropagatingVgw
   {
   public:
-    AWS_EC2_API PropagatingVgw();
+    AWS_EC2_API PropagatingVgw() = default;
     AWS_EC2_API PropagatingVgw(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API PropagatingVgw& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The ID of the virtual private gateway.</p>
      */
-    inline const Aws::String& GetGatewayId() const{ return m_gatewayId; }
+    inline const Aws::String& GetGatewayId() const { return m_gatewayId; }
     inline bool GatewayIdHasBeenSet() const { return m_gatewayIdHasBeenSet; }
-    inline void SetGatewayId(const Aws::String& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
-    inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::move(value); }
-    inline void SetGatewayId(const char* value) { m_gatewayIdHasBeenSet = true; m_gatewayId.assign(value); }
-    inline PropagatingVgw& WithGatewayId(const Aws::String& value) { SetGatewayId(value); return *this;}
-    inline PropagatingVgw& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
-    inline PropagatingVgw& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
+    template<typename GatewayIdT = Aws::String>
+    void SetGatewayId(GatewayIdT&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::forward<GatewayIdT>(value); }
+    template<typename GatewayIdT = Aws::String>
+    PropagatingVgw& WithGatewayId(GatewayIdT&& value) { SetGatewayId(std::forward<GatewayIdT>(value)); return *this;}
     ///@}
   private:
 

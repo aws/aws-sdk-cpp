@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAttackStatisticsResult::DescribeAttackStatisticsResult()
-{
-}
-
 DescribeAttackStatisticsResult::DescribeAttackStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeAttackStatisticsResult& DescribeAttackStatisticsResult::operator =(const
   if(jsonValue.ValueExists("TimeRange"))
   {
     m_timeRange = jsonValue.GetObject("TimeRange");
-
+    m_timeRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataItems"))
   {
     Aws::Utils::Array<JsonView> dataItemsJsonList = jsonValue.GetArray("DataItems");
@@ -42,14 +37,15 @@ DescribeAttackStatisticsResult& DescribeAttackStatisticsResult::operator =(const
     {
       m_dataItems.push_back(dataItemsJsonList[dataItemsIndex].AsObject());
     }
+    m_dataItemsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -27,7 +27,7 @@ namespace Model
   class GetAccessTokenResult
   {
   public:
-    AWS_LICENSEMANAGER_API GetAccessTokenResult();
+    AWS_LICENSEMANAGER_API GetAccessTokenResult() = default;
     AWS_LICENSEMANAGER_API GetAccessTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LICENSEMANAGER_API GetAccessTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>Temporary access token.</p>
      */
-    inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
-    inline void SetAccessToken(const Aws::String& value) { m_accessToken = value; }
-    inline void SetAccessToken(Aws::String&& value) { m_accessToken = std::move(value); }
-    inline void SetAccessToken(const char* value) { m_accessToken.assign(value); }
-    inline GetAccessTokenResult& WithAccessToken(const Aws::String& value) { SetAccessToken(value); return *this;}
-    inline GetAccessTokenResult& WithAccessToken(Aws::String&& value) { SetAccessToken(std::move(value)); return *this;}
-    inline GetAccessTokenResult& WithAccessToken(const char* value) { SetAccessToken(value); return *this;}
+    inline const Aws::String& GetAccessToken() const { return m_accessToken; }
+    template<typename AccessTokenT = Aws::String>
+    void SetAccessToken(AccessTokenT&& value) { m_accessTokenHasBeenSet = true; m_accessToken = std::forward<AccessTokenT>(value); }
+    template<typename AccessTokenT = Aws::String>
+    GetAccessTokenResult& WithAccessToken(AccessTokenT&& value) { SetAccessToken(std::forward<AccessTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAccessTokenResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAccessTokenResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAccessTokenResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAccessTokenResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_accessToken;
+    bool m_accessTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

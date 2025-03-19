@@ -26,7 +26,7 @@ namespace Model
   class CreateApplicationRequest : public SSOAdminRequest
   {
   public:
-    AWS_SSOADMIN_API CreateApplicationRequest();
+    AWS_SSOADMIN_API CreateApplicationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The ARN of the application provider under which the operation will run.</p>
      */
-    inline const Aws::String& GetApplicationProviderArn() const{ return m_applicationProviderArn; }
+    inline const Aws::String& GetApplicationProviderArn() const { return m_applicationProviderArn; }
     inline bool ApplicationProviderArnHasBeenSet() const { return m_applicationProviderArnHasBeenSet; }
-    inline void SetApplicationProviderArn(const Aws::String& value) { m_applicationProviderArnHasBeenSet = true; m_applicationProviderArn = value; }
-    inline void SetApplicationProviderArn(Aws::String&& value) { m_applicationProviderArnHasBeenSet = true; m_applicationProviderArn = std::move(value); }
-    inline void SetApplicationProviderArn(const char* value) { m_applicationProviderArnHasBeenSet = true; m_applicationProviderArn.assign(value); }
-    inline CreateApplicationRequest& WithApplicationProviderArn(const Aws::String& value) { SetApplicationProviderArn(value); return *this;}
-    inline CreateApplicationRequest& WithApplicationProviderArn(Aws::String&& value) { SetApplicationProviderArn(std::move(value)); return *this;}
-    inline CreateApplicationRequest& WithApplicationProviderArn(const char* value) { SetApplicationProviderArn(value); return *this;}
+    template<typename ApplicationProviderArnT = Aws::String>
+    void SetApplicationProviderArn(ApplicationProviderArnT&& value) { m_applicationProviderArnHasBeenSet = true; m_applicationProviderArn = std::forward<ApplicationProviderArnT>(value); }
+    template<typename ApplicationProviderArnT = Aws::String>
+    CreateApplicationRequest& WithApplicationProviderArn(ApplicationProviderArnT&& value) { SetApplicationProviderArn(std::forward<ApplicationProviderArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,28 +64,24 @@ namespace Model
      * <code>ClientToken</code>, but with different parameters, the retry fails with an
      * <code>IdempotentParameterMismatch</code> error.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateApplicationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateApplicationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateApplicationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateApplicationRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the .</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateApplicationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateApplicationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateApplicationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateApplicationRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,28 +92,24 @@ namespace Model
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
      */
-    inline const Aws::String& GetInstanceArn() const{ return m_instanceArn; }
+    inline const Aws::String& GetInstanceArn() const { return m_instanceArn; }
     inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
-    inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
-    inline void SetInstanceArn(Aws::String&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::move(value); }
-    inline void SetInstanceArn(const char* value) { m_instanceArnHasBeenSet = true; m_instanceArn.assign(value); }
-    inline CreateApplicationRequest& WithInstanceArn(const Aws::String& value) { SetInstanceArn(value); return *this;}
-    inline CreateApplicationRequest& WithInstanceArn(Aws::String&& value) { SetInstanceArn(std::move(value)); return *this;}
-    inline CreateApplicationRequest& WithInstanceArn(const char* value) { SetInstanceArn(value); return *this;}
+    template<typename InstanceArnT = Aws::String>
+    void SetInstanceArn(InstanceArnT&& value) { m_instanceArnHasBeenSet = true; m_instanceArn = std::forward<InstanceArnT>(value); }
+    template<typename InstanceArnT = Aws::String>
+    CreateApplicationRequest& WithInstanceArn(InstanceArnT&& value) { SetInstanceArn(std::forward<InstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the .</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateApplicationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateApplicationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateApplicationRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateApplicationRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,38 +117,36 @@ namespace Model
      * <p>A structure that describes the options for the portal associated with an
      * application.</p>
      */
-    inline const PortalOptions& GetPortalOptions() const{ return m_portalOptions; }
+    inline const PortalOptions& GetPortalOptions() const { return m_portalOptions; }
     inline bool PortalOptionsHasBeenSet() const { return m_portalOptionsHasBeenSet; }
-    inline void SetPortalOptions(const PortalOptions& value) { m_portalOptionsHasBeenSet = true; m_portalOptions = value; }
-    inline void SetPortalOptions(PortalOptions&& value) { m_portalOptionsHasBeenSet = true; m_portalOptions = std::move(value); }
-    inline CreateApplicationRequest& WithPortalOptions(const PortalOptions& value) { SetPortalOptions(value); return *this;}
-    inline CreateApplicationRequest& WithPortalOptions(PortalOptions&& value) { SetPortalOptions(std::move(value)); return *this;}
+    template<typename PortalOptionsT = PortalOptions>
+    void SetPortalOptions(PortalOptionsT&& value) { m_portalOptionsHasBeenSet = true; m_portalOptions = std::forward<PortalOptionsT>(value); }
+    template<typename PortalOptionsT = PortalOptions>
+    CreateApplicationRequest& WithPortalOptions(PortalOptionsT&& value) { SetPortalOptions(std::forward<PortalOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether the application is enabled or disabled.</p>
      */
-    inline const ApplicationStatus& GetStatus() const{ return m_status; }
+    inline ApplicationStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ApplicationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ApplicationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline CreateApplicationRequest& WithStatus(const ApplicationStatus& value) { SetStatus(value); return *this;}
-    inline CreateApplicationRequest& WithStatus(ApplicationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ApplicationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CreateApplicationRequest& WithStatus(ApplicationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies tags to be attached to the application.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateApplicationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateApplicationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateApplicationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateApplicationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateApplicationRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateApplicationRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -180,7 +168,7 @@ namespace Model
     PortalOptions m_portalOptions;
     bool m_portalOptionsHasBeenSet = false;
 
-    ApplicationStatus m_status;
+    ApplicationStatus m_status{ApplicationStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

@@ -21,7 +21,7 @@ namespace Model
   class ListCreatedArtifactsRequest : public MigrationHubRequest
   {
   public:
-    AWS_MIGRATIONHUB_API ListCreatedArtifactsRequest();
+    AWS_MIGRATIONHUB_API ListCreatedArtifactsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the ProgressUpdateStream. </p>
      */
-    inline const Aws::String& GetProgressUpdateStream() const{ return m_progressUpdateStream; }
+    inline const Aws::String& GetProgressUpdateStream() const { return m_progressUpdateStream; }
     inline bool ProgressUpdateStreamHasBeenSet() const { return m_progressUpdateStreamHasBeenSet; }
-    inline void SetProgressUpdateStream(const Aws::String& value) { m_progressUpdateStreamHasBeenSet = true; m_progressUpdateStream = value; }
-    inline void SetProgressUpdateStream(Aws::String&& value) { m_progressUpdateStreamHasBeenSet = true; m_progressUpdateStream = std::move(value); }
-    inline void SetProgressUpdateStream(const char* value) { m_progressUpdateStreamHasBeenSet = true; m_progressUpdateStream.assign(value); }
-    inline ListCreatedArtifactsRequest& WithProgressUpdateStream(const Aws::String& value) { SetProgressUpdateStream(value); return *this;}
-    inline ListCreatedArtifactsRequest& WithProgressUpdateStream(Aws::String&& value) { SetProgressUpdateStream(std::move(value)); return *this;}
-    inline ListCreatedArtifactsRequest& WithProgressUpdateStream(const char* value) { SetProgressUpdateStream(value); return *this;}
+    template<typename ProgressUpdateStreamT = Aws::String>
+    void SetProgressUpdateStream(ProgressUpdateStreamT&& value) { m_progressUpdateStreamHasBeenSet = true; m_progressUpdateStream = std::forward<ProgressUpdateStreamT>(value); }
+    template<typename ProgressUpdateStreamT = Aws::String>
+    ListCreatedArtifactsRequest& WithProgressUpdateStream(ProgressUpdateStreamT&& value) { SetProgressUpdateStream(std::forward<ProgressUpdateStreamT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * <p>Unique identifier that references the migration task. <i>Do not store
      * personal data in this field.</i> </p>
      */
-    inline const Aws::String& GetMigrationTaskName() const{ return m_migrationTaskName; }
+    inline const Aws::String& GetMigrationTaskName() const { return m_migrationTaskName; }
     inline bool MigrationTaskNameHasBeenSet() const { return m_migrationTaskNameHasBeenSet; }
-    inline void SetMigrationTaskName(const Aws::String& value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName = value; }
-    inline void SetMigrationTaskName(Aws::String&& value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName = std::move(value); }
-    inline void SetMigrationTaskName(const char* value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName.assign(value); }
-    inline ListCreatedArtifactsRequest& WithMigrationTaskName(const Aws::String& value) { SetMigrationTaskName(value); return *this;}
-    inline ListCreatedArtifactsRequest& WithMigrationTaskName(Aws::String&& value) { SetMigrationTaskName(std::move(value)); return *this;}
-    inline ListCreatedArtifactsRequest& WithMigrationTaskName(const char* value) { SetMigrationTaskName(value); return *this;}
+    template<typename MigrationTaskNameT = Aws::String>
+    void SetMigrationTaskName(MigrationTaskNameT&& value) { m_migrationTaskNameHasBeenSet = true; m_migrationTaskName = std::forward<MigrationTaskNameT>(value); }
+    template<typename MigrationTaskNameT = Aws::String>
+    ListCreatedArtifactsRequest& WithMigrationTaskName(MigrationTaskNameT&& value) { SetMigrationTaskName(std::forward<MigrationTaskNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,21 +65,19 @@ namespace Model
      * results available. To retrieve the next page of results, make the call again
      * using the returned token in <code>NextToken</code>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListCreatedArtifactsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCreatedArtifactsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCreatedArtifactsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCreatedArtifactsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Maximum number of results to be returned per page.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListCreatedArtifactsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -99,7 +93,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

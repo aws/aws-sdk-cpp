@@ -32,7 +32,7 @@ namespace Model
   class Parameter
   {
   public:
-    AWS_MEMORYDB_API Parameter();
+    AWS_MEMORYDB_API Parameter() = default;
     AWS_MEMORYDB_API Parameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEMORYDB_API Parameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,84 +42,72 @@ namespace Model
     /**
      * <p>The name of the parameter</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Parameter& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Parameter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Parameter& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Parameter& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the parameter</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline Parameter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline Parameter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline Parameter& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    Parameter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the parameter</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline Parameter& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline Parameter& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline Parameter& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    Parameter& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameter's data type</p>
      */
-    inline const Aws::String& GetDataType() const{ return m_dataType; }
+    inline const Aws::String& GetDataType() const { return m_dataType; }
     inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
-    inline void SetDataType(const Aws::String& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
-    inline void SetDataType(Aws::String&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
-    inline void SetDataType(const char* value) { m_dataTypeHasBeenSet = true; m_dataType.assign(value); }
-    inline Parameter& WithDataType(const Aws::String& value) { SetDataType(value); return *this;}
-    inline Parameter& WithDataType(Aws::String&& value) { SetDataType(std::move(value)); return *this;}
-    inline Parameter& WithDataType(const char* value) { SetDataType(value); return *this;}
+    template<typename DataTypeT = Aws::String>
+    void SetDataType(DataTypeT&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::forward<DataTypeT>(value); }
+    template<typename DataTypeT = Aws::String>
+    Parameter& WithDataType(DataTypeT&& value) { SetDataType(std::forward<DataTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The valid range of values for the parameter.</p>
      */
-    inline const Aws::String& GetAllowedValues() const{ return m_allowedValues; }
+    inline const Aws::String& GetAllowedValues() const { return m_allowedValues; }
     inline bool AllowedValuesHasBeenSet() const { return m_allowedValuesHasBeenSet; }
-    inline void SetAllowedValues(const Aws::String& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = value; }
-    inline void SetAllowedValues(Aws::String&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = std::move(value); }
-    inline void SetAllowedValues(const char* value) { m_allowedValuesHasBeenSet = true; m_allowedValues.assign(value); }
-    inline Parameter& WithAllowedValues(const Aws::String& value) { SetAllowedValues(value); return *this;}
-    inline Parameter& WithAllowedValues(Aws::String&& value) { SetAllowedValues(std::move(value)); return *this;}
-    inline Parameter& WithAllowedValues(const char* value) { SetAllowedValues(value); return *this;}
+    template<typename AllowedValuesT = Aws::String>
+    void SetAllowedValues(AllowedValuesT&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = std::forward<AllowedValuesT>(value); }
+    template<typename AllowedValuesT = Aws::String>
+    Parameter& WithAllowedValues(AllowedValuesT&& value) { SetAllowedValues(std::forward<AllowedValuesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The earliest engine version to which the parameter can apply.</p>
      */
-    inline const Aws::String& GetMinimumEngineVersion() const{ return m_minimumEngineVersion; }
+    inline const Aws::String& GetMinimumEngineVersion() const { return m_minimumEngineVersion; }
     inline bool MinimumEngineVersionHasBeenSet() const { return m_minimumEngineVersionHasBeenSet; }
-    inline void SetMinimumEngineVersion(const Aws::String& value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion = value; }
-    inline void SetMinimumEngineVersion(Aws::String&& value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion = std::move(value); }
-    inline void SetMinimumEngineVersion(const char* value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion.assign(value); }
-    inline Parameter& WithMinimumEngineVersion(const Aws::String& value) { SetMinimumEngineVersion(value); return *this;}
-    inline Parameter& WithMinimumEngineVersion(Aws::String&& value) { SetMinimumEngineVersion(std::move(value)); return *this;}
-    inline Parameter& WithMinimumEngineVersion(const char* value) { SetMinimumEngineVersion(value); return *this;}
+    template<typename MinimumEngineVersionT = Aws::String>
+    void SetMinimumEngineVersion(MinimumEngineVersionT&& value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion = std::forward<MinimumEngineVersionT>(value); }
+    template<typename MinimumEngineVersionT = Aws::String>
+    Parameter& WithMinimumEngineVersion(MinimumEngineVersionT&& value) { SetMinimumEngineVersion(std::forward<MinimumEngineVersionT>(value)); return *this;}
     ///@}
   private:
 

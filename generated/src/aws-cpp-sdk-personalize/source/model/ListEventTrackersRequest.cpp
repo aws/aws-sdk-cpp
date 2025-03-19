@@ -12,14 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListEventTrackersRequest::ListEventTrackersRequest() : 
-    m_datasetGroupArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListEventTrackersRequest::SerializePayload() const
 {
   JsonValue payload;

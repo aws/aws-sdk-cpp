@@ -18,15 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-AuthenticationConfiguration::AuthenticationConfiguration() : 
-    m_roleARNHasBeenSet(false),
-    m_connectivity(Connectivity::NOT_SET),
-    m_connectivityHasBeenSet(false)
-{
-}
-
 AuthenticationConfiguration::AuthenticationConfiguration(JsonView jsonValue)
-  : AuthenticationConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AuthenticationConfiguration& AuthenticationConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("RoleARN"))
   {
     m_roleARN = jsonValue.GetString("RoleARN");
-
     m_roleARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Connectivity"))
   {
     m_connectivity = ConnectivityMapper::GetConnectivityForName(jsonValue.GetString("Connectivity"));
-
     m_connectivityHasBeenSet = true;
   }
-
   return *this;
 }
 

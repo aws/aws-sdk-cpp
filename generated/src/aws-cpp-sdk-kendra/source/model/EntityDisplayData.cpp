@@ -18,17 +18,7 @@ namespace kendra
 namespace Model
 {
 
-EntityDisplayData::EntityDisplayData() : 
-    m_userNameHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_identifiedUserNameHasBeenSet(false),
-    m_firstNameHasBeenSet(false),
-    m_lastNameHasBeenSet(false)
-{
-}
-
 EntityDisplayData::EntityDisplayData(JsonView jsonValue)
-  : EntityDisplayData()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ EntityDisplayData& EntityDisplayData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UserName"))
   {
     m_userName = jsonValue.GetString("UserName");
-
     m_userNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupName"))
   {
     m_groupName = jsonValue.GetString("GroupName");
-
     m_groupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentifiedUserName"))
   {
     m_identifiedUserName = jsonValue.GetString("IdentifiedUserName");
-
     m_identifiedUserNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirstName"))
   {
     m_firstName = jsonValue.GetString("FirstName");
-
     m_firstNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastName"))
   {
     m_lastName = jsonValue.GetString("LastName");
-
     m_lastNameHasBeenSet = true;
   }
-
   return *this;
 }
 

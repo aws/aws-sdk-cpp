@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMedicalScribeStreamResult::GetMedicalScribeStreamResult()
-{
-}
-
 GetMedicalScribeStreamResult::GetMedicalScribeStreamResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetMedicalScribeStreamResult& GetMedicalScribeStreamResult::operator =(const Aws
   if(jsonValue.ValueExists("MedicalScribeStreamDetails"))
   {
     m_medicalScribeStreamDetails = jsonValue.GetObject("MedicalScribeStreamDetails");
-
+    m_medicalScribeStreamDetailsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

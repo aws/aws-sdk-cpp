@@ -33,7 +33,7 @@ namespace Model
   class FailedItem
   {
   public:
-    AWS_FMS_API FailedItem();
+    AWS_FMS_API FailedItem() = default;
     AWS_FMS_API FailedItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API FailedItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,33 +43,29 @@ namespace Model
     /**
      * <p>The univeral resource indicator (URI) of the resource that failed.</p>
      */
-    inline const Aws::String& GetURI() const{ return m_uRI; }
+    inline const Aws::String& GetURI() const { return m_uRI; }
     inline bool URIHasBeenSet() const { return m_uRIHasBeenSet; }
-    inline void SetURI(const Aws::String& value) { m_uRIHasBeenSet = true; m_uRI = value; }
-    inline void SetURI(Aws::String&& value) { m_uRIHasBeenSet = true; m_uRI = std::move(value); }
-    inline void SetURI(const char* value) { m_uRIHasBeenSet = true; m_uRI.assign(value); }
-    inline FailedItem& WithURI(const Aws::String& value) { SetURI(value); return *this;}
-    inline FailedItem& WithURI(Aws::String&& value) { SetURI(std::move(value)); return *this;}
-    inline FailedItem& WithURI(const char* value) { SetURI(value); return *this;}
+    template<typename URIT = Aws::String>
+    void SetURI(URIT&& value) { m_uRIHasBeenSet = true; m_uRI = std::forward<URIT>(value); }
+    template<typename URIT = Aws::String>
+    FailedItem& WithURI(URIT&& value) { SetURI(std::forward<URIT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason the resource's association could not be updated.</p>
      */
-    inline const FailedItemReason& GetReason() const{ return m_reason; }
+    inline FailedItemReason GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const FailedItemReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(FailedItemReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline FailedItem& WithReason(const FailedItemReason& value) { SetReason(value); return *this;}
-    inline FailedItem& WithReason(FailedItemReason&& value) { SetReason(std::move(value)); return *this;}
+    inline void SetReason(FailedItemReason value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline FailedItem& WithReason(FailedItemReason value) { SetReason(value); return *this;}
     ///@}
   private:
 
     Aws::String m_uRI;
     bool m_uRIHasBeenSet = false;
 
-    FailedItemReason m_reason;
+    FailedItemReason m_reason{FailedItemReason::NOT_SET};
     bool m_reasonHasBeenSet = false;
   };
 

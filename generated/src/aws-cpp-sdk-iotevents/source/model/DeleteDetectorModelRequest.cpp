@@ -12,11 +12,6 @@ using namespace Aws::IoTEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDetectorModelRequest::DeleteDetectorModelRequest() : 
-    m_detectorModelNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDetectorModelRequest::SerializePayload() const
 {
   return {};

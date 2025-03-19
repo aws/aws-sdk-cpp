@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListDataLakeDatasetsRequest::ListDataLakeDatasetsRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListDataLakeDatasetsRequest::SerializePayload() const
 {
   return {};

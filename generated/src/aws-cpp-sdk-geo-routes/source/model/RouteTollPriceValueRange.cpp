@@ -18,16 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteTollPriceValueRange::RouteTollPriceValueRange() : 
-    m_min(0.0),
-    m_minHasBeenSet(false),
-    m_max(0.0),
-    m_maxHasBeenSet(false)
-{
-}
-
 RouteTollPriceValueRange::RouteTollPriceValueRange(JsonView jsonValue)
-  : RouteTollPriceValueRange()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RouteTollPriceValueRange& RouteTollPriceValueRange::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Min"))
   {
     m_min = jsonValue.GetDouble("Min");
-
     m_minHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Max"))
   {
     m_max = jsonValue.GetDouble("Max");
-
     m_maxHasBeenSet = true;
   }
-
   return *this;
 }
 

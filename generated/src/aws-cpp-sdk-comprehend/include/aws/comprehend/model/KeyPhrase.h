@@ -31,7 +31,7 @@ namespace Model
   class KeyPhrase
   {
   public:
-    AWS_COMPREHEND_API KeyPhrase();
+    AWS_COMPREHEND_API KeyPhrase() = default;
     AWS_COMPREHEND_API KeyPhrase(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API KeyPhrase& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * <p>The level of confidence that Amazon Comprehend has in the accuracy of the
      * detection.</p>
      */
-    inline double GetScore() const{ return m_score; }
+    inline double GetScore() const { return m_score; }
     inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
     inline void SetScore(double value) { m_scoreHasBeenSet = true; m_score = value; }
     inline KeyPhrase& WithScore(double value) { SetScore(value); return *this;}
@@ -52,14 +52,12 @@ namespace Model
     /**
      * <p>The text of a key noun phrase.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline KeyPhrase& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline KeyPhrase& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline KeyPhrase& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    KeyPhrase& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,7 +65,7 @@ namespace Model
      * <p>The zero-based offset from the beginning of the source text to the first
      * character in the key phrase.</p>
      */
-    inline int GetBeginOffset() const{ return m_beginOffset; }
+    inline int GetBeginOffset() const { return m_beginOffset; }
     inline bool BeginOffsetHasBeenSet() const { return m_beginOffsetHasBeenSet; }
     inline void SetBeginOffset(int value) { m_beginOffsetHasBeenSet = true; m_beginOffset = value; }
     inline KeyPhrase& WithBeginOffset(int value) { SetBeginOffset(value); return *this;}
@@ -78,23 +76,23 @@ namespace Model
      * <p>The zero-based offset from the beginning of the source text to the last
      * character in the key phrase.</p>
      */
-    inline int GetEndOffset() const{ return m_endOffset; }
+    inline int GetEndOffset() const { return m_endOffset; }
     inline bool EndOffsetHasBeenSet() const { return m_endOffsetHasBeenSet; }
     inline void SetEndOffset(int value) { m_endOffsetHasBeenSet = true; m_endOffset = value; }
     inline KeyPhrase& WithEndOffset(int value) { SetEndOffset(value); return *this;}
     ///@}
   private:
 
-    double m_score;
+    double m_score{0.0};
     bool m_scoreHasBeenSet = false;
 
     Aws::String m_text;
     bool m_textHasBeenSet = false;
 
-    int m_beginOffset;
+    int m_beginOffset{0};
     bool m_beginOffsetHasBeenSet = false;
 
-    int m_endOffset;
+    int m_endOffset{0};
     bool m_endOffsetHasBeenSet = false;
   };
 

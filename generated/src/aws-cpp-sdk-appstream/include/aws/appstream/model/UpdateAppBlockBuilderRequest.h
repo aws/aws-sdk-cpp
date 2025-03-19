@@ -26,7 +26,7 @@ namespace Model
   class UpdateAppBlockBuilderRequest : public AppStreamRequest
   {
   public:
-    AWS_APPSTREAM_API UpdateAppBlockBuilderRequest();
+    AWS_APPSTREAM_API UpdateAppBlockBuilderRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,42 +43,36 @@ namespace Model
     /**
      * <p>The unique name for the app block builder.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateAppBlockBuilderRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateAppBlockBuilderRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateAppBlockBuilderRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateAppBlockBuilderRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the app block builder.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateAppBlockBuilderRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateAppBlockBuilderRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateAppBlockBuilderRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateAppBlockBuilderRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The display name of the app block builder.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline UpdateAppBlockBuilderRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline UpdateAppBlockBuilderRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline UpdateAppBlockBuilderRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    UpdateAppBlockBuilderRequest& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +80,10 @@ namespace Model
      * <p>The platform of the app block builder.</p> <p>
      * <code>WINDOWS_SERVER_2019</code> is the only valid value.</p>
      */
-    inline const PlatformType& GetPlatform() const{ return m_platform; }
+    inline PlatformType GetPlatform() const { return m_platform; }
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
-    inline void SetPlatform(const PlatformType& value) { m_platformHasBeenSet = true; m_platform = value; }
-    inline void SetPlatform(PlatformType&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
-    inline UpdateAppBlockBuilderRequest& WithPlatform(const PlatformType& value) { SetPlatform(value); return *this;}
-    inline UpdateAppBlockBuilderRequest& WithPlatform(PlatformType&& value) { SetPlatform(std::move(value)); return *this;}
+    inline void SetPlatform(PlatformType value) { m_platformHasBeenSet = true; m_platform = value; }
+    inline UpdateAppBlockBuilderRequest& WithPlatform(PlatformType value) { SetPlatform(value); return *this;}
     ///@}
 
     ///@{
@@ -102,14 +94,12 @@ namespace Model
      * <li> <p>stream.standard.xlarge</p> </li> <li> <p>stream.standard.2xlarge</p>
      * </li> </ul>
      */
-    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+    inline const Aws::String& GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
-    inline UpdateAppBlockBuilderRequest& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
-    inline UpdateAppBlockBuilderRequest& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
-    inline UpdateAppBlockBuilderRequest& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+    template<typename InstanceTypeT = Aws::String>
+    void SetInstanceType(InstanceTypeT&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::forward<InstanceTypeT>(value); }
+    template<typename InstanceTypeT = Aws::String>
+    UpdateAppBlockBuilderRequest& WithInstanceType(InstanceTypeT&& value) { SetInstanceType(std::forward<InstanceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,19 +108,19 @@ namespace Model
      * require that you specify at least two subnets in different availability
      * zones.</p>
      */
-    inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
+    inline const VpcConfig& GetVpcConfig() const { return m_vpcConfig; }
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
-    inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
-    inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
-    inline UpdateAppBlockBuilderRequest& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
-    inline UpdateAppBlockBuilderRequest& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
+    template<typename VpcConfigT = VpcConfig>
+    void SetVpcConfig(VpcConfigT&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::forward<VpcConfigT>(value); }
+    template<typename VpcConfigT = VpcConfig>
+    UpdateAppBlockBuilderRequest& WithVpcConfig(VpcConfigT&& value) { SetVpcConfig(std::forward<VpcConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Enables or disables default internet access for the app block builder.</p>
      */
-    inline bool GetEnableDefaultInternetAccess() const{ return m_enableDefaultInternetAccess; }
+    inline bool GetEnableDefaultInternetAccess() const { return m_enableDefaultInternetAccess; }
     inline bool EnableDefaultInternetAccessHasBeenSet() const { return m_enableDefaultInternetAccessHasBeenSet; }
     inline void SetEnableDefaultInternetAccess(bool value) { m_enableDefaultInternetAccessHasBeenSet = true; m_enableDefaultInternetAccess = value; }
     inline UpdateAppBlockBuilderRequest& WithEnableDefaultInternetAccess(bool value) { SetEnableDefaultInternetAccess(value); return *this;}
@@ -150,14 +140,12 @@ namespace Model
      * AppStream 2.0 Streaming Instances</a> in the <i>Amazon AppStream 2.0
      * Administration Guide</i>.</p>
      */
-    inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
+    inline const Aws::String& GetIamRoleArn() const { return m_iamRoleArn; }
     inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
-    inline void SetIamRoleArn(const Aws::String& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = value; }
-    inline void SetIamRoleArn(Aws::String&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::move(value); }
-    inline void SetIamRoleArn(const char* value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn.assign(value); }
-    inline UpdateAppBlockBuilderRequest& WithIamRoleArn(const Aws::String& value) { SetIamRoleArn(value); return *this;}
-    inline UpdateAppBlockBuilderRequest& WithIamRoleArn(Aws::String&& value) { SetIamRoleArn(std::move(value)); return *this;}
-    inline UpdateAppBlockBuilderRequest& WithIamRoleArn(const char* value) { SetIamRoleArn(value); return *this;}
+    template<typename IamRoleArnT = Aws::String>
+    void SetIamRoleArn(IamRoleArnT&& value) { m_iamRoleArnHasBeenSet = true; m_iamRoleArn = std::forward<IamRoleArnT>(value); }
+    template<typename IamRoleArnT = Aws::String>
+    UpdateAppBlockBuilderRequest& WithIamRoleArn(IamRoleArnT&& value) { SetIamRoleArn(std::forward<IamRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -166,28 +154,27 @@ namespace Model
      * Administrators can connect to the app block builder only through the specified
      * endpoints.</p>
      */
-    inline const Aws::Vector<AccessEndpoint>& GetAccessEndpoints() const{ return m_accessEndpoints; }
+    inline const Aws::Vector<AccessEndpoint>& GetAccessEndpoints() const { return m_accessEndpoints; }
     inline bool AccessEndpointsHasBeenSet() const { return m_accessEndpointsHasBeenSet; }
-    inline void SetAccessEndpoints(const Aws::Vector<AccessEndpoint>& value) { m_accessEndpointsHasBeenSet = true; m_accessEndpoints = value; }
-    inline void SetAccessEndpoints(Aws::Vector<AccessEndpoint>&& value) { m_accessEndpointsHasBeenSet = true; m_accessEndpoints = std::move(value); }
-    inline UpdateAppBlockBuilderRequest& WithAccessEndpoints(const Aws::Vector<AccessEndpoint>& value) { SetAccessEndpoints(value); return *this;}
-    inline UpdateAppBlockBuilderRequest& WithAccessEndpoints(Aws::Vector<AccessEndpoint>&& value) { SetAccessEndpoints(std::move(value)); return *this;}
-    inline UpdateAppBlockBuilderRequest& AddAccessEndpoints(const AccessEndpoint& value) { m_accessEndpointsHasBeenSet = true; m_accessEndpoints.push_back(value); return *this; }
-    inline UpdateAppBlockBuilderRequest& AddAccessEndpoints(AccessEndpoint&& value) { m_accessEndpointsHasBeenSet = true; m_accessEndpoints.push_back(std::move(value)); return *this; }
+    template<typename AccessEndpointsT = Aws::Vector<AccessEndpoint>>
+    void SetAccessEndpoints(AccessEndpointsT&& value) { m_accessEndpointsHasBeenSet = true; m_accessEndpoints = std::forward<AccessEndpointsT>(value); }
+    template<typename AccessEndpointsT = Aws::Vector<AccessEndpoint>>
+    UpdateAppBlockBuilderRequest& WithAccessEndpoints(AccessEndpointsT&& value) { SetAccessEndpoints(std::forward<AccessEndpointsT>(value)); return *this;}
+    template<typename AccessEndpointsT = AccessEndpoint>
+    UpdateAppBlockBuilderRequest& AddAccessEndpoints(AccessEndpointsT&& value) { m_accessEndpointsHasBeenSet = true; m_accessEndpoints.emplace_back(std::forward<AccessEndpointsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The attributes to delete from the app block builder.</p>
      */
-    inline const Aws::Vector<AppBlockBuilderAttribute>& GetAttributesToDelete() const{ return m_attributesToDelete; }
+    inline const Aws::Vector<AppBlockBuilderAttribute>& GetAttributesToDelete() const { return m_attributesToDelete; }
     inline bool AttributesToDeleteHasBeenSet() const { return m_attributesToDeleteHasBeenSet; }
-    inline void SetAttributesToDelete(const Aws::Vector<AppBlockBuilderAttribute>& value) { m_attributesToDeleteHasBeenSet = true; m_attributesToDelete = value; }
-    inline void SetAttributesToDelete(Aws::Vector<AppBlockBuilderAttribute>&& value) { m_attributesToDeleteHasBeenSet = true; m_attributesToDelete = std::move(value); }
-    inline UpdateAppBlockBuilderRequest& WithAttributesToDelete(const Aws::Vector<AppBlockBuilderAttribute>& value) { SetAttributesToDelete(value); return *this;}
-    inline UpdateAppBlockBuilderRequest& WithAttributesToDelete(Aws::Vector<AppBlockBuilderAttribute>&& value) { SetAttributesToDelete(std::move(value)); return *this;}
-    inline UpdateAppBlockBuilderRequest& AddAttributesToDelete(const AppBlockBuilderAttribute& value) { m_attributesToDeleteHasBeenSet = true; m_attributesToDelete.push_back(value); return *this; }
-    inline UpdateAppBlockBuilderRequest& AddAttributesToDelete(AppBlockBuilderAttribute&& value) { m_attributesToDeleteHasBeenSet = true; m_attributesToDelete.push_back(std::move(value)); return *this; }
+    template<typename AttributesToDeleteT = Aws::Vector<AppBlockBuilderAttribute>>
+    void SetAttributesToDelete(AttributesToDeleteT&& value) { m_attributesToDeleteHasBeenSet = true; m_attributesToDelete = std::forward<AttributesToDeleteT>(value); }
+    template<typename AttributesToDeleteT = Aws::Vector<AppBlockBuilderAttribute>>
+    UpdateAppBlockBuilderRequest& WithAttributesToDelete(AttributesToDeleteT&& value) { SetAttributesToDelete(std::forward<AttributesToDeleteT>(value)); return *this;}
+    inline UpdateAppBlockBuilderRequest& AddAttributesToDelete(AppBlockBuilderAttribute value) { m_attributesToDeleteHasBeenSet = true; m_attributesToDelete.push_back(value); return *this; }
     ///@}
   private:
 
@@ -200,7 +187,7 @@ namespace Model
     Aws::String m_displayName;
     bool m_displayNameHasBeenSet = false;
 
-    PlatformType m_platform;
+    PlatformType m_platform{PlatformType::NOT_SET};
     bool m_platformHasBeenSet = false;
 
     Aws::String m_instanceType;
@@ -209,7 +196,7 @@ namespace Model
     VpcConfig m_vpcConfig;
     bool m_vpcConfigHasBeenSet = false;
 
-    bool m_enableDefaultInternetAccess;
+    bool m_enableDefaultInternetAccess{false};
     bool m_enableDefaultInternetAccessHasBeenSet = false;
 
     Aws::String m_iamRoleArn;

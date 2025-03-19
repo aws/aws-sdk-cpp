@@ -24,7 +24,7 @@ namespace Model
   class CreateRepositoryRequest : public ProtonRequest
   {
   public:
-    AWS_PROTON_API CreateRepositoryRequest();
+    AWS_PROTON_API CreateRepositoryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/proton/latest/userguide/setting-up-for-service.html">Setting
      * up for Proton</a> in the <i>Proton User Guide</i>.</p>
      */
-    inline const Aws::String& GetConnectionArn() const{ return m_connectionArn; }
+    inline const Aws::String& GetConnectionArn() const { return m_connectionArn; }
     inline bool ConnectionArnHasBeenSet() const { return m_connectionArnHasBeenSet; }
-    inline void SetConnectionArn(const Aws::String& value) { m_connectionArnHasBeenSet = true; m_connectionArn = value; }
-    inline void SetConnectionArn(Aws::String&& value) { m_connectionArnHasBeenSet = true; m_connectionArn = std::move(value); }
-    inline void SetConnectionArn(const char* value) { m_connectionArnHasBeenSet = true; m_connectionArn.assign(value); }
-    inline CreateRepositoryRequest& WithConnectionArn(const Aws::String& value) { SetConnectionArn(value); return *this;}
-    inline CreateRepositoryRequest& WithConnectionArn(Aws::String&& value) { SetConnectionArn(std::move(value)); return *this;}
-    inline CreateRepositoryRequest& WithConnectionArn(const char* value) { SetConnectionArn(value); return *this;}
+    template<typename ConnectionArnT = Aws::String>
+    void SetConnectionArn(ConnectionArnT&& value) { m_connectionArnHasBeenSet = true; m_connectionArn = std::forward<ConnectionArnT>(value); }
+    template<typename ConnectionArnT = Aws::String>
+    CreateRepositoryRequest& WithConnectionArn(ConnectionArnT&& value) { SetConnectionArn(std::forward<ConnectionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,40 +57,34 @@ namespace Model
      * <p>The ARN of your customer Amazon Web Services Key Management Service (Amazon
      * Web Services KMS) key.</p>
      */
-    inline const Aws::String& GetEncryptionKey() const{ return m_encryptionKey; }
+    inline const Aws::String& GetEncryptionKey() const { return m_encryptionKey; }
     inline bool EncryptionKeyHasBeenSet() const { return m_encryptionKeyHasBeenSet; }
-    inline void SetEncryptionKey(const Aws::String& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
-    inline void SetEncryptionKey(Aws::String&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::move(value); }
-    inline void SetEncryptionKey(const char* value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey.assign(value); }
-    inline CreateRepositoryRequest& WithEncryptionKey(const Aws::String& value) { SetEncryptionKey(value); return *this;}
-    inline CreateRepositoryRequest& WithEncryptionKey(Aws::String&& value) { SetEncryptionKey(std::move(value)); return *this;}
-    inline CreateRepositoryRequest& WithEncryptionKey(const char* value) { SetEncryptionKey(value); return *this;}
+    template<typename EncryptionKeyT = Aws::String>
+    void SetEncryptionKey(EncryptionKeyT&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::forward<EncryptionKeyT>(value); }
+    template<typename EncryptionKeyT = Aws::String>
+    CreateRepositoryRequest& WithEncryptionKey(EncryptionKeyT&& value) { SetEncryptionKey(std::forward<EncryptionKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The repository name (for example, <code>myrepos/myrepo</code>).</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateRepositoryRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateRepositoryRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateRepositoryRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateRepositoryRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The repository provider.</p>
      */
-    inline const RepositoryProvider& GetProvider() const{ return m_provider; }
+    inline RepositoryProvider GetProvider() const { return m_provider; }
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
-    inline void SetProvider(const RepositoryProvider& value) { m_providerHasBeenSet = true; m_provider = value; }
-    inline void SetProvider(RepositoryProvider&& value) { m_providerHasBeenSet = true; m_provider = std::move(value); }
-    inline CreateRepositoryRequest& WithProvider(const RepositoryProvider& value) { SetProvider(value); return *this;}
-    inline CreateRepositoryRequest& WithProvider(RepositoryProvider&& value) { SetProvider(std::move(value)); return *this;}
+    inline void SetProvider(RepositoryProvider value) { m_providerHasBeenSet = true; m_provider = value; }
+    inline CreateRepositoryRequest& WithProvider(RepositoryProvider value) { SetProvider(value); return *this;}
     ///@}
 
     ///@{
@@ -102,14 +94,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/proton/latest/userguide/resources.html">Proton
      * resources and tagging</a> in the <i>Proton User Guide</i>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateRepositoryRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateRepositoryRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateRepositoryRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateRepositoryRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateRepositoryRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateRepositoryRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
@@ -122,7 +114,7 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    RepositoryProvider m_provider;
+    RepositoryProvider m_provider{RepositoryProvider::NOT_SET};
     bool m_providerHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

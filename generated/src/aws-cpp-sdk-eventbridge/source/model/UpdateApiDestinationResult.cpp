@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateApiDestinationResult::UpdateApiDestinationResult() : 
-    m_apiDestinationState(ApiDestinationState::NOT_SET)
-{
-}
-
 UpdateApiDestinationResult::UpdateApiDestinationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateApiDestinationResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ UpdateApiDestinationResult& UpdateApiDestinationResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("ApiDestinationArn"))
   {
     m_apiDestinationArn = jsonValue.GetString("ApiDestinationArn");
-
+    m_apiDestinationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApiDestinationState"))
   {
     m_apiDestinationState = ApiDestinationStateMapper::GetApiDestinationStateForName(jsonValue.GetString("ApiDestinationState"));
-
+    m_apiDestinationStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
+    m_lastModifiedTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

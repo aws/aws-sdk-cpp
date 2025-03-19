@@ -38,7 +38,7 @@ namespace Model
   class CatalogInput
   {
   public:
-    AWS_GLUE_API CatalogInput();
+    AWS_GLUE_API CatalogInput() = default;
     AWS_GLUE_API CatalogInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API CatalogInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * <p>Description string, not more than 2048 bytes long, matching the URI address
      * multi-line string pattern. A description of the catalog.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CatalogInput& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CatalogInput& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CatalogInput& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CatalogInput& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,12 +63,12 @@ namespace Model
      * structure that references an entity outside the Glue Data Catalog, for example a
      * Redshift database.</p>
      */
-    inline const FederatedCatalog& GetFederatedCatalog() const{ return m_federatedCatalog; }
+    inline const FederatedCatalog& GetFederatedCatalog() const { return m_federatedCatalog; }
     inline bool FederatedCatalogHasBeenSet() const { return m_federatedCatalogHasBeenSet; }
-    inline void SetFederatedCatalog(const FederatedCatalog& value) { m_federatedCatalogHasBeenSet = true; m_federatedCatalog = value; }
-    inline void SetFederatedCatalog(FederatedCatalog&& value) { m_federatedCatalogHasBeenSet = true; m_federatedCatalog = std::move(value); }
-    inline CatalogInput& WithFederatedCatalog(const FederatedCatalog& value) { SetFederatedCatalog(value); return *this;}
-    inline CatalogInput& WithFederatedCatalog(FederatedCatalog&& value) { SetFederatedCatalog(std::move(value)); return *this;}
+    template<typename FederatedCatalogT = FederatedCatalog>
+    void SetFederatedCatalog(FederatedCatalogT&& value) { m_federatedCatalogHasBeenSet = true; m_federatedCatalog = std::forward<FederatedCatalogT>(value); }
+    template<typename FederatedCatalogT = FederatedCatalog>
+    CatalogInput& WithFederatedCatalog(FederatedCatalogT&& value) { SetFederatedCatalog(std::forward<FederatedCatalogT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,19 +76,16 @@ namespace Model
      * <p>A map array of key-value pairs that define the parameters and properties of
      * the catalog.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline CatalogInput& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
-    inline CatalogInput& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
-    inline CatalogInput& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline CatalogInput& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline CatalogInput& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline CatalogInput& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline CatalogInput& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline CatalogInput& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline CatalogInput& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    CatalogInput& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = Aws::String>
+    CatalogInput& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -98,12 +93,12 @@ namespace Model
      * <p>A <code>TargetRedshiftCatalog</code> object that describes a target catalog
      * for resource linking.</p>
      */
-    inline const TargetRedshiftCatalog& GetTargetRedshiftCatalog() const{ return m_targetRedshiftCatalog; }
+    inline const TargetRedshiftCatalog& GetTargetRedshiftCatalog() const { return m_targetRedshiftCatalog; }
     inline bool TargetRedshiftCatalogHasBeenSet() const { return m_targetRedshiftCatalogHasBeenSet; }
-    inline void SetTargetRedshiftCatalog(const TargetRedshiftCatalog& value) { m_targetRedshiftCatalogHasBeenSet = true; m_targetRedshiftCatalog = value; }
-    inline void SetTargetRedshiftCatalog(TargetRedshiftCatalog&& value) { m_targetRedshiftCatalogHasBeenSet = true; m_targetRedshiftCatalog = std::move(value); }
-    inline CatalogInput& WithTargetRedshiftCatalog(const TargetRedshiftCatalog& value) { SetTargetRedshiftCatalog(value); return *this;}
-    inline CatalogInput& WithTargetRedshiftCatalog(TargetRedshiftCatalog&& value) { SetTargetRedshiftCatalog(std::move(value)); return *this;}
+    template<typename TargetRedshiftCatalogT = TargetRedshiftCatalog>
+    void SetTargetRedshiftCatalog(TargetRedshiftCatalogT&& value) { m_targetRedshiftCatalogHasBeenSet = true; m_targetRedshiftCatalog = std::forward<TargetRedshiftCatalogT>(value); }
+    template<typename TargetRedshiftCatalogT = TargetRedshiftCatalog>
+    CatalogInput& WithTargetRedshiftCatalog(TargetRedshiftCatalogT&& value) { SetTargetRedshiftCatalog(std::forward<TargetRedshiftCatalogT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,12 +106,12 @@ namespace Model
      * <p>A <code>CatalogProperties</code> object that specifies data lake access
      * properties and other custom properties.</p>
      */
-    inline const CatalogProperties& GetCatalogProperties() const{ return m_catalogProperties; }
+    inline const CatalogProperties& GetCatalogProperties() const { return m_catalogProperties; }
     inline bool CatalogPropertiesHasBeenSet() const { return m_catalogPropertiesHasBeenSet; }
-    inline void SetCatalogProperties(const CatalogProperties& value) { m_catalogPropertiesHasBeenSet = true; m_catalogProperties = value; }
-    inline void SetCatalogProperties(CatalogProperties&& value) { m_catalogPropertiesHasBeenSet = true; m_catalogProperties = std::move(value); }
-    inline CatalogInput& WithCatalogProperties(const CatalogProperties& value) { SetCatalogProperties(value); return *this;}
-    inline CatalogInput& WithCatalogProperties(CatalogProperties&& value) { SetCatalogProperties(std::move(value)); return *this;}
+    template<typename CatalogPropertiesT = CatalogProperties>
+    void SetCatalogProperties(CatalogPropertiesT&& value) { m_catalogPropertiesHasBeenSet = true; m_catalogProperties = std::forward<CatalogPropertiesT>(value); }
+    template<typename CatalogPropertiesT = CatalogProperties>
+    CatalogInput& WithCatalogProperties(CatalogPropertiesT&& value) { SetCatalogProperties(std::forward<CatalogPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,14 +120,14 @@ namespace Model
      * default permissions on the table(s) for principals. Used by Amazon Web Services
      * Lake Formation. Typically should be explicitly set as an empty list.</p>
      */
-    inline const Aws::Vector<PrincipalPermissions>& GetCreateTableDefaultPermissions() const{ return m_createTableDefaultPermissions; }
+    inline const Aws::Vector<PrincipalPermissions>& GetCreateTableDefaultPermissions() const { return m_createTableDefaultPermissions; }
     inline bool CreateTableDefaultPermissionsHasBeenSet() const { return m_createTableDefaultPermissionsHasBeenSet; }
-    inline void SetCreateTableDefaultPermissions(const Aws::Vector<PrincipalPermissions>& value) { m_createTableDefaultPermissionsHasBeenSet = true; m_createTableDefaultPermissions = value; }
-    inline void SetCreateTableDefaultPermissions(Aws::Vector<PrincipalPermissions>&& value) { m_createTableDefaultPermissionsHasBeenSet = true; m_createTableDefaultPermissions = std::move(value); }
-    inline CatalogInput& WithCreateTableDefaultPermissions(const Aws::Vector<PrincipalPermissions>& value) { SetCreateTableDefaultPermissions(value); return *this;}
-    inline CatalogInput& WithCreateTableDefaultPermissions(Aws::Vector<PrincipalPermissions>&& value) { SetCreateTableDefaultPermissions(std::move(value)); return *this;}
-    inline CatalogInput& AddCreateTableDefaultPermissions(const PrincipalPermissions& value) { m_createTableDefaultPermissionsHasBeenSet = true; m_createTableDefaultPermissions.push_back(value); return *this; }
-    inline CatalogInput& AddCreateTableDefaultPermissions(PrincipalPermissions&& value) { m_createTableDefaultPermissionsHasBeenSet = true; m_createTableDefaultPermissions.push_back(std::move(value)); return *this; }
+    template<typename CreateTableDefaultPermissionsT = Aws::Vector<PrincipalPermissions>>
+    void SetCreateTableDefaultPermissions(CreateTableDefaultPermissionsT&& value) { m_createTableDefaultPermissionsHasBeenSet = true; m_createTableDefaultPermissions = std::forward<CreateTableDefaultPermissionsT>(value); }
+    template<typename CreateTableDefaultPermissionsT = Aws::Vector<PrincipalPermissions>>
+    CatalogInput& WithCreateTableDefaultPermissions(CreateTableDefaultPermissionsT&& value) { SetCreateTableDefaultPermissions(std::forward<CreateTableDefaultPermissionsT>(value)); return *this;}
+    template<typename CreateTableDefaultPermissionsT = PrincipalPermissions>
+    CatalogInput& AddCreateTableDefaultPermissions(CreateTableDefaultPermissionsT&& value) { m_createTableDefaultPermissionsHasBeenSet = true; m_createTableDefaultPermissions.emplace_back(std::forward<CreateTableDefaultPermissionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -142,14 +137,14 @@ namespace Model
      * Services Lake Formation. Typically should be explicitly set as an empty
      * list.</p>
      */
-    inline const Aws::Vector<PrincipalPermissions>& GetCreateDatabaseDefaultPermissions() const{ return m_createDatabaseDefaultPermissions; }
+    inline const Aws::Vector<PrincipalPermissions>& GetCreateDatabaseDefaultPermissions() const { return m_createDatabaseDefaultPermissions; }
     inline bool CreateDatabaseDefaultPermissionsHasBeenSet() const { return m_createDatabaseDefaultPermissionsHasBeenSet; }
-    inline void SetCreateDatabaseDefaultPermissions(const Aws::Vector<PrincipalPermissions>& value) { m_createDatabaseDefaultPermissionsHasBeenSet = true; m_createDatabaseDefaultPermissions = value; }
-    inline void SetCreateDatabaseDefaultPermissions(Aws::Vector<PrincipalPermissions>&& value) { m_createDatabaseDefaultPermissionsHasBeenSet = true; m_createDatabaseDefaultPermissions = std::move(value); }
-    inline CatalogInput& WithCreateDatabaseDefaultPermissions(const Aws::Vector<PrincipalPermissions>& value) { SetCreateDatabaseDefaultPermissions(value); return *this;}
-    inline CatalogInput& WithCreateDatabaseDefaultPermissions(Aws::Vector<PrincipalPermissions>&& value) { SetCreateDatabaseDefaultPermissions(std::move(value)); return *this;}
-    inline CatalogInput& AddCreateDatabaseDefaultPermissions(const PrincipalPermissions& value) { m_createDatabaseDefaultPermissionsHasBeenSet = true; m_createDatabaseDefaultPermissions.push_back(value); return *this; }
-    inline CatalogInput& AddCreateDatabaseDefaultPermissions(PrincipalPermissions&& value) { m_createDatabaseDefaultPermissionsHasBeenSet = true; m_createDatabaseDefaultPermissions.push_back(std::move(value)); return *this; }
+    template<typename CreateDatabaseDefaultPermissionsT = Aws::Vector<PrincipalPermissions>>
+    void SetCreateDatabaseDefaultPermissions(CreateDatabaseDefaultPermissionsT&& value) { m_createDatabaseDefaultPermissionsHasBeenSet = true; m_createDatabaseDefaultPermissions = std::forward<CreateDatabaseDefaultPermissionsT>(value); }
+    template<typename CreateDatabaseDefaultPermissionsT = Aws::Vector<PrincipalPermissions>>
+    CatalogInput& WithCreateDatabaseDefaultPermissions(CreateDatabaseDefaultPermissionsT&& value) { SetCreateDatabaseDefaultPermissions(std::forward<CreateDatabaseDefaultPermissionsT>(value)); return *this;}
+    template<typename CreateDatabaseDefaultPermissionsT = PrincipalPermissions>
+    CatalogInput& AddCreateDatabaseDefaultPermissions(CreateDatabaseDefaultPermissionsT&& value) { m_createDatabaseDefaultPermissionsHasBeenSet = true; m_createDatabaseDefaultPermissions.emplace_back(std::forward<CreateDatabaseDefaultPermissionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -157,12 +152,10 @@ namespace Model
      * <p> Allows third-party engines to access data in Amazon S3 locations that are
      * registered with Lake Formation. </p>
      */
-    inline const AllowFullTableExternalDataAccessEnum& GetAllowFullTableExternalDataAccess() const{ return m_allowFullTableExternalDataAccess; }
+    inline AllowFullTableExternalDataAccessEnum GetAllowFullTableExternalDataAccess() const { return m_allowFullTableExternalDataAccess; }
     inline bool AllowFullTableExternalDataAccessHasBeenSet() const { return m_allowFullTableExternalDataAccessHasBeenSet; }
-    inline void SetAllowFullTableExternalDataAccess(const AllowFullTableExternalDataAccessEnum& value) { m_allowFullTableExternalDataAccessHasBeenSet = true; m_allowFullTableExternalDataAccess = value; }
-    inline void SetAllowFullTableExternalDataAccess(AllowFullTableExternalDataAccessEnum&& value) { m_allowFullTableExternalDataAccessHasBeenSet = true; m_allowFullTableExternalDataAccess = std::move(value); }
-    inline CatalogInput& WithAllowFullTableExternalDataAccess(const AllowFullTableExternalDataAccessEnum& value) { SetAllowFullTableExternalDataAccess(value); return *this;}
-    inline CatalogInput& WithAllowFullTableExternalDataAccess(AllowFullTableExternalDataAccessEnum&& value) { SetAllowFullTableExternalDataAccess(std::move(value)); return *this;}
+    inline void SetAllowFullTableExternalDataAccess(AllowFullTableExternalDataAccessEnum value) { m_allowFullTableExternalDataAccessHasBeenSet = true; m_allowFullTableExternalDataAccess = value; }
+    inline CatalogInput& WithAllowFullTableExternalDataAccess(AllowFullTableExternalDataAccessEnum value) { SetAllowFullTableExternalDataAccess(value); return *this;}
     ///@}
   private:
 
@@ -187,7 +180,7 @@ namespace Model
     Aws::Vector<PrincipalPermissions> m_createDatabaseDefaultPermissions;
     bool m_createDatabaseDefaultPermissionsHasBeenSet = false;
 
-    AllowFullTableExternalDataAccessEnum m_allowFullTableExternalDataAccess;
+    AllowFullTableExternalDataAccessEnum m_allowFullTableExternalDataAccess{AllowFullTableExternalDataAccessEnum::NOT_SET};
     bool m_allowFullTableExternalDataAccessHasBeenSet = false;
   };
 

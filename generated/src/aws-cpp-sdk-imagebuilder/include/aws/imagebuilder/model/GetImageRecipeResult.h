@@ -28,7 +28,7 @@ namespace Model
   class GetImageRecipeResult
   {
   public:
-    AWS_IMAGEBUILDER_API GetImageRecipeResult();
+    AWS_IMAGEBUILDER_API GetImageRecipeResult() = default;
     AWS_IMAGEBUILDER_API GetImageRecipeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IMAGEBUILDER_API GetImageRecipeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,30 @@ namespace Model
     /**
      * <p>The request ID that uniquely identifies this request.</p>
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetImageRecipeResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetImageRecipeResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetImageRecipeResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetImageRecipeResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The image recipe object.</p>
      */
-    inline const ImageRecipe& GetImageRecipe() const{ return m_imageRecipe; }
-    inline void SetImageRecipe(const ImageRecipe& value) { m_imageRecipe = value; }
-    inline void SetImageRecipe(ImageRecipe&& value) { m_imageRecipe = std::move(value); }
-    inline GetImageRecipeResult& WithImageRecipe(const ImageRecipe& value) { SetImageRecipe(value); return *this;}
-    inline GetImageRecipeResult& WithImageRecipe(ImageRecipe&& value) { SetImageRecipe(std::move(value)); return *this;}
+    inline const ImageRecipe& GetImageRecipe() const { return m_imageRecipe; }
+    template<typename ImageRecipeT = ImageRecipe>
+    void SetImageRecipe(ImageRecipeT&& value) { m_imageRecipeHasBeenSet = true; m_imageRecipe = std::forward<ImageRecipeT>(value); }
+    template<typename ImageRecipeT = ImageRecipe>
+    GetImageRecipeResult& WithImageRecipe(ImageRecipeT&& value) { SetImageRecipe(std::forward<ImageRecipeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
     ImageRecipe m_imageRecipe;
+    bool m_imageRecipeHasBeenSet = false;
   };
 
 } // namespace Model

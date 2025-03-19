@@ -21,7 +21,7 @@ namespace Model
   class GetDataProtectionPolicyRequest : public CloudWatchLogsRequest
   {
   public:
-    AWS_CLOUDWATCHLOGS_API GetDataProtectionPolicyRequest();
+    AWS_CLOUDWATCHLOGS_API GetDataProtectionPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The name or ARN of the log group that contains the data protection policy
      * that you want to see.</p>
      */
-    inline const Aws::String& GetLogGroupIdentifier() const{ return m_logGroupIdentifier; }
+    inline const Aws::String& GetLogGroupIdentifier() const { return m_logGroupIdentifier; }
     inline bool LogGroupIdentifierHasBeenSet() const { return m_logGroupIdentifierHasBeenSet; }
-    inline void SetLogGroupIdentifier(const Aws::String& value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier = value; }
-    inline void SetLogGroupIdentifier(Aws::String&& value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier = std::move(value); }
-    inline void SetLogGroupIdentifier(const char* value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier.assign(value); }
-    inline GetDataProtectionPolicyRequest& WithLogGroupIdentifier(const Aws::String& value) { SetLogGroupIdentifier(value); return *this;}
-    inline GetDataProtectionPolicyRequest& WithLogGroupIdentifier(Aws::String&& value) { SetLogGroupIdentifier(std::move(value)); return *this;}
-    inline GetDataProtectionPolicyRequest& WithLogGroupIdentifier(const char* value) { SetLogGroupIdentifier(value); return *this;}
+    template<typename LogGroupIdentifierT = Aws::String>
+    void SetLogGroupIdentifier(LogGroupIdentifierT&& value) { m_logGroupIdentifierHasBeenSet = true; m_logGroupIdentifier = std::forward<LogGroupIdentifierT>(value); }
+    template<typename LogGroupIdentifierT = Aws::String>
+    GetDataProtectionPolicyRequest& WithLogGroupIdentifier(LogGroupIdentifierT&& value) { SetLogGroupIdentifier(std::forward<LogGroupIdentifierT>(value)); return *this;}
     ///@}
   private:
 

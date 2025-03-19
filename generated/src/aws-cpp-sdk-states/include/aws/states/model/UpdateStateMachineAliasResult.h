@@ -28,7 +28,7 @@ namespace Model
   class UpdateStateMachineAliasResult
   {
   public:
-    AWS_SFN_API UpdateStateMachineAliasResult();
+    AWS_SFN_API UpdateStateMachineAliasResult() = default;
     AWS_SFN_API UpdateStateMachineAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SFN_API UpdateStateMachineAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The date and time the state machine alias was updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateDate() const{ return m_updateDate; }
-    inline void SetUpdateDate(const Aws::Utils::DateTime& value) { m_updateDate = value; }
-    inline void SetUpdateDate(Aws::Utils::DateTime&& value) { m_updateDate = std::move(value); }
-    inline UpdateStateMachineAliasResult& WithUpdateDate(const Aws::Utils::DateTime& value) { SetUpdateDate(value); return *this;}
-    inline UpdateStateMachineAliasResult& WithUpdateDate(Aws::Utils::DateTime&& value) { SetUpdateDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdateDate() const { return m_updateDate; }
+    template<typename UpdateDateT = Aws::Utils::DateTime>
+    void SetUpdateDate(UpdateDateT&& value) { m_updateDateHasBeenSet = true; m_updateDate = std::forward<UpdateDateT>(value); }
+    template<typename UpdateDateT = Aws::Utils::DateTime>
+    UpdateStateMachineAliasResult& WithUpdateDate(UpdateDateT&& value) { SetUpdateDate(std::forward<UpdateDateT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateStateMachineAliasResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateStateMachineAliasResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateStateMachineAliasResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateStateMachineAliasResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_updateDate;
+    Aws::Utils::DateTime m_updateDate{};
+    bool m_updateDateHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

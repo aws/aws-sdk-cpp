@@ -12,13 +12,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutClusterPolicyRequest::PutClusterPolicyRequest() : 
-    m_clusterArnHasBeenSet(false),
-    m_currentVersionHasBeenSet(false),
-    m_policyHasBeenSet(false)
-{
-}
-
 Aws::String PutClusterPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

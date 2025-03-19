@@ -35,7 +35,7 @@ namespace Model
   class RouteAnalysisCompletion
   {
   public:
-    AWS_NETWORKMANAGER_API RouteAnalysisCompletion();
+    AWS_NETWORKMANAGER_API RouteAnalysisCompletion() = default;
     AWS_NETWORKMANAGER_API RouteAnalysisCompletion(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API RouteAnalysisCompletion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * <p>The result of the analysis. If the status is <code>NOT_CONNECTED</code>,
      * check the reason code.</p>
      */
-    inline const RouteAnalysisCompletionResultCode& GetResultCode() const{ return m_resultCode; }
+    inline RouteAnalysisCompletionResultCode GetResultCode() const { return m_resultCode; }
     inline bool ResultCodeHasBeenSet() const { return m_resultCodeHasBeenSet; }
-    inline void SetResultCode(const RouteAnalysisCompletionResultCode& value) { m_resultCodeHasBeenSet = true; m_resultCode = value; }
-    inline void SetResultCode(RouteAnalysisCompletionResultCode&& value) { m_resultCodeHasBeenSet = true; m_resultCode = std::move(value); }
-    inline RouteAnalysisCompletion& WithResultCode(const RouteAnalysisCompletionResultCode& value) { SetResultCode(value); return *this;}
-    inline RouteAnalysisCompletion& WithResultCode(RouteAnalysisCompletionResultCode&& value) { SetResultCode(std::move(value)); return *this;}
+    inline void SetResultCode(RouteAnalysisCompletionResultCode value) { m_resultCodeHasBeenSet = true; m_resultCode = value; }
+    inline RouteAnalysisCompletion& WithResultCode(RouteAnalysisCompletionResultCode value) { SetResultCode(value); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +71,10 @@ namespace Model
      * <code>TGW_ATTACH_STABLE_ROUTE_TABLE_NOT_FOUND</code> - The state of the route
      * table association is not associated.</p> </li> </ul>
      */
-    inline const RouteAnalysisCompletionReasonCode& GetReasonCode() const{ return m_reasonCode; }
+    inline RouteAnalysisCompletionReasonCode GetReasonCode() const { return m_reasonCode; }
     inline bool ReasonCodeHasBeenSet() const { return m_reasonCodeHasBeenSet; }
-    inline void SetReasonCode(const RouteAnalysisCompletionReasonCode& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = value; }
-    inline void SetReasonCode(RouteAnalysisCompletionReasonCode&& value) { m_reasonCodeHasBeenSet = true; m_reasonCode = std::move(value); }
-    inline RouteAnalysisCompletion& WithReasonCode(const RouteAnalysisCompletionReasonCode& value) { SetReasonCode(value); return *this;}
-    inline RouteAnalysisCompletion& WithReasonCode(RouteAnalysisCompletionReasonCode&& value) { SetReasonCode(std::move(value)); return *this;}
+    inline void SetReasonCode(RouteAnalysisCompletionReasonCode value) { m_reasonCodeHasBeenSet = true; m_reasonCode = value; }
+    inline RouteAnalysisCompletion& WithReasonCode(RouteAnalysisCompletionReasonCode value) { SetReasonCode(value); return *this;}
     ///@}
 
     ///@{
@@ -86,26 +82,23 @@ namespace Model
      * <p>Additional information about the path. Available only if a connection is not
      * found.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetReasonContext() const{ return m_reasonContext; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetReasonContext() const { return m_reasonContext; }
     inline bool ReasonContextHasBeenSet() const { return m_reasonContextHasBeenSet; }
-    inline void SetReasonContext(const Aws::Map<Aws::String, Aws::String>& value) { m_reasonContextHasBeenSet = true; m_reasonContext = value; }
-    inline void SetReasonContext(Aws::Map<Aws::String, Aws::String>&& value) { m_reasonContextHasBeenSet = true; m_reasonContext = std::move(value); }
-    inline RouteAnalysisCompletion& WithReasonContext(const Aws::Map<Aws::String, Aws::String>& value) { SetReasonContext(value); return *this;}
-    inline RouteAnalysisCompletion& WithReasonContext(Aws::Map<Aws::String, Aws::String>&& value) { SetReasonContext(std::move(value)); return *this;}
-    inline RouteAnalysisCompletion& AddReasonContext(const Aws::String& key, const Aws::String& value) { m_reasonContextHasBeenSet = true; m_reasonContext.emplace(key, value); return *this; }
-    inline RouteAnalysisCompletion& AddReasonContext(Aws::String&& key, const Aws::String& value) { m_reasonContextHasBeenSet = true; m_reasonContext.emplace(std::move(key), value); return *this; }
-    inline RouteAnalysisCompletion& AddReasonContext(const Aws::String& key, Aws::String&& value) { m_reasonContextHasBeenSet = true; m_reasonContext.emplace(key, std::move(value)); return *this; }
-    inline RouteAnalysisCompletion& AddReasonContext(Aws::String&& key, Aws::String&& value) { m_reasonContextHasBeenSet = true; m_reasonContext.emplace(std::move(key), std::move(value)); return *this; }
-    inline RouteAnalysisCompletion& AddReasonContext(const char* key, Aws::String&& value) { m_reasonContextHasBeenSet = true; m_reasonContext.emplace(key, std::move(value)); return *this; }
-    inline RouteAnalysisCompletion& AddReasonContext(Aws::String&& key, const char* value) { m_reasonContextHasBeenSet = true; m_reasonContext.emplace(std::move(key), value); return *this; }
-    inline RouteAnalysisCompletion& AddReasonContext(const char* key, const char* value) { m_reasonContextHasBeenSet = true; m_reasonContext.emplace(key, value); return *this; }
+    template<typename ReasonContextT = Aws::Map<Aws::String, Aws::String>>
+    void SetReasonContext(ReasonContextT&& value) { m_reasonContextHasBeenSet = true; m_reasonContext = std::forward<ReasonContextT>(value); }
+    template<typename ReasonContextT = Aws::Map<Aws::String, Aws::String>>
+    RouteAnalysisCompletion& WithReasonContext(ReasonContextT&& value) { SetReasonContext(std::forward<ReasonContextT>(value)); return *this;}
+    template<typename ReasonContextKeyT = Aws::String, typename ReasonContextValueT = Aws::String>
+    RouteAnalysisCompletion& AddReasonContext(ReasonContextKeyT&& key, ReasonContextValueT&& value) {
+      m_reasonContextHasBeenSet = true; m_reasonContext.emplace(std::forward<ReasonContextKeyT>(key), std::forward<ReasonContextValueT>(value)); return *this;
+    }
     ///@}
   private:
 
-    RouteAnalysisCompletionResultCode m_resultCode;
+    RouteAnalysisCompletionResultCode m_resultCode{RouteAnalysisCompletionResultCode::NOT_SET};
     bool m_resultCodeHasBeenSet = false;
 
-    RouteAnalysisCompletionReasonCode m_reasonCode;
+    RouteAnalysisCompletionReasonCode m_reasonCode{RouteAnalysisCompletionReasonCode::NOT_SET};
     bool m_reasonCodeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_reasonContext;

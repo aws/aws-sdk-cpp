@@ -29,7 +29,7 @@ namespace Model
   class ListNetworkProfilesResult
   {
   public:
-    AWS_DEVICEFARM_API ListNetworkProfilesResult();
+    AWS_DEVICEFARM_API ListNetworkProfilesResult() = default;
     AWS_DEVICEFARM_API ListNetworkProfilesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEVICEFARM_API ListNetworkProfilesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>A list of the available network profiles.</p>
      */
-    inline const Aws::Vector<NetworkProfile>& GetNetworkProfiles() const{ return m_networkProfiles; }
-    inline void SetNetworkProfiles(const Aws::Vector<NetworkProfile>& value) { m_networkProfiles = value; }
-    inline void SetNetworkProfiles(Aws::Vector<NetworkProfile>&& value) { m_networkProfiles = std::move(value); }
-    inline ListNetworkProfilesResult& WithNetworkProfiles(const Aws::Vector<NetworkProfile>& value) { SetNetworkProfiles(value); return *this;}
-    inline ListNetworkProfilesResult& WithNetworkProfiles(Aws::Vector<NetworkProfile>&& value) { SetNetworkProfiles(std::move(value)); return *this;}
-    inline ListNetworkProfilesResult& AddNetworkProfiles(const NetworkProfile& value) { m_networkProfiles.push_back(value); return *this; }
-    inline ListNetworkProfilesResult& AddNetworkProfiles(NetworkProfile&& value) { m_networkProfiles.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<NetworkProfile>& GetNetworkProfiles() const { return m_networkProfiles; }
+    template<typename NetworkProfilesT = Aws::Vector<NetworkProfile>>
+    void SetNetworkProfiles(NetworkProfilesT&& value) { m_networkProfilesHasBeenSet = true; m_networkProfiles = std::forward<NetworkProfilesT>(value); }
+    template<typename NetworkProfilesT = Aws::Vector<NetworkProfile>>
+    ListNetworkProfilesResult& WithNetworkProfiles(NetworkProfilesT&& value) { SetNetworkProfiles(std::forward<NetworkProfilesT>(value)); return *this;}
+    template<typename NetworkProfilesT = NetworkProfile>
+    ListNetworkProfilesResult& AddNetworkProfiles(NetworkProfilesT&& value) { m_networkProfilesHasBeenSet = true; m_networkProfiles.emplace_back(std::forward<NetworkProfilesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>An identifier that was returned from the previous call to this operation,
      * which can be used to return the next set of items in the list.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListNetworkProfilesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListNetworkProfilesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListNetworkProfilesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListNetworkProfilesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListNetworkProfilesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListNetworkProfilesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListNetworkProfilesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListNetworkProfilesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<NetworkProfile> m_networkProfiles;
+    bool m_networkProfilesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

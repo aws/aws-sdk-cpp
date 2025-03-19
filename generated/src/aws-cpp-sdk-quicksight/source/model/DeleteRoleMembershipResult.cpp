@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteRoleMembershipResult::DeleteRoleMembershipResult() : 
-    m_status(0)
-{
-}
-
 DeleteRoleMembershipResult::DeleteRoleMembershipResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteRoleMembershipResult()
 {
   *this = result;
 }
@@ -37,10 +31,11 @@ DeleteRoleMembershipResult& DeleteRoleMembershipResult::operator =(const Aws::Am
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

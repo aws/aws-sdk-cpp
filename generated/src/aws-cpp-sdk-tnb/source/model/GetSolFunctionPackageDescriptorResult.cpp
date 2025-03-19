@@ -16,34 +16,7 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSolFunctionPackageDescriptorResult::GetSolFunctionPackageDescriptorResult() : 
-    m_contentType(DescriptorContentType::NOT_SET)
-{
-}
-
-GetSolFunctionPackageDescriptorResult::GetSolFunctionPackageDescriptorResult(GetSolFunctionPackageDescriptorResult&& toMove) : 
-    m_contentType(toMove.m_contentType),
-    m_vnfd(std::move(toMove.m_vnfd)),
-    m_requestId(std::move(toMove.m_requestId))
-{
-}
-
-GetSolFunctionPackageDescriptorResult& GetSolFunctionPackageDescriptorResult::operator=(GetSolFunctionPackageDescriptorResult&& toMove)
-{
-   if(this == &toMove)
-   {
-      return *this;
-   }
-
-   m_contentType = toMove.m_contentType;
-   m_vnfd = std::move(toMove.m_vnfd);
-   m_requestId = std::move(toMove.m_requestId);
-
-   return *this;
-}
-
 GetSolFunctionPackageDescriptorResult::GetSolFunctionPackageDescriptorResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
-  : GetSolFunctionPackageDescriptorResult()
 {
   *this = std::move(result);
 }
@@ -51,18 +24,21 @@ GetSolFunctionPackageDescriptorResult::GetSolFunctionPackageDescriptorResult(Aws
 GetSolFunctionPackageDescriptorResult& GetSolFunctionPackageDescriptorResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_vnfd = result.TakeOwnershipOfPayload();
+  m_vnfdHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& contentTypeIter = headers.find("content-type");
   if(contentTypeIter != headers.end())
   {
     m_contentType = DescriptorContentTypeMapper::GetDescriptorContentTypeForName(contentTypeIter->second);
+    m_contentTypeHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
    return *this;

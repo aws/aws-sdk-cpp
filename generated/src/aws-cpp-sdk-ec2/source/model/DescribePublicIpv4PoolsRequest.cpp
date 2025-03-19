@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribePublicIpv4PoolsRequest::DescribePublicIpv4PoolsRequest() : 
-    m_poolIdsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String DescribePublicIpv4PoolsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

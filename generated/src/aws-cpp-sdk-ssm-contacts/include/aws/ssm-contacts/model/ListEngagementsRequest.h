@@ -22,7 +22,7 @@ namespace Model
   class ListEngagementsRequest : public SSMContactsRequest
   {
   public:
-    AWS_SSMCONTACTS_API ListEngagementsRequest();
+    AWS_SSMCONTACTS_API ListEngagementsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,21 +39,19 @@ namespace Model
     /**
      * <p>The pagination token to continue to the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListEngagementsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEngagementsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEngagementsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEngagementsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of engagements per page of results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListEngagementsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -64,33 +62,31 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the incident you're listing engagements
      * for.</p>
      */
-    inline const Aws::String& GetIncidentId() const{ return m_incidentId; }
+    inline const Aws::String& GetIncidentId() const { return m_incidentId; }
     inline bool IncidentIdHasBeenSet() const { return m_incidentIdHasBeenSet; }
-    inline void SetIncidentId(const Aws::String& value) { m_incidentIdHasBeenSet = true; m_incidentId = value; }
-    inline void SetIncidentId(Aws::String&& value) { m_incidentIdHasBeenSet = true; m_incidentId = std::move(value); }
-    inline void SetIncidentId(const char* value) { m_incidentIdHasBeenSet = true; m_incidentId.assign(value); }
-    inline ListEngagementsRequest& WithIncidentId(const Aws::String& value) { SetIncidentId(value); return *this;}
-    inline ListEngagementsRequest& WithIncidentId(Aws::String&& value) { SetIncidentId(std::move(value)); return *this;}
-    inline ListEngagementsRequest& WithIncidentId(const char* value) { SetIncidentId(value); return *this;}
+    template<typename IncidentIdT = Aws::String>
+    void SetIncidentId(IncidentIdT&& value) { m_incidentIdHasBeenSet = true; m_incidentId = std::forward<IncidentIdT>(value); }
+    template<typename IncidentIdT = Aws::String>
+    ListEngagementsRequest& WithIncidentId(IncidentIdT&& value) { SetIncidentId(std::forward<IncidentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time range to lists engagements for an incident.</p>
      */
-    inline const TimeRange& GetTimeRangeValue() const{ return m_timeRangeValue; }
+    inline const TimeRange& GetTimeRangeValue() const { return m_timeRangeValue; }
     inline bool TimeRangeValueHasBeenSet() const { return m_timeRangeValueHasBeenSet; }
-    inline void SetTimeRangeValue(const TimeRange& value) { m_timeRangeValueHasBeenSet = true; m_timeRangeValue = value; }
-    inline void SetTimeRangeValue(TimeRange&& value) { m_timeRangeValueHasBeenSet = true; m_timeRangeValue = std::move(value); }
-    inline ListEngagementsRequest& WithTimeRangeValue(const TimeRange& value) { SetTimeRangeValue(value); return *this;}
-    inline ListEngagementsRequest& WithTimeRangeValue(TimeRange&& value) { SetTimeRangeValue(std::move(value)); return *this;}
+    template<typename TimeRangeValueT = TimeRange>
+    void SetTimeRangeValue(TimeRangeValueT&& value) { m_timeRangeValueHasBeenSet = true; m_timeRangeValue = std::forward<TimeRangeValueT>(value); }
+    template<typename TimeRangeValueT = TimeRange>
+    ListEngagementsRequest& WithTimeRangeValue(TimeRangeValueT&& value) { SetTimeRangeValue(std::forward<TimeRangeValueT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_incidentId;

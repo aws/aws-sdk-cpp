@@ -21,7 +21,7 @@ namespace Model
   class GetOrganizationCustomRulePolicyRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API GetOrganizationCustomRulePolicyRequest();
+    AWS_CONFIGSERVICE_API GetOrganizationCustomRulePolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of your organization Config Custom Policy rule. </p>
      */
-    inline const Aws::String& GetOrganizationConfigRuleName() const{ return m_organizationConfigRuleName; }
+    inline const Aws::String& GetOrganizationConfigRuleName() const { return m_organizationConfigRuleName; }
     inline bool OrganizationConfigRuleNameHasBeenSet() const { return m_organizationConfigRuleNameHasBeenSet; }
-    inline void SetOrganizationConfigRuleName(const Aws::String& value) { m_organizationConfigRuleNameHasBeenSet = true; m_organizationConfigRuleName = value; }
-    inline void SetOrganizationConfigRuleName(Aws::String&& value) { m_organizationConfigRuleNameHasBeenSet = true; m_organizationConfigRuleName = std::move(value); }
-    inline void SetOrganizationConfigRuleName(const char* value) { m_organizationConfigRuleNameHasBeenSet = true; m_organizationConfigRuleName.assign(value); }
-    inline GetOrganizationCustomRulePolicyRequest& WithOrganizationConfigRuleName(const Aws::String& value) { SetOrganizationConfigRuleName(value); return *this;}
-    inline GetOrganizationCustomRulePolicyRequest& WithOrganizationConfigRuleName(Aws::String&& value) { SetOrganizationConfigRuleName(std::move(value)); return *this;}
-    inline GetOrganizationCustomRulePolicyRequest& WithOrganizationConfigRuleName(const char* value) { SetOrganizationConfigRuleName(value); return *this;}
+    template<typename OrganizationConfigRuleNameT = Aws::String>
+    void SetOrganizationConfigRuleName(OrganizationConfigRuleNameT&& value) { m_organizationConfigRuleNameHasBeenSet = true; m_organizationConfigRuleName = std::forward<OrganizationConfigRuleNameT>(value); }
+    template<typename OrganizationConfigRuleNameT = Aws::String>
+    GetOrganizationCustomRulePolicyRequest& WithOrganizationConfigRuleName(OrganizationConfigRuleNameT&& value) { SetOrganizationConfigRuleName(std::forward<OrganizationConfigRuleNameT>(value)); return *this;}
     ///@}
   private:
 

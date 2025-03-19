@@ -12,19 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateInstanceMetadataOptionsRequest::UpdateInstanceMetadataOptionsRequest() : 
-    m_instanceNameHasBeenSet(false),
-    m_httpTokens(HttpTokens::NOT_SET),
-    m_httpTokensHasBeenSet(false),
-    m_httpEndpoint(HttpEndpoint::NOT_SET),
-    m_httpEndpointHasBeenSet(false),
-    m_httpPutResponseHopLimit(0),
-    m_httpPutResponseHopLimitHasBeenSet(false),
-    m_httpProtocolIpv6(HttpProtocolIpv6::NOT_SET),
-    m_httpProtocolIpv6HasBeenSet(false)
-{
-}
-
 Aws::String UpdateInstanceMetadataOptionsRequest::SerializePayload() const
 {
   JsonValue payload;

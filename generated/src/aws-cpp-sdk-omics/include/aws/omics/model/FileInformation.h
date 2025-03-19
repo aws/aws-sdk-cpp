@@ -31,7 +31,7 @@ namespace Model
   class FileInformation
   {
   public:
-    AWS_OMICS_API FileInformation();
+    AWS_OMICS_API FileInformation() = default;
     AWS_OMICS_API FileInformation(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API FileInformation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>The file's total parts.</p>
      */
-    inline int GetTotalParts() const{ return m_totalParts; }
+    inline int GetTotalParts() const { return m_totalParts; }
     inline bool TotalPartsHasBeenSet() const { return m_totalPartsHasBeenSet; }
     inline void SetTotalParts(int value) { m_totalPartsHasBeenSet = true; m_totalParts = value; }
     inline FileInformation& WithTotalParts(int value) { SetTotalParts(value); return *this;}
@@ -51,7 +51,7 @@ namespace Model
     /**
      * <p>The file's part size.</p>
      */
-    inline long long GetPartSize() const{ return m_partSize; }
+    inline long long GetPartSize() const { return m_partSize; }
     inline bool PartSizeHasBeenSet() const { return m_partSizeHasBeenSet; }
     inline void SetPartSize(long long value) { m_partSizeHasBeenSet = true; m_partSize = value; }
     inline FileInformation& WithPartSize(long long value) { SetPartSize(value); return *this;}
@@ -61,7 +61,7 @@ namespace Model
     /**
      * <p>The file's content length.</p>
      */
-    inline long long GetContentLength() const{ return m_contentLength; }
+    inline long long GetContentLength() const { return m_contentLength; }
     inline bool ContentLengthHasBeenSet() const { return m_contentLengthHasBeenSet; }
     inline void SetContentLength(long long value) { m_contentLengthHasBeenSet = true; m_contentLength = value; }
     inline FileInformation& WithContentLength(long long value) { SetContentLength(value); return *this;}
@@ -71,22 +71,22 @@ namespace Model
     /**
      * <p>The S3 URI metadata of a sequence store.</p>
      */
-    inline const ReadSetS3Access& GetS3Access() const{ return m_s3Access; }
+    inline const ReadSetS3Access& GetS3Access() const { return m_s3Access; }
     inline bool S3AccessHasBeenSet() const { return m_s3AccessHasBeenSet; }
-    inline void SetS3Access(const ReadSetS3Access& value) { m_s3AccessHasBeenSet = true; m_s3Access = value; }
-    inline void SetS3Access(ReadSetS3Access&& value) { m_s3AccessHasBeenSet = true; m_s3Access = std::move(value); }
-    inline FileInformation& WithS3Access(const ReadSetS3Access& value) { SetS3Access(value); return *this;}
-    inline FileInformation& WithS3Access(ReadSetS3Access&& value) { SetS3Access(std::move(value)); return *this;}
+    template<typename S3AccessT = ReadSetS3Access>
+    void SetS3Access(S3AccessT&& value) { m_s3AccessHasBeenSet = true; m_s3Access = std::forward<S3AccessT>(value); }
+    template<typename S3AccessT = ReadSetS3Access>
+    FileInformation& WithS3Access(S3AccessT&& value) { SetS3Access(std::forward<S3AccessT>(value)); return *this;}
     ///@}
   private:
 
-    int m_totalParts;
+    int m_totalParts{0};
     bool m_totalPartsHasBeenSet = false;
 
-    long long m_partSize;
+    long long m_partSize{0};
     bool m_partSizeHasBeenSet = false;
 
-    long long m_contentLength;
+    long long m_contentLength{0};
     bool m_contentLengthHasBeenSet = false;
 
     ReadSetS3Access m_s3Access;

@@ -18,13 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-PipelineExecutionFilter::PipelineExecutionFilter() : 
-    m_succeededInStageHasBeenSet(false)
-{
-}
-
 PipelineExecutionFilter::PipelineExecutionFilter(JsonView jsonValue)
-  : PipelineExecutionFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PipelineExecutionFilter& PipelineExecutionFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("succeededInStage"))
   {
     m_succeededInStage = jsonValue.GetObject("succeededInStage");
-
     m_succeededInStageHasBeenSet = true;
   }
-
   return *this;
 }
 

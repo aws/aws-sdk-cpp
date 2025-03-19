@@ -23,7 +23,7 @@ namespace Model
   class DescribeCodeCoveragesRequest : public CodeBuildRequest
   {
   public:
-    AWS_CODEBUILD_API DescribeCodeCoveragesRequest();
+    AWS_CODEBUILD_API DescribeCodeCoveragesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p> The ARN of the report for which test cases are returned. </p>
      */
-    inline const Aws::String& GetReportArn() const{ return m_reportArn; }
+    inline const Aws::String& GetReportArn() const { return m_reportArn; }
     inline bool ReportArnHasBeenSet() const { return m_reportArnHasBeenSet; }
-    inline void SetReportArn(const Aws::String& value) { m_reportArnHasBeenSet = true; m_reportArn = value; }
-    inline void SetReportArn(Aws::String&& value) { m_reportArnHasBeenSet = true; m_reportArn = std::move(value); }
-    inline void SetReportArn(const char* value) { m_reportArnHasBeenSet = true; m_reportArn.assign(value); }
-    inline DescribeCodeCoveragesRequest& WithReportArn(const Aws::String& value) { SetReportArn(value); return *this;}
-    inline DescribeCodeCoveragesRequest& WithReportArn(Aws::String&& value) { SetReportArn(std::move(value)); return *this;}
-    inline DescribeCodeCoveragesRequest& WithReportArn(const char* value) { SetReportArn(value); return *this;}
+    template<typename ReportArnT = Aws::String>
+    void SetReportArn(ReportArnT&& value) { m_reportArnHasBeenSet = true; m_reportArn = std::forward<ReportArnT>(value); }
+    template<typename ReportArnT = Aws::String>
+    DescribeCodeCoveragesRequest& WithReportArn(ReportArnT&& value) { SetReportArn(std::forward<ReportArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,21 +54,19 @@ namespace Model
      * <code>DescribeCodeCoverages</code>. This specifies the next item to return. To
      * return the beginning of the list, exclude this parameter.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeCodeCoveragesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeCodeCoveragesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeCodeCoveragesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeCodeCoveragesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeCodeCoveragesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -80,12 +76,10 @@ namespace Model
     /**
      * <p>Specifies if the results are sorted in ascending or descending order.</p>
      */
-    inline const SortOrderType& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrderType GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrderType& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrderType&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline DescribeCodeCoveragesRequest& WithSortOrder(const SortOrderType& value) { SetSortOrder(value); return *this;}
-    inline DescribeCodeCoveragesRequest& WithSortOrder(SortOrderType&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrderType value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline DescribeCodeCoveragesRequest& WithSortOrder(SortOrderType value) { SetSortOrder(value); return *this;}
     ///@}
 
     ///@{
@@ -95,19 +89,17 @@ namespace Model
      * <dt>LINE_COVERAGE_PERCENTAGE</dt> <dd> <p>The results are sorted by the
      * percentage of lines that are covered.</p> </dd> </dl>
      */
-    inline const ReportCodeCoverageSortByType& GetSortBy() const{ return m_sortBy; }
+    inline ReportCodeCoverageSortByType GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const ReportCodeCoverageSortByType& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(ReportCodeCoverageSortByType&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline DescribeCodeCoveragesRequest& WithSortBy(const ReportCodeCoverageSortByType& value) { SetSortBy(value); return *this;}
-    inline DescribeCodeCoveragesRequest& WithSortBy(ReportCodeCoverageSortByType&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(ReportCodeCoverageSortByType value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline DescribeCodeCoveragesRequest& WithSortBy(ReportCodeCoverageSortByType value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The minimum line coverage percentage to report.</p>
      */
-    inline double GetMinLineCoveragePercentage() const{ return m_minLineCoveragePercentage; }
+    inline double GetMinLineCoveragePercentage() const { return m_minLineCoveragePercentage; }
     inline bool MinLineCoveragePercentageHasBeenSet() const { return m_minLineCoveragePercentageHasBeenSet; }
     inline void SetMinLineCoveragePercentage(double value) { m_minLineCoveragePercentageHasBeenSet = true; m_minLineCoveragePercentage = value; }
     inline DescribeCodeCoveragesRequest& WithMinLineCoveragePercentage(double value) { SetMinLineCoveragePercentage(value); return *this;}
@@ -117,7 +109,7 @@ namespace Model
     /**
      * <p>The maximum line coverage percentage to report.</p>
      */
-    inline double GetMaxLineCoveragePercentage() const{ return m_maxLineCoveragePercentage; }
+    inline double GetMaxLineCoveragePercentage() const { return m_maxLineCoveragePercentage; }
     inline bool MaxLineCoveragePercentageHasBeenSet() const { return m_maxLineCoveragePercentageHasBeenSet; }
     inline void SetMaxLineCoveragePercentage(double value) { m_maxLineCoveragePercentageHasBeenSet = true; m_maxLineCoveragePercentage = value; }
     inline DescribeCodeCoveragesRequest& WithMaxLineCoveragePercentage(double value) { SetMaxLineCoveragePercentage(value); return *this;}
@@ -130,19 +122,19 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    SortOrderType m_sortOrder;
+    SortOrderType m_sortOrder{SortOrderType::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
 
-    ReportCodeCoverageSortByType m_sortBy;
+    ReportCodeCoverageSortByType m_sortBy{ReportCodeCoverageSortByType::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    double m_minLineCoveragePercentage;
+    double m_minLineCoveragePercentage{0.0};
     bool m_minLineCoveragePercentageHasBeenSet = false;
 
-    double m_maxLineCoveragePercentage;
+    double m_maxLineCoveragePercentage{0.0};
     bool m_maxLineCoveragePercentageHasBeenSet = false;
   };
 

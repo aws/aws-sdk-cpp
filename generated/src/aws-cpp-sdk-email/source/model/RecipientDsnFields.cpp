@@ -20,20 +20,7 @@ namespace SES
 namespace Model
 {
 
-RecipientDsnFields::RecipientDsnFields() : 
-    m_finalRecipientHasBeenSet(false),
-    m_action(DsnAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_remoteMtaHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_diagnosticCodeHasBeenSet(false),
-    m_lastAttemptDateHasBeenSet(false),
-    m_extensionFieldsHasBeenSet(false)
-{
-}
-
 RecipientDsnFields::RecipientDsnFields(const XmlNode& xmlNode)
-  : RecipientDsnFields()
 {
   *this = xmlNode;
 }
@@ -53,7 +40,7 @@ RecipientDsnFields& RecipientDsnFields::operator =(const XmlNode& xmlNode)
     XmlNode actionNode = resultNode.FirstChild("Action");
     if(!actionNode.IsNull())
     {
-      m_action = DsnActionMapper::GetDsnActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionNode.GetText()).c_str()).c_str());
+      m_action = DsnActionMapper::GetDsnActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionNode.GetText()).c_str()));
       m_actionHasBeenSet = true;
     }
     XmlNode remoteMtaNode = resultNode.FirstChild("RemoteMta");
@@ -84,6 +71,7 @@ RecipientDsnFields& RecipientDsnFields::operator =(const XmlNode& xmlNode)
     if(!extensionFieldsNode.IsNull())
     {
       XmlNode extensionFieldsMember = extensionFieldsNode.FirstChild("member");
+      m_extensionFieldsHasBeenSet = !extensionFieldsMember.IsNull();
       while(!extensionFieldsMember.IsNull())
       {
         m_extensionFields.push_back(extensionFieldsMember);

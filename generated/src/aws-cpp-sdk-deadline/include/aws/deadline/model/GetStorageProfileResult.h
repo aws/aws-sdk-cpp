@@ -31,7 +31,7 @@ namespace Model
   class GetStorageProfileResult
   {
   public:
-    AWS_DEADLINE_API GetStorageProfileResult();
+    AWS_DEADLINE_API GetStorageProfileResult() = default;
     AWS_DEADLINE_API GetStorageProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEADLINE_API GetStorageProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,11 @@ namespace Model
     /**
      * <p>The storage profile ID.</p>
      */
-    inline const Aws::String& GetStorageProfileId() const{ return m_storageProfileId; }
-    inline void SetStorageProfileId(const Aws::String& value) { m_storageProfileId = value; }
-    inline void SetStorageProfileId(Aws::String&& value) { m_storageProfileId = std::move(value); }
-    inline void SetStorageProfileId(const char* value) { m_storageProfileId.assign(value); }
-    inline GetStorageProfileResult& WithStorageProfileId(const Aws::String& value) { SetStorageProfileId(value); return *this;}
-    inline GetStorageProfileResult& WithStorageProfileId(Aws::String&& value) { SetStorageProfileId(std::move(value)); return *this;}
-    inline GetStorageProfileResult& WithStorageProfileId(const char* value) { SetStorageProfileId(value); return *this;}
+    inline const Aws::String& GetStorageProfileId() const { return m_storageProfileId; }
+    template<typename StorageProfileIdT = Aws::String>
+    void SetStorageProfileId(StorageProfileIdT&& value) { m_storageProfileIdHasBeenSet = true; m_storageProfileId = std::forward<StorageProfileIdT>(value); }
+    template<typename StorageProfileIdT = Aws::String>
+    GetStorageProfileResult& WithStorageProfileId(StorageProfileIdT&& value) { SetStorageProfileId(std::forward<StorageProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,116 +54,115 @@ namespace Model
      * webpage or any other system that might interpret the content of this field.</p>
      * 
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayName.assign(value); }
-    inline GetStorageProfileResult& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline GetStorageProfileResult& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline GetStorageProfileResult& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    GetStorageProfileResult& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The operating system (OS) for the storage profile.</p>
      */
-    inline const StorageProfileOperatingSystemFamily& GetOsFamily() const{ return m_osFamily; }
-    inline void SetOsFamily(const StorageProfileOperatingSystemFamily& value) { m_osFamily = value; }
-    inline void SetOsFamily(StorageProfileOperatingSystemFamily&& value) { m_osFamily = std::move(value); }
-    inline GetStorageProfileResult& WithOsFamily(const StorageProfileOperatingSystemFamily& value) { SetOsFamily(value); return *this;}
-    inline GetStorageProfileResult& WithOsFamily(StorageProfileOperatingSystemFamily&& value) { SetOsFamily(std::move(value)); return *this;}
+    inline StorageProfileOperatingSystemFamily GetOsFamily() const { return m_osFamily; }
+    inline void SetOsFamily(StorageProfileOperatingSystemFamily value) { m_osFamilyHasBeenSet = true; m_osFamily = value; }
+    inline GetStorageProfileResult& WithOsFamily(StorageProfileOperatingSystemFamily value) { SetOsFamily(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the resource was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline GetStorageProfileResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline GetStorageProfileResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    GetStorageProfileResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user or system that created this resource.</p>
      */
-    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
-    inline void SetCreatedBy(const Aws::String& value) { m_createdBy = value; }
-    inline void SetCreatedBy(Aws::String&& value) { m_createdBy = std::move(value); }
-    inline void SetCreatedBy(const char* value) { m_createdBy.assign(value); }
-    inline GetStorageProfileResult& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
-    inline GetStorageProfileResult& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
-    inline GetStorageProfileResult& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+    inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+    template<typename CreatedByT = Aws::String>
+    void SetCreatedBy(CreatedByT&& value) { m_createdByHasBeenSet = true; m_createdBy = std::forward<CreatedByT>(value); }
+    template<typename CreatedByT = Aws::String>
+    GetStorageProfileResult& WithCreatedBy(CreatedByT&& value) { SetCreatedBy(std::forward<CreatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time the resource was updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAt = std::move(value); }
-    inline GetStorageProfileResult& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline GetStorageProfileResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    GetStorageProfileResult& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user or system that updated this resource.</p>
      */
-    inline const Aws::String& GetUpdatedBy() const{ return m_updatedBy; }
-    inline void SetUpdatedBy(const Aws::String& value) { m_updatedBy = value; }
-    inline void SetUpdatedBy(Aws::String&& value) { m_updatedBy = std::move(value); }
-    inline void SetUpdatedBy(const char* value) { m_updatedBy.assign(value); }
-    inline GetStorageProfileResult& WithUpdatedBy(const Aws::String& value) { SetUpdatedBy(value); return *this;}
-    inline GetStorageProfileResult& WithUpdatedBy(Aws::String&& value) { SetUpdatedBy(std::move(value)); return *this;}
-    inline GetStorageProfileResult& WithUpdatedBy(const char* value) { SetUpdatedBy(value); return *this;}
+    inline const Aws::String& GetUpdatedBy() const { return m_updatedBy; }
+    template<typename UpdatedByT = Aws::String>
+    void SetUpdatedBy(UpdatedByT&& value) { m_updatedByHasBeenSet = true; m_updatedBy = std::forward<UpdatedByT>(value); }
+    template<typename UpdatedByT = Aws::String>
+    GetStorageProfileResult& WithUpdatedBy(UpdatedByT&& value) { SetUpdatedBy(std::forward<UpdatedByT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The location of the files for the storage profile.</p>
      */
-    inline const Aws::Vector<FileSystemLocation>& GetFileSystemLocations() const{ return m_fileSystemLocations; }
-    inline void SetFileSystemLocations(const Aws::Vector<FileSystemLocation>& value) { m_fileSystemLocations = value; }
-    inline void SetFileSystemLocations(Aws::Vector<FileSystemLocation>&& value) { m_fileSystemLocations = std::move(value); }
-    inline GetStorageProfileResult& WithFileSystemLocations(const Aws::Vector<FileSystemLocation>& value) { SetFileSystemLocations(value); return *this;}
-    inline GetStorageProfileResult& WithFileSystemLocations(Aws::Vector<FileSystemLocation>&& value) { SetFileSystemLocations(std::move(value)); return *this;}
-    inline GetStorageProfileResult& AddFileSystemLocations(const FileSystemLocation& value) { m_fileSystemLocations.push_back(value); return *this; }
-    inline GetStorageProfileResult& AddFileSystemLocations(FileSystemLocation&& value) { m_fileSystemLocations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FileSystemLocation>& GetFileSystemLocations() const { return m_fileSystemLocations; }
+    template<typename FileSystemLocationsT = Aws::Vector<FileSystemLocation>>
+    void SetFileSystemLocations(FileSystemLocationsT&& value) { m_fileSystemLocationsHasBeenSet = true; m_fileSystemLocations = std::forward<FileSystemLocationsT>(value); }
+    template<typename FileSystemLocationsT = Aws::Vector<FileSystemLocation>>
+    GetStorageProfileResult& WithFileSystemLocations(FileSystemLocationsT&& value) { SetFileSystemLocations(std::forward<FileSystemLocationsT>(value)); return *this;}
+    template<typename FileSystemLocationsT = FileSystemLocation>
+    GetStorageProfileResult& AddFileSystemLocations(FileSystemLocationsT&& value) { m_fileSystemLocationsHasBeenSet = true; m_fileSystemLocations.emplace_back(std::forward<FileSystemLocationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetStorageProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetStorageProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetStorageProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetStorageProfileResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_storageProfileId;
+    bool m_storageProfileIdHasBeenSet = false;
 
     Aws::String m_displayName;
+    bool m_displayNameHasBeenSet = false;
 
-    StorageProfileOperatingSystemFamily m_osFamily;
+    StorageProfileOperatingSystemFamily m_osFamily{StorageProfileOperatingSystemFamily::NOT_SET};
+    bool m_osFamilyHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_createdBy;
+    bool m_createdByHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
+    bool m_updatedAtHasBeenSet = false;
 
     Aws::String m_updatedBy;
+    bool m_updatedByHasBeenSet = false;
 
     Aws::Vector<FileSystemLocation> m_fileSystemLocations;
+    bool m_fileSystemLocationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

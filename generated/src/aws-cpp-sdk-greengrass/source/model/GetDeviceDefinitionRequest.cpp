@@ -12,11 +12,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDeviceDefinitionRequest::GetDeviceDefinitionRequest() : 
-    m_deviceDefinitionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetDeviceDefinitionRequest::SerializePayload() const
 {
   return {};

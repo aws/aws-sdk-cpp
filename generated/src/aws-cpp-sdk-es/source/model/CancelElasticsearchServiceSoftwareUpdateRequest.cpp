@@ -12,11 +12,6 @@ using namespace Aws::ElasticsearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelElasticsearchServiceSoftwareUpdateRequest::CancelElasticsearchServiceSoftwareUpdateRequest() : 
-    m_domainNameHasBeenSet(false)
-{
-}
-
 Aws::String CancelElasticsearchServiceSoftwareUpdateRequest::SerializePayload() const
 {
   JsonValue payload;

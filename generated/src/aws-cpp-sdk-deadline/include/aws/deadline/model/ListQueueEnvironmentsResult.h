@@ -29,7 +29,7 @@ namespace Model
   class ListQueueEnvironmentsResult
   {
   public:
-    AWS_DEADLINE_API ListQueueEnvironmentsResult();
+    AWS_DEADLINE_API ListQueueEnvironmentsResult() = default;
     AWS_DEADLINE_API ListQueueEnvironmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEADLINE_API ListQueueEnvironmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The environments to include in the queue environments list.</p>
      */
-    inline const Aws::Vector<QueueEnvironmentSummary>& GetEnvironments() const{ return m_environments; }
-    inline void SetEnvironments(const Aws::Vector<QueueEnvironmentSummary>& value) { m_environments = value; }
-    inline void SetEnvironments(Aws::Vector<QueueEnvironmentSummary>&& value) { m_environments = std::move(value); }
-    inline ListQueueEnvironmentsResult& WithEnvironments(const Aws::Vector<QueueEnvironmentSummary>& value) { SetEnvironments(value); return *this;}
-    inline ListQueueEnvironmentsResult& WithEnvironments(Aws::Vector<QueueEnvironmentSummary>&& value) { SetEnvironments(std::move(value)); return *this;}
-    inline ListQueueEnvironmentsResult& AddEnvironments(const QueueEnvironmentSummary& value) { m_environments.push_back(value); return *this; }
-    inline ListQueueEnvironmentsResult& AddEnvironments(QueueEnvironmentSummary&& value) { m_environments.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<QueueEnvironmentSummary>& GetEnvironments() const { return m_environments; }
+    template<typename EnvironmentsT = Aws::Vector<QueueEnvironmentSummary>>
+    void SetEnvironments(EnvironmentsT&& value) { m_environmentsHasBeenSet = true; m_environments = std::forward<EnvironmentsT>(value); }
+    template<typename EnvironmentsT = Aws::Vector<QueueEnvironmentSummary>>
+    ListQueueEnvironmentsResult& WithEnvironments(EnvironmentsT&& value) { SetEnvironments(std::forward<EnvironmentsT>(value)); return *this;}
+    template<typename EnvironmentsT = QueueEnvironmentSummary>
+    ListQueueEnvironmentsResult& AddEnvironments(EnvironmentsT&& value) { m_environmentsHasBeenSet = true; m_environments.emplace_back(std::forward<EnvironmentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -57,32 +57,31 @@ namespace Model
      * expires after 24 hours. If you provide a token that isn't valid, then you
      * receive an HTTP 400 <code>ValidationException</code> error.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListQueueEnvironmentsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListQueueEnvironmentsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListQueueEnvironmentsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListQueueEnvironmentsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListQueueEnvironmentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListQueueEnvironmentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListQueueEnvironmentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListQueueEnvironmentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<QueueEnvironmentSummary> m_environments;
+    bool m_environmentsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

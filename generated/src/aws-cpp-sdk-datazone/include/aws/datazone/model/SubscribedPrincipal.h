@@ -32,7 +32,7 @@ namespace Model
   class SubscribedPrincipal
   {
   public:
-    AWS_DATAZONE_API SubscribedPrincipal();
+    AWS_DATAZONE_API SubscribedPrincipal() = default;
     AWS_DATAZONE_API SubscribedPrincipal(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API SubscribedPrincipal& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The project that has the subscription grant.</p>
      */
-    inline const SubscribedProject& GetProject() const{ return m_project; }
+    inline const SubscribedProject& GetProject() const { return m_project; }
     inline bool ProjectHasBeenSet() const { return m_projectHasBeenSet; }
-    inline void SetProject(const SubscribedProject& value) { m_projectHasBeenSet = true; m_project = value; }
-    inline void SetProject(SubscribedProject&& value) { m_projectHasBeenSet = true; m_project = std::move(value); }
-    inline SubscribedPrincipal& WithProject(const SubscribedProject& value) { SetProject(value); return *this;}
-    inline SubscribedPrincipal& WithProject(SubscribedProject&& value) { SetProject(std::move(value)); return *this;}
+    template<typename ProjectT = SubscribedProject>
+    void SetProject(ProjectT&& value) { m_projectHasBeenSet = true; m_project = std::forward<ProjectT>(value); }
+    template<typename ProjectT = SubscribedProject>
+    SubscribedPrincipal& WithProject(ProjectT&& value) { SetProject(std::forward<ProjectT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-BoxPlotStyleOptions::BoxPlotStyleOptions() : 
-    m_fillStyle(BoxPlotFillStyle::NOT_SET),
-    m_fillStyleHasBeenSet(false)
-{
-}
-
 BoxPlotStyleOptions::BoxPlotStyleOptions(JsonView jsonValue)
-  : BoxPlotStyleOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ BoxPlotStyleOptions& BoxPlotStyleOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FillStyle"))
   {
     m_fillStyle = BoxPlotFillStyleMapper::GetBoxPlotFillStyleForName(jsonValue.GetString("FillStyle"));
-
     m_fillStyleHasBeenSet = true;
   }
-
   return *this;
 }
 

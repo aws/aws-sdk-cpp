@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DataQualityRuleRecommendationRunFilter::DataQualityRuleRecommendationRunFilter() : 
-    m_dataSourceHasBeenSet(false),
-    m_startedBeforeHasBeenSet(false),
-    m_startedAfterHasBeenSet(false)
-{
-}
-
 DataQualityRuleRecommendationRunFilter::DataQualityRuleRecommendationRunFilter(JsonView jsonValue)
-  : DataQualityRuleRecommendationRunFilter()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DataQualityRuleRecommendationRunFilter& DataQualityRuleRecommendationRunFilter::
   if(jsonValue.ValueExists("DataSource"))
   {
     m_dataSource = jsonValue.GetObject("DataSource");
-
     m_dataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedBefore"))
   {
     m_startedBefore = jsonValue.GetDouble("StartedBefore");
-
     m_startedBeforeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedAfter"))
   {
     m_startedAfter = jsonValue.GetDouble("StartedAfter");
-
     m_startedAfterHasBeenSet = true;
   }
-
   return *this;
 }
 

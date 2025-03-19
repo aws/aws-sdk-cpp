@@ -32,7 +32,7 @@ namespace Model
   class InsightResultValue
   {
   public:
-    AWS_SECURITYHUB_API InsightResultValue();
+    AWS_SECURITYHUB_API InsightResultValue() = default;
     AWS_SECURITYHUB_API InsightResultValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API InsightResultValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The value of the attribute that the findings are grouped by for the insight
      * whose results are returned by the <code>GetInsightResults</code> operation.</p>
      */
-    inline const Aws::String& GetGroupByAttributeValue() const{ return m_groupByAttributeValue; }
+    inline const Aws::String& GetGroupByAttributeValue() const { return m_groupByAttributeValue; }
     inline bool GroupByAttributeValueHasBeenSet() const { return m_groupByAttributeValueHasBeenSet; }
-    inline void SetGroupByAttributeValue(const Aws::String& value) { m_groupByAttributeValueHasBeenSet = true; m_groupByAttributeValue = value; }
-    inline void SetGroupByAttributeValue(Aws::String&& value) { m_groupByAttributeValueHasBeenSet = true; m_groupByAttributeValue = std::move(value); }
-    inline void SetGroupByAttributeValue(const char* value) { m_groupByAttributeValueHasBeenSet = true; m_groupByAttributeValue.assign(value); }
-    inline InsightResultValue& WithGroupByAttributeValue(const Aws::String& value) { SetGroupByAttributeValue(value); return *this;}
-    inline InsightResultValue& WithGroupByAttributeValue(Aws::String&& value) { SetGroupByAttributeValue(std::move(value)); return *this;}
-    inline InsightResultValue& WithGroupByAttributeValue(const char* value) { SetGroupByAttributeValue(value); return *this;}
+    template<typename GroupByAttributeValueT = Aws::String>
+    void SetGroupByAttributeValue(GroupByAttributeValueT&& value) { m_groupByAttributeValueHasBeenSet = true; m_groupByAttributeValue = std::forward<GroupByAttributeValueT>(value); }
+    template<typename GroupByAttributeValueT = Aws::String>
+    InsightResultValue& WithGroupByAttributeValue(GroupByAttributeValueT&& value) { SetGroupByAttributeValue(std::forward<GroupByAttributeValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * <p>The number of findings returned for each
      * <code>GroupByAttributeValue</code>.</p>
      */
-    inline int GetCount() const{ return m_count; }
+    inline int GetCount() const { return m_count; }
     inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
     inline InsightResultValue& WithCount(int value) { SetCount(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     Aws::String m_groupByAttributeValue;
     bool m_groupByAttributeValueHasBeenSet = false;
 
-    int m_count;
+    int m_count{0};
     bool m_countHasBeenSet = false;
   };
 

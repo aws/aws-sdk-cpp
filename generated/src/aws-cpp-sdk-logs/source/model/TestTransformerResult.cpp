@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-TestTransformerResult::TestTransformerResult()
-{
-}
-
 TestTransformerResult::TestTransformerResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ TestTransformerResult& TestTransformerResult::operator =(const Aws::AmazonWebSer
     {
       m_transformedLogs.push_back(transformedLogsJsonList[transformedLogsIndex].AsObject());
     }
+    m_transformedLogsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

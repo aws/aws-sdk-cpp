@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeCampaignResult::DescribeCampaignResult()
-{
-}
-
 DescribeCampaignResult::DescribeCampaignResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeCampaignResult& DescribeCampaignResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("campaign"))
   {
     m_campaign = jsonValue.GetObject("campaign");
-
+    m_campaignHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

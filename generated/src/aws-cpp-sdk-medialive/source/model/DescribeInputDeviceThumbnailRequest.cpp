@@ -13,13 +13,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeInputDeviceThumbnailRequest::DescribeInputDeviceThumbnailRequest() : 
-    m_inputDeviceIdHasBeenSet(false),
-    m_accept(AcceptHeader::NOT_SET),
-    m_acceptHasBeenSet(false)
-{
-}
-
 Aws::String DescribeInputDeviceThumbnailRequest::SerializePayload() const
 {
   return {};

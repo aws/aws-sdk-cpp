@@ -22,7 +22,7 @@ namespace Model
   class AssociateServiceActionWithProvisioningArtifactRequest : public ServiceCatalogRequest
   {
   public:
-    AWS_SERVICECATALOG_API AssociateServiceActionWithProvisioningArtifactRequest();
+    AWS_SERVICECATALOG_API AssociateServiceActionWithProvisioningArtifactRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
      */
-    inline const Aws::String& GetProductId() const{ return m_productId; }
+    inline const Aws::String& GetProductId() const { return m_productId; }
     inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
-    inline void SetProductId(const Aws::String& value) { m_productIdHasBeenSet = true; m_productId = value; }
-    inline void SetProductId(Aws::String&& value) { m_productIdHasBeenSet = true; m_productId = std::move(value); }
-    inline void SetProductId(const char* value) { m_productIdHasBeenSet = true; m_productId.assign(value); }
-    inline AssociateServiceActionWithProvisioningArtifactRequest& WithProductId(const Aws::String& value) { SetProductId(value); return *this;}
-    inline AssociateServiceActionWithProvisioningArtifactRequest& WithProductId(Aws::String&& value) { SetProductId(std::move(value)); return *this;}
-    inline AssociateServiceActionWithProvisioningArtifactRequest& WithProductId(const char* value) { SetProductId(value); return *this;}
+    template<typename ProductIdT = Aws::String>
+    void SetProductId(ProductIdT&& value) { m_productIdHasBeenSet = true; m_productId = std::forward<ProductIdT>(value); }
+    template<typename ProductIdT = Aws::String>
+    AssociateServiceActionWithProvisioningArtifactRequest& WithProductId(ProductIdT&& value) { SetProductId(std::forward<ProductIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * <p>The identifier of the provisioning artifact. For example,
      * <code>pa-4abcdjnxjj6ne</code>.</p>
      */
-    inline const Aws::String& GetProvisioningArtifactId() const{ return m_provisioningArtifactId; }
+    inline const Aws::String& GetProvisioningArtifactId() const { return m_provisioningArtifactId; }
     inline bool ProvisioningArtifactIdHasBeenSet() const { return m_provisioningArtifactIdHasBeenSet; }
-    inline void SetProvisioningArtifactId(const Aws::String& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = value; }
-    inline void SetProvisioningArtifactId(Aws::String&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = std::move(value); }
-    inline void SetProvisioningArtifactId(const char* value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId.assign(value); }
-    inline AssociateServiceActionWithProvisioningArtifactRequest& WithProvisioningArtifactId(const Aws::String& value) { SetProvisioningArtifactId(value); return *this;}
-    inline AssociateServiceActionWithProvisioningArtifactRequest& WithProvisioningArtifactId(Aws::String&& value) { SetProvisioningArtifactId(std::move(value)); return *this;}
-    inline AssociateServiceActionWithProvisioningArtifactRequest& WithProvisioningArtifactId(const char* value) { SetProvisioningArtifactId(value); return *this;}
+    template<typename ProvisioningArtifactIdT = Aws::String>
+    void SetProvisioningArtifactId(ProvisioningArtifactIdT&& value) { m_provisioningArtifactIdHasBeenSet = true; m_provisioningArtifactId = std::forward<ProvisioningArtifactIdT>(value); }
+    template<typename ProvisioningArtifactIdT = Aws::String>
+    AssociateServiceActionWithProvisioningArtifactRequest& WithProvisioningArtifactId(ProvisioningArtifactIdT&& value) { SetProvisioningArtifactId(std::forward<ProvisioningArtifactIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +65,12 @@ namespace Model
      * <p>The self-service action identifier. For example,
      * <code>act-fs7abcd89wxyz</code>.</p>
      */
-    inline const Aws::String& GetServiceActionId() const{ return m_serviceActionId; }
+    inline const Aws::String& GetServiceActionId() const { return m_serviceActionId; }
     inline bool ServiceActionIdHasBeenSet() const { return m_serviceActionIdHasBeenSet; }
-    inline void SetServiceActionId(const Aws::String& value) { m_serviceActionIdHasBeenSet = true; m_serviceActionId = value; }
-    inline void SetServiceActionId(Aws::String&& value) { m_serviceActionIdHasBeenSet = true; m_serviceActionId = std::move(value); }
-    inline void SetServiceActionId(const char* value) { m_serviceActionIdHasBeenSet = true; m_serviceActionId.assign(value); }
-    inline AssociateServiceActionWithProvisioningArtifactRequest& WithServiceActionId(const Aws::String& value) { SetServiceActionId(value); return *this;}
-    inline AssociateServiceActionWithProvisioningArtifactRequest& WithServiceActionId(Aws::String&& value) { SetServiceActionId(std::move(value)); return *this;}
-    inline AssociateServiceActionWithProvisioningArtifactRequest& WithServiceActionId(const char* value) { SetServiceActionId(value); return *this;}
+    template<typename ServiceActionIdT = Aws::String>
+    void SetServiceActionId(ServiceActionIdT&& value) { m_serviceActionIdHasBeenSet = true; m_serviceActionId = std::forward<ServiceActionIdT>(value); }
+    template<typename ServiceActionIdT = Aws::String>
+    AssociateServiceActionWithProvisioningArtifactRequest& WithServiceActionId(ServiceActionIdT&& value) { SetServiceActionId(std::forward<ServiceActionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +78,12 @@ namespace Model
      * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
      * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
-    inline const Aws::String& GetAcceptLanguage() const{ return m_acceptLanguage; }
+    inline const Aws::String& GetAcceptLanguage() const { return m_acceptLanguage; }
     inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
-    inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
-    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
-    inline void SetAcceptLanguage(const char* value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage.assign(value); }
-    inline AssociateServiceActionWithProvisioningArtifactRequest& WithAcceptLanguage(const Aws::String& value) { SetAcceptLanguage(value); return *this;}
-    inline AssociateServiceActionWithProvisioningArtifactRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
-    inline AssociateServiceActionWithProvisioningArtifactRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
+    template<typename AcceptLanguageT = Aws::String>
+    void SetAcceptLanguage(AcceptLanguageT&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::forward<AcceptLanguageT>(value); }
+    template<typename AcceptLanguageT = Aws::String>
+    AssociateServiceActionWithProvisioningArtifactRequest& WithAcceptLanguage(AcceptLanguageT&& value) { SetAcceptLanguage(std::forward<AcceptLanguageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,14 +92,12 @@ namespace Model
      * requests from the same Amazon Web Services account use the same idempotency
      * token, the same response is returned for each repeated request. </p>
      */
-    inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
+    inline const Aws::String& GetIdempotencyToken() const { return m_idempotencyToken; }
     inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
-    inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
-    inline void SetIdempotencyToken(Aws::String&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::move(value); }
-    inline void SetIdempotencyToken(const char* value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken.assign(value); }
-    inline AssociateServiceActionWithProvisioningArtifactRequest& WithIdempotencyToken(const Aws::String& value) { SetIdempotencyToken(value); return *this;}
-    inline AssociateServiceActionWithProvisioningArtifactRequest& WithIdempotencyToken(Aws::String&& value) { SetIdempotencyToken(std::move(value)); return *this;}
-    inline AssociateServiceActionWithProvisioningArtifactRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
+    template<typename IdempotencyTokenT = Aws::String>
+    void SetIdempotencyToken(IdempotencyTokenT&& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = std::forward<IdempotencyTokenT>(value); }
+    template<typename IdempotencyTokenT = Aws::String>
+    AssociateServiceActionWithProvisioningArtifactRequest& WithIdempotencyToken(IdempotencyTokenT&& value) { SetIdempotencyToken(std::forward<IdempotencyTokenT>(value)); return *this;}
     ///@}
   private:
 

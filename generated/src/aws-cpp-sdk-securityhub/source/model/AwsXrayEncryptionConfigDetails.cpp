@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsXrayEncryptionConfigDetails::AwsXrayEncryptionConfigDetails() : 
-    m_keyIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 AwsXrayEncryptionConfigDetails::AwsXrayEncryptionConfigDetails(JsonView jsonValue)
-  : AwsXrayEncryptionConfigDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AwsXrayEncryptionConfigDetails& AwsXrayEncryptionConfigDetails::operator =(JsonV
   if(jsonValue.ValueExists("KeyId"))
   {
     m_keyId = jsonValue.GetString("KeyId");
-
     m_keyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

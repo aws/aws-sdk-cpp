@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-Model::Model() : 
-    m_smithyHasBeenSet(false)
-{
-}
-
 Model::Model(JsonView jsonValue)
-  : Model()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Model& Model::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("smithy"))
   {
     m_smithy = jsonValue.GetString("smithy");
-
     m_smithyHasBeenSet = true;
   }
-
   return *this;
 }
 

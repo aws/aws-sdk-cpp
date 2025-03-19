@@ -22,7 +22,7 @@ namespace Model
   class ListStackSetOperationsRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API ListStackSetOperationsRequest();
+    AWS_CLOUDFORMATION_API ListStackSetOperationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>The name or unique ID of the stack set that you want to get operation
      * summaries for.</p>
      */
-    inline const Aws::String& GetStackSetName() const{ return m_stackSetName; }
+    inline const Aws::String& GetStackSetName() const { return m_stackSetName; }
     inline bool StackSetNameHasBeenSet() const { return m_stackSetNameHasBeenSet; }
-    inline void SetStackSetName(const Aws::String& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = value; }
-    inline void SetStackSetName(Aws::String&& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = std::move(value); }
-    inline void SetStackSetName(const char* value) { m_stackSetNameHasBeenSet = true; m_stackSetName.assign(value); }
-    inline ListStackSetOperationsRequest& WithStackSetName(const Aws::String& value) { SetStackSetName(value); return *this;}
-    inline ListStackSetOperationsRequest& WithStackSetName(Aws::String&& value) { SetStackSetName(std::move(value)); return *this;}
-    inline ListStackSetOperationsRequest& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
+    template<typename StackSetNameT = Aws::String>
+    void SetStackSetName(StackSetNameT&& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = std::forward<StackSetNameT>(value); }
+    template<typename StackSetNameT = Aws::String>
+    ListStackSetOperationsRequest& WithStackSetName(StackSetNameT&& value) { SetStackSetName(std::forward<StackSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * parameter. If there are no remaining results, the previous response object's
      * <code>NextToken</code> parameter is set to <code>null</code>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListStackSetOperationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListStackSetOperationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListStackSetOperationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListStackSetOperationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,7 +74,7 @@ namespace Model
      * <code>NextToken</code> value that you can assign to the <code>NextToken</code>
      * request parameter to get the next set of results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListStackSetOperationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -99,12 +95,10 @@ namespace Model
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>
      */
-    inline const CallAs& GetCallAs() const{ return m_callAs; }
+    inline CallAs GetCallAs() const { return m_callAs; }
     inline bool CallAsHasBeenSet() const { return m_callAsHasBeenSet; }
-    inline void SetCallAs(const CallAs& value) { m_callAsHasBeenSet = true; m_callAs = value; }
-    inline void SetCallAs(CallAs&& value) { m_callAsHasBeenSet = true; m_callAs = std::move(value); }
-    inline ListStackSetOperationsRequest& WithCallAs(const CallAs& value) { SetCallAs(value); return *this;}
-    inline ListStackSetOperationsRequest& WithCallAs(CallAs&& value) { SetCallAs(std::move(value)); return *this;}
+    inline void SetCallAs(CallAs value) { m_callAsHasBeenSet = true; m_callAs = value; }
+    inline ListStackSetOperationsRequest& WithCallAs(CallAs value) { SetCallAs(value); return *this;}
     ///@}
   private:
 
@@ -114,10 +108,10 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    CallAs m_callAs;
+    CallAs m_callAs{CallAs::NOT_SET};
     bool m_callAsHasBeenSet = false;
   };
 

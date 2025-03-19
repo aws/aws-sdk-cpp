@@ -12,13 +12,6 @@ using namespace Aws::SSOAdmin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetachCustomerManagedPolicyReferenceFromPermissionSetRequest::DetachCustomerManagedPolicyReferenceFromPermissionSetRequest() : 
-    m_customerManagedPolicyReferenceHasBeenSet(false),
-    m_instanceArnHasBeenSet(false),
-    m_permissionSetArnHasBeenSet(false)
-{
-}
-
 Aws::String DetachCustomerManagedPolicyReferenceFromPermissionSetRequest::SerializePayload() const
 {
   JsonValue payload;

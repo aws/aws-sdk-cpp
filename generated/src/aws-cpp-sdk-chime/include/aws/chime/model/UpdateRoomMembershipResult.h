@@ -28,7 +28,7 @@ namespace Model
   class UpdateRoomMembershipResult
   {
   public:
-    AWS_CHIME_API UpdateRoomMembershipResult();
+    AWS_CHIME_API UpdateRoomMembershipResult() = default;
     AWS_CHIME_API UpdateRoomMembershipResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CHIME_API UpdateRoomMembershipResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The room membership details.</p>
      */
-    inline const RoomMembership& GetRoomMembership() const{ return m_roomMembership; }
-    inline void SetRoomMembership(const RoomMembership& value) { m_roomMembership = value; }
-    inline void SetRoomMembership(RoomMembership&& value) { m_roomMembership = std::move(value); }
-    inline UpdateRoomMembershipResult& WithRoomMembership(const RoomMembership& value) { SetRoomMembership(value); return *this;}
-    inline UpdateRoomMembershipResult& WithRoomMembership(RoomMembership&& value) { SetRoomMembership(std::move(value)); return *this;}
+    inline const RoomMembership& GetRoomMembership() const { return m_roomMembership; }
+    template<typename RoomMembershipT = RoomMembership>
+    void SetRoomMembership(RoomMembershipT&& value) { m_roomMembershipHasBeenSet = true; m_roomMembership = std::forward<RoomMembershipT>(value); }
+    template<typename RoomMembershipT = RoomMembership>
+    UpdateRoomMembershipResult& WithRoomMembership(RoomMembershipT&& value) { SetRoomMembership(std::forward<RoomMembershipT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateRoomMembershipResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateRoomMembershipResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateRoomMembershipResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateRoomMembershipResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RoomMembership m_roomMembership;
+    bool m_roomMembershipHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

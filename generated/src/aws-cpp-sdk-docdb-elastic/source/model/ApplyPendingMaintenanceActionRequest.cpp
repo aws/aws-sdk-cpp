@@ -12,15 +12,6 @@ using namespace Aws::DocDBElastic::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ApplyPendingMaintenanceActionRequest::ApplyPendingMaintenanceActionRequest() : 
-    m_applyActionHasBeenSet(false),
-    m_applyOnHasBeenSet(false),
-    m_optInType(OptInType::NOT_SET),
-    m_optInTypeHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String ApplyPendingMaintenanceActionRequest::SerializePayload() const
 {
   JsonValue payload;

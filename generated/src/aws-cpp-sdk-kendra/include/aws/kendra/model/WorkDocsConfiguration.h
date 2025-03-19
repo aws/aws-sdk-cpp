@@ -35,7 +35,7 @@ namespace Model
   class WorkDocsConfiguration
   {
   public:
-    AWS_KENDRA_API WorkDocsConfiguration();
+    AWS_KENDRA_API WorkDocsConfiguration() = default;
     AWS_KENDRA_API WorkDocsConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API WorkDocsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,14 +52,12 @@ namespace Model
      * enable a Amazon WorkDocs site for the directory in the Amazon WorkDocs
      * console.</p>
      */
-    inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
+    inline const Aws::String& GetOrganizationId() const { return m_organizationId; }
     inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
-    inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
-    inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
-    inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
-    inline WorkDocsConfiguration& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
-    inline WorkDocsConfiguration& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
-    inline WorkDocsConfiguration& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
+    template<typename OrganizationIdT = Aws::String>
+    void SetOrganizationId(OrganizationIdT&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::forward<OrganizationIdT>(value); }
+    template<typename OrganizationIdT = Aws::String>
+    WorkDocsConfiguration& WithOrganizationId(OrganizationIdT&& value) { SetOrganizationId(std::forward<OrganizationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,7 +66,7 @@ namespace Model
      * comments in your index means each comment is a document that can be searched
      * on.</p> <p>The default is set to <code>FALSE</code>.</p>
      */
-    inline bool GetCrawlComments() const{ return m_crawlComments; }
+    inline bool GetCrawlComments() const { return m_crawlComments; }
     inline bool CrawlCommentsHasBeenSet() const { return m_crawlCommentsHasBeenSet; }
     inline void SetCrawlComments(bool value) { m_crawlCommentsHasBeenSet = true; m_crawlComments = value; }
     inline WorkDocsConfiguration& WithCrawlComments(bool value) { SetCrawlComments(value); return *this;}
@@ -81,7 +79,7 @@ namespace Model
      * may take longer for Amazon Kendra to use the change log than to scan all of your
      * documents in Amazon WorkDocs.</p>
      */
-    inline bool GetUseChangeLog() const{ return m_useChangeLog; }
+    inline bool GetUseChangeLog() const { return m_useChangeLog; }
     inline bool UseChangeLogHasBeenSet() const { return m_useChangeLogHasBeenSet; }
     inline void SetUseChangeLog(bool value) { m_useChangeLogHasBeenSet = true; m_useChangeLog = value; }
     inline WorkDocsConfiguration& WithUseChangeLog(bool value) { SetUseChangeLog(value); return *this;}
@@ -95,15 +93,14 @@ namespace Model
      * file matches both an inclusion and exclusion pattern, the exclusion pattern
      * takes precedence and the file isn't included in the index.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInclusionPatterns() const{ return m_inclusionPatterns; }
+    inline const Aws::Vector<Aws::String>& GetInclusionPatterns() const { return m_inclusionPatterns; }
     inline bool InclusionPatternsHasBeenSet() const { return m_inclusionPatternsHasBeenSet; }
-    inline void SetInclusionPatterns(const Aws::Vector<Aws::String>& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = value; }
-    inline void SetInclusionPatterns(Aws::Vector<Aws::String>&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = std::move(value); }
-    inline WorkDocsConfiguration& WithInclusionPatterns(const Aws::Vector<Aws::String>& value) { SetInclusionPatterns(value); return *this;}
-    inline WorkDocsConfiguration& WithInclusionPatterns(Aws::Vector<Aws::String>&& value) { SetInclusionPatterns(std::move(value)); return *this;}
-    inline WorkDocsConfiguration& AddInclusionPatterns(const Aws::String& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(value); return *this; }
-    inline WorkDocsConfiguration& AddInclusionPatterns(Aws::String&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(std::move(value)); return *this; }
-    inline WorkDocsConfiguration& AddInclusionPatterns(const char* value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.push_back(value); return *this; }
+    template<typename InclusionPatternsT = Aws::Vector<Aws::String>>
+    void SetInclusionPatterns(InclusionPatternsT&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns = std::forward<InclusionPatternsT>(value); }
+    template<typename InclusionPatternsT = Aws::Vector<Aws::String>>
+    WorkDocsConfiguration& WithInclusionPatterns(InclusionPatternsT&& value) { SetInclusionPatterns(std::forward<InclusionPatternsT>(value)); return *this;}
+    template<typename InclusionPatternsT = Aws::String>
+    WorkDocsConfiguration& AddInclusionPatterns(InclusionPatternsT&& value) { m_inclusionPatternsHasBeenSet = true; m_inclusionPatterns.emplace_back(std::forward<InclusionPatternsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -114,15 +111,14 @@ namespace Model
      * matches both an inclusion and exclusion pattern, the exclusion pattern takes
      * precedence and the file isn't included in the index.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExclusionPatterns() const{ return m_exclusionPatterns; }
+    inline const Aws::Vector<Aws::String>& GetExclusionPatterns() const { return m_exclusionPatterns; }
     inline bool ExclusionPatternsHasBeenSet() const { return m_exclusionPatternsHasBeenSet; }
-    inline void SetExclusionPatterns(const Aws::Vector<Aws::String>& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = value; }
-    inline void SetExclusionPatterns(Aws::Vector<Aws::String>&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = std::move(value); }
-    inline WorkDocsConfiguration& WithExclusionPatterns(const Aws::Vector<Aws::String>& value) { SetExclusionPatterns(value); return *this;}
-    inline WorkDocsConfiguration& WithExclusionPatterns(Aws::Vector<Aws::String>&& value) { SetExclusionPatterns(std::move(value)); return *this;}
-    inline WorkDocsConfiguration& AddExclusionPatterns(const Aws::String& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
-    inline WorkDocsConfiguration& AddExclusionPatterns(Aws::String&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(std::move(value)); return *this; }
-    inline WorkDocsConfiguration& AddExclusionPatterns(const char* value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.push_back(value); return *this; }
+    template<typename ExclusionPatternsT = Aws::Vector<Aws::String>>
+    void SetExclusionPatterns(ExclusionPatternsT&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns = std::forward<ExclusionPatternsT>(value); }
+    template<typename ExclusionPatternsT = Aws::Vector<Aws::String>>
+    WorkDocsConfiguration& WithExclusionPatterns(ExclusionPatternsT&& value) { SetExclusionPatterns(std::forward<ExclusionPatternsT>(value)); return *this;}
+    template<typename ExclusionPatternsT = Aws::String>
+    WorkDocsConfiguration& AddExclusionPatterns(ExclusionPatternsT&& value) { m_exclusionPatternsHasBeenSet = true; m_exclusionPatterns.emplace_back(std::forward<ExclusionPatternsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -135,24 +131,24 @@ namespace Model
      * data source fields</a>. The Amazon WorkDocs data source field names must exist
      * in your Amazon WorkDocs custom metadata.</p>
      */
-    inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetFieldMappings() const{ return m_fieldMappings; }
+    inline const Aws::Vector<DataSourceToIndexFieldMapping>& GetFieldMappings() const { return m_fieldMappings; }
     inline bool FieldMappingsHasBeenSet() const { return m_fieldMappingsHasBeenSet; }
-    inline void SetFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings = value; }
-    inline void SetFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings = std::move(value); }
-    inline WorkDocsConfiguration& WithFieldMappings(const Aws::Vector<DataSourceToIndexFieldMapping>& value) { SetFieldMappings(value); return *this;}
-    inline WorkDocsConfiguration& WithFieldMappings(Aws::Vector<DataSourceToIndexFieldMapping>&& value) { SetFieldMappings(std::move(value)); return *this;}
-    inline WorkDocsConfiguration& AddFieldMappings(const DataSourceToIndexFieldMapping& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.push_back(value); return *this; }
-    inline WorkDocsConfiguration& AddFieldMappings(DataSourceToIndexFieldMapping&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.push_back(std::move(value)); return *this; }
+    template<typename FieldMappingsT = Aws::Vector<DataSourceToIndexFieldMapping>>
+    void SetFieldMappings(FieldMappingsT&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings = std::forward<FieldMappingsT>(value); }
+    template<typename FieldMappingsT = Aws::Vector<DataSourceToIndexFieldMapping>>
+    WorkDocsConfiguration& WithFieldMappings(FieldMappingsT&& value) { SetFieldMappings(std::forward<FieldMappingsT>(value)); return *this;}
+    template<typename FieldMappingsT = DataSourceToIndexFieldMapping>
+    WorkDocsConfiguration& AddFieldMappings(FieldMappingsT&& value) { m_fieldMappingsHasBeenSet = true; m_fieldMappings.emplace_back(std::forward<FieldMappingsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_organizationId;
     bool m_organizationIdHasBeenSet = false;
 
-    bool m_crawlComments;
+    bool m_crawlComments{false};
     bool m_crawlCommentsHasBeenSet = false;
 
-    bool m_useChangeLog;
+    bool m_useChangeLog{false};
     bool m_useChangeLogHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_inclusionPatterns;

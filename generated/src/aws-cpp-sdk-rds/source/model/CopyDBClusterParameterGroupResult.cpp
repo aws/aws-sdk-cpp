@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CopyDBClusterParameterGroupResult::CopyDBClusterParameterGroupResult()
-{
-}
-
 CopyDBClusterParameterGroupResult::CopyDBClusterParameterGroupResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ CopyDBClusterParameterGroupResult& CopyDBClusterParameterGroupResult::operator =
     if(!dBClusterParameterGroupNode.IsNull())
     {
       m_dBClusterParameterGroup = dBClusterParameterGroupNode;
+      m_dBClusterParameterGroupHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::CopyDBClusterParameterGroupResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

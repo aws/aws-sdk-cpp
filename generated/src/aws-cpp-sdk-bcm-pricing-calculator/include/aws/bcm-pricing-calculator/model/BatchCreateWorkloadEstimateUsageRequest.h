@@ -24,7 +24,7 @@ namespace Model
   class BatchCreateWorkloadEstimateUsageRequest : public BCMPricingCalculatorRequest
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API BatchCreateWorkloadEstimateUsageRequest();
+    AWS_BCMPRICINGCALCULATOR_API BatchCreateWorkloadEstimateUsageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,26 @@ namespace Model
      * <p> The ID of the Workload estimate for which you want to create the modeled
      * usage. </p>
      */
-    inline const Aws::String& GetWorkloadEstimateId() const{ return m_workloadEstimateId; }
+    inline const Aws::String& GetWorkloadEstimateId() const { return m_workloadEstimateId; }
     inline bool WorkloadEstimateIdHasBeenSet() const { return m_workloadEstimateIdHasBeenSet; }
-    inline void SetWorkloadEstimateId(const Aws::String& value) { m_workloadEstimateIdHasBeenSet = true; m_workloadEstimateId = value; }
-    inline void SetWorkloadEstimateId(Aws::String&& value) { m_workloadEstimateIdHasBeenSet = true; m_workloadEstimateId = std::move(value); }
-    inline void SetWorkloadEstimateId(const char* value) { m_workloadEstimateIdHasBeenSet = true; m_workloadEstimateId.assign(value); }
-    inline BatchCreateWorkloadEstimateUsageRequest& WithWorkloadEstimateId(const Aws::String& value) { SetWorkloadEstimateId(value); return *this;}
-    inline BatchCreateWorkloadEstimateUsageRequest& WithWorkloadEstimateId(Aws::String&& value) { SetWorkloadEstimateId(std::move(value)); return *this;}
-    inline BatchCreateWorkloadEstimateUsageRequest& WithWorkloadEstimateId(const char* value) { SetWorkloadEstimateId(value); return *this;}
+    template<typename WorkloadEstimateIdT = Aws::String>
+    void SetWorkloadEstimateId(WorkloadEstimateIdT&& value) { m_workloadEstimateIdHasBeenSet = true; m_workloadEstimateId = std::forward<WorkloadEstimateIdT>(value); }
+    template<typename WorkloadEstimateIdT = Aws::String>
+    BatchCreateWorkloadEstimateUsageRequest& WithWorkloadEstimateId(WorkloadEstimateIdT&& value) { SetWorkloadEstimateId(std::forward<WorkloadEstimateIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> List of usage that you want to model in the Workload estimate. </p>
      */
-    inline const Aws::Vector<BatchCreateWorkloadEstimateUsageEntry>& GetUsage() const{ return m_usage; }
+    inline const Aws::Vector<BatchCreateWorkloadEstimateUsageEntry>& GetUsage() const { return m_usage; }
     inline bool UsageHasBeenSet() const { return m_usageHasBeenSet; }
-    inline void SetUsage(const Aws::Vector<BatchCreateWorkloadEstimateUsageEntry>& value) { m_usageHasBeenSet = true; m_usage = value; }
-    inline void SetUsage(Aws::Vector<BatchCreateWorkloadEstimateUsageEntry>&& value) { m_usageHasBeenSet = true; m_usage = std::move(value); }
-    inline BatchCreateWorkloadEstimateUsageRequest& WithUsage(const Aws::Vector<BatchCreateWorkloadEstimateUsageEntry>& value) { SetUsage(value); return *this;}
-    inline BatchCreateWorkloadEstimateUsageRequest& WithUsage(Aws::Vector<BatchCreateWorkloadEstimateUsageEntry>&& value) { SetUsage(std::move(value)); return *this;}
-    inline BatchCreateWorkloadEstimateUsageRequest& AddUsage(const BatchCreateWorkloadEstimateUsageEntry& value) { m_usageHasBeenSet = true; m_usage.push_back(value); return *this; }
-    inline BatchCreateWorkloadEstimateUsageRequest& AddUsage(BatchCreateWorkloadEstimateUsageEntry&& value) { m_usageHasBeenSet = true; m_usage.push_back(std::move(value)); return *this; }
+    template<typename UsageT = Aws::Vector<BatchCreateWorkloadEstimateUsageEntry>>
+    void SetUsage(UsageT&& value) { m_usageHasBeenSet = true; m_usage = std::forward<UsageT>(value); }
+    template<typename UsageT = Aws::Vector<BatchCreateWorkloadEstimateUsageEntry>>
+    BatchCreateWorkloadEstimateUsageRequest& WithUsage(UsageT&& value) { SetUsage(std::forward<UsageT>(value)); return *this;}
+    template<typename UsageT = BatchCreateWorkloadEstimateUsageEntry>
+    BatchCreateWorkloadEstimateUsageRequest& AddUsage(UsageT&& value) { m_usageHasBeenSet = true; m_usage.emplace_back(std::forward<UsageT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * <p> A unique, case-sensitive identifier that you provide to ensure the
      * idempotency of the request. </p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline BatchCreateWorkloadEstimateUsageRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline BatchCreateWorkloadEstimateUsageRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline BatchCreateWorkloadEstimateUsageRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    BatchCreateWorkloadEstimateUsageRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

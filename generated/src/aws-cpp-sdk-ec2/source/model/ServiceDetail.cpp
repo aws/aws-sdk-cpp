@@ -20,33 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ServiceDetail::ServiceDetail() : 
-    m_serviceNameHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
-    m_serviceTypeHasBeenSet(false),
-    m_serviceRegionHasBeenSet(false),
-    m_availabilityZonesHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_baseEndpointDnsNamesHasBeenSet(false),
-    m_privateDnsNameHasBeenSet(false),
-    m_privateDnsNamesHasBeenSet(false),
-    m_vpcEndpointPolicySupported(false),
-    m_vpcEndpointPolicySupportedHasBeenSet(false),
-    m_acceptanceRequired(false),
-    m_acceptanceRequiredHasBeenSet(false),
-    m_managesVpcEndpoints(false),
-    m_managesVpcEndpointsHasBeenSet(false),
-    m_payerResponsibility(PayerResponsibility::NOT_SET),
-    m_payerResponsibilityHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_privateDnsNameVerificationState(DnsNameState::NOT_SET),
-    m_privateDnsNameVerificationStateHasBeenSet(false),
-    m_supportedIpAddressTypesHasBeenSet(false)
-{
-}
-
 ServiceDetail::ServiceDetail(const XmlNode& xmlNode)
-  : ServiceDetail()
 {
   *this = xmlNode;
 }
@@ -73,6 +47,7 @@ ServiceDetail& ServiceDetail::operator =(const XmlNode& xmlNode)
     if(!serviceTypeNode.IsNull())
     {
       XmlNode serviceTypeMember = serviceTypeNode.FirstChild("item");
+      m_serviceTypeHasBeenSet = !serviceTypeMember.IsNull();
       while(!serviceTypeMember.IsNull())
       {
         m_serviceType.push_back(serviceTypeMember);
@@ -91,6 +66,7 @@ ServiceDetail& ServiceDetail::operator =(const XmlNode& xmlNode)
     if(!availabilityZonesNode.IsNull())
     {
       XmlNode availabilityZonesMember = availabilityZonesNode.FirstChild("item");
+      m_availabilityZonesHasBeenSet = !availabilityZonesMember.IsNull();
       while(!availabilityZonesMember.IsNull())
       {
         m_availabilityZones.push_back(availabilityZonesMember.GetText());
@@ -109,6 +85,7 @@ ServiceDetail& ServiceDetail::operator =(const XmlNode& xmlNode)
     if(!baseEndpointDnsNamesNode.IsNull())
     {
       XmlNode baseEndpointDnsNamesMember = baseEndpointDnsNamesNode.FirstChild("item");
+      m_baseEndpointDnsNamesHasBeenSet = !baseEndpointDnsNamesMember.IsNull();
       while(!baseEndpointDnsNamesMember.IsNull())
       {
         m_baseEndpointDnsNames.push_back(baseEndpointDnsNamesMember.GetText());
@@ -127,6 +104,7 @@ ServiceDetail& ServiceDetail::operator =(const XmlNode& xmlNode)
     if(!privateDnsNamesNode.IsNull())
     {
       XmlNode privateDnsNamesMember = privateDnsNamesNode.FirstChild("item");
+      m_privateDnsNamesHasBeenSet = !privateDnsNamesMember.IsNull();
       while(!privateDnsNamesMember.IsNull())
       {
         m_privateDnsNames.push_back(privateDnsNamesMember);
@@ -156,13 +134,14 @@ ServiceDetail& ServiceDetail::operator =(const XmlNode& xmlNode)
     XmlNode payerResponsibilityNode = resultNode.FirstChild("payerResponsibility");
     if(!payerResponsibilityNode.IsNull())
     {
-      m_payerResponsibility = PayerResponsibilityMapper::GetPayerResponsibilityForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(payerResponsibilityNode.GetText()).c_str()).c_str());
+      m_payerResponsibility = PayerResponsibilityMapper::GetPayerResponsibilityForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(payerResponsibilityNode.GetText()).c_str()));
       m_payerResponsibilityHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -174,13 +153,14 @@ ServiceDetail& ServiceDetail::operator =(const XmlNode& xmlNode)
     XmlNode privateDnsNameVerificationStateNode = resultNode.FirstChild("privateDnsNameVerificationState");
     if(!privateDnsNameVerificationStateNode.IsNull())
     {
-      m_privateDnsNameVerificationState = DnsNameStateMapper::GetDnsNameStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(privateDnsNameVerificationStateNode.GetText()).c_str()).c_str());
+      m_privateDnsNameVerificationState = DnsNameStateMapper::GetDnsNameStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(privateDnsNameVerificationStateNode.GetText()).c_str()));
       m_privateDnsNameVerificationStateHasBeenSet = true;
     }
     XmlNode supportedIpAddressTypesNode = resultNode.FirstChild("supportedIpAddressTypeSet");
     if(!supportedIpAddressTypesNode.IsNull())
     {
       XmlNode supportedIpAddressTypesMember = supportedIpAddressTypesNode.FirstChild("item");
+      m_supportedIpAddressTypesHasBeenSet = !supportedIpAddressTypesMember.IsNull();
       while(!supportedIpAddressTypesMember.IsNull())
       {
         m_supportedIpAddressTypes.push_back(ServiceConnectivityTypeMapper::GetServiceConnectivityTypeForName(StringUtils::Trim(supportedIpAddressTypesMember.GetText().c_str())));

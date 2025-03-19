@@ -10,10 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribeStorageRequest::DescribeStorageRequest()
-{
-}
-
 Aws::String DescribeStorageRequest::SerializePayload() const
 {
   Aws::StringStream ss;

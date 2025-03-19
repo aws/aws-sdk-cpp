@@ -33,7 +33,7 @@ namespace Model
   class PatchRule
   {
   public:
-    AWS_SSM_API PatchRule();
+    AWS_SSM_API PatchRule() = default;
     AWS_SSM_API PatchRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API PatchRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,22 @@ namespace Model
     /**
      * <p>The patch filter group that defines the criteria for the rule.</p>
      */
-    inline const PatchFilterGroup& GetPatchFilterGroup() const{ return m_patchFilterGroup; }
+    inline const PatchFilterGroup& GetPatchFilterGroup() const { return m_patchFilterGroup; }
     inline bool PatchFilterGroupHasBeenSet() const { return m_patchFilterGroupHasBeenSet; }
-    inline void SetPatchFilterGroup(const PatchFilterGroup& value) { m_patchFilterGroupHasBeenSet = true; m_patchFilterGroup = value; }
-    inline void SetPatchFilterGroup(PatchFilterGroup&& value) { m_patchFilterGroupHasBeenSet = true; m_patchFilterGroup = std::move(value); }
-    inline PatchRule& WithPatchFilterGroup(const PatchFilterGroup& value) { SetPatchFilterGroup(value); return *this;}
-    inline PatchRule& WithPatchFilterGroup(PatchFilterGroup&& value) { SetPatchFilterGroup(std::move(value)); return *this;}
+    template<typename PatchFilterGroupT = PatchFilterGroup>
+    void SetPatchFilterGroup(PatchFilterGroupT&& value) { m_patchFilterGroupHasBeenSet = true; m_patchFilterGroup = std::forward<PatchFilterGroupT>(value); }
+    template<typename PatchFilterGroupT = PatchFilterGroup>
+    PatchRule& WithPatchFilterGroup(PatchFilterGroupT&& value) { SetPatchFilterGroup(std::forward<PatchFilterGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A compliance severity level for all approved patches in a patch baseline.</p>
      */
-    inline const PatchComplianceLevel& GetComplianceLevel() const{ return m_complianceLevel; }
+    inline PatchComplianceLevel GetComplianceLevel() const { return m_complianceLevel; }
     inline bool ComplianceLevelHasBeenSet() const { return m_complianceLevelHasBeenSet; }
-    inline void SetComplianceLevel(const PatchComplianceLevel& value) { m_complianceLevelHasBeenSet = true; m_complianceLevel = value; }
-    inline void SetComplianceLevel(PatchComplianceLevel&& value) { m_complianceLevelHasBeenSet = true; m_complianceLevel = std::move(value); }
-    inline PatchRule& WithComplianceLevel(const PatchComplianceLevel& value) { SetComplianceLevel(value); return *this;}
-    inline PatchRule& WithComplianceLevel(PatchComplianceLevel&& value) { SetComplianceLevel(std::move(value)); return *this;}
+    inline void SetComplianceLevel(PatchComplianceLevel value) { m_complianceLevelHasBeenSet = true; m_complianceLevel = value; }
+    inline PatchRule& WithComplianceLevel(PatchComplianceLevel value) { SetComplianceLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -80,7 +78,7 @@ namespace Model
      * security patches are selected</a> in the <i>Amazon Web Services Systems Manager
      * User Guide</i>.</p> 
      */
-    inline int GetApproveAfterDays() const{ return m_approveAfterDays; }
+    inline int GetApproveAfterDays() const { return m_approveAfterDays; }
     inline bool ApproveAfterDaysHasBeenSet() const { return m_approveAfterDaysHasBeenSet; }
     inline void SetApproveAfterDays(int value) { m_approveAfterDaysHasBeenSet = true; m_approveAfterDays = value; }
     inline PatchRule& WithApproveAfterDays(int value) { SetApproveAfterDays(value); return *this;}
@@ -103,14 +101,12 @@ namespace Model
      * security patches are selected</a> in the <i>Amazon Web Services Systems Manager
      * User Guide</i>.</p> 
      */
-    inline const Aws::String& GetApproveUntilDate() const{ return m_approveUntilDate; }
+    inline const Aws::String& GetApproveUntilDate() const { return m_approveUntilDate; }
     inline bool ApproveUntilDateHasBeenSet() const { return m_approveUntilDateHasBeenSet; }
-    inline void SetApproveUntilDate(const Aws::String& value) { m_approveUntilDateHasBeenSet = true; m_approveUntilDate = value; }
-    inline void SetApproveUntilDate(Aws::String&& value) { m_approveUntilDateHasBeenSet = true; m_approveUntilDate = std::move(value); }
-    inline void SetApproveUntilDate(const char* value) { m_approveUntilDateHasBeenSet = true; m_approveUntilDate.assign(value); }
-    inline PatchRule& WithApproveUntilDate(const Aws::String& value) { SetApproveUntilDate(value); return *this;}
-    inline PatchRule& WithApproveUntilDate(Aws::String&& value) { SetApproveUntilDate(std::move(value)); return *this;}
-    inline PatchRule& WithApproveUntilDate(const char* value) { SetApproveUntilDate(value); return *this;}
+    template<typename ApproveUntilDateT = Aws::String>
+    void SetApproveUntilDate(ApproveUntilDateT&& value) { m_approveUntilDateHasBeenSet = true; m_approveUntilDate = std::forward<ApproveUntilDateT>(value); }
+    template<typename ApproveUntilDateT = Aws::String>
+    PatchRule& WithApproveUntilDate(ApproveUntilDateT&& value) { SetApproveUntilDate(std::forward<ApproveUntilDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,7 +116,7 @@ namespace Model
      * The default value is <code>false</code>. Applies to Linux managed nodes
      * only.</p>
      */
-    inline bool GetEnableNonSecurity() const{ return m_enableNonSecurity; }
+    inline bool GetEnableNonSecurity() const { return m_enableNonSecurity; }
     inline bool EnableNonSecurityHasBeenSet() const { return m_enableNonSecurityHasBeenSet; }
     inline void SetEnableNonSecurity(bool value) { m_enableNonSecurityHasBeenSet = true; m_enableNonSecurity = value; }
     inline PatchRule& WithEnableNonSecurity(bool value) { SetEnableNonSecurity(value); return *this;}
@@ -130,16 +126,16 @@ namespace Model
     PatchFilterGroup m_patchFilterGroup;
     bool m_patchFilterGroupHasBeenSet = false;
 
-    PatchComplianceLevel m_complianceLevel;
+    PatchComplianceLevel m_complianceLevel{PatchComplianceLevel::NOT_SET};
     bool m_complianceLevelHasBeenSet = false;
 
-    int m_approveAfterDays;
+    int m_approveAfterDays{0};
     bool m_approveAfterDaysHasBeenSet = false;
 
     Aws::String m_approveUntilDate;
     bool m_approveUntilDateHasBeenSet = false;
 
-    bool m_enableNonSecurity;
+    bool m_enableNonSecurity{false};
     bool m_enableNonSecurityHasBeenSet = false;
   };
 

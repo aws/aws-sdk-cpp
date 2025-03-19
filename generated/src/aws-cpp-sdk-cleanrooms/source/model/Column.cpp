@@ -18,14 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-Column::Column() : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 Column::Column(JsonView jsonValue)
-  : Column()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Column& Column::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

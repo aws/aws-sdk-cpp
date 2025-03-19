@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateWhatIfAnalysisResult::CreateWhatIfAnalysisResult()
-{
-}
-
 CreateWhatIfAnalysisResult::CreateWhatIfAnalysisResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateWhatIfAnalysisResult& CreateWhatIfAnalysisResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("WhatIfAnalysisArn"))
   {
     m_whatIfAnalysisArn = jsonValue.GetString("WhatIfAnalysisArn");
-
+    m_whatIfAnalysisArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

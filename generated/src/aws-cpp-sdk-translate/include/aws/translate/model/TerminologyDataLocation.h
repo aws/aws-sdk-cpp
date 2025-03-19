@@ -31,7 +31,7 @@ namespace Model
   class TerminologyDataLocation
   {
   public:
-    AWS_TRANSLATE_API TerminologyDataLocation();
+    AWS_TRANSLATE_API TerminologyDataLocation() = default;
     AWS_TRANSLATE_API TerminologyDataLocation(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSLATE_API TerminologyDataLocation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The repository type for the custom terminology data.</p>
      */
-    inline const Aws::String& GetRepositoryType() const{ return m_repositoryType; }
+    inline const Aws::String& GetRepositoryType() const { return m_repositoryType; }
     inline bool RepositoryTypeHasBeenSet() const { return m_repositoryTypeHasBeenSet; }
-    inline void SetRepositoryType(const Aws::String& value) { m_repositoryTypeHasBeenSet = true; m_repositoryType = value; }
-    inline void SetRepositoryType(Aws::String&& value) { m_repositoryTypeHasBeenSet = true; m_repositoryType = std::move(value); }
-    inline void SetRepositoryType(const char* value) { m_repositoryTypeHasBeenSet = true; m_repositoryType.assign(value); }
-    inline TerminologyDataLocation& WithRepositoryType(const Aws::String& value) { SetRepositoryType(value); return *this;}
-    inline TerminologyDataLocation& WithRepositoryType(Aws::String&& value) { SetRepositoryType(std::move(value)); return *this;}
-    inline TerminologyDataLocation& WithRepositoryType(const char* value) { SetRepositoryType(value); return *this;}
+    template<typename RepositoryTypeT = Aws::String>
+    void SetRepositoryType(RepositoryTypeT&& value) { m_repositoryTypeHasBeenSet = true; m_repositoryType = std::forward<RepositoryTypeT>(value); }
+    template<typename RepositoryTypeT = Aws::String>
+    TerminologyDataLocation& WithRepositoryType(RepositoryTypeT&& value) { SetRepositoryType(std::forward<RepositoryTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * <p>Before you download an input file from Amazon S3, ensure that you recognize
      * the file and trust its creator.</p> 
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline TerminologyDataLocation& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline TerminologyDataLocation& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline TerminologyDataLocation& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    TerminologyDataLocation& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
   private:
 

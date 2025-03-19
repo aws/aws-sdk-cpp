@@ -26,7 +26,7 @@ namespace Model
   class CreateExperimentRequest : public CloudWatchEvidentlyRequest
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API CreateExperimentRequest();
+    AWS_CLOUDWATCHEVIDENTLY_API CreateExperimentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>An optional description of the experiment.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateExperimentRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateExperimentRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateExperimentRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateExperimentRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,28 +54,26 @@ namespace Model
      * <p>An array of structures that defines the metrics used for the experiment, and
      * whether a higher or lower value for each metric is the goal.</p>
      */
-    inline const Aws::Vector<MetricGoalConfig>& GetMetricGoals() const{ return m_metricGoals; }
+    inline const Aws::Vector<MetricGoalConfig>& GetMetricGoals() const { return m_metricGoals; }
     inline bool MetricGoalsHasBeenSet() const { return m_metricGoalsHasBeenSet; }
-    inline void SetMetricGoals(const Aws::Vector<MetricGoalConfig>& value) { m_metricGoalsHasBeenSet = true; m_metricGoals = value; }
-    inline void SetMetricGoals(Aws::Vector<MetricGoalConfig>&& value) { m_metricGoalsHasBeenSet = true; m_metricGoals = std::move(value); }
-    inline CreateExperimentRequest& WithMetricGoals(const Aws::Vector<MetricGoalConfig>& value) { SetMetricGoals(value); return *this;}
-    inline CreateExperimentRequest& WithMetricGoals(Aws::Vector<MetricGoalConfig>&& value) { SetMetricGoals(std::move(value)); return *this;}
-    inline CreateExperimentRequest& AddMetricGoals(const MetricGoalConfig& value) { m_metricGoalsHasBeenSet = true; m_metricGoals.push_back(value); return *this; }
-    inline CreateExperimentRequest& AddMetricGoals(MetricGoalConfig&& value) { m_metricGoalsHasBeenSet = true; m_metricGoals.push_back(std::move(value)); return *this; }
+    template<typename MetricGoalsT = Aws::Vector<MetricGoalConfig>>
+    void SetMetricGoals(MetricGoalsT&& value) { m_metricGoalsHasBeenSet = true; m_metricGoals = std::forward<MetricGoalsT>(value); }
+    template<typename MetricGoalsT = Aws::Vector<MetricGoalConfig>>
+    CreateExperimentRequest& WithMetricGoals(MetricGoalsT&& value) { SetMetricGoals(std::forward<MetricGoalsT>(value)); return *this;}
+    template<typename MetricGoalsT = MetricGoalConfig>
+    CreateExperimentRequest& AddMetricGoals(MetricGoalsT&& value) { m_metricGoalsHasBeenSet = true; m_metricGoals.emplace_back(std::forward<MetricGoalsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A name for the new experiment.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateExperimentRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateExperimentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateExperimentRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateExperimentRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +83,12 @@ namespace Model
      * variations. This structure also specifies how much experiment traffic is
      * allocated to each variation.</p>
      */
-    inline const OnlineAbConfig& GetOnlineAbConfig() const{ return m_onlineAbConfig; }
+    inline const OnlineAbConfig& GetOnlineAbConfig() const { return m_onlineAbConfig; }
     inline bool OnlineAbConfigHasBeenSet() const { return m_onlineAbConfigHasBeenSet; }
-    inline void SetOnlineAbConfig(const OnlineAbConfig& value) { m_onlineAbConfigHasBeenSet = true; m_onlineAbConfig = value; }
-    inline void SetOnlineAbConfig(OnlineAbConfig&& value) { m_onlineAbConfigHasBeenSet = true; m_onlineAbConfig = std::move(value); }
-    inline CreateExperimentRequest& WithOnlineAbConfig(const OnlineAbConfig& value) { SetOnlineAbConfig(value); return *this;}
-    inline CreateExperimentRequest& WithOnlineAbConfig(OnlineAbConfig&& value) { SetOnlineAbConfig(std::move(value)); return *this;}
+    template<typename OnlineAbConfigT = OnlineAbConfig>
+    void SetOnlineAbConfig(OnlineAbConfigT&& value) { m_onlineAbConfigHasBeenSet = true; m_onlineAbConfig = std::forward<OnlineAbConfigT>(value); }
+    template<typename OnlineAbConfigT = OnlineAbConfig>
+    CreateExperimentRequest& WithOnlineAbConfig(OnlineAbConfigT&& value) { SetOnlineAbConfig(std::forward<OnlineAbConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,14 +96,12 @@ namespace Model
      * <p>The name or ARN of the project that you want to create the new experiment
      * in.</p>
      */
-    inline const Aws::String& GetProject() const{ return m_project; }
+    inline const Aws::String& GetProject() const { return m_project; }
     inline bool ProjectHasBeenSet() const { return m_projectHasBeenSet; }
-    inline void SetProject(const Aws::String& value) { m_projectHasBeenSet = true; m_project = value; }
-    inline void SetProject(Aws::String&& value) { m_projectHasBeenSet = true; m_project = std::move(value); }
-    inline void SetProject(const char* value) { m_projectHasBeenSet = true; m_project.assign(value); }
-    inline CreateExperimentRequest& WithProject(const Aws::String& value) { SetProject(value); return *this;}
-    inline CreateExperimentRequest& WithProject(Aws::String&& value) { SetProject(std::move(value)); return *this;}
-    inline CreateExperimentRequest& WithProject(const char* value) { SetProject(value); return *this;}
+    template<typename ProjectT = Aws::String>
+    void SetProject(ProjectT&& value) { m_projectHasBeenSet = true; m_project = std::forward<ProjectT>(value); }
+    template<typename ProjectT = Aws::String>
+    CreateExperimentRequest& WithProject(ProjectT&& value) { SetProject(std::forward<ProjectT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,14 +112,12 @@ namespace Model
      * <code>randomizationSalt</code>. If you omit <code>randomizationSalt</code>,
      * Evidently uses the experiment name as the <code>randomizationSalt</code>.</p>
      */
-    inline const Aws::String& GetRandomizationSalt() const{ return m_randomizationSalt; }
+    inline const Aws::String& GetRandomizationSalt() const { return m_randomizationSalt; }
     inline bool RandomizationSaltHasBeenSet() const { return m_randomizationSaltHasBeenSet; }
-    inline void SetRandomizationSalt(const Aws::String& value) { m_randomizationSaltHasBeenSet = true; m_randomizationSalt = value; }
-    inline void SetRandomizationSalt(Aws::String&& value) { m_randomizationSaltHasBeenSet = true; m_randomizationSalt = std::move(value); }
-    inline void SetRandomizationSalt(const char* value) { m_randomizationSaltHasBeenSet = true; m_randomizationSalt.assign(value); }
-    inline CreateExperimentRequest& WithRandomizationSalt(const Aws::String& value) { SetRandomizationSalt(value); return *this;}
-    inline CreateExperimentRequest& WithRandomizationSalt(Aws::String&& value) { SetRandomizationSalt(std::move(value)); return *this;}
-    inline CreateExperimentRequest& WithRandomizationSalt(const char* value) { SetRandomizationSalt(value); return *this;}
+    template<typename RandomizationSaltT = Aws::String>
+    void SetRandomizationSalt(RandomizationSaltT&& value) { m_randomizationSaltHasBeenSet = true; m_randomizationSalt = std::forward<RandomizationSaltT>(value); }
+    template<typename RandomizationSaltT = Aws::String>
+    CreateExperimentRequest& WithRandomizationSalt(RandomizationSaltT&& value) { SetRandomizationSalt(std::forward<RandomizationSaltT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,7 +129,7 @@ namespace Model
      * percent. For example, specify 10,000 to allocate 10% of the available
      * audience.</p>
      */
-    inline long long GetSamplingRate() const{ return m_samplingRate; }
+    inline long long GetSamplingRate() const { return m_samplingRate; }
     inline bool SamplingRateHasBeenSet() const { return m_samplingRateHasBeenSet; }
     inline void SetSamplingRate(long long value) { m_samplingRateHasBeenSet = true; m_samplingRate = value; }
     inline CreateExperimentRequest& WithSamplingRate(long long value) { SetSamplingRate(value); return *this;}
@@ -149,14 +141,12 @@ namespace Model
      * is used in an experiment, only user sessions that match the segment pattern are
      * used in the experiment.</p>
      */
-    inline const Aws::String& GetSegment() const{ return m_segment; }
+    inline const Aws::String& GetSegment() const { return m_segment; }
     inline bool SegmentHasBeenSet() const { return m_segmentHasBeenSet; }
-    inline void SetSegment(const Aws::String& value) { m_segmentHasBeenSet = true; m_segment = value; }
-    inline void SetSegment(Aws::String&& value) { m_segmentHasBeenSet = true; m_segment = std::move(value); }
-    inline void SetSegment(const char* value) { m_segmentHasBeenSet = true; m_segment.assign(value); }
-    inline CreateExperimentRequest& WithSegment(const Aws::String& value) { SetSegment(value); return *this;}
-    inline CreateExperimentRequest& WithSegment(Aws::String&& value) { SetSegment(std::move(value)); return *this;}
-    inline CreateExperimentRequest& WithSegment(const char* value) { SetSegment(value); return *this;}
+    template<typename SegmentT = Aws::String>
+    void SetSegment(SegmentT&& value) { m_segmentHasBeenSet = true; m_segment = std::forward<SegmentT>(value); }
+    template<typename SegmentT = Aws::String>
+    CreateExperimentRequest& WithSegment(SegmentT&& value) { SetSegment(std::forward<SegmentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -171,19 +161,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services resources</a>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateExperimentRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateExperimentRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateExperimentRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateExperimentRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateExperimentRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateExperimentRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateExperimentRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateExperimentRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateExperimentRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateExperimentRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateExperimentRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -191,14 +178,14 @@ namespace Model
      * <p>An array of structures that describe the configuration of each feature
      * variation used in the experiment.</p>
      */
-    inline const Aws::Vector<TreatmentConfig>& GetTreatments() const{ return m_treatments; }
+    inline const Aws::Vector<TreatmentConfig>& GetTreatments() const { return m_treatments; }
     inline bool TreatmentsHasBeenSet() const { return m_treatmentsHasBeenSet; }
-    inline void SetTreatments(const Aws::Vector<TreatmentConfig>& value) { m_treatmentsHasBeenSet = true; m_treatments = value; }
-    inline void SetTreatments(Aws::Vector<TreatmentConfig>&& value) { m_treatmentsHasBeenSet = true; m_treatments = std::move(value); }
-    inline CreateExperimentRequest& WithTreatments(const Aws::Vector<TreatmentConfig>& value) { SetTreatments(value); return *this;}
-    inline CreateExperimentRequest& WithTreatments(Aws::Vector<TreatmentConfig>&& value) { SetTreatments(std::move(value)); return *this;}
-    inline CreateExperimentRequest& AddTreatments(const TreatmentConfig& value) { m_treatmentsHasBeenSet = true; m_treatments.push_back(value); return *this; }
-    inline CreateExperimentRequest& AddTreatments(TreatmentConfig&& value) { m_treatmentsHasBeenSet = true; m_treatments.push_back(std::move(value)); return *this; }
+    template<typename TreatmentsT = Aws::Vector<TreatmentConfig>>
+    void SetTreatments(TreatmentsT&& value) { m_treatmentsHasBeenSet = true; m_treatments = std::forward<TreatmentsT>(value); }
+    template<typename TreatmentsT = Aws::Vector<TreatmentConfig>>
+    CreateExperimentRequest& WithTreatments(TreatmentsT&& value) { SetTreatments(std::forward<TreatmentsT>(value)); return *this;}
+    template<typename TreatmentsT = TreatmentConfig>
+    CreateExperimentRequest& AddTreatments(TreatmentsT&& value) { m_treatmentsHasBeenSet = true; m_treatments.emplace_back(std::forward<TreatmentsT>(value)); return *this; }
     ///@}
   private:
 
@@ -220,7 +207,7 @@ namespace Model
     Aws::String m_randomizationSalt;
     bool m_randomizationSaltHasBeenSet = false;
 
-    long long m_samplingRate;
+    long long m_samplingRate{0};
     bool m_samplingRateHasBeenSet = false;
 
     Aws::String m_segment;

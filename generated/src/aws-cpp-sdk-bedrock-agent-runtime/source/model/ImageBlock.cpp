@@ -18,15 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-ImageBlock::ImageBlock() : 
-    m_format(ImageFormat::NOT_SET),
-    m_formatHasBeenSet(false),
-    m_sourceHasBeenSet(false)
-{
-}
-
 ImageBlock::ImageBlock(JsonView jsonValue)
-  : ImageBlock()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ImageBlock& ImageBlock::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("format"))
   {
     m_format = ImageFormatMapper::GetImageFormatForName(jsonValue.GetString("format"));
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetObject("source");
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

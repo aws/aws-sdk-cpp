@@ -12,15 +12,6 @@ using namespace Aws::SSM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteDocumentRequest::DeleteDocumentRequest() : 
-    m_nameHasBeenSet(false),
-    m_documentVersionHasBeenSet(false),
-    m_versionNameHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDocumentRequest::SerializePayload() const
 {
   JsonValue payload;

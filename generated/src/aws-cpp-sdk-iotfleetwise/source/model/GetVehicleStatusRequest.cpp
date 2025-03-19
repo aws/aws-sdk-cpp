@@ -12,14 +12,6 @@ using namespace Aws::IoTFleetWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetVehicleStatusRequest::GetVehicleStatusRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_vehicleNameHasBeenSet(false)
-{
-}
-
 Aws::String GetVehicleStatusRequest::SerializePayload() const
 {
   JsonValue payload;

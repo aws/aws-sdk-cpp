@@ -12,27 +12,6 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEndpointGroupRequest::CreateEndpointGroupRequest() : 
-    m_listenerArnHasBeenSet(false),
-    m_endpointGroupRegionHasBeenSet(false),
-    m_endpointConfigurationsHasBeenSet(false),
-    m_trafficDialPercentage(0.0),
-    m_trafficDialPercentageHasBeenSet(false),
-    m_healthCheckPort(0),
-    m_healthCheckPortHasBeenSet(false),
-    m_healthCheckProtocol(HealthCheckProtocol::NOT_SET),
-    m_healthCheckProtocolHasBeenSet(false),
-    m_healthCheckPathHasBeenSet(false),
-    m_healthCheckIntervalSeconds(0),
-    m_healthCheckIntervalSecondsHasBeenSet(false),
-    m_thresholdCount(0),
-    m_thresholdCountHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_idempotencyTokenHasBeenSet(true),
-    m_portOverridesHasBeenSet(false)
-{
-}
-
 Aws::String CreateEndpointGroupRequest::SerializePayload() const
 {
   JsonValue payload;

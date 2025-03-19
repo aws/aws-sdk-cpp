@@ -18,15 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-AIAgentVersionSummary::AIAgentVersionSummary() : 
-    m_aiAgentSummaryHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false)
-{
-}
-
 AIAgentVersionSummary::AIAgentVersionSummary(JsonView jsonValue)
-  : AIAgentVersionSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AIAgentVersionSummary& AIAgentVersionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("aiAgentSummary"))
   {
     m_aiAgentSummary = jsonValue.GetObject("aiAgentSummary");
-
     m_aiAgentSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionNumber"))
   {
     m_versionNumber = jsonValue.GetInt64("versionNumber");
-
     m_versionNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

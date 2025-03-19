@@ -26,7 +26,7 @@ namespace Model
   class CreateMembershipRequest : public SecurityIRRequest
   {
   public:
-    AWS_SECURITYIR_API CreateMembershipRequest();
+    AWS_SECURITYIR_API CreateMembershipRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>An optional element used in combination with CreateMembership.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateMembershipRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateMembershipRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateMembershipRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateMembershipRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <p>Required element use in combination with CreateMembership to create a name
      * for the membership.</p>
      */
-    inline const Aws::String& GetMembershipName() const{ return m_membershipName; }
+    inline const Aws::String& GetMembershipName() const { return m_membershipName; }
     inline bool MembershipNameHasBeenSet() const { return m_membershipNameHasBeenSet; }
-    inline void SetMembershipName(const Aws::String& value) { m_membershipNameHasBeenSet = true; m_membershipName = value; }
-    inline void SetMembershipName(Aws::String&& value) { m_membershipNameHasBeenSet = true; m_membershipName = std::move(value); }
-    inline void SetMembershipName(const char* value) { m_membershipNameHasBeenSet = true; m_membershipName.assign(value); }
-    inline CreateMembershipRequest& WithMembershipName(const Aws::String& value) { SetMembershipName(value); return *this;}
-    inline CreateMembershipRequest& WithMembershipName(Aws::String&& value) { SetMembershipName(std::move(value)); return *this;}
-    inline CreateMembershipRequest& WithMembershipName(const char* value) { SetMembershipName(value); return *this;}
+    template<typename MembershipNameT = Aws::String>
+    void SetMembershipName(MembershipNameT&& value) { m_membershipNameHasBeenSet = true; m_membershipName = std::forward<MembershipNameT>(value); }
+    template<typename MembershipNameT = Aws::String>
+    CreateMembershipRequest& WithMembershipName(MembershipNameT&& value) { SetMembershipName(std::forward<MembershipNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +67,14 @@ namespace Model
      * <p>Required element use in combination with CreateMembership to add customer
      * incident response team members and trusted partners to the membership. </p>
      */
-    inline const Aws::Vector<IncidentResponder>& GetIncidentResponseTeam() const{ return m_incidentResponseTeam; }
+    inline const Aws::Vector<IncidentResponder>& GetIncidentResponseTeam() const { return m_incidentResponseTeam; }
     inline bool IncidentResponseTeamHasBeenSet() const { return m_incidentResponseTeamHasBeenSet; }
-    inline void SetIncidentResponseTeam(const Aws::Vector<IncidentResponder>& value) { m_incidentResponseTeamHasBeenSet = true; m_incidentResponseTeam = value; }
-    inline void SetIncidentResponseTeam(Aws::Vector<IncidentResponder>&& value) { m_incidentResponseTeamHasBeenSet = true; m_incidentResponseTeam = std::move(value); }
-    inline CreateMembershipRequest& WithIncidentResponseTeam(const Aws::Vector<IncidentResponder>& value) { SetIncidentResponseTeam(value); return *this;}
-    inline CreateMembershipRequest& WithIncidentResponseTeam(Aws::Vector<IncidentResponder>&& value) { SetIncidentResponseTeam(std::move(value)); return *this;}
-    inline CreateMembershipRequest& AddIncidentResponseTeam(const IncidentResponder& value) { m_incidentResponseTeamHasBeenSet = true; m_incidentResponseTeam.push_back(value); return *this; }
-    inline CreateMembershipRequest& AddIncidentResponseTeam(IncidentResponder&& value) { m_incidentResponseTeamHasBeenSet = true; m_incidentResponseTeam.push_back(std::move(value)); return *this; }
+    template<typename IncidentResponseTeamT = Aws::Vector<IncidentResponder>>
+    void SetIncidentResponseTeam(IncidentResponseTeamT&& value) { m_incidentResponseTeamHasBeenSet = true; m_incidentResponseTeam = std::forward<IncidentResponseTeamT>(value); }
+    template<typename IncidentResponseTeamT = Aws::Vector<IncidentResponder>>
+    CreateMembershipRequest& WithIncidentResponseTeam(IncidentResponseTeamT&& value) { SetIncidentResponseTeam(std::forward<IncidentResponseTeamT>(value)); return *this;}
+    template<typename IncidentResponseTeamT = IncidentResponder>
+    CreateMembershipRequest& AddIncidentResponseTeam(IncidentResponseTeamT&& value) { m_incidentResponseTeamHasBeenSet = true; m_incidentResponseTeam.emplace_back(std::forward<IncidentResponseTeamT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -86,33 +82,30 @@ namespace Model
      * <p>Optional element to enable the monitoring and investigation opt-in features
      * for the service.</p>
      */
-    inline const Aws::Vector<OptInFeature>& GetOptInFeatures() const{ return m_optInFeatures; }
+    inline const Aws::Vector<OptInFeature>& GetOptInFeatures() const { return m_optInFeatures; }
     inline bool OptInFeaturesHasBeenSet() const { return m_optInFeaturesHasBeenSet; }
-    inline void SetOptInFeatures(const Aws::Vector<OptInFeature>& value) { m_optInFeaturesHasBeenSet = true; m_optInFeatures = value; }
-    inline void SetOptInFeatures(Aws::Vector<OptInFeature>&& value) { m_optInFeaturesHasBeenSet = true; m_optInFeatures = std::move(value); }
-    inline CreateMembershipRequest& WithOptInFeatures(const Aws::Vector<OptInFeature>& value) { SetOptInFeatures(value); return *this;}
-    inline CreateMembershipRequest& WithOptInFeatures(Aws::Vector<OptInFeature>&& value) { SetOptInFeatures(std::move(value)); return *this;}
-    inline CreateMembershipRequest& AddOptInFeatures(const OptInFeature& value) { m_optInFeaturesHasBeenSet = true; m_optInFeatures.push_back(value); return *this; }
-    inline CreateMembershipRequest& AddOptInFeatures(OptInFeature&& value) { m_optInFeaturesHasBeenSet = true; m_optInFeatures.push_back(std::move(value)); return *this; }
+    template<typename OptInFeaturesT = Aws::Vector<OptInFeature>>
+    void SetOptInFeatures(OptInFeaturesT&& value) { m_optInFeaturesHasBeenSet = true; m_optInFeatures = std::forward<OptInFeaturesT>(value); }
+    template<typename OptInFeaturesT = Aws::Vector<OptInFeature>>
+    CreateMembershipRequest& WithOptInFeatures(OptInFeaturesT&& value) { SetOptInFeatures(std::forward<OptInFeaturesT>(value)); return *this;}
+    template<typename OptInFeaturesT = OptInFeature>
+    CreateMembershipRequest& AddOptInFeatures(OptInFeaturesT&& value) { m_optInFeaturesHasBeenSet = true; m_optInFeatures.emplace_back(std::forward<OptInFeaturesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Optional element for customer configured tags.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateMembershipRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateMembershipRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateMembershipRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateMembershipRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateMembershipRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateMembershipRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateMembershipRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateMembershipRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateMembershipRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateMembershipRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateMembershipRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

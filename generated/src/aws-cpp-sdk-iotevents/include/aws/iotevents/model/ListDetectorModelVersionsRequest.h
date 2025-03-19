@@ -25,7 +25,7 @@ namespace Model
   class ListDetectorModelVersionsRequest : public IoTEventsRequest
   {
   public:
-    AWS_IOTEVENTS_API ListDetectorModelVersionsRequest();
+    AWS_IOTEVENTS_API ListDetectorModelVersionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,35 +42,31 @@ namespace Model
     /**
      * <p>The name of the detector model whose versions are returned.</p>
      */
-    inline const Aws::String& GetDetectorModelName() const{ return m_detectorModelName; }
+    inline const Aws::String& GetDetectorModelName() const { return m_detectorModelName; }
     inline bool DetectorModelNameHasBeenSet() const { return m_detectorModelNameHasBeenSet; }
-    inline void SetDetectorModelName(const Aws::String& value) { m_detectorModelNameHasBeenSet = true; m_detectorModelName = value; }
-    inline void SetDetectorModelName(Aws::String&& value) { m_detectorModelNameHasBeenSet = true; m_detectorModelName = std::move(value); }
-    inline void SetDetectorModelName(const char* value) { m_detectorModelNameHasBeenSet = true; m_detectorModelName.assign(value); }
-    inline ListDetectorModelVersionsRequest& WithDetectorModelName(const Aws::String& value) { SetDetectorModelName(value); return *this;}
-    inline ListDetectorModelVersionsRequest& WithDetectorModelName(Aws::String&& value) { SetDetectorModelName(std::move(value)); return *this;}
-    inline ListDetectorModelVersionsRequest& WithDetectorModelName(const char* value) { SetDetectorModelName(value); return *this;}
+    template<typename DetectorModelNameT = Aws::String>
+    void SetDetectorModelName(DetectorModelNameT&& value) { m_detectorModelNameHasBeenSet = true; m_detectorModelName = std::forward<DetectorModelNameT>(value); }
+    template<typename DetectorModelNameT = Aws::String>
+    ListDetectorModelVersionsRequest& WithDetectorModelName(DetectorModelNameT&& value) { SetDetectorModelName(std::forward<DetectorModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The token that you can use to return the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListDetectorModelVersionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDetectorModelVersionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDetectorModelVersionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDetectorModelVersionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to be returned per request.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListDetectorModelVersionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -83,7 +79,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

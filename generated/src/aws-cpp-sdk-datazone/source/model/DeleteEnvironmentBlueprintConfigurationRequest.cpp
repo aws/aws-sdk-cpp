@@ -12,12 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteEnvironmentBlueprintConfigurationRequest::DeleteEnvironmentBlueprintConfigurationRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_environmentBlueprintIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteEnvironmentBlueprintConfigurationRequest::SerializePayload() const
 {
   return {};

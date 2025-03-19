@@ -12,14 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCertificateRequest::CreateCertificateRequest() : 
-    m_certificateNameHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_subjectAlternativeNamesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateCertificateRequest::SerializePayload() const
 {
   JsonValue payload;

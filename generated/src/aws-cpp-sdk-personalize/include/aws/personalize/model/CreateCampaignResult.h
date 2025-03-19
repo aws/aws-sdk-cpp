@@ -27,7 +27,7 @@ namespace Model
   class CreateCampaignResult
   {
   public:
-    AWS_PERSONALIZE_API CreateCampaignResult();
+    AWS_PERSONALIZE_API CreateCampaignResult() = default;
     AWS_PERSONALIZE_API CreateCampaignResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PERSONALIZE_API CreateCampaignResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the campaign.</p>
      */
-    inline const Aws::String& GetCampaignArn() const{ return m_campaignArn; }
-    inline void SetCampaignArn(const Aws::String& value) { m_campaignArn = value; }
-    inline void SetCampaignArn(Aws::String&& value) { m_campaignArn = std::move(value); }
-    inline void SetCampaignArn(const char* value) { m_campaignArn.assign(value); }
-    inline CreateCampaignResult& WithCampaignArn(const Aws::String& value) { SetCampaignArn(value); return *this;}
-    inline CreateCampaignResult& WithCampaignArn(Aws::String&& value) { SetCampaignArn(std::move(value)); return *this;}
-    inline CreateCampaignResult& WithCampaignArn(const char* value) { SetCampaignArn(value); return *this;}
+    inline const Aws::String& GetCampaignArn() const { return m_campaignArn; }
+    template<typename CampaignArnT = Aws::String>
+    void SetCampaignArn(CampaignArnT&& value) { m_campaignArnHasBeenSet = true; m_campaignArn = std::forward<CampaignArnT>(value); }
+    template<typename CampaignArnT = Aws::String>
+    CreateCampaignResult& WithCampaignArn(CampaignArnT&& value) { SetCampaignArn(std::forward<CampaignArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateCampaignResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateCampaignResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateCampaignResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateCampaignResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_campaignArn;
+    bool m_campaignArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

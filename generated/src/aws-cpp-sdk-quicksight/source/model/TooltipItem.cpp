@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TooltipItem::TooltipItem() : 
-    m_fieldTooltipItemHasBeenSet(false),
-    m_columnTooltipItemHasBeenSet(false)
-{
-}
-
 TooltipItem::TooltipItem(JsonView jsonValue)
-  : TooltipItem()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TooltipItem& TooltipItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldTooltipItem"))
   {
     m_fieldTooltipItem = jsonValue.GetObject("FieldTooltipItem");
-
     m_fieldTooltipItemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnTooltipItem"))
   {
     m_columnTooltipItem = jsonValue.GetObject("ColumnTooltipItem");
-
     m_columnTooltipItemHasBeenSet = true;
   }
-
   return *this;
 }
 

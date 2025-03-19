@@ -18,16 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-TransitionEvent::TransitionEvent() : 
-    m_eventNameHasBeenSet(false),
-    m_conditionHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_nextStateHasBeenSet(false)
-{
-}
-
 TransitionEvent::TransitionEvent(JsonView jsonValue)
-  : TransitionEvent()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TransitionEvent& TransitionEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eventName"))
   {
     m_eventName = jsonValue.GetString("eventName");
-
     m_eventNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("condition"))
   {
     m_condition = jsonValue.GetString("condition");
-
     m_conditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actions"))
   {
     Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("actions");
@@ -57,14 +44,11 @@ TransitionEvent& TransitionEvent::operator =(JsonView jsonValue)
     }
     m_actionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextState"))
   {
     m_nextState = jsonValue.GetString("nextState");
-
     m_nextStateHasBeenSet = true;
   }
-
   return *this;
 }
 

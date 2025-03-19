@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyEbsDefaultKmsKeyIdRequest::ModifyEbsDefaultKmsKeyIdRequest() : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ModifyEbsDefaultKmsKeyIdRequest::SerializePayload() const
 {
   Aws::StringStream ss;

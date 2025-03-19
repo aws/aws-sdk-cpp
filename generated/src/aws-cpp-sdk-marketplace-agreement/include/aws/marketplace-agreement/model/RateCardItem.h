@@ -32,7 +32,7 @@ namespace Model
   class RateCardItem
   {
   public:
-    AWS_AGREEMENTSERVICE_API RateCardItem();
+    AWS_AGREEMENTSERVICE_API RateCardItem() = default;
     AWS_AGREEMENTSERVICE_API RateCardItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_AGREEMENTSERVICE_API RateCardItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AGREEMENTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * categories of capacity in a product and are specified when the product is listed
      * in AWS Marketplace.</p>
      */
-    inline const Aws::String& GetDimensionKey() const{ return m_dimensionKey; }
+    inline const Aws::String& GetDimensionKey() const { return m_dimensionKey; }
     inline bool DimensionKeyHasBeenSet() const { return m_dimensionKeyHasBeenSet; }
-    inline void SetDimensionKey(const Aws::String& value) { m_dimensionKeyHasBeenSet = true; m_dimensionKey = value; }
-    inline void SetDimensionKey(Aws::String&& value) { m_dimensionKeyHasBeenSet = true; m_dimensionKey = std::move(value); }
-    inline void SetDimensionKey(const char* value) { m_dimensionKeyHasBeenSet = true; m_dimensionKey.assign(value); }
-    inline RateCardItem& WithDimensionKey(const Aws::String& value) { SetDimensionKey(value); return *this;}
-    inline RateCardItem& WithDimensionKey(Aws::String&& value) { SetDimensionKey(std::move(value)); return *this;}
-    inline RateCardItem& WithDimensionKey(const char* value) { SetDimensionKey(value); return *this;}
+    template<typename DimensionKeyT = Aws::String>
+    void SetDimensionKey(DimensionKeyT&& value) { m_dimensionKeyHasBeenSet = true; m_dimensionKey = std::forward<DimensionKeyT>(value); }
+    template<typename DimensionKeyT = Aws::String>
+    RateCardItem& WithDimensionKey(DimensionKeyT&& value) { SetDimensionKey(std::forward<DimensionKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>Per unit price for the product dimension that’s used for calculating the
      * amount to be charged.</p>
      */
-    inline const Aws::String& GetPrice() const{ return m_price; }
+    inline const Aws::String& GetPrice() const { return m_price; }
     inline bool PriceHasBeenSet() const { return m_priceHasBeenSet; }
-    inline void SetPrice(const Aws::String& value) { m_priceHasBeenSet = true; m_price = value; }
-    inline void SetPrice(Aws::String&& value) { m_priceHasBeenSet = true; m_price = std::move(value); }
-    inline void SetPrice(const char* value) { m_priceHasBeenSet = true; m_price.assign(value); }
-    inline RateCardItem& WithPrice(const Aws::String& value) { SetPrice(value); return *this;}
-    inline RateCardItem& WithPrice(Aws::String&& value) { SetPrice(std::move(value)); return *this;}
-    inline RateCardItem& WithPrice(const char* value) { SetPrice(value); return *this;}
+    template<typename PriceT = Aws::String>
+    void SetPrice(PriceT&& value) { m_priceHasBeenSet = true; m_price = std::forward<PriceT>(value); }
+    template<typename PriceT = Aws::String>
+    RateCardItem& WithPrice(PriceT&& value) { SetPrice(std::forward<PriceT>(value)); return *this;}
     ///@}
   private:
 

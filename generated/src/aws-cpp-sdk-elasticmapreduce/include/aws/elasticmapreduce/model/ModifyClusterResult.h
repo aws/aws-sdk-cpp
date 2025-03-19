@@ -27,7 +27,7 @@ namespace Model
   class ModifyClusterResult
   {
   public:
-    AWS_EMR_API ModifyClusterResult();
+    AWS_EMR_API ModifyClusterResult() = default;
     AWS_EMR_API ModifyClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EMR_API ModifyClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,26 +36,26 @@ namespace Model
     /**
      * <p>The number of steps that can be executed concurrently.</p>
      */
-    inline int GetStepConcurrencyLevel() const{ return m_stepConcurrencyLevel; }
-    inline void SetStepConcurrencyLevel(int value) { m_stepConcurrencyLevel = value; }
+    inline int GetStepConcurrencyLevel() const { return m_stepConcurrencyLevel; }
+    inline void SetStepConcurrencyLevel(int value) { m_stepConcurrencyLevelHasBeenSet = true; m_stepConcurrencyLevel = value; }
     inline ModifyClusterResult& WithStepConcurrencyLevel(int value) { SetStepConcurrencyLevel(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ModifyClusterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ModifyClusterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ModifyClusterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ModifyClusterResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_stepConcurrencyLevel;
+    int m_stepConcurrencyLevel{0};
+    bool m_stepConcurrencyLevelHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

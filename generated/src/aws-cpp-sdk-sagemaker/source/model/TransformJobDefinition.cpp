@@ -18,22 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TransformJobDefinition::TransformJobDefinition() : 
-    m_maxConcurrentTransforms(0),
-    m_maxConcurrentTransformsHasBeenSet(false),
-    m_maxPayloadInMB(0),
-    m_maxPayloadInMBHasBeenSet(false),
-    m_batchStrategy(BatchStrategy::NOT_SET),
-    m_batchStrategyHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_transformInputHasBeenSet(false),
-    m_transformOutputHasBeenSet(false),
-    m_transformResourcesHasBeenSet(false)
-{
-}
-
 TransformJobDefinition::TransformJobDefinition(JsonView jsonValue)
-  : TransformJobDefinition()
 {
   *this = jsonValue;
 }
@@ -43,24 +28,18 @@ TransformJobDefinition& TransformJobDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MaxConcurrentTransforms"))
   {
     m_maxConcurrentTransforms = jsonValue.GetInteger("MaxConcurrentTransforms");
-
     m_maxConcurrentTransformsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxPayloadInMB"))
   {
     m_maxPayloadInMB = jsonValue.GetInteger("MaxPayloadInMB");
-
     m_maxPayloadInMBHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BatchStrategy"))
   {
     m_batchStrategy = BatchStrategyMapper::GetBatchStrategyForName(jsonValue.GetString("BatchStrategy"));
-
     m_batchStrategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Environment"))
   {
     Aws::Map<Aws::String, JsonView> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();
@@ -70,28 +49,21 @@ TransformJobDefinition& TransformJobDefinition::operator =(JsonView jsonValue)
     }
     m_environmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransformInput"))
   {
     m_transformInput = jsonValue.GetObject("TransformInput");
-
     m_transformInputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransformOutput"))
   {
     m_transformOutput = jsonValue.GetObject("TransformOutput");
-
     m_transformOutputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TransformResources"))
   {
     m_transformResources = jsonValue.GetObject("TransformResources");
-
     m_transformResourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

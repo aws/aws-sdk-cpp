@@ -35,7 +35,7 @@ namespace Model
   class DecodeAuthorizationMessageResult
   {
   public:
-    AWS_STS_API DecodeAuthorizationMessageResult();
+    AWS_STS_API DecodeAuthorizationMessageResult() = default;
     AWS_STS_API DecodeAuthorizationMessageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_STS_API DecodeAuthorizationMessageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,28 +44,28 @@ namespace Model
     /**
      * <p>The API returns a response with the decoded message.</p>
      */
-    inline const Aws::String& GetDecodedMessage() const{ return m_decodedMessage; }
-    inline void SetDecodedMessage(const Aws::String& value) { m_decodedMessage = value; }
-    inline void SetDecodedMessage(Aws::String&& value) { m_decodedMessage = std::move(value); }
-    inline void SetDecodedMessage(const char* value) { m_decodedMessage.assign(value); }
-    inline DecodeAuthorizationMessageResult& WithDecodedMessage(const Aws::String& value) { SetDecodedMessage(value); return *this;}
-    inline DecodeAuthorizationMessageResult& WithDecodedMessage(Aws::String&& value) { SetDecodedMessage(std::move(value)); return *this;}
-    inline DecodeAuthorizationMessageResult& WithDecodedMessage(const char* value) { SetDecodedMessage(value); return *this;}
+    inline const Aws::String& GetDecodedMessage() const { return m_decodedMessage; }
+    template<typename DecodedMessageT = Aws::String>
+    void SetDecodedMessage(DecodedMessageT&& value) { m_decodedMessageHasBeenSet = true; m_decodedMessage = std::forward<DecodedMessageT>(value); }
+    template<typename DecodedMessageT = Aws::String>
+    DecodeAuthorizationMessageResult& WithDecodedMessage(DecodedMessageT&& value) { SetDecodedMessage(std::forward<DecodedMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DecodeAuthorizationMessageResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DecodeAuthorizationMessageResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DecodeAuthorizationMessageResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_decodedMessage;
+    bool m_decodedMessageHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

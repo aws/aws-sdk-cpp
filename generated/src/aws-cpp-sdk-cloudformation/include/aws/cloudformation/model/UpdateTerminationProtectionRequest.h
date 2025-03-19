@@ -21,7 +21,7 @@ namespace Model
   class UpdateTerminationProtectionRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API UpdateTerminationProtectionRequest();
+    AWS_CLOUDFORMATION_API UpdateTerminationProtectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>Whether to enable termination protection on the specified stack.</p>
      */
-    inline bool GetEnableTerminationProtection() const{ return m_enableTerminationProtection; }
+    inline bool GetEnableTerminationProtection() const { return m_enableTerminationProtection; }
     inline bool EnableTerminationProtectionHasBeenSet() const { return m_enableTerminationProtectionHasBeenSet; }
     inline void SetEnableTerminationProtection(bool value) { m_enableTerminationProtectionHasBeenSet = true; m_enableTerminationProtection = value; }
     inline UpdateTerminationProtectionRequest& WithEnableTerminationProtection(bool value) { SetEnableTerminationProtection(value); return *this;}
@@ -51,18 +51,16 @@ namespace Model
      * <p>The name or unique ID of the stack for which you want to set termination
      * protection.</p>
      */
-    inline const Aws::String& GetStackName() const{ return m_stackName; }
+    inline const Aws::String& GetStackName() const { return m_stackName; }
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-    inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
-    inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
-    inline UpdateTerminationProtectionRequest& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-    inline UpdateTerminationProtectionRequest& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-    inline UpdateTerminationProtectionRequest& WithStackName(const char* value) { SetStackName(value); return *this;}
+    template<typename StackNameT = Aws::String>
+    void SetStackName(StackNameT&& value) { m_stackNameHasBeenSet = true; m_stackName = std::forward<StackNameT>(value); }
+    template<typename StackNameT = Aws::String>
+    UpdateTerminationProtectionRequest& WithStackName(StackNameT&& value) { SetStackName(std::forward<StackNameT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_enableTerminationProtection;
+    bool m_enableTerminationProtection{false};
     bool m_enableTerminationProtectionHasBeenSet = false;
 
     Aws::String m_stackName;

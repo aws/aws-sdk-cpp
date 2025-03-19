@@ -18,14 +18,7 @@ namespace Connect
 namespace Model
 {
 
-Application::Application() : 
-    m_namespaceHasBeenSet(false),
-    m_applicationPermissionsHasBeenSet(false)
-{
-}
-
 Application::Application(JsonView jsonValue)
-  : Application()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ Application& Application::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Namespace"))
   {
     m_namespace = jsonValue.GetString("Namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApplicationPermissions"))
   {
     Aws::Utils::Array<JsonView> applicationPermissionsJsonList = jsonValue.GetArray("ApplicationPermissions");
@@ -48,7 +39,6 @@ Application& Application::operator =(JsonView jsonValue)
     }
     m_applicationPermissionsHasBeenSet = true;
   }
-
   return *this;
 }
 

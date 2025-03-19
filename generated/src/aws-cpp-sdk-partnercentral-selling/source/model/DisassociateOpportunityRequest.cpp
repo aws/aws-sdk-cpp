@@ -12,15 +12,6 @@ using namespace Aws::PartnerCentralSelling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateOpportunityRequest::DisassociateOpportunityRequest() : 
-    m_catalogHasBeenSet(false),
-    m_opportunityIdentifierHasBeenSet(false),
-    m_relatedEntityIdentifierHasBeenSet(false),
-    m_relatedEntityType(RelatedEntityType::NOT_SET),
-    m_relatedEntityTypeHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateOpportunityRequest::SerializePayload() const
 {
   JsonValue payload;

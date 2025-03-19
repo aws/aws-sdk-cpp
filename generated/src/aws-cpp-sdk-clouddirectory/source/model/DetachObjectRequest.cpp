@@ -13,13 +13,6 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetachObjectRequest::DetachObjectRequest() : 
-    m_directoryArnHasBeenSet(false),
-    m_parentReferenceHasBeenSet(false),
-    m_linkNameHasBeenSet(false)
-{
-}
-
 Aws::String DetachObjectRequest::SerializePayload() const
 {
   JsonValue payload;

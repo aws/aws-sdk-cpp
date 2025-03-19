@@ -12,15 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateServiceNetworkServiceAssociationRequest::CreateServiceNetworkServiceAssociationRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_serviceIdentifierHasBeenSet(false),
-    m_serviceNetworkIdentifierHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateServiceNetworkServiceAssociationRequest::SerializePayload() const
 {
   JsonValue payload;

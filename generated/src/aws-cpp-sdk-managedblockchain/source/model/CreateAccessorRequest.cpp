@@ -12,17 +12,6 @@ using namespace Aws::ManagedBlockchain::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAccessorRequest::CreateAccessorRequest() : 
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_accessorType(AccessorType::NOT_SET),
-    m_accessorTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_networkType(AccessorNetworkType::NOT_SET),
-    m_networkTypeHasBeenSet(false)
-{
-}
-
 Aws::String CreateAccessorRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-InvocationStepPayload::InvocationStepPayload() : 
-    m_contentBlocksHasBeenSet(false)
-{
-}
-
 InvocationStepPayload::InvocationStepPayload(JsonView jsonValue)
-  : InvocationStepPayload()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ InvocationStepPayload& InvocationStepPayload::operator =(JsonView jsonValue)
     }
     m_contentBlocksHasBeenSet = true;
   }
-
   return *this;
 }
 

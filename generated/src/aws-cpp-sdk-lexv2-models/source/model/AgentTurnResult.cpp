@@ -18,17 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-AgentTurnResult::AgentTurnResult() : 
-    m_expectedAgentPromptHasBeenSet(false),
-    m_actualAgentPromptHasBeenSet(false),
-    m_errorDetailsHasBeenSet(false),
-    m_actualElicitedSlotHasBeenSet(false),
-    m_actualIntentHasBeenSet(false)
-{
-}
-
 AgentTurnResult::AgentTurnResult(JsonView jsonValue)
-  : AgentTurnResult()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ AgentTurnResult& AgentTurnResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("expectedAgentPrompt"))
   {
     m_expectedAgentPrompt = jsonValue.GetString("expectedAgentPrompt");
-
     m_expectedAgentPromptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actualAgentPrompt"))
   {
     m_actualAgentPrompt = jsonValue.GetString("actualAgentPrompt");
-
     m_actualAgentPromptHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorDetails"))
   {
     m_errorDetails = jsonValue.GetObject("errorDetails");
-
     m_errorDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actualElicitedSlot"))
   {
     m_actualElicitedSlot = jsonValue.GetString("actualElicitedSlot");
-
     m_actualElicitedSlotHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actualIntent"))
   {
     m_actualIntent = jsonValue.GetString("actualIntent");
-
     m_actualIntentHasBeenSet = true;
   }
-
   return *this;
 }
 

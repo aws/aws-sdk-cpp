@@ -18,13 +18,7 @@ namespace CleanRoomsML
 namespace Model
 {
 
-PrivacyConfiguration::PrivacyConfiguration() : 
-    m_policiesHasBeenSet(false)
-{
-}
-
 PrivacyConfiguration::PrivacyConfiguration(JsonView jsonValue)
-  : PrivacyConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PrivacyConfiguration& PrivacyConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("policies"))
   {
     m_policies = jsonValue.GetObject("policies");
-
     m_policiesHasBeenSet = true;
   }
-
   return *this;
 }
 

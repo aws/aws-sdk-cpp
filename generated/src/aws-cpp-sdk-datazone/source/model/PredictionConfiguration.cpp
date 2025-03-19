@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-PredictionConfiguration::PredictionConfiguration() : 
-    m_businessNameGenerationHasBeenSet(false)
-{
-}
-
 PredictionConfiguration::PredictionConfiguration(JsonView jsonValue)
-  : PredictionConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PredictionConfiguration& PredictionConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("businessNameGeneration"))
   {
     m_businessNameGeneration = jsonValue.GetObject("businessNameGeneration");
-
     m_businessNameGenerationHasBeenSet = true;
   }
-
   return *this;
 }
 

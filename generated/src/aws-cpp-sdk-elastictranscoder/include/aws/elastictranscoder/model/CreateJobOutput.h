@@ -36,7 +36,7 @@ namespace Model
   class CreateJobOutput
   {
   public:
-    AWS_ELASTICTRANSCODER_API CreateJobOutput();
+    AWS_ELASTICTRANSCODER_API CreateJobOutput() = default;
     AWS_ELASTICTRANSCODER_API CreateJobOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API CreateJobOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * pipeline that is specified by the pipeline ID. If a file with the specified name
      * already exists in the output bucket, the job fails. </p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline CreateJobOutput& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline CreateJobOutput& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline CreateJobOutput& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    CreateJobOutput& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,14 +85,12 @@ namespace Model
      * <code>PresetID</code> value of <code>CreateJobOutput</code>. Elastic Transcoder
      * also appends the applicable file name extension.</p>
      */
-    inline const Aws::String& GetThumbnailPattern() const{ return m_thumbnailPattern; }
+    inline const Aws::String& GetThumbnailPattern() const { return m_thumbnailPattern; }
     inline bool ThumbnailPatternHasBeenSet() const { return m_thumbnailPatternHasBeenSet; }
-    inline void SetThumbnailPattern(const Aws::String& value) { m_thumbnailPatternHasBeenSet = true; m_thumbnailPattern = value; }
-    inline void SetThumbnailPattern(Aws::String&& value) { m_thumbnailPatternHasBeenSet = true; m_thumbnailPattern = std::move(value); }
-    inline void SetThumbnailPattern(const char* value) { m_thumbnailPatternHasBeenSet = true; m_thumbnailPattern.assign(value); }
-    inline CreateJobOutput& WithThumbnailPattern(const Aws::String& value) { SetThumbnailPattern(value); return *this;}
-    inline CreateJobOutput& WithThumbnailPattern(Aws::String&& value) { SetThumbnailPattern(std::move(value)); return *this;}
-    inline CreateJobOutput& WithThumbnailPattern(const char* value) { SetThumbnailPattern(value); return *this;}
+    template<typename ThumbnailPatternT = Aws::String>
+    void SetThumbnailPattern(ThumbnailPatternT&& value) { m_thumbnailPatternHasBeenSet = true; m_thumbnailPattern = std::forward<ThumbnailPatternT>(value); }
+    template<typename ThumbnailPatternT = Aws::String>
+    CreateJobOutput& WithThumbnailPattern(ThumbnailPatternT&& value) { SetThumbnailPattern(std::forward<ThumbnailPatternT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +98,12 @@ namespace Model
      * <p>The encryption settings, if any, that you want Elastic Transcoder to apply to
      * your thumbnail.</p>
      */
-    inline const Encryption& GetThumbnailEncryption() const{ return m_thumbnailEncryption; }
+    inline const Encryption& GetThumbnailEncryption() const { return m_thumbnailEncryption; }
     inline bool ThumbnailEncryptionHasBeenSet() const { return m_thumbnailEncryptionHasBeenSet; }
-    inline void SetThumbnailEncryption(const Encryption& value) { m_thumbnailEncryptionHasBeenSet = true; m_thumbnailEncryption = value; }
-    inline void SetThumbnailEncryption(Encryption&& value) { m_thumbnailEncryptionHasBeenSet = true; m_thumbnailEncryption = std::move(value); }
-    inline CreateJobOutput& WithThumbnailEncryption(const Encryption& value) { SetThumbnailEncryption(value); return *this;}
-    inline CreateJobOutput& WithThumbnailEncryption(Encryption&& value) { SetThumbnailEncryption(std::move(value)); return *this;}
+    template<typename ThumbnailEncryptionT = Encryption>
+    void SetThumbnailEncryption(ThumbnailEncryptionT&& value) { m_thumbnailEncryptionHasBeenSet = true; m_thumbnailEncryption = std::forward<ThumbnailEncryptionT>(value); }
+    template<typename ThumbnailEncryptionT = Encryption>
+    CreateJobOutput& WithThumbnailEncryption(ThumbnailEncryptionT&& value) { SetThumbnailEncryption(std::forward<ThumbnailEncryptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,14 +114,12 @@ namespace Model
      * <code>270</code>. The value <code>auto</code> generally works only if the file
      * that you're transcoding contains rotation metadata. </p>
      */
-    inline const Aws::String& GetRotate() const{ return m_rotate; }
+    inline const Aws::String& GetRotate() const { return m_rotate; }
     inline bool RotateHasBeenSet() const { return m_rotateHasBeenSet; }
-    inline void SetRotate(const Aws::String& value) { m_rotateHasBeenSet = true; m_rotate = value; }
-    inline void SetRotate(Aws::String&& value) { m_rotateHasBeenSet = true; m_rotate = std::move(value); }
-    inline void SetRotate(const char* value) { m_rotateHasBeenSet = true; m_rotate.assign(value); }
-    inline CreateJobOutput& WithRotate(const Aws::String& value) { SetRotate(value); return *this;}
-    inline CreateJobOutput& WithRotate(Aws::String&& value) { SetRotate(std::move(value)); return *this;}
-    inline CreateJobOutput& WithRotate(const char* value) { SetRotate(value); return *this;}
+    template<typename RotateT = Aws::String>
+    void SetRotate(RotateT&& value) { m_rotateHasBeenSet = true; m_rotate = std::forward<RotateT>(value); }
+    template<typename RotateT = Aws::String>
+    CreateJobOutput& WithRotate(RotateT&& value) { SetRotate(std::forward<RotateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,14 +128,12 @@ namespace Model
      * the audio, video, and thumbnail settings that Elastic Transcoder uses for
      * transcoding. </p>
      */
-    inline const Aws::String& GetPresetId() const{ return m_presetId; }
+    inline const Aws::String& GetPresetId() const { return m_presetId; }
     inline bool PresetIdHasBeenSet() const { return m_presetIdHasBeenSet; }
-    inline void SetPresetId(const Aws::String& value) { m_presetIdHasBeenSet = true; m_presetId = value; }
-    inline void SetPresetId(Aws::String&& value) { m_presetIdHasBeenSet = true; m_presetId = std::move(value); }
-    inline void SetPresetId(const char* value) { m_presetIdHasBeenSet = true; m_presetId.assign(value); }
-    inline CreateJobOutput& WithPresetId(const Aws::String& value) { SetPresetId(value); return *this;}
-    inline CreateJobOutput& WithPresetId(Aws::String&& value) { SetPresetId(std::move(value)); return *this;}
-    inline CreateJobOutput& WithPresetId(const char* value) { SetPresetId(value); return *this;}
+    template<typename PresetIdT = Aws::String>
+    void SetPresetId(PresetIdT&& value) { m_presetIdHasBeenSet = true; m_presetId = std::forward<PresetIdT>(value); }
+    template<typename PresetIdT = Aws::String>
+    CreateJobOutput& WithPresetId(PresetIdT&& value) { SetPresetId(std::forward<PresetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,14 +155,12 @@ namespace Model
      * master playlist for this job, include it in the <code>OutputKeys</code> of the
      * associated playlist.</p>
      */
-    inline const Aws::String& GetSegmentDuration() const{ return m_segmentDuration; }
+    inline const Aws::String& GetSegmentDuration() const { return m_segmentDuration; }
     inline bool SegmentDurationHasBeenSet() const { return m_segmentDurationHasBeenSet; }
-    inline void SetSegmentDuration(const Aws::String& value) { m_segmentDurationHasBeenSet = true; m_segmentDuration = value; }
-    inline void SetSegmentDuration(Aws::String&& value) { m_segmentDurationHasBeenSet = true; m_segmentDuration = std::move(value); }
-    inline void SetSegmentDuration(const char* value) { m_segmentDurationHasBeenSet = true; m_segmentDuration.assign(value); }
-    inline CreateJobOutput& WithSegmentDuration(const Aws::String& value) { SetSegmentDuration(value); return *this;}
-    inline CreateJobOutput& WithSegmentDuration(Aws::String&& value) { SetSegmentDuration(std::move(value)); return *this;}
-    inline CreateJobOutput& WithSegmentDuration(const char* value) { SetSegmentDuration(value); return *this;}
+    template<typename SegmentDurationT = Aws::String>
+    void SetSegmentDuration(SegmentDurationT&& value) { m_segmentDurationHasBeenSet = true; m_segmentDuration = std::forward<SegmentDurationT>(value); }
+    template<typename SegmentDurationT = Aws::String>
+    CreateJobOutput& WithSegmentDuration(SegmentDurationT&& value) { SetSegmentDuration(std::forward<SegmentDurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -180,14 +170,14 @@ namespace Model
      * output. Settings for each watermark must be defined in the preset for the
      * current output.</p>
      */
-    inline const Aws::Vector<JobWatermark>& GetWatermarks() const{ return m_watermarks; }
+    inline const Aws::Vector<JobWatermark>& GetWatermarks() const { return m_watermarks; }
     inline bool WatermarksHasBeenSet() const { return m_watermarksHasBeenSet; }
-    inline void SetWatermarks(const Aws::Vector<JobWatermark>& value) { m_watermarksHasBeenSet = true; m_watermarks = value; }
-    inline void SetWatermarks(Aws::Vector<JobWatermark>&& value) { m_watermarksHasBeenSet = true; m_watermarks = std::move(value); }
-    inline CreateJobOutput& WithWatermarks(const Aws::Vector<JobWatermark>& value) { SetWatermarks(value); return *this;}
-    inline CreateJobOutput& WithWatermarks(Aws::Vector<JobWatermark>&& value) { SetWatermarks(std::move(value)); return *this;}
-    inline CreateJobOutput& AddWatermarks(const JobWatermark& value) { m_watermarksHasBeenSet = true; m_watermarks.push_back(value); return *this; }
-    inline CreateJobOutput& AddWatermarks(JobWatermark&& value) { m_watermarksHasBeenSet = true; m_watermarks.push_back(std::move(value)); return *this; }
+    template<typename WatermarksT = Aws::Vector<JobWatermark>>
+    void SetWatermarks(WatermarksT&& value) { m_watermarksHasBeenSet = true; m_watermarks = std::forward<WatermarksT>(value); }
+    template<typename WatermarksT = Aws::Vector<JobWatermark>>
+    CreateJobOutput& WithWatermarks(WatermarksT&& value) { SetWatermarks(std::forward<WatermarksT>(value)); return *this;}
+    template<typename WatermarksT = JobWatermark>
+    CreateJobOutput& AddWatermarks(WatermarksT&& value) { m_watermarksHasBeenSet = true; m_watermarks.emplace_back(std::forward<WatermarksT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -197,12 +187,12 @@ namespace Model
      * each output. Settings for each artwork must be defined in the job for the
      * current output.</p>
      */
-    inline const JobAlbumArt& GetAlbumArt() const{ return m_albumArt; }
+    inline const JobAlbumArt& GetAlbumArt() const { return m_albumArt; }
     inline bool AlbumArtHasBeenSet() const { return m_albumArtHasBeenSet; }
-    inline void SetAlbumArt(const JobAlbumArt& value) { m_albumArtHasBeenSet = true; m_albumArt = value; }
-    inline void SetAlbumArt(JobAlbumArt&& value) { m_albumArtHasBeenSet = true; m_albumArt = std::move(value); }
-    inline CreateJobOutput& WithAlbumArt(const JobAlbumArt& value) { SetAlbumArt(value); return *this;}
-    inline CreateJobOutput& WithAlbumArt(JobAlbumArt&& value) { SetAlbumArt(std::move(value)); return *this;}
+    template<typename AlbumArtT = JobAlbumArt>
+    void SetAlbumArt(AlbumArtT&& value) { m_albumArtHasBeenSet = true; m_albumArt = std::forward<AlbumArtT>(value); }
+    template<typename AlbumArtT = JobAlbumArt>
+    CreateJobOutput& WithAlbumArt(AlbumArtT&& value) { SetAlbumArt(std::forward<AlbumArtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -239,12 +229,12 @@ namespace Model
      * files, see the Extensible Metadata Platform and Sidecar file Wikipedia
      * pages.</p>
      */
-    inline const Captions& GetCaptions() const{ return m_captions; }
+    inline const Captions& GetCaptions() const { return m_captions; }
     inline bool CaptionsHasBeenSet() const { return m_captionsHasBeenSet; }
-    inline void SetCaptions(const Captions& value) { m_captionsHasBeenSet = true; m_captions = value; }
-    inline void SetCaptions(Captions&& value) { m_captionsHasBeenSet = true; m_captions = std::move(value); }
-    inline CreateJobOutput& WithCaptions(const Captions& value) { SetCaptions(value); return *this;}
-    inline CreateJobOutput& WithCaptions(Captions&& value) { SetCaptions(std::move(value)); return *this;}
+    template<typename CaptionsT = Captions>
+    void SetCaptions(CaptionsT&& value) { m_captionsHasBeenSet = true; m_captions = std::forward<CaptionsT>(value); }
+    template<typename CaptionsT = Captions>
+    CreateJobOutput& WithCaptions(CaptionsT&& value) { SetCaptions(std::forward<CaptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -254,12 +244,12 @@ namespace Model
      * thumbnails, album art, or captions that you want to use. You must specify
      * encryption settings for each file individually.</p>
      */
-    inline const Encryption& GetEncryption() const{ return m_encryption; }
+    inline const Encryption& GetEncryption() const { return m_encryption; }
     inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
-    inline void SetEncryption(const Encryption& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
-    inline void SetEncryption(Encryption&& value) { m_encryptionHasBeenSet = true; m_encryption = std::move(value); }
-    inline CreateJobOutput& WithEncryption(const Encryption& value) { SetEncryption(value); return *this;}
-    inline CreateJobOutput& WithEncryption(Encryption&& value) { SetEncryption(std::move(value)); return *this;}
+    template<typename EncryptionT = Encryption>
+    void SetEncryption(EncryptionT&& value) { m_encryptionHasBeenSet = true; m_encryption = std::forward<EncryptionT>(value); }
+    template<typename EncryptionT = Encryption>
+    CreateJobOutput& WithEncryption(EncryptionT&& value) { SetEncryption(std::forward<EncryptionT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBackendAPIModelsResult::GetBackendAPIModelsResult() : 
-    m_status(Status::NOT_SET)
-{
-}
-
 GetBackendAPIModelsResult::GetBackendAPIModelsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetBackendAPIModelsResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ GetBackendAPIModelsResult& GetBackendAPIModelsResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("models"))
   {
     m_models = jsonValue.GetString("models");
-
+    m_modelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelIntrospectionSchema"))
   {
     m_modelIntrospectionSchema = jsonValue.GetString("modelIntrospectionSchema");
-
+    m_modelIntrospectionSchemaHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

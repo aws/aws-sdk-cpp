@@ -18,18 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsCloudFrontDistributionLogging::AwsCloudFrontDistributionLogging() : 
-    m_bucketHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_includeCookies(false),
-    m_includeCookiesHasBeenSet(false),
-    m_prefixHasBeenSet(false)
-{
-}
-
 AwsCloudFrontDistributionLogging::AwsCloudFrontDistributionLogging(JsonView jsonValue)
-  : AwsCloudFrontDistributionLogging()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ AwsCloudFrontDistributionLogging& AwsCloudFrontDistributionLogging::operator =(J
   if(jsonValue.ValueExists("Bucket"))
   {
     m_bucket = jsonValue.GetString("Bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludeCookies"))
   {
     m_includeCookies = jsonValue.GetBool("IncludeCookies");
-
     m_includeCookiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Prefix"))
   {
     m_prefix = jsonValue.GetString("Prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   return *this;
 }
 

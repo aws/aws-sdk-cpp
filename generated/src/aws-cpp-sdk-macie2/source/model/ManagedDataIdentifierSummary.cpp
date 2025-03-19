@@ -18,15 +18,7 @@ namespace Macie2
 namespace Model
 {
 
-ManagedDataIdentifierSummary::ManagedDataIdentifierSummary() : 
-    m_category(SensitiveDataItemCategory::NOT_SET),
-    m_categoryHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 ManagedDataIdentifierSummary::ManagedDataIdentifierSummary(JsonView jsonValue)
-  : ManagedDataIdentifierSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ManagedDataIdentifierSummary& ManagedDataIdentifierSummary::operator =(JsonView 
   if(jsonValue.ValueExists("category"))
   {
     m_category = SensitiveDataItemCategoryMapper::GetSensitiveDataItemCategoryForName(jsonValue.GetString("category"));
-
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,13 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-SetStackPolicyRequest::SetStackPolicyRequest() : 
-    m_stackNameHasBeenSet(false),
-    m_stackPolicyBodyHasBeenSet(false),
-    m_stackPolicyURLHasBeenSet(false)
-{
-}
-
 Aws::String SetStackPolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

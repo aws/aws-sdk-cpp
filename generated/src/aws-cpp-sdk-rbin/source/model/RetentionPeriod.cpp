@@ -18,16 +18,7 @@ namespace RecycleBin
 namespace Model
 {
 
-RetentionPeriod::RetentionPeriod() : 
-    m_retentionPeriodValue(0),
-    m_retentionPeriodValueHasBeenSet(false),
-    m_retentionPeriodUnit(RetentionPeriodUnit::NOT_SET),
-    m_retentionPeriodUnitHasBeenSet(false)
-{
-}
-
 RetentionPeriod::RetentionPeriod(JsonView jsonValue)
-  : RetentionPeriod()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RetentionPeriod& RetentionPeriod::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RetentionPeriodValue"))
   {
     m_retentionPeriodValue = jsonValue.GetInteger("RetentionPeriodValue");
-
     m_retentionPeriodValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetentionPeriodUnit"))
   {
     m_retentionPeriodUnit = RetentionPeriodUnitMapper::GetRetentionPeriodUnitForName(jsonValue.GetString("RetentionPeriodUnit"));
-
     m_retentionPeriodUnitHasBeenSet = true;
   }
-
   return *this;
 }
 

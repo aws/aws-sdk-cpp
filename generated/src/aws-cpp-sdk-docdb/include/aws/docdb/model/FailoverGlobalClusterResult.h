@@ -28,33 +28,35 @@ namespace Model
   class FailoverGlobalClusterResult
   {
   public:
-    AWS_DOCDB_API FailoverGlobalClusterResult();
+    AWS_DOCDB_API FailoverGlobalClusterResult() = default;
     AWS_DOCDB_API FailoverGlobalClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_DOCDB_API FailoverGlobalClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const GlobalCluster& GetGlobalCluster() const{ return m_globalCluster; }
-    inline void SetGlobalCluster(const GlobalCluster& value) { m_globalCluster = value; }
-    inline void SetGlobalCluster(GlobalCluster&& value) { m_globalCluster = std::move(value); }
-    inline FailoverGlobalClusterResult& WithGlobalCluster(const GlobalCluster& value) { SetGlobalCluster(value); return *this;}
-    inline FailoverGlobalClusterResult& WithGlobalCluster(GlobalCluster&& value) { SetGlobalCluster(std::move(value)); return *this;}
+    inline const GlobalCluster& GetGlobalCluster() const { return m_globalCluster; }
+    template<typename GlobalClusterT = GlobalCluster>
+    void SetGlobalCluster(GlobalClusterT&& value) { m_globalClusterHasBeenSet = true; m_globalCluster = std::forward<GlobalClusterT>(value); }
+    template<typename GlobalClusterT = GlobalCluster>
+    FailoverGlobalClusterResult& WithGlobalCluster(GlobalClusterT&& value) { SetGlobalCluster(std::forward<GlobalClusterT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline FailoverGlobalClusterResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline FailoverGlobalClusterResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    FailoverGlobalClusterResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     GlobalCluster m_globalCluster;
+    bool m_globalClusterHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

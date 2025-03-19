@@ -18,15 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-AssetRelationshipSummary::AssetRelationshipSummary() : 
-    m_hierarchyInfoHasBeenSet(false),
-    m_relationshipType(AssetRelationshipType::NOT_SET),
-    m_relationshipTypeHasBeenSet(false)
-{
-}
-
 AssetRelationshipSummary::AssetRelationshipSummary(JsonView jsonValue)
-  : AssetRelationshipSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AssetRelationshipSummary& AssetRelationshipSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("hierarchyInfo"))
   {
     m_hierarchyInfo = jsonValue.GetObject("hierarchyInfo");
-
     m_hierarchyInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relationshipType"))
   {
     m_relationshipType = AssetRelationshipTypeMapper::GetAssetRelationshipTypeForName(jsonValue.GetString("relationshipType"));
-
     m_relationshipTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

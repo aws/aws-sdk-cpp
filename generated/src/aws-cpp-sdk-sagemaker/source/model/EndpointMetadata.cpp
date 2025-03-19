@@ -18,17 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-EndpointMetadata::EndpointMetadata() : 
-    m_endpointNameHasBeenSet(false),
-    m_endpointConfigNameHasBeenSet(false),
-    m_endpointStatus(EndpointStatus::NOT_SET),
-    m_endpointStatusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
-{
-}
-
 EndpointMetadata::EndpointMetadata(JsonView jsonValue)
-  : EndpointMetadata()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ EndpointMetadata& EndpointMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EndpointName"))
   {
     m_endpointName = jsonValue.GetString("EndpointName");
-
     m_endpointNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointConfigName"))
   {
     m_endpointConfigName = jsonValue.GetString("EndpointConfigName");
-
     m_endpointConfigNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointStatus"))
   {
     m_endpointStatus = EndpointStatusMapper::GetEndpointStatusForName(jsonValue.GetString("EndpointStatus"));
-
     m_endpointStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

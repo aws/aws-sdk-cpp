@@ -12,12 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateTransitGatewayConnectPeerRequest::DisassociateTransitGatewayConnectPeerRequest() : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_transitGatewayConnectPeerArnHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateTransitGatewayConnectPeerRequest::SerializePayload() const
 {
   return {};

@@ -18,15 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-CreateProjectFromProjectProfilePolicyGrantDetail::CreateProjectFromProjectProfilePolicyGrantDetail() : 
-    m_includeChildDomainUnits(false),
-    m_includeChildDomainUnitsHasBeenSet(false),
-    m_projectProfilesHasBeenSet(false)
-{
-}
-
 CreateProjectFromProjectProfilePolicyGrantDetail::CreateProjectFromProjectProfilePolicyGrantDetail(JsonView jsonValue)
-  : CreateProjectFromProjectProfilePolicyGrantDetail()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ CreateProjectFromProjectProfilePolicyGrantDetail& CreateProjectFromProjectProfil
   if(jsonValue.ValueExists("includeChildDomainUnits"))
   {
     m_includeChildDomainUnits = jsonValue.GetBool("includeChildDomainUnits");
-
     m_includeChildDomainUnitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectProfiles"))
   {
     Aws::Utils::Array<JsonView> projectProfilesJsonList = jsonValue.GetArray("projectProfiles");
@@ -49,7 +39,6 @@ CreateProjectFromProjectProfilePolicyGrantDetail& CreateProjectFromProjectProfil
     }
     m_projectProfilesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class TemplateAttributes
   {
   public:
-    AWS_CONNECT_API TemplateAttributes();
+    AWS_CONNECT_API TemplateAttributes() = default;
     AWS_CONNECT_API TemplateAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API TemplateAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,19 +44,16 @@ namespace Model
      * the message template. This object contains different categories of key-value
      * pairs. Each key defines a variable or placeholder in the message template. </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetCustomAttributes() const{ return m_customAttributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomAttributes() const { return m_customAttributes; }
     inline bool CustomAttributesHasBeenSet() const { return m_customAttributesHasBeenSet; }
-    inline void SetCustomAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_customAttributesHasBeenSet = true; m_customAttributes = value; }
-    inline void SetCustomAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_customAttributesHasBeenSet = true; m_customAttributes = std::move(value); }
-    inline TemplateAttributes& WithCustomAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomAttributes(value); return *this;}
-    inline TemplateAttributes& WithCustomAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomAttributes(std::move(value)); return *this;}
-    inline TemplateAttributes& AddCustomAttributes(const Aws::String& key, const Aws::String& value) { m_customAttributesHasBeenSet = true; m_customAttributes.emplace(key, value); return *this; }
-    inline TemplateAttributes& AddCustomAttributes(Aws::String&& key, const Aws::String& value) { m_customAttributesHasBeenSet = true; m_customAttributes.emplace(std::move(key), value); return *this; }
-    inline TemplateAttributes& AddCustomAttributes(const Aws::String& key, Aws::String&& value) { m_customAttributesHasBeenSet = true; m_customAttributes.emplace(key, std::move(value)); return *this; }
-    inline TemplateAttributes& AddCustomAttributes(Aws::String&& key, Aws::String&& value) { m_customAttributesHasBeenSet = true; m_customAttributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline TemplateAttributes& AddCustomAttributes(const char* key, Aws::String&& value) { m_customAttributesHasBeenSet = true; m_customAttributes.emplace(key, std::move(value)); return *this; }
-    inline TemplateAttributes& AddCustomAttributes(Aws::String&& key, const char* value) { m_customAttributesHasBeenSet = true; m_customAttributes.emplace(std::move(key), value); return *this; }
-    inline TemplateAttributes& AddCustomAttributes(const char* key, const char* value) { m_customAttributesHasBeenSet = true; m_customAttributes.emplace(key, value); return *this; }
+    template<typename CustomAttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetCustomAttributes(CustomAttributesT&& value) { m_customAttributesHasBeenSet = true; m_customAttributes = std::forward<CustomAttributesT>(value); }
+    template<typename CustomAttributesT = Aws::Map<Aws::String, Aws::String>>
+    TemplateAttributes& WithCustomAttributes(CustomAttributesT&& value) { SetCustomAttributes(std::forward<CustomAttributesT>(value)); return *this;}
+    template<typename CustomAttributesKeyT = Aws::String, typename CustomAttributesValueT = Aws::String>
+    TemplateAttributes& AddCustomAttributes(CustomAttributesKeyT&& key, CustomAttributesValueT&& value) {
+      m_customAttributesHasBeenSet = true; m_customAttributes.emplace(std::forward<CustomAttributesKeyT>(key), std::forward<CustomAttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -66,14 +63,12 @@ namespace Model
      * key-value pairs. Each key defines a variable or placeholder in the message
      * template. </p>
      */
-    inline const Aws::String& GetCustomerProfileAttributes() const{ return m_customerProfileAttributes; }
+    inline const Aws::String& GetCustomerProfileAttributes() const { return m_customerProfileAttributes; }
     inline bool CustomerProfileAttributesHasBeenSet() const { return m_customerProfileAttributesHasBeenSet; }
-    inline void SetCustomerProfileAttributes(const Aws::String& value) { m_customerProfileAttributesHasBeenSet = true; m_customerProfileAttributes = value; }
-    inline void SetCustomerProfileAttributes(Aws::String&& value) { m_customerProfileAttributesHasBeenSet = true; m_customerProfileAttributes = std::move(value); }
-    inline void SetCustomerProfileAttributes(const char* value) { m_customerProfileAttributesHasBeenSet = true; m_customerProfileAttributes.assign(value); }
-    inline TemplateAttributes& WithCustomerProfileAttributes(const Aws::String& value) { SetCustomerProfileAttributes(value); return *this;}
-    inline TemplateAttributes& WithCustomerProfileAttributes(Aws::String&& value) { SetCustomerProfileAttributes(std::move(value)); return *this;}
-    inline TemplateAttributes& WithCustomerProfileAttributes(const char* value) { SetCustomerProfileAttributes(value); return *this;}
+    template<typename CustomerProfileAttributesT = Aws::String>
+    void SetCustomerProfileAttributes(CustomerProfileAttributesT&& value) { m_customerProfileAttributesHasBeenSet = true; m_customerProfileAttributes = std::forward<CustomerProfileAttributesT>(value); }
+    template<typename CustomerProfileAttributesT = Aws::String>
+    TemplateAttributes& WithCustomerProfileAttributes(CustomerProfileAttributesT&& value) { SetCustomerProfileAttributes(std::forward<CustomerProfileAttributesT>(value)); return *this;}
     ///@}
   private:
 

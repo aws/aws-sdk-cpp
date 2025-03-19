@@ -32,7 +32,7 @@ namespace Model
   class AwsCloudFrontDistributionOriginGroupFailover
   {
   public:
-    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginGroupFailover();
+    AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginGroupFailover() = default;
     AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginGroupFailover(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsCloudFrontDistributionOriginGroupFailover& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>Information about the status codes that cause an origin group to fail
      * over.</p>
      */
-    inline const AwsCloudFrontDistributionOriginGroupFailoverStatusCodes& GetStatusCodes() const{ return m_statusCodes; }
+    inline const AwsCloudFrontDistributionOriginGroupFailoverStatusCodes& GetStatusCodes() const { return m_statusCodes; }
     inline bool StatusCodesHasBeenSet() const { return m_statusCodesHasBeenSet; }
-    inline void SetStatusCodes(const AwsCloudFrontDistributionOriginGroupFailoverStatusCodes& value) { m_statusCodesHasBeenSet = true; m_statusCodes = value; }
-    inline void SetStatusCodes(AwsCloudFrontDistributionOriginGroupFailoverStatusCodes&& value) { m_statusCodesHasBeenSet = true; m_statusCodes = std::move(value); }
-    inline AwsCloudFrontDistributionOriginGroupFailover& WithStatusCodes(const AwsCloudFrontDistributionOriginGroupFailoverStatusCodes& value) { SetStatusCodes(value); return *this;}
-    inline AwsCloudFrontDistributionOriginGroupFailover& WithStatusCodes(AwsCloudFrontDistributionOriginGroupFailoverStatusCodes&& value) { SetStatusCodes(std::move(value)); return *this;}
+    template<typename StatusCodesT = AwsCloudFrontDistributionOriginGroupFailoverStatusCodes>
+    void SetStatusCodes(StatusCodesT&& value) { m_statusCodesHasBeenSet = true; m_statusCodes = std::forward<StatusCodesT>(value); }
+    template<typename StatusCodesT = AwsCloudFrontDistributionOriginGroupFailoverStatusCodes>
+    AwsCloudFrontDistributionOriginGroupFailover& WithStatusCodes(StatusCodesT&& value) { SetStatusCodes(std::forward<StatusCodesT>(value)); return *this;}
     ///@}
   private:
 

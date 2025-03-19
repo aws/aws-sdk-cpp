@@ -29,7 +29,7 @@ namespace Model
   class ListCertificatesResult
   {
   public:
-    AWS_ACM_API ListCertificatesResult();
+    AWS_ACM_API ListCertificatesResult() = default;
     AWS_ACM_API ListCertificatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ACM_API ListCertificatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,45 +40,44 @@ namespace Model
      * use for the <code>NextToken</code> parameter in a subsequent pagination
      * request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCertificatesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCertificatesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCertificatesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCertificatesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of ACM certificates.</p>
      */
-    inline const Aws::Vector<CertificateSummary>& GetCertificateSummaryList() const{ return m_certificateSummaryList; }
-    inline void SetCertificateSummaryList(const Aws::Vector<CertificateSummary>& value) { m_certificateSummaryList = value; }
-    inline void SetCertificateSummaryList(Aws::Vector<CertificateSummary>&& value) { m_certificateSummaryList = std::move(value); }
-    inline ListCertificatesResult& WithCertificateSummaryList(const Aws::Vector<CertificateSummary>& value) { SetCertificateSummaryList(value); return *this;}
-    inline ListCertificatesResult& WithCertificateSummaryList(Aws::Vector<CertificateSummary>&& value) { SetCertificateSummaryList(std::move(value)); return *this;}
-    inline ListCertificatesResult& AddCertificateSummaryList(const CertificateSummary& value) { m_certificateSummaryList.push_back(value); return *this; }
-    inline ListCertificatesResult& AddCertificateSummaryList(CertificateSummary&& value) { m_certificateSummaryList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CertificateSummary>& GetCertificateSummaryList() const { return m_certificateSummaryList; }
+    template<typename CertificateSummaryListT = Aws::Vector<CertificateSummary>>
+    void SetCertificateSummaryList(CertificateSummaryListT&& value) { m_certificateSummaryListHasBeenSet = true; m_certificateSummaryList = std::forward<CertificateSummaryListT>(value); }
+    template<typename CertificateSummaryListT = Aws::Vector<CertificateSummary>>
+    ListCertificatesResult& WithCertificateSummaryList(CertificateSummaryListT&& value) { SetCertificateSummaryList(std::forward<CertificateSummaryListT>(value)); return *this;}
+    template<typename CertificateSummaryListT = CertificateSummary>
+    ListCertificatesResult& AddCertificateSummaryList(CertificateSummaryListT&& value) { m_certificateSummaryListHasBeenSet = true; m_certificateSummaryList.emplace_back(std::forward<CertificateSummaryListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCertificatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCertificatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCertificatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCertificatesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<CertificateSummary> m_certificateSummaryList;
+    bool m_certificateSummaryListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

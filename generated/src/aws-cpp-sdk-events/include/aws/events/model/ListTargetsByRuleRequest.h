@@ -21,7 +21,7 @@ namespace Model
   class ListTargetsByRuleRequest : public CloudWatchEventsRequest
   {
   public:
-    AWS_CLOUDWATCHEVENTS_API ListTargetsByRuleRequest();
+    AWS_CLOUDWATCHEVENTS_API ListTargetsByRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the rule.</p>
      */
-    inline const Aws::String& GetRule() const{ return m_rule; }
+    inline const Aws::String& GetRule() const { return m_rule; }
     inline bool RuleHasBeenSet() const { return m_ruleHasBeenSet; }
-    inline void SetRule(const Aws::String& value) { m_ruleHasBeenSet = true; m_rule = value; }
-    inline void SetRule(Aws::String&& value) { m_ruleHasBeenSet = true; m_rule = std::move(value); }
-    inline void SetRule(const char* value) { m_ruleHasBeenSet = true; m_rule.assign(value); }
-    inline ListTargetsByRuleRequest& WithRule(const Aws::String& value) { SetRule(value); return *this;}
-    inline ListTargetsByRuleRequest& WithRule(Aws::String&& value) { SetRule(std::move(value)); return *this;}
-    inline ListTargetsByRuleRequest& WithRule(const char* value) { SetRule(value); return *this;}
+    template<typename RuleT = Aws::String>
+    void SetRule(RuleT&& value) { m_ruleHasBeenSet = true; m_rule = std::forward<RuleT>(value); }
+    template<typename RuleT = Aws::String>
+    ListTargetsByRuleRequest& WithRule(RuleT&& value) { SetRule(std::forward<RuleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * <p>The name or ARN of the event bus associated with the rule. If you omit this,
      * the default event bus is used.</p>
      */
-    inline const Aws::String& GetEventBusName() const{ return m_eventBusName; }
+    inline const Aws::String& GetEventBusName() const { return m_eventBusName; }
     inline bool EventBusNameHasBeenSet() const { return m_eventBusNameHasBeenSet; }
-    inline void SetEventBusName(const Aws::String& value) { m_eventBusNameHasBeenSet = true; m_eventBusName = value; }
-    inline void SetEventBusName(Aws::String&& value) { m_eventBusNameHasBeenSet = true; m_eventBusName = std::move(value); }
-    inline void SetEventBusName(const char* value) { m_eventBusNameHasBeenSet = true; m_eventBusName.assign(value); }
-    inline ListTargetsByRuleRequest& WithEventBusName(const Aws::String& value) { SetEventBusName(value); return *this;}
-    inline ListTargetsByRuleRequest& WithEventBusName(Aws::String&& value) { SetEventBusName(std::move(value)); return *this;}
-    inline ListTargetsByRuleRequest& WithEventBusName(const char* value) { SetEventBusName(value); return *this;}
+    template<typename EventBusNameT = Aws::String>
+    void SetEventBusName(EventBusNameT&& value) { m_eventBusNameHasBeenSet = true; m_eventBusName = std::forward<EventBusNameT>(value); }
+    template<typename EventBusNameT = Aws::String>
+    ListTargetsByRuleRequest& WithEventBusName(EventBusNameT&& value) { SetEventBusName(std::forward<EventBusNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,21 +64,19 @@ namespace Model
      * <p>The token returned by a previous call to retrieve the next set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListTargetsByRuleRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTargetsByRuleRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTargetsByRuleRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTargetsByRuleRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline ListTargetsByRuleRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -98,7 +92,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
   };
 

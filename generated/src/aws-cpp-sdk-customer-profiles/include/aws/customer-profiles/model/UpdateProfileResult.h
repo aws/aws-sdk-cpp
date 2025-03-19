@@ -27,7 +27,7 @@ namespace Model
   class UpdateProfileResult
   {
   public:
-    AWS_CUSTOMERPROFILES_API UpdateProfileResult();
+    AWS_CUSTOMERPROFILES_API UpdateProfileResult() = default;
     AWS_CUSTOMERPROFILES_API UpdateProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CUSTOMERPROFILES_API UpdateProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The unique identifier of a customer profile.</p>
      */
-    inline const Aws::String& GetProfileId() const{ return m_profileId; }
-    inline void SetProfileId(const Aws::String& value) { m_profileId = value; }
-    inline void SetProfileId(Aws::String&& value) { m_profileId = std::move(value); }
-    inline void SetProfileId(const char* value) { m_profileId.assign(value); }
-    inline UpdateProfileResult& WithProfileId(const Aws::String& value) { SetProfileId(value); return *this;}
-    inline UpdateProfileResult& WithProfileId(Aws::String&& value) { SetProfileId(std::move(value)); return *this;}
-    inline UpdateProfileResult& WithProfileId(const char* value) { SetProfileId(value); return *this;}
+    inline const Aws::String& GetProfileId() const { return m_profileId; }
+    template<typename ProfileIdT = Aws::String>
+    void SetProfileId(ProfileIdT&& value) { m_profileIdHasBeenSet = true; m_profileId = std::forward<ProfileIdT>(value); }
+    template<typename ProfileIdT = Aws::String>
+    UpdateProfileResult& WithProfileId(ProfileIdT&& value) { SetProfileId(std::forward<ProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateProfileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateProfileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateProfileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateProfileResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_profileId;
+    bool m_profileIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

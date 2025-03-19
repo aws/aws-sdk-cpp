@@ -25,7 +25,7 @@ namespace Model
   class CheckDNSAvailabilityRequest : public ElasticBeanstalkRequest
   {
   public:
-    AWS_ELASTICBEANSTALK_API CheckDNSAvailabilityRequest();
+    AWS_ELASTICBEANSTALK_API CheckDNSAvailabilityRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The prefix used when this CNAME is reserved.</p>
      */
-    inline const Aws::String& GetCNAMEPrefix() const{ return m_cNAMEPrefix; }
+    inline const Aws::String& GetCNAMEPrefix() const { return m_cNAMEPrefix; }
     inline bool CNAMEPrefixHasBeenSet() const { return m_cNAMEPrefixHasBeenSet; }
-    inline void SetCNAMEPrefix(const Aws::String& value) { m_cNAMEPrefixHasBeenSet = true; m_cNAMEPrefix = value; }
-    inline void SetCNAMEPrefix(Aws::String&& value) { m_cNAMEPrefixHasBeenSet = true; m_cNAMEPrefix = std::move(value); }
-    inline void SetCNAMEPrefix(const char* value) { m_cNAMEPrefixHasBeenSet = true; m_cNAMEPrefix.assign(value); }
-    inline CheckDNSAvailabilityRequest& WithCNAMEPrefix(const Aws::String& value) { SetCNAMEPrefix(value); return *this;}
-    inline CheckDNSAvailabilityRequest& WithCNAMEPrefix(Aws::String&& value) { SetCNAMEPrefix(std::move(value)); return *this;}
-    inline CheckDNSAvailabilityRequest& WithCNAMEPrefix(const char* value) { SetCNAMEPrefix(value); return *this;}
+    template<typename CNAMEPrefixT = Aws::String>
+    void SetCNAMEPrefix(CNAMEPrefixT&& value) { m_cNAMEPrefixHasBeenSet = true; m_cNAMEPrefix = std::forward<CNAMEPrefixT>(value); }
+    template<typename CNAMEPrefixT = Aws::String>
+    CheckDNSAvailabilityRequest& WithCNAMEPrefix(CNAMEPrefixT&& value) { SetCNAMEPrefix(std::forward<CNAMEPrefixT>(value)); return *this;}
     ///@}
   private:
 

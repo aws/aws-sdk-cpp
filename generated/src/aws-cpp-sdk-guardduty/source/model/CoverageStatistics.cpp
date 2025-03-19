@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-CoverageStatistics::CoverageStatistics() : 
-    m_countByResourceTypeHasBeenSet(false),
-    m_countByCoverageStatusHasBeenSet(false)
-{
-}
-
 CoverageStatistics::CoverageStatistics(JsonView jsonValue)
-  : CoverageStatistics()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ CoverageStatistics& CoverageStatistics::operator =(JsonView jsonValue)
     }
     m_countByResourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("countByCoverageStatus"))
   {
     Aws::Map<Aws::String, JsonView> countByCoverageStatusJsonMap = jsonValue.GetObject("countByCoverageStatus").GetAllObjects();
@@ -51,7 +43,6 @@ CoverageStatistics& CoverageStatistics::operator =(JsonView jsonValue)
     }
     m_countByCoverageStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,24 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-AssessmentSummary::AssessmentSummary() : 
-    m_antipatternReportS3ObjectHasBeenSet(false),
-    m_antipatternReportStatus(AntipatternReportStatus::NOT_SET),
-    m_antipatternReportStatusHasBeenSet(false),
-    m_antipatternReportStatusMessageHasBeenSet(false),
-    m_lastAnalyzedTimestampHasBeenSet(false),
-    m_listAntipatternSeveritySummaryHasBeenSet(false),
-    m_listApplicationComponentStatusSummaryHasBeenSet(false),
-    m_listApplicationComponentStrategySummaryHasBeenSet(false),
-    m_listApplicationComponentSummaryHasBeenSet(false),
-    m_listServerStatusSummaryHasBeenSet(false),
-    m_listServerStrategySummaryHasBeenSet(false),
-    m_listServerSummaryHasBeenSet(false)
-{
-}
-
 AssessmentSummary::AssessmentSummary(JsonView jsonValue)
-  : AssessmentSummary()
 {
   *this = jsonValue;
 }
@@ -45,31 +28,23 @@ AssessmentSummary& AssessmentSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("antipatternReportS3Object"))
   {
     m_antipatternReportS3Object = jsonValue.GetObject("antipatternReportS3Object");
-
     m_antipatternReportS3ObjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("antipatternReportStatus"))
   {
     m_antipatternReportStatus = AntipatternReportStatusMapper::GetAntipatternReportStatusForName(jsonValue.GetString("antipatternReportStatus"));
-
     m_antipatternReportStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("antipatternReportStatusMessage"))
   {
     m_antipatternReportStatusMessage = jsonValue.GetString("antipatternReportStatusMessage");
-
     m_antipatternReportStatusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastAnalyzedTimestamp"))
   {
     m_lastAnalyzedTimestamp = jsonValue.GetDouble("lastAnalyzedTimestamp");
-
     m_lastAnalyzedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listAntipatternSeveritySummary"))
   {
     Aws::Utils::Array<JsonView> listAntipatternSeveritySummaryJsonList = jsonValue.GetArray("listAntipatternSeveritySummary");
@@ -79,7 +54,6 @@ AssessmentSummary& AssessmentSummary::operator =(JsonView jsonValue)
     }
     m_listAntipatternSeveritySummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listApplicationComponentStatusSummary"))
   {
     Aws::Utils::Array<JsonView> listApplicationComponentStatusSummaryJsonList = jsonValue.GetArray("listApplicationComponentStatusSummary");
@@ -89,7 +63,6 @@ AssessmentSummary& AssessmentSummary::operator =(JsonView jsonValue)
     }
     m_listApplicationComponentStatusSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listApplicationComponentStrategySummary"))
   {
     Aws::Utils::Array<JsonView> listApplicationComponentStrategySummaryJsonList = jsonValue.GetArray("listApplicationComponentStrategySummary");
@@ -99,7 +72,6 @@ AssessmentSummary& AssessmentSummary::operator =(JsonView jsonValue)
     }
     m_listApplicationComponentStrategySummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listApplicationComponentSummary"))
   {
     Aws::Utils::Array<JsonView> listApplicationComponentSummaryJsonList = jsonValue.GetArray("listApplicationComponentSummary");
@@ -109,7 +81,6 @@ AssessmentSummary& AssessmentSummary::operator =(JsonView jsonValue)
     }
     m_listApplicationComponentSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listServerStatusSummary"))
   {
     Aws::Utils::Array<JsonView> listServerStatusSummaryJsonList = jsonValue.GetArray("listServerStatusSummary");
@@ -119,7 +90,6 @@ AssessmentSummary& AssessmentSummary::operator =(JsonView jsonValue)
     }
     m_listServerStatusSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listServerStrategySummary"))
   {
     Aws::Utils::Array<JsonView> listServerStrategySummaryJsonList = jsonValue.GetArray("listServerStrategySummary");
@@ -129,7 +99,6 @@ AssessmentSummary& AssessmentSummary::operator =(JsonView jsonValue)
     }
     m_listServerStrategySummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("listServerSummary"))
   {
     Aws::Utils::Array<JsonView> listServerSummaryJsonList = jsonValue.GetArray("listServerSummary");
@@ -139,7 +108,6 @@ AssessmentSummary& AssessmentSummary::operator =(JsonView jsonValue)
     }
     m_listServerSummaryHasBeenSet = true;
   }
-
   return *this;
 }
 

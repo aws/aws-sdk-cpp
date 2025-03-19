@@ -12,11 +12,6 @@ using namespace Aws::IoTManagedIntegrations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetRuntimeLogConfigurationRequest::GetRuntimeLogConfigurationRequest() : 
-    m_managedThingIdHasBeenSet(false)
-{
-}
-
 Aws::String GetRuntimeLogConfigurationRequest::SerializePayload() const
 {
   return {};

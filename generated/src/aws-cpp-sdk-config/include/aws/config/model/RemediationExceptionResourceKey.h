@@ -32,7 +32,7 @@ namespace Model
   class RemediationExceptionResourceKey
   {
   public:
-    AWS_CONFIGSERVICE_API RemediationExceptionResourceKey();
+    AWS_CONFIGSERVICE_API RemediationExceptionResourceKey() = default;
     AWS_CONFIGSERVICE_API RemediationExceptionResourceKey(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API RemediationExceptionResourceKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The type of a resource.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline RemediationExceptionResourceKey& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline RemediationExceptionResourceKey& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline RemediationExceptionResourceKey& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    RemediationExceptionResourceKey& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the resource (for example., sg-xxxxxx).</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline RemediationExceptionResourceKey& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline RemediationExceptionResourceKey& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline RemediationExceptionResourceKey& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    RemediationExceptionResourceKey& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
   private:
 

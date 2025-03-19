@@ -12,16 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAuditSuppressionRequest::UpdateAuditSuppressionRequest() : 
-    m_checkNameHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_expirationDateHasBeenSet(false),
-    m_suppressIndefinitely(false),
-    m_suppressIndefinitelyHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAuditSuppressionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -27,7 +27,7 @@ namespace Model
   class SetIdentityDkimEnabledRequest : public SESRequest
   {
   public:
-    AWS_SES_API SetIdentityDkimEnabledRequest();
+    AWS_SES_API SetIdentityDkimEnabledRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The identity for which DKIM signing should be enabled or disabled.</p>
      */
-    inline const Aws::String& GetIdentity() const{ return m_identity; }
+    inline const Aws::String& GetIdentity() const { return m_identity; }
     inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
-    inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
-    inline void SetIdentity(Aws::String&& value) { m_identityHasBeenSet = true; m_identity = std::move(value); }
-    inline void SetIdentity(const char* value) { m_identityHasBeenSet = true; m_identity.assign(value); }
-    inline SetIdentityDkimEnabledRequest& WithIdentity(const Aws::String& value) { SetIdentity(value); return *this;}
-    inline SetIdentityDkimEnabledRequest& WithIdentity(Aws::String&& value) { SetIdentity(std::move(value)); return *this;}
-    inline SetIdentityDkimEnabledRequest& WithIdentity(const char* value) { SetIdentity(value); return *this;}
+    template<typename IdentityT = Aws::String>
+    void SetIdentity(IdentityT&& value) { m_identityHasBeenSet = true; m_identity = std::forward<IdentityT>(value); }
+    template<typename IdentityT = Aws::String>
+    SetIdentityDkimEnabledRequest& WithIdentity(IdentityT&& value) { SetIdentity(std::forward<IdentityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,7 +60,7 @@ namespace Model
      * <code>true</code> to enable DKIM signing for this identity; <code>false</code>
      * to disable it. </p>
      */
-    inline bool GetDkimEnabled() const{ return m_dkimEnabled; }
+    inline bool GetDkimEnabled() const { return m_dkimEnabled; }
     inline bool DkimEnabledHasBeenSet() const { return m_dkimEnabledHasBeenSet; }
     inline void SetDkimEnabled(bool value) { m_dkimEnabledHasBeenSet = true; m_dkimEnabled = value; }
     inline SetIdentityDkimEnabledRequest& WithDkimEnabled(bool value) { SetDkimEnabled(value); return *this;}
@@ -72,7 +70,7 @@ namespace Model
     Aws::String m_identity;
     bool m_identityHasBeenSet = false;
 
-    bool m_dkimEnabled;
+    bool m_dkimEnabled{false};
     bool m_dkimEnabledHasBeenSet = false;
   };
 

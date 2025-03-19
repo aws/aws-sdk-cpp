@@ -17,14 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetSerialConsoleAccessStatusResponse::GetSerialConsoleAccessStatusResponse() : 
-    m_serialConsoleAccessEnabled(false),
-    m_managedBy(ManagedBy::NOT_SET)
-{
-}
-
 GetSerialConsoleAccessStatusResponse::GetSerialConsoleAccessStatusResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : GetSerialConsoleAccessStatusResponse()
 {
   *this = result;
 }
@@ -45,11 +38,13 @@ GetSerialConsoleAccessStatusResponse& GetSerialConsoleAccessStatusResponse::oper
     if(!serialConsoleAccessEnabledNode.IsNull())
     {
       m_serialConsoleAccessEnabled = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serialConsoleAccessEnabledNode.GetText()).c_str()).c_str());
+      m_serialConsoleAccessEnabledHasBeenSet = true;
     }
     XmlNode managedByNode = resultNode.FirstChild("managedBy");
     if(!managedByNode.IsNull())
     {
-      m_managedBy = ManagedByMapper::GetManagedByForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(managedByNode.GetText()).c_str()).c_str());
+      m_managedBy = ManagedByMapper::GetManagedByForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(managedByNode.GetText()).c_str()));
+      m_managedByHasBeenSet = true;
     }
   }
 
@@ -58,6 +53,7 @@ GetSerialConsoleAccessStatusResponse& GetSerialConsoleAccessStatusResponse::oper
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetSerialConsoleAccessStatusResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -18,16 +18,7 @@ namespace CodeDeploy
 namespace Model
 {
 
-TimeBasedLinear::TimeBasedLinear() : 
-    m_linearPercentage(0),
-    m_linearPercentageHasBeenSet(false),
-    m_linearInterval(0),
-    m_linearIntervalHasBeenSet(false)
-{
-}
-
 TimeBasedLinear::TimeBasedLinear(JsonView jsonValue)
-  : TimeBasedLinear()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TimeBasedLinear& TimeBasedLinear::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("linearPercentage"))
   {
     m_linearPercentage = jsonValue.GetInteger("linearPercentage");
-
     m_linearPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("linearInterval"))
   {
     m_linearInterval = jsonValue.GetInteger("linearInterval");
-
     m_linearIntervalHasBeenSet = true;
   }
-
   return *this;
 }
 

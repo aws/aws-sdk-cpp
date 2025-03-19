@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DeviceFleetSummary::DeviceFleetSummary() : 
-    m_deviceFleetArnHasBeenSet(false),
-    m_deviceFleetNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 DeviceFleetSummary::DeviceFleetSummary(JsonView jsonValue)
-  : DeviceFleetSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ DeviceFleetSummary& DeviceFleetSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DeviceFleetArn"))
   {
     m_deviceFleetArn = jsonValue.GetString("DeviceFleetArn");
-
     m_deviceFleetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeviceFleetName"))
   {
     m_deviceFleetName = jsonValue.GetString("DeviceFleetName");
-
     m_deviceFleetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

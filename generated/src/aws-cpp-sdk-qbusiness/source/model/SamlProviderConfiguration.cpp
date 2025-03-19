@@ -18,13 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-SamlProviderConfiguration::SamlProviderConfiguration() : 
-    m_authenticationUrlHasBeenSet(false)
-{
-}
-
 SamlProviderConfiguration::SamlProviderConfiguration(JsonView jsonValue)
-  : SamlProviderConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SamlProviderConfiguration& SamlProviderConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("authenticationUrl"))
   {
     m_authenticationUrl = jsonValue.GetString("authenticationUrl");
-
     m_authenticationUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

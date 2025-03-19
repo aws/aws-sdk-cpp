@@ -18,22 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ClusterSchedulerConfigSummary::ClusterSchedulerConfigSummary() : 
-    m_clusterSchedulerConfigArnHasBeenSet(false),
-    m_clusterSchedulerConfigIdHasBeenSet(false),
-    m_clusterSchedulerConfigVersion(0),
-    m_clusterSchedulerConfigVersionHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_status(SchedulerResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_clusterArnHasBeenSet(false)
-{
-}
-
 ClusterSchedulerConfigSummary::ClusterSchedulerConfigSummary(JsonView jsonValue)
-  : ClusterSchedulerConfigSummary()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ ClusterSchedulerConfigSummary& ClusterSchedulerConfigSummary::operator =(JsonVie
   if(jsonValue.ValueExists("ClusterSchedulerConfigArn"))
   {
     m_clusterSchedulerConfigArn = jsonValue.GetString("ClusterSchedulerConfigArn");
-
     m_clusterSchedulerConfigArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterSchedulerConfigId"))
   {
     m_clusterSchedulerConfigId = jsonValue.GetString("ClusterSchedulerConfigId");
-
     m_clusterSchedulerConfigIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterSchedulerConfigVersion"))
   {
     m_clusterSchedulerConfigVersion = jsonValue.GetInteger("ClusterSchedulerConfigVersion");
-
     m_clusterSchedulerConfigVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = SchedulerResourceStatusMapper::GetSchedulerResourceStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterArn"))
   {
     m_clusterArn = jsonValue.GetString("ClusterArn");
-
     m_clusterArnHasBeenSet = true;
   }
-
   return *this;
 }
 

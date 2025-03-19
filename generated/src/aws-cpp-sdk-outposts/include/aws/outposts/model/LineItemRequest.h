@@ -31,7 +31,7 @@ namespace Model
   class LineItemRequest
   {
   public:
-    AWS_OUTPOSTS_API LineItemRequest();
+    AWS_OUTPOSTS_API LineItemRequest() = default;
     AWS_OUTPOSTS_API LineItemRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_OUTPOSTS_API LineItemRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OUTPOSTS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,21 +41,19 @@ namespace Model
     /**
      * <p>The ID of the catalog item.</p>
      */
-    inline const Aws::String& GetCatalogItemId() const{ return m_catalogItemId; }
+    inline const Aws::String& GetCatalogItemId() const { return m_catalogItemId; }
     inline bool CatalogItemIdHasBeenSet() const { return m_catalogItemIdHasBeenSet; }
-    inline void SetCatalogItemId(const Aws::String& value) { m_catalogItemIdHasBeenSet = true; m_catalogItemId = value; }
-    inline void SetCatalogItemId(Aws::String&& value) { m_catalogItemIdHasBeenSet = true; m_catalogItemId = std::move(value); }
-    inline void SetCatalogItemId(const char* value) { m_catalogItemIdHasBeenSet = true; m_catalogItemId.assign(value); }
-    inline LineItemRequest& WithCatalogItemId(const Aws::String& value) { SetCatalogItemId(value); return *this;}
-    inline LineItemRequest& WithCatalogItemId(Aws::String&& value) { SetCatalogItemId(std::move(value)); return *this;}
-    inline LineItemRequest& WithCatalogItemId(const char* value) { SetCatalogItemId(value); return *this;}
+    template<typename CatalogItemIdT = Aws::String>
+    void SetCatalogItemId(CatalogItemIdT&& value) { m_catalogItemIdHasBeenSet = true; m_catalogItemId = std::forward<CatalogItemIdT>(value); }
+    template<typename CatalogItemIdT = Aws::String>
+    LineItemRequest& WithCatalogItemId(CatalogItemIdT&& value) { SetCatalogItemId(std::forward<CatalogItemIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The quantity of a line item request.</p>
      */
-    inline int GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const { return m_quantity; }
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
     inline LineItemRequest& WithQuantity(int value) { SetQuantity(value); return *this;}
@@ -65,7 +63,7 @@ namespace Model
     Aws::String m_catalogItemId;
     bool m_catalogItemIdHasBeenSet = false;
 
-    int m_quantity;
+    int m_quantity{0};
     bool m_quantityHasBeenSet = false;
   };
 

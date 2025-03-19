@@ -17,16 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateTrailResult::UpdateTrailResult() : 
-    m_includeGlobalServiceEvents(false),
-    m_isMultiRegionTrail(false),
-    m_logFileValidationEnabled(false),
-    m_isOrganizationTrail(false)
-{
-}
-
 UpdateTrailResult::UpdateTrailResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateTrailResult()
 {
   *this = result;
 }
@@ -37,81 +28,70 @@ UpdateTrailResult& UpdateTrailResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3BucketName"))
   {
     m_s3BucketName = jsonValue.GetString("S3BucketName");
-
+    m_s3BucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3KeyPrefix"))
   {
     m_s3KeyPrefix = jsonValue.GetString("S3KeyPrefix");
-
+    m_s3KeyPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnsTopicARN"))
   {
     m_snsTopicARN = jsonValue.GetString("SnsTopicARN");
-
+    m_snsTopicARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludeGlobalServiceEvents"))
   {
     m_includeGlobalServiceEvents = jsonValue.GetBool("IncludeGlobalServiceEvents");
-
+    m_includeGlobalServiceEventsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsMultiRegionTrail"))
   {
     m_isMultiRegionTrail = jsonValue.GetBool("IsMultiRegionTrail");
-
+    m_isMultiRegionTrailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrailARN"))
   {
     m_trailARN = jsonValue.GetString("TrailARN");
-
+    m_trailARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogFileValidationEnabled"))
   {
     m_logFileValidationEnabled = jsonValue.GetBool("LogFileValidationEnabled");
-
+    m_logFileValidationEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchLogsLogGroupArn"))
   {
     m_cloudWatchLogsLogGroupArn = jsonValue.GetString("CloudWatchLogsLogGroupArn");
-
+    m_cloudWatchLogsLogGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchLogsRoleArn"))
   {
     m_cloudWatchLogsRoleArn = jsonValue.GetString("CloudWatchLogsRoleArn");
-
+    m_cloudWatchLogsRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
+    m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IsOrganizationTrail"))
   {
     m_isOrganizationTrail = jsonValue.GetBool("IsOrganizationTrail");
-
+    m_isOrganizationTrailHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

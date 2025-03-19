@@ -31,7 +31,7 @@ namespace Model
   class UserProficiency
   {
   public:
-    AWS_CONNECT_API UserProficiency();
+    AWS_CONNECT_API UserProficiency() = default;
     AWS_CONNECT_API UserProficiency(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API UserProficiency& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
      * <p>The name of user's proficiency. You must use name of predefined attribute
      * present in the Amazon Connect instance.</p>
      */
-    inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+    inline const Aws::String& GetAttributeName() const { return m_attributeName; }
     inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
-    inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
-    inline void SetAttributeName(Aws::String&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::move(value); }
-    inline void SetAttributeName(const char* value) { m_attributeNameHasBeenSet = true; m_attributeName.assign(value); }
-    inline UserProficiency& WithAttributeName(const Aws::String& value) { SetAttributeName(value); return *this;}
-    inline UserProficiency& WithAttributeName(Aws::String&& value) { SetAttributeName(std::move(value)); return *this;}
-    inline UserProficiency& WithAttributeName(const char* value) { SetAttributeName(value); return *this;}
+    template<typename AttributeNameT = Aws::String>
+    void SetAttributeName(AttributeNameT&& value) { m_attributeNameHasBeenSet = true; m_attributeName = std::forward<AttributeNameT>(value); }
+    template<typename AttributeNameT = Aws::String>
+    UserProficiency& WithAttributeName(AttributeNameT&& value) { SetAttributeName(std::forward<AttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,21 +55,19 @@ namespace Model
      * <p>The value of user's proficiency. You must use value of predefined attribute
      * present in the Amazon Connect instance.</p>
      */
-    inline const Aws::String& GetAttributeValue() const{ return m_attributeValue; }
+    inline const Aws::String& GetAttributeValue() const { return m_attributeValue; }
     inline bool AttributeValueHasBeenSet() const { return m_attributeValueHasBeenSet; }
-    inline void SetAttributeValue(const Aws::String& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
-    inline void SetAttributeValue(Aws::String&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::move(value); }
-    inline void SetAttributeValue(const char* value) { m_attributeValueHasBeenSet = true; m_attributeValue.assign(value); }
-    inline UserProficiency& WithAttributeValue(const Aws::String& value) { SetAttributeValue(value); return *this;}
-    inline UserProficiency& WithAttributeValue(Aws::String&& value) { SetAttributeValue(std::move(value)); return *this;}
-    inline UserProficiency& WithAttributeValue(const char* value) { SetAttributeValue(value); return *this;}
+    template<typename AttributeValueT = Aws::String>
+    void SetAttributeValue(AttributeValueT&& value) { m_attributeValueHasBeenSet = true; m_attributeValue = std::forward<AttributeValueT>(value); }
+    template<typename AttributeValueT = Aws::String>
+    UserProficiency& WithAttributeValue(AttributeValueT&& value) { SetAttributeValue(std::forward<AttributeValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The level of the proficiency. The valid values are 1, 2, 3, 4 and 5.</p>
      */
-    inline double GetLevel() const{ return m_level; }
+    inline double GetLevel() const { return m_level; }
     inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
     inline void SetLevel(double value) { m_levelHasBeenSet = true; m_level = value; }
     inline UserProficiency& WithLevel(double value) { SetLevel(value); return *this;}
@@ -84,7 +80,7 @@ namespace Model
     Aws::String m_attributeValue;
     bool m_attributeValueHasBeenSet = false;
 
-    double m_level;
+    double m_level{0.0};
     bool m_levelHasBeenSet = false;
   };
 

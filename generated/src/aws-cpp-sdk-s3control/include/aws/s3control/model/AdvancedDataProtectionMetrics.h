@@ -37,7 +37,7 @@ namespace Model
   class AdvancedDataProtectionMetrics
   {
   public:
-    AWS_S3CONTROL_API AdvancedDataProtectionMetrics();
+    AWS_S3CONTROL_API AdvancedDataProtectionMetrics() = default;
     AWS_S3CONTROL_API AdvancedDataProtectionMetrics(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API AdvancedDataProtectionMetrics& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,14 +49,14 @@ namespace Model
      * <p>A container that indicates whether advanced data-protection metrics are
      * enabled.</p>
      */
-    inline bool GetIsEnabled() const{ return m_isEnabled; }
+    inline bool GetIsEnabled() const { return m_isEnabled; }
     inline bool IsEnabledHasBeenSet() const { return m_isEnabledHasBeenSet; }
     inline void SetIsEnabled(bool value) { m_isEnabledHasBeenSet = true; m_isEnabled = value; }
     inline AdvancedDataProtectionMetrics& WithIsEnabled(bool value) { SetIsEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_isEnabled;
+    bool m_isEnabled{false};
     bool m_isEnabledHasBeenSet = false;
   };
 

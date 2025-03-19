@@ -18,14 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-AnomalyGroupTimeSeries::AnomalyGroupTimeSeries() : 
-    m_anomalyGroupIdHasBeenSet(false),
-    m_timeSeriesIdHasBeenSet(false)
-{
-}
-
 AnomalyGroupTimeSeries::AnomalyGroupTimeSeries(JsonView jsonValue)
-  : AnomalyGroupTimeSeries()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AnomalyGroupTimeSeries& AnomalyGroupTimeSeries::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AnomalyGroupId"))
   {
     m_anomalyGroupId = jsonValue.GetString("AnomalyGroupId");
-
     m_anomalyGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeSeriesId"))
   {
     m_timeSeriesId = jsonValue.GetString("TimeSeriesId");
-
     m_timeSeriesIdHasBeenSet = true;
   }
-
   return *this;
 }
 

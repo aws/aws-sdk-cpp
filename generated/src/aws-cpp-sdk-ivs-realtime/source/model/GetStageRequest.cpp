@@ -12,11 +12,6 @@ using namespace Aws::ivsrealtime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetStageRequest::GetStageRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String GetStageRequest::SerializePayload() const
 {
   JsonValue payload;

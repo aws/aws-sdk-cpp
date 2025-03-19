@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-JoinColumn::JoinColumn() : 
-    m_fromHasBeenSet(false),
-    m_keysHasBeenSet(false)
-{
-}
-
 JoinColumn::JoinColumn(JsonView jsonValue)
-  : JoinColumn()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ JoinColumn& JoinColumn::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("From"))
   {
     m_from = jsonValue.GetString("From");
-
     m_fromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Keys"))
   {
     Aws::Utils::Array<JsonView> keysJsonList = jsonValue.GetArray("Keys");
@@ -55,7 +46,6 @@ JoinColumn& JoinColumn::operator =(JsonView jsonValue)
     }
     m_keysHasBeenSet = true;
   }
-
   return *this;
 }
 

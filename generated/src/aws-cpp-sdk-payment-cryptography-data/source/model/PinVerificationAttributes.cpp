@@ -18,14 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-PinVerificationAttributes::PinVerificationAttributes() : 
-    m_visaPinHasBeenSet(false),
-    m_ibm3624PinHasBeenSet(false)
-{
-}
-
 PinVerificationAttributes::PinVerificationAttributes(JsonView jsonValue)
-  : PinVerificationAttributes()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PinVerificationAttributes& PinVerificationAttributes::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("VisaPin"))
   {
     m_visaPin = jsonValue.GetObject("VisaPin");
-
     m_visaPinHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ibm3624Pin"))
   {
     m_ibm3624Pin = jsonValue.GetObject("Ibm3624Pin");
-
     m_ibm3624PinHasBeenSet = true;
   }
-
   return *this;
 }
 

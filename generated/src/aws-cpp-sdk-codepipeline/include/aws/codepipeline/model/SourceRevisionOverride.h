@@ -38,7 +38,7 @@ namespace Model
   class SourceRevisionOverride
   {
   public:
-    AWS_CODEPIPELINE_API SourceRevisionOverride();
+    AWS_CODEPIPELINE_API SourceRevisionOverride() = default;
     AWS_CODEPIPELINE_API SourceRevisionOverride(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API SourceRevisionOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
     /**
      * <p>The name of the action where the override will be applied.</p>
      */
-    inline const Aws::String& GetActionName() const{ return m_actionName; }
+    inline const Aws::String& GetActionName() const { return m_actionName; }
     inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
-    inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
-    inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
-    inline void SetActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.assign(value); }
-    inline SourceRevisionOverride& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
-    inline SourceRevisionOverride& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
-    inline SourceRevisionOverride& WithActionName(const char* value) { SetActionName(value); return *this;}
+    template<typename ActionNameT = Aws::String>
+    void SetActionName(ActionNameT&& value) { m_actionNameHasBeenSet = true; m_actionName = std::forward<ActionNameT>(value); }
+    template<typename ActionNameT = Aws::String>
+    SourceRevisionOverride& WithActionName(ActionNameT&& value) { SetActionName(std::forward<ActionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +61,10 @@ namespace Model
      * <p>The type of source revision, based on the source provider. For example, the
      * revision type for the CodeCommit action provider is the commit ID.</p>
      */
-    inline const SourceRevisionType& GetRevisionType() const{ return m_revisionType; }
+    inline SourceRevisionType GetRevisionType() const { return m_revisionType; }
     inline bool RevisionTypeHasBeenSet() const { return m_revisionTypeHasBeenSet; }
-    inline void SetRevisionType(const SourceRevisionType& value) { m_revisionTypeHasBeenSet = true; m_revisionType = value; }
-    inline void SetRevisionType(SourceRevisionType&& value) { m_revisionTypeHasBeenSet = true; m_revisionType = std::move(value); }
-    inline SourceRevisionOverride& WithRevisionType(const SourceRevisionType& value) { SetRevisionType(value); return *this;}
-    inline SourceRevisionOverride& WithRevisionType(SourceRevisionType&& value) { SetRevisionType(std::move(value)); return *this;}
+    inline void SetRevisionType(SourceRevisionType value) { m_revisionTypeHasBeenSet = true; m_revisionType = value; }
+    inline SourceRevisionOverride& WithRevisionType(SourceRevisionType value) { SetRevisionType(value); return *this;}
     ///@}
 
     ///@{
@@ -76,21 +72,19 @@ namespace Model
      * <p>The source revision, or version of your source artifact, with the changes
      * that you want to run in the pipeline execution.</p>
      */
-    inline const Aws::String& GetRevisionValue() const{ return m_revisionValue; }
+    inline const Aws::String& GetRevisionValue() const { return m_revisionValue; }
     inline bool RevisionValueHasBeenSet() const { return m_revisionValueHasBeenSet; }
-    inline void SetRevisionValue(const Aws::String& value) { m_revisionValueHasBeenSet = true; m_revisionValue = value; }
-    inline void SetRevisionValue(Aws::String&& value) { m_revisionValueHasBeenSet = true; m_revisionValue = std::move(value); }
-    inline void SetRevisionValue(const char* value) { m_revisionValueHasBeenSet = true; m_revisionValue.assign(value); }
-    inline SourceRevisionOverride& WithRevisionValue(const Aws::String& value) { SetRevisionValue(value); return *this;}
-    inline SourceRevisionOverride& WithRevisionValue(Aws::String&& value) { SetRevisionValue(std::move(value)); return *this;}
-    inline SourceRevisionOverride& WithRevisionValue(const char* value) { SetRevisionValue(value); return *this;}
+    template<typename RevisionValueT = Aws::String>
+    void SetRevisionValue(RevisionValueT&& value) { m_revisionValueHasBeenSet = true; m_revisionValue = std::forward<RevisionValueT>(value); }
+    template<typename RevisionValueT = Aws::String>
+    SourceRevisionOverride& WithRevisionValue(RevisionValueT&& value) { SetRevisionValue(std::forward<RevisionValueT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_actionName;
     bool m_actionNameHasBeenSet = false;
 
-    SourceRevisionType m_revisionType;
+    SourceRevisionType m_revisionType{SourceRevisionType::NOT_SET};
     bool m_revisionTypeHasBeenSet = false;
 
     Aws::String m_revisionValue;

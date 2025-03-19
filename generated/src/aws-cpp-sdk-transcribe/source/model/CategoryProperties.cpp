@@ -18,19 +18,7 @@ namespace TranscribeService
 namespace Model
 {
 
-CategoryProperties::CategoryProperties() : 
-    m_categoryNameHasBeenSet(false),
-    m_rulesHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_inputType(InputType::NOT_SET),
-    m_inputTypeHasBeenSet(false)
-{
-}
-
 CategoryProperties::CategoryProperties(JsonView jsonValue)
-  : CategoryProperties()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ CategoryProperties& CategoryProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CategoryName"))
   {
     m_categoryName = jsonValue.GetString("CategoryName");
-
     m_categoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rules"))
   {
     Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
@@ -53,21 +39,16 @@ CategoryProperties& CategoryProperties::operator =(JsonView jsonValue)
     }
     m_rulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTime"))
   {
     m_createTime = jsonValue.GetDouble("CreateTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("LastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -77,14 +58,11 @@ CategoryProperties& CategoryProperties::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputType"))
   {
     m_inputType = InputTypeMapper::GetInputTypeForName(jsonValue.GetString("InputType"));
-
     m_inputTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -24,7 +24,7 @@ namespace Model
   class CreateDevEndpointRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API CreateDevEndpointRequest();
+    AWS_GLUE_API CreateDevEndpointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The name to be assigned to the new <code>DevEndpoint</code>.</p>
      */
-    inline const Aws::String& GetEndpointName() const{ return m_endpointName; }
+    inline const Aws::String& GetEndpointName() const { return m_endpointName; }
     inline bool EndpointNameHasBeenSet() const { return m_endpointNameHasBeenSet; }
-    inline void SetEndpointName(const Aws::String& value) { m_endpointNameHasBeenSet = true; m_endpointName = value; }
-    inline void SetEndpointName(Aws::String&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::move(value); }
-    inline void SetEndpointName(const char* value) { m_endpointNameHasBeenSet = true; m_endpointName.assign(value); }
-    inline CreateDevEndpointRequest& WithEndpointName(const Aws::String& value) { SetEndpointName(value); return *this;}
-    inline CreateDevEndpointRequest& WithEndpointName(Aws::String&& value) { SetEndpointName(std::move(value)); return *this;}
-    inline CreateDevEndpointRequest& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
+    template<typename EndpointNameT = Aws::String>
+    void SetEndpointName(EndpointNameT&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::forward<EndpointNameT>(value); }
+    template<typename EndpointNameT = Aws::String>
+    CreateDevEndpointRequest& WithEndpointName(EndpointNameT&& value) { SetEndpointName(std::forward<EndpointNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IAM role for the <code>DevEndpoint</code>.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline CreateDevEndpointRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CreateDevEndpointRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CreateDevEndpointRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CreateDevEndpointRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,29 +66,26 @@ namespace Model
      * <p>Security group IDs for the security groups to be used by the new
      * <code>DevEndpoint</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+    inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const { return m_securityGroupIds; }
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
-    inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
-    inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
-    inline CreateDevEndpointRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
-    inline CreateDevEndpointRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
-    inline CreateDevEndpointRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
-    inline CreateDevEndpointRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
-    inline CreateDevEndpointRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    void SetSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::forward<SecurityGroupIdsT>(value); }
+    template<typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
+    CreateDevEndpointRequest& WithSecurityGroupIds(SecurityGroupIdsT&& value) { SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value)); return *this;}
+    template<typename SecurityGroupIdsT = Aws::String>
+    CreateDevEndpointRequest& AddSecurityGroupIds(SecurityGroupIdsT&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The subnet ID for the new <code>DevEndpoint</code> to use.</p>
      */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+    inline const Aws::String& GetSubnetId() const { return m_subnetId; }
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-    inline CreateDevEndpointRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-    inline CreateDevEndpointRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-    inline CreateDevEndpointRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    template<typename SubnetIdT = Aws::String>
+    void SetSubnetId(SubnetIdT&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::forward<SubnetIdT>(value); }
+    template<typename SubnetIdT = Aws::String>
+    CreateDevEndpointRequest& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +94,12 @@ namespace Model
      * authentication. This attribute is provided for backward compatibility because
      * the recommended attribute to use is public keys.</p>
      */
-    inline const Aws::String& GetPublicKey() const{ return m_publicKey; }
+    inline const Aws::String& GetPublicKey() const { return m_publicKey; }
     inline bool PublicKeyHasBeenSet() const { return m_publicKeyHasBeenSet; }
-    inline void SetPublicKey(const Aws::String& value) { m_publicKeyHasBeenSet = true; m_publicKey = value; }
-    inline void SetPublicKey(Aws::String&& value) { m_publicKeyHasBeenSet = true; m_publicKey = std::move(value); }
-    inline void SetPublicKey(const char* value) { m_publicKeyHasBeenSet = true; m_publicKey.assign(value); }
-    inline CreateDevEndpointRequest& WithPublicKey(const Aws::String& value) { SetPublicKey(value); return *this;}
-    inline CreateDevEndpointRequest& WithPublicKey(Aws::String&& value) { SetPublicKey(std::move(value)); return *this;}
-    inline CreateDevEndpointRequest& WithPublicKey(const char* value) { SetPublicKey(value); return *this;}
+    template<typename PublicKeyT = Aws::String>
+    void SetPublicKey(PublicKeyT&& value) { m_publicKeyHasBeenSet = true; m_publicKey = std::forward<PublicKeyT>(value); }
+    template<typename PublicKeyT = Aws::String>
+    CreateDevEndpointRequest& WithPublicKey(PublicKeyT&& value) { SetPublicKey(std::forward<PublicKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,15 +113,14 @@ namespace Model
      * <code>deletePublicKeys</code> attribute, and the list of new keys in the
      * <code>addPublicKeys</code> attribute.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetPublicKeys() const{ return m_publicKeys; }
+    inline const Aws::Vector<Aws::String>& GetPublicKeys() const { return m_publicKeys; }
     inline bool PublicKeysHasBeenSet() const { return m_publicKeysHasBeenSet; }
-    inline void SetPublicKeys(const Aws::Vector<Aws::String>& value) { m_publicKeysHasBeenSet = true; m_publicKeys = value; }
-    inline void SetPublicKeys(Aws::Vector<Aws::String>&& value) { m_publicKeysHasBeenSet = true; m_publicKeys = std::move(value); }
-    inline CreateDevEndpointRequest& WithPublicKeys(const Aws::Vector<Aws::String>& value) { SetPublicKeys(value); return *this;}
-    inline CreateDevEndpointRequest& WithPublicKeys(Aws::Vector<Aws::String>&& value) { SetPublicKeys(std::move(value)); return *this;}
-    inline CreateDevEndpointRequest& AddPublicKeys(const Aws::String& value) { m_publicKeysHasBeenSet = true; m_publicKeys.push_back(value); return *this; }
-    inline CreateDevEndpointRequest& AddPublicKeys(Aws::String&& value) { m_publicKeysHasBeenSet = true; m_publicKeys.push_back(std::move(value)); return *this; }
-    inline CreateDevEndpointRequest& AddPublicKeys(const char* value) { m_publicKeysHasBeenSet = true; m_publicKeys.push_back(value); return *this; }
+    template<typename PublicKeysT = Aws::Vector<Aws::String>>
+    void SetPublicKeys(PublicKeysT&& value) { m_publicKeysHasBeenSet = true; m_publicKeys = std::forward<PublicKeysT>(value); }
+    template<typename PublicKeysT = Aws::Vector<Aws::String>>
+    CreateDevEndpointRequest& WithPublicKeys(PublicKeysT&& value) { SetPublicKeys(std::forward<PublicKeysT>(value)); return *this;}
+    template<typename PublicKeysT = Aws::String>
+    CreateDevEndpointRequest& AddPublicKeys(PublicKeysT&& value) { m_publicKeysHasBeenSet = true; m_publicKeys.emplace_back(std::forward<PublicKeysT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -138,7 +128,7 @@ namespace Model
      * <p>The number of Glue Data Processing Units (DPUs) to allocate to this
      * <code>DevEndpoint</code>.</p>
      */
-    inline int GetNumberOfNodes() const{ return m_numberOfNodes; }
+    inline int GetNumberOfNodes() const { return m_numberOfNodes; }
     inline bool NumberOfNodesHasBeenSet() const { return m_numberOfNodesHasBeenSet; }
     inline void SetNumberOfNodes(int value) { m_numberOfNodesHasBeenSet = true; m_numberOfNodes = value; }
     inline CreateDevEndpointRequest& WithNumberOfNodes(int value) { SetNumberOfNodes(value); return *this;}
@@ -160,12 +150,10 @@ namespace Model
      * <code>WorkerType</code> configuration, the Spark drivers for the development
      * endpoint will run on 4 vCPU, 16 GB of memory, and a 64 GB disk. </p>
      */
-    inline const WorkerType& GetWorkerType() const{ return m_workerType; }
+    inline WorkerType GetWorkerType() const { return m_workerType; }
     inline bool WorkerTypeHasBeenSet() const { return m_workerTypeHasBeenSet; }
-    inline void SetWorkerType(const WorkerType& value) { m_workerTypeHasBeenSet = true; m_workerType = value; }
-    inline void SetWorkerType(WorkerType&& value) { m_workerTypeHasBeenSet = true; m_workerType = std::move(value); }
-    inline CreateDevEndpointRequest& WithWorkerType(const WorkerType& value) { SetWorkerType(value); return *this;}
-    inline CreateDevEndpointRequest& WithWorkerType(WorkerType&& value) { SetWorkerType(std::move(value)); return *this;}
+    inline void SetWorkerType(WorkerType value) { m_workerTypeHasBeenSet = true; m_workerType = value; }
+    inline CreateDevEndpointRequest& WithWorkerType(WorkerType value) { SetWorkerType(value); return *this;}
     ///@}
 
     ///@{
@@ -182,14 +170,12 @@ namespace Model
      * <code>UpdateDevEndpoint</code> APIs. If no arguments are provided, the version
      * defaults to Python 2.</p>
      */
-    inline const Aws::String& GetGlueVersion() const{ return m_glueVersion; }
+    inline const Aws::String& GetGlueVersion() const { return m_glueVersion; }
     inline bool GlueVersionHasBeenSet() const { return m_glueVersionHasBeenSet; }
-    inline void SetGlueVersion(const Aws::String& value) { m_glueVersionHasBeenSet = true; m_glueVersion = value; }
-    inline void SetGlueVersion(Aws::String&& value) { m_glueVersionHasBeenSet = true; m_glueVersion = std::move(value); }
-    inline void SetGlueVersion(const char* value) { m_glueVersionHasBeenSet = true; m_glueVersion.assign(value); }
-    inline CreateDevEndpointRequest& WithGlueVersion(const Aws::String& value) { SetGlueVersion(value); return *this;}
-    inline CreateDevEndpointRequest& WithGlueVersion(Aws::String&& value) { SetGlueVersion(std::move(value)); return *this;}
-    inline CreateDevEndpointRequest& WithGlueVersion(const char* value) { SetGlueVersion(value); return *this;}
+    template<typename GlueVersionT = Aws::String>
+    void SetGlueVersion(GlueVersionT&& value) { m_glueVersionHasBeenSet = true; m_glueVersion = std::forward<GlueVersionT>(value); }
+    template<typename GlueVersionT = Aws::String>
+    CreateDevEndpointRequest& WithGlueVersion(GlueVersionT&& value) { SetGlueVersion(std::forward<GlueVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -198,7 +184,7 @@ namespace Model
      * to the development endpoint.</p> <p>The maximum number of workers you can define
      * are 299 for <code>G.1X</code>, and 149 for <code>G.2X</code>. </p>
      */
-    inline int GetNumberOfWorkers() const{ return m_numberOfWorkers; }
+    inline int GetNumberOfWorkers() const { return m_numberOfWorkers; }
     inline bool NumberOfWorkersHasBeenSet() const { return m_numberOfWorkersHasBeenSet; }
     inline void SetNumberOfWorkers(int value) { m_numberOfWorkersHasBeenSet = true; m_numberOfWorkers = value; }
     inline CreateDevEndpointRequest& WithNumberOfWorkers(int value) { SetNumberOfWorkers(value); return *this;}
@@ -213,14 +199,12 @@ namespace Model
      * the <a href="http://pandas.pydata.org/">pandas</a> Python data analysis library,
      * are not yet supported.</p> 
      */
-    inline const Aws::String& GetExtraPythonLibsS3Path() const{ return m_extraPythonLibsS3Path; }
+    inline const Aws::String& GetExtraPythonLibsS3Path() const { return m_extraPythonLibsS3Path; }
     inline bool ExtraPythonLibsS3PathHasBeenSet() const { return m_extraPythonLibsS3PathHasBeenSet; }
-    inline void SetExtraPythonLibsS3Path(const Aws::String& value) { m_extraPythonLibsS3PathHasBeenSet = true; m_extraPythonLibsS3Path = value; }
-    inline void SetExtraPythonLibsS3Path(Aws::String&& value) { m_extraPythonLibsS3PathHasBeenSet = true; m_extraPythonLibsS3Path = std::move(value); }
-    inline void SetExtraPythonLibsS3Path(const char* value) { m_extraPythonLibsS3PathHasBeenSet = true; m_extraPythonLibsS3Path.assign(value); }
-    inline CreateDevEndpointRequest& WithExtraPythonLibsS3Path(const Aws::String& value) { SetExtraPythonLibsS3Path(value); return *this;}
-    inline CreateDevEndpointRequest& WithExtraPythonLibsS3Path(Aws::String&& value) { SetExtraPythonLibsS3Path(std::move(value)); return *this;}
-    inline CreateDevEndpointRequest& WithExtraPythonLibsS3Path(const char* value) { SetExtraPythonLibsS3Path(value); return *this;}
+    template<typename ExtraPythonLibsS3PathT = Aws::String>
+    void SetExtraPythonLibsS3Path(ExtraPythonLibsS3PathT&& value) { m_extraPythonLibsS3PathHasBeenSet = true; m_extraPythonLibsS3Path = std::forward<ExtraPythonLibsS3PathT>(value); }
+    template<typename ExtraPythonLibsS3PathT = Aws::String>
+    CreateDevEndpointRequest& WithExtraPythonLibsS3Path(ExtraPythonLibsS3PathT&& value) { SetExtraPythonLibsS3Path(std::forward<ExtraPythonLibsS3PathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -228,14 +212,12 @@ namespace Model
      * <p>The path to one or more Java <code>.jar</code> files in an S3 bucket that
      * should be loaded in your <code>DevEndpoint</code>.</p>
      */
-    inline const Aws::String& GetExtraJarsS3Path() const{ return m_extraJarsS3Path; }
+    inline const Aws::String& GetExtraJarsS3Path() const { return m_extraJarsS3Path; }
     inline bool ExtraJarsS3PathHasBeenSet() const { return m_extraJarsS3PathHasBeenSet; }
-    inline void SetExtraJarsS3Path(const Aws::String& value) { m_extraJarsS3PathHasBeenSet = true; m_extraJarsS3Path = value; }
-    inline void SetExtraJarsS3Path(Aws::String&& value) { m_extraJarsS3PathHasBeenSet = true; m_extraJarsS3Path = std::move(value); }
-    inline void SetExtraJarsS3Path(const char* value) { m_extraJarsS3PathHasBeenSet = true; m_extraJarsS3Path.assign(value); }
-    inline CreateDevEndpointRequest& WithExtraJarsS3Path(const Aws::String& value) { SetExtraJarsS3Path(value); return *this;}
-    inline CreateDevEndpointRequest& WithExtraJarsS3Path(Aws::String&& value) { SetExtraJarsS3Path(std::move(value)); return *this;}
-    inline CreateDevEndpointRequest& WithExtraJarsS3Path(const char* value) { SetExtraJarsS3Path(value); return *this;}
+    template<typename ExtraJarsS3PathT = Aws::String>
+    void SetExtraJarsS3Path(ExtraJarsS3PathT&& value) { m_extraJarsS3PathHasBeenSet = true; m_extraJarsS3Path = std::forward<ExtraJarsS3PathT>(value); }
+    template<typename ExtraJarsS3PathT = Aws::String>
+    CreateDevEndpointRequest& WithExtraJarsS3Path(ExtraJarsS3PathT&& value) { SetExtraJarsS3Path(std::forward<ExtraJarsS3PathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -243,14 +225,12 @@ namespace Model
      * <p>The name of the <code>SecurityConfiguration</code> structure to be used with
      * this <code>DevEndpoint</code>.</p>
      */
-    inline const Aws::String& GetSecurityConfiguration() const{ return m_securityConfiguration; }
+    inline const Aws::String& GetSecurityConfiguration() const { return m_securityConfiguration; }
     inline bool SecurityConfigurationHasBeenSet() const { return m_securityConfigurationHasBeenSet; }
-    inline void SetSecurityConfiguration(const Aws::String& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = value; }
-    inline void SetSecurityConfiguration(Aws::String&& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = std::move(value); }
-    inline void SetSecurityConfiguration(const char* value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration.assign(value); }
-    inline CreateDevEndpointRequest& WithSecurityConfiguration(const Aws::String& value) { SetSecurityConfiguration(value); return *this;}
-    inline CreateDevEndpointRequest& WithSecurityConfiguration(Aws::String&& value) { SetSecurityConfiguration(std::move(value)); return *this;}
-    inline CreateDevEndpointRequest& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
+    template<typename SecurityConfigurationT = Aws::String>
+    void SetSecurityConfiguration(SecurityConfigurationT&& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = std::forward<SecurityConfigurationT>(value); }
+    template<typename SecurityConfigurationT = Aws::String>
+    CreateDevEndpointRequest& WithSecurityConfiguration(SecurityConfigurationT&& value) { SetSecurityConfiguration(std::forward<SecurityConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -260,38 +240,32 @@ namespace Model
      * href="https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html">Amazon Web
      * Services Tags in Glue</a> in the developer guide.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateDevEndpointRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateDevEndpointRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateDevEndpointRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateDevEndpointRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateDevEndpointRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateDevEndpointRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateDevEndpointRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateDevEndpointRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateDevEndpointRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateDevEndpointRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateDevEndpointRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>A map of arguments used to configure the <code>DevEndpoint</code>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetArguments() const{ return m_arguments; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetArguments() const { return m_arguments; }
     inline bool ArgumentsHasBeenSet() const { return m_argumentsHasBeenSet; }
-    inline void SetArguments(const Aws::Map<Aws::String, Aws::String>& value) { m_argumentsHasBeenSet = true; m_arguments = value; }
-    inline void SetArguments(Aws::Map<Aws::String, Aws::String>&& value) { m_argumentsHasBeenSet = true; m_arguments = std::move(value); }
-    inline CreateDevEndpointRequest& WithArguments(const Aws::Map<Aws::String, Aws::String>& value) { SetArguments(value); return *this;}
-    inline CreateDevEndpointRequest& WithArguments(Aws::Map<Aws::String, Aws::String>&& value) { SetArguments(std::move(value)); return *this;}
-    inline CreateDevEndpointRequest& AddArguments(const Aws::String& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
-    inline CreateDevEndpointRequest& AddArguments(Aws::String&& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
-    inline CreateDevEndpointRequest& AddArguments(const Aws::String& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
-    inline CreateDevEndpointRequest& AddArguments(Aws::String&& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateDevEndpointRequest& AddArguments(const char* key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
-    inline CreateDevEndpointRequest& AddArguments(Aws::String&& key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
-    inline CreateDevEndpointRequest& AddArguments(const char* key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
+    template<typename ArgumentsT = Aws::Map<Aws::String, Aws::String>>
+    void SetArguments(ArgumentsT&& value) { m_argumentsHasBeenSet = true; m_arguments = std::forward<ArgumentsT>(value); }
+    template<typename ArgumentsT = Aws::Map<Aws::String, Aws::String>>
+    CreateDevEndpointRequest& WithArguments(ArgumentsT&& value) { SetArguments(std::forward<ArgumentsT>(value)); return *this;}
+    template<typename ArgumentsKeyT = Aws::String, typename ArgumentsValueT = Aws::String>
+    CreateDevEndpointRequest& AddArguments(ArgumentsKeyT&& key, ArgumentsValueT&& value) {
+      m_argumentsHasBeenSet = true; m_arguments.emplace(std::forward<ArgumentsKeyT>(key), std::forward<ArgumentsValueT>(value)); return *this;
+    }
     ///@}
   private:
 
@@ -313,16 +287,16 @@ namespace Model
     Aws::Vector<Aws::String> m_publicKeys;
     bool m_publicKeysHasBeenSet = false;
 
-    int m_numberOfNodes;
+    int m_numberOfNodes{0};
     bool m_numberOfNodesHasBeenSet = false;
 
-    WorkerType m_workerType;
+    WorkerType m_workerType{WorkerType::NOT_SET};
     bool m_workerTypeHasBeenSet = false;
 
     Aws::String m_glueVersion;
     bool m_glueVersionHasBeenSet = false;
 
-    int m_numberOfWorkers;
+    int m_numberOfWorkers{0};
     bool m_numberOfWorkersHasBeenSet = false;
 
     Aws::String m_extraPythonLibsS3Path;

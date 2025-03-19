@@ -35,7 +35,7 @@ namespace Model
   class KinesisSettings
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API KinesisSettings();
+    AWS_DATABASEMIGRATIONSERVICE_API KinesisSettings() = default;
     AWS_DATABASEMIGRATIONSERVICE_API KinesisSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API KinesisSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the Amazon Kinesis Data Streams
      * endpoint.</p>
      */
-    inline const Aws::String& GetStreamArn() const{ return m_streamArn; }
+    inline const Aws::String& GetStreamArn() const { return m_streamArn; }
     inline bool StreamArnHasBeenSet() const { return m_streamArnHasBeenSet; }
-    inline void SetStreamArn(const Aws::String& value) { m_streamArnHasBeenSet = true; m_streamArn = value; }
-    inline void SetStreamArn(Aws::String&& value) { m_streamArnHasBeenSet = true; m_streamArn = std::move(value); }
-    inline void SetStreamArn(const char* value) { m_streamArnHasBeenSet = true; m_streamArn.assign(value); }
-    inline KinesisSettings& WithStreamArn(const Aws::String& value) { SetStreamArn(value); return *this;}
-    inline KinesisSettings& WithStreamArn(Aws::String&& value) { SetStreamArn(std::move(value)); return *this;}
-    inline KinesisSettings& WithStreamArn(const char* value) { SetStreamArn(value); return *this;}
+    template<typename StreamArnT = Aws::String>
+    void SetStreamArn(StreamArnT&& value) { m_streamArnHasBeenSet = true; m_streamArn = std::forward<StreamArnT>(value); }
+    template<typename StreamArnT = Aws::String>
+    KinesisSettings& WithStreamArn(StreamArnT&& value) { SetStreamArn(std::forward<StreamArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,10 @@ namespace Model
      * is <code>JSON</code> (default) or <code>JSON_UNFORMATTED</code> (a single line
      * with no tab).</p>
      */
-    inline const MessageFormatValue& GetMessageFormat() const{ return m_messageFormat; }
+    inline MessageFormatValue GetMessageFormat() const { return m_messageFormat; }
     inline bool MessageFormatHasBeenSet() const { return m_messageFormatHasBeenSet; }
-    inline void SetMessageFormat(const MessageFormatValue& value) { m_messageFormatHasBeenSet = true; m_messageFormat = value; }
-    inline void SetMessageFormat(MessageFormatValue&& value) { m_messageFormatHasBeenSet = true; m_messageFormat = std::move(value); }
-    inline KinesisSettings& WithMessageFormat(const MessageFormatValue& value) { SetMessageFormat(value); return *this;}
-    inline KinesisSettings& WithMessageFormat(MessageFormatValue&& value) { SetMessageFormat(std::move(value)); return *this;}
+    inline void SetMessageFormat(MessageFormatValue value) { m_messageFormatHasBeenSet = true; m_messageFormat = value; }
+    inline KinesisSettings& WithMessageFormat(MessageFormatValue value) { SetMessageFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -76,14 +72,12 @@ namespace Model
      * Kinesis data stream. The role must allow the <code>iam:PassRole</code>
      * action.</p>
      */
-    inline const Aws::String& GetServiceAccessRoleArn() const{ return m_serviceAccessRoleArn; }
+    inline const Aws::String& GetServiceAccessRoleArn() const { return m_serviceAccessRoleArn; }
     inline bool ServiceAccessRoleArnHasBeenSet() const { return m_serviceAccessRoleArnHasBeenSet; }
-    inline void SetServiceAccessRoleArn(const Aws::String& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = value; }
-    inline void SetServiceAccessRoleArn(Aws::String&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::move(value); }
-    inline void SetServiceAccessRoleArn(const char* value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn.assign(value); }
-    inline KinesisSettings& WithServiceAccessRoleArn(const Aws::String& value) { SetServiceAccessRoleArn(value); return *this;}
-    inline KinesisSettings& WithServiceAccessRoleArn(Aws::String&& value) { SetServiceAccessRoleArn(std::move(value)); return *this;}
-    inline KinesisSettings& WithServiceAccessRoleArn(const char* value) { SetServiceAccessRoleArn(value); return *this;}
+    template<typename ServiceAccessRoleArnT = Aws::String>
+    void SetServiceAccessRoleArn(ServiceAccessRoleArnT&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::forward<ServiceAccessRoleArnT>(value); }
+    template<typename ServiceAccessRoleArnT = Aws::String>
+    KinesisSettings& WithServiceAccessRoleArn(ServiceAccessRoleArnT&& value) { SetServiceAccessRoleArn(std::forward<ServiceAccessRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,7 +88,7 @@ namespace Model
      * <code>transaction_record_id</code> (the record offset within a transaction). The
      * default is <code>false</code>.</p>
      */
-    inline bool GetIncludeTransactionDetails() const{ return m_includeTransactionDetails; }
+    inline bool GetIncludeTransactionDetails() const { return m_includeTransactionDetails; }
     inline bool IncludeTransactionDetailsHasBeenSet() const { return m_includeTransactionDetailsHasBeenSet; }
     inline void SetIncludeTransactionDetails(bool value) { m_includeTransactionDetailsHasBeenSet = true; m_includeTransactionDetails = value; }
     inline KinesisSettings& WithIncludeTransactionDetails(bool value) { SetIncludeTransactionDetails(value); return *this;}
@@ -106,7 +100,7 @@ namespace Model
      * partition type is <code>schema-table-type</code>. The default is
      * <code>false</code>.</p>
      */
-    inline bool GetIncludePartitionValue() const{ return m_includePartitionValue; }
+    inline bool GetIncludePartitionValue() const { return m_includePartitionValue; }
     inline bool IncludePartitionValueHasBeenSet() const { return m_includePartitionValueHasBeenSet; }
     inline void SetIncludePartitionValue(bool value) { m_includePartitionValueHasBeenSet = true; m_includePartitionValue = value; }
     inline KinesisSettings& WithIncludePartitionValue(bool value) { SetIncludePartitionValue(value); return *this;}
@@ -121,7 +115,7 @@ namespace Model
      * the same primary key is sent from thousands of tables to the same shard, which
      * causes throttling. The default is <code>false</code>.</p>
      */
-    inline bool GetPartitionIncludeSchemaTable() const{ return m_partitionIncludeSchemaTable; }
+    inline bool GetPartitionIncludeSchemaTable() const { return m_partitionIncludeSchemaTable; }
     inline bool PartitionIncludeSchemaTableHasBeenSet() const { return m_partitionIncludeSchemaTableHasBeenSet; }
     inline void SetPartitionIncludeSchemaTable(bool value) { m_partitionIncludeSchemaTableHasBeenSet = true; m_partitionIncludeSchemaTable = value; }
     inline KinesisSettings& WithPartitionIncludeSchemaTable(bool value) { SetPartitionIncludeSchemaTable(value); return *this;}
@@ -134,7 +128,7 @@ namespace Model
      * <code>add-column</code>, <code>drop-column</code>, and
      * <code>rename-column</code>. The default is <code>false</code>.</p>
      */
-    inline bool GetIncludeTableAlterOperations() const{ return m_includeTableAlterOperations; }
+    inline bool GetIncludeTableAlterOperations() const { return m_includeTableAlterOperations; }
     inline bool IncludeTableAlterOperationsHasBeenSet() const { return m_includeTableAlterOperationsHasBeenSet; }
     inline void SetIncludeTableAlterOperations(bool value) { m_includeTableAlterOperationsHasBeenSet = true; m_includeTableAlterOperations = value; }
     inline KinesisSettings& WithIncludeTableAlterOperations(bool value) { SetIncludeTableAlterOperations(value); return *this;}
@@ -146,7 +140,7 @@ namespace Model
      * and table and column changes in the Kinesis message output. The default is
      * <code>false</code>.</p>
      */
-    inline bool GetIncludeControlDetails() const{ return m_includeControlDetails; }
+    inline bool GetIncludeControlDetails() const { return m_includeControlDetails; }
     inline bool IncludeControlDetailsHasBeenSet() const { return m_includeControlDetailsHasBeenSet; }
     inline void SetIncludeControlDetails(bool value) { m_includeControlDetailsHasBeenSet = true; m_includeControlDetails = value; }
     inline KinesisSettings& WithIncludeControlDetails(bool value) { SetIncludeControlDetails(value); return *this;}
@@ -157,7 +151,7 @@ namespace Model
      * <p>Include NULL and empty columns for records migrated to the endpoint. The
      * default is <code>false</code>.</p>
      */
-    inline bool GetIncludeNullAndEmpty() const{ return m_includeNullAndEmpty; }
+    inline bool GetIncludeNullAndEmpty() const { return m_includeNullAndEmpty; }
     inline bool IncludeNullAndEmptyHasBeenSet() const { return m_includeNullAndEmptyHasBeenSet; }
     inline void SetIncludeNullAndEmpty(bool value) { m_includeNullAndEmptyHasBeenSet = true; m_includeNullAndEmpty = value; }
     inline KinesisSettings& WithIncludeNullAndEmpty(bool value) { SetIncludeNullAndEmpty(value); return *this;}
@@ -172,7 +166,7 @@ namespace Model
      * setting to enable migration of RAW data type columns without adding the '0x'
      * prefix.</p>
      */
-    inline bool GetNoHexPrefix() const{ return m_noHexPrefix; }
+    inline bool GetNoHexPrefix() const { return m_noHexPrefix; }
     inline bool NoHexPrefixHasBeenSet() const { return m_noHexPrefixHasBeenSet; }
     inline void SetNoHexPrefix(bool value) { m_noHexPrefixHasBeenSet = true; m_noHexPrefix = value; }
     inline KinesisSettings& WithNoHexPrefix(bool value) { SetNoHexPrefix(value); return *this;}
@@ -182,7 +176,7 @@ namespace Model
     /**
      * <p>Specifies using the large integer value with Kinesis.</p>
      */
-    inline bool GetUseLargeIntegerValue() const{ return m_useLargeIntegerValue; }
+    inline bool GetUseLargeIntegerValue() const { return m_useLargeIntegerValue; }
     inline bool UseLargeIntegerValueHasBeenSet() const { return m_useLargeIntegerValueHasBeenSet; }
     inline void SetUseLargeIntegerValue(bool value) { m_useLargeIntegerValueHasBeenSet = true; m_useLargeIntegerValue = value; }
     inline KinesisSettings& WithUseLargeIntegerValue(bool value) { SetUseLargeIntegerValue(value); return *this;}
@@ -192,34 +186,34 @@ namespace Model
     Aws::String m_streamArn;
     bool m_streamArnHasBeenSet = false;
 
-    MessageFormatValue m_messageFormat;
+    MessageFormatValue m_messageFormat{MessageFormatValue::NOT_SET};
     bool m_messageFormatHasBeenSet = false;
 
     Aws::String m_serviceAccessRoleArn;
     bool m_serviceAccessRoleArnHasBeenSet = false;
 
-    bool m_includeTransactionDetails;
+    bool m_includeTransactionDetails{false};
     bool m_includeTransactionDetailsHasBeenSet = false;
 
-    bool m_includePartitionValue;
+    bool m_includePartitionValue{false};
     bool m_includePartitionValueHasBeenSet = false;
 
-    bool m_partitionIncludeSchemaTable;
+    bool m_partitionIncludeSchemaTable{false};
     bool m_partitionIncludeSchemaTableHasBeenSet = false;
 
-    bool m_includeTableAlterOperations;
+    bool m_includeTableAlterOperations{false};
     bool m_includeTableAlterOperationsHasBeenSet = false;
 
-    bool m_includeControlDetails;
+    bool m_includeControlDetails{false};
     bool m_includeControlDetailsHasBeenSet = false;
 
-    bool m_includeNullAndEmpty;
+    bool m_includeNullAndEmpty{false};
     bool m_includeNullAndEmptyHasBeenSet = false;
 
-    bool m_noHexPrefix;
+    bool m_noHexPrefix{false};
     bool m_noHexPrefixHasBeenSet = false;
 
-    bool m_useLargeIntegerValue;
+    bool m_useLargeIntegerValue{false};
     bool m_useLargeIntegerValueHasBeenSet = false;
   };
 

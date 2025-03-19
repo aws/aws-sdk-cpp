@@ -29,7 +29,7 @@ namespace Model
   class Unlock
   {
   public:
-    AWS_SNOWDEVICEMANAGEMENT_API Unlock();
+    AWS_SNOWDEVICEMANAGEMENT_API Unlock() = default;
     AWS_SNOWDEVICEMANAGEMENT_API Unlock(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWDEVICEMANAGEMENT_API Unlock& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWDEVICEMANAGEMENT_API Aws::Utils::Json::JsonValue Jsonize() const;

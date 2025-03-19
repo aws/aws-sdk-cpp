@@ -33,7 +33,7 @@ namespace Model
   class Schedule
   {
   public:
-    AWS_REDSHIFTSERVERLESS_API Schedule();
+    AWS_REDSHIFTSERVERLESS_API Schedule() = default;
     AWS_REDSHIFTSERVERLESS_API Schedule(Aws::Utils::Json::JsonView jsonValue);
     AWS_REDSHIFTSERVERLESS_API Schedule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REDSHIFTSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * <code>yyyy-mm-ddThh:mm:ss</code>. For example,
      * <code>2016-03-04T17:27:00</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetAt() const{ return m_at; }
+    inline const Aws::Utils::DateTime& GetAt() const { return m_at; }
     inline bool AtHasBeenSet() const { return m_atHasBeenSet; }
-    inline void SetAt(const Aws::Utils::DateTime& value) { m_atHasBeenSet = true; m_at = value; }
-    inline void SetAt(Aws::Utils::DateTime&& value) { m_atHasBeenSet = true; m_at = std::move(value); }
-    inline Schedule& WithAt(const Aws::Utils::DateTime& value) { SetAt(value); return *this;}
-    inline Schedule& WithAt(Aws::Utils::DateTime&& value) { SetAt(std::move(value)); return *this;}
+    template<typename AtT = Aws::Utils::DateTime>
+    void SetAt(AtT&& value) { m_atHasBeenSet = true; m_at = std::forward<AtT>(value); }
+    template<typename AtT = Aws::Utils::DateTime>
+    Schedule& WithAt(AtT&& value) { SetAt(std::forward<AtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,18 +64,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html#CronExpressions">Cron
      * Expressions</a> in the <i>Amazon CloudWatch Events User Guide</i>.</p>
      */
-    inline const Aws::String& GetCron() const{ return m_cron; }
+    inline const Aws::String& GetCron() const { return m_cron; }
     inline bool CronHasBeenSet() const { return m_cronHasBeenSet; }
-    inline void SetCron(const Aws::String& value) { m_cronHasBeenSet = true; m_cron = value; }
-    inline void SetCron(Aws::String&& value) { m_cronHasBeenSet = true; m_cron = std::move(value); }
-    inline void SetCron(const char* value) { m_cronHasBeenSet = true; m_cron.assign(value); }
-    inline Schedule& WithCron(const Aws::String& value) { SetCron(value); return *this;}
-    inline Schedule& WithCron(Aws::String&& value) { SetCron(std::move(value)); return *this;}
-    inline Schedule& WithCron(const char* value) { SetCron(value); return *this;}
+    template<typename CronT = Aws::String>
+    void SetCron(CronT&& value) { m_cronHasBeenSet = true; m_cron = std::forward<CronT>(value); }
+    template<typename CronT = Aws::String>
+    Schedule& WithCron(CronT&& value) { SetCron(std::forward<CronT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_at;
+    Aws::Utils::DateTime m_at{};
     bool m_atHasBeenSet = false;
 
     Aws::String m_cron;

@@ -34,35 +34,35 @@ namespace Model
   class GetInstanceOnboardingJobStatusResult
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API GetInstanceOnboardingJobStatusResult();
+    AWS_CONNECTCAMPAIGNSV2_API GetInstanceOnboardingJobStatusResult() = default;
     AWS_CONNECTCAMPAIGNSV2_API GetInstanceOnboardingJobStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECTCAMPAIGNSV2_API GetInstanceOnboardingJobStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const InstanceOnboardingJobStatus& GetConnectInstanceOnboardingJobStatus() const{ return m_connectInstanceOnboardingJobStatus; }
-    inline void SetConnectInstanceOnboardingJobStatus(const InstanceOnboardingJobStatus& value) { m_connectInstanceOnboardingJobStatus = value; }
-    inline void SetConnectInstanceOnboardingJobStatus(InstanceOnboardingJobStatus&& value) { m_connectInstanceOnboardingJobStatus = std::move(value); }
-    inline GetInstanceOnboardingJobStatusResult& WithConnectInstanceOnboardingJobStatus(const InstanceOnboardingJobStatus& value) { SetConnectInstanceOnboardingJobStatus(value); return *this;}
-    inline GetInstanceOnboardingJobStatusResult& WithConnectInstanceOnboardingJobStatus(InstanceOnboardingJobStatus&& value) { SetConnectInstanceOnboardingJobStatus(std::move(value)); return *this;}
+    inline const InstanceOnboardingJobStatus& GetConnectInstanceOnboardingJobStatus() const { return m_connectInstanceOnboardingJobStatus; }
+    template<typename ConnectInstanceOnboardingJobStatusT = InstanceOnboardingJobStatus>
+    void SetConnectInstanceOnboardingJobStatus(ConnectInstanceOnboardingJobStatusT&& value) { m_connectInstanceOnboardingJobStatusHasBeenSet = true; m_connectInstanceOnboardingJobStatus = std::forward<ConnectInstanceOnboardingJobStatusT>(value); }
+    template<typename ConnectInstanceOnboardingJobStatusT = InstanceOnboardingJobStatus>
+    GetInstanceOnboardingJobStatusResult& WithConnectInstanceOnboardingJobStatus(ConnectInstanceOnboardingJobStatusT&& value) { SetConnectInstanceOnboardingJobStatus(std::forward<ConnectInstanceOnboardingJobStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetInstanceOnboardingJobStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetInstanceOnboardingJobStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetInstanceOnboardingJobStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetInstanceOnboardingJobStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     InstanceOnboardingJobStatus m_connectInstanceOnboardingJobStatus;
+    bool m_connectInstanceOnboardingJobStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

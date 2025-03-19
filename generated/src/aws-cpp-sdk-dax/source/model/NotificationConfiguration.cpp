@@ -18,14 +18,7 @@ namespace DAX
 namespace Model
 {
 
-NotificationConfiguration::NotificationConfiguration() : 
-    m_topicArnHasBeenSet(false),
-    m_topicStatusHasBeenSet(false)
-{
-}
-
 NotificationConfiguration::NotificationConfiguration(JsonView jsonValue)
-  : NotificationConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NotificationConfiguration& NotificationConfiguration::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("TopicArn"))
   {
     m_topicArn = jsonValue.GetString("TopicArn");
-
     m_topicArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TopicStatus"))
   {
     m_topicStatus = jsonValue.GetString("TopicStatus");
-
     m_topicStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

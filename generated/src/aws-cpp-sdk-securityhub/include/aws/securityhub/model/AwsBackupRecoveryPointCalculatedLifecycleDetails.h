@@ -32,7 +32,7 @@ namespace Model
   class AwsBackupRecoveryPointCalculatedLifecycleDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsBackupRecoveryPointCalculatedLifecycleDetails();
+    AWS_SECURITYHUB_API AwsBackupRecoveryPointCalculatedLifecycleDetails() = default;
     AWS_SECURITYHUB_API AwsBackupRecoveryPointCalculatedLifecycleDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsBackupRecoveryPointCalculatedLifecycleDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>Specifies the number of days after creation that a recovery point is deleted.
      * Must be greater than 90 days plus <code>MoveToColdStorageAfterDays</code>. </p>
      */
-    inline const Aws::String& GetDeleteAt() const{ return m_deleteAt; }
+    inline const Aws::String& GetDeleteAt() const { return m_deleteAt; }
     inline bool DeleteAtHasBeenSet() const { return m_deleteAtHasBeenSet; }
-    inline void SetDeleteAt(const Aws::String& value) { m_deleteAtHasBeenSet = true; m_deleteAt = value; }
-    inline void SetDeleteAt(Aws::String&& value) { m_deleteAtHasBeenSet = true; m_deleteAt = std::move(value); }
-    inline void SetDeleteAt(const char* value) { m_deleteAtHasBeenSet = true; m_deleteAt.assign(value); }
-    inline AwsBackupRecoveryPointCalculatedLifecycleDetails& WithDeleteAt(const Aws::String& value) { SetDeleteAt(value); return *this;}
-    inline AwsBackupRecoveryPointCalculatedLifecycleDetails& WithDeleteAt(Aws::String&& value) { SetDeleteAt(std::move(value)); return *this;}
-    inline AwsBackupRecoveryPointCalculatedLifecycleDetails& WithDeleteAt(const char* value) { SetDeleteAt(value); return *this;}
+    template<typename DeleteAtT = Aws::String>
+    void SetDeleteAt(DeleteAtT&& value) { m_deleteAtHasBeenSet = true; m_deleteAt = std::forward<DeleteAtT>(value); }
+    template<typename DeleteAtT = Aws::String>
+    AwsBackupRecoveryPointCalculatedLifecycleDetails& WithDeleteAt(DeleteAtT&& value) { SetDeleteAt(std::forward<DeleteAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>Specifies the number of days after creation that a recovery point is moved to
      * cold storage. </p>
      */
-    inline const Aws::String& GetMoveToColdStorageAt() const{ return m_moveToColdStorageAt; }
+    inline const Aws::String& GetMoveToColdStorageAt() const { return m_moveToColdStorageAt; }
     inline bool MoveToColdStorageAtHasBeenSet() const { return m_moveToColdStorageAtHasBeenSet; }
-    inline void SetMoveToColdStorageAt(const Aws::String& value) { m_moveToColdStorageAtHasBeenSet = true; m_moveToColdStorageAt = value; }
-    inline void SetMoveToColdStorageAt(Aws::String&& value) { m_moveToColdStorageAtHasBeenSet = true; m_moveToColdStorageAt = std::move(value); }
-    inline void SetMoveToColdStorageAt(const char* value) { m_moveToColdStorageAtHasBeenSet = true; m_moveToColdStorageAt.assign(value); }
-    inline AwsBackupRecoveryPointCalculatedLifecycleDetails& WithMoveToColdStorageAt(const Aws::String& value) { SetMoveToColdStorageAt(value); return *this;}
-    inline AwsBackupRecoveryPointCalculatedLifecycleDetails& WithMoveToColdStorageAt(Aws::String&& value) { SetMoveToColdStorageAt(std::move(value)); return *this;}
-    inline AwsBackupRecoveryPointCalculatedLifecycleDetails& WithMoveToColdStorageAt(const char* value) { SetMoveToColdStorageAt(value); return *this;}
+    template<typename MoveToColdStorageAtT = Aws::String>
+    void SetMoveToColdStorageAt(MoveToColdStorageAtT&& value) { m_moveToColdStorageAtHasBeenSet = true; m_moveToColdStorageAt = std::forward<MoveToColdStorageAtT>(value); }
+    template<typename MoveToColdStorageAtT = Aws::String>
+    AwsBackupRecoveryPointCalculatedLifecycleDetails& WithMoveToColdStorageAt(MoveToColdStorageAtT&& value) { SetMoveToColdStorageAt(std::forward<MoveToColdStorageAtT>(value)); return *this;}
     ///@}
   private:
 

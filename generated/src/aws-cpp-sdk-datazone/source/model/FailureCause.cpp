@@ -18,13 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-FailureCause::FailureCause() : 
-    m_messageHasBeenSet(false)
-{
-}
-
 FailureCause::FailureCause(JsonView jsonValue)
-  : FailureCause()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FailureCause& FailureCause::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

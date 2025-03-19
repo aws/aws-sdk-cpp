@@ -12,11 +12,6 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateActionTypeRequest::UpdateActionTypeRequest() : 
-    m_actionTypeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateActionTypeRequest::SerializePayload() const
 {
   JsonValue payload;

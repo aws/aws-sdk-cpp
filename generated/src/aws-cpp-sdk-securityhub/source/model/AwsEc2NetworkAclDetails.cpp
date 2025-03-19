@@ -18,19 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2NetworkAclDetails::AwsEc2NetworkAclDetails() : 
-    m_isDefault(false),
-    m_isDefaultHasBeenSet(false),
-    m_networkAclIdHasBeenSet(false),
-    m_ownerIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_associationsHasBeenSet(false),
-    m_entriesHasBeenSet(false)
-{
-}
-
 AwsEc2NetworkAclDetails::AwsEc2NetworkAclDetails(JsonView jsonValue)
-  : AwsEc2NetworkAclDetails()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ AwsEc2NetworkAclDetails& AwsEc2NetworkAclDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IsDefault"))
   {
     m_isDefault = jsonValue.GetBool("IsDefault");
-
     m_isDefaultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkAclId"))
   {
     m_networkAclId = jsonValue.GetString("NetworkAclId");
-
     m_networkAclIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerId"))
   {
     m_ownerId = jsonValue.GetString("OwnerId");
-
     m_ownerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Associations"))
   {
     Aws::Utils::Array<JsonView> associationsJsonList = jsonValue.GetArray("Associations");
@@ -74,7 +54,6 @@ AwsEc2NetworkAclDetails& AwsEc2NetworkAclDetails::operator =(JsonView jsonValue)
     }
     m_associationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Entries"))
   {
     Aws::Utils::Array<JsonView> entriesJsonList = jsonValue.GetArray("Entries");
@@ -84,7 +63,6 @@ AwsEc2NetworkAclDetails& AwsEc2NetworkAclDetails::operator =(JsonView jsonValue)
     }
     m_entriesHasBeenSet = true;
   }
-
   return *this;
 }
 

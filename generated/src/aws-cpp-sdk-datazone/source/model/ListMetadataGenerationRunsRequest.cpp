@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListMetadataGenerationRunsRequest::ListMetadataGenerationRunsRequest() : 
-    m_domainIdentifierHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_status(MetadataGenerationRunStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(MetadataGenerationRunType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 Aws::String ListMetadataGenerationRunsRequest::SerializePayload() const
 {
   return {};

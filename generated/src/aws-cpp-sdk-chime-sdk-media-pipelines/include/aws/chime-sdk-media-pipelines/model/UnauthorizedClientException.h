@@ -33,7 +33,7 @@ namespace Model
   class UnauthorizedClientException
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API UnauthorizedClientException();
+    AWS_CHIMESDKMEDIAPIPELINES_API UnauthorizedClientException() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API UnauthorizedClientException(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API UnauthorizedClientException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,42 +41,36 @@ namespace Model
 
     ///@{
     
-    inline const ErrorCode& GetCode() const{ return m_code; }
+    inline ErrorCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const ErrorCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(ErrorCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline UnauthorizedClientException& WithCode(const ErrorCode& value) { SetCode(value); return *this;}
-    inline UnauthorizedClientException& WithCode(ErrorCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(ErrorCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline UnauthorizedClientException& WithCode(ErrorCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline UnauthorizedClientException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline UnauthorizedClientException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline UnauthorizedClientException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    UnauthorizedClientException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The request ID associated with the call responsible for the exception.</p>
      */
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline UnauthorizedClientException& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UnauthorizedClientException& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UnauthorizedClientException& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UnauthorizedClientException& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    ErrorCode m_code;
+    ErrorCode m_code{ErrorCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
     Aws::String m_message;

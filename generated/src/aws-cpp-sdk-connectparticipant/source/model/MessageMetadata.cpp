@@ -18,14 +18,7 @@ namespace ConnectParticipant
 namespace Model
 {
 
-MessageMetadata::MessageMetadata() : 
-    m_messageIdHasBeenSet(false),
-    m_receiptsHasBeenSet(false)
-{
-}
-
 MessageMetadata::MessageMetadata(JsonView jsonValue)
-  : MessageMetadata()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ MessageMetadata& MessageMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MessageId"))
   {
     m_messageId = jsonValue.GetString("MessageId");
-
     m_messageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Receipts"))
   {
     Aws::Utils::Array<JsonView> receiptsJsonList = jsonValue.GetArray("Receipts");
@@ -48,7 +39,6 @@ MessageMetadata& MessageMetadata::operator =(JsonView jsonValue)
     }
     m_receiptsHasBeenSet = true;
   }
-
   return *this;
 }
 

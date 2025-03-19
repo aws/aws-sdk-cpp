@@ -18,17 +18,7 @@ namespace SFN
 namespace Model
 {
 
-EncryptionConfiguration::EncryptionConfiguration() : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_kmsDataKeyReusePeriodSeconds(0),
-    m_kmsDataKeyReusePeriodSecondsHasBeenSet(false),
-    m_type(EncryptionType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 EncryptionConfiguration::EncryptionConfiguration(JsonView jsonValue)
-  : EncryptionConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ EncryptionConfiguration& EncryptionConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsDataKeyReusePeriodSeconds"))
   {
     m_kmsDataKeyReusePeriodSeconds = jsonValue.GetInteger("kmsDataKeyReusePeriodSeconds");
-
     m_kmsDataKeyReusePeriodSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = EncryptionTypeMapper::GetEncryptionTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

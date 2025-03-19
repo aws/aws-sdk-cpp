@@ -33,7 +33,7 @@ namespace Model
   class FieldFolder
   {
   public:
-    AWS_QUICKSIGHT_API FieldFolder();
+    AWS_QUICKSIGHT_API FieldFolder() = default;
     AWS_QUICKSIGHT_API FieldFolder(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API FieldFolder& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,29 +43,26 @@ namespace Model
     /**
      * <p>The description for a field folder.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline FieldFolder& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline FieldFolder& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline FieldFolder& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    FieldFolder& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A folder has a list of columns. A column can only be in one folder.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetColumns() const{ return m_columns; }
+    inline const Aws::Vector<Aws::String>& GetColumns() const { return m_columns; }
     inline bool ColumnsHasBeenSet() const { return m_columnsHasBeenSet; }
-    inline void SetColumns(const Aws::Vector<Aws::String>& value) { m_columnsHasBeenSet = true; m_columns = value; }
-    inline void SetColumns(Aws::Vector<Aws::String>&& value) { m_columnsHasBeenSet = true; m_columns = std::move(value); }
-    inline FieldFolder& WithColumns(const Aws::Vector<Aws::String>& value) { SetColumns(value); return *this;}
-    inline FieldFolder& WithColumns(Aws::Vector<Aws::String>&& value) { SetColumns(std::move(value)); return *this;}
-    inline FieldFolder& AddColumns(const Aws::String& value) { m_columnsHasBeenSet = true; m_columns.push_back(value); return *this; }
-    inline FieldFolder& AddColumns(Aws::String&& value) { m_columnsHasBeenSet = true; m_columns.push_back(std::move(value)); return *this; }
-    inline FieldFolder& AddColumns(const char* value) { m_columnsHasBeenSet = true; m_columns.push_back(value); return *this; }
+    template<typename ColumnsT = Aws::Vector<Aws::String>>
+    void SetColumns(ColumnsT&& value) { m_columnsHasBeenSet = true; m_columns = std::forward<ColumnsT>(value); }
+    template<typename ColumnsT = Aws::Vector<Aws::String>>
+    FieldFolder& WithColumns(ColumnsT&& value) { SetColumns(std::forward<ColumnsT>(value)); return *this;}
+    template<typename ColumnsT = Aws::String>
+    FieldFolder& AddColumns(ColumnsT&& value) { m_columnsHasBeenSet = true; m_columns.emplace_back(std::forward<ColumnsT>(value)); return *this; }
     ///@}
   private:
 

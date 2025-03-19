@@ -20,27 +20,7 @@ namespace ElasticLoadBalancingv2
 namespace Model
 {
 
-AuthenticateOidcActionConfig::AuthenticateOidcActionConfig() : 
-    m_issuerHasBeenSet(false),
-    m_authorizationEndpointHasBeenSet(false),
-    m_tokenEndpointHasBeenSet(false),
-    m_userInfoEndpointHasBeenSet(false),
-    m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false),
-    m_sessionCookieNameHasBeenSet(false),
-    m_scopeHasBeenSet(false),
-    m_sessionTimeout(0),
-    m_sessionTimeoutHasBeenSet(false),
-    m_authenticationRequestExtraParamsHasBeenSet(false),
-    m_onUnauthenticatedRequest(AuthenticateOidcActionConditionalBehaviorEnum::NOT_SET),
-    m_onUnauthenticatedRequestHasBeenSet(false),
-    m_useExistingClientSecret(false),
-    m_useExistingClientSecretHasBeenSet(false)
-{
-}
-
 AuthenticateOidcActionConfig::AuthenticateOidcActionConfig(const XmlNode& xmlNode)
-  : AuthenticateOidcActionConfig()
 {
   *this = xmlNode;
 }
@@ -110,6 +90,7 @@ AuthenticateOidcActionConfig& AuthenticateOidcActionConfig::operator =(const Xml
     if(!authenticationRequestExtraParamsNode.IsNull())
     {
       XmlNode authenticationRequestExtraParamsEntry = authenticationRequestExtraParamsNode.FirstChild("entry");
+      m_authenticationRequestExtraParamsHasBeenSet = !authenticationRequestExtraParamsEntry.IsNull();
       while(!authenticationRequestExtraParamsEntry.IsNull())
       {
         XmlNode keyNode = authenticationRequestExtraParamsEntry.FirstChild("key");
@@ -124,7 +105,7 @@ AuthenticateOidcActionConfig& AuthenticateOidcActionConfig::operator =(const Xml
     XmlNode onUnauthenticatedRequestNode = resultNode.FirstChild("OnUnauthenticatedRequest");
     if(!onUnauthenticatedRequestNode.IsNull())
     {
-      m_onUnauthenticatedRequest = AuthenticateOidcActionConditionalBehaviorEnumMapper::GetAuthenticateOidcActionConditionalBehaviorEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(onUnauthenticatedRequestNode.GetText()).c_str()).c_str());
+      m_onUnauthenticatedRequest = AuthenticateOidcActionConditionalBehaviorEnumMapper::GetAuthenticateOidcActionConditionalBehaviorEnumForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(onUnauthenticatedRequestNode.GetText()).c_str()));
       m_onUnauthenticatedRequestHasBeenSet = true;
     }
     XmlNode useExistingClientSecretNode = resultNode.FirstChild("UseExistingClientSecret");

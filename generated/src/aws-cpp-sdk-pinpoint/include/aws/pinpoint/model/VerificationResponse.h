@@ -29,7 +29,7 @@ namespace Model
   class VerificationResponse
   {
   public:
-    AWS_PINPOINT_API VerificationResponse();
+    AWS_PINPOINT_API VerificationResponse() = default;
     AWS_PINPOINT_API VerificationResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API VerificationResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>Specifies whether the OTP is valid or not.</p>
      */
-    inline bool GetValid() const{ return m_valid; }
+    inline bool GetValid() const { return m_valid; }
     inline bool ValidHasBeenSet() const { return m_validHasBeenSet; }
     inline void SetValid(bool value) { m_validHasBeenSet = true; m_valid = value; }
     inline VerificationResponse& WithValid(bool value) { SetValid(value); return *this;}
     ///@}
   private:
 
-    bool m_valid;
+    bool m_valid{false};
     bool m_validHasBeenSet = false;
   };
 

@@ -27,7 +27,7 @@ namespace Model
   class CreateCompilationJobResult
   {
   public:
-    AWS_SAGEMAKER_API CreateCompilationJobResult();
+    AWS_SAGEMAKER_API CreateCompilationJobResult() = default;
     AWS_SAGEMAKER_API CreateCompilationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API CreateCompilationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,28 @@ namespace Model
      * <code>CompilationJobArn</code>: The Amazon Resource Name (ARN) of the compiled
      * job.</p> </li> </ul>
      */
-    inline const Aws::String& GetCompilationJobArn() const{ return m_compilationJobArn; }
-    inline void SetCompilationJobArn(const Aws::String& value) { m_compilationJobArn = value; }
-    inline void SetCompilationJobArn(Aws::String&& value) { m_compilationJobArn = std::move(value); }
-    inline void SetCompilationJobArn(const char* value) { m_compilationJobArn.assign(value); }
-    inline CreateCompilationJobResult& WithCompilationJobArn(const Aws::String& value) { SetCompilationJobArn(value); return *this;}
-    inline CreateCompilationJobResult& WithCompilationJobArn(Aws::String&& value) { SetCompilationJobArn(std::move(value)); return *this;}
-    inline CreateCompilationJobResult& WithCompilationJobArn(const char* value) { SetCompilationJobArn(value); return *this;}
+    inline const Aws::String& GetCompilationJobArn() const { return m_compilationJobArn; }
+    template<typename CompilationJobArnT = Aws::String>
+    void SetCompilationJobArn(CompilationJobArnT&& value) { m_compilationJobArnHasBeenSet = true; m_compilationJobArn = std::forward<CompilationJobArnT>(value); }
+    template<typename CompilationJobArnT = Aws::String>
+    CreateCompilationJobResult& WithCompilationJobArn(CompilationJobArnT&& value) { SetCompilationJobArn(std::forward<CompilationJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateCompilationJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateCompilationJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateCompilationJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateCompilationJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_compilationJobArn;
+    bool m_compilationJobArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeAlarmModelRequest::DescribeAlarmModelRequest() : 
-    m_alarmModelNameHasBeenSet(false),
-    m_alarmModelVersionHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAlarmModelRequest::SerializePayload() const
 {
   return {};

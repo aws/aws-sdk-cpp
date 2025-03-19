@@ -12,14 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateVariableRequest::UpdateVariableRequest() : 
-    m_nameHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_variableTypeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateVariableRequest::SerializePayload() const
 {
   JsonValue payload;

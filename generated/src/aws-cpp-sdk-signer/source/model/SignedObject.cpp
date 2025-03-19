@@ -18,13 +18,7 @@ namespace signer
 namespace Model
 {
 
-SignedObject::SignedObject() : 
-    m_s3HasBeenSet(false)
-{
-}
-
 SignedObject::SignedObject(JsonView jsonValue)
-  : SignedObject()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SignedObject& SignedObject::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3"))
   {
     m_s3 = jsonValue.GetObject("s3");
-
     m_s3HasBeenSet = true;
   }
-
   return *this;
 }
 

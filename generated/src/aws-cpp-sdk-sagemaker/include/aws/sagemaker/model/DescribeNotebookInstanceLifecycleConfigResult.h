@@ -30,7 +30,7 @@ namespace Model
   class DescribeNotebookInstanceLifecycleConfigResult
   {
   public:
-    AWS_SAGEMAKER_API DescribeNotebookInstanceLifecycleConfigResult();
+    AWS_SAGEMAKER_API DescribeNotebookInstanceLifecycleConfigResult() = default;
     AWS_SAGEMAKER_API DescribeNotebookInstanceLifecycleConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API DescribeNotebookInstanceLifecycleConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,26 +39,22 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the lifecycle configuration.</p>
      */
-    inline const Aws::String& GetNotebookInstanceLifecycleConfigArn() const{ return m_notebookInstanceLifecycleConfigArn; }
-    inline void SetNotebookInstanceLifecycleConfigArn(const Aws::String& value) { m_notebookInstanceLifecycleConfigArn = value; }
-    inline void SetNotebookInstanceLifecycleConfigArn(Aws::String&& value) { m_notebookInstanceLifecycleConfigArn = std::move(value); }
-    inline void SetNotebookInstanceLifecycleConfigArn(const char* value) { m_notebookInstanceLifecycleConfigArn.assign(value); }
-    inline DescribeNotebookInstanceLifecycleConfigResult& WithNotebookInstanceLifecycleConfigArn(const Aws::String& value) { SetNotebookInstanceLifecycleConfigArn(value); return *this;}
-    inline DescribeNotebookInstanceLifecycleConfigResult& WithNotebookInstanceLifecycleConfigArn(Aws::String&& value) { SetNotebookInstanceLifecycleConfigArn(std::move(value)); return *this;}
-    inline DescribeNotebookInstanceLifecycleConfigResult& WithNotebookInstanceLifecycleConfigArn(const char* value) { SetNotebookInstanceLifecycleConfigArn(value); return *this;}
+    inline const Aws::String& GetNotebookInstanceLifecycleConfigArn() const { return m_notebookInstanceLifecycleConfigArn; }
+    template<typename NotebookInstanceLifecycleConfigArnT = Aws::String>
+    void SetNotebookInstanceLifecycleConfigArn(NotebookInstanceLifecycleConfigArnT&& value) { m_notebookInstanceLifecycleConfigArnHasBeenSet = true; m_notebookInstanceLifecycleConfigArn = std::forward<NotebookInstanceLifecycleConfigArnT>(value); }
+    template<typename NotebookInstanceLifecycleConfigArnT = Aws::String>
+    DescribeNotebookInstanceLifecycleConfigResult& WithNotebookInstanceLifecycleConfigArn(NotebookInstanceLifecycleConfigArnT&& value) { SetNotebookInstanceLifecycleConfigArn(std::forward<NotebookInstanceLifecycleConfigArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the lifecycle configuration.</p>
      */
-    inline const Aws::String& GetNotebookInstanceLifecycleConfigName() const{ return m_notebookInstanceLifecycleConfigName; }
-    inline void SetNotebookInstanceLifecycleConfigName(const Aws::String& value) { m_notebookInstanceLifecycleConfigName = value; }
-    inline void SetNotebookInstanceLifecycleConfigName(Aws::String&& value) { m_notebookInstanceLifecycleConfigName = std::move(value); }
-    inline void SetNotebookInstanceLifecycleConfigName(const char* value) { m_notebookInstanceLifecycleConfigName.assign(value); }
-    inline DescribeNotebookInstanceLifecycleConfigResult& WithNotebookInstanceLifecycleConfigName(const Aws::String& value) { SetNotebookInstanceLifecycleConfigName(value); return *this;}
-    inline DescribeNotebookInstanceLifecycleConfigResult& WithNotebookInstanceLifecycleConfigName(Aws::String&& value) { SetNotebookInstanceLifecycleConfigName(std::move(value)); return *this;}
-    inline DescribeNotebookInstanceLifecycleConfigResult& WithNotebookInstanceLifecycleConfigName(const char* value) { SetNotebookInstanceLifecycleConfigName(value); return *this;}
+    inline const Aws::String& GetNotebookInstanceLifecycleConfigName() const { return m_notebookInstanceLifecycleConfigName; }
+    template<typename NotebookInstanceLifecycleConfigNameT = Aws::String>
+    void SetNotebookInstanceLifecycleConfigName(NotebookInstanceLifecycleConfigNameT&& value) { m_notebookInstanceLifecycleConfigNameHasBeenSet = true; m_notebookInstanceLifecycleConfigName = std::forward<NotebookInstanceLifecycleConfigNameT>(value); }
+    template<typename NotebookInstanceLifecycleConfigNameT = Aws::String>
+    DescribeNotebookInstanceLifecycleConfigResult& WithNotebookInstanceLifecycleConfigName(NotebookInstanceLifecycleConfigNameT&& value) { SetNotebookInstanceLifecycleConfigName(std::forward<NotebookInstanceLifecycleConfigNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,13 +62,13 @@ namespace Model
      * <p>The shell script that runs only once, when you create a notebook
      * instance.</p>
      */
-    inline const Aws::Vector<NotebookInstanceLifecycleHook>& GetOnCreate() const{ return m_onCreate; }
-    inline void SetOnCreate(const Aws::Vector<NotebookInstanceLifecycleHook>& value) { m_onCreate = value; }
-    inline void SetOnCreate(Aws::Vector<NotebookInstanceLifecycleHook>&& value) { m_onCreate = std::move(value); }
-    inline DescribeNotebookInstanceLifecycleConfigResult& WithOnCreate(const Aws::Vector<NotebookInstanceLifecycleHook>& value) { SetOnCreate(value); return *this;}
-    inline DescribeNotebookInstanceLifecycleConfigResult& WithOnCreate(Aws::Vector<NotebookInstanceLifecycleHook>&& value) { SetOnCreate(std::move(value)); return *this;}
-    inline DescribeNotebookInstanceLifecycleConfigResult& AddOnCreate(const NotebookInstanceLifecycleHook& value) { m_onCreate.push_back(value); return *this; }
-    inline DescribeNotebookInstanceLifecycleConfigResult& AddOnCreate(NotebookInstanceLifecycleHook&& value) { m_onCreate.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<NotebookInstanceLifecycleHook>& GetOnCreate() const { return m_onCreate; }
+    template<typename OnCreateT = Aws::Vector<NotebookInstanceLifecycleHook>>
+    void SetOnCreate(OnCreateT&& value) { m_onCreateHasBeenSet = true; m_onCreate = std::forward<OnCreateT>(value); }
+    template<typename OnCreateT = Aws::Vector<NotebookInstanceLifecycleHook>>
+    DescribeNotebookInstanceLifecycleConfigResult& WithOnCreate(OnCreateT&& value) { SetOnCreate(std::forward<OnCreateT>(value)); return *this;}
+    template<typename OnCreateT = NotebookInstanceLifecycleHook>
+    DescribeNotebookInstanceLifecycleConfigResult& AddOnCreate(OnCreateT&& value) { m_onCreateHasBeenSet = true; m_onCreate.emplace_back(std::forward<OnCreateT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -80,13 +76,13 @@ namespace Model
      * <p>The shell script that runs every time you start a notebook instance,
      * including when you create the notebook instance.</p>
      */
-    inline const Aws::Vector<NotebookInstanceLifecycleHook>& GetOnStart() const{ return m_onStart; }
-    inline void SetOnStart(const Aws::Vector<NotebookInstanceLifecycleHook>& value) { m_onStart = value; }
-    inline void SetOnStart(Aws::Vector<NotebookInstanceLifecycleHook>&& value) { m_onStart = std::move(value); }
-    inline DescribeNotebookInstanceLifecycleConfigResult& WithOnStart(const Aws::Vector<NotebookInstanceLifecycleHook>& value) { SetOnStart(value); return *this;}
-    inline DescribeNotebookInstanceLifecycleConfigResult& WithOnStart(Aws::Vector<NotebookInstanceLifecycleHook>&& value) { SetOnStart(std::move(value)); return *this;}
-    inline DescribeNotebookInstanceLifecycleConfigResult& AddOnStart(const NotebookInstanceLifecycleHook& value) { m_onStart.push_back(value); return *this; }
-    inline DescribeNotebookInstanceLifecycleConfigResult& AddOnStart(NotebookInstanceLifecycleHook&& value) { m_onStart.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<NotebookInstanceLifecycleHook>& GetOnStart() const { return m_onStart; }
+    template<typename OnStartT = Aws::Vector<NotebookInstanceLifecycleHook>>
+    void SetOnStart(OnStartT&& value) { m_onStartHasBeenSet = true; m_onStart = std::forward<OnStartT>(value); }
+    template<typename OnStartT = Aws::Vector<NotebookInstanceLifecycleHook>>
+    DescribeNotebookInstanceLifecycleConfigResult& WithOnStart(OnStartT&& value) { SetOnStart(std::forward<OnStartT>(value)); return *this;}
+    template<typename OnStartT = NotebookInstanceLifecycleHook>
+    DescribeNotebookInstanceLifecycleConfigResult& AddOnStart(OnStartT&& value) { m_onStartHasBeenSet = true; m_onStart.emplace_back(std::forward<OnStartT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -94,49 +90,54 @@ namespace Model
      * <p>A timestamp that tells when the lifecycle configuration was last
      * modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
-    inline DescribeNotebookInstanceLifecycleConfigResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline DescribeNotebookInstanceLifecycleConfigResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    DescribeNotebookInstanceLifecycleConfigResult& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A timestamp that tells when the lifecycle configuration was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeNotebookInstanceLifecycleConfigResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeNotebookInstanceLifecycleConfigResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeNotebookInstanceLifecycleConfigResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeNotebookInstanceLifecycleConfigResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeNotebookInstanceLifecycleConfigResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeNotebookInstanceLifecycleConfigResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeNotebookInstanceLifecycleConfigResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_notebookInstanceLifecycleConfigArn;
+    bool m_notebookInstanceLifecycleConfigArnHasBeenSet = false;
 
     Aws::String m_notebookInstanceLifecycleConfigName;
+    bool m_notebookInstanceLifecycleConfigNameHasBeenSet = false;
 
     Aws::Vector<NotebookInstanceLifecycleHook> m_onCreate;
+    bool m_onCreateHasBeenSet = false;
 
     Aws::Vector<NotebookInstanceLifecycleHook> m_onStart;
+    bool m_onStartHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
+    bool m_lastModifiedTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

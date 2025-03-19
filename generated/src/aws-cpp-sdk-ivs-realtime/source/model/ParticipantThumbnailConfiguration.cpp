@@ -18,17 +18,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-ParticipantThumbnailConfiguration::ParticipantThumbnailConfiguration() : 
-    m_targetIntervalSeconds(0),
-    m_targetIntervalSecondsHasBeenSet(false),
-    m_storageHasBeenSet(false),
-    m_recordingMode(ThumbnailRecordingMode::NOT_SET),
-    m_recordingModeHasBeenSet(false)
-{
-}
-
 ParticipantThumbnailConfiguration::ParticipantThumbnailConfiguration(JsonView jsonValue)
-  : ParticipantThumbnailConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ ParticipantThumbnailConfiguration& ParticipantThumbnailConfiguration::operator =
   if(jsonValue.ValueExists("targetIntervalSeconds"))
   {
     m_targetIntervalSeconds = jsonValue.GetInteger("targetIntervalSeconds");
-
     m_targetIntervalSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storage"))
   {
     Aws::Utils::Array<JsonView> storageJsonList = jsonValue.GetArray("storage");
@@ -51,14 +39,11 @@ ParticipantThumbnailConfiguration& ParticipantThumbnailConfiguration::operator =
     }
     m_storageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recordingMode"))
   {
     m_recordingMode = ThumbnailRecordingModeMapper::GetThumbnailRecordingModeForName(jsonValue.GetString("recordingMode"));
-
     m_recordingModeHasBeenSet = true;
   }
-
   return *this;
 }
 

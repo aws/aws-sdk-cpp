@@ -28,7 +28,7 @@ namespace Model
   class CreateIdMappingTableResult
   {
   public:
-    AWS_CLEANROOMS_API CreateIdMappingTableResult();
+    AWS_CLEANROOMS_API CreateIdMappingTableResult() = default;
     AWS_CLEANROOMS_API CreateIdMappingTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLEANROOMS_API CreateIdMappingTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The ID mapping table that was created.</p>
      */
-    inline const IdMappingTable& GetIdMappingTable() const{ return m_idMappingTable; }
-    inline void SetIdMappingTable(const IdMappingTable& value) { m_idMappingTable = value; }
-    inline void SetIdMappingTable(IdMappingTable&& value) { m_idMappingTable = std::move(value); }
-    inline CreateIdMappingTableResult& WithIdMappingTable(const IdMappingTable& value) { SetIdMappingTable(value); return *this;}
-    inline CreateIdMappingTableResult& WithIdMappingTable(IdMappingTable&& value) { SetIdMappingTable(std::move(value)); return *this;}
+    inline const IdMappingTable& GetIdMappingTable() const { return m_idMappingTable; }
+    template<typename IdMappingTableT = IdMappingTable>
+    void SetIdMappingTable(IdMappingTableT&& value) { m_idMappingTableHasBeenSet = true; m_idMappingTable = std::forward<IdMappingTableT>(value); }
+    template<typename IdMappingTableT = IdMappingTable>
+    CreateIdMappingTableResult& WithIdMappingTable(IdMappingTableT&& value) { SetIdMappingTable(std::forward<IdMappingTableT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateIdMappingTableResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateIdMappingTableResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateIdMappingTableResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateIdMappingTableResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     IdMappingTable m_idMappingTable;
+    bool m_idMappingTableHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

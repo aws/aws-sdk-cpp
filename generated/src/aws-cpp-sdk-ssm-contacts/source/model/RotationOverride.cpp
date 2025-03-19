@@ -18,17 +18,7 @@ namespace SSMContacts
 namespace Model
 {
 
-RotationOverride::RotationOverride() : 
-    m_rotationOverrideIdHasBeenSet(false),
-    m_newContactIdsHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
-{
-}
-
 RotationOverride::RotationOverride(JsonView jsonValue)
-  : RotationOverride()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ RotationOverride& RotationOverride::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RotationOverrideId"))
   {
     m_rotationOverrideId = jsonValue.GetString("RotationOverrideId");
-
     m_rotationOverrideIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NewContactIds"))
   {
     Aws::Utils::Array<JsonView> newContactIdsJsonList = jsonValue.GetArray("NewContactIds");
@@ -51,28 +39,21 @@ RotationOverride& RotationOverride::operator =(JsonView jsonValue)
     }
     m_newContactIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetDouble("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTime"))
   {
     m_createTime = jsonValue.GetDouble("CreateTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

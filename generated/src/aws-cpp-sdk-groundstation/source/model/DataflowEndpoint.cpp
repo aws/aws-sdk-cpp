@@ -18,18 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-DataflowEndpoint::DataflowEndpoint() : 
-    m_addressHasBeenSet(false),
-    m_mtu(0),
-    m_mtuHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(EndpointStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 DataflowEndpoint::DataflowEndpoint(JsonView jsonValue)
-  : DataflowEndpoint()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ DataflowEndpoint& DataflowEndpoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("address"))
   {
     m_address = jsonValue.GetObject("address");
-
     m_addressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("mtu"))
   {
     m_mtu = jsonValue.GetInteger("mtu");
-
     m_mtuHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = EndpointStatusMapper::GetEndpointStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

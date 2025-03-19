@@ -33,7 +33,7 @@ namespace Model
   class ProductUserSummary
   {
   public:
-    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API ProductUserSummary();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API ProductUserSummary() = default;
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API ProductUserSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API ProductUserSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,124 +44,108 @@ namespace Model
      * <p>The domain name of the Active Directory that contains the user information
      * for the product subscription.</p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline ProductUserSummary& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline ProductUserSummary& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline ProductUserSummary& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    ProductUserSummary& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that specifies details for the identity provider.</p>
      */
-    inline const IdentityProvider& GetIdentityProvider() const{ return m_identityProvider; }
+    inline const IdentityProvider& GetIdentityProvider() const { return m_identityProvider; }
     inline bool IdentityProviderHasBeenSet() const { return m_identityProviderHasBeenSet; }
-    inline void SetIdentityProvider(const IdentityProvider& value) { m_identityProviderHasBeenSet = true; m_identityProvider = value; }
-    inline void SetIdentityProvider(IdentityProvider&& value) { m_identityProviderHasBeenSet = true; m_identityProvider = std::move(value); }
-    inline ProductUserSummary& WithIdentityProvider(const IdentityProvider& value) { SetIdentityProvider(value); return *this;}
-    inline ProductUserSummary& WithIdentityProvider(IdentityProvider&& value) { SetIdentityProvider(std::move(value)); return *this;}
+    template<typename IdentityProviderT = IdentityProvider>
+    void SetIdentityProvider(IdentityProviderT&& value) { m_identityProviderHasBeenSet = true; m_identityProvider = std::forward<IdentityProviderT>(value); }
+    template<typename IdentityProviderT = IdentityProvider>
+    ProductUserSummary& WithIdentityProvider(IdentityProviderT&& value) { SetIdentityProvider(std::forward<IdentityProviderT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the user-based subscription product.</p>
      */
-    inline const Aws::String& GetProduct() const{ return m_product; }
+    inline const Aws::String& GetProduct() const { return m_product; }
     inline bool ProductHasBeenSet() const { return m_productHasBeenSet; }
-    inline void SetProduct(const Aws::String& value) { m_productHasBeenSet = true; m_product = value; }
-    inline void SetProduct(Aws::String&& value) { m_productHasBeenSet = true; m_product = std::move(value); }
-    inline void SetProduct(const char* value) { m_productHasBeenSet = true; m_product.assign(value); }
-    inline ProductUserSummary& WithProduct(const Aws::String& value) { SetProduct(value); return *this;}
-    inline ProductUserSummary& WithProduct(Aws::String&& value) { SetProduct(std::move(value)); return *this;}
-    inline ProductUserSummary& WithProduct(const char* value) { SetProduct(value); return *this;}
+    template<typename ProductT = Aws::String>
+    void SetProduct(ProductT&& value) { m_productHasBeenSet = true; m_product = std::forward<ProductT>(value); }
+    template<typename ProductT = Aws::String>
+    ProductUserSummary& WithProduct(ProductT&& value) { SetProduct(std::forward<ProductT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) for this product user.</p>
      */
-    inline const Aws::String& GetProductUserArn() const{ return m_productUserArn; }
+    inline const Aws::String& GetProductUserArn() const { return m_productUserArn; }
     inline bool ProductUserArnHasBeenSet() const { return m_productUserArnHasBeenSet; }
-    inline void SetProductUserArn(const Aws::String& value) { m_productUserArnHasBeenSet = true; m_productUserArn = value; }
-    inline void SetProductUserArn(Aws::String&& value) { m_productUserArnHasBeenSet = true; m_productUserArn = std::move(value); }
-    inline void SetProductUserArn(const char* value) { m_productUserArnHasBeenSet = true; m_productUserArn.assign(value); }
-    inline ProductUserSummary& WithProductUserArn(const Aws::String& value) { SetProductUserArn(value); return *this;}
-    inline ProductUserSummary& WithProductUserArn(Aws::String&& value) { SetProductUserArn(std::move(value)); return *this;}
-    inline ProductUserSummary& WithProductUserArn(const char* value) { SetProductUserArn(value); return *this;}
+    template<typename ProductUserArnT = Aws::String>
+    void SetProductUserArn(ProductUserArnT&& value) { m_productUserArnHasBeenSet = true; m_productUserArn = std::forward<ProductUserArnT>(value); }
+    template<typename ProductUserArnT = Aws::String>
+    ProductUserSummary& WithProductUserArn(ProductUserArnT&& value) { SetProductUserArn(std::forward<ProductUserArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of a product for this user.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline ProductUserSummary& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline ProductUserSummary& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline ProductUserSummary& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    ProductUserSummary& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status message for a product for this user.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline ProductUserSummary& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline ProductUserSummary& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline ProductUserSummary& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    ProductUserSummary& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The end date of a subscription.</p>
      */
-    inline const Aws::String& GetSubscriptionEndDate() const{ return m_subscriptionEndDate; }
+    inline const Aws::String& GetSubscriptionEndDate() const { return m_subscriptionEndDate; }
     inline bool SubscriptionEndDateHasBeenSet() const { return m_subscriptionEndDateHasBeenSet; }
-    inline void SetSubscriptionEndDate(const Aws::String& value) { m_subscriptionEndDateHasBeenSet = true; m_subscriptionEndDate = value; }
-    inline void SetSubscriptionEndDate(Aws::String&& value) { m_subscriptionEndDateHasBeenSet = true; m_subscriptionEndDate = std::move(value); }
-    inline void SetSubscriptionEndDate(const char* value) { m_subscriptionEndDateHasBeenSet = true; m_subscriptionEndDate.assign(value); }
-    inline ProductUserSummary& WithSubscriptionEndDate(const Aws::String& value) { SetSubscriptionEndDate(value); return *this;}
-    inline ProductUserSummary& WithSubscriptionEndDate(Aws::String&& value) { SetSubscriptionEndDate(std::move(value)); return *this;}
-    inline ProductUserSummary& WithSubscriptionEndDate(const char* value) { SetSubscriptionEndDate(value); return *this;}
+    template<typename SubscriptionEndDateT = Aws::String>
+    void SetSubscriptionEndDate(SubscriptionEndDateT&& value) { m_subscriptionEndDateHasBeenSet = true; m_subscriptionEndDate = std::forward<SubscriptionEndDateT>(value); }
+    template<typename SubscriptionEndDateT = Aws::String>
+    ProductUserSummary& WithSubscriptionEndDate(SubscriptionEndDateT&& value) { SetSubscriptionEndDate(std::forward<SubscriptionEndDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The start date of a subscription.</p>
      */
-    inline const Aws::String& GetSubscriptionStartDate() const{ return m_subscriptionStartDate; }
+    inline const Aws::String& GetSubscriptionStartDate() const { return m_subscriptionStartDate; }
     inline bool SubscriptionStartDateHasBeenSet() const { return m_subscriptionStartDateHasBeenSet; }
-    inline void SetSubscriptionStartDate(const Aws::String& value) { m_subscriptionStartDateHasBeenSet = true; m_subscriptionStartDate = value; }
-    inline void SetSubscriptionStartDate(Aws::String&& value) { m_subscriptionStartDateHasBeenSet = true; m_subscriptionStartDate = std::move(value); }
-    inline void SetSubscriptionStartDate(const char* value) { m_subscriptionStartDateHasBeenSet = true; m_subscriptionStartDate.assign(value); }
-    inline ProductUserSummary& WithSubscriptionStartDate(const Aws::String& value) { SetSubscriptionStartDate(value); return *this;}
-    inline ProductUserSummary& WithSubscriptionStartDate(Aws::String&& value) { SetSubscriptionStartDate(std::move(value)); return *this;}
-    inline ProductUserSummary& WithSubscriptionStartDate(const char* value) { SetSubscriptionStartDate(value); return *this;}
+    template<typename SubscriptionStartDateT = Aws::String>
+    void SetSubscriptionStartDate(SubscriptionStartDateT&& value) { m_subscriptionStartDateHasBeenSet = true; m_subscriptionStartDate = std::forward<SubscriptionStartDateT>(value); }
+    template<typename SubscriptionStartDateT = Aws::String>
+    ProductUserSummary& WithSubscriptionStartDate(SubscriptionStartDateT&& value) { SetSubscriptionStartDate(std::forward<SubscriptionStartDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user name from the identity provider for this product user.</p>
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
+    inline const Aws::String& GetUsername() const { return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-    inline ProductUserSummary& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline ProductUserSummary& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline ProductUserSummary& WithUsername(const char* value) { SetUsername(value); return *this;}
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    ProductUserSummary& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
   private:
 

@@ -29,7 +29,7 @@ namespace Model
   class BatchAssociateScramSecretResult
   {
   public:
-    AWS_KAFKA_API BatchAssociateScramSecretResult();
+    AWS_KAFKA_API BatchAssociateScramSecretResult() = default;
     AWS_KAFKA_API BatchAssociateScramSecretResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KAFKA_API BatchAssociateScramSecretResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,11 @@ namespace Model
             <p>The Amazon Resource Name (ARN) of the cluster.</p>
          
      */
-    inline const Aws::String& GetClusterArn() const{ return m_clusterArn; }
-    inline void SetClusterArn(const Aws::String& value) { m_clusterArn = value; }
-    inline void SetClusterArn(Aws::String&& value) { m_clusterArn = std::move(value); }
-    inline void SetClusterArn(const char* value) { m_clusterArn.assign(value); }
-    inline BatchAssociateScramSecretResult& WithClusterArn(const Aws::String& value) { SetClusterArn(value); return *this;}
-    inline BatchAssociateScramSecretResult& WithClusterArn(Aws::String&& value) { SetClusterArn(std::move(value)); return *this;}
-    inline BatchAssociateScramSecretResult& WithClusterArn(const char* value) { SetClusterArn(value); return *this;}
+    inline const Aws::String& GetClusterArn() const { return m_clusterArn; }
+    template<typename ClusterArnT = Aws::String>
+    void SetClusterArn(ClusterArnT&& value) { m_clusterArnHasBeenSet = true; m_clusterArn = std::forward<ClusterArnT>(value); }
+    template<typename ClusterArnT = Aws::String>
+    BatchAssociateScramSecretResult& WithClusterArn(ClusterArnT&& value) { SetClusterArn(std::forward<ClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,32 +54,33 @@ namespace Model
         
      * 
      */
-    inline const Aws::Vector<UnprocessedScramSecret>& GetUnprocessedScramSecrets() const{ return m_unprocessedScramSecrets; }
-    inline void SetUnprocessedScramSecrets(const Aws::Vector<UnprocessedScramSecret>& value) { m_unprocessedScramSecrets = value; }
-    inline void SetUnprocessedScramSecrets(Aws::Vector<UnprocessedScramSecret>&& value) { m_unprocessedScramSecrets = std::move(value); }
-    inline BatchAssociateScramSecretResult& WithUnprocessedScramSecrets(const Aws::Vector<UnprocessedScramSecret>& value) { SetUnprocessedScramSecrets(value); return *this;}
-    inline BatchAssociateScramSecretResult& WithUnprocessedScramSecrets(Aws::Vector<UnprocessedScramSecret>&& value) { SetUnprocessedScramSecrets(std::move(value)); return *this;}
-    inline BatchAssociateScramSecretResult& AddUnprocessedScramSecrets(const UnprocessedScramSecret& value) { m_unprocessedScramSecrets.push_back(value); return *this; }
-    inline BatchAssociateScramSecretResult& AddUnprocessedScramSecrets(UnprocessedScramSecret&& value) { m_unprocessedScramSecrets.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<UnprocessedScramSecret>& GetUnprocessedScramSecrets() const { return m_unprocessedScramSecrets; }
+    template<typename UnprocessedScramSecretsT = Aws::Vector<UnprocessedScramSecret>>
+    void SetUnprocessedScramSecrets(UnprocessedScramSecretsT&& value) { m_unprocessedScramSecretsHasBeenSet = true; m_unprocessedScramSecrets = std::forward<UnprocessedScramSecretsT>(value); }
+    template<typename UnprocessedScramSecretsT = Aws::Vector<UnprocessedScramSecret>>
+    BatchAssociateScramSecretResult& WithUnprocessedScramSecrets(UnprocessedScramSecretsT&& value) { SetUnprocessedScramSecrets(std::forward<UnprocessedScramSecretsT>(value)); return *this;}
+    template<typename UnprocessedScramSecretsT = UnprocessedScramSecret>
+    BatchAssociateScramSecretResult& AddUnprocessedScramSecrets(UnprocessedScramSecretsT&& value) { m_unprocessedScramSecretsHasBeenSet = true; m_unprocessedScramSecrets.emplace_back(std::forward<UnprocessedScramSecretsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchAssociateScramSecretResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchAssociateScramSecretResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchAssociateScramSecretResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchAssociateScramSecretResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_clusterArn;
+    bool m_clusterArnHasBeenSet = false;
 
     Aws::Vector<UnprocessedScramSecret> m_unprocessedScramSecrets;
+    bool m_unprocessedScramSecretsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

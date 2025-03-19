@@ -31,7 +31,7 @@ namespace Model
   class EntityRecognizerOutputDataConfig
   {
   public:
-    AWS_COMPREHEND_API EntityRecognizerOutputDataConfig();
+    AWS_COMPREHEND_API EntityRecognizerOutputDataConfig() = default;
     AWS_COMPREHEND_API EntityRecognizerOutputDataConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API EntityRecognizerOutputDataConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
      * <p>The Amazon S3 prefix for the data lake location of the flywheel
      * statistics.</p>
      */
-    inline const Aws::String& GetFlywheelStatsS3Prefix() const{ return m_flywheelStatsS3Prefix; }
+    inline const Aws::String& GetFlywheelStatsS3Prefix() const { return m_flywheelStatsS3Prefix; }
     inline bool FlywheelStatsS3PrefixHasBeenSet() const { return m_flywheelStatsS3PrefixHasBeenSet; }
-    inline void SetFlywheelStatsS3Prefix(const Aws::String& value) { m_flywheelStatsS3PrefixHasBeenSet = true; m_flywheelStatsS3Prefix = value; }
-    inline void SetFlywheelStatsS3Prefix(Aws::String&& value) { m_flywheelStatsS3PrefixHasBeenSet = true; m_flywheelStatsS3Prefix = std::move(value); }
-    inline void SetFlywheelStatsS3Prefix(const char* value) { m_flywheelStatsS3PrefixHasBeenSet = true; m_flywheelStatsS3Prefix.assign(value); }
-    inline EntityRecognizerOutputDataConfig& WithFlywheelStatsS3Prefix(const Aws::String& value) { SetFlywheelStatsS3Prefix(value); return *this;}
-    inline EntityRecognizerOutputDataConfig& WithFlywheelStatsS3Prefix(Aws::String&& value) { SetFlywheelStatsS3Prefix(std::move(value)); return *this;}
-    inline EntityRecognizerOutputDataConfig& WithFlywheelStatsS3Prefix(const char* value) { SetFlywheelStatsS3Prefix(value); return *this;}
+    template<typename FlywheelStatsS3PrefixT = Aws::String>
+    void SetFlywheelStatsS3Prefix(FlywheelStatsS3PrefixT&& value) { m_flywheelStatsS3PrefixHasBeenSet = true; m_flywheelStatsS3Prefix = std::forward<FlywheelStatsS3PrefixT>(value); }
+    template<typename FlywheelStatsS3PrefixT = Aws::String>
+    EntityRecognizerOutputDataConfig& WithFlywheelStatsS3Prefix(FlywheelStatsS3PrefixT&& value) { SetFlywheelStatsS3Prefix(std::forward<FlywheelStatsS3PrefixT>(value)); return *this;}
     ///@}
   private:
 

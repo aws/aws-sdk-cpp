@@ -18,23 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RoadSnapTruckOptions::RoadSnapTruckOptions() : 
-    m_grossWeight(0),
-    m_grossWeightHasBeenSet(false),
-    m_hazardousCargosHasBeenSet(false),
-    m_height(0),
-    m_heightHasBeenSet(false),
-    m_length(0),
-    m_lengthHasBeenSet(false),
-    m_trailerHasBeenSet(false),
-    m_tunnelRestrictionCodeHasBeenSet(false),
-    m_width(0),
-    m_widthHasBeenSet(false)
-{
-}
-
 RoadSnapTruckOptions::RoadSnapTruckOptions(JsonView jsonValue)
-  : RoadSnapTruckOptions()
 {
   *this = jsonValue;
 }
@@ -44,10 +28,8 @@ RoadSnapTruckOptions& RoadSnapTruckOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GrossWeight"))
   {
     m_grossWeight = jsonValue.GetInt64("GrossWeight");
-
     m_grossWeightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HazardousCargos"))
   {
     Aws::Utils::Array<JsonView> hazardousCargosJsonList = jsonValue.GetArray("HazardousCargos");
@@ -57,42 +39,31 @@ RoadSnapTruckOptions& RoadSnapTruckOptions::operator =(JsonView jsonValue)
     }
     m_hazardousCargosHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Height"))
   {
     m_height = jsonValue.GetInt64("Height");
-
     m_heightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Length"))
   {
     m_length = jsonValue.GetInt64("Length");
-
     m_lengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Trailer"))
   {
     m_trailer = jsonValue.GetObject("Trailer");
-
     m_trailerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TunnelRestrictionCode"))
   {
     m_tunnelRestrictionCode = jsonValue.GetString("TunnelRestrictionCode");
-
     m_tunnelRestrictionCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Width"))
   {
     m_width = jsonValue.GetInt64("Width");
-
     m_widthHasBeenSet = true;
   }
-
   return *this;
 }
 

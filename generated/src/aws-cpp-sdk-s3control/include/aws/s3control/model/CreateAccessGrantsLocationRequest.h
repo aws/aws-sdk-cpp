@@ -23,7 +23,7 @@ namespace Model
   class CreateAccessGrantsLocationRequest : public S3ControlRequest
   {
   public:
-    AWS_S3CONTROL_API CreateAccessGrantsLocationRequest();
+    AWS_S3CONTROL_API CreateAccessGrantsLocationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline CreateAccessGrantsLocationRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline CreateAccessGrantsLocationRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline CreateAccessGrantsLocationRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    CreateAccessGrantsLocationRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +65,12 @@ namespace Model
      * the <code>engineering/</code> prefix or object key names that start with the
      * <code>marketing/campaigns/</code> prefix.</p>
      */
-    inline const Aws::String& GetLocationScope() const{ return m_locationScope; }
+    inline const Aws::String& GetLocationScope() const { return m_locationScope; }
     inline bool LocationScopeHasBeenSet() const { return m_locationScopeHasBeenSet; }
-    inline void SetLocationScope(const Aws::String& value) { m_locationScopeHasBeenSet = true; m_locationScope = value; }
-    inline void SetLocationScope(Aws::String&& value) { m_locationScopeHasBeenSet = true; m_locationScope = std::move(value); }
-    inline void SetLocationScope(const char* value) { m_locationScopeHasBeenSet = true; m_locationScope.assign(value); }
-    inline CreateAccessGrantsLocationRequest& WithLocationScope(const Aws::String& value) { SetLocationScope(value); return *this;}
-    inline CreateAccessGrantsLocationRequest& WithLocationScope(Aws::String&& value) { SetLocationScope(std::move(value)); return *this;}
-    inline CreateAccessGrantsLocationRequest& WithLocationScope(const char* value) { SetLocationScope(value); return *this;}
+    template<typename LocationScopeT = Aws::String>
+    void SetLocationScope(LocationScopeT&& value) { m_locationScopeHasBeenSet = true; m_locationScope = std::forward<LocationScopeT>(value); }
+    template<typename LocationScopeT = Aws::String>
+    CreateAccessGrantsLocationRequest& WithLocationScope(LocationScopeT&& value) { SetLocationScope(std::forward<LocationScopeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +79,12 @@ namespace Model
      * S3 Access Grants assumes this role to manage access to the registered location.
      * </p>
      */
-    inline const Aws::String& GetIAMRoleArn() const{ return m_iAMRoleArn; }
+    inline const Aws::String& GetIAMRoleArn() const { return m_iAMRoleArn; }
     inline bool IAMRoleArnHasBeenSet() const { return m_iAMRoleArnHasBeenSet; }
-    inline void SetIAMRoleArn(const Aws::String& value) { m_iAMRoleArnHasBeenSet = true; m_iAMRoleArn = value; }
-    inline void SetIAMRoleArn(Aws::String&& value) { m_iAMRoleArnHasBeenSet = true; m_iAMRoleArn = std::move(value); }
-    inline void SetIAMRoleArn(const char* value) { m_iAMRoleArnHasBeenSet = true; m_iAMRoleArn.assign(value); }
-    inline CreateAccessGrantsLocationRequest& WithIAMRoleArn(const Aws::String& value) { SetIAMRoleArn(value); return *this;}
-    inline CreateAccessGrantsLocationRequest& WithIAMRoleArn(Aws::String&& value) { SetIAMRoleArn(std::move(value)); return *this;}
-    inline CreateAccessGrantsLocationRequest& WithIAMRoleArn(const char* value) { SetIAMRoleArn(value); return *this;}
+    template<typename IAMRoleArnT = Aws::String>
+    void SetIAMRoleArn(IAMRoleArnT&& value) { m_iAMRoleArnHasBeenSet = true; m_iAMRoleArn = std::forward<IAMRoleArnT>(value); }
+    template<typename IAMRoleArnT = Aws::String>
+    CreateAccessGrantsLocationRequest& WithIAMRoleArn(IAMRoleArnT&& value) { SetIAMRoleArn(std::forward<IAMRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,14 +94,14 @@ namespace Model
      * Tags can help you manage, identify, organize, search for, and filter
      * resources.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateAccessGrantsLocationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateAccessGrantsLocationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateAccessGrantsLocationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateAccessGrantsLocationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateAccessGrantsLocationRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateAccessGrantsLocationRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

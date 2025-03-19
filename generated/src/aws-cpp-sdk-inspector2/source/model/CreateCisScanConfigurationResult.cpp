@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateCisScanConfigurationResult::CreateCisScanConfigurationResult()
-{
-}
-
 CreateCisScanConfigurationResult::CreateCisScanConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateCisScanConfigurationResult& CreateCisScanConfigurationResult::operator =(c
   if(jsonValue.ValueExists("scanConfigurationArn"))
   {
     m_scanConfigurationArn = jsonValue.GetString("scanConfigurationArn");
-
+    m_scanConfigurationArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

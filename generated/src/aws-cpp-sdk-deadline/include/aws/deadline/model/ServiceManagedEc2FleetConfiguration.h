@@ -33,7 +33,7 @@ namespace Model
   class ServiceManagedEc2FleetConfiguration
   {
   public:
-    AWS_DEADLINE_API ServiceManagedEc2FleetConfiguration();
+    AWS_DEADLINE_API ServiceManagedEc2FleetConfiguration() = default;
     AWS_DEADLINE_API ServiceManagedEc2FleetConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API ServiceManagedEc2FleetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The Amazon EC2 instance capabilities.</p>
      */
-    inline const ServiceManagedEc2InstanceCapabilities& GetInstanceCapabilities() const{ return m_instanceCapabilities; }
+    inline const ServiceManagedEc2InstanceCapabilities& GetInstanceCapabilities() const { return m_instanceCapabilities; }
     inline bool InstanceCapabilitiesHasBeenSet() const { return m_instanceCapabilitiesHasBeenSet; }
-    inline void SetInstanceCapabilities(const ServiceManagedEc2InstanceCapabilities& value) { m_instanceCapabilitiesHasBeenSet = true; m_instanceCapabilities = value; }
-    inline void SetInstanceCapabilities(ServiceManagedEc2InstanceCapabilities&& value) { m_instanceCapabilitiesHasBeenSet = true; m_instanceCapabilities = std::move(value); }
-    inline ServiceManagedEc2FleetConfiguration& WithInstanceCapabilities(const ServiceManagedEc2InstanceCapabilities& value) { SetInstanceCapabilities(value); return *this;}
-    inline ServiceManagedEc2FleetConfiguration& WithInstanceCapabilities(ServiceManagedEc2InstanceCapabilities&& value) { SetInstanceCapabilities(std::move(value)); return *this;}
+    template<typename InstanceCapabilitiesT = ServiceManagedEc2InstanceCapabilities>
+    void SetInstanceCapabilities(InstanceCapabilitiesT&& value) { m_instanceCapabilitiesHasBeenSet = true; m_instanceCapabilities = std::forward<InstanceCapabilitiesT>(value); }
+    template<typename InstanceCapabilitiesT = ServiceManagedEc2InstanceCapabilities>
+    ServiceManagedEc2FleetConfiguration& WithInstanceCapabilities(InstanceCapabilitiesT&& value) { SetInstanceCapabilities(std::forward<InstanceCapabilitiesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon EC2 market type.</p>
      */
-    inline const ServiceManagedEc2InstanceMarketOptions& GetInstanceMarketOptions() const{ return m_instanceMarketOptions; }
+    inline const ServiceManagedEc2InstanceMarketOptions& GetInstanceMarketOptions() const { return m_instanceMarketOptions; }
     inline bool InstanceMarketOptionsHasBeenSet() const { return m_instanceMarketOptionsHasBeenSet; }
-    inline void SetInstanceMarketOptions(const ServiceManagedEc2InstanceMarketOptions& value) { m_instanceMarketOptionsHasBeenSet = true; m_instanceMarketOptions = value; }
-    inline void SetInstanceMarketOptions(ServiceManagedEc2InstanceMarketOptions&& value) { m_instanceMarketOptionsHasBeenSet = true; m_instanceMarketOptions = std::move(value); }
-    inline ServiceManagedEc2FleetConfiguration& WithInstanceMarketOptions(const ServiceManagedEc2InstanceMarketOptions& value) { SetInstanceMarketOptions(value); return *this;}
-    inline ServiceManagedEc2FleetConfiguration& WithInstanceMarketOptions(ServiceManagedEc2InstanceMarketOptions&& value) { SetInstanceMarketOptions(std::move(value)); return *this;}
+    template<typename InstanceMarketOptionsT = ServiceManagedEc2InstanceMarketOptions>
+    void SetInstanceMarketOptions(InstanceMarketOptionsT&& value) { m_instanceMarketOptionsHasBeenSet = true; m_instanceMarketOptions = std::forward<InstanceMarketOptionsT>(value); }
+    template<typename InstanceMarketOptionsT = ServiceManagedEc2InstanceMarketOptions>
+    ServiceManagedEc2FleetConfiguration& WithInstanceMarketOptions(InstanceMarketOptionsT&& value) { SetInstanceMarketOptions(std::forward<InstanceMarketOptionsT>(value)); return *this;}
     ///@}
   private:
 

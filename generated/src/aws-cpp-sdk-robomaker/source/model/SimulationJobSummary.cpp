@@ -18,22 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-SimulationJobSummary::SimulationJobSummary() : 
-    m_arnHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(SimulationJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_simulationApplicationNamesHasBeenSet(false),
-    m_robotApplicationNamesHasBeenSet(false),
-    m_dataSourceNamesHasBeenSet(false),
-    m_computeType(ComputeType::NOT_SET),
-    m_computeTypeHasBeenSet(false)
-{
-}
-
 SimulationJobSummary::SimulationJobSummary(JsonView jsonValue)
-  : SimulationJobSummary()
 {
   *this = jsonValue;
 }
@@ -43,31 +28,23 @@ SimulationJobSummary& SimulationJobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("lastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = SimulationJobStatusMapper::GetSimulationJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("simulationApplicationNames"))
   {
     Aws::Utils::Array<JsonView> simulationApplicationNamesJsonList = jsonValue.GetArray("simulationApplicationNames");
@@ -77,7 +54,6 @@ SimulationJobSummary& SimulationJobSummary::operator =(JsonView jsonValue)
     }
     m_simulationApplicationNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("robotApplicationNames"))
   {
     Aws::Utils::Array<JsonView> robotApplicationNamesJsonList = jsonValue.GetArray("robotApplicationNames");
@@ -87,7 +63,6 @@ SimulationJobSummary& SimulationJobSummary::operator =(JsonView jsonValue)
     }
     m_robotApplicationNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataSourceNames"))
   {
     Aws::Utils::Array<JsonView> dataSourceNamesJsonList = jsonValue.GetArray("dataSourceNames");
@@ -97,14 +72,11 @@ SimulationJobSummary& SimulationJobSummary::operator =(JsonView jsonValue)
     }
     m_dataSourceNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("computeType"))
   {
     m_computeType = ComputeTypeMapper::GetComputeTypeForName(jsonValue.GetString("computeType"));
-
     m_computeTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

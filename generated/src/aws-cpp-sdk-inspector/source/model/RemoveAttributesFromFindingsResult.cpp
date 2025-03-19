@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RemoveAttributesFromFindingsResult::RemoveAttributesFromFindingsResult()
-{
-}
-
 RemoveAttributesFromFindingsResult::RemoveAttributesFromFindingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ RemoveAttributesFromFindingsResult& RemoveAttributesFromFindingsResult::operator
     {
       m_failedItems[failedItemsItem.first] = failedItemsItem.second.AsObject();
     }
+    m_failedItemsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

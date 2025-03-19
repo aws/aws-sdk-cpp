@@ -32,7 +32,7 @@ namespace Model
   class VpcConnectivityTls
   {
   public:
-    AWS_KAFKA_API VpcConnectivityTls();
+    AWS_KAFKA_API VpcConnectivityTls() = default;
     AWS_KAFKA_API VpcConnectivityTls(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API VpcConnectivityTls& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
       
      *   
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline VpcConnectivityTls& WithEnabled(bool value) { SetEnabled(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
   };
 

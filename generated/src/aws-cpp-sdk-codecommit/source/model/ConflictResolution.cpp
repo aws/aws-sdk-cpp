@@ -18,15 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-ConflictResolution::ConflictResolution() : 
-    m_replaceContentsHasBeenSet(false),
-    m_deleteFilesHasBeenSet(false),
-    m_setFileModesHasBeenSet(false)
-{
-}
-
 ConflictResolution::ConflictResolution(JsonView jsonValue)
-  : ConflictResolution()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ ConflictResolution& ConflictResolution::operator =(JsonView jsonValue)
     }
     m_replaceContentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deleteFiles"))
   {
     Aws::Utils::Array<JsonView> deleteFilesJsonList = jsonValue.GetArray("deleteFiles");
@@ -52,7 +43,6 @@ ConflictResolution& ConflictResolution::operator =(JsonView jsonValue)
     }
     m_deleteFilesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("setFileModes"))
   {
     Aws::Utils::Array<JsonView> setFileModesJsonList = jsonValue.GetArray("setFileModes");
@@ -62,7 +52,6 @@ ConflictResolution& ConflictResolution::operator =(JsonView jsonValue)
     }
     m_setFileModesHasBeenSet = true;
   }
-
   return *this;
 }
 

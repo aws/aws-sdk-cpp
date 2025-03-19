@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-CustomColor::CustomColor() : 
-    m_fieldValueHasBeenSet(false),
-    m_colorHasBeenSet(false),
-    m_specialValue(SpecialValue::NOT_SET),
-    m_specialValueHasBeenSet(false)
-{
-}
-
 CustomColor::CustomColor(JsonView jsonValue)
-  : CustomColor()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ CustomColor& CustomColor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldValue"))
   {
     m_fieldValue = jsonValue.GetString("FieldValue");
-
     m_fieldValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Color"))
   {
     m_color = jsonValue.GetString("Color");
-
     m_colorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SpecialValue"))
   {
     m_specialValue = SpecialValueMapper::GetSpecialValueForName(jsonValue.GetString("SpecialValue"));
-
     m_specialValueHasBeenSet = true;
   }
-
   return *this;
 }
 

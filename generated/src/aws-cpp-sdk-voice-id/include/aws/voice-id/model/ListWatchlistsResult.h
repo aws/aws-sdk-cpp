@@ -29,7 +29,7 @@ namespace Model
   class ListWatchlistsResult
   {
   public:
-    AWS_VOICEID_API ListWatchlistsResult();
+    AWS_VOICEID_API ListWatchlistsResult() = default;
     AWS_VOICEID_API ListWatchlistsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_VOICEID_API ListWatchlistsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,13 +41,11 @@ namespace Model
      * the call again using the returned token to retrieve the next page. Keep all
      * other arguments unchanged. Each pagination token expires after 24 hours. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListWatchlistsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListWatchlistsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListWatchlistsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListWatchlistsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,32 +53,33 @@ namespace Model
      * <p>A list that contains details about each watchlist in the Amazon Web Services
      * account. </p>
      */
-    inline const Aws::Vector<WatchlistSummary>& GetWatchlistSummaries() const{ return m_watchlistSummaries; }
-    inline void SetWatchlistSummaries(const Aws::Vector<WatchlistSummary>& value) { m_watchlistSummaries = value; }
-    inline void SetWatchlistSummaries(Aws::Vector<WatchlistSummary>&& value) { m_watchlistSummaries = std::move(value); }
-    inline ListWatchlistsResult& WithWatchlistSummaries(const Aws::Vector<WatchlistSummary>& value) { SetWatchlistSummaries(value); return *this;}
-    inline ListWatchlistsResult& WithWatchlistSummaries(Aws::Vector<WatchlistSummary>&& value) { SetWatchlistSummaries(std::move(value)); return *this;}
-    inline ListWatchlistsResult& AddWatchlistSummaries(const WatchlistSummary& value) { m_watchlistSummaries.push_back(value); return *this; }
-    inline ListWatchlistsResult& AddWatchlistSummaries(WatchlistSummary&& value) { m_watchlistSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<WatchlistSummary>& GetWatchlistSummaries() const { return m_watchlistSummaries; }
+    template<typename WatchlistSummariesT = Aws::Vector<WatchlistSummary>>
+    void SetWatchlistSummaries(WatchlistSummariesT&& value) { m_watchlistSummariesHasBeenSet = true; m_watchlistSummaries = std::forward<WatchlistSummariesT>(value); }
+    template<typename WatchlistSummariesT = Aws::Vector<WatchlistSummary>>
+    ListWatchlistsResult& WithWatchlistSummaries(WatchlistSummariesT&& value) { SetWatchlistSummaries(std::forward<WatchlistSummariesT>(value)); return *this;}
+    template<typename WatchlistSummariesT = WatchlistSummary>
+    ListWatchlistsResult& AddWatchlistSummaries(WatchlistSummariesT&& value) { m_watchlistSummariesHasBeenSet = true; m_watchlistSummaries.emplace_back(std::forward<WatchlistSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListWatchlistsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListWatchlistsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListWatchlistsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListWatchlistsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<WatchlistSummary> m_watchlistSummaries;
+    bool m_watchlistSummariesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

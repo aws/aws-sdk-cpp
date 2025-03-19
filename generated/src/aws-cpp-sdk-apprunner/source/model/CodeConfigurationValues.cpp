@@ -18,19 +18,7 @@ namespace AppRunner
 namespace Model
 {
 
-CodeConfigurationValues::CodeConfigurationValues() : 
-    m_runtime(Runtime::NOT_SET),
-    m_runtimeHasBeenSet(false),
-    m_buildCommandHasBeenSet(false),
-    m_startCommandHasBeenSet(false),
-    m_portHasBeenSet(false),
-    m_runtimeEnvironmentVariablesHasBeenSet(false),
-    m_runtimeEnvironmentSecretsHasBeenSet(false)
-{
-}
-
 CodeConfigurationValues::CodeConfigurationValues(JsonView jsonValue)
-  : CodeConfigurationValues()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ CodeConfigurationValues& CodeConfigurationValues::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Runtime"))
   {
     m_runtime = RuntimeMapper::GetRuntimeForName(jsonValue.GetString("Runtime"));
-
     m_runtimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BuildCommand"))
   {
     m_buildCommand = jsonValue.GetString("BuildCommand");
-
     m_buildCommandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartCommand"))
   {
     m_startCommand = jsonValue.GetString("StartCommand");
-
     m_startCommandHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetString("Port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuntimeEnvironmentVariables"))
   {
     Aws::Map<Aws::String, JsonView> runtimeEnvironmentVariablesJsonMap = jsonValue.GetObject("RuntimeEnvironmentVariables").GetAllObjects();
@@ -74,7 +54,6 @@ CodeConfigurationValues& CodeConfigurationValues::operator =(JsonView jsonValue)
     }
     m_runtimeEnvironmentVariablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuntimeEnvironmentSecrets"))
   {
     Aws::Map<Aws::String, JsonView> runtimeEnvironmentSecretsJsonMap = jsonValue.GetObject("RuntimeEnvironmentSecrets").GetAllObjects();
@@ -84,7 +63,6 @@ CodeConfigurationValues& CodeConfigurationValues::operator =(JsonView jsonValue)
     }
     m_runtimeEnvironmentSecretsHasBeenSet = true;
   }
-
   return *this;
 }
 

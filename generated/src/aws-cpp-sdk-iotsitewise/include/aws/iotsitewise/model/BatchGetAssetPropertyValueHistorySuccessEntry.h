@@ -35,7 +35,7 @@ namespace Model
   class BatchGetAssetPropertyValueHistorySuccessEntry
   {
   public:
-    AWS_IOTSITEWISE_API BatchGetAssetPropertyValueHistorySuccessEntry();
+    AWS_IOTSITEWISE_API BatchGetAssetPropertyValueHistorySuccessEntry() = default;
     AWS_IOTSITEWISE_API BatchGetAssetPropertyValueHistorySuccessEntry(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API BatchGetAssetPropertyValueHistorySuccessEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTSITEWISE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,26 @@ namespace Model
     /**
      * <p>The ID of the entry.</p>
      */
-    inline const Aws::String& GetEntryId() const{ return m_entryId; }
+    inline const Aws::String& GetEntryId() const { return m_entryId; }
     inline bool EntryIdHasBeenSet() const { return m_entryIdHasBeenSet; }
-    inline void SetEntryId(const Aws::String& value) { m_entryIdHasBeenSet = true; m_entryId = value; }
-    inline void SetEntryId(Aws::String&& value) { m_entryIdHasBeenSet = true; m_entryId = std::move(value); }
-    inline void SetEntryId(const char* value) { m_entryIdHasBeenSet = true; m_entryId.assign(value); }
-    inline BatchGetAssetPropertyValueHistorySuccessEntry& WithEntryId(const Aws::String& value) { SetEntryId(value); return *this;}
-    inline BatchGetAssetPropertyValueHistorySuccessEntry& WithEntryId(Aws::String&& value) { SetEntryId(std::move(value)); return *this;}
-    inline BatchGetAssetPropertyValueHistorySuccessEntry& WithEntryId(const char* value) { SetEntryId(value); return *this;}
+    template<typename EntryIdT = Aws::String>
+    void SetEntryId(EntryIdT&& value) { m_entryIdHasBeenSet = true; m_entryId = std::forward<EntryIdT>(value); }
+    template<typename EntryIdT = Aws::String>
+    BatchGetAssetPropertyValueHistorySuccessEntry& WithEntryId(EntryIdT&& value) { SetEntryId(std::forward<EntryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The requested historical values for the specified asset property.</p>
      */
-    inline const Aws::Vector<AssetPropertyValue>& GetAssetPropertyValueHistory() const{ return m_assetPropertyValueHistory; }
+    inline const Aws::Vector<AssetPropertyValue>& GetAssetPropertyValueHistory() const { return m_assetPropertyValueHistory; }
     inline bool AssetPropertyValueHistoryHasBeenSet() const { return m_assetPropertyValueHistoryHasBeenSet; }
-    inline void SetAssetPropertyValueHistory(const Aws::Vector<AssetPropertyValue>& value) { m_assetPropertyValueHistoryHasBeenSet = true; m_assetPropertyValueHistory = value; }
-    inline void SetAssetPropertyValueHistory(Aws::Vector<AssetPropertyValue>&& value) { m_assetPropertyValueHistoryHasBeenSet = true; m_assetPropertyValueHistory = std::move(value); }
-    inline BatchGetAssetPropertyValueHistorySuccessEntry& WithAssetPropertyValueHistory(const Aws::Vector<AssetPropertyValue>& value) { SetAssetPropertyValueHistory(value); return *this;}
-    inline BatchGetAssetPropertyValueHistorySuccessEntry& WithAssetPropertyValueHistory(Aws::Vector<AssetPropertyValue>&& value) { SetAssetPropertyValueHistory(std::move(value)); return *this;}
-    inline BatchGetAssetPropertyValueHistorySuccessEntry& AddAssetPropertyValueHistory(const AssetPropertyValue& value) { m_assetPropertyValueHistoryHasBeenSet = true; m_assetPropertyValueHistory.push_back(value); return *this; }
-    inline BatchGetAssetPropertyValueHistorySuccessEntry& AddAssetPropertyValueHistory(AssetPropertyValue&& value) { m_assetPropertyValueHistoryHasBeenSet = true; m_assetPropertyValueHistory.push_back(std::move(value)); return *this; }
+    template<typename AssetPropertyValueHistoryT = Aws::Vector<AssetPropertyValue>>
+    void SetAssetPropertyValueHistory(AssetPropertyValueHistoryT&& value) { m_assetPropertyValueHistoryHasBeenSet = true; m_assetPropertyValueHistory = std::forward<AssetPropertyValueHistoryT>(value); }
+    template<typename AssetPropertyValueHistoryT = Aws::Vector<AssetPropertyValue>>
+    BatchGetAssetPropertyValueHistorySuccessEntry& WithAssetPropertyValueHistory(AssetPropertyValueHistoryT&& value) { SetAssetPropertyValueHistory(std::forward<AssetPropertyValueHistoryT>(value)); return *this;}
+    template<typename AssetPropertyValueHistoryT = AssetPropertyValue>
+    BatchGetAssetPropertyValueHistorySuccessEntry& AddAssetPropertyValueHistory(AssetPropertyValueHistoryT&& value) { m_assetPropertyValueHistoryHasBeenSet = true; m_assetPropertyValueHistory.emplace_back(std::forward<AssetPropertyValueHistoryT>(value)); return *this; }
     ///@}
   private:
 

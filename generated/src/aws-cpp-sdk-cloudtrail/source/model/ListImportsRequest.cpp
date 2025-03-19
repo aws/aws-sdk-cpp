@@ -12,16 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListImportsRequest::ListImportsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_destinationHasBeenSet(false),
-    m_importStatus(ImportStatus::NOT_SET),
-    m_importStatusHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListImportsRequest::SerializePayload() const
 {
   JsonValue payload;

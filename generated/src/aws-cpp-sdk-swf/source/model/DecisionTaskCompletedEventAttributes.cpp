@@ -18,19 +18,7 @@ namespace SWF
 namespace Model
 {
 
-DecisionTaskCompletedEventAttributes::DecisionTaskCompletedEventAttributes() : 
-    m_executionContextHasBeenSet(false),
-    m_scheduledEventId(0),
-    m_scheduledEventIdHasBeenSet(false),
-    m_startedEventId(0),
-    m_startedEventIdHasBeenSet(false),
-    m_taskListHasBeenSet(false),
-    m_taskListScheduleToStartTimeoutHasBeenSet(false)
-{
-}
-
 DecisionTaskCompletedEventAttributes::DecisionTaskCompletedEventAttributes(JsonView jsonValue)
-  : DecisionTaskCompletedEventAttributes()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ DecisionTaskCompletedEventAttributes& DecisionTaskCompletedEventAttributes::oper
   if(jsonValue.ValueExists("executionContext"))
   {
     m_executionContext = jsonValue.GetString("executionContext");
-
     m_executionContextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scheduledEventId"))
   {
     m_scheduledEventId = jsonValue.GetInt64("scheduledEventId");
-
     m_scheduledEventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedEventId"))
   {
     m_startedEventId = jsonValue.GetInt64("startedEventId");
-
     m_startedEventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskList"))
   {
     m_taskList = jsonValue.GetObject("taskList");
-
     m_taskListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskListScheduleToStartTimeout"))
   {
     m_taskListScheduleToStartTimeout = jsonValue.GetString("taskListScheduleToStartTimeout");
-
     m_taskListScheduleToStartTimeoutHasBeenSet = true;
   }
-
   return *this;
 }
 

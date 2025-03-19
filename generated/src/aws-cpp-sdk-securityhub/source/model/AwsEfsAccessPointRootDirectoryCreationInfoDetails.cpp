@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEfsAccessPointRootDirectoryCreationInfoDetails::AwsEfsAccessPointRootDirectoryCreationInfoDetails() : 
-    m_ownerGidHasBeenSet(false),
-    m_ownerUidHasBeenSet(false),
-    m_permissionsHasBeenSet(false)
-{
-}
-
 AwsEfsAccessPointRootDirectoryCreationInfoDetails::AwsEfsAccessPointRootDirectoryCreationInfoDetails(JsonView jsonValue)
-  : AwsEfsAccessPointRootDirectoryCreationInfoDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AwsEfsAccessPointRootDirectoryCreationInfoDetails& AwsEfsAccessPointRootDirector
   if(jsonValue.ValueExists("OwnerGid"))
   {
     m_ownerGid = jsonValue.GetString("OwnerGid");
-
     m_ownerGidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerUid"))
   {
     m_ownerUid = jsonValue.GetString("OwnerUid");
-
     m_ownerUidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Permissions"))
   {
     m_permissions = jsonValue.GetString("Permissions");
-
     m_permissionsHasBeenSet = true;
   }
-
   return *this;
 }
 

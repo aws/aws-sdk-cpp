@@ -18,13 +18,7 @@ namespace ConnectWisdomService
 namespace Model
 {
 
-QueryRecommendationTriggerData::QueryRecommendationTriggerData() : 
-    m_textHasBeenSet(false)
-{
-}
-
 QueryRecommendationTriggerData::QueryRecommendationTriggerData(JsonView jsonValue)
-  : QueryRecommendationTriggerData()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ QueryRecommendationTriggerData& QueryRecommendationTriggerData::operator =(JsonV
   if(jsonValue.ValueExists("text"))
   {
     m_text = jsonValue.GetString("text");
-
     m_textHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,13 +12,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ScheduleKeyDeletionRequest::ScheduleKeyDeletionRequest() : 
-    m_keyIdHasBeenSet(false),
-    m_pendingWindowInDays(0),
-    m_pendingWindowInDaysHasBeenSet(false)
-{
-}
-
 Aws::String ScheduleKeyDeletionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MulticastSettings::MulticastSettings() : 
-    m_sourcesHasBeenSet(false)
-{
-}
-
 MulticastSettings::MulticastSettings(JsonView jsonValue)
-  : MulticastSettings()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ MulticastSettings& MulticastSettings::operator =(JsonView jsonValue)
     }
     m_sourcesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,29 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ImportImageRequest::ImportImageRequest() : 
-    m_architectureHasBeenSet(false),
-    m_clientDataHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_diskContainersHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_hypervisorHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_licenseTypeHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_roleNameHasBeenSet(false),
-    m_licenseSpecificationsHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_usageOperationHasBeenSet(false),
-    m_bootMode(BootModeValues::NOT_SET),
-    m_bootModeHasBeenSet(false)
-{
-}
-
 Aws::String ImportImageRequest::SerializePayload() const
 {
   Aws::StringStream ss;

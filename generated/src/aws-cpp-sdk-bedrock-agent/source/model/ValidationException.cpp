@@ -18,14 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-ValidationException::ValidationException() : 
-    m_fieldListHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ValidationException::ValidationException(JsonView jsonValue)
-  : ValidationException()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ ValidationException& ValidationException::operator =(JsonView jsonValue)
     }
     m_fieldListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

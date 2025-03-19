@@ -18,14 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-CostEstimate::CostEstimate() : 
-    m_usageTypeHasBeenSet(false),
-    m_resultsByTimeHasBeenSet(false)
-{
-}
-
 CostEstimate::CostEstimate(JsonView jsonValue)
-  : CostEstimate()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CostEstimate& CostEstimate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("usageType"))
   {
     m_usageType = jsonValue.GetString("usageType");
-
     m_usageTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resultsByTime"))
   {
     Aws::Utils::Array<JsonView> resultsByTimeJsonList = jsonValue.GetArray("resultsByTime");
@@ -48,7 +39,6 @@ CostEstimate& CostEstimate::operator =(JsonView jsonValue)
     }
     m_resultsByTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

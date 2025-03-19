@@ -18,14 +18,7 @@ namespace WorkSpacesWeb
 namespace Model
 {
 
-IpRule::IpRule() : 
-    m_descriptionHasBeenSet(false),
-    m_ipRangeHasBeenSet(false)
-{
-}
-
 IpRule::IpRule(JsonView jsonValue)
-  : IpRule()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IpRule& IpRule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipRange"))
   {
     m_ipRange = jsonValue.GetString("ipRange");
-
     m_ipRangeHasBeenSet = true;
   }
-
   return *this;
 }
 

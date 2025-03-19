@@ -12,11 +12,6 @@ using namespace Aws::Comprehend::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDocumentClassificationJobRequest::DescribeDocumentClassificationJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDocumentClassificationJobRequest::SerializePayload() const
 {
   JsonValue payload;

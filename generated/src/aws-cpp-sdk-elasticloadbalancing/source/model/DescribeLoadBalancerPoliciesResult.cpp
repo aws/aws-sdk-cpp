@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeLoadBalancerPoliciesResult::DescribeLoadBalancerPoliciesResult()
-{
-}
-
 DescribeLoadBalancerPoliciesResult::DescribeLoadBalancerPoliciesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ DescribeLoadBalancerPoliciesResult& DescribeLoadBalancerPoliciesResult::operator
     if(!policyDescriptionsNode.IsNull())
     {
       XmlNode policyDescriptionsMember = policyDescriptionsNode.FirstChild("member");
+      m_policyDescriptionsHasBeenSet = !policyDescriptionsMember.IsNull();
       while(!policyDescriptionsMember.IsNull())
       {
         m_policyDescriptions.push_back(policyDescriptionsMember);
         policyDescriptionsMember = policyDescriptionsMember.NextNode("member");
       }
 
+      m_policyDescriptionsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticLoadBalancing::Model::DescribeLoadBalancerPoliciesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

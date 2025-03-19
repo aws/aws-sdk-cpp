@@ -10,25 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-AllocateHostsRequest::AllocateHostsRequest() : 
-    m_instanceFamilyHasBeenSet(false),
-    m_tagSpecificationsHasBeenSet(false),
-    m_hostRecovery(HostRecovery::NOT_SET),
-    m_hostRecoveryHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_hostMaintenance(HostMaintenance::NOT_SET),
-    m_hostMaintenanceHasBeenSet(false),
-    m_assetIdsHasBeenSet(false),
-    m_autoPlacement(AutoPlacement::NOT_SET),
-    m_autoPlacementHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false)
-{
-}
-
 Aws::String AllocateHostsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

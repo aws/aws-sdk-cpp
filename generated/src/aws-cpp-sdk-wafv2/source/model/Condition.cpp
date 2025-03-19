@@ -18,14 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-Condition::Condition() : 
-    m_actionConditionHasBeenSet(false),
-    m_labelNameConditionHasBeenSet(false)
-{
-}
-
 Condition::Condition(JsonView jsonValue)
-  : Condition()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Condition& Condition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ActionCondition"))
   {
     m_actionCondition = jsonValue.GetObject("ActionCondition");
-
     m_actionConditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LabelNameCondition"))
   {
     m_labelNameCondition = jsonValue.GetObject("LabelNameCondition");
-
     m_labelNameConditionHasBeenSet = true;
   }
-
   return *this;
 }
 

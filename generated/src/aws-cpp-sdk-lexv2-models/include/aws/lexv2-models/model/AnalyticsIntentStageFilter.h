@@ -48,7 +48,7 @@ namespace Model
   class AnalyticsIntentStageFilter
   {
   public:
-    AWS_LEXMODELSV2_API AnalyticsIntentStageFilter();
+    AWS_LEXMODELSV2_API AnalyticsIntentStageFilter() = default;
     AWS_LEXMODELSV2_API AnalyticsIntentStageFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API AnalyticsIntentStageFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -69,12 +69,10 @@ namespace Model
      * intent.</p> </li> <li> <p> <code>IntentStageName</code> – The stage in the
      * intent.</p> </li> </ul>
      */
-    inline const AnalyticsIntentStageFilterName& GetName() const{ return m_name; }
+    inline AnalyticsIntentStageFilterName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const AnalyticsIntentStageFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(AnalyticsIntentStageFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline AnalyticsIntentStageFilter& WithName(const AnalyticsIntentStageFilterName& value) { SetName(value); return *this;}
-    inline AnalyticsIntentStageFilter& WithName(AnalyticsIntentStageFilterName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(AnalyticsIntentStageFilterName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline AnalyticsIntentStageFilter& WithName(AnalyticsIntentStageFilterName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -93,12 +91,10 @@ namespace Model
      * <code>IntentName</code> – <code>EQ</code>, <code>CO</code>.</p> </li> <li> <p>
      * <code>IntentStageName</code> – <code>EQ</code>, <code>CO</code>.</p> </li> </ul>
      */
-    inline const AnalyticsFilterOperator& GetOperator() const{ return m_operator; }
+    inline AnalyticsFilterOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const AnalyticsFilterOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(AnalyticsFilterOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline AnalyticsIntentStageFilter& WithOperator(const AnalyticsFilterOperator& value) { SetOperator(value); return *this;}
-    inline AnalyticsIntentStageFilter& WithOperator(AnalyticsFilterOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(AnalyticsFilterOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline AnalyticsIntentStageFilter& WithOperator(AnalyticsFilterOperator value) { SetOperator(value); return *this;}
     ///@}
 
     ///@{
@@ -112,22 +108,21 @@ namespace Model
      * operation filters for results where the modality was either <code>Speech</code>
      * or <code>Text</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline AnalyticsIntentStageFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline AnalyticsIntentStageFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline AnalyticsIntentStageFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline AnalyticsIntentStageFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline AnalyticsIntentStageFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    AnalyticsIntentStageFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    AnalyticsIntentStageFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    AnalyticsIntentStageFilterName m_name;
+    AnalyticsIntentStageFilterName m_name{AnalyticsIntentStageFilterName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
-    AnalyticsFilterOperator m_operator;
+    AnalyticsFilterOperator m_operator{AnalyticsFilterOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

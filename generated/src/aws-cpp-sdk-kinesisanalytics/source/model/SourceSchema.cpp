@@ -18,15 +18,7 @@ namespace KinesisAnalytics
 namespace Model
 {
 
-SourceSchema::SourceSchema() : 
-    m_recordFormatHasBeenSet(false),
-    m_recordEncodingHasBeenSet(false),
-    m_recordColumnsHasBeenSet(false)
-{
-}
-
 SourceSchema::SourceSchema(JsonView jsonValue)
-  : SourceSchema()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SourceSchema& SourceSchema::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RecordFormat"))
   {
     m_recordFormat = jsonValue.GetObject("RecordFormat");
-
     m_recordFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordEncoding"))
   {
     m_recordEncoding = jsonValue.GetString("RecordEncoding");
-
     m_recordEncodingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordColumns"))
   {
     Aws::Utils::Array<JsonView> recordColumnsJsonList = jsonValue.GetArray("RecordColumns");
@@ -56,7 +44,6 @@ SourceSchema& SourceSchema::operator =(JsonView jsonValue)
     }
     m_recordColumnsHasBeenSet = true;
   }
-
   return *this;
 }
 

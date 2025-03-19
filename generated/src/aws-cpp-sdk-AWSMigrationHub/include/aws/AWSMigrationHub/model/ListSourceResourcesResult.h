@@ -29,7 +29,7 @@ namespace Model
   class ListSourceResourcesResult
   {
   public:
-    AWS_MIGRATIONHUB_API ListSourceResourcesResult();
+    AWS_MIGRATIONHUB_API ListSourceResourcesResult() = default;
     AWS_MIGRATIONHUB_API ListSourceResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MIGRATIONHUB_API ListSourceResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,45 +44,44 @@ namespace Model
      * 24 hours. Using an expired pagination token will return an HTTP 400 InvalidToken
      * error.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListSourceResourcesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListSourceResourcesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListSourceResourcesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListSourceResourcesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of source resources.</p>
      */
-    inline const Aws::Vector<SourceResource>& GetSourceResourceList() const{ return m_sourceResourceList; }
-    inline void SetSourceResourceList(const Aws::Vector<SourceResource>& value) { m_sourceResourceList = value; }
-    inline void SetSourceResourceList(Aws::Vector<SourceResource>&& value) { m_sourceResourceList = std::move(value); }
-    inline ListSourceResourcesResult& WithSourceResourceList(const Aws::Vector<SourceResource>& value) { SetSourceResourceList(value); return *this;}
-    inline ListSourceResourcesResult& WithSourceResourceList(Aws::Vector<SourceResource>&& value) { SetSourceResourceList(std::move(value)); return *this;}
-    inline ListSourceResourcesResult& AddSourceResourceList(const SourceResource& value) { m_sourceResourceList.push_back(value); return *this; }
-    inline ListSourceResourcesResult& AddSourceResourceList(SourceResource&& value) { m_sourceResourceList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SourceResource>& GetSourceResourceList() const { return m_sourceResourceList; }
+    template<typename SourceResourceListT = Aws::Vector<SourceResource>>
+    void SetSourceResourceList(SourceResourceListT&& value) { m_sourceResourceListHasBeenSet = true; m_sourceResourceList = std::forward<SourceResourceListT>(value); }
+    template<typename SourceResourceListT = Aws::Vector<SourceResource>>
+    ListSourceResourcesResult& WithSourceResourceList(SourceResourceListT&& value) { SetSourceResourceList(std::forward<SourceResourceListT>(value)); return *this;}
+    template<typename SourceResourceListT = SourceResource>
+    ListSourceResourcesResult& AddSourceResourceList(SourceResourceListT&& value) { m_sourceResourceListHasBeenSet = true; m_sourceResourceList.emplace_back(std::forward<SourceResourceListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListSourceResourcesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListSourceResourcesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListSourceResourcesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListSourceResourcesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<SourceResource> m_sourceResourceList;
+    bool m_sourceResourceListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

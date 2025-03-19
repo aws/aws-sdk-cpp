@@ -18,16 +18,7 @@ namespace GroundStation
 namespace Model
 {
 
-Elevation::Elevation() : 
-    m_unit(AngleUnits::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_value(0.0),
-    m_valueHasBeenSet(false)
-{
-}
-
 Elevation::Elevation(JsonView jsonValue)
-  : Elevation()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ Elevation& Elevation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("unit"))
   {
     m_unit = AngleUnitsMapper::GetAngleUnitsForName(jsonValue.GetString("unit"));
-
     m_unitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetDouble("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

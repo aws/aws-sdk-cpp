@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-BotLocaleSortBy::BotLocaleSortBy() : 
-    m_attribute(BotLocaleSortAttribute::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_order(SortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
-{
-}
-
 BotLocaleSortBy::BotLocaleSortBy(JsonView jsonValue)
-  : BotLocaleSortBy()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ BotLocaleSortBy& BotLocaleSortBy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attribute"))
   {
     m_attribute = BotLocaleSortAttributeMapper::GetBotLocaleSortAttributeForName(jsonValue.GetString("attribute"));
-
     m_attributeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("order"))
   {
     m_order = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("order"));
-
     m_orderHasBeenSet = true;
   }
-
   return *this;
 }
 

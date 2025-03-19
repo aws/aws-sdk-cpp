@@ -18,15 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-HumanEvaluationConfig::HumanEvaluationConfig() : 
-    m_humanWorkflowConfigHasBeenSet(false),
-    m_customMetricsHasBeenSet(false),
-    m_datasetMetricConfigsHasBeenSet(false)
-{
-}
-
 HumanEvaluationConfig::HumanEvaluationConfig(JsonView jsonValue)
-  : HumanEvaluationConfig()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ HumanEvaluationConfig& HumanEvaluationConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("humanWorkflowConfig"))
   {
     m_humanWorkflowConfig = jsonValue.GetObject("humanWorkflowConfig");
-
     m_humanWorkflowConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customMetrics"))
   {
     Aws::Utils::Array<JsonView> customMetricsJsonList = jsonValue.GetArray("customMetrics");
@@ -49,7 +39,6 @@ HumanEvaluationConfig& HumanEvaluationConfig::operator =(JsonView jsonValue)
     }
     m_customMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datasetMetricConfigs"))
   {
     Aws::Utils::Array<JsonView> datasetMetricConfigsJsonList = jsonValue.GetArray("datasetMetricConfigs");
@@ -59,7 +48,6 @@ HumanEvaluationConfig& HumanEvaluationConfig::operator =(JsonView jsonValue)
     }
     m_datasetMetricConfigsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -26,7 +26,7 @@ namespace Model
   class CreateBudgetRequest : public DeadlineRequest
   {
   public:
-    AWS_DEADLINE_API CreateBudgetRequest();
+    AWS_DEADLINE_API CreateBudgetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,40 +44,36 @@ namespace Model
      * <p>The unique token which the server uses to recognize retries of the same
      * request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateBudgetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateBudgetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateBudgetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateBudgetRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The farm ID to include in this budget.</p>
      */
-    inline const Aws::String& GetFarmId() const{ return m_farmId; }
+    inline const Aws::String& GetFarmId() const { return m_farmId; }
     inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
-    inline void SetFarmId(const Aws::String& value) { m_farmIdHasBeenSet = true; m_farmId = value; }
-    inline void SetFarmId(Aws::String&& value) { m_farmIdHasBeenSet = true; m_farmId = std::move(value); }
-    inline void SetFarmId(const char* value) { m_farmIdHasBeenSet = true; m_farmId.assign(value); }
-    inline CreateBudgetRequest& WithFarmId(const Aws::String& value) { SetFarmId(value); return *this;}
-    inline CreateBudgetRequest& WithFarmId(Aws::String&& value) { SetFarmId(std::move(value)); return *this;}
-    inline CreateBudgetRequest& WithFarmId(const char* value) { SetFarmId(value); return *this;}
+    template<typename FarmIdT = Aws::String>
+    void SetFarmId(FarmIdT&& value) { m_farmIdHasBeenSet = true; m_farmId = std::forward<FarmIdT>(value); }
+    template<typename FarmIdT = Aws::String>
+    CreateBudgetRequest& WithFarmId(FarmIdT&& value) { SetFarmId(std::forward<FarmIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The queue ID provided to this budget to track usage.</p>
      */
-    inline const UsageTrackingResource& GetUsageTrackingResource() const{ return m_usageTrackingResource; }
+    inline const UsageTrackingResource& GetUsageTrackingResource() const { return m_usageTrackingResource; }
     inline bool UsageTrackingResourceHasBeenSet() const { return m_usageTrackingResourceHasBeenSet; }
-    inline void SetUsageTrackingResource(const UsageTrackingResource& value) { m_usageTrackingResourceHasBeenSet = true; m_usageTrackingResource = value; }
-    inline void SetUsageTrackingResource(UsageTrackingResource&& value) { m_usageTrackingResourceHasBeenSet = true; m_usageTrackingResource = std::move(value); }
-    inline CreateBudgetRequest& WithUsageTrackingResource(const UsageTrackingResource& value) { SetUsageTrackingResource(value); return *this;}
-    inline CreateBudgetRequest& WithUsageTrackingResource(UsageTrackingResource&& value) { SetUsageTrackingResource(std::move(value)); return *this;}
+    template<typename UsageTrackingResourceT = UsageTrackingResource>
+    void SetUsageTrackingResource(UsageTrackingResourceT&& value) { m_usageTrackingResourceHasBeenSet = true; m_usageTrackingResource = std::forward<UsageTrackingResourceT>(value); }
+    template<typename UsageTrackingResourceT = UsageTrackingResource>
+    CreateBudgetRequest& WithUsageTrackingResource(UsageTrackingResourceT&& value) { SetUsageTrackingResource(std::forward<UsageTrackingResourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +82,12 @@ namespace Model
      * content. Escape or encode this content before displaying it on a webpage or any
      * other system that might interpret the content of this field.</p> 
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline CreateBudgetRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline CreateBudgetRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline CreateBudgetRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    CreateBudgetRequest& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,21 +96,19 @@ namespace Model
      * content. Escape or encode this content before displaying it on a webpage or any
      * other system that might interpret the content of this field.</p> 
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateBudgetRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateBudgetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateBudgetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateBudgetRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The dollar limit based on consumed usage.</p>
      */
-    inline double GetApproximateDollarLimit() const{ return m_approximateDollarLimit; }
+    inline double GetApproximateDollarLimit() const { return m_approximateDollarLimit; }
     inline bool ApproximateDollarLimitHasBeenSet() const { return m_approximateDollarLimitHasBeenSet; }
     inline void SetApproximateDollarLimit(double value) { m_approximateDollarLimitHasBeenSet = true; m_approximateDollarLimit = value; }
     inline CreateBudgetRequest& WithApproximateDollarLimit(double value) { SetApproximateDollarLimit(value); return *this;}
@@ -126,26 +118,26 @@ namespace Model
     /**
      * <p>The budget actions to specify what happens when the budget runs out.</p>
      */
-    inline const Aws::Vector<BudgetActionToAdd>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<BudgetActionToAdd>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<BudgetActionToAdd>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<BudgetActionToAdd>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline CreateBudgetRequest& WithActions(const Aws::Vector<BudgetActionToAdd>& value) { SetActions(value); return *this;}
-    inline CreateBudgetRequest& WithActions(Aws::Vector<BudgetActionToAdd>&& value) { SetActions(std::move(value)); return *this;}
-    inline CreateBudgetRequest& AddActions(const BudgetActionToAdd& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline CreateBudgetRequest& AddActions(BudgetActionToAdd&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+    template<typename ActionsT = Aws::Vector<BudgetActionToAdd>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<BudgetActionToAdd>>
+    CreateBudgetRequest& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = BudgetActionToAdd>
+    CreateBudgetRequest& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The schedule to associate with this budget.</p>
      */
-    inline const BudgetSchedule& GetSchedule() const{ return m_schedule; }
+    inline const BudgetSchedule& GetSchedule() const { return m_schedule; }
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
-    inline void SetSchedule(const BudgetSchedule& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
-    inline void SetSchedule(BudgetSchedule&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
-    inline CreateBudgetRequest& WithSchedule(const BudgetSchedule& value) { SetSchedule(value); return *this;}
-    inline CreateBudgetRequest& WithSchedule(BudgetSchedule&& value) { SetSchedule(std::move(value)); return *this;}
+    template<typename ScheduleT = BudgetSchedule>
+    void SetSchedule(ScheduleT&& value) { m_scheduleHasBeenSet = true; m_schedule = std::forward<ScheduleT>(value); }
+    template<typename ScheduleT = BudgetSchedule>
+    CreateBudgetRequest& WithSchedule(ScheduleT&& value) { SetSchedule(std::forward<ScheduleT>(value)); return *this;}
     ///@}
   private:
 
@@ -164,7 +156,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    double m_approximateDollarLimit;
+    double m_approximateDollarLimit{0.0};
     bool m_approximateDollarLimitHasBeenSet = false;
 
     Aws::Vector<BudgetActionToAdd> m_actions;

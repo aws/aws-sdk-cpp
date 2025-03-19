@@ -20,34 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-UpdateAction::UpdateAction() : 
-    m_replicationGroupIdHasBeenSet(false),
-    m_cacheClusterIdHasBeenSet(false),
-    m_serviceUpdateNameHasBeenSet(false),
-    m_serviceUpdateReleaseDateHasBeenSet(false),
-    m_serviceUpdateSeverity(ServiceUpdateSeverity::NOT_SET),
-    m_serviceUpdateSeverityHasBeenSet(false),
-    m_serviceUpdateStatus(ServiceUpdateStatus::NOT_SET),
-    m_serviceUpdateStatusHasBeenSet(false),
-    m_serviceUpdateRecommendedApplyByDateHasBeenSet(false),
-    m_serviceUpdateType(ServiceUpdateType::NOT_SET),
-    m_serviceUpdateTypeHasBeenSet(false),
-    m_updateActionAvailableDateHasBeenSet(false),
-    m_updateActionStatus(UpdateActionStatus::NOT_SET),
-    m_updateActionStatusHasBeenSet(false),
-    m_nodesUpdatedHasBeenSet(false),
-    m_updateActionStatusModifiedDateHasBeenSet(false),
-    m_slaMet(SlaMet::NOT_SET),
-    m_slaMetHasBeenSet(false),
-    m_nodeGroupUpdateStatusHasBeenSet(false),
-    m_cacheNodeUpdateStatusHasBeenSet(false),
-    m_estimatedUpdateTimeHasBeenSet(false),
-    m_engineHasBeenSet(false)
-{
-}
-
 UpdateAction::UpdateAction(const XmlNode& xmlNode)
-  : UpdateAction()
 {
   *this = xmlNode;
 }
@@ -85,13 +58,13 @@ UpdateAction& UpdateAction::operator =(const XmlNode& xmlNode)
     XmlNode serviceUpdateSeverityNode = resultNode.FirstChild("ServiceUpdateSeverity");
     if(!serviceUpdateSeverityNode.IsNull())
     {
-      m_serviceUpdateSeverity = ServiceUpdateSeverityMapper::GetServiceUpdateSeverityForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateSeverityNode.GetText()).c_str()).c_str());
+      m_serviceUpdateSeverity = ServiceUpdateSeverityMapper::GetServiceUpdateSeverityForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateSeverityNode.GetText()).c_str()));
       m_serviceUpdateSeverityHasBeenSet = true;
     }
     XmlNode serviceUpdateStatusNode = resultNode.FirstChild("ServiceUpdateStatus");
     if(!serviceUpdateStatusNode.IsNull())
     {
-      m_serviceUpdateStatus = ServiceUpdateStatusMapper::GetServiceUpdateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateStatusNode.GetText()).c_str()).c_str());
+      m_serviceUpdateStatus = ServiceUpdateStatusMapper::GetServiceUpdateStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateStatusNode.GetText()).c_str()));
       m_serviceUpdateStatusHasBeenSet = true;
     }
     XmlNode serviceUpdateRecommendedApplyByDateNode = resultNode.FirstChild("ServiceUpdateRecommendedApplyByDate");
@@ -103,7 +76,7 @@ UpdateAction& UpdateAction::operator =(const XmlNode& xmlNode)
     XmlNode serviceUpdateTypeNode = resultNode.FirstChild("ServiceUpdateType");
     if(!serviceUpdateTypeNode.IsNull())
     {
-      m_serviceUpdateType = ServiceUpdateTypeMapper::GetServiceUpdateTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateTypeNode.GetText()).c_str()).c_str());
+      m_serviceUpdateType = ServiceUpdateTypeMapper::GetServiceUpdateTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(serviceUpdateTypeNode.GetText()).c_str()));
       m_serviceUpdateTypeHasBeenSet = true;
     }
     XmlNode updateActionAvailableDateNode = resultNode.FirstChild("UpdateActionAvailableDate");
@@ -115,7 +88,7 @@ UpdateAction& UpdateAction::operator =(const XmlNode& xmlNode)
     XmlNode updateActionStatusNode = resultNode.FirstChild("UpdateActionStatus");
     if(!updateActionStatusNode.IsNull())
     {
-      m_updateActionStatus = UpdateActionStatusMapper::GetUpdateActionStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateActionStatusNode.GetText()).c_str()).c_str());
+      m_updateActionStatus = UpdateActionStatusMapper::GetUpdateActionStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(updateActionStatusNode.GetText()).c_str()));
       m_updateActionStatusHasBeenSet = true;
     }
     XmlNode nodesUpdatedNode = resultNode.FirstChild("NodesUpdated");
@@ -133,13 +106,14 @@ UpdateAction& UpdateAction::operator =(const XmlNode& xmlNode)
     XmlNode slaMetNode = resultNode.FirstChild("SlaMet");
     if(!slaMetNode.IsNull())
     {
-      m_slaMet = SlaMetMapper::GetSlaMetForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(slaMetNode.GetText()).c_str()).c_str());
+      m_slaMet = SlaMetMapper::GetSlaMetForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(slaMetNode.GetText()).c_str()));
       m_slaMetHasBeenSet = true;
     }
     XmlNode nodeGroupUpdateStatusNode = resultNode.FirstChild("NodeGroupUpdateStatus");
     if(!nodeGroupUpdateStatusNode.IsNull())
     {
       XmlNode nodeGroupUpdateStatusMember = nodeGroupUpdateStatusNode.FirstChild("NodeGroupUpdateStatus");
+      m_nodeGroupUpdateStatusHasBeenSet = !nodeGroupUpdateStatusMember.IsNull();
       while(!nodeGroupUpdateStatusMember.IsNull())
       {
         m_nodeGroupUpdateStatus.push_back(nodeGroupUpdateStatusMember);
@@ -152,6 +126,7 @@ UpdateAction& UpdateAction::operator =(const XmlNode& xmlNode)
     if(!cacheNodeUpdateStatusNode.IsNull())
     {
       XmlNode cacheNodeUpdateStatusMember = cacheNodeUpdateStatusNode.FirstChild("CacheNodeUpdateStatus");
+      m_cacheNodeUpdateStatusHasBeenSet = !cacheNodeUpdateStatusMember.IsNull();
       while(!cacheNodeUpdateStatusMember.IsNull())
       {
         m_cacheNodeUpdateStatus.push_back(cacheNodeUpdateStatusMember);

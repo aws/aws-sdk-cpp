@@ -18,18 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-ManagedRuleSetSummary::ManagedRuleSetSummary() : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_lockTokenHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_labelNamespaceHasBeenSet(false)
-{
-}
-
 ManagedRuleSetSummary::ManagedRuleSetSummary(JsonView jsonValue)
-  : ManagedRuleSetSummary()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ ManagedRuleSetSummary& ManagedRuleSetSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LockToken"))
   {
     m_lockToken = jsonValue.GetString("LockToken");
-
     m_lockTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LabelNamespace"))
   {
     m_labelNamespace = jsonValue.GetString("LabelNamespace");
-
     m_labelNamespaceHasBeenSet = true;
   }
-
   return *this;
 }
 

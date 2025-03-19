@@ -12,22 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTriggerRequest::CreateTriggerRequest() : 
-    m_nameHasBeenSet(false),
-    m_workflowNameHasBeenSet(false),
-    m_type(TriggerType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_predicateHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_startOnCreation(false),
-    m_startOnCreationHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_eventBatchingConditionHasBeenSet(false)
-{
-}
-
 Aws::String CreateTriggerRequest::SerializePayload() const
 {
   JsonValue payload;

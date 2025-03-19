@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AssociateWhatsAppBusinessAccountResult::AssociateWhatsAppBusinessAccountResult() : 
-    m_statusCode(0)
-{
-}
-
 AssociateWhatsAppBusinessAccountResult::AssociateWhatsAppBusinessAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : AssociateWhatsAppBusinessAccountResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ AssociateWhatsAppBusinessAccountResult& AssociateWhatsAppBusinessAccountResult::
   if(jsonValue.ValueExists("signupCallbackResult"))
   {
     m_signupCallbackResult = jsonValue.GetObject("signupCallbackResult");
-
+    m_signupCallbackResultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = jsonValue.GetInteger("statusCode");
-
+    m_statusCodeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

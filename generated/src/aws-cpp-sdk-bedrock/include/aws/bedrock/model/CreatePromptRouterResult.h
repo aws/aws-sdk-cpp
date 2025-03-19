@@ -27,7 +27,7 @@ namespace Model
   class CreatePromptRouterResult
   {
   public:
-    AWS_BEDROCK_API CreatePromptRouterResult();
+    AWS_BEDROCK_API CreatePromptRouterResult() = default;
     AWS_BEDROCK_API CreatePromptRouterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCK_API CreatePromptRouterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,30 +37,28 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that uniquely identifies the prompt
      * router.</p>
      */
-    inline const Aws::String& GetPromptRouterArn() const{ return m_promptRouterArn; }
-    inline void SetPromptRouterArn(const Aws::String& value) { m_promptRouterArn = value; }
-    inline void SetPromptRouterArn(Aws::String&& value) { m_promptRouterArn = std::move(value); }
-    inline void SetPromptRouterArn(const char* value) { m_promptRouterArn.assign(value); }
-    inline CreatePromptRouterResult& WithPromptRouterArn(const Aws::String& value) { SetPromptRouterArn(value); return *this;}
-    inline CreatePromptRouterResult& WithPromptRouterArn(Aws::String&& value) { SetPromptRouterArn(std::move(value)); return *this;}
-    inline CreatePromptRouterResult& WithPromptRouterArn(const char* value) { SetPromptRouterArn(value); return *this;}
+    inline const Aws::String& GetPromptRouterArn() const { return m_promptRouterArn; }
+    template<typename PromptRouterArnT = Aws::String>
+    void SetPromptRouterArn(PromptRouterArnT&& value) { m_promptRouterArnHasBeenSet = true; m_promptRouterArn = std::forward<PromptRouterArnT>(value); }
+    template<typename PromptRouterArnT = Aws::String>
+    CreatePromptRouterResult& WithPromptRouterArn(PromptRouterArnT&& value) { SetPromptRouterArn(std::forward<PromptRouterArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreatePromptRouterResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreatePromptRouterResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreatePromptRouterResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreatePromptRouterResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_promptRouterArn;
+    bool m_promptRouterArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

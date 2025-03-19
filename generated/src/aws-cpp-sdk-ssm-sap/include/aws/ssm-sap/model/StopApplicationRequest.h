@@ -22,7 +22,7 @@ namespace Model
   class StopApplicationRequest : public SsmSapRequest
   {
   public:
-    AWS_SSMSAP_API StopApplicationRequest();
+    AWS_SSMSAP_API StopApplicationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
     /**
      * <p>The ID of the application.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline StopApplicationRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline StopApplicationRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline StopApplicationRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    StopApplicationRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,12 +51,10 @@ namespace Model
      * <code>DBMS</code>.</p> <p>If this parameter is included, the connected DBMS
      * (Database Management System) will be stopped.</p>
      */
-    inline const ConnectedEntityType& GetStopConnectedEntity() const{ return m_stopConnectedEntity; }
+    inline ConnectedEntityType GetStopConnectedEntity() const { return m_stopConnectedEntity; }
     inline bool StopConnectedEntityHasBeenSet() const { return m_stopConnectedEntityHasBeenSet; }
-    inline void SetStopConnectedEntity(const ConnectedEntityType& value) { m_stopConnectedEntityHasBeenSet = true; m_stopConnectedEntity = value; }
-    inline void SetStopConnectedEntity(ConnectedEntityType&& value) { m_stopConnectedEntityHasBeenSet = true; m_stopConnectedEntity = std::move(value); }
-    inline StopApplicationRequest& WithStopConnectedEntity(const ConnectedEntityType& value) { SetStopConnectedEntity(value); return *this;}
-    inline StopApplicationRequest& WithStopConnectedEntity(ConnectedEntityType&& value) { SetStopConnectedEntity(std::move(value)); return *this;}
+    inline void SetStopConnectedEntity(ConnectedEntityType value) { m_stopConnectedEntityHasBeenSet = true; m_stopConnectedEntity = value; }
+    inline StopApplicationRequest& WithStopConnectedEntity(ConnectedEntityType value) { SetStopConnectedEntity(value); return *this;}
     ///@}
 
     ///@{
@@ -67,7 +63,7 @@ namespace Model
      * operation will shut down the associated Amazon EC2 instance in addition to the
      * application.</p>
      */
-    inline bool GetIncludeEc2InstanceShutdown() const{ return m_includeEc2InstanceShutdown; }
+    inline bool GetIncludeEc2InstanceShutdown() const { return m_includeEc2InstanceShutdown; }
     inline bool IncludeEc2InstanceShutdownHasBeenSet() const { return m_includeEc2InstanceShutdownHasBeenSet; }
     inline void SetIncludeEc2InstanceShutdown(bool value) { m_includeEc2InstanceShutdownHasBeenSet = true; m_includeEc2InstanceShutdown = value; }
     inline StopApplicationRequest& WithIncludeEc2InstanceShutdown(bool value) { SetIncludeEc2InstanceShutdown(value); return *this;}
@@ -77,10 +73,10 @@ namespace Model
     Aws::String m_applicationId;
     bool m_applicationIdHasBeenSet = false;
 
-    ConnectedEntityType m_stopConnectedEntity;
+    ConnectedEntityType m_stopConnectedEntity{ConnectedEntityType::NOT_SET};
     bool m_stopConnectedEntityHasBeenSet = false;
 
-    bool m_includeEc2InstanceShutdown;
+    bool m_includeEc2InstanceShutdown{false};
     bool m_includeEc2InstanceShutdownHasBeenSet = false;
   };
 

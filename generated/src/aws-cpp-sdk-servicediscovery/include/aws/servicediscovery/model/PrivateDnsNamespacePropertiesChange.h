@@ -32,7 +32,7 @@ namespace Model
   class PrivateDnsNamespacePropertiesChange
   {
   public:
-    AWS_SERVICEDISCOVERY_API PrivateDnsNamespacePropertiesChange();
+    AWS_SERVICEDISCOVERY_API PrivateDnsNamespacePropertiesChange() = default;
     AWS_SERVICEDISCOVERY_API PrivateDnsNamespacePropertiesChange(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API PrivateDnsNamespacePropertiesChange& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEDISCOVERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Updated DNS properties for the private DNS namespace.</p>
      */
-    inline const PrivateDnsPropertiesMutableChange& GetDnsProperties() const{ return m_dnsProperties; }
+    inline const PrivateDnsPropertiesMutableChange& GetDnsProperties() const { return m_dnsProperties; }
     inline bool DnsPropertiesHasBeenSet() const { return m_dnsPropertiesHasBeenSet; }
-    inline void SetDnsProperties(const PrivateDnsPropertiesMutableChange& value) { m_dnsPropertiesHasBeenSet = true; m_dnsProperties = value; }
-    inline void SetDnsProperties(PrivateDnsPropertiesMutableChange&& value) { m_dnsPropertiesHasBeenSet = true; m_dnsProperties = std::move(value); }
-    inline PrivateDnsNamespacePropertiesChange& WithDnsProperties(const PrivateDnsPropertiesMutableChange& value) { SetDnsProperties(value); return *this;}
-    inline PrivateDnsNamespacePropertiesChange& WithDnsProperties(PrivateDnsPropertiesMutableChange&& value) { SetDnsProperties(std::move(value)); return *this;}
+    template<typename DnsPropertiesT = PrivateDnsPropertiesMutableChange>
+    void SetDnsProperties(DnsPropertiesT&& value) { m_dnsPropertiesHasBeenSet = true; m_dnsProperties = std::forward<DnsPropertiesT>(value); }
+    template<typename DnsPropertiesT = PrivateDnsPropertiesMutableChange>
+    PrivateDnsNamespacePropertiesChange& WithDnsProperties(DnsPropertiesT&& value) { SetDnsProperties(std::forward<DnsPropertiesT>(value)); return *this;}
     ///@}
   private:
 

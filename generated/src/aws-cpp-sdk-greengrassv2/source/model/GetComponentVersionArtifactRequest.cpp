@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetComponentVersionArtifactRequest::GetComponentVersionArtifactRequest() : 
-    m_arnHasBeenSet(false),
-    m_artifactNameHasBeenSet(false),
-    m_s3EndpointType(S3EndpointType::NOT_SET),
-    m_s3EndpointTypeHasBeenSet(false),
-    m_iotEndpointType(IotEndpointType::NOT_SET),
-    m_iotEndpointTypeHasBeenSet(false)
-{
-}
-
 Aws::String GetComponentVersionArtifactRequest::SerializePayload() const
 {
   return {};

@@ -18,16 +18,7 @@ namespace MigrationHubOrchestrator
 namespace Model
 {
 
-TemplateStepGroupSummary::TemplateStepGroupSummary() : 
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_previousHasBeenSet(false),
-    m_nextHasBeenSet(false)
-{
-}
-
 TemplateStepGroupSummary::TemplateStepGroupSummary(JsonView jsonValue)
-  : TemplateStepGroupSummary()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ TemplateStepGroupSummary& TemplateStepGroupSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("previous"))
   {
     Aws::Utils::Array<JsonView> previousJsonList = jsonValue.GetArray("previous");
@@ -57,7 +44,6 @@ TemplateStepGroupSummary& TemplateStepGroupSummary::operator =(JsonView jsonValu
     }
     m_previousHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("next"))
   {
     Aws::Utils::Array<JsonView> nextJsonList = jsonValue.GetArray("next");
@@ -67,7 +53,6 @@ TemplateStepGroupSummary& TemplateStepGroupSummary::operator =(JsonView jsonValu
     }
     m_nextHasBeenSet = true;
   }
-
   return *this;
 }
 

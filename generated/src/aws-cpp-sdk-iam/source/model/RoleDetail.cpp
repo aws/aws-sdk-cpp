@@ -20,24 +20,7 @@ namespace IAM
 namespace Model
 {
 
-RoleDetail::RoleDetail() : 
-    m_pathHasBeenSet(false),
-    m_roleNameHasBeenSet(false),
-    m_roleIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_assumeRolePolicyDocumentHasBeenSet(false),
-    m_instanceProfileListHasBeenSet(false),
-    m_rolePolicyListHasBeenSet(false),
-    m_attachedManagedPoliciesHasBeenSet(false),
-    m_permissionsBoundaryHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_roleLastUsedHasBeenSet(false)
-{
-}
-
 RoleDetail::RoleDetail(const XmlNode& xmlNode)
-  : RoleDetail()
 {
   *this = xmlNode;
 }
@@ -88,6 +71,7 @@ RoleDetail& RoleDetail::operator =(const XmlNode& xmlNode)
     if(!instanceProfileListNode.IsNull())
     {
       XmlNode instanceProfileListMember = instanceProfileListNode.FirstChild("member");
+      m_instanceProfileListHasBeenSet = !instanceProfileListMember.IsNull();
       while(!instanceProfileListMember.IsNull())
       {
         m_instanceProfileList.push_back(instanceProfileListMember);
@@ -100,6 +84,7 @@ RoleDetail& RoleDetail::operator =(const XmlNode& xmlNode)
     if(!rolePolicyListNode.IsNull())
     {
       XmlNode rolePolicyListMember = rolePolicyListNode.FirstChild("member");
+      m_rolePolicyListHasBeenSet = !rolePolicyListMember.IsNull();
       while(!rolePolicyListMember.IsNull())
       {
         m_rolePolicyList.push_back(rolePolicyListMember);
@@ -112,6 +97,7 @@ RoleDetail& RoleDetail::operator =(const XmlNode& xmlNode)
     if(!attachedManagedPoliciesNode.IsNull())
     {
       XmlNode attachedManagedPoliciesMember = attachedManagedPoliciesNode.FirstChild("member");
+      m_attachedManagedPoliciesHasBeenSet = !attachedManagedPoliciesMember.IsNull();
       while(!attachedManagedPoliciesMember.IsNull())
       {
         m_attachedManagedPolicies.push_back(attachedManagedPoliciesMember);
@@ -130,6 +116,7 @@ RoleDetail& RoleDetail::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("member");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

@@ -12,17 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSubscriptionRequestRequest::CreateSubscriptionRequestRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_domainIdentifierHasBeenSet(false),
-    m_metadataFormsHasBeenSet(false),
-    m_requestReasonHasBeenSet(false),
-    m_subscribedListingsHasBeenSet(false),
-    m_subscribedPrincipalsHasBeenSet(false)
-{
-}
-
 Aws::String CreateSubscriptionRequestRequest::SerializePayload() const
 {
   JsonValue payload;

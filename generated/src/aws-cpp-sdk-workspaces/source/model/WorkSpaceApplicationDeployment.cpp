@@ -18,13 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-WorkSpaceApplicationDeployment::WorkSpaceApplicationDeployment() : 
-    m_associationsHasBeenSet(false)
-{
-}
-
 WorkSpaceApplicationDeployment::WorkSpaceApplicationDeployment(JsonView jsonValue)
-  : WorkSpaceApplicationDeployment()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ WorkSpaceApplicationDeployment& WorkSpaceApplicationDeployment::operator =(JsonV
     }
     m_associationsHasBeenSet = true;
   }
-
   return *this;
 }
 

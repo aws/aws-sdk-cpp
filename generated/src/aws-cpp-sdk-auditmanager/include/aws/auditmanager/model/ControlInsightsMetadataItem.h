@@ -36,7 +36,7 @@ namespace Model
   class ControlInsightsMetadataItem
   {
   public:
-    AWS_AUDITMANAGER_API ControlInsightsMetadataItem();
+    AWS_AUDITMANAGER_API ControlInsightsMetadataItem() = default;
     AWS_AUDITMANAGER_API ControlInsightsMetadataItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API ControlInsightsMetadataItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>The name of the control. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ControlInsightsMetadataItem& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ControlInsightsMetadataItem& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ControlInsightsMetadataItem& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ControlInsightsMetadataItem& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the control. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ControlInsightsMetadataItem& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ControlInsightsMetadataItem& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ControlInsightsMetadataItem& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ControlInsightsMetadataItem& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,24 +71,24 @@ namespace Model
      * <p>A breakdown of the compliance check status for the evidence that’s associated
      * with the control. </p>
      */
-    inline const EvidenceInsights& GetEvidenceInsights() const{ return m_evidenceInsights; }
+    inline const EvidenceInsights& GetEvidenceInsights() const { return m_evidenceInsights; }
     inline bool EvidenceInsightsHasBeenSet() const { return m_evidenceInsightsHasBeenSet; }
-    inline void SetEvidenceInsights(const EvidenceInsights& value) { m_evidenceInsightsHasBeenSet = true; m_evidenceInsights = value; }
-    inline void SetEvidenceInsights(EvidenceInsights&& value) { m_evidenceInsightsHasBeenSet = true; m_evidenceInsights = std::move(value); }
-    inline ControlInsightsMetadataItem& WithEvidenceInsights(const EvidenceInsights& value) { SetEvidenceInsights(value); return *this;}
-    inline ControlInsightsMetadataItem& WithEvidenceInsights(EvidenceInsights&& value) { SetEvidenceInsights(std::move(value)); return *this;}
+    template<typename EvidenceInsightsT = EvidenceInsights>
+    void SetEvidenceInsights(EvidenceInsightsT&& value) { m_evidenceInsightsHasBeenSet = true; m_evidenceInsights = std::forward<EvidenceInsightsT>(value); }
+    template<typename EvidenceInsightsT = EvidenceInsights>
+    ControlInsightsMetadataItem& WithEvidenceInsights(EvidenceInsightsT&& value) { SetEvidenceInsights(std::forward<EvidenceInsightsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time when the control insights were last updated. </p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
+    inline const Aws::Utils::DateTime& GetLastUpdated() const { return m_lastUpdated; }
     inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
-    inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
-    inline void SetLastUpdated(Aws::Utils::DateTime&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::move(value); }
-    inline ControlInsightsMetadataItem& WithLastUpdated(const Aws::Utils::DateTime& value) { SetLastUpdated(value); return *this;}
-    inline ControlInsightsMetadataItem& WithLastUpdated(Aws::Utils::DateTime&& value) { SetLastUpdated(std::move(value)); return *this;}
+    template<typename LastUpdatedT = Aws::Utils::DateTime>
+    void SetLastUpdated(LastUpdatedT&& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = std::forward<LastUpdatedT>(value); }
+    template<typename LastUpdatedT = Aws::Utils::DateTime>
+    ControlInsightsMetadataItem& WithLastUpdated(LastUpdatedT&& value) { SetLastUpdated(std::forward<LastUpdatedT>(value)); return *this;}
     ///@}
   private:
 
@@ -105,7 +101,7 @@ namespace Model
     EvidenceInsights m_evidenceInsights;
     bool m_evidenceInsightsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdated;
+    Aws::Utils::DateTime m_lastUpdated{};
     bool m_lastUpdatedHasBeenSet = false;
   };
 

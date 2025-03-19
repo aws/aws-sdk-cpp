@@ -34,7 +34,7 @@ namespace Model
   class CoreNetworkSegment
   {
   public:
-    AWS_NETWORKMANAGER_API CoreNetworkSegment();
+    AWS_NETWORKMANAGER_API CoreNetworkSegment() = default;
     AWS_NETWORKMANAGER_API CoreNetworkSegment(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API CoreNetworkSegment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,44 +44,40 @@ namespace Model
     /**
      * <p>The name of a core network segment.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CoreNetworkSegment& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CoreNetworkSegment& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CoreNetworkSegment& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CoreNetworkSegment& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Regions where the edges are located.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEdgeLocations() const{ return m_edgeLocations; }
+    inline const Aws::Vector<Aws::String>& GetEdgeLocations() const { return m_edgeLocations; }
     inline bool EdgeLocationsHasBeenSet() const { return m_edgeLocationsHasBeenSet; }
-    inline void SetEdgeLocations(const Aws::Vector<Aws::String>& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations = value; }
-    inline void SetEdgeLocations(Aws::Vector<Aws::String>&& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations = std::move(value); }
-    inline CoreNetworkSegment& WithEdgeLocations(const Aws::Vector<Aws::String>& value) { SetEdgeLocations(value); return *this;}
-    inline CoreNetworkSegment& WithEdgeLocations(Aws::Vector<Aws::String>&& value) { SetEdgeLocations(std::move(value)); return *this;}
-    inline CoreNetworkSegment& AddEdgeLocations(const Aws::String& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations.push_back(value); return *this; }
-    inline CoreNetworkSegment& AddEdgeLocations(Aws::String&& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations.push_back(std::move(value)); return *this; }
-    inline CoreNetworkSegment& AddEdgeLocations(const char* value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations.push_back(value); return *this; }
+    template<typename EdgeLocationsT = Aws::Vector<Aws::String>>
+    void SetEdgeLocations(EdgeLocationsT&& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations = std::forward<EdgeLocationsT>(value); }
+    template<typename EdgeLocationsT = Aws::Vector<Aws::String>>
+    CoreNetworkSegment& WithEdgeLocations(EdgeLocationsT&& value) { SetEdgeLocations(std::forward<EdgeLocationsT>(value)); return *this;}
+    template<typename EdgeLocationsT = Aws::String>
+    CoreNetworkSegment& AddEdgeLocations(EdgeLocationsT&& value) { m_edgeLocationsHasBeenSet = true; m_edgeLocations.emplace_back(std::forward<EdgeLocationsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The shared segments of a core network.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSharedSegments() const{ return m_sharedSegments; }
+    inline const Aws::Vector<Aws::String>& GetSharedSegments() const { return m_sharedSegments; }
     inline bool SharedSegmentsHasBeenSet() const { return m_sharedSegmentsHasBeenSet; }
-    inline void SetSharedSegments(const Aws::Vector<Aws::String>& value) { m_sharedSegmentsHasBeenSet = true; m_sharedSegments = value; }
-    inline void SetSharedSegments(Aws::Vector<Aws::String>&& value) { m_sharedSegmentsHasBeenSet = true; m_sharedSegments = std::move(value); }
-    inline CoreNetworkSegment& WithSharedSegments(const Aws::Vector<Aws::String>& value) { SetSharedSegments(value); return *this;}
-    inline CoreNetworkSegment& WithSharedSegments(Aws::Vector<Aws::String>&& value) { SetSharedSegments(std::move(value)); return *this;}
-    inline CoreNetworkSegment& AddSharedSegments(const Aws::String& value) { m_sharedSegmentsHasBeenSet = true; m_sharedSegments.push_back(value); return *this; }
-    inline CoreNetworkSegment& AddSharedSegments(Aws::String&& value) { m_sharedSegmentsHasBeenSet = true; m_sharedSegments.push_back(std::move(value)); return *this; }
-    inline CoreNetworkSegment& AddSharedSegments(const char* value) { m_sharedSegmentsHasBeenSet = true; m_sharedSegments.push_back(value); return *this; }
+    template<typename SharedSegmentsT = Aws::Vector<Aws::String>>
+    void SetSharedSegments(SharedSegmentsT&& value) { m_sharedSegmentsHasBeenSet = true; m_sharedSegments = std::forward<SharedSegmentsT>(value); }
+    template<typename SharedSegmentsT = Aws::Vector<Aws::String>>
+    CoreNetworkSegment& WithSharedSegments(SharedSegmentsT&& value) { SetSharedSegments(std::forward<SharedSegmentsT>(value)); return *this;}
+    template<typename SharedSegmentsT = Aws::String>
+    CoreNetworkSegment& AddSharedSegments(SharedSegmentsT&& value) { m_sharedSegmentsHasBeenSet = true; m_sharedSegments.emplace_back(std::forward<SharedSegmentsT>(value)); return *this; }
     ///@}
   private:
 

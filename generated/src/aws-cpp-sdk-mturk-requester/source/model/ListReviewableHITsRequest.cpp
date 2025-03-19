@@ -12,16 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListReviewableHITsRequest::ListReviewableHITsRequest() : 
-    m_hITTypeIdHasBeenSet(false),
-    m_status(ReviewableHITStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListReviewableHITsRequest::SerializePayload() const
 {
   JsonValue payload;

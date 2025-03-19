@@ -12,12 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RejectQualificationRequestRequest::RejectQualificationRequestRequest() : 
-    m_qualificationRequestIdHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 Aws::String RejectQualificationRequestRequest::SerializePayload() const
 {
   JsonValue payload;

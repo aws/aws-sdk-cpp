@@ -12,11 +12,6 @@ using namespace Aws::AppStream::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchAssociateUserStackRequest::BatchAssociateUserStackRequest() : 
-    m_userStackAssociationsHasBeenSet(false)
-{
-}
-
 Aws::String BatchAssociateUserStackRequest::SerializePayload() const
 {
   JsonValue payload;

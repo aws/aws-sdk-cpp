@@ -18,14 +18,7 @@ namespace CodeArtifact
 namespace Model
 {
 
-DomainEntryPoint::DomainEntryPoint() : 
-    m_repositoryNameHasBeenSet(false),
-    m_externalConnectionNameHasBeenSet(false)
-{
-}
-
 DomainEntryPoint::DomainEntryPoint(JsonView jsonValue)
-  : DomainEntryPoint()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DomainEntryPoint& DomainEntryPoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("externalConnectionName"))
   {
     m_externalConnectionName = jsonValue.GetString("externalConnectionName");
-
     m_externalConnectionNameHasBeenSet = true;
   }
-
   return *this;
 }
 

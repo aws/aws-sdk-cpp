@@ -21,7 +21,7 @@ namespace Model
   class GetGraphSnapshotRequest : public NeptuneGraphRequest
   {
   public:
-    AWS_NEPTUNEGRAPH_API GetGraphSnapshotRequest();
+    AWS_NEPTUNEGRAPH_API GetGraphSnapshotRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The ID of the snapshot to retrieve.</p>
      */
-    inline const Aws::String& GetSnapshotIdentifier() const{ return m_snapshotIdentifier; }
+    inline const Aws::String& GetSnapshotIdentifier() const { return m_snapshotIdentifier; }
     inline bool SnapshotIdentifierHasBeenSet() const { return m_snapshotIdentifierHasBeenSet; }
-    inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
-    inline void SetSnapshotIdentifier(Aws::String&& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = std::move(value); }
-    inline void SetSnapshotIdentifier(const char* value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier.assign(value); }
-    inline GetGraphSnapshotRequest& WithSnapshotIdentifier(const Aws::String& value) { SetSnapshotIdentifier(value); return *this;}
-    inline GetGraphSnapshotRequest& WithSnapshotIdentifier(Aws::String&& value) { SetSnapshotIdentifier(std::move(value)); return *this;}
-    inline GetGraphSnapshotRequest& WithSnapshotIdentifier(const char* value) { SetSnapshotIdentifier(value); return *this;}
+    template<typename SnapshotIdentifierT = Aws::String>
+    void SetSnapshotIdentifier(SnapshotIdentifierT&& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = std::forward<SnapshotIdentifierT>(value); }
+    template<typename SnapshotIdentifierT = Aws::String>
+    GetGraphSnapshotRequest& WithSnapshotIdentifier(SnapshotIdentifierT&& value) { SetSnapshotIdentifier(std::forward<SnapshotIdentifierT>(value)); return *this;}
     ///@}
   private:
 

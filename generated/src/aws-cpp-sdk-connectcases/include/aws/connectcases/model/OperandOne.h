@@ -35,7 +35,7 @@ namespace Model
   class OperandOne
   {
   public:
-    AWS_CONNECTCASES_API OperandOne();
+    AWS_CONNECTCASES_API OperandOne() = default;
     AWS_CONNECTCASES_API OperandOne(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API OperandOne& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCASES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The field ID that this operand should take the value of.</p>
      */
-    inline const Aws::String& GetFieldId() const{ return m_fieldId; }
+    inline const Aws::String& GetFieldId() const { return m_fieldId; }
     inline bool FieldIdHasBeenSet() const { return m_fieldIdHasBeenSet; }
-    inline void SetFieldId(const Aws::String& value) { m_fieldIdHasBeenSet = true; m_fieldId = value; }
-    inline void SetFieldId(Aws::String&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::move(value); }
-    inline void SetFieldId(const char* value) { m_fieldIdHasBeenSet = true; m_fieldId.assign(value); }
-    inline OperandOne& WithFieldId(const Aws::String& value) { SetFieldId(value); return *this;}
-    inline OperandOne& WithFieldId(Aws::String&& value) { SetFieldId(std::move(value)); return *this;}
-    inline OperandOne& WithFieldId(const char* value) { SetFieldId(value); return *this;}
+    template<typename FieldIdT = Aws::String>
+    void SetFieldId(FieldIdT&& value) { m_fieldIdHasBeenSet = true; m_fieldId = std::forward<FieldIdT>(value); }
+    template<typename FieldIdT = Aws::String>
+    OperandOne& WithFieldId(FieldIdT&& value) { SetFieldId(std::forward<FieldIdT>(value)); return *this;}
     ///@}
   private:
 

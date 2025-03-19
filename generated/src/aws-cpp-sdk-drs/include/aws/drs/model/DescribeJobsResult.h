@@ -29,7 +29,7 @@ namespace Model
   class DescribeJobsResult
   {
   public:
-    AWS_DRS_API DescribeJobsResult();
+    AWS_DRS_API DescribeJobsResult() = default;
     AWS_DRS_API DescribeJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DRS_API DescribeJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>An array of Jobs.</p>
      */
-    inline const Aws::Vector<Job>& GetItems() const{ return m_items; }
-    inline void SetItems(const Aws::Vector<Job>& value) { m_items = value; }
-    inline void SetItems(Aws::Vector<Job>&& value) { m_items = std::move(value); }
-    inline DescribeJobsResult& WithItems(const Aws::Vector<Job>& value) { SetItems(value); return *this;}
-    inline DescribeJobsResult& WithItems(Aws::Vector<Job>&& value) { SetItems(std::move(value)); return *this;}
-    inline DescribeJobsResult& AddItems(const Job& value) { m_items.push_back(value); return *this; }
-    inline DescribeJobsResult& AddItems(Job&& value) { m_items.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Job>& GetItems() const { return m_items; }
+    template<typename ItemsT = Aws::Vector<Job>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<Job>>
+    DescribeJobsResult& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = Job>
+    DescribeJobsResult& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The token of the next Job to retrieve.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeJobsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeJobsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeJobsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeJobsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeJobsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Job> m_items;
+    bool m_itemsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

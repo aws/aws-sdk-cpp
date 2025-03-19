@@ -41,7 +41,7 @@ namespace Model
   class AwsOpenSearchServiceDomainDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainDetails();
+    AWS_SECURITYHUB_API AwsOpenSearchServiceDomainDetails() = default;
     AWS_SECURITYHUB_API AwsOpenSearchServiceDomainDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsOpenSearchServiceDomainDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
     /**
      * <p>The ARN of the OpenSearch Service domain.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline AwsOpenSearchServiceDomainDetails& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline AwsOpenSearchServiceDomainDetails& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline AwsOpenSearchServiceDomainDetails& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    AwsOpenSearchServiceDomainDetails& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,94 +64,84 @@ namespace Model
      * <p>IAM policy document that specifies the access policies for the OpenSearch
      * Service domain.</p>
      */
-    inline const Aws::String& GetAccessPolicies() const{ return m_accessPolicies; }
+    inline const Aws::String& GetAccessPolicies() const { return m_accessPolicies; }
     inline bool AccessPoliciesHasBeenSet() const { return m_accessPoliciesHasBeenSet; }
-    inline void SetAccessPolicies(const Aws::String& value) { m_accessPoliciesHasBeenSet = true; m_accessPolicies = value; }
-    inline void SetAccessPolicies(Aws::String&& value) { m_accessPoliciesHasBeenSet = true; m_accessPolicies = std::move(value); }
-    inline void SetAccessPolicies(const char* value) { m_accessPoliciesHasBeenSet = true; m_accessPolicies.assign(value); }
-    inline AwsOpenSearchServiceDomainDetails& WithAccessPolicies(const Aws::String& value) { SetAccessPolicies(value); return *this;}
-    inline AwsOpenSearchServiceDomainDetails& WithAccessPolicies(Aws::String&& value) { SetAccessPolicies(std::move(value)); return *this;}
-    inline AwsOpenSearchServiceDomainDetails& WithAccessPolicies(const char* value) { SetAccessPolicies(value); return *this;}
+    template<typename AccessPoliciesT = Aws::String>
+    void SetAccessPolicies(AccessPoliciesT&& value) { m_accessPoliciesHasBeenSet = true; m_accessPolicies = std::forward<AccessPoliciesT>(value); }
+    template<typename AccessPoliciesT = Aws::String>
+    AwsOpenSearchServiceDomainDetails& WithAccessPolicies(AccessPoliciesT&& value) { SetAccessPolicies(std::forward<AccessPoliciesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the endpoint.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline AwsOpenSearchServiceDomainDetails& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline AwsOpenSearchServiceDomainDetails& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline AwsOpenSearchServiceDomainDetails& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    AwsOpenSearchServiceDomainDetails& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the domain.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline AwsOpenSearchServiceDomainDetails& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline AwsOpenSearchServiceDomainDetails& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline AwsOpenSearchServiceDomainDetails& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    AwsOpenSearchServiceDomainDetails& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The domain endpoint.</p>
      */
-    inline const Aws::String& GetDomainEndpoint() const{ return m_domainEndpoint; }
+    inline const Aws::String& GetDomainEndpoint() const { return m_domainEndpoint; }
     inline bool DomainEndpointHasBeenSet() const { return m_domainEndpointHasBeenSet; }
-    inline void SetDomainEndpoint(const Aws::String& value) { m_domainEndpointHasBeenSet = true; m_domainEndpoint = value; }
-    inline void SetDomainEndpoint(Aws::String&& value) { m_domainEndpointHasBeenSet = true; m_domainEndpoint = std::move(value); }
-    inline void SetDomainEndpoint(const char* value) { m_domainEndpointHasBeenSet = true; m_domainEndpoint.assign(value); }
-    inline AwsOpenSearchServiceDomainDetails& WithDomainEndpoint(const Aws::String& value) { SetDomainEndpoint(value); return *this;}
-    inline AwsOpenSearchServiceDomainDetails& WithDomainEndpoint(Aws::String&& value) { SetDomainEndpoint(std::move(value)); return *this;}
-    inline AwsOpenSearchServiceDomainDetails& WithDomainEndpoint(const char* value) { SetDomainEndpoint(value); return *this;}
+    template<typename DomainEndpointT = Aws::String>
+    void SetDomainEndpoint(DomainEndpointT&& value) { m_domainEndpointHasBeenSet = true; m_domainEndpoint = std::forward<DomainEndpointT>(value); }
+    template<typename DomainEndpointT = Aws::String>
+    AwsOpenSearchServiceDomainDetails& WithDomainEndpoint(DomainEndpointT&& value) { SetDomainEndpoint(std::forward<DomainEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the domain engine.</p>
      */
-    inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+    inline const Aws::String& GetEngineVersion() const { return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
-    inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
-    inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
-    inline AwsOpenSearchServiceDomainDetails& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
-    inline AwsOpenSearchServiceDomainDetails& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
-    inline AwsOpenSearchServiceDomainDetails& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+    template<typename EngineVersionT = Aws::String>
+    void SetEngineVersion(EngineVersionT&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::forward<EngineVersionT>(value); }
+    template<typename EngineVersionT = Aws::String>
+    AwsOpenSearchServiceDomainDetails& WithEngineVersion(EngineVersionT&& value) { SetEngineVersion(std::forward<EngineVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about the configuration for encryption at rest.</p>
      */
-    inline const AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails& GetEncryptionAtRestOptions() const{ return m_encryptionAtRestOptions; }
+    inline const AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails& GetEncryptionAtRestOptions() const { return m_encryptionAtRestOptions; }
     inline bool EncryptionAtRestOptionsHasBeenSet() const { return m_encryptionAtRestOptionsHasBeenSet; }
-    inline void SetEncryptionAtRestOptions(const AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails& value) { m_encryptionAtRestOptionsHasBeenSet = true; m_encryptionAtRestOptions = value; }
-    inline void SetEncryptionAtRestOptions(AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails&& value) { m_encryptionAtRestOptionsHasBeenSet = true; m_encryptionAtRestOptions = std::move(value); }
-    inline AwsOpenSearchServiceDomainDetails& WithEncryptionAtRestOptions(const AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails& value) { SetEncryptionAtRestOptions(value); return *this;}
-    inline AwsOpenSearchServiceDomainDetails& WithEncryptionAtRestOptions(AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails&& value) { SetEncryptionAtRestOptions(std::move(value)); return *this;}
+    template<typename EncryptionAtRestOptionsT = AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails>
+    void SetEncryptionAtRestOptions(EncryptionAtRestOptionsT&& value) { m_encryptionAtRestOptionsHasBeenSet = true; m_encryptionAtRestOptions = std::forward<EncryptionAtRestOptionsT>(value); }
+    template<typename EncryptionAtRestOptionsT = AwsOpenSearchServiceDomainEncryptionAtRestOptionsDetails>
+    AwsOpenSearchServiceDomainDetails& WithEncryptionAtRestOptions(EncryptionAtRestOptionsT&& value) { SetEncryptionAtRestOptions(std::forward<EncryptionAtRestOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about the configuration for node-to-node encryption.</p>
      */
-    inline const AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails& GetNodeToNodeEncryptionOptions() const{ return m_nodeToNodeEncryptionOptions; }
+    inline const AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails& GetNodeToNodeEncryptionOptions() const { return m_nodeToNodeEncryptionOptions; }
     inline bool NodeToNodeEncryptionOptionsHasBeenSet() const { return m_nodeToNodeEncryptionOptionsHasBeenSet; }
-    inline void SetNodeToNodeEncryptionOptions(const AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails& value) { m_nodeToNodeEncryptionOptionsHasBeenSet = true; m_nodeToNodeEncryptionOptions = value; }
-    inline void SetNodeToNodeEncryptionOptions(AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails&& value) { m_nodeToNodeEncryptionOptionsHasBeenSet = true; m_nodeToNodeEncryptionOptions = std::move(value); }
-    inline AwsOpenSearchServiceDomainDetails& WithNodeToNodeEncryptionOptions(const AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails& value) { SetNodeToNodeEncryptionOptions(value); return *this;}
-    inline AwsOpenSearchServiceDomainDetails& WithNodeToNodeEncryptionOptions(AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails&& value) { SetNodeToNodeEncryptionOptions(std::move(value)); return *this;}
+    template<typename NodeToNodeEncryptionOptionsT = AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails>
+    void SetNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptionsT&& value) { m_nodeToNodeEncryptionOptionsHasBeenSet = true; m_nodeToNodeEncryptionOptions = std::forward<NodeToNodeEncryptionOptionsT>(value); }
+    template<typename NodeToNodeEncryptionOptionsT = AwsOpenSearchServiceDomainNodeToNodeEncryptionOptionsDetails>
+    AwsOpenSearchServiceDomainDetails& WithNodeToNodeEncryptionOptions(NodeToNodeEncryptionOptionsT&& value) { SetNodeToNodeEncryptionOptions(std::forward<NodeToNodeEncryptionOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -161,36 +149,36 @@ namespace Model
      * <p>Information about the status of a domain relative to the latest service
      * software.</p>
      */
-    inline const AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails& GetServiceSoftwareOptions() const{ return m_serviceSoftwareOptions; }
+    inline const AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails& GetServiceSoftwareOptions() const { return m_serviceSoftwareOptions; }
     inline bool ServiceSoftwareOptionsHasBeenSet() const { return m_serviceSoftwareOptionsHasBeenSet; }
-    inline void SetServiceSoftwareOptions(const AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails& value) { m_serviceSoftwareOptionsHasBeenSet = true; m_serviceSoftwareOptions = value; }
-    inline void SetServiceSoftwareOptions(AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails&& value) { m_serviceSoftwareOptionsHasBeenSet = true; m_serviceSoftwareOptions = std::move(value); }
-    inline AwsOpenSearchServiceDomainDetails& WithServiceSoftwareOptions(const AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails& value) { SetServiceSoftwareOptions(value); return *this;}
-    inline AwsOpenSearchServiceDomainDetails& WithServiceSoftwareOptions(AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails&& value) { SetServiceSoftwareOptions(std::move(value)); return *this;}
+    template<typename ServiceSoftwareOptionsT = AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails>
+    void SetServiceSoftwareOptions(ServiceSoftwareOptionsT&& value) { m_serviceSoftwareOptionsHasBeenSet = true; m_serviceSoftwareOptions = std::forward<ServiceSoftwareOptionsT>(value); }
+    template<typename ServiceSoftwareOptionsT = AwsOpenSearchServiceDomainServiceSoftwareOptionsDetails>
+    AwsOpenSearchServiceDomainDetails& WithServiceSoftwareOptions(ServiceSoftwareOptionsT&& value) { SetServiceSoftwareOptions(std::forward<ServiceSoftwareOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about the configuration of an OpenSearch cluster.</p>
      */
-    inline const AwsOpenSearchServiceDomainClusterConfigDetails& GetClusterConfig() const{ return m_clusterConfig; }
+    inline const AwsOpenSearchServiceDomainClusterConfigDetails& GetClusterConfig() const { return m_clusterConfig; }
     inline bool ClusterConfigHasBeenSet() const { return m_clusterConfigHasBeenSet; }
-    inline void SetClusterConfig(const AwsOpenSearchServiceDomainClusterConfigDetails& value) { m_clusterConfigHasBeenSet = true; m_clusterConfig = value; }
-    inline void SetClusterConfig(AwsOpenSearchServiceDomainClusterConfigDetails&& value) { m_clusterConfigHasBeenSet = true; m_clusterConfig = std::move(value); }
-    inline AwsOpenSearchServiceDomainDetails& WithClusterConfig(const AwsOpenSearchServiceDomainClusterConfigDetails& value) { SetClusterConfig(value); return *this;}
-    inline AwsOpenSearchServiceDomainDetails& WithClusterConfig(AwsOpenSearchServiceDomainClusterConfigDetails&& value) { SetClusterConfig(std::move(value)); return *this;}
+    template<typename ClusterConfigT = AwsOpenSearchServiceDomainClusterConfigDetails>
+    void SetClusterConfig(ClusterConfigT&& value) { m_clusterConfigHasBeenSet = true; m_clusterConfig = std::forward<ClusterConfigT>(value); }
+    template<typename ClusterConfigT = AwsOpenSearchServiceDomainClusterConfigDetails>
+    AwsOpenSearchServiceDomainDetails& WithClusterConfig(ClusterConfigT&& value) { SetClusterConfig(std::forward<ClusterConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Additional options for the domain endpoint.</p>
      */
-    inline const AwsOpenSearchServiceDomainDomainEndpointOptionsDetails& GetDomainEndpointOptions() const{ return m_domainEndpointOptions; }
+    inline const AwsOpenSearchServiceDomainDomainEndpointOptionsDetails& GetDomainEndpointOptions() const { return m_domainEndpointOptions; }
     inline bool DomainEndpointOptionsHasBeenSet() const { return m_domainEndpointOptionsHasBeenSet; }
-    inline void SetDomainEndpointOptions(const AwsOpenSearchServiceDomainDomainEndpointOptionsDetails& value) { m_domainEndpointOptionsHasBeenSet = true; m_domainEndpointOptions = value; }
-    inline void SetDomainEndpointOptions(AwsOpenSearchServiceDomainDomainEndpointOptionsDetails&& value) { m_domainEndpointOptionsHasBeenSet = true; m_domainEndpointOptions = std::move(value); }
-    inline AwsOpenSearchServiceDomainDetails& WithDomainEndpointOptions(const AwsOpenSearchServiceDomainDomainEndpointOptionsDetails& value) { SetDomainEndpointOptions(value); return *this;}
-    inline AwsOpenSearchServiceDomainDetails& WithDomainEndpointOptions(AwsOpenSearchServiceDomainDomainEndpointOptionsDetails&& value) { SetDomainEndpointOptions(std::move(value)); return *this;}
+    template<typename DomainEndpointOptionsT = AwsOpenSearchServiceDomainDomainEndpointOptionsDetails>
+    void SetDomainEndpointOptions(DomainEndpointOptionsT&& value) { m_domainEndpointOptionsHasBeenSet = true; m_domainEndpointOptions = std::forward<DomainEndpointOptionsT>(value); }
+    template<typename DomainEndpointOptionsT = AwsOpenSearchServiceDomainDomainEndpointOptionsDetails>
+    AwsOpenSearchServiceDomainDetails& WithDomainEndpointOptions(DomainEndpointOptionsT&& value) { SetDomainEndpointOptions(std::forward<DomainEndpointOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -198,24 +186,24 @@ namespace Model
      * <p>Information that OpenSearch Service derives based on <code>VPCOptions</code>
      * for the domain.</p>
      */
-    inline const AwsOpenSearchServiceDomainVpcOptionsDetails& GetVpcOptions() const{ return m_vpcOptions; }
+    inline const AwsOpenSearchServiceDomainVpcOptionsDetails& GetVpcOptions() const { return m_vpcOptions; }
     inline bool VpcOptionsHasBeenSet() const { return m_vpcOptionsHasBeenSet; }
-    inline void SetVpcOptions(const AwsOpenSearchServiceDomainVpcOptionsDetails& value) { m_vpcOptionsHasBeenSet = true; m_vpcOptions = value; }
-    inline void SetVpcOptions(AwsOpenSearchServiceDomainVpcOptionsDetails&& value) { m_vpcOptionsHasBeenSet = true; m_vpcOptions = std::move(value); }
-    inline AwsOpenSearchServiceDomainDetails& WithVpcOptions(const AwsOpenSearchServiceDomainVpcOptionsDetails& value) { SetVpcOptions(value); return *this;}
-    inline AwsOpenSearchServiceDomainDetails& WithVpcOptions(AwsOpenSearchServiceDomainVpcOptionsDetails&& value) { SetVpcOptions(std::move(value)); return *this;}
+    template<typename VpcOptionsT = AwsOpenSearchServiceDomainVpcOptionsDetails>
+    void SetVpcOptions(VpcOptionsT&& value) { m_vpcOptionsHasBeenSet = true; m_vpcOptions = std::forward<VpcOptionsT>(value); }
+    template<typename VpcOptionsT = AwsOpenSearchServiceDomainVpcOptionsDetails>
+    AwsOpenSearchServiceDomainDetails& WithVpcOptions(VpcOptionsT&& value) { SetVpcOptions(std::forward<VpcOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configures the CloudWatch Logs to publish for the OpenSearch domain.</p>
      */
-    inline const AwsOpenSearchServiceDomainLogPublishingOptionsDetails& GetLogPublishingOptions() const{ return m_logPublishingOptions; }
+    inline const AwsOpenSearchServiceDomainLogPublishingOptionsDetails& GetLogPublishingOptions() const { return m_logPublishingOptions; }
     inline bool LogPublishingOptionsHasBeenSet() const { return m_logPublishingOptionsHasBeenSet; }
-    inline void SetLogPublishingOptions(const AwsOpenSearchServiceDomainLogPublishingOptionsDetails& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = value; }
-    inline void SetLogPublishingOptions(AwsOpenSearchServiceDomainLogPublishingOptionsDetails&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = std::move(value); }
-    inline AwsOpenSearchServiceDomainDetails& WithLogPublishingOptions(const AwsOpenSearchServiceDomainLogPublishingOptionsDetails& value) { SetLogPublishingOptions(value); return *this;}
-    inline AwsOpenSearchServiceDomainDetails& WithLogPublishingOptions(AwsOpenSearchServiceDomainLogPublishingOptionsDetails&& value) { SetLogPublishingOptions(std::move(value)); return *this;}
+    template<typename LogPublishingOptionsT = AwsOpenSearchServiceDomainLogPublishingOptionsDetails>
+    void SetLogPublishingOptions(LogPublishingOptionsT&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = std::forward<LogPublishingOptionsT>(value); }
+    template<typename LogPublishingOptionsT = AwsOpenSearchServiceDomainLogPublishingOptionsDetails>
+    AwsOpenSearchServiceDomainDetails& WithLogPublishingOptions(LogPublishingOptionsT&& value) { SetLogPublishingOptions(std::forward<LogPublishingOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -224,31 +212,28 @@ namespace Model
      * <p>This is a map of key-value pairs. The key is always <code>vpc</code>. The
      * value is the endpoint.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetDomainEndpoints() const{ return m_domainEndpoints; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetDomainEndpoints() const { return m_domainEndpoints; }
     inline bool DomainEndpointsHasBeenSet() const { return m_domainEndpointsHasBeenSet; }
-    inline void SetDomainEndpoints(const Aws::Map<Aws::String, Aws::String>& value) { m_domainEndpointsHasBeenSet = true; m_domainEndpoints = value; }
-    inline void SetDomainEndpoints(Aws::Map<Aws::String, Aws::String>&& value) { m_domainEndpointsHasBeenSet = true; m_domainEndpoints = std::move(value); }
-    inline AwsOpenSearchServiceDomainDetails& WithDomainEndpoints(const Aws::Map<Aws::String, Aws::String>& value) { SetDomainEndpoints(value); return *this;}
-    inline AwsOpenSearchServiceDomainDetails& WithDomainEndpoints(Aws::Map<Aws::String, Aws::String>&& value) { SetDomainEndpoints(std::move(value)); return *this;}
-    inline AwsOpenSearchServiceDomainDetails& AddDomainEndpoints(const Aws::String& key, const Aws::String& value) { m_domainEndpointsHasBeenSet = true; m_domainEndpoints.emplace(key, value); return *this; }
-    inline AwsOpenSearchServiceDomainDetails& AddDomainEndpoints(Aws::String&& key, const Aws::String& value) { m_domainEndpointsHasBeenSet = true; m_domainEndpoints.emplace(std::move(key), value); return *this; }
-    inline AwsOpenSearchServiceDomainDetails& AddDomainEndpoints(const Aws::String& key, Aws::String&& value) { m_domainEndpointsHasBeenSet = true; m_domainEndpoints.emplace(key, std::move(value)); return *this; }
-    inline AwsOpenSearchServiceDomainDetails& AddDomainEndpoints(Aws::String&& key, Aws::String&& value) { m_domainEndpointsHasBeenSet = true; m_domainEndpoints.emplace(std::move(key), std::move(value)); return *this; }
-    inline AwsOpenSearchServiceDomainDetails& AddDomainEndpoints(const char* key, Aws::String&& value) { m_domainEndpointsHasBeenSet = true; m_domainEndpoints.emplace(key, std::move(value)); return *this; }
-    inline AwsOpenSearchServiceDomainDetails& AddDomainEndpoints(Aws::String&& key, const char* value) { m_domainEndpointsHasBeenSet = true; m_domainEndpoints.emplace(std::move(key), value); return *this; }
-    inline AwsOpenSearchServiceDomainDetails& AddDomainEndpoints(const char* key, const char* value) { m_domainEndpointsHasBeenSet = true; m_domainEndpoints.emplace(key, value); return *this; }
+    template<typename DomainEndpointsT = Aws::Map<Aws::String, Aws::String>>
+    void SetDomainEndpoints(DomainEndpointsT&& value) { m_domainEndpointsHasBeenSet = true; m_domainEndpoints = std::forward<DomainEndpointsT>(value); }
+    template<typename DomainEndpointsT = Aws::Map<Aws::String, Aws::String>>
+    AwsOpenSearchServiceDomainDetails& WithDomainEndpoints(DomainEndpointsT&& value) { SetDomainEndpoints(std::forward<DomainEndpointsT>(value)); return *this;}
+    template<typename DomainEndpointsKeyT = Aws::String, typename DomainEndpointsValueT = Aws::String>
+    AwsOpenSearchServiceDomainDetails& AddDomainEndpoints(DomainEndpointsKeyT&& key, DomainEndpointsValueT&& value) {
+      m_domainEndpointsHasBeenSet = true; m_domainEndpoints.emplace(std::forward<DomainEndpointsKeyT>(key), std::forward<DomainEndpointsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Specifies options for fine-grained access control. </p>
      */
-    inline const AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails& GetAdvancedSecurityOptions() const{ return m_advancedSecurityOptions; }
+    inline const AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails& GetAdvancedSecurityOptions() const { return m_advancedSecurityOptions; }
     inline bool AdvancedSecurityOptionsHasBeenSet() const { return m_advancedSecurityOptionsHasBeenSet; }
-    inline void SetAdvancedSecurityOptions(const AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails& value) { m_advancedSecurityOptionsHasBeenSet = true; m_advancedSecurityOptions = value; }
-    inline void SetAdvancedSecurityOptions(AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails&& value) { m_advancedSecurityOptionsHasBeenSet = true; m_advancedSecurityOptions = std::move(value); }
-    inline AwsOpenSearchServiceDomainDetails& WithAdvancedSecurityOptions(const AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails& value) { SetAdvancedSecurityOptions(value); return *this;}
-    inline AwsOpenSearchServiceDomainDetails& WithAdvancedSecurityOptions(AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails&& value) { SetAdvancedSecurityOptions(std::move(value)); return *this;}
+    template<typename AdvancedSecurityOptionsT = AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails>
+    void SetAdvancedSecurityOptions(AdvancedSecurityOptionsT&& value) { m_advancedSecurityOptionsHasBeenSet = true; m_advancedSecurityOptions = std::forward<AdvancedSecurityOptionsT>(value); }
+    template<typename AdvancedSecurityOptionsT = AwsOpenSearchServiceDomainAdvancedSecurityOptionsDetails>
+    AwsOpenSearchServiceDomainDetails& WithAdvancedSecurityOptions(AdvancedSecurityOptionsT&& value) { SetAdvancedSecurityOptions(std::forward<AdvancedSecurityOptionsT>(value)); return *this;}
     ///@}
   private:
 

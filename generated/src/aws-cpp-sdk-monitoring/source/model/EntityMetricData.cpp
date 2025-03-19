@@ -20,14 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-EntityMetricData::EntityMetricData() : 
-    m_entityHasBeenSet(false),
-    m_metricDataHasBeenSet(false)
-{
-}
-
 EntityMetricData::EntityMetricData(const XmlNode& xmlNode)
-  : EntityMetricData()
 {
   *this = xmlNode;
 }
@@ -48,6 +41,7 @@ EntityMetricData& EntityMetricData::operator =(const XmlNode& xmlNode)
     if(!metricDataNode.IsNull())
     {
       XmlNode metricDataMember = metricDataNode.FirstChild("member");
+      m_metricDataHasBeenSet = !metricDataMember.IsNull();
       while(!metricDataMember.IsNull())
       {
         m_metricData.push_back(metricDataMember);

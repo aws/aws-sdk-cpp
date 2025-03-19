@@ -35,7 +35,7 @@ namespace Model
   class TN3270StepInput
   {
   public:
-    AWS_APPTEST_API TN3270StepInput();
+    AWS_APPTEST_API TN3270StepInput() = default;
     AWS_APPTEST_API TN3270StepInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API TN3270StepInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,51 +45,50 @@ namespace Model
     /**
      * <p>The resource of the TN3270 step input.</p>
      */
-    inline const MainframeResourceSummary& GetResource() const{ return m_resource; }
+    inline const MainframeResourceSummary& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const MainframeResourceSummary& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(MainframeResourceSummary&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline TN3270StepInput& WithResource(const MainframeResourceSummary& value) { SetResource(value); return *this;}
-    inline TN3270StepInput& WithResource(MainframeResourceSummary&& value) { SetResource(std::move(value)); return *this;}
+    template<typename ResourceT = MainframeResourceSummary>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = MainframeResourceSummary>
+    TN3270StepInput& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The script of the TN3270 step input.</p>
      */
-    inline const ScriptSummary& GetScript() const{ return m_script; }
+    inline const ScriptSummary& GetScript() const { return m_script; }
     inline bool ScriptHasBeenSet() const { return m_scriptHasBeenSet; }
-    inline void SetScript(const ScriptSummary& value) { m_scriptHasBeenSet = true; m_script = value; }
-    inline void SetScript(ScriptSummary&& value) { m_scriptHasBeenSet = true; m_script = std::move(value); }
-    inline TN3270StepInput& WithScript(const ScriptSummary& value) { SetScript(value); return *this;}
-    inline TN3270StepInput& WithScript(ScriptSummary&& value) { SetScript(std::move(value)); return *this;}
+    template<typename ScriptT = ScriptSummary>
+    void SetScript(ScriptT&& value) { m_scriptHasBeenSet = true; m_script = std::forward<ScriptT>(value); }
+    template<typename ScriptT = ScriptSummary>
+    TN3270StepInput& WithScript(ScriptT&& value) { SetScript(std::forward<ScriptT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The export data set names of the TN3270 step input.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExportDataSetNames() const{ return m_exportDataSetNames; }
+    inline const Aws::Vector<Aws::String>& GetExportDataSetNames() const { return m_exportDataSetNames; }
     inline bool ExportDataSetNamesHasBeenSet() const { return m_exportDataSetNamesHasBeenSet; }
-    inline void SetExportDataSetNames(const Aws::Vector<Aws::String>& value) { m_exportDataSetNamesHasBeenSet = true; m_exportDataSetNames = value; }
-    inline void SetExportDataSetNames(Aws::Vector<Aws::String>&& value) { m_exportDataSetNamesHasBeenSet = true; m_exportDataSetNames = std::move(value); }
-    inline TN3270StepInput& WithExportDataSetNames(const Aws::Vector<Aws::String>& value) { SetExportDataSetNames(value); return *this;}
-    inline TN3270StepInput& WithExportDataSetNames(Aws::Vector<Aws::String>&& value) { SetExportDataSetNames(std::move(value)); return *this;}
-    inline TN3270StepInput& AddExportDataSetNames(const Aws::String& value) { m_exportDataSetNamesHasBeenSet = true; m_exportDataSetNames.push_back(value); return *this; }
-    inline TN3270StepInput& AddExportDataSetNames(Aws::String&& value) { m_exportDataSetNamesHasBeenSet = true; m_exportDataSetNames.push_back(std::move(value)); return *this; }
-    inline TN3270StepInput& AddExportDataSetNames(const char* value) { m_exportDataSetNamesHasBeenSet = true; m_exportDataSetNames.push_back(value); return *this; }
+    template<typename ExportDataSetNamesT = Aws::Vector<Aws::String>>
+    void SetExportDataSetNames(ExportDataSetNamesT&& value) { m_exportDataSetNamesHasBeenSet = true; m_exportDataSetNames = std::forward<ExportDataSetNamesT>(value); }
+    template<typename ExportDataSetNamesT = Aws::Vector<Aws::String>>
+    TN3270StepInput& WithExportDataSetNames(ExportDataSetNamesT&& value) { SetExportDataSetNames(std::forward<ExportDataSetNamesT>(value)); return *this;}
+    template<typename ExportDataSetNamesT = Aws::String>
+    TN3270StepInput& AddExportDataSetNames(ExportDataSetNamesT&& value) { m_exportDataSetNamesHasBeenSet = true; m_exportDataSetNames.emplace_back(std::forward<ExportDataSetNamesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The properties of the TN3270 step input.</p>
      */
-    inline const MainframeActionProperties& GetProperties() const{ return m_properties; }
+    inline const MainframeActionProperties& GetProperties() const { return m_properties; }
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
-    inline void SetProperties(const MainframeActionProperties& value) { m_propertiesHasBeenSet = true; m_properties = value; }
-    inline void SetProperties(MainframeActionProperties&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
-    inline TN3270StepInput& WithProperties(const MainframeActionProperties& value) { SetProperties(value); return *this;}
-    inline TN3270StepInput& WithProperties(MainframeActionProperties&& value) { SetProperties(std::move(value)); return *this;}
+    template<typename PropertiesT = MainframeActionProperties>
+    void SetProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties = std::forward<PropertiesT>(value); }
+    template<typename PropertiesT = MainframeActionProperties>
+    TN3270StepInput& WithProperties(PropertiesT&& value) { SetProperties(std::forward<PropertiesT>(value)); return *this;}
     ///@}
   private:
 

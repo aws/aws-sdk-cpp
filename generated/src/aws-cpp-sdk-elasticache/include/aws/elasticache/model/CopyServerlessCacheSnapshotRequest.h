@@ -23,7 +23,7 @@ namespace Model
   class CopyServerlessCacheSnapshotRequest : public ElastiCacheRequest
   {
   public:
-    AWS_ELASTICACHE_API CopyServerlessCacheSnapshotRequest();
+    AWS_ELASTICACHE_API CopyServerlessCacheSnapshotRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The identifier of the existing serverless cache’s snapshot to be copied.
      * Available for Valkey, Redis OSS and Serverless Memcached only.</p>
      */
-    inline const Aws::String& GetSourceServerlessCacheSnapshotName() const{ return m_sourceServerlessCacheSnapshotName; }
+    inline const Aws::String& GetSourceServerlessCacheSnapshotName() const { return m_sourceServerlessCacheSnapshotName; }
     inline bool SourceServerlessCacheSnapshotNameHasBeenSet() const { return m_sourceServerlessCacheSnapshotNameHasBeenSet; }
-    inline void SetSourceServerlessCacheSnapshotName(const Aws::String& value) { m_sourceServerlessCacheSnapshotNameHasBeenSet = true; m_sourceServerlessCacheSnapshotName = value; }
-    inline void SetSourceServerlessCacheSnapshotName(Aws::String&& value) { m_sourceServerlessCacheSnapshotNameHasBeenSet = true; m_sourceServerlessCacheSnapshotName = std::move(value); }
-    inline void SetSourceServerlessCacheSnapshotName(const char* value) { m_sourceServerlessCacheSnapshotNameHasBeenSet = true; m_sourceServerlessCacheSnapshotName.assign(value); }
-    inline CopyServerlessCacheSnapshotRequest& WithSourceServerlessCacheSnapshotName(const Aws::String& value) { SetSourceServerlessCacheSnapshotName(value); return *this;}
-    inline CopyServerlessCacheSnapshotRequest& WithSourceServerlessCacheSnapshotName(Aws::String&& value) { SetSourceServerlessCacheSnapshotName(std::move(value)); return *this;}
-    inline CopyServerlessCacheSnapshotRequest& WithSourceServerlessCacheSnapshotName(const char* value) { SetSourceServerlessCacheSnapshotName(value); return *this;}
+    template<typename SourceServerlessCacheSnapshotNameT = Aws::String>
+    void SetSourceServerlessCacheSnapshotName(SourceServerlessCacheSnapshotNameT&& value) { m_sourceServerlessCacheSnapshotNameHasBeenSet = true; m_sourceServerlessCacheSnapshotName = std::forward<SourceServerlessCacheSnapshotNameT>(value); }
+    template<typename SourceServerlessCacheSnapshotNameT = Aws::String>
+    CopyServerlessCacheSnapshotRequest& WithSourceServerlessCacheSnapshotName(SourceServerlessCacheSnapshotNameT&& value) { SetSourceServerlessCacheSnapshotName(std::forward<SourceServerlessCacheSnapshotNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The identifier for the snapshot to be created. Available for Valkey, Redis
      * OSS and Serverless Memcached only.</p>
      */
-    inline const Aws::String& GetTargetServerlessCacheSnapshotName() const{ return m_targetServerlessCacheSnapshotName; }
+    inline const Aws::String& GetTargetServerlessCacheSnapshotName() const { return m_targetServerlessCacheSnapshotName; }
     inline bool TargetServerlessCacheSnapshotNameHasBeenSet() const { return m_targetServerlessCacheSnapshotNameHasBeenSet; }
-    inline void SetTargetServerlessCacheSnapshotName(const Aws::String& value) { m_targetServerlessCacheSnapshotNameHasBeenSet = true; m_targetServerlessCacheSnapshotName = value; }
-    inline void SetTargetServerlessCacheSnapshotName(Aws::String&& value) { m_targetServerlessCacheSnapshotNameHasBeenSet = true; m_targetServerlessCacheSnapshotName = std::move(value); }
-    inline void SetTargetServerlessCacheSnapshotName(const char* value) { m_targetServerlessCacheSnapshotNameHasBeenSet = true; m_targetServerlessCacheSnapshotName.assign(value); }
-    inline CopyServerlessCacheSnapshotRequest& WithTargetServerlessCacheSnapshotName(const Aws::String& value) { SetTargetServerlessCacheSnapshotName(value); return *this;}
-    inline CopyServerlessCacheSnapshotRequest& WithTargetServerlessCacheSnapshotName(Aws::String&& value) { SetTargetServerlessCacheSnapshotName(std::move(value)); return *this;}
-    inline CopyServerlessCacheSnapshotRequest& WithTargetServerlessCacheSnapshotName(const char* value) { SetTargetServerlessCacheSnapshotName(value); return *this;}
+    template<typename TargetServerlessCacheSnapshotNameT = Aws::String>
+    void SetTargetServerlessCacheSnapshotName(TargetServerlessCacheSnapshotNameT&& value) { m_targetServerlessCacheSnapshotNameHasBeenSet = true; m_targetServerlessCacheSnapshotName = std::forward<TargetServerlessCacheSnapshotNameT>(value); }
+    template<typename TargetServerlessCacheSnapshotNameT = Aws::String>
+    CopyServerlessCacheSnapshotRequest& WithTargetServerlessCacheSnapshotName(TargetServerlessCacheSnapshotNameT&& value) { SetTargetServerlessCacheSnapshotName(std::forward<TargetServerlessCacheSnapshotNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p>The identifier of the KMS key used to encrypt the target snapshot. Available
      * for Valkey, Redis OSS and Serverless Memcached only.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline CopyServerlessCacheSnapshotRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline CopyServerlessCacheSnapshotRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline CopyServerlessCacheSnapshotRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    CopyServerlessCacheSnapshotRequest& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +83,14 @@ namespace Model
      * key-value pair. Available for Valkey, Redis OSS and Serverless Memcached only.
      * Default: NULL</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CopyServerlessCacheSnapshotRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CopyServerlessCacheSnapshotRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CopyServerlessCacheSnapshotRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CopyServerlessCacheSnapshotRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CopyServerlessCacheSnapshotRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CopyServerlessCacheSnapshotRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

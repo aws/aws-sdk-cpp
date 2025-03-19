@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TableFieldLinkConfiguration::TableFieldLinkConfiguration() : 
-    m_target(URLTargetConfiguration::NOT_SET),
-    m_targetHasBeenSet(false),
-    m_contentHasBeenSet(false)
-{
-}
-
 TableFieldLinkConfiguration::TableFieldLinkConfiguration(JsonView jsonValue)
-  : TableFieldLinkConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TableFieldLinkConfiguration& TableFieldLinkConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("Target"))
   {
     m_target = URLTargetConfigurationMapper::GetURLTargetConfigurationForName(jsonValue.GetString("Target"));
-
     m_targetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetObject("Content");
-
     m_contentHasBeenSet = true;
   }
-
   return *this;
 }
 

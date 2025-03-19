@@ -26,7 +26,7 @@ namespace Model
   class DeleteExpressionRequest : public CloudSearchRequest
   {
   public:
-    AWS_CLOUDSEARCH_API DeleteExpressionRequest();
+    AWS_CLOUDSEARCH_API DeleteExpressionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,28 +43,24 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline DeleteExpressionRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline DeleteExpressionRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline DeleteExpressionRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    DeleteExpressionRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the <code><a>Expression</a></code> to delete.</p>
      */
-    inline const Aws::String& GetExpressionName() const{ return m_expressionName; }
+    inline const Aws::String& GetExpressionName() const { return m_expressionName; }
     inline bool ExpressionNameHasBeenSet() const { return m_expressionNameHasBeenSet; }
-    inline void SetExpressionName(const Aws::String& value) { m_expressionNameHasBeenSet = true; m_expressionName = value; }
-    inline void SetExpressionName(Aws::String&& value) { m_expressionNameHasBeenSet = true; m_expressionName = std::move(value); }
-    inline void SetExpressionName(const char* value) { m_expressionNameHasBeenSet = true; m_expressionName.assign(value); }
-    inline DeleteExpressionRequest& WithExpressionName(const Aws::String& value) { SetExpressionName(value); return *this;}
-    inline DeleteExpressionRequest& WithExpressionName(Aws::String&& value) { SetExpressionName(std::move(value)); return *this;}
-    inline DeleteExpressionRequest& WithExpressionName(const char* value) { SetExpressionName(value); return *this;}
+    template<typename ExpressionNameT = Aws::String>
+    void SetExpressionName(ExpressionNameT&& value) { m_expressionNameHasBeenSet = true; m_expressionName = std::forward<ExpressionNameT>(value); }
+    template<typename ExpressionNameT = Aws::String>
+    DeleteExpressionRequest& WithExpressionName(ExpressionNameT&& value) { SetExpressionName(std::forward<ExpressionNameT>(value)); return *this;}
     ///@}
   private:
 

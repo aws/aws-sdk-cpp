@@ -21,7 +21,7 @@ namespace Model
   class AllocateStaticIpRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API AllocateStaticIpRequest();
+    AWS_LIGHTSAIL_API AllocateStaticIpRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the static IP address.</p>
      */
-    inline const Aws::String& GetStaticIpName() const{ return m_staticIpName; }
+    inline const Aws::String& GetStaticIpName() const { return m_staticIpName; }
     inline bool StaticIpNameHasBeenSet() const { return m_staticIpNameHasBeenSet; }
-    inline void SetStaticIpName(const Aws::String& value) { m_staticIpNameHasBeenSet = true; m_staticIpName = value; }
-    inline void SetStaticIpName(Aws::String&& value) { m_staticIpNameHasBeenSet = true; m_staticIpName = std::move(value); }
-    inline void SetStaticIpName(const char* value) { m_staticIpNameHasBeenSet = true; m_staticIpName.assign(value); }
-    inline AllocateStaticIpRequest& WithStaticIpName(const Aws::String& value) { SetStaticIpName(value); return *this;}
-    inline AllocateStaticIpRequest& WithStaticIpName(Aws::String&& value) { SetStaticIpName(std::move(value)); return *this;}
-    inline AllocateStaticIpRequest& WithStaticIpName(const char* value) { SetStaticIpName(value); return *this;}
+    template<typename StaticIpNameT = Aws::String>
+    void SetStaticIpName(StaticIpNameT&& value) { m_staticIpNameHasBeenSet = true; m_staticIpName = std::forward<StaticIpNameT>(value); }
+    template<typename StaticIpNameT = Aws::String>
+    AllocateStaticIpRequest& WithStaticIpName(StaticIpNameT&& value) { SetStaticIpName(std::forward<StaticIpNameT>(value)); return *this;}
     ///@}
   private:
 

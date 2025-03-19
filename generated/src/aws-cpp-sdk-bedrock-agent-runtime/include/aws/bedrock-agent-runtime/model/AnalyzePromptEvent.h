@@ -32,7 +32,7 @@ namespace Model
   class AnalyzePromptEvent
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API AnalyzePromptEvent();
+    AWS_BEDROCKAGENTRUNTIME_API AnalyzePromptEvent() = default;
     AWS_BEDROCKAGENTRUNTIME_API AnalyzePromptEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API AnalyzePromptEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>A message describing the analysis of the prompt.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline AnalyzePromptEvent& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline AnalyzePromptEvent& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline AnalyzePromptEvent& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    AnalyzePromptEvent& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 

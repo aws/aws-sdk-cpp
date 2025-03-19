@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRdsDbParameterGroup::AwsRdsDbParameterGroup() : 
-    m_dbParameterGroupNameHasBeenSet(false),
-    m_parameterApplyStatusHasBeenSet(false)
-{
-}
-
 AwsRdsDbParameterGroup::AwsRdsDbParameterGroup(JsonView jsonValue)
-  : AwsRdsDbParameterGroup()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsRdsDbParameterGroup& AwsRdsDbParameterGroup::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DbParameterGroupName"))
   {
     m_dbParameterGroupName = jsonValue.GetString("DbParameterGroupName");
-
     m_dbParameterGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParameterApplyStatus"))
   {
     m_parameterApplyStatus = jsonValue.GetString("ParameterApplyStatus");
-
     m_parameterApplyStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

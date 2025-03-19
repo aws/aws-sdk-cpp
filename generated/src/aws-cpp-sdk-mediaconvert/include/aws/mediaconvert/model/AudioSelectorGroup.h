@@ -35,7 +35,7 @@ namespace Model
   class AudioSelectorGroup
   {
   public:
-    AWS_MEDIACONVERT_API AudioSelectorGroup();
+    AWS_MEDIACONVERT_API AudioSelectorGroup() = default;
     AWS_MEDIACONVERT_API AudioSelectorGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API AudioSelectorGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,15 +48,14 @@ namespace Model
      * "Audio Selector 1"). The audio selector name parameter can be repeated to add
      * any number of audio selectors to the group.
      */
-    inline const Aws::Vector<Aws::String>& GetAudioSelectorNames() const{ return m_audioSelectorNames; }
+    inline const Aws::Vector<Aws::String>& GetAudioSelectorNames() const { return m_audioSelectorNames; }
     inline bool AudioSelectorNamesHasBeenSet() const { return m_audioSelectorNamesHasBeenSet; }
-    inline void SetAudioSelectorNames(const Aws::Vector<Aws::String>& value) { m_audioSelectorNamesHasBeenSet = true; m_audioSelectorNames = value; }
-    inline void SetAudioSelectorNames(Aws::Vector<Aws::String>&& value) { m_audioSelectorNamesHasBeenSet = true; m_audioSelectorNames = std::move(value); }
-    inline AudioSelectorGroup& WithAudioSelectorNames(const Aws::Vector<Aws::String>& value) { SetAudioSelectorNames(value); return *this;}
-    inline AudioSelectorGroup& WithAudioSelectorNames(Aws::Vector<Aws::String>&& value) { SetAudioSelectorNames(std::move(value)); return *this;}
-    inline AudioSelectorGroup& AddAudioSelectorNames(const Aws::String& value) { m_audioSelectorNamesHasBeenSet = true; m_audioSelectorNames.push_back(value); return *this; }
-    inline AudioSelectorGroup& AddAudioSelectorNames(Aws::String&& value) { m_audioSelectorNamesHasBeenSet = true; m_audioSelectorNames.push_back(std::move(value)); return *this; }
-    inline AudioSelectorGroup& AddAudioSelectorNames(const char* value) { m_audioSelectorNamesHasBeenSet = true; m_audioSelectorNames.push_back(value); return *this; }
+    template<typename AudioSelectorNamesT = Aws::Vector<Aws::String>>
+    void SetAudioSelectorNames(AudioSelectorNamesT&& value) { m_audioSelectorNamesHasBeenSet = true; m_audioSelectorNames = std::forward<AudioSelectorNamesT>(value); }
+    template<typename AudioSelectorNamesT = Aws::Vector<Aws::String>>
+    AudioSelectorGroup& WithAudioSelectorNames(AudioSelectorNamesT&& value) { SetAudioSelectorNames(std::forward<AudioSelectorNamesT>(value)); return *this;}
+    template<typename AudioSelectorNamesT = Aws::String>
+    AudioSelectorGroup& AddAudioSelectorNames(AudioSelectorNamesT&& value) { m_audioSelectorNamesHasBeenSet = true; m_audioSelectorNames.emplace_back(std::forward<AudioSelectorNamesT>(value)); return *this; }
     ///@}
   private:
 

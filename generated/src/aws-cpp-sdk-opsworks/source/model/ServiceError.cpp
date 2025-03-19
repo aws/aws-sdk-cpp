@@ -18,18 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-ServiceError::ServiceError() : 
-    m_serviceErrorIdHasBeenSet(false),
-    m_stackIdHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_createdAtHasBeenSet(false)
-{
-}
-
 ServiceError::ServiceError(JsonView jsonValue)
-  : ServiceError()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ ServiceError& ServiceError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ServiceErrorId"))
   {
     m_serviceErrorId = jsonValue.GetString("ServiceErrorId");
-
     m_serviceErrorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StackId"))
   {
     m_stackId = jsonValue.GetString("StackId");
-
     m_stackIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   return *this;
 }
 

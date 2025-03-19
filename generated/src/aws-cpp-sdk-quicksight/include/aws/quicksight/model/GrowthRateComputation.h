@@ -33,7 +33,7 @@ namespace Model
   class GrowthRateComputation
   {
   public:
-    AWS_QUICKSIGHT_API GrowthRateComputation();
+    AWS_QUICKSIGHT_API GrowthRateComputation() = default;
     AWS_QUICKSIGHT_API GrowthRateComputation(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GrowthRateComputation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,59 +43,55 @@ namespace Model
     /**
      * <p>The ID for a computation.</p>
      */
-    inline const Aws::String& GetComputationId() const{ return m_computationId; }
+    inline const Aws::String& GetComputationId() const { return m_computationId; }
     inline bool ComputationIdHasBeenSet() const { return m_computationIdHasBeenSet; }
-    inline void SetComputationId(const Aws::String& value) { m_computationIdHasBeenSet = true; m_computationId = value; }
-    inline void SetComputationId(Aws::String&& value) { m_computationIdHasBeenSet = true; m_computationId = std::move(value); }
-    inline void SetComputationId(const char* value) { m_computationIdHasBeenSet = true; m_computationId.assign(value); }
-    inline GrowthRateComputation& WithComputationId(const Aws::String& value) { SetComputationId(value); return *this;}
-    inline GrowthRateComputation& WithComputationId(Aws::String&& value) { SetComputationId(std::move(value)); return *this;}
-    inline GrowthRateComputation& WithComputationId(const char* value) { SetComputationId(value); return *this;}
+    template<typename ComputationIdT = Aws::String>
+    void SetComputationId(ComputationIdT&& value) { m_computationIdHasBeenSet = true; m_computationId = std::forward<ComputationIdT>(value); }
+    template<typename ComputationIdT = Aws::String>
+    GrowthRateComputation& WithComputationId(ComputationIdT&& value) { SetComputationId(std::forward<ComputationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of a computation.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline GrowthRateComputation& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GrowthRateComputation& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GrowthRateComputation& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GrowthRateComputation& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time field that is used in a computation.</p>
      */
-    inline const DimensionField& GetTime() const{ return m_time; }
+    inline const DimensionField& GetTime() const { return m_time; }
     inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
-    inline void SetTime(const DimensionField& value) { m_timeHasBeenSet = true; m_time = value; }
-    inline void SetTime(DimensionField&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
-    inline GrowthRateComputation& WithTime(const DimensionField& value) { SetTime(value); return *this;}
-    inline GrowthRateComputation& WithTime(DimensionField&& value) { SetTime(std::move(value)); return *this;}
+    template<typename TimeT = DimensionField>
+    void SetTime(TimeT&& value) { m_timeHasBeenSet = true; m_time = std::forward<TimeT>(value); }
+    template<typename TimeT = DimensionField>
+    GrowthRateComputation& WithTime(TimeT&& value) { SetTime(std::forward<TimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value field that is used in a computation.</p>
      */
-    inline const MeasureField& GetValue() const{ return m_value; }
+    inline const MeasureField& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const MeasureField& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(MeasureField&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline GrowthRateComputation& WithValue(const MeasureField& value) { SetValue(value); return *this;}
-    inline GrowthRateComputation& WithValue(MeasureField&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = MeasureField>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = MeasureField>
+    GrowthRateComputation& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The period size setup of a growth rate computation.</p>
      */
-    inline int GetPeriodSize() const{ return m_periodSize; }
+    inline int GetPeriodSize() const { return m_periodSize; }
     inline bool PeriodSizeHasBeenSet() const { return m_periodSizeHasBeenSet; }
     inline void SetPeriodSize(int value) { m_periodSizeHasBeenSet = true; m_periodSize = value; }
     inline GrowthRateComputation& WithPeriodSize(int value) { SetPeriodSize(value); return *this;}
@@ -114,7 +110,7 @@ namespace Model
     MeasureField m_value;
     bool m_valueHasBeenSet = false;
 
-    int m_periodSize;
+    int m_periodSize{0};
     bool m_periodSizeHasBeenSet = false;
   };
 

@@ -29,7 +29,7 @@ namespace Model
   class BatchDisassociateResourcesFromCustomLineItemResult
   {
   public:
-    AWS_BILLINGCONDUCTOR_API BatchDisassociateResourcesFromCustomLineItemResult();
+    AWS_BILLINGCONDUCTOR_API BatchDisassociateResourcesFromCustomLineItemResult() = default;
     AWS_BILLINGCONDUCTOR_API BatchDisassociateResourcesFromCustomLineItemResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BILLINGCONDUCTOR_API BatchDisassociateResourcesFromCustomLineItemResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p> A list of <code>DisassociateResourceResponseElement</code> for each resource
      * that's been disassociated from a percentage custom line item successfully. </p>
      */
-    inline const Aws::Vector<DisassociateResourceResponseElement>& GetSuccessfullyDisassociatedResources() const{ return m_successfullyDisassociatedResources; }
-    inline void SetSuccessfullyDisassociatedResources(const Aws::Vector<DisassociateResourceResponseElement>& value) { m_successfullyDisassociatedResources = value; }
-    inline void SetSuccessfullyDisassociatedResources(Aws::Vector<DisassociateResourceResponseElement>&& value) { m_successfullyDisassociatedResources = std::move(value); }
-    inline BatchDisassociateResourcesFromCustomLineItemResult& WithSuccessfullyDisassociatedResources(const Aws::Vector<DisassociateResourceResponseElement>& value) { SetSuccessfullyDisassociatedResources(value); return *this;}
-    inline BatchDisassociateResourcesFromCustomLineItemResult& WithSuccessfullyDisassociatedResources(Aws::Vector<DisassociateResourceResponseElement>&& value) { SetSuccessfullyDisassociatedResources(std::move(value)); return *this;}
-    inline BatchDisassociateResourcesFromCustomLineItemResult& AddSuccessfullyDisassociatedResources(const DisassociateResourceResponseElement& value) { m_successfullyDisassociatedResources.push_back(value); return *this; }
-    inline BatchDisassociateResourcesFromCustomLineItemResult& AddSuccessfullyDisassociatedResources(DisassociateResourceResponseElement&& value) { m_successfullyDisassociatedResources.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DisassociateResourceResponseElement>& GetSuccessfullyDisassociatedResources() const { return m_successfullyDisassociatedResources; }
+    template<typename SuccessfullyDisassociatedResourcesT = Aws::Vector<DisassociateResourceResponseElement>>
+    void SetSuccessfullyDisassociatedResources(SuccessfullyDisassociatedResourcesT&& value) { m_successfullyDisassociatedResourcesHasBeenSet = true; m_successfullyDisassociatedResources = std::forward<SuccessfullyDisassociatedResourcesT>(value); }
+    template<typename SuccessfullyDisassociatedResourcesT = Aws::Vector<DisassociateResourceResponseElement>>
+    BatchDisassociateResourcesFromCustomLineItemResult& WithSuccessfullyDisassociatedResources(SuccessfullyDisassociatedResourcesT&& value) { SetSuccessfullyDisassociatedResources(std::forward<SuccessfullyDisassociatedResourcesT>(value)); return *this;}
+    template<typename SuccessfullyDisassociatedResourcesT = DisassociateResourceResponseElement>
+    BatchDisassociateResourcesFromCustomLineItemResult& AddSuccessfullyDisassociatedResources(SuccessfullyDisassociatedResourcesT&& value) { m_successfullyDisassociatedResourcesHasBeenSet = true; m_successfullyDisassociatedResources.emplace_back(std::forward<SuccessfullyDisassociatedResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,33 @@ namespace Model
      * <p> A list of <code>DisassociateResourceResponseElement</code> for each resource
      * that failed disassociation from a percentage custom line item. </p>
      */
-    inline const Aws::Vector<DisassociateResourceResponseElement>& GetFailedDisassociatedResources() const{ return m_failedDisassociatedResources; }
-    inline void SetFailedDisassociatedResources(const Aws::Vector<DisassociateResourceResponseElement>& value) { m_failedDisassociatedResources = value; }
-    inline void SetFailedDisassociatedResources(Aws::Vector<DisassociateResourceResponseElement>&& value) { m_failedDisassociatedResources = std::move(value); }
-    inline BatchDisassociateResourcesFromCustomLineItemResult& WithFailedDisassociatedResources(const Aws::Vector<DisassociateResourceResponseElement>& value) { SetFailedDisassociatedResources(value); return *this;}
-    inline BatchDisassociateResourcesFromCustomLineItemResult& WithFailedDisassociatedResources(Aws::Vector<DisassociateResourceResponseElement>&& value) { SetFailedDisassociatedResources(std::move(value)); return *this;}
-    inline BatchDisassociateResourcesFromCustomLineItemResult& AddFailedDisassociatedResources(const DisassociateResourceResponseElement& value) { m_failedDisassociatedResources.push_back(value); return *this; }
-    inline BatchDisassociateResourcesFromCustomLineItemResult& AddFailedDisassociatedResources(DisassociateResourceResponseElement&& value) { m_failedDisassociatedResources.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DisassociateResourceResponseElement>& GetFailedDisassociatedResources() const { return m_failedDisassociatedResources; }
+    template<typename FailedDisassociatedResourcesT = Aws::Vector<DisassociateResourceResponseElement>>
+    void SetFailedDisassociatedResources(FailedDisassociatedResourcesT&& value) { m_failedDisassociatedResourcesHasBeenSet = true; m_failedDisassociatedResources = std::forward<FailedDisassociatedResourcesT>(value); }
+    template<typename FailedDisassociatedResourcesT = Aws::Vector<DisassociateResourceResponseElement>>
+    BatchDisassociateResourcesFromCustomLineItemResult& WithFailedDisassociatedResources(FailedDisassociatedResourcesT&& value) { SetFailedDisassociatedResources(std::forward<FailedDisassociatedResourcesT>(value)); return *this;}
+    template<typename FailedDisassociatedResourcesT = DisassociateResourceResponseElement>
+    BatchDisassociateResourcesFromCustomLineItemResult& AddFailedDisassociatedResources(FailedDisassociatedResourcesT&& value) { m_failedDisassociatedResourcesHasBeenSet = true; m_failedDisassociatedResources.emplace_back(std::forward<FailedDisassociatedResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchDisassociateResourcesFromCustomLineItemResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchDisassociateResourcesFromCustomLineItemResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchDisassociateResourcesFromCustomLineItemResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchDisassociateResourcesFromCustomLineItemResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DisassociateResourceResponseElement> m_successfullyDisassociatedResources;
+    bool m_successfullyDisassociatedResourcesHasBeenSet = false;
 
     Aws::Vector<DisassociateResourceResponseElement> m_failedDisassociatedResources;
+    bool m_failedDisassociatedResourcesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

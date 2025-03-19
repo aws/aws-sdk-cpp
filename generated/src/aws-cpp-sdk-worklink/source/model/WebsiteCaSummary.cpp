@@ -18,15 +18,7 @@ namespace WorkLink
 namespace Model
 {
 
-WebsiteCaSummary::WebsiteCaSummary() : 
-    m_websiteCaIdHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
-{
-}
-
 WebsiteCaSummary::WebsiteCaSummary(JsonView jsonValue)
-  : WebsiteCaSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ WebsiteCaSummary& WebsiteCaSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WebsiteCaId"))
   {
     m_websiteCaId = jsonValue.GetString("WebsiteCaId");
-
     m_websiteCaIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   return *this;
 }
 

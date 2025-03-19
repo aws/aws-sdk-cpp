@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListFunctionsByCodeSigningConfigResult::ListFunctionsByCodeSigningConfigResult()
-{
-}
-
 ListFunctionsByCodeSigningConfigResult::ListFunctionsByCodeSigningConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListFunctionsByCodeSigningConfigResult& ListFunctionsByCodeSigningConfigResult::
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
-
+    m_nextMarkerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FunctionArns"))
   {
     Aws::Utils::Array<JsonView> functionArnsJsonList = jsonValue.GetArray("FunctionArns");
@@ -42,14 +37,15 @@ ListFunctionsByCodeSigningConfigResult& ListFunctionsByCodeSigningConfigResult::
     {
       m_functionArns.push_back(functionArnsJsonList[functionArnsIndex].AsString());
     }
+    m_functionArnsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

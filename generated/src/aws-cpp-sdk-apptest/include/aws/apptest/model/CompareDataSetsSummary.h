@@ -32,7 +32,7 @@ namespace Model
   class CompareDataSetsSummary
   {
   public:
-    AWS_APPTEST_API CompareDataSetsSummary();
+    AWS_APPTEST_API CompareDataSetsSummary() = default;
     AWS_APPTEST_API CompareDataSetsSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API CompareDataSetsSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,24 +42,24 @@ namespace Model
     /**
      * <p>The step input of the compare data sets summary.</p>
      */
-    inline const CompareDataSetsStepInput& GetStepInput() const{ return m_stepInput; }
+    inline const CompareDataSetsStepInput& GetStepInput() const { return m_stepInput; }
     inline bool StepInputHasBeenSet() const { return m_stepInputHasBeenSet; }
-    inline void SetStepInput(const CompareDataSetsStepInput& value) { m_stepInputHasBeenSet = true; m_stepInput = value; }
-    inline void SetStepInput(CompareDataSetsStepInput&& value) { m_stepInputHasBeenSet = true; m_stepInput = std::move(value); }
-    inline CompareDataSetsSummary& WithStepInput(const CompareDataSetsStepInput& value) { SetStepInput(value); return *this;}
-    inline CompareDataSetsSummary& WithStepInput(CompareDataSetsStepInput&& value) { SetStepInput(std::move(value)); return *this;}
+    template<typename StepInputT = CompareDataSetsStepInput>
+    void SetStepInput(StepInputT&& value) { m_stepInputHasBeenSet = true; m_stepInput = std::forward<StepInputT>(value); }
+    template<typename StepInputT = CompareDataSetsStepInput>
+    CompareDataSetsSummary& WithStepInput(StepInputT&& value) { SetStepInput(std::forward<StepInputT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The step output of the compare data sets summary.</p>
      */
-    inline const CompareDataSetsStepOutput& GetStepOutput() const{ return m_stepOutput; }
+    inline const CompareDataSetsStepOutput& GetStepOutput() const { return m_stepOutput; }
     inline bool StepOutputHasBeenSet() const { return m_stepOutputHasBeenSet; }
-    inline void SetStepOutput(const CompareDataSetsStepOutput& value) { m_stepOutputHasBeenSet = true; m_stepOutput = value; }
-    inline void SetStepOutput(CompareDataSetsStepOutput&& value) { m_stepOutputHasBeenSet = true; m_stepOutput = std::move(value); }
-    inline CompareDataSetsSummary& WithStepOutput(const CompareDataSetsStepOutput& value) { SetStepOutput(value); return *this;}
-    inline CompareDataSetsSummary& WithStepOutput(CompareDataSetsStepOutput&& value) { SetStepOutput(std::move(value)); return *this;}
+    template<typename StepOutputT = CompareDataSetsStepOutput>
+    void SetStepOutput(StepOutputT&& value) { m_stepOutputHasBeenSet = true; m_stepOutput = std::forward<StepOutputT>(value); }
+    template<typename StepOutputT = CompareDataSetsStepOutput>
+    CompareDataSetsSummary& WithStepOutput(StepOutputT&& value) { SetStepOutput(std::forward<StepOutputT>(value)); return *this;}
     ///@}
   private:
 

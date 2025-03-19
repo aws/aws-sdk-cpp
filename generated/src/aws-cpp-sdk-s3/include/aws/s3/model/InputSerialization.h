@@ -34,7 +34,7 @@ namespace Model
   class InputSerialization
   {
   public:
-    AWS_S3_API InputSerialization();
+    AWS_S3_API InputSerialization() = default;
     AWS_S3_API InputSerialization(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3_API InputSerialization& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,12 +45,12 @@ namespace Model
     /**
      * <p>Describes the serialization of a CSV-encoded object.</p>
      */
-    inline const CSVInput& GetCSV() const{ return m_cSV; }
+    inline const CSVInput& GetCSV() const { return m_cSV; }
     inline bool CSVHasBeenSet() const { return m_cSVHasBeenSet; }
-    inline void SetCSV(const CSVInput& value) { m_cSVHasBeenSet = true; m_cSV = value; }
-    inline void SetCSV(CSVInput&& value) { m_cSVHasBeenSet = true; m_cSV = std::move(value); }
-    inline InputSerialization& WithCSV(const CSVInput& value) { SetCSV(value); return *this;}
-    inline InputSerialization& WithCSV(CSVInput&& value) { SetCSV(std::move(value)); return *this;}
+    template<typename CSVT = CSVInput>
+    void SetCSV(CSVT&& value) { m_cSVHasBeenSet = true; m_cSV = std::forward<CSVT>(value); }
+    template<typename CSVT = CSVInput>
+    InputSerialization& WithCSV(CSVT&& value) { SetCSV(std::forward<CSVT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,43 +58,41 @@ namespace Model
      * <p>Specifies object's compression format. Valid values: NONE, GZIP, BZIP2.
      * Default Value: NONE.</p>
      */
-    inline const CompressionType& GetCompressionType() const{ return m_compressionType; }
+    inline CompressionType GetCompressionType() const { return m_compressionType; }
     inline bool CompressionTypeHasBeenSet() const { return m_compressionTypeHasBeenSet; }
-    inline void SetCompressionType(const CompressionType& value) { m_compressionTypeHasBeenSet = true; m_compressionType = value; }
-    inline void SetCompressionType(CompressionType&& value) { m_compressionTypeHasBeenSet = true; m_compressionType = std::move(value); }
-    inline InputSerialization& WithCompressionType(const CompressionType& value) { SetCompressionType(value); return *this;}
-    inline InputSerialization& WithCompressionType(CompressionType&& value) { SetCompressionType(std::move(value)); return *this;}
+    inline void SetCompressionType(CompressionType value) { m_compressionTypeHasBeenSet = true; m_compressionType = value; }
+    inline InputSerialization& WithCompressionType(CompressionType value) { SetCompressionType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies JSON as object's input serialization format.</p>
      */
-    inline const JSONInput& GetJSON() const{ return m_jSON; }
+    inline const JSONInput& GetJSON() const { return m_jSON; }
     inline bool JSONHasBeenSet() const { return m_jSONHasBeenSet; }
-    inline void SetJSON(const JSONInput& value) { m_jSONHasBeenSet = true; m_jSON = value; }
-    inline void SetJSON(JSONInput&& value) { m_jSONHasBeenSet = true; m_jSON = std::move(value); }
-    inline InputSerialization& WithJSON(const JSONInput& value) { SetJSON(value); return *this;}
-    inline InputSerialization& WithJSON(JSONInput&& value) { SetJSON(std::move(value)); return *this;}
+    template<typename JSONT = JSONInput>
+    void SetJSON(JSONT&& value) { m_jSONHasBeenSet = true; m_jSON = std::forward<JSONT>(value); }
+    template<typename JSONT = JSONInput>
+    InputSerialization& WithJSON(JSONT&& value) { SetJSON(std::forward<JSONT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies Parquet as object's input serialization format.</p>
      */
-    inline const ParquetInput& GetParquet() const{ return m_parquet; }
+    inline const ParquetInput& GetParquet() const { return m_parquet; }
     inline bool ParquetHasBeenSet() const { return m_parquetHasBeenSet; }
-    inline void SetParquet(const ParquetInput& value) { m_parquetHasBeenSet = true; m_parquet = value; }
-    inline void SetParquet(ParquetInput&& value) { m_parquetHasBeenSet = true; m_parquet = std::move(value); }
-    inline InputSerialization& WithParquet(const ParquetInput& value) { SetParquet(value); return *this;}
-    inline InputSerialization& WithParquet(ParquetInput&& value) { SetParquet(std::move(value)); return *this;}
+    template<typename ParquetT = ParquetInput>
+    void SetParquet(ParquetT&& value) { m_parquetHasBeenSet = true; m_parquet = std::forward<ParquetT>(value); }
+    template<typename ParquetT = ParquetInput>
+    InputSerialization& WithParquet(ParquetT&& value) { SetParquet(std::forward<ParquetT>(value)); return *this;}
     ///@}
   private:
 
     CSVInput m_cSV;
     bool m_cSVHasBeenSet = false;
 
-    CompressionType m_compressionType;
+    CompressionType m_compressionType{CompressionType::NOT_SET};
     bool m_compressionTypeHasBeenSet = false;
 
     JSONInput m_jSON;

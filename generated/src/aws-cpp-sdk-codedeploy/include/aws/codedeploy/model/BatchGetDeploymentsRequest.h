@@ -26,7 +26,7 @@ namespace Model
   class BatchGetDeploymentsRequest : public CodeDeployRequest
   {
   public:
-    AWS_CODEDEPLOY_API BatchGetDeploymentsRequest();
+    AWS_CODEDEPLOY_API BatchGetDeploymentsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,15 +44,14 @@ namespace Model
      * <p> A list of deployment IDs, separated by spaces. The maximum number of
      * deployment IDs you can specify is 25.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDeploymentIds() const{ return m_deploymentIds; }
+    inline const Aws::Vector<Aws::String>& GetDeploymentIds() const { return m_deploymentIds; }
     inline bool DeploymentIdsHasBeenSet() const { return m_deploymentIdsHasBeenSet; }
-    inline void SetDeploymentIds(const Aws::Vector<Aws::String>& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds = value; }
-    inline void SetDeploymentIds(Aws::Vector<Aws::String>&& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds = std::move(value); }
-    inline BatchGetDeploymentsRequest& WithDeploymentIds(const Aws::Vector<Aws::String>& value) { SetDeploymentIds(value); return *this;}
-    inline BatchGetDeploymentsRequest& WithDeploymentIds(Aws::Vector<Aws::String>&& value) { SetDeploymentIds(std::move(value)); return *this;}
-    inline BatchGetDeploymentsRequest& AddDeploymentIds(const Aws::String& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds.push_back(value); return *this; }
-    inline BatchGetDeploymentsRequest& AddDeploymentIds(Aws::String&& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds.push_back(std::move(value)); return *this; }
-    inline BatchGetDeploymentsRequest& AddDeploymentIds(const char* value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds.push_back(value); return *this; }
+    template<typename DeploymentIdsT = Aws::Vector<Aws::String>>
+    void SetDeploymentIds(DeploymentIdsT&& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds = std::forward<DeploymentIdsT>(value); }
+    template<typename DeploymentIdsT = Aws::Vector<Aws::String>>
+    BatchGetDeploymentsRequest& WithDeploymentIds(DeploymentIdsT&& value) { SetDeploymentIds(std::forward<DeploymentIdsT>(value)); return *this;}
+    template<typename DeploymentIdsT = Aws::String>
+    BatchGetDeploymentsRequest& AddDeploymentIds(DeploymentIdsT&& value) { m_deploymentIdsHasBeenSet = true; m_deploymentIds.emplace_back(std::forward<DeploymentIdsT>(value)); return *this; }
     ///@}
   private:
 

@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAccessGrantsInstanceResourcePolicyResult::GetAccessGrantsInstanceResourcePolicyResult()
-{
-}
-
 GetAccessGrantsInstanceResourcePolicyResult::GetAccessGrantsInstanceResourcePolicyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,16 +32,19 @@ GetAccessGrantsInstanceResourcePolicyResult& GetAccessGrantsInstanceResourcePoli
     if(!policyNode.IsNull())
     {
       m_policy = Aws::Utils::Xml::DecodeEscapedXmlText(policyNode.GetText());
+      m_policyHasBeenSet = true;
     }
     XmlNode organizationNode = resultNode.FirstChild("Organization");
     if(!organizationNode.IsNull())
     {
       m_organization = Aws::Utils::Xml::DecodeEscapedXmlText(organizationNode.GetText());
+      m_organizationHasBeenSet = true;
     }
     XmlNode createdAtNode = resultNode.FirstChild("CreatedAt");
     if(!createdAtNode.IsNull())
     {
       m_createdAt = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(createdAtNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_createdAtHasBeenSet = true;
     }
   }
 
@@ -54,12 +53,14 @@ GetAccessGrantsInstanceResourcePolicyResult& GetAccessGrantsInstanceResourcePoli
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   const auto& hostIdIter = headers.find("x-amz-id-2");
   if(hostIdIter != headers.end())
   {
     m_hostId = hostIdIter->second;
+    m_hostIdHasBeenSet = true;
   }
 
   return *this;

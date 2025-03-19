@@ -34,7 +34,7 @@ namespace Model
   class GetRolePolicyResult
   {
   public:
-    AWS_IAM_API GetRolePolicyResult();
+    AWS_IAM_API GetRolePolicyResult() = default;
     AWS_IAM_API GetRolePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_IAM_API GetRolePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -43,26 +43,22 @@ namespace Model
     /**
      * <p>The role the policy is associated with.</p>
      */
-    inline const Aws::String& GetRoleName() const{ return m_roleName; }
-    inline void SetRoleName(const Aws::String& value) { m_roleName = value; }
-    inline void SetRoleName(Aws::String&& value) { m_roleName = std::move(value); }
-    inline void SetRoleName(const char* value) { m_roleName.assign(value); }
-    inline GetRolePolicyResult& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
-    inline GetRolePolicyResult& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
-    inline GetRolePolicyResult& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+    inline const Aws::String& GetRoleName() const { return m_roleName; }
+    template<typename RoleNameT = Aws::String>
+    void SetRoleName(RoleNameT&& value) { m_roleNameHasBeenSet = true; m_roleName = std::forward<RoleNameT>(value); }
+    template<typename RoleNameT = Aws::String>
+    GetRolePolicyResult& WithRoleName(RoleNameT&& value) { SetRoleName(std::forward<RoleNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the policy.</p>
      */
-    inline const Aws::String& GetPolicyName() const{ return m_policyName; }
-    inline void SetPolicyName(const Aws::String& value) { m_policyName = value; }
-    inline void SetPolicyName(Aws::String&& value) { m_policyName = std::move(value); }
-    inline void SetPolicyName(const char* value) { m_policyName.assign(value); }
-    inline GetRolePolicyResult& WithPolicyName(const Aws::String& value) { SetPolicyName(value); return *this;}
-    inline GetRolePolicyResult& WithPolicyName(Aws::String&& value) { SetPolicyName(std::move(value)); return *this;}
-    inline GetRolePolicyResult& WithPolicyName(const char* value) { SetPolicyName(value); return *this;}
+    inline const Aws::String& GetPolicyName() const { return m_policyName; }
+    template<typename PolicyNameT = Aws::String>
+    void SetPolicyName(PolicyNameT&& value) { m_policyNameHasBeenSet = true; m_policyName = std::forward<PolicyNameT>(value); }
+    template<typename PolicyNameT = Aws::String>
+    GetRolePolicyResult& WithPolicyName(PolicyNameT&& value) { SetPolicyName(std::forward<PolicyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,32 +68,34 @@ namespace Model
      * YAML. CloudFormation always converts a YAML policy to JSON format before
      * submitting it to IAM.</p>
      */
-    inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
-    inline void SetPolicyDocument(const Aws::String& value) { m_policyDocument = value; }
-    inline void SetPolicyDocument(Aws::String&& value) { m_policyDocument = std::move(value); }
-    inline void SetPolicyDocument(const char* value) { m_policyDocument.assign(value); }
-    inline GetRolePolicyResult& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
-    inline GetRolePolicyResult& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
-    inline GetRolePolicyResult& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
+    inline const Aws::String& GetPolicyDocument() const { return m_policyDocument; }
+    template<typename PolicyDocumentT = Aws::String>
+    void SetPolicyDocument(PolicyDocumentT&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::forward<PolicyDocumentT>(value); }
+    template<typename PolicyDocumentT = Aws::String>
+    GetRolePolicyResult& WithPolicyDocument(PolicyDocumentT&& value) { SetPolicyDocument(std::forward<PolicyDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetRolePolicyResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetRolePolicyResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetRolePolicyResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_roleName;
+    bool m_roleNameHasBeenSet = false;
 
     Aws::String m_policyName;
+    bool m_policyNameHasBeenSet = false;
 
     Aws::String m_policyDocument;
+    bool m_policyDocumentHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

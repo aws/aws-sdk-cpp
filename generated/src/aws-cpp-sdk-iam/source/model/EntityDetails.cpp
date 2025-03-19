@@ -20,14 +20,7 @@ namespace IAM
 namespace Model
 {
 
-EntityDetails::EntityDetails() : 
-    m_entityInfoHasBeenSet(false),
-    m_lastAuthenticatedHasBeenSet(false)
-{
-}
-
 EntityDetails::EntityDetails(const XmlNode& xmlNode)
-  : EntityDetails()
 {
   *this = xmlNode;
 }

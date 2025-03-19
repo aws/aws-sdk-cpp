@@ -23,7 +23,7 @@ namespace Model
   class TranslateTextRequest : public TranslateRequest
   {
   public:
-    AWS_TRANSLATE_API TranslateTextRequest();
+    AWS_TRANSLATE_API TranslateTextRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The text to translate. The text string can be a maximum of 10,000 bytes long.
      * Depending on your character set, this may be fewer than 10,000 characters.</p>
      */
-    inline const Aws::String& GetText() const{ return m_text; }
+    inline const Aws::String& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(Aws::String&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline void SetText(const char* value) { m_textHasBeenSet = true; m_text.assign(value); }
-    inline TranslateTextRequest& WithText(const Aws::String& value) { SetText(value); return *this;}
-    inline TranslateTextRequest& WithText(Aws::String&& value) { SetText(std::move(value)); return *this;}
-    inline TranslateTextRequest& WithText(const char* value) { SetText(value); return *this;}
+    template<typename TextT = Aws::String>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = Aws::String>
+    TranslateTextRequest& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,15 +60,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom
      * terminology</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTerminologyNames() const{ return m_terminologyNames; }
+    inline const Aws::Vector<Aws::String>& GetTerminologyNames() const { return m_terminologyNames; }
     inline bool TerminologyNamesHasBeenSet() const { return m_terminologyNamesHasBeenSet; }
-    inline void SetTerminologyNames(const Aws::Vector<Aws::String>& value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames = value; }
-    inline void SetTerminologyNames(Aws::Vector<Aws::String>&& value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames = std::move(value); }
-    inline TranslateTextRequest& WithTerminologyNames(const Aws::Vector<Aws::String>& value) { SetTerminologyNames(value); return *this;}
-    inline TranslateTextRequest& WithTerminologyNames(Aws::Vector<Aws::String>&& value) { SetTerminologyNames(std::move(value)); return *this;}
-    inline TranslateTextRequest& AddTerminologyNames(const Aws::String& value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames.push_back(value); return *this; }
-    inline TranslateTextRequest& AddTerminologyNames(Aws::String&& value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames.push_back(std::move(value)); return *this; }
-    inline TranslateTextRequest& AddTerminologyNames(const char* value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames.push_back(value); return *this; }
+    template<typename TerminologyNamesT = Aws::Vector<Aws::String>>
+    void SetTerminologyNames(TerminologyNamesT&& value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames = std::forward<TerminologyNamesT>(value); }
+    template<typename TerminologyNamesT = Aws::Vector<Aws::String>>
+    TranslateTextRequest& WithTerminologyNames(TerminologyNamesT&& value) { SetTerminologyNames(std::forward<TerminologyNamesT>(value)); return *this;}
+    template<typename TerminologyNamesT = Aws::String>
+    TranslateTextRequest& AddTerminologyNames(TerminologyNamesT&& value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames.emplace_back(std::forward<TerminologyNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -88,14 +85,12 @@ namespace Model
      * region that supports Amazon Comprehend. Otherwise, the request returns an error
      * indicating that autodetect is not supported. </p> 
      */
-    inline const Aws::String& GetSourceLanguageCode() const{ return m_sourceLanguageCode; }
+    inline const Aws::String& GetSourceLanguageCode() const { return m_sourceLanguageCode; }
     inline bool SourceLanguageCodeHasBeenSet() const { return m_sourceLanguageCodeHasBeenSet; }
-    inline void SetSourceLanguageCode(const Aws::String& value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode = value; }
-    inline void SetSourceLanguageCode(Aws::String&& value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode = std::move(value); }
-    inline void SetSourceLanguageCode(const char* value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode.assign(value); }
-    inline TranslateTextRequest& WithSourceLanguageCode(const Aws::String& value) { SetSourceLanguageCode(value); return *this;}
-    inline TranslateTextRequest& WithSourceLanguageCode(Aws::String&& value) { SetSourceLanguageCode(std::move(value)); return *this;}
-    inline TranslateTextRequest& WithSourceLanguageCode(const char* value) { SetSourceLanguageCode(value); return *this;}
+    template<typename SourceLanguageCodeT = Aws::String>
+    void SetSourceLanguageCode(SourceLanguageCodeT&& value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode = std::forward<SourceLanguageCodeT>(value); }
+    template<typename SourceLanguageCodeT = Aws::String>
+    TranslateTextRequest& WithSourceLanguageCode(SourceLanguageCodeT&& value) { SetSourceLanguageCode(std::forward<SourceLanguageCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +100,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
      * languages</a>.</p>
      */
-    inline const Aws::String& GetTargetLanguageCode() const{ return m_targetLanguageCode; }
+    inline const Aws::String& GetTargetLanguageCode() const { return m_targetLanguageCode; }
     inline bool TargetLanguageCodeHasBeenSet() const { return m_targetLanguageCodeHasBeenSet; }
-    inline void SetTargetLanguageCode(const Aws::String& value) { m_targetLanguageCodeHasBeenSet = true; m_targetLanguageCode = value; }
-    inline void SetTargetLanguageCode(Aws::String&& value) { m_targetLanguageCodeHasBeenSet = true; m_targetLanguageCode = std::move(value); }
-    inline void SetTargetLanguageCode(const char* value) { m_targetLanguageCodeHasBeenSet = true; m_targetLanguageCode.assign(value); }
-    inline TranslateTextRequest& WithTargetLanguageCode(const Aws::String& value) { SetTargetLanguageCode(value); return *this;}
-    inline TranslateTextRequest& WithTargetLanguageCode(Aws::String&& value) { SetTargetLanguageCode(std::move(value)); return *this;}
-    inline TranslateTextRequest& WithTargetLanguageCode(const char* value) { SetTargetLanguageCode(value); return *this;}
+    template<typename TargetLanguageCodeT = Aws::String>
+    void SetTargetLanguageCode(TargetLanguageCodeT&& value) { m_targetLanguageCodeHasBeenSet = true; m_targetLanguageCode = std::forward<TargetLanguageCodeT>(value); }
+    template<typename TargetLanguageCodeT = Aws::String>
+    TranslateTextRequest& WithTargetLanguageCode(TargetLanguageCodeT&& value) { SetTargetLanguageCode(std::forward<TargetLanguageCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,12 +116,12 @@ namespace Model
      * formality level of the output text.</p> </li> <li> <p>Profanity: masks profane
      * words and phrases in your translation output.</p> </li> </ul>
      */
-    inline const TranslationSettings& GetSettings() const{ return m_settings; }
+    inline const TranslationSettings& GetSettings() const { return m_settings; }
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
-    inline void SetSettings(const TranslationSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
-    inline void SetSettings(TranslationSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
-    inline TranslateTextRequest& WithSettings(const TranslationSettings& value) { SetSettings(value); return *this;}
-    inline TranslateTextRequest& WithSettings(TranslationSettings&& value) { SetSettings(std::move(value)); return *this;}
+    template<typename SettingsT = TranslationSettings>
+    void SetSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings = std::forward<SettingsT>(value); }
+    template<typename SettingsT = TranslationSettings>
+    TranslateTextRequest& WithSettings(SettingsT&& value) { SetSettings(std::forward<SettingsT>(value)); return *this;}
     ///@}
   private:
 

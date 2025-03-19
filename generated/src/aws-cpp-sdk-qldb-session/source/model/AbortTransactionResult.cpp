@@ -18,13 +18,7 @@ namespace QLDBSession
 namespace Model
 {
 
-AbortTransactionResult::AbortTransactionResult() : 
-    m_timingInformationHasBeenSet(false)
-{
-}
-
 AbortTransactionResult::AbortTransactionResult(JsonView jsonValue)
-  : AbortTransactionResult()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AbortTransactionResult& AbortTransactionResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TimingInformation"))
   {
     m_timingInformation = jsonValue.GetObject("TimingInformation");
-
     m_timingInformationHasBeenSet = true;
   }
-
   return *this;
 }
 

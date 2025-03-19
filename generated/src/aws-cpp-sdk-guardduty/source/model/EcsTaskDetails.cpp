@@ -18,23 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-EcsTaskDetails::EcsTaskDetails() : 
-    m_arnHasBeenSet(false),
-    m_definitionArnHasBeenSet(false),
-    m_versionHasBeenSet(false),
-    m_taskCreatedAtHasBeenSet(false),
-    m_startedAtHasBeenSet(false),
-    m_startedByHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_volumesHasBeenSet(false),
-    m_containersHasBeenSet(false),
-    m_groupHasBeenSet(false),
-    m_launchTypeHasBeenSet(false)
-{
-}
-
 EcsTaskDetails::EcsTaskDetails(JsonView jsonValue)
-  : EcsTaskDetails()
 {
   *this = jsonValue;
 }
@@ -44,45 +28,33 @@ EcsTaskDetails& EcsTaskDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("definitionArn"))
   {
     m_definitionArn = jsonValue.GetString("definitionArn");
-
     m_definitionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_taskCreatedAt = jsonValue.GetDouble("createdAt");
-
     m_taskCreatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedAt"))
   {
     m_startedAt = jsonValue.GetDouble("startedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startedBy"))
   {
     m_startedBy = jsonValue.GetString("startedBy");
-
     m_startedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -92,7 +64,6 @@ EcsTaskDetails& EcsTaskDetails::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumes"))
   {
     Aws::Utils::Array<JsonView> volumesJsonList = jsonValue.GetArray("volumes");
@@ -102,7 +73,6 @@ EcsTaskDetails& EcsTaskDetails::operator =(JsonView jsonValue)
     }
     m_volumesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containers"))
   {
     Aws::Utils::Array<JsonView> containersJsonList = jsonValue.GetArray("containers");
@@ -112,21 +82,16 @@ EcsTaskDetails& EcsTaskDetails::operator =(JsonView jsonValue)
     }
     m_containersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("group"))
   {
     m_group = jsonValue.GetString("group");
-
     m_groupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("launchType"))
   {
     m_launchType = jsonValue.GetString("launchType");
-
     m_launchTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

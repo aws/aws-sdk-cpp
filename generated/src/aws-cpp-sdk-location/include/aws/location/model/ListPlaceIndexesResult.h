@@ -29,7 +29,7 @@ namespace Model
   class ListPlaceIndexesResult
   {
   public:
-    AWS_LOCATIONSERVICE_API ListPlaceIndexesResult();
+    AWS_LOCATIONSERVICE_API ListPlaceIndexesResult() = default;
     AWS_LOCATIONSERVICE_API ListPlaceIndexesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOCATIONSERVICE_API ListPlaceIndexesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>Lists the place index resources that exist in your Amazon Web Services
      * account</p>
      */
-    inline const Aws::Vector<ListPlaceIndexesResponseEntry>& GetEntries() const{ return m_entries; }
-    inline void SetEntries(const Aws::Vector<ListPlaceIndexesResponseEntry>& value) { m_entries = value; }
-    inline void SetEntries(Aws::Vector<ListPlaceIndexesResponseEntry>&& value) { m_entries = std::move(value); }
-    inline ListPlaceIndexesResult& WithEntries(const Aws::Vector<ListPlaceIndexesResponseEntry>& value) { SetEntries(value); return *this;}
-    inline ListPlaceIndexesResult& WithEntries(Aws::Vector<ListPlaceIndexesResponseEntry>&& value) { SetEntries(std::move(value)); return *this;}
-    inline ListPlaceIndexesResult& AddEntries(const ListPlaceIndexesResponseEntry& value) { m_entries.push_back(value); return *this; }
-    inline ListPlaceIndexesResult& AddEntries(ListPlaceIndexesResponseEntry&& value) { m_entries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ListPlaceIndexesResponseEntry>& GetEntries() const { return m_entries; }
+    template<typename EntriesT = Aws::Vector<ListPlaceIndexesResponseEntry>>
+    void SetEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries = std::forward<EntriesT>(value); }
+    template<typename EntriesT = Aws::Vector<ListPlaceIndexesResponseEntry>>
+    ListPlaceIndexesResult& WithEntries(EntriesT&& value) { SetEntries(std::forward<EntriesT>(value)); return *this;}
+    template<typename EntriesT = ListPlaceIndexesResponseEntry>
+    ListPlaceIndexesResult& AddEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries.emplace_back(std::forward<EntriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>A pagination token indicating that there are additional pages available. You
      * can use the token in a new request to fetch the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListPlaceIndexesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPlaceIndexesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPlaceIndexesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPlaceIndexesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListPlaceIndexesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListPlaceIndexesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListPlaceIndexesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListPlaceIndexesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ListPlaceIndexesResponseEntry> m_entries;
+    bool m_entriesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

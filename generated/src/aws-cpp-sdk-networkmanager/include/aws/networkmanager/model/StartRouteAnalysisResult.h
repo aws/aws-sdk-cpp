@@ -28,7 +28,7 @@ namespace Model
   class StartRouteAnalysisResult
   {
   public:
-    AWS_NETWORKMANAGER_API StartRouteAnalysisResult();
+    AWS_NETWORKMANAGER_API StartRouteAnalysisResult() = default;
     AWS_NETWORKMANAGER_API StartRouteAnalysisResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKMANAGER_API StartRouteAnalysisResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The route analysis.</p>
      */
-    inline const RouteAnalysis& GetRouteAnalysis() const{ return m_routeAnalysis; }
-    inline void SetRouteAnalysis(const RouteAnalysis& value) { m_routeAnalysis = value; }
-    inline void SetRouteAnalysis(RouteAnalysis&& value) { m_routeAnalysis = std::move(value); }
-    inline StartRouteAnalysisResult& WithRouteAnalysis(const RouteAnalysis& value) { SetRouteAnalysis(value); return *this;}
-    inline StartRouteAnalysisResult& WithRouteAnalysis(RouteAnalysis&& value) { SetRouteAnalysis(std::move(value)); return *this;}
+    inline const RouteAnalysis& GetRouteAnalysis() const { return m_routeAnalysis; }
+    template<typename RouteAnalysisT = RouteAnalysis>
+    void SetRouteAnalysis(RouteAnalysisT&& value) { m_routeAnalysisHasBeenSet = true; m_routeAnalysis = std::forward<RouteAnalysisT>(value); }
+    template<typename RouteAnalysisT = RouteAnalysis>
+    StartRouteAnalysisResult& WithRouteAnalysis(RouteAnalysisT&& value) { SetRouteAnalysis(std::forward<RouteAnalysisT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartRouteAnalysisResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartRouteAnalysisResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartRouteAnalysisResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartRouteAnalysisResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RouteAnalysis m_routeAnalysis;
+    bool m_routeAnalysisHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,11 +12,6 @@ using namespace Aws::WorkSpacesWeb::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTrustStoreRequest::DeleteTrustStoreRequest() : 
-    m_trustStoreArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTrustStoreRequest::SerializePayload() const
 {
   return {};

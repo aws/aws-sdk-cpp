@@ -12,17 +12,6 @@ using namespace Aws::NetworkFlowMonitor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMonitorRequest::UpdateMonitorRequest() : 
-    m_monitorNameHasBeenSet(false),
-    m_localResourcesToAddHasBeenSet(false),
-    m_localResourcesToRemoveHasBeenSet(false),
-    m_remoteResourcesToAddHasBeenSet(false),
-    m_remoteResourcesToRemoveHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String UpdateMonitorRequest::SerializePayload() const
 {
   JsonValue payload;

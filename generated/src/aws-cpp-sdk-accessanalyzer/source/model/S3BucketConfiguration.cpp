@@ -18,16 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-S3BucketConfiguration::S3BucketConfiguration() : 
-    m_bucketPolicyHasBeenSet(false),
-    m_bucketAclGrantsHasBeenSet(false),
-    m_bucketPublicAccessBlockHasBeenSet(false),
-    m_accessPointsHasBeenSet(false)
-{
-}
-
 S3BucketConfiguration::S3BucketConfiguration(JsonView jsonValue)
-  : S3BucketConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ S3BucketConfiguration& S3BucketConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucketPolicy"))
   {
     m_bucketPolicy = jsonValue.GetString("bucketPolicy");
-
     m_bucketPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bucketAclGrants"))
   {
     Aws::Utils::Array<JsonView> bucketAclGrantsJsonList = jsonValue.GetArray("bucketAclGrants");
@@ -50,14 +39,11 @@ S3BucketConfiguration& S3BucketConfiguration::operator =(JsonView jsonValue)
     }
     m_bucketAclGrantsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bucketPublicAccessBlock"))
   {
     m_bucketPublicAccessBlock = jsonValue.GetObject("bucketPublicAccessBlock");
-
     m_bucketPublicAccessBlockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accessPoints"))
   {
     Aws::Map<Aws::String, JsonView> accessPointsJsonMap = jsonValue.GetObject("accessPoints").GetAllObjects();
@@ -67,7 +53,6 @@ S3BucketConfiguration& S3BucketConfiguration::operator =(JsonView jsonValue)
     }
     m_accessPointsHasBeenSet = true;
   }
-
   return *this;
 }
 

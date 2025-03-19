@@ -28,7 +28,7 @@ namespace Model
   class DescribeDomainsRequest : public CloudSearchRequest
   {
   public:
-    AWS_CLOUDSEARCH_API DescribeDomainsRequest();
+    AWS_CLOUDSEARCH_API DescribeDomainsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,15 +47,14 @@ namespace Model
     /**
      * <p>The names of the domains you want to include in the response.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDomainNames() const{ return m_domainNames; }
+    inline const Aws::Vector<Aws::String>& GetDomainNames() const { return m_domainNames; }
     inline bool DomainNamesHasBeenSet() const { return m_domainNamesHasBeenSet; }
-    inline void SetDomainNames(const Aws::Vector<Aws::String>& value) { m_domainNamesHasBeenSet = true; m_domainNames = value; }
-    inline void SetDomainNames(Aws::Vector<Aws::String>&& value) { m_domainNamesHasBeenSet = true; m_domainNames = std::move(value); }
-    inline DescribeDomainsRequest& WithDomainNames(const Aws::Vector<Aws::String>& value) { SetDomainNames(value); return *this;}
-    inline DescribeDomainsRequest& WithDomainNames(Aws::Vector<Aws::String>&& value) { SetDomainNames(std::move(value)); return *this;}
-    inline DescribeDomainsRequest& AddDomainNames(const Aws::String& value) { m_domainNamesHasBeenSet = true; m_domainNames.push_back(value); return *this; }
-    inline DescribeDomainsRequest& AddDomainNames(Aws::String&& value) { m_domainNamesHasBeenSet = true; m_domainNames.push_back(std::move(value)); return *this; }
-    inline DescribeDomainsRequest& AddDomainNames(const char* value) { m_domainNamesHasBeenSet = true; m_domainNames.push_back(value); return *this; }
+    template<typename DomainNamesT = Aws::Vector<Aws::String>>
+    void SetDomainNames(DomainNamesT&& value) { m_domainNamesHasBeenSet = true; m_domainNames = std::forward<DomainNamesT>(value); }
+    template<typename DomainNamesT = Aws::Vector<Aws::String>>
+    DescribeDomainsRequest& WithDomainNames(DomainNamesT&& value) { SetDomainNames(std::forward<DomainNamesT>(value)); return *this;}
+    template<typename DomainNamesT = Aws::String>
+    DescribeDomainsRequest& AddDomainNames(DomainNamesT&& value) { m_domainNamesHasBeenSet = true; m_domainNames.emplace_back(std::forward<DomainNamesT>(value)); return *this; }
     ///@}
   private:
 

@@ -29,7 +29,7 @@ namespace Model
   class ListFindingsV2Result
   {
   public:
-    AWS_ACCESSANALYZER_API ListFindingsV2Result();
+    AWS_ACCESSANALYZER_API ListFindingsV2Result() = default;
     AWS_ACCESSANALYZER_API ListFindingsV2Result(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ACCESSANALYZER_API ListFindingsV2Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>A list of findings retrieved from the analyzer that match the filter criteria
      * specified, if any.</p>
      */
-    inline const Aws::Vector<FindingSummaryV2>& GetFindings() const{ return m_findings; }
-    inline void SetFindings(const Aws::Vector<FindingSummaryV2>& value) { m_findings = value; }
-    inline void SetFindings(Aws::Vector<FindingSummaryV2>&& value) { m_findings = std::move(value); }
-    inline ListFindingsV2Result& WithFindings(const Aws::Vector<FindingSummaryV2>& value) { SetFindings(value); return *this;}
-    inline ListFindingsV2Result& WithFindings(Aws::Vector<FindingSummaryV2>&& value) { SetFindings(std::move(value)); return *this;}
-    inline ListFindingsV2Result& AddFindings(const FindingSummaryV2& value) { m_findings.push_back(value); return *this; }
-    inline ListFindingsV2Result& AddFindings(FindingSummaryV2&& value) { m_findings.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FindingSummaryV2>& GetFindings() const { return m_findings; }
+    template<typename FindingsT = Aws::Vector<FindingSummaryV2>>
+    void SetFindings(FindingsT&& value) { m_findingsHasBeenSet = true; m_findings = std::forward<FindingsT>(value); }
+    template<typename FindingsT = Aws::Vector<FindingSummaryV2>>
+    ListFindingsV2Result& WithFindings(FindingsT&& value) { SetFindings(std::forward<FindingsT>(value)); return *this;}
+    template<typename FindingsT = FindingSummaryV2>
+    ListFindingsV2Result& AddFindings(FindingsT&& value) { m_findingsHasBeenSet = true; m_findings.emplace_back(std::forward<FindingsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A token used for pagination of results returned.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListFindingsV2Result& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListFindingsV2Result& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListFindingsV2Result& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListFindingsV2Result& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListFindingsV2Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListFindingsV2Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListFindingsV2Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListFindingsV2Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<FindingSummaryV2> m_findings;
+    bool m_findingsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

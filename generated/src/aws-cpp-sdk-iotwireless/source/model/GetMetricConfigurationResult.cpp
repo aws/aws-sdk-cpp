@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMetricConfigurationResult::GetMetricConfigurationResult()
-{
-}
-
 GetMetricConfigurationResult::GetMetricConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetMetricConfigurationResult& GetMetricConfigurationResult::operator =(const Aws
   if(jsonValue.ValueExists("SummaryMetric"))
   {
     m_summaryMetric = jsonValue.GetObject("SummaryMetric");
-
+    m_summaryMetricHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

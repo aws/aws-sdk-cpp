@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetResourcesRequest::GetResourcesRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_collectionType(ResourceCollectionType::NOT_SET),
-    m_collectionTypeHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String GetResourcesRequest::SerializePayload() const
 {
   return {};

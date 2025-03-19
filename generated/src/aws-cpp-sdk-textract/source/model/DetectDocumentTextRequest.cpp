@@ -12,11 +12,6 @@ using namespace Aws::Textract::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DetectDocumentTextRequest::DetectDocumentTextRequest() : 
-    m_documentHasBeenSet(false)
-{
-}
-
 Aws::String DetectDocumentTextRequest::SerializePayload() const
 {
   JsonValue payload;

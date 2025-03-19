@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TemplateAlias::TemplateAlias() : 
-    m_aliasNameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_templateVersionNumber(0),
-    m_templateVersionNumberHasBeenSet(false)
-{
-}
-
 TemplateAlias::TemplateAlias(JsonView jsonValue)
-  : TemplateAlias()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ TemplateAlias& TemplateAlias::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AliasName"))
   {
     m_aliasName = jsonValue.GetString("AliasName");
-
     m_aliasNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateVersionNumber"))
   {
     m_templateVersionNumber = jsonValue.GetInt64("TemplateVersionNumber");
-
     m_templateVersionNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace WAFRegional
 namespace Model
 {
 
-XssMatchTuple::XssMatchTuple() : 
-    m_fieldToMatchHasBeenSet(false),
-    m_textTransformation(TextTransformation::NOT_SET),
-    m_textTransformationHasBeenSet(false)
-{
-}
-
 XssMatchTuple::XssMatchTuple(JsonView jsonValue)
-  : XssMatchTuple()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ XssMatchTuple& XssMatchTuple::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldToMatch"))
   {
     m_fieldToMatch = jsonValue.GetObject("FieldToMatch");
-
     m_fieldToMatchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextTransformation"))
   {
     m_textTransformation = TextTransformationMapper::GetTextTransformationForName(jsonValue.GetString("TextTransformation"));
-
     m_textTransformationHasBeenSet = true;
   }
-
   return *this;
 }
 

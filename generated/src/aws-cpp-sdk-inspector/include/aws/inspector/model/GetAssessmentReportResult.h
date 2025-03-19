@@ -28,7 +28,7 @@ namespace Model
   class GetAssessmentReportResult
   {
   public:
-    AWS_INSPECTOR_API GetAssessmentReportResult();
+    AWS_INSPECTOR_API GetAssessmentReportResult() = default;
     AWS_INSPECTOR_API GetAssessmentReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INSPECTOR_API GetAssessmentReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,11 +37,9 @@ namespace Model
     /**
      * <p>Specifies the status of the request to generate an assessment report. </p>
      */
-    inline const ReportStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ReportStatus& value) { m_status = value; }
-    inline void SetStatus(ReportStatus&& value) { m_status = std::move(value); }
-    inline GetAssessmentReportResult& WithStatus(const ReportStatus& value) { SetStatus(value); return *this;}
-    inline GetAssessmentReportResult& WithStatus(ReportStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ReportStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ReportStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetAssessmentReportResult& WithStatus(ReportStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -49,32 +47,31 @@ namespace Model
      * <p>Specifies the URL where you can find the generated assessment report. This
      * parameter is only returned if the report is successfully generated.</p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
-    inline void SetUrl(const Aws::String& value) { m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_url.assign(value); }
-    inline GetAssessmentReportResult& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline GetAssessmentReportResult& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline GetAssessmentReportResult& WithUrl(const char* value) { SetUrl(value); return *this;}
+    inline const Aws::String& GetUrl() const { return m_url; }
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    GetAssessmentReportResult& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAssessmentReportResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAssessmentReportResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAssessmentReportResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAssessmentReportResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    ReportStatus m_status;
+    ReportStatus m_status{ReportStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_url;
+    bool m_urlHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

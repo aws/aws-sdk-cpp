@@ -21,7 +21,7 @@ namespace Model
   class GetResolverEndpointRequest : public Route53ResolverRequest
   {
   public:
-    AWS_ROUTE53RESOLVER_API GetResolverEndpointRequest();
+    AWS_ROUTE53RESOLVER_API GetResolverEndpointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID of the Resolver endpoint that you want to get information about.</p>
      */
-    inline const Aws::String& GetResolverEndpointId() const{ return m_resolverEndpointId; }
+    inline const Aws::String& GetResolverEndpointId() const { return m_resolverEndpointId; }
     inline bool ResolverEndpointIdHasBeenSet() const { return m_resolverEndpointIdHasBeenSet; }
-    inline void SetResolverEndpointId(const Aws::String& value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId = value; }
-    inline void SetResolverEndpointId(Aws::String&& value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId = std::move(value); }
-    inline void SetResolverEndpointId(const char* value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId.assign(value); }
-    inline GetResolverEndpointRequest& WithResolverEndpointId(const Aws::String& value) { SetResolverEndpointId(value); return *this;}
-    inline GetResolverEndpointRequest& WithResolverEndpointId(Aws::String&& value) { SetResolverEndpointId(std::move(value)); return *this;}
-    inline GetResolverEndpointRequest& WithResolverEndpointId(const char* value) { SetResolverEndpointId(value); return *this;}
+    template<typename ResolverEndpointIdT = Aws::String>
+    void SetResolverEndpointId(ResolverEndpointIdT&& value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId = std::forward<ResolverEndpointIdT>(value); }
+    template<typename ResolverEndpointIdT = Aws::String>
+    GetResolverEndpointRequest& WithResolverEndpointId(ResolverEndpointIdT&& value) { SetResolverEndpointId(std::forward<ResolverEndpointIdT>(value)); return *this;}
     ///@}
   private:
 

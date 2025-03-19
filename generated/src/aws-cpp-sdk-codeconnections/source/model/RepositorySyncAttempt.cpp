@@ -18,16 +18,7 @@ namespace CodeConnections
 namespace Model
 {
 
-RepositorySyncAttempt::RepositorySyncAttempt() : 
-    m_startedAtHasBeenSet(false),
-    m_status(RepositorySyncStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_eventsHasBeenSet(false)
-{
-}
-
 RepositorySyncAttempt::RepositorySyncAttempt(JsonView jsonValue)
-  : RepositorySyncAttempt()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RepositorySyncAttempt& RepositorySyncAttempt::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StartedAt"))
   {
     m_startedAt = jsonValue.GetDouble("StartedAt");
-
     m_startedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = RepositorySyncStatusMapper::GetRepositorySyncStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Events"))
   {
     Aws::Utils::Array<JsonView> eventsJsonList = jsonValue.GetArray("Events");
@@ -57,7 +44,6 @@ RepositorySyncAttempt& RepositorySyncAttempt::operator =(JsonView jsonValue)
     }
     m_eventsHasBeenSet = true;
   }
-
   return *this;
 }
 

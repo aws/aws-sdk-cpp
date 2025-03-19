@@ -33,7 +33,7 @@ namespace Model
   class IbmDb2zOsDataProviderSettings
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API IbmDb2zOsDataProviderSettings();
+    AWS_DATABASEMIGRATIONSERVICE_API IbmDb2zOsDataProviderSettings() = default;
     AWS_DATABASEMIGRATIONSERVICE_API IbmDb2zOsDataProviderSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API IbmDb2zOsDataProviderSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,21 +43,19 @@ namespace Model
     /**
      * <p>The name of the DB2 for z/OS server.</p>
      */
-    inline const Aws::String& GetServerName() const{ return m_serverName; }
+    inline const Aws::String& GetServerName() const { return m_serverName; }
     inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
-    inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
-    inline void SetServerName(Aws::String&& value) { m_serverNameHasBeenSet = true; m_serverName = std::move(value); }
-    inline void SetServerName(const char* value) { m_serverNameHasBeenSet = true; m_serverName.assign(value); }
-    inline IbmDb2zOsDataProviderSettings& WithServerName(const Aws::String& value) { SetServerName(value); return *this;}
-    inline IbmDb2zOsDataProviderSettings& WithServerName(Aws::String&& value) { SetServerName(std::move(value)); return *this;}
-    inline IbmDb2zOsDataProviderSettings& WithServerName(const char* value) { SetServerName(value); return *this;}
+    template<typename ServerNameT = Aws::String>
+    void SetServerName(ServerNameT&& value) { m_serverNameHasBeenSet = true; m_serverName = std::forward<ServerNameT>(value); }
+    template<typename ServerNameT = Aws::String>
+    IbmDb2zOsDataProviderSettings& WithServerName(ServerNameT&& value) { SetServerName(std::forward<ServerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The port value for the DB2 for z/OS data provider.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline IbmDb2zOsDataProviderSettings& WithPort(int value) { SetPort(value); return *this;}
@@ -67,14 +65,12 @@ namespace Model
     /**
      * <p>The database name on the DB2 for z/OS data provider.</p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline IbmDb2zOsDataProviderSettings& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline IbmDb2zOsDataProviderSettings& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline IbmDb2zOsDataProviderSettings& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    IbmDb2zOsDataProviderSettings& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,12 +79,10 @@ namespace Model
      * value is <code>none</code>. Valid Values: <code>none</code> and
      * <code>verify-ca</code>.</p>
      */
-    inline const DmsSslModeValue& GetSslMode() const{ return m_sslMode; }
+    inline DmsSslModeValue GetSslMode() const { return m_sslMode; }
     inline bool SslModeHasBeenSet() const { return m_sslModeHasBeenSet; }
-    inline void SetSslMode(const DmsSslModeValue& value) { m_sslModeHasBeenSet = true; m_sslMode = value; }
-    inline void SetSslMode(DmsSslModeValue&& value) { m_sslModeHasBeenSet = true; m_sslMode = std::move(value); }
-    inline IbmDb2zOsDataProviderSettings& WithSslMode(const DmsSslModeValue& value) { SetSslMode(value); return *this;}
-    inline IbmDb2zOsDataProviderSettings& WithSslMode(DmsSslModeValue&& value) { SetSslMode(std::move(value)); return *this;}
+    inline void SetSslMode(DmsSslModeValue value) { m_sslModeHasBeenSet = true; m_sslMode = value; }
+    inline IbmDb2zOsDataProviderSettings& WithSslMode(DmsSslModeValue value) { SetSslMode(value); return *this;}
     ///@}
 
     ///@{
@@ -96,27 +90,25 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificate used for SSL
      * connection.</p>
      */
-    inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
+    inline const Aws::String& GetCertificateArn() const { return m_certificateArn; }
     inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
-    inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
-    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
-    inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
-    inline IbmDb2zOsDataProviderSettings& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
-    inline IbmDb2zOsDataProviderSettings& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
-    inline IbmDb2zOsDataProviderSettings& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+    template<typename CertificateArnT = Aws::String>
+    void SetCertificateArn(CertificateArnT&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::forward<CertificateArnT>(value); }
+    template<typename CertificateArnT = Aws::String>
+    IbmDb2zOsDataProviderSettings& WithCertificateArn(CertificateArnT&& value) { SetCertificateArn(std::forward<CertificateArnT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_serverName;
     bool m_serverNameHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
     Aws::String m_databaseName;
     bool m_databaseNameHasBeenSet = false;
 
-    DmsSslModeValue m_sslMode;
+    DmsSslModeValue m_sslMode{DmsSslModeValue::NOT_SET};
     bool m_sslModeHasBeenSet = false;
 
     Aws::String m_certificateArn;

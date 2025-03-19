@@ -18,15 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-Schedule::Schedule() : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_refreshFrequencyHasBeenSet(false)
-{
-}
-
 Schedule::Schedule(JsonView jsonValue)
-  : Schedule()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Schedule& Schedule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("refreshFrequency"))
   {
     m_refreshFrequency = jsonValue.GetString("refreshFrequency");
-
     m_refreshFrequencyHasBeenSet = true;
   }
-
   return *this;
 }
 

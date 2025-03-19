@@ -36,7 +36,7 @@ namespace Model
   class GetArchiveSearchResult
   {
   public:
-    AWS_MAILMANAGER_API GetArchiveSearchResult();
+    AWS_MAILMANAGER_API GetArchiveSearchResult() = default;
     AWS_MAILMANAGER_API GetArchiveSearchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MAILMANAGER_API GetArchiveSearchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,43 +45,41 @@ namespace Model
     /**
      * <p>The identifier of the archive the email search was performed in.</p>
      */
-    inline const Aws::String& GetArchiveId() const{ return m_archiveId; }
-    inline void SetArchiveId(const Aws::String& value) { m_archiveId = value; }
-    inline void SetArchiveId(Aws::String&& value) { m_archiveId = std::move(value); }
-    inline void SetArchiveId(const char* value) { m_archiveId.assign(value); }
-    inline GetArchiveSearchResult& WithArchiveId(const Aws::String& value) { SetArchiveId(value); return *this;}
-    inline GetArchiveSearchResult& WithArchiveId(Aws::String&& value) { SetArchiveId(std::move(value)); return *this;}
-    inline GetArchiveSearchResult& WithArchiveId(const char* value) { SetArchiveId(value); return *this;}
+    inline const Aws::String& GetArchiveId() const { return m_archiveId; }
+    template<typename ArchiveIdT = Aws::String>
+    void SetArchiveId(ArchiveIdT&& value) { m_archiveIdHasBeenSet = true; m_archiveId = std::forward<ArchiveIdT>(value); }
+    template<typename ArchiveIdT = Aws::String>
+    GetArchiveSearchResult& WithArchiveId(ArchiveIdT&& value) { SetArchiveId(std::forward<ArchiveIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The criteria used to filter emails included in the search.</p>
      */
-    inline const ArchiveFilters& GetFilters() const{ return m_filters; }
-    inline void SetFilters(const ArchiveFilters& value) { m_filters = value; }
-    inline void SetFilters(ArchiveFilters&& value) { m_filters = std::move(value); }
-    inline GetArchiveSearchResult& WithFilters(const ArchiveFilters& value) { SetFilters(value); return *this;}
-    inline GetArchiveSearchResult& WithFilters(ArchiveFilters&& value) { SetFilters(std::move(value)); return *this;}
+    inline const ArchiveFilters& GetFilters() const { return m_filters; }
+    template<typename FiltersT = ArchiveFilters>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = ArchiveFilters>
+    GetArchiveSearchResult& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The start timestamp of the range the searched emails cover.</p>
      */
-    inline const Aws::Utils::DateTime& GetFromTimestamp() const{ return m_fromTimestamp; }
-    inline void SetFromTimestamp(const Aws::Utils::DateTime& value) { m_fromTimestamp = value; }
-    inline void SetFromTimestamp(Aws::Utils::DateTime&& value) { m_fromTimestamp = std::move(value); }
-    inline GetArchiveSearchResult& WithFromTimestamp(const Aws::Utils::DateTime& value) { SetFromTimestamp(value); return *this;}
-    inline GetArchiveSearchResult& WithFromTimestamp(Aws::Utils::DateTime&& value) { SetFromTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetFromTimestamp() const { return m_fromTimestamp; }
+    template<typename FromTimestampT = Aws::Utils::DateTime>
+    void SetFromTimestamp(FromTimestampT&& value) { m_fromTimestampHasBeenSet = true; m_fromTimestamp = std::forward<FromTimestampT>(value); }
+    template<typename FromTimestampT = Aws::Utils::DateTime>
+    GetArchiveSearchResult& WithFromTimestamp(FromTimestampT&& value) { SetFromTimestamp(std::forward<FromTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of search results to return.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
-    inline void SetMaxResults(int value) { m_maxResults = value; }
+    inline int GetMaxResults() const { return m_maxResults; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetArchiveSearchResult& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
 
@@ -89,49 +87,54 @@ namespace Model
     /**
      * <p>The current status of the search job.</p>
      */
-    inline const SearchStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const SearchStatus& value) { m_status = value; }
-    inline void SetStatus(SearchStatus&& value) { m_status = std::move(value); }
-    inline GetArchiveSearchResult& WithStatus(const SearchStatus& value) { SetStatus(value); return *this;}
-    inline GetArchiveSearchResult& WithStatus(SearchStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline const SearchStatus& GetStatus() const { return m_status; }
+    template<typename StatusT = SearchStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = SearchStatus>
+    GetArchiveSearchResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The end timestamp of the range the searched emails cover.</p>
      */
-    inline const Aws::Utils::DateTime& GetToTimestamp() const{ return m_toTimestamp; }
-    inline void SetToTimestamp(const Aws::Utils::DateTime& value) { m_toTimestamp = value; }
-    inline void SetToTimestamp(Aws::Utils::DateTime&& value) { m_toTimestamp = std::move(value); }
-    inline GetArchiveSearchResult& WithToTimestamp(const Aws::Utils::DateTime& value) { SetToTimestamp(value); return *this;}
-    inline GetArchiveSearchResult& WithToTimestamp(Aws::Utils::DateTime&& value) { SetToTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetToTimestamp() const { return m_toTimestamp; }
+    template<typename ToTimestampT = Aws::Utils::DateTime>
+    void SetToTimestamp(ToTimestampT&& value) { m_toTimestampHasBeenSet = true; m_toTimestamp = std::forward<ToTimestampT>(value); }
+    template<typename ToTimestampT = Aws::Utils::DateTime>
+    GetArchiveSearchResult& WithToTimestamp(ToTimestampT&& value) { SetToTimestamp(std::forward<ToTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetArchiveSearchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetArchiveSearchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetArchiveSearchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetArchiveSearchResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_archiveId;
+    bool m_archiveIdHasBeenSet = false;
 
     ArchiveFilters m_filters;
+    bool m_filtersHasBeenSet = false;
 
-    Aws::Utils::DateTime m_fromTimestamp;
+    Aws::Utils::DateTime m_fromTimestamp{};
+    bool m_fromTimestampHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
+    bool m_maxResultsHasBeenSet = false;
 
     SearchStatus m_status;
+    bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_toTimestamp;
+    Aws::Utils::DateTime m_toTimestamp{};
+    bool m_toTimestampHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

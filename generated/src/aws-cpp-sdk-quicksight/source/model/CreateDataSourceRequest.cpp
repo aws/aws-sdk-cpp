@@ -12,22 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDataSourceRequest::CreateDataSourceRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_dataSourceIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_type(DataSourceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_dataSourceParametersHasBeenSet(false),
-    m_credentialsHasBeenSet(false),
-    m_permissionsHasBeenSet(false),
-    m_vpcConnectionPropertiesHasBeenSet(false),
-    m_sslPropertiesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_folderArnsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDataSourceRequest::SerializePayload() const
 {
   JsonValue payload;

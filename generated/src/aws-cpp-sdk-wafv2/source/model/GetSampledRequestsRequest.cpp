@@ -12,17 +12,6 @@ using namespace Aws::WAFV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSampledRequestsRequest::GetSampledRequestsRequest() : 
-    m_webAclArnHasBeenSet(false),
-    m_ruleMetricNameHasBeenSet(false),
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_timeWindowHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false)
-{
-}
-
 Aws::String GetSampledRequestsRequest::SerializePayload() const
 {
   JsonValue payload;

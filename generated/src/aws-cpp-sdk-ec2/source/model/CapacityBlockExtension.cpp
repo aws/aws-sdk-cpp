@@ -20,28 +20,7 @@ namespace EC2
 namespace Model
 {
 
-CapacityBlockExtension::CapacityBlockExtension() : 
-    m_capacityReservationIdHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_availabilityZoneIdHasBeenSet(false),
-    m_capacityBlockExtensionOfferingIdHasBeenSet(false),
-    m_capacityBlockExtensionDurationHours(0),
-    m_capacityBlockExtensionDurationHoursHasBeenSet(false),
-    m_capacityBlockExtensionStatus(CapacityBlockExtensionStatus::NOT_SET),
-    m_capacityBlockExtensionStatusHasBeenSet(false),
-    m_capacityBlockExtensionPurchaseDateHasBeenSet(false),
-    m_capacityBlockExtensionStartDateHasBeenSet(false),
-    m_capacityBlockExtensionEndDateHasBeenSet(false),
-    m_upfrontFeeHasBeenSet(false),
-    m_currencyCodeHasBeenSet(false)
-{
-}
-
 CapacityBlockExtension::CapacityBlockExtension(const XmlNode& xmlNode)
-  : CapacityBlockExtension()
 {
   *this = xmlNode;
 }
@@ -97,7 +76,7 @@ CapacityBlockExtension& CapacityBlockExtension::operator =(const XmlNode& xmlNod
     XmlNode capacityBlockExtensionStatusNode = resultNode.FirstChild("capacityBlockExtensionStatus");
     if(!capacityBlockExtensionStatusNode.IsNull())
     {
-      m_capacityBlockExtensionStatus = CapacityBlockExtensionStatusMapper::GetCapacityBlockExtensionStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(capacityBlockExtensionStatusNode.GetText()).c_str()).c_str());
+      m_capacityBlockExtensionStatus = CapacityBlockExtensionStatusMapper::GetCapacityBlockExtensionStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(capacityBlockExtensionStatusNode.GetText()).c_str()));
       m_capacityBlockExtensionStatusHasBeenSet = true;
     }
     XmlNode capacityBlockExtensionPurchaseDateNode = resultNode.FirstChild("capacityBlockExtensionPurchaseDate");

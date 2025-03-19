@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-EdgePresetDeploymentOutput::EdgePresetDeploymentOutput() : 
-    m_type(EdgePresetDeploymentType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_artifactHasBeenSet(false),
-    m_status(EdgePresetDeploymentStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 EdgePresetDeploymentOutput::EdgePresetDeploymentOutput(JsonView jsonValue)
-  : EdgePresetDeploymentOutput()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ EdgePresetDeploymentOutput& EdgePresetDeploymentOutput::operator =(JsonView json
   if(jsonValue.ValueExists("Type"))
   {
     m_type = EdgePresetDeploymentTypeMapper::GetEdgePresetDeploymentTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Artifact"))
   {
     m_artifact = jsonValue.GetString("Artifact");
-
     m_artifactHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = EdgePresetDeploymentStatusMapper::GetEdgePresetDeploymentStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

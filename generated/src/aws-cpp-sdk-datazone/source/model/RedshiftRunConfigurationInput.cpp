@@ -18,16 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-RedshiftRunConfigurationInput::RedshiftRunConfigurationInput() : 
-    m_dataAccessRoleHasBeenSet(false),
-    m_redshiftCredentialConfigurationHasBeenSet(false),
-    m_redshiftStorageHasBeenSet(false),
-    m_relationalFilterConfigurationsHasBeenSet(false)
-{
-}
-
 RedshiftRunConfigurationInput::RedshiftRunConfigurationInput(JsonView jsonValue)
-  : RedshiftRunConfigurationInput()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ RedshiftRunConfigurationInput& RedshiftRunConfigurationInput::operator =(JsonVie
   if(jsonValue.ValueExists("dataAccessRole"))
   {
     m_dataAccessRole = jsonValue.GetString("dataAccessRole");
-
     m_dataAccessRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("redshiftCredentialConfiguration"))
   {
     m_redshiftCredentialConfiguration = jsonValue.GetObject("redshiftCredentialConfiguration");
-
     m_redshiftCredentialConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("redshiftStorage"))
   {
     m_redshiftStorage = jsonValue.GetObject("redshiftStorage");
-
     m_redshiftStorageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relationalFilterConfigurations"))
   {
     Aws::Utils::Array<JsonView> relationalFilterConfigurationsJsonList = jsonValue.GetArray("relationalFilterConfigurations");
@@ -64,7 +49,6 @@ RedshiftRunConfigurationInput& RedshiftRunConfigurationInput::operator =(JsonVie
     }
     m_relationalFilterConfigurationsHasBeenSet = true;
   }
-
   return *this;
 }
 

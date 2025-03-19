@@ -12,11 +12,6 @@ using namespace Aws::Bedrock::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteImportedModelRequest::DeleteImportedModelRequest() : 
-    m_modelIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteImportedModelRequest::SerializePayload() const
 {
   return {};

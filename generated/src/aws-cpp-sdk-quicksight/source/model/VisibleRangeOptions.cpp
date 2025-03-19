@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-VisibleRangeOptions::VisibleRangeOptions() : 
-    m_percentRangeHasBeenSet(false)
-{
-}
-
 VisibleRangeOptions::VisibleRangeOptions(JsonView jsonValue)
-  : VisibleRangeOptions()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ VisibleRangeOptions& VisibleRangeOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PercentRange"))
   {
     m_percentRange = jsonValue.GetObject("PercentRange");
-
     m_percentRangeHasBeenSet = true;
   }
-
   return *this;
 }
 

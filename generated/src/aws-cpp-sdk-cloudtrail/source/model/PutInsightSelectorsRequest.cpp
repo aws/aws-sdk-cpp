@@ -12,14 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutInsightSelectorsRequest::PutInsightSelectorsRequest() : 
-    m_trailNameHasBeenSet(false),
-    m_insightSelectorsHasBeenSet(false),
-    m_eventDataStoreHasBeenSet(false),
-    m_insightsDestinationHasBeenSet(false)
-{
-}
-
 Aws::String PutInsightSelectorsRequest::SerializePayload() const
 {
   JsonValue payload;

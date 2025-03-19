@@ -18,15 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-RenderingEngine::RenderingEngine() : 
-    m_name(RenderingEngineType::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 RenderingEngine::RenderingEngine(JsonView jsonValue)
-  : RenderingEngine()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RenderingEngine& RenderingEngine::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = RenderingEngineTypeMapper::GetRenderingEngineTypeForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,19 +18,7 @@ namespace ControlTower
 namespace Model
 {
 
-LandingZoneDetail::LandingZoneDetail() : 
-    m_arnHasBeenSet(false),
-    m_driftStatusHasBeenSet(false),
-    m_latestAvailableVersionHasBeenSet(false),
-    m_manifestHasBeenSet(false),
-    m_status(LandingZoneStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_versionHasBeenSet(false)
-{
-}
-
 LandingZoneDetail::LandingZoneDetail(JsonView jsonValue)
-  : LandingZoneDetail()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ LandingZoneDetail& LandingZoneDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("driftStatus"))
   {
     m_driftStatus = jsonValue.GetObject("driftStatus");
-
     m_driftStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("latestAvailableVersion"))
   {
     m_latestAvailableVersion = jsonValue.GetString("latestAvailableVersion");
-
     m_latestAvailableVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("manifest"))
   {
     m_manifest = jsonValue.GetObject("manifest");
-
     m_manifestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = LandingZoneStatusMapper::GetLandingZoneStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

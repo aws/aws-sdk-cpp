@@ -39,7 +39,7 @@ namespace Model
   class As2ConnectorConfig
   {
   public:
-    AWS_TRANSFER_API As2ConnectorConfig();
+    AWS_TRANSFER_API As2ConnectorConfig() = default;
     AWS_TRANSFER_API As2ConnectorConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API As2ConnectorConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,28 +49,24 @@ namespace Model
     /**
      * <p>A unique identifier for the AS2 local profile.</p>
      */
-    inline const Aws::String& GetLocalProfileId() const{ return m_localProfileId; }
+    inline const Aws::String& GetLocalProfileId() const { return m_localProfileId; }
     inline bool LocalProfileIdHasBeenSet() const { return m_localProfileIdHasBeenSet; }
-    inline void SetLocalProfileId(const Aws::String& value) { m_localProfileIdHasBeenSet = true; m_localProfileId = value; }
-    inline void SetLocalProfileId(Aws::String&& value) { m_localProfileIdHasBeenSet = true; m_localProfileId = std::move(value); }
-    inline void SetLocalProfileId(const char* value) { m_localProfileIdHasBeenSet = true; m_localProfileId.assign(value); }
-    inline As2ConnectorConfig& WithLocalProfileId(const Aws::String& value) { SetLocalProfileId(value); return *this;}
-    inline As2ConnectorConfig& WithLocalProfileId(Aws::String&& value) { SetLocalProfileId(std::move(value)); return *this;}
-    inline As2ConnectorConfig& WithLocalProfileId(const char* value) { SetLocalProfileId(value); return *this;}
+    template<typename LocalProfileIdT = Aws::String>
+    void SetLocalProfileId(LocalProfileIdT&& value) { m_localProfileIdHasBeenSet = true; m_localProfileId = std::forward<LocalProfileIdT>(value); }
+    template<typename LocalProfileIdT = Aws::String>
+    As2ConnectorConfig& WithLocalProfileId(LocalProfileIdT&& value) { SetLocalProfileId(std::forward<LocalProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the partner profile for the connector.</p>
      */
-    inline const Aws::String& GetPartnerProfileId() const{ return m_partnerProfileId; }
+    inline const Aws::String& GetPartnerProfileId() const { return m_partnerProfileId; }
     inline bool PartnerProfileIdHasBeenSet() const { return m_partnerProfileIdHasBeenSet; }
-    inline void SetPartnerProfileId(const Aws::String& value) { m_partnerProfileIdHasBeenSet = true; m_partnerProfileId = value; }
-    inline void SetPartnerProfileId(Aws::String&& value) { m_partnerProfileIdHasBeenSet = true; m_partnerProfileId = std::move(value); }
-    inline void SetPartnerProfileId(const char* value) { m_partnerProfileIdHasBeenSet = true; m_partnerProfileId.assign(value); }
-    inline As2ConnectorConfig& WithPartnerProfileId(const Aws::String& value) { SetPartnerProfileId(value); return *this;}
-    inline As2ConnectorConfig& WithPartnerProfileId(Aws::String&& value) { SetPartnerProfileId(std::move(value)); return *this;}
-    inline As2ConnectorConfig& WithPartnerProfileId(const char* value) { SetPartnerProfileId(value); return *this;}
+    template<typename PartnerProfileIdT = Aws::String>
+    void SetPartnerProfileId(PartnerProfileIdT&& value) { m_partnerProfileIdHasBeenSet = true; m_partnerProfileId = std::forward<PartnerProfileIdT>(value); }
+    template<typename PartnerProfileIdT = Aws::String>
+    As2ConnectorConfig& WithPartnerProfileId(PartnerProfileIdT&& value) { SetPartnerProfileId(std::forward<PartnerProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,26 +74,22 @@ namespace Model
      * <p>Used as the <code>Subject</code> HTTP header attribute in AS2 messages that
      * are being sent with the connector.</p>
      */
-    inline const Aws::String& GetMessageSubject() const{ return m_messageSubject; }
+    inline const Aws::String& GetMessageSubject() const { return m_messageSubject; }
     inline bool MessageSubjectHasBeenSet() const { return m_messageSubjectHasBeenSet; }
-    inline void SetMessageSubject(const Aws::String& value) { m_messageSubjectHasBeenSet = true; m_messageSubject = value; }
-    inline void SetMessageSubject(Aws::String&& value) { m_messageSubjectHasBeenSet = true; m_messageSubject = std::move(value); }
-    inline void SetMessageSubject(const char* value) { m_messageSubjectHasBeenSet = true; m_messageSubject.assign(value); }
-    inline As2ConnectorConfig& WithMessageSubject(const Aws::String& value) { SetMessageSubject(value); return *this;}
-    inline As2ConnectorConfig& WithMessageSubject(Aws::String&& value) { SetMessageSubject(std::move(value)); return *this;}
-    inline As2ConnectorConfig& WithMessageSubject(const char* value) { SetMessageSubject(value); return *this;}
+    template<typename MessageSubjectT = Aws::String>
+    void SetMessageSubject(MessageSubjectT&& value) { m_messageSubjectHasBeenSet = true; m_messageSubject = std::forward<MessageSubjectT>(value); }
+    template<typename MessageSubjectT = Aws::String>
+    As2ConnectorConfig& WithMessageSubject(MessageSubjectT&& value) { SetMessageSubject(std::forward<MessageSubjectT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether the AS2 file is compressed.</p>
      */
-    inline const CompressionEnum& GetCompression() const{ return m_compression; }
+    inline CompressionEnum GetCompression() const { return m_compression; }
     inline bool CompressionHasBeenSet() const { return m_compressionHasBeenSet; }
-    inline void SetCompression(const CompressionEnum& value) { m_compressionHasBeenSet = true; m_compression = value; }
-    inline void SetCompression(CompressionEnum&& value) { m_compressionHasBeenSet = true; m_compression = std::move(value); }
-    inline As2ConnectorConfig& WithCompression(const CompressionEnum& value) { SetCompression(value); return *this;}
-    inline As2ConnectorConfig& WithCompression(CompressionEnum&& value) { SetCompression(std::move(value)); return *this;}
+    inline void SetCompression(CompressionEnum value) { m_compressionHasBeenSet = true; m_compression = value; }
+    inline As2ConnectorConfig& WithCompression(CompressionEnum value) { SetCompression(value); return *this;}
     ///@}
 
     ///@{
@@ -109,12 +101,10 @@ namespace Model
      * if the URL for your connector uses HTTPS. Using HTTPS ensures that no traffic is
      * sent in clear text.</p> </li> </ul>
      */
-    inline const EncryptionAlg& GetEncryptionAlgorithm() const{ return m_encryptionAlgorithm; }
+    inline EncryptionAlg GetEncryptionAlgorithm() const { return m_encryptionAlgorithm; }
     inline bool EncryptionAlgorithmHasBeenSet() const { return m_encryptionAlgorithmHasBeenSet; }
-    inline void SetEncryptionAlgorithm(const EncryptionAlg& value) { m_encryptionAlgorithmHasBeenSet = true; m_encryptionAlgorithm = value; }
-    inline void SetEncryptionAlgorithm(EncryptionAlg&& value) { m_encryptionAlgorithmHasBeenSet = true; m_encryptionAlgorithm = std::move(value); }
-    inline As2ConnectorConfig& WithEncryptionAlgorithm(const EncryptionAlg& value) { SetEncryptionAlgorithm(value); return *this;}
-    inline As2ConnectorConfig& WithEncryptionAlgorithm(EncryptionAlg&& value) { SetEncryptionAlgorithm(std::move(value)); return *this;}
+    inline void SetEncryptionAlgorithm(EncryptionAlg value) { m_encryptionAlgorithmHasBeenSet = true; m_encryptionAlgorithm = value; }
+    inline As2ConnectorConfig& WithEncryptionAlgorithm(EncryptionAlg value) { SetEncryptionAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -122,12 +112,10 @@ namespace Model
      * <p>The algorithm that is used to sign the AS2 messages sent with the
      * connector.</p>
      */
-    inline const SigningAlg& GetSigningAlgorithm() const{ return m_signingAlgorithm; }
+    inline SigningAlg GetSigningAlgorithm() const { return m_signingAlgorithm; }
     inline bool SigningAlgorithmHasBeenSet() const { return m_signingAlgorithmHasBeenSet; }
-    inline void SetSigningAlgorithm(const SigningAlg& value) { m_signingAlgorithmHasBeenSet = true; m_signingAlgorithm = value; }
-    inline void SetSigningAlgorithm(SigningAlg&& value) { m_signingAlgorithmHasBeenSet = true; m_signingAlgorithm = std::move(value); }
-    inline As2ConnectorConfig& WithSigningAlgorithm(const SigningAlg& value) { SetSigningAlgorithm(value); return *this;}
-    inline As2ConnectorConfig& WithSigningAlgorithm(SigningAlg&& value) { SetSigningAlgorithm(std::move(value)); return *this;}
+    inline void SetSigningAlgorithm(SigningAlg value) { m_signingAlgorithmHasBeenSet = true; m_signingAlgorithm = value; }
+    inline As2ConnectorConfig& WithSigningAlgorithm(SigningAlg value) { SetSigningAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -136,12 +124,10 @@ namespace Model
      * (or not set at all), the value for <code>SigningAlgorithm</code> is used.</p>
      * 
      */
-    inline const MdnSigningAlg& GetMdnSigningAlgorithm() const{ return m_mdnSigningAlgorithm; }
+    inline MdnSigningAlg GetMdnSigningAlgorithm() const { return m_mdnSigningAlgorithm; }
     inline bool MdnSigningAlgorithmHasBeenSet() const { return m_mdnSigningAlgorithmHasBeenSet; }
-    inline void SetMdnSigningAlgorithm(const MdnSigningAlg& value) { m_mdnSigningAlgorithmHasBeenSet = true; m_mdnSigningAlgorithm = value; }
-    inline void SetMdnSigningAlgorithm(MdnSigningAlg&& value) { m_mdnSigningAlgorithmHasBeenSet = true; m_mdnSigningAlgorithm = std::move(value); }
-    inline As2ConnectorConfig& WithMdnSigningAlgorithm(const MdnSigningAlg& value) { SetMdnSigningAlgorithm(value); return *this;}
-    inline As2ConnectorConfig& WithMdnSigningAlgorithm(MdnSigningAlg&& value) { SetMdnSigningAlgorithm(std::move(value)); return *this;}
+    inline void SetMdnSigningAlgorithm(MdnSigningAlg value) { m_mdnSigningAlgorithmHasBeenSet = true; m_mdnSigningAlgorithm = value; }
+    inline As2ConnectorConfig& WithMdnSigningAlgorithm(MdnSigningAlg value) { SetMdnSigningAlgorithm(value); return *this;}
     ///@}
 
     ///@{
@@ -153,12 +139,10 @@ namespace Model
      * that the file was transferred successfully (or not).</p> </li> <li> <p>
      * <code>NONE</code>: Specifies that no MDN response is required.</p> </li> </ul>
      */
-    inline const MdnResponse& GetMdnResponse() const{ return m_mdnResponse; }
+    inline MdnResponse GetMdnResponse() const { return m_mdnResponse; }
     inline bool MdnResponseHasBeenSet() const { return m_mdnResponseHasBeenSet; }
-    inline void SetMdnResponse(const MdnResponse& value) { m_mdnResponseHasBeenSet = true; m_mdnResponse = value; }
-    inline void SetMdnResponse(MdnResponse&& value) { m_mdnResponseHasBeenSet = true; m_mdnResponse = std::move(value); }
-    inline As2ConnectorConfig& WithMdnResponse(const MdnResponse& value) { SetMdnResponse(value); return *this;}
-    inline As2ConnectorConfig& WithMdnResponse(MdnResponse&& value) { SetMdnResponse(std::move(value)); return *this;}
+    inline void SetMdnResponse(MdnResponse value) { m_mdnResponseHasBeenSet = true; m_mdnResponse = value; }
+    inline As2ConnectorConfig& WithMdnResponse(MdnResponse value) { SetMdnResponse(value); return *this;}
     ///@}
 
     ///@{
@@ -184,14 +168,12 @@ namespace Model
      * <code>update-connector --connector-id my-connector-id --as2-config
      * 'BasicAuthSecretId=""'</code> </p>
      */
-    inline const Aws::String& GetBasicAuthSecretId() const{ return m_basicAuthSecretId; }
+    inline const Aws::String& GetBasicAuthSecretId() const { return m_basicAuthSecretId; }
     inline bool BasicAuthSecretIdHasBeenSet() const { return m_basicAuthSecretIdHasBeenSet; }
-    inline void SetBasicAuthSecretId(const Aws::String& value) { m_basicAuthSecretIdHasBeenSet = true; m_basicAuthSecretId = value; }
-    inline void SetBasicAuthSecretId(Aws::String&& value) { m_basicAuthSecretIdHasBeenSet = true; m_basicAuthSecretId = std::move(value); }
-    inline void SetBasicAuthSecretId(const char* value) { m_basicAuthSecretIdHasBeenSet = true; m_basicAuthSecretId.assign(value); }
-    inline As2ConnectorConfig& WithBasicAuthSecretId(const Aws::String& value) { SetBasicAuthSecretId(value); return *this;}
-    inline As2ConnectorConfig& WithBasicAuthSecretId(Aws::String&& value) { SetBasicAuthSecretId(std::move(value)); return *this;}
-    inline As2ConnectorConfig& WithBasicAuthSecretId(const char* value) { SetBasicAuthSecretId(value); return *this;}
+    template<typename BasicAuthSecretIdT = Aws::String>
+    void SetBasicAuthSecretId(BasicAuthSecretIdT&& value) { m_basicAuthSecretIdHasBeenSet = true; m_basicAuthSecretId = std::forward<BasicAuthSecretIdT>(value); }
+    template<typename BasicAuthSecretIdT = Aws::String>
+    As2ConnectorConfig& WithBasicAuthSecretId(BasicAuthSecretIdT&& value) { SetBasicAuthSecretId(std::forward<BasicAuthSecretIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -202,12 +184,10 @@ namespace Model
      * from the console, but disabled by default when you create an AS2 connector by
      * calling the API directly.</p>
      */
-    inline const PreserveContentType& GetPreserveContentType() const{ return m_preserveContentType; }
+    inline PreserveContentType GetPreserveContentType() const { return m_preserveContentType; }
     inline bool PreserveContentTypeHasBeenSet() const { return m_preserveContentTypeHasBeenSet; }
-    inline void SetPreserveContentType(const PreserveContentType& value) { m_preserveContentTypeHasBeenSet = true; m_preserveContentType = value; }
-    inline void SetPreserveContentType(PreserveContentType&& value) { m_preserveContentTypeHasBeenSet = true; m_preserveContentType = std::move(value); }
-    inline As2ConnectorConfig& WithPreserveContentType(const PreserveContentType& value) { SetPreserveContentType(value); return *this;}
-    inline As2ConnectorConfig& WithPreserveContentType(PreserveContentType&& value) { SetPreserveContentType(std::move(value)); return *this;}
+    inline void SetPreserveContentType(PreserveContentType value) { m_preserveContentTypeHasBeenSet = true; m_preserveContentType = value; }
+    inline As2ConnectorConfig& WithPreserveContentType(PreserveContentType value) { SetPreserveContentType(value); return *this;}
     ///@}
   private:
 
@@ -220,25 +200,25 @@ namespace Model
     Aws::String m_messageSubject;
     bool m_messageSubjectHasBeenSet = false;
 
-    CompressionEnum m_compression;
+    CompressionEnum m_compression{CompressionEnum::NOT_SET};
     bool m_compressionHasBeenSet = false;
 
-    EncryptionAlg m_encryptionAlgorithm;
+    EncryptionAlg m_encryptionAlgorithm{EncryptionAlg::NOT_SET};
     bool m_encryptionAlgorithmHasBeenSet = false;
 
-    SigningAlg m_signingAlgorithm;
+    SigningAlg m_signingAlgorithm{SigningAlg::NOT_SET};
     bool m_signingAlgorithmHasBeenSet = false;
 
-    MdnSigningAlg m_mdnSigningAlgorithm;
+    MdnSigningAlg m_mdnSigningAlgorithm{MdnSigningAlg::NOT_SET};
     bool m_mdnSigningAlgorithmHasBeenSet = false;
 
-    MdnResponse m_mdnResponse;
+    MdnResponse m_mdnResponse{MdnResponse::NOT_SET};
     bool m_mdnResponseHasBeenSet = false;
 
     Aws::String m_basicAuthSecretId;
     bool m_basicAuthSecretIdHasBeenSet = false;
 
-    PreserveContentType m_preserveContentType;
+    PreserveContentType m_preserveContentType{PreserveContentType::NOT_SET};
     bool m_preserveContentTypeHasBeenSet = false;
   };
 

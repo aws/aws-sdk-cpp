@@ -18,15 +18,7 @@ namespace SSM
 namespace Model
 {
 
-ScheduledWindowExecution::ScheduledWindowExecution() : 
-    m_windowIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_executionTimeHasBeenSet(false)
-{
-}
-
 ScheduledWindowExecution::ScheduledWindowExecution(JsonView jsonValue)
-  : ScheduledWindowExecution()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ScheduledWindowExecution& ScheduledWindowExecution::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("WindowId"))
   {
     m_windowId = jsonValue.GetString("WindowId");
-
     m_windowIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionTime"))
   {
     m_executionTime = jsonValue.GetString("ExecutionTime");
-
     m_executionTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

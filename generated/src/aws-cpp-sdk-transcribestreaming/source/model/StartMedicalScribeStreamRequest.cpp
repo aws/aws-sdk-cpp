@@ -14,18 +14,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartMedicalScribeStreamRequest::StartMedicalScribeStreamRequest() : 
-    m_sessionIdHasBeenSet(false),
-    m_languageCode(MedicalScribeLanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_mediaSampleRateHertz(0),
-    m_mediaSampleRateHertzHasBeenSet(false),
-    m_mediaEncoding(MedicalScribeMediaEncoding::NOT_SET),
-    m_mediaEncodingHasBeenSet(false),
-    m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
-{
-}
-
 std::shared_ptr<Aws::IOStream> StartMedicalScribeStreamRequest::GetBody() const
 {
     return m_inputStream;

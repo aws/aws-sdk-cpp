@@ -18,14 +18,7 @@ namespace SSOAdmin
 namespace Model
 {
 
-AuthorizedTokenIssuer::AuthorizedTokenIssuer() : 
-    m_authorizedAudiencesHasBeenSet(false),
-    m_trustedTokenIssuerArnHasBeenSet(false)
-{
-}
-
 AuthorizedTokenIssuer::AuthorizedTokenIssuer(JsonView jsonValue)
-  : AuthorizedTokenIssuer()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ AuthorizedTokenIssuer& AuthorizedTokenIssuer::operator =(JsonView jsonValue)
     }
     m_authorizedAudiencesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TrustedTokenIssuerArn"))
   {
     m_trustedTokenIssuerArn = jsonValue.GetString("TrustedTokenIssuerArn");
-
     m_trustedTokenIssuerArnHasBeenSet = true;
   }
-
   return *this;
 }
 

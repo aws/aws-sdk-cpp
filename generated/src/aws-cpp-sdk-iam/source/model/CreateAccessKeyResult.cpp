@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAccessKeyResult::CreateAccessKeyResult()
-{
-}
-
 CreateAccessKeyResult::CreateAccessKeyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ CreateAccessKeyResult& CreateAccessKeyResult::operator =(const Aws::AmazonWebSer
     if(!accessKeyNode.IsNull())
     {
       m_accessKey = accessKeyNode;
+      m_accessKeyHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::CreateAccessKeyResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

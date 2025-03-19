@@ -18,28 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-CdmaObj::CdmaObj() : 
-    m_systemId(0),
-    m_systemIdHasBeenSet(false),
-    m_networkId(0),
-    m_networkIdHasBeenSet(false),
-    m_baseStationId(0),
-    m_baseStationIdHasBeenSet(false),
-    m_registrationZone(0),
-    m_registrationZoneHasBeenSet(false),
-    m_cdmaLocalIdHasBeenSet(false),
-    m_pilotPower(0),
-    m_pilotPowerHasBeenSet(false),
-    m_baseLat(0.0),
-    m_baseLatHasBeenSet(false),
-    m_baseLng(0.0),
-    m_baseLngHasBeenSet(false),
-    m_cdmaNmrHasBeenSet(false)
-{
-}
-
 CdmaObj::CdmaObj(JsonView jsonValue)
-  : CdmaObj()
 {
   *this = jsonValue;
 }
@@ -49,59 +28,43 @@ CdmaObj& CdmaObj::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SystemId"))
   {
     m_systemId = jsonValue.GetInteger("SystemId");
-
     m_systemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkId"))
   {
     m_networkId = jsonValue.GetInteger("NetworkId");
-
     m_networkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BaseStationId"))
   {
     m_baseStationId = jsonValue.GetInteger("BaseStationId");
-
     m_baseStationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationZone"))
   {
     m_registrationZone = jsonValue.GetInteger("RegistrationZone");
-
     m_registrationZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CdmaLocalId"))
   {
     m_cdmaLocalId = jsonValue.GetObject("CdmaLocalId");
-
     m_cdmaLocalIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PilotPower"))
   {
     m_pilotPower = jsonValue.GetInteger("PilotPower");
-
     m_pilotPowerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BaseLat"))
   {
     m_baseLat = jsonValue.GetDouble("BaseLat");
-
     m_baseLatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BaseLng"))
   {
     m_baseLng = jsonValue.GetDouble("BaseLng");
-
     m_baseLngHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CdmaNmr"))
   {
     Aws::Utils::Array<JsonView> cdmaNmrJsonList = jsonValue.GetArray("CdmaNmr");
@@ -111,7 +74,6 @@ CdmaObj& CdmaObj::operator =(JsonView jsonValue)
     }
     m_cdmaNmrHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListBotAliasesResult::ListBotAliasesResult()
-{
-}
-
 ListBotAliasesResult::ListBotAliasesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,26 +32,25 @@ ListBotAliasesResult& ListBotAliasesResult::operator =(const Aws::AmazonWebServi
     {
       m_botAliasSummaries.push_back(botAliasSummariesJsonList[botAliasSummariesIndex].AsObject());
     }
+    m_botAliasSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botId"))
   {
     m_botId = jsonValue.GetString("botId");
-
+    m_botIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

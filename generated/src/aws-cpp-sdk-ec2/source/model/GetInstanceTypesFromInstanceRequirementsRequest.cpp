@@ -10,18 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-GetInstanceTypesFromInstanceRequirementsRequest::GetInstanceTypesFromInstanceRequirementsRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_architectureTypesHasBeenSet(false),
-    m_virtualizationTypesHasBeenSet(false),
-    m_instanceRequirementsHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetInstanceTypesFromInstanceRequirementsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

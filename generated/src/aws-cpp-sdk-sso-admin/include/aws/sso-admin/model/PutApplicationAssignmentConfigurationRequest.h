@@ -21,7 +21,7 @@ namespace Model
   class PutApplicationAssignmentConfigurationRequest : public SSOAdminRequest
   {
   public:
-    AWS_SSOADMIN_API PutApplicationAssignmentConfigurationRequest();
+    AWS_SSOADMIN_API PutApplicationAssignmentConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * (ARNs) and Amazon Web Services Service Namespaces</a> in the <i>Amazon Web
      * Services General Reference</i>.</p>
      */
-    inline const Aws::String& GetApplicationArn() const{ return m_applicationArn; }
+    inline const Aws::String& GetApplicationArn() const { return m_applicationArn; }
     inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
-    inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
-    inline void SetApplicationArn(Aws::String&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::move(value); }
-    inline void SetApplicationArn(const char* value) { m_applicationArnHasBeenSet = true; m_applicationArn.assign(value); }
-    inline PutApplicationAssignmentConfigurationRequest& WithApplicationArn(const Aws::String& value) { SetApplicationArn(value); return *this;}
-    inline PutApplicationAssignmentConfigurationRequest& WithApplicationArn(Aws::String&& value) { SetApplicationArn(std::move(value)); return *this;}
-    inline PutApplicationAssignmentConfigurationRequest& WithApplicationArn(const char* value) { SetApplicationArn(value); return *this;}
+    template<typename ApplicationArnT = Aws::String>
+    void SetApplicationArn(ApplicationArnT&& value) { m_applicationArnHasBeenSet = true; m_applicationArn = std::forward<ApplicationArnT>(value); }
+    template<typename ApplicationArnT = Aws::String>
+    PutApplicationAssignmentConfigurationRequest& WithApplicationArn(ApplicationArnT&& value) { SetApplicationArn(std::forward<ApplicationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/singlesignon/latest/APIReference/API_CreateApplicationAssignment.html">CreateApplicationAssignment
      * API</a>. If <code>false</code>, all users have access to the application. </p>
      */
-    inline bool GetAssignmentRequired() const{ return m_assignmentRequired; }
+    inline bool GetAssignmentRequired() const { return m_assignmentRequired; }
     inline bool AssignmentRequiredHasBeenSet() const { return m_assignmentRequiredHasBeenSet; }
     inline void SetAssignmentRequired(bool value) { m_assignmentRequiredHasBeenSet = true; m_assignmentRequired = value; }
     inline PutApplicationAssignmentConfigurationRequest& WithAssignmentRequired(bool value) { SetAssignmentRequired(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
     Aws::String m_applicationArn;
     bool m_applicationArnHasBeenSet = false;
 
-    bool m_assignmentRequired;
+    bool m_assignmentRequired{false};
     bool m_assignmentRequiredHasBeenSet = false;
   };
 

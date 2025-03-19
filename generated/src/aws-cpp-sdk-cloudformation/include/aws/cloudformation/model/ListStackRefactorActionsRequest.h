@@ -21,7 +21,7 @@ namespace Model
   class ListStackRefactorActionsRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API ListStackRefactorActionsRequest();
+    AWS_CLOUDFORMATION_API ListStackRefactorActionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The ID associated with the stack refactor created from the
      * <a>CreateStackRefactor</a> action.</p>
      */
-    inline const Aws::String& GetStackRefactorId() const{ return m_stackRefactorId; }
+    inline const Aws::String& GetStackRefactorId() const { return m_stackRefactorId; }
     inline bool StackRefactorIdHasBeenSet() const { return m_stackRefactorIdHasBeenSet; }
-    inline void SetStackRefactorId(const Aws::String& value) { m_stackRefactorIdHasBeenSet = true; m_stackRefactorId = value; }
-    inline void SetStackRefactorId(Aws::String&& value) { m_stackRefactorIdHasBeenSet = true; m_stackRefactorId = std::move(value); }
-    inline void SetStackRefactorId(const char* value) { m_stackRefactorIdHasBeenSet = true; m_stackRefactorId.assign(value); }
-    inline ListStackRefactorActionsRequest& WithStackRefactorId(const Aws::String& value) { SetStackRefactorId(value); return *this;}
-    inline ListStackRefactorActionsRequest& WithStackRefactorId(Aws::String&& value) { SetStackRefactorId(std::move(value)); return *this;}
-    inline ListStackRefactorActionsRequest& WithStackRefactorId(const char* value) { SetStackRefactorId(value); return *this;}
+    template<typename StackRefactorIdT = Aws::String>
+    void SetStackRefactorId(StackRefactorIdT&& value) { m_stackRefactorIdHasBeenSet = true; m_stackRefactorId = std::forward<StackRefactorIdT>(value); }
+    template<typename StackRefactorIdT = Aws::String>
+    ListStackRefactorActionsRequest& WithStackRefactorId(StackRefactorIdT&& value) { SetStackRefactorId(std::forward<StackRefactorIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <code>NextToken</code> parameter. If the request returns all results,
      * <code>NextToken</code> is set to <code>null</code>.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListStackRefactorActionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListStackRefactorActionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListStackRefactorActionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListStackRefactorActionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,7 +72,7 @@ namespace Model
      * <code>NextToken</code> value that you can assign to the <code>NextToken</code>
      * request parameter to get the next set of results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListStackRefactorActionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -89,7 +85,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

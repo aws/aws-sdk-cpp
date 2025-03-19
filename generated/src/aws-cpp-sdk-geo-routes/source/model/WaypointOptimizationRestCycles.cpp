@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-WaypointOptimizationRestCycles::WaypointOptimizationRestCycles() : 
-    m_longCycleHasBeenSet(false),
-    m_shortCycleHasBeenSet(false)
-{
-}
-
 WaypointOptimizationRestCycles::WaypointOptimizationRestCycles(JsonView jsonValue)
-  : WaypointOptimizationRestCycles()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ WaypointOptimizationRestCycles& WaypointOptimizationRestCycles::operator =(JsonV
   if(jsonValue.ValueExists("LongCycle"))
   {
     m_longCycle = jsonValue.GetObject("LongCycle");
-
     m_longCycleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShortCycle"))
   {
     m_shortCycle = jsonValue.GetObject("ShortCycle");
-
     m_shortCycleHasBeenSet = true;
   }
-
   return *this;
 }
 

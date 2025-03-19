@@ -18,18 +18,7 @@ namespace Proton
 namespace Model
 {
 
-Revision::Revision() : 
-    m_branchHasBeenSet(false),
-    m_directoryHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_repositoryProvider(RepositoryProvider::NOT_SET),
-    m_repositoryProviderHasBeenSet(false),
-    m_shaHasBeenSet(false)
-{
-}
-
 Revision::Revision(JsonView jsonValue)
-  : Revision()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ Revision& Revision::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("branch"))
   {
     m_branch = jsonValue.GetString("branch");
-
     m_branchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("directory"))
   {
     m_directory = jsonValue.GetString("directory");
-
     m_directoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryProvider"))
   {
     m_repositoryProvider = RepositoryProviderMapper::GetRepositoryProviderForName(jsonValue.GetString("repositoryProvider"));
-
     m_repositoryProviderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sha"))
   {
     m_sha = jsonValue.GetString("sha");
-
     m_shaHasBeenSet = true;
   }
-
   return *this;
 }
 

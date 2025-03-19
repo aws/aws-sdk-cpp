@@ -18,13 +18,7 @@ namespace BillingConductor
 namespace Model
 {
 
-ListPricingPlansFilter::ListPricingPlansFilter() : 
-    m_arnsHasBeenSet(false)
-{
-}
-
 ListPricingPlansFilter::ListPricingPlansFilter(JsonView jsonValue)
-  : ListPricingPlansFilter()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ListPricingPlansFilter& ListPricingPlansFilter::operator =(JsonView jsonValue)
     }
     m_arnsHasBeenSet = true;
   }
-
   return *this;
 }
 

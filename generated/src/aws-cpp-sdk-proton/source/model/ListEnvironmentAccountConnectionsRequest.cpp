@@ -12,17 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListEnvironmentAccountConnectionsRequest::ListEnvironmentAccountConnectionsRequest() : 
-    m_environmentNameHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_requestedBy(EnvironmentAccountConnectionRequesterAccountType::NOT_SET),
-    m_requestedByHasBeenSet(false),
-    m_statusesHasBeenSet(false)
-{
-}
-
 Aws::String ListEnvironmentAccountConnectionsRequest::SerializePayload() const
 {
   JsonValue payload;

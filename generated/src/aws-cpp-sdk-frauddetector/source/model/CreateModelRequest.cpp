@@ -12,16 +12,6 @@ using namespace Aws::FraudDetector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateModelRequest::CreateModelRequest() : 
-    m_modelIdHasBeenSet(false),
-    m_modelType(ModelTypeEnum::NOT_SET),
-    m_modelTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_eventTypeNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateModelRequest::SerializePayload() const
 {
   JsonValue payload;

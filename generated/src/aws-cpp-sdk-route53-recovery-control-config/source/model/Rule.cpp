@@ -18,14 +18,7 @@ namespace Route53RecoveryControlConfig
 namespace Model
 {
 
-Rule::Rule() : 
-    m_aSSERTIONHasBeenSet(false),
-    m_gATINGHasBeenSet(false)
-{
-}
-
 Rule::Rule(JsonView jsonValue)
-  : Rule()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Rule& Rule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ASSERTION"))
   {
     m_aSSERTION = jsonValue.GetObject("ASSERTION");
-
     m_aSSERTIONHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GATING"))
   {
     m_gATING = jsonValue.GetObject("GATING");
-
     m_gATINGHasBeenSet = true;
   }
-
   return *this;
 }
 

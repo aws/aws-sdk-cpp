@@ -18,22 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-WaypointOptimizationConnection::WaypointOptimizationConnection() : 
-    m_distance(0),
-    m_distanceHasBeenSet(false),
-    m_fromHasBeenSet(false),
-    m_restDuration(0),
-    m_restDurationHasBeenSet(false),
-    m_toHasBeenSet(false),
-    m_travelDuration(0),
-    m_travelDurationHasBeenSet(false),
-    m_waitDuration(0),
-    m_waitDurationHasBeenSet(false)
-{
-}
-
 WaypointOptimizationConnection::WaypointOptimizationConnection(JsonView jsonValue)
-  : WaypointOptimizationConnection()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ WaypointOptimizationConnection& WaypointOptimizationConnection::operator =(JsonV
   if(jsonValue.ValueExists("Distance"))
   {
     m_distance = jsonValue.GetInt64("Distance");
-
     m_distanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("From"))
   {
     m_from = jsonValue.GetString("From");
-
     m_fromHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RestDuration"))
   {
     m_restDuration = jsonValue.GetInt64("RestDuration");
-
     m_restDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("To"))
   {
     m_to = jsonValue.GetString("To");
-
     m_toHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TravelDuration"))
   {
     m_travelDuration = jsonValue.GetInt64("TravelDuration");
-
     m_travelDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WaitDuration"))
   {
     m_waitDuration = jsonValue.GetInt64("WaitDuration");
-
     m_waitDurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class WaypointOptimizationRestCycles
   {
   public:
-    AWS_GEOROUTES_API WaypointOptimizationRestCycles();
+    AWS_GEOROUTES_API WaypointOptimizationRestCycles() = default;
     AWS_GEOROUTES_API WaypointOptimizationRestCycles(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API WaypointOptimizationRestCycles& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,24 +41,24 @@ namespace Model
     /**
      * <p>Long cycle for a driver work-rest schedule.</p>
      */
-    inline const WaypointOptimizationRestCycleDurations& GetLongCycle() const{ return m_longCycle; }
+    inline const WaypointOptimizationRestCycleDurations& GetLongCycle() const { return m_longCycle; }
     inline bool LongCycleHasBeenSet() const { return m_longCycleHasBeenSet; }
-    inline void SetLongCycle(const WaypointOptimizationRestCycleDurations& value) { m_longCycleHasBeenSet = true; m_longCycle = value; }
-    inline void SetLongCycle(WaypointOptimizationRestCycleDurations&& value) { m_longCycleHasBeenSet = true; m_longCycle = std::move(value); }
-    inline WaypointOptimizationRestCycles& WithLongCycle(const WaypointOptimizationRestCycleDurations& value) { SetLongCycle(value); return *this;}
-    inline WaypointOptimizationRestCycles& WithLongCycle(WaypointOptimizationRestCycleDurations&& value) { SetLongCycle(std::move(value)); return *this;}
+    template<typename LongCycleT = WaypointOptimizationRestCycleDurations>
+    void SetLongCycle(LongCycleT&& value) { m_longCycleHasBeenSet = true; m_longCycle = std::forward<LongCycleT>(value); }
+    template<typename LongCycleT = WaypointOptimizationRestCycleDurations>
+    WaypointOptimizationRestCycles& WithLongCycle(LongCycleT&& value) { SetLongCycle(std::forward<LongCycleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Short cycle for a driver work-rest schedule</p>
      */
-    inline const WaypointOptimizationRestCycleDurations& GetShortCycle() const{ return m_shortCycle; }
+    inline const WaypointOptimizationRestCycleDurations& GetShortCycle() const { return m_shortCycle; }
     inline bool ShortCycleHasBeenSet() const { return m_shortCycleHasBeenSet; }
-    inline void SetShortCycle(const WaypointOptimizationRestCycleDurations& value) { m_shortCycleHasBeenSet = true; m_shortCycle = value; }
-    inline void SetShortCycle(WaypointOptimizationRestCycleDurations&& value) { m_shortCycleHasBeenSet = true; m_shortCycle = std::move(value); }
-    inline WaypointOptimizationRestCycles& WithShortCycle(const WaypointOptimizationRestCycleDurations& value) { SetShortCycle(value); return *this;}
-    inline WaypointOptimizationRestCycles& WithShortCycle(WaypointOptimizationRestCycleDurations&& value) { SetShortCycle(std::move(value)); return *this;}
+    template<typename ShortCycleT = WaypointOptimizationRestCycleDurations>
+    void SetShortCycle(ShortCycleT&& value) { m_shortCycleHasBeenSet = true; m_shortCycle = std::forward<ShortCycleT>(value); }
+    template<typename ShortCycleT = WaypointOptimizationRestCycleDurations>
+    WaypointOptimizationRestCycles& WithShortCycle(ShortCycleT&& value) { SetShortCycle(std::forward<ShortCycleT>(value)); return *this;}
     ///@}
   private:
 

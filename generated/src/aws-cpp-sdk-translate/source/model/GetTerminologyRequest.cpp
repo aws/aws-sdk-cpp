@@ -12,13 +12,6 @@ using namespace Aws::Translate::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTerminologyRequest::GetTerminologyRequest() : 
-    m_nameHasBeenSet(false),
-    m_terminologyDataFormat(TerminologyDataFormat::NOT_SET),
-    m_terminologyDataFormatHasBeenSet(false)
-{
-}
-
 Aws::String GetTerminologyRequest::SerializePayload() const
 {
   JsonValue payload;

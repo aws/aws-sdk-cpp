@@ -12,55 +12,6 @@ using namespace Aws::CodeBuild::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartBuildRequest::StartBuildRequest() : 
-    m_projectNameHasBeenSet(false),
-    m_secondarySourcesOverrideHasBeenSet(false),
-    m_secondarySourcesVersionOverrideHasBeenSet(false),
-    m_sourceVersionHasBeenSet(false),
-    m_artifactsOverrideHasBeenSet(false),
-    m_secondaryArtifactsOverrideHasBeenSet(false),
-    m_environmentVariablesOverrideHasBeenSet(false),
-    m_sourceTypeOverride(SourceType::NOT_SET),
-    m_sourceTypeOverrideHasBeenSet(false),
-    m_sourceLocationOverrideHasBeenSet(false),
-    m_sourceAuthOverrideHasBeenSet(false),
-    m_gitCloneDepthOverride(0),
-    m_gitCloneDepthOverrideHasBeenSet(false),
-    m_gitSubmodulesConfigOverrideHasBeenSet(false),
-    m_buildspecOverrideHasBeenSet(false),
-    m_insecureSslOverride(false),
-    m_insecureSslOverrideHasBeenSet(false),
-    m_reportBuildStatusOverride(false),
-    m_reportBuildStatusOverrideHasBeenSet(false),
-    m_buildStatusConfigOverrideHasBeenSet(false),
-    m_environmentTypeOverride(EnvironmentType::NOT_SET),
-    m_environmentTypeOverrideHasBeenSet(false),
-    m_imageOverrideHasBeenSet(false),
-    m_computeTypeOverride(ComputeType::NOT_SET),
-    m_computeTypeOverrideHasBeenSet(false),
-    m_certificateOverrideHasBeenSet(false),
-    m_cacheOverrideHasBeenSet(false),
-    m_serviceRoleOverrideHasBeenSet(false),
-    m_privilegedModeOverride(false),
-    m_privilegedModeOverrideHasBeenSet(false),
-    m_timeoutInMinutesOverride(0),
-    m_timeoutInMinutesOverrideHasBeenSet(false),
-    m_queuedTimeoutInMinutesOverride(0),
-    m_queuedTimeoutInMinutesOverrideHasBeenSet(false),
-    m_encryptionKeyOverrideHasBeenSet(false),
-    m_idempotencyTokenHasBeenSet(false),
-    m_logsConfigOverrideHasBeenSet(false),
-    m_registryCredentialOverrideHasBeenSet(false),
-    m_imagePullCredentialsTypeOverride(ImagePullCredentialsType::NOT_SET),
-    m_imagePullCredentialsTypeOverrideHasBeenSet(false),
-    m_debugSessionEnabled(false),
-    m_debugSessionEnabledHasBeenSet(false),
-    m_fleetOverrideHasBeenSet(false),
-    m_autoRetryLimitOverride(0),
-    m_autoRetryLimitOverrideHasBeenSet(false)
-{
-}
-
 Aws::String StartBuildRequest::SerializePayload() const
 {
   JsonValue payload;

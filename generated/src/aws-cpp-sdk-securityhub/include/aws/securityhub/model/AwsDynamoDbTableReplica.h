@@ -35,7 +35,7 @@ namespace Model
   class AwsDynamoDbTableReplica
   {
   public:
-    AWS_SECURITYHUB_API AwsDynamoDbTableReplica();
+    AWS_SECURITYHUB_API AwsDynamoDbTableReplica() = default;
     AWS_SECURITYHUB_API AwsDynamoDbTableReplica(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsDynamoDbTableReplica& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
     /**
      * <p>List of global secondary indexes for the replica.</p>
      */
-    inline const Aws::Vector<AwsDynamoDbTableReplicaGlobalSecondaryIndex>& GetGlobalSecondaryIndexes() const{ return m_globalSecondaryIndexes; }
+    inline const Aws::Vector<AwsDynamoDbTableReplicaGlobalSecondaryIndex>& GetGlobalSecondaryIndexes() const { return m_globalSecondaryIndexes; }
     inline bool GlobalSecondaryIndexesHasBeenSet() const { return m_globalSecondaryIndexesHasBeenSet; }
-    inline void SetGlobalSecondaryIndexes(const Aws::Vector<AwsDynamoDbTableReplicaGlobalSecondaryIndex>& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes = value; }
-    inline void SetGlobalSecondaryIndexes(Aws::Vector<AwsDynamoDbTableReplicaGlobalSecondaryIndex>&& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes = std::move(value); }
-    inline AwsDynamoDbTableReplica& WithGlobalSecondaryIndexes(const Aws::Vector<AwsDynamoDbTableReplicaGlobalSecondaryIndex>& value) { SetGlobalSecondaryIndexes(value); return *this;}
-    inline AwsDynamoDbTableReplica& WithGlobalSecondaryIndexes(Aws::Vector<AwsDynamoDbTableReplicaGlobalSecondaryIndex>&& value) { SetGlobalSecondaryIndexes(std::move(value)); return *this;}
-    inline AwsDynamoDbTableReplica& AddGlobalSecondaryIndexes(const AwsDynamoDbTableReplicaGlobalSecondaryIndex& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes.push_back(value); return *this; }
-    inline AwsDynamoDbTableReplica& AddGlobalSecondaryIndexes(AwsDynamoDbTableReplicaGlobalSecondaryIndex&& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes.push_back(std::move(value)); return *this; }
+    template<typename GlobalSecondaryIndexesT = Aws::Vector<AwsDynamoDbTableReplicaGlobalSecondaryIndex>>
+    void SetGlobalSecondaryIndexes(GlobalSecondaryIndexesT&& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes = std::forward<GlobalSecondaryIndexesT>(value); }
+    template<typename GlobalSecondaryIndexesT = Aws::Vector<AwsDynamoDbTableReplicaGlobalSecondaryIndex>>
+    AwsDynamoDbTableReplica& WithGlobalSecondaryIndexes(GlobalSecondaryIndexesT&& value) { SetGlobalSecondaryIndexes(std::forward<GlobalSecondaryIndexesT>(value)); return *this;}
+    template<typename GlobalSecondaryIndexesT = AwsDynamoDbTableReplicaGlobalSecondaryIndex>
+    AwsDynamoDbTableReplica& AddGlobalSecondaryIndexes(GlobalSecondaryIndexesT&& value) { m_globalSecondaryIndexesHasBeenSet = true; m_globalSecondaryIndexes.emplace_back(std::forward<GlobalSecondaryIndexesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,40 +60,36 @@ namespace Model
      * <p>The identifier of the KMS key that will be used for KMS encryption for the
      * replica.</p>
      */
-    inline const Aws::String& GetKmsMasterKeyId() const{ return m_kmsMasterKeyId; }
+    inline const Aws::String& GetKmsMasterKeyId() const { return m_kmsMasterKeyId; }
     inline bool KmsMasterKeyIdHasBeenSet() const { return m_kmsMasterKeyIdHasBeenSet; }
-    inline void SetKmsMasterKeyId(const Aws::String& value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId = value; }
-    inline void SetKmsMasterKeyId(Aws::String&& value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId = std::move(value); }
-    inline void SetKmsMasterKeyId(const char* value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId.assign(value); }
-    inline AwsDynamoDbTableReplica& WithKmsMasterKeyId(const Aws::String& value) { SetKmsMasterKeyId(value); return *this;}
-    inline AwsDynamoDbTableReplica& WithKmsMasterKeyId(Aws::String&& value) { SetKmsMasterKeyId(std::move(value)); return *this;}
-    inline AwsDynamoDbTableReplica& WithKmsMasterKeyId(const char* value) { SetKmsMasterKeyId(value); return *this;}
+    template<typename KmsMasterKeyIdT = Aws::String>
+    void SetKmsMasterKeyId(KmsMasterKeyIdT&& value) { m_kmsMasterKeyIdHasBeenSet = true; m_kmsMasterKeyId = std::forward<KmsMasterKeyIdT>(value); }
+    template<typename KmsMasterKeyIdT = Aws::String>
+    AwsDynamoDbTableReplica& WithKmsMasterKeyId(KmsMasterKeyIdT&& value) { SetKmsMasterKeyId(std::forward<KmsMasterKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Replica-specific configuration for the provisioned throughput.</p>
      */
-    inline const AwsDynamoDbTableProvisionedThroughputOverride& GetProvisionedThroughputOverride() const{ return m_provisionedThroughputOverride; }
+    inline const AwsDynamoDbTableProvisionedThroughputOverride& GetProvisionedThroughputOverride() const { return m_provisionedThroughputOverride; }
     inline bool ProvisionedThroughputOverrideHasBeenSet() const { return m_provisionedThroughputOverrideHasBeenSet; }
-    inline void SetProvisionedThroughputOverride(const AwsDynamoDbTableProvisionedThroughputOverride& value) { m_provisionedThroughputOverrideHasBeenSet = true; m_provisionedThroughputOverride = value; }
-    inline void SetProvisionedThroughputOverride(AwsDynamoDbTableProvisionedThroughputOverride&& value) { m_provisionedThroughputOverrideHasBeenSet = true; m_provisionedThroughputOverride = std::move(value); }
-    inline AwsDynamoDbTableReplica& WithProvisionedThroughputOverride(const AwsDynamoDbTableProvisionedThroughputOverride& value) { SetProvisionedThroughputOverride(value); return *this;}
-    inline AwsDynamoDbTableReplica& WithProvisionedThroughputOverride(AwsDynamoDbTableProvisionedThroughputOverride&& value) { SetProvisionedThroughputOverride(std::move(value)); return *this;}
+    template<typename ProvisionedThroughputOverrideT = AwsDynamoDbTableProvisionedThroughputOverride>
+    void SetProvisionedThroughputOverride(ProvisionedThroughputOverrideT&& value) { m_provisionedThroughputOverrideHasBeenSet = true; m_provisionedThroughputOverride = std::forward<ProvisionedThroughputOverrideT>(value); }
+    template<typename ProvisionedThroughputOverrideT = AwsDynamoDbTableProvisionedThroughputOverride>
+    AwsDynamoDbTableReplica& WithProvisionedThroughputOverride(ProvisionedThroughputOverrideT&& value) { SetProvisionedThroughputOverride(std::forward<ProvisionedThroughputOverrideT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Region where the replica is located.</p>
      */
-    inline const Aws::String& GetRegionName() const{ return m_regionName; }
+    inline const Aws::String& GetRegionName() const { return m_regionName; }
     inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
-    inline void SetRegionName(const Aws::String& value) { m_regionNameHasBeenSet = true; m_regionName = value; }
-    inline void SetRegionName(Aws::String&& value) { m_regionNameHasBeenSet = true; m_regionName = std::move(value); }
-    inline void SetRegionName(const char* value) { m_regionNameHasBeenSet = true; m_regionName.assign(value); }
-    inline AwsDynamoDbTableReplica& WithRegionName(const Aws::String& value) { SetRegionName(value); return *this;}
-    inline AwsDynamoDbTableReplica& WithRegionName(Aws::String&& value) { SetRegionName(std::move(value)); return *this;}
-    inline AwsDynamoDbTableReplica& WithRegionName(const char* value) { SetRegionName(value); return *this;}
+    template<typename RegionNameT = Aws::String>
+    void SetRegionName(RegionNameT&& value) { m_regionNameHasBeenSet = true; m_regionName = std::forward<RegionNameT>(value); }
+    template<typename RegionNameT = Aws::String>
+    AwsDynamoDbTableReplica& WithRegionName(RegionNameT&& value) { SetRegionName(std::forward<RegionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,28 +99,24 @@ namespace Model
      * <li> <p> <code>CREATION_FAILED</code> </p> </li> <li> <p> <code>DELETING</code>
      * </p> </li> <li> <p> <code>UPDATING</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetReplicaStatus() const{ return m_replicaStatus; }
+    inline const Aws::String& GetReplicaStatus() const { return m_replicaStatus; }
     inline bool ReplicaStatusHasBeenSet() const { return m_replicaStatusHasBeenSet; }
-    inline void SetReplicaStatus(const Aws::String& value) { m_replicaStatusHasBeenSet = true; m_replicaStatus = value; }
-    inline void SetReplicaStatus(Aws::String&& value) { m_replicaStatusHasBeenSet = true; m_replicaStatus = std::move(value); }
-    inline void SetReplicaStatus(const char* value) { m_replicaStatusHasBeenSet = true; m_replicaStatus.assign(value); }
-    inline AwsDynamoDbTableReplica& WithReplicaStatus(const Aws::String& value) { SetReplicaStatus(value); return *this;}
-    inline AwsDynamoDbTableReplica& WithReplicaStatus(Aws::String&& value) { SetReplicaStatus(std::move(value)); return *this;}
-    inline AwsDynamoDbTableReplica& WithReplicaStatus(const char* value) { SetReplicaStatus(value); return *this;}
+    template<typename ReplicaStatusT = Aws::String>
+    void SetReplicaStatus(ReplicaStatusT&& value) { m_replicaStatusHasBeenSet = true; m_replicaStatus = std::forward<ReplicaStatusT>(value); }
+    template<typename ReplicaStatusT = Aws::String>
+    AwsDynamoDbTableReplica& WithReplicaStatus(ReplicaStatusT&& value) { SetReplicaStatus(std::forward<ReplicaStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Detailed information about the replica status.</p>
      */
-    inline const Aws::String& GetReplicaStatusDescription() const{ return m_replicaStatusDescription; }
+    inline const Aws::String& GetReplicaStatusDescription() const { return m_replicaStatusDescription; }
     inline bool ReplicaStatusDescriptionHasBeenSet() const { return m_replicaStatusDescriptionHasBeenSet; }
-    inline void SetReplicaStatusDescription(const Aws::String& value) { m_replicaStatusDescriptionHasBeenSet = true; m_replicaStatusDescription = value; }
-    inline void SetReplicaStatusDescription(Aws::String&& value) { m_replicaStatusDescriptionHasBeenSet = true; m_replicaStatusDescription = std::move(value); }
-    inline void SetReplicaStatusDescription(const char* value) { m_replicaStatusDescriptionHasBeenSet = true; m_replicaStatusDescription.assign(value); }
-    inline AwsDynamoDbTableReplica& WithReplicaStatusDescription(const Aws::String& value) { SetReplicaStatusDescription(value); return *this;}
-    inline AwsDynamoDbTableReplica& WithReplicaStatusDescription(Aws::String&& value) { SetReplicaStatusDescription(std::move(value)); return *this;}
-    inline AwsDynamoDbTableReplica& WithReplicaStatusDescription(const char* value) { SetReplicaStatusDescription(value); return *this;}
+    template<typename ReplicaStatusDescriptionT = Aws::String>
+    void SetReplicaStatusDescription(ReplicaStatusDescriptionT&& value) { m_replicaStatusDescriptionHasBeenSet = true; m_replicaStatusDescription = std::forward<ReplicaStatusDescriptionT>(value); }
+    template<typename ReplicaStatusDescriptionT = Aws::String>
+    AwsDynamoDbTableReplica& WithReplicaStatusDescription(ReplicaStatusDescriptionT&& value) { SetReplicaStatusDescription(std::forward<ReplicaStatusDescriptionT>(value)); return *this;}
     ///@}
   private:
 

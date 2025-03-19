@@ -29,7 +29,7 @@ namespace Model
   class DescribeStorediSCSIVolumesResult
   {
   public:
-    AWS_STORAGEGATEWAY_API DescribeStorediSCSIVolumesResult();
+    AWS_STORAGEGATEWAY_API DescribeStorediSCSIVolumesResult() = default;
     AWS_STORAGEGATEWAY_API DescribeStorediSCSIVolumesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_STORAGEGATEWAY_API DescribeStorediSCSIVolumesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -69,30 +69,30 @@ namespace Model
      * One of the enumeration values describing the type of the volume. Currently, only
      * <code>STORED</code> volumes are supported.</p> </li> </ul>
      */
-    inline const Aws::Vector<StorediSCSIVolume>& GetStorediSCSIVolumes() const{ return m_storediSCSIVolumes; }
-    inline void SetStorediSCSIVolumes(const Aws::Vector<StorediSCSIVolume>& value) { m_storediSCSIVolumes = value; }
-    inline void SetStorediSCSIVolumes(Aws::Vector<StorediSCSIVolume>&& value) { m_storediSCSIVolumes = std::move(value); }
-    inline DescribeStorediSCSIVolumesResult& WithStorediSCSIVolumes(const Aws::Vector<StorediSCSIVolume>& value) { SetStorediSCSIVolumes(value); return *this;}
-    inline DescribeStorediSCSIVolumesResult& WithStorediSCSIVolumes(Aws::Vector<StorediSCSIVolume>&& value) { SetStorediSCSIVolumes(std::move(value)); return *this;}
-    inline DescribeStorediSCSIVolumesResult& AddStorediSCSIVolumes(const StorediSCSIVolume& value) { m_storediSCSIVolumes.push_back(value); return *this; }
-    inline DescribeStorediSCSIVolumesResult& AddStorediSCSIVolumes(StorediSCSIVolume&& value) { m_storediSCSIVolumes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<StorediSCSIVolume>& GetStorediSCSIVolumes() const { return m_storediSCSIVolumes; }
+    template<typename StorediSCSIVolumesT = Aws::Vector<StorediSCSIVolume>>
+    void SetStorediSCSIVolumes(StorediSCSIVolumesT&& value) { m_storediSCSIVolumesHasBeenSet = true; m_storediSCSIVolumes = std::forward<StorediSCSIVolumesT>(value); }
+    template<typename StorediSCSIVolumesT = Aws::Vector<StorediSCSIVolume>>
+    DescribeStorediSCSIVolumesResult& WithStorediSCSIVolumes(StorediSCSIVolumesT&& value) { SetStorediSCSIVolumes(std::forward<StorediSCSIVolumesT>(value)); return *this;}
+    template<typename StorediSCSIVolumesT = StorediSCSIVolume>
+    DescribeStorediSCSIVolumesResult& AddStorediSCSIVolumes(StorediSCSIVolumesT&& value) { m_storediSCSIVolumesHasBeenSet = true; m_storediSCSIVolumes.emplace_back(std::forward<StorediSCSIVolumesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeStorediSCSIVolumesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeStorediSCSIVolumesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeStorediSCSIVolumesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeStorediSCSIVolumesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<StorediSCSIVolume> m_storediSCSIVolumes;
+    bool m_storediSCSIVolumesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

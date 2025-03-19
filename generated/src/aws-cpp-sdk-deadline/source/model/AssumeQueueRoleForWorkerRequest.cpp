@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-AssumeQueueRoleForWorkerRequest::AssumeQueueRoleForWorkerRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_workerIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false)
-{
-}
-
 Aws::String AssumeQueueRoleForWorkerRequest::SerializePayload() const
 {
   return {};

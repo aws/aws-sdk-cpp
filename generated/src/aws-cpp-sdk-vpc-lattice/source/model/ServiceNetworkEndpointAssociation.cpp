@@ -18,19 +18,7 @@ namespace VPCLattice
 namespace Model
 {
 
-ServiceNetworkEndpointAssociation::ServiceNetworkEndpointAssociation() : 
-    m_createdAtHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_serviceNetworkArnHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_vpcEndpointIdHasBeenSet(false),
-    m_vpcEndpointOwnerIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
-{
-}
-
 ServiceNetworkEndpointAssociation::ServiceNetworkEndpointAssociation(JsonView jsonValue)
-  : ServiceNetworkEndpointAssociation()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ ServiceNetworkEndpointAssociation& ServiceNetworkEndpointAssociation::operator =
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceNetworkArn"))
   {
     m_serviceNetworkArn = jsonValue.GetString("serviceNetworkArn");
-
     m_serviceNetworkArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = jsonValue.GetString("state");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcEndpointId"))
   {
     m_vpcEndpointId = jsonValue.GetString("vpcEndpointId");
-
     m_vpcEndpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcEndpointOwnerId"))
   {
     m_vpcEndpointOwnerId = jsonValue.GetString("vpcEndpointOwnerId");
-
     m_vpcEndpointOwnerIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcId"))
   {
     m_vpcId = jsonValue.GetString("vpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   return *this;
 }
 

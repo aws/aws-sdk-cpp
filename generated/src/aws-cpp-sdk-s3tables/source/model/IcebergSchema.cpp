@@ -18,13 +18,7 @@ namespace S3Tables
 namespace Model
 {
 
-IcebergSchema::IcebergSchema() : 
-    m_fieldsHasBeenSet(false)
-{
-}
-
 IcebergSchema::IcebergSchema(JsonView jsonValue)
-  : IcebergSchema()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ IcebergSchema& IcebergSchema::operator =(JsonView jsonValue)
     }
     m_fieldsHasBeenSet = true;
   }
-
   return *this;
 }
 

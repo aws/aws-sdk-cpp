@@ -18,14 +18,7 @@ namespace RedshiftDataAPIService
 namespace Model
 {
 
-ExecuteStatementException::ExecuteStatementException() : 
-    m_messageHasBeenSet(false),
-    m_statementIdHasBeenSet(false)
-{
-}
-
 ExecuteStatementException::ExecuteStatementException(JsonView jsonValue)
-  : ExecuteStatementException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ExecuteStatementException& ExecuteStatementException::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatementId"))
   {
     m_statementId = jsonValue.GetString("StatementId");
-
     m_statementIdHasBeenSet = true;
   }
-
   return *this;
 }
 

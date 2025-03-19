@@ -32,7 +32,7 @@ namespace Model
   class ConnectivityResourceParameters
   {
   public:
-    AWS_EVENTBRIDGE_API ConnectivityResourceParameters();
+    AWS_EVENTBRIDGE_API ConnectivityResourceParameters() = default;
     AWS_EVENTBRIDGE_API ConnectivityResourceParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API ConnectivityResourceParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The parameters for EventBridge to use when invoking the resource
      * endpoint.</p>
      */
-    inline const ConnectivityResourceConfigurationArn& GetResourceParameters() const{ return m_resourceParameters; }
+    inline const ConnectivityResourceConfigurationArn& GetResourceParameters() const { return m_resourceParameters; }
     inline bool ResourceParametersHasBeenSet() const { return m_resourceParametersHasBeenSet; }
-    inline void SetResourceParameters(const ConnectivityResourceConfigurationArn& value) { m_resourceParametersHasBeenSet = true; m_resourceParameters = value; }
-    inline void SetResourceParameters(ConnectivityResourceConfigurationArn&& value) { m_resourceParametersHasBeenSet = true; m_resourceParameters = std::move(value); }
-    inline ConnectivityResourceParameters& WithResourceParameters(const ConnectivityResourceConfigurationArn& value) { SetResourceParameters(value); return *this;}
-    inline ConnectivityResourceParameters& WithResourceParameters(ConnectivityResourceConfigurationArn&& value) { SetResourceParameters(std::move(value)); return *this;}
+    template<typename ResourceParametersT = ConnectivityResourceConfigurationArn>
+    void SetResourceParameters(ResourceParametersT&& value) { m_resourceParametersHasBeenSet = true; m_resourceParameters = std::forward<ResourceParametersT>(value); }
+    template<typename ResourceParametersT = ConnectivityResourceConfigurationArn>
+    ConnectivityResourceParameters& WithResourceParameters(ResourceParametersT&& value) { SetResourceParameters(std::forward<ResourceParametersT>(value)); return *this;}
     ///@}
   private:
 

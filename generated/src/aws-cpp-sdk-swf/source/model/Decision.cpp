@@ -18,27 +18,7 @@ namespace SWF
 namespace Model
 {
 
-Decision::Decision() : 
-    m_decisionType(DecisionType::NOT_SET),
-    m_decisionTypeHasBeenSet(false),
-    m_scheduleActivityTaskDecisionAttributesHasBeenSet(false),
-    m_requestCancelActivityTaskDecisionAttributesHasBeenSet(false),
-    m_completeWorkflowExecutionDecisionAttributesHasBeenSet(false),
-    m_failWorkflowExecutionDecisionAttributesHasBeenSet(false),
-    m_cancelWorkflowExecutionDecisionAttributesHasBeenSet(false),
-    m_continueAsNewWorkflowExecutionDecisionAttributesHasBeenSet(false),
-    m_recordMarkerDecisionAttributesHasBeenSet(false),
-    m_startTimerDecisionAttributesHasBeenSet(false),
-    m_cancelTimerDecisionAttributesHasBeenSet(false),
-    m_signalExternalWorkflowExecutionDecisionAttributesHasBeenSet(false),
-    m_requestCancelExternalWorkflowExecutionDecisionAttributesHasBeenSet(false),
-    m_startChildWorkflowExecutionDecisionAttributesHasBeenSet(false),
-    m_scheduleLambdaFunctionDecisionAttributesHasBeenSet(false)
-{
-}
-
 Decision::Decision(JsonView jsonValue)
-  : Decision()
 {
   *this = jsonValue;
 }
@@ -48,101 +28,73 @@ Decision& Decision::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("decisionType"))
   {
     m_decisionType = DecisionTypeMapper::GetDecisionTypeForName(jsonValue.GetString("decisionType"));
-
     m_decisionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scheduleActivityTaskDecisionAttributes"))
   {
     m_scheduleActivityTaskDecisionAttributes = jsonValue.GetObject("scheduleActivityTaskDecisionAttributes");
-
     m_scheduleActivityTaskDecisionAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestCancelActivityTaskDecisionAttributes"))
   {
     m_requestCancelActivityTaskDecisionAttributes = jsonValue.GetObject("requestCancelActivityTaskDecisionAttributes");
-
     m_requestCancelActivityTaskDecisionAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("completeWorkflowExecutionDecisionAttributes"))
   {
     m_completeWorkflowExecutionDecisionAttributes = jsonValue.GetObject("completeWorkflowExecutionDecisionAttributes");
-
     m_completeWorkflowExecutionDecisionAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failWorkflowExecutionDecisionAttributes"))
   {
     m_failWorkflowExecutionDecisionAttributes = jsonValue.GetObject("failWorkflowExecutionDecisionAttributes");
-
     m_failWorkflowExecutionDecisionAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cancelWorkflowExecutionDecisionAttributes"))
   {
     m_cancelWorkflowExecutionDecisionAttributes = jsonValue.GetObject("cancelWorkflowExecutionDecisionAttributes");
-
     m_cancelWorkflowExecutionDecisionAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("continueAsNewWorkflowExecutionDecisionAttributes"))
   {
     m_continueAsNewWorkflowExecutionDecisionAttributes = jsonValue.GetObject("continueAsNewWorkflowExecutionDecisionAttributes");
-
     m_continueAsNewWorkflowExecutionDecisionAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recordMarkerDecisionAttributes"))
   {
     m_recordMarkerDecisionAttributes = jsonValue.GetObject("recordMarkerDecisionAttributes");
-
     m_recordMarkerDecisionAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTimerDecisionAttributes"))
   {
     m_startTimerDecisionAttributes = jsonValue.GetObject("startTimerDecisionAttributes");
-
     m_startTimerDecisionAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cancelTimerDecisionAttributes"))
   {
     m_cancelTimerDecisionAttributes = jsonValue.GetObject("cancelTimerDecisionAttributes");
-
     m_cancelTimerDecisionAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("signalExternalWorkflowExecutionDecisionAttributes"))
   {
     m_signalExternalWorkflowExecutionDecisionAttributes = jsonValue.GetObject("signalExternalWorkflowExecutionDecisionAttributes");
-
     m_signalExternalWorkflowExecutionDecisionAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestCancelExternalWorkflowExecutionDecisionAttributes"))
   {
     m_requestCancelExternalWorkflowExecutionDecisionAttributes = jsonValue.GetObject("requestCancelExternalWorkflowExecutionDecisionAttributes");
-
     m_requestCancelExternalWorkflowExecutionDecisionAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startChildWorkflowExecutionDecisionAttributes"))
   {
     m_startChildWorkflowExecutionDecisionAttributes = jsonValue.GetObject("startChildWorkflowExecutionDecisionAttributes");
-
     m_startChildWorkflowExecutionDecisionAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scheduleLambdaFunctionDecisionAttributes"))
   {
     m_scheduleLambdaFunctionDecisionAttributes = jsonValue.GetObject("scheduleLambdaFunctionDecisionAttributes");
-
     m_scheduleLambdaFunctionDecisionAttributesHasBeenSet = true;
   }
-
   return *this;
 }
 

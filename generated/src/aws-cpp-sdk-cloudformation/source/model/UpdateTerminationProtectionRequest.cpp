@@ -10,13 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-UpdateTerminationProtectionRequest::UpdateTerminationProtectionRequest() : 
-    m_enableTerminationProtection(false),
-    m_enableTerminationProtectionHasBeenSet(false),
-    m_stackNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTerminationProtectionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

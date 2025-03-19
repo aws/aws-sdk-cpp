@@ -18,13 +18,7 @@ namespace MediaConnect
 namespace Model
 {
 
-SourcePriority::SourcePriority() : 
-    m_primarySourceHasBeenSet(false)
-{
-}
-
 SourcePriority::SourcePriority(JsonView jsonValue)
-  : SourcePriority()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SourcePriority& SourcePriority::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("primarySource"))
   {
     m_primarySource = jsonValue.GetString("primarySource");
-
     m_primarySourceHasBeenSet = true;
   }
-
   return *this;
 }
 

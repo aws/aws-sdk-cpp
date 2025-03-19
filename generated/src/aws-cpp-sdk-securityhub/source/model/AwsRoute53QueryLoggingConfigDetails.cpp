@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRoute53QueryLoggingConfigDetails::AwsRoute53QueryLoggingConfigDetails() : 
-    m_cloudWatchLogsLogGroupArnHasBeenSet(false)
-{
-}
-
 AwsRoute53QueryLoggingConfigDetails::AwsRoute53QueryLoggingConfigDetails(JsonView jsonValue)
-  : AwsRoute53QueryLoggingConfigDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsRoute53QueryLoggingConfigDetails& AwsRoute53QueryLoggingConfigDetails::operat
   if(jsonValue.ValueExists("CloudWatchLogsLogGroupArn"))
   {
     m_cloudWatchLogsLogGroupArn = jsonValue.GetObject("CloudWatchLogsLogGroupArn");
-
     m_cloudWatchLogsLogGroupArnHasBeenSet = true;
   }
-
   return *this;
 }
 

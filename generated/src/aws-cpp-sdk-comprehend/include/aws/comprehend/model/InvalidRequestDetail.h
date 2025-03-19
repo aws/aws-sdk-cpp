@@ -32,7 +32,7 @@ namespace Model
   class InvalidRequestDetail
   {
   public:
-    AWS_COMPREHEND_API InvalidRequestDetail();
+    AWS_COMPREHEND_API InvalidRequestDetail() = default;
     AWS_COMPREHEND_API InvalidRequestDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API InvalidRequestDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPREHEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,16 +54,14 @@ namespace Model
      * resubmit the request.</p> </li> <li> <p>INVALID_DOCUMENT - Invalid document.
      * Check the file and resubmit the request.</p> </li> </ul>
      */
-    inline const InvalidRequestDetailReason& GetReason() const{ return m_reason; }
+    inline InvalidRequestDetailReason GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const InvalidRequestDetailReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(InvalidRequestDetailReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline InvalidRequestDetail& WithReason(const InvalidRequestDetailReason& value) { SetReason(value); return *this;}
-    inline InvalidRequestDetail& WithReason(InvalidRequestDetailReason&& value) { SetReason(std::move(value)); return *this;}
+    inline void SetReason(InvalidRequestDetailReason value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline InvalidRequestDetail& WithReason(InvalidRequestDetailReason value) { SetReason(value); return *this;}
     ///@}
   private:
 
-    InvalidRequestDetailReason m_reason;
+    InvalidRequestDetailReason m_reason{InvalidRequestDetailReason::NOT_SET};
     bool m_reasonHasBeenSet = false;
   };
 

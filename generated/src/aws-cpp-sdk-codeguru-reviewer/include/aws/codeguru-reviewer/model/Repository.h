@@ -37,7 +37,7 @@ namespace Model
   class Repository
   {
   public:
-    AWS_CODEGURUREVIEWER_API Repository();
+    AWS_CODEGURUREVIEWER_API Repository() = default;
     AWS_CODEGURUREVIEWER_API Repository(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API Repository& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEGURUREVIEWER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,46 +47,46 @@ namespace Model
     /**
      * <p>Information about an Amazon Web Services CodeCommit repository.</p>
      */
-    inline const CodeCommitRepository& GetCodeCommit() const{ return m_codeCommit; }
+    inline const CodeCommitRepository& GetCodeCommit() const { return m_codeCommit; }
     inline bool CodeCommitHasBeenSet() const { return m_codeCommitHasBeenSet; }
-    inline void SetCodeCommit(const CodeCommitRepository& value) { m_codeCommitHasBeenSet = true; m_codeCommit = value; }
-    inline void SetCodeCommit(CodeCommitRepository&& value) { m_codeCommitHasBeenSet = true; m_codeCommit = std::move(value); }
-    inline Repository& WithCodeCommit(const CodeCommitRepository& value) { SetCodeCommit(value); return *this;}
-    inline Repository& WithCodeCommit(CodeCommitRepository&& value) { SetCodeCommit(std::move(value)); return *this;}
+    template<typename CodeCommitT = CodeCommitRepository>
+    void SetCodeCommit(CodeCommitT&& value) { m_codeCommitHasBeenSet = true; m_codeCommit = std::forward<CodeCommitT>(value); }
+    template<typename CodeCommitT = CodeCommitRepository>
+    Repository& WithCodeCommit(CodeCommitT&& value) { SetCodeCommit(std::forward<CodeCommitT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Information about a Bitbucket repository. </p>
      */
-    inline const ThirdPartySourceRepository& GetBitbucket() const{ return m_bitbucket; }
+    inline const ThirdPartySourceRepository& GetBitbucket() const { return m_bitbucket; }
     inline bool BitbucketHasBeenSet() const { return m_bitbucketHasBeenSet; }
-    inline void SetBitbucket(const ThirdPartySourceRepository& value) { m_bitbucketHasBeenSet = true; m_bitbucket = value; }
-    inline void SetBitbucket(ThirdPartySourceRepository&& value) { m_bitbucketHasBeenSet = true; m_bitbucket = std::move(value); }
-    inline Repository& WithBitbucket(const ThirdPartySourceRepository& value) { SetBitbucket(value); return *this;}
-    inline Repository& WithBitbucket(ThirdPartySourceRepository&& value) { SetBitbucket(std::move(value)); return *this;}
+    template<typename BitbucketT = ThirdPartySourceRepository>
+    void SetBitbucket(BitbucketT&& value) { m_bitbucketHasBeenSet = true; m_bitbucket = std::forward<BitbucketT>(value); }
+    template<typename BitbucketT = ThirdPartySourceRepository>
+    Repository& WithBitbucket(BitbucketT&& value) { SetBitbucket(std::forward<BitbucketT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about a GitHub Enterprise Server repository.</p>
      */
-    inline const ThirdPartySourceRepository& GetGitHubEnterpriseServer() const{ return m_gitHubEnterpriseServer; }
+    inline const ThirdPartySourceRepository& GetGitHubEnterpriseServer() const { return m_gitHubEnterpriseServer; }
     inline bool GitHubEnterpriseServerHasBeenSet() const { return m_gitHubEnterpriseServerHasBeenSet; }
-    inline void SetGitHubEnterpriseServer(const ThirdPartySourceRepository& value) { m_gitHubEnterpriseServerHasBeenSet = true; m_gitHubEnterpriseServer = value; }
-    inline void SetGitHubEnterpriseServer(ThirdPartySourceRepository&& value) { m_gitHubEnterpriseServerHasBeenSet = true; m_gitHubEnterpriseServer = std::move(value); }
-    inline Repository& WithGitHubEnterpriseServer(const ThirdPartySourceRepository& value) { SetGitHubEnterpriseServer(value); return *this;}
-    inline Repository& WithGitHubEnterpriseServer(ThirdPartySourceRepository&& value) { SetGitHubEnterpriseServer(std::move(value)); return *this;}
+    template<typename GitHubEnterpriseServerT = ThirdPartySourceRepository>
+    void SetGitHubEnterpriseServer(GitHubEnterpriseServerT&& value) { m_gitHubEnterpriseServerHasBeenSet = true; m_gitHubEnterpriseServer = std::forward<GitHubEnterpriseServerT>(value); }
+    template<typename GitHubEnterpriseServerT = ThirdPartySourceRepository>
+    Repository& WithGitHubEnterpriseServer(GitHubEnterpriseServerT&& value) { SetGitHubEnterpriseServer(std::forward<GitHubEnterpriseServerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const S3Repository& GetS3Bucket() const{ return m_s3Bucket; }
+    inline const S3Repository& GetS3Bucket() const { return m_s3Bucket; }
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
-    inline void SetS3Bucket(const S3Repository& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
-    inline void SetS3Bucket(S3Repository&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
-    inline Repository& WithS3Bucket(const S3Repository& value) { SetS3Bucket(value); return *this;}
-    inline Repository& WithS3Bucket(S3Repository&& value) { SetS3Bucket(std::move(value)); return *this;}
+    template<typename S3BucketT = S3Repository>
+    void SetS3Bucket(S3BucketT&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::forward<S3BucketT>(value); }
+    template<typename S3BucketT = S3Repository>
+    Repository& WithS3Bucket(S3BucketT&& value) { SetS3Bucket(std::forward<S3BucketT>(value)); return *this;}
     ///@}
   private:
 

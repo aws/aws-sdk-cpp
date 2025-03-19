@@ -34,7 +34,7 @@ namespace Model
   class InstanceNetworking
   {
   public:
-    AWS_LIGHTSAIL_API InstanceNetworking();
+    AWS_LIGHTSAIL_API InstanceNetworking() = default;
     AWS_LIGHTSAIL_API InstanceNetworking(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API InstanceNetworking& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>The amount of data in GB allocated for monthly data transfers.</p>
      */
-    inline const MonthlyTransfer& GetMonthlyTransfer() const{ return m_monthlyTransfer; }
+    inline const MonthlyTransfer& GetMonthlyTransfer() const { return m_monthlyTransfer; }
     inline bool MonthlyTransferHasBeenSet() const { return m_monthlyTransferHasBeenSet; }
-    inline void SetMonthlyTransfer(const MonthlyTransfer& value) { m_monthlyTransferHasBeenSet = true; m_monthlyTransfer = value; }
-    inline void SetMonthlyTransfer(MonthlyTransfer&& value) { m_monthlyTransferHasBeenSet = true; m_monthlyTransfer = std::move(value); }
-    inline InstanceNetworking& WithMonthlyTransfer(const MonthlyTransfer& value) { SetMonthlyTransfer(value); return *this;}
-    inline InstanceNetworking& WithMonthlyTransfer(MonthlyTransfer&& value) { SetMonthlyTransfer(std::move(value)); return *this;}
+    template<typename MonthlyTransferT = MonthlyTransfer>
+    void SetMonthlyTransfer(MonthlyTransferT&& value) { m_monthlyTransferHasBeenSet = true; m_monthlyTransfer = std::forward<MonthlyTransferT>(value); }
+    template<typename MonthlyTransferT = MonthlyTransfer>
+    InstanceNetworking& WithMonthlyTransfer(MonthlyTransferT&& value) { SetMonthlyTransfer(std::forward<MonthlyTransferT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +57,14 @@ namespace Model
      * <p>An array of key-value pairs containing information about the ports on the
      * instance.</p>
      */
-    inline const Aws::Vector<InstancePortInfo>& GetPorts() const{ return m_ports; }
+    inline const Aws::Vector<InstancePortInfo>& GetPorts() const { return m_ports; }
     inline bool PortsHasBeenSet() const { return m_portsHasBeenSet; }
-    inline void SetPorts(const Aws::Vector<InstancePortInfo>& value) { m_portsHasBeenSet = true; m_ports = value; }
-    inline void SetPorts(Aws::Vector<InstancePortInfo>&& value) { m_portsHasBeenSet = true; m_ports = std::move(value); }
-    inline InstanceNetworking& WithPorts(const Aws::Vector<InstancePortInfo>& value) { SetPorts(value); return *this;}
-    inline InstanceNetworking& WithPorts(Aws::Vector<InstancePortInfo>&& value) { SetPorts(std::move(value)); return *this;}
-    inline InstanceNetworking& AddPorts(const InstancePortInfo& value) { m_portsHasBeenSet = true; m_ports.push_back(value); return *this; }
-    inline InstanceNetworking& AddPorts(InstancePortInfo&& value) { m_portsHasBeenSet = true; m_ports.push_back(std::move(value)); return *this; }
+    template<typename PortsT = Aws::Vector<InstancePortInfo>>
+    void SetPorts(PortsT&& value) { m_portsHasBeenSet = true; m_ports = std::forward<PortsT>(value); }
+    template<typename PortsT = Aws::Vector<InstancePortInfo>>
+    InstanceNetworking& WithPorts(PortsT&& value) { SetPorts(std::forward<PortsT>(value)); return *this;}
+    template<typename PortsT = InstancePortInfo>
+    InstanceNetworking& AddPorts(PortsT&& value) { m_portsHasBeenSet = true; m_ports.emplace_back(std::forward<PortsT>(value)); return *this; }
     ///@}
   private:
 

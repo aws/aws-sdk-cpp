@@ -34,7 +34,7 @@ namespace Model
   class AttributeDimension
   {
   public:
-    AWS_PINPOINT_API AttributeDimension();
+    AWS_PINPOINT_API AttributeDimension() = default;
     AWS_PINPOINT_API AttributeDimension(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API AttributeDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,12 +55,10 @@ namespace Model
      * with attributes read as ISO_INSTANT datetimes between the values are included in
      * the segment.</li></p>
      */
-    inline const AttributeType& GetAttributeType() const{ return m_attributeType; }
+    inline AttributeType GetAttributeType() const { return m_attributeType; }
     inline bool AttributeTypeHasBeenSet() const { return m_attributeTypeHasBeenSet; }
-    inline void SetAttributeType(const AttributeType& value) { m_attributeTypeHasBeenSet = true; m_attributeType = value; }
-    inline void SetAttributeType(AttributeType&& value) { m_attributeTypeHasBeenSet = true; m_attributeType = std::move(value); }
-    inline AttributeDimension& WithAttributeType(const AttributeType& value) { SetAttributeType(value); return *this;}
-    inline AttributeDimension& WithAttributeType(AttributeType&& value) { SetAttributeType(std::move(value)); return *this;}
+    inline void SetAttributeType(AttributeType value) { m_attributeTypeHasBeenSet = true; m_attributeType = value; }
+    inline AttributeDimension& WithAttributeType(AttributeType value) { SetAttributeType(value); return *this;}
     ///@}
 
     ///@{
@@ -69,19 +67,18 @@ namespace Model
      * of the AttributeType property, endpoints are included or excluded from the
      * segment if their attribute values match the criteria values.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline AttributeDimension& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline AttributeDimension& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline AttributeDimension& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline AttributeDimension& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline AttributeDimension& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    AttributeDimension& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    AttributeDimension& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    AttributeType m_attributeType;
+    AttributeType m_attributeType{AttributeType::NOT_SET};
     bool m_attributeTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

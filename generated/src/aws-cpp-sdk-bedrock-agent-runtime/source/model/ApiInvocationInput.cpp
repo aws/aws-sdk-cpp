@@ -18,21 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-ApiInvocationInput::ApiInvocationInput() : 
-    m_actionGroupHasBeenSet(false),
-    m_actionInvocationType(ActionInvocationType::NOT_SET),
-    m_actionInvocationTypeHasBeenSet(false),
-    m_agentIdHasBeenSet(false),
-    m_apiPathHasBeenSet(false),
-    m_collaboratorNameHasBeenSet(false),
-    m_httpMethodHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_requestBodyHasBeenSet(false)
-{
-}
-
 ApiInvocationInput::ApiInvocationInput(JsonView jsonValue)
-  : ApiInvocationInput()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ ApiInvocationInput& ApiInvocationInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("actionGroup"))
   {
     m_actionGroup = jsonValue.GetString("actionGroup");
-
     m_actionGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionInvocationType"))
   {
     m_actionInvocationType = ActionInvocationTypeMapper::GetActionInvocationTypeForName(jsonValue.GetString("actionInvocationType"));
-
     m_actionInvocationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("agentId"))
   {
     m_agentId = jsonValue.GetString("agentId");
-
     m_agentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiPath"))
   {
     m_apiPath = jsonValue.GetString("apiPath");
-
     m_apiPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collaboratorName"))
   {
     m_collaboratorName = jsonValue.GetString("collaboratorName");
-
     m_collaboratorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("httpMethod"))
   {
     m_httpMethod = jsonValue.GetString("httpMethod");
-
     m_httpMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parameters"))
   {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("parameters");
@@ -90,14 +64,11 @@ ApiInvocationInput& ApiInvocationInput::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestBody"))
   {
     m_requestBody = jsonValue.GetObject("requestBody");
-
     m_requestBodyHasBeenSet = true;
   }
-
   return *this;
 }
 

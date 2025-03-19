@@ -18,22 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-InputVideoGenerator::InputVideoGenerator() : 
-    m_channels(0),
-    m_channelsHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_framerateDenominator(0),
-    m_framerateDenominatorHasBeenSet(false),
-    m_framerateNumerator(0),
-    m_framerateNumeratorHasBeenSet(false),
-    m_sampleRate(0),
-    m_sampleRateHasBeenSet(false)
-{
-}
-
 InputVideoGenerator::InputVideoGenerator(JsonView jsonValue)
-  : InputVideoGenerator()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ InputVideoGenerator& InputVideoGenerator::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("channels"))
   {
     m_channels = jsonValue.GetInteger("channels");
-
     m_channelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("duration"))
   {
     m_duration = jsonValue.GetInteger("duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("framerateDenominator"))
   {
     m_framerateDenominator = jsonValue.GetInteger("framerateDenominator");
-
     m_framerateDenominatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("framerateNumerator"))
   {
     m_framerateNumerator = jsonValue.GetInteger("framerateNumerator");
-
     m_framerateNumeratorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sampleRate"))
   {
     m_sampleRate = jsonValue.GetInteger("sampleRate");
-
     m_sampleRateHasBeenSet = true;
   }
-
   return *this;
 }
 

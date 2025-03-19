@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListResourceSnapshotsResult::ListResourceSnapshotsResult()
-{
-}
-
 ListResourceSnapshotsResult::ListResourceSnapshotsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListResourceSnapshotsResult& ListResourceSnapshotsResult::operator =(const Aws::
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceSnapshotSummaries"))
   {
     Aws::Utils::Array<JsonView> resourceSnapshotSummariesJsonList = jsonValue.GetArray("ResourceSnapshotSummaries");
@@ -42,14 +37,15 @@ ListResourceSnapshotsResult& ListResourceSnapshotsResult::operator =(const Aws::
     {
       m_resourceSnapshotSummaries.push_back(resourceSnapshotSummariesJsonList[resourceSnapshotSummariesIndex].AsObject());
     }
+    m_resourceSnapshotSummariesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -22,7 +22,7 @@ namespace Model
   class XmlMapWithXmlNamespaceRequest : public RestXmlProtocolRequest
   {
   public:
-    AWS_RESTXMLPROTOCOL_API XmlMapWithXmlNamespaceRequest();
+    AWS_RESTXMLPROTOCOL_API XmlMapWithXmlNamespaceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -35,19 +35,16 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetMyMap() const{ return m_myMap; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetMyMap() const { return m_myMap; }
     inline bool MyMapHasBeenSet() const { return m_myMapHasBeenSet; }
-    inline void SetMyMap(const Aws::Map<Aws::String, Aws::String>& value) { m_myMapHasBeenSet = true; m_myMap = value; }
-    inline void SetMyMap(Aws::Map<Aws::String, Aws::String>&& value) { m_myMapHasBeenSet = true; m_myMap = std::move(value); }
-    inline XmlMapWithXmlNamespaceRequest& WithMyMap(const Aws::Map<Aws::String, Aws::String>& value) { SetMyMap(value); return *this;}
-    inline XmlMapWithXmlNamespaceRequest& WithMyMap(Aws::Map<Aws::String, Aws::String>&& value) { SetMyMap(std::move(value)); return *this;}
-    inline XmlMapWithXmlNamespaceRequest& AddMyMap(const Aws::String& key, const Aws::String& value) { m_myMapHasBeenSet = true; m_myMap.emplace(key, value); return *this; }
-    inline XmlMapWithXmlNamespaceRequest& AddMyMap(Aws::String&& key, const Aws::String& value) { m_myMapHasBeenSet = true; m_myMap.emplace(std::move(key), value); return *this; }
-    inline XmlMapWithXmlNamespaceRequest& AddMyMap(const Aws::String& key, Aws::String&& value) { m_myMapHasBeenSet = true; m_myMap.emplace(key, std::move(value)); return *this; }
-    inline XmlMapWithXmlNamespaceRequest& AddMyMap(Aws::String&& key, Aws::String&& value) { m_myMapHasBeenSet = true; m_myMap.emplace(std::move(key), std::move(value)); return *this; }
-    inline XmlMapWithXmlNamespaceRequest& AddMyMap(const char* key, Aws::String&& value) { m_myMapHasBeenSet = true; m_myMap.emplace(key, std::move(value)); return *this; }
-    inline XmlMapWithXmlNamespaceRequest& AddMyMap(Aws::String&& key, const char* value) { m_myMapHasBeenSet = true; m_myMap.emplace(std::move(key), value); return *this; }
-    inline XmlMapWithXmlNamespaceRequest& AddMyMap(const char* key, const char* value) { m_myMapHasBeenSet = true; m_myMap.emplace(key, value); return *this; }
+    template<typename MyMapT = Aws::Map<Aws::String, Aws::String>>
+    void SetMyMap(MyMapT&& value) { m_myMapHasBeenSet = true; m_myMap = std::forward<MyMapT>(value); }
+    template<typename MyMapT = Aws::Map<Aws::String, Aws::String>>
+    XmlMapWithXmlNamespaceRequest& WithMyMap(MyMapT&& value) { SetMyMap(std::forward<MyMapT>(value)); return *this;}
+    template<typename MyMapKeyT = Aws::String, typename MyMapValueT = Aws::String>
+    XmlMapWithXmlNamespaceRequest& AddMyMap(MyMapKeyT&& key, MyMapValueT&& value) {
+      m_myMapHasBeenSet = true; m_myMap.emplace(std::forward<MyMapKeyT>(key), std::forward<MyMapValueT>(value)); return *this;
+    }
     ///@}
   private:
 

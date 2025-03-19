@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListMLEndpointsRequest::ListMLEndpointsRequest() : 
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_neptuneIamRoleArnHasBeenSet(false)
-{
-}
-
 Aws::String ListMLEndpointsRequest::SerializePayload() const
 {
   return {};

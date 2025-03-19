@@ -15,11 +15,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-PublishFunction2020_05_31Request::PublishFunction2020_05_31Request() : 
-    m_nameHasBeenSet(false),
-    m_ifMatchHasBeenSet(false)
-{
-}
 
 Aws::String PublishFunction2020_05_31Request::SerializePayload() const
 {

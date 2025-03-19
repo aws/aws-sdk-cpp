@@ -18,13 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-Policy::Policy() : 
-    m_deliveryDestinationPolicyHasBeenSet(false)
-{
-}
-
 Policy::Policy(JsonView jsonValue)
-  : Policy()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Policy& Policy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("deliveryDestinationPolicy"))
   {
     m_deliveryDestinationPolicy = jsonValue.GetString("deliveryDestinationPolicy");
-
     m_deliveryDestinationPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -35,7 +35,7 @@ namespace Model
   class TargetTableConfig
   {
   public:
-    AWS_GLUE_API TargetTableConfig();
+    AWS_GLUE_API TargetTableConfig() = default;
     AWS_GLUE_API TargetTableConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API TargetTableConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,44 +46,40 @@ namespace Model
      * <p>Specifies how nested objects are flattened to top-level elements. Valid
      * values are: "TOPLEVEL", "FULL", or "NOUNNEST".</p>
      */
-    inline const UnnestSpec& GetUnnestSpec() const{ return m_unnestSpec; }
+    inline UnnestSpec GetUnnestSpec() const { return m_unnestSpec; }
     inline bool UnnestSpecHasBeenSet() const { return m_unnestSpecHasBeenSet; }
-    inline void SetUnnestSpec(const UnnestSpec& value) { m_unnestSpecHasBeenSet = true; m_unnestSpec = value; }
-    inline void SetUnnestSpec(UnnestSpec&& value) { m_unnestSpecHasBeenSet = true; m_unnestSpec = std::move(value); }
-    inline TargetTableConfig& WithUnnestSpec(const UnnestSpec& value) { SetUnnestSpec(value); return *this;}
-    inline TargetTableConfig& WithUnnestSpec(UnnestSpec&& value) { SetUnnestSpec(std::move(value)); return *this;}
+    inline void SetUnnestSpec(UnnestSpec value) { m_unnestSpecHasBeenSet = true; m_unnestSpec = value; }
+    inline TargetTableConfig& WithUnnestSpec(UnnestSpec value) { SetUnnestSpec(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Determines the file layout on the target.</p>
      */
-    inline const Aws::Vector<IntegrationPartition>& GetPartitionSpec() const{ return m_partitionSpec; }
+    inline const Aws::Vector<IntegrationPartition>& GetPartitionSpec() const { return m_partitionSpec; }
     inline bool PartitionSpecHasBeenSet() const { return m_partitionSpecHasBeenSet; }
-    inline void SetPartitionSpec(const Aws::Vector<IntegrationPartition>& value) { m_partitionSpecHasBeenSet = true; m_partitionSpec = value; }
-    inline void SetPartitionSpec(Aws::Vector<IntegrationPartition>&& value) { m_partitionSpecHasBeenSet = true; m_partitionSpec = std::move(value); }
-    inline TargetTableConfig& WithPartitionSpec(const Aws::Vector<IntegrationPartition>& value) { SetPartitionSpec(value); return *this;}
-    inline TargetTableConfig& WithPartitionSpec(Aws::Vector<IntegrationPartition>&& value) { SetPartitionSpec(std::move(value)); return *this;}
-    inline TargetTableConfig& AddPartitionSpec(const IntegrationPartition& value) { m_partitionSpecHasBeenSet = true; m_partitionSpec.push_back(value); return *this; }
-    inline TargetTableConfig& AddPartitionSpec(IntegrationPartition&& value) { m_partitionSpecHasBeenSet = true; m_partitionSpec.push_back(std::move(value)); return *this; }
+    template<typename PartitionSpecT = Aws::Vector<IntegrationPartition>>
+    void SetPartitionSpec(PartitionSpecT&& value) { m_partitionSpecHasBeenSet = true; m_partitionSpec = std::forward<PartitionSpecT>(value); }
+    template<typename PartitionSpecT = Aws::Vector<IntegrationPartition>>
+    TargetTableConfig& WithPartitionSpec(PartitionSpecT&& value) { SetPartitionSpec(std::forward<PartitionSpecT>(value)); return *this;}
+    template<typename PartitionSpecT = IntegrationPartition>
+    TargetTableConfig& AddPartitionSpec(PartitionSpecT&& value) { m_partitionSpecHasBeenSet = true; m_partitionSpec.emplace_back(std::forward<PartitionSpecT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The optional name of a target table.</p>
      */
-    inline const Aws::String& GetTargetTableName() const{ return m_targetTableName; }
+    inline const Aws::String& GetTargetTableName() const { return m_targetTableName; }
     inline bool TargetTableNameHasBeenSet() const { return m_targetTableNameHasBeenSet; }
-    inline void SetTargetTableName(const Aws::String& value) { m_targetTableNameHasBeenSet = true; m_targetTableName = value; }
-    inline void SetTargetTableName(Aws::String&& value) { m_targetTableNameHasBeenSet = true; m_targetTableName = std::move(value); }
-    inline void SetTargetTableName(const char* value) { m_targetTableNameHasBeenSet = true; m_targetTableName.assign(value); }
-    inline TargetTableConfig& WithTargetTableName(const Aws::String& value) { SetTargetTableName(value); return *this;}
-    inline TargetTableConfig& WithTargetTableName(Aws::String&& value) { SetTargetTableName(std::move(value)); return *this;}
-    inline TargetTableConfig& WithTargetTableName(const char* value) { SetTargetTableName(value); return *this;}
+    template<typename TargetTableNameT = Aws::String>
+    void SetTargetTableName(TargetTableNameT&& value) { m_targetTableNameHasBeenSet = true; m_targetTableName = std::forward<TargetTableNameT>(value); }
+    template<typename TargetTableNameT = Aws::String>
+    TargetTableConfig& WithTargetTableName(TargetTableNameT&& value) { SetTargetTableName(std::forward<TargetTableNameT>(value)); return *this;}
     ///@}
   private:
 
-    UnnestSpec m_unnestSpec;
+    UnnestSpec m_unnestSpec{UnnestSpec::NOT_SET};
     bool m_unnestSpecHasBeenSet = false;
 
     Aws::Vector<IntegrationPartition> m_partitionSpec;

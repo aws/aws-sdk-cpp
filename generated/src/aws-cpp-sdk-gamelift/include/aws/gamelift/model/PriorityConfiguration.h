@@ -49,7 +49,7 @@ namespace Model
   class PriorityConfiguration
   {
   public:
-    AWS_GAMELIFT_API PriorityConfiguration();
+    AWS_GAMELIFT_API PriorityConfiguration() = default;
     AWS_GAMELIFT_API PriorityConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API PriorityConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -70,14 +70,13 @@ namespace Model
      * prioritizes based on the provided order of locations, as defined in
      * <code>LocationOrder</code>. </p> </li> </ul>
      */
-    inline const Aws::Vector<PriorityType>& GetPriorityOrder() const{ return m_priorityOrder; }
+    inline const Aws::Vector<PriorityType>& GetPriorityOrder() const { return m_priorityOrder; }
     inline bool PriorityOrderHasBeenSet() const { return m_priorityOrderHasBeenSet; }
-    inline void SetPriorityOrder(const Aws::Vector<PriorityType>& value) { m_priorityOrderHasBeenSet = true; m_priorityOrder = value; }
-    inline void SetPriorityOrder(Aws::Vector<PriorityType>&& value) { m_priorityOrderHasBeenSet = true; m_priorityOrder = std::move(value); }
-    inline PriorityConfiguration& WithPriorityOrder(const Aws::Vector<PriorityType>& value) { SetPriorityOrder(value); return *this;}
-    inline PriorityConfiguration& WithPriorityOrder(Aws::Vector<PriorityType>&& value) { SetPriorityOrder(std::move(value)); return *this;}
-    inline PriorityConfiguration& AddPriorityOrder(const PriorityType& value) { m_priorityOrderHasBeenSet = true; m_priorityOrder.push_back(value); return *this; }
-    inline PriorityConfiguration& AddPriorityOrder(PriorityType&& value) { m_priorityOrderHasBeenSet = true; m_priorityOrder.push_back(std::move(value)); return *this; }
+    template<typename PriorityOrderT = Aws::Vector<PriorityType>>
+    void SetPriorityOrder(PriorityOrderT&& value) { m_priorityOrderHasBeenSet = true; m_priorityOrder = std::forward<PriorityOrderT>(value); }
+    template<typename PriorityOrderT = Aws::Vector<PriorityType>>
+    PriorityConfiguration& WithPriorityOrder(PriorityOrderT&& value) { SetPriorityOrder(std::forward<PriorityOrderT>(value)); return *this;}
+    inline PriorityConfiguration& AddPriorityOrder(PriorityType value) { m_priorityOrderHasBeenSet = true; m_priorityOrder.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -90,15 +89,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">Amazon
      * GameLift service locations.</a> </p>
      */
-    inline const Aws::Vector<Aws::String>& GetLocationOrder() const{ return m_locationOrder; }
+    inline const Aws::Vector<Aws::String>& GetLocationOrder() const { return m_locationOrder; }
     inline bool LocationOrderHasBeenSet() const { return m_locationOrderHasBeenSet; }
-    inline void SetLocationOrder(const Aws::Vector<Aws::String>& value) { m_locationOrderHasBeenSet = true; m_locationOrder = value; }
-    inline void SetLocationOrder(Aws::Vector<Aws::String>&& value) { m_locationOrderHasBeenSet = true; m_locationOrder = std::move(value); }
-    inline PriorityConfiguration& WithLocationOrder(const Aws::Vector<Aws::String>& value) { SetLocationOrder(value); return *this;}
-    inline PriorityConfiguration& WithLocationOrder(Aws::Vector<Aws::String>&& value) { SetLocationOrder(std::move(value)); return *this;}
-    inline PriorityConfiguration& AddLocationOrder(const Aws::String& value) { m_locationOrderHasBeenSet = true; m_locationOrder.push_back(value); return *this; }
-    inline PriorityConfiguration& AddLocationOrder(Aws::String&& value) { m_locationOrderHasBeenSet = true; m_locationOrder.push_back(std::move(value)); return *this; }
-    inline PriorityConfiguration& AddLocationOrder(const char* value) { m_locationOrderHasBeenSet = true; m_locationOrder.push_back(value); return *this; }
+    template<typename LocationOrderT = Aws::Vector<Aws::String>>
+    void SetLocationOrder(LocationOrderT&& value) { m_locationOrderHasBeenSet = true; m_locationOrder = std::forward<LocationOrderT>(value); }
+    template<typename LocationOrderT = Aws::Vector<Aws::String>>
+    PriorityConfiguration& WithLocationOrder(LocationOrderT&& value) { SetLocationOrder(std::forward<LocationOrderT>(value)); return *this;}
+    template<typename LocationOrderT = Aws::String>
+    PriorityConfiguration& AddLocationOrder(LocationOrderT&& value) { m_locationOrderHasBeenSet = true; m_locationOrder.emplace_back(std::forward<LocationOrderT>(value)); return *this; }
     ///@}
   private:
 

@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-ReplicaModifications::ReplicaModifications() : 
-    m_status(ReplicaModificationsStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ReplicaModifications::ReplicaModifications(const XmlNode& xmlNode)
-  : ReplicaModifications()
 {
   *this = xmlNode;
 }
@@ -41,7 +34,7 @@ ReplicaModifications& ReplicaModifications::operator =(const XmlNode& xmlNode)
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = ReplicaModificationsStatusMapper::GetReplicaModificationsStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = ReplicaModificationsStatusMapper::GetReplicaModificationsStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
   }

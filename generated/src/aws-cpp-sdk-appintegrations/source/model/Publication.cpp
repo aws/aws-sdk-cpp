@@ -18,15 +18,7 @@ namespace AppIntegrationsService
 namespace Model
 {
 
-Publication::Publication() : 
-    m_eventHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Publication::Publication(JsonView jsonValue)
-  : Publication()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Publication& Publication::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Event"))
   {
     m_event = jsonValue.GetString("Event");
-
     m_eventHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Schema"))
   {
     m_schema = jsonValue.GetString("Schema");
-
     m_schemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

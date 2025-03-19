@@ -32,7 +32,7 @@ namespace Model
   class MainframeResourceSummary
   {
   public:
-    AWS_APPTEST_API MainframeResourceSummary();
+    AWS_APPTEST_API MainframeResourceSummary() = default;
     AWS_APPTEST_API MainframeResourceSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API MainframeResourceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPTEST_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The AWS Mainframe Modernization managed application in the mainframe resource
      * summary.</p>
      */
-    inline const M2ManagedApplicationSummary& GetM2ManagedApplication() const{ return m_m2ManagedApplication; }
+    inline const M2ManagedApplicationSummary& GetM2ManagedApplication() const { return m_m2ManagedApplication; }
     inline bool M2ManagedApplicationHasBeenSet() const { return m_m2ManagedApplicationHasBeenSet; }
-    inline void SetM2ManagedApplication(const M2ManagedApplicationSummary& value) { m_m2ManagedApplicationHasBeenSet = true; m_m2ManagedApplication = value; }
-    inline void SetM2ManagedApplication(M2ManagedApplicationSummary&& value) { m_m2ManagedApplicationHasBeenSet = true; m_m2ManagedApplication = std::move(value); }
-    inline MainframeResourceSummary& WithM2ManagedApplication(const M2ManagedApplicationSummary& value) { SetM2ManagedApplication(value); return *this;}
-    inline MainframeResourceSummary& WithM2ManagedApplication(M2ManagedApplicationSummary&& value) { SetM2ManagedApplication(std::move(value)); return *this;}
+    template<typename M2ManagedApplicationT = M2ManagedApplicationSummary>
+    void SetM2ManagedApplication(M2ManagedApplicationT&& value) { m_m2ManagedApplicationHasBeenSet = true; m_m2ManagedApplication = std::forward<M2ManagedApplicationT>(value); }
+    template<typename M2ManagedApplicationT = M2ManagedApplicationSummary>
+    MainframeResourceSummary& WithM2ManagedApplication(M2ManagedApplicationT&& value) { SetM2ManagedApplication(std::forward<M2ManagedApplicationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +56,12 @@ namespace Model
      * <p>The AWS Mainframe Modernization non-managed application in the mainframe
      * resource summary.</p>
      */
-    inline const M2NonManagedApplicationSummary& GetM2NonManagedApplication() const{ return m_m2NonManagedApplication; }
+    inline const M2NonManagedApplicationSummary& GetM2NonManagedApplication() const { return m_m2NonManagedApplication; }
     inline bool M2NonManagedApplicationHasBeenSet() const { return m_m2NonManagedApplicationHasBeenSet; }
-    inline void SetM2NonManagedApplication(const M2NonManagedApplicationSummary& value) { m_m2NonManagedApplicationHasBeenSet = true; m_m2NonManagedApplication = value; }
-    inline void SetM2NonManagedApplication(M2NonManagedApplicationSummary&& value) { m_m2NonManagedApplicationHasBeenSet = true; m_m2NonManagedApplication = std::move(value); }
-    inline MainframeResourceSummary& WithM2NonManagedApplication(const M2NonManagedApplicationSummary& value) { SetM2NonManagedApplication(value); return *this;}
-    inline MainframeResourceSummary& WithM2NonManagedApplication(M2NonManagedApplicationSummary&& value) { SetM2NonManagedApplication(std::move(value)); return *this;}
+    template<typename M2NonManagedApplicationT = M2NonManagedApplicationSummary>
+    void SetM2NonManagedApplication(M2NonManagedApplicationT&& value) { m_m2NonManagedApplicationHasBeenSet = true; m_m2NonManagedApplication = std::forward<M2NonManagedApplicationT>(value); }
+    template<typename M2NonManagedApplicationT = M2NonManagedApplicationSummary>
+    MainframeResourceSummary& WithM2NonManagedApplication(M2NonManagedApplicationT&& value) { SetM2NonManagedApplication(std::forward<M2NonManagedApplicationT>(value)); return *this;}
     ///@}
   private:
 

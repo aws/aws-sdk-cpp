@@ -12,26 +12,6 @@ using namespace Aws::IoTManagedIntegrations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateOtaTaskRequest::CreateOtaTaskRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_s3UrlHasBeenSet(false),
-    m_protocol(OtaProtocol::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_targetHasBeenSet(false),
-    m_taskConfigurationIdHasBeenSet(false),
-    m_otaMechanism(OtaMechanism::NOT_SET),
-    m_otaMechanismHasBeenSet(false),
-    m_otaType(OtaType::NOT_SET),
-    m_otaTypeHasBeenSet(false),
-    m_otaTargetQueryStringHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_otaSchedulingConfigHasBeenSet(false),
-    m_otaTaskExecutionRetryConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateOtaTaskRequest::SerializePayload() const
 {
   JsonValue payload;

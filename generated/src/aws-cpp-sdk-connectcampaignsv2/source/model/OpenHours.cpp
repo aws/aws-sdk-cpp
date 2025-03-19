@@ -18,13 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-OpenHours::OpenHours() : 
-    m_dailyHoursHasBeenSet(false)
-{
-}
-
 OpenHours::OpenHours(JsonView jsonValue)
-  : OpenHours()
 {
   *this = jsonValue;
 }
@@ -47,7 +41,6 @@ OpenHours& OpenHours::operator =(JsonView jsonValue)
     }
     m_dailyHoursHasBeenSet = true;
   }
-
   return *this;
 }
 

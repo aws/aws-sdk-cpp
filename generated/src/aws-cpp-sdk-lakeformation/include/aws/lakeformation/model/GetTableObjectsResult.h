@@ -29,7 +29,7 @@ namespace Model
   class GetTableObjectsResult
   {
   public:
-    AWS_LAKEFORMATION_API GetTableObjectsResult();
+    AWS_LAKEFORMATION_API GetTableObjectsResult() = default;
     AWS_LAKEFORMATION_API GetTableObjectsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LAKEFORMATION_API GetTableObjectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A list of objects organized by partition keys.</p>
      */
-    inline const Aws::Vector<PartitionObjects>& GetObjects() const{ return m_objects; }
-    inline void SetObjects(const Aws::Vector<PartitionObjects>& value) { m_objects = value; }
-    inline void SetObjects(Aws::Vector<PartitionObjects>&& value) { m_objects = std::move(value); }
-    inline GetTableObjectsResult& WithObjects(const Aws::Vector<PartitionObjects>& value) { SetObjects(value); return *this;}
-    inline GetTableObjectsResult& WithObjects(Aws::Vector<PartitionObjects>&& value) { SetObjects(std::move(value)); return *this;}
-    inline GetTableObjectsResult& AddObjects(const PartitionObjects& value) { m_objects.push_back(value); return *this; }
-    inline GetTableObjectsResult& AddObjects(PartitionObjects&& value) { m_objects.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PartitionObjects>& GetObjects() const { return m_objects; }
+    template<typename ObjectsT = Aws::Vector<PartitionObjects>>
+    void SetObjects(ObjectsT&& value) { m_objectsHasBeenSet = true; m_objects = std::forward<ObjectsT>(value); }
+    template<typename ObjectsT = Aws::Vector<PartitionObjects>>
+    GetTableObjectsResult& WithObjects(ObjectsT&& value) { SetObjects(std::forward<ObjectsT>(value)); return *this;}
+    template<typename ObjectsT = PartitionObjects>
+    GetTableObjectsResult& AddObjects(ObjectsT&& value) { m_objectsHasBeenSet = true; m_objects.emplace_back(std::forward<ObjectsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A continuation token indicating whether additional data is available.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetTableObjectsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetTableObjectsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetTableObjectsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetTableObjectsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTableObjectsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTableObjectsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTableObjectsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTableObjectsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<PartitionObjects> m_objects;
+    bool m_objectsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

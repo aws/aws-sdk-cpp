@@ -34,7 +34,7 @@ namespace Model
   class TableReference
   {
   public:
-    AWS_CLEANROOMS_API TableReference();
+    AWS_CLEANROOMS_API TableReference() = default;
     AWS_CLEANROOMS_API TableReference(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API TableReference& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>If present, a reference to the Glue table referred to by this table
      * reference.</p>
      */
-    inline const GlueTableReference& GetGlue() const{ return m_glue; }
+    inline const GlueTableReference& GetGlue() const { return m_glue; }
     inline bool GlueHasBeenSet() const { return m_glueHasBeenSet; }
-    inline void SetGlue(const GlueTableReference& value) { m_glueHasBeenSet = true; m_glue = value; }
-    inline void SetGlue(GlueTableReference&& value) { m_glueHasBeenSet = true; m_glue = std::move(value); }
-    inline TableReference& WithGlue(const GlueTableReference& value) { SetGlue(value); return *this;}
-    inline TableReference& WithGlue(GlueTableReference&& value) { SetGlue(std::move(value)); return *this;}
+    template<typename GlueT = GlueTableReference>
+    void SetGlue(GlueT&& value) { m_glueHasBeenSet = true; m_glue = std::forward<GlueT>(value); }
+    template<typename GlueT = GlueTableReference>
+    TableReference& WithGlue(GlueT&& value) { SetGlue(std::forward<GlueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,12 +58,12 @@ namespace Model
      * <p> If present, a reference to the Snowflake table referred to by this table
      * reference.</p>
      */
-    inline const SnowflakeTableReference& GetSnowflake() const{ return m_snowflake; }
+    inline const SnowflakeTableReference& GetSnowflake() const { return m_snowflake; }
     inline bool SnowflakeHasBeenSet() const { return m_snowflakeHasBeenSet; }
-    inline void SetSnowflake(const SnowflakeTableReference& value) { m_snowflakeHasBeenSet = true; m_snowflake = value; }
-    inline void SetSnowflake(SnowflakeTableReference&& value) { m_snowflakeHasBeenSet = true; m_snowflake = std::move(value); }
-    inline TableReference& WithSnowflake(const SnowflakeTableReference& value) { SetSnowflake(value); return *this;}
-    inline TableReference& WithSnowflake(SnowflakeTableReference&& value) { SetSnowflake(std::move(value)); return *this;}
+    template<typename SnowflakeT = SnowflakeTableReference>
+    void SetSnowflake(SnowflakeT&& value) { m_snowflakeHasBeenSet = true; m_snowflake = std::forward<SnowflakeT>(value); }
+    template<typename SnowflakeT = SnowflakeTableReference>
+    TableReference& WithSnowflake(SnowflakeT&& value) { SetSnowflake(std::forward<SnowflakeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +71,12 @@ namespace Model
      * <p> If present, a reference to the Athena table referred to by this table
      * reference.</p>
      */
-    inline const AthenaTableReference& GetAthena() const{ return m_athena; }
+    inline const AthenaTableReference& GetAthena() const { return m_athena; }
     inline bool AthenaHasBeenSet() const { return m_athenaHasBeenSet; }
-    inline void SetAthena(const AthenaTableReference& value) { m_athenaHasBeenSet = true; m_athena = value; }
-    inline void SetAthena(AthenaTableReference&& value) { m_athenaHasBeenSet = true; m_athena = std::move(value); }
-    inline TableReference& WithAthena(const AthenaTableReference& value) { SetAthena(value); return *this;}
-    inline TableReference& WithAthena(AthenaTableReference&& value) { SetAthena(std::move(value)); return *this;}
+    template<typename AthenaT = AthenaTableReference>
+    void SetAthena(AthenaT&& value) { m_athenaHasBeenSet = true; m_athena = std::forward<AthenaT>(value); }
+    template<typename AthenaT = AthenaTableReference>
+    TableReference& WithAthena(AthenaT&& value) { SetAthena(std::forward<AthenaT>(value)); return *this;}
     ///@}
   private:
 

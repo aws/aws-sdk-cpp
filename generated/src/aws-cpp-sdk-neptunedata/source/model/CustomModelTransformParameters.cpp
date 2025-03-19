@@ -18,14 +18,7 @@ namespace neptunedata
 namespace Model
 {
 
-CustomModelTransformParameters::CustomModelTransformParameters() : 
-    m_sourceS3DirectoryPathHasBeenSet(false),
-    m_transformEntryPointScriptHasBeenSet(false)
-{
-}
-
 CustomModelTransformParameters::CustomModelTransformParameters(JsonView jsonValue)
-  : CustomModelTransformParameters()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CustomModelTransformParameters& CustomModelTransformParameters::operator =(JsonV
   if(jsonValue.ValueExists("sourceS3DirectoryPath"))
   {
     m_sourceS3DirectoryPath = jsonValue.GetString("sourceS3DirectoryPath");
-
     m_sourceS3DirectoryPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("transformEntryPointScript"))
   {
     m_transformEntryPointScript = jsonValue.GetString("transformEntryPointScript");
-
     m_transformEntryPointScriptHasBeenSet = true;
   }
-
   return *this;
 }
 

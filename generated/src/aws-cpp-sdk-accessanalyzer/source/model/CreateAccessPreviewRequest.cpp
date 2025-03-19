@@ -12,14 +12,6 @@ using namespace Aws::AccessAnalyzer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateAccessPreviewRequest::CreateAccessPreviewRequest() : 
-    m_analyzerArnHasBeenSet(false),
-    m_configurationsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateAccessPreviewRequest::SerializePayload() const
 {
   JsonValue payload;

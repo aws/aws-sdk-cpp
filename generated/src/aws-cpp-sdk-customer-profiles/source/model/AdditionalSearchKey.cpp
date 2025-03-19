@@ -18,14 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-AdditionalSearchKey::AdditionalSearchKey() : 
-    m_keyNameHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 AdditionalSearchKey::AdditionalSearchKey(JsonView jsonValue)
-  : AdditionalSearchKey()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AdditionalSearchKey& AdditionalSearchKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("KeyName"))
   {
     m_keyName = jsonValue.GetString("KeyName");
-
     m_keyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -48,7 +39,6 @@ AdditionalSearchKey& AdditionalSearchKey::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

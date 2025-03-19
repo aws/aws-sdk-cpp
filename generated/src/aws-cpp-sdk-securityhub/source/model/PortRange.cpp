@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-PortRange::PortRange() : 
-    m_begin(0),
-    m_beginHasBeenSet(false),
-    m_end(0),
-    m_endHasBeenSet(false)
-{
-}
-
 PortRange::PortRange(JsonView jsonValue)
-  : PortRange()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ PortRange& PortRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Begin"))
   {
     m_begin = jsonValue.GetInteger("Begin");
-
     m_beginHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("End"))
   {
     m_end = jsonValue.GetInteger("End");
-
     m_endHasBeenSet = true;
   }
-
   return *this;
 }
 

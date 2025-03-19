@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-ActivityMetrics::ActivityMetrics() : 
-    m_isEnabled(false),
-    m_isEnabledHasBeenSet(false)
-{
-}
-
 ActivityMetrics::ActivityMetrics(const XmlNode& xmlNode)
-  : ActivityMetrics()
 {
   *this = xmlNode;
 }

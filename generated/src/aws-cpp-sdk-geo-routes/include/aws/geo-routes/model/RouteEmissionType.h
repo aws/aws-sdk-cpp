@@ -32,7 +32,7 @@ namespace Model
   class RouteEmissionType
   {
   public:
-    AWS_GEOROUTES_API RouteEmissionType();
+    AWS_GEOROUTES_API RouteEmissionType() = default;
     AWS_GEOROUTES_API RouteEmissionType(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteEmissionType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The CO 2 emission classes.</p>
      */
-    inline const Aws::String& GetCo2EmissionClass() const{ return m_co2EmissionClass; }
+    inline const Aws::String& GetCo2EmissionClass() const { return m_co2EmissionClass; }
     inline bool Co2EmissionClassHasBeenSet() const { return m_co2EmissionClassHasBeenSet; }
-    inline void SetCo2EmissionClass(const Aws::String& value) { m_co2EmissionClassHasBeenSet = true; m_co2EmissionClass = value; }
-    inline void SetCo2EmissionClass(Aws::String&& value) { m_co2EmissionClassHasBeenSet = true; m_co2EmissionClass = std::move(value); }
-    inline void SetCo2EmissionClass(const char* value) { m_co2EmissionClassHasBeenSet = true; m_co2EmissionClass.assign(value); }
-    inline RouteEmissionType& WithCo2EmissionClass(const Aws::String& value) { SetCo2EmissionClass(value); return *this;}
-    inline RouteEmissionType& WithCo2EmissionClass(Aws::String&& value) { SetCo2EmissionClass(std::move(value)); return *this;}
-    inline RouteEmissionType& WithCo2EmissionClass(const char* value) { SetCo2EmissionClass(value); return *this;}
+    template<typename Co2EmissionClassT = Aws::String>
+    void SetCo2EmissionClass(Co2EmissionClassT&& value) { m_co2EmissionClassHasBeenSet = true; m_co2EmissionClass = std::forward<Co2EmissionClassT>(value); }
+    template<typename Co2EmissionClassT = Aws::String>
+    RouteEmissionType& WithCo2EmissionClass(Co2EmissionClassT&& value) { SetCo2EmissionClass(std::forward<Co2EmissionClassT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>Type of the emission.</p> <p> <b>Valid values</b>: <code>Euro1, Euro2, Euro3,
      * Euro4, Euro5, Euro6, EuroEev</code> </p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline RouteEmissionType& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline RouteEmissionType& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline RouteEmissionType& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    RouteEmissionType& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

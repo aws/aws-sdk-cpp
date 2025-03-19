@@ -31,7 +31,7 @@ namespace Model
   class RowFilterConfiguration
   {
   public:
-    AWS_DATAZONE_API RowFilterConfiguration();
+    AWS_DATAZONE_API RowFilterConfiguration() = default;
     AWS_DATAZONE_API RowFilterConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API RowFilterConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,19 +41,19 @@ namespace Model
     /**
      * <p>The row filter.</p>
      */
-    inline const RowFilter& GetRowFilter() const{ return m_rowFilter; }
+    inline const RowFilter& GetRowFilter() const { return m_rowFilter; }
     inline bool RowFilterHasBeenSet() const { return m_rowFilterHasBeenSet; }
-    inline void SetRowFilter(const RowFilter& value) { m_rowFilterHasBeenSet = true; m_rowFilter = value; }
-    inline void SetRowFilter(RowFilter&& value) { m_rowFilterHasBeenSet = true; m_rowFilter = std::move(value); }
-    inline RowFilterConfiguration& WithRowFilter(const RowFilter& value) { SetRowFilter(value); return *this;}
-    inline RowFilterConfiguration& WithRowFilter(RowFilter&& value) { SetRowFilter(std::move(value)); return *this;}
+    template<typename RowFilterT = RowFilter>
+    void SetRowFilter(RowFilterT&& value) { m_rowFilterHasBeenSet = true; m_rowFilter = std::forward<RowFilterT>(value); }
+    template<typename RowFilterT = RowFilter>
+    RowFilterConfiguration& WithRowFilter(RowFilterT&& value) { SetRowFilter(std::forward<RowFilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether the row filter is sensitive.</p>
      */
-    inline bool GetSensitive() const{ return m_sensitive; }
+    inline bool GetSensitive() const { return m_sensitive; }
     inline bool SensitiveHasBeenSet() const { return m_sensitiveHasBeenSet; }
     inline void SetSensitive(bool value) { m_sensitiveHasBeenSet = true; m_sensitive = value; }
     inline RowFilterConfiguration& WithSensitive(bool value) { SetSensitive(value); return *this;}
@@ -63,7 +63,7 @@ namespace Model
     RowFilter m_rowFilter;
     bool m_rowFilterHasBeenSet = false;
 
-    bool m_sensitive;
+    bool m_sensitive{false};
     bool m_sensitiveHasBeenSet = false;
   };
 

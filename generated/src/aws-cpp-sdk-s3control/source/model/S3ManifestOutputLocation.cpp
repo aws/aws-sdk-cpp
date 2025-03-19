@@ -20,18 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-S3ManifestOutputLocation::S3ManifestOutputLocation() : 
-    m_expectedManifestBucketOwnerHasBeenSet(false),
-    m_bucketHasBeenSet(false),
-    m_manifestPrefixHasBeenSet(false),
-    m_manifestEncryptionHasBeenSet(false),
-    m_manifestFormat(GeneratedManifestFormat::NOT_SET),
-    m_manifestFormatHasBeenSet(false)
-{
-}
-
 S3ManifestOutputLocation::S3ManifestOutputLocation(const XmlNode& xmlNode)
-  : S3ManifestOutputLocation()
 {
   *this = xmlNode;
 }
@@ -69,7 +58,7 @@ S3ManifestOutputLocation& S3ManifestOutputLocation::operator =(const XmlNode& xm
     XmlNode manifestFormatNode = resultNode.FirstChild("ManifestFormat");
     if(!manifestFormatNode.IsNull())
     {
-      m_manifestFormat = GeneratedManifestFormatMapper::GetGeneratedManifestFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(manifestFormatNode.GetText()).c_str()).c_str());
+      m_manifestFormat = GeneratedManifestFormatMapper::GetGeneratedManifestFormatForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(manifestFormatNode.GetText()).c_str()));
       m_manifestFormatHasBeenSet = true;
     }
   }

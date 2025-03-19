@@ -18,19 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-AccountLevelBpaSync::AccountLevelBpaSync() : 
-    m_status(AccountLevelBpaSyncStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastSyncedAtHasBeenSet(false),
-    m_message(BPAStatusMessage::NOT_SET),
-    m_messageHasBeenSet(false),
-    m_bpaImpactsLightsail(false),
-    m_bpaImpactsLightsailHasBeenSet(false)
-{
-}
-
 AccountLevelBpaSync::AccountLevelBpaSync(JsonView jsonValue)
-  : AccountLevelBpaSync()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ AccountLevelBpaSync& AccountLevelBpaSync::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("status"))
   {
     m_status = AccountLevelBpaSyncStatusMapper::GetAccountLevelBpaSyncStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastSyncedAt"))
   {
     m_lastSyncedAt = jsonValue.GetDouble("lastSyncedAt");
-
     m_lastSyncedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = BPAStatusMessageMapper::GetBPAStatusMessageForName(jsonValue.GetString("message"));
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bpaImpactsLightsail"))
   {
     m_bpaImpactsLightsail = jsonValue.GetBool("bpaImpactsLightsail");
-
     m_bpaImpactsLightsailHasBeenSet = true;
   }
-
   return *this;
 }
 

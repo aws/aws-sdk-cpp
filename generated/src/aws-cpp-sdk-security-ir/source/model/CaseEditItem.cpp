@@ -18,16 +18,7 @@ namespace SecurityIR
 namespace Model
 {
 
-CaseEditItem::CaseEditItem() : 
-    m_eventTimestampHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_actionHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 CaseEditItem::CaseEditItem(JsonView jsonValue)
-  : CaseEditItem()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ CaseEditItem& CaseEditItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eventTimestamp"))
   {
     m_eventTimestamp = jsonValue.GetDouble("eventTimestamp");
-
     m_eventTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principal"))
   {
     m_principal = jsonValue.GetString("principal");
-
     m_principalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("action"))
   {
     m_action = jsonValue.GetString("action");
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

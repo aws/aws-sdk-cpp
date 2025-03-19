@@ -32,7 +32,7 @@ namespace Model
   class GatewayRouteHostnameRewrite
   {
   public:
-    AWS_APPMESH_API GatewayRouteHostnameRewrite();
+    AWS_APPMESH_API GatewayRouteHostnameRewrite() = default;
     AWS_APPMESH_API GatewayRouteHostnameRewrite(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API GatewayRouteHostnameRewrite& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The default target host name to write to.</p>
      */
-    inline const DefaultGatewayRouteRewrite& GetDefaultTargetHostname() const{ return m_defaultTargetHostname; }
+    inline DefaultGatewayRouteRewrite GetDefaultTargetHostname() const { return m_defaultTargetHostname; }
     inline bool DefaultTargetHostnameHasBeenSet() const { return m_defaultTargetHostnameHasBeenSet; }
-    inline void SetDefaultTargetHostname(const DefaultGatewayRouteRewrite& value) { m_defaultTargetHostnameHasBeenSet = true; m_defaultTargetHostname = value; }
-    inline void SetDefaultTargetHostname(DefaultGatewayRouteRewrite&& value) { m_defaultTargetHostnameHasBeenSet = true; m_defaultTargetHostname = std::move(value); }
-    inline GatewayRouteHostnameRewrite& WithDefaultTargetHostname(const DefaultGatewayRouteRewrite& value) { SetDefaultTargetHostname(value); return *this;}
-    inline GatewayRouteHostnameRewrite& WithDefaultTargetHostname(DefaultGatewayRouteRewrite&& value) { SetDefaultTargetHostname(std::move(value)); return *this;}
+    inline void SetDefaultTargetHostname(DefaultGatewayRouteRewrite value) { m_defaultTargetHostnameHasBeenSet = true; m_defaultTargetHostname = value; }
+    inline GatewayRouteHostnameRewrite& WithDefaultTargetHostname(DefaultGatewayRouteRewrite value) { SetDefaultTargetHostname(value); return *this;}
     ///@}
   private:
 
-    DefaultGatewayRouteRewrite m_defaultTargetHostname;
+    DefaultGatewayRouteRewrite m_defaultTargetHostname{DefaultGatewayRouteRewrite::NOT_SET};
     bool m_defaultTargetHostnameHasBeenSet = false;
   };
 

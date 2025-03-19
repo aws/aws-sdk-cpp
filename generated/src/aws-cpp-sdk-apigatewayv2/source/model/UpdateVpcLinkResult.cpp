@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateVpcLinkResult::UpdateVpcLinkResult() : 
-    m_vpcLinkStatus(VpcLinkStatus::NOT_SET),
-    m_vpcLinkVersion(VpcLinkVersion::NOT_SET)
-{
-}
-
 UpdateVpcLinkResult::UpdateVpcLinkResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateVpcLinkResult()
 {
   *this = result;
 }
@@ -35,15 +28,13 @@ UpdateVpcLinkResult& UpdateVpcLinkResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetString("createdDate");
-
+    m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityGroupIds"))
   {
     Aws::Utils::Array<JsonView> securityGroupIdsJsonList = jsonValue.GetArray("securityGroupIds");
@@ -51,8 +42,8 @@ UpdateVpcLinkResult& UpdateVpcLinkResult::operator =(const Aws::AmazonWebService
     {
       m_securityGroupIds.push_back(securityGroupIdsJsonList[securityGroupIdsIndex].AsString());
     }
+    m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("subnetIds");
@@ -60,8 +51,8 @@ UpdateVpcLinkResult& UpdateVpcLinkResult::operator =(const Aws::AmazonWebService
     {
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
     }
+    m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -69,38 +60,35 @@ UpdateVpcLinkResult& UpdateVpcLinkResult::operator =(const Aws::AmazonWebService
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcLinkId"))
   {
     m_vpcLinkId = jsonValue.GetString("vpcLinkId");
-
+    m_vpcLinkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcLinkStatus"))
   {
     m_vpcLinkStatus = VpcLinkStatusMapper::GetVpcLinkStatusForName(jsonValue.GetString("vpcLinkStatus"));
-
+    m_vpcLinkStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcLinkStatusMessage"))
   {
     m_vpcLinkStatusMessage = jsonValue.GetString("vpcLinkStatusMessage");
-
+    m_vpcLinkStatusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcLinkVersion"))
   {
     m_vpcLinkVersion = VpcLinkVersionMapper::GetVpcLinkVersionForName(jsonValue.GetString("vpcLinkVersion"));
-
+    m_vpcLinkVersionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

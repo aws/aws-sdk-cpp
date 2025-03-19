@@ -12,16 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCampaignRequest::CreateCampaignRequest() : 
-    m_nameHasBeenSet(false),
-    m_solutionVersionArnHasBeenSet(false),
-    m_minProvisionedTPS(0),
-    m_minProvisionedTPSHasBeenSet(false),
-    m_campaignConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateCampaignRequest::SerializePayload() const
 {
   JsonValue payload;

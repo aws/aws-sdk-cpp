@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CopyImageSetResult::CopyImageSetResult()
-{
-}
-
 CopyImageSetResult::CopyImageSetResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ CopyImageSetResult& CopyImageSetResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("datastoreId"))
   {
     m_datastoreId = jsonValue.GetString("datastoreId");
-
+    m_datastoreIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceImageSetProperties"))
   {
     m_sourceImageSetProperties = jsonValue.GetObject("sourceImageSetProperties");
-
+    m_sourceImageSetPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationImageSetProperties"))
   {
     m_destinationImageSetProperties = jsonValue.GetObject("destinationImageSetProperties");
-
+    m_destinationImageSetPropertiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

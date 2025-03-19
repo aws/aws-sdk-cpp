@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListJobRunAttemptsResult::ListJobRunAttemptsResult()
-{
-}
-
 ListJobRunAttemptsResult::ListJobRunAttemptsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListJobRunAttemptsResult& ListJobRunAttemptsResult::operator =(const Aws::Amazon
     {
       m_jobRunAttempts.push_back(jobRunAttemptsJsonList[jobRunAttemptsIndex].AsObject());
     }
+    m_jobRunAttemptsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

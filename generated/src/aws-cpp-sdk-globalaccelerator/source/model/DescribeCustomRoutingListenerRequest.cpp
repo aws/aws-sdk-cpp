@@ -12,11 +12,6 @@ using namespace Aws::GlobalAccelerator::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeCustomRoutingListenerRequest::DescribeCustomRoutingListenerRequest() : 
-    m_listenerArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCustomRoutingListenerRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,21 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-AggregatedSourceStatus::AggregatedSourceStatus() : 
-    m_sourceIdHasBeenSet(false),
-    m_sourceType(AggregatedSourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_awsRegionHasBeenSet(false),
-    m_lastUpdateStatus(AggregatedSourceStatusType::NOT_SET),
-    m_lastUpdateStatusHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false),
-    m_lastErrorCodeHasBeenSet(false),
-    m_lastErrorMessageHasBeenSet(false)
-{
-}
-
 AggregatedSourceStatus::AggregatedSourceStatus(JsonView jsonValue)
-  : AggregatedSourceStatus()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ AggregatedSourceStatus& AggregatedSourceStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceId"))
   {
     m_sourceId = jsonValue.GetString("SourceId");
-
     m_sourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceType"))
   {
     m_sourceType = AggregatedSourceTypeMapper::GetAggregatedSourceTypeForName(jsonValue.GetString("SourceType"));
-
     m_sourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsRegion"))
   {
     m_awsRegion = jsonValue.GetString("AwsRegion");
-
     m_awsRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdateStatus"))
   {
     m_lastUpdateStatus = AggregatedSourceStatusTypeMapper::GetAggregatedSourceStatusTypeForName(jsonValue.GetString("LastUpdateStatus"));
-
     m_lastUpdateStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("LastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastErrorCode"))
   {
     m_lastErrorCode = jsonValue.GetString("LastErrorCode");
-
     m_lastErrorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastErrorMessage"))
   {
     m_lastErrorMessage = jsonValue.GetString("LastErrorMessage");
-
     m_lastErrorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

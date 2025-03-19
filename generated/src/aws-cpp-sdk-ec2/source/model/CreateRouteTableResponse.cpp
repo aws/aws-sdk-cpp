@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateRouteTableResponse::CreateRouteTableResponse()
-{
-}
-
 CreateRouteTableResponse::CreateRouteTableResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ CreateRouteTableResponse& CreateRouteTableResponse::operator =(const Aws::Amazon
     if(!routeTableNode.IsNull())
     {
       m_routeTable = routeTableNode;
+      m_routeTableHasBeenSet = true;
     }
     XmlNode clientTokenNode = resultNode.FirstChild("clientToken");
     if(!clientTokenNode.IsNull())
     {
       m_clientToken = Aws::Utils::Xml::DecodeEscapedXmlText(clientTokenNode.GetText());
+      m_clientTokenHasBeenSet = true;
     }
   }
 
@@ -55,6 +53,7 @@ CreateRouteTableResponse& CreateRouteTableResponse::operator =(const Aws::Amazon
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateRouteTableResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

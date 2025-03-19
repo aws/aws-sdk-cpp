@@ -31,7 +31,7 @@ namespace Model
   class AutoToolChoice
   {
   public:
-    AWS_BEDROCKRUNTIME_API AutoToolChoice();
+    AWS_BEDROCKRUNTIME_API AutoToolChoice() = default;
     AWS_BEDROCKRUNTIME_API AutoToolChoice(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API AutoToolChoice& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;

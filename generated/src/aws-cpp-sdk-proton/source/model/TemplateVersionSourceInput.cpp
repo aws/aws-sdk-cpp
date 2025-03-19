@@ -18,13 +18,7 @@ namespace Proton
 namespace Model
 {
 
-TemplateVersionSourceInput::TemplateVersionSourceInput() : 
-    m_s3HasBeenSet(false)
-{
-}
-
 TemplateVersionSourceInput::TemplateVersionSourceInput(JsonView jsonValue)
-  : TemplateVersionSourceInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TemplateVersionSourceInput& TemplateVersionSourceInput::operator =(JsonView json
   if(jsonValue.ValueExists("s3"))
   {
     m_s3 = jsonValue.GetObject("s3");
-
     m_s3HasBeenSet = true;
   }
-
   return *this;
 }
 

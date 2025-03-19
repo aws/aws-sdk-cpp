@@ -28,7 +28,7 @@ namespace Model
   class CreateAccessTokenResult
   {
   public:
-    AWS_CODECATALYST_API CreateAccessTokenResult();
+    AWS_CODECATALYST_API CreateAccessTokenResult() = default;
     AWS_CODECATALYST_API CreateAccessTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODECATALYST_API CreateAccessTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,26 +37,22 @@ namespace Model
     /**
      * <p>The secret value of the personal access token.</p>
      */
-    inline const Aws::String& GetSecret() const{ return m_secret; }
-    inline void SetSecret(const Aws::String& value) { m_secret = value; }
-    inline void SetSecret(Aws::String&& value) { m_secret = std::move(value); }
-    inline void SetSecret(const char* value) { m_secret.assign(value); }
-    inline CreateAccessTokenResult& WithSecret(const Aws::String& value) { SetSecret(value); return *this;}
-    inline CreateAccessTokenResult& WithSecret(Aws::String&& value) { SetSecret(std::move(value)); return *this;}
-    inline CreateAccessTokenResult& WithSecret(const char* value) { SetSecret(value); return *this;}
+    inline const Aws::String& GetSecret() const { return m_secret; }
+    template<typename SecretT = Aws::String>
+    void SetSecret(SecretT&& value) { m_secretHasBeenSet = true; m_secret = std::forward<SecretT>(value); }
+    template<typename SecretT = Aws::String>
+    CreateAccessTokenResult& WithSecret(SecretT&& value) { SetSecret(std::forward<SecretT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The friendly name of the personal access token.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline CreateAccessTokenResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateAccessTokenResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateAccessTokenResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateAccessTokenResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,47 +62,48 @@ namespace Model
      * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>. If not
      * specified, the default is one year from creation.</p>
      */
-    inline const Aws::Utils::DateTime& GetExpiresTime() const{ return m_expiresTime; }
-    inline void SetExpiresTime(const Aws::Utils::DateTime& value) { m_expiresTime = value; }
-    inline void SetExpiresTime(Aws::Utils::DateTime&& value) { m_expiresTime = std::move(value); }
-    inline CreateAccessTokenResult& WithExpiresTime(const Aws::Utils::DateTime& value) { SetExpiresTime(value); return *this;}
-    inline CreateAccessTokenResult& WithExpiresTime(Aws::Utils::DateTime&& value) { SetExpiresTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetExpiresTime() const { return m_expiresTime; }
+    template<typename ExpiresTimeT = Aws::Utils::DateTime>
+    void SetExpiresTime(ExpiresTimeT&& value) { m_expiresTimeHasBeenSet = true; m_expiresTime = std::forward<ExpiresTimeT>(value); }
+    template<typename ExpiresTimeT = Aws::Utils::DateTime>
+    CreateAccessTokenResult& WithExpiresTime(ExpiresTimeT&& value) { SetExpiresTime(std::forward<ExpiresTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The system-generated unique ID of the access token.</p>
      */
-    inline const Aws::String& GetAccessTokenId() const{ return m_accessTokenId; }
-    inline void SetAccessTokenId(const Aws::String& value) { m_accessTokenId = value; }
-    inline void SetAccessTokenId(Aws::String&& value) { m_accessTokenId = std::move(value); }
-    inline void SetAccessTokenId(const char* value) { m_accessTokenId.assign(value); }
-    inline CreateAccessTokenResult& WithAccessTokenId(const Aws::String& value) { SetAccessTokenId(value); return *this;}
-    inline CreateAccessTokenResult& WithAccessTokenId(Aws::String&& value) { SetAccessTokenId(std::move(value)); return *this;}
-    inline CreateAccessTokenResult& WithAccessTokenId(const char* value) { SetAccessTokenId(value); return *this;}
+    inline const Aws::String& GetAccessTokenId() const { return m_accessTokenId; }
+    template<typename AccessTokenIdT = Aws::String>
+    void SetAccessTokenId(AccessTokenIdT&& value) { m_accessTokenIdHasBeenSet = true; m_accessTokenId = std::forward<AccessTokenIdT>(value); }
+    template<typename AccessTokenIdT = Aws::String>
+    CreateAccessTokenResult& WithAccessTokenId(AccessTokenIdT&& value) { SetAccessTokenId(std::forward<AccessTokenIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateAccessTokenResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateAccessTokenResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateAccessTokenResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateAccessTokenResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_secret;
+    bool m_secretHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expiresTime;
+    Aws::Utils::DateTime m_expiresTime{};
+    bool m_expiresTimeHasBeenSet = false;
 
     Aws::String m_accessTokenId;
+    bool m_accessTokenIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

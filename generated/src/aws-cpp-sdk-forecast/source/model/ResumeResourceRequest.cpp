@@ -12,11 +12,6 @@ using namespace Aws::ForecastService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ResumeResourceRequest::ResumeResourceRequest() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String ResumeResourceRequest::SerializePayload() const
 {
   JsonValue payload;

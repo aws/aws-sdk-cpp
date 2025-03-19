@@ -12,12 +12,6 @@ using namespace Aws::AppSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteApiKeyRequest::DeleteApiKeyRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DeleteApiKeyRequest::SerializePayload() const
 {
   return {};

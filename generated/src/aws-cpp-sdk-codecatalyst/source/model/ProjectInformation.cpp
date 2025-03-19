@@ -18,14 +18,7 @@ namespace CodeCatalyst
 namespace Model
 {
 
-ProjectInformation::ProjectInformation() : 
-    m_nameHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
-{
-}
-
 ProjectInformation::ProjectInformation(JsonView jsonValue)
-  : ProjectInformation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ProjectInformation& ProjectInformation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectId"))
   {
     m_projectId = jsonValue.GetString("projectId");
-
     m_projectIdHasBeenSet = true;
   }
-
   return *this;
 }
 

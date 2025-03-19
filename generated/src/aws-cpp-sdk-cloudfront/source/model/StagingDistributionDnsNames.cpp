@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-StagingDistributionDnsNames::StagingDistributionDnsNames() : 
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 StagingDistributionDnsNames::StagingDistributionDnsNames(const XmlNode& xmlNode)
-  : StagingDistributionDnsNames()
 {
   *this = xmlNode;
 }
@@ -49,6 +41,7 @@ StagingDistributionDnsNames& StagingDistributionDnsNames::operator =(const XmlNo
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("DnsName");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember.GetText());

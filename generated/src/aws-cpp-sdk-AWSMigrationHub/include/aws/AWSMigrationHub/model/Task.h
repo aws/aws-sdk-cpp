@@ -32,7 +32,7 @@ namespace Model
   class Task
   {
   public:
-    AWS_MIGRATIONHUB_API Task();
+    AWS_MIGRATIONHUB_API Task() = default;
     AWS_MIGRATIONHUB_API Task(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUB_API Task& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,10 @@ namespace Model
     /**
      * <p>Status of the task - Not Started, In-Progress, Complete.</p>
      */
-    inline const Status& GetStatus() const{ return m_status; }
+    inline Status GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Status& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Status&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline Task& WithStatus(const Status& value) { SetStatus(value); return *this;}
-    inline Task& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline Task& WithStatus(Status value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -56,34 +54,32 @@ namespace Model
      * field to provide clarifying information about the status that is unique to that
      * tool or that explains an error state.</p>
      */
-    inline const Aws::String& GetStatusDetail() const{ return m_statusDetail; }
+    inline const Aws::String& GetStatusDetail() const { return m_statusDetail; }
     inline bool StatusDetailHasBeenSet() const { return m_statusDetailHasBeenSet; }
-    inline void SetStatusDetail(const Aws::String& value) { m_statusDetailHasBeenSet = true; m_statusDetail = value; }
-    inline void SetStatusDetail(Aws::String&& value) { m_statusDetailHasBeenSet = true; m_statusDetail = std::move(value); }
-    inline void SetStatusDetail(const char* value) { m_statusDetailHasBeenSet = true; m_statusDetail.assign(value); }
-    inline Task& WithStatusDetail(const Aws::String& value) { SetStatusDetail(value); return *this;}
-    inline Task& WithStatusDetail(Aws::String&& value) { SetStatusDetail(std::move(value)); return *this;}
-    inline Task& WithStatusDetail(const char* value) { SetStatusDetail(value); return *this;}
+    template<typename StatusDetailT = Aws::String>
+    void SetStatusDetail(StatusDetailT&& value) { m_statusDetailHasBeenSet = true; m_statusDetail = std::forward<StatusDetailT>(value); }
+    template<typename StatusDetailT = Aws::String>
+    Task& WithStatusDetail(StatusDetailT&& value) { SetStatusDetail(std::forward<StatusDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indication of the percentage completion of the task.</p>
      */
-    inline int GetProgressPercent() const{ return m_progressPercent; }
+    inline int GetProgressPercent() const { return m_progressPercent; }
     inline bool ProgressPercentHasBeenSet() const { return m_progressPercentHasBeenSet; }
     inline void SetProgressPercent(int value) { m_progressPercentHasBeenSet = true; m_progressPercent = value; }
     inline Task& WithProgressPercent(int value) { SetProgressPercent(value); return *this;}
     ///@}
   private:
 
-    Status m_status;
+    Status m_status{Status::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusDetail;
     bool m_statusDetailHasBeenSet = false;
 
-    int m_progressPercent;
+    int m_progressPercent{0};
     bool m_progressPercentHasBeenSet = false;
   };
 

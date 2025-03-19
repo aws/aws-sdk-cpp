@@ -18,15 +18,7 @@ namespace SecurityIR
 namespace Model
 {
 
-GetMembershipAccountDetailError::GetMembershipAccountDetailError() : 
-    m_accountIdHasBeenSet(false),
-    m_errorHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 GetMembershipAccountDetailError::GetMembershipAccountDetailError(JsonView jsonValue)
-  : GetMembershipAccountDetailError()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ GetMembershipAccountDetailError& GetMembershipAccountDetailError::operator =(Jso
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetString("error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

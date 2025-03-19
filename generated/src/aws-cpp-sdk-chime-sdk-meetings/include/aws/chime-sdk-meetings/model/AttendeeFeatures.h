@@ -34,7 +34,7 @@ namespace Model
   class AttendeeFeatures
   {
   public:
-    AWS_CHIMESDKMEETINGS_API AttendeeFeatures();
+    AWS_CHIMESDKMEETINGS_API AttendeeFeatures() = default;
     AWS_CHIMESDKMEETINGS_API AttendeeFeatures(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEETINGS_API AttendeeFeatures& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
     /**
      * <p>The maximum number of attendees allowed into the meeting.</p>
      */
-    inline int GetMaxCount() const{ return m_maxCount; }
+    inline int GetMaxCount() const { return m_maxCount; }
     inline bool MaxCountHasBeenSet() const { return m_maxCountHasBeenSet; }
     inline void SetMaxCount(int value) { m_maxCountHasBeenSet = true; m_maxCount = value; }
     inline AttendeeFeatures& WithMaxCount(int value) { SetMaxCount(value); return *this;}
     ///@}
   private:
 
-    int m_maxCount;
+    int m_maxCount{0};
     bool m_maxCountHasBeenSet = false;
   };
 

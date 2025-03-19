@@ -33,7 +33,7 @@ namespace Model
   class PivotTableSortConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API PivotTableSortConfiguration();
+    AWS_QUICKSIGHT_API PivotTableSortConfiguration() = default;
     AWS_QUICKSIGHT_API PivotTableSortConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API PivotTableSortConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * <p>The field sort options for a pivot table sort configuration.</p>
      */
-    inline const Aws::Vector<PivotFieldSortOptions>& GetFieldSortOptions() const{ return m_fieldSortOptions; }
+    inline const Aws::Vector<PivotFieldSortOptions>& GetFieldSortOptions() const { return m_fieldSortOptions; }
     inline bool FieldSortOptionsHasBeenSet() const { return m_fieldSortOptionsHasBeenSet; }
-    inline void SetFieldSortOptions(const Aws::Vector<PivotFieldSortOptions>& value) { m_fieldSortOptionsHasBeenSet = true; m_fieldSortOptions = value; }
-    inline void SetFieldSortOptions(Aws::Vector<PivotFieldSortOptions>&& value) { m_fieldSortOptionsHasBeenSet = true; m_fieldSortOptions = std::move(value); }
-    inline PivotTableSortConfiguration& WithFieldSortOptions(const Aws::Vector<PivotFieldSortOptions>& value) { SetFieldSortOptions(value); return *this;}
-    inline PivotTableSortConfiguration& WithFieldSortOptions(Aws::Vector<PivotFieldSortOptions>&& value) { SetFieldSortOptions(std::move(value)); return *this;}
-    inline PivotTableSortConfiguration& AddFieldSortOptions(const PivotFieldSortOptions& value) { m_fieldSortOptionsHasBeenSet = true; m_fieldSortOptions.push_back(value); return *this; }
-    inline PivotTableSortConfiguration& AddFieldSortOptions(PivotFieldSortOptions&& value) { m_fieldSortOptionsHasBeenSet = true; m_fieldSortOptions.push_back(std::move(value)); return *this; }
+    template<typename FieldSortOptionsT = Aws::Vector<PivotFieldSortOptions>>
+    void SetFieldSortOptions(FieldSortOptionsT&& value) { m_fieldSortOptionsHasBeenSet = true; m_fieldSortOptions = std::forward<FieldSortOptionsT>(value); }
+    template<typename FieldSortOptionsT = Aws::Vector<PivotFieldSortOptions>>
+    PivotTableSortConfiguration& WithFieldSortOptions(FieldSortOptionsT&& value) { SetFieldSortOptions(std::forward<FieldSortOptionsT>(value)); return *this;}
+    template<typename FieldSortOptionsT = PivotFieldSortOptions>
+    PivotTableSortConfiguration& AddFieldSortOptions(FieldSortOptionsT&& value) { m_fieldSortOptionsHasBeenSet = true; m_fieldSortOptions.emplace_back(std::forward<FieldSortOptionsT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-TimestampFilter::TimestampFilter() : 
-    m_recordedBeforeHasBeenSet(false),
-    m_recordedAfterHasBeenSet(false)
-{
-}
-
 TimestampFilter::TimestampFilter(JsonView jsonValue)
-  : TimestampFilter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TimestampFilter& TimestampFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RecordedBefore"))
   {
     m_recordedBefore = jsonValue.GetDouble("RecordedBefore");
-
     m_recordedBeforeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecordedAfter"))
   {
     m_recordedAfter = jsonValue.GetDouble("RecordedAfter");
-
     m_recordedAfterHasBeenSet = true;
   }
-
   return *this;
 }
 

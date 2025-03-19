@@ -32,7 +32,7 @@ namespace Model
   class Experiment
   {
   public:
-    AWS_RESILIENCEHUB_API Experiment();
+    AWS_RESILIENCEHUB_API Experiment() = default;
     AWS_RESILIENCEHUB_API Experiment(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Experiment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESILIENCEHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>Amazon Resource Name (ARN) of the FIS experiment.</p>
      */
-    inline const Aws::String& GetExperimentArn() const{ return m_experimentArn; }
+    inline const Aws::String& GetExperimentArn() const { return m_experimentArn; }
     inline bool ExperimentArnHasBeenSet() const { return m_experimentArnHasBeenSet; }
-    inline void SetExperimentArn(const Aws::String& value) { m_experimentArnHasBeenSet = true; m_experimentArn = value; }
-    inline void SetExperimentArn(Aws::String&& value) { m_experimentArnHasBeenSet = true; m_experimentArn = std::move(value); }
-    inline void SetExperimentArn(const char* value) { m_experimentArnHasBeenSet = true; m_experimentArn.assign(value); }
-    inline Experiment& WithExperimentArn(const Aws::String& value) { SetExperimentArn(value); return *this;}
-    inline Experiment& WithExperimentArn(Aws::String&& value) { SetExperimentArn(std::move(value)); return *this;}
-    inline Experiment& WithExperimentArn(const char* value) { SetExperimentArn(value); return *this;}
+    template<typename ExperimentArnT = Aws::String>
+    void SetExperimentArn(ExperimentArnT&& value) { m_experimentArnHasBeenSet = true; m_experimentArn = std::forward<ExperimentArnT>(value); }
+    template<typename ExperimentArnT = Aws::String>
+    Experiment& WithExperimentArn(ExperimentArnT&& value) { SetExperimentArn(std::forward<ExperimentArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Identifier of the FIS experiment template.</p>
      */
-    inline const Aws::String& GetExperimentTemplateId() const{ return m_experimentTemplateId; }
+    inline const Aws::String& GetExperimentTemplateId() const { return m_experimentTemplateId; }
     inline bool ExperimentTemplateIdHasBeenSet() const { return m_experimentTemplateIdHasBeenSet; }
-    inline void SetExperimentTemplateId(const Aws::String& value) { m_experimentTemplateIdHasBeenSet = true; m_experimentTemplateId = value; }
-    inline void SetExperimentTemplateId(Aws::String&& value) { m_experimentTemplateIdHasBeenSet = true; m_experimentTemplateId = std::move(value); }
-    inline void SetExperimentTemplateId(const char* value) { m_experimentTemplateIdHasBeenSet = true; m_experimentTemplateId.assign(value); }
-    inline Experiment& WithExperimentTemplateId(const Aws::String& value) { SetExperimentTemplateId(value); return *this;}
-    inline Experiment& WithExperimentTemplateId(Aws::String&& value) { SetExperimentTemplateId(std::move(value)); return *this;}
-    inline Experiment& WithExperimentTemplateId(const char* value) { SetExperimentTemplateId(value); return *this;}
+    template<typename ExperimentTemplateIdT = Aws::String>
+    void SetExperimentTemplateId(ExperimentTemplateIdT&& value) { m_experimentTemplateIdHasBeenSet = true; m_experimentTemplateId = std::forward<ExperimentTemplateIdT>(value); }
+    template<typename ExperimentTemplateIdT = Aws::String>
+    Experiment& WithExperimentTemplateId(ExperimentTemplateIdT&& value) { SetExperimentTemplateId(std::forward<ExperimentTemplateIdT>(value)); return *this;}
     ///@}
   private:
 

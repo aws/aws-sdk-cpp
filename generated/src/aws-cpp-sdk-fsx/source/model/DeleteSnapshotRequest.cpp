@@ -12,13 +12,6 @@ using namespace Aws::FSx::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSnapshotRequest::DeleteSnapshotRequest() : 
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_snapshotIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

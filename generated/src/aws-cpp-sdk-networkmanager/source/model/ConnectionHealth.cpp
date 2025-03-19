@@ -18,17 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-ConnectionHealth::ConnectionHealth() : 
-    m_type(ConnectionType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_status(ConnectionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_timestampHasBeenSet(false)
-{
-}
-
 ConnectionHealth::ConnectionHealth(JsonView jsonValue)
-  : ConnectionHealth()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ConnectionHealth& ConnectionHealth::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ConnectionTypeMapper::GetConnectionTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ConnectionStatusMapper::GetConnectionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timestamp"))
   {
     m_timestamp = jsonValue.GetDouble("Timestamp");
-
     m_timestampHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class AutoRetryConfig
   {
   public:
-    AWS_CODEBUILD_API AutoRetryConfig();
+    AWS_CODEBUILD_API AutoRetryConfig() = default;
     AWS_CODEBUILD_API AutoRetryConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API AutoRetryConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEBUILD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * <code>RetryBuild</code> API to automatically retry your build for up to 2
      * additional times.</p>
      */
-    inline int GetAutoRetryLimit() const{ return m_autoRetryLimit; }
+    inline int GetAutoRetryLimit() const { return m_autoRetryLimit; }
     inline bool AutoRetryLimitHasBeenSet() const { return m_autoRetryLimitHasBeenSet; }
     inline void SetAutoRetryLimit(int value) { m_autoRetryLimitHasBeenSet = true; m_autoRetryLimit = value; }
     inline AutoRetryConfig& WithAutoRetryLimit(int value) { SetAutoRetryLimit(value); return *this;}
@@ -56,7 +56,7 @@ namespace Model
      * <p>The number of times that the build has been retried. The initial build will
      * have an auto-retry number of 0.</p>
      */
-    inline int GetAutoRetryNumber() const{ return m_autoRetryNumber; }
+    inline int GetAutoRetryNumber() const { return m_autoRetryNumber; }
     inline bool AutoRetryNumberHasBeenSet() const { return m_autoRetryNumberHasBeenSet; }
     inline void SetAutoRetryNumber(int value) { m_autoRetryNumberHasBeenSet = true; m_autoRetryNumber = value; }
     inline AutoRetryConfig& WithAutoRetryNumber(int value) { SetAutoRetryNumber(value); return *this;}
@@ -68,14 +68,12 @@ namespace Model
      * next auto-retry will be <code>null</code> for builds that don't trigger an
      * auto-retry.</p>
      */
-    inline const Aws::String& GetNextAutoRetry() const{ return m_nextAutoRetry; }
+    inline const Aws::String& GetNextAutoRetry() const { return m_nextAutoRetry; }
     inline bool NextAutoRetryHasBeenSet() const { return m_nextAutoRetryHasBeenSet; }
-    inline void SetNextAutoRetry(const Aws::String& value) { m_nextAutoRetryHasBeenSet = true; m_nextAutoRetry = value; }
-    inline void SetNextAutoRetry(Aws::String&& value) { m_nextAutoRetryHasBeenSet = true; m_nextAutoRetry = std::move(value); }
-    inline void SetNextAutoRetry(const char* value) { m_nextAutoRetryHasBeenSet = true; m_nextAutoRetry.assign(value); }
-    inline AutoRetryConfig& WithNextAutoRetry(const Aws::String& value) { SetNextAutoRetry(value); return *this;}
-    inline AutoRetryConfig& WithNextAutoRetry(Aws::String&& value) { SetNextAutoRetry(std::move(value)); return *this;}
-    inline AutoRetryConfig& WithNextAutoRetry(const char* value) { SetNextAutoRetry(value); return *this;}
+    template<typename NextAutoRetryT = Aws::String>
+    void SetNextAutoRetry(NextAutoRetryT&& value) { m_nextAutoRetryHasBeenSet = true; m_nextAutoRetry = std::forward<NextAutoRetryT>(value); }
+    template<typename NextAutoRetryT = Aws::String>
+    AutoRetryConfig& WithNextAutoRetry(NextAutoRetryT&& value) { SetNextAutoRetry(std::forward<NextAutoRetryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,21 +81,19 @@ namespace Model
      * <p>The build ARN of the build that triggered the current auto-retry build. The
      * previous auto-retry will be <code>null</code> for the initial build.</p>
      */
-    inline const Aws::String& GetPreviousAutoRetry() const{ return m_previousAutoRetry; }
+    inline const Aws::String& GetPreviousAutoRetry() const { return m_previousAutoRetry; }
     inline bool PreviousAutoRetryHasBeenSet() const { return m_previousAutoRetryHasBeenSet; }
-    inline void SetPreviousAutoRetry(const Aws::String& value) { m_previousAutoRetryHasBeenSet = true; m_previousAutoRetry = value; }
-    inline void SetPreviousAutoRetry(Aws::String&& value) { m_previousAutoRetryHasBeenSet = true; m_previousAutoRetry = std::move(value); }
-    inline void SetPreviousAutoRetry(const char* value) { m_previousAutoRetryHasBeenSet = true; m_previousAutoRetry.assign(value); }
-    inline AutoRetryConfig& WithPreviousAutoRetry(const Aws::String& value) { SetPreviousAutoRetry(value); return *this;}
-    inline AutoRetryConfig& WithPreviousAutoRetry(Aws::String&& value) { SetPreviousAutoRetry(std::move(value)); return *this;}
-    inline AutoRetryConfig& WithPreviousAutoRetry(const char* value) { SetPreviousAutoRetry(value); return *this;}
+    template<typename PreviousAutoRetryT = Aws::String>
+    void SetPreviousAutoRetry(PreviousAutoRetryT&& value) { m_previousAutoRetryHasBeenSet = true; m_previousAutoRetry = std::forward<PreviousAutoRetryT>(value); }
+    template<typename PreviousAutoRetryT = Aws::String>
+    AutoRetryConfig& WithPreviousAutoRetry(PreviousAutoRetryT&& value) { SetPreviousAutoRetry(std::forward<PreviousAutoRetryT>(value)); return *this;}
     ///@}
   private:
 
-    int m_autoRetryLimit;
+    int m_autoRetryLimit{0};
     bool m_autoRetryLimitHasBeenSet = false;
 
-    int m_autoRetryNumber;
+    int m_autoRetryNumber{0};
     bool m_autoRetryNumberHasBeenSet = false;
 
     Aws::String m_nextAutoRetry;

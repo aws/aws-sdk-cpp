@@ -12,12 +12,6 @@ using namespace Aws::SimSpaceWeaver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSnapshotRequest::CreateSnapshotRequest() : 
-    m_destinationHasBeenSet(false),
-    m_simulationHasBeenSet(false)
-{
-}
-
 Aws::String CreateSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

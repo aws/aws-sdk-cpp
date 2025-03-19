@@ -29,7 +29,7 @@ namespace Model
   class ListEventSourcesResult
   {
   public:
-    AWS_CLOUDWATCHEVENTS_API ListEventSourcesResult();
+    AWS_CLOUDWATCHEVENTS_API ListEventSourcesResult() = default;
     AWS_CLOUDWATCHEVENTS_API ListEventSourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHEVENTS_API ListEventSourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The list of event sources.</p>
      */
-    inline const Aws::Vector<EventSource>& GetEventSources() const{ return m_eventSources; }
-    inline void SetEventSources(const Aws::Vector<EventSource>& value) { m_eventSources = value; }
-    inline void SetEventSources(Aws::Vector<EventSource>&& value) { m_eventSources = std::move(value); }
-    inline ListEventSourcesResult& WithEventSources(const Aws::Vector<EventSource>& value) { SetEventSources(value); return *this;}
-    inline ListEventSourcesResult& WithEventSources(Aws::Vector<EventSource>&& value) { SetEventSources(std::move(value)); return *this;}
-    inline ListEventSourcesResult& AddEventSources(const EventSource& value) { m_eventSources.push_back(value); return *this; }
-    inline ListEventSourcesResult& AddEventSources(EventSource&& value) { m_eventSources.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EventSource>& GetEventSources() const { return m_eventSources; }
+    template<typename EventSourcesT = Aws::Vector<EventSource>>
+    void SetEventSources(EventSourcesT&& value) { m_eventSourcesHasBeenSet = true; m_eventSources = std::forward<EventSourcesT>(value); }
+    template<typename EventSourcesT = Aws::Vector<EventSource>>
+    ListEventSourcesResult& WithEventSources(EventSourcesT&& value) { SetEventSources(std::forward<EventSourcesT>(value)); return *this;}
+    template<typename EventSourcesT = EventSource>
+    ListEventSourcesResult& AddEventSources(EventSourcesT&& value) { m_eventSourcesHasBeenSet = true; m_eventSources.emplace_back(std::forward<EventSourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>A token you can use in a subsequent operation to retrieve the next set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListEventSourcesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEventSourcesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEventSourcesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEventSourcesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListEventSourcesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListEventSourcesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListEventSourcesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListEventSourcesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EventSource> m_eventSources;
+    bool m_eventSourcesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

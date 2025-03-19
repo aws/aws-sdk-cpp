@@ -18,19 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-MemberAccountStatus::MemberAccountStatus() : 
-    m_accountIdHasBeenSet(false),
-    m_configRuleNameHasBeenSet(false),
-    m_memberAccountRuleStatus(MemberAccountRuleStatus::NOT_SET),
-    m_memberAccountRuleStatusHasBeenSet(false),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
-{
-}
-
 MemberAccountStatus::MemberAccountStatus(JsonView jsonValue)
-  : MemberAccountStatus()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ MemberAccountStatus& MemberAccountStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigRuleName"))
   {
     m_configRuleName = jsonValue.GetString("ConfigRuleName");
-
     m_configRuleNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MemberAccountRuleStatus"))
   {
     m_memberAccountRuleStatus = MemberAccountRuleStatusMapper::GetMemberAccountRuleStatusForName(jsonValue.GetString("MemberAccountRuleStatus"));
-
     m_memberAccountRuleStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdateTime"))
   {
     m_lastUpdateTime = jsonValue.GetDouble("LastUpdateTime");
-
     m_lastUpdateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

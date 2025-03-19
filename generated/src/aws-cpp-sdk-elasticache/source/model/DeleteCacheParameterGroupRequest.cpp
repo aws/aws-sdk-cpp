@@ -10,11 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-DeleteCacheParameterGroupRequest::DeleteCacheParameterGroupRequest() : 
-    m_cacheParameterGroupNameHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCacheParameterGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

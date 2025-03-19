@@ -21,7 +21,7 @@ namespace Model
   class CreateBackupRequest : public DynamoDBRequest
   {
   public:
-    AWS_DYNAMODB_API CreateBackupRequest();
+    AWS_DYNAMODB_API CreateBackupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,28 +43,24 @@ namespace Model
      * <p>The name of the table. You can also provide the Amazon Resource Name (ARN) of
      * the table in this parameter.</p>
      */
-    inline const Aws::String& GetTableName() const{ return m_tableName; }
+    inline const Aws::String& GetTableName() const { return m_tableName; }
     inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
-    inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
-    inline void SetTableName(Aws::String&& value) { m_tableNameHasBeenSet = true; m_tableName = std::move(value); }
-    inline void SetTableName(const char* value) { m_tableNameHasBeenSet = true; m_tableName.assign(value); }
-    inline CreateBackupRequest& WithTableName(const Aws::String& value) { SetTableName(value); return *this;}
-    inline CreateBackupRequest& WithTableName(Aws::String&& value) { SetTableName(std::move(value)); return *this;}
-    inline CreateBackupRequest& WithTableName(const char* value) { SetTableName(value); return *this;}
+    template<typename TableNameT = Aws::String>
+    void SetTableName(TableNameT&& value) { m_tableNameHasBeenSet = true; m_tableName = std::forward<TableNameT>(value); }
+    template<typename TableNameT = Aws::String>
+    CreateBackupRequest& WithTableName(TableNameT&& value) { SetTableName(std::forward<TableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specified name for the backup.</p>
      */
-    inline const Aws::String& GetBackupName() const{ return m_backupName; }
+    inline const Aws::String& GetBackupName() const { return m_backupName; }
     inline bool BackupNameHasBeenSet() const { return m_backupNameHasBeenSet; }
-    inline void SetBackupName(const Aws::String& value) { m_backupNameHasBeenSet = true; m_backupName = value; }
-    inline void SetBackupName(Aws::String&& value) { m_backupNameHasBeenSet = true; m_backupName = std::move(value); }
-    inline void SetBackupName(const char* value) { m_backupNameHasBeenSet = true; m_backupName.assign(value); }
-    inline CreateBackupRequest& WithBackupName(const Aws::String& value) { SetBackupName(value); return *this;}
-    inline CreateBackupRequest& WithBackupName(Aws::String&& value) { SetBackupName(std::move(value)); return *this;}
-    inline CreateBackupRequest& WithBackupName(const char* value) { SetBackupName(value); return *this;}
+    template<typename BackupNameT = Aws::String>
+    void SetBackupName(BackupNameT&& value) { m_backupNameHasBeenSet = true; m_backupName = std::forward<BackupNameT>(value); }
+    template<typename BackupNameT = Aws::String>
+    CreateBackupRequest& WithBackupName(BackupNameT&& value) { SetBackupName(std::forward<BackupNameT>(value)); return *this;}
     ///@}
   private:
 

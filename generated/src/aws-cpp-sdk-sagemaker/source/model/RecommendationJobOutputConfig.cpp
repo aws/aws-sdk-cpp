@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-RecommendationJobOutputConfig::RecommendationJobOutputConfig() : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_compiledOutputConfigHasBeenSet(false)
-{
-}
-
 RecommendationJobOutputConfig::RecommendationJobOutputConfig(JsonView jsonValue)
-  : RecommendationJobOutputConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RecommendationJobOutputConfig& RecommendationJobOutputConfig::operator =(JsonVie
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompiledOutputConfig"))
   {
     m_compiledOutputConfig = jsonValue.GetObject("CompiledOutputConfig");
-
     m_compiledOutputConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

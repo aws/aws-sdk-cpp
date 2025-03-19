@@ -12,11 +12,6 @@ using namespace Aws::IoTSiteWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeGatewayRequest::DescribeGatewayRequest() : 
-    m_gatewayIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeGatewayRequest::SerializePayload() const
 {
   return {};

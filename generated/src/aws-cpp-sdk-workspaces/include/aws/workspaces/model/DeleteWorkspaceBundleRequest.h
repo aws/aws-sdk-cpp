@@ -21,7 +21,7 @@ namespace Model
   class DeleteWorkspaceBundleRequest : public WorkSpacesRequest
   {
   public:
-    AWS_WORKSPACES_API DeleteWorkspaceBundleRequest();
+    AWS_WORKSPACES_API DeleteWorkspaceBundleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The identifier of the bundle.</p>
      */
-    inline const Aws::String& GetBundleId() const{ return m_bundleId; }
+    inline const Aws::String& GetBundleId() const { return m_bundleId; }
     inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
-    inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
-    inline void SetBundleId(Aws::String&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::move(value); }
-    inline void SetBundleId(const char* value) { m_bundleIdHasBeenSet = true; m_bundleId.assign(value); }
-    inline DeleteWorkspaceBundleRequest& WithBundleId(const Aws::String& value) { SetBundleId(value); return *this;}
-    inline DeleteWorkspaceBundleRequest& WithBundleId(Aws::String&& value) { SetBundleId(std::move(value)); return *this;}
-    inline DeleteWorkspaceBundleRequest& WithBundleId(const char* value) { SetBundleId(value); return *this;}
+    template<typename BundleIdT = Aws::String>
+    void SetBundleId(BundleIdT&& value) { m_bundleIdHasBeenSet = true; m_bundleId = std::forward<BundleIdT>(value); }
+    template<typename BundleIdT = Aws::String>
+    DeleteWorkspaceBundleRequest& WithBundleId(BundleIdT&& value) { SetBundleId(std::forward<BundleIdT>(value)); return *this;}
     ///@}
   private:
 

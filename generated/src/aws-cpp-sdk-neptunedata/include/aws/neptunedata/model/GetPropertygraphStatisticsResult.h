@@ -28,7 +28,7 @@ namespace Model
   class GetPropertygraphStatisticsResult
   {
   public:
-    AWS_NEPTUNEDATA_API GetPropertygraphStatisticsResult();
+    AWS_NEPTUNEDATA_API GetPropertygraphStatisticsResult() = default;
     AWS_NEPTUNEDATA_API GetPropertygraphStatisticsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NEPTUNEDATA_API GetPropertygraphStatisticsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,43 +40,42 @@ namespace Model
      * href="https://docs.aws.amazon.com/neptune/latest/userguide/neptune-dfe-statistics.html#neptune-dfe-statistics-errors">Common
      * error codes for DFE statistics request</a> for a list of common errors.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_status.assign(value); }
-    inline GetPropertygraphStatisticsResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline GetPropertygraphStatisticsResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline GetPropertygraphStatisticsResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+    inline const Aws::String& GetStatus() const { return m_status; }
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    GetPropertygraphStatisticsResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Statistics for property-graph data.</p>
      */
-    inline const Statistics& GetPayload() const{ return m_payload; }
-    inline void SetPayload(const Statistics& value) { m_payload = value; }
-    inline void SetPayload(Statistics&& value) { m_payload = std::move(value); }
-    inline GetPropertygraphStatisticsResult& WithPayload(const Statistics& value) { SetPayload(value); return *this;}
-    inline GetPropertygraphStatisticsResult& WithPayload(Statistics&& value) { SetPayload(std::move(value)); return *this;}
+    inline const Statistics& GetPayload() const { return m_payload; }
+    template<typename PayloadT = Statistics>
+    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
+    template<typename PayloadT = Statistics>
+    GetPropertygraphStatisticsResult& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPropertygraphStatisticsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPropertygraphStatisticsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPropertygraphStatisticsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPropertygraphStatisticsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_status;
+    bool m_statusHasBeenSet = false;
 
     Statistics m_payload;
+    bool m_payloadHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

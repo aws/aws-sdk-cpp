@@ -12,11 +12,6 @@ using namespace Aws::Panorama::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDeviceJobRequest::DescribeDeviceJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDeviceJobRequest::SerializePayload() const
 {
   return {};

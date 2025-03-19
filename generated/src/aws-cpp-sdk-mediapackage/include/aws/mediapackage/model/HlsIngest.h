@@ -33,7 +33,7 @@ namespace Model
   class HlsIngest
   {
   public:
-    AWS_MEDIAPACKAGE_API HlsIngest();
+    AWS_MEDIAPACKAGE_API HlsIngest() = default;
     AWS_MEDIAPACKAGE_API HlsIngest(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGE_API HlsIngest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
     /**
      * A list of endpoints to which the source stream should be sent.
      */
-    inline const Aws::Vector<IngestEndpoint>& GetIngestEndpoints() const{ return m_ingestEndpoints; }
+    inline const Aws::Vector<IngestEndpoint>& GetIngestEndpoints() const { return m_ingestEndpoints; }
     inline bool IngestEndpointsHasBeenSet() const { return m_ingestEndpointsHasBeenSet; }
-    inline void SetIngestEndpoints(const Aws::Vector<IngestEndpoint>& value) { m_ingestEndpointsHasBeenSet = true; m_ingestEndpoints = value; }
-    inline void SetIngestEndpoints(Aws::Vector<IngestEndpoint>&& value) { m_ingestEndpointsHasBeenSet = true; m_ingestEndpoints = std::move(value); }
-    inline HlsIngest& WithIngestEndpoints(const Aws::Vector<IngestEndpoint>& value) { SetIngestEndpoints(value); return *this;}
-    inline HlsIngest& WithIngestEndpoints(Aws::Vector<IngestEndpoint>&& value) { SetIngestEndpoints(std::move(value)); return *this;}
-    inline HlsIngest& AddIngestEndpoints(const IngestEndpoint& value) { m_ingestEndpointsHasBeenSet = true; m_ingestEndpoints.push_back(value); return *this; }
-    inline HlsIngest& AddIngestEndpoints(IngestEndpoint&& value) { m_ingestEndpointsHasBeenSet = true; m_ingestEndpoints.push_back(std::move(value)); return *this; }
+    template<typename IngestEndpointsT = Aws::Vector<IngestEndpoint>>
+    void SetIngestEndpoints(IngestEndpointsT&& value) { m_ingestEndpointsHasBeenSet = true; m_ingestEndpoints = std::forward<IngestEndpointsT>(value); }
+    template<typename IngestEndpointsT = Aws::Vector<IngestEndpoint>>
+    HlsIngest& WithIngestEndpoints(IngestEndpointsT&& value) { SetIngestEndpoints(std::forward<IngestEndpointsT>(value)); return *this;}
+    template<typename IngestEndpointsT = IngestEndpoint>
+    HlsIngest& AddIngestEndpoints(IngestEndpointsT&& value) { m_ingestEndpointsHasBeenSet = true; m_ingestEndpoints.emplace_back(std::forward<IngestEndpointsT>(value)); return *this; }
     ///@}
   private:
 

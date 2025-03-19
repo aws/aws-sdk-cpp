@@ -32,7 +32,7 @@ namespace Model
   class VietnamAdditionalInfo
   {
   public:
-    AWS_TAXSETTINGS_API VietnamAdditionalInfo();
+    AWS_TAXSETTINGS_API VietnamAdditionalInfo() = default;
     AWS_TAXSETTINGS_API VietnamAdditionalInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API VietnamAdditionalInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TAXSETTINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The electronic transaction code number on the tax return document. This field
      * must be provided for successful API operation.</p>
      */
-    inline const Aws::String& GetElectronicTransactionCodeNumber() const{ return m_electronicTransactionCodeNumber; }
+    inline const Aws::String& GetElectronicTransactionCodeNumber() const { return m_electronicTransactionCodeNumber; }
     inline bool ElectronicTransactionCodeNumberHasBeenSet() const { return m_electronicTransactionCodeNumberHasBeenSet; }
-    inline void SetElectronicTransactionCodeNumber(const Aws::String& value) { m_electronicTransactionCodeNumberHasBeenSet = true; m_electronicTransactionCodeNumber = value; }
-    inline void SetElectronicTransactionCodeNumber(Aws::String&& value) { m_electronicTransactionCodeNumberHasBeenSet = true; m_electronicTransactionCodeNumber = std::move(value); }
-    inline void SetElectronicTransactionCodeNumber(const char* value) { m_electronicTransactionCodeNumberHasBeenSet = true; m_electronicTransactionCodeNumber.assign(value); }
-    inline VietnamAdditionalInfo& WithElectronicTransactionCodeNumber(const Aws::String& value) { SetElectronicTransactionCodeNumber(value); return *this;}
-    inline VietnamAdditionalInfo& WithElectronicTransactionCodeNumber(Aws::String&& value) { SetElectronicTransactionCodeNumber(std::move(value)); return *this;}
-    inline VietnamAdditionalInfo& WithElectronicTransactionCodeNumber(const char* value) { SetElectronicTransactionCodeNumber(value); return *this;}
+    template<typename ElectronicTransactionCodeNumberT = Aws::String>
+    void SetElectronicTransactionCodeNumber(ElectronicTransactionCodeNumberT&& value) { m_electronicTransactionCodeNumberHasBeenSet = true; m_electronicTransactionCodeNumber = std::forward<ElectronicTransactionCodeNumberT>(value); }
+    template<typename ElectronicTransactionCodeNumberT = Aws::String>
+    VietnamAdditionalInfo& WithElectronicTransactionCodeNumber(ElectronicTransactionCodeNumberT&& value) { SetElectronicTransactionCodeNumber(std::forward<ElectronicTransactionCodeNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The enterprise identification number for tax registration. This field must be
      * provided for successful API operation.</p>
      */
-    inline const Aws::String& GetEnterpriseIdentificationNumber() const{ return m_enterpriseIdentificationNumber; }
+    inline const Aws::String& GetEnterpriseIdentificationNumber() const { return m_enterpriseIdentificationNumber; }
     inline bool EnterpriseIdentificationNumberHasBeenSet() const { return m_enterpriseIdentificationNumberHasBeenSet; }
-    inline void SetEnterpriseIdentificationNumber(const Aws::String& value) { m_enterpriseIdentificationNumberHasBeenSet = true; m_enterpriseIdentificationNumber = value; }
-    inline void SetEnterpriseIdentificationNumber(Aws::String&& value) { m_enterpriseIdentificationNumberHasBeenSet = true; m_enterpriseIdentificationNumber = std::move(value); }
-    inline void SetEnterpriseIdentificationNumber(const char* value) { m_enterpriseIdentificationNumberHasBeenSet = true; m_enterpriseIdentificationNumber.assign(value); }
-    inline VietnamAdditionalInfo& WithEnterpriseIdentificationNumber(const Aws::String& value) { SetEnterpriseIdentificationNumber(value); return *this;}
-    inline VietnamAdditionalInfo& WithEnterpriseIdentificationNumber(Aws::String&& value) { SetEnterpriseIdentificationNumber(std::move(value)); return *this;}
-    inline VietnamAdditionalInfo& WithEnterpriseIdentificationNumber(const char* value) { SetEnterpriseIdentificationNumber(value); return *this;}
+    template<typename EnterpriseIdentificationNumberT = Aws::String>
+    void SetEnterpriseIdentificationNumber(EnterpriseIdentificationNumberT&& value) { m_enterpriseIdentificationNumberHasBeenSet = true; m_enterpriseIdentificationNumber = std::forward<EnterpriseIdentificationNumberT>(value); }
+    template<typename EnterpriseIdentificationNumberT = Aws::String>
+    VietnamAdditionalInfo& WithEnterpriseIdentificationNumber(EnterpriseIdentificationNumberT&& value) { SetEnterpriseIdentificationNumber(std::forward<EnterpriseIdentificationNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p>The payment voucher number on the tax return payment document. This field
      * must be provided for successful API operation.</p>
      */
-    inline const Aws::String& GetPaymentVoucherNumber() const{ return m_paymentVoucherNumber; }
+    inline const Aws::String& GetPaymentVoucherNumber() const { return m_paymentVoucherNumber; }
     inline bool PaymentVoucherNumberHasBeenSet() const { return m_paymentVoucherNumberHasBeenSet; }
-    inline void SetPaymentVoucherNumber(const Aws::String& value) { m_paymentVoucherNumberHasBeenSet = true; m_paymentVoucherNumber = value; }
-    inline void SetPaymentVoucherNumber(Aws::String&& value) { m_paymentVoucherNumberHasBeenSet = true; m_paymentVoucherNumber = std::move(value); }
-    inline void SetPaymentVoucherNumber(const char* value) { m_paymentVoucherNumberHasBeenSet = true; m_paymentVoucherNumber.assign(value); }
-    inline VietnamAdditionalInfo& WithPaymentVoucherNumber(const Aws::String& value) { SetPaymentVoucherNumber(value); return *this;}
-    inline VietnamAdditionalInfo& WithPaymentVoucherNumber(Aws::String&& value) { SetPaymentVoucherNumber(std::move(value)); return *this;}
-    inline VietnamAdditionalInfo& WithPaymentVoucherNumber(const char* value) { SetPaymentVoucherNumber(value); return *this;}
+    template<typename PaymentVoucherNumberT = Aws::String>
+    void SetPaymentVoucherNumber(PaymentVoucherNumberT&& value) { m_paymentVoucherNumberHasBeenSet = true; m_paymentVoucherNumber = std::forward<PaymentVoucherNumberT>(value); }
+    template<typename PaymentVoucherNumberT = Aws::String>
+    VietnamAdditionalInfo& WithPaymentVoucherNumber(PaymentVoucherNumberT&& value) { SetPaymentVoucherNumber(std::forward<PaymentVoucherNumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +82,12 @@ namespace Model
      * <p>The date on the tax return payment document. This field must be provided for
      * successful API operation.</p>
      */
-    inline const Aws::String& GetPaymentVoucherNumberDate() const{ return m_paymentVoucherNumberDate; }
+    inline const Aws::String& GetPaymentVoucherNumberDate() const { return m_paymentVoucherNumberDate; }
     inline bool PaymentVoucherNumberDateHasBeenSet() const { return m_paymentVoucherNumberDateHasBeenSet; }
-    inline void SetPaymentVoucherNumberDate(const Aws::String& value) { m_paymentVoucherNumberDateHasBeenSet = true; m_paymentVoucherNumberDate = value; }
-    inline void SetPaymentVoucherNumberDate(Aws::String&& value) { m_paymentVoucherNumberDateHasBeenSet = true; m_paymentVoucherNumberDate = std::move(value); }
-    inline void SetPaymentVoucherNumberDate(const char* value) { m_paymentVoucherNumberDateHasBeenSet = true; m_paymentVoucherNumberDate.assign(value); }
-    inline VietnamAdditionalInfo& WithPaymentVoucherNumberDate(const Aws::String& value) { SetPaymentVoucherNumberDate(value); return *this;}
-    inline VietnamAdditionalInfo& WithPaymentVoucherNumberDate(Aws::String&& value) { SetPaymentVoucherNumberDate(std::move(value)); return *this;}
-    inline VietnamAdditionalInfo& WithPaymentVoucherNumberDate(const char* value) { SetPaymentVoucherNumberDate(value); return *this;}
+    template<typename PaymentVoucherNumberDateT = Aws::String>
+    void SetPaymentVoucherNumberDate(PaymentVoucherNumberDateT&& value) { m_paymentVoucherNumberDateHasBeenSet = true; m_paymentVoucherNumberDate = std::forward<PaymentVoucherNumberDateT>(value); }
+    template<typename PaymentVoucherNumberDateT = Aws::String>
+    VietnamAdditionalInfo& WithPaymentVoucherNumberDate(PaymentVoucherNumberDateT&& value) { SetPaymentVoucherNumberDate(std::forward<PaymentVoucherNumberDateT>(value)); return *this;}
     ///@}
   private:
 

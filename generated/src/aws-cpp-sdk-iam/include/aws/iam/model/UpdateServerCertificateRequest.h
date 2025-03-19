@@ -21,7 +21,7 @@ namespace Model
   class UpdateServerCertificateRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API UpdateServerCertificateRequest();
+    AWS_IAM_API UpdateServerCertificateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
      */
-    inline const Aws::String& GetServerCertificateName() const{ return m_serverCertificateName; }
+    inline const Aws::String& GetServerCertificateName() const { return m_serverCertificateName; }
     inline bool ServerCertificateNameHasBeenSet() const { return m_serverCertificateNameHasBeenSet; }
-    inline void SetServerCertificateName(const Aws::String& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = value; }
-    inline void SetServerCertificateName(Aws::String&& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = std::move(value); }
-    inline void SetServerCertificateName(const char* value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName.assign(value); }
-    inline UpdateServerCertificateRequest& WithServerCertificateName(const Aws::String& value) { SetServerCertificateName(value); return *this;}
-    inline UpdateServerCertificateRequest& WithServerCertificateName(Aws::String&& value) { SetServerCertificateName(std::move(value)); return *this;}
-    inline UpdateServerCertificateRequest& WithServerCertificateName(const char* value) { SetServerCertificateName(value); return *this;}
+    template<typename ServerCertificateNameT = Aws::String>
+    void SetServerCertificateName(ServerCertificateNameT&& value) { m_serverCertificateNameHasBeenSet = true; m_serverCertificateName = std::forward<ServerCertificateNameT>(value); }
+    template<typename ServerCertificateNameT = Aws::String>
+    UpdateServerCertificateRequest& WithServerCertificateName(ServerCertificateNameT&& value) { SetServerCertificateName(std::forward<ServerCertificateNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * (<code>\u007F</code>), including most punctuation characters, digits, and upper
      * and lowercased letters.</p>
      */
-    inline const Aws::String& GetNewPath() const{ return m_newPath; }
+    inline const Aws::String& GetNewPath() const { return m_newPath; }
     inline bool NewPathHasBeenSet() const { return m_newPathHasBeenSet; }
-    inline void SetNewPath(const Aws::String& value) { m_newPathHasBeenSet = true; m_newPath = value; }
-    inline void SetNewPath(Aws::String&& value) { m_newPathHasBeenSet = true; m_newPath = std::move(value); }
-    inline void SetNewPath(const char* value) { m_newPathHasBeenSet = true; m_newPath.assign(value); }
-    inline UpdateServerCertificateRequest& WithNewPath(const Aws::String& value) { SetNewPath(value); return *this;}
-    inline UpdateServerCertificateRequest& WithNewPath(Aws::String&& value) { SetNewPath(std::move(value)); return *this;}
-    inline UpdateServerCertificateRequest& WithNewPath(const char* value) { SetNewPath(value); return *this;}
+    template<typename NewPathT = Aws::String>
+    void SetNewPath(NewPathT&& value) { m_newPathHasBeenSet = true; m_newPath = std::forward<NewPathT>(value); }
+    template<typename NewPathT = Aws::String>
+    UpdateServerCertificateRequest& WithNewPath(NewPathT&& value) { SetNewPath(std::forward<NewPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,14 +80,12 @@ namespace Model
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
      */
-    inline const Aws::String& GetNewServerCertificateName() const{ return m_newServerCertificateName; }
+    inline const Aws::String& GetNewServerCertificateName() const { return m_newServerCertificateName; }
     inline bool NewServerCertificateNameHasBeenSet() const { return m_newServerCertificateNameHasBeenSet; }
-    inline void SetNewServerCertificateName(const Aws::String& value) { m_newServerCertificateNameHasBeenSet = true; m_newServerCertificateName = value; }
-    inline void SetNewServerCertificateName(Aws::String&& value) { m_newServerCertificateNameHasBeenSet = true; m_newServerCertificateName = std::move(value); }
-    inline void SetNewServerCertificateName(const char* value) { m_newServerCertificateNameHasBeenSet = true; m_newServerCertificateName.assign(value); }
-    inline UpdateServerCertificateRequest& WithNewServerCertificateName(const Aws::String& value) { SetNewServerCertificateName(value); return *this;}
-    inline UpdateServerCertificateRequest& WithNewServerCertificateName(Aws::String&& value) { SetNewServerCertificateName(std::move(value)); return *this;}
-    inline UpdateServerCertificateRequest& WithNewServerCertificateName(const char* value) { SetNewServerCertificateName(value); return *this;}
+    template<typename NewServerCertificateNameT = Aws::String>
+    void SetNewServerCertificateName(NewServerCertificateNameT&& value) { m_newServerCertificateNameHasBeenSet = true; m_newServerCertificateName = std::forward<NewServerCertificateNameT>(value); }
+    template<typename NewServerCertificateNameT = Aws::String>
+    UpdateServerCertificateRequest& WithNewServerCertificateName(NewServerCertificateNameT&& value) { SetNewServerCertificateName(std::forward<NewServerCertificateNameT>(value)); return *this;}
     ///@}
   private:
 

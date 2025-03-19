@@ -12,14 +12,6 @@ using namespace Aws::Kinesis::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListStreamsRequest::ListStreamsRequest() : 
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_exclusiveStartStreamNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListStreamsRequest::SerializePayload() const
 {
   JsonValue payload;

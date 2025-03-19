@@ -31,7 +31,7 @@ namespace Model
   class ProvisioningArtifactOutput
   {
   public:
-    AWS_SERVICECATALOG_API ProvisioningArtifactOutput();
+    AWS_SERVICECATALOG_API ProvisioningArtifactOutput() = default;
     AWS_SERVICECATALOG_API ProvisioningArtifactOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API ProvisioningArtifactOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The provisioning artifact output key.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline ProvisioningArtifactOutput& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline ProvisioningArtifactOutput& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline ProvisioningArtifactOutput& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    ProvisioningArtifactOutput& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Description of the provisioning artifact output key.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ProvisioningArtifactOutput& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ProvisioningArtifactOutput& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ProvisioningArtifactOutput& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ProvisioningArtifactOutput& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
   private:
 

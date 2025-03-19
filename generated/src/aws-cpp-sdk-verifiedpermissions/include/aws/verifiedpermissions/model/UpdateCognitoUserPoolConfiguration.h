@@ -34,7 +34,7 @@ namespace Model
   class UpdateCognitoUserPoolConfiguration
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API UpdateCognitoUserPoolConfiguration();
+    AWS_VERIFIEDPERMISSIONS_API UpdateCognitoUserPoolConfiguration() = default;
     AWS_VERIFIEDPERMISSIONS_API UpdateCognitoUserPoolConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API UpdateCognitoUserPoolConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * Resource Name (ARN)</a> of the Amazon Cognito user pool associated with this
      * identity source.</p>
      */
-    inline const Aws::String& GetUserPoolArn() const{ return m_userPoolArn; }
+    inline const Aws::String& GetUserPoolArn() const { return m_userPoolArn; }
     inline bool UserPoolArnHasBeenSet() const { return m_userPoolArnHasBeenSet; }
-    inline void SetUserPoolArn(const Aws::String& value) { m_userPoolArnHasBeenSet = true; m_userPoolArn = value; }
-    inline void SetUserPoolArn(Aws::String&& value) { m_userPoolArnHasBeenSet = true; m_userPoolArn = std::move(value); }
-    inline void SetUserPoolArn(const char* value) { m_userPoolArnHasBeenSet = true; m_userPoolArn.assign(value); }
-    inline UpdateCognitoUserPoolConfiguration& WithUserPoolArn(const Aws::String& value) { SetUserPoolArn(value); return *this;}
-    inline UpdateCognitoUserPoolConfiguration& WithUserPoolArn(Aws::String&& value) { SetUserPoolArn(std::move(value)); return *this;}
-    inline UpdateCognitoUserPoolConfiguration& WithUserPoolArn(const char* value) { SetUserPoolArn(value); return *this;}
+    template<typename UserPoolArnT = Aws::String>
+    void SetUserPoolArn(UserPoolArnT&& value) { m_userPoolArnHasBeenSet = true; m_userPoolArn = std::forward<UserPoolArnT>(value); }
+    template<typename UserPoolArnT = Aws::String>
+    UpdateCognitoUserPoolConfiguration& WithUserPoolArn(UserPoolArnT&& value) { SetUserPoolArn(std::forward<UserPoolArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,15 +60,14 @@ namespace Model
      * <p>The client ID of an app client that is configured for the specified Amazon
      * Cognito user pool.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetClientIds() const{ return m_clientIds; }
+    inline const Aws::Vector<Aws::String>& GetClientIds() const { return m_clientIds; }
     inline bool ClientIdsHasBeenSet() const { return m_clientIdsHasBeenSet; }
-    inline void SetClientIds(const Aws::Vector<Aws::String>& value) { m_clientIdsHasBeenSet = true; m_clientIds = value; }
-    inline void SetClientIds(Aws::Vector<Aws::String>&& value) { m_clientIdsHasBeenSet = true; m_clientIds = std::move(value); }
-    inline UpdateCognitoUserPoolConfiguration& WithClientIds(const Aws::Vector<Aws::String>& value) { SetClientIds(value); return *this;}
-    inline UpdateCognitoUserPoolConfiguration& WithClientIds(Aws::Vector<Aws::String>&& value) { SetClientIds(std::move(value)); return *this;}
-    inline UpdateCognitoUserPoolConfiguration& AddClientIds(const Aws::String& value) { m_clientIdsHasBeenSet = true; m_clientIds.push_back(value); return *this; }
-    inline UpdateCognitoUserPoolConfiguration& AddClientIds(Aws::String&& value) { m_clientIdsHasBeenSet = true; m_clientIds.push_back(std::move(value)); return *this; }
-    inline UpdateCognitoUserPoolConfiguration& AddClientIds(const char* value) { m_clientIdsHasBeenSet = true; m_clientIds.push_back(value); return *this; }
+    template<typename ClientIdsT = Aws::Vector<Aws::String>>
+    void SetClientIds(ClientIdsT&& value) { m_clientIdsHasBeenSet = true; m_clientIds = std::forward<ClientIdsT>(value); }
+    template<typename ClientIdsT = Aws::Vector<Aws::String>>
+    UpdateCognitoUserPoolConfiguration& WithClientIds(ClientIdsT&& value) { SetClientIds(std::forward<ClientIdsT>(value)); return *this;}
+    template<typename ClientIdsT = Aws::String>
+    UpdateCognitoUserPoolConfiguration& AddClientIds(ClientIdsT&& value) { m_clientIdsHasBeenSet = true; m_clientIds.emplace_back(std::forward<ClientIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -78,12 +75,12 @@ namespace Model
      * <p>The configuration of the user groups from an Amazon Cognito user pool
      * identity source.</p>
      */
-    inline const UpdateCognitoGroupConfiguration& GetGroupConfiguration() const{ return m_groupConfiguration; }
+    inline const UpdateCognitoGroupConfiguration& GetGroupConfiguration() const { return m_groupConfiguration; }
     inline bool GroupConfigurationHasBeenSet() const { return m_groupConfigurationHasBeenSet; }
-    inline void SetGroupConfiguration(const UpdateCognitoGroupConfiguration& value) { m_groupConfigurationHasBeenSet = true; m_groupConfiguration = value; }
-    inline void SetGroupConfiguration(UpdateCognitoGroupConfiguration&& value) { m_groupConfigurationHasBeenSet = true; m_groupConfiguration = std::move(value); }
-    inline UpdateCognitoUserPoolConfiguration& WithGroupConfiguration(const UpdateCognitoGroupConfiguration& value) { SetGroupConfiguration(value); return *this;}
-    inline UpdateCognitoUserPoolConfiguration& WithGroupConfiguration(UpdateCognitoGroupConfiguration&& value) { SetGroupConfiguration(std::move(value)); return *this;}
+    template<typename GroupConfigurationT = UpdateCognitoGroupConfiguration>
+    void SetGroupConfiguration(GroupConfigurationT&& value) { m_groupConfigurationHasBeenSet = true; m_groupConfiguration = std::forward<GroupConfigurationT>(value); }
+    template<typename GroupConfigurationT = UpdateCognitoGroupConfiguration>
+    UpdateCognitoUserPoolConfiguration& WithGroupConfiguration(GroupConfigurationT&& value) { SetGroupConfiguration(std::forward<GroupConfigurationT>(value)); return *this;}
     ///@}
   private:
 

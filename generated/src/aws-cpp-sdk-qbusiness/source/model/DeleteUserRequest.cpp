@@ -12,12 +12,6 @@ using namespace Aws::QBusiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteUserRequest::DeleteUserRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_userIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteUserRequest::SerializePayload() const
 {
   return {};

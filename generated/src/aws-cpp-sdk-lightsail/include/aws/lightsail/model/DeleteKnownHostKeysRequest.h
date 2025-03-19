@@ -21,7 +21,7 @@ namespace Model
   class DeleteKnownHostKeysRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API DeleteKnownHostKeysRequest();
+    AWS_LIGHTSAIL_API DeleteKnownHostKeysRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The name of the instance for which you want to reset the host key or
      * certificate.</p>
      */
-    inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
+    inline const Aws::String& GetInstanceName() const { return m_instanceName; }
     inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
-    inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
-    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::move(value); }
-    inline void SetInstanceName(const char* value) { m_instanceNameHasBeenSet = true; m_instanceName.assign(value); }
-    inline DeleteKnownHostKeysRequest& WithInstanceName(const Aws::String& value) { SetInstanceName(value); return *this;}
-    inline DeleteKnownHostKeysRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(std::move(value)); return *this;}
-    inline DeleteKnownHostKeysRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
+    template<typename InstanceNameT = Aws::String>
+    void SetInstanceName(InstanceNameT&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::forward<InstanceNameT>(value); }
+    template<typename InstanceNameT = Aws::String>
+    DeleteKnownHostKeysRequest& WithInstanceName(InstanceNameT&& value) { SetInstanceName(std::forward<InstanceNameT>(value)); return *this;}
     ///@}
   private:
 

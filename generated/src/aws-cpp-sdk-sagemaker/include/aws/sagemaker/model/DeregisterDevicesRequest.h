@@ -22,7 +22,7 @@ namespace Model
   class DeregisterDevicesRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API DeregisterDevicesRequest();
+    AWS_SAGEMAKER_API DeregisterDevicesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,29 +39,26 @@ namespace Model
     /**
      * <p>The name of the fleet the devices belong to.</p>
      */
-    inline const Aws::String& GetDeviceFleetName() const{ return m_deviceFleetName; }
+    inline const Aws::String& GetDeviceFleetName() const { return m_deviceFleetName; }
     inline bool DeviceFleetNameHasBeenSet() const { return m_deviceFleetNameHasBeenSet; }
-    inline void SetDeviceFleetName(const Aws::String& value) { m_deviceFleetNameHasBeenSet = true; m_deviceFleetName = value; }
-    inline void SetDeviceFleetName(Aws::String&& value) { m_deviceFleetNameHasBeenSet = true; m_deviceFleetName = std::move(value); }
-    inline void SetDeviceFleetName(const char* value) { m_deviceFleetNameHasBeenSet = true; m_deviceFleetName.assign(value); }
-    inline DeregisterDevicesRequest& WithDeviceFleetName(const Aws::String& value) { SetDeviceFleetName(value); return *this;}
-    inline DeregisterDevicesRequest& WithDeviceFleetName(Aws::String&& value) { SetDeviceFleetName(std::move(value)); return *this;}
-    inline DeregisterDevicesRequest& WithDeviceFleetName(const char* value) { SetDeviceFleetName(value); return *this;}
+    template<typename DeviceFleetNameT = Aws::String>
+    void SetDeviceFleetName(DeviceFleetNameT&& value) { m_deviceFleetNameHasBeenSet = true; m_deviceFleetName = std::forward<DeviceFleetNameT>(value); }
+    template<typename DeviceFleetNameT = Aws::String>
+    DeregisterDevicesRequest& WithDeviceFleetName(DeviceFleetNameT&& value) { SetDeviceFleetName(std::forward<DeviceFleetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique IDs of the devices.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDeviceNames() const{ return m_deviceNames; }
+    inline const Aws::Vector<Aws::String>& GetDeviceNames() const { return m_deviceNames; }
     inline bool DeviceNamesHasBeenSet() const { return m_deviceNamesHasBeenSet; }
-    inline void SetDeviceNames(const Aws::Vector<Aws::String>& value) { m_deviceNamesHasBeenSet = true; m_deviceNames = value; }
-    inline void SetDeviceNames(Aws::Vector<Aws::String>&& value) { m_deviceNamesHasBeenSet = true; m_deviceNames = std::move(value); }
-    inline DeregisterDevicesRequest& WithDeviceNames(const Aws::Vector<Aws::String>& value) { SetDeviceNames(value); return *this;}
-    inline DeregisterDevicesRequest& WithDeviceNames(Aws::Vector<Aws::String>&& value) { SetDeviceNames(std::move(value)); return *this;}
-    inline DeregisterDevicesRequest& AddDeviceNames(const Aws::String& value) { m_deviceNamesHasBeenSet = true; m_deviceNames.push_back(value); return *this; }
-    inline DeregisterDevicesRequest& AddDeviceNames(Aws::String&& value) { m_deviceNamesHasBeenSet = true; m_deviceNames.push_back(std::move(value)); return *this; }
-    inline DeregisterDevicesRequest& AddDeviceNames(const char* value) { m_deviceNamesHasBeenSet = true; m_deviceNames.push_back(value); return *this; }
+    template<typename DeviceNamesT = Aws::Vector<Aws::String>>
+    void SetDeviceNames(DeviceNamesT&& value) { m_deviceNamesHasBeenSet = true; m_deviceNames = std::forward<DeviceNamesT>(value); }
+    template<typename DeviceNamesT = Aws::Vector<Aws::String>>
+    DeregisterDevicesRequest& WithDeviceNames(DeviceNamesT&& value) { SetDeviceNames(std::forward<DeviceNamesT>(value)); return *this;}
+    template<typename DeviceNamesT = Aws::String>
+    DeregisterDevicesRequest& AddDeviceNames(DeviceNamesT&& value) { m_deviceNamesHasBeenSet = true; m_deviceNames.emplace_back(std::forward<DeviceNamesT>(value)); return *this; }
     ///@}
   private:
 

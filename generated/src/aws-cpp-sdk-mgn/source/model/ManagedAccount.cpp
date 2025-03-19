@@ -18,13 +18,7 @@ namespace mgn
 namespace Model
 {
 
-ManagedAccount::ManagedAccount() : 
-    m_accountIdHasBeenSet(false)
-{
-}
-
 ManagedAccount::ManagedAccount(JsonView jsonValue)
-  : ManagedAccount()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ManagedAccount& ManagedAccount::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   return *this;
 }
 

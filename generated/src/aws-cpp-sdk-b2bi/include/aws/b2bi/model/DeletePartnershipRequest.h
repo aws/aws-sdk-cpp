@@ -21,7 +21,7 @@ namespace Model
   class DeletePartnershipRequest : public B2BIRequest
   {
   public:
-    AWS_B2BI_API DeletePartnershipRequest();
+    AWS_B2BI_API DeletePartnershipRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>Specifies the unique, system-generated identifier for a partnership.</p>
      */
-    inline const Aws::String& GetPartnershipId() const{ return m_partnershipId; }
+    inline const Aws::String& GetPartnershipId() const { return m_partnershipId; }
     inline bool PartnershipIdHasBeenSet() const { return m_partnershipIdHasBeenSet; }
-    inline void SetPartnershipId(const Aws::String& value) { m_partnershipIdHasBeenSet = true; m_partnershipId = value; }
-    inline void SetPartnershipId(Aws::String&& value) { m_partnershipIdHasBeenSet = true; m_partnershipId = std::move(value); }
-    inline void SetPartnershipId(const char* value) { m_partnershipIdHasBeenSet = true; m_partnershipId.assign(value); }
-    inline DeletePartnershipRequest& WithPartnershipId(const Aws::String& value) { SetPartnershipId(value); return *this;}
-    inline DeletePartnershipRequest& WithPartnershipId(Aws::String&& value) { SetPartnershipId(std::move(value)); return *this;}
-    inline DeletePartnershipRequest& WithPartnershipId(const char* value) { SetPartnershipId(value); return *this;}
+    template<typename PartnershipIdT = Aws::String>
+    void SetPartnershipId(PartnershipIdT&& value) { m_partnershipIdHasBeenSet = true; m_partnershipId = std::forward<PartnershipIdT>(value); }
+    template<typename PartnershipIdT = Aws::String>
+    DeletePartnershipRequest& WithPartnershipId(PartnershipIdT&& value) { SetPartnershipId(std::forward<PartnershipIdT>(value)); return *this;}
     ///@}
   private:
 

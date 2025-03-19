@@ -18,28 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-JobTemplate::JobTemplate() : 
-    m_accelerationSettingsHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_categoryHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_hopDestinationsHasBeenSet(false),
-    m_lastUpdatedHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_queueHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_statusUpdateInterval(StatusUpdateInterval::NOT_SET),
-    m_statusUpdateIntervalHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 JobTemplate::JobTemplate(JsonView jsonValue)
-  : JobTemplate()
 {
   *this = jsonValue;
 }
@@ -49,38 +28,28 @@ JobTemplate& JobTemplate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("accelerationSettings"))
   {
     m_accelerationSettings = jsonValue.GetObject("accelerationSettings");
-
     m_accelerationSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("category"))
   {
     m_category = jsonValue.GetString("category");
-
     m_categoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hopDestinations"))
   {
     Aws::Utils::Array<JsonView> hopDestinationsJsonList = jsonValue.GetArray("hopDestinations");
@@ -90,56 +59,41 @@ JobTemplate& JobTemplate::operator =(JsonView jsonValue)
     }
     m_hopDestinationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdated"))
   {
     m_lastUpdated = jsonValue.GetDouble("lastUpdated");
-
     m_lastUpdatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("priority"))
   {
     m_priority = jsonValue.GetInteger("priority");
-
     m_priorityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queue"))
   {
     m_queue = jsonValue.GetString("queue");
-
     m_queueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("settings"))
   {
     m_settings = jsonValue.GetObject("settings");
-
     m_settingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusUpdateInterval"))
   {
     m_statusUpdateInterval = StatusUpdateIntervalMapper::GetStatusUpdateIntervalForName(jsonValue.GetString("statusUpdateInterval"));
-
     m_statusUpdateIntervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = TypeMapper::GetTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -37,7 +37,7 @@ namespace Model
   class SpotFleetRequestConfig
   {
   public:
-    AWS_EC2_API SpotFleetRequestConfig();
+    AWS_EC2_API SpotFleetRequestConfig() = default;
     AWS_EC2_API SpotFleetRequestConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API SpotFleetRequestConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -54,83 +54,77 @@ namespace Model
      * size of the fleet is decreased, the status is <code>pending_termination</code>
      * while Spot Instances are terminating.</p>
      */
-    inline const ActivityStatus& GetActivityStatus() const{ return m_activityStatus; }
+    inline ActivityStatus GetActivityStatus() const { return m_activityStatus; }
     inline bool ActivityStatusHasBeenSet() const { return m_activityStatusHasBeenSet; }
-    inline void SetActivityStatus(const ActivityStatus& value) { m_activityStatusHasBeenSet = true; m_activityStatus = value; }
-    inline void SetActivityStatus(ActivityStatus&& value) { m_activityStatusHasBeenSet = true; m_activityStatus = std::move(value); }
-    inline SpotFleetRequestConfig& WithActivityStatus(const ActivityStatus& value) { SetActivityStatus(value); return *this;}
-    inline SpotFleetRequestConfig& WithActivityStatus(ActivityStatus&& value) { SetActivityStatus(std::move(value)); return *this;}
+    inline void SetActivityStatus(ActivityStatus value) { m_activityStatusHasBeenSet = true; m_activityStatus = value; }
+    inline SpotFleetRequestConfig& WithActivityStatus(ActivityStatus value) { SetActivityStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The creation date and time of the request.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
-    inline SpotFleetRequestConfig& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline SpotFleetRequestConfig& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    SpotFleetRequestConfig& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration of the Spot Fleet request.</p>
      */
-    inline const SpotFleetRequestConfigData& GetSpotFleetRequestConfig() const{ return m_spotFleetRequestConfig; }
+    inline const SpotFleetRequestConfigData& GetSpotFleetRequestConfig() const { return m_spotFleetRequestConfig; }
     inline bool SpotFleetRequestConfigHasBeenSet() const { return m_spotFleetRequestConfigHasBeenSet; }
-    inline void SetSpotFleetRequestConfig(const SpotFleetRequestConfigData& value) { m_spotFleetRequestConfigHasBeenSet = true; m_spotFleetRequestConfig = value; }
-    inline void SetSpotFleetRequestConfig(SpotFleetRequestConfigData&& value) { m_spotFleetRequestConfigHasBeenSet = true; m_spotFleetRequestConfig = std::move(value); }
-    inline SpotFleetRequestConfig& WithSpotFleetRequestConfig(const SpotFleetRequestConfigData& value) { SetSpotFleetRequestConfig(value); return *this;}
-    inline SpotFleetRequestConfig& WithSpotFleetRequestConfig(SpotFleetRequestConfigData&& value) { SetSpotFleetRequestConfig(std::move(value)); return *this;}
+    template<typename SpotFleetRequestConfigT = SpotFleetRequestConfigData>
+    void SetSpotFleetRequestConfig(SpotFleetRequestConfigT&& value) { m_spotFleetRequestConfigHasBeenSet = true; m_spotFleetRequestConfig = std::forward<SpotFleetRequestConfigT>(value); }
+    template<typename SpotFleetRequestConfigT = SpotFleetRequestConfigData>
+    SpotFleetRequestConfig& WithSpotFleetRequestConfig(SpotFleetRequestConfigT&& value) { SetSpotFleetRequestConfig(std::forward<SpotFleetRequestConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Spot Fleet request.</p>
      */
-    inline const Aws::String& GetSpotFleetRequestId() const{ return m_spotFleetRequestId; }
+    inline const Aws::String& GetSpotFleetRequestId() const { return m_spotFleetRequestId; }
     inline bool SpotFleetRequestIdHasBeenSet() const { return m_spotFleetRequestIdHasBeenSet; }
-    inline void SetSpotFleetRequestId(const Aws::String& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = value; }
-    inline void SetSpotFleetRequestId(Aws::String&& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = std::move(value); }
-    inline void SetSpotFleetRequestId(const char* value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId.assign(value); }
-    inline SpotFleetRequestConfig& WithSpotFleetRequestId(const Aws::String& value) { SetSpotFleetRequestId(value); return *this;}
-    inline SpotFleetRequestConfig& WithSpotFleetRequestId(Aws::String&& value) { SetSpotFleetRequestId(std::move(value)); return *this;}
-    inline SpotFleetRequestConfig& WithSpotFleetRequestId(const char* value) { SetSpotFleetRequestId(value); return *this;}
+    template<typename SpotFleetRequestIdT = Aws::String>
+    void SetSpotFleetRequestId(SpotFleetRequestIdT&& value) { m_spotFleetRequestIdHasBeenSet = true; m_spotFleetRequestId = std::forward<SpotFleetRequestIdT>(value); }
+    template<typename SpotFleetRequestIdT = Aws::String>
+    SpotFleetRequestConfig& WithSpotFleetRequestId(SpotFleetRequestIdT&& value) { SetSpotFleetRequestId(std::forward<SpotFleetRequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the Spot Fleet request.</p>
      */
-    inline const BatchState& GetSpotFleetRequestState() const{ return m_spotFleetRequestState; }
+    inline BatchState GetSpotFleetRequestState() const { return m_spotFleetRequestState; }
     inline bool SpotFleetRequestStateHasBeenSet() const { return m_spotFleetRequestStateHasBeenSet; }
-    inline void SetSpotFleetRequestState(const BatchState& value) { m_spotFleetRequestStateHasBeenSet = true; m_spotFleetRequestState = value; }
-    inline void SetSpotFleetRequestState(BatchState&& value) { m_spotFleetRequestStateHasBeenSet = true; m_spotFleetRequestState = std::move(value); }
-    inline SpotFleetRequestConfig& WithSpotFleetRequestState(const BatchState& value) { SetSpotFleetRequestState(value); return *this;}
-    inline SpotFleetRequestConfig& WithSpotFleetRequestState(BatchState&& value) { SetSpotFleetRequestState(std::move(value)); return *this;}
+    inline void SetSpotFleetRequestState(BatchState value) { m_spotFleetRequestStateHasBeenSet = true; m_spotFleetRequestState = value; }
+    inline SpotFleetRequestConfig& WithSpotFleetRequestState(BatchState value) { SetSpotFleetRequestState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags for a Spot Fleet resource.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline SpotFleetRequestConfig& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline SpotFleetRequestConfig& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline SpotFleetRequestConfig& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline SpotFleetRequestConfig& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    SpotFleetRequestConfig& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    SpotFleetRequestConfig& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
-    ActivityStatus m_activityStatus;
+    ActivityStatus m_activityStatus{ActivityStatus::NOT_SET};
     bool m_activityStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::Utils::DateTime m_createTime{};
     bool m_createTimeHasBeenSet = false;
 
     SpotFleetRequestConfigData m_spotFleetRequestConfig;
@@ -139,7 +133,7 @@ namespace Model
     Aws::String m_spotFleetRequestId;
     bool m_spotFleetRequestIdHasBeenSet = false;
 
-    BatchState m_spotFleetRequestState;
+    BatchState m_spotFleetRequestState{BatchState::NOT_SET};
     bool m_spotFleetRequestStateHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;

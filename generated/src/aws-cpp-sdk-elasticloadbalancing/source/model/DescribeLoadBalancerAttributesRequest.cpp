@@ -10,11 +10,6 @@
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-DescribeLoadBalancerAttributesRequest::DescribeLoadBalancerAttributesRequest() : 
-    m_loadBalancerNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeLoadBalancerAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

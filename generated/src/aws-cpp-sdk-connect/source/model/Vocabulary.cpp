@@ -18,23 +18,7 @@ namespace Connect
 namespace Model
 {
 
-Vocabulary::Vocabulary() : 
-    m_nameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_languageCode(VocabularyLanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_state(VocabularyState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Vocabulary::Vocabulary(JsonView jsonValue)
-  : Vocabulary()
 {
   *this = jsonValue;
 }
@@ -44,59 +28,43 @@ Vocabulary& Vocabulary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LanguageCode"))
   {
     m_languageCode = VocabularyLanguageCodeMapper::GetVocabularyLanguageCodeForName(jsonValue.GetString("LanguageCode"));
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = VocabularyStateMapper::GetVocabularyStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetString("Content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -106,7 +74,6 @@ Vocabulary& Vocabulary::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

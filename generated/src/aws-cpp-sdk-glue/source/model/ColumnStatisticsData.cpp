@@ -18,21 +18,7 @@ namespace Glue
 namespace Model
 {
 
-ColumnStatisticsData::ColumnStatisticsData() : 
-    m_type(ColumnStatisticsType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_booleanColumnStatisticsDataHasBeenSet(false),
-    m_dateColumnStatisticsDataHasBeenSet(false),
-    m_decimalColumnStatisticsDataHasBeenSet(false),
-    m_doubleColumnStatisticsDataHasBeenSet(false),
-    m_longColumnStatisticsDataHasBeenSet(false),
-    m_stringColumnStatisticsDataHasBeenSet(false),
-    m_binaryColumnStatisticsDataHasBeenSet(false)
-{
-}
-
 ColumnStatisticsData::ColumnStatisticsData(JsonView jsonValue)
-  : ColumnStatisticsData()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ ColumnStatisticsData& ColumnStatisticsData::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ColumnStatisticsTypeMapper::GetColumnStatisticsTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BooleanColumnStatisticsData"))
   {
     m_booleanColumnStatisticsData = jsonValue.GetObject("BooleanColumnStatisticsData");
-
     m_booleanColumnStatisticsDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateColumnStatisticsData"))
   {
     m_dateColumnStatisticsData = jsonValue.GetObject("DateColumnStatisticsData");
-
     m_dateColumnStatisticsDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DecimalColumnStatisticsData"))
   {
     m_decimalColumnStatisticsData = jsonValue.GetObject("DecimalColumnStatisticsData");
-
     m_decimalColumnStatisticsDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DoubleColumnStatisticsData"))
   {
     m_doubleColumnStatisticsData = jsonValue.GetObject("DoubleColumnStatisticsData");
-
     m_doubleColumnStatisticsDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LongColumnStatisticsData"))
   {
     m_longColumnStatisticsData = jsonValue.GetObject("LongColumnStatisticsData");
-
     m_longColumnStatisticsDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StringColumnStatisticsData"))
   {
     m_stringColumnStatisticsData = jsonValue.GetObject("StringColumnStatisticsData");
-
     m_stringColumnStatisticsDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BinaryColumnStatisticsData"))
   {
     m_binaryColumnStatisticsData = jsonValue.GetObject("BinaryColumnStatisticsData");
-
     m_binaryColumnStatisticsDataHasBeenSet = true;
   }
-
   return *this;
 }
 

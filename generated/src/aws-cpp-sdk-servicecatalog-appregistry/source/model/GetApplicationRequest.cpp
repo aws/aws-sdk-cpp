@@ -12,11 +12,6 @@ using namespace Aws::AppRegistry::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetApplicationRequest::GetApplicationRequest() : 
-    m_applicationHasBeenSet(false)
-{
-}
-
 Aws::String GetApplicationRequest::SerializePayload() const
 {
   return {};

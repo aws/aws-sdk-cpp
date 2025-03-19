@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-Option::Option() : 
-    m_valueHasBeenSet(false),
-    m_labelHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Option::Option(JsonView jsonValue)
-  : Option()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Option& Option::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Label"))
   {
     m_label = jsonValue.GetString("Label");
-
     m_labelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

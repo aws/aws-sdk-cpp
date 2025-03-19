@@ -20,13 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-SupportedOperation::SupportedOperation() : 
-    m_operationNameHasBeenSet(false)
-{
-}
-
 SupportedOperation::SupportedOperation(const XmlNode& xmlNode)
-  : SupportedOperation()
 {
   *this = xmlNode;
 }

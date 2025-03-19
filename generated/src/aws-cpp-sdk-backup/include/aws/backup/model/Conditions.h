@@ -34,7 +34,7 @@ namespace Model
   class Conditions
   {
   public:
-    AWS_BACKUP_API Conditions();
+    AWS_BACKUP_API Conditions() = default;
     AWS_BACKUP_API Conditions(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API Conditions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * <p>Filters the values of your tagged resources for only those resources that you
      * tagged with the same value. Also called "exact matching."</p>
      */
-    inline const Aws::Vector<ConditionParameter>& GetStringEquals() const{ return m_stringEquals; }
+    inline const Aws::Vector<ConditionParameter>& GetStringEquals() const { return m_stringEquals; }
     inline bool StringEqualsHasBeenSet() const { return m_stringEqualsHasBeenSet; }
-    inline void SetStringEquals(const Aws::Vector<ConditionParameter>& value) { m_stringEqualsHasBeenSet = true; m_stringEquals = value; }
-    inline void SetStringEquals(Aws::Vector<ConditionParameter>&& value) { m_stringEqualsHasBeenSet = true; m_stringEquals = std::move(value); }
-    inline Conditions& WithStringEquals(const Aws::Vector<ConditionParameter>& value) { SetStringEquals(value); return *this;}
-    inline Conditions& WithStringEquals(Aws::Vector<ConditionParameter>&& value) { SetStringEquals(std::move(value)); return *this;}
-    inline Conditions& AddStringEquals(const ConditionParameter& value) { m_stringEqualsHasBeenSet = true; m_stringEquals.push_back(value); return *this; }
-    inline Conditions& AddStringEquals(ConditionParameter&& value) { m_stringEqualsHasBeenSet = true; m_stringEquals.push_back(std::move(value)); return *this; }
+    template<typename StringEqualsT = Aws::Vector<ConditionParameter>>
+    void SetStringEquals(StringEqualsT&& value) { m_stringEqualsHasBeenSet = true; m_stringEquals = std::forward<StringEqualsT>(value); }
+    template<typename StringEqualsT = Aws::Vector<ConditionParameter>>
+    Conditions& WithStringEquals(StringEqualsT&& value) { SetStringEquals(std::forward<StringEqualsT>(value)); return *this;}
+    template<typename StringEqualsT = ConditionParameter>
+    Conditions& AddStringEquals(StringEqualsT&& value) { m_stringEqualsHasBeenSet = true; m_stringEquals.emplace_back(std::forward<StringEqualsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,14 +60,14 @@ namespace Model
      * <p>Filters the values of your tagged resources for only those resources that you
      * tagged that do not have the same value. Also called "negated matching."</p>
      */
-    inline const Aws::Vector<ConditionParameter>& GetStringNotEquals() const{ return m_stringNotEquals; }
+    inline const Aws::Vector<ConditionParameter>& GetStringNotEquals() const { return m_stringNotEquals; }
     inline bool StringNotEqualsHasBeenSet() const { return m_stringNotEqualsHasBeenSet; }
-    inline void SetStringNotEquals(const Aws::Vector<ConditionParameter>& value) { m_stringNotEqualsHasBeenSet = true; m_stringNotEquals = value; }
-    inline void SetStringNotEquals(Aws::Vector<ConditionParameter>&& value) { m_stringNotEqualsHasBeenSet = true; m_stringNotEquals = std::move(value); }
-    inline Conditions& WithStringNotEquals(const Aws::Vector<ConditionParameter>& value) { SetStringNotEquals(value); return *this;}
-    inline Conditions& WithStringNotEquals(Aws::Vector<ConditionParameter>&& value) { SetStringNotEquals(std::move(value)); return *this;}
-    inline Conditions& AddStringNotEquals(const ConditionParameter& value) { m_stringNotEqualsHasBeenSet = true; m_stringNotEquals.push_back(value); return *this; }
-    inline Conditions& AddStringNotEquals(ConditionParameter&& value) { m_stringNotEqualsHasBeenSet = true; m_stringNotEquals.push_back(std::move(value)); return *this; }
+    template<typename StringNotEqualsT = Aws::Vector<ConditionParameter>>
+    void SetStringNotEquals(StringNotEqualsT&& value) { m_stringNotEqualsHasBeenSet = true; m_stringNotEquals = std::forward<StringNotEqualsT>(value); }
+    template<typename StringNotEqualsT = Aws::Vector<ConditionParameter>>
+    Conditions& WithStringNotEquals(StringNotEqualsT&& value) { SetStringNotEquals(std::forward<StringNotEqualsT>(value)); return *this;}
+    template<typename StringNotEqualsT = ConditionParameter>
+    Conditions& AddStringNotEquals(StringNotEqualsT&& value) { m_stringNotEqualsHasBeenSet = true; m_stringNotEquals.emplace_back(std::forward<StringNotEqualsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -76,14 +76,14 @@ namespace Model
      * use of a wildcard character (*) anywhere in the string. For example, "prod*" or
      * "*rod*" matches the tag value "production".</p>
      */
-    inline const Aws::Vector<ConditionParameter>& GetStringLike() const{ return m_stringLike; }
+    inline const Aws::Vector<ConditionParameter>& GetStringLike() const { return m_stringLike; }
     inline bool StringLikeHasBeenSet() const { return m_stringLikeHasBeenSet; }
-    inline void SetStringLike(const Aws::Vector<ConditionParameter>& value) { m_stringLikeHasBeenSet = true; m_stringLike = value; }
-    inline void SetStringLike(Aws::Vector<ConditionParameter>&& value) { m_stringLikeHasBeenSet = true; m_stringLike = std::move(value); }
-    inline Conditions& WithStringLike(const Aws::Vector<ConditionParameter>& value) { SetStringLike(value); return *this;}
-    inline Conditions& WithStringLike(Aws::Vector<ConditionParameter>&& value) { SetStringLike(std::move(value)); return *this;}
-    inline Conditions& AddStringLike(const ConditionParameter& value) { m_stringLikeHasBeenSet = true; m_stringLike.push_back(value); return *this; }
-    inline Conditions& AddStringLike(ConditionParameter&& value) { m_stringLikeHasBeenSet = true; m_stringLike.push_back(std::move(value)); return *this; }
+    template<typename StringLikeT = Aws::Vector<ConditionParameter>>
+    void SetStringLike(StringLikeT&& value) { m_stringLikeHasBeenSet = true; m_stringLike = std::forward<StringLikeT>(value); }
+    template<typename StringLikeT = Aws::Vector<ConditionParameter>>
+    Conditions& WithStringLike(StringLikeT&& value) { SetStringLike(std::forward<StringLikeT>(value)); return *this;}
+    template<typename StringLikeT = ConditionParameter>
+    Conditions& AddStringLike(StringLikeT&& value) { m_stringLikeHasBeenSet = true; m_stringLike.emplace_back(std::forward<StringLikeT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -91,14 +91,14 @@ namespace Model
      * <p>Filters the values of your tagged resources for non-matching tag values with
      * the use of a wildcard character (*) anywhere in the string.</p>
      */
-    inline const Aws::Vector<ConditionParameter>& GetStringNotLike() const{ return m_stringNotLike; }
+    inline const Aws::Vector<ConditionParameter>& GetStringNotLike() const { return m_stringNotLike; }
     inline bool StringNotLikeHasBeenSet() const { return m_stringNotLikeHasBeenSet; }
-    inline void SetStringNotLike(const Aws::Vector<ConditionParameter>& value) { m_stringNotLikeHasBeenSet = true; m_stringNotLike = value; }
-    inline void SetStringNotLike(Aws::Vector<ConditionParameter>&& value) { m_stringNotLikeHasBeenSet = true; m_stringNotLike = std::move(value); }
-    inline Conditions& WithStringNotLike(const Aws::Vector<ConditionParameter>& value) { SetStringNotLike(value); return *this;}
-    inline Conditions& WithStringNotLike(Aws::Vector<ConditionParameter>&& value) { SetStringNotLike(std::move(value)); return *this;}
-    inline Conditions& AddStringNotLike(const ConditionParameter& value) { m_stringNotLikeHasBeenSet = true; m_stringNotLike.push_back(value); return *this; }
-    inline Conditions& AddStringNotLike(ConditionParameter&& value) { m_stringNotLikeHasBeenSet = true; m_stringNotLike.push_back(std::move(value)); return *this; }
+    template<typename StringNotLikeT = Aws::Vector<ConditionParameter>>
+    void SetStringNotLike(StringNotLikeT&& value) { m_stringNotLikeHasBeenSet = true; m_stringNotLike = std::forward<StringNotLikeT>(value); }
+    template<typename StringNotLikeT = Aws::Vector<ConditionParameter>>
+    Conditions& WithStringNotLike(StringNotLikeT&& value) { SetStringNotLike(std::forward<StringNotLikeT>(value)); return *this;}
+    template<typename StringNotLikeT = ConditionParameter>
+    Conditions& AddStringNotLike(StringNotLikeT&& value) { m_stringNotLikeHasBeenSet = true; m_stringNotLike.emplace_back(std::forward<StringNotLikeT>(value)); return *this; }
     ///@}
   private:
 

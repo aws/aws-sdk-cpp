@@ -18,18 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteVehicleTravelOnlySummary::RouteVehicleTravelOnlySummary() : 
-    m_bestCaseDuration(0),
-    m_bestCaseDurationHasBeenSet(false),
-    m_duration(0),
-    m_durationHasBeenSet(false),
-    m_typicalDuration(0),
-    m_typicalDurationHasBeenSet(false)
-{
-}
-
 RouteVehicleTravelOnlySummary::RouteVehicleTravelOnlySummary(JsonView jsonValue)
-  : RouteVehicleTravelOnlySummary()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ RouteVehicleTravelOnlySummary& RouteVehicleTravelOnlySummary::operator =(JsonVie
   if(jsonValue.ValueExists("BestCaseDuration"))
   {
     m_bestCaseDuration = jsonValue.GetInt64("BestCaseDuration");
-
     m_bestCaseDurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Duration"))
   {
     m_duration = jsonValue.GetInt64("Duration");
-
     m_durationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TypicalDuration"))
   {
     m_typicalDuration = jsonValue.GetInt64("TypicalDuration");
-
     m_typicalDurationHasBeenSet = true;
   }
-
   return *this;
 }
 

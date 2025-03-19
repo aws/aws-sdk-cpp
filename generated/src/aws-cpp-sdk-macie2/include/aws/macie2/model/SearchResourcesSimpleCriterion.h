@@ -36,7 +36,7 @@ namespace Model
   class SearchResourcesSimpleCriterion
   {
   public:
-    AWS_MACIE2_API SearchResourcesSimpleCriterion();
+    AWS_MACIE2_API SearchResourcesSimpleCriterion() = default;
     AWS_MACIE2_API SearchResourcesSimpleCriterion(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API SearchResourcesSimpleCriterion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACIE2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,24 +47,20 @@ namespace Model
      * <p>The operator to use in the condition. Valid values are EQ (equals) and NE
      * (not equals).</p>
      */
-    inline const SearchResourcesComparator& GetComparator() const{ return m_comparator; }
+    inline SearchResourcesComparator GetComparator() const { return m_comparator; }
     inline bool ComparatorHasBeenSet() const { return m_comparatorHasBeenSet; }
-    inline void SetComparator(const SearchResourcesComparator& value) { m_comparatorHasBeenSet = true; m_comparator = value; }
-    inline void SetComparator(SearchResourcesComparator&& value) { m_comparatorHasBeenSet = true; m_comparator = std::move(value); }
-    inline SearchResourcesSimpleCriterion& WithComparator(const SearchResourcesComparator& value) { SetComparator(value); return *this;}
-    inline SearchResourcesSimpleCriterion& WithComparator(SearchResourcesComparator&& value) { SetComparator(std::move(value)); return *this;}
+    inline void SetComparator(SearchResourcesComparator value) { m_comparatorHasBeenSet = true; m_comparator = value; }
+    inline SearchResourcesSimpleCriterion& WithComparator(SearchResourcesComparator value) { SetComparator(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The property to use in the condition.</p>
      */
-    inline const SearchResourcesSimpleCriterionKey& GetKey() const{ return m_key; }
+    inline SearchResourcesSimpleCriterionKey GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const SearchResourcesSimpleCriterionKey& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(SearchResourcesSimpleCriterionKey&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline SearchResourcesSimpleCriterion& WithKey(const SearchResourcesSimpleCriterionKey& value) { SetKey(value); return *this;}
-    inline SearchResourcesSimpleCriterion& WithKey(SearchResourcesSimpleCriterionKey&& value) { SetKey(std::move(value)); return *this;}
+    inline void SetKey(SearchResourcesSimpleCriterionKey value) { m_keyHasBeenSet = true; m_key = value; }
+    inline SearchResourcesSimpleCriterion& WithKey(SearchResourcesSimpleCriterionKey value) { SetKey(value); return *this;}
     ///@}
 
     ///@{
@@ -87,22 +83,21 @@ namespace Model
      * Macie doesn't support use of partial values or wildcard characters in
      * values.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline SearchResourcesSimpleCriterion& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline SearchResourcesSimpleCriterion& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline SearchResourcesSimpleCriterion& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline SearchResourcesSimpleCriterion& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline SearchResourcesSimpleCriterion& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    SearchResourcesSimpleCriterion& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    SearchResourcesSimpleCriterion& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    SearchResourcesComparator m_comparator;
+    SearchResourcesComparator m_comparator{SearchResourcesComparator::NOT_SET};
     bool m_comparatorHasBeenSet = false;
 
-    SearchResourcesSimpleCriterionKey m_key;
+    SearchResourcesSimpleCriterionKey m_key{SearchResourcesSimpleCriterionKey::NOT_SET};
     bool m_keyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

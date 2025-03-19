@@ -21,7 +21,7 @@ namespace Model
   class DescribeCopyJobRequest : public BackupRequest
   {
   public:
-    AWS_BACKUP_API DescribeCopyJobRequest();
+    AWS_BACKUP_API DescribeCopyJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>Uniquely identifies a copy job.</p>
      */
-    inline const Aws::String& GetCopyJobId() const{ return m_copyJobId; }
+    inline const Aws::String& GetCopyJobId() const { return m_copyJobId; }
     inline bool CopyJobIdHasBeenSet() const { return m_copyJobIdHasBeenSet; }
-    inline void SetCopyJobId(const Aws::String& value) { m_copyJobIdHasBeenSet = true; m_copyJobId = value; }
-    inline void SetCopyJobId(Aws::String&& value) { m_copyJobIdHasBeenSet = true; m_copyJobId = std::move(value); }
-    inline void SetCopyJobId(const char* value) { m_copyJobIdHasBeenSet = true; m_copyJobId.assign(value); }
-    inline DescribeCopyJobRequest& WithCopyJobId(const Aws::String& value) { SetCopyJobId(value); return *this;}
-    inline DescribeCopyJobRequest& WithCopyJobId(Aws::String&& value) { SetCopyJobId(std::move(value)); return *this;}
-    inline DescribeCopyJobRequest& WithCopyJobId(const char* value) { SetCopyJobId(value); return *this;}
+    template<typename CopyJobIdT = Aws::String>
+    void SetCopyJobId(CopyJobIdT&& value) { m_copyJobIdHasBeenSet = true; m_copyJobId = std::forward<CopyJobIdT>(value); }
+    template<typename CopyJobIdT = Aws::String>
+    DescribeCopyJobRequest& WithCopyJobId(CopyJobIdT&& value) { SetCopyJobId(std::forward<CopyJobIdT>(value)); return *this;}
     ///@}
   private:
 

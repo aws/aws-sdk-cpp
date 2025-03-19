@@ -12,15 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateComputerRequest::CreateComputerRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_computerNameHasBeenSet(false),
-    m_passwordHasBeenSet(false),
-    m_organizationalUnitDistinguishedNameHasBeenSet(false),
-    m_computerAttributesHasBeenSet(false)
-{
-}
-
 Aws::String CreateComputerRequest::SerializePayload() const
 {
   JsonValue payload;

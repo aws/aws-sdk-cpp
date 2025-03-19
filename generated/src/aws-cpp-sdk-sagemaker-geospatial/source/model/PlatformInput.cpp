@@ -18,15 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-PlatformInput::PlatformInput() : 
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 PlatformInput::PlatformInput(JsonView jsonValue)
-  : PlatformInput()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PlatformInput& PlatformInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ComparisonOperator"))
   {
     m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(jsonValue.GetString("ComparisonOperator"));
-
     m_comparisonOperatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class VpcInterfaceAttachment
   {
   public:
-    AWS_MEDIACONNECT_API VpcInterfaceAttachment();
+    AWS_MEDIACONNECT_API VpcInterfaceAttachment() = default;
     AWS_MEDIACONNECT_API VpcInterfaceAttachment(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API VpcInterfaceAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * The name of the VPC interface to use for this resource.
      */
-    inline const Aws::String& GetVpcInterfaceName() const{ return m_vpcInterfaceName; }
+    inline const Aws::String& GetVpcInterfaceName() const { return m_vpcInterfaceName; }
     inline bool VpcInterfaceNameHasBeenSet() const { return m_vpcInterfaceNameHasBeenSet; }
-    inline void SetVpcInterfaceName(const Aws::String& value) { m_vpcInterfaceNameHasBeenSet = true; m_vpcInterfaceName = value; }
-    inline void SetVpcInterfaceName(Aws::String&& value) { m_vpcInterfaceNameHasBeenSet = true; m_vpcInterfaceName = std::move(value); }
-    inline void SetVpcInterfaceName(const char* value) { m_vpcInterfaceNameHasBeenSet = true; m_vpcInterfaceName.assign(value); }
-    inline VpcInterfaceAttachment& WithVpcInterfaceName(const Aws::String& value) { SetVpcInterfaceName(value); return *this;}
-    inline VpcInterfaceAttachment& WithVpcInterfaceName(Aws::String&& value) { SetVpcInterfaceName(std::move(value)); return *this;}
-    inline VpcInterfaceAttachment& WithVpcInterfaceName(const char* value) { SetVpcInterfaceName(value); return *this;}
+    template<typename VpcInterfaceNameT = Aws::String>
+    void SetVpcInterfaceName(VpcInterfaceNameT&& value) { m_vpcInterfaceNameHasBeenSet = true; m_vpcInterfaceName = std::forward<VpcInterfaceNameT>(value); }
+    template<typename VpcInterfaceNameT = Aws::String>
+    VpcInterfaceAttachment& WithVpcInterfaceName(VpcInterfaceNameT&& value) { SetVpcInterfaceName(std::forward<VpcInterfaceNameT>(value)); return *this;}
     ///@}
   private:
 

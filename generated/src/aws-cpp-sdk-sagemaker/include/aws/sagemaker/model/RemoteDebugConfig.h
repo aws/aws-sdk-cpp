@@ -34,7 +34,7 @@ namespace Model
   class RemoteDebugConfig
   {
   public:
-    AWS_SAGEMAKER_API RemoteDebugConfig();
+    AWS_SAGEMAKER_API RemoteDebugConfig() = default;
     AWS_SAGEMAKER_API RemoteDebugConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API RemoteDebugConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,14 @@ namespace Model
     /**
      * <p>If set to True, enables remote debugging.</p>
      */
-    inline bool GetEnableRemoteDebug() const{ return m_enableRemoteDebug; }
+    inline bool GetEnableRemoteDebug() const { return m_enableRemoteDebug; }
     inline bool EnableRemoteDebugHasBeenSet() const { return m_enableRemoteDebugHasBeenSet; }
     inline void SetEnableRemoteDebug(bool value) { m_enableRemoteDebugHasBeenSet = true; m_enableRemoteDebug = value; }
     inline RemoteDebugConfig& WithEnableRemoteDebug(bool value) { SetEnableRemoteDebug(value); return *this;}
     ///@}
   private:
 
-    bool m_enableRemoteDebug;
+    bool m_enableRemoteDebug{false};
     bool m_enableRemoteDebugHasBeenSet = false;
   };
 

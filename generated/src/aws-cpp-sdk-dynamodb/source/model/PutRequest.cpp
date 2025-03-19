@@ -18,13 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-PutRequest::PutRequest() : 
-    m_itemHasBeenSet(false)
-{
-}
-
 PutRequest::PutRequest(JsonView jsonValue)
-  : PutRequest()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ PutRequest& PutRequest::operator =(JsonView jsonValue)
     }
     m_itemHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace ChimeSDKMessaging
 namespace Model
 {
 
-BatchCreateChannelMembershipError::BatchCreateChannelMembershipError() : 
-    m_memberArnHasBeenSet(false),
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 BatchCreateChannelMembershipError::BatchCreateChannelMembershipError(JsonView jsonValue)
-  : BatchCreateChannelMembershipError()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BatchCreateChannelMembershipError& BatchCreateChannelMembershipError::operator =
   if(jsonValue.ValueExists("MemberArn"))
   {
     m_memberArn = jsonValue.GetString("MemberArn");
-
     m_memberArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("ErrorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

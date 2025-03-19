@@ -34,7 +34,7 @@ namespace Model
   class DescribeEventCategoriesResult
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API DescribeEventCategoriesResult();
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeEventCategoriesResult() = default;
     AWS_DATABASEMIGRATIONSERVICE_API DescribeEventCategoriesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATABASEMIGRATIONSERVICE_API DescribeEventCategoriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,30 +43,30 @@ namespace Model
     /**
      * <p>A list of event categories.</p>
      */
-    inline const Aws::Vector<EventCategoryGroup>& GetEventCategoryGroupList() const{ return m_eventCategoryGroupList; }
-    inline void SetEventCategoryGroupList(const Aws::Vector<EventCategoryGroup>& value) { m_eventCategoryGroupList = value; }
-    inline void SetEventCategoryGroupList(Aws::Vector<EventCategoryGroup>&& value) { m_eventCategoryGroupList = std::move(value); }
-    inline DescribeEventCategoriesResult& WithEventCategoryGroupList(const Aws::Vector<EventCategoryGroup>& value) { SetEventCategoryGroupList(value); return *this;}
-    inline DescribeEventCategoriesResult& WithEventCategoryGroupList(Aws::Vector<EventCategoryGroup>&& value) { SetEventCategoryGroupList(std::move(value)); return *this;}
-    inline DescribeEventCategoriesResult& AddEventCategoryGroupList(const EventCategoryGroup& value) { m_eventCategoryGroupList.push_back(value); return *this; }
-    inline DescribeEventCategoriesResult& AddEventCategoryGroupList(EventCategoryGroup&& value) { m_eventCategoryGroupList.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EventCategoryGroup>& GetEventCategoryGroupList() const { return m_eventCategoryGroupList; }
+    template<typename EventCategoryGroupListT = Aws::Vector<EventCategoryGroup>>
+    void SetEventCategoryGroupList(EventCategoryGroupListT&& value) { m_eventCategoryGroupListHasBeenSet = true; m_eventCategoryGroupList = std::forward<EventCategoryGroupListT>(value); }
+    template<typename EventCategoryGroupListT = Aws::Vector<EventCategoryGroup>>
+    DescribeEventCategoriesResult& WithEventCategoryGroupList(EventCategoryGroupListT&& value) { SetEventCategoryGroupList(std::forward<EventCategoryGroupListT>(value)); return *this;}
+    template<typename EventCategoryGroupListT = EventCategoryGroup>
+    DescribeEventCategoriesResult& AddEventCategoryGroupList(EventCategoryGroupListT&& value) { m_eventCategoryGroupListHasBeenSet = true; m_eventCategoryGroupList.emplace_back(std::forward<EventCategoryGroupListT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeEventCategoriesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeEventCategoriesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeEventCategoriesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeEventCategoriesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EventCategoryGroup> m_eventCategoryGroupList;
+    bool m_eventCategoryGroupListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

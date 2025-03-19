@@ -39,7 +39,7 @@ namespace Model
   class ReferenceSummary
   {
   public:
-    AWS_CONNECT_API ReferenceSummary();
+    AWS_CONNECT_API ReferenceSummary() = default;
     AWS_CONNECT_API ReferenceSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API ReferenceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,12 @@ namespace Model
      * <p>Information about the reference when the <code>referenceType</code> is
      * <code>URL</code>. Otherwise, null.</p>
      */
-    inline const UrlReference& GetUrl() const{ return m_url; }
+    inline const UrlReference& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const UrlReference& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(UrlReference&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline ReferenceSummary& WithUrl(const UrlReference& value) { SetUrl(value); return *this;}
-    inline ReferenceSummary& WithUrl(UrlReference&& value) { SetUrl(std::move(value)); return *this;}
+    template<typename UrlT = UrlReference>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = UrlReference>
+    ReferenceSummary& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +63,12 @@ namespace Model
      * <p>Information about the reference when the <code>referenceType</code> is
      * <code>ATTACHMENT</code>. Otherwise, null.</p>
      */
-    inline const AttachmentReference& GetAttachment() const{ return m_attachment; }
+    inline const AttachmentReference& GetAttachment() const { return m_attachment; }
     inline bool AttachmentHasBeenSet() const { return m_attachmentHasBeenSet; }
-    inline void SetAttachment(const AttachmentReference& value) { m_attachmentHasBeenSet = true; m_attachment = value; }
-    inline void SetAttachment(AttachmentReference&& value) { m_attachmentHasBeenSet = true; m_attachment = std::move(value); }
-    inline ReferenceSummary& WithAttachment(const AttachmentReference& value) { SetAttachment(value); return *this;}
-    inline ReferenceSummary& WithAttachment(AttachmentReference&& value) { SetAttachment(std::move(value)); return *this;}
+    template<typename AttachmentT = AttachmentReference>
+    void SetAttachment(AttachmentT&& value) { m_attachmentHasBeenSet = true; m_attachment = std::forward<AttachmentT>(value); }
+    template<typename AttachmentT = AttachmentReference>
+    ReferenceSummary& WithAttachment(AttachmentT&& value) { SetAttachment(std::forward<AttachmentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,12 +76,12 @@ namespace Model
      * <p>Information about the reference when the referenceType is
      * <code>EMAIL_MESSAGE</code>. Otherwise, null.</p>
      */
-    inline const EmailMessageReference& GetEmailMessage() const{ return m_emailMessage; }
+    inline const EmailMessageReference& GetEmailMessage() const { return m_emailMessage; }
     inline bool EmailMessageHasBeenSet() const { return m_emailMessageHasBeenSet; }
-    inline void SetEmailMessage(const EmailMessageReference& value) { m_emailMessageHasBeenSet = true; m_emailMessage = value; }
-    inline void SetEmailMessage(EmailMessageReference&& value) { m_emailMessageHasBeenSet = true; m_emailMessage = std::move(value); }
-    inline ReferenceSummary& WithEmailMessage(const EmailMessageReference& value) { SetEmailMessage(value); return *this;}
-    inline ReferenceSummary& WithEmailMessage(EmailMessageReference&& value) { SetEmailMessage(std::move(value)); return *this;}
+    template<typename EmailMessageT = EmailMessageReference>
+    void SetEmailMessage(EmailMessageT&& value) { m_emailMessageHasBeenSet = true; m_emailMessage = std::forward<EmailMessageT>(value); }
+    template<typename EmailMessageT = EmailMessageReference>
+    ReferenceSummary& WithEmailMessage(EmailMessageT&& value) { SetEmailMessage(std::forward<EmailMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +89,12 @@ namespace Model
      * <p>Information about a reference when the <code>referenceType</code> is
      * <code>STRING</code>. Otherwise, null.</p>
      */
-    inline const StringReference& GetString() const{ return m_string; }
+    inline const StringReference& GetString() const { return m_string; }
     inline bool StringHasBeenSet() const { return m_stringHasBeenSet; }
-    inline void SetString(const StringReference& value) { m_stringHasBeenSet = true; m_string = value; }
-    inline void SetString(StringReference&& value) { m_stringHasBeenSet = true; m_string = std::move(value); }
-    inline ReferenceSummary& WithString(const StringReference& value) { SetString(value); return *this;}
-    inline ReferenceSummary& WithString(StringReference&& value) { SetString(std::move(value)); return *this;}
+    template<typename StringT = StringReference>
+    void SetString(StringT&& value) { m_stringHasBeenSet = true; m_string = std::forward<StringT>(value); }
+    template<typename StringT = StringReference>
+    ReferenceSummary& WithString(StringT&& value) { SetString(std::forward<StringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,12 +102,12 @@ namespace Model
      * <p>Information about a reference when the <code>referenceType</code> is
      * <code>NUMBER</code>. Otherwise, null.</p>
      */
-    inline const NumberReference& GetNumber() const{ return m_number; }
+    inline const NumberReference& GetNumber() const { return m_number; }
     inline bool NumberHasBeenSet() const { return m_numberHasBeenSet; }
-    inline void SetNumber(const NumberReference& value) { m_numberHasBeenSet = true; m_number = value; }
-    inline void SetNumber(NumberReference&& value) { m_numberHasBeenSet = true; m_number = std::move(value); }
-    inline ReferenceSummary& WithNumber(const NumberReference& value) { SetNumber(value); return *this;}
-    inline ReferenceSummary& WithNumber(NumberReference&& value) { SetNumber(std::move(value)); return *this;}
+    template<typename NumberT = NumberReference>
+    void SetNumber(NumberT&& value) { m_numberHasBeenSet = true; m_number = std::forward<NumberT>(value); }
+    template<typename NumberT = NumberReference>
+    ReferenceSummary& WithNumber(NumberT&& value) { SetNumber(std::forward<NumberT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,12 +115,12 @@ namespace Model
      * <p>Information about a reference when the <code>referenceType</code> is
      * <code>DATE</code>. Otherwise, null.</p>
      */
-    inline const DateReference& GetDate() const{ return m_date; }
+    inline const DateReference& GetDate() const { return m_date; }
     inline bool DateHasBeenSet() const { return m_dateHasBeenSet; }
-    inline void SetDate(const DateReference& value) { m_dateHasBeenSet = true; m_date = value; }
-    inline void SetDate(DateReference&& value) { m_dateHasBeenSet = true; m_date = std::move(value); }
-    inline ReferenceSummary& WithDate(const DateReference& value) { SetDate(value); return *this;}
-    inline ReferenceSummary& WithDate(DateReference&& value) { SetDate(std::move(value)); return *this;}
+    template<typename DateT = DateReference>
+    void SetDate(DateT&& value) { m_dateHasBeenSet = true; m_date = std::forward<DateT>(value); }
+    template<typename DateT = DateReference>
+    ReferenceSummary& WithDate(DateT&& value) { SetDate(std::forward<DateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,12 +128,12 @@ namespace Model
      * <p>Information about a reference when the <code>referenceType</code> is
      * <code>EMAIL</code>. Otherwise, null.</p>
      */
-    inline const EmailReference& GetEmail() const{ return m_email; }
+    inline const EmailReference& GetEmail() const { return m_email; }
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
-    inline void SetEmail(const EmailReference& value) { m_emailHasBeenSet = true; m_email = value; }
-    inline void SetEmail(EmailReference&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
-    inline ReferenceSummary& WithEmail(const EmailReference& value) { SetEmail(value); return *this;}
-    inline ReferenceSummary& WithEmail(EmailReference&& value) { SetEmail(std::move(value)); return *this;}
+    template<typename EmailT = EmailReference>
+    void SetEmail(EmailT&& value) { m_emailHasBeenSet = true; m_email = std::forward<EmailT>(value); }
+    template<typename EmailT = EmailReference>
+    ReferenceSummary& WithEmail(EmailT&& value) { SetEmail(std::forward<EmailT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-RenameKeys::RenameKeys() : 
-    m_entriesHasBeenSet(false)
-{
-}
-
 RenameKeys::RenameKeys(JsonView jsonValue)
-  : RenameKeys()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ RenameKeys& RenameKeys::operator =(JsonView jsonValue)
     }
     m_entriesHasBeenSet = true;
   }
-
   return *this;
 }
 

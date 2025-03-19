@@ -33,7 +33,7 @@ namespace Model
   class AwsAthenaWorkGroupDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsAthenaWorkGroupDetails();
+    AWS_SECURITYHUB_API AwsAthenaWorkGroupDetails() = default;
     AWS_SECURITYHUB_API AwsAthenaWorkGroupDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsAthenaWorkGroupDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,42 +43,36 @@ namespace Model
     /**
      * <p> The workgroup name. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AwsAthenaWorkGroupDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AwsAthenaWorkGroupDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AwsAthenaWorkGroupDetails& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AwsAthenaWorkGroupDetails& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The workgroup description. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline AwsAthenaWorkGroupDetails& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline AwsAthenaWorkGroupDetails& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline AwsAthenaWorkGroupDetails& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    AwsAthenaWorkGroupDetails& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Whether the workgroup is enabled or disabled. </p>
      */
-    inline const Aws::String& GetState() const{ return m_state; }
+    inline const Aws::String& GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
-    inline AwsAthenaWorkGroupDetails& WithState(const Aws::String& value) { SetState(value); return *this;}
-    inline AwsAthenaWorkGroupDetails& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
-    inline AwsAthenaWorkGroupDetails& WithState(const char* value) { SetState(value); return *this;}
+    template<typename StateT = Aws::String>
+    void SetState(StateT&& value) { m_stateHasBeenSet = true; m_state = std::forward<StateT>(value); }
+    template<typename StateT = Aws::String>
+    AwsAthenaWorkGroupDetails& WithState(StateT&& value) { SetState(std::forward<StateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +83,12 @@ namespace Model
      * metrics are enabled for the workgroup, and the limit for the amount of bytes
      * scanned (cutoff) per query, if it is specified. </p>
      */
-    inline const AwsAthenaWorkGroupConfigurationDetails& GetConfiguration() const{ return m_configuration; }
+    inline const AwsAthenaWorkGroupConfigurationDetails& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const AwsAthenaWorkGroupConfigurationDetails& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(AwsAthenaWorkGroupConfigurationDetails&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline AwsAthenaWorkGroupDetails& WithConfiguration(const AwsAthenaWorkGroupConfigurationDetails& value) { SetConfiguration(value); return *this;}
-    inline AwsAthenaWorkGroupDetails& WithConfiguration(AwsAthenaWorkGroupConfigurationDetails&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = AwsAthenaWorkGroupConfigurationDetails>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = AwsAthenaWorkGroupConfigurationDetails>
+    AwsAthenaWorkGroupDetails& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
   private:
 

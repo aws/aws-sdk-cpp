@@ -12,11 +12,6 @@ using namespace Aws::CloudWatchEvidently::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetProjectRequest::GetProjectRequest() : 
-    m_projectHasBeenSet(false)
-{
-}
-
 Aws::String GetProjectRequest::SerializePayload() const
 {
   return {};

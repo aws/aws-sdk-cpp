@@ -32,7 +32,7 @@ namespace Model
   class ResourceRecord
   {
   public:
-    AWS_ROUTE53_API ResourceRecord();
+    AWS_ROUTE53_API ResourceRecord() = default;
     AWS_ROUTE53_API ResourceRecord(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ROUTE53_API ResourceRecord& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -51,14 +51,12 @@ namespace Model
      * <code>CNAME</code> and <code>SOA</code>. </p>  <p>If you're creating an
      * alias resource record set, omit <code>Value</code>.</p> 
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline ResourceRecord& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline ResourceRecord& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline ResourceRecord& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    ResourceRecord& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

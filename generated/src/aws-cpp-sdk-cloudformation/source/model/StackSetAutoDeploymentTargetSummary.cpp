@@ -20,14 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-StackSetAutoDeploymentTargetSummary::StackSetAutoDeploymentTargetSummary() : 
-    m_organizationalUnitIdHasBeenSet(false),
-    m_regionsHasBeenSet(false)
-{
-}
-
 StackSetAutoDeploymentTargetSummary::StackSetAutoDeploymentTargetSummary(const XmlNode& xmlNode)
-  : StackSetAutoDeploymentTargetSummary()
 {
   *this = xmlNode;
 }
@@ -48,6 +41,7 @@ StackSetAutoDeploymentTargetSummary& StackSetAutoDeploymentTargetSummary::operat
     if(!regionsNode.IsNull())
     {
       XmlNode regionsMember = regionsNode.FirstChild("member");
+      m_regionsHasBeenSet = !regionsMember.IsNull();
       while(!regionsMember.IsNull())
       {
         m_regions.push_back(regionsMember.GetText());

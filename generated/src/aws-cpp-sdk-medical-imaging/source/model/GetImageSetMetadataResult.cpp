@@ -16,33 +16,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetImageSetMetadataResult::GetImageSetMetadataResult()
-{
-}
-
-GetImageSetMetadataResult::GetImageSetMetadataResult(GetImageSetMetadataResult&& toMove) : 
-    m_imageSetMetadataBlob(std::move(toMove.m_imageSetMetadataBlob)),
-    m_contentType(std::move(toMove.m_contentType)),
-    m_contentEncoding(std::move(toMove.m_contentEncoding)),
-    m_requestId(std::move(toMove.m_requestId))
-{
-}
-
-GetImageSetMetadataResult& GetImageSetMetadataResult::operator=(GetImageSetMetadataResult&& toMove)
-{
-   if(this == &toMove)
-   {
-      return *this;
-   }
-
-   m_imageSetMetadataBlob = std::move(toMove.m_imageSetMetadataBlob);
-   m_contentType = std::move(toMove.m_contentType);
-   m_contentEncoding = std::move(toMove.m_contentEncoding);
-   m_requestId = std::move(toMove.m_requestId);
-
-   return *this;
-}
-
 GetImageSetMetadataResult::GetImageSetMetadataResult(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   *this = std::move(result);
@@ -51,24 +24,28 @@ GetImageSetMetadataResult::GetImageSetMetadataResult(Aws::AmazonWebServiceResult
 GetImageSetMetadataResult& GetImageSetMetadataResult::operator =(Aws::AmazonWebServiceResult<ResponseStream>&& result)
 {
   m_imageSetMetadataBlob = result.TakeOwnershipOfPayload();
+  m_imageSetMetadataBlobHasBeenSet = true;
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& contentTypeIter = headers.find("content-type");
   if(contentTypeIter != headers.end())
   {
     m_contentType = contentTypeIter->second;
+    m_contentTypeHasBeenSet = true;
   }
 
   const auto& contentEncodingIter = headers.find("content-encoding");
   if(contentEncodingIter != headers.end())
   {
     m_contentEncoding = contentEncodingIter->second;
+    m_contentEncodingHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
    return *this;

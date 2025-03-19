@@ -32,7 +32,7 @@ namespace Model
   class DisplayData
   {
   public:
-    AWS_SSOADMIN_API DisplayData();
+    AWS_SSOADMIN_API DisplayData() = default;
     AWS_SSOADMIN_API DisplayData(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API DisplayData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSOADMIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The description of the application provider that appears in the portal.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline DisplayData& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DisplayData& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DisplayData& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DisplayData& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the application provider that appears in the portal.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline DisplayData& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline DisplayData& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline DisplayData& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    DisplayData& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A URL that points to an icon that represents the application provider.</p>
      */
-    inline const Aws::String& GetIconUrl() const{ return m_iconUrl; }
+    inline const Aws::String& GetIconUrl() const { return m_iconUrl; }
     inline bool IconUrlHasBeenSet() const { return m_iconUrlHasBeenSet; }
-    inline void SetIconUrl(const Aws::String& value) { m_iconUrlHasBeenSet = true; m_iconUrl = value; }
-    inline void SetIconUrl(Aws::String&& value) { m_iconUrlHasBeenSet = true; m_iconUrl = std::move(value); }
-    inline void SetIconUrl(const char* value) { m_iconUrlHasBeenSet = true; m_iconUrl.assign(value); }
-    inline DisplayData& WithIconUrl(const Aws::String& value) { SetIconUrl(value); return *this;}
-    inline DisplayData& WithIconUrl(Aws::String&& value) { SetIconUrl(std::move(value)); return *this;}
-    inline DisplayData& WithIconUrl(const char* value) { SetIconUrl(value); return *this;}
+    template<typename IconUrlT = Aws::String>
+    void SetIconUrl(IconUrlT&& value) { m_iconUrlHasBeenSet = true; m_iconUrl = std::forward<IconUrlT>(value); }
+    template<typename IconUrlT = Aws::String>
+    DisplayData& WithIconUrl(IconUrlT&& value) { SetIconUrl(std::forward<IconUrlT>(value)); return *this;}
     ///@}
   private:
 

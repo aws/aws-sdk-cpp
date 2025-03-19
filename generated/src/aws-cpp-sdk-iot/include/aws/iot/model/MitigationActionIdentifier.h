@@ -33,7 +33,7 @@ namespace Model
   class MitigationActionIdentifier
   {
   public:
-    AWS_IOT_API MitigationActionIdentifier();
+    AWS_IOT_API MitigationActionIdentifier() = default;
     AWS_IOT_API MitigationActionIdentifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API MitigationActionIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,40 +43,36 @@ namespace Model
     /**
      * <p>The friendly name of the mitigation action.</p>
      */
-    inline const Aws::String& GetActionName() const{ return m_actionName; }
+    inline const Aws::String& GetActionName() const { return m_actionName; }
     inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
-    inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
-    inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
-    inline void SetActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.assign(value); }
-    inline MitigationActionIdentifier& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
-    inline MitigationActionIdentifier& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
-    inline MitigationActionIdentifier& WithActionName(const char* value) { SetActionName(value); return *this;}
+    template<typename ActionNameT = Aws::String>
+    void SetActionName(ActionNameT&& value) { m_actionNameHasBeenSet = true; m_actionName = std::forward<ActionNameT>(value); }
+    template<typename ActionNameT = Aws::String>
+    MitigationActionIdentifier& WithActionName(ActionNameT&& value) { SetActionName(std::forward<ActionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IAM role ARN used to apply this mitigation action.</p>
      */
-    inline const Aws::String& GetActionArn() const{ return m_actionArn; }
+    inline const Aws::String& GetActionArn() const { return m_actionArn; }
     inline bool ActionArnHasBeenSet() const { return m_actionArnHasBeenSet; }
-    inline void SetActionArn(const Aws::String& value) { m_actionArnHasBeenSet = true; m_actionArn = value; }
-    inline void SetActionArn(Aws::String&& value) { m_actionArnHasBeenSet = true; m_actionArn = std::move(value); }
-    inline void SetActionArn(const char* value) { m_actionArnHasBeenSet = true; m_actionArn.assign(value); }
-    inline MitigationActionIdentifier& WithActionArn(const Aws::String& value) { SetActionArn(value); return *this;}
-    inline MitigationActionIdentifier& WithActionArn(Aws::String&& value) { SetActionArn(std::move(value)); return *this;}
-    inline MitigationActionIdentifier& WithActionArn(const char* value) { SetActionArn(value); return *this;}
+    template<typename ActionArnT = Aws::String>
+    void SetActionArn(ActionArnT&& value) { m_actionArnHasBeenSet = true; m_actionArn = std::forward<ActionArnT>(value); }
+    template<typename ActionArnT = Aws::String>
+    MitigationActionIdentifier& WithActionArn(ActionArnT&& value) { SetActionArn(std::forward<ActionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date when this mitigation action was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::Utils::DateTime&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline MitigationActionIdentifier& WithCreationDate(const Aws::Utils::DateTime& value) { SetCreationDate(value); return *this;}
-    inline MitigationActionIdentifier& WithCreationDate(Aws::Utils::DateTime&& value) { SetCreationDate(std::move(value)); return *this;}
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::Utils::DateTime>
+    MitigationActionIdentifier& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
   private:
 
@@ -86,7 +82,7 @@ namespace Model
     Aws::String m_actionArn;
     bool m_actionArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDate;
+    Aws::Utils::DateTime m_creationDate{};
     bool m_creationDateHasBeenSet = false;
   };
 

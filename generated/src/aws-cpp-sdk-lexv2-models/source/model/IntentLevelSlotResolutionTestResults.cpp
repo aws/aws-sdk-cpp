@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-IntentLevelSlotResolutionTestResults::IntentLevelSlotResolutionTestResults() : 
-    m_itemsHasBeenSet(false)
-{
-}
-
 IntentLevelSlotResolutionTestResults::IntentLevelSlotResolutionTestResults(JsonView jsonValue)
-  : IntentLevelSlotResolutionTestResults()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ IntentLevelSlotResolutionTestResults& IntentLevelSlotResolutionTestResults::oper
     }
     m_itemsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -42,7 +42,7 @@ namespace Model
   class AllowedMethods
   {
   public:
-    AWS_CLOUDFRONT_API AllowedMethods();
+    AWS_CLOUDFRONT_API AllowedMethods() = default;
     AWS_CLOUDFRONT_API AllowedMethods(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API AllowedMethods& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -57,7 +57,7 @@ namespace Model
      * requests) and 7 (for <code>GET, HEAD, OPTIONS, PUT, PATCH, POST</code>, and
      * <code>DELETE</code> requests).</p>
      */
-    inline int GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const { return m_quantity; }
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
     inline AllowedMethods& WithQuantity(int value) { SetQuantity(value); return *this;}
@@ -68,28 +68,27 @@ namespace Model
      * <p>A complex type that contains the HTTP methods that you want CloudFront to
      * process and forward to your origin.</p>
      */
-    inline const Aws::Vector<Method>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<Method>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<Method>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<Method>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline AllowedMethods& WithItems(const Aws::Vector<Method>& value) { SetItems(value); return *this;}
-    inline AllowedMethods& WithItems(Aws::Vector<Method>&& value) { SetItems(std::move(value)); return *this;}
-    inline AllowedMethods& AddItems(const Method& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline AllowedMethods& AddItems(Method&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    template<typename ItemsT = Aws::Vector<Method>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<Method>>
+    AllowedMethods& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    inline AllowedMethods& AddItems(Method value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const CachedMethods& GetCachedMethods() const{ return m_cachedMethods; }
+    inline const CachedMethods& GetCachedMethods() const { return m_cachedMethods; }
     inline bool CachedMethodsHasBeenSet() const { return m_cachedMethodsHasBeenSet; }
-    inline void SetCachedMethods(const CachedMethods& value) { m_cachedMethodsHasBeenSet = true; m_cachedMethods = value; }
-    inline void SetCachedMethods(CachedMethods&& value) { m_cachedMethodsHasBeenSet = true; m_cachedMethods = std::move(value); }
-    inline AllowedMethods& WithCachedMethods(const CachedMethods& value) { SetCachedMethods(value); return *this;}
-    inline AllowedMethods& WithCachedMethods(CachedMethods&& value) { SetCachedMethods(std::move(value)); return *this;}
+    template<typename CachedMethodsT = CachedMethods>
+    void SetCachedMethods(CachedMethodsT&& value) { m_cachedMethodsHasBeenSet = true; m_cachedMethods = std::forward<CachedMethodsT>(value); }
+    template<typename CachedMethodsT = CachedMethods>
+    AllowedMethods& WithCachedMethods(CachedMethodsT&& value) { SetCachedMethods(std::forward<CachedMethodsT>(value)); return *this;}
     ///@}
   private:
 
-    int m_quantity;
+    int m_quantity{0};
     bool m_quantityHasBeenSet = false;
 
     Aws::Vector<Method> m_items;

@@ -28,7 +28,7 @@ namespace Model
   class GetGeoMatchSetResult
   {
   public:
-    AWS_WAF_API GetGeoMatchSetResult();
+    AWS_WAF_API GetGeoMatchSetResult() = default;
     AWS_WAF_API GetGeoMatchSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WAF_API GetGeoMatchSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,28 +40,28 @@ namespace Model
      * for a <code>GeoMatchContraint</code> is always <code>Country</code>, as well as
      * the <code>Value</code>, which is the identifier for a specific country.</p>
      */
-    inline const GeoMatchSet& GetGeoMatchSet() const{ return m_geoMatchSet; }
-    inline void SetGeoMatchSet(const GeoMatchSet& value) { m_geoMatchSet = value; }
-    inline void SetGeoMatchSet(GeoMatchSet&& value) { m_geoMatchSet = std::move(value); }
-    inline GetGeoMatchSetResult& WithGeoMatchSet(const GeoMatchSet& value) { SetGeoMatchSet(value); return *this;}
-    inline GetGeoMatchSetResult& WithGeoMatchSet(GeoMatchSet&& value) { SetGeoMatchSet(std::move(value)); return *this;}
+    inline const GeoMatchSet& GetGeoMatchSet() const { return m_geoMatchSet; }
+    template<typename GeoMatchSetT = GeoMatchSet>
+    void SetGeoMatchSet(GeoMatchSetT&& value) { m_geoMatchSetHasBeenSet = true; m_geoMatchSet = std::forward<GeoMatchSetT>(value); }
+    template<typename GeoMatchSetT = GeoMatchSet>
+    GetGeoMatchSetResult& WithGeoMatchSet(GeoMatchSetT&& value) { SetGeoMatchSet(std::forward<GeoMatchSetT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetGeoMatchSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetGeoMatchSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetGeoMatchSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetGeoMatchSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     GeoMatchSet m_geoMatchSet;
+    bool m_geoMatchSetHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

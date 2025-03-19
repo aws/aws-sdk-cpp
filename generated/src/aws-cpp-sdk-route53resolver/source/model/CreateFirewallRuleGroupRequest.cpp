@@ -12,14 +12,6 @@ using namespace Aws::Route53Resolver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFirewallRuleGroupRequest::CreateFirewallRuleGroupRequest() : 
-    m_creatorRequestId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_creatorRequestIdHasBeenSet(true),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateFirewallRuleGroupRequest::SerializePayload() const
 {
   JsonValue payload;

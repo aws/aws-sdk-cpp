@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetInstanceProfileResult::GetInstanceProfileResult()
-{
-}
-
 GetInstanceProfileResult::GetInstanceProfileResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ GetInstanceProfileResult& GetInstanceProfileResult::operator =(const Aws::Amazon
     if(!instanceProfileNode.IsNull())
     {
       m_instanceProfile = instanceProfileNode;
+      m_instanceProfileHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::GetInstanceProfileResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

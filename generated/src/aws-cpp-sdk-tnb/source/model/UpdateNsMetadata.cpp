@@ -18,14 +18,7 @@ namespace tnb
 namespace Model
 {
 
-UpdateNsMetadata::UpdateNsMetadata() : 
-    m_additionalParamsForNsHasBeenSet(false),
-    m_nsdInfoIdHasBeenSet(false)
-{
-}
-
 UpdateNsMetadata::UpdateNsMetadata(JsonView jsonValue)
-  : UpdateNsMetadata()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UpdateNsMetadata& UpdateNsMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("additionalParamsForNs"))
   {
     m_additionalParamsForNs = jsonValue.GetObject("additionalParamsForNs");
-
     m_additionalParamsForNsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nsdInfoId"))
   {
     m_nsdInfoId = jsonValue.GetString("nsdInfoId");
-
     m_nsdInfoIdHasBeenSet = true;
   }
-
   return *this;
 }
 

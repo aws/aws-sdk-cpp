@@ -12,11 +12,6 @@ using namespace Aws::IoTManagedIntegrations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCredentialLockerRequest::GetCredentialLockerRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String GetCredentialLockerRequest::SerializePayload() const
 {
   return {};

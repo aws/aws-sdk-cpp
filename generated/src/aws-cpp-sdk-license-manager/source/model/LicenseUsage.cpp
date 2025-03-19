@@ -18,13 +18,7 @@ namespace LicenseManager
 namespace Model
 {
 
-LicenseUsage::LicenseUsage() : 
-    m_entitlementUsagesHasBeenSet(false)
-{
-}
-
 LicenseUsage::LicenseUsage(JsonView jsonValue)
-  : LicenseUsage()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ LicenseUsage& LicenseUsage::operator =(JsonView jsonValue)
     }
     m_entitlementUsagesHasBeenSet = true;
   }
-
   return *this;
 }
 

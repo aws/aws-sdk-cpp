@@ -12,12 +12,6 @@ using namespace Aws::DataExchange::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEventActionRequest::CreateEventActionRequest() : 
-    m_actionHasBeenSet(false),
-    m_eventHasBeenSet(false)
-{
-}
-
 Aws::String CreateEventActionRequest::SerializePayload() const
 {
   JsonValue payload;

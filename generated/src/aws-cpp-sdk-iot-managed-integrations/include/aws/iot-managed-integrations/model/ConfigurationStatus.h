@@ -33,7 +33,7 @@ namespace Model
   class ConfigurationStatus
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API ConfigurationStatus();
+    AWS_IOTMANAGEDINTEGRATIONS_API ConfigurationStatus() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API ConfigurationStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API ConfigurationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,31 +44,29 @@ namespace Model
      * <p>The error details describing a failed default encryption configuration
      * update.</p>
      */
-    inline const ConfigurationError& GetError() const{ return m_error; }
+    inline const ConfigurationError& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const ConfigurationError& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(ConfigurationError&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline ConfigurationStatus& WithError(const ConfigurationError& value) { SetError(value); return *this;}
-    inline ConfigurationStatus& WithError(ConfigurationError&& value) { SetError(std::move(value)); return *this;}
+    template<typename ErrorT = ConfigurationError>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = ConfigurationError>
+    ConfigurationStatus& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status state describing the default encryption configuration update.</p>
      */
-    inline const ConfigurationState& GetState() const{ return m_state; }
+    inline ConfigurationState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ConfigurationState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ConfigurationState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline ConfigurationStatus& WithState(const ConfigurationState& value) { SetState(value); return *this;}
-    inline ConfigurationStatus& WithState(ConfigurationState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(ConfigurationState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline ConfigurationStatus& WithState(ConfigurationState value) { SetState(value); return *this;}
     ///@}
   private:
 
     ConfigurationError m_error;
     bool m_errorHasBeenSet = false;
 
-    ConfigurationState m_state;
+    ConfigurationState m_state{ConfigurationState::NOT_SET};
     bool m_stateHasBeenSet = false;
   };
 

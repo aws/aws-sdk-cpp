@@ -12,12 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateKmsKeyRequest::DisassociateKmsKeyRequest() : 
-    m_logGroupNameHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateKmsKeyRequest::SerializePayload() const
 {
   JsonValue payload;

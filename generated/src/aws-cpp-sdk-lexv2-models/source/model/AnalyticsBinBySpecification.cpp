@@ -18,18 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-AnalyticsBinBySpecification::AnalyticsBinBySpecification() : 
-    m_name(AnalyticsBinByName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_interval(AnalyticsInterval::NOT_SET),
-    m_intervalHasBeenSet(false),
-    m_order(AnalyticsSortOrder::NOT_SET),
-    m_orderHasBeenSet(false)
-{
-}
-
 AnalyticsBinBySpecification::AnalyticsBinBySpecification(JsonView jsonValue)
-  : AnalyticsBinBySpecification()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ AnalyticsBinBySpecification& AnalyticsBinBySpecification::operator =(JsonView js
   if(jsonValue.ValueExists("name"))
   {
     m_name = AnalyticsBinByNameMapper::GetAnalyticsBinByNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("interval"))
   {
     m_interval = AnalyticsIntervalMapper::GetAnalyticsIntervalForName(jsonValue.GetString("interval"));
-
     m_intervalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("order"))
   {
     m_order = AnalyticsSortOrderMapper::GetAnalyticsSortOrderForName(jsonValue.GetString("order"));
-
     m_orderHasBeenSet = true;
   }
-
   return *this;
 }
 

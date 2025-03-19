@@ -18,15 +18,7 @@ namespace Textract
 namespace Model
 {
 
-HumanLoopConfig::HumanLoopConfig() : 
-    m_humanLoopNameHasBeenSet(false),
-    m_flowDefinitionArnHasBeenSet(false),
-    m_dataAttributesHasBeenSet(false)
-{
-}
-
 HumanLoopConfig::HumanLoopConfig(JsonView jsonValue)
-  : HumanLoopConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ HumanLoopConfig& HumanLoopConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HumanLoopName"))
   {
     m_humanLoopName = jsonValue.GetString("HumanLoopName");
-
     m_humanLoopNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FlowDefinitionArn"))
   {
     m_flowDefinitionArn = jsonValue.GetString("FlowDefinitionArn");
-
     m_flowDefinitionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataAttributes"))
   {
     m_dataAttributes = jsonValue.GetObject("DataAttributes");
-
     m_dataAttributesHasBeenSet = true;
   }
-
   return *this;
 }
 

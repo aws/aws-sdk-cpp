@@ -18,15 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-AttributesResource::AttributesResource() : 
-    m_applicationIdHasBeenSet(false),
-    m_attributeTypeHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 AttributesResource::AttributesResource(JsonView jsonValue)
-  : AttributesResource()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AttributesResource& AttributesResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApplicationId"))
   {
     m_applicationId = jsonValue.GetString("ApplicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttributeType"))
   {
     m_attributeType = jsonValue.GetString("AttributeType");
-
     m_attributeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attributes"))
   {
     Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
@@ -56,7 +44,6 @@ AttributesResource& AttributesResource::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   return *this;
 }
 

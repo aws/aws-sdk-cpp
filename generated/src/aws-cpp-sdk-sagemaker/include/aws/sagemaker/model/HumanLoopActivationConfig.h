@@ -33,7 +33,7 @@ namespace Model
   class HumanLoopActivationConfig
   {
   public:
-    AWS_SAGEMAKER_API HumanLoopActivationConfig();
+    AWS_SAGEMAKER_API HumanLoopActivationConfig() = default;
     AWS_SAGEMAKER_API HumanLoopActivationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API HumanLoopActivationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>Container structure for defining under what conditions SageMaker creates a
      * human loop.</p>
      */
-    inline const HumanLoopActivationConditionsConfig& GetHumanLoopActivationConditionsConfig() const{ return m_humanLoopActivationConditionsConfig; }
+    inline const HumanLoopActivationConditionsConfig& GetHumanLoopActivationConditionsConfig() const { return m_humanLoopActivationConditionsConfig; }
     inline bool HumanLoopActivationConditionsConfigHasBeenSet() const { return m_humanLoopActivationConditionsConfigHasBeenSet; }
-    inline void SetHumanLoopActivationConditionsConfig(const HumanLoopActivationConditionsConfig& value) { m_humanLoopActivationConditionsConfigHasBeenSet = true; m_humanLoopActivationConditionsConfig = value; }
-    inline void SetHumanLoopActivationConditionsConfig(HumanLoopActivationConditionsConfig&& value) { m_humanLoopActivationConditionsConfigHasBeenSet = true; m_humanLoopActivationConditionsConfig = std::move(value); }
-    inline HumanLoopActivationConfig& WithHumanLoopActivationConditionsConfig(const HumanLoopActivationConditionsConfig& value) { SetHumanLoopActivationConditionsConfig(value); return *this;}
-    inline HumanLoopActivationConfig& WithHumanLoopActivationConditionsConfig(HumanLoopActivationConditionsConfig&& value) { SetHumanLoopActivationConditionsConfig(std::move(value)); return *this;}
+    template<typename HumanLoopActivationConditionsConfigT = HumanLoopActivationConditionsConfig>
+    void SetHumanLoopActivationConditionsConfig(HumanLoopActivationConditionsConfigT&& value) { m_humanLoopActivationConditionsConfigHasBeenSet = true; m_humanLoopActivationConditionsConfig = std::forward<HumanLoopActivationConditionsConfigT>(value); }
+    template<typename HumanLoopActivationConditionsConfigT = HumanLoopActivationConditionsConfig>
+    HumanLoopActivationConfig& WithHumanLoopActivationConditionsConfig(HumanLoopActivationConditionsConfigT&& value) { SetHumanLoopActivationConditionsConfig(std::forward<HumanLoopActivationConditionsConfigT>(value)); return *this;}
     ///@}
   private:
 

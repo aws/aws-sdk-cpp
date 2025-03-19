@@ -12,11 +12,6 @@ using namespace Aws::IoTEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartDetectorModelAnalysisRequest::StartDetectorModelAnalysisRequest() : 
-    m_detectorModelDefinitionHasBeenSet(false)
-{
-}
-
 Aws::String StartDetectorModelAnalysisRequest::SerializePayload() const
 {
   JsonValue payload;

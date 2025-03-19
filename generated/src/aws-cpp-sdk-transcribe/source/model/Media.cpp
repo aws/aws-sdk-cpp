@@ -18,14 +18,7 @@ namespace TranscribeService
 namespace Model
 {
 
-Media::Media() : 
-    m_mediaFileUriHasBeenSet(false),
-    m_redactedMediaFileUriHasBeenSet(false)
-{
-}
-
 Media::Media(JsonView jsonValue)
-  : Media()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Media& Media::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MediaFileUri"))
   {
     m_mediaFileUri = jsonValue.GetString("MediaFileUri");
-
     m_mediaFileUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RedactedMediaFileUri"))
   {
     m_redactedMediaFileUri = jsonValue.GetString("RedactedMediaFileUri");
-
     m_redactedMediaFileUriHasBeenSet = true;
   }
-
   return *this;
 }
 

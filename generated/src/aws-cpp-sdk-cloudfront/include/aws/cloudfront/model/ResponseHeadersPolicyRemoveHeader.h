@@ -32,7 +32,7 @@ namespace Model
   class ResponseHeadersPolicyRemoveHeader
   {
   public:
-    AWS_CLOUDFRONT_API ResponseHeadersPolicyRemoveHeader();
+    AWS_CLOUDFRONT_API ResponseHeadersPolicyRemoveHeader() = default;
     AWS_CLOUDFRONT_API ResponseHeadersPolicyRemoveHeader(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API ResponseHeadersPolicyRemoveHeader& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The HTTP header name.</p>
      */
-    inline const Aws::String& GetHeader() const{ return m_header; }
+    inline const Aws::String& GetHeader() const { return m_header; }
     inline bool HeaderHasBeenSet() const { return m_headerHasBeenSet; }
-    inline void SetHeader(const Aws::String& value) { m_headerHasBeenSet = true; m_header = value; }
-    inline void SetHeader(Aws::String&& value) { m_headerHasBeenSet = true; m_header = std::move(value); }
-    inline void SetHeader(const char* value) { m_headerHasBeenSet = true; m_header.assign(value); }
-    inline ResponseHeadersPolicyRemoveHeader& WithHeader(const Aws::String& value) { SetHeader(value); return *this;}
-    inline ResponseHeadersPolicyRemoveHeader& WithHeader(Aws::String&& value) { SetHeader(std::move(value)); return *this;}
-    inline ResponseHeadersPolicyRemoveHeader& WithHeader(const char* value) { SetHeader(value); return *this;}
+    template<typename HeaderT = Aws::String>
+    void SetHeader(HeaderT&& value) { m_headerHasBeenSet = true; m_header = std::forward<HeaderT>(value); }
+    template<typename HeaderT = Aws::String>
+    ResponseHeadersPolicyRemoveHeader& WithHeader(HeaderT&& value) { SetHeader(std::forward<HeaderT>(value)); return *this;}
     ///@}
   private:
 

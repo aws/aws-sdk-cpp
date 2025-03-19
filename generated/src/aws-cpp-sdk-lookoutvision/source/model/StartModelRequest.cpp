@@ -13,18 +13,6 @@ using namespace Aws::LookoutforVision::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartModelRequest::StartModelRequest() : 
-    m_projectNameHasBeenSet(false),
-    m_modelVersionHasBeenSet(false),
-    m_minInferenceUnits(0),
-    m_minInferenceUnitsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_maxInferenceUnits(0),
-    m_maxInferenceUnitsHasBeenSet(false)
-{
-}
-
 Aws::String StartModelRequest::SerializePayload() const
 {
   JsonValue payload;

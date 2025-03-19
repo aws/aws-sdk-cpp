@@ -34,7 +34,7 @@ namespace Model
   class AggregateResourceIdentifier
   {
   public:
-    AWS_CONFIGSERVICE_API AggregateResourceIdentifier();
+    AWS_CONFIGSERVICE_API AggregateResourceIdentifier() = default;
     AWS_CONFIGSERVICE_API AggregateResourceIdentifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API AggregateResourceIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,68 +44,58 @@ namespace Model
     /**
      * <p>The 12-digit account ID of the source account.</p>
      */
-    inline const Aws::String& GetSourceAccountId() const{ return m_sourceAccountId; }
+    inline const Aws::String& GetSourceAccountId() const { return m_sourceAccountId; }
     inline bool SourceAccountIdHasBeenSet() const { return m_sourceAccountIdHasBeenSet; }
-    inline void SetSourceAccountId(const Aws::String& value) { m_sourceAccountIdHasBeenSet = true; m_sourceAccountId = value; }
-    inline void SetSourceAccountId(Aws::String&& value) { m_sourceAccountIdHasBeenSet = true; m_sourceAccountId = std::move(value); }
-    inline void SetSourceAccountId(const char* value) { m_sourceAccountIdHasBeenSet = true; m_sourceAccountId.assign(value); }
-    inline AggregateResourceIdentifier& WithSourceAccountId(const Aws::String& value) { SetSourceAccountId(value); return *this;}
-    inline AggregateResourceIdentifier& WithSourceAccountId(Aws::String&& value) { SetSourceAccountId(std::move(value)); return *this;}
-    inline AggregateResourceIdentifier& WithSourceAccountId(const char* value) { SetSourceAccountId(value); return *this;}
+    template<typename SourceAccountIdT = Aws::String>
+    void SetSourceAccountId(SourceAccountIdT&& value) { m_sourceAccountIdHasBeenSet = true; m_sourceAccountId = std::forward<SourceAccountIdT>(value); }
+    template<typename SourceAccountIdT = Aws::String>
+    AggregateResourceIdentifier& WithSourceAccountId(SourceAccountIdT&& value) { SetSourceAccountId(std::forward<SourceAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source region where data is aggregated.</p>
      */
-    inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
+    inline const Aws::String& GetSourceRegion() const { return m_sourceRegion; }
     inline bool SourceRegionHasBeenSet() const { return m_sourceRegionHasBeenSet; }
-    inline void SetSourceRegion(const Aws::String& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = value; }
-    inline void SetSourceRegion(Aws::String&& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = std::move(value); }
-    inline void SetSourceRegion(const char* value) { m_sourceRegionHasBeenSet = true; m_sourceRegion.assign(value); }
-    inline AggregateResourceIdentifier& WithSourceRegion(const Aws::String& value) { SetSourceRegion(value); return *this;}
-    inline AggregateResourceIdentifier& WithSourceRegion(Aws::String&& value) { SetSourceRegion(std::move(value)); return *this;}
-    inline AggregateResourceIdentifier& WithSourceRegion(const char* value) { SetSourceRegion(value); return *this;}
+    template<typename SourceRegionT = Aws::String>
+    void SetSourceRegion(SourceRegionT&& value) { m_sourceRegionHasBeenSet = true; m_sourceRegion = std::forward<SourceRegionT>(value); }
+    template<typename SourceRegionT = Aws::String>
+    AggregateResourceIdentifier& WithSourceRegion(SourceRegionT&& value) { SetSourceRegion(std::forward<SourceRegionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Amazon Web Services resource.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline AggregateResourceIdentifier& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline AggregateResourceIdentifier& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline AggregateResourceIdentifier& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    AggregateResourceIdentifier& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the Amazon Web Services resource.</p>
      */
-    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+    inline ResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline AggregateResourceIdentifier& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-    inline AggregateResourceIdentifier& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline AggregateResourceIdentifier& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Amazon Web Services resource.</p>
      */
-    inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+    inline const Aws::String& GetResourceName() const { return m_resourceName; }
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-    inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-    inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-    inline AggregateResourceIdentifier& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-    inline AggregateResourceIdentifier& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-    inline AggregateResourceIdentifier& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    template<typename ResourceNameT = Aws::String>
+    void SetResourceName(ResourceNameT&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::forward<ResourceNameT>(value); }
+    template<typename ResourceNameT = Aws::String>
+    AggregateResourceIdentifier& WithResourceName(ResourceNameT&& value) { SetResourceName(std::forward<ResourceNameT>(value)); return *this;}
     ///@}
   private:
 
@@ -118,7 +108,7 @@ namespace Model
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
-    ResourceType m_resourceType;
+    ResourceType m_resourceType{ResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_resourceName;

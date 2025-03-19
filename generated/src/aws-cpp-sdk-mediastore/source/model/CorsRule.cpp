@@ -18,18 +18,7 @@ namespace MediaStore
 namespace Model
 {
 
-CorsRule::CorsRule() : 
-    m_allowedOriginsHasBeenSet(false),
-    m_allowedMethodsHasBeenSet(false),
-    m_allowedHeadersHasBeenSet(false),
-    m_maxAgeSeconds(0),
-    m_maxAgeSecondsHasBeenSet(false),
-    m_exposeHeadersHasBeenSet(false)
-{
-}
-
 CorsRule::CorsRule(JsonView jsonValue)
-  : CorsRule()
 {
   *this = jsonValue;
 }
@@ -45,7 +34,6 @@ CorsRule& CorsRule::operator =(JsonView jsonValue)
     }
     m_allowedOriginsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowedMethods"))
   {
     Aws::Utils::Array<JsonView> allowedMethodsJsonList = jsonValue.GetArray("AllowedMethods");
@@ -55,7 +43,6 @@ CorsRule& CorsRule::operator =(JsonView jsonValue)
     }
     m_allowedMethodsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowedHeaders"))
   {
     Aws::Utils::Array<JsonView> allowedHeadersJsonList = jsonValue.GetArray("AllowedHeaders");
@@ -65,14 +52,11 @@ CorsRule& CorsRule::operator =(JsonView jsonValue)
     }
     m_allowedHeadersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxAgeSeconds"))
   {
     m_maxAgeSeconds = jsonValue.GetInteger("MaxAgeSeconds");
-
     m_maxAgeSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExposeHeaders"))
   {
     Aws::Utils::Array<JsonView> exposeHeadersJsonList = jsonValue.GetArray("ExposeHeaders");
@@ -82,7 +66,6 @@ CorsRule& CorsRule::operator =(JsonView jsonValue)
     }
     m_exposeHeadersHasBeenSet = true;
   }
-
   return *this;
 }
 

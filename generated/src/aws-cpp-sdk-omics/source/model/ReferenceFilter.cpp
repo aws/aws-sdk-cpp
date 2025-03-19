@@ -18,16 +18,7 @@ namespace Omics
 namespace Model
 {
 
-ReferenceFilter::ReferenceFilter() : 
-    m_nameHasBeenSet(false),
-    m_md5HasBeenSet(false),
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false)
-{
-}
-
 ReferenceFilter::ReferenceFilter(JsonView jsonValue)
-  : ReferenceFilter()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ ReferenceFilter& ReferenceFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("md5"))
   {
     m_md5 = jsonValue.GetString("md5");
-
     m_md5HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAfter"))
   {
     m_createdAfter = jsonValue.GetString("createdAfter");
-
     m_createdAfterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBefore"))
   {
     m_createdBefore = jsonValue.GetString("createdBefore");
-
     m_createdBeforeHasBeenSet = true;
   }
-
   return *this;
 }
 

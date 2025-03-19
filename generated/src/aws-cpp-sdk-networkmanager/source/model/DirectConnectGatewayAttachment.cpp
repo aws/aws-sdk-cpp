@@ -18,14 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-DirectConnectGatewayAttachment::DirectConnectGatewayAttachment() : 
-    m_attachmentHasBeenSet(false),
-    m_directConnectGatewayArnHasBeenSet(false)
-{
-}
-
 DirectConnectGatewayAttachment::DirectConnectGatewayAttachment(JsonView jsonValue)
-  : DirectConnectGatewayAttachment()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DirectConnectGatewayAttachment& DirectConnectGatewayAttachment::operator =(JsonV
   if(jsonValue.ValueExists("Attachment"))
   {
     m_attachment = jsonValue.GetObject("Attachment");
-
     m_attachmentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DirectConnectGatewayArn"))
   {
     m_directConnectGatewayArn = jsonValue.GetString("DirectConnectGatewayArn");
-
     m_directConnectGatewayArnHasBeenSet = true;
   }
-
   return *this;
 }
 

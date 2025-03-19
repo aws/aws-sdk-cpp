@@ -12,28 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateClassificationJobRequest::CreateClassificationJobRequest() : 
-    m_allowListIdsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_customDataIdentifierIdsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_initialRun(false),
-    m_initialRunHasBeenSet(false),
-    m_jobType(JobType::NOT_SET),
-    m_jobTypeHasBeenSet(false),
-    m_managedDataIdentifierIdsHasBeenSet(false),
-    m_managedDataIdentifierSelector(ManagedDataIdentifierSelector::NOT_SET),
-    m_managedDataIdentifierSelectorHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_s3JobDefinitionHasBeenSet(false),
-    m_samplingPercentage(0),
-    m_samplingPercentageHasBeenSet(false),
-    m_scheduleFrequencyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateClassificationJobRequest::SerializePayload() const
 {
   JsonValue payload;

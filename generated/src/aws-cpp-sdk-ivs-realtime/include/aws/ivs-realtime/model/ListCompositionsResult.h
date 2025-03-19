@@ -29,7 +29,7 @@ namespace Model
   class ListCompositionsResult
   {
   public:
-    AWS_IVSREALTIME_API ListCompositionsResult();
+    AWS_IVSREALTIME_API ListCompositionsResult() = default;
     AWS_IVSREALTIME_API ListCompositionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IVSREALTIME_API ListCompositionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>List of the matching Compositions (summary information only).</p>
      */
-    inline const Aws::Vector<CompositionSummary>& GetCompositions() const{ return m_compositions; }
-    inline void SetCompositions(const Aws::Vector<CompositionSummary>& value) { m_compositions = value; }
-    inline void SetCompositions(Aws::Vector<CompositionSummary>&& value) { m_compositions = std::move(value); }
-    inline ListCompositionsResult& WithCompositions(const Aws::Vector<CompositionSummary>& value) { SetCompositions(value); return *this;}
-    inline ListCompositionsResult& WithCompositions(Aws::Vector<CompositionSummary>&& value) { SetCompositions(std::move(value)); return *this;}
-    inline ListCompositionsResult& AddCompositions(const CompositionSummary& value) { m_compositions.push_back(value); return *this; }
-    inline ListCompositionsResult& AddCompositions(CompositionSummary&& value) { m_compositions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CompositionSummary>& GetCompositions() const { return m_compositions; }
+    template<typename CompositionsT = Aws::Vector<CompositionSummary>>
+    void SetCompositions(CompositionsT&& value) { m_compositionsHasBeenSet = true; m_compositions = std::forward<CompositionsT>(value); }
+    template<typename CompositionsT = Aws::Vector<CompositionSummary>>
+    ListCompositionsResult& WithCompositions(CompositionsT&& value) { SetCompositions(std::forward<CompositionsT>(value)); return *this;}
+    template<typename CompositionsT = CompositionSummary>
+    ListCompositionsResult& AddCompositions(CompositionsT&& value) { m_compositionsHasBeenSet = true; m_compositions.emplace_back(std::forward<CompositionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>If there are more compositions than <code>maxResults</code>, use
      * <code>nextToken</code> in the request to get the next set.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCompositionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCompositionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCompositionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCompositionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCompositionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCompositionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCompositionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCompositionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CompositionSummary> m_compositions;
+    bool m_compositionsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

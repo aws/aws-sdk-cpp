@@ -12,11 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveAccountFromOrganizationRequest::RemoveAccountFromOrganizationRequest() : 
-    m_accountIdHasBeenSet(false)
-{
-}
-
 Aws::String RemoveAccountFromOrganizationRequest::SerializePayload() const
 {
   JsonValue payload;

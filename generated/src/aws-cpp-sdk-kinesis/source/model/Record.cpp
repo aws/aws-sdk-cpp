@@ -19,18 +19,7 @@ namespace Kinesis
 namespace Model
 {
 
-Record::Record() : 
-    m_sequenceNumberHasBeenSet(false),
-    m_approximateArrivalTimestampHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_partitionKeyHasBeenSet(false),
-    m_encryptionType(EncryptionType::NOT_SET),
-    m_encryptionTypeHasBeenSet(false)
-{
-}
-
 Record::Record(JsonView jsonValue)
-  : Record()
 {
   *this = jsonValue;
 }
@@ -40,37 +29,28 @@ Record& Record::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SequenceNumber"))
   {
     m_sequenceNumber = jsonValue.GetString("SequenceNumber");
-
     m_sequenceNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApproximateArrivalTimestamp"))
   {
     m_approximateArrivalTimestamp = jsonValue.GetDouble("ApproximateArrivalTimestamp");
-
     m_approximateArrivalTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Data"))
   {
     m_data = HashingUtils::Base64Decode(jsonValue.GetString("Data"));
     m_dataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PartitionKey"))
   {
     m_partitionKey = jsonValue.GetString("PartitionKey");
-
     m_partitionKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionType"))
   {
     m_encryptionType = EncryptionTypeMapper::GetEncryptionTypeForName(jsonValue.GetString("EncryptionType"));
-
     m_encryptionTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

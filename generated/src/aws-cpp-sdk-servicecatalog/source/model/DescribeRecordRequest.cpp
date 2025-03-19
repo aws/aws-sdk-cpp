@@ -12,15 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeRecordRequest::DescribeRecordRequest() : 
-    m_acceptLanguageHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_pageTokenHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeRecordRequest::SerializePayload() const
 {
   JsonValue payload;

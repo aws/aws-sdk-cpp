@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListOpenWorkflowExecutionsResult::ListOpenWorkflowExecutionsResult()
-{
-}
-
 ListOpenWorkflowExecutionsResult::ListOpenWorkflowExecutionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,20 +32,20 @@ ListOpenWorkflowExecutionsResult& ListOpenWorkflowExecutionsResult::operator =(c
     {
       m_executionInfos.push_back(executionInfosJsonList[executionInfosIndex].AsObject());
     }
+    m_executionInfosHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextPageToken"))
   {
     m_nextPageToken = jsonValue.GetString("nextPageToken");
-
+    m_nextPageTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

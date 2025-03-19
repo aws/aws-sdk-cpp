@@ -18,13 +18,7 @@ namespace IoT
 namespace Model
 {
 
-PublishFindingToSnsParams::PublishFindingToSnsParams() : 
-    m_topicArnHasBeenSet(false)
-{
-}
-
 PublishFindingToSnsParams::PublishFindingToSnsParams(JsonView jsonValue)
-  : PublishFindingToSnsParams()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PublishFindingToSnsParams& PublishFindingToSnsParams::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("topicArn"))
   {
     m_topicArn = jsonValue.GetString("topicArn");
-
     m_topicArnHasBeenSet = true;
   }
-
   return *this;
 }
 

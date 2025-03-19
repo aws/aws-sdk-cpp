@@ -28,7 +28,7 @@ namespace Model
   class GetPartitionResult
   {
   public:
-    AWS_GLUE_API GetPartitionResult();
+    AWS_GLUE_API GetPartitionResult() = default;
     AWS_GLUE_API GetPartitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLUE_API GetPartitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The requested information, in the form of a <code>Partition</code>
      * object.</p>
      */
-    inline const Partition& GetPartition() const{ return m_partition; }
-    inline void SetPartition(const Partition& value) { m_partition = value; }
-    inline void SetPartition(Partition&& value) { m_partition = std::move(value); }
-    inline GetPartitionResult& WithPartition(const Partition& value) { SetPartition(value); return *this;}
-    inline GetPartitionResult& WithPartition(Partition&& value) { SetPartition(std::move(value)); return *this;}
+    inline const Partition& GetPartition() const { return m_partition; }
+    template<typename PartitionT = Partition>
+    void SetPartition(PartitionT&& value) { m_partitionHasBeenSet = true; m_partition = std::forward<PartitionT>(value); }
+    template<typename PartitionT = Partition>
+    GetPartitionResult& WithPartition(PartitionT&& value) { SetPartition(std::forward<PartitionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetPartitionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetPartitionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetPartitionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetPartitionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Partition m_partition;
+    bool m_partitionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

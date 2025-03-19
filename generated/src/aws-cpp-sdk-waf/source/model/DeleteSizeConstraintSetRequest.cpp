@@ -12,12 +12,6 @@ using namespace Aws::WAF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSizeConstraintSetRequest::DeleteSizeConstraintSetRequest() : 
-    m_sizeConstraintSetIdHasBeenSet(false),
-    m_changeTokenHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSizeConstraintSetRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class CommunicationLimits
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API CommunicationLimits();
+    AWS_CONNECTCAMPAIGNSV2_API CommunicationLimits() = default;
     AWS_CONNECTCAMPAIGNSV2_API CommunicationLimits(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API CommunicationLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Vector<CommunicationLimit>& GetCommunicationLimitsList() const{ return m_communicationLimitsList; }
+    inline const Aws::Vector<CommunicationLimit>& GetCommunicationLimitsList() const { return m_communicationLimitsList; }
     inline bool CommunicationLimitsListHasBeenSet() const { return m_communicationLimitsListHasBeenSet; }
-    inline void SetCommunicationLimitsList(const Aws::Vector<CommunicationLimit>& value) { m_communicationLimitsListHasBeenSet = true; m_communicationLimitsList = value; }
-    inline void SetCommunicationLimitsList(Aws::Vector<CommunicationLimit>&& value) { m_communicationLimitsListHasBeenSet = true; m_communicationLimitsList = std::move(value); }
-    inline CommunicationLimits& WithCommunicationLimitsList(const Aws::Vector<CommunicationLimit>& value) { SetCommunicationLimitsList(value); return *this;}
-    inline CommunicationLimits& WithCommunicationLimitsList(Aws::Vector<CommunicationLimit>&& value) { SetCommunicationLimitsList(std::move(value)); return *this;}
-    inline CommunicationLimits& AddCommunicationLimitsList(const CommunicationLimit& value) { m_communicationLimitsListHasBeenSet = true; m_communicationLimitsList.push_back(value); return *this; }
-    inline CommunicationLimits& AddCommunicationLimitsList(CommunicationLimit&& value) { m_communicationLimitsListHasBeenSet = true; m_communicationLimitsList.push_back(std::move(value)); return *this; }
+    template<typename CommunicationLimitsListT = Aws::Vector<CommunicationLimit>>
+    void SetCommunicationLimitsList(CommunicationLimitsListT&& value) { m_communicationLimitsListHasBeenSet = true; m_communicationLimitsList = std::forward<CommunicationLimitsListT>(value); }
+    template<typename CommunicationLimitsListT = Aws::Vector<CommunicationLimit>>
+    CommunicationLimits& WithCommunicationLimitsList(CommunicationLimitsListT&& value) { SetCommunicationLimitsList(std::forward<CommunicationLimitsListT>(value)); return *this;}
+    template<typename CommunicationLimitsListT = CommunicationLimit>
+    CommunicationLimits& AddCommunicationLimitsList(CommunicationLimitsListT&& value) { m_communicationLimitsListHasBeenSet = true; m_communicationLimitsList.emplace_back(std::forward<CommunicationLimitsListT>(value)); return *this; }
     ///@}
   private:
 

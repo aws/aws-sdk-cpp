@@ -32,7 +32,7 @@ namespace Model
   class ElasticsearchSettings
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API ElasticsearchSettings();
+    AWS_DATABASEMIGRATIONSERVICE_API ElasticsearchSettings() = default;
     AWS_DATABASEMIGRATIONSERVICE_API ElasticsearchSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API ElasticsearchSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) used by the service to access the IAM role.
      * The role must allow the <code>iam:PassRole</code> action.</p>
      */
-    inline const Aws::String& GetServiceAccessRoleArn() const{ return m_serviceAccessRoleArn; }
+    inline const Aws::String& GetServiceAccessRoleArn() const { return m_serviceAccessRoleArn; }
     inline bool ServiceAccessRoleArnHasBeenSet() const { return m_serviceAccessRoleArnHasBeenSet; }
-    inline void SetServiceAccessRoleArn(const Aws::String& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = value; }
-    inline void SetServiceAccessRoleArn(Aws::String&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::move(value); }
-    inline void SetServiceAccessRoleArn(const char* value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn.assign(value); }
-    inline ElasticsearchSettings& WithServiceAccessRoleArn(const Aws::String& value) { SetServiceAccessRoleArn(value); return *this;}
-    inline ElasticsearchSettings& WithServiceAccessRoleArn(Aws::String&& value) { SetServiceAccessRoleArn(std::move(value)); return *this;}
-    inline ElasticsearchSettings& WithServiceAccessRoleArn(const char* value) { SetServiceAccessRoleArn(value); return *this;}
+    template<typename ServiceAccessRoleArnT = Aws::String>
+    void SetServiceAccessRoleArn(ServiceAccessRoleArnT&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::forward<ServiceAccessRoleArnT>(value); }
+    template<typename ServiceAccessRoleArnT = Aws::String>
+    ElasticsearchSettings& WithServiceAccessRoleArn(ServiceAccessRoleArnT&& value) { SetServiceAccessRoleArn(std::forward<ServiceAccessRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The endpoint for the OpenSearch cluster. DMS uses HTTPS if a transport
      * protocol (http/https) is not specified.</p>
      */
-    inline const Aws::String& GetEndpointUri() const{ return m_endpointUri; }
+    inline const Aws::String& GetEndpointUri() const { return m_endpointUri; }
     inline bool EndpointUriHasBeenSet() const { return m_endpointUriHasBeenSet; }
-    inline void SetEndpointUri(const Aws::String& value) { m_endpointUriHasBeenSet = true; m_endpointUri = value; }
-    inline void SetEndpointUri(Aws::String&& value) { m_endpointUriHasBeenSet = true; m_endpointUri = std::move(value); }
-    inline void SetEndpointUri(const char* value) { m_endpointUriHasBeenSet = true; m_endpointUri.assign(value); }
-    inline ElasticsearchSettings& WithEndpointUri(const Aws::String& value) { SetEndpointUri(value); return *this;}
-    inline ElasticsearchSettings& WithEndpointUri(Aws::String&& value) { SetEndpointUri(std::move(value)); return *this;}
-    inline ElasticsearchSettings& WithEndpointUri(const char* value) { SetEndpointUri(value); return *this;}
+    template<typename EndpointUriT = Aws::String>
+    void SetEndpointUri(EndpointUriT&& value) { m_endpointUriHasBeenSet = true; m_endpointUri = std::forward<EndpointUriT>(value); }
+    template<typename EndpointUriT = Aws::String>
+    ElasticsearchSettings& WithEndpointUri(EndpointUriT&& value) { SetEndpointUri(std::forward<EndpointUriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,7 +73,7 @@ namespace Model
      * transfer of all records fail in the last 10 minutes, the full load operation
      * stops. </p>
      */
-    inline int GetFullLoadErrorPercentage() const{ return m_fullLoadErrorPercentage; }
+    inline int GetFullLoadErrorPercentage() const { return m_fullLoadErrorPercentage; }
     inline bool FullLoadErrorPercentageHasBeenSet() const { return m_fullLoadErrorPercentageHasBeenSet; }
     inline void SetFullLoadErrorPercentage(int value) { m_fullLoadErrorPercentageHasBeenSet = true; m_fullLoadErrorPercentage = value; }
     inline ElasticsearchSettings& WithFullLoadErrorPercentage(int value) { SetFullLoadErrorPercentage(value); return *this;}
@@ -88,7 +84,7 @@ namespace Model
      * <p>The maximum number of seconds for which DMS retries failed API requests to
      * the OpenSearch cluster.</p>
      */
-    inline int GetErrorRetryDuration() const{ return m_errorRetryDuration; }
+    inline int GetErrorRetryDuration() const { return m_errorRetryDuration; }
     inline bool ErrorRetryDurationHasBeenSet() const { return m_errorRetryDurationHasBeenSet; }
     inline void SetErrorRetryDuration(int value) { m_errorRetryDurationHasBeenSet = true; m_errorRetryDuration = value; }
     inline ElasticsearchSettings& WithErrorRetryDuration(int value) { SetErrorRetryDuration(value); return *this;}
@@ -101,7 +97,7 @@ namespace Model
      * cluster only support the _doc documentation type in versions 7. x and later. The
      * default value is <code>false</code>.</p>
      */
-    inline bool GetUseNewMappingType() const{ return m_useNewMappingType; }
+    inline bool GetUseNewMappingType() const { return m_useNewMappingType; }
     inline bool UseNewMappingTypeHasBeenSet() const { return m_useNewMappingTypeHasBeenSet; }
     inline void SetUseNewMappingType(bool value) { m_useNewMappingTypeHasBeenSet = true; m_useNewMappingType = value; }
     inline ElasticsearchSettings& WithUseNewMappingType(bool value) { SetUseNewMappingType(value); return *this;}
@@ -114,13 +110,13 @@ namespace Model
     Aws::String m_endpointUri;
     bool m_endpointUriHasBeenSet = false;
 
-    int m_fullLoadErrorPercentage;
+    int m_fullLoadErrorPercentage{0};
     bool m_fullLoadErrorPercentageHasBeenSet = false;
 
-    int m_errorRetryDuration;
+    int m_errorRetryDuration{0};
     bool m_errorRetryDurationHasBeenSet = false;
 
-    bool m_useNewMappingType;
+    bool m_useNewMappingType{false};
     bool m_useNewMappingTypeHasBeenSet = false;
   };
 

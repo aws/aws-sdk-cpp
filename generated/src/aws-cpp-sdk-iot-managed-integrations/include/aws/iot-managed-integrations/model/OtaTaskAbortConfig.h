@@ -32,7 +32,7 @@ namespace Model
   class OtaTaskAbortConfig
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskAbortConfig();
+    AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskAbortConfig() = default;
     AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskAbortConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API OtaTaskAbortConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTMANAGEDINTEGRATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>The list of criteria for the abort config.</p>
      */
-    inline const Aws::Vector<AbortConfigCriteria>& GetAbortConfigCriteriaList() const{ return m_abortConfigCriteriaList; }
+    inline const Aws::Vector<AbortConfigCriteria>& GetAbortConfigCriteriaList() const { return m_abortConfigCriteriaList; }
     inline bool AbortConfigCriteriaListHasBeenSet() const { return m_abortConfigCriteriaListHasBeenSet; }
-    inline void SetAbortConfigCriteriaList(const Aws::Vector<AbortConfigCriteria>& value) { m_abortConfigCriteriaListHasBeenSet = true; m_abortConfigCriteriaList = value; }
-    inline void SetAbortConfigCriteriaList(Aws::Vector<AbortConfigCriteria>&& value) { m_abortConfigCriteriaListHasBeenSet = true; m_abortConfigCriteriaList = std::move(value); }
-    inline OtaTaskAbortConfig& WithAbortConfigCriteriaList(const Aws::Vector<AbortConfigCriteria>& value) { SetAbortConfigCriteriaList(value); return *this;}
-    inline OtaTaskAbortConfig& WithAbortConfigCriteriaList(Aws::Vector<AbortConfigCriteria>&& value) { SetAbortConfigCriteriaList(std::move(value)); return *this;}
-    inline OtaTaskAbortConfig& AddAbortConfigCriteriaList(const AbortConfigCriteria& value) { m_abortConfigCriteriaListHasBeenSet = true; m_abortConfigCriteriaList.push_back(value); return *this; }
-    inline OtaTaskAbortConfig& AddAbortConfigCriteriaList(AbortConfigCriteria&& value) { m_abortConfigCriteriaListHasBeenSet = true; m_abortConfigCriteriaList.push_back(std::move(value)); return *this; }
+    template<typename AbortConfigCriteriaListT = Aws::Vector<AbortConfigCriteria>>
+    void SetAbortConfigCriteriaList(AbortConfigCriteriaListT&& value) { m_abortConfigCriteriaListHasBeenSet = true; m_abortConfigCriteriaList = std::forward<AbortConfigCriteriaListT>(value); }
+    template<typename AbortConfigCriteriaListT = Aws::Vector<AbortConfigCriteria>>
+    OtaTaskAbortConfig& WithAbortConfigCriteriaList(AbortConfigCriteriaListT&& value) { SetAbortConfigCriteriaList(std::forward<AbortConfigCriteriaListT>(value)); return *this;}
+    template<typename AbortConfigCriteriaListT = AbortConfigCriteria>
+    OtaTaskAbortConfig& AddAbortConfigCriteriaList(AbortConfigCriteriaListT&& value) { m_abortConfigCriteriaListHasBeenSet = true; m_abortConfigCriteriaList.emplace_back(std::forward<AbortConfigCriteriaListT>(value)); return *this; }
     ///@}
   private:
 

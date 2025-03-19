@@ -12,14 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-BatchUpdatePartitionRequest::BatchUpdatePartitionRequest() : 
-    m_catalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_entriesHasBeenSet(false)
-{
-}
-
 Aws::String BatchUpdatePartitionRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListBackupPlanTemplatesResult::ListBackupPlanTemplatesResult()
-{
-}
-
 ListBackupPlanTemplatesResult::ListBackupPlanTemplatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListBackupPlanTemplatesResult& ListBackupPlanTemplatesResult::operator =(const A
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BackupPlanTemplatesList"))
   {
     Aws::Utils::Array<JsonView> backupPlanTemplatesListJsonList = jsonValue.GetArray("BackupPlanTemplatesList");
@@ -42,14 +37,15 @@ ListBackupPlanTemplatesResult& ListBackupPlanTemplatesResult::operator =(const A
     {
       m_backupPlanTemplatesList.push_back(backupPlanTemplatesListJsonList[backupPlanTemplatesListIndex].AsObject());
     }
+    m_backupPlanTemplatesListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

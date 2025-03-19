@@ -18,14 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-ImpersonatedUser::ImpersonatedUser() : 
-    m_usernameHasBeenSet(false),
-    m_groupsHasBeenSet(false)
-{
-}
-
 ImpersonatedUser::ImpersonatedUser(JsonView jsonValue)
-  : ImpersonatedUser()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ImpersonatedUser& ImpersonatedUser::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("username"))
   {
     m_username = jsonValue.GetString("username");
-
     m_usernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("groups"))
   {
     Aws::Utils::Array<JsonView> groupsJsonList = jsonValue.GetArray("groups");
@@ -48,7 +39,6 @@ ImpersonatedUser& ImpersonatedUser::operator =(JsonView jsonValue)
     }
     m_groupsHasBeenSet = true;
   }
-
   return *this;
 }
 

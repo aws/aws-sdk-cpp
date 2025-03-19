@@ -34,7 +34,7 @@ namespace Model
   class PutDeliverabilityDashboardOptionRequest : public PinpointEmailRequest
   {
   public:
-    AWS_PINPOINTEMAIL_API PutDeliverabilityDashboardOptionRequest();
+    AWS_PINPOINTEMAIL_API PutDeliverabilityDashboardOptionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -51,7 +51,7 @@ namespace Model
      * Pinpoint account. To enable the dashboard, set this value to
      * <code>true</code>.</p>
      */
-    inline bool GetDashboardEnabled() const{ return m_dashboardEnabled; }
+    inline bool GetDashboardEnabled() const { return m_dashboardEnabled; }
     inline bool DashboardEnabledHasBeenSet() const { return m_dashboardEnabledHasBeenSet; }
     inline void SetDashboardEnabled(bool value) { m_dashboardEnabledHasBeenSet = true; m_dashboardEnabled = value; }
     inline PutDeliverabilityDashboardOptionRequest& WithDashboardEnabled(bool value) { SetDashboardEnabled(value); return *this;}
@@ -62,18 +62,18 @@ namespace Model
      * <p>An array of objects, one for each verified domain that you use to send email
      * and enabled the Deliverability dashboard for.</p>
      */
-    inline const Aws::Vector<DomainDeliverabilityTrackingOption>& GetSubscribedDomains() const{ return m_subscribedDomains; }
+    inline const Aws::Vector<DomainDeliverabilityTrackingOption>& GetSubscribedDomains() const { return m_subscribedDomains; }
     inline bool SubscribedDomainsHasBeenSet() const { return m_subscribedDomainsHasBeenSet; }
-    inline void SetSubscribedDomains(const Aws::Vector<DomainDeliverabilityTrackingOption>& value) { m_subscribedDomainsHasBeenSet = true; m_subscribedDomains = value; }
-    inline void SetSubscribedDomains(Aws::Vector<DomainDeliverabilityTrackingOption>&& value) { m_subscribedDomainsHasBeenSet = true; m_subscribedDomains = std::move(value); }
-    inline PutDeliverabilityDashboardOptionRequest& WithSubscribedDomains(const Aws::Vector<DomainDeliverabilityTrackingOption>& value) { SetSubscribedDomains(value); return *this;}
-    inline PutDeliverabilityDashboardOptionRequest& WithSubscribedDomains(Aws::Vector<DomainDeliverabilityTrackingOption>&& value) { SetSubscribedDomains(std::move(value)); return *this;}
-    inline PutDeliverabilityDashboardOptionRequest& AddSubscribedDomains(const DomainDeliverabilityTrackingOption& value) { m_subscribedDomainsHasBeenSet = true; m_subscribedDomains.push_back(value); return *this; }
-    inline PutDeliverabilityDashboardOptionRequest& AddSubscribedDomains(DomainDeliverabilityTrackingOption&& value) { m_subscribedDomainsHasBeenSet = true; m_subscribedDomains.push_back(std::move(value)); return *this; }
+    template<typename SubscribedDomainsT = Aws::Vector<DomainDeliverabilityTrackingOption>>
+    void SetSubscribedDomains(SubscribedDomainsT&& value) { m_subscribedDomainsHasBeenSet = true; m_subscribedDomains = std::forward<SubscribedDomainsT>(value); }
+    template<typename SubscribedDomainsT = Aws::Vector<DomainDeliverabilityTrackingOption>>
+    PutDeliverabilityDashboardOptionRequest& WithSubscribedDomains(SubscribedDomainsT&& value) { SetSubscribedDomains(std::forward<SubscribedDomainsT>(value)); return *this;}
+    template<typename SubscribedDomainsT = DomainDeliverabilityTrackingOption>
+    PutDeliverabilityDashboardOptionRequest& AddSubscribedDomains(SubscribedDomainsT&& value) { m_subscribedDomainsHasBeenSet = true; m_subscribedDomains.emplace_back(std::forward<SubscribedDomainsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_dashboardEnabled;
+    bool m_dashboardEnabled{false};
     bool m_dashboardEnabledHasBeenSet = false;
 
     Aws::Vector<DomainDeliverabilityTrackingOption> m_subscribedDomains;

@@ -12,12 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAccessRequest::DescribeAccessRequest() : 
-    m_serverIdHasBeenSet(false),
-    m_externalIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAccessRequest::SerializePayload() const
 {
   JsonValue payload;

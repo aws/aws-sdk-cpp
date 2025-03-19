@@ -31,7 +31,7 @@ namespace Model
   class NodeType
   {
   public:
-    AWS_SSM_API NodeType();
+    AWS_SSM_API NodeType() = default;
     AWS_SSM_API NodeType(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API NodeType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>Information about a specific managed node.</p>
      */
-    inline const InstanceInfo& GetInstance() const{ return m_instance; }
+    inline const InstanceInfo& GetInstance() const { return m_instance; }
     inline bool InstanceHasBeenSet() const { return m_instanceHasBeenSet; }
-    inline void SetInstance(const InstanceInfo& value) { m_instanceHasBeenSet = true; m_instance = value; }
-    inline void SetInstance(InstanceInfo&& value) { m_instanceHasBeenSet = true; m_instance = std::move(value); }
-    inline NodeType& WithInstance(const InstanceInfo& value) { SetInstance(value); return *this;}
-    inline NodeType& WithInstance(InstanceInfo&& value) { SetInstance(std::move(value)); return *this;}
+    template<typename InstanceT = InstanceInfo>
+    void SetInstance(InstanceT&& value) { m_instanceHasBeenSet = true; m_instance = std::forward<InstanceT>(value); }
+    template<typename InstanceT = InstanceInfo>
+    NodeType& WithInstance(InstanceT&& value) { SetInstance(std::forward<InstanceT>(value)); return *this;}
     ///@}
   private:
 

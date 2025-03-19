@@ -12,20 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeApplicableIndividualAssessmentsRequest::DescribeApplicableIndividualAssessmentsRequest() : 
-    m_replicationTaskArnHasBeenSet(false),
-    m_replicationInstanceArnHasBeenSet(false),
-    m_replicationConfigArnHasBeenSet(false),
-    m_sourceEngineNameHasBeenSet(false),
-    m_targetEngineNameHasBeenSet(false),
-    m_migrationType(MigrationTypeValue::NOT_SET),
-    m_migrationTypeHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeApplicableIndividualAssessmentsRequest::SerializePayload() const
 {
   JsonValue payload;

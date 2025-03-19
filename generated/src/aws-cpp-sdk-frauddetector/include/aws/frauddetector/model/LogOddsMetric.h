@@ -31,7 +31,7 @@ namespace Model
   class LogOddsMetric
   {
   public:
-    AWS_FRAUDDETECTOR_API LogOddsMetric();
+    AWS_FRAUDDETECTOR_API LogOddsMetric() = default;
     AWS_FRAUDDETECTOR_API LogOddsMetric(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API LogOddsMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The name of the variable.</p>
      */
-    inline const Aws::String& GetVariableName() const{ return m_variableName; }
+    inline const Aws::String& GetVariableName() const { return m_variableName; }
     inline bool VariableNameHasBeenSet() const { return m_variableNameHasBeenSet; }
-    inline void SetVariableName(const Aws::String& value) { m_variableNameHasBeenSet = true; m_variableName = value; }
-    inline void SetVariableName(Aws::String&& value) { m_variableNameHasBeenSet = true; m_variableName = std::move(value); }
-    inline void SetVariableName(const char* value) { m_variableNameHasBeenSet = true; m_variableName.assign(value); }
-    inline LogOddsMetric& WithVariableName(const Aws::String& value) { SetVariableName(value); return *this;}
-    inline LogOddsMetric& WithVariableName(Aws::String&& value) { SetVariableName(std::move(value)); return *this;}
-    inline LogOddsMetric& WithVariableName(const char* value) { SetVariableName(value); return *this;}
+    template<typename VariableNameT = Aws::String>
+    void SetVariableName(VariableNameT&& value) { m_variableNameHasBeenSet = true; m_variableName = std::forward<VariableNameT>(value); }
+    template<typename VariableNameT = Aws::String>
+    LogOddsMetric& WithVariableName(VariableNameT&& value) { SetVariableName(std::forward<VariableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of variable.</p>
      */
-    inline const Aws::String& GetVariableType() const{ return m_variableType; }
+    inline const Aws::String& GetVariableType() const { return m_variableType; }
     inline bool VariableTypeHasBeenSet() const { return m_variableTypeHasBeenSet; }
-    inline void SetVariableType(const Aws::String& value) { m_variableTypeHasBeenSet = true; m_variableType = value; }
-    inline void SetVariableType(Aws::String&& value) { m_variableTypeHasBeenSet = true; m_variableType = std::move(value); }
-    inline void SetVariableType(const char* value) { m_variableTypeHasBeenSet = true; m_variableType.assign(value); }
-    inline LogOddsMetric& WithVariableType(const Aws::String& value) { SetVariableType(value); return *this;}
-    inline LogOddsMetric& WithVariableType(Aws::String&& value) { SetVariableType(std::move(value)); return *this;}
-    inline LogOddsMetric& WithVariableType(const char* value) { SetVariableType(value); return *this;}
+    template<typename VariableTypeT = Aws::String>
+    void SetVariableType(VariableTypeT&& value) { m_variableTypeHasBeenSet = true; m_variableType = std::forward<VariableTypeT>(value); }
+    template<typename VariableTypeT = Aws::String>
+    LogOddsMetric& WithVariableType(VariableTypeT&& value) { SetVariableType(std::forward<VariableTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,7 +67,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/frauddetector/latest/ug/model-variable-importance.html">Model
      * variable importance</a>.</p>
      */
-    inline double GetVariableImportance() const{ return m_variableImportance; }
+    inline double GetVariableImportance() const { return m_variableImportance; }
     inline bool VariableImportanceHasBeenSet() const { return m_variableImportanceHasBeenSet; }
     inline void SetVariableImportance(double value) { m_variableImportanceHasBeenSet = true; m_variableImportance = value; }
     inline LogOddsMetric& WithVariableImportance(double value) { SetVariableImportance(value); return *this;}
@@ -84,7 +80,7 @@ namespace Model
     Aws::String m_variableType;
     bool m_variableTypeHasBeenSet = false;
 
-    double m_variableImportance;
+    double m_variableImportance{0.0};
     bool m_variableImportanceHasBeenSet = false;
   };
 

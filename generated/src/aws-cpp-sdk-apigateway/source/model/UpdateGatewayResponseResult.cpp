@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateGatewayResponseResult::UpdateGatewayResponseResult() : 
-    m_responseType(GatewayResponseType::NOT_SET),
-    m_defaultResponse(false)
-{
-}
-
 UpdateGatewayResponseResult::UpdateGatewayResponseResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateGatewayResponseResult()
 {
   *this = result;
 }
@@ -35,15 +28,13 @@ UpdateGatewayResponseResult& UpdateGatewayResponseResult::operator =(const Aws::
   if(jsonValue.ValueExists("responseType"))
   {
     m_responseType = GatewayResponseTypeMapper::GetGatewayResponseTypeForName(jsonValue.GetString("responseType"));
-
+    m_responseTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = jsonValue.GetString("statusCode");
-
+    m_statusCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseParameters"))
   {
     Aws::Map<Aws::String, JsonView> responseParametersJsonMap = jsonValue.GetObject("responseParameters").GetAllObjects();
@@ -51,8 +42,8 @@ UpdateGatewayResponseResult& UpdateGatewayResponseResult::operator =(const Aws::
     {
       m_responseParameters[responseParametersItem.first] = responseParametersItem.second.AsString();
     }
+    m_responseParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("responseTemplates"))
   {
     Aws::Map<Aws::String, JsonView> responseTemplatesJsonMap = jsonValue.GetObject("responseTemplates").GetAllObjects();
@@ -60,20 +51,20 @@ UpdateGatewayResponseResult& UpdateGatewayResponseResult::operator =(const Aws::
     {
       m_responseTemplates[responseTemplatesItem.first] = responseTemplatesItem.second.AsString();
     }
+    m_responseTemplatesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultResponse"))
   {
     m_defaultResponse = jsonValue.GetBool("defaultResponse");
-
+    m_defaultResponseHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

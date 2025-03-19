@@ -23,7 +23,7 @@ namespace Model
   class CreateDatasetRequest : public LookoutforVisionRequest
   {
   public:
-    AWS_LOOKOUTFORVISION_API CreateDatasetRequest();
+    AWS_LOOKOUTFORVISION_API CreateDatasetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The name of the project in which you want to create a dataset.</p>
      */
-    inline const Aws::String& GetProjectName() const{ return m_projectName; }
+    inline const Aws::String& GetProjectName() const { return m_projectName; }
     inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
-    inline void SetProjectName(const Aws::String& value) { m_projectNameHasBeenSet = true; m_projectName = value; }
-    inline void SetProjectName(Aws::String&& value) { m_projectNameHasBeenSet = true; m_projectName = std::move(value); }
-    inline void SetProjectName(const char* value) { m_projectNameHasBeenSet = true; m_projectName.assign(value); }
-    inline CreateDatasetRequest& WithProjectName(const Aws::String& value) { SetProjectName(value); return *this;}
-    inline CreateDatasetRequest& WithProjectName(Aws::String&& value) { SetProjectName(std::move(value)); return *this;}
-    inline CreateDatasetRequest& WithProjectName(const char* value) { SetProjectName(value); return *this;}
+    template<typename ProjectNameT = Aws::String>
+    void SetProjectName(ProjectNameT&& value) { m_projectNameHasBeenSet = true; m_projectName = std::forward<ProjectNameT>(value); }
+    template<typename ProjectNameT = Aws::String>
+    CreateDatasetRequest& WithProjectName(ProjectNameT&& value) { SetProjectName(std::forward<ProjectNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * <p>The type of the dataset. Specify <code>train</code> for a training dataset.
      * Specify <code>test</code> for a test dataset.</p>
      */
-    inline const Aws::String& GetDatasetType() const{ return m_datasetType; }
+    inline const Aws::String& GetDatasetType() const { return m_datasetType; }
     inline bool DatasetTypeHasBeenSet() const { return m_datasetTypeHasBeenSet; }
-    inline void SetDatasetType(const Aws::String& value) { m_datasetTypeHasBeenSet = true; m_datasetType = value; }
-    inline void SetDatasetType(Aws::String&& value) { m_datasetTypeHasBeenSet = true; m_datasetType = std::move(value); }
-    inline void SetDatasetType(const char* value) { m_datasetTypeHasBeenSet = true; m_datasetType.assign(value); }
-    inline CreateDatasetRequest& WithDatasetType(const Aws::String& value) { SetDatasetType(value); return *this;}
-    inline CreateDatasetRequest& WithDatasetType(Aws::String&& value) { SetDatasetType(std::move(value)); return *this;}
-    inline CreateDatasetRequest& WithDatasetType(const char* value) { SetDatasetType(value); return *this;}
+    template<typename DatasetTypeT = Aws::String>
+    void SetDatasetType(DatasetTypeT&& value) { m_datasetTypeHasBeenSet = true; m_datasetType = std::forward<DatasetTypeT>(value); }
+    template<typename DatasetTypeT = Aws::String>
+    CreateDatasetRequest& WithDatasetType(DatasetTypeT&& value) { SetDatasetType(std::forward<DatasetTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,12 +73,12 @@ namespace Model
      * Check the value of <code>Status</code> returned in a call to
      * <a>DescribeDataset</a>.</p>
      */
-    inline const DatasetSource& GetDatasetSource() const{ return m_datasetSource; }
+    inline const DatasetSource& GetDatasetSource() const { return m_datasetSource; }
     inline bool DatasetSourceHasBeenSet() const { return m_datasetSourceHasBeenSet; }
-    inline void SetDatasetSource(const DatasetSource& value) { m_datasetSourceHasBeenSet = true; m_datasetSource = value; }
-    inline void SetDatasetSource(DatasetSource&& value) { m_datasetSourceHasBeenSet = true; m_datasetSource = std::move(value); }
-    inline CreateDatasetRequest& WithDatasetSource(const DatasetSource& value) { SetDatasetSource(value); return *this;}
-    inline CreateDatasetRequest& WithDatasetSource(DatasetSource&& value) { SetDatasetSource(std::move(value)); return *this;}
+    template<typename DatasetSourceT = DatasetSource>
+    void SetDatasetSource(DatasetSourceT&& value) { m_datasetSourceHasBeenSet = true; m_datasetSource = std::forward<DatasetSourceT>(value); }
+    template<typename DatasetSourceT = DatasetSource>
+    CreateDatasetRequest& WithDatasetSource(DatasetSourceT&& value) { SetDatasetSource(std::forward<DatasetSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,14 +96,12 @@ namespace Model
      * <code>ClientToken</code> is considered a new call to <code>CreateDataset</code>.
      * An idempotency token is active for 8 hours. </p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateDatasetRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateDatasetRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateDatasetRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateDatasetRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
   private:
 

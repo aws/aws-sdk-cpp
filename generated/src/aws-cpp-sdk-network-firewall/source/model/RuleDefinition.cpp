@@ -18,14 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-RuleDefinition::RuleDefinition() : 
-    m_matchAttributesHasBeenSet(false),
-    m_actionsHasBeenSet(false)
-{
-}
-
 RuleDefinition::RuleDefinition(JsonView jsonValue)
-  : RuleDefinition()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RuleDefinition& RuleDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MatchAttributes"))
   {
     m_matchAttributes = jsonValue.GetObject("MatchAttributes");
-
     m_matchAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Actions"))
   {
     Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");
@@ -48,7 +39,6 @@ RuleDefinition& RuleDefinition::operator =(JsonView jsonValue)
     }
     m_actionsHasBeenSet = true;
   }
-
   return *this;
 }
 

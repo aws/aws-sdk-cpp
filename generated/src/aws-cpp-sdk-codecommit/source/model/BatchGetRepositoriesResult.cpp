@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchGetRepositoriesResult::BatchGetRepositoriesResult()
-{
-}
-
 BatchGetRepositoriesResult::BatchGetRepositoriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchGetRepositoriesResult& BatchGetRepositoriesResult::operator =(const Aws::Am
     {
       m_repositories.push_back(repositoriesJsonList[repositoriesIndex].AsObject());
     }
+    m_repositoriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoriesNotFound"))
   {
     Aws::Utils::Array<JsonView> repositoriesNotFoundJsonList = jsonValue.GetArray("repositoriesNotFound");
@@ -45,8 +41,8 @@ BatchGetRepositoriesResult& BatchGetRepositoriesResult::operator =(const Aws::Am
     {
       m_repositoriesNotFound.push_back(repositoriesNotFoundJsonList[repositoriesNotFoundIndex].AsString());
     }
+    m_repositoriesNotFoundHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
@@ -54,14 +50,15 @@ BatchGetRepositoriesResult& BatchGetRepositoriesResult::operator =(const Aws::Am
     {
       m_errors.push_back(errorsJsonList[errorsIndex].AsObject());
     }
+    m_errorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -12,18 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RespondToAuthChallengeRequest::RespondToAuthChallengeRequest() : 
-    m_clientIdHasBeenSet(false),
-    m_challengeName(ChallengeNameType::NOT_SET),
-    m_challengeNameHasBeenSet(false),
-    m_sessionHasBeenSet(false),
-    m_challengeResponsesHasBeenSet(false),
-    m_analyticsMetadataHasBeenSet(false),
-    m_userContextDataHasBeenSet(false),
-    m_clientMetadataHasBeenSet(false)
-{
-}
-
 Aws::String RespondToAuthChallengeRequest::SerializePayload() const
 {
   JsonValue payload;

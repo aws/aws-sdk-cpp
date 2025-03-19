@@ -12,17 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetProvisionedProductOutputsRequest::GetProvisionedProductOutputsRequest() : 
-    m_acceptLanguageHasBeenSet(false),
-    m_provisionedProductIdHasBeenSet(false),
-    m_provisionedProductNameHasBeenSet(false),
-    m_outputKeysHasBeenSet(false),
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false),
-    m_pageTokenHasBeenSet(false)
-{
-}
-
 Aws::String GetProvisionedProductOutputsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,15 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-UpdateResult::UpdateResult() : 
-    m_updateAvailable(false),
-    m_updateAvailableHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 UpdateResult::UpdateResult(JsonView jsonValue)
-  : UpdateResult()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ UpdateResult& UpdateResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UpdateAvailable"))
   {
     m_updateAvailable = jsonValue.GetBool("UpdateAvailable");
-
     m_updateAvailableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

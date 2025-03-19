@@ -12,12 +12,6 @@ using namespace Aws::SocialMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateWhatsAppBusinessAccountRequest::AssociateWhatsAppBusinessAccountRequest() : 
-    m_signupCallbackHasBeenSet(false),
-    m_setupFinalizationHasBeenSet(false)
-{
-}
-
 Aws::String AssociateWhatsAppBusinessAccountRequest::SerializePayload() const
 {
   JsonValue payload;

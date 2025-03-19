@@ -30,7 +30,7 @@ namespace Model
   class UpdateHealthCheckRequest : public Route53Request
   {
   public:
-    AWS_ROUTE53_API UpdateHealthCheckRequest();
+    AWS_ROUTE53_API UpdateHealthCheckRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,12 @@ namespace Model
      * created the health check, <code>CreateHealthCheck</code> returned the ID in the
      * response, in the <code>HealthCheckId</code> element.</p>
      */
-    inline const Aws::String& GetHealthCheckId() const{ return m_healthCheckId; }
+    inline const Aws::String& GetHealthCheckId() const { return m_healthCheckId; }
     inline bool HealthCheckIdHasBeenSet() const { return m_healthCheckIdHasBeenSet; }
-    inline void SetHealthCheckId(const Aws::String& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = value; }
-    inline void SetHealthCheckId(Aws::String&& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = std::move(value); }
-    inline void SetHealthCheckId(const char* value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId.assign(value); }
-    inline UpdateHealthCheckRequest& WithHealthCheckId(const Aws::String& value) { SetHealthCheckId(value); return *this;}
-    inline UpdateHealthCheckRequest& WithHealthCheckId(Aws::String&& value) { SetHealthCheckId(std::move(value)); return *this;}
-    inline UpdateHealthCheckRequest& WithHealthCheckId(const char* value) { SetHealthCheckId(value); return *this;}
+    template<typename HealthCheckIdT = Aws::String>
+    void SetHealthCheckId(HealthCheckIdT&& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = std::forward<HealthCheckIdT>(value); }
+    template<typename HealthCheckIdT = Aws::String>
+    UpdateHealthCheckRequest& WithHealthCheckId(HealthCheckIdT&& value) { SetHealthCheckId(std::forward<HealthCheckIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,7 +72,7 @@ namespace Model
      * health check, and it returns a <code>HealthCheckVersionMismatch</code>
      * error.</p> </li> </ul>
      */
-    inline long long GetHealthCheckVersion() const{ return m_healthCheckVersion; }
+    inline long long GetHealthCheckVersion() const { return m_healthCheckVersion; }
     inline bool HealthCheckVersionHasBeenSet() const { return m_healthCheckVersionHasBeenSet; }
     inline void SetHealthCheckVersion(long long value) { m_healthCheckVersionHasBeenSet = true; m_healthCheckVersion = value; }
     inline UpdateHealthCheckRequest& WithHealthCheckVersion(long long value) { SetHealthCheckVersion(value); return *this;}
@@ -121,14 +119,12 @@ namespace Model
      * href="https://tools.ietf.org/html/rfc5156">RFC 5156, Special-Use IPv6
      * Addresses</a> </p> </li> </ul>
      */
-    inline const Aws::String& GetIPAddress() const{ return m_iPAddress; }
+    inline const Aws::String& GetIPAddress() const { return m_iPAddress; }
     inline bool IPAddressHasBeenSet() const { return m_iPAddressHasBeenSet; }
-    inline void SetIPAddress(const Aws::String& value) { m_iPAddressHasBeenSet = true; m_iPAddress = value; }
-    inline void SetIPAddress(Aws::String&& value) { m_iPAddressHasBeenSet = true; m_iPAddress = std::move(value); }
-    inline void SetIPAddress(const char* value) { m_iPAddressHasBeenSet = true; m_iPAddress.assign(value); }
-    inline UpdateHealthCheckRequest& WithIPAddress(const Aws::String& value) { SetIPAddress(value); return *this;}
-    inline UpdateHealthCheckRequest& WithIPAddress(Aws::String&& value) { SetIPAddress(std::move(value)); return *this;}
-    inline UpdateHealthCheckRequest& WithIPAddress(const char* value) { SetIPAddress(value); return *this;}
+    template<typename IPAddressT = Aws::String>
+    void SetIPAddress(IPAddressT&& value) { m_iPAddressHasBeenSet = true; m_iPAddress = std::forward<IPAddressT>(value); }
+    template<typename IPAddressT = Aws::String>
+    UpdateHealthCheckRequest& WithIPAddress(IPAddressT&& value) { SetIPAddress(std::forward<IPAddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -138,7 +134,7 @@ namespace Model
      * specify a value for <code>Type</code> of <code>CLOUDWATCH_METRIC</code> or
      * <code>CALCULATED</code>.</p> 
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline UpdateHealthCheckRequest& WithPort(int value) { SetPort(value); return *this;}
@@ -153,14 +149,12 @@ namespace Model
      * for example, <code>/welcome.html?language=jp&amp;login=y</code>. </p> <p>Specify
      * this value only if you want to change it.</p>
      */
-    inline const Aws::String& GetResourcePath() const{ return m_resourcePath; }
+    inline const Aws::String& GetResourcePath() const { return m_resourcePath; }
     inline bool ResourcePathHasBeenSet() const { return m_resourcePathHasBeenSet; }
-    inline void SetResourcePath(const Aws::String& value) { m_resourcePathHasBeenSet = true; m_resourcePath = value; }
-    inline void SetResourcePath(Aws::String&& value) { m_resourcePathHasBeenSet = true; m_resourcePath = std::move(value); }
-    inline void SetResourcePath(const char* value) { m_resourcePathHasBeenSet = true; m_resourcePath.assign(value); }
-    inline UpdateHealthCheckRequest& WithResourcePath(const Aws::String& value) { SetResourcePath(value); return *this;}
-    inline UpdateHealthCheckRequest& WithResourcePath(Aws::String&& value) { SetResourcePath(std::move(value)); return *this;}
-    inline UpdateHealthCheckRequest& WithResourcePath(const char* value) { SetResourcePath(value); return *this;}
+    template<typename ResourcePathT = Aws::String>
+    void SetResourcePath(ResourcePathT&& value) { m_resourcePathHasBeenSet = true; m_resourcePath = std::forward<ResourcePathT>(value); }
+    template<typename ResourcePathT = Aws::String>
+    UpdateHealthCheckRequest& WithResourcePath(ResourcePathT&& value) { SetResourcePath(std::forward<ResourcePathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -221,14 +215,12 @@ namespace Model
      * <code>Type</code> is <code>TCP</code>, Route 53 doesn't pass a <code>Host</code>
      * header.</p>
      */
-    inline const Aws::String& GetFullyQualifiedDomainName() const{ return m_fullyQualifiedDomainName; }
+    inline const Aws::String& GetFullyQualifiedDomainName() const { return m_fullyQualifiedDomainName; }
     inline bool FullyQualifiedDomainNameHasBeenSet() const { return m_fullyQualifiedDomainNameHasBeenSet; }
-    inline void SetFullyQualifiedDomainName(const Aws::String& value) { m_fullyQualifiedDomainNameHasBeenSet = true; m_fullyQualifiedDomainName = value; }
-    inline void SetFullyQualifiedDomainName(Aws::String&& value) { m_fullyQualifiedDomainNameHasBeenSet = true; m_fullyQualifiedDomainName = std::move(value); }
-    inline void SetFullyQualifiedDomainName(const char* value) { m_fullyQualifiedDomainNameHasBeenSet = true; m_fullyQualifiedDomainName.assign(value); }
-    inline UpdateHealthCheckRequest& WithFullyQualifiedDomainName(const Aws::String& value) { SetFullyQualifiedDomainName(value); return *this;}
-    inline UpdateHealthCheckRequest& WithFullyQualifiedDomainName(Aws::String&& value) { SetFullyQualifiedDomainName(std::move(value)); return *this;}
-    inline UpdateHealthCheckRequest& WithFullyQualifiedDomainName(const char* value) { SetFullyQualifiedDomainName(value); return *this;}
+    template<typename FullyQualifiedDomainNameT = Aws::String>
+    void SetFullyQualifiedDomainName(FullyQualifiedDomainNameT&& value) { m_fullyQualifiedDomainNameHasBeenSet = true; m_fullyQualifiedDomainName = std::forward<FullyQualifiedDomainNameT>(value); }
+    template<typename FullyQualifiedDomainNameT = Aws::String>
+    UpdateHealthCheckRequest& WithFullyQualifiedDomainName(FullyQualifiedDomainNameT&& value) { SetFullyQualifiedDomainName(std::forward<FullyQualifiedDomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -239,14 +231,12 @@ namespace Model
      * the response body, Route 53 considers the resource healthy. (You can't change
      * the value of <code>Type</code> when you update a health check.)</p>
      */
-    inline const Aws::String& GetSearchString() const{ return m_searchString; }
+    inline const Aws::String& GetSearchString() const { return m_searchString; }
     inline bool SearchStringHasBeenSet() const { return m_searchStringHasBeenSet; }
-    inline void SetSearchString(const Aws::String& value) { m_searchStringHasBeenSet = true; m_searchString = value; }
-    inline void SetSearchString(Aws::String&& value) { m_searchStringHasBeenSet = true; m_searchString = std::move(value); }
-    inline void SetSearchString(const char* value) { m_searchStringHasBeenSet = true; m_searchString.assign(value); }
-    inline UpdateHealthCheckRequest& WithSearchString(const Aws::String& value) { SetSearchString(value); return *this;}
-    inline UpdateHealthCheckRequest& WithSearchString(Aws::String&& value) { SetSearchString(std::move(value)); return *this;}
-    inline UpdateHealthCheckRequest& WithSearchString(const char* value) { SetSearchString(value); return *this;}
+    template<typename SearchStringT = Aws::String>
+    void SetSearchString(SearchStringT&& value) { m_searchStringHasBeenSet = true; m_searchString = std::forward<SearchStringT>(value); }
+    template<typename SearchStringT = Aws::String>
+    UpdateHealthCheckRequest& WithSearchString(SearchStringT&& value) { SetSearchString(std::forward<SearchStringT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -259,7 +249,7 @@ namespace Model
      * Route 53 Developer Guide</i>.</p> <p>If you don't specify a value for
      * <code>FailureThreshold</code>, the default value is three health checks.</p>
      */
-    inline int GetFailureThreshold() const{ return m_failureThreshold; }
+    inline int GetFailureThreshold() const { return m_failureThreshold; }
     inline bool FailureThresholdHasBeenSet() const { return m_failureThresholdHasBeenSet; }
     inline void SetFailureThreshold(int value) { m_failureThresholdHasBeenSet = true; m_failureThreshold = value; }
     inline UpdateHealthCheckRequest& WithFailureThreshold(int value) { SetFailureThreshold(value); return *this;}
@@ -271,7 +261,7 @@ namespace Model
      * check, for example, to consider a health check unhealthy when it otherwise would
      * be considered healthy.</p>
      */
-    inline bool GetInverted() const{ return m_inverted; }
+    inline bool GetInverted() const { return m_inverted; }
     inline bool InvertedHasBeenSet() const { return m_invertedHasBeenSet; }
     inline void SetInverted(bool value) { m_invertedHasBeenSet = true; m_inverted = value; }
     inline UpdateHealthCheckRequest& WithInverted(bool value) { SetInverted(value); return *this;}
@@ -295,7 +285,7 @@ namespace Model
      * disabled. For more information, see <a
      * href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.</p>
      */
-    inline bool GetDisabled() const{ return m_disabled; }
+    inline bool GetDisabled() const { return m_disabled; }
     inline bool DisabledHasBeenSet() const { return m_disabledHasBeenSet; }
     inline void SetDisabled(bool value) { m_disabledHasBeenSet = true; m_disabled = value; }
     inline UpdateHealthCheckRequest& WithDisabled(bool value) { SetDisabled(value); return *this;}
@@ -314,7 +304,7 @@ namespace Model
      * specify <code>0</code>, Route 53 always considers this health check to be
      * healthy.</p> </li> </ul>
      */
-    inline int GetHealthThreshold() const{ return m_healthThreshold; }
+    inline int GetHealthThreshold() const { return m_healthThreshold; }
     inline bool HealthThresholdHasBeenSet() const { return m_healthThresholdHasBeenSet; }
     inline void SetHealthThreshold(int value) { m_healthThresholdHasBeenSet = true; m_healthThreshold = value; }
     inline UpdateHealthCheckRequest& WithHealthThreshold(int value) { SetHealthThreshold(value); return *this;}
@@ -326,15 +316,14 @@ namespace Model
      * each health check that you want to associate with a <code>CALCULATED</code>
      * health check.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetChildHealthChecks() const{ return m_childHealthChecks; }
+    inline const Aws::Vector<Aws::String>& GetChildHealthChecks() const { return m_childHealthChecks; }
     inline bool ChildHealthChecksHasBeenSet() const { return m_childHealthChecksHasBeenSet; }
-    inline void SetChildHealthChecks(const Aws::Vector<Aws::String>& value) { m_childHealthChecksHasBeenSet = true; m_childHealthChecks = value; }
-    inline void SetChildHealthChecks(Aws::Vector<Aws::String>&& value) { m_childHealthChecksHasBeenSet = true; m_childHealthChecks = std::move(value); }
-    inline UpdateHealthCheckRequest& WithChildHealthChecks(const Aws::Vector<Aws::String>& value) { SetChildHealthChecks(value); return *this;}
-    inline UpdateHealthCheckRequest& WithChildHealthChecks(Aws::Vector<Aws::String>&& value) { SetChildHealthChecks(std::move(value)); return *this;}
-    inline UpdateHealthCheckRequest& AddChildHealthChecks(const Aws::String& value) { m_childHealthChecksHasBeenSet = true; m_childHealthChecks.push_back(value); return *this; }
-    inline UpdateHealthCheckRequest& AddChildHealthChecks(Aws::String&& value) { m_childHealthChecksHasBeenSet = true; m_childHealthChecks.push_back(std::move(value)); return *this; }
-    inline UpdateHealthCheckRequest& AddChildHealthChecks(const char* value) { m_childHealthChecksHasBeenSet = true; m_childHealthChecks.push_back(value); return *this; }
+    template<typename ChildHealthChecksT = Aws::Vector<Aws::String>>
+    void SetChildHealthChecks(ChildHealthChecksT&& value) { m_childHealthChecksHasBeenSet = true; m_childHealthChecks = std::forward<ChildHealthChecksT>(value); }
+    template<typename ChildHealthChecksT = Aws::Vector<Aws::String>>
+    UpdateHealthCheckRequest& WithChildHealthChecks(ChildHealthChecksT&& value) { SetChildHealthChecks(std::forward<ChildHealthChecksT>(value)); return *this;}
+    template<typename ChildHealthChecksT = Aws::String>
+    UpdateHealthCheckRequest& AddChildHealthChecks(ChildHealthChecksT&& value) { m_childHealthChecksHasBeenSet = true; m_childHealthChecks.emplace_back(std::forward<ChildHealthChecksT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -360,7 +349,7 @@ namespace Model
      * checker will omit <code>FullyQualifiedDomainName</code> from the
      * <code>client_hello</code> message.</p>
      */
-    inline bool GetEnableSNI() const{ return m_enableSNI; }
+    inline bool GetEnableSNI() const { return m_enableSNI; }
     inline bool EnableSNIHasBeenSet() const { return m_enableSNIHasBeenSet; }
     inline void SetEnableSNI(bool value) { m_enableSNIHasBeenSet = true; m_enableSNI = value; }
     inline UpdateHealthCheckRequest& WithEnableSNI(bool value) { SetEnableSNI(value); return *this;}
@@ -372,14 +361,13 @@ namespace Model
      * that you want Amazon Route 53 health checkers to check the specified endpoint
      * from.</p>
      */
-    inline const Aws::Vector<HealthCheckRegion>& GetRegions() const{ return m_regions; }
+    inline const Aws::Vector<HealthCheckRegion>& GetRegions() const { return m_regions; }
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
-    inline void SetRegions(const Aws::Vector<HealthCheckRegion>& value) { m_regionsHasBeenSet = true; m_regions = value; }
-    inline void SetRegions(Aws::Vector<HealthCheckRegion>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
-    inline UpdateHealthCheckRequest& WithRegions(const Aws::Vector<HealthCheckRegion>& value) { SetRegions(value); return *this;}
-    inline UpdateHealthCheckRequest& WithRegions(Aws::Vector<HealthCheckRegion>&& value) { SetRegions(std::move(value)); return *this;}
-    inline UpdateHealthCheckRequest& AddRegions(const HealthCheckRegion& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
-    inline UpdateHealthCheckRequest& AddRegions(HealthCheckRegion&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
+    template<typename RegionsT = Aws::Vector<HealthCheckRegion>>
+    void SetRegions(RegionsT&& value) { m_regionsHasBeenSet = true; m_regions = std::forward<RegionsT>(value); }
+    template<typename RegionsT = Aws::Vector<HealthCheckRegion>>
+    UpdateHealthCheckRequest& WithRegions(RegionsT&& value) { SetRegions(std::forward<RegionsT>(value)); return *this;}
+    inline UpdateHealthCheckRequest& AddRegions(HealthCheckRegion value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -388,12 +376,12 @@ namespace Model
      * Route 53 health checkers to use to determine whether the specified health check
      * is healthy.</p>
      */
-    inline const AlarmIdentifier& GetAlarmIdentifier() const{ return m_alarmIdentifier; }
+    inline const AlarmIdentifier& GetAlarmIdentifier() const { return m_alarmIdentifier; }
     inline bool AlarmIdentifierHasBeenSet() const { return m_alarmIdentifierHasBeenSet; }
-    inline void SetAlarmIdentifier(const AlarmIdentifier& value) { m_alarmIdentifierHasBeenSet = true; m_alarmIdentifier = value; }
-    inline void SetAlarmIdentifier(AlarmIdentifier&& value) { m_alarmIdentifierHasBeenSet = true; m_alarmIdentifier = std::move(value); }
-    inline UpdateHealthCheckRequest& WithAlarmIdentifier(const AlarmIdentifier& value) { SetAlarmIdentifier(value); return *this;}
-    inline UpdateHealthCheckRequest& WithAlarmIdentifier(AlarmIdentifier&& value) { SetAlarmIdentifier(std::move(value)); return *this;}
+    template<typename AlarmIdentifierT = AlarmIdentifier>
+    void SetAlarmIdentifier(AlarmIdentifierT&& value) { m_alarmIdentifierHasBeenSet = true; m_alarmIdentifier = std::forward<AlarmIdentifierT>(value); }
+    template<typename AlarmIdentifierT = AlarmIdentifier>
+    UpdateHealthCheckRequest& WithAlarmIdentifier(AlarmIdentifierT&& value) { SetAlarmIdentifier(std::forward<AlarmIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -408,12 +396,10 @@ namespace Model
      * state. For new health checks that have no last known status, the status for the
      * health check is healthy.</p> </li> </ul>
      */
-    inline const InsufficientDataHealthStatus& GetInsufficientDataHealthStatus() const{ return m_insufficientDataHealthStatus; }
+    inline InsufficientDataHealthStatus GetInsufficientDataHealthStatus() const { return m_insufficientDataHealthStatus; }
     inline bool InsufficientDataHealthStatusHasBeenSet() const { return m_insufficientDataHealthStatusHasBeenSet; }
-    inline void SetInsufficientDataHealthStatus(const InsufficientDataHealthStatus& value) { m_insufficientDataHealthStatusHasBeenSet = true; m_insufficientDataHealthStatus = value; }
-    inline void SetInsufficientDataHealthStatus(InsufficientDataHealthStatus&& value) { m_insufficientDataHealthStatusHasBeenSet = true; m_insufficientDataHealthStatus = std::move(value); }
-    inline UpdateHealthCheckRequest& WithInsufficientDataHealthStatus(const InsufficientDataHealthStatus& value) { SetInsufficientDataHealthStatus(value); return *this;}
-    inline UpdateHealthCheckRequest& WithInsufficientDataHealthStatus(InsufficientDataHealthStatus&& value) { SetInsufficientDataHealthStatus(std::move(value)); return *this;}
+    inline void SetInsufficientDataHealthStatus(InsufficientDataHealthStatus value) { m_insufficientDataHealthStatusHasBeenSet = true; m_insufficientDataHealthStatus = value; }
+    inline UpdateHealthCheckRequest& WithInsufficientDataHealthStatus(InsufficientDataHealthStatus value) { SetInsufficientDataHealthStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -433,27 +419,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_HealthCheckConfig.html#Route53-Type-HealthCheckConfig-ResourcePath">ResourcePath</a>
      * to null.</p> </li> </ul>
      */
-    inline const Aws::Vector<ResettableElementName>& GetResetElements() const{ return m_resetElements; }
+    inline const Aws::Vector<ResettableElementName>& GetResetElements() const { return m_resetElements; }
     inline bool ResetElementsHasBeenSet() const { return m_resetElementsHasBeenSet; }
-    inline void SetResetElements(const Aws::Vector<ResettableElementName>& value) { m_resetElementsHasBeenSet = true; m_resetElements = value; }
-    inline void SetResetElements(Aws::Vector<ResettableElementName>&& value) { m_resetElementsHasBeenSet = true; m_resetElements = std::move(value); }
-    inline UpdateHealthCheckRequest& WithResetElements(const Aws::Vector<ResettableElementName>& value) { SetResetElements(value); return *this;}
-    inline UpdateHealthCheckRequest& WithResetElements(Aws::Vector<ResettableElementName>&& value) { SetResetElements(std::move(value)); return *this;}
-    inline UpdateHealthCheckRequest& AddResetElements(const ResettableElementName& value) { m_resetElementsHasBeenSet = true; m_resetElements.push_back(value); return *this; }
-    inline UpdateHealthCheckRequest& AddResetElements(ResettableElementName&& value) { m_resetElementsHasBeenSet = true; m_resetElements.push_back(std::move(value)); return *this; }
+    template<typename ResetElementsT = Aws::Vector<ResettableElementName>>
+    void SetResetElements(ResetElementsT&& value) { m_resetElementsHasBeenSet = true; m_resetElements = std::forward<ResetElementsT>(value); }
+    template<typename ResetElementsT = Aws::Vector<ResettableElementName>>
+    UpdateHealthCheckRequest& WithResetElements(ResetElementsT&& value) { SetResetElements(std::forward<ResetElementsT>(value)); return *this;}
+    inline UpdateHealthCheckRequest& AddResetElements(ResettableElementName value) { m_resetElementsHasBeenSet = true; m_resetElements.push_back(value); return *this; }
     ///@}
   private:
 
     Aws::String m_healthCheckId;
     bool m_healthCheckIdHasBeenSet = false;
 
-    long long m_healthCheckVersion;
+    long long m_healthCheckVersion{0};
     bool m_healthCheckVersionHasBeenSet = false;
 
     Aws::String m_iPAddress;
     bool m_iPAddressHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
     Aws::String m_resourcePath;
@@ -465,22 +450,22 @@ namespace Model
     Aws::String m_searchString;
     bool m_searchStringHasBeenSet = false;
 
-    int m_failureThreshold;
+    int m_failureThreshold{0};
     bool m_failureThresholdHasBeenSet = false;
 
-    bool m_inverted;
+    bool m_inverted{false};
     bool m_invertedHasBeenSet = false;
 
-    bool m_disabled;
+    bool m_disabled{false};
     bool m_disabledHasBeenSet = false;
 
-    int m_healthThreshold;
+    int m_healthThreshold{0};
     bool m_healthThresholdHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_childHealthChecks;
     bool m_childHealthChecksHasBeenSet = false;
 
-    bool m_enableSNI;
+    bool m_enableSNI{false};
     bool m_enableSNIHasBeenSet = false;
 
     Aws::Vector<HealthCheckRegion> m_regions;
@@ -489,7 +474,7 @@ namespace Model
     AlarmIdentifier m_alarmIdentifier;
     bool m_alarmIdentifierHasBeenSet = false;
 
-    InsufficientDataHealthStatus m_insufficientDataHealthStatus;
+    InsufficientDataHealthStatus m_insufficientDataHealthStatus{InsufficientDataHealthStatus::NOT_SET};
     bool m_insufficientDataHealthStatusHasBeenSet = false;
 
     Aws::Vector<ResettableElementName> m_resetElements;

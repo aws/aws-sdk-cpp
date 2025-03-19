@@ -18,13 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-DisassociatedFace::DisassociatedFace() : 
-    m_faceIdHasBeenSet(false)
-{
-}
-
 DisassociatedFace::DisassociatedFace(JsonView jsonValue)
-  : DisassociatedFace()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DisassociatedFace& DisassociatedFace::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FaceId"))
   {
     m_faceId = jsonValue.GetString("FaceId");
-
     m_faceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,19 +12,6 @@ using namespace Aws::MTurk::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateHITTypeRequest::CreateHITTypeRequest() : 
-    m_autoApprovalDelayInSeconds(0),
-    m_autoApprovalDelayInSecondsHasBeenSet(false),
-    m_assignmentDurationInSeconds(0),
-    m_assignmentDurationInSecondsHasBeenSet(false),
-    m_rewardHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_keywordsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_qualificationRequirementsHasBeenSet(false)
-{
-}
-
 Aws::String CreateHITTypeRequest::SerializePayload() const
 {
   JsonValue payload;

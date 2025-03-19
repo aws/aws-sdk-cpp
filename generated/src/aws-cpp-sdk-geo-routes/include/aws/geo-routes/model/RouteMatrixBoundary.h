@@ -33,7 +33,7 @@ namespace Model
   class RouteMatrixBoundary
   {
   public:
-    AWS_GEOROUTES_API RouteMatrixBoundary();
+    AWS_GEOROUTES_API RouteMatrixBoundary() = default;
     AWS_GEOROUTES_API RouteMatrixBoundary(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteMatrixBoundary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>Geometry of the area to be avoided.</p>
      */
-    inline const RouteMatrixBoundaryGeometry& GetGeometry() const{ return m_geometry; }
+    inline const RouteMatrixBoundaryGeometry& GetGeometry() const { return m_geometry; }
     inline bool GeometryHasBeenSet() const { return m_geometryHasBeenSet; }
-    inline void SetGeometry(const RouteMatrixBoundaryGeometry& value) { m_geometryHasBeenSet = true; m_geometry = value; }
-    inline void SetGeometry(RouteMatrixBoundaryGeometry&& value) { m_geometryHasBeenSet = true; m_geometry = std::move(value); }
-    inline RouteMatrixBoundary& WithGeometry(const RouteMatrixBoundaryGeometry& value) { SetGeometry(value); return *this;}
-    inline RouteMatrixBoundary& WithGeometry(RouteMatrixBoundaryGeometry&& value) { SetGeometry(std::move(value)); return *this;}
+    template<typename GeometryT = RouteMatrixBoundaryGeometry>
+    void SetGeometry(GeometryT&& value) { m_geometryHasBeenSet = true; m_geometry = std::forward<GeometryT>(value); }
+    template<typename GeometryT = RouteMatrixBoundaryGeometry>
+    RouteMatrixBoundary& WithGeometry(GeometryT&& value) { SetGeometry(std::forward<GeometryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,7 +56,7 @@ namespace Model
      * <p>No restrictions in terms of a routing boundary, and is typically used for
      * longer routes.</p>
      */
-    inline bool GetUnbounded() const{ return m_unbounded; }
+    inline bool GetUnbounded() const { return m_unbounded; }
     inline bool UnboundedHasBeenSet() const { return m_unboundedHasBeenSet; }
     inline void SetUnbounded(bool value) { m_unboundedHasBeenSet = true; m_unbounded = value; }
     inline RouteMatrixBoundary& WithUnbounded(bool value) { SetUnbounded(value); return *this;}
@@ -66,7 +66,7 @@ namespace Model
     RouteMatrixBoundaryGeometry m_geometry;
     bool m_geometryHasBeenSet = false;
 
-    bool m_unbounded;
+    bool m_unbounded{false};
     bool m_unboundedHasBeenSet = false;
   };
 

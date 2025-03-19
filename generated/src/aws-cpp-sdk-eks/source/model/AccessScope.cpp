@@ -18,15 +18,7 @@ namespace EKS
 namespace Model
 {
 
-AccessScope::AccessScope() : 
-    m_type(AccessScopeType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_namespacesHasBeenSet(false)
-{
-}
-
 AccessScope::AccessScope(JsonView jsonValue)
-  : AccessScope()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ AccessScope& AccessScope::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = AccessScopeTypeMapper::GetAccessScopeTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespaces"))
   {
     Aws::Utils::Array<JsonView> namespacesJsonList = jsonValue.GetArray("namespaces");
@@ -49,7 +39,6 @@ AccessScope& AccessScope::operator =(JsonView jsonValue)
     }
     m_namespacesHasBeenSet = true;
   }
-
   return *this;
 }
 

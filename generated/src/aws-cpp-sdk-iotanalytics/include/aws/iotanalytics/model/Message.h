@@ -32,7 +32,7 @@ namespace Model
   class Message
   {
   public:
-    AWS_IOTANALYTICS_API Message();
+    AWS_IOTANALYTICS_API Message() = default;
     AWS_IOTANALYTICS_API Message(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Message& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The ID you want to assign to the message. Each <code>messageId</code> must be
      * unique within each batch sent.</p>
      */
-    inline const Aws::String& GetMessageId() const{ return m_messageId; }
+    inline const Aws::String& GetMessageId() const { return m_messageId; }
     inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
-    inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
-    inline void SetMessageId(Aws::String&& value) { m_messageIdHasBeenSet = true; m_messageId = std::move(value); }
-    inline void SetMessageId(const char* value) { m_messageIdHasBeenSet = true; m_messageId.assign(value); }
-    inline Message& WithMessageId(const Aws::String& value) { SetMessageId(value); return *this;}
-    inline Message& WithMessageId(Aws::String&& value) { SetMessageId(std::move(value)); return *this;}
-    inline Message& WithMessageId(const char* value) { SetMessageId(value); return *this;}
+    template<typename MessageIdT = Aws::String>
+    void SetMessageId(MessageIdT&& value) { m_messageIdHasBeenSet = true; m_messageId = std::forward<MessageIdT>(value); }
+    template<typename MessageIdT = Aws::String>
+    Message& WithMessageId(MessageIdT&& value) { SetMessageId(std::forward<MessageIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,19 +57,19 @@ namespace Model
      * string representing binary data, in which case you must decode it by means of a
      * pipeline activity.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetPayload() const{ return m_payload; }
+    inline const Aws::Utils::ByteBuffer& GetPayload() const { return m_payload; }
     inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
-    inline void SetPayload(const Aws::Utils::ByteBuffer& value) { m_payloadHasBeenSet = true; m_payload = value; }
-    inline void SetPayload(Aws::Utils::ByteBuffer&& value) { m_payloadHasBeenSet = true; m_payload = std::move(value); }
-    inline Message& WithPayload(const Aws::Utils::ByteBuffer& value) { SetPayload(value); return *this;}
-    inline Message& WithPayload(Aws::Utils::ByteBuffer&& value) { SetPayload(std::move(value)); return *this;}
+    template<typename PayloadT = Aws::Utils::ByteBuffer>
+    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
+    template<typename PayloadT = Aws::Utils::ByteBuffer>
+    Message& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_messageId;
     bool m_messageIdHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_payload;
+    Aws::Utils::ByteBuffer m_payload{};
     bool m_payloadHasBeenSet = false;
   };
 

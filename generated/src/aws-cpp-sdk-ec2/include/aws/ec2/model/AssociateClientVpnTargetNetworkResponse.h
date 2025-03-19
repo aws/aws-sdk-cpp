@@ -29,7 +29,7 @@ namespace Model
   class AssociateClientVpnTargetNetworkResponse
   {
   public:
-    AWS_EC2_API AssociateClientVpnTargetNetworkResponse();
+    AWS_EC2_API AssociateClientVpnTargetNetworkResponse() = default;
     AWS_EC2_API AssociateClientVpnTargetNetworkResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API AssociateClientVpnTargetNetworkResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,41 +38,42 @@ namespace Model
     /**
      * <p>The unique ID of the target network association.</p>
      */
-    inline const Aws::String& GetAssociationId() const{ return m_associationId; }
-    inline void SetAssociationId(const Aws::String& value) { m_associationId = value; }
-    inline void SetAssociationId(Aws::String&& value) { m_associationId = std::move(value); }
-    inline void SetAssociationId(const char* value) { m_associationId.assign(value); }
-    inline AssociateClientVpnTargetNetworkResponse& WithAssociationId(const Aws::String& value) { SetAssociationId(value); return *this;}
-    inline AssociateClientVpnTargetNetworkResponse& WithAssociationId(Aws::String&& value) { SetAssociationId(std::move(value)); return *this;}
-    inline AssociateClientVpnTargetNetworkResponse& WithAssociationId(const char* value) { SetAssociationId(value); return *this;}
+    inline const Aws::String& GetAssociationId() const { return m_associationId; }
+    template<typename AssociationIdT = Aws::String>
+    void SetAssociationId(AssociationIdT&& value) { m_associationIdHasBeenSet = true; m_associationId = std::forward<AssociationIdT>(value); }
+    template<typename AssociationIdT = Aws::String>
+    AssociateClientVpnTargetNetworkResponse& WithAssociationId(AssociationIdT&& value) { SetAssociationId(std::forward<AssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current state of the target network association.</p>
      */
-    inline const AssociationStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const AssociationStatus& value) { m_status = value; }
-    inline void SetStatus(AssociationStatus&& value) { m_status = std::move(value); }
-    inline AssociateClientVpnTargetNetworkResponse& WithStatus(const AssociationStatus& value) { SetStatus(value); return *this;}
-    inline AssociateClientVpnTargetNetworkResponse& WithStatus(AssociationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline const AssociationStatus& GetStatus() const { return m_status; }
+    template<typename StatusT = AssociationStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = AssociationStatus>
+    AssociateClientVpnTargetNetworkResponse& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline AssociateClientVpnTargetNetworkResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline AssociateClientVpnTargetNetworkResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    AssociateClientVpnTargetNetworkResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_associationId;
+    bool m_associationIdHasBeenSet = false;
 
     AssociationStatus m_status;
+    bool m_statusHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-DisconnectDetails::DisconnectDetails() : 
-    m_potentialDisconnectIssueHasBeenSet(false)
-{
-}
-
 DisconnectDetails::DisconnectDetails(JsonView jsonValue)
-  : DisconnectDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DisconnectDetails& DisconnectDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PotentialDisconnectIssue"))
   {
     m_potentialDisconnectIssue = jsonValue.GetString("PotentialDisconnectIssue");
-
     m_potentialDisconnectIssueHasBeenSet = true;
   }
-
   return *this;
 }
 

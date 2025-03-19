@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdateAccountCustomizationRequest::UpdateAccountCustomizationRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_accountCustomizationHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAccountCustomizationRequest::SerializePayload() const
 {
   JsonValue payload;

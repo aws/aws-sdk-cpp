@@ -18,16 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RouteMatrixAllowOptions::RouteMatrixAllowOptions() : 
-    m_hot(false),
-    m_hotHasBeenSet(false),
-    m_hov(false),
-    m_hovHasBeenSet(false)
-{
-}
-
 RouteMatrixAllowOptions::RouteMatrixAllowOptions(JsonView jsonValue)
-  : RouteMatrixAllowOptions()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RouteMatrixAllowOptions& RouteMatrixAllowOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Hot"))
   {
     m_hot = jsonValue.GetBool("Hot");
-
     m_hotHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Hov"))
   {
     m_hov = jsonValue.GetBool("Hov");
-
     m_hovHasBeenSet = true;
   }
-
   return *this;
 }
 

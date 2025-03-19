@@ -18,17 +18,7 @@ namespace Glue
 namespace Model
 {
 
-ExecutionAttempt::ExecutionAttempt() : 
-    m_status(ExecutionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_columnStatisticsTaskRunIdHasBeenSet(false),
-    m_executionTimestampHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 ExecutionAttempt::ExecutionAttempt(JsonView jsonValue)
-  : ExecutionAttempt()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ExecutionAttempt& ExecutionAttempt::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ExecutionStatusMapper::GetExecutionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnStatisticsTaskRunId"))
   {
     m_columnStatisticsTaskRunId = jsonValue.GetString("ColumnStatisticsTaskRunId");
-
     m_columnStatisticsTaskRunIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionTimestamp"))
   {
     m_executionTimestamp = jsonValue.GetDouble("ExecutionTimestamp");
-
     m_executionTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

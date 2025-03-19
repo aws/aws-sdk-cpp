@@ -18,14 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-DestinationConfig::DestinationConfig() : 
-    m_onSuccessHasBeenSet(false),
-    m_onFailureHasBeenSet(false)
-{
-}
-
 DestinationConfig::DestinationConfig(JsonView jsonValue)
-  : DestinationConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DestinationConfig& DestinationConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OnSuccess"))
   {
     m_onSuccess = jsonValue.GetObject("OnSuccess");
-
     m_onSuccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OnFailure"))
   {
     m_onFailure = jsonValue.GetObject("OnFailure");
-
     m_onFailureHasBeenSet = true;
   }
-
   return *this;
 }
 

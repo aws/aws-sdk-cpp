@@ -33,7 +33,7 @@ namespace Model
   class ActionGroupSummary
   {
   public:
-    AWS_BEDROCKAGENT_API ActionGroupSummary();
+    AWS_BEDROCKAGENT_API ActionGroupSummary() = default;
     AWS_BEDROCKAGENT_API ActionGroupSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API ActionGroupSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The unique identifier of the action group.</p>
      */
-    inline const Aws::String& GetActionGroupId() const{ return m_actionGroupId; }
+    inline const Aws::String& GetActionGroupId() const { return m_actionGroupId; }
     inline bool ActionGroupIdHasBeenSet() const { return m_actionGroupIdHasBeenSet; }
-    inline void SetActionGroupId(const Aws::String& value) { m_actionGroupIdHasBeenSet = true; m_actionGroupId = value; }
-    inline void SetActionGroupId(Aws::String&& value) { m_actionGroupIdHasBeenSet = true; m_actionGroupId = std::move(value); }
-    inline void SetActionGroupId(const char* value) { m_actionGroupIdHasBeenSet = true; m_actionGroupId.assign(value); }
-    inline ActionGroupSummary& WithActionGroupId(const Aws::String& value) { SetActionGroupId(value); return *this;}
-    inline ActionGroupSummary& WithActionGroupId(Aws::String&& value) { SetActionGroupId(std::move(value)); return *this;}
-    inline ActionGroupSummary& WithActionGroupId(const char* value) { SetActionGroupId(value); return *this;}
+    template<typename ActionGroupIdT = Aws::String>
+    void SetActionGroupId(ActionGroupIdT&& value) { m_actionGroupIdHasBeenSet = true; m_actionGroupId = std::forward<ActionGroupIdT>(value); }
+    template<typename ActionGroupIdT = Aws::String>
+    ActionGroupSummary& WithActionGroupId(ActionGroupIdT&& value) { SetActionGroupId(std::forward<ActionGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the action group.</p>
      */
-    inline const Aws::String& GetActionGroupName() const{ return m_actionGroupName; }
+    inline const Aws::String& GetActionGroupName() const { return m_actionGroupName; }
     inline bool ActionGroupNameHasBeenSet() const { return m_actionGroupNameHasBeenSet; }
-    inline void SetActionGroupName(const Aws::String& value) { m_actionGroupNameHasBeenSet = true; m_actionGroupName = value; }
-    inline void SetActionGroupName(Aws::String&& value) { m_actionGroupNameHasBeenSet = true; m_actionGroupName = std::move(value); }
-    inline void SetActionGroupName(const char* value) { m_actionGroupNameHasBeenSet = true; m_actionGroupName.assign(value); }
-    inline ActionGroupSummary& WithActionGroupName(const Aws::String& value) { SetActionGroupName(value); return *this;}
-    inline ActionGroupSummary& WithActionGroupName(Aws::String&& value) { SetActionGroupName(std::move(value)); return *this;}
-    inline ActionGroupSummary& WithActionGroupName(const char* value) { SetActionGroupName(value); return *this;}
+    template<typename ActionGroupNameT = Aws::String>
+    void SetActionGroupName(ActionGroupNameT&& value) { m_actionGroupNameHasBeenSet = true; m_actionGroupName = std::forward<ActionGroupNameT>(value); }
+    template<typename ActionGroupNameT = Aws::String>
+    ActionGroupSummary& WithActionGroupName(ActionGroupNameT&& value) { SetActionGroupName(std::forward<ActionGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,38 +70,34 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/APIReference/API_agent-runtime_InvokeAgent.html">InvokeAgent</a>
      * request.</p>
      */
-    inline const ActionGroupState& GetActionGroupState() const{ return m_actionGroupState; }
+    inline ActionGroupState GetActionGroupState() const { return m_actionGroupState; }
     inline bool ActionGroupStateHasBeenSet() const { return m_actionGroupStateHasBeenSet; }
-    inline void SetActionGroupState(const ActionGroupState& value) { m_actionGroupStateHasBeenSet = true; m_actionGroupState = value; }
-    inline void SetActionGroupState(ActionGroupState&& value) { m_actionGroupStateHasBeenSet = true; m_actionGroupState = std::move(value); }
-    inline ActionGroupSummary& WithActionGroupState(const ActionGroupState& value) { SetActionGroupState(value); return *this;}
-    inline ActionGroupSummary& WithActionGroupState(ActionGroupState&& value) { SetActionGroupState(std::move(value)); return *this;}
+    inline void SetActionGroupState(ActionGroupState value) { m_actionGroupStateHasBeenSet = true; m_actionGroupState = value; }
+    inline ActionGroupSummary& WithActionGroupState(ActionGroupState value) { SetActionGroupState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the action group.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ActionGroupSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ActionGroupSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ActionGroupSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ActionGroupSummary& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the action group was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline ActionGroupSummary& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline ActionGroupSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    ActionGroupSummary& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
   private:
 
@@ -115,13 +107,13 @@ namespace Model
     Aws::String m_actionGroupName;
     bool m_actionGroupNameHasBeenSet = false;
 
-    ActionGroupState m_actionGroupState;
+    ActionGroupState m_actionGroupState{ActionGroupState::NOT_SET};
     bool m_actionGroupStateHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
   };
 

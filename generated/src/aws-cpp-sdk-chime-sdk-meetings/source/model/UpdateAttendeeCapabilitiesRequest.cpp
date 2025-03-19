@@ -12,13 +12,6 @@ using namespace Aws::ChimeSDKMeetings::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAttendeeCapabilitiesRequest::UpdateAttendeeCapabilitiesRequest() : 
-    m_meetingIdHasBeenSet(false),
-    m_attendeeIdHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAttendeeCapabilitiesRequest::SerializePayload() const
 {
   JsonValue payload;

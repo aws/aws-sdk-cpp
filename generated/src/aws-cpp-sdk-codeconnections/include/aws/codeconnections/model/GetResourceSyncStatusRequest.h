@@ -22,7 +22,7 @@ namespace Model
   class GetResourceSyncStatusRequest : public CodeConnectionsRequest
   {
   public:
-    AWS_CODECONNECTIONS_API GetResourceSyncStatusRequest();
+    AWS_CODECONNECTIONS_API GetResourceSyncStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,33 +40,29 @@ namespace Model
      * <p>The name of the Amazon Web Services resource for the sync status with the Git
      * repository.</p>
      */
-    inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+    inline const Aws::String& GetResourceName() const { return m_resourceName; }
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-    inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-    inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-    inline GetResourceSyncStatusRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-    inline GetResourceSyncStatusRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-    inline GetResourceSyncStatusRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    template<typename ResourceNameT = Aws::String>
+    void SetResourceName(ResourceNameT&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::forward<ResourceNameT>(value); }
+    template<typename ResourceNameT = Aws::String>
+    GetResourceSyncStatusRequest& WithResourceName(ResourceNameT&& value) { SetResourceName(std::forward<ResourceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sync type for the sync status with the Git repository.</p>
      */
-    inline const SyncConfigurationType& GetSyncType() const{ return m_syncType; }
+    inline SyncConfigurationType GetSyncType() const { return m_syncType; }
     inline bool SyncTypeHasBeenSet() const { return m_syncTypeHasBeenSet; }
-    inline void SetSyncType(const SyncConfigurationType& value) { m_syncTypeHasBeenSet = true; m_syncType = value; }
-    inline void SetSyncType(SyncConfigurationType&& value) { m_syncTypeHasBeenSet = true; m_syncType = std::move(value); }
-    inline GetResourceSyncStatusRequest& WithSyncType(const SyncConfigurationType& value) { SetSyncType(value); return *this;}
-    inline GetResourceSyncStatusRequest& WithSyncType(SyncConfigurationType&& value) { SetSyncType(std::move(value)); return *this;}
+    inline void SetSyncType(SyncConfigurationType value) { m_syncTypeHasBeenSet = true; m_syncType = value; }
+    inline GetResourceSyncStatusRequest& WithSyncType(SyncConfigurationType value) { SetSyncType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_resourceName;
     bool m_resourceNameHasBeenSet = false;
 
-    SyncConfigurationType m_syncType;
+    SyncConfigurationType m_syncType{SyncConfigurationType::NOT_SET};
     bool m_syncTypeHasBeenSet = false;
   };
 

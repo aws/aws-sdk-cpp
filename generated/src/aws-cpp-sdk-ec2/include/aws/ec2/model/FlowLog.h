@@ -37,7 +37,7 @@ namespace Model
   class FlowLog
   {
   public:
-    AWS_EC2_API FlowLog();
+    AWS_EC2_API FlowLog() = default;
     AWS_EC2_API FlowLog(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API FlowLog& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -49,12 +49,12 @@ namespace Model
     /**
      * <p>The date and time the flow log was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline FlowLog& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline FlowLog& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    FlowLog& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +66,12 @@ namespace Model
      * associated with the flow log does not have sufficient permissions to publish to
      * CloudWatch Logs. <code>Unknown error</code> indicates an internal error.</p>
      */
-    inline const Aws::String& GetDeliverLogsErrorMessage() const{ return m_deliverLogsErrorMessage; }
+    inline const Aws::String& GetDeliverLogsErrorMessage() const { return m_deliverLogsErrorMessage; }
     inline bool DeliverLogsErrorMessageHasBeenSet() const { return m_deliverLogsErrorMessageHasBeenSet; }
-    inline void SetDeliverLogsErrorMessage(const Aws::String& value) { m_deliverLogsErrorMessageHasBeenSet = true; m_deliverLogsErrorMessage = value; }
-    inline void SetDeliverLogsErrorMessage(Aws::String&& value) { m_deliverLogsErrorMessageHasBeenSet = true; m_deliverLogsErrorMessage = std::move(value); }
-    inline void SetDeliverLogsErrorMessage(const char* value) { m_deliverLogsErrorMessageHasBeenSet = true; m_deliverLogsErrorMessage.assign(value); }
-    inline FlowLog& WithDeliverLogsErrorMessage(const Aws::String& value) { SetDeliverLogsErrorMessage(value); return *this;}
-    inline FlowLog& WithDeliverLogsErrorMessage(Aws::String&& value) { SetDeliverLogsErrorMessage(std::move(value)); return *this;}
-    inline FlowLog& WithDeliverLogsErrorMessage(const char* value) { SetDeliverLogsErrorMessage(value); return *this;}
+    template<typename DeliverLogsErrorMessageT = Aws::String>
+    void SetDeliverLogsErrorMessage(DeliverLogsErrorMessageT&& value) { m_deliverLogsErrorMessageHasBeenSet = true; m_deliverLogsErrorMessage = std::forward<DeliverLogsErrorMessageT>(value); }
+    template<typename DeliverLogsErrorMessageT = Aws::String>
+    FlowLog& WithDeliverLogsErrorMessage(DeliverLogsErrorMessageT&& value) { SetDeliverLogsErrorMessage(std::forward<DeliverLogsErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +79,12 @@ namespace Model
      * <p>The ARN of the IAM role allows the service to publish logs to CloudWatch
      * Logs.</p>
      */
-    inline const Aws::String& GetDeliverLogsPermissionArn() const{ return m_deliverLogsPermissionArn; }
+    inline const Aws::String& GetDeliverLogsPermissionArn() const { return m_deliverLogsPermissionArn; }
     inline bool DeliverLogsPermissionArnHasBeenSet() const { return m_deliverLogsPermissionArnHasBeenSet; }
-    inline void SetDeliverLogsPermissionArn(const Aws::String& value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn = value; }
-    inline void SetDeliverLogsPermissionArn(Aws::String&& value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn = std::move(value); }
-    inline void SetDeliverLogsPermissionArn(const char* value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn.assign(value); }
-    inline FlowLog& WithDeliverLogsPermissionArn(const Aws::String& value) { SetDeliverLogsPermissionArn(value); return *this;}
-    inline FlowLog& WithDeliverLogsPermissionArn(Aws::String&& value) { SetDeliverLogsPermissionArn(std::move(value)); return *this;}
-    inline FlowLog& WithDeliverLogsPermissionArn(const char* value) { SetDeliverLogsPermissionArn(value); return *this;}
+    template<typename DeliverLogsPermissionArnT = Aws::String>
+    void SetDeliverLogsPermissionArn(DeliverLogsPermissionArnT&& value) { m_deliverLogsPermissionArnHasBeenSet = true; m_deliverLogsPermissionArn = std::forward<DeliverLogsPermissionArnT>(value); }
+    template<typename DeliverLogsPermissionArnT = Aws::String>
+    FlowLog& WithDeliverLogsPermissionArn(DeliverLogsPermissionArnT&& value) { SetDeliverLogsPermissionArn(std::forward<DeliverLogsPermissionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +92,12 @@ namespace Model
      * <p>The ARN of the IAM role that allows the service to publish flow logs across
      * accounts.</p>
      */
-    inline const Aws::String& GetDeliverCrossAccountRole() const{ return m_deliverCrossAccountRole; }
+    inline const Aws::String& GetDeliverCrossAccountRole() const { return m_deliverCrossAccountRole; }
     inline bool DeliverCrossAccountRoleHasBeenSet() const { return m_deliverCrossAccountRoleHasBeenSet; }
-    inline void SetDeliverCrossAccountRole(const Aws::String& value) { m_deliverCrossAccountRoleHasBeenSet = true; m_deliverCrossAccountRole = value; }
-    inline void SetDeliverCrossAccountRole(Aws::String&& value) { m_deliverCrossAccountRoleHasBeenSet = true; m_deliverCrossAccountRole = std::move(value); }
-    inline void SetDeliverCrossAccountRole(const char* value) { m_deliverCrossAccountRoleHasBeenSet = true; m_deliverCrossAccountRole.assign(value); }
-    inline FlowLog& WithDeliverCrossAccountRole(const Aws::String& value) { SetDeliverCrossAccountRole(value); return *this;}
-    inline FlowLog& WithDeliverCrossAccountRole(Aws::String&& value) { SetDeliverCrossAccountRole(std::move(value)); return *this;}
-    inline FlowLog& WithDeliverCrossAccountRole(const char* value) { SetDeliverCrossAccountRole(value); return *this;}
+    template<typename DeliverCrossAccountRoleT = Aws::String>
+    void SetDeliverCrossAccountRole(DeliverCrossAccountRoleT&& value) { m_deliverCrossAccountRoleHasBeenSet = true; m_deliverCrossAccountRole = std::forward<DeliverCrossAccountRoleT>(value); }
+    template<typename DeliverCrossAccountRoleT = Aws::String>
+    FlowLog& WithDeliverCrossAccountRole(DeliverCrossAccountRoleT&& value) { SetDeliverCrossAccountRole(std::forward<DeliverCrossAccountRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,136 +105,118 @@ namespace Model
      * <p>The status of the logs delivery (<code>SUCCESS</code> |
      * <code>FAILED</code>).</p>
      */
-    inline const Aws::String& GetDeliverLogsStatus() const{ return m_deliverLogsStatus; }
+    inline const Aws::String& GetDeliverLogsStatus() const { return m_deliverLogsStatus; }
     inline bool DeliverLogsStatusHasBeenSet() const { return m_deliverLogsStatusHasBeenSet; }
-    inline void SetDeliverLogsStatus(const Aws::String& value) { m_deliverLogsStatusHasBeenSet = true; m_deliverLogsStatus = value; }
-    inline void SetDeliverLogsStatus(Aws::String&& value) { m_deliverLogsStatusHasBeenSet = true; m_deliverLogsStatus = std::move(value); }
-    inline void SetDeliverLogsStatus(const char* value) { m_deliverLogsStatusHasBeenSet = true; m_deliverLogsStatus.assign(value); }
-    inline FlowLog& WithDeliverLogsStatus(const Aws::String& value) { SetDeliverLogsStatus(value); return *this;}
-    inline FlowLog& WithDeliverLogsStatus(Aws::String&& value) { SetDeliverLogsStatus(std::move(value)); return *this;}
-    inline FlowLog& WithDeliverLogsStatus(const char* value) { SetDeliverLogsStatus(value); return *this;}
+    template<typename DeliverLogsStatusT = Aws::String>
+    void SetDeliverLogsStatus(DeliverLogsStatusT&& value) { m_deliverLogsStatusHasBeenSet = true; m_deliverLogsStatus = std::forward<DeliverLogsStatusT>(value); }
+    template<typename DeliverLogsStatusT = Aws::String>
+    FlowLog& WithDeliverLogsStatus(DeliverLogsStatusT&& value) { SetDeliverLogsStatus(std::forward<DeliverLogsStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the flow log.</p>
      */
-    inline const Aws::String& GetFlowLogId() const{ return m_flowLogId; }
+    inline const Aws::String& GetFlowLogId() const { return m_flowLogId; }
     inline bool FlowLogIdHasBeenSet() const { return m_flowLogIdHasBeenSet; }
-    inline void SetFlowLogId(const Aws::String& value) { m_flowLogIdHasBeenSet = true; m_flowLogId = value; }
-    inline void SetFlowLogId(Aws::String&& value) { m_flowLogIdHasBeenSet = true; m_flowLogId = std::move(value); }
-    inline void SetFlowLogId(const char* value) { m_flowLogIdHasBeenSet = true; m_flowLogId.assign(value); }
-    inline FlowLog& WithFlowLogId(const Aws::String& value) { SetFlowLogId(value); return *this;}
-    inline FlowLog& WithFlowLogId(Aws::String&& value) { SetFlowLogId(std::move(value)); return *this;}
-    inline FlowLog& WithFlowLogId(const char* value) { SetFlowLogId(value); return *this;}
+    template<typename FlowLogIdT = Aws::String>
+    void SetFlowLogId(FlowLogIdT&& value) { m_flowLogIdHasBeenSet = true; m_flowLogId = std::forward<FlowLogIdT>(value); }
+    template<typename FlowLogIdT = Aws::String>
+    FlowLog& WithFlowLogId(FlowLogIdT&& value) { SetFlowLogId(std::forward<FlowLogIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the flow log (<code>ACTIVE</code>).</p>
      */
-    inline const Aws::String& GetFlowLogStatus() const{ return m_flowLogStatus; }
+    inline const Aws::String& GetFlowLogStatus() const { return m_flowLogStatus; }
     inline bool FlowLogStatusHasBeenSet() const { return m_flowLogStatusHasBeenSet; }
-    inline void SetFlowLogStatus(const Aws::String& value) { m_flowLogStatusHasBeenSet = true; m_flowLogStatus = value; }
-    inline void SetFlowLogStatus(Aws::String&& value) { m_flowLogStatusHasBeenSet = true; m_flowLogStatus = std::move(value); }
-    inline void SetFlowLogStatus(const char* value) { m_flowLogStatusHasBeenSet = true; m_flowLogStatus.assign(value); }
-    inline FlowLog& WithFlowLogStatus(const Aws::String& value) { SetFlowLogStatus(value); return *this;}
-    inline FlowLog& WithFlowLogStatus(Aws::String&& value) { SetFlowLogStatus(std::move(value)); return *this;}
-    inline FlowLog& WithFlowLogStatus(const char* value) { SetFlowLogStatus(value); return *this;}
+    template<typename FlowLogStatusT = Aws::String>
+    void SetFlowLogStatus(FlowLogStatusT&& value) { m_flowLogStatusHasBeenSet = true; m_flowLogStatus = std::forward<FlowLogStatusT>(value); }
+    template<typename FlowLogStatusT = Aws::String>
+    FlowLog& WithFlowLogStatus(FlowLogStatusT&& value) { SetFlowLogStatus(std::forward<FlowLogStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the flow log group.</p>
      */
-    inline const Aws::String& GetLogGroupName() const{ return m_logGroupName; }
+    inline const Aws::String& GetLogGroupName() const { return m_logGroupName; }
     inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
-    inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
-    inline void SetLogGroupName(Aws::String&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::move(value); }
-    inline void SetLogGroupName(const char* value) { m_logGroupNameHasBeenSet = true; m_logGroupName.assign(value); }
-    inline FlowLog& WithLogGroupName(const Aws::String& value) { SetLogGroupName(value); return *this;}
-    inline FlowLog& WithLogGroupName(Aws::String&& value) { SetLogGroupName(std::move(value)); return *this;}
-    inline FlowLog& WithLogGroupName(const char* value) { SetLogGroupName(value); return *this;}
+    template<typename LogGroupNameT = Aws::String>
+    void SetLogGroupName(LogGroupNameT&& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = std::forward<LogGroupNameT>(value); }
+    template<typename LogGroupNameT = Aws::String>
+    FlowLog& WithLogGroupName(LogGroupNameT&& value) { SetLogGroupName(std::forward<LogGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the resource being monitored.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceId() const { return m_resourceId; }
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
-    inline FlowLog& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
-    inline FlowLog& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
-    inline FlowLog& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    template<typename ResourceIdT = Aws::String>
+    void SetResourceId(ResourceIdT&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::forward<ResourceIdT>(value); }
+    template<typename ResourceIdT = Aws::String>
+    FlowLog& WithResourceId(ResourceIdT&& value) { SetResourceId(std::forward<ResourceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of traffic captured for the flow log.</p>
      */
-    inline const TrafficType& GetTrafficType() const{ return m_trafficType; }
+    inline TrafficType GetTrafficType() const { return m_trafficType; }
     inline bool TrafficTypeHasBeenSet() const { return m_trafficTypeHasBeenSet; }
-    inline void SetTrafficType(const TrafficType& value) { m_trafficTypeHasBeenSet = true; m_trafficType = value; }
-    inline void SetTrafficType(TrafficType&& value) { m_trafficTypeHasBeenSet = true; m_trafficType = std::move(value); }
-    inline FlowLog& WithTrafficType(const TrafficType& value) { SetTrafficType(value); return *this;}
-    inline FlowLog& WithTrafficType(TrafficType&& value) { SetTrafficType(std::move(value)); return *this;}
+    inline void SetTrafficType(TrafficType value) { m_trafficTypeHasBeenSet = true; m_trafficType = value; }
+    inline FlowLog& WithTrafficType(TrafficType value) { SetTrafficType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of destination for the flow log data.</p>
      */
-    inline const LogDestinationType& GetLogDestinationType() const{ return m_logDestinationType; }
+    inline LogDestinationType GetLogDestinationType() const { return m_logDestinationType; }
     inline bool LogDestinationTypeHasBeenSet() const { return m_logDestinationTypeHasBeenSet; }
-    inline void SetLogDestinationType(const LogDestinationType& value) { m_logDestinationTypeHasBeenSet = true; m_logDestinationType = value; }
-    inline void SetLogDestinationType(LogDestinationType&& value) { m_logDestinationTypeHasBeenSet = true; m_logDestinationType = std::move(value); }
-    inline FlowLog& WithLogDestinationType(const LogDestinationType& value) { SetLogDestinationType(value); return *this;}
-    inline FlowLog& WithLogDestinationType(LogDestinationType&& value) { SetLogDestinationType(std::move(value)); return *this;}
+    inline void SetLogDestinationType(LogDestinationType value) { m_logDestinationTypeHasBeenSet = true; m_logDestinationType = value; }
+    inline FlowLog& WithLogDestinationType(LogDestinationType value) { SetLogDestinationType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the destination for the flow log data.</p>
      */
-    inline const Aws::String& GetLogDestination() const{ return m_logDestination; }
+    inline const Aws::String& GetLogDestination() const { return m_logDestination; }
     inline bool LogDestinationHasBeenSet() const { return m_logDestinationHasBeenSet; }
-    inline void SetLogDestination(const Aws::String& value) { m_logDestinationHasBeenSet = true; m_logDestination = value; }
-    inline void SetLogDestination(Aws::String&& value) { m_logDestinationHasBeenSet = true; m_logDestination = std::move(value); }
-    inline void SetLogDestination(const char* value) { m_logDestinationHasBeenSet = true; m_logDestination.assign(value); }
-    inline FlowLog& WithLogDestination(const Aws::String& value) { SetLogDestination(value); return *this;}
-    inline FlowLog& WithLogDestination(Aws::String&& value) { SetLogDestination(std::move(value)); return *this;}
-    inline FlowLog& WithLogDestination(const char* value) { SetLogDestination(value); return *this;}
+    template<typename LogDestinationT = Aws::String>
+    void SetLogDestination(LogDestinationT&& value) { m_logDestinationHasBeenSet = true; m_logDestination = std::forward<LogDestinationT>(value); }
+    template<typename LogDestinationT = Aws::String>
+    FlowLog& WithLogDestination(LogDestinationT&& value) { SetLogDestination(std::forward<LogDestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format of the flow log record.</p>
      */
-    inline const Aws::String& GetLogFormat() const{ return m_logFormat; }
+    inline const Aws::String& GetLogFormat() const { return m_logFormat; }
     inline bool LogFormatHasBeenSet() const { return m_logFormatHasBeenSet; }
-    inline void SetLogFormat(const Aws::String& value) { m_logFormatHasBeenSet = true; m_logFormat = value; }
-    inline void SetLogFormat(Aws::String&& value) { m_logFormatHasBeenSet = true; m_logFormat = std::move(value); }
-    inline void SetLogFormat(const char* value) { m_logFormatHasBeenSet = true; m_logFormat.assign(value); }
-    inline FlowLog& WithLogFormat(const Aws::String& value) { SetLogFormat(value); return *this;}
-    inline FlowLog& WithLogFormat(Aws::String&& value) { SetLogFormat(std::move(value)); return *this;}
-    inline FlowLog& WithLogFormat(const char* value) { SetLogFormat(value); return *this;}
+    template<typename LogFormatT = Aws::String>
+    void SetLogFormat(LogFormatT&& value) { m_logFormatHasBeenSet = true; m_logFormat = std::forward<LogFormatT>(value); }
+    template<typename LogFormatT = Aws::String>
+    FlowLog& WithLogFormat(LogFormatT&& value) { SetLogFormat(std::forward<LogFormatT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags for the flow log.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline FlowLog& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline FlowLog& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline FlowLog& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline FlowLog& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    FlowLog& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    FlowLog& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -253,7 +229,7 @@ namespace Model
      * regardless of the specified value.</p> <p>Valid Values: <code>60</code> |
      * <code>600</code> </p>
      */
-    inline int GetMaxAggregationInterval() const{ return m_maxAggregationInterval; }
+    inline int GetMaxAggregationInterval() const { return m_maxAggregationInterval; }
     inline bool MaxAggregationIntervalHasBeenSet() const { return m_maxAggregationIntervalHasBeenSet; }
     inline void SetMaxAggregationInterval(int value) { m_maxAggregationIntervalHasBeenSet = true; m_maxAggregationInterval = value; }
     inline FlowLog& WithMaxAggregationInterval(int value) { SetMaxAggregationInterval(value); return *this;}
@@ -263,16 +239,16 @@ namespace Model
     /**
      * <p>The destination options.</p>
      */
-    inline const DestinationOptionsResponse& GetDestinationOptions() const{ return m_destinationOptions; }
+    inline const DestinationOptionsResponse& GetDestinationOptions() const { return m_destinationOptions; }
     inline bool DestinationOptionsHasBeenSet() const { return m_destinationOptionsHasBeenSet; }
-    inline void SetDestinationOptions(const DestinationOptionsResponse& value) { m_destinationOptionsHasBeenSet = true; m_destinationOptions = value; }
-    inline void SetDestinationOptions(DestinationOptionsResponse&& value) { m_destinationOptionsHasBeenSet = true; m_destinationOptions = std::move(value); }
-    inline FlowLog& WithDestinationOptions(const DestinationOptionsResponse& value) { SetDestinationOptions(value); return *this;}
-    inline FlowLog& WithDestinationOptions(DestinationOptionsResponse&& value) { SetDestinationOptions(std::move(value)); return *this;}
+    template<typename DestinationOptionsT = DestinationOptionsResponse>
+    void SetDestinationOptions(DestinationOptionsT&& value) { m_destinationOptionsHasBeenSet = true; m_destinationOptions = std::forward<DestinationOptionsT>(value); }
+    template<typename DestinationOptionsT = DestinationOptionsResponse>
+    FlowLog& WithDestinationOptions(DestinationOptionsT&& value) { SetDestinationOptions(std::forward<DestinationOptionsT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_deliverLogsErrorMessage;
@@ -299,10 +275,10 @@ namespace Model
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet = false;
 
-    TrafficType m_trafficType;
+    TrafficType m_trafficType{TrafficType::NOT_SET};
     bool m_trafficTypeHasBeenSet = false;
 
-    LogDestinationType m_logDestinationType;
+    LogDestinationType m_logDestinationType{LogDestinationType::NOT_SET};
     bool m_logDestinationTypeHasBeenSet = false;
 
     Aws::String m_logDestination;
@@ -314,7 +290,7 @@ namespace Model
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
 
-    int m_maxAggregationInterval;
+    int m_maxAggregationInterval{0};
     bool m_maxAggregationIntervalHasBeenSet = false;
 
     DestinationOptionsResponse m_destinationOptions;

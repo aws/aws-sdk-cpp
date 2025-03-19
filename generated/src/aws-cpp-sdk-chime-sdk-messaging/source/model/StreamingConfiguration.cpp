@@ -18,15 +18,7 @@ namespace ChimeSDKMessaging
 namespace Model
 {
 
-StreamingConfiguration::StreamingConfiguration() : 
-    m_dataType(MessagingDataType::NOT_SET),
-    m_dataTypeHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 StreamingConfiguration::StreamingConfiguration(JsonView jsonValue)
-  : StreamingConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ StreamingConfiguration& StreamingConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataType"))
   {
     m_dataType = MessagingDataTypeMapper::GetMessagingDataTypeForName(jsonValue.GetString("DataType"));
-
     m_dataTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

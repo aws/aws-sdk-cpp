@@ -18,15 +18,7 @@ namespace MediaStore
 namespace Model
 {
 
-MetricPolicy::MetricPolicy() : 
-    m_containerLevelMetrics(ContainerLevelMetrics::NOT_SET),
-    m_containerLevelMetricsHasBeenSet(false),
-    m_metricPolicyRulesHasBeenSet(false)
-{
-}
-
 MetricPolicy::MetricPolicy(JsonView jsonValue)
-  : MetricPolicy()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ MetricPolicy& MetricPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ContainerLevelMetrics"))
   {
     m_containerLevelMetrics = ContainerLevelMetricsMapper::GetContainerLevelMetricsForName(jsonValue.GetString("ContainerLevelMetrics"));
-
     m_containerLevelMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricPolicyRules"))
   {
     Aws::Utils::Array<JsonView> metricPolicyRulesJsonList = jsonValue.GetArray("MetricPolicyRules");
@@ -49,7 +39,6 @@ MetricPolicy& MetricPolicy::operator =(JsonView jsonValue)
     }
     m_metricPolicyRulesHasBeenSet = true;
   }
-
   return *this;
 }
 

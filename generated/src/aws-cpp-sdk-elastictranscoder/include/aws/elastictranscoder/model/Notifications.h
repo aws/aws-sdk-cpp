@@ -34,7 +34,7 @@ namespace Model
   class Notifications
   {
   public:
-    AWS_ELASTICTRANSCODER_API Notifications();
+    AWS_ELASTICTRANSCODER_API Notifications() = default;
     AWS_ELASTICTRANSCODER_API Notifications(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Notifications& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ELASTICTRANSCODER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to
      * notify when Elastic Transcoder has started to process the job.</p>
      */
-    inline const Aws::String& GetProgressing() const{ return m_progressing; }
+    inline const Aws::String& GetProgressing() const { return m_progressing; }
     inline bool ProgressingHasBeenSet() const { return m_progressingHasBeenSet; }
-    inline void SetProgressing(const Aws::String& value) { m_progressingHasBeenSet = true; m_progressing = value; }
-    inline void SetProgressing(Aws::String&& value) { m_progressingHasBeenSet = true; m_progressing = std::move(value); }
-    inline void SetProgressing(const char* value) { m_progressingHasBeenSet = true; m_progressing.assign(value); }
-    inline Notifications& WithProgressing(const Aws::String& value) { SetProgressing(value); return *this;}
-    inline Notifications& WithProgressing(Aws::String&& value) { SetProgressing(std::move(value)); return *this;}
-    inline Notifications& WithProgressing(const char* value) { SetProgressing(value); return *this;}
+    template<typename ProgressingT = Aws::String>
+    void SetProgressing(ProgressingT&& value) { m_progressingHasBeenSet = true; m_progressing = std::forward<ProgressingT>(value); }
+    template<typename ProgressingT = Aws::String>
+    Notifications& WithProgressing(ProgressingT&& value) { SetProgressing(std::forward<ProgressingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has
      * finished processing the job.</p>
      */
-    inline const Aws::String& GetCompleted() const{ return m_completed; }
+    inline const Aws::String& GetCompleted() const { return m_completed; }
     inline bool CompletedHasBeenSet() const { return m_completedHasBeenSet; }
-    inline void SetCompleted(const Aws::String& value) { m_completedHasBeenSet = true; m_completed = value; }
-    inline void SetCompleted(Aws::String&& value) { m_completedHasBeenSet = true; m_completed = std::move(value); }
-    inline void SetCompleted(const char* value) { m_completedHasBeenSet = true; m_completed.assign(value); }
-    inline Notifications& WithCompleted(const Aws::String& value) { SetCompleted(value); return *this;}
-    inline Notifications& WithCompleted(Aws::String&& value) { SetCompleted(std::move(value)); return *this;}
-    inline Notifications& WithCompleted(const char* value) { SetCompleted(value); return *this;}
+    template<typename CompletedT = Aws::String>
+    void SetCompleted(CompletedT&& value) { m_completedHasBeenSet = true; m_completed = std::forward<CompletedT>(value); }
+    template<typename CompletedT = Aws::String>
+    Notifications& WithCompleted(CompletedT&& value) { SetCompleted(std::forward<CompletedT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
      * encounters a warning condition.</p>
      */
-    inline const Aws::String& GetWarning() const{ return m_warning; }
+    inline const Aws::String& GetWarning() const { return m_warning; }
     inline bool WarningHasBeenSet() const { return m_warningHasBeenSet; }
-    inline void SetWarning(const Aws::String& value) { m_warningHasBeenSet = true; m_warning = value; }
-    inline void SetWarning(Aws::String&& value) { m_warningHasBeenSet = true; m_warning = std::move(value); }
-    inline void SetWarning(const char* value) { m_warningHasBeenSet = true; m_warning.assign(value); }
-    inline Notifications& WithWarning(const Aws::String& value) { SetWarning(value); return *this;}
-    inline Notifications& WithWarning(Aws::String&& value) { SetWarning(std::move(value)); return *this;}
-    inline Notifications& WithWarning(const char* value) { SetWarning(value); return *this;}
+    template<typename WarningT = Aws::String>
+    void SetWarning(WarningT&& value) { m_warningHasBeenSet = true; m_warning = std::forward<WarningT>(value); }
+    template<typename WarningT = Aws::String>
+    Notifications& WithWarning(WarningT&& value) { SetWarning(std::forward<WarningT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,14 +84,12 @@ namespace Model
      * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
      * encounters an error condition.</p>
      */
-    inline const Aws::String& GetError() const{ return m_error; }
+    inline const Aws::String& GetError() const { return m_error; }
     inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
-    inline void SetError(const Aws::String& value) { m_errorHasBeenSet = true; m_error = value; }
-    inline void SetError(Aws::String&& value) { m_errorHasBeenSet = true; m_error = std::move(value); }
-    inline void SetError(const char* value) { m_errorHasBeenSet = true; m_error.assign(value); }
-    inline Notifications& WithError(const Aws::String& value) { SetError(value); return *this;}
-    inline Notifications& WithError(Aws::String&& value) { SetError(std::move(value)); return *this;}
-    inline Notifications& WithError(const char* value) { SetError(value); return *this;}
+    template<typename ErrorT = Aws::String>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = Aws::String>
+    Notifications& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
   private:
 

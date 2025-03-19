@@ -18,41 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-AmazonTranscribeProcessorConfiguration::AmazonTranscribeProcessorConfiguration() : 
-    m_languageCode(CallAnalyticsLanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_vocabularyNameHasBeenSet(false),
-    m_vocabularyFilterNameHasBeenSet(false),
-    m_vocabularyFilterMethod(VocabularyFilterMethod::NOT_SET),
-    m_vocabularyFilterMethodHasBeenSet(false),
-    m_showSpeakerLabel(false),
-    m_showSpeakerLabelHasBeenSet(false),
-    m_enablePartialResultsStabilization(false),
-    m_enablePartialResultsStabilizationHasBeenSet(false),
-    m_partialResultsStability(PartialResultsStability::NOT_SET),
-    m_partialResultsStabilityHasBeenSet(false),
-    m_contentIdentificationType(ContentType::NOT_SET),
-    m_contentIdentificationTypeHasBeenSet(false),
-    m_contentRedactionType(ContentType::NOT_SET),
-    m_contentRedactionTypeHasBeenSet(false),
-    m_piiEntityTypesHasBeenSet(false),
-    m_languageModelNameHasBeenSet(false),
-    m_filterPartialResults(false),
-    m_filterPartialResultsHasBeenSet(false),
-    m_identifyLanguage(false),
-    m_identifyLanguageHasBeenSet(false),
-    m_identifyMultipleLanguages(false),
-    m_identifyMultipleLanguagesHasBeenSet(false),
-    m_languageOptionsHasBeenSet(false),
-    m_preferredLanguage(CallAnalyticsLanguageCode::NOT_SET),
-    m_preferredLanguageHasBeenSet(false),
-    m_vocabularyNamesHasBeenSet(false),
-    m_vocabularyFilterNamesHasBeenSet(false)
-{
-}
-
 AmazonTranscribeProcessorConfiguration::AmazonTranscribeProcessorConfiguration(JsonView jsonValue)
-  : AmazonTranscribeProcessorConfiguration()
 {
   *this = jsonValue;
 }
@@ -62,129 +28,93 @@ AmazonTranscribeProcessorConfiguration& AmazonTranscribeProcessorConfiguration::
   if(jsonValue.ValueExists("LanguageCode"))
   {
     m_languageCode = CallAnalyticsLanguageCodeMapper::GetCallAnalyticsLanguageCodeForName(jsonValue.GetString("LanguageCode"));
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VocabularyName"))
   {
     m_vocabularyName = jsonValue.GetString("VocabularyName");
-
     m_vocabularyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VocabularyFilterName"))
   {
     m_vocabularyFilterName = jsonValue.GetString("VocabularyFilterName");
-
     m_vocabularyFilterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VocabularyFilterMethod"))
   {
     m_vocabularyFilterMethod = VocabularyFilterMethodMapper::GetVocabularyFilterMethodForName(jsonValue.GetString("VocabularyFilterMethod"));
-
     m_vocabularyFilterMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShowSpeakerLabel"))
   {
     m_showSpeakerLabel = jsonValue.GetBool("ShowSpeakerLabel");
-
     m_showSpeakerLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnablePartialResultsStabilization"))
   {
     m_enablePartialResultsStabilization = jsonValue.GetBool("EnablePartialResultsStabilization");
-
     m_enablePartialResultsStabilizationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PartialResultsStability"))
   {
     m_partialResultsStability = PartialResultsStabilityMapper::GetPartialResultsStabilityForName(jsonValue.GetString("PartialResultsStability"));
-
     m_partialResultsStabilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentIdentificationType"))
   {
     m_contentIdentificationType = ContentTypeMapper::GetContentTypeForName(jsonValue.GetString("ContentIdentificationType"));
-
     m_contentIdentificationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentRedactionType"))
   {
     m_contentRedactionType = ContentTypeMapper::GetContentTypeForName(jsonValue.GetString("ContentRedactionType"));
-
     m_contentRedactionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PiiEntityTypes"))
   {
     m_piiEntityTypes = jsonValue.GetString("PiiEntityTypes");
-
     m_piiEntityTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LanguageModelName"))
   {
     m_languageModelName = jsonValue.GetString("LanguageModelName");
-
     m_languageModelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FilterPartialResults"))
   {
     m_filterPartialResults = jsonValue.GetBool("FilterPartialResults");
-
     m_filterPartialResultsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentifyLanguage"))
   {
     m_identifyLanguage = jsonValue.GetBool("IdentifyLanguage");
-
     m_identifyLanguageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentifyMultipleLanguages"))
   {
     m_identifyMultipleLanguages = jsonValue.GetBool("IdentifyMultipleLanguages");
-
     m_identifyMultipleLanguagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LanguageOptions"))
   {
     m_languageOptions = jsonValue.GetString("LanguageOptions");
-
     m_languageOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreferredLanguage"))
   {
     m_preferredLanguage = CallAnalyticsLanguageCodeMapper::GetCallAnalyticsLanguageCodeForName(jsonValue.GetString("PreferredLanguage"));
-
     m_preferredLanguageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VocabularyNames"))
   {
     m_vocabularyNames = jsonValue.GetString("VocabularyNames");
-
     m_vocabularyNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VocabularyFilterNames"))
   {
     m_vocabularyFilterNames = jsonValue.GetString("VocabularyFilterNames");
-
     m_vocabularyFilterNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

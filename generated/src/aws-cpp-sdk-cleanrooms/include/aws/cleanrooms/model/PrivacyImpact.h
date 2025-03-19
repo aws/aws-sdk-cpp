@@ -33,7 +33,7 @@ namespace Model
   class PrivacyImpact
   {
   public:
-    AWS_CLEANROOMS_API PrivacyImpact();
+    AWS_CLEANROOMS_API PrivacyImpact() = default;
     AWS_CLEANROOMS_API PrivacyImpact(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API PrivacyImpact& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>An object that lists the number and type of aggregation functions you can
      * perform.</p>
      */
-    inline const DifferentialPrivacyPrivacyImpact& GetDifferentialPrivacy() const{ return m_differentialPrivacy; }
+    inline const DifferentialPrivacyPrivacyImpact& GetDifferentialPrivacy() const { return m_differentialPrivacy; }
     inline bool DifferentialPrivacyHasBeenSet() const { return m_differentialPrivacyHasBeenSet; }
-    inline void SetDifferentialPrivacy(const DifferentialPrivacyPrivacyImpact& value) { m_differentialPrivacyHasBeenSet = true; m_differentialPrivacy = value; }
-    inline void SetDifferentialPrivacy(DifferentialPrivacyPrivacyImpact&& value) { m_differentialPrivacyHasBeenSet = true; m_differentialPrivacy = std::move(value); }
-    inline PrivacyImpact& WithDifferentialPrivacy(const DifferentialPrivacyPrivacyImpact& value) { SetDifferentialPrivacy(value); return *this;}
-    inline PrivacyImpact& WithDifferentialPrivacy(DifferentialPrivacyPrivacyImpact&& value) { SetDifferentialPrivacy(std::move(value)); return *this;}
+    template<typename DifferentialPrivacyT = DifferentialPrivacyPrivacyImpact>
+    void SetDifferentialPrivacy(DifferentialPrivacyT&& value) { m_differentialPrivacyHasBeenSet = true; m_differentialPrivacy = std::forward<DifferentialPrivacyT>(value); }
+    template<typename DifferentialPrivacyT = DifferentialPrivacyPrivacyImpact>
+    PrivacyImpact& WithDifferentialPrivacy(DifferentialPrivacyT&& value) { SetDifferentialPrivacy(std::forward<DifferentialPrivacyT>(value)); return *this;}
     ///@}
   private:
 

@@ -24,7 +24,7 @@ namespace Model
   class GetSpotPlacementScoresRequest : public EC2Request
   {
   public:
-    AWS_EC2_API GetSpotPlacementScoresRequest();
+    AWS_EC2_API GetSpotPlacementScoresRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,22 +48,21 @@ namespace Model
      * you specify <code>InstanceTypes</code>, you can't specify
      * <code>InstanceRequirementsWithMetadata</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetInstanceTypes() const{ return m_instanceTypes; }
+    inline const Aws::Vector<Aws::String>& GetInstanceTypes() const { return m_instanceTypes; }
     inline bool InstanceTypesHasBeenSet() const { return m_instanceTypesHasBeenSet; }
-    inline void SetInstanceTypes(const Aws::Vector<Aws::String>& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = value; }
-    inline void SetInstanceTypes(Aws::Vector<Aws::String>&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::move(value); }
-    inline GetSpotPlacementScoresRequest& WithInstanceTypes(const Aws::Vector<Aws::String>& value) { SetInstanceTypes(value); return *this;}
-    inline GetSpotPlacementScoresRequest& WithInstanceTypes(Aws::Vector<Aws::String>&& value) { SetInstanceTypes(std::move(value)); return *this;}
-    inline GetSpotPlacementScoresRequest& AddInstanceTypes(const Aws::String& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
-    inline GetSpotPlacementScoresRequest& AddInstanceTypes(Aws::String&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(std::move(value)); return *this; }
-    inline GetSpotPlacementScoresRequest& AddInstanceTypes(const char* value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.push_back(value); return *this; }
+    template<typename InstanceTypesT = Aws::Vector<Aws::String>>
+    void SetInstanceTypes(InstanceTypesT&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes = std::forward<InstanceTypesT>(value); }
+    template<typename InstanceTypesT = Aws::Vector<Aws::String>>
+    GetSpotPlacementScoresRequest& WithInstanceTypes(InstanceTypesT&& value) { SetInstanceTypes(std::forward<InstanceTypesT>(value)); return *this;}
+    template<typename InstanceTypesT = Aws::String>
+    GetSpotPlacementScoresRequest& AddInstanceTypes(InstanceTypesT&& value) { m_instanceTypesHasBeenSet = true; m_instanceTypes.emplace_back(std::forward<InstanceTypesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The target capacity.</p>
      */
-    inline int GetTargetCapacity() const{ return m_targetCapacity; }
+    inline int GetTargetCapacity() const { return m_targetCapacity; }
     inline bool TargetCapacityHasBeenSet() const { return m_targetCapacityHasBeenSet; }
     inline void SetTargetCapacity(int value) { m_targetCapacityHasBeenSet = true; m_targetCapacity = value; }
     inline GetSpotPlacementScoresRequest& WithTargetCapacity(int value) { SetTargetCapacity(value); return *this;}
@@ -73,12 +72,10 @@ namespace Model
     /**
      * <p>The unit for the target capacity.</p>
      */
-    inline const TargetCapacityUnitType& GetTargetCapacityUnitType() const{ return m_targetCapacityUnitType; }
+    inline TargetCapacityUnitType GetTargetCapacityUnitType() const { return m_targetCapacityUnitType; }
     inline bool TargetCapacityUnitTypeHasBeenSet() const { return m_targetCapacityUnitTypeHasBeenSet; }
-    inline void SetTargetCapacityUnitType(const TargetCapacityUnitType& value) { m_targetCapacityUnitTypeHasBeenSet = true; m_targetCapacityUnitType = value; }
-    inline void SetTargetCapacityUnitType(TargetCapacityUnitType&& value) { m_targetCapacityUnitTypeHasBeenSet = true; m_targetCapacityUnitType = std::move(value); }
-    inline GetSpotPlacementScoresRequest& WithTargetCapacityUnitType(const TargetCapacityUnitType& value) { SetTargetCapacityUnitType(value); return *this;}
-    inline GetSpotPlacementScoresRequest& WithTargetCapacityUnitType(TargetCapacityUnitType&& value) { SetTargetCapacityUnitType(std::move(value)); return *this;}
+    inline void SetTargetCapacityUnitType(TargetCapacityUnitType value) { m_targetCapacityUnitTypeHasBeenSet = true; m_targetCapacityUnitType = value; }
+    inline GetSpotPlacementScoresRequest& WithTargetCapacityUnitType(TargetCapacityUnitType value) { SetTargetCapacityUnitType(value); return *this;}
     ///@}
 
     ///@{
@@ -88,7 +85,7 @@ namespace Model
      * Regions.</p> <p>A list of scored Availability Zones is useful if you want to
      * launch all of your Spot capacity into a single Availability Zone.</p>
      */
-    inline bool GetSingleAvailabilityZone() const{ return m_singleAvailabilityZone; }
+    inline bool GetSingleAvailabilityZone() const { return m_singleAvailabilityZone; }
     inline bool SingleAvailabilityZoneHasBeenSet() const { return m_singleAvailabilityZoneHasBeenSet; }
     inline void SetSingleAvailabilityZone(bool value) { m_singleAvailabilityZoneHasBeenSet = true; m_singleAvailabilityZone = value; }
     inline GetSpotPlacementScoresRequest& WithSingleAvailabilityZone(bool value) { SetSingleAvailabilityZone(value); return *this;}
@@ -99,15 +96,14 @@ namespace Model
      * <p>The Regions used to narrow down the list of Regions to be scored. Enter the
      * Region code, for example, <code>us-east-1</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRegionNames() const{ return m_regionNames; }
+    inline const Aws::Vector<Aws::String>& GetRegionNames() const { return m_regionNames; }
     inline bool RegionNamesHasBeenSet() const { return m_regionNamesHasBeenSet; }
-    inline void SetRegionNames(const Aws::Vector<Aws::String>& value) { m_regionNamesHasBeenSet = true; m_regionNames = value; }
-    inline void SetRegionNames(Aws::Vector<Aws::String>&& value) { m_regionNamesHasBeenSet = true; m_regionNames = std::move(value); }
-    inline GetSpotPlacementScoresRequest& WithRegionNames(const Aws::Vector<Aws::String>& value) { SetRegionNames(value); return *this;}
-    inline GetSpotPlacementScoresRequest& WithRegionNames(Aws::Vector<Aws::String>&& value) { SetRegionNames(std::move(value)); return *this;}
-    inline GetSpotPlacementScoresRequest& AddRegionNames(const Aws::String& value) { m_regionNamesHasBeenSet = true; m_regionNames.push_back(value); return *this; }
-    inline GetSpotPlacementScoresRequest& AddRegionNames(Aws::String&& value) { m_regionNamesHasBeenSet = true; m_regionNames.push_back(std::move(value)); return *this; }
-    inline GetSpotPlacementScoresRequest& AddRegionNames(const char* value) { m_regionNamesHasBeenSet = true; m_regionNames.push_back(value); return *this; }
+    template<typename RegionNamesT = Aws::Vector<Aws::String>>
+    void SetRegionNames(RegionNamesT&& value) { m_regionNamesHasBeenSet = true; m_regionNames = std::forward<RegionNamesT>(value); }
+    template<typename RegionNamesT = Aws::Vector<Aws::String>>
+    GetSpotPlacementScoresRequest& WithRegionNames(RegionNamesT&& value) { SetRegionNames(std::forward<RegionNamesT>(value)); return *this;}
+    template<typename RegionNamesT = Aws::String>
+    GetSpotPlacementScoresRequest& AddRegionNames(RegionNamesT&& value) { m_regionNamesHasBeenSet = true; m_regionNames.emplace_back(std::forward<RegionNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -117,12 +113,12 @@ namespace Model
      * specify <code>InstanceRequirementsWithMetadata</code>, you can't specify
      * <code>InstanceTypes</code>.</p>
      */
-    inline const InstanceRequirementsWithMetadataRequest& GetInstanceRequirementsWithMetadata() const{ return m_instanceRequirementsWithMetadata; }
+    inline const InstanceRequirementsWithMetadataRequest& GetInstanceRequirementsWithMetadata() const { return m_instanceRequirementsWithMetadata; }
     inline bool InstanceRequirementsWithMetadataHasBeenSet() const { return m_instanceRequirementsWithMetadataHasBeenSet; }
-    inline void SetInstanceRequirementsWithMetadata(const InstanceRequirementsWithMetadataRequest& value) { m_instanceRequirementsWithMetadataHasBeenSet = true; m_instanceRequirementsWithMetadata = value; }
-    inline void SetInstanceRequirementsWithMetadata(InstanceRequirementsWithMetadataRequest&& value) { m_instanceRequirementsWithMetadataHasBeenSet = true; m_instanceRequirementsWithMetadata = std::move(value); }
-    inline GetSpotPlacementScoresRequest& WithInstanceRequirementsWithMetadata(const InstanceRequirementsWithMetadataRequest& value) { SetInstanceRequirementsWithMetadata(value); return *this;}
-    inline GetSpotPlacementScoresRequest& WithInstanceRequirementsWithMetadata(InstanceRequirementsWithMetadataRequest&& value) { SetInstanceRequirementsWithMetadata(std::move(value)); return *this;}
+    template<typename InstanceRequirementsWithMetadataT = InstanceRequirementsWithMetadataRequest>
+    void SetInstanceRequirementsWithMetadata(InstanceRequirementsWithMetadataT&& value) { m_instanceRequirementsWithMetadataHasBeenSet = true; m_instanceRequirementsWithMetadata = std::forward<InstanceRequirementsWithMetadataT>(value); }
+    template<typename InstanceRequirementsWithMetadataT = InstanceRequirementsWithMetadataRequest>
+    GetSpotPlacementScoresRequest& WithInstanceRequirementsWithMetadata(InstanceRequirementsWithMetadataT&& value) { SetInstanceRequirementsWithMetadata(std::forward<InstanceRequirementsWithMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -132,7 +128,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline GetSpotPlacementScoresRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -145,7 +141,7 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetSpotPlacementScoresRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -156,27 +152,25 @@ namespace Model
      * <p>The token returned from a previous paginated request. Pagination continues
      * from the end of the items returned by the previous request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetSpotPlacementScoresRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetSpotPlacementScoresRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetSpotPlacementScoresRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetSpotPlacementScoresRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_instanceTypes;
     bool m_instanceTypesHasBeenSet = false;
 
-    int m_targetCapacity;
+    int m_targetCapacity{0};
     bool m_targetCapacityHasBeenSet = false;
 
-    TargetCapacityUnitType m_targetCapacityUnitType;
+    TargetCapacityUnitType m_targetCapacityUnitType{TargetCapacityUnitType::NOT_SET};
     bool m_targetCapacityUnitTypeHasBeenSet = false;
 
-    bool m_singleAvailabilityZone;
+    bool m_singleAvailabilityZone{false};
     bool m_singleAvailabilityZoneHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_regionNames;
@@ -185,10 +179,10 @@ namespace Model
     InstanceRequirementsWithMetadataRequest m_instanceRequirementsWithMetadata;
     bool m_instanceRequirementsWithMetadataHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

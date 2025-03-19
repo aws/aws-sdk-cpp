@@ -18,16 +18,7 @@ namespace Omics
 namespace Model
 {
 
-VcfOptions::VcfOptions() : 
-    m_ignoreQualField(false),
-    m_ignoreQualFieldHasBeenSet(false),
-    m_ignoreFilterField(false),
-    m_ignoreFilterFieldHasBeenSet(false)
-{
-}
-
 VcfOptions::VcfOptions(JsonView jsonValue)
-  : VcfOptions()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ VcfOptions& VcfOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ignoreQualField"))
   {
     m_ignoreQualField = jsonValue.GetBool("ignoreQualField");
-
     m_ignoreQualFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ignoreFilterField"))
   {
     m_ignoreFilterField = jsonValue.GetBool("ignoreFilterField");
-
     m_ignoreFilterFieldHasBeenSet = true;
   }
-
   return *this;
 }
 

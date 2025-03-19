@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListChannelMembershipsRequest::ListChannelMembershipsRequest() : 
-    m_channelArnHasBeenSet(false),
-    m_type(ChannelMembershipType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_chimeBearerHasBeenSet(false),
-    m_subChannelIdHasBeenSet(false)
-{
-}
-
 Aws::String ListChannelMembershipsRequest::SerializePayload() const
 {
   return {};

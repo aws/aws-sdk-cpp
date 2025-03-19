@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeCertificateResult::DescribeCertificateResult()
-{
-}
-
 DescribeCertificateResult::DescribeCertificateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeCertificateResult& DescribeCertificateResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("certificateDescription"))
   {
     m_certificateDescription = jsonValue.GetObject("certificateDescription");
-
+    m_certificateDescriptionHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

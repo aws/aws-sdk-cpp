@@ -12,12 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateClientCertificateRequest::UpdateClientCertificateRequest() : 
-    m_clientCertificateIdHasBeenSet(false),
-    m_patchOperationsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateClientCertificateRequest::SerializePayload() const
 {
   JsonValue payload;

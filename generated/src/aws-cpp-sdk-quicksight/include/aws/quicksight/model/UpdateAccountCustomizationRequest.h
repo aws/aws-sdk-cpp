@@ -26,7 +26,7 @@ namespace Model
   class UpdateAccountCustomizationRequest : public QuickSightRequest
   {
   public:
-    AWS_QUICKSIGHT_API UpdateAccountCustomizationRequest();
+    AWS_QUICKSIGHT_API UpdateAccountCustomizationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * <p>The ID for the Amazon Web Services account that you want to update Amazon
      * QuickSight customizations for.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline UpdateAccountCustomizationRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline UpdateAccountCustomizationRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline UpdateAccountCustomizationRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    UpdateAccountCustomizationRequest& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The namespace that you want to update Amazon QuickSight customizations
      * for.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline UpdateAccountCustomizationRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline UpdateAccountCustomizationRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline UpdateAccountCustomizationRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    UpdateAccountCustomizationRequest& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +70,12 @@ namespace Model
      * <p>The Amazon QuickSight customizations you're updating in the current Amazon
      * Web Services Region. </p>
      */
-    inline const AccountCustomization& GetAccountCustomization() const{ return m_accountCustomization; }
+    inline const AccountCustomization& GetAccountCustomization() const { return m_accountCustomization; }
     inline bool AccountCustomizationHasBeenSet() const { return m_accountCustomizationHasBeenSet; }
-    inline void SetAccountCustomization(const AccountCustomization& value) { m_accountCustomizationHasBeenSet = true; m_accountCustomization = value; }
-    inline void SetAccountCustomization(AccountCustomization&& value) { m_accountCustomizationHasBeenSet = true; m_accountCustomization = std::move(value); }
-    inline UpdateAccountCustomizationRequest& WithAccountCustomization(const AccountCustomization& value) { SetAccountCustomization(value); return *this;}
-    inline UpdateAccountCustomizationRequest& WithAccountCustomization(AccountCustomization&& value) { SetAccountCustomization(std::move(value)); return *this;}
+    template<typename AccountCustomizationT = AccountCustomization>
+    void SetAccountCustomization(AccountCustomizationT&& value) { m_accountCustomizationHasBeenSet = true; m_accountCustomization = std::forward<AccountCustomizationT>(value); }
+    template<typename AccountCustomizationT = AccountCustomization>
+    UpdateAccountCustomizationRequest& WithAccountCustomization(AccountCustomizationT&& value) { SetAccountCustomization(std::forward<AccountCustomizationT>(value)); return *this;}
     ///@}
   private:
 

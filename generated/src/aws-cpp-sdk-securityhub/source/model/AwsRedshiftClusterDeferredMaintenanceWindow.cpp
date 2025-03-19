@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRedshiftClusterDeferredMaintenanceWindow::AwsRedshiftClusterDeferredMaintenanceWindow() : 
-    m_deferMaintenanceEndTimeHasBeenSet(false),
-    m_deferMaintenanceIdentifierHasBeenSet(false),
-    m_deferMaintenanceStartTimeHasBeenSet(false)
-{
-}
-
 AwsRedshiftClusterDeferredMaintenanceWindow::AwsRedshiftClusterDeferredMaintenanceWindow(JsonView jsonValue)
-  : AwsRedshiftClusterDeferredMaintenanceWindow()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AwsRedshiftClusterDeferredMaintenanceWindow& AwsRedshiftClusterDeferredMaintenan
   if(jsonValue.ValueExists("DeferMaintenanceEndTime"))
   {
     m_deferMaintenanceEndTime = jsonValue.GetString("DeferMaintenanceEndTime");
-
     m_deferMaintenanceEndTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeferMaintenanceIdentifier"))
   {
     m_deferMaintenanceIdentifier = jsonValue.GetString("DeferMaintenanceIdentifier");
-
     m_deferMaintenanceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeferMaintenanceStartTime"))
   {
     m_deferMaintenanceStartTime = jsonValue.GetString("DeferMaintenanceStartTime");
-
     m_deferMaintenanceStartTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

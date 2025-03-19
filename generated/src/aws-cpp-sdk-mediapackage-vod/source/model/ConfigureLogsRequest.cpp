@@ -12,12 +12,6 @@ using namespace Aws::MediaPackageVod::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ConfigureLogsRequest::ConfigureLogsRequest() : 
-    m_egressAccessLogsHasBeenSet(false),
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String ConfigureLogsRequest::SerializePayload() const
 {
   JsonValue payload;

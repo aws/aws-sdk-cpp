@@ -12,15 +12,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutKeywordRequest::PutKeywordRequest() : 
-    m_originationIdentityHasBeenSet(false),
-    m_keywordHasBeenSet(false),
-    m_keywordMessageHasBeenSet(false),
-    m_keywordAction(KeywordAction::NOT_SET),
-    m_keywordActionHasBeenSet(false)
-{
-}
-
 Aws::String PutKeywordRequest::SerializePayload() const
 {
   JsonValue payload;

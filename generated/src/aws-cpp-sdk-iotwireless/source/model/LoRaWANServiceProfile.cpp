@@ -18,22 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-LoRaWANServiceProfile::LoRaWANServiceProfile() : 
-    m_addGwMetadata(false),
-    m_addGwMetadataHasBeenSet(false),
-    m_drMin(0),
-    m_drMinHasBeenSet(false),
-    m_drMax(0),
-    m_drMaxHasBeenSet(false),
-    m_prAllowed(false),
-    m_prAllowedHasBeenSet(false),
-    m_raAllowed(false),
-    m_raAllowedHasBeenSet(false)
-{
-}
-
 LoRaWANServiceProfile::LoRaWANServiceProfile(JsonView jsonValue)
-  : LoRaWANServiceProfile()
 {
   *this = jsonValue;
 }
@@ -43,38 +28,28 @@ LoRaWANServiceProfile& LoRaWANServiceProfile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AddGwMetadata"))
   {
     m_addGwMetadata = jsonValue.GetBool("AddGwMetadata");
-
     m_addGwMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DrMin"))
   {
     m_drMin = jsonValue.GetInteger("DrMin");
-
     m_drMinHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DrMax"))
   {
     m_drMax = jsonValue.GetInteger("DrMax");
-
     m_drMaxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrAllowed"))
   {
     m_prAllowed = jsonValue.GetBool("PrAllowed");
-
     m_prAllowedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RaAllowed"))
   {
     m_raAllowed = jsonValue.GetBool("RaAllowed");
-
     m_raAllowedHasBeenSet = true;
   }
-
   return *this;
 }
 

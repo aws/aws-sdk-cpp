@@ -21,7 +21,7 @@ namespace Model
   class GetPromptRouterRequest : public BedrockRequest
   {
   public:
-    AWS_BEDROCK_API GetPromptRouterRequest();
+    AWS_BEDROCK_API GetPromptRouterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The prompt router's ARN</p>
      */
-    inline const Aws::String& GetPromptRouterArn() const{ return m_promptRouterArn; }
+    inline const Aws::String& GetPromptRouterArn() const { return m_promptRouterArn; }
     inline bool PromptRouterArnHasBeenSet() const { return m_promptRouterArnHasBeenSet; }
-    inline void SetPromptRouterArn(const Aws::String& value) { m_promptRouterArnHasBeenSet = true; m_promptRouterArn = value; }
-    inline void SetPromptRouterArn(Aws::String&& value) { m_promptRouterArnHasBeenSet = true; m_promptRouterArn = std::move(value); }
-    inline void SetPromptRouterArn(const char* value) { m_promptRouterArnHasBeenSet = true; m_promptRouterArn.assign(value); }
-    inline GetPromptRouterRequest& WithPromptRouterArn(const Aws::String& value) { SetPromptRouterArn(value); return *this;}
-    inline GetPromptRouterRequest& WithPromptRouterArn(Aws::String&& value) { SetPromptRouterArn(std::move(value)); return *this;}
-    inline GetPromptRouterRequest& WithPromptRouterArn(const char* value) { SetPromptRouterArn(value); return *this;}
+    template<typename PromptRouterArnT = Aws::String>
+    void SetPromptRouterArn(PromptRouterArnT&& value) { m_promptRouterArnHasBeenSet = true; m_promptRouterArn = std::forward<PromptRouterArnT>(value); }
+    template<typename PromptRouterArnT = Aws::String>
+    GetPromptRouterRequest& WithPromptRouterArn(PromptRouterArnT&& value) { SetPromptRouterArn(std::forward<PromptRouterArnT>(value)); return *this;}
     ///@}
   private:
 

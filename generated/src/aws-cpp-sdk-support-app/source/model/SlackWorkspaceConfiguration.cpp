@@ -18,16 +18,7 @@ namespace SupportApp
 namespace Model
 {
 
-SlackWorkspaceConfiguration::SlackWorkspaceConfiguration() : 
-    m_allowOrganizationMemberAccount(false),
-    m_allowOrganizationMemberAccountHasBeenSet(false),
-    m_teamIdHasBeenSet(false),
-    m_teamNameHasBeenSet(false)
-{
-}
-
 SlackWorkspaceConfiguration::SlackWorkspaceConfiguration(JsonView jsonValue)
-  : SlackWorkspaceConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SlackWorkspaceConfiguration& SlackWorkspaceConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("allowOrganizationMemberAccount"))
   {
     m_allowOrganizationMemberAccount = jsonValue.GetBool("allowOrganizationMemberAccount");
-
     m_allowOrganizationMemberAccountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("teamId"))
   {
     m_teamId = jsonValue.GetString("teamId");
-
     m_teamIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("teamName"))
   {
     m_teamName = jsonValue.GetString("teamName");
-
     m_teamNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -36,7 +36,7 @@ namespace Model
   class S3PresignedUrl
   {
   public:
-    AWS_SOCIALMESSAGING_API S3PresignedUrl();
+    AWS_SOCIALMESSAGING_API S3PresignedUrl() = default;
     AWS_SOCIALMESSAGING_API S3PresignedUrl(Aws::Utils::Json::JsonView jsonValue);
     AWS_SOCIALMESSAGING_API S3PresignedUrl& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SOCIALMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The presign url to the object.</p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline S3PresignedUrl& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline S3PresignedUrl& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline S3PresignedUrl& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    S3PresignedUrl& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,19 +62,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTCommonRequestHeaders.html">Common
      * Request Headers</a> in the <i>Amazon S3 API Reference</i> </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetHeaders() const{ return m_headers; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetHeaders() const { return m_headers; }
     inline bool HeadersHasBeenSet() const { return m_headersHasBeenSet; }
-    inline void SetHeaders(const Aws::Map<Aws::String, Aws::String>& value) { m_headersHasBeenSet = true; m_headers = value; }
-    inline void SetHeaders(Aws::Map<Aws::String, Aws::String>&& value) { m_headersHasBeenSet = true; m_headers = std::move(value); }
-    inline S3PresignedUrl& WithHeaders(const Aws::Map<Aws::String, Aws::String>& value) { SetHeaders(value); return *this;}
-    inline S3PresignedUrl& WithHeaders(Aws::Map<Aws::String, Aws::String>&& value) { SetHeaders(std::move(value)); return *this;}
-    inline S3PresignedUrl& AddHeaders(const Aws::String& key, const Aws::String& value) { m_headersHasBeenSet = true; m_headers.emplace(key, value); return *this; }
-    inline S3PresignedUrl& AddHeaders(Aws::String&& key, const Aws::String& value) { m_headersHasBeenSet = true; m_headers.emplace(std::move(key), value); return *this; }
-    inline S3PresignedUrl& AddHeaders(const Aws::String& key, Aws::String&& value) { m_headersHasBeenSet = true; m_headers.emplace(key, std::move(value)); return *this; }
-    inline S3PresignedUrl& AddHeaders(Aws::String&& key, Aws::String&& value) { m_headersHasBeenSet = true; m_headers.emplace(std::move(key), std::move(value)); return *this; }
-    inline S3PresignedUrl& AddHeaders(const char* key, Aws::String&& value) { m_headersHasBeenSet = true; m_headers.emplace(key, std::move(value)); return *this; }
-    inline S3PresignedUrl& AddHeaders(Aws::String&& key, const char* value) { m_headersHasBeenSet = true; m_headers.emplace(std::move(key), value); return *this; }
-    inline S3PresignedUrl& AddHeaders(const char* key, const char* value) { m_headersHasBeenSet = true; m_headers.emplace(key, value); return *this; }
+    template<typename HeadersT = Aws::Map<Aws::String, Aws::String>>
+    void SetHeaders(HeadersT&& value) { m_headersHasBeenSet = true; m_headers = std::forward<HeadersT>(value); }
+    template<typename HeadersT = Aws::Map<Aws::String, Aws::String>>
+    S3PresignedUrl& WithHeaders(HeadersT&& value) { SetHeaders(std::forward<HeadersT>(value)); return *this;}
+    template<typename HeadersKeyT = Aws::String, typename HeadersValueT = Aws::String>
+    S3PresignedUrl& AddHeaders(HeadersKeyT&& key, HeadersValueT&& value) {
+      m_headersHasBeenSet = true; m_headers.emplace(std::forward<HeadersKeyT>(key), std::forward<HeadersValueT>(value)); return *this;
+    }
     ///@}
   private:
 

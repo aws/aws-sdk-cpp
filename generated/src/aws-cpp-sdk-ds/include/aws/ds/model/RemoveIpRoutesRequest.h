@@ -22,7 +22,7 @@ namespace Model
   class RemoveIpRoutesRequest : public DirectoryServiceRequest
   {
   public:
-    AWS_DIRECTORYSERVICE_API RemoveIpRoutesRequest();
+    AWS_DIRECTORYSERVICE_API RemoveIpRoutesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,29 +40,26 @@ namespace Model
      * <p>Identifier (ID) of the directory from which you want to remove the IP
      * addresses.</p>
      */
-    inline const Aws::String& GetDirectoryId() const{ return m_directoryId; }
+    inline const Aws::String& GetDirectoryId() const { return m_directoryId; }
     inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
-    inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
-    inline void SetDirectoryId(Aws::String&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::move(value); }
-    inline void SetDirectoryId(const char* value) { m_directoryIdHasBeenSet = true; m_directoryId.assign(value); }
-    inline RemoveIpRoutesRequest& WithDirectoryId(const Aws::String& value) { SetDirectoryId(value); return *this;}
-    inline RemoveIpRoutesRequest& WithDirectoryId(Aws::String&& value) { SetDirectoryId(std::move(value)); return *this;}
-    inline RemoveIpRoutesRequest& WithDirectoryId(const char* value) { SetDirectoryId(value); return *this;}
+    template<typename DirectoryIdT = Aws::String>
+    void SetDirectoryId(DirectoryIdT&& value) { m_directoryIdHasBeenSet = true; m_directoryId = std::forward<DirectoryIdT>(value); }
+    template<typename DirectoryIdT = Aws::String>
+    RemoveIpRoutesRequest& WithDirectoryId(DirectoryIdT&& value) { SetDirectoryId(std::forward<DirectoryIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>IP address blocks that you want to remove.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCidrIps() const{ return m_cidrIps; }
+    inline const Aws::Vector<Aws::String>& GetCidrIps() const { return m_cidrIps; }
     inline bool CidrIpsHasBeenSet() const { return m_cidrIpsHasBeenSet; }
-    inline void SetCidrIps(const Aws::Vector<Aws::String>& value) { m_cidrIpsHasBeenSet = true; m_cidrIps = value; }
-    inline void SetCidrIps(Aws::Vector<Aws::String>&& value) { m_cidrIpsHasBeenSet = true; m_cidrIps = std::move(value); }
-    inline RemoveIpRoutesRequest& WithCidrIps(const Aws::Vector<Aws::String>& value) { SetCidrIps(value); return *this;}
-    inline RemoveIpRoutesRequest& WithCidrIps(Aws::Vector<Aws::String>&& value) { SetCidrIps(std::move(value)); return *this;}
-    inline RemoveIpRoutesRequest& AddCidrIps(const Aws::String& value) { m_cidrIpsHasBeenSet = true; m_cidrIps.push_back(value); return *this; }
-    inline RemoveIpRoutesRequest& AddCidrIps(Aws::String&& value) { m_cidrIpsHasBeenSet = true; m_cidrIps.push_back(std::move(value)); return *this; }
-    inline RemoveIpRoutesRequest& AddCidrIps(const char* value) { m_cidrIpsHasBeenSet = true; m_cidrIps.push_back(value); return *this; }
+    template<typename CidrIpsT = Aws::Vector<Aws::String>>
+    void SetCidrIps(CidrIpsT&& value) { m_cidrIpsHasBeenSet = true; m_cidrIps = std::forward<CidrIpsT>(value); }
+    template<typename CidrIpsT = Aws::Vector<Aws::String>>
+    RemoveIpRoutesRequest& WithCidrIps(CidrIpsT&& value) { SetCidrIps(std::forward<CidrIpsT>(value)); return *this;}
+    template<typename CidrIpsT = Aws::String>
+    RemoveIpRoutesRequest& AddCidrIps(CidrIpsT&& value) { m_cidrIpsHasBeenSet = true; m_cidrIps.emplace_back(std::forward<CidrIpsT>(value)); return *this; }
     ///@}
   private:
 

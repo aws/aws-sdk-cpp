@@ -30,7 +30,7 @@ namespace Model
   class ServiceNowMetadata
   {
   public:
-    AWS_APPFLOW_API ServiceNowMetadata();
+    AWS_APPFLOW_API ServiceNowMetadata() = default;
     AWS_APPFLOW_API ServiceNowMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API ServiceNowMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;

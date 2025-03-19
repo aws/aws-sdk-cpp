@@ -18,13 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-DeadLetterConfig::DeadLetterConfig() : 
-    m_targetArnHasBeenSet(false)
-{
-}
-
 DeadLetterConfig::DeadLetterConfig(JsonView jsonValue)
-  : DeadLetterConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DeadLetterConfig& DeadLetterConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TargetArn"))
   {
     m_targetArn = jsonValue.GetString("TargetArn");
-
     m_targetArnHasBeenSet = true;
   }
-
   return *this;
 }
 

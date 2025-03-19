@@ -18,13 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-LabelSummary::LabelSummary() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 LabelSummary::LabelSummary(JsonView jsonValue)
-  : LabelSummary()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LabelSummary& LabelSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

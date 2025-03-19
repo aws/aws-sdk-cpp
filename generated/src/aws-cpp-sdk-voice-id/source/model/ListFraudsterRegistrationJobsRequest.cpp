@@ -12,16 +12,6 @@ using namespace Aws::VoiceID::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListFraudsterRegistrationJobsRequest::ListFraudsterRegistrationJobsRequest() : 
-    m_domainIdHasBeenSet(false),
-    m_jobStatus(FraudsterRegistrationJobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListFraudsterRegistrationJobsRequest::SerializePayload() const
 {
   JsonValue payload;

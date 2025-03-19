@@ -20,27 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DBShardGroup::DBShardGroup() : 
-    m_dBShardGroupResourceIdHasBeenSet(false),
-    m_dBShardGroupIdentifierHasBeenSet(false),
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_maxACU(0.0),
-    m_maxACUHasBeenSet(false),
-    m_minACU(0.0),
-    m_minACUHasBeenSet(false),
-    m_computeRedundancy(0),
-    m_computeRedundancyHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_dBShardGroupArnHasBeenSet(false),
-    m_tagListHasBeenSet(false)
-{
-}
-
 DBShardGroup::DBShardGroup(const XmlNode& xmlNode)
-  : DBShardGroup()
 {
   *this = xmlNode;
 }
@@ -115,6 +95,7 @@ DBShardGroup& DBShardGroup::operator =(const XmlNode& xmlNode)
     if(!tagListNode.IsNull())
     {
       XmlNode tagListMember = tagListNode.FirstChild("Tag");
+      m_tagListHasBeenSet = !tagListMember.IsNull();
       while(!tagListMember.IsNull())
       {
         m_tagList.push_back(tagListMember);

@@ -33,7 +33,7 @@ namespace Model
   class HLSFragmentSelector
   {
   public:
-    AWS_KINESISVIDEOARCHIVEDMEDIA_API HLSFragmentSelector();
+    AWS_KINESISVIDEOARCHIVEDMEDIA_API HLSFragmentSelector() = default;
     AWS_KINESISVIDEOARCHIVEDMEDIA_API HLSFragmentSelector(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEOARCHIVEDMEDIA_API HLSFragmentSelector& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISVIDEOARCHIVEDMEDIA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -64,12 +64,10 @@ namespace Model
      * producer timestamps with values now, they are not included in the HLS media
      * playlist.</p> <p>The default is <code>SERVER_TIMESTAMP</code>.</p>
      */
-    inline const HLSFragmentSelectorType& GetFragmentSelectorType() const{ return m_fragmentSelectorType; }
+    inline HLSFragmentSelectorType GetFragmentSelectorType() const { return m_fragmentSelectorType; }
     inline bool FragmentSelectorTypeHasBeenSet() const { return m_fragmentSelectorTypeHasBeenSet; }
-    inline void SetFragmentSelectorType(const HLSFragmentSelectorType& value) { m_fragmentSelectorTypeHasBeenSet = true; m_fragmentSelectorType = value; }
-    inline void SetFragmentSelectorType(HLSFragmentSelectorType&& value) { m_fragmentSelectorTypeHasBeenSet = true; m_fragmentSelectorType = std::move(value); }
-    inline HLSFragmentSelector& WithFragmentSelectorType(const HLSFragmentSelectorType& value) { SetFragmentSelectorType(value); return *this;}
-    inline HLSFragmentSelector& WithFragmentSelectorType(HLSFragmentSelectorType&& value) { SetFragmentSelectorType(std::move(value)); return *this;}
+    inline void SetFragmentSelectorType(HLSFragmentSelectorType value) { m_fragmentSelectorTypeHasBeenSet = true; m_fragmentSelectorType = value; }
+    inline HLSFragmentSelector& WithFragmentSelectorType(HLSFragmentSelectorType value) { SetFragmentSelectorType(value); return *this;}
     ///@}
 
     ///@{
@@ -78,16 +76,16 @@ namespace Model
      * value should not be present if <code>PlaybackType</code> is
      * <code>LIVE</code>.</p>
      */
-    inline const HLSTimestampRange& GetTimestampRange() const{ return m_timestampRange; }
+    inline const HLSTimestampRange& GetTimestampRange() const { return m_timestampRange; }
     inline bool TimestampRangeHasBeenSet() const { return m_timestampRangeHasBeenSet; }
-    inline void SetTimestampRange(const HLSTimestampRange& value) { m_timestampRangeHasBeenSet = true; m_timestampRange = value; }
-    inline void SetTimestampRange(HLSTimestampRange&& value) { m_timestampRangeHasBeenSet = true; m_timestampRange = std::move(value); }
-    inline HLSFragmentSelector& WithTimestampRange(const HLSTimestampRange& value) { SetTimestampRange(value); return *this;}
-    inline HLSFragmentSelector& WithTimestampRange(HLSTimestampRange&& value) { SetTimestampRange(std::move(value)); return *this;}
+    template<typename TimestampRangeT = HLSTimestampRange>
+    void SetTimestampRange(TimestampRangeT&& value) { m_timestampRangeHasBeenSet = true; m_timestampRange = std::forward<TimestampRangeT>(value); }
+    template<typename TimestampRangeT = HLSTimestampRange>
+    HLSFragmentSelector& WithTimestampRange(TimestampRangeT&& value) { SetTimestampRange(std::forward<TimestampRangeT>(value)); return *this;}
     ///@}
   private:
 
-    HLSFragmentSelectorType m_fragmentSelectorType;
+    HLSFragmentSelectorType m_fragmentSelectorType{HLSFragmentSelectorType::NOT_SET};
     bool m_fragmentSelectorTypeHasBeenSet = false;
 
     HLSTimestampRange m_timestampRange;

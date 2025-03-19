@@ -32,7 +32,7 @@ namespace Model
   class ActionCondition
   {
   public:
-    AWS_WAFV2_API ActionCondition();
+    AWS_WAFV2_API ActionCondition() = default;
     AWS_WAFV2_API ActionCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API ActionCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,16 +47,14 @@ namespace Model
      * <code>EXCLUDED_AS_COUNT</code> matches on excluded rules and also on rules that
      * have a rule action override of Count. </p>
      */
-    inline const ActionValue& GetAction() const{ return m_action; }
+    inline ActionValue GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const ActionValue& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(ActionValue&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline ActionCondition& WithAction(const ActionValue& value) { SetAction(value); return *this;}
-    inline ActionCondition& WithAction(ActionValue&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(ActionValue value) { m_actionHasBeenSet = true; m_action = value; }
+    inline ActionCondition& WithAction(ActionValue value) { SetAction(value); return *this;}
     ///@}
   private:
 
-    ActionValue m_action;
+    ActionValue m_action{ActionValue::NOT_SET};
     bool m_actionHasBeenSet = false;
   };
 

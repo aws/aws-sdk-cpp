@@ -18,22 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-SAPODataConnectorProfileProperties::SAPODataConnectorProfileProperties() : 
-    m_applicationHostUrlHasBeenSet(false),
-    m_applicationServicePathHasBeenSet(false),
-    m_portNumber(0),
-    m_portNumberHasBeenSet(false),
-    m_clientNumberHasBeenSet(false),
-    m_logonLanguageHasBeenSet(false),
-    m_privateLinkServiceNameHasBeenSet(false),
-    m_oAuthPropertiesHasBeenSet(false),
-    m_disableSSO(false),
-    m_disableSSOHasBeenSet(false)
-{
-}
-
 SAPODataConnectorProfileProperties::SAPODataConnectorProfileProperties(JsonView jsonValue)
-  : SAPODataConnectorProfileProperties()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ SAPODataConnectorProfileProperties& SAPODataConnectorProfileProperties::operator
   if(jsonValue.ValueExists("applicationHostUrl"))
   {
     m_applicationHostUrl = jsonValue.GetString("applicationHostUrl");
-
     m_applicationHostUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("applicationServicePath"))
   {
     m_applicationServicePath = jsonValue.GetString("applicationServicePath");
-
     m_applicationServicePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("portNumber"))
   {
     m_portNumber = jsonValue.GetInteger("portNumber");
-
     m_portNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clientNumber"))
   {
     m_clientNumber = jsonValue.GetString("clientNumber");
-
     m_clientNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("logonLanguage"))
   {
     m_logonLanguage = jsonValue.GetString("logonLanguage");
-
     m_logonLanguageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("privateLinkServiceName"))
   {
     m_privateLinkServiceName = jsonValue.GetString("privateLinkServiceName");
-
     m_privateLinkServiceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("oAuthProperties"))
   {
     m_oAuthProperties = jsonValue.GetObject("oAuthProperties");
-
     m_oAuthPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("disableSSO"))
   {
     m_disableSSO = jsonValue.GetBool("disableSSO");
-
     m_disableSSOHasBeenSet = true;
   }
-
   return *this;
 }
 

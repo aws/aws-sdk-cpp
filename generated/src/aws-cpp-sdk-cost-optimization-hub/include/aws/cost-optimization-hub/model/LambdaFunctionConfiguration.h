@@ -32,7 +32,7 @@ namespace Model
   class LambdaFunctionConfiguration
   {
   public:
-    AWS_COSTOPTIMIZATIONHUB_API LambdaFunctionConfiguration();
+    AWS_COSTOPTIMIZATIONHUB_API LambdaFunctionConfiguration() = default;
     AWS_COSTOPTIMIZATIONHUB_API LambdaFunctionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API LambdaFunctionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COSTOPTIMIZATIONHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Details about the compute configuration.</p>
      */
-    inline const ComputeConfiguration& GetCompute() const{ return m_compute; }
+    inline const ComputeConfiguration& GetCompute() const { return m_compute; }
     inline bool ComputeHasBeenSet() const { return m_computeHasBeenSet; }
-    inline void SetCompute(const ComputeConfiguration& value) { m_computeHasBeenSet = true; m_compute = value; }
-    inline void SetCompute(ComputeConfiguration&& value) { m_computeHasBeenSet = true; m_compute = std::move(value); }
-    inline LambdaFunctionConfiguration& WithCompute(const ComputeConfiguration& value) { SetCompute(value); return *this;}
-    inline LambdaFunctionConfiguration& WithCompute(ComputeConfiguration&& value) { SetCompute(std::move(value)); return *this;}
+    template<typename ComputeT = ComputeConfiguration>
+    void SetCompute(ComputeT&& value) { m_computeHasBeenSet = true; m_compute = std::forward<ComputeT>(value); }
+    template<typename ComputeT = ComputeConfiguration>
+    LambdaFunctionConfiguration& WithCompute(ComputeT&& value) { SetCompute(std::forward<ComputeT>(value)); return *this;}
     ///@}
   private:
 

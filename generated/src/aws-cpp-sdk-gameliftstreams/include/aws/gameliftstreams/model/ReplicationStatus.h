@@ -34,7 +34,7 @@ namespace Model
   class ReplicationStatus
   {
   public:
-    AWS_GAMELIFTSTREAMS_API ReplicationStatus();
+    AWS_GAMELIFTSTREAMS_API ReplicationStatus() = default;
     AWS_GAMELIFTSTREAMS_API ReplicationStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFTSTREAMS_API ReplicationStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFTSTREAMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,33 +46,29 @@ namespace Model
      * of locations that Amazon GameLift Streams supports, see the Regions and quotas
      * section in the Amazon GameLift Streams Developer Guide . </p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline ReplicationStatus& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline ReplicationStatus& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline ReplicationStatus& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    ReplicationStatus& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current status of the replication process.</p>
      */
-    inline const ReplicationStatusType& GetStatus() const{ return m_status; }
+    inline ReplicationStatusType GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ReplicationStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ReplicationStatusType&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ReplicationStatus& WithStatus(const ReplicationStatusType& value) { SetStatus(value); return *this;}
-    inline ReplicationStatus& WithStatus(ReplicationStatusType&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ReplicationStatusType value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ReplicationStatus& WithStatus(ReplicationStatusType value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_location;
     bool m_locationHasBeenSet = false;
 
-    ReplicationStatusType m_status;
+    ReplicationStatusType m_status{ReplicationStatusType::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

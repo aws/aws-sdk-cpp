@@ -32,7 +32,7 @@ namespace Model
   class GetBulkDeploymentStatusResult
   {
   public:
-    AWS_GREENGRASS_API GetBulkDeploymentStatusResult();
+    AWS_GREENGRASS_API GetBulkDeploymentStatusResult() = default;
     AWS_GREENGRASS_API GetBulkDeploymentStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GREENGRASS_API GetBulkDeploymentStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,106 +41,102 @@ namespace Model
     /**
      * Relevant metrics on input records processed during bulk deployment.
      */
-    inline const BulkDeploymentMetrics& GetBulkDeploymentMetrics() const{ return m_bulkDeploymentMetrics; }
-    inline void SetBulkDeploymentMetrics(const BulkDeploymentMetrics& value) { m_bulkDeploymentMetrics = value; }
-    inline void SetBulkDeploymentMetrics(BulkDeploymentMetrics&& value) { m_bulkDeploymentMetrics = std::move(value); }
-    inline GetBulkDeploymentStatusResult& WithBulkDeploymentMetrics(const BulkDeploymentMetrics& value) { SetBulkDeploymentMetrics(value); return *this;}
-    inline GetBulkDeploymentStatusResult& WithBulkDeploymentMetrics(BulkDeploymentMetrics&& value) { SetBulkDeploymentMetrics(std::move(value)); return *this;}
+    inline const BulkDeploymentMetrics& GetBulkDeploymentMetrics() const { return m_bulkDeploymentMetrics; }
+    template<typename BulkDeploymentMetricsT = BulkDeploymentMetrics>
+    void SetBulkDeploymentMetrics(BulkDeploymentMetricsT&& value) { m_bulkDeploymentMetricsHasBeenSet = true; m_bulkDeploymentMetrics = std::forward<BulkDeploymentMetricsT>(value); }
+    template<typename BulkDeploymentMetricsT = BulkDeploymentMetrics>
+    GetBulkDeploymentStatusResult& WithBulkDeploymentMetrics(BulkDeploymentMetricsT&& value) { SetBulkDeploymentMetrics(std::forward<BulkDeploymentMetricsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The status of the bulk deployment.
      */
-    inline const BulkDeploymentStatus& GetBulkDeploymentStatus() const{ return m_bulkDeploymentStatus; }
-    inline void SetBulkDeploymentStatus(const BulkDeploymentStatus& value) { m_bulkDeploymentStatus = value; }
-    inline void SetBulkDeploymentStatus(BulkDeploymentStatus&& value) { m_bulkDeploymentStatus = std::move(value); }
-    inline GetBulkDeploymentStatusResult& WithBulkDeploymentStatus(const BulkDeploymentStatus& value) { SetBulkDeploymentStatus(value); return *this;}
-    inline GetBulkDeploymentStatusResult& WithBulkDeploymentStatus(BulkDeploymentStatus&& value) { SetBulkDeploymentStatus(std::move(value)); return *this;}
+    inline BulkDeploymentStatus GetBulkDeploymentStatus() const { return m_bulkDeploymentStatus; }
+    inline void SetBulkDeploymentStatus(BulkDeploymentStatus value) { m_bulkDeploymentStatusHasBeenSet = true; m_bulkDeploymentStatus = value; }
+    inline GetBulkDeploymentStatusResult& WithBulkDeploymentStatus(BulkDeploymentStatus value) { SetBulkDeploymentStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * The time, in ISO format, when the deployment was created.
      */
-    inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::String& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::String&& value) { m_createdAt = std::move(value); }
-    inline void SetCreatedAt(const char* value) { m_createdAt.assign(value); }
-    inline GetBulkDeploymentStatusResult& WithCreatedAt(const Aws::String& value) { SetCreatedAt(value); return *this;}
-    inline GetBulkDeploymentStatusResult& WithCreatedAt(Aws::String&& value) { SetCreatedAt(std::move(value)); return *this;}
-    inline GetBulkDeploymentStatusResult& WithCreatedAt(const char* value) { SetCreatedAt(value); return *this;}
+    inline const Aws::String& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::String>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::String>
+    GetBulkDeploymentStatusResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Error details
      */
-    inline const Aws::Vector<ErrorDetail>& GetErrorDetails() const{ return m_errorDetails; }
-    inline void SetErrorDetails(const Aws::Vector<ErrorDetail>& value) { m_errorDetails = value; }
-    inline void SetErrorDetails(Aws::Vector<ErrorDetail>&& value) { m_errorDetails = std::move(value); }
-    inline GetBulkDeploymentStatusResult& WithErrorDetails(const Aws::Vector<ErrorDetail>& value) { SetErrorDetails(value); return *this;}
-    inline GetBulkDeploymentStatusResult& WithErrorDetails(Aws::Vector<ErrorDetail>&& value) { SetErrorDetails(std::move(value)); return *this;}
-    inline GetBulkDeploymentStatusResult& AddErrorDetails(const ErrorDetail& value) { m_errorDetails.push_back(value); return *this; }
-    inline GetBulkDeploymentStatusResult& AddErrorDetails(ErrorDetail&& value) { m_errorDetails.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ErrorDetail>& GetErrorDetails() const { return m_errorDetails; }
+    template<typename ErrorDetailsT = Aws::Vector<ErrorDetail>>
+    void SetErrorDetails(ErrorDetailsT&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = std::forward<ErrorDetailsT>(value); }
+    template<typename ErrorDetailsT = Aws::Vector<ErrorDetail>>
+    GetBulkDeploymentStatusResult& WithErrorDetails(ErrorDetailsT&& value) { SetErrorDetails(std::forward<ErrorDetailsT>(value)); return *this;}
+    template<typename ErrorDetailsT = ErrorDetail>
+    GetBulkDeploymentStatusResult& AddErrorDetails(ErrorDetailsT&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails.emplace_back(std::forward<ErrorDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * Error message
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessage.assign(value); }
-    inline GetBulkDeploymentStatusResult& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline GetBulkDeploymentStatusResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline GetBulkDeploymentStatusResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    GetBulkDeploymentStatusResult& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * Tag(s) attached to the resource arn.
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetBulkDeploymentStatusResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetBulkDeploymentStatusResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetBulkDeploymentStatusResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetBulkDeploymentStatusResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetBulkDeploymentStatusResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetBulkDeploymentStatusResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetBulkDeploymentStatusResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetBulkDeploymentStatusResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetBulkDeploymentStatusResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetBulkDeploymentStatusResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetBulkDeploymentStatusResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetBulkDeploymentStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetBulkDeploymentStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetBulkDeploymentStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetBulkDeploymentStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     BulkDeploymentMetrics m_bulkDeploymentMetrics;
+    bool m_bulkDeploymentMetricsHasBeenSet = false;
 
-    BulkDeploymentStatus m_bulkDeploymentStatus;
+    BulkDeploymentStatus m_bulkDeploymentStatus{BulkDeploymentStatus::NOT_SET};
+    bool m_bulkDeploymentStatusHasBeenSet = false;
 
     Aws::String m_createdAt;
+    bool m_createdAtHasBeenSet = false;
 
     Aws::Vector<ErrorDetail> m_errorDetails;
+    bool m_errorDetailsHasBeenSet = false;
 
     Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

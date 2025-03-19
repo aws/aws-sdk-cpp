@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListPublicKeys2020_05_31Result::ListPublicKeys2020_05_31Result()
-{
-}
-
 ListPublicKeys2020_05_31Result::ListPublicKeys2020_05_31Result(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ ListPublicKeys2020_05_31Result& ListPublicKeys2020_05_31Result::operator =(const
   if(!resultNode.IsNull())
   {
     m_publicKeyList = resultNode;
+    m_publicKeyListHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,6 +37,7 @@ ListPublicKeys2020_05_31Result& ListPublicKeys2020_05_31Result::operator =(const
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

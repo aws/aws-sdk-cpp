@@ -18,26 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-AutocompleteAddressHighlights::AutocompleteAddressHighlights() : 
-    m_labelHasBeenSet(false),
-    m_countryHasBeenSet(false),
-    m_regionHasBeenSet(false),
-    m_subRegionHasBeenSet(false),
-    m_localityHasBeenSet(false),
-    m_districtHasBeenSet(false),
-    m_subDistrictHasBeenSet(false),
-    m_streetHasBeenSet(false),
-    m_blockHasBeenSet(false),
-    m_subBlockHasBeenSet(false),
-    m_intersectionHasBeenSet(false),
-    m_postalCodeHasBeenSet(false),
-    m_addressNumberHasBeenSet(false),
-    m_buildingHasBeenSet(false)
-{
-}
-
 AutocompleteAddressHighlights::AutocompleteAddressHighlights(JsonView jsonValue)
-  : AutocompleteAddressHighlights()
 {
   *this = jsonValue;
 }
@@ -53,28 +34,21 @@ AutocompleteAddressHighlights& AutocompleteAddressHighlights::operator =(JsonVie
     }
     m_labelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Country"))
   {
     m_country = jsonValue.GetObject("Country");
-
     m_countryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Region"))
   {
     m_region = jsonValue.GetObject("Region");
-
     m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubRegion"))
   {
     m_subRegion = jsonValue.GetObject("SubRegion");
-
     m_subRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Locality"))
   {
     Aws::Utils::Array<JsonView> localityJsonList = jsonValue.GetArray("Locality");
@@ -84,7 +58,6 @@ AutocompleteAddressHighlights& AutocompleteAddressHighlights::operator =(JsonVie
     }
     m_localityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("District"))
   {
     Aws::Utils::Array<JsonView> districtJsonList = jsonValue.GetArray("District");
@@ -94,7 +67,6 @@ AutocompleteAddressHighlights& AutocompleteAddressHighlights::operator =(JsonVie
     }
     m_districtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubDistrict"))
   {
     Aws::Utils::Array<JsonView> subDistrictJsonList = jsonValue.GetArray("SubDistrict");
@@ -104,7 +76,6 @@ AutocompleteAddressHighlights& AutocompleteAddressHighlights::operator =(JsonVie
     }
     m_subDistrictHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Street"))
   {
     Aws::Utils::Array<JsonView> streetJsonList = jsonValue.GetArray("Street");
@@ -114,7 +85,6 @@ AutocompleteAddressHighlights& AutocompleteAddressHighlights::operator =(JsonVie
     }
     m_streetHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Block"))
   {
     Aws::Utils::Array<JsonView> blockJsonList = jsonValue.GetArray("Block");
@@ -124,7 +94,6 @@ AutocompleteAddressHighlights& AutocompleteAddressHighlights::operator =(JsonVie
     }
     m_blockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubBlock"))
   {
     Aws::Utils::Array<JsonView> subBlockJsonList = jsonValue.GetArray("SubBlock");
@@ -134,7 +103,6 @@ AutocompleteAddressHighlights& AutocompleteAddressHighlights::operator =(JsonVie
     }
     m_subBlockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Intersection"))
   {
     Aws::Utils::Array<JsonView> intersectionJsonList = jsonValue.GetArray("Intersection");
@@ -151,7 +119,6 @@ AutocompleteAddressHighlights& AutocompleteAddressHighlights::operator =(JsonVie
     }
     m_intersectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostalCode"))
   {
     Aws::Utils::Array<JsonView> postalCodeJsonList = jsonValue.GetArray("PostalCode");
@@ -161,7 +128,6 @@ AutocompleteAddressHighlights& AutocompleteAddressHighlights::operator =(JsonVie
     }
     m_postalCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddressNumber"))
   {
     Aws::Utils::Array<JsonView> addressNumberJsonList = jsonValue.GetArray("AddressNumber");
@@ -171,7 +137,6 @@ AutocompleteAddressHighlights& AutocompleteAddressHighlights::operator =(JsonVie
     }
     m_addressNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Building"))
   {
     Aws::Utils::Array<JsonView> buildingJsonList = jsonValue.GetArray("Building");
@@ -181,7 +146,6 @@ AutocompleteAddressHighlights& AutocompleteAddressHighlights::operator =(JsonVie
     }
     m_buildingHasBeenSet = true;
   }
-
   return *this;
 }
 

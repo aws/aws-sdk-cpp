@@ -32,7 +32,7 @@ namespace Model
   class AudioSilenceFailoverSettings
   {
   public:
-    AWS_MEDIALIVE_API AudioSilenceFailoverSettings();
+    AWS_MEDIALIVE_API AudioSilenceFailoverSettings() = default;
     AWS_MEDIALIVE_API AudioSilenceFailoverSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API AudioSilenceFailoverSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * detect silence. Select your most important rendition. If you didn't create an
      * audio selector in this input, leave blank.
      */
-    inline const Aws::String& GetAudioSelectorName() const{ return m_audioSelectorName; }
+    inline const Aws::String& GetAudioSelectorName() const { return m_audioSelectorName; }
     inline bool AudioSelectorNameHasBeenSet() const { return m_audioSelectorNameHasBeenSet; }
-    inline void SetAudioSelectorName(const Aws::String& value) { m_audioSelectorNameHasBeenSet = true; m_audioSelectorName = value; }
-    inline void SetAudioSelectorName(Aws::String&& value) { m_audioSelectorNameHasBeenSet = true; m_audioSelectorName = std::move(value); }
-    inline void SetAudioSelectorName(const char* value) { m_audioSelectorNameHasBeenSet = true; m_audioSelectorName.assign(value); }
-    inline AudioSilenceFailoverSettings& WithAudioSelectorName(const Aws::String& value) { SetAudioSelectorName(value); return *this;}
-    inline AudioSilenceFailoverSettings& WithAudioSelectorName(Aws::String&& value) { SetAudioSelectorName(std::move(value)); return *this;}
-    inline AudioSilenceFailoverSettings& WithAudioSelectorName(const char* value) { SetAudioSelectorName(value); return *this;}
+    template<typename AudioSelectorNameT = Aws::String>
+    void SetAudioSelectorName(AudioSelectorNameT&& value) { m_audioSelectorNameHasBeenSet = true; m_audioSelectorName = std::forward<AudioSelectorNameT>(value); }
+    template<typename AudioSelectorNameT = Aws::String>
+    AudioSilenceFailoverSettings& WithAudioSelectorName(AudioSelectorNameT&& value) { SetAudioSelectorName(std::forward<AudioSelectorNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * automatic input failover occurs. Silence is defined as audio loss or audio
      * quieter than -50 dBFS.
      */
-    inline int GetAudioSilenceThresholdMsec() const{ return m_audioSilenceThresholdMsec; }
+    inline int GetAudioSilenceThresholdMsec() const { return m_audioSilenceThresholdMsec; }
     inline bool AudioSilenceThresholdMsecHasBeenSet() const { return m_audioSilenceThresholdMsecHasBeenSet; }
     inline void SetAudioSilenceThresholdMsec(int value) { m_audioSilenceThresholdMsecHasBeenSet = true; m_audioSilenceThresholdMsec = value; }
     inline AudioSilenceFailoverSettings& WithAudioSilenceThresholdMsec(int value) { SetAudioSilenceThresholdMsec(value); return *this;}
@@ -70,7 +68,7 @@ namespace Model
     Aws::String m_audioSelectorName;
     bool m_audioSelectorNameHasBeenSet = false;
 
-    int m_audioSilenceThresholdMsec;
+    int m_audioSilenceThresholdMsec{0};
     bool m_audioSilenceThresholdMsecHasBeenSet = false;
   };
 

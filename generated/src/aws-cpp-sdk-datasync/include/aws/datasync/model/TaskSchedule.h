@@ -34,7 +34,7 @@ namespace Model
   class TaskSchedule
   {
   public:
-    AWS_DATASYNC_API TaskSchedule();
+    AWS_DATASYNC_API TaskSchedule() = default;
     AWS_DATASYNC_API TaskSchedule(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API TaskSchedule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,14 +53,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-scheduled-rule-pattern.html">
      * <i>Amazon EventBridge User Guide</i> </a>.</p>
      */
-    inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
+    inline const Aws::String& GetScheduleExpression() const { return m_scheduleExpression; }
     inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
-    inline void SetScheduleExpression(const Aws::String& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = value; }
-    inline void SetScheduleExpression(Aws::String&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::move(value); }
-    inline void SetScheduleExpression(const char* value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression.assign(value); }
-    inline TaskSchedule& WithScheduleExpression(const Aws::String& value) { SetScheduleExpression(value); return *this;}
-    inline TaskSchedule& WithScheduleExpression(Aws::String&& value) { SetScheduleExpression(std::move(value)); return *this;}
-    inline TaskSchedule& WithScheduleExpression(const char* value) { SetScheduleExpression(value); return *this;}
+    template<typename ScheduleExpressionT = Aws::String>
+    void SetScheduleExpression(ScheduleExpressionT&& value) { m_scheduleExpressionHasBeenSet = true; m_scheduleExpression = std::forward<ScheduleExpressionT>(value); }
+    template<typename ScheduleExpressionT = Aws::String>
+    TaskSchedule& WithScheduleExpression(ScheduleExpressionT&& value) { SetScheduleExpression(std::forward<ScheduleExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,19 +71,17 @@ namespace Model
      * error. For more information, see <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_TaskScheduleDetails.html">TaskScheduleDetails</a>.</p>
      */
-    inline const ScheduleStatus& GetStatus() const{ return m_status; }
+    inline ScheduleStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ScheduleStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ScheduleStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline TaskSchedule& WithStatus(const ScheduleStatus& value) { SetStatus(value); return *this;}
-    inline TaskSchedule& WithStatus(ScheduleStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ScheduleStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline TaskSchedule& WithStatus(ScheduleStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_scheduleExpression;
     bool m_scheduleExpressionHasBeenSet = false;
 
-    ScheduleStatus m_status;
+    ScheduleStatus m_status{ScheduleStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

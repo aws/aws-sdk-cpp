@@ -18,30 +18,7 @@ namespace FSx
 namespace Model
 {
 
-OntapFileSystemConfiguration::OntapFileSystemConfiguration() : 
-    m_automaticBackupRetentionDays(0),
-    m_automaticBackupRetentionDaysHasBeenSet(false),
-    m_dailyAutomaticBackupStartTimeHasBeenSet(false),
-    m_deploymentType(OntapDeploymentType::NOT_SET),
-    m_deploymentTypeHasBeenSet(false),
-    m_endpointIpAddressRangeHasBeenSet(false),
-    m_endpointsHasBeenSet(false),
-    m_diskIopsConfigurationHasBeenSet(false),
-    m_preferredSubnetIdHasBeenSet(false),
-    m_routeTableIdsHasBeenSet(false),
-    m_throughputCapacity(0),
-    m_throughputCapacityHasBeenSet(false),
-    m_weeklyMaintenanceStartTimeHasBeenSet(false),
-    m_fsxAdminPasswordHasBeenSet(false),
-    m_hAPairs(0),
-    m_hAPairsHasBeenSet(false),
-    m_throughputCapacityPerHAPair(0),
-    m_throughputCapacityPerHAPairHasBeenSet(false)
-{
-}
-
 OntapFileSystemConfiguration::OntapFileSystemConfiguration(JsonView jsonValue)
-  : OntapFileSystemConfiguration()
 {
   *this = jsonValue;
 }
@@ -51,52 +28,38 @@ OntapFileSystemConfiguration& OntapFileSystemConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("AutomaticBackupRetentionDays"))
   {
     m_automaticBackupRetentionDays = jsonValue.GetInteger("AutomaticBackupRetentionDays");
-
     m_automaticBackupRetentionDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DailyAutomaticBackupStartTime"))
   {
     m_dailyAutomaticBackupStartTime = jsonValue.GetString("DailyAutomaticBackupStartTime");
-
     m_dailyAutomaticBackupStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentType"))
   {
     m_deploymentType = OntapDeploymentTypeMapper::GetOntapDeploymentTypeForName(jsonValue.GetString("DeploymentType"));
-
     m_deploymentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointIpAddressRange"))
   {
     m_endpointIpAddressRange = jsonValue.GetString("EndpointIpAddressRange");
-
     m_endpointIpAddressRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Endpoints"))
   {
     m_endpoints = jsonValue.GetObject("Endpoints");
-
     m_endpointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DiskIopsConfiguration"))
   {
     m_diskIopsConfiguration = jsonValue.GetObject("DiskIopsConfiguration");
-
     m_diskIopsConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreferredSubnetId"))
   {
     m_preferredSubnetId = jsonValue.GetString("PreferredSubnetId");
-
     m_preferredSubnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RouteTableIds"))
   {
     Aws::Utils::Array<JsonView> routeTableIdsJsonList = jsonValue.GetArray("RouteTableIds");
@@ -106,42 +69,31 @@ OntapFileSystemConfiguration& OntapFileSystemConfiguration::operator =(JsonView 
     }
     m_routeTableIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThroughputCapacity"))
   {
     m_throughputCapacity = jsonValue.GetInteger("ThroughputCapacity");
-
     m_throughputCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WeeklyMaintenanceStartTime"))
   {
     m_weeklyMaintenanceStartTime = jsonValue.GetString("WeeklyMaintenanceStartTime");
-
     m_weeklyMaintenanceStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FsxAdminPassword"))
   {
     m_fsxAdminPassword = jsonValue.GetString("FsxAdminPassword");
-
     m_fsxAdminPasswordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HAPairs"))
   {
     m_hAPairs = jsonValue.GetInteger("HAPairs");
-
     m_hAPairsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThroughputCapacityPerHAPair"))
   {
     m_throughputCapacityPerHAPair = jsonValue.GetInteger("ThroughputCapacityPerHAPair");
-
     m_throughputCapacityPerHAPairHasBeenSet = true;
   }
-
   return *this;
 }
 

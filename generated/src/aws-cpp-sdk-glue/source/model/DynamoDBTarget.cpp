@@ -18,17 +18,7 @@ namespace Glue
 namespace Model
 {
 
-DynamoDBTarget::DynamoDBTarget() : 
-    m_pathHasBeenSet(false),
-    m_scanAll(false),
-    m_scanAllHasBeenSet(false),
-    m_scanRate(0.0),
-    m_scanRateHasBeenSet(false)
-{
-}
-
 DynamoDBTarget::DynamoDBTarget(JsonView jsonValue)
-  : DynamoDBTarget()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ DynamoDBTarget& DynamoDBTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Path"))
   {
     m_path = jsonValue.GetString("Path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanAll"))
   {
     m_scanAll = jsonValue.GetBool("scanAll");
-
     m_scanAllHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scanRate"))
   {
     m_scanRate = jsonValue.GetDouble("scanRate");
-
     m_scanRateHasBeenSet = true;
   }
-
   return *this;
 }
 

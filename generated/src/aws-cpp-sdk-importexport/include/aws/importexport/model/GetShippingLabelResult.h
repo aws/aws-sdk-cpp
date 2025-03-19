@@ -28,48 +28,47 @@ namespace Model
   class GetShippingLabelResult
   {
   public:
-    AWS_IMPORTEXPORT_API GetShippingLabelResult();
+    AWS_IMPORTEXPORT_API GetShippingLabelResult() = default;
     AWS_IMPORTEXPORT_API GetShippingLabelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_IMPORTEXPORT_API GetShippingLabelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetShippingLabelURL() const{ return m_shippingLabelURL; }
-    inline void SetShippingLabelURL(const Aws::String& value) { m_shippingLabelURL = value; }
-    inline void SetShippingLabelURL(Aws::String&& value) { m_shippingLabelURL = std::move(value); }
-    inline void SetShippingLabelURL(const char* value) { m_shippingLabelURL.assign(value); }
-    inline GetShippingLabelResult& WithShippingLabelURL(const Aws::String& value) { SetShippingLabelURL(value); return *this;}
-    inline GetShippingLabelResult& WithShippingLabelURL(Aws::String&& value) { SetShippingLabelURL(std::move(value)); return *this;}
-    inline GetShippingLabelResult& WithShippingLabelURL(const char* value) { SetShippingLabelURL(value); return *this;}
+    inline const Aws::String& GetShippingLabelURL() const { return m_shippingLabelURL; }
+    template<typename ShippingLabelURLT = Aws::String>
+    void SetShippingLabelURL(ShippingLabelURLT&& value) { m_shippingLabelURLHasBeenSet = true; m_shippingLabelURL = std::forward<ShippingLabelURLT>(value); }
+    template<typename ShippingLabelURLT = Aws::String>
+    GetShippingLabelResult& WithShippingLabelURL(ShippingLabelURLT&& value) { SetShippingLabelURL(std::forward<ShippingLabelURLT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetWarning() const{ return m_warning; }
-    inline void SetWarning(const Aws::String& value) { m_warning = value; }
-    inline void SetWarning(Aws::String&& value) { m_warning = std::move(value); }
-    inline void SetWarning(const char* value) { m_warning.assign(value); }
-    inline GetShippingLabelResult& WithWarning(const Aws::String& value) { SetWarning(value); return *this;}
-    inline GetShippingLabelResult& WithWarning(Aws::String&& value) { SetWarning(std::move(value)); return *this;}
-    inline GetShippingLabelResult& WithWarning(const char* value) { SetWarning(value); return *this;}
+    inline const Aws::String& GetWarning() const { return m_warning; }
+    template<typename WarningT = Aws::String>
+    void SetWarning(WarningT&& value) { m_warningHasBeenSet = true; m_warning = std::forward<WarningT>(value); }
+    template<typename WarningT = Aws::String>
+    GetShippingLabelResult& WithWarning(WarningT&& value) { SetWarning(std::forward<WarningT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetShippingLabelResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetShippingLabelResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetShippingLabelResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_shippingLabelURL;
+    bool m_shippingLabelURLHasBeenSet = false;
 
     Aws::String m_warning;
+    bool m_warningHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

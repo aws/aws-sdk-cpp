@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetApplicationComponentStrategiesResult::GetApplicationComponentStrategiesResult()
-{
-}
-
 GetApplicationComponentStrategiesResult::GetApplicationComponentStrategiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ GetApplicationComponentStrategiesResult& GetApplicationComponentStrategiesResult
     {
       m_applicationComponentStrategies.push_back(applicationComponentStrategiesJsonList[applicationComponentStrategiesIndex].AsObject());
     }
+    m_applicationComponentStrategiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

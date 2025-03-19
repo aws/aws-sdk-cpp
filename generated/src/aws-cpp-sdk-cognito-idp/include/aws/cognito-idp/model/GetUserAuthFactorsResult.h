@@ -29,7 +29,7 @@ namespace Model
   class GetUserAuthFactorsResult
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API GetUserAuthFactorsResult();
+    AWS_COGNITOIDENTITYPROVIDER_API GetUserAuthFactorsResult() = default;
     AWS_COGNITOIDENTITYPROVIDER_API GetUserAuthFactorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOIDENTITYPROVIDER_API GetUserAuthFactorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
      * <p>The name of the user who is eligible for the authentication factors in the
      * response.</p>
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
-    inline void SetUsername(const Aws::String& value) { m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_username.assign(value); }
-    inline GetUserAuthFactorsResult& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline GetUserAuthFactorsResult& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline GetUserAuthFactorsResult& WithUsername(const char* value) { SetUsername(value); return *this;}
+    inline const Aws::String& GetUsername() const { return m_username; }
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    GetUserAuthFactorsResult& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,13 +51,11 @@ namespace Model
      * <p>The challenge method that Amazon Cognito returns to the user in response to
      * sign-in requests. Users can prefer SMS message, email message, or TOTP MFA.</p>
      */
-    inline const Aws::String& GetPreferredMfaSetting() const{ return m_preferredMfaSetting; }
-    inline void SetPreferredMfaSetting(const Aws::String& value) { m_preferredMfaSetting = value; }
-    inline void SetPreferredMfaSetting(Aws::String&& value) { m_preferredMfaSetting = std::move(value); }
-    inline void SetPreferredMfaSetting(const char* value) { m_preferredMfaSetting.assign(value); }
-    inline GetUserAuthFactorsResult& WithPreferredMfaSetting(const Aws::String& value) { SetPreferredMfaSetting(value); return *this;}
-    inline GetUserAuthFactorsResult& WithPreferredMfaSetting(Aws::String&& value) { SetPreferredMfaSetting(std::move(value)); return *this;}
-    inline GetUserAuthFactorsResult& WithPreferredMfaSetting(const char* value) { SetPreferredMfaSetting(value); return *this;}
+    inline const Aws::String& GetPreferredMfaSetting() const { return m_preferredMfaSetting; }
+    template<typename PreferredMfaSettingT = Aws::String>
+    void SetPreferredMfaSetting(PreferredMfaSettingT&& value) { m_preferredMfaSettingHasBeenSet = true; m_preferredMfaSetting = std::forward<PreferredMfaSettingT>(value); }
+    template<typename PreferredMfaSettingT = Aws::String>
+    GetUserAuthFactorsResult& WithPreferredMfaSetting(PreferredMfaSettingT&& value) { SetPreferredMfaSetting(std::forward<PreferredMfaSettingT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +64,13 @@ namespace Model
      * list are <code>SMS_MFA</code>, <code>EMAIL_OTP</code>, and
      * <code>SOFTWARE_TOKEN_MFA</code>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetUserMFASettingList() const{ return m_userMFASettingList; }
-    inline void SetUserMFASettingList(const Aws::Vector<Aws::String>& value) { m_userMFASettingList = value; }
-    inline void SetUserMFASettingList(Aws::Vector<Aws::String>&& value) { m_userMFASettingList = std::move(value); }
-    inline GetUserAuthFactorsResult& WithUserMFASettingList(const Aws::Vector<Aws::String>& value) { SetUserMFASettingList(value); return *this;}
-    inline GetUserAuthFactorsResult& WithUserMFASettingList(Aws::Vector<Aws::String>&& value) { SetUserMFASettingList(std::move(value)); return *this;}
-    inline GetUserAuthFactorsResult& AddUserMFASettingList(const Aws::String& value) { m_userMFASettingList.push_back(value); return *this; }
-    inline GetUserAuthFactorsResult& AddUserMFASettingList(Aws::String&& value) { m_userMFASettingList.push_back(std::move(value)); return *this; }
-    inline GetUserAuthFactorsResult& AddUserMFASettingList(const char* value) { m_userMFASettingList.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetUserMFASettingList() const { return m_userMFASettingList; }
+    template<typename UserMFASettingListT = Aws::Vector<Aws::String>>
+    void SetUserMFASettingList(UserMFASettingListT&& value) { m_userMFASettingListHasBeenSet = true; m_userMFASettingList = std::forward<UserMFASettingListT>(value); }
+    template<typename UserMFASettingListT = Aws::Vector<Aws::String>>
+    GetUserAuthFactorsResult& WithUserMFASettingList(UserMFASettingListT&& value) { SetUserMFASettingList(std::forward<UserMFASettingListT>(value)); return *this;}
+    template<typename UserMFASettingListT = Aws::String>
+    GetUserAuthFactorsResult& AddUserMFASettingList(UserMFASettingListT&& value) { m_userMFASettingListHasBeenSet = true; m_userMFASettingList.emplace_back(std::forward<UserMFASettingListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -84,36 +79,38 @@ namespace Model
      * <code>USER_AUTH</code> sign-in, for example <code>["PASSWORD",
      * "WEB_AUTHN"]</code>.</p>
      */
-    inline const Aws::Vector<AuthFactorType>& GetConfiguredUserAuthFactors() const{ return m_configuredUserAuthFactors; }
-    inline void SetConfiguredUserAuthFactors(const Aws::Vector<AuthFactorType>& value) { m_configuredUserAuthFactors = value; }
-    inline void SetConfiguredUserAuthFactors(Aws::Vector<AuthFactorType>&& value) { m_configuredUserAuthFactors = std::move(value); }
-    inline GetUserAuthFactorsResult& WithConfiguredUserAuthFactors(const Aws::Vector<AuthFactorType>& value) { SetConfiguredUserAuthFactors(value); return *this;}
-    inline GetUserAuthFactorsResult& WithConfiguredUserAuthFactors(Aws::Vector<AuthFactorType>&& value) { SetConfiguredUserAuthFactors(std::move(value)); return *this;}
-    inline GetUserAuthFactorsResult& AddConfiguredUserAuthFactors(const AuthFactorType& value) { m_configuredUserAuthFactors.push_back(value); return *this; }
-    inline GetUserAuthFactorsResult& AddConfiguredUserAuthFactors(AuthFactorType&& value) { m_configuredUserAuthFactors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AuthFactorType>& GetConfiguredUserAuthFactors() const { return m_configuredUserAuthFactors; }
+    template<typename ConfiguredUserAuthFactorsT = Aws::Vector<AuthFactorType>>
+    void SetConfiguredUserAuthFactors(ConfiguredUserAuthFactorsT&& value) { m_configuredUserAuthFactorsHasBeenSet = true; m_configuredUserAuthFactors = std::forward<ConfiguredUserAuthFactorsT>(value); }
+    template<typename ConfiguredUserAuthFactorsT = Aws::Vector<AuthFactorType>>
+    GetUserAuthFactorsResult& WithConfiguredUserAuthFactors(ConfiguredUserAuthFactorsT&& value) { SetConfiguredUserAuthFactors(std::forward<ConfiguredUserAuthFactorsT>(value)); return *this;}
+    inline GetUserAuthFactorsResult& AddConfiguredUserAuthFactors(AuthFactorType value) { m_configuredUserAuthFactorsHasBeenSet = true; m_configuredUserAuthFactors.push_back(value); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetUserAuthFactorsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetUserAuthFactorsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetUserAuthFactorsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetUserAuthFactorsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_username;
+    bool m_usernameHasBeenSet = false;
 
     Aws::String m_preferredMfaSetting;
+    bool m_preferredMfaSettingHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userMFASettingList;
+    bool m_userMFASettingListHasBeenSet = false;
 
     Aws::Vector<AuthFactorType> m_configuredUserAuthFactors;
+    bool m_configuredUserAuthFactorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

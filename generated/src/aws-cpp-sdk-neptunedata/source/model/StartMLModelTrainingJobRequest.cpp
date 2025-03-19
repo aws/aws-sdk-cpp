@@ -12,33 +12,6 @@ using namespace Aws::neptunedata::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartMLModelTrainingJobRequest::StartMLModelTrainingJobRequest() : 
-    m_idHasBeenSet(false),
-    m_previousModelTrainingJobIdHasBeenSet(false),
-    m_dataProcessingJobIdHasBeenSet(false),
-    m_trainModelS3LocationHasBeenSet(false),
-    m_sagemakerIamRoleArnHasBeenSet(false),
-    m_neptuneIamRoleArnHasBeenSet(false),
-    m_baseProcessingInstanceTypeHasBeenSet(false),
-    m_trainingInstanceTypeHasBeenSet(false),
-    m_trainingInstanceVolumeSizeInGB(0),
-    m_trainingInstanceVolumeSizeInGBHasBeenSet(false),
-    m_trainingTimeOutInSeconds(0),
-    m_trainingTimeOutInSecondsHasBeenSet(false),
-    m_maxHPONumberOfTrainingJobs(0),
-    m_maxHPONumberOfTrainingJobsHasBeenSet(false),
-    m_maxHPOParallelTrainingJobs(0),
-    m_maxHPOParallelTrainingJobsHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_volumeEncryptionKMSKeyHasBeenSet(false),
-    m_s3OutputEncryptionKMSKeyHasBeenSet(false),
-    m_enableManagedSpotTraining(false),
-    m_enableManagedSpotTrainingHasBeenSet(false),
-    m_customModelTrainingParametersHasBeenSet(false)
-{
-}
-
 Aws::String StartMLModelTrainingJobRequest::SerializePayload() const
 {
   JsonValue payload;

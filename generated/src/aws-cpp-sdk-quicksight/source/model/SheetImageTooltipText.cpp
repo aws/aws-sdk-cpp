@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SheetImageTooltipText::SheetImageTooltipText() : 
-    m_plainTextHasBeenSet(false)
-{
-}
-
 SheetImageTooltipText::SheetImageTooltipText(JsonView jsonValue)
-  : SheetImageTooltipText()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SheetImageTooltipText& SheetImageTooltipText::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PlainText"))
   {
     m_plainText = jsonValue.GetString("PlainText");
-
     m_plainTextHasBeenSet = true;
   }
-
   return *this;
 }
 

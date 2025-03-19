@@ -40,7 +40,7 @@ namespace Model
   class TaskFilter
   {
   public:
-    AWS_DATASYNC_API TaskFilter();
+    AWS_DATASYNC_API TaskFilter() = default;
     AWS_DATASYNC_API TaskFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API TaskFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATASYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,12 +52,10 @@ namespace Model
      * that are available for it. For example, <code>LocationId</code> for
      * <code>ListTasks</code>.</p>
      */
-    inline const TaskFilterName& GetName() const{ return m_name; }
+    inline TaskFilterName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const TaskFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(TaskFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline TaskFilter& WithName(const TaskFilterName& value) { SetName(value); return *this;}
-    inline TaskFilter& WithName(TaskFilterName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(TaskFilterName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline TaskFilter& WithName(TaskFilterName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -65,15 +63,14 @@ namespace Model
      * <p>The values that you want to filter for. For example, you might want to
      * display only tasks for a specific destination location.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline TaskFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline TaskFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline TaskFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline TaskFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline TaskFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    TaskFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    TaskFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -81,22 +78,20 @@ namespace Model
      * <p>The operator that is used to compare filter values (for example,
      * <code>Equals</code> or <code>Contains</code>).</p>
      */
-    inline const Operator& GetOperator() const{ return m_operator; }
+    inline Operator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const Operator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(Operator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline TaskFilter& WithOperator(const Operator& value) { SetOperator(value); return *this;}
-    inline TaskFilter& WithOperator(Operator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(Operator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline TaskFilter& WithOperator(Operator value) { SetOperator(value); return *this;}
     ///@}
   private:
 
-    TaskFilterName m_name;
+    TaskFilterName m_name{TaskFilterName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet = false;
 
-    Operator m_operator;
+    Operator m_operator{Operator::NOT_SET};
     bool m_operatorHasBeenSet = false;
   };
 

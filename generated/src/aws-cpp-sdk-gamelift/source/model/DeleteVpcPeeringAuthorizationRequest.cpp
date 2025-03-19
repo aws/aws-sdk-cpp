@@ -12,12 +12,6 @@ using namespace Aws::GameLift::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteVpcPeeringAuthorizationRequest::DeleteVpcPeeringAuthorizationRequest() : 
-    m_gameLiftAwsAccountIdHasBeenSet(false),
-    m_peerVpcIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVpcPeeringAuthorizationRequest::SerializePayload() const
 {
   JsonValue payload;

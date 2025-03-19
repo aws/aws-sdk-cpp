@@ -12,11 +12,6 @@ using namespace Aws::PrivateNetworks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDeviceIdentifierRequest::GetDeviceIdentifierRequest() : 
-    m_deviceIdentifierArnHasBeenSet(false)
-{
-}
-
 Aws::String GetDeviceIdentifierRequest::SerializePayload() const
 {
   return {};

@@ -18,13 +18,7 @@ namespace SecurityLake
 namespace Model
 {
 
-DataLakeEncryptionConfiguration::DataLakeEncryptionConfiguration() : 
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 DataLakeEncryptionConfiguration::DataLakeEncryptionConfiguration(JsonView jsonValue)
-  : DataLakeEncryptionConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DataLakeEncryptionConfiguration& DataLakeEncryptionConfiguration::operator =(Jso
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

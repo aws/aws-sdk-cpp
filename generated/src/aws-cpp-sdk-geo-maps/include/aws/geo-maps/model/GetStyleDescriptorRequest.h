@@ -27,7 +27,7 @@ namespace Model
   class GetStyleDescriptorRequest : public GeoMapsRequest
   {
   public:
-    AWS_GEOMAPS_API GetStyleDescriptorRequest();
+    AWS_GEOMAPS_API GetStyleDescriptorRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>Style specifies the desired map style.</p>
      */
-    inline const MapStyle& GetStyle() const{ return m_style; }
+    inline MapStyle GetStyle() const { return m_style; }
     inline bool StyleHasBeenSet() const { return m_styleHasBeenSet; }
-    inline void SetStyle(const MapStyle& value) { m_styleHasBeenSet = true; m_style = value; }
-    inline void SetStyle(MapStyle&& value) { m_styleHasBeenSet = true; m_style = std::move(value); }
-    inline GetStyleDescriptorRequest& WithStyle(const MapStyle& value) { SetStyle(value); return *this;}
-    inline GetStyleDescriptorRequest& WithStyle(MapStyle&& value) { SetStyle(std::move(value)); return *this;}
+    inline void SetStyle(MapStyle value) { m_styleHasBeenSet = true; m_style = value; }
+    inline GetStyleDescriptorRequest& WithStyle(MapStyle value) { SetStyle(value); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +57,10 @@ namespace Model
      * <p>Example: <code>Light</code> </p> <p>Default value: <code>Light</code> </p>
      *  <p>Valid values for ColorScheme are case sensitive.</p> 
      */
-    inline const ColorScheme& GetColorScheme() const{ return m_colorScheme; }
+    inline ColorScheme GetColorScheme() const { return m_colorScheme; }
     inline bool ColorSchemeHasBeenSet() const { return m_colorSchemeHasBeenSet; }
-    inline void SetColorScheme(const ColorScheme& value) { m_colorSchemeHasBeenSet = true; m_colorScheme = value; }
-    inline void SetColorScheme(ColorScheme&& value) { m_colorSchemeHasBeenSet = true; m_colorScheme = std::move(value); }
-    inline GetStyleDescriptorRequest& WithColorScheme(const ColorScheme& value) { SetColorScheme(value); return *this;}
-    inline GetStyleDescriptorRequest& WithColorScheme(ColorScheme&& value) { SetColorScheme(std::move(value)); return *this;}
+    inline void SetColorScheme(ColorScheme value) { m_colorSchemeHasBeenSet = true; m_colorScheme = value; }
+    inline GetStyleDescriptorRequest& WithColorScheme(ColorScheme value) { SetColorScheme(value); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +84,12 @@ namespace Model
      * Artigas</p> </li> <li> <p> <code>VNM</code>: Vietnam's view on the Paracel
      * Islands and Spratly Islands</p> </li> </ul>
      */
-    inline const Aws::String& GetPoliticalView() const{ return m_politicalView; }
+    inline const Aws::String& GetPoliticalView() const { return m_politicalView; }
     inline bool PoliticalViewHasBeenSet() const { return m_politicalViewHasBeenSet; }
-    inline void SetPoliticalView(const Aws::String& value) { m_politicalViewHasBeenSet = true; m_politicalView = value; }
-    inline void SetPoliticalView(Aws::String&& value) { m_politicalViewHasBeenSet = true; m_politicalView = std::move(value); }
-    inline void SetPoliticalView(const char* value) { m_politicalViewHasBeenSet = true; m_politicalView.assign(value); }
-    inline GetStyleDescriptorRequest& WithPoliticalView(const Aws::String& value) { SetPoliticalView(value); return *this;}
-    inline GetStyleDescriptorRequest& WithPoliticalView(Aws::String&& value) { SetPoliticalView(std::move(value)); return *this;}
-    inline GetStyleDescriptorRequest& WithPoliticalView(const char* value) { SetPoliticalView(value); return *this;}
+    template<typename PoliticalViewT = Aws::String>
+    void SetPoliticalView(PoliticalViewT&& value) { m_politicalViewHasBeenSet = true; m_politicalView = std::forward<PoliticalViewT>(value); }
+    template<typename PoliticalViewT = Aws::String>
+    GetStyleDescriptorRequest& WithPoliticalView(PoliticalViewT&& value) { SetPoliticalView(std::forward<PoliticalViewT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,21 +97,19 @@ namespace Model
      * <p>Optional: The API key to be used for authorization. Either an API key or
      * valid SigV4 signature must be provided when making a request. </p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline GetStyleDescriptorRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline GetStyleDescriptorRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline GetStyleDescriptorRequest& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    GetStyleDescriptorRequest& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
   private:
 
-    MapStyle m_style;
+    MapStyle m_style{MapStyle::NOT_SET};
     bool m_styleHasBeenSet = false;
 
-    ColorScheme m_colorScheme;
+    ColorScheme m_colorScheme{ColorScheme::NOT_SET};
     bool m_colorSchemeHasBeenSet = false;
 
     Aws::String m_politicalView;

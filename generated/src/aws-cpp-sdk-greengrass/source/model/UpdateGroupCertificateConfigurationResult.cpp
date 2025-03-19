@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateGroupCertificateConfigurationResult::UpdateGroupCertificateConfigurationResult()
-{
-}
-
 UpdateGroupCertificateConfigurationResult::UpdateGroupCertificateConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ UpdateGroupCertificateConfigurationResult& UpdateGroupCertificateConfigurationRe
   if(jsonValue.ValueExists("CertificateAuthorityExpiryInMilliseconds"))
   {
     m_certificateAuthorityExpiryInMilliseconds = jsonValue.GetString("CertificateAuthorityExpiryInMilliseconds");
-
+    m_certificateAuthorityExpiryInMillisecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CertificateExpiryInMilliseconds"))
   {
     m_certificateExpiryInMilliseconds = jsonValue.GetString("CertificateExpiryInMilliseconds");
-
+    m_certificateExpiryInMillisecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupId"))
   {
     m_groupId = jsonValue.GetString("GroupId");
-
+    m_groupIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

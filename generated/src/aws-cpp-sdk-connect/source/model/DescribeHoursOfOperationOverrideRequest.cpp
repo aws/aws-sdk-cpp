@@ -12,13 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeHoursOfOperationOverrideRequest::DescribeHoursOfOperationOverrideRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_hoursOfOperationIdHasBeenSet(false),
-    m_hoursOfOperationOverrideIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeHoursOfOperationOverrideRequest::SerializePayload() const
 {
   return {};

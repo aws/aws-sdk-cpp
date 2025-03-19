@@ -22,7 +22,7 @@ namespace Model
   class DeleteFlowLogsRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DeleteFlowLogsRequest();
+    AWS_EC2_API DeleteFlowLogsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,7 +44,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DeleteFlowLogsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -55,19 +55,18 @@ namespace Model
      * <p>One or more flow log IDs.</p> <p>Constraint: Maximum of 1000 flow log
      * IDs.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetFlowLogIds() const{ return m_flowLogIds; }
+    inline const Aws::Vector<Aws::String>& GetFlowLogIds() const { return m_flowLogIds; }
     inline bool FlowLogIdsHasBeenSet() const { return m_flowLogIdsHasBeenSet; }
-    inline void SetFlowLogIds(const Aws::Vector<Aws::String>& value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds = value; }
-    inline void SetFlowLogIds(Aws::Vector<Aws::String>&& value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds = std::move(value); }
-    inline DeleteFlowLogsRequest& WithFlowLogIds(const Aws::Vector<Aws::String>& value) { SetFlowLogIds(value); return *this;}
-    inline DeleteFlowLogsRequest& WithFlowLogIds(Aws::Vector<Aws::String>&& value) { SetFlowLogIds(std::move(value)); return *this;}
-    inline DeleteFlowLogsRequest& AddFlowLogIds(const Aws::String& value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds.push_back(value); return *this; }
-    inline DeleteFlowLogsRequest& AddFlowLogIds(Aws::String&& value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds.push_back(std::move(value)); return *this; }
-    inline DeleteFlowLogsRequest& AddFlowLogIds(const char* value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds.push_back(value); return *this; }
+    template<typename FlowLogIdsT = Aws::Vector<Aws::String>>
+    void SetFlowLogIds(FlowLogIdsT&& value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds = std::forward<FlowLogIdsT>(value); }
+    template<typename FlowLogIdsT = Aws::Vector<Aws::String>>
+    DeleteFlowLogsRequest& WithFlowLogIds(FlowLogIdsT&& value) { SetFlowLogIds(std::forward<FlowLogIdsT>(value)); return *this;}
+    template<typename FlowLogIdsT = Aws::String>
+    DeleteFlowLogsRequest& AddFlowLogIds(FlowLogIdsT&& value) { m_flowLogIdsHasBeenSet = true; m_flowLogIds.emplace_back(std::forward<FlowLogIdsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_flowLogIds;

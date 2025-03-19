@@ -35,7 +35,7 @@ namespace Model
   class DescribeTrustedAdvisorCheckResultResult
   {
   public:
-    AWS_SUPPORT_API DescribeTrustedAdvisorCheckResultResult();
+    AWS_SUPPORT_API DescribeTrustedAdvisorCheckResultResult() = default;
     AWS_SUPPORT_API DescribeTrustedAdvisorCheckResultResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SUPPORT_API DescribeTrustedAdvisorCheckResultResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,28 +44,28 @@ namespace Model
     /**
      * <p>The detailed results of the Trusted Advisor check.</p>
      */
-    inline const TrustedAdvisorCheckResult& GetResult() const{ return m_result; }
-    inline void SetResult(const TrustedAdvisorCheckResult& value) { m_result = value; }
-    inline void SetResult(TrustedAdvisorCheckResult&& value) { m_result = std::move(value); }
-    inline DescribeTrustedAdvisorCheckResultResult& WithResult(const TrustedAdvisorCheckResult& value) { SetResult(value); return *this;}
-    inline DescribeTrustedAdvisorCheckResultResult& WithResult(TrustedAdvisorCheckResult&& value) { SetResult(std::move(value)); return *this;}
+    inline const TrustedAdvisorCheckResult& GetResult() const { return m_result; }
+    template<typename ResultT = TrustedAdvisorCheckResult>
+    void SetResult(ResultT&& value) { m_resultHasBeenSet = true; m_result = std::forward<ResultT>(value); }
+    template<typename ResultT = TrustedAdvisorCheckResult>
+    DescribeTrustedAdvisorCheckResultResult& WithResult(ResultT&& value) { SetResult(std::forward<ResultT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeTrustedAdvisorCheckResultResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeTrustedAdvisorCheckResultResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeTrustedAdvisorCheckResultResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeTrustedAdvisorCheckResultResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TrustedAdvisorCheckResult m_result;
+    bool m_resultHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

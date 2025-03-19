@@ -18,17 +18,7 @@ namespace IoT
 namespace Model
 {
 
-ManagedJobTemplateSummary::ManagedJobTemplateSummary() : 
-    m_templateArnHasBeenSet(false),
-    m_templateNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_environmentsHasBeenSet(false),
-    m_templateVersionHasBeenSet(false)
-{
-}
-
 ManagedJobTemplateSummary::ManagedJobTemplateSummary(JsonView jsonValue)
-  : ManagedJobTemplateSummary()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ ManagedJobTemplateSummary& ManagedJobTemplateSummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("templateArn"))
   {
     m_templateArn = jsonValue.GetString("templateArn");
-
     m_templateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateName"))
   {
     m_templateName = jsonValue.GetString("templateName");
-
     m_templateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environments"))
   {
     Aws::Utils::Array<JsonView> environmentsJsonList = jsonValue.GetArray("environments");
@@ -65,14 +49,11 @@ ManagedJobTemplateSummary& ManagedJobTemplateSummary::operator =(JsonView jsonVa
     }
     m_environmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateVersion"))
   {
     m_templateVersion = jsonValue.GetString("templateVersion");
-
     m_templateVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-ReplicationGroupUpdate::ReplicationGroupUpdate() : 
-    m_createHasBeenSet(false),
-    m_updateHasBeenSet(false),
-    m_deleteHasBeenSet(false)
-{
-}
-
 ReplicationGroupUpdate::ReplicationGroupUpdate(JsonView jsonValue)
-  : ReplicationGroupUpdate()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ReplicationGroupUpdate& ReplicationGroupUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Create"))
   {
     m_create = jsonValue.GetObject("Create");
-
     m_createHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Update"))
   {
     m_update = jsonValue.GetObject("Update");
-
     m_updateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Delete"))
   {
     m_delete = jsonValue.GetObject("Delete");
-
     m_deleteHasBeenSet = true;
   }
-
   return *this;
 }
 

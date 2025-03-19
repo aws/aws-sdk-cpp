@@ -18,14 +18,7 @@ namespace ServerlessApplicationRepository
 namespace Model
 {
 
-ApplicationDependencySummary::ApplicationDependencySummary() : 
-    m_applicationIdHasBeenSet(false),
-    m_semanticVersionHasBeenSet(false)
-{
-}
-
 ApplicationDependencySummary::ApplicationDependencySummary(JsonView jsonValue)
-  : ApplicationDependencySummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ApplicationDependencySummary& ApplicationDependencySummary::operator =(JsonView 
   if(jsonValue.ValueExists("applicationId"))
   {
     m_applicationId = jsonValue.GetString("applicationId");
-
     m_applicationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("semanticVersion"))
   {
     m_semanticVersion = jsonValue.GetString("semanticVersion");
-
     m_semanticVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

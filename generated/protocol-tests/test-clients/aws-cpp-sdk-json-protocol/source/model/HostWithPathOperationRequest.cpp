@@ -12,10 +12,6 @@ using namespace Aws::JsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-HostWithPathOperationRequest::HostWithPathOperationRequest()
-{
-}
-
 Aws::String HostWithPathOperationRequest::SerializePayload() const
 {
   return "{}";

@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-EvaluationNote::EvaluationNote() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 EvaluationNote::EvaluationNote(JsonView jsonValue)
-  : EvaluationNote()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EvaluationNote& EvaluationNote::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

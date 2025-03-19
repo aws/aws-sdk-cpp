@@ -18,14 +18,7 @@ namespace CostExplorer
 namespace Model
 {
 
-DateInterval::DateInterval() : 
-    m_startHasBeenSet(false),
-    m_endHasBeenSet(false)
-{
-}
-
 DateInterval::DateInterval(JsonView jsonValue)
-  : DateInterval()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DateInterval& DateInterval::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Start"))
   {
     m_start = jsonValue.GetString("Start");
-
     m_startHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("End"))
   {
     m_end = jsonValue.GetString("End");
-
     m_endHasBeenSet = true;
   }
-
   return *this;
 }
 

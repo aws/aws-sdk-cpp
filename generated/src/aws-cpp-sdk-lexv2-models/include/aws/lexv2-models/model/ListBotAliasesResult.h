@@ -29,7 +29,7 @@ namespace Model
   class ListBotAliasesResult
   {
   public:
-    AWS_LEXMODELSV2_API ListBotAliasesResult();
+    AWS_LEXMODELSV2_API ListBotAliasesResult() = default;
     AWS_LEXMODELSV2_API ListBotAliasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELSV2_API ListBotAliasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,13 +42,13 @@ namespace Model
      * available, the <code>nextToken</code> field contains a token to get the next
      * page of results.</p>
      */
-    inline const Aws::Vector<BotAliasSummary>& GetBotAliasSummaries() const{ return m_botAliasSummaries; }
-    inline void SetBotAliasSummaries(const Aws::Vector<BotAliasSummary>& value) { m_botAliasSummaries = value; }
-    inline void SetBotAliasSummaries(Aws::Vector<BotAliasSummary>&& value) { m_botAliasSummaries = std::move(value); }
-    inline ListBotAliasesResult& WithBotAliasSummaries(const Aws::Vector<BotAliasSummary>& value) { SetBotAliasSummaries(value); return *this;}
-    inline ListBotAliasesResult& WithBotAliasSummaries(Aws::Vector<BotAliasSummary>&& value) { SetBotAliasSummaries(std::move(value)); return *this;}
-    inline ListBotAliasesResult& AddBotAliasSummaries(const BotAliasSummary& value) { m_botAliasSummaries.push_back(value); return *this; }
-    inline ListBotAliasesResult& AddBotAliasSummaries(BotAliasSummary&& value) { m_botAliasSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BotAliasSummary>& GetBotAliasSummaries() const { return m_botAliasSummaries; }
+    template<typename BotAliasSummariesT = Aws::Vector<BotAliasSummary>>
+    void SetBotAliasSummaries(BotAliasSummariesT&& value) { m_botAliasSummariesHasBeenSet = true; m_botAliasSummaries = std::forward<BotAliasSummariesT>(value); }
+    template<typename BotAliasSummariesT = Aws::Vector<BotAliasSummary>>
+    ListBotAliasesResult& WithBotAliasSummaries(BotAliasSummariesT&& value) { SetBotAliasSummaries(std::forward<BotAliasSummariesT>(value)); return *this;}
+    template<typename BotAliasSummariesT = BotAliasSummary>
+    ListBotAliasesResult& AddBotAliasSummaries(BotAliasSummariesT&& value) { m_botAliasSummariesHasBeenSet = true; m_botAliasSummaries.emplace_back(std::forward<BotAliasSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -59,47 +59,45 @@ namespace Model
      * of a <code>ListBotAliases</code> operation request to get the next page of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListBotAliasesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListBotAliasesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListBotAliasesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListBotAliasesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the bot associated with the aliases.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
-    inline void SetBotId(const Aws::String& value) { m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botId.assign(value); }
-    inline ListBotAliasesResult& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline ListBotAliasesResult& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline ListBotAliasesResult& WithBotId(const char* value) { SetBotId(value); return *this;}
+    inline const Aws::String& GetBotId() const { return m_botId; }
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    ListBotAliasesResult& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListBotAliasesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListBotAliasesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListBotAliasesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListBotAliasesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BotAliasSummary> m_botAliasSummaries;
+    bool m_botAliasSummariesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_botId;
+    bool m_botIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

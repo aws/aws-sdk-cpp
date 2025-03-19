@@ -18,19 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-PipelineExecutionSummary::PipelineExecutionSummary() : 
-    m_pipelineExecutionArnHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_pipelineExecutionStatus(PipelineExecutionStatus::NOT_SET),
-    m_pipelineExecutionStatusHasBeenSet(false),
-    m_pipelineExecutionDescriptionHasBeenSet(false),
-    m_pipelineExecutionDisplayNameHasBeenSet(false),
-    m_pipelineExecutionFailureReasonHasBeenSet(false)
-{
-}
-
 PipelineExecutionSummary::PipelineExecutionSummary(JsonView jsonValue)
-  : PipelineExecutionSummary()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ PipelineExecutionSummary& PipelineExecutionSummary::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("PipelineExecutionArn"))
   {
     m_pipelineExecutionArn = jsonValue.GetString("PipelineExecutionArn");
-
     m_pipelineExecutionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PipelineExecutionStatus"))
   {
     m_pipelineExecutionStatus = PipelineExecutionStatusMapper::GetPipelineExecutionStatusForName(jsonValue.GetString("PipelineExecutionStatus"));
-
     m_pipelineExecutionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PipelineExecutionDescription"))
   {
     m_pipelineExecutionDescription = jsonValue.GetString("PipelineExecutionDescription");
-
     m_pipelineExecutionDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PipelineExecutionDisplayName"))
   {
     m_pipelineExecutionDisplayName = jsonValue.GetString("PipelineExecutionDisplayName");
-
     m_pipelineExecutionDisplayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PipelineExecutionFailureReason"))
   {
     m_pipelineExecutionFailureReason = jsonValue.GetString("PipelineExecutionFailureReason");
-
     m_pipelineExecutionFailureReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

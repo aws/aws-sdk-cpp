@@ -37,7 +37,7 @@ namespace Model
   class ResourceCatalog
   {
   public:
-    AWS_SAGEMAKER_API ResourceCatalog();
+    AWS_SAGEMAKER_API ResourceCatalog() = default;
     AWS_SAGEMAKER_API ResourceCatalog(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ResourceCatalog& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,54 +47,48 @@ namespace Model
     /**
      * <p> The Amazon Resource Name (ARN) of the <code>ResourceCatalog</code>. </p>
      */
-    inline const Aws::String& GetResourceCatalogArn() const{ return m_resourceCatalogArn; }
+    inline const Aws::String& GetResourceCatalogArn() const { return m_resourceCatalogArn; }
     inline bool ResourceCatalogArnHasBeenSet() const { return m_resourceCatalogArnHasBeenSet; }
-    inline void SetResourceCatalogArn(const Aws::String& value) { m_resourceCatalogArnHasBeenSet = true; m_resourceCatalogArn = value; }
-    inline void SetResourceCatalogArn(Aws::String&& value) { m_resourceCatalogArnHasBeenSet = true; m_resourceCatalogArn = std::move(value); }
-    inline void SetResourceCatalogArn(const char* value) { m_resourceCatalogArnHasBeenSet = true; m_resourceCatalogArn.assign(value); }
-    inline ResourceCatalog& WithResourceCatalogArn(const Aws::String& value) { SetResourceCatalogArn(value); return *this;}
-    inline ResourceCatalog& WithResourceCatalogArn(Aws::String&& value) { SetResourceCatalogArn(std::move(value)); return *this;}
-    inline ResourceCatalog& WithResourceCatalogArn(const char* value) { SetResourceCatalogArn(value); return *this;}
+    template<typename ResourceCatalogArnT = Aws::String>
+    void SetResourceCatalogArn(ResourceCatalogArnT&& value) { m_resourceCatalogArnHasBeenSet = true; m_resourceCatalogArn = std::forward<ResourceCatalogArnT>(value); }
+    template<typename ResourceCatalogArnT = Aws::String>
+    ResourceCatalog& WithResourceCatalogArn(ResourceCatalogArnT&& value) { SetResourceCatalogArn(std::forward<ResourceCatalogArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the <code>ResourceCatalog</code>. </p>
      */
-    inline const Aws::String& GetResourceCatalogName() const{ return m_resourceCatalogName; }
+    inline const Aws::String& GetResourceCatalogName() const { return m_resourceCatalogName; }
     inline bool ResourceCatalogNameHasBeenSet() const { return m_resourceCatalogNameHasBeenSet; }
-    inline void SetResourceCatalogName(const Aws::String& value) { m_resourceCatalogNameHasBeenSet = true; m_resourceCatalogName = value; }
-    inline void SetResourceCatalogName(Aws::String&& value) { m_resourceCatalogNameHasBeenSet = true; m_resourceCatalogName = std::move(value); }
-    inline void SetResourceCatalogName(const char* value) { m_resourceCatalogNameHasBeenSet = true; m_resourceCatalogName.assign(value); }
-    inline ResourceCatalog& WithResourceCatalogName(const Aws::String& value) { SetResourceCatalogName(value); return *this;}
-    inline ResourceCatalog& WithResourceCatalogName(Aws::String&& value) { SetResourceCatalogName(std::move(value)); return *this;}
-    inline ResourceCatalog& WithResourceCatalogName(const char* value) { SetResourceCatalogName(value); return *this;}
+    template<typename ResourceCatalogNameT = Aws::String>
+    void SetResourceCatalogName(ResourceCatalogNameT&& value) { m_resourceCatalogNameHasBeenSet = true; m_resourceCatalogName = std::forward<ResourceCatalogNameT>(value); }
+    template<typename ResourceCatalogNameT = Aws::String>
+    ResourceCatalog& WithResourceCatalogName(ResourceCatalogNameT&& value) { SetResourceCatalogName(std::forward<ResourceCatalogNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A free form description of the <code>ResourceCatalog</code>. </p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ResourceCatalog& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ResourceCatalog& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ResourceCatalog& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ResourceCatalog& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The time the <code>ResourceCatalog</code> was created. </p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline ResourceCatalog& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline ResourceCatalog& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    ResourceCatalog& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -107,7 +101,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
   };
 

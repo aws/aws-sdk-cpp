@@ -18,30 +18,7 @@ namespace mediapackagev2
 namespace Model
 {
 
-GetDashManifestConfiguration::GetDashManifestConfiguration() : 
-    m_manifestNameHasBeenSet(false),
-    m_urlHasBeenSet(false),
-    m_manifestWindowSeconds(0),
-    m_manifestWindowSecondsHasBeenSet(false),
-    m_filterConfigurationHasBeenSet(false),
-    m_minUpdatePeriodSeconds(0),
-    m_minUpdatePeriodSecondsHasBeenSet(false),
-    m_minBufferTimeSeconds(0),
-    m_minBufferTimeSecondsHasBeenSet(false),
-    m_suggestedPresentationDelaySeconds(0),
-    m_suggestedPresentationDelaySecondsHasBeenSet(false),
-    m_segmentTemplateFormat(DashSegmentTemplateFormat::NOT_SET),
-    m_segmentTemplateFormatHasBeenSet(false),
-    m_periodTriggersHasBeenSet(false),
-    m_scteDashHasBeenSet(false),
-    m_drmSignaling(DashDrmSignaling::NOT_SET),
-    m_drmSignalingHasBeenSet(false),
-    m_utcTimingHasBeenSet(false)
-{
-}
-
 GetDashManifestConfiguration::GetDashManifestConfiguration(JsonView jsonValue)
-  : GetDashManifestConfiguration()
 {
   *this = jsonValue;
 }
@@ -51,59 +28,43 @@ GetDashManifestConfiguration& GetDashManifestConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("ManifestName"))
   {
     m_manifestName = jsonValue.GetString("ManifestName");
-
     m_manifestNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetString("Url");
-
     m_urlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManifestWindowSeconds"))
   {
     m_manifestWindowSeconds = jsonValue.GetInteger("ManifestWindowSeconds");
-
     m_manifestWindowSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FilterConfiguration"))
   {
     m_filterConfiguration = jsonValue.GetObject("FilterConfiguration");
-
     m_filterConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinUpdatePeriodSeconds"))
   {
     m_minUpdatePeriodSeconds = jsonValue.GetInteger("MinUpdatePeriodSeconds");
-
     m_minUpdatePeriodSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MinBufferTimeSeconds"))
   {
     m_minBufferTimeSeconds = jsonValue.GetInteger("MinBufferTimeSeconds");
-
     m_minBufferTimeSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SuggestedPresentationDelaySeconds"))
   {
     m_suggestedPresentationDelaySeconds = jsonValue.GetInteger("SuggestedPresentationDelaySeconds");
-
     m_suggestedPresentationDelaySecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SegmentTemplateFormat"))
   {
     m_segmentTemplateFormat = DashSegmentTemplateFormatMapper::GetDashSegmentTemplateFormatForName(jsonValue.GetString("SegmentTemplateFormat"));
-
     m_segmentTemplateFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PeriodTriggers"))
   {
     Aws::Utils::Array<JsonView> periodTriggersJsonList = jsonValue.GetArray("PeriodTriggers");
@@ -113,28 +74,21 @@ GetDashManifestConfiguration& GetDashManifestConfiguration::operator =(JsonView 
     }
     m_periodTriggersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ScteDash"))
   {
     m_scteDash = jsonValue.GetObject("ScteDash");
-
     m_scteDashHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DrmSignaling"))
   {
     m_drmSignaling = DashDrmSignalingMapper::GetDashDrmSignalingForName(jsonValue.GetString("DrmSignaling"));
-
     m_drmSignalingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UtcTiming"))
   {
     m_utcTiming = jsonValue.GetObject("UtcTiming");
-
     m_utcTimingHasBeenSet = true;
   }
-
   return *this;
 }
 

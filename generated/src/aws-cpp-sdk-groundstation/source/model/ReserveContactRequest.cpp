@@ -12,16 +12,6 @@ using namespace Aws::GroundStation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ReserveContactRequest::ReserveContactRequest() : 
-    m_endTimeHasBeenSet(false),
-    m_groundStationHasBeenSet(false),
-    m_missionProfileArnHasBeenSet(false),
-    m_satelliteArnHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String ReserveContactRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -29,7 +29,7 @@ namespace Model
   class BatchEvaluateFeatureResult
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API BatchEvaluateFeatureResult();
+    AWS_CLOUDWATCHEVIDENTLY_API BatchEvaluateFeatureResult() = default;
     AWS_CLOUDWATCHEVIDENTLY_API BatchEvaluateFeatureResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHEVIDENTLY_API BatchEvaluateFeatureResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p>An array of structures, where each structure displays the results of one
      * feature evaluation assignment to one user session.</p>
      */
-    inline const Aws::Vector<EvaluationResult>& GetResults() const{ return m_results; }
-    inline void SetResults(const Aws::Vector<EvaluationResult>& value) { m_results = value; }
-    inline void SetResults(Aws::Vector<EvaluationResult>&& value) { m_results = std::move(value); }
-    inline BatchEvaluateFeatureResult& WithResults(const Aws::Vector<EvaluationResult>& value) { SetResults(value); return *this;}
-    inline BatchEvaluateFeatureResult& WithResults(Aws::Vector<EvaluationResult>&& value) { SetResults(std::move(value)); return *this;}
-    inline BatchEvaluateFeatureResult& AddResults(const EvaluationResult& value) { m_results.push_back(value); return *this; }
-    inline BatchEvaluateFeatureResult& AddResults(EvaluationResult&& value) { m_results.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EvaluationResult>& GetResults() const { return m_results; }
+    template<typename ResultsT = Aws::Vector<EvaluationResult>>
+    void SetResults(ResultsT&& value) { m_resultsHasBeenSet = true; m_results = std::forward<ResultsT>(value); }
+    template<typename ResultsT = Aws::Vector<EvaluationResult>>
+    BatchEvaluateFeatureResult& WithResults(ResultsT&& value) { SetResults(std::forward<ResultsT>(value)); return *this;}
+    template<typename ResultsT = EvaluationResult>
+    BatchEvaluateFeatureResult& AddResults(ResultsT&& value) { m_resultsHasBeenSet = true; m_results.emplace_back(std::forward<ResultsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchEvaluateFeatureResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchEvaluateFeatureResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchEvaluateFeatureResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchEvaluateFeatureResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EvaluationResult> m_results;
+    bool m_resultsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

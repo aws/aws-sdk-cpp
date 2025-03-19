@@ -12,13 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AdminRemoveUserFromGroupRequest::AdminRemoveUserFromGroupRequest() : 
-    m_userPoolIdHasBeenSet(false),
-    m_usernameHasBeenSet(false),
-    m_groupNameHasBeenSet(false)
-{
-}
-
 Aws::String AdminRemoveUserFromGroupRequest::SerializePayload() const
 {
   JsonValue payload;

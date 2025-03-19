@@ -12,12 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartRemediationExecutionRequest::StartRemediationExecutionRequest() : 
-    m_configRuleNameHasBeenSet(false),
-    m_resourceKeysHasBeenSet(false)
-{
-}
-
 Aws::String StartRemediationExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

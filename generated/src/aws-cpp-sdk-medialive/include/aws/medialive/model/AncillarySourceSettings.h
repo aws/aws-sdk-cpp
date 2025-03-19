@@ -29,7 +29,7 @@ namespace Model
   class AncillarySourceSettings
   {
   public:
-    AWS_MEDIALIVE_API AncillarySourceSettings();
+    AWS_MEDIALIVE_API AncillarySourceSettings() = default;
     AWS_MEDIALIVE_API AncillarySourceSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API AncillarySourceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,14 @@ namespace Model
      * destination in the output (to pass through all the channels in the ancillary
      * captions), leave this field blank because MediaLive ignores the field.
      */
-    inline int GetSourceAncillaryChannelNumber() const{ return m_sourceAncillaryChannelNumber; }
+    inline int GetSourceAncillaryChannelNumber() const { return m_sourceAncillaryChannelNumber; }
     inline bool SourceAncillaryChannelNumberHasBeenSet() const { return m_sourceAncillaryChannelNumberHasBeenSet; }
     inline void SetSourceAncillaryChannelNumber(int value) { m_sourceAncillaryChannelNumberHasBeenSet = true; m_sourceAncillaryChannelNumber = value; }
     inline AncillarySourceSettings& WithSourceAncillaryChannelNumber(int value) { SetSourceAncillaryChannelNumber(value); return *this;}
     ///@}
   private:
 
-    int m_sourceAncillaryChannelNumber;
+    int m_sourceAncillaryChannelNumber{0};
     bool m_sourceAncillaryChannelNumberHasBeenSet = false;
   };
 

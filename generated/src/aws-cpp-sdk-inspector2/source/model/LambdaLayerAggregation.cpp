@@ -18,19 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-LambdaLayerAggregation::LambdaLayerAggregation() : 
-    m_functionNamesHasBeenSet(false),
-    m_layerArnsHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false),
-    m_sortBy(LambdaLayerSortBy::NOT_SET),
-    m_sortByHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 LambdaLayerAggregation::LambdaLayerAggregation(JsonView jsonValue)
-  : LambdaLayerAggregation()
 {
   *this = jsonValue;
 }
@@ -46,7 +34,6 @@ LambdaLayerAggregation& LambdaLayerAggregation::operator =(JsonView jsonValue)
     }
     m_functionNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("layerArns"))
   {
     Aws::Utils::Array<JsonView> layerArnsJsonList = jsonValue.GetArray("layerArns");
@@ -56,7 +43,6 @@ LambdaLayerAggregation& LambdaLayerAggregation::operator =(JsonView jsonValue)
     }
     m_layerArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceIds"))
   {
     Aws::Utils::Array<JsonView> resourceIdsJsonList = jsonValue.GetArray("resourceIds");
@@ -66,21 +52,16 @@ LambdaLayerAggregation& LambdaLayerAggregation::operator =(JsonView jsonValue)
     }
     m_resourceIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sortBy"))
   {
     m_sortBy = LambdaLayerSortByMapper::GetLambdaLayerSortByForName(jsonValue.GetString("sortBy"));
-
     m_sortByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sortOrder"))
   {
     m_sortOrder = SortOrderMapper::GetSortOrderForName(jsonValue.GetString("sortOrder"));
-
     m_sortOrderHasBeenSet = true;
   }
-
   return *this;
 }
 

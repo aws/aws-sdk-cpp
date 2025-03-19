@@ -47,7 +47,7 @@ namespace Model
   class AlgorithmSpecification
   {
   public:
-    AWS_SAGEMAKER_API AlgorithmSpecification();
+    AWS_SAGEMAKER_API AlgorithmSpecification() = default;
     AWS_SAGEMAKER_API AlgorithmSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API AlgorithmSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -70,14 +70,12 @@ namespace Model
      * parameter.</p> <p>For more information, see the note in the
      * <code>AlgorithmName</code> parameter description.</p> 
      */
-    inline const Aws::String& GetTrainingImage() const{ return m_trainingImage; }
+    inline const Aws::String& GetTrainingImage() const { return m_trainingImage; }
     inline bool TrainingImageHasBeenSet() const { return m_trainingImageHasBeenSet; }
-    inline void SetTrainingImage(const Aws::String& value) { m_trainingImageHasBeenSet = true; m_trainingImage = value; }
-    inline void SetTrainingImage(Aws::String&& value) { m_trainingImageHasBeenSet = true; m_trainingImage = std::move(value); }
-    inline void SetTrainingImage(const char* value) { m_trainingImageHasBeenSet = true; m_trainingImage.assign(value); }
-    inline AlgorithmSpecification& WithTrainingImage(const Aws::String& value) { SetTrainingImage(value); return *this;}
-    inline AlgorithmSpecification& WithTrainingImage(Aws::String&& value) { SetTrainingImage(std::move(value)); return *this;}
-    inline AlgorithmSpecification& WithTrainingImage(const char* value) { SetTrainingImage(value); return *this;}
+    template<typename TrainingImageT = Aws::String>
+    void SetTrainingImage(TrainingImageT&& value) { m_trainingImageHasBeenSet = true; m_trainingImage = std::forward<TrainingImageT>(value); }
+    template<typename TrainingImageT = Aws::String>
+    AlgorithmSpecification& WithTrainingImage(TrainingImageT&& value) { SetTrainingImage(std::forward<TrainingImageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,24 +93,20 @@ namespace Model
      * for both parameters, the training job might raise a <code>null</code> error.</p>
      * 
      */
-    inline const Aws::String& GetAlgorithmName() const{ return m_algorithmName; }
+    inline const Aws::String& GetAlgorithmName() const { return m_algorithmName; }
     inline bool AlgorithmNameHasBeenSet() const { return m_algorithmNameHasBeenSet; }
-    inline void SetAlgorithmName(const Aws::String& value) { m_algorithmNameHasBeenSet = true; m_algorithmName = value; }
-    inline void SetAlgorithmName(Aws::String&& value) { m_algorithmNameHasBeenSet = true; m_algorithmName = std::move(value); }
-    inline void SetAlgorithmName(const char* value) { m_algorithmNameHasBeenSet = true; m_algorithmName.assign(value); }
-    inline AlgorithmSpecification& WithAlgorithmName(const Aws::String& value) { SetAlgorithmName(value); return *this;}
-    inline AlgorithmSpecification& WithAlgorithmName(Aws::String&& value) { SetAlgorithmName(std::move(value)); return *this;}
-    inline AlgorithmSpecification& WithAlgorithmName(const char* value) { SetAlgorithmName(value); return *this;}
+    template<typename AlgorithmNameT = Aws::String>
+    void SetAlgorithmName(AlgorithmNameT&& value) { m_algorithmNameHasBeenSet = true; m_algorithmName = std::forward<AlgorithmNameT>(value); }
+    template<typename AlgorithmNameT = Aws::String>
+    AlgorithmSpecification& WithAlgorithmName(AlgorithmNameT&& value) { SetAlgorithmName(std::forward<AlgorithmNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TrainingInputMode& GetTrainingInputMode() const{ return m_trainingInputMode; }
+    inline TrainingInputMode GetTrainingInputMode() const { return m_trainingInputMode; }
     inline bool TrainingInputModeHasBeenSet() const { return m_trainingInputModeHasBeenSet; }
-    inline void SetTrainingInputMode(const TrainingInputMode& value) { m_trainingInputModeHasBeenSet = true; m_trainingInputMode = value; }
-    inline void SetTrainingInputMode(TrainingInputMode&& value) { m_trainingInputModeHasBeenSet = true; m_trainingInputMode = std::move(value); }
-    inline AlgorithmSpecification& WithTrainingInputMode(const TrainingInputMode& value) { SetTrainingInputMode(value); return *this;}
-    inline AlgorithmSpecification& WithTrainingInputMode(TrainingInputMode&& value) { SetTrainingInputMode(std::move(value)); return *this;}
+    inline void SetTrainingInputMode(TrainingInputMode value) { m_trainingInputModeHasBeenSet = true; m_trainingInputMode = value; }
+    inline AlgorithmSpecification& WithTrainingInputMode(TrainingInputMode value) { SetTrainingInputMode(value); return *this;}
     ///@}
 
     ///@{
@@ -121,14 +115,14 @@ namespace Model
      * and regular expressions used to parse algorithm logs. SageMaker publishes each
      * metric to Amazon CloudWatch.</p>
      */
-    inline const Aws::Vector<MetricDefinition>& GetMetricDefinitions() const{ return m_metricDefinitions; }
+    inline const Aws::Vector<MetricDefinition>& GetMetricDefinitions() const { return m_metricDefinitions; }
     inline bool MetricDefinitionsHasBeenSet() const { return m_metricDefinitionsHasBeenSet; }
-    inline void SetMetricDefinitions(const Aws::Vector<MetricDefinition>& value) { m_metricDefinitionsHasBeenSet = true; m_metricDefinitions = value; }
-    inline void SetMetricDefinitions(Aws::Vector<MetricDefinition>&& value) { m_metricDefinitionsHasBeenSet = true; m_metricDefinitions = std::move(value); }
-    inline AlgorithmSpecification& WithMetricDefinitions(const Aws::Vector<MetricDefinition>& value) { SetMetricDefinitions(value); return *this;}
-    inline AlgorithmSpecification& WithMetricDefinitions(Aws::Vector<MetricDefinition>&& value) { SetMetricDefinitions(std::move(value)); return *this;}
-    inline AlgorithmSpecification& AddMetricDefinitions(const MetricDefinition& value) { m_metricDefinitionsHasBeenSet = true; m_metricDefinitions.push_back(value); return *this; }
-    inline AlgorithmSpecification& AddMetricDefinitions(MetricDefinition&& value) { m_metricDefinitionsHasBeenSet = true; m_metricDefinitions.push_back(std::move(value)); return *this; }
+    template<typename MetricDefinitionsT = Aws::Vector<MetricDefinition>>
+    void SetMetricDefinitions(MetricDefinitionsT&& value) { m_metricDefinitionsHasBeenSet = true; m_metricDefinitions = std::forward<MetricDefinitionsT>(value); }
+    template<typename MetricDefinitionsT = Aws::Vector<MetricDefinition>>
+    AlgorithmSpecification& WithMetricDefinitions(MetricDefinitionsT&& value) { SetMetricDefinitions(std::forward<MetricDefinitionsT>(value)); return *this;}
+    template<typename MetricDefinitionsT = MetricDefinition>
+    AlgorithmSpecification& AddMetricDefinitions(MetricDefinitionsT&& value) { m_metricDefinitionsHasBeenSet = true; m_metricDefinitions.emplace_back(std::forward<MetricDefinitionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -145,7 +139,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a>
      * </p> </li> </ul>
      */
-    inline bool GetEnableSageMakerMetricsTimeSeries() const{ return m_enableSageMakerMetricsTimeSeries; }
+    inline bool GetEnableSageMakerMetricsTimeSeries() const { return m_enableSageMakerMetricsTimeSeries; }
     inline bool EnableSageMakerMetricsTimeSeriesHasBeenSet() const { return m_enableSageMakerMetricsTimeSeriesHasBeenSet; }
     inline void SetEnableSageMakerMetricsTimeSeries(bool value) { m_enableSageMakerMetricsTimeSeriesHasBeenSet = true; m_enableSageMakerMetricsTimeSeries = value; }
     inline AlgorithmSpecification& WithEnableSageMakerMetricsTimeSeries(bool value) { SetEnableSageMakerMetricsTimeSeries(value); return *this;}
@@ -159,15 +153,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
      * Amazon SageMaker Runs Your Training Image</a> for more information.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetContainerEntrypoint() const{ return m_containerEntrypoint; }
+    inline const Aws::Vector<Aws::String>& GetContainerEntrypoint() const { return m_containerEntrypoint; }
     inline bool ContainerEntrypointHasBeenSet() const { return m_containerEntrypointHasBeenSet; }
-    inline void SetContainerEntrypoint(const Aws::Vector<Aws::String>& value) { m_containerEntrypointHasBeenSet = true; m_containerEntrypoint = value; }
-    inline void SetContainerEntrypoint(Aws::Vector<Aws::String>&& value) { m_containerEntrypointHasBeenSet = true; m_containerEntrypoint = std::move(value); }
-    inline AlgorithmSpecification& WithContainerEntrypoint(const Aws::Vector<Aws::String>& value) { SetContainerEntrypoint(value); return *this;}
-    inline AlgorithmSpecification& WithContainerEntrypoint(Aws::Vector<Aws::String>&& value) { SetContainerEntrypoint(std::move(value)); return *this;}
-    inline AlgorithmSpecification& AddContainerEntrypoint(const Aws::String& value) { m_containerEntrypointHasBeenSet = true; m_containerEntrypoint.push_back(value); return *this; }
-    inline AlgorithmSpecification& AddContainerEntrypoint(Aws::String&& value) { m_containerEntrypointHasBeenSet = true; m_containerEntrypoint.push_back(std::move(value)); return *this; }
-    inline AlgorithmSpecification& AddContainerEntrypoint(const char* value) { m_containerEntrypointHasBeenSet = true; m_containerEntrypoint.push_back(value); return *this; }
+    template<typename ContainerEntrypointT = Aws::Vector<Aws::String>>
+    void SetContainerEntrypoint(ContainerEntrypointT&& value) { m_containerEntrypointHasBeenSet = true; m_containerEntrypoint = std::forward<ContainerEntrypointT>(value); }
+    template<typename ContainerEntrypointT = Aws::Vector<Aws::String>>
+    AlgorithmSpecification& WithContainerEntrypoint(ContainerEntrypointT&& value) { SetContainerEntrypoint(std::forward<ContainerEntrypointT>(value)); return *this;}
+    template<typename ContainerEntrypointT = Aws::String>
+    AlgorithmSpecification& AddContainerEntrypoint(ContainerEntrypointT&& value) { m_containerEntrypointHasBeenSet = true; m_containerEntrypoint.emplace_back(std::forward<ContainerEntrypointT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -176,15 +169,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-training-algo-dockerfile.html">How
      * Amazon SageMaker Runs Your Training Image</a> for additional information.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetContainerArguments() const{ return m_containerArguments; }
+    inline const Aws::Vector<Aws::String>& GetContainerArguments() const { return m_containerArguments; }
     inline bool ContainerArgumentsHasBeenSet() const { return m_containerArgumentsHasBeenSet; }
-    inline void SetContainerArguments(const Aws::Vector<Aws::String>& value) { m_containerArgumentsHasBeenSet = true; m_containerArguments = value; }
-    inline void SetContainerArguments(Aws::Vector<Aws::String>&& value) { m_containerArgumentsHasBeenSet = true; m_containerArguments = std::move(value); }
-    inline AlgorithmSpecification& WithContainerArguments(const Aws::Vector<Aws::String>& value) { SetContainerArguments(value); return *this;}
-    inline AlgorithmSpecification& WithContainerArguments(Aws::Vector<Aws::String>&& value) { SetContainerArguments(std::move(value)); return *this;}
-    inline AlgorithmSpecification& AddContainerArguments(const Aws::String& value) { m_containerArgumentsHasBeenSet = true; m_containerArguments.push_back(value); return *this; }
-    inline AlgorithmSpecification& AddContainerArguments(Aws::String&& value) { m_containerArgumentsHasBeenSet = true; m_containerArguments.push_back(std::move(value)); return *this; }
-    inline AlgorithmSpecification& AddContainerArguments(const char* value) { m_containerArgumentsHasBeenSet = true; m_containerArguments.push_back(value); return *this; }
+    template<typename ContainerArgumentsT = Aws::Vector<Aws::String>>
+    void SetContainerArguments(ContainerArgumentsT&& value) { m_containerArgumentsHasBeenSet = true; m_containerArguments = std::forward<ContainerArgumentsT>(value); }
+    template<typename ContainerArgumentsT = Aws::Vector<Aws::String>>
+    AlgorithmSpecification& WithContainerArguments(ContainerArgumentsT&& value) { SetContainerArguments(std::forward<ContainerArgumentsT>(value)); return *this;}
+    template<typename ContainerArgumentsT = Aws::String>
+    AlgorithmSpecification& AddContainerArguments(ContainerArgumentsT&& value) { m_containerArgumentsHasBeenSet = true; m_containerArguments.emplace_back(std::forward<ContainerArgumentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -192,12 +184,12 @@ namespace Model
      * <p>The configuration to use an image from a private Docker registry for a
      * training job.</p>
      */
-    inline const TrainingImageConfig& GetTrainingImageConfig() const{ return m_trainingImageConfig; }
+    inline const TrainingImageConfig& GetTrainingImageConfig() const { return m_trainingImageConfig; }
     inline bool TrainingImageConfigHasBeenSet() const { return m_trainingImageConfigHasBeenSet; }
-    inline void SetTrainingImageConfig(const TrainingImageConfig& value) { m_trainingImageConfigHasBeenSet = true; m_trainingImageConfig = value; }
-    inline void SetTrainingImageConfig(TrainingImageConfig&& value) { m_trainingImageConfigHasBeenSet = true; m_trainingImageConfig = std::move(value); }
-    inline AlgorithmSpecification& WithTrainingImageConfig(const TrainingImageConfig& value) { SetTrainingImageConfig(value); return *this;}
-    inline AlgorithmSpecification& WithTrainingImageConfig(TrainingImageConfig&& value) { SetTrainingImageConfig(std::move(value)); return *this;}
+    template<typename TrainingImageConfigT = TrainingImageConfig>
+    void SetTrainingImageConfig(TrainingImageConfigT&& value) { m_trainingImageConfigHasBeenSet = true; m_trainingImageConfig = std::forward<TrainingImageConfigT>(value); }
+    template<typename TrainingImageConfigT = TrainingImageConfig>
+    AlgorithmSpecification& WithTrainingImageConfig(TrainingImageConfigT&& value) { SetTrainingImageConfig(std::forward<TrainingImageConfigT>(value)); return *this;}
     ///@}
   private:
 
@@ -207,13 +199,13 @@ namespace Model
     Aws::String m_algorithmName;
     bool m_algorithmNameHasBeenSet = false;
 
-    TrainingInputMode m_trainingInputMode;
+    TrainingInputMode m_trainingInputMode{TrainingInputMode::NOT_SET};
     bool m_trainingInputModeHasBeenSet = false;
 
     Aws::Vector<MetricDefinition> m_metricDefinitions;
     bool m_metricDefinitionsHasBeenSet = false;
 
-    bool m_enableSageMakerMetricsTimeSeries;
+    bool m_enableSageMakerMetricsTimeSeries{false};
     bool m_enableSageMakerMetricsTimeSeriesHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_containerEntrypoint;

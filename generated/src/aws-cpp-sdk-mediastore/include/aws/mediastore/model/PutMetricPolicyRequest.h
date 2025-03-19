@@ -22,7 +22,7 @@ namespace Model
   class PutMetricPolicyRequest : public MediaStoreRequest
   {
   public:
-    AWS_MEDIASTORE_API PutMetricPolicyRequest();
+    AWS_MEDIASTORE_API PutMetricPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The name of the container that you want to add the metric policy to.</p>
      */
-    inline const Aws::String& GetContainerName() const{ return m_containerName; }
+    inline const Aws::String& GetContainerName() const { return m_containerName; }
     inline bool ContainerNameHasBeenSet() const { return m_containerNameHasBeenSet; }
-    inline void SetContainerName(const Aws::String& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
-    inline void SetContainerName(Aws::String&& value) { m_containerNameHasBeenSet = true; m_containerName = std::move(value); }
-    inline void SetContainerName(const char* value) { m_containerNameHasBeenSet = true; m_containerName.assign(value); }
-    inline PutMetricPolicyRequest& WithContainerName(const Aws::String& value) { SetContainerName(value); return *this;}
-    inline PutMetricPolicyRequest& WithContainerName(Aws::String&& value) { SetContainerName(std::move(value)); return *this;}
-    inline PutMetricPolicyRequest& WithContainerName(const char* value) { SetContainerName(value); return *this;}
+    template<typename ContainerNameT = Aws::String>
+    void SetContainerName(ContainerNameT&& value) { m_containerNameHasBeenSet = true; m_containerName = std::forward<ContainerNameT>(value); }
+    template<typename ContainerNameT = Aws::String>
+    PutMetricPolicyRequest& WithContainerName(ContainerNameT&& value) { SetContainerName(std::forward<ContainerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,12 +62,12 @@ namespace Model
      * the object group. The name can't have more than 30 characters. Valid characters
      * are: a-z, A-Z, 0-9, and _ (underscore).</p> </li> </ul>
      */
-    inline const MetricPolicy& GetMetricPolicy() const{ return m_metricPolicy; }
+    inline const MetricPolicy& GetMetricPolicy() const { return m_metricPolicy; }
     inline bool MetricPolicyHasBeenSet() const { return m_metricPolicyHasBeenSet; }
-    inline void SetMetricPolicy(const MetricPolicy& value) { m_metricPolicyHasBeenSet = true; m_metricPolicy = value; }
-    inline void SetMetricPolicy(MetricPolicy&& value) { m_metricPolicyHasBeenSet = true; m_metricPolicy = std::move(value); }
-    inline PutMetricPolicyRequest& WithMetricPolicy(const MetricPolicy& value) { SetMetricPolicy(value); return *this;}
-    inline PutMetricPolicyRequest& WithMetricPolicy(MetricPolicy&& value) { SetMetricPolicy(std::move(value)); return *this;}
+    template<typename MetricPolicyT = MetricPolicy>
+    void SetMetricPolicy(MetricPolicyT&& value) { m_metricPolicyHasBeenSet = true; m_metricPolicy = std::forward<MetricPolicyT>(value); }
+    template<typename MetricPolicyT = MetricPolicy>
+    PutMetricPolicyRequest& WithMetricPolicy(MetricPolicyT&& value) { SetMetricPolicy(std::forward<MetricPolicyT>(value)); return *this;}
     ///@}
   private:
 

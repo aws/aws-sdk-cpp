@@ -18,20 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-S3ReportExportConfig::S3ReportExportConfig() : 
-    m_bucketHasBeenSet(false),
-    m_bucketOwnerHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_packaging(ReportPackagingType::NOT_SET),
-    m_packagingHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false),
-    m_encryptionDisabled(false),
-    m_encryptionDisabledHasBeenSet(false)
-{
-}
-
 S3ReportExportConfig::S3ReportExportConfig(JsonView jsonValue)
-  : S3ReportExportConfig()
 {
   *this = jsonValue;
 }
@@ -41,45 +28,33 @@ S3ReportExportConfig& S3ReportExportConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucket"))
   {
     m_bucket = jsonValue.GetString("bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bucketOwner"))
   {
     m_bucketOwner = jsonValue.GetString("bucketOwner");
-
     m_bucketOwnerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("path"))
   {
     m_path = jsonValue.GetString("path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("packaging"))
   {
     m_packaging = ReportPackagingTypeMapper::GetReportPackagingTypeForName(jsonValue.GetString("packaging"));
-
     m_packagingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionKey"))
   {
     m_encryptionKey = jsonValue.GetString("encryptionKey");
-
     m_encryptionKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionDisabled"))
   {
     m_encryptionDisabled = jsonValue.GetBool("encryptionDisabled");
-
     m_encryptionDisabledHasBeenSet = true;
   }
-
   return *this;
 }
 

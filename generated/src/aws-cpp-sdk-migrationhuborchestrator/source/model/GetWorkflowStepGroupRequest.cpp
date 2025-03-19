@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetWorkflowStepGroupRequest::GetWorkflowStepGroupRequest() : 
-    m_idHasBeenSet(false),
-    m_workflowIdHasBeenSet(false)
-{
-}
-
 Aws::String GetWorkflowStepGroupRequest::SerializePayload() const
 {
   return {};

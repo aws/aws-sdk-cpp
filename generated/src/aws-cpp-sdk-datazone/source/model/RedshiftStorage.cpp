@@ -18,14 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-RedshiftStorage::RedshiftStorage() : 
-    m_redshiftClusterSourceHasBeenSet(false),
-    m_redshiftServerlessSourceHasBeenSet(false)
-{
-}
-
 RedshiftStorage::RedshiftStorage(JsonView jsonValue)
-  : RedshiftStorage()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RedshiftStorage& RedshiftStorage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("redshiftClusterSource"))
   {
     m_redshiftClusterSource = jsonValue.GetObject("redshiftClusterSource");
-
     m_redshiftClusterSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("redshiftServerlessSource"))
   {
     m_redshiftServerlessSource = jsonValue.GetObject("redshiftServerlessSource");
-
     m_redshiftServerlessSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -25,7 +25,7 @@ namespace Model
   class GetChannelScheduleRequest : public MediaTailorRequest
   {
   public:
-    AWS_MEDIATAILOR_API GetChannelScheduleRequest();
+    AWS_MEDIATAILOR_API GetChannelScheduleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The name of the channel associated with this Channel Schedule.</p>
      */
-    inline const Aws::String& GetChannelName() const{ return m_channelName; }
+    inline const Aws::String& GetChannelName() const { return m_channelName; }
     inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
-    inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
-    inline void SetChannelName(Aws::String&& value) { m_channelNameHasBeenSet = true; m_channelName = std::move(value); }
-    inline void SetChannelName(const char* value) { m_channelNameHasBeenSet = true; m_channelName.assign(value); }
-    inline GetChannelScheduleRequest& WithChannelName(const Aws::String& value) { SetChannelName(value); return *this;}
-    inline GetChannelScheduleRequest& WithChannelName(Aws::String&& value) { SetChannelName(std::move(value)); return *this;}
-    inline GetChannelScheduleRequest& WithChannelName(const char* value) { SetChannelName(value); return *this;}
+    template<typename ChannelNameT = Aws::String>
+    void SetChannelName(ChannelNameT&& value) { m_channelNameHasBeenSet = true; m_channelName = std::forward<ChannelNameT>(value); }
+    template<typename ChannelNameT = Aws::String>
+    GetChannelScheduleRequest& WithChannelName(ChannelNameT&& value) { SetChannelName(std::forward<ChannelNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The duration in minutes of the channel schedule.</p>
      */
-    inline const Aws::String& GetDurationMinutes() const{ return m_durationMinutes; }
+    inline const Aws::String& GetDurationMinutes() const { return m_durationMinutes; }
     inline bool DurationMinutesHasBeenSet() const { return m_durationMinutesHasBeenSet; }
-    inline void SetDurationMinutes(const Aws::String& value) { m_durationMinutesHasBeenSet = true; m_durationMinutes = value; }
-    inline void SetDurationMinutes(Aws::String&& value) { m_durationMinutesHasBeenSet = true; m_durationMinutes = std::move(value); }
-    inline void SetDurationMinutes(const char* value) { m_durationMinutesHasBeenSet = true; m_durationMinutes.assign(value); }
-    inline GetChannelScheduleRequest& WithDurationMinutes(const Aws::String& value) { SetDurationMinutes(value); return *this;}
-    inline GetChannelScheduleRequest& WithDurationMinutes(Aws::String&& value) { SetDurationMinutes(std::move(value)); return *this;}
-    inline GetChannelScheduleRequest& WithDurationMinutes(const char* value) { SetDurationMinutes(value); return *this;}
+    template<typename DurationMinutesT = Aws::String>
+    void SetDurationMinutes(DurationMinutesT&& value) { m_durationMinutesHasBeenSet = true; m_durationMinutes = std::forward<DurationMinutesT>(value); }
+    template<typename DurationMinutesT = Aws::String>
+    GetChannelScheduleRequest& WithDurationMinutes(DurationMinutesT&& value) { SetDurationMinutes(std::forward<DurationMinutesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,7 +69,7 @@ namespace Model
      * <code>MaxResults</code> channel schedules, use the value of
      * <code>NextToken</code> in the response to get the next page of results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetChannelScheduleRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -90,28 +86,24 @@ namespace Model
      * request.</p> <p>If the previous response didn't include a <code>NextToken</code>
      * element, there are no more channel schedules to get.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetChannelScheduleRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetChannelScheduleRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetChannelScheduleRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetChannelScheduleRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The single audience for GetChannelScheduleRequest.</p>
      */
-    inline const Aws::String& GetAudience() const{ return m_audience; }
+    inline const Aws::String& GetAudience() const { return m_audience; }
     inline bool AudienceHasBeenSet() const { return m_audienceHasBeenSet; }
-    inline void SetAudience(const Aws::String& value) { m_audienceHasBeenSet = true; m_audience = value; }
-    inline void SetAudience(Aws::String&& value) { m_audienceHasBeenSet = true; m_audience = std::move(value); }
-    inline void SetAudience(const char* value) { m_audienceHasBeenSet = true; m_audience.assign(value); }
-    inline GetChannelScheduleRequest& WithAudience(const Aws::String& value) { SetAudience(value); return *this;}
-    inline GetChannelScheduleRequest& WithAudience(Aws::String&& value) { SetAudience(std::move(value)); return *this;}
-    inline GetChannelScheduleRequest& WithAudience(const char* value) { SetAudience(value); return *this;}
+    template<typename AudienceT = Aws::String>
+    void SetAudience(AudienceT&& value) { m_audienceHasBeenSet = true; m_audience = std::forward<AudienceT>(value); }
+    template<typename AudienceT = Aws::String>
+    GetChannelScheduleRequest& WithAudience(AudienceT&& value) { SetAudience(std::forward<AudienceT>(value)); return *this;}
     ///@}
   private:
 
@@ -121,7 +113,7 @@ namespace Model
     Aws::String m_durationMinutes;
     bool m_durationMinutesHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

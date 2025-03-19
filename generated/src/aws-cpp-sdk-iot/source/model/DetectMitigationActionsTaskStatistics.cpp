@@ -18,18 +18,7 @@ namespace IoT
 namespace Model
 {
 
-DetectMitigationActionsTaskStatistics::DetectMitigationActionsTaskStatistics() : 
-    m_actionsExecuted(0),
-    m_actionsExecutedHasBeenSet(false),
-    m_actionsSkipped(0),
-    m_actionsSkippedHasBeenSet(false),
-    m_actionsFailed(0),
-    m_actionsFailedHasBeenSet(false)
-{
-}
-
 DetectMitigationActionsTaskStatistics::DetectMitigationActionsTaskStatistics(JsonView jsonValue)
-  : DetectMitigationActionsTaskStatistics()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ DetectMitigationActionsTaskStatistics& DetectMitigationActionsTaskStatistics::op
   if(jsonValue.ValueExists("actionsExecuted"))
   {
     m_actionsExecuted = jsonValue.GetInt64("actionsExecuted");
-
     m_actionsExecutedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionsSkipped"))
   {
     m_actionsSkipped = jsonValue.GetInt64("actionsSkipped");
-
     m_actionsSkippedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionsFailed"))
   {
     m_actionsFailed = jsonValue.GetInt64("actionsFailed");
-
     m_actionsFailedHasBeenSet = true;
   }
-
   return *this;
 }
 

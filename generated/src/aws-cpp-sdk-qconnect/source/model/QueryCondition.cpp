@@ -18,13 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-QueryCondition::QueryCondition() : 
-    m_singleHasBeenSet(false)
-{
-}
-
 QueryCondition::QueryCondition(JsonView jsonValue)
-  : QueryCondition()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ QueryCondition& QueryCondition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("single"))
   {
     m_single = jsonValue.GetObject("single");
-
     m_singleHasBeenSet = true;
   }
-
   return *this;
 }
 

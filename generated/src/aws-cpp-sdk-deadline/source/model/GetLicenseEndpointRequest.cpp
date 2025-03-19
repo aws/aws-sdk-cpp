@@ -12,11 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetLicenseEndpointRequest::GetLicenseEndpointRequest() : 
-    m_licenseEndpointIdHasBeenSet(false)
-{
-}
-
 Aws::String GetLicenseEndpointRequest::SerializePayload() const
 {
   return {};

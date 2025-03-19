@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetConfigurationResult::GetConfigurationResult()
-{
-}
-
 GetConfigurationResult::GetConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetConfigurationResult& GetConfigurationResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("ec2Configuration"))
   {
     m_ec2Configuration = jsonValue.GetObject("ec2Configuration");
-
+    m_ec2ConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ecrConfiguration"))
   {
     m_ecrConfiguration = jsonValue.GetObject("ecrConfiguration");
-
+    m_ecrConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

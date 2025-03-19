@@ -18,21 +18,7 @@ namespace Outposts
 namespace Model
 {
 
-OrderSummary::OrderSummary() : 
-    m_outpostIdHasBeenSet(false),
-    m_orderIdHasBeenSet(false),
-    m_orderType(OrderType::NOT_SET),
-    m_orderTypeHasBeenSet(false),
-    m_status(OrderStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lineItemCountsByStatusHasBeenSet(false),
-    m_orderSubmissionDateHasBeenSet(false),
-    m_orderFulfilledDateHasBeenSet(false)
-{
-}
-
 OrderSummary::OrderSummary(JsonView jsonValue)
-  : OrderSummary()
 {
   *this = jsonValue;
 }
@@ -42,31 +28,23 @@ OrderSummary& OrderSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OutpostId"))
   {
     m_outpostId = jsonValue.GetString("OutpostId");
-
     m_outpostIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrderId"))
   {
     m_orderId = jsonValue.GetString("OrderId");
-
     m_orderIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrderType"))
   {
     m_orderType = OrderTypeMapper::GetOrderTypeForName(jsonValue.GetString("OrderType"));
-
     m_orderTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = OrderStatusMapper::GetOrderStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LineItemCountsByStatus"))
   {
     Aws::Map<Aws::String, JsonView> lineItemCountsByStatusJsonMap = jsonValue.GetObject("LineItemCountsByStatus").GetAllObjects();
@@ -76,21 +54,16 @@ OrderSummary& OrderSummary::operator =(JsonView jsonValue)
     }
     m_lineItemCountsByStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrderSubmissionDate"))
   {
     m_orderSubmissionDate = jsonValue.GetDouble("OrderSubmissionDate");
-
     m_orderSubmissionDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OrderFulfilledDate"))
   {
     m_orderFulfilledDate = jsonValue.GetDouble("OrderFulfilledDate");
-
     m_orderFulfilledDateHasBeenSet = true;
   }
-
   return *this;
 }
 

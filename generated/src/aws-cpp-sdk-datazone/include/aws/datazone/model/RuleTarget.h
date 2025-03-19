@@ -31,7 +31,7 @@ namespace Model
   class RuleTarget
   {
   public:
-    AWS_DATAZONE_API RuleTarget();
+    AWS_DATAZONE_API RuleTarget() = default;
     AWS_DATAZONE_API RuleTarget(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API RuleTarget& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The ID of the domain unit.</p>
      */
-    inline const DomainUnitTarget& GetDomainUnitTarget() const{ return m_domainUnitTarget; }
+    inline const DomainUnitTarget& GetDomainUnitTarget() const { return m_domainUnitTarget; }
     inline bool DomainUnitTargetHasBeenSet() const { return m_domainUnitTargetHasBeenSet; }
-    inline void SetDomainUnitTarget(const DomainUnitTarget& value) { m_domainUnitTargetHasBeenSet = true; m_domainUnitTarget = value; }
-    inline void SetDomainUnitTarget(DomainUnitTarget&& value) { m_domainUnitTargetHasBeenSet = true; m_domainUnitTarget = std::move(value); }
-    inline RuleTarget& WithDomainUnitTarget(const DomainUnitTarget& value) { SetDomainUnitTarget(value); return *this;}
-    inline RuleTarget& WithDomainUnitTarget(DomainUnitTarget&& value) { SetDomainUnitTarget(std::move(value)); return *this;}
+    template<typename DomainUnitTargetT = DomainUnitTarget>
+    void SetDomainUnitTarget(DomainUnitTargetT&& value) { m_domainUnitTargetHasBeenSet = true; m_domainUnitTarget = std::forward<DomainUnitTargetT>(value); }
+    template<typename DomainUnitTargetT = DomainUnitTarget>
+    RuleTarget& WithDomainUnitTarget(DomainUnitTargetT&& value) { SetDomainUnitTarget(std::forward<DomainUnitTargetT>(value)); return *this;}
     ///@}
   private:
 

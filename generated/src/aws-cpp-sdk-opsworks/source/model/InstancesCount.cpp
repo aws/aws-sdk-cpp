@@ -18,52 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-InstancesCount::InstancesCount() : 
-    m_assigning(0),
-    m_assigningHasBeenSet(false),
-    m_booting(0),
-    m_bootingHasBeenSet(false),
-    m_connectionLost(0),
-    m_connectionLostHasBeenSet(false),
-    m_deregistering(0),
-    m_deregisteringHasBeenSet(false),
-    m_online(0),
-    m_onlineHasBeenSet(false),
-    m_pending(0),
-    m_pendingHasBeenSet(false),
-    m_rebooting(0),
-    m_rebootingHasBeenSet(false),
-    m_registered(0),
-    m_registeredHasBeenSet(false),
-    m_registering(0),
-    m_registeringHasBeenSet(false),
-    m_requested(0),
-    m_requestedHasBeenSet(false),
-    m_runningSetup(0),
-    m_runningSetupHasBeenSet(false),
-    m_setupFailed(0),
-    m_setupFailedHasBeenSet(false),
-    m_shuttingDown(0),
-    m_shuttingDownHasBeenSet(false),
-    m_startFailed(0),
-    m_startFailedHasBeenSet(false),
-    m_stopFailed(0),
-    m_stopFailedHasBeenSet(false),
-    m_stopped(0),
-    m_stoppedHasBeenSet(false),
-    m_stopping(0),
-    m_stoppingHasBeenSet(false),
-    m_terminated(0),
-    m_terminatedHasBeenSet(false),
-    m_terminating(0),
-    m_terminatingHasBeenSet(false),
-    m_unassigning(0),
-    m_unassigningHasBeenSet(false)
-{
-}
-
 InstancesCount::InstancesCount(JsonView jsonValue)
-  : InstancesCount()
 {
   *this = jsonValue;
 }
@@ -73,143 +28,103 @@ InstancesCount& InstancesCount::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Assigning"))
   {
     m_assigning = jsonValue.GetInteger("Assigning");
-
     m_assigningHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Booting"))
   {
     m_booting = jsonValue.GetInteger("Booting");
-
     m_bootingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConnectionLost"))
   {
     m_connectionLost = jsonValue.GetInteger("ConnectionLost");
-
     m_connectionLostHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Deregistering"))
   {
     m_deregistering = jsonValue.GetInteger("Deregistering");
-
     m_deregisteringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Online"))
   {
     m_online = jsonValue.GetInteger("Online");
-
     m_onlineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Pending"))
   {
     m_pending = jsonValue.GetInteger("Pending");
-
     m_pendingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rebooting"))
   {
     m_rebooting = jsonValue.GetInteger("Rebooting");
-
     m_rebootingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Registered"))
   {
     m_registered = jsonValue.GetInteger("Registered");
-
     m_registeredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Registering"))
   {
     m_registering = jsonValue.GetInteger("Registering");
-
     m_registeringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Requested"))
   {
     m_requested = jsonValue.GetInteger("Requested");
-
     m_requestedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RunningSetup"))
   {
     m_runningSetup = jsonValue.GetInteger("RunningSetup");
-
     m_runningSetupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SetupFailed"))
   {
     m_setupFailed = jsonValue.GetInteger("SetupFailed");
-
     m_setupFailedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShuttingDown"))
   {
     m_shuttingDown = jsonValue.GetInteger("ShuttingDown");
-
     m_shuttingDownHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartFailed"))
   {
     m_startFailed = jsonValue.GetInteger("StartFailed");
-
     m_startFailedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StopFailed"))
   {
     m_stopFailed = jsonValue.GetInteger("StopFailed");
-
     m_stopFailedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Stopped"))
   {
     m_stopped = jsonValue.GetInteger("Stopped");
-
     m_stoppedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Stopping"))
   {
     m_stopping = jsonValue.GetInteger("Stopping");
-
     m_stoppingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Terminated"))
   {
     m_terminated = jsonValue.GetInteger("Terminated");
-
     m_terminatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Terminating"))
   {
     m_terminating = jsonValue.GetInteger("Terminating");
-
     m_terminatingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unassigning"))
   {
     m_unassigning = jsonValue.GetInteger("Unassigning");
-
     m_unassigningHasBeenSet = true;
   }
-
   return *this;
 }
 

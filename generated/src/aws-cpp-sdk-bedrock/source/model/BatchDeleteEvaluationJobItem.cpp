@@ -18,15 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-BatchDeleteEvaluationJobItem::BatchDeleteEvaluationJobItem() : 
-    m_jobIdentifierHasBeenSet(false),
-    m_jobStatus(EvaluationJobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false)
-{
-}
-
 BatchDeleteEvaluationJobItem::BatchDeleteEvaluationJobItem(JsonView jsonValue)
-  : BatchDeleteEvaluationJobItem()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ BatchDeleteEvaluationJobItem& BatchDeleteEvaluationJobItem::operator =(JsonView 
   if(jsonValue.ValueExists("jobIdentifier"))
   {
     m_jobIdentifier = jsonValue.GetString("jobIdentifier");
-
     m_jobIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobStatus"))
   {
     m_jobStatus = EvaluationJobStatusMapper::GetEvaluationJobStatusForName(jsonValue.GetString("jobStatus"));
-
     m_jobStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

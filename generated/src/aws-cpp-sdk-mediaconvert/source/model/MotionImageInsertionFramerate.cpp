@@ -18,16 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-MotionImageInsertionFramerate::MotionImageInsertionFramerate() : 
-    m_framerateDenominator(0),
-    m_framerateDenominatorHasBeenSet(false),
-    m_framerateNumerator(0),
-    m_framerateNumeratorHasBeenSet(false)
-{
-}
-
 MotionImageInsertionFramerate::MotionImageInsertionFramerate(JsonView jsonValue)
-  : MotionImageInsertionFramerate()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ MotionImageInsertionFramerate& MotionImageInsertionFramerate::operator =(JsonVie
   if(jsonValue.ValueExists("framerateDenominator"))
   {
     m_framerateDenominator = jsonValue.GetInteger("framerateDenominator");
-
     m_framerateDenominatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("framerateNumerator"))
   {
     m_framerateNumerator = jsonValue.GetInteger("framerateNumerator");
-
     m_framerateNumeratorHasBeenSet = true;
   }
-
   return *this;
 }
 

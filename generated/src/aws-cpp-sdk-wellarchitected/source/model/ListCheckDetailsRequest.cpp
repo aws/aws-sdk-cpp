@@ -12,18 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListCheckDetailsRequest::ListCheckDetailsRequest() : 
-    m_workloadIdHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_lensArnHasBeenSet(false),
-    m_pillarIdHasBeenSet(false),
-    m_questionIdHasBeenSet(false),
-    m_choiceIdHasBeenSet(false)
-{
-}
-
 Aws::String ListCheckDetailsRequest::SerializePayload() const
 {
   JsonValue payload;

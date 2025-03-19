@@ -33,7 +33,7 @@ namespace Model
   class ReferenceLineValueLabelConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API ReferenceLineValueLabelConfiguration();
+    AWS_QUICKSIGHT_API ReferenceLineValueLabelConfiguration() = default;
     AWS_QUICKSIGHT_API ReferenceLineValueLabelConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API ReferenceLineValueLabelConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,26 @@ namespace Model
      * options:</p> <ul> <li> <p> <code>BEFORE_CUSTOM_LABEL</code> </p> </li> <li> <p>
      * <code>AFTER_CUSTOM_LABEL</code> </p> </li> </ul>
      */
-    inline const ReferenceLineValueLabelRelativePosition& GetRelativePosition() const{ return m_relativePosition; }
+    inline ReferenceLineValueLabelRelativePosition GetRelativePosition() const { return m_relativePosition; }
     inline bool RelativePositionHasBeenSet() const { return m_relativePositionHasBeenSet; }
-    inline void SetRelativePosition(const ReferenceLineValueLabelRelativePosition& value) { m_relativePositionHasBeenSet = true; m_relativePosition = value; }
-    inline void SetRelativePosition(ReferenceLineValueLabelRelativePosition&& value) { m_relativePositionHasBeenSet = true; m_relativePosition = std::move(value); }
-    inline ReferenceLineValueLabelConfiguration& WithRelativePosition(const ReferenceLineValueLabelRelativePosition& value) { SetRelativePosition(value); return *this;}
-    inline ReferenceLineValueLabelConfiguration& WithRelativePosition(ReferenceLineValueLabelRelativePosition&& value) { SetRelativePosition(std::move(value)); return *this;}
+    inline void SetRelativePosition(ReferenceLineValueLabelRelativePosition value) { m_relativePositionHasBeenSet = true; m_relativePosition = value; }
+    inline ReferenceLineValueLabelConfiguration& WithRelativePosition(ReferenceLineValueLabelRelativePosition value) { SetRelativePosition(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format configuration of the value label.</p>
      */
-    inline const NumericFormatConfiguration& GetFormatConfiguration() const{ return m_formatConfiguration; }
+    inline const NumericFormatConfiguration& GetFormatConfiguration() const { return m_formatConfiguration; }
     inline bool FormatConfigurationHasBeenSet() const { return m_formatConfigurationHasBeenSet; }
-    inline void SetFormatConfiguration(const NumericFormatConfiguration& value) { m_formatConfigurationHasBeenSet = true; m_formatConfiguration = value; }
-    inline void SetFormatConfiguration(NumericFormatConfiguration&& value) { m_formatConfigurationHasBeenSet = true; m_formatConfiguration = std::move(value); }
-    inline ReferenceLineValueLabelConfiguration& WithFormatConfiguration(const NumericFormatConfiguration& value) { SetFormatConfiguration(value); return *this;}
-    inline ReferenceLineValueLabelConfiguration& WithFormatConfiguration(NumericFormatConfiguration&& value) { SetFormatConfiguration(std::move(value)); return *this;}
+    template<typename FormatConfigurationT = NumericFormatConfiguration>
+    void SetFormatConfiguration(FormatConfigurationT&& value) { m_formatConfigurationHasBeenSet = true; m_formatConfiguration = std::forward<FormatConfigurationT>(value); }
+    template<typename FormatConfigurationT = NumericFormatConfiguration>
+    ReferenceLineValueLabelConfiguration& WithFormatConfiguration(FormatConfigurationT&& value) { SetFormatConfiguration(std::forward<FormatConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    ReferenceLineValueLabelRelativePosition m_relativePosition;
+    ReferenceLineValueLabelRelativePosition m_relativePosition{ReferenceLineValueLabelRelativePosition::NOT_SET};
     bool m_relativePositionHasBeenSet = false;
 
     NumericFormatConfiguration m_formatConfiguration;

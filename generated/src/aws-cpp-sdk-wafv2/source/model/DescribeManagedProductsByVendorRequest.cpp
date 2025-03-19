@@ -12,13 +12,6 @@ using namespace Aws::WAFV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeManagedProductsByVendorRequest::DescribeManagedProductsByVendorRequest() : 
-    m_vendorNameHasBeenSet(false),
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeManagedProductsByVendorRequest::SerializePayload() const
 {
   JsonValue payload;

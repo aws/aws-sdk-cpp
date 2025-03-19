@@ -35,7 +35,7 @@ namespace Model
   class PredictorExecutionDetails
   {
   public:
-    AWS_FORECASTSERVICE_API PredictorExecutionDetails();
+    AWS_FORECASTSERVICE_API PredictorExecutionDetails() = default;
     AWS_FORECASTSERVICE_API PredictorExecutionDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API PredictorExecutionDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FORECASTSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,14 @@ namespace Model
      * against a particular algorithm. The <code>NumberOfBacktestWindows</code> from
      * the object determines the number of windows in the array.</p>
      */
-    inline const Aws::Vector<PredictorExecution>& GetPredictorExecutions() const{ return m_predictorExecutions; }
+    inline const Aws::Vector<PredictorExecution>& GetPredictorExecutions() const { return m_predictorExecutions; }
     inline bool PredictorExecutionsHasBeenSet() const { return m_predictorExecutionsHasBeenSet; }
-    inline void SetPredictorExecutions(const Aws::Vector<PredictorExecution>& value) { m_predictorExecutionsHasBeenSet = true; m_predictorExecutions = value; }
-    inline void SetPredictorExecutions(Aws::Vector<PredictorExecution>&& value) { m_predictorExecutionsHasBeenSet = true; m_predictorExecutions = std::move(value); }
-    inline PredictorExecutionDetails& WithPredictorExecutions(const Aws::Vector<PredictorExecution>& value) { SetPredictorExecutions(value); return *this;}
-    inline PredictorExecutionDetails& WithPredictorExecutions(Aws::Vector<PredictorExecution>&& value) { SetPredictorExecutions(std::move(value)); return *this;}
-    inline PredictorExecutionDetails& AddPredictorExecutions(const PredictorExecution& value) { m_predictorExecutionsHasBeenSet = true; m_predictorExecutions.push_back(value); return *this; }
-    inline PredictorExecutionDetails& AddPredictorExecutions(PredictorExecution&& value) { m_predictorExecutionsHasBeenSet = true; m_predictorExecutions.push_back(std::move(value)); return *this; }
+    template<typename PredictorExecutionsT = Aws::Vector<PredictorExecution>>
+    void SetPredictorExecutions(PredictorExecutionsT&& value) { m_predictorExecutionsHasBeenSet = true; m_predictorExecutions = std::forward<PredictorExecutionsT>(value); }
+    template<typename PredictorExecutionsT = Aws::Vector<PredictorExecution>>
+    PredictorExecutionDetails& WithPredictorExecutions(PredictorExecutionsT&& value) { SetPredictorExecutions(std::forward<PredictorExecutionsT>(value)); return *this;}
+    template<typename PredictorExecutionsT = PredictorExecution>
+    PredictorExecutionDetails& AddPredictorExecutions(PredictorExecutionsT&& value) { m_predictorExecutionsHasBeenSet = true; m_predictorExecutions.emplace_back(std::forward<PredictorExecutionsT>(value)); return *this; }
     ///@}
   private:
 

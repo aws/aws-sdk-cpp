@@ -32,7 +32,7 @@ namespace Model
   class BackupRestoring
   {
   public:
-    AWS_FSX_API BackupRestoring();
+    AWS_FSX_API BackupRestoring() = default;
     AWS_FSX_API BackupRestoring(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API BackupRestoring& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,28 +40,24 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline BackupRestoring& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline BackupRestoring& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline BackupRestoring& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    BackupRestoring& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of a file system being restored from the backup.</p>
      */
-    inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
+    inline const Aws::String& GetFileSystemId() const { return m_fileSystemId; }
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-    inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-    inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-    inline BackupRestoring& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-    inline BackupRestoring& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-    inline BackupRestoring& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    template<typename FileSystemIdT = Aws::String>
+    void SetFileSystemId(FileSystemIdT&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::forward<FileSystemIdT>(value); }
+    template<typename FileSystemIdT = Aws::String>
+    BackupRestoring& WithFileSystemId(FileSystemIdT&& value) { SetFileSystemId(std::forward<FileSystemIdT>(value)); return *this;}
     ///@}
   private:
 

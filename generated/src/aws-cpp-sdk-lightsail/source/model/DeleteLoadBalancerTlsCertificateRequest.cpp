@@ -12,14 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLoadBalancerTlsCertificateRequest::DeleteLoadBalancerTlsCertificateRequest() : 
-    m_loadBalancerNameHasBeenSet(false),
-    m_certificateNameHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLoadBalancerTlsCertificateRequest::SerializePayload() const
 {
   JsonValue payload;

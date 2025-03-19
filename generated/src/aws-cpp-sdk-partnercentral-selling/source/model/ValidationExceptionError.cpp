@@ -18,16 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-ValidationExceptionError::ValidationExceptionError() : 
-    m_code(ValidationExceptionErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_fieldNameHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ValidationExceptionError::ValidationExceptionError(JsonView jsonValue)
-  : ValidationExceptionError()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ValidationExceptionError& ValidationExceptionError::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Code"))
   {
     m_code = ValidationExceptionErrorCodeMapper::GetValidationExceptionErrorCodeForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FieldName"))
   {
     m_fieldName = jsonValue.GetString("FieldName");
-
     m_fieldNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

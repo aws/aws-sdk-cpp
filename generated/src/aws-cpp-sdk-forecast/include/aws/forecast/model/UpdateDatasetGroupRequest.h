@@ -22,7 +22,7 @@ namespace Model
   class UpdateDatasetGroupRequest : public ForecastServiceRequest
   {
   public:
-    AWS_FORECASTSERVICE_API UpdateDatasetGroupRequest();
+    AWS_FORECASTSERVICE_API UpdateDatasetGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The ARN of the dataset group.</p>
      */
-    inline const Aws::String& GetDatasetGroupArn() const{ return m_datasetGroupArn; }
+    inline const Aws::String& GetDatasetGroupArn() const { return m_datasetGroupArn; }
     inline bool DatasetGroupArnHasBeenSet() const { return m_datasetGroupArnHasBeenSet; }
-    inline void SetDatasetGroupArn(const Aws::String& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = value; }
-    inline void SetDatasetGroupArn(Aws::String&& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = std::move(value); }
-    inline void SetDatasetGroupArn(const char* value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn.assign(value); }
-    inline UpdateDatasetGroupRequest& WithDatasetGroupArn(const Aws::String& value) { SetDatasetGroupArn(value); return *this;}
-    inline UpdateDatasetGroupRequest& WithDatasetGroupArn(Aws::String&& value) { SetDatasetGroupArn(std::move(value)); return *this;}
-    inline UpdateDatasetGroupRequest& WithDatasetGroupArn(const char* value) { SetDatasetGroupArn(value); return *this;}
+    template<typename DatasetGroupArnT = Aws::String>
+    void SetDatasetGroupArn(DatasetGroupArnT&& value) { m_datasetGroupArnHasBeenSet = true; m_datasetGroupArn = std::forward<DatasetGroupArnT>(value); }
+    template<typename DatasetGroupArnT = Aws::String>
+    UpdateDatasetGroupRequest& WithDatasetGroupArn(DatasetGroupArnT&& value) { SetDatasetGroupArn(std::forward<DatasetGroupArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,15 +52,14 @@ namespace Model
      * <p>An array of the Amazon Resource Names (ARNs) of the datasets to add to the
      * dataset group.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDatasetArns() const{ return m_datasetArns; }
+    inline const Aws::Vector<Aws::String>& GetDatasetArns() const { return m_datasetArns; }
     inline bool DatasetArnsHasBeenSet() const { return m_datasetArnsHasBeenSet; }
-    inline void SetDatasetArns(const Aws::Vector<Aws::String>& value) { m_datasetArnsHasBeenSet = true; m_datasetArns = value; }
-    inline void SetDatasetArns(Aws::Vector<Aws::String>&& value) { m_datasetArnsHasBeenSet = true; m_datasetArns = std::move(value); }
-    inline UpdateDatasetGroupRequest& WithDatasetArns(const Aws::Vector<Aws::String>& value) { SetDatasetArns(value); return *this;}
-    inline UpdateDatasetGroupRequest& WithDatasetArns(Aws::Vector<Aws::String>&& value) { SetDatasetArns(std::move(value)); return *this;}
-    inline UpdateDatasetGroupRequest& AddDatasetArns(const Aws::String& value) { m_datasetArnsHasBeenSet = true; m_datasetArns.push_back(value); return *this; }
-    inline UpdateDatasetGroupRequest& AddDatasetArns(Aws::String&& value) { m_datasetArnsHasBeenSet = true; m_datasetArns.push_back(std::move(value)); return *this; }
-    inline UpdateDatasetGroupRequest& AddDatasetArns(const char* value) { m_datasetArnsHasBeenSet = true; m_datasetArns.push_back(value); return *this; }
+    template<typename DatasetArnsT = Aws::Vector<Aws::String>>
+    void SetDatasetArns(DatasetArnsT&& value) { m_datasetArnsHasBeenSet = true; m_datasetArns = std::forward<DatasetArnsT>(value); }
+    template<typename DatasetArnsT = Aws::Vector<Aws::String>>
+    UpdateDatasetGroupRequest& WithDatasetArns(DatasetArnsT&& value) { SetDatasetArns(std::forward<DatasetArnsT>(value)); return *this;}
+    template<typename DatasetArnsT = Aws::String>
+    UpdateDatasetGroupRequest& AddDatasetArns(DatasetArnsT&& value) { m_datasetArnsHasBeenSet = true; m_datasetArns.emplace_back(std::forward<DatasetArnsT>(value)); return *this; }
     ///@}
   private:
 

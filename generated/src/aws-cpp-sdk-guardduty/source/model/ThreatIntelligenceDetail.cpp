@@ -18,15 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-ThreatIntelligenceDetail::ThreatIntelligenceDetail() : 
-    m_threatListNameHasBeenSet(false),
-    m_threatNamesHasBeenSet(false),
-    m_threatFileSha256HasBeenSet(false)
-{
-}
-
 ThreatIntelligenceDetail::ThreatIntelligenceDetail(JsonView jsonValue)
-  : ThreatIntelligenceDetail()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ ThreatIntelligenceDetail& ThreatIntelligenceDetail::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("threatListName"))
   {
     m_threatListName = jsonValue.GetString("threatListName");
-
     m_threatListNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("threatNames"))
   {
     Aws::Utils::Array<JsonView> threatNamesJsonList = jsonValue.GetArray("threatNames");
@@ -49,14 +39,11 @@ ThreatIntelligenceDetail& ThreatIntelligenceDetail::operator =(JsonView jsonValu
     }
     m_threatNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("threatFileSha256"))
   {
     m_threatFileSha256 = jsonValue.GetString("threatFileSha256");
-
     m_threatFileSha256HasBeenSet = true;
   }
-
   return *this;
 }
 

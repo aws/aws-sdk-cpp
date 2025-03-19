@@ -32,7 +32,7 @@ namespace Model
   class AudioStandardOutputConfiguration
   {
   public:
-    AWS_BEDROCKDATAAUTOMATION_API AudioStandardOutputConfiguration();
+    AWS_BEDROCKDATAAUTOMATION_API AudioStandardOutputConfiguration() = default;
     AWS_BEDROCKDATAAUTOMATION_API AudioStandardOutputConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API AudioStandardOutputConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKDATAAUTOMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,22 +40,22 @@ namespace Model
 
     ///@{
     
-    inline const AudioStandardExtraction& GetExtraction() const{ return m_extraction; }
+    inline const AudioStandardExtraction& GetExtraction() const { return m_extraction; }
     inline bool ExtractionHasBeenSet() const { return m_extractionHasBeenSet; }
-    inline void SetExtraction(const AudioStandardExtraction& value) { m_extractionHasBeenSet = true; m_extraction = value; }
-    inline void SetExtraction(AudioStandardExtraction&& value) { m_extractionHasBeenSet = true; m_extraction = std::move(value); }
-    inline AudioStandardOutputConfiguration& WithExtraction(const AudioStandardExtraction& value) { SetExtraction(value); return *this;}
-    inline AudioStandardOutputConfiguration& WithExtraction(AudioStandardExtraction&& value) { SetExtraction(std::move(value)); return *this;}
+    template<typename ExtractionT = AudioStandardExtraction>
+    void SetExtraction(ExtractionT&& value) { m_extractionHasBeenSet = true; m_extraction = std::forward<ExtractionT>(value); }
+    template<typename ExtractionT = AudioStandardExtraction>
+    AudioStandardOutputConfiguration& WithExtraction(ExtractionT&& value) { SetExtraction(std::forward<ExtractionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const AudioStandardGenerativeField& GetGenerativeField() const{ return m_generativeField; }
+    inline const AudioStandardGenerativeField& GetGenerativeField() const { return m_generativeField; }
     inline bool GenerativeFieldHasBeenSet() const { return m_generativeFieldHasBeenSet; }
-    inline void SetGenerativeField(const AudioStandardGenerativeField& value) { m_generativeFieldHasBeenSet = true; m_generativeField = value; }
-    inline void SetGenerativeField(AudioStandardGenerativeField&& value) { m_generativeFieldHasBeenSet = true; m_generativeField = std::move(value); }
-    inline AudioStandardOutputConfiguration& WithGenerativeField(const AudioStandardGenerativeField& value) { SetGenerativeField(value); return *this;}
-    inline AudioStandardOutputConfiguration& WithGenerativeField(AudioStandardGenerativeField&& value) { SetGenerativeField(std::move(value)); return *this;}
+    template<typename GenerativeFieldT = AudioStandardGenerativeField>
+    void SetGenerativeField(GenerativeFieldT&& value) { m_generativeFieldHasBeenSet = true; m_generativeField = std::forward<GenerativeFieldT>(value); }
+    template<typename GenerativeFieldT = AudioStandardGenerativeField>
+    AudioStandardOutputConfiguration& WithGenerativeField(GenerativeFieldT&& value) { SetGenerativeField(std::forward<GenerativeFieldT>(value)); return *this;}
     ///@}
   private:
 

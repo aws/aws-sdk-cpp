@@ -20,39 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Volume::Volume() : 
-    m_outpostArnHasBeenSet(false),
-    m_iops(0),
-    m_iopsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_volumeType(VolumeType::NOT_SET),
-    m_volumeTypeHasBeenSet(false),
-    m_fastRestored(false),
-    m_fastRestoredHasBeenSet(false),
-    m_multiAttachEnabled(false),
-    m_multiAttachEnabledHasBeenSet(false),
-    m_throughput(0),
-    m_throughputHasBeenSet(false),
-    m_sseType(SSEType::NOT_SET),
-    m_sseTypeHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_volumeIdHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false),
-    m_snapshotIdHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_state(VolumeState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_attachmentsHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 Volume::Volume(const XmlNode& xmlNode)
-  : Volume()
 {
   *this = xmlNode;
 }
@@ -79,6 +47,7 @@ Volume& Volume::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
@@ -90,7 +59,7 @@ Volume& Volume::operator =(const XmlNode& xmlNode)
     XmlNode volumeTypeNode = resultNode.FirstChild("volumeType");
     if(!volumeTypeNode.IsNull())
     {
-      m_volumeType = VolumeTypeMapper::GetVolumeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(volumeTypeNode.GetText()).c_str()).c_str());
+      m_volumeType = VolumeTypeMapper::GetVolumeTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(volumeTypeNode.GetText()).c_str()));
       m_volumeTypeHasBeenSet = true;
     }
     XmlNode fastRestoredNode = resultNode.FirstChild("fastRestored");
@@ -114,7 +83,7 @@ Volume& Volume::operator =(const XmlNode& xmlNode)
     XmlNode sseTypeNode = resultNode.FirstChild("sseType");
     if(!sseTypeNode.IsNull())
     {
-      m_sseType = SSETypeMapper::GetSSETypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sseTypeNode.GetText()).c_str()).c_str());
+      m_sseType = SSETypeMapper::GetSSETypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sseTypeNode.GetText()).c_str()));
       m_sseTypeHasBeenSet = true;
     }
     XmlNode operatorNode = resultNode.FirstChild("operator");
@@ -150,7 +119,7 @@ Volume& Volume::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("status");
     if(!stateNode.IsNull())
     {
-      m_state = VolumeStateMapper::GetVolumeStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = VolumeStateMapper::GetVolumeStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode createTimeNode = resultNode.FirstChild("createTime");
@@ -163,6 +132,7 @@ Volume& Volume::operator =(const XmlNode& xmlNode)
     if(!attachmentsNode.IsNull())
     {
       XmlNode attachmentsMember = attachmentsNode.FirstChild("item");
+      m_attachmentsHasBeenSet = !attachmentsMember.IsNull();
       while(!attachmentsMember.IsNull())
       {
         m_attachments.push_back(attachmentsMember);

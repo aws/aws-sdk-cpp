@@ -12,19 +12,6 @@ using namespace Aws::ApplicationAutoScaling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeScalingPoliciesRequest::DescribeScalingPoliciesRequest() : 
-    m_policyNamesHasBeenSet(false),
-    m_serviceNamespace(ServiceNamespace::NOT_SET),
-    m_serviceNamespaceHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_scalableDimension(ScalableDimension::NOT_SET),
-    m_scalableDimensionHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeScalingPoliciesRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,13 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeIngestionRequest::DescribeIngestionRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_dataSetIdHasBeenSet(false),
-    m_ingestionIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeIngestionRequest::SerializePayload() const
 {
   return {};

@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DriftCheckBias::DriftCheckBias() : 
-    m_configFileHasBeenSet(false),
-    m_preTrainingConstraintsHasBeenSet(false),
-    m_postTrainingConstraintsHasBeenSet(false)
-{
-}
-
 DriftCheckBias::DriftCheckBias(JsonView jsonValue)
-  : DriftCheckBias()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ DriftCheckBias& DriftCheckBias::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConfigFile"))
   {
     m_configFile = jsonValue.GetObject("ConfigFile");
-
     m_configFileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreTrainingConstraints"))
   {
     m_preTrainingConstraints = jsonValue.GetObject("PreTrainingConstraints");
-
     m_preTrainingConstraintsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostTrainingConstraints"))
   {
     m_postTrainingConstraints = jsonValue.GetObject("PostTrainingConstraints");
-
     m_postTrainingConstraintsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-StartVpcEndpointServicePrivateDnsVerificationRequest::StartVpcEndpointServicePrivateDnsVerificationRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_serviceIdHasBeenSet(false)
-{
-}
-
 Aws::String StartVpcEndpointServicePrivateDnsVerificationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -20,20 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-ChangeSetHook::ChangeSetHook() : 
-    m_invocationPoint(HookInvocationPoint::NOT_SET),
-    m_invocationPointHasBeenSet(false),
-    m_failureMode(HookFailureMode::NOT_SET),
-    m_failureModeHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_typeVersionIdHasBeenSet(false),
-    m_typeConfigurationVersionIdHasBeenSet(false),
-    m_targetDetailsHasBeenSet(false)
-{
-}
-
 ChangeSetHook::ChangeSetHook(const XmlNode& xmlNode)
-  : ChangeSetHook()
 {
   *this = xmlNode;
 }
@@ -47,13 +34,13 @@ ChangeSetHook& ChangeSetHook::operator =(const XmlNode& xmlNode)
     XmlNode invocationPointNode = resultNode.FirstChild("InvocationPoint");
     if(!invocationPointNode.IsNull())
     {
-      m_invocationPoint = HookInvocationPointMapper::GetHookInvocationPointForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(invocationPointNode.GetText()).c_str()).c_str());
+      m_invocationPoint = HookInvocationPointMapper::GetHookInvocationPointForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(invocationPointNode.GetText()).c_str()));
       m_invocationPointHasBeenSet = true;
     }
     XmlNode failureModeNode = resultNode.FirstChild("FailureMode");
     if(!failureModeNode.IsNull())
     {
-      m_failureMode = HookFailureModeMapper::GetHookFailureModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(failureModeNode.GetText()).c_str()).c_str());
+      m_failureMode = HookFailureModeMapper::GetHookFailureModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(failureModeNode.GetText()).c_str()));
       m_failureModeHasBeenSet = true;
     }
     XmlNode typeNameNode = resultNode.FirstChild("TypeName");

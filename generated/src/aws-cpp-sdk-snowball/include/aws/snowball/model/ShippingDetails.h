@@ -33,7 +33,7 @@ namespace Model
   class ShippingDetails
   {
   public:
-    AWS_SNOWBALL_API ShippingDetails();
+    AWS_SNOWBALL_API ShippingDetails() = default;
     AWS_SNOWBALL_API ShippingDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API ShippingDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,12 +54,10 @@ namespace Model
      * States of America (US), you have access to one-day shipping and two-day
      * shipping.</p> </li> </ul>
      */
-    inline const ShippingOption& GetShippingOption() const{ return m_shippingOption; }
+    inline ShippingOption GetShippingOption() const { return m_shippingOption; }
     inline bool ShippingOptionHasBeenSet() const { return m_shippingOptionHasBeenSet; }
-    inline void SetShippingOption(const ShippingOption& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = value; }
-    inline void SetShippingOption(ShippingOption&& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = std::move(value); }
-    inline ShippingDetails& WithShippingOption(const ShippingOption& value) { SetShippingOption(value); return *this;}
-    inline ShippingDetails& WithShippingOption(ShippingOption&& value) { SetShippingOption(std::move(value)); return *this;}
+    inline void SetShippingOption(ShippingOption value) { m_shippingOptionHasBeenSet = true; m_shippingOption = value; }
+    inline ShippingDetails& WithShippingOption(ShippingOption value) { SetShippingOption(value); return *this;}
     ///@}
 
     ///@{
@@ -67,12 +65,12 @@ namespace Model
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snow
      * device being returned to Amazon Web Services for a particular job.</p>
      */
-    inline const Shipment& GetInboundShipment() const{ return m_inboundShipment; }
+    inline const Shipment& GetInboundShipment() const { return m_inboundShipment; }
     inline bool InboundShipmentHasBeenSet() const { return m_inboundShipmentHasBeenSet; }
-    inline void SetInboundShipment(const Shipment& value) { m_inboundShipmentHasBeenSet = true; m_inboundShipment = value; }
-    inline void SetInboundShipment(Shipment&& value) { m_inboundShipmentHasBeenSet = true; m_inboundShipment = std::move(value); }
-    inline ShippingDetails& WithInboundShipment(const Shipment& value) { SetInboundShipment(value); return *this;}
-    inline ShippingDetails& WithInboundShipment(Shipment&& value) { SetInboundShipment(std::move(value)); return *this;}
+    template<typename InboundShipmentT = Shipment>
+    void SetInboundShipment(InboundShipmentT&& value) { m_inboundShipmentHasBeenSet = true; m_inboundShipment = std::forward<InboundShipmentT>(value); }
+    template<typename InboundShipmentT = Shipment>
+    ShippingDetails& WithInboundShipment(InboundShipmentT&& value) { SetInboundShipment(std::forward<InboundShipmentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,16 +79,16 @@ namespace Model
      * device being delivered to the address that you specified for a particular
      * job.</p>
      */
-    inline const Shipment& GetOutboundShipment() const{ return m_outboundShipment; }
+    inline const Shipment& GetOutboundShipment() const { return m_outboundShipment; }
     inline bool OutboundShipmentHasBeenSet() const { return m_outboundShipmentHasBeenSet; }
-    inline void SetOutboundShipment(const Shipment& value) { m_outboundShipmentHasBeenSet = true; m_outboundShipment = value; }
-    inline void SetOutboundShipment(Shipment&& value) { m_outboundShipmentHasBeenSet = true; m_outboundShipment = std::move(value); }
-    inline ShippingDetails& WithOutboundShipment(const Shipment& value) { SetOutboundShipment(value); return *this;}
-    inline ShippingDetails& WithOutboundShipment(Shipment&& value) { SetOutboundShipment(std::move(value)); return *this;}
+    template<typename OutboundShipmentT = Shipment>
+    void SetOutboundShipment(OutboundShipmentT&& value) { m_outboundShipmentHasBeenSet = true; m_outboundShipment = std::forward<OutboundShipmentT>(value); }
+    template<typename OutboundShipmentT = Shipment>
+    ShippingDetails& WithOutboundShipment(OutboundShipmentT&& value) { SetOutboundShipment(std::forward<OutboundShipmentT>(value)); return *this;}
     ///@}
   private:
 
-    ShippingOption m_shippingOption;
+    ShippingOption m_shippingOption{ShippingOption::NOT_SET};
     bool m_shippingOptionHasBeenSet = false;
 
     Shipment m_inboundShipment;

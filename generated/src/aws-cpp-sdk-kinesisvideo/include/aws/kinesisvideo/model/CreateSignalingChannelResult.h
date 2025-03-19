@@ -27,7 +27,7 @@ namespace Model
   class CreateSignalingChannelResult
   {
   public:
-    AWS_KINESISVIDEO_API CreateSignalingChannelResult();
+    AWS_KINESISVIDEO_API CreateSignalingChannelResult() = default;
     AWS_KINESISVIDEO_API CreateSignalingChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KINESISVIDEO_API CreateSignalingChannelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the created channel.</p>
      */
-    inline const Aws::String& GetChannelARN() const{ return m_channelARN; }
-    inline void SetChannelARN(const Aws::String& value) { m_channelARN = value; }
-    inline void SetChannelARN(Aws::String&& value) { m_channelARN = std::move(value); }
-    inline void SetChannelARN(const char* value) { m_channelARN.assign(value); }
-    inline CreateSignalingChannelResult& WithChannelARN(const Aws::String& value) { SetChannelARN(value); return *this;}
-    inline CreateSignalingChannelResult& WithChannelARN(Aws::String&& value) { SetChannelARN(std::move(value)); return *this;}
-    inline CreateSignalingChannelResult& WithChannelARN(const char* value) { SetChannelARN(value); return *this;}
+    inline const Aws::String& GetChannelARN() const { return m_channelARN; }
+    template<typename ChannelARNT = Aws::String>
+    void SetChannelARN(ChannelARNT&& value) { m_channelARNHasBeenSet = true; m_channelARN = std::forward<ChannelARNT>(value); }
+    template<typename ChannelARNT = Aws::String>
+    CreateSignalingChannelResult& WithChannelARN(ChannelARNT&& value) { SetChannelARN(std::forward<ChannelARNT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateSignalingChannelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateSignalingChannelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateSignalingChannelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateSignalingChannelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_channelARN;
+    bool m_channelARNHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

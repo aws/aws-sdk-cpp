@@ -18,19 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-DescribedProfile::DescribedProfile() : 
-    m_arnHasBeenSet(false),
-    m_profileIdHasBeenSet(false),
-    m_profileType(ProfileType::NOT_SET),
-    m_profileTypeHasBeenSet(false),
-    m_as2IdHasBeenSet(false),
-    m_certificateIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 DescribedProfile::DescribedProfile(JsonView jsonValue)
-  : DescribedProfile()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ DescribedProfile& DescribedProfile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProfileId"))
   {
     m_profileId = jsonValue.GetString("ProfileId");
-
     m_profileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProfileType"))
   {
     m_profileType = ProfileTypeMapper::GetProfileTypeForName(jsonValue.GetString("ProfileType"));
-
     m_profileTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("As2Id"))
   {
     m_as2Id = jsonValue.GetString("As2Id");
-
     m_as2IdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CertificateIds"))
   {
     Aws::Utils::Array<JsonView> certificateIdsJsonList = jsonValue.GetArray("CertificateIds");
@@ -74,7 +54,6 @@ DescribedProfile& DescribedProfile::operator =(JsonView jsonValue)
     }
     m_certificateIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -84,7 +63,6 @@ DescribedProfile& DescribedProfile::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

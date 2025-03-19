@@ -23,7 +23,7 @@ namespace Model
   class CreateReplicationJobRequest : public SMSRequest
   {
   public:
-    AWS_SMS_API CreateReplicationJobRequest();
+    AWS_SMS_API CreateReplicationJobRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,33 +40,31 @@ namespace Model
     /**
      * <p>The ID of the server.</p>
      */
-    inline const Aws::String& GetServerId() const{ return m_serverId; }
+    inline const Aws::String& GetServerId() const { return m_serverId; }
     inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
-    inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
-    inline void SetServerId(Aws::String&& value) { m_serverIdHasBeenSet = true; m_serverId = std::move(value); }
-    inline void SetServerId(const char* value) { m_serverIdHasBeenSet = true; m_serverId.assign(value); }
-    inline CreateReplicationJobRequest& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
-    inline CreateReplicationJobRequest& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
-    inline CreateReplicationJobRequest& WithServerId(const char* value) { SetServerId(value); return *this;}
+    template<typename ServerIdT = Aws::String>
+    void SetServerId(ServerIdT&& value) { m_serverIdHasBeenSet = true; m_serverId = std::forward<ServerIdT>(value); }
+    template<typename ServerIdT = Aws::String>
+    CreateReplicationJobRequest& WithServerId(ServerIdT&& value) { SetServerId(std::forward<ServerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The seed replication time.</p>
      */
-    inline const Aws::Utils::DateTime& GetSeedReplicationTime() const{ return m_seedReplicationTime; }
+    inline const Aws::Utils::DateTime& GetSeedReplicationTime() const { return m_seedReplicationTime; }
     inline bool SeedReplicationTimeHasBeenSet() const { return m_seedReplicationTimeHasBeenSet; }
-    inline void SetSeedReplicationTime(const Aws::Utils::DateTime& value) { m_seedReplicationTimeHasBeenSet = true; m_seedReplicationTime = value; }
-    inline void SetSeedReplicationTime(Aws::Utils::DateTime&& value) { m_seedReplicationTimeHasBeenSet = true; m_seedReplicationTime = std::move(value); }
-    inline CreateReplicationJobRequest& WithSeedReplicationTime(const Aws::Utils::DateTime& value) { SetSeedReplicationTime(value); return *this;}
-    inline CreateReplicationJobRequest& WithSeedReplicationTime(Aws::Utils::DateTime&& value) { SetSeedReplicationTime(std::move(value)); return *this;}
+    template<typename SeedReplicationTimeT = Aws::Utils::DateTime>
+    void SetSeedReplicationTime(SeedReplicationTimeT&& value) { m_seedReplicationTimeHasBeenSet = true; m_seedReplicationTime = std::forward<SeedReplicationTimeT>(value); }
+    template<typename SeedReplicationTimeT = Aws::Utils::DateTime>
+    CreateReplicationJobRequest& WithSeedReplicationTime(SeedReplicationTimeT&& value) { SetSeedReplicationTime(std::forward<SeedReplicationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time between consecutive replication runs, in hours.</p>
      */
-    inline int GetFrequency() const{ return m_frequency; }
+    inline int GetFrequency() const { return m_frequency; }
     inline bool FrequencyHasBeenSet() const { return m_frequencyHasBeenSet; }
     inline void SetFrequency(int value) { m_frequencyHasBeenSet = true; m_frequency = value; }
     inline CreateReplicationJobRequest& WithFrequency(int value) { SetFrequency(value); return *this;}
@@ -76,7 +74,7 @@ namespace Model
     /**
      * <p>Indicates whether to run the replication job one time.</p>
      */
-    inline bool GetRunOnce() const{ return m_runOnce; }
+    inline bool GetRunOnce() const { return m_runOnce; }
     inline bool RunOnceHasBeenSet() const { return m_runOnceHasBeenSet; }
     inline void SetRunOnce(bool value) { m_runOnceHasBeenSet = true; m_runOnce = value; }
     inline CreateReplicationJobRequest& WithRunOnce(bool value) { SetRunOnce(value); return *this;}
@@ -87,40 +85,34 @@ namespace Model
      * <p>The license type to be used for the AMI created by a successful replication
      * run.</p>
      */
-    inline const LicenseType& GetLicenseType() const{ return m_licenseType; }
+    inline LicenseType GetLicenseType() const { return m_licenseType; }
     inline bool LicenseTypeHasBeenSet() const { return m_licenseTypeHasBeenSet; }
-    inline void SetLicenseType(const LicenseType& value) { m_licenseTypeHasBeenSet = true; m_licenseType = value; }
-    inline void SetLicenseType(LicenseType&& value) { m_licenseTypeHasBeenSet = true; m_licenseType = std::move(value); }
-    inline CreateReplicationJobRequest& WithLicenseType(const LicenseType& value) { SetLicenseType(value); return *this;}
-    inline CreateReplicationJobRequest& WithLicenseType(LicenseType&& value) { SetLicenseType(std::move(value)); return *this;}
+    inline void SetLicenseType(LicenseType value) { m_licenseTypeHasBeenSet = true; m_licenseType = value; }
+    inline CreateReplicationJobRequest& WithLicenseType(LicenseType value) { SetLicenseType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the IAM role to be used by the Server Migration Service.</p>
      */
-    inline const Aws::String& GetRoleName() const{ return m_roleName; }
+    inline const Aws::String& GetRoleName() const { return m_roleName; }
     inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
-    inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
-    inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
-    inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
-    inline CreateReplicationJobRequest& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
-    inline CreateReplicationJobRequest& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
-    inline CreateReplicationJobRequest& WithRoleName(const char* value) { SetRoleName(value); return *this;}
+    template<typename RoleNameT = Aws::String>
+    void SetRoleName(RoleNameT&& value) { m_roleNameHasBeenSet = true; m_roleName = std::forward<RoleNameT>(value); }
+    template<typename RoleNameT = Aws::String>
+    CreateReplicationJobRequest& WithRoleName(RoleNameT&& value) { SetRoleName(std::forward<RoleNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the replication job.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateReplicationJobRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateReplicationJobRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateReplicationJobRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateReplicationJobRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,7 +120,7 @@ namespace Model
      * <p>The maximum number of SMS-created AMIs to retain. The oldest is deleted after
      * the maximum number is reached and a new AMI is created.</p>
      */
-    inline int GetNumberOfRecentAmisToKeep() const{ return m_numberOfRecentAmisToKeep; }
+    inline int GetNumberOfRecentAmisToKeep() const { return m_numberOfRecentAmisToKeep; }
     inline bool NumberOfRecentAmisToKeepHasBeenSet() const { return m_numberOfRecentAmisToKeepHasBeenSet; }
     inline void SetNumberOfRecentAmisToKeep(int value) { m_numberOfRecentAmisToKeepHasBeenSet = true; m_numberOfRecentAmisToKeep = value; }
     inline CreateReplicationJobRequest& WithNumberOfRecentAmisToKeep(int value) { SetNumberOfRecentAmisToKeep(value); return *this;}
@@ -138,7 +130,7 @@ namespace Model
     /**
      * <p>Indicates whether the replication job produces encrypted AMIs.</p>
      */
-    inline bool GetEncrypted() const{ return m_encrypted; }
+    inline bool GetEncrypted() const { return m_encrypted; }
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
     inline CreateReplicationJobRequest& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
@@ -153,30 +145,28 @@ namespace Model
      * <i>true</i> but a KMS key ID is not specified, the customer's default KMS key
      * for Amazon EBS is used. </p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline CreateReplicationJobRequest& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline CreateReplicationJobRequest& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline CreateReplicationJobRequest& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    CreateReplicationJobRequest& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_serverId;
     bool m_serverIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_seedReplicationTime;
+    Aws::Utils::DateTime m_seedReplicationTime{};
     bool m_seedReplicationTimeHasBeenSet = false;
 
-    int m_frequency;
+    int m_frequency{0};
     bool m_frequencyHasBeenSet = false;
 
-    bool m_runOnce;
+    bool m_runOnce{false};
     bool m_runOnceHasBeenSet = false;
 
-    LicenseType m_licenseType;
+    LicenseType m_licenseType{LicenseType::NOT_SET};
     bool m_licenseTypeHasBeenSet = false;
 
     Aws::String m_roleName;
@@ -185,10 +175,10 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    int m_numberOfRecentAmisToKeep;
+    int m_numberOfRecentAmisToKeep{0};
     bool m_numberOfRecentAmisToKeepHasBeenSet = false;
 
-    bool m_encrypted;
+    bool m_encrypted{false};
     bool m_encryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;

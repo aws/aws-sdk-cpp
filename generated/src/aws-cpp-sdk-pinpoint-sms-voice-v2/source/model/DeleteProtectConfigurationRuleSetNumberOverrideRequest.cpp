@@ -12,12 +12,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteProtectConfigurationRuleSetNumberOverrideRequest::DeleteProtectConfigurationRuleSetNumberOverrideRequest() : 
-    m_protectConfigurationIdHasBeenSet(false),
-    m_destinationPhoneNumberHasBeenSet(false)
-{
-}
-
 Aws::String DeleteProtectConfigurationRuleSetNumberOverrideRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -10,12 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-GetHostReservationPurchasePreviewRequest::GetHostReservationPurchasePreviewRequest() : 
-    m_hostIdSetHasBeenSet(false),
-    m_offeringIdHasBeenSet(false)
-{
-}
-
 Aws::String GetHostReservationPurchasePreviewRequest::SerializePayload() const
 {
   Aws::StringStream ss;

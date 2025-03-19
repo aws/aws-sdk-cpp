@@ -22,7 +22,7 @@ namespace Model
   class UpdateResourceDataSyncRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API UpdateResourceDataSyncRequest();
+    AWS_SSM_API UpdateResourceDataSyncRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p>The name of the resource data sync you want to update.</p>
      */
-    inline const Aws::String& GetSyncName() const{ return m_syncName; }
+    inline const Aws::String& GetSyncName() const { return m_syncName; }
     inline bool SyncNameHasBeenSet() const { return m_syncNameHasBeenSet; }
-    inline void SetSyncName(const Aws::String& value) { m_syncNameHasBeenSet = true; m_syncName = value; }
-    inline void SetSyncName(Aws::String&& value) { m_syncNameHasBeenSet = true; m_syncName = std::move(value); }
-    inline void SetSyncName(const char* value) { m_syncNameHasBeenSet = true; m_syncName.assign(value); }
-    inline UpdateResourceDataSyncRequest& WithSyncName(const Aws::String& value) { SetSyncName(value); return *this;}
-    inline UpdateResourceDataSyncRequest& WithSyncName(Aws::String&& value) { SetSyncName(std::move(value)); return *this;}
-    inline UpdateResourceDataSyncRequest& WithSyncName(const char* value) { SetSyncName(value); return *this;}
+    template<typename SyncNameT = Aws::String>
+    void SetSyncName(SyncNameT&& value) { m_syncNameHasBeenSet = true; m_syncName = std::forward<SyncNameT>(value); }
+    template<typename SyncNameT = Aws::String>
+    UpdateResourceDataSyncRequest& WithSyncName(SyncNameT&& value) { SetSyncName(std::forward<SyncNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,26 +52,24 @@ namespace Model
      * <p>The type of resource data sync. The supported <code>SyncType</code> is
      * SyncFromSource.</p>
      */
-    inline const Aws::String& GetSyncType() const{ return m_syncType; }
+    inline const Aws::String& GetSyncType() const { return m_syncType; }
     inline bool SyncTypeHasBeenSet() const { return m_syncTypeHasBeenSet; }
-    inline void SetSyncType(const Aws::String& value) { m_syncTypeHasBeenSet = true; m_syncType = value; }
-    inline void SetSyncType(Aws::String&& value) { m_syncTypeHasBeenSet = true; m_syncType = std::move(value); }
-    inline void SetSyncType(const char* value) { m_syncTypeHasBeenSet = true; m_syncType.assign(value); }
-    inline UpdateResourceDataSyncRequest& WithSyncType(const Aws::String& value) { SetSyncType(value); return *this;}
-    inline UpdateResourceDataSyncRequest& WithSyncType(Aws::String&& value) { SetSyncType(std::move(value)); return *this;}
-    inline UpdateResourceDataSyncRequest& WithSyncType(const char* value) { SetSyncType(value); return *this;}
+    template<typename SyncTypeT = Aws::String>
+    void SetSyncType(SyncTypeT&& value) { m_syncTypeHasBeenSet = true; m_syncType = std::forward<SyncTypeT>(value); }
+    template<typename SyncTypeT = Aws::String>
+    UpdateResourceDataSyncRequest& WithSyncType(SyncTypeT&& value) { SetSyncType(std::forward<SyncTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specify information about the data sources to synchronize.</p>
      */
-    inline const ResourceDataSyncSource& GetSyncSource() const{ return m_syncSource; }
+    inline const ResourceDataSyncSource& GetSyncSource() const { return m_syncSource; }
     inline bool SyncSourceHasBeenSet() const { return m_syncSourceHasBeenSet; }
-    inline void SetSyncSource(const ResourceDataSyncSource& value) { m_syncSourceHasBeenSet = true; m_syncSource = value; }
-    inline void SetSyncSource(ResourceDataSyncSource&& value) { m_syncSourceHasBeenSet = true; m_syncSource = std::move(value); }
-    inline UpdateResourceDataSyncRequest& WithSyncSource(const ResourceDataSyncSource& value) { SetSyncSource(value); return *this;}
-    inline UpdateResourceDataSyncRequest& WithSyncSource(ResourceDataSyncSource&& value) { SetSyncSource(std::move(value)); return *this;}
+    template<typename SyncSourceT = ResourceDataSyncSource>
+    void SetSyncSource(SyncSourceT&& value) { m_syncSourceHasBeenSet = true; m_syncSource = std::forward<SyncSourceT>(value); }
+    template<typename SyncSourceT = ResourceDataSyncSource>
+    UpdateResourceDataSyncRequest& WithSyncSource(SyncSourceT&& value) { SetSyncSource(std::forward<SyncSourceT>(value)); return *this;}
     ///@}
   private:
 

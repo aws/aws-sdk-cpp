@@ -21,7 +21,7 @@ namespace Model
   class UpdateTrialRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API UpdateTrialRequest();
+    AWS_SAGEMAKER_API UpdateTrialRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The name of the trial to update.</p>
      */
-    inline const Aws::String& GetTrialName() const{ return m_trialName; }
+    inline const Aws::String& GetTrialName() const { return m_trialName; }
     inline bool TrialNameHasBeenSet() const { return m_trialNameHasBeenSet; }
-    inline void SetTrialName(const Aws::String& value) { m_trialNameHasBeenSet = true; m_trialName = value; }
-    inline void SetTrialName(Aws::String&& value) { m_trialNameHasBeenSet = true; m_trialName = std::move(value); }
-    inline void SetTrialName(const char* value) { m_trialNameHasBeenSet = true; m_trialName.assign(value); }
-    inline UpdateTrialRequest& WithTrialName(const Aws::String& value) { SetTrialName(value); return *this;}
-    inline UpdateTrialRequest& WithTrialName(Aws::String&& value) { SetTrialName(std::move(value)); return *this;}
-    inline UpdateTrialRequest& WithTrialName(const char* value) { SetTrialName(value); return *this;}
+    template<typename TrialNameT = Aws::String>
+    void SetTrialName(TrialNameT&& value) { m_trialNameHasBeenSet = true; m_trialName = std::forward<TrialNameT>(value); }
+    template<typename TrialNameT = Aws::String>
+    UpdateTrialRequest& WithTrialName(TrialNameT&& value) { SetTrialName(std::forward<TrialNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * <code>DisplayName</code> isn't specified, <code>TrialName</code> is
      * displayed.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline UpdateTrialRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline UpdateTrialRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline UpdateTrialRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    UpdateTrialRequest& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
   private:
 

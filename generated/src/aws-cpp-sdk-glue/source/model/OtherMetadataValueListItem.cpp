@@ -18,14 +18,7 @@ namespace Glue
 namespace Model
 {
 
-OtherMetadataValueListItem::OtherMetadataValueListItem() : 
-    m_metadataValueHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
-{
-}
-
 OtherMetadataValueListItem::OtherMetadataValueListItem(JsonView jsonValue)
-  : OtherMetadataValueListItem()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OtherMetadataValueListItem& OtherMetadataValueListItem::operator =(JsonView json
   if(jsonValue.ValueExists("MetadataValue"))
   {
     m_metadataValue = jsonValue.GetString("MetadataValue");
-
     m_metadataValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetString("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

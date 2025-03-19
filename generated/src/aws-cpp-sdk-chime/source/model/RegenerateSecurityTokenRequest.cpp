@@ -12,12 +12,6 @@ using namespace Aws::Chime::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegenerateSecurityTokenRequest::RegenerateSecurityTokenRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_botIdHasBeenSet(false)
-{
-}
-
 Aws::String RegenerateSecurityTokenRequest::SerializePayload() const
 {
   return {};

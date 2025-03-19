@@ -18,14 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-CustomerProfilesIntegrationConfig::CustomerProfilesIntegrationConfig() : 
-    m_domainArnHasBeenSet(false),
-    m_objectTypeNamesHasBeenSet(false)
-{
-}
-
 CustomerProfilesIntegrationConfig::CustomerProfilesIntegrationConfig(JsonView jsonValue)
-  : CustomerProfilesIntegrationConfig()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ CustomerProfilesIntegrationConfig& CustomerProfilesIntegrationConfig::operator =
   if(jsonValue.ValueExists("domainArn"))
   {
     m_domainArn = jsonValue.GetString("domainArn");
-
     m_domainArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("objectTypeNames"))
   {
     Aws::Map<Aws::String, JsonView> objectTypeNamesJsonMap = jsonValue.GetObject("objectTypeNames").GetAllObjects();
@@ -48,7 +39,6 @@ CustomerProfilesIntegrationConfig& CustomerProfilesIntegrationConfig::operator =
     }
     m_objectTypeNamesHasBeenSet = true;
   }
-
   return *this;
 }
 

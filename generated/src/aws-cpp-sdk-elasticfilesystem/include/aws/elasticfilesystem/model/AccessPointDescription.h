@@ -37,7 +37,7 @@ namespace Model
   class AccessPointDescription
   {
   public:
-    AWS_EFS_API AccessPointDescription();
+    AWS_EFS_API AccessPointDescription() = default;
     AWS_EFS_API AccessPointDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_EFS_API AccessPointDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The opaque string specified in the request to ensure idempotent creation.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline AccessPointDescription& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline AccessPointDescription& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline AccessPointDescription& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    AccessPointDescription& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * <p>The name of the access point. This is the value of the <code>Name</code>
      * tag.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AccessPointDescription& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AccessPointDescription& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AccessPointDescription& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AccessPointDescription& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,56 +73,50 @@ namespace Model
      * <p>The tags associated with the access point, presented as an array of Tag
      * objects.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline AccessPointDescription& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline AccessPointDescription& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline AccessPointDescription& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline AccessPointDescription& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    AccessPointDescription& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    AccessPointDescription& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the access point, assigned by Amazon EFS.</p>
      */
-    inline const Aws::String& GetAccessPointId() const{ return m_accessPointId; }
+    inline const Aws::String& GetAccessPointId() const { return m_accessPointId; }
     inline bool AccessPointIdHasBeenSet() const { return m_accessPointIdHasBeenSet; }
-    inline void SetAccessPointId(const Aws::String& value) { m_accessPointIdHasBeenSet = true; m_accessPointId = value; }
-    inline void SetAccessPointId(Aws::String&& value) { m_accessPointIdHasBeenSet = true; m_accessPointId = std::move(value); }
-    inline void SetAccessPointId(const char* value) { m_accessPointIdHasBeenSet = true; m_accessPointId.assign(value); }
-    inline AccessPointDescription& WithAccessPointId(const Aws::String& value) { SetAccessPointId(value); return *this;}
-    inline AccessPointDescription& WithAccessPointId(Aws::String&& value) { SetAccessPointId(std::move(value)); return *this;}
-    inline AccessPointDescription& WithAccessPointId(const char* value) { SetAccessPointId(value); return *this;}
+    template<typename AccessPointIdT = Aws::String>
+    void SetAccessPointId(AccessPointIdT&& value) { m_accessPointIdHasBeenSet = true; m_accessPointId = std::forward<AccessPointIdT>(value); }
+    template<typename AccessPointIdT = Aws::String>
+    AccessPointDescription& WithAccessPointId(AccessPointIdT&& value) { SetAccessPointId(std::forward<AccessPointIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique Amazon Resource Name (ARN) associated with the access point.</p>
      */
-    inline const Aws::String& GetAccessPointArn() const{ return m_accessPointArn; }
+    inline const Aws::String& GetAccessPointArn() const { return m_accessPointArn; }
     inline bool AccessPointArnHasBeenSet() const { return m_accessPointArnHasBeenSet; }
-    inline void SetAccessPointArn(const Aws::String& value) { m_accessPointArnHasBeenSet = true; m_accessPointArn = value; }
-    inline void SetAccessPointArn(Aws::String&& value) { m_accessPointArnHasBeenSet = true; m_accessPointArn = std::move(value); }
-    inline void SetAccessPointArn(const char* value) { m_accessPointArnHasBeenSet = true; m_accessPointArn.assign(value); }
-    inline AccessPointDescription& WithAccessPointArn(const Aws::String& value) { SetAccessPointArn(value); return *this;}
-    inline AccessPointDescription& WithAccessPointArn(Aws::String&& value) { SetAccessPointArn(std::move(value)); return *this;}
-    inline AccessPointDescription& WithAccessPointArn(const char* value) { SetAccessPointArn(value); return *this;}
+    template<typename AccessPointArnT = Aws::String>
+    void SetAccessPointArn(AccessPointArnT&& value) { m_accessPointArnHasBeenSet = true; m_accessPointArn = std::forward<AccessPointArnT>(value); }
+    template<typename AccessPointArnT = Aws::String>
+    AccessPointDescription& WithAccessPointArn(AccessPointArnT&& value) { SetAccessPointArn(std::forward<AccessPointArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the EFS file system that the access point applies to.</p>
      */
-    inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
+    inline const Aws::String& GetFileSystemId() const { return m_fileSystemId; }
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-    inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-    inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-    inline AccessPointDescription& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-    inline AccessPointDescription& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-    inline AccessPointDescription& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    template<typename FileSystemIdT = Aws::String>
+    void SetFileSystemId(FileSystemIdT&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::forward<FileSystemIdT>(value); }
+    template<typename FileSystemIdT = Aws::String>
+    AccessPointDescription& WithFileSystemId(FileSystemIdT&& value) { SetFileSystemId(std::forward<FileSystemIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,12 +125,12 @@ namespace Model
      * IDs on the access point that is used for all file operations by NFS clients
      * using the access point.</p>
      */
-    inline const PosixUser& GetPosixUser() const{ return m_posixUser; }
+    inline const PosixUser& GetPosixUser() const { return m_posixUser; }
     inline bool PosixUserHasBeenSet() const { return m_posixUserHasBeenSet; }
-    inline void SetPosixUser(const PosixUser& value) { m_posixUserHasBeenSet = true; m_posixUser = value; }
-    inline void SetPosixUser(PosixUser&& value) { m_posixUserHasBeenSet = true; m_posixUser = std::move(value); }
-    inline AccessPointDescription& WithPosixUser(const PosixUser& value) { SetPosixUser(value); return *this;}
-    inline AccessPointDescription& WithPosixUser(PosixUser&& value) { SetPosixUser(std::move(value)); return *this;}
+    template<typename PosixUserT = PosixUser>
+    void SetPosixUser(PosixUserT&& value) { m_posixUserHasBeenSet = true; m_posixUser = std::forward<PosixUserT>(value); }
+    template<typename PosixUserT = PosixUser>
+    AccessPointDescription& WithPosixUser(PosixUserT&& value) { SetPosixUser(std::forward<PosixUserT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -148,12 +138,12 @@ namespace Model
      * <p>The directory on the EFS file system that the access point exposes as the
      * root directory to NFS clients using the access point.</p>
      */
-    inline const RootDirectory& GetRootDirectory() const{ return m_rootDirectory; }
+    inline const RootDirectory& GetRootDirectory() const { return m_rootDirectory; }
     inline bool RootDirectoryHasBeenSet() const { return m_rootDirectoryHasBeenSet; }
-    inline void SetRootDirectory(const RootDirectory& value) { m_rootDirectoryHasBeenSet = true; m_rootDirectory = value; }
-    inline void SetRootDirectory(RootDirectory&& value) { m_rootDirectoryHasBeenSet = true; m_rootDirectory = std::move(value); }
-    inline AccessPointDescription& WithRootDirectory(const RootDirectory& value) { SetRootDirectory(value); return *this;}
-    inline AccessPointDescription& WithRootDirectory(RootDirectory&& value) { SetRootDirectory(std::move(value)); return *this;}
+    template<typename RootDirectoryT = RootDirectory>
+    void SetRootDirectory(RootDirectoryT&& value) { m_rootDirectoryHasBeenSet = true; m_rootDirectory = std::forward<RootDirectoryT>(value); }
+    template<typename RootDirectoryT = RootDirectory>
+    AccessPointDescription& WithRootDirectory(RootDirectoryT&& value) { SetRootDirectory(std::forward<RootDirectoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -161,38 +151,32 @@ namespace Model
      * <p>Identifies the Amazon Web Services account that owns the access point
      * resource.</p>
      */
-    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+    inline const Aws::String& GetOwnerId() const { return m_ownerId; }
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
-    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
-    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
-    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
-    inline AccessPointDescription& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
-    inline AccessPointDescription& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
-    inline AccessPointDescription& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+    template<typename OwnerIdT = Aws::String>
+    void SetOwnerId(OwnerIdT&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::forward<OwnerIdT>(value); }
+    template<typename OwnerIdT = Aws::String>
+    AccessPointDescription& WithOwnerId(OwnerIdT&& value) { SetOwnerId(std::forward<OwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Identifies the lifecycle phase of the access point.</p>
      */
-    inline const LifeCycleState& GetLifeCycleState() const{ return m_lifeCycleState; }
+    inline LifeCycleState GetLifeCycleState() const { return m_lifeCycleState; }
     inline bool LifeCycleStateHasBeenSet() const { return m_lifeCycleStateHasBeenSet; }
-    inline void SetLifeCycleState(const LifeCycleState& value) { m_lifeCycleStateHasBeenSet = true; m_lifeCycleState = value; }
-    inline void SetLifeCycleState(LifeCycleState&& value) { m_lifeCycleStateHasBeenSet = true; m_lifeCycleState = std::move(value); }
-    inline AccessPointDescription& WithLifeCycleState(const LifeCycleState& value) { SetLifeCycleState(value); return *this;}
-    inline AccessPointDescription& WithLifeCycleState(LifeCycleState&& value) { SetLifeCycleState(std::move(value)); return *this;}
+    inline void SetLifeCycleState(LifeCycleState value) { m_lifeCycleStateHasBeenSet = true; m_lifeCycleState = value; }
+    inline AccessPointDescription& WithLifeCycleState(LifeCycleState value) { SetLifeCycleState(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
     inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
-    inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestIdHasBeenSet = true; m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestIdHasBeenSet = true; m_requestId.assign(value); }
-    inline AccessPointDescription& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline AccessPointDescription& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline AccessPointDescription& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    AccessPointDescription& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -223,7 +207,7 @@ namespace Model
     Aws::String m_ownerId;
     bool m_ownerIdHasBeenSet = false;
 
-    LifeCycleState m_lifeCycleState;
+    LifeCycleState m_lifeCycleState{LifeCycleState::NOT_SET};
     bool m_lifeCycleStateHasBeenSet = false;
 
     Aws::String m_requestId;

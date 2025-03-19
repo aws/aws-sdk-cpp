@@ -38,7 +38,7 @@ namespace Model
   class SessionState
   {
   public:
-    AWS_LEXRUNTIMEV2_API SessionState();
+    AWS_LEXRUNTIMEV2_API SessionState() = default;
     AWS_LEXRUNTIMEV2_API SessionState(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API SessionState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,24 +49,24 @@ namespace Model
      * <p>The next step that Amazon Lex V2 should take in the conversation with a
      * user.</p>
      */
-    inline const DialogAction& GetDialogAction() const{ return m_dialogAction; }
+    inline const DialogAction& GetDialogAction() const { return m_dialogAction; }
     inline bool DialogActionHasBeenSet() const { return m_dialogActionHasBeenSet; }
-    inline void SetDialogAction(const DialogAction& value) { m_dialogActionHasBeenSet = true; m_dialogAction = value; }
-    inline void SetDialogAction(DialogAction&& value) { m_dialogActionHasBeenSet = true; m_dialogAction = std::move(value); }
-    inline SessionState& WithDialogAction(const DialogAction& value) { SetDialogAction(value); return *this;}
-    inline SessionState& WithDialogAction(DialogAction&& value) { SetDialogAction(std::move(value)); return *this;}
+    template<typename DialogActionT = DialogAction>
+    void SetDialogAction(DialogActionT&& value) { m_dialogActionHasBeenSet = true; m_dialogAction = std::forward<DialogActionT>(value); }
+    template<typename DialogActionT = DialogAction>
+    SessionState& WithDialogAction(DialogActionT&& value) { SetDialogAction(std::forward<DialogActionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The active intent that Amazon Lex V2 is processing.</p>
      */
-    inline const Intent& GetIntent() const{ return m_intent; }
+    inline const Intent& GetIntent() const { return m_intent; }
     inline bool IntentHasBeenSet() const { return m_intentHasBeenSet; }
-    inline void SetIntent(const Intent& value) { m_intentHasBeenSet = true; m_intent = value; }
-    inline void SetIntent(Intent&& value) { m_intentHasBeenSet = true; m_intent = std::move(value); }
-    inline SessionState& WithIntent(const Intent& value) { SetIntent(value); return *this;}
-    inline SessionState& WithIntent(Intent&& value) { SetIntent(std::move(value)); return *this;}
+    template<typename IntentT = Intent>
+    void SetIntent(IntentT&& value) { m_intentHasBeenSet = true; m_intent = std::forward<IntentT>(value); }
+    template<typename IntentT = Intent>
+    SessionState& WithIntent(IntentT&& value) { SetIntent(std::forward<IntentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +75,14 @@ namespace Model
      * When a context is active, Amazon Lex V2 considers intents with the matching
      * context as a trigger as the next intent in a session.</p>
      */
-    inline const Aws::Vector<ActiveContext>& GetActiveContexts() const{ return m_activeContexts; }
+    inline const Aws::Vector<ActiveContext>& GetActiveContexts() const { return m_activeContexts; }
     inline bool ActiveContextsHasBeenSet() const { return m_activeContextsHasBeenSet; }
-    inline void SetActiveContexts(const Aws::Vector<ActiveContext>& value) { m_activeContextsHasBeenSet = true; m_activeContexts = value; }
-    inline void SetActiveContexts(Aws::Vector<ActiveContext>&& value) { m_activeContextsHasBeenSet = true; m_activeContexts = std::move(value); }
-    inline SessionState& WithActiveContexts(const Aws::Vector<ActiveContext>& value) { SetActiveContexts(value); return *this;}
-    inline SessionState& WithActiveContexts(Aws::Vector<ActiveContext>&& value) { SetActiveContexts(std::move(value)); return *this;}
-    inline SessionState& AddActiveContexts(const ActiveContext& value) { m_activeContextsHasBeenSet = true; m_activeContexts.push_back(value); return *this; }
-    inline SessionState& AddActiveContexts(ActiveContext&& value) { m_activeContextsHasBeenSet = true; m_activeContexts.push_back(std::move(value)); return *this; }
+    template<typename ActiveContextsT = Aws::Vector<ActiveContext>>
+    void SetActiveContexts(ActiveContextsT&& value) { m_activeContextsHasBeenSet = true; m_activeContexts = std::forward<ActiveContextsT>(value); }
+    template<typename ActiveContextsT = Aws::Vector<ActiveContext>>
+    SessionState& WithActiveContexts(ActiveContextsT&& value) { SetActiveContexts(std::forward<ActiveContextsT>(value)); return *this;}
+    template<typename ActiveContextsT = ActiveContext>
+    SessionState& AddActiveContexts(ActiveContextsT&& value) { m_activeContextsHasBeenSet = true; m_activeContexts.emplace_back(std::forward<ActiveContextsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -91,33 +91,28 @@ namespace Model
      * contains application information passed between Amazon Lex V2 and a client
      * application.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetSessionAttributes() const{ return m_sessionAttributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetSessionAttributes() const { return m_sessionAttributes; }
     inline bool SessionAttributesHasBeenSet() const { return m_sessionAttributesHasBeenSet; }
-    inline void SetSessionAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes = value; }
-    inline void SetSessionAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes = std::move(value); }
-    inline SessionState& WithSessionAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetSessionAttributes(value); return *this;}
-    inline SessionState& WithSessionAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetSessionAttributes(std::move(value)); return *this;}
-    inline SessionState& AddSessionAttributes(const Aws::String& key, const Aws::String& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(key, value); return *this; }
-    inline SessionState& AddSessionAttributes(Aws::String&& key, const Aws::String& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(std::move(key), value); return *this; }
-    inline SessionState& AddSessionAttributes(const Aws::String& key, Aws::String&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(key, std::move(value)); return *this; }
-    inline SessionState& AddSessionAttributes(Aws::String&& key, Aws::String&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline SessionState& AddSessionAttributes(const char* key, Aws::String&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(key, std::move(value)); return *this; }
-    inline SessionState& AddSessionAttributes(Aws::String&& key, const char* value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(std::move(key), value); return *this; }
-    inline SessionState& AddSessionAttributes(const char* key, const char* value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(key, value); return *this; }
+    template<typename SessionAttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetSessionAttributes(SessionAttributesT&& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes = std::forward<SessionAttributesT>(value); }
+    template<typename SessionAttributesT = Aws::Map<Aws::String, Aws::String>>
+    SessionState& WithSessionAttributes(SessionAttributesT&& value) { SetSessionAttributes(std::forward<SessionAttributesT>(value)); return *this;}
+    template<typename SessionAttributesKeyT = Aws::String, typename SessionAttributesValueT = Aws::String>
+    SessionState& AddSessionAttributes(SessionAttributesKeyT&& key, SessionAttributesValueT&& value) {
+      m_sessionAttributesHasBeenSet = true; m_sessionAttributes.emplace(std::forward<SessionAttributesKeyT>(key), std::forward<SessionAttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for a specific request.</p>
      */
-    inline const Aws::String& GetOriginatingRequestId() const{ return m_originatingRequestId; }
+    inline const Aws::String& GetOriginatingRequestId() const { return m_originatingRequestId; }
     inline bool OriginatingRequestIdHasBeenSet() const { return m_originatingRequestIdHasBeenSet; }
-    inline void SetOriginatingRequestId(const Aws::String& value) { m_originatingRequestIdHasBeenSet = true; m_originatingRequestId = value; }
-    inline void SetOriginatingRequestId(Aws::String&& value) { m_originatingRequestIdHasBeenSet = true; m_originatingRequestId = std::move(value); }
-    inline void SetOriginatingRequestId(const char* value) { m_originatingRequestIdHasBeenSet = true; m_originatingRequestId.assign(value); }
-    inline SessionState& WithOriginatingRequestId(const Aws::String& value) { SetOriginatingRequestId(value); return *this;}
-    inline SessionState& WithOriginatingRequestId(Aws::String&& value) { SetOriginatingRequestId(std::move(value)); return *this;}
-    inline SessionState& WithOriginatingRequestId(const char* value) { SetOriginatingRequestId(value); return *this;}
+    template<typename OriginatingRequestIdT = Aws::String>
+    void SetOriginatingRequestId(OriginatingRequestIdT&& value) { m_originatingRequestIdHasBeenSet = true; m_originatingRequestId = std::forward<OriginatingRequestIdT>(value); }
+    template<typename OriginatingRequestIdT = Aws::String>
+    SessionState& WithOriginatingRequestId(OriginatingRequestIdT&& value) { SetOriginatingRequestId(std::forward<OriginatingRequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,12 +120,12 @@ namespace Model
      * <p>Hints for phrases that a customer is likely to use for a slot. Amazon Lex V2
      * uses the hints to help determine the correct value of a slot.</p>
      */
-    inline const RuntimeHints& GetRuntimeHints() const{ return m_runtimeHints; }
+    inline const RuntimeHints& GetRuntimeHints() const { return m_runtimeHints; }
     inline bool RuntimeHintsHasBeenSet() const { return m_runtimeHintsHasBeenSet; }
-    inline void SetRuntimeHints(const RuntimeHints& value) { m_runtimeHintsHasBeenSet = true; m_runtimeHints = value; }
-    inline void SetRuntimeHints(RuntimeHints&& value) { m_runtimeHintsHasBeenSet = true; m_runtimeHints = std::move(value); }
-    inline SessionState& WithRuntimeHints(const RuntimeHints& value) { SetRuntimeHints(value); return *this;}
-    inline SessionState& WithRuntimeHints(RuntimeHints&& value) { SetRuntimeHints(std::move(value)); return *this;}
+    template<typename RuntimeHintsT = RuntimeHints>
+    void SetRuntimeHints(RuntimeHintsT&& value) { m_runtimeHintsHasBeenSet = true; m_runtimeHints = std::forward<RuntimeHintsT>(value); }
+    template<typename RuntimeHintsT = RuntimeHints>
+    SessionState& WithRuntimeHints(RuntimeHintsT&& value) { SetRuntimeHints(std::forward<RuntimeHintsT>(value)); return *this;}
     ///@}
   private:
 

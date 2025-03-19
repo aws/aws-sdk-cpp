@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-CopyImageSetRequest::CopyImageSetRequest() : 
-    m_datastoreIdHasBeenSet(false),
-    m_sourceImageSetIdHasBeenSet(false),
-    m_copyImageSetInformationHasBeenSet(false),
-    m_force(false),
-    m_forceHasBeenSet(false)
-{
-}
-
 Aws::String CopyImageSetRequest::SerializePayload() const
 {
   JsonValue payload;

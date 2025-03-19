@@ -17,11 +17,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetAccessGrantsInstanceForPrefixRequest::GetAccessGrantsInstanceForPrefixRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_s3PrefixHasBeenSet(false)
-{
-}
 
 Aws::String GetAccessGrantsInstanceForPrefixRequest::SerializePayload() const
 {

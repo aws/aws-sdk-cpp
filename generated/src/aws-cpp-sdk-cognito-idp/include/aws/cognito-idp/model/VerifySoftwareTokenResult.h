@@ -28,7 +28,7 @@ namespace Model
   class VerifySoftwareTokenResult
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API VerifySoftwareTokenResult();
+    AWS_COGNITOIDENTITYPROVIDER_API VerifySoftwareTokenResult() = default;
     AWS_COGNITOIDENTITYPROVIDER_API VerifySoftwareTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOIDENTITYPROVIDER_API VerifySoftwareTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,11 +40,9 @@ namespace Model
      * operation might return an error are clock skew on the user's device and
      * excessive retries.</p>
      */
-    inline const VerifySoftwareTokenResponseType& GetStatus() const{ return m_status; }
-    inline void SetStatus(const VerifySoftwareTokenResponseType& value) { m_status = value; }
-    inline void SetStatus(VerifySoftwareTokenResponseType&& value) { m_status = std::move(value); }
-    inline VerifySoftwareTokenResult& WithStatus(const VerifySoftwareTokenResponseType& value) { SetStatus(value); return *this;}
-    inline VerifySoftwareTokenResult& WithStatus(VerifySoftwareTokenResponseType&& value) { SetStatus(std::move(value)); return *this;}
+    inline VerifySoftwareTokenResponseType GetStatus() const { return m_status; }
+    inline void SetStatus(VerifySoftwareTokenResponseType value) { m_statusHasBeenSet = true; m_status = value; }
+    inline VerifySoftwareTokenResult& WithStatus(VerifySoftwareTokenResponseType value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -52,32 +50,31 @@ namespace Model
      * <p>This session ID satisfies an <code>MFA_SETUP</code> challenge. Supply the
      * session ID in your challenge response.</p>
      */
-    inline const Aws::String& GetSession() const{ return m_session; }
-    inline void SetSession(const Aws::String& value) { m_session = value; }
-    inline void SetSession(Aws::String&& value) { m_session = std::move(value); }
-    inline void SetSession(const char* value) { m_session.assign(value); }
-    inline VerifySoftwareTokenResult& WithSession(const Aws::String& value) { SetSession(value); return *this;}
-    inline VerifySoftwareTokenResult& WithSession(Aws::String&& value) { SetSession(std::move(value)); return *this;}
-    inline VerifySoftwareTokenResult& WithSession(const char* value) { SetSession(value); return *this;}
+    inline const Aws::String& GetSession() const { return m_session; }
+    template<typename SessionT = Aws::String>
+    void SetSession(SessionT&& value) { m_sessionHasBeenSet = true; m_session = std::forward<SessionT>(value); }
+    template<typename SessionT = Aws::String>
+    VerifySoftwareTokenResult& WithSession(SessionT&& value) { SetSession(std::forward<SessionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline VerifySoftwareTokenResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline VerifySoftwareTokenResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline VerifySoftwareTokenResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    VerifySoftwareTokenResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    VerifySoftwareTokenResponseType m_status;
+    VerifySoftwareTokenResponseType m_status{VerifySoftwareTokenResponseType::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_session;
+    bool m_sessionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

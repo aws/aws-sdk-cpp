@@ -35,7 +35,7 @@ namespace Model
   class UpdateGlobalSecondaryIndexAction
   {
   public:
-    AWS_DYNAMODB_API UpdateGlobalSecondaryIndexAction();
+    AWS_DYNAMODB_API UpdateGlobalSecondaryIndexAction() = default;
     AWS_DYNAMODB_API UpdateGlobalSecondaryIndexAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API UpdateGlobalSecondaryIndexAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The name of the global secondary index to be updated.</p>
      */
-    inline const Aws::String& GetIndexName() const{ return m_indexName; }
+    inline const Aws::String& GetIndexName() const { return m_indexName; }
     inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
-    inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
-    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
-    inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
-    inline UpdateGlobalSecondaryIndexAction& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-    inline UpdateGlobalSecondaryIndexAction& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-    inline UpdateGlobalSecondaryIndexAction& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+    template<typename IndexNameT = Aws::String>
+    void SetIndexName(IndexNameT&& value) { m_indexNameHasBeenSet = true; m_indexName = std::forward<IndexNameT>(value); }
+    template<typename IndexNameT = Aws::String>
+    UpdateGlobalSecondaryIndexAction& WithIndexName(IndexNameT&& value) { SetIndexName(std::forward<IndexNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +61,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service,
      * Account, and Table Quotas</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
-    inline const ProvisionedThroughput& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
+    inline const ProvisionedThroughput& GetProvisionedThroughput() const { return m_provisionedThroughput; }
     inline bool ProvisionedThroughputHasBeenSet() const { return m_provisionedThroughputHasBeenSet; }
-    inline void SetProvisionedThroughput(const ProvisionedThroughput& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = value; }
-    inline void SetProvisionedThroughput(ProvisionedThroughput&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::move(value); }
-    inline UpdateGlobalSecondaryIndexAction& WithProvisionedThroughput(const ProvisionedThroughput& value) { SetProvisionedThroughput(value); return *this;}
-    inline UpdateGlobalSecondaryIndexAction& WithProvisionedThroughput(ProvisionedThroughput&& value) { SetProvisionedThroughput(std::move(value)); return *this;}
+    template<typename ProvisionedThroughputT = ProvisionedThroughput>
+    void SetProvisionedThroughput(ProvisionedThroughputT&& value) { m_provisionedThroughputHasBeenSet = true; m_provisionedThroughput = std::forward<ProvisionedThroughputT>(value); }
+    template<typename ProvisionedThroughputT = ProvisionedThroughput>
+    UpdateGlobalSecondaryIndexAction& WithProvisionedThroughput(ProvisionedThroughputT&& value) { SetProvisionedThroughput(std::forward<ProvisionedThroughputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,12 +76,12 @@ namespace Model
      * <code>MaxReadRequestUnits</code>, <code>MaxWriteRequestUnits</code>, or
      * both.</p>
      */
-    inline const OnDemandThroughput& GetOnDemandThroughput() const{ return m_onDemandThroughput; }
+    inline const OnDemandThroughput& GetOnDemandThroughput() const { return m_onDemandThroughput; }
     inline bool OnDemandThroughputHasBeenSet() const { return m_onDemandThroughputHasBeenSet; }
-    inline void SetOnDemandThroughput(const OnDemandThroughput& value) { m_onDemandThroughputHasBeenSet = true; m_onDemandThroughput = value; }
-    inline void SetOnDemandThroughput(OnDemandThroughput&& value) { m_onDemandThroughputHasBeenSet = true; m_onDemandThroughput = std::move(value); }
-    inline UpdateGlobalSecondaryIndexAction& WithOnDemandThroughput(const OnDemandThroughput& value) { SetOnDemandThroughput(value); return *this;}
-    inline UpdateGlobalSecondaryIndexAction& WithOnDemandThroughput(OnDemandThroughput&& value) { SetOnDemandThroughput(std::move(value)); return *this;}
+    template<typename OnDemandThroughputT = OnDemandThroughput>
+    void SetOnDemandThroughput(OnDemandThroughputT&& value) { m_onDemandThroughputHasBeenSet = true; m_onDemandThroughput = std::forward<OnDemandThroughputT>(value); }
+    template<typename OnDemandThroughputT = OnDemandThroughput>
+    UpdateGlobalSecondaryIndexAction& WithOnDemandThroughput(OnDemandThroughputT&& value) { SetOnDemandThroughput(std::forward<OnDemandThroughputT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,12 +89,12 @@ namespace Model
      * <p>Represents the warm throughput value of the new provisioned throughput
      * settings to be applied to a global secondary index.</p>
      */
-    inline const WarmThroughput& GetWarmThroughput() const{ return m_warmThroughput; }
+    inline const WarmThroughput& GetWarmThroughput() const { return m_warmThroughput; }
     inline bool WarmThroughputHasBeenSet() const { return m_warmThroughputHasBeenSet; }
-    inline void SetWarmThroughput(const WarmThroughput& value) { m_warmThroughputHasBeenSet = true; m_warmThroughput = value; }
-    inline void SetWarmThroughput(WarmThroughput&& value) { m_warmThroughputHasBeenSet = true; m_warmThroughput = std::move(value); }
-    inline UpdateGlobalSecondaryIndexAction& WithWarmThroughput(const WarmThroughput& value) { SetWarmThroughput(value); return *this;}
-    inline UpdateGlobalSecondaryIndexAction& WithWarmThroughput(WarmThroughput&& value) { SetWarmThroughput(std::move(value)); return *this;}
+    template<typename WarmThroughputT = WarmThroughput>
+    void SetWarmThroughput(WarmThroughputT&& value) { m_warmThroughputHasBeenSet = true; m_warmThroughput = std::forward<WarmThroughputT>(value); }
+    template<typename WarmThroughputT = WarmThroughput>
+    UpdateGlobalSecondaryIndexAction& WithWarmThroughput(WarmThroughputT&& value) { SetWarmThroughput(std::forward<WarmThroughputT>(value)); return *this;}
     ///@}
   private:
 

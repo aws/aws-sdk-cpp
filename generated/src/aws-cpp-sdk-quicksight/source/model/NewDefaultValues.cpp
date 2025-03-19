@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-NewDefaultValues::NewDefaultValues() : 
-    m_stringStaticValuesHasBeenSet(false),
-    m_decimalStaticValuesHasBeenSet(false),
-    m_dateTimeStaticValuesHasBeenSet(false),
-    m_integerStaticValuesHasBeenSet(false)
-{
-}
-
 NewDefaultValues::NewDefaultValues(JsonView jsonValue)
-  : NewDefaultValues()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ NewDefaultValues& NewDefaultValues::operator =(JsonView jsonValue)
     }
     m_stringStaticValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DecimalStaticValues"))
   {
     Aws::Utils::Array<JsonView> decimalStaticValuesJsonList = jsonValue.GetArray("DecimalStaticValues");
@@ -53,7 +43,6 @@ NewDefaultValues& NewDefaultValues::operator =(JsonView jsonValue)
     }
     m_decimalStaticValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DateTimeStaticValues"))
   {
     Aws::Utils::Array<JsonView> dateTimeStaticValuesJsonList = jsonValue.GetArray("DateTimeStaticValues");
@@ -63,7 +52,6 @@ NewDefaultValues& NewDefaultValues::operator =(JsonView jsonValue)
     }
     m_dateTimeStaticValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IntegerStaticValues"))
   {
     Aws::Utils::Array<JsonView> integerStaticValuesJsonList = jsonValue.GetArray("IntegerStaticValues");
@@ -73,7 +61,6 @@ NewDefaultValues& NewDefaultValues::operator =(JsonView jsonValue)
     }
     m_integerStaticValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

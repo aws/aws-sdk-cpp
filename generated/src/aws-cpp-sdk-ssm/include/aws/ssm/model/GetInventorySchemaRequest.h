@@ -21,7 +21,7 @@ namespace Model
   class GetInventorySchemaRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API GetInventorySchemaRequest();
+    AWS_SSM_API GetInventorySchemaRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The type of inventory item to return.</p>
      */
-    inline const Aws::String& GetTypeName() const{ return m_typeName; }
+    inline const Aws::String& GetTypeName() const { return m_typeName; }
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
-    inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
-    inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
-    inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
-    inline GetInventorySchemaRequest& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
-    inline GetInventorySchemaRequest& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
-    inline GetInventorySchemaRequest& WithTypeName(const char* value) { SetTypeName(value); return *this;}
+    template<typename TypeNameT = Aws::String>
+    void SetTypeName(TypeNameT&& value) { m_typeNameHasBeenSet = true; m_typeName = std::forward<TypeNameT>(value); }
+    template<typename TypeNameT = Aws::String>
+    GetInventorySchemaRequest& WithTypeName(TypeNameT&& value) { SetTypeName(std::forward<TypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline GetInventorySchemaRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetInventorySchemaRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetInventorySchemaRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetInventorySchemaRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,7 +65,7 @@ namespace Model
      * token that you can specify in a subsequent call to get the next set of
      * results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GetInventorySchemaRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -82,7 +78,7 @@ namespace Model
      * aggregation based on the <code>PlatformName</code>, <code>PlatformType</code>,
      * and <code>PlatformVersion</code> attributes.</p>
      */
-    inline bool GetAggregator() const{ return m_aggregator; }
+    inline bool GetAggregator() const { return m_aggregator; }
     inline bool AggregatorHasBeenSet() const { return m_aggregatorHasBeenSet; }
     inline void SetAggregator(bool value) { m_aggregatorHasBeenSet = true; m_aggregator = value; }
     inline GetInventorySchemaRequest& WithAggregator(bool value) { SetAggregator(value); return *this;}
@@ -92,7 +88,7 @@ namespace Model
     /**
      * <p>Returns the sub-type schema for a specified inventory type.</p>
      */
-    inline bool GetSubType() const{ return m_subType; }
+    inline bool GetSubType() const { return m_subType; }
     inline bool SubTypeHasBeenSet() const { return m_subTypeHasBeenSet; }
     inline void SetSubType(bool value) { m_subTypeHasBeenSet = true; m_subType = value; }
     inline GetInventorySchemaRequest& WithSubType(bool value) { SetSubType(value); return *this;}
@@ -105,13 +101,13 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
-    bool m_aggregator;
+    bool m_aggregator{false};
     bool m_aggregatorHasBeenSet = false;
 
-    bool m_subType;
+    bool m_subType{false};
     bool m_subTypeHasBeenSet = false;
   };
 

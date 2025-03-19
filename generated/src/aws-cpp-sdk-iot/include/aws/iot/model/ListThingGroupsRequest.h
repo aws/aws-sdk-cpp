@@ -25,7 +25,7 @@ namespace Model
   class ListThingGroupsRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API ListThingGroupsRequest();
+    AWS_IOT_API ListThingGroupsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,21 +44,19 @@ namespace Model
      * previous response; otherwise <b>null</b> to receive the first set of
      * results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListThingGroupsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListThingGroupsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListThingGroupsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListThingGroupsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return at one time.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListThingGroupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -69,35 +67,31 @@ namespace Model
      * <p>A filter that limits the results to those with the specified parent
      * group.</p>
      */
-    inline const Aws::String& GetParentGroup() const{ return m_parentGroup; }
+    inline const Aws::String& GetParentGroup() const { return m_parentGroup; }
     inline bool ParentGroupHasBeenSet() const { return m_parentGroupHasBeenSet; }
-    inline void SetParentGroup(const Aws::String& value) { m_parentGroupHasBeenSet = true; m_parentGroup = value; }
-    inline void SetParentGroup(Aws::String&& value) { m_parentGroupHasBeenSet = true; m_parentGroup = std::move(value); }
-    inline void SetParentGroup(const char* value) { m_parentGroupHasBeenSet = true; m_parentGroup.assign(value); }
-    inline ListThingGroupsRequest& WithParentGroup(const Aws::String& value) { SetParentGroup(value); return *this;}
-    inline ListThingGroupsRequest& WithParentGroup(Aws::String&& value) { SetParentGroup(std::move(value)); return *this;}
-    inline ListThingGroupsRequest& WithParentGroup(const char* value) { SetParentGroup(value); return *this;}
+    template<typename ParentGroupT = Aws::String>
+    void SetParentGroup(ParentGroupT&& value) { m_parentGroupHasBeenSet = true; m_parentGroup = std::forward<ParentGroupT>(value); }
+    template<typename ParentGroupT = Aws::String>
+    ListThingGroupsRequest& WithParentGroup(ParentGroupT&& value) { SetParentGroup(std::forward<ParentGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A filter that limits the results to those with the specified name prefix.</p>
      */
-    inline const Aws::String& GetNamePrefixFilter() const{ return m_namePrefixFilter; }
+    inline const Aws::String& GetNamePrefixFilter() const { return m_namePrefixFilter; }
     inline bool NamePrefixFilterHasBeenSet() const { return m_namePrefixFilterHasBeenSet; }
-    inline void SetNamePrefixFilter(const Aws::String& value) { m_namePrefixFilterHasBeenSet = true; m_namePrefixFilter = value; }
-    inline void SetNamePrefixFilter(Aws::String&& value) { m_namePrefixFilterHasBeenSet = true; m_namePrefixFilter = std::move(value); }
-    inline void SetNamePrefixFilter(const char* value) { m_namePrefixFilterHasBeenSet = true; m_namePrefixFilter.assign(value); }
-    inline ListThingGroupsRequest& WithNamePrefixFilter(const Aws::String& value) { SetNamePrefixFilter(value); return *this;}
-    inline ListThingGroupsRequest& WithNamePrefixFilter(Aws::String&& value) { SetNamePrefixFilter(std::move(value)); return *this;}
-    inline ListThingGroupsRequest& WithNamePrefixFilter(const char* value) { SetNamePrefixFilter(value); return *this;}
+    template<typename NamePrefixFilterT = Aws::String>
+    void SetNamePrefixFilter(NamePrefixFilterT&& value) { m_namePrefixFilterHasBeenSet = true; m_namePrefixFilter = std::forward<NamePrefixFilterT>(value); }
+    template<typename NamePrefixFilterT = Aws::String>
+    ListThingGroupsRequest& WithNamePrefixFilter(NamePrefixFilterT&& value) { SetNamePrefixFilter(std::forward<NamePrefixFilterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If true, return child groups as well.</p>
      */
-    inline bool GetRecursive() const{ return m_recursive; }
+    inline bool GetRecursive() const { return m_recursive; }
     inline bool RecursiveHasBeenSet() const { return m_recursiveHasBeenSet; }
     inline void SetRecursive(bool value) { m_recursiveHasBeenSet = true; m_recursive = value; }
     inline ListThingGroupsRequest& WithRecursive(bool value) { SetRecursive(value); return *this;}
@@ -107,7 +101,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_parentGroup;
@@ -116,7 +110,7 @@ namespace Model
     Aws::String m_namePrefixFilter;
     bool m_namePrefixFilterHasBeenSet = false;
 
-    bool m_recursive;
+    bool m_recursive{false};
     bool m_recursiveHasBeenSet = false;
   };
 

@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-CustomEntityType::CustomEntityType() : 
-    m_nameHasBeenSet(false),
-    m_regexStringHasBeenSet(false),
-    m_contextWordsHasBeenSet(false)
-{
-}
-
 CustomEntityType::CustomEntityType(JsonView jsonValue)
-  : CustomEntityType()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CustomEntityType& CustomEntityType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegexString"))
   {
     m_regexString = jsonValue.GetString("RegexString");
-
     m_regexStringHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContextWords"))
   {
     Aws::Utils::Array<JsonView> contextWordsJsonList = jsonValue.GetArray("ContextWords");
@@ -56,7 +44,6 @@ CustomEntityType& CustomEntityType::operator =(JsonView jsonValue)
     }
     m_contextWordsHasBeenSet = true;
   }
-
   return *this;
 }
 

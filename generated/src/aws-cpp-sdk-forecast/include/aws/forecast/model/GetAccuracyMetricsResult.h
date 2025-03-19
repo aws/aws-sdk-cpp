@@ -31,7 +31,7 @@ namespace Model
   class GetAccuracyMetricsResult
   {
   public:
-    AWS_FORECASTSERVICE_API GetAccuracyMetricsResult();
+    AWS_FORECASTSERVICE_API GetAccuracyMetricsResult() = default;
     AWS_FORECASTSERVICE_API GetAccuracyMetricsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FORECASTSERVICE_API GetAccuracyMetricsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,21 +40,21 @@ namespace Model
     /**
      * <p>An array of results from evaluating the predictor.</p>
      */
-    inline const Aws::Vector<EvaluationResult>& GetPredictorEvaluationResults() const{ return m_predictorEvaluationResults; }
-    inline void SetPredictorEvaluationResults(const Aws::Vector<EvaluationResult>& value) { m_predictorEvaluationResults = value; }
-    inline void SetPredictorEvaluationResults(Aws::Vector<EvaluationResult>&& value) { m_predictorEvaluationResults = std::move(value); }
-    inline GetAccuracyMetricsResult& WithPredictorEvaluationResults(const Aws::Vector<EvaluationResult>& value) { SetPredictorEvaluationResults(value); return *this;}
-    inline GetAccuracyMetricsResult& WithPredictorEvaluationResults(Aws::Vector<EvaluationResult>&& value) { SetPredictorEvaluationResults(std::move(value)); return *this;}
-    inline GetAccuracyMetricsResult& AddPredictorEvaluationResults(const EvaluationResult& value) { m_predictorEvaluationResults.push_back(value); return *this; }
-    inline GetAccuracyMetricsResult& AddPredictorEvaluationResults(EvaluationResult&& value) { m_predictorEvaluationResults.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EvaluationResult>& GetPredictorEvaluationResults() const { return m_predictorEvaluationResults; }
+    template<typename PredictorEvaluationResultsT = Aws::Vector<EvaluationResult>>
+    void SetPredictorEvaluationResults(PredictorEvaluationResultsT&& value) { m_predictorEvaluationResultsHasBeenSet = true; m_predictorEvaluationResults = std::forward<PredictorEvaluationResultsT>(value); }
+    template<typename PredictorEvaluationResultsT = Aws::Vector<EvaluationResult>>
+    GetAccuracyMetricsResult& WithPredictorEvaluationResults(PredictorEvaluationResultsT&& value) { SetPredictorEvaluationResults(std::forward<PredictorEvaluationResultsT>(value)); return *this;}
+    template<typename PredictorEvaluationResultsT = EvaluationResult>
+    GetAccuracyMetricsResult& AddPredictorEvaluationResults(PredictorEvaluationResultsT&& value) { m_predictorEvaluationResultsHasBeenSet = true; m_predictorEvaluationResults.emplace_back(std::forward<PredictorEvaluationResultsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Whether the predictor was created with <a>CreateAutoPredictor</a>.</p>
      */
-    inline bool GetIsAutoPredictor() const{ return m_isAutoPredictor; }
-    inline void SetIsAutoPredictor(bool value) { m_isAutoPredictor = value; }
+    inline bool GetIsAutoPredictor() const { return m_isAutoPredictor; }
+    inline void SetIsAutoPredictor(bool value) { m_isAutoPredictorHasBeenSet = true; m_isAutoPredictor = value; }
     inline GetAccuracyMetricsResult& WithIsAutoPredictor(bool value) { SetIsAutoPredictor(value); return *this;}
     ///@}
 
@@ -67,45 +67,44 @@ namespace Model
      * specified, the AutoML strategy optimizes predictor accuracy.</p> <p>This
      * parameter is only valid for predictors trained using AutoML.</p>
      */
-    inline const AutoMLOverrideStrategy& GetAutoMLOverrideStrategy() const{ return m_autoMLOverrideStrategy; }
-    inline void SetAutoMLOverrideStrategy(const AutoMLOverrideStrategy& value) { m_autoMLOverrideStrategy = value; }
-    inline void SetAutoMLOverrideStrategy(AutoMLOverrideStrategy&& value) { m_autoMLOverrideStrategy = std::move(value); }
-    inline GetAccuracyMetricsResult& WithAutoMLOverrideStrategy(const AutoMLOverrideStrategy& value) { SetAutoMLOverrideStrategy(value); return *this;}
-    inline GetAccuracyMetricsResult& WithAutoMLOverrideStrategy(AutoMLOverrideStrategy&& value) { SetAutoMLOverrideStrategy(std::move(value)); return *this;}
+    inline AutoMLOverrideStrategy GetAutoMLOverrideStrategy() const { return m_autoMLOverrideStrategy; }
+    inline void SetAutoMLOverrideStrategy(AutoMLOverrideStrategy value) { m_autoMLOverrideStrategyHasBeenSet = true; m_autoMLOverrideStrategy = value; }
+    inline GetAccuracyMetricsResult& WithAutoMLOverrideStrategy(AutoMLOverrideStrategy value) { SetAutoMLOverrideStrategy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The accuracy metric used to optimize the predictor.</p>
      */
-    inline const OptimizationMetric& GetOptimizationMetric() const{ return m_optimizationMetric; }
-    inline void SetOptimizationMetric(const OptimizationMetric& value) { m_optimizationMetric = value; }
-    inline void SetOptimizationMetric(OptimizationMetric&& value) { m_optimizationMetric = std::move(value); }
-    inline GetAccuracyMetricsResult& WithOptimizationMetric(const OptimizationMetric& value) { SetOptimizationMetric(value); return *this;}
-    inline GetAccuracyMetricsResult& WithOptimizationMetric(OptimizationMetric&& value) { SetOptimizationMetric(std::move(value)); return *this;}
+    inline OptimizationMetric GetOptimizationMetric() const { return m_optimizationMetric; }
+    inline void SetOptimizationMetric(OptimizationMetric value) { m_optimizationMetricHasBeenSet = true; m_optimizationMetric = value; }
+    inline GetAccuracyMetricsResult& WithOptimizationMetric(OptimizationMetric value) { SetOptimizationMetric(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAccuracyMetricsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAccuracyMetricsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAccuracyMetricsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAccuracyMetricsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EvaluationResult> m_predictorEvaluationResults;
+    bool m_predictorEvaluationResultsHasBeenSet = false;
 
-    bool m_isAutoPredictor;
+    bool m_isAutoPredictor{false};
+    bool m_isAutoPredictorHasBeenSet = false;
 
-    AutoMLOverrideStrategy m_autoMLOverrideStrategy;
+    AutoMLOverrideStrategy m_autoMLOverrideStrategy{AutoMLOverrideStrategy::NOT_SET};
+    bool m_autoMLOverrideStrategyHasBeenSet = false;
 
-    OptimizationMetric m_optimizationMetric;
+    OptimizationMetric m_optimizationMetric{OptimizationMetric::NOT_SET};
+    bool m_optimizationMetricHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,7 +29,7 @@ namespace Model
   class ThreatsDetectedItemCount
   {
   public:
-    AWS_GUARDDUTY_API ThreatsDetectedItemCount();
+    AWS_GUARDDUTY_API ThreatsDetectedItemCount() = default;
     AWS_GUARDDUTY_API ThreatsDetectedItemCount(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API ThreatsDetectedItemCount& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>Total number of infected files.</p>
      */
-    inline int GetFiles() const{ return m_files; }
+    inline int GetFiles() const { return m_files; }
     inline bool FilesHasBeenSet() const { return m_filesHasBeenSet; }
     inline void SetFiles(int value) { m_filesHasBeenSet = true; m_files = value; }
     inline ThreatsDetectedItemCount& WithFiles(int value) { SetFiles(value); return *this;}
     ///@}
   private:
 
-    int m_files;
+    int m_files{0};
     bool m_filesHasBeenSet = false;
   };
 

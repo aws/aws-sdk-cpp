@@ -18,17 +18,7 @@ namespace ManagedBlockchainQuery
 namespace Model
 {
 
-TokenBalance::TokenBalance() : 
-    m_ownerIdentifierHasBeenSet(false),
-    m_tokenIdentifierHasBeenSet(false),
-    m_balanceHasBeenSet(false),
-    m_atBlockchainInstantHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
-{
-}
-
 TokenBalance::TokenBalance(JsonView jsonValue)
-  : TokenBalance()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ TokenBalance& TokenBalance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ownerIdentifier"))
   {
     m_ownerIdentifier = jsonValue.GetObject("ownerIdentifier");
-
     m_ownerIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tokenIdentifier"))
   {
     m_tokenIdentifier = jsonValue.GetObject("tokenIdentifier");
-
     m_tokenIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("balance"))
   {
     m_balance = jsonValue.GetString("balance");
-
     m_balanceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("atBlockchainInstant"))
   {
     m_atBlockchainInstant = jsonValue.GetObject("atBlockchainInstant");
-
     m_atBlockchainInstantHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetObject("lastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

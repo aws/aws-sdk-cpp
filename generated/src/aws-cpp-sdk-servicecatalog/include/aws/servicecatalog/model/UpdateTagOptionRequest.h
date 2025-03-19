@@ -21,7 +21,7 @@ namespace Model
   class UpdateTagOptionRequest : public ServiceCatalogRequest
   {
   public:
-    AWS_SERVICECATALOG_API UpdateTagOptionRequest();
+    AWS_SERVICECATALOG_API UpdateTagOptionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,35 +38,31 @@ namespace Model
     /**
      * <p>The TagOption identifier.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline UpdateTagOptionRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateTagOptionRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateTagOptionRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateTagOptionRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The updated value.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline UpdateTagOptionRequest& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline UpdateTagOptionRequest& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline UpdateTagOptionRequest& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    UpdateTagOptionRequest& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The updated active state.</p>
      */
-    inline bool GetActive() const{ return m_active; }
+    inline bool GetActive() const { return m_active; }
     inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
     inline void SetActive(bool value) { m_activeHasBeenSet = true; m_active = value; }
     inline UpdateTagOptionRequest& WithActive(bool value) { SetActive(value); return *this;}
@@ -79,7 +75,7 @@ namespace Model
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
 
-    bool m_active;
+    bool m_active{false};
     bool m_activeHasBeenSet = false;
   };
 

@@ -35,7 +35,7 @@ namespace Model
   class StandardsControlAssociationId
   {
   public:
-    AWS_SECURITYHUB_API StandardsControlAssociationId();
+    AWS_SECURITYHUB_API StandardsControlAssociationId() = default;
     AWS_SECURITYHUB_API StandardsControlAssociationId(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API StandardsControlAssociationId& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,28 +47,24 @@ namespace Model
      * <code>SecurityControlArn</code>, or a mix of both parameters) of a security
      * control across standards. </p>
      */
-    inline const Aws::String& GetSecurityControlId() const{ return m_securityControlId; }
+    inline const Aws::String& GetSecurityControlId() const { return m_securityControlId; }
     inline bool SecurityControlIdHasBeenSet() const { return m_securityControlIdHasBeenSet; }
-    inline void SetSecurityControlId(const Aws::String& value) { m_securityControlIdHasBeenSet = true; m_securityControlId = value; }
-    inline void SetSecurityControlId(Aws::String&& value) { m_securityControlIdHasBeenSet = true; m_securityControlId = std::move(value); }
-    inline void SetSecurityControlId(const char* value) { m_securityControlIdHasBeenSet = true; m_securityControlId.assign(value); }
-    inline StandardsControlAssociationId& WithSecurityControlId(const Aws::String& value) { SetSecurityControlId(value); return *this;}
-    inline StandardsControlAssociationId& WithSecurityControlId(Aws::String&& value) { SetSecurityControlId(std::move(value)); return *this;}
-    inline StandardsControlAssociationId& WithSecurityControlId(const char* value) { SetSecurityControlId(value); return *this;}
+    template<typename SecurityControlIdT = Aws::String>
+    void SetSecurityControlId(SecurityControlIdT&& value) { m_securityControlIdHasBeenSet = true; m_securityControlId = std::forward<SecurityControlIdT>(value); }
+    template<typename SecurityControlIdT = Aws::String>
+    StandardsControlAssociationId& WithSecurityControlId(SecurityControlIdT&& value) { SetSecurityControlId(std::forward<SecurityControlIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The ARN of a standard. </p>
      */
-    inline const Aws::String& GetStandardsArn() const{ return m_standardsArn; }
+    inline const Aws::String& GetStandardsArn() const { return m_standardsArn; }
     inline bool StandardsArnHasBeenSet() const { return m_standardsArnHasBeenSet; }
-    inline void SetStandardsArn(const Aws::String& value) { m_standardsArnHasBeenSet = true; m_standardsArn = value; }
-    inline void SetStandardsArn(Aws::String&& value) { m_standardsArnHasBeenSet = true; m_standardsArn = std::move(value); }
-    inline void SetStandardsArn(const char* value) { m_standardsArnHasBeenSet = true; m_standardsArn.assign(value); }
-    inline StandardsControlAssociationId& WithStandardsArn(const Aws::String& value) { SetStandardsArn(value); return *this;}
-    inline StandardsControlAssociationId& WithStandardsArn(Aws::String&& value) { SetStandardsArn(std::move(value)); return *this;}
-    inline StandardsControlAssociationId& WithStandardsArn(const char* value) { SetStandardsArn(value); return *this;}
+    template<typename StandardsArnT = Aws::String>
+    void SetStandardsArn(StandardsArnT&& value) { m_standardsArnHasBeenSet = true; m_standardsArn = std::forward<StandardsArnT>(value); }
+    template<typename StandardsArnT = Aws::String>
+    StandardsControlAssociationId& WithStandardsArn(StandardsArnT&& value) { SetStandardsArn(std::forward<StandardsArnT>(value)); return *this;}
     ///@}
   private:
 

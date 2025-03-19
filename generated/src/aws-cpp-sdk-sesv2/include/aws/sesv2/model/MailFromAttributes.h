@@ -34,7 +34,7 @@ namespace Model
   class MailFromAttributes
   {
   public:
-    AWS_SESV2_API MailFromAttributes();
+    AWS_SESV2_API MailFromAttributes() = default;
     AWS_SESV2_API MailFromAttributes(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API MailFromAttributes& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The name of a domain that an email identity uses as a custom MAIL FROM
      * domain.</p>
      */
-    inline const Aws::String& GetMailFromDomain() const{ return m_mailFromDomain; }
+    inline const Aws::String& GetMailFromDomain() const { return m_mailFromDomain; }
     inline bool MailFromDomainHasBeenSet() const { return m_mailFromDomainHasBeenSet; }
-    inline void SetMailFromDomain(const Aws::String& value) { m_mailFromDomainHasBeenSet = true; m_mailFromDomain = value; }
-    inline void SetMailFromDomain(Aws::String&& value) { m_mailFromDomainHasBeenSet = true; m_mailFromDomain = std::move(value); }
-    inline void SetMailFromDomain(const char* value) { m_mailFromDomainHasBeenSet = true; m_mailFromDomain.assign(value); }
-    inline MailFromAttributes& WithMailFromDomain(const Aws::String& value) { SetMailFromDomain(value); return *this;}
-    inline MailFromAttributes& WithMailFromDomain(Aws::String&& value) { SetMailFromDomain(std::move(value)); return *this;}
-    inline MailFromAttributes& WithMailFromDomain(const char* value) { SetMailFromDomain(value); return *this;}
+    template<typename MailFromDomainT = Aws::String>
+    void SetMailFromDomain(MailFromDomainT&& value) { m_mailFromDomainHasBeenSet = true; m_mailFromDomain = std::forward<MailFromDomainT>(value); }
+    template<typename MailFromDomainT = Aws::String>
+    MailFromAttributes& WithMailFromDomain(MailFromDomainT&& value) { SetMailFromDomain(std::forward<MailFromDomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,12 +64,10 @@ namespace Model
      * A temporary issue occurred, which prevented Amazon SES from determining the
      * status of the MAIL FROM domain.</p> </li> </ul>
      */
-    inline const MailFromDomainStatus& GetMailFromDomainStatus() const{ return m_mailFromDomainStatus; }
+    inline MailFromDomainStatus GetMailFromDomainStatus() const { return m_mailFromDomainStatus; }
     inline bool MailFromDomainStatusHasBeenSet() const { return m_mailFromDomainStatusHasBeenSet; }
-    inline void SetMailFromDomainStatus(const MailFromDomainStatus& value) { m_mailFromDomainStatusHasBeenSet = true; m_mailFromDomainStatus = value; }
-    inline void SetMailFromDomainStatus(MailFromDomainStatus&& value) { m_mailFromDomainStatusHasBeenSet = true; m_mailFromDomainStatus = std::move(value); }
-    inline MailFromAttributes& WithMailFromDomainStatus(const MailFromDomainStatus& value) { SetMailFromDomainStatus(value); return *this;}
-    inline MailFromAttributes& WithMailFromDomainStatus(MailFromDomainStatus&& value) { SetMailFromDomainStatus(std::move(value)); return *this;}
+    inline void SetMailFromDomainStatus(MailFromDomainStatus value) { m_mailFromDomainStatusHasBeenSet = true; m_mailFromDomainStatus = value; }
+    inline MailFromAttributes& WithMailFromDomainStatus(MailFromDomainStatus value) { SetMailFromDomainStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -85,22 +81,20 @@ namespace Model
      * configuration is in the <code>Pending</code>, <code>Failed</code>, and
      * <code>TemporaryFailure</code> states.</p>
      */
-    inline const BehaviorOnMxFailure& GetBehaviorOnMxFailure() const{ return m_behaviorOnMxFailure; }
+    inline BehaviorOnMxFailure GetBehaviorOnMxFailure() const { return m_behaviorOnMxFailure; }
     inline bool BehaviorOnMxFailureHasBeenSet() const { return m_behaviorOnMxFailureHasBeenSet; }
-    inline void SetBehaviorOnMxFailure(const BehaviorOnMxFailure& value) { m_behaviorOnMxFailureHasBeenSet = true; m_behaviorOnMxFailure = value; }
-    inline void SetBehaviorOnMxFailure(BehaviorOnMxFailure&& value) { m_behaviorOnMxFailureHasBeenSet = true; m_behaviorOnMxFailure = std::move(value); }
-    inline MailFromAttributes& WithBehaviorOnMxFailure(const BehaviorOnMxFailure& value) { SetBehaviorOnMxFailure(value); return *this;}
-    inline MailFromAttributes& WithBehaviorOnMxFailure(BehaviorOnMxFailure&& value) { SetBehaviorOnMxFailure(std::move(value)); return *this;}
+    inline void SetBehaviorOnMxFailure(BehaviorOnMxFailure value) { m_behaviorOnMxFailureHasBeenSet = true; m_behaviorOnMxFailure = value; }
+    inline MailFromAttributes& WithBehaviorOnMxFailure(BehaviorOnMxFailure value) { SetBehaviorOnMxFailure(value); return *this;}
     ///@}
   private:
 
     Aws::String m_mailFromDomain;
     bool m_mailFromDomainHasBeenSet = false;
 
-    MailFromDomainStatus m_mailFromDomainStatus;
+    MailFromDomainStatus m_mailFromDomainStatus{MailFromDomainStatus::NOT_SET};
     bool m_mailFromDomainStatusHasBeenSet = false;
 
-    BehaviorOnMxFailure m_behaviorOnMxFailure;
+    BehaviorOnMxFailure m_behaviorOnMxFailure{BehaviorOnMxFailure::NOT_SET};
     bool m_behaviorOnMxFailureHasBeenSet = false;
   };
 

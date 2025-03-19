@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateVpnGatewayResponse::CreateVpnGatewayResponse()
-{
-}
-
 CreateVpnGatewayResponse::CreateVpnGatewayResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ CreateVpnGatewayResponse& CreateVpnGatewayResponse::operator =(const Aws::Amazon
     if(!vpnGatewayNode.IsNull())
     {
       m_vpnGateway = vpnGatewayNode;
+      m_vpnGatewayHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ CreateVpnGatewayResponse& CreateVpnGatewayResponse::operator =(const Aws::Amazon
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::CreateVpnGatewayResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

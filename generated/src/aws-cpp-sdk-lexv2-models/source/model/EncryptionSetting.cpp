@@ -18,15 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-EncryptionSetting::EncryptionSetting() : 
-    m_kmsKeyArnHasBeenSet(false),
-    m_botLocaleExportPasswordHasBeenSet(false),
-    m_associatedTranscriptsPasswordHasBeenSet(false)
-{
-}
-
 EncryptionSetting::EncryptionSetting(JsonView jsonValue)
-  : EncryptionSetting()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ EncryptionSetting& EncryptionSetting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("kmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botLocaleExportPassword"))
   {
     m_botLocaleExportPassword = jsonValue.GetString("botLocaleExportPassword");
-
     m_botLocaleExportPasswordHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associatedTranscriptsPassword"))
   {
     m_associatedTranscriptsPassword = jsonValue.GetString("associatedTranscriptsPassword");
-
     m_associatedTranscriptsPasswordHasBeenSet = true;
   }
-
   return *this;
 }
 

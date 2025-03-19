@@ -18,22 +18,7 @@ namespace MarketplaceCatalog
 namespace Model
 {
 
-ChangeSetSummaryListItem::ChangeSetSummaryListItem() : 
-    m_changeSetIdHasBeenSet(false),
-    m_changeSetArnHasBeenSet(false),
-    m_changeSetNameHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_status(ChangeStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_entityIdListHasBeenSet(false),
-    m_failureCode(FailureCode::NOT_SET),
-    m_failureCodeHasBeenSet(false)
-{
-}
-
 ChangeSetSummaryListItem::ChangeSetSummaryListItem(JsonView jsonValue)
-  : ChangeSetSummaryListItem()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ ChangeSetSummaryListItem& ChangeSetSummaryListItem::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("ChangeSetId"))
   {
     m_changeSetId = jsonValue.GetString("ChangeSetId");
-
     m_changeSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChangeSetArn"))
   {
     m_changeSetArn = jsonValue.GetString("ChangeSetArn");
-
     m_changeSetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChangeSetName"))
   {
     m_changeSetName = jsonValue.GetString("ChangeSetName");
-
     m_changeSetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetString("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndTime"))
   {
     m_endTime = jsonValue.GetString("EndTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ChangeStatusMapper::GetChangeStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntityIdList"))
   {
     Aws::Utils::Array<JsonView> entityIdListJsonList = jsonValue.GetArray("EntityIdList");
@@ -91,14 +64,11 @@ ChangeSetSummaryListItem& ChangeSetSummaryListItem::operator =(JsonView jsonValu
     }
     m_entityIdListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureCode"))
   {
     m_failureCode = FailureCodeMapper::GetFailureCodeForName(jsonValue.GetString("FailureCode"));
-
     m_failureCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,23 +18,7 @@ namespace ConnectContactLens
 namespace Model
 {
 
-Transcript::Transcript() : 
-    m_idHasBeenSet(false),
-    m_participantIdHasBeenSet(false),
-    m_participantRoleHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_beginOffsetMillis(0),
-    m_beginOffsetMillisHasBeenSet(false),
-    m_endOffsetMillis(0),
-    m_endOffsetMillisHasBeenSet(false),
-    m_sentiment(SentimentValue::NOT_SET),
-    m_sentimentHasBeenSet(false),
-    m_issuesDetectedHasBeenSet(false)
-{
-}
-
 Transcript::Transcript(JsonView jsonValue)
-  : Transcript()
 {
   *this = jsonValue;
 }
@@ -44,52 +28,38 @@ Transcript& Transcript::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParticipantId"))
   {
     m_participantId = jsonValue.GetString("ParticipantId");
-
     m_participantIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParticipantRole"))
   {
     m_participantRole = jsonValue.GetString("ParticipantRole");
-
     m_participantRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetString("Content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BeginOffsetMillis"))
   {
     m_beginOffsetMillis = jsonValue.GetInteger("BeginOffsetMillis");
-
     m_beginOffsetMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndOffsetMillis"))
   {
     m_endOffsetMillis = jsonValue.GetInteger("EndOffsetMillis");
-
     m_endOffsetMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sentiment"))
   {
     m_sentiment = SentimentValueMapper::GetSentimentValueForName(jsonValue.GetString("Sentiment"));
-
     m_sentimentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IssuesDetected"))
   {
     Aws::Utils::Array<JsonView> issuesDetectedJsonList = jsonValue.GetArray("IssuesDetected");
@@ -99,7 +69,6 @@ Transcript& Transcript::operator =(JsonView jsonValue)
     }
     m_issuesDetectedHasBeenSet = true;
   }
-
   return *this;
 }
 

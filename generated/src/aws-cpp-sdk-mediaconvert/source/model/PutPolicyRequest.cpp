@@ -12,11 +12,6 @@ using namespace Aws::MediaConvert::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutPolicyRequest::PutPolicyRequest() : 
-    m_policyHasBeenSet(false)
-{
-}
-
 Aws::String PutPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

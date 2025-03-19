@@ -33,7 +33,7 @@ namespace Model
   class ShardDetail
   {
   public:
-    AWS_MEMORYDB_API ShardDetail();
+    AWS_MEMORYDB_API ShardDetail() = default;
     AWS_MEMORYDB_API ShardDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEMORYDB_API ShardDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,52 +43,48 @@ namespace Model
     /**
      * <p>The name of the shard</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ShardDetail& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ShardDetail& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ShardDetail& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ShardDetail& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration details of the shard</p>
      */
-    inline const ShardConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const ShardConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const ShardConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(ShardConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline ShardDetail& WithConfiguration(const ShardConfiguration& value) { SetConfiguration(value); return *this;}
-    inline ShardDetail& WithConfiguration(ShardConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = ShardConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = ShardConfiguration>
+    ShardDetail& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The size of the shard's snapshot</p>
      */
-    inline const Aws::String& GetSize() const{ return m_size; }
+    inline const Aws::String& GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
-    inline void SetSize(const Aws::String& value) { m_sizeHasBeenSet = true; m_size = value; }
-    inline void SetSize(Aws::String&& value) { m_sizeHasBeenSet = true; m_size = std::move(value); }
-    inline void SetSize(const char* value) { m_sizeHasBeenSet = true; m_size.assign(value); }
-    inline ShardDetail& WithSize(const Aws::String& value) { SetSize(value); return *this;}
-    inline ShardDetail& WithSize(Aws::String&& value) { SetSize(std::move(value)); return *this;}
-    inline ShardDetail& WithSize(const char* value) { SetSize(value); return *this;}
+    template<typename SizeT = Aws::String>
+    void SetSize(SizeT&& value) { m_sizeHasBeenSet = true; m_size = std::forward<SizeT>(value); }
+    template<typename SizeT = Aws::String>
+    ShardDetail& WithSize(SizeT&& value) { SetSize(std::forward<SizeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the shard's snapshot was created</p>
      */
-    inline const Aws::Utils::DateTime& GetSnapshotCreationTime() const{ return m_snapshotCreationTime; }
+    inline const Aws::Utils::DateTime& GetSnapshotCreationTime() const { return m_snapshotCreationTime; }
     inline bool SnapshotCreationTimeHasBeenSet() const { return m_snapshotCreationTimeHasBeenSet; }
-    inline void SetSnapshotCreationTime(const Aws::Utils::DateTime& value) { m_snapshotCreationTimeHasBeenSet = true; m_snapshotCreationTime = value; }
-    inline void SetSnapshotCreationTime(Aws::Utils::DateTime&& value) { m_snapshotCreationTimeHasBeenSet = true; m_snapshotCreationTime = std::move(value); }
-    inline ShardDetail& WithSnapshotCreationTime(const Aws::Utils::DateTime& value) { SetSnapshotCreationTime(value); return *this;}
-    inline ShardDetail& WithSnapshotCreationTime(Aws::Utils::DateTime&& value) { SetSnapshotCreationTime(std::move(value)); return *this;}
+    template<typename SnapshotCreationTimeT = Aws::Utils::DateTime>
+    void SetSnapshotCreationTime(SnapshotCreationTimeT&& value) { m_snapshotCreationTimeHasBeenSet = true; m_snapshotCreationTime = std::forward<SnapshotCreationTimeT>(value); }
+    template<typename SnapshotCreationTimeT = Aws::Utils::DateTime>
+    ShardDetail& WithSnapshotCreationTime(SnapshotCreationTimeT&& value) { SetSnapshotCreationTime(std::forward<SnapshotCreationTimeT>(value)); return *this;}
     ///@}
   private:
 
@@ -101,7 +97,7 @@ namespace Model
     Aws::String m_size;
     bool m_sizeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_snapshotCreationTime;
+    Aws::Utils::DateTime m_snapshotCreationTime{};
     bool m_snapshotCreationTimeHasBeenSet = false;
   };
 

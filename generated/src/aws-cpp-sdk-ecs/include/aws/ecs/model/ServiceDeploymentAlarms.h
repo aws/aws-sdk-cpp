@@ -38,7 +38,7 @@ namespace Model
   class ServiceDeploymentAlarms
   {
   public:
-    AWS_ECS_API ServiceDeploymentAlarms();
+    AWS_ECS_API ServiceDeploymentAlarms() = default;
     AWS_ECS_API ServiceDeploymentAlarms(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API ServiceDeploymentAlarms& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,10 @@ namespace Model
      * <p>The status of the alarms check. Amazon ECS is not using alarms for service
      * deployment failures when the status is <code>DISABLED</code>.</p>
      */
-    inline const ServiceDeploymentRollbackMonitorsStatus& GetStatus() const{ return m_status; }
+    inline ServiceDeploymentRollbackMonitorsStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ServiceDeploymentRollbackMonitorsStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ServiceDeploymentRollbackMonitorsStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline ServiceDeploymentAlarms& WithStatus(const ServiceDeploymentRollbackMonitorsStatus& value) { SetStatus(value); return *this;}
-    inline ServiceDeploymentAlarms& WithStatus(ServiceDeploymentRollbackMonitorsStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ServiceDeploymentRollbackMonitorsStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline ServiceDeploymentAlarms& WithStatus(ServiceDeploymentRollbackMonitorsStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -62,15 +60,14 @@ namespace Model
      * <p>The name of the CloudWatch alarms that determine when a service deployment
      * failed. A "," separates the alarms.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAlarmNames() const{ return m_alarmNames; }
+    inline const Aws::Vector<Aws::String>& GetAlarmNames() const { return m_alarmNames; }
     inline bool AlarmNamesHasBeenSet() const { return m_alarmNamesHasBeenSet; }
-    inline void SetAlarmNames(const Aws::Vector<Aws::String>& value) { m_alarmNamesHasBeenSet = true; m_alarmNames = value; }
-    inline void SetAlarmNames(Aws::Vector<Aws::String>&& value) { m_alarmNamesHasBeenSet = true; m_alarmNames = std::move(value); }
-    inline ServiceDeploymentAlarms& WithAlarmNames(const Aws::Vector<Aws::String>& value) { SetAlarmNames(value); return *this;}
-    inline ServiceDeploymentAlarms& WithAlarmNames(Aws::Vector<Aws::String>&& value) { SetAlarmNames(std::move(value)); return *this;}
-    inline ServiceDeploymentAlarms& AddAlarmNames(const Aws::String& value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
-    inline ServiceDeploymentAlarms& AddAlarmNames(Aws::String&& value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(std::move(value)); return *this; }
-    inline ServiceDeploymentAlarms& AddAlarmNames(const char* value) { m_alarmNamesHasBeenSet = true; m_alarmNames.push_back(value); return *this; }
+    template<typename AlarmNamesT = Aws::Vector<Aws::String>>
+    void SetAlarmNames(AlarmNamesT&& value) { m_alarmNamesHasBeenSet = true; m_alarmNames = std::forward<AlarmNamesT>(value); }
+    template<typename AlarmNamesT = Aws::Vector<Aws::String>>
+    ServiceDeploymentAlarms& WithAlarmNames(AlarmNamesT&& value) { SetAlarmNames(std::forward<AlarmNamesT>(value)); return *this;}
+    template<typename AlarmNamesT = Aws::String>
+    ServiceDeploymentAlarms& AddAlarmNames(AlarmNamesT&& value) { m_alarmNamesHasBeenSet = true; m_alarmNames.emplace_back(std::forward<AlarmNamesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -78,19 +75,18 @@ namespace Model
      * <p>One or more CloudWatch alarm names that have been triggered during the
      * service deployment. A "," separates the alarm names.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTriggeredAlarmNames() const{ return m_triggeredAlarmNames; }
+    inline const Aws::Vector<Aws::String>& GetTriggeredAlarmNames() const { return m_triggeredAlarmNames; }
     inline bool TriggeredAlarmNamesHasBeenSet() const { return m_triggeredAlarmNamesHasBeenSet; }
-    inline void SetTriggeredAlarmNames(const Aws::Vector<Aws::String>& value) { m_triggeredAlarmNamesHasBeenSet = true; m_triggeredAlarmNames = value; }
-    inline void SetTriggeredAlarmNames(Aws::Vector<Aws::String>&& value) { m_triggeredAlarmNamesHasBeenSet = true; m_triggeredAlarmNames = std::move(value); }
-    inline ServiceDeploymentAlarms& WithTriggeredAlarmNames(const Aws::Vector<Aws::String>& value) { SetTriggeredAlarmNames(value); return *this;}
-    inline ServiceDeploymentAlarms& WithTriggeredAlarmNames(Aws::Vector<Aws::String>&& value) { SetTriggeredAlarmNames(std::move(value)); return *this;}
-    inline ServiceDeploymentAlarms& AddTriggeredAlarmNames(const Aws::String& value) { m_triggeredAlarmNamesHasBeenSet = true; m_triggeredAlarmNames.push_back(value); return *this; }
-    inline ServiceDeploymentAlarms& AddTriggeredAlarmNames(Aws::String&& value) { m_triggeredAlarmNamesHasBeenSet = true; m_triggeredAlarmNames.push_back(std::move(value)); return *this; }
-    inline ServiceDeploymentAlarms& AddTriggeredAlarmNames(const char* value) { m_triggeredAlarmNamesHasBeenSet = true; m_triggeredAlarmNames.push_back(value); return *this; }
+    template<typename TriggeredAlarmNamesT = Aws::Vector<Aws::String>>
+    void SetTriggeredAlarmNames(TriggeredAlarmNamesT&& value) { m_triggeredAlarmNamesHasBeenSet = true; m_triggeredAlarmNames = std::forward<TriggeredAlarmNamesT>(value); }
+    template<typename TriggeredAlarmNamesT = Aws::Vector<Aws::String>>
+    ServiceDeploymentAlarms& WithTriggeredAlarmNames(TriggeredAlarmNamesT&& value) { SetTriggeredAlarmNames(std::forward<TriggeredAlarmNamesT>(value)); return *this;}
+    template<typename TriggeredAlarmNamesT = Aws::String>
+    ServiceDeploymentAlarms& AddTriggeredAlarmNames(TriggeredAlarmNamesT&& value) { m_triggeredAlarmNamesHasBeenSet = true; m_triggeredAlarmNames.emplace_back(std::forward<TriggeredAlarmNamesT>(value)); return *this; }
     ///@}
   private:
 
-    ServiceDeploymentRollbackMonitorsStatus m_status;
+    ServiceDeploymentRollbackMonitorsStatus m_status{ServiceDeploymentRollbackMonitorsStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_alarmNames;

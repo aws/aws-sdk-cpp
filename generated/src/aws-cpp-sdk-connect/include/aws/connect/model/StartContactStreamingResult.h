@@ -27,7 +27,7 @@ namespace Model
   class StartContactStreamingResult
   {
   public:
-    AWS_CONNECT_API StartContactStreamingResult();
+    AWS_CONNECT_API StartContactStreamingResult() = default;
     AWS_CONNECT_API StartContactStreamingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONNECT_API StartContactStreamingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The identifier of the streaming configuration enabled. </p>
      */
-    inline const Aws::String& GetStreamingId() const{ return m_streamingId; }
-    inline void SetStreamingId(const Aws::String& value) { m_streamingId = value; }
-    inline void SetStreamingId(Aws::String&& value) { m_streamingId = std::move(value); }
-    inline void SetStreamingId(const char* value) { m_streamingId.assign(value); }
-    inline StartContactStreamingResult& WithStreamingId(const Aws::String& value) { SetStreamingId(value); return *this;}
-    inline StartContactStreamingResult& WithStreamingId(Aws::String&& value) { SetStreamingId(std::move(value)); return *this;}
-    inline StartContactStreamingResult& WithStreamingId(const char* value) { SetStreamingId(value); return *this;}
+    inline const Aws::String& GetStreamingId() const { return m_streamingId; }
+    template<typename StreamingIdT = Aws::String>
+    void SetStreamingId(StreamingIdT&& value) { m_streamingIdHasBeenSet = true; m_streamingId = std::forward<StreamingIdT>(value); }
+    template<typename StreamingIdT = Aws::String>
+    StartContactStreamingResult& WithStreamingId(StreamingIdT&& value) { SetStreamingId(std::forward<StreamingIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartContactStreamingResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartContactStreamingResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartContactStreamingResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartContactStreamingResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_streamingId;
+    bool m_streamingIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

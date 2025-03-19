@@ -28,28 +28,26 @@ namespace Model
   class UpdateDashboardLinksResult
   {
   public:
-    AWS_QUICKSIGHT_API UpdateDashboardLinksResult();
+    AWS_QUICKSIGHT_API UpdateDashboardLinksResult() = default;
     AWS_QUICKSIGHT_API UpdateDashboardLinksResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API UpdateDashboardLinksResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateDashboardLinksResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateDashboardLinksResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateDashboardLinksResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateDashboardLinksResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline UpdateDashboardLinksResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
 
@@ -57,13 +55,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the dashboard.</p>
      */
-    inline const Aws::String& GetDashboardArn() const{ return m_dashboardArn; }
-    inline void SetDashboardArn(const Aws::String& value) { m_dashboardArn = value; }
-    inline void SetDashboardArn(Aws::String&& value) { m_dashboardArn = std::move(value); }
-    inline void SetDashboardArn(const char* value) { m_dashboardArn.assign(value); }
-    inline UpdateDashboardLinksResult& WithDashboardArn(const Aws::String& value) { SetDashboardArn(value); return *this;}
-    inline UpdateDashboardLinksResult& WithDashboardArn(Aws::String&& value) { SetDashboardArn(std::move(value)); return *this;}
-    inline UpdateDashboardLinksResult& WithDashboardArn(const char* value) { SetDashboardArn(value); return *this;}
+    inline const Aws::String& GetDashboardArn() const { return m_dashboardArn; }
+    template<typename DashboardArnT = Aws::String>
+    void SetDashboardArn(DashboardArnT&& value) { m_dashboardArnHasBeenSet = true; m_dashboardArn = std::forward<DashboardArnT>(value); }
+    template<typename DashboardArnT = Aws::String>
+    UpdateDashboardLinksResult& WithDashboardArn(DashboardArnT&& value) { SetDashboardArn(std::forward<DashboardArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,24 +67,27 @@ namespace Model
      * <p>A list of analysis Amazon Resource Names (ARNs) to be linked to the
      * dashboard.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetLinkEntities() const{ return m_linkEntities; }
-    inline void SetLinkEntities(const Aws::Vector<Aws::String>& value) { m_linkEntities = value; }
-    inline void SetLinkEntities(Aws::Vector<Aws::String>&& value) { m_linkEntities = std::move(value); }
-    inline UpdateDashboardLinksResult& WithLinkEntities(const Aws::Vector<Aws::String>& value) { SetLinkEntities(value); return *this;}
-    inline UpdateDashboardLinksResult& WithLinkEntities(Aws::Vector<Aws::String>&& value) { SetLinkEntities(std::move(value)); return *this;}
-    inline UpdateDashboardLinksResult& AddLinkEntities(const Aws::String& value) { m_linkEntities.push_back(value); return *this; }
-    inline UpdateDashboardLinksResult& AddLinkEntities(Aws::String&& value) { m_linkEntities.push_back(std::move(value)); return *this; }
-    inline UpdateDashboardLinksResult& AddLinkEntities(const char* value) { m_linkEntities.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetLinkEntities() const { return m_linkEntities; }
+    template<typename LinkEntitiesT = Aws::Vector<Aws::String>>
+    void SetLinkEntities(LinkEntitiesT&& value) { m_linkEntitiesHasBeenSet = true; m_linkEntities = std::forward<LinkEntitiesT>(value); }
+    template<typename LinkEntitiesT = Aws::Vector<Aws::String>>
+    UpdateDashboardLinksResult& WithLinkEntities(LinkEntitiesT&& value) { SetLinkEntities(std::forward<LinkEntitiesT>(value)); return *this;}
+    template<typename LinkEntitiesT = Aws::String>
+    UpdateDashboardLinksResult& AddLinkEntities(LinkEntitiesT&& value) { m_linkEntitiesHasBeenSet = true; m_linkEntities.emplace_back(std::forward<LinkEntitiesT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_dashboardArn;
+    bool m_dashboardArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_linkEntities;
+    bool m_linkEntitiesHasBeenSet = false;
   };
 
 } // namespace Model

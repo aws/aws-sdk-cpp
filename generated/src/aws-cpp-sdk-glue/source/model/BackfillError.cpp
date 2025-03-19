@@ -18,15 +18,7 @@ namespace Glue
 namespace Model
 {
 
-BackfillError::BackfillError() : 
-    m_code(BackfillErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_partitionsHasBeenSet(false)
-{
-}
-
 BackfillError::BackfillError(JsonView jsonValue)
-  : BackfillError()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ BackfillError& BackfillError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = BackfillErrorCodeMapper::GetBackfillErrorCodeForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Partitions"))
   {
     Aws::Utils::Array<JsonView> partitionsJsonList = jsonValue.GetArray("Partitions");
@@ -49,7 +39,6 @@ BackfillError& BackfillError::operator =(JsonView jsonValue)
     }
     m_partitionsHasBeenSet = true;
   }
-
   return *this;
 }
 

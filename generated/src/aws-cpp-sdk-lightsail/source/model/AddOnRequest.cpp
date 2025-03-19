@@ -18,16 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-AddOnRequest::AddOnRequest() : 
-    m_addOnType(AddOnType::NOT_SET),
-    m_addOnTypeHasBeenSet(false),
-    m_autoSnapshotAddOnRequestHasBeenSet(false),
-    m_stopInstanceOnIdleRequestHasBeenSet(false)
-{
-}
-
 AddOnRequest::AddOnRequest(JsonView jsonValue)
-  : AddOnRequest()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AddOnRequest& AddOnRequest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("addOnType"))
   {
     m_addOnType = AddOnTypeMapper::GetAddOnTypeForName(jsonValue.GetString("addOnType"));
-
     m_addOnTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoSnapshotAddOnRequest"))
   {
     m_autoSnapshotAddOnRequest = jsonValue.GetObject("autoSnapshotAddOnRequest");
-
     m_autoSnapshotAddOnRequestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stopInstanceOnIdleRequest"))
   {
     m_stopInstanceOnIdleRequest = jsonValue.GetObject("stopInstanceOnIdleRequest");
-
     m_stopInstanceOnIdleRequestHasBeenSet = true;
   }
-
   return *this;
 }
 

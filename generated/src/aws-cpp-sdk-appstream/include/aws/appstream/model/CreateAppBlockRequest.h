@@ -25,7 +25,7 @@ namespace Model
   class CreateAppBlockRequest : public AppStreamRequest
   {
   public:
-    AWS_APPSTREAM_API CreateAppBlockRequest();
+    AWS_APPSTREAM_API CreateAppBlockRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,54 +42,48 @@ namespace Model
     /**
      * <p>The name of the app block.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateAppBlockRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateAppBlockRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateAppBlockRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateAppBlockRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the app block.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateAppBlockRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateAppBlockRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateAppBlockRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateAppBlockRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The display name of the app block. This is not displayed to the user.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline CreateAppBlockRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline CreateAppBlockRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline CreateAppBlockRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    CreateAppBlockRequest& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source S3 location of the app block.</p>
      */
-    inline const S3Location& GetSourceS3Location() const{ return m_sourceS3Location; }
+    inline const S3Location& GetSourceS3Location() const { return m_sourceS3Location; }
     inline bool SourceS3LocationHasBeenSet() const { return m_sourceS3LocationHasBeenSet; }
-    inline void SetSourceS3Location(const S3Location& value) { m_sourceS3LocationHasBeenSet = true; m_sourceS3Location = value; }
-    inline void SetSourceS3Location(S3Location&& value) { m_sourceS3LocationHasBeenSet = true; m_sourceS3Location = std::move(value); }
-    inline CreateAppBlockRequest& WithSourceS3Location(const S3Location& value) { SetSourceS3Location(value); return *this;}
-    inline CreateAppBlockRequest& WithSourceS3Location(S3Location&& value) { SetSourceS3Location(std::move(value)); return *this;}
+    template<typename SourceS3LocationT = S3Location>
+    void SetSourceS3Location(SourceS3LocationT&& value) { m_sourceS3LocationHasBeenSet = true; m_sourceS3Location = std::forward<SourceS3LocationT>(value); }
+    template<typename SourceS3LocationT = S3Location>
+    CreateAppBlockRequest& WithSourceS3Location(SourceS3LocationT&& value) { SetSourceS3Location(std::forward<SourceS3LocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,31 +91,28 @@ namespace Model
      * <p>The setup script details of the app block. This must be provided for the
      * <code>CUSTOM</code> PackagingType.</p>
      */
-    inline const ScriptDetails& GetSetupScriptDetails() const{ return m_setupScriptDetails; }
+    inline const ScriptDetails& GetSetupScriptDetails() const { return m_setupScriptDetails; }
     inline bool SetupScriptDetailsHasBeenSet() const { return m_setupScriptDetailsHasBeenSet; }
-    inline void SetSetupScriptDetails(const ScriptDetails& value) { m_setupScriptDetailsHasBeenSet = true; m_setupScriptDetails = value; }
-    inline void SetSetupScriptDetails(ScriptDetails&& value) { m_setupScriptDetailsHasBeenSet = true; m_setupScriptDetails = std::move(value); }
-    inline CreateAppBlockRequest& WithSetupScriptDetails(const ScriptDetails& value) { SetSetupScriptDetails(value); return *this;}
-    inline CreateAppBlockRequest& WithSetupScriptDetails(ScriptDetails&& value) { SetSetupScriptDetails(std::move(value)); return *this;}
+    template<typename SetupScriptDetailsT = ScriptDetails>
+    void SetSetupScriptDetails(SetupScriptDetailsT&& value) { m_setupScriptDetailsHasBeenSet = true; m_setupScriptDetails = std::forward<SetupScriptDetailsT>(value); }
+    template<typename SetupScriptDetailsT = ScriptDetails>
+    CreateAppBlockRequest& WithSetupScriptDetails(SetupScriptDetailsT&& value) { SetSetupScriptDetails(std::forward<SetupScriptDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags assigned to the app block.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateAppBlockRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateAppBlockRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateAppBlockRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateAppBlockRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateAppBlockRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateAppBlockRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateAppBlockRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateAppBlockRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateAppBlockRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateAppBlockRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateAppBlockRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -129,24 +120,22 @@ namespace Model
      * <p>The post setup script details of the app block. This can only be provided for
      * the <code>APPSTREAM2</code> PackagingType.</p>
      */
-    inline const ScriptDetails& GetPostSetupScriptDetails() const{ return m_postSetupScriptDetails; }
+    inline const ScriptDetails& GetPostSetupScriptDetails() const { return m_postSetupScriptDetails; }
     inline bool PostSetupScriptDetailsHasBeenSet() const { return m_postSetupScriptDetailsHasBeenSet; }
-    inline void SetPostSetupScriptDetails(const ScriptDetails& value) { m_postSetupScriptDetailsHasBeenSet = true; m_postSetupScriptDetails = value; }
-    inline void SetPostSetupScriptDetails(ScriptDetails&& value) { m_postSetupScriptDetailsHasBeenSet = true; m_postSetupScriptDetails = std::move(value); }
-    inline CreateAppBlockRequest& WithPostSetupScriptDetails(const ScriptDetails& value) { SetPostSetupScriptDetails(value); return *this;}
-    inline CreateAppBlockRequest& WithPostSetupScriptDetails(ScriptDetails&& value) { SetPostSetupScriptDetails(std::move(value)); return *this;}
+    template<typename PostSetupScriptDetailsT = ScriptDetails>
+    void SetPostSetupScriptDetails(PostSetupScriptDetailsT&& value) { m_postSetupScriptDetailsHasBeenSet = true; m_postSetupScriptDetails = std::forward<PostSetupScriptDetailsT>(value); }
+    template<typename PostSetupScriptDetailsT = ScriptDetails>
+    CreateAppBlockRequest& WithPostSetupScriptDetails(PostSetupScriptDetailsT&& value) { SetPostSetupScriptDetails(std::forward<PostSetupScriptDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The packaging type of the app block.</p>
      */
-    inline const PackagingType& GetPackagingType() const{ return m_packagingType; }
+    inline PackagingType GetPackagingType() const { return m_packagingType; }
     inline bool PackagingTypeHasBeenSet() const { return m_packagingTypeHasBeenSet; }
-    inline void SetPackagingType(const PackagingType& value) { m_packagingTypeHasBeenSet = true; m_packagingType = value; }
-    inline void SetPackagingType(PackagingType&& value) { m_packagingTypeHasBeenSet = true; m_packagingType = std::move(value); }
-    inline CreateAppBlockRequest& WithPackagingType(const PackagingType& value) { SetPackagingType(value); return *this;}
-    inline CreateAppBlockRequest& WithPackagingType(PackagingType&& value) { SetPackagingType(std::move(value)); return *this;}
+    inline void SetPackagingType(PackagingType value) { m_packagingTypeHasBeenSet = true; m_packagingType = value; }
+    inline CreateAppBlockRequest& WithPackagingType(PackagingType value) { SetPackagingType(value); return *this;}
     ///@}
   private:
 
@@ -171,7 +160,7 @@ namespace Model
     ScriptDetails m_postSetupScriptDetails;
     bool m_postSetupScriptDetailsHasBeenSet = false;
 
-    PackagingType m_packagingType;
+    PackagingType m_packagingType{PackagingType::NOT_SET};
     bool m_packagingTypeHasBeenSet = false;
   };
 

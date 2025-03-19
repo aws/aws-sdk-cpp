@@ -18,18 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-DeliveryStreamEncryptionConfiguration::DeliveryStreamEncryptionConfiguration() : 
-    m_keyARNHasBeenSet(false),
-    m_keyType(KeyType::NOT_SET),
-    m_keyTypeHasBeenSet(false),
-    m_status(DeliveryStreamEncryptionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_failureDescriptionHasBeenSet(false)
-{
-}
-
 DeliveryStreamEncryptionConfiguration::DeliveryStreamEncryptionConfiguration(JsonView jsonValue)
-  : DeliveryStreamEncryptionConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ DeliveryStreamEncryptionConfiguration& DeliveryStreamEncryptionConfiguration::op
   if(jsonValue.ValueExists("KeyARN"))
   {
     m_keyARN = jsonValue.GetString("KeyARN");
-
     m_keyARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyType"))
   {
     m_keyType = KeyTypeMapper::GetKeyTypeForName(jsonValue.GetString("KeyType"));
-
     m_keyTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = DeliveryStreamEncryptionStatusMapper::GetDeliveryStreamEncryptionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureDescription"))
   {
     m_failureDescription = jsonValue.GetObject("FailureDescription");
-
     m_failureDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

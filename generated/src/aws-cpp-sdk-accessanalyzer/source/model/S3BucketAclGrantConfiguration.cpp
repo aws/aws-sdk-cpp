@@ -18,15 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-S3BucketAclGrantConfiguration::S3BucketAclGrantConfiguration() : 
-    m_permission(AclPermission::NOT_SET),
-    m_permissionHasBeenSet(false),
-    m_granteeHasBeenSet(false)
-{
-}
-
 S3BucketAclGrantConfiguration::S3BucketAclGrantConfiguration(JsonView jsonValue)
-  : S3BucketAclGrantConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ S3BucketAclGrantConfiguration& S3BucketAclGrantConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("permission"))
   {
     m_permission = AclPermissionMapper::GetAclPermissionForName(jsonValue.GetString("permission"));
-
     m_permissionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("grantee"))
   {
     m_grantee = jsonValue.GetObject("grantee");
-
     m_granteeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -33,7 +33,7 @@ namespace Model
   class IsolineShapeGeometry
   {
   public:
-    AWS_GEOROUTES_API IsolineShapeGeometry();
+    AWS_GEOROUTES_API IsolineShapeGeometry() = default;
     AWS_GEOROUTES_API IsolineShapeGeometry(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API IsolineShapeGeometry& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * the first linear ring (the outer ring) and from 2nd item to the last item (the
      * inner rings).</p>
      */
-    inline const Aws::Vector<Aws::Vector<Aws::Vector<double>>>& GetPolygon() const{ return m_polygon; }
+    inline const Aws::Vector<Aws::Vector<Aws::Vector<double>>>& GetPolygon() const { return m_polygon; }
     inline bool PolygonHasBeenSet() const { return m_polygonHasBeenSet; }
-    inline void SetPolygon(const Aws::Vector<Aws::Vector<Aws::Vector<double>>>& value) { m_polygonHasBeenSet = true; m_polygon = value; }
-    inline void SetPolygon(Aws::Vector<Aws::Vector<Aws::Vector<double>>>&& value) { m_polygonHasBeenSet = true; m_polygon = std::move(value); }
-    inline IsolineShapeGeometry& WithPolygon(const Aws::Vector<Aws::Vector<Aws::Vector<double>>>& value) { SetPolygon(value); return *this;}
-    inline IsolineShapeGeometry& WithPolygon(Aws::Vector<Aws::Vector<Aws::Vector<double>>>&& value) { SetPolygon(std::move(value)); return *this;}
-    inline IsolineShapeGeometry& AddPolygon(const Aws::Vector<Aws::Vector<double>>& value) { m_polygonHasBeenSet = true; m_polygon.push_back(value); return *this; }
-    inline IsolineShapeGeometry& AddPolygon(Aws::Vector<Aws::Vector<double>>&& value) { m_polygonHasBeenSet = true; m_polygon.push_back(std::move(value)); return *this; }
+    template<typename PolygonT = Aws::Vector<Aws::Vector<Aws::Vector<double>>>>
+    void SetPolygon(PolygonT&& value) { m_polygonHasBeenSet = true; m_polygon = std::forward<PolygonT>(value); }
+    template<typename PolygonT = Aws::Vector<Aws::Vector<Aws::Vector<double>>>>
+    IsolineShapeGeometry& WithPolygon(PolygonT&& value) { SetPolygon(std::forward<PolygonT>(value)); return *this;}
+    template<typename PolygonT = Aws::Vector<Aws::Vector<double>>>
+    IsolineShapeGeometry& AddPolygon(PolygonT&& value) { m_polygonHasBeenSet = true; m_polygon.emplace_back(std::forward<PolygonT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,15 +63,14 @@ namespace Model
      * encoding, see <a
      * href="https://github.com/heremaps/flexiblepolyline/blob/master/README.md">https://github.com/heremaps/flexiblepolyline/blob/master/README.md</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPolylinePolygon() const{ return m_polylinePolygon; }
+    inline const Aws::Vector<Aws::String>& GetPolylinePolygon() const { return m_polylinePolygon; }
     inline bool PolylinePolygonHasBeenSet() const { return m_polylinePolygonHasBeenSet; }
-    inline void SetPolylinePolygon(const Aws::Vector<Aws::String>& value) { m_polylinePolygonHasBeenSet = true; m_polylinePolygon = value; }
-    inline void SetPolylinePolygon(Aws::Vector<Aws::String>&& value) { m_polylinePolygonHasBeenSet = true; m_polylinePolygon = std::move(value); }
-    inline IsolineShapeGeometry& WithPolylinePolygon(const Aws::Vector<Aws::String>& value) { SetPolylinePolygon(value); return *this;}
-    inline IsolineShapeGeometry& WithPolylinePolygon(Aws::Vector<Aws::String>&& value) { SetPolylinePolygon(std::move(value)); return *this;}
-    inline IsolineShapeGeometry& AddPolylinePolygon(const Aws::String& value) { m_polylinePolygonHasBeenSet = true; m_polylinePolygon.push_back(value); return *this; }
-    inline IsolineShapeGeometry& AddPolylinePolygon(Aws::String&& value) { m_polylinePolygonHasBeenSet = true; m_polylinePolygon.push_back(std::move(value)); return *this; }
-    inline IsolineShapeGeometry& AddPolylinePolygon(const char* value) { m_polylinePolygonHasBeenSet = true; m_polylinePolygon.push_back(value); return *this; }
+    template<typename PolylinePolygonT = Aws::Vector<Aws::String>>
+    void SetPolylinePolygon(PolylinePolygonT&& value) { m_polylinePolygonHasBeenSet = true; m_polylinePolygon = std::forward<PolylinePolygonT>(value); }
+    template<typename PolylinePolygonT = Aws::Vector<Aws::String>>
+    IsolineShapeGeometry& WithPolylinePolygon(PolylinePolygonT&& value) { SetPolylinePolygon(std::forward<PolylinePolygonT>(value)); return *this;}
+    template<typename PolylinePolygonT = Aws::String>
+    IsolineShapeGeometry& AddPolylinePolygon(PolylinePolygonT&& value) { m_polylinePolygonHasBeenSet = true; m_polylinePolygon.emplace_back(std::forward<PolylinePolygonT>(value)); return *this; }
     ///@}
   private:
 

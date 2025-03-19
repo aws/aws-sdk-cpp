@@ -22,7 +22,7 @@ namespace Model
   class BatchDescribeEntitiesRequest : public MarketplaceCatalogRequest
   {
   public:
-    AWS_MARKETPLACECATALOG_API BatchDescribeEntitiesRequest();
+    AWS_MARKETPLACECATALOG_API BatchDescribeEntitiesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,14 @@ namespace Model
     /**
      * <p>List of entity IDs and the catalogs the entities are present in.</p>
      */
-    inline const Aws::Vector<EntityRequest>& GetEntityRequestList() const{ return m_entityRequestList; }
+    inline const Aws::Vector<EntityRequest>& GetEntityRequestList() const { return m_entityRequestList; }
     inline bool EntityRequestListHasBeenSet() const { return m_entityRequestListHasBeenSet; }
-    inline void SetEntityRequestList(const Aws::Vector<EntityRequest>& value) { m_entityRequestListHasBeenSet = true; m_entityRequestList = value; }
-    inline void SetEntityRequestList(Aws::Vector<EntityRequest>&& value) { m_entityRequestListHasBeenSet = true; m_entityRequestList = std::move(value); }
-    inline BatchDescribeEntitiesRequest& WithEntityRequestList(const Aws::Vector<EntityRequest>& value) { SetEntityRequestList(value); return *this;}
-    inline BatchDescribeEntitiesRequest& WithEntityRequestList(Aws::Vector<EntityRequest>&& value) { SetEntityRequestList(std::move(value)); return *this;}
-    inline BatchDescribeEntitiesRequest& AddEntityRequestList(const EntityRequest& value) { m_entityRequestListHasBeenSet = true; m_entityRequestList.push_back(value); return *this; }
-    inline BatchDescribeEntitiesRequest& AddEntityRequestList(EntityRequest&& value) { m_entityRequestListHasBeenSet = true; m_entityRequestList.push_back(std::move(value)); return *this; }
+    template<typename EntityRequestListT = Aws::Vector<EntityRequest>>
+    void SetEntityRequestList(EntityRequestListT&& value) { m_entityRequestListHasBeenSet = true; m_entityRequestList = std::forward<EntityRequestListT>(value); }
+    template<typename EntityRequestListT = Aws::Vector<EntityRequest>>
+    BatchDescribeEntitiesRequest& WithEntityRequestList(EntityRequestListT&& value) { SetEntityRequestList(std::forward<EntityRequestListT>(value)); return *this;}
+    template<typename EntityRequestListT = EntityRequest>
+    BatchDescribeEntitiesRequest& AddEntityRequestList(EntityRequestListT&& value) { m_entityRequestListHasBeenSet = true; m_entityRequestList.emplace_back(std::forward<EntityRequestListT>(value)); return *this; }
     ///@}
   private:
 

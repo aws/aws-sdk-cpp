@@ -34,7 +34,7 @@ namespace Model
   class GlobalClusterMember
   {
   public:
-    AWS_DOCDB_API GlobalClusterMember();
+    AWS_DOCDB_API GlobalClusterMember() = default;
     AWS_DOCDB_API GlobalClusterMember(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_DOCDB_API GlobalClusterMember& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for each Amazon DocumentDB cluster.</p>
      */
-    inline const Aws::String& GetDBClusterArn() const{ return m_dBClusterArn; }
+    inline const Aws::String& GetDBClusterArn() const { return m_dBClusterArn; }
     inline bool DBClusterArnHasBeenSet() const { return m_dBClusterArnHasBeenSet; }
-    inline void SetDBClusterArn(const Aws::String& value) { m_dBClusterArnHasBeenSet = true; m_dBClusterArn = value; }
-    inline void SetDBClusterArn(Aws::String&& value) { m_dBClusterArnHasBeenSet = true; m_dBClusterArn = std::move(value); }
-    inline void SetDBClusterArn(const char* value) { m_dBClusterArnHasBeenSet = true; m_dBClusterArn.assign(value); }
-    inline GlobalClusterMember& WithDBClusterArn(const Aws::String& value) { SetDBClusterArn(value); return *this;}
-    inline GlobalClusterMember& WithDBClusterArn(Aws::String&& value) { SetDBClusterArn(std::move(value)); return *this;}
-    inline GlobalClusterMember& WithDBClusterArn(const char* value) { SetDBClusterArn(value); return *this;}
+    template<typename DBClusterArnT = Aws::String>
+    void SetDBClusterArn(DBClusterArnT&& value) { m_dBClusterArnHasBeenSet = true; m_dBClusterArn = std::forward<DBClusterArnT>(value); }
+    template<typename DBClusterArnT = Aws::String>
+    GlobalClusterMember& WithDBClusterArn(DBClusterArnT&& value) { SetDBClusterArn(std::forward<DBClusterArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,15 +59,14 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for each read-only secondary cluster
      * associated with the Aurora global cluster.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetReaders() const{ return m_readers; }
+    inline const Aws::Vector<Aws::String>& GetReaders() const { return m_readers; }
     inline bool ReadersHasBeenSet() const { return m_readersHasBeenSet; }
-    inline void SetReaders(const Aws::Vector<Aws::String>& value) { m_readersHasBeenSet = true; m_readers = value; }
-    inline void SetReaders(Aws::Vector<Aws::String>&& value) { m_readersHasBeenSet = true; m_readers = std::move(value); }
-    inline GlobalClusterMember& WithReaders(const Aws::Vector<Aws::String>& value) { SetReaders(value); return *this;}
-    inline GlobalClusterMember& WithReaders(Aws::Vector<Aws::String>&& value) { SetReaders(std::move(value)); return *this;}
-    inline GlobalClusterMember& AddReaders(const Aws::String& value) { m_readersHasBeenSet = true; m_readers.push_back(value); return *this; }
-    inline GlobalClusterMember& AddReaders(Aws::String&& value) { m_readersHasBeenSet = true; m_readers.push_back(std::move(value)); return *this; }
-    inline GlobalClusterMember& AddReaders(const char* value) { m_readersHasBeenSet = true; m_readers.push_back(value); return *this; }
+    template<typename ReadersT = Aws::Vector<Aws::String>>
+    void SetReaders(ReadersT&& value) { m_readersHasBeenSet = true; m_readers = std::forward<ReadersT>(value); }
+    template<typename ReadersT = Aws::Vector<Aws::String>>
+    GlobalClusterMember& WithReaders(ReadersT&& value) { SetReaders(std::forward<ReadersT>(value)); return *this;}
+    template<typename ReadersT = Aws::String>
+    GlobalClusterMember& AddReaders(ReadersT&& value) { m_readersHasBeenSet = true; m_readers.emplace_back(std::forward<ReadersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -78,7 +75,7 @@ namespace Model
      * is, has read-write capability) for the Amazon DocumentDB global cluster with
      * which it is associated. </p>
      */
-    inline bool GetIsWriter() const{ return m_isWriter; }
+    inline bool GetIsWriter() const { return m_isWriter; }
     inline bool IsWriterHasBeenSet() const { return m_isWriterHasBeenSet; }
     inline void SetIsWriter(bool value) { m_isWriterHasBeenSet = true; m_isWriter = value; }
     inline GlobalClusterMember& WithIsWriter(bool value) { SetIsWriter(value); return *this;}
@@ -91,7 +88,7 @@ namespace Model
     Aws::Vector<Aws::String> m_readers;
     bool m_readersHasBeenSet = false;
 
-    bool m_isWriter;
+    bool m_isWriter{false};
     bool m_isWriterHasBeenSet = false;
   };
 

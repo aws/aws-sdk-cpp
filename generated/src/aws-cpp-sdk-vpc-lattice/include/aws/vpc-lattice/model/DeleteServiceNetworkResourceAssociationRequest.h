@@ -21,7 +21,7 @@ namespace Model
   class DeleteServiceNetworkResourceAssociationRequest : public VPCLatticeRequest
   {
   public:
-    AWS_VPCLATTICE_API DeleteServiceNetworkResourceAssociationRequest();
+    AWS_VPCLATTICE_API DeleteServiceNetworkResourceAssociationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID of the association.</p>
      */
-    inline const Aws::String& GetServiceNetworkResourceAssociationIdentifier() const{ return m_serviceNetworkResourceAssociationIdentifier; }
+    inline const Aws::String& GetServiceNetworkResourceAssociationIdentifier() const { return m_serviceNetworkResourceAssociationIdentifier; }
     inline bool ServiceNetworkResourceAssociationIdentifierHasBeenSet() const { return m_serviceNetworkResourceAssociationIdentifierHasBeenSet; }
-    inline void SetServiceNetworkResourceAssociationIdentifier(const Aws::String& value) { m_serviceNetworkResourceAssociationIdentifierHasBeenSet = true; m_serviceNetworkResourceAssociationIdentifier = value; }
-    inline void SetServiceNetworkResourceAssociationIdentifier(Aws::String&& value) { m_serviceNetworkResourceAssociationIdentifierHasBeenSet = true; m_serviceNetworkResourceAssociationIdentifier = std::move(value); }
-    inline void SetServiceNetworkResourceAssociationIdentifier(const char* value) { m_serviceNetworkResourceAssociationIdentifierHasBeenSet = true; m_serviceNetworkResourceAssociationIdentifier.assign(value); }
-    inline DeleteServiceNetworkResourceAssociationRequest& WithServiceNetworkResourceAssociationIdentifier(const Aws::String& value) { SetServiceNetworkResourceAssociationIdentifier(value); return *this;}
-    inline DeleteServiceNetworkResourceAssociationRequest& WithServiceNetworkResourceAssociationIdentifier(Aws::String&& value) { SetServiceNetworkResourceAssociationIdentifier(std::move(value)); return *this;}
-    inline DeleteServiceNetworkResourceAssociationRequest& WithServiceNetworkResourceAssociationIdentifier(const char* value) { SetServiceNetworkResourceAssociationIdentifier(value); return *this;}
+    template<typename ServiceNetworkResourceAssociationIdentifierT = Aws::String>
+    void SetServiceNetworkResourceAssociationIdentifier(ServiceNetworkResourceAssociationIdentifierT&& value) { m_serviceNetworkResourceAssociationIdentifierHasBeenSet = true; m_serviceNetworkResourceAssociationIdentifier = std::forward<ServiceNetworkResourceAssociationIdentifierT>(value); }
+    template<typename ServiceNetworkResourceAssociationIdentifierT = Aws::String>
+    DeleteServiceNetworkResourceAssociationRequest& WithServiceNetworkResourceAssociationIdentifier(ServiceNetworkResourceAssociationIdentifierT&& value) { SetServiceNetworkResourceAssociationIdentifier(std::forward<ServiceNetworkResourceAssociationIdentifierT>(value)); return *this;}
     ///@}
   private:
 

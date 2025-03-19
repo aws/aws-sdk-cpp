@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-VideoSelectorColorSpaceSettings::VideoSelectorColorSpaceSettings() : 
-    m_hdr10SettingsHasBeenSet(false)
-{
-}
-
 VideoSelectorColorSpaceSettings::VideoSelectorColorSpaceSettings(JsonView jsonValue)
-  : VideoSelectorColorSpaceSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ VideoSelectorColorSpaceSettings& VideoSelectorColorSpaceSettings::operator =(Jso
   if(jsonValue.ValueExists("hdr10Settings"))
   {
     m_hdr10Settings = jsonValue.GetObject("hdr10Settings");
-
     m_hdr10SettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

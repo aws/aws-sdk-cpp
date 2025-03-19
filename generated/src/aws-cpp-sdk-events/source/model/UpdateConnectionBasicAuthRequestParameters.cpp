@@ -18,14 +18,7 @@ namespace CloudWatchEvents
 namespace Model
 {
 
-UpdateConnectionBasicAuthRequestParameters::UpdateConnectionBasicAuthRequestParameters() : 
-    m_usernameHasBeenSet(false),
-    m_passwordHasBeenSet(false)
-{
-}
-
 UpdateConnectionBasicAuthRequestParameters::UpdateConnectionBasicAuthRequestParameters(JsonView jsonValue)
-  : UpdateConnectionBasicAuthRequestParameters()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UpdateConnectionBasicAuthRequestParameters& UpdateConnectionBasicAuthRequestPara
   if(jsonValue.ValueExists("Username"))
   {
     m_username = jsonValue.GetString("Username");
-
     m_usernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Password"))
   {
     m_password = jsonValue.GetString("Password");
-
     m_passwordHasBeenSet = true;
   }
-
   return *this;
 }
 

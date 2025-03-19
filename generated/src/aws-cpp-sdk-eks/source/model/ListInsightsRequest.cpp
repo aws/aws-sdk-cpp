@@ -12,15 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListInsightsRequest::ListInsightsRequest() : 
-    m_clusterNameHasBeenSet(false),
-    m_filterHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListInsightsRequest::SerializePayload() const
 {
   JsonValue payload;

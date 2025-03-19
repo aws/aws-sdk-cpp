@@ -18,21 +18,7 @@ namespace MarketplaceCatalog
 namespace Model
 {
 
-OfferSummary::OfferSummary() : 
-    m_nameHasBeenSet(false),
-    m_productIdHasBeenSet(false),
-    m_resaleAuthorizationIdHasBeenSet(false),
-    m_releaseDateHasBeenSet(false),
-    m_availabilityEndDateHasBeenSet(false),
-    m_buyerAccountsHasBeenSet(false),
-    m_state(OfferStateString::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_targetingHasBeenSet(false)
-{
-}
-
 OfferSummary::OfferSummary(JsonView jsonValue)
-  : OfferSummary()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ OfferSummary& OfferSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductId"))
   {
     m_productId = jsonValue.GetString("ProductId");
-
     m_productIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResaleAuthorizationId"))
   {
     m_resaleAuthorizationId = jsonValue.GetString("ResaleAuthorizationId");
-
     m_resaleAuthorizationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReleaseDate"))
   {
     m_releaseDate = jsonValue.GetString("ReleaseDate");
-
     m_releaseDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityEndDate"))
   {
     m_availabilityEndDate = jsonValue.GetString("AvailabilityEndDate");
-
     m_availabilityEndDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BuyerAccounts"))
   {
     Aws::Utils::Array<JsonView> buyerAccountsJsonList = jsonValue.GetArray("BuyerAccounts");
@@ -83,14 +59,11 @@ OfferSummary& OfferSummary::operator =(JsonView jsonValue)
     }
     m_buyerAccountsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = OfferStateStringMapper::GetOfferStateStringForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Targeting"))
   {
     Aws::Utils::Array<JsonView> targetingJsonList = jsonValue.GetArray("Targeting");
@@ -100,7 +73,6 @@ OfferSummary& OfferSummary::operator =(JsonView jsonValue)
     }
     m_targetingHasBeenSet = true;
   }
-
   return *this;
 }
 

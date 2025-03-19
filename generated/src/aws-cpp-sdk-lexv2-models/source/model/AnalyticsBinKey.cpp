@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-AnalyticsBinKey::AnalyticsBinKey() : 
-    m_name(AnalyticsBinByName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false)
-{
-}
-
 AnalyticsBinKey::AnalyticsBinKey(JsonView jsonValue)
-  : AnalyticsBinKey()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AnalyticsBinKey& AnalyticsBinKey::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = AnalyticsBinByNameMapper::GetAnalyticsBinByNameForName(jsonValue.GetString("name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetInt64("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

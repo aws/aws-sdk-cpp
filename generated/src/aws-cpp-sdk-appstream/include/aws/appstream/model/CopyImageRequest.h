@@ -21,7 +21,7 @@ namespace Model
   class CopyImageRequest : public AppStreamRequest
   {
   public:
-    AWS_APPSTREAM_API CopyImageRequest();
+    AWS_APPSTREAM_API CopyImageRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p>The name of the image to copy.</p>
      */
-    inline const Aws::String& GetSourceImageName() const{ return m_sourceImageName; }
+    inline const Aws::String& GetSourceImageName() const { return m_sourceImageName; }
     inline bool SourceImageNameHasBeenSet() const { return m_sourceImageNameHasBeenSet; }
-    inline void SetSourceImageName(const Aws::String& value) { m_sourceImageNameHasBeenSet = true; m_sourceImageName = value; }
-    inline void SetSourceImageName(Aws::String&& value) { m_sourceImageNameHasBeenSet = true; m_sourceImageName = std::move(value); }
-    inline void SetSourceImageName(const char* value) { m_sourceImageNameHasBeenSet = true; m_sourceImageName.assign(value); }
-    inline CopyImageRequest& WithSourceImageName(const Aws::String& value) { SetSourceImageName(value); return *this;}
-    inline CopyImageRequest& WithSourceImageName(Aws::String&& value) { SetSourceImageName(std::move(value)); return *this;}
-    inline CopyImageRequest& WithSourceImageName(const char* value) { SetSourceImageName(value); return *this;}
+    template<typename SourceImageNameT = Aws::String>
+    void SetSourceImageName(SourceImageNameT&& value) { m_sourceImageNameHasBeenSet = true; m_sourceImageName = std::forward<SourceImageNameT>(value); }
+    template<typename SourceImageNameT = Aws::String>
+    CopyImageRequest& WithSourceImageName(SourceImageNameT&& value) { SetSourceImageName(std::forward<SourceImageNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name that the image will have when it is copied to the destination.</p>
      */
-    inline const Aws::String& GetDestinationImageName() const{ return m_destinationImageName; }
+    inline const Aws::String& GetDestinationImageName() const { return m_destinationImageName; }
     inline bool DestinationImageNameHasBeenSet() const { return m_destinationImageNameHasBeenSet; }
-    inline void SetDestinationImageName(const Aws::String& value) { m_destinationImageNameHasBeenSet = true; m_destinationImageName = value; }
-    inline void SetDestinationImageName(Aws::String&& value) { m_destinationImageNameHasBeenSet = true; m_destinationImageName = std::move(value); }
-    inline void SetDestinationImageName(const char* value) { m_destinationImageNameHasBeenSet = true; m_destinationImageName.assign(value); }
-    inline CopyImageRequest& WithDestinationImageName(const Aws::String& value) { SetDestinationImageName(value); return *this;}
-    inline CopyImageRequest& WithDestinationImageName(Aws::String&& value) { SetDestinationImageName(std::move(value)); return *this;}
-    inline CopyImageRequest& WithDestinationImageName(const char* value) { SetDestinationImageName(value); return *this;}
+    template<typename DestinationImageNameT = Aws::String>
+    void SetDestinationImageName(DestinationImageNameT&& value) { m_destinationImageNameHasBeenSet = true; m_destinationImageName = std::forward<DestinationImageNameT>(value); }
+    template<typename DestinationImageNameT = Aws::String>
+    CopyImageRequest& WithDestinationImageName(DestinationImageNameT&& value) { SetDestinationImageName(std::forward<DestinationImageNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,14 +63,12 @@ namespace Model
      * <p>The destination region to which the image will be copied. This parameter is
      * required, even if you are copying an image within the same region.</p>
      */
-    inline const Aws::String& GetDestinationRegion() const{ return m_destinationRegion; }
+    inline const Aws::String& GetDestinationRegion() const { return m_destinationRegion; }
     inline bool DestinationRegionHasBeenSet() const { return m_destinationRegionHasBeenSet; }
-    inline void SetDestinationRegion(const Aws::String& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = value; }
-    inline void SetDestinationRegion(Aws::String&& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = std::move(value); }
-    inline void SetDestinationRegion(const char* value) { m_destinationRegionHasBeenSet = true; m_destinationRegion.assign(value); }
-    inline CopyImageRequest& WithDestinationRegion(const Aws::String& value) { SetDestinationRegion(value); return *this;}
-    inline CopyImageRequest& WithDestinationRegion(Aws::String&& value) { SetDestinationRegion(std::move(value)); return *this;}
-    inline CopyImageRequest& WithDestinationRegion(const char* value) { SetDestinationRegion(value); return *this;}
+    template<typename DestinationRegionT = Aws::String>
+    void SetDestinationRegion(DestinationRegionT&& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = std::forward<DestinationRegionT>(value); }
+    template<typename DestinationRegionT = Aws::String>
+    CopyImageRequest& WithDestinationRegion(DestinationRegionT&& value) { SetDestinationRegion(std::forward<DestinationRegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +76,12 @@ namespace Model
      * <p>The description that the image will have when it is copied to the
      * destination.</p>
      */
-    inline const Aws::String& GetDestinationImageDescription() const{ return m_destinationImageDescription; }
+    inline const Aws::String& GetDestinationImageDescription() const { return m_destinationImageDescription; }
     inline bool DestinationImageDescriptionHasBeenSet() const { return m_destinationImageDescriptionHasBeenSet; }
-    inline void SetDestinationImageDescription(const Aws::String& value) { m_destinationImageDescriptionHasBeenSet = true; m_destinationImageDescription = value; }
-    inline void SetDestinationImageDescription(Aws::String&& value) { m_destinationImageDescriptionHasBeenSet = true; m_destinationImageDescription = std::move(value); }
-    inline void SetDestinationImageDescription(const char* value) { m_destinationImageDescriptionHasBeenSet = true; m_destinationImageDescription.assign(value); }
-    inline CopyImageRequest& WithDestinationImageDescription(const Aws::String& value) { SetDestinationImageDescription(value); return *this;}
-    inline CopyImageRequest& WithDestinationImageDescription(Aws::String&& value) { SetDestinationImageDescription(std::move(value)); return *this;}
-    inline CopyImageRequest& WithDestinationImageDescription(const char* value) { SetDestinationImageDescription(value); return *this;}
+    template<typename DestinationImageDescriptionT = Aws::String>
+    void SetDestinationImageDescription(DestinationImageDescriptionT&& value) { m_destinationImageDescriptionHasBeenSet = true; m_destinationImageDescription = std::forward<DestinationImageDescriptionT>(value); }
+    template<typename DestinationImageDescriptionT = Aws::String>
+    CopyImageRequest& WithDestinationImageDescription(DestinationImageDescriptionT&& value) { SetDestinationImageDescription(std::forward<DestinationImageDescriptionT>(value)); return *this;}
     ///@}
   private:
 

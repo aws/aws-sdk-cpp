@@ -10,34 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-CreateChangeSetRequest::CreateChangeSetRequest() : 
-    m_stackNameHasBeenSet(false),
-    m_templateBodyHasBeenSet(false),
-    m_templateURLHasBeenSet(false),
-    m_usePreviousTemplate(false),
-    m_usePreviousTemplateHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_capabilitiesHasBeenSet(false),
-    m_resourceTypesHasBeenSet(false),
-    m_roleARNHasBeenSet(false),
-    m_rollbackConfigurationHasBeenSet(false),
-    m_notificationARNsHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_changeSetNameHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_changeSetType(ChangeSetType::NOT_SET),
-    m_changeSetTypeHasBeenSet(false),
-    m_resourcesToImportHasBeenSet(false),
-    m_includeNestedStacks(false),
-    m_includeNestedStacksHasBeenSet(false),
-    m_onStackFailure(OnStackFailure::NOT_SET),
-    m_onStackFailureHasBeenSet(false),
-    m_importExistingResources(false),
-    m_importExistingResourcesHasBeenSet(false)
-{
-}
-
 Aws::String CreateChangeSetRequest::SerializePayload() const
 {
   Aws::StringStream ss;

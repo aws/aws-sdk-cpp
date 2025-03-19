@@ -25,7 +25,7 @@ namespace Model
   class PutEmailIdentityFeedbackAttributesRequest : public PinpointEmailRequest
   {
   public:
-    AWS_PINPOINTEMAIL_API PutEmailIdentityFeedbackAttributesRequest();
+    AWS_PINPOINTEMAIL_API PutEmailIdentityFeedbackAttributesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The email identity that you want to configure bounce and complaint feedback
      * forwarding for.</p>
      */
-    inline const Aws::String& GetEmailIdentity() const{ return m_emailIdentity; }
+    inline const Aws::String& GetEmailIdentity() const { return m_emailIdentity; }
     inline bool EmailIdentityHasBeenSet() const { return m_emailIdentityHasBeenSet; }
-    inline void SetEmailIdentity(const Aws::String& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = value; }
-    inline void SetEmailIdentity(Aws::String&& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = std::move(value); }
-    inline void SetEmailIdentity(const char* value) { m_emailIdentityHasBeenSet = true; m_emailIdentity.assign(value); }
-    inline PutEmailIdentityFeedbackAttributesRequest& WithEmailIdentity(const Aws::String& value) { SetEmailIdentity(value); return *this;}
-    inline PutEmailIdentityFeedbackAttributesRequest& WithEmailIdentity(Aws::String&& value) { SetEmailIdentity(std::move(value)); return *this;}
-    inline PutEmailIdentityFeedbackAttributesRequest& WithEmailIdentity(const char* value) { SetEmailIdentity(value); return *this;}
+    template<typename EmailIdentityT = Aws::String>
+    void SetEmailIdentity(EmailIdentityT&& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = std::forward<EmailIdentityT>(value); }
+    template<typename EmailIdentityT = Aws::String>
+    PutEmailIdentityFeedbackAttributesRequest& WithEmailIdentity(EmailIdentityT&& value) { SetEmailIdentity(std::forward<EmailIdentityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,7 +62,7 @@ namespace Model
      * bounce or complaint notifications, Amazon Pinpoint sends an email notification
      * when these events occur (even if this setting is disabled).</p>
      */
-    inline bool GetEmailForwardingEnabled() const{ return m_emailForwardingEnabled; }
+    inline bool GetEmailForwardingEnabled() const { return m_emailForwardingEnabled; }
     inline bool EmailForwardingEnabledHasBeenSet() const { return m_emailForwardingEnabledHasBeenSet; }
     inline void SetEmailForwardingEnabled(bool value) { m_emailForwardingEnabledHasBeenSet = true; m_emailForwardingEnabled = value; }
     inline PutEmailIdentityFeedbackAttributesRequest& WithEmailForwardingEnabled(bool value) { SetEmailForwardingEnabled(value); return *this;}
@@ -74,7 +72,7 @@ namespace Model
     Aws::String m_emailIdentity;
     bool m_emailIdentityHasBeenSet = false;
 
-    bool m_emailForwardingEnabled;
+    bool m_emailForwardingEnabled{false};
     bool m_emailForwardingEnabledHasBeenSet = false;
   };
 

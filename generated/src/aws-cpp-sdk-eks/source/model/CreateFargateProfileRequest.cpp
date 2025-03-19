@@ -12,18 +12,6 @@ using namespace Aws::EKS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFargateProfileRequest::CreateFargateProfileRequest() : 
-    m_fargateProfileNameHasBeenSet(false),
-    m_clusterNameHasBeenSet(false),
-    m_podExecutionRoleArnHasBeenSet(false),
-    m_subnetsHasBeenSet(false),
-    m_selectorsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateFargateProfileRequest::SerializePayload() const
 {
   JsonValue payload;

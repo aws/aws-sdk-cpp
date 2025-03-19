@@ -36,7 +36,7 @@ namespace Model
   class GetCredentialReportResult
   {
   public:
-    AWS_IAM_API GetCredentialReportResult();
+    AWS_IAM_API GetCredentialReportResult() = default;
     AWS_IAM_API GetCredentialReportResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_IAM_API GetCredentialReportResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -45,22 +45,20 @@ namespace Model
     /**
      * <p>Contains the credential report. The report is Base64-encoded.</p>
      */
-    inline const Aws::Utils::ByteBuffer& GetContent() const{ return m_content; }
-    inline void SetContent(const Aws::Utils::ByteBuffer& value) { m_content = value; }
-    inline void SetContent(Aws::Utils::ByteBuffer&& value) { m_content = std::move(value); }
-    inline GetCredentialReportResult& WithContent(const Aws::Utils::ByteBuffer& value) { SetContent(value); return *this;}
-    inline GetCredentialReportResult& WithContent(Aws::Utils::ByteBuffer&& value) { SetContent(std::move(value)); return *this;}
+    inline const Aws::Utils::ByteBuffer& GetContent() const { return m_content; }
+    template<typename ContentT = Aws::Utils::ByteBuffer>
+    void SetContent(ContentT&& value) { m_contentHasBeenSet = true; m_content = std::forward<ContentT>(value); }
+    template<typename ContentT = Aws::Utils::ByteBuffer>
+    GetCredentialReportResult& WithContent(ContentT&& value) { SetContent(std::forward<ContentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The format (MIME type) of the credential report.</p>
      */
-    inline const ReportFormatType& GetReportFormat() const{ return m_reportFormat; }
-    inline void SetReportFormat(const ReportFormatType& value) { m_reportFormat = value; }
-    inline void SetReportFormat(ReportFormatType&& value) { m_reportFormat = std::move(value); }
-    inline GetCredentialReportResult& WithReportFormat(const ReportFormatType& value) { SetReportFormat(value); return *this;}
-    inline GetCredentialReportResult& WithReportFormat(ReportFormatType&& value) { SetReportFormat(std::move(value)); return *this;}
+    inline ReportFormatType GetReportFormat() const { return m_reportFormat; }
+    inline void SetReportFormat(ReportFormatType value) { m_reportFormatHasBeenSet = true; m_reportFormat = value; }
+    inline GetCredentialReportResult& WithReportFormat(ReportFormatType value) { SetReportFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -68,30 +66,34 @@ namespace Model
      * <p> The date and time when the credential report was created, in <a
      * href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>.</p>
      */
-    inline const Aws::Utils::DateTime& GetGeneratedTime() const{ return m_generatedTime; }
-    inline void SetGeneratedTime(const Aws::Utils::DateTime& value) { m_generatedTime = value; }
-    inline void SetGeneratedTime(Aws::Utils::DateTime&& value) { m_generatedTime = std::move(value); }
-    inline GetCredentialReportResult& WithGeneratedTime(const Aws::Utils::DateTime& value) { SetGeneratedTime(value); return *this;}
-    inline GetCredentialReportResult& WithGeneratedTime(Aws::Utils::DateTime&& value) { SetGeneratedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetGeneratedTime() const { return m_generatedTime; }
+    template<typename GeneratedTimeT = Aws::Utils::DateTime>
+    void SetGeneratedTime(GeneratedTimeT&& value) { m_generatedTimeHasBeenSet = true; m_generatedTime = std::forward<GeneratedTimeT>(value); }
+    template<typename GeneratedTimeT = Aws::Utils::DateTime>
+    GetCredentialReportResult& WithGeneratedTime(GeneratedTimeT&& value) { SetGeneratedTime(std::forward<GeneratedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetCredentialReportResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetCredentialReportResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetCredentialReportResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_content;
+    Aws::Utils::ByteBuffer m_content{};
+    bool m_contentHasBeenSet = false;
 
-    ReportFormatType m_reportFormat;
+    ReportFormatType m_reportFormat{ReportFormatType::NOT_SET};
+    bool m_reportFormatHasBeenSet = false;
 
-    Aws::Utils::DateTime m_generatedTime;
+    Aws::Utils::DateTime m_generatedTime{};
+    bool m_generatedTimeHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

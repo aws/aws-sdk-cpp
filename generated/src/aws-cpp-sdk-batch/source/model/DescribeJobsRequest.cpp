@@ -12,11 +12,6 @@ using namespace Aws::Batch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeJobsRequest::DescribeJobsRequest() : 
-    m_jobsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeJobsRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -35,7 +35,7 @@ namespace Model
   class CategoryFilterConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API CategoryFilterConfiguration();
+    AWS_QUICKSIGHT_API CategoryFilterConfiguration() = default;
     AWS_QUICKSIGHT_API CategoryFilterConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API CategoryFilterConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,12 @@ namespace Model
      * <p>A list of filter configurations. In the Amazon QuickSight console, this
      * filter type is called a filter list.</p>
      */
-    inline const FilterListConfiguration& GetFilterListConfiguration() const{ return m_filterListConfiguration; }
+    inline const FilterListConfiguration& GetFilterListConfiguration() const { return m_filterListConfiguration; }
     inline bool FilterListConfigurationHasBeenSet() const { return m_filterListConfigurationHasBeenSet; }
-    inline void SetFilterListConfiguration(const FilterListConfiguration& value) { m_filterListConfigurationHasBeenSet = true; m_filterListConfiguration = value; }
-    inline void SetFilterListConfiguration(FilterListConfiguration&& value) { m_filterListConfigurationHasBeenSet = true; m_filterListConfiguration = std::move(value); }
-    inline CategoryFilterConfiguration& WithFilterListConfiguration(const FilterListConfiguration& value) { SetFilterListConfiguration(value); return *this;}
-    inline CategoryFilterConfiguration& WithFilterListConfiguration(FilterListConfiguration&& value) { SetFilterListConfiguration(std::move(value)); return *this;}
+    template<typename FilterListConfigurationT = FilterListConfiguration>
+    void SetFilterListConfiguration(FilterListConfigurationT&& value) { m_filterListConfigurationHasBeenSet = true; m_filterListConfiguration = std::forward<FilterListConfigurationT>(value); }
+    template<typename FilterListConfigurationT = FilterListConfiguration>
+    CategoryFilterConfiguration& WithFilterListConfiguration(FilterListConfigurationT&& value) { SetFilterListConfiguration(std::forward<FilterListConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,12 +59,12 @@ namespace Model
      * <p>A list of custom filter values. In the Amazon QuickSight console, this filter
      * type is called a custom filter list.</p>
      */
-    inline const CustomFilterListConfiguration& GetCustomFilterListConfiguration() const{ return m_customFilterListConfiguration; }
+    inline const CustomFilterListConfiguration& GetCustomFilterListConfiguration() const { return m_customFilterListConfiguration; }
     inline bool CustomFilterListConfigurationHasBeenSet() const { return m_customFilterListConfigurationHasBeenSet; }
-    inline void SetCustomFilterListConfiguration(const CustomFilterListConfiguration& value) { m_customFilterListConfigurationHasBeenSet = true; m_customFilterListConfiguration = value; }
-    inline void SetCustomFilterListConfiguration(CustomFilterListConfiguration&& value) { m_customFilterListConfigurationHasBeenSet = true; m_customFilterListConfiguration = std::move(value); }
-    inline CategoryFilterConfiguration& WithCustomFilterListConfiguration(const CustomFilterListConfiguration& value) { SetCustomFilterListConfiguration(value); return *this;}
-    inline CategoryFilterConfiguration& WithCustomFilterListConfiguration(CustomFilterListConfiguration&& value) { SetCustomFilterListConfiguration(std::move(value)); return *this;}
+    template<typename CustomFilterListConfigurationT = CustomFilterListConfiguration>
+    void SetCustomFilterListConfiguration(CustomFilterListConfigurationT&& value) { m_customFilterListConfigurationHasBeenSet = true; m_customFilterListConfiguration = std::forward<CustomFilterListConfigurationT>(value); }
+    template<typename CustomFilterListConfigurationT = CustomFilterListConfiguration>
+    CategoryFilterConfiguration& WithCustomFilterListConfiguration(CustomFilterListConfigurationT&& value) { SetCustomFilterListConfiguration(std::forward<CustomFilterListConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,12 +72,12 @@ namespace Model
      * <p>A custom filter that filters based on a single value. This filter can be
      * partially matched.</p>
      */
-    inline const CustomFilterConfiguration& GetCustomFilterConfiguration() const{ return m_customFilterConfiguration; }
+    inline const CustomFilterConfiguration& GetCustomFilterConfiguration() const { return m_customFilterConfiguration; }
     inline bool CustomFilterConfigurationHasBeenSet() const { return m_customFilterConfigurationHasBeenSet; }
-    inline void SetCustomFilterConfiguration(const CustomFilterConfiguration& value) { m_customFilterConfigurationHasBeenSet = true; m_customFilterConfiguration = value; }
-    inline void SetCustomFilterConfiguration(CustomFilterConfiguration&& value) { m_customFilterConfigurationHasBeenSet = true; m_customFilterConfiguration = std::move(value); }
-    inline CategoryFilterConfiguration& WithCustomFilterConfiguration(const CustomFilterConfiguration& value) { SetCustomFilterConfiguration(value); return *this;}
-    inline CategoryFilterConfiguration& WithCustomFilterConfiguration(CustomFilterConfiguration&& value) { SetCustomFilterConfiguration(std::move(value)); return *this;}
+    template<typename CustomFilterConfigurationT = CustomFilterConfiguration>
+    void SetCustomFilterConfiguration(CustomFilterConfigurationT&& value) { m_customFilterConfigurationHasBeenSet = true; m_customFilterConfiguration = std::forward<CustomFilterConfigurationT>(value); }
+    template<typename CustomFilterConfigurationT = CustomFilterConfiguration>
+    CategoryFilterConfiguration& WithCustomFilterConfiguration(CustomFilterConfigurationT&& value) { SetCustomFilterConfiguration(std::forward<CustomFilterConfigurationT>(value)); return *this;}
     ///@}
   private:
 

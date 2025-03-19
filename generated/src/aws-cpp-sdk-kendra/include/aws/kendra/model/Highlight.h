@@ -32,7 +32,7 @@ namespace Model
   class Highlight
   {
   public:
-    AWS_KENDRA_API Highlight();
+    AWS_KENDRA_API Highlight() = default;
     AWS_KENDRA_API Highlight(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Highlight& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KENDRA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
      * <p>The zero-based location in the response string where the highlight
      * starts.</p>
      */
-    inline int GetBeginOffset() const{ return m_beginOffset; }
+    inline int GetBeginOffset() const { return m_beginOffset; }
     inline bool BeginOffsetHasBeenSet() const { return m_beginOffsetHasBeenSet; }
     inline void SetBeginOffset(int value) { m_beginOffsetHasBeenSet = true; m_beginOffset = value; }
     inline Highlight& WithBeginOffset(int value) { SetBeginOffset(value); return *this;}
@@ -53,7 +53,7 @@ namespace Model
     /**
      * <p>The zero-based location in the response string where the highlight ends.</p>
      */
-    inline int GetEndOffset() const{ return m_endOffset; }
+    inline int GetEndOffset() const { return m_endOffset; }
     inline bool EndOffsetHasBeenSet() const { return m_endOffsetHasBeenSet; }
     inline void SetEndOffset(int value) { m_endOffsetHasBeenSet = true; m_endOffset = value; }
     inline Highlight& WithEndOffset(int value) { SetEndOffset(value); return *this;}
@@ -64,7 +64,7 @@ namespace Model
      * <p>Indicates whether the response is the best response. True if this is the best
      * response; otherwise, false.</p>
      */
-    inline bool GetTopAnswer() const{ return m_topAnswer; }
+    inline bool GetTopAnswer() const { return m_topAnswer; }
     inline bool TopAnswerHasBeenSet() const { return m_topAnswerHasBeenSet; }
     inline void SetTopAnswer(bool value) { m_topAnswerHasBeenSet = true; m_topAnswer = value; }
     inline Highlight& WithTopAnswer(bool value) { SetTopAnswer(value); return *this;}
@@ -74,25 +74,23 @@ namespace Model
     /**
      * <p>The highlight type. </p>
      */
-    inline const HighlightType& GetType() const{ return m_type; }
+    inline HighlightType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const HighlightType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(HighlightType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Highlight& WithType(const HighlightType& value) { SetType(value); return *this;}
-    inline Highlight& WithType(HighlightType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(HighlightType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Highlight& WithType(HighlightType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    int m_beginOffset;
+    int m_beginOffset{0};
     bool m_beginOffsetHasBeenSet = false;
 
-    int m_endOffset;
+    int m_endOffset{0};
     bool m_endOffsetHasBeenSet = false;
 
-    bool m_topAnswer;
+    bool m_topAnswer{false};
     bool m_topAnswerHasBeenSet = false;
 
-    HighlightType m_type;
+    HighlightType m_type{HighlightType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetResourcePositionRequest::GetResourcePositionRequest() : 
-    m_resourceIdentifierHasBeenSet(false),
-    m_resourceType(PositionResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 Aws::String GetResourcePositionRequest::SerializePayload() const
 {
   return {};

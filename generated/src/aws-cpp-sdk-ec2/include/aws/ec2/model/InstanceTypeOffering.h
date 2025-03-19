@@ -33,7 +33,7 @@ namespace Model
   class InstanceTypeOffering
   {
   public:
-    AWS_EC2_API InstanceTypeOffering();
+    AWS_EC2_API InstanceTypeOffering() = default;
     AWS_EC2_API InstanceTypeOffering(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API InstanceTypeOffering& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,24 +47,20 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * types</a> in the <i>Amazon EC2 User Guide</i>.</p>
      */
-    inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
+    inline InstanceType GetInstanceType() const { return m_instanceType; }
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
-    inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
-    inline void SetInstanceType(InstanceType&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
-    inline InstanceTypeOffering& WithInstanceType(const InstanceType& value) { SetInstanceType(value); return *this;}
-    inline InstanceTypeOffering& WithInstanceType(InstanceType&& value) { SetInstanceType(std::move(value)); return *this;}
+    inline void SetInstanceType(InstanceType value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+    inline InstanceTypeOffering& WithInstanceType(InstanceType value) { SetInstanceType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The location type.</p>
      */
-    inline const LocationType& GetLocationType() const{ return m_locationType; }
+    inline LocationType GetLocationType() const { return m_locationType; }
     inline bool LocationTypeHasBeenSet() const { return m_locationTypeHasBeenSet; }
-    inline void SetLocationType(const LocationType& value) { m_locationTypeHasBeenSet = true; m_locationType = value; }
-    inline void SetLocationType(LocationType&& value) { m_locationTypeHasBeenSet = true; m_locationType = std::move(value); }
-    inline InstanceTypeOffering& WithLocationType(const LocationType& value) { SetLocationType(value); return *this;}
-    inline InstanceTypeOffering& WithLocationType(LocationType&& value) { SetLocationType(std::move(value)); return *this;}
+    inline void SetLocationType(LocationType value) { m_locationTypeHasBeenSet = true; m_locationType = value; }
+    inline InstanceTypeOffering& WithLocationType(LocationType value) { SetLocationType(value); return *this;}
     ///@}
 
     ///@{
@@ -73,21 +69,19 @@ namespace Model
      * example, if the location type is <code>region</code>, the location is the Region
      * code (for example, <code>us-east-2</code>.)</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline InstanceTypeOffering& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline InstanceTypeOffering& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline InstanceTypeOffering& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    InstanceTypeOffering& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
   private:
 
-    InstanceType m_instanceType;
+    InstanceType m_instanceType{InstanceType::NOT_SET};
     bool m_instanceTypeHasBeenSet = false;
 
-    LocationType m_locationType;
+    LocationType m_locationType{LocationType::NOT_SET};
     bool m_locationTypeHasBeenSet = false;
 
     Aws::String m_location;

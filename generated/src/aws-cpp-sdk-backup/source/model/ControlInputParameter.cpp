@@ -18,14 +18,7 @@ namespace Backup
 namespace Model
 {
 
-ControlInputParameter::ControlInputParameter() : 
-    m_parameterNameHasBeenSet(false),
-    m_parameterValueHasBeenSet(false)
-{
-}
-
 ControlInputParameter::ControlInputParameter(JsonView jsonValue)
-  : ControlInputParameter()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ControlInputParameter& ControlInputParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ParameterName"))
   {
     m_parameterName = jsonValue.GetString("ParameterName");
-
     m_parameterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParameterValue"))
   {
     m_parameterValue = jsonValue.GetString("ParameterValue");
-
     m_parameterValueHasBeenSet = true;
   }
-
   return *this;
 }
 

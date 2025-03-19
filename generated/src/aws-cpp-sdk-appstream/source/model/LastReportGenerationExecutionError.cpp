@@ -18,15 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-LastReportGenerationExecutionError::LastReportGenerationExecutionError() : 
-    m_errorCode(UsageReportExecutionErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 LastReportGenerationExecutionError::LastReportGenerationExecutionError(JsonView jsonValue)
-  : LastReportGenerationExecutionError()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LastReportGenerationExecutionError& LastReportGenerationExecutionError::operator
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = UsageReportExecutionErrorCodeMapper::GetUsageReportExecutionErrorCodeForName(jsonValue.GetString("ErrorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

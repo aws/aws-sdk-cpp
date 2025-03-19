@@ -10,18 +10,6 @@
 using namespace Aws::ElastiCache::Model;
 using namespace Aws::Utils;
 
-DescribeCacheClustersRequest::DescribeCacheClustersRequest() : 
-    m_cacheClusterIdHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_showCacheNodeInfo(false),
-    m_showCacheNodeInfoHasBeenSet(false),
-    m_showCacheClustersNotInReplicationGroups(false),
-    m_showCacheClustersNotInReplicationGroupsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeCacheClustersRequest::SerializePayload() const
 {
   Aws::StringStream ss;

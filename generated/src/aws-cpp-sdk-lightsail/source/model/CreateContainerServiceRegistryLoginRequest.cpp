@@ -12,10 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateContainerServiceRegistryLoginRequest::CreateContainerServiceRegistryLoginRequest()
-{
-}
-
 Aws::String CreateContainerServiceRegistryLoginRequest::SerializePayload() const
 {
   return "{}";

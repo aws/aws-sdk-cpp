@@ -39,7 +39,7 @@ namespace Model
   class EcsResourceRequirement
   {
   public:
-    AWS_PIPES_API EcsResourceRequirement();
+    AWS_PIPES_API EcsResourceRequirement() = default;
     AWS_PIPES_API EcsResourceRequirement(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API EcsResourceRequirement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,10 @@ namespace Model
      * <p>The type of resource to assign to a container. The supported values are
      * <code>GPU</code> or <code>InferenceAccelerator</code>.</p>
      */
-    inline const EcsResourceRequirementType& GetType() const{ return m_type; }
+    inline EcsResourceRequirementType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const EcsResourceRequirementType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(EcsResourceRequirementType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline EcsResourceRequirement& WithType(const EcsResourceRequirementType& value) { SetType(value); return *this;}
-    inline EcsResourceRequirement& WithType(EcsResourceRequirementType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(EcsResourceRequirementType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline EcsResourceRequirement& WithType(EcsResourceRequirementType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -69,18 +67,16 @@ namespace Model
      * the <code>deviceName</code> for an InferenceAccelerator specified in a task
      * definition.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline EcsResourceRequirement& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline EcsResourceRequirement& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline EcsResourceRequirement& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    EcsResourceRequirement& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    EcsResourceRequirementType m_type;
+    EcsResourceRequirementType m_type{EcsResourceRequirementType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_value;

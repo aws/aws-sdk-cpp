@@ -12,12 +12,6 @@ using namespace Aws::Greengrass::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateThingRuntimeConfigurationRequest::UpdateThingRuntimeConfigurationRequest() : 
-    m_telemetryConfigurationHasBeenSet(false),
-    m_thingNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateThingRuntimeConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

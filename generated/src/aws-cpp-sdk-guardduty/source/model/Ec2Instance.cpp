@@ -18,21 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-Ec2Instance::Ec2Instance() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_imageDescriptionHasBeenSet(false),
-    m_instanceStateHasBeenSet(false),
-    m_iamInstanceProfileHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_outpostArnHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_productCodesHasBeenSet(false),
-    m_ec2NetworkInterfaceUidsHasBeenSet(false)
-{
-}
-
 Ec2Instance::Ec2Instance(JsonView jsonValue)
-  : Ec2Instance()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ Ec2Instance& Ec2Instance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("availabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("availabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageDescription"))
   {
     m_imageDescription = jsonValue.GetString("imageDescription");
-
     m_imageDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceState"))
   {
     m_instanceState = jsonValue.GetString("instanceState");
-
     m_instanceStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamInstanceProfile"))
   {
     m_iamInstanceProfile = jsonValue.GetObject("IamInstanceProfile");
-
     m_iamInstanceProfileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceType"))
   {
     m_instanceType = jsonValue.GetString("instanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outpostArn"))
   {
     m_outpostArn = jsonValue.GetString("outpostArn");
-
     m_outpostArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platform"))
   {
     m_platform = jsonValue.GetString("platform");
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("productCodes"))
   {
     Aws::Utils::Array<JsonView> productCodesJsonList = jsonValue.GetArray("productCodes");
@@ -97,7 +69,6 @@ Ec2Instance& Ec2Instance::operator =(JsonView jsonValue)
     }
     m_productCodesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ec2NetworkInterfaceUids"))
   {
     Aws::Utils::Array<JsonView> ec2NetworkInterfaceUidsJsonList = jsonValue.GetArray("ec2NetworkInterfaceUids");
@@ -107,7 +78,6 @@ Ec2Instance& Ec2Instance::operator =(JsonView jsonValue)
     }
     m_ec2NetworkInterfaceUidsHasBeenSet = true;
   }
-
   return *this;
 }
 

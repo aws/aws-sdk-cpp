@@ -12,14 +12,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListRetirableGrantsRequest::ListRetirableGrantsRequest() : 
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_retiringPrincipalHasBeenSet(false)
-{
-}
-
 Aws::String ListRetirableGrantsRequest::SerializePayload() const
 {
   JsonValue payload;

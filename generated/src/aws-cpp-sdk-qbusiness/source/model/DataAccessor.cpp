@@ -18,19 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-DataAccessor::DataAccessor() : 
-    m_displayNameHasBeenSet(false),
-    m_dataAccessorIdHasBeenSet(false),
-    m_dataAccessorArnHasBeenSet(false),
-    m_idcApplicationArnHasBeenSet(false),
-    m_principalHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 DataAccessor::DataAccessor(JsonView jsonValue)
-  : DataAccessor()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ DataAccessor& DataAccessor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("displayName"))
   {
     m_displayName = jsonValue.GetString("displayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataAccessorId"))
   {
     m_dataAccessorId = jsonValue.GetString("dataAccessorId");
-
     m_dataAccessorIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataAccessorArn"))
   {
     m_dataAccessorArn = jsonValue.GetString("dataAccessorArn");
-
     m_dataAccessorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("idcApplicationArn"))
   {
     m_idcApplicationArn = jsonValue.GetString("idcApplicationArn");
-
     m_idcApplicationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principal"))
   {
     m_principal = jsonValue.GetString("principal");
-
     m_principalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

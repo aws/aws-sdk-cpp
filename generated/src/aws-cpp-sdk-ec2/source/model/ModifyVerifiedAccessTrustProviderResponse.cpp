@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyVerifiedAccessTrustProviderResponse::ModifyVerifiedAccessTrustProviderResponse()
-{
-}
-
 ModifyVerifiedAccessTrustProviderResponse::ModifyVerifiedAccessTrustProviderResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,6 +38,7 @@ ModifyVerifiedAccessTrustProviderResponse& ModifyVerifiedAccessTrustProviderResp
     if(!verifiedAccessTrustProviderNode.IsNull())
     {
       m_verifiedAccessTrustProvider = verifiedAccessTrustProviderNode;
+      m_verifiedAccessTrustProviderHasBeenSet = true;
     }
   }
 
@@ -50,6 +47,7 @@ ModifyVerifiedAccessTrustProviderResponse& ModifyVerifiedAccessTrustProviderResp
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ModifyVerifiedAccessTrustProviderResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -28,35 +28,35 @@ namespace Model
   class GetEmailTemplateResult
   {
   public:
-    AWS_PINPOINT_API GetEmailTemplateResult();
+    AWS_PINPOINT_API GetEmailTemplateResult() = default;
     AWS_PINPOINT_API GetEmailTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API GetEmailTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const EmailTemplateResponse& GetEmailTemplateResponse() const{ return m_emailTemplateResponse; }
-    inline void SetEmailTemplateResponse(const EmailTemplateResponse& value) { m_emailTemplateResponse = value; }
-    inline void SetEmailTemplateResponse(EmailTemplateResponse&& value) { m_emailTemplateResponse = std::move(value); }
-    inline GetEmailTemplateResult& WithEmailTemplateResponse(const EmailTemplateResponse& value) { SetEmailTemplateResponse(value); return *this;}
-    inline GetEmailTemplateResult& WithEmailTemplateResponse(EmailTemplateResponse&& value) { SetEmailTemplateResponse(std::move(value)); return *this;}
+    inline const EmailTemplateResponse& GetEmailTemplateResponse() const { return m_emailTemplateResponse; }
+    template<typename EmailTemplateResponseT = EmailTemplateResponse>
+    void SetEmailTemplateResponse(EmailTemplateResponseT&& value) { m_emailTemplateResponseHasBeenSet = true; m_emailTemplateResponse = std::forward<EmailTemplateResponseT>(value); }
+    template<typename EmailTemplateResponseT = EmailTemplateResponse>
+    GetEmailTemplateResult& WithEmailTemplateResponse(EmailTemplateResponseT&& value) { SetEmailTemplateResponse(std::forward<EmailTemplateResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetEmailTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetEmailTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetEmailTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetEmailTemplateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     EmailTemplateResponse m_emailTemplateResponse;
+    bool m_emailTemplateResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

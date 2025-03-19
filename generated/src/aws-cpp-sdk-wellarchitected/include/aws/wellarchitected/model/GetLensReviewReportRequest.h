@@ -28,7 +28,7 @@ namespace Model
   class GetLensReviewReportRequest : public WellArchitectedRequest
   {
   public:
-    AWS_WELLARCHITECTED_API GetLensReviewReportRequest();
+    AWS_WELLARCHITECTED_API GetLensReviewReportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,31 +43,27 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
+    inline const Aws::String& GetWorkloadId() const { return m_workloadId; }
     inline bool WorkloadIdHasBeenSet() const { return m_workloadIdHasBeenSet; }
-    inline void SetWorkloadId(const Aws::String& value) { m_workloadIdHasBeenSet = true; m_workloadId = value; }
-    inline void SetWorkloadId(Aws::String&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::move(value); }
-    inline void SetWorkloadId(const char* value) { m_workloadIdHasBeenSet = true; m_workloadId.assign(value); }
-    inline GetLensReviewReportRequest& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-    inline GetLensReviewReportRequest& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-    inline GetLensReviewReportRequest& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    template<typename WorkloadIdT = Aws::String>
+    void SetWorkloadId(WorkloadIdT&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::forward<WorkloadIdT>(value); }
+    template<typename WorkloadIdT = Aws::String>
+    GetLensReviewReportRequest& WithWorkloadId(WorkloadIdT&& value) { SetWorkloadId(std::forward<WorkloadIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetLensAlias() const{ return m_lensAlias; }
+    inline const Aws::String& GetLensAlias() const { return m_lensAlias; }
     inline bool LensAliasHasBeenSet() const { return m_lensAliasHasBeenSet; }
-    inline void SetLensAlias(const Aws::String& value) { m_lensAliasHasBeenSet = true; m_lensAlias = value; }
-    inline void SetLensAlias(Aws::String&& value) { m_lensAliasHasBeenSet = true; m_lensAlias = std::move(value); }
-    inline void SetLensAlias(const char* value) { m_lensAliasHasBeenSet = true; m_lensAlias.assign(value); }
-    inline GetLensReviewReportRequest& WithLensAlias(const Aws::String& value) { SetLensAlias(value); return *this;}
-    inline GetLensReviewReportRequest& WithLensAlias(Aws::String&& value) { SetLensAlias(std::move(value)); return *this;}
-    inline GetLensReviewReportRequest& WithLensAlias(const char* value) { SetLensAlias(value); return *this;}
+    template<typename LensAliasT = Aws::String>
+    void SetLensAlias(LensAliasT&& value) { m_lensAliasHasBeenSet = true; m_lensAlias = std::forward<LensAliasT>(value); }
+    template<typename LensAliasT = Aws::String>
+    GetLensReviewReportRequest& WithLensAlias(LensAliasT&& value) { SetLensAlias(std::forward<LensAliasT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline int GetMilestoneNumber() const{ return m_milestoneNumber; }
+    inline int GetMilestoneNumber() const { return m_milestoneNumber; }
     inline bool MilestoneNumberHasBeenSet() const { return m_milestoneNumberHasBeenSet; }
     inline void SetMilestoneNumber(int value) { m_milestoneNumberHasBeenSet = true; m_milestoneNumber = value; }
     inline GetLensReviewReportRequest& WithMilestoneNumber(int value) { SetMilestoneNumber(value); return *this;}
@@ -80,7 +76,7 @@ namespace Model
     Aws::String m_lensAlias;
     bool m_lensAliasHasBeenSet = false;
 
-    int m_milestoneNumber;
+    int m_milestoneNumber{0};
     bool m_milestoneNumberHasBeenSet = false;
   };
 

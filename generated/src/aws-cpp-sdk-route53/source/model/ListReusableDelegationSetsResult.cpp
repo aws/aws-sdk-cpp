@@ -16,13 +16,7 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListReusableDelegationSetsResult::ListReusableDelegationSetsResult() : 
-    m_isTruncated(false)
-{
-}
-
 ListReusableDelegationSetsResult::ListReusableDelegationSetsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : ListReusableDelegationSetsResult()
 {
   *this = result;
 }
@@ -38,32 +32,38 @@ ListReusableDelegationSetsResult& ListReusableDelegationSetsResult::operator =(c
     if(!delegationSetsNode.IsNull())
     {
       XmlNode delegationSetsMember = delegationSetsNode.FirstChild("DelegationSet");
+      m_delegationSetsHasBeenSet = !delegationSetsMember.IsNull();
       while(!delegationSetsMember.IsNull())
       {
         m_delegationSets.push_back(delegationSetsMember);
         delegationSetsMember = delegationSetsMember.NextNode("DelegationSet");
       }
 
+      m_delegationSetsHasBeenSet = true;
     }
     XmlNode markerNode = resultNode.FirstChild("Marker");
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode isTruncatedNode = resultNode.FirstChild("IsTruncated");
     if(!isTruncatedNode.IsNull())
     {
       m_isTruncated = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(isTruncatedNode.GetText()).c_str()).c_str());
+      m_isTruncatedHasBeenSet = true;
     }
     XmlNode nextMarkerNode = resultNode.FirstChild("NextMarker");
     if(!nextMarkerNode.IsNull())
     {
       m_nextMarker = Aws::Utils::Xml::DecodeEscapedXmlText(nextMarkerNode.GetText());
+      m_nextMarkerHasBeenSet = true;
     }
     XmlNode maxItemsNode = resultNode.FirstChild("MaxItems");
     if(!maxItemsNode.IsNull())
     {
       m_maxItems = Aws::Utils::Xml::DecodeEscapedXmlText(maxItemsNode.GetText());
+      m_maxItemsHasBeenSet = true;
     }
   }
 
@@ -72,6 +72,7 @@ ListReusableDelegationSetsResult& ListReusableDelegationSetsResult::operator =(c
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

@@ -18,18 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-BotLocaleImportSpecification::BotLocaleImportSpecification() : 
-    m_botIdHasBeenSet(false),
-    m_botVersionHasBeenSet(false),
-    m_localeIdHasBeenSet(false),
-    m_nluIntentConfidenceThreshold(0.0),
-    m_nluIntentConfidenceThresholdHasBeenSet(false),
-    m_voiceSettingsHasBeenSet(false)
-{
-}
-
 BotLocaleImportSpecification::BotLocaleImportSpecification(JsonView jsonValue)
-  : BotLocaleImportSpecification()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ BotLocaleImportSpecification& BotLocaleImportSpecification::operator =(JsonView 
   if(jsonValue.ValueExists("botId"))
   {
     m_botId = jsonValue.GetString("botId");
-
     m_botIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("botVersion"))
   {
     m_botVersion = jsonValue.GetString("botVersion");
-
     m_botVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("localeId"))
   {
     m_localeId = jsonValue.GetString("localeId");
-
     m_localeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nluIntentConfidenceThreshold"))
   {
     m_nluIntentConfidenceThreshold = jsonValue.GetDouble("nluIntentConfidenceThreshold");
-
     m_nluIntentConfidenceThresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("voiceSettings"))
   {
     m_voiceSettings = jsonValue.GetObject("voiceSettings");
-
     m_voiceSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

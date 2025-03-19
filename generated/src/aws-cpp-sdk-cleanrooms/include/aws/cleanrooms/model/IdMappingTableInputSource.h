@@ -32,7 +32,7 @@ namespace Model
   class IdMappingTableInputSource
   {
   public:
-    AWS_CLEANROOMS_API IdMappingTableInputSource();
+    AWS_CLEANROOMS_API IdMappingTableInputSource() = default;
     AWS_CLEANROOMS_API IdMappingTableInputSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API IdMappingTableInputSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>The unique identifier of the ID namespace association.</p>
      */
-    inline const Aws::String& GetIdNamespaceAssociationId() const{ return m_idNamespaceAssociationId; }
+    inline const Aws::String& GetIdNamespaceAssociationId() const { return m_idNamespaceAssociationId; }
     inline bool IdNamespaceAssociationIdHasBeenSet() const { return m_idNamespaceAssociationIdHasBeenSet; }
-    inline void SetIdNamespaceAssociationId(const Aws::String& value) { m_idNamespaceAssociationIdHasBeenSet = true; m_idNamespaceAssociationId = value; }
-    inline void SetIdNamespaceAssociationId(Aws::String&& value) { m_idNamespaceAssociationIdHasBeenSet = true; m_idNamespaceAssociationId = std::move(value); }
-    inline void SetIdNamespaceAssociationId(const char* value) { m_idNamespaceAssociationIdHasBeenSet = true; m_idNamespaceAssociationId.assign(value); }
-    inline IdMappingTableInputSource& WithIdNamespaceAssociationId(const Aws::String& value) { SetIdNamespaceAssociationId(value); return *this;}
-    inline IdMappingTableInputSource& WithIdNamespaceAssociationId(Aws::String&& value) { SetIdNamespaceAssociationId(std::move(value)); return *this;}
-    inline IdMappingTableInputSource& WithIdNamespaceAssociationId(const char* value) { SetIdNamespaceAssociationId(value); return *this;}
+    template<typename IdNamespaceAssociationIdT = Aws::String>
+    void SetIdNamespaceAssociationId(IdNamespaceAssociationIdT&& value) { m_idNamespaceAssociationIdHasBeenSet = true; m_idNamespaceAssociationId = std::forward<IdNamespaceAssociationIdT>(value); }
+    template<typename IdNamespaceAssociationIdT = Aws::String>
+    IdMappingTableInputSource& WithIdNamespaceAssociationId(IdNamespaceAssociationIdT&& value) { SetIdNamespaceAssociationId(std::forward<IdNamespaceAssociationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the input source of the ID mapping table.</p>
      */
-    inline const IdNamespaceType& GetType() const{ return m_type; }
+    inline IdNamespaceType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const IdNamespaceType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(IdNamespaceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline IdMappingTableInputSource& WithType(const IdNamespaceType& value) { SetType(value); return *this;}
-    inline IdMappingTableInputSource& WithType(IdNamespaceType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(IdNamespaceType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline IdMappingTableInputSource& WithType(IdNamespaceType value) { SetType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_idNamespaceAssociationId;
     bool m_idNamespaceAssociationIdHasBeenSet = false;
 
-    IdNamespaceType m_type;
+    IdNamespaceType m_type{IdNamespaceType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

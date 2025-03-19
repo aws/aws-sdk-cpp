@@ -18,23 +18,7 @@ namespace DynamoDBStreams
 namespace Model
 {
 
-StreamDescription::StreamDescription() : 
-    m_streamArnHasBeenSet(false),
-    m_streamLabelHasBeenSet(false),
-    m_streamStatus(StreamStatus::NOT_SET),
-    m_streamStatusHasBeenSet(false),
-    m_streamViewType(StreamViewType::NOT_SET),
-    m_streamViewTypeHasBeenSet(false),
-    m_creationRequestDateTimeHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_keySchemaHasBeenSet(false),
-    m_shardsHasBeenSet(false),
-    m_lastEvaluatedShardIdHasBeenSet(false)
-{
-}
-
 StreamDescription::StreamDescription(JsonView jsonValue)
-  : StreamDescription()
 {
   *this = jsonValue;
 }
@@ -44,45 +28,33 @@ StreamDescription& StreamDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StreamArn"))
   {
     m_streamArn = jsonValue.GetString("StreamArn");
-
     m_streamArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamLabel"))
   {
     m_streamLabel = jsonValue.GetString("StreamLabel");
-
     m_streamLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamStatus"))
   {
     m_streamStatus = StreamStatusMapper::GetStreamStatusForName(jsonValue.GetString("StreamStatus"));
-
     m_streamStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamViewType"))
   {
     m_streamViewType = StreamViewTypeMapper::GetStreamViewTypeForName(jsonValue.GetString("StreamViewType"));
-
     m_streamViewTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationRequestDateTime"))
   {
     m_creationRequestDateTime = jsonValue.GetDouble("CreationRequestDateTime");
-
     m_creationRequestDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeySchema"))
   {
     Aws::Utils::Array<JsonView> keySchemaJsonList = jsonValue.GetArray("KeySchema");
@@ -92,7 +64,6 @@ StreamDescription& StreamDescription::operator =(JsonView jsonValue)
     }
     m_keySchemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Shards"))
   {
     Aws::Utils::Array<JsonView> shardsJsonList = jsonValue.GetArray("Shards");
@@ -102,14 +73,11 @@ StreamDescription& StreamDescription::operator =(JsonView jsonValue)
     }
     m_shardsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastEvaluatedShardId"))
   {
     m_lastEvaluatedShardId = jsonValue.GetString("LastEvaluatedShardId");
-
     m_lastEvaluatedShardIdHasBeenSet = true;
   }
-
   return *this;
 }
 

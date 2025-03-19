@@ -12,14 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SelectResourceConfigRequest::SelectResourceConfigRequest() : 
-    m_expressionHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String SelectResourceConfigRequest::SerializePayload() const
 {
   JsonValue payload;

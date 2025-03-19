@@ -10,15 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-ListAttachedRolePoliciesRequest::ListAttachedRolePoliciesRequest() : 
-    m_roleNameHasBeenSet(false),
-    m_pathPrefixHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false)
-{
-}
-
 Aws::String ListAttachedRolePoliciesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

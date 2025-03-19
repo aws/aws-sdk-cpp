@@ -18,20 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-DashboardVisualResult::DashboardVisualResult() : 
-    m_dashboardIdHasBeenSet(false),
-    m_dashboardNameHasBeenSet(false),
-    m_sheetIdHasBeenSet(false),
-    m_sheetNameHasBeenSet(false),
-    m_visualIdHasBeenSet(false),
-    m_visualTitleHasBeenSet(false),
-    m_visualSubtitleHasBeenSet(false),
-    m_dashboardUrlHasBeenSet(false)
-{
-}
-
 DashboardVisualResult::DashboardVisualResult(JsonView jsonValue)
-  : DashboardVisualResult()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ DashboardVisualResult& DashboardVisualResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DashboardId"))
   {
     m_dashboardId = jsonValue.GetString("DashboardId");
-
     m_dashboardIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DashboardName"))
   {
     m_dashboardName = jsonValue.GetString("DashboardName");
-
     m_dashboardNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SheetId"))
   {
     m_sheetId = jsonValue.GetString("SheetId");
-
     m_sheetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SheetName"))
   {
     m_sheetName = jsonValue.GetString("SheetName");
-
     m_sheetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisualId"))
   {
     m_visualId = jsonValue.GetString("VisualId");
-
     m_visualIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisualTitle"))
   {
     m_visualTitle = jsonValue.GetString("VisualTitle");
-
     m_visualTitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VisualSubtitle"))
   {
     m_visualSubtitle = jsonValue.GetString("VisualSubtitle");
-
     m_visualSubtitleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DashboardUrl"))
   {
     m_dashboardUrl = jsonValue.GetString("DashboardUrl");
-
     m_dashboardUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

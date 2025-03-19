@@ -36,7 +36,7 @@ namespace Model
   class CollaborationPrivacyBudgetSummary
   {
   public:
-    AWS_CLEANROOMS_API CollaborationPrivacyBudgetSummary();
+    AWS_CLEANROOMS_API CollaborationPrivacyBudgetSummary() = default;
     AWS_CLEANROOMS_API CollaborationPrivacyBudgetSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API CollaborationPrivacyBudgetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,42 +46,36 @@ namespace Model
     /**
      * <p>The unique identifier of the collaboration privacy budget.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline CollaborationPrivacyBudgetSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline CollaborationPrivacyBudgetSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline CollaborationPrivacyBudgetSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    CollaborationPrivacyBudgetSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the collaboration privacy budget template.</p>
      */
-    inline const Aws::String& GetPrivacyBudgetTemplateId() const{ return m_privacyBudgetTemplateId; }
+    inline const Aws::String& GetPrivacyBudgetTemplateId() const { return m_privacyBudgetTemplateId; }
     inline bool PrivacyBudgetTemplateIdHasBeenSet() const { return m_privacyBudgetTemplateIdHasBeenSet; }
-    inline void SetPrivacyBudgetTemplateId(const Aws::String& value) { m_privacyBudgetTemplateIdHasBeenSet = true; m_privacyBudgetTemplateId = value; }
-    inline void SetPrivacyBudgetTemplateId(Aws::String&& value) { m_privacyBudgetTemplateIdHasBeenSet = true; m_privacyBudgetTemplateId = std::move(value); }
-    inline void SetPrivacyBudgetTemplateId(const char* value) { m_privacyBudgetTemplateIdHasBeenSet = true; m_privacyBudgetTemplateId.assign(value); }
-    inline CollaborationPrivacyBudgetSummary& WithPrivacyBudgetTemplateId(const Aws::String& value) { SetPrivacyBudgetTemplateId(value); return *this;}
-    inline CollaborationPrivacyBudgetSummary& WithPrivacyBudgetTemplateId(Aws::String&& value) { SetPrivacyBudgetTemplateId(std::move(value)); return *this;}
-    inline CollaborationPrivacyBudgetSummary& WithPrivacyBudgetTemplateId(const char* value) { SetPrivacyBudgetTemplateId(value); return *this;}
+    template<typename PrivacyBudgetTemplateIdT = Aws::String>
+    void SetPrivacyBudgetTemplateId(PrivacyBudgetTemplateIdT&& value) { m_privacyBudgetTemplateIdHasBeenSet = true; m_privacyBudgetTemplateId = std::forward<PrivacyBudgetTemplateIdT>(value); }
+    template<typename PrivacyBudgetTemplateIdT = Aws::String>
+    CollaborationPrivacyBudgetSummary& WithPrivacyBudgetTemplateId(PrivacyBudgetTemplateIdT&& value) { SetPrivacyBudgetTemplateId(std::forward<PrivacyBudgetTemplateIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the collaboration privacy budget template.</p>
      */
-    inline const Aws::String& GetPrivacyBudgetTemplateArn() const{ return m_privacyBudgetTemplateArn; }
+    inline const Aws::String& GetPrivacyBudgetTemplateArn() const { return m_privacyBudgetTemplateArn; }
     inline bool PrivacyBudgetTemplateArnHasBeenSet() const { return m_privacyBudgetTemplateArnHasBeenSet; }
-    inline void SetPrivacyBudgetTemplateArn(const Aws::String& value) { m_privacyBudgetTemplateArnHasBeenSet = true; m_privacyBudgetTemplateArn = value; }
-    inline void SetPrivacyBudgetTemplateArn(Aws::String&& value) { m_privacyBudgetTemplateArnHasBeenSet = true; m_privacyBudgetTemplateArn = std::move(value); }
-    inline void SetPrivacyBudgetTemplateArn(const char* value) { m_privacyBudgetTemplateArnHasBeenSet = true; m_privacyBudgetTemplateArn.assign(value); }
-    inline CollaborationPrivacyBudgetSummary& WithPrivacyBudgetTemplateArn(const Aws::String& value) { SetPrivacyBudgetTemplateArn(value); return *this;}
-    inline CollaborationPrivacyBudgetSummary& WithPrivacyBudgetTemplateArn(Aws::String&& value) { SetPrivacyBudgetTemplateArn(std::move(value)); return *this;}
-    inline CollaborationPrivacyBudgetSummary& WithPrivacyBudgetTemplateArn(const char* value) { SetPrivacyBudgetTemplateArn(value); return *this;}
+    template<typename PrivacyBudgetTemplateArnT = Aws::String>
+    void SetPrivacyBudgetTemplateArn(PrivacyBudgetTemplateArnT&& value) { m_privacyBudgetTemplateArnHasBeenSet = true; m_privacyBudgetTemplateArn = std::forward<PrivacyBudgetTemplateArnT>(value); }
+    template<typename PrivacyBudgetTemplateArnT = Aws::String>
+    CollaborationPrivacyBudgetSummary& WithPrivacyBudgetTemplateArn(PrivacyBudgetTemplateArnT&& value) { SetPrivacyBudgetTemplateArn(std::forward<PrivacyBudgetTemplateArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,90 +83,82 @@ namespace Model
      * <p>The unique identifier of the collaboration that includes this privacy
      * budget.</p>
      */
-    inline const Aws::String& GetCollaborationId() const{ return m_collaborationId; }
+    inline const Aws::String& GetCollaborationId() const { return m_collaborationId; }
     inline bool CollaborationIdHasBeenSet() const { return m_collaborationIdHasBeenSet; }
-    inline void SetCollaborationId(const Aws::String& value) { m_collaborationIdHasBeenSet = true; m_collaborationId = value; }
-    inline void SetCollaborationId(Aws::String&& value) { m_collaborationIdHasBeenSet = true; m_collaborationId = std::move(value); }
-    inline void SetCollaborationId(const char* value) { m_collaborationIdHasBeenSet = true; m_collaborationId.assign(value); }
-    inline CollaborationPrivacyBudgetSummary& WithCollaborationId(const Aws::String& value) { SetCollaborationId(value); return *this;}
-    inline CollaborationPrivacyBudgetSummary& WithCollaborationId(Aws::String&& value) { SetCollaborationId(std::move(value)); return *this;}
-    inline CollaborationPrivacyBudgetSummary& WithCollaborationId(const char* value) { SetCollaborationId(value); return *this;}
+    template<typename CollaborationIdT = Aws::String>
+    void SetCollaborationId(CollaborationIdT&& value) { m_collaborationIdHasBeenSet = true; m_collaborationId = std::forward<CollaborationIdT>(value); }
+    template<typename CollaborationIdT = Aws::String>
+    CollaborationPrivacyBudgetSummary& WithCollaborationId(CollaborationIdT&& value) { SetCollaborationId(std::forward<CollaborationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the collaboration that includes this privacy budget.</p>
      */
-    inline const Aws::String& GetCollaborationArn() const{ return m_collaborationArn; }
+    inline const Aws::String& GetCollaborationArn() const { return m_collaborationArn; }
     inline bool CollaborationArnHasBeenSet() const { return m_collaborationArnHasBeenSet; }
-    inline void SetCollaborationArn(const Aws::String& value) { m_collaborationArnHasBeenSet = true; m_collaborationArn = value; }
-    inline void SetCollaborationArn(Aws::String&& value) { m_collaborationArnHasBeenSet = true; m_collaborationArn = std::move(value); }
-    inline void SetCollaborationArn(const char* value) { m_collaborationArnHasBeenSet = true; m_collaborationArn.assign(value); }
-    inline CollaborationPrivacyBudgetSummary& WithCollaborationArn(const Aws::String& value) { SetCollaborationArn(value); return *this;}
-    inline CollaborationPrivacyBudgetSummary& WithCollaborationArn(Aws::String&& value) { SetCollaborationArn(std::move(value)); return *this;}
-    inline CollaborationPrivacyBudgetSummary& WithCollaborationArn(const char* value) { SetCollaborationArn(value); return *this;}
+    template<typename CollaborationArnT = Aws::String>
+    void SetCollaborationArn(CollaborationArnT&& value) { m_collaborationArnHasBeenSet = true; m_collaborationArn = std::forward<CollaborationArnT>(value); }
+    template<typename CollaborationArnT = Aws::String>
+    CollaborationPrivacyBudgetSummary& WithCollaborationArn(CollaborationArnT&& value) { SetCollaborationArn(std::forward<CollaborationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the account that created this privacy budget.</p>
      */
-    inline const Aws::String& GetCreatorAccountId() const{ return m_creatorAccountId; }
+    inline const Aws::String& GetCreatorAccountId() const { return m_creatorAccountId; }
     inline bool CreatorAccountIdHasBeenSet() const { return m_creatorAccountIdHasBeenSet; }
-    inline void SetCreatorAccountId(const Aws::String& value) { m_creatorAccountIdHasBeenSet = true; m_creatorAccountId = value; }
-    inline void SetCreatorAccountId(Aws::String&& value) { m_creatorAccountIdHasBeenSet = true; m_creatorAccountId = std::move(value); }
-    inline void SetCreatorAccountId(const char* value) { m_creatorAccountIdHasBeenSet = true; m_creatorAccountId.assign(value); }
-    inline CollaborationPrivacyBudgetSummary& WithCreatorAccountId(const Aws::String& value) { SetCreatorAccountId(value); return *this;}
-    inline CollaborationPrivacyBudgetSummary& WithCreatorAccountId(Aws::String&& value) { SetCreatorAccountId(std::move(value)); return *this;}
-    inline CollaborationPrivacyBudgetSummary& WithCreatorAccountId(const char* value) { SetCreatorAccountId(value); return *this;}
+    template<typename CreatorAccountIdT = Aws::String>
+    void SetCreatorAccountId(CreatorAccountIdT&& value) { m_creatorAccountIdHasBeenSet = true; m_creatorAccountId = std::forward<CreatorAccountIdT>(value); }
+    template<typename CreatorAccountIdT = Aws::String>
+    CollaborationPrivacyBudgetSummary& WithCreatorAccountId(CreatorAccountIdT&& value) { SetCreatorAccountId(std::forward<CreatorAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of privacy budget template.</p>
      */
-    inline const PrivacyBudgetType& GetType() const{ return m_type; }
+    inline PrivacyBudgetType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const PrivacyBudgetType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(PrivacyBudgetType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CollaborationPrivacyBudgetSummary& WithType(const PrivacyBudgetType& value) { SetType(value); return *this;}
-    inline CollaborationPrivacyBudgetSummary& WithType(PrivacyBudgetType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(PrivacyBudgetType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CollaborationPrivacyBudgetSummary& WithType(PrivacyBudgetType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the privacy budget was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
-    inline CollaborationPrivacyBudgetSummary& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline CollaborationPrivacyBudgetSummary& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    CollaborationPrivacyBudgetSummary& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The most recent time at which the privacy budget was updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
+    inline const Aws::Utils::DateTime& GetUpdateTime() const { return m_updateTime; }
     inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::move(value); }
-    inline CollaborationPrivacyBudgetSummary& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-    inline CollaborationPrivacyBudgetSummary& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    void SetUpdateTime(UpdateTimeT&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::forward<UpdateTimeT>(value); }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    CollaborationPrivacyBudgetSummary& WithUpdateTime(UpdateTimeT&& value) { SetUpdateTime(std::forward<UpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The includes epsilon provided and utility in terms of aggregations.</p>
      */
-    inline const PrivacyBudget& GetBudget() const{ return m_budget; }
+    inline const PrivacyBudget& GetBudget() const { return m_budget; }
     inline bool BudgetHasBeenSet() const { return m_budgetHasBeenSet; }
-    inline void SetBudget(const PrivacyBudget& value) { m_budgetHasBeenSet = true; m_budget = value; }
-    inline void SetBudget(PrivacyBudget&& value) { m_budgetHasBeenSet = true; m_budget = std::move(value); }
-    inline CollaborationPrivacyBudgetSummary& WithBudget(const PrivacyBudget& value) { SetBudget(value); return *this;}
-    inline CollaborationPrivacyBudgetSummary& WithBudget(PrivacyBudget&& value) { SetBudget(std::move(value)); return *this;}
+    template<typename BudgetT = PrivacyBudget>
+    void SetBudget(BudgetT&& value) { m_budgetHasBeenSet = true; m_budget = std::forward<BudgetT>(value); }
+    template<typename BudgetT = PrivacyBudget>
+    CollaborationPrivacyBudgetSummary& WithBudget(BudgetT&& value) { SetBudget(std::forward<BudgetT>(value)); return *this;}
     ///@}
   private:
 
@@ -194,13 +180,13 @@ namespace Model
     Aws::String m_creatorAccountId;
     bool m_creatorAccountIdHasBeenSet = false;
 
-    PrivacyBudgetType m_type;
+    PrivacyBudgetType m_type{PrivacyBudgetType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::Utils::DateTime m_createTime{};
     bool m_createTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updateTime;
+    Aws::Utils::DateTime m_updateTime{};
     bool m_updateTimeHasBeenSet = false;
 
     PrivacyBudget m_budget;

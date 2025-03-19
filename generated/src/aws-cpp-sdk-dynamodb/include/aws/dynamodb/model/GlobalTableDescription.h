@@ -35,7 +35,7 @@ namespace Model
   class GlobalTableDescription
   {
   public:
-    AWS_DYNAMODB_API GlobalTableDescription();
+    AWS_DYNAMODB_API GlobalTableDescription() = default;
     AWS_DYNAMODB_API GlobalTableDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API GlobalTableDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,40 +45,38 @@ namespace Model
     /**
      * <p>The Regions where the global table has replicas.</p>
      */
-    inline const Aws::Vector<ReplicaDescription>& GetReplicationGroup() const{ return m_replicationGroup; }
+    inline const Aws::Vector<ReplicaDescription>& GetReplicationGroup() const { return m_replicationGroup; }
     inline bool ReplicationGroupHasBeenSet() const { return m_replicationGroupHasBeenSet; }
-    inline void SetReplicationGroup(const Aws::Vector<ReplicaDescription>& value) { m_replicationGroupHasBeenSet = true; m_replicationGroup = value; }
-    inline void SetReplicationGroup(Aws::Vector<ReplicaDescription>&& value) { m_replicationGroupHasBeenSet = true; m_replicationGroup = std::move(value); }
-    inline GlobalTableDescription& WithReplicationGroup(const Aws::Vector<ReplicaDescription>& value) { SetReplicationGroup(value); return *this;}
-    inline GlobalTableDescription& WithReplicationGroup(Aws::Vector<ReplicaDescription>&& value) { SetReplicationGroup(std::move(value)); return *this;}
-    inline GlobalTableDescription& AddReplicationGroup(const ReplicaDescription& value) { m_replicationGroupHasBeenSet = true; m_replicationGroup.push_back(value); return *this; }
-    inline GlobalTableDescription& AddReplicationGroup(ReplicaDescription&& value) { m_replicationGroupHasBeenSet = true; m_replicationGroup.push_back(std::move(value)); return *this; }
+    template<typename ReplicationGroupT = Aws::Vector<ReplicaDescription>>
+    void SetReplicationGroup(ReplicationGroupT&& value) { m_replicationGroupHasBeenSet = true; m_replicationGroup = std::forward<ReplicationGroupT>(value); }
+    template<typename ReplicationGroupT = Aws::Vector<ReplicaDescription>>
+    GlobalTableDescription& WithReplicationGroup(ReplicationGroupT&& value) { SetReplicationGroup(std::forward<ReplicationGroupT>(value)); return *this;}
+    template<typename ReplicationGroupT = ReplicaDescription>
+    GlobalTableDescription& AddReplicationGroup(ReplicationGroupT&& value) { m_replicationGroupHasBeenSet = true; m_replicationGroup.emplace_back(std::forward<ReplicationGroupT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier of the global table.</p>
      */
-    inline const Aws::String& GetGlobalTableArn() const{ return m_globalTableArn; }
+    inline const Aws::String& GetGlobalTableArn() const { return m_globalTableArn; }
     inline bool GlobalTableArnHasBeenSet() const { return m_globalTableArnHasBeenSet; }
-    inline void SetGlobalTableArn(const Aws::String& value) { m_globalTableArnHasBeenSet = true; m_globalTableArn = value; }
-    inline void SetGlobalTableArn(Aws::String&& value) { m_globalTableArnHasBeenSet = true; m_globalTableArn = std::move(value); }
-    inline void SetGlobalTableArn(const char* value) { m_globalTableArnHasBeenSet = true; m_globalTableArn.assign(value); }
-    inline GlobalTableDescription& WithGlobalTableArn(const Aws::String& value) { SetGlobalTableArn(value); return *this;}
-    inline GlobalTableDescription& WithGlobalTableArn(Aws::String&& value) { SetGlobalTableArn(std::move(value)); return *this;}
-    inline GlobalTableDescription& WithGlobalTableArn(const char* value) { SetGlobalTableArn(value); return *this;}
+    template<typename GlobalTableArnT = Aws::String>
+    void SetGlobalTableArn(GlobalTableArnT&& value) { m_globalTableArnHasBeenSet = true; m_globalTableArn = std::forward<GlobalTableArnT>(value); }
+    template<typename GlobalTableArnT = Aws::String>
+    GlobalTableDescription& WithGlobalTableArn(GlobalTableArnT&& value) { SetGlobalTableArn(std::forward<GlobalTableArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The creation time of the global table.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
     inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
-    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::move(value); }
-    inline GlobalTableDescription& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-    inline GlobalTableDescription& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    GlobalTableDescription& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,26 +87,22 @@ namespace Model
      * <code>DELETING</code> - The global table is being deleted.</p> </li> <li> <p>
      * <code>ACTIVE</code> - The global table is ready for use.</p> </li> </ul>
      */
-    inline const GlobalTableStatus& GetGlobalTableStatus() const{ return m_globalTableStatus; }
+    inline GlobalTableStatus GetGlobalTableStatus() const { return m_globalTableStatus; }
     inline bool GlobalTableStatusHasBeenSet() const { return m_globalTableStatusHasBeenSet; }
-    inline void SetGlobalTableStatus(const GlobalTableStatus& value) { m_globalTableStatusHasBeenSet = true; m_globalTableStatus = value; }
-    inline void SetGlobalTableStatus(GlobalTableStatus&& value) { m_globalTableStatusHasBeenSet = true; m_globalTableStatus = std::move(value); }
-    inline GlobalTableDescription& WithGlobalTableStatus(const GlobalTableStatus& value) { SetGlobalTableStatus(value); return *this;}
-    inline GlobalTableDescription& WithGlobalTableStatus(GlobalTableStatus&& value) { SetGlobalTableStatus(std::move(value)); return *this;}
+    inline void SetGlobalTableStatus(GlobalTableStatus value) { m_globalTableStatusHasBeenSet = true; m_globalTableStatus = value; }
+    inline GlobalTableDescription& WithGlobalTableStatus(GlobalTableStatus value) { SetGlobalTableStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The global table name.</p>
      */
-    inline const Aws::String& GetGlobalTableName() const{ return m_globalTableName; }
+    inline const Aws::String& GetGlobalTableName() const { return m_globalTableName; }
     inline bool GlobalTableNameHasBeenSet() const { return m_globalTableNameHasBeenSet; }
-    inline void SetGlobalTableName(const Aws::String& value) { m_globalTableNameHasBeenSet = true; m_globalTableName = value; }
-    inline void SetGlobalTableName(Aws::String&& value) { m_globalTableNameHasBeenSet = true; m_globalTableName = std::move(value); }
-    inline void SetGlobalTableName(const char* value) { m_globalTableNameHasBeenSet = true; m_globalTableName.assign(value); }
-    inline GlobalTableDescription& WithGlobalTableName(const Aws::String& value) { SetGlobalTableName(value); return *this;}
-    inline GlobalTableDescription& WithGlobalTableName(Aws::String&& value) { SetGlobalTableName(std::move(value)); return *this;}
-    inline GlobalTableDescription& WithGlobalTableName(const char* value) { SetGlobalTableName(value); return *this;}
+    template<typename GlobalTableNameT = Aws::String>
+    void SetGlobalTableName(GlobalTableNameT&& value) { m_globalTableNameHasBeenSet = true; m_globalTableName = std::forward<GlobalTableNameT>(value); }
+    template<typename GlobalTableNameT = Aws::String>
+    GlobalTableDescription& WithGlobalTableName(GlobalTableNameT&& value) { SetGlobalTableName(std::forward<GlobalTableNameT>(value)); return *this;}
     ///@}
   private:
 
@@ -118,10 +112,10 @@ namespace Model
     Aws::String m_globalTableArn;
     bool m_globalTableArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDateTime;
+    Aws::Utils::DateTime m_creationDateTime{};
     bool m_creationDateTimeHasBeenSet = false;
 
-    GlobalTableStatus m_globalTableStatus;
+    GlobalTableStatus m_globalTableStatus{GlobalTableStatus::NOT_SET};
     bool m_globalTableStatusHasBeenSet = false;
 
     Aws::String m_globalTableName;

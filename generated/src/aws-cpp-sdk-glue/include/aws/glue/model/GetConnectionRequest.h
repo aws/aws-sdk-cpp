@@ -22,7 +22,7 @@ namespace Model
   class GetConnectionRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API GetConnectionRequest();
+    AWS_GLUE_API GetConnectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
      * <p>The ID of the Data Catalog in which the connection resides. If none is
      * provided, the Amazon Web Services account ID is used by default.</p>
      */
-    inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
+    inline const Aws::String& GetCatalogId() const { return m_catalogId; }
     inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
-    inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
-    inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
-    inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
-    inline GetConnectionRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
-    inline GetConnectionRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
-    inline GetConnectionRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
+    template<typename CatalogIdT = Aws::String>
+    void SetCatalogId(CatalogIdT&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::forward<CatalogIdT>(value); }
+    template<typename CatalogIdT = Aws::String>
+    GetConnectionRequest& WithCatalogId(CatalogIdT&& value) { SetCatalogId(std::forward<CatalogIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the connection definition to retrieve.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline GetConnectionRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetConnectionRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetConnectionRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetConnectionRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +68,7 @@ namespace Model
      * caller might not have permission to use the KMS key to decrypt the password, but
      * it does have permission to access the rest of the connection properties.</p>
      */
-    inline bool GetHidePassword() const{ return m_hidePassword; }
+    inline bool GetHidePassword() const { return m_hidePassword; }
     inline bool HidePasswordHasBeenSet() const { return m_hidePasswordHasBeenSet; }
     inline void SetHidePassword(bool value) { m_hidePasswordHasBeenSet = true; m_hidePassword = value; }
     inline GetConnectionRequest& WithHidePassword(bool value) { SetHidePassword(value); return *this;}
@@ -83,12 +79,10 @@ namespace Model
      * <p>For connections that may be used in multiple services, specifies returning
      * properties for the specified compute environment.</p>
      */
-    inline const ComputeEnvironment& GetApplyOverrideForComputeEnvironment() const{ return m_applyOverrideForComputeEnvironment; }
+    inline ComputeEnvironment GetApplyOverrideForComputeEnvironment() const { return m_applyOverrideForComputeEnvironment; }
     inline bool ApplyOverrideForComputeEnvironmentHasBeenSet() const { return m_applyOverrideForComputeEnvironmentHasBeenSet; }
-    inline void SetApplyOverrideForComputeEnvironment(const ComputeEnvironment& value) { m_applyOverrideForComputeEnvironmentHasBeenSet = true; m_applyOverrideForComputeEnvironment = value; }
-    inline void SetApplyOverrideForComputeEnvironment(ComputeEnvironment&& value) { m_applyOverrideForComputeEnvironmentHasBeenSet = true; m_applyOverrideForComputeEnvironment = std::move(value); }
-    inline GetConnectionRequest& WithApplyOverrideForComputeEnvironment(const ComputeEnvironment& value) { SetApplyOverrideForComputeEnvironment(value); return *this;}
-    inline GetConnectionRequest& WithApplyOverrideForComputeEnvironment(ComputeEnvironment&& value) { SetApplyOverrideForComputeEnvironment(std::move(value)); return *this;}
+    inline void SetApplyOverrideForComputeEnvironment(ComputeEnvironment value) { m_applyOverrideForComputeEnvironmentHasBeenSet = true; m_applyOverrideForComputeEnvironment = value; }
+    inline GetConnectionRequest& WithApplyOverrideForComputeEnvironment(ComputeEnvironment value) { SetApplyOverrideForComputeEnvironment(value); return *this;}
     ///@}
   private:
 
@@ -98,10 +92,10 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    bool m_hidePassword;
+    bool m_hidePassword{false};
     bool m_hidePasswordHasBeenSet = false;
 
-    ComputeEnvironment m_applyOverrideForComputeEnvironment;
+    ComputeEnvironment m_applyOverrideForComputeEnvironment{ComputeEnvironment::NOT_SET};
     bool m_applyOverrideForComputeEnvironmentHasBeenSet = false;
   };
 

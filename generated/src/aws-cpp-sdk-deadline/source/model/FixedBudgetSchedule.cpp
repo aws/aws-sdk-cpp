@@ -18,14 +18,7 @@ namespace deadline
 namespace Model
 {
 
-FixedBudgetSchedule::FixedBudgetSchedule() : 
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 FixedBudgetSchedule::FixedBudgetSchedule(JsonView jsonValue)
-  : FixedBudgetSchedule()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FixedBudgetSchedule& FixedBudgetSchedule::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

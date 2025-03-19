@@ -19,7 +19,7 @@ namespace Model
   class GetEncryptionConfigurationRequest : public IoTFleetWiseRequest
   {
   public:
-    AWS_IOTFLEETWISE_API GetEncryptionConfigurationRequest();
+    AWS_IOTFLEETWISE_API GetEncryptionConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

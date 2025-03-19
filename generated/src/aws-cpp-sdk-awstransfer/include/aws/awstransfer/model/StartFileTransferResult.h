@@ -27,7 +27,7 @@ namespace Model
   class StartFileTransferResult
   {
   public:
-    AWS_TRANSFER_API StartFileTransferResult();
+    AWS_TRANSFER_API StartFileTransferResult() = default;
     AWS_TRANSFER_API StartFileTransferResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSFER_API StartFileTransferResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>Returns the unique identifier for the file transfer.</p>
      */
-    inline const Aws::String& GetTransferId() const{ return m_transferId; }
-    inline void SetTransferId(const Aws::String& value) { m_transferId = value; }
-    inline void SetTransferId(Aws::String&& value) { m_transferId = std::move(value); }
-    inline void SetTransferId(const char* value) { m_transferId.assign(value); }
-    inline StartFileTransferResult& WithTransferId(const Aws::String& value) { SetTransferId(value); return *this;}
-    inline StartFileTransferResult& WithTransferId(Aws::String&& value) { SetTransferId(std::move(value)); return *this;}
-    inline StartFileTransferResult& WithTransferId(const char* value) { SetTransferId(value); return *this;}
+    inline const Aws::String& GetTransferId() const { return m_transferId; }
+    template<typename TransferIdT = Aws::String>
+    void SetTransferId(TransferIdT&& value) { m_transferIdHasBeenSet = true; m_transferId = std::forward<TransferIdT>(value); }
+    template<typename TransferIdT = Aws::String>
+    StartFileTransferResult& WithTransferId(TransferIdT&& value) { SetTransferId(std::forward<TransferIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartFileTransferResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartFileTransferResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartFileTransferResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartFileTransferResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_transferId;
+    bool m_transferIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,13 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-BaseKpiResult::BaseKpiResult() : 
-    m_rowsHasBeenSet(false)
-{
-}
-
 BaseKpiResult::BaseKpiResult(JsonView jsonValue)
-  : BaseKpiResult()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ BaseKpiResult& BaseKpiResult::operator =(JsonView jsonValue)
     }
     m_rowsHasBeenSet = true;
   }
-
   return *this;
 }
 

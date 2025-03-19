@@ -35,7 +35,7 @@ namespace Model
   class InlineRedactionPattern
   {
   public:
-    AWS_WORKSPACESWEB_API InlineRedactionPattern();
+    AWS_WORKSPACESWEB_API InlineRedactionPattern() = default;
     AWS_WORKSPACESWEB_API InlineRedactionPattern(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACESWEB_API InlineRedactionPattern& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACESWEB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * <p>The built-in pattern from the list of preconfigured patterns. Either a
      * customPattern or builtInPatternId is required.</p>
      */
-    inline const Aws::String& GetBuiltInPatternId() const{ return m_builtInPatternId; }
+    inline const Aws::String& GetBuiltInPatternId() const { return m_builtInPatternId; }
     inline bool BuiltInPatternIdHasBeenSet() const { return m_builtInPatternIdHasBeenSet; }
-    inline void SetBuiltInPatternId(const Aws::String& value) { m_builtInPatternIdHasBeenSet = true; m_builtInPatternId = value; }
-    inline void SetBuiltInPatternId(Aws::String&& value) { m_builtInPatternIdHasBeenSet = true; m_builtInPatternId = std::move(value); }
-    inline void SetBuiltInPatternId(const char* value) { m_builtInPatternIdHasBeenSet = true; m_builtInPatternId.assign(value); }
-    inline InlineRedactionPattern& WithBuiltInPatternId(const Aws::String& value) { SetBuiltInPatternId(value); return *this;}
-    inline InlineRedactionPattern& WithBuiltInPatternId(Aws::String&& value) { SetBuiltInPatternId(std::move(value)); return *this;}
-    inline InlineRedactionPattern& WithBuiltInPatternId(const char* value) { SetBuiltInPatternId(value); return *this;}
+    template<typename BuiltInPatternIdT = Aws::String>
+    void SetBuiltInPatternId(BuiltInPatternIdT&& value) { m_builtInPatternIdHasBeenSet = true; m_builtInPatternId = std::forward<BuiltInPatternIdT>(value); }
+    template<typename BuiltInPatternIdT = Aws::String>
+    InlineRedactionPattern& WithBuiltInPatternId(BuiltInPatternIdT&& value) { SetBuiltInPatternId(std::forward<BuiltInPatternIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,7 +65,7 @@ namespace Model
      * is enforced for both formatted pattern + unformatted pattern without keyword.
      * This overrides the global confidence level.</p>
      */
-    inline int GetConfidenceLevel() const{ return m_confidenceLevel; }
+    inline int GetConfidenceLevel() const { return m_confidenceLevel; }
     inline bool ConfidenceLevelHasBeenSet() const { return m_confidenceLevelHasBeenSet; }
     inline void SetConfidenceLevel(int value) { m_confidenceLevelHasBeenSet = true; m_confidenceLevel = value; }
     inline InlineRedactionPattern& WithConfidenceLevel(int value) { SetConfidenceLevel(value); return *this;}
@@ -78,12 +76,12 @@ namespace Model
      * <p>&gt;The configuration for a custom pattern. Either a customPattern or
      * builtInPatternId is required.</p>
      */
-    inline const CustomPattern& GetCustomPattern() const{ return m_customPattern; }
+    inline const CustomPattern& GetCustomPattern() const { return m_customPattern; }
     inline bool CustomPatternHasBeenSet() const { return m_customPatternHasBeenSet; }
-    inline void SetCustomPattern(const CustomPattern& value) { m_customPatternHasBeenSet = true; m_customPattern = value; }
-    inline void SetCustomPattern(CustomPattern&& value) { m_customPatternHasBeenSet = true; m_customPattern = std::move(value); }
-    inline InlineRedactionPattern& WithCustomPattern(const CustomPattern& value) { SetCustomPattern(value); return *this;}
-    inline InlineRedactionPattern& WithCustomPattern(CustomPattern&& value) { SetCustomPattern(std::move(value)); return *this;}
+    template<typename CustomPatternT = CustomPattern>
+    void SetCustomPattern(CustomPatternT&& value) { m_customPatternHasBeenSet = true; m_customPattern = std::forward<CustomPatternT>(value); }
+    template<typename CustomPatternT = CustomPattern>
+    InlineRedactionPattern& WithCustomPattern(CustomPatternT&& value) { SetCustomPattern(std::forward<CustomPatternT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,15 +89,14 @@ namespace Model
      * <p>The enforced URL configuration for the inline redaction pattern. This will
      * override the global enforced URL configuration.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEnforcedUrls() const{ return m_enforcedUrls; }
+    inline const Aws::Vector<Aws::String>& GetEnforcedUrls() const { return m_enforcedUrls; }
     inline bool EnforcedUrlsHasBeenSet() const { return m_enforcedUrlsHasBeenSet; }
-    inline void SetEnforcedUrls(const Aws::Vector<Aws::String>& value) { m_enforcedUrlsHasBeenSet = true; m_enforcedUrls = value; }
-    inline void SetEnforcedUrls(Aws::Vector<Aws::String>&& value) { m_enforcedUrlsHasBeenSet = true; m_enforcedUrls = std::move(value); }
-    inline InlineRedactionPattern& WithEnforcedUrls(const Aws::Vector<Aws::String>& value) { SetEnforcedUrls(value); return *this;}
-    inline InlineRedactionPattern& WithEnforcedUrls(Aws::Vector<Aws::String>&& value) { SetEnforcedUrls(std::move(value)); return *this;}
-    inline InlineRedactionPattern& AddEnforcedUrls(const Aws::String& value) { m_enforcedUrlsHasBeenSet = true; m_enforcedUrls.push_back(value); return *this; }
-    inline InlineRedactionPattern& AddEnforcedUrls(Aws::String&& value) { m_enforcedUrlsHasBeenSet = true; m_enforcedUrls.push_back(std::move(value)); return *this; }
-    inline InlineRedactionPattern& AddEnforcedUrls(const char* value) { m_enforcedUrlsHasBeenSet = true; m_enforcedUrls.push_back(value); return *this; }
+    template<typename EnforcedUrlsT = Aws::Vector<Aws::String>>
+    void SetEnforcedUrls(EnforcedUrlsT&& value) { m_enforcedUrlsHasBeenSet = true; m_enforcedUrls = std::forward<EnforcedUrlsT>(value); }
+    template<typename EnforcedUrlsT = Aws::Vector<Aws::String>>
+    InlineRedactionPattern& WithEnforcedUrls(EnforcedUrlsT&& value) { SetEnforcedUrls(std::forward<EnforcedUrlsT>(value)); return *this;}
+    template<typename EnforcedUrlsT = Aws::String>
+    InlineRedactionPattern& AddEnforcedUrls(EnforcedUrlsT&& value) { m_enforcedUrlsHasBeenSet = true; m_enforcedUrls.emplace_back(std::forward<EnforcedUrlsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -108,15 +105,14 @@ namespace Model
      * override the global exempt URL configuration for the inline redaction
      * pattern.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetExemptUrls() const{ return m_exemptUrls; }
+    inline const Aws::Vector<Aws::String>& GetExemptUrls() const { return m_exemptUrls; }
     inline bool ExemptUrlsHasBeenSet() const { return m_exemptUrlsHasBeenSet; }
-    inline void SetExemptUrls(const Aws::Vector<Aws::String>& value) { m_exemptUrlsHasBeenSet = true; m_exemptUrls = value; }
-    inline void SetExemptUrls(Aws::Vector<Aws::String>&& value) { m_exemptUrlsHasBeenSet = true; m_exemptUrls = std::move(value); }
-    inline InlineRedactionPattern& WithExemptUrls(const Aws::Vector<Aws::String>& value) { SetExemptUrls(value); return *this;}
-    inline InlineRedactionPattern& WithExemptUrls(Aws::Vector<Aws::String>&& value) { SetExemptUrls(std::move(value)); return *this;}
-    inline InlineRedactionPattern& AddExemptUrls(const Aws::String& value) { m_exemptUrlsHasBeenSet = true; m_exemptUrls.push_back(value); return *this; }
-    inline InlineRedactionPattern& AddExemptUrls(Aws::String&& value) { m_exemptUrlsHasBeenSet = true; m_exemptUrls.push_back(std::move(value)); return *this; }
-    inline InlineRedactionPattern& AddExemptUrls(const char* value) { m_exemptUrlsHasBeenSet = true; m_exemptUrls.push_back(value); return *this; }
+    template<typename ExemptUrlsT = Aws::Vector<Aws::String>>
+    void SetExemptUrls(ExemptUrlsT&& value) { m_exemptUrlsHasBeenSet = true; m_exemptUrls = std::forward<ExemptUrlsT>(value); }
+    template<typename ExemptUrlsT = Aws::Vector<Aws::String>>
+    InlineRedactionPattern& WithExemptUrls(ExemptUrlsT&& value) { SetExemptUrls(std::forward<ExemptUrlsT>(value)); return *this;}
+    template<typename ExemptUrlsT = Aws::String>
+    InlineRedactionPattern& AddExemptUrls(ExemptUrlsT&& value) { m_exemptUrlsHasBeenSet = true; m_exemptUrls.emplace_back(std::forward<ExemptUrlsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -124,19 +120,19 @@ namespace Model
      * <p>The redaction placeholder that will replace the redacted text in session for
      * the inline redaction pattern.</p>
      */
-    inline const RedactionPlaceHolder& GetRedactionPlaceHolder() const{ return m_redactionPlaceHolder; }
+    inline const RedactionPlaceHolder& GetRedactionPlaceHolder() const { return m_redactionPlaceHolder; }
     inline bool RedactionPlaceHolderHasBeenSet() const { return m_redactionPlaceHolderHasBeenSet; }
-    inline void SetRedactionPlaceHolder(const RedactionPlaceHolder& value) { m_redactionPlaceHolderHasBeenSet = true; m_redactionPlaceHolder = value; }
-    inline void SetRedactionPlaceHolder(RedactionPlaceHolder&& value) { m_redactionPlaceHolderHasBeenSet = true; m_redactionPlaceHolder = std::move(value); }
-    inline InlineRedactionPattern& WithRedactionPlaceHolder(const RedactionPlaceHolder& value) { SetRedactionPlaceHolder(value); return *this;}
-    inline InlineRedactionPattern& WithRedactionPlaceHolder(RedactionPlaceHolder&& value) { SetRedactionPlaceHolder(std::move(value)); return *this;}
+    template<typename RedactionPlaceHolderT = RedactionPlaceHolder>
+    void SetRedactionPlaceHolder(RedactionPlaceHolderT&& value) { m_redactionPlaceHolderHasBeenSet = true; m_redactionPlaceHolder = std::forward<RedactionPlaceHolderT>(value); }
+    template<typename RedactionPlaceHolderT = RedactionPlaceHolder>
+    InlineRedactionPattern& WithRedactionPlaceHolder(RedactionPlaceHolderT&& value) { SetRedactionPlaceHolder(std::forward<RedactionPlaceHolderT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_builtInPatternId;
     bool m_builtInPatternIdHasBeenSet = false;
 
-    int m_confidenceLevel;
+    int m_confidenceLevel{0};
     bool m_confidenceLevelHasBeenSet = false;
 
     CustomPattern m_customPattern;

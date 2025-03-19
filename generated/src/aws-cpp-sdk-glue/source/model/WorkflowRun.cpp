@@ -18,24 +18,7 @@ namespace Glue
 namespace Model
 {
 
-WorkflowRun::WorkflowRun() : 
-    m_nameHasBeenSet(false),
-    m_workflowRunIdHasBeenSet(false),
-    m_previousRunIdHasBeenSet(false),
-    m_workflowRunPropertiesHasBeenSet(false),
-    m_startedOnHasBeenSet(false),
-    m_completedOnHasBeenSet(false),
-    m_status(WorkflowRunStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_statisticsHasBeenSet(false),
-    m_graphHasBeenSet(false),
-    m_startingEventBatchConditionHasBeenSet(false)
-{
-}
-
 WorkflowRun::WorkflowRun(JsonView jsonValue)
-  : WorkflowRun()
 {
   *this = jsonValue;
 }
@@ -45,24 +28,18 @@ WorkflowRun& WorkflowRun::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkflowRunId"))
   {
     m_workflowRunId = jsonValue.GetString("WorkflowRunId");
-
     m_workflowRunIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreviousRunId"))
   {
     m_previousRunId = jsonValue.GetString("PreviousRunId");
-
     m_previousRunIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WorkflowRunProperties"))
   {
     Aws::Map<Aws::String, JsonView> workflowRunPropertiesJsonMap = jsonValue.GetObject("WorkflowRunProperties").GetAllObjects();
@@ -72,56 +49,41 @@ WorkflowRun& WorkflowRun::operator =(JsonView jsonValue)
     }
     m_workflowRunPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartedOn"))
   {
     m_startedOn = jsonValue.GetDouble("StartedOn");
-
     m_startedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletedOn"))
   {
     m_completedOn = jsonValue.GetDouble("CompletedOn");
-
     m_completedOnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = WorkflowRunStatusMapper::GetWorkflowRunStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Statistics"))
   {
     m_statistics = jsonValue.GetObject("Statistics");
-
     m_statisticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Graph"))
   {
     m_graph = jsonValue.GetObject("Graph");
-
     m_graphHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartingEventBatchCondition"))
   {
     m_startingEventBatchCondition = jsonValue.GetObject("StartingEventBatchCondition");
-
     m_startingEventBatchConditionHasBeenSet = true;
   }
-
   return *this;
 }
 

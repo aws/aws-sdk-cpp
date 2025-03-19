@@ -18,13 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-KbInferenceConfig::KbInferenceConfig() : 
-    m_textInferenceConfigHasBeenSet(false)
-{
-}
-
 KbInferenceConfig::KbInferenceConfig(JsonView jsonValue)
-  : KbInferenceConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ KbInferenceConfig& KbInferenceConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("textInferenceConfig"))
   {
     m_textInferenceConfig = jsonValue.GetObject("textInferenceConfig");
-
     m_textInferenceConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

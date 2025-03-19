@@ -12,27 +12,6 @@ using namespace Aws::SecurityIR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCaseRequest::UpdateCaseRequest() : 
-    m_caseIdHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_reportedIncidentStartDateHasBeenSet(false),
-    m_actualIncidentStartDateHasBeenSet(false),
-    m_engagementType(EngagementType::NOT_SET),
-    m_engagementTypeHasBeenSet(false),
-    m_watchersToAddHasBeenSet(false),
-    m_watchersToDeleteHasBeenSet(false),
-    m_threatActorIpAddressesToAddHasBeenSet(false),
-    m_threatActorIpAddressesToDeleteHasBeenSet(false),
-    m_impactedServicesToAddHasBeenSet(false),
-    m_impactedServicesToDeleteHasBeenSet(false),
-    m_impactedAwsRegionsToAddHasBeenSet(false),
-    m_impactedAwsRegionsToDeleteHasBeenSet(false),
-    m_impactedAccountsToAddHasBeenSet(false),
-    m_impactedAccountsToDeleteHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCaseRequest::SerializePayload() const
 {
   JsonValue payload;

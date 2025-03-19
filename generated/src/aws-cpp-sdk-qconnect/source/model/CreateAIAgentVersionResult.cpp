@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateAIAgentVersionResult::CreateAIAgentVersionResult() : 
-    m_versionNumber(0)
-{
-}
-
 CreateAIAgentVersionResult::CreateAIAgentVersionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateAIAgentVersionResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ CreateAIAgentVersionResult& CreateAIAgentVersionResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("aiAgent"))
   {
     m_aiAgent = jsonValue.GetObject("aiAgent");
-
+    m_aiAgentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionNumber"))
   {
     m_versionNumber = jsonValue.GetInt64("versionNumber");
-
+    m_versionNumberHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

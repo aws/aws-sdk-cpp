@@ -18,15 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsElasticsearchDomainLogPublishingOptions::AwsElasticsearchDomainLogPublishingOptions() : 
-    m_indexSlowLogsHasBeenSet(false),
-    m_searchSlowLogsHasBeenSet(false),
-    m_auditLogsHasBeenSet(false)
-{
-}
-
 AwsElasticsearchDomainLogPublishingOptions::AwsElasticsearchDomainLogPublishingOptions(JsonView jsonValue)
-  : AwsElasticsearchDomainLogPublishingOptions()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ AwsElasticsearchDomainLogPublishingOptions& AwsElasticsearchDomainLogPublishingO
   if(jsonValue.ValueExists("IndexSlowLogs"))
   {
     m_indexSlowLogs = jsonValue.GetObject("IndexSlowLogs");
-
     m_indexSlowLogsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SearchSlowLogs"))
   {
     m_searchSlowLogs = jsonValue.GetObject("SearchSlowLogs");
-
     m_searchSlowLogsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuditLogs"))
   {
     m_auditLogs = jsonValue.GetObject("AuditLogs");
-
     m_auditLogsHasBeenSet = true;
   }
-
   return *this;
 }
 

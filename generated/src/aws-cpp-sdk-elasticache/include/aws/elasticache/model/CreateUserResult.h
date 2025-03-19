@@ -30,7 +30,7 @@ namespace Model
   class CreateUserResult
   {
   public:
-    AWS_ELASTICACHE_API CreateUserResult();
+    AWS_ELASTICACHE_API CreateUserResult() = default;
     AWS_ELASTICACHE_API CreateUserResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_ELASTICACHE_API CreateUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,147 +39,142 @@ namespace Model
     /**
      * <p>The ID of the user.</p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
-    inline void SetUserId(const Aws::String& value) { m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userId.assign(value); }
-    inline CreateUserResult& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline CreateUserResult& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline CreateUserResult& WithUserId(const char* value) { SetUserId(value); return *this;}
+    inline const Aws::String& GetUserId() const { return m_userId; }
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    CreateUserResult& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The username of the user.</p>
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
-    inline void SetUserName(const Aws::String& value) { m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userName.assign(value); }
-    inline CreateUserResult& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline CreateUserResult& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline CreateUserResult& WithUserName(const char* value) { SetUserName(value); return *this;}
+    inline const Aws::String& GetUserName() const { return m_userName; }
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    CreateUserResult& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the user status. Can be "active", "modifying" or "deleting".</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_status.assign(value); }
-    inline CreateUserResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline CreateUserResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline CreateUserResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+    inline const Aws::String& GetStatus() const { return m_status; }
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    CreateUserResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The options are valkey or redis.</p>
      */
-    inline const Aws::String& GetEngine() const{ return m_engine; }
-    inline void SetEngine(const Aws::String& value) { m_engine = value; }
-    inline void SetEngine(Aws::String&& value) { m_engine = std::move(value); }
-    inline void SetEngine(const char* value) { m_engine.assign(value); }
-    inline CreateUserResult& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
-    inline CreateUserResult& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
-    inline CreateUserResult& WithEngine(const char* value) { SetEngine(value); return *this;}
+    inline const Aws::String& GetEngine() const { return m_engine; }
+    template<typename EngineT = Aws::String>
+    void SetEngine(EngineT&& value) { m_engineHasBeenSet = true; m_engine = std::forward<EngineT>(value); }
+    template<typename EngineT = Aws::String>
+    CreateUserResult& WithEngine(EngineT&& value) { SetEngine(std::forward<EngineT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The minimum engine version required, which is Redis OSS 6.0</p>
      */
-    inline const Aws::String& GetMinimumEngineVersion() const{ return m_minimumEngineVersion; }
-    inline void SetMinimumEngineVersion(const Aws::String& value) { m_minimumEngineVersion = value; }
-    inline void SetMinimumEngineVersion(Aws::String&& value) { m_minimumEngineVersion = std::move(value); }
-    inline void SetMinimumEngineVersion(const char* value) { m_minimumEngineVersion.assign(value); }
-    inline CreateUserResult& WithMinimumEngineVersion(const Aws::String& value) { SetMinimumEngineVersion(value); return *this;}
-    inline CreateUserResult& WithMinimumEngineVersion(Aws::String&& value) { SetMinimumEngineVersion(std::move(value)); return *this;}
-    inline CreateUserResult& WithMinimumEngineVersion(const char* value) { SetMinimumEngineVersion(value); return *this;}
+    inline const Aws::String& GetMinimumEngineVersion() const { return m_minimumEngineVersion; }
+    template<typename MinimumEngineVersionT = Aws::String>
+    void SetMinimumEngineVersion(MinimumEngineVersionT&& value) { m_minimumEngineVersionHasBeenSet = true; m_minimumEngineVersion = std::forward<MinimumEngineVersionT>(value); }
+    template<typename MinimumEngineVersionT = Aws::String>
+    CreateUserResult& WithMinimumEngineVersion(MinimumEngineVersionT&& value) { SetMinimumEngineVersion(std::forward<MinimumEngineVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Access permissions string used for this user.</p>
      */
-    inline const Aws::String& GetAccessString() const{ return m_accessString; }
-    inline void SetAccessString(const Aws::String& value) { m_accessString = value; }
-    inline void SetAccessString(Aws::String&& value) { m_accessString = std::move(value); }
-    inline void SetAccessString(const char* value) { m_accessString.assign(value); }
-    inline CreateUserResult& WithAccessString(const Aws::String& value) { SetAccessString(value); return *this;}
-    inline CreateUserResult& WithAccessString(Aws::String&& value) { SetAccessString(std::move(value)); return *this;}
-    inline CreateUserResult& WithAccessString(const char* value) { SetAccessString(value); return *this;}
+    inline const Aws::String& GetAccessString() const { return m_accessString; }
+    template<typename AccessStringT = Aws::String>
+    void SetAccessString(AccessStringT&& value) { m_accessStringHasBeenSet = true; m_accessString = std::forward<AccessStringT>(value); }
+    template<typename AccessStringT = Aws::String>
+    CreateUserResult& WithAccessString(AccessStringT&& value) { SetAccessString(std::forward<AccessStringT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Returns a list of the user group IDs the user belongs to.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetUserGroupIds() const{ return m_userGroupIds; }
-    inline void SetUserGroupIds(const Aws::Vector<Aws::String>& value) { m_userGroupIds = value; }
-    inline void SetUserGroupIds(Aws::Vector<Aws::String>&& value) { m_userGroupIds = std::move(value); }
-    inline CreateUserResult& WithUserGroupIds(const Aws::Vector<Aws::String>& value) { SetUserGroupIds(value); return *this;}
-    inline CreateUserResult& WithUserGroupIds(Aws::Vector<Aws::String>&& value) { SetUserGroupIds(std::move(value)); return *this;}
-    inline CreateUserResult& AddUserGroupIds(const Aws::String& value) { m_userGroupIds.push_back(value); return *this; }
-    inline CreateUserResult& AddUserGroupIds(Aws::String&& value) { m_userGroupIds.push_back(std::move(value)); return *this; }
-    inline CreateUserResult& AddUserGroupIds(const char* value) { m_userGroupIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetUserGroupIds() const { return m_userGroupIds; }
+    template<typename UserGroupIdsT = Aws::Vector<Aws::String>>
+    void SetUserGroupIds(UserGroupIdsT&& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds = std::forward<UserGroupIdsT>(value); }
+    template<typename UserGroupIdsT = Aws::Vector<Aws::String>>
+    CreateUserResult& WithUserGroupIds(UserGroupIdsT&& value) { SetUserGroupIds(std::forward<UserGroupIdsT>(value)); return *this;}
+    template<typename UserGroupIdsT = Aws::String>
+    CreateUserResult& AddUserGroupIds(UserGroupIdsT&& value) { m_userGroupIdsHasBeenSet = true; m_userGroupIds.emplace_back(std::forward<UserGroupIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Denotes whether the user requires a password to authenticate.</p>
      */
-    inline const Authentication& GetAuthentication() const{ return m_authentication; }
-    inline void SetAuthentication(const Authentication& value) { m_authentication = value; }
-    inline void SetAuthentication(Authentication&& value) { m_authentication = std::move(value); }
-    inline CreateUserResult& WithAuthentication(const Authentication& value) { SetAuthentication(value); return *this;}
-    inline CreateUserResult& WithAuthentication(Authentication&& value) { SetAuthentication(std::move(value)); return *this;}
+    inline const Authentication& GetAuthentication() const { return m_authentication; }
+    template<typename AuthenticationT = Authentication>
+    void SetAuthentication(AuthenticationT&& value) { m_authenticationHasBeenSet = true; m_authentication = std::forward<AuthenticationT>(value); }
+    template<typename AuthenticationT = Authentication>
+    CreateUserResult& WithAuthentication(AuthenticationT&& value) { SetAuthentication(std::forward<AuthenticationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
-    inline const Aws::String& GetARN() const{ return m_aRN; }
-    inline void SetARN(const Aws::String& value) { m_aRN = value; }
-    inline void SetARN(Aws::String&& value) { m_aRN = std::move(value); }
-    inline void SetARN(const char* value) { m_aRN.assign(value); }
-    inline CreateUserResult& WithARN(const Aws::String& value) { SetARN(value); return *this;}
-    inline CreateUserResult& WithARN(Aws::String&& value) { SetARN(std::move(value)); return *this;}
-    inline CreateUserResult& WithARN(const char* value) { SetARN(value); return *this;}
+    inline const Aws::String& GetARN() const { return m_aRN; }
+    template<typename ARNT = Aws::String>
+    void SetARN(ARNT&& value) { m_aRNHasBeenSet = true; m_aRN = std::forward<ARNT>(value); }
+    template<typename ARNT = Aws::String>
+    CreateUserResult& WithARN(ARNT&& value) { SetARN(std::forward<ARNT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateUserResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateUserResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateUserResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_userId;
+    bool m_userIdHasBeenSet = false;
 
     Aws::String m_userName;
+    bool m_userNameHasBeenSet = false;
 
     Aws::String m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_engine;
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_minimumEngineVersion;
+    bool m_minimumEngineVersionHasBeenSet = false;
 
     Aws::String m_accessString;
+    bool m_accessStringHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_userGroupIds;
+    bool m_userGroupIdsHasBeenSet = false;
 
     Authentication m_authentication;
+    bool m_authenticationHasBeenSet = false;
 
     Aws::String m_aRN;
+    bool m_aRNHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

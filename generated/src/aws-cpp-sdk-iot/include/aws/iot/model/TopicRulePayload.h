@@ -33,7 +33,7 @@ namespace Model
   class TopicRulePayload
   {
   public:
-    AWS_IOT_API TopicRulePayload();
+    AWS_IOT_API TopicRulePayload() = default;
     AWS_IOT_API TopicRulePayload(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API TopicRulePayload& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,49 +45,45 @@ namespace Model
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-sql-reference.html">IoT
      * SQL Reference</a> in the <i>IoT Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetSql() const{ return m_sql; }
+    inline const Aws::String& GetSql() const { return m_sql; }
     inline bool SqlHasBeenSet() const { return m_sqlHasBeenSet; }
-    inline void SetSql(const Aws::String& value) { m_sqlHasBeenSet = true; m_sql = value; }
-    inline void SetSql(Aws::String&& value) { m_sqlHasBeenSet = true; m_sql = std::move(value); }
-    inline void SetSql(const char* value) { m_sqlHasBeenSet = true; m_sql.assign(value); }
-    inline TopicRulePayload& WithSql(const Aws::String& value) { SetSql(value); return *this;}
-    inline TopicRulePayload& WithSql(Aws::String&& value) { SetSql(std::move(value)); return *this;}
-    inline TopicRulePayload& WithSql(const char* value) { SetSql(value); return *this;}
+    template<typename SqlT = Aws::String>
+    void SetSql(SqlT&& value) { m_sqlHasBeenSet = true; m_sql = std::forward<SqlT>(value); }
+    template<typename SqlT = Aws::String>
+    TopicRulePayload& WithSql(SqlT&& value) { SetSql(std::forward<SqlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the rule.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline TopicRulePayload& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline TopicRulePayload& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline TopicRulePayload& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    TopicRulePayload& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The actions associated with the rule.</p>
      */
-    inline const Aws::Vector<Action>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<Action>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<Action>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<Action>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline TopicRulePayload& WithActions(const Aws::Vector<Action>& value) { SetActions(value); return *this;}
-    inline TopicRulePayload& WithActions(Aws::Vector<Action>&& value) { SetActions(std::move(value)); return *this;}
-    inline TopicRulePayload& AddActions(const Action& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline TopicRulePayload& AddActions(Action&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+    template<typename ActionsT = Aws::Vector<Action>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<Action>>
+    TopicRulePayload& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = Action>
+    TopicRulePayload& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Specifies whether the rule is disabled.</p>
      */
-    inline bool GetRuleDisabled() const{ return m_ruleDisabled; }
+    inline bool GetRuleDisabled() const { return m_ruleDisabled; }
     inline bool RuleDisabledHasBeenSet() const { return m_ruleDisabledHasBeenSet; }
     inline void SetRuleDisabled(bool value) { m_ruleDisabledHasBeenSet = true; m_ruleDisabled = value; }
     inline TopicRulePayload& WithRuleDisabled(bool value) { SetRuleDisabled(value); return *this;}
@@ -97,26 +93,24 @@ namespace Model
     /**
      * <p>The version of the SQL rules engine to use when evaluating the rule.</p>
      */
-    inline const Aws::String& GetAwsIotSqlVersion() const{ return m_awsIotSqlVersion; }
+    inline const Aws::String& GetAwsIotSqlVersion() const { return m_awsIotSqlVersion; }
     inline bool AwsIotSqlVersionHasBeenSet() const { return m_awsIotSqlVersionHasBeenSet; }
-    inline void SetAwsIotSqlVersion(const Aws::String& value) { m_awsIotSqlVersionHasBeenSet = true; m_awsIotSqlVersion = value; }
-    inline void SetAwsIotSqlVersion(Aws::String&& value) { m_awsIotSqlVersionHasBeenSet = true; m_awsIotSqlVersion = std::move(value); }
-    inline void SetAwsIotSqlVersion(const char* value) { m_awsIotSqlVersionHasBeenSet = true; m_awsIotSqlVersion.assign(value); }
-    inline TopicRulePayload& WithAwsIotSqlVersion(const Aws::String& value) { SetAwsIotSqlVersion(value); return *this;}
-    inline TopicRulePayload& WithAwsIotSqlVersion(Aws::String&& value) { SetAwsIotSqlVersion(std::move(value)); return *this;}
-    inline TopicRulePayload& WithAwsIotSqlVersion(const char* value) { SetAwsIotSqlVersion(value); return *this;}
+    template<typename AwsIotSqlVersionT = Aws::String>
+    void SetAwsIotSqlVersion(AwsIotSqlVersionT&& value) { m_awsIotSqlVersionHasBeenSet = true; m_awsIotSqlVersion = std::forward<AwsIotSqlVersionT>(value); }
+    template<typename AwsIotSqlVersionT = Aws::String>
+    TopicRulePayload& WithAwsIotSqlVersion(AwsIotSqlVersionT&& value) { SetAwsIotSqlVersion(std::forward<AwsIotSqlVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The action to take when an error occurs.</p>
      */
-    inline const Action& GetErrorAction() const{ return m_errorAction; }
+    inline const Action& GetErrorAction() const { return m_errorAction; }
     inline bool ErrorActionHasBeenSet() const { return m_errorActionHasBeenSet; }
-    inline void SetErrorAction(const Action& value) { m_errorActionHasBeenSet = true; m_errorAction = value; }
-    inline void SetErrorAction(Action&& value) { m_errorActionHasBeenSet = true; m_errorAction = std::move(value); }
-    inline TopicRulePayload& WithErrorAction(const Action& value) { SetErrorAction(value); return *this;}
-    inline TopicRulePayload& WithErrorAction(Action&& value) { SetErrorAction(std::move(value)); return *this;}
+    template<typename ErrorActionT = Action>
+    void SetErrorAction(ErrorActionT&& value) { m_errorActionHasBeenSet = true; m_errorAction = std::forward<ErrorActionT>(value); }
+    template<typename ErrorActionT = Action>
+    TopicRulePayload& WithErrorAction(ErrorActionT&& value) { SetErrorAction(std::forward<ErrorActionT>(value)); return *this;}
     ///@}
   private:
 
@@ -129,7 +123,7 @@ namespace Model
     Aws::Vector<Action> m_actions;
     bool m_actionsHasBeenSet = false;
 
-    bool m_ruleDisabled;
+    bool m_ruleDisabled{false};
     bool m_ruleDisabledHasBeenSet = false;
 
     Aws::String m_awsIotSqlVersion;

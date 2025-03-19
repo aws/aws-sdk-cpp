@@ -12,16 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutGatewayResponseRequest::PutGatewayResponseRequest() : 
-    m_restApiIdHasBeenSet(false),
-    m_responseType(GatewayResponseType::NOT_SET),
-    m_responseTypeHasBeenSet(false),
-    m_statusCodeHasBeenSet(false),
-    m_responseParametersHasBeenSet(false),
-    m_responseTemplatesHasBeenSet(false)
-{
-}
-
 Aws::String PutGatewayResponseRequest::SerializePayload() const
 {
   JsonValue payload;

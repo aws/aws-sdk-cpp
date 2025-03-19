@@ -23,7 +23,7 @@ namespace Model
   class UpdateRegexMatchSetRequest : public WAFRegionalRequest
   {
   public:
-    AWS_WAFREGIONAL_API UpdateRegexMatchSetRequest();
+    AWS_WAFREGIONAL_API UpdateRegexMatchSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * update. <code>RegexMatchSetId</code> is returned by <a>CreateRegexMatchSet</a>
      * and by <a>ListRegexMatchSets</a>.</p>
      */
-    inline const Aws::String& GetRegexMatchSetId() const{ return m_regexMatchSetId; }
+    inline const Aws::String& GetRegexMatchSetId() const { return m_regexMatchSetId; }
     inline bool RegexMatchSetIdHasBeenSet() const { return m_regexMatchSetIdHasBeenSet; }
-    inline void SetRegexMatchSetId(const Aws::String& value) { m_regexMatchSetIdHasBeenSet = true; m_regexMatchSetId = value; }
-    inline void SetRegexMatchSetId(Aws::String&& value) { m_regexMatchSetIdHasBeenSet = true; m_regexMatchSetId = std::move(value); }
-    inline void SetRegexMatchSetId(const char* value) { m_regexMatchSetIdHasBeenSet = true; m_regexMatchSetId.assign(value); }
-    inline UpdateRegexMatchSetRequest& WithRegexMatchSetId(const Aws::String& value) { SetRegexMatchSetId(value); return *this;}
-    inline UpdateRegexMatchSetRequest& WithRegexMatchSetId(Aws::String&& value) { SetRegexMatchSetId(std::move(value)); return *this;}
-    inline UpdateRegexMatchSetRequest& WithRegexMatchSetId(const char* value) { SetRegexMatchSetId(value); return *this;}
+    template<typename RegexMatchSetIdT = Aws::String>
+    void SetRegexMatchSetId(RegexMatchSetIdT&& value) { m_regexMatchSetIdHasBeenSet = true; m_regexMatchSetId = std::forward<RegexMatchSetIdT>(value); }
+    template<typename RegexMatchSetIdT = Aws::String>
+    UpdateRegexMatchSetRequest& WithRegexMatchSetId(RegexMatchSetIdT&& value) { SetRegexMatchSetId(std::forward<RegexMatchSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,28 +56,26 @@ namespace Model
      * into or delete from a <a>RegexMatchSet</a>. For more information, see
      * <a>RegexMatchTuple</a>.</p>
      */
-    inline const Aws::Vector<RegexMatchSetUpdate>& GetUpdates() const{ return m_updates; }
+    inline const Aws::Vector<RegexMatchSetUpdate>& GetUpdates() const { return m_updates; }
     inline bool UpdatesHasBeenSet() const { return m_updatesHasBeenSet; }
-    inline void SetUpdates(const Aws::Vector<RegexMatchSetUpdate>& value) { m_updatesHasBeenSet = true; m_updates = value; }
-    inline void SetUpdates(Aws::Vector<RegexMatchSetUpdate>&& value) { m_updatesHasBeenSet = true; m_updates = std::move(value); }
-    inline UpdateRegexMatchSetRequest& WithUpdates(const Aws::Vector<RegexMatchSetUpdate>& value) { SetUpdates(value); return *this;}
-    inline UpdateRegexMatchSetRequest& WithUpdates(Aws::Vector<RegexMatchSetUpdate>&& value) { SetUpdates(std::move(value)); return *this;}
-    inline UpdateRegexMatchSetRequest& AddUpdates(const RegexMatchSetUpdate& value) { m_updatesHasBeenSet = true; m_updates.push_back(value); return *this; }
-    inline UpdateRegexMatchSetRequest& AddUpdates(RegexMatchSetUpdate&& value) { m_updatesHasBeenSet = true; m_updates.push_back(std::move(value)); return *this; }
+    template<typename UpdatesT = Aws::Vector<RegexMatchSetUpdate>>
+    void SetUpdates(UpdatesT&& value) { m_updatesHasBeenSet = true; m_updates = std::forward<UpdatesT>(value); }
+    template<typename UpdatesT = Aws::Vector<RegexMatchSetUpdate>>
+    UpdateRegexMatchSetRequest& WithUpdates(UpdatesT&& value) { SetUpdates(std::forward<UpdatesT>(value)); return *this;}
+    template<typename UpdatesT = RegexMatchSetUpdate>
+    UpdateRegexMatchSetRequest& AddUpdates(UpdatesT&& value) { m_updatesHasBeenSet = true; m_updates.emplace_back(std::forward<UpdatesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
-    inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
+    inline const Aws::String& GetChangeToken() const { return m_changeToken; }
     inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
-    inline void SetChangeToken(const Aws::String& value) { m_changeTokenHasBeenSet = true; m_changeToken = value; }
-    inline void SetChangeToken(Aws::String&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::move(value); }
-    inline void SetChangeToken(const char* value) { m_changeTokenHasBeenSet = true; m_changeToken.assign(value); }
-    inline UpdateRegexMatchSetRequest& WithChangeToken(const Aws::String& value) { SetChangeToken(value); return *this;}
-    inline UpdateRegexMatchSetRequest& WithChangeToken(Aws::String&& value) { SetChangeToken(std::move(value)); return *this;}
-    inline UpdateRegexMatchSetRequest& WithChangeToken(const char* value) { SetChangeToken(value); return *this;}
+    template<typename ChangeTokenT = Aws::String>
+    void SetChangeToken(ChangeTokenT&& value) { m_changeTokenHasBeenSet = true; m_changeToken = std::forward<ChangeTokenT>(value); }
+    template<typename ChangeTokenT = Aws::String>
+    UpdateRegexMatchSetRequest& WithChangeToken(ChangeTokenT&& value) { SetChangeToken(std::forward<ChangeTokenT>(value)); return *this;}
     ///@}
   private:
 

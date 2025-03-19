@@ -35,7 +35,7 @@ namespace Model
   class ECSServiceRecommendedOptionProjectedMetric
   {
   public:
-    AWS_COMPUTEOPTIMIZER_API ECSServiceRecommendedOptionProjectedMetric();
+    AWS_COMPUTEOPTIMIZER_API ECSServiceRecommendedOptionProjectedMetric() = default;
     AWS_COMPUTEOPTIMIZER_API ECSServiceRecommendedOptionProjectedMetric(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API ECSServiceRecommendedOptionProjectedMetric& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COMPUTEOPTIMIZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
     /**
      * <p> The recommended CPU size for the Amazon ECS service. </p>
      */
-    inline int GetRecommendedCpuUnits() const{ return m_recommendedCpuUnits; }
+    inline int GetRecommendedCpuUnits() const { return m_recommendedCpuUnits; }
     inline bool RecommendedCpuUnitsHasBeenSet() const { return m_recommendedCpuUnitsHasBeenSet; }
     inline void SetRecommendedCpuUnits(int value) { m_recommendedCpuUnitsHasBeenSet = true; m_recommendedCpuUnits = value; }
     inline ECSServiceRecommendedOptionProjectedMetric& WithRecommendedCpuUnits(int value) { SetRecommendedCpuUnits(value); return *this;}
@@ -55,7 +55,7 @@ namespace Model
     /**
      * <p> The recommended memory size for the Amazon ECS service. </p>
      */
-    inline int GetRecommendedMemorySize() const{ return m_recommendedMemorySize; }
+    inline int GetRecommendedMemorySize() const { return m_recommendedMemorySize; }
     inline bool RecommendedMemorySizeHasBeenSet() const { return m_recommendedMemorySizeHasBeenSet; }
     inline void SetRecommendedMemorySize(int value) { m_recommendedMemorySizeHasBeenSet = true; m_recommendedMemorySize = value; }
     inline ECSServiceRecommendedOptionProjectedMetric& WithRecommendedMemorySize(int value) { SetRecommendedMemorySize(value); return *this;}
@@ -65,21 +65,21 @@ namespace Model
     /**
      * <p> An array of objects that describe the projected metric. </p>
      */
-    inline const Aws::Vector<ECSServiceProjectedMetric>& GetProjectedMetrics() const{ return m_projectedMetrics; }
+    inline const Aws::Vector<ECSServiceProjectedMetric>& GetProjectedMetrics() const { return m_projectedMetrics; }
     inline bool ProjectedMetricsHasBeenSet() const { return m_projectedMetricsHasBeenSet; }
-    inline void SetProjectedMetrics(const Aws::Vector<ECSServiceProjectedMetric>& value) { m_projectedMetricsHasBeenSet = true; m_projectedMetrics = value; }
-    inline void SetProjectedMetrics(Aws::Vector<ECSServiceProjectedMetric>&& value) { m_projectedMetricsHasBeenSet = true; m_projectedMetrics = std::move(value); }
-    inline ECSServiceRecommendedOptionProjectedMetric& WithProjectedMetrics(const Aws::Vector<ECSServiceProjectedMetric>& value) { SetProjectedMetrics(value); return *this;}
-    inline ECSServiceRecommendedOptionProjectedMetric& WithProjectedMetrics(Aws::Vector<ECSServiceProjectedMetric>&& value) { SetProjectedMetrics(std::move(value)); return *this;}
-    inline ECSServiceRecommendedOptionProjectedMetric& AddProjectedMetrics(const ECSServiceProjectedMetric& value) { m_projectedMetricsHasBeenSet = true; m_projectedMetrics.push_back(value); return *this; }
-    inline ECSServiceRecommendedOptionProjectedMetric& AddProjectedMetrics(ECSServiceProjectedMetric&& value) { m_projectedMetricsHasBeenSet = true; m_projectedMetrics.push_back(std::move(value)); return *this; }
+    template<typename ProjectedMetricsT = Aws::Vector<ECSServiceProjectedMetric>>
+    void SetProjectedMetrics(ProjectedMetricsT&& value) { m_projectedMetricsHasBeenSet = true; m_projectedMetrics = std::forward<ProjectedMetricsT>(value); }
+    template<typename ProjectedMetricsT = Aws::Vector<ECSServiceProjectedMetric>>
+    ECSServiceRecommendedOptionProjectedMetric& WithProjectedMetrics(ProjectedMetricsT&& value) { SetProjectedMetrics(std::forward<ProjectedMetricsT>(value)); return *this;}
+    template<typename ProjectedMetricsT = ECSServiceProjectedMetric>
+    ECSServiceRecommendedOptionProjectedMetric& AddProjectedMetrics(ProjectedMetricsT&& value) { m_projectedMetricsHasBeenSet = true; m_projectedMetrics.emplace_back(std::forward<ProjectedMetricsT>(value)); return *this; }
     ///@}
   private:
 
-    int m_recommendedCpuUnits;
+    int m_recommendedCpuUnits{0};
     bool m_recommendedCpuUnitsHasBeenSet = false;
 
-    int m_recommendedMemorySize;
+    int m_recommendedMemorySize{0};
     bool m_recommendedMemorySizeHasBeenSet = false;
 
     Aws::Vector<ECSServiceProjectedMetric> m_projectedMetrics;

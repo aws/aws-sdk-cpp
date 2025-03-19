@@ -18,14 +18,7 @@ namespace ECS
 namespace Model
 {
 
-CreatedAt::CreatedAt() : 
-    m_beforeHasBeenSet(false),
-    m_afterHasBeenSet(false)
-{
-}
-
 CreatedAt::CreatedAt(JsonView jsonValue)
-  : CreatedAt()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CreatedAt& CreatedAt::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("before"))
   {
     m_before = jsonValue.GetDouble("before");
-
     m_beforeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("after"))
   {
     m_after = jsonValue.GetDouble("after");
-
     m_afterHasBeenSet = true;
   }
-
   return *this;
 }
 

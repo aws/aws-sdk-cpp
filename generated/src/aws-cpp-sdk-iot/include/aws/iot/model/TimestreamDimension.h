@@ -32,7 +32,7 @@ namespace Model
   class TimestreamDimension
   {
   public:
-    AWS_IOT_API TimestreamDimension();
+    AWS_IOT_API TimestreamDimension() = default;
     AWS_IOT_API TimestreamDimension(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API TimestreamDimension& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,28 +47,24 @@ namespace Model
      * <code>measure_value</code> and they cannot contain the colon (<code>:</code>)
      * character.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline TimestreamDimension& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline TimestreamDimension& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline TimestreamDimension& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    TimestreamDimension& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value to write in this column of the database record.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline TimestreamDimension& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline TimestreamDimension& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline TimestreamDimension& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    TimestreamDimension& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-ActionDefinition::ActionDefinition() : 
-    m_publishMetricActionHasBeenSet(false)
-{
-}
-
 ActionDefinition::ActionDefinition(JsonView jsonValue)
-  : ActionDefinition()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ActionDefinition& ActionDefinition::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PublishMetricAction"))
   {
     m_publishMetricAction = jsonValue.GetObject("PublishMetricAction");
-
     m_publishMetricActionHasBeenSet = true;
   }
-
   return *this;
 }
 

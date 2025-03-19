@@ -30,7 +30,7 @@ namespace Model
   class GetResourceRequestStatusResult
   {
   public:
-    AWS_CLOUDCONTROLAPI_API GetResourceRequestStatusResult();
+    AWS_CLOUDCONTROLAPI_API GetResourceRequestStatusResult() = default;
     AWS_CLOUDCONTROLAPI_API GetResourceRequestStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDCONTROLAPI_API GetResourceRequestStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,11 +39,11 @@ namespace Model
     /**
      * <p>Represents the current status of the resource operation request.</p>
      */
-    inline const ProgressEvent& GetProgressEvent() const{ return m_progressEvent; }
-    inline void SetProgressEvent(const ProgressEvent& value) { m_progressEvent = value; }
-    inline void SetProgressEvent(ProgressEvent&& value) { m_progressEvent = std::move(value); }
-    inline GetResourceRequestStatusResult& WithProgressEvent(const ProgressEvent& value) { SetProgressEvent(value); return *this;}
-    inline GetResourceRequestStatusResult& WithProgressEvent(ProgressEvent&& value) { SetProgressEvent(std::move(value)); return *this;}
+    inline const ProgressEvent& GetProgressEvent() const { return m_progressEvent; }
+    template<typename ProgressEventT = ProgressEvent>
+    void SetProgressEvent(ProgressEventT&& value) { m_progressEventHasBeenSet = true; m_progressEvent = std::forward<ProgressEventT>(value); }
+    template<typename ProgressEventT = ProgressEvent>
+    GetResourceRequestStatusResult& WithProgressEvent(ProgressEventT&& value) { SetProgressEvent(std::forward<ProgressEventT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,32 +51,33 @@ namespace Model
      * <p>Lists Hook invocations for the specified target in the request. This is a
      * list since the same target can invoke multiple Hooks.</p>
      */
-    inline const Aws::Vector<HookProgressEvent>& GetHooksProgressEvent() const{ return m_hooksProgressEvent; }
-    inline void SetHooksProgressEvent(const Aws::Vector<HookProgressEvent>& value) { m_hooksProgressEvent = value; }
-    inline void SetHooksProgressEvent(Aws::Vector<HookProgressEvent>&& value) { m_hooksProgressEvent = std::move(value); }
-    inline GetResourceRequestStatusResult& WithHooksProgressEvent(const Aws::Vector<HookProgressEvent>& value) { SetHooksProgressEvent(value); return *this;}
-    inline GetResourceRequestStatusResult& WithHooksProgressEvent(Aws::Vector<HookProgressEvent>&& value) { SetHooksProgressEvent(std::move(value)); return *this;}
-    inline GetResourceRequestStatusResult& AddHooksProgressEvent(const HookProgressEvent& value) { m_hooksProgressEvent.push_back(value); return *this; }
-    inline GetResourceRequestStatusResult& AddHooksProgressEvent(HookProgressEvent&& value) { m_hooksProgressEvent.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<HookProgressEvent>& GetHooksProgressEvent() const { return m_hooksProgressEvent; }
+    template<typename HooksProgressEventT = Aws::Vector<HookProgressEvent>>
+    void SetHooksProgressEvent(HooksProgressEventT&& value) { m_hooksProgressEventHasBeenSet = true; m_hooksProgressEvent = std::forward<HooksProgressEventT>(value); }
+    template<typename HooksProgressEventT = Aws::Vector<HookProgressEvent>>
+    GetResourceRequestStatusResult& WithHooksProgressEvent(HooksProgressEventT&& value) { SetHooksProgressEvent(std::forward<HooksProgressEventT>(value)); return *this;}
+    template<typename HooksProgressEventT = HookProgressEvent>
+    GetResourceRequestStatusResult& AddHooksProgressEvent(HooksProgressEventT&& value) { m_hooksProgressEventHasBeenSet = true; m_hooksProgressEvent.emplace_back(std::forward<HooksProgressEventT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetResourceRequestStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetResourceRequestStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetResourceRequestStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetResourceRequestStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ProgressEvent m_progressEvent;
+    bool m_progressEventHasBeenSet = false;
 
     Aws::Vector<HookProgressEvent> m_hooksProgressEvent;
+    bool m_hooksProgressEventHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

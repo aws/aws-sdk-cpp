@@ -39,7 +39,7 @@ namespace Model
   class OrganizationCustomRuleMetadata
   {
   public:
-    AWS_CONFIGSERVICE_API OrganizationCustomRuleMetadata();
+    AWS_CONFIGSERVICE_API OrganizationCustomRuleMetadata() = default;
     AWS_CONFIGSERVICE_API OrganizationCustomRuleMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API OrganizationCustomRuleMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONFIGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,28 +49,24 @@ namespace Model
     /**
      * <p>The description that you provide for your organization Config rule.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline OrganizationCustomRuleMetadata& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline OrganizationCustomRuleMetadata& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline OrganizationCustomRuleMetadata& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    OrganizationCustomRuleMetadata& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The lambda function ARN.</p>
      */
-    inline const Aws::String& GetLambdaFunctionArn() const{ return m_lambdaFunctionArn; }
+    inline const Aws::String& GetLambdaFunctionArn() const { return m_lambdaFunctionArn; }
     inline bool LambdaFunctionArnHasBeenSet() const { return m_lambdaFunctionArnHasBeenSet; }
-    inline void SetLambdaFunctionArn(const Aws::String& value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn = value; }
-    inline void SetLambdaFunctionArn(Aws::String&& value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn = std::move(value); }
-    inline void SetLambdaFunctionArn(const char* value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn.assign(value); }
-    inline OrganizationCustomRuleMetadata& WithLambdaFunctionArn(const Aws::String& value) { SetLambdaFunctionArn(value); return *this;}
-    inline OrganizationCustomRuleMetadata& WithLambdaFunctionArn(Aws::String&& value) { SetLambdaFunctionArn(std::move(value)); return *this;}
-    inline OrganizationCustomRuleMetadata& WithLambdaFunctionArn(const char* value) { SetLambdaFunctionArn(value); return *this;}
+    template<typename LambdaFunctionArnT = Aws::String>
+    void SetLambdaFunctionArn(LambdaFunctionArnT&& value) { m_lambdaFunctionArnHasBeenSet = true; m_lambdaFunctionArn = std::forward<LambdaFunctionArnT>(value); }
+    template<typename LambdaFunctionArnT = Aws::String>
+    OrganizationCustomRuleMetadata& WithLambdaFunctionArn(LambdaFunctionArnT&& value) { SetLambdaFunctionArn(std::forward<LambdaFunctionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +82,13 @@ namespace Model
      * <code>ScheduledNotification</code> - Triggers a periodic evaluation at the
      * frequency specified for <code>MaximumExecutionFrequency</code>.</p> </li> </ul>
      */
-    inline const Aws::Vector<OrganizationConfigRuleTriggerType>& GetOrganizationConfigRuleTriggerTypes() const{ return m_organizationConfigRuleTriggerTypes; }
+    inline const Aws::Vector<OrganizationConfigRuleTriggerType>& GetOrganizationConfigRuleTriggerTypes() const { return m_organizationConfigRuleTriggerTypes; }
     inline bool OrganizationConfigRuleTriggerTypesHasBeenSet() const { return m_organizationConfigRuleTriggerTypesHasBeenSet; }
-    inline void SetOrganizationConfigRuleTriggerTypes(const Aws::Vector<OrganizationConfigRuleTriggerType>& value) { m_organizationConfigRuleTriggerTypesHasBeenSet = true; m_organizationConfigRuleTriggerTypes = value; }
-    inline void SetOrganizationConfigRuleTriggerTypes(Aws::Vector<OrganizationConfigRuleTriggerType>&& value) { m_organizationConfigRuleTriggerTypesHasBeenSet = true; m_organizationConfigRuleTriggerTypes = std::move(value); }
-    inline OrganizationCustomRuleMetadata& WithOrganizationConfigRuleTriggerTypes(const Aws::Vector<OrganizationConfigRuleTriggerType>& value) { SetOrganizationConfigRuleTriggerTypes(value); return *this;}
-    inline OrganizationCustomRuleMetadata& WithOrganizationConfigRuleTriggerTypes(Aws::Vector<OrganizationConfigRuleTriggerType>&& value) { SetOrganizationConfigRuleTriggerTypes(std::move(value)); return *this;}
-    inline OrganizationCustomRuleMetadata& AddOrganizationConfigRuleTriggerTypes(const OrganizationConfigRuleTriggerType& value) { m_organizationConfigRuleTriggerTypesHasBeenSet = true; m_organizationConfigRuleTriggerTypes.push_back(value); return *this; }
-    inline OrganizationCustomRuleMetadata& AddOrganizationConfigRuleTriggerTypes(OrganizationConfigRuleTriggerType&& value) { m_organizationConfigRuleTriggerTypesHasBeenSet = true; m_organizationConfigRuleTriggerTypes.push_back(std::move(value)); return *this; }
+    template<typename OrganizationConfigRuleTriggerTypesT = Aws::Vector<OrganizationConfigRuleTriggerType>>
+    void SetOrganizationConfigRuleTriggerTypes(OrganizationConfigRuleTriggerTypesT&& value) { m_organizationConfigRuleTriggerTypesHasBeenSet = true; m_organizationConfigRuleTriggerTypes = std::forward<OrganizationConfigRuleTriggerTypesT>(value); }
+    template<typename OrganizationConfigRuleTriggerTypesT = Aws::Vector<OrganizationConfigRuleTriggerType>>
+    OrganizationCustomRuleMetadata& WithOrganizationConfigRuleTriggerTypes(OrganizationConfigRuleTriggerTypesT&& value) { SetOrganizationConfigRuleTriggerTypes(std::forward<OrganizationConfigRuleTriggerTypesT>(value)); return *this;}
+    inline OrganizationCustomRuleMetadata& AddOrganizationConfigRuleTriggerTypes(OrganizationConfigRuleTriggerType value) { m_organizationConfigRuleTriggerTypesHasBeenSet = true; m_organizationConfigRuleTriggerTypes.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -101,14 +96,12 @@ namespace Model
      * <p>A string, in JSON format, that is passed to your organization Config rule
      * Lambda function.</p>
      */
-    inline const Aws::String& GetInputParameters() const{ return m_inputParameters; }
+    inline const Aws::String& GetInputParameters() const { return m_inputParameters; }
     inline bool InputParametersHasBeenSet() const { return m_inputParametersHasBeenSet; }
-    inline void SetInputParameters(const Aws::String& value) { m_inputParametersHasBeenSet = true; m_inputParameters = value; }
-    inline void SetInputParameters(Aws::String&& value) { m_inputParametersHasBeenSet = true; m_inputParameters = std::move(value); }
-    inline void SetInputParameters(const char* value) { m_inputParametersHasBeenSet = true; m_inputParameters.assign(value); }
-    inline OrganizationCustomRuleMetadata& WithInputParameters(const Aws::String& value) { SetInputParameters(value); return *this;}
-    inline OrganizationCustomRuleMetadata& WithInputParameters(Aws::String&& value) { SetInputParameters(std::move(value)); return *this;}
-    inline OrganizationCustomRuleMetadata& WithInputParameters(const char* value) { SetInputParameters(value); return *this;}
+    template<typename InputParametersT = Aws::String>
+    void SetInputParameters(InputParametersT&& value) { m_inputParametersHasBeenSet = true; m_inputParameters = std::forward<InputParametersT>(value); }
+    template<typename InputParametersT = Aws::String>
+    OrganizationCustomRuleMetadata& WithInputParameters(InputParametersT&& value) { SetInputParameters(std::forward<InputParametersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,41 +113,36 @@ namespace Model
      * the frequency, specify a valid value for the
      * <code>MaximumExecutionFrequency</code> parameter.</p> 
      */
-    inline const MaximumExecutionFrequency& GetMaximumExecutionFrequency() const{ return m_maximumExecutionFrequency; }
+    inline MaximumExecutionFrequency GetMaximumExecutionFrequency() const { return m_maximumExecutionFrequency; }
     inline bool MaximumExecutionFrequencyHasBeenSet() const { return m_maximumExecutionFrequencyHasBeenSet; }
-    inline void SetMaximumExecutionFrequency(const MaximumExecutionFrequency& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = value; }
-    inline void SetMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = std::move(value); }
-    inline OrganizationCustomRuleMetadata& WithMaximumExecutionFrequency(const MaximumExecutionFrequency& value) { SetMaximumExecutionFrequency(value); return *this;}
-    inline OrganizationCustomRuleMetadata& WithMaximumExecutionFrequency(MaximumExecutionFrequency&& value) { SetMaximumExecutionFrequency(std::move(value)); return *this;}
+    inline void SetMaximumExecutionFrequency(MaximumExecutionFrequency value) { m_maximumExecutionFrequencyHasBeenSet = true; m_maximumExecutionFrequency = value; }
+    inline OrganizationCustomRuleMetadata& WithMaximumExecutionFrequency(MaximumExecutionFrequency value) { SetMaximumExecutionFrequency(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the Amazon Web Services resource that was evaluated.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceTypesScope() const{ return m_resourceTypesScope; }
+    inline const Aws::Vector<Aws::String>& GetResourceTypesScope() const { return m_resourceTypesScope; }
     inline bool ResourceTypesScopeHasBeenSet() const { return m_resourceTypesScopeHasBeenSet; }
-    inline void SetResourceTypesScope(const Aws::Vector<Aws::String>& value) { m_resourceTypesScopeHasBeenSet = true; m_resourceTypesScope = value; }
-    inline void SetResourceTypesScope(Aws::Vector<Aws::String>&& value) { m_resourceTypesScopeHasBeenSet = true; m_resourceTypesScope = std::move(value); }
-    inline OrganizationCustomRuleMetadata& WithResourceTypesScope(const Aws::Vector<Aws::String>& value) { SetResourceTypesScope(value); return *this;}
-    inline OrganizationCustomRuleMetadata& WithResourceTypesScope(Aws::Vector<Aws::String>&& value) { SetResourceTypesScope(std::move(value)); return *this;}
-    inline OrganizationCustomRuleMetadata& AddResourceTypesScope(const Aws::String& value) { m_resourceTypesScopeHasBeenSet = true; m_resourceTypesScope.push_back(value); return *this; }
-    inline OrganizationCustomRuleMetadata& AddResourceTypesScope(Aws::String&& value) { m_resourceTypesScopeHasBeenSet = true; m_resourceTypesScope.push_back(std::move(value)); return *this; }
-    inline OrganizationCustomRuleMetadata& AddResourceTypesScope(const char* value) { m_resourceTypesScopeHasBeenSet = true; m_resourceTypesScope.push_back(value); return *this; }
+    template<typename ResourceTypesScopeT = Aws::Vector<Aws::String>>
+    void SetResourceTypesScope(ResourceTypesScopeT&& value) { m_resourceTypesScopeHasBeenSet = true; m_resourceTypesScope = std::forward<ResourceTypesScopeT>(value); }
+    template<typename ResourceTypesScopeT = Aws::Vector<Aws::String>>
+    OrganizationCustomRuleMetadata& WithResourceTypesScope(ResourceTypesScopeT&& value) { SetResourceTypesScope(std::forward<ResourceTypesScopeT>(value)); return *this;}
+    template<typename ResourceTypesScopeT = Aws::String>
+    OrganizationCustomRuleMetadata& AddResourceTypesScope(ResourceTypesScopeT&& value) { m_resourceTypesScopeHasBeenSet = true; m_resourceTypesScope.emplace_back(std::forward<ResourceTypesScopeT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Amazon Web Services resource that was evaluated.</p>
      */
-    inline const Aws::String& GetResourceIdScope() const{ return m_resourceIdScope; }
+    inline const Aws::String& GetResourceIdScope() const { return m_resourceIdScope; }
     inline bool ResourceIdScopeHasBeenSet() const { return m_resourceIdScopeHasBeenSet; }
-    inline void SetResourceIdScope(const Aws::String& value) { m_resourceIdScopeHasBeenSet = true; m_resourceIdScope = value; }
-    inline void SetResourceIdScope(Aws::String&& value) { m_resourceIdScopeHasBeenSet = true; m_resourceIdScope = std::move(value); }
-    inline void SetResourceIdScope(const char* value) { m_resourceIdScopeHasBeenSet = true; m_resourceIdScope.assign(value); }
-    inline OrganizationCustomRuleMetadata& WithResourceIdScope(const Aws::String& value) { SetResourceIdScope(value); return *this;}
-    inline OrganizationCustomRuleMetadata& WithResourceIdScope(Aws::String&& value) { SetResourceIdScope(std::move(value)); return *this;}
-    inline OrganizationCustomRuleMetadata& WithResourceIdScope(const char* value) { SetResourceIdScope(value); return *this;}
+    template<typename ResourceIdScopeT = Aws::String>
+    void SetResourceIdScope(ResourceIdScopeT&& value) { m_resourceIdScopeHasBeenSet = true; m_resourceIdScope = std::forward<ResourceIdScopeT>(value); }
+    template<typename ResourceIdScopeT = Aws::String>
+    OrganizationCustomRuleMetadata& WithResourceIdScope(ResourceIdScopeT&& value) { SetResourceIdScope(std::forward<ResourceIdScopeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,14 +150,12 @@ namespace Model
      * <p>One part of a key-value pair that make up a tag. A key is a general label
      * that acts like a category for more specific tag values. </p>
      */
-    inline const Aws::String& GetTagKeyScope() const{ return m_tagKeyScope; }
+    inline const Aws::String& GetTagKeyScope() const { return m_tagKeyScope; }
     inline bool TagKeyScopeHasBeenSet() const { return m_tagKeyScopeHasBeenSet; }
-    inline void SetTagKeyScope(const Aws::String& value) { m_tagKeyScopeHasBeenSet = true; m_tagKeyScope = value; }
-    inline void SetTagKeyScope(Aws::String&& value) { m_tagKeyScopeHasBeenSet = true; m_tagKeyScope = std::move(value); }
-    inline void SetTagKeyScope(const char* value) { m_tagKeyScopeHasBeenSet = true; m_tagKeyScope.assign(value); }
-    inline OrganizationCustomRuleMetadata& WithTagKeyScope(const Aws::String& value) { SetTagKeyScope(value); return *this;}
-    inline OrganizationCustomRuleMetadata& WithTagKeyScope(Aws::String&& value) { SetTagKeyScope(std::move(value)); return *this;}
-    inline OrganizationCustomRuleMetadata& WithTagKeyScope(const char* value) { SetTagKeyScope(value); return *this;}
+    template<typename TagKeyScopeT = Aws::String>
+    void SetTagKeyScope(TagKeyScopeT&& value) { m_tagKeyScopeHasBeenSet = true; m_tagKeyScope = std::forward<TagKeyScopeT>(value); }
+    template<typename TagKeyScopeT = Aws::String>
+    OrganizationCustomRuleMetadata& WithTagKeyScope(TagKeyScopeT&& value) { SetTagKeyScope(std::forward<TagKeyScopeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -177,14 +163,12 @@ namespace Model
      * <p>The optional part of a key-value pair that make up a tag. A value acts as a
      * descriptor within a tag category (key). </p>
      */
-    inline const Aws::String& GetTagValueScope() const{ return m_tagValueScope; }
+    inline const Aws::String& GetTagValueScope() const { return m_tagValueScope; }
     inline bool TagValueScopeHasBeenSet() const { return m_tagValueScopeHasBeenSet; }
-    inline void SetTagValueScope(const Aws::String& value) { m_tagValueScopeHasBeenSet = true; m_tagValueScope = value; }
-    inline void SetTagValueScope(Aws::String&& value) { m_tagValueScopeHasBeenSet = true; m_tagValueScope = std::move(value); }
-    inline void SetTagValueScope(const char* value) { m_tagValueScopeHasBeenSet = true; m_tagValueScope.assign(value); }
-    inline OrganizationCustomRuleMetadata& WithTagValueScope(const Aws::String& value) { SetTagValueScope(value); return *this;}
-    inline OrganizationCustomRuleMetadata& WithTagValueScope(Aws::String&& value) { SetTagValueScope(std::move(value)); return *this;}
-    inline OrganizationCustomRuleMetadata& WithTagValueScope(const char* value) { SetTagValueScope(value); return *this;}
+    template<typename TagValueScopeT = Aws::String>
+    void SetTagValueScope(TagValueScopeT&& value) { m_tagValueScopeHasBeenSet = true; m_tagValueScope = std::forward<TagValueScopeT>(value); }
+    template<typename TagValueScopeT = Aws::String>
+    OrganizationCustomRuleMetadata& WithTagValueScope(TagValueScopeT&& value) { SetTagValueScope(std::forward<TagValueScopeT>(value)); return *this;}
     ///@}
   private:
 
@@ -200,7 +184,7 @@ namespace Model
     Aws::String m_inputParameters;
     bool m_inputParametersHasBeenSet = false;
 
-    MaximumExecutionFrequency m_maximumExecutionFrequency;
+    MaximumExecutionFrequency m_maximumExecutionFrequency{MaximumExecutionFrequency::NOT_SET};
     bool m_maximumExecutionFrequencyHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_resourceTypesScope;

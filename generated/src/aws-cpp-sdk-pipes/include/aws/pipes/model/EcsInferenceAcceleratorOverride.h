@@ -36,7 +36,7 @@ namespace Model
   class EcsInferenceAcceleratorOverride
   {
   public:
-    AWS_PIPES_API EcsInferenceAcceleratorOverride();
+    AWS_PIPES_API EcsInferenceAcceleratorOverride() = default;
     AWS_PIPES_API EcsInferenceAcceleratorOverride(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API EcsInferenceAcceleratorOverride& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,28 +48,24 @@ namespace Model
      * parameter must match a <code>deviceName</code> specified in the task
      * definition.</p>
      */
-    inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
+    inline const Aws::String& GetDeviceName() const { return m_deviceName; }
     inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
-    inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
-    inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
-    inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
-    inline EcsInferenceAcceleratorOverride& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
-    inline EcsInferenceAcceleratorOverride& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
-    inline EcsInferenceAcceleratorOverride& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
+    template<typename DeviceNameT = Aws::String>
+    void SetDeviceName(DeviceNameT&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::forward<DeviceNameT>(value); }
+    template<typename DeviceNameT = Aws::String>
+    EcsInferenceAcceleratorOverride& WithDeviceName(DeviceNameT&& value) { SetDeviceName(std::forward<DeviceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Elastic Inference accelerator type to use.</p>
      */
-    inline const Aws::String& GetDeviceType() const{ return m_deviceType; }
+    inline const Aws::String& GetDeviceType() const { return m_deviceType; }
     inline bool DeviceTypeHasBeenSet() const { return m_deviceTypeHasBeenSet; }
-    inline void SetDeviceType(const Aws::String& value) { m_deviceTypeHasBeenSet = true; m_deviceType = value; }
-    inline void SetDeviceType(Aws::String&& value) { m_deviceTypeHasBeenSet = true; m_deviceType = std::move(value); }
-    inline void SetDeviceType(const char* value) { m_deviceTypeHasBeenSet = true; m_deviceType.assign(value); }
-    inline EcsInferenceAcceleratorOverride& WithDeviceType(const Aws::String& value) { SetDeviceType(value); return *this;}
-    inline EcsInferenceAcceleratorOverride& WithDeviceType(Aws::String&& value) { SetDeviceType(std::move(value)); return *this;}
-    inline EcsInferenceAcceleratorOverride& WithDeviceType(const char* value) { SetDeviceType(value); return *this;}
+    template<typename DeviceTypeT = Aws::String>
+    void SetDeviceType(DeviceTypeT&& value) { m_deviceTypeHasBeenSet = true; m_deviceType = std::forward<DeviceTypeT>(value); }
+    template<typename DeviceTypeT = Aws::String>
+    EcsInferenceAcceleratorOverride& WithDeviceType(DeviceTypeT&& value) { SetDeviceType(std::forward<DeviceTypeT>(value)); return *this;}
     ///@}
   private:
 

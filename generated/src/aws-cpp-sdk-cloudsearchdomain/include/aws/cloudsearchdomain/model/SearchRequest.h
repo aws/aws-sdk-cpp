@@ -30,7 +30,7 @@ namespace Model
   class SearchRequest : public CloudSearchDomainRequest
   {
   public:
-    AWS_CLOUDSEARCHDOMAIN_API SearchRequest();
+    AWS_CLOUDSEARCHDOMAIN_API SearchRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -55,14 +55,12 @@ namespace Model
      * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/paginating-results.html">Paginating
      * Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetCursor() const{ return m_cursor; }
+    inline const Aws::String& GetCursor() const { return m_cursor; }
     inline bool CursorHasBeenSet() const { return m_cursorHasBeenSet; }
-    inline void SetCursor(const Aws::String& value) { m_cursorHasBeenSet = true; m_cursor = value; }
-    inline void SetCursor(Aws::String&& value) { m_cursorHasBeenSet = true; m_cursor = std::move(value); }
-    inline void SetCursor(const char* value) { m_cursorHasBeenSet = true; m_cursor.assign(value); }
-    inline SearchRequest& WithCursor(const Aws::String& value) { SetCursor(value); return *this;}
-    inline SearchRequest& WithCursor(Aws::String&& value) { SetCursor(std::move(value)); return *this;}
-    inline SearchRequest& WithCursor(const char* value) { SetCursor(value); return *this;}
+    template<typename CursorT = Aws::String>
+    void SetCursor(CursorT&& value) { m_cursorHasBeenSet = true; m_cursor = std::forward<CursorT>(value); }
+    template<typename CursorT = Aws::String>
+    SearchRequest& WithCursor(CursorT&& value) { SetCursor(std::forward<CursorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +76,12 @@ namespace Model
      * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html#writing-expressions">Writing
      * Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetExpr() const{ return m_expr; }
+    inline const Aws::String& GetExpr() const { return m_expr; }
     inline bool ExprHasBeenSet() const { return m_exprHasBeenSet; }
-    inline void SetExpr(const Aws::String& value) { m_exprHasBeenSet = true; m_expr = value; }
-    inline void SetExpr(Aws::String&& value) { m_exprHasBeenSet = true; m_expr = std::move(value); }
-    inline void SetExpr(const char* value) { m_exprHasBeenSet = true; m_expr.assign(value); }
-    inline SearchRequest& WithExpr(const Aws::String& value) { SetExpr(value); return *this;}
-    inline SearchRequest& WithExpr(Aws::String&& value) { SetExpr(std::move(value)); return *this;}
-    inline SearchRequest& WithExpr(const char* value) { SetExpr(value); return *this;}
+    template<typename ExprT = Aws::String>
+    void SetExpr(ExprT&& value) { m_exprHasBeenSet = true; m_expr = std::forward<ExprT>(value); }
+    template<typename ExprT = Aws::String>
+    SearchRequest& WithExpr(ExprT&& value) { SetExpr(std::forward<ExprT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,14 +131,12 @@ namespace Model
      * and Using Facet Information</a> in the <i>Amazon CloudSearch Developer
      * Guide</i>.</p>
      */
-    inline const Aws::String& GetFacet() const{ return m_facet; }
+    inline const Aws::String& GetFacet() const { return m_facet; }
     inline bool FacetHasBeenSet() const { return m_facetHasBeenSet; }
-    inline void SetFacet(const Aws::String& value) { m_facetHasBeenSet = true; m_facet = value; }
-    inline void SetFacet(Aws::String&& value) { m_facetHasBeenSet = true; m_facet = std::move(value); }
-    inline void SetFacet(const char* value) { m_facetHasBeenSet = true; m_facet.assign(value); }
-    inline SearchRequest& WithFacet(const Aws::String& value) { SetFacet(value); return *this;}
-    inline SearchRequest& WithFacet(Aws::String&& value) { SetFacet(std::move(value)); return *this;}
-    inline SearchRequest& WithFacet(const char* value) { SetFacet(value); return *this;}
+    template<typename FacetT = Aws::String>
+    void SetFacet(FacetT&& value) { m_facetHasBeenSet = true; m_facet = std::forward<FacetT>(value); }
+    template<typename FacetT = Aws::String>
+    SearchRequest& WithFacet(FacetT&& value) { SetFacet(std::forward<FacetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,14 +152,12 @@ namespace Model
      * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/filtering-results.html">Filtering
      * Matching Documents</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetFilterQuery() const{ return m_filterQuery; }
+    inline const Aws::String& GetFilterQuery() const { return m_filterQuery; }
     inline bool FilterQueryHasBeenSet() const { return m_filterQueryHasBeenSet; }
-    inline void SetFilterQuery(const Aws::String& value) { m_filterQueryHasBeenSet = true; m_filterQuery = value; }
-    inline void SetFilterQuery(Aws::String&& value) { m_filterQueryHasBeenSet = true; m_filterQuery = std::move(value); }
-    inline void SetFilterQuery(const char* value) { m_filterQueryHasBeenSet = true; m_filterQuery.assign(value); }
-    inline SearchRequest& WithFilterQuery(const Aws::String& value) { SetFilterQuery(value); return *this;}
-    inline SearchRequest& WithFilterQuery(Aws::String&& value) { SetFilterQuery(std::move(value)); return *this;}
-    inline SearchRequest& WithFilterQuery(const char* value) { SetFilterQuery(value); return *this;}
+    template<typename FilterQueryT = Aws::String>
+    void SetFilterQuery(FilterQueryT&& value) { m_filterQueryHasBeenSet = true; m_filterQuery = std::forward<FilterQueryT>(value); }
+    template<typename FilterQueryT = Aws::String>
+    SearchRequest& WithFilterQuery(FilterQueryT&& value) { SetFilterQuery(std::forward<FilterQueryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -195,14 +187,12 @@ namespace Model
      * <code>title</code> fields.</p> <p> <code>{ "actors": {}, "title": {"format":
      * "text","max_phrases": 2,"pre_tag": "<b>","post_tag": "</b>"} }</code></p>
      */
-    inline const Aws::String& GetHighlight() const{ return m_highlight; }
+    inline const Aws::String& GetHighlight() const { return m_highlight; }
     inline bool HighlightHasBeenSet() const { return m_highlightHasBeenSet; }
-    inline void SetHighlight(const Aws::String& value) { m_highlightHasBeenSet = true; m_highlight = value; }
-    inline void SetHighlight(Aws::String&& value) { m_highlightHasBeenSet = true; m_highlight = std::move(value); }
-    inline void SetHighlight(const char* value) { m_highlightHasBeenSet = true; m_highlight.assign(value); }
-    inline SearchRequest& WithHighlight(const Aws::String& value) { SetHighlight(value); return *this;}
-    inline SearchRequest& WithHighlight(Aws::String&& value) { SetHighlight(std::move(value)); return *this;}
-    inline SearchRequest& WithHighlight(const char* value) { SetHighlight(value); return *this;}
+    template<typename HighlightT = Aws::String>
+    void SetHighlight(HighlightT&& value) { m_highlightHasBeenSet = true; m_highlight = std::forward<HighlightT>(value); }
+    template<typename HighlightT = Aws::String>
+    SearchRequest& WithHighlight(HighlightT&& value) { SetHighlight(std::forward<HighlightT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -219,7 +209,7 @@ namespace Model
      * indicating that the results might be incomplete due to a temporary system
      * outage.</p>
      */
-    inline bool GetPartial() const{ return m_partial; }
+    inline bool GetPartial() const { return m_partial; }
     inline bool PartialHasBeenSet() const { return m_partialHasBeenSet; }
     inline void SetPartial(bool value) { m_partialHasBeenSet = true; m_partial = value; }
     inline SearchRequest& WithPartial(bool value) { SetPartial(value); return *this;}
@@ -237,14 +227,12 @@ namespace Model
      * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/searching.html">Searching
      * Your Data</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetQuery() const{ return m_query; }
+    inline const Aws::String& GetQuery() const { return m_query; }
     inline bool QueryHasBeenSet() const { return m_queryHasBeenSet; }
-    inline void SetQuery(const Aws::String& value) { m_queryHasBeenSet = true; m_query = value; }
-    inline void SetQuery(Aws::String&& value) { m_queryHasBeenSet = true; m_query = std::move(value); }
-    inline void SetQuery(const char* value) { m_queryHasBeenSet = true; m_query.assign(value); }
-    inline SearchRequest& WithQuery(const Aws::String& value) { SetQuery(value); return *this;}
-    inline SearchRequest& WithQuery(Aws::String&& value) { SetQuery(std::move(value)); return *this;}
-    inline SearchRequest& WithQuery(const char* value) { SetQuery(value); return *this;}
+    template<typename QueryT = Aws::String>
+    void SetQuery(QueryT&& value) { m_queryHasBeenSet = true; m_query = std::forward<QueryT>(value); }
+    template<typename QueryT = Aws::String>
+    SearchRequest& WithQuery(QueryT&& value) { SetQuery(std::forward<QueryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -341,14 +329,12 @@ namespace Model
      * fields (pure sum): <code>"tieBreaker":1</code>. Valid values: 0.0 to 1.0.
      * Default: 0.0. Valid for: <code>dismax</code>. </li> </ul>
      */
-    inline const Aws::String& GetQueryOptions() const{ return m_queryOptions; }
+    inline const Aws::String& GetQueryOptions() const { return m_queryOptions; }
     inline bool QueryOptionsHasBeenSet() const { return m_queryOptionsHasBeenSet; }
-    inline void SetQueryOptions(const Aws::String& value) { m_queryOptionsHasBeenSet = true; m_queryOptions = value; }
-    inline void SetQueryOptions(Aws::String&& value) { m_queryOptionsHasBeenSet = true; m_queryOptions = std::move(value); }
-    inline void SetQueryOptions(const char* value) { m_queryOptionsHasBeenSet = true; m_queryOptions.assign(value); }
-    inline SearchRequest& WithQueryOptions(const Aws::String& value) { SetQueryOptions(value); return *this;}
-    inline SearchRequest& WithQueryOptions(Aws::String&& value) { SetQueryOptions(std::move(value)); return *this;}
-    inline SearchRequest& WithQueryOptions(const char* value) { SetQueryOptions(value); return *this;}
+    template<typename QueryOptionsT = Aws::String>
+    void SetQueryOptions(QueryOptionsT&& value) { m_queryOptionsHasBeenSet = true; m_queryOptions = std::forward<QueryOptionsT>(value); }
+    template<typename QueryOptionsT = Aws::String>
+    SearchRequest& WithQueryOptions(QueryOptionsT&& value) { SetQueryOptions(std::forward<QueryOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -386,12 +372,10 @@ namespace Model
      * href="http://wiki.apache.org/solr/DisMaxQParserPlugin#Query_Syntax">DisMax Query
      * Parser Syntax</a>. </li> </ul>
      */
-    inline const QueryParser& GetQueryParser() const{ return m_queryParser; }
+    inline QueryParser GetQueryParser() const { return m_queryParser; }
     inline bool QueryParserHasBeenSet() const { return m_queryParserHasBeenSet; }
-    inline void SetQueryParser(const QueryParser& value) { m_queryParserHasBeenSet = true; m_queryParser = value; }
-    inline void SetQueryParser(QueryParser&& value) { m_queryParserHasBeenSet = true; m_queryParser = std::move(value); }
-    inline SearchRequest& WithQueryParser(const QueryParser& value) { SetQueryParser(value); return *this;}
-    inline SearchRequest& WithQueryParser(QueryParser&& value) { SetQueryParser(std::move(value)); return *this;}
+    inline void SetQueryParser(QueryParser value) { m_queryParserHasBeenSet = true; m_queryParser = value; }
+    inline SearchRequest& WithQueryParser(QueryParser value) { SetQueryParser(value); return *this;}
     ///@}
 
     ///@{
@@ -403,21 +387,19 @@ namespace Model
      * documents, specify <code>_no_fields</code>. To retrieve the relevance score
      * calculated for each document, specify <code>_score</code>. </p>
      */
-    inline const Aws::String& GetReturn() const{ return m_return; }
+    inline const Aws::String& GetReturn() const { return m_return; }
     inline bool ReturnHasBeenSet() const { return m_returnHasBeenSet; }
-    inline void SetReturn(const Aws::String& value) { m_returnHasBeenSet = true; m_return = value; }
-    inline void SetReturn(Aws::String&& value) { m_returnHasBeenSet = true; m_return = std::move(value); }
-    inline void SetReturn(const char* value) { m_returnHasBeenSet = true; m_return.assign(value); }
-    inline SearchRequest& WithReturn(const Aws::String& value) { SetReturn(value); return *this;}
-    inline SearchRequest& WithReturn(Aws::String&& value) { SetReturn(std::move(value)); return *this;}
-    inline SearchRequest& WithReturn(const char* value) { SetReturn(value); return *this;}
+    template<typename ReturnT = Aws::String>
+    void SetReturn(ReturnT&& value) { m_returnHasBeenSet = true; m_return = std::forward<ReturnT>(value); }
+    template<typename ReturnT = Aws::String>
+    SearchRequest& WithReturn(ReturnT&& value) { SetReturn(std::forward<ReturnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the maximum number of search hits to include in the response. </p>
      */
-    inline long long GetSize() const{ return m_size; }
+    inline long long GetSize() const { return m_size; }
     inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
     inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
     inline SearchRequest& WithSize(long long value) { SetSize(value); return *this;}
@@ -438,14 +420,12 @@ namespace Model
      * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/sorting-results.html">Sorting
      * Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetSort() const{ return m_sort; }
+    inline const Aws::String& GetSort() const { return m_sort; }
     inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
-    inline void SetSort(const Aws::String& value) { m_sortHasBeenSet = true; m_sort = value; }
-    inline void SetSort(Aws::String&& value) { m_sortHasBeenSet = true; m_sort = std::move(value); }
-    inline void SetSort(const char* value) { m_sortHasBeenSet = true; m_sort.assign(value); }
-    inline SearchRequest& WithSort(const Aws::String& value) { SetSort(value); return *this;}
-    inline SearchRequest& WithSort(Aws::String&& value) { SetSort(std::move(value)); return *this;}
-    inline SearchRequest& WithSort(const char* value) { SetSort(value); return *this;}
+    template<typename SortT = Aws::String>
+    void SetSort(SortT&& value) { m_sortHasBeenSet = true; m_sort = std::forward<SortT>(value); }
+    template<typename SortT = Aws::String>
+    SearchRequest& WithSort(SortT&& value) { SetSort(std::forward<SortT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -457,7 +437,7 @@ namespace Model
      * href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/paginating-results.html">Paginating
      * Results</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>
      */
-    inline long long GetStart() const{ return m_start; }
+    inline long long GetStart() const { return m_start; }
     inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
     inline void SetStart(long long value) { m_startHasBeenSet = true; m_start = value; }
     inline SearchRequest& WithStart(long long value) { SetStart(value); return *this;}
@@ -471,14 +451,12 @@ namespace Model
      * <code>{"FIELD-A":{},"FIELD-B":{}}</code> <p>There are currently no options
      * supported for statistics.</p>
      */
-    inline const Aws::String& GetStats() const{ return m_stats; }
+    inline const Aws::String& GetStats() const { return m_stats; }
     inline bool StatsHasBeenSet() const { return m_statsHasBeenSet; }
-    inline void SetStats(const Aws::String& value) { m_statsHasBeenSet = true; m_stats = value; }
-    inline void SetStats(Aws::String&& value) { m_statsHasBeenSet = true; m_stats = std::move(value); }
-    inline void SetStats(const char* value) { m_statsHasBeenSet = true; m_stats.assign(value); }
-    inline SearchRequest& WithStats(const Aws::String& value) { SetStats(value); return *this;}
-    inline SearchRequest& WithStats(Aws::String&& value) { SetStats(std::move(value)); return *this;}
-    inline SearchRequest& WithStats(const char* value) { SetStats(value); return *this;}
+    template<typename StatsT = Aws::String>
+    void SetStats(StatsT&& value) { m_statsHasBeenSet = true; m_stats = std::forward<StatsT>(value); }
+    template<typename StatsT = Aws::String>
+    SearchRequest& WithStats(StatsT&& value) { SetStats(std::forward<StatsT>(value)); return *this;}
     ///@}
   private:
 
@@ -497,7 +475,7 @@ namespace Model
     Aws::String m_highlight;
     bool m_highlightHasBeenSet = false;
 
-    bool m_partial;
+    bool m_partial{false};
     bool m_partialHasBeenSet = false;
 
     Aws::String m_query;
@@ -506,19 +484,19 @@ namespace Model
     Aws::String m_queryOptions;
     bool m_queryOptionsHasBeenSet = false;
 
-    QueryParser m_queryParser;
+    QueryParser m_queryParser{QueryParser::NOT_SET};
     bool m_queryParserHasBeenSet = false;
 
     Aws::String m_return;
     bool m_returnHasBeenSet = false;
 
-    long long m_size;
+    long long m_size{0};
     bool m_sizeHasBeenSet = false;
 
     Aws::String m_sort;
     bool m_sortHasBeenSet = false;
 
-    long long m_start;
+    long long m_start{0};
     bool m_startHasBeenSet = false;
 
     Aws::String m_stats;

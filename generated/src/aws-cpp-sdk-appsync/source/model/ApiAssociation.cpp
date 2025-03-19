@@ -18,17 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-ApiAssociation::ApiAssociation() : 
-    m_domainNameHasBeenSet(false),
-    m_apiIdHasBeenSet(false),
-    m_associationStatus(AssociationStatus::NOT_SET),
-    m_associationStatusHasBeenSet(false),
-    m_deploymentDetailHasBeenSet(false)
-{
-}
-
 ApiAssociation::ApiAssociation(JsonView jsonValue)
-  : ApiAssociation()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ ApiAssociation& ApiAssociation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("domainName"))
   {
     m_domainName = jsonValue.GetString("domainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("apiId"))
   {
     m_apiId = jsonValue.GetString("apiId");
-
     m_apiIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associationStatus"))
   {
     m_associationStatus = AssociationStatusMapper::GetAssociationStatusForName(jsonValue.GetString("associationStatus"));
-
     m_associationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("deploymentDetail"))
   {
     m_deploymentDetail = jsonValue.GetString("deploymentDetail");
-
     m_deploymentDetailHasBeenSet = true;
   }
-
   return *this;
 }
 

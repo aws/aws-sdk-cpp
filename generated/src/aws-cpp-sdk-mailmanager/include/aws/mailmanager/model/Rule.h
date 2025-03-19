@@ -40,7 +40,7 @@ namespace Model
   class Rule
   {
   public:
-    AWS_MAILMANAGER_API Rule();
+    AWS_MAILMANAGER_API Rule() = default;
     AWS_MAILMANAGER_API Rule(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Rule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,14 @@ namespace Model
      * <p>The list of actions to execute when the conditions match the incoming email,
      * and none of the "unless conditions" match.</p>
      */
-    inline const Aws::Vector<RuleAction>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<RuleAction>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<RuleAction>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<RuleAction>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline Rule& WithActions(const Aws::Vector<RuleAction>& value) { SetActions(value); return *this;}
-    inline Rule& WithActions(Aws::Vector<RuleAction>&& value) { SetActions(std::move(value)); return *this;}
-    inline Rule& AddActions(const RuleAction& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline Rule& AddActions(RuleAction&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+    template<typename ActionsT = Aws::Vector<RuleAction>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<RuleAction>>
+    Rule& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = RuleAction>
+    Rule& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -67,28 +67,26 @@ namespace Model
      * actions to be executed. An empty list of conditions means that all emails match,
      * but are still subject to any "unless conditions"</p>
      */
-    inline const Aws::Vector<RuleCondition>& GetConditions() const{ return m_conditions; }
+    inline const Aws::Vector<RuleCondition>& GetConditions() const { return m_conditions; }
     inline bool ConditionsHasBeenSet() const { return m_conditionsHasBeenSet; }
-    inline void SetConditions(const Aws::Vector<RuleCondition>& value) { m_conditionsHasBeenSet = true; m_conditions = value; }
-    inline void SetConditions(Aws::Vector<RuleCondition>&& value) { m_conditionsHasBeenSet = true; m_conditions = std::move(value); }
-    inline Rule& WithConditions(const Aws::Vector<RuleCondition>& value) { SetConditions(value); return *this;}
-    inline Rule& WithConditions(Aws::Vector<RuleCondition>&& value) { SetConditions(std::move(value)); return *this;}
-    inline Rule& AddConditions(const RuleCondition& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(value); return *this; }
-    inline Rule& AddConditions(RuleCondition&& value) { m_conditionsHasBeenSet = true; m_conditions.push_back(std::move(value)); return *this; }
+    template<typename ConditionsT = Aws::Vector<RuleCondition>>
+    void SetConditions(ConditionsT&& value) { m_conditionsHasBeenSet = true; m_conditions = std::forward<ConditionsT>(value); }
+    template<typename ConditionsT = Aws::Vector<RuleCondition>>
+    Rule& WithConditions(ConditionsT&& value) { SetConditions(std::forward<ConditionsT>(value)); return *this;}
+    template<typename ConditionsT = RuleCondition>
+    Rule& AddConditions(ConditionsT&& value) { m_conditionsHasBeenSet = true; m_conditions.emplace_back(std::forward<ConditionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The user-friendly name of the rule.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Rule& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Rule& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Rule& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Rule& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,14 +95,14 @@ namespace Model
      * email for the actions to be executed. If any of these conditions do match the
      * email, then the actions are not executed.</p>
      */
-    inline const Aws::Vector<RuleCondition>& GetUnless() const{ return m_unless; }
+    inline const Aws::Vector<RuleCondition>& GetUnless() const { return m_unless; }
     inline bool UnlessHasBeenSet() const { return m_unlessHasBeenSet; }
-    inline void SetUnless(const Aws::Vector<RuleCondition>& value) { m_unlessHasBeenSet = true; m_unless = value; }
-    inline void SetUnless(Aws::Vector<RuleCondition>&& value) { m_unlessHasBeenSet = true; m_unless = std::move(value); }
-    inline Rule& WithUnless(const Aws::Vector<RuleCondition>& value) { SetUnless(value); return *this;}
-    inline Rule& WithUnless(Aws::Vector<RuleCondition>&& value) { SetUnless(std::move(value)); return *this;}
-    inline Rule& AddUnless(const RuleCondition& value) { m_unlessHasBeenSet = true; m_unless.push_back(value); return *this; }
-    inline Rule& AddUnless(RuleCondition&& value) { m_unlessHasBeenSet = true; m_unless.push_back(std::move(value)); return *this; }
+    template<typename UnlessT = Aws::Vector<RuleCondition>>
+    void SetUnless(UnlessT&& value) { m_unlessHasBeenSet = true; m_unless = std::forward<UnlessT>(value); }
+    template<typename UnlessT = Aws::Vector<RuleCondition>>
+    Rule& WithUnless(UnlessT&& value) { SetUnless(std::forward<UnlessT>(value)); return *this;}
+    template<typename UnlessT = RuleCondition>
+    Rule& AddUnless(UnlessT&& value) { m_unlessHasBeenSet = true; m_unless.emplace_back(std::forward<UnlessT>(value)); return *this; }
     ///@}
   private:
 

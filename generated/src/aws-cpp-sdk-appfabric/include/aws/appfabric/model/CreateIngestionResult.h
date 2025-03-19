@@ -28,7 +28,7 @@ namespace Model
   class CreateIngestionResult
   {
   public:
-    AWS_APPFABRIC_API CreateIngestionResult();
+    AWS_APPFABRIC_API CreateIngestionResult() = default;
     AWS_APPFABRIC_API CreateIngestionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPFABRIC_API CreateIngestionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Contains information about an ingestion.</p>
      */
-    inline const Ingestion& GetIngestion() const{ return m_ingestion; }
-    inline void SetIngestion(const Ingestion& value) { m_ingestion = value; }
-    inline void SetIngestion(Ingestion&& value) { m_ingestion = std::move(value); }
-    inline CreateIngestionResult& WithIngestion(const Ingestion& value) { SetIngestion(value); return *this;}
-    inline CreateIngestionResult& WithIngestion(Ingestion&& value) { SetIngestion(std::move(value)); return *this;}
+    inline const Ingestion& GetIngestion() const { return m_ingestion; }
+    template<typename IngestionT = Ingestion>
+    void SetIngestion(IngestionT&& value) { m_ingestionHasBeenSet = true; m_ingestion = std::forward<IngestionT>(value); }
+    template<typename IngestionT = Ingestion>
+    CreateIngestionResult& WithIngestion(IngestionT&& value) { SetIngestion(std::forward<IngestionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateIngestionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateIngestionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateIngestionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateIngestionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Ingestion m_ingestion;
+    bool m_ingestionHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

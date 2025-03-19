@@ -32,7 +32,7 @@ namespace Model
   class VideoArtifactsConfiguration
   {
   public:
-    AWS_CHIMESDKMEDIAPIPELINES_API VideoArtifactsConfiguration();
+    AWS_CHIMESDKMEDIAPIPELINES_API VideoArtifactsConfiguration() = default;
     AWS_CHIMESDKMEDIAPIPELINES_API VideoArtifactsConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API VideoArtifactsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEDIAPIPELINES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,31 +42,27 @@ namespace Model
     /**
      * <p>Indicates whether the video artifact is enabled or disabled.</p>
      */
-    inline const ArtifactsState& GetState() const{ return m_state; }
+    inline ArtifactsState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const ArtifactsState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(ArtifactsState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline VideoArtifactsConfiguration& WithState(const ArtifactsState& value) { SetState(value); return *this;}
-    inline VideoArtifactsConfiguration& WithState(ArtifactsState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(ArtifactsState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline VideoArtifactsConfiguration& WithState(ArtifactsState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The MUX type of the video artifact configuration object.</p>
      */
-    inline const VideoMuxType& GetMuxType() const{ return m_muxType; }
+    inline VideoMuxType GetMuxType() const { return m_muxType; }
     inline bool MuxTypeHasBeenSet() const { return m_muxTypeHasBeenSet; }
-    inline void SetMuxType(const VideoMuxType& value) { m_muxTypeHasBeenSet = true; m_muxType = value; }
-    inline void SetMuxType(VideoMuxType&& value) { m_muxTypeHasBeenSet = true; m_muxType = std::move(value); }
-    inline VideoArtifactsConfiguration& WithMuxType(const VideoMuxType& value) { SetMuxType(value); return *this;}
-    inline VideoArtifactsConfiguration& WithMuxType(VideoMuxType&& value) { SetMuxType(std::move(value)); return *this;}
+    inline void SetMuxType(VideoMuxType value) { m_muxTypeHasBeenSet = true; m_muxType = value; }
+    inline VideoArtifactsConfiguration& WithMuxType(VideoMuxType value) { SetMuxType(value); return *this;}
     ///@}
   private:
 
-    ArtifactsState m_state;
+    ArtifactsState m_state{ArtifactsState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
-    VideoMuxType m_muxType;
+    VideoMuxType m_muxType{VideoMuxType::NOT_SET};
     bool m_muxTypeHasBeenSet = false;
   };
 

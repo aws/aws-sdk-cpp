@@ -18,16 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-ToolResultBlock::ToolResultBlock() : 
-    m_toolUseIdHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_status(ToolResultStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 ToolResultBlock::ToolResultBlock(JsonView jsonValue)
-  : ToolResultBlock()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ ToolResultBlock& ToolResultBlock::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("toolUseId"))
   {
     m_toolUseId = jsonValue.GetString("toolUseId");
-
     m_toolUseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("content"))
   {
     Aws::Utils::Array<JsonView> contentJsonList = jsonValue.GetArray("content");
@@ -50,14 +39,11 @@ ToolResultBlock& ToolResultBlock::operator =(JsonView jsonValue)
     }
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ToolResultStatusMapper::GetToolResultStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

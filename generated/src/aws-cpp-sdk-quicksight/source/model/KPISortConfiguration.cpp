@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-KPISortConfiguration::KPISortConfiguration() : 
-    m_trendGroupSortHasBeenSet(false)
-{
-}
-
 KPISortConfiguration::KPISortConfiguration(JsonView jsonValue)
-  : KPISortConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ KPISortConfiguration& KPISortConfiguration::operator =(JsonView jsonValue)
     }
     m_trendGroupSortHasBeenSet = true;
   }
-
   return *this;
 }
 

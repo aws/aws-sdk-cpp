@@ -12,11 +12,6 @@ using namespace Aws::GameLiftStreams::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteStreamGroupRequest::DeleteStreamGroupRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteStreamGroupRequest::SerializePayload() const
 {
   return {};

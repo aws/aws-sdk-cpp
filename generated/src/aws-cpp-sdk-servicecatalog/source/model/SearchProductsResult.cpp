@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SearchProductsResult::SearchProductsResult()
-{
-}
-
 SearchProductsResult::SearchProductsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ SearchProductsResult& SearchProductsResult::operator =(const Aws::AmazonWebServi
     {
       m_productViewSummaries.push_back(productViewSummariesJsonList[productViewSummariesIndex].AsObject());
     }
+    m_productViewSummariesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductViewAggregations"))
   {
     Aws::Map<Aws::String, JsonView> productViewAggregationsJsonMap = jsonValue.GetObject("ProductViewAggregations").GetAllObjects();
@@ -52,20 +48,20 @@ SearchProductsResult& SearchProductsResult::operator =(const Aws::AmazonWebServi
       }
       m_productViewAggregations[productViewAggregationsItem.first] = std::move(productViewAggregationValuesList);
     }
+    m_productViewAggregationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextPageToken"))
   {
     m_nextPageToken = jsonValue.GetString("NextPageToken");
-
+    m_nextPageTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

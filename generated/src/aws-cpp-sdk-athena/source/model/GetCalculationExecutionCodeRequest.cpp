@@ -12,11 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCalculationExecutionCodeRequest::GetCalculationExecutionCodeRequest() : 
-    m_calculationExecutionIdHasBeenSet(false)
-{
-}
-
 Aws::String GetCalculationExecutionCodeRequest::SerializePayload() const
 {
   JsonValue payload;

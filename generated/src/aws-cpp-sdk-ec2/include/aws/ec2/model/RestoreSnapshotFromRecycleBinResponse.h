@@ -31,7 +31,7 @@ namespace Model
   class RestoreSnapshotFromRecycleBinResponse
   {
   public:
-    AWS_EC2_API RestoreSnapshotFromRecycleBinResponse();
+    AWS_EC2_API RestoreSnapshotFromRecycleBinResponse() = default;
     AWS_EC2_API RestoreSnapshotFromRecycleBinResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API RestoreSnapshotFromRecycleBinResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -40,13 +40,11 @@ namespace Model
     /**
      * <p>The ID of the snapshot.</p>
      */
-    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
-    inline void SetSnapshotId(const Aws::String& value) { m_snapshotId = value; }
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotId = std::move(value); }
-    inline void SetSnapshotId(const char* value) { m_snapshotId.assign(value); }
-    inline RestoreSnapshotFromRecycleBinResponse& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-    inline RestoreSnapshotFromRecycleBinResponse& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-    inline RestoreSnapshotFromRecycleBinResponse& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+    inline const Aws::String& GetSnapshotId() const { return m_snapshotId; }
+    template<typename SnapshotIdT = Aws::String>
+    void SetSnapshotId(SnapshotIdT&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::forward<SnapshotIdT>(value); }
+    template<typename SnapshotIdT = Aws::String>
+    RestoreSnapshotFromRecycleBinResponse& WithSnapshotId(SnapshotIdT&& value) { SetSnapshotId(std::forward<SnapshotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,34 +54,30 @@ namespace Model
      * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html">Amazon
      * EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
-    inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
-    inline void SetOutpostArn(const Aws::String& value) { m_outpostArn = value; }
-    inline void SetOutpostArn(Aws::String&& value) { m_outpostArn = std::move(value); }
-    inline void SetOutpostArn(const char* value) { m_outpostArn.assign(value); }
-    inline RestoreSnapshotFromRecycleBinResponse& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
-    inline RestoreSnapshotFromRecycleBinResponse& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
-    inline RestoreSnapshotFromRecycleBinResponse& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
+    inline const Aws::String& GetOutpostArn() const { return m_outpostArn; }
+    template<typename OutpostArnT = Aws::String>
+    void SetOutpostArn(OutpostArnT&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::forward<OutpostArnT>(value); }
+    template<typename OutpostArnT = Aws::String>
+    RestoreSnapshotFromRecycleBinResponse& WithOutpostArn(OutpostArnT&& value) { SetOutpostArn(std::forward<OutpostArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description for the snapshot.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline RestoreSnapshotFromRecycleBinResponse& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline RestoreSnapshotFromRecycleBinResponse& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline RestoreSnapshotFromRecycleBinResponse& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    RestoreSnapshotFromRecycleBinResponse& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether the snapshot is encrypted.</p>
      */
-    inline bool GetEncrypted() const{ return m_encrypted; }
-    inline void SetEncrypted(bool value) { m_encrypted = value; }
+    inline bool GetEncrypted() const { return m_encrypted; }
+    inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
     inline RestoreSnapshotFromRecycleBinResponse& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
     ///@}
 
@@ -91,69 +85,61 @@ namespace Model
     /**
      * <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
      */
-    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
-    inline void SetOwnerId(const Aws::String& value) { m_ownerId = value; }
-    inline void SetOwnerId(Aws::String&& value) { m_ownerId = std::move(value); }
-    inline void SetOwnerId(const char* value) { m_ownerId.assign(value); }
-    inline RestoreSnapshotFromRecycleBinResponse& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
-    inline RestoreSnapshotFromRecycleBinResponse& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
-    inline RestoreSnapshotFromRecycleBinResponse& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+    inline const Aws::String& GetOwnerId() const { return m_ownerId; }
+    template<typename OwnerIdT = Aws::String>
+    void SetOwnerId(OwnerIdT&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::forward<OwnerIdT>(value); }
+    template<typename OwnerIdT = Aws::String>
+    RestoreSnapshotFromRecycleBinResponse& WithOwnerId(OwnerIdT&& value) { SetOwnerId(std::forward<OwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The progress of the snapshot, as a percentage.</p>
      */
-    inline const Aws::String& GetProgress() const{ return m_progress; }
-    inline void SetProgress(const Aws::String& value) { m_progress = value; }
-    inline void SetProgress(Aws::String&& value) { m_progress = std::move(value); }
-    inline void SetProgress(const char* value) { m_progress.assign(value); }
-    inline RestoreSnapshotFromRecycleBinResponse& WithProgress(const Aws::String& value) { SetProgress(value); return *this;}
-    inline RestoreSnapshotFromRecycleBinResponse& WithProgress(Aws::String&& value) { SetProgress(std::move(value)); return *this;}
-    inline RestoreSnapshotFromRecycleBinResponse& WithProgress(const char* value) { SetProgress(value); return *this;}
+    inline const Aws::String& GetProgress() const { return m_progress; }
+    template<typename ProgressT = Aws::String>
+    void SetProgress(ProgressT&& value) { m_progressHasBeenSet = true; m_progress = std::forward<ProgressT>(value); }
+    template<typename ProgressT = Aws::String>
+    RestoreSnapshotFromRecycleBinResponse& WithProgress(ProgressT&& value) { SetProgress(std::forward<ProgressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time stamp when the snapshot was initiated.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
-    inline RestoreSnapshotFromRecycleBinResponse& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline RestoreSnapshotFromRecycleBinResponse& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    RestoreSnapshotFromRecycleBinResponse& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the snapshot.</p>
      */
-    inline const SnapshotState& GetState() const{ return m_state; }
-    inline void SetState(const SnapshotState& value) { m_state = value; }
-    inline void SetState(SnapshotState&& value) { m_state = std::move(value); }
-    inline RestoreSnapshotFromRecycleBinResponse& WithState(const SnapshotState& value) { SetState(value); return *this;}
-    inline RestoreSnapshotFromRecycleBinResponse& WithState(SnapshotState&& value) { SetState(std::move(value)); return *this;}
+    inline SnapshotState GetState() const { return m_state; }
+    inline void SetState(SnapshotState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline RestoreSnapshotFromRecycleBinResponse& WithState(SnapshotState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the volume that was used to create the snapshot.</p>
      */
-    inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
-    inline void SetVolumeId(const Aws::String& value) { m_volumeId = value; }
-    inline void SetVolumeId(Aws::String&& value) { m_volumeId = std::move(value); }
-    inline void SetVolumeId(const char* value) { m_volumeId.assign(value); }
-    inline RestoreSnapshotFromRecycleBinResponse& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
-    inline RestoreSnapshotFromRecycleBinResponse& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
-    inline RestoreSnapshotFromRecycleBinResponse& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
+    inline const Aws::String& GetVolumeId() const { return m_volumeId; }
+    template<typename VolumeIdT = Aws::String>
+    void SetVolumeId(VolumeIdT&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::forward<VolumeIdT>(value); }
+    template<typename VolumeIdT = Aws::String>
+    RestoreSnapshotFromRecycleBinResponse& WithVolumeId(VolumeIdT&& value) { SetVolumeId(std::forward<VolumeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The size of the volume, in GiB.</p>
      */
-    inline int GetVolumeSize() const{ return m_volumeSize; }
-    inline void SetVolumeSize(int value) { m_volumeSize = value; }
+    inline int GetVolumeSize() const { return m_volumeSize; }
+    inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
     inline RestoreSnapshotFromRecycleBinResponse& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
     ///@}
 
@@ -161,46 +147,56 @@ namespace Model
     /**
      * <p>Reserved for future use.</p>
      */
-    inline const SSEType& GetSseType() const{ return m_sseType; }
-    inline void SetSseType(const SSEType& value) { m_sseType = value; }
-    inline void SetSseType(SSEType&& value) { m_sseType = std::move(value); }
-    inline RestoreSnapshotFromRecycleBinResponse& WithSseType(const SSEType& value) { SetSseType(value); return *this;}
-    inline RestoreSnapshotFromRecycleBinResponse& WithSseType(SSEType&& value) { SetSseType(std::move(value)); return *this;}
+    inline SSEType GetSseType() const { return m_sseType; }
+    inline void SetSseType(SSEType value) { m_sseTypeHasBeenSet = true; m_sseType = value; }
+    inline RestoreSnapshotFromRecycleBinResponse& WithSseType(SSEType value) { SetSseType(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline RestoreSnapshotFromRecycleBinResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline RestoreSnapshotFromRecycleBinResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    RestoreSnapshotFromRecycleBinResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_snapshotId;
+    bool m_snapshotIdHasBeenSet = false;
 
     Aws::String m_outpostArn;
+    bool m_outpostArnHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    bool m_encrypted;
+    bool m_encrypted{false};
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_ownerId;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_progress;
+    bool m_progressHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
+    bool m_startTimeHasBeenSet = false;
 
-    SnapshotState m_state;
+    SnapshotState m_state{SnapshotState::NOT_SET};
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_volumeId;
+    bool m_volumeIdHasBeenSet = false;
 
-    int m_volumeSize;
+    int m_volumeSize{0};
+    bool m_volumeSizeHasBeenSet = false;
 
-    SSEType m_sseType;
+    SSEType m_sseType{SSEType::NOT_SET};
+    bool m_sseTypeHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,7 +35,7 @@ namespace Model
   class LifeCycleSummary
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API LifeCycleSummary();
+    AWS_PARTNERCENTRALSELLING_API LifeCycleSummary() = default;
     AWS_PARTNERCENTRALSELLING_API LifeCycleSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API LifeCycleSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,10 @@ namespace Model
      * context for closing the <code>Opportunity</code>, and aid in accurate reports
      * and analysis of opportunity outcomes.</p>
      */
-    inline const ClosedLostReason& GetClosedLostReason() const{ return m_closedLostReason; }
+    inline ClosedLostReason GetClosedLostReason() const { return m_closedLostReason; }
     inline bool ClosedLostReasonHasBeenSet() const { return m_closedLostReasonHasBeenSet; }
-    inline void SetClosedLostReason(const ClosedLostReason& value) { m_closedLostReasonHasBeenSet = true; m_closedLostReason = value; }
-    inline void SetClosedLostReason(ClosedLostReason&& value) { m_closedLostReasonHasBeenSet = true; m_closedLostReason = std::move(value); }
-    inline LifeCycleSummary& WithClosedLostReason(const ClosedLostReason& value) { SetClosedLostReason(value); return *this;}
-    inline LifeCycleSummary& WithClosedLostReason(ClosedLostReason&& value) { SetClosedLostReason(std::move(value)); return *this;}
+    inline void SetClosedLostReason(ClosedLostReason value) { m_closedLostReasonHasBeenSet = true; m_closedLostReason = value; }
+    inline LifeCycleSummary& WithClosedLostReason(ClosedLostReason value) { SetClosedLostReason(value); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * This field is utilized to communicate to Amazon Web Services the next actions
      * required for the <code>Opportunity</code>.</p>
      */
-    inline const Aws::String& GetNextSteps() const{ return m_nextSteps; }
+    inline const Aws::String& GetNextSteps() const { return m_nextSteps; }
     inline bool NextStepsHasBeenSet() const { return m_nextStepsHasBeenSet; }
-    inline void SetNextSteps(const Aws::String& value) { m_nextStepsHasBeenSet = true; m_nextSteps = value; }
-    inline void SetNextSteps(Aws::String&& value) { m_nextStepsHasBeenSet = true; m_nextSteps = std::move(value); }
-    inline void SetNextSteps(const char* value) { m_nextStepsHasBeenSet = true; m_nextSteps.assign(value); }
-    inline LifeCycleSummary& WithNextSteps(const Aws::String& value) { SetNextSteps(value); return *this;}
-    inline LifeCycleSummary& WithNextSteps(Aws::String&& value) { SetNextSteps(std::move(value)); return *this;}
-    inline LifeCycleSummary& WithNextSteps(const char* value) { SetNextSteps(value); return *this;}
+    template<typename NextStepsT = Aws::String>
+    void SetNextSteps(NextStepsT&& value) { m_nextStepsHasBeenSet = true; m_nextSteps = std::forward<NextStepsT>(value); }
+    template<typename NextStepsT = Aws::String>
+    LifeCycleSummary& WithNextSteps(NextStepsT&& value) { SetNextSteps(std::forward<NextStepsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * <p>Indicates why an opportunity was sent back for further details. Partners must
      * take corrective action based on the <code>ReviewComments</code>.</p>
      */
-    inline const Aws::String& GetReviewComments() const{ return m_reviewComments; }
+    inline const Aws::String& GetReviewComments() const { return m_reviewComments; }
     inline bool ReviewCommentsHasBeenSet() const { return m_reviewCommentsHasBeenSet; }
-    inline void SetReviewComments(const Aws::String& value) { m_reviewCommentsHasBeenSet = true; m_reviewComments = value; }
-    inline void SetReviewComments(Aws::String&& value) { m_reviewCommentsHasBeenSet = true; m_reviewComments = std::move(value); }
-    inline void SetReviewComments(const char* value) { m_reviewCommentsHasBeenSet = true; m_reviewComments.assign(value); }
-    inline LifeCycleSummary& WithReviewComments(const Aws::String& value) { SetReviewComments(value); return *this;}
-    inline LifeCycleSummary& WithReviewComments(Aws::String&& value) { SetReviewComments(std::move(value)); return *this;}
-    inline LifeCycleSummary& WithReviewComments(const char* value) { SetReviewComments(value); return *this;}
+    template<typename ReviewCommentsT = Aws::String>
+    void SetReviewComments(ReviewCommentsT&& value) { m_reviewCommentsHasBeenSet = true; m_reviewComments = std::forward<ReviewCommentsT>(value); }
+    template<typename ReviewCommentsT = Aws::String>
+    LifeCycleSummary& WithReviewComments(ReviewCommentsT&& value) { SetReviewComments(std::forward<ReviewCommentsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,12 +109,10 @@ namespace Model
      * pipeline (editable).</p> </li> <li> <p>Rejected: Disqualified (read-only).</p>
      * </li> </ul>
      */
-    inline const ReviewStatus& GetReviewStatus() const{ return m_reviewStatus; }
+    inline ReviewStatus GetReviewStatus() const { return m_reviewStatus; }
     inline bool ReviewStatusHasBeenSet() const { return m_reviewStatusHasBeenSet; }
-    inline void SetReviewStatus(const ReviewStatus& value) { m_reviewStatusHasBeenSet = true; m_reviewStatus = value; }
-    inline void SetReviewStatus(ReviewStatus&& value) { m_reviewStatusHasBeenSet = true; m_reviewStatus = std::move(value); }
-    inline LifeCycleSummary& WithReviewStatus(const ReviewStatus& value) { SetReviewStatus(value); return *this;}
-    inline LifeCycleSummary& WithReviewStatus(ReviewStatus&& value) { SetReviewStatus(std::move(value)); return *this;}
+    inline void SetReviewStatus(ReviewStatus value) { m_reviewStatusHasBeenSet = true; m_reviewStatus = value; }
+    inline LifeCycleSummary& WithReviewStatus(ReviewStatus value) { SetReviewStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -130,14 +122,12 @@ namespace Model
      * required statuses, and provides clarity for why an opportunity was disqualified
      * or required further action.</p>
      */
-    inline const Aws::String& GetReviewStatusReason() const{ return m_reviewStatusReason; }
+    inline const Aws::String& GetReviewStatusReason() const { return m_reviewStatusReason; }
     inline bool ReviewStatusReasonHasBeenSet() const { return m_reviewStatusReasonHasBeenSet; }
-    inline void SetReviewStatusReason(const Aws::String& value) { m_reviewStatusReasonHasBeenSet = true; m_reviewStatusReason = value; }
-    inline void SetReviewStatusReason(Aws::String&& value) { m_reviewStatusReasonHasBeenSet = true; m_reviewStatusReason = std::move(value); }
-    inline void SetReviewStatusReason(const char* value) { m_reviewStatusReasonHasBeenSet = true; m_reviewStatusReason.assign(value); }
-    inline LifeCycleSummary& WithReviewStatusReason(const Aws::String& value) { SetReviewStatusReason(value); return *this;}
-    inline LifeCycleSummary& WithReviewStatusReason(Aws::String&& value) { SetReviewStatusReason(std::move(value)); return *this;}
-    inline LifeCycleSummary& WithReviewStatusReason(const char* value) { SetReviewStatusReason(value); return *this;}
+    template<typename ReviewStatusReasonT = Aws::String>
+    void SetReviewStatusReason(ReviewStatusReasonT&& value) { m_reviewStatusReasonHasBeenSet = true; m_reviewStatusReason = std::forward<ReviewStatusReasonT>(value); }
+    template<typename ReviewStatusReasonT = Aws::String>
+    LifeCycleSummary& WithReviewStatusReason(ReviewStatusReasonT&& value) { SetReviewStatusReason(std::forward<ReviewStatusReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -164,12 +154,10 @@ namespace Model
      * <li> <p>Closed Lost: The opportunity is lost, and there are no steps to move
      * forward.</p> </li> </ul>
      */
-    inline const Stage& GetStage() const{ return m_stage; }
+    inline Stage GetStage() const { return m_stage; }
     inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
-    inline void SetStage(const Stage& value) { m_stageHasBeenSet = true; m_stage = value; }
-    inline void SetStage(Stage&& value) { m_stageHasBeenSet = true; m_stage = std::move(value); }
-    inline LifeCycleSummary& WithStage(const Stage& value) { SetStage(value); return *this;}
-    inline LifeCycleSummary& WithStage(Stage&& value) { SetStage(std::move(value)); return *this;}
+    inline void SetStage(Stage value) { m_stageHasBeenSet = true; m_stage = value; }
+    inline LifeCycleSummary& WithStage(Stage value) { SetStage(value); return *this;}
     ///@}
 
     ///@{
@@ -180,18 +168,16 @@ namespace Model
      * and starts to incur Amazon Web Services usage.</p> <p>Ensure the <code>Target
      * Close Date</code> isn't in the past.</p>
      */
-    inline const Aws::String& GetTargetCloseDate() const{ return m_targetCloseDate; }
+    inline const Aws::String& GetTargetCloseDate() const { return m_targetCloseDate; }
     inline bool TargetCloseDateHasBeenSet() const { return m_targetCloseDateHasBeenSet; }
-    inline void SetTargetCloseDate(const Aws::String& value) { m_targetCloseDateHasBeenSet = true; m_targetCloseDate = value; }
-    inline void SetTargetCloseDate(Aws::String&& value) { m_targetCloseDateHasBeenSet = true; m_targetCloseDate = std::move(value); }
-    inline void SetTargetCloseDate(const char* value) { m_targetCloseDateHasBeenSet = true; m_targetCloseDate.assign(value); }
-    inline LifeCycleSummary& WithTargetCloseDate(const Aws::String& value) { SetTargetCloseDate(value); return *this;}
-    inline LifeCycleSummary& WithTargetCloseDate(Aws::String&& value) { SetTargetCloseDate(std::move(value)); return *this;}
-    inline LifeCycleSummary& WithTargetCloseDate(const char* value) { SetTargetCloseDate(value); return *this;}
+    template<typename TargetCloseDateT = Aws::String>
+    void SetTargetCloseDate(TargetCloseDateT&& value) { m_targetCloseDateHasBeenSet = true; m_targetCloseDate = std::forward<TargetCloseDateT>(value); }
+    template<typename TargetCloseDateT = Aws::String>
+    LifeCycleSummary& WithTargetCloseDate(TargetCloseDateT&& value) { SetTargetCloseDate(std::forward<TargetCloseDateT>(value)); return *this;}
     ///@}
   private:
 
-    ClosedLostReason m_closedLostReason;
+    ClosedLostReason m_closedLostReason{ClosedLostReason::NOT_SET};
     bool m_closedLostReasonHasBeenSet = false;
 
     Aws::String m_nextSteps;
@@ -200,13 +186,13 @@ namespace Model
     Aws::String m_reviewComments;
     bool m_reviewCommentsHasBeenSet = false;
 
-    ReviewStatus m_reviewStatus;
+    ReviewStatus m_reviewStatus{ReviewStatus::NOT_SET};
     bool m_reviewStatusHasBeenSet = false;
 
     Aws::String m_reviewStatusReason;
     bool m_reviewStatusReasonHasBeenSet = false;
 
-    Stage m_stage;
+    Stage m_stage{Stage::NOT_SET};
     bool m_stageHasBeenSet = false;
 
     Aws::String m_targetCloseDate;

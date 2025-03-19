@@ -12,11 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteGatewayRequest::DeleteGatewayRequest() : 
-    m_gatewayARNHasBeenSet(false)
-{
-}
-
 Aws::String DeleteGatewayRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class ModelDeployResult
   {
   public:
-    AWS_SAGEMAKER_API ModelDeployResult();
+    AWS_SAGEMAKER_API ModelDeployResult() = default;
     AWS_SAGEMAKER_API ModelDeployResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API ModelDeployResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>If model deployment fails, this field is omitted from the response.</p>
      * 
      */
-    inline const Aws::String& GetEndpointName() const{ return m_endpointName; }
+    inline const Aws::String& GetEndpointName() const { return m_endpointName; }
     inline bool EndpointNameHasBeenSet() const { return m_endpointNameHasBeenSet; }
-    inline void SetEndpointName(const Aws::String& value) { m_endpointNameHasBeenSet = true; m_endpointName = value; }
-    inline void SetEndpointName(Aws::String&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::move(value); }
-    inline void SetEndpointName(const char* value) { m_endpointNameHasBeenSet = true; m_endpointName.assign(value); }
-    inline ModelDeployResult& WithEndpointName(const Aws::String& value) { SetEndpointName(value); return *this;}
-    inline ModelDeployResult& WithEndpointName(Aws::String&& value) { SetEndpointName(std::move(value)); return *this;}
-    inline ModelDeployResult& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
+    template<typename EndpointNameT = Aws::String>
+    void SetEndpointName(EndpointNameT&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::forward<EndpointNameT>(value); }
+    template<typename EndpointNameT = Aws::String>
+    ModelDeployResult& WithEndpointName(EndpointNameT&& value) { SetEndpointName(std::forward<EndpointNameT>(value)); return *this;}
     ///@}
   private:
 

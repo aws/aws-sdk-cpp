@@ -12,12 +12,6 @@ using namespace Aws::XRay::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteSamplingRuleRequest::DeleteSamplingRuleRequest() : 
-    m_ruleNameHasBeenSet(false),
-    m_ruleARNHasBeenSet(false)
-{
-}
-
 Aws::String DeleteSamplingRuleRequest::SerializePayload() const
 {
   JsonValue payload;

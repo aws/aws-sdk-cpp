@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListServiceNetworkResourceAssociationsRequest::ListServiceNetworkResourceAssociationsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_resourceConfigurationIdentifierHasBeenSet(false),
-    m_serviceNetworkIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String ListServiceNetworkResourceAssociationsRequest::SerializePayload() const
 {
   return {};

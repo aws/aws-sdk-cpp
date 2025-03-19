@@ -36,7 +36,7 @@ namespace Model
   class RelationalDatabaseSnapshot
   {
   public:
-    AWS_LIGHTSAIL_API RelationalDatabaseSnapshot();
+    AWS_LIGHTSAIL_API RelationalDatabaseSnapshot() = default;
     AWS_LIGHTSAIL_API RelationalDatabaseSnapshot(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API RelationalDatabaseSnapshot& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>The name of the database snapshot.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline RelationalDatabaseSnapshot& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline RelationalDatabaseSnapshot& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline RelationalDatabaseSnapshot& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    RelationalDatabaseSnapshot& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the database snapshot.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline RelationalDatabaseSnapshot& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline RelationalDatabaseSnapshot& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline RelationalDatabaseSnapshot& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    RelationalDatabaseSnapshot& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,26 +73,24 @@ namespace Model
      * code enables our support team to look up your Lightsail information more
      * easily.</p>
      */
-    inline const Aws::String& GetSupportCode() const{ return m_supportCode; }
+    inline const Aws::String& GetSupportCode() const { return m_supportCode; }
     inline bool SupportCodeHasBeenSet() const { return m_supportCodeHasBeenSet; }
-    inline void SetSupportCode(const Aws::String& value) { m_supportCodeHasBeenSet = true; m_supportCode = value; }
-    inline void SetSupportCode(Aws::String&& value) { m_supportCodeHasBeenSet = true; m_supportCode = std::move(value); }
-    inline void SetSupportCode(const char* value) { m_supportCodeHasBeenSet = true; m_supportCode.assign(value); }
-    inline RelationalDatabaseSnapshot& WithSupportCode(const Aws::String& value) { SetSupportCode(value); return *this;}
-    inline RelationalDatabaseSnapshot& WithSupportCode(Aws::String&& value) { SetSupportCode(std::move(value)); return *this;}
-    inline RelationalDatabaseSnapshot& WithSupportCode(const char* value) { SetSupportCode(value); return *this;}
+    template<typename SupportCodeT = Aws::String>
+    void SetSupportCode(SupportCodeT&& value) { m_supportCodeHasBeenSet = true; m_supportCode = std::forward<SupportCodeT>(value); }
+    template<typename SupportCodeT = Aws::String>
+    RelationalDatabaseSnapshot& WithSupportCode(SupportCodeT&& value) { SetSupportCode(std::forward<SupportCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp when the database snapshot was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline RelationalDatabaseSnapshot& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline RelationalDatabaseSnapshot& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    RelationalDatabaseSnapshot& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,24 +98,22 @@ namespace Model
      * <p>The Region name and Availability Zone where the database snapshot is
      * located.</p>
      */
-    inline const ResourceLocation& GetLocation() const{ return m_location; }
+    inline const ResourceLocation& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const ResourceLocation& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(ResourceLocation&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline RelationalDatabaseSnapshot& WithLocation(const ResourceLocation& value) { SetLocation(value); return *this;}
-    inline RelationalDatabaseSnapshot& WithLocation(ResourceLocation&& value) { SetLocation(std::move(value)); return *this;}
+    template<typename LocationT = ResourceLocation>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = ResourceLocation>
+    RelationalDatabaseSnapshot& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Lightsail resource type.</p>
      */
-    inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+    inline ResourceType GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline RelationalDatabaseSnapshot& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
-    inline RelationalDatabaseSnapshot& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}
+    inline void SetResourceType(ResourceType value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+    inline RelationalDatabaseSnapshot& WithResourceType(ResourceType value) { SetResourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -131,28 +123,26 @@ namespace Model
      * href="https://docs.aws.amazon.com/lightsail/latest/userguide/amazon-lightsail-tags">Amazon
      * Lightsail Developer Guide</a>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline RelationalDatabaseSnapshot& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline RelationalDatabaseSnapshot& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline RelationalDatabaseSnapshot& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline RelationalDatabaseSnapshot& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    RelationalDatabaseSnapshot& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    RelationalDatabaseSnapshot& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The software of the database snapshot (for example, <code>MySQL</code>)</p>
      */
-    inline const Aws::String& GetEngine() const{ return m_engine; }
+    inline const Aws::String& GetEngine() const { return m_engine; }
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
-    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
-    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
-    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
-    inline RelationalDatabaseSnapshot& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
-    inline RelationalDatabaseSnapshot& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
-    inline RelationalDatabaseSnapshot& WithEngine(const char* value) { SetEngine(value); return *this;}
+    template<typename EngineT = Aws::String>
+    void SetEngine(EngineT&& value) { m_engineHasBeenSet = true; m_engine = std::forward<EngineT>(value); }
+    template<typename EngineT = Aws::String>
+    RelationalDatabaseSnapshot& WithEngine(EngineT&& value) { SetEngine(std::forward<EngineT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -160,14 +150,12 @@ namespace Model
      * <p>The database engine version for the database snapshot (for example,
      * <code>5.7.23</code>).</p>
      */
-    inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+    inline const Aws::String& GetEngineVersion() const { return m_engineVersion; }
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
-    inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
-    inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
-    inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
-    inline RelationalDatabaseSnapshot& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
-    inline RelationalDatabaseSnapshot& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
-    inline RelationalDatabaseSnapshot& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
+    template<typename EngineVersionT = Aws::String>
+    void SetEngineVersion(EngineVersionT&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::forward<EngineVersionT>(value); }
+    template<typename EngineVersionT = Aws::String>
+    RelationalDatabaseSnapshot& WithEngineVersion(EngineVersionT&& value) { SetEngineVersion(std::forward<EngineVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -175,7 +163,7 @@ namespace Model
      * <p>The size of the disk in GB (for example, <code>32</code>) for the database
      * snapshot.</p>
      */
-    inline int GetSizeInGb() const{ return m_sizeInGb; }
+    inline int GetSizeInGb() const { return m_sizeInGb; }
     inline bool SizeInGbHasBeenSet() const { return m_sizeInGbHasBeenSet; }
     inline void SetSizeInGb(int value) { m_sizeInGbHasBeenSet = true; m_sizeInGb = value; }
     inline RelationalDatabaseSnapshot& WithSizeInGb(int value) { SetSizeInGb(value); return *this;}
@@ -185,14 +173,12 @@ namespace Model
     /**
      * <p>The state of the database snapshot.</p>
      */
-    inline const Aws::String& GetState() const{ return m_state; }
+    inline const Aws::String& GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(Aws::String&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline void SetState(const char* value) { m_stateHasBeenSet = true; m_state.assign(value); }
-    inline RelationalDatabaseSnapshot& WithState(const Aws::String& value) { SetState(value); return *this;}
-    inline RelationalDatabaseSnapshot& WithState(Aws::String&& value) { SetState(std::move(value)); return *this;}
-    inline RelationalDatabaseSnapshot& WithState(const char* value) { SetState(value); return *this;}
+    template<typename StateT = Aws::String>
+    void SetState(StateT&& value) { m_stateHasBeenSet = true; m_state = std::forward<StateT>(value); }
+    template<typename StateT = Aws::String>
+    RelationalDatabaseSnapshot& WithState(StateT&& value) { SetState(std::forward<StateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -200,14 +186,12 @@ namespace Model
      * <p>The name of the source database from which the database snapshot was
      * created.</p>
      */
-    inline const Aws::String& GetFromRelationalDatabaseName() const{ return m_fromRelationalDatabaseName; }
+    inline const Aws::String& GetFromRelationalDatabaseName() const { return m_fromRelationalDatabaseName; }
     inline bool FromRelationalDatabaseNameHasBeenSet() const { return m_fromRelationalDatabaseNameHasBeenSet; }
-    inline void SetFromRelationalDatabaseName(const Aws::String& value) { m_fromRelationalDatabaseNameHasBeenSet = true; m_fromRelationalDatabaseName = value; }
-    inline void SetFromRelationalDatabaseName(Aws::String&& value) { m_fromRelationalDatabaseNameHasBeenSet = true; m_fromRelationalDatabaseName = std::move(value); }
-    inline void SetFromRelationalDatabaseName(const char* value) { m_fromRelationalDatabaseNameHasBeenSet = true; m_fromRelationalDatabaseName.assign(value); }
-    inline RelationalDatabaseSnapshot& WithFromRelationalDatabaseName(const Aws::String& value) { SetFromRelationalDatabaseName(value); return *this;}
-    inline RelationalDatabaseSnapshot& WithFromRelationalDatabaseName(Aws::String&& value) { SetFromRelationalDatabaseName(std::move(value)); return *this;}
-    inline RelationalDatabaseSnapshot& WithFromRelationalDatabaseName(const char* value) { SetFromRelationalDatabaseName(value); return *this;}
+    template<typename FromRelationalDatabaseNameT = Aws::String>
+    void SetFromRelationalDatabaseName(FromRelationalDatabaseNameT&& value) { m_fromRelationalDatabaseNameHasBeenSet = true; m_fromRelationalDatabaseName = std::forward<FromRelationalDatabaseNameT>(value); }
+    template<typename FromRelationalDatabaseNameT = Aws::String>
+    RelationalDatabaseSnapshot& WithFromRelationalDatabaseName(FromRelationalDatabaseNameT&& value) { SetFromRelationalDatabaseName(std::forward<FromRelationalDatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -215,14 +199,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the database from which the database
      * snapshot was created.</p>
      */
-    inline const Aws::String& GetFromRelationalDatabaseArn() const{ return m_fromRelationalDatabaseArn; }
+    inline const Aws::String& GetFromRelationalDatabaseArn() const { return m_fromRelationalDatabaseArn; }
     inline bool FromRelationalDatabaseArnHasBeenSet() const { return m_fromRelationalDatabaseArnHasBeenSet; }
-    inline void SetFromRelationalDatabaseArn(const Aws::String& value) { m_fromRelationalDatabaseArnHasBeenSet = true; m_fromRelationalDatabaseArn = value; }
-    inline void SetFromRelationalDatabaseArn(Aws::String&& value) { m_fromRelationalDatabaseArnHasBeenSet = true; m_fromRelationalDatabaseArn = std::move(value); }
-    inline void SetFromRelationalDatabaseArn(const char* value) { m_fromRelationalDatabaseArnHasBeenSet = true; m_fromRelationalDatabaseArn.assign(value); }
-    inline RelationalDatabaseSnapshot& WithFromRelationalDatabaseArn(const Aws::String& value) { SetFromRelationalDatabaseArn(value); return *this;}
-    inline RelationalDatabaseSnapshot& WithFromRelationalDatabaseArn(Aws::String&& value) { SetFromRelationalDatabaseArn(std::move(value)); return *this;}
-    inline RelationalDatabaseSnapshot& WithFromRelationalDatabaseArn(const char* value) { SetFromRelationalDatabaseArn(value); return *this;}
+    template<typename FromRelationalDatabaseArnT = Aws::String>
+    void SetFromRelationalDatabaseArn(FromRelationalDatabaseArnT&& value) { m_fromRelationalDatabaseArnHasBeenSet = true; m_fromRelationalDatabaseArn = std::forward<FromRelationalDatabaseArnT>(value); }
+    template<typename FromRelationalDatabaseArnT = Aws::String>
+    RelationalDatabaseSnapshot& WithFromRelationalDatabaseArn(FromRelationalDatabaseArnT&& value) { SetFromRelationalDatabaseArn(std::forward<FromRelationalDatabaseArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -230,14 +212,12 @@ namespace Model
      * <p>The bundle ID of the database from which the database snapshot was
      * created.</p>
      */
-    inline const Aws::String& GetFromRelationalDatabaseBundleId() const{ return m_fromRelationalDatabaseBundleId; }
+    inline const Aws::String& GetFromRelationalDatabaseBundleId() const { return m_fromRelationalDatabaseBundleId; }
     inline bool FromRelationalDatabaseBundleIdHasBeenSet() const { return m_fromRelationalDatabaseBundleIdHasBeenSet; }
-    inline void SetFromRelationalDatabaseBundleId(const Aws::String& value) { m_fromRelationalDatabaseBundleIdHasBeenSet = true; m_fromRelationalDatabaseBundleId = value; }
-    inline void SetFromRelationalDatabaseBundleId(Aws::String&& value) { m_fromRelationalDatabaseBundleIdHasBeenSet = true; m_fromRelationalDatabaseBundleId = std::move(value); }
-    inline void SetFromRelationalDatabaseBundleId(const char* value) { m_fromRelationalDatabaseBundleIdHasBeenSet = true; m_fromRelationalDatabaseBundleId.assign(value); }
-    inline RelationalDatabaseSnapshot& WithFromRelationalDatabaseBundleId(const Aws::String& value) { SetFromRelationalDatabaseBundleId(value); return *this;}
-    inline RelationalDatabaseSnapshot& WithFromRelationalDatabaseBundleId(Aws::String&& value) { SetFromRelationalDatabaseBundleId(std::move(value)); return *this;}
-    inline RelationalDatabaseSnapshot& WithFromRelationalDatabaseBundleId(const char* value) { SetFromRelationalDatabaseBundleId(value); return *this;}
+    template<typename FromRelationalDatabaseBundleIdT = Aws::String>
+    void SetFromRelationalDatabaseBundleId(FromRelationalDatabaseBundleIdT&& value) { m_fromRelationalDatabaseBundleIdHasBeenSet = true; m_fromRelationalDatabaseBundleId = std::forward<FromRelationalDatabaseBundleIdT>(value); }
+    template<typename FromRelationalDatabaseBundleIdT = Aws::String>
+    RelationalDatabaseSnapshot& WithFromRelationalDatabaseBundleId(FromRelationalDatabaseBundleIdT&& value) { SetFromRelationalDatabaseBundleId(std::forward<FromRelationalDatabaseBundleIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -245,14 +225,12 @@ namespace Model
      * <p>The blueprint ID of the database from which the database snapshot was
      * created. A blueprint describes the major engine version of a database.</p>
      */
-    inline const Aws::String& GetFromRelationalDatabaseBlueprintId() const{ return m_fromRelationalDatabaseBlueprintId; }
+    inline const Aws::String& GetFromRelationalDatabaseBlueprintId() const { return m_fromRelationalDatabaseBlueprintId; }
     inline bool FromRelationalDatabaseBlueprintIdHasBeenSet() const { return m_fromRelationalDatabaseBlueprintIdHasBeenSet; }
-    inline void SetFromRelationalDatabaseBlueprintId(const Aws::String& value) { m_fromRelationalDatabaseBlueprintIdHasBeenSet = true; m_fromRelationalDatabaseBlueprintId = value; }
-    inline void SetFromRelationalDatabaseBlueprintId(Aws::String&& value) { m_fromRelationalDatabaseBlueprintIdHasBeenSet = true; m_fromRelationalDatabaseBlueprintId = std::move(value); }
-    inline void SetFromRelationalDatabaseBlueprintId(const char* value) { m_fromRelationalDatabaseBlueprintIdHasBeenSet = true; m_fromRelationalDatabaseBlueprintId.assign(value); }
-    inline RelationalDatabaseSnapshot& WithFromRelationalDatabaseBlueprintId(const Aws::String& value) { SetFromRelationalDatabaseBlueprintId(value); return *this;}
-    inline RelationalDatabaseSnapshot& WithFromRelationalDatabaseBlueprintId(Aws::String&& value) { SetFromRelationalDatabaseBlueprintId(std::move(value)); return *this;}
-    inline RelationalDatabaseSnapshot& WithFromRelationalDatabaseBlueprintId(const char* value) { SetFromRelationalDatabaseBlueprintId(value); return *this;}
+    template<typename FromRelationalDatabaseBlueprintIdT = Aws::String>
+    void SetFromRelationalDatabaseBlueprintId(FromRelationalDatabaseBlueprintIdT&& value) { m_fromRelationalDatabaseBlueprintIdHasBeenSet = true; m_fromRelationalDatabaseBlueprintId = std::forward<FromRelationalDatabaseBlueprintIdT>(value); }
+    template<typename FromRelationalDatabaseBlueprintIdT = Aws::String>
+    RelationalDatabaseSnapshot& WithFromRelationalDatabaseBlueprintId(FromRelationalDatabaseBlueprintIdT&& value) { SetFromRelationalDatabaseBlueprintId(std::forward<FromRelationalDatabaseBlueprintIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -265,13 +243,13 @@ namespace Model
     Aws::String m_supportCode;
     bool m_supportCodeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
     ResourceLocation m_location;
     bool m_locationHasBeenSet = false;
 
-    ResourceType m_resourceType;
+    ResourceType m_resourceType{ResourceType::NOT_SET};
     bool m_resourceTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
@@ -283,7 +261,7 @@ namespace Model
     Aws::String m_engineVersion;
     bool m_engineVersionHasBeenSet = false;
 
-    int m_sizeInGb;
+    int m_sizeInGb{0};
     bool m_sizeInGbHasBeenSet = false;
 
     Aws::String m_state;

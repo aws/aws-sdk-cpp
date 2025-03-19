@@ -12,13 +12,6 @@ using namespace Aws::TranscribeService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListCallAnalyticsCategoriesRequest::ListCallAnalyticsCategoriesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListCallAnalyticsCategoriesRequest::SerializePayload() const
 {
   JsonValue payload;

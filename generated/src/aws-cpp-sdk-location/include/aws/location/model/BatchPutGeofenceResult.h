@@ -30,7 +30,7 @@ namespace Model
   class BatchPutGeofenceResult
   {
   public:
-    AWS_LOCATIONSERVICE_API BatchPutGeofenceResult();
+    AWS_LOCATIONSERVICE_API BatchPutGeofenceResult() = default;
     AWS_LOCATIONSERVICE_API BatchPutGeofenceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOCATIONSERVICE_API BatchPutGeofenceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>Contains each geofence that was successfully stored in a geofence
      * collection.</p>
      */
-    inline const Aws::Vector<BatchPutGeofenceSuccess>& GetSuccesses() const{ return m_successes; }
-    inline void SetSuccesses(const Aws::Vector<BatchPutGeofenceSuccess>& value) { m_successes = value; }
-    inline void SetSuccesses(Aws::Vector<BatchPutGeofenceSuccess>&& value) { m_successes = std::move(value); }
-    inline BatchPutGeofenceResult& WithSuccesses(const Aws::Vector<BatchPutGeofenceSuccess>& value) { SetSuccesses(value); return *this;}
-    inline BatchPutGeofenceResult& WithSuccesses(Aws::Vector<BatchPutGeofenceSuccess>&& value) { SetSuccesses(std::move(value)); return *this;}
-    inline BatchPutGeofenceResult& AddSuccesses(const BatchPutGeofenceSuccess& value) { m_successes.push_back(value); return *this; }
-    inline BatchPutGeofenceResult& AddSuccesses(BatchPutGeofenceSuccess&& value) { m_successes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchPutGeofenceSuccess>& GetSuccesses() const { return m_successes; }
+    template<typename SuccessesT = Aws::Vector<BatchPutGeofenceSuccess>>
+    void SetSuccesses(SuccessesT&& value) { m_successesHasBeenSet = true; m_successes = std::forward<SuccessesT>(value); }
+    template<typename SuccessesT = Aws::Vector<BatchPutGeofenceSuccess>>
+    BatchPutGeofenceResult& WithSuccesses(SuccessesT&& value) { SetSuccesses(std::forward<SuccessesT>(value)); return *this;}
+    template<typename SuccessesT = BatchPutGeofenceSuccess>
+    BatchPutGeofenceResult& AddSuccesses(SuccessesT&& value) { m_successesHasBeenSet = true; m_successes.emplace_back(std::forward<SuccessesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,33 @@ namespace Model
      * <p>Contains additional error details for each geofence that failed to be stored
      * in a geofence collection.</p>
      */
-    inline const Aws::Vector<BatchPutGeofenceError>& GetErrors() const{ return m_errors; }
-    inline void SetErrors(const Aws::Vector<BatchPutGeofenceError>& value) { m_errors = value; }
-    inline void SetErrors(Aws::Vector<BatchPutGeofenceError>&& value) { m_errors = std::move(value); }
-    inline BatchPutGeofenceResult& WithErrors(const Aws::Vector<BatchPutGeofenceError>& value) { SetErrors(value); return *this;}
-    inline BatchPutGeofenceResult& WithErrors(Aws::Vector<BatchPutGeofenceError>&& value) { SetErrors(std::move(value)); return *this;}
-    inline BatchPutGeofenceResult& AddErrors(const BatchPutGeofenceError& value) { m_errors.push_back(value); return *this; }
-    inline BatchPutGeofenceResult& AddErrors(BatchPutGeofenceError&& value) { m_errors.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchPutGeofenceError>& GetErrors() const { return m_errors; }
+    template<typename ErrorsT = Aws::Vector<BatchPutGeofenceError>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Vector<BatchPutGeofenceError>>
+    BatchPutGeofenceResult& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsT = BatchPutGeofenceError>
+    BatchPutGeofenceResult& AddErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors.emplace_back(std::forward<ErrorsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchPutGeofenceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchPutGeofenceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchPutGeofenceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchPutGeofenceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchPutGeofenceSuccess> m_successes;
+    bool m_successesHasBeenSet = false;
 
     Aws::Vector<BatchPutGeofenceError> m_errors;
+    bool m_errorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

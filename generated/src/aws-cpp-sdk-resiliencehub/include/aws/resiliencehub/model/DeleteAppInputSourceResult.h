@@ -28,7 +28,7 @@ namespace Model
   class DeleteAppInputSourceResult
   {
   public:
-    AWS_RESILIENCEHUB_API DeleteAppInputSourceResult();
+    AWS_RESILIENCEHUB_API DeleteAppInputSourceResult() = default;
     AWS_RESILIENCEHUB_API DeleteAppInputSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESILIENCEHUB_API DeleteAppInputSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,13 +43,11 @@ namespace Model
      * Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General
      * Reference</i> guide.</p>
      */
-    inline const Aws::String& GetAppArn() const{ return m_appArn; }
-    inline void SetAppArn(const Aws::String& value) { m_appArn = value; }
-    inline void SetAppArn(Aws::String&& value) { m_appArn = std::move(value); }
-    inline void SetAppArn(const char* value) { m_appArn.assign(value); }
-    inline DeleteAppInputSourceResult& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
-    inline DeleteAppInputSourceResult& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
-    inline DeleteAppInputSourceResult& WithAppArn(const char* value) { SetAppArn(value); return *this;}
+    inline const Aws::String& GetAppArn() const { return m_appArn; }
+    template<typename AppArnT = Aws::String>
+    void SetAppArn(AppArnT&& value) { m_appArnHasBeenSet = true; m_appArn = std::forward<AppArnT>(value); }
+    template<typename AppArnT = Aws::String>
+    DeleteAppInputSourceResult& WithAppArn(AppArnT&& value) { SetAppArn(std::forward<AppArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,30 +55,31 @@ namespace Model
      * <p>Name of the input source from where the application resource is imported
      * from.</p>
      */
-    inline const AppInputSource& GetAppInputSource() const{ return m_appInputSource; }
-    inline void SetAppInputSource(const AppInputSource& value) { m_appInputSource = value; }
-    inline void SetAppInputSource(AppInputSource&& value) { m_appInputSource = std::move(value); }
-    inline DeleteAppInputSourceResult& WithAppInputSource(const AppInputSource& value) { SetAppInputSource(value); return *this;}
-    inline DeleteAppInputSourceResult& WithAppInputSource(AppInputSource&& value) { SetAppInputSource(std::move(value)); return *this;}
+    inline const AppInputSource& GetAppInputSource() const { return m_appInputSource; }
+    template<typename AppInputSourceT = AppInputSource>
+    void SetAppInputSource(AppInputSourceT&& value) { m_appInputSourceHasBeenSet = true; m_appInputSource = std::forward<AppInputSourceT>(value); }
+    template<typename AppInputSourceT = AppInputSource>
+    DeleteAppInputSourceResult& WithAppInputSource(AppInputSourceT&& value) { SetAppInputSource(std::forward<AppInputSourceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteAppInputSourceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteAppInputSourceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteAppInputSourceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteAppInputSourceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_appArn;
+    bool m_appArnHasBeenSet = false;
 
     AppInputSource m_appInputSource;
+    bool m_appInputSourceHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -20,15 +20,7 @@ namespace RDS
 namespace Model
 {
 
-MasterUserSecret::MasterUserSecret() : 
-    m_secretArnHasBeenSet(false),
-    m_secretStatusHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 MasterUserSecret::MasterUserSecret(const XmlNode& xmlNode)
-  : MasterUserSecret()
 {
   *this = xmlNode;
 }

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UntagResourceResult::UntagResourceResult() : 
-    m_statusCode(0)
-{
-}
-
 UntagResourceResult::UntagResourceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UntagResourceResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ UntagResourceResult& UntagResourceResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("statusCode"))
   {
     m_statusCode = jsonValue.GetInteger("statusCode");
-
+    m_statusCodeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

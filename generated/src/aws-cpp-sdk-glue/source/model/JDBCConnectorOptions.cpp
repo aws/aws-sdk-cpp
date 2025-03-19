@@ -18,23 +18,7 @@ namespace Glue
 namespace Model
 {
 
-JDBCConnectorOptions::JDBCConnectorOptions() : 
-    m_filterPredicateHasBeenSet(false),
-    m_partitionColumnHasBeenSet(false),
-    m_lowerBound(0),
-    m_lowerBoundHasBeenSet(false),
-    m_upperBound(0),
-    m_upperBoundHasBeenSet(false),
-    m_numPartitions(0),
-    m_numPartitionsHasBeenSet(false),
-    m_jobBookmarkKeysHasBeenSet(false),
-    m_jobBookmarkKeysSortOrderHasBeenSet(false),
-    m_dataTypeMappingHasBeenSet(false)
-{
-}
-
 JDBCConnectorOptions::JDBCConnectorOptions(JsonView jsonValue)
-  : JDBCConnectorOptions()
 {
   *this = jsonValue;
 }
@@ -44,38 +28,28 @@ JDBCConnectorOptions& JDBCConnectorOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FilterPredicate"))
   {
     m_filterPredicate = jsonValue.GetString("FilterPredicate");
-
     m_filterPredicateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PartitionColumn"))
   {
     m_partitionColumn = jsonValue.GetString("PartitionColumn");
-
     m_partitionColumnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LowerBound"))
   {
     m_lowerBound = jsonValue.GetInt64("LowerBound");
-
     m_lowerBoundHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpperBound"))
   {
     m_upperBound = jsonValue.GetInt64("UpperBound");
-
     m_upperBoundHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumPartitions"))
   {
     m_numPartitions = jsonValue.GetInt64("NumPartitions");
-
     m_numPartitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobBookmarkKeys"))
   {
     Aws::Utils::Array<JsonView> jobBookmarkKeysJsonList = jsonValue.GetArray("JobBookmarkKeys");
@@ -85,14 +59,11 @@ JDBCConnectorOptions& JDBCConnectorOptions::operator =(JsonView jsonValue)
     }
     m_jobBookmarkKeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobBookmarkKeysSortOrder"))
   {
     m_jobBookmarkKeysSortOrder = jsonValue.GetString("JobBookmarkKeysSortOrder");
-
     m_jobBookmarkKeysSortOrderHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataTypeMapping"))
   {
     Aws::Map<Aws::String, JsonView> dataTypeMappingJsonMap = jsonValue.GetObject("DataTypeMapping").GetAllObjects();
@@ -102,7 +73,6 @@ JDBCConnectorOptions& JDBCConnectorOptions::operator =(JsonView jsonValue)
     }
     m_dataTypeMappingHasBeenSet = true;
   }
-
   return *this;
 }
 

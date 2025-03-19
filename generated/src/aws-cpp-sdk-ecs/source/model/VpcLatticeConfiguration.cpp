@@ -18,15 +18,7 @@ namespace ECS
 namespace Model
 {
 
-VpcLatticeConfiguration::VpcLatticeConfiguration() : 
-    m_roleArnHasBeenSet(false),
-    m_targetGroupArnHasBeenSet(false),
-    m_portNameHasBeenSet(false)
-{
-}
-
 VpcLatticeConfiguration::VpcLatticeConfiguration(JsonView jsonValue)
-  : VpcLatticeConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ VpcLatticeConfiguration& VpcLatticeConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetGroupArn"))
   {
     m_targetGroupArn = jsonValue.GetString("targetGroupArn");
-
     m_targetGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("portName"))
   {
     m_portName = jsonValue.GetString("portName");
-
     m_portNameHasBeenSet = true;
   }
-
   return *this;
 }
 

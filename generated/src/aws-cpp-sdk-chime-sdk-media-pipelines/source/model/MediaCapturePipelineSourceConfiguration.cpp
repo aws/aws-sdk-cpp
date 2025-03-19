@@ -18,14 +18,7 @@ namespace ChimeSDKMediaPipelines
 namespace Model
 {
 
-MediaCapturePipelineSourceConfiguration::MediaCapturePipelineSourceConfiguration() : 
-    m_mediaPipelineArnHasBeenSet(false),
-    m_chimeSdkMeetingConfigurationHasBeenSet(false)
-{
-}
-
 MediaCapturePipelineSourceConfiguration::MediaCapturePipelineSourceConfiguration(JsonView jsonValue)
-  : MediaCapturePipelineSourceConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MediaCapturePipelineSourceConfiguration& MediaCapturePipelineSourceConfiguration
   if(jsonValue.ValueExists("MediaPipelineArn"))
   {
     m_mediaPipelineArn = jsonValue.GetString("MediaPipelineArn");
-
     m_mediaPipelineArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChimeSdkMeetingConfiguration"))
   {
     m_chimeSdkMeetingConfiguration = jsonValue.GetObject("ChimeSdkMeetingConfiguration");
-
     m_chimeSdkMeetingConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

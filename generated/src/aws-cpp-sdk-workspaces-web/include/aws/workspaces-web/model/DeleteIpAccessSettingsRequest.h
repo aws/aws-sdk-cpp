@@ -21,7 +21,7 @@ namespace Model
   class DeleteIpAccessSettingsRequest : public WorkSpacesWebRequest
   {
   public:
-    AWS_WORKSPACESWEB_API DeleteIpAccessSettingsRequest();
+    AWS_WORKSPACESWEB_API DeleteIpAccessSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ARN of the IP access settings.</p>
      */
-    inline const Aws::String& GetIpAccessSettingsArn() const{ return m_ipAccessSettingsArn; }
+    inline const Aws::String& GetIpAccessSettingsArn() const { return m_ipAccessSettingsArn; }
     inline bool IpAccessSettingsArnHasBeenSet() const { return m_ipAccessSettingsArnHasBeenSet; }
-    inline void SetIpAccessSettingsArn(const Aws::String& value) { m_ipAccessSettingsArnHasBeenSet = true; m_ipAccessSettingsArn = value; }
-    inline void SetIpAccessSettingsArn(Aws::String&& value) { m_ipAccessSettingsArnHasBeenSet = true; m_ipAccessSettingsArn = std::move(value); }
-    inline void SetIpAccessSettingsArn(const char* value) { m_ipAccessSettingsArnHasBeenSet = true; m_ipAccessSettingsArn.assign(value); }
-    inline DeleteIpAccessSettingsRequest& WithIpAccessSettingsArn(const Aws::String& value) { SetIpAccessSettingsArn(value); return *this;}
-    inline DeleteIpAccessSettingsRequest& WithIpAccessSettingsArn(Aws::String&& value) { SetIpAccessSettingsArn(std::move(value)); return *this;}
-    inline DeleteIpAccessSettingsRequest& WithIpAccessSettingsArn(const char* value) { SetIpAccessSettingsArn(value); return *this;}
+    template<typename IpAccessSettingsArnT = Aws::String>
+    void SetIpAccessSettingsArn(IpAccessSettingsArnT&& value) { m_ipAccessSettingsArnHasBeenSet = true; m_ipAccessSettingsArn = std::forward<IpAccessSettingsArnT>(value); }
+    template<typename IpAccessSettingsArnT = Aws::String>
+    DeleteIpAccessSettingsRequest& WithIpAccessSettingsArn(IpAccessSettingsArnT&& value) { SetIpAccessSettingsArn(std::forward<IpAccessSettingsArnT>(value)); return *this;}
     ///@}
   private:
 

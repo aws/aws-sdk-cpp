@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetContainerServiceMetricDataResult::GetContainerServiceMetricDataResult() : 
-    m_metricName(ContainerServiceMetricName::NOT_SET)
-{
-}
-
 GetContainerServiceMetricDataResult::GetContainerServiceMetricDataResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetContainerServiceMetricDataResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ GetContainerServiceMetricDataResult& GetContainerServiceMetricDataResult::operat
   if(jsonValue.ValueExists("metricName"))
   {
     m_metricName = ContainerServiceMetricNameMapper::GetContainerServiceMetricNameForName(jsonValue.GetString("metricName"));
-
+    m_metricNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metricData"))
   {
     Aws::Utils::Array<JsonView> metricDataJsonList = jsonValue.GetArray("metricData");
@@ -44,14 +37,15 @@ GetContainerServiceMetricDataResult& GetContainerServiceMetricDataResult::operat
     {
       m_metricData.push_back(metricDataJsonList[metricDataIndex].AsObject());
     }
+    m_metricDataHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

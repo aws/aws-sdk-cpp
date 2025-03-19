@@ -26,7 +26,7 @@ namespace Model
   class CreateClusterRequest : public CloudHSMV2Request
   {
   public:
-    AWS_CLOUDHSMV2_API CreateClusterRequest();
+    AWS_CLOUDHSMV2_API CreateClusterRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>A policy that defines how the service retains backups.</p>
      */
-    inline const BackupRetentionPolicy& GetBackupRetentionPolicy() const{ return m_backupRetentionPolicy; }
+    inline const BackupRetentionPolicy& GetBackupRetentionPolicy() const { return m_backupRetentionPolicy; }
     inline bool BackupRetentionPolicyHasBeenSet() const { return m_backupRetentionPolicyHasBeenSet; }
-    inline void SetBackupRetentionPolicy(const BackupRetentionPolicy& value) { m_backupRetentionPolicyHasBeenSet = true; m_backupRetentionPolicy = value; }
-    inline void SetBackupRetentionPolicy(BackupRetentionPolicy&& value) { m_backupRetentionPolicyHasBeenSet = true; m_backupRetentionPolicy = std::move(value); }
-    inline CreateClusterRequest& WithBackupRetentionPolicy(const BackupRetentionPolicy& value) { SetBackupRetentionPolicy(value); return *this;}
-    inline CreateClusterRequest& WithBackupRetentionPolicy(BackupRetentionPolicy&& value) { SetBackupRetentionPolicy(std::move(value)); return *this;}
+    template<typename BackupRetentionPolicyT = BackupRetentionPolicy>
+    void SetBackupRetentionPolicy(BackupRetentionPolicyT&& value) { m_backupRetentionPolicyHasBeenSet = true; m_backupRetentionPolicy = std::forward<BackupRetentionPolicyT>(value); }
+    template<typename BackupRetentionPolicyT = BackupRetentionPolicy>
+    CreateClusterRequest& WithBackupRetentionPolicy(BackupRetentionPolicyT&& value) { SetBackupRetentionPolicy(std::forward<BackupRetentionPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +56,12 @@ namespace Model
      * <p>The type of HSM to use in the cluster. The allowed values are
      * <code>hsm1.medium</code> and <code>hsm2m.medium</code>.</p>
      */
-    inline const Aws::String& GetHsmType() const{ return m_hsmType; }
+    inline const Aws::String& GetHsmType() const { return m_hsmType; }
     inline bool HsmTypeHasBeenSet() const { return m_hsmTypeHasBeenSet; }
-    inline void SetHsmType(const Aws::String& value) { m_hsmTypeHasBeenSet = true; m_hsmType = value; }
-    inline void SetHsmType(Aws::String&& value) { m_hsmTypeHasBeenSet = true; m_hsmType = std::move(value); }
-    inline void SetHsmType(const char* value) { m_hsmTypeHasBeenSet = true; m_hsmType.assign(value); }
-    inline CreateClusterRequest& WithHsmType(const Aws::String& value) { SetHsmType(value); return *this;}
-    inline CreateClusterRequest& WithHsmType(Aws::String&& value) { SetHsmType(std::move(value)); return *this;}
-    inline CreateClusterRequest& WithHsmType(const char* value) { SetHsmType(value); return *this;}
+    template<typename HsmTypeT = Aws::String>
+    void SetHsmType(HsmTypeT&& value) { m_hsmTypeHasBeenSet = true; m_hsmType = std::forward<HsmTypeT>(value); }
+    template<typename HsmTypeT = Aws::String>
+    CreateClusterRequest& WithHsmType(HsmTypeT&& value) { SetHsmType(std::forward<HsmTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +72,12 @@ namespace Model
      * <a>DescribeBackups</a>. <i>If using a backup in another account, the full ARN
      * must be supplied.</i> </p>
      */
-    inline const Aws::String& GetSourceBackupId() const{ return m_sourceBackupId; }
+    inline const Aws::String& GetSourceBackupId() const { return m_sourceBackupId; }
     inline bool SourceBackupIdHasBeenSet() const { return m_sourceBackupIdHasBeenSet; }
-    inline void SetSourceBackupId(const Aws::String& value) { m_sourceBackupIdHasBeenSet = true; m_sourceBackupId = value; }
-    inline void SetSourceBackupId(Aws::String&& value) { m_sourceBackupIdHasBeenSet = true; m_sourceBackupId = std::move(value); }
-    inline void SetSourceBackupId(const char* value) { m_sourceBackupIdHasBeenSet = true; m_sourceBackupId.assign(value); }
-    inline CreateClusterRequest& WithSourceBackupId(const Aws::String& value) { SetSourceBackupId(value); return *this;}
-    inline CreateClusterRequest& WithSourceBackupId(Aws::String&& value) { SetSourceBackupId(std::move(value)); return *this;}
-    inline CreateClusterRequest& WithSourceBackupId(const char* value) { SetSourceBackupId(value); return *this;}
+    template<typename SourceBackupIdT = Aws::String>
+    void SetSourceBackupId(SourceBackupIdT&& value) { m_sourceBackupIdHasBeenSet = true; m_sourceBackupId = std::forward<SourceBackupIdT>(value); }
+    template<typename SourceBackupIdT = Aws::String>
+    CreateClusterRequest& WithSourceBackupId(SourceBackupIdT&& value) { SetSourceBackupId(std::forward<SourceBackupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,15 +88,14 @@ namespace Model
      * virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet
      * per Availability Zone.</p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+    inline const Aws::Vector<Aws::String>& GetSubnetIds() const { return m_subnetIds; }
     inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
-    inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
-    inline void SetSubnetIds(Aws::Vector<Aws::String>&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::move(value); }
-    inline CreateClusterRequest& WithSubnetIds(const Aws::Vector<Aws::String>& value) { SetSubnetIds(value); return *this;}
-    inline CreateClusterRequest& WithSubnetIds(Aws::Vector<Aws::String>&& value) { SetSubnetIds(std::move(value)); return *this;}
-    inline CreateClusterRequest& AddSubnetIds(const Aws::String& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
-    inline CreateClusterRequest& AddSubnetIds(Aws::String&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(std::move(value)); return *this; }
-    inline CreateClusterRequest& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    void SetSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = std::forward<SubnetIdsT>(value); }
+    template<typename SubnetIdsT = Aws::Vector<Aws::String>>
+    CreateClusterRequest& WithSubnetIds(SubnetIdsT&& value) { SetSubnetIds(std::forward<SubnetIdsT>(value)); return *this;}
+    template<typename SubnetIdsT = Aws::String>
+    CreateClusterRequest& AddSubnetIds(SubnetIdsT&& value) { m_subnetIdsHasBeenSet = true; m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -108,26 +103,24 @@ namespace Model
      * <p>The NetworkType to create a cluster with. The allowed values are
      * <code>IPV4</code> and <code>DUALSTACK</code>. </p>
      */
-    inline const NetworkType& GetNetworkType() const{ return m_networkType; }
+    inline NetworkType GetNetworkType() const { return m_networkType; }
     inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
-    inline void SetNetworkType(const NetworkType& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
-    inline void SetNetworkType(NetworkType&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
-    inline CreateClusterRequest& WithNetworkType(const NetworkType& value) { SetNetworkType(value); return *this;}
-    inline CreateClusterRequest& WithNetworkType(NetworkType&& value) { SetNetworkType(std::move(value)); return *this;}
+    inline void SetNetworkType(NetworkType value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
+    inline CreateClusterRequest& WithNetworkType(NetworkType value) { SetNetworkType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Tags to apply to the CloudHSM cluster during creation.</p>
      */
-    inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
+    inline const Aws::Vector<Tag>& GetTagList() const { return m_tagList; }
     inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
-    inline void SetTagList(const Aws::Vector<Tag>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
-    inline void SetTagList(Aws::Vector<Tag>&& value) { m_tagListHasBeenSet = true; m_tagList = std::move(value); }
-    inline CreateClusterRequest& WithTagList(const Aws::Vector<Tag>& value) { SetTagList(value); return *this;}
-    inline CreateClusterRequest& WithTagList(Aws::Vector<Tag>&& value) { SetTagList(std::move(value)); return *this;}
-    inline CreateClusterRequest& AddTagList(const Tag& value) { m_tagListHasBeenSet = true; m_tagList.push_back(value); return *this; }
-    inline CreateClusterRequest& AddTagList(Tag&& value) { m_tagListHasBeenSet = true; m_tagList.push_back(std::move(value)); return *this; }
+    template<typename TagListT = Aws::Vector<Tag>>
+    void SetTagList(TagListT&& value) { m_tagListHasBeenSet = true; m_tagList = std::forward<TagListT>(value); }
+    template<typename TagListT = Aws::Vector<Tag>>
+    CreateClusterRequest& WithTagList(TagListT&& value) { SetTagList(std::forward<TagListT>(value)); return *this;}
+    template<typename TagListT = Tag>
+    CreateClusterRequest& AddTagList(TagListT&& value) { m_tagListHasBeenSet = true; m_tagList.emplace_back(std::forward<TagListT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -135,12 +128,10 @@ namespace Model
      * <p>The mode to use in the cluster. The allowed values are <code>FIPS</code> and
      * <code>NON_FIPS</code>.</p>
      */
-    inline const ClusterMode& GetMode() const{ return m_mode; }
+    inline ClusterMode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const ClusterMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(ClusterMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline CreateClusterRequest& WithMode(const ClusterMode& value) { SetMode(value); return *this;}
-    inline CreateClusterRequest& WithMode(ClusterMode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(ClusterMode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline CreateClusterRequest& WithMode(ClusterMode value) { SetMode(value); return *this;}
     ///@}
   private:
 
@@ -156,13 +147,13 @@ namespace Model
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet = false;
 
-    NetworkType m_networkType;
+    NetworkType m_networkType{NetworkType::NOT_SET};
     bool m_networkTypeHasBeenSet = false;
 
     Aws::Vector<Tag> m_tagList;
     bool m_tagListHasBeenSet = false;
 
-    ClusterMode m_mode;
+    ClusterMode m_mode{ClusterMode::NOT_SET};
     bool m_modeHasBeenSet = false;
   };
 

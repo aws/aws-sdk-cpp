@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2InstanceNetworkInterfacesDetails::AwsEc2InstanceNetworkInterfacesDetails() : 
-    m_networkInterfaceIdHasBeenSet(false)
-{
-}
-
 AwsEc2InstanceNetworkInterfacesDetails::AwsEc2InstanceNetworkInterfacesDetails(JsonView jsonValue)
-  : AwsEc2InstanceNetworkInterfacesDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsEc2InstanceNetworkInterfacesDetails& AwsEc2InstanceNetworkInterfacesDetails::
   if(jsonValue.ValueExists("NetworkInterfaceId"))
   {
     m_networkInterfaceId = jsonValue.GetString("NetworkInterfaceId");
-
     m_networkInterfaceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

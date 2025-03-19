@@ -34,7 +34,7 @@ namespace Model
   class GetWorkflowResult
   {
   public:
-    AWS_OMICS_API GetWorkflowResult();
+    AWS_OMICS_API GetWorkflowResult() = default;
     AWS_OMICS_API GetWorkflowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API GetWorkflowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,149 +43,127 @@ namespace Model
     /**
      * <p>The workflow's ARN.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline GetWorkflowResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetWorkflowResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetWorkflowResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetWorkflowResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The workflow's ID.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetWorkflowResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetWorkflowResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetWorkflowResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetWorkflowResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The workflow's status.</p>
      */
-    inline const WorkflowStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const WorkflowStatus& value) { m_status = value; }
-    inline void SetStatus(WorkflowStatus&& value) { m_status = std::move(value); }
-    inline GetWorkflowResult& WithStatus(const WorkflowStatus& value) { SetStatus(value); return *this;}
-    inline GetWorkflowResult& WithStatus(WorkflowStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline WorkflowStatus GetStatus() const { return m_status; }
+    inline void SetStatus(WorkflowStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetWorkflowResult& WithStatus(WorkflowStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The workflow's type.</p>
      */
-    inline const WorkflowType& GetType() const{ return m_type; }
-    inline void SetType(const WorkflowType& value) { m_type = value; }
-    inline void SetType(WorkflowType&& value) { m_type = std::move(value); }
-    inline GetWorkflowResult& WithType(const WorkflowType& value) { SetType(value); return *this;}
-    inline GetWorkflowResult& WithType(WorkflowType&& value) { SetType(std::move(value)); return *this;}
+    inline WorkflowType GetType() const { return m_type; }
+    inline void SetType(WorkflowType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GetWorkflowResult& WithType(WorkflowType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The workflow's name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetWorkflowResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetWorkflowResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetWorkflowResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetWorkflowResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The workflow's description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetWorkflowResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetWorkflowResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetWorkflowResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetWorkflowResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The workflow's engine.</p>
      */
-    inline const WorkflowEngine& GetEngine() const{ return m_engine; }
-    inline void SetEngine(const WorkflowEngine& value) { m_engine = value; }
-    inline void SetEngine(WorkflowEngine&& value) { m_engine = std::move(value); }
-    inline GetWorkflowResult& WithEngine(const WorkflowEngine& value) { SetEngine(value); return *this;}
-    inline GetWorkflowResult& WithEngine(WorkflowEngine&& value) { SetEngine(std::move(value)); return *this;}
+    inline WorkflowEngine GetEngine() const { return m_engine; }
+    inline void SetEngine(WorkflowEngine value) { m_engineHasBeenSet = true; m_engine = value; }
+    inline GetWorkflowResult& WithEngine(WorkflowEngine value) { SetEngine(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The workflow's definition.</p>
      */
-    inline const Aws::String& GetDefinition() const{ return m_definition; }
-    inline void SetDefinition(const Aws::String& value) { m_definition = value; }
-    inline void SetDefinition(Aws::String&& value) { m_definition = std::move(value); }
-    inline void SetDefinition(const char* value) { m_definition.assign(value); }
-    inline GetWorkflowResult& WithDefinition(const Aws::String& value) { SetDefinition(value); return *this;}
-    inline GetWorkflowResult& WithDefinition(Aws::String&& value) { SetDefinition(std::move(value)); return *this;}
-    inline GetWorkflowResult& WithDefinition(const char* value) { SetDefinition(value); return *this;}
+    inline const Aws::String& GetDefinition() const { return m_definition; }
+    template<typename DefinitionT = Aws::String>
+    void SetDefinition(DefinitionT&& value) { m_definitionHasBeenSet = true; m_definition = std::forward<DefinitionT>(value); }
+    template<typename DefinitionT = Aws::String>
+    GetWorkflowResult& WithDefinition(DefinitionT&& value) { SetDefinition(std::forward<DefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The path of the main definition file for the workflow.</p>
      */
-    inline const Aws::String& GetMain() const{ return m_main; }
-    inline void SetMain(const Aws::String& value) { m_main = value; }
-    inline void SetMain(Aws::String&& value) { m_main = std::move(value); }
-    inline void SetMain(const char* value) { m_main.assign(value); }
-    inline GetWorkflowResult& WithMain(const Aws::String& value) { SetMain(value); return *this;}
-    inline GetWorkflowResult& WithMain(Aws::String&& value) { SetMain(std::move(value)); return *this;}
-    inline GetWorkflowResult& WithMain(const char* value) { SetMain(value); return *this;}
+    inline const Aws::String& GetMain() const { return m_main; }
+    template<typename MainT = Aws::String>
+    void SetMain(MainT&& value) { m_mainHasBeenSet = true; m_main = std::forward<MainT>(value); }
+    template<typename MainT = Aws::String>
+    GetWorkflowResult& WithMain(MainT&& value) { SetMain(std::forward<MainT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The workflow's digest.</p>
      */
-    inline const Aws::String& GetDigest() const{ return m_digest; }
-    inline void SetDigest(const Aws::String& value) { m_digest = value; }
-    inline void SetDigest(Aws::String&& value) { m_digest = std::move(value); }
-    inline void SetDigest(const char* value) { m_digest.assign(value); }
-    inline GetWorkflowResult& WithDigest(const Aws::String& value) { SetDigest(value); return *this;}
-    inline GetWorkflowResult& WithDigest(Aws::String&& value) { SetDigest(std::move(value)); return *this;}
-    inline GetWorkflowResult& WithDigest(const char* value) { SetDigest(value); return *this;}
+    inline const Aws::String& GetDigest() const { return m_digest; }
+    template<typename DigestT = Aws::String>
+    void SetDigest(DigestT&& value) { m_digestHasBeenSet = true; m_digest = std::forward<DigestT>(value); }
+    template<typename DigestT = Aws::String>
+    GetWorkflowResult& WithDigest(DigestT&& value) { SetDigest(std::forward<DigestT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The workflow's parameter template.</p>
      */
-    inline const Aws::Map<Aws::String, WorkflowParameter>& GetParameterTemplate() const{ return m_parameterTemplate; }
-    inline void SetParameterTemplate(const Aws::Map<Aws::String, WorkflowParameter>& value) { m_parameterTemplate = value; }
-    inline void SetParameterTemplate(Aws::Map<Aws::String, WorkflowParameter>&& value) { m_parameterTemplate = std::move(value); }
-    inline GetWorkflowResult& WithParameterTemplate(const Aws::Map<Aws::String, WorkflowParameter>& value) { SetParameterTemplate(value); return *this;}
-    inline GetWorkflowResult& WithParameterTemplate(Aws::Map<Aws::String, WorkflowParameter>&& value) { SetParameterTemplate(std::move(value)); return *this;}
-    inline GetWorkflowResult& AddParameterTemplate(const Aws::String& key, const WorkflowParameter& value) { m_parameterTemplate.emplace(key, value); return *this; }
-    inline GetWorkflowResult& AddParameterTemplate(Aws::String&& key, const WorkflowParameter& value) { m_parameterTemplate.emplace(std::move(key), value); return *this; }
-    inline GetWorkflowResult& AddParameterTemplate(const Aws::String& key, WorkflowParameter&& value) { m_parameterTemplate.emplace(key, std::move(value)); return *this; }
-    inline GetWorkflowResult& AddParameterTemplate(Aws::String&& key, WorkflowParameter&& value) { m_parameterTemplate.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetWorkflowResult& AddParameterTemplate(const char* key, WorkflowParameter&& value) { m_parameterTemplate.emplace(key, std::move(value)); return *this; }
-    inline GetWorkflowResult& AddParameterTemplate(const char* key, const WorkflowParameter& value) { m_parameterTemplate.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, WorkflowParameter>& GetParameterTemplate() const { return m_parameterTemplate; }
+    template<typename ParameterTemplateT = Aws::Map<Aws::String, WorkflowParameter>>
+    void SetParameterTemplate(ParameterTemplateT&& value) { m_parameterTemplateHasBeenSet = true; m_parameterTemplate = std::forward<ParameterTemplateT>(value); }
+    template<typename ParameterTemplateT = Aws::Map<Aws::String, WorkflowParameter>>
+    GetWorkflowResult& WithParameterTemplate(ParameterTemplateT&& value) { SetParameterTemplate(std::forward<ParameterTemplateT>(value)); return *this;}
+    template<typename ParameterTemplateKeyT = Aws::String, typename ParameterTemplateValueT = WorkflowParameter>
+    GetWorkflowResult& AddParameterTemplate(ParameterTemplateKeyT&& key, ParameterTemplateValueT&& value) {
+      m_parameterTemplateHasBeenSet = true; m_parameterTemplate.emplace(std::forward<ParameterTemplateKeyT>(key), std::forward<ParameterTemplateValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The workflow's default run storage capacity in gibibytes.</p>
      */
-    inline int GetStorageCapacity() const{ return m_storageCapacity; }
-    inline void SetStorageCapacity(int value) { m_storageCapacity = value; }
+    inline int GetStorageCapacity() const { return m_storageCapacity; }
+    inline void SetStorageCapacity(int value) { m_storageCapacityHasBeenSet = true; m_storageCapacity = value; }
     inline GetWorkflowResult& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
     ///@}
 
@@ -193,120 +171,126 @@ namespace Model
     /**
      * <p>When the workflow was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline GetWorkflowResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline GetWorkflowResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    GetWorkflowResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The workflow's status message.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
-    inline GetWorkflowResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline GetWorkflowResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline GetWorkflowResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    GetWorkflowResult& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The workflow's tags.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline GetWorkflowResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline GetWorkflowResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline GetWorkflowResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline GetWorkflowResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetWorkflowResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetWorkflowResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetWorkflowResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline GetWorkflowResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline GetWorkflowResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    GetWorkflowResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    GetWorkflowResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>Gets metadata for workflow.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const{ return m_metadata; }
-    inline void SetMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_metadata = value; }
-    inline void SetMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_metadata = std::move(value); }
-    inline GetWorkflowResult& WithMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetMetadata(value); return *this;}
-    inline GetWorkflowResult& WithMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetMetadata(std::move(value)); return *this;}
-    inline GetWorkflowResult& AddMetadata(const Aws::String& key, const Aws::String& value) { m_metadata.emplace(key, value); return *this; }
-    inline GetWorkflowResult& AddMetadata(Aws::String&& key, const Aws::String& value) { m_metadata.emplace(std::move(key), value); return *this; }
-    inline GetWorkflowResult& AddMetadata(const Aws::String& key, Aws::String&& value) { m_metadata.emplace(key, std::move(value)); return *this; }
-    inline GetWorkflowResult& AddMetadata(Aws::String&& key, Aws::String&& value) { m_metadata.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetWorkflowResult& AddMetadata(const char* key, Aws::String&& value) { m_metadata.emplace(key, std::move(value)); return *this; }
-    inline GetWorkflowResult& AddMetadata(Aws::String&& key, const char* value) { m_metadata.emplace(std::move(key), value); return *this; }
-    inline GetWorkflowResult& AddMetadata(const char* key, const char* value) { m_metadata.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const { return m_metadata; }
+    template<typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = Aws::Map<Aws::String, Aws::String>>
+    GetWorkflowResult& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
+    template<typename MetadataKeyT = Aws::String, typename MetadataValueT = Aws::String>
+    GetWorkflowResult& AddMetadata(MetadataKeyT&& key, MetadataValueT&& value) {
+      m_metadataHasBeenSet = true; m_metadata.emplace(std::forward<MetadataKeyT>(key), std::forward<MetadataValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The computational accelerator specified to run the workflow. </p>
      */
-    inline const Accelerators& GetAccelerators() const{ return m_accelerators; }
-    inline void SetAccelerators(const Accelerators& value) { m_accelerators = value; }
-    inline void SetAccelerators(Accelerators&& value) { m_accelerators = std::move(value); }
-    inline GetWorkflowResult& WithAccelerators(const Accelerators& value) { SetAccelerators(value); return *this;}
-    inline GetWorkflowResult& WithAccelerators(Accelerators&& value) { SetAccelerators(std::move(value)); return *this;}
+    inline Accelerators GetAccelerators() const { return m_accelerators; }
+    inline void SetAccelerators(Accelerators value) { m_acceleratorsHasBeenSet = true; m_accelerators = value; }
+    inline GetWorkflowResult& WithAccelerators(Accelerators value) { SetAccelerators(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetWorkflowResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetWorkflowResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetWorkflowResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetWorkflowResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
-    WorkflowStatus m_status;
+    WorkflowStatus m_status{WorkflowStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
-    WorkflowType m_type;
+    WorkflowType m_type{WorkflowType::NOT_SET};
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    WorkflowEngine m_engine;
+    WorkflowEngine m_engine{WorkflowEngine::NOT_SET};
+    bool m_engineHasBeenSet = false;
 
     Aws::String m_definition;
+    bool m_definitionHasBeenSet = false;
 
     Aws::String m_main;
+    bool m_mainHasBeenSet = false;
 
     Aws::String m_digest;
+    bool m_digestHasBeenSet = false;
 
     Aws::Map<Aws::String, WorkflowParameter> m_parameterTemplate;
+    bool m_parameterTemplateHasBeenSet = false;
 
-    int m_storageCapacity;
+    int m_storageCapacity{0};
+    bool m_storageCapacityHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_metadata;
+    bool m_metadataHasBeenSet = false;
 
-    Accelerators m_accelerators;
+    Accelerators m_accelerators{Accelerators::NOT_SET};
+    bool m_acceleratorsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

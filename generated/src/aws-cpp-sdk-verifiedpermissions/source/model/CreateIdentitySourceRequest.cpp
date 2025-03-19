@@ -12,15 +12,6 @@ using namespace Aws::VerifiedPermissions::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateIdentitySourceRequest::CreateIdentitySourceRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_policyStoreIdHasBeenSet(false),
-    m_configurationHasBeenSet(false),
-    m_principalEntityTypeHasBeenSet(false)
-{
-}
-
 Aws::String CreateIdentitySourceRequest::SerializePayload() const
 {
   JsonValue payload;

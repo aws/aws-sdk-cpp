@@ -18,13 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-PerformanceInsightsReferenceMetric::PerformanceInsightsReferenceMetric() : 
-    m_metricQueryHasBeenSet(false)
-{
-}
-
 PerformanceInsightsReferenceMetric::PerformanceInsightsReferenceMetric(JsonView jsonValue)
-  : PerformanceInsightsReferenceMetric()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PerformanceInsightsReferenceMetric& PerformanceInsightsReferenceMetric::operator
   if(jsonValue.ValueExists("MetricQuery"))
   {
     m_metricQuery = jsonValue.GetObject("MetricQuery");
-
     m_metricQueryHasBeenSet = true;
   }
-
   return *this;
 }
 

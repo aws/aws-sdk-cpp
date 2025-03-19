@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-AddGroupMemberRequest::AddGroupMemberRequest() : 
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_directoryIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_memberNameHasBeenSet(false),
-    m_memberRealmHasBeenSet(false)
-{
-}
-
 Aws::String AddGroupMemberRequest::SerializePayload() const
 {
   JsonValue payload;

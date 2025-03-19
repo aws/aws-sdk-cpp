@@ -18,17 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-GrpcGatewayRouteMatch::GrpcGatewayRouteMatch() : 
-    m_hostnameHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
-{
-}
-
 GrpcGatewayRouteMatch::GrpcGatewayRouteMatch(JsonView jsonValue)
-  : GrpcGatewayRouteMatch()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ GrpcGatewayRouteMatch& GrpcGatewayRouteMatch::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("hostname"))
   {
     m_hostname = jsonValue.GetObject("hostname");
-
     m_hostnameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata"))
   {
     Aws::Utils::Array<JsonView> metadataJsonList = jsonValue.GetArray("metadata");
@@ -51,21 +39,16 @@ GrpcGatewayRouteMatch& GrpcGatewayRouteMatch::operator =(JsonView jsonValue)
     }
     m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("port"))
   {
     m_port = jsonValue.GetInteger("port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("serviceName"))
   {
     m_serviceName = jsonValue.GetString("serviceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,34 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-PlatformDescription::PlatformDescription() : 
-    m_platformArnHasBeenSet(false),
-    m_platformOwnerHasBeenSet(false),
-    m_platformNameHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_solutionStackNameHasBeenSet(false),
-    m_platformStatus(PlatformStatus::NOT_SET),
-    m_platformStatusHasBeenSet(false),
-    m_dateCreatedHasBeenSet(false),
-    m_dateUpdatedHasBeenSet(false),
-    m_platformCategoryHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_maintainerHasBeenSet(false),
-    m_operatingSystemNameHasBeenSet(false),
-    m_operatingSystemVersionHasBeenSet(false),
-    m_programmingLanguagesHasBeenSet(false),
-    m_frameworksHasBeenSet(false),
-    m_customAmiListHasBeenSet(false),
-    m_supportedTierListHasBeenSet(false),
-    m_supportedAddonListHasBeenSet(false),
-    m_platformLifecycleStateHasBeenSet(false),
-    m_platformBranchNameHasBeenSet(false),
-    m_platformBranchLifecycleStateHasBeenSet(false)
-{
-}
-
 PlatformDescription::PlatformDescription(const XmlNode& xmlNode)
-  : PlatformDescription()
 {
   *this = xmlNode;
 }
@@ -91,7 +64,7 @@ PlatformDescription& PlatformDescription::operator =(const XmlNode& xmlNode)
     XmlNode platformStatusNode = resultNode.FirstChild("PlatformStatus");
     if(!platformStatusNode.IsNull())
     {
-      m_platformStatus = PlatformStatusMapper::GetPlatformStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(platformStatusNode.GetText()).c_str()).c_str());
+      m_platformStatus = PlatformStatusMapper::GetPlatformStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(platformStatusNode.GetText()).c_str()));
       m_platformStatusHasBeenSet = true;
     }
     XmlNode dateCreatedNode = resultNode.FirstChild("DateCreated");
@@ -140,6 +113,7 @@ PlatformDescription& PlatformDescription::operator =(const XmlNode& xmlNode)
     if(!programmingLanguagesNode.IsNull())
     {
       XmlNode programmingLanguagesMember = programmingLanguagesNode.FirstChild("member");
+      m_programmingLanguagesHasBeenSet = !programmingLanguagesMember.IsNull();
       while(!programmingLanguagesMember.IsNull())
       {
         m_programmingLanguages.push_back(programmingLanguagesMember);
@@ -152,6 +126,7 @@ PlatformDescription& PlatformDescription::operator =(const XmlNode& xmlNode)
     if(!frameworksNode.IsNull())
     {
       XmlNode frameworksMember = frameworksNode.FirstChild("member");
+      m_frameworksHasBeenSet = !frameworksMember.IsNull();
       while(!frameworksMember.IsNull())
       {
         m_frameworks.push_back(frameworksMember);
@@ -164,6 +139,7 @@ PlatformDescription& PlatformDescription::operator =(const XmlNode& xmlNode)
     if(!customAmiListNode.IsNull())
     {
       XmlNode customAmiListMember = customAmiListNode.FirstChild("member");
+      m_customAmiListHasBeenSet = !customAmiListMember.IsNull();
       while(!customAmiListMember.IsNull())
       {
         m_customAmiList.push_back(customAmiListMember);
@@ -176,6 +152,7 @@ PlatformDescription& PlatformDescription::operator =(const XmlNode& xmlNode)
     if(!supportedTierListNode.IsNull())
     {
       XmlNode supportedTierListMember = supportedTierListNode.FirstChild("member");
+      m_supportedTierListHasBeenSet = !supportedTierListMember.IsNull();
       while(!supportedTierListMember.IsNull())
       {
         m_supportedTierList.push_back(supportedTierListMember.GetText());
@@ -188,6 +165,7 @@ PlatformDescription& PlatformDescription::operator =(const XmlNode& xmlNode)
     if(!supportedAddonListNode.IsNull())
     {
       XmlNode supportedAddonListMember = supportedAddonListNode.FirstChild("member");
+      m_supportedAddonListHasBeenSet = !supportedAddonListMember.IsNull();
       while(!supportedAddonListMember.IsNull())
       {
         m_supportedAddonList.push_back(supportedAddonListMember.GetText());

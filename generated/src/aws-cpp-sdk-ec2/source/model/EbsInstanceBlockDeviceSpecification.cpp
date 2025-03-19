@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-EbsInstanceBlockDeviceSpecification::EbsInstanceBlockDeviceSpecification() : 
-    m_volumeIdHasBeenSet(false),
-    m_deleteOnTermination(false),
-    m_deleteOnTerminationHasBeenSet(false)
-{
-}
-
 EbsInstanceBlockDeviceSpecification::EbsInstanceBlockDeviceSpecification(const XmlNode& xmlNode)
-  : EbsInstanceBlockDeviceSpecification()
 {
   *this = xmlNode;
 }

@@ -34,7 +34,7 @@ namespace Model
   class DashboardSearchFilter
   {
   public:
-    AWS_QUICKSIGHT_API DashboardSearchFilter();
+    AWS_QUICKSIGHT_API DashboardSearchFilter() = default;
     AWS_QUICKSIGHT_API DashboardSearchFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API DashboardSearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,12 +56,10 @@ namespace Model
      * operator only supports the <code>NAME</code> value
      * <code>DASHBOARD_NAME</code>.</p>
      */
-    inline const FilterOperator& GetOperator() const{ return m_operator; }
+    inline FilterOperator GetOperator() const { return m_operator; }
     inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
-    inline void SetOperator(const FilterOperator& value) { m_operatorHasBeenSet = true; m_operator = value; }
-    inline void SetOperator(FilterOperator&& value) { m_operatorHasBeenSet = true; m_operator = std::move(value); }
-    inline DashboardSearchFilter& WithOperator(const FilterOperator& value) { SetOperator(value); return *this;}
-    inline DashboardSearchFilter& WithOperator(FilterOperator&& value) { SetOperator(std::move(value)); return *this;}
+    inline void SetOperator(FilterOperator value) { m_operatorHasBeenSet = true; m_operator = value; }
+    inline DashboardSearchFilter& WithOperator(FilterOperator value) { SetOperator(value); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +86,10 @@ namespace Model
      * <code>DASHBOARD_NAME</code>: Any dashboards whose names have a substring match
      * to this value will be returned.</p> </li> </ul>
      */
-    inline const DashboardFilterAttribute& GetName() const{ return m_name; }
+    inline DashboardFilterAttribute GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const DashboardFilterAttribute& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(DashboardFilterAttribute&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline DashboardSearchFilter& WithName(const DashboardFilterAttribute& value) { SetName(value); return *this;}
-    inline DashboardSearchFilter& WithName(DashboardFilterAttribute&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(DashboardFilterAttribute value) { m_nameHasBeenSet = true; m_name = value; }
+    inline DashboardSearchFilter& WithName(DashboardFilterAttribute value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -102,21 +98,19 @@ namespace Model
      * you want to use as a filter, for example, <code>"Value":
      * "arn:aws:quicksight:us-east-1:1:user/default/UserName1"</code>. </p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline DashboardSearchFilter& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline DashboardSearchFilter& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline DashboardSearchFilter& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    DashboardSearchFilter& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    FilterOperator m_operator;
+    FilterOperator m_operator{FilterOperator::NOT_SET};
     bool m_operatorHasBeenSet = false;
 
-    DashboardFilterAttribute m_name;
+    DashboardFilterAttribute m_name{DashboardFilterAttribute::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_value;

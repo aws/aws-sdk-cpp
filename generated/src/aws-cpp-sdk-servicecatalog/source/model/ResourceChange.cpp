@@ -18,21 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-ResourceChange::ResourceChange() : 
-    m_action(ChangeAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false),
-    m_physicalResourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_replacement(Replacement::NOT_SET),
-    m_replacementHasBeenSet(false),
-    m_scopeHasBeenSet(false),
-    m_detailsHasBeenSet(false)
-{
-}
-
 ResourceChange::ResourceChange(JsonView jsonValue)
-  : ResourceChange()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ ResourceChange& ResourceChange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Action"))
   {
     m_action = ChangeActionMapper::GetChangeActionForName(jsonValue.GetString("Action"));
-
     m_actionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogicalResourceId"))
   {
     m_logicalResourceId = jsonValue.GetString("LogicalResourceId");
-
     m_logicalResourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PhysicalResourceId"))
   {
     m_physicalResourceId = jsonValue.GetString("PhysicalResourceId");
-
     m_physicalResourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Replacement"))
   {
     m_replacement = ReplacementMapper::GetReplacementForName(jsonValue.GetString("Replacement"));
-
     m_replacementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Scope"))
   {
     Aws::Utils::Array<JsonView> scopeJsonList = jsonValue.GetArray("Scope");
@@ -83,7 +59,6 @@ ResourceChange& ResourceChange::operator =(JsonView jsonValue)
     }
     m_scopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Details"))
   {
     Aws::Utils::Array<JsonView> detailsJsonList = jsonValue.GetArray("Details");
@@ -93,7 +68,6 @@ ResourceChange& ResourceChange::operator =(JsonView jsonValue)
     }
     m_detailsHasBeenSet = true;
   }
-
   return *this;
 }
 

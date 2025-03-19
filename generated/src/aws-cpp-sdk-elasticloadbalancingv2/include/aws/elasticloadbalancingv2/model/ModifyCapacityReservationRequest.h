@@ -22,7 +22,7 @@ namespace Model
   class ModifyCapacityReservationRequest : public ElasticLoadBalancingv2Request
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API ModifyCapacityReservationRequest();
+    AWS_ELASTICLOADBALANCINGV2_API ModifyCapacityReservationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,33 +41,31 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
      */
-    inline const Aws::String& GetLoadBalancerArn() const{ return m_loadBalancerArn; }
+    inline const Aws::String& GetLoadBalancerArn() const { return m_loadBalancerArn; }
     inline bool LoadBalancerArnHasBeenSet() const { return m_loadBalancerArnHasBeenSet; }
-    inline void SetLoadBalancerArn(const Aws::String& value) { m_loadBalancerArnHasBeenSet = true; m_loadBalancerArn = value; }
-    inline void SetLoadBalancerArn(Aws::String&& value) { m_loadBalancerArnHasBeenSet = true; m_loadBalancerArn = std::move(value); }
-    inline void SetLoadBalancerArn(const char* value) { m_loadBalancerArnHasBeenSet = true; m_loadBalancerArn.assign(value); }
-    inline ModifyCapacityReservationRequest& WithLoadBalancerArn(const Aws::String& value) { SetLoadBalancerArn(value); return *this;}
-    inline ModifyCapacityReservationRequest& WithLoadBalancerArn(Aws::String&& value) { SetLoadBalancerArn(std::move(value)); return *this;}
-    inline ModifyCapacityReservationRequest& WithLoadBalancerArn(const char* value) { SetLoadBalancerArn(value); return *this;}
+    template<typename LoadBalancerArnT = Aws::String>
+    void SetLoadBalancerArn(LoadBalancerArnT&& value) { m_loadBalancerArnHasBeenSet = true; m_loadBalancerArn = std::forward<LoadBalancerArnT>(value); }
+    template<typename LoadBalancerArnT = Aws::String>
+    ModifyCapacityReservationRequest& WithLoadBalancerArn(LoadBalancerArnT&& value) { SetLoadBalancerArn(std::forward<LoadBalancerArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The minimum load balancer capacity reserved.</p>
      */
-    inline const MinimumLoadBalancerCapacity& GetMinimumLoadBalancerCapacity() const{ return m_minimumLoadBalancerCapacity; }
+    inline const MinimumLoadBalancerCapacity& GetMinimumLoadBalancerCapacity() const { return m_minimumLoadBalancerCapacity; }
     inline bool MinimumLoadBalancerCapacityHasBeenSet() const { return m_minimumLoadBalancerCapacityHasBeenSet; }
-    inline void SetMinimumLoadBalancerCapacity(const MinimumLoadBalancerCapacity& value) { m_minimumLoadBalancerCapacityHasBeenSet = true; m_minimumLoadBalancerCapacity = value; }
-    inline void SetMinimumLoadBalancerCapacity(MinimumLoadBalancerCapacity&& value) { m_minimumLoadBalancerCapacityHasBeenSet = true; m_minimumLoadBalancerCapacity = std::move(value); }
-    inline ModifyCapacityReservationRequest& WithMinimumLoadBalancerCapacity(const MinimumLoadBalancerCapacity& value) { SetMinimumLoadBalancerCapacity(value); return *this;}
-    inline ModifyCapacityReservationRequest& WithMinimumLoadBalancerCapacity(MinimumLoadBalancerCapacity&& value) { SetMinimumLoadBalancerCapacity(std::move(value)); return *this;}
+    template<typename MinimumLoadBalancerCapacityT = MinimumLoadBalancerCapacity>
+    void SetMinimumLoadBalancerCapacity(MinimumLoadBalancerCapacityT&& value) { m_minimumLoadBalancerCapacityHasBeenSet = true; m_minimumLoadBalancerCapacity = std::forward<MinimumLoadBalancerCapacityT>(value); }
+    template<typename MinimumLoadBalancerCapacityT = MinimumLoadBalancerCapacity>
+    ModifyCapacityReservationRequest& WithMinimumLoadBalancerCapacity(MinimumLoadBalancerCapacityT&& value) { SetMinimumLoadBalancerCapacity(std::forward<MinimumLoadBalancerCapacityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Resets the capacity reservation.</p>
      */
-    inline bool GetResetCapacityReservation() const{ return m_resetCapacityReservation; }
+    inline bool GetResetCapacityReservation() const { return m_resetCapacityReservation; }
     inline bool ResetCapacityReservationHasBeenSet() const { return m_resetCapacityReservationHasBeenSet; }
     inline void SetResetCapacityReservation(bool value) { m_resetCapacityReservationHasBeenSet = true; m_resetCapacityReservation = value; }
     inline ModifyCapacityReservationRequest& WithResetCapacityReservation(bool value) { SetResetCapacityReservation(value); return *this;}
@@ -80,7 +78,7 @@ namespace Model
     MinimumLoadBalancerCapacity m_minimumLoadBalancerCapacity;
     bool m_minimumLoadBalancerCapacityHasBeenSet = false;
 
-    bool m_resetCapacityReservation;
+    bool m_resetCapacityReservation{false};
     bool m_resetCapacityReservationHasBeenSet = false;
   };
 

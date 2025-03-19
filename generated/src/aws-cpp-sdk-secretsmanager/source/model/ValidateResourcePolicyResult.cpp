@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ValidateResourcePolicyResult::ValidateResourcePolicyResult() : 
-    m_policyValidationPassed(false)
-{
-}
-
 ValidateResourcePolicyResult::ValidateResourcePolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ValidateResourcePolicyResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ ValidateResourcePolicyResult& ValidateResourcePolicyResult::operator =(const Aws
   if(jsonValue.ValueExists("PolicyValidationPassed"))
   {
     m_policyValidationPassed = jsonValue.GetBool("PolicyValidationPassed");
-
+    m_policyValidationPassedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidationErrors"))
   {
     Aws::Utils::Array<JsonView> validationErrorsJsonList = jsonValue.GetArray("ValidationErrors");
@@ -44,14 +37,15 @@ ValidateResourcePolicyResult& ValidateResourcePolicyResult::operator =(const Aws
     {
       m_validationErrors.push_back(validationErrorsJsonList[validationErrorsIndex].AsObject());
     }
+    m_validationErrorsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

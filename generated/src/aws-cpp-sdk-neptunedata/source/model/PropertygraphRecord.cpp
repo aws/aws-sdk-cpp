@@ -18,19 +18,7 @@ namespace neptunedata
 namespace Model
 {
 
-PropertygraphRecord::PropertygraphRecord() : 
-    m_commitTimestampInMillis(0),
-    m_commitTimestampInMillisHasBeenSet(false),
-    m_eventIdHasBeenSet(false),
-    m_dataHasBeenSet(false),
-    m_opHasBeenSet(false),
-    m_isLastOp(false),
-    m_isLastOpHasBeenSet(false)
-{
-}
-
 PropertygraphRecord::PropertygraphRecord(JsonView jsonValue)
-  : PropertygraphRecord()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ PropertygraphRecord& PropertygraphRecord::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("commitTimestamp"))
   {
     m_commitTimestampInMillis = jsonValue.GetInt64("commitTimestamp");
-
     m_commitTimestampInMillisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventId"))
   {
     Aws::Map<Aws::String, JsonView> eventIdJsonMap = jsonValue.GetObject("eventId").GetAllObjects();
@@ -53,28 +39,21 @@ PropertygraphRecord& PropertygraphRecord::operator =(JsonView jsonValue)
     }
     m_eventIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("data"))
   {
     m_data = jsonValue.GetObject("data");
-
     m_dataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("op"))
   {
     m_op = jsonValue.GetString("op");
-
     m_opHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isLastOp"))
   {
     m_isLastOp = jsonValue.GetBool("isLastOp");
-
     m_isLastOpHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class DeleteRoleAliasRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API DeleteRoleAliasRequest();
+    AWS_IOT_API DeleteRoleAliasRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The role alias to delete.</p>
      */
-    inline const Aws::String& GetRoleAlias() const{ return m_roleAlias; }
+    inline const Aws::String& GetRoleAlias() const { return m_roleAlias; }
     inline bool RoleAliasHasBeenSet() const { return m_roleAliasHasBeenSet; }
-    inline void SetRoleAlias(const Aws::String& value) { m_roleAliasHasBeenSet = true; m_roleAlias = value; }
-    inline void SetRoleAlias(Aws::String&& value) { m_roleAliasHasBeenSet = true; m_roleAlias = std::move(value); }
-    inline void SetRoleAlias(const char* value) { m_roleAliasHasBeenSet = true; m_roleAlias.assign(value); }
-    inline DeleteRoleAliasRequest& WithRoleAlias(const Aws::String& value) { SetRoleAlias(value); return *this;}
-    inline DeleteRoleAliasRequest& WithRoleAlias(Aws::String&& value) { SetRoleAlias(std::move(value)); return *this;}
-    inline DeleteRoleAliasRequest& WithRoleAlias(const char* value) { SetRoleAlias(value); return *this;}
+    template<typename RoleAliasT = Aws::String>
+    void SetRoleAlias(RoleAliasT&& value) { m_roleAliasHasBeenSet = true; m_roleAlias = std::forward<RoleAliasT>(value); }
+    template<typename RoleAliasT = Aws::String>
+    DeleteRoleAliasRequest& WithRoleAlias(RoleAliasT&& value) { SetRoleAlias(std::forward<RoleAliasT>(value)); return *this;}
     ///@}
   private:
 

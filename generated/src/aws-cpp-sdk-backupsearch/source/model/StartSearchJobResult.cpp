@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartSearchJobResult::StartSearchJobResult()
-{
-}
-
 StartSearchJobResult::StartSearchJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ StartSearchJobResult& StartSearchJobResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("SearchJobArn"))
   {
     m_searchJobArn = jsonValue.GetString("SearchJobArn");
-
+    m_searchJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SearchJobIdentifier"))
   {
     m_searchJobIdentifier = jsonValue.GetString("SearchJobIdentifier");
-
+    m_searchJobIdentifierHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

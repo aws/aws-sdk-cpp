@@ -20,15 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-VpcEndpoint::VpcEndpoint() : 
-    m_vpcEndpointIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false)
-{
-}
-
 VpcEndpoint::VpcEndpoint(const XmlNode& xmlNode)
-  : VpcEndpoint()
 {
   *this = xmlNode;
 }
@@ -55,6 +47,7 @@ VpcEndpoint& VpcEndpoint::operator =(const XmlNode& xmlNode)
     if(!networkInterfacesNode.IsNull())
     {
       XmlNode networkInterfacesMember = networkInterfacesNode.FirstChild("NetworkInterface");
+      m_networkInterfacesHasBeenSet = !networkInterfacesMember.IsNull();
       while(!networkInterfacesMember.IsNull())
       {
         m_networkInterfaces.push_back(networkInterfacesMember);

@@ -10,12 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-DetectStackResourceDriftRequest::DetectStackResourceDriftRequest() : 
-    m_stackNameHasBeenSet(false),
-    m_logicalResourceIdHasBeenSet(false)
-{
-}
-
 Aws::String DetectStackResourceDriftRequest::SerializePayload() const
 {
   Aws::StringStream ss;

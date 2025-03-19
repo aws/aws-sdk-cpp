@@ -32,7 +32,7 @@ namespace Model
   class BlockAction
   {
   public:
-    AWS_SHIELD_API BlockAction();
+    AWS_SHIELD_API BlockAction() = default;
     AWS_SHIELD_API BlockAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API BlockAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartElasticsearchServiceSoftwareUpdateResult::StartElasticsearchServiceSoftwareUpdateResult()
-{
-}
-
 StartElasticsearchServiceSoftwareUpdateResult::StartElasticsearchServiceSoftwareUpdateResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ StartElasticsearchServiceSoftwareUpdateResult& StartElasticsearchServiceSoftware
   if(jsonValue.ValueExists("ServiceSoftwareOptions"))
   {
     m_serviceSoftwareOptions = jsonValue.GetObject("ServiceSoftwareOptions");
-
+    m_serviceSoftwareOptionsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

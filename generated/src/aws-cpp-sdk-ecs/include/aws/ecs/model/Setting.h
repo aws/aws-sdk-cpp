@@ -33,7 +33,7 @@ namespace Model
   class Setting
   {
   public:
-    AWS_ECS_API Setting();
+    AWS_ECS_API Setting() = default;
     AWS_ECS_API Setting(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Setting& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,10 @@ namespace Model
     /**
      * <p>The Amazon ECS resource name.</p>
      */
-    inline const SettingName& GetName() const{ return m_name; }
+    inline SettingName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const SettingName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(SettingName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline Setting& WithName(const SettingName& value) { SetName(value); return *this;}
-    inline Setting& WithName(SettingName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(SettingName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline Setting& WithName(SettingName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -56,14 +54,12 @@ namespace Model
      * <p>Determines whether the account setting is on or off for the specified
      * resource.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline Setting& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline Setting& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline Setting& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    Setting& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +67,12 @@ namespace Model
      * <p>The ARN of the principal. It can be a user, role, or the root user. If this
      * field is omitted, the authenticated user is assumed.</p>
      */
-    inline const Aws::String& GetPrincipalArn() const{ return m_principalArn; }
+    inline const Aws::String& GetPrincipalArn() const { return m_principalArn; }
     inline bool PrincipalArnHasBeenSet() const { return m_principalArnHasBeenSet; }
-    inline void SetPrincipalArn(const Aws::String& value) { m_principalArnHasBeenSet = true; m_principalArn = value; }
-    inline void SetPrincipalArn(Aws::String&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::move(value); }
-    inline void SetPrincipalArn(const char* value) { m_principalArnHasBeenSet = true; m_principalArn.assign(value); }
-    inline Setting& WithPrincipalArn(const Aws::String& value) { SetPrincipalArn(value); return *this;}
-    inline Setting& WithPrincipalArn(Aws::String&& value) { SetPrincipalArn(std::move(value)); return *this;}
-    inline Setting& WithPrincipalArn(const char* value) { SetPrincipalArn(value); return *this;}
+    template<typename PrincipalArnT = Aws::String>
+    void SetPrincipalArn(PrincipalArnT&& value) { m_principalArnHasBeenSet = true; m_principalArn = std::forward<PrincipalArnT>(value); }
+    template<typename PrincipalArnT = Aws::String>
+    Setting& WithPrincipalArn(PrincipalArnT&& value) { SetPrincipalArn(std::forward<PrincipalArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,16 +83,14 @@ namespace Model
      * Currently, the <code>guardDutyActivate</code> account setting is the only one
      * Amazon Web Services manages.</p>
      */
-    inline const SettingType& GetType() const{ return m_type; }
+    inline SettingType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SettingType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SettingType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline Setting& WithType(const SettingType& value) { SetType(value); return *this;}
-    inline Setting& WithType(SettingType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SettingType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline Setting& WithType(SettingType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    SettingName m_name;
+    SettingName m_name{SettingName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::String m_value;
@@ -107,7 +99,7 @@ namespace Model
     Aws::String m_principalArn;
     bool m_principalArnHasBeenSet = false;
 
-    SettingType m_type;
+    SettingType m_type{SettingType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

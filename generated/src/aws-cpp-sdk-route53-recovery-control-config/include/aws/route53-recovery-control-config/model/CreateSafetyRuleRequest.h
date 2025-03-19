@@ -29,7 +29,7 @@ namespace Model
   class CreateSafetyRuleRequest : public Route53RecoveryControlConfigRequest
   {
   public:
-    AWS_ROUTE53RECOVERYCONTROLCONFIG_API CreateSafetyRuleRequest();
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API CreateSafetyRuleRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>The assertion rule requested.</p>
      */
-    inline const NewAssertionRule& GetAssertionRule() const{ return m_assertionRule; }
+    inline const NewAssertionRule& GetAssertionRule() const { return m_assertionRule; }
     inline bool AssertionRuleHasBeenSet() const { return m_assertionRuleHasBeenSet; }
-    inline void SetAssertionRule(const NewAssertionRule& value) { m_assertionRuleHasBeenSet = true; m_assertionRule = value; }
-    inline void SetAssertionRule(NewAssertionRule&& value) { m_assertionRuleHasBeenSet = true; m_assertionRule = std::move(value); }
-    inline CreateSafetyRuleRequest& WithAssertionRule(const NewAssertionRule& value) { SetAssertionRule(value); return *this;}
-    inline CreateSafetyRuleRequest& WithAssertionRule(NewAssertionRule&& value) { SetAssertionRule(std::move(value)); return *this;}
+    template<typename AssertionRuleT = NewAssertionRule>
+    void SetAssertionRule(AssertionRuleT&& value) { m_assertionRuleHasBeenSet = true; m_assertionRule = std::forward<AssertionRuleT>(value); }
+    template<typename AssertionRuleT = NewAssertionRule>
+    CreateSafetyRuleRequest& WithAssertionRule(AssertionRuleT&& value) { SetAssertionRule(std::forward<AssertionRuleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,45 +58,40 @@ namespace Model
      * idempotent API request with an action, specify a client token in the
      * request.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateSafetyRuleRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateSafetyRuleRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateSafetyRuleRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateSafetyRuleRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The gating rule requested.</p>
      */
-    inline const NewGatingRule& GetGatingRule() const{ return m_gatingRule; }
+    inline const NewGatingRule& GetGatingRule() const { return m_gatingRule; }
     inline bool GatingRuleHasBeenSet() const { return m_gatingRuleHasBeenSet; }
-    inline void SetGatingRule(const NewGatingRule& value) { m_gatingRuleHasBeenSet = true; m_gatingRule = value; }
-    inline void SetGatingRule(NewGatingRule&& value) { m_gatingRuleHasBeenSet = true; m_gatingRule = std::move(value); }
-    inline CreateSafetyRuleRequest& WithGatingRule(const NewGatingRule& value) { SetGatingRule(value); return *this;}
-    inline CreateSafetyRuleRequest& WithGatingRule(NewGatingRule&& value) { SetGatingRule(std::move(value)); return *this;}
+    template<typename GatingRuleT = NewGatingRule>
+    void SetGatingRule(GatingRuleT&& value) { m_gatingRuleHasBeenSet = true; m_gatingRule = std::forward<GatingRuleT>(value); }
+    template<typename GatingRuleT = NewGatingRule>
+    CreateSafetyRuleRequest& WithGatingRule(GatingRuleT&& value) { SetGatingRule(std::forward<GatingRuleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags associated with the safety rule.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateSafetyRuleRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline CreateSafetyRuleRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateSafetyRuleRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
-    inline CreateSafetyRuleRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateSafetyRuleRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateSafetyRuleRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateSafetyRuleRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
-    inline CreateSafetyRuleRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
-    inline CreateSafetyRuleRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    CreateSafetyRuleRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    CreateSafetyRuleRequest& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

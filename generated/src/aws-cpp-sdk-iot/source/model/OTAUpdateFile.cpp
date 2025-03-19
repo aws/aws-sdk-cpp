@@ -18,19 +18,7 @@ namespace IoT
 namespace Model
 {
 
-OTAUpdateFile::OTAUpdateFile() : 
-    m_fileNameHasBeenSet(false),
-    m_fileType(0),
-    m_fileTypeHasBeenSet(false),
-    m_fileVersionHasBeenSet(false),
-    m_fileLocationHasBeenSet(false),
-    m_codeSigningHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 OTAUpdateFile::OTAUpdateFile(JsonView jsonValue)
-  : OTAUpdateFile()
 {
   *this = jsonValue;
 }
@@ -40,38 +28,28 @@ OTAUpdateFile& OTAUpdateFile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fileName"))
   {
     m_fileName = jsonValue.GetString("fileName");
-
     m_fileNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileType"))
   {
     m_fileType = jsonValue.GetInteger("fileType");
-
     m_fileTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileVersion"))
   {
     m_fileVersion = jsonValue.GetString("fileVersion");
-
     m_fileVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileLocation"))
   {
     m_fileLocation = jsonValue.GetObject("fileLocation");
-
     m_fileLocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("codeSigning"))
   {
     m_codeSigning = jsonValue.GetObject("codeSigning");
-
     m_codeSigningHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("attributes").GetAllObjects();
@@ -81,7 +59,6 @@ OTAUpdateFile& OTAUpdateFile::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   return *this;
 }
 

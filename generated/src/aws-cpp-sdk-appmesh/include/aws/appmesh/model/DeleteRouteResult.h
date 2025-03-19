@@ -33,7 +33,7 @@ namespace Model
   class DeleteRouteResult
   {
   public:
-    AWS_APPMESH_API DeleteRouteResult();
+    AWS_APPMESH_API DeleteRouteResult() = default;
     AWS_APPMESH_API DeleteRouteResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPMESH_API DeleteRouteResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,28 +42,28 @@ namespace Model
     /**
      * <p>The route that was deleted.</p>
      */
-    inline const RouteData& GetRoute() const{ return m_route; }
-    inline void SetRoute(const RouteData& value) { m_route = value; }
-    inline void SetRoute(RouteData&& value) { m_route = std::move(value); }
-    inline DeleteRouteResult& WithRoute(const RouteData& value) { SetRoute(value); return *this;}
-    inline DeleteRouteResult& WithRoute(RouteData&& value) { SetRoute(std::move(value)); return *this;}
+    inline const RouteData& GetRoute() const { return m_route; }
+    template<typename RouteT = RouteData>
+    void SetRoute(RouteT&& value) { m_routeHasBeenSet = true; m_route = std::forward<RouteT>(value); }
+    template<typename RouteT = RouteData>
+    DeleteRouteResult& WithRoute(RouteT&& value) { SetRoute(std::forward<RouteT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteRouteResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteRouteResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteRouteResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteRouteResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RouteData m_route;
+    bool m_routeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -28,7 +28,7 @@ namespace Model
   class DescribeEndpointGroupResult
   {
   public:
-    AWS_GLOBALACCELERATOR_API DescribeEndpointGroupResult();
+    AWS_GLOBALACCELERATOR_API DescribeEndpointGroupResult() = default;
     AWS_GLOBALACCELERATOR_API DescribeEndpointGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_GLOBALACCELERATOR_API DescribeEndpointGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The description of an endpoint group.</p>
      */
-    inline const EndpointGroup& GetEndpointGroup() const{ return m_endpointGroup; }
-    inline void SetEndpointGroup(const EndpointGroup& value) { m_endpointGroup = value; }
-    inline void SetEndpointGroup(EndpointGroup&& value) { m_endpointGroup = std::move(value); }
-    inline DescribeEndpointGroupResult& WithEndpointGroup(const EndpointGroup& value) { SetEndpointGroup(value); return *this;}
-    inline DescribeEndpointGroupResult& WithEndpointGroup(EndpointGroup&& value) { SetEndpointGroup(std::move(value)); return *this;}
+    inline const EndpointGroup& GetEndpointGroup() const { return m_endpointGroup; }
+    template<typename EndpointGroupT = EndpointGroup>
+    void SetEndpointGroup(EndpointGroupT&& value) { m_endpointGroupHasBeenSet = true; m_endpointGroup = std::forward<EndpointGroupT>(value); }
+    template<typename EndpointGroupT = EndpointGroup>
+    DescribeEndpointGroupResult& WithEndpointGroup(EndpointGroupT&& value) { SetEndpointGroup(std::forward<EndpointGroupT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeEndpointGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeEndpointGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeEndpointGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeEndpointGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     EndpointGroup m_endpointGroup;
+    bool m_endpointGroupHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

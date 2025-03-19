@@ -18,15 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-ParentEntityUpdateRequest::ParentEntityUpdateRequest() : 
-    m_updateType(ParentEntityUpdateType::NOT_SET),
-    m_updateTypeHasBeenSet(false),
-    m_parentEntityIdHasBeenSet(false)
-{
-}
-
 ParentEntityUpdateRequest::ParentEntityUpdateRequest(JsonView jsonValue)
-  : ParentEntityUpdateRequest()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ParentEntityUpdateRequest& ParentEntityUpdateRequest::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("updateType"))
   {
     m_updateType = ParentEntityUpdateTypeMapper::GetParentEntityUpdateTypeForName(jsonValue.GetString("updateType"));
-
     m_updateTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("parentEntityId"))
   {
     m_parentEntityId = jsonValue.GetString("parentEntityId");
-
     m_parentEntityIdHasBeenSet = true;
   }
-
   return *this;
 }
 

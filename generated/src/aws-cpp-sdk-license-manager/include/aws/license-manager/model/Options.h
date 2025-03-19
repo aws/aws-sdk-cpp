@@ -35,7 +35,7 @@ namespace Model
   class Options
   {
   public:
-    AWS_LICENSEMANAGER_API Options();
+    AWS_LICENSEMANAGER_API Options() = default;
     AWS_LICENSEMANAGER_API Options(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGER_API Options& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -62,16 +62,14 @@ namespace Model
      * product. This action will also replace their previously activated grants with
      * this activated grant.</p> </dd> </dl>
      */
-    inline const ActivationOverrideBehavior& GetActivationOverrideBehavior() const{ return m_activationOverrideBehavior; }
+    inline ActivationOverrideBehavior GetActivationOverrideBehavior() const { return m_activationOverrideBehavior; }
     inline bool ActivationOverrideBehaviorHasBeenSet() const { return m_activationOverrideBehaviorHasBeenSet; }
-    inline void SetActivationOverrideBehavior(const ActivationOverrideBehavior& value) { m_activationOverrideBehaviorHasBeenSet = true; m_activationOverrideBehavior = value; }
-    inline void SetActivationOverrideBehavior(ActivationOverrideBehavior&& value) { m_activationOverrideBehaviorHasBeenSet = true; m_activationOverrideBehavior = std::move(value); }
-    inline Options& WithActivationOverrideBehavior(const ActivationOverrideBehavior& value) { SetActivationOverrideBehavior(value); return *this;}
-    inline Options& WithActivationOverrideBehavior(ActivationOverrideBehavior&& value) { SetActivationOverrideBehavior(std::move(value)); return *this;}
+    inline void SetActivationOverrideBehavior(ActivationOverrideBehavior value) { m_activationOverrideBehaviorHasBeenSet = true; m_activationOverrideBehavior = value; }
+    inline Options& WithActivationOverrideBehavior(ActivationOverrideBehavior value) { SetActivationOverrideBehavior(value); return *this;}
     ///@}
   private:
 
-    ActivationOverrideBehavior m_activationOverrideBehavior;
+    ActivationOverrideBehavior m_activationOverrideBehavior{ActivationOverrideBehavior::NOT_SET};
     bool m_activationOverrideBehaviorHasBeenSet = false;
   };
 

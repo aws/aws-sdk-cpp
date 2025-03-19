@@ -12,11 +12,6 @@ using namespace Aws::CloudWatchEvidently::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteProjectRequest::DeleteProjectRequest() : 
-    m_projectHasBeenSet(false)
-{
-}
-
 Aws::String DeleteProjectRequest::SerializePayload() const
 {
   return {};

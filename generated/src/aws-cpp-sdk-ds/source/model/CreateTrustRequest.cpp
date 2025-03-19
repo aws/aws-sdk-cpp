@@ -12,20 +12,6 @@ using namespace Aws::DirectoryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTrustRequest::CreateTrustRequest() : 
-    m_directoryIdHasBeenSet(false),
-    m_remoteDomainNameHasBeenSet(false),
-    m_trustPasswordHasBeenSet(false),
-    m_trustDirection(TrustDirection::NOT_SET),
-    m_trustDirectionHasBeenSet(false),
-    m_trustType(TrustType::NOT_SET),
-    m_trustTypeHasBeenSet(false),
-    m_conditionalForwarderIpAddrsHasBeenSet(false),
-    m_selectiveAuth(SelectiveAuth::NOT_SET),
-    m_selectiveAuthHasBeenSet(false)
-{
-}
-
 Aws::String CreateTrustRequest::SerializePayload() const
 {
   JsonValue payload;

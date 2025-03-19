@@ -10,12 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-UpdateReceiptRuleRequest::UpdateReceiptRuleRequest() : 
-    m_ruleSetNameHasBeenSet(false),
-    m_ruleHasBeenSet(false)
-{
-}
-
 Aws::String UpdateReceiptRuleRequest::SerializePayload() const
 {
   Aws::StringStream ss;

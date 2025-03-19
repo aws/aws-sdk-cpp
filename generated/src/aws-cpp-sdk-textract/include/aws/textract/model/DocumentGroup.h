@@ -36,7 +36,7 @@ namespace Model
   class DocumentGroup
   {
   public:
-    AWS_TEXTRACT_API DocumentGroup();
+    AWS_TEXTRACT_API DocumentGroup() = default;
     AWS_TEXTRACT_API DocumentGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API DocumentGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/textract/latest/dg/lending-response-objects.html">Analyze
      * Lending Response Objects</a> for a list of all types returned by Textract.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline DocumentGroup& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline DocumentGroup& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline DocumentGroup& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    DocumentGroup& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,42 +61,42 @@ namespace Model
      * <p>An array that contains information about the pages of a document, defined by
      * logical boundary.</p>
      */
-    inline const Aws::Vector<SplitDocument>& GetSplitDocuments() const{ return m_splitDocuments; }
+    inline const Aws::Vector<SplitDocument>& GetSplitDocuments() const { return m_splitDocuments; }
     inline bool SplitDocumentsHasBeenSet() const { return m_splitDocumentsHasBeenSet; }
-    inline void SetSplitDocuments(const Aws::Vector<SplitDocument>& value) { m_splitDocumentsHasBeenSet = true; m_splitDocuments = value; }
-    inline void SetSplitDocuments(Aws::Vector<SplitDocument>&& value) { m_splitDocumentsHasBeenSet = true; m_splitDocuments = std::move(value); }
-    inline DocumentGroup& WithSplitDocuments(const Aws::Vector<SplitDocument>& value) { SetSplitDocuments(value); return *this;}
-    inline DocumentGroup& WithSplitDocuments(Aws::Vector<SplitDocument>&& value) { SetSplitDocuments(std::move(value)); return *this;}
-    inline DocumentGroup& AddSplitDocuments(const SplitDocument& value) { m_splitDocumentsHasBeenSet = true; m_splitDocuments.push_back(value); return *this; }
-    inline DocumentGroup& AddSplitDocuments(SplitDocument&& value) { m_splitDocumentsHasBeenSet = true; m_splitDocuments.push_back(std::move(value)); return *this; }
+    template<typename SplitDocumentsT = Aws::Vector<SplitDocument>>
+    void SetSplitDocuments(SplitDocumentsT&& value) { m_splitDocumentsHasBeenSet = true; m_splitDocuments = std::forward<SplitDocumentsT>(value); }
+    template<typename SplitDocumentsT = Aws::Vector<SplitDocument>>
+    DocumentGroup& WithSplitDocuments(SplitDocumentsT&& value) { SetSplitDocuments(std::forward<SplitDocumentsT>(value)); return *this;}
+    template<typename SplitDocumentsT = SplitDocument>
+    DocumentGroup& AddSplitDocuments(SplitDocumentsT&& value) { m_splitDocumentsHasBeenSet = true; m_splitDocuments.emplace_back(std::forward<SplitDocumentsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of the detected signatures found in a document group.</p>
      */
-    inline const Aws::Vector<DetectedSignature>& GetDetectedSignatures() const{ return m_detectedSignatures; }
+    inline const Aws::Vector<DetectedSignature>& GetDetectedSignatures() const { return m_detectedSignatures; }
     inline bool DetectedSignaturesHasBeenSet() const { return m_detectedSignaturesHasBeenSet; }
-    inline void SetDetectedSignatures(const Aws::Vector<DetectedSignature>& value) { m_detectedSignaturesHasBeenSet = true; m_detectedSignatures = value; }
-    inline void SetDetectedSignatures(Aws::Vector<DetectedSignature>&& value) { m_detectedSignaturesHasBeenSet = true; m_detectedSignatures = std::move(value); }
-    inline DocumentGroup& WithDetectedSignatures(const Aws::Vector<DetectedSignature>& value) { SetDetectedSignatures(value); return *this;}
-    inline DocumentGroup& WithDetectedSignatures(Aws::Vector<DetectedSignature>&& value) { SetDetectedSignatures(std::move(value)); return *this;}
-    inline DocumentGroup& AddDetectedSignatures(const DetectedSignature& value) { m_detectedSignaturesHasBeenSet = true; m_detectedSignatures.push_back(value); return *this; }
-    inline DocumentGroup& AddDetectedSignatures(DetectedSignature&& value) { m_detectedSignaturesHasBeenSet = true; m_detectedSignatures.push_back(std::move(value)); return *this; }
+    template<typename DetectedSignaturesT = Aws::Vector<DetectedSignature>>
+    void SetDetectedSignatures(DetectedSignaturesT&& value) { m_detectedSignaturesHasBeenSet = true; m_detectedSignatures = std::forward<DetectedSignaturesT>(value); }
+    template<typename DetectedSignaturesT = Aws::Vector<DetectedSignature>>
+    DocumentGroup& WithDetectedSignatures(DetectedSignaturesT&& value) { SetDetectedSignatures(std::forward<DetectedSignaturesT>(value)); return *this;}
+    template<typename DetectedSignaturesT = DetectedSignature>
+    DocumentGroup& AddDetectedSignatures(DetectedSignaturesT&& value) { m_detectedSignaturesHasBeenSet = true; m_detectedSignatures.emplace_back(std::forward<DetectedSignaturesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of any expected signatures not found in a document group.</p>
      */
-    inline const Aws::Vector<UndetectedSignature>& GetUndetectedSignatures() const{ return m_undetectedSignatures; }
+    inline const Aws::Vector<UndetectedSignature>& GetUndetectedSignatures() const { return m_undetectedSignatures; }
     inline bool UndetectedSignaturesHasBeenSet() const { return m_undetectedSignaturesHasBeenSet; }
-    inline void SetUndetectedSignatures(const Aws::Vector<UndetectedSignature>& value) { m_undetectedSignaturesHasBeenSet = true; m_undetectedSignatures = value; }
-    inline void SetUndetectedSignatures(Aws::Vector<UndetectedSignature>&& value) { m_undetectedSignaturesHasBeenSet = true; m_undetectedSignatures = std::move(value); }
-    inline DocumentGroup& WithUndetectedSignatures(const Aws::Vector<UndetectedSignature>& value) { SetUndetectedSignatures(value); return *this;}
-    inline DocumentGroup& WithUndetectedSignatures(Aws::Vector<UndetectedSignature>&& value) { SetUndetectedSignatures(std::move(value)); return *this;}
-    inline DocumentGroup& AddUndetectedSignatures(const UndetectedSignature& value) { m_undetectedSignaturesHasBeenSet = true; m_undetectedSignatures.push_back(value); return *this; }
-    inline DocumentGroup& AddUndetectedSignatures(UndetectedSignature&& value) { m_undetectedSignaturesHasBeenSet = true; m_undetectedSignatures.push_back(std::move(value)); return *this; }
+    template<typename UndetectedSignaturesT = Aws::Vector<UndetectedSignature>>
+    void SetUndetectedSignatures(UndetectedSignaturesT&& value) { m_undetectedSignaturesHasBeenSet = true; m_undetectedSignatures = std::forward<UndetectedSignaturesT>(value); }
+    template<typename UndetectedSignaturesT = Aws::Vector<UndetectedSignature>>
+    DocumentGroup& WithUndetectedSignatures(UndetectedSignaturesT&& value) { SetUndetectedSignatures(std::forward<UndetectedSignaturesT>(value)); return *this;}
+    template<typename UndetectedSignaturesT = UndetectedSignature>
+    DocumentGroup& AddUndetectedSignatures(UndetectedSignaturesT&& value) { m_undetectedSignaturesHasBeenSet = true; m_undetectedSignatures.emplace_back(std::forward<UndetectedSignaturesT>(value)); return *this; }
     ///@}
   private:
 

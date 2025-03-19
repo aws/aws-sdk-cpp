@@ -12,18 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartQueryExecutionRequest::StartQueryExecutionRequest() : 
-    m_queryStringHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_queryExecutionContextHasBeenSet(false),
-    m_resultConfigurationHasBeenSet(false),
-    m_workGroupHasBeenSet(false),
-    m_executionParametersHasBeenSet(false),
-    m_resultReuseConfigurationHasBeenSet(false)
-{
-}
-
 Aws::String StartQueryExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

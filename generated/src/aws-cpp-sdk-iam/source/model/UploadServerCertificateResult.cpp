@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UploadServerCertificateResult::UploadServerCertificateResult()
-{
-}
-
 UploadServerCertificateResult::UploadServerCertificateResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ UploadServerCertificateResult& UploadServerCertificateResult::operator =(const A
     if(!serverCertificateMetadataNode.IsNull())
     {
       m_serverCertificateMetadata = serverCertificateMetadataNode;
+      m_serverCertificateMetadataHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("Tags");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("member");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);
         tagsMember = tagsMember.NextNode("member");
       }
 
+      m_tagsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::UploadServerCertificateResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

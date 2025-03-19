@@ -19,7 +19,7 @@ namespace Model
   class SimpleScalarXmlPropertiesRequest : public QueryProtocolRequest
   {
   public:
-    AWS_QUERYPROTOCOL_API SimpleScalarXmlPropertiesRequest();
+    AWS_QUERYPROTOCOL_API SimpleScalarXmlPropertiesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

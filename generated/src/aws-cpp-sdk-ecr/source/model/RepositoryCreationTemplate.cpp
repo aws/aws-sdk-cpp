@@ -18,24 +18,7 @@ namespace ECR
 namespace Model
 {
 
-RepositoryCreationTemplate::RepositoryCreationTemplate() : 
-    m_prefixHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_encryptionConfigurationHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false),
-    m_imageTagMutability(ImageTagMutability::NOT_SET),
-    m_imageTagMutabilityHasBeenSet(false),
-    m_repositoryPolicyHasBeenSet(false),
-    m_lifecyclePolicyHasBeenSet(false),
-    m_appliedForHasBeenSet(false),
-    m_customRoleArnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 RepositoryCreationTemplate::RepositoryCreationTemplate(JsonView jsonValue)
-  : RepositoryCreationTemplate()
 {
   *this = jsonValue;
 }
@@ -45,24 +28,18 @@ RepositoryCreationTemplate& RepositoryCreationTemplate::operator =(JsonView json
   if(jsonValue.ValueExists("prefix"))
   {
     m_prefix = jsonValue.GetString("prefix");
-
     m_prefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionConfiguration"))
   {
     m_encryptionConfiguration = jsonValue.GetObject("encryptionConfiguration");
-
     m_encryptionConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceTags"))
   {
     Aws::Utils::Array<JsonView> resourceTagsJsonList = jsonValue.GetArray("resourceTags");
@@ -72,28 +49,21 @@ RepositoryCreationTemplate& RepositoryCreationTemplate::operator =(JsonView json
     }
     m_resourceTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageTagMutability"))
   {
     m_imageTagMutability = ImageTagMutabilityMapper::GetImageTagMutabilityForName(jsonValue.GetString("imageTagMutability"));
-
     m_imageTagMutabilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryPolicy"))
   {
     m_repositoryPolicy = jsonValue.GetString("repositoryPolicy");
-
     m_repositoryPolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lifecyclePolicy"))
   {
     m_lifecyclePolicy = jsonValue.GetString("lifecyclePolicy");
-
     m_lifecyclePolicyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appliedFor"))
   {
     Aws::Utils::Array<JsonView> appliedForJsonList = jsonValue.GetArray("appliedFor");
@@ -103,28 +73,21 @@ RepositoryCreationTemplate& RepositoryCreationTemplate::operator =(JsonView json
     }
     m_appliedForHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customRoleArn"))
   {
     m_customRoleArn = jsonValue.GetString("customRoleArn");
-
     m_customRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

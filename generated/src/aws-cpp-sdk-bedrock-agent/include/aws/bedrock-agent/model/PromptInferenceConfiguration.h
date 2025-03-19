@@ -32,7 +32,7 @@ namespace Model
   class PromptInferenceConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API PromptInferenceConfiguration();
+    AWS_BEDROCKAGENT_API PromptInferenceConfiguration() = default;
     AWS_BEDROCKAGENT_API PromptInferenceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API PromptInferenceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>Contains inference configurations for a text prompt.</p>
      */
-    inline const PromptModelInferenceConfiguration& GetText() const{ return m_text; }
+    inline const PromptModelInferenceConfiguration& GetText() const { return m_text; }
     inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
-    inline void SetText(const PromptModelInferenceConfiguration& value) { m_textHasBeenSet = true; m_text = value; }
-    inline void SetText(PromptModelInferenceConfiguration&& value) { m_textHasBeenSet = true; m_text = std::move(value); }
-    inline PromptInferenceConfiguration& WithText(const PromptModelInferenceConfiguration& value) { SetText(value); return *this;}
-    inline PromptInferenceConfiguration& WithText(PromptModelInferenceConfiguration&& value) { SetText(std::move(value)); return *this;}
+    template<typename TextT = PromptModelInferenceConfiguration>
+    void SetText(TextT&& value) { m_textHasBeenSet = true; m_text = std::forward<TextT>(value); }
+    template<typename TextT = PromptModelInferenceConfiguration>
+    PromptInferenceConfiguration& WithText(TextT&& value) { SetText(std::forward<TextT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,10 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetGlobalSettingsRequest::GetGlobalSettingsRequest()
-{
-}
-
 Aws::String GetGlobalSettingsRequest::SerializePayload() const
 {
   return {};

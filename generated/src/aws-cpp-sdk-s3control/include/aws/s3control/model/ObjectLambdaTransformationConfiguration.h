@@ -33,7 +33,7 @@ namespace Model
   class ObjectLambdaTransformationConfiguration
   {
   public:
-    AWS_S3CONTROL_API ObjectLambdaTransformationConfiguration();
+    AWS_S3CONTROL_API ObjectLambdaTransformationConfiguration() = default;
     AWS_S3CONTROL_API ObjectLambdaTransformationConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API ObjectLambdaTransformationConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,14 +46,13 @@ namespace Model
      * Valid inputs are <code>GetObject</code>, <code>ListObjects</code>,
      * <code>HeadObject</code>, and <code>ListObjectsV2</code>.</p>
      */
-    inline const Aws::Vector<ObjectLambdaTransformationConfigurationAction>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<ObjectLambdaTransformationConfigurationAction>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<ObjectLambdaTransformationConfigurationAction>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<ObjectLambdaTransformationConfigurationAction>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline ObjectLambdaTransformationConfiguration& WithActions(const Aws::Vector<ObjectLambdaTransformationConfigurationAction>& value) { SetActions(value); return *this;}
-    inline ObjectLambdaTransformationConfiguration& WithActions(Aws::Vector<ObjectLambdaTransformationConfigurationAction>&& value) { SetActions(std::move(value)); return *this;}
-    inline ObjectLambdaTransformationConfiguration& AddActions(const ObjectLambdaTransformationConfigurationAction& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline ObjectLambdaTransformationConfiguration& AddActions(ObjectLambdaTransformationConfigurationAction&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
+    template<typename ActionsT = Aws::Vector<ObjectLambdaTransformationConfigurationAction>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<ObjectLambdaTransformationConfigurationAction>>
+    ObjectLambdaTransformationConfiguration& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    inline ObjectLambdaTransformationConfiguration& AddActions(ObjectLambdaTransformationConfigurationAction value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -61,12 +60,12 @@ namespace Model
      * <p>A container for the content transformation of an Object Lambda Access Point
      * configuration.</p>
      */
-    inline const ObjectLambdaContentTransformation& GetContentTransformation() const{ return m_contentTransformation; }
+    inline const ObjectLambdaContentTransformation& GetContentTransformation() const { return m_contentTransformation; }
     inline bool ContentTransformationHasBeenSet() const { return m_contentTransformationHasBeenSet; }
-    inline void SetContentTransformation(const ObjectLambdaContentTransformation& value) { m_contentTransformationHasBeenSet = true; m_contentTransformation = value; }
-    inline void SetContentTransformation(ObjectLambdaContentTransformation&& value) { m_contentTransformationHasBeenSet = true; m_contentTransformation = std::move(value); }
-    inline ObjectLambdaTransformationConfiguration& WithContentTransformation(const ObjectLambdaContentTransformation& value) { SetContentTransformation(value); return *this;}
-    inline ObjectLambdaTransformationConfiguration& WithContentTransformation(ObjectLambdaContentTransformation&& value) { SetContentTransformation(std::move(value)); return *this;}
+    template<typename ContentTransformationT = ObjectLambdaContentTransformation>
+    void SetContentTransformation(ContentTransformationT&& value) { m_contentTransformationHasBeenSet = true; m_contentTransformation = std::forward<ContentTransformationT>(value); }
+    template<typename ContentTransformationT = ObjectLambdaContentTransformation>
+    ObjectLambdaTransformationConfiguration& WithContentTransformation(ContentTransformationT&& value) { SetContentTransformation(std::forward<ContentTransformationT>(value)); return *this;}
     ///@}
   private:
 

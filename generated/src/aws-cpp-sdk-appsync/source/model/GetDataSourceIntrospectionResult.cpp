@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDataSourceIntrospectionResult::GetDataSourceIntrospectionResult() : 
-    m_introspectionStatus(DataSourceIntrospectionStatus::NOT_SET)
-{
-}
-
 GetDataSourceIntrospectionResult::GetDataSourceIntrospectionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetDataSourceIntrospectionResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ GetDataSourceIntrospectionResult& GetDataSourceIntrospectionResult::operator =(c
   if(jsonValue.ValueExists("introspectionId"))
   {
     m_introspectionId = jsonValue.GetString("introspectionId");
-
+    m_introspectionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("introspectionStatus"))
   {
     m_introspectionStatus = DataSourceIntrospectionStatusMapper::GetDataSourceIntrospectionStatusForName(jsonValue.GetString("introspectionStatus"));
-
+    m_introspectionStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("introspectionStatusDetail"))
   {
     m_introspectionStatusDetail = jsonValue.GetString("introspectionStatusDetail");
-
+    m_introspectionStatusDetailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("introspectionResult"))
   {
     m_introspectionResult = jsonValue.GetObject("introspectionResult");
-
+    m_introspectionResultHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

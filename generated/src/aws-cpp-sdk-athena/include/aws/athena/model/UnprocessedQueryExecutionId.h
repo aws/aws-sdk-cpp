@@ -32,7 +32,7 @@ namespace Model
   class UnprocessedQueryExecutionId
   {
   public:
-    AWS_ATHENA_API UnprocessedQueryExecutionId();
+    AWS_ATHENA_API UnprocessedQueryExecutionId() = default;
     AWS_ATHENA_API UnprocessedQueryExecutionId(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API UnprocessedQueryExecutionId& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The unique identifier of the query execution.</p>
      */
-    inline const Aws::String& GetQueryExecutionId() const{ return m_queryExecutionId; }
+    inline const Aws::String& GetQueryExecutionId() const { return m_queryExecutionId; }
     inline bool QueryExecutionIdHasBeenSet() const { return m_queryExecutionIdHasBeenSet; }
-    inline void SetQueryExecutionId(const Aws::String& value) { m_queryExecutionIdHasBeenSet = true; m_queryExecutionId = value; }
-    inline void SetQueryExecutionId(Aws::String&& value) { m_queryExecutionIdHasBeenSet = true; m_queryExecutionId = std::move(value); }
-    inline void SetQueryExecutionId(const char* value) { m_queryExecutionIdHasBeenSet = true; m_queryExecutionId.assign(value); }
-    inline UnprocessedQueryExecutionId& WithQueryExecutionId(const Aws::String& value) { SetQueryExecutionId(value); return *this;}
-    inline UnprocessedQueryExecutionId& WithQueryExecutionId(Aws::String&& value) { SetQueryExecutionId(std::move(value)); return *this;}
-    inline UnprocessedQueryExecutionId& WithQueryExecutionId(const char* value) { SetQueryExecutionId(value); return *this;}
+    template<typename QueryExecutionIdT = Aws::String>
+    void SetQueryExecutionId(QueryExecutionIdT&& value) { m_queryExecutionIdHasBeenSet = true; m_queryExecutionId = std::forward<QueryExecutionIdT>(value); }
+    template<typename QueryExecutionIdT = Aws::String>
+    UnprocessedQueryExecutionId& WithQueryExecutionId(QueryExecutionIdT&& value) { SetQueryExecutionId(std::forward<QueryExecutionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * <p>The error code returned when the query execution failed to process, if
      * applicable.</p>
      */
-    inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+    inline const Aws::String& GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(Aws::String&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline void SetErrorCode(const char* value) { m_errorCodeHasBeenSet = true; m_errorCode.assign(value); }
-    inline UnprocessedQueryExecutionId& WithErrorCode(const Aws::String& value) { SetErrorCode(value); return *this;}
-    inline UnprocessedQueryExecutionId& WithErrorCode(Aws::String&& value) { SetErrorCode(std::move(value)); return *this;}
-    inline UnprocessedQueryExecutionId& WithErrorCode(const char* value) { SetErrorCode(value); return *this;}
+    template<typename ErrorCodeT = Aws::String>
+    void SetErrorCode(ErrorCodeT&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::forward<ErrorCodeT>(value); }
+    template<typename ErrorCodeT = Aws::String>
+    UnprocessedQueryExecutionId& WithErrorCode(ErrorCodeT&& value) { SetErrorCode(std::forward<ErrorCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * <p>The error message returned when the query execution failed to process, if
      * applicable.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline UnprocessedQueryExecutionId& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline UnprocessedQueryExecutionId& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline UnprocessedQueryExecutionId& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    UnprocessedQueryExecutionId& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
   private:
 

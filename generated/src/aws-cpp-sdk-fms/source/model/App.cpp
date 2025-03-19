@@ -18,16 +18,7 @@ namespace FMS
 namespace Model
 {
 
-App::App() : 
-    m_appNameHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false)
-{
-}
-
 App::App(JsonView jsonValue)
-  : App()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ App& App::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AppName"))
   {
     m_appName = jsonValue.GetString("AppName");
-
     m_appNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Protocol"))
   {
     m_protocol = jsonValue.GetString("Protocol");
-
     m_protocolHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInt64("Port");
-
     m_portHasBeenSet = true;
   }
-
   return *this;
 }
 

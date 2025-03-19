@@ -32,7 +32,7 @@ namespace Model
   class GlueSelfGrantStatusOutput
   {
   public:
-    AWS_DATAZONE_API GlueSelfGrantStatusOutput();
+    AWS_DATAZONE_API GlueSelfGrantStatusOutput() = default;
     AWS_DATAZONE_API GlueSelfGrantStatusOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API GlueSelfGrantStatusOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>The details for the self granting status for a Glue data source.</p>
      */
-    inline const Aws::Vector<SelfGrantStatusDetail>& GetSelfGrantStatusDetails() const{ return m_selfGrantStatusDetails; }
+    inline const Aws::Vector<SelfGrantStatusDetail>& GetSelfGrantStatusDetails() const { return m_selfGrantStatusDetails; }
     inline bool SelfGrantStatusDetailsHasBeenSet() const { return m_selfGrantStatusDetailsHasBeenSet; }
-    inline void SetSelfGrantStatusDetails(const Aws::Vector<SelfGrantStatusDetail>& value) { m_selfGrantStatusDetailsHasBeenSet = true; m_selfGrantStatusDetails = value; }
-    inline void SetSelfGrantStatusDetails(Aws::Vector<SelfGrantStatusDetail>&& value) { m_selfGrantStatusDetailsHasBeenSet = true; m_selfGrantStatusDetails = std::move(value); }
-    inline GlueSelfGrantStatusOutput& WithSelfGrantStatusDetails(const Aws::Vector<SelfGrantStatusDetail>& value) { SetSelfGrantStatusDetails(value); return *this;}
-    inline GlueSelfGrantStatusOutput& WithSelfGrantStatusDetails(Aws::Vector<SelfGrantStatusDetail>&& value) { SetSelfGrantStatusDetails(std::move(value)); return *this;}
-    inline GlueSelfGrantStatusOutput& AddSelfGrantStatusDetails(const SelfGrantStatusDetail& value) { m_selfGrantStatusDetailsHasBeenSet = true; m_selfGrantStatusDetails.push_back(value); return *this; }
-    inline GlueSelfGrantStatusOutput& AddSelfGrantStatusDetails(SelfGrantStatusDetail&& value) { m_selfGrantStatusDetailsHasBeenSet = true; m_selfGrantStatusDetails.push_back(std::move(value)); return *this; }
+    template<typename SelfGrantStatusDetailsT = Aws::Vector<SelfGrantStatusDetail>>
+    void SetSelfGrantStatusDetails(SelfGrantStatusDetailsT&& value) { m_selfGrantStatusDetailsHasBeenSet = true; m_selfGrantStatusDetails = std::forward<SelfGrantStatusDetailsT>(value); }
+    template<typename SelfGrantStatusDetailsT = Aws::Vector<SelfGrantStatusDetail>>
+    GlueSelfGrantStatusOutput& WithSelfGrantStatusDetails(SelfGrantStatusDetailsT&& value) { SetSelfGrantStatusDetails(std::forward<SelfGrantStatusDetailsT>(value)); return *this;}
+    template<typename SelfGrantStatusDetailsT = SelfGrantStatusDetail>
+    GlueSelfGrantStatusOutput& AddSelfGrantStatusDetails(SelfGrantStatusDetailsT&& value) { m_selfGrantStatusDetailsHasBeenSet = true; m_selfGrantStatusDetails.emplace_back(std::forward<SelfGrantStatusDetailsT>(value)); return *this; }
     ///@}
   private:
 

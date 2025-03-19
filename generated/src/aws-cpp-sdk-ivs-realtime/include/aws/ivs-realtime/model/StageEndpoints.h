@@ -33,7 +33,7 @@ namespace Model
   class StageEndpoints
   {
   public:
-    AWS_IVSREALTIME_API StageEndpoints();
+    AWS_IVSREALTIME_API StageEndpoints() = default;
     AWS_IVSREALTIME_API StageEndpoints(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API StageEndpoints& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IVSREALTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>Events endpoint.</p>
      */
-    inline const Aws::String& GetEvents() const{ return m_events; }
+    inline const Aws::String& GetEvents() const { return m_events; }
     inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
-    inline void SetEvents(const Aws::String& value) { m_eventsHasBeenSet = true; m_events = value; }
-    inline void SetEvents(Aws::String&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
-    inline void SetEvents(const char* value) { m_eventsHasBeenSet = true; m_events.assign(value); }
-    inline StageEndpoints& WithEvents(const Aws::String& value) { SetEvents(value); return *this;}
-    inline StageEndpoints& WithEvents(Aws::String&& value) { SetEvents(std::move(value)); return *this;}
-    inline StageEndpoints& WithEvents(const char* value) { SetEvents(value); return *this;}
+    template<typename EventsT = Aws::String>
+    void SetEvents(EventsT&& value) { m_eventsHasBeenSet = true; m_events = std::forward<EventsT>(value); }
+    template<typename EventsT = Aws::String>
+    StageEndpoints& WithEvents(EventsT&& value) { SetEvents(std::forward<EventsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The endpoint to be used for IVS real-time streaming using the WHIP
      * protocol.</p>
      */
-    inline const Aws::String& GetWhip() const{ return m_whip; }
+    inline const Aws::String& GetWhip() const { return m_whip; }
     inline bool WhipHasBeenSet() const { return m_whipHasBeenSet; }
-    inline void SetWhip(const Aws::String& value) { m_whipHasBeenSet = true; m_whip = value; }
-    inline void SetWhip(Aws::String&& value) { m_whipHasBeenSet = true; m_whip = std::move(value); }
-    inline void SetWhip(const char* value) { m_whipHasBeenSet = true; m_whip.assign(value); }
-    inline StageEndpoints& WithWhip(const Aws::String& value) { SetWhip(value); return *this;}
-    inline StageEndpoints& WithWhip(Aws::String&& value) { SetWhip(std::move(value)); return *this;}
-    inline StageEndpoints& WithWhip(const char* value) { SetWhip(value); return *this;}
+    template<typename WhipT = Aws::String>
+    void SetWhip(WhipT&& value) { m_whipHasBeenSet = true; m_whip = std::forward<WhipT>(value); }
+    template<typename WhipT = Aws::String>
+    StageEndpoints& WithWhip(WhipT&& value) { SetWhip(std::forward<WhipT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p>The endpoint to be used for IVS real-time streaming using the RTMP
      * protocol.</p>
      */
-    inline const Aws::String& GetRtmp() const{ return m_rtmp; }
+    inline const Aws::String& GetRtmp() const { return m_rtmp; }
     inline bool RtmpHasBeenSet() const { return m_rtmpHasBeenSet; }
-    inline void SetRtmp(const Aws::String& value) { m_rtmpHasBeenSet = true; m_rtmp = value; }
-    inline void SetRtmp(Aws::String&& value) { m_rtmpHasBeenSet = true; m_rtmp = std::move(value); }
-    inline void SetRtmp(const char* value) { m_rtmpHasBeenSet = true; m_rtmp.assign(value); }
-    inline StageEndpoints& WithRtmp(const Aws::String& value) { SetRtmp(value); return *this;}
-    inline StageEndpoints& WithRtmp(Aws::String&& value) { SetRtmp(std::move(value)); return *this;}
-    inline StageEndpoints& WithRtmp(const char* value) { SetRtmp(value); return *this;}
+    template<typename RtmpT = Aws::String>
+    void SetRtmp(RtmpT&& value) { m_rtmpHasBeenSet = true; m_rtmp = std::forward<RtmpT>(value); }
+    template<typename RtmpT = Aws::String>
+    StageEndpoints& WithRtmp(RtmpT&& value) { SetRtmp(std::forward<RtmpT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +82,12 @@ namespace Model
      * <p>The endpoint to be used for IVS real-time streaming using the RTMPS
      * protocol.</p>
      */
-    inline const Aws::String& GetRtmps() const{ return m_rtmps; }
+    inline const Aws::String& GetRtmps() const { return m_rtmps; }
     inline bool RtmpsHasBeenSet() const { return m_rtmpsHasBeenSet; }
-    inline void SetRtmps(const Aws::String& value) { m_rtmpsHasBeenSet = true; m_rtmps = value; }
-    inline void SetRtmps(Aws::String&& value) { m_rtmpsHasBeenSet = true; m_rtmps = std::move(value); }
-    inline void SetRtmps(const char* value) { m_rtmpsHasBeenSet = true; m_rtmps.assign(value); }
-    inline StageEndpoints& WithRtmps(const Aws::String& value) { SetRtmps(value); return *this;}
-    inline StageEndpoints& WithRtmps(Aws::String&& value) { SetRtmps(std::move(value)); return *this;}
-    inline StageEndpoints& WithRtmps(const char* value) { SetRtmps(value); return *this;}
+    template<typename RtmpsT = Aws::String>
+    void SetRtmps(RtmpsT&& value) { m_rtmpsHasBeenSet = true; m_rtmps = std::forward<RtmpsT>(value); }
+    template<typename RtmpsT = Aws::String>
+    StageEndpoints& WithRtmps(RtmpsT&& value) { SetRtmps(std::forward<RtmpsT>(value)); return *this;}
     ///@}
   private:
 

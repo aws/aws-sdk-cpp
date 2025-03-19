@@ -18,16 +18,7 @@ namespace ApplicationSignals
 namespace Model
 {
 
-ServiceDependent::ServiceDependent() : 
-    m_operationNameHasBeenSet(false),
-    m_dependentKeyAttributesHasBeenSet(false),
-    m_dependentOperationNameHasBeenSet(false),
-    m_metricReferencesHasBeenSet(false)
-{
-}
-
 ServiceDependent::ServiceDependent(JsonView jsonValue)
-  : ServiceDependent()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ ServiceDependent& ServiceDependent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("OperationName"))
   {
     m_operationName = jsonValue.GetString("OperationName");
-
     m_operationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DependentKeyAttributes"))
   {
     Aws::Map<Aws::String, JsonView> dependentKeyAttributesJsonMap = jsonValue.GetObject("DependentKeyAttributes").GetAllObjects();
@@ -50,14 +39,11 @@ ServiceDependent& ServiceDependent::operator =(JsonView jsonValue)
     }
     m_dependentKeyAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DependentOperationName"))
   {
     m_dependentOperationName = jsonValue.GetString("DependentOperationName");
-
     m_dependentOperationNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MetricReferences"))
   {
     Aws::Utils::Array<JsonView> metricReferencesJsonList = jsonValue.GetArray("MetricReferences");
@@ -67,7 +53,6 @@ ServiceDependent& ServiceDependent::operator =(JsonView jsonValue)
     }
     m_metricReferencesHasBeenSet = true;
   }
-
   return *this;
 }
 

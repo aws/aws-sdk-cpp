@@ -18,14 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-InvocationOutput::InvocationOutput() : 
-    m_messageHasBeenSet(false),
-    m_citationsHasBeenSet(false)
-{
-}
-
 InvocationOutput::InvocationOutput(JsonView jsonValue)
-  : InvocationOutput()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ InvocationOutput& InvocationOutput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("citations"))
   {
     Aws::Utils::Array<JsonView> citationsJsonList = jsonValue.GetArray("citations");
@@ -48,7 +39,6 @@ InvocationOutput& InvocationOutput::operator =(JsonView jsonValue)
     }
     m_citationsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class GetContainerLogResult
   {
   public:
-    AWS_LIGHTSAIL_API GetContainerLogResult();
+    AWS_LIGHTSAIL_API GetContainerLogResult() = default;
     AWS_LIGHTSAIL_API GetContainerLogResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetContainerLogResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>An array of objects that describe the log events of a container.</p>
      */
-    inline const Aws::Vector<ContainerServiceLogEvent>& GetLogEvents() const{ return m_logEvents; }
-    inline void SetLogEvents(const Aws::Vector<ContainerServiceLogEvent>& value) { m_logEvents = value; }
-    inline void SetLogEvents(Aws::Vector<ContainerServiceLogEvent>&& value) { m_logEvents = std::move(value); }
-    inline GetContainerLogResult& WithLogEvents(const Aws::Vector<ContainerServiceLogEvent>& value) { SetLogEvents(value); return *this;}
-    inline GetContainerLogResult& WithLogEvents(Aws::Vector<ContainerServiceLogEvent>&& value) { SetLogEvents(std::move(value)); return *this;}
-    inline GetContainerLogResult& AddLogEvents(const ContainerServiceLogEvent& value) { m_logEvents.push_back(value); return *this; }
-    inline GetContainerLogResult& AddLogEvents(ContainerServiceLogEvent&& value) { m_logEvents.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ContainerServiceLogEvent>& GetLogEvents() const { return m_logEvents; }
+    template<typename LogEventsT = Aws::Vector<ContainerServiceLogEvent>>
+    void SetLogEvents(LogEventsT&& value) { m_logEventsHasBeenSet = true; m_logEvents = std::forward<LogEventsT>(value); }
+    template<typename LogEventsT = Aws::Vector<ContainerServiceLogEvent>>
+    GetContainerLogResult& WithLogEvents(LogEventsT&& value) { SetLogEvents(std::forward<LogEventsT>(value)); return *this;}
+    template<typename LogEventsT = ContainerServiceLogEvent>
+    GetContainerLogResult& AddLogEvents(LogEventsT&& value) { m_logEventsHasBeenSet = true; m_logEvents.emplace_back(std::forward<LogEventsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,31 @@ namespace Model
      * request and specify the next page token using the <code>pageToken</code>
      * parameter.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-    inline GetContainerLogResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline GetContainerLogResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline GetContainerLogResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    GetContainerLogResult& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetContainerLogResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetContainerLogResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetContainerLogResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetContainerLogResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ContainerServiceLogEvent> m_logEvents;
+    bool m_logEventsHasBeenSet = false;
 
     Aws::String m_nextPageToken;
+    bool m_nextPageTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

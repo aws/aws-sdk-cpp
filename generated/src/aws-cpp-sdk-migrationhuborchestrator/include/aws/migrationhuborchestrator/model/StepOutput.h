@@ -32,7 +32,7 @@ namespace Model
   class StepOutput
   {
   public:
-    AWS_MIGRATIONHUBORCHESTRATOR_API StepOutput();
+    AWS_MIGRATIONHUBORCHESTRATOR_API StepOutput() = default;
     AWS_MIGRATIONHUBORCHESTRATOR_API StepOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBORCHESTRATOR_API StepOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBORCHESTRATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>The name of the step.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline StepOutput& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline StepOutput& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline StepOutput& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    StepOutput& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data type of the step output.</p>
      */
-    inline const DataType& GetDataType() const{ return m_dataType; }
+    inline DataType GetDataType() const { return m_dataType; }
     inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
-    inline void SetDataType(const DataType& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
-    inline void SetDataType(DataType&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
-    inline StepOutput& WithDataType(const DataType& value) { SetDataType(value); return *this;}
-    inline StepOutput& WithDataType(DataType&& value) { SetDataType(std::move(value)); return *this;}
+    inline void SetDataType(DataType value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
+    inline StepOutput& WithDataType(DataType value) { SetDataType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Determine if an output is required from a step.</p>
      */
-    inline bool GetRequired() const{ return m_required; }
+    inline bool GetRequired() const { return m_required; }
     inline bool RequiredHasBeenSet() const { return m_requiredHasBeenSet; }
     inline void SetRequired(bool value) { m_requiredHasBeenSet = true; m_required = value; }
     inline StepOutput& WithRequired(bool value) { SetRequired(value); return *this;}
@@ -78,10 +74,10 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    DataType m_dataType;
+    DataType m_dataType{DataType::NOT_SET};
     bool m_dataTypeHasBeenSet = false;
 
-    bool m_required;
+    bool m_required{false};
     bool m_requiredHasBeenSet = false;
   };
 

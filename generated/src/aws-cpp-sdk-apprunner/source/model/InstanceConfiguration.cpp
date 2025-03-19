@@ -18,15 +18,7 @@ namespace AppRunner
 namespace Model
 {
 
-InstanceConfiguration::InstanceConfiguration() : 
-    m_cpuHasBeenSet(false),
-    m_memoryHasBeenSet(false),
-    m_instanceRoleArnHasBeenSet(false)
-{
-}
-
 InstanceConfiguration::InstanceConfiguration(JsonView jsonValue)
-  : InstanceConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ InstanceConfiguration& InstanceConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Cpu"))
   {
     m_cpu = jsonValue.GetString("Cpu");
-
     m_cpuHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Memory"))
   {
     m_memory = jsonValue.GetString("Memory");
-
     m_memoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceRoleArn"))
   {
     m_instanceRoleArn = jsonValue.GetString("InstanceRoleArn");
-
     m_instanceRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

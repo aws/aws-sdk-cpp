@@ -30,7 +30,7 @@ namespace Model
   class Range
   {
   public:
-    AWS_CONNECT_API Range();
+    AWS_CONNECT_API Range() = default;
     AWS_CONNECT_API Range(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Range& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,7 +40,7 @@ namespace Model
     /**
      * <p>The minimum proficiency level of the range.</p>
      */
-    inline double GetMinProficiencyLevel() const{ return m_minProficiencyLevel; }
+    inline double GetMinProficiencyLevel() const { return m_minProficiencyLevel; }
     inline bool MinProficiencyLevelHasBeenSet() const { return m_minProficiencyLevelHasBeenSet; }
     inline void SetMinProficiencyLevel(double value) { m_minProficiencyLevelHasBeenSet = true; m_minProficiencyLevel = value; }
     inline Range& WithMinProficiencyLevel(double value) { SetMinProficiencyLevel(value); return *this;}
@@ -50,17 +50,17 @@ namespace Model
     /**
      * <p>The maximum proficiency level of the range.</p>
      */
-    inline double GetMaxProficiencyLevel() const{ return m_maxProficiencyLevel; }
+    inline double GetMaxProficiencyLevel() const { return m_maxProficiencyLevel; }
     inline bool MaxProficiencyLevelHasBeenSet() const { return m_maxProficiencyLevelHasBeenSet; }
     inline void SetMaxProficiencyLevel(double value) { m_maxProficiencyLevelHasBeenSet = true; m_maxProficiencyLevel = value; }
     inline Range& WithMaxProficiencyLevel(double value) { SetMaxProficiencyLevel(value); return *this;}
     ///@}
   private:
 
-    double m_minProficiencyLevel;
+    double m_minProficiencyLevel{0.0};
     bool m_minProficiencyLevelHasBeenSet = false;
 
-    double m_maxProficiencyLevel;
+    double m_maxProficiencyLevel{0.0};
     bool m_maxProficiencyLevelHasBeenSet = false;
   };
 

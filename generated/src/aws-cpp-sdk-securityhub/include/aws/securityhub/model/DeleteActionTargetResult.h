@@ -27,7 +27,7 @@ namespace Model
   class DeleteActionTargetResult
   {
   public:
-    AWS_SECURITYHUB_API DeleteActionTargetResult();
+    AWS_SECURITYHUB_API DeleteActionTargetResult() = default;
     AWS_SECURITYHUB_API DeleteActionTargetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECURITYHUB_API DeleteActionTargetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The ARN of the custom action target that was deleted.</p>
      */
-    inline const Aws::String& GetActionTargetArn() const{ return m_actionTargetArn; }
-    inline void SetActionTargetArn(const Aws::String& value) { m_actionTargetArn = value; }
-    inline void SetActionTargetArn(Aws::String&& value) { m_actionTargetArn = std::move(value); }
-    inline void SetActionTargetArn(const char* value) { m_actionTargetArn.assign(value); }
-    inline DeleteActionTargetResult& WithActionTargetArn(const Aws::String& value) { SetActionTargetArn(value); return *this;}
-    inline DeleteActionTargetResult& WithActionTargetArn(Aws::String&& value) { SetActionTargetArn(std::move(value)); return *this;}
-    inline DeleteActionTargetResult& WithActionTargetArn(const char* value) { SetActionTargetArn(value); return *this;}
+    inline const Aws::String& GetActionTargetArn() const { return m_actionTargetArn; }
+    template<typename ActionTargetArnT = Aws::String>
+    void SetActionTargetArn(ActionTargetArnT&& value) { m_actionTargetArnHasBeenSet = true; m_actionTargetArn = std::forward<ActionTargetArnT>(value); }
+    template<typename ActionTargetArnT = Aws::String>
+    DeleteActionTargetResult& WithActionTargetArn(ActionTargetArnT&& value) { SetActionTargetArn(std::forward<ActionTargetArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteActionTargetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteActionTargetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteActionTargetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteActionTargetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_actionTargetArn;
+    bool m_actionTargetArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

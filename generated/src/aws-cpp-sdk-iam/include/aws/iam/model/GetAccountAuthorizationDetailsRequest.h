@@ -23,7 +23,7 @@ namespace Model
   class GetAccountAuthorizationDetailsRequest : public IAMRequest
   {
   public:
-    AWS_IAM_API GetAccountAuthorizationDetailsRequest();
+    AWS_IAM_API GetAccountAuthorizationDetailsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -47,14 +47,13 @@ namespace Model
      * strings. Each string value in the list must be one of the valid values listed
      * below.</p>
      */
-    inline const Aws::Vector<EntityType>& GetFilter() const{ return m_filter; }
+    inline const Aws::Vector<EntityType>& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const Aws::Vector<EntityType>& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(Aws::Vector<EntityType>&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline GetAccountAuthorizationDetailsRequest& WithFilter(const Aws::Vector<EntityType>& value) { SetFilter(value); return *this;}
-    inline GetAccountAuthorizationDetailsRequest& WithFilter(Aws::Vector<EntityType>&& value) { SetFilter(std::move(value)); return *this;}
-    inline GetAccountAuthorizationDetailsRequest& AddFilter(const EntityType& value) { m_filterHasBeenSet = true; m_filter.push_back(value); return *this; }
-    inline GetAccountAuthorizationDetailsRequest& AddFilter(EntityType&& value) { m_filterHasBeenSet = true; m_filter.push_back(std::move(value)); return *this; }
+    template<typename FilterT = Aws::Vector<EntityType>>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = Aws::Vector<EntityType>>
+    GetAccountAuthorizationDetailsRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
+    inline GetAccountAuthorizationDetailsRequest& AddFilter(EntityType value) { m_filterHasBeenSet = true; m_filter.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -68,7 +67,7 @@ namespace Model
      * <code>true</code>, and <code>Marker</code> contains a value to include in the
      * subsequent call that tells the service where to continue from.</p>
      */
-    inline int GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
     inline GetAccountAuthorizationDetailsRequest& WithMaxItems(int value) { SetMaxItems(value); return *this;}
@@ -81,21 +80,19 @@ namespace Model
      * <code>Marker</code> element in the response that you received to indicate where
      * the next call should start.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline GetAccountAuthorizationDetailsRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline GetAccountAuthorizationDetailsRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline GetAccountAuthorizationDetailsRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    GetAccountAuthorizationDetailsRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<EntityType> m_filter;
     bool m_filterHasBeenSet = false;
 
-    int m_maxItems;
+    int m_maxItems{0};
     bool m_maxItemsHasBeenSet = false;
 
     Aws::String m_marker;

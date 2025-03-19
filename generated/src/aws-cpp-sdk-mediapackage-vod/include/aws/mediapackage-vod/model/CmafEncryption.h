@@ -32,7 +32,7 @@ namespace Model
   class CmafEncryption
   {
   public:
-    AWS_MEDIAPACKAGEVOD_API CmafEncryption();
+    AWS_MEDIAPACKAGEVOD_API CmafEncryption() = default;
     AWS_MEDIAPACKAGEVOD_API CmafEncryption(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEVOD_API CmafEncryption& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIAPACKAGEVOD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,24 +44,22 @@ namespace Model
      * used in conjunction with the key for encrypting blocks. If you don't specify a
      * value, then MediaPackage creates the constant initialization vector (IV).
      */
-    inline const Aws::String& GetConstantInitializationVector() const{ return m_constantInitializationVector; }
+    inline const Aws::String& GetConstantInitializationVector() const { return m_constantInitializationVector; }
     inline bool ConstantInitializationVectorHasBeenSet() const { return m_constantInitializationVectorHasBeenSet; }
-    inline void SetConstantInitializationVector(const Aws::String& value) { m_constantInitializationVectorHasBeenSet = true; m_constantInitializationVector = value; }
-    inline void SetConstantInitializationVector(Aws::String&& value) { m_constantInitializationVectorHasBeenSet = true; m_constantInitializationVector = std::move(value); }
-    inline void SetConstantInitializationVector(const char* value) { m_constantInitializationVectorHasBeenSet = true; m_constantInitializationVector.assign(value); }
-    inline CmafEncryption& WithConstantInitializationVector(const Aws::String& value) { SetConstantInitializationVector(value); return *this;}
-    inline CmafEncryption& WithConstantInitializationVector(Aws::String&& value) { SetConstantInitializationVector(std::move(value)); return *this;}
-    inline CmafEncryption& WithConstantInitializationVector(const char* value) { SetConstantInitializationVector(value); return *this;}
+    template<typename ConstantInitializationVectorT = Aws::String>
+    void SetConstantInitializationVector(ConstantInitializationVectorT&& value) { m_constantInitializationVectorHasBeenSet = true; m_constantInitializationVector = std::forward<ConstantInitializationVectorT>(value); }
+    template<typename ConstantInitializationVectorT = Aws::String>
+    CmafEncryption& WithConstantInitializationVector(ConstantInitializationVectorT&& value) { SetConstantInitializationVector(std::forward<ConstantInitializationVectorT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const SpekeKeyProvider& GetSpekeKeyProvider() const{ return m_spekeKeyProvider; }
+    inline const SpekeKeyProvider& GetSpekeKeyProvider() const { return m_spekeKeyProvider; }
     inline bool SpekeKeyProviderHasBeenSet() const { return m_spekeKeyProviderHasBeenSet; }
-    inline void SetSpekeKeyProvider(const SpekeKeyProvider& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = value; }
-    inline void SetSpekeKeyProvider(SpekeKeyProvider&& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = std::move(value); }
-    inline CmafEncryption& WithSpekeKeyProvider(const SpekeKeyProvider& value) { SetSpekeKeyProvider(value); return *this;}
-    inline CmafEncryption& WithSpekeKeyProvider(SpekeKeyProvider&& value) { SetSpekeKeyProvider(std::move(value)); return *this;}
+    template<typename SpekeKeyProviderT = SpekeKeyProvider>
+    void SetSpekeKeyProvider(SpekeKeyProviderT&& value) { m_spekeKeyProviderHasBeenSet = true; m_spekeKeyProvider = std::forward<SpekeKeyProviderT>(value); }
+    template<typename SpekeKeyProviderT = SpekeKeyProvider>
+    CmafEncryption& WithSpekeKeyProvider(SpekeKeyProviderT&& value) { SetSpekeKeyProvider(std::forward<SpekeKeyProviderT>(value)); return *this;}
     ///@}
   private:
 

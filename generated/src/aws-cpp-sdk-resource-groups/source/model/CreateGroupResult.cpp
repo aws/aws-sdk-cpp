@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateGroupResult::CreateGroupResult()
-{
-}
-
 CreateGroupResult::CreateGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,13 @@ CreateGroupResult& CreateGroupResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("Group"))
   {
     m_group = jsonValue.GetObject("Group");
-
+    m_groupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceQuery"))
   {
     m_resourceQuery = jsonValue.GetObject("ResourceQuery");
-
+    m_resourceQueryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -48,20 +42,20 @@ CreateGroupResult& CreateGroupResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupConfiguration"))
   {
     m_groupConfiguration = jsonValue.GetObject("GroupConfiguration");
-
+    m_groupConfigurationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

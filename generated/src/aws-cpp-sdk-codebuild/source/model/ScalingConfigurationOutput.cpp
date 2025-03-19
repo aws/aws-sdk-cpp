@@ -18,19 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-ScalingConfigurationOutput::ScalingConfigurationOutput() : 
-    m_scalingType(FleetScalingType::NOT_SET),
-    m_scalingTypeHasBeenSet(false),
-    m_targetTrackingScalingConfigsHasBeenSet(false),
-    m_maxCapacity(0),
-    m_maxCapacityHasBeenSet(false),
-    m_desiredCapacity(0),
-    m_desiredCapacityHasBeenSet(false)
-{
-}
-
 ScalingConfigurationOutput::ScalingConfigurationOutput(JsonView jsonValue)
-  : ScalingConfigurationOutput()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ ScalingConfigurationOutput& ScalingConfigurationOutput::operator =(JsonView json
   if(jsonValue.ValueExists("scalingType"))
   {
     m_scalingType = FleetScalingTypeMapper::GetFleetScalingTypeForName(jsonValue.GetString("scalingType"));
-
     m_scalingTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetTrackingScalingConfigs"))
   {
     Aws::Utils::Array<JsonView> targetTrackingScalingConfigsJsonList = jsonValue.GetArray("targetTrackingScalingConfigs");
@@ -53,21 +39,16 @@ ScalingConfigurationOutput& ScalingConfigurationOutput::operator =(JsonView json
     }
     m_targetTrackingScalingConfigsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxCapacity"))
   {
     m_maxCapacity = jsonValue.GetInteger("maxCapacity");
-
     m_maxCapacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("desiredCapacity"))
   {
     m_desiredCapacity = jsonValue.GetInteger("desiredCapacity");
-
     m_desiredCapacityHasBeenSet = true;
   }
-
   return *this;
 }
 

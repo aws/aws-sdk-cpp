@@ -18,15 +18,7 @@ namespace CodeCatalyst
 namespace Model
 {
 
-Filter::Filter() : 
-    m_keyHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_comparisonOperatorHasBeenSet(false)
-{
-}
-
 Filter::Filter(JsonView jsonValue)
-  : Filter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ Filter& Filter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -49,14 +39,11 @@ Filter& Filter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("comparisonOperator"))
   {
     m_comparisonOperator = jsonValue.GetString("comparisonOperator");
-
     m_comparisonOperatorHasBeenSet = true;
   }
-
   return *this;
 }
 

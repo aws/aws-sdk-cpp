@@ -18,14 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-EcrConfiguration::EcrConfiguration() : 
-    m_repositoryNameHasBeenSet(false),
-    m_containerTagsHasBeenSet(false)
-{
-}
-
 EcrConfiguration::EcrConfiguration(JsonView jsonValue)
-  : EcrConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ EcrConfiguration& EcrConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerTags"))
   {
     Aws::Utils::Array<JsonView> containerTagsJsonList = jsonValue.GetArray("containerTags");
@@ -48,7 +39,6 @@ EcrConfiguration& EcrConfiguration::operator =(JsonView jsonValue)
     }
     m_containerTagsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -31,7 +31,7 @@ namespace Model
   class Hash
   {
   public:
-    AWS_CLEANROOMS_API Hash();
+    AWS_CLEANROOMS_API Hash() = default;
     AWS_CLEANROOMS_API Hash(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Hash& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p> The SHA-256 hash value.</p>
      */
-    inline const Aws::String& GetSha256() const{ return m_sha256; }
+    inline const Aws::String& GetSha256() const { return m_sha256; }
     inline bool Sha256HasBeenSet() const { return m_sha256HasBeenSet; }
-    inline void SetSha256(const Aws::String& value) { m_sha256HasBeenSet = true; m_sha256 = value; }
-    inline void SetSha256(Aws::String&& value) { m_sha256HasBeenSet = true; m_sha256 = std::move(value); }
-    inline void SetSha256(const char* value) { m_sha256HasBeenSet = true; m_sha256.assign(value); }
-    inline Hash& WithSha256(const Aws::String& value) { SetSha256(value); return *this;}
-    inline Hash& WithSha256(Aws::String&& value) { SetSha256(std::move(value)); return *this;}
-    inline Hash& WithSha256(const char* value) { SetSha256(value); return *this;}
+    template<typename Sha256T = Aws::String>
+    void SetSha256(Sha256T&& value) { m_sha256HasBeenSet = true; m_sha256 = std::forward<Sha256T>(value); }
+    template<typename Sha256T = Aws::String>
+    Hash& WithSha256(Sha256T&& value) { SetSha256(std::forward<Sha256T>(value)); return *this;}
     ///@}
   private:
 

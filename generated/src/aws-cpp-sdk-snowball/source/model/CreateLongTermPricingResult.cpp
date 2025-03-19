@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateLongTermPricingResult::CreateLongTermPricingResult()
-{
-}
-
 CreateLongTermPricingResult::CreateLongTermPricingResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateLongTermPricingResult& CreateLongTermPricingResult::operator =(const Aws::
   if(jsonValue.ValueExists("LongTermPricingId"))
   {
     m_longTermPricingId = jsonValue.GetString("LongTermPricingId");
-
+    m_longTermPricingIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

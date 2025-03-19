@@ -18,15 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-MessageTemplateSearchExpression::MessageTemplateSearchExpression() : 
-    m_filtersHasBeenSet(false),
-    m_orderOnFieldHasBeenSet(false),
-    m_queriesHasBeenSet(false)
-{
-}
-
 MessageTemplateSearchExpression::MessageTemplateSearchExpression(JsonView jsonValue)
-  : MessageTemplateSearchExpression()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ MessageTemplateSearchExpression& MessageTemplateSearchExpression::operator =(Jso
     }
     m_filtersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("orderOnField"))
   {
     m_orderOnField = jsonValue.GetObject("orderOnField");
-
     m_orderOnFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("queries"))
   {
     Aws::Utils::Array<JsonView> queriesJsonList = jsonValue.GetArray("queries");
@@ -59,7 +48,6 @@ MessageTemplateSearchExpression& MessageTemplateSearchExpression::operator =(Jso
     }
     m_queriesHasBeenSet = true;
   }
-
   return *this;
 }
 

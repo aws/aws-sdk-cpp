@@ -18,16 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-DocumentTypeListItem::DocumentTypeListItem() : 
-    m_page(0),
-    m_pageHasBeenSet(false),
-    m_type(DocumentType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 DocumentTypeListItem::DocumentTypeListItem(JsonView jsonValue)
-  : DocumentTypeListItem()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ DocumentTypeListItem& DocumentTypeListItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Page"))
   {
     m_page = jsonValue.GetInteger("Page");
-
     m_pageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = DocumentTypeMapper::GetDocumentTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

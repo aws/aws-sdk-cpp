@@ -18,20 +18,7 @@ namespace Connect
 namespace Model
 {
 
-TaskTemplateMetadata::TaskTemplateMetadata() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(TaskTemplateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_createdTimeHasBeenSet(false)
-{
-}
-
 TaskTemplateMetadata::TaskTemplateMetadata(JsonView jsonValue)
-  : TaskTemplateMetadata()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ TaskTemplateMetadata& TaskTemplateMetadata::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = TaskTemplateStatusMapper::GetTaskTemplateStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

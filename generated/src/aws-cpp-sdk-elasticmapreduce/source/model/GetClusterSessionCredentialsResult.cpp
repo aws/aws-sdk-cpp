@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetClusterSessionCredentialsResult::GetClusterSessionCredentialsResult()
-{
-}
-
 GetClusterSessionCredentialsResult::GetClusterSessionCredentialsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetClusterSessionCredentialsResult& GetClusterSessionCredentialsResult::operator
   if(jsonValue.ValueExists("Credentials"))
   {
     m_credentials = jsonValue.GetObject("Credentials");
-
+    m_credentialsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExpiresAt"))
   {
     m_expiresAt = jsonValue.GetDouble("ExpiresAt");
-
+    m_expiresAtHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

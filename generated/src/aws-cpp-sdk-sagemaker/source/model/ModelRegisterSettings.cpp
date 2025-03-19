@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelRegisterSettings::ModelRegisterSettings() : 
-    m_status(FeatureStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_crossAccountModelRegisterRoleArnHasBeenSet(false)
-{
-}
-
 ModelRegisterSettings::ModelRegisterSettings(JsonView jsonValue)
-  : ModelRegisterSettings()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ModelRegisterSettings& ModelRegisterSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = FeatureStatusMapper::GetFeatureStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrossAccountModelRegisterRoleArn"))
   {
     m_crossAccountModelRegisterRoleArn = jsonValue.GetString("CrossAccountModelRegisterRoleArn");
-
     m_crossAccountModelRegisterRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

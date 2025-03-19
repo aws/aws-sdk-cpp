@@ -28,7 +28,7 @@ namespace Model
   class GeneratePinDataResult
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHYDATA_API GeneratePinDataResult();
+    AWS_PAYMENTCRYPTOGRAPHYDATA_API GeneratePinDataResult() = default;
     AWS_PAYMENTCRYPTOGRAPHYDATA_API GeneratePinDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PAYMENTCRYPTOGRAPHYDATA_API GeneratePinDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
      * <p>The <code>keyARN</code> of the pin data generation key that Amazon Web
      * Services Payment Cryptography uses for PIN, PVV or PIN Offset generation.</p>
      */
-    inline const Aws::String& GetGenerationKeyArn() const{ return m_generationKeyArn; }
-    inline void SetGenerationKeyArn(const Aws::String& value) { m_generationKeyArn = value; }
-    inline void SetGenerationKeyArn(Aws::String&& value) { m_generationKeyArn = std::move(value); }
-    inline void SetGenerationKeyArn(const char* value) { m_generationKeyArn.assign(value); }
-    inline GeneratePinDataResult& WithGenerationKeyArn(const Aws::String& value) { SetGenerationKeyArn(value); return *this;}
-    inline GeneratePinDataResult& WithGenerationKeyArn(Aws::String&& value) { SetGenerationKeyArn(std::move(value)); return *this;}
-    inline GeneratePinDataResult& WithGenerationKeyArn(const char* value) { SetGenerationKeyArn(value); return *this;}
+    inline const Aws::String& GetGenerationKeyArn() const { return m_generationKeyArn; }
+    template<typename GenerationKeyArnT = Aws::String>
+    void SetGenerationKeyArn(GenerationKeyArnT&& value) { m_generationKeyArnHasBeenSet = true; m_generationKeyArn = std::forward<GenerationKeyArnT>(value); }
+    template<typename GenerationKeyArnT = Aws::String>
+    GeneratePinDataResult& WithGenerationKeyArn(GenerationKeyArnT&& value) { SetGenerationKeyArn(std::forward<GenerationKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,13 +52,11 @@ namespace Model
      * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
      * according to the CMAC specification.</p>
      */
-    inline const Aws::String& GetGenerationKeyCheckValue() const{ return m_generationKeyCheckValue; }
-    inline void SetGenerationKeyCheckValue(const Aws::String& value) { m_generationKeyCheckValue = value; }
-    inline void SetGenerationKeyCheckValue(Aws::String&& value) { m_generationKeyCheckValue = std::move(value); }
-    inline void SetGenerationKeyCheckValue(const char* value) { m_generationKeyCheckValue.assign(value); }
-    inline GeneratePinDataResult& WithGenerationKeyCheckValue(const Aws::String& value) { SetGenerationKeyCheckValue(value); return *this;}
-    inline GeneratePinDataResult& WithGenerationKeyCheckValue(Aws::String&& value) { SetGenerationKeyCheckValue(std::move(value)); return *this;}
-    inline GeneratePinDataResult& WithGenerationKeyCheckValue(const char* value) { SetGenerationKeyCheckValue(value); return *this;}
+    inline const Aws::String& GetGenerationKeyCheckValue() const { return m_generationKeyCheckValue; }
+    template<typename GenerationKeyCheckValueT = Aws::String>
+    void SetGenerationKeyCheckValue(GenerationKeyCheckValueT&& value) { m_generationKeyCheckValueHasBeenSet = true; m_generationKeyCheckValue = std::forward<GenerationKeyCheckValueT>(value); }
+    template<typename GenerationKeyCheckValueT = Aws::String>
+    GeneratePinDataResult& WithGenerationKeyCheckValue(GenerationKeyCheckValueT&& value) { SetGenerationKeyCheckValue(std::forward<GenerationKeyCheckValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,13 +65,11 @@ namespace Model
      * Cryptography uses for encrypted pin block generation. For ECDH, it is the
      * <code>keyARN</code> of the asymmetric ECC key.</p>
      */
-    inline const Aws::String& GetEncryptionKeyArn() const{ return m_encryptionKeyArn; }
-    inline void SetEncryptionKeyArn(const Aws::String& value) { m_encryptionKeyArn = value; }
-    inline void SetEncryptionKeyArn(Aws::String&& value) { m_encryptionKeyArn = std::move(value); }
-    inline void SetEncryptionKeyArn(const char* value) { m_encryptionKeyArn.assign(value); }
-    inline GeneratePinDataResult& WithEncryptionKeyArn(const Aws::String& value) { SetEncryptionKeyArn(value); return *this;}
-    inline GeneratePinDataResult& WithEncryptionKeyArn(Aws::String&& value) { SetEncryptionKeyArn(std::move(value)); return *this;}
-    inline GeneratePinDataResult& WithEncryptionKeyArn(const char* value) { SetEncryptionKeyArn(value); return *this;}
+    inline const Aws::String& GetEncryptionKeyArn() const { return m_encryptionKeyArn; }
+    template<typename EncryptionKeyArnT = Aws::String>
+    void SetEncryptionKeyArn(EncryptionKeyArnT&& value) { m_encryptionKeyArnHasBeenSet = true; m_encryptionKeyArn = std::forward<EncryptionKeyArnT>(value); }
+    template<typename EncryptionKeyArnT = Aws::String>
+    GeneratePinDataResult& WithEncryptionKeyArn(EncryptionKeyArnT&& value) { SetEncryptionKeyArn(std::forward<EncryptionKeyArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,13 +79,11 @@ namespace Model
      * changed.</p> <p>Amazon Web Services Payment Cryptography computes the KCV
      * according to the CMAC specification.</p>
      */
-    inline const Aws::String& GetEncryptionKeyCheckValue() const{ return m_encryptionKeyCheckValue; }
-    inline void SetEncryptionKeyCheckValue(const Aws::String& value) { m_encryptionKeyCheckValue = value; }
-    inline void SetEncryptionKeyCheckValue(Aws::String&& value) { m_encryptionKeyCheckValue = std::move(value); }
-    inline void SetEncryptionKeyCheckValue(const char* value) { m_encryptionKeyCheckValue.assign(value); }
-    inline GeneratePinDataResult& WithEncryptionKeyCheckValue(const Aws::String& value) { SetEncryptionKeyCheckValue(value); return *this;}
-    inline GeneratePinDataResult& WithEncryptionKeyCheckValue(Aws::String&& value) { SetEncryptionKeyCheckValue(std::move(value)); return *this;}
-    inline GeneratePinDataResult& WithEncryptionKeyCheckValue(const char* value) { SetEncryptionKeyCheckValue(value); return *this;}
+    inline const Aws::String& GetEncryptionKeyCheckValue() const { return m_encryptionKeyCheckValue; }
+    template<typename EncryptionKeyCheckValueT = Aws::String>
+    void SetEncryptionKeyCheckValue(EncryptionKeyCheckValueT&& value) { m_encryptionKeyCheckValueHasBeenSet = true; m_encryptionKeyCheckValue = std::forward<EncryptionKeyCheckValueT>(value); }
+    template<typename EncryptionKeyCheckValueT = Aws::String>
+    GeneratePinDataResult& WithEncryptionKeyCheckValue(EncryptionKeyCheckValueT&& value) { SetEncryptionKeyCheckValue(std::forward<EncryptionKeyCheckValueT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,13 +93,11 @@ namespace Model
      * Number) and PIN (Personal Identification Number), generated in accordance with
      * ISO 9564 standard.</p>
      */
-    inline const Aws::String& GetEncryptedPinBlock() const{ return m_encryptedPinBlock; }
-    inline void SetEncryptedPinBlock(const Aws::String& value) { m_encryptedPinBlock = value; }
-    inline void SetEncryptedPinBlock(Aws::String&& value) { m_encryptedPinBlock = std::move(value); }
-    inline void SetEncryptedPinBlock(const char* value) { m_encryptedPinBlock.assign(value); }
-    inline GeneratePinDataResult& WithEncryptedPinBlock(const Aws::String& value) { SetEncryptedPinBlock(value); return *this;}
-    inline GeneratePinDataResult& WithEncryptedPinBlock(Aws::String&& value) { SetEncryptedPinBlock(std::move(value)); return *this;}
-    inline GeneratePinDataResult& WithEncryptedPinBlock(const char* value) { SetEncryptedPinBlock(value); return *this;}
+    inline const Aws::String& GetEncryptedPinBlock() const { return m_encryptedPinBlock; }
+    template<typename EncryptedPinBlockT = Aws::String>
+    void SetEncryptedPinBlock(EncryptedPinBlockT&& value) { m_encryptedPinBlockHasBeenSet = true; m_encryptedPinBlock = std::forward<EncryptedPinBlockT>(value); }
+    template<typename EncryptedPinBlockT = Aws::String>
+    GeneratePinDataResult& WithEncryptedPinBlock(EncryptedPinBlockT&& value) { SetEncryptedPinBlock(std::forward<EncryptedPinBlockT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,38 +105,43 @@ namespace Model
      * <p>The attributes and values Amazon Web Services Payment Cryptography uses for
      * pin data generation.</p>
      */
-    inline const PinData& GetPinData() const{ return m_pinData; }
-    inline void SetPinData(const PinData& value) { m_pinData = value; }
-    inline void SetPinData(PinData&& value) { m_pinData = std::move(value); }
-    inline GeneratePinDataResult& WithPinData(const PinData& value) { SetPinData(value); return *this;}
-    inline GeneratePinDataResult& WithPinData(PinData&& value) { SetPinData(std::move(value)); return *this;}
+    inline const PinData& GetPinData() const { return m_pinData; }
+    template<typename PinDataT = PinData>
+    void SetPinData(PinDataT&& value) { m_pinDataHasBeenSet = true; m_pinData = std::forward<PinDataT>(value); }
+    template<typename PinDataT = PinData>
+    GeneratePinDataResult& WithPinData(PinDataT&& value) { SetPinData(std::forward<PinDataT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GeneratePinDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GeneratePinDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GeneratePinDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GeneratePinDataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_generationKeyArn;
+    bool m_generationKeyArnHasBeenSet = false;
 
     Aws::String m_generationKeyCheckValue;
+    bool m_generationKeyCheckValueHasBeenSet = false;
 
     Aws::String m_encryptionKeyArn;
+    bool m_encryptionKeyArnHasBeenSet = false;
 
     Aws::String m_encryptionKeyCheckValue;
+    bool m_encryptionKeyCheckValueHasBeenSet = false;
 
     Aws::String m_encryptedPinBlock;
+    bool m_encryptedPinBlockHasBeenSet = false;
 
     PinData m_pinData;
+    bool m_pinDataHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,11 +12,6 @@ using namespace Aws::NetworkManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSiteToSiteVpnAttachmentRequest::GetSiteToSiteVpnAttachmentRequest() : 
-    m_attachmentIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSiteToSiteVpnAttachmentRequest::SerializePayload() const
 {
   return {};

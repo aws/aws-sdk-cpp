@@ -12,11 +12,6 @@ using namespace Aws::Panorama::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribePackageImportJobRequest::DescribePackageImportJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribePackageImportJobRequest::SerializePayload() const
 {
   return {};

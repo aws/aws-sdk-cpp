@@ -18,20 +18,7 @@ namespace MigrationHubRefactorSpaces
 namespace Model
 {
 
-ErrorResponse::ErrorResponse() : 
-    m_accountIdHasBeenSet(false),
-    m_additionalDetailsHasBeenSet(false),
-    m_code(ErrorCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_resourceType(ErrorResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 ErrorResponse::ErrorResponse(JsonView jsonValue)
-  : ErrorResponse()
 {
   *this = jsonValue;
 }
@@ -41,10 +28,8 @@ ErrorResponse& ErrorResponse::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountId"))
   {
     m_accountId = jsonValue.GetString("AccountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalDetails"))
   {
     Aws::Map<Aws::String, JsonView> additionalDetailsJsonMap = jsonValue.GetObject("AdditionalDetails").GetAllObjects();
@@ -54,35 +39,26 @@ ErrorResponse& ErrorResponse::operator =(JsonView jsonValue)
     }
     m_additionalDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Code"))
   {
     m_code = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceIdentifier"))
   {
     m_resourceIdentifier = jsonValue.GetString("ResourceIdentifier");
-
     m_resourceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = ErrorResourceTypeMapper::GetErrorResourceTypeForName(jsonValue.GetString("ResourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

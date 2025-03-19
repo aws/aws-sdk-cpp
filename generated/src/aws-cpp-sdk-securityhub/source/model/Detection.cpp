@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-Detection::Detection() : 
-    m_sequenceHasBeenSet(false)
-{
-}
-
 Detection::Detection(JsonView jsonValue)
-  : Detection()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Detection& Detection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Sequence"))
   {
     m_sequence = jsonValue.GetObject("Sequence");
-
     m_sequenceHasBeenSet = true;
   }
-
   return *this;
 }
 

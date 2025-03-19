@@ -23,7 +23,7 @@ namespace Model
   class PutResourcePolicyRequest : public GlueRequest
   {
   public:
-    AWS_GLUE_API PutResourcePolicyRequest();
+    AWS_GLUE_API PutResourcePolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
     /**
      * <p>Contains the policy document to set, in JSON format.</p>
      */
-    inline const Aws::String& GetPolicyInJson() const{ return m_policyInJson; }
+    inline const Aws::String& GetPolicyInJson() const { return m_policyInJson; }
     inline bool PolicyInJsonHasBeenSet() const { return m_policyInJsonHasBeenSet; }
-    inline void SetPolicyInJson(const Aws::String& value) { m_policyInJsonHasBeenSet = true; m_policyInJson = value; }
-    inline void SetPolicyInJson(Aws::String&& value) { m_policyInJsonHasBeenSet = true; m_policyInJson = std::move(value); }
-    inline void SetPolicyInJson(const char* value) { m_policyInJsonHasBeenSet = true; m_policyInJson.assign(value); }
-    inline PutResourcePolicyRequest& WithPolicyInJson(const Aws::String& value) { SetPolicyInJson(value); return *this;}
-    inline PutResourcePolicyRequest& WithPolicyInJson(Aws::String&& value) { SetPolicyInJson(std::move(value)); return *this;}
-    inline PutResourcePolicyRequest& WithPolicyInJson(const char* value) { SetPolicyInJson(value); return *this;}
+    template<typename PolicyInJsonT = Aws::String>
+    void SetPolicyInJson(PolicyInJsonT&& value) { m_policyInJsonHasBeenSet = true; m_policyInJson = std::forward<PolicyInJsonT>(value); }
+    template<typename PolicyInJsonT = Aws::String>
+    PutResourcePolicyRequest& WithPolicyInJson(PolicyInJsonT&& value) { SetPolicyInJson(std::forward<PolicyInJsonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Do not use. For internal use only.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline PutResourcePolicyRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline PutResourcePolicyRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline PutResourcePolicyRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    PutResourcePolicyRequest& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +67,12 @@ namespace Model
      * modifications of a policy. Do not use this parameter if no previous policy has
      * been set.</p>
      */
-    inline const Aws::String& GetPolicyHashCondition() const{ return m_policyHashCondition; }
+    inline const Aws::String& GetPolicyHashCondition() const { return m_policyHashCondition; }
     inline bool PolicyHashConditionHasBeenSet() const { return m_policyHashConditionHasBeenSet; }
-    inline void SetPolicyHashCondition(const Aws::String& value) { m_policyHashConditionHasBeenSet = true; m_policyHashCondition = value; }
-    inline void SetPolicyHashCondition(Aws::String&& value) { m_policyHashConditionHasBeenSet = true; m_policyHashCondition = std::move(value); }
-    inline void SetPolicyHashCondition(const char* value) { m_policyHashConditionHasBeenSet = true; m_policyHashCondition.assign(value); }
-    inline PutResourcePolicyRequest& WithPolicyHashCondition(const Aws::String& value) { SetPolicyHashCondition(value); return *this;}
-    inline PutResourcePolicyRequest& WithPolicyHashCondition(Aws::String&& value) { SetPolicyHashCondition(std::move(value)); return *this;}
-    inline PutResourcePolicyRequest& WithPolicyHashCondition(const char* value) { SetPolicyHashCondition(value); return *this;}
+    template<typename PolicyHashConditionT = Aws::String>
+    void SetPolicyHashCondition(PolicyHashConditionT&& value) { m_policyHashConditionHasBeenSet = true; m_policyHashCondition = std::forward<PolicyHashConditionT>(value); }
+    template<typename PolicyHashConditionT = Aws::String>
+    PutResourcePolicyRequest& WithPolicyHashCondition(PolicyHashConditionT&& value) { SetPolicyHashCondition(std::forward<PolicyHashConditionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +82,10 @@ namespace Model
      * <code>NONE</code> or a null value is used, the call does not depend on the
      * existence of a policy.</p>
      */
-    inline const ExistCondition& GetPolicyExistsCondition() const{ return m_policyExistsCondition; }
+    inline ExistCondition GetPolicyExistsCondition() const { return m_policyExistsCondition; }
     inline bool PolicyExistsConditionHasBeenSet() const { return m_policyExistsConditionHasBeenSet; }
-    inline void SetPolicyExistsCondition(const ExistCondition& value) { m_policyExistsConditionHasBeenSet = true; m_policyExistsCondition = value; }
-    inline void SetPolicyExistsCondition(ExistCondition&& value) { m_policyExistsConditionHasBeenSet = true; m_policyExistsCondition = std::move(value); }
-    inline PutResourcePolicyRequest& WithPolicyExistsCondition(const ExistCondition& value) { SetPolicyExistsCondition(value); return *this;}
-    inline PutResourcePolicyRequest& WithPolicyExistsCondition(ExistCondition&& value) { SetPolicyExistsCondition(std::move(value)); return *this;}
+    inline void SetPolicyExistsCondition(ExistCondition value) { m_policyExistsConditionHasBeenSet = true; m_policyExistsCondition = value; }
+    inline PutResourcePolicyRequest& WithPolicyExistsCondition(ExistCondition value) { SetPolicyExistsCondition(value); return *this;}
     ///@}
 
     ///@{
@@ -106,12 +98,10 @@ namespace Model
      * have already used the Management Console to grant cross-account access,
      * otherwise the call fails. Default is 'FALSE'.</p>
      */
-    inline const EnableHybridValues& GetEnableHybrid() const{ return m_enableHybrid; }
+    inline EnableHybridValues GetEnableHybrid() const { return m_enableHybrid; }
     inline bool EnableHybridHasBeenSet() const { return m_enableHybridHasBeenSet; }
-    inline void SetEnableHybrid(const EnableHybridValues& value) { m_enableHybridHasBeenSet = true; m_enableHybrid = value; }
-    inline void SetEnableHybrid(EnableHybridValues&& value) { m_enableHybridHasBeenSet = true; m_enableHybrid = std::move(value); }
-    inline PutResourcePolicyRequest& WithEnableHybrid(const EnableHybridValues& value) { SetEnableHybrid(value); return *this;}
-    inline PutResourcePolicyRequest& WithEnableHybrid(EnableHybridValues&& value) { SetEnableHybrid(std::move(value)); return *this;}
+    inline void SetEnableHybrid(EnableHybridValues value) { m_enableHybridHasBeenSet = true; m_enableHybrid = value; }
+    inline PutResourcePolicyRequest& WithEnableHybrid(EnableHybridValues value) { SetEnableHybrid(value); return *this;}
     ///@}
   private:
 
@@ -124,10 +114,10 @@ namespace Model
     Aws::String m_policyHashCondition;
     bool m_policyHashConditionHasBeenSet = false;
 
-    ExistCondition m_policyExistsCondition;
+    ExistCondition m_policyExistsCondition{ExistCondition::NOT_SET};
     bool m_policyExistsConditionHasBeenSet = false;
 
-    EnableHybridValues m_enableHybrid;
+    EnableHybridValues m_enableHybrid{EnableHybridValues::NOT_SET};
     bool m_enableHybridHasBeenSet = false;
   };
 

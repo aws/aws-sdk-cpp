@@ -31,7 +31,7 @@ namespace Model
   class MetricCollectionType
   {
   public:
-    AWS_AUTOSCALING_API MetricCollectionType();
+    AWS_AUTOSCALING_API MetricCollectionType() = default;
     AWS_AUTOSCALING_API MetricCollectionType(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_AUTOSCALING_API MetricCollectionType& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -62,14 +62,12 @@ namespace Model
      * <code>GroupAndWarmPoolDesiredCapacity</code> </p> </li> <li> <p>
      * <code>GroupAndWarmPoolTotalCapacity</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetMetric() const{ return m_metric; }
+    inline const Aws::String& GetMetric() const { return m_metric; }
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
-    inline void SetMetric(const Aws::String& value) { m_metricHasBeenSet = true; m_metric = value; }
-    inline void SetMetric(Aws::String&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
-    inline void SetMetric(const char* value) { m_metricHasBeenSet = true; m_metric.assign(value); }
-    inline MetricCollectionType& WithMetric(const Aws::String& value) { SetMetric(value); return *this;}
-    inline MetricCollectionType& WithMetric(Aws::String&& value) { SetMetric(std::move(value)); return *this;}
-    inline MetricCollectionType& WithMetric(const char* value) { SetMetric(value); return *this;}
+    template<typename MetricT = Aws::String>
+    void SetMetric(MetricT&& value) { m_metricHasBeenSet = true; m_metric = std::forward<MetricT>(value); }
+    template<typename MetricT = Aws::String>
+    MetricCollectionType& WithMetric(MetricT&& value) { SetMetric(std::forward<MetricT>(value)); return *this;}
     ///@}
   private:
 

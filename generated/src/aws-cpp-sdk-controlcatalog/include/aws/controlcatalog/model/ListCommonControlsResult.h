@@ -29,7 +29,7 @@ namespace Model
   class ListCommonControlsResult
   {
   public:
-    AWS_CONTROLCATALOG_API ListCommonControlsResult();
+    AWS_CONTROLCATALOG_API ListCommonControlsResult() = default;
     AWS_CONTROLCATALOG_API ListCommonControlsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONTROLCATALOG_API ListCommonControlsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>The list of common controls that the <code>ListCommonControls</code> API
      * returns.</p>
      */
-    inline const Aws::Vector<CommonControlSummary>& GetCommonControls() const{ return m_commonControls; }
-    inline void SetCommonControls(const Aws::Vector<CommonControlSummary>& value) { m_commonControls = value; }
-    inline void SetCommonControls(Aws::Vector<CommonControlSummary>&& value) { m_commonControls = std::move(value); }
-    inline ListCommonControlsResult& WithCommonControls(const Aws::Vector<CommonControlSummary>& value) { SetCommonControls(value); return *this;}
-    inline ListCommonControlsResult& WithCommonControls(Aws::Vector<CommonControlSummary>&& value) { SetCommonControls(std::move(value)); return *this;}
-    inline ListCommonControlsResult& AddCommonControls(const CommonControlSummary& value) { m_commonControls.push_back(value); return *this; }
-    inline ListCommonControlsResult& AddCommonControls(CommonControlSummary&& value) { m_commonControls.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CommonControlSummary>& GetCommonControls() const { return m_commonControls; }
+    template<typename CommonControlsT = Aws::Vector<CommonControlSummary>>
+    void SetCommonControls(CommonControlsT&& value) { m_commonControlsHasBeenSet = true; m_commonControls = std::forward<CommonControlsT>(value); }
+    template<typename CommonControlsT = Aws::Vector<CommonControlSummary>>
+    ListCommonControlsResult& WithCommonControls(CommonControlsT&& value) { SetCommonControls(std::forward<CommonControlsT>(value)); return *this;}
+    template<typename CommonControlsT = CommonControlSummary>
+    ListCommonControlsResult& AddCommonControls(CommonControlsT&& value) { m_commonControlsHasBeenSet = true; m_commonControls.emplace_back(std::forward<CommonControlsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token that's used to fetch the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListCommonControlsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListCommonControlsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListCommonControlsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListCommonControlsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListCommonControlsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListCommonControlsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListCommonControlsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListCommonControlsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CommonControlSummary> m_commonControls;
+    bool m_commonControlsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

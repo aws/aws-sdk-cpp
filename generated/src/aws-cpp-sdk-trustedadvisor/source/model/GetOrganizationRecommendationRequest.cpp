@@ -12,11 +12,6 @@ using namespace Aws::TrustedAdvisor::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetOrganizationRecommendationRequest::GetOrganizationRecommendationRequest() : 
-    m_organizationRecommendationIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String GetOrganizationRecommendationRequest::SerializePayload() const
 {
   return {};

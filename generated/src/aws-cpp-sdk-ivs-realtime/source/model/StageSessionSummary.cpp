@@ -18,15 +18,7 @@ namespace ivsrealtime
 namespace Model
 {
 
-StageSessionSummary::StageSessionSummary() : 
-    m_sessionIdHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
-{
-}
-
 StageSessionSummary::StageSessionSummary(JsonView jsonValue)
-  : StageSessionSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ StageSessionSummary& StageSessionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sessionId"))
   {
     m_sessionId = jsonValue.GetString("sessionId");
-
     m_sessionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("startTime"))
   {
     m_startTime = jsonValue.GetString("startTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endTime"))
   {
     m_endTime = jsonValue.GetString("endTime");
-
     m_endTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

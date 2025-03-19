@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StopImportResult::StopImportResult() : 
-    m_importStatus(ImportStatus::NOT_SET)
-{
-}
-
 StopImportResult::StopImportResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StopImportResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ StopImportResult& StopImportResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("ImportId"))
   {
     m_importId = jsonValue.GetString("ImportId");
-
+    m_importIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImportSource"))
   {
     m_importSource = jsonValue.GetObject("ImportSource");
-
+    m_importSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Destinations"))
   {
     Aws::Utils::Array<JsonView> destinationsJsonList = jsonValue.GetArray("Destinations");
@@ -50,50 +42,45 @@ StopImportResult& StopImportResult::operator =(const Aws::AmazonWebServiceResult
     {
       m_destinations.push_back(destinationsJsonList[destinationsIndex].AsString());
     }
+    m_destinationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImportStatus"))
   {
     m_importStatus = ImportStatusMapper::GetImportStatusForName(jsonValue.GetString("ImportStatus"));
-
+    m_importStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
+    m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedTimestamp"))
   {
     m_updatedTimestamp = jsonValue.GetDouble("UpdatedTimestamp");
-
+    m_updatedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartEventTime"))
   {
     m_startEventTime = jsonValue.GetDouble("StartEventTime");
-
+    m_startEventTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndEventTime"))
   {
     m_endEventTime = jsonValue.GetDouble("EndEventTime");
-
+    m_endEventTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImportStatistics"))
   {
     m_importStatistics = jsonValue.GetObject("ImportStatistics");
-
+    m_importStatisticsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,15 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-ComparedSourceImageFace::ComparedSourceImageFace() : 
-    m_boundingBoxHasBeenSet(false),
-    m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
-{
-}
-
 ComparedSourceImageFace::ComparedSourceImageFace(JsonView jsonValue)
-  : ComparedSourceImageFace()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ComparedSourceImageFace& ComparedSourceImageFace::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BoundingBox"))
   {
     m_boundingBox = jsonValue.GetObject("BoundingBox");
-
     m_boundingBoxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Confidence"))
   {
     m_confidence = jsonValue.GetDouble("Confidence");
-
     m_confidenceHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,16 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-TestInvokeAuthorizerRequest::TestInvokeAuthorizerRequest() : 
-    m_authorizerNameHasBeenSet(false),
-    m_tokenHasBeenSet(false),
-    m_tokenSignatureHasBeenSet(false),
-    m_httpContextHasBeenSet(false),
-    m_mqttContextHasBeenSet(false),
-    m_tlsContextHasBeenSet(false)
-{
-}
-
 Aws::String TestInvokeAuthorizerRequest::SerializePayload() const
 {
   JsonValue payload;

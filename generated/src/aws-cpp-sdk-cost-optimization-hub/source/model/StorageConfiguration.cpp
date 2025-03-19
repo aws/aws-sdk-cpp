@@ -18,15 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-StorageConfiguration::StorageConfiguration() : 
-    m_typeHasBeenSet(false),
-    m_sizeInGb(0.0),
-    m_sizeInGbHasBeenSet(false)
-{
-}
-
 StorageConfiguration::StorageConfiguration(JsonView jsonValue)
-  : StorageConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ StorageConfiguration& StorageConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sizeInGb"))
   {
     m_sizeInGb = jsonValue.GetDouble("sizeInGb");
-
     m_sizeInGbHasBeenSet = true;
   }
-
   return *this;
 }
 

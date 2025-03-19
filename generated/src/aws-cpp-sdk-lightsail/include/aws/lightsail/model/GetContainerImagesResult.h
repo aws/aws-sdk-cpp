@@ -29,7 +29,7 @@ namespace Model
   class GetContainerImagesResult
   {
   public:
-    AWS_LIGHTSAIL_API GetContainerImagesResult();
+    AWS_LIGHTSAIL_API GetContainerImagesResult() = default;
     AWS_LIGHTSAIL_API GetContainerImagesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LIGHTSAIL_API GetContainerImagesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p>An array of objects that describe container images that are registered to the
      * container service.</p>
      */
-    inline const Aws::Vector<ContainerImage>& GetContainerImages() const{ return m_containerImages; }
-    inline void SetContainerImages(const Aws::Vector<ContainerImage>& value) { m_containerImages = value; }
-    inline void SetContainerImages(Aws::Vector<ContainerImage>&& value) { m_containerImages = std::move(value); }
-    inline GetContainerImagesResult& WithContainerImages(const Aws::Vector<ContainerImage>& value) { SetContainerImages(value); return *this;}
-    inline GetContainerImagesResult& WithContainerImages(Aws::Vector<ContainerImage>&& value) { SetContainerImages(std::move(value)); return *this;}
-    inline GetContainerImagesResult& AddContainerImages(const ContainerImage& value) { m_containerImages.push_back(value); return *this; }
-    inline GetContainerImagesResult& AddContainerImages(ContainerImage&& value) { m_containerImages.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ContainerImage>& GetContainerImages() const { return m_containerImages; }
+    template<typename ContainerImagesT = Aws::Vector<ContainerImage>>
+    void SetContainerImages(ContainerImagesT&& value) { m_containerImagesHasBeenSet = true; m_containerImages = std::forward<ContainerImagesT>(value); }
+    template<typename ContainerImagesT = Aws::Vector<ContainerImage>>
+    GetContainerImagesResult& WithContainerImages(ContainerImagesT&& value) { SetContainerImages(std::forward<ContainerImagesT>(value)); return *this;}
+    template<typename ContainerImagesT = ContainerImage>
+    GetContainerImagesResult& AddContainerImages(ContainerImagesT&& value) { m_containerImagesHasBeenSet = true; m_containerImages.emplace_back(std::forward<ContainerImagesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetContainerImagesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetContainerImagesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetContainerImagesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetContainerImagesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ContainerImage> m_containerImages;
+    bool m_containerImagesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

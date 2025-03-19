@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListCollaborationTrainedModelInferenceJobsResult::ListCollaborationTrainedModelInferenceJobsResult()
-{
-}
-
 ListCollaborationTrainedModelInferenceJobsResult::ListCollaborationTrainedModelInferenceJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListCollaborationTrainedModelInferenceJobsResult& ListCollaborationTrainedModelI
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("collaborationTrainedModelInferenceJobs"))
   {
     Aws::Utils::Array<JsonView> collaborationTrainedModelInferenceJobsJsonList = jsonValue.GetArray("collaborationTrainedModelInferenceJobs");
@@ -42,14 +37,15 @@ ListCollaborationTrainedModelInferenceJobsResult& ListCollaborationTrainedModelI
     {
       m_collaborationTrainedModelInferenceJobs.push_back(collaborationTrainedModelInferenceJobsJsonList[collaborationTrainedModelInferenceJobsIndex].AsObject());
     }
+    m_collaborationTrainedModelInferenceJobsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -41,7 +41,7 @@ namespace Model
   class UserPoolAddOnsType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API UserPoolAddOnsType();
+    AWS_COGNITOIDENTITYPROVIDER_API UserPoolAddOnsType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API UserPoolAddOnsType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API UserPoolAddOnsType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,12 +53,10 @@ namespace Model
      * your user pool, including username-password and secure remote password (SRP)
      * authentication. </p>
      */
-    inline const AdvancedSecurityModeType& GetAdvancedSecurityMode() const{ return m_advancedSecurityMode; }
+    inline AdvancedSecurityModeType GetAdvancedSecurityMode() const { return m_advancedSecurityMode; }
     inline bool AdvancedSecurityModeHasBeenSet() const { return m_advancedSecurityModeHasBeenSet; }
-    inline void SetAdvancedSecurityMode(const AdvancedSecurityModeType& value) { m_advancedSecurityModeHasBeenSet = true; m_advancedSecurityMode = value; }
-    inline void SetAdvancedSecurityMode(AdvancedSecurityModeType&& value) { m_advancedSecurityModeHasBeenSet = true; m_advancedSecurityMode = std::move(value); }
-    inline UserPoolAddOnsType& WithAdvancedSecurityMode(const AdvancedSecurityModeType& value) { SetAdvancedSecurityMode(value); return *this;}
-    inline UserPoolAddOnsType& WithAdvancedSecurityMode(AdvancedSecurityModeType&& value) { SetAdvancedSecurityMode(std::move(value)); return *this;}
+    inline void SetAdvancedSecurityMode(AdvancedSecurityModeType value) { m_advancedSecurityModeHasBeenSet = true; m_advancedSecurityMode = value; }
+    inline UserPoolAddOnsType& WithAdvancedSecurityMode(AdvancedSecurityModeType value) { SetAdvancedSecurityMode(value); return *this;}
     ///@}
 
     ///@{
@@ -66,16 +64,16 @@ namespace Model
      * <p>Threat protection configuration options for additional authentication types
      * in your user pool, including custom authentication. </p>
      */
-    inline const AdvancedSecurityAdditionalFlowsType& GetAdvancedSecurityAdditionalFlows() const{ return m_advancedSecurityAdditionalFlows; }
+    inline const AdvancedSecurityAdditionalFlowsType& GetAdvancedSecurityAdditionalFlows() const { return m_advancedSecurityAdditionalFlows; }
     inline bool AdvancedSecurityAdditionalFlowsHasBeenSet() const { return m_advancedSecurityAdditionalFlowsHasBeenSet; }
-    inline void SetAdvancedSecurityAdditionalFlows(const AdvancedSecurityAdditionalFlowsType& value) { m_advancedSecurityAdditionalFlowsHasBeenSet = true; m_advancedSecurityAdditionalFlows = value; }
-    inline void SetAdvancedSecurityAdditionalFlows(AdvancedSecurityAdditionalFlowsType&& value) { m_advancedSecurityAdditionalFlowsHasBeenSet = true; m_advancedSecurityAdditionalFlows = std::move(value); }
-    inline UserPoolAddOnsType& WithAdvancedSecurityAdditionalFlows(const AdvancedSecurityAdditionalFlowsType& value) { SetAdvancedSecurityAdditionalFlows(value); return *this;}
-    inline UserPoolAddOnsType& WithAdvancedSecurityAdditionalFlows(AdvancedSecurityAdditionalFlowsType&& value) { SetAdvancedSecurityAdditionalFlows(std::move(value)); return *this;}
+    template<typename AdvancedSecurityAdditionalFlowsT = AdvancedSecurityAdditionalFlowsType>
+    void SetAdvancedSecurityAdditionalFlows(AdvancedSecurityAdditionalFlowsT&& value) { m_advancedSecurityAdditionalFlowsHasBeenSet = true; m_advancedSecurityAdditionalFlows = std::forward<AdvancedSecurityAdditionalFlowsT>(value); }
+    template<typename AdvancedSecurityAdditionalFlowsT = AdvancedSecurityAdditionalFlowsType>
+    UserPoolAddOnsType& WithAdvancedSecurityAdditionalFlows(AdvancedSecurityAdditionalFlowsT&& value) { SetAdvancedSecurityAdditionalFlows(std::forward<AdvancedSecurityAdditionalFlowsT>(value)); return *this;}
     ///@}
   private:
 
-    AdvancedSecurityModeType m_advancedSecurityMode;
+    AdvancedSecurityModeType m_advancedSecurityMode{AdvancedSecurityModeType::NOT_SET};
     bool m_advancedSecurityModeHasBeenSet = false;
 
     AdvancedSecurityAdditionalFlowsType m_advancedSecurityAdditionalFlows;

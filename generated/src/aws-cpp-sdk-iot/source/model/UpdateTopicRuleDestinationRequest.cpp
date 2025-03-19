@@ -12,13 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTopicRuleDestinationRequest::UpdateTopicRuleDestinationRequest() : 
-    m_arnHasBeenSet(false),
-    m_status(TopicRuleDestinationStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTopicRuleDestinationRequest::SerializePayload() const
 {
   JsonValue payload;

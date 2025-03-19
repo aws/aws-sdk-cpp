@@ -35,7 +35,7 @@ namespace Model
   class ListBootstrapActionsResult
   {
   public:
-    AWS_EMR_API ListBootstrapActionsResult();
+    AWS_EMR_API ListBootstrapActionsResult() = default;
     AWS_EMR_API ListBootstrapActionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EMR_API ListBootstrapActionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,45 +44,44 @@ namespace Model
     /**
      * <p>The bootstrap actions associated with the cluster.</p>
      */
-    inline const Aws::Vector<Command>& GetBootstrapActions() const{ return m_bootstrapActions; }
-    inline void SetBootstrapActions(const Aws::Vector<Command>& value) { m_bootstrapActions = value; }
-    inline void SetBootstrapActions(Aws::Vector<Command>&& value) { m_bootstrapActions = std::move(value); }
-    inline ListBootstrapActionsResult& WithBootstrapActions(const Aws::Vector<Command>& value) { SetBootstrapActions(value); return *this;}
-    inline ListBootstrapActionsResult& WithBootstrapActions(Aws::Vector<Command>&& value) { SetBootstrapActions(std::move(value)); return *this;}
-    inline ListBootstrapActionsResult& AddBootstrapActions(const Command& value) { m_bootstrapActions.push_back(value); return *this; }
-    inline ListBootstrapActionsResult& AddBootstrapActions(Command&& value) { m_bootstrapActions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Command>& GetBootstrapActions() const { return m_bootstrapActions; }
+    template<typename BootstrapActionsT = Aws::Vector<Command>>
+    void SetBootstrapActions(BootstrapActionsT&& value) { m_bootstrapActionsHasBeenSet = true; m_bootstrapActions = std::forward<BootstrapActionsT>(value); }
+    template<typename BootstrapActionsT = Aws::Vector<Command>>
+    ListBootstrapActionsResult& WithBootstrapActions(BootstrapActionsT&& value) { SetBootstrapActions(std::forward<BootstrapActionsT>(value)); return *this;}
+    template<typename BootstrapActionsT = Command>
+    ListBootstrapActionsResult& AddBootstrapActions(BootstrapActionsT&& value) { m_bootstrapActionsHasBeenSet = true; m_bootstrapActions.emplace_back(std::forward<BootstrapActionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline ListBootstrapActionsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline ListBootstrapActionsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline ListBootstrapActionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    ListBootstrapActionsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListBootstrapActionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListBootstrapActionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListBootstrapActionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListBootstrapActionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Command> m_bootstrapActions;
+    bool m_bootstrapActionsHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

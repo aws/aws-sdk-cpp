@@ -28,35 +28,35 @@ namespace Model
   class GetAppResult
   {
   public:
-    AWS_AMPLIFY_API GetAppResult();
+    AWS_AMPLIFY_API GetAppResult() = default;
     AWS_AMPLIFY_API GetAppResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AMPLIFY_API GetAppResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const App& GetApp() const{ return m_app; }
-    inline void SetApp(const App& value) { m_app = value; }
-    inline void SetApp(App&& value) { m_app = std::move(value); }
-    inline GetAppResult& WithApp(const App& value) { SetApp(value); return *this;}
-    inline GetAppResult& WithApp(App&& value) { SetApp(std::move(value)); return *this;}
+    inline const App& GetApp() const { return m_app; }
+    template<typename AppT = App>
+    void SetApp(AppT&& value) { m_appHasBeenSet = true; m_app = std::forward<AppT>(value); }
+    template<typename AppT = App>
+    GetAppResult& WithApp(AppT&& value) { SetApp(std::forward<AppT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAppResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAppResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAppResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAppResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     App m_app;
+    bool m_appHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

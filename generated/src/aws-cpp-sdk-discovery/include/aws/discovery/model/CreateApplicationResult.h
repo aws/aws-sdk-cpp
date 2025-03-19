@@ -27,7 +27,7 @@ namespace Model
   class CreateApplicationResult
   {
   public:
-    AWS_APPLICATIONDISCOVERYSERVICE_API CreateApplicationResult();
+    AWS_APPLICATIONDISCOVERYSERVICE_API CreateApplicationResult() = default;
     AWS_APPLICATIONDISCOVERYSERVICE_API CreateApplicationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPLICATIONDISCOVERYSERVICE_API CreateApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The configuration ID of an application to be created.</p>
      */
-    inline const Aws::String& GetConfigurationId() const{ return m_configurationId; }
-    inline void SetConfigurationId(const Aws::String& value) { m_configurationId = value; }
-    inline void SetConfigurationId(Aws::String&& value) { m_configurationId = std::move(value); }
-    inline void SetConfigurationId(const char* value) { m_configurationId.assign(value); }
-    inline CreateApplicationResult& WithConfigurationId(const Aws::String& value) { SetConfigurationId(value); return *this;}
-    inline CreateApplicationResult& WithConfigurationId(Aws::String&& value) { SetConfigurationId(std::move(value)); return *this;}
-    inline CreateApplicationResult& WithConfigurationId(const char* value) { SetConfigurationId(value); return *this;}
+    inline const Aws::String& GetConfigurationId() const { return m_configurationId; }
+    template<typename ConfigurationIdT = Aws::String>
+    void SetConfigurationId(ConfigurationIdT&& value) { m_configurationIdHasBeenSet = true; m_configurationId = std::forward<ConfigurationIdT>(value); }
+    template<typename ConfigurationIdT = Aws::String>
+    CreateApplicationResult& WithConfigurationId(ConfigurationIdT&& value) { SetConfigurationId(std::forward<ConfigurationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateApplicationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateApplicationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateApplicationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateApplicationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_configurationId;
+    bool m_configurationIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

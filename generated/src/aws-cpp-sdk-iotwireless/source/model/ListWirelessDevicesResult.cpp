@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListWirelessDevicesResult::ListWirelessDevicesResult()
-{
-}
-
 ListWirelessDevicesResult::ListWirelessDevicesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListWirelessDevicesResult& ListWirelessDevicesResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WirelessDeviceList"))
   {
     Aws::Utils::Array<JsonView> wirelessDeviceListJsonList = jsonValue.GetArray("WirelessDeviceList");
@@ -42,14 +37,15 @@ ListWirelessDevicesResult& ListWirelessDevicesResult::operator =(const Aws::Amaz
     {
       m_wirelessDeviceList.push_back(wirelessDeviceListJsonList[wirelessDeviceListIndex].AsObject());
     }
+    m_wirelessDeviceListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

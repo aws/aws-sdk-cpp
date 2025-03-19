@@ -18,15 +18,7 @@ namespace Rekognition
 namespace Model
 {
 
-CreateFaceLivenessSessionRequestSettings::CreateFaceLivenessSessionRequestSettings() : 
-    m_outputConfigHasBeenSet(false),
-    m_auditImagesLimit(0),
-    m_auditImagesLimitHasBeenSet(false)
-{
-}
-
 CreateFaceLivenessSessionRequestSettings::CreateFaceLivenessSessionRequestSettings(JsonView jsonValue)
-  : CreateFaceLivenessSessionRequestSettings()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CreateFaceLivenessSessionRequestSettings& CreateFaceLivenessSessionRequestSettin
   if(jsonValue.ValueExists("OutputConfig"))
   {
     m_outputConfig = jsonValue.GetObject("OutputConfig");
-
     m_outputConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuditImagesLimit"))
   {
     m_auditImagesLimit = jsonValue.GetInteger("AuditImagesLimit");
-
     m_auditImagesLimitHasBeenSet = true;
   }
-
   return *this;
 }
 

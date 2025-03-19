@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteVerifiedAccessGroupRequest::DeleteVerifiedAccessGroupRequest() : 
-    m_verifiedAccessGroupIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVerifiedAccessGroupRequest::SerializePayload() const
 {
   Aws::StringStream ss;

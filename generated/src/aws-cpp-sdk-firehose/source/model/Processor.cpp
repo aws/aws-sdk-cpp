@@ -18,15 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-Processor::Processor() : 
-    m_type(ProcessorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 Processor::Processor(JsonView jsonValue)
-  : Processor()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ Processor& Processor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ProcessorTypeMapper::GetProcessorTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
@@ -49,7 +39,6 @@ Processor& Processor::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class DescribePackagingGroupRequest : public MediaPackageVodRequest
   {
   public:
-    AWS_MEDIAPACKAGEVOD_API DescribePackagingGroupRequest();
+    AWS_MEDIAPACKAGEVOD_API DescribePackagingGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * The ID of a MediaPackage VOD PackagingGroup resource.
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline DescribePackagingGroupRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline DescribePackagingGroupRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline DescribePackagingGroupRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    DescribePackagingGroupRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
   private:
 

@@ -20,14 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-LoggingConfig::LoggingConfig() : 
-    m_logRoleArnHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false)
-{
-}
-
 LoggingConfig::LoggingConfig(const XmlNode& xmlNode)
-  : LoggingConfig()
 {
   *this = xmlNode;
 }

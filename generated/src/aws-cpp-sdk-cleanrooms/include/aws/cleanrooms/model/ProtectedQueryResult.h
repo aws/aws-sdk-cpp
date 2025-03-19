@@ -31,7 +31,7 @@ namespace Model
   class ProtectedQueryResult
   {
   public:
-    AWS_CLEANROOMS_API ProtectedQueryResult();
+    AWS_CLEANROOMS_API ProtectedQueryResult() = default;
     AWS_CLEANROOMS_API ProtectedQueryResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API ProtectedQueryResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The output of the protected query.</p>
      */
-    inline const ProtectedQueryOutput& GetOutput() const{ return m_output; }
+    inline const ProtectedQueryOutput& GetOutput() const { return m_output; }
     inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
-    inline void SetOutput(const ProtectedQueryOutput& value) { m_outputHasBeenSet = true; m_output = value; }
-    inline void SetOutput(ProtectedQueryOutput&& value) { m_outputHasBeenSet = true; m_output = std::move(value); }
-    inline ProtectedQueryResult& WithOutput(const ProtectedQueryOutput& value) { SetOutput(value); return *this;}
-    inline ProtectedQueryResult& WithOutput(ProtectedQueryOutput&& value) { SetOutput(std::move(value)); return *this;}
+    template<typename OutputT = ProtectedQueryOutput>
+    void SetOutput(OutputT&& value) { m_outputHasBeenSet = true; m_output = std::forward<OutputT>(value); }
+    template<typename OutputT = ProtectedQueryOutput>
+    ProtectedQueryResult& WithOutput(OutputT&& value) { SetOutput(std::forward<OutputT>(value)); return *this;}
     ///@}
   private:
 

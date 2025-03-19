@@ -12,25 +12,6 @@ using namespace Aws::CleanRooms::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateCollaborationRequest::CreateCollaborationRequest() : 
-    m_membersHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creatorMemberAbilitiesHasBeenSet(false),
-    m_creatorMLMemberAbilitiesHasBeenSet(false),
-    m_creatorDisplayNameHasBeenSet(false),
-    m_dataEncryptionMetadataHasBeenSet(false),
-    m_queryLogStatus(CollaborationQueryLogStatus::NOT_SET),
-    m_queryLogStatusHasBeenSet(false),
-    m_jobLogStatus(CollaborationJobLogStatus::NOT_SET),
-    m_jobLogStatusHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_creatorPaymentConfigurationHasBeenSet(false),
-    m_analyticsEngine(AnalyticsEngine::NOT_SET),
-    m_analyticsEngineHasBeenSet(false)
-{
-}
-
 Aws::String CreateCollaborationRequest::SerializePayload() const
 {
   JsonValue payload;

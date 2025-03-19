@@ -12,10 +12,6 @@ using namespace Aws::Macie2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMasterAccountRequest::GetMasterAccountRequest()
-{
-}
-
 Aws::String GetMasterAccountRequest::SerializePayload() const
 {
   return {};

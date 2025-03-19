@@ -12,12 +12,6 @@ using namespace Aws::GuardDuty::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribePublishingDestinationRequest::DescribePublishingDestinationRequest() : 
-    m_detectorIdHasBeenSet(false),
-    m_destinationIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribePublishingDestinationRequest::SerializePayload() const
 {
   return {};

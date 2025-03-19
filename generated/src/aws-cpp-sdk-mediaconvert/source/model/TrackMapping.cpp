@@ -18,15 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-TrackMapping::TrackMapping() : 
-    m_audioTrackIndexesHasBeenSet(false),
-    m_dataTrackIndexesHasBeenSet(false),
-    m_videoTrackIndexesHasBeenSet(false)
-{
-}
-
 TrackMapping::TrackMapping(JsonView jsonValue)
-  : TrackMapping()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ TrackMapping& TrackMapping::operator =(JsonView jsonValue)
     }
     m_audioTrackIndexesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataTrackIndexes"))
   {
     Aws::Utils::Array<JsonView> dataTrackIndexesJsonList = jsonValue.GetArray("dataTrackIndexes");
@@ -52,7 +43,6 @@ TrackMapping& TrackMapping::operator =(JsonView jsonValue)
     }
     m_dataTrackIndexesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("videoTrackIndexes"))
   {
     Aws::Utils::Array<JsonView> videoTrackIndexesJsonList = jsonValue.GetArray("videoTrackIndexes");
@@ -62,7 +52,6 @@ TrackMapping& TrackMapping::operator =(JsonView jsonValue)
     }
     m_videoTrackIndexesHasBeenSet = true;
   }
-
   return *this;
 }
 

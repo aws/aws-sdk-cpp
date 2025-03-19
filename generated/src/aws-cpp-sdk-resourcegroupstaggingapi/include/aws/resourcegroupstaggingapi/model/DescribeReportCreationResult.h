@@ -27,7 +27,7 @@ namespace Model
   class DescribeReportCreationResult
   {
   public:
-    AWS_RESOURCEGROUPSTAGGINGAPI_API DescribeReportCreationResult();
+    AWS_RESOURCEGROUPSTAGGINGAPI_API DescribeReportCreationResult() = default;
     AWS_RESOURCEGROUPSTAGGINGAPI_API DescribeReportCreationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESOURCEGROUPSTAGGINGAPI_API DescribeReportCreationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,60 +43,56 @@ namespace Model
      * accessible. </p> </li> <li> <p> <code>NO REPORT</code> - No report was generated
      * in the last 90 days.</p> </li> </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_status.assign(value); }
-    inline DescribeReportCreationResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline DescribeReportCreationResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline DescribeReportCreationResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+    inline const Aws::String& GetStatus() const { return m_status; }
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    DescribeReportCreationResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The path to the Amazon S3 bucket where the report was stored on creation.</p>
      */
-    inline const Aws::String& GetS3Location() const{ return m_s3Location; }
-    inline void SetS3Location(const Aws::String& value) { m_s3Location = value; }
-    inline void SetS3Location(Aws::String&& value) { m_s3Location = std::move(value); }
-    inline void SetS3Location(const char* value) { m_s3Location.assign(value); }
-    inline DescribeReportCreationResult& WithS3Location(const Aws::String& value) { SetS3Location(value); return *this;}
-    inline DescribeReportCreationResult& WithS3Location(Aws::String&& value) { SetS3Location(std::move(value)); return *this;}
-    inline DescribeReportCreationResult& WithS3Location(const char* value) { SetS3Location(value); return *this;}
+    inline const Aws::String& GetS3Location() const { return m_s3Location; }
+    template<typename S3LocationT = Aws::String>
+    void SetS3Location(S3LocationT&& value) { m_s3LocationHasBeenSet = true; m_s3Location = std::forward<S3LocationT>(value); }
+    template<typename S3LocationT = Aws::String>
+    DescribeReportCreationResult& WithS3Location(S3LocationT&& value) { SetS3Location(std::forward<S3LocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details of the common errors that all operations return.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessage.assign(value); }
-    inline DescribeReportCreationResult& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline DescribeReportCreationResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline DescribeReportCreationResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    DescribeReportCreationResult& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeReportCreationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeReportCreationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeReportCreationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeReportCreationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_s3Location;
+    bool m_s3LocationHasBeenSet = false;
 
     Aws::String m_errorMessage;
+    bool m_errorMessageHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

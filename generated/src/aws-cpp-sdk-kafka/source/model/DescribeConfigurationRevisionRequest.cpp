@@ -12,13 +12,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeConfigurationRevisionRequest::DescribeConfigurationRevisionRequest() : 
-    m_arnHasBeenSet(false),
-    m_revision(0),
-    m_revisionHasBeenSet(false)
-{
-}
-
 Aws::String DescribeConfigurationRevisionRequest::SerializePayload() const
 {
   return {};

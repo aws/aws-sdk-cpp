@@ -32,7 +32,7 @@ namespace Model
   class UpdateStackSetRequest : public CloudFormationRequest
   {
   public:
-    AWS_CLOUDFORMATION_API UpdateStackSetRequest();
+    AWS_CLOUDFORMATION_API UpdateStackSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -51,28 +51,24 @@ namespace Model
     /**
      * <p>The name or unique ID of the stack set that you want to update.</p>
      */
-    inline const Aws::String& GetStackSetName() const{ return m_stackSetName; }
+    inline const Aws::String& GetStackSetName() const { return m_stackSetName; }
     inline bool StackSetNameHasBeenSet() const { return m_stackSetNameHasBeenSet; }
-    inline void SetStackSetName(const Aws::String& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = value; }
-    inline void SetStackSetName(Aws::String&& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = std::move(value); }
-    inline void SetStackSetName(const char* value) { m_stackSetNameHasBeenSet = true; m_stackSetName.assign(value); }
-    inline UpdateStackSetRequest& WithStackSetName(const Aws::String& value) { SetStackSetName(value); return *this;}
-    inline UpdateStackSetRequest& WithStackSetName(Aws::String&& value) { SetStackSetName(std::move(value)); return *this;}
-    inline UpdateStackSetRequest& WithStackSetName(const char* value) { SetStackSetName(value); return *this;}
+    template<typename StackSetNameT = Aws::String>
+    void SetStackSetName(StackSetNameT&& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = std::forward<StackSetNameT>(value); }
+    template<typename StackSetNameT = Aws::String>
+    UpdateStackSetRequest& WithStackSetName(StackSetNameT&& value) { SetStackSetName(std::forward<StackSetNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A brief description of updates that you are making.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateStackSetRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateStackSetRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateStackSetRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateStackSetRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +78,12 @@ namespace Model
      * only one of the following parameters: <code>TemplateBody</code> or
      * <code>TemplateURL</code>—or set <code>UsePreviousTemplate</code> to true.</p>
      */
-    inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
+    inline const Aws::String& GetTemplateBody() const { return m_templateBody; }
     inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
-    inline void SetTemplateBody(const Aws::String& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
-    inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::move(value); }
-    inline void SetTemplateBody(const char* value) { m_templateBodyHasBeenSet = true; m_templateBody.assign(value); }
-    inline UpdateStackSetRequest& WithTemplateBody(const Aws::String& value) { SetTemplateBody(value); return *this;}
-    inline UpdateStackSetRequest& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
-    inline UpdateStackSetRequest& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
+    template<typename TemplateBodyT = Aws::String>
+    void SetTemplateBody(TemplateBodyT&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::forward<TemplateBodyT>(value); }
+    template<typename TemplateBodyT = Aws::String>
+    UpdateStackSetRequest& WithTemplateBody(TemplateBodyT&& value) { SetTemplateBody(std::forward<TemplateBodyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,14 +95,12 @@ namespace Model
      * following parameters: <code>TemplateBody</code> or <code>TemplateURL</code>—or
      * set <code>UsePreviousTemplate</code> to true.</p>
      */
-    inline const Aws::String& GetTemplateURL() const{ return m_templateURL; }
+    inline const Aws::String& GetTemplateURL() const { return m_templateURL; }
     inline bool TemplateURLHasBeenSet() const { return m_templateURLHasBeenSet; }
-    inline void SetTemplateURL(const Aws::String& value) { m_templateURLHasBeenSet = true; m_templateURL = value; }
-    inline void SetTemplateURL(Aws::String&& value) { m_templateURLHasBeenSet = true; m_templateURL = std::move(value); }
-    inline void SetTemplateURL(const char* value) { m_templateURLHasBeenSet = true; m_templateURL.assign(value); }
-    inline UpdateStackSetRequest& WithTemplateURL(const Aws::String& value) { SetTemplateURL(value); return *this;}
-    inline UpdateStackSetRequest& WithTemplateURL(Aws::String&& value) { SetTemplateURL(std::move(value)); return *this;}
-    inline UpdateStackSetRequest& WithTemplateURL(const char* value) { SetTemplateURL(value); return *this;}
+    template<typename TemplateURLT = Aws::String>
+    void SetTemplateURL(TemplateURLT&& value) { m_templateURLHasBeenSet = true; m_templateURL = std::forward<TemplateURLT>(value); }
+    template<typename TemplateURLT = Aws::String>
+    UpdateStackSetRequest& WithTemplateURL(TemplateURLT&& value) { SetTemplateURL(std::forward<TemplateURLT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,7 +110,7 @@ namespace Model
      * parameters: <code>TemplateBody</code> or <code>TemplateURL</code>—or set
      * <code>UsePreviousTemplate</code> to true.</p>
      */
-    inline bool GetUsePreviousTemplate() const{ return m_usePreviousTemplate; }
+    inline bool GetUsePreviousTemplate() const { return m_usePreviousTemplate; }
     inline bool UsePreviousTemplateHasBeenSet() const { return m_usePreviousTemplateHasBeenSet; }
     inline void SetUsePreviousTemplate(bool value) { m_usePreviousTemplateHasBeenSet = true; m_usePreviousTemplate = value; }
     inline UpdateStackSetRequest& WithUsePreviousTemplate(bool value) { SetUsePreviousTemplate(value); return *this;}
@@ -128,14 +120,14 @@ namespace Model
     /**
      * <p>A list of input parameters for the stack set template.</p>
      */
-    inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Vector<Parameter>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Vector<Parameter>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Vector<Parameter>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline UpdateStackSetRequest& WithParameters(const Aws::Vector<Parameter>& value) { SetParameters(value); return *this;}
-    inline UpdateStackSetRequest& WithParameters(Aws::Vector<Parameter>&& value) { SetParameters(std::move(value)); return *this;}
-    inline UpdateStackSetRequest& AddParameters(const Parameter& value) { m_parametersHasBeenSet = true; m_parameters.push_back(value); return *this; }
-    inline UpdateStackSetRequest& AddParameters(Parameter&& value) { m_parametersHasBeenSet = true; m_parameters.push_back(std::move(value)); return *this; }
+    template<typename ParametersT = Aws::Vector<Parameter>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Vector<Parameter>>
+    UpdateStackSetRequest& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersT = Parameter>
+    UpdateStackSetRequest& AddParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters.emplace_back(std::forward<ParametersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -190,14 +182,13 @@ namespace Model
      * macro in your template the stack set operation will fail.</p>  </li>
      * </ul>
      */
-    inline const Aws::Vector<Capability>& GetCapabilities() const{ return m_capabilities; }
+    inline const Aws::Vector<Capability>& GetCapabilities() const { return m_capabilities; }
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
-    inline void SetCapabilities(const Aws::Vector<Capability>& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
-    inline void SetCapabilities(Aws::Vector<Capability>&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
-    inline UpdateStackSetRequest& WithCapabilities(const Aws::Vector<Capability>& value) { SetCapabilities(value); return *this;}
-    inline UpdateStackSetRequest& WithCapabilities(Aws::Vector<Capability>&& value) { SetCapabilities(std::move(value)); return *this;}
-    inline UpdateStackSetRequest& AddCapabilities(const Capability& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
-    inline UpdateStackSetRequest& AddCapabilities(Capability&& value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(std::move(value)); return *this; }
+    template<typename CapabilitiesT = Aws::Vector<Capability>>
+    void SetCapabilities(CapabilitiesT&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::forward<CapabilitiesT>(value); }
+    template<typename CapabilitiesT = Aws::Vector<Capability>>
+    UpdateStackSetRequest& WithCapabilities(CapabilitiesT&& value) { SetCapabilities(std::forward<CapabilitiesT>(value)); return *this;}
+    inline UpdateStackSetRequest& AddCapabilities(Capability value) { m_capabilitiesHasBeenSet = true; m_capabilities.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -224,26 +215,26 @@ namespace Model
      * permission(s), the entire <code>UpdateStackSet</code> action fails with an
      * <code>access denied</code> error, and the stack set is not updated.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline UpdateStackSetRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline UpdateStackSetRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline UpdateStackSetRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline UpdateStackSetRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    UpdateStackSetRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    UpdateStackSetRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Preferences for how CloudFormation performs this stack set operation.</p>
      */
-    inline const StackSetOperationPreferences& GetOperationPreferences() const{ return m_operationPreferences; }
+    inline const StackSetOperationPreferences& GetOperationPreferences() const { return m_operationPreferences; }
     inline bool OperationPreferencesHasBeenSet() const { return m_operationPreferencesHasBeenSet; }
-    inline void SetOperationPreferences(const StackSetOperationPreferences& value) { m_operationPreferencesHasBeenSet = true; m_operationPreferences = value; }
-    inline void SetOperationPreferences(StackSetOperationPreferences&& value) { m_operationPreferencesHasBeenSet = true; m_operationPreferences = std::move(value); }
-    inline UpdateStackSetRequest& WithOperationPreferences(const StackSetOperationPreferences& value) { SetOperationPreferences(value); return *this;}
-    inline UpdateStackSetRequest& WithOperationPreferences(StackSetOperationPreferences&& value) { SetOperationPreferences(std::move(value)); return *this;}
+    template<typename OperationPreferencesT = StackSetOperationPreferences>
+    void SetOperationPreferences(OperationPreferencesT&& value) { m_operationPreferencesHasBeenSet = true; m_operationPreferences = std::forward<OperationPreferencesT>(value); }
+    template<typename OperationPreferencesT = StackSetOperationPreferences>
+    UpdateStackSetRequest& WithOperationPreferences(OperationPreferencesT&& value) { SetOperationPreferences(std::forward<OperationPreferencesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -259,14 +250,12 @@ namespace Model
      * it is the same customized administrator role used with this stack set
      * previously.</p>
      */
-    inline const Aws::String& GetAdministrationRoleARN() const{ return m_administrationRoleARN; }
+    inline const Aws::String& GetAdministrationRoleARN() const { return m_administrationRoleARN; }
     inline bool AdministrationRoleARNHasBeenSet() const { return m_administrationRoleARNHasBeenSet; }
-    inline void SetAdministrationRoleARN(const Aws::String& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = value; }
-    inline void SetAdministrationRoleARN(Aws::String&& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = std::move(value); }
-    inline void SetAdministrationRoleARN(const char* value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN.assign(value); }
-    inline UpdateStackSetRequest& WithAdministrationRoleARN(const Aws::String& value) { SetAdministrationRoleARN(value); return *this;}
-    inline UpdateStackSetRequest& WithAdministrationRoleARN(Aws::String&& value) { SetAdministrationRoleARN(std::move(value)); return *this;}
-    inline UpdateStackSetRequest& WithAdministrationRoleARN(const char* value) { SetAdministrationRoleARN(value); return *this;}
+    template<typename AdministrationRoleARNT = Aws::String>
+    void SetAdministrationRoleARN(AdministrationRoleARNT&& value) { m_administrationRoleARNHasBeenSet = true; m_administrationRoleARN = std::forward<AdministrationRoleARNT>(value); }
+    template<typename AdministrationRoleARNT = Aws::String>
+    UpdateStackSetRequest& WithAdministrationRoleARN(AdministrationRoleARNT&& value) { SetAdministrationRoleARN(std::forward<AdministrationRoleARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -282,14 +271,12 @@ namespace Model
      * with the stack set, so long as you have permissions to perform operations on the
      * stack set.</p>
      */
-    inline const Aws::String& GetExecutionRoleName() const{ return m_executionRoleName; }
+    inline const Aws::String& GetExecutionRoleName() const { return m_executionRoleName; }
     inline bool ExecutionRoleNameHasBeenSet() const { return m_executionRoleNameHasBeenSet; }
-    inline void SetExecutionRoleName(const Aws::String& value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName = value; }
-    inline void SetExecutionRoleName(Aws::String&& value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName = std::move(value); }
-    inline void SetExecutionRoleName(const char* value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName.assign(value); }
-    inline UpdateStackSetRequest& WithExecutionRoleName(const Aws::String& value) { SetExecutionRoleName(value); return *this;}
-    inline UpdateStackSetRequest& WithExecutionRoleName(Aws::String&& value) { SetExecutionRoleName(std::move(value)); return *this;}
-    inline UpdateStackSetRequest& WithExecutionRoleName(const char* value) { SetExecutionRoleName(value); return *this;}
+    template<typename ExecutionRoleNameT = Aws::String>
+    void SetExecutionRoleName(ExecutionRoleNameT&& value) { m_executionRoleNameHasBeenSet = true; m_executionRoleName = std::forward<ExecutionRoleNameT>(value); }
+    template<typename ExecutionRoleNameT = Aws::String>
+    UpdateStackSetRequest& WithExecutionRoleName(ExecutionRoleNameT&& value) { SetExecutionRoleName(std::forward<ExecutionRoleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -307,12 +294,12 @@ namespace Model
      * Regions, while leaving all other stack instances with their existing stack
      * instance status.</p>
      */
-    inline const DeploymentTargets& GetDeploymentTargets() const{ return m_deploymentTargets; }
+    inline const DeploymentTargets& GetDeploymentTargets() const { return m_deploymentTargets; }
     inline bool DeploymentTargetsHasBeenSet() const { return m_deploymentTargetsHasBeenSet; }
-    inline void SetDeploymentTargets(const DeploymentTargets& value) { m_deploymentTargetsHasBeenSet = true; m_deploymentTargets = value; }
-    inline void SetDeploymentTargets(DeploymentTargets&& value) { m_deploymentTargetsHasBeenSet = true; m_deploymentTargets = std::move(value); }
-    inline UpdateStackSetRequest& WithDeploymentTargets(const DeploymentTargets& value) { SetDeploymentTargets(value); return *this;}
-    inline UpdateStackSetRequest& WithDeploymentTargets(DeploymentTargets&& value) { SetDeploymentTargets(std::move(value)); return *this;}
+    template<typename DeploymentTargetsT = DeploymentTargets>
+    void SetDeploymentTargets(DeploymentTargetsT&& value) { m_deploymentTargetsHasBeenSet = true; m_deploymentTargets = std::forward<DeploymentTargetsT>(value); }
+    template<typename DeploymentTargetsT = DeploymentTargets>
+    UpdateStackSetRequest& WithDeploymentTargets(DeploymentTargetsT&& value) { SetDeploymentTargets(std::forward<DeploymentTargetsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -330,12 +317,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-orgs-activate-trusted-access.html">Activate
      * trusted access for stack sets with Organizations</a>.</p> </li> </ul>
      */
-    inline const PermissionModels& GetPermissionModel() const{ return m_permissionModel; }
+    inline PermissionModels GetPermissionModel() const { return m_permissionModel; }
     inline bool PermissionModelHasBeenSet() const { return m_permissionModelHasBeenSet; }
-    inline void SetPermissionModel(const PermissionModels& value) { m_permissionModelHasBeenSet = true; m_permissionModel = value; }
-    inline void SetPermissionModel(PermissionModels&& value) { m_permissionModelHasBeenSet = true; m_permissionModel = std::move(value); }
-    inline UpdateStackSetRequest& WithPermissionModel(const PermissionModels& value) { SetPermissionModel(value); return *this;}
-    inline UpdateStackSetRequest& WithPermissionModel(PermissionModels&& value) { SetPermissionModel(std::move(value)); return *this;}
+    inline void SetPermissionModel(PermissionModels value) { m_permissionModelHasBeenSet = true; m_permissionModel = value; }
+    inline UpdateStackSetRequest& WithPermissionModel(PermissionModels value) { SetPermissionModel(value); return *this;}
     ///@}
 
     ///@{
@@ -345,12 +330,12 @@ namespace Model
      * organizational unit (OU).</p> <p>If you specify <code>AutoDeployment</code>,
      * don't specify <code>DeploymentTargets</code> or <code>Regions</code>.</p>
      */
-    inline const AutoDeployment& GetAutoDeployment() const{ return m_autoDeployment; }
+    inline const AutoDeployment& GetAutoDeployment() const { return m_autoDeployment; }
     inline bool AutoDeploymentHasBeenSet() const { return m_autoDeploymentHasBeenSet; }
-    inline void SetAutoDeployment(const AutoDeployment& value) { m_autoDeploymentHasBeenSet = true; m_autoDeployment = value; }
-    inline void SetAutoDeployment(AutoDeployment&& value) { m_autoDeploymentHasBeenSet = true; m_autoDeployment = std::move(value); }
-    inline UpdateStackSetRequest& WithAutoDeployment(const AutoDeployment& value) { SetAutoDeployment(value); return *this;}
-    inline UpdateStackSetRequest& WithAutoDeployment(AutoDeployment&& value) { SetAutoDeployment(std::move(value)); return *this;}
+    template<typename AutoDeploymentT = AutoDeployment>
+    void SetAutoDeployment(AutoDeploymentT&& value) { m_autoDeploymentHasBeenSet = true; m_autoDeployment = std::forward<AutoDeploymentT>(value); }
+    template<typename AutoDeploymentT = AutoDeployment>
+    UpdateStackSetRequest& WithAutoDeployment(AutoDeploymentT&& value) { SetAutoDeployment(std::forward<AutoDeploymentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -364,14 +349,12 @@ namespace Model
      * operation with a new operation ID retries all stack instances whose status is
      * <code>OUTDATED</code>.</p>
      */
-    inline const Aws::String& GetOperationId() const{ return m_operationId; }
+    inline const Aws::String& GetOperationId() const { return m_operationId; }
     inline bool OperationIdHasBeenSet() const { return m_operationIdHasBeenSet; }
-    inline void SetOperationId(const Aws::String& value) { m_operationIdHasBeenSet = true; m_operationId = value; }
-    inline void SetOperationId(Aws::String&& value) { m_operationIdHasBeenSet = true; m_operationId = std::move(value); }
-    inline void SetOperationId(const char* value) { m_operationIdHasBeenSet = true; m_operationId.assign(value); }
-    inline UpdateStackSetRequest& WithOperationId(const Aws::String& value) { SetOperationId(value); return *this;}
-    inline UpdateStackSetRequest& WithOperationId(Aws::String&& value) { SetOperationId(std::move(value)); return *this;}
-    inline UpdateStackSetRequest& WithOperationId(const char* value) { SetOperationId(value); return *this;}
+    template<typename OperationIdT = Aws::String>
+    void SetOperationId(OperationIdT&& value) { m_operationIdHasBeenSet = true; m_operationId = std::forward<OperationIdT>(value); }
+    template<typename OperationIdT = Aws::String>
+    UpdateStackSetRequest& WithOperationId(OperationIdT&& value) { SetOperationId(std::forward<OperationIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -391,15 +374,14 @@ namespace Model
      * Web Services Regions, while leaving all other stack instances with their
      * existing stack instance status.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAccounts() const{ return m_accounts; }
+    inline const Aws::Vector<Aws::String>& GetAccounts() const { return m_accounts; }
     inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
-    inline void SetAccounts(const Aws::Vector<Aws::String>& value) { m_accountsHasBeenSet = true; m_accounts = value; }
-    inline void SetAccounts(Aws::Vector<Aws::String>&& value) { m_accountsHasBeenSet = true; m_accounts = std::move(value); }
-    inline UpdateStackSetRequest& WithAccounts(const Aws::Vector<Aws::String>& value) { SetAccounts(value); return *this;}
-    inline UpdateStackSetRequest& WithAccounts(Aws::Vector<Aws::String>&& value) { SetAccounts(std::move(value)); return *this;}
-    inline UpdateStackSetRequest& AddAccounts(const Aws::String& value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
-    inline UpdateStackSetRequest& AddAccounts(Aws::String&& value) { m_accountsHasBeenSet = true; m_accounts.push_back(std::move(value)); return *this; }
-    inline UpdateStackSetRequest& AddAccounts(const char* value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
+    template<typename AccountsT = Aws::Vector<Aws::String>>
+    void SetAccounts(AccountsT&& value) { m_accountsHasBeenSet = true; m_accounts = std::forward<AccountsT>(value); }
+    template<typename AccountsT = Aws::Vector<Aws::String>>
+    UpdateStackSetRequest& WithAccounts(AccountsT&& value) { SetAccounts(std::forward<AccountsT>(value)); return *this;}
+    template<typename AccountsT = Aws::String>
+    UpdateStackSetRequest& AddAccounts(AccountsT&& value) { m_accountsHasBeenSet = true; m_accounts.emplace_back(std::forward<AccountsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -418,15 +400,14 @@ namespace Model
      * specified accounts and Regions, while leaving all other stack instances with
      * their existing stack instance status.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
+    inline const Aws::Vector<Aws::String>& GetRegions() const { return m_regions; }
     inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
-    inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
-    inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
-    inline UpdateStackSetRequest& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
-    inline UpdateStackSetRequest& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
-    inline UpdateStackSetRequest& AddRegions(const Aws::String& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
-    inline UpdateStackSetRequest& AddRegions(Aws::String&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
-    inline UpdateStackSetRequest& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
+    template<typename RegionsT = Aws::Vector<Aws::String>>
+    void SetRegions(RegionsT&& value) { m_regionsHasBeenSet = true; m_regions = std::forward<RegionsT>(value); }
+    template<typename RegionsT = Aws::Vector<Aws::String>>
+    UpdateStackSetRequest& WithRegions(RegionsT&& value) { SetRegions(std::forward<RegionsT>(value)); return *this;}
+    template<typename RegionsT = Aws::String>
+    UpdateStackSetRequest& AddRegions(RegionsT&& value) { m_regionsHasBeenSet = true; m_regions.emplace_back(std::forward<RegionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -444,12 +425,10 @@ namespace Model
      * a delegated administrator</a> in the <i>CloudFormation User Guide</i>.</p> </li>
      * </ul>
      */
-    inline const CallAs& GetCallAs() const{ return m_callAs; }
+    inline CallAs GetCallAs() const { return m_callAs; }
     inline bool CallAsHasBeenSet() const { return m_callAsHasBeenSet; }
-    inline void SetCallAs(const CallAs& value) { m_callAsHasBeenSet = true; m_callAs = value; }
-    inline void SetCallAs(CallAs&& value) { m_callAsHasBeenSet = true; m_callAs = std::move(value); }
-    inline UpdateStackSetRequest& WithCallAs(const CallAs& value) { SetCallAs(value); return *this;}
-    inline UpdateStackSetRequest& WithCallAs(CallAs&& value) { SetCallAs(std::move(value)); return *this;}
+    inline void SetCallAs(CallAs value) { m_callAsHasBeenSet = true; m_callAs = value; }
+    inline UpdateStackSetRequest& WithCallAs(CallAs value) { SetCallAs(value); return *this;}
     ///@}
 
     ///@{
@@ -457,12 +436,12 @@ namespace Model
      * <p>Describes whether StackSets performs non-conflicting operations concurrently
      * and queues conflicting operations.</p>
      */
-    inline const ManagedExecution& GetManagedExecution() const{ return m_managedExecution; }
+    inline const ManagedExecution& GetManagedExecution() const { return m_managedExecution; }
     inline bool ManagedExecutionHasBeenSet() const { return m_managedExecutionHasBeenSet; }
-    inline void SetManagedExecution(const ManagedExecution& value) { m_managedExecutionHasBeenSet = true; m_managedExecution = value; }
-    inline void SetManagedExecution(ManagedExecution&& value) { m_managedExecutionHasBeenSet = true; m_managedExecution = std::move(value); }
-    inline UpdateStackSetRequest& WithManagedExecution(const ManagedExecution& value) { SetManagedExecution(value); return *this;}
-    inline UpdateStackSetRequest& WithManagedExecution(ManagedExecution&& value) { SetManagedExecution(std::move(value)); return *this;}
+    template<typename ManagedExecutionT = ManagedExecution>
+    void SetManagedExecution(ManagedExecutionT&& value) { m_managedExecutionHasBeenSet = true; m_managedExecution = std::forward<ManagedExecutionT>(value); }
+    template<typename ManagedExecutionT = ManagedExecution>
+    UpdateStackSetRequest& WithManagedExecution(ManagedExecutionT&& value) { SetManagedExecution(std::forward<ManagedExecutionT>(value)); return *this;}
     ///@}
   private:
 
@@ -478,7 +457,7 @@ namespace Model
     Aws::String m_templateURL;
     bool m_templateURLHasBeenSet = false;
 
-    bool m_usePreviousTemplate;
+    bool m_usePreviousTemplate{false};
     bool m_usePreviousTemplateHasBeenSet = false;
 
     Aws::Vector<Parameter> m_parameters;
@@ -502,7 +481,7 @@ namespace Model
     DeploymentTargets m_deploymentTargets;
     bool m_deploymentTargetsHasBeenSet = false;
 
-    PermissionModels m_permissionModel;
+    PermissionModels m_permissionModel{PermissionModels::NOT_SET};
     bool m_permissionModelHasBeenSet = false;
 
     AutoDeployment m_autoDeployment;
@@ -517,7 +496,7 @@ namespace Model
     Aws::Vector<Aws::String> m_regions;
     bool m_regionsHasBeenSet = false;
 
-    CallAs m_callAs;
+    CallAs m_callAs{CallAs::NOT_SET};
     bool m_callAsHasBeenSet = false;
 
     ManagedExecution m_managedExecution;

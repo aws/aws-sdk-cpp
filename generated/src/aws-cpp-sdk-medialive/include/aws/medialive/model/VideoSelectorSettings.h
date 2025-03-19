@@ -32,7 +32,7 @@ namespace Model
   class VideoSelectorSettings
   {
   public:
-    AWS_MEDIALIVE_API VideoSelectorSettings();
+    AWS_MEDIALIVE_API VideoSelectorSettings() = default;
     AWS_MEDIALIVE_API VideoSelectorSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API VideoSelectorSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,22 +40,22 @@ namespace Model
 
     ///@{
     
-    inline const VideoSelectorPid& GetVideoSelectorPid() const{ return m_videoSelectorPid; }
+    inline const VideoSelectorPid& GetVideoSelectorPid() const { return m_videoSelectorPid; }
     inline bool VideoSelectorPidHasBeenSet() const { return m_videoSelectorPidHasBeenSet; }
-    inline void SetVideoSelectorPid(const VideoSelectorPid& value) { m_videoSelectorPidHasBeenSet = true; m_videoSelectorPid = value; }
-    inline void SetVideoSelectorPid(VideoSelectorPid&& value) { m_videoSelectorPidHasBeenSet = true; m_videoSelectorPid = std::move(value); }
-    inline VideoSelectorSettings& WithVideoSelectorPid(const VideoSelectorPid& value) { SetVideoSelectorPid(value); return *this;}
-    inline VideoSelectorSettings& WithVideoSelectorPid(VideoSelectorPid&& value) { SetVideoSelectorPid(std::move(value)); return *this;}
+    template<typename VideoSelectorPidT = VideoSelectorPid>
+    void SetVideoSelectorPid(VideoSelectorPidT&& value) { m_videoSelectorPidHasBeenSet = true; m_videoSelectorPid = std::forward<VideoSelectorPidT>(value); }
+    template<typename VideoSelectorPidT = VideoSelectorPid>
+    VideoSelectorSettings& WithVideoSelectorPid(VideoSelectorPidT&& value) { SetVideoSelectorPid(std::forward<VideoSelectorPidT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const VideoSelectorProgramId& GetVideoSelectorProgramId() const{ return m_videoSelectorProgramId; }
+    inline const VideoSelectorProgramId& GetVideoSelectorProgramId() const { return m_videoSelectorProgramId; }
     inline bool VideoSelectorProgramIdHasBeenSet() const { return m_videoSelectorProgramIdHasBeenSet; }
-    inline void SetVideoSelectorProgramId(const VideoSelectorProgramId& value) { m_videoSelectorProgramIdHasBeenSet = true; m_videoSelectorProgramId = value; }
-    inline void SetVideoSelectorProgramId(VideoSelectorProgramId&& value) { m_videoSelectorProgramIdHasBeenSet = true; m_videoSelectorProgramId = std::move(value); }
-    inline VideoSelectorSettings& WithVideoSelectorProgramId(const VideoSelectorProgramId& value) { SetVideoSelectorProgramId(value); return *this;}
-    inline VideoSelectorSettings& WithVideoSelectorProgramId(VideoSelectorProgramId&& value) { SetVideoSelectorProgramId(std::move(value)); return *this;}
+    template<typename VideoSelectorProgramIdT = VideoSelectorProgramId>
+    void SetVideoSelectorProgramId(VideoSelectorProgramIdT&& value) { m_videoSelectorProgramIdHasBeenSet = true; m_videoSelectorProgramId = std::forward<VideoSelectorProgramIdT>(value); }
+    template<typename VideoSelectorProgramIdT = VideoSelectorProgramId>
+    VideoSelectorSettings& WithVideoSelectorProgramId(VideoSelectorProgramIdT&& value) { SetVideoSelectorProgramId(std::forward<VideoSelectorProgramIdT>(value)); return *this;}
     ///@}
   private:
 

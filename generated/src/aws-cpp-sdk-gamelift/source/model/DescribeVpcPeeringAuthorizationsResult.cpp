@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeVpcPeeringAuthorizationsResult::DescribeVpcPeeringAuthorizationsResult()
-{
-}
-
 DescribeVpcPeeringAuthorizationsResult::DescribeVpcPeeringAuthorizationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DescribeVpcPeeringAuthorizationsResult& DescribeVpcPeeringAuthorizationsResult::
     {
       m_vpcPeeringAuthorizations.push_back(vpcPeeringAuthorizationsJsonList[vpcPeeringAuthorizationsIndex].AsObject());
     }
+    m_vpcPeeringAuthorizationsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

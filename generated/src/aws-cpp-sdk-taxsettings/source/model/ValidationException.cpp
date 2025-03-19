@@ -18,16 +18,7 @@ namespace TaxSettings
 namespace Model
 {
 
-ValidationException::ValidationException() : 
-    m_errorCode(ValidationExceptionErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_fieldListHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ValidationException::ValidationException(JsonView jsonValue)
-  : ValidationException()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ ValidationException& ValidationException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = ValidationExceptionErrorCodeMapper::GetValidationExceptionErrorCodeForName(jsonValue.GetString("errorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fieldList"))
   {
     Aws::Utils::Array<JsonView> fieldListJsonList = jsonValue.GetArray("fieldList");
@@ -50,14 +39,11 @@ ValidationException& ValidationException::operator =(JsonView jsonValue)
     }
     m_fieldListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

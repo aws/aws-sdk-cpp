@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCommandRequest::GetCommandRequest() : 
-    m_commandIdHasBeenSet(false)
-{
-}
-
 Aws::String GetCommandRequest::SerializePayload() const
 {
   return {};

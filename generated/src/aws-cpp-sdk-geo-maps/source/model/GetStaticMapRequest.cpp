@@ -15,41 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetStaticMapRequest::GetStaticMapRequest() : 
-    m_boundingBoxHasBeenSet(false),
-    m_boundedPositionsHasBeenSet(false),
-    m_centerHasBeenSet(false),
-    m_colorScheme(ColorScheme::NOT_SET),
-    m_colorSchemeHasBeenSet(false),
-    m_compactOverlayHasBeenSet(false),
-    m_cropLabels(false),
-    m_cropLabelsHasBeenSet(false),
-    m_geoJsonOverlayHasBeenSet(false),
-    m_height(0),
-    m_heightHasBeenSet(false),
-    m_keyHasBeenSet(false),
-    m_labelSize(LabelSize::NOT_SET),
-    m_labelSizeHasBeenSet(false),
-    m_languageHasBeenSet(false),
-    m_padding(0),
-    m_paddingHasBeenSet(false),
-    m_politicalViewHasBeenSet(false),
-    m_pointsOfInterests(MapFeatureMode::NOT_SET),
-    m_pointsOfInterestsHasBeenSet(false),
-    m_radius(0),
-    m_radiusHasBeenSet(false),
-    m_fileNameHasBeenSet(false),
-    m_scaleBarUnit(ScaleBarUnit::NOT_SET),
-    m_scaleBarUnitHasBeenSet(false),
-    m_style(StaticMapStyle::NOT_SET),
-    m_styleHasBeenSet(false),
-    m_width(0),
-    m_widthHasBeenSet(false),
-    m_zoom(0.0),
-    m_zoomHasBeenSet(false)
-{
-}
-
 Aws::String GetStaticMapRequest::SerializePayload() const
 {
   return {};

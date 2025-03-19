@@ -31,7 +31,7 @@ namespace Model
   class UspsZip
   {
   public:
-    AWS_GEOPLACES_API UspsZip();
+    AWS_GEOPLACES_API UspsZip() = default;
     AWS_GEOPLACES_API UspsZip(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API UspsZip& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOPLACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
      * <p>The ZIP Classification Code, or in other words what type of postal code is
      * it. </p>
      */
-    inline const ZipClassificationCode& GetZipClassificationCode() const{ return m_zipClassificationCode; }
+    inline ZipClassificationCode GetZipClassificationCode() const { return m_zipClassificationCode; }
     inline bool ZipClassificationCodeHasBeenSet() const { return m_zipClassificationCodeHasBeenSet; }
-    inline void SetZipClassificationCode(const ZipClassificationCode& value) { m_zipClassificationCodeHasBeenSet = true; m_zipClassificationCode = value; }
-    inline void SetZipClassificationCode(ZipClassificationCode&& value) { m_zipClassificationCodeHasBeenSet = true; m_zipClassificationCode = std::move(value); }
-    inline UspsZip& WithZipClassificationCode(const ZipClassificationCode& value) { SetZipClassificationCode(value); return *this;}
-    inline UspsZip& WithZipClassificationCode(ZipClassificationCode&& value) { SetZipClassificationCode(std::move(value)); return *this;}
+    inline void SetZipClassificationCode(ZipClassificationCode value) { m_zipClassificationCodeHasBeenSet = true; m_zipClassificationCode = value; }
+    inline UspsZip& WithZipClassificationCode(ZipClassificationCode value) { SetZipClassificationCode(value); return *this;}
     ///@}
   private:
 
-    ZipClassificationCode m_zipClassificationCode;
+    ZipClassificationCode m_zipClassificationCode{ZipClassificationCode::NOT_SET};
     bool m_zipClassificationCodeHasBeenSet = false;
   };
 

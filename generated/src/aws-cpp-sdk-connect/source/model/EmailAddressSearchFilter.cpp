@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-EmailAddressSearchFilter::EmailAddressSearchFilter() : 
-    m_tagFilterHasBeenSet(false)
-{
-}
-
 EmailAddressSearchFilter::EmailAddressSearchFilter(JsonView jsonValue)
-  : EmailAddressSearchFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EmailAddressSearchFilter& EmailAddressSearchFilter::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("TagFilter"))
   {
     m_tagFilter = jsonValue.GetObject("TagFilter");
-
     m_tagFilterHasBeenSet = true;
   }
-
   return *this;
 }
 

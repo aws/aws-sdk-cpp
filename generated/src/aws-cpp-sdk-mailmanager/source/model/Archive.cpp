@@ -18,17 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-Archive::Archive() : 
-    m_archiveIdHasBeenSet(false),
-    m_archiveNameHasBeenSet(false),
-    m_archiveState(ArchiveState::NOT_SET),
-    m_archiveStateHasBeenSet(false),
-    m_lastUpdatedTimestampHasBeenSet(false)
-{
-}
-
 Archive::Archive(JsonView jsonValue)
-  : Archive()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ Archive& Archive::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ArchiveId"))
   {
     m_archiveId = jsonValue.GetString("ArchiveId");
-
     m_archiveIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ArchiveName"))
   {
     m_archiveName = jsonValue.GetString("ArchiveName");
-
     m_archiveNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ArchiveState"))
   {
     m_archiveState = ArchiveStateMapper::GetArchiveStateForName(jsonValue.GetString("ArchiveState"));
-
     m_archiveStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTimestamp"))
   {
     m_lastUpdatedTimestamp = jsonValue.GetDouble("LastUpdatedTimestamp");
-
     m_lastUpdatedTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

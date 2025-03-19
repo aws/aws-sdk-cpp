@@ -12,11 +12,6 @@ using namespace Aws::ChimeSDKVoice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteVoiceConnectorTerminationRequest::DeleteVoiceConnectorTerminationRequest() : 
-    m_voiceConnectorIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVoiceConnectorTerminationRequest::SerializePayload() const
 {
   return {};

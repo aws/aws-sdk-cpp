@@ -32,7 +32,7 @@ namespace Model
   class FindingSourceDetail
   {
   public:
-    AWS_ACCESSANALYZER_API FindingSourceDetail();
+    AWS_ACCESSANALYZER_API FindingSourceDetail() = default;
     AWS_ACCESSANALYZER_API FindingSourceDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API FindingSourceDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
      * depends on whether the ARN represents an access point or a multi-region access
      * point.</p>
      */
-    inline const Aws::String& GetAccessPointArn() const{ return m_accessPointArn; }
+    inline const Aws::String& GetAccessPointArn() const { return m_accessPointArn; }
     inline bool AccessPointArnHasBeenSet() const { return m_accessPointArnHasBeenSet; }
-    inline void SetAccessPointArn(const Aws::String& value) { m_accessPointArnHasBeenSet = true; m_accessPointArn = value; }
-    inline void SetAccessPointArn(Aws::String&& value) { m_accessPointArnHasBeenSet = true; m_accessPointArn = std::move(value); }
-    inline void SetAccessPointArn(const char* value) { m_accessPointArnHasBeenSet = true; m_accessPointArn.assign(value); }
-    inline FindingSourceDetail& WithAccessPointArn(const Aws::String& value) { SetAccessPointArn(value); return *this;}
-    inline FindingSourceDetail& WithAccessPointArn(Aws::String&& value) { SetAccessPointArn(std::move(value)); return *this;}
-    inline FindingSourceDetail& WithAccessPointArn(const char* value) { SetAccessPointArn(value); return *this;}
+    template<typename AccessPointArnT = Aws::String>
+    void SetAccessPointArn(AccessPointArnT&& value) { m_accessPointArnHasBeenSet = true; m_accessPointArn = std::forward<AccessPointArnT>(value); }
+    template<typename AccessPointArnT = Aws::String>
+    FindingSourceDetail& WithAccessPointArn(AccessPointArnT&& value) { SetAccessPointArn(std::forward<AccessPointArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The account of the cross-account access point that generated the finding.</p>
      */
-    inline const Aws::String& GetAccessPointAccount() const{ return m_accessPointAccount; }
+    inline const Aws::String& GetAccessPointAccount() const { return m_accessPointAccount; }
     inline bool AccessPointAccountHasBeenSet() const { return m_accessPointAccountHasBeenSet; }
-    inline void SetAccessPointAccount(const Aws::String& value) { m_accessPointAccountHasBeenSet = true; m_accessPointAccount = value; }
-    inline void SetAccessPointAccount(Aws::String&& value) { m_accessPointAccountHasBeenSet = true; m_accessPointAccount = std::move(value); }
-    inline void SetAccessPointAccount(const char* value) { m_accessPointAccountHasBeenSet = true; m_accessPointAccount.assign(value); }
-    inline FindingSourceDetail& WithAccessPointAccount(const Aws::String& value) { SetAccessPointAccount(value); return *this;}
-    inline FindingSourceDetail& WithAccessPointAccount(Aws::String&& value) { SetAccessPointAccount(std::move(value)); return *this;}
-    inline FindingSourceDetail& WithAccessPointAccount(const char* value) { SetAccessPointAccount(value); return *this;}
+    template<typename AccessPointAccountT = Aws::String>
+    void SetAccessPointAccount(AccessPointAccountT&& value) { m_accessPointAccountHasBeenSet = true; m_accessPointAccount = std::forward<AccessPointAccountT>(value); }
+    template<typename AccessPointAccountT = Aws::String>
+    FindingSourceDetail& WithAccessPointAccount(AccessPointAccountT&& value) { SetAccessPointAccount(std::forward<AccessPointAccountT>(value)); return *this;}
     ///@}
   private:
 

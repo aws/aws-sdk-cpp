@@ -18,16 +18,7 @@ namespace FSx
 namespace Model
 {
 
-InvalidNetworkSettings::InvalidNetworkSettings() : 
-    m_messageHasBeenSet(false),
-    m_invalidSubnetIdHasBeenSet(false),
-    m_invalidSecurityGroupIdHasBeenSet(false),
-    m_invalidRouteTableIdHasBeenSet(false)
-{
-}
-
 InvalidNetworkSettings::InvalidNetworkSettings(JsonView jsonValue)
-  : InvalidNetworkSettings()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ InvalidNetworkSettings& InvalidNetworkSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvalidSubnetId"))
   {
     m_invalidSubnetId = jsonValue.GetString("InvalidSubnetId");
-
     m_invalidSubnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvalidSecurityGroupId"))
   {
     m_invalidSecurityGroupId = jsonValue.GetString("InvalidSecurityGroupId");
-
     m_invalidSecurityGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvalidRouteTableId"))
   {
     m_invalidRouteTableId = jsonValue.GetString("InvalidRouteTableId");
-
     m_invalidRouteTableIdHasBeenSet = true;
   }
-
   return *this;
 }
 

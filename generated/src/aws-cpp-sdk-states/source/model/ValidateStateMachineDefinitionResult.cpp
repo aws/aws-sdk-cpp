@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ValidateStateMachineDefinitionResult::ValidateStateMachineDefinitionResult() : 
-    m_result(ValidateStateMachineDefinitionResultCode::NOT_SET),
-    m_truncated(false)
-{
-}
-
 ValidateStateMachineDefinitionResult::ValidateStateMachineDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ValidateStateMachineDefinitionResult()
 {
   *this = result;
 }
@@ -35,9 +28,8 @@ ValidateStateMachineDefinitionResult& ValidateStateMachineDefinitionResult::oper
   if(jsonValue.ValueExists("result"))
   {
     m_result = ValidateStateMachineDefinitionResultCodeMapper::GetValidateStateMachineDefinitionResultCodeForName(jsonValue.GetString("result"));
-
+    m_resultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("diagnostics"))
   {
     Aws::Utils::Array<JsonView> diagnosticsJsonList = jsonValue.GetArray("diagnostics");
@@ -45,20 +37,20 @@ ValidateStateMachineDefinitionResult& ValidateStateMachineDefinitionResult::oper
     {
       m_diagnostics.push_back(diagnosticsJsonList[diagnosticsIndex].AsObject());
     }
+    m_diagnosticsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("truncated"))
   {
     m_truncated = jsonValue.GetBool("truncated");
-
+    m_truncatedHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

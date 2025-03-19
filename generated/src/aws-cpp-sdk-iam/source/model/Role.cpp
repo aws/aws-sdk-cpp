@@ -20,24 +20,7 @@ namespace IAM
 namespace Model
 {
 
-Role::Role() : 
-    m_pathHasBeenSet(false),
-    m_roleNameHasBeenSet(false),
-    m_roleIdHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_assumeRolePolicyDocumentHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_maxSessionDuration(0),
-    m_maxSessionDurationHasBeenSet(false),
-    m_permissionsBoundaryHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_roleLastUsedHasBeenSet(false)
-{
-}
-
 Role::Role(const XmlNode& xmlNode)
-  : Role()
 {
   *this = xmlNode;
 }
@@ -106,6 +89,7 @@ Role& Role::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("member");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

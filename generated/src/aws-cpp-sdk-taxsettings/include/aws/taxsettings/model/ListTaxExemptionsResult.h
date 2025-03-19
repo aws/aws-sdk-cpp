@@ -29,7 +29,7 @@ namespace Model
   class ListTaxExemptionsResult
   {
   public:
-    AWS_TAXSETTINGS_API ListTaxExemptionsResult();
+    AWS_TAXSETTINGS_API ListTaxExemptionsResult() = default;
     AWS_TAXSETTINGS_API ListTaxExemptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TAXSETTINGS_API ListTaxExemptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>The token to retrieve the next set of results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListTaxExemptionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTaxExemptionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTaxExemptionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTaxExemptionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,36 +50,35 @@ namespace Model
      * <p>The tax exemption details map of <code>accountId</code> and tax exemption
      * details. </p>
      */
-    inline const Aws::Map<Aws::String, TaxExemptionDetails>& GetTaxExemptionDetailsMap() const{ return m_taxExemptionDetailsMap; }
-    inline void SetTaxExemptionDetailsMap(const Aws::Map<Aws::String, TaxExemptionDetails>& value) { m_taxExemptionDetailsMap = value; }
-    inline void SetTaxExemptionDetailsMap(Aws::Map<Aws::String, TaxExemptionDetails>&& value) { m_taxExemptionDetailsMap = std::move(value); }
-    inline ListTaxExemptionsResult& WithTaxExemptionDetailsMap(const Aws::Map<Aws::String, TaxExemptionDetails>& value) { SetTaxExemptionDetailsMap(value); return *this;}
-    inline ListTaxExemptionsResult& WithTaxExemptionDetailsMap(Aws::Map<Aws::String, TaxExemptionDetails>&& value) { SetTaxExemptionDetailsMap(std::move(value)); return *this;}
-    inline ListTaxExemptionsResult& AddTaxExemptionDetailsMap(const Aws::String& key, const TaxExemptionDetails& value) { m_taxExemptionDetailsMap.emplace(key, value); return *this; }
-    inline ListTaxExemptionsResult& AddTaxExemptionDetailsMap(Aws::String&& key, const TaxExemptionDetails& value) { m_taxExemptionDetailsMap.emplace(std::move(key), value); return *this; }
-    inline ListTaxExemptionsResult& AddTaxExemptionDetailsMap(const Aws::String& key, TaxExemptionDetails&& value) { m_taxExemptionDetailsMap.emplace(key, std::move(value)); return *this; }
-    inline ListTaxExemptionsResult& AddTaxExemptionDetailsMap(Aws::String&& key, TaxExemptionDetails&& value) { m_taxExemptionDetailsMap.emplace(std::move(key), std::move(value)); return *this; }
-    inline ListTaxExemptionsResult& AddTaxExemptionDetailsMap(const char* key, TaxExemptionDetails&& value) { m_taxExemptionDetailsMap.emplace(key, std::move(value)); return *this; }
-    inline ListTaxExemptionsResult& AddTaxExemptionDetailsMap(const char* key, const TaxExemptionDetails& value) { m_taxExemptionDetailsMap.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, TaxExemptionDetails>& GetTaxExemptionDetailsMap() const { return m_taxExemptionDetailsMap; }
+    template<typename TaxExemptionDetailsMapT = Aws::Map<Aws::String, TaxExemptionDetails>>
+    void SetTaxExemptionDetailsMap(TaxExemptionDetailsMapT&& value) { m_taxExemptionDetailsMapHasBeenSet = true; m_taxExemptionDetailsMap = std::forward<TaxExemptionDetailsMapT>(value); }
+    template<typename TaxExemptionDetailsMapT = Aws::Map<Aws::String, TaxExemptionDetails>>
+    ListTaxExemptionsResult& WithTaxExemptionDetailsMap(TaxExemptionDetailsMapT&& value) { SetTaxExemptionDetailsMap(std::forward<TaxExemptionDetailsMapT>(value)); return *this;}
+    template<typename TaxExemptionDetailsMapKeyT = Aws::String, typename TaxExemptionDetailsMapValueT = TaxExemptionDetails>
+    ListTaxExemptionsResult& AddTaxExemptionDetailsMap(TaxExemptionDetailsMapKeyT&& key, TaxExemptionDetailsMapValueT&& value) {
+      m_taxExemptionDetailsMapHasBeenSet = true; m_taxExemptionDetailsMap.emplace(std::forward<TaxExemptionDetailsMapKeyT>(key), std::forward<TaxExemptionDetailsMapValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListTaxExemptionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListTaxExemptionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListTaxExemptionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListTaxExemptionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Map<Aws::String, TaxExemptionDetails> m_taxExemptionDetailsMap;
+    bool m_taxExemptionDetailsMapHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

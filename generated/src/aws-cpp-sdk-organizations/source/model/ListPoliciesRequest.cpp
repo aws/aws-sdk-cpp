@@ -12,15 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListPoliciesRequest::ListPoliciesRequest() : 
-    m_filter(PolicyType::NOT_SET),
-    m_filterHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListPoliciesRequest::SerializePayload() const
 {
   JsonValue payload;

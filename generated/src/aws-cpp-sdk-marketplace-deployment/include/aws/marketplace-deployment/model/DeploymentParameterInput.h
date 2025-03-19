@@ -32,7 +32,7 @@ namespace Model
   class DeploymentParameterInput
   {
   public:
-    AWS_MARKETPLACEDEPLOYMENT_API DeploymentParameterInput();
+    AWS_MARKETPLACEDEPLOYMENT_API DeploymentParameterInput() = default;
     AWS_MARKETPLACEDEPLOYMENT_API DeploymentParameterInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACEDEPLOYMENT_API DeploymentParameterInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACEDEPLOYMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
      * matches an existing deployment parameter, this request will update the existing
      * resource.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DeploymentParameterInput& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DeploymentParameterInput& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DeploymentParameterInput& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DeploymentParameterInput& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The text to encrypt and store in the secret.</p>
      */
-    inline const Aws::String& GetSecretString() const{ return m_secretString; }
+    inline const Aws::String& GetSecretString() const { return m_secretString; }
     inline bool SecretStringHasBeenSet() const { return m_secretStringHasBeenSet; }
-    inline void SetSecretString(const Aws::String& value) { m_secretStringHasBeenSet = true; m_secretString = value; }
-    inline void SetSecretString(Aws::String&& value) { m_secretStringHasBeenSet = true; m_secretString = std::move(value); }
-    inline void SetSecretString(const char* value) { m_secretStringHasBeenSet = true; m_secretString.assign(value); }
-    inline DeploymentParameterInput& WithSecretString(const Aws::String& value) { SetSecretString(value); return *this;}
-    inline DeploymentParameterInput& WithSecretString(Aws::String&& value) { SetSecretString(std::move(value)); return *this;}
-    inline DeploymentParameterInput& WithSecretString(const char* value) { SetSecretString(value); return *this;}
+    template<typename SecretStringT = Aws::String>
+    void SetSecretString(SecretStringT&& value) { m_secretStringHasBeenSet = true; m_secretString = std::forward<SecretStringT>(value); }
+    template<typename SecretStringT = Aws::String>
+    DeploymentParameterInput& WithSecretString(SecretStringT&& value) { SetSecretString(std::forward<SecretStringT>(value)); return *this;}
     ///@}
   private:
 

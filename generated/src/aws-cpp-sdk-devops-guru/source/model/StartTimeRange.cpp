@@ -18,14 +18,7 @@ namespace DevOpsGuru
 namespace Model
 {
 
-StartTimeRange::StartTimeRange() : 
-    m_fromTimeHasBeenSet(false),
-    m_toTimeHasBeenSet(false)
-{
-}
-
 StartTimeRange::StartTimeRange(JsonView jsonValue)
-  : StartTimeRange()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ StartTimeRange& StartTimeRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FromTime"))
   {
     m_fromTime = jsonValue.GetDouble("FromTime");
-
     m_fromTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ToTime"))
   {
     m_toTime = jsonValue.GetDouble("ToTime");
-
     m_toTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

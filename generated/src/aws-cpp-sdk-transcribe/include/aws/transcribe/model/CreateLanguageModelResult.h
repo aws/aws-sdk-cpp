@@ -31,7 +31,7 @@ namespace Model
   class CreateLanguageModelResult
   {
   public:
-    AWS_TRANSCRIBESERVICE_API CreateLanguageModelResult();
+    AWS_TRANSCRIBESERVICE_API CreateLanguageModelResult() = default;
     AWS_TRANSCRIBESERVICE_API CreateLanguageModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSCRIBESERVICE_API CreateLanguageModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,11 +40,9 @@ namespace Model
     /**
      * <p>The language code you selected for your custom language model.</p>
      */
-    inline const CLMLanguageCode& GetLanguageCode() const{ return m_languageCode; }
-    inline void SetLanguageCode(const CLMLanguageCode& value) { m_languageCode = value; }
-    inline void SetLanguageCode(CLMLanguageCode&& value) { m_languageCode = std::move(value); }
-    inline CreateLanguageModelResult& WithLanguageCode(const CLMLanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline CreateLanguageModelResult& WithLanguageCode(CLMLanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline CLMLanguageCode GetLanguageCode() const { return m_languageCode; }
+    inline void SetLanguageCode(CLMLanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline CreateLanguageModelResult& WithLanguageCode(CLMLanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
@@ -52,24 +50,20 @@ namespace Model
      * <p>The Amazon Transcribe standard language model, or base model, you specified
      * when creating your custom language model.</p>
      */
-    inline const BaseModelName& GetBaseModelName() const{ return m_baseModelName; }
-    inline void SetBaseModelName(const BaseModelName& value) { m_baseModelName = value; }
-    inline void SetBaseModelName(BaseModelName&& value) { m_baseModelName = std::move(value); }
-    inline CreateLanguageModelResult& WithBaseModelName(const BaseModelName& value) { SetBaseModelName(value); return *this;}
-    inline CreateLanguageModelResult& WithBaseModelName(BaseModelName&& value) { SetBaseModelName(std::move(value)); return *this;}
+    inline BaseModelName GetBaseModelName() const { return m_baseModelName; }
+    inline void SetBaseModelName(BaseModelName value) { m_baseModelNameHasBeenSet = true; m_baseModelName = value; }
+    inline CreateLanguageModelResult& WithBaseModelName(BaseModelName value) { SetBaseModelName(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of your custom language model.</p>
      */
-    inline const Aws::String& GetModelName() const{ return m_modelName; }
-    inline void SetModelName(const Aws::String& value) { m_modelName = value; }
-    inline void SetModelName(Aws::String&& value) { m_modelName = std::move(value); }
-    inline void SetModelName(const char* value) { m_modelName.assign(value); }
-    inline CreateLanguageModelResult& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
-    inline CreateLanguageModelResult& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
-    inline CreateLanguageModelResult& WithModelName(const char* value) { SetModelName(value); return *this;}
+    inline const Aws::String& GetModelName() const { return m_modelName; }
+    template<typename ModelNameT = Aws::String>
+    void SetModelName(ModelNameT&& value) { m_modelNameHasBeenSet = true; m_modelName = std::forward<ModelNameT>(value); }
+    template<typename ModelNameT = Aws::String>
+    CreateLanguageModelResult& WithModelName(ModelNameT&& value) { SetModelName(std::forward<ModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,11 +72,11 @@ namespace Model
      * locations you provided for your training (<code>S3Uri</code>) and tuning
      * (<code>TuningDataS3Uri</code>) data.</p>
      */
-    inline const InputDataConfig& GetInputDataConfig() const{ return m_inputDataConfig; }
-    inline void SetInputDataConfig(const InputDataConfig& value) { m_inputDataConfig = value; }
-    inline void SetInputDataConfig(InputDataConfig&& value) { m_inputDataConfig = std::move(value); }
-    inline CreateLanguageModelResult& WithInputDataConfig(const InputDataConfig& value) { SetInputDataConfig(value); return *this;}
-    inline CreateLanguageModelResult& WithInputDataConfig(InputDataConfig&& value) { SetInputDataConfig(std::move(value)); return *this;}
+    inline const InputDataConfig& GetInputDataConfig() const { return m_inputDataConfig; }
+    template<typename InputDataConfigT = InputDataConfig>
+    void SetInputDataConfig(InputDataConfigT&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = std::forward<InputDataConfigT>(value); }
+    template<typename InputDataConfigT = InputDataConfig>
+    CreateLanguageModelResult& WithInputDataConfig(InputDataConfigT&& value) { SetInputDataConfig(std::forward<InputDataConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,36 +84,38 @@ namespace Model
      * <p>The status of your custom language model. When the status displays as
      * <code>COMPLETED</code>, your model is ready to use.</p>
      */
-    inline const ModelStatus& GetModelStatus() const{ return m_modelStatus; }
-    inline void SetModelStatus(const ModelStatus& value) { m_modelStatus = value; }
-    inline void SetModelStatus(ModelStatus&& value) { m_modelStatus = std::move(value); }
-    inline CreateLanguageModelResult& WithModelStatus(const ModelStatus& value) { SetModelStatus(value); return *this;}
-    inline CreateLanguageModelResult& WithModelStatus(ModelStatus&& value) { SetModelStatus(std::move(value)); return *this;}
+    inline ModelStatus GetModelStatus() const { return m_modelStatus; }
+    inline void SetModelStatus(ModelStatus value) { m_modelStatusHasBeenSet = true; m_modelStatus = value; }
+    inline CreateLanguageModelResult& WithModelStatus(ModelStatus value) { SetModelStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateLanguageModelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateLanguageModelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateLanguageModelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateLanguageModelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    CLMLanguageCode m_languageCode;
+    CLMLanguageCode m_languageCode{CLMLanguageCode::NOT_SET};
+    bool m_languageCodeHasBeenSet = false;
 
-    BaseModelName m_baseModelName;
+    BaseModelName m_baseModelName{BaseModelName::NOT_SET};
+    bool m_baseModelNameHasBeenSet = false;
 
     Aws::String m_modelName;
+    bool m_modelNameHasBeenSet = false;
 
     InputDataConfig m_inputDataConfig;
+    bool m_inputDataConfigHasBeenSet = false;
 
-    ModelStatus m_modelStatus;
+    ModelStatus m_modelStatus{ModelStatus::NOT_SET};
+    bool m_modelStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,14 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-KafkaCluster::KafkaCluster() : 
-    m_amazonMskClusterHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false)
-{
-}
-
 KafkaCluster::KafkaCluster(JsonView jsonValue)
-  : KafkaCluster()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ KafkaCluster& KafkaCluster::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("amazonMskCluster"))
   {
     m_amazonMskCluster = jsonValue.GetObject("amazonMskCluster");
-
     m_amazonMskClusterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("vpcConfig");
-
     m_vpcConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

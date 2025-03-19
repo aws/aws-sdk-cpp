@@ -23,7 +23,7 @@ namespace Model
   class MergeProfilesRequest : public CustomerProfilesRequest
   {
   public:
-    AWS_CUSTOMERPROFILES_API MergeProfilesRequest();
+    AWS_CUSTOMERPROFILES_API MergeProfilesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,43 +38,38 @@ namespace Model
     /**
      * <p>The unique name of the domain.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline MergeProfilesRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline MergeProfilesRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline MergeProfilesRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    MergeProfilesRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the profile to be taken.</p>
      */
-    inline const Aws::String& GetMainProfileId() const{ return m_mainProfileId; }
+    inline const Aws::String& GetMainProfileId() const { return m_mainProfileId; }
     inline bool MainProfileIdHasBeenSet() const { return m_mainProfileIdHasBeenSet; }
-    inline void SetMainProfileId(const Aws::String& value) { m_mainProfileIdHasBeenSet = true; m_mainProfileId = value; }
-    inline void SetMainProfileId(Aws::String&& value) { m_mainProfileIdHasBeenSet = true; m_mainProfileId = std::move(value); }
-    inline void SetMainProfileId(const char* value) { m_mainProfileIdHasBeenSet = true; m_mainProfileId.assign(value); }
-    inline MergeProfilesRequest& WithMainProfileId(const Aws::String& value) { SetMainProfileId(value); return *this;}
-    inline MergeProfilesRequest& WithMainProfileId(Aws::String&& value) { SetMainProfileId(std::move(value)); return *this;}
-    inline MergeProfilesRequest& WithMainProfileId(const char* value) { SetMainProfileId(value); return *this;}
+    template<typename MainProfileIdT = Aws::String>
+    void SetMainProfileId(MainProfileIdT&& value) { m_mainProfileIdHasBeenSet = true; m_mainProfileId = std::forward<MainProfileIdT>(value); }
+    template<typename MainProfileIdT = Aws::String>
+    MergeProfilesRequest& WithMainProfileId(MainProfileIdT&& value) { SetMainProfileId(std::forward<MainProfileIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the profile to be merged into MainProfileId.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetProfileIdsToBeMerged() const{ return m_profileIdsToBeMerged; }
+    inline const Aws::Vector<Aws::String>& GetProfileIdsToBeMerged() const { return m_profileIdsToBeMerged; }
     inline bool ProfileIdsToBeMergedHasBeenSet() const { return m_profileIdsToBeMergedHasBeenSet; }
-    inline void SetProfileIdsToBeMerged(const Aws::Vector<Aws::String>& value) { m_profileIdsToBeMergedHasBeenSet = true; m_profileIdsToBeMerged = value; }
-    inline void SetProfileIdsToBeMerged(Aws::Vector<Aws::String>&& value) { m_profileIdsToBeMergedHasBeenSet = true; m_profileIdsToBeMerged = std::move(value); }
-    inline MergeProfilesRequest& WithProfileIdsToBeMerged(const Aws::Vector<Aws::String>& value) { SetProfileIdsToBeMerged(value); return *this;}
-    inline MergeProfilesRequest& WithProfileIdsToBeMerged(Aws::Vector<Aws::String>&& value) { SetProfileIdsToBeMerged(std::move(value)); return *this;}
-    inline MergeProfilesRequest& AddProfileIdsToBeMerged(const Aws::String& value) { m_profileIdsToBeMergedHasBeenSet = true; m_profileIdsToBeMerged.push_back(value); return *this; }
-    inline MergeProfilesRequest& AddProfileIdsToBeMerged(Aws::String&& value) { m_profileIdsToBeMergedHasBeenSet = true; m_profileIdsToBeMerged.push_back(std::move(value)); return *this; }
-    inline MergeProfilesRequest& AddProfileIdsToBeMerged(const char* value) { m_profileIdsToBeMergedHasBeenSet = true; m_profileIdsToBeMerged.push_back(value); return *this; }
+    template<typename ProfileIdsToBeMergedT = Aws::Vector<Aws::String>>
+    void SetProfileIdsToBeMerged(ProfileIdsToBeMergedT&& value) { m_profileIdsToBeMergedHasBeenSet = true; m_profileIdsToBeMerged = std::forward<ProfileIdsToBeMergedT>(value); }
+    template<typename ProfileIdsToBeMergedT = Aws::Vector<Aws::String>>
+    MergeProfilesRequest& WithProfileIdsToBeMerged(ProfileIdsToBeMergedT&& value) { SetProfileIdsToBeMerged(std::forward<ProfileIdsToBeMergedT>(value)); return *this;}
+    template<typename ProfileIdsToBeMergedT = Aws::String>
+    MergeProfilesRequest& AddProfileIdsToBeMerged(ProfileIdsToBeMergedT&& value) { m_profileIdsToBeMergedHasBeenSet = true; m_profileIdsToBeMerged.emplace_back(std::forward<ProfileIdsToBeMergedT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -84,12 +79,12 @@ namespace Model
      * Profile1 into MainProfile. This would be the identifier of the EmailAddress
      * field in Profile1. </p>
      */
-    inline const FieldSourceProfileIds& GetFieldSourceProfileIds() const{ return m_fieldSourceProfileIds; }
+    inline const FieldSourceProfileIds& GetFieldSourceProfileIds() const { return m_fieldSourceProfileIds; }
     inline bool FieldSourceProfileIdsHasBeenSet() const { return m_fieldSourceProfileIdsHasBeenSet; }
-    inline void SetFieldSourceProfileIds(const FieldSourceProfileIds& value) { m_fieldSourceProfileIdsHasBeenSet = true; m_fieldSourceProfileIds = value; }
-    inline void SetFieldSourceProfileIds(FieldSourceProfileIds&& value) { m_fieldSourceProfileIdsHasBeenSet = true; m_fieldSourceProfileIds = std::move(value); }
-    inline MergeProfilesRequest& WithFieldSourceProfileIds(const FieldSourceProfileIds& value) { SetFieldSourceProfileIds(value); return *this;}
-    inline MergeProfilesRequest& WithFieldSourceProfileIds(FieldSourceProfileIds&& value) { SetFieldSourceProfileIds(std::move(value)); return *this;}
+    template<typename FieldSourceProfileIdsT = FieldSourceProfileIds>
+    void SetFieldSourceProfileIds(FieldSourceProfileIdsT&& value) { m_fieldSourceProfileIdsHasBeenSet = true; m_fieldSourceProfileIds = std::forward<FieldSourceProfileIdsT>(value); }
+    template<typename FieldSourceProfileIdsT = FieldSourceProfileIds>
+    MergeProfilesRequest& WithFieldSourceProfileIds(FieldSourceProfileIdsT&& value) { SetFieldSourceProfileIds(std::forward<FieldSourceProfileIdsT>(value)); return *this;}
     ///@}
   private:
 

@@ -30,7 +30,7 @@ namespace Model
   class GetMedicalVocabularyResult
   {
   public:
-    AWS_TRANSCRIBESERVICE_API GetMedicalVocabularyResult();
+    AWS_TRANSCRIBESERVICE_API GetMedicalVocabularyResult() = default;
     AWS_TRANSCRIBESERVICE_API GetMedicalVocabularyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSCRIBESERVICE_API GetMedicalVocabularyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,11 @@ namespace Model
      * <p>The name of the custom medical vocabulary you requested information
      * about.</p>
      */
-    inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
-    inline void SetVocabularyName(const Aws::String& value) { m_vocabularyName = value; }
-    inline void SetVocabularyName(Aws::String&& value) { m_vocabularyName = std::move(value); }
-    inline void SetVocabularyName(const char* value) { m_vocabularyName.assign(value); }
-    inline GetMedicalVocabularyResult& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
-    inline GetMedicalVocabularyResult& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
-    inline GetMedicalVocabularyResult& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
+    inline const Aws::String& GetVocabularyName() const { return m_vocabularyName; }
+    template<typename VocabularyNameT = Aws::String>
+    void SetVocabularyName(VocabularyNameT&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::forward<VocabularyNameT>(value); }
+    template<typename VocabularyNameT = Aws::String>
+    GetMedicalVocabularyResult& WithVocabularyName(VocabularyNameT&& value) { SetVocabularyName(std::forward<VocabularyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,11 +53,9 @@ namespace Model
      * (<code>en-US</code>) is the only language supported with Amazon Transcribe
      * Medical.</p>
      */
-    inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
-    inline void SetLanguageCode(const LanguageCode& value) { m_languageCode = value; }
-    inline void SetLanguageCode(LanguageCode&& value) { m_languageCode = std::move(value); }
-    inline GetMedicalVocabularyResult& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline GetMedicalVocabularyResult& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline LanguageCode GetLanguageCode() const { return m_languageCode; }
+    inline void SetLanguageCode(LanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline GetMedicalVocabularyResult& WithLanguageCode(LanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
@@ -68,11 +64,9 @@ namespace Model
      * <code>READY</code>, you can use the custom vocabulary in a
      * <code>StartMedicalTranscriptionJob</code> request.</p>
      */
-    inline const VocabularyState& GetVocabularyState() const{ return m_vocabularyState; }
-    inline void SetVocabularyState(const VocabularyState& value) { m_vocabularyState = value; }
-    inline void SetVocabularyState(VocabularyState&& value) { m_vocabularyState = std::move(value); }
-    inline GetMedicalVocabularyResult& WithVocabularyState(const VocabularyState& value) { SetVocabularyState(value); return *this;}
-    inline GetMedicalVocabularyResult& WithVocabularyState(VocabularyState&& value) { SetVocabularyState(std::move(value)); return *this;}
+    inline VocabularyState GetVocabularyState() const { return m_vocabularyState; }
+    inline void SetVocabularyState(VocabularyState value) { m_vocabularyStateHasBeenSet = true; m_vocabularyState = value; }
+    inline GetMedicalVocabularyResult& WithVocabularyState(VocabularyState value) { SetVocabularyState(value); return *this;}
     ///@}
 
     ///@{
@@ -83,11 +77,11 @@ namespace Model
      * <code>2022-05-04T12:32:58.761000-07:00</code> represents 12:32 PM UTC-7 on May
      * 4, 2022.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
-    inline GetMedicalVocabularyResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline GetMedicalVocabularyResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    GetMedicalVocabularyResult& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,13 +92,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/CommonErrors.html">Common
      * Errors</a>.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
-    inline GetMedicalVocabularyResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline GetMedicalVocabularyResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline GetMedicalVocabularyResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    GetMedicalVocabularyResult& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,40 +104,43 @@ namespace Model
      * <p>The Amazon S3 location where the specified custom medical vocabulary is
      * stored; use this URI to view or download the custom vocabulary.</p>
      */
-    inline const Aws::String& GetDownloadUri() const{ return m_downloadUri; }
-    inline void SetDownloadUri(const Aws::String& value) { m_downloadUri = value; }
-    inline void SetDownloadUri(Aws::String&& value) { m_downloadUri = std::move(value); }
-    inline void SetDownloadUri(const char* value) { m_downloadUri.assign(value); }
-    inline GetMedicalVocabularyResult& WithDownloadUri(const Aws::String& value) { SetDownloadUri(value); return *this;}
-    inline GetMedicalVocabularyResult& WithDownloadUri(Aws::String&& value) { SetDownloadUri(std::move(value)); return *this;}
-    inline GetMedicalVocabularyResult& WithDownloadUri(const char* value) { SetDownloadUri(value); return *this;}
+    inline const Aws::String& GetDownloadUri() const { return m_downloadUri; }
+    template<typename DownloadUriT = Aws::String>
+    void SetDownloadUri(DownloadUriT&& value) { m_downloadUriHasBeenSet = true; m_downloadUri = std::forward<DownloadUriT>(value); }
+    template<typename DownloadUriT = Aws::String>
+    GetMedicalVocabularyResult& WithDownloadUri(DownloadUriT&& value) { SetDownloadUri(std::forward<DownloadUriT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetMedicalVocabularyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetMedicalVocabularyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetMedicalVocabularyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetMedicalVocabularyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_vocabularyName;
+    bool m_vocabularyNameHasBeenSet = false;
 
-    LanguageCode m_languageCode;
+    LanguageCode m_languageCode{LanguageCode::NOT_SET};
+    bool m_languageCodeHasBeenSet = false;
 
-    VocabularyState m_vocabularyState;
+    VocabularyState m_vocabularyState{VocabularyState::NOT_SET};
+    bool m_vocabularyStateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_failureReason;
+    bool m_failureReasonHasBeenSet = false;
 
     Aws::String m_downloadUri;
+    bool m_downloadUriHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

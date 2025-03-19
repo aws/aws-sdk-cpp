@@ -10,15 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribeOrderableClusterOptionsRequest::DescribeOrderableClusterOptionsRequest() : 
-    m_clusterVersionHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeOrderableClusterOptionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

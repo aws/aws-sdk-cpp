@@ -18,14 +18,7 @@ namespace PaymentCryptographyData
 namespace Model
 {
 
-WrappedKeyMaterial::WrappedKeyMaterial() : 
-    m_tr31KeyBlockHasBeenSet(false),
-    m_diffieHellmanSymmetricKeyHasBeenSet(false)
-{
-}
-
 WrappedKeyMaterial::WrappedKeyMaterial(JsonView jsonValue)
-  : WrappedKeyMaterial()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ WrappedKeyMaterial& WrappedKeyMaterial::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Tr31KeyBlock"))
   {
     m_tr31KeyBlock = jsonValue.GetString("Tr31KeyBlock");
-
     m_tr31KeyBlockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DiffieHellmanSymmetricKey"))
   {
     m_diffieHellmanSymmetricKey = jsonValue.GetObject("DiffieHellmanSymmetricKey");
-
     m_diffieHellmanSymmetricKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetSimilarProfilesRequest::GetSimilarProfilesRequest() : 
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_matchType(MatchType::NOT_SET),
-    m_matchTypeHasBeenSet(false),
-    m_searchKeyHasBeenSet(false),
-    m_searchValueHasBeenSet(false)
-{
-}
-
 Aws::String GetSimilarProfilesRequest::SerializePayload() const
 {
   JsonValue payload;

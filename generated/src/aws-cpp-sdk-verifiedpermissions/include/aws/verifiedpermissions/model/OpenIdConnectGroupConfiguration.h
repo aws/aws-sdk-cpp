@@ -38,7 +38,7 @@ namespace Model
   class OpenIdConnectGroupConfiguration
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API OpenIdConnectGroupConfiguration();
+    AWS_VERIFIEDPERMISSIONS_API OpenIdConnectGroupConfiguration() = default;
     AWS_VERIFIEDPERMISSIONS_API OpenIdConnectGroupConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API OpenIdConnectGroupConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * <p>The token claim that you want Verified Permissions to interpret as group
      * membership. For example, <code>groups</code>.</p>
      */
-    inline const Aws::String& GetGroupClaim() const{ return m_groupClaim; }
+    inline const Aws::String& GetGroupClaim() const { return m_groupClaim; }
     inline bool GroupClaimHasBeenSet() const { return m_groupClaimHasBeenSet; }
-    inline void SetGroupClaim(const Aws::String& value) { m_groupClaimHasBeenSet = true; m_groupClaim = value; }
-    inline void SetGroupClaim(Aws::String&& value) { m_groupClaimHasBeenSet = true; m_groupClaim = std::move(value); }
-    inline void SetGroupClaim(const char* value) { m_groupClaimHasBeenSet = true; m_groupClaim.assign(value); }
-    inline OpenIdConnectGroupConfiguration& WithGroupClaim(const Aws::String& value) { SetGroupClaim(value); return *this;}
-    inline OpenIdConnectGroupConfiguration& WithGroupClaim(Aws::String&& value) { SetGroupClaim(std::move(value)); return *this;}
-    inline OpenIdConnectGroupConfiguration& WithGroupClaim(const char* value) { SetGroupClaim(value); return *this;}
+    template<typename GroupClaimT = Aws::String>
+    void SetGroupClaim(GroupClaimT&& value) { m_groupClaimHasBeenSet = true; m_groupClaim = std::forward<GroupClaimT>(value); }
+    template<typename GroupClaimT = Aws::String>
+    OpenIdConnectGroupConfiguration& WithGroupClaim(GroupClaimT&& value) { SetGroupClaim(std::forward<GroupClaimT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * For example, <code>MyCorp::UserGroup</code>. A group entity type is an entity
      * that can have a user entity type as a member.</p>
      */
-    inline const Aws::String& GetGroupEntityType() const{ return m_groupEntityType; }
+    inline const Aws::String& GetGroupEntityType() const { return m_groupEntityType; }
     inline bool GroupEntityTypeHasBeenSet() const { return m_groupEntityTypeHasBeenSet; }
-    inline void SetGroupEntityType(const Aws::String& value) { m_groupEntityTypeHasBeenSet = true; m_groupEntityType = value; }
-    inline void SetGroupEntityType(Aws::String&& value) { m_groupEntityTypeHasBeenSet = true; m_groupEntityType = std::move(value); }
-    inline void SetGroupEntityType(const char* value) { m_groupEntityTypeHasBeenSet = true; m_groupEntityType.assign(value); }
-    inline OpenIdConnectGroupConfiguration& WithGroupEntityType(const Aws::String& value) { SetGroupEntityType(value); return *this;}
-    inline OpenIdConnectGroupConfiguration& WithGroupEntityType(Aws::String&& value) { SetGroupEntityType(std::move(value)); return *this;}
-    inline OpenIdConnectGroupConfiguration& WithGroupEntityType(const char* value) { SetGroupEntityType(value); return *this;}
+    template<typename GroupEntityTypeT = Aws::String>
+    void SetGroupEntityType(GroupEntityTypeT&& value) { m_groupEntityTypeHasBeenSet = true; m_groupEntityType = std::forward<GroupEntityTypeT>(value); }
+    template<typename GroupEntityTypeT = Aws::String>
+    OpenIdConnectGroupConfiguration& WithGroupEntityType(GroupEntityTypeT&& value) { SetGroupEntityType(std::forward<GroupEntityTypeT>(value)); return *this;}
     ///@}
   private:
 

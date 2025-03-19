@@ -12,11 +12,6 @@ using namespace Aws::CodeCommit::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteCommentContentRequest::DeleteCommentContentRequest() : 
-    m_commentIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteCommentContentRequest::SerializePayload() const
 {
   JsonValue payload;

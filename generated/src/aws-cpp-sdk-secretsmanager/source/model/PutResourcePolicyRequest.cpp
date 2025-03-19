@@ -12,14 +12,6 @@ using namespace Aws::SecretsManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutResourcePolicyRequest::PutResourcePolicyRequest() : 
-    m_secretIdHasBeenSet(false),
-    m_resourcePolicyHasBeenSet(false),
-    m_blockPublicPolicy(false),
-    m_blockPublicPolicyHasBeenSet(false)
-{
-}
-
 Aws::String PutResourcePolicyRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,11 +12,6 @@ using namespace Aws::MediaPackageVod::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeAssetRequest::DescribeAssetRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAssetRequest::SerializePayload() const
 {
   return {};

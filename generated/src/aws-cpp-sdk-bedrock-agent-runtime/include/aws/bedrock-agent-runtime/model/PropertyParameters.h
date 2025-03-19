@@ -32,7 +32,7 @@ namespace Model
   class PropertyParameters
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API PropertyParameters();
+    AWS_BEDROCKAGENTRUNTIME_API PropertyParameters() = default;
     AWS_BEDROCKAGENTRUNTIME_API PropertyParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API PropertyParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>A list of parameters in the request body.</p>
      */
-    inline const Aws::Vector<Parameter>& GetProperties() const{ return m_properties; }
+    inline const Aws::Vector<Parameter>& GetProperties() const { return m_properties; }
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
-    inline void SetProperties(const Aws::Vector<Parameter>& value) { m_propertiesHasBeenSet = true; m_properties = value; }
-    inline void SetProperties(Aws::Vector<Parameter>&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
-    inline PropertyParameters& WithProperties(const Aws::Vector<Parameter>& value) { SetProperties(value); return *this;}
-    inline PropertyParameters& WithProperties(Aws::Vector<Parameter>&& value) { SetProperties(std::move(value)); return *this;}
-    inline PropertyParameters& AddProperties(const Parameter& value) { m_propertiesHasBeenSet = true; m_properties.push_back(value); return *this; }
-    inline PropertyParameters& AddProperties(Parameter&& value) { m_propertiesHasBeenSet = true; m_properties.push_back(std::move(value)); return *this; }
+    template<typename PropertiesT = Aws::Vector<Parameter>>
+    void SetProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties = std::forward<PropertiesT>(value); }
+    template<typename PropertiesT = Aws::Vector<Parameter>>
+    PropertyParameters& WithProperties(PropertiesT&& value) { SetProperties(std::forward<PropertiesT>(value)); return *this;}
+    template<typename PropertiesT = Parameter>
+    PropertyParameters& AddProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties.emplace_back(std::forward<PropertiesT>(value)); return *this; }
     ///@}
   private:
 

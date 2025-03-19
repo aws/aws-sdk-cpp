@@ -20,13 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-SSEKMS::SSEKMS() : 
-    m_keyIdHasBeenSet(false)
-{
-}
-
 SSEKMS::SSEKMS(const XmlNode& xmlNode)
-  : SSEKMS()
 {
   *this = xmlNode;
 }

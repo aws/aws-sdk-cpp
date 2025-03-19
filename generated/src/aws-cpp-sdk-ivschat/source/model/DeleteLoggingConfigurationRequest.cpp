@@ -12,11 +12,6 @@ using namespace Aws::ivschat::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteLoggingConfigurationRequest::DeleteLoggingConfigurationRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String DeleteLoggingConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

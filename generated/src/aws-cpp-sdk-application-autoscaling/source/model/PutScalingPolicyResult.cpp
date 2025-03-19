@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutScalingPolicyResult::PutScalingPolicyResult()
-{
-}
-
 PutScalingPolicyResult::PutScalingPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ PutScalingPolicyResult& PutScalingPolicyResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("PolicyARN"))
   {
     m_policyARN = jsonValue.GetString("PolicyARN");
-
+    m_policyARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Alarms"))
   {
     Aws::Utils::Array<JsonView> alarmsJsonList = jsonValue.GetArray("Alarms");
@@ -42,14 +37,15 @@ PutScalingPolicyResult& PutScalingPolicyResult::operator =(const Aws::AmazonWebS
     {
       m_alarms.push_back(alarmsJsonList[alarmsIndex].AsObject());
     }
+    m_alarmsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

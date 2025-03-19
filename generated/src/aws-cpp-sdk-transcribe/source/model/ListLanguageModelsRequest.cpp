@@ -12,16 +12,6 @@ using namespace Aws::TranscribeService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListLanguageModelsRequest::ListLanguageModelsRequest() : 
-    m_statusEquals(ModelStatus::NOT_SET),
-    m_statusEqualsHasBeenSet(false),
-    m_nameContainsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListLanguageModelsRequest::SerializePayload() const
 {
   JsonValue payload;

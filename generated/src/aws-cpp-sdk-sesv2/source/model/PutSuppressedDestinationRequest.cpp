@@ -12,13 +12,6 @@ using namespace Aws::SESV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutSuppressedDestinationRequest::PutSuppressedDestinationRequest() : 
-    m_emailAddressHasBeenSet(false),
-    m_reason(SuppressionListReason::NOT_SET),
-    m_reasonHasBeenSet(false)
-{
-}
-
 Aws::String PutSuppressedDestinationRequest::SerializePayload() const
 {
   JsonValue payload;

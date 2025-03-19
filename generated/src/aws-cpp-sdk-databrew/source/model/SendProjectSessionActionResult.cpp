@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SendProjectSessionActionResult::SendProjectSessionActionResult() : 
-    m_actionId(0)
-{
-}
-
 SendProjectSessionActionResult::SendProjectSessionActionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : SendProjectSessionActionResult()
 {
   *this = result;
 }
@@ -34,27 +28,25 @@ SendProjectSessionActionResult& SendProjectSessionActionResult::operator =(const
   if(jsonValue.ValueExists("Result"))
   {
     m_result = jsonValue.GetString("Result");
-
+    m_resultHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ActionId"))
   {
     m_actionId = jsonValue.GetInteger("ActionId");
-
+    m_actionIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

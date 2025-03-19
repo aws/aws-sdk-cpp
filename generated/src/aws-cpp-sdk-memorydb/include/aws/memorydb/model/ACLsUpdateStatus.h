@@ -31,7 +31,7 @@ namespace Model
   class ACLsUpdateStatus
   {
   public:
-    AWS_MEMORYDB_API ACLsUpdateStatus();
+    AWS_MEMORYDB_API ACLsUpdateStatus() = default;
     AWS_MEMORYDB_API ACLsUpdateStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEMORYDB_API ACLsUpdateStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEMORYDB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>A list of ACLs pending to be applied.</p>
      */
-    inline const Aws::String& GetACLToApply() const{ return m_aCLToApply; }
+    inline const Aws::String& GetACLToApply() const { return m_aCLToApply; }
     inline bool ACLToApplyHasBeenSet() const { return m_aCLToApplyHasBeenSet; }
-    inline void SetACLToApply(const Aws::String& value) { m_aCLToApplyHasBeenSet = true; m_aCLToApply = value; }
-    inline void SetACLToApply(Aws::String&& value) { m_aCLToApplyHasBeenSet = true; m_aCLToApply = std::move(value); }
-    inline void SetACLToApply(const char* value) { m_aCLToApplyHasBeenSet = true; m_aCLToApply.assign(value); }
-    inline ACLsUpdateStatus& WithACLToApply(const Aws::String& value) { SetACLToApply(value); return *this;}
-    inline ACLsUpdateStatus& WithACLToApply(Aws::String&& value) { SetACLToApply(std::move(value)); return *this;}
-    inline ACLsUpdateStatus& WithACLToApply(const char* value) { SetACLToApply(value); return *this;}
+    template<typename ACLToApplyT = Aws::String>
+    void SetACLToApply(ACLToApplyT&& value) { m_aCLToApplyHasBeenSet = true; m_aCLToApply = std::forward<ACLToApplyT>(value); }
+    template<typename ACLToApplyT = Aws::String>
+    ACLsUpdateStatus& WithACLToApply(ACLToApplyT&& value) { SetACLToApply(std::forward<ACLToApplyT>(value)); return *this;}
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails();
+    AWS_SECURITYHUB_API AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails() = default;
     AWS_SECURITYHUB_API AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
     /**
      * <p>Whether to delete the volume when the instance is terminated.</p>
      */
-    inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
+    inline bool GetDeleteOnTermination() const { return m_deleteOnTermination; }
     inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
     inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
     inline AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails& WithDeleteOnTermination(bool value) { SetDeleteOnTermination(value); return *this;}
@@ -52,7 +52,7 @@ namespace Model
     /**
      * <p>Whether to encrypt the volume.</p>
      */
-    inline bool GetEncrypted() const{ return m_encrypted; }
+    inline bool GetEncrypted() const { return m_encrypted; }
     inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
     inline AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
@@ -66,7 +66,7 @@ namespace Model
      * <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code>
      * volumes.</p>
      */
-    inline int GetIops() const{ return m_iops; }
+    inline int GetIops() const { return m_iops; }
     inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
     inline AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails& WithIops(int value) { SetIops(value); return *this;}
@@ -77,14 +77,12 @@ namespace Model
      * <p>The snapshot ID of the volume to use.</p> <p>You must specify either
      * <code>VolumeSize</code> or <code>SnapshotId</code>.</p>
      */
-    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+    inline const Aws::String& GetSnapshotId() const { return m_snapshotId; }
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
-    inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
-    inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
-    inline AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-    inline AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-    inline AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+    template<typename SnapshotIdT = Aws::String>
+    void SetSnapshotId(SnapshotIdT&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::forward<SnapshotIdT>(value); }
+    template<typename SnapshotIdT = Aws::String>
+    AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails& WithSnapshotId(SnapshotIdT&& value) { SetSnapshotId(std::forward<SnapshotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,7 +95,7 @@ namespace Model
      * <code>VolumeSize</code>, the volume size must be equal or greater than the size
      * of the snapshot.</p>
      */
-    inline int GetVolumeSize() const{ return m_volumeSize; }
+    inline int GetVolumeSize() const { return m_volumeSize; }
     inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
     inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
     inline AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
@@ -110,30 +108,28 @@ namespace Model
      * <code>io1</code> </p> </li> <li> <p> <code>sc1</code> </p> </li> <li> <p>
      * <code>st1</code> </p> </li> <li> <p> <code>standard</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetVolumeType() const{ return m_volumeType; }
+    inline const Aws::String& GetVolumeType() const { return m_volumeType; }
     inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
-    inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
-    inline void SetVolumeType(Aws::String&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::move(value); }
-    inline void SetVolumeType(const char* value) { m_volumeTypeHasBeenSet = true; m_volumeType.assign(value); }
-    inline AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails& WithVolumeType(const Aws::String& value) { SetVolumeType(value); return *this;}
-    inline AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails& WithVolumeType(Aws::String&& value) { SetVolumeType(std::move(value)); return *this;}
-    inline AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails& WithVolumeType(const char* value) { SetVolumeType(value); return *this;}
+    template<typename VolumeTypeT = Aws::String>
+    void SetVolumeType(VolumeTypeT&& value) { m_volumeTypeHasBeenSet = true; m_volumeType = std::forward<VolumeTypeT>(value); }
+    template<typename VolumeTypeT = Aws::String>
+    AwsAutoScalingLaunchConfigurationBlockDeviceMappingsEbsDetails& WithVolumeType(VolumeTypeT&& value) { SetVolumeType(std::forward<VolumeTypeT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_deleteOnTermination;
+    bool m_deleteOnTermination{false};
     bool m_deleteOnTerminationHasBeenSet = false;
 
-    bool m_encrypted;
+    bool m_encrypted{false};
     bool m_encryptedHasBeenSet = false;
 
-    int m_iops;
+    int m_iops{0};
     bool m_iopsHasBeenSet = false;
 
     Aws::String m_snapshotId;
     bool m_snapshotIdHasBeenSet = false;
 
-    int m_volumeSize;
+    int m_volumeSize{0};
     bool m_volumeSizeHasBeenSet = false;
 
     Aws::String m_volumeType;

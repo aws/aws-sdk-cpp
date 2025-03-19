@@ -30,7 +30,7 @@ namespace Model
   class Phase1DHGroupNumbersListValue
   {
   public:
-    AWS_EC2_API Phase1DHGroupNumbersListValue();
+    AWS_EC2_API Phase1DHGroupNumbersListValue() = default;
     AWS_EC2_API Phase1DHGroupNumbersListValue(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API Phase1DHGroupNumbersListValue& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -42,14 +42,14 @@ namespace Model
     /**
      * <p>The Diffie-Hellmann group number.</p>
      */
-    inline int GetValue() const{ return m_value; }
+    inline int GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(int value) { m_valueHasBeenSet = true; m_value = value; }
     inline Phase1DHGroupNumbersListValue& WithValue(int value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    int m_value;
+    int m_value{0};
     bool m_valueHasBeenSet = false;
   };
 

@@ -34,7 +34,7 @@ namespace Model
   class AwsStepFunctionStateMachineDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsStepFunctionStateMachineDetails();
+    AWS_SECURITYHUB_API AwsStepFunctionStateMachineDetails() = default;
     AWS_SECURITYHUB_API AwsStepFunctionStateMachineDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsStepFunctionStateMachineDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,40 +47,36 @@ namespace Model
      * <code>stateMachineArn</code> specified in input is a qualified state machine
      * ARN. </p>
      */
-    inline const Aws::String& GetLabel() const{ return m_label; }
+    inline const Aws::String& GetLabel() const { return m_label; }
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
-    inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
-    inline void SetLabel(Aws::String&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
-    inline void SetLabel(const char* value) { m_labelHasBeenSet = true; m_label.assign(value); }
-    inline AwsStepFunctionStateMachineDetails& WithLabel(const Aws::String& value) { SetLabel(value); return *this;}
-    inline AwsStepFunctionStateMachineDetails& WithLabel(Aws::String&& value) { SetLabel(std::move(value)); return *this;}
-    inline AwsStepFunctionStateMachineDetails& WithLabel(const char* value) { SetLabel(value); return *this;}
+    template<typename LabelT = Aws::String>
+    void SetLabel(LabelT&& value) { m_labelHasBeenSet = true; m_label = std::forward<LabelT>(value); }
+    template<typename LabelT = Aws::String>
+    AwsStepFunctionStateMachineDetails& WithLabel(LabelT&& value) { SetLabel(std::forward<LabelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Used to set CloudWatch Logs options. </p>
      */
-    inline const AwsStepFunctionStateMachineLoggingConfigurationDetails& GetLoggingConfiguration() const{ return m_loggingConfiguration; }
+    inline const AwsStepFunctionStateMachineLoggingConfigurationDetails& GetLoggingConfiguration() const { return m_loggingConfiguration; }
     inline bool LoggingConfigurationHasBeenSet() const { return m_loggingConfigurationHasBeenSet; }
-    inline void SetLoggingConfiguration(const AwsStepFunctionStateMachineLoggingConfigurationDetails& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = value; }
-    inline void SetLoggingConfiguration(AwsStepFunctionStateMachineLoggingConfigurationDetails&& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = std::move(value); }
-    inline AwsStepFunctionStateMachineDetails& WithLoggingConfiguration(const AwsStepFunctionStateMachineLoggingConfigurationDetails& value) { SetLoggingConfiguration(value); return *this;}
-    inline AwsStepFunctionStateMachineDetails& WithLoggingConfiguration(AwsStepFunctionStateMachineLoggingConfigurationDetails&& value) { SetLoggingConfiguration(std::move(value)); return *this;}
+    template<typename LoggingConfigurationT = AwsStepFunctionStateMachineLoggingConfigurationDetails>
+    void SetLoggingConfiguration(LoggingConfigurationT&& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = std::forward<LoggingConfigurationT>(value); }
+    template<typename LoggingConfigurationT = AwsStepFunctionStateMachineLoggingConfigurationDetails>
+    AwsStepFunctionStateMachineDetails& WithLoggingConfiguration(LoggingConfigurationT&& value) { SetLoggingConfiguration(std::forward<LoggingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the state machine. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline AwsStepFunctionStateMachineDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline AwsStepFunctionStateMachineDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline AwsStepFunctionStateMachineDetails& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    AwsStepFunctionStateMachineDetails& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,68 +84,60 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the IAM role used when creating this state
      * machine. </p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline AwsStepFunctionStateMachineDetails& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline AwsStepFunctionStateMachineDetails& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline AwsStepFunctionStateMachineDetails& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    AwsStepFunctionStateMachineDetails& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The ARN that identifies the state machine. </p>
      */
-    inline const Aws::String& GetStateMachineArn() const{ return m_stateMachineArn; }
+    inline const Aws::String& GetStateMachineArn() const { return m_stateMachineArn; }
     inline bool StateMachineArnHasBeenSet() const { return m_stateMachineArnHasBeenSet; }
-    inline void SetStateMachineArn(const Aws::String& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = value; }
-    inline void SetStateMachineArn(Aws::String&& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = std::move(value); }
-    inline void SetStateMachineArn(const char* value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn.assign(value); }
-    inline AwsStepFunctionStateMachineDetails& WithStateMachineArn(const Aws::String& value) { SetStateMachineArn(value); return *this;}
-    inline AwsStepFunctionStateMachineDetails& WithStateMachineArn(Aws::String&& value) { SetStateMachineArn(std::move(value)); return *this;}
-    inline AwsStepFunctionStateMachineDetails& WithStateMachineArn(const char* value) { SetStateMachineArn(value); return *this;}
+    template<typename StateMachineArnT = Aws::String>
+    void SetStateMachineArn(StateMachineArnT&& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = std::forward<StateMachineArnT>(value); }
+    template<typename StateMachineArnT = Aws::String>
+    AwsStepFunctionStateMachineDetails& WithStateMachineArn(StateMachineArnT&& value) { SetStateMachineArn(std::forward<StateMachineArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The current status of the state machine. </p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline AwsStepFunctionStateMachineDetails& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline AwsStepFunctionStateMachineDetails& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline AwsStepFunctionStateMachineDetails& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    AwsStepFunctionStateMachineDetails& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Specifies whether X-Ray tracing is enabled. </p>
      */
-    inline const AwsStepFunctionStateMachineTracingConfigurationDetails& GetTracingConfiguration() const{ return m_tracingConfiguration; }
+    inline const AwsStepFunctionStateMachineTracingConfigurationDetails& GetTracingConfiguration() const { return m_tracingConfiguration; }
     inline bool TracingConfigurationHasBeenSet() const { return m_tracingConfigurationHasBeenSet; }
-    inline void SetTracingConfiguration(const AwsStepFunctionStateMachineTracingConfigurationDetails& value) { m_tracingConfigurationHasBeenSet = true; m_tracingConfiguration = value; }
-    inline void SetTracingConfiguration(AwsStepFunctionStateMachineTracingConfigurationDetails&& value) { m_tracingConfigurationHasBeenSet = true; m_tracingConfiguration = std::move(value); }
-    inline AwsStepFunctionStateMachineDetails& WithTracingConfiguration(const AwsStepFunctionStateMachineTracingConfigurationDetails& value) { SetTracingConfiguration(value); return *this;}
-    inline AwsStepFunctionStateMachineDetails& WithTracingConfiguration(AwsStepFunctionStateMachineTracingConfigurationDetails&& value) { SetTracingConfiguration(std::move(value)); return *this;}
+    template<typename TracingConfigurationT = AwsStepFunctionStateMachineTracingConfigurationDetails>
+    void SetTracingConfiguration(TracingConfigurationT&& value) { m_tracingConfigurationHasBeenSet = true; m_tracingConfiguration = std::forward<TracingConfigurationT>(value); }
+    template<typename TracingConfigurationT = AwsStepFunctionStateMachineTracingConfigurationDetails>
+    AwsStepFunctionStateMachineDetails& WithTracingConfiguration(TracingConfigurationT&& value) { SetTracingConfiguration(std::forward<TracingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The type of the state machine (STANDARD or EXPRESS). </p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline AwsStepFunctionStateMachineDetails& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline AwsStepFunctionStateMachineDetails& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline AwsStepFunctionStateMachineDetails& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    AwsStepFunctionStateMachineDetails& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

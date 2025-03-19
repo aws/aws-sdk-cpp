@@ -33,7 +33,7 @@ namespace Model
   class ComponentCandidate
   {
   public:
-    AWS_GREENGRASSV2_API ComponentCandidate();
+    AWS_GREENGRASSV2_API ComponentCandidate() = default;
     AWS_GREENGRASSV2_API ComponentCandidate(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API ComponentCandidate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The name of the component.</p>
      */
-    inline const Aws::String& GetComponentName() const{ return m_componentName; }
+    inline const Aws::String& GetComponentName() const { return m_componentName; }
     inline bool ComponentNameHasBeenSet() const { return m_componentNameHasBeenSet; }
-    inline void SetComponentName(const Aws::String& value) { m_componentNameHasBeenSet = true; m_componentName = value; }
-    inline void SetComponentName(Aws::String&& value) { m_componentNameHasBeenSet = true; m_componentName = std::move(value); }
-    inline void SetComponentName(const char* value) { m_componentNameHasBeenSet = true; m_componentName.assign(value); }
-    inline ComponentCandidate& WithComponentName(const Aws::String& value) { SetComponentName(value); return *this;}
-    inline ComponentCandidate& WithComponentName(Aws::String&& value) { SetComponentName(std::move(value)); return *this;}
-    inline ComponentCandidate& WithComponentName(const char* value) { SetComponentName(value); return *this;}
+    template<typename ComponentNameT = Aws::String>
+    void SetComponentName(ComponentNameT&& value) { m_componentNameHasBeenSet = true; m_componentName = std::forward<ComponentNameT>(value); }
+    template<typename ComponentNameT = Aws::String>
+    ComponentCandidate& WithComponentName(ComponentNameT&& value) { SetComponentName(std::forward<ComponentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the component.</p>
      */
-    inline const Aws::String& GetComponentVersion() const{ return m_componentVersion; }
+    inline const Aws::String& GetComponentVersion() const { return m_componentVersion; }
     inline bool ComponentVersionHasBeenSet() const { return m_componentVersionHasBeenSet; }
-    inline void SetComponentVersion(const Aws::String& value) { m_componentVersionHasBeenSet = true; m_componentVersion = value; }
-    inline void SetComponentVersion(Aws::String&& value) { m_componentVersionHasBeenSet = true; m_componentVersion = std::move(value); }
-    inline void SetComponentVersion(const char* value) { m_componentVersionHasBeenSet = true; m_componentVersion.assign(value); }
-    inline ComponentCandidate& WithComponentVersion(const Aws::String& value) { SetComponentVersion(value); return *this;}
-    inline ComponentCandidate& WithComponentVersion(Aws::String&& value) { SetComponentVersion(std::move(value)); return *this;}
-    inline ComponentCandidate& WithComponentVersion(const char* value) { SetComponentVersion(value); return *this;}
+    template<typename ComponentVersionT = Aws::String>
+    void SetComponentVersion(ComponentVersionT&& value) { m_componentVersionHasBeenSet = true; m_componentVersion = std::forward<ComponentVersionT>(value); }
+    template<typename ComponentVersionT = Aws::String>
+    ComponentCandidate& WithComponentVersion(ComponentVersionT&& value) { SetComponentVersion(std::forward<ComponentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,19 +70,16 @@ namespace Model
      * Greengrass V2 uses semantic version constraints. For more information, see <a
      * href="https://semver.org/">Semantic Versioning</a>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetVersionRequirements() const{ return m_versionRequirements; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetVersionRequirements() const { return m_versionRequirements; }
     inline bool VersionRequirementsHasBeenSet() const { return m_versionRequirementsHasBeenSet; }
-    inline void SetVersionRequirements(const Aws::Map<Aws::String, Aws::String>& value) { m_versionRequirementsHasBeenSet = true; m_versionRequirements = value; }
-    inline void SetVersionRequirements(Aws::Map<Aws::String, Aws::String>&& value) { m_versionRequirementsHasBeenSet = true; m_versionRequirements = std::move(value); }
-    inline ComponentCandidate& WithVersionRequirements(const Aws::Map<Aws::String, Aws::String>& value) { SetVersionRequirements(value); return *this;}
-    inline ComponentCandidate& WithVersionRequirements(Aws::Map<Aws::String, Aws::String>&& value) { SetVersionRequirements(std::move(value)); return *this;}
-    inline ComponentCandidate& AddVersionRequirements(const Aws::String& key, const Aws::String& value) { m_versionRequirementsHasBeenSet = true; m_versionRequirements.emplace(key, value); return *this; }
-    inline ComponentCandidate& AddVersionRequirements(Aws::String&& key, const Aws::String& value) { m_versionRequirementsHasBeenSet = true; m_versionRequirements.emplace(std::move(key), value); return *this; }
-    inline ComponentCandidate& AddVersionRequirements(const Aws::String& key, Aws::String&& value) { m_versionRequirementsHasBeenSet = true; m_versionRequirements.emplace(key, std::move(value)); return *this; }
-    inline ComponentCandidate& AddVersionRequirements(Aws::String&& key, Aws::String&& value) { m_versionRequirementsHasBeenSet = true; m_versionRequirements.emplace(std::move(key), std::move(value)); return *this; }
-    inline ComponentCandidate& AddVersionRequirements(const char* key, Aws::String&& value) { m_versionRequirementsHasBeenSet = true; m_versionRequirements.emplace(key, std::move(value)); return *this; }
-    inline ComponentCandidate& AddVersionRequirements(Aws::String&& key, const char* value) { m_versionRequirementsHasBeenSet = true; m_versionRequirements.emplace(std::move(key), value); return *this; }
-    inline ComponentCandidate& AddVersionRequirements(const char* key, const char* value) { m_versionRequirementsHasBeenSet = true; m_versionRequirements.emplace(key, value); return *this; }
+    template<typename VersionRequirementsT = Aws::Map<Aws::String, Aws::String>>
+    void SetVersionRequirements(VersionRequirementsT&& value) { m_versionRequirementsHasBeenSet = true; m_versionRequirements = std::forward<VersionRequirementsT>(value); }
+    template<typename VersionRequirementsT = Aws::Map<Aws::String, Aws::String>>
+    ComponentCandidate& WithVersionRequirements(VersionRequirementsT&& value) { SetVersionRequirements(std::forward<VersionRequirementsT>(value)); return *this;}
+    template<typename VersionRequirementsKeyT = Aws::String, typename VersionRequirementsValueT = Aws::String>
+    ComponentCandidate& AddVersionRequirements(VersionRequirementsKeyT&& key, VersionRequirementsValueT&& value) {
+      m_versionRequirementsHasBeenSet = true; m_versionRequirements.emplace(std::forward<VersionRequirementsKeyT>(key), std::forward<VersionRequirementsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

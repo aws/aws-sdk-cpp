@@ -18,14 +18,7 @@ namespace KinesisAnalytics
 namespace Model
 {
 
-MappingParameters::MappingParameters() : 
-    m_jSONMappingParametersHasBeenSet(false),
-    m_cSVMappingParametersHasBeenSet(false)
-{
-}
-
 MappingParameters::MappingParameters(JsonView jsonValue)
-  : MappingParameters()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MappingParameters& MappingParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("JSONMappingParameters"))
   {
     m_jSONMappingParameters = jsonValue.GetObject("JSONMappingParameters");
-
     m_jSONMappingParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CSVMappingParameters"))
   {
     m_cSVMappingParameters = jsonValue.GetObject("CSVMappingParameters");
-
     m_cSVMappingParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

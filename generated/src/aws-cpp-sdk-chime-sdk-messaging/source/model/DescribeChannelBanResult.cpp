@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeChannelBanResult::DescribeChannelBanResult()
-{
-}
-
 DescribeChannelBanResult::DescribeChannelBanResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeChannelBanResult& DescribeChannelBanResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("ChannelBan"))
   {
     m_channelBan = jsonValue.GetObject("ChannelBan");
-
+    m_channelBanHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

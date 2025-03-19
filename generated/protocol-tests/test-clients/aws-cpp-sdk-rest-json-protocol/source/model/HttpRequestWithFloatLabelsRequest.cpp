@@ -12,14 +12,6 @@ using namespace Aws::RestJsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-HttpRequestWithFloatLabelsRequest::HttpRequestWithFloatLabelsRequest() : 
-    m_float(0.0),
-    m_floatHasBeenSet(false),
-    m_double(0.0),
-    m_doubleHasBeenSet(false)
-{
-}
-
 Aws::String HttpRequestWithFloatLabelsRequest::SerializePayload() const
 {
   return {};

@@ -32,7 +32,7 @@ namespace Model
   class IamPolicyConstraints
   {
   public:
-    AWS_SAGEMAKER_API IamPolicyConstraints();
+    AWS_SAGEMAKER_API IamPolicyConstraints() = default;
     AWS_SAGEMAKER_API IamPolicyConstraints(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API IamPolicyConstraints& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,12 +46,10 @@ namespace Model
      * address is checked by Amazon S3 and must match in order for the Amazon S3
      * resource to be rendered in the worker portal.</p>
      */
-    inline const EnabledOrDisabled& GetSourceIp() const{ return m_sourceIp; }
+    inline EnabledOrDisabled GetSourceIp() const { return m_sourceIp; }
     inline bool SourceIpHasBeenSet() const { return m_sourceIpHasBeenSet; }
-    inline void SetSourceIp(const EnabledOrDisabled& value) { m_sourceIpHasBeenSet = true; m_sourceIp = value; }
-    inline void SetSourceIp(EnabledOrDisabled&& value) { m_sourceIpHasBeenSet = true; m_sourceIp = std::move(value); }
-    inline IamPolicyConstraints& WithSourceIp(const EnabledOrDisabled& value) { SetSourceIp(value); return *this;}
-    inline IamPolicyConstraints& WithSourceIp(EnabledOrDisabled&& value) { SetSourceIp(std::move(value)); return *this;}
+    inline void SetSourceIp(EnabledOrDisabled value) { m_sourceIpHasBeenSet = true; m_sourceIp = value; }
+    inline IamPolicyConstraints& WithSourceIp(EnabledOrDisabled value) { SetSourceIp(value); return *this;}
     ///@}
 
     ///@{
@@ -66,19 +64,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/samurai-vpc-worker-portal.html">Use
      * Amazon VPC mode from a private worker portal</a>.</p>
      */
-    inline const EnabledOrDisabled& GetVpcSourceIp() const{ return m_vpcSourceIp; }
+    inline EnabledOrDisabled GetVpcSourceIp() const { return m_vpcSourceIp; }
     inline bool VpcSourceIpHasBeenSet() const { return m_vpcSourceIpHasBeenSet; }
-    inline void SetVpcSourceIp(const EnabledOrDisabled& value) { m_vpcSourceIpHasBeenSet = true; m_vpcSourceIp = value; }
-    inline void SetVpcSourceIp(EnabledOrDisabled&& value) { m_vpcSourceIpHasBeenSet = true; m_vpcSourceIp = std::move(value); }
-    inline IamPolicyConstraints& WithVpcSourceIp(const EnabledOrDisabled& value) { SetVpcSourceIp(value); return *this;}
-    inline IamPolicyConstraints& WithVpcSourceIp(EnabledOrDisabled&& value) { SetVpcSourceIp(std::move(value)); return *this;}
+    inline void SetVpcSourceIp(EnabledOrDisabled value) { m_vpcSourceIpHasBeenSet = true; m_vpcSourceIp = value; }
+    inline IamPolicyConstraints& WithVpcSourceIp(EnabledOrDisabled value) { SetVpcSourceIp(value); return *this;}
     ///@}
   private:
 
-    EnabledOrDisabled m_sourceIp;
+    EnabledOrDisabled m_sourceIp{EnabledOrDisabled::NOT_SET};
     bool m_sourceIpHasBeenSet = false;
 
-    EnabledOrDisabled m_vpcSourceIp;
+    EnabledOrDisabled m_vpcSourceIp{EnabledOrDisabled::NOT_SET};
     bool m_vpcSourceIpHasBeenSet = false;
   };
 

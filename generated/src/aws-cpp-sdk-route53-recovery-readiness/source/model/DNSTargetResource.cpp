@@ -18,17 +18,7 @@ namespace Route53RecoveryReadiness
 namespace Model
 {
 
-DNSTargetResource::DNSTargetResource() : 
-    m_domainNameHasBeenSet(false),
-    m_hostedZoneArnHasBeenSet(false),
-    m_recordSetIdHasBeenSet(false),
-    m_recordTypeHasBeenSet(false),
-    m_targetResourceHasBeenSet(false)
-{
-}
-
 DNSTargetResource::DNSTargetResource(JsonView jsonValue)
-  : DNSTargetResource()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ DNSTargetResource& DNSTargetResource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("domainName"))
   {
     m_domainName = jsonValue.GetString("domainName");
-
     m_domainNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hostedZoneArn"))
   {
     m_hostedZoneArn = jsonValue.GetString("hostedZoneArn");
-
     m_hostedZoneArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recordSetId"))
   {
     m_recordSetId = jsonValue.GetString("recordSetId");
-
     m_recordSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recordType"))
   {
     m_recordType = jsonValue.GetString("recordType");
-
     m_recordTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetResource"))
   {
     m_targetResource = jsonValue.GetObject("targetResource");
-
     m_targetResourceHasBeenSet = true;
   }
-
   return *this;
 }
 

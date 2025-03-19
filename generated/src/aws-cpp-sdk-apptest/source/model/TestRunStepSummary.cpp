@@ -18,29 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-TestRunStepSummary::TestRunStepSummary() : 
-    m_stepNameHasBeenSet(false),
-    m_testRunIdHasBeenSet(false),
-    m_testCaseIdHasBeenSet(false),
-    m_testCaseVersion(0),
-    m_testCaseVersionHasBeenSet(false),
-    m_testSuiteIdHasBeenSet(false),
-    m_testSuiteVersion(0),
-    m_testSuiteVersionHasBeenSet(false),
-    m_beforeStep(false),
-    m_beforeStepHasBeenSet(false),
-    m_afterStep(false),
-    m_afterStepHasBeenSet(false),
-    m_status(StepRunStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_runStartTimeHasBeenSet(false),
-    m_runEndTimeHasBeenSet(false)
-{
-}
-
 TestRunStepSummary::TestRunStepSummary(JsonView jsonValue)
-  : TestRunStepSummary()
 {
   *this = jsonValue;
 }
@@ -50,87 +28,63 @@ TestRunStepSummary& TestRunStepSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("stepName"))
   {
     m_stepName = jsonValue.GetString("stepName");
-
     m_stepNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testRunId"))
   {
     m_testRunId = jsonValue.GetString("testRunId");
-
     m_testRunIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testCaseId"))
   {
     m_testCaseId = jsonValue.GetString("testCaseId");
-
     m_testCaseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testCaseVersion"))
   {
     m_testCaseVersion = jsonValue.GetInteger("testCaseVersion");
-
     m_testCaseVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testSuiteId"))
   {
     m_testSuiteId = jsonValue.GetString("testSuiteId");
-
     m_testSuiteIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("testSuiteVersion"))
   {
     m_testSuiteVersion = jsonValue.GetInteger("testSuiteVersion");
-
     m_testSuiteVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("beforeStep"))
   {
     m_beforeStep = jsonValue.GetBool("beforeStep");
-
     m_beforeStepHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("afterStep"))
   {
     m_afterStep = jsonValue.GetBool("afterStep");
-
     m_afterStepHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = StepRunStatusMapper::GetStepRunStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusReason"))
   {
     m_statusReason = jsonValue.GetString("statusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runStartTime"))
   {
     m_runStartTime = jsonValue.GetDouble("runStartTime");
-
     m_runStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runEndTime"))
   {
     m_runEndTime = jsonValue.GetDouble("runEndTime");
-
     m_runEndTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

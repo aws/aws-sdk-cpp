@@ -28,35 +28,35 @@ namespace Model
   class CreateFlowResult
   {
   public:
-    AWS_MEDIACONNECT_API CreateFlowResult();
+    AWS_MEDIACONNECT_API CreateFlowResult() = default;
     AWS_MEDIACONNECT_API CreateFlowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIACONNECT_API CreateFlowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Flow& GetFlow() const{ return m_flow; }
-    inline void SetFlow(const Flow& value) { m_flow = value; }
-    inline void SetFlow(Flow&& value) { m_flow = std::move(value); }
-    inline CreateFlowResult& WithFlow(const Flow& value) { SetFlow(value); return *this;}
-    inline CreateFlowResult& WithFlow(Flow&& value) { SetFlow(std::move(value)); return *this;}
+    inline const Flow& GetFlow() const { return m_flow; }
+    template<typename FlowT = Flow>
+    void SetFlow(FlowT&& value) { m_flowHasBeenSet = true; m_flow = std::forward<FlowT>(value); }
+    template<typename FlowT = Flow>
+    CreateFlowResult& WithFlow(FlowT&& value) { SetFlow(std::forward<FlowT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateFlowResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateFlowResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateFlowResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateFlowResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Flow m_flow;
+    bool m_flowHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

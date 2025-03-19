@@ -33,7 +33,7 @@ namespace Model
   class SelectAttributesActivity
   {
   public:
-    AWS_IOTANALYTICS_API SelectAttributesActivity();
+    AWS_IOTANALYTICS_API SelectAttributesActivity() = default;
     AWS_IOTANALYTICS_API SelectAttributesActivity(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API SelectAttributesActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,43 +43,38 @@ namespace Model
     /**
      * <p>The name of the <code>selectAttributes</code> activity.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SelectAttributesActivity& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SelectAttributesActivity& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SelectAttributesActivity& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SelectAttributesActivity& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of the attributes to select from the message.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Vector<Aws::String>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Vector<Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Vector<Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline SelectAttributesActivity& WithAttributes(const Aws::Vector<Aws::String>& value) { SetAttributes(value); return *this;}
-    inline SelectAttributesActivity& WithAttributes(Aws::Vector<Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline SelectAttributesActivity& AddAttributes(const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
-    inline SelectAttributesActivity& AddAttributes(Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.push_back(std::move(value)); return *this; }
-    inline SelectAttributesActivity& AddAttributes(const char* value) { m_attributesHasBeenSet = true; m_attributes.push_back(value); return *this; }
+    template<typename AttributesT = Aws::Vector<Aws::String>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Vector<Aws::String>>
+    SelectAttributesActivity& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesT = Aws::String>
+    SelectAttributesActivity& AddAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes.emplace_back(std::forward<AttributesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The next activity in the pipeline.</p>
      */
-    inline const Aws::String& GetNext() const{ return m_next; }
+    inline const Aws::String& GetNext() const { return m_next; }
     inline bool NextHasBeenSet() const { return m_nextHasBeenSet; }
-    inline void SetNext(const Aws::String& value) { m_nextHasBeenSet = true; m_next = value; }
-    inline void SetNext(Aws::String&& value) { m_nextHasBeenSet = true; m_next = std::move(value); }
-    inline void SetNext(const char* value) { m_nextHasBeenSet = true; m_next.assign(value); }
-    inline SelectAttributesActivity& WithNext(const Aws::String& value) { SetNext(value); return *this;}
-    inline SelectAttributesActivity& WithNext(Aws::String&& value) { SetNext(std::move(value)); return *this;}
-    inline SelectAttributesActivity& WithNext(const char* value) { SetNext(value); return *this;}
+    template<typename NextT = Aws::String>
+    void SetNext(NextT&& value) { m_nextHasBeenSet = true; m_next = std::forward<NextT>(value); }
+    template<typename NextT = Aws::String>
+    SelectAttributesActivity& WithNext(NextT&& value) { SetNext(std::forward<NextT>(value)); return *this;}
     ///@}
   private:
 

@@ -29,7 +29,7 @@ namespace Model
   class ModifyInstanceNetworkPerformanceOptionsResponse
   {
   public:
-    AWS_EC2_API ModifyInstanceNetworkPerformanceOptionsResponse();
+    AWS_EC2_API ModifyInstanceNetworkPerformanceOptionsResponse() = default;
     AWS_EC2_API ModifyInstanceNetworkPerformanceOptionsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API ModifyInstanceNetworkPerformanceOptionsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>The instance ID that was updated.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceId.assign(value); }
-    inline ModifyInstanceNetworkPerformanceOptionsResponse& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline ModifyInstanceNetworkPerformanceOptionsResponse& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline ModifyInstanceNetworkPerformanceOptionsResponse& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    ModifyInstanceNetworkPerformanceOptionsResponse& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,28 +50,29 @@ namespace Model
      * <p>Contains the updated configuration for bandwidth weighting on the specified
      * instance.</p>
      */
-    inline const InstanceBandwidthWeighting& GetBandwidthWeighting() const{ return m_bandwidthWeighting; }
-    inline void SetBandwidthWeighting(const InstanceBandwidthWeighting& value) { m_bandwidthWeighting = value; }
-    inline void SetBandwidthWeighting(InstanceBandwidthWeighting&& value) { m_bandwidthWeighting = std::move(value); }
-    inline ModifyInstanceNetworkPerformanceOptionsResponse& WithBandwidthWeighting(const InstanceBandwidthWeighting& value) { SetBandwidthWeighting(value); return *this;}
-    inline ModifyInstanceNetworkPerformanceOptionsResponse& WithBandwidthWeighting(InstanceBandwidthWeighting&& value) { SetBandwidthWeighting(std::move(value)); return *this;}
+    inline InstanceBandwidthWeighting GetBandwidthWeighting() const { return m_bandwidthWeighting; }
+    inline void SetBandwidthWeighting(InstanceBandwidthWeighting value) { m_bandwidthWeightingHasBeenSet = true; m_bandwidthWeighting = value; }
+    inline ModifyInstanceNetworkPerformanceOptionsResponse& WithBandwidthWeighting(InstanceBandwidthWeighting value) { SetBandwidthWeighting(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline ModifyInstanceNetworkPerformanceOptionsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline ModifyInstanceNetworkPerformanceOptionsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    ModifyInstanceNetworkPerformanceOptionsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_instanceId;
+    bool m_instanceIdHasBeenSet = false;
 
-    InstanceBandwidthWeighting m_bandwidthWeighting;
+    InstanceBandwidthWeighting m_bandwidthWeighting{InstanceBandwidthWeighting::NOT_SET};
+    bool m_bandwidthWeightingHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

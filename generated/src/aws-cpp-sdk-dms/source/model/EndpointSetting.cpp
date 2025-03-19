@@ -18,25 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-EndpointSetting::EndpointSetting() : 
-    m_nameHasBeenSet(false),
-    m_type(EndpointSettingTypeValue::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_enumValuesHasBeenSet(false),
-    m_sensitive(false),
-    m_sensitiveHasBeenSet(false),
-    m_unitsHasBeenSet(false),
-    m_applicabilityHasBeenSet(false),
-    m_intValueMin(0),
-    m_intValueMinHasBeenSet(false),
-    m_intValueMax(0),
-    m_intValueMaxHasBeenSet(false),
-    m_defaultValueHasBeenSet(false)
-{
-}
-
 EndpointSetting::EndpointSetting(JsonView jsonValue)
-  : EndpointSetting()
 {
   *this = jsonValue;
 }
@@ -46,17 +28,13 @@ EndpointSetting& EndpointSetting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = EndpointSettingTypeValueMapper::GetEndpointSettingTypeValueForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnumValues"))
   {
     Aws::Utils::Array<JsonView> enumValuesJsonList = jsonValue.GetArray("EnumValues");
@@ -66,49 +44,36 @@ EndpointSetting& EndpointSetting::operator =(JsonView jsonValue)
     }
     m_enumValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sensitive"))
   {
     m_sensitive = jsonValue.GetBool("Sensitive");
-
     m_sensitiveHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Units"))
   {
     m_units = jsonValue.GetString("Units");
-
     m_unitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Applicability"))
   {
     m_applicability = jsonValue.GetString("Applicability");
-
     m_applicabilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IntValueMin"))
   {
     m_intValueMin = jsonValue.GetInteger("IntValueMin");
-
     m_intValueMinHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IntValueMax"))
   {
     m_intValueMax = jsonValue.GetInteger("IntValueMax");
-
     m_intValueMaxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DefaultValue"))
   {
     m_defaultValue = jsonValue.GetString("DefaultValue");
-
     m_defaultValueHasBeenSet = true;
   }
-
   return *this;
 }
 

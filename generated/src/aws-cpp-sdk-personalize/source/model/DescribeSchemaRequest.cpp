@@ -12,11 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSchemaRequest::DescribeSchemaRequest() : 
-    m_schemaArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSchemaRequest::SerializePayload() const
 {
   JsonValue payload;

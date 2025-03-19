@@ -18,29 +18,7 @@ namespace kendra
 namespace Model
 {
 
-BoxConfiguration::BoxConfiguration() : 
-    m_enterpriseIdHasBeenSet(false),
-    m_secretArnHasBeenSet(false),
-    m_useChangeLog(false),
-    m_useChangeLogHasBeenSet(false),
-    m_crawlComments(false),
-    m_crawlCommentsHasBeenSet(false),
-    m_crawlTasks(false),
-    m_crawlTasksHasBeenSet(false),
-    m_crawlWebLinks(false),
-    m_crawlWebLinksHasBeenSet(false),
-    m_fileFieldMappingsHasBeenSet(false),
-    m_taskFieldMappingsHasBeenSet(false),
-    m_commentFieldMappingsHasBeenSet(false),
-    m_webLinkFieldMappingsHasBeenSet(false),
-    m_inclusionPatternsHasBeenSet(false),
-    m_exclusionPatternsHasBeenSet(false),
-    m_vpcConfigurationHasBeenSet(false)
-{
-}
-
 BoxConfiguration::BoxConfiguration(JsonView jsonValue)
-  : BoxConfiguration()
 {
   *this = jsonValue;
 }
@@ -50,45 +28,33 @@ BoxConfiguration& BoxConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EnterpriseId"))
   {
     m_enterpriseId = jsonValue.GetString("EnterpriseId");
-
     m_enterpriseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretArn"))
   {
     m_secretArn = jsonValue.GetString("SecretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UseChangeLog"))
   {
     m_useChangeLog = jsonValue.GetBool("UseChangeLog");
-
     m_useChangeLogHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrawlComments"))
   {
     m_crawlComments = jsonValue.GetBool("CrawlComments");
-
     m_crawlCommentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrawlTasks"))
   {
     m_crawlTasks = jsonValue.GetBool("CrawlTasks");
-
     m_crawlTasksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrawlWebLinks"))
   {
     m_crawlWebLinks = jsonValue.GetBool("CrawlWebLinks");
-
     m_crawlWebLinksHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FileFieldMappings"))
   {
     Aws::Utils::Array<JsonView> fileFieldMappingsJsonList = jsonValue.GetArray("FileFieldMappings");
@@ -98,7 +64,6 @@ BoxConfiguration& BoxConfiguration::operator =(JsonView jsonValue)
     }
     m_fileFieldMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskFieldMappings"))
   {
     Aws::Utils::Array<JsonView> taskFieldMappingsJsonList = jsonValue.GetArray("TaskFieldMappings");
@@ -108,7 +73,6 @@ BoxConfiguration& BoxConfiguration::operator =(JsonView jsonValue)
     }
     m_taskFieldMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CommentFieldMappings"))
   {
     Aws::Utils::Array<JsonView> commentFieldMappingsJsonList = jsonValue.GetArray("CommentFieldMappings");
@@ -118,7 +82,6 @@ BoxConfiguration& BoxConfiguration::operator =(JsonView jsonValue)
     }
     m_commentFieldMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WebLinkFieldMappings"))
   {
     Aws::Utils::Array<JsonView> webLinkFieldMappingsJsonList = jsonValue.GetArray("WebLinkFieldMappings");
@@ -128,7 +91,6 @@ BoxConfiguration& BoxConfiguration::operator =(JsonView jsonValue)
     }
     m_webLinkFieldMappingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InclusionPatterns"))
   {
     Aws::Utils::Array<JsonView> inclusionPatternsJsonList = jsonValue.GetArray("InclusionPatterns");
@@ -138,7 +100,6 @@ BoxConfiguration& BoxConfiguration::operator =(JsonView jsonValue)
     }
     m_inclusionPatternsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExclusionPatterns"))
   {
     Aws::Utils::Array<JsonView> exclusionPatternsJsonList = jsonValue.GetArray("ExclusionPatterns");
@@ -148,14 +109,11 @@ BoxConfiguration& BoxConfiguration::operator =(JsonView jsonValue)
     }
     m_exclusionPatternsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfiguration"))
   {
     m_vpcConfiguration = jsonValue.GetObject("VpcConfiguration");
-
     m_vpcConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

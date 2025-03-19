@@ -18,27 +18,7 @@ namespace Glue
 namespace Model
 {
 
-TableInput::TableInput() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_lastAccessTimeHasBeenSet(false),
-    m_lastAnalyzedTimeHasBeenSet(false),
-    m_retention(0),
-    m_retentionHasBeenSet(false),
-    m_storageDescriptorHasBeenSet(false),
-    m_partitionKeysHasBeenSet(false),
-    m_viewOriginalTextHasBeenSet(false),
-    m_viewExpandedTextHasBeenSet(false),
-    m_tableTypeHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_targetTableHasBeenSet(false),
-    m_viewDefinitionHasBeenSet(false)
-{
-}
-
 TableInput::TableInput(JsonView jsonValue)
-  : TableInput()
 {
   *this = jsonValue;
 }
@@ -48,52 +28,38 @@ TableInput& TableInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Owner"))
   {
     m_owner = jsonValue.GetString("Owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastAccessTime"))
   {
     m_lastAccessTime = jsonValue.GetDouble("LastAccessTime");
-
     m_lastAccessTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastAnalyzedTime"))
   {
     m_lastAnalyzedTime = jsonValue.GetDouble("LastAnalyzedTime");
-
     m_lastAnalyzedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Retention"))
   {
     m_retention = jsonValue.GetInteger("Retention");
-
     m_retentionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageDescriptor"))
   {
     m_storageDescriptor = jsonValue.GetObject("StorageDescriptor");
-
     m_storageDescriptorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PartitionKeys"))
   {
     Aws::Utils::Array<JsonView> partitionKeysJsonList = jsonValue.GetArray("PartitionKeys");
@@ -103,28 +69,21 @@ TableInput& TableInput::operator =(JsonView jsonValue)
     }
     m_partitionKeysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ViewOriginalText"))
   {
     m_viewOriginalText = jsonValue.GetString("ViewOriginalText");
-
     m_viewOriginalTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ViewExpandedText"))
   {
     m_viewExpandedText = jsonValue.GetString("ViewExpandedText");
-
     m_viewExpandedTextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableType"))
   {
     m_tableType = jsonValue.GetString("TableType");
-
     m_tableTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Map<Aws::String, JsonView> parametersJsonMap = jsonValue.GetObject("Parameters").GetAllObjects();
@@ -134,21 +93,16 @@ TableInput& TableInput::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TargetTable"))
   {
     m_targetTable = jsonValue.GetObject("TargetTable");
-
     m_targetTableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ViewDefinition"))
   {
     m_viewDefinition = jsonValue.GetObject("ViewDefinition");
-
     m_viewDefinitionHasBeenSet = true;
   }
-
   return *this;
 }
 

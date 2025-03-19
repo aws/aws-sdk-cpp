@@ -21,7 +21,7 @@ namespace Model
   class DeleteTransitGatewayConnectPeerRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DeleteTransitGatewayConnectPeerRequest();
+    AWS_EC2_API DeleteTransitGatewayConnectPeerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The ID of the Connect peer.</p>
      */
-    inline const Aws::String& GetTransitGatewayConnectPeerId() const{ return m_transitGatewayConnectPeerId; }
+    inline const Aws::String& GetTransitGatewayConnectPeerId() const { return m_transitGatewayConnectPeerId; }
     inline bool TransitGatewayConnectPeerIdHasBeenSet() const { return m_transitGatewayConnectPeerIdHasBeenSet; }
-    inline void SetTransitGatewayConnectPeerId(const Aws::String& value) { m_transitGatewayConnectPeerIdHasBeenSet = true; m_transitGatewayConnectPeerId = value; }
-    inline void SetTransitGatewayConnectPeerId(Aws::String&& value) { m_transitGatewayConnectPeerIdHasBeenSet = true; m_transitGatewayConnectPeerId = std::move(value); }
-    inline void SetTransitGatewayConnectPeerId(const char* value) { m_transitGatewayConnectPeerIdHasBeenSet = true; m_transitGatewayConnectPeerId.assign(value); }
-    inline DeleteTransitGatewayConnectPeerRequest& WithTransitGatewayConnectPeerId(const Aws::String& value) { SetTransitGatewayConnectPeerId(value); return *this;}
-    inline DeleteTransitGatewayConnectPeerRequest& WithTransitGatewayConnectPeerId(Aws::String&& value) { SetTransitGatewayConnectPeerId(std::move(value)); return *this;}
-    inline DeleteTransitGatewayConnectPeerRequest& WithTransitGatewayConnectPeerId(const char* value) { SetTransitGatewayConnectPeerId(value); return *this;}
+    template<typename TransitGatewayConnectPeerIdT = Aws::String>
+    void SetTransitGatewayConnectPeerId(TransitGatewayConnectPeerIdT&& value) { m_transitGatewayConnectPeerIdHasBeenSet = true; m_transitGatewayConnectPeerId = std::forward<TransitGatewayConnectPeerIdT>(value); }
+    template<typename TransitGatewayConnectPeerIdT = Aws::String>
+    DeleteTransitGatewayConnectPeerRequest& WithTransitGatewayConnectPeerId(TransitGatewayConnectPeerIdT&& value) { SetTransitGatewayConnectPeerId(std::forward<TransitGatewayConnectPeerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DeleteTransitGatewayConnectPeerRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -67,7 +65,7 @@ namespace Model
     Aws::String m_transitGatewayConnectPeerId;
     bool m_transitGatewayConnectPeerIdHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

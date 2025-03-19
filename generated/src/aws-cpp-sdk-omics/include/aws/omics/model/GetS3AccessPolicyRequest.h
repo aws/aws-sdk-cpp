@@ -21,7 +21,7 @@ namespace Model
   class GetS3AccessPolicyRequest : public OmicsRequest
   {
   public:
-    AWS_OMICS_API GetS3AccessPolicyRequest();
+    AWS_OMICS_API GetS3AccessPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The S3 access point ARN that has the access policy.</p>
      */
-    inline const Aws::String& GetS3AccessPointArn() const{ return m_s3AccessPointArn; }
+    inline const Aws::String& GetS3AccessPointArn() const { return m_s3AccessPointArn; }
     inline bool S3AccessPointArnHasBeenSet() const { return m_s3AccessPointArnHasBeenSet; }
-    inline void SetS3AccessPointArn(const Aws::String& value) { m_s3AccessPointArnHasBeenSet = true; m_s3AccessPointArn = value; }
-    inline void SetS3AccessPointArn(Aws::String&& value) { m_s3AccessPointArnHasBeenSet = true; m_s3AccessPointArn = std::move(value); }
-    inline void SetS3AccessPointArn(const char* value) { m_s3AccessPointArnHasBeenSet = true; m_s3AccessPointArn.assign(value); }
-    inline GetS3AccessPolicyRequest& WithS3AccessPointArn(const Aws::String& value) { SetS3AccessPointArn(value); return *this;}
-    inline GetS3AccessPolicyRequest& WithS3AccessPointArn(Aws::String&& value) { SetS3AccessPointArn(std::move(value)); return *this;}
-    inline GetS3AccessPolicyRequest& WithS3AccessPointArn(const char* value) { SetS3AccessPointArn(value); return *this;}
+    template<typename S3AccessPointArnT = Aws::String>
+    void SetS3AccessPointArn(S3AccessPointArnT&& value) { m_s3AccessPointArnHasBeenSet = true; m_s3AccessPointArn = std::forward<S3AccessPointArnT>(value); }
+    template<typename S3AccessPointArnT = Aws::String>
+    GetS3AccessPolicyRequest& WithS3AccessPointArn(S3AccessPointArnT&& value) { SetS3AccessPointArn(std::forward<S3AccessPointArnT>(value)); return *this;}
     ///@}
   private:
 

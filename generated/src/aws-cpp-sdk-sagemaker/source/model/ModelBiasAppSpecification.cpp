@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelBiasAppSpecification::ModelBiasAppSpecification() : 
-    m_imageUriHasBeenSet(false),
-    m_configUriHasBeenSet(false),
-    m_environmentHasBeenSet(false)
-{
-}
-
 ModelBiasAppSpecification::ModelBiasAppSpecification(JsonView jsonValue)
-  : ModelBiasAppSpecification()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ModelBiasAppSpecification& ModelBiasAppSpecification::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("ImageUri"))
   {
     m_imageUri = jsonValue.GetString("ImageUri");
-
     m_imageUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConfigUri"))
   {
     m_configUri = jsonValue.GetString("ConfigUri");
-
     m_configUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Environment"))
   {
     Aws::Map<Aws::String, JsonView> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();
@@ -56,7 +44,6 @@ ModelBiasAppSpecification& ModelBiasAppSpecification::operator =(JsonView jsonVa
     }
     m_environmentHasBeenSet = true;
   }
-
   return *this;
 }
 

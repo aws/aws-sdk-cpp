@@ -30,7 +30,7 @@ namespace Model
   class IntentStatistics
   {
   public:
-    AWS_LEXMODELSV2_API IntentStatistics();
+    AWS_LEXMODELSV2_API IntentStatistics() = default;
     AWS_LEXMODELSV2_API IntentStatistics(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API IntentStatistics& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,14 +40,14 @@ namespace Model
     /**
      * <p>The number of recommended intents associated with the bot recommendation.</p>
      */
-    inline int GetDiscoveredIntentCount() const{ return m_discoveredIntentCount; }
+    inline int GetDiscoveredIntentCount() const { return m_discoveredIntentCount; }
     inline bool DiscoveredIntentCountHasBeenSet() const { return m_discoveredIntentCountHasBeenSet; }
     inline void SetDiscoveredIntentCount(int value) { m_discoveredIntentCountHasBeenSet = true; m_discoveredIntentCount = value; }
     inline IntentStatistics& WithDiscoveredIntentCount(int value) { SetDiscoveredIntentCount(value); return *this;}
     ///@}
   private:
 
-    int m_discoveredIntentCount;
+    int m_discoveredIntentCount{0};
     bool m_discoveredIntentCountHasBeenSet = false;
   };
 

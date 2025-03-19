@@ -36,7 +36,7 @@ namespace Model
   class DetailsMap
   {
   public:
-    AWS_LAKEFORMATION_API DetailsMap();
+    AWS_LAKEFORMATION_API DetailsMap() = default;
     AWS_LAKEFORMATION_API DetailsMap(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API DetailsMap& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAKEFORMATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,15 +46,14 @@ namespace Model
     /**
      * <p>A resource share ARN for a catalog resource shared through RAM.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResourceShare() const{ return m_resourceShare; }
+    inline const Aws::Vector<Aws::String>& GetResourceShare() const { return m_resourceShare; }
     inline bool ResourceShareHasBeenSet() const { return m_resourceShareHasBeenSet; }
-    inline void SetResourceShare(const Aws::Vector<Aws::String>& value) { m_resourceShareHasBeenSet = true; m_resourceShare = value; }
-    inline void SetResourceShare(Aws::Vector<Aws::String>&& value) { m_resourceShareHasBeenSet = true; m_resourceShare = std::move(value); }
-    inline DetailsMap& WithResourceShare(const Aws::Vector<Aws::String>& value) { SetResourceShare(value); return *this;}
-    inline DetailsMap& WithResourceShare(Aws::Vector<Aws::String>&& value) { SetResourceShare(std::move(value)); return *this;}
-    inline DetailsMap& AddResourceShare(const Aws::String& value) { m_resourceShareHasBeenSet = true; m_resourceShare.push_back(value); return *this; }
-    inline DetailsMap& AddResourceShare(Aws::String&& value) { m_resourceShareHasBeenSet = true; m_resourceShare.push_back(std::move(value)); return *this; }
-    inline DetailsMap& AddResourceShare(const char* value) { m_resourceShareHasBeenSet = true; m_resourceShare.push_back(value); return *this; }
+    template<typename ResourceShareT = Aws::Vector<Aws::String>>
+    void SetResourceShare(ResourceShareT&& value) { m_resourceShareHasBeenSet = true; m_resourceShare = std::forward<ResourceShareT>(value); }
+    template<typename ResourceShareT = Aws::Vector<Aws::String>>
+    DetailsMap& WithResourceShare(ResourceShareT&& value) { SetResourceShare(std::forward<ResourceShareT>(value)); return *this;}
+    template<typename ResourceShareT = Aws::String>
+    DetailsMap& AddResourceShare(ResourceShareT&& value) { m_resourceShareHasBeenSet = true; m_resourceShare.emplace_back(std::forward<ResourceShareT>(value)); return *this; }
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class GeospatialMapState
   {
   public:
-    AWS_QUICKSIGHT_API GeospatialMapState();
+    AWS_QUICKSIGHT_API GeospatialMapState() = default;
     AWS_QUICKSIGHT_API GeospatialMapState(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GeospatialMapState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,31 +40,29 @@ namespace Model
 
     ///@{
     
-    inline const GeospatialCoordinateBounds& GetBounds() const{ return m_bounds; }
+    inline const GeospatialCoordinateBounds& GetBounds() const { return m_bounds; }
     inline bool BoundsHasBeenSet() const { return m_boundsHasBeenSet; }
-    inline void SetBounds(const GeospatialCoordinateBounds& value) { m_boundsHasBeenSet = true; m_bounds = value; }
-    inline void SetBounds(GeospatialCoordinateBounds&& value) { m_boundsHasBeenSet = true; m_bounds = std::move(value); }
-    inline GeospatialMapState& WithBounds(const GeospatialCoordinateBounds& value) { SetBounds(value); return *this;}
-    inline GeospatialMapState& WithBounds(GeospatialCoordinateBounds&& value) { SetBounds(std::move(value)); return *this;}
+    template<typename BoundsT = GeospatialCoordinateBounds>
+    void SetBounds(BoundsT&& value) { m_boundsHasBeenSet = true; m_bounds = std::forward<BoundsT>(value); }
+    template<typename BoundsT = GeospatialCoordinateBounds>
+    GeospatialMapState& WithBounds(BoundsT&& value) { SetBounds(std::forward<BoundsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Enables or disables map navigation for a map.</p>
      */
-    inline const GeospatialMapNavigation& GetMapNavigation() const{ return m_mapNavigation; }
+    inline GeospatialMapNavigation GetMapNavigation() const { return m_mapNavigation; }
     inline bool MapNavigationHasBeenSet() const { return m_mapNavigationHasBeenSet; }
-    inline void SetMapNavigation(const GeospatialMapNavigation& value) { m_mapNavigationHasBeenSet = true; m_mapNavigation = value; }
-    inline void SetMapNavigation(GeospatialMapNavigation&& value) { m_mapNavigationHasBeenSet = true; m_mapNavigation = std::move(value); }
-    inline GeospatialMapState& WithMapNavigation(const GeospatialMapNavigation& value) { SetMapNavigation(value); return *this;}
-    inline GeospatialMapState& WithMapNavigation(GeospatialMapNavigation&& value) { SetMapNavigation(std::move(value)); return *this;}
+    inline void SetMapNavigation(GeospatialMapNavigation value) { m_mapNavigationHasBeenSet = true; m_mapNavigation = value; }
+    inline GeospatialMapState& WithMapNavigation(GeospatialMapNavigation value) { SetMapNavigation(value); return *this;}
     ///@}
   private:
 
     GeospatialCoordinateBounds m_bounds;
     bool m_boundsHasBeenSet = false;
 
-    GeospatialMapNavigation m_mapNavigation;
+    GeospatialMapNavigation m_mapNavigation{GeospatialMapNavigation::NOT_SET};
     bool m_mapNavigationHasBeenSet = false;
   };
 

@@ -18,14 +18,7 @@ namespace IoT1ClickDevicesService
 namespace Model
 {
 
-RangeNotSatisfiableException::RangeNotSatisfiableException() : 
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 RangeNotSatisfiableException::RangeNotSatisfiableException(JsonView jsonValue)
-  : RangeNotSatisfiableException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RangeNotSatisfiableException& RangeNotSatisfiableException::operator =(JsonView 
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

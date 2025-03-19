@@ -18,17 +18,7 @@ namespace AppSync
 namespace Model
 {
 
-RdsHttpEndpointConfig::RdsHttpEndpointConfig() : 
-    m_awsRegionHasBeenSet(false),
-    m_dbClusterIdentifierHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_awsSecretStoreArnHasBeenSet(false)
-{
-}
-
 RdsHttpEndpointConfig::RdsHttpEndpointConfig(JsonView jsonValue)
-  : RdsHttpEndpointConfig()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ RdsHttpEndpointConfig& RdsHttpEndpointConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("awsRegion"))
   {
     m_awsRegion = jsonValue.GetString("awsRegion");
-
     m_awsRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dbClusterIdentifier"))
   {
     m_dbClusterIdentifier = jsonValue.GetString("dbClusterIdentifier");
-
     m_dbClusterIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("databaseName"))
   {
     m_databaseName = jsonValue.GetString("databaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schema"))
   {
     m_schema = jsonValue.GetString("schema");
-
     m_schemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsSecretStoreArn"))
   {
     m_awsSecretStoreArn = jsonValue.GetString("awsSecretStoreArn");
-
     m_awsSecretStoreArnHasBeenSet = true;
   }
-
   return *this;
 }
 

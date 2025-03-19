@@ -37,7 +37,7 @@ namespace Model
   class DescribeOrderableDBInstanceOptionsResult
   {
   public:
-    AWS_RDS_API DescribeOrderableDBInstanceOptionsResult();
+    AWS_RDS_API DescribeOrderableDBInstanceOptionsResult() = default;
     AWS_RDS_API DescribeOrderableDBInstanceOptionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_RDS_API DescribeOrderableDBInstanceOptionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -47,13 +47,13 @@ namespace Model
      * <p>An <code>OrderableDBInstanceOption</code> structure containing information
      * about orderable options for the DB instance.</p>
      */
-    inline const Aws::Vector<OrderableDBInstanceOption>& GetOrderableDBInstanceOptions() const{ return m_orderableDBInstanceOptions; }
-    inline void SetOrderableDBInstanceOptions(const Aws::Vector<OrderableDBInstanceOption>& value) { m_orderableDBInstanceOptions = value; }
-    inline void SetOrderableDBInstanceOptions(Aws::Vector<OrderableDBInstanceOption>&& value) { m_orderableDBInstanceOptions = std::move(value); }
-    inline DescribeOrderableDBInstanceOptionsResult& WithOrderableDBInstanceOptions(const Aws::Vector<OrderableDBInstanceOption>& value) { SetOrderableDBInstanceOptions(value); return *this;}
-    inline DescribeOrderableDBInstanceOptionsResult& WithOrderableDBInstanceOptions(Aws::Vector<OrderableDBInstanceOption>&& value) { SetOrderableDBInstanceOptions(std::move(value)); return *this;}
-    inline DescribeOrderableDBInstanceOptionsResult& AddOrderableDBInstanceOptions(const OrderableDBInstanceOption& value) { m_orderableDBInstanceOptions.push_back(value); return *this; }
-    inline DescribeOrderableDBInstanceOptionsResult& AddOrderableDBInstanceOptions(OrderableDBInstanceOption&& value) { m_orderableDBInstanceOptions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<OrderableDBInstanceOption>& GetOrderableDBInstanceOptions() const { return m_orderableDBInstanceOptions; }
+    template<typename OrderableDBInstanceOptionsT = Aws::Vector<OrderableDBInstanceOption>>
+    void SetOrderableDBInstanceOptions(OrderableDBInstanceOptionsT&& value) { m_orderableDBInstanceOptionsHasBeenSet = true; m_orderableDBInstanceOptions = std::forward<OrderableDBInstanceOptionsT>(value); }
+    template<typename OrderableDBInstanceOptionsT = Aws::Vector<OrderableDBInstanceOption>>
+    DescribeOrderableDBInstanceOptionsResult& WithOrderableDBInstanceOptions(OrderableDBInstanceOptionsT&& value) { SetOrderableDBInstanceOptions(std::forward<OrderableDBInstanceOptionsT>(value)); return *this;}
+    template<typename OrderableDBInstanceOptionsT = OrderableDBInstanceOption>
+    DescribeOrderableDBInstanceOptionsResult& AddOrderableDBInstanceOptions(OrderableDBInstanceOptionsT&& value) { m_orderableDBInstanceOptionsHasBeenSet = true; m_orderableDBInstanceOptions.emplace_back(std::forward<OrderableDBInstanceOptionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -63,30 +63,31 @@ namespace Model
      * includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeOrderableDBInstanceOptionsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeOrderableDBInstanceOptionsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeOrderableDBInstanceOptionsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeOrderableDBInstanceOptionsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeOrderableDBInstanceOptionsResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeOrderableDBInstanceOptionsResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeOrderableDBInstanceOptionsResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<OrderableDBInstanceOption> m_orderableDBInstanceOptions;
+    bool m_orderableDBInstanceOptionsHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

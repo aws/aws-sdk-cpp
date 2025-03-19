@@ -12,15 +12,6 @@ using namespace Aws::IoTSiteWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-InvokeAssistantRequest::InvokeAssistantRequest() : 
-    m_conversationIdHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_enableTrace(false),
-    m_enableTraceHasBeenSet(false),
-    m_handler(), m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))
-{
-}
-
 Aws::String InvokeAssistantRequest::SerializePayload() const
 {
   JsonValue payload;

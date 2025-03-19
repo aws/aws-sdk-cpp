@@ -34,7 +34,7 @@ namespace Model
   class CustomModelTransformParameters
   {
   public:
-    AWS_NEPTUNEDATA_API CustomModelTransformParameters();
+    AWS_NEPTUNEDATA_API CustomModelTransformParameters() = default;
     AWS_NEPTUNEDATA_API CustomModelTransformParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_NEPTUNEDATA_API CustomModelTransformParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NEPTUNEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * contains, at a minimum, a training script, a transform script, and a
      * <code>model-hpo-configuration.json</code> file.</p>
      */
-    inline const Aws::String& GetSourceS3DirectoryPath() const{ return m_sourceS3DirectoryPath; }
+    inline const Aws::String& GetSourceS3DirectoryPath() const { return m_sourceS3DirectoryPath; }
     inline bool SourceS3DirectoryPathHasBeenSet() const { return m_sourceS3DirectoryPathHasBeenSet; }
-    inline void SetSourceS3DirectoryPath(const Aws::String& value) { m_sourceS3DirectoryPathHasBeenSet = true; m_sourceS3DirectoryPath = value; }
-    inline void SetSourceS3DirectoryPath(Aws::String&& value) { m_sourceS3DirectoryPathHasBeenSet = true; m_sourceS3DirectoryPath = std::move(value); }
-    inline void SetSourceS3DirectoryPath(const char* value) { m_sourceS3DirectoryPathHasBeenSet = true; m_sourceS3DirectoryPath.assign(value); }
-    inline CustomModelTransformParameters& WithSourceS3DirectoryPath(const Aws::String& value) { SetSourceS3DirectoryPath(value); return *this;}
-    inline CustomModelTransformParameters& WithSourceS3DirectoryPath(Aws::String&& value) { SetSourceS3DirectoryPath(std::move(value)); return *this;}
-    inline CustomModelTransformParameters& WithSourceS3DirectoryPath(const char* value) { SetSourceS3DirectoryPath(value); return *this;}
+    template<typename SourceS3DirectoryPathT = Aws::String>
+    void SetSourceS3DirectoryPath(SourceS3DirectoryPathT&& value) { m_sourceS3DirectoryPathHasBeenSet = true; m_sourceS3DirectoryPath = std::forward<SourceS3DirectoryPathT>(value); }
+    template<typename SourceS3DirectoryPathT = Aws::String>
+    CustomModelTransformParameters& WithSourceS3DirectoryPath(SourceS3DirectoryPathT&& value) { SetSourceS3DirectoryPath(std::forward<SourceS3DirectoryPathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * run with no command-line arguments. The default is
      * <code>transform.py</code>.</p>
      */
-    inline const Aws::String& GetTransformEntryPointScript() const{ return m_transformEntryPointScript; }
+    inline const Aws::String& GetTransformEntryPointScript() const { return m_transformEntryPointScript; }
     inline bool TransformEntryPointScriptHasBeenSet() const { return m_transformEntryPointScriptHasBeenSet; }
-    inline void SetTransformEntryPointScript(const Aws::String& value) { m_transformEntryPointScriptHasBeenSet = true; m_transformEntryPointScript = value; }
-    inline void SetTransformEntryPointScript(Aws::String&& value) { m_transformEntryPointScriptHasBeenSet = true; m_transformEntryPointScript = std::move(value); }
-    inline void SetTransformEntryPointScript(const char* value) { m_transformEntryPointScriptHasBeenSet = true; m_transformEntryPointScript.assign(value); }
-    inline CustomModelTransformParameters& WithTransformEntryPointScript(const Aws::String& value) { SetTransformEntryPointScript(value); return *this;}
-    inline CustomModelTransformParameters& WithTransformEntryPointScript(Aws::String&& value) { SetTransformEntryPointScript(std::move(value)); return *this;}
-    inline CustomModelTransformParameters& WithTransformEntryPointScript(const char* value) { SetTransformEntryPointScript(value); return *this;}
+    template<typename TransformEntryPointScriptT = Aws::String>
+    void SetTransformEntryPointScript(TransformEntryPointScriptT&& value) { m_transformEntryPointScriptHasBeenSet = true; m_transformEntryPointScript = std::forward<TransformEntryPointScriptT>(value); }
+    template<typename TransformEntryPointScriptT = Aws::String>
+    CustomModelTransformParameters& WithTransformEntryPointScript(TransformEntryPointScriptT&& value) { SetTransformEntryPointScript(std::forward<TransformEntryPointScriptT>(value)); return *this;}
     ///@}
   private:
 

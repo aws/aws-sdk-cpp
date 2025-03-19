@@ -12,23 +12,6 @@ using namespace Aws::AppConfig::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDeploymentStrategyRequest::CreateDeploymentStrategyRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_deploymentDurationInMinutes(0),
-    m_deploymentDurationInMinutesHasBeenSet(false),
-    m_finalBakeTimeInMinutes(0),
-    m_finalBakeTimeInMinutesHasBeenSet(false),
-    m_growthFactor(0.0),
-    m_growthFactorHasBeenSet(false),
-    m_growthType(GrowthType::NOT_SET),
-    m_growthTypeHasBeenSet(false),
-    m_replicateTo(ReplicateTo::NOT_SET),
-    m_replicateToHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDeploymentStrategyRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -52,7 +52,7 @@ namespace Model
   class ContainerDefinition
   {
   public:
-    AWS_ECS_API ContainerDefinition();
+    AWS_ECS_API ContainerDefinition() = default;
     AWS_ECS_API ContainerDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API ContainerDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -67,14 +67,12 @@ namespace Model
      * allowed. This parameter maps to <code>name</code> in the docker container create
      * command and the <code>--name</code> option to docker run. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ContainerDefinition& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ContainerDefinition& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ContainerDefinition& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ContainerDefinition& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -104,26 +102,24 @@ namespace Model
      * <p>Images in other online repositories are qualified further by a domain name
      * (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
-    inline const Aws::String& GetImage() const{ return m_image; }
+    inline const Aws::String& GetImage() const { return m_image; }
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
-    inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
-    inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
-    inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
-    inline ContainerDefinition& WithImage(const Aws::String& value) { SetImage(value); return *this;}
-    inline ContainerDefinition& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
-    inline ContainerDefinition& WithImage(const char* value) { SetImage(value); return *this;}
+    template<typename ImageT = Aws::String>
+    void SetImage(ImageT&& value) { m_imageHasBeenSet = true; m_image = std::forward<ImageT>(value); }
+    template<typename ImageT = Aws::String>
+    ContainerDefinition& WithImage(ImageT&& value) { SetImage(std::forward<ImageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The private repository authentication credentials to use.</p>
      */
-    inline const RepositoryCredentials& GetRepositoryCredentials() const{ return m_repositoryCredentials; }
+    inline const RepositoryCredentials& GetRepositoryCredentials() const { return m_repositoryCredentials; }
     inline bool RepositoryCredentialsHasBeenSet() const { return m_repositoryCredentialsHasBeenSet; }
-    inline void SetRepositoryCredentials(const RepositoryCredentials& value) { m_repositoryCredentialsHasBeenSet = true; m_repositoryCredentials = value; }
-    inline void SetRepositoryCredentials(RepositoryCredentials&& value) { m_repositoryCredentialsHasBeenSet = true; m_repositoryCredentials = std::move(value); }
-    inline ContainerDefinition& WithRepositoryCredentials(const RepositoryCredentials& value) { SetRepositoryCredentials(value); return *this;}
-    inline ContainerDefinition& WithRepositoryCredentials(RepositoryCredentials&& value) { SetRepositoryCredentials(std::move(value)); return *this;}
+    template<typename RepositoryCredentialsT = RepositoryCredentials>
+    void SetRepositoryCredentials(RepositoryCredentialsT&& value) { m_repositoryCredentialsHasBeenSet = true; m_repositoryCredentials = std::forward<RepositoryCredentialsT>(value); }
+    template<typename RepositoryCredentialsT = RepositoryCredentials>
+    ContainerDefinition& WithRepositoryCredentials(RepositoryCredentialsT&& value) { SetRepositoryCredentials(std::forward<RepositoryCredentialsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -167,7 +163,7 @@ namespace Model
      * described in the task definition. A null or zero CPU value is passed to Docker
      * as <code>0</code>, which Windows interprets as 1% of one CPU.</p>
      */
-    inline int GetCpu() const{ return m_cpu; }
+    inline int GetCpu() const { return m_cpu; }
     inline bool CpuHasBeenSet() const { return m_cpuHasBeenSet; }
     inline void SetCpu(int value) { m_cpuHasBeenSet = true; m_cpu = value; }
     inline ContainerDefinition& WithCpu(int value) { SetCpu(value); return *this;}
@@ -194,7 +190,7 @@ namespace Model
      * reserves a minimum of 4 MiB of memory for a container. So, don't specify less
      * than 4 MiB of memory for your containers.</p>
      */
-    inline int GetMemory() const{ return m_memory; }
+    inline int GetMemory() const { return m_memory; }
     inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
     inline void SetMemory(int value) { m_memoryHasBeenSet = true; m_memory = value; }
     inline ContainerDefinition& WithMemory(int value) { SetMemory(value); return *this;}
@@ -228,7 +224,7 @@ namespace Model
      * reserves a minimum of 4 MiB of memory for a container. So, don't specify less
      * than 4 MiB of memory for your containers.</p>
      */
-    inline int GetMemoryReservation() const{ return m_memoryReservation; }
+    inline int GetMemoryReservation() const { return m_memoryReservation; }
     inline bool MemoryReservationHasBeenSet() const { return m_memoryReservationHasBeenSet; }
     inline void SetMemoryReservation(int value) { m_memoryReservationHasBeenSet = true; m_memoryReservation = value; }
     inline ContainerDefinition& WithMemoryReservation(int value) { SetMemoryReservation(value); return *this;}
@@ -249,15 +245,14 @@ namespace Model
      * requiring links or host port mappings. Network isolation is achieved on the
      * container instance using security groups and VPC settings.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetLinks() const{ return m_links; }
+    inline const Aws::Vector<Aws::String>& GetLinks() const { return m_links; }
     inline bool LinksHasBeenSet() const { return m_linksHasBeenSet; }
-    inline void SetLinks(const Aws::Vector<Aws::String>& value) { m_linksHasBeenSet = true; m_links = value; }
-    inline void SetLinks(Aws::Vector<Aws::String>&& value) { m_linksHasBeenSet = true; m_links = std::move(value); }
-    inline ContainerDefinition& WithLinks(const Aws::Vector<Aws::String>& value) { SetLinks(value); return *this;}
-    inline ContainerDefinition& WithLinks(Aws::Vector<Aws::String>&& value) { SetLinks(std::move(value)); return *this;}
-    inline ContainerDefinition& AddLinks(const Aws::String& value) { m_linksHasBeenSet = true; m_links.push_back(value); return *this; }
-    inline ContainerDefinition& AddLinks(Aws::String&& value) { m_linksHasBeenSet = true; m_links.push_back(std::move(value)); return *this; }
-    inline ContainerDefinition& AddLinks(const char* value) { m_linksHasBeenSet = true; m_links.push_back(value); return *this; }
+    template<typename LinksT = Aws::Vector<Aws::String>>
+    void SetLinks(LinksT&& value) { m_linksHasBeenSet = true; m_links = std::forward<LinksT>(value); }
+    template<typename LinksT = Aws::Vector<Aws::String>>
+    ContainerDefinition& WithLinks(LinksT&& value) { SetLinks(std::forward<LinksT>(value)); return *this;}
+    template<typename LinksT = Aws::String>
+    ContainerDefinition& AddLinks(LinksT&& value) { m_linksHasBeenSet = true; m_links.emplace_back(std::forward<LinksT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -283,14 +278,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeTasks.html">DescribeTasks</a>
      * responses.</p> 
      */
-    inline const Aws::Vector<PortMapping>& GetPortMappings() const{ return m_portMappings; }
+    inline const Aws::Vector<PortMapping>& GetPortMappings() const { return m_portMappings; }
     inline bool PortMappingsHasBeenSet() const { return m_portMappingsHasBeenSet; }
-    inline void SetPortMappings(const Aws::Vector<PortMapping>& value) { m_portMappingsHasBeenSet = true; m_portMappings = value; }
-    inline void SetPortMappings(Aws::Vector<PortMapping>&& value) { m_portMappingsHasBeenSet = true; m_portMappings = std::move(value); }
-    inline ContainerDefinition& WithPortMappings(const Aws::Vector<PortMapping>& value) { SetPortMappings(value); return *this;}
-    inline ContainerDefinition& WithPortMappings(Aws::Vector<PortMapping>&& value) { SetPortMappings(std::move(value)); return *this;}
-    inline ContainerDefinition& AddPortMappings(const PortMapping& value) { m_portMappingsHasBeenSet = true; m_portMappings.push_back(value); return *this; }
-    inline ContainerDefinition& AddPortMappings(PortMapping&& value) { m_portMappingsHasBeenSet = true; m_portMappings.push_back(std::move(value)); return *this; }
+    template<typename PortMappingsT = Aws::Vector<PortMapping>>
+    void SetPortMappings(PortMappingsT&& value) { m_portMappingsHasBeenSet = true; m_portMappings = std::forward<PortMappingsT>(value); }
+    template<typename PortMappingsT = Aws::Vector<PortMapping>>
+    ContainerDefinition& WithPortMappings(PortMappingsT&& value) { SetPortMappings(std::forward<PortMappingsT>(value)); return *this;}
+    template<typename PortMappingsT = PortMapping>
+    ContainerDefinition& AddPortMappings(PortMappingsT&& value) { m_portMappingsHasBeenSet = true; m_portMappings.emplace_back(std::forward<PortMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -309,7 +304,7 @@ namespace Model
      * Architecture</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
-    inline bool GetEssential() const{ return m_essential; }
+    inline bool GetEssential() const { return m_essential; }
     inline bool EssentialHasBeenSet() const { return m_essentialHasBeenSet; }
     inline void SetEssential(bool value) { m_essentialHasBeenSet = true; m_essential = value; }
     inline ContainerDefinition& WithEssential(bool value) { SetEssential(value); return *this;}
@@ -324,12 +319,12 @@ namespace Model
      * individual containers in Amazon ECS tasks with container restart policies</a> in
      * the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
      */
-    inline const ContainerRestartPolicy& GetRestartPolicy() const{ return m_restartPolicy; }
+    inline const ContainerRestartPolicy& GetRestartPolicy() const { return m_restartPolicy; }
     inline bool RestartPolicyHasBeenSet() const { return m_restartPolicyHasBeenSet; }
-    inline void SetRestartPolicy(const ContainerRestartPolicy& value) { m_restartPolicyHasBeenSet = true; m_restartPolicy = value; }
-    inline void SetRestartPolicy(ContainerRestartPolicy&& value) { m_restartPolicyHasBeenSet = true; m_restartPolicy = std::move(value); }
-    inline ContainerDefinition& WithRestartPolicy(const ContainerRestartPolicy& value) { SetRestartPolicy(value); return *this;}
-    inline ContainerDefinition& WithRestartPolicy(ContainerRestartPolicy&& value) { SetRestartPolicy(std::move(value)); return *this;}
+    template<typename RestartPolicyT = ContainerRestartPolicy>
+    void SetRestartPolicy(RestartPolicyT&& value) { m_restartPolicyHasBeenSet = true; m_restartPolicy = std::forward<RestartPolicyT>(value); }
+    template<typename RestartPolicyT = ContainerRestartPolicy>
+    ContainerDefinition& WithRestartPolicy(RestartPolicyT&& value) { SetRestartPolicy(std::forward<RestartPolicyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -342,15 +337,14 @@ namespace Model
      * <code>Entrypoint</code> in the docker container create command and the
      * <code>--entrypoint</code> option to docker run.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetEntryPoint() const{ return m_entryPoint; }
+    inline const Aws::Vector<Aws::String>& GetEntryPoint() const { return m_entryPoint; }
     inline bool EntryPointHasBeenSet() const { return m_entryPointHasBeenSet; }
-    inline void SetEntryPoint(const Aws::Vector<Aws::String>& value) { m_entryPointHasBeenSet = true; m_entryPoint = value; }
-    inline void SetEntryPoint(Aws::Vector<Aws::String>&& value) { m_entryPointHasBeenSet = true; m_entryPoint = std::move(value); }
-    inline ContainerDefinition& WithEntryPoint(const Aws::Vector<Aws::String>& value) { SetEntryPoint(value); return *this;}
-    inline ContainerDefinition& WithEntryPoint(Aws::Vector<Aws::String>&& value) { SetEntryPoint(std::move(value)); return *this;}
-    inline ContainerDefinition& AddEntryPoint(const Aws::String& value) { m_entryPointHasBeenSet = true; m_entryPoint.push_back(value); return *this; }
-    inline ContainerDefinition& AddEntryPoint(Aws::String&& value) { m_entryPointHasBeenSet = true; m_entryPoint.push_back(std::move(value)); return *this; }
-    inline ContainerDefinition& AddEntryPoint(const char* value) { m_entryPointHasBeenSet = true; m_entryPoint.push_back(value); return *this; }
+    template<typename EntryPointT = Aws::Vector<Aws::String>>
+    void SetEntryPoint(EntryPointT&& value) { m_entryPointHasBeenSet = true; m_entryPoint = std::forward<EntryPointT>(value); }
+    template<typename EntryPointT = Aws::Vector<Aws::String>>
+    ContainerDefinition& WithEntryPoint(EntryPointT&& value) { SetEntryPoint(std::forward<EntryPointT>(value)); return *this;}
+    template<typename EntryPointT = Aws::String>
+    ContainerDefinition& AddEntryPoint(EntryPointT&& value) { m_entryPointHasBeenSet = true; m_entryPoint.emplace_back(std::forward<EntryPointT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -360,15 +354,14 @@ namespace Model
      * <code>COMMAND</code> parameter to docker run. If there are multiple arguments,
      * each argument is a separated string in the array.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCommand() const{ return m_command; }
+    inline const Aws::Vector<Aws::String>& GetCommand() const { return m_command; }
     inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
-    inline void SetCommand(const Aws::Vector<Aws::String>& value) { m_commandHasBeenSet = true; m_command = value; }
-    inline void SetCommand(Aws::Vector<Aws::String>&& value) { m_commandHasBeenSet = true; m_command = std::move(value); }
-    inline ContainerDefinition& WithCommand(const Aws::Vector<Aws::String>& value) { SetCommand(value); return *this;}
-    inline ContainerDefinition& WithCommand(Aws::Vector<Aws::String>&& value) { SetCommand(std::move(value)); return *this;}
-    inline ContainerDefinition& AddCommand(const Aws::String& value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
-    inline ContainerDefinition& AddCommand(Aws::String&& value) { m_commandHasBeenSet = true; m_command.push_back(std::move(value)); return *this; }
-    inline ContainerDefinition& AddCommand(const char* value) { m_commandHasBeenSet = true; m_command.push_back(value); return *this; }
+    template<typename CommandT = Aws::Vector<Aws::String>>
+    void SetCommand(CommandT&& value) { m_commandHasBeenSet = true; m_command = std::forward<CommandT>(value); }
+    template<typename CommandT = Aws::Vector<Aws::String>>
+    ContainerDefinition& WithCommand(CommandT&& value) { SetCommand(std::forward<CommandT>(value)); return *this;}
+    template<typename CommandT = Aws::String>
+    ContainerDefinition& AddCommand(CommandT&& value) { m_commandHasBeenSet = true; m_command.emplace_back(std::forward<CommandT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -379,14 +372,14 @@ namespace Model
      * that you use plaintext environment variables for sensitive information, such as
      * credential data.</p> 
      */
-    inline const Aws::Vector<KeyValuePair>& GetEnvironment() const{ return m_environment; }
+    inline const Aws::Vector<KeyValuePair>& GetEnvironment() const { return m_environment; }
     inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
-    inline void SetEnvironment(const Aws::Vector<KeyValuePair>& value) { m_environmentHasBeenSet = true; m_environment = value; }
-    inline void SetEnvironment(Aws::Vector<KeyValuePair>&& value) { m_environmentHasBeenSet = true; m_environment = std::move(value); }
-    inline ContainerDefinition& WithEnvironment(const Aws::Vector<KeyValuePair>& value) { SetEnvironment(value); return *this;}
-    inline ContainerDefinition& WithEnvironment(Aws::Vector<KeyValuePair>&& value) { SetEnvironment(std::move(value)); return *this;}
-    inline ContainerDefinition& AddEnvironment(const KeyValuePair& value) { m_environmentHasBeenSet = true; m_environment.push_back(value); return *this; }
-    inline ContainerDefinition& AddEnvironment(KeyValuePair&& value) { m_environmentHasBeenSet = true; m_environment.push_back(std::move(value)); return *this; }
+    template<typename EnvironmentT = Aws::Vector<KeyValuePair>>
+    void SetEnvironment(EnvironmentT&& value) { m_environmentHasBeenSet = true; m_environment = std::forward<EnvironmentT>(value); }
+    template<typename EnvironmentT = Aws::Vector<KeyValuePair>>
+    ContainerDefinition& WithEnvironment(EnvironmentT&& value) { SetEnvironment(std::forward<EnvironmentT>(value)); return *this;}
+    template<typename EnvironmentT = KeyValuePair>
+    ContainerDefinition& AddEnvironment(EnvironmentT&& value) { m_environmentHasBeenSet = true; m_environment.emplace_back(std::forward<EnvironmentT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -406,14 +399,14 @@ namespace Model
      * Environment Variables</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
-    inline const Aws::Vector<EnvironmentFile>& GetEnvironmentFiles() const{ return m_environmentFiles; }
+    inline const Aws::Vector<EnvironmentFile>& GetEnvironmentFiles() const { return m_environmentFiles; }
     inline bool EnvironmentFilesHasBeenSet() const { return m_environmentFilesHasBeenSet; }
-    inline void SetEnvironmentFiles(const Aws::Vector<EnvironmentFile>& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles = value; }
-    inline void SetEnvironmentFiles(Aws::Vector<EnvironmentFile>&& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles = std::move(value); }
-    inline ContainerDefinition& WithEnvironmentFiles(const Aws::Vector<EnvironmentFile>& value) { SetEnvironmentFiles(value); return *this;}
-    inline ContainerDefinition& WithEnvironmentFiles(Aws::Vector<EnvironmentFile>&& value) { SetEnvironmentFiles(std::move(value)); return *this;}
-    inline ContainerDefinition& AddEnvironmentFiles(const EnvironmentFile& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles.push_back(value); return *this; }
-    inline ContainerDefinition& AddEnvironmentFiles(EnvironmentFile&& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles.push_back(std::move(value)); return *this; }
+    template<typename EnvironmentFilesT = Aws::Vector<EnvironmentFile>>
+    void SetEnvironmentFiles(EnvironmentFilesT&& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles = std::forward<EnvironmentFilesT>(value); }
+    template<typename EnvironmentFilesT = Aws::Vector<EnvironmentFile>>
+    ContainerDefinition& WithEnvironmentFiles(EnvironmentFilesT&& value) { SetEnvironmentFiles(std::forward<EnvironmentFilesT>(value)); return *this;}
+    template<typename EnvironmentFilesT = EnvironmentFile>
+    ContainerDefinition& AddEnvironmentFiles(EnvironmentFilesT&& value) { m_environmentFilesHasBeenSet = true; m_environmentFiles.emplace_back(std::forward<EnvironmentFilesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -425,14 +418,14 @@ namespace Model
      * containers can't mount directories on a different drive, and mount point can't
      * be across drives.</p>
      */
-    inline const Aws::Vector<MountPoint>& GetMountPoints() const{ return m_mountPoints; }
+    inline const Aws::Vector<MountPoint>& GetMountPoints() const { return m_mountPoints; }
     inline bool MountPointsHasBeenSet() const { return m_mountPointsHasBeenSet; }
-    inline void SetMountPoints(const Aws::Vector<MountPoint>& value) { m_mountPointsHasBeenSet = true; m_mountPoints = value; }
-    inline void SetMountPoints(Aws::Vector<MountPoint>&& value) { m_mountPointsHasBeenSet = true; m_mountPoints = std::move(value); }
-    inline ContainerDefinition& WithMountPoints(const Aws::Vector<MountPoint>& value) { SetMountPoints(value); return *this;}
-    inline ContainerDefinition& WithMountPoints(Aws::Vector<MountPoint>&& value) { SetMountPoints(std::move(value)); return *this;}
-    inline ContainerDefinition& AddMountPoints(const MountPoint& value) { m_mountPointsHasBeenSet = true; m_mountPoints.push_back(value); return *this; }
-    inline ContainerDefinition& AddMountPoints(MountPoint&& value) { m_mountPointsHasBeenSet = true; m_mountPoints.push_back(std::move(value)); return *this; }
+    template<typename MountPointsT = Aws::Vector<MountPoint>>
+    void SetMountPoints(MountPointsT&& value) { m_mountPointsHasBeenSet = true; m_mountPoints = std::forward<MountPointsT>(value); }
+    template<typename MountPointsT = Aws::Vector<MountPoint>>
+    ContainerDefinition& WithMountPoints(MountPointsT&& value) { SetMountPoints(std::forward<MountPointsT>(value)); return *this;}
+    template<typename MountPointsT = MountPoint>
+    ContainerDefinition& AddMountPoints(MountPointsT&& value) { m_mountPointsHasBeenSet = true; m_mountPoints.emplace_back(std::forward<MountPointsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -441,14 +434,14 @@ namespace Model
      * <code>VolumesFrom</code> in the docker container create command and the
      * <code>--volumes-from</code> option to docker run.</p>
      */
-    inline const Aws::Vector<VolumeFrom>& GetVolumesFrom() const{ return m_volumesFrom; }
+    inline const Aws::Vector<VolumeFrom>& GetVolumesFrom() const { return m_volumesFrom; }
     inline bool VolumesFromHasBeenSet() const { return m_volumesFromHasBeenSet; }
-    inline void SetVolumesFrom(const Aws::Vector<VolumeFrom>& value) { m_volumesFromHasBeenSet = true; m_volumesFrom = value; }
-    inline void SetVolumesFrom(Aws::Vector<VolumeFrom>&& value) { m_volumesFromHasBeenSet = true; m_volumesFrom = std::move(value); }
-    inline ContainerDefinition& WithVolumesFrom(const Aws::Vector<VolumeFrom>& value) { SetVolumesFrom(value); return *this;}
-    inline ContainerDefinition& WithVolumesFrom(Aws::Vector<VolumeFrom>&& value) { SetVolumesFrom(std::move(value)); return *this;}
-    inline ContainerDefinition& AddVolumesFrom(const VolumeFrom& value) { m_volumesFromHasBeenSet = true; m_volumesFrom.push_back(value); return *this; }
-    inline ContainerDefinition& AddVolumesFrom(VolumeFrom&& value) { m_volumesFromHasBeenSet = true; m_volumesFrom.push_back(std::move(value)); return *this; }
+    template<typename VolumesFromT = Aws::Vector<VolumeFrom>>
+    void SetVolumesFrom(VolumesFromT&& value) { m_volumesFromHasBeenSet = true; m_volumesFrom = std::forward<VolumesFromT>(value); }
+    template<typename VolumesFromT = Aws::Vector<VolumeFrom>>
+    ContainerDefinition& WithVolumesFrom(VolumesFromT&& value) { SetVolumesFrom(std::forward<VolumesFromT>(value)); return *this;}
+    template<typename VolumesFromT = VolumeFrom>
+    ContainerDefinition& AddVolumesFrom(VolumesFromT&& value) { m_volumesFromHasBeenSet = true; m_volumesFrom.emplace_back(std::forward<VolumesFromT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -458,12 +451,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_KernelCapabilities.html">KernelCapabilities</a>.</p>
      *  <p>This parameter is not supported for Windows containers.</p> 
      */
-    inline const LinuxParameters& GetLinuxParameters() const{ return m_linuxParameters; }
+    inline const LinuxParameters& GetLinuxParameters() const { return m_linuxParameters; }
     inline bool LinuxParametersHasBeenSet() const { return m_linuxParametersHasBeenSet; }
-    inline void SetLinuxParameters(const LinuxParameters& value) { m_linuxParametersHasBeenSet = true; m_linuxParameters = value; }
-    inline void SetLinuxParameters(LinuxParameters&& value) { m_linuxParametersHasBeenSet = true; m_linuxParameters = std::move(value); }
-    inline ContainerDefinition& WithLinuxParameters(const LinuxParameters& value) { SetLinuxParameters(value); return *this;}
-    inline ContainerDefinition& WithLinuxParameters(LinuxParameters&& value) { SetLinuxParameters(std::move(value)); return *this;}
+    template<typename LinuxParametersT = LinuxParameters>
+    void SetLinuxParameters(LinuxParametersT&& value) { m_linuxParametersHasBeenSet = true; m_linuxParameters = std::forward<LinuxParametersT>(value); }
+    template<typename LinuxParametersT = LinuxParameters>
+    ContainerDefinition& WithLinuxParameters(LinuxParametersT&& value) { SetLinuxParameters(std::forward<LinuxParametersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -473,14 +466,14 @@ namespace Model
      * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
-    inline const Aws::Vector<Secret>& GetSecrets() const{ return m_secrets; }
+    inline const Aws::Vector<Secret>& GetSecrets() const { return m_secrets; }
     inline bool SecretsHasBeenSet() const { return m_secretsHasBeenSet; }
-    inline void SetSecrets(const Aws::Vector<Secret>& value) { m_secretsHasBeenSet = true; m_secrets = value; }
-    inline void SetSecrets(Aws::Vector<Secret>&& value) { m_secretsHasBeenSet = true; m_secrets = std::move(value); }
-    inline ContainerDefinition& WithSecrets(const Aws::Vector<Secret>& value) { SetSecrets(value); return *this;}
-    inline ContainerDefinition& WithSecrets(Aws::Vector<Secret>&& value) { SetSecrets(std::move(value)); return *this;}
-    inline ContainerDefinition& AddSecrets(const Secret& value) { m_secretsHasBeenSet = true; m_secrets.push_back(value); return *this; }
-    inline ContainerDefinition& AddSecrets(Secret&& value) { m_secretsHasBeenSet = true; m_secrets.push_back(std::move(value)); return *this; }
+    template<typename SecretsT = Aws::Vector<Secret>>
+    void SetSecrets(SecretsT&& value) { m_secretsHasBeenSet = true; m_secrets = std::forward<SecretsT>(value); }
+    template<typename SecretsT = Aws::Vector<Secret>>
+    ContainerDefinition& WithSecrets(SecretsT&& value) { SetSecrets(std::forward<SecretsT>(value)); return *this;}
+    template<typename SecretsT = Secret>
+    ContainerDefinition& AddSecrets(SecretsT&& value) { m_secretsHasBeenSet = true; m_secrets.emplace_back(std::forward<SecretsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -507,14 +500,14 @@ namespace Model
      * <code>1.3.0</code> or later.</p> </li> <li> <p>Windows platform version
      * <code>1.0.0</code> or later.</p> </li> </ul>
      */
-    inline const Aws::Vector<ContainerDependency>& GetDependsOn() const{ return m_dependsOn; }
+    inline const Aws::Vector<ContainerDependency>& GetDependsOn() const { return m_dependsOn; }
     inline bool DependsOnHasBeenSet() const { return m_dependsOnHasBeenSet; }
-    inline void SetDependsOn(const Aws::Vector<ContainerDependency>& value) { m_dependsOnHasBeenSet = true; m_dependsOn = value; }
-    inline void SetDependsOn(Aws::Vector<ContainerDependency>&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = std::move(value); }
-    inline ContainerDefinition& WithDependsOn(const Aws::Vector<ContainerDependency>& value) { SetDependsOn(value); return *this;}
-    inline ContainerDefinition& WithDependsOn(Aws::Vector<ContainerDependency>&& value) { SetDependsOn(std::move(value)); return *this;}
-    inline ContainerDefinition& AddDependsOn(const ContainerDependency& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(value); return *this; }
-    inline ContainerDefinition& AddDependsOn(ContainerDependency&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.push_back(std::move(value)); return *this; }
+    template<typename DependsOnT = Aws::Vector<ContainerDependency>>
+    void SetDependsOn(DependsOnT&& value) { m_dependsOnHasBeenSet = true; m_dependsOn = std::forward<DependsOnT>(value); }
+    template<typename DependsOnT = Aws::Vector<ContainerDependency>>
+    ContainerDefinition& WithDependsOn(DependsOnT&& value) { SetDependsOn(std::forward<DependsOnT>(value)); return *this;}
+    template<typename DependsOnT = ContainerDependency>
+    ContainerDefinition& AddDependsOn(DependsOnT&& value) { m_dependsOnHasBeenSet = true; m_dependsOn.emplace_back(std::forward<DependsOnT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -548,7 +541,7 @@ namespace Model
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>The valid values for Fargate are 2-120 seconds.</p>
      */
-    inline int GetStartTimeout() const{ return m_startTimeout; }
+    inline int GetStartTimeout() const { return m_startTimeout; }
     inline bool StartTimeoutHasBeenSet() const { return m_startTimeoutHasBeenSet; }
     inline void SetStartTimeout(int value) { m_startTimeoutHasBeenSet = true; m_startTimeout = value; }
     inline ContainerDefinition& WithStartTimeout(int value) { SetStartTimeout(value); return *this;}
@@ -584,7 +577,7 @@ namespace Model
      * ECS-optimized Linux AMI</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p> <p>The valid values for Fargate are 2-120 seconds.</p>
      */
-    inline int GetStopTimeout() const{ return m_stopTimeout; }
+    inline int GetStopTimeout() const { return m_stopTimeout; }
     inline bool StopTimeoutHasBeenSet() const { return m_stopTimeoutHasBeenSet; }
     inline void SetStopTimeout(int value) { m_stopTimeoutHasBeenSet = true; m_stopTimeout = value; }
     inline ContainerDefinition& WithStopTimeout(int value) { SetStopTimeout(value); return *this;}
@@ -602,12 +595,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html#deployment-container-image-stability">Container
      * image resolution</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
-    inline const VersionConsistency& GetVersionConsistency() const{ return m_versionConsistency; }
+    inline VersionConsistency GetVersionConsistency() const { return m_versionConsistency; }
     inline bool VersionConsistencyHasBeenSet() const { return m_versionConsistencyHasBeenSet; }
-    inline void SetVersionConsistency(const VersionConsistency& value) { m_versionConsistencyHasBeenSet = true; m_versionConsistency = value; }
-    inline void SetVersionConsistency(VersionConsistency&& value) { m_versionConsistencyHasBeenSet = true; m_versionConsistency = std::move(value); }
-    inline ContainerDefinition& WithVersionConsistency(const VersionConsistency& value) { SetVersionConsistency(value); return *this;}
-    inline ContainerDefinition& WithVersionConsistency(VersionConsistency&& value) { SetVersionConsistency(std::move(value)); return *this;}
+    inline void SetVersionConsistency(VersionConsistency value) { m_versionConsistencyHasBeenSet = true; m_versionConsistency = value; }
+    inline ContainerDefinition& WithVersionConsistency(VersionConsistency value) { SetVersionConsistency(value); return *this;}
     ///@}
 
     ///@{
@@ -618,14 +609,12 @@ namespace Model
      * <code>hostname</code> parameter is not supported if you're using the
      * <code>awsvpc</code> network mode.</p> 
      */
-    inline const Aws::String& GetHostname() const{ return m_hostname; }
+    inline const Aws::String& GetHostname() const { return m_hostname; }
     inline bool HostnameHasBeenSet() const { return m_hostnameHasBeenSet; }
-    inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
-    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
-    inline void SetHostname(const char* value) { m_hostnameHasBeenSet = true; m_hostname.assign(value); }
-    inline ContainerDefinition& WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
-    inline ContainerDefinition& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
-    inline ContainerDefinition& WithHostname(const char* value) { SetHostname(value); return *this;}
+    template<typename HostnameT = Aws::String>
+    void SetHostname(HostnameT&& value) { m_hostnameHasBeenSet = true; m_hostname = std::forward<HostnameT>(value); }
+    template<typename HostnameT = Aws::String>
+    ContainerDefinition& WithHostname(HostnameT&& value) { SetHostname(std::forward<HostnameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -643,14 +632,12 @@ namespace Model
      * <p> <code>uid:group</code> </p> </li> </ul>  <p>This parameter is not
      * supported for Windows containers.</p> 
      */
-    inline const Aws::String& GetUser() const{ return m_user; }
+    inline const Aws::String& GetUser() const { return m_user; }
     inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
-    inline void SetUser(const Aws::String& value) { m_userHasBeenSet = true; m_user = value; }
-    inline void SetUser(Aws::String&& value) { m_userHasBeenSet = true; m_user = std::move(value); }
-    inline void SetUser(const char* value) { m_userHasBeenSet = true; m_user.assign(value); }
-    inline ContainerDefinition& WithUser(const Aws::String& value) { SetUser(value); return *this;}
-    inline ContainerDefinition& WithUser(Aws::String&& value) { SetUser(std::move(value)); return *this;}
-    inline ContainerDefinition& WithUser(const char* value) { SetUser(value); return *this;}
+    template<typename UserT = Aws::String>
+    void SetUser(UserT&& value) { m_userHasBeenSet = true; m_user = std::forward<UserT>(value); }
+    template<typename UserT = Aws::String>
+    ContainerDefinition& WithUser(UserT&& value) { SetUser(std::forward<UserT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -659,14 +646,12 @@ namespace Model
      * maps to <code>WorkingDir</code> in the docker container create command and the
      * <code>--workdir</code> option to docker run.</p>
      */
-    inline const Aws::String& GetWorkingDirectory() const{ return m_workingDirectory; }
+    inline const Aws::String& GetWorkingDirectory() const { return m_workingDirectory; }
     inline bool WorkingDirectoryHasBeenSet() const { return m_workingDirectoryHasBeenSet; }
-    inline void SetWorkingDirectory(const Aws::String& value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory = value; }
-    inline void SetWorkingDirectory(Aws::String&& value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory = std::move(value); }
-    inline void SetWorkingDirectory(const char* value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory.assign(value); }
-    inline ContainerDefinition& WithWorkingDirectory(const Aws::String& value) { SetWorkingDirectory(value); return *this;}
-    inline ContainerDefinition& WithWorkingDirectory(Aws::String&& value) { SetWorkingDirectory(std::move(value)); return *this;}
-    inline ContainerDefinition& WithWorkingDirectory(const char* value) { SetWorkingDirectory(value); return *this;}
+    template<typename WorkingDirectoryT = Aws::String>
+    void SetWorkingDirectory(WorkingDirectoryT&& value) { m_workingDirectoryHasBeenSet = true; m_workingDirectory = std::forward<WorkingDirectoryT>(value); }
+    template<typename WorkingDirectoryT = Aws::String>
+    ContainerDefinition& WithWorkingDirectory(WorkingDirectoryT&& value) { SetWorkingDirectory(std::forward<WorkingDirectoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -676,7 +661,7 @@ namespace Model
      * command.</p>  <p>This parameter is not supported for Windows
      * containers.</p> 
      */
-    inline bool GetDisableNetworking() const{ return m_disableNetworking; }
+    inline bool GetDisableNetworking() const { return m_disableNetworking; }
     inline bool DisableNetworkingHasBeenSet() const { return m_disableNetworkingHasBeenSet; }
     inline void SetDisableNetworking(bool value) { m_disableNetworkingHasBeenSet = true; m_disableNetworking = value; }
     inline ContainerDefinition& WithDisableNetworking(bool value) { SetDisableNetworking(value); return *this;}
@@ -691,7 +676,7 @@ namespace Model
      * parameter is not supported for Windows containers or tasks run on Fargate.</p>
      * 
      */
-    inline bool GetPrivileged() const{ return m_privileged; }
+    inline bool GetPrivileged() const { return m_privileged; }
     inline bool PrivilegedHasBeenSet() const { return m_privilegedHasBeenSet; }
     inline void SetPrivileged(bool value) { m_privilegedHasBeenSet = true; m_privileged = value; }
     inline ContainerDefinition& WithPrivileged(bool value) { SetPrivileged(value); return *this;}
@@ -705,7 +690,7 @@ namespace Model
      * docker run.</p>  <p>This parameter is not supported for Windows
      * containers.</p> 
      */
-    inline bool GetReadonlyRootFilesystem() const{ return m_readonlyRootFilesystem; }
+    inline bool GetReadonlyRootFilesystem() const { return m_readonlyRootFilesystem; }
     inline bool ReadonlyRootFilesystemHasBeenSet() const { return m_readonlyRootFilesystemHasBeenSet; }
     inline void SetReadonlyRootFilesystem(bool value) { m_readonlyRootFilesystemHasBeenSet = true; m_readonlyRootFilesystem = value; }
     inline ContainerDefinition& WithReadonlyRootFilesystem(bool value) { SetReadonlyRootFilesystem(value); return *this;}
@@ -718,15 +703,14 @@ namespace Model
      * <code>--dns</code> option to docker run.</p>  <p>This parameter is not
      * supported for Windows containers.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetDnsServers() const{ return m_dnsServers; }
+    inline const Aws::Vector<Aws::String>& GetDnsServers() const { return m_dnsServers; }
     inline bool DnsServersHasBeenSet() const { return m_dnsServersHasBeenSet; }
-    inline void SetDnsServers(const Aws::Vector<Aws::String>& value) { m_dnsServersHasBeenSet = true; m_dnsServers = value; }
-    inline void SetDnsServers(Aws::Vector<Aws::String>&& value) { m_dnsServersHasBeenSet = true; m_dnsServers = std::move(value); }
-    inline ContainerDefinition& WithDnsServers(const Aws::Vector<Aws::String>& value) { SetDnsServers(value); return *this;}
-    inline ContainerDefinition& WithDnsServers(Aws::Vector<Aws::String>&& value) { SetDnsServers(std::move(value)); return *this;}
-    inline ContainerDefinition& AddDnsServers(const Aws::String& value) { m_dnsServersHasBeenSet = true; m_dnsServers.push_back(value); return *this; }
-    inline ContainerDefinition& AddDnsServers(Aws::String&& value) { m_dnsServersHasBeenSet = true; m_dnsServers.push_back(std::move(value)); return *this; }
-    inline ContainerDefinition& AddDnsServers(const char* value) { m_dnsServersHasBeenSet = true; m_dnsServers.push_back(value); return *this; }
+    template<typename DnsServersT = Aws::Vector<Aws::String>>
+    void SetDnsServers(DnsServersT&& value) { m_dnsServersHasBeenSet = true; m_dnsServers = std::forward<DnsServersT>(value); }
+    template<typename DnsServersT = Aws::Vector<Aws::String>>
+    ContainerDefinition& WithDnsServers(DnsServersT&& value) { SetDnsServers(std::forward<DnsServersT>(value)); return *this;}
+    template<typename DnsServersT = Aws::String>
+    ContainerDefinition& AddDnsServers(DnsServersT&& value) { m_dnsServersHasBeenSet = true; m_dnsServers.emplace_back(std::forward<DnsServersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -736,15 +720,14 @@ namespace Model
      * and the <code>--dns-search</code> option to docker run.</p>  <p>This
      * parameter is not supported for Windows containers.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetDnsSearchDomains() const{ return m_dnsSearchDomains; }
+    inline const Aws::Vector<Aws::String>& GetDnsSearchDomains() const { return m_dnsSearchDomains; }
     inline bool DnsSearchDomainsHasBeenSet() const { return m_dnsSearchDomainsHasBeenSet; }
-    inline void SetDnsSearchDomains(const Aws::Vector<Aws::String>& value) { m_dnsSearchDomainsHasBeenSet = true; m_dnsSearchDomains = value; }
-    inline void SetDnsSearchDomains(Aws::Vector<Aws::String>&& value) { m_dnsSearchDomainsHasBeenSet = true; m_dnsSearchDomains = std::move(value); }
-    inline ContainerDefinition& WithDnsSearchDomains(const Aws::Vector<Aws::String>& value) { SetDnsSearchDomains(value); return *this;}
-    inline ContainerDefinition& WithDnsSearchDomains(Aws::Vector<Aws::String>&& value) { SetDnsSearchDomains(std::move(value)); return *this;}
-    inline ContainerDefinition& AddDnsSearchDomains(const Aws::String& value) { m_dnsSearchDomainsHasBeenSet = true; m_dnsSearchDomains.push_back(value); return *this; }
-    inline ContainerDefinition& AddDnsSearchDomains(Aws::String&& value) { m_dnsSearchDomainsHasBeenSet = true; m_dnsSearchDomains.push_back(std::move(value)); return *this; }
-    inline ContainerDefinition& AddDnsSearchDomains(const char* value) { m_dnsSearchDomainsHasBeenSet = true; m_dnsSearchDomains.push_back(value); return *this; }
+    template<typename DnsSearchDomainsT = Aws::Vector<Aws::String>>
+    void SetDnsSearchDomains(DnsSearchDomainsT&& value) { m_dnsSearchDomainsHasBeenSet = true; m_dnsSearchDomains = std::forward<DnsSearchDomainsT>(value); }
+    template<typename DnsSearchDomainsT = Aws::Vector<Aws::String>>
+    ContainerDefinition& WithDnsSearchDomains(DnsSearchDomainsT&& value) { SetDnsSearchDomains(std::forward<DnsSearchDomainsT>(value)); return *this;}
+    template<typename DnsSearchDomainsT = Aws::String>
+    ContainerDefinition& AddDnsSearchDomains(DnsSearchDomainsT&& value) { m_dnsSearchDomainsHasBeenSet = true; m_dnsSearchDomains.emplace_back(std::forward<DnsSearchDomainsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -756,14 +739,14 @@ namespace Model
      * supported for Windows containers or tasks that use the <code>awsvpc</code>
      * network mode.</p> 
      */
-    inline const Aws::Vector<HostEntry>& GetExtraHosts() const{ return m_extraHosts; }
+    inline const Aws::Vector<HostEntry>& GetExtraHosts() const { return m_extraHosts; }
     inline bool ExtraHostsHasBeenSet() const { return m_extraHostsHasBeenSet; }
-    inline void SetExtraHosts(const Aws::Vector<HostEntry>& value) { m_extraHostsHasBeenSet = true; m_extraHosts = value; }
-    inline void SetExtraHosts(Aws::Vector<HostEntry>&& value) { m_extraHostsHasBeenSet = true; m_extraHosts = std::move(value); }
-    inline ContainerDefinition& WithExtraHosts(const Aws::Vector<HostEntry>& value) { SetExtraHosts(value); return *this;}
-    inline ContainerDefinition& WithExtraHosts(Aws::Vector<HostEntry>&& value) { SetExtraHosts(std::move(value)); return *this;}
-    inline ContainerDefinition& AddExtraHosts(const HostEntry& value) { m_extraHostsHasBeenSet = true; m_extraHosts.push_back(value); return *this; }
-    inline ContainerDefinition& AddExtraHosts(HostEntry&& value) { m_extraHostsHasBeenSet = true; m_extraHosts.push_back(std::move(value)); return *this; }
+    template<typename ExtraHostsT = Aws::Vector<HostEntry>>
+    void SetExtraHosts(ExtraHostsT&& value) { m_extraHostsHasBeenSet = true; m_extraHosts = std::forward<ExtraHostsT>(value); }
+    template<typename ExtraHostsT = Aws::Vector<HostEntry>>
+    ContainerDefinition& WithExtraHosts(ExtraHostsT&& value) { SetExtraHosts(std::forward<ExtraHostsT>(value)); return *this;}
+    template<typename ExtraHostsT = HostEntry>
+    ContainerDefinition& AddExtraHosts(ExtraHostsT&& value) { m_extraHostsHasBeenSet = true; m_extraHosts.emplace_back(std::forward<ExtraHostsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -791,15 +774,14 @@ namespace Model
      * Developer Guide</i>.</p>  <p>Valid values: "no-new-privileges" |
      * "apparmor:PROFILE" | "label:value" | "credentialspec:CredentialSpecFilePath"</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDockerSecurityOptions() const{ return m_dockerSecurityOptions; }
+    inline const Aws::Vector<Aws::String>& GetDockerSecurityOptions() const { return m_dockerSecurityOptions; }
     inline bool DockerSecurityOptionsHasBeenSet() const { return m_dockerSecurityOptionsHasBeenSet; }
-    inline void SetDockerSecurityOptions(const Aws::Vector<Aws::String>& value) { m_dockerSecurityOptionsHasBeenSet = true; m_dockerSecurityOptions = value; }
-    inline void SetDockerSecurityOptions(Aws::Vector<Aws::String>&& value) { m_dockerSecurityOptionsHasBeenSet = true; m_dockerSecurityOptions = std::move(value); }
-    inline ContainerDefinition& WithDockerSecurityOptions(const Aws::Vector<Aws::String>& value) { SetDockerSecurityOptions(value); return *this;}
-    inline ContainerDefinition& WithDockerSecurityOptions(Aws::Vector<Aws::String>&& value) { SetDockerSecurityOptions(std::move(value)); return *this;}
-    inline ContainerDefinition& AddDockerSecurityOptions(const Aws::String& value) { m_dockerSecurityOptionsHasBeenSet = true; m_dockerSecurityOptions.push_back(value); return *this; }
-    inline ContainerDefinition& AddDockerSecurityOptions(Aws::String&& value) { m_dockerSecurityOptionsHasBeenSet = true; m_dockerSecurityOptions.push_back(std::move(value)); return *this; }
-    inline ContainerDefinition& AddDockerSecurityOptions(const char* value) { m_dockerSecurityOptionsHasBeenSet = true; m_dockerSecurityOptions.push_back(value); return *this; }
+    template<typename DockerSecurityOptionsT = Aws::Vector<Aws::String>>
+    void SetDockerSecurityOptions(DockerSecurityOptionsT&& value) { m_dockerSecurityOptionsHasBeenSet = true; m_dockerSecurityOptions = std::forward<DockerSecurityOptionsT>(value); }
+    template<typename DockerSecurityOptionsT = Aws::Vector<Aws::String>>
+    ContainerDefinition& WithDockerSecurityOptions(DockerSecurityOptionsT&& value) { SetDockerSecurityOptions(std::forward<DockerSecurityOptionsT>(value)); return *this;}
+    template<typename DockerSecurityOptionsT = Aws::String>
+    ContainerDefinition& AddDockerSecurityOptions(DockerSecurityOptionsT&& value) { m_dockerSecurityOptionsHasBeenSet = true; m_dockerSecurityOptions.emplace_back(std::forward<DockerSecurityOptionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -809,7 +791,7 @@ namespace Model
      * allocated. This parameter maps to <code>OpenStdin</code> in the docker container
      * create command and the <code>--interactive</code> option to docker run.</p>
      */
-    inline bool GetInteractive() const{ return m_interactive; }
+    inline bool GetInteractive() const { return m_interactive; }
     inline bool InteractiveHasBeenSet() const { return m_interactiveHasBeenSet; }
     inline void SetInteractive(bool value) { m_interactiveHasBeenSet = true; m_interactive = value; }
     inline ContainerDefinition& WithInteractive(bool value) { SetInteractive(value); return *this;}
@@ -821,7 +803,7 @@ namespace Model
      * maps to <code>Tty</code> in the docker container create command and the
      * <code>--tty</code> option to docker run.</p>
      */
-    inline bool GetPseudoTerminal() const{ return m_pseudoTerminal; }
+    inline bool GetPseudoTerminal() const { return m_pseudoTerminal; }
     inline bool PseudoTerminalHasBeenSet() const { return m_pseudoTerminalHasBeenSet; }
     inline void SetPseudoTerminal(bool value) { m_pseudoTerminalHasBeenSet = true; m_pseudoTerminal = value; }
     inline ContainerDefinition& WithPseudoTerminal(bool value) { SetPseudoTerminal(value); return *this;}
@@ -837,19 +819,16 @@ namespace Model
      * instance and run the following command: <code>sudo docker version --format
      * '{{.Server.APIVersion}}'</code> </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetDockerLabels() const{ return m_dockerLabels; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetDockerLabels() const { return m_dockerLabels; }
     inline bool DockerLabelsHasBeenSet() const { return m_dockerLabelsHasBeenSet; }
-    inline void SetDockerLabels(const Aws::Map<Aws::String, Aws::String>& value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels = value; }
-    inline void SetDockerLabels(Aws::Map<Aws::String, Aws::String>&& value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels = std::move(value); }
-    inline ContainerDefinition& WithDockerLabels(const Aws::Map<Aws::String, Aws::String>& value) { SetDockerLabels(value); return *this;}
-    inline ContainerDefinition& WithDockerLabels(Aws::Map<Aws::String, Aws::String>&& value) { SetDockerLabels(std::move(value)); return *this;}
-    inline ContainerDefinition& AddDockerLabels(const Aws::String& key, const Aws::String& value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels.emplace(key, value); return *this; }
-    inline ContainerDefinition& AddDockerLabels(Aws::String&& key, const Aws::String& value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels.emplace(std::move(key), value); return *this; }
-    inline ContainerDefinition& AddDockerLabels(const Aws::String& key, Aws::String&& value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels.emplace(key, std::move(value)); return *this; }
-    inline ContainerDefinition& AddDockerLabels(Aws::String&& key, Aws::String&& value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels.emplace(std::move(key), std::move(value)); return *this; }
-    inline ContainerDefinition& AddDockerLabels(const char* key, Aws::String&& value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels.emplace(key, std::move(value)); return *this; }
-    inline ContainerDefinition& AddDockerLabels(Aws::String&& key, const char* value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels.emplace(std::move(key), value); return *this; }
-    inline ContainerDefinition& AddDockerLabels(const char* key, const char* value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels.emplace(key, value); return *this; }
+    template<typename DockerLabelsT = Aws::Map<Aws::String, Aws::String>>
+    void SetDockerLabels(DockerLabelsT&& value) { m_dockerLabelsHasBeenSet = true; m_dockerLabels = std::forward<DockerLabelsT>(value); }
+    template<typename DockerLabelsT = Aws::Map<Aws::String, Aws::String>>
+    ContainerDefinition& WithDockerLabels(DockerLabelsT&& value) { SetDockerLabels(std::forward<DockerLabelsT>(value)); return *this;}
+    template<typename DockerLabelsKeyT = Aws::String, typename DockerLabelsValueT = Aws::String>
+    ContainerDefinition& AddDockerLabels(DockerLabelsKeyT&& key, DockerLabelsValueT&& value) {
+      m_dockerLabelsHasBeenSet = true; m_dockerLabels.emplace(std::forward<DockerLabelsKeyT>(key), std::forward<DockerLabelsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -872,14 +851,14 @@ namespace Model
      * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code> </p>
      *  <p>This parameter is not supported for Windows containers.</p> 
      */
-    inline const Aws::Vector<Ulimit>& GetUlimits() const{ return m_ulimits; }
+    inline const Aws::Vector<Ulimit>& GetUlimits() const { return m_ulimits; }
     inline bool UlimitsHasBeenSet() const { return m_ulimitsHasBeenSet; }
-    inline void SetUlimits(const Aws::Vector<Ulimit>& value) { m_ulimitsHasBeenSet = true; m_ulimits = value; }
-    inline void SetUlimits(Aws::Vector<Ulimit>&& value) { m_ulimitsHasBeenSet = true; m_ulimits = std::move(value); }
-    inline ContainerDefinition& WithUlimits(const Aws::Vector<Ulimit>& value) { SetUlimits(value); return *this;}
-    inline ContainerDefinition& WithUlimits(Aws::Vector<Ulimit>&& value) { SetUlimits(std::move(value)); return *this;}
-    inline ContainerDefinition& AddUlimits(const Ulimit& value) { m_ulimitsHasBeenSet = true; m_ulimits.push_back(value); return *this; }
-    inline ContainerDefinition& AddUlimits(Ulimit&& value) { m_ulimitsHasBeenSet = true; m_ulimits.push_back(std::move(value)); return *this; }
+    template<typename UlimitsT = Aws::Vector<Ulimit>>
+    void SetUlimits(UlimitsT&& value) { m_ulimitsHasBeenSet = true; m_ulimits = std::forward<UlimitsT>(value); }
+    template<typename UlimitsT = Aws::Vector<Ulimit>>
+    ContainerDefinition& WithUlimits(UlimitsT&& value) { SetUlimits(std::forward<UlimitsT>(value)); return *this;}
+    template<typename UlimitsT = Ulimit>
+    ContainerDefinition& AddUlimits(UlimitsT&& value) { m_ulimitsHasBeenSet = true; m_ulimits.emplace_back(std::forward<UlimitsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -909,12 +888,12 @@ namespace Model
      * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> 
      */
-    inline const LogConfiguration& GetLogConfiguration() const{ return m_logConfiguration; }
+    inline const LogConfiguration& GetLogConfiguration() const { return m_logConfiguration; }
     inline bool LogConfigurationHasBeenSet() const { return m_logConfigurationHasBeenSet; }
-    inline void SetLogConfiguration(const LogConfiguration& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = value; }
-    inline void SetLogConfiguration(LogConfiguration&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::move(value); }
-    inline ContainerDefinition& WithLogConfiguration(const LogConfiguration& value) { SetLogConfiguration(value); return *this;}
-    inline ContainerDefinition& WithLogConfiguration(LogConfiguration&& value) { SetLogConfiguration(std::move(value)); return *this;}
+    template<typename LogConfigurationT = LogConfiguration>
+    void SetLogConfiguration(LogConfigurationT&& value) { m_logConfigurationHasBeenSet = true; m_logConfiguration = std::forward<LogConfigurationT>(value); }
+    template<typename LogConfigurationT = LogConfiguration>
+    ContainerDefinition& WithLogConfiguration(LogConfigurationT&& value) { SetLogConfiguration(std::forward<LogConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -924,12 +903,12 @@ namespace Model
      * container create command and the <code>HEALTHCHECK</code> parameter of docker
      * run.</p>
      */
-    inline const HealthCheck& GetHealthCheck() const{ return m_healthCheck; }
+    inline const HealthCheck& GetHealthCheck() const { return m_healthCheck; }
     inline bool HealthCheckHasBeenSet() const { return m_healthCheckHasBeenSet; }
-    inline void SetHealthCheck(const HealthCheck& value) { m_healthCheckHasBeenSet = true; m_healthCheck = value; }
-    inline void SetHealthCheck(HealthCheck&& value) { m_healthCheckHasBeenSet = true; m_healthCheck = std::move(value); }
-    inline ContainerDefinition& WithHealthCheck(const HealthCheck& value) { SetHealthCheck(value); return *this;}
-    inline ContainerDefinition& WithHealthCheck(HealthCheck&& value) { SetHealthCheck(std::move(value)); return *this;}
+    template<typename HealthCheckT = HealthCheck>
+    void SetHealthCheck(HealthCheckT&& value) { m_healthCheckHasBeenSet = true; m_healthCheck = std::forward<HealthCheckT>(value); }
+    template<typename HealthCheckT = HealthCheck>
+    ContainerDefinition& WithHealthCheck(HealthCheckT&& value) { SetHealthCheck(std::forward<HealthCheckT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -940,14 +919,14 @@ namespace Model
      * configure <code>net.ipv4.tcp_keepalive_time</code> setting to maintain longer
      * lived connections.</p>
      */
-    inline const Aws::Vector<SystemControl>& GetSystemControls() const{ return m_systemControls; }
+    inline const Aws::Vector<SystemControl>& GetSystemControls() const { return m_systemControls; }
     inline bool SystemControlsHasBeenSet() const { return m_systemControlsHasBeenSet; }
-    inline void SetSystemControls(const Aws::Vector<SystemControl>& value) { m_systemControlsHasBeenSet = true; m_systemControls = value; }
-    inline void SetSystemControls(Aws::Vector<SystemControl>&& value) { m_systemControlsHasBeenSet = true; m_systemControls = std::move(value); }
-    inline ContainerDefinition& WithSystemControls(const Aws::Vector<SystemControl>& value) { SetSystemControls(value); return *this;}
-    inline ContainerDefinition& WithSystemControls(Aws::Vector<SystemControl>&& value) { SetSystemControls(std::move(value)); return *this;}
-    inline ContainerDefinition& AddSystemControls(const SystemControl& value) { m_systemControlsHasBeenSet = true; m_systemControls.push_back(value); return *this; }
-    inline ContainerDefinition& AddSystemControls(SystemControl&& value) { m_systemControlsHasBeenSet = true; m_systemControls.push_back(std::move(value)); return *this; }
+    template<typename SystemControlsT = Aws::Vector<SystemControl>>
+    void SetSystemControls(SystemControlsT&& value) { m_systemControlsHasBeenSet = true; m_systemControls = std::forward<SystemControlsT>(value); }
+    template<typename SystemControlsT = Aws::Vector<SystemControl>>
+    ContainerDefinition& WithSystemControls(SystemControlsT&& value) { SetSystemControls(std::forward<SystemControlsT>(value)); return *this;}
+    template<typename SystemControlsT = SystemControl>
+    ContainerDefinition& AddSystemControls(SystemControlsT&& value) { m_systemControlsHasBeenSet = true; m_systemControls.emplace_back(std::forward<SystemControlsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -955,14 +934,14 @@ namespace Model
      * <p>The type and amount of a resource to assign to a container. The only
      * supported resource is a GPU.</p>
      */
-    inline const Aws::Vector<ResourceRequirement>& GetResourceRequirements() const{ return m_resourceRequirements; }
+    inline const Aws::Vector<ResourceRequirement>& GetResourceRequirements() const { return m_resourceRequirements; }
     inline bool ResourceRequirementsHasBeenSet() const { return m_resourceRequirementsHasBeenSet; }
-    inline void SetResourceRequirements(const Aws::Vector<ResourceRequirement>& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements = value; }
-    inline void SetResourceRequirements(Aws::Vector<ResourceRequirement>&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements = std::move(value); }
-    inline ContainerDefinition& WithResourceRequirements(const Aws::Vector<ResourceRequirement>& value) { SetResourceRequirements(value); return *this;}
-    inline ContainerDefinition& WithResourceRequirements(Aws::Vector<ResourceRequirement>&& value) { SetResourceRequirements(std::move(value)); return *this;}
-    inline ContainerDefinition& AddResourceRequirements(const ResourceRequirement& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements.push_back(value); return *this; }
-    inline ContainerDefinition& AddResourceRequirements(ResourceRequirement&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements.push_back(std::move(value)); return *this; }
+    template<typename ResourceRequirementsT = Aws::Vector<ResourceRequirement>>
+    void SetResourceRequirements(ResourceRequirementsT&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements = std::forward<ResourceRequirementsT>(value); }
+    template<typename ResourceRequirementsT = Aws::Vector<ResourceRequirement>>
+    ContainerDefinition& WithResourceRequirements(ResourceRequirementsT&& value) { SetResourceRequirements(std::forward<ResourceRequirementsT>(value)); return *this;}
+    template<typename ResourceRequirementsT = ResourceRequirement>
+    ContainerDefinition& AddResourceRequirements(ResourceRequirementsT&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements.emplace_back(std::forward<ResourceRequirementsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -973,12 +952,12 @@ namespace Model
      * Log Routing</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
-    inline const FirelensConfiguration& GetFirelensConfiguration() const{ return m_firelensConfiguration; }
+    inline const FirelensConfiguration& GetFirelensConfiguration() const { return m_firelensConfiguration; }
     inline bool FirelensConfigurationHasBeenSet() const { return m_firelensConfigurationHasBeenSet; }
-    inline void SetFirelensConfiguration(const FirelensConfiguration& value) { m_firelensConfigurationHasBeenSet = true; m_firelensConfiguration = value; }
-    inline void SetFirelensConfiguration(FirelensConfiguration&& value) { m_firelensConfigurationHasBeenSet = true; m_firelensConfiguration = std::move(value); }
-    inline ContainerDefinition& WithFirelensConfiguration(const FirelensConfiguration& value) { SetFirelensConfiguration(value); return *this;}
-    inline ContainerDefinition& WithFirelensConfiguration(FirelensConfiguration&& value) { SetFirelensConfiguration(std::move(value)); return *this;}
+    template<typename FirelensConfigurationT = FirelensConfiguration>
+    void SetFirelensConfiguration(FirelensConfigurationT&& value) { m_firelensConfigurationHasBeenSet = true; m_firelensConfiguration = std::forward<FirelensConfigurationT>(value); }
+    template<typename FirelensConfigurationT = FirelensConfiguration>
+    ContainerDefinition& WithFirelensConfiguration(FirelensConfigurationT&& value) { SetFirelensConfiguration(std::forward<FirelensConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -1011,15 +990,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using
      * gMSAs for Linux Containers</a>.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetCredentialSpecs() const{ return m_credentialSpecs; }
+    inline const Aws::Vector<Aws::String>& GetCredentialSpecs() const { return m_credentialSpecs; }
     inline bool CredentialSpecsHasBeenSet() const { return m_credentialSpecsHasBeenSet; }
-    inline void SetCredentialSpecs(const Aws::Vector<Aws::String>& value) { m_credentialSpecsHasBeenSet = true; m_credentialSpecs = value; }
-    inline void SetCredentialSpecs(Aws::Vector<Aws::String>&& value) { m_credentialSpecsHasBeenSet = true; m_credentialSpecs = std::move(value); }
-    inline ContainerDefinition& WithCredentialSpecs(const Aws::Vector<Aws::String>& value) { SetCredentialSpecs(value); return *this;}
-    inline ContainerDefinition& WithCredentialSpecs(Aws::Vector<Aws::String>&& value) { SetCredentialSpecs(std::move(value)); return *this;}
-    inline ContainerDefinition& AddCredentialSpecs(const Aws::String& value) { m_credentialSpecsHasBeenSet = true; m_credentialSpecs.push_back(value); return *this; }
-    inline ContainerDefinition& AddCredentialSpecs(Aws::String&& value) { m_credentialSpecsHasBeenSet = true; m_credentialSpecs.push_back(std::move(value)); return *this; }
-    inline ContainerDefinition& AddCredentialSpecs(const char* value) { m_credentialSpecsHasBeenSet = true; m_credentialSpecs.push_back(value); return *this; }
+    template<typename CredentialSpecsT = Aws::Vector<Aws::String>>
+    void SetCredentialSpecs(CredentialSpecsT&& value) { m_credentialSpecsHasBeenSet = true; m_credentialSpecs = std::forward<CredentialSpecsT>(value); }
+    template<typename CredentialSpecsT = Aws::Vector<Aws::String>>
+    ContainerDefinition& WithCredentialSpecs(CredentialSpecsT&& value) { SetCredentialSpecs(std::forward<CredentialSpecsT>(value)); return *this;}
+    template<typename CredentialSpecsT = Aws::String>
+    ContainerDefinition& AddCredentialSpecs(CredentialSpecsT&& value) { m_credentialSpecsHasBeenSet = true; m_credentialSpecs.emplace_back(std::forward<CredentialSpecsT>(value)); return *this; }
     ///@}
   private:
 
@@ -1032,13 +1010,13 @@ namespace Model
     RepositoryCredentials m_repositoryCredentials;
     bool m_repositoryCredentialsHasBeenSet = false;
 
-    int m_cpu;
+    int m_cpu{0};
     bool m_cpuHasBeenSet = false;
 
-    int m_memory;
+    int m_memory{0};
     bool m_memoryHasBeenSet = false;
 
-    int m_memoryReservation;
+    int m_memoryReservation{0};
     bool m_memoryReservationHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_links;
@@ -1047,7 +1025,7 @@ namespace Model
     Aws::Vector<PortMapping> m_portMappings;
     bool m_portMappingsHasBeenSet = false;
 
-    bool m_essential;
+    bool m_essential{false};
     bool m_essentialHasBeenSet = false;
 
     ContainerRestartPolicy m_restartPolicy;
@@ -1080,13 +1058,13 @@ namespace Model
     Aws::Vector<ContainerDependency> m_dependsOn;
     bool m_dependsOnHasBeenSet = false;
 
-    int m_startTimeout;
+    int m_startTimeout{0};
     bool m_startTimeoutHasBeenSet = false;
 
-    int m_stopTimeout;
+    int m_stopTimeout{0};
     bool m_stopTimeoutHasBeenSet = false;
 
-    VersionConsistency m_versionConsistency;
+    VersionConsistency m_versionConsistency{VersionConsistency::NOT_SET};
     bool m_versionConsistencyHasBeenSet = false;
 
     Aws::String m_hostname;
@@ -1098,13 +1076,13 @@ namespace Model
     Aws::String m_workingDirectory;
     bool m_workingDirectoryHasBeenSet = false;
 
-    bool m_disableNetworking;
+    bool m_disableNetworking{false};
     bool m_disableNetworkingHasBeenSet = false;
 
-    bool m_privileged;
+    bool m_privileged{false};
     bool m_privilegedHasBeenSet = false;
 
-    bool m_readonlyRootFilesystem;
+    bool m_readonlyRootFilesystem{false};
     bool m_readonlyRootFilesystemHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_dnsServers;
@@ -1119,10 +1097,10 @@ namespace Model
     Aws::Vector<Aws::String> m_dockerSecurityOptions;
     bool m_dockerSecurityOptionsHasBeenSet = false;
 
-    bool m_interactive;
+    bool m_interactive{false};
     bool m_interactiveHasBeenSet = false;
 
-    bool m_pseudoTerminal;
+    bool m_pseudoTerminal{false};
     bool m_pseudoTerminalHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_dockerLabels;

@@ -18,15 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-AIGuardrailVersionSummary::AIGuardrailVersionSummary() : 
-    m_aiGuardrailSummaryHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false)
-{
-}
-
 AIGuardrailVersionSummary::AIGuardrailVersionSummary(JsonView jsonValue)
-  : AIGuardrailVersionSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AIGuardrailVersionSummary& AIGuardrailVersionSummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("aiGuardrailSummary"))
   {
     m_aiGuardrailSummary = jsonValue.GetObject("aiGuardrailSummary");
-
     m_aiGuardrailSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("versionNumber"))
   {
     m_versionNumber = jsonValue.GetInt64("versionNumber");
-
     m_versionNumberHasBeenSet = true;
   }
-
   return *this;
 }
 

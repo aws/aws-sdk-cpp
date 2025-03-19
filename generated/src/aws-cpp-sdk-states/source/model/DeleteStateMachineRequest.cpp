@@ -12,11 +12,6 @@ using namespace Aws::SFN::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteStateMachineRequest::DeleteStateMachineRequest() : 
-    m_stateMachineArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteStateMachineRequest::SerializePayload() const
 {
   JsonValue payload;

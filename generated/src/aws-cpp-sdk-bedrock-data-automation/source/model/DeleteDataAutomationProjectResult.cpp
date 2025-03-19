@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteDataAutomationProjectResult::DeleteDataAutomationProjectResult() : 
-    m_status(DataAutomationProjectStatus::NOT_SET)
-{
-}
-
 DeleteDataAutomationProjectResult::DeleteDataAutomationProjectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteDataAutomationProjectResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ DeleteDataAutomationProjectResult& DeleteDataAutomationProjectResult::operator =
   if(jsonValue.ValueExists("projectArn"))
   {
     m_projectArn = jsonValue.GetString("projectArn");
-
+    m_projectArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = DataAutomationProjectStatusMapper::GetDataAutomationProjectStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

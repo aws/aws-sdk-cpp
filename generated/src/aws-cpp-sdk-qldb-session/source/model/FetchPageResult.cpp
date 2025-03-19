@@ -18,15 +18,7 @@ namespace QLDBSession
 namespace Model
 {
 
-FetchPageResult::FetchPageResult() : 
-    m_pageHasBeenSet(false),
-    m_timingInformationHasBeenSet(false),
-    m_consumedIOsHasBeenSet(false)
-{
-}
-
 FetchPageResult::FetchPageResult(JsonView jsonValue)
-  : FetchPageResult()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ FetchPageResult& FetchPageResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Page"))
   {
     m_page = jsonValue.GetObject("Page");
-
     m_pageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimingInformation"))
   {
     m_timingInformation = jsonValue.GetObject("TimingInformation");
-
     m_timingInformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConsumedIOs"))
   {
     m_consumedIOs = jsonValue.GetObject("ConsumedIOs");
-
     m_consumedIOsHasBeenSet = true;
   }
-
   return *this;
 }
 

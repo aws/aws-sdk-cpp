@@ -26,7 +26,7 @@ namespace Model
   class ContactCenterActivity
   {
   public:
-    AWS_PINPOINT_API ContactCenterActivity();
+    AWS_PINPOINT_API ContactCenterActivity() = default;
     AWS_PINPOINT_API ContactCenterActivity(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API ContactCenterActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -37,14 +37,12 @@ namespace Model
      * <p>The unique identifier for the next activity to perform after the this
      * activity.</p>
      */
-    inline const Aws::String& GetNextActivity() const{ return m_nextActivity; }
+    inline const Aws::String& GetNextActivity() const { return m_nextActivity; }
     inline bool NextActivityHasBeenSet() const { return m_nextActivityHasBeenSet; }
-    inline void SetNextActivity(const Aws::String& value) { m_nextActivityHasBeenSet = true; m_nextActivity = value; }
-    inline void SetNextActivity(Aws::String&& value) { m_nextActivityHasBeenSet = true; m_nextActivity = std::move(value); }
-    inline void SetNextActivity(const char* value) { m_nextActivityHasBeenSet = true; m_nextActivity.assign(value); }
-    inline ContactCenterActivity& WithNextActivity(const Aws::String& value) { SetNextActivity(value); return *this;}
-    inline ContactCenterActivity& WithNextActivity(Aws::String&& value) { SetNextActivity(std::move(value)); return *this;}
-    inline ContactCenterActivity& WithNextActivity(const char* value) { SetNextActivity(value); return *this;}
+    template<typename NextActivityT = Aws::String>
+    void SetNextActivity(NextActivityT&& value) { m_nextActivityHasBeenSet = true; m_nextActivity = std::forward<NextActivityT>(value); }
+    template<typename NextActivityT = Aws::String>
+    ContactCenterActivity& WithNextActivity(NextActivityT&& value) { SetNextActivity(std::forward<NextActivityT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ColorScale::ColorScale() : 
-    m_colorsHasBeenSet(false),
-    m_colorFillType(ColorFillType::NOT_SET),
-    m_colorFillTypeHasBeenSet(false),
-    m_nullValueColorHasBeenSet(false)
-{
-}
-
 ColorScale::ColorScale(JsonView jsonValue)
-  : ColorScale()
 {
   *this = jsonValue;
 }
@@ -43,21 +34,16 @@ ColorScale& ColorScale::operator =(JsonView jsonValue)
     }
     m_colorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColorFillType"))
   {
     m_colorFillType = ColorFillTypeMapper::GetColorFillTypeForName(jsonValue.GetString("ColorFillType"));
-
     m_colorFillTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NullValueColor"))
   {
     m_nullValueColor = jsonValue.GetObject("NullValueColor");
-
     m_nullValueColorHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -35,7 +35,7 @@ namespace Model
   class CloudComponentStatus
   {
   public:
-    AWS_GREENGRASSV2_API CloudComponentStatus();
+    AWS_GREENGRASSV2_API CloudComponentStatus() = default;
     AWS_GREENGRASSV2_API CloudComponentStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API CloudComponentStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
     /**
      * <p>The state of the component version.</p>
      */
-    inline const CloudComponentState& GetComponentState() const{ return m_componentState; }
+    inline CloudComponentState GetComponentState() const { return m_componentState; }
     inline bool ComponentStateHasBeenSet() const { return m_componentStateHasBeenSet; }
-    inline void SetComponentState(const CloudComponentState& value) { m_componentStateHasBeenSet = true; m_componentState = value; }
-    inline void SetComponentState(CloudComponentState&& value) { m_componentStateHasBeenSet = true; m_componentState = std::move(value); }
-    inline CloudComponentStatus& WithComponentState(const CloudComponentState& value) { SetComponentState(value); return *this;}
-    inline CloudComponentStatus& WithComponentState(CloudComponentState&& value) { SetComponentState(std::move(value)); return *this;}
+    inline void SetComponentState(CloudComponentState value) { m_componentStateHasBeenSet = true; m_componentState = value; }
+    inline CloudComponentStatus& WithComponentState(CloudComponentState value) { SetComponentState(value); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>A message that communicates details, such as errors, about the status of the
      * component version.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline CloudComponentStatus& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline CloudComponentStatus& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline CloudComponentStatus& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    CloudComponentStatus& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,19 +71,16 @@ namespace Model
      * component version, then <code>errors</code> contains the artifact's URI as a
      * key, and the error message as the value for that key.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetErrors() const{ return m_errors; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetErrors() const { return m_errors; }
     inline bool ErrorsHasBeenSet() const { return m_errorsHasBeenSet; }
-    inline void SetErrors(const Aws::Map<Aws::String, Aws::String>& value) { m_errorsHasBeenSet = true; m_errors = value; }
-    inline void SetErrors(Aws::Map<Aws::String, Aws::String>&& value) { m_errorsHasBeenSet = true; m_errors = std::move(value); }
-    inline CloudComponentStatus& WithErrors(const Aws::Map<Aws::String, Aws::String>& value) { SetErrors(value); return *this;}
-    inline CloudComponentStatus& WithErrors(Aws::Map<Aws::String, Aws::String>&& value) { SetErrors(std::move(value)); return *this;}
-    inline CloudComponentStatus& AddErrors(const Aws::String& key, const Aws::String& value) { m_errorsHasBeenSet = true; m_errors.emplace(key, value); return *this; }
-    inline CloudComponentStatus& AddErrors(Aws::String&& key, const Aws::String& value) { m_errorsHasBeenSet = true; m_errors.emplace(std::move(key), value); return *this; }
-    inline CloudComponentStatus& AddErrors(const Aws::String& key, Aws::String&& value) { m_errorsHasBeenSet = true; m_errors.emplace(key, std::move(value)); return *this; }
-    inline CloudComponentStatus& AddErrors(Aws::String&& key, Aws::String&& value) { m_errorsHasBeenSet = true; m_errors.emplace(std::move(key), std::move(value)); return *this; }
-    inline CloudComponentStatus& AddErrors(const char* key, Aws::String&& value) { m_errorsHasBeenSet = true; m_errors.emplace(key, std::move(value)); return *this; }
-    inline CloudComponentStatus& AddErrors(Aws::String&& key, const char* value) { m_errorsHasBeenSet = true; m_errors.emplace(std::move(key), value); return *this; }
-    inline CloudComponentStatus& AddErrors(const char* key, const char* value) { m_errorsHasBeenSet = true; m_errors.emplace(key, value); return *this; }
+    template<typename ErrorsT = Aws::Map<Aws::String, Aws::String>>
+    void SetErrors(ErrorsT&& value) { m_errorsHasBeenSet = true; m_errors = std::forward<ErrorsT>(value); }
+    template<typename ErrorsT = Aws::Map<Aws::String, Aws::String>>
+    CloudComponentStatus& WithErrors(ErrorsT&& value) { SetErrors(std::forward<ErrorsT>(value)); return *this;}
+    template<typename ErrorsKeyT = Aws::String, typename ErrorsValueT = Aws::String>
+    CloudComponentStatus& AddErrors(ErrorsKeyT&& key, ErrorsValueT&& value) {
+      m_errorsHasBeenSet = true; m_errors.emplace(std::forward<ErrorsKeyT>(key), std::forward<ErrorsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -103,12 +96,10 @@ namespace Model
      * publisher, so you can't deploy it. If you have any existing deployments that
      * specify this component version, those deployments will fail.</p> </li> </ul>
      */
-    inline const VendorGuidance& GetVendorGuidance() const{ return m_vendorGuidance; }
+    inline VendorGuidance GetVendorGuidance() const { return m_vendorGuidance; }
     inline bool VendorGuidanceHasBeenSet() const { return m_vendorGuidanceHasBeenSet; }
-    inline void SetVendorGuidance(const VendorGuidance& value) { m_vendorGuidanceHasBeenSet = true; m_vendorGuidance = value; }
-    inline void SetVendorGuidance(VendorGuidance&& value) { m_vendorGuidanceHasBeenSet = true; m_vendorGuidance = std::move(value); }
-    inline CloudComponentStatus& WithVendorGuidance(const VendorGuidance& value) { SetVendorGuidance(value); return *this;}
-    inline CloudComponentStatus& WithVendorGuidance(VendorGuidance&& value) { SetVendorGuidance(std::move(value)); return *this;}
+    inline void SetVendorGuidance(VendorGuidance value) { m_vendorGuidanceHasBeenSet = true; m_vendorGuidance = value; }
+    inline CloudComponentStatus& WithVendorGuidance(VendorGuidance value) { SetVendorGuidance(value); return *this;}
     ///@}
 
     ///@{
@@ -117,18 +108,16 @@ namespace Model
      * component version. This message communicates why a component version is
      * discontinued or deleted.</p>
      */
-    inline const Aws::String& GetVendorGuidanceMessage() const{ return m_vendorGuidanceMessage; }
+    inline const Aws::String& GetVendorGuidanceMessage() const { return m_vendorGuidanceMessage; }
     inline bool VendorGuidanceMessageHasBeenSet() const { return m_vendorGuidanceMessageHasBeenSet; }
-    inline void SetVendorGuidanceMessage(const Aws::String& value) { m_vendorGuidanceMessageHasBeenSet = true; m_vendorGuidanceMessage = value; }
-    inline void SetVendorGuidanceMessage(Aws::String&& value) { m_vendorGuidanceMessageHasBeenSet = true; m_vendorGuidanceMessage = std::move(value); }
-    inline void SetVendorGuidanceMessage(const char* value) { m_vendorGuidanceMessageHasBeenSet = true; m_vendorGuidanceMessage.assign(value); }
-    inline CloudComponentStatus& WithVendorGuidanceMessage(const Aws::String& value) { SetVendorGuidanceMessage(value); return *this;}
-    inline CloudComponentStatus& WithVendorGuidanceMessage(Aws::String&& value) { SetVendorGuidanceMessage(std::move(value)); return *this;}
-    inline CloudComponentStatus& WithVendorGuidanceMessage(const char* value) { SetVendorGuidanceMessage(value); return *this;}
+    template<typename VendorGuidanceMessageT = Aws::String>
+    void SetVendorGuidanceMessage(VendorGuidanceMessageT&& value) { m_vendorGuidanceMessageHasBeenSet = true; m_vendorGuidanceMessage = std::forward<VendorGuidanceMessageT>(value); }
+    template<typename VendorGuidanceMessageT = Aws::String>
+    CloudComponentStatus& WithVendorGuidanceMessage(VendorGuidanceMessageT&& value) { SetVendorGuidanceMessage(std::forward<VendorGuidanceMessageT>(value)); return *this;}
     ///@}
   private:
 
-    CloudComponentState m_componentState;
+    CloudComponentState m_componentState{CloudComponentState::NOT_SET};
     bool m_componentStateHasBeenSet = false;
 
     Aws::String m_message;
@@ -137,7 +126,7 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_errors;
     bool m_errorsHasBeenSet = false;
 
-    VendorGuidance m_vendorGuidance;
+    VendorGuidance m_vendorGuidance{VendorGuidance::NOT_SET};
     bool m_vendorGuidanceHasBeenSet = false;
 
     Aws::String m_vendorGuidanceMessage;

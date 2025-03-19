@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyInstanceMetadataOptionsResponse::ModifyInstanceMetadataOptionsResponse()
-{
-}
-
 ModifyInstanceMetadataOptionsResponse::ModifyInstanceMetadataOptionsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,11 +38,13 @@ ModifyInstanceMetadataOptionsResponse& ModifyInstanceMetadataOptionsResponse::op
     if(!instanceIdNode.IsNull())
     {
       m_instanceId = Aws::Utils::Xml::DecodeEscapedXmlText(instanceIdNode.GetText());
+      m_instanceIdHasBeenSet = true;
     }
     XmlNode instanceMetadataOptionsNode = resultNode.FirstChild("instanceMetadataOptions");
     if(!instanceMetadataOptionsNode.IsNull())
     {
       m_instanceMetadataOptions = instanceMetadataOptionsNode;
+      m_instanceMetadataOptionsHasBeenSet = true;
     }
   }
 
@@ -55,6 +53,7 @@ ModifyInstanceMetadataOptionsResponse& ModifyInstanceMetadataOptionsResponse::op
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::ModifyInstanceMetadataOptionsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

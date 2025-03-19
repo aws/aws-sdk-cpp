@@ -12,13 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTestGridSessionRequest::GetTestGridSessionRequest() : 
-    m_projectArnHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_sessionArnHasBeenSet(false)
-{
-}
-
 Aws::String GetTestGridSessionRequest::SerializePayload() const
 {
   JsonValue payload;

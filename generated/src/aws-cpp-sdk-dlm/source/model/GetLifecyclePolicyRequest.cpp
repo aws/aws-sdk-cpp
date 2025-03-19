@@ -12,11 +12,6 @@ using namespace Aws::DLM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetLifecyclePolicyRequest::GetLifecyclePolicyRequest() : 
-    m_policyIdHasBeenSet(false)
-{
-}
-
 Aws::String GetLifecyclePolicyRequest::SerializePayload() const
 {
   return {};

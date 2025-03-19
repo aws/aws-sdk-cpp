@@ -18,31 +18,7 @@ namespace ECS
 namespace Model
 {
 
-Container::Container() : 
-    m_containerArnHasBeenSet(false),
-    m_taskArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_imageHasBeenSet(false),
-    m_imageDigestHasBeenSet(false),
-    m_runtimeIdHasBeenSet(false),
-    m_lastStatusHasBeenSet(false),
-    m_exitCode(0),
-    m_exitCodeHasBeenSet(false),
-    m_reasonHasBeenSet(false),
-    m_networkBindingsHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false),
-    m_healthStatus(HealthStatus::NOT_SET),
-    m_healthStatusHasBeenSet(false),
-    m_managedAgentsHasBeenSet(false),
-    m_cpuHasBeenSet(false),
-    m_memoryHasBeenSet(false),
-    m_memoryReservationHasBeenSet(false),
-    m_gpuIdsHasBeenSet(false)
-{
-}
-
 Container::Container(JsonView jsonValue)
-  : Container()
 {
   *this = jsonValue;
 }
@@ -52,66 +28,48 @@ Container& Container::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("containerArn"))
   {
     m_containerArn = jsonValue.GetString("containerArn");
-
     m_containerArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("taskArn"))
   {
     m_taskArn = jsonValue.GetString("taskArn");
-
     m_taskArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("image"))
   {
     m_image = jsonValue.GetString("image");
-
     m_imageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("imageDigest"))
   {
     m_imageDigest = jsonValue.GetString("imageDigest");
-
     m_imageDigestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runtimeId"))
   {
     m_runtimeId = jsonValue.GetString("runtimeId");
-
     m_runtimeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastStatus"))
   {
     m_lastStatus = jsonValue.GetString("lastStatus");
-
     m_lastStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exitCode"))
   {
     m_exitCode = jsonValue.GetInteger("exitCode");
-
     m_exitCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkBindings"))
   {
     Aws::Utils::Array<JsonView> networkBindingsJsonList = jsonValue.GetArray("networkBindings");
@@ -121,7 +79,6 @@ Container& Container::operator =(JsonView jsonValue)
     }
     m_networkBindingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkInterfaces"))
   {
     Aws::Utils::Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
@@ -131,14 +88,11 @@ Container& Container::operator =(JsonView jsonValue)
     }
     m_networkInterfacesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("healthStatus"))
   {
     m_healthStatus = HealthStatusMapper::GetHealthStatusForName(jsonValue.GetString("healthStatus"));
-
     m_healthStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("managedAgents"))
   {
     Aws::Utils::Array<JsonView> managedAgentsJsonList = jsonValue.GetArray("managedAgents");
@@ -148,28 +102,21 @@ Container& Container::operator =(JsonView jsonValue)
     }
     m_managedAgentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cpu"))
   {
     m_cpu = jsonValue.GetString("cpu");
-
     m_cpuHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memory"))
   {
     m_memory = jsonValue.GetString("memory");
-
     m_memoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memoryReservation"))
   {
     m_memoryReservation = jsonValue.GetString("memoryReservation");
-
     m_memoryReservationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("gpuIds"))
   {
     Aws::Utils::Array<JsonView> gpuIdsJsonList = jsonValue.GetArray("gpuIds");
@@ -179,7 +126,6 @@ Container& Container::operator =(JsonView jsonValue)
     }
     m_gpuIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

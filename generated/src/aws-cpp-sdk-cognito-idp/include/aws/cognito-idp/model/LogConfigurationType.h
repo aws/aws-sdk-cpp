@@ -37,7 +37,7 @@ namespace Model
   class LogConfigurationType
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API LogConfigurationType();
+    AWS_COGNITOIDENTITYPROVIDER_API LogConfigurationType() = default;
     AWS_COGNITOIDENTITYPROVIDER_API LogConfigurationType(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API LogConfigurationType& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_COGNITOIDENTITYPROVIDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,12 +55,10 @@ namespace Model
      * choose <code>INFO</code> with one of <code>CloudWatchLogsConfiguration</code>,
      * <code>FirehoseConfiguration</code>, or <code>S3Configuration</code>.</p>
      */
-    inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
+    inline LogLevel GetLogLevel() const { return m_logLevel; }
     inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
-    inline void SetLogLevel(const LogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
-    inline void SetLogLevel(LogLevel&& value) { m_logLevelHasBeenSet = true; m_logLevel = std::move(value); }
-    inline LogConfigurationType& WithLogLevel(const LogLevel& value) { SetLogLevel(value); return *this;}
-    inline LogConfigurationType& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
+    inline void SetLogLevel(LogLevel value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
+    inline LogConfigurationType& WithLogLevel(LogLevel value) { SetLogLevel(value); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +69,10 @@ namespace Model
      * user activity in user pools with the Plus feature plan, set to
      * <code>userAuthEvents</code>.</p>
      */
-    inline const EventSourceName& GetEventSource() const{ return m_eventSource; }
+    inline EventSourceName GetEventSource() const { return m_eventSource; }
     inline bool EventSourceHasBeenSet() const { return m_eventSourceHasBeenSet; }
-    inline void SetEventSource(const EventSourceName& value) { m_eventSourceHasBeenSet = true; m_eventSource = value; }
-    inline void SetEventSource(EventSourceName&& value) { m_eventSourceHasBeenSet = true; m_eventSource = std::move(value); }
-    inline LogConfigurationType& WithEventSource(const EventSourceName& value) { SetEventSource(value); return *this;}
-    inline LogConfigurationType& WithEventSource(EventSourceName&& value) { SetEventSource(std::move(value)); return *this;}
+    inline void SetEventSource(EventSourceName value) { m_eventSourceHasBeenSet = true; m_eventSource = value; }
+    inline LogConfigurationType& WithEventSource(EventSourceName value) { SetEventSource(value); return *this;}
     ///@}
 
     ///@{
@@ -84,12 +80,12 @@ namespace Model
      * <p>The CloudWatch log group destination of user pool detailed activity logs, or
      * of user activity log export with threat protection.</p>
      */
-    inline const CloudWatchLogsConfigurationType& GetCloudWatchLogsConfiguration() const{ return m_cloudWatchLogsConfiguration; }
+    inline const CloudWatchLogsConfigurationType& GetCloudWatchLogsConfiguration() const { return m_cloudWatchLogsConfiguration; }
     inline bool CloudWatchLogsConfigurationHasBeenSet() const { return m_cloudWatchLogsConfigurationHasBeenSet; }
-    inline void SetCloudWatchLogsConfiguration(const CloudWatchLogsConfigurationType& value) { m_cloudWatchLogsConfigurationHasBeenSet = true; m_cloudWatchLogsConfiguration = value; }
-    inline void SetCloudWatchLogsConfiguration(CloudWatchLogsConfigurationType&& value) { m_cloudWatchLogsConfigurationHasBeenSet = true; m_cloudWatchLogsConfiguration = std::move(value); }
-    inline LogConfigurationType& WithCloudWatchLogsConfiguration(const CloudWatchLogsConfigurationType& value) { SetCloudWatchLogsConfiguration(value); return *this;}
-    inline LogConfigurationType& WithCloudWatchLogsConfiguration(CloudWatchLogsConfigurationType&& value) { SetCloudWatchLogsConfiguration(std::move(value)); return *this;}
+    template<typename CloudWatchLogsConfigurationT = CloudWatchLogsConfigurationType>
+    void SetCloudWatchLogsConfiguration(CloudWatchLogsConfigurationT&& value) { m_cloudWatchLogsConfigurationHasBeenSet = true; m_cloudWatchLogsConfiguration = std::forward<CloudWatchLogsConfigurationT>(value); }
+    template<typename CloudWatchLogsConfigurationT = CloudWatchLogsConfigurationType>
+    LogConfigurationType& WithCloudWatchLogsConfiguration(CloudWatchLogsConfigurationT&& value) { SetCloudWatchLogsConfiguration(std::forward<CloudWatchLogsConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,12 +95,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html">
      * Plus tier</a>.</p>
      */
-    inline const S3ConfigurationType& GetS3Configuration() const{ return m_s3Configuration; }
+    inline const S3ConfigurationType& GetS3Configuration() const { return m_s3Configuration; }
     inline bool S3ConfigurationHasBeenSet() const { return m_s3ConfigurationHasBeenSet; }
-    inline void SetS3Configuration(const S3ConfigurationType& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = value; }
-    inline void SetS3Configuration(S3ConfigurationType&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::move(value); }
-    inline LogConfigurationType& WithS3Configuration(const S3ConfigurationType& value) { SetS3Configuration(value); return *this;}
-    inline LogConfigurationType& WithS3Configuration(S3ConfigurationType&& value) { SetS3Configuration(std::move(value)); return *this;}
+    template<typename S3ConfigurationT = S3ConfigurationType>
+    void SetS3Configuration(S3ConfigurationT&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::forward<S3ConfigurationT>(value); }
+    template<typename S3ConfigurationT = S3ConfigurationType>
+    LogConfigurationType& WithS3Configuration(S3ConfigurationT&& value) { SetS3Configuration(std::forward<S3ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,19 +110,19 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/feature-plans-features-plus.html">
      * Plus tier</a>.</p>
      */
-    inline const FirehoseConfigurationType& GetFirehoseConfiguration() const{ return m_firehoseConfiguration; }
+    inline const FirehoseConfigurationType& GetFirehoseConfiguration() const { return m_firehoseConfiguration; }
     inline bool FirehoseConfigurationHasBeenSet() const { return m_firehoseConfigurationHasBeenSet; }
-    inline void SetFirehoseConfiguration(const FirehoseConfigurationType& value) { m_firehoseConfigurationHasBeenSet = true; m_firehoseConfiguration = value; }
-    inline void SetFirehoseConfiguration(FirehoseConfigurationType&& value) { m_firehoseConfigurationHasBeenSet = true; m_firehoseConfiguration = std::move(value); }
-    inline LogConfigurationType& WithFirehoseConfiguration(const FirehoseConfigurationType& value) { SetFirehoseConfiguration(value); return *this;}
-    inline LogConfigurationType& WithFirehoseConfiguration(FirehoseConfigurationType&& value) { SetFirehoseConfiguration(std::move(value)); return *this;}
+    template<typename FirehoseConfigurationT = FirehoseConfigurationType>
+    void SetFirehoseConfiguration(FirehoseConfigurationT&& value) { m_firehoseConfigurationHasBeenSet = true; m_firehoseConfiguration = std::forward<FirehoseConfigurationT>(value); }
+    template<typename FirehoseConfigurationT = FirehoseConfigurationType>
+    LogConfigurationType& WithFirehoseConfiguration(FirehoseConfigurationT&& value) { SetFirehoseConfiguration(std::forward<FirehoseConfigurationT>(value)); return *this;}
     ///@}
   private:
 
-    LogLevel m_logLevel;
+    LogLevel m_logLevel{LogLevel::NOT_SET};
     bool m_logLevelHasBeenSet = false;
 
-    EventSourceName m_eventSource;
+    EventSourceName m_eventSource{EventSourceName::NOT_SET};
     bool m_eventSourceHasBeenSet = false;
 
     CloudWatchLogsConfigurationType m_cloudWatchLogsConfiguration;

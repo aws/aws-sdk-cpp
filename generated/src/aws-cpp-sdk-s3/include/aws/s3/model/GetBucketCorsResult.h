@@ -29,7 +29,7 @@ namespace Model
   class GetBucketCorsResult
   {
   public:
-    AWS_S3_API GetBucketCorsResult();
+    AWS_S3_API GetBucketCorsResult() = default;
     AWS_S3_API GetBucketCorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_S3_API GetBucketCorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p>A set of origins and methods (cross-origin access that you want to allow).
      * You can add up to 100 rules to the configuration.</p>
      */
-    inline const Aws::Vector<CORSRule>& GetCORSRules() const{ return m_cORSRules; }
-    inline void SetCORSRules(const Aws::Vector<CORSRule>& value) { m_cORSRules = value; }
-    inline void SetCORSRules(Aws::Vector<CORSRule>&& value) { m_cORSRules = std::move(value); }
-    inline GetBucketCorsResult& WithCORSRules(const Aws::Vector<CORSRule>& value) { SetCORSRules(value); return *this;}
-    inline GetBucketCorsResult& WithCORSRules(Aws::Vector<CORSRule>&& value) { SetCORSRules(std::move(value)); return *this;}
-    inline GetBucketCorsResult& AddCORSRules(const CORSRule& value) { m_cORSRules.push_back(value); return *this; }
-    inline GetBucketCorsResult& AddCORSRules(CORSRule&& value) { m_cORSRules.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<CORSRule>& GetCORSRules() const { return m_cORSRules; }
+    template<typename CORSRulesT = Aws::Vector<CORSRule>>
+    void SetCORSRules(CORSRulesT&& value) { m_cORSRulesHasBeenSet = true; m_cORSRules = std::forward<CORSRulesT>(value); }
+    template<typename CORSRulesT = Aws::Vector<CORSRule>>
+    GetBucketCorsResult& WithCORSRules(CORSRulesT&& value) { SetCORSRules(std::forward<CORSRulesT>(value)); return *this;}
+    template<typename CORSRulesT = CORSRule>
+    GetBucketCorsResult& AddCORSRules(CORSRulesT&& value) { m_cORSRulesHasBeenSet = true; m_cORSRules.emplace_back(std::forward<CORSRulesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetBucketCorsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetBucketCorsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetBucketCorsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetBucketCorsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<CORSRule> m_cORSRules;
+    bool m_cORSRulesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

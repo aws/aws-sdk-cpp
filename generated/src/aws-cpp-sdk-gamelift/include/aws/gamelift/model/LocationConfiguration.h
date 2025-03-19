@@ -32,7 +32,7 @@ namespace Model
   class LocationConfiguration
   {
   public:
-    AWS_GAMELIFT_API LocationConfiguration();
+    AWS_GAMELIFT_API LocationConfiguration() = default;
     AWS_GAMELIFT_API LocationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API LocationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-regions.html">
      * Amazon GameLift service locations</a> for managed hosting.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline LocationConfiguration& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline LocationConfiguration& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline LocationConfiguration& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    LocationConfiguration& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
   private:
 

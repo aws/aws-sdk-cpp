@@ -12,15 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetMobileDeviceAccessEffectRequest::GetMobileDeviceAccessEffectRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_deviceTypeHasBeenSet(false),
-    m_deviceModelHasBeenSet(false),
-    m_deviceOperatingSystemHasBeenSet(false),
-    m_deviceUserAgentHasBeenSet(false)
-{
-}
-
 Aws::String GetMobileDeviceAccessEffectRequest::SerializePayload() const
 {
   JsonValue payload;

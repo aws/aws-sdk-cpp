@@ -36,7 +36,7 @@ namespace Model
   class ChatOutputStream
   {
   public:
-    AWS_QBUSINESS_API ChatOutputStream();
+    AWS_QBUSINESS_API ChatOutputStream() = default;
     AWS_QBUSINESS_API ChatOutputStream(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API ChatOutputStream& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * <p>Information about the payload of the <code>ChatOutputStream</code> event
      * containing the AI-generated message output.</p>
      */
-    inline const TextOutputEvent& GetTextEvent() const{ return m_textEvent; }
+    inline const TextOutputEvent& GetTextEvent() const { return m_textEvent; }
     inline bool TextEventHasBeenSet() const { return m_textEventHasBeenSet; }
-    inline void SetTextEvent(const TextOutputEvent& value) { m_textEventHasBeenSet = true; m_textEvent = value; }
-    inline void SetTextEvent(TextOutputEvent&& value) { m_textEventHasBeenSet = true; m_textEvent = std::move(value); }
-    inline ChatOutputStream& WithTextEvent(const TextOutputEvent& value) { SetTextEvent(value); return *this;}
-    inline ChatOutputStream& WithTextEvent(TextOutputEvent&& value) { SetTextEvent(std::move(value)); return *this;}
+    template<typename TextEventT = TextOutputEvent>
+    void SetTextEvent(TextEventT&& value) { m_textEventHasBeenSet = true; m_textEvent = std::forward<TextEventT>(value); }
+    template<typename TextEventT = TextOutputEvent>
+    ChatOutputStream& WithTextEvent(TextEventT&& value) { SetTextEvent(std::forward<TextEventT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +60,12 @@ namespace Model
      * <p>A metadata event for a AI-generated text output message in a Amazon Q
      * Business conversation. </p>
      */
-    inline const MetadataEvent& GetMetadataEvent() const{ return m_metadataEvent; }
+    inline const MetadataEvent& GetMetadataEvent() const { return m_metadataEvent; }
     inline bool MetadataEventHasBeenSet() const { return m_metadataEventHasBeenSet; }
-    inline void SetMetadataEvent(const MetadataEvent& value) { m_metadataEventHasBeenSet = true; m_metadataEvent = value; }
-    inline void SetMetadataEvent(MetadataEvent&& value) { m_metadataEventHasBeenSet = true; m_metadataEvent = std::move(value); }
-    inline ChatOutputStream& WithMetadataEvent(const MetadataEvent& value) { SetMetadataEvent(value); return *this;}
-    inline ChatOutputStream& WithMetadataEvent(MetadataEvent&& value) { SetMetadataEvent(std::move(value)); return *this;}
+    template<typename MetadataEventT = MetadataEvent>
+    void SetMetadataEvent(MetadataEventT&& value) { m_metadataEventHasBeenSet = true; m_metadataEvent = std::forward<MetadataEventT>(value); }
+    template<typename MetadataEventT = MetadataEvent>
+    ChatOutputStream& WithMetadataEvent(MetadataEventT&& value) { SetMetadataEvent(std::forward<MetadataEventT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,24 +73,24 @@ namespace Model
      * <p>A request from Amazon Q Business to the end user for information Amazon Q
      * Business needs to successfully complete a requested plugin action.</p>
      */
-    inline const ActionReviewEvent& GetActionReviewEvent() const{ return m_actionReviewEvent; }
+    inline const ActionReviewEvent& GetActionReviewEvent() const { return m_actionReviewEvent; }
     inline bool ActionReviewEventHasBeenSet() const { return m_actionReviewEventHasBeenSet; }
-    inline void SetActionReviewEvent(const ActionReviewEvent& value) { m_actionReviewEventHasBeenSet = true; m_actionReviewEvent = value; }
-    inline void SetActionReviewEvent(ActionReviewEvent&& value) { m_actionReviewEventHasBeenSet = true; m_actionReviewEvent = std::move(value); }
-    inline ChatOutputStream& WithActionReviewEvent(const ActionReviewEvent& value) { SetActionReviewEvent(value); return *this;}
-    inline ChatOutputStream& WithActionReviewEvent(ActionReviewEvent&& value) { SetActionReviewEvent(std::move(value)); return *this;}
+    template<typename ActionReviewEventT = ActionReviewEvent>
+    void SetActionReviewEvent(ActionReviewEventT&& value) { m_actionReviewEventHasBeenSet = true; m_actionReviewEvent = std::forward<ActionReviewEventT>(value); }
+    template<typename ActionReviewEventT = ActionReviewEvent>
+    ChatOutputStream& WithActionReviewEvent(ActionReviewEventT&& value) { SetActionReviewEvent(std::forward<ActionReviewEventT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A failed file upload event during a web experience chat.</p>
      */
-    inline const FailedAttachmentEvent& GetFailedAttachmentEvent() const{ return m_failedAttachmentEvent; }
+    inline const FailedAttachmentEvent& GetFailedAttachmentEvent() const { return m_failedAttachmentEvent; }
     inline bool FailedAttachmentEventHasBeenSet() const { return m_failedAttachmentEventHasBeenSet; }
-    inline void SetFailedAttachmentEvent(const FailedAttachmentEvent& value) { m_failedAttachmentEventHasBeenSet = true; m_failedAttachmentEvent = value; }
-    inline void SetFailedAttachmentEvent(FailedAttachmentEvent&& value) { m_failedAttachmentEventHasBeenSet = true; m_failedAttachmentEvent = std::move(value); }
-    inline ChatOutputStream& WithFailedAttachmentEvent(const FailedAttachmentEvent& value) { SetFailedAttachmentEvent(value); return *this;}
-    inline ChatOutputStream& WithFailedAttachmentEvent(FailedAttachmentEvent&& value) { SetFailedAttachmentEvent(std::move(value)); return *this;}
+    template<typename FailedAttachmentEventT = FailedAttachmentEvent>
+    void SetFailedAttachmentEvent(FailedAttachmentEventT&& value) { m_failedAttachmentEventHasBeenSet = true; m_failedAttachmentEvent = std::forward<FailedAttachmentEventT>(value); }
+    template<typename FailedAttachmentEventT = FailedAttachmentEvent>
+    ChatOutputStream& WithFailedAttachmentEvent(FailedAttachmentEventT&& value) { SetFailedAttachmentEvent(std::forward<FailedAttachmentEventT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -98,12 +98,12 @@ namespace Model
      * <p>An authentication verification event activated by an end user request to use
      * a custom plugin.</p>
      */
-    inline const AuthChallengeRequestEvent& GetAuthChallengeRequestEvent() const{ return m_authChallengeRequestEvent; }
+    inline const AuthChallengeRequestEvent& GetAuthChallengeRequestEvent() const { return m_authChallengeRequestEvent; }
     inline bool AuthChallengeRequestEventHasBeenSet() const { return m_authChallengeRequestEventHasBeenSet; }
-    inline void SetAuthChallengeRequestEvent(const AuthChallengeRequestEvent& value) { m_authChallengeRequestEventHasBeenSet = true; m_authChallengeRequestEvent = value; }
-    inline void SetAuthChallengeRequestEvent(AuthChallengeRequestEvent&& value) { m_authChallengeRequestEventHasBeenSet = true; m_authChallengeRequestEvent = std::move(value); }
-    inline ChatOutputStream& WithAuthChallengeRequestEvent(const AuthChallengeRequestEvent& value) { SetAuthChallengeRequestEvent(value); return *this;}
-    inline ChatOutputStream& WithAuthChallengeRequestEvent(AuthChallengeRequestEvent&& value) { SetAuthChallengeRequestEvent(std::move(value)); return *this;}
+    template<typename AuthChallengeRequestEventT = AuthChallengeRequestEvent>
+    void SetAuthChallengeRequestEvent(AuthChallengeRequestEventT&& value) { m_authChallengeRequestEventHasBeenSet = true; m_authChallengeRequestEvent = std::forward<AuthChallengeRequestEventT>(value); }
+    template<typename AuthChallengeRequestEventT = AuthChallengeRequestEvent>
+    ChatOutputStream& WithAuthChallengeRequestEvent(AuthChallengeRequestEventT&& value) { SetAuthChallengeRequestEvent(std::forward<AuthChallengeRequestEventT>(value)); return *this;}
     ///@}
   private:
 

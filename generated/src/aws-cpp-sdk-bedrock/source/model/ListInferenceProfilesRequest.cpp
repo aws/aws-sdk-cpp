@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListInferenceProfilesRequest::ListInferenceProfilesRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_typeEquals(InferenceProfileType::NOT_SET),
-    m_typeEqualsHasBeenSet(false)
-{
-}
-
 Aws::String ListInferenceProfilesRequest::SerializePayload() const
 {
   return {};

@@ -18,27 +18,7 @@ namespace Athena
 namespace Model
 {
 
-QueryStage::QueryStage() : 
-    m_stageId(0),
-    m_stageIdHasBeenSet(false),
-    m_stateHasBeenSet(false),
-    m_outputBytes(0),
-    m_outputBytesHasBeenSet(false),
-    m_outputRows(0),
-    m_outputRowsHasBeenSet(false),
-    m_inputBytes(0),
-    m_inputBytesHasBeenSet(false),
-    m_inputRows(0),
-    m_inputRowsHasBeenSet(false),
-    m_executionTime(0),
-    m_executionTimeHasBeenSet(false),
-    m_queryStagePlanHasBeenSet(false),
-    m_subStagesHasBeenSet(false)
-{
-}
-
 QueryStage::QueryStage(JsonView jsonValue)
-  : QueryStage()
 {
   *this = jsonValue;
 }
@@ -48,59 +28,43 @@ QueryStage& QueryStage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StageId"))
   {
     m_stageId = jsonValue.GetInt64("StageId");
-
     m_stageIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = jsonValue.GetString("State");
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputBytes"))
   {
     m_outputBytes = jsonValue.GetInt64("OutputBytes");
-
     m_outputBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputRows"))
   {
     m_outputRows = jsonValue.GetInt64("OutputRows");
-
     m_outputRowsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputBytes"))
   {
     m_inputBytes = jsonValue.GetInt64("InputBytes");
-
     m_inputBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputRows"))
   {
     m_inputRows = jsonValue.GetInt64("InputRows");
-
     m_inputRowsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExecutionTime"))
   {
     m_executionTime = jsonValue.GetInt64("ExecutionTime");
-
     m_executionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryStagePlan"))
   {
     m_queryStagePlan = jsonValue.GetObject("QueryStagePlan");
-
     m_queryStagePlanHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubStages"))
   {
     Aws::Utils::Array<JsonView> subStagesJsonList = jsonValue.GetArray("SubStages");
@@ -110,7 +74,6 @@ QueryStage& QueryStage::operator =(JsonView jsonValue)
     }
     m_subStagesHasBeenSet = true;
   }
-
   return *this;
 }
 

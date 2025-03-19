@@ -18,14 +18,7 @@ namespace LicenseManager
 namespace Model
 {
 
-DatetimeRange::DatetimeRange() : 
-    m_beginHasBeenSet(false),
-    m_endHasBeenSet(false)
-{
-}
-
 DatetimeRange::DatetimeRange(JsonView jsonValue)
-  : DatetimeRange()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DatetimeRange& DatetimeRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Begin"))
   {
     m_begin = jsonValue.GetString("Begin");
-
     m_beginHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("End"))
   {
     m_end = jsonValue.GetString("End");
-
     m_endHasBeenSet = true;
   }
-
   return *this;
 }
 

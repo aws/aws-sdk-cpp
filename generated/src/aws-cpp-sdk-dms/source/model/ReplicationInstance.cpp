@@ -18,40 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-ReplicationInstance::ReplicationInstance() : 
-    m_replicationInstanceIdentifierHasBeenSet(false),
-    m_replicationInstanceClassHasBeenSet(false),
-    m_replicationInstanceStatusHasBeenSet(false),
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_instanceCreateTimeHasBeenSet(false),
-    m_vpcSecurityGroupsHasBeenSet(false),
-    m_availabilityZoneHasBeenSet(false),
-    m_replicationSubnetGroupHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_pendingModifiedValuesHasBeenSet(false),
-    m_multiAZ(false),
-    m_multiAZHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_autoMinorVersionUpgrade(false),
-    m_autoMinorVersionUpgradeHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_replicationInstanceArnHasBeenSet(false),
-    m_replicationInstancePublicIpAddressesHasBeenSet(false),
-    m_replicationInstancePrivateIpAddressesHasBeenSet(false),
-    m_replicationInstanceIpv6AddressesHasBeenSet(false),
-    m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false),
-    m_secondaryAvailabilityZoneHasBeenSet(false),
-    m_freeUntilHasBeenSet(false),
-    m_dnsNameServersHasBeenSet(false),
-    m_networkTypeHasBeenSet(false),
-    m_kerberosAuthenticationSettingsHasBeenSet(false)
-{
-}
-
 ReplicationInstance::ReplicationInstance(JsonView jsonValue)
-  : ReplicationInstance()
 {
   *this = jsonValue;
 }
@@ -61,38 +28,28 @@ ReplicationInstance& ReplicationInstance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReplicationInstanceIdentifier"))
   {
     m_replicationInstanceIdentifier = jsonValue.GetString("ReplicationInstanceIdentifier");
-
     m_replicationInstanceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationInstanceClass"))
   {
     m_replicationInstanceClass = jsonValue.GetString("ReplicationInstanceClass");
-
     m_replicationInstanceClassHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationInstanceStatus"))
   {
     m_replicationInstanceStatus = jsonValue.GetString("ReplicationInstanceStatus");
-
     m_replicationInstanceStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllocatedStorage"))
   {
     m_allocatedStorage = jsonValue.GetInteger("AllocatedStorage");
-
     m_allocatedStorageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceCreateTime"))
   {
     m_instanceCreateTime = jsonValue.GetDouble("InstanceCreateTime");
-
     m_instanceCreateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcSecurityGroups"))
   {
     Aws::Utils::Array<JsonView> vpcSecurityGroupsJsonList = jsonValue.GetArray("VpcSecurityGroups");
@@ -102,70 +59,51 @@ ReplicationInstance& ReplicationInstance::operator =(JsonView jsonValue)
     }
     m_vpcSecurityGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AvailabilityZone"))
   {
     m_availabilityZone = jsonValue.GetString("AvailabilityZone");
-
     m_availabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationSubnetGroup"))
   {
     m_replicationSubnetGroup = jsonValue.GetObject("ReplicationSubnetGroup");
-
     m_replicationSubnetGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreferredMaintenanceWindow"))
   {
     m_preferredMaintenanceWindow = jsonValue.GetString("PreferredMaintenanceWindow");
-
     m_preferredMaintenanceWindowHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PendingModifiedValues"))
   {
     m_pendingModifiedValues = jsonValue.GetObject("PendingModifiedValues");
-
     m_pendingModifiedValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MultiAZ"))
   {
     m_multiAZ = jsonValue.GetBool("MultiAZ");
-
     m_multiAZHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineVersion"))
   {
     m_engineVersion = jsonValue.GetString("EngineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoMinorVersionUpgrade"))
   {
     m_autoMinorVersionUpgrade = jsonValue.GetBool("AutoMinorVersionUpgrade");
-
     m_autoMinorVersionUpgradeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationInstanceArn"))
   {
     m_replicationInstanceArn = jsonValue.GetString("ReplicationInstanceArn");
-
     m_replicationInstanceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationInstancePublicIpAddresses"))
   {
     Aws::Utils::Array<JsonView> replicationInstancePublicIpAddressesJsonList = jsonValue.GetArray("ReplicationInstancePublicIpAddresses");
@@ -175,7 +113,6 @@ ReplicationInstance& ReplicationInstance::operator =(JsonView jsonValue)
     }
     m_replicationInstancePublicIpAddressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationInstancePrivateIpAddresses"))
   {
     Aws::Utils::Array<JsonView> replicationInstancePrivateIpAddressesJsonList = jsonValue.GetArray("ReplicationInstancePrivateIpAddresses");
@@ -185,7 +122,6 @@ ReplicationInstance& ReplicationInstance::operator =(JsonView jsonValue)
     }
     m_replicationInstancePrivateIpAddressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationInstanceIpv6Addresses"))
   {
     Aws::Utils::Array<JsonView> replicationInstanceIpv6AddressesJsonList = jsonValue.GetArray("ReplicationInstanceIpv6Addresses");
@@ -195,49 +131,36 @@ ReplicationInstance& ReplicationInstance::operator =(JsonView jsonValue)
     }
     m_replicationInstanceIpv6AddressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PubliclyAccessible"))
   {
     m_publiclyAccessible = jsonValue.GetBool("PubliclyAccessible");
-
     m_publiclyAccessibleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecondaryAvailabilityZone"))
   {
     m_secondaryAvailabilityZone = jsonValue.GetString("SecondaryAvailabilityZone");
-
     m_secondaryAvailabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FreeUntil"))
   {
     m_freeUntil = jsonValue.GetDouble("FreeUntil");
-
     m_freeUntilHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsNameServers"))
   {
     m_dnsNameServers = jsonValue.GetString("DnsNameServers");
-
     m_dnsNameServersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkType"))
   {
     m_networkType = jsonValue.GetString("NetworkType");
-
     m_networkTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KerberosAuthenticationSettings"))
   {
     m_kerberosAuthenticationSettings = jsonValue.GetObject("KerberosAuthenticationSettings");
-
     m_kerberosAuthenticationSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

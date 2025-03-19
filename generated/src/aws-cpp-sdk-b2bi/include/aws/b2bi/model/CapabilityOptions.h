@@ -32,7 +32,7 @@ namespace Model
   class CapabilityOptions
   {
   public:
-    AWS_B2BI_API CapabilityOptions();
+    AWS_B2BI_API CapabilityOptions() = default;
     AWS_B2BI_API CapabilityOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API CapabilityOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>A structure that contains the outbound EDI options.</p>
      */
-    inline const OutboundEdiOptions& GetOutboundEdi() const{ return m_outboundEdi; }
+    inline const OutboundEdiOptions& GetOutboundEdi() const { return m_outboundEdi; }
     inline bool OutboundEdiHasBeenSet() const { return m_outboundEdiHasBeenSet; }
-    inline void SetOutboundEdi(const OutboundEdiOptions& value) { m_outboundEdiHasBeenSet = true; m_outboundEdi = value; }
-    inline void SetOutboundEdi(OutboundEdiOptions&& value) { m_outboundEdiHasBeenSet = true; m_outboundEdi = std::move(value); }
-    inline CapabilityOptions& WithOutboundEdi(const OutboundEdiOptions& value) { SetOutboundEdi(value); return *this;}
-    inline CapabilityOptions& WithOutboundEdi(OutboundEdiOptions&& value) { SetOutboundEdi(std::move(value)); return *this;}
+    template<typename OutboundEdiT = OutboundEdiOptions>
+    void SetOutboundEdi(OutboundEdiT&& value) { m_outboundEdiHasBeenSet = true; m_outboundEdi = std::forward<OutboundEdiT>(value); }
+    template<typename OutboundEdiT = OutboundEdiOptions>
+    CapabilityOptions& WithOutboundEdi(OutboundEdiT&& value) { SetOutboundEdi(std::forward<OutboundEdiT>(value)); return *this;}
     ///@}
   private:
 

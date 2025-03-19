@@ -18,16 +18,7 @@ namespace Glue
 namespace Model
 {
 
-GluePolicy::GluePolicy() : 
-    m_policyInJsonHasBeenSet(false),
-    m_policyHashHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
-{
-}
-
 GluePolicy::GluePolicy(JsonView jsonValue)
-  : GluePolicy()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ GluePolicy& GluePolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PolicyInJson"))
   {
     m_policyInJson = jsonValue.GetString("PolicyInJson");
-
     m_policyInJsonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyHash"))
   {
     m_policyHash = jsonValue.GetString("PolicyHash");
-
     m_policyHashHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateTime"))
   {
     m_createTime = jsonValue.GetDouble("CreateTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateTime"))
   {
     m_updateTime = jsonValue.GetDouble("UpdateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

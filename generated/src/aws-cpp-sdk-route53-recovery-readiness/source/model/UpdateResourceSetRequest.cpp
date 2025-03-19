@@ -12,13 +12,6 @@ using namespace Aws::Route53RecoveryReadiness::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateResourceSetRequest::UpdateResourceSetRequest() : 
-    m_resourceSetNameHasBeenSet(false),
-    m_resourceSetTypeHasBeenSet(false),
-    m_resourcesHasBeenSet(false)
-{
-}
-
 Aws::String UpdateResourceSetRequest::SerializePayload() const
 {
   JsonValue payload;

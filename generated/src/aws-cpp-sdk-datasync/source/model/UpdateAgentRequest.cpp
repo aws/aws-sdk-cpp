@@ -12,12 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAgentRequest::UpdateAgentRequest() : 
-    m_agentArnHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAgentRequest::SerializePayload() const
 {
   JsonValue payload;

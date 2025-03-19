@@ -36,7 +36,7 @@ namespace Model
   class SubnetMapping
   {
   public:
-    AWS_NETWORKFIREWALL_API SubnetMapping();
+    AWS_NETWORKFIREWALL_API SubnetMapping() = default;
     AWS_NETWORKFIREWALL_API SubnetMapping(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API SubnetMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The unique identifier for the subnet. </p>
      */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+    inline const Aws::String& GetSubnetId() const { return m_subnetId; }
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-    inline SubnetMapping& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-    inline SubnetMapping& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-    inline SubnetMapping& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    template<typename SubnetIdT = Aws::String>
+    void SetSubnetId(SubnetIdT&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::forward<SubnetIdT>(value); }
+    template<typename SubnetIdT = Aws::String>
+    SubnetMapping& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,19 +59,17 @@ namespace Model
      * <p>The subnet's IP address type. You can't change the IP address type after you
      * create the subnet.</p>
      */
-    inline const IPAddressType& GetIPAddressType() const{ return m_iPAddressType; }
+    inline IPAddressType GetIPAddressType() const { return m_iPAddressType; }
     inline bool IPAddressTypeHasBeenSet() const { return m_iPAddressTypeHasBeenSet; }
-    inline void SetIPAddressType(const IPAddressType& value) { m_iPAddressTypeHasBeenSet = true; m_iPAddressType = value; }
-    inline void SetIPAddressType(IPAddressType&& value) { m_iPAddressTypeHasBeenSet = true; m_iPAddressType = std::move(value); }
-    inline SubnetMapping& WithIPAddressType(const IPAddressType& value) { SetIPAddressType(value); return *this;}
-    inline SubnetMapping& WithIPAddressType(IPAddressType&& value) { SetIPAddressType(std::move(value)); return *this;}
+    inline void SetIPAddressType(IPAddressType value) { m_iPAddressTypeHasBeenSet = true; m_iPAddressType = value; }
+    inline SubnetMapping& WithIPAddressType(IPAddressType value) { SetIPAddressType(value); return *this;}
     ///@}
   private:
 
     Aws::String m_subnetId;
     bool m_subnetIdHasBeenSet = false;
 
-    IPAddressType m_iPAddressType;
+    IPAddressType m_iPAddressType{IPAddressType::NOT_SET};
     bool m_iPAddressTypeHasBeenSet = false;
   };
 

@@ -18,15 +18,7 @@ namespace IVS
 namespace Model
 {
 
-RenditionConfiguration::RenditionConfiguration() : 
-    m_renditionSelection(RenditionConfigurationRenditionSelection::NOT_SET),
-    m_renditionSelectionHasBeenSet(false),
-    m_renditionsHasBeenSet(false)
-{
-}
-
 RenditionConfiguration::RenditionConfiguration(JsonView jsonValue)
-  : RenditionConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ RenditionConfiguration& RenditionConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("renditionSelection"))
   {
     m_renditionSelection = RenditionConfigurationRenditionSelectionMapper::GetRenditionConfigurationRenditionSelectionForName(jsonValue.GetString("renditionSelection"));
-
     m_renditionSelectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("renditions"))
   {
     Aws::Utils::Array<JsonView> renditionsJsonList = jsonValue.GetArray("renditions");
@@ -49,7 +39,6 @@ RenditionConfiguration& RenditionConfiguration::operator =(JsonView jsonValue)
     }
     m_renditionsHasBeenSet = true;
   }
-
   return *this;
 }
 

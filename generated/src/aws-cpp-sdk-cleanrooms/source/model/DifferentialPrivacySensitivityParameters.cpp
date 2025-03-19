@@ -18,21 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-DifferentialPrivacySensitivityParameters::DifferentialPrivacySensitivityParameters() : 
-    m_aggregationType(DifferentialPrivacyAggregationType::NOT_SET),
-    m_aggregationTypeHasBeenSet(false),
-    m_aggregationExpressionHasBeenSet(false),
-    m_userContributionLimit(0),
-    m_userContributionLimitHasBeenSet(false),
-    m_minColumnValue(0.0),
-    m_minColumnValueHasBeenSet(false),
-    m_maxColumnValue(0.0),
-    m_maxColumnValueHasBeenSet(false)
-{
-}
-
 DifferentialPrivacySensitivityParameters::DifferentialPrivacySensitivityParameters(JsonView jsonValue)
-  : DifferentialPrivacySensitivityParameters()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ DifferentialPrivacySensitivityParameters& DifferentialPrivacySensitivityParamete
   if(jsonValue.ValueExists("aggregationType"))
   {
     m_aggregationType = DifferentialPrivacyAggregationTypeMapper::GetDifferentialPrivacyAggregationTypeForName(jsonValue.GetString("aggregationType"));
-
     m_aggregationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregationExpression"))
   {
     m_aggregationExpression = jsonValue.GetString("aggregationExpression");
-
     m_aggregationExpressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userContributionLimit"))
   {
     m_userContributionLimit = jsonValue.GetInteger("userContributionLimit");
-
     m_userContributionLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("minColumnValue"))
   {
     m_minColumnValue = jsonValue.GetDouble("minColumnValue");
-
     m_minColumnValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxColumnValue"))
   {
     m_maxColumnValue = jsonValue.GetDouble("maxColumnValue");
-
     m_maxColumnValueHasBeenSet = true;
   }
-
   return *this;
 }
 

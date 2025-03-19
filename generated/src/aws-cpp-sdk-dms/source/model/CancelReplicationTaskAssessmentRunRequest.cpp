@@ -12,11 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelReplicationTaskAssessmentRunRequest::CancelReplicationTaskAssessmentRunRequest() : 
-    m_replicationTaskAssessmentRunArnHasBeenSet(false)
-{
-}
-
 Aws::String CancelReplicationTaskAssessmentRunRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -29,7 +29,7 @@ namespace Model
   class ListBillingViewsResult
   {
   public:
-    AWS_BILLING_API ListBillingViewsResult();
+    AWS_BILLING_API ListBillingViewsResult() = default;
     AWS_BILLING_API ListBillingViewsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BILLING_API ListBillingViewsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,44 @@ namespace Model
     /**
      * <p>A list of <code>BillingViewListElement</code> retrieved.</p>
      */
-    inline const Aws::Vector<BillingViewListElement>& GetBillingViews() const{ return m_billingViews; }
-    inline void SetBillingViews(const Aws::Vector<BillingViewListElement>& value) { m_billingViews = value; }
-    inline void SetBillingViews(Aws::Vector<BillingViewListElement>&& value) { m_billingViews = std::move(value); }
-    inline ListBillingViewsResult& WithBillingViews(const Aws::Vector<BillingViewListElement>& value) { SetBillingViews(value); return *this;}
-    inline ListBillingViewsResult& WithBillingViews(Aws::Vector<BillingViewListElement>&& value) { SetBillingViews(std::move(value)); return *this;}
-    inline ListBillingViewsResult& AddBillingViews(const BillingViewListElement& value) { m_billingViews.push_back(value); return *this; }
-    inline ListBillingViewsResult& AddBillingViews(BillingViewListElement&& value) { m_billingViews.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BillingViewListElement>& GetBillingViews() const { return m_billingViews; }
+    template<typename BillingViewsT = Aws::Vector<BillingViewListElement>>
+    void SetBillingViews(BillingViewsT&& value) { m_billingViewsHasBeenSet = true; m_billingViews = std::forward<BillingViewsT>(value); }
+    template<typename BillingViewsT = Aws::Vector<BillingViewListElement>>
+    ListBillingViewsResult& WithBillingViews(BillingViewsT&& value) { SetBillingViews(std::forward<BillingViewsT>(value)); return *this;}
+    template<typename BillingViewsT = BillingViewListElement>
+    ListBillingViewsResult& AddBillingViews(BillingViewsT&& value) { m_billingViewsHasBeenSet = true; m_billingViews.emplace_back(std::forward<BillingViewsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pagination token to use on subsequent calls to list billing views. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListBillingViewsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListBillingViewsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListBillingViewsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListBillingViewsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListBillingViewsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListBillingViewsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListBillingViewsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListBillingViewsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BillingViewListElement> m_billingViews;
+    bool m_billingViewsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

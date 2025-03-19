@@ -18,14 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-Setting::Setting() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 Setting::Setting(JsonView jsonValue)
-  : Setting()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Setting& Setting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

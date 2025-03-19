@@ -18,15 +18,7 @@ namespace Organizations
 namespace Model
 {
 
-OrganizationalUnit::OrganizationalUnit() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 OrganizationalUnit::OrganizationalUnit(JsonView jsonValue)
-  : OrganizationalUnit()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ OrganizationalUnit& OrganizationalUnit::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

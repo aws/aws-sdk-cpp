@@ -34,7 +34,7 @@ namespace Model
   class RedshiftDataSpec
   {
   public:
-    AWS_MACHINELEARNING_API RedshiftDataSpec();
+    AWS_MACHINELEARNING_API RedshiftDataSpec() = default;
     AWS_MACHINELEARNING_API RedshiftDataSpec(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACHINELEARNING_API RedshiftDataSpec& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MACHINELEARNING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,12 @@ namespace Model
      * <p>Describes the <code>DatabaseName</code> and <code>ClusterIdentifier</code>
      * for an Amazon Redshift <code>DataSource</code>.</p>
      */
-    inline const RedshiftDatabase& GetDatabaseInformation() const{ return m_databaseInformation; }
+    inline const RedshiftDatabase& GetDatabaseInformation() const { return m_databaseInformation; }
     inline bool DatabaseInformationHasBeenSet() const { return m_databaseInformationHasBeenSet; }
-    inline void SetDatabaseInformation(const RedshiftDatabase& value) { m_databaseInformationHasBeenSet = true; m_databaseInformation = value; }
-    inline void SetDatabaseInformation(RedshiftDatabase&& value) { m_databaseInformationHasBeenSet = true; m_databaseInformation = std::move(value); }
-    inline RedshiftDataSpec& WithDatabaseInformation(const RedshiftDatabase& value) { SetDatabaseInformation(value); return *this;}
-    inline RedshiftDataSpec& WithDatabaseInformation(RedshiftDatabase&& value) { SetDatabaseInformation(std::move(value)); return *this;}
+    template<typename DatabaseInformationT = RedshiftDatabase>
+    void SetDatabaseInformation(DatabaseInformationT&& value) { m_databaseInformationHasBeenSet = true; m_databaseInformation = std::forward<DatabaseInformationT>(value); }
+    template<typename DatabaseInformationT = RedshiftDatabase>
+    RedshiftDataSpec& WithDatabaseInformation(DatabaseInformationT&& value) { SetDatabaseInformation(std::forward<DatabaseInformationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +58,12 @@ namespace Model
      * <p>Describes the SQL Query to execute on an Amazon Redshift database for an
      * Amazon Redshift <code>DataSource</code>.</p>
      */
-    inline const Aws::String& GetSelectSqlQuery() const{ return m_selectSqlQuery; }
+    inline const Aws::String& GetSelectSqlQuery() const { return m_selectSqlQuery; }
     inline bool SelectSqlQueryHasBeenSet() const { return m_selectSqlQueryHasBeenSet; }
-    inline void SetSelectSqlQuery(const Aws::String& value) { m_selectSqlQueryHasBeenSet = true; m_selectSqlQuery = value; }
-    inline void SetSelectSqlQuery(Aws::String&& value) { m_selectSqlQueryHasBeenSet = true; m_selectSqlQuery = std::move(value); }
-    inline void SetSelectSqlQuery(const char* value) { m_selectSqlQueryHasBeenSet = true; m_selectSqlQuery.assign(value); }
-    inline RedshiftDataSpec& WithSelectSqlQuery(const Aws::String& value) { SetSelectSqlQuery(value); return *this;}
-    inline RedshiftDataSpec& WithSelectSqlQuery(Aws::String&& value) { SetSelectSqlQuery(std::move(value)); return *this;}
-    inline RedshiftDataSpec& WithSelectSqlQuery(const char* value) { SetSelectSqlQuery(value); return *this;}
+    template<typename SelectSqlQueryT = Aws::String>
+    void SetSelectSqlQuery(SelectSqlQueryT&& value) { m_selectSqlQueryHasBeenSet = true; m_selectSqlQuery = std::forward<SelectSqlQueryT>(value); }
+    template<typename SelectSqlQueryT = Aws::String>
+    RedshiftDataSpec& WithSelectSqlQuery(SelectSqlQueryT&& value) { SetSelectSqlQuery(std::forward<SelectSqlQueryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +71,12 @@ namespace Model
      * <p>Describes AWS Identity and Access Management (IAM) credentials that are used
      * connect to the Amazon Redshift database.</p>
      */
-    inline const RedshiftDatabaseCredentials& GetDatabaseCredentials() const{ return m_databaseCredentials; }
+    inline const RedshiftDatabaseCredentials& GetDatabaseCredentials() const { return m_databaseCredentials; }
     inline bool DatabaseCredentialsHasBeenSet() const { return m_databaseCredentialsHasBeenSet; }
-    inline void SetDatabaseCredentials(const RedshiftDatabaseCredentials& value) { m_databaseCredentialsHasBeenSet = true; m_databaseCredentials = value; }
-    inline void SetDatabaseCredentials(RedshiftDatabaseCredentials&& value) { m_databaseCredentialsHasBeenSet = true; m_databaseCredentials = std::move(value); }
-    inline RedshiftDataSpec& WithDatabaseCredentials(const RedshiftDatabaseCredentials& value) { SetDatabaseCredentials(value); return *this;}
-    inline RedshiftDataSpec& WithDatabaseCredentials(RedshiftDatabaseCredentials&& value) { SetDatabaseCredentials(std::move(value)); return *this;}
+    template<typename DatabaseCredentialsT = RedshiftDatabaseCredentials>
+    void SetDatabaseCredentials(DatabaseCredentialsT&& value) { m_databaseCredentialsHasBeenSet = true; m_databaseCredentials = std::forward<DatabaseCredentialsT>(value); }
+    template<typename DatabaseCredentialsT = RedshiftDatabaseCredentials>
+    RedshiftDataSpec& WithDatabaseCredentials(DatabaseCredentialsT&& value) { SetDatabaseCredentials(std::forward<DatabaseCredentialsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +84,12 @@ namespace Model
      * <p>Describes an Amazon S3 location to store the result set of the
      * <code>SelectSqlQuery</code> query.</p>
      */
-    inline const Aws::String& GetS3StagingLocation() const{ return m_s3StagingLocation; }
+    inline const Aws::String& GetS3StagingLocation() const { return m_s3StagingLocation; }
     inline bool S3StagingLocationHasBeenSet() const { return m_s3StagingLocationHasBeenSet; }
-    inline void SetS3StagingLocation(const Aws::String& value) { m_s3StagingLocationHasBeenSet = true; m_s3StagingLocation = value; }
-    inline void SetS3StagingLocation(Aws::String&& value) { m_s3StagingLocationHasBeenSet = true; m_s3StagingLocation = std::move(value); }
-    inline void SetS3StagingLocation(const char* value) { m_s3StagingLocationHasBeenSet = true; m_s3StagingLocation.assign(value); }
-    inline RedshiftDataSpec& WithS3StagingLocation(const Aws::String& value) { SetS3StagingLocation(value); return *this;}
-    inline RedshiftDataSpec& WithS3StagingLocation(Aws::String&& value) { SetS3StagingLocation(std::move(value)); return *this;}
-    inline RedshiftDataSpec& WithS3StagingLocation(const char* value) { SetS3StagingLocation(value); return *this;}
+    template<typename S3StagingLocationT = Aws::String>
+    void SetS3StagingLocation(S3StagingLocationT&& value) { m_s3StagingLocationHasBeenSet = true; m_s3StagingLocation = std::forward<S3StagingLocationT>(value); }
+    template<typename S3StagingLocationT = Aws::String>
+    RedshiftDataSpec& WithS3StagingLocation(S3StagingLocationT&& value) { SetS3StagingLocation(std::forward<S3StagingLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -158,14 +154,12 @@ namespace Model
      * "strategy":"random", "randomSeed"="s3://my_s3_path/bucket/file.csv",
      * "complement":"true"}}</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetDataRearrangement() const{ return m_dataRearrangement; }
+    inline const Aws::String& GetDataRearrangement() const { return m_dataRearrangement; }
     inline bool DataRearrangementHasBeenSet() const { return m_dataRearrangementHasBeenSet; }
-    inline void SetDataRearrangement(const Aws::String& value) { m_dataRearrangementHasBeenSet = true; m_dataRearrangement = value; }
-    inline void SetDataRearrangement(Aws::String&& value) { m_dataRearrangementHasBeenSet = true; m_dataRearrangement = std::move(value); }
-    inline void SetDataRearrangement(const char* value) { m_dataRearrangementHasBeenSet = true; m_dataRearrangement.assign(value); }
-    inline RedshiftDataSpec& WithDataRearrangement(const Aws::String& value) { SetDataRearrangement(value); return *this;}
-    inline RedshiftDataSpec& WithDataRearrangement(Aws::String&& value) { SetDataRearrangement(std::move(value)); return *this;}
-    inline RedshiftDataSpec& WithDataRearrangement(const char* value) { SetDataRearrangement(value); return *this;}
+    template<typename DataRearrangementT = Aws::String>
+    void SetDataRearrangement(DataRearrangementT&& value) { m_dataRearrangementHasBeenSet = true; m_dataRearrangement = std::forward<DataRearrangementT>(value); }
+    template<typename DataRearrangementT = Aws::String>
+    RedshiftDataSpec& WithDataRearrangement(DataRearrangementT&& value) { SetDataRearrangement(std::forward<DataRearrangementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -189,14 +183,12 @@ namespace Model
      * "F8", "fieldType": "WEIGHTED_STRING_SEQUENCE" } ],</p>
      * <p>"excludedVariableNames": [ "F6" ] }</p>
      */
-    inline const Aws::String& GetDataSchema() const{ return m_dataSchema; }
+    inline const Aws::String& GetDataSchema() const { return m_dataSchema; }
     inline bool DataSchemaHasBeenSet() const { return m_dataSchemaHasBeenSet; }
-    inline void SetDataSchema(const Aws::String& value) { m_dataSchemaHasBeenSet = true; m_dataSchema = value; }
-    inline void SetDataSchema(Aws::String&& value) { m_dataSchemaHasBeenSet = true; m_dataSchema = std::move(value); }
-    inline void SetDataSchema(const char* value) { m_dataSchemaHasBeenSet = true; m_dataSchema.assign(value); }
-    inline RedshiftDataSpec& WithDataSchema(const Aws::String& value) { SetDataSchema(value); return *this;}
-    inline RedshiftDataSpec& WithDataSchema(Aws::String&& value) { SetDataSchema(std::move(value)); return *this;}
-    inline RedshiftDataSpec& WithDataSchema(const char* value) { SetDataSchema(value); return *this;}
+    template<typename DataSchemaT = Aws::String>
+    void SetDataSchema(DataSchemaT&& value) { m_dataSchemaHasBeenSet = true; m_dataSchema = std::forward<DataSchemaT>(value); }
+    template<typename DataSchemaT = Aws::String>
+    RedshiftDataSpec& WithDataSchema(DataSchemaT&& value) { SetDataSchema(std::forward<DataSchemaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -204,14 +196,12 @@ namespace Model
      * <p>Describes the schema location for an Amazon Redshift
      * <code>DataSource</code>.</p>
      */
-    inline const Aws::String& GetDataSchemaUri() const{ return m_dataSchemaUri; }
+    inline const Aws::String& GetDataSchemaUri() const { return m_dataSchemaUri; }
     inline bool DataSchemaUriHasBeenSet() const { return m_dataSchemaUriHasBeenSet; }
-    inline void SetDataSchemaUri(const Aws::String& value) { m_dataSchemaUriHasBeenSet = true; m_dataSchemaUri = value; }
-    inline void SetDataSchemaUri(Aws::String&& value) { m_dataSchemaUriHasBeenSet = true; m_dataSchemaUri = std::move(value); }
-    inline void SetDataSchemaUri(const char* value) { m_dataSchemaUriHasBeenSet = true; m_dataSchemaUri.assign(value); }
-    inline RedshiftDataSpec& WithDataSchemaUri(const Aws::String& value) { SetDataSchemaUri(value); return *this;}
-    inline RedshiftDataSpec& WithDataSchemaUri(Aws::String&& value) { SetDataSchemaUri(std::move(value)); return *this;}
-    inline RedshiftDataSpec& WithDataSchemaUri(const char* value) { SetDataSchemaUri(value); return *this;}
+    template<typename DataSchemaUriT = Aws::String>
+    void SetDataSchemaUri(DataSchemaUriT&& value) { m_dataSchemaUriHasBeenSet = true; m_dataSchemaUri = std::forward<DataSchemaUriT>(value); }
+    template<typename DataSchemaUriT = Aws::String>
+    RedshiftDataSpec& WithDataSchemaUri(DataSchemaUriT&& value) { SetDataSchemaUri(std::forward<DataSchemaUriT>(value)); return *this;}
     ///@}
   private:
 

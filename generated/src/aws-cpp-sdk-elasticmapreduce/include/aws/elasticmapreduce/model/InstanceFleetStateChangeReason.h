@@ -34,7 +34,7 @@ namespace Model
   class InstanceFleetStateChangeReason
   {
   public:
-    AWS_EMR_API InstanceFleetStateChangeReason();
+    AWS_EMR_API InstanceFleetStateChangeReason() = default;
     AWS_EMR_API InstanceFleetStateChangeReason(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API InstanceFleetStateChangeReason& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,30 +44,26 @@ namespace Model
     /**
      * <p>A code corresponding to the reason the state change occurred.</p>
      */
-    inline const InstanceFleetStateChangeReasonCode& GetCode() const{ return m_code; }
+    inline InstanceFleetStateChangeReasonCode GetCode() const { return m_code; }
     inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-    inline void SetCode(const InstanceFleetStateChangeReasonCode& value) { m_codeHasBeenSet = true; m_code = value; }
-    inline void SetCode(InstanceFleetStateChangeReasonCode&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-    inline InstanceFleetStateChangeReason& WithCode(const InstanceFleetStateChangeReasonCode& value) { SetCode(value); return *this;}
-    inline InstanceFleetStateChangeReason& WithCode(InstanceFleetStateChangeReasonCode&& value) { SetCode(std::move(value)); return *this;}
+    inline void SetCode(InstanceFleetStateChangeReasonCode value) { m_codeHasBeenSet = true; m_code = value; }
+    inline InstanceFleetStateChangeReason& WithCode(InstanceFleetStateChangeReasonCode value) { SetCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An explanatory message.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline InstanceFleetStateChangeReason& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline InstanceFleetStateChangeReason& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline InstanceFleetStateChangeReason& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    InstanceFleetStateChangeReason& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
   private:
 
-    InstanceFleetStateChangeReasonCode m_code;
+    InstanceFleetStateChangeReasonCode m_code{InstanceFleetStateChangeReasonCode::NOT_SET};
     bool m_codeHasBeenSet = false;
 
     Aws::String m_message;

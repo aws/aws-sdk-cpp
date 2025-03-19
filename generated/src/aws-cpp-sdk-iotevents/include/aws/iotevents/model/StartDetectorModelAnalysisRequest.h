@@ -21,7 +21,7 @@ namespace Model
   class StartDetectorModelAnalysisRequest : public IoTEventsRequest
   {
   public:
-    AWS_IOTEVENTS_API StartDetectorModelAnalysisRequest();
+    AWS_IOTEVENTS_API StartDetectorModelAnalysisRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,12 +34,12 @@ namespace Model
 
     ///@{
     
-    inline const DetectorModelDefinition& GetDetectorModelDefinition() const{ return m_detectorModelDefinition; }
+    inline const DetectorModelDefinition& GetDetectorModelDefinition() const { return m_detectorModelDefinition; }
     inline bool DetectorModelDefinitionHasBeenSet() const { return m_detectorModelDefinitionHasBeenSet; }
-    inline void SetDetectorModelDefinition(const DetectorModelDefinition& value) { m_detectorModelDefinitionHasBeenSet = true; m_detectorModelDefinition = value; }
-    inline void SetDetectorModelDefinition(DetectorModelDefinition&& value) { m_detectorModelDefinitionHasBeenSet = true; m_detectorModelDefinition = std::move(value); }
-    inline StartDetectorModelAnalysisRequest& WithDetectorModelDefinition(const DetectorModelDefinition& value) { SetDetectorModelDefinition(value); return *this;}
-    inline StartDetectorModelAnalysisRequest& WithDetectorModelDefinition(DetectorModelDefinition&& value) { SetDetectorModelDefinition(std::move(value)); return *this;}
+    template<typename DetectorModelDefinitionT = DetectorModelDefinition>
+    void SetDetectorModelDefinition(DetectorModelDefinitionT&& value) { m_detectorModelDefinitionHasBeenSet = true; m_detectorModelDefinition = std::forward<DetectorModelDefinitionT>(value); }
+    template<typename DetectorModelDefinitionT = DetectorModelDefinition>
+    StartDetectorModelAnalysisRequest& WithDetectorModelDefinition(DetectorModelDefinitionT&& value) { SetDetectorModelDefinition(std::forward<DetectorModelDefinitionT>(value)); return *this;}
     ///@}
   private:
 

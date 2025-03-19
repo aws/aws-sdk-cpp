@@ -20,16 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-ListCallerAccessGrantsEntry::ListCallerAccessGrantsEntry() : 
-    m_permission(Permission::NOT_SET),
-    m_permissionHasBeenSet(false),
-    m_grantScopeHasBeenSet(false),
-    m_applicationArnHasBeenSet(false)
-{
-}
-
 ListCallerAccessGrantsEntry::ListCallerAccessGrantsEntry(const XmlNode& xmlNode)
-  : ListCallerAccessGrantsEntry()
 {
   *this = xmlNode;
 }
@@ -43,7 +34,7 @@ ListCallerAccessGrantsEntry& ListCallerAccessGrantsEntry::operator =(const XmlNo
     XmlNode permissionNode = resultNode.FirstChild("Permission");
     if(!permissionNode.IsNull())
     {
-      m_permission = PermissionMapper::GetPermissionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionNode.GetText()).c_str()).c_str());
+      m_permission = PermissionMapper::GetPermissionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(permissionNode.GetText()).c_str()));
       m_permissionHasBeenSet = true;
     }
     XmlNode grantScopeNode = resultNode.FirstChild("GrantScope");

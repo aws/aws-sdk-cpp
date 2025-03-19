@@ -30,7 +30,7 @@ namespace Model
   class ATIModelPerformance
   {
   public:
-    AWS_FRAUDDETECTOR_API ATIModelPerformance();
+    AWS_FRAUDDETECTOR_API ATIModelPerformance() = default;
     AWS_FRAUDDETECTOR_API ATIModelPerformance(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API ATIModelPerformance& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,14 @@ namespace Model
      * model with a high separability power will have the highest possible ASI score of
      * 1.0 </p>
      */
-    inline double GetAsi() const{ return m_asi; }
+    inline double GetAsi() const { return m_asi; }
     inline bool AsiHasBeenSet() const { return m_asiHasBeenSet; }
     inline void SetAsi(double value) { m_asiHasBeenSet = true; m_asi = value; }
     inline ATIModelPerformance& WithAsi(double value) { SetAsi(value); return *this;}
     ///@}
   private:
 
-    double m_asi;
+    double m_asi{0.0};
     bool m_asiHasBeenSet = false;
   };
 

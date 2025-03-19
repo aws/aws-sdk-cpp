@@ -36,7 +36,7 @@ namespace Model
   class SubResourceSummary
   {
   public:
-    AWS_SHIELD_API SubResourceSummary();
+    AWS_SHIELD_API SubResourceSummary() = default;
     AWS_SHIELD_API SubResourceSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API SubResourceSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SHIELD_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,58 +46,54 @@ namespace Model
     /**
      * <p>The <code>SubResource</code> type.</p>
      */
-    inline const SubResourceType& GetType() const{ return m_type; }
+    inline SubResourceType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SubResourceType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SubResourceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline SubResourceSummary& WithType(const SubResourceType& value) { SetType(value); return *this;}
-    inline SubResourceSummary& WithType(SubResourceType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SubResourceType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline SubResourceSummary& WithType(SubResourceType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier (ID) of the <code>SubResource</code>.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline SubResourceSummary& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline SubResourceSummary& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline SubResourceSummary& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    SubResourceSummary& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of attack types and associated counters.</p>
      */
-    inline const Aws::Vector<SummarizedAttackVector>& GetAttackVectors() const{ return m_attackVectors; }
+    inline const Aws::Vector<SummarizedAttackVector>& GetAttackVectors() const { return m_attackVectors; }
     inline bool AttackVectorsHasBeenSet() const { return m_attackVectorsHasBeenSet; }
-    inline void SetAttackVectors(const Aws::Vector<SummarizedAttackVector>& value) { m_attackVectorsHasBeenSet = true; m_attackVectors = value; }
-    inline void SetAttackVectors(Aws::Vector<SummarizedAttackVector>&& value) { m_attackVectorsHasBeenSet = true; m_attackVectors = std::move(value); }
-    inline SubResourceSummary& WithAttackVectors(const Aws::Vector<SummarizedAttackVector>& value) { SetAttackVectors(value); return *this;}
-    inline SubResourceSummary& WithAttackVectors(Aws::Vector<SummarizedAttackVector>&& value) { SetAttackVectors(std::move(value)); return *this;}
-    inline SubResourceSummary& AddAttackVectors(const SummarizedAttackVector& value) { m_attackVectorsHasBeenSet = true; m_attackVectors.push_back(value); return *this; }
-    inline SubResourceSummary& AddAttackVectors(SummarizedAttackVector&& value) { m_attackVectorsHasBeenSet = true; m_attackVectors.push_back(std::move(value)); return *this; }
+    template<typename AttackVectorsT = Aws::Vector<SummarizedAttackVector>>
+    void SetAttackVectors(AttackVectorsT&& value) { m_attackVectorsHasBeenSet = true; m_attackVectors = std::forward<AttackVectorsT>(value); }
+    template<typename AttackVectorsT = Aws::Vector<SummarizedAttackVector>>
+    SubResourceSummary& WithAttackVectors(AttackVectorsT&& value) { SetAttackVectors(std::forward<AttackVectorsT>(value)); return *this;}
+    template<typename AttackVectorsT = SummarizedAttackVector>
+    SubResourceSummary& AddAttackVectors(AttackVectorsT&& value) { m_attackVectorsHasBeenSet = true; m_attackVectors.emplace_back(std::forward<AttackVectorsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The counters that describe the details of the attack.</p>
      */
-    inline const Aws::Vector<SummarizedCounter>& GetCounters() const{ return m_counters; }
+    inline const Aws::Vector<SummarizedCounter>& GetCounters() const { return m_counters; }
     inline bool CountersHasBeenSet() const { return m_countersHasBeenSet; }
-    inline void SetCounters(const Aws::Vector<SummarizedCounter>& value) { m_countersHasBeenSet = true; m_counters = value; }
-    inline void SetCounters(Aws::Vector<SummarizedCounter>&& value) { m_countersHasBeenSet = true; m_counters = std::move(value); }
-    inline SubResourceSummary& WithCounters(const Aws::Vector<SummarizedCounter>& value) { SetCounters(value); return *this;}
-    inline SubResourceSummary& WithCounters(Aws::Vector<SummarizedCounter>&& value) { SetCounters(std::move(value)); return *this;}
-    inline SubResourceSummary& AddCounters(const SummarizedCounter& value) { m_countersHasBeenSet = true; m_counters.push_back(value); return *this; }
-    inline SubResourceSummary& AddCounters(SummarizedCounter&& value) { m_countersHasBeenSet = true; m_counters.push_back(std::move(value)); return *this; }
+    template<typename CountersT = Aws::Vector<SummarizedCounter>>
+    void SetCounters(CountersT&& value) { m_countersHasBeenSet = true; m_counters = std::forward<CountersT>(value); }
+    template<typename CountersT = Aws::Vector<SummarizedCounter>>
+    SubResourceSummary& WithCounters(CountersT&& value) { SetCounters(std::forward<CountersT>(value)); return *this;}
+    template<typename CountersT = SummarizedCounter>
+    SubResourceSummary& AddCounters(CountersT&& value) { m_countersHasBeenSet = true; m_counters.emplace_back(std::forward<CountersT>(value)); return *this; }
     ///@}
   private:
 
-    SubResourceType m_type;
+    SubResourceType m_type{SubResourceType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_id;

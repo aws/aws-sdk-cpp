@@ -21,7 +21,7 @@ namespace Model
   class CreateUploadUrlRequest : public CodeGuruSecurityRequest
   {
   public:
-    AWS_CODEGURUSECURITY_API CreateUploadUrlRequest();
+    AWS_CODEGURUSECURITY_API CreateUploadUrlRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * resource. Use this <code>scanName</code> when you call <code>CreateScan</code>
      * on the code resource you upload to this URL.</p>
      */
-    inline const Aws::String& GetScanName() const{ return m_scanName; }
+    inline const Aws::String& GetScanName() const { return m_scanName; }
     inline bool ScanNameHasBeenSet() const { return m_scanNameHasBeenSet; }
-    inline void SetScanName(const Aws::String& value) { m_scanNameHasBeenSet = true; m_scanName = value; }
-    inline void SetScanName(Aws::String&& value) { m_scanNameHasBeenSet = true; m_scanName = std::move(value); }
-    inline void SetScanName(const char* value) { m_scanNameHasBeenSet = true; m_scanName.assign(value); }
-    inline CreateUploadUrlRequest& WithScanName(const Aws::String& value) { SetScanName(value); return *this;}
-    inline CreateUploadUrlRequest& WithScanName(Aws::String&& value) { SetScanName(std::move(value)); return *this;}
-    inline CreateUploadUrlRequest& WithScanName(const char* value) { SetScanName(value); return *this;}
+    template<typename ScanNameT = Aws::String>
+    void SetScanName(ScanNameT&& value) { m_scanNameHasBeenSet = true; m_scanName = std::forward<ScanNameT>(value); }
+    template<typename ScanNameT = Aws::String>
+    CreateUploadUrlRequest& WithScanName(ScanNameT&& value) { SetScanName(std::forward<ScanNameT>(value)); return *this;}
     ///@}
   private:
 

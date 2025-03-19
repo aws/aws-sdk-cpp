@@ -35,7 +35,7 @@ namespace Model
   class CustomActionAttachment
   {
   public:
-    AWS_CHATBOT_API CustomActionAttachment();
+    AWS_CHATBOT_API CustomActionAttachment() = default;
     AWS_CHATBOT_API CustomActionAttachment(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHATBOT_API CustomActionAttachment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHATBOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The type of notification that the custom action should be attached to.</p>
      */
-    inline const Aws::String& GetNotificationType() const{ return m_notificationType; }
+    inline const Aws::String& GetNotificationType() const { return m_notificationType; }
     inline bool NotificationTypeHasBeenSet() const { return m_notificationTypeHasBeenSet; }
-    inline void SetNotificationType(const Aws::String& value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
-    inline void SetNotificationType(Aws::String&& value) { m_notificationTypeHasBeenSet = true; m_notificationType = std::move(value); }
-    inline void SetNotificationType(const char* value) { m_notificationTypeHasBeenSet = true; m_notificationType.assign(value); }
-    inline CustomActionAttachment& WithNotificationType(const Aws::String& value) { SetNotificationType(value); return *this;}
-    inline CustomActionAttachment& WithNotificationType(Aws::String&& value) { SetNotificationType(std::move(value)); return *this;}
-    inline CustomActionAttachment& WithNotificationType(const char* value) { SetNotificationType(value); return *this;}
+    template<typename NotificationTypeT = Aws::String>
+    void SetNotificationType(NotificationTypeT&& value) { m_notificationTypeHasBeenSet = true; m_notificationType = std::forward<NotificationTypeT>(value); }
+    template<typename NotificationTypeT = Aws::String>
+    CustomActionAttachment& WithNotificationType(NotificationTypeT&& value) { SetNotificationType(std::forward<NotificationTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The text of the button that appears on the notification.</p>
      */
-    inline const Aws::String& GetButtonText() const{ return m_buttonText; }
+    inline const Aws::String& GetButtonText() const { return m_buttonText; }
     inline bool ButtonTextHasBeenSet() const { return m_buttonTextHasBeenSet; }
-    inline void SetButtonText(const Aws::String& value) { m_buttonTextHasBeenSet = true; m_buttonText = value; }
-    inline void SetButtonText(Aws::String&& value) { m_buttonTextHasBeenSet = true; m_buttonText = std::move(value); }
-    inline void SetButtonText(const char* value) { m_buttonTextHasBeenSet = true; m_buttonText.assign(value); }
-    inline CustomActionAttachment& WithButtonText(const Aws::String& value) { SetButtonText(value); return *this;}
-    inline CustomActionAttachment& WithButtonText(Aws::String&& value) { SetButtonText(std::move(value)); return *this;}
-    inline CustomActionAttachment& WithButtonText(const char* value) { SetButtonText(value); return *this;}
+    template<typename ButtonTextT = Aws::String>
+    void SetButtonText(ButtonTextT&& value) { m_buttonTextHasBeenSet = true; m_buttonText = std::forward<ButtonTextT>(value); }
+    template<typename ButtonTextT = Aws::String>
+    CustomActionAttachment& WithButtonText(ButtonTextT&& value) { SetButtonText(std::forward<ButtonTextT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,33 +70,30 @@ namespace Model
      * <p>The criteria for when a button should be shown based on values in the
      * notification.</p>
      */
-    inline const Aws::Vector<CustomActionAttachmentCriteria>& GetCriteria() const{ return m_criteria; }
+    inline const Aws::Vector<CustomActionAttachmentCriteria>& GetCriteria() const { return m_criteria; }
     inline bool CriteriaHasBeenSet() const { return m_criteriaHasBeenSet; }
-    inline void SetCriteria(const Aws::Vector<CustomActionAttachmentCriteria>& value) { m_criteriaHasBeenSet = true; m_criteria = value; }
-    inline void SetCriteria(Aws::Vector<CustomActionAttachmentCriteria>&& value) { m_criteriaHasBeenSet = true; m_criteria = std::move(value); }
-    inline CustomActionAttachment& WithCriteria(const Aws::Vector<CustomActionAttachmentCriteria>& value) { SetCriteria(value); return *this;}
-    inline CustomActionAttachment& WithCriteria(Aws::Vector<CustomActionAttachmentCriteria>&& value) { SetCriteria(std::move(value)); return *this;}
-    inline CustomActionAttachment& AddCriteria(const CustomActionAttachmentCriteria& value) { m_criteriaHasBeenSet = true; m_criteria.push_back(value); return *this; }
-    inline CustomActionAttachment& AddCriteria(CustomActionAttachmentCriteria&& value) { m_criteriaHasBeenSet = true; m_criteria.push_back(std::move(value)); return *this; }
+    template<typename CriteriaT = Aws::Vector<CustomActionAttachmentCriteria>>
+    void SetCriteria(CriteriaT&& value) { m_criteriaHasBeenSet = true; m_criteria = std::forward<CriteriaT>(value); }
+    template<typename CriteriaT = Aws::Vector<CustomActionAttachmentCriteria>>
+    CustomActionAttachment& WithCriteria(CriteriaT&& value) { SetCriteria(std::forward<CriteriaT>(value)); return *this;}
+    template<typename CriteriaT = CustomActionAttachmentCriteria>
+    CustomActionAttachment& AddCriteria(CriteriaT&& value) { m_criteriaHasBeenSet = true; m_criteria.emplace_back(std::forward<CriteriaT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The variables to extract from the notification.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetVariables() const{ return m_variables; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetVariables() const { return m_variables; }
     inline bool VariablesHasBeenSet() const { return m_variablesHasBeenSet; }
-    inline void SetVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_variablesHasBeenSet = true; m_variables = value; }
-    inline void SetVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_variablesHasBeenSet = true; m_variables = std::move(value); }
-    inline CustomActionAttachment& WithVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetVariables(value); return *this;}
-    inline CustomActionAttachment& WithVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetVariables(std::move(value)); return *this;}
-    inline CustomActionAttachment& AddVariables(const Aws::String& key, const Aws::String& value) { m_variablesHasBeenSet = true; m_variables.emplace(key, value); return *this; }
-    inline CustomActionAttachment& AddVariables(Aws::String&& key, const Aws::String& value) { m_variablesHasBeenSet = true; m_variables.emplace(std::move(key), value); return *this; }
-    inline CustomActionAttachment& AddVariables(const Aws::String& key, Aws::String&& value) { m_variablesHasBeenSet = true; m_variables.emplace(key, std::move(value)); return *this; }
-    inline CustomActionAttachment& AddVariables(Aws::String&& key, Aws::String&& value) { m_variablesHasBeenSet = true; m_variables.emplace(std::move(key), std::move(value)); return *this; }
-    inline CustomActionAttachment& AddVariables(const char* key, Aws::String&& value) { m_variablesHasBeenSet = true; m_variables.emplace(key, std::move(value)); return *this; }
-    inline CustomActionAttachment& AddVariables(Aws::String&& key, const char* value) { m_variablesHasBeenSet = true; m_variables.emplace(std::move(key), value); return *this; }
-    inline CustomActionAttachment& AddVariables(const char* key, const char* value) { m_variablesHasBeenSet = true; m_variables.emplace(key, value); return *this; }
+    template<typename VariablesT = Aws::Map<Aws::String, Aws::String>>
+    void SetVariables(VariablesT&& value) { m_variablesHasBeenSet = true; m_variables = std::forward<VariablesT>(value); }
+    template<typename VariablesT = Aws::Map<Aws::String, Aws::String>>
+    CustomActionAttachment& WithVariables(VariablesT&& value) { SetVariables(std::forward<VariablesT>(value)); return *this;}
+    template<typename VariablesKeyT = Aws::String, typename VariablesValueT = Aws::String>
+    CustomActionAttachment& AddVariables(VariablesKeyT&& key, VariablesValueT&& value) {
+      m_variablesHasBeenSet = true; m_variables.emplace(std::forward<VariablesKeyT>(key), std::forward<VariablesValueT>(value)); return *this;
+    }
     ///@}
   private:
 

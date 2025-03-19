@@ -31,7 +31,7 @@ namespace Model
   class StartStreamTranscriptionRequest : public TranscribeStreamingServiceRequest
   {
   public:
-    AWS_TRANSCRIBESTREAMINGSERVICE_API StartStreamTranscriptionRequest();
+    AWS_TRANSCRIBESTREAMINGSERVICE_API StartStreamTranscriptionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -78,12 +78,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/supported-languages.html">Supported
      * languages</a> table.</p>
      */
-    inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline LanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline StartStreamTranscriptionRequest& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline StartStreamTranscriptionRequest& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(LanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline StartStreamTranscriptionRequest& WithLanguageCode(LanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
@@ -93,7 +91,7 @@ namespace Model
      * ranges from 16,000 Hz to 48,000 Hz. Note that the sample rate you specify must
      * match that of your audio.</p>
      */
-    inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
+    inline int GetMediaSampleRateHertz() const { return m_mediaSampleRateHertz; }
     inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
     inline StartStreamTranscriptionRequest& WithMediaSampleRateHertz(int value) { SetMediaSampleRateHertz(value); return *this;}
@@ -108,12 +106,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/how-input.html#how-input-audio">Media
      * formats</a>.</p>
      */
-    inline const MediaEncoding& GetMediaEncoding() const{ return m_mediaEncoding; }
+    inline MediaEncoding GetMediaEncoding() const { return m_mediaEncoding; }
     inline bool MediaEncodingHasBeenSet() const { return m_mediaEncodingHasBeenSet; }
-    inline void SetMediaEncoding(const MediaEncoding& value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = value; }
-    inline void SetMediaEncoding(MediaEncoding&& value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = std::move(value); }
-    inline StartStreamTranscriptionRequest& WithMediaEncoding(const MediaEncoding& value) { SetMediaEncoding(value); return *this;}
-    inline StartStreamTranscriptionRequest& WithMediaEncoding(MediaEncoding&& value) { SetMediaEncoding(std::move(value)); return *this;}
+    inline void SetMediaEncoding(MediaEncoding value) { m_mediaEncodingHasBeenSet = true; m_mediaEncoding = value; }
+    inline StartStreamTranscriptionRequest& WithMediaEncoding(MediaEncoding value) { SetMediaEncoding(value); return *this;}
     ///@}
 
     ///@{
@@ -131,14 +127,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
      * vocabularies</a>.</p>
      */
-    inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
+    inline const Aws::String& GetVocabularyName() const { return m_vocabularyName; }
     inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
-    inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
-    inline void SetVocabularyName(Aws::String&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::move(value); }
-    inline void SetVocabularyName(const char* value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName.assign(value); }
-    inline StartStreamTranscriptionRequest& WithVocabularyName(const Aws::String& value) { SetVocabularyName(value); return *this;}
-    inline StartStreamTranscriptionRequest& WithVocabularyName(Aws::String&& value) { SetVocabularyName(std::move(value)); return *this;}
-    inline StartStreamTranscriptionRequest& WithVocabularyName(const char* value) { SetVocabularyName(value); return *this;}
+    template<typename VocabularyNameT = Aws::String>
+    void SetVocabularyName(VocabularyNameT&& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = std::forward<VocabularyNameT>(value); }
+    template<typename VocabularyNameT = Aws::String>
+    StartStreamTranscriptionRequest& WithVocabularyName(VocabularyNameT&& value) { SetVocabularyName(std::forward<VocabularyNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -147,14 +141,12 @@ namespace Model
      * parameter in your request, Amazon Transcribe generates an ID and returns it in
      * the response.</p>
      */
-    inline const Aws::String& GetSessionId() const{ return m_sessionId; }
+    inline const Aws::String& GetSessionId() const { return m_sessionId; }
     inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
-    inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
-    inline void SetSessionId(Aws::String&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::move(value); }
-    inline void SetSessionId(const char* value) { m_sessionIdHasBeenSet = true; m_sessionId.assign(value); }
-    inline StartStreamTranscriptionRequest& WithSessionId(const Aws::String& value) { SetSessionId(value); return *this;}
-    inline StartStreamTranscriptionRequest& WithSessionId(Aws::String&& value) { SetSessionId(std::move(value)); return *this;}
-    inline StartStreamTranscriptionRequest& WithSessionId(const char* value) { SetSessionId(value); return *this;}
+    template<typename SessionIdT = Aws::String>
+    void SetSessionId(SessionIdT&& value) { m_sessionIdHasBeenSet = true; m_sessionId = std::forward<SessionIdT>(value); }
+    template<typename SessionIdT = Aws::String>
+    StartStreamTranscriptionRequest& WithSessionId(SessionIdT&& value) { SetSessionId(std::forward<SessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -164,8 +156,8 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html">Transcribing
      * streaming audio</a>.</p>
      */
-    AWS_TRANSCRIBESTREAMINGSERVICE_API std::shared_ptr<AudioStream> GetAudioStream() const { return m_audioStream; }
-    AWS_TRANSCRIBESTREAMINGSERVICE_API void SetAudioStream(const std::shared_ptr<AudioStream>& value) { m_audioStream = value; }
+    AWS_TRANSCRIBESTREAMINGSERVICE_API std::shared_ptr<AudioStream> GetAudioStream() const  { return m_audioStream; }
+    AWS_TRANSCRIBESTREAMINGSERVICE_API void SetAudioStream(const std::shared_ptr<AudioStream>& value) { m_audioStreamHasBeenSet = true; m_audioStream = value; }
     AWS_TRANSCRIBESTREAMINGSERVICE_API StartStreamTranscriptionRequest& WithAudioStream(const std::shared_ptr<AudioStream>& value) { SetAudioStream(value); return *this;}
 
     ///@}
@@ -185,14 +177,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using
      * vocabulary filtering with unwanted words</a>.</p>
      */
-    inline const Aws::String& GetVocabularyFilterName() const{ return m_vocabularyFilterName; }
+    inline const Aws::String& GetVocabularyFilterName() const { return m_vocabularyFilterName; }
     inline bool VocabularyFilterNameHasBeenSet() const { return m_vocabularyFilterNameHasBeenSet; }
-    inline void SetVocabularyFilterName(const Aws::String& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = value; }
-    inline void SetVocabularyFilterName(Aws::String&& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = std::move(value); }
-    inline void SetVocabularyFilterName(const char* value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName.assign(value); }
-    inline StartStreamTranscriptionRequest& WithVocabularyFilterName(const Aws::String& value) { SetVocabularyFilterName(value); return *this;}
-    inline StartStreamTranscriptionRequest& WithVocabularyFilterName(Aws::String&& value) { SetVocabularyFilterName(std::move(value)); return *this;}
-    inline StartStreamTranscriptionRequest& WithVocabularyFilterName(const char* value) { SetVocabularyFilterName(value); return *this;}
+    template<typename VocabularyFilterNameT = Aws::String>
+    void SetVocabularyFilterName(VocabularyFilterNameT&& value) { m_vocabularyFilterNameHasBeenSet = true; m_vocabularyFilterName = std::forward<VocabularyFilterNameT>(value); }
+    template<typename VocabularyFilterNameT = Aws::String>
+    StartStreamTranscriptionRequest& WithVocabularyFilterName(VocabularyFilterNameT&& value) { SetVocabularyFilterName(std::forward<VocabularyFilterNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -202,12 +192,10 @@ namespace Model
      * delete words, choose <code>remove</code>.</p> <p>To flag words without changing
      * them, choose <code>tag</code>.</p>
      */
-    inline const VocabularyFilterMethod& GetVocabularyFilterMethod() const{ return m_vocabularyFilterMethod; }
+    inline VocabularyFilterMethod GetVocabularyFilterMethod() const { return m_vocabularyFilterMethod; }
     inline bool VocabularyFilterMethodHasBeenSet() const { return m_vocabularyFilterMethodHasBeenSet; }
-    inline void SetVocabularyFilterMethod(const VocabularyFilterMethod& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = value; }
-    inline void SetVocabularyFilterMethod(VocabularyFilterMethod&& value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = std::move(value); }
-    inline StartStreamTranscriptionRequest& WithVocabularyFilterMethod(const VocabularyFilterMethod& value) { SetVocabularyFilterMethod(value); return *this;}
-    inline StartStreamTranscriptionRequest& WithVocabularyFilterMethod(VocabularyFilterMethod&& value) { SetVocabularyFilterMethod(std::move(value)); return *this;}
+    inline void SetVocabularyFilterMethod(VocabularyFilterMethod value) { m_vocabularyFilterMethodHasBeenSet = true; m_vocabularyFilterMethod = value; }
+    inline StartStreamTranscriptionRequest& WithVocabularyFilterMethod(VocabularyFilterMethod value) { SetVocabularyFilterMethod(value); return *this;}
     ///@}
 
     ///@{
@@ -218,7 +206,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/diarization.html">Partitioning
      * speakers (diarization)</a>.</p>
      */
-    inline bool GetShowSpeakerLabel() const{ return m_showSpeakerLabel; }
+    inline bool GetShowSpeakerLabel() const { return m_showSpeakerLabel; }
     inline bool ShowSpeakerLabelHasBeenSet() const { return m_showSpeakerLabelHasBeenSet; }
     inline void SetShowSpeakerLabel(bool value) { m_showSpeakerLabelHasBeenSet = true; m_showSpeakerLabel = value; }
     inline StartStreamTranscriptionRequest& WithShowSpeakerLabel(bool value) { SetShowSpeakerLabel(value); return *this;}
@@ -237,7 +225,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/channel-id.html">Transcribing
      * multi-channel audio</a>.</p>
      */
-    inline bool GetEnableChannelIdentification() const{ return m_enableChannelIdentification; }
+    inline bool GetEnableChannelIdentification() const { return m_enableChannelIdentification; }
     inline bool EnableChannelIdentificationHasBeenSet() const { return m_enableChannelIdentificationHasBeenSet; }
     inline void SetEnableChannelIdentification(bool value) { m_enableChannelIdentificationHasBeenSet = true; m_enableChannelIdentification = value; }
     inline StartStreamTranscriptionRequest& WithEnableChannelIdentification(bool value) { SetEnableChannelIdentification(value); return *this;}
@@ -251,7 +239,7 @@ namespace Model
      * <p>If you include <code>NumberOfChannels</code> in your request, you must also
      * include <code>EnableChannelIdentification</code>.</p>
      */
-    inline int GetNumberOfChannels() const{ return m_numberOfChannels; }
+    inline int GetNumberOfChannels() const { return m_numberOfChannels; }
     inline bool NumberOfChannelsHasBeenSet() const { return m_numberOfChannelsHasBeenSet; }
     inline void SetNumberOfChannels(int value) { m_numberOfChannelsHasBeenSet = true; m_numberOfChannels = value; }
     inline StartStreamTranscriptionRequest& WithNumberOfChannels(int value) { SetNumberOfChannels(value); return *this;}
@@ -265,7 +253,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization">Partial-result
      * stabilization</a>.</p>
      */
-    inline bool GetEnablePartialResultsStabilization() const{ return m_enablePartialResultsStabilization; }
+    inline bool GetEnablePartialResultsStabilization() const { return m_enablePartialResultsStabilization; }
     inline bool EnablePartialResultsStabilizationHasBeenSet() const { return m_enablePartialResultsStabilizationHasBeenSet; }
     inline void SetEnablePartialResultsStabilization(bool value) { m_enablePartialResultsStabilizationHasBeenSet = true; m_enablePartialResultsStabilization = value; }
     inline StartStreamTranscriptionRequest& WithEnablePartialResultsStabilization(bool value) { SetEnablePartialResultsStabilization(value); return *this;}
@@ -280,12 +268,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/streaming.html#streaming-partial-result-stabilization">Partial-result
      * stabilization</a>.</p>
      */
-    inline const PartialResultsStability& GetPartialResultsStability() const{ return m_partialResultsStability; }
+    inline PartialResultsStability GetPartialResultsStability() const { return m_partialResultsStability; }
     inline bool PartialResultsStabilityHasBeenSet() const { return m_partialResultsStabilityHasBeenSet; }
-    inline void SetPartialResultsStability(const PartialResultsStability& value) { m_partialResultsStabilityHasBeenSet = true; m_partialResultsStability = value; }
-    inline void SetPartialResultsStability(PartialResultsStability&& value) { m_partialResultsStabilityHasBeenSet = true; m_partialResultsStability = std::move(value); }
-    inline StartStreamTranscriptionRequest& WithPartialResultsStability(const PartialResultsStability& value) { SetPartialResultsStability(value); return *this;}
-    inline StartStreamTranscriptionRequest& WithPartialResultsStability(PartialResultsStability&& value) { SetPartialResultsStability(std::move(value)); return *this;}
+    inline void SetPartialResultsStability(PartialResultsStability value) { m_partialResultsStabilityHasBeenSet = true; m_partialResultsStability = value; }
+    inline StartStreamTranscriptionRequest& WithPartialResultsStability(PartialResultsStability value) { SetPartialResultsStability(value); return *this;}
     ///@}
 
     ///@{
@@ -301,12 +287,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting
      * or identifying personally identifiable information</a>.</p>
      */
-    inline const ContentIdentificationType& GetContentIdentificationType() const{ return m_contentIdentificationType; }
+    inline ContentIdentificationType GetContentIdentificationType() const { return m_contentIdentificationType; }
     inline bool ContentIdentificationTypeHasBeenSet() const { return m_contentIdentificationTypeHasBeenSet; }
-    inline void SetContentIdentificationType(const ContentIdentificationType& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = value; }
-    inline void SetContentIdentificationType(ContentIdentificationType&& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = std::move(value); }
-    inline StartStreamTranscriptionRequest& WithContentIdentificationType(const ContentIdentificationType& value) { SetContentIdentificationType(value); return *this;}
-    inline StartStreamTranscriptionRequest& WithContentIdentificationType(ContentIdentificationType&& value) { SetContentIdentificationType(std::move(value)); return *this;}
+    inline void SetContentIdentificationType(ContentIdentificationType value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = value; }
+    inline StartStreamTranscriptionRequest& WithContentIdentificationType(ContentIdentificationType value) { SetContentIdentificationType(value); return *this;}
     ///@}
 
     ///@{
@@ -322,12 +306,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/pii-redaction.html">Redacting
      * or identifying personally identifiable information</a>.</p>
      */
-    inline const ContentRedactionType& GetContentRedactionType() const{ return m_contentRedactionType; }
+    inline ContentRedactionType GetContentRedactionType() const { return m_contentRedactionType; }
     inline bool ContentRedactionTypeHasBeenSet() const { return m_contentRedactionTypeHasBeenSet; }
-    inline void SetContentRedactionType(const ContentRedactionType& value) { m_contentRedactionTypeHasBeenSet = true; m_contentRedactionType = value; }
-    inline void SetContentRedactionType(ContentRedactionType&& value) { m_contentRedactionTypeHasBeenSet = true; m_contentRedactionType = std::move(value); }
-    inline StartStreamTranscriptionRequest& WithContentRedactionType(const ContentRedactionType& value) { SetContentRedactionType(value); return *this;}
-    inline StartStreamTranscriptionRequest& WithContentRedactionType(ContentRedactionType&& value) { SetContentRedactionType(std::move(value)); return *this;}
+    inline void SetContentRedactionType(ContentRedactionType value) { m_contentRedactionTypeHasBeenSet = true; m_contentRedactionType = value; }
+    inline StartStreamTranscriptionRequest& WithContentRedactionType(ContentRedactionType value) { SetContentRedactionType(value); return *this;}
     ///@}
 
     ///@{
@@ -346,14 +328,12 @@ namespace Model
      * <code>ContentIdentificationType</code> in your request, but do not include
      * <code>PiiEntityTypes</code>, all PII is redacted or identified.</p>
      */
-    inline const Aws::String& GetPiiEntityTypes() const{ return m_piiEntityTypes; }
+    inline const Aws::String& GetPiiEntityTypes() const { return m_piiEntityTypes; }
     inline bool PiiEntityTypesHasBeenSet() const { return m_piiEntityTypesHasBeenSet; }
-    inline void SetPiiEntityTypes(const Aws::String& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes = value; }
-    inline void SetPiiEntityTypes(Aws::String&& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes = std::move(value); }
-    inline void SetPiiEntityTypes(const char* value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes.assign(value); }
-    inline StartStreamTranscriptionRequest& WithPiiEntityTypes(const Aws::String& value) { SetPiiEntityTypes(value); return *this;}
-    inline StartStreamTranscriptionRequest& WithPiiEntityTypes(Aws::String&& value) { SetPiiEntityTypes(std::move(value)); return *this;}
-    inline StartStreamTranscriptionRequest& WithPiiEntityTypes(const char* value) { SetPiiEntityTypes(value); return *this;}
+    template<typename PiiEntityTypesT = Aws::String>
+    void SetPiiEntityTypes(PiiEntityTypesT&& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes = std::forward<PiiEntityTypesT>(value); }
+    template<typename PiiEntityTypesT = Aws::String>
+    StartStreamTranscriptionRequest& WithPiiEntityTypes(PiiEntityTypesT&& value) { SetPiiEntityTypes(std::forward<PiiEntityTypesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -367,14 +347,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-language-models.html">Custom
      * language models</a>.</p>
      */
-    inline const Aws::String& GetLanguageModelName() const{ return m_languageModelName; }
+    inline const Aws::String& GetLanguageModelName() const { return m_languageModelName; }
     inline bool LanguageModelNameHasBeenSet() const { return m_languageModelNameHasBeenSet; }
-    inline void SetLanguageModelName(const Aws::String& value) { m_languageModelNameHasBeenSet = true; m_languageModelName = value; }
-    inline void SetLanguageModelName(Aws::String&& value) { m_languageModelNameHasBeenSet = true; m_languageModelName = std::move(value); }
-    inline void SetLanguageModelName(const char* value) { m_languageModelNameHasBeenSet = true; m_languageModelName.assign(value); }
-    inline StartStreamTranscriptionRequest& WithLanguageModelName(const Aws::String& value) { SetLanguageModelName(value); return *this;}
-    inline StartStreamTranscriptionRequest& WithLanguageModelName(Aws::String&& value) { SetLanguageModelName(std::move(value)); return *this;}
-    inline StartStreamTranscriptionRequest& WithLanguageModelName(const char* value) { SetLanguageModelName(value); return *this;}
+    template<typename LanguageModelNameT = Aws::String>
+    void SetLanguageModelName(LanguageModelNameT&& value) { m_languageModelNameHasBeenSet = true; m_languageModelName = std::forward<LanguageModelNameT>(value); }
+    template<typename LanguageModelNameT = Aws::String>
+    StartStreamTranscriptionRequest& WithLanguageModelName(LanguageModelNameT&& value) { SetLanguageModelName(std::forward<LanguageModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -394,7 +372,7 @@ namespace Model
      * job fails.</p> <p>Streaming language identification can't be combined with
      * custom language models or redaction.</p>
      */
-    inline bool GetIdentifyLanguage() const{ return m_identifyLanguage; }
+    inline bool GetIdentifyLanguage() const { return m_identifyLanguage; }
     inline bool IdentifyLanguageHasBeenSet() const { return m_identifyLanguageHasBeenSet; }
     inline void SetIdentifyLanguage(bool value) { m_identifyLanguageHasBeenSet = true; m_identifyLanguage = value; }
     inline StartStreamTranscriptionRequest& WithIdentifyLanguage(bool value) { SetIdentifyLanguage(value); return *this;}
@@ -414,14 +392,12 @@ namespace Model
      * dialect per language per stream. For example, you cannot include
      * <code>en-US</code> and <code>en-AU</code> in the same request.</p> 
      */
-    inline const Aws::String& GetLanguageOptions() const{ return m_languageOptions; }
+    inline const Aws::String& GetLanguageOptions() const { return m_languageOptions; }
     inline bool LanguageOptionsHasBeenSet() const { return m_languageOptionsHasBeenSet; }
-    inline void SetLanguageOptions(const Aws::String& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = value; }
-    inline void SetLanguageOptions(Aws::String&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = std::move(value); }
-    inline void SetLanguageOptions(const char* value) { m_languageOptionsHasBeenSet = true; m_languageOptions.assign(value); }
-    inline StartStreamTranscriptionRequest& WithLanguageOptions(const Aws::String& value) { SetLanguageOptions(value); return *this;}
-    inline StartStreamTranscriptionRequest& WithLanguageOptions(Aws::String&& value) { SetLanguageOptions(std::move(value)); return *this;}
-    inline StartStreamTranscriptionRequest& WithLanguageOptions(const char* value) { SetLanguageOptions(value); return *this;}
+    template<typename LanguageOptionsT = Aws::String>
+    void SetLanguageOptions(LanguageOptionsT&& value) { m_languageOptionsHasBeenSet = true; m_languageOptions = std::forward<LanguageOptionsT>(value); }
+    template<typename LanguageOptionsT = Aws::String>
+    StartStreamTranscriptionRequest& WithLanguageOptions(LanguageOptionsT&& value) { SetLanguageOptions(std::forward<LanguageOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -431,12 +407,10 @@ namespace Model
      * you've included <code>IdentifyLanguage</code> and <code>LanguageOptions</code>
      * in your request.</p>
      */
-    inline const LanguageCode& GetPreferredLanguage() const{ return m_preferredLanguage; }
+    inline LanguageCode GetPreferredLanguage() const { return m_preferredLanguage; }
     inline bool PreferredLanguageHasBeenSet() const { return m_preferredLanguageHasBeenSet; }
-    inline void SetPreferredLanguage(const LanguageCode& value) { m_preferredLanguageHasBeenSet = true; m_preferredLanguage = value; }
-    inline void SetPreferredLanguage(LanguageCode&& value) { m_preferredLanguageHasBeenSet = true; m_preferredLanguage = std::move(value); }
-    inline StartStreamTranscriptionRequest& WithPreferredLanguage(const LanguageCode& value) { SetPreferredLanguage(value); return *this;}
-    inline StartStreamTranscriptionRequest& WithPreferredLanguage(LanguageCode&& value) { SetPreferredLanguage(std::move(value)); return *this;}
+    inline void SetPreferredLanguage(LanguageCode value) { m_preferredLanguageHasBeenSet = true; m_preferredLanguage = value; }
+    inline StartStreamTranscriptionRequest& WithPreferredLanguage(LanguageCode value) { SetPreferredLanguage(value); return *this;}
     ///@}
 
     ///@{
@@ -454,7 +428,7 @@ namespace Model
      * <code>IdentifyMultipleLanguages</code> in your request. If you include more than
      * one of these parameters, your transcription job fails.</p>
      */
-    inline bool GetIdentifyMultipleLanguages() const{ return m_identifyMultipleLanguages; }
+    inline bool GetIdentifyMultipleLanguages() const { return m_identifyMultipleLanguages; }
     inline bool IdentifyMultipleLanguagesHasBeenSet() const { return m_identifyMultipleLanguagesHasBeenSet; }
     inline void SetIdentifyMultipleLanguages(bool value) { m_identifyMultipleLanguagesHasBeenSet = true; m_identifyMultipleLanguages = value; }
     inline StartStreamTranscriptionRequest& WithIdentifyMultipleLanguages(bool value) { SetIdentifyMultipleLanguages(value); return *this;}
@@ -474,14 +448,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html">Custom
      * vocabularies</a>.</p>
      */
-    inline const Aws::String& GetVocabularyNames() const{ return m_vocabularyNames; }
+    inline const Aws::String& GetVocabularyNames() const { return m_vocabularyNames; }
     inline bool VocabularyNamesHasBeenSet() const { return m_vocabularyNamesHasBeenSet; }
-    inline void SetVocabularyNames(const Aws::String& value) { m_vocabularyNamesHasBeenSet = true; m_vocabularyNames = value; }
-    inline void SetVocabularyNames(Aws::String&& value) { m_vocabularyNamesHasBeenSet = true; m_vocabularyNames = std::move(value); }
-    inline void SetVocabularyNames(const char* value) { m_vocabularyNamesHasBeenSet = true; m_vocabularyNames.assign(value); }
-    inline StartStreamTranscriptionRequest& WithVocabularyNames(const Aws::String& value) { SetVocabularyNames(value); return *this;}
-    inline StartStreamTranscriptionRequest& WithVocabularyNames(Aws::String&& value) { SetVocabularyNames(std::move(value)); return *this;}
-    inline StartStreamTranscriptionRequest& WithVocabularyNames(const char* value) { SetVocabularyNames(value); return *this;}
+    template<typename VocabularyNamesT = Aws::String>
+    void SetVocabularyNames(VocabularyNamesT&& value) { m_vocabularyNamesHasBeenSet = true; m_vocabularyNames = std::forward<VocabularyNamesT>(value); }
+    template<typename VocabularyNamesT = Aws::String>
+    StartStreamTranscriptionRequest& WithVocabularyNames(VocabularyNamesT&& value) { SetVocabularyNames(std::forward<VocabularyNamesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -499,24 +471,22 @@ namespace Model
      * href="https://docs.aws.amazon.com/transcribe/latest/dg/vocabulary-filtering.html">Using
      * vocabulary filtering with unwanted words</a>.</p>
      */
-    inline const Aws::String& GetVocabularyFilterNames() const{ return m_vocabularyFilterNames; }
+    inline const Aws::String& GetVocabularyFilterNames() const { return m_vocabularyFilterNames; }
     inline bool VocabularyFilterNamesHasBeenSet() const { return m_vocabularyFilterNamesHasBeenSet; }
-    inline void SetVocabularyFilterNames(const Aws::String& value) { m_vocabularyFilterNamesHasBeenSet = true; m_vocabularyFilterNames = value; }
-    inline void SetVocabularyFilterNames(Aws::String&& value) { m_vocabularyFilterNamesHasBeenSet = true; m_vocabularyFilterNames = std::move(value); }
-    inline void SetVocabularyFilterNames(const char* value) { m_vocabularyFilterNamesHasBeenSet = true; m_vocabularyFilterNames.assign(value); }
-    inline StartStreamTranscriptionRequest& WithVocabularyFilterNames(const Aws::String& value) { SetVocabularyFilterNames(value); return *this;}
-    inline StartStreamTranscriptionRequest& WithVocabularyFilterNames(Aws::String&& value) { SetVocabularyFilterNames(std::move(value)); return *this;}
-    inline StartStreamTranscriptionRequest& WithVocabularyFilterNames(const char* value) { SetVocabularyFilterNames(value); return *this;}
+    template<typename VocabularyFilterNamesT = Aws::String>
+    void SetVocabularyFilterNames(VocabularyFilterNamesT&& value) { m_vocabularyFilterNamesHasBeenSet = true; m_vocabularyFilterNames = std::forward<VocabularyFilterNamesT>(value); }
+    template<typename VocabularyFilterNamesT = Aws::String>
+    StartStreamTranscriptionRequest& WithVocabularyFilterNames(VocabularyFilterNamesT&& value) { SetVocabularyFilterNames(std::forward<VocabularyFilterNamesT>(value)); return *this;}
     ///@}
   private:
 
-    LanguageCode m_languageCode;
+    LanguageCode m_languageCode{LanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
 
-    int m_mediaSampleRateHertz;
+    int m_mediaSampleRateHertz{0};
     bool m_mediaSampleRateHertzHasBeenSet = false;
 
-    MediaEncoding m_mediaEncoding;
+    MediaEncoding m_mediaEncoding{MediaEncoding::NOT_SET};
     bool m_mediaEncodingHasBeenSet = false;
 
     Aws::String m_vocabularyName;
@@ -526,32 +496,33 @@ namespace Model
     bool m_sessionIdHasBeenSet = false;
 
     std::shared_ptr<AudioStream> m_audioStream;
+    bool m_audioStreamHasBeenSet = false;
 
     Aws::String m_vocabularyFilterName;
     bool m_vocabularyFilterNameHasBeenSet = false;
 
-    VocabularyFilterMethod m_vocabularyFilterMethod;
+    VocabularyFilterMethod m_vocabularyFilterMethod{VocabularyFilterMethod::NOT_SET};
     bool m_vocabularyFilterMethodHasBeenSet = false;
 
-    bool m_showSpeakerLabel;
+    bool m_showSpeakerLabel{false};
     bool m_showSpeakerLabelHasBeenSet = false;
 
-    bool m_enableChannelIdentification;
+    bool m_enableChannelIdentification{false};
     bool m_enableChannelIdentificationHasBeenSet = false;
 
-    int m_numberOfChannels;
+    int m_numberOfChannels{0};
     bool m_numberOfChannelsHasBeenSet = false;
 
-    bool m_enablePartialResultsStabilization;
+    bool m_enablePartialResultsStabilization{false};
     bool m_enablePartialResultsStabilizationHasBeenSet = false;
 
-    PartialResultsStability m_partialResultsStability;
+    PartialResultsStability m_partialResultsStability{PartialResultsStability::NOT_SET};
     bool m_partialResultsStabilityHasBeenSet = false;
 
-    ContentIdentificationType m_contentIdentificationType;
+    ContentIdentificationType m_contentIdentificationType{ContentIdentificationType::NOT_SET};
     bool m_contentIdentificationTypeHasBeenSet = false;
 
-    ContentRedactionType m_contentRedactionType;
+    ContentRedactionType m_contentRedactionType{ContentRedactionType::NOT_SET};
     bool m_contentRedactionTypeHasBeenSet = false;
 
     Aws::String m_piiEntityTypes;
@@ -560,16 +531,16 @@ namespace Model
     Aws::String m_languageModelName;
     bool m_languageModelNameHasBeenSet = false;
 
-    bool m_identifyLanguage;
+    bool m_identifyLanguage{false};
     bool m_identifyLanguageHasBeenSet = false;
 
     Aws::String m_languageOptions;
     bool m_languageOptionsHasBeenSet = false;
 
-    LanguageCode m_preferredLanguage;
+    LanguageCode m_preferredLanguage{LanguageCode::NOT_SET};
     bool m_preferredLanguageHasBeenSet = false;
 
-    bool m_identifyMultipleLanguages;
+    bool m_identifyMultipleLanguages{false};
     bool m_identifyMultipleLanguagesHasBeenSet = false;
 
     Aws::String m_vocabularyNames;
@@ -578,7 +549,7 @@ namespace Model
     Aws::String m_vocabularyFilterNames;
     bool m_vocabularyFilterNamesHasBeenSet = false;
     StartStreamTranscriptionHandler m_handler;
-    Aws::Utils::Event::EventStreamDecoder m_decoder;
+    Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
 
   };
 

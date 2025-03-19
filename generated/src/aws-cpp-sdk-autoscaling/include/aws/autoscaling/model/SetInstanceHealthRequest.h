@@ -21,7 +21,7 @@ namespace Model
   class SetInstanceHealthRequest : public AutoScalingRequest
   {
   public:
-    AWS_AUTOSCALING_API SetInstanceHealthRequest();
+    AWS_AUTOSCALING_API SetInstanceHealthRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline SetInstanceHealthRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline SetInstanceHealthRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline SetInstanceHealthRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    SetInstanceHealthRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,14 +55,12 @@ namespace Model
      * be out of service. Amazon EC2 Auto Scaling terminates and replaces the unhealthy
      * instance.</p>
      */
-    inline const Aws::String& GetHealthStatus() const{ return m_healthStatus; }
+    inline const Aws::String& GetHealthStatus() const { return m_healthStatus; }
     inline bool HealthStatusHasBeenSet() const { return m_healthStatusHasBeenSet; }
-    inline void SetHealthStatus(const Aws::String& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
-    inline void SetHealthStatus(Aws::String&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = std::move(value); }
-    inline void SetHealthStatus(const char* value) { m_healthStatusHasBeenSet = true; m_healthStatus.assign(value); }
-    inline SetInstanceHealthRequest& WithHealthStatus(const Aws::String& value) { SetHealthStatus(value); return *this;}
-    inline SetInstanceHealthRequest& WithHealthStatus(Aws::String&& value) { SetHealthStatus(std::move(value)); return *this;}
-    inline SetInstanceHealthRequest& WithHealthStatus(const char* value) { SetHealthStatus(value); return *this;}
+    template<typename HealthStatusT = Aws::String>
+    void SetHealthStatus(HealthStatusT&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = std::forward<HealthStatusT>(value); }
+    template<typename HealthStatusT = Aws::String>
+    SetInstanceHealthRequest& WithHealthStatus(HealthStatusT&& value) { SetHealthStatus(std::forward<HealthStatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,7 +74,7 @@ namespace Model
      * the health check grace period for an Auto Scaling group</a> in the <i>Amazon EC2
      * Auto Scaling User Guide</i>.</p>
      */
-    inline bool GetShouldRespectGracePeriod() const{ return m_shouldRespectGracePeriod; }
+    inline bool GetShouldRespectGracePeriod() const { return m_shouldRespectGracePeriod; }
     inline bool ShouldRespectGracePeriodHasBeenSet() const { return m_shouldRespectGracePeriodHasBeenSet; }
     inline void SetShouldRespectGracePeriod(bool value) { m_shouldRespectGracePeriodHasBeenSet = true; m_shouldRespectGracePeriod = value; }
     inline SetInstanceHealthRequest& WithShouldRespectGracePeriod(bool value) { SetShouldRespectGracePeriod(value); return *this;}
@@ -91,7 +87,7 @@ namespace Model
     Aws::String m_healthStatus;
     bool m_healthStatusHasBeenSet = false;
 
-    bool m_shouldRespectGracePeriod;
+    bool m_shouldRespectGracePeriod{false};
     bool m_shouldRespectGracePeriodHasBeenSet = false;
   };
 

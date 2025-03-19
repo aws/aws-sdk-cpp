@@ -28,7 +28,7 @@ namespace Model
   class UpdateKeyValueStore2020_05_31Result
   {
   public:
-    AWS_CLOUDFRONT_API UpdateKeyValueStore2020_05_31Result();
+    AWS_CLOUDFRONT_API UpdateKeyValueStore2020_05_31Result() = default;
     AWS_CLOUDFRONT_API UpdateKeyValueStore2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFRONT_API UpdateKeyValueStore2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,43 +37,42 @@ namespace Model
     /**
      * <p>The resulting key value store to update.</p>
      */
-    inline const KeyValueStore& GetKeyValueStore() const{ return m_keyValueStore; }
-    inline void SetKeyValueStore(const KeyValueStore& value) { m_keyValueStore = value; }
-    inline void SetKeyValueStore(KeyValueStore&& value) { m_keyValueStore = std::move(value); }
-    inline UpdateKeyValueStore2020_05_31Result& WithKeyValueStore(const KeyValueStore& value) { SetKeyValueStore(value); return *this;}
-    inline UpdateKeyValueStore2020_05_31Result& WithKeyValueStore(KeyValueStore&& value) { SetKeyValueStore(std::move(value)); return *this;}
+    inline const KeyValueStore& GetKeyValueStore() const { return m_keyValueStore; }
+    template<typename KeyValueStoreT = KeyValueStore>
+    void SetKeyValueStore(KeyValueStoreT&& value) { m_keyValueStoreHasBeenSet = true; m_keyValueStore = std::forward<KeyValueStoreT>(value); }
+    template<typename KeyValueStoreT = KeyValueStore>
+    UpdateKeyValueStore2020_05_31Result& WithKeyValueStore(KeyValueStoreT&& value) { SetKeyValueStore(std::forward<KeyValueStoreT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The <code>ETag</code> of the resulting key value store.</p>
      */
-    inline const Aws::String& GetETag() const{ return m_eTag; }
-    inline void SetETag(const Aws::String& value) { m_eTag = value; }
-    inline void SetETag(Aws::String&& value) { m_eTag = std::move(value); }
-    inline void SetETag(const char* value) { m_eTag.assign(value); }
-    inline UpdateKeyValueStore2020_05_31Result& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-    inline UpdateKeyValueStore2020_05_31Result& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-    inline UpdateKeyValueStore2020_05_31Result& WithETag(const char* value) { SetETag(value); return *this;}
+    inline const Aws::String& GetETag() const { return m_eTag; }
+    template<typename ETagT = Aws::String>
+    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
+    template<typename ETagT = Aws::String>
+    UpdateKeyValueStore2020_05_31Result& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateKeyValueStore2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateKeyValueStore2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateKeyValueStore2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateKeyValueStore2020_05_31Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     KeyValueStore m_keyValueStore;
+    bool m_keyValueStoreHasBeenSet = false;
 
     Aws::String m_eTag;
+    bool m_eTagHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

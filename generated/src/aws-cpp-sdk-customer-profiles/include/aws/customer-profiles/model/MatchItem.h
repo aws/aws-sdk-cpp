@@ -32,7 +32,7 @@ namespace Model
   class MatchItem
   {
   public:
-    AWS_CUSTOMERPROFILES_API MatchItem();
+    AWS_CUSTOMERPROFILES_API MatchItem() = default;
     AWS_CUSTOMERPROFILES_API MatchItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API MatchItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,29 +42,26 @@ namespace Model
     /**
      * <p>The unique identifiers for this group of profiles that match.</p>
      */
-    inline const Aws::String& GetMatchId() const{ return m_matchId; }
+    inline const Aws::String& GetMatchId() const { return m_matchId; }
     inline bool MatchIdHasBeenSet() const { return m_matchIdHasBeenSet; }
-    inline void SetMatchId(const Aws::String& value) { m_matchIdHasBeenSet = true; m_matchId = value; }
-    inline void SetMatchId(Aws::String&& value) { m_matchIdHasBeenSet = true; m_matchId = std::move(value); }
-    inline void SetMatchId(const char* value) { m_matchIdHasBeenSet = true; m_matchId.assign(value); }
-    inline MatchItem& WithMatchId(const Aws::String& value) { SetMatchId(value); return *this;}
-    inline MatchItem& WithMatchId(Aws::String&& value) { SetMatchId(std::move(value)); return *this;}
-    inline MatchItem& WithMatchId(const char* value) { SetMatchId(value); return *this;}
+    template<typename MatchIdT = Aws::String>
+    void SetMatchId(MatchIdT&& value) { m_matchIdHasBeenSet = true; m_matchId = std::forward<MatchIdT>(value); }
+    template<typename MatchIdT = Aws::String>
+    MatchItem& WithMatchId(MatchIdT&& value) { SetMatchId(std::forward<MatchIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of identifiers for profiles that match.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetProfileIds() const{ return m_profileIds; }
+    inline const Aws::Vector<Aws::String>& GetProfileIds() const { return m_profileIds; }
     inline bool ProfileIdsHasBeenSet() const { return m_profileIdsHasBeenSet; }
-    inline void SetProfileIds(const Aws::Vector<Aws::String>& value) { m_profileIdsHasBeenSet = true; m_profileIds = value; }
-    inline void SetProfileIds(Aws::Vector<Aws::String>&& value) { m_profileIdsHasBeenSet = true; m_profileIds = std::move(value); }
-    inline MatchItem& WithProfileIds(const Aws::Vector<Aws::String>& value) { SetProfileIds(value); return *this;}
-    inline MatchItem& WithProfileIds(Aws::Vector<Aws::String>&& value) { SetProfileIds(std::move(value)); return *this;}
-    inline MatchItem& AddProfileIds(const Aws::String& value) { m_profileIdsHasBeenSet = true; m_profileIds.push_back(value); return *this; }
-    inline MatchItem& AddProfileIds(Aws::String&& value) { m_profileIdsHasBeenSet = true; m_profileIds.push_back(std::move(value)); return *this; }
-    inline MatchItem& AddProfileIds(const char* value) { m_profileIdsHasBeenSet = true; m_profileIds.push_back(value); return *this; }
+    template<typename ProfileIdsT = Aws::Vector<Aws::String>>
+    void SetProfileIds(ProfileIdsT&& value) { m_profileIdsHasBeenSet = true; m_profileIds = std::forward<ProfileIdsT>(value); }
+    template<typename ProfileIdsT = Aws::Vector<Aws::String>>
+    MatchItem& WithProfileIds(ProfileIdsT&& value) { SetProfileIds(std::forward<ProfileIdsT>(value)); return *this;}
+    template<typename ProfileIdsT = Aws::String>
+    MatchItem& AddProfileIds(ProfileIdsT&& value) { m_profileIdsHasBeenSet = true; m_profileIds.emplace_back(std::forward<ProfileIdsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -78,7 +75,7 @@ namespace Model
      * scores vary as per the data input, it should not be used an absolute measure of
      * matching quality.</p>
      */
-    inline double GetConfidenceScore() const{ return m_confidenceScore; }
+    inline double GetConfidenceScore() const { return m_confidenceScore; }
     inline bool ConfidenceScoreHasBeenSet() const { return m_confidenceScoreHasBeenSet; }
     inline void SetConfidenceScore(double value) { m_confidenceScoreHasBeenSet = true; m_confidenceScore = value; }
     inline MatchItem& WithConfidenceScore(double value) { SetConfidenceScore(value); return *this;}
@@ -91,7 +88,7 @@ namespace Model
     Aws::Vector<Aws::String> m_profileIds;
     bool m_profileIdsHasBeenSet = false;
 
-    double m_confidenceScore;
+    double m_confidenceScore{0.0};
     bool m_confidenceScoreHasBeenSet = false;
   };
 

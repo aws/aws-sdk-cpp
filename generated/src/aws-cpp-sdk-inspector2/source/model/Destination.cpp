@@ -18,15 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-Destination::Destination() : 
-    m_bucketNameHasBeenSet(false),
-    m_keyPrefixHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false)
-{
-}
-
 Destination::Destination(JsonView jsonValue)
-  : Destination()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ Destination& Destination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bucketName"))
   {
     m_bucketName = jsonValue.GetString("bucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("keyPrefix"))
   {
     m_keyPrefix = jsonValue.GetString("keyPrefix");
-
     m_keyPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,24 +18,7 @@ namespace FMS
 namespace Model
 {
 
-RouteHasOutOfScopeEndpointViolation::RouteHasOutOfScopeEndpointViolation() : 
-    m_subnetIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_routeTableIdHasBeenSet(false),
-    m_violatingRoutesHasBeenSet(false),
-    m_subnetAvailabilityZoneHasBeenSet(false),
-    m_subnetAvailabilityZoneIdHasBeenSet(false),
-    m_currentFirewallSubnetRouteTableHasBeenSet(false),
-    m_firewallSubnetIdHasBeenSet(false),
-    m_firewallSubnetRoutesHasBeenSet(false),
-    m_internetGatewayIdHasBeenSet(false),
-    m_currentInternetGatewayRouteTableHasBeenSet(false),
-    m_internetGatewayRoutesHasBeenSet(false)
-{
-}
-
 RouteHasOutOfScopeEndpointViolation::RouteHasOutOfScopeEndpointViolation(JsonView jsonValue)
-  : RouteHasOutOfScopeEndpointViolation()
 {
   *this = jsonValue;
 }
@@ -45,24 +28,18 @@ RouteHasOutOfScopeEndpointViolation& RouteHasOutOfScopeEndpointViolation::operat
   if(jsonValue.ValueExists("SubnetId"))
   {
     m_subnetId = jsonValue.GetString("SubnetId");
-
     m_subnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RouteTableId"))
   {
     m_routeTableId = jsonValue.GetString("RouteTableId");
-
     m_routeTableIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ViolatingRoutes"))
   {
     Aws::Utils::Array<JsonView> violatingRoutesJsonList = jsonValue.GetArray("ViolatingRoutes");
@@ -72,35 +49,26 @@ RouteHasOutOfScopeEndpointViolation& RouteHasOutOfScopeEndpointViolation::operat
     }
     m_violatingRoutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetAvailabilityZone"))
   {
     m_subnetAvailabilityZone = jsonValue.GetString("SubnetAvailabilityZone");
-
     m_subnetAvailabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetAvailabilityZoneId"))
   {
     m_subnetAvailabilityZoneId = jsonValue.GetString("SubnetAvailabilityZoneId");
-
     m_subnetAvailabilityZoneIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentFirewallSubnetRouteTable"))
   {
     m_currentFirewallSubnetRouteTable = jsonValue.GetString("CurrentFirewallSubnetRouteTable");
-
     m_currentFirewallSubnetRouteTableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirewallSubnetId"))
   {
     m_firewallSubnetId = jsonValue.GetString("FirewallSubnetId");
-
     m_firewallSubnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FirewallSubnetRoutes"))
   {
     Aws::Utils::Array<JsonView> firewallSubnetRoutesJsonList = jsonValue.GetArray("FirewallSubnetRoutes");
@@ -110,21 +78,16 @@ RouteHasOutOfScopeEndpointViolation& RouteHasOutOfScopeEndpointViolation::operat
     }
     m_firewallSubnetRoutesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InternetGatewayId"))
   {
     m_internetGatewayId = jsonValue.GetString("InternetGatewayId");
-
     m_internetGatewayIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentInternetGatewayRouteTable"))
   {
     m_currentInternetGatewayRouteTable = jsonValue.GetString("CurrentInternetGatewayRouteTable");
-
     m_currentInternetGatewayRouteTableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InternetGatewayRoutes"))
   {
     Aws::Utils::Array<JsonView> internetGatewayRoutesJsonList = jsonValue.GetArray("InternetGatewayRoutes");
@@ -134,7 +97,6 @@ RouteHasOutOfScopeEndpointViolation& RouteHasOutOfScopeEndpointViolation::operat
     }
     m_internetGatewayRoutesHasBeenSet = true;
   }
-
   return *this;
 }
 

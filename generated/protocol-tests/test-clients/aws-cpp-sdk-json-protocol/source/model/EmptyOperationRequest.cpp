@@ -12,10 +12,6 @@ using namespace Aws::JsonProtocol::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EmptyOperationRequest::EmptyOperationRequest()
-{
-}
-
 Aws::String EmptyOperationRequest::SerializePayload() const
 {
   return "{}";

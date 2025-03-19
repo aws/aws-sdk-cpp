@@ -20,14 +20,7 @@ namespace IAM
 namespace Model
 {
 
-ErrorDetails::ErrorDetails() : 
-    m_messageHasBeenSet(false),
-    m_codeHasBeenSet(false)
-{
-}
-
 ErrorDetails::ErrorDetails(const XmlNode& xmlNode)
-  : ErrorDetails()
 {
   *this = xmlNode;
 }

@@ -31,7 +31,7 @@ namespace Model
   class Certificate
   {
   public:
-    AWS_ELASTICLOADBALANCINGV2_API Certificate();
+    AWS_ELASTICLOADBALANCINGV2_API Certificate() = default;
     AWS_ELASTICLOADBALANCINGV2_API Certificate(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICLOADBALANCINGV2_API Certificate& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the certificate.</p>
      */
-    inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
+    inline const Aws::String& GetCertificateArn() const { return m_certificateArn; }
     inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
-    inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
-    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
-    inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
-    inline Certificate& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
-    inline Certificate& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
-    inline Certificate& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+    template<typename CertificateArnT = Aws::String>
+    void SetCertificateArn(CertificateArnT&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::forward<CertificateArnT>(value); }
+    template<typename CertificateArnT = Aws::String>
+    Certificate& WithCertificateArn(CertificateArnT&& value) { SetCertificateArn(std::forward<CertificateArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * the output when describing a listener, but is included when describing listener
      * certificates.</p>
      */
-    inline bool GetIsDefault() const{ return m_isDefault; }
+    inline bool GetIsDefault() const { return m_isDefault; }
     inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
     inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
     inline Certificate& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
@@ -70,7 +68,7 @@ namespace Model
     Aws::String m_certificateArn;
     bool m_certificateArnHasBeenSet = false;
 
-    bool m_isDefault;
+    bool m_isDefault{false};
     bool m_isDefaultHasBeenSet = false;
   };
 

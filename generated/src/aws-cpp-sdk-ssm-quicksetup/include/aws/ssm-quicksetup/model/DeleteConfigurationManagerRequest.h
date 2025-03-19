@@ -21,7 +21,7 @@ namespace Model
   class DeleteConfigurationManagerRequest : public SSMQuickSetupRequest
   {
   public:
-    AWS_SSMQUICKSETUP_API DeleteConfigurationManagerRequest();
+    AWS_SSMQUICKSETUP_API DeleteConfigurationManagerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The ID of the configuration manager.</p>
      */
-    inline const Aws::String& GetManagerArn() const{ return m_managerArn; }
+    inline const Aws::String& GetManagerArn() const { return m_managerArn; }
     inline bool ManagerArnHasBeenSet() const { return m_managerArnHasBeenSet; }
-    inline void SetManagerArn(const Aws::String& value) { m_managerArnHasBeenSet = true; m_managerArn = value; }
-    inline void SetManagerArn(Aws::String&& value) { m_managerArnHasBeenSet = true; m_managerArn = std::move(value); }
-    inline void SetManagerArn(const char* value) { m_managerArnHasBeenSet = true; m_managerArn.assign(value); }
-    inline DeleteConfigurationManagerRequest& WithManagerArn(const Aws::String& value) { SetManagerArn(value); return *this;}
-    inline DeleteConfigurationManagerRequest& WithManagerArn(Aws::String&& value) { SetManagerArn(std::move(value)); return *this;}
-    inline DeleteConfigurationManagerRequest& WithManagerArn(const char* value) { SetManagerArn(value); return *this;}
+    template<typename ManagerArnT = Aws::String>
+    void SetManagerArn(ManagerArnT&& value) { m_managerArnHasBeenSet = true; m_managerArn = std::forward<ManagerArnT>(value); }
+    template<typename ManagerArnT = Aws::String>
+    DeleteConfigurationManagerRequest& WithManagerArn(ManagerArnT&& value) { SetManagerArn(std::forward<ManagerArnT>(value)); return *this;}
     ///@}
   private:
 

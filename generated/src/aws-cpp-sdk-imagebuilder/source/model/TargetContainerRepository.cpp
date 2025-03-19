@@ -18,15 +18,7 @@ namespace imagebuilder
 namespace Model
 {
 
-TargetContainerRepository::TargetContainerRepository() : 
-    m_service(ContainerRepositoryService::NOT_SET),
-    m_serviceHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false)
-{
-}
-
 TargetContainerRepository::TargetContainerRepository(JsonView jsonValue)
-  : TargetContainerRepository()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TargetContainerRepository& TargetContainerRepository::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("service"))
   {
     m_service = ContainerRepositoryServiceMapper::GetContainerRepositoryServiceForName(jsonValue.GetString("service"));
-
     m_serviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   return *this;
 }
 

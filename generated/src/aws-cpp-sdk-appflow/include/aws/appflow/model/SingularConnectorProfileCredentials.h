@@ -32,7 +32,7 @@ namespace Model
   class SingularConnectorProfileCredentials
   {
   public:
-    AWS_APPFLOW_API SingularConnectorProfileCredentials();
+    AWS_APPFLOW_API SingularConnectorProfileCredentials() = default;
     AWS_APPFLOW_API SingularConnectorProfileCredentials(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API SingularConnectorProfileCredentials& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p> A unique alphanumeric identifier used to authenticate a user, developer, or
      * calling program to your API. </p>
      */
-    inline const Aws::String& GetApiKey() const{ return m_apiKey; }
+    inline const Aws::String& GetApiKey() const { return m_apiKey; }
     inline bool ApiKeyHasBeenSet() const { return m_apiKeyHasBeenSet; }
-    inline void SetApiKey(const Aws::String& value) { m_apiKeyHasBeenSet = true; m_apiKey = value; }
-    inline void SetApiKey(Aws::String&& value) { m_apiKeyHasBeenSet = true; m_apiKey = std::move(value); }
-    inline void SetApiKey(const char* value) { m_apiKeyHasBeenSet = true; m_apiKey.assign(value); }
-    inline SingularConnectorProfileCredentials& WithApiKey(const Aws::String& value) { SetApiKey(value); return *this;}
-    inline SingularConnectorProfileCredentials& WithApiKey(Aws::String&& value) { SetApiKey(std::move(value)); return *this;}
-    inline SingularConnectorProfileCredentials& WithApiKey(const char* value) { SetApiKey(value); return *this;}
+    template<typename ApiKeyT = Aws::String>
+    void SetApiKey(ApiKeyT&& value) { m_apiKeyHasBeenSet = true; m_apiKey = std::forward<ApiKeyT>(value); }
+    template<typename ApiKeyT = Aws::String>
+    SingularConnectorProfileCredentials& WithApiKey(ApiKeyT&& value) { SetApiKey(std::forward<ApiKeyT>(value)); return *this;}
     ///@}
   private:
 

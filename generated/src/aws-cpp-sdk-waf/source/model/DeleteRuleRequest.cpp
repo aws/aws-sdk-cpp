@@ -12,12 +12,6 @@ using namespace Aws::WAF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRuleRequest::DeleteRuleRequest() : 
-    m_ruleIdHasBeenSet(false),
-    m_changeTokenHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRuleRequest::SerializePayload() const
 {
   JsonValue payload;

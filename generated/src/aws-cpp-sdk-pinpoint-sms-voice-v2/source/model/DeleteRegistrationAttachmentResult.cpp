@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteRegistrationAttachmentResult::DeleteRegistrationAttachmentResult() : 
-    m_attachmentStatus(AttachmentStatus::NOT_SET),
-    m_attachmentUploadErrorReason(AttachmentUploadErrorReason::NOT_SET)
-{
-}
-
 DeleteRegistrationAttachmentResult::DeleteRegistrationAttachmentResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteRegistrationAttachmentResult()
 {
   *this = result;
 }
@@ -35,39 +28,35 @@ DeleteRegistrationAttachmentResult& DeleteRegistrationAttachmentResult::operator
   if(jsonValue.ValueExists("RegistrationAttachmentArn"))
   {
     m_registrationAttachmentArn = jsonValue.GetString("RegistrationAttachmentArn");
-
+    m_registrationAttachmentArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationAttachmentId"))
   {
     m_registrationAttachmentId = jsonValue.GetString("RegistrationAttachmentId");
-
+    m_registrationAttachmentIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttachmentStatus"))
   {
     m_attachmentStatus = AttachmentStatusMapper::GetAttachmentStatusForName(jsonValue.GetString("AttachmentStatus"));
-
+    m_attachmentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AttachmentUploadErrorReason"))
   {
     m_attachmentUploadErrorReason = AttachmentUploadErrorReasonMapper::GetAttachmentUploadErrorReasonForName(jsonValue.GetString("AttachmentUploadErrorReason"));
-
+    m_attachmentUploadErrorReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
+    m_createdTimestampHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

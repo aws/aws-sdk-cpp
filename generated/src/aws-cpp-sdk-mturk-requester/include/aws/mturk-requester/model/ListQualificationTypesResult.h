@@ -29,7 +29,7 @@ namespace Model
   class ListQualificationTypesResult
   {
   public:
-    AWS_MTURK_API ListQualificationTypesResult();
+    AWS_MTURK_API ListQualificationTypesResult() = default;
     AWS_MTURK_API ListQualificationTypesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MTURK_API ListQualificationTypesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,54 +39,54 @@ namespace Model
      * <p> The number of Qualification types on this page in the filtered results list,
      * equivalent to the number of types this operation returns. </p>
      */
-    inline int GetNumResults() const{ return m_numResults; }
-    inline void SetNumResults(int value) { m_numResults = value; }
+    inline int GetNumResults() const { return m_numResults; }
+    inline void SetNumResults(int value) { m_numResultsHasBeenSet = true; m_numResults = value; }
     inline ListQualificationTypesResult& WithNumResults(int value) { SetNumResults(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListQualificationTypesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListQualificationTypesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListQualificationTypesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListQualificationTypesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The list of QualificationType elements returned by the query. </p>
      */
-    inline const Aws::Vector<QualificationType>& GetQualificationTypes() const{ return m_qualificationTypes; }
-    inline void SetQualificationTypes(const Aws::Vector<QualificationType>& value) { m_qualificationTypes = value; }
-    inline void SetQualificationTypes(Aws::Vector<QualificationType>&& value) { m_qualificationTypes = std::move(value); }
-    inline ListQualificationTypesResult& WithQualificationTypes(const Aws::Vector<QualificationType>& value) { SetQualificationTypes(value); return *this;}
-    inline ListQualificationTypesResult& WithQualificationTypes(Aws::Vector<QualificationType>&& value) { SetQualificationTypes(std::move(value)); return *this;}
-    inline ListQualificationTypesResult& AddQualificationTypes(const QualificationType& value) { m_qualificationTypes.push_back(value); return *this; }
-    inline ListQualificationTypesResult& AddQualificationTypes(QualificationType&& value) { m_qualificationTypes.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<QualificationType>& GetQualificationTypes() const { return m_qualificationTypes; }
+    template<typename QualificationTypesT = Aws::Vector<QualificationType>>
+    void SetQualificationTypes(QualificationTypesT&& value) { m_qualificationTypesHasBeenSet = true; m_qualificationTypes = std::forward<QualificationTypesT>(value); }
+    template<typename QualificationTypesT = Aws::Vector<QualificationType>>
+    ListQualificationTypesResult& WithQualificationTypes(QualificationTypesT&& value) { SetQualificationTypes(std::forward<QualificationTypesT>(value)); return *this;}
+    template<typename QualificationTypesT = QualificationType>
+    ListQualificationTypesResult& AddQualificationTypes(QualificationTypesT&& value) { m_qualificationTypesHasBeenSet = true; m_qualificationTypes.emplace_back(std::forward<QualificationTypesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListQualificationTypesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListQualificationTypesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListQualificationTypesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListQualificationTypesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_numResults;
+    int m_numResults{0};
+    bool m_numResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<QualificationType> m_qualificationTypes;
+    bool m_qualificationTypesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

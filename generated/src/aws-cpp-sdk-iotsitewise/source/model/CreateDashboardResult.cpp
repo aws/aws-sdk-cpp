@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateDashboardResult::CreateDashboardResult()
-{
-}
-
 CreateDashboardResult::CreateDashboardResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ CreateDashboardResult& CreateDashboardResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("dashboardId"))
   {
     m_dashboardId = jsonValue.GetString("dashboardId");
-
+    m_dashboardIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dashboardArn"))
   {
     m_dashboardArn = jsonValue.GetString("dashboardArn");
-
+    m_dashboardArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

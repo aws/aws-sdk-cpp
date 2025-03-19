@@ -18,15 +18,7 @@ namespace ECS
 namespace Model
 {
 
-TaskDefinitionPlacementConstraint::TaskDefinitionPlacementConstraint() : 
-    m_type(TaskDefinitionPlacementConstraintType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_expressionHasBeenSet(false)
-{
-}
-
 TaskDefinitionPlacementConstraint::TaskDefinitionPlacementConstraint(JsonView jsonValue)
-  : TaskDefinitionPlacementConstraint()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ TaskDefinitionPlacementConstraint& TaskDefinitionPlacementConstraint::operator =
   if(jsonValue.ValueExists("type"))
   {
     m_type = TaskDefinitionPlacementConstraintTypeMapper::GetTaskDefinitionPlacementConstraintTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("expression"))
   {
     m_expression = jsonValue.GetString("expression");
-
     m_expressionHasBeenSet = true;
   }
-
   return *this;
 }
 

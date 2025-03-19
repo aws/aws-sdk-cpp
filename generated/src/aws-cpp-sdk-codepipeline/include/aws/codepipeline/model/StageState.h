@@ -38,7 +38,7 @@ namespace Model
   class StageState
   {
   public:
-    AWS_CODEPIPELINE_API StageState();
+    AWS_CODEPIPELINE_API StageState() = default;
     AWS_CODEPIPELINE_API StageState(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API StageState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,64 +48,62 @@ namespace Model
     /**
      * <p>The name of the stage.</p>
      */
-    inline const Aws::String& GetStageName() const{ return m_stageName; }
+    inline const Aws::String& GetStageName() const { return m_stageName; }
     inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
-    inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
-    inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
-    inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
-    inline StageState& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
-    inline StageState& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
-    inline StageState& WithStageName(const char* value) { SetStageName(value); return *this;}
+    template<typename StageNameT = Aws::String>
+    void SetStageName(StageNameT&& value) { m_stageNameHasBeenSet = true; m_stageName = std::forward<StageNameT>(value); }
+    template<typename StageNameT = Aws::String>
+    StageState& WithStageName(StageNameT&& value) { SetStageName(std::forward<StageNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const StageExecution& GetInboundExecution() const{ return m_inboundExecution; }
+    inline const StageExecution& GetInboundExecution() const { return m_inboundExecution; }
     inline bool InboundExecutionHasBeenSet() const { return m_inboundExecutionHasBeenSet; }
-    inline void SetInboundExecution(const StageExecution& value) { m_inboundExecutionHasBeenSet = true; m_inboundExecution = value; }
-    inline void SetInboundExecution(StageExecution&& value) { m_inboundExecutionHasBeenSet = true; m_inboundExecution = std::move(value); }
-    inline StageState& WithInboundExecution(const StageExecution& value) { SetInboundExecution(value); return *this;}
-    inline StageState& WithInboundExecution(StageExecution&& value) { SetInboundExecution(std::move(value)); return *this;}
+    template<typename InboundExecutionT = StageExecution>
+    void SetInboundExecution(InboundExecutionT&& value) { m_inboundExecutionHasBeenSet = true; m_inboundExecution = std::forward<InboundExecutionT>(value); }
+    template<typename InboundExecutionT = StageExecution>
+    StageState& WithInboundExecution(InboundExecutionT&& value) { SetInboundExecution(std::forward<InboundExecutionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The inbound executions for a stage.</p>
      */
-    inline const Aws::Vector<StageExecution>& GetInboundExecutions() const{ return m_inboundExecutions; }
+    inline const Aws::Vector<StageExecution>& GetInboundExecutions() const { return m_inboundExecutions; }
     inline bool InboundExecutionsHasBeenSet() const { return m_inboundExecutionsHasBeenSet; }
-    inline void SetInboundExecutions(const Aws::Vector<StageExecution>& value) { m_inboundExecutionsHasBeenSet = true; m_inboundExecutions = value; }
-    inline void SetInboundExecutions(Aws::Vector<StageExecution>&& value) { m_inboundExecutionsHasBeenSet = true; m_inboundExecutions = std::move(value); }
-    inline StageState& WithInboundExecutions(const Aws::Vector<StageExecution>& value) { SetInboundExecutions(value); return *this;}
-    inline StageState& WithInboundExecutions(Aws::Vector<StageExecution>&& value) { SetInboundExecutions(std::move(value)); return *this;}
-    inline StageState& AddInboundExecutions(const StageExecution& value) { m_inboundExecutionsHasBeenSet = true; m_inboundExecutions.push_back(value); return *this; }
-    inline StageState& AddInboundExecutions(StageExecution&& value) { m_inboundExecutionsHasBeenSet = true; m_inboundExecutions.push_back(std::move(value)); return *this; }
+    template<typename InboundExecutionsT = Aws::Vector<StageExecution>>
+    void SetInboundExecutions(InboundExecutionsT&& value) { m_inboundExecutionsHasBeenSet = true; m_inboundExecutions = std::forward<InboundExecutionsT>(value); }
+    template<typename InboundExecutionsT = Aws::Vector<StageExecution>>
+    StageState& WithInboundExecutions(InboundExecutionsT&& value) { SetInboundExecutions(std::forward<InboundExecutionsT>(value)); return *this;}
+    template<typename InboundExecutionsT = StageExecution>
+    StageState& AddInboundExecutions(InboundExecutionsT&& value) { m_inboundExecutionsHasBeenSet = true; m_inboundExecutions.emplace_back(std::forward<InboundExecutionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The state of the inbound transition, which is either enabled or disabled.</p>
      */
-    inline const TransitionState& GetInboundTransitionState() const{ return m_inboundTransitionState; }
+    inline const TransitionState& GetInboundTransitionState() const { return m_inboundTransitionState; }
     inline bool InboundTransitionStateHasBeenSet() const { return m_inboundTransitionStateHasBeenSet; }
-    inline void SetInboundTransitionState(const TransitionState& value) { m_inboundTransitionStateHasBeenSet = true; m_inboundTransitionState = value; }
-    inline void SetInboundTransitionState(TransitionState&& value) { m_inboundTransitionStateHasBeenSet = true; m_inboundTransitionState = std::move(value); }
-    inline StageState& WithInboundTransitionState(const TransitionState& value) { SetInboundTransitionState(value); return *this;}
-    inline StageState& WithInboundTransitionState(TransitionState&& value) { SetInboundTransitionState(std::move(value)); return *this;}
+    template<typename InboundTransitionStateT = TransitionState>
+    void SetInboundTransitionState(InboundTransitionStateT&& value) { m_inboundTransitionStateHasBeenSet = true; m_inboundTransitionState = std::forward<InboundTransitionStateT>(value); }
+    template<typename InboundTransitionStateT = TransitionState>
+    StageState& WithInboundTransitionState(InboundTransitionStateT&& value) { SetInboundTransitionState(std::forward<InboundTransitionStateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the stage.</p>
      */
-    inline const Aws::Vector<ActionState>& GetActionStates() const{ return m_actionStates; }
+    inline const Aws::Vector<ActionState>& GetActionStates() const { return m_actionStates; }
     inline bool ActionStatesHasBeenSet() const { return m_actionStatesHasBeenSet; }
-    inline void SetActionStates(const Aws::Vector<ActionState>& value) { m_actionStatesHasBeenSet = true; m_actionStates = value; }
-    inline void SetActionStates(Aws::Vector<ActionState>&& value) { m_actionStatesHasBeenSet = true; m_actionStates = std::move(value); }
-    inline StageState& WithActionStates(const Aws::Vector<ActionState>& value) { SetActionStates(value); return *this;}
-    inline StageState& WithActionStates(Aws::Vector<ActionState>&& value) { SetActionStates(std::move(value)); return *this;}
-    inline StageState& AddActionStates(const ActionState& value) { m_actionStatesHasBeenSet = true; m_actionStates.push_back(value); return *this; }
-    inline StageState& AddActionStates(ActionState&& value) { m_actionStatesHasBeenSet = true; m_actionStates.push_back(std::move(value)); return *this; }
+    template<typename ActionStatesT = Aws::Vector<ActionState>>
+    void SetActionStates(ActionStatesT&& value) { m_actionStatesHasBeenSet = true; m_actionStates = std::forward<ActionStatesT>(value); }
+    template<typename ActionStatesT = Aws::Vector<ActionState>>
+    StageState& WithActionStates(ActionStatesT&& value) { SetActionStates(std::forward<ActionStatesT>(value)); return *this;}
+    template<typename ActionStatesT = ActionState>
+    StageState& AddActionStates(ActionStatesT&& value) { m_actionStatesHasBeenSet = true; m_actionStates.emplace_back(std::forward<ActionStatesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -113,48 +111,48 @@ namespace Model
      * <p>Information about the latest execution in the stage, including its ID and
      * status.</p>
      */
-    inline const StageExecution& GetLatestExecution() const{ return m_latestExecution; }
+    inline const StageExecution& GetLatestExecution() const { return m_latestExecution; }
     inline bool LatestExecutionHasBeenSet() const { return m_latestExecutionHasBeenSet; }
-    inline void SetLatestExecution(const StageExecution& value) { m_latestExecutionHasBeenSet = true; m_latestExecution = value; }
-    inline void SetLatestExecution(StageExecution&& value) { m_latestExecutionHasBeenSet = true; m_latestExecution = std::move(value); }
-    inline StageState& WithLatestExecution(const StageExecution& value) { SetLatestExecution(value); return *this;}
-    inline StageState& WithLatestExecution(StageExecution&& value) { SetLatestExecution(std::move(value)); return *this;}
+    template<typename LatestExecutionT = StageExecution>
+    void SetLatestExecution(LatestExecutionT&& value) { m_latestExecutionHasBeenSet = true; m_latestExecution = std::forward<LatestExecutionT>(value); }
+    template<typename LatestExecutionT = StageExecution>
+    StageState& WithLatestExecution(LatestExecutionT&& value) { SetLatestExecution(std::forward<LatestExecutionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the entry conditions for a stage.</p>
      */
-    inline const StageConditionState& GetBeforeEntryConditionState() const{ return m_beforeEntryConditionState; }
+    inline const StageConditionState& GetBeforeEntryConditionState() const { return m_beforeEntryConditionState; }
     inline bool BeforeEntryConditionStateHasBeenSet() const { return m_beforeEntryConditionStateHasBeenSet; }
-    inline void SetBeforeEntryConditionState(const StageConditionState& value) { m_beforeEntryConditionStateHasBeenSet = true; m_beforeEntryConditionState = value; }
-    inline void SetBeforeEntryConditionState(StageConditionState&& value) { m_beforeEntryConditionStateHasBeenSet = true; m_beforeEntryConditionState = std::move(value); }
-    inline StageState& WithBeforeEntryConditionState(const StageConditionState& value) { SetBeforeEntryConditionState(value); return *this;}
-    inline StageState& WithBeforeEntryConditionState(StageConditionState&& value) { SetBeforeEntryConditionState(std::move(value)); return *this;}
+    template<typename BeforeEntryConditionStateT = StageConditionState>
+    void SetBeforeEntryConditionState(BeforeEntryConditionStateT&& value) { m_beforeEntryConditionStateHasBeenSet = true; m_beforeEntryConditionState = std::forward<BeforeEntryConditionStateT>(value); }
+    template<typename BeforeEntryConditionStateT = StageConditionState>
+    StageState& WithBeforeEntryConditionState(BeforeEntryConditionStateT&& value) { SetBeforeEntryConditionState(std::forward<BeforeEntryConditionStateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the success conditions for a stage.</p>
      */
-    inline const StageConditionState& GetOnSuccessConditionState() const{ return m_onSuccessConditionState; }
+    inline const StageConditionState& GetOnSuccessConditionState() const { return m_onSuccessConditionState; }
     inline bool OnSuccessConditionStateHasBeenSet() const { return m_onSuccessConditionStateHasBeenSet; }
-    inline void SetOnSuccessConditionState(const StageConditionState& value) { m_onSuccessConditionStateHasBeenSet = true; m_onSuccessConditionState = value; }
-    inline void SetOnSuccessConditionState(StageConditionState&& value) { m_onSuccessConditionStateHasBeenSet = true; m_onSuccessConditionState = std::move(value); }
-    inline StageState& WithOnSuccessConditionState(const StageConditionState& value) { SetOnSuccessConditionState(value); return *this;}
-    inline StageState& WithOnSuccessConditionState(StageConditionState&& value) { SetOnSuccessConditionState(std::move(value)); return *this;}
+    template<typename OnSuccessConditionStateT = StageConditionState>
+    void SetOnSuccessConditionState(OnSuccessConditionStateT&& value) { m_onSuccessConditionStateHasBeenSet = true; m_onSuccessConditionState = std::forward<OnSuccessConditionStateT>(value); }
+    template<typename OnSuccessConditionStateT = StageConditionState>
+    StageState& WithOnSuccessConditionState(OnSuccessConditionStateT&& value) { SetOnSuccessConditionState(std::forward<OnSuccessConditionStateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the failure conditions for a stage.</p>
      */
-    inline const StageConditionState& GetOnFailureConditionState() const{ return m_onFailureConditionState; }
+    inline const StageConditionState& GetOnFailureConditionState() const { return m_onFailureConditionState; }
     inline bool OnFailureConditionStateHasBeenSet() const { return m_onFailureConditionStateHasBeenSet; }
-    inline void SetOnFailureConditionState(const StageConditionState& value) { m_onFailureConditionStateHasBeenSet = true; m_onFailureConditionState = value; }
-    inline void SetOnFailureConditionState(StageConditionState&& value) { m_onFailureConditionStateHasBeenSet = true; m_onFailureConditionState = std::move(value); }
-    inline StageState& WithOnFailureConditionState(const StageConditionState& value) { SetOnFailureConditionState(value); return *this;}
-    inline StageState& WithOnFailureConditionState(StageConditionState&& value) { SetOnFailureConditionState(std::move(value)); return *this;}
+    template<typename OnFailureConditionStateT = StageConditionState>
+    void SetOnFailureConditionState(OnFailureConditionStateT&& value) { m_onFailureConditionStateHasBeenSet = true; m_onFailureConditionState = std::forward<OnFailureConditionStateT>(value); }
+    template<typename OnFailureConditionStateT = StageConditionState>
+    StageState& WithOnFailureConditionState(OnFailureConditionStateT&& value) { SetOnFailureConditionState(std::forward<OnFailureConditionStateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,12 +160,12 @@ namespace Model
      * <p>he details of a specific automatic retry on stage failure, including the
      * attempt number and trigger.</p>
      */
-    inline const RetryStageMetadata& GetRetryStageMetadata() const{ return m_retryStageMetadata; }
+    inline const RetryStageMetadata& GetRetryStageMetadata() const { return m_retryStageMetadata; }
     inline bool RetryStageMetadataHasBeenSet() const { return m_retryStageMetadataHasBeenSet; }
-    inline void SetRetryStageMetadata(const RetryStageMetadata& value) { m_retryStageMetadataHasBeenSet = true; m_retryStageMetadata = value; }
-    inline void SetRetryStageMetadata(RetryStageMetadata&& value) { m_retryStageMetadataHasBeenSet = true; m_retryStageMetadata = std::move(value); }
-    inline StageState& WithRetryStageMetadata(const RetryStageMetadata& value) { SetRetryStageMetadata(value); return *this;}
-    inline StageState& WithRetryStageMetadata(RetryStageMetadata&& value) { SetRetryStageMetadata(std::move(value)); return *this;}
+    template<typename RetryStageMetadataT = RetryStageMetadata>
+    void SetRetryStageMetadata(RetryStageMetadataT&& value) { m_retryStageMetadataHasBeenSet = true; m_retryStageMetadata = std::forward<RetryStageMetadataT>(value); }
+    template<typename RetryStageMetadataT = RetryStageMetadata>
+    StageState& WithRetryStageMetadata(RetryStageMetadataT&& value) { SetRetryStageMetadata(std::forward<RetryStageMetadataT>(value)); return *this;}
     ///@}
   private:
 

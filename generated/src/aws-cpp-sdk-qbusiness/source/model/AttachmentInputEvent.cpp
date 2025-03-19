@@ -18,13 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-AttachmentInputEvent::AttachmentInputEvent() : 
-    m_attachmentHasBeenSet(false)
-{
-}
-
 AttachmentInputEvent::AttachmentInputEvent(JsonView jsonValue)
-  : AttachmentInputEvent()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AttachmentInputEvent& AttachmentInputEvent::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("attachment"))
   {
     m_attachment = jsonValue.GetObject("attachment");
-
     m_attachmentHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateKeyPairResult::CreateKeyPairResult()
-{
-}
-
 CreateKeyPairResult::CreateKeyPairResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,33 +28,30 @@ CreateKeyPairResult& CreateKeyPairResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("keyPair"))
   {
     m_keyPair = jsonValue.GetObject("keyPair");
-
+    m_keyPairHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("publicKeyBase64"))
   {
     m_publicKeyBase64 = jsonValue.GetString("publicKeyBase64");
-
+    m_publicKeyBase64HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("privateKeyBase64"))
   {
     m_privateKeyBase64 = jsonValue.GetString("privateKeyBase64");
-
+    m_privateKeyBase64HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operation"))
   {
     m_operation = jsonValue.GetObject("operation");
-
+    m_operationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

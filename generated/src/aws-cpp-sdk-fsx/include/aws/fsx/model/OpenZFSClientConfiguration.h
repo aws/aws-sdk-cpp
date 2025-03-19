@@ -33,7 +33,7 @@ namespace Model
   class OpenZFSClientConfiguration
   {
   public:
-    AWS_FSX_API OpenZFSClientConfiguration();
+    AWS_FSX_API OpenZFSClientConfiguration() = default;
     AWS_FSX_API OpenZFSClientConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API OpenZFSClientConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
      * CIDR address (<code>192.0.2.0/24</code>). By default, Amazon FSx uses the
      * wildcard character when specifying the client. </p>
      */
-    inline const Aws::String& GetClients() const{ return m_clients; }
+    inline const Aws::String& GetClients() const { return m_clients; }
     inline bool ClientsHasBeenSet() const { return m_clientsHasBeenSet; }
-    inline void SetClients(const Aws::String& value) { m_clientsHasBeenSet = true; m_clients = value; }
-    inline void SetClients(Aws::String&& value) { m_clientsHasBeenSet = true; m_clients = std::move(value); }
-    inline void SetClients(const char* value) { m_clientsHasBeenSet = true; m_clients.assign(value); }
-    inline OpenZFSClientConfiguration& WithClients(const Aws::String& value) { SetClients(value); return *this;}
-    inline OpenZFSClientConfiguration& WithClients(Aws::String&& value) { SetClients(std::move(value)); return *this;}
-    inline OpenZFSClientConfiguration& WithClients(const char* value) { SetClients(value); return *this;}
+    template<typename ClientsT = Aws::String>
+    void SetClients(ClientsT&& value) { m_clientsHasBeenSet = true; m_clients = std::forward<ClientsT>(value); }
+    template<typename ClientsT = Aws::String>
+    OpenZFSClientConfiguration& WithClients(ClientsT&& value) { SetClients(std::forward<ClientsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,15 +68,14 @@ namespace Model
      * the system crashes before the writes are finished, you lose the unwritten data.
      * </p> </li> </ul>
      */
-    inline const Aws::Vector<Aws::String>& GetOptions() const{ return m_options; }
+    inline const Aws::Vector<Aws::String>& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const Aws::Vector<Aws::String>& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(Aws::Vector<Aws::String>&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline OpenZFSClientConfiguration& WithOptions(const Aws::Vector<Aws::String>& value) { SetOptions(value); return *this;}
-    inline OpenZFSClientConfiguration& WithOptions(Aws::Vector<Aws::String>&& value) { SetOptions(std::move(value)); return *this;}
-    inline OpenZFSClientConfiguration& AddOptions(const Aws::String& value) { m_optionsHasBeenSet = true; m_options.push_back(value); return *this; }
-    inline OpenZFSClientConfiguration& AddOptions(Aws::String&& value) { m_optionsHasBeenSet = true; m_options.push_back(std::move(value)); return *this; }
-    inline OpenZFSClientConfiguration& AddOptions(const char* value) { m_optionsHasBeenSet = true; m_options.push_back(value); return *this; }
+    template<typename OptionsT = Aws::Vector<Aws::String>>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = Aws::Vector<Aws::String>>
+    OpenZFSClientConfiguration& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
+    template<typename OptionsT = Aws::String>
+    OpenZFSClientConfiguration& AddOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options.emplace_back(std::forward<OptionsT>(value)); return *this; }
     ///@}
   private:
 

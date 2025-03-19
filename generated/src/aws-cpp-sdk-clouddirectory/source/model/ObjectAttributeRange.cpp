@@ -18,14 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-ObjectAttributeRange::ObjectAttributeRange() : 
-    m_attributeKeyHasBeenSet(false),
-    m_rangeHasBeenSet(false)
-{
-}
-
 ObjectAttributeRange::ObjectAttributeRange(JsonView jsonValue)
-  : ObjectAttributeRange()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ObjectAttributeRange& ObjectAttributeRange::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AttributeKey"))
   {
     m_attributeKey = jsonValue.GetObject("AttributeKey");
-
     m_attributeKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Range"))
   {
     m_range = jsonValue.GetObject("Range");
-
     m_rangeHasBeenSet = true;
   }
-
   return *this;
 }
 

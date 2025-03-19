@@ -43,7 +43,7 @@ namespace Model
   class GameSession
   {
   public:
-    AWS_GAMELIFT_API GameSession();
+    AWS_GAMELIFT_API GameSession() = default;
     AWS_GAMELIFT_API GameSession(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API GameSession& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -55,14 +55,12 @@ namespace Model
      * following format: <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet
      * ID&gt;/&lt;custom ID string or idempotency token&gt;</code>.</p>
      */
-    inline const Aws::String& GetGameSessionId() const{ return m_gameSessionId; }
+    inline const Aws::String& GetGameSessionId() const { return m_gameSessionId; }
     inline bool GameSessionIdHasBeenSet() const { return m_gameSessionIdHasBeenSet; }
-    inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
-    inline void SetGameSessionId(Aws::String&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::move(value); }
-    inline void SetGameSessionId(const char* value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId.assign(value); }
-    inline GameSession& WithGameSessionId(const Aws::String& value) { SetGameSessionId(value); return *this;}
-    inline GameSession& WithGameSessionId(Aws::String&& value) { SetGameSessionId(std::move(value)); return *this;}
-    inline GameSession& WithGameSessionId(const char* value) { SetGameSessionId(value); return *this;}
+    template<typename GameSessionIdT = Aws::String>
+    void SetGameSessionId(GameSessionIdT&& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = std::forward<GameSessionIdT>(value); }
+    template<typename GameSessionIdT = Aws::String>
+    GameSession& WithGameSessionId(GameSessionIdT&& value) { SetGameSessionId(std::forward<GameSessionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,28 +68,24 @@ namespace Model
      * <p>A descriptive label that is associated with a game session. Session names do
      * not need to be unique.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline GameSession& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GameSession& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GameSession& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GameSession& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for the fleet that the game session is running on.</p>
      */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+    inline const Aws::String& GetFleetId() const { return m_fleetId; }
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-    inline GameSession& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline GameSession& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline GameSession& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    template<typename FleetIdT = Aws::String>
+    void SetFleetId(FleetIdT&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::forward<FleetIdT>(value); }
+    template<typename FleetIdT = Aws::String>
+    GameSession& WithFleetId(FleetIdT&& value) { SetFleetId(std::forward<FleetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,14 +94,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift fleet that this game session is running on. </p>
      */
-    inline const Aws::String& GetFleetArn() const{ return m_fleetArn; }
+    inline const Aws::String& GetFleetArn() const { return m_fleetArn; }
     inline bool FleetArnHasBeenSet() const { return m_fleetArnHasBeenSet; }
-    inline void SetFleetArn(const Aws::String& value) { m_fleetArnHasBeenSet = true; m_fleetArn = value; }
-    inline void SetFleetArn(Aws::String&& value) { m_fleetArnHasBeenSet = true; m_fleetArn = std::move(value); }
-    inline void SetFleetArn(const char* value) { m_fleetArnHasBeenSet = true; m_fleetArn.assign(value); }
-    inline GameSession& WithFleetArn(const Aws::String& value) { SetFleetArn(value); return *this;}
-    inline GameSession& WithFleetArn(Aws::String&& value) { SetFleetArn(std::move(value)); return *this;}
-    inline GameSession& WithFleetArn(const char* value) { SetFleetArn(value); return *this;}
+    template<typename FleetArnT = Aws::String>
+    void SetFleetArn(FleetArnT&& value) { m_fleetArnHasBeenSet = true; m_fleetArn = std::forward<FleetArnT>(value); }
+    template<typename FleetArnT = Aws::String>
+    GameSession& WithFleetArn(FleetArnT&& value) { SetFleetArn(std::forward<FleetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,12 +108,12 @@ namespace Model
      * expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline GameSession& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline GameSession& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    GameSession& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,19 +122,19 @@ namespace Model
      * number expressed in Unix time as milliseconds (for example
      * <code>"1469498468.057"</code>).</p>
      */
-    inline const Aws::Utils::DateTime& GetTerminationTime() const{ return m_terminationTime; }
+    inline const Aws::Utils::DateTime& GetTerminationTime() const { return m_terminationTime; }
     inline bool TerminationTimeHasBeenSet() const { return m_terminationTimeHasBeenSet; }
-    inline void SetTerminationTime(const Aws::Utils::DateTime& value) { m_terminationTimeHasBeenSet = true; m_terminationTime = value; }
-    inline void SetTerminationTime(Aws::Utils::DateTime&& value) { m_terminationTimeHasBeenSet = true; m_terminationTime = std::move(value); }
-    inline GameSession& WithTerminationTime(const Aws::Utils::DateTime& value) { SetTerminationTime(value); return *this;}
-    inline GameSession& WithTerminationTime(Aws::Utils::DateTime&& value) { SetTerminationTime(std::move(value)); return *this;}
+    template<typename TerminationTimeT = Aws::Utils::DateTime>
+    void SetTerminationTime(TerminationTimeT&& value) { m_terminationTimeHasBeenSet = true; m_terminationTime = std::forward<TerminationTimeT>(value); }
+    template<typename TerminationTimeT = Aws::Utils::DateTime>
+    GameSession& WithTerminationTime(TerminationTimeT&& value) { SetTerminationTime(std::forward<TerminationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Number of players currently in the game session.</p>
      */
-    inline int GetCurrentPlayerSessionCount() const{ return m_currentPlayerSessionCount; }
+    inline int GetCurrentPlayerSessionCount() const { return m_currentPlayerSessionCount; }
     inline bool CurrentPlayerSessionCountHasBeenSet() const { return m_currentPlayerSessionCountHasBeenSet; }
     inline void SetCurrentPlayerSessionCount(int value) { m_currentPlayerSessionCountHasBeenSet = true; m_currentPlayerSessionCount = value; }
     inline GameSession& WithCurrentPlayerSessionCount(int value) { SetCurrentPlayerSessionCount(value); return *this;}
@@ -153,7 +145,7 @@ namespace Model
      * <p>The maximum number of players that can be connected simultaneously to the
      * game session.</p>
      */
-    inline int GetMaximumPlayerSessionCount() const{ return m_maximumPlayerSessionCount; }
+    inline int GetMaximumPlayerSessionCount() const { return m_maximumPlayerSessionCount; }
     inline bool MaximumPlayerSessionCountHasBeenSet() const { return m_maximumPlayerSessionCountHasBeenSet; }
     inline void SetMaximumPlayerSessionCount(int value) { m_maximumPlayerSessionCountHasBeenSet = true; m_maximumPlayerSessionCount = value; }
     inline GameSession& WithMaximumPlayerSessionCount(int value) { SetMaximumPlayerSessionCount(value); return *this;}
@@ -164,12 +156,10 @@ namespace Model
      * <p>Current status of the game session. A game session must have an
      * <code>ACTIVE</code> status to have player sessions.</p>
      */
-    inline const GameSessionStatus& GetStatus() const{ return m_status; }
+    inline GameSessionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const GameSessionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(GameSessionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline GameSession& WithStatus(const GameSessionStatus& value) { SetStatus(value); return *this;}
-    inline GameSession& WithStatus(GameSessionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(GameSessionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GameSession& WithStatus(GameSessionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -184,12 +174,10 @@ namespace Model
      * <code>TerminateGameSession</code> with the termination mode
      * <code>FORCE_TERMINATE</code>. </p> </li> </ul> <p/>
      */
-    inline const GameSessionStatusReason& GetStatusReason() const{ return m_statusReason; }
+    inline GameSessionStatusReason GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-    inline void SetStatusReason(const GameSessionStatusReason& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-    inline void SetStatusReason(GameSessionStatusReason&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-    inline GameSession& WithStatusReason(const GameSessionStatusReason& value) { SetStatusReason(value); return *this;}
-    inline GameSession& WithStatusReason(GameSessionStatusReason&& value) { SetStatusReason(std::move(value)); return *this;}
+    inline void SetStatusReason(GameSessionStatusReason value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
+    inline GameSession& WithStatusReason(GameSessionStatusReason value) { SetStatusReason(value); return *this;}
     ///@}
 
     ///@{
@@ -197,14 +185,14 @@ namespace Model
      * <p>A set of key-value pairs that can store custom data in a game session. For
      * example: <code>{"Key": "difficulty", "Value": "novice"}</code>.</p>
      */
-    inline const Aws::Vector<GameProperty>& GetGameProperties() const{ return m_gameProperties; }
+    inline const Aws::Vector<GameProperty>& GetGameProperties() const { return m_gameProperties; }
     inline bool GamePropertiesHasBeenSet() const { return m_gamePropertiesHasBeenSet; }
-    inline void SetGameProperties(const Aws::Vector<GameProperty>& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = value; }
-    inline void SetGameProperties(Aws::Vector<GameProperty>&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = std::move(value); }
-    inline GameSession& WithGameProperties(const Aws::Vector<GameProperty>& value) { SetGameProperties(value); return *this;}
-    inline GameSession& WithGameProperties(Aws::Vector<GameProperty>&& value) { SetGameProperties(std::move(value)); return *this;}
-    inline GameSession& AddGameProperties(const GameProperty& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(value); return *this; }
-    inline GameSession& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(std::move(value)); return *this; }
+    template<typename GamePropertiesT = Aws::Vector<GameProperty>>
+    void SetGameProperties(GamePropertiesT&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = std::forward<GamePropertiesT>(value); }
+    template<typename GamePropertiesT = Aws::Vector<GameProperty>>
+    GameSession& WithGameProperties(GamePropertiesT&& value) { SetGameProperties(std::forward<GamePropertiesT>(value)); return *this;}
+    template<typename GamePropertiesT = GameProperty>
+    GameSession& AddGameProperties(GamePropertiesT&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.emplace_back(std::forward<GamePropertiesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -212,14 +200,12 @@ namespace Model
      * <p>The IP address of the game session. To connect to a Amazon GameLift game
      * server, an app needs both the IP address and port number.</p>
      */
-    inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+    inline const Aws::String& GetIpAddress() const { return m_ipAddress; }
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
-    inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
-    inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
-    inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
-    inline GameSession& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
-    inline GameSession& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
-    inline GameSession& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
+    template<typename IpAddressT = Aws::String>
+    void SetIpAddress(IpAddressT&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::forward<IpAddressT>(value); }
+    template<typename IpAddressT = Aws::String>
+    GameSession& WithIpAddress(IpAddressT&& value) { SetIpAddress(std::forward<IpAddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -235,14 +221,12 @@ namespace Model
      * session that is running on a TLS-enabled fleet, you must use the DNS name, not
      * the IP address.</p>
      */
-    inline const Aws::String& GetDnsName() const{ return m_dnsName; }
+    inline const Aws::String& GetDnsName() const { return m_dnsName; }
     inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }
-    inline void SetDnsName(const Aws::String& value) { m_dnsNameHasBeenSet = true; m_dnsName = value; }
-    inline void SetDnsName(Aws::String&& value) { m_dnsNameHasBeenSet = true; m_dnsName = std::move(value); }
-    inline void SetDnsName(const char* value) { m_dnsNameHasBeenSet = true; m_dnsName.assign(value); }
-    inline GameSession& WithDnsName(const Aws::String& value) { SetDnsName(value); return *this;}
-    inline GameSession& WithDnsName(Aws::String&& value) { SetDnsName(std::move(value)); return *this;}
-    inline GameSession& WithDnsName(const char* value) { SetDnsName(value); return *this;}
+    template<typename DnsNameT = Aws::String>
+    void SetDnsName(DnsNameT&& value) { m_dnsNameHasBeenSet = true; m_dnsName = std::forward<DnsNameT>(value); }
+    template<typename DnsNameT = Aws::String>
+    GameSession& WithDnsName(DnsNameT&& value) { SetDnsName(std::forward<DnsNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -250,7 +234,7 @@ namespace Model
      * <p>The port number for the game session. To connect to a Amazon GameLift game
      * server, an app needs both the IP address and port number.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline GameSession& WithPort(int value) { SetPort(value); return *this;}
@@ -260,12 +244,10 @@ namespace Model
     /**
      * <p>Indicates whether the game session is accepting new players.</p>
      */
-    inline const PlayerSessionCreationPolicy& GetPlayerSessionCreationPolicy() const{ return m_playerSessionCreationPolicy; }
+    inline PlayerSessionCreationPolicy GetPlayerSessionCreationPolicy() const { return m_playerSessionCreationPolicy; }
     inline bool PlayerSessionCreationPolicyHasBeenSet() const { return m_playerSessionCreationPolicyHasBeenSet; }
-    inline void SetPlayerSessionCreationPolicy(const PlayerSessionCreationPolicy& value) { m_playerSessionCreationPolicyHasBeenSet = true; m_playerSessionCreationPolicy = value; }
-    inline void SetPlayerSessionCreationPolicy(PlayerSessionCreationPolicy&& value) { m_playerSessionCreationPolicyHasBeenSet = true; m_playerSessionCreationPolicy = std::move(value); }
-    inline GameSession& WithPlayerSessionCreationPolicy(const PlayerSessionCreationPolicy& value) { SetPlayerSessionCreationPolicy(value); return *this;}
-    inline GameSession& WithPlayerSessionCreationPolicy(PlayerSessionCreationPolicy&& value) { SetPlayerSessionCreationPolicy(std::move(value)); return *this;}
+    inline void SetPlayerSessionCreationPolicy(PlayerSessionCreationPolicy value) { m_playerSessionCreationPolicyHasBeenSet = true; m_playerSessionCreationPolicy = value; }
+    inline GameSession& WithPlayerSessionCreationPolicy(PlayerSessionCreationPolicy value) { SetPlayerSessionCreationPolicy(value); return *this;}
     ///@}
 
     ///@{
@@ -274,14 +256,12 @@ namespace Model
      * protection policy (if one exists), that limits the number of game sessions a
      * player can create.</p>
      */
-    inline const Aws::String& GetCreatorId() const{ return m_creatorId; }
+    inline const Aws::String& GetCreatorId() const { return m_creatorId; }
     inline bool CreatorIdHasBeenSet() const { return m_creatorIdHasBeenSet; }
-    inline void SetCreatorId(const Aws::String& value) { m_creatorIdHasBeenSet = true; m_creatorId = value; }
-    inline void SetCreatorId(Aws::String&& value) { m_creatorIdHasBeenSet = true; m_creatorId = std::move(value); }
-    inline void SetCreatorId(const char* value) { m_creatorIdHasBeenSet = true; m_creatorId.assign(value); }
-    inline GameSession& WithCreatorId(const Aws::String& value) { SetCreatorId(value); return *this;}
-    inline GameSession& WithCreatorId(Aws::String&& value) { SetCreatorId(std::move(value)); return *this;}
-    inline GameSession& WithCreatorId(const char* value) { SetCreatorId(value); return *this;}
+    template<typename CreatorIdT = Aws::String>
+    void SetCreatorId(CreatorIdT&& value) { m_creatorIdHasBeenSet = true; m_creatorId = std::forward<CreatorIdT>(value); }
+    template<typename CreatorIdT = Aws::String>
+    GameSession& WithCreatorId(CreatorIdT&& value) { SetCreatorId(std::forward<CreatorIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -292,14 +272,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a game session</a>.</p>
      */
-    inline const Aws::String& GetGameSessionData() const{ return m_gameSessionData; }
+    inline const Aws::String& GetGameSessionData() const { return m_gameSessionData; }
     inline bool GameSessionDataHasBeenSet() const { return m_gameSessionDataHasBeenSet; }
-    inline void SetGameSessionData(const Aws::String& value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData = value; }
-    inline void SetGameSessionData(Aws::String&& value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData = std::move(value); }
-    inline void SetGameSessionData(const char* value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData.assign(value); }
-    inline GameSession& WithGameSessionData(const Aws::String& value) { SetGameSessionData(value); return *this;}
-    inline GameSession& WithGameSessionData(Aws::String&& value) { SetGameSessionData(std::move(value)); return *this;}
-    inline GameSession& WithGameSessionData(const char* value) { SetGameSessionData(value); return *this;}
+    template<typename GameSessionDataT = Aws::String>
+    void SetGameSessionData(GameSessionDataT&& value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData = std::forward<GameSessionDataT>(value); }
+    template<typename GameSessionDataT = Aws::String>
+    GameSession& WithGameSessionData(GameSessionDataT&& value) { SetGameSessionData(std::forward<GameSessionDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -314,14 +292,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartMatchBackfill.html">StartMatchBackfill</a>).
      * </p>
      */
-    inline const Aws::String& GetMatchmakerData() const{ return m_matchmakerData; }
+    inline const Aws::String& GetMatchmakerData() const { return m_matchmakerData; }
     inline bool MatchmakerDataHasBeenSet() const { return m_matchmakerDataHasBeenSet; }
-    inline void SetMatchmakerData(const Aws::String& value) { m_matchmakerDataHasBeenSet = true; m_matchmakerData = value; }
-    inline void SetMatchmakerData(Aws::String&& value) { m_matchmakerDataHasBeenSet = true; m_matchmakerData = std::move(value); }
-    inline void SetMatchmakerData(const char* value) { m_matchmakerDataHasBeenSet = true; m_matchmakerData.assign(value); }
-    inline GameSession& WithMatchmakerData(const Aws::String& value) { SetMatchmakerData(value); return *this;}
-    inline GameSession& WithMatchmakerData(Aws::String&& value) { SetMatchmakerData(std::move(value)); return *this;}
-    inline GameSession& WithMatchmakerData(const char* value) { SetMatchmakerData(value); return *this;}
+    template<typename MatchmakerDataT = Aws::String>
+    void SetMatchmakerData(MatchmakerDataT&& value) { m_matchmakerDataHasBeenSet = true; m_matchmakerData = std::forward<MatchmakerDataT>(value); }
+    template<typename MatchmakerDataT = Aws::String>
+    GameSession& WithMatchmakerData(MatchmakerDataT&& value) { SetMatchmakerData(std::forward<MatchmakerDataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -330,14 +306,12 @@ namespace Model
      * specify the fleet's home Region or a remote location. Location is expressed as
      * an Amazon Web Services Region code such as <code>us-west-2</code>. </p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline GameSession& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline GameSession& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline GameSession& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    GameSession& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
   private:
 
@@ -353,22 +327,22 @@ namespace Model
     Aws::String m_fleetArn;
     bool m_fleetArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_terminationTime;
+    Aws::Utils::DateTime m_terminationTime{};
     bool m_terminationTimeHasBeenSet = false;
 
-    int m_currentPlayerSessionCount;
+    int m_currentPlayerSessionCount{0};
     bool m_currentPlayerSessionCountHasBeenSet = false;
 
-    int m_maximumPlayerSessionCount;
+    int m_maximumPlayerSessionCount{0};
     bool m_maximumPlayerSessionCountHasBeenSet = false;
 
-    GameSessionStatus m_status;
+    GameSessionStatus m_status{GameSessionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
-    GameSessionStatusReason m_statusReason;
+    GameSessionStatusReason m_statusReason{GameSessionStatusReason::NOT_SET};
     bool m_statusReasonHasBeenSet = false;
 
     Aws::Vector<GameProperty> m_gameProperties;
@@ -380,10 +354,10 @@ namespace Model
     Aws::String m_dnsName;
     bool m_dnsNameHasBeenSet = false;
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
-    PlayerSessionCreationPolicy m_playerSessionCreationPolicy;
+    PlayerSessionCreationPolicy m_playerSessionCreationPolicy{PlayerSessionCreationPolicy::NOT_SET};
     bool m_playerSessionCreationPolicyHasBeenSet = false;
 
     Aws::String m_creatorId;

@@ -21,7 +21,7 @@ namespace Model
   class CreateOriginAccessControl2020_05_31Request : public CloudFrontRequest
   {
   public:
-    AWS_CLOUDFRONT_API CreateOriginAccessControl2020_05_31Request();
+    AWS_CLOUDFRONT_API CreateOriginAccessControl2020_05_31Request() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,12 +36,12 @@ namespace Model
     /**
      * <p>Contains the origin access control.</p>
      */
-    inline const OriginAccessControlConfig& GetOriginAccessControlConfig() const{ return m_originAccessControlConfig; }
+    inline const OriginAccessControlConfig& GetOriginAccessControlConfig() const { return m_originAccessControlConfig; }
     inline bool OriginAccessControlConfigHasBeenSet() const { return m_originAccessControlConfigHasBeenSet; }
-    inline void SetOriginAccessControlConfig(const OriginAccessControlConfig& value) { m_originAccessControlConfigHasBeenSet = true; m_originAccessControlConfig = value; }
-    inline void SetOriginAccessControlConfig(OriginAccessControlConfig&& value) { m_originAccessControlConfigHasBeenSet = true; m_originAccessControlConfig = std::move(value); }
-    inline CreateOriginAccessControl2020_05_31Request& WithOriginAccessControlConfig(const OriginAccessControlConfig& value) { SetOriginAccessControlConfig(value); return *this;}
-    inline CreateOriginAccessControl2020_05_31Request& WithOriginAccessControlConfig(OriginAccessControlConfig&& value) { SetOriginAccessControlConfig(std::move(value)); return *this;}
+    template<typename OriginAccessControlConfigT = OriginAccessControlConfig>
+    void SetOriginAccessControlConfig(OriginAccessControlConfigT&& value) { m_originAccessControlConfigHasBeenSet = true; m_originAccessControlConfig = std::forward<OriginAccessControlConfigT>(value); }
+    template<typename OriginAccessControlConfigT = OriginAccessControlConfig>
+    CreateOriginAccessControl2020_05_31Request& WithOriginAccessControlConfig(OriginAccessControlConfigT&& value) { SetOriginAccessControlConfig(std::forward<OriginAccessControlConfigT>(value)); return *this;}
     ///@}
   private:
 

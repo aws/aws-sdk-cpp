@@ -18,13 +18,7 @@ namespace MedicalImaging
 namespace Model
 {
 
-MetadataCopies::MetadataCopies() : 
-    m_copiableAttributesHasBeenSet(false)
-{
-}
-
 MetadataCopies::MetadataCopies(JsonView jsonValue)
-  : MetadataCopies()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MetadataCopies& MetadataCopies::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("copiableAttributes"))
   {
     m_copiableAttributes = jsonValue.GetString("copiableAttributes");
-
     m_copiableAttributesHasBeenSet = true;
   }
-
   return *this;
 }
 

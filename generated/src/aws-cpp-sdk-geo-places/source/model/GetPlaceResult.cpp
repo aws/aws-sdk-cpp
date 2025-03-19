@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPlaceResult::GetPlaceResult() : 
-    m_placeType(PlaceType::NOT_SET),
-    m_addressNumberCorrected(false)
-{
-}
-
 GetPlaceResult::GetPlaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetPlaceResult()
 {
   *this = result;
 }
@@ -35,33 +28,28 @@ GetPlaceResult& GetPlaceResult::operator =(const Aws::AmazonWebServiceResult<Jso
   if(jsonValue.ValueExists("PlaceId"))
   {
     m_placeId = jsonValue.GetString("PlaceId");
-
+    m_placeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlaceType"))
   {
     m_placeType = PlaceTypeMapper::GetPlaceTypeForName(jsonValue.GetString("PlaceType"));
-
+    m_placeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
+    m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Address"))
   {
     m_address = jsonValue.GetObject("Address");
-
+    m_addressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AddressNumberCorrected"))
   {
     m_addressNumberCorrected = jsonValue.GetBool("AddressNumberCorrected");
-
+    m_addressNumberCorrectedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PostalCodeDetails"))
   {
     Aws::Utils::Array<JsonView> postalCodeDetailsJsonList = jsonValue.GetArray("PostalCodeDetails");
@@ -69,8 +57,8 @@ GetPlaceResult& GetPlaceResult::operator =(const Aws::AmazonWebServiceResult<Jso
     {
       m_postalCodeDetails.push_back(postalCodeDetailsJsonList[postalCodeDetailsIndex].AsObject());
     }
+    m_postalCodeDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Position"))
   {
     Aws::Utils::Array<JsonView> positionJsonList = jsonValue.GetArray("Position");
@@ -78,8 +66,8 @@ GetPlaceResult& GetPlaceResult::operator =(const Aws::AmazonWebServiceResult<Jso
     {
       m_position.push_back(positionJsonList[positionIndex].AsDouble());
     }
+    m_positionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MapView"))
   {
     Aws::Utils::Array<JsonView> mapViewJsonList = jsonValue.GetArray("MapView");
@@ -87,8 +75,8 @@ GetPlaceResult& GetPlaceResult::operator =(const Aws::AmazonWebServiceResult<Jso
     {
       m_mapView.push_back(mapViewJsonList[mapViewIndex].AsDouble());
     }
+    m_mapViewHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Categories"))
   {
     Aws::Utils::Array<JsonView> categoriesJsonList = jsonValue.GetArray("Categories");
@@ -96,8 +84,8 @@ GetPlaceResult& GetPlaceResult::operator =(const Aws::AmazonWebServiceResult<Jso
     {
       m_categories.push_back(categoriesJsonList[categoriesIndex].AsObject());
     }
+    m_categoriesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FoodTypes"))
   {
     Aws::Utils::Array<JsonView> foodTypesJsonList = jsonValue.GetArray("FoodTypes");
@@ -105,8 +93,8 @@ GetPlaceResult& GetPlaceResult::operator =(const Aws::AmazonWebServiceResult<Jso
     {
       m_foodTypes.push_back(foodTypesJsonList[foodTypesIndex].AsObject());
     }
+    m_foodTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BusinessChains"))
   {
     Aws::Utils::Array<JsonView> businessChainsJsonList = jsonValue.GetArray("BusinessChains");
@@ -114,14 +102,13 @@ GetPlaceResult& GetPlaceResult::operator =(const Aws::AmazonWebServiceResult<Jso
     {
       m_businessChains.push_back(businessChainsJsonList[businessChainsIndex].AsObject());
     }
+    m_businessChainsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Contacts"))
   {
     m_contacts = jsonValue.GetObject("Contacts");
-
+    m_contactsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OpeningHours"))
   {
     Aws::Utils::Array<JsonView> openingHoursJsonList = jsonValue.GetArray("OpeningHours");
@@ -129,8 +116,8 @@ GetPlaceResult& GetPlaceResult::operator =(const Aws::AmazonWebServiceResult<Jso
     {
       m_openingHours.push_back(openingHoursJsonList[openingHoursIndex].AsObject());
     }
+    m_openingHoursHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessPoints"))
   {
     Aws::Utils::Array<JsonView> accessPointsJsonList = jsonValue.GetArray("AccessPoints");
@@ -138,8 +125,8 @@ GetPlaceResult& GetPlaceResult::operator =(const Aws::AmazonWebServiceResult<Jso
     {
       m_accessPoints.push_back(accessPointsJsonList[accessPointsIndex].AsObject());
     }
+    m_accessPointsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccessRestrictions"))
   {
     Aws::Utils::Array<JsonView> accessRestrictionsJsonList = jsonValue.GetArray("AccessRestrictions");
@@ -147,38 +134,37 @@ GetPlaceResult& GetPlaceResult::operator =(const Aws::AmazonWebServiceResult<Jso
     {
       m_accessRestrictions.push_back(accessRestrictionsJsonList[accessRestrictionsIndex].AsObject());
     }
+    m_accessRestrictionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TimeZone"))
   {
     m_timeZone = jsonValue.GetObject("TimeZone");
-
+    m_timeZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PoliticalView"))
   {
     m_politicalView = jsonValue.GetString("PoliticalView");
-
+    m_politicalViewHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Phonemes"))
   {
     m_phonemes = jsonValue.GetObject("Phonemes");
-
+    m_phonemesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& pricingBucketIter = headers.find("x-amz-geo-pricing-bucket");
   if(pricingBucketIter != headers.end())
   {
     m_pricingBucket = pricingBucketIter->second;
+    m_pricingBucketHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

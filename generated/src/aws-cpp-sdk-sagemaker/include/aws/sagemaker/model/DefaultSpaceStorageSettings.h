@@ -31,7 +31,7 @@ namespace Model
   class DefaultSpaceStorageSettings
   {
   public:
-    AWS_SAGEMAKER_API DefaultSpaceStorageSettings();
+    AWS_SAGEMAKER_API DefaultSpaceStorageSettings() = default;
     AWS_SAGEMAKER_API DefaultSpaceStorageSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API DefaultSpaceStorageSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The default EBS storage settings for a space.</p>
      */
-    inline const DefaultEbsStorageSettings& GetDefaultEbsStorageSettings() const{ return m_defaultEbsStorageSettings; }
+    inline const DefaultEbsStorageSettings& GetDefaultEbsStorageSettings() const { return m_defaultEbsStorageSettings; }
     inline bool DefaultEbsStorageSettingsHasBeenSet() const { return m_defaultEbsStorageSettingsHasBeenSet; }
-    inline void SetDefaultEbsStorageSettings(const DefaultEbsStorageSettings& value) { m_defaultEbsStorageSettingsHasBeenSet = true; m_defaultEbsStorageSettings = value; }
-    inline void SetDefaultEbsStorageSettings(DefaultEbsStorageSettings&& value) { m_defaultEbsStorageSettingsHasBeenSet = true; m_defaultEbsStorageSettings = std::move(value); }
-    inline DefaultSpaceStorageSettings& WithDefaultEbsStorageSettings(const DefaultEbsStorageSettings& value) { SetDefaultEbsStorageSettings(value); return *this;}
-    inline DefaultSpaceStorageSettings& WithDefaultEbsStorageSettings(DefaultEbsStorageSettings&& value) { SetDefaultEbsStorageSettings(std::move(value)); return *this;}
+    template<typename DefaultEbsStorageSettingsT = DefaultEbsStorageSettings>
+    void SetDefaultEbsStorageSettings(DefaultEbsStorageSettingsT&& value) { m_defaultEbsStorageSettingsHasBeenSet = true; m_defaultEbsStorageSettings = std::forward<DefaultEbsStorageSettingsT>(value); }
+    template<typename DefaultEbsStorageSettingsT = DefaultEbsStorageSettings>
+    DefaultSpaceStorageSettings& WithDefaultEbsStorageSettings(DefaultEbsStorageSettingsT&& value) { SetDefaultEbsStorageSettings(std::forward<DefaultEbsStorageSettingsT>(value)); return *this;}
     ///@}
   private:
 

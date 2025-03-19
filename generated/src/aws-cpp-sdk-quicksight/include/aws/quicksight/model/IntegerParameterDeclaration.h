@@ -37,7 +37,7 @@ namespace Model
   class IntegerParameterDeclaration
   {
   public:
-    AWS_QUICKSIGHT_API IntegerParameterDeclaration();
+    AWS_QUICKSIGHT_API IntegerParameterDeclaration() = default;
     AWS_QUICKSIGHT_API IntegerParameterDeclaration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API IntegerParameterDeclaration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,26 +48,22 @@ namespace Model
      * <p>The value type determines whether the parameter is a single-value or
      * multi-value parameter.</p>
      */
-    inline const ParameterValueType& GetParameterValueType() const{ return m_parameterValueType; }
+    inline ParameterValueType GetParameterValueType() const { return m_parameterValueType; }
     inline bool ParameterValueTypeHasBeenSet() const { return m_parameterValueTypeHasBeenSet; }
-    inline void SetParameterValueType(const ParameterValueType& value) { m_parameterValueTypeHasBeenSet = true; m_parameterValueType = value; }
-    inline void SetParameterValueType(ParameterValueType&& value) { m_parameterValueTypeHasBeenSet = true; m_parameterValueType = std::move(value); }
-    inline IntegerParameterDeclaration& WithParameterValueType(const ParameterValueType& value) { SetParameterValueType(value); return *this;}
-    inline IntegerParameterDeclaration& WithParameterValueType(ParameterValueType&& value) { SetParameterValueType(std::move(value)); return *this;}
+    inline void SetParameterValueType(ParameterValueType value) { m_parameterValueTypeHasBeenSet = true; m_parameterValueType = value; }
+    inline IntegerParameterDeclaration& WithParameterValueType(ParameterValueType value) { SetParameterValueType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the parameter that is being declared.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline IntegerParameterDeclaration& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline IntegerParameterDeclaration& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline IntegerParameterDeclaration& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    IntegerParameterDeclaration& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,40 +71,40 @@ namespace Model
      * <p>The default values of a parameter. If the parameter is a single-value
      * parameter, a maximum of one default value can be provided.</p>
      */
-    inline const IntegerDefaultValues& GetDefaultValues() const{ return m_defaultValues; }
+    inline const IntegerDefaultValues& GetDefaultValues() const { return m_defaultValues; }
     inline bool DefaultValuesHasBeenSet() const { return m_defaultValuesHasBeenSet; }
-    inline void SetDefaultValues(const IntegerDefaultValues& value) { m_defaultValuesHasBeenSet = true; m_defaultValues = value; }
-    inline void SetDefaultValues(IntegerDefaultValues&& value) { m_defaultValuesHasBeenSet = true; m_defaultValues = std::move(value); }
-    inline IntegerParameterDeclaration& WithDefaultValues(const IntegerDefaultValues& value) { SetDefaultValues(value); return *this;}
-    inline IntegerParameterDeclaration& WithDefaultValues(IntegerDefaultValues&& value) { SetDefaultValues(std::move(value)); return *this;}
+    template<typename DefaultValuesT = IntegerDefaultValues>
+    void SetDefaultValues(DefaultValuesT&& value) { m_defaultValuesHasBeenSet = true; m_defaultValues = std::forward<DefaultValuesT>(value); }
+    template<typename DefaultValuesT = IntegerDefaultValues>
+    IntegerParameterDeclaration& WithDefaultValues(DefaultValuesT&& value) { SetDefaultValues(std::forward<DefaultValuesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A parameter declaration for the <code>Integer</code> data type.</p>
      */
-    inline const IntegerValueWhenUnsetConfiguration& GetValueWhenUnset() const{ return m_valueWhenUnset; }
+    inline const IntegerValueWhenUnsetConfiguration& GetValueWhenUnset() const { return m_valueWhenUnset; }
     inline bool ValueWhenUnsetHasBeenSet() const { return m_valueWhenUnsetHasBeenSet; }
-    inline void SetValueWhenUnset(const IntegerValueWhenUnsetConfiguration& value) { m_valueWhenUnsetHasBeenSet = true; m_valueWhenUnset = value; }
-    inline void SetValueWhenUnset(IntegerValueWhenUnsetConfiguration&& value) { m_valueWhenUnsetHasBeenSet = true; m_valueWhenUnset = std::move(value); }
-    inline IntegerParameterDeclaration& WithValueWhenUnset(const IntegerValueWhenUnsetConfiguration& value) { SetValueWhenUnset(value); return *this;}
-    inline IntegerParameterDeclaration& WithValueWhenUnset(IntegerValueWhenUnsetConfiguration&& value) { SetValueWhenUnset(std::move(value)); return *this;}
+    template<typename ValueWhenUnsetT = IntegerValueWhenUnsetConfiguration>
+    void SetValueWhenUnset(ValueWhenUnsetT&& value) { m_valueWhenUnsetHasBeenSet = true; m_valueWhenUnset = std::forward<ValueWhenUnsetT>(value); }
+    template<typename ValueWhenUnsetT = IntegerValueWhenUnsetConfiguration>
+    IntegerParameterDeclaration& WithValueWhenUnset(ValueWhenUnsetT&& value) { SetValueWhenUnset(std::forward<ValueWhenUnsetT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<MappedDataSetParameter>& GetMappedDataSetParameters() const{ return m_mappedDataSetParameters; }
+    inline const Aws::Vector<MappedDataSetParameter>& GetMappedDataSetParameters() const { return m_mappedDataSetParameters; }
     inline bool MappedDataSetParametersHasBeenSet() const { return m_mappedDataSetParametersHasBeenSet; }
-    inline void SetMappedDataSetParameters(const Aws::Vector<MappedDataSetParameter>& value) { m_mappedDataSetParametersHasBeenSet = true; m_mappedDataSetParameters = value; }
-    inline void SetMappedDataSetParameters(Aws::Vector<MappedDataSetParameter>&& value) { m_mappedDataSetParametersHasBeenSet = true; m_mappedDataSetParameters = std::move(value); }
-    inline IntegerParameterDeclaration& WithMappedDataSetParameters(const Aws::Vector<MappedDataSetParameter>& value) { SetMappedDataSetParameters(value); return *this;}
-    inline IntegerParameterDeclaration& WithMappedDataSetParameters(Aws::Vector<MappedDataSetParameter>&& value) { SetMappedDataSetParameters(std::move(value)); return *this;}
-    inline IntegerParameterDeclaration& AddMappedDataSetParameters(const MappedDataSetParameter& value) { m_mappedDataSetParametersHasBeenSet = true; m_mappedDataSetParameters.push_back(value); return *this; }
-    inline IntegerParameterDeclaration& AddMappedDataSetParameters(MappedDataSetParameter&& value) { m_mappedDataSetParametersHasBeenSet = true; m_mappedDataSetParameters.push_back(std::move(value)); return *this; }
+    template<typename MappedDataSetParametersT = Aws::Vector<MappedDataSetParameter>>
+    void SetMappedDataSetParameters(MappedDataSetParametersT&& value) { m_mappedDataSetParametersHasBeenSet = true; m_mappedDataSetParameters = std::forward<MappedDataSetParametersT>(value); }
+    template<typename MappedDataSetParametersT = Aws::Vector<MappedDataSetParameter>>
+    IntegerParameterDeclaration& WithMappedDataSetParameters(MappedDataSetParametersT&& value) { SetMappedDataSetParameters(std::forward<MappedDataSetParametersT>(value)); return *this;}
+    template<typename MappedDataSetParametersT = MappedDataSetParameter>
+    IntegerParameterDeclaration& AddMappedDataSetParameters(MappedDataSetParametersT&& value) { m_mappedDataSetParametersHasBeenSet = true; m_mappedDataSetParameters.emplace_back(std::forward<MappedDataSetParametersT>(value)); return *this; }
     ///@}
   private:
 
-    ParameterValueType m_parameterValueType;
+    ParameterValueType m_parameterValueType{ParameterValueType::NOT_SET};
     bool m_parameterValueTypeHasBeenSet = false;
 
     Aws::String m_name;

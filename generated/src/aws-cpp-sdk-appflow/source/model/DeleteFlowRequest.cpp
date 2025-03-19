@@ -12,13 +12,6 @@ using namespace Aws::Appflow::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFlowRequest::DeleteFlowRequest() : 
-    m_flowNameHasBeenSet(false),
-    m_forceDelete(false),
-    m_forceDeleteHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFlowRequest::SerializePayload() const
 {
   JsonValue payload;

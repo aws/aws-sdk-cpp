@@ -12,17 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateSnapshotScheduleRequest::UpdateSnapshotScheduleRequest() : 
-    m_volumeARNHasBeenSet(false),
-    m_startAt(0),
-    m_startAtHasBeenSet(false),
-    m_recurrenceInHours(0),
-    m_recurrenceInHoursHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSnapshotScheduleRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -32,7 +32,7 @@ namespace Model
   class DataLakeDatasetSchemaField
   {
   public:
-    AWS_SUPPLYCHAIN_API DataLakeDatasetSchemaField();
+    AWS_SUPPLYCHAIN_API DataLakeDatasetSchemaField() = default;
     AWS_SUPPLYCHAIN_API DataLakeDatasetSchemaField(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPLYCHAIN_API DataLakeDatasetSchemaField& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SUPPLYCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,33 +42,29 @@ namespace Model
     /**
      * <p>The dataset field name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline DataLakeDatasetSchemaField& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline DataLakeDatasetSchemaField& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline DataLakeDatasetSchemaField& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    DataLakeDatasetSchemaField& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The dataset field type.</p>
      */
-    inline const DataLakeDatasetSchemaFieldType& GetType() const{ return m_type; }
+    inline DataLakeDatasetSchemaFieldType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const DataLakeDatasetSchemaFieldType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(DataLakeDatasetSchemaFieldType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline DataLakeDatasetSchemaField& WithType(const DataLakeDatasetSchemaFieldType& value) { SetType(value); return *this;}
-    inline DataLakeDatasetSchemaField& WithType(DataLakeDatasetSchemaFieldType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(DataLakeDatasetSchemaFieldType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline DataLakeDatasetSchemaField& WithType(DataLakeDatasetSchemaFieldType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicate if the field is required or not.</p>
      */
-    inline bool GetIsRequired() const{ return m_isRequired; }
+    inline bool GetIsRequired() const { return m_isRequired; }
     inline bool IsRequiredHasBeenSet() const { return m_isRequiredHasBeenSet; }
     inline void SetIsRequired(bool value) { m_isRequiredHasBeenSet = true; m_isRequired = value; }
     inline DataLakeDatasetSchemaField& WithIsRequired(bool value) { SetIsRequired(value); return *this;}
@@ -78,10 +74,10 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    DataLakeDatasetSchemaFieldType m_type;
+    DataLakeDatasetSchemaFieldType m_type{DataLakeDatasetSchemaFieldType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    bool m_isRequired;
+    bool m_isRequired{false};
     bool m_isRequiredHasBeenSet = false;
   };
 

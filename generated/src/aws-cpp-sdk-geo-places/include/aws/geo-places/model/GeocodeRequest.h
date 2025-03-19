@@ -30,7 +30,7 @@ namespace Model
   class GeocodeRequest : public GeoPlacesRequest
   {
   public:
-    AWS_GEOPLACES_API GeocodeRequest();
+    AWS_GEOPLACES_API GeocodeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -48,31 +48,29 @@ namespace Model
      * <p>The free-form text query to match addresses against. This is usually a
      * partially typed address from an end user in an address box or form.</p>
      */
-    inline const Aws::String& GetQueryText() const{ return m_queryText; }
+    inline const Aws::String& GetQueryText() const { return m_queryText; }
     inline bool QueryTextHasBeenSet() const { return m_queryTextHasBeenSet; }
-    inline void SetQueryText(const Aws::String& value) { m_queryTextHasBeenSet = true; m_queryText = value; }
-    inline void SetQueryText(Aws::String&& value) { m_queryTextHasBeenSet = true; m_queryText = std::move(value); }
-    inline void SetQueryText(const char* value) { m_queryTextHasBeenSet = true; m_queryText.assign(value); }
-    inline GeocodeRequest& WithQueryText(const Aws::String& value) { SetQueryText(value); return *this;}
-    inline GeocodeRequest& WithQueryText(Aws::String&& value) { SetQueryText(std::move(value)); return *this;}
-    inline GeocodeRequest& WithQueryText(const char* value) { SetQueryText(value); return *this;}
+    template<typename QueryTextT = Aws::String>
+    void SetQueryText(QueryTextT&& value) { m_queryTextHasBeenSet = true; m_queryText = std::forward<QueryTextT>(value); }
+    template<typename QueryTextT = Aws::String>
+    GeocodeRequest& WithQueryText(QueryTextT&& value) { SetQueryText(std::forward<QueryTextT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const GeocodeQueryComponents& GetQueryComponents() const{ return m_queryComponents; }
+    inline const GeocodeQueryComponents& GetQueryComponents() const { return m_queryComponents; }
     inline bool QueryComponentsHasBeenSet() const { return m_queryComponentsHasBeenSet; }
-    inline void SetQueryComponents(const GeocodeQueryComponents& value) { m_queryComponentsHasBeenSet = true; m_queryComponents = value; }
-    inline void SetQueryComponents(GeocodeQueryComponents&& value) { m_queryComponentsHasBeenSet = true; m_queryComponents = std::move(value); }
-    inline GeocodeRequest& WithQueryComponents(const GeocodeQueryComponents& value) { SetQueryComponents(value); return *this;}
-    inline GeocodeRequest& WithQueryComponents(GeocodeQueryComponents&& value) { SetQueryComponents(std::move(value)); return *this;}
+    template<typename QueryComponentsT = GeocodeQueryComponents>
+    void SetQueryComponents(QueryComponentsT&& value) { m_queryComponentsHasBeenSet = true; m_queryComponents = std::forward<QueryComponentsT>(value); }
+    template<typename QueryComponentsT = GeocodeQueryComponents>
+    GeocodeRequest& WithQueryComponents(QueryComponentsT&& value) { SetQueryComponents(std::forward<QueryComponentsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An optional limit for the number of results returned in a single call.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline GeocodeRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -86,12 +84,12 @@ namespace Model
      * <p>The fields <code>BiasPosition</code>, <code>FilterBoundingBox</code>, and
      * <code>FilterCircle</code> are mutually exclusive.</p> 
      */
-    inline const Aws::Vector<double>& GetBiasPosition() const{ return m_biasPosition; }
+    inline const Aws::Vector<double>& GetBiasPosition() const { return m_biasPosition; }
     inline bool BiasPositionHasBeenSet() const { return m_biasPositionHasBeenSet; }
-    inline void SetBiasPosition(const Aws::Vector<double>& value) { m_biasPositionHasBeenSet = true; m_biasPosition = value; }
-    inline void SetBiasPosition(Aws::Vector<double>&& value) { m_biasPositionHasBeenSet = true; m_biasPosition = std::move(value); }
-    inline GeocodeRequest& WithBiasPosition(const Aws::Vector<double>& value) { SetBiasPosition(value); return *this;}
-    inline GeocodeRequest& WithBiasPosition(Aws::Vector<double>&& value) { SetBiasPosition(std::move(value)); return *this;}
+    template<typename BiasPositionT = Aws::Vector<double>>
+    void SetBiasPosition(BiasPositionT&& value) { m_biasPositionHasBeenSet = true; m_biasPosition = std::forward<BiasPositionT>(value); }
+    template<typename BiasPositionT = Aws::Vector<double>>
+    GeocodeRequest& WithBiasPosition(BiasPositionT&& value) { SetBiasPosition(std::forward<BiasPositionT>(value)); return *this;}
     inline GeocodeRequest& AddBiasPosition(double value) { m_biasPositionHasBeenSet = true; m_biasPosition.push_back(value); return *this; }
     ///@}
 
@@ -100,12 +98,12 @@ namespace Model
      * <p>A structure which contains a set of inclusion/exclusion properties that
      * results must posses in order to be returned as a result.</p>
      */
-    inline const GeocodeFilter& GetFilter() const{ return m_filter; }
+    inline const GeocodeFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const GeocodeFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(GeocodeFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline GeocodeRequest& WithFilter(const GeocodeFilter& value) { SetFilter(value); return *this;}
-    inline GeocodeRequest& WithFilter(GeocodeFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = GeocodeFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = GeocodeFilter>
+    GeocodeRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -113,14 +111,13 @@ namespace Model
      * <p>A list of optional additional parameters, such as time zone, that can be
      * requested for each result.</p>
      */
-    inline const Aws::Vector<GeocodeAdditionalFeature>& GetAdditionalFeatures() const{ return m_additionalFeatures; }
+    inline const Aws::Vector<GeocodeAdditionalFeature>& GetAdditionalFeatures() const { return m_additionalFeatures; }
     inline bool AdditionalFeaturesHasBeenSet() const { return m_additionalFeaturesHasBeenSet; }
-    inline void SetAdditionalFeatures(const Aws::Vector<GeocodeAdditionalFeature>& value) { m_additionalFeaturesHasBeenSet = true; m_additionalFeatures = value; }
-    inline void SetAdditionalFeatures(Aws::Vector<GeocodeAdditionalFeature>&& value) { m_additionalFeaturesHasBeenSet = true; m_additionalFeatures = std::move(value); }
-    inline GeocodeRequest& WithAdditionalFeatures(const Aws::Vector<GeocodeAdditionalFeature>& value) { SetAdditionalFeatures(value); return *this;}
-    inline GeocodeRequest& WithAdditionalFeatures(Aws::Vector<GeocodeAdditionalFeature>&& value) { SetAdditionalFeatures(std::move(value)); return *this;}
-    inline GeocodeRequest& AddAdditionalFeatures(const GeocodeAdditionalFeature& value) { m_additionalFeaturesHasBeenSet = true; m_additionalFeatures.push_back(value); return *this; }
-    inline GeocodeRequest& AddAdditionalFeatures(GeocodeAdditionalFeature&& value) { m_additionalFeaturesHasBeenSet = true; m_additionalFeatures.push_back(std::move(value)); return *this; }
+    template<typename AdditionalFeaturesT = Aws::Vector<GeocodeAdditionalFeature>>
+    void SetAdditionalFeatures(AdditionalFeaturesT&& value) { m_additionalFeaturesHasBeenSet = true; m_additionalFeatures = std::forward<AdditionalFeaturesT>(value); }
+    template<typename AdditionalFeaturesT = Aws::Vector<GeocodeAdditionalFeature>>
+    GeocodeRequest& WithAdditionalFeatures(AdditionalFeaturesT&& value) { SetAdditionalFeatures(std::forward<AdditionalFeaturesT>(value)); return *this;}
+    inline GeocodeRequest& AddAdditionalFeatures(GeocodeAdditionalFeature value) { m_additionalFeaturesHasBeenSet = true; m_additionalFeatures.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -130,14 +127,12 @@ namespace Model
      * no data for the result in the requested language, data will be returned in the
      * default language for the entry.</p>
      */
-    inline const Aws::String& GetLanguage() const{ return m_language; }
+    inline const Aws::String& GetLanguage() const { return m_language; }
     inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
-    inline void SetLanguage(const Aws::String& value) { m_languageHasBeenSet = true; m_language = value; }
-    inline void SetLanguage(Aws::String&& value) { m_languageHasBeenSet = true; m_language = std::move(value); }
-    inline void SetLanguage(const char* value) { m_languageHasBeenSet = true; m_language.assign(value); }
-    inline GeocodeRequest& WithLanguage(const Aws::String& value) { SetLanguage(value); return *this;}
-    inline GeocodeRequest& WithLanguage(Aws::String&& value) { SetLanguage(std::move(value)); return *this;}
-    inline GeocodeRequest& WithLanguage(const char* value) { SetLanguage(value); return *this;}
+    template<typename LanguageT = Aws::String>
+    void SetLanguage(LanguageT&& value) { m_languageHasBeenSet = true; m_language = std::forward<LanguageT>(value); }
+    template<typename LanguageT = Aws::String>
+    GeocodeRequest& WithLanguage(LanguageT&& value) { SetLanguage(std::forward<LanguageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -146,14 +141,12 @@ namespace Model
      * The political view applies to the results of the request to represent unresolved
      * territorial claims through the point of view of the specified country.</p>
      */
-    inline const Aws::String& GetPoliticalView() const{ return m_politicalView; }
+    inline const Aws::String& GetPoliticalView() const { return m_politicalView; }
     inline bool PoliticalViewHasBeenSet() const { return m_politicalViewHasBeenSet; }
-    inline void SetPoliticalView(const Aws::String& value) { m_politicalViewHasBeenSet = true; m_politicalView = value; }
-    inline void SetPoliticalView(Aws::String&& value) { m_politicalViewHasBeenSet = true; m_politicalView = std::move(value); }
-    inline void SetPoliticalView(const char* value) { m_politicalViewHasBeenSet = true; m_politicalView.assign(value); }
-    inline GeocodeRequest& WithPoliticalView(const Aws::String& value) { SetPoliticalView(value); return *this;}
-    inline GeocodeRequest& WithPoliticalView(Aws::String&& value) { SetPoliticalView(std::move(value)); return *this;}
-    inline GeocodeRequest& WithPoliticalView(const char* value) { SetPoliticalView(value); return *this;}
+    template<typename PoliticalViewT = Aws::String>
+    void SetPoliticalView(PoliticalViewT&& value) { m_politicalViewHasBeenSet = true; m_politicalView = std::forward<PoliticalViewT>(value); }
+    template<typename PoliticalViewT = Aws::String>
+    GeocodeRequest& WithPoliticalView(PoliticalViewT&& value) { SetPoliticalView(std::forward<PoliticalViewT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -161,12 +154,10 @@ namespace Model
      * <p>Indicates if the results will be stored. Defaults to <code>SingleUse</code>,
      * if left empty.</p>
      */
-    inline const GeocodeIntendedUse& GetIntendedUse() const{ return m_intendedUse; }
+    inline GeocodeIntendedUse GetIntendedUse() const { return m_intendedUse; }
     inline bool IntendedUseHasBeenSet() const { return m_intendedUseHasBeenSet; }
-    inline void SetIntendedUse(const GeocodeIntendedUse& value) { m_intendedUseHasBeenSet = true; m_intendedUse = value; }
-    inline void SetIntendedUse(GeocodeIntendedUse&& value) { m_intendedUseHasBeenSet = true; m_intendedUse = std::move(value); }
-    inline GeocodeRequest& WithIntendedUse(const GeocodeIntendedUse& value) { SetIntendedUse(value); return *this;}
-    inline GeocodeRequest& WithIntendedUse(GeocodeIntendedUse&& value) { SetIntendedUse(std::move(value)); return *this;}
+    inline void SetIntendedUse(GeocodeIntendedUse value) { m_intendedUseHasBeenSet = true; m_intendedUse = value; }
+    inline GeocodeRequest& WithIntendedUse(GeocodeIntendedUse value) { SetIntendedUse(value); return *this;}
     ///@}
 
     ///@{
@@ -174,14 +165,12 @@ namespace Model
      * <p>Optional: The API key to be used for authorization. Either an API key or
      * valid SigV4 signature must be provided when making a request.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline GeocodeRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline GeocodeRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline GeocodeRequest& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    GeocodeRequest& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
   private:
 
@@ -191,7 +180,7 @@ namespace Model
     GeocodeQueryComponents m_queryComponents;
     bool m_queryComponentsHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::Vector<double> m_biasPosition;
@@ -209,7 +198,7 @@ namespace Model
     Aws::String m_politicalView;
     bool m_politicalViewHasBeenSet = false;
 
-    GeocodeIntendedUse m_intendedUse;
+    GeocodeIntendedUse m_intendedUse{GeocodeIntendedUse::NOT_SET};
     bool m_intendedUseHasBeenSet = false;
 
     Aws::String m_key;

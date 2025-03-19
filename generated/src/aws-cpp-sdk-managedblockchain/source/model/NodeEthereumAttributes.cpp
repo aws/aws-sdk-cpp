@@ -18,14 +18,7 @@ namespace ManagedBlockchain
 namespace Model
 {
 
-NodeEthereumAttributes::NodeEthereumAttributes() : 
-    m_httpEndpointHasBeenSet(false),
-    m_webSocketEndpointHasBeenSet(false)
-{
-}
-
 NodeEthereumAttributes::NodeEthereumAttributes(JsonView jsonValue)
-  : NodeEthereumAttributes()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ NodeEthereumAttributes& NodeEthereumAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("HttpEndpoint"))
   {
     m_httpEndpoint = jsonValue.GetString("HttpEndpoint");
-
     m_httpEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WebSocketEndpoint"))
   {
     m_webSocketEndpoint = jsonValue.GetString("WebSocketEndpoint");
-
     m_webSocketEndpointHasBeenSet = true;
   }
-
   return *this;
 }
 

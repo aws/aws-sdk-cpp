@@ -12,11 +12,6 @@ using namespace Aws::S3Tables::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteTableBucketPolicyRequest::DeleteTableBucketPolicyRequest() : 
-    m_tableBucketARNHasBeenSet(false)
-{
-}
-
 Aws::String DeleteTableBucketPolicyRequest::SerializePayload() const
 {
   return {};

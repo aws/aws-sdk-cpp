@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetWorkflowResult::GetWorkflowResult() : 
-    m_runMode(WorkflowRunMode::NOT_SET),
-    m_status(WorkflowStatus::NOT_SET)
-{
-}
-
 GetWorkflowResult::GetWorkflowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetWorkflowResult()
 {
   *this = result;
 }
@@ -35,75 +28,65 @@ GetWorkflowResult& GetWorkflowResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("spaceName"))
   {
     m_spaceName = jsonValue.GetString("spaceName");
-
+    m_spaceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("projectName"))
   {
     m_projectName = jsonValue.GetString("projectName");
-
+    m_projectNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceRepositoryName"))
   {
     m_sourceRepositoryName = jsonValue.GetString("sourceRepositoryName");
-
+    m_sourceRepositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceBranchName"))
   {
     m_sourceBranchName = jsonValue.GetString("sourceBranchName");
-
+    m_sourceBranchNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("definition"))
   {
     m_definition = jsonValue.GetObject("definition");
-
+    m_definitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTime"))
   {
     m_createdTime = jsonValue.GetString("createdTime");
-
+    m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetString("lastUpdatedTime");
-
+    m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("runMode"))
   {
     m_runMode = WorkflowRunModeMapper::GetWorkflowRunModeForName(jsonValue.GetString("runMode"));
-
+    m_runModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = WorkflowStatusMapper::GetWorkflowStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

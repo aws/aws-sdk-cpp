@@ -18,16 +18,7 @@ namespace CodeStarNotifications
 namespace Model
 {
 
-EventTypeSummary::EventTypeSummary() : 
-    m_eventTypeIdHasBeenSet(false),
-    m_serviceNameHasBeenSet(false),
-    m_eventTypeNameHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 EventTypeSummary::EventTypeSummary(JsonView jsonValue)
-  : EventTypeSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ EventTypeSummary& EventTypeSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EventTypeId"))
   {
     m_eventTypeId = jsonValue.GetString("EventTypeId");
-
     m_eventTypeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceName"))
   {
     m_serviceName = jsonValue.GetString("ServiceName");
-
     m_serviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventTypeName"))
   {
     m_eventTypeName = jsonValue.GetString("EventTypeName");
-
     m_eventTypeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = jsonValue.GetString("ResourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

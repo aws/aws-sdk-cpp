@@ -31,7 +31,7 @@ namespace Model
   class StartCisSessionMessage
   {
   public:
-    AWS_INSPECTOR2_API StartCisSessionMessage();
+    AWS_INSPECTOR2_API StartCisSessionMessage() = default;
     AWS_INSPECTOR2_API StartCisSessionMessage(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API StartCisSessionMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_INSPECTOR2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The unique token that identifies the CIS session.</p>
      */
-    inline const Aws::String& GetSessionToken() const{ return m_sessionToken; }
+    inline const Aws::String& GetSessionToken() const { return m_sessionToken; }
     inline bool SessionTokenHasBeenSet() const { return m_sessionTokenHasBeenSet; }
-    inline void SetSessionToken(const Aws::String& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = value; }
-    inline void SetSessionToken(Aws::String&& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = std::move(value); }
-    inline void SetSessionToken(const char* value) { m_sessionTokenHasBeenSet = true; m_sessionToken.assign(value); }
-    inline StartCisSessionMessage& WithSessionToken(const Aws::String& value) { SetSessionToken(value); return *this;}
-    inline StartCisSessionMessage& WithSessionToken(Aws::String&& value) { SetSessionToken(std::move(value)); return *this;}
-    inline StartCisSessionMessage& WithSessionToken(const char* value) { SetSessionToken(value); return *this;}
+    template<typename SessionTokenT = Aws::String>
+    void SetSessionToken(SessionTokenT&& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = std::forward<SessionTokenT>(value); }
+    template<typename SessionTokenT = Aws::String>
+    StartCisSessionMessage& WithSessionToken(SessionTokenT&& value) { SetSessionToken(std::forward<SessionTokenT>(value)); return *this;}
     ///@}
   private:
 

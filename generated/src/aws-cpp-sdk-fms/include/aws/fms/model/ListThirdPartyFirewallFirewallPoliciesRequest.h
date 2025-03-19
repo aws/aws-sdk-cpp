@@ -22,7 +22,7 @@ namespace Model
   class ListThirdPartyFirewallFirewallPoliciesRequest : public FMSRequest
   {
   public:
-    AWS_FMS_API ListThirdPartyFirewallFirewallPoliciesRequest();
+    AWS_FMS_API ListThirdPartyFirewallFirewallPoliciesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,12 +39,10 @@ namespace Model
     /**
      * <p>The name of the third-party firewall vendor.</p>
      */
-    inline const ThirdPartyFirewall& GetThirdPartyFirewall() const{ return m_thirdPartyFirewall; }
+    inline ThirdPartyFirewall GetThirdPartyFirewall() const { return m_thirdPartyFirewall; }
     inline bool ThirdPartyFirewallHasBeenSet() const { return m_thirdPartyFirewallHasBeenSet; }
-    inline void SetThirdPartyFirewall(const ThirdPartyFirewall& value) { m_thirdPartyFirewallHasBeenSet = true; m_thirdPartyFirewall = value; }
-    inline void SetThirdPartyFirewall(ThirdPartyFirewall&& value) { m_thirdPartyFirewallHasBeenSet = true; m_thirdPartyFirewall = std::move(value); }
-    inline ListThirdPartyFirewallFirewallPoliciesRequest& WithThirdPartyFirewall(const ThirdPartyFirewall& value) { SetThirdPartyFirewall(value); return *this;}
-    inline ListThirdPartyFirewallFirewallPoliciesRequest& WithThirdPartyFirewall(ThirdPartyFirewall&& value) { SetThirdPartyFirewall(std::move(value)); return *this;}
+    inline void SetThirdPartyFirewall(ThirdPartyFirewall value) { m_thirdPartyFirewallHasBeenSet = true; m_thirdPartyFirewall = value; }
+    inline ListThirdPartyFirewallFirewallPoliciesRequest& WithThirdPartyFirewall(ThirdPartyFirewall value) { SetThirdPartyFirewall(value); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <code>NextToken</code> element, there are no more third-party firewall policies
      * to get. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListThirdPartyFirewallFirewallPoliciesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListThirdPartyFirewallFirewallPoliciesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListThirdPartyFirewallFirewallPoliciesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListThirdPartyFirewallFirewallPoliciesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,20 +73,20 @@ namespace Model
      * token that identifies the first third-party firewall policies that Firewall
      * Manager will return if you submit another request.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListThirdPartyFirewallFirewallPoliciesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
     ///@}
   private:
 
-    ThirdPartyFirewall m_thirdPartyFirewall;
+    ThirdPartyFirewall m_thirdPartyFirewall{ThirdPartyFirewall::NOT_SET};
     bool m_thirdPartyFirewallHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

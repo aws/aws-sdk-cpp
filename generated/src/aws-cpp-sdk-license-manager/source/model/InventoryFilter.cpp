@@ -18,16 +18,7 @@ namespace LicenseManager
 namespace Model
 {
 
-InventoryFilter::InventoryFilter() : 
-    m_nameHasBeenSet(false),
-    m_condition(InventoryFilterCondition::NOT_SET),
-    m_conditionHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 InventoryFilter::InventoryFilter(JsonView jsonValue)
-  : InventoryFilter()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ InventoryFilter& InventoryFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Condition"))
   {
     m_condition = InventoryFilterConditionMapper::GetInventoryFilterConditionForName(jsonValue.GetString("Condition"));
-
     m_conditionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

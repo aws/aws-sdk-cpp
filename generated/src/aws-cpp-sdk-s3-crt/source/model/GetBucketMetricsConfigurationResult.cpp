@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketMetricsConfigurationResult::GetBucketMetricsConfigurationResult()
-{
-}
-
 GetBucketMetricsConfigurationResult::GetBucketMetricsConfigurationResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -33,6 +29,7 @@ GetBucketMetricsConfigurationResult& GetBucketMetricsConfigurationResult::operat
   if(!resultNode.IsNull())
   {
     m_metricsConfiguration = resultNode;
+    m_metricsConfigurationHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();
@@ -40,6 +37,7 @@ GetBucketMetricsConfigurationResult& GetBucketMetricsConfigurationResult::operat
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListTagsForResourceResult::ListTagsForResourceResult()
-{
-}
-
 ListTagsForResourceResult::ListTagsForResourceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ ListTagsForResourceResult& ListTagsForResourceResult::operator =(const Aws::Amaz
     if(!resourceArnNode.IsNull())
     {
       m_resourceArn = Aws::Utils::Xml::DecodeEscapedXmlText(resourceArnNode.GetText());
+      m_resourceArnHasBeenSet = true;
     }
     XmlNode resourceTagsNode = resultNode.FirstChild("ResourceTags");
     if(!resourceTagsNode.IsNull())
     {
       XmlNode resourceTagsMember = resourceTagsNode.FirstChild("member");
+      m_resourceTagsHasBeenSet = !resourceTagsMember.IsNull();
       while(!resourceTagsMember.IsNull())
       {
         m_resourceTags.push_back(resourceTagsMember);
         resourceTagsMember = resourceTagsMember.NextNode("member");
       }
 
+      m_resourceTagsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticBeanstalk::Model::ListTagsForResourceResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

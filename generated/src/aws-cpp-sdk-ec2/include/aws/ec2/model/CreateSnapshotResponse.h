@@ -40,7 +40,7 @@ namespace Model
   class CreateSnapshotResponse
   {
   public:
-    AWS_EC2_API CreateSnapshotResponse();
+    AWS_EC2_API CreateSnapshotResponse() = default;
     AWS_EC2_API CreateSnapshotResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API CreateSnapshotResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -51,13 +51,11 @@ namespace Model
      * (<code>amazon</code>). This is not the user-configured Amazon Web Services
      * account alias set using the IAM console.</p>
      */
-    inline const Aws::String& GetOwnerAlias() const{ return m_ownerAlias; }
-    inline void SetOwnerAlias(const Aws::String& value) { m_ownerAlias = value; }
-    inline void SetOwnerAlias(Aws::String&& value) { m_ownerAlias = std::move(value); }
-    inline void SetOwnerAlias(const char* value) { m_ownerAlias.assign(value); }
-    inline CreateSnapshotResponse& WithOwnerAlias(const Aws::String& value) { SetOwnerAlias(value); return *this;}
-    inline CreateSnapshotResponse& WithOwnerAlias(Aws::String&& value) { SetOwnerAlias(std::move(value)); return *this;}
-    inline CreateSnapshotResponse& WithOwnerAlias(const char* value) { SetOwnerAlias(value); return *this;}
+    inline const Aws::String& GetOwnerAlias() const { return m_ownerAlias; }
+    template<typename OwnerAliasT = Aws::String>
+    void SetOwnerAlias(OwnerAliasT&& value) { m_ownerAliasHasBeenSet = true; m_ownerAlias = std::forward<OwnerAliasT>(value); }
+    template<typename OwnerAliasT = Aws::String>
+    CreateSnapshotResponse& WithOwnerAlias(OwnerAliasT&& value) { SetOwnerAlias(std::forward<OwnerAliasT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,26 +65,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/ebs/latest/userguide/snapshots-outposts.html">Amazon
      * EBS local snapshots on Outposts</a> in the <i>Amazon EBS User Guide</i>.</p>
      */
-    inline const Aws::String& GetOutpostArn() const{ return m_outpostArn; }
-    inline void SetOutpostArn(const Aws::String& value) { m_outpostArn = value; }
-    inline void SetOutpostArn(Aws::String&& value) { m_outpostArn = std::move(value); }
-    inline void SetOutpostArn(const char* value) { m_outpostArn.assign(value); }
-    inline CreateSnapshotResponse& WithOutpostArn(const Aws::String& value) { SetOutpostArn(value); return *this;}
-    inline CreateSnapshotResponse& WithOutpostArn(Aws::String&& value) { SetOutpostArn(std::move(value)); return *this;}
-    inline CreateSnapshotResponse& WithOutpostArn(const char* value) { SetOutpostArn(value); return *this;}
+    inline const Aws::String& GetOutpostArn() const { return m_outpostArn; }
+    template<typename OutpostArnT = Aws::String>
+    void SetOutpostArn(OutpostArnT&& value) { m_outpostArnHasBeenSet = true; m_outpostArn = std::forward<OutpostArnT>(value); }
+    template<typename OutpostArnT = Aws::String>
+    CreateSnapshotResponse& WithOutpostArn(OutpostArnT&& value) { SetOutpostArn(std::forward<OutpostArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Any tags assigned to the snapshot.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
-    inline CreateSnapshotResponse& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateSnapshotResponse& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateSnapshotResponse& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
-    inline CreateSnapshotResponse& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateSnapshotResponse& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateSnapshotResponse& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -96,11 +92,9 @@ namespace Model
      * that it is ready for use. <code>archive</code> indicates that the snapshot is
      * currently archived and that it must be restored before it can be used.</p>
      */
-    inline const StorageTier& GetStorageTier() const{ return m_storageTier; }
-    inline void SetStorageTier(const StorageTier& value) { m_storageTier = value; }
-    inline void SetStorageTier(StorageTier&& value) { m_storageTier = std::move(value); }
-    inline CreateSnapshotResponse& WithStorageTier(const StorageTier& value) { SetStorageTier(value); return *this;}
-    inline CreateSnapshotResponse& WithStorageTier(StorageTier&& value) { SetStorageTier(std::move(value)); return *this;}
+    inline StorageTier GetStorageTier() const { return m_storageTier; }
+    inline void SetStorageTier(StorageTier value) { m_storageTierHasBeenSet = true; m_storageTier = value; }
+    inline CreateSnapshotResponse& WithStorageTier(StorageTier value) { SetStorageTier(value); return *this;}
     ///@}
 
     ///@{
@@ -109,22 +103,20 @@ namespace Model
      * and time when a temporarily restored snapshot will be automatically
      * re-archived.</p>
      */
-    inline const Aws::Utils::DateTime& GetRestoreExpiryTime() const{ return m_restoreExpiryTime; }
-    inline void SetRestoreExpiryTime(const Aws::Utils::DateTime& value) { m_restoreExpiryTime = value; }
-    inline void SetRestoreExpiryTime(Aws::Utils::DateTime&& value) { m_restoreExpiryTime = std::move(value); }
-    inline CreateSnapshotResponse& WithRestoreExpiryTime(const Aws::Utils::DateTime& value) { SetRestoreExpiryTime(value); return *this;}
-    inline CreateSnapshotResponse& WithRestoreExpiryTime(Aws::Utils::DateTime&& value) { SetRestoreExpiryTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetRestoreExpiryTime() const { return m_restoreExpiryTime; }
+    template<typename RestoreExpiryTimeT = Aws::Utils::DateTime>
+    void SetRestoreExpiryTime(RestoreExpiryTimeT&& value) { m_restoreExpiryTimeHasBeenSet = true; m_restoreExpiryTime = std::forward<RestoreExpiryTimeT>(value); }
+    template<typename RestoreExpiryTimeT = Aws::Utils::DateTime>
+    CreateSnapshotResponse& WithRestoreExpiryTime(RestoreExpiryTimeT&& value) { SetRestoreExpiryTime(std::forward<RestoreExpiryTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Reserved for future use.</p>
      */
-    inline const SSEType& GetSseType() const{ return m_sseType; }
-    inline void SetSseType(const SSEType& value) { m_sseType = value; }
-    inline void SetSseType(SSEType&& value) { m_sseType = std::move(value); }
-    inline CreateSnapshotResponse& WithSseType(const SSEType& value) { SetSseType(value); return *this;}
-    inline CreateSnapshotResponse& WithSseType(SSEType&& value) { SetSseType(std::move(value)); return *this;}
+    inline SSEType GetSseType() const { return m_sseType; }
+    inline void SetSseType(SSEType value) { m_sseTypeHasBeenSet = true; m_sseType = value; }
+    inline CreateSnapshotResponse& WithSseType(SSEType value) { SetSseType(value); return *this;}
     ///@}
 
     ///@{
@@ -133,13 +125,11 @@ namespace Model
      * <code>us-west-1a</code> (Availability Zone) or <code>us-west-2-lax-1a</code>
      * (Local Zone).</p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZone.assign(value); }
-    inline CreateSnapshotResponse& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline CreateSnapshotResponse& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline CreateSnapshotResponse& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    CreateSnapshotResponse& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,11 +143,9 @@ namespace Model
      * <code>time-based</code> - The snapshot copy was created with a time-based
      * snapshot copy operation.</p> </li> </ul>
      */
-    inline const TransferType& GetTransferType() const{ return m_transferType; }
-    inline void SetTransferType(const TransferType& value) { m_transferType = value; }
-    inline void SetTransferType(TransferType&& value) { m_transferType = std::move(value); }
-    inline CreateSnapshotResponse& WithTransferType(const TransferType& value) { SetTransferType(value); return *this;}
-    inline CreateSnapshotResponse& WithTransferType(TransferType&& value) { SetTransferType(std::move(value)); return *this;}
+    inline TransferType GetTransferType() const { return m_transferType; }
+    inline void SetTransferType(TransferType value) { m_transferTypeHasBeenSet = true; m_transferType = value; }
+    inline CreateSnapshotResponse& WithTransferType(TransferType value) { SetTransferType(value); return *this;}
     ///@}
 
     ///@{
@@ -166,8 +154,8 @@ namespace Model
      * operations.</p>  <p>The completion duration requested for the time-based
      * snapshot copy operation.</p>
      */
-    inline int GetCompletionDurationMinutes() const{ return m_completionDurationMinutes; }
-    inline void SetCompletionDurationMinutes(int value) { m_completionDurationMinutes = value; }
+    inline int GetCompletionDurationMinutes() const { return m_completionDurationMinutes; }
+    inline void SetCompletionDurationMinutes(int value) { m_completionDurationMinutesHasBeenSet = true; m_completionDurationMinutes = value; }
     inline CreateSnapshotResponse& WithCompletionDurationMinutes(int value) { SetCompletionDurationMinutes(value); return *this;}
     ///@}
 
@@ -175,11 +163,11 @@ namespace Model
     /**
      * <p>The time stamp when the snapshot was completed.</p>
      */
-    inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
-    inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTime = value; }
-    inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTime = std::move(value); }
-    inline CreateSnapshotResponse& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
-    inline CreateSnapshotResponse& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCompletionTime() const { return m_completionTime; }
+    template<typename CompletionTimeT = Aws::Utils::DateTime>
+    void SetCompletionTime(CompletionTimeT&& value) { m_completionTimeHasBeenSet = true; m_completionTime = std::forward<CompletionTimeT>(value); }
+    template<typename CompletionTimeT = Aws::Utils::DateTime>
+    CreateSnapshotResponse& WithCompletionTime(CompletionTimeT&& value) { SetCompletionTime(std::forward<CompletionTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -189,8 +177,8 @@ namespace Model
      * and represents the size of all the blocks that were written to the source volume
      * at the time the snapshot was created.</p> 
      */
-    inline long long GetFullSnapshotSizeInBytes() const{ return m_fullSnapshotSizeInBytes; }
-    inline void SetFullSnapshotSizeInBytes(long long value) { m_fullSnapshotSizeInBytes = value; }
+    inline long long GetFullSnapshotSizeInBytes() const { return m_fullSnapshotSizeInBytes; }
+    inline void SetFullSnapshotSizeInBytes(long long value) { m_fullSnapshotSizeInBytesHasBeenSet = true; m_fullSnapshotSizeInBytes = value; }
     inline CreateSnapshotResponse& WithFullSnapshotSizeInBytes(long long value) { SetFullSnapshotSizeInBytes(value); return *this;}
     ///@}
 
@@ -199,13 +187,11 @@ namespace Model
      * <p>The ID of the snapshot. Each snapshot receives a unique identifier when it is
      * created.</p>
      */
-    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
-    inline void SetSnapshotId(const Aws::String& value) { m_snapshotId = value; }
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotId = std::move(value); }
-    inline void SetSnapshotId(const char* value) { m_snapshotId.assign(value); }
-    inline CreateSnapshotResponse& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-    inline CreateSnapshotResponse& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-    inline CreateSnapshotResponse& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+    inline const Aws::String& GetSnapshotId() const { return m_snapshotId; }
+    template<typename SnapshotIdT = Aws::String>
+    void SetSnapshotId(SnapshotIdT&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::forward<SnapshotIdT>(value); }
+    template<typename SnapshotIdT = Aws::String>
+    CreateSnapshotResponse& WithSnapshotId(SnapshotIdT&& value) { SetSnapshotId(std::forward<SnapshotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -214,24 +200,20 @@ namespace Model
      * by the <a>CopySnapshot</a> action have an arbitrary volume ID that should not be
      * used for any purpose.</p>
      */
-    inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
-    inline void SetVolumeId(const Aws::String& value) { m_volumeId = value; }
-    inline void SetVolumeId(Aws::String&& value) { m_volumeId = std::move(value); }
-    inline void SetVolumeId(const char* value) { m_volumeId.assign(value); }
-    inline CreateSnapshotResponse& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
-    inline CreateSnapshotResponse& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
-    inline CreateSnapshotResponse& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
+    inline const Aws::String& GetVolumeId() const { return m_volumeId; }
+    template<typename VolumeIdT = Aws::String>
+    void SetVolumeId(VolumeIdT&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::forward<VolumeIdT>(value); }
+    template<typename VolumeIdT = Aws::String>
+    CreateSnapshotResponse& WithVolumeId(VolumeIdT&& value) { SetVolumeId(std::forward<VolumeIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The snapshot state.</p>
      */
-    inline const SnapshotState& GetState() const{ return m_state; }
-    inline void SetState(const SnapshotState& value) { m_state = value; }
-    inline void SetState(SnapshotState&& value) { m_state = std::move(value); }
-    inline CreateSnapshotResponse& WithState(const SnapshotState& value) { SetState(value); return *this;}
-    inline CreateSnapshotResponse& WithState(SnapshotState&& value) { SetState(std::move(value)); return *this;}
+    inline SnapshotState GetState() const { return m_state; }
+    inline void SetState(SnapshotState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline CreateSnapshotResponse& WithState(SnapshotState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
@@ -241,71 +223,63 @@ namespace Model
      * this field displays error state details to help you diagnose why the error
      * occurred. This parameter is only returned by <a>DescribeSnapshots</a>.</p>
      */
-    inline const Aws::String& GetStateMessage() const{ return m_stateMessage; }
-    inline void SetStateMessage(const Aws::String& value) { m_stateMessage = value; }
-    inline void SetStateMessage(Aws::String&& value) { m_stateMessage = std::move(value); }
-    inline void SetStateMessage(const char* value) { m_stateMessage.assign(value); }
-    inline CreateSnapshotResponse& WithStateMessage(const Aws::String& value) { SetStateMessage(value); return *this;}
-    inline CreateSnapshotResponse& WithStateMessage(Aws::String&& value) { SetStateMessage(std::move(value)); return *this;}
-    inline CreateSnapshotResponse& WithStateMessage(const char* value) { SetStateMessage(value); return *this;}
+    inline const Aws::String& GetStateMessage() const { return m_stateMessage; }
+    template<typename StateMessageT = Aws::String>
+    void SetStateMessage(StateMessageT&& value) { m_stateMessageHasBeenSet = true; m_stateMessage = std::forward<StateMessageT>(value); }
+    template<typename StateMessageT = Aws::String>
+    CreateSnapshotResponse& WithStateMessage(StateMessageT&& value) { SetStateMessage(std::forward<StateMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time stamp when the snapshot was initiated.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTime = std::move(value); }
-    inline CreateSnapshotResponse& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline CreateSnapshotResponse& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    CreateSnapshotResponse& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The progress of the snapshot, as a percentage.</p>
      */
-    inline const Aws::String& GetProgress() const{ return m_progress; }
-    inline void SetProgress(const Aws::String& value) { m_progress = value; }
-    inline void SetProgress(Aws::String&& value) { m_progress = std::move(value); }
-    inline void SetProgress(const char* value) { m_progress.assign(value); }
-    inline CreateSnapshotResponse& WithProgress(const Aws::String& value) { SetProgress(value); return *this;}
-    inline CreateSnapshotResponse& WithProgress(Aws::String&& value) { SetProgress(std::move(value)); return *this;}
-    inline CreateSnapshotResponse& WithProgress(const char* value) { SetProgress(value); return *this;}
+    inline const Aws::String& GetProgress() const { return m_progress; }
+    template<typename ProgressT = Aws::String>
+    void SetProgress(ProgressT&& value) { m_progressHasBeenSet = true; m_progress = std::forward<ProgressT>(value); }
+    template<typename ProgressT = Aws::String>
+    CreateSnapshotResponse& WithProgress(ProgressT&& value) { SetProgress(std::forward<ProgressT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the Amazon Web Services account that owns the EBS snapshot.</p>
      */
-    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
-    inline void SetOwnerId(const Aws::String& value) { m_ownerId = value; }
-    inline void SetOwnerId(Aws::String&& value) { m_ownerId = std::move(value); }
-    inline void SetOwnerId(const char* value) { m_ownerId.assign(value); }
-    inline CreateSnapshotResponse& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
-    inline CreateSnapshotResponse& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
-    inline CreateSnapshotResponse& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+    inline const Aws::String& GetOwnerId() const { return m_ownerId; }
+    template<typename OwnerIdT = Aws::String>
+    void SetOwnerId(OwnerIdT&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::forward<OwnerIdT>(value); }
+    template<typename OwnerIdT = Aws::String>
+    CreateSnapshotResponse& WithOwnerId(OwnerIdT&& value) { SetOwnerId(std::forward<OwnerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description for the snapshot.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline CreateSnapshotResponse& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateSnapshotResponse& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateSnapshotResponse& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateSnapshotResponse& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The size of the volume, in GiB.</p>
      */
-    inline int GetVolumeSize() const{ return m_volumeSize; }
-    inline void SetVolumeSize(int value) { m_volumeSize = value; }
+    inline int GetVolumeSize() const { return m_volumeSize; }
+    inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
     inline CreateSnapshotResponse& WithVolumeSize(int value) { SetVolumeSize(value); return *this;}
     ///@}
 
@@ -313,8 +287,8 @@ namespace Model
     /**
      * <p>Indicates whether the snapshot is encrypted.</p>
      */
-    inline bool GetEncrypted() const{ return m_encrypted; }
-    inline void SetEncrypted(bool value) { m_encrypted = value; }
+    inline bool GetEncrypted() const { return m_encrypted; }
+    inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
     inline CreateSnapshotResponse& WithEncrypted(bool value) { SetEncrypted(value); return *this;}
     ///@}
 
@@ -323,13 +297,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the KMS key that was used to protect the
      * volume encryption key for the parent volume.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
-    inline CreateSnapshotResponse& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline CreateSnapshotResponse& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline CreateSnapshotResponse& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    CreateSnapshotResponse& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -341,72 +313,94 @@ namespace Model
      * data encryption key identifier, then they belong to the same volume/snapshot
      * lineage. This parameter is only returned by <a>DescribeSnapshots</a>.</p>
      */
-    inline const Aws::String& GetDataEncryptionKeyId() const{ return m_dataEncryptionKeyId; }
-    inline void SetDataEncryptionKeyId(const Aws::String& value) { m_dataEncryptionKeyId = value; }
-    inline void SetDataEncryptionKeyId(Aws::String&& value) { m_dataEncryptionKeyId = std::move(value); }
-    inline void SetDataEncryptionKeyId(const char* value) { m_dataEncryptionKeyId.assign(value); }
-    inline CreateSnapshotResponse& WithDataEncryptionKeyId(const Aws::String& value) { SetDataEncryptionKeyId(value); return *this;}
-    inline CreateSnapshotResponse& WithDataEncryptionKeyId(Aws::String&& value) { SetDataEncryptionKeyId(std::move(value)); return *this;}
-    inline CreateSnapshotResponse& WithDataEncryptionKeyId(const char* value) { SetDataEncryptionKeyId(value); return *this;}
+    inline const Aws::String& GetDataEncryptionKeyId() const { return m_dataEncryptionKeyId; }
+    template<typename DataEncryptionKeyIdT = Aws::String>
+    void SetDataEncryptionKeyId(DataEncryptionKeyIdT&& value) { m_dataEncryptionKeyIdHasBeenSet = true; m_dataEncryptionKeyId = std::forward<DataEncryptionKeyIdT>(value); }
+    template<typename DataEncryptionKeyIdT = Aws::String>
+    CreateSnapshotResponse& WithDataEncryptionKeyId(DataEncryptionKeyIdT&& value) { SetDataEncryptionKeyId(std::forward<DataEncryptionKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline CreateSnapshotResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline CreateSnapshotResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    CreateSnapshotResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_ownerAlias;
+    bool m_ownerAliasHasBeenSet = false;
 
     Aws::String m_outpostArn;
+    bool m_outpostArnHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
 
-    StorageTier m_storageTier;
+    StorageTier m_storageTier{StorageTier::NOT_SET};
+    bool m_storageTierHasBeenSet = false;
 
-    Aws::Utils::DateTime m_restoreExpiryTime;
+    Aws::Utils::DateTime m_restoreExpiryTime{};
+    bool m_restoreExpiryTimeHasBeenSet = false;
 
-    SSEType m_sseType;
+    SSEType m_sseType{SSEType::NOT_SET};
+    bool m_sseTypeHasBeenSet = false;
 
     Aws::String m_availabilityZone;
+    bool m_availabilityZoneHasBeenSet = false;
 
-    TransferType m_transferType;
+    TransferType m_transferType{TransferType::NOT_SET};
+    bool m_transferTypeHasBeenSet = false;
 
-    int m_completionDurationMinutes;
+    int m_completionDurationMinutes{0};
+    bool m_completionDurationMinutesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_completionTime;
+    Aws::Utils::DateTime m_completionTime{};
+    bool m_completionTimeHasBeenSet = false;
 
-    long long m_fullSnapshotSizeInBytes;
+    long long m_fullSnapshotSizeInBytes{0};
+    bool m_fullSnapshotSizeInBytesHasBeenSet = false;
 
     Aws::String m_snapshotId;
+    bool m_snapshotIdHasBeenSet = false;
 
     Aws::String m_volumeId;
+    bool m_volumeIdHasBeenSet = false;
 
-    SnapshotState m_state;
+    SnapshotState m_state{SnapshotState::NOT_SET};
+    bool m_stateHasBeenSet = false;
 
     Aws::String m_stateMessage;
+    bool m_stateMessageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
+    bool m_startTimeHasBeenSet = false;
 
     Aws::String m_progress;
+    bool m_progressHasBeenSet = false;
 
     Aws::String m_ownerId;
+    bool m_ownerIdHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
-    int m_volumeSize;
+    int m_volumeSize{0};
+    bool m_volumeSizeHasBeenSet = false;
 
-    bool m_encrypted;
+    bool m_encrypted{false};
+    bool m_encryptedHasBeenSet = false;
 
     Aws::String m_kmsKeyId;
+    bool m_kmsKeyIdHasBeenSet = false;
 
     Aws::String m_dataEncryptionKeyId;
+    bool m_dataEncryptionKeyIdHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

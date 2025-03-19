@@ -12,13 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateInstanceSnapshotRequest::CreateInstanceSnapshotRequest() : 
-    m_instanceSnapshotNameHasBeenSet(false),
-    m_instanceNameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateInstanceSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

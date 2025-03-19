@@ -12,12 +12,6 @@ using namespace Aws::CustomerProfiles::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetProfileObjectTypeRequest::GetProfileObjectTypeRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_objectTypeNameHasBeenSet(false)
-{
-}
-
 Aws::String GetProfileObjectTypeRequest::SerializePayload() const
 {
   return {};

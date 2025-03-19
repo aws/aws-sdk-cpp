@@ -18,14 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-VectorEnrichmentJobS3Data::VectorEnrichmentJobS3Data() : 
-    m_kmsKeyIdHasBeenSet(false),
-    m_s3UriHasBeenSet(false)
-{
-}
-
 VectorEnrichmentJobS3Data::VectorEnrichmentJobS3Data(JsonView jsonValue)
-  : VectorEnrichmentJobS3Data()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ VectorEnrichmentJobS3Data& VectorEnrichmentJobS3Data::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Uri"))
   {
     m_s3Uri = jsonValue.GetString("S3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

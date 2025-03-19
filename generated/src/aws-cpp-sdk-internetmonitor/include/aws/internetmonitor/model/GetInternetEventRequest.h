@@ -21,7 +21,7 @@ namespace Model
   class GetInternetEventRequest : public InternetMonitorRequest
   {
   public:
-    AWS_INTERNETMONITOR_API GetInternetEventRequest();
+    AWS_INTERNETMONITOR_API GetInternetEventRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The <code>EventId</code> of the internet event to return information for.
      * </p>
      */
-    inline const Aws::String& GetEventId() const{ return m_eventId; }
+    inline const Aws::String& GetEventId() const { return m_eventId; }
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
-    inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
-    inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
-    inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
-    inline GetInternetEventRequest& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
-    inline GetInternetEventRequest& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
-    inline GetInternetEventRequest& WithEventId(const char* value) { SetEventId(value); return *this;}
+    template<typename EventIdT = Aws::String>
+    void SetEventId(EventIdT&& value) { m_eventIdHasBeenSet = true; m_eventId = std::forward<EventIdT>(value); }
+    template<typename EventIdT = Aws::String>
+    GetInternetEventRequest& WithEventId(EventIdT&& value) { SetEventId(std::forward<EventIdT>(value)); return *this;}
     ///@}
   private:
 

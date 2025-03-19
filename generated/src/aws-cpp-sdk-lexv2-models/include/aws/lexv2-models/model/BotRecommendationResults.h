@@ -34,7 +34,7 @@ namespace Model
   class BotRecommendationResults
   {
   public:
-    AWS_LEXMODELSV2_API BotRecommendationResults();
+    AWS_LEXMODELSV2_API BotRecommendationResults() = default;
     AWS_LEXMODELSV2_API BotRecommendationResults(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API BotRecommendationResults& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,40 +44,36 @@ namespace Model
     /**
      * <p>The presigned URL link of the recommended bot definition.</p>
      */
-    inline const Aws::String& GetBotLocaleExportUrl() const{ return m_botLocaleExportUrl; }
+    inline const Aws::String& GetBotLocaleExportUrl() const { return m_botLocaleExportUrl; }
     inline bool BotLocaleExportUrlHasBeenSet() const { return m_botLocaleExportUrlHasBeenSet; }
-    inline void SetBotLocaleExportUrl(const Aws::String& value) { m_botLocaleExportUrlHasBeenSet = true; m_botLocaleExportUrl = value; }
-    inline void SetBotLocaleExportUrl(Aws::String&& value) { m_botLocaleExportUrlHasBeenSet = true; m_botLocaleExportUrl = std::move(value); }
-    inline void SetBotLocaleExportUrl(const char* value) { m_botLocaleExportUrlHasBeenSet = true; m_botLocaleExportUrl.assign(value); }
-    inline BotRecommendationResults& WithBotLocaleExportUrl(const Aws::String& value) { SetBotLocaleExportUrl(value); return *this;}
-    inline BotRecommendationResults& WithBotLocaleExportUrl(Aws::String&& value) { SetBotLocaleExportUrl(std::move(value)); return *this;}
-    inline BotRecommendationResults& WithBotLocaleExportUrl(const char* value) { SetBotLocaleExportUrl(value); return *this;}
+    template<typename BotLocaleExportUrlT = Aws::String>
+    void SetBotLocaleExportUrl(BotLocaleExportUrlT&& value) { m_botLocaleExportUrlHasBeenSet = true; m_botLocaleExportUrl = std::forward<BotLocaleExportUrlT>(value); }
+    template<typename BotLocaleExportUrlT = Aws::String>
+    BotRecommendationResults& WithBotLocaleExportUrl(BotLocaleExportUrlT&& value) { SetBotLocaleExportUrl(std::forward<BotLocaleExportUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The presigned url link of the associated transcript.</p>
      */
-    inline const Aws::String& GetAssociatedTranscriptsUrl() const{ return m_associatedTranscriptsUrl; }
+    inline const Aws::String& GetAssociatedTranscriptsUrl() const { return m_associatedTranscriptsUrl; }
     inline bool AssociatedTranscriptsUrlHasBeenSet() const { return m_associatedTranscriptsUrlHasBeenSet; }
-    inline void SetAssociatedTranscriptsUrl(const Aws::String& value) { m_associatedTranscriptsUrlHasBeenSet = true; m_associatedTranscriptsUrl = value; }
-    inline void SetAssociatedTranscriptsUrl(Aws::String&& value) { m_associatedTranscriptsUrlHasBeenSet = true; m_associatedTranscriptsUrl = std::move(value); }
-    inline void SetAssociatedTranscriptsUrl(const char* value) { m_associatedTranscriptsUrlHasBeenSet = true; m_associatedTranscriptsUrl.assign(value); }
-    inline BotRecommendationResults& WithAssociatedTranscriptsUrl(const Aws::String& value) { SetAssociatedTranscriptsUrl(value); return *this;}
-    inline BotRecommendationResults& WithAssociatedTranscriptsUrl(Aws::String&& value) { SetAssociatedTranscriptsUrl(std::move(value)); return *this;}
-    inline BotRecommendationResults& WithAssociatedTranscriptsUrl(const char* value) { SetAssociatedTranscriptsUrl(value); return *this;}
+    template<typename AssociatedTranscriptsUrlT = Aws::String>
+    void SetAssociatedTranscriptsUrl(AssociatedTranscriptsUrlT&& value) { m_associatedTranscriptsUrlHasBeenSet = true; m_associatedTranscriptsUrl = std::forward<AssociatedTranscriptsUrlT>(value); }
+    template<typename AssociatedTranscriptsUrlT = Aws::String>
+    BotRecommendationResults& WithAssociatedTranscriptsUrl(AssociatedTranscriptsUrlT&& value) { SetAssociatedTranscriptsUrl(std::forward<AssociatedTranscriptsUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The statistical summary of the bot recommendation results.</p>
      */
-    inline const BotRecommendationResultStatistics& GetStatistics() const{ return m_statistics; }
+    inline const BotRecommendationResultStatistics& GetStatistics() const { return m_statistics; }
     inline bool StatisticsHasBeenSet() const { return m_statisticsHasBeenSet; }
-    inline void SetStatistics(const BotRecommendationResultStatistics& value) { m_statisticsHasBeenSet = true; m_statistics = value; }
-    inline void SetStatistics(BotRecommendationResultStatistics&& value) { m_statisticsHasBeenSet = true; m_statistics = std::move(value); }
-    inline BotRecommendationResults& WithStatistics(const BotRecommendationResultStatistics& value) { SetStatistics(value); return *this;}
-    inline BotRecommendationResults& WithStatistics(BotRecommendationResultStatistics&& value) { SetStatistics(std::move(value)); return *this;}
+    template<typename StatisticsT = BotRecommendationResultStatistics>
+    void SetStatistics(StatisticsT&& value) { m_statisticsHasBeenSet = true; m_statistics = std::forward<StatisticsT>(value); }
+    template<typename StatisticsT = BotRecommendationResultStatistics>
+    BotRecommendationResults& WithStatistics(StatisticsT&& value) { SetStatistics(std::forward<StatisticsT>(value)); return *this;}
     ///@}
   private:
 

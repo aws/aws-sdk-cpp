@@ -36,7 +36,7 @@ namespace Model
   class DescribedWebApp
   {
   public:
-    AWS_TRANSFER_API DescribedWebApp();
+    AWS_TRANSFER_API DescribedWebApp() = default;
     AWS_TRANSFER_API DescribedWebApp(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API DescribedWebApp& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the web app.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline DescribedWebApp& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline DescribedWebApp& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline DescribedWebApp& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    DescribedWebApp& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the web app.</p>
      */
-    inline const Aws::String& GetWebAppId() const{ return m_webAppId; }
+    inline const Aws::String& GetWebAppId() const { return m_webAppId; }
     inline bool WebAppIdHasBeenSet() const { return m_webAppIdHasBeenSet; }
-    inline void SetWebAppId(const Aws::String& value) { m_webAppIdHasBeenSet = true; m_webAppId = value; }
-    inline void SetWebAppId(Aws::String&& value) { m_webAppIdHasBeenSet = true; m_webAppId = std::move(value); }
-    inline void SetWebAppId(const char* value) { m_webAppIdHasBeenSet = true; m_webAppId.assign(value); }
-    inline DescribedWebApp& WithWebAppId(const Aws::String& value) { SetWebAppId(value); return *this;}
-    inline DescribedWebApp& WithWebAppId(Aws::String&& value) { SetWebAppId(std::move(value)); return *this;}
-    inline DescribedWebApp& WithWebAppId(const char* value) { SetWebAppId(value); return *this;}
+    template<typename WebAppIdT = Aws::String>
+    void SetWebAppId(WebAppIdT&& value) { m_webAppIdHasBeenSet = true; m_webAppId = std::forward<WebAppIdT>(value); }
+    template<typename WebAppIdT = Aws::String>
+    DescribedWebApp& WithWebAppId(WebAppIdT&& value) { SetWebAppId(std::forward<WebAppIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +71,12 @@ namespace Model
      * <p>A structure that contains the details for the identity provider used by the
      * web app.</p>
      */
-    inline const DescribedWebAppIdentityProviderDetails& GetDescribedIdentityProviderDetails() const{ return m_describedIdentityProviderDetails; }
+    inline const DescribedWebAppIdentityProviderDetails& GetDescribedIdentityProviderDetails() const { return m_describedIdentityProviderDetails; }
     inline bool DescribedIdentityProviderDetailsHasBeenSet() const { return m_describedIdentityProviderDetailsHasBeenSet; }
-    inline void SetDescribedIdentityProviderDetails(const DescribedWebAppIdentityProviderDetails& value) { m_describedIdentityProviderDetailsHasBeenSet = true; m_describedIdentityProviderDetails = value; }
-    inline void SetDescribedIdentityProviderDetails(DescribedWebAppIdentityProviderDetails&& value) { m_describedIdentityProviderDetailsHasBeenSet = true; m_describedIdentityProviderDetails = std::move(value); }
-    inline DescribedWebApp& WithDescribedIdentityProviderDetails(const DescribedWebAppIdentityProviderDetails& value) { SetDescribedIdentityProviderDetails(value); return *this;}
-    inline DescribedWebApp& WithDescribedIdentityProviderDetails(DescribedWebAppIdentityProviderDetails&& value) { SetDescribedIdentityProviderDetails(std::move(value)); return *this;}
+    template<typename DescribedIdentityProviderDetailsT = DescribedWebAppIdentityProviderDetails>
+    void SetDescribedIdentityProviderDetails(DescribedIdentityProviderDetailsT&& value) { m_describedIdentityProviderDetailsHasBeenSet = true; m_describedIdentityProviderDetails = std::forward<DescribedIdentityProviderDetailsT>(value); }
+    template<typename DescribedIdentityProviderDetailsT = DescribedWebAppIdentityProviderDetails>
+    DescribedWebApp& WithDescribedIdentityProviderDetails(DescribedIdentityProviderDetailsT&& value) { SetDescribedIdentityProviderDetails(std::forward<DescribedIdentityProviderDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +85,12 @@ namespace Model
      * them to interact with the Transfer Family web app. You can specify a custom URL
      * or use the default value.</p>
      */
-    inline const Aws::String& GetAccessEndpoint() const{ return m_accessEndpoint; }
+    inline const Aws::String& GetAccessEndpoint() const { return m_accessEndpoint; }
     inline bool AccessEndpointHasBeenSet() const { return m_accessEndpointHasBeenSet; }
-    inline void SetAccessEndpoint(const Aws::String& value) { m_accessEndpointHasBeenSet = true; m_accessEndpoint = value; }
-    inline void SetAccessEndpoint(Aws::String&& value) { m_accessEndpointHasBeenSet = true; m_accessEndpoint = std::move(value); }
-    inline void SetAccessEndpoint(const char* value) { m_accessEndpointHasBeenSet = true; m_accessEndpoint.assign(value); }
-    inline DescribedWebApp& WithAccessEndpoint(const Aws::String& value) { SetAccessEndpoint(value); return *this;}
-    inline DescribedWebApp& WithAccessEndpoint(Aws::String&& value) { SetAccessEndpoint(std::move(value)); return *this;}
-    inline DescribedWebApp& WithAccessEndpoint(const char* value) { SetAccessEndpoint(value); return *this;}
+    template<typename AccessEndpointT = Aws::String>
+    void SetAccessEndpoint(AccessEndpointT&& value) { m_accessEndpointHasBeenSet = true; m_accessEndpoint = std::forward<AccessEndpointT>(value); }
+    template<typename AccessEndpointT = Aws::String>
+    DescribedWebApp& WithAccessEndpoint(AccessEndpointT&& value) { SetAccessEndpoint(std::forward<AccessEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +99,12 @@ namespace Model
      * web app. This is the value that you use when you configure <b>Origins</b> on
      * CloudFront.</p>
      */
-    inline const Aws::String& GetWebAppEndpoint() const{ return m_webAppEndpoint; }
+    inline const Aws::String& GetWebAppEndpoint() const { return m_webAppEndpoint; }
     inline bool WebAppEndpointHasBeenSet() const { return m_webAppEndpointHasBeenSet; }
-    inline void SetWebAppEndpoint(const Aws::String& value) { m_webAppEndpointHasBeenSet = true; m_webAppEndpoint = value; }
-    inline void SetWebAppEndpoint(Aws::String&& value) { m_webAppEndpointHasBeenSet = true; m_webAppEndpoint = std::move(value); }
-    inline void SetWebAppEndpoint(const char* value) { m_webAppEndpointHasBeenSet = true; m_webAppEndpoint.assign(value); }
-    inline DescribedWebApp& WithWebAppEndpoint(const Aws::String& value) { SetWebAppEndpoint(value); return *this;}
-    inline DescribedWebApp& WithWebAppEndpoint(Aws::String&& value) { SetWebAppEndpoint(std::move(value)); return *this;}
-    inline DescribedWebApp& WithWebAppEndpoint(const char* value) { SetWebAppEndpoint(value); return *this;}
+    template<typename WebAppEndpointT = Aws::String>
+    void SetWebAppEndpoint(WebAppEndpointT&& value) { m_webAppEndpointHasBeenSet = true; m_webAppEndpoint = std::forward<WebAppEndpointT>(value); }
+    template<typename WebAppEndpointT = Aws::String>
+    DescribedWebApp& WithWebAppEndpoint(WebAppEndpointT&& value) { SetWebAppEndpoint(std::forward<WebAppEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,12 +112,12 @@ namespace Model
      * <p>A union that contains the value for number of concurrent connections or the
      * user sessions on your web app.</p>
      */
-    inline const WebAppUnits& GetWebAppUnits() const{ return m_webAppUnits; }
+    inline const WebAppUnits& GetWebAppUnits() const { return m_webAppUnits; }
     inline bool WebAppUnitsHasBeenSet() const { return m_webAppUnitsHasBeenSet; }
-    inline void SetWebAppUnits(const WebAppUnits& value) { m_webAppUnitsHasBeenSet = true; m_webAppUnits = value; }
-    inline void SetWebAppUnits(WebAppUnits&& value) { m_webAppUnitsHasBeenSet = true; m_webAppUnits = std::move(value); }
-    inline DescribedWebApp& WithWebAppUnits(const WebAppUnits& value) { SetWebAppUnits(value); return *this;}
-    inline DescribedWebApp& WithWebAppUnits(WebAppUnits&& value) { SetWebAppUnits(std::move(value)); return *this;}
+    template<typename WebAppUnitsT = WebAppUnits>
+    void SetWebAppUnits(WebAppUnitsT&& value) { m_webAppUnitsHasBeenSet = true; m_webAppUnits = std::forward<WebAppUnitsT>(value); }
+    template<typename WebAppUnitsT = WebAppUnits>
+    DescribedWebApp& WithWebAppUnits(WebAppUnitsT&& value) { SetWebAppUnits(std::forward<WebAppUnitsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,14 +125,14 @@ namespace Model
      * <p>Key-value pairs that can be used to group and search for web apps. Tags are
      * metadata attached to web apps for any purpose.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline DescribedWebApp& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline DescribedWebApp& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline DescribedWebApp& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline DescribedWebApp& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    DescribedWebApp& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    DescribedWebApp& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 

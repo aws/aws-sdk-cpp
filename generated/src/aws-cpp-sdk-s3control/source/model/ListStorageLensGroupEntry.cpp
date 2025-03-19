@@ -20,15 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-ListStorageLensGroupEntry::ListStorageLensGroupEntry() : 
-    m_nameHasBeenSet(false),
-    m_storageLensGroupArnHasBeenSet(false),
-    m_homeRegionHasBeenSet(false)
-{
-}
-
 ListStorageLensGroupEntry::ListStorageLensGroupEntry(const XmlNode& xmlNode)
-  : ListStorageLensGroupEntry()
 {
   *this = xmlNode;
 }

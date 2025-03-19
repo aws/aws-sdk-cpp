@@ -30,7 +30,7 @@ namespace Model
   class GetExportRequest : public APIGatewayRequest
   {
   public:
-    AWS_APIGATEWAY_API GetExportRequest();
+    AWS_APIGATEWAY_API GetExportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -49,28 +49,24 @@ namespace Model
     /**
      * <p>The string identifier of the associated RestApi.</p>
      */
-    inline const Aws::String& GetRestApiId() const{ return m_restApiId; }
+    inline const Aws::String& GetRestApiId() const { return m_restApiId; }
     inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
-    inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
-    inline void SetRestApiId(Aws::String&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::move(value); }
-    inline void SetRestApiId(const char* value) { m_restApiIdHasBeenSet = true; m_restApiId.assign(value); }
-    inline GetExportRequest& WithRestApiId(const Aws::String& value) { SetRestApiId(value); return *this;}
-    inline GetExportRequest& WithRestApiId(Aws::String&& value) { SetRestApiId(std::move(value)); return *this;}
-    inline GetExportRequest& WithRestApiId(const char* value) { SetRestApiId(value); return *this;}
+    template<typename RestApiIdT = Aws::String>
+    void SetRestApiId(RestApiIdT&& value) { m_restApiIdHasBeenSet = true; m_restApiId = std::forward<RestApiIdT>(value); }
+    template<typename RestApiIdT = Aws::String>
+    GetExportRequest& WithRestApiId(RestApiIdT&& value) { SetRestApiId(std::forward<RestApiIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Stage that will be exported.</p>
      */
-    inline const Aws::String& GetStageName() const{ return m_stageName; }
+    inline const Aws::String& GetStageName() const { return m_stageName; }
     inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
-    inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
-    inline void SetStageName(Aws::String&& value) { m_stageNameHasBeenSet = true; m_stageName = std::move(value); }
-    inline void SetStageName(const char* value) { m_stageNameHasBeenSet = true; m_stageName.assign(value); }
-    inline GetExportRequest& WithStageName(const Aws::String& value) { SetStageName(value); return *this;}
-    inline GetExportRequest& WithStageName(Aws::String&& value) { SetStageName(std::move(value)); return *this;}
-    inline GetExportRequest& WithStageName(const char* value) { SetStageName(value); return *this;}
+    template<typename StageNameT = Aws::String>
+    void SetStageName(StageNameT&& value) { m_stageNameHasBeenSet = true; m_stageName = std::forward<StageNameT>(value); }
+    template<typename StageNameT = Aws::String>
+    GetExportRequest& WithStageName(StageNameT&& value) { SetStageName(std::forward<StageNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,14 +74,12 @@ namespace Model
      * <p>The type of export. Acceptable values are 'oas30' for OpenAPI 3.0.x and
      * 'swagger' for Swagger/OpenAPI 2.0.</p>
      */
-    inline const Aws::String& GetExportType() const{ return m_exportType; }
+    inline const Aws::String& GetExportType() const { return m_exportType; }
     inline bool ExportTypeHasBeenSet() const { return m_exportTypeHasBeenSet; }
-    inline void SetExportType(const Aws::String& value) { m_exportTypeHasBeenSet = true; m_exportType = value; }
-    inline void SetExportType(Aws::String&& value) { m_exportTypeHasBeenSet = true; m_exportType = std::move(value); }
-    inline void SetExportType(const char* value) { m_exportTypeHasBeenSet = true; m_exportType.assign(value); }
-    inline GetExportRequest& WithExportType(const Aws::String& value) { SetExportType(value); return *this;}
-    inline GetExportRequest& WithExportType(Aws::String&& value) { SetExportType(std::move(value)); return *this;}
-    inline GetExportRequest& WithExportType(const char* value) { SetExportType(value); return *this;}
+    template<typename ExportTypeT = Aws::String>
+    void SetExportType(ExportTypeT&& value) { m_exportTypeHasBeenSet = true; m_exportType = std::forward<ExportTypeT>(value); }
+    template<typename ExportTypeT = Aws::String>
+    GetExportRequest& WithExportType(ExportTypeT&& value) { SetExportType(std::forward<ExportTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,19 +94,16 @@ namespace Model
      * x-amazon-apigateway-authorizer extensions. <code>postman</code> will export the
      * API with Postman extensions, allowing for import to the Postman tool</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const { return m_parameters; }
     inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-    inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-    inline GetExportRequest& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
-    inline GetExportRequest& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
-    inline GetExportRequest& AddParameters(const Aws::String& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
-    inline GetExportRequest& AddParameters(Aws::String&& key, const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline GetExportRequest& AddParameters(const Aws::String& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline GetExportRequest& AddParameters(Aws::String&& key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetExportRequest& AddParameters(const char* key, Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, std::move(value)); return *this; }
-    inline GetExportRequest& AddParameters(Aws::String&& key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(std::move(key), value); return *this; }
-    inline GetExportRequest& AddParameters(const char* key, const char* value) { m_parametersHasBeenSet = true; m_parameters.emplace(key, value); return *this; }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    GetExportRequest& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = Aws::String>
+    GetExportRequest& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -123,14 +114,12 @@ namespace Model
      * <code>swagger</code>. This should be specified in the <code>Accept</code> header
      * for direct API requests.</p>
      */
-    inline const Aws::String& GetAccepts() const{ return m_accepts; }
+    inline const Aws::String& GetAccepts() const { return m_accepts; }
     inline bool AcceptsHasBeenSet() const { return m_acceptsHasBeenSet; }
-    inline void SetAccepts(const Aws::String& value) { m_acceptsHasBeenSet = true; m_accepts = value; }
-    inline void SetAccepts(Aws::String&& value) { m_acceptsHasBeenSet = true; m_accepts = std::move(value); }
-    inline void SetAccepts(const char* value) { m_acceptsHasBeenSet = true; m_accepts.assign(value); }
-    inline GetExportRequest& WithAccepts(const Aws::String& value) { SetAccepts(value); return *this;}
-    inline GetExportRequest& WithAccepts(Aws::String&& value) { SetAccepts(std::move(value)); return *this;}
-    inline GetExportRequest& WithAccepts(const char* value) { SetAccepts(value); return *this;}
+    template<typename AcceptsT = Aws::String>
+    void SetAccepts(AcceptsT&& value) { m_acceptsHasBeenSet = true; m_accepts = std::forward<AcceptsT>(value); }
+    template<typename AcceptsT = Aws::String>
+    GetExportRequest& WithAccepts(AcceptsT&& value) { SetAccepts(std::forward<AcceptsT>(value)); return *this;}
     ///@}
   private:
 

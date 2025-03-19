@@ -21,7 +21,7 @@ namespace Model
   class GetIdentityProviderByIdentifierRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API GetIdentityProviderByIdentifierRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API GetIdentityProviderByIdentifierRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID of the user pool where you want to get information about the IdP.</p>
      */
-    inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+    inline const Aws::String& GetUserPoolId() const { return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-    inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-    inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-    inline GetIdentityProviderByIdentifierRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-    inline GetIdentityProviderByIdentifierRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-    inline GetIdentityProviderByIdentifierRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    template<typename UserPoolIdT = Aws::String>
+    void SetUserPoolId(UserPoolIdT&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::forward<UserPoolIdT>(value); }
+    template<typename UserPoolIdT = Aws::String>
+    GetIdentityProviderByIdentifierRequest& WithUserPoolId(UserPoolIdT&& value) { SetUserPoolId(std::forward<UserPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * IdP with a name of <code>MyIdP</code> might have an identifier of the email
      * domain <code>example.com</code>.</p>
      */
-    inline const Aws::String& GetIdpIdentifier() const{ return m_idpIdentifier; }
+    inline const Aws::String& GetIdpIdentifier() const { return m_idpIdentifier; }
     inline bool IdpIdentifierHasBeenSet() const { return m_idpIdentifierHasBeenSet; }
-    inline void SetIdpIdentifier(const Aws::String& value) { m_idpIdentifierHasBeenSet = true; m_idpIdentifier = value; }
-    inline void SetIdpIdentifier(Aws::String&& value) { m_idpIdentifierHasBeenSet = true; m_idpIdentifier = std::move(value); }
-    inline void SetIdpIdentifier(const char* value) { m_idpIdentifierHasBeenSet = true; m_idpIdentifier.assign(value); }
-    inline GetIdentityProviderByIdentifierRequest& WithIdpIdentifier(const Aws::String& value) { SetIdpIdentifier(value); return *this;}
-    inline GetIdentityProviderByIdentifierRequest& WithIdpIdentifier(Aws::String&& value) { SetIdpIdentifier(std::move(value)); return *this;}
-    inline GetIdentityProviderByIdentifierRequest& WithIdpIdentifier(const char* value) { SetIdpIdentifier(value); return *this;}
+    template<typename IdpIdentifierT = Aws::String>
+    void SetIdpIdentifier(IdpIdentifierT&& value) { m_idpIdentifierHasBeenSet = true; m_idpIdentifier = std::forward<IdpIdentifierT>(value); }
+    template<typename IdpIdentifierT = Aws::String>
+    GetIdentityProviderByIdentifierRequest& WithIdpIdentifier(IdpIdentifierT&& value) { SetIdpIdentifier(std::forward<IdpIdentifierT>(value)); return *this;}
     ///@}
   private:
 

@@ -10,13 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-PutRolePolicyRequest::PutRolePolicyRequest() : 
-    m_roleNameHasBeenSet(false),
-    m_policyNameHasBeenSet(false),
-    m_policyDocumentHasBeenSet(false)
-{
-}
-
 Aws::String PutRolePolicyRequest::SerializePayload() const
 {
   Aws::StringStream ss;

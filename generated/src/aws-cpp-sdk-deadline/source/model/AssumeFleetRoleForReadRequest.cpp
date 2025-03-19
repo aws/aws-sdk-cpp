@@ -12,12 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssumeFleetRoleForReadRequest::AssumeFleetRoleForReadRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_fleetIdHasBeenSet(false)
-{
-}
-
 Aws::String AssumeFleetRoleForReadRequest::SerializePayload() const
 {
   return {};

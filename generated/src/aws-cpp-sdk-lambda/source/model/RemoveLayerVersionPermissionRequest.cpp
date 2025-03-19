@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-RemoveLayerVersionPermissionRequest::RemoveLayerVersionPermissionRequest() : 
-    m_layerNameHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false),
-    m_statementIdHasBeenSet(false),
-    m_revisionIdHasBeenSet(false)
-{
-}
-
 Aws::String RemoveLayerVersionPermissionRequest::SerializePayload() const
 {
   return {};

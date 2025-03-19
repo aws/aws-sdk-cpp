@@ -23,7 +23,7 @@ namespace Model
   class DisableAwsNetworkPerformanceMetricSubscriptionRequest : public EC2Request
   {
   public:
-    AWS_EC2_API DisableAwsNetworkPerformanceMetricSubscriptionRequest();
+    AWS_EC2_API DisableAwsNetworkPerformanceMetricSubscriptionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p>The source Region or Availability Zone that the metric subscription is
      * disabled for. For example, <code>us-east-1</code>.</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline DisableAwsNetworkPerformanceMetricSubscriptionRequest& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline DisableAwsNetworkPerformanceMetricSubscriptionRequest& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline DisableAwsNetworkPerformanceMetricSubscriptionRequest& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    DisableAwsNetworkPerformanceMetricSubscriptionRequest& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,38 +56,32 @@ namespace Model
      * <p>The target Region or Availability Zone that the metric subscription is
      * disabled for. For example, <code>eu-north-1</code>.</p>
      */
-    inline const Aws::String& GetDestination() const{ return m_destination; }
+    inline const Aws::String& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(Aws::String&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline void SetDestination(const char* value) { m_destinationHasBeenSet = true; m_destination.assign(value); }
-    inline DisableAwsNetworkPerformanceMetricSubscriptionRequest& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-    inline DisableAwsNetworkPerformanceMetricSubscriptionRequest& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-    inline DisableAwsNetworkPerformanceMetricSubscriptionRequest& WithDestination(const char* value) { SetDestination(value); return *this;}
+    template<typename DestinationT = Aws::String>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = Aws::String>
+    DisableAwsNetworkPerformanceMetricSubscriptionRequest& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The metric used for the disabled subscription.</p>
      */
-    inline const MetricType& GetMetric() const{ return m_metric; }
+    inline MetricType GetMetric() const { return m_metric; }
     inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
-    inline void SetMetric(const MetricType& value) { m_metricHasBeenSet = true; m_metric = value; }
-    inline void SetMetric(MetricType&& value) { m_metricHasBeenSet = true; m_metric = std::move(value); }
-    inline DisableAwsNetworkPerformanceMetricSubscriptionRequest& WithMetric(const MetricType& value) { SetMetric(value); return *this;}
-    inline DisableAwsNetworkPerformanceMetricSubscriptionRequest& WithMetric(MetricType&& value) { SetMetric(std::move(value)); return *this;}
+    inline void SetMetric(MetricType value) { m_metricHasBeenSet = true; m_metric = value; }
+    inline DisableAwsNetworkPerformanceMetricSubscriptionRequest& WithMetric(MetricType value) { SetMetric(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The statistic used for the disabled subscription. </p>
      */
-    inline const StatisticType& GetStatistic() const{ return m_statistic; }
+    inline StatisticType GetStatistic() const { return m_statistic; }
     inline bool StatisticHasBeenSet() const { return m_statisticHasBeenSet; }
-    inline void SetStatistic(const StatisticType& value) { m_statisticHasBeenSet = true; m_statistic = value; }
-    inline void SetStatistic(StatisticType&& value) { m_statisticHasBeenSet = true; m_statistic = std::move(value); }
-    inline DisableAwsNetworkPerformanceMetricSubscriptionRequest& WithStatistic(const StatisticType& value) { SetStatistic(value); return *this;}
-    inline DisableAwsNetworkPerformanceMetricSubscriptionRequest& WithStatistic(StatisticType&& value) { SetStatistic(std::move(value)); return *this;}
+    inline void SetStatistic(StatisticType value) { m_statisticHasBeenSet = true; m_statistic = value; }
+    inline DisableAwsNetworkPerformanceMetricSubscriptionRequest& WithStatistic(StatisticType value) { SetStatistic(value); return *this;}
     ///@}
 
     ///@{
@@ -99,7 +91,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline DisableAwsNetworkPerformanceMetricSubscriptionRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -112,13 +104,13 @@ namespace Model
     Aws::String m_destination;
     bool m_destinationHasBeenSet = false;
 
-    MetricType m_metric;
+    MetricType m_metric{MetricType::NOT_SET};
     bool m_metricHasBeenSet = false;
 
-    StatisticType m_statistic;
+    StatisticType m_statistic{StatisticType::NOT_SET};
     bool m_statisticHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
   };
 

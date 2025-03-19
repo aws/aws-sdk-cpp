@@ -18,23 +18,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListObjectVersionsRequest::ListObjectVersionsRequest() : 
-    m_bucketHasBeenSet(false),
-    m_delimiterHasBeenSet(false),
-    m_encodingType(EncodingType::NOT_SET),
-    m_encodingTypeHasBeenSet(false),
-    m_keyMarkerHasBeenSet(false),
-    m_maxKeys(0),
-    m_maxKeysHasBeenSet(false),
-    m_prefixHasBeenSet(false),
-    m_versionIdMarkerHasBeenSet(false),
-    m_expectedBucketOwnerHasBeenSet(false),
-    m_requestPayer(RequestPayer::NOT_SET),
-    m_requestPayerHasBeenSet(false),
-    m_optionalObjectAttributesHasBeenSet(false),
-    m_customizedAccessLogTagHasBeenSet(false)
-{
-}
 
 bool ListObjectVersionsRequest::HasEmbeddedError(Aws::IOStream &body,
   const Aws::Http::HeaderValueCollection &header) const

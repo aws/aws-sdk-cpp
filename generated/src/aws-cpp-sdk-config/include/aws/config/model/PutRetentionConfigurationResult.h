@@ -28,7 +28,7 @@ namespace Model
   class PutRetentionConfigurationResult
   {
   public:
-    AWS_CONFIGSERVICE_API PutRetentionConfigurationResult();
+    AWS_CONFIGSERVICE_API PutRetentionConfigurationResult() = default;
     AWS_CONFIGSERVICE_API PutRetentionConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API PutRetentionConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Returns a retention configuration object.</p>
      */
-    inline const RetentionConfiguration& GetRetentionConfiguration() const{ return m_retentionConfiguration; }
-    inline void SetRetentionConfiguration(const RetentionConfiguration& value) { m_retentionConfiguration = value; }
-    inline void SetRetentionConfiguration(RetentionConfiguration&& value) { m_retentionConfiguration = std::move(value); }
-    inline PutRetentionConfigurationResult& WithRetentionConfiguration(const RetentionConfiguration& value) { SetRetentionConfiguration(value); return *this;}
-    inline PutRetentionConfigurationResult& WithRetentionConfiguration(RetentionConfiguration&& value) { SetRetentionConfiguration(std::move(value)); return *this;}
+    inline const RetentionConfiguration& GetRetentionConfiguration() const { return m_retentionConfiguration; }
+    template<typename RetentionConfigurationT = RetentionConfiguration>
+    void SetRetentionConfiguration(RetentionConfigurationT&& value) { m_retentionConfigurationHasBeenSet = true; m_retentionConfiguration = std::forward<RetentionConfigurationT>(value); }
+    template<typename RetentionConfigurationT = RetentionConfiguration>
+    PutRetentionConfigurationResult& WithRetentionConfiguration(RetentionConfigurationT&& value) { SetRetentionConfiguration(std::forward<RetentionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutRetentionConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutRetentionConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutRetentionConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutRetentionConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RetentionConfiguration m_retentionConfiguration;
+    bool m_retentionConfigurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

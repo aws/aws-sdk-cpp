@@ -12,11 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteVPCEConfigurationRequest::DeleteVPCEConfigurationRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVPCEConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

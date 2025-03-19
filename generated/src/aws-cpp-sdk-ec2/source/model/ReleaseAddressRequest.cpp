@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ReleaseAddressRequest::ReleaseAddressRequest() : 
-    m_allocationIdHasBeenSet(false),
-    m_publicIpHasBeenSet(false),
-    m_networkBorderGroupHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String ReleaseAddressRequest::SerializePayload() const
 {
   Aws::StringStream ss;

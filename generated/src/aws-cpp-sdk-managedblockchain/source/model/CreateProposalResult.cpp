@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateProposalResult::CreateProposalResult()
-{
-}
-
 CreateProposalResult::CreateProposalResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreateProposalResult& CreateProposalResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("ProposalId"))
   {
     m_proposalId = jsonValue.GetString("ProposalId");
-
+    m_proposalIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

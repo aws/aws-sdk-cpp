@@ -18,18 +18,7 @@ namespace Glue
 namespace Model
 {
 
-TriggerUpdate::TriggerUpdate() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_scheduleHasBeenSet(false),
-    m_actionsHasBeenSet(false),
-    m_predicateHasBeenSet(false),
-    m_eventBatchingConditionHasBeenSet(false)
-{
-}
-
 TriggerUpdate::TriggerUpdate(JsonView jsonValue)
-  : TriggerUpdate()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ TriggerUpdate& TriggerUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Schedule"))
   {
     m_schedule = jsonValue.GetString("Schedule");
-
     m_scheduleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Actions"))
   {
     Aws::Utils::Array<JsonView> actionsJsonList = jsonValue.GetArray("Actions");
@@ -66,21 +49,16 @@ TriggerUpdate& TriggerUpdate::operator =(JsonView jsonValue)
     }
     m_actionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Predicate"))
   {
     m_predicate = jsonValue.GetObject("Predicate");
-
     m_predicateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventBatchingCondition"))
   {
     m_eventBatchingCondition = jsonValue.GetObject("EventBatchingCondition");
-
     m_eventBatchingConditionHasBeenSet = true;
   }
-
   return *this;
 }
 

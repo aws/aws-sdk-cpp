@@ -21,7 +21,7 @@ namespace Model
   class PutLoggingConfigurationRequest : public WAFRegionalRequest
   {
   public:
-    AWS_WAFREGIONAL_API PutLoggingConfigurationRequest();
+    AWS_WAFREGIONAL_API PutLoggingConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,12 +43,12 @@ namespace Model
      * <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or
      * <code>METHOD</code>.</p> 
      */
-    inline const LoggingConfiguration& GetLoggingConfiguration() const{ return m_loggingConfiguration; }
+    inline const LoggingConfiguration& GetLoggingConfiguration() const { return m_loggingConfiguration; }
     inline bool LoggingConfigurationHasBeenSet() const { return m_loggingConfigurationHasBeenSet; }
-    inline void SetLoggingConfiguration(const LoggingConfiguration& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = value; }
-    inline void SetLoggingConfiguration(LoggingConfiguration&& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = std::move(value); }
-    inline PutLoggingConfigurationRequest& WithLoggingConfiguration(const LoggingConfiguration& value) { SetLoggingConfiguration(value); return *this;}
-    inline PutLoggingConfigurationRequest& WithLoggingConfiguration(LoggingConfiguration&& value) { SetLoggingConfiguration(std::move(value)); return *this;}
+    template<typename LoggingConfigurationT = LoggingConfiguration>
+    void SetLoggingConfiguration(LoggingConfigurationT&& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = std::forward<LoggingConfigurationT>(value); }
+    template<typename LoggingConfigurationT = LoggingConfiguration>
+    PutLoggingConfigurationRequest& WithLoggingConfiguration(LoggingConfigurationT&& value) { SetLoggingConfiguration(std::forward<LoggingConfigurationT>(value)); return *this;}
     ///@}
   private:
 

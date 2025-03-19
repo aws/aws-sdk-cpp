@@ -36,7 +36,7 @@ namespace Model
   class WorkflowDetail
   {
   public:
-    AWS_TRANSFER_API WorkflowDetail();
+    AWS_TRANSFER_API WorkflowDetail() = default;
     AWS_TRANSFER_API WorkflowDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API WorkflowDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSFER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>A unique identifier for the workflow.</p>
      */
-    inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
+    inline const Aws::String& GetWorkflowId() const { return m_workflowId; }
     inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
-    inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
-    inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::move(value); }
-    inline void SetWorkflowId(const char* value) { m_workflowIdHasBeenSet = true; m_workflowId.assign(value); }
-    inline WorkflowDetail& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
-    inline WorkflowDetail& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
-    inline WorkflowDetail& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
+    template<typename WorkflowIdT = Aws::String>
+    void SetWorkflowId(WorkflowIdT&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::forward<WorkflowIdT>(value); }
+    template<typename WorkflowIdT = Aws::String>
+    WorkflowDetail& WithWorkflowId(WorkflowIdT&& value) { SetWorkflowId(std::forward<WorkflowIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * Transfer can assume, so that all workflow steps can operate on the required
      * resources</p>
      */
-    inline const Aws::String& GetExecutionRole() const{ return m_executionRole; }
+    inline const Aws::String& GetExecutionRole() const { return m_executionRole; }
     inline bool ExecutionRoleHasBeenSet() const { return m_executionRoleHasBeenSet; }
-    inline void SetExecutionRole(const Aws::String& value) { m_executionRoleHasBeenSet = true; m_executionRole = value; }
-    inline void SetExecutionRole(Aws::String&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::move(value); }
-    inline void SetExecutionRole(const char* value) { m_executionRoleHasBeenSet = true; m_executionRole.assign(value); }
-    inline WorkflowDetail& WithExecutionRole(const Aws::String& value) { SetExecutionRole(value); return *this;}
-    inline WorkflowDetail& WithExecutionRole(Aws::String&& value) { SetExecutionRole(std::move(value)); return *this;}
-    inline WorkflowDetail& WithExecutionRole(const char* value) { SetExecutionRole(value); return *this;}
+    template<typename ExecutionRoleT = Aws::String>
+    void SetExecutionRole(ExecutionRoleT&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::forward<ExecutionRoleT>(value); }
+    template<typename ExecutionRoleT = Aws::String>
+    WorkflowDetail& WithExecutionRole(ExecutionRoleT&& value) { SetExecutionRole(std::forward<ExecutionRoleT>(value)); return *this;}
     ///@}
   private:
 

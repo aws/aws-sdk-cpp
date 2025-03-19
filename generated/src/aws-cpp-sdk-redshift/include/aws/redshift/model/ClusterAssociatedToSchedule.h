@@ -32,7 +32,7 @@ namespace Model
   class ClusterAssociatedToSchedule
   {
   public:
-    AWS_REDSHIFT_API ClusterAssociatedToSchedule();
+    AWS_REDSHIFT_API ClusterAssociatedToSchedule() = default;
     AWS_REDSHIFT_API ClusterAssociatedToSchedule(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_REDSHIFT_API ClusterAssociatedToSchedule& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,33 +44,29 @@ namespace Model
     /**
      * <p/>
      */
-    inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+    inline const Aws::String& GetClusterIdentifier() const { return m_clusterIdentifier; }
     inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
-    inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
-    inline void SetClusterIdentifier(Aws::String&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::move(value); }
-    inline void SetClusterIdentifier(const char* value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier.assign(value); }
-    inline ClusterAssociatedToSchedule& WithClusterIdentifier(const Aws::String& value) { SetClusterIdentifier(value); return *this;}
-    inline ClusterAssociatedToSchedule& WithClusterIdentifier(Aws::String&& value) { SetClusterIdentifier(std::move(value)); return *this;}
-    inline ClusterAssociatedToSchedule& WithClusterIdentifier(const char* value) { SetClusterIdentifier(value); return *this;}
+    template<typename ClusterIdentifierT = Aws::String>
+    void SetClusterIdentifier(ClusterIdentifierT&& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = std::forward<ClusterIdentifierT>(value); }
+    template<typename ClusterIdentifierT = Aws::String>
+    ClusterAssociatedToSchedule& WithClusterIdentifier(ClusterIdentifierT&& value) { SetClusterIdentifier(std::forward<ClusterIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const ScheduleState& GetScheduleAssociationState() const{ return m_scheduleAssociationState; }
+    inline ScheduleState GetScheduleAssociationState() const { return m_scheduleAssociationState; }
     inline bool ScheduleAssociationStateHasBeenSet() const { return m_scheduleAssociationStateHasBeenSet; }
-    inline void SetScheduleAssociationState(const ScheduleState& value) { m_scheduleAssociationStateHasBeenSet = true; m_scheduleAssociationState = value; }
-    inline void SetScheduleAssociationState(ScheduleState&& value) { m_scheduleAssociationStateHasBeenSet = true; m_scheduleAssociationState = std::move(value); }
-    inline ClusterAssociatedToSchedule& WithScheduleAssociationState(const ScheduleState& value) { SetScheduleAssociationState(value); return *this;}
-    inline ClusterAssociatedToSchedule& WithScheduleAssociationState(ScheduleState&& value) { SetScheduleAssociationState(std::move(value)); return *this;}
+    inline void SetScheduleAssociationState(ScheduleState value) { m_scheduleAssociationStateHasBeenSet = true; m_scheduleAssociationState = value; }
+    inline ClusterAssociatedToSchedule& WithScheduleAssociationState(ScheduleState value) { SetScheduleAssociationState(value); return *this;}
     ///@}
   private:
 
     Aws::String m_clusterIdentifier;
     bool m_clusterIdentifierHasBeenSet = false;
 
-    ScheduleState m_scheduleAssociationState;
+    ScheduleState m_scheduleAssociationState{ScheduleState::NOT_SET};
     bool m_scheduleAssociationStateHasBeenSet = false;
   };
 

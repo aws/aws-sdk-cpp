@@ -12,12 +12,6 @@ using namespace Aws::LexModelBuildingService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSlotTypeVersionRequest::CreateSlotTypeVersionRequest() : 
-    m_nameHasBeenSet(false),
-    m_checksumHasBeenSet(false)
-{
-}
-
 Aws::String CreateSlotTypeVersionRequest::SerializePayload() const
 {
   JsonValue payload;

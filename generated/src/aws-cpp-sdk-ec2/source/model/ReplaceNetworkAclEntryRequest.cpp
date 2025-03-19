@@ -10,24 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ReplaceNetworkAclEntryRequest::ReplaceNetworkAclEntryRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_networkAclIdHasBeenSet(false),
-    m_ruleNumber(0),
-    m_ruleNumberHasBeenSet(false),
-    m_protocolHasBeenSet(false),
-    m_ruleAction(RuleAction::NOT_SET),
-    m_ruleActionHasBeenSet(false),
-    m_egress(false),
-    m_egressHasBeenSet(false),
-    m_cidrBlockHasBeenSet(false),
-    m_ipv6CidrBlockHasBeenSet(false),
-    m_icmpTypeCodeHasBeenSet(false),
-    m_portRangeHasBeenSet(false)
-{
-}
-
 Aws::String ReplaceNetworkAclEntryRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -18,23 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-CoreNetwork::CoreNetwork() : 
-    m_globalNetworkIdHasBeenSet(false),
-    m_coreNetworkIdHasBeenSet(false),
-    m_coreNetworkArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_state(CoreNetworkState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_segmentsHasBeenSet(false),
-    m_networkFunctionGroupsHasBeenSet(false),
-    m_edgesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 CoreNetwork::CoreNetwork(JsonView jsonValue)
-  : CoreNetwork()
 {
   *this = jsonValue;
 }
@@ -44,45 +28,33 @@ CoreNetwork& CoreNetwork::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GlobalNetworkId"))
   {
     m_globalNetworkId = jsonValue.GetString("GlobalNetworkId");
-
     m_globalNetworkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CoreNetworkId"))
   {
     m_coreNetworkId = jsonValue.GetString("CoreNetworkId");
-
     m_coreNetworkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CoreNetworkArn"))
   {
     m_coreNetworkArn = jsonValue.GetString("CoreNetworkArn");
-
     m_coreNetworkArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = CoreNetworkStateMapper::GetCoreNetworkStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Segments"))
   {
     Aws::Utils::Array<JsonView> segmentsJsonList = jsonValue.GetArray("Segments");
@@ -92,7 +64,6 @@ CoreNetwork& CoreNetwork::operator =(JsonView jsonValue)
     }
     m_segmentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetworkFunctionGroups"))
   {
     Aws::Utils::Array<JsonView> networkFunctionGroupsJsonList = jsonValue.GetArray("NetworkFunctionGroups");
@@ -102,7 +73,6 @@ CoreNetwork& CoreNetwork::operator =(JsonView jsonValue)
     }
     m_networkFunctionGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Edges"))
   {
     Aws::Utils::Array<JsonView> edgesJsonList = jsonValue.GetArray("Edges");
@@ -112,7 +82,6 @@ CoreNetwork& CoreNetwork::operator =(JsonView jsonValue)
     }
     m_edgesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -122,7 +91,6 @@ CoreNetwork& CoreNetwork::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

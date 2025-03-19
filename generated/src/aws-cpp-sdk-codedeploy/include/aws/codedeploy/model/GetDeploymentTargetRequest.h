@@ -21,7 +21,7 @@ namespace Model
   class GetDeploymentTargetRequest : public CodeDeployRequest
   {
   public:
-    AWS_CODEDEPLOY_API GetDeploymentTargetRequest();
+    AWS_CODEDEPLOY_API GetDeploymentTargetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,28 +38,24 @@ namespace Model
     /**
      * <p> The unique ID of a deployment. </p>
      */
-    inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
+    inline const Aws::String& GetDeploymentId() const { return m_deploymentId; }
     inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
-    inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
-    inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
-    inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
-    inline GetDeploymentTargetRequest& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
-    inline GetDeploymentTargetRequest& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
-    inline GetDeploymentTargetRequest& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
+    template<typename DeploymentIdT = Aws::String>
+    void SetDeploymentId(DeploymentIdT&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::forward<DeploymentIdT>(value); }
+    template<typename DeploymentIdT = Aws::String>
+    GetDeploymentTargetRequest& WithDeploymentId(DeploymentIdT&& value) { SetDeploymentId(std::forward<DeploymentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The unique ID of a deployment target. </p>
      */
-    inline const Aws::String& GetTargetId() const{ return m_targetId; }
+    inline const Aws::String& GetTargetId() const { return m_targetId; }
     inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
-    inline void SetTargetId(const Aws::String& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
-    inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = std::move(value); }
-    inline void SetTargetId(const char* value) { m_targetIdHasBeenSet = true; m_targetId.assign(value); }
-    inline GetDeploymentTargetRequest& WithTargetId(const Aws::String& value) { SetTargetId(value); return *this;}
-    inline GetDeploymentTargetRequest& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
-    inline GetDeploymentTargetRequest& WithTargetId(const char* value) { SetTargetId(value); return *this;}
+    template<typename TargetIdT = Aws::String>
+    void SetTargetId(TargetIdT&& value) { m_targetIdHasBeenSet = true; m_targetId = std::forward<TargetIdT>(value); }
+    template<typename TargetIdT = Aws::String>
+    GetDeploymentTargetRequest& WithTargetId(TargetIdT&& value) { SetTargetId(std::forward<TargetIdT>(value)); return *this;}
     ///@}
   private:
 

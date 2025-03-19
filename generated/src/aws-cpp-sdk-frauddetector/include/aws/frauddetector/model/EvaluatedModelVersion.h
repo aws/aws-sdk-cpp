@@ -34,7 +34,7 @@ namespace Model
   class EvaluatedModelVersion
   {
   public:
-    AWS_FRAUDDETECTOR_API EvaluatedModelVersion();
+    AWS_FRAUDDETECTOR_API EvaluatedModelVersion() = default;
     AWS_FRAUDDETECTOR_API EvaluatedModelVersion(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API EvaluatedModelVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FRAUDDETECTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p> The model ID. </p>
      */
-    inline const Aws::String& GetModelId() const{ return m_modelId; }
+    inline const Aws::String& GetModelId() const { return m_modelId; }
     inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }
-    inline void SetModelId(const Aws::String& value) { m_modelIdHasBeenSet = true; m_modelId = value; }
-    inline void SetModelId(Aws::String&& value) { m_modelIdHasBeenSet = true; m_modelId = std::move(value); }
-    inline void SetModelId(const char* value) { m_modelIdHasBeenSet = true; m_modelId.assign(value); }
-    inline EvaluatedModelVersion& WithModelId(const Aws::String& value) { SetModelId(value); return *this;}
-    inline EvaluatedModelVersion& WithModelId(Aws::String&& value) { SetModelId(std::move(value)); return *this;}
-    inline EvaluatedModelVersion& WithModelId(const char* value) { SetModelId(value); return *this;}
+    template<typename ModelIdT = Aws::String>
+    void SetModelId(ModelIdT&& value) { m_modelIdHasBeenSet = true; m_modelId = std::forward<ModelIdT>(value); }
+    template<typename ModelIdT = Aws::String>
+    EvaluatedModelVersion& WithModelId(ModelIdT&& value) { SetModelId(std::forward<ModelIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The model version. </p>
      */
-    inline const Aws::String& GetModelVersion() const{ return m_modelVersion; }
+    inline const Aws::String& GetModelVersion() const { return m_modelVersion; }
     inline bool ModelVersionHasBeenSet() const { return m_modelVersionHasBeenSet; }
-    inline void SetModelVersion(const Aws::String& value) { m_modelVersionHasBeenSet = true; m_modelVersion = value; }
-    inline void SetModelVersion(Aws::String&& value) { m_modelVersionHasBeenSet = true; m_modelVersion = std::move(value); }
-    inline void SetModelVersion(const char* value) { m_modelVersionHasBeenSet = true; m_modelVersion.assign(value); }
-    inline EvaluatedModelVersion& WithModelVersion(const Aws::String& value) { SetModelVersion(value); return *this;}
-    inline EvaluatedModelVersion& WithModelVersion(Aws::String&& value) { SetModelVersion(std::move(value)); return *this;}
-    inline EvaluatedModelVersion& WithModelVersion(const char* value) { SetModelVersion(value); return *this;}
+    template<typename ModelVersionT = Aws::String>
+    void SetModelVersion(ModelVersionT&& value) { m_modelVersionHasBeenSet = true; m_modelVersion = std::forward<ModelVersionT>(value); }
+    template<typename ModelVersionT = Aws::String>
+    EvaluatedModelVersion& WithModelVersion(ModelVersionT&& value) { SetModelVersion(std::forward<ModelVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,28 +69,26 @@ namespace Model
      * <p>The model type. </p> <p>Valid values: <code>ONLINE_FRAUD_INSIGHTS</code> |
      * <code>TRANSACTION_FRAUD_INSIGHTS</code> </p>
      */
-    inline const Aws::String& GetModelType() const{ return m_modelType; }
+    inline const Aws::String& GetModelType() const { return m_modelType; }
     inline bool ModelTypeHasBeenSet() const { return m_modelTypeHasBeenSet; }
-    inline void SetModelType(const Aws::String& value) { m_modelTypeHasBeenSet = true; m_modelType = value; }
-    inline void SetModelType(Aws::String&& value) { m_modelTypeHasBeenSet = true; m_modelType = std::move(value); }
-    inline void SetModelType(const char* value) { m_modelTypeHasBeenSet = true; m_modelType.assign(value); }
-    inline EvaluatedModelVersion& WithModelType(const Aws::String& value) { SetModelType(value); return *this;}
-    inline EvaluatedModelVersion& WithModelType(Aws::String&& value) { SetModelType(std::move(value)); return *this;}
-    inline EvaluatedModelVersion& WithModelType(const char* value) { SetModelType(value); return *this;}
+    template<typename ModelTypeT = Aws::String>
+    void SetModelType(ModelTypeT&& value) { m_modelTypeHasBeenSet = true; m_modelType = std::forward<ModelTypeT>(value); }
+    template<typename ModelTypeT = Aws::String>
+    EvaluatedModelVersion& WithModelType(ModelTypeT&& value) { SetModelType(std::forward<ModelTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Evaluations generated for the model version. </p>
      */
-    inline const Aws::Vector<ModelVersionEvaluation>& GetEvaluations() const{ return m_evaluations; }
+    inline const Aws::Vector<ModelVersionEvaluation>& GetEvaluations() const { return m_evaluations; }
     inline bool EvaluationsHasBeenSet() const { return m_evaluationsHasBeenSet; }
-    inline void SetEvaluations(const Aws::Vector<ModelVersionEvaluation>& value) { m_evaluationsHasBeenSet = true; m_evaluations = value; }
-    inline void SetEvaluations(Aws::Vector<ModelVersionEvaluation>&& value) { m_evaluationsHasBeenSet = true; m_evaluations = std::move(value); }
-    inline EvaluatedModelVersion& WithEvaluations(const Aws::Vector<ModelVersionEvaluation>& value) { SetEvaluations(value); return *this;}
-    inline EvaluatedModelVersion& WithEvaluations(Aws::Vector<ModelVersionEvaluation>&& value) { SetEvaluations(std::move(value)); return *this;}
-    inline EvaluatedModelVersion& AddEvaluations(const ModelVersionEvaluation& value) { m_evaluationsHasBeenSet = true; m_evaluations.push_back(value); return *this; }
-    inline EvaluatedModelVersion& AddEvaluations(ModelVersionEvaluation&& value) { m_evaluationsHasBeenSet = true; m_evaluations.push_back(std::move(value)); return *this; }
+    template<typename EvaluationsT = Aws::Vector<ModelVersionEvaluation>>
+    void SetEvaluations(EvaluationsT&& value) { m_evaluationsHasBeenSet = true; m_evaluations = std::forward<EvaluationsT>(value); }
+    template<typename EvaluationsT = Aws::Vector<ModelVersionEvaluation>>
+    EvaluatedModelVersion& WithEvaluations(EvaluationsT&& value) { SetEvaluations(std::forward<EvaluationsT>(value)); return *this;}
+    template<typename EvaluationsT = ModelVersionEvaluation>
+    EvaluatedModelVersion& AddEvaluations(EvaluationsT&& value) { m_evaluationsHasBeenSet = true; m_evaluations.emplace_back(std::forward<EvaluationsT>(value)); return *this; }
     ///@}
   private:
 

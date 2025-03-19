@@ -36,7 +36,7 @@ namespace Model
   class RootDirectory
   {
   public:
-    AWS_EFS_API RootDirectory();
+    AWS_EFS_API RootDirectory() = default;
     AWS_EFS_API RootDirectory(Aws::Utils::Json::JsonView jsonValue);
     AWS_EFS_API RootDirectory& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EFS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * have up to four subdirectories. If the specified path does not exist, you are
      * required to provide the <code>CreationInfo</code>.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline RootDirectory& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline RootDirectory& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline RootDirectory& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    RootDirectory& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +69,12 @@ namespace Model
      * <code>Path</code> does not exist, attempts to mount the file system using the
      * access point will fail.</p> 
      */
-    inline const CreationInfo& GetCreationInfo() const{ return m_creationInfo; }
+    inline const CreationInfo& GetCreationInfo() const { return m_creationInfo; }
     inline bool CreationInfoHasBeenSet() const { return m_creationInfoHasBeenSet; }
-    inline void SetCreationInfo(const CreationInfo& value) { m_creationInfoHasBeenSet = true; m_creationInfo = value; }
-    inline void SetCreationInfo(CreationInfo&& value) { m_creationInfoHasBeenSet = true; m_creationInfo = std::move(value); }
-    inline RootDirectory& WithCreationInfo(const CreationInfo& value) { SetCreationInfo(value); return *this;}
-    inline RootDirectory& WithCreationInfo(CreationInfo&& value) { SetCreationInfo(std::move(value)); return *this;}
+    template<typename CreationInfoT = CreationInfo>
+    void SetCreationInfo(CreationInfoT&& value) { m_creationInfoHasBeenSet = true; m_creationInfo = std::forward<CreationInfoT>(value); }
+    template<typename CreationInfoT = CreationInfo>
+    RootDirectory& WithCreationInfo(CreationInfoT&& value) { SetCreationInfo(std::forward<CreationInfoT>(value)); return *this;}
     ///@}
   private:
 

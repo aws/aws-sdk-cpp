@@ -23,7 +23,7 @@ namespace Model
   class CreateEngagementInvitationRequest : public PartnerCentralSellingRequest
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API CreateEngagementInvitationRequest();
+    AWS_PARTNERCENTRALSELLING_API CreateEngagementInvitationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <code>AWS</code> and <code>Sandbox</code>, which determine the environment in
      * which the engagement is managed. </p>
      */
-    inline const Aws::String& GetCatalog() const{ return m_catalog; }
+    inline const Aws::String& GetCatalog() const { return m_catalog; }
     inline bool CatalogHasBeenSet() const { return m_catalogHasBeenSet; }
-    inline void SetCatalog(const Aws::String& value) { m_catalogHasBeenSet = true; m_catalog = value; }
-    inline void SetCatalog(Aws::String&& value) { m_catalogHasBeenSet = true; m_catalog = std::move(value); }
-    inline void SetCatalog(const char* value) { m_catalogHasBeenSet = true; m_catalog.assign(value); }
-    inline CreateEngagementInvitationRequest& WithCatalog(const Aws::String& value) { SetCatalog(value); return *this;}
-    inline CreateEngagementInvitationRequest& WithCatalog(Aws::String&& value) { SetCatalog(std::move(value)); return *this;}
-    inline CreateEngagementInvitationRequest& WithCatalog(const char* value) { SetCatalog(value); return *this;}
+    template<typename CatalogT = Aws::String>
+    void SetCatalog(CatalogT&& value) { m_catalogHasBeenSet = true; m_catalog = std::forward<CatalogT>(value); }
+    template<typename CatalogT = Aws::String>
+    CreateEngagementInvitationRequest& WithCatalog(CatalogT&& value) { SetCatalog(std::forward<CatalogT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * handled exactly once. This token helps prevent duplicate invitation creations.
      * </p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetClientToken() const { return m_clientToken; }
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-    inline CreateEngagementInvitationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-    inline CreateEngagementInvitationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-    inline CreateEngagementInvitationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    template<typename ClientTokenT = Aws::String>
+    void SetClientToken(ClientTokenT&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::forward<ClientTokenT>(value); }
+    template<typename ClientTokenT = Aws::String>
+    CreateEngagementInvitationRequest& WithClientToken(ClientTokenT&& value) { SetClientToken(std::forward<ClientTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * invitation. This parameter ensures the invitation is created within the correct
      * <code>Engagement</code> context. </p>
      */
-    inline const Aws::String& GetEngagementIdentifier() const{ return m_engagementIdentifier; }
+    inline const Aws::String& GetEngagementIdentifier() const { return m_engagementIdentifier; }
     inline bool EngagementIdentifierHasBeenSet() const { return m_engagementIdentifierHasBeenSet; }
-    inline void SetEngagementIdentifier(const Aws::String& value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier = value; }
-    inline void SetEngagementIdentifier(Aws::String&& value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier = std::move(value); }
-    inline void SetEngagementIdentifier(const char* value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier.assign(value); }
-    inline CreateEngagementInvitationRequest& WithEngagementIdentifier(const Aws::String& value) { SetEngagementIdentifier(value); return *this;}
-    inline CreateEngagementInvitationRequest& WithEngagementIdentifier(Aws::String&& value) { SetEngagementIdentifier(std::move(value)); return *this;}
-    inline CreateEngagementInvitationRequest& WithEngagementIdentifier(const char* value) { SetEngagementIdentifier(value); return *this;}
+    template<typename EngagementIdentifierT = Aws::String>
+    void SetEngagementIdentifier(EngagementIdentifierT&& value) { m_engagementIdentifierHasBeenSet = true; m_engagementIdentifier = std::forward<EngagementIdentifierT>(value); }
+    template<typename EngagementIdentifierT = Aws::String>
+    CreateEngagementInvitationRequest& WithEngagementIdentifier(EngagementIdentifierT&& value) { SetEngagementIdentifier(std::forward<EngagementIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,12 +87,12 @@ namespace Model
      * for sender contacts, partner responsibilities, customer information, and project
      * details. </p>
      */
-    inline const Invitation& GetInvitation() const{ return m_invitation; }
+    inline const Invitation& GetInvitation() const { return m_invitation; }
     inline bool InvitationHasBeenSet() const { return m_invitationHasBeenSet; }
-    inline void SetInvitation(const Invitation& value) { m_invitationHasBeenSet = true; m_invitation = value; }
-    inline void SetInvitation(Invitation&& value) { m_invitationHasBeenSet = true; m_invitation = std::move(value); }
-    inline CreateEngagementInvitationRequest& WithInvitation(const Invitation& value) { SetInvitation(value); return *this;}
-    inline CreateEngagementInvitationRequest& WithInvitation(Invitation&& value) { SetInvitation(std::move(value)); return *this;}
+    template<typename InvitationT = Invitation>
+    void SetInvitation(InvitationT&& value) { m_invitationHasBeenSet = true; m_invitation = std::forward<InvitationT>(value); }
+    template<typename InvitationT = Invitation>
+    CreateEngagementInvitationRequest& WithInvitation(InvitationT&& value) { SetInvitation(std::forward<InvitationT>(value)); return *this;}
     ///@}
   private:
 

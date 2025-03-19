@@ -18,46 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-Eac3AtmosSettings::Eac3AtmosSettings() : 
-    m_bitrate(0),
-    m_bitrateHasBeenSet(false),
-    m_bitstreamMode(Eac3AtmosBitstreamMode::NOT_SET),
-    m_bitstreamModeHasBeenSet(false),
-    m_codingMode(Eac3AtmosCodingMode::NOT_SET),
-    m_codingModeHasBeenSet(false),
-    m_dialogueIntelligence(Eac3AtmosDialogueIntelligence::NOT_SET),
-    m_dialogueIntelligenceHasBeenSet(false),
-    m_downmixControl(Eac3AtmosDownmixControl::NOT_SET),
-    m_downmixControlHasBeenSet(false),
-    m_dynamicRangeCompressionLine(Eac3AtmosDynamicRangeCompressionLine::NOT_SET),
-    m_dynamicRangeCompressionLineHasBeenSet(false),
-    m_dynamicRangeCompressionRf(Eac3AtmosDynamicRangeCompressionRf::NOT_SET),
-    m_dynamicRangeCompressionRfHasBeenSet(false),
-    m_dynamicRangeControl(Eac3AtmosDynamicRangeControl::NOT_SET),
-    m_dynamicRangeControlHasBeenSet(false),
-    m_loRoCenterMixLevel(0.0),
-    m_loRoCenterMixLevelHasBeenSet(false),
-    m_loRoSurroundMixLevel(0.0),
-    m_loRoSurroundMixLevelHasBeenSet(false),
-    m_ltRtCenterMixLevel(0.0),
-    m_ltRtCenterMixLevelHasBeenSet(false),
-    m_ltRtSurroundMixLevel(0.0),
-    m_ltRtSurroundMixLevelHasBeenSet(false),
-    m_meteringMode(Eac3AtmosMeteringMode::NOT_SET),
-    m_meteringModeHasBeenSet(false),
-    m_sampleRate(0),
-    m_sampleRateHasBeenSet(false),
-    m_speechThreshold(0),
-    m_speechThresholdHasBeenSet(false),
-    m_stereoDownmix(Eac3AtmosStereoDownmix::NOT_SET),
-    m_stereoDownmixHasBeenSet(false),
-    m_surroundExMode(Eac3AtmosSurroundExMode::NOT_SET),
-    m_surroundExModeHasBeenSet(false)
-{
-}
-
 Eac3AtmosSettings::Eac3AtmosSettings(JsonView jsonValue)
-  : Eac3AtmosSettings()
 {
   *this = jsonValue;
 }
@@ -67,122 +28,88 @@ Eac3AtmosSettings& Eac3AtmosSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bitrate"))
   {
     m_bitrate = jsonValue.GetInteger("bitrate");
-
     m_bitrateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bitstreamMode"))
   {
     m_bitstreamMode = Eac3AtmosBitstreamModeMapper::GetEac3AtmosBitstreamModeForName(jsonValue.GetString("bitstreamMode"));
-
     m_bitstreamModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("codingMode"))
   {
     m_codingMode = Eac3AtmosCodingModeMapper::GetEac3AtmosCodingModeForName(jsonValue.GetString("codingMode"));
-
     m_codingModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dialogueIntelligence"))
   {
     m_dialogueIntelligence = Eac3AtmosDialogueIntelligenceMapper::GetEac3AtmosDialogueIntelligenceForName(jsonValue.GetString("dialogueIntelligence"));
-
     m_dialogueIntelligenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("downmixControl"))
   {
     m_downmixControl = Eac3AtmosDownmixControlMapper::GetEac3AtmosDownmixControlForName(jsonValue.GetString("downmixControl"));
-
     m_downmixControlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dynamicRangeCompressionLine"))
   {
     m_dynamicRangeCompressionLine = Eac3AtmosDynamicRangeCompressionLineMapper::GetEac3AtmosDynamicRangeCompressionLineForName(jsonValue.GetString("dynamicRangeCompressionLine"));
-
     m_dynamicRangeCompressionLineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dynamicRangeCompressionRf"))
   {
     m_dynamicRangeCompressionRf = Eac3AtmosDynamicRangeCompressionRfMapper::GetEac3AtmosDynamicRangeCompressionRfForName(jsonValue.GetString("dynamicRangeCompressionRf"));
-
     m_dynamicRangeCompressionRfHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dynamicRangeControl"))
   {
     m_dynamicRangeControl = Eac3AtmosDynamicRangeControlMapper::GetEac3AtmosDynamicRangeControlForName(jsonValue.GetString("dynamicRangeControl"));
-
     m_dynamicRangeControlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("loRoCenterMixLevel"))
   {
     m_loRoCenterMixLevel = jsonValue.GetDouble("loRoCenterMixLevel");
-
     m_loRoCenterMixLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("loRoSurroundMixLevel"))
   {
     m_loRoSurroundMixLevel = jsonValue.GetDouble("loRoSurroundMixLevel");
-
     m_loRoSurroundMixLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ltRtCenterMixLevel"))
   {
     m_ltRtCenterMixLevel = jsonValue.GetDouble("ltRtCenterMixLevel");
-
     m_ltRtCenterMixLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ltRtSurroundMixLevel"))
   {
     m_ltRtSurroundMixLevel = jsonValue.GetDouble("ltRtSurroundMixLevel");
-
     m_ltRtSurroundMixLevelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("meteringMode"))
   {
     m_meteringMode = Eac3AtmosMeteringModeMapper::GetEac3AtmosMeteringModeForName(jsonValue.GetString("meteringMode"));
-
     m_meteringModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sampleRate"))
   {
     m_sampleRate = jsonValue.GetInteger("sampleRate");
-
     m_sampleRateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("speechThreshold"))
   {
     m_speechThreshold = jsonValue.GetInteger("speechThreshold");
-
     m_speechThresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stereoDownmix"))
   {
     m_stereoDownmix = Eac3AtmosStereoDownmixMapper::GetEac3AtmosStereoDownmixForName(jsonValue.GetString("stereoDownmix"));
-
     m_stereoDownmixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("surroundExMode"))
   {
     m_surroundExMode = Eac3AtmosSurroundExModeMapper::GetEac3AtmosSurroundExModeForName(jsonValue.GetString("surroundExMode"));
-
     m_surroundExModeHasBeenSet = true;
   }
-
   return *this;
 }
 

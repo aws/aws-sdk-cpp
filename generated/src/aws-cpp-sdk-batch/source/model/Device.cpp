@@ -18,15 +18,7 @@ namespace Batch
 namespace Model
 {
 
-Device::Device() : 
-    m_hostPathHasBeenSet(false),
-    m_containerPathHasBeenSet(false),
-    m_permissionsHasBeenSet(false)
-{
-}
-
 Device::Device(JsonView jsonValue)
-  : Device()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Device& Device::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("hostPath"))
   {
     m_hostPath = jsonValue.GetString("hostPath");
-
     m_hostPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerPath"))
   {
     m_containerPath = jsonValue.GetString("containerPath");
-
     m_containerPathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("permissions"))
   {
     Aws::Utils::Array<JsonView> permissionsJsonList = jsonValue.GetArray("permissions");
@@ -56,7 +44,6 @@ Device& Device::operator =(JsonView jsonValue)
     }
     m_permissionsHasBeenSet = true;
   }
-
   return *this;
 }
 

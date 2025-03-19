@@ -12,11 +12,6 @@ using namespace Aws::Shield::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeProtectionGroupRequest::DescribeProtectionGroupRequest() : 
-    m_protectionGroupIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeProtectionGroupRequest::SerializePayload() const
 {
   JsonValue payload;

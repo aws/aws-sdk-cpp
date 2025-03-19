@@ -18,31 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-ContainerGroupDefinition::ContainerGroupDefinition() : 
-    m_containerGroupDefinitionArnHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_operatingSystem(ContainerOperatingSystem::NOT_SET),
-    m_operatingSystemHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_containerGroupType(ContainerGroupType::NOT_SET),
-    m_containerGroupTypeHasBeenSet(false),
-    m_totalMemoryLimitMebibytes(0),
-    m_totalMemoryLimitMebibytesHasBeenSet(false),
-    m_totalVcpuLimit(0.0),
-    m_totalVcpuLimitHasBeenSet(false),
-    m_gameServerContainerDefinitionHasBeenSet(false),
-    m_supportContainerDefinitionsHasBeenSet(false),
-    m_versionNumber(0),
-    m_versionNumberHasBeenSet(false),
-    m_versionDescriptionHasBeenSet(false),
-    m_status(ContainerGroupDefinitionStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReasonHasBeenSet(false)
-{
-}
-
 ContainerGroupDefinition::ContainerGroupDefinition(JsonView jsonValue)
-  : ContainerGroupDefinition()
 {
   *this = jsonValue;
 }
@@ -52,59 +28,43 @@ ContainerGroupDefinition& ContainerGroupDefinition::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("ContainerGroupDefinitionArn"))
   {
     m_containerGroupDefinitionArn = jsonValue.GetString("ContainerGroupDefinitionArn");
-
     m_containerGroupDefinitionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OperatingSystem"))
   {
     m_operatingSystem = ContainerOperatingSystemMapper::GetContainerOperatingSystemForName(jsonValue.GetString("OperatingSystem"));
-
     m_operatingSystemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainerGroupType"))
   {
     m_containerGroupType = ContainerGroupTypeMapper::GetContainerGroupTypeForName(jsonValue.GetString("ContainerGroupType"));
-
     m_containerGroupTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalMemoryLimitMebibytes"))
   {
     m_totalMemoryLimitMebibytes = jsonValue.GetInteger("TotalMemoryLimitMebibytes");
-
     m_totalMemoryLimitMebibytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalVcpuLimit"))
   {
     m_totalVcpuLimit = jsonValue.GetDouble("TotalVcpuLimit");
-
     m_totalVcpuLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GameServerContainerDefinition"))
   {
     m_gameServerContainerDefinition = jsonValue.GetObject("GameServerContainerDefinition");
-
     m_gameServerContainerDefinitionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SupportContainerDefinitions"))
   {
     Aws::Utils::Array<JsonView> supportContainerDefinitionsJsonList = jsonValue.GetArray("SupportContainerDefinitions");
@@ -114,35 +74,26 @@ ContainerGroupDefinition& ContainerGroupDefinition::operator =(JsonView jsonValu
     }
     m_supportContainerDefinitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionNumber"))
   {
     m_versionNumber = jsonValue.GetInteger("VersionNumber");
-
     m_versionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionDescription"))
   {
     m_versionDescription = jsonValue.GetString("VersionDescription");
-
     m_versionDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ContainerGroupDefinitionStatusMapper::GetContainerGroupDefinitionStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusReason"))
   {
     m_statusReason = jsonValue.GetString("StatusReason");
-
     m_statusReasonHasBeenSet = true;
   }
-
   return *this;
 }
 

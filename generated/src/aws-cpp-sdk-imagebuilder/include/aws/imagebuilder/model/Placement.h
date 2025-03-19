@@ -37,7 +37,7 @@ namespace Model
   class Placement
   {
   public:
-    AWS_IMAGEBUILDER_API Placement();
+    AWS_IMAGEBUILDER_API Placement() = default;
     AWS_IMAGEBUILDER_API Placement(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Placement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The Availability Zone where your build and test instances will launch.</p>
      */
-    inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+    inline const Aws::String& GetAvailabilityZone() const { return m_availabilityZone; }
     inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
-    inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
-    inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
-    inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
-    inline Placement& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
-    inline Placement& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
-    inline Placement& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
+    template<typename AvailabilityZoneT = Aws::String>
+    void SetAvailabilityZone(AvailabilityZoneT&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::forward<AvailabilityZoneT>(value); }
+    template<typename AvailabilityZoneT = Aws::String>
+    Placement& WithAvailabilityZone(AvailabilityZoneT&& value) { SetAvailabilityZone(std::forward<AvailabilityZoneT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,12 +65,10 @@ namespace Model
      * your host, and you don't specify any placement target, Amazon EC2 will try to
      * find an available host for your build and test instances.</p>
      */
-    inline const TenancyType& GetTenancy() const{ return m_tenancy; }
+    inline TenancyType GetTenancy() const { return m_tenancy; }
     inline bool TenancyHasBeenSet() const { return m_tenancyHasBeenSet; }
-    inline void SetTenancy(const TenancyType& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
-    inline void SetTenancy(TenancyType&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::move(value); }
-    inline Placement& WithTenancy(const TenancyType& value) { SetTenancy(value); return *this;}
-    inline Placement& WithTenancy(TenancyType&& value) { SetTenancy(std::move(value)); return *this;}
+    inline void SetTenancy(TenancyType value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
+    inline Placement& WithTenancy(TenancyType value) { SetTenancy(value); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +78,12 @@ namespace Model
      * ID, you must not specify the resource group ARN. If you specify both, Image
      * Builder returns an error.</p>
      */
-    inline const Aws::String& GetHostId() const{ return m_hostId; }
+    inline const Aws::String& GetHostId() const { return m_hostId; }
     inline bool HostIdHasBeenSet() const { return m_hostIdHasBeenSet; }
-    inline void SetHostId(const Aws::String& value) { m_hostIdHasBeenSet = true; m_hostId = value; }
-    inline void SetHostId(Aws::String&& value) { m_hostIdHasBeenSet = true; m_hostId = std::move(value); }
-    inline void SetHostId(const char* value) { m_hostIdHasBeenSet = true; m_hostId.assign(value); }
-    inline Placement& WithHostId(const Aws::String& value) { SetHostId(value); return *this;}
-    inline Placement& WithHostId(Aws::String&& value) { SetHostId(std::move(value)); return *this;}
-    inline Placement& WithHostId(const char* value) { SetHostId(value); return *this;}
+    template<typename HostIdT = Aws::String>
+    void SetHostId(HostIdT&& value) { m_hostIdHasBeenSet = true; m_hostId = std::forward<HostIdT>(value); }
+    template<typename HostIdT = Aws::String>
+    Placement& WithHostId(HostIdT&& value) { SetHostId(std::forward<HostIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,21 +93,19 @@ namespace Model
      * <code>host</code>. If you specify the resource group ARN, you must not specify
      * the host ID. If you specify both, Image Builder returns an error.</p>
      */
-    inline const Aws::String& GetHostResourceGroupArn() const{ return m_hostResourceGroupArn; }
+    inline const Aws::String& GetHostResourceGroupArn() const { return m_hostResourceGroupArn; }
     inline bool HostResourceGroupArnHasBeenSet() const { return m_hostResourceGroupArnHasBeenSet; }
-    inline void SetHostResourceGroupArn(const Aws::String& value) { m_hostResourceGroupArnHasBeenSet = true; m_hostResourceGroupArn = value; }
-    inline void SetHostResourceGroupArn(Aws::String&& value) { m_hostResourceGroupArnHasBeenSet = true; m_hostResourceGroupArn = std::move(value); }
-    inline void SetHostResourceGroupArn(const char* value) { m_hostResourceGroupArnHasBeenSet = true; m_hostResourceGroupArn.assign(value); }
-    inline Placement& WithHostResourceGroupArn(const Aws::String& value) { SetHostResourceGroupArn(value); return *this;}
-    inline Placement& WithHostResourceGroupArn(Aws::String&& value) { SetHostResourceGroupArn(std::move(value)); return *this;}
-    inline Placement& WithHostResourceGroupArn(const char* value) { SetHostResourceGroupArn(value); return *this;}
+    template<typename HostResourceGroupArnT = Aws::String>
+    void SetHostResourceGroupArn(HostResourceGroupArnT&& value) { m_hostResourceGroupArnHasBeenSet = true; m_hostResourceGroupArn = std::forward<HostResourceGroupArnT>(value); }
+    template<typename HostResourceGroupArnT = Aws::String>
+    Placement& WithHostResourceGroupArn(HostResourceGroupArnT&& value) { SetHostResourceGroupArn(std::forward<HostResourceGroupArnT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet = false;
 
-    TenancyType m_tenancy;
+    TenancyType m_tenancy{TenancyType::NOT_SET};
     bool m_tenancyHasBeenSet = false;
 
     Aws::String m_hostId;

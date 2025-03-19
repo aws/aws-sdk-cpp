@@ -14,10 +14,6 @@ using namespace Aws::RestXmlProtocol::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-XmlEmptyStringsRequest::XmlEmptyStringsRequest() : 
-    m_emptyStringHasBeenSet(false)
-{
-}
 
 Aws::String XmlEmptyStringsRequest::SerializePayload() const
 {

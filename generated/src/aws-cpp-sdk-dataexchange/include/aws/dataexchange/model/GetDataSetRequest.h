@@ -21,7 +21,7 @@ namespace Model
   class GetDataSetRequest : public DataExchangeRequest
   {
   public:
-    AWS_DATAEXCHANGE_API GetDataSetRequest();
+    AWS_DATAEXCHANGE_API GetDataSetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The unique identifier for a data set.</p>
      */
-    inline const Aws::String& GetDataSetId() const{ return m_dataSetId; }
+    inline const Aws::String& GetDataSetId() const { return m_dataSetId; }
     inline bool DataSetIdHasBeenSet() const { return m_dataSetIdHasBeenSet; }
-    inline void SetDataSetId(const Aws::String& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = value; }
-    inline void SetDataSetId(Aws::String&& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = std::move(value); }
-    inline void SetDataSetId(const char* value) { m_dataSetIdHasBeenSet = true; m_dataSetId.assign(value); }
-    inline GetDataSetRequest& WithDataSetId(const Aws::String& value) { SetDataSetId(value); return *this;}
-    inline GetDataSetRequest& WithDataSetId(Aws::String&& value) { SetDataSetId(std::move(value)); return *this;}
-    inline GetDataSetRequest& WithDataSetId(const char* value) { SetDataSetId(value); return *this;}
+    template<typename DataSetIdT = Aws::String>
+    void SetDataSetId(DataSetIdT&& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = std::forward<DataSetIdT>(value); }
+    template<typename DataSetIdT = Aws::String>
+    GetDataSetRequest& WithDataSetId(DataSetIdT&& value) { SetDataSetId(std::forward<DataSetIdT>(value)); return *this;}
     ///@}
   private:
 

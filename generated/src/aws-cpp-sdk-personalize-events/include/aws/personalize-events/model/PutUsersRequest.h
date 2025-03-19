@@ -23,7 +23,7 @@ namespace Model
   class PutUsersRequest : public PersonalizeEventsRequest
   {
   public:
-    AWS_PERSONALIZEEVENTS_API PutUsersRequest();
+    AWS_PERSONALIZEEVENTS_API PutUsersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,26 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Users dataset you are adding the user
      * or users to.</p>
      */
-    inline const Aws::String& GetDatasetArn() const{ return m_datasetArn; }
+    inline const Aws::String& GetDatasetArn() const { return m_datasetArn; }
     inline bool DatasetArnHasBeenSet() const { return m_datasetArnHasBeenSet; }
-    inline void SetDatasetArn(const Aws::String& value) { m_datasetArnHasBeenSet = true; m_datasetArn = value; }
-    inline void SetDatasetArn(Aws::String&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::move(value); }
-    inline void SetDatasetArn(const char* value) { m_datasetArnHasBeenSet = true; m_datasetArn.assign(value); }
-    inline PutUsersRequest& WithDatasetArn(const Aws::String& value) { SetDatasetArn(value); return *this;}
-    inline PutUsersRequest& WithDatasetArn(Aws::String&& value) { SetDatasetArn(std::move(value)); return *this;}
-    inline PutUsersRequest& WithDatasetArn(const char* value) { SetDatasetArn(value); return *this;}
+    template<typename DatasetArnT = Aws::String>
+    void SetDatasetArn(DatasetArnT&& value) { m_datasetArnHasBeenSet = true; m_datasetArn = std::forward<DatasetArnT>(value); }
+    template<typename DatasetArnT = Aws::String>
+    PutUsersRequest& WithDatasetArn(DatasetArnT&& value) { SetDatasetArn(std::forward<DatasetArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of user data.</p>
      */
-    inline const Aws::Vector<User>& GetUsers() const{ return m_users; }
+    inline const Aws::Vector<User>& GetUsers() const { return m_users; }
     inline bool UsersHasBeenSet() const { return m_usersHasBeenSet; }
-    inline void SetUsers(const Aws::Vector<User>& value) { m_usersHasBeenSet = true; m_users = value; }
-    inline void SetUsers(Aws::Vector<User>&& value) { m_usersHasBeenSet = true; m_users = std::move(value); }
-    inline PutUsersRequest& WithUsers(const Aws::Vector<User>& value) { SetUsers(value); return *this;}
-    inline PutUsersRequest& WithUsers(Aws::Vector<User>&& value) { SetUsers(std::move(value)); return *this;}
-    inline PutUsersRequest& AddUsers(const User& value) { m_usersHasBeenSet = true; m_users.push_back(value); return *this; }
-    inline PutUsersRequest& AddUsers(User&& value) { m_usersHasBeenSet = true; m_users.push_back(std::move(value)); return *this; }
+    template<typename UsersT = Aws::Vector<User>>
+    void SetUsers(UsersT&& value) { m_usersHasBeenSet = true; m_users = std::forward<UsersT>(value); }
+    template<typename UsersT = Aws::Vector<User>>
+    PutUsersRequest& WithUsers(UsersT&& value) { SetUsers(std::forward<UsersT>(value)); return *this;}
+    template<typename UsersT = User>
+    PutUsersRequest& AddUsers(UsersT&& value) { m_usersHasBeenSet = true; m_users.emplace_back(std::forward<UsersT>(value)); return *this; }
     ///@}
   private:
 

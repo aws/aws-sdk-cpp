@@ -18,13 +18,7 @@ namespace IoT
 namespace Model
 {
 
-BucketsAggregationType::BucketsAggregationType() : 
-    m_termsAggregationHasBeenSet(false)
-{
-}
-
 BucketsAggregationType::BucketsAggregationType(JsonView jsonValue)
-  : BucketsAggregationType()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BucketsAggregationType& BucketsAggregationType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("termsAggregation"))
   {
     m_termsAggregation = jsonValue.GetObject("termsAggregation");
-
     m_termsAggregationHasBeenSet = true;
   }
-
   return *this;
 }
 

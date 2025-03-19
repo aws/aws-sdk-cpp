@@ -19,7 +19,7 @@ namespace Model
   class RegisterCustomEndpointRequest : public IoTManagedIntegrationsRequest
   {
   public:
-    AWS_IOTMANAGEDINTEGRATIONS_API RegisterCustomEndpointRequest();
+    AWS_IOTMANAGEDINTEGRATIONS_API RegisterCustomEndpointRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.

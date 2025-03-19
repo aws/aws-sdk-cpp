@@ -18,13 +18,7 @@ namespace TimestreamWrite
 namespace Model
 {
 
-ReportConfiguration::ReportConfiguration() : 
-    m_reportS3ConfigurationHasBeenSet(false)
-{
-}
-
 ReportConfiguration::ReportConfiguration(JsonView jsonValue)
-  : ReportConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ReportConfiguration& ReportConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ReportS3Configuration"))
   {
     m_reportS3Configuration = jsonValue.GetObject("ReportS3Configuration");
-
     m_reportS3ConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

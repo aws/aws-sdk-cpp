@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ProductionVariantStatus::ProductionVariantStatus() : 
-    m_status(VariantStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
-{
-}
-
 ProductionVariantStatus::ProductionVariantStatus(JsonView jsonValue)
-  : ProductionVariantStatus()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ProductionVariantStatus& ProductionVariantStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Status"))
   {
     m_status = VariantStatusMapper::GetVariantStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetDouble("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

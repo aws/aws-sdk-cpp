@@ -26,7 +26,7 @@ namespace Model
   class Template
   {
   public:
-    AWS_PINPOINTEMAIL_API Template();
+    AWS_PINPOINTEMAIL_API Template() = default;
     AWS_PINPOINTEMAIL_API Template(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTEMAIL_API Template& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINTEMAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the template.</p>
      */
-    inline const Aws::String& GetTemplateArn() const{ return m_templateArn; }
+    inline const Aws::String& GetTemplateArn() const { return m_templateArn; }
     inline bool TemplateArnHasBeenSet() const { return m_templateArnHasBeenSet; }
-    inline void SetTemplateArn(const Aws::String& value) { m_templateArnHasBeenSet = true; m_templateArn = value; }
-    inline void SetTemplateArn(Aws::String&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::move(value); }
-    inline void SetTemplateArn(const char* value) { m_templateArnHasBeenSet = true; m_templateArn.assign(value); }
-    inline Template& WithTemplateArn(const Aws::String& value) { SetTemplateArn(value); return *this;}
-    inline Template& WithTemplateArn(Aws::String&& value) { SetTemplateArn(std::move(value)); return *this;}
-    inline Template& WithTemplateArn(const char* value) { SetTemplateArn(value); return *this;}
+    template<typename TemplateArnT = Aws::String>
+    void SetTemplateArn(TemplateArnT&& value) { m_templateArnHasBeenSet = true; m_templateArn = std::forward<TemplateArnT>(value); }
+    template<typename TemplateArnT = Aws::String>
+    Template& WithTemplateArn(TemplateArnT&& value) { SetTemplateArn(std::forward<TemplateArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,14 +51,12 @@ namespace Model
      * variable in the template. The corresponding value defines the value to use for
      * that variable.</p>
      */
-    inline const Aws::String& GetTemplateData() const{ return m_templateData; }
+    inline const Aws::String& GetTemplateData() const { return m_templateData; }
     inline bool TemplateDataHasBeenSet() const { return m_templateDataHasBeenSet; }
-    inline void SetTemplateData(const Aws::String& value) { m_templateDataHasBeenSet = true; m_templateData = value; }
-    inline void SetTemplateData(Aws::String&& value) { m_templateDataHasBeenSet = true; m_templateData = std::move(value); }
-    inline void SetTemplateData(const char* value) { m_templateDataHasBeenSet = true; m_templateData.assign(value); }
-    inline Template& WithTemplateData(const Aws::String& value) { SetTemplateData(value); return *this;}
-    inline Template& WithTemplateData(Aws::String&& value) { SetTemplateData(std::move(value)); return *this;}
-    inline Template& WithTemplateData(const char* value) { SetTemplateData(value); return *this;}
+    template<typename TemplateDataT = Aws::String>
+    void SetTemplateData(TemplateDataT&& value) { m_templateDataHasBeenSet = true; m_templateData = std::forward<TemplateDataT>(value); }
+    template<typename TemplateDataT = Aws::String>
+    Template& WithTemplateData(TemplateDataT&& value) { SetTemplateData(std::forward<TemplateDataT>(value)); return *this;}
     ///@}
   private:
 

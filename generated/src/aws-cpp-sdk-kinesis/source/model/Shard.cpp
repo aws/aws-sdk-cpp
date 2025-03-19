@@ -18,17 +18,7 @@ namespace Kinesis
 namespace Model
 {
 
-Shard::Shard() : 
-    m_shardIdHasBeenSet(false),
-    m_parentShardIdHasBeenSet(false),
-    m_adjacentParentShardIdHasBeenSet(false),
-    m_hashKeyRangeHasBeenSet(false),
-    m_sequenceNumberRangeHasBeenSet(false)
-{
-}
-
 Shard::Shard(JsonView jsonValue)
-  : Shard()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ Shard& Shard::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ShardId"))
   {
     m_shardId = jsonValue.GetString("ShardId");
-
     m_shardIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ParentShardId"))
   {
     m_parentShardId = jsonValue.GetString("ParentShardId");
-
     m_parentShardIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdjacentParentShardId"))
   {
     m_adjacentParentShardId = jsonValue.GetString("AdjacentParentShardId");
-
     m_adjacentParentShardIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HashKeyRange"))
   {
     m_hashKeyRange = jsonValue.GetObject("HashKeyRange");
-
     m_hashKeyRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SequenceNumberRange"))
   {
     m_sequenceNumberRange = jsonValue.GetObject("SequenceNumberRange");
-
     m_sequenceNumberRangeHasBeenSet = true;
   }
-
   return *this;
 }
 

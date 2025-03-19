@@ -18,15 +18,7 @@ namespace CodeCommit
 namespace Model
 {
 
-ReactionValueFormats::ReactionValueFormats() : 
-    m_emojiHasBeenSet(false),
-    m_shortCodeHasBeenSet(false),
-    m_unicodeHasBeenSet(false)
-{
-}
-
 ReactionValueFormats::ReactionValueFormats(JsonView jsonValue)
-  : ReactionValueFormats()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ReactionValueFormats& ReactionValueFormats::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("emoji"))
   {
     m_emoji = jsonValue.GetString("emoji");
-
     m_emojiHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("shortCode"))
   {
     m_shortCode = jsonValue.GetString("shortCode");
-
     m_shortCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unicode"))
   {
     m_unicode = jsonValue.GetString("unicode");
-
     m_unicodeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace DLM
 namespace Model
 {
 
-EventSource::EventSource() : 
-    m_type(EventSourceValues::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 EventSource::EventSource(JsonView jsonValue)
-  : EventSource()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EventSource& EventSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = EventSourceValuesMapper::GetEventSourceValuesForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     m_parameters = jsonValue.GetObject("Parameters");
-
     m_parametersHasBeenSet = true;
   }
-
   return *this;
 }
 

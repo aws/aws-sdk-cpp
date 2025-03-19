@@ -18,14 +18,7 @@ namespace EMR
 namespace Model
 {
 
-EbsBlockDevice::EbsBlockDevice() : 
-    m_volumeSpecificationHasBeenSet(false),
-    m_deviceHasBeenSet(false)
-{
-}
-
 EbsBlockDevice::EbsBlockDevice(JsonView jsonValue)
-  : EbsBlockDevice()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EbsBlockDevice& EbsBlockDevice::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VolumeSpecification"))
   {
     m_volumeSpecification = jsonValue.GetObject("VolumeSpecification");
-
     m_volumeSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Device"))
   {
     m_device = jsonValue.GetString("Device");
-
     m_deviceHasBeenSet = true;
   }
-
   return *this;
 }
 

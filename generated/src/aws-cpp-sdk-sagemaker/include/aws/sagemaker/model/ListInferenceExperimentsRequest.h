@@ -26,7 +26,7 @@ namespace Model
   class ListInferenceExperimentsRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API ListInferenceExperimentsRequest();
+    AWS_SAGEMAKER_API ListInferenceExperimentsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>Selects inference experiments whose names contain this name.</p>
      */
-    inline const Aws::String& GetNameContains() const{ return m_nameContains; }
+    inline const Aws::String& GetNameContains() const { return m_nameContains; }
     inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
-    inline void SetNameContains(const Aws::String& value) { m_nameContainsHasBeenSet = true; m_nameContains = value; }
-    inline void SetNameContains(Aws::String&& value) { m_nameContainsHasBeenSet = true; m_nameContains = std::move(value); }
-    inline void SetNameContains(const char* value) { m_nameContainsHasBeenSet = true; m_nameContains.assign(value); }
-    inline ListInferenceExperimentsRequest& WithNameContains(const Aws::String& value) { SetNameContains(value); return *this;}
-    inline ListInferenceExperimentsRequest& WithNameContains(Aws::String&& value) { SetNameContains(std::move(value)); return *this;}
-    inline ListInferenceExperimentsRequest& WithNameContains(const char* value) { SetNameContains(value); return *this;}
+    template<typename NameContainsT = Aws::String>
+    void SetNameContains(NameContainsT&& value) { m_nameContainsHasBeenSet = true; m_nameContains = std::forward<NameContainsT>(value); }
+    template<typename NameContainsT = Aws::String>
+    ListInferenceExperimentsRequest& WithNameContains(NameContainsT&& value) { SetNameContains(std::forward<NameContainsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +58,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.
      * </p>
      */
-    inline const InferenceExperimentType& GetType() const{ return m_type; }
+    inline InferenceExperimentType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const InferenceExperimentType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(InferenceExperimentType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ListInferenceExperimentsRequest& WithType(const InferenceExperimentType& value) { SetType(value); return *this;}
-    inline ListInferenceExperimentsRequest& WithType(InferenceExperimentType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(InferenceExperimentType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ListInferenceExperimentsRequest& WithType(InferenceExperimentType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -75,36 +71,34 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceExperiment.html">DescribeInferenceExperiment</a>.
      * </p>
      */
-    inline const InferenceExperimentStatus& GetStatusEquals() const{ return m_statusEquals; }
+    inline InferenceExperimentStatus GetStatusEquals() const { return m_statusEquals; }
     inline bool StatusEqualsHasBeenSet() const { return m_statusEqualsHasBeenSet; }
-    inline void SetStatusEquals(const InferenceExperimentStatus& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = value; }
-    inline void SetStatusEquals(InferenceExperimentStatus&& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = std::move(value); }
-    inline ListInferenceExperimentsRequest& WithStatusEquals(const InferenceExperimentStatus& value) { SetStatusEquals(value); return *this;}
-    inline ListInferenceExperimentsRequest& WithStatusEquals(InferenceExperimentStatus&& value) { SetStatusEquals(std::move(value)); return *this;}
+    inline void SetStatusEquals(InferenceExperimentStatus value) { m_statusEqualsHasBeenSet = true; m_statusEquals = value; }
+    inline ListInferenceExperimentsRequest& WithStatusEquals(InferenceExperimentStatus value) { SetStatusEquals(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Selects inference experiments which were created after this timestamp.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTimeAfter() const{ return m_creationTimeAfter; }
+    inline const Aws::Utils::DateTime& GetCreationTimeAfter() const { return m_creationTimeAfter; }
     inline bool CreationTimeAfterHasBeenSet() const { return m_creationTimeAfterHasBeenSet; }
-    inline void SetCreationTimeAfter(const Aws::Utils::DateTime& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = value; }
-    inline void SetCreationTimeAfter(Aws::Utils::DateTime&& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = std::move(value); }
-    inline ListInferenceExperimentsRequest& WithCreationTimeAfter(const Aws::Utils::DateTime& value) { SetCreationTimeAfter(value); return *this;}
-    inline ListInferenceExperimentsRequest& WithCreationTimeAfter(Aws::Utils::DateTime&& value) { SetCreationTimeAfter(std::move(value)); return *this;}
+    template<typename CreationTimeAfterT = Aws::Utils::DateTime>
+    void SetCreationTimeAfter(CreationTimeAfterT&& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = std::forward<CreationTimeAfterT>(value); }
+    template<typename CreationTimeAfterT = Aws::Utils::DateTime>
+    ListInferenceExperimentsRequest& WithCreationTimeAfter(CreationTimeAfterT&& value) { SetCreationTimeAfter(std::forward<CreationTimeAfterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Selects inference experiments which were created before this timestamp.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTimeBefore() const{ return m_creationTimeBefore; }
+    inline const Aws::Utils::DateTime& GetCreationTimeBefore() const { return m_creationTimeBefore; }
     inline bool CreationTimeBeforeHasBeenSet() const { return m_creationTimeBeforeHasBeenSet; }
-    inline void SetCreationTimeBefore(const Aws::Utils::DateTime& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = value; }
-    inline void SetCreationTimeBefore(Aws::Utils::DateTime&& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = std::move(value); }
-    inline ListInferenceExperimentsRequest& WithCreationTimeBefore(const Aws::Utils::DateTime& value) { SetCreationTimeBefore(value); return *this;}
-    inline ListInferenceExperimentsRequest& WithCreationTimeBefore(Aws::Utils::DateTime&& value) { SetCreationTimeBefore(std::move(value)); return *this;}
+    template<typename CreationTimeBeforeT = Aws::Utils::DateTime>
+    void SetCreationTimeBefore(CreationTimeBeforeT&& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = std::forward<CreationTimeBeforeT>(value); }
+    template<typename CreationTimeBeforeT = Aws::Utils::DateTime>
+    ListInferenceExperimentsRequest& WithCreationTimeBefore(CreationTimeBeforeT&& value) { SetCreationTimeBefore(std::forward<CreationTimeBeforeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -112,12 +106,12 @@ namespace Model
      * <p>Selects inference experiments which were last modified after this
      * timestamp.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTimeAfter() const{ return m_lastModifiedTimeAfter; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTimeAfter() const { return m_lastModifiedTimeAfter; }
     inline bool LastModifiedTimeAfterHasBeenSet() const { return m_lastModifiedTimeAfterHasBeenSet; }
-    inline void SetLastModifiedTimeAfter(const Aws::Utils::DateTime& value) { m_lastModifiedTimeAfterHasBeenSet = true; m_lastModifiedTimeAfter = value; }
-    inline void SetLastModifiedTimeAfter(Aws::Utils::DateTime&& value) { m_lastModifiedTimeAfterHasBeenSet = true; m_lastModifiedTimeAfter = std::move(value); }
-    inline ListInferenceExperimentsRequest& WithLastModifiedTimeAfter(const Aws::Utils::DateTime& value) { SetLastModifiedTimeAfter(value); return *this;}
-    inline ListInferenceExperimentsRequest& WithLastModifiedTimeAfter(Aws::Utils::DateTime&& value) { SetLastModifiedTimeAfter(std::move(value)); return *this;}
+    template<typename LastModifiedTimeAfterT = Aws::Utils::DateTime>
+    void SetLastModifiedTimeAfter(LastModifiedTimeAfterT&& value) { m_lastModifiedTimeAfterHasBeenSet = true; m_lastModifiedTimeAfter = std::forward<LastModifiedTimeAfterT>(value); }
+    template<typename LastModifiedTimeAfterT = Aws::Utils::DateTime>
+    ListInferenceExperimentsRequest& WithLastModifiedTimeAfter(LastModifiedTimeAfterT&& value) { SetLastModifiedTimeAfter(std::forward<LastModifiedTimeAfterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,36 +119,32 @@ namespace Model
      * <p>Selects inference experiments which were last modified before this
      * timestamp.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTimeBefore() const{ return m_lastModifiedTimeBefore; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTimeBefore() const { return m_lastModifiedTimeBefore; }
     inline bool LastModifiedTimeBeforeHasBeenSet() const { return m_lastModifiedTimeBeforeHasBeenSet; }
-    inline void SetLastModifiedTimeBefore(const Aws::Utils::DateTime& value) { m_lastModifiedTimeBeforeHasBeenSet = true; m_lastModifiedTimeBefore = value; }
-    inline void SetLastModifiedTimeBefore(Aws::Utils::DateTime&& value) { m_lastModifiedTimeBeforeHasBeenSet = true; m_lastModifiedTimeBefore = std::move(value); }
-    inline ListInferenceExperimentsRequest& WithLastModifiedTimeBefore(const Aws::Utils::DateTime& value) { SetLastModifiedTimeBefore(value); return *this;}
-    inline ListInferenceExperimentsRequest& WithLastModifiedTimeBefore(Aws::Utils::DateTime&& value) { SetLastModifiedTimeBefore(std::move(value)); return *this;}
+    template<typename LastModifiedTimeBeforeT = Aws::Utils::DateTime>
+    void SetLastModifiedTimeBefore(LastModifiedTimeBeforeT&& value) { m_lastModifiedTimeBeforeHasBeenSet = true; m_lastModifiedTimeBefore = std::forward<LastModifiedTimeBeforeT>(value); }
+    template<typename LastModifiedTimeBeforeT = Aws::Utils::DateTime>
+    ListInferenceExperimentsRequest& WithLastModifiedTimeBefore(LastModifiedTimeBeforeT&& value) { SetLastModifiedTimeBefore(std::forward<LastModifiedTimeBeforeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The column by which to sort the listed inference experiments.</p>
      */
-    inline const SortInferenceExperimentsBy& GetSortBy() const{ return m_sortBy; }
+    inline SortInferenceExperimentsBy GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const SortInferenceExperimentsBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(SortInferenceExperimentsBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListInferenceExperimentsRequest& WithSortBy(const SortInferenceExperimentsBy& value) { SetSortBy(value); return *this;}
-    inline ListInferenceExperimentsRequest& WithSortBy(SortInferenceExperimentsBy&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(SortInferenceExperimentsBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline ListInferenceExperimentsRequest& WithSortBy(SortInferenceExperimentsBy value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The direction of sorting (ascending or descending).</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListInferenceExperimentsRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline ListInferenceExperimentsRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListInferenceExperimentsRequest& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
 
     ///@{
@@ -162,21 +152,19 @@ namespace Model
      * <p> The response from the last list when returning a list large enough to need
      * tokening. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListInferenceExperimentsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListInferenceExperimentsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListInferenceExperimentsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListInferenceExperimentsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to select.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListInferenceExperimentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -186,34 +174,34 @@ namespace Model
     Aws::String m_nameContains;
     bool m_nameContainsHasBeenSet = false;
 
-    InferenceExperimentType m_type;
+    InferenceExperimentType m_type{InferenceExperimentType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
-    InferenceExperimentStatus m_statusEquals;
+    InferenceExperimentStatus m_statusEquals{InferenceExperimentStatus::NOT_SET};
     bool m_statusEqualsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTimeAfter;
+    Aws::Utils::DateTime m_creationTimeAfter{};
     bool m_creationTimeAfterHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTimeBefore;
+    Aws::Utils::DateTime m_creationTimeBefore{};
     bool m_creationTimeBeforeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTimeAfter;
+    Aws::Utils::DateTime m_lastModifiedTimeAfter{};
     bool m_lastModifiedTimeAfterHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTimeBefore;
+    Aws::Utils::DateTime m_lastModifiedTimeBefore{};
     bool m_lastModifiedTimeBeforeHasBeenSet = false;
 
-    SortInferenceExperimentsBy m_sortBy;
+    SortInferenceExperimentsBy m_sortBy{SortInferenceExperimentsBy::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

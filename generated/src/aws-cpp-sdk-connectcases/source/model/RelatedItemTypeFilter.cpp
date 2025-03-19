@@ -18,15 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-RelatedItemTypeFilter::RelatedItemTypeFilter() : 
-    m_commentHasBeenSet(false),
-    m_contactHasBeenSet(false),
-    m_fileHasBeenSet(false)
-{
-}
-
 RelatedItemTypeFilter::RelatedItemTypeFilter(JsonView jsonValue)
-  : RelatedItemTypeFilter()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ RelatedItemTypeFilter& RelatedItemTypeFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("comment"))
   {
     m_comment = jsonValue.GetObject("comment");
-
     m_commentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("contact"))
   {
     m_contact = jsonValue.GetObject("contact");
-
     m_contactHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("file"))
   {
     m_file = jsonValue.GetObject("file");
-
     m_fileHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,15 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-CompositionRelationshipSummary::CompositionRelationshipSummary() : 
-    m_assetModelIdHasBeenSet(false),
-    m_assetModelCompositeModelIdHasBeenSet(false),
-    m_assetModelCompositeModelTypeHasBeenSet(false)
-{
-}
-
 CompositionRelationshipSummary::CompositionRelationshipSummary(JsonView jsonValue)
-  : CompositionRelationshipSummary()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CompositionRelationshipSummary& CompositionRelationshipSummary::operator =(JsonV
   if(jsonValue.ValueExists("assetModelId"))
   {
     m_assetModelId = jsonValue.GetString("assetModelId");
-
     m_assetModelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelCompositeModelId"))
   {
     m_assetModelCompositeModelId = jsonValue.GetString("assetModelCompositeModelId");
-
     m_assetModelCompositeModelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetModelCompositeModelType"))
   {
     m_assetModelCompositeModelType = jsonValue.GetString("assetModelCompositeModelType");
-
     m_assetModelCompositeModelTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

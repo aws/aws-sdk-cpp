@@ -23,7 +23,7 @@ namespace Model
   class StartDeclarativePoliciesReportRequest : public EC2Request
   {
   public:
-    AWS_EC2_API StartDeclarativePoliciesReportRequest();
+    AWS_EC2_API StartDeclarativePoliciesReportRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,7 +45,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline StartDeclarativePoliciesReportRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -56,28 +56,24 @@ namespace Model
      * <p>The name of the S3 bucket where the report will be saved. The bucket must be
      * in the same Region where the report generation request is made.</p>
      */
-    inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
+    inline const Aws::String& GetS3Bucket() const { return m_s3Bucket; }
     inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
-    inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
-    inline void SetS3Bucket(Aws::String&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::move(value); }
-    inline void SetS3Bucket(const char* value) { m_s3BucketHasBeenSet = true; m_s3Bucket.assign(value); }
-    inline StartDeclarativePoliciesReportRequest& WithS3Bucket(const Aws::String& value) { SetS3Bucket(value); return *this;}
-    inline StartDeclarativePoliciesReportRequest& WithS3Bucket(Aws::String&& value) { SetS3Bucket(std::move(value)); return *this;}
-    inline StartDeclarativePoliciesReportRequest& WithS3Bucket(const char* value) { SetS3Bucket(value); return *this;}
+    template<typename S3BucketT = Aws::String>
+    void SetS3Bucket(S3BucketT&& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = std::forward<S3BucketT>(value); }
+    template<typename S3BucketT = Aws::String>
+    StartDeclarativePoliciesReportRequest& WithS3Bucket(S3BucketT&& value) { SetS3Bucket(std::forward<S3BucketT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The prefix for your S3 object.</p>
      */
-    inline const Aws::String& GetS3Prefix() const{ return m_s3Prefix; }
+    inline const Aws::String& GetS3Prefix() const { return m_s3Prefix; }
     inline bool S3PrefixHasBeenSet() const { return m_s3PrefixHasBeenSet; }
-    inline void SetS3Prefix(const Aws::String& value) { m_s3PrefixHasBeenSet = true; m_s3Prefix = value; }
-    inline void SetS3Prefix(Aws::String&& value) { m_s3PrefixHasBeenSet = true; m_s3Prefix = std::move(value); }
-    inline void SetS3Prefix(const char* value) { m_s3PrefixHasBeenSet = true; m_s3Prefix.assign(value); }
-    inline StartDeclarativePoliciesReportRequest& WithS3Prefix(const Aws::String& value) { SetS3Prefix(value); return *this;}
-    inline StartDeclarativePoliciesReportRequest& WithS3Prefix(Aws::String&& value) { SetS3Prefix(std::move(value)); return *this;}
-    inline StartDeclarativePoliciesReportRequest& WithS3Prefix(const char* value) { SetS3Prefix(value); return *this;}
+    template<typename S3PrefixT = Aws::String>
+    void SetS3Prefix(S3PrefixT&& value) { m_s3PrefixHasBeenSet = true; m_s3Prefix = std::forward<S3PrefixT>(value); }
+    template<typename S3PrefixT = Aws::String>
+    StartDeclarativePoliciesReportRequest& WithS3Prefix(S3PrefixT&& value) { SetS3Prefix(std::forward<S3PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,32 +83,30 @@ namespace Model
      * <code>ou-ab12-cdef1234</code> </p> </li> <li> <p>For account:
      * <code>123456789012</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetTargetId() const{ return m_targetId; }
+    inline const Aws::String& GetTargetId() const { return m_targetId; }
     inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
-    inline void SetTargetId(const Aws::String& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
-    inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = std::move(value); }
-    inline void SetTargetId(const char* value) { m_targetIdHasBeenSet = true; m_targetId.assign(value); }
-    inline StartDeclarativePoliciesReportRequest& WithTargetId(const Aws::String& value) { SetTargetId(value); return *this;}
-    inline StartDeclarativePoliciesReportRequest& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
-    inline StartDeclarativePoliciesReportRequest& WithTargetId(const char* value) { SetTargetId(value); return *this;}
+    template<typename TargetIdT = Aws::String>
+    void SetTargetId(TargetIdT&& value) { m_targetIdHasBeenSet = true; m_targetId = std::forward<TargetIdT>(value); }
+    template<typename TargetIdT = Aws::String>
+    StartDeclarativePoliciesReportRequest& WithTargetId(TargetIdT&& value) { SetTargetId(std::forward<TargetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The tags to apply.</p>
      */
-    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+    inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const { return m_tagSpecifications; }
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
-    inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
-    inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
-    inline StartDeclarativePoliciesReportRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
-    inline StartDeclarativePoliciesReportRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
-    inline StartDeclarativePoliciesReportRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
-    inline StartDeclarativePoliciesReportRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    void SetTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::forward<TagSpecificationsT>(value); }
+    template<typename TagSpecificationsT = Aws::Vector<TagSpecification>>
+    StartDeclarativePoliciesReportRequest& WithTagSpecifications(TagSpecificationsT&& value) { SetTagSpecifications(std::forward<TagSpecificationsT>(value)); return *this;}
+    template<typename TagSpecificationsT = TagSpecification>
+    StartDeclarativePoliciesReportRequest& AddTagSpecifications(TagSpecificationsT&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.emplace_back(std::forward<TagSpecificationsT>(value)); return *this; }
     ///@}
   private:
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_s3Bucket;

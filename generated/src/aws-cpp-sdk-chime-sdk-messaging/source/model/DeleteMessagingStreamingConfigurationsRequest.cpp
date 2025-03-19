@@ -12,11 +12,6 @@ using namespace Aws::ChimeSDKMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMessagingStreamingConfigurationsRequest::DeleteMessagingStreamingConfigurationsRequest() : 
-    m_appInstanceArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMessagingStreamingConfigurationsRequest::SerializePayload() const
 {
   return {};

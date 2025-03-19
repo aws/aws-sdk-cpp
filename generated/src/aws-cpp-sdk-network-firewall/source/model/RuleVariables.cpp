@@ -18,14 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-RuleVariables::RuleVariables() : 
-    m_iPSetsHasBeenSet(false),
-    m_portSetsHasBeenSet(false)
-{
-}
-
 RuleVariables::RuleVariables(JsonView jsonValue)
-  : RuleVariables()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ RuleVariables& RuleVariables::operator =(JsonView jsonValue)
     }
     m_iPSetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PortSets"))
   {
     Aws::Map<Aws::String, JsonView> portSetsJsonMap = jsonValue.GetObject("PortSets").GetAllObjects();
@@ -51,7 +43,6 @@ RuleVariables& RuleVariables::operator =(JsonView jsonValue)
     }
     m_portSetsHasBeenSet = true;
   }
-
   return *this;
 }
 

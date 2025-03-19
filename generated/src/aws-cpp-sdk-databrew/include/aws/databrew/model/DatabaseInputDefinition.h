@@ -33,7 +33,7 @@ namespace Model
   class DatabaseInputDefinition
   {
   public:
-    AWS_GLUEDATABREW_API DatabaseInputDefinition();
+    AWS_GLUEDATABREW_API DatabaseInputDefinition() = default;
     AWS_GLUEDATABREW_API DatabaseInputDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API DatabaseInputDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUEDATABREW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,38 +44,34 @@ namespace Model
      * <p>The Glue Connection that stores the connection information for the target
      * database.</p>
      */
-    inline const Aws::String& GetGlueConnectionName() const{ return m_glueConnectionName; }
+    inline const Aws::String& GetGlueConnectionName() const { return m_glueConnectionName; }
     inline bool GlueConnectionNameHasBeenSet() const { return m_glueConnectionNameHasBeenSet; }
-    inline void SetGlueConnectionName(const Aws::String& value) { m_glueConnectionNameHasBeenSet = true; m_glueConnectionName = value; }
-    inline void SetGlueConnectionName(Aws::String&& value) { m_glueConnectionNameHasBeenSet = true; m_glueConnectionName = std::move(value); }
-    inline void SetGlueConnectionName(const char* value) { m_glueConnectionNameHasBeenSet = true; m_glueConnectionName.assign(value); }
-    inline DatabaseInputDefinition& WithGlueConnectionName(const Aws::String& value) { SetGlueConnectionName(value); return *this;}
-    inline DatabaseInputDefinition& WithGlueConnectionName(Aws::String&& value) { SetGlueConnectionName(std::move(value)); return *this;}
-    inline DatabaseInputDefinition& WithGlueConnectionName(const char* value) { SetGlueConnectionName(value); return *this;}
+    template<typename GlueConnectionNameT = Aws::String>
+    void SetGlueConnectionName(GlueConnectionNameT&& value) { m_glueConnectionNameHasBeenSet = true; m_glueConnectionName = std::forward<GlueConnectionNameT>(value); }
+    template<typename GlueConnectionNameT = Aws::String>
+    DatabaseInputDefinition& WithGlueConnectionName(GlueConnectionNameT&& value) { SetGlueConnectionName(std::forward<GlueConnectionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The table within the target database.</p>
      */
-    inline const Aws::String& GetDatabaseTableName() const{ return m_databaseTableName; }
+    inline const Aws::String& GetDatabaseTableName() const { return m_databaseTableName; }
     inline bool DatabaseTableNameHasBeenSet() const { return m_databaseTableNameHasBeenSet; }
-    inline void SetDatabaseTableName(const Aws::String& value) { m_databaseTableNameHasBeenSet = true; m_databaseTableName = value; }
-    inline void SetDatabaseTableName(Aws::String&& value) { m_databaseTableNameHasBeenSet = true; m_databaseTableName = std::move(value); }
-    inline void SetDatabaseTableName(const char* value) { m_databaseTableNameHasBeenSet = true; m_databaseTableName.assign(value); }
-    inline DatabaseInputDefinition& WithDatabaseTableName(const Aws::String& value) { SetDatabaseTableName(value); return *this;}
-    inline DatabaseInputDefinition& WithDatabaseTableName(Aws::String&& value) { SetDatabaseTableName(std::move(value)); return *this;}
-    inline DatabaseInputDefinition& WithDatabaseTableName(const char* value) { SetDatabaseTableName(value); return *this;}
+    template<typename DatabaseTableNameT = Aws::String>
+    void SetDatabaseTableName(DatabaseTableNameT&& value) { m_databaseTableNameHasBeenSet = true; m_databaseTableName = std::forward<DatabaseTableNameT>(value); }
+    template<typename DatabaseTableNameT = Aws::String>
+    DatabaseInputDefinition& WithDatabaseTableName(DatabaseTableNameT&& value) { SetDatabaseTableName(std::forward<DatabaseTableNameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const S3Location& GetTempDirectory() const{ return m_tempDirectory; }
+    inline const S3Location& GetTempDirectory() const { return m_tempDirectory; }
     inline bool TempDirectoryHasBeenSet() const { return m_tempDirectoryHasBeenSet; }
-    inline void SetTempDirectory(const S3Location& value) { m_tempDirectoryHasBeenSet = true; m_tempDirectory = value; }
-    inline void SetTempDirectory(S3Location&& value) { m_tempDirectoryHasBeenSet = true; m_tempDirectory = std::move(value); }
-    inline DatabaseInputDefinition& WithTempDirectory(const S3Location& value) { SetTempDirectory(value); return *this;}
-    inline DatabaseInputDefinition& WithTempDirectory(S3Location&& value) { SetTempDirectory(std::move(value)); return *this;}
+    template<typename TempDirectoryT = S3Location>
+    void SetTempDirectory(TempDirectoryT&& value) { m_tempDirectoryHasBeenSet = true; m_tempDirectory = std::forward<TempDirectoryT>(value); }
+    template<typename TempDirectoryT = S3Location>
+    DatabaseInputDefinition& WithTempDirectory(TempDirectoryT&& value) { SetTempDirectory(std::forward<TempDirectoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +79,12 @@ namespace Model
      * <p>Custom SQL to run against the provided Glue connection. This SQL will be used
      * as the input for DataBrew projects and jobs.</p>
      */
-    inline const Aws::String& GetQueryString() const{ return m_queryString; }
+    inline const Aws::String& GetQueryString() const { return m_queryString; }
     inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
-    inline void SetQueryString(const Aws::String& value) { m_queryStringHasBeenSet = true; m_queryString = value; }
-    inline void SetQueryString(Aws::String&& value) { m_queryStringHasBeenSet = true; m_queryString = std::move(value); }
-    inline void SetQueryString(const char* value) { m_queryStringHasBeenSet = true; m_queryString.assign(value); }
-    inline DatabaseInputDefinition& WithQueryString(const Aws::String& value) { SetQueryString(value); return *this;}
-    inline DatabaseInputDefinition& WithQueryString(Aws::String&& value) { SetQueryString(std::move(value)); return *this;}
-    inline DatabaseInputDefinition& WithQueryString(const char* value) { SetQueryString(value); return *this;}
+    template<typename QueryStringT = Aws::String>
+    void SetQueryString(QueryStringT&& value) { m_queryStringHasBeenSet = true; m_queryString = std::forward<QueryStringT>(value); }
+    template<typename QueryStringT = Aws::String>
+    DatabaseInputDefinition& WithQueryString(QueryStringT&& value) { SetQueryString(std::forward<QueryStringT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,17 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-FieldValidationMessage::FieldValidationMessage() : 
-    m_fieldNameHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 FieldValidationMessage::FieldValidationMessage(JsonView jsonValue)
-  : FieldValidationMessage()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ FieldValidationMessage& FieldValidationMessage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fieldName"))
   {
     m_fieldName = jsonValue.GetString("fieldName");
-
     m_fieldNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identifier"))
   {
     m_identifier = jsonValue.GetString("identifier");
-
     m_identifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("title"))
   {
     m_title = jsonValue.GetString("title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("content"))
   {
     m_content = jsonValue.GetString("content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

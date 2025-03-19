@@ -40,7 +40,7 @@ namespace Model
   class OperationEvent
   {
   public:
-    AWS_SSMSAP_API OperationEvent();
+    AWS_SSMSAP_API OperationEvent() = default;
     AWS_SSMSAP_API OperationEvent(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMSAP_API OperationEvent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSMSAP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * <p>A description of the operation event. For example, "Stop the EC2 instance
      * i-abcdefgh987654321".</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline OperationEvent& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline OperationEvent& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline OperationEvent& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    OperationEvent& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,12 +64,12 @@ namespace Model
      * <p>The resource involved in the operations event.</p> <p>Contains
      * <code>ResourceArn</code> ARN and <code>ResourceType</code>.</p>
      */
-    inline const Resource& GetResource() const{ return m_resource; }
+    inline const Resource& GetResource() const { return m_resource; }
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
-    inline void SetResource(const Resource& value) { m_resourceHasBeenSet = true; m_resource = value; }
-    inline void SetResource(Resource&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
-    inline OperationEvent& WithResource(const Resource& value) { SetResource(value); return *this;}
-    inline OperationEvent& WithResource(Resource&& value) { SetResource(std::move(value)); return *this;}
+    template<typename ResourceT = Resource>
+    void SetResource(ResourceT&& value) { m_resourceHasBeenSet = true; m_resource = std::forward<ResourceT>(value); }
+    template<typename ResourceT = Resource>
+    OperationEvent& WithResource(ResourceT&& value) { SetResource(std::forward<ResourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,38 +77,34 @@ namespace Model
      * <p>The status of the operation event. The possible statuses are:
      * <code>IN_PROGRESS</code>, <code>COMPLETED</code>, and <code>FAILED</code>.</p>
      */
-    inline const OperationEventStatus& GetStatus() const{ return m_status; }
+    inline OperationEventStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const OperationEventStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(OperationEventStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline OperationEvent& WithStatus(const OperationEventStatus& value) { SetStatus(value); return *this;}
-    inline OperationEvent& WithStatus(OperationEventStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(OperationEventStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline OperationEvent& WithStatus(OperationEventStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status message relating to a specific operation event.</p>
      */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+    inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
     inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-    inline OperationEvent& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-    inline OperationEvent& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-    inline OperationEvent& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+    template<typename StatusMessageT = Aws::String>
+    void SetStatusMessage(StatusMessageT&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::forward<StatusMessageT>(value); }
+    template<typename StatusMessageT = Aws::String>
+    OperationEvent& WithStatusMessage(StatusMessageT&& value) { SetStatusMessage(std::forward<StatusMessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of the specified operation event.</p>
      */
-    inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+    inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
-    inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
-    inline void SetTimestamp(Aws::Utils::DateTime&& value) { m_timestampHasBeenSet = true; m_timestamp = std::move(value); }
-    inline OperationEvent& WithTimestamp(const Aws::Utils::DateTime& value) { SetTimestamp(value); return *this;}
-    inline OperationEvent& WithTimestamp(Aws::Utils::DateTime&& value) { SetTimestamp(std::move(value)); return *this;}
+    template<typename TimestampT = Aws::Utils::DateTime>
+    void SetTimestamp(TimestampT&& value) { m_timestampHasBeenSet = true; m_timestamp = std::forward<TimestampT>(value); }
+    template<typename TimestampT = Aws::Utils::DateTime>
+    OperationEvent& WithTimestamp(TimestampT&& value) { SetTimestamp(std::forward<TimestampT>(value)); return *this;}
     ///@}
   private:
 
@@ -120,13 +114,13 @@ namespace Model
     Resource m_resource;
     bool m_resourceHasBeenSet = false;
 
-    OperationEventStatus m_status;
+    OperationEventStatus m_status{OperationEventStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_timestamp;
+    Aws::Utils::DateTime m_timestamp{};
     bool m_timestampHasBeenSet = false;
   };
 

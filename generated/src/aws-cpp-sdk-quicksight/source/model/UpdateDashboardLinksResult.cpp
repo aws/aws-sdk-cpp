@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateDashboardLinksResult::UpdateDashboardLinksResult() : 
-    m_status(0)
-{
-}
-
 UpdateDashboardLinksResult::UpdateDashboardLinksResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateDashboardLinksResult()
 {
   *this = result;
 }
@@ -34,9 +28,8 @@ UpdateDashboardLinksResult& UpdateDashboardLinksResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("DashboardArn"))
   {
     m_dashboardArn = jsonValue.GetString("DashboardArn");
-
+    m_dashboardArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LinkEntities"))
   {
     Aws::Utils::Array<JsonView> linkEntitiesJsonList = jsonValue.GetArray("LinkEntities");
@@ -44,18 +37,19 @@ UpdateDashboardLinksResult& UpdateDashboardLinksResult::operator =(const Aws::Am
     {
       m_linkEntities.push_back(linkEntitiesJsonList[linkEntitiesIndex].AsString());
     }
+    m_linkEntitiesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

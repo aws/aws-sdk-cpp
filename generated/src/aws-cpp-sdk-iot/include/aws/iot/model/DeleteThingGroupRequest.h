@@ -25,7 +25,7 @@ namespace Model
   class DeleteThingGroupRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API DeleteThingGroupRequest();
+    AWS_IOT_API DeleteThingGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The name of the thing group to delete.</p>
      */
-    inline const Aws::String& GetThingGroupName() const{ return m_thingGroupName; }
+    inline const Aws::String& GetThingGroupName() const { return m_thingGroupName; }
     inline bool ThingGroupNameHasBeenSet() const { return m_thingGroupNameHasBeenSet; }
-    inline void SetThingGroupName(const Aws::String& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = value; }
-    inline void SetThingGroupName(Aws::String&& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = std::move(value); }
-    inline void SetThingGroupName(const char* value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName.assign(value); }
-    inline DeleteThingGroupRequest& WithThingGroupName(const Aws::String& value) { SetThingGroupName(value); return *this;}
-    inline DeleteThingGroupRequest& WithThingGroupName(Aws::String&& value) { SetThingGroupName(std::move(value)); return *this;}
-    inline DeleteThingGroupRequest& WithThingGroupName(const char* value) { SetThingGroupName(value); return *this;}
+    template<typename ThingGroupNameT = Aws::String>
+    void SetThingGroupName(ThingGroupNameT&& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = std::forward<ThingGroupNameT>(value); }
+    template<typename ThingGroupNameT = Aws::String>
+    DeleteThingGroupRequest& WithThingGroupName(ThingGroupNameT&& value) { SetThingGroupName(std::forward<ThingGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The expected version of the thing group to delete.</p>
      */
-    inline long long GetExpectedVersion() const{ return m_expectedVersion; }
+    inline long long GetExpectedVersion() const { return m_expectedVersion; }
     inline bool ExpectedVersionHasBeenSet() const { return m_expectedVersionHasBeenSet; }
     inline void SetExpectedVersion(long long value) { m_expectedVersionHasBeenSet = true; m_expectedVersion = value; }
     inline DeleteThingGroupRequest& WithExpectedVersion(long long value) { SetExpectedVersion(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     Aws::String m_thingGroupName;
     bool m_thingGroupNameHasBeenSet = false;
 
-    long long m_expectedVersion;
+    long long m_expectedVersion{0};
     bool m_expectedVersionHasBeenSet = false;
   };
 

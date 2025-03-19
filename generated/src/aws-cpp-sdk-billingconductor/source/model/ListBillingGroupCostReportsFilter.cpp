@@ -18,13 +18,7 @@ namespace BillingConductor
 namespace Model
 {
 
-ListBillingGroupCostReportsFilter::ListBillingGroupCostReportsFilter() : 
-    m_billingGroupArnsHasBeenSet(false)
-{
-}
-
 ListBillingGroupCostReportsFilter::ListBillingGroupCostReportsFilter(JsonView jsonValue)
-  : ListBillingGroupCostReportsFilter()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ ListBillingGroupCostReportsFilter& ListBillingGroupCostReportsFilter::operator =
     }
     m_billingGroupArnsHasBeenSet = true;
   }
-
   return *this;
 }
 

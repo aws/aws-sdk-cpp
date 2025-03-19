@@ -34,7 +34,7 @@ namespace Model
   class SchemaInputAttribute
   {
   public:
-    AWS_ENTITYRESOLUTION_API SchemaInputAttribute();
+    AWS_ENTITYRESOLUTION_API SchemaInputAttribute() = default;
     AWS_ENTITYRESOLUTION_API SchemaInputAttribute(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API SchemaInputAttribute& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ENTITYRESOLUTION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>A string containing the field name.</p>
      */
-    inline const Aws::String& GetFieldName() const{ return m_fieldName; }
+    inline const Aws::String& GetFieldName() const { return m_fieldName; }
     inline bool FieldNameHasBeenSet() const { return m_fieldNameHasBeenSet; }
-    inline void SetFieldName(const Aws::String& value) { m_fieldNameHasBeenSet = true; m_fieldName = value; }
-    inline void SetFieldName(Aws::String&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::move(value); }
-    inline void SetFieldName(const char* value) { m_fieldNameHasBeenSet = true; m_fieldName.assign(value); }
-    inline SchemaInputAttribute& WithFieldName(const Aws::String& value) { SetFieldName(value); return *this;}
-    inline SchemaInputAttribute& WithFieldName(Aws::String&& value) { SetFieldName(std::move(value)); return *this;}
-    inline SchemaInputAttribute& WithFieldName(const char* value) { SetFieldName(value); return *this;}
+    template<typename FieldNameT = Aws::String>
+    void SetFieldName(FieldNameT&& value) { m_fieldNameHasBeenSet = true; m_fieldName = std::forward<FieldNameT>(value); }
+    template<typename FieldNameT = Aws::String>
+    SchemaInputAttribute& WithFieldName(FieldNameT&& value) { SetFieldName(std::forward<FieldNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * and <code>last_name</code>, assigning them a common <code>groupName</code> will
      * prompt Entity Resolution to concatenate them into a single value.</p>
      */
-    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+    inline const Aws::String& GetGroupName() const { return m_groupName; }
     inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
-    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
-    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
-    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
-    inline SchemaInputAttribute& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
-    inline SchemaInputAttribute& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
-    inline SchemaInputAttribute& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+    template<typename GroupNameT = Aws::String>
+    void SetGroupName(GroupNameT&& value) { m_groupNameHasBeenSet = true; m_groupName = std::forward<GroupNameT>(value); }
+    template<typename GroupNameT = Aws::String>
+    SchemaInputAttribute& WithGroupName(GroupNameT&& value) { SetGroupName(std::forward<GroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,7 +74,7 @@ namespace Model
      * is set to <code>TRUE</code>, the column values are hashed. If the value is set
      * to <code>FALSE</code>, the column values are cleartext.</p>
      */
-    inline bool GetHashed() const{ return m_hashed; }
+    inline bool GetHashed() const { return m_hashed; }
     inline bool HashedHasBeenSet() const { return m_hashedHasBeenSet; }
     inline void SetHashed(bool value) { m_hashedHasBeenSet = true; m_hashed = value; }
     inline SchemaInputAttribute& WithHashed(bool value) { SetHashed(value); return *this;}
@@ -95,40 +91,34 @@ namespace Model
      * <code>matchKey</code> is specified for a column, it won't be utilized for
      * matching purposes but will still be included in the output table.</p>
      */
-    inline const Aws::String& GetMatchKey() const{ return m_matchKey; }
+    inline const Aws::String& GetMatchKey() const { return m_matchKey; }
     inline bool MatchKeyHasBeenSet() const { return m_matchKeyHasBeenSet; }
-    inline void SetMatchKey(const Aws::String& value) { m_matchKeyHasBeenSet = true; m_matchKey = value; }
-    inline void SetMatchKey(Aws::String&& value) { m_matchKeyHasBeenSet = true; m_matchKey = std::move(value); }
-    inline void SetMatchKey(const char* value) { m_matchKeyHasBeenSet = true; m_matchKey.assign(value); }
-    inline SchemaInputAttribute& WithMatchKey(const Aws::String& value) { SetMatchKey(value); return *this;}
-    inline SchemaInputAttribute& WithMatchKey(Aws::String&& value) { SetMatchKey(std::move(value)); return *this;}
-    inline SchemaInputAttribute& WithMatchKey(const char* value) { SetMatchKey(value); return *this;}
+    template<typename MatchKeyT = Aws::String>
+    void SetMatchKey(MatchKeyT&& value) { m_matchKeyHasBeenSet = true; m_matchKey = std::forward<MatchKeyT>(value); }
+    template<typename MatchKeyT = Aws::String>
+    SchemaInputAttribute& WithMatchKey(MatchKeyT&& value) { SetMatchKey(std::forward<MatchKeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The subtype of the attribute, selected from a list of values.</p>
      */
-    inline const Aws::String& GetSubType() const{ return m_subType; }
+    inline const Aws::String& GetSubType() const { return m_subType; }
     inline bool SubTypeHasBeenSet() const { return m_subTypeHasBeenSet; }
-    inline void SetSubType(const Aws::String& value) { m_subTypeHasBeenSet = true; m_subType = value; }
-    inline void SetSubType(Aws::String&& value) { m_subTypeHasBeenSet = true; m_subType = std::move(value); }
-    inline void SetSubType(const char* value) { m_subTypeHasBeenSet = true; m_subType.assign(value); }
-    inline SchemaInputAttribute& WithSubType(const Aws::String& value) { SetSubType(value); return *this;}
-    inline SchemaInputAttribute& WithSubType(Aws::String&& value) { SetSubType(std::move(value)); return *this;}
-    inline SchemaInputAttribute& WithSubType(const char* value) { SetSubType(value); return *this;}
+    template<typename SubTypeT = Aws::String>
+    void SetSubType(SubTypeT&& value) { m_subTypeHasBeenSet = true; m_subType = std::forward<SubTypeT>(value); }
+    template<typename SubTypeT = Aws::String>
+    SchemaInputAttribute& WithSubType(SubTypeT&& value) { SetSubType(std::forward<SubTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of the attribute, selected from a list of values.</p>
      */
-    inline const SchemaAttributeType& GetType() const{ return m_type; }
+    inline SchemaAttributeType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const SchemaAttributeType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(SchemaAttributeType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline SchemaInputAttribute& WithType(const SchemaAttributeType& value) { SetType(value); return *this;}
-    inline SchemaInputAttribute& WithType(SchemaAttributeType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(SchemaAttributeType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline SchemaInputAttribute& WithType(SchemaAttributeType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -138,7 +128,7 @@ namespace Model
     Aws::String m_groupName;
     bool m_groupNameHasBeenSet = false;
 
-    bool m_hashed;
+    bool m_hashed{false};
     bool m_hashedHasBeenSet = false;
 
     Aws::String m_matchKey;
@@ -147,7 +137,7 @@ namespace Model
     Aws::String m_subType;
     bool m_subTypeHasBeenSet = false;
 
-    SchemaAttributeType m_type;
+    SchemaAttributeType m_type{SchemaAttributeType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

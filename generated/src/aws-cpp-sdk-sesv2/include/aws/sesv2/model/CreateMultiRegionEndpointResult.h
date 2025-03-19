@@ -34,7 +34,7 @@ namespace Model
   class CreateMultiRegionEndpointResult
   {
   public:
-    AWS_SESV2_API CreateMultiRegionEndpointResult();
+    AWS_SESV2_API CreateMultiRegionEndpointResult() = default;
     AWS_SESV2_API CreateMultiRegionEndpointResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SESV2_API CreateMultiRegionEndpointResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -48,43 +48,40 @@ namespace Model
      * provisioned.</p> </li> <li> <p> <code>DELETING</code> – The resource is being
      * deleted as requested.</p> </li> </ul>
      */
-    inline const Status& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Status& value) { m_status = value; }
-    inline void SetStatus(Status&& value) { m_status = std::move(value); }
-    inline CreateMultiRegionEndpointResult& WithStatus(const Status& value) { SetStatus(value); return *this;}
-    inline CreateMultiRegionEndpointResult& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    inline Status GetStatus() const { return m_status; }
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline CreateMultiRegionEndpointResult& WithStatus(Status value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the multi-region endpoint (global-endpoint).</p>
      */
-    inline const Aws::String& GetEndpointId() const{ return m_endpointId; }
-    inline void SetEndpointId(const Aws::String& value) { m_endpointId = value; }
-    inline void SetEndpointId(Aws::String&& value) { m_endpointId = std::move(value); }
-    inline void SetEndpointId(const char* value) { m_endpointId.assign(value); }
-    inline CreateMultiRegionEndpointResult& WithEndpointId(const Aws::String& value) { SetEndpointId(value); return *this;}
-    inline CreateMultiRegionEndpointResult& WithEndpointId(Aws::String&& value) { SetEndpointId(std::move(value)); return *this;}
-    inline CreateMultiRegionEndpointResult& WithEndpointId(const char* value) { SetEndpointId(value); return *this;}
+    inline const Aws::String& GetEndpointId() const { return m_endpointId; }
+    template<typename EndpointIdT = Aws::String>
+    void SetEndpointId(EndpointIdT&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::forward<EndpointIdT>(value); }
+    template<typename EndpointIdT = Aws::String>
+    CreateMultiRegionEndpointResult& WithEndpointId(EndpointIdT&& value) { SetEndpointId(std::forward<EndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateMultiRegionEndpointResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateMultiRegionEndpointResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateMultiRegionEndpointResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateMultiRegionEndpointResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Status m_status;
+    Status m_status{Status::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_endpointId;
+    bool m_endpointIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

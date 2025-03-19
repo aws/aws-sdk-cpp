@@ -18,28 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ModelCard::ModelCard() : 
-    m_modelCardArnHasBeenSet(false),
-    m_modelCardNameHasBeenSet(false),
-    m_modelCardVersion(0),
-    m_modelCardVersionHasBeenSet(false),
-    m_contentHasBeenSet(false),
-    m_modelCardStatus(ModelCardStatus::NOT_SET),
-    m_modelCardStatusHasBeenSet(false),
-    m_securityConfigHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_lastModifiedByHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_modelIdHasBeenSet(false),
-    m_riskRatingHasBeenSet(false),
-    m_modelPackageGroupNameHasBeenSet(false)
-{
-}
-
 ModelCard::ModelCard(JsonView jsonValue)
-  : ModelCard()
 {
   *this = jsonValue;
 }
@@ -49,73 +28,53 @@ ModelCard& ModelCard::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ModelCardArn"))
   {
     m_modelCardArn = jsonValue.GetString("ModelCardArn");
-
     m_modelCardArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelCardName"))
   {
     m_modelCardName = jsonValue.GetString("ModelCardName");
-
     m_modelCardNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelCardVersion"))
   {
     m_modelCardVersion = jsonValue.GetInteger("ModelCardVersion");
-
     m_modelCardVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Content"))
   {
     m_content = jsonValue.GetString("Content");
-
     m_contentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelCardStatus"))
   {
     m_modelCardStatus = ModelCardStatusMapper::GetModelCardStatusForName(jsonValue.GetString("ModelCardStatus"));
-
     m_modelCardStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecurityConfig"))
   {
     m_securityConfig = jsonValue.GetObject("SecurityConfig");
-
     m_securityConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedBy"))
   {
     m_createdBy = jsonValue.GetObject("CreatedBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedBy"))
   {
     m_lastModifiedBy = jsonValue.GetObject("LastModifiedBy");
-
     m_lastModifiedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -125,28 +84,21 @@ ModelCard& ModelCard::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelId"))
   {
     m_modelId = jsonValue.GetString("ModelId");
-
     m_modelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RiskRating"))
   {
     m_riskRating = jsonValue.GetString("RiskRating");
-
     m_riskRatingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelPackageGroupName"))
   {
     m_modelPackageGroupName = jsonValue.GetString("ModelPackageGroupName");
-
     m_modelPackageGroupNameHasBeenSet = true;
   }
-
   return *this;
 }
 

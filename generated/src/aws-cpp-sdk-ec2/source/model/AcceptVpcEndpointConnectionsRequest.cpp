@@ -10,14 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-AcceptVpcEndpointConnectionsRequest::AcceptVpcEndpointConnectionsRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_serviceIdHasBeenSet(false),
-    m_vpcEndpointIdsHasBeenSet(false)
-{
-}
-
 Aws::String AcceptVpcEndpointConnectionsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

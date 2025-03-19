@@ -12,13 +12,6 @@ using namespace Aws::MemoryDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateUserRequest::UpdateUserRequest() : 
-    m_userNameHasBeenSet(false),
-    m_authenticationModeHasBeenSet(false),
-    m_accessStringHasBeenSet(false)
-{
-}
-
 Aws::String UpdateUserRequest::SerializePayload() const
 {
   JsonValue payload;

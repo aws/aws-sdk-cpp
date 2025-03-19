@@ -28,7 +28,7 @@ namespace Model
   class DeleteRecommendationTemplateResult
   {
   public:
-    AWS_RESILIENCEHUB_API DeleteRecommendationTemplateResult();
+    AWS_RESILIENCEHUB_API DeleteRecommendationTemplateResult() = default;
     AWS_RESILIENCEHUB_API DeleteRecommendationTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_RESILIENCEHUB_API DeleteRecommendationTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,43 +37,40 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for a recommendation template.</p>
      */
-    inline const Aws::String& GetRecommendationTemplateArn() const{ return m_recommendationTemplateArn; }
-    inline void SetRecommendationTemplateArn(const Aws::String& value) { m_recommendationTemplateArn = value; }
-    inline void SetRecommendationTemplateArn(Aws::String&& value) { m_recommendationTemplateArn = std::move(value); }
-    inline void SetRecommendationTemplateArn(const char* value) { m_recommendationTemplateArn.assign(value); }
-    inline DeleteRecommendationTemplateResult& WithRecommendationTemplateArn(const Aws::String& value) { SetRecommendationTemplateArn(value); return *this;}
-    inline DeleteRecommendationTemplateResult& WithRecommendationTemplateArn(Aws::String&& value) { SetRecommendationTemplateArn(std::move(value)); return *this;}
-    inline DeleteRecommendationTemplateResult& WithRecommendationTemplateArn(const char* value) { SetRecommendationTemplateArn(value); return *this;}
+    inline const Aws::String& GetRecommendationTemplateArn() const { return m_recommendationTemplateArn; }
+    template<typename RecommendationTemplateArnT = Aws::String>
+    void SetRecommendationTemplateArn(RecommendationTemplateArnT&& value) { m_recommendationTemplateArnHasBeenSet = true; m_recommendationTemplateArn = std::forward<RecommendationTemplateArnT>(value); }
+    template<typename RecommendationTemplateArnT = Aws::String>
+    DeleteRecommendationTemplateResult& WithRecommendationTemplateArn(RecommendationTemplateArnT&& value) { SetRecommendationTemplateArn(std::forward<RecommendationTemplateArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Status of the action.</p>
      */
-    inline const RecommendationTemplateStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const RecommendationTemplateStatus& value) { m_status = value; }
-    inline void SetStatus(RecommendationTemplateStatus&& value) { m_status = std::move(value); }
-    inline DeleteRecommendationTemplateResult& WithStatus(const RecommendationTemplateStatus& value) { SetStatus(value); return *this;}
-    inline DeleteRecommendationTemplateResult& WithStatus(RecommendationTemplateStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline RecommendationTemplateStatus GetStatus() const { return m_status; }
+    inline void SetStatus(RecommendationTemplateStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline DeleteRecommendationTemplateResult& WithStatus(RecommendationTemplateStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteRecommendationTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteRecommendationTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteRecommendationTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteRecommendationTemplateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_recommendationTemplateArn;
+    bool m_recommendationTemplateArnHasBeenSet = false;
 
-    RecommendationTemplateStatus m_status;
+    RecommendationTemplateStatus m_status{RecommendationTemplateStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

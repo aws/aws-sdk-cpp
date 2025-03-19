@@ -31,7 +31,7 @@ namespace Model
   class PrefixListId
   {
   public:
-    AWS_EC2_API PrefixListId();
+    AWS_EC2_API PrefixListId() = default;
     AWS_EC2_API PrefixListId(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API PrefixListId& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,28 +45,24 @@ namespace Model
      * ID.</p> <p>Constraints: Up to 255 characters in length. Allowed characters are
      * a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline PrefixListId& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline PrefixListId& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline PrefixListId& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    PrefixListId& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the prefix.</p>
      */
-    inline const Aws::String& GetPrefixListId() const{ return m_prefixListId; }
+    inline const Aws::String& GetPrefixListId() const { return m_prefixListId; }
     inline bool PrefixListIdHasBeenSet() const { return m_prefixListIdHasBeenSet; }
-    inline void SetPrefixListId(const Aws::String& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = value; }
-    inline void SetPrefixListId(Aws::String&& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = std::move(value); }
-    inline void SetPrefixListId(const char* value) { m_prefixListIdHasBeenSet = true; m_prefixListId.assign(value); }
-    inline PrefixListId& WithPrefixListId(const Aws::String& value) { SetPrefixListId(value); return *this;}
-    inline PrefixListId& WithPrefixListId(Aws::String&& value) { SetPrefixListId(std::move(value)); return *this;}
-    inline PrefixListId& WithPrefixListId(const char* value) { SetPrefixListId(value); return *this;}
+    template<typename PrefixListIdT = Aws::String>
+    void SetPrefixListId(PrefixListIdT&& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = std::forward<PrefixListIdT>(value); }
+    template<typename PrefixListIdT = Aws::String>
+    PrefixListId& WithPrefixListId(PrefixListIdT&& value) { SetPrefixListId(std::forward<PrefixListIdT>(value)); return *this;}
     ///@}
   private:
 

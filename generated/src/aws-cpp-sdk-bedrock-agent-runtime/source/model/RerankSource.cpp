@@ -18,15 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-RerankSource::RerankSource() : 
-    m_inlineDocumentSourceHasBeenSet(false),
-    m_type(RerankSourceType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 RerankSource::RerankSource(JsonView jsonValue)
-  : RerankSource()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ RerankSource& RerankSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("inlineDocumentSource"))
   {
     m_inlineDocumentSource = jsonValue.GetObject("inlineDocumentSource");
-
     m_inlineDocumentSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = RerankSourceTypeMapper::GetRerankSourceTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

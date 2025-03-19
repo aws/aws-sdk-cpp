@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-ChannelEngineVersionRequest::ChannelEngineVersionRequest() : 
-    m_versionHasBeenSet(false)
-{
-}
-
 ChannelEngineVersionRequest::ChannelEngineVersionRequest(JsonView jsonValue)
-  : ChannelEngineVersionRequest()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ChannelEngineVersionRequest& ChannelEngineVersionRequest::operator =(JsonView js
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetString("version");
-
     m_versionHasBeenSet = true;
   }
-
   return *this;
 }
 

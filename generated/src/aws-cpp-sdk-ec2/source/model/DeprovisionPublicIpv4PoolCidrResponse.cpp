@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeprovisionPublicIpv4PoolCidrResponse::DeprovisionPublicIpv4PoolCidrResponse()
-{
-}
-
 DeprovisionPublicIpv4PoolCidrResponse::DeprovisionPublicIpv4PoolCidrResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DeprovisionPublicIpv4PoolCidrResponse& DeprovisionPublicIpv4PoolCidrResponse::op
     if(!poolIdNode.IsNull())
     {
       m_poolId = Aws::Utils::Xml::DecodeEscapedXmlText(poolIdNode.GetText());
+      m_poolIdHasBeenSet = true;
     }
     XmlNode deprovisionedAddressesNode = resultNode.FirstChild("deprovisionedAddressSet");
     if(!deprovisionedAddressesNode.IsNull())
     {
       XmlNode deprovisionedAddressesMember = deprovisionedAddressesNode.FirstChild("item");
+      m_deprovisionedAddressesHasBeenSet = !deprovisionedAddressesMember.IsNull();
       while(!deprovisionedAddressesMember.IsNull())
       {
         m_deprovisionedAddresses.push_back(deprovisionedAddressesMember.GetText());
         deprovisionedAddressesMember = deprovisionedAddressesMember.NextNode("item");
       }
 
+      m_deprovisionedAddressesHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DeprovisionPublicIpv4PoolCidrResponse& DeprovisionPublicIpv4PoolCidrResponse::op
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DeprovisionPublicIpv4PoolCidrResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

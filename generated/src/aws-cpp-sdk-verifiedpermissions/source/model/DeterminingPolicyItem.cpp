@@ -18,13 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-DeterminingPolicyItem::DeterminingPolicyItem() : 
-    m_policyIdHasBeenSet(false)
-{
-}
-
 DeterminingPolicyItem::DeterminingPolicyItem(JsonView jsonValue)
-  : DeterminingPolicyItem()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DeterminingPolicyItem& DeterminingPolicyItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("policyId"))
   {
     m_policyId = jsonValue.GetString("policyId");
-
     m_policyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

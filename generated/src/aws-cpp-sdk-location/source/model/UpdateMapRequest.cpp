@@ -12,13 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateMapRequest::UpdateMapRequest() : 
-    m_mapNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_configurationUpdateHasBeenSet(false)
-{
-}
-
 Aws::String UpdateMapRequest::SerializePayload() const
 {
   JsonValue payload;

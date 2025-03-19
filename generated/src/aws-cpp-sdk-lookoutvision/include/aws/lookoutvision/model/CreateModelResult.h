@@ -28,7 +28,7 @@ namespace Model
   class CreateModelResult
   {
   public:
-    AWS_LOOKOUTFORVISION_API CreateModelResult();
+    AWS_LOOKOUTFORVISION_API CreateModelResult() = default;
     AWS_LOOKOUTFORVISION_API CreateModelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOOKOUTFORVISION_API CreateModelResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The response from a call to <code>CreateModel</code>.</p>
      */
-    inline const ModelMetadata& GetModelMetadata() const{ return m_modelMetadata; }
-    inline void SetModelMetadata(const ModelMetadata& value) { m_modelMetadata = value; }
-    inline void SetModelMetadata(ModelMetadata&& value) { m_modelMetadata = std::move(value); }
-    inline CreateModelResult& WithModelMetadata(const ModelMetadata& value) { SetModelMetadata(value); return *this;}
-    inline CreateModelResult& WithModelMetadata(ModelMetadata&& value) { SetModelMetadata(std::move(value)); return *this;}
+    inline const ModelMetadata& GetModelMetadata() const { return m_modelMetadata; }
+    template<typename ModelMetadataT = ModelMetadata>
+    void SetModelMetadata(ModelMetadataT&& value) { m_modelMetadataHasBeenSet = true; m_modelMetadata = std::forward<ModelMetadataT>(value); }
+    template<typename ModelMetadataT = ModelMetadata>
+    CreateModelResult& WithModelMetadata(ModelMetadataT&& value) { SetModelMetadata(std::forward<ModelMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateModelResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateModelResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateModelResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateModelResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ModelMetadata m_modelMetadata;
+    bool m_modelMetadataHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,7 +29,7 @@ namespace Model
   class TextInputSpecification
   {
   public:
-    AWS_LEXMODELSV2_API TextInputSpecification();
+    AWS_LEXMODELSV2_API TextInputSpecification() = default;
     AWS_LEXMODELSV2_API TextInputSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API TextInputSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,14 +39,14 @@ namespace Model
     /**
      * <p>Time for which a bot waits before re-prompting a customer for text input.</p>
      */
-    inline int GetStartTimeoutMs() const{ return m_startTimeoutMs; }
+    inline int GetStartTimeoutMs() const { return m_startTimeoutMs; }
     inline bool StartTimeoutMsHasBeenSet() const { return m_startTimeoutMsHasBeenSet; }
     inline void SetStartTimeoutMs(int value) { m_startTimeoutMsHasBeenSet = true; m_startTimeoutMs = value; }
     inline TextInputSpecification& WithStartTimeoutMs(int value) { SetStartTimeoutMs(value); return *this;}
     ///@}
   private:
 
-    int m_startTimeoutMs;
+    int m_startTimeoutMs{0};
     bool m_startTimeoutMsHasBeenSet = false;
   };
 

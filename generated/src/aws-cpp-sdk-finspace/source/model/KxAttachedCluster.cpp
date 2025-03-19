@@ -18,17 +18,7 @@ namespace finspace
 namespace Model
 {
 
-KxAttachedCluster::KxAttachedCluster() : 
-    m_clusterNameHasBeenSet(false),
-    m_clusterType(KxClusterType::NOT_SET),
-    m_clusterTypeHasBeenSet(false),
-    m_clusterStatus(KxClusterStatus::NOT_SET),
-    m_clusterStatusHasBeenSet(false)
-{
-}
-
 KxAttachedCluster::KxAttachedCluster(JsonView jsonValue)
-  : KxAttachedCluster()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ KxAttachedCluster& KxAttachedCluster::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("clusterName"))
   {
     m_clusterName = jsonValue.GetString("clusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterType"))
   {
     m_clusterType = KxClusterTypeMapper::GetKxClusterTypeForName(jsonValue.GetString("clusterType"));
-
     m_clusterTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("clusterStatus"))
   {
     m_clusterStatus = KxClusterStatusMapper::GetKxClusterStatusForName(jsonValue.GetString("clusterStatus"));
-
     m_clusterStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

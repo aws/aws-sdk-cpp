@@ -36,7 +36,7 @@ namespace Model
   class APNSMessage
   {
   public:
-    AWS_PINPOINT_API APNSMessage();
+    AWS_PINPOINT_API APNSMessage() = default;
     AWS_PINPOINT_API APNSMessage(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API APNSMessage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -63,14 +63,12 @@ namespace Model
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/sending_notification_requests_to_apns">Sending
      * Notification Requests to APNs</a> on the Apple Developer website.</p>
      */
-    inline const Aws::String& GetAPNSPushType() const{ return m_aPNSPushType; }
+    inline const Aws::String& GetAPNSPushType() const { return m_aPNSPushType; }
     inline bool APNSPushTypeHasBeenSet() const { return m_aPNSPushTypeHasBeenSet; }
-    inline void SetAPNSPushType(const Aws::String& value) { m_aPNSPushTypeHasBeenSet = true; m_aPNSPushType = value; }
-    inline void SetAPNSPushType(Aws::String&& value) { m_aPNSPushTypeHasBeenSet = true; m_aPNSPushType = std::move(value); }
-    inline void SetAPNSPushType(const char* value) { m_aPNSPushTypeHasBeenSet = true; m_aPNSPushType.assign(value); }
-    inline APNSMessage& WithAPNSPushType(const Aws::String& value) { SetAPNSPushType(value); return *this;}
-    inline APNSMessage& WithAPNSPushType(Aws::String&& value) { SetAPNSPushType(std::move(value)); return *this;}
-    inline APNSMessage& WithAPNSPushType(const char* value) { SetAPNSPushType(value); return *this;}
+    template<typename APNSPushTypeT = Aws::String>
+    void SetAPNSPushType(APNSPushTypeT&& value) { m_aPNSPushTypeHasBeenSet = true; m_aPNSPushType = std::forward<APNSPushTypeT>(value); }
+    template<typename APNSPushTypeT = Aws::String>
+    APNSMessage& WithAPNSPushType(APNSPushTypeT&& value) { SetAPNSPushType(std::forward<APNSPushTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,12 +81,10 @@ namespace Model
      * platform.</p></li> <li><p>URL - The default mobile browser on the recipient's
      * device opens and loads the web page at a URL that you specify.</p></li></ul>
      */
-    inline const Action& GetAction() const{ return m_action; }
+    inline Action GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const Action& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(Action&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline APNSMessage& WithAction(const Action& value) { SetAction(value); return *this;}
-    inline APNSMessage& WithAction(Action&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(Action value) { m_actionHasBeenSet = true; m_action = value; }
+    inline APNSMessage& WithAction(Action value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
@@ -98,7 +94,7 @@ namespace Model
      * the dictionary, the badge doesn't change. To remove the badge, set this value to
      * 0.</p>
      */
-    inline int GetBadge() const{ return m_badge; }
+    inline int GetBadge() const { return m_badge; }
     inline bool BadgeHasBeenSet() const { return m_badgeHasBeenSet; }
     inline void SetBadge(int value) { m_badgeHasBeenSet = true; m_badge = value; }
     inline APNSMessage& WithBadge(int value) { SetBadge(value); return *this;}
@@ -108,14 +104,12 @@ namespace Model
     /**
      * <p>The body of the notification message.</p>
      */
-    inline const Aws::String& GetBody() const{ return m_body; }
+    inline const Aws::String& GetBody() const { return m_body; }
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
-    inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
-    inline void SetBody(Aws::String&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
-    inline void SetBody(const char* value) { m_bodyHasBeenSet = true; m_body.assign(value); }
-    inline APNSMessage& WithBody(const Aws::String& value) { SetBody(value); return *this;}
-    inline APNSMessage& WithBody(Aws::String&& value) { SetBody(std::move(value)); return *this;}
-    inline APNSMessage& WithBody(const char* value) { SetBody(value); return *this;}
+    template<typename BodyT = Aws::String>
+    void SetBody(BodyT&& value) { m_bodyHasBeenSet = true; m_body = std::forward<BodyT>(value); }
+    template<typename BodyT = Aws::String>
+    APNSMessage& WithBody(BodyT&& value) { SetBody(std::forward<BodyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -124,14 +118,12 @@ namespace Model
      * key is a value that's defined by the identifier property of one of your app's
      * registered categories.</p>
      */
-    inline const Aws::String& GetCategory() const{ return m_category; }
+    inline const Aws::String& GetCategory() const { return m_category; }
     inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
-    inline void SetCategory(const Aws::String& value) { m_categoryHasBeenSet = true; m_category = value; }
-    inline void SetCategory(Aws::String&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
-    inline void SetCategory(const char* value) { m_categoryHasBeenSet = true; m_category.assign(value); }
-    inline APNSMessage& WithCategory(const Aws::String& value) { SetCategory(value); return *this;}
-    inline APNSMessage& WithCategory(Aws::String&& value) { SetCategory(std::move(value)); return *this;}
-    inline APNSMessage& WithCategory(const char* value) { SetCategory(value); return *this;}
+    template<typename CategoryT = Aws::String>
+    void SetCategory(CategoryT&& value) { m_categoryHasBeenSet = true; m_category = std::forward<CategoryT>(value); }
+    template<typename CategoryT = Aws::String>
+    APNSMessage& WithCategory(CategoryT&& value) { SetCategory(std::forward<CategoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,14 +134,12 @@ namespace Model
      * specifies this value in the apns-collapse-id request header when it sends the
      * notification message to APNs.</p>
      */
-    inline const Aws::String& GetCollapseId() const{ return m_collapseId; }
+    inline const Aws::String& GetCollapseId() const { return m_collapseId; }
     inline bool CollapseIdHasBeenSet() const { return m_collapseIdHasBeenSet; }
-    inline void SetCollapseId(const Aws::String& value) { m_collapseIdHasBeenSet = true; m_collapseId = value; }
-    inline void SetCollapseId(Aws::String&& value) { m_collapseIdHasBeenSet = true; m_collapseId = std::move(value); }
-    inline void SetCollapseId(const char* value) { m_collapseIdHasBeenSet = true; m_collapseId.assign(value); }
-    inline APNSMessage& WithCollapseId(const Aws::String& value) { SetCollapseId(value); return *this;}
-    inline APNSMessage& WithCollapseId(Aws::String&& value) { SetCollapseId(std::move(value)); return *this;}
-    inline APNSMessage& WithCollapseId(const char* value) { SetCollapseId(value); return *this;}
+    template<typename CollapseIdT = Aws::String>
+    void SetCollapseId(CollapseIdT&& value) { m_collapseIdHasBeenSet = true; m_collapseId = std::forward<CollapseIdT>(value); }
+    template<typename CollapseIdT = Aws::String>
+    APNSMessage& WithCollapseId(CollapseIdT&& value) { SetCollapseId(std::forward<CollapseIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -157,33 +147,28 @@ namespace Model
      * <p>The JSON payload to use for a silent push notification. This payload is added
      * to the data.pinpoint.jsonBody object of the notification.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetData() const{ return m_data; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetData() const { return m_data; }
     inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
-    inline void SetData(const Aws::Map<Aws::String, Aws::String>& value) { m_dataHasBeenSet = true; m_data = value; }
-    inline void SetData(Aws::Map<Aws::String, Aws::String>&& value) { m_dataHasBeenSet = true; m_data = std::move(value); }
-    inline APNSMessage& WithData(const Aws::Map<Aws::String, Aws::String>& value) { SetData(value); return *this;}
-    inline APNSMessage& WithData(Aws::Map<Aws::String, Aws::String>&& value) { SetData(std::move(value)); return *this;}
-    inline APNSMessage& AddData(const Aws::String& key, const Aws::String& value) { m_dataHasBeenSet = true; m_data.emplace(key, value); return *this; }
-    inline APNSMessage& AddData(Aws::String&& key, const Aws::String& value) { m_dataHasBeenSet = true; m_data.emplace(std::move(key), value); return *this; }
-    inline APNSMessage& AddData(const Aws::String& key, Aws::String&& value) { m_dataHasBeenSet = true; m_data.emplace(key, std::move(value)); return *this; }
-    inline APNSMessage& AddData(Aws::String&& key, Aws::String&& value) { m_dataHasBeenSet = true; m_data.emplace(std::move(key), std::move(value)); return *this; }
-    inline APNSMessage& AddData(const char* key, Aws::String&& value) { m_dataHasBeenSet = true; m_data.emplace(key, std::move(value)); return *this; }
-    inline APNSMessage& AddData(Aws::String&& key, const char* value) { m_dataHasBeenSet = true; m_data.emplace(std::move(key), value); return *this; }
-    inline APNSMessage& AddData(const char* key, const char* value) { m_dataHasBeenSet = true; m_data.emplace(key, value); return *this; }
+    template<typename DataT = Aws::Map<Aws::String, Aws::String>>
+    void SetData(DataT&& value) { m_dataHasBeenSet = true; m_data = std::forward<DataT>(value); }
+    template<typename DataT = Aws::Map<Aws::String, Aws::String>>
+    APNSMessage& WithData(DataT&& value) { SetData(std::forward<DataT>(value)); return *this;}
+    template<typename DataKeyT = Aws::String, typename DataValueT = Aws::String>
+    APNSMessage& AddData(DataKeyT&& key, DataValueT&& value) {
+      m_dataHasBeenSet = true; m_data.emplace(std::forward<DataKeyT>(key), std::forward<DataValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The URL of an image or video to display in the push notification.</p>
      */
-    inline const Aws::String& GetMediaUrl() const{ return m_mediaUrl; }
+    inline const Aws::String& GetMediaUrl() const { return m_mediaUrl; }
     inline bool MediaUrlHasBeenSet() const { return m_mediaUrlHasBeenSet; }
-    inline void SetMediaUrl(const Aws::String& value) { m_mediaUrlHasBeenSet = true; m_mediaUrl = value; }
-    inline void SetMediaUrl(Aws::String&& value) { m_mediaUrlHasBeenSet = true; m_mediaUrl = std::move(value); }
-    inline void SetMediaUrl(const char* value) { m_mediaUrlHasBeenSet = true; m_mediaUrl.assign(value); }
-    inline APNSMessage& WithMediaUrl(const Aws::String& value) { SetMediaUrl(value); return *this;}
-    inline APNSMessage& WithMediaUrl(Aws::String&& value) { SetMediaUrl(std::move(value)); return *this;}
-    inline APNSMessage& WithMediaUrl(const char* value) { SetMediaUrl(value); return *this;}
+    template<typename MediaUrlT = Aws::String>
+    void SetMediaUrl(MediaUrlT&& value) { m_mediaUrlHasBeenSet = true; m_mediaUrl = std::forward<MediaUrlT>(value); }
+    template<typename MediaUrlT = Aws::String>
+    APNSMessage& WithMediaUrl(MediaUrlT&& value) { SetMediaUrl(std::forward<MediaUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -191,14 +176,12 @@ namespace Model
      * <p>The authentication method that you want Amazon Pinpoint to use when
      * authenticating with APNs, CERTIFICATE or TOKEN.</p>
      */
-    inline const Aws::String& GetPreferredAuthenticationMethod() const{ return m_preferredAuthenticationMethod; }
+    inline const Aws::String& GetPreferredAuthenticationMethod() const { return m_preferredAuthenticationMethod; }
     inline bool PreferredAuthenticationMethodHasBeenSet() const { return m_preferredAuthenticationMethodHasBeenSet; }
-    inline void SetPreferredAuthenticationMethod(const Aws::String& value) { m_preferredAuthenticationMethodHasBeenSet = true; m_preferredAuthenticationMethod = value; }
-    inline void SetPreferredAuthenticationMethod(Aws::String&& value) { m_preferredAuthenticationMethodHasBeenSet = true; m_preferredAuthenticationMethod = std::move(value); }
-    inline void SetPreferredAuthenticationMethod(const char* value) { m_preferredAuthenticationMethodHasBeenSet = true; m_preferredAuthenticationMethod.assign(value); }
-    inline APNSMessage& WithPreferredAuthenticationMethod(const Aws::String& value) { SetPreferredAuthenticationMethod(value); return *this;}
-    inline APNSMessage& WithPreferredAuthenticationMethod(Aws::String&& value) { SetPreferredAuthenticationMethod(std::move(value)); return *this;}
-    inline APNSMessage& WithPreferredAuthenticationMethod(const char* value) { SetPreferredAuthenticationMethod(value); return *this;}
+    template<typename PreferredAuthenticationMethodT = Aws::String>
+    void SetPreferredAuthenticationMethod(PreferredAuthenticationMethodT&& value) { m_preferredAuthenticationMethodHasBeenSet = true; m_preferredAuthenticationMethod = std::forward<PreferredAuthenticationMethodT>(value); }
+    template<typename PreferredAuthenticationMethodT = Aws::String>
+    APNSMessage& WithPreferredAuthenticationMethod(PreferredAuthenticationMethodT&& value) { SetPreferredAuthenticationMethod(std::forward<PreferredAuthenticationMethodT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -214,14 +197,12 @@ namespace Model
      * specify an FCM value for this property, Amazon Pinpoint accepts and converts the
      * value to the corresponding APNs value.</p>
      */
-    inline const Aws::String& GetPriority() const{ return m_priority; }
+    inline const Aws::String& GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
-    inline void SetPriority(const Aws::String& value) { m_priorityHasBeenSet = true; m_priority = value; }
-    inline void SetPriority(Aws::String&& value) { m_priorityHasBeenSet = true; m_priority = std::move(value); }
-    inline void SetPriority(const char* value) { m_priorityHasBeenSet = true; m_priority.assign(value); }
-    inline APNSMessage& WithPriority(const Aws::String& value) { SetPriority(value); return *this;}
-    inline APNSMessage& WithPriority(Aws::String&& value) { SetPriority(std::move(value)); return *this;}
-    inline APNSMessage& WithPriority(const char* value) { SetPriority(value); return *this;}
+    template<typename PriorityT = Aws::String>
+    void SetPriority(PriorityT&& value) { m_priorityHasBeenSet = true; m_priority = std::forward<PriorityT>(value); }
+    template<typename PriorityT = Aws::String>
+    APNSMessage& WithPriority(PriorityT&& value) { SetPriority(std::forward<PriorityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -240,14 +221,12 @@ namespace Model
      * href="https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_background_updates_to_your_app">Pushing
      * Background Updates to Your App</a> on the Apple Developer website.</p>
      */
-    inline const Aws::String& GetRawContent() const{ return m_rawContent; }
+    inline const Aws::String& GetRawContent() const { return m_rawContent; }
     inline bool RawContentHasBeenSet() const { return m_rawContentHasBeenSet; }
-    inline void SetRawContent(const Aws::String& value) { m_rawContentHasBeenSet = true; m_rawContent = value; }
-    inline void SetRawContent(Aws::String&& value) { m_rawContentHasBeenSet = true; m_rawContent = std::move(value); }
-    inline void SetRawContent(const char* value) { m_rawContentHasBeenSet = true; m_rawContent.assign(value); }
-    inline APNSMessage& WithRawContent(const Aws::String& value) { SetRawContent(value); return *this;}
-    inline APNSMessage& WithRawContent(Aws::String&& value) { SetRawContent(std::move(value)); return *this;}
-    inline APNSMessage& WithRawContent(const char* value) { SetRawContent(value); return *this;}
+    template<typename RawContentT = Aws::String>
+    void SetRawContent(RawContentT&& value) { m_rawContentHasBeenSet = true; m_rawContent = std::forward<RawContentT>(value); }
+    template<typename RawContentT = Aws::String>
+    APNSMessage& WithRawContent(RawContentT&& value) { SetRawContent(std::forward<RawContentT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -273,7 +252,7 @@ namespace Model
      * recommends that you send no more than 3 silent push notifications to each
      * recipient per hour.</p>
      */
-    inline bool GetSilentPush() const{ return m_silentPush; }
+    inline bool GetSilentPush() const { return m_silentPush; }
     inline bool SilentPushHasBeenSet() const { return m_silentPushHasBeenSet; }
     inline void SetSilentPush(bool value) { m_silentPushHasBeenSet = true; m_silentPush = value; }
     inline APNSMessage& WithSilentPush(bool value) { SetSilentPush(value); return *this;}
@@ -287,14 +266,12 @@ namespace Model
      * sound file can't be found or you specify default for the value, the system plays
      * the default alert sound.</p>
      */
-    inline const Aws::String& GetSound() const{ return m_sound; }
+    inline const Aws::String& GetSound() const { return m_sound; }
     inline bool SoundHasBeenSet() const { return m_soundHasBeenSet; }
-    inline void SetSound(const Aws::String& value) { m_soundHasBeenSet = true; m_sound = value; }
-    inline void SetSound(Aws::String&& value) { m_soundHasBeenSet = true; m_sound = std::move(value); }
-    inline void SetSound(const char* value) { m_soundHasBeenSet = true; m_sound.assign(value); }
-    inline APNSMessage& WithSound(const Aws::String& value) { SetSound(value); return *this;}
-    inline APNSMessage& WithSound(Aws::String&& value) { SetSound(std::move(value)); return *this;}
-    inline APNSMessage& WithSound(const char* value) { SetSound(value); return *this;}
+    template<typename SoundT = Aws::String>
+    void SetSound(SoundT&& value) { m_soundHasBeenSet = true; m_sound = std::forward<SoundT>(value); }
+    template<typename SoundT = Aws::String>
+    APNSMessage& WithSound(SoundT&& value) { SetSound(std::forward<SoundT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -302,18 +279,16 @@ namespace Model
      * <p>The default message variables to use in the notification message. You can
      * override these default variables with individual address variables.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetSubstitutions() const{ return m_substitutions; }
+    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetSubstitutions() const { return m_substitutions; }
     inline bool SubstitutionsHasBeenSet() const { return m_substitutionsHasBeenSet; }
-    inline void SetSubstitutions(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_substitutionsHasBeenSet = true; m_substitutions = value; }
-    inline void SetSubstitutions(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_substitutionsHasBeenSet = true; m_substitutions = std::move(value); }
-    inline APNSMessage& WithSubstitutions(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetSubstitutions(value); return *this;}
-    inline APNSMessage& WithSubstitutions(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetSubstitutions(std::move(value)); return *this;}
-    inline APNSMessage& AddSubstitutions(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
-    inline APNSMessage& AddSubstitutions(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(std::move(key), value); return *this; }
-    inline APNSMessage& AddSubstitutions(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, std::move(value)); return *this; }
-    inline APNSMessage& AddSubstitutions(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(std::move(key), std::move(value)); return *this; }
-    inline APNSMessage& AddSubstitutions(const char* key, Aws::Vector<Aws::String>&& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, std::move(value)); return *this; }
-    inline APNSMessage& AddSubstitutions(const char* key, const Aws::Vector<Aws::String>& value) { m_substitutionsHasBeenSet = true; m_substitutions.emplace(key, value); return *this; }
+    template<typename SubstitutionsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    void SetSubstitutions(SubstitutionsT&& value) { m_substitutionsHasBeenSet = true; m_substitutions = std::forward<SubstitutionsT>(value); }
+    template<typename SubstitutionsT = Aws::Map<Aws::String, Aws::Vector<Aws::String>>>
+    APNSMessage& WithSubstitutions(SubstitutionsT&& value) { SetSubstitutions(std::forward<SubstitutionsT>(value)); return *this;}
+    template<typename SubstitutionsKeyT = Aws::String, typename SubstitutionsValueT = Aws::Vector<Aws::String>>
+    APNSMessage& AddSubstitutions(SubstitutionsKeyT&& key, SubstitutionsValueT&& value) {
+      m_substitutionsHasBeenSet = true; m_substitutions.emplace(std::forward<SubstitutionsKeyT>(key), std::forward<SubstitutionsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -322,14 +297,12 @@ namespace Model
      * notifications. If you provide a Notification Content app extension, you can use
      * this value to group your notifications together.</p>
      */
-    inline const Aws::String& GetThreadId() const{ return m_threadId; }
+    inline const Aws::String& GetThreadId() const { return m_threadId; }
     inline bool ThreadIdHasBeenSet() const { return m_threadIdHasBeenSet; }
-    inline void SetThreadId(const Aws::String& value) { m_threadIdHasBeenSet = true; m_threadId = value; }
-    inline void SetThreadId(Aws::String&& value) { m_threadIdHasBeenSet = true; m_threadId = std::move(value); }
-    inline void SetThreadId(const char* value) { m_threadIdHasBeenSet = true; m_threadId.assign(value); }
-    inline APNSMessage& WithThreadId(const Aws::String& value) { SetThreadId(value); return *this;}
-    inline APNSMessage& WithThreadId(Aws::String&& value) { SetThreadId(std::move(value)); return *this;}
-    inline APNSMessage& WithThreadId(const char* value) { SetThreadId(value); return *this;}
+    template<typename ThreadIdT = Aws::String>
+    void SetThreadId(ThreadIdT&& value) { m_threadIdHasBeenSet = true; m_threadId = std::forward<ThreadIdT>(value); }
+    template<typename ThreadIdT = Aws::String>
+    APNSMessage& WithThreadId(ThreadIdT&& value) { SetThreadId(std::forward<ThreadIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -341,7 +314,7 @@ namespace Model
      * again.</p> <p>Amazon Pinpoint specifies this value in the apns-expiration
      * request header when it sends the notification message to APNs.</p>
      */
-    inline int GetTimeToLive() const{ return m_timeToLive; }
+    inline int GetTimeToLive() const { return m_timeToLive; }
     inline bool TimeToLiveHasBeenSet() const { return m_timeToLiveHasBeenSet; }
     inline void SetTimeToLive(int value) { m_timeToLiveHasBeenSet = true; m_timeToLive = value; }
     inline APNSMessage& WithTimeToLive(int value) { SetTimeToLive(value); return *this;}
@@ -352,14 +325,12 @@ namespace Model
      * <p>The title to display above the notification message on the recipient's
      * device.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline APNSMessage& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline APNSMessage& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline APNSMessage& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    APNSMessage& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -367,24 +338,22 @@ namespace Model
      * <p>The URL to open in the recipient's default mobile browser, if a recipient
      * taps the push notification and the value of the Action property is URL.</p>
      */
-    inline const Aws::String& GetUrl() const{ return m_url; }
+    inline const Aws::String& GetUrl() const { return m_url; }
     inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
-    inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
-    inline void SetUrl(Aws::String&& value) { m_urlHasBeenSet = true; m_url = std::move(value); }
-    inline void SetUrl(const char* value) { m_urlHasBeenSet = true; m_url.assign(value); }
-    inline APNSMessage& WithUrl(const Aws::String& value) { SetUrl(value); return *this;}
-    inline APNSMessage& WithUrl(Aws::String&& value) { SetUrl(std::move(value)); return *this;}
-    inline APNSMessage& WithUrl(const char* value) { SetUrl(value); return *this;}
+    template<typename UrlT = Aws::String>
+    void SetUrl(UrlT&& value) { m_urlHasBeenSet = true; m_url = std::forward<UrlT>(value); }
+    template<typename UrlT = Aws::String>
+    APNSMessage& WithUrl(UrlT&& value) { SetUrl(std::forward<UrlT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_aPNSPushType;
     bool m_aPNSPushTypeHasBeenSet = false;
 
-    Action m_action;
+    Action m_action{Action::NOT_SET};
     bool m_actionHasBeenSet = false;
 
-    int m_badge;
+    int m_badge{0};
     bool m_badgeHasBeenSet = false;
 
     Aws::String m_body;
@@ -411,7 +380,7 @@ namespace Model
     Aws::String m_rawContent;
     bool m_rawContentHasBeenSet = false;
 
-    bool m_silentPush;
+    bool m_silentPush{false};
     bool m_silentPushHasBeenSet = false;
 
     Aws::String m_sound;
@@ -423,7 +392,7 @@ namespace Model
     Aws::String m_threadId;
     bool m_threadIdHasBeenSet = false;
 
-    int m_timeToLive;
+    int m_timeToLive{0};
     bool m_timeToLiveHasBeenSet = false;
 
     Aws::String m_title;

@@ -21,7 +21,7 @@ namespace Model
   class DeleteSshPublicKeyRequest : public TransferRequest
   {
   public:
-    AWS_TRANSFER_API DeleteSshPublicKeyRequest();
+    AWS_TRANSFER_API DeleteSshPublicKeyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,42 +39,36 @@ namespace Model
      * <p>A system-assigned unique identifier for a file transfer protocol-enabled
      * server instance that has the user assigned to it.</p>
      */
-    inline const Aws::String& GetServerId() const{ return m_serverId; }
+    inline const Aws::String& GetServerId() const { return m_serverId; }
     inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
-    inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
-    inline void SetServerId(Aws::String&& value) { m_serverIdHasBeenSet = true; m_serverId = std::move(value); }
-    inline void SetServerId(const char* value) { m_serverIdHasBeenSet = true; m_serverId.assign(value); }
-    inline DeleteSshPublicKeyRequest& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
-    inline DeleteSshPublicKeyRequest& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
-    inline DeleteSshPublicKeyRequest& WithServerId(const char* value) { SetServerId(value); return *this;}
+    template<typename ServerIdT = Aws::String>
+    void SetServerId(ServerIdT&& value) { m_serverIdHasBeenSet = true; m_serverId = std::forward<ServerIdT>(value); }
+    template<typename ServerIdT = Aws::String>
+    DeleteSshPublicKeyRequest& WithServerId(ServerIdT&& value) { SetServerId(std::forward<ServerIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier used to reference your user's specific SSH key.</p>
      */
-    inline const Aws::String& GetSshPublicKeyId() const{ return m_sshPublicKeyId; }
+    inline const Aws::String& GetSshPublicKeyId() const { return m_sshPublicKeyId; }
     inline bool SshPublicKeyIdHasBeenSet() const { return m_sshPublicKeyIdHasBeenSet; }
-    inline void SetSshPublicKeyId(const Aws::String& value) { m_sshPublicKeyIdHasBeenSet = true; m_sshPublicKeyId = value; }
-    inline void SetSshPublicKeyId(Aws::String&& value) { m_sshPublicKeyIdHasBeenSet = true; m_sshPublicKeyId = std::move(value); }
-    inline void SetSshPublicKeyId(const char* value) { m_sshPublicKeyIdHasBeenSet = true; m_sshPublicKeyId.assign(value); }
-    inline DeleteSshPublicKeyRequest& WithSshPublicKeyId(const Aws::String& value) { SetSshPublicKeyId(value); return *this;}
-    inline DeleteSshPublicKeyRequest& WithSshPublicKeyId(Aws::String&& value) { SetSshPublicKeyId(std::move(value)); return *this;}
-    inline DeleteSshPublicKeyRequest& WithSshPublicKeyId(const char* value) { SetSshPublicKeyId(value); return *this;}
+    template<typename SshPublicKeyIdT = Aws::String>
+    void SetSshPublicKeyId(SshPublicKeyIdT&& value) { m_sshPublicKeyIdHasBeenSet = true; m_sshPublicKeyId = std::forward<SshPublicKeyIdT>(value); }
+    template<typename SshPublicKeyIdT = Aws::String>
+    DeleteSshPublicKeyRequest& WithSshPublicKeyId(SshPublicKeyIdT&& value) { SetSshPublicKeyId(std::forward<SshPublicKeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique string that identifies a user whose public key is being deleted.</p>
      */
-    inline const Aws::String& GetUserName() const{ return m_userName; }
+    inline const Aws::String& GetUserName() const { return m_userName; }
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
-    inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
-    inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
-    inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
-    inline DeleteSshPublicKeyRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
-    inline DeleteSshPublicKeyRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
-    inline DeleteSshPublicKeyRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
+    template<typename UserNameT = Aws::String>
+    void SetUserName(UserNameT&& value) { m_userNameHasBeenSet = true; m_userName = std::forward<UserNameT>(value); }
+    template<typename UserNameT = Aws::String>
+    DeleteSshPublicKeyRequest& WithUserName(UserNameT&& value) { SetUserName(std::forward<UserNameT>(value)); return *this;}
     ///@}
   private:
 

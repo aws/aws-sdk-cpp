@@ -18,18 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-SnapshotLimits::SnapshotLimits() : 
-    m_manualSnapshotsLimit(0),
-    m_manualSnapshotsLimitHasBeenSet(false),
-    m_manualSnapshotsCurrentCount(0),
-    m_manualSnapshotsCurrentCountHasBeenSet(false),
-    m_manualSnapshotsLimitReached(false),
-    m_manualSnapshotsLimitReachedHasBeenSet(false)
-{
-}
-
 SnapshotLimits::SnapshotLimits(JsonView jsonValue)
-  : SnapshotLimits()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ SnapshotLimits& SnapshotLimits::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ManualSnapshotsLimit"))
   {
     m_manualSnapshotsLimit = jsonValue.GetInteger("ManualSnapshotsLimit");
-
     m_manualSnapshotsLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManualSnapshotsCurrentCount"))
   {
     m_manualSnapshotsCurrentCount = jsonValue.GetInteger("ManualSnapshotsCurrentCount");
-
     m_manualSnapshotsCurrentCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManualSnapshotsLimitReached"))
   {
     m_manualSnapshotsLimitReached = jsonValue.GetBool("ManualSnapshotsLimitReached");
-
     m_manualSnapshotsLimitReachedHasBeenSet = true;
   }
-
   return *this;
 }
 

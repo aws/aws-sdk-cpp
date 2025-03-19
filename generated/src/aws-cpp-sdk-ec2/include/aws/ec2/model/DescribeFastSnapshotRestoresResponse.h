@@ -30,7 +30,7 @@ namespace Model
   class DescribeFastSnapshotRestoresResponse
   {
   public:
-    AWS_EC2_API DescribeFastSnapshotRestoresResponse();
+    AWS_EC2_API DescribeFastSnapshotRestoresResponse() = default;
     AWS_EC2_API DescribeFastSnapshotRestoresResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DescribeFastSnapshotRestoresResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>Information about the state of fast snapshot restores.</p>
      */
-    inline const Aws::Vector<DescribeFastSnapshotRestoreSuccessItem>& GetFastSnapshotRestores() const{ return m_fastSnapshotRestores; }
-    inline void SetFastSnapshotRestores(const Aws::Vector<DescribeFastSnapshotRestoreSuccessItem>& value) { m_fastSnapshotRestores = value; }
-    inline void SetFastSnapshotRestores(Aws::Vector<DescribeFastSnapshotRestoreSuccessItem>&& value) { m_fastSnapshotRestores = std::move(value); }
-    inline DescribeFastSnapshotRestoresResponse& WithFastSnapshotRestores(const Aws::Vector<DescribeFastSnapshotRestoreSuccessItem>& value) { SetFastSnapshotRestores(value); return *this;}
-    inline DescribeFastSnapshotRestoresResponse& WithFastSnapshotRestores(Aws::Vector<DescribeFastSnapshotRestoreSuccessItem>&& value) { SetFastSnapshotRestores(std::move(value)); return *this;}
-    inline DescribeFastSnapshotRestoresResponse& AddFastSnapshotRestores(const DescribeFastSnapshotRestoreSuccessItem& value) { m_fastSnapshotRestores.push_back(value); return *this; }
-    inline DescribeFastSnapshotRestoresResponse& AddFastSnapshotRestores(DescribeFastSnapshotRestoreSuccessItem&& value) { m_fastSnapshotRestores.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DescribeFastSnapshotRestoreSuccessItem>& GetFastSnapshotRestores() const { return m_fastSnapshotRestores; }
+    template<typename FastSnapshotRestoresT = Aws::Vector<DescribeFastSnapshotRestoreSuccessItem>>
+    void SetFastSnapshotRestores(FastSnapshotRestoresT&& value) { m_fastSnapshotRestoresHasBeenSet = true; m_fastSnapshotRestores = std::forward<FastSnapshotRestoresT>(value); }
+    template<typename FastSnapshotRestoresT = Aws::Vector<DescribeFastSnapshotRestoreSuccessItem>>
+    DescribeFastSnapshotRestoresResponse& WithFastSnapshotRestores(FastSnapshotRestoresT&& value) { SetFastSnapshotRestores(std::forward<FastSnapshotRestoresT>(value)); return *this;}
+    template<typename FastSnapshotRestoresT = DescribeFastSnapshotRestoreSuccessItem>
+    DescribeFastSnapshotRestoresResponse& AddFastSnapshotRestores(FastSnapshotRestoresT&& value) { m_fastSnapshotRestoresHasBeenSet = true; m_fastSnapshotRestores.emplace_back(std::forward<FastSnapshotRestoresT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * <p>The token to include in another request to get the next page of items. This
      * value is <code>null</code> when there are no more items to return.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeFastSnapshotRestoresResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeFastSnapshotRestoresResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeFastSnapshotRestoresResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeFastSnapshotRestoresResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeFastSnapshotRestoresResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeFastSnapshotRestoresResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeFastSnapshotRestoresResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DescribeFastSnapshotRestoreSuccessItem> m_fastSnapshotRestores;
+    bool m_fastSnapshotRestoresHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

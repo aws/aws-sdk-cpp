@@ -34,7 +34,7 @@ namespace Model
   class PromptGenAiResource
   {
   public:
-    AWS_BEDROCKAGENT_API PromptGenAiResource();
+    AWS_BEDROCKAGENT_API PromptGenAiResource() = default;
     AWS_BEDROCKAGENT_API PromptGenAiResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API PromptGenAiResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
     /**
      * <p>Specifies an Amazon Bedrock agent with which to use the prompt.</p>
      */
-    inline const PromptAgentResource& GetAgent() const{ return m_agent; }
+    inline const PromptAgentResource& GetAgent() const { return m_agent; }
     inline bool AgentHasBeenSet() const { return m_agentHasBeenSet; }
-    inline void SetAgent(const PromptAgentResource& value) { m_agentHasBeenSet = true; m_agent = value; }
-    inline void SetAgent(PromptAgentResource&& value) { m_agentHasBeenSet = true; m_agent = std::move(value); }
-    inline PromptGenAiResource& WithAgent(const PromptAgentResource& value) { SetAgent(value); return *this;}
-    inline PromptGenAiResource& WithAgent(PromptAgentResource&& value) { SetAgent(std::move(value)); return *this;}
+    template<typename AgentT = PromptAgentResource>
+    void SetAgent(AgentT&& value) { m_agentHasBeenSet = true; m_agent = std::forward<AgentT>(value); }
+    template<typename AgentT = PromptAgentResource>
+    PromptGenAiResource& WithAgent(AgentT&& value) { SetAgent(std::forward<AgentT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace InternetMonitor
 namespace Model
 {
 
-InternetMeasurementsLogDelivery::InternetMeasurementsLogDelivery() : 
-    m_s3ConfigHasBeenSet(false)
-{
-}
-
 InternetMeasurementsLogDelivery::InternetMeasurementsLogDelivery(JsonView jsonValue)
-  : InternetMeasurementsLogDelivery()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ InternetMeasurementsLogDelivery& InternetMeasurementsLogDelivery::operator =(Jso
   if(jsonValue.ValueExists("S3Config"))
   {
     m_s3Config = jsonValue.GetObject("S3Config");
-
     m_s3ConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

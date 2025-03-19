@@ -18,17 +18,7 @@ namespace RoboMaker
 namespace Model
 {
 
-VPCConfigResponse::VPCConfigResponse() : 
-    m_subnetsHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_assignPublicIp(false),
-    m_assignPublicIpHasBeenSet(false)
-{
-}
-
 VPCConfigResponse::VPCConfigResponse(JsonView jsonValue)
-  : VPCConfigResponse()
 {
   *this = jsonValue;
 }
@@ -44,7 +34,6 @@ VPCConfigResponse& VPCConfigResponse::operator =(JsonView jsonValue)
     }
     m_subnetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("securityGroups"))
   {
     Aws::Utils::Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
@@ -54,21 +43,16 @@ VPCConfigResponse& VPCConfigResponse::operator =(JsonView jsonValue)
     }
     m_securityGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("vpcId"))
   {
     m_vpcId = jsonValue.GetString("vpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assignPublicIp"))
   {
     m_assignPublicIp = jsonValue.GetBool("assignPublicIp");
-
     m_assignPublicIpHasBeenSet = true;
   }
-
   return *this;
 }
 

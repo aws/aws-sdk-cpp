@@ -32,7 +32,7 @@ namespace Model
   class UnsupportedDisplayLanguageCodeException
   {
   public:
-    AWS_TRANSLATE_API UnsupportedDisplayLanguageCodeException();
+    AWS_TRANSLATE_API UnsupportedDisplayLanguageCodeException() = default;
     AWS_TRANSLATE_API UnsupportedDisplayLanguageCodeException(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSLATE_API UnsupportedDisplayLanguageCodeException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSLATE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,28 +40,24 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline UnsupportedDisplayLanguageCodeException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline UnsupportedDisplayLanguageCodeException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline UnsupportedDisplayLanguageCodeException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    UnsupportedDisplayLanguageCodeException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Language code passed in with the request.</p>
      */
-    inline const Aws::String& GetDisplayLanguageCode() const{ return m_displayLanguageCode; }
+    inline const Aws::String& GetDisplayLanguageCode() const { return m_displayLanguageCode; }
     inline bool DisplayLanguageCodeHasBeenSet() const { return m_displayLanguageCodeHasBeenSet; }
-    inline void SetDisplayLanguageCode(const Aws::String& value) { m_displayLanguageCodeHasBeenSet = true; m_displayLanguageCode = value; }
-    inline void SetDisplayLanguageCode(Aws::String&& value) { m_displayLanguageCodeHasBeenSet = true; m_displayLanguageCode = std::move(value); }
-    inline void SetDisplayLanguageCode(const char* value) { m_displayLanguageCodeHasBeenSet = true; m_displayLanguageCode.assign(value); }
-    inline UnsupportedDisplayLanguageCodeException& WithDisplayLanguageCode(const Aws::String& value) { SetDisplayLanguageCode(value); return *this;}
-    inline UnsupportedDisplayLanguageCodeException& WithDisplayLanguageCode(Aws::String&& value) { SetDisplayLanguageCode(std::move(value)); return *this;}
-    inline UnsupportedDisplayLanguageCodeException& WithDisplayLanguageCode(const char* value) { SetDisplayLanguageCode(value); return *this;}
+    template<typename DisplayLanguageCodeT = Aws::String>
+    void SetDisplayLanguageCode(DisplayLanguageCodeT&& value) { m_displayLanguageCodeHasBeenSet = true; m_displayLanguageCode = std::forward<DisplayLanguageCodeT>(value); }
+    template<typename DisplayLanguageCodeT = Aws::String>
+    UnsupportedDisplayLanguageCodeException& WithDisplayLanguageCode(DisplayLanguageCodeT&& value) { SetDisplayLanguageCode(std::forward<DisplayLanguageCodeT>(value)); return *this;}
     ///@}
   private:
 

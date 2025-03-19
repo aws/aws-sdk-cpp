@@ -29,7 +29,7 @@ namespace Model
   class DescribeGroupsResult
   {
   public:
-    AWS_WORKDOCS_API DescribeGroupsResult();
+    AWS_WORKDOCS_API DescribeGroupsResult() = default;
     AWS_WORKDOCS_API DescribeGroupsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKDOCS_API DescribeGroupsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>The list of groups.</p>
      */
-    inline const Aws::Vector<GroupMetadata>& GetGroups() const{ return m_groups; }
-    inline void SetGroups(const Aws::Vector<GroupMetadata>& value) { m_groups = value; }
-    inline void SetGroups(Aws::Vector<GroupMetadata>&& value) { m_groups = std::move(value); }
-    inline DescribeGroupsResult& WithGroups(const Aws::Vector<GroupMetadata>& value) { SetGroups(value); return *this;}
-    inline DescribeGroupsResult& WithGroups(Aws::Vector<GroupMetadata>&& value) { SetGroups(std::move(value)); return *this;}
-    inline DescribeGroupsResult& AddGroups(const GroupMetadata& value) { m_groups.push_back(value); return *this; }
-    inline DescribeGroupsResult& AddGroups(GroupMetadata&& value) { m_groups.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<GroupMetadata>& GetGroups() const { return m_groups; }
+    template<typename GroupsT = Aws::Vector<GroupMetadata>>
+    void SetGroups(GroupsT&& value) { m_groupsHasBeenSet = true; m_groups = std::forward<GroupsT>(value); }
+    template<typename GroupsT = Aws::Vector<GroupMetadata>>
+    DescribeGroupsResult& WithGroups(GroupsT&& value) { SetGroups(std::forward<GroupsT>(value)); return *this;}
+    template<typename GroupsT = GroupMetadata>
+    DescribeGroupsResult& AddGroups(GroupsT&& value) { m_groupsHasBeenSet = true; m_groups.emplace_back(std::forward<GroupsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The marker to use when requesting the next set of results. If there are no
      * additional results, the string is empty.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeGroupsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeGroupsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeGroupsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeGroupsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeGroupsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeGroupsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeGroupsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeGroupsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<GroupMetadata> m_groups;
+    bool m_groupsHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

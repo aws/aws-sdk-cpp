@@ -30,7 +30,7 @@ namespace Model
   class GetTableMaintenanceConfigurationResult
   {
   public:
-    AWS_S3TABLES_API GetTableMaintenanceConfigurationResult();
+    AWS_S3TABLES_API GetTableMaintenanceConfigurationResult() = default;
     AWS_S3TABLES_API GetTableMaintenanceConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_S3TABLES_API GetTableMaintenanceConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,47 +39,45 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the table.</p>
      */
-    inline const Aws::String& GetTableARN() const{ return m_tableARN; }
-    inline void SetTableARN(const Aws::String& value) { m_tableARN = value; }
-    inline void SetTableARN(Aws::String&& value) { m_tableARN = std::move(value); }
-    inline void SetTableARN(const char* value) { m_tableARN.assign(value); }
-    inline GetTableMaintenanceConfigurationResult& WithTableARN(const Aws::String& value) { SetTableARN(value); return *this;}
-    inline GetTableMaintenanceConfigurationResult& WithTableARN(Aws::String&& value) { SetTableARN(std::move(value)); return *this;}
-    inline GetTableMaintenanceConfigurationResult& WithTableARN(const char* value) { SetTableARN(value); return *this;}
+    inline const Aws::String& GetTableARN() const { return m_tableARN; }
+    template<typename TableARNT = Aws::String>
+    void SetTableARN(TableARNT&& value) { m_tableARNHasBeenSet = true; m_tableARN = std::forward<TableARNT>(value); }
+    template<typename TableARNT = Aws::String>
+    GetTableMaintenanceConfigurationResult& WithTableARN(TableARNT&& value) { SetTableARN(std::forward<TableARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Details about the maintenance configuration for the table bucket.</p>
      */
-    inline const Aws::Map<TableMaintenanceType, TableMaintenanceConfigurationValue>& GetConfiguration() const{ return m_configuration; }
-    inline void SetConfiguration(const Aws::Map<TableMaintenanceType, TableMaintenanceConfigurationValue>& value) { m_configuration = value; }
-    inline void SetConfiguration(Aws::Map<TableMaintenanceType, TableMaintenanceConfigurationValue>&& value) { m_configuration = std::move(value); }
-    inline GetTableMaintenanceConfigurationResult& WithConfiguration(const Aws::Map<TableMaintenanceType, TableMaintenanceConfigurationValue>& value) { SetConfiguration(value); return *this;}
-    inline GetTableMaintenanceConfigurationResult& WithConfiguration(Aws::Map<TableMaintenanceType, TableMaintenanceConfigurationValue>&& value) { SetConfiguration(std::move(value)); return *this;}
-    inline GetTableMaintenanceConfigurationResult& AddConfiguration(const TableMaintenanceType& key, const TableMaintenanceConfigurationValue& value) { m_configuration.emplace(key, value); return *this; }
-    inline GetTableMaintenanceConfigurationResult& AddConfiguration(TableMaintenanceType&& key, const TableMaintenanceConfigurationValue& value) { m_configuration.emplace(std::move(key), value); return *this; }
-    inline GetTableMaintenanceConfigurationResult& AddConfiguration(const TableMaintenanceType& key, TableMaintenanceConfigurationValue&& value) { m_configuration.emplace(key, std::move(value)); return *this; }
-    inline GetTableMaintenanceConfigurationResult& AddConfiguration(TableMaintenanceType&& key, TableMaintenanceConfigurationValue&& value) { m_configuration.emplace(std::move(key), std::move(value)); return *this; }
+    inline const Aws::Map<TableMaintenanceType, TableMaintenanceConfigurationValue>& GetConfiguration() const { return m_configuration; }
+    template<typename ConfigurationT = Aws::Map<TableMaintenanceType, TableMaintenanceConfigurationValue>>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = Aws::Map<TableMaintenanceType, TableMaintenanceConfigurationValue>>
+    GetTableMaintenanceConfigurationResult& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
+    inline GetTableMaintenanceConfigurationResult& AddConfiguration(TableMaintenanceType key, TableMaintenanceConfigurationValue value) {
+      m_configurationHasBeenSet = true; m_configuration.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTableMaintenanceConfigurationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTableMaintenanceConfigurationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTableMaintenanceConfigurationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTableMaintenanceConfigurationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_tableARN;
+    bool m_tableARNHasBeenSet = false;
 
     Aws::Map<TableMaintenanceType, TableMaintenanceConfigurationValue> m_configuration;
+    bool m_configurationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

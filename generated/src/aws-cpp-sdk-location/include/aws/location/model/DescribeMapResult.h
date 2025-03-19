@@ -30,7 +30,7 @@ namespace Model
   class DescribeMapResult
   {
   public:
-    AWS_LOCATIONSERVICE_API DescribeMapResult();
+    AWS_LOCATIONSERVICE_API DescribeMapResult() = default;
     AWS_LOCATIONSERVICE_API DescribeMapResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOCATIONSERVICE_API DescribeMapResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,11 @@ namespace Model
     /**
      * <p>The map style selected from an available provider.</p>
      */
-    inline const Aws::String& GetMapName() const{ return m_mapName; }
-    inline void SetMapName(const Aws::String& value) { m_mapName = value; }
-    inline void SetMapName(Aws::String&& value) { m_mapName = std::move(value); }
-    inline void SetMapName(const char* value) { m_mapName.assign(value); }
-    inline DescribeMapResult& WithMapName(const Aws::String& value) { SetMapName(value); return *this;}
-    inline DescribeMapResult& WithMapName(Aws::String&& value) { SetMapName(std::move(value)); return *this;}
-    inline DescribeMapResult& WithMapName(const char* value) { SetMapName(value); return *this;}
+    inline const Aws::String& GetMapName() const { return m_mapName; }
+    template<typename MapNameT = Aws::String>
+    void SetMapName(MapNameT&& value) { m_mapNameHasBeenSet = true; m_mapName = std::forward<MapNameT>(value); }
+    template<typename MapNameT = Aws::String>
+    DescribeMapResult& WithMapName(MapNameT&& value) { SetMapName(std::forward<MapNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,68 +52,59 @@ namespace Model
      * resource across all Amazon Web Services.</p> <ul> <li> <p>Format example:
      * <code>arn:aws:geo:region:account-id:map/ExampleMap</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetMapArn() const{ return m_mapArn; }
-    inline void SetMapArn(const Aws::String& value) { m_mapArn = value; }
-    inline void SetMapArn(Aws::String&& value) { m_mapArn = std::move(value); }
-    inline void SetMapArn(const char* value) { m_mapArn.assign(value); }
-    inline DescribeMapResult& WithMapArn(const Aws::String& value) { SetMapArn(value); return *this;}
-    inline DescribeMapResult& WithMapArn(Aws::String&& value) { SetMapArn(std::move(value)); return *this;}
-    inline DescribeMapResult& WithMapArn(const char* value) { SetMapArn(value); return *this;}
+    inline const Aws::String& GetMapArn() const { return m_mapArn; }
+    template<typename MapArnT = Aws::String>
+    void SetMapArn(MapArnT&& value) { m_mapArnHasBeenSet = true; m_mapArn = std::forward<MapArnT>(value); }
+    template<typename MapArnT = Aws::String>
+    DescribeMapResult& WithMapArn(MapArnT&& value) { SetMapArn(std::forward<MapArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the data provider for the associated map tiles.</p>
      */
-    inline const Aws::String& GetDataSource() const{ return m_dataSource; }
-    inline void SetDataSource(const Aws::String& value) { m_dataSource = value; }
-    inline void SetDataSource(Aws::String&& value) { m_dataSource = std::move(value); }
-    inline void SetDataSource(const char* value) { m_dataSource.assign(value); }
-    inline DescribeMapResult& WithDataSource(const Aws::String& value) { SetDataSource(value); return *this;}
-    inline DescribeMapResult& WithDataSource(Aws::String&& value) { SetDataSource(std::move(value)); return *this;}
-    inline DescribeMapResult& WithDataSource(const char* value) { SetDataSource(value); return *this;}
+    inline const Aws::String& GetDataSource() const { return m_dataSource; }
+    template<typename DataSourceT = Aws::String>
+    void SetDataSource(DataSourceT&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::forward<DataSourceT>(value); }
+    template<typename DataSourceT = Aws::String>
+    DescribeMapResult& WithDataSource(DataSourceT&& value) { SetDataSource(std::forward<DataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Specifies the map tile style selected from a partner data provider.</p>
      */
-    inline const MapConfiguration& GetConfiguration() const{ return m_configuration; }
-    inline void SetConfiguration(const MapConfiguration& value) { m_configuration = value; }
-    inline void SetConfiguration(MapConfiguration&& value) { m_configuration = std::move(value); }
-    inline DescribeMapResult& WithConfiguration(const MapConfiguration& value) { SetConfiguration(value); return *this;}
-    inline DescribeMapResult& WithConfiguration(MapConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    inline const MapConfiguration& GetConfiguration() const { return m_configuration; }
+    template<typename ConfigurationT = MapConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = MapConfiguration>
+    DescribeMapResult& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The optional description for the map resource.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline DescribeMapResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline DescribeMapResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline DescribeMapResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    DescribeMapResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Tags associated with the map resource.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline DescribeMapResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline DescribeMapResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline DescribeMapResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline DescribeMapResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline DescribeMapResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline DescribeMapResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline DescribeMapResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline DescribeMapResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline DescribeMapResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    DescribeMapResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    DescribeMapResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -124,11 +113,11 @@ namespace Model
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
-    inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTime = value; }
-    inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTime = std::move(value); }
-    inline DescribeMapResult& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
-    inline DescribeMapResult& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreateTime() const { return m_createTime; }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    void SetCreateTime(CreateTimeT&& value) { m_createTimeHasBeenSet = true; m_createTime = std::forward<CreateTimeT>(value); }
+    template<typename CreateTimeT = Aws::Utils::DateTime>
+    DescribeMapResult& WithCreateTime(CreateTimeT&& value) { SetCreateTime(std::forward<CreateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,42 +126,49 @@ namespace Model
      * href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a>
      * format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
-    inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTime = value; }
-    inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTime = std::move(value); }
-    inline DescribeMapResult& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
-    inline DescribeMapResult& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetUpdateTime() const { return m_updateTime; }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    void SetUpdateTime(UpdateTimeT&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::forward<UpdateTimeT>(value); }
+    template<typename UpdateTimeT = Aws::Utils::DateTime>
+    DescribeMapResult& WithUpdateTime(UpdateTimeT&& value) { SetUpdateTime(std::forward<UpdateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeMapResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeMapResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeMapResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeMapResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_mapName;
+    bool m_mapNameHasBeenSet = false;
 
     Aws::String m_mapArn;
+    bool m_mapArnHasBeenSet = false;
 
     Aws::String m_dataSource;
+    bool m_dataSourceHasBeenSet = false;
 
     MapConfiguration m_configuration;
+    bool m_configurationHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createTime;
+    Aws::Utils::DateTime m_createTime{};
+    bool m_createTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updateTime;
+    Aws::Utils::DateTime m_updateTime{};
+    bool m_updateTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

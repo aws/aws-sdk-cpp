@@ -35,7 +35,7 @@ namespace Model
   class KeyGroup
   {
   public:
-    AWS_CLOUDFRONT_API KeyGroup();
+    AWS_CLOUDFRONT_API KeyGroup() = default;
     AWS_CLOUDFRONT_API KeyGroup(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API KeyGroup& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,45 +46,43 @@ namespace Model
     /**
      * <p>The identifier for the key group.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline KeyGroup& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline KeyGroup& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline KeyGroup& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    KeyGroup& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time when the key group was last modified.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::move(value); }
-    inline KeyGroup& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline KeyGroup& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    KeyGroup& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The key group configuration.</p>
      */
-    inline const KeyGroupConfig& GetKeyGroupConfig() const{ return m_keyGroupConfig; }
+    inline const KeyGroupConfig& GetKeyGroupConfig() const { return m_keyGroupConfig; }
     inline bool KeyGroupConfigHasBeenSet() const { return m_keyGroupConfigHasBeenSet; }
-    inline void SetKeyGroupConfig(const KeyGroupConfig& value) { m_keyGroupConfigHasBeenSet = true; m_keyGroupConfig = value; }
-    inline void SetKeyGroupConfig(KeyGroupConfig&& value) { m_keyGroupConfigHasBeenSet = true; m_keyGroupConfig = std::move(value); }
-    inline KeyGroup& WithKeyGroupConfig(const KeyGroupConfig& value) { SetKeyGroupConfig(value); return *this;}
-    inline KeyGroup& WithKeyGroupConfig(KeyGroupConfig&& value) { SetKeyGroupConfig(std::move(value)); return *this;}
+    template<typename KeyGroupConfigT = KeyGroupConfig>
+    void SetKeyGroupConfig(KeyGroupConfigT&& value) { m_keyGroupConfigHasBeenSet = true; m_keyGroupConfig = std::forward<KeyGroupConfigT>(value); }
+    template<typename KeyGroupConfigT = KeyGroupConfig>
+    KeyGroup& WithKeyGroupConfig(KeyGroupConfigT&& value) { SetKeyGroupConfig(std::forward<KeyGroupConfigT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
     bool m_lastModifiedTimeHasBeenSet = false;
 
     KeyGroupConfig m_keyGroupConfig;

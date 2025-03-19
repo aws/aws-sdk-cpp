@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GreetingWithErrorsResult::GreetingWithErrorsResult()
-{
-}
-
 GreetingWithErrorsResult::GreetingWithErrorsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -35,12 +31,14 @@ GreetingWithErrorsResult& GreetingWithErrorsResult::operator =(const Aws::Amazon
   if(greetingIter != headers.end())
   {
     m_greeting = greetingIter->second;
+    m_greetingHasBeenSet = true;
   }
 
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,14 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-TaggedDatabase::TaggedDatabase() : 
-    m_databaseHasBeenSet(false),
-    m_lFTagsHasBeenSet(false)
-{
-}
-
 TaggedDatabase::TaggedDatabase(JsonView jsonValue)
-  : TaggedDatabase()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TaggedDatabase& TaggedDatabase::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Database"))
   {
     m_database = jsonValue.GetObject("Database");
-
     m_databaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LFTags"))
   {
     Aws::Utils::Array<JsonView> lFTagsJsonList = jsonValue.GetArray("LFTags");
@@ -48,7 +39,6 @@ TaggedDatabase& TaggedDatabase::operator =(JsonView jsonValue)
     }
     m_lFTagsHasBeenSet = true;
   }
-
   return *this;
 }
 

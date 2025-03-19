@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ContainerConfig::ContainerConfig() : 
-    m_containerArgumentsHasBeenSet(false),
-    m_containerEntrypointHasBeenSet(false),
-    m_containerEnvironmentVariablesHasBeenSet(false)
-{
-}
-
 ContainerConfig::ContainerConfig(JsonView jsonValue)
-  : ContainerConfig()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ ContainerConfig& ContainerConfig::operator =(JsonView jsonValue)
     }
     m_containerArgumentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainerEntrypoint"))
   {
     Aws::Utils::Array<JsonView> containerEntrypointJsonList = jsonValue.GetArray("ContainerEntrypoint");
@@ -52,7 +43,6 @@ ContainerConfig& ContainerConfig::operator =(JsonView jsonValue)
     }
     m_containerEntrypointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContainerEnvironmentVariables"))
   {
     Aws::Map<Aws::String, JsonView> containerEnvironmentVariablesJsonMap = jsonValue.GetObject("ContainerEnvironmentVariables").GetAllObjects();
@@ -62,7 +52,6 @@ ContainerConfig& ContainerConfig::operator =(JsonView jsonValue)
     }
     m_containerEnvironmentVariablesHasBeenSet = true;
   }
-
   return *this;
 }
 

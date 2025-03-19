@@ -21,7 +21,7 @@ namespace Model
   class ClaimDevicesByClaimCodeRequest : public IoT1ClickDevicesServiceRequest
   {
   public:
-    AWS_IOT1CLICKDEVICESSERVICE_API ClaimDevicesByClaimCodeRequest();
+    AWS_IOT1CLICKDEVICESSERVICE_API ClaimDevicesByClaimCodeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The claim code, starting with "C-", as provided by the device
      * manufacturer.</p>
      */
-    inline const Aws::String& GetClaimCode() const{ return m_claimCode; }
+    inline const Aws::String& GetClaimCode() const { return m_claimCode; }
     inline bool ClaimCodeHasBeenSet() const { return m_claimCodeHasBeenSet; }
-    inline void SetClaimCode(const Aws::String& value) { m_claimCodeHasBeenSet = true; m_claimCode = value; }
-    inline void SetClaimCode(Aws::String&& value) { m_claimCodeHasBeenSet = true; m_claimCode = std::move(value); }
-    inline void SetClaimCode(const char* value) { m_claimCodeHasBeenSet = true; m_claimCode.assign(value); }
-    inline ClaimDevicesByClaimCodeRequest& WithClaimCode(const Aws::String& value) { SetClaimCode(value); return *this;}
-    inline ClaimDevicesByClaimCodeRequest& WithClaimCode(Aws::String&& value) { SetClaimCode(std::move(value)); return *this;}
-    inline ClaimDevicesByClaimCodeRequest& WithClaimCode(const char* value) { SetClaimCode(value); return *this;}
+    template<typename ClaimCodeT = Aws::String>
+    void SetClaimCode(ClaimCodeT&& value) { m_claimCodeHasBeenSet = true; m_claimCode = std::forward<ClaimCodeT>(value); }
+    template<typename ClaimCodeT = Aws::String>
+    ClaimDevicesByClaimCodeRequest& WithClaimCode(ClaimCodeT&& value) { SetClaimCode(std::forward<ClaimCodeT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,19 +12,6 @@ using namespace Aws::IoTWireless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateNetworkAnalyzerConfigurationRequest::CreateNetworkAnalyzerConfigurationRequest() : 
-    m_nameHasBeenSet(false),
-    m_traceContentHasBeenSet(false),
-    m_wirelessDevicesHasBeenSet(false),
-    m_wirelessGatewaysHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true),
-    m_multicastGroupsHasBeenSet(false)
-{
-}
-
 Aws::String CreateNetworkAnalyzerConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

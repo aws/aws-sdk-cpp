@@ -18,14 +18,7 @@ namespace EMR
 namespace Model
 {
 
-AutoScalingPolicy::AutoScalingPolicy() : 
-    m_constraintsHasBeenSet(false),
-    m_rulesHasBeenSet(false)
-{
-}
-
 AutoScalingPolicy::AutoScalingPolicy(JsonView jsonValue)
-  : AutoScalingPolicy()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AutoScalingPolicy& AutoScalingPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Constraints"))
   {
     m_constraints = jsonValue.GetObject("Constraints");
-
     m_constraintsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Rules"))
   {
     Aws::Utils::Array<JsonView> rulesJsonList = jsonValue.GetArray("Rules");
@@ -48,7 +39,6 @@ AutoScalingPolicy& AutoScalingPolicy::operator =(JsonView jsonValue)
     }
     m_rulesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace Scheduler
 namespace Model
 {
 
-KinesisParameters::KinesisParameters() : 
-    m_partitionKeyHasBeenSet(false)
-{
-}
-
 KinesisParameters::KinesisParameters(JsonView jsonValue)
-  : KinesisParameters()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ KinesisParameters& KinesisParameters::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PartitionKey"))
   {
     m_partitionKey = jsonValue.GetString("PartitionKey");
-
     m_partitionKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

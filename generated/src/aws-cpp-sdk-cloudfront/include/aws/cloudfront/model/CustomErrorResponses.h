@@ -38,7 +38,7 @@ namespace Model
   class CustomErrorResponses
   {
   public:
-    AWS_CLOUDFRONT_API CustomErrorResponses();
+    AWS_CLOUDFRONT_API CustomErrorResponses() = default;
     AWS_CLOUDFRONT_API CustomErrorResponses(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API CustomErrorResponses& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -51,7 +51,7 @@ namespace Model
      * page and/or a caching duration. If <code>Quantity</code> is <code>0</code>, you
      * can omit <code>Items</code>.</p>
      */
-    inline int GetQuantity() const{ return m_quantity; }
+    inline int GetQuantity() const { return m_quantity; }
     inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
     inline CustomErrorResponses& WithQuantity(int value) { SetQuantity(value); return *this;}
@@ -63,18 +63,18 @@ namespace Model
      * each HTTP status code for which you want to specify a custom error page and/or a
      * caching duration. </p>
      */
-    inline const Aws::Vector<CustomErrorResponse>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<CustomErrorResponse>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<CustomErrorResponse>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<CustomErrorResponse>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline CustomErrorResponses& WithItems(const Aws::Vector<CustomErrorResponse>& value) { SetItems(value); return *this;}
-    inline CustomErrorResponses& WithItems(Aws::Vector<CustomErrorResponse>&& value) { SetItems(std::move(value)); return *this;}
-    inline CustomErrorResponses& AddItems(const CustomErrorResponse& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline CustomErrorResponses& AddItems(CustomErrorResponse&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    template<typename ItemsT = Aws::Vector<CustomErrorResponse>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<CustomErrorResponse>>
+    CustomErrorResponses& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = CustomErrorResponse>
+    CustomErrorResponses& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
   private:
 
-    int m_quantity;
+    int m_quantity{0};
     bool m_quantityHasBeenSet = false;
 
     Aws::Vector<CustomErrorResponse> m_items;

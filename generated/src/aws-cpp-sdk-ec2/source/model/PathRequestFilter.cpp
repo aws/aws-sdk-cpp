@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-PathRequestFilter::PathRequestFilter() : 
-    m_sourceAddressHasBeenSet(false),
-    m_sourcePortRangeHasBeenSet(false),
-    m_destinationAddressHasBeenSet(false),
-    m_destinationPortRangeHasBeenSet(false)
-{
-}
-
 PathRequestFilter::PathRequestFilter(const XmlNode& xmlNode)
-  : PathRequestFilter()
 {
   *this = xmlNode;
 }

@@ -10,11 +10,6 @@
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-DeleteInsightRulesRequest::DeleteInsightRulesRequest() : 
-    m_ruleNamesHasBeenSet(false)
-{
-}
-
 Aws::String DeleteInsightRulesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

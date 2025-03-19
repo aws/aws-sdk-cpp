@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListAliasesResult::ListAliasesResult()
-{
-}
-
 ListAliasesResult::ListAliasesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListAliasesResult& ListAliasesResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("NextMarker"))
   {
     m_nextMarker = jsonValue.GetString("NextMarker");
-
+    m_nextMarkerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Aliases"))
   {
     Aws::Utils::Array<JsonView> aliasesJsonList = jsonValue.GetArray("Aliases");
@@ -42,14 +37,15 @@ ListAliasesResult& ListAliasesResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_aliases.push_back(aliasesJsonList[aliasesIndex].AsObject());
     }
+    m_aliasesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

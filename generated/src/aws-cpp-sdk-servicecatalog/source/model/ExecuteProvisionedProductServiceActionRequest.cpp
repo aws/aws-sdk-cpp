@@ -12,16 +12,6 @@ using namespace Aws::ServiceCatalog::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExecuteProvisionedProductServiceActionRequest::ExecuteProvisionedProductServiceActionRequest() : 
-    m_provisionedProductIdHasBeenSet(false),
-    m_serviceActionIdHasBeenSet(false),
-    m_executeToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_executeTokenHasBeenSet(true),
-    m_acceptLanguageHasBeenSet(false),
-    m_parametersHasBeenSet(false)
-{
-}
-
 Aws::String ExecuteProvisionedProductServiceActionRequest::SerializePayload() const
 {
   JsonValue payload;

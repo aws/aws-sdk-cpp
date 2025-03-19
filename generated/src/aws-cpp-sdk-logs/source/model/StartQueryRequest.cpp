@@ -12,22 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartQueryRequest::StartQueryRequest() : 
-    m_queryLanguage(QueryLanguage::NOT_SET),
-    m_queryLanguageHasBeenSet(false),
-    m_logGroupNameHasBeenSet(false),
-    m_logGroupNamesHasBeenSet(false),
-    m_logGroupIdentifiersHasBeenSet(false),
-    m_startTime(0),
-    m_startTimeHasBeenSet(false),
-    m_endTime(0),
-    m_endTimeHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false)
-{
-}
-
 Aws::String StartQueryRequest::SerializePayload() const
 {
   JsonValue payload;

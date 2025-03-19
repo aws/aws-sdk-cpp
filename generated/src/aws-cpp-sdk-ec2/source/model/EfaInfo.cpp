@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-EfaInfo::EfaInfo() : 
-    m_maximumEfaInterfaces(0),
-    m_maximumEfaInterfacesHasBeenSet(false)
-{
-}
-
 EfaInfo::EfaInfo(const XmlNode& xmlNode)
-  : EfaInfo()
 {
   *this = xmlNode;
 }

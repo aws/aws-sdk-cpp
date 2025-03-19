@@ -13,12 +13,6 @@ using namespace Aws::QApps::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PredictQAppRequest::PredictQAppRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_optionsHasBeenSet(false)
-{
-}
-
 Aws::String PredictQAppRequest::SerializePayload() const
 {
   JsonValue payload;

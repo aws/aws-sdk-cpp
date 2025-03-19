@@ -28,7 +28,7 @@ namespace Model
   class GetAutoshiftObserverNotificationStatusResult
   {
   public:
-    AWS_ARCZONALSHIFT_API GetAutoshiftObserverNotificationStatusResult();
+    AWS_ARCZONALSHIFT_API GetAutoshiftObserverNotificationStatusResult() = default;
     AWS_ARCZONALSHIFT_API GetAutoshiftObserverNotificationStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ARCZONALSHIFT_API GetAutoshiftObserverNotificationStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,28 +41,26 @@ namespace Model
      * status is <code>DISABLED</code>, Route 53 ARC includes only autoshift events for
      * autoshifts when one or more of your resources is included in the autoshift. </p>
      */
-    inline const AutoshiftObserverNotificationStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const AutoshiftObserverNotificationStatus& value) { m_status = value; }
-    inline void SetStatus(AutoshiftObserverNotificationStatus&& value) { m_status = std::move(value); }
-    inline GetAutoshiftObserverNotificationStatusResult& WithStatus(const AutoshiftObserverNotificationStatus& value) { SetStatus(value); return *this;}
-    inline GetAutoshiftObserverNotificationStatusResult& WithStatus(AutoshiftObserverNotificationStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline AutoshiftObserverNotificationStatus GetStatus() const { return m_status; }
+    inline void SetStatus(AutoshiftObserverNotificationStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetAutoshiftObserverNotificationStatusResult& WithStatus(AutoshiftObserverNotificationStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAutoshiftObserverNotificationStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAutoshiftObserverNotificationStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAutoshiftObserverNotificationStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAutoshiftObserverNotificationStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    AutoshiftObserverNotificationStatus m_status;
+    AutoshiftObserverNotificationStatus m_status{AutoshiftObserverNotificationStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

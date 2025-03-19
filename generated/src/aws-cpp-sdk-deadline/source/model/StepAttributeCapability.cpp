@@ -18,15 +18,7 @@ namespace deadline
 namespace Model
 {
 
-StepAttributeCapability::StepAttributeCapability() : 
-    m_nameHasBeenSet(false),
-    m_anyOfHasBeenSet(false),
-    m_allOfHasBeenSet(false)
-{
-}
-
 StepAttributeCapability::StepAttributeCapability(JsonView jsonValue)
-  : StepAttributeCapability()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ StepAttributeCapability& StepAttributeCapability::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("anyOf"))
   {
     Aws::Utils::Array<JsonView> anyOfJsonList = jsonValue.GetArray("anyOf");
@@ -49,7 +39,6 @@ StepAttributeCapability& StepAttributeCapability::operator =(JsonView jsonValue)
     }
     m_anyOfHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("allOf"))
   {
     Aws::Utils::Array<JsonView> allOfJsonList = jsonValue.GetArray("allOf");
@@ -59,7 +48,6 @@ StepAttributeCapability& StepAttributeCapability::operator =(JsonView jsonValue)
     }
     m_allOfHasBeenSet = true;
   }
-
   return *this;
 }
 

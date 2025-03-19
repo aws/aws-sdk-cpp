@@ -18,15 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-Filter::Filter() : 
-    m_include(Include::NOT_SET),
-    m_includeHasBeenSet(false),
-    m_groupsHasBeenSet(false)
-{
-}
-
 Filter::Filter(JsonView jsonValue)
-  : Filter()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ Filter& Filter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Include"))
   {
     m_include = IncludeMapper::GetIncludeForName(jsonValue.GetString("Include"));
-
     m_includeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Groups"))
   {
     Aws::Utils::Array<JsonView> groupsJsonList = jsonValue.GetArray("Groups");
@@ -49,7 +39,6 @@ Filter& Filter::operator =(JsonView jsonValue)
     }
     m_groupsHasBeenSet = true;
   }
-
   return *this;
 }
 

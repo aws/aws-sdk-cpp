@@ -13,13 +13,6 @@ using namespace Aws::ChimeSDKMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeChannelBanRequest::DescribeChannelBanRequest() : 
-    m_channelArnHasBeenSet(false),
-    m_memberArnHasBeenSet(false),
-    m_chimeBearerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeChannelBanRequest::SerializePayload() const
 {
   return {};

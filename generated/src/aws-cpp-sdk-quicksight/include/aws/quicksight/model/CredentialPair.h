@@ -34,7 +34,7 @@ namespace Model
   class CredentialPair
   {
   public:
-    AWS_QUICKSIGHT_API CredentialPair();
+    AWS_QUICKSIGHT_API CredentialPair() = default;
     AWS_QUICKSIGHT_API CredentialPair(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API CredentialPair& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>User name.</p>
      */
-    inline const Aws::String& GetUsername() const{ return m_username; }
+    inline const Aws::String& GetUsername() const { return m_username; }
     inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
-    inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
-    inline void SetUsername(Aws::String&& value) { m_usernameHasBeenSet = true; m_username = std::move(value); }
-    inline void SetUsername(const char* value) { m_usernameHasBeenSet = true; m_username.assign(value); }
-    inline CredentialPair& WithUsername(const Aws::String& value) { SetUsername(value); return *this;}
-    inline CredentialPair& WithUsername(Aws::String&& value) { SetUsername(std::move(value)); return *this;}
-    inline CredentialPair& WithUsername(const char* value) { SetUsername(value); return *this;}
+    template<typename UsernameT = Aws::String>
+    void SetUsername(UsernameT&& value) { m_usernameHasBeenSet = true; m_username = std::forward<UsernameT>(value); }
+    template<typename UsernameT = Aws::String>
+    CredentialPair& WithUsername(UsernameT&& value) { SetUsername(std::forward<UsernameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Password.</p>
      */
-    inline const Aws::String& GetPassword() const{ return m_password; }
+    inline const Aws::String& GetPassword() const { return m_password; }
     inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
-    inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
-    inline void SetPassword(Aws::String&& value) { m_passwordHasBeenSet = true; m_password = std::move(value); }
-    inline void SetPassword(const char* value) { m_passwordHasBeenSet = true; m_password.assign(value); }
-    inline CredentialPair& WithPassword(const Aws::String& value) { SetPassword(value); return *this;}
-    inline CredentialPair& WithPassword(Aws::String&& value) { SetPassword(std::move(value)); return *this;}
-    inline CredentialPair& WithPassword(const char* value) { SetPassword(value); return *this;}
+    template<typename PasswordT = Aws::String>
+    void SetPassword(PasswordT&& value) { m_passwordHasBeenSet = true; m_password = std::forward<PasswordT>(value); }
+    template<typename PasswordT = Aws::String>
+    CredentialPair& WithPassword(PasswordT&& value) { SetPassword(std::forward<PasswordT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,14 +77,14 @@ namespace Model
      * <code>DataSourceParameters</code> originally used with these
      * <code>Credentials</code> is automatically allowed.</p>
      */
-    inline const Aws::Vector<DataSourceParameters>& GetAlternateDataSourceParameters() const{ return m_alternateDataSourceParameters; }
+    inline const Aws::Vector<DataSourceParameters>& GetAlternateDataSourceParameters() const { return m_alternateDataSourceParameters; }
     inline bool AlternateDataSourceParametersHasBeenSet() const { return m_alternateDataSourceParametersHasBeenSet; }
-    inline void SetAlternateDataSourceParameters(const Aws::Vector<DataSourceParameters>& value) { m_alternateDataSourceParametersHasBeenSet = true; m_alternateDataSourceParameters = value; }
-    inline void SetAlternateDataSourceParameters(Aws::Vector<DataSourceParameters>&& value) { m_alternateDataSourceParametersHasBeenSet = true; m_alternateDataSourceParameters = std::move(value); }
-    inline CredentialPair& WithAlternateDataSourceParameters(const Aws::Vector<DataSourceParameters>& value) { SetAlternateDataSourceParameters(value); return *this;}
-    inline CredentialPair& WithAlternateDataSourceParameters(Aws::Vector<DataSourceParameters>&& value) { SetAlternateDataSourceParameters(std::move(value)); return *this;}
-    inline CredentialPair& AddAlternateDataSourceParameters(const DataSourceParameters& value) { m_alternateDataSourceParametersHasBeenSet = true; m_alternateDataSourceParameters.push_back(value); return *this; }
-    inline CredentialPair& AddAlternateDataSourceParameters(DataSourceParameters&& value) { m_alternateDataSourceParametersHasBeenSet = true; m_alternateDataSourceParameters.push_back(std::move(value)); return *this; }
+    template<typename AlternateDataSourceParametersT = Aws::Vector<DataSourceParameters>>
+    void SetAlternateDataSourceParameters(AlternateDataSourceParametersT&& value) { m_alternateDataSourceParametersHasBeenSet = true; m_alternateDataSourceParameters = std::forward<AlternateDataSourceParametersT>(value); }
+    template<typename AlternateDataSourceParametersT = Aws::Vector<DataSourceParameters>>
+    CredentialPair& WithAlternateDataSourceParameters(AlternateDataSourceParametersT&& value) { SetAlternateDataSourceParameters(std::forward<AlternateDataSourceParametersT>(value)); return *this;}
+    template<typename AlternateDataSourceParametersT = DataSourceParameters>
+    CredentialPair& AddAlternateDataSourceParameters(AlternateDataSourceParametersT&& value) { m_alternateDataSourceParametersHasBeenSet = true; m_alternateDataSourceParameters.emplace_back(std::forward<AlternateDataSourceParametersT>(value)); return *this; }
     ///@}
   private:
 

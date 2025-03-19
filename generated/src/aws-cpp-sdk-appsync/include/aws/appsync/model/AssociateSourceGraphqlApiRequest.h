@@ -22,7 +22,7 @@ namespace Model
   class AssociateSourceGraphqlApiRequest : public AppSyncRequest
   {
   public:
-    AWS_APPSYNC_API AssociateSourceGraphqlApiRequest();
+    AWS_APPSYNC_API AssociateSourceGraphqlApiRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * accounts (cross-account use cases) strictly require the full resource ARN of the
      * merged API.</p>
      */
-    inline const Aws::String& GetMergedApiIdentifier() const{ return m_mergedApiIdentifier; }
+    inline const Aws::String& GetMergedApiIdentifier() const { return m_mergedApiIdentifier; }
     inline bool MergedApiIdentifierHasBeenSet() const { return m_mergedApiIdentifierHasBeenSet; }
-    inline void SetMergedApiIdentifier(const Aws::String& value) { m_mergedApiIdentifierHasBeenSet = true; m_mergedApiIdentifier = value; }
-    inline void SetMergedApiIdentifier(Aws::String&& value) { m_mergedApiIdentifierHasBeenSet = true; m_mergedApiIdentifier = std::move(value); }
-    inline void SetMergedApiIdentifier(const char* value) { m_mergedApiIdentifierHasBeenSet = true; m_mergedApiIdentifier.assign(value); }
-    inline AssociateSourceGraphqlApiRequest& WithMergedApiIdentifier(const Aws::String& value) { SetMergedApiIdentifier(value); return *this;}
-    inline AssociateSourceGraphqlApiRequest& WithMergedApiIdentifier(Aws::String&& value) { SetMergedApiIdentifier(std::move(value)); return *this;}
-    inline AssociateSourceGraphqlApiRequest& WithMergedApiIdentifier(const char* value) { SetMergedApiIdentifier(value); return *this;}
+    template<typename MergedApiIdentifierT = Aws::String>
+    void SetMergedApiIdentifier(MergedApiIdentifierT&& value) { m_mergedApiIdentifierHasBeenSet = true; m_mergedApiIdentifier = std::forward<MergedApiIdentifierT>(value); }
+    template<typename MergedApiIdentifierT = Aws::String>
+    AssociateSourceGraphqlApiRequest& WithMergedApiIdentifier(MergedApiIdentifierT&& value) { SetMergedApiIdentifier(std::forward<MergedApiIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,40 +57,36 @@ namespace Model
      * accounts (cross-account use cases) strictly require the full resource ARN of the
      * source API.</p>
      */
-    inline const Aws::String& GetSourceApiIdentifier() const{ return m_sourceApiIdentifier; }
+    inline const Aws::String& GetSourceApiIdentifier() const { return m_sourceApiIdentifier; }
     inline bool SourceApiIdentifierHasBeenSet() const { return m_sourceApiIdentifierHasBeenSet; }
-    inline void SetSourceApiIdentifier(const Aws::String& value) { m_sourceApiIdentifierHasBeenSet = true; m_sourceApiIdentifier = value; }
-    inline void SetSourceApiIdentifier(Aws::String&& value) { m_sourceApiIdentifierHasBeenSet = true; m_sourceApiIdentifier = std::move(value); }
-    inline void SetSourceApiIdentifier(const char* value) { m_sourceApiIdentifierHasBeenSet = true; m_sourceApiIdentifier.assign(value); }
-    inline AssociateSourceGraphqlApiRequest& WithSourceApiIdentifier(const Aws::String& value) { SetSourceApiIdentifier(value); return *this;}
-    inline AssociateSourceGraphqlApiRequest& WithSourceApiIdentifier(Aws::String&& value) { SetSourceApiIdentifier(std::move(value)); return *this;}
-    inline AssociateSourceGraphqlApiRequest& WithSourceApiIdentifier(const char* value) { SetSourceApiIdentifier(value); return *this;}
+    template<typename SourceApiIdentifierT = Aws::String>
+    void SetSourceApiIdentifier(SourceApiIdentifierT&& value) { m_sourceApiIdentifierHasBeenSet = true; m_sourceApiIdentifier = std::forward<SourceApiIdentifierT>(value); }
+    template<typename SourceApiIdentifierT = Aws::String>
+    AssociateSourceGraphqlApiRequest& WithSourceApiIdentifier(SourceApiIdentifierT&& value) { SetSourceApiIdentifier(std::forward<SourceApiIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description field.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline AssociateSourceGraphqlApiRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline AssociateSourceGraphqlApiRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline AssociateSourceGraphqlApiRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    AssociateSourceGraphqlApiRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The <code>SourceApiAssociationConfig</code> object data.</p>
      */
-    inline const SourceApiAssociationConfig& GetSourceApiAssociationConfig() const{ return m_sourceApiAssociationConfig; }
+    inline const SourceApiAssociationConfig& GetSourceApiAssociationConfig() const { return m_sourceApiAssociationConfig; }
     inline bool SourceApiAssociationConfigHasBeenSet() const { return m_sourceApiAssociationConfigHasBeenSet; }
-    inline void SetSourceApiAssociationConfig(const SourceApiAssociationConfig& value) { m_sourceApiAssociationConfigHasBeenSet = true; m_sourceApiAssociationConfig = value; }
-    inline void SetSourceApiAssociationConfig(SourceApiAssociationConfig&& value) { m_sourceApiAssociationConfigHasBeenSet = true; m_sourceApiAssociationConfig = std::move(value); }
-    inline AssociateSourceGraphqlApiRequest& WithSourceApiAssociationConfig(const SourceApiAssociationConfig& value) { SetSourceApiAssociationConfig(value); return *this;}
-    inline AssociateSourceGraphqlApiRequest& WithSourceApiAssociationConfig(SourceApiAssociationConfig&& value) { SetSourceApiAssociationConfig(std::move(value)); return *this;}
+    template<typename SourceApiAssociationConfigT = SourceApiAssociationConfig>
+    void SetSourceApiAssociationConfig(SourceApiAssociationConfigT&& value) { m_sourceApiAssociationConfigHasBeenSet = true; m_sourceApiAssociationConfig = std::forward<SourceApiAssociationConfigT>(value); }
+    template<typename SourceApiAssociationConfigT = SourceApiAssociationConfig>
+    AssociateSourceGraphqlApiRequest& WithSourceApiAssociationConfig(SourceApiAssociationConfigT&& value) { SetSourceApiAssociationConfig(std::forward<SourceApiAssociationConfigT>(value)); return *this;}
     ///@}
   private:
 

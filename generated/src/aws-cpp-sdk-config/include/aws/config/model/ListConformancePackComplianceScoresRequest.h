@@ -24,7 +24,7 @@ namespace Model
   class ListConformancePackComplianceScoresRequest : public ConfigServiceRequest
   {
   public:
-    AWS_CONFIGSERVICE_API ListConformancePackComplianceScoresRequest();
+    AWS_CONFIGSERVICE_API ListConformancePackComplianceScoresRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,12 +42,12 @@ namespace Model
      * <p>Filters the results based on the
      * <code>ConformancePackComplianceScoresFilters</code>.</p>
      */
-    inline const ConformancePackComplianceScoresFilters& GetFilters() const{ return m_filters; }
+    inline const ConformancePackComplianceScoresFilters& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const ConformancePackComplianceScoresFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(ConformancePackComplianceScoresFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListConformancePackComplianceScoresRequest& WithFilters(const ConformancePackComplianceScoresFilters& value) { SetFilters(value); return *this;}
-    inline ListConformancePackComplianceScoresRequest& WithFilters(ConformancePackComplianceScoresFilters&& value) { SetFilters(std::move(value)); return *this;}
+    template<typename FiltersT = ConformancePackComplianceScoresFilters>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = ConformancePackComplianceScoresFilters>
+    ListConformancePackComplianceScoresRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +63,10 @@ namespace Model
      * <code>INSUFFICIENT_DATA</code> will be last when sorting by ascending order and
      * first when sorting by descending order.</p>
      */
-    inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrder GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrder&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListConformancePackComplianceScoresRequest& WithSortOrder(const SortOrder& value) { SetSortOrder(value); return *this;}
-    inline ListConformancePackComplianceScoresRequest& WithSortOrder(SortOrder&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrder value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListConformancePackComplianceScoresRequest& WithSortOrder(SortOrder value) { SetSortOrder(value); return *this;}
     ///@}
 
     ///@{
@@ -79,12 +77,10 @@ namespace Model
      * the conformance pack. Enter <code>SCORE</code>, to sort conformance pack
      * compliance scores by the numerical value of the compliance score.</p>
      */
-    inline const SortBy& GetSortBy() const{ return m_sortBy; }
+    inline SortBy GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const SortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(SortBy&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListConformancePackComplianceScoresRequest& WithSortBy(const SortBy& value) { SetSortBy(value); return *this;}
-    inline ListConformancePackComplianceScoresRequest& WithSortBy(SortBy&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(SortBy value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline ListConformancePackComplianceScoresRequest& WithSortBy(SortBy value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
@@ -92,7 +88,7 @@ namespace Model
      * <p>The maximum number of conformance pack compliance scores returned on each
      * page.</p>
      */
-    inline int GetLimit() const{ return m_limit; }
+    inline int GetLimit() const { return m_limit; }
     inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
     inline ListConformancePackComplianceScoresRequest& WithLimit(int value) { SetLimit(value); return *this;}
@@ -104,27 +100,25 @@ namespace Model
      * the paginated response for the next set of conformance pack compliance
      * scores.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListConformancePackComplianceScoresRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListConformancePackComplianceScoresRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListConformancePackComplianceScoresRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListConformancePackComplianceScoresRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     ConformancePackComplianceScoresFilters m_filters;
     bool m_filtersHasBeenSet = false;
 
-    SortOrder m_sortOrder;
+    SortOrder m_sortOrder{SortOrder::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
 
-    SortBy m_sortBy;
+    SortBy m_sortBy{SortBy::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    int m_limit;
+    int m_limit{0};
     bool m_limitHasBeenSet = false;
 
     Aws::String m_nextToken;

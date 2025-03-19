@@ -18,16 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-AggregationAuthorization::AggregationAuthorization() : 
-    m_aggregationAuthorizationArnHasBeenSet(false),
-    m_authorizedAccountIdHasBeenSet(false),
-    m_authorizedAwsRegionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false)
-{
-}
-
 AggregationAuthorization::AggregationAuthorization(JsonView jsonValue)
-  : AggregationAuthorization()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ AggregationAuthorization& AggregationAuthorization::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("AggregationAuthorizationArn"))
   {
     m_aggregationAuthorizationArn = jsonValue.GetString("AggregationAuthorizationArn");
-
     m_aggregationAuthorizationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthorizedAccountId"))
   {
     m_authorizedAccountId = jsonValue.GetString("AuthorizedAccountId");
-
     m_authorizedAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AuthorizedAwsRegion"))
   {
     m_authorizedAwsRegion = jsonValue.GetString("AuthorizedAwsRegion");
-
     m_authorizedAwsRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

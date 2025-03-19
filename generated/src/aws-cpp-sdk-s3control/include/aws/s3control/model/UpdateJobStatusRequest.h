@@ -26,7 +26,7 @@ namespace Model
   class UpdateJobStatusRequest : public S3ControlRequest
   {
   public:
-    AWS_S3CONTROL_API UpdateJobStatusRequest();
+    AWS_S3CONTROL_API UpdateJobStatusRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,40 +50,34 @@ namespace Model
      * <p>The Amazon Web Services account ID associated with the S3 Batch Operations
      * job.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline UpdateJobStatusRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline UpdateJobStatusRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline UpdateJobStatusRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    UpdateJobStatusRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the job whose status you want to update.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
+    inline const Aws::String& GetJobId() const { return m_jobId; }
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
-    inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
-    inline UpdateJobStatusRequest& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline UpdateJobStatusRequest& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline UpdateJobStatusRequest& WithJobId(const char* value) { SetJobId(value); return *this;}
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    UpdateJobStatusRequest& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status that you want to move the specified job to.</p>
      */
-    inline const RequestedJobStatus& GetRequestedJobStatus() const{ return m_requestedJobStatus; }
+    inline RequestedJobStatus GetRequestedJobStatus() const { return m_requestedJobStatus; }
     inline bool RequestedJobStatusHasBeenSet() const { return m_requestedJobStatusHasBeenSet; }
-    inline void SetRequestedJobStatus(const RequestedJobStatus& value) { m_requestedJobStatusHasBeenSet = true; m_requestedJobStatus = value; }
-    inline void SetRequestedJobStatus(RequestedJobStatus&& value) { m_requestedJobStatusHasBeenSet = true; m_requestedJobStatus = std::move(value); }
-    inline UpdateJobStatusRequest& WithRequestedJobStatus(const RequestedJobStatus& value) { SetRequestedJobStatus(value); return *this;}
-    inline UpdateJobStatusRequest& WithRequestedJobStatus(RequestedJobStatus&& value) { SetRequestedJobStatus(std::move(value)); return *this;}
+    inline void SetRequestedJobStatus(RequestedJobStatus value) { m_requestedJobStatusHasBeenSet = true; m_requestedJobStatus = value; }
+    inline UpdateJobStatusRequest& WithRequestedJobStatus(RequestedJobStatus value) { SetRequestedJobStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -91,14 +85,12 @@ namespace Model
      * <p>A description of the reason why you want to change the specified job's
      * status. This field can be any string up to the maximum length.</p>
      */
-    inline const Aws::String& GetStatusUpdateReason() const{ return m_statusUpdateReason; }
+    inline const Aws::String& GetStatusUpdateReason() const { return m_statusUpdateReason; }
     inline bool StatusUpdateReasonHasBeenSet() const { return m_statusUpdateReasonHasBeenSet; }
-    inline void SetStatusUpdateReason(const Aws::String& value) { m_statusUpdateReasonHasBeenSet = true; m_statusUpdateReason = value; }
-    inline void SetStatusUpdateReason(Aws::String&& value) { m_statusUpdateReasonHasBeenSet = true; m_statusUpdateReason = std::move(value); }
-    inline void SetStatusUpdateReason(const char* value) { m_statusUpdateReasonHasBeenSet = true; m_statusUpdateReason.assign(value); }
-    inline UpdateJobStatusRequest& WithStatusUpdateReason(const Aws::String& value) { SetStatusUpdateReason(value); return *this;}
-    inline UpdateJobStatusRequest& WithStatusUpdateReason(Aws::String&& value) { SetStatusUpdateReason(std::move(value)); return *this;}
-    inline UpdateJobStatusRequest& WithStatusUpdateReason(const char* value) { SetStatusUpdateReason(value); return *this;}
+    template<typename StatusUpdateReasonT = Aws::String>
+    void SetStatusUpdateReason(StatusUpdateReasonT&& value) { m_statusUpdateReasonHasBeenSet = true; m_statusUpdateReason = std::forward<StatusUpdateReasonT>(value); }
+    template<typename StatusUpdateReasonT = Aws::String>
+    UpdateJobStatusRequest& WithStatusUpdateReason(StatusUpdateReasonT&& value) { SetStatusUpdateReason(std::forward<StatusUpdateReasonT>(value)); return *this;}
     ///@}
   private:
 
@@ -108,7 +100,7 @@ namespace Model
     Aws::String m_jobId;
     bool m_jobIdHasBeenSet = false;
 
-    RequestedJobStatus m_requestedJobStatus;
+    RequestedJobStatus m_requestedJobStatus{RequestedJobStatus::NOT_SET};
     bool m_requestedJobStatusHasBeenSet = false;
 
     Aws::String m_statusUpdateReason;

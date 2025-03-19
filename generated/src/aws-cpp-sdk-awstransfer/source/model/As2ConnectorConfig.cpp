@@ -18,28 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-As2ConnectorConfig::As2ConnectorConfig() : 
-    m_localProfileIdHasBeenSet(false),
-    m_partnerProfileIdHasBeenSet(false),
-    m_messageSubjectHasBeenSet(false),
-    m_compression(CompressionEnum::NOT_SET),
-    m_compressionHasBeenSet(false),
-    m_encryptionAlgorithm(EncryptionAlg::NOT_SET),
-    m_encryptionAlgorithmHasBeenSet(false),
-    m_signingAlgorithm(SigningAlg::NOT_SET),
-    m_signingAlgorithmHasBeenSet(false),
-    m_mdnSigningAlgorithm(MdnSigningAlg::NOT_SET),
-    m_mdnSigningAlgorithmHasBeenSet(false),
-    m_mdnResponse(MdnResponse::NOT_SET),
-    m_mdnResponseHasBeenSet(false),
-    m_basicAuthSecretIdHasBeenSet(false),
-    m_preserveContentType(PreserveContentType::NOT_SET),
-    m_preserveContentTypeHasBeenSet(false)
-{
-}
-
 As2ConnectorConfig::As2ConnectorConfig(JsonView jsonValue)
-  : As2ConnectorConfig()
 {
   *this = jsonValue;
 }
@@ -49,73 +28,53 @@ As2ConnectorConfig& As2ConnectorConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LocalProfileId"))
   {
     m_localProfileId = jsonValue.GetString("LocalProfileId");
-
     m_localProfileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PartnerProfileId"))
   {
     m_partnerProfileId = jsonValue.GetString("PartnerProfileId");
-
     m_partnerProfileIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MessageSubject"))
   {
     m_messageSubject = jsonValue.GetString("MessageSubject");
-
     m_messageSubjectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Compression"))
   {
     m_compression = CompressionEnumMapper::GetCompressionEnumForName(jsonValue.GetString("Compression"));
-
     m_compressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EncryptionAlgorithm"))
   {
     m_encryptionAlgorithm = EncryptionAlgMapper::GetEncryptionAlgForName(jsonValue.GetString("EncryptionAlgorithm"));
-
     m_encryptionAlgorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SigningAlgorithm"))
   {
     m_signingAlgorithm = SigningAlgMapper::GetSigningAlgForName(jsonValue.GetString("SigningAlgorithm"));
-
     m_signingAlgorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MdnSigningAlgorithm"))
   {
     m_mdnSigningAlgorithm = MdnSigningAlgMapper::GetMdnSigningAlgForName(jsonValue.GetString("MdnSigningAlgorithm"));
-
     m_mdnSigningAlgorithmHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MdnResponse"))
   {
     m_mdnResponse = MdnResponseMapper::GetMdnResponseForName(jsonValue.GetString("MdnResponse"));
-
     m_mdnResponseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BasicAuthSecretId"))
   {
     m_basicAuthSecretId = jsonValue.GetString("BasicAuthSecretId");
-
     m_basicAuthSecretIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PreserveContentType"))
   {
     m_preserveContentType = PreserveContentTypeMapper::GetPreserveContentTypeForName(jsonValue.GetString("PreserveContentType"));
-
     m_preserveContentTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

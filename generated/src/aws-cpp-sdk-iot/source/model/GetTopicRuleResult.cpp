@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetTopicRuleResult::GetTopicRuleResult()
-{
-}
-
 GetTopicRuleResult::GetTopicRuleResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ GetTopicRuleResult& GetTopicRuleResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("ruleArn"))
   {
     m_ruleArn = jsonValue.GetString("ruleArn");
-
+    m_ruleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("rule"))
   {
     m_rule = jsonValue.GetObject("rule");
-
+    m_ruleHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

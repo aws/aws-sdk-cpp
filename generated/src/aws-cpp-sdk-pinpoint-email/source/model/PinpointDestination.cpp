@@ -18,13 +18,7 @@ namespace PinpointEmail
 namespace Model
 {
 
-PinpointDestination::PinpointDestination() : 
-    m_applicationArnHasBeenSet(false)
-{
-}
-
 PinpointDestination::PinpointDestination(JsonView jsonValue)
-  : PinpointDestination()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ PinpointDestination& PinpointDestination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ApplicationArn"))
   {
     m_applicationArn = jsonValue.GetString("ApplicationArn");
-
     m_applicationArnHasBeenSet = true;
   }
-
   return *this;
 }
 

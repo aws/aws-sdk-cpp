@@ -18,15 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-M2NonManagedApplicationAction::M2NonManagedApplicationAction() : 
-    m_resourceHasBeenSet(false),
-    m_actionType(M2NonManagedActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false)
-{
-}
-
 M2NonManagedApplicationAction::M2NonManagedApplicationAction(JsonView jsonValue)
-  : M2NonManagedApplicationAction()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ M2NonManagedApplicationAction& M2NonManagedApplicationAction::operator =(JsonVie
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetString("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionType"))
   {
     m_actionType = M2NonManagedActionTypeMapper::GetM2NonManagedActionTypeForName(jsonValue.GetString("actionType"));
-
     m_actionTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

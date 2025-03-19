@@ -18,20 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-ComputeConfiguration::ComputeConfiguration() : 
-    m_vCpu(0),
-    m_vCpuHasBeenSet(false),
-    m_memory(0),
-    m_memoryHasBeenSet(false),
-    m_disk(0),
-    m_diskHasBeenSet(false),
-    m_machineType(MachineType::NOT_SET),
-    m_machineTypeHasBeenSet(false)
-{
-}
-
 ComputeConfiguration::ComputeConfiguration(JsonView jsonValue)
-  : ComputeConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ ComputeConfiguration& ComputeConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("vCpu"))
   {
     m_vCpu = jsonValue.GetInt64("vCpu");
-
     m_vCpuHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("memory"))
   {
     m_memory = jsonValue.GetInt64("memory");
-
     m_memoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("disk"))
   {
     m_disk = jsonValue.GetInt64("disk");
-
     m_diskHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("machineType"))
   {
     m_machineType = MachineTypeMapper::GetMachineTypeForName(jsonValue.GetString("machineType"));
-
     m_machineTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

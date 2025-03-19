@@ -20,22 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-StreamingDistributionConfig::StreamingDistributionConfig() : 
-    m_callerReferenceHasBeenSet(false),
-    m_s3OriginHasBeenSet(false),
-    m_aliasesHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_loggingHasBeenSet(false),
-    m_trustedSignersHasBeenSet(false),
-    m_priceClass(PriceClass::NOT_SET),
-    m_priceClassHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 StreamingDistributionConfig::StreamingDistributionConfig(const XmlNode& xmlNode)
-  : StreamingDistributionConfig()
 {
   *this = xmlNode;
 }
@@ -85,7 +70,7 @@ StreamingDistributionConfig& StreamingDistributionConfig::operator =(const XmlNo
     XmlNode priceClassNode = resultNode.FirstChild("PriceClass");
     if(!priceClassNode.IsNull())
     {
-      m_priceClass = PriceClassMapper::GetPriceClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priceClassNode.GetText()).c_str()).c_str());
+      m_priceClass = PriceClassMapper::GetPriceClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priceClassNode.GetText()).c_str()));
       m_priceClassHasBeenSet = true;
     }
     XmlNode enabledNode = resultNode.FirstChild("Enabled");

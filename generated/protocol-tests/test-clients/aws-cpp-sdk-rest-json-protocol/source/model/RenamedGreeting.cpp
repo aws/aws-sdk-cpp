@@ -18,13 +18,7 @@ namespace RestJsonProtocol
 namespace Model
 {
 
-RenamedGreeting::RenamedGreeting() : 
-    m_salutationHasBeenSet(false)
-{
-}
-
 RenamedGreeting::RenamedGreeting(JsonView jsonValue)
-  : RenamedGreeting()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RenamedGreeting& RenamedGreeting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("salutation"))
   {
     m_salutation = jsonValue.GetString("salutation");
-
     m_salutationHasBeenSet = true;
   }
-
   return *this;
 }
 

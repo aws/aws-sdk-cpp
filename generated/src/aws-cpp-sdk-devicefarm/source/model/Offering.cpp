@@ -18,19 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-Offering::Offering() : 
-    m_idHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_type(OfferingType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_platform(DevicePlatform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_recurringChargesHasBeenSet(false)
-{
-}
-
 Offering::Offering(JsonView jsonValue)
-  : Offering()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ Offering& Offering::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = OfferingTypeMapper::GetOfferingTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platform"))
   {
     m_platform = DevicePlatformMapper::GetDevicePlatformForName(jsonValue.GetString("platform"));
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recurringCharges"))
   {
     Aws::Utils::Array<JsonView> recurringChargesJsonList = jsonValue.GetArray("recurringCharges");
@@ -74,7 +54,6 @@ Offering& Offering::operator =(JsonView jsonValue)
     }
     m_recurringChargesHasBeenSet = true;
   }
-
   return *this;
 }
 

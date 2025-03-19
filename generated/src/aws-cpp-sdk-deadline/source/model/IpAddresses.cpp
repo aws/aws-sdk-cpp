@@ -18,14 +18,7 @@ namespace deadline
 namespace Model
 {
 
-IpAddresses::IpAddresses() : 
-    m_ipV4AddressesHasBeenSet(false),
-    m_ipV6AddressesHasBeenSet(false)
-{
-}
-
 IpAddresses::IpAddresses(JsonView jsonValue)
-  : IpAddresses()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ IpAddresses& IpAddresses::operator =(JsonView jsonValue)
     }
     m_ipV4AddressesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ipV6Addresses"))
   {
     Aws::Utils::Array<JsonView> ipV6AddressesJsonList = jsonValue.GetArray("ipV6Addresses");
@@ -51,7 +43,6 @@ IpAddresses& IpAddresses::operator =(JsonView jsonValue)
     }
     m_ipV6AddressesHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -22,7 +22,7 @@ namespace Model
   class CreateAccessTokenRequest : public CodeCatalystRequest
   {
   public:
-    AWS_CODECATALYST_API CreateAccessTokenRequest();
+    AWS_CODECATALYST_API CreateAccessTokenRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
     /**
      * <p>The friendly name of the personal access token.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateAccessTokenRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateAccessTokenRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateAccessTokenRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateAccessTokenRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -53,19 +51,19 @@ namespace Model
      * time (UTC) timestamp format as specified in <a
      * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339</a>.</p>
      */
-    inline const Aws::Utils::DateTime& GetExpiresTime() const{ return m_expiresTime; }
+    inline const Aws::Utils::DateTime& GetExpiresTime() const { return m_expiresTime; }
     inline bool ExpiresTimeHasBeenSet() const { return m_expiresTimeHasBeenSet; }
-    inline void SetExpiresTime(const Aws::Utils::DateTime& value) { m_expiresTimeHasBeenSet = true; m_expiresTime = value; }
-    inline void SetExpiresTime(Aws::Utils::DateTime&& value) { m_expiresTimeHasBeenSet = true; m_expiresTime = std::move(value); }
-    inline CreateAccessTokenRequest& WithExpiresTime(const Aws::Utils::DateTime& value) { SetExpiresTime(value); return *this;}
-    inline CreateAccessTokenRequest& WithExpiresTime(Aws::Utils::DateTime&& value) { SetExpiresTime(std::move(value)); return *this;}
+    template<typename ExpiresTimeT = Aws::Utils::DateTime>
+    void SetExpiresTime(ExpiresTimeT&& value) { m_expiresTimeHasBeenSet = true; m_expiresTime = std::forward<ExpiresTimeT>(value); }
+    template<typename ExpiresTimeT = Aws::Utils::DateTime>
+    CreateAccessTokenRequest& WithExpiresTime(ExpiresTimeT&& value) { SetExpiresTime(std::forward<ExpiresTimeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Aws::Utils::DateTime m_expiresTime;
+    Aws::Utils::DateTime m_expiresTime{};
     bool m_expiresTimeHasBeenSet = false;
   };
 

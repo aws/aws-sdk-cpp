@@ -18,13 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-DatadogSourceProperties::DatadogSourceProperties() : 
-    m_objectHasBeenSet(false)
-{
-}
-
 DatadogSourceProperties::DatadogSourceProperties(JsonView jsonValue)
-  : DatadogSourceProperties()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ DatadogSourceProperties& DatadogSourceProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("object"))
   {
     m_object = jsonValue.GetString("object");
-
     m_objectHasBeenSet = true;
   }
-
   return *this;
 }
 

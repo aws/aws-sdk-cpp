@@ -18,15 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-CloudWatchConfig::CloudWatchConfig() : 
-    m_logGroupNameHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_largeDataDeliveryS3ConfigHasBeenSet(false)
-{
-}
-
 CloudWatchConfig::CloudWatchConfig(JsonView jsonValue)
-  : CloudWatchConfig()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CloudWatchConfig& CloudWatchConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("logGroupName"))
   {
     m_logGroupName = jsonValue.GetString("logGroupName");
-
     m_logGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
-
     m_roleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("largeDataDeliveryS3Config"))
   {
     m_largeDataDeliveryS3Config = jsonValue.GetObject("largeDataDeliveryS3Config");
-
     m_largeDataDeliveryS3ConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

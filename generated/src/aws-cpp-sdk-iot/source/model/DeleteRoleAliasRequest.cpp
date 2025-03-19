@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteRoleAliasRequest::DeleteRoleAliasRequest() : 
-    m_roleAliasHasBeenSet(false)
-{
-}
-
 Aws::String DeleteRoleAliasRequest::SerializePayload() const
 {
   return {};

@@ -18,19 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-FieldTypeDetails::FieldTypeDetails() : 
-    m_fieldTypeHasBeenSet(false),
-    m_filterOperatorsHasBeenSet(false),
-    m_supportedValuesHasBeenSet(false),
-    m_valueRegexPatternHasBeenSet(false),
-    m_supportedDateFormatHasBeenSet(false),
-    m_fieldValueRangeHasBeenSet(false),
-    m_fieldLengthRangeHasBeenSet(false)
-{
-}
-
 FieldTypeDetails::FieldTypeDetails(JsonView jsonValue)
-  : FieldTypeDetails()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ FieldTypeDetails& FieldTypeDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("fieldType"))
   {
     m_fieldType = jsonValue.GetString("fieldType");
-
     m_fieldTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("filterOperators"))
   {
     Aws::Utils::Array<JsonView> filterOperatorsJsonList = jsonValue.GetArray("filterOperators");
@@ -53,7 +39,6 @@ FieldTypeDetails& FieldTypeDetails::operator =(JsonView jsonValue)
     }
     m_filterOperatorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportedValues"))
   {
     Aws::Utils::Array<JsonView> supportedValuesJsonList = jsonValue.GetArray("supportedValues");
@@ -63,35 +48,26 @@ FieldTypeDetails& FieldTypeDetails::operator =(JsonView jsonValue)
     }
     m_supportedValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("valueRegexPattern"))
   {
     m_valueRegexPattern = jsonValue.GetString("valueRegexPattern");
-
     m_valueRegexPatternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("supportedDateFormat"))
   {
     m_supportedDateFormat = jsonValue.GetString("supportedDateFormat");
-
     m_supportedDateFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fieldValueRange"))
   {
     m_fieldValueRange = jsonValue.GetObject("fieldValueRange");
-
     m_fieldValueRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fieldLengthRange"))
   {
     m_fieldLengthRange = jsonValue.GetObject("fieldLengthRange");
-
     m_fieldLengthRangeHasBeenSet = true;
   }
-
   return *this;
 }
 

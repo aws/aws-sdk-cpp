@@ -18,15 +18,7 @@ namespace drs
 namespace Model
 {
 
-ProductCode::ProductCode() : 
-    m_productCodeIdHasBeenSet(false),
-    m_productCodeMode(ProductCodeMode::NOT_SET),
-    m_productCodeModeHasBeenSet(false)
-{
-}
-
 ProductCode::ProductCode(JsonView jsonValue)
-  : ProductCode()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ProductCode& ProductCode::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("productCodeId"))
   {
     m_productCodeId = jsonValue.GetString("productCodeId");
-
     m_productCodeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("productCodeMode"))
   {
     m_productCodeMode = ProductCodeModeMapper::GetProductCodeModeForName(jsonValue.GetString("productCodeMode"));
-
     m_productCodeModeHasBeenSet = true;
   }
-
   return *this;
 }
 

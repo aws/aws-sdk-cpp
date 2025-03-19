@@ -12,13 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-MoveAccountRequest::MoveAccountRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_sourceParentIdHasBeenSet(false),
-    m_destinationParentIdHasBeenSet(false)
-{
-}
-
 Aws::String MoveAccountRequest::SerializePayload() const
 {
   JsonValue payload;

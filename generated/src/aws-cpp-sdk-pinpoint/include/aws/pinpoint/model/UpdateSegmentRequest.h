@@ -22,7 +22,7 @@ namespace Model
   class UpdateSegmentRequest : public PinpointRequest
   {
   public:
-    AWS_PINPOINT_API UpdateSegmentRequest();
+    AWS_PINPOINT_API UpdateSegmentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,38 +38,34 @@ namespace Model
      * <p>The unique identifier for the application. This identifier is displayed as
      * the <b>Project ID</b> on the Amazon Pinpoint console.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline UpdateSegmentRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline UpdateSegmentRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline UpdateSegmentRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    UpdateSegmentRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The unique identifier for the segment.</p>
      */
-    inline const Aws::String& GetSegmentId() const{ return m_segmentId; }
+    inline const Aws::String& GetSegmentId() const { return m_segmentId; }
     inline bool SegmentIdHasBeenSet() const { return m_segmentIdHasBeenSet; }
-    inline void SetSegmentId(const Aws::String& value) { m_segmentIdHasBeenSet = true; m_segmentId = value; }
-    inline void SetSegmentId(Aws::String&& value) { m_segmentIdHasBeenSet = true; m_segmentId = std::move(value); }
-    inline void SetSegmentId(const char* value) { m_segmentIdHasBeenSet = true; m_segmentId.assign(value); }
-    inline UpdateSegmentRequest& WithSegmentId(const Aws::String& value) { SetSegmentId(value); return *this;}
-    inline UpdateSegmentRequest& WithSegmentId(Aws::String&& value) { SetSegmentId(std::move(value)); return *this;}
-    inline UpdateSegmentRequest& WithSegmentId(const char* value) { SetSegmentId(value); return *this;}
+    template<typename SegmentIdT = Aws::String>
+    void SetSegmentId(SegmentIdT&& value) { m_segmentIdHasBeenSet = true; m_segmentId = std::forward<SegmentIdT>(value); }
+    template<typename SegmentIdT = Aws::String>
+    UpdateSegmentRequest& WithSegmentId(SegmentIdT&& value) { SetSegmentId(std::forward<SegmentIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const WriteSegmentRequest& GetWriteSegmentRequest() const{ return m_writeSegmentRequest; }
+    inline const WriteSegmentRequest& GetWriteSegmentRequest() const { return m_writeSegmentRequest; }
     inline bool WriteSegmentRequestHasBeenSet() const { return m_writeSegmentRequestHasBeenSet; }
-    inline void SetWriteSegmentRequest(const WriteSegmentRequest& value) { m_writeSegmentRequestHasBeenSet = true; m_writeSegmentRequest = value; }
-    inline void SetWriteSegmentRequest(WriteSegmentRequest&& value) { m_writeSegmentRequestHasBeenSet = true; m_writeSegmentRequest = std::move(value); }
-    inline UpdateSegmentRequest& WithWriteSegmentRequest(const WriteSegmentRequest& value) { SetWriteSegmentRequest(value); return *this;}
-    inline UpdateSegmentRequest& WithWriteSegmentRequest(WriteSegmentRequest&& value) { SetWriteSegmentRequest(std::move(value)); return *this;}
+    template<typename WriteSegmentRequestT = WriteSegmentRequest>
+    void SetWriteSegmentRequest(WriteSegmentRequestT&& value) { m_writeSegmentRequestHasBeenSet = true; m_writeSegmentRequest = std::forward<WriteSegmentRequestT>(value); }
+    template<typename WriteSegmentRequestT = WriteSegmentRequest>
+    UpdateSegmentRequest& WithWriteSegmentRequest(WriteSegmentRequestT&& value) { SetWriteSegmentRequest(std::forward<WriteSegmentRequestT>(value)); return *this;}
     ///@}
   private:
 

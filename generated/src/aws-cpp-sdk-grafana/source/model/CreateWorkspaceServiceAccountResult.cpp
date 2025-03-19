@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateWorkspaceServiceAccountResult::CreateWorkspaceServiceAccountResult() : 
-    m_grafanaRole(Role::NOT_SET)
-{
-}
-
 CreateWorkspaceServiceAccountResult::CreateWorkspaceServiceAccountResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateWorkspaceServiceAccountResult()
 {
   *this = result;
 }
@@ -34,33 +28,30 @@ CreateWorkspaceServiceAccountResult& CreateWorkspaceServiceAccountResult::operat
   if(jsonValue.ValueExists("grafanaRole"))
   {
     m_grafanaRole = RoleMapper::GetRoleForName(jsonValue.GetString("grafanaRole"));
-
+    m_grafanaRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
+    m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workspaceId"))
   {
     m_workspaceId = jsonValue.GetString("workspaceId");
-
+    m_workspaceIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

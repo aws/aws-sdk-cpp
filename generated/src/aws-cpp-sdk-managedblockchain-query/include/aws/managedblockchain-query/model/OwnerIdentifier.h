@@ -31,7 +31,7 @@ namespace Model
   class OwnerIdentifier
   {
   public:
-    AWS_MANAGEDBLOCKCHAINQUERY_API OwnerIdentifier();
+    AWS_MANAGEDBLOCKCHAINQUERY_API OwnerIdentifier() = default;
     AWS_MANAGEDBLOCKCHAINQUERY_API OwnerIdentifier(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAINQUERY_API OwnerIdentifier& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MANAGEDBLOCKCHAINQUERY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The contract or wallet address for the owner.</p>
      */
-    inline const Aws::String& GetAddress() const{ return m_address; }
+    inline const Aws::String& GetAddress() const { return m_address; }
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-    inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
-    inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
-    inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
-    inline OwnerIdentifier& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
-    inline OwnerIdentifier& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
-    inline OwnerIdentifier& WithAddress(const char* value) { SetAddress(value); return *this;}
+    template<typename AddressT = Aws::String>
+    void SetAddress(AddressT&& value) { m_addressHasBeenSet = true; m_address = std::forward<AddressT>(value); }
+    template<typename AddressT = Aws::String>
+    OwnerIdentifier& WithAddress(AddressT&& value) { SetAddress(std::forward<AddressT>(value)); return *this;}
     ///@}
   private:
 

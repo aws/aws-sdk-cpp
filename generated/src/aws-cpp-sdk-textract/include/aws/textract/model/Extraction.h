@@ -34,7 +34,7 @@ namespace Model
   class Extraction
   {
   public:
-    AWS_TEXTRACT_API Extraction();
+    AWS_TEXTRACT_API Extraction() = default;
     AWS_TEXTRACT_API Extraction(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Extraction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TEXTRACT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,32 +45,32 @@ namespace Model
      * <p>Holds the structured data returned by AnalyzeDocument for lending
      * documents.</p>
      */
-    inline const LendingDocument& GetLendingDocument() const{ return m_lendingDocument; }
+    inline const LendingDocument& GetLendingDocument() const { return m_lendingDocument; }
     inline bool LendingDocumentHasBeenSet() const { return m_lendingDocumentHasBeenSet; }
-    inline void SetLendingDocument(const LendingDocument& value) { m_lendingDocumentHasBeenSet = true; m_lendingDocument = value; }
-    inline void SetLendingDocument(LendingDocument&& value) { m_lendingDocumentHasBeenSet = true; m_lendingDocument = std::move(value); }
-    inline Extraction& WithLendingDocument(const LendingDocument& value) { SetLendingDocument(value); return *this;}
-    inline Extraction& WithLendingDocument(LendingDocument&& value) { SetLendingDocument(std::move(value)); return *this;}
+    template<typename LendingDocumentT = LendingDocument>
+    void SetLendingDocument(LendingDocumentT&& value) { m_lendingDocumentHasBeenSet = true; m_lendingDocument = std::forward<LendingDocumentT>(value); }
+    template<typename LendingDocumentT = LendingDocument>
+    Extraction& WithLendingDocument(LendingDocumentT&& value) { SetLendingDocument(std::forward<LendingDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ExpenseDocument& GetExpenseDocument() const{ return m_expenseDocument; }
+    inline const ExpenseDocument& GetExpenseDocument() const { return m_expenseDocument; }
     inline bool ExpenseDocumentHasBeenSet() const { return m_expenseDocumentHasBeenSet; }
-    inline void SetExpenseDocument(const ExpenseDocument& value) { m_expenseDocumentHasBeenSet = true; m_expenseDocument = value; }
-    inline void SetExpenseDocument(ExpenseDocument&& value) { m_expenseDocumentHasBeenSet = true; m_expenseDocument = std::move(value); }
-    inline Extraction& WithExpenseDocument(const ExpenseDocument& value) { SetExpenseDocument(value); return *this;}
-    inline Extraction& WithExpenseDocument(ExpenseDocument&& value) { SetExpenseDocument(std::move(value)); return *this;}
+    template<typename ExpenseDocumentT = ExpenseDocument>
+    void SetExpenseDocument(ExpenseDocumentT&& value) { m_expenseDocumentHasBeenSet = true; m_expenseDocument = std::forward<ExpenseDocumentT>(value); }
+    template<typename ExpenseDocumentT = ExpenseDocument>
+    Extraction& WithExpenseDocument(ExpenseDocumentT&& value) { SetExpenseDocument(std::forward<ExpenseDocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const IdentityDocument& GetIdentityDocument() const{ return m_identityDocument; }
+    inline const IdentityDocument& GetIdentityDocument() const { return m_identityDocument; }
     inline bool IdentityDocumentHasBeenSet() const { return m_identityDocumentHasBeenSet; }
-    inline void SetIdentityDocument(const IdentityDocument& value) { m_identityDocumentHasBeenSet = true; m_identityDocument = value; }
-    inline void SetIdentityDocument(IdentityDocument&& value) { m_identityDocumentHasBeenSet = true; m_identityDocument = std::move(value); }
-    inline Extraction& WithIdentityDocument(const IdentityDocument& value) { SetIdentityDocument(value); return *this;}
-    inline Extraction& WithIdentityDocument(IdentityDocument&& value) { SetIdentityDocument(std::move(value)); return *this;}
+    template<typename IdentityDocumentT = IdentityDocument>
+    void SetIdentityDocument(IdentityDocumentT&& value) { m_identityDocumentHasBeenSet = true; m_identityDocument = std::forward<IdentityDocumentT>(value); }
+    template<typename IdentityDocumentT = IdentityDocument>
+    Extraction& WithIdentityDocument(IdentityDocumentT&& value) { SetIdentityDocument(std::forward<IdentityDocumentT>(value)); return *this;}
     ///@}
   private:
 

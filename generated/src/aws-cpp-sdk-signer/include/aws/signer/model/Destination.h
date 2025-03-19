@@ -32,7 +32,7 @@ namespace Model
   class Destination
   {
   public:
-    AWS_SIGNER_API Destination();
+    AWS_SIGNER_API Destination() = default;
     AWS_SIGNER_API Destination(Aws::Utils::Json::JsonView jsonValue);
     AWS_SIGNER_API Destination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SIGNER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>The <code>S3Destination</code> object.</p>
      */
-    inline const S3Destination& GetS3() const{ return m_s3; }
+    inline const S3Destination& GetS3() const { return m_s3; }
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-    inline void SetS3(const S3Destination& value) { m_s3HasBeenSet = true; m_s3 = value; }
-    inline void SetS3(S3Destination&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-    inline Destination& WithS3(const S3Destination& value) { SetS3(value); return *this;}
-    inline Destination& WithS3(S3Destination&& value) { SetS3(std::move(value)); return *this;}
+    template<typename S3T = S3Destination>
+    void SetS3(S3T&& value) { m_s3HasBeenSet = true; m_s3 = std::forward<S3T>(value); }
+    template<typename S3T = S3Destination>
+    Destination& WithS3(S3T&& value) { SetS3(std::forward<S3T>(value)); return *this;}
     ///@}
   private:
 

@@ -29,7 +29,7 @@ namespace Model
   class DescribeEnvironmentsResult
   {
   public:
-    AWS_CLOUD9_API DescribeEnvironmentsResult();
+    AWS_CLOUD9_API DescribeEnvironmentsResult() = default;
     AWS_CLOUD9_API DescribeEnvironmentsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUD9_API DescribeEnvironmentsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,30 @@ namespace Model
     /**
      * <p>Information about the environments that are returned.</p>
      */
-    inline const Aws::Vector<Environment>& GetEnvironments() const{ return m_environments; }
-    inline void SetEnvironments(const Aws::Vector<Environment>& value) { m_environments = value; }
-    inline void SetEnvironments(Aws::Vector<Environment>&& value) { m_environments = std::move(value); }
-    inline DescribeEnvironmentsResult& WithEnvironments(const Aws::Vector<Environment>& value) { SetEnvironments(value); return *this;}
-    inline DescribeEnvironmentsResult& WithEnvironments(Aws::Vector<Environment>&& value) { SetEnvironments(std::move(value)); return *this;}
-    inline DescribeEnvironmentsResult& AddEnvironments(const Environment& value) { m_environments.push_back(value); return *this; }
-    inline DescribeEnvironmentsResult& AddEnvironments(Environment&& value) { m_environments.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Environment>& GetEnvironments() const { return m_environments; }
+    template<typename EnvironmentsT = Aws::Vector<Environment>>
+    void SetEnvironments(EnvironmentsT&& value) { m_environmentsHasBeenSet = true; m_environments = std::forward<EnvironmentsT>(value); }
+    template<typename EnvironmentsT = Aws::Vector<Environment>>
+    DescribeEnvironmentsResult& WithEnvironments(EnvironmentsT&& value) { SetEnvironments(std::forward<EnvironmentsT>(value)); return *this;}
+    template<typename EnvironmentsT = Environment>
+    DescribeEnvironmentsResult& AddEnvironments(EnvironmentsT&& value) { m_environmentsHasBeenSet = true; m_environments.emplace_back(std::forward<EnvironmentsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeEnvironmentsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeEnvironmentsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeEnvironmentsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeEnvironmentsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Environment> m_environments;
+    bool m_environmentsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

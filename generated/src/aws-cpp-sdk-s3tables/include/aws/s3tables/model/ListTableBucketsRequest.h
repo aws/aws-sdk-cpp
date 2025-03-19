@@ -25,7 +25,7 @@ namespace Model
   class ListTableBucketsRequest : public S3TablesRequest
   {
   public:
-    AWS_S3TABLES_API ListTableBucketsRequest();
+    AWS_S3TABLES_API ListTableBucketsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The prefix of the table buckets.</p>
      */
-    inline const Aws::String& GetPrefix() const{ return m_prefix; }
+    inline const Aws::String& GetPrefix() const { return m_prefix; }
     inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
-    inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
-    inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
-    inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
-    inline ListTableBucketsRequest& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
-    inline ListTableBucketsRequest& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
-    inline ListTableBucketsRequest& WithPrefix(const char* value) { SetPrefix(value); return *this;}
+    template<typename PrefixT = Aws::String>
+    void SetPrefix(PrefixT&& value) { m_prefixHasBeenSet = true; m_prefix = std::forward<PrefixT>(value); }
+    template<typename PrefixT = Aws::String>
+    ListTableBucketsRequest& WithPrefix(PrefixT&& value) { SetPrefix(std::forward<PrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,21 +57,19 @@ namespace Model
      * obfuscated and is not a real key. You can use this
      * <code>ContinuationToken</code> for pagination of the list results.</p>
      */
-    inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
+    inline const Aws::String& GetContinuationToken() const { return m_continuationToken; }
     inline bool ContinuationTokenHasBeenSet() const { return m_continuationTokenHasBeenSet; }
-    inline void SetContinuationToken(const Aws::String& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = value; }
-    inline void SetContinuationToken(Aws::String&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::move(value); }
-    inline void SetContinuationToken(const char* value) { m_continuationTokenHasBeenSet = true; m_continuationToken.assign(value); }
-    inline ListTableBucketsRequest& WithContinuationToken(const Aws::String& value) { SetContinuationToken(value); return *this;}
-    inline ListTableBucketsRequest& WithContinuationToken(Aws::String&& value) { SetContinuationToken(std::move(value)); return *this;}
-    inline ListTableBucketsRequest& WithContinuationToken(const char* value) { SetContinuationToken(value); return *this;}
+    template<typename ContinuationTokenT = Aws::String>
+    void SetContinuationToken(ContinuationTokenT&& value) { m_continuationTokenHasBeenSet = true; m_continuationToken = std::forward<ContinuationTokenT>(value); }
+    template<typename ContinuationTokenT = Aws::String>
+    ListTableBucketsRequest& WithContinuationToken(ContinuationTokenT&& value) { SetContinuationToken(std::forward<ContinuationTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of table buckets to return in the list.</p>
      */
-    inline int GetMaxBuckets() const{ return m_maxBuckets; }
+    inline int GetMaxBuckets() const { return m_maxBuckets; }
     inline bool MaxBucketsHasBeenSet() const { return m_maxBucketsHasBeenSet; }
     inline void SetMaxBuckets(int value) { m_maxBucketsHasBeenSet = true; m_maxBuckets = value; }
     inline ListTableBucketsRequest& WithMaxBuckets(int value) { SetMaxBuckets(value); return *this;}
@@ -86,7 +82,7 @@ namespace Model
     Aws::String m_continuationToken;
     bool m_continuationTokenHasBeenSet = false;
 
-    int m_maxBuckets;
+    int m_maxBuckets{0};
     bool m_maxBucketsHasBeenSet = false;
   };
 

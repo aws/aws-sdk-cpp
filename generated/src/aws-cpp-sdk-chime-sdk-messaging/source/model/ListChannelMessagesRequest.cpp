@@ -15,20 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListChannelMessagesRequest::ListChannelMessagesRequest() : 
-    m_channelArnHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false),
-    m_notBeforeHasBeenSet(false),
-    m_notAfterHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_chimeBearerHasBeenSet(false),
-    m_subChannelIdHasBeenSet(false)
-{
-}
-
 Aws::String ListChannelMessagesRequest::SerializePayload() const
 {
   return {};

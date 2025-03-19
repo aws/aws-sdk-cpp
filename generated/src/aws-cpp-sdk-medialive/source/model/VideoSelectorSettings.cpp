@@ -18,14 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-VideoSelectorSettings::VideoSelectorSettings() : 
-    m_videoSelectorPidHasBeenSet(false),
-    m_videoSelectorProgramIdHasBeenSet(false)
-{
-}
-
 VideoSelectorSettings::VideoSelectorSettings(JsonView jsonValue)
-  : VideoSelectorSettings()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ VideoSelectorSettings& VideoSelectorSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("videoSelectorPid"))
   {
     m_videoSelectorPid = jsonValue.GetObject("videoSelectorPid");
-
     m_videoSelectorPidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("videoSelectorProgramId"))
   {
     m_videoSelectorProgramId = jsonValue.GetObject("videoSelectorProgramId");
-
     m_videoSelectorProgramIdHasBeenSet = true;
   }
-
   return *this;
 }
 

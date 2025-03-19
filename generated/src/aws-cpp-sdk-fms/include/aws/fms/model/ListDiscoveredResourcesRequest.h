@@ -22,7 +22,7 @@ namespace Model
   class ListDiscoveredResourcesRequest : public FMSRequest
   {
   public:
-    AWS_FMS_API ListDiscoveredResourcesRequest();
+    AWS_FMS_API ListDiscoveredResourcesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,29 +41,26 @@ namespace Model
      * account is supported per request. The account must be a member of your
      * organization.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetMemberAccountIds() const{ return m_memberAccountIds; }
+    inline const Aws::Vector<Aws::String>& GetMemberAccountIds() const { return m_memberAccountIds; }
     inline bool MemberAccountIdsHasBeenSet() const { return m_memberAccountIdsHasBeenSet; }
-    inline void SetMemberAccountIds(const Aws::Vector<Aws::String>& value) { m_memberAccountIdsHasBeenSet = true; m_memberAccountIds = value; }
-    inline void SetMemberAccountIds(Aws::Vector<Aws::String>&& value) { m_memberAccountIdsHasBeenSet = true; m_memberAccountIds = std::move(value); }
-    inline ListDiscoveredResourcesRequest& WithMemberAccountIds(const Aws::Vector<Aws::String>& value) { SetMemberAccountIds(value); return *this;}
-    inline ListDiscoveredResourcesRequest& WithMemberAccountIds(Aws::Vector<Aws::String>&& value) { SetMemberAccountIds(std::move(value)); return *this;}
-    inline ListDiscoveredResourcesRequest& AddMemberAccountIds(const Aws::String& value) { m_memberAccountIdsHasBeenSet = true; m_memberAccountIds.push_back(value); return *this; }
-    inline ListDiscoveredResourcesRequest& AddMemberAccountIds(Aws::String&& value) { m_memberAccountIdsHasBeenSet = true; m_memberAccountIds.push_back(std::move(value)); return *this; }
-    inline ListDiscoveredResourcesRequest& AddMemberAccountIds(const char* value) { m_memberAccountIdsHasBeenSet = true; m_memberAccountIds.push_back(value); return *this; }
+    template<typename MemberAccountIdsT = Aws::Vector<Aws::String>>
+    void SetMemberAccountIds(MemberAccountIdsT&& value) { m_memberAccountIdsHasBeenSet = true; m_memberAccountIds = std::forward<MemberAccountIdsT>(value); }
+    template<typename MemberAccountIdsT = Aws::Vector<Aws::String>>
+    ListDiscoveredResourcesRequest& WithMemberAccountIds(MemberAccountIdsT&& value) { SetMemberAccountIds(std::forward<MemberAccountIdsT>(value)); return *this;}
+    template<typename MemberAccountIdsT = Aws::String>
+    ListDiscoveredResourcesRequest& AddMemberAccountIds(MemberAccountIdsT&& value) { m_memberAccountIdsHasBeenSet = true; m_memberAccountIds.emplace_back(std::forward<MemberAccountIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The type of resources to discover.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
-    inline ListDiscoveredResourcesRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline ListDiscoveredResourcesRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline ListDiscoveredResourcesRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    ListDiscoveredResourcesRequest& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,7 +70,7 @@ namespace Model
      * provides a <code>NextToken</code> value that you can use in a subsequent call to
      * get the next batch of objects.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListDiscoveredResourcesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -87,14 +84,12 @@ namespace Model
      * response. To retrieve the next batch of objects, use the token returned from the
      * prior request in your next request.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListDiscoveredResourcesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDiscoveredResourcesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDiscoveredResourcesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDiscoveredResourcesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -104,7 +99,7 @@ namespace Model
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

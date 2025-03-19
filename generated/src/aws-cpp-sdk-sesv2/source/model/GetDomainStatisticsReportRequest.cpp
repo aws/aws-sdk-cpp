@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetDomainStatisticsReportRequest::GetDomainStatisticsReportRequest() : 
-    m_domainHasBeenSet(false),
-    m_startDateHasBeenSet(false),
-    m_endDateHasBeenSet(false)
-{
-}
-
 Aws::String GetDomainStatisticsReportRequest::SerializePayload() const
 {
   return {};

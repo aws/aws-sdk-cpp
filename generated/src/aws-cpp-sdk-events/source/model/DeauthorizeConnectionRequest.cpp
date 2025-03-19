@@ -12,11 +12,6 @@ using namespace Aws::CloudWatchEvents::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeauthorizeConnectionRequest::DeauthorizeConnectionRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String DeauthorizeConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

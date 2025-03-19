@@ -18,16 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-SmsChannelSubtypeParameters::SmsChannelSubtypeParameters() : 
-    m_destinationPhoneNumberHasBeenSet(false),
-    m_connectSourcePhoneNumberArnHasBeenSet(false),
-    m_templateArnHasBeenSet(false),
-    m_templateParametersHasBeenSet(false)
-{
-}
-
 SmsChannelSubtypeParameters::SmsChannelSubtypeParameters(JsonView jsonValue)
-  : SmsChannelSubtypeParameters()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ SmsChannelSubtypeParameters& SmsChannelSubtypeParameters::operator =(JsonView js
   if(jsonValue.ValueExists("destinationPhoneNumber"))
   {
     m_destinationPhoneNumber = jsonValue.GetString("destinationPhoneNumber");
-
     m_destinationPhoneNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectSourcePhoneNumberArn"))
   {
     m_connectSourcePhoneNumberArn = jsonValue.GetString("connectSourcePhoneNumberArn");
-
     m_connectSourcePhoneNumberArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateArn"))
   {
     m_templateArn = jsonValue.GetString("templateArn");
-
     m_templateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("templateParameters"))
   {
     Aws::Map<Aws::String, JsonView> templateParametersJsonMap = jsonValue.GetObject("templateParameters").GetAllObjects();
@@ -64,7 +49,6 @@ SmsChannelSubtypeParameters& SmsChannelSubtypeParameters::operator =(JsonView js
     }
     m_templateParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

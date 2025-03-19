@@ -33,7 +33,7 @@ namespace Model
   class FulfillmentCodeHookSettings
   {
   public:
-    AWS_LEXMODELSV2_API FulfillmentCodeHookSettings();
+    AWS_LEXMODELSV2_API FulfillmentCodeHookSettings() = default;
     AWS_LEXMODELSV2_API FulfillmentCodeHookSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API FulfillmentCodeHookSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * <p>Indicates whether a Lambda function should be invoked to fulfill a specific
      * intent.</p>
      */
-    inline bool GetEnabled() const{ return m_enabled; }
+    inline bool GetEnabled() const { return m_enabled; }
     inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
     inline FulfillmentCodeHookSettings& WithEnabled(bool value) { SetEnabled(value); return *this;}
@@ -56,12 +56,12 @@ namespace Model
      * fulfillment function completes. Post-fulfillment messages can be sent for both
      * streaming and non-streaming conversations.</p>
      */
-    inline const PostFulfillmentStatusSpecification& GetPostFulfillmentStatusSpecification() const{ return m_postFulfillmentStatusSpecification; }
+    inline const PostFulfillmentStatusSpecification& GetPostFulfillmentStatusSpecification() const { return m_postFulfillmentStatusSpecification; }
     inline bool PostFulfillmentStatusSpecificationHasBeenSet() const { return m_postFulfillmentStatusSpecificationHasBeenSet; }
-    inline void SetPostFulfillmentStatusSpecification(const PostFulfillmentStatusSpecification& value) { m_postFulfillmentStatusSpecificationHasBeenSet = true; m_postFulfillmentStatusSpecification = value; }
-    inline void SetPostFulfillmentStatusSpecification(PostFulfillmentStatusSpecification&& value) { m_postFulfillmentStatusSpecificationHasBeenSet = true; m_postFulfillmentStatusSpecification = std::move(value); }
-    inline FulfillmentCodeHookSettings& WithPostFulfillmentStatusSpecification(const PostFulfillmentStatusSpecification& value) { SetPostFulfillmentStatusSpecification(value); return *this;}
-    inline FulfillmentCodeHookSettings& WithPostFulfillmentStatusSpecification(PostFulfillmentStatusSpecification&& value) { SetPostFulfillmentStatusSpecification(std::move(value)); return *this;}
+    template<typename PostFulfillmentStatusSpecificationT = PostFulfillmentStatusSpecification>
+    void SetPostFulfillmentStatusSpecification(PostFulfillmentStatusSpecificationT&& value) { m_postFulfillmentStatusSpecificationHasBeenSet = true; m_postFulfillmentStatusSpecification = std::forward<PostFulfillmentStatusSpecificationT>(value); }
+    template<typename PostFulfillmentStatusSpecificationT = PostFulfillmentStatusSpecification>
+    FulfillmentCodeHookSettings& WithPostFulfillmentStatusSpecification(PostFulfillmentStatusSpecificationT&& value) { SetPostFulfillmentStatusSpecification(std::forward<PostFulfillmentStatusSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,12 +70,12 @@ namespace Model
      * Lambda fulfillment functions. Fulfillment updates can be used only with
      * streaming conversations.</p>
      */
-    inline const FulfillmentUpdatesSpecification& GetFulfillmentUpdatesSpecification() const{ return m_fulfillmentUpdatesSpecification; }
+    inline const FulfillmentUpdatesSpecification& GetFulfillmentUpdatesSpecification() const { return m_fulfillmentUpdatesSpecification; }
     inline bool FulfillmentUpdatesSpecificationHasBeenSet() const { return m_fulfillmentUpdatesSpecificationHasBeenSet; }
-    inline void SetFulfillmentUpdatesSpecification(const FulfillmentUpdatesSpecification& value) { m_fulfillmentUpdatesSpecificationHasBeenSet = true; m_fulfillmentUpdatesSpecification = value; }
-    inline void SetFulfillmentUpdatesSpecification(FulfillmentUpdatesSpecification&& value) { m_fulfillmentUpdatesSpecificationHasBeenSet = true; m_fulfillmentUpdatesSpecification = std::move(value); }
-    inline FulfillmentCodeHookSettings& WithFulfillmentUpdatesSpecification(const FulfillmentUpdatesSpecification& value) { SetFulfillmentUpdatesSpecification(value); return *this;}
-    inline FulfillmentCodeHookSettings& WithFulfillmentUpdatesSpecification(FulfillmentUpdatesSpecification&& value) { SetFulfillmentUpdatesSpecification(std::move(value)); return *this;}
+    template<typename FulfillmentUpdatesSpecificationT = FulfillmentUpdatesSpecification>
+    void SetFulfillmentUpdatesSpecification(FulfillmentUpdatesSpecificationT&& value) { m_fulfillmentUpdatesSpecificationHasBeenSet = true; m_fulfillmentUpdatesSpecification = std::forward<FulfillmentUpdatesSpecificationT>(value); }
+    template<typename FulfillmentUpdatesSpecificationT = FulfillmentUpdatesSpecification>
+    FulfillmentCodeHookSettings& WithFulfillmentUpdatesSpecification(FulfillmentUpdatesSpecificationT&& value) { SetFulfillmentUpdatesSpecification(std::forward<FulfillmentUpdatesSpecificationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,14 +83,14 @@ namespace Model
      * <p>Determines whether the fulfillment code hook is used. When
      * <code>active</code> is false, the code hook doesn't run.</p>
      */
-    inline bool GetActive() const{ return m_active; }
+    inline bool GetActive() const { return m_active; }
     inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
     inline void SetActive(bool value) { m_activeHasBeenSet = true; m_active = value; }
     inline FulfillmentCodeHookSettings& WithActive(bool value) { SetActive(value); return *this;}
     ///@}
   private:
 
-    bool m_enabled;
+    bool m_enabled{false};
     bool m_enabledHasBeenSet = false;
 
     PostFulfillmentStatusSpecification m_postFulfillmentStatusSpecification;
@@ -99,7 +99,7 @@ namespace Model
     FulfillmentUpdatesSpecification m_fulfillmentUpdatesSpecification;
     bool m_fulfillmentUpdatesSpecificationHasBeenSet = false;
 
-    bool m_active;
+    bool m_active{false};
     bool m_activeHasBeenSet = false;
   };
 

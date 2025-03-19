@@ -33,7 +33,7 @@ namespace Model
   class AuthenticationConfiguration
   {
   public:
-    AWS_APPRUNNER_API AuthenticationConfiguration();
+    AWS_APPRUNNER_API AuthenticationConfiguration() = default;
     AWS_APPRUNNER_API AuthenticationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API AuthenticationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPRUNNER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * App Runner service to connect to a source repository. It's required for GitHub
      * code repositories.</p>
      */
-    inline const Aws::String& GetConnectionArn() const{ return m_connectionArn; }
+    inline const Aws::String& GetConnectionArn() const { return m_connectionArn; }
     inline bool ConnectionArnHasBeenSet() const { return m_connectionArnHasBeenSet; }
-    inline void SetConnectionArn(const Aws::String& value) { m_connectionArnHasBeenSet = true; m_connectionArn = value; }
-    inline void SetConnectionArn(Aws::String&& value) { m_connectionArnHasBeenSet = true; m_connectionArn = std::move(value); }
-    inline void SetConnectionArn(const char* value) { m_connectionArnHasBeenSet = true; m_connectionArn.assign(value); }
-    inline AuthenticationConfiguration& WithConnectionArn(const Aws::String& value) { SetConnectionArn(value); return *this;}
-    inline AuthenticationConfiguration& WithConnectionArn(Aws::String&& value) { SetConnectionArn(std::move(value)); return *this;}
-    inline AuthenticationConfiguration& WithConnectionArn(const char* value) { SetConnectionArn(value); return *this;}
+    template<typename ConnectionArnT = Aws::String>
+    void SetConnectionArn(ConnectionArnT&& value) { m_connectionArnHasBeenSet = true; m_connectionArn = std::forward<ConnectionArnT>(value); }
+    template<typename ConnectionArnT = Aws::String>
+    AuthenticationConfiguration& WithConnectionArn(ConnectionArnT&& value) { SetConnectionArn(std::forward<ConnectionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * service access to a source repository. It's required for ECR image repositories
      * (but not for ECR Public repositories).</p>
      */
-    inline const Aws::String& GetAccessRoleArn() const{ return m_accessRoleArn; }
+    inline const Aws::String& GetAccessRoleArn() const { return m_accessRoleArn; }
     inline bool AccessRoleArnHasBeenSet() const { return m_accessRoleArnHasBeenSet; }
-    inline void SetAccessRoleArn(const Aws::String& value) { m_accessRoleArnHasBeenSet = true; m_accessRoleArn = value; }
-    inline void SetAccessRoleArn(Aws::String&& value) { m_accessRoleArnHasBeenSet = true; m_accessRoleArn = std::move(value); }
-    inline void SetAccessRoleArn(const char* value) { m_accessRoleArnHasBeenSet = true; m_accessRoleArn.assign(value); }
-    inline AuthenticationConfiguration& WithAccessRoleArn(const Aws::String& value) { SetAccessRoleArn(value); return *this;}
-    inline AuthenticationConfiguration& WithAccessRoleArn(Aws::String&& value) { SetAccessRoleArn(std::move(value)); return *this;}
-    inline AuthenticationConfiguration& WithAccessRoleArn(const char* value) { SetAccessRoleArn(value); return *this;}
+    template<typename AccessRoleArnT = Aws::String>
+    void SetAccessRoleArn(AccessRoleArnT&& value) { m_accessRoleArnHasBeenSet = true; m_accessRoleArn = std::forward<AccessRoleArnT>(value); }
+    template<typename AccessRoleArnT = Aws::String>
+    AuthenticationConfiguration& WithAccessRoleArn(AccessRoleArnT&& value) { SetAccessRoleArn(std::forward<AccessRoleArnT>(value)); return *this;}
     ///@}
   private:
 

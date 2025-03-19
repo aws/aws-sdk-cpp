@@ -32,7 +32,7 @@ namespace Model
   class VisibilityConfig
   {
   public:
-    AWS_WAFV2_API VisibilityConfig();
+    AWS_WAFV2_API VisibilityConfig() = default;
     AWS_WAFV2_API VisibilityConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API VisibilityConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,7 +49,7 @@ namespace Model
      * request sampling by disabling sampling in the web ACL visibility configuration
      * or by configuring data protection for the web ACL.</p> 
      */
-    inline bool GetSampledRequestsEnabled() const{ return m_sampledRequestsEnabled; }
+    inline bool GetSampledRequestsEnabled() const { return m_sampledRequestsEnabled; }
     inline bool SampledRequestsEnabledHasBeenSet() const { return m_sampledRequestsEnabledHasBeenSet; }
     inline void SetSampledRequestsEnabled(bool value) { m_sampledRequestsEnabledHasBeenSet = true; m_sampledRequestsEnabled = value; }
     inline VisibilityConfig& WithSampledRequestsEnabled(bool value) { SetSampledRequestsEnabled(value); return *this;}
@@ -67,7 +67,7 @@ namespace Model
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/web-acl-default-action.html">The
      * web ACL default action</a> in the <i>WAF Developer Guide</i>.</p>
      */
-    inline bool GetCloudWatchMetricsEnabled() const{ return m_cloudWatchMetricsEnabled; }
+    inline bool GetCloudWatchMetricsEnabled() const { return m_cloudWatchMetricsEnabled; }
     inline bool CloudWatchMetricsEnabledHasBeenSet() const { return m_cloudWatchMetricsEnabledHasBeenSet; }
     inline void SetCloudWatchMetricsEnabled(bool value) { m_cloudWatchMetricsEnabledHasBeenSet = true; m_cloudWatchMetricsEnabled = value; }
     inline VisibilityConfig& WithCloudWatchMetricsEnabled(bool value) { SetCloudWatchMetricsEnabled(value); return *this;}
@@ -81,21 +81,19 @@ namespace Model
      * that are reserved for WAF, for example <code>All</code> and
      * <code>Default_Action</code>. </p>
      */
-    inline const Aws::String& GetMetricName() const{ return m_metricName; }
+    inline const Aws::String& GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
-    inline VisibilityConfig& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-    inline VisibilityConfig& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-    inline VisibilityConfig& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+    template<typename MetricNameT = Aws::String>
+    void SetMetricName(MetricNameT&& value) { m_metricNameHasBeenSet = true; m_metricName = std::forward<MetricNameT>(value); }
+    template<typename MetricNameT = Aws::String>
+    VisibilityConfig& WithMetricName(MetricNameT&& value) { SetMetricName(std::forward<MetricNameT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_sampledRequestsEnabled;
+    bool m_sampledRequestsEnabled{false};
     bool m_sampledRequestsEnabledHasBeenSet = false;
 
-    bool m_cloudWatchMetricsEnabled;
+    bool m_cloudWatchMetricsEnabled{false};
     bool m_cloudWatchMetricsEnabledHasBeenSet = false;
 
     Aws::String m_metricName;

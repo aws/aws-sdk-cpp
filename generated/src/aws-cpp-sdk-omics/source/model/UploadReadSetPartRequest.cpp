@@ -17,16 +17,6 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 using namespace Aws;
 
-UploadReadSetPartRequest::UploadReadSetPartRequest() : 
-    m_sequenceStoreIdHasBeenSet(false),
-    m_uploadIdHasBeenSet(false),
-    m_partSource(ReadSetPartSource::NOT_SET),
-    m_partSourceHasBeenSet(false),
-    m_partNumber(0),
-    m_partNumberHasBeenSet(false)
-{
-}
-
 
 void UploadReadSetPartRequest::AddQueryStringParameters(URI& uri) const
 {

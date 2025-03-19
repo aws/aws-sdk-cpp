@@ -20,20 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ReservedInstancesConfiguration::ReservedInstancesConfiguration() : 
-    m_availabilityZoneHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_scope(Scope::NOT_SET),
-    m_scopeHasBeenSet(false)
-{
-}
-
 ReservedInstancesConfiguration::ReservedInstancesConfiguration(const XmlNode& xmlNode)
-  : ReservedInstancesConfiguration()
 {
   *this = xmlNode;
 }
@@ -59,7 +46,7 @@ ReservedInstancesConfiguration& ReservedInstancesConfiguration::operator =(const
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()).c_str());
+      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()));
       m_instanceTypeHasBeenSet = true;
     }
     XmlNode platformNode = resultNode.FirstChild("platform");
@@ -71,7 +58,7 @@ ReservedInstancesConfiguration& ReservedInstancesConfiguration::operator =(const
     XmlNode scopeNode = resultNode.FirstChild("scope");
     if(!scopeNode.IsNull())
     {
-      m_scope = ScopeMapper::GetScopeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(scopeNode.GetText()).c_str()).c_str());
+      m_scope = ScopeMapper::GetScopeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(scopeNode.GetText()).c_str()));
       m_scopeHasBeenSet = true;
     }
   }

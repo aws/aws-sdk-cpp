@@ -18,16 +18,7 @@ namespace ResilienceHub
 namespace Model
 {
 
-AppComponent::AppComponent() : 
-    m_additionalInfoHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 AppComponent::AppComponent(JsonView jsonValue)
-  : AppComponent()
 {
   *this = jsonValue;
 }
@@ -50,28 +41,21 @@ AppComponent& AppComponent::operator =(JsonView jsonValue)
     }
     m_additionalInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetString("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

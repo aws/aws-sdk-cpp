@@ -26,7 +26,7 @@ namespace Model
   class DeleteLoadBalancerListenersRequest : public ElasticLoadBalancingRequest
   {
   public:
-    AWS_ELASTICLOADBALANCING_API DeleteLoadBalancerListenersRequest();
+    AWS_ELASTICLOADBALANCING_API DeleteLoadBalancerListenersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,26 +45,24 @@ namespace Model
     /**
      * <p>The name of the load balancer.</p>
      */
-    inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
+    inline const Aws::String& GetLoadBalancerName() const { return m_loadBalancerName; }
     inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
-    inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
-    inline void SetLoadBalancerName(Aws::String&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::move(value); }
-    inline void SetLoadBalancerName(const char* value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName.assign(value); }
-    inline DeleteLoadBalancerListenersRequest& WithLoadBalancerName(const Aws::String& value) { SetLoadBalancerName(value); return *this;}
-    inline DeleteLoadBalancerListenersRequest& WithLoadBalancerName(Aws::String&& value) { SetLoadBalancerName(std::move(value)); return *this;}
-    inline DeleteLoadBalancerListenersRequest& WithLoadBalancerName(const char* value) { SetLoadBalancerName(value); return *this;}
+    template<typename LoadBalancerNameT = Aws::String>
+    void SetLoadBalancerName(LoadBalancerNameT&& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = std::forward<LoadBalancerNameT>(value); }
+    template<typename LoadBalancerNameT = Aws::String>
+    DeleteLoadBalancerListenersRequest& WithLoadBalancerName(LoadBalancerNameT&& value) { SetLoadBalancerName(std::forward<LoadBalancerNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The client port numbers of the listeners.</p>
      */
-    inline const Aws::Vector<int>& GetLoadBalancerPorts() const{ return m_loadBalancerPorts; }
+    inline const Aws::Vector<int>& GetLoadBalancerPorts() const { return m_loadBalancerPorts; }
     inline bool LoadBalancerPortsHasBeenSet() const { return m_loadBalancerPortsHasBeenSet; }
-    inline void SetLoadBalancerPorts(const Aws::Vector<int>& value) { m_loadBalancerPortsHasBeenSet = true; m_loadBalancerPorts = value; }
-    inline void SetLoadBalancerPorts(Aws::Vector<int>&& value) { m_loadBalancerPortsHasBeenSet = true; m_loadBalancerPorts = std::move(value); }
-    inline DeleteLoadBalancerListenersRequest& WithLoadBalancerPorts(const Aws::Vector<int>& value) { SetLoadBalancerPorts(value); return *this;}
-    inline DeleteLoadBalancerListenersRequest& WithLoadBalancerPorts(Aws::Vector<int>&& value) { SetLoadBalancerPorts(std::move(value)); return *this;}
+    template<typename LoadBalancerPortsT = Aws::Vector<int>>
+    void SetLoadBalancerPorts(LoadBalancerPortsT&& value) { m_loadBalancerPortsHasBeenSet = true; m_loadBalancerPorts = std::forward<LoadBalancerPortsT>(value); }
+    template<typename LoadBalancerPortsT = Aws::Vector<int>>
+    DeleteLoadBalancerListenersRequest& WithLoadBalancerPorts(LoadBalancerPortsT&& value) { SetLoadBalancerPorts(std::forward<LoadBalancerPortsT>(value)); return *this;}
     inline DeleteLoadBalancerListenersRequest& AddLoadBalancerPorts(int value) { m_loadBalancerPortsHasBeenSet = true; m_loadBalancerPorts.push_back(value); return *this; }
     ///@}
   private:

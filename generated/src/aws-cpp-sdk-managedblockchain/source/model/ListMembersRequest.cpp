@@ -15,19 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListMembersRequest::ListMembersRequest() : 
-    m_networkIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(MemberStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_isOwned(false),
-    m_isOwnedHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListMembersRequest::SerializePayload() const
 {
   return {};

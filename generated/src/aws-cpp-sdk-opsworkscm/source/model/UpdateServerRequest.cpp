@@ -12,17 +12,6 @@ using namespace Aws::OpsWorksCM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateServerRequest::UpdateServerRequest() : 
-    m_disableAutomatedBackup(false),
-    m_disableAutomatedBackupHasBeenSet(false),
-    m_backupRetentionCount(0),
-    m_backupRetentionCountHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_preferredMaintenanceWindowHasBeenSet(false),
-    m_preferredBackupWindowHasBeenSet(false)
-{
-}
-
 Aws::String UpdateServerRequest::SerializePayload() const
 {
   JsonValue payload;

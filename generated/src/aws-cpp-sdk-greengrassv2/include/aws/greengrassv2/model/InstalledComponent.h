@@ -35,7 +35,7 @@ namespace Model
   class InstalledComponent
   {
   public:
-    AWS_GREENGRASSV2_API InstalledComponent();
+    AWS_GREENGRASSV2_API InstalledComponent() = default;
     AWS_GREENGRASSV2_API InstalledComponent(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API InstalledComponent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GREENGRASSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,40 +45,34 @@ namespace Model
     /**
      * <p>The name of the component.</p>
      */
-    inline const Aws::String& GetComponentName() const{ return m_componentName; }
+    inline const Aws::String& GetComponentName() const { return m_componentName; }
     inline bool ComponentNameHasBeenSet() const { return m_componentNameHasBeenSet; }
-    inline void SetComponentName(const Aws::String& value) { m_componentNameHasBeenSet = true; m_componentName = value; }
-    inline void SetComponentName(Aws::String&& value) { m_componentNameHasBeenSet = true; m_componentName = std::move(value); }
-    inline void SetComponentName(const char* value) { m_componentNameHasBeenSet = true; m_componentName.assign(value); }
-    inline InstalledComponent& WithComponentName(const Aws::String& value) { SetComponentName(value); return *this;}
-    inline InstalledComponent& WithComponentName(Aws::String&& value) { SetComponentName(std::move(value)); return *this;}
-    inline InstalledComponent& WithComponentName(const char* value) { SetComponentName(value); return *this;}
+    template<typename ComponentNameT = Aws::String>
+    void SetComponentName(ComponentNameT&& value) { m_componentNameHasBeenSet = true; m_componentName = std::forward<ComponentNameT>(value); }
+    template<typename ComponentNameT = Aws::String>
+    InstalledComponent& WithComponentName(ComponentNameT&& value) { SetComponentName(std::forward<ComponentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the component.</p>
      */
-    inline const Aws::String& GetComponentVersion() const{ return m_componentVersion; }
+    inline const Aws::String& GetComponentVersion() const { return m_componentVersion; }
     inline bool ComponentVersionHasBeenSet() const { return m_componentVersionHasBeenSet; }
-    inline void SetComponentVersion(const Aws::String& value) { m_componentVersionHasBeenSet = true; m_componentVersion = value; }
-    inline void SetComponentVersion(Aws::String&& value) { m_componentVersionHasBeenSet = true; m_componentVersion = std::move(value); }
-    inline void SetComponentVersion(const char* value) { m_componentVersionHasBeenSet = true; m_componentVersion.assign(value); }
-    inline InstalledComponent& WithComponentVersion(const Aws::String& value) { SetComponentVersion(value); return *this;}
-    inline InstalledComponent& WithComponentVersion(Aws::String&& value) { SetComponentVersion(std::move(value)); return *this;}
-    inline InstalledComponent& WithComponentVersion(const char* value) { SetComponentVersion(value); return *this;}
+    template<typename ComponentVersionT = Aws::String>
+    void SetComponentVersion(ComponentVersionT&& value) { m_componentVersionHasBeenSet = true; m_componentVersion = std::forward<ComponentVersionT>(value); }
+    template<typename ComponentVersionT = Aws::String>
+    InstalledComponent& WithComponentVersion(ComponentVersionT&& value) { SetComponentVersion(std::forward<ComponentVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The lifecycle state of the component.</p>
      */
-    inline const InstalledComponentLifecycleState& GetLifecycleState() const{ return m_lifecycleState; }
+    inline InstalledComponentLifecycleState GetLifecycleState() const { return m_lifecycleState; }
     inline bool LifecycleStateHasBeenSet() const { return m_lifecycleStateHasBeenSet; }
-    inline void SetLifecycleState(const InstalledComponentLifecycleState& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = value; }
-    inline void SetLifecycleState(InstalledComponentLifecycleState&& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = std::move(value); }
-    inline InstalledComponent& WithLifecycleState(const InstalledComponentLifecycleState& value) { SetLifecycleState(value); return *this;}
-    inline InstalledComponent& WithLifecycleState(InstalledComponentLifecycleState&& value) { SetLifecycleState(std::move(value)); return *this;}
+    inline void SetLifecycleState(InstalledComponentLifecycleState value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = value; }
+    inline InstalledComponent& WithLifecycleState(InstalledComponentLifecycleState value) { SetLifecycleState(value); return *this;}
     ///@}
 
     ///@{
@@ -86,21 +80,19 @@ namespace Model
      * <p>A detailed response about the lifecycle state of the component that explains
      * the reason why a component has an error or is broken.</p>
      */
-    inline const Aws::String& GetLifecycleStateDetails() const{ return m_lifecycleStateDetails; }
+    inline const Aws::String& GetLifecycleStateDetails() const { return m_lifecycleStateDetails; }
     inline bool LifecycleStateDetailsHasBeenSet() const { return m_lifecycleStateDetailsHasBeenSet; }
-    inline void SetLifecycleStateDetails(const Aws::String& value) { m_lifecycleStateDetailsHasBeenSet = true; m_lifecycleStateDetails = value; }
-    inline void SetLifecycleStateDetails(Aws::String&& value) { m_lifecycleStateDetailsHasBeenSet = true; m_lifecycleStateDetails = std::move(value); }
-    inline void SetLifecycleStateDetails(const char* value) { m_lifecycleStateDetailsHasBeenSet = true; m_lifecycleStateDetails.assign(value); }
-    inline InstalledComponent& WithLifecycleStateDetails(const Aws::String& value) { SetLifecycleStateDetails(value); return *this;}
-    inline InstalledComponent& WithLifecycleStateDetails(Aws::String&& value) { SetLifecycleStateDetails(std::move(value)); return *this;}
-    inline InstalledComponent& WithLifecycleStateDetails(const char* value) { SetLifecycleStateDetails(value); return *this;}
+    template<typename LifecycleStateDetailsT = Aws::String>
+    void SetLifecycleStateDetails(LifecycleStateDetailsT&& value) { m_lifecycleStateDetailsHasBeenSet = true; m_lifecycleStateDetails = std::forward<LifecycleStateDetailsT>(value); }
+    template<typename LifecycleStateDetailsT = Aws::String>
+    InstalledComponent& WithLifecycleStateDetails(LifecycleStateDetailsT&& value) { SetLifecycleStateDetails(std::forward<LifecycleStateDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether or not the component is a root component.</p>
      */
-    inline bool GetIsRoot() const{ return m_isRoot; }
+    inline bool GetIsRoot() const { return m_isRoot; }
     inline bool IsRootHasBeenSet() const { return m_isRootHasBeenSet; }
     inline void SetIsRoot(bool value) { m_isRootHasBeenSet = true; m_isRoot = value; }
     inline InstalledComponent& WithIsRoot(bool value) { SetIsRoot(value); return *this;}
@@ -114,12 +106,12 @@ namespace Model
      * deployment, it might not undergo a state change and this status would not be
      * updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastStatusChangeTimestamp() const{ return m_lastStatusChangeTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastStatusChangeTimestamp() const { return m_lastStatusChangeTimestamp; }
     inline bool LastStatusChangeTimestampHasBeenSet() const { return m_lastStatusChangeTimestampHasBeenSet; }
-    inline void SetLastStatusChangeTimestamp(const Aws::Utils::DateTime& value) { m_lastStatusChangeTimestampHasBeenSet = true; m_lastStatusChangeTimestamp = value; }
-    inline void SetLastStatusChangeTimestamp(Aws::Utils::DateTime&& value) { m_lastStatusChangeTimestampHasBeenSet = true; m_lastStatusChangeTimestamp = std::move(value); }
-    inline InstalledComponent& WithLastStatusChangeTimestamp(const Aws::Utils::DateTime& value) { SetLastStatusChangeTimestamp(value); return *this;}
-    inline InstalledComponent& WithLastStatusChangeTimestamp(Aws::Utils::DateTime&& value) { SetLastStatusChangeTimestamp(std::move(value)); return *this;}
+    template<typename LastStatusChangeTimestampT = Aws::Utils::DateTime>
+    void SetLastStatusChangeTimestamp(LastStatusChangeTimestampT&& value) { m_lastStatusChangeTimestampHasBeenSet = true; m_lastStatusChangeTimestamp = std::forward<LastStatusChangeTimestampT>(value); }
+    template<typename LastStatusChangeTimestampT = Aws::Utils::DateTime>
+    InstalledComponent& WithLastStatusChangeTimestamp(LastStatusChangeTimestampT&& value) { SetLastStatusChangeTimestamp(std::forward<LastStatusChangeTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -128,12 +120,12 @@ namespace Model
      * component's state to the Amazon Web Services Cloud.</p> <p>A component does not
      * need to see a state change for this field to update.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastReportedTimestamp() const{ return m_lastReportedTimestamp; }
+    inline const Aws::Utils::DateTime& GetLastReportedTimestamp() const { return m_lastReportedTimestamp; }
     inline bool LastReportedTimestampHasBeenSet() const { return m_lastReportedTimestampHasBeenSet; }
-    inline void SetLastReportedTimestamp(const Aws::Utils::DateTime& value) { m_lastReportedTimestampHasBeenSet = true; m_lastReportedTimestamp = value; }
-    inline void SetLastReportedTimestamp(Aws::Utils::DateTime&& value) { m_lastReportedTimestampHasBeenSet = true; m_lastReportedTimestamp = std::move(value); }
-    inline InstalledComponent& WithLastReportedTimestamp(const Aws::Utils::DateTime& value) { SetLastReportedTimestamp(value); return *this;}
-    inline InstalledComponent& WithLastReportedTimestamp(Aws::Utils::DateTime&& value) { SetLastReportedTimestamp(std::move(value)); return *this;}
+    template<typename LastReportedTimestampT = Aws::Utils::DateTime>
+    void SetLastReportedTimestamp(LastReportedTimestampT&& value) { m_lastReportedTimestampHasBeenSet = true; m_lastReportedTimestamp = std::forward<LastReportedTimestampT>(value); }
+    template<typename LastReportedTimestampT = Aws::Utils::DateTime>
+    InstalledComponent& WithLastReportedTimestamp(LastReportedTimestampT&& value) { SetLastReportedTimestamp(std::forward<LastReportedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,14 +137,12 @@ namespace Model
      * will attempt to reinstall currently broken components on the device, which will
      * update the last installation source.</p> 
      */
-    inline const Aws::String& GetLastInstallationSource() const{ return m_lastInstallationSource; }
+    inline const Aws::String& GetLastInstallationSource() const { return m_lastInstallationSource; }
     inline bool LastInstallationSourceHasBeenSet() const { return m_lastInstallationSourceHasBeenSet; }
-    inline void SetLastInstallationSource(const Aws::String& value) { m_lastInstallationSourceHasBeenSet = true; m_lastInstallationSource = value; }
-    inline void SetLastInstallationSource(Aws::String&& value) { m_lastInstallationSourceHasBeenSet = true; m_lastInstallationSource = std::move(value); }
-    inline void SetLastInstallationSource(const char* value) { m_lastInstallationSourceHasBeenSet = true; m_lastInstallationSource.assign(value); }
-    inline InstalledComponent& WithLastInstallationSource(const Aws::String& value) { SetLastInstallationSource(value); return *this;}
-    inline InstalledComponent& WithLastInstallationSource(Aws::String&& value) { SetLastInstallationSource(std::move(value)); return *this;}
-    inline InstalledComponent& WithLastInstallationSource(const char* value) { SetLastInstallationSource(value); return *this;}
+    template<typename LastInstallationSourceT = Aws::String>
+    void SetLastInstallationSource(LastInstallationSourceT&& value) { m_lastInstallationSourceHasBeenSet = true; m_lastInstallationSource = std::forward<LastInstallationSourceT>(value); }
+    template<typename LastInstallationSourceT = Aws::String>
+    InstalledComponent& WithLastInstallationSource(LastInstallationSourceT&& value) { SetLastInstallationSource(std::forward<LastInstallationSourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,15 +153,14 @@ namespace Model
      * <code>lifecycleStatusCodes</code> response. This response can be inaccurate in
      * earlier Greengrass nucleus versions.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetLifecycleStatusCodes() const{ return m_lifecycleStatusCodes; }
+    inline const Aws::Vector<Aws::String>& GetLifecycleStatusCodes() const { return m_lifecycleStatusCodes; }
     inline bool LifecycleStatusCodesHasBeenSet() const { return m_lifecycleStatusCodesHasBeenSet; }
-    inline void SetLifecycleStatusCodes(const Aws::Vector<Aws::String>& value) { m_lifecycleStatusCodesHasBeenSet = true; m_lifecycleStatusCodes = value; }
-    inline void SetLifecycleStatusCodes(Aws::Vector<Aws::String>&& value) { m_lifecycleStatusCodesHasBeenSet = true; m_lifecycleStatusCodes = std::move(value); }
-    inline InstalledComponent& WithLifecycleStatusCodes(const Aws::Vector<Aws::String>& value) { SetLifecycleStatusCodes(value); return *this;}
-    inline InstalledComponent& WithLifecycleStatusCodes(Aws::Vector<Aws::String>&& value) { SetLifecycleStatusCodes(std::move(value)); return *this;}
-    inline InstalledComponent& AddLifecycleStatusCodes(const Aws::String& value) { m_lifecycleStatusCodesHasBeenSet = true; m_lifecycleStatusCodes.push_back(value); return *this; }
-    inline InstalledComponent& AddLifecycleStatusCodes(Aws::String&& value) { m_lifecycleStatusCodesHasBeenSet = true; m_lifecycleStatusCodes.push_back(std::move(value)); return *this; }
-    inline InstalledComponent& AddLifecycleStatusCodes(const char* value) { m_lifecycleStatusCodesHasBeenSet = true; m_lifecycleStatusCodes.push_back(value); return *this; }
+    template<typename LifecycleStatusCodesT = Aws::Vector<Aws::String>>
+    void SetLifecycleStatusCodes(LifecycleStatusCodesT&& value) { m_lifecycleStatusCodesHasBeenSet = true; m_lifecycleStatusCodes = std::forward<LifecycleStatusCodesT>(value); }
+    template<typename LifecycleStatusCodesT = Aws::Vector<Aws::String>>
+    InstalledComponent& WithLifecycleStatusCodes(LifecycleStatusCodesT&& value) { SetLifecycleStatusCodes(std::forward<LifecycleStatusCodesT>(value)); return *this;}
+    template<typename LifecycleStatusCodesT = Aws::String>
+    InstalledComponent& AddLifecycleStatusCodes(LifecycleStatusCodesT&& value) { m_lifecycleStatusCodesHasBeenSet = true; m_lifecycleStatusCodes.emplace_back(std::forward<LifecycleStatusCodesT>(value)); return *this; }
     ///@}
   private:
 
@@ -181,19 +170,19 @@ namespace Model
     Aws::String m_componentVersion;
     bool m_componentVersionHasBeenSet = false;
 
-    InstalledComponentLifecycleState m_lifecycleState;
+    InstalledComponentLifecycleState m_lifecycleState{InstalledComponentLifecycleState::NOT_SET};
     bool m_lifecycleStateHasBeenSet = false;
 
     Aws::String m_lifecycleStateDetails;
     bool m_lifecycleStateDetailsHasBeenSet = false;
 
-    bool m_isRoot;
+    bool m_isRoot{false};
     bool m_isRootHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastStatusChangeTimestamp;
+    Aws::Utils::DateTime m_lastStatusChangeTimestamp{};
     bool m_lastStatusChangeTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastReportedTimestamp;
+    Aws::Utils::DateTime m_lastReportedTimestamp{};
     bool m_lastReportedTimestampHasBeenSet = false;
 
     Aws::String m_lastInstallationSource;

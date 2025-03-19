@@ -34,7 +34,7 @@ namespace Model
   class PermissionGroup
   {
   public:
-    AWS_FINSPACEDATA_API PermissionGroup();
+    AWS_FINSPACEDATA_API PermissionGroup() = default;
     AWS_FINSPACEDATA_API PermissionGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACEDATA_API PermissionGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FINSPACEDATA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,42 +44,36 @@ namespace Model
     /**
      * <p> The unique identifier for the permission group.</p>
      */
-    inline const Aws::String& GetPermissionGroupId() const{ return m_permissionGroupId; }
+    inline const Aws::String& GetPermissionGroupId() const { return m_permissionGroupId; }
     inline bool PermissionGroupIdHasBeenSet() const { return m_permissionGroupIdHasBeenSet; }
-    inline void SetPermissionGroupId(const Aws::String& value) { m_permissionGroupIdHasBeenSet = true; m_permissionGroupId = value; }
-    inline void SetPermissionGroupId(Aws::String&& value) { m_permissionGroupIdHasBeenSet = true; m_permissionGroupId = std::move(value); }
-    inline void SetPermissionGroupId(const char* value) { m_permissionGroupIdHasBeenSet = true; m_permissionGroupId.assign(value); }
-    inline PermissionGroup& WithPermissionGroupId(const Aws::String& value) { SetPermissionGroupId(value); return *this;}
-    inline PermissionGroup& WithPermissionGroupId(Aws::String&& value) { SetPermissionGroupId(std::move(value)); return *this;}
-    inline PermissionGroup& WithPermissionGroupId(const char* value) { SetPermissionGroupId(value); return *this;}
+    template<typename PermissionGroupIdT = Aws::String>
+    void SetPermissionGroupId(PermissionGroupIdT&& value) { m_permissionGroupIdHasBeenSet = true; m_permissionGroupId = std::forward<PermissionGroupIdT>(value); }
+    template<typename PermissionGroupIdT = Aws::String>
+    PermissionGroup& WithPermissionGroupId(PermissionGroupIdT&& value) { SetPermissionGroupId(std::forward<PermissionGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the permission group.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline PermissionGroup& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PermissionGroup& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PermissionGroup& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PermissionGroup& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A brief description for the permission group.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline PermissionGroup& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline PermissionGroup& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline PermissionGroup& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    PermissionGroup& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,14 +97,13 @@ namespace Model
      * <code>GetTemporaryCredentials</code> – Group members can get temporary API
      * credentials.</p> </li> </ul>
      */
-    inline const Aws::Vector<ApplicationPermission>& GetApplicationPermissions() const{ return m_applicationPermissions; }
+    inline const Aws::Vector<ApplicationPermission>& GetApplicationPermissions() const { return m_applicationPermissions; }
     inline bool ApplicationPermissionsHasBeenSet() const { return m_applicationPermissionsHasBeenSet; }
-    inline void SetApplicationPermissions(const Aws::Vector<ApplicationPermission>& value) { m_applicationPermissionsHasBeenSet = true; m_applicationPermissions = value; }
-    inline void SetApplicationPermissions(Aws::Vector<ApplicationPermission>&& value) { m_applicationPermissionsHasBeenSet = true; m_applicationPermissions = std::move(value); }
-    inline PermissionGroup& WithApplicationPermissions(const Aws::Vector<ApplicationPermission>& value) { SetApplicationPermissions(value); return *this;}
-    inline PermissionGroup& WithApplicationPermissions(Aws::Vector<ApplicationPermission>&& value) { SetApplicationPermissions(std::move(value)); return *this;}
-    inline PermissionGroup& AddApplicationPermissions(const ApplicationPermission& value) { m_applicationPermissionsHasBeenSet = true; m_applicationPermissions.push_back(value); return *this; }
-    inline PermissionGroup& AddApplicationPermissions(ApplicationPermission&& value) { m_applicationPermissionsHasBeenSet = true; m_applicationPermissions.push_back(std::move(value)); return *this; }
+    template<typename ApplicationPermissionsT = Aws::Vector<ApplicationPermission>>
+    void SetApplicationPermissions(ApplicationPermissionsT&& value) { m_applicationPermissionsHasBeenSet = true; m_applicationPermissions = std::forward<ApplicationPermissionsT>(value); }
+    template<typename ApplicationPermissionsT = Aws::Vector<ApplicationPermission>>
+    PermissionGroup& WithApplicationPermissions(ApplicationPermissionsT&& value) { SetApplicationPermissions(std::forward<ApplicationPermissionsT>(value)); return *this;}
+    inline PermissionGroup& AddApplicationPermissions(ApplicationPermission value) { m_applicationPermissionsHasBeenSet = true; m_applicationPermissions.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -118,7 +111,7 @@ namespace Model
      * <p>The timestamp at which the group was created in FinSpace. The value is
      * determined as epoch time in milliseconds. </p>
      */
-    inline long long GetCreateTime() const{ return m_createTime; }
+    inline long long GetCreateTime() const { return m_createTime; }
     inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
     inline void SetCreateTime(long long value) { m_createTimeHasBeenSet = true; m_createTime = value; }
     inline PermissionGroup& WithCreateTime(long long value) { SetCreateTime(value); return *this;}
@@ -129,7 +122,7 @@ namespace Model
      * <p>Describes the last time the permission group was updated. The value is
      * determined as epoch time in milliseconds. </p>
      */
-    inline long long GetLastModifiedTime() const{ return m_lastModifiedTime; }
+    inline long long GetLastModifiedTime() const { return m_lastModifiedTime; }
     inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
     inline void SetLastModifiedTime(long long value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
     inline PermissionGroup& WithLastModifiedTime(long long value) { SetLastModifiedTime(value); return *this;}
@@ -144,12 +137,10 @@ namespace Model
      * <code>REMOVAL_IN_PROGRESS</code> – The user is currently being removed from the
      * permission group.</p> </li> </ul>
      */
-    inline const PermissionGroupMembershipStatus& GetMembershipStatus() const{ return m_membershipStatus; }
+    inline PermissionGroupMembershipStatus GetMembershipStatus() const { return m_membershipStatus; }
     inline bool MembershipStatusHasBeenSet() const { return m_membershipStatusHasBeenSet; }
-    inline void SetMembershipStatus(const PermissionGroupMembershipStatus& value) { m_membershipStatusHasBeenSet = true; m_membershipStatus = value; }
-    inline void SetMembershipStatus(PermissionGroupMembershipStatus&& value) { m_membershipStatusHasBeenSet = true; m_membershipStatus = std::move(value); }
-    inline PermissionGroup& WithMembershipStatus(const PermissionGroupMembershipStatus& value) { SetMembershipStatus(value); return *this;}
-    inline PermissionGroup& WithMembershipStatus(PermissionGroupMembershipStatus&& value) { SetMembershipStatus(std::move(value)); return *this;}
+    inline void SetMembershipStatus(PermissionGroupMembershipStatus value) { m_membershipStatusHasBeenSet = true; m_membershipStatus = value; }
+    inline PermissionGroup& WithMembershipStatus(PermissionGroupMembershipStatus value) { SetMembershipStatus(value); return *this;}
     ///@}
   private:
 
@@ -165,13 +156,13 @@ namespace Model
     Aws::Vector<ApplicationPermission> m_applicationPermissions;
     bool m_applicationPermissionsHasBeenSet = false;
 
-    long long m_createTime;
+    long long m_createTime{0};
     bool m_createTimeHasBeenSet = false;
 
-    long long m_lastModifiedTime;
+    long long m_lastModifiedTime{0};
     bool m_lastModifiedTimeHasBeenSet = false;
 
-    PermissionGroupMembershipStatus m_membershipStatus;
+    PermissionGroupMembershipStatus m_membershipStatus{PermissionGroupMembershipStatus::NOT_SET};
     bool m_membershipStatusHasBeenSet = false;
   };
 

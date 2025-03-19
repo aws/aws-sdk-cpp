@@ -28,7 +28,7 @@ namespace Model
   class DetectAnomaliesResult
   {
   public:
-    AWS_LOOKOUTFORVISION_API DetectAnomaliesResult();
+    AWS_LOOKOUTFORVISION_API DetectAnomaliesResult() = default;
     AWS_LOOKOUTFORVISION_API DetectAnomaliesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOOKOUTFORVISION_API DetectAnomaliesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The results of the <code>DetectAnomalies</code> operation.</p>
      */
-    inline const DetectAnomalyResult& GetDetectAnomalyResult() const{ return m_detectAnomalyResult; }
-    inline void SetDetectAnomalyResult(const DetectAnomalyResult& value) { m_detectAnomalyResult = value; }
-    inline void SetDetectAnomalyResult(DetectAnomalyResult&& value) { m_detectAnomalyResult = std::move(value); }
-    inline DetectAnomaliesResult& WithDetectAnomalyResult(const DetectAnomalyResult& value) { SetDetectAnomalyResult(value); return *this;}
-    inline DetectAnomaliesResult& WithDetectAnomalyResult(DetectAnomalyResult&& value) { SetDetectAnomalyResult(std::move(value)); return *this;}
+    inline const DetectAnomalyResult& GetDetectAnomalyResult() const { return m_detectAnomalyResult; }
+    template<typename DetectAnomalyResultT = DetectAnomalyResult>
+    void SetDetectAnomalyResult(DetectAnomalyResultT&& value) { m_detectAnomalyResultHasBeenSet = true; m_detectAnomalyResult = std::forward<DetectAnomalyResultT>(value); }
+    template<typename DetectAnomalyResultT = DetectAnomalyResult>
+    DetectAnomaliesResult& WithDetectAnomalyResult(DetectAnomalyResultT&& value) { SetDetectAnomalyResult(std::forward<DetectAnomalyResultT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DetectAnomaliesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DetectAnomaliesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DetectAnomaliesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DetectAnomaliesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DetectAnomalyResult m_detectAnomalyResult;
+    bool m_detectAnomalyResultHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

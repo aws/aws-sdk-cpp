@@ -18,15 +18,7 @@ namespace CloudTrail
 namespace Model
 {
 
-Destination::Destination() : 
-    m_type(DestinationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_locationHasBeenSet(false)
-{
-}
-
 Destination::Destination(JsonView jsonValue)
-  : Destination()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ Destination& Destination::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = DestinationTypeMapper::GetDestinationTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Location"))
   {
     m_location = jsonValue.GetString("Location");
-
     m_locationHasBeenSet = true;
   }
-
   return *this;
 }
 

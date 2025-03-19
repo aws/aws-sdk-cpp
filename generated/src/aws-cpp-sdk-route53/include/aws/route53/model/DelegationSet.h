@@ -33,7 +33,7 @@ namespace Model
   class DelegationSet
   {
   public:
-    AWS_ROUTE53_API DelegationSet();
+    AWS_ROUTE53_API DelegationSet() = default;
     AWS_ROUTE53_API DelegationSet(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ROUTE53_API DelegationSet& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline DelegationSet& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline DelegationSet& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline DelegationSet& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    DelegationSet& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <p>The value that you specified for <code>CallerReference</code> when you
      * created the reusable delegation set.</p>
      */
-    inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
+    inline const Aws::String& GetCallerReference() const { return m_callerReference; }
     inline bool CallerReferenceHasBeenSet() const { return m_callerReferenceHasBeenSet; }
-    inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
-    inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
-    inline void SetCallerReference(const char* value) { m_callerReferenceHasBeenSet = true; m_callerReference.assign(value); }
-    inline DelegationSet& WithCallerReference(const Aws::String& value) { SetCallerReference(value); return *this;}
-    inline DelegationSet& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
-    inline DelegationSet& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
+    template<typename CallerReferenceT = Aws::String>
+    void SetCallerReference(CallerReferenceT&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::forward<CallerReferenceT>(value); }
+    template<typename CallerReferenceT = Aws::String>
+    DelegationSet& WithCallerReference(CallerReferenceT&& value) { SetCallerReference(std::forward<CallerReferenceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,15 +70,14 @@ namespace Model
      * <p>A complex type that contains a list of the authoritative name servers for a
      * hosted zone or for a reusable delegation set.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetNameServers() const{ return m_nameServers; }
+    inline const Aws::Vector<Aws::String>& GetNameServers() const { return m_nameServers; }
     inline bool NameServersHasBeenSet() const { return m_nameServersHasBeenSet; }
-    inline void SetNameServers(const Aws::Vector<Aws::String>& value) { m_nameServersHasBeenSet = true; m_nameServers = value; }
-    inline void SetNameServers(Aws::Vector<Aws::String>&& value) { m_nameServersHasBeenSet = true; m_nameServers = std::move(value); }
-    inline DelegationSet& WithNameServers(const Aws::Vector<Aws::String>& value) { SetNameServers(value); return *this;}
-    inline DelegationSet& WithNameServers(Aws::Vector<Aws::String>&& value) { SetNameServers(std::move(value)); return *this;}
-    inline DelegationSet& AddNameServers(const Aws::String& value) { m_nameServersHasBeenSet = true; m_nameServers.push_back(value); return *this; }
-    inline DelegationSet& AddNameServers(Aws::String&& value) { m_nameServersHasBeenSet = true; m_nameServers.push_back(std::move(value)); return *this; }
-    inline DelegationSet& AddNameServers(const char* value) { m_nameServersHasBeenSet = true; m_nameServers.push_back(value); return *this; }
+    template<typename NameServersT = Aws::Vector<Aws::String>>
+    void SetNameServers(NameServersT&& value) { m_nameServersHasBeenSet = true; m_nameServers = std::forward<NameServersT>(value); }
+    template<typename NameServersT = Aws::Vector<Aws::String>>
+    DelegationSet& WithNameServers(NameServersT&& value) { SetNameServers(std::forward<NameServersT>(value)); return *this;}
+    template<typename NameServersT = Aws::String>
+    DelegationSet& AddNameServers(NameServersT&& value) { m_nameServersHasBeenSet = true; m_nameServers.emplace_back(std::forward<NameServersT>(value)); return *this; }
     ///@}
   private:
 

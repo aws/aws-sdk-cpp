@@ -13,21 +13,6 @@ using namespace Aws::NeptuneGraph::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExecuteQueryRequest::ExecuteQueryRequest() : 
-    m_graphIdentifierHasBeenSet(false),
-    m_queryStringHasBeenSet(false),
-    m_language(QueryLanguage::NOT_SET),
-    m_languageHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_planCache(PlanCacheType::NOT_SET),
-    m_planCacheHasBeenSet(false),
-    m_explainMode(ExplainMode::NOT_SET),
-    m_explainModeHasBeenSet(false),
-    m_queryTimeoutMilliseconds(0),
-    m_queryTimeoutMillisecondsHasBeenSet(false)
-{
-}
-
 Aws::String ExecuteQueryRequest::SerializePayload() const
 {
   JsonValue payload;

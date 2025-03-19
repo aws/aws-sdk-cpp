@@ -22,7 +22,7 @@ namespace Model
   class DescribeSourceServersRequest : public MgnRequest
   {
   public:
-    AWS_MGN_API DescribeSourceServersRequest();
+    AWS_MGN_API DescribeSourceServersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,33 +37,31 @@ namespace Model
     /**
      * <p>Request to filter Source Servers list by Accoun ID.</p>
      */
-    inline const Aws::String& GetAccountID() const{ return m_accountID; }
+    inline const Aws::String& GetAccountID() const { return m_accountID; }
     inline bool AccountIDHasBeenSet() const { return m_accountIDHasBeenSet; }
-    inline void SetAccountID(const Aws::String& value) { m_accountIDHasBeenSet = true; m_accountID = value; }
-    inline void SetAccountID(Aws::String&& value) { m_accountIDHasBeenSet = true; m_accountID = std::move(value); }
-    inline void SetAccountID(const char* value) { m_accountIDHasBeenSet = true; m_accountID.assign(value); }
-    inline DescribeSourceServersRequest& WithAccountID(const Aws::String& value) { SetAccountID(value); return *this;}
-    inline DescribeSourceServersRequest& WithAccountID(Aws::String&& value) { SetAccountID(std::move(value)); return *this;}
-    inline DescribeSourceServersRequest& WithAccountID(const char* value) { SetAccountID(value); return *this;}
+    template<typename AccountIDT = Aws::String>
+    void SetAccountID(AccountIDT&& value) { m_accountIDHasBeenSet = true; m_accountID = std::forward<AccountIDT>(value); }
+    template<typename AccountIDT = Aws::String>
+    DescribeSourceServersRequest& WithAccountID(AccountIDT&& value) { SetAccountID(std::forward<AccountIDT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Request to filter Source Servers list.</p>
      */
-    inline const DescribeSourceServersRequestFilters& GetFilters() const{ return m_filters; }
+    inline const DescribeSourceServersRequestFilters& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const DescribeSourceServersRequestFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(DescribeSourceServersRequestFilters&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline DescribeSourceServersRequest& WithFilters(const DescribeSourceServersRequestFilters& value) { SetFilters(value); return *this;}
-    inline DescribeSourceServersRequest& WithFilters(DescribeSourceServersRequestFilters&& value) { SetFilters(std::move(value)); return *this;}
+    template<typename FiltersT = DescribeSourceServersRequestFilters>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = DescribeSourceServersRequestFilters>
+    DescribeSourceServersRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Request to filter Source Servers list by maximum results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline DescribeSourceServersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -73,14 +71,12 @@ namespace Model
     /**
      * <p>Request to filter Source Servers list by next token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline DescribeSourceServersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeSourceServersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeSourceServersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeSourceServersRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -90,7 +86,7 @@ namespace Model
     DescribeSourceServersRequestFilters m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

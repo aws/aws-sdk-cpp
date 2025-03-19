@@ -18,16 +18,7 @@ namespace CloudDirectory
 namespace Model
 {
 
-BatchLookupPolicy::BatchLookupPolicy() : 
-    m_objectReferenceHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 BatchLookupPolicy::BatchLookupPolicy(JsonView jsonValue)
-  : BatchLookupPolicy()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ BatchLookupPolicy& BatchLookupPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ObjectReference"))
   {
     m_objectReference = jsonValue.GetObject("ObjectReference");
-
     m_objectReferenceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
     m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxResults"))
   {
     m_maxResults = jsonValue.GetInteger("MaxResults");
-
     m_maxResultsHasBeenSet = true;
   }
-
   return *this;
 }
 

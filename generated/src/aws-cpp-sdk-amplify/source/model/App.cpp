@@ -18,46 +18,7 @@ namespace Amplify
 namespace Model
 {
 
-App::App() : 
-    m_appIdHasBeenSet(false),
-    m_appArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_repositoryHasBeenSet(false),
-    m_platform(Platform::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false),
-    m_computeRoleArnHasBeenSet(false),
-    m_iamServiceRoleArnHasBeenSet(false),
-    m_environmentVariablesHasBeenSet(false),
-    m_defaultDomainHasBeenSet(false),
-    m_enableBranchAutoBuild(false),
-    m_enableBranchAutoBuildHasBeenSet(false),
-    m_enableBranchAutoDeletion(false),
-    m_enableBranchAutoDeletionHasBeenSet(false),
-    m_enableBasicAuth(false),
-    m_enableBasicAuthHasBeenSet(false),
-    m_basicAuthCredentialsHasBeenSet(false),
-    m_customRulesHasBeenSet(false),
-    m_productionBranchHasBeenSet(false),
-    m_buildSpecHasBeenSet(false),
-    m_customHeadersHasBeenSet(false),
-    m_enableAutoBranchCreation(false),
-    m_enableAutoBranchCreationHasBeenSet(false),
-    m_autoBranchCreationPatternsHasBeenSet(false),
-    m_autoBranchCreationConfigHasBeenSet(false),
-    m_repositoryCloneMethod(RepositoryCloneMethod::NOT_SET),
-    m_repositoryCloneMethodHasBeenSet(false),
-    m_cacheConfigHasBeenSet(false),
-    m_webhookCreateTimeHasBeenSet(false),
-    m_wafConfigurationHasBeenSet(false)
-{
-}
-
 App::App(JsonView jsonValue)
-  : App()
 {
   *this = jsonValue;
 }
@@ -67,24 +28,18 @@ App& App::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("appId"))
   {
     m_appId = jsonValue.GetString("appId");
-
     m_appIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("appArn"))
   {
     m_appArn = jsonValue.GetString("appArn");
-
     m_appArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -94,56 +49,41 @@ App& App::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repository"))
   {
     m_repository = jsonValue.GetString("repository");
-
     m_repositoryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platform"))
   {
     m_platform = PlatformMapper::GetPlatformForName(jsonValue.GetString("platform"));
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createTime"))
   {
     m_createTime = jsonValue.GetDouble("createTime");
-
     m_createTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetDouble("updateTime");
-
     m_updateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("computeRoleArn"))
   {
     m_computeRoleArn = jsonValue.GetString("computeRoleArn");
-
     m_computeRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iamServiceRoleArn"))
   {
     m_iamServiceRoleArn = jsonValue.GetString("iamServiceRoleArn");
-
     m_iamServiceRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("environmentVariables"))
   {
     Aws::Map<Aws::String, JsonView> environmentVariablesJsonMap = jsonValue.GetObject("environmentVariables").GetAllObjects();
@@ -153,42 +93,31 @@ App& App::operator =(JsonView jsonValue)
     }
     m_environmentVariablesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultDomain"))
   {
     m_defaultDomain = jsonValue.GetString("defaultDomain");
-
     m_defaultDomainHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enableBranchAutoBuild"))
   {
     m_enableBranchAutoBuild = jsonValue.GetBool("enableBranchAutoBuild");
-
     m_enableBranchAutoBuildHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enableBranchAutoDeletion"))
   {
     m_enableBranchAutoDeletion = jsonValue.GetBool("enableBranchAutoDeletion");
-
     m_enableBranchAutoDeletionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enableBasicAuth"))
   {
     m_enableBasicAuth = jsonValue.GetBool("enableBasicAuth");
-
     m_enableBasicAuthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("basicAuthCredentials"))
   {
     m_basicAuthCredentials = jsonValue.GetString("basicAuthCredentials");
-
     m_basicAuthCredentialsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customRules"))
   {
     Aws::Utils::Array<JsonView> customRulesJsonList = jsonValue.GetArray("customRules");
@@ -198,35 +127,26 @@ App& App::operator =(JsonView jsonValue)
     }
     m_customRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("productionBranch"))
   {
     m_productionBranch = jsonValue.GetObject("productionBranch");
-
     m_productionBranchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("buildSpec"))
   {
     m_buildSpec = jsonValue.GetString("buildSpec");
-
     m_buildSpecHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customHeaders"))
   {
     m_customHeaders = jsonValue.GetString("customHeaders");
-
     m_customHeadersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("enableAutoBranchCreation"))
   {
     m_enableAutoBranchCreation = jsonValue.GetBool("enableAutoBranchCreation");
-
     m_enableAutoBranchCreationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoBranchCreationPatterns"))
   {
     Aws::Utils::Array<JsonView> autoBranchCreationPatternsJsonList = jsonValue.GetArray("autoBranchCreationPatterns");
@@ -236,42 +156,31 @@ App& App::operator =(JsonView jsonValue)
     }
     m_autoBranchCreationPatternsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("autoBranchCreationConfig"))
   {
     m_autoBranchCreationConfig = jsonValue.GetObject("autoBranchCreationConfig");
-
     m_autoBranchCreationConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("repositoryCloneMethod"))
   {
     m_repositoryCloneMethod = RepositoryCloneMethodMapper::GetRepositoryCloneMethodForName(jsonValue.GetString("repositoryCloneMethod"));
-
     m_repositoryCloneMethodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cacheConfig"))
   {
     m_cacheConfig = jsonValue.GetObject("cacheConfig");
-
     m_cacheConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("webhookCreateTime"))
   {
     m_webhookCreateTime = jsonValue.GetDouble("webhookCreateTime");
-
     m_webhookCreateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("wafConfiguration"))
   {
     m_wafConfiguration = jsonValue.GetObject("wafConfiguration");
-
     m_wafConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,25 +18,7 @@ namespace PcaConnectorScep
 namespace Model
 {
 
-ConnectorSummary::ConnectorSummary() : 
-    m_arnHasBeenSet(false),
-    m_certificateAuthorityArnHasBeenSet(false),
-    m_type(ConnectorType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_mobileDeviceManagementHasBeenSet(false),
-    m_openIdConfigurationHasBeenSet(false),
-    m_status(ConnectorStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusReason(ConnectorStatusReason::NOT_SET),
-    m_statusReasonHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 ConnectorSummary::ConnectorSummary(JsonView jsonValue)
-  : ConnectorSummary()
 {
   *this = jsonValue;
 }
@@ -46,73 +28,53 @@ ConnectorSummary& ConnectorSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CertificateAuthorityArn"))
   {
     m_certificateAuthorityArn = jsonValue.GetString("CertificateAuthorityArn");
-
     m_certificateAuthorityArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ConnectorTypeMapper::GetConnectorTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MobileDeviceManagement"))
   {
     m_mobileDeviceManagement = jsonValue.GetObject("MobileDeviceManagement");
-
     m_mobileDeviceManagementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OpenIdConfiguration"))
   {
     m_openIdConfiguration = jsonValue.GetObject("OpenIdConfiguration");
-
     m_openIdConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ConnectorStatusMapper::GetConnectorStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusReason"))
   {
     m_statusReason = ConnectorStatusReasonMapper::GetConnectorStatusReasonForName(jsonValue.GetString("StatusReason"));
-
     m_statusReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Endpoint"))
   {
     m_endpoint = jsonValue.GetString("Endpoint");
-
     m_endpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

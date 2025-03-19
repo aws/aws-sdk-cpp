@@ -22,7 +22,7 @@ namespace Model
   class ClaimGameServerRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API ClaimGameServerRequest();
+    AWS_GAMELIFT_API ClaimGameServerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * where you want Amazon GameLift FleetIQ to look for an available game server to
      * claim. </p>
      */
-    inline const Aws::String& GetGameServerGroupName() const{ return m_gameServerGroupName; }
+    inline const Aws::String& GetGameServerGroupName() const { return m_gameServerGroupName; }
     inline bool GameServerGroupNameHasBeenSet() const { return m_gameServerGroupNameHasBeenSet; }
-    inline void SetGameServerGroupName(const Aws::String& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = value; }
-    inline void SetGameServerGroupName(Aws::String&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::move(value); }
-    inline void SetGameServerGroupName(const char* value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName.assign(value); }
-    inline ClaimGameServerRequest& WithGameServerGroupName(const Aws::String& value) { SetGameServerGroupName(value); return *this;}
-    inline ClaimGameServerRequest& WithGameServerGroupName(Aws::String&& value) { SetGameServerGroupName(std::move(value)); return *this;}
-    inline ClaimGameServerRequest& WithGameServerGroupName(const char* value) { SetGameServerGroupName(value); return *this;}
+    template<typename GameServerGroupNameT = Aws::String>
+    void SetGameServerGroupName(GameServerGroupNameT&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::forward<GameServerGroupNameT>(value); }
+    template<typename GameServerGroupNameT = Aws::String>
+    ClaimGameServerRequest& WithGameServerGroupName(GameServerGroupNameT&& value) { SetGameServerGroupName(std::forward<GameServerGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * parameter is left empty, Amazon GameLift FleetIQ searches for an available game
      * server in the specified game server group.</p>
      */
-    inline const Aws::String& GetGameServerId() const{ return m_gameServerId; }
+    inline const Aws::String& GetGameServerId() const { return m_gameServerId; }
     inline bool GameServerIdHasBeenSet() const { return m_gameServerIdHasBeenSet; }
-    inline void SetGameServerId(const Aws::String& value) { m_gameServerIdHasBeenSet = true; m_gameServerId = value; }
-    inline void SetGameServerId(Aws::String&& value) { m_gameServerIdHasBeenSet = true; m_gameServerId = std::move(value); }
-    inline void SetGameServerId(const char* value) { m_gameServerIdHasBeenSet = true; m_gameServerId.assign(value); }
-    inline ClaimGameServerRequest& WithGameServerId(const Aws::String& value) { SetGameServerId(value); return *this;}
-    inline ClaimGameServerRequest& WithGameServerId(Aws::String&& value) { SetGameServerId(std::move(value)); return *this;}
-    inline ClaimGameServerRequest& WithGameServerId(const char* value) { SetGameServerId(value); return *this;}
+    template<typename GameServerIdT = Aws::String>
+    void SetGameServerId(GameServerIdT&& value) { m_gameServerIdHasBeenSet = true; m_gameServerId = std::forward<GameServerIdT>(value); }
+    template<typename GameServerIdT = Aws::String>
+    ClaimGameServerRequest& WithGameServerId(GameServerIdT&& value) { SetGameServerId(std::forward<GameServerIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,26 +70,24 @@ namespace Model
      * This data is passed to a game client or service when it requests information on
      * game servers. </p>
      */
-    inline const Aws::String& GetGameServerData() const{ return m_gameServerData; }
+    inline const Aws::String& GetGameServerData() const { return m_gameServerData; }
     inline bool GameServerDataHasBeenSet() const { return m_gameServerDataHasBeenSet; }
-    inline void SetGameServerData(const Aws::String& value) { m_gameServerDataHasBeenSet = true; m_gameServerData = value; }
-    inline void SetGameServerData(Aws::String&& value) { m_gameServerDataHasBeenSet = true; m_gameServerData = std::move(value); }
-    inline void SetGameServerData(const char* value) { m_gameServerDataHasBeenSet = true; m_gameServerData.assign(value); }
-    inline ClaimGameServerRequest& WithGameServerData(const Aws::String& value) { SetGameServerData(value); return *this;}
-    inline ClaimGameServerRequest& WithGameServerData(Aws::String&& value) { SetGameServerData(std::move(value)); return *this;}
-    inline ClaimGameServerRequest& WithGameServerData(const char* value) { SetGameServerData(value); return *this;}
+    template<typename GameServerDataT = Aws::String>
+    void SetGameServerData(GameServerDataT&& value) { m_gameServerDataHasBeenSet = true; m_gameServerData = std::forward<GameServerDataT>(value); }
+    template<typename GameServerDataT = Aws::String>
+    ClaimGameServerRequest& WithGameServerData(GameServerDataT&& value) { SetGameServerData(std::forward<GameServerDataT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Object that restricts how a claimed game server is chosen.</p>
      */
-    inline const ClaimFilterOption& GetFilterOption() const{ return m_filterOption; }
+    inline const ClaimFilterOption& GetFilterOption() const { return m_filterOption; }
     inline bool FilterOptionHasBeenSet() const { return m_filterOptionHasBeenSet; }
-    inline void SetFilterOption(const ClaimFilterOption& value) { m_filterOptionHasBeenSet = true; m_filterOption = value; }
-    inline void SetFilterOption(ClaimFilterOption&& value) { m_filterOptionHasBeenSet = true; m_filterOption = std::move(value); }
-    inline ClaimGameServerRequest& WithFilterOption(const ClaimFilterOption& value) { SetFilterOption(value); return *this;}
-    inline ClaimGameServerRequest& WithFilterOption(ClaimFilterOption&& value) { SetFilterOption(std::move(value)); return *this;}
+    template<typename FilterOptionT = ClaimFilterOption>
+    void SetFilterOption(FilterOptionT&& value) { m_filterOptionHasBeenSet = true; m_filterOption = std::forward<FilterOptionT>(value); }
+    template<typename FilterOptionT = ClaimFilterOption>
+    ClaimGameServerRequest& WithFilterOption(FilterOptionT&& value) { SetFilterOption(std::forward<FilterOptionT>(value)); return *this;}
     ///@}
   private:
 

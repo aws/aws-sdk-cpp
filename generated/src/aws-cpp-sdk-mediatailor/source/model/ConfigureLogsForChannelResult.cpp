@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ConfigureLogsForChannelResult::ConfigureLogsForChannelResult()
-{
-}
-
 ConfigureLogsForChannelResult::ConfigureLogsForChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ConfigureLogsForChannelResult& ConfigureLogsForChannelResult::operator =(const A
   if(jsonValue.ValueExists("ChannelName"))
   {
     m_channelName = jsonValue.GetString("ChannelName");
-
+    m_channelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogTypes"))
   {
     Aws::Utils::Array<JsonView> logTypesJsonList = jsonValue.GetArray("LogTypes");
@@ -42,14 +37,15 @@ ConfigureLogsForChannelResult& ConfigureLogsForChannelResult::operator =(const A
     {
       m_logTypes.push_back(LogTypeMapper::GetLogTypeForName(logTypesJsonList[logTypesIndex].AsString()));
     }
+    m_logTypesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -32,7 +32,7 @@ namespace Model
   class EfsStorageConfiguration
   {
   public:
-    AWS_MAINFRAMEMODERNIZATION_API EfsStorageConfiguration();
+    AWS_MAINFRAMEMODERNIZATION_API EfsStorageConfiguration() = default;
     AWS_MAINFRAMEMODERNIZATION_API EfsStorageConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API EfsStorageConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAINFRAMEMODERNIZATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The file system identifier.</p>
      */
-    inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
+    inline const Aws::String& GetFileSystemId() const { return m_fileSystemId; }
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-    inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-    inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-    inline EfsStorageConfiguration& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-    inline EfsStorageConfiguration& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-    inline EfsStorageConfiguration& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    template<typename FileSystemIdT = Aws::String>
+    void SetFileSystemId(FileSystemIdT&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::forward<FileSystemIdT>(value); }
+    template<typename FileSystemIdT = Aws::String>
+    EfsStorageConfiguration& WithFileSystemId(FileSystemIdT&& value) { SetFileSystemId(std::forward<FileSystemIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The mount point for the file system.</p>
      */
-    inline const Aws::String& GetMountPoint() const{ return m_mountPoint; }
+    inline const Aws::String& GetMountPoint() const { return m_mountPoint; }
     inline bool MountPointHasBeenSet() const { return m_mountPointHasBeenSet; }
-    inline void SetMountPoint(const Aws::String& value) { m_mountPointHasBeenSet = true; m_mountPoint = value; }
-    inline void SetMountPoint(Aws::String&& value) { m_mountPointHasBeenSet = true; m_mountPoint = std::move(value); }
-    inline void SetMountPoint(const char* value) { m_mountPointHasBeenSet = true; m_mountPoint.assign(value); }
-    inline EfsStorageConfiguration& WithMountPoint(const Aws::String& value) { SetMountPoint(value); return *this;}
-    inline EfsStorageConfiguration& WithMountPoint(Aws::String&& value) { SetMountPoint(std::move(value)); return *this;}
-    inline EfsStorageConfiguration& WithMountPoint(const char* value) { SetMountPoint(value); return *this;}
+    template<typename MountPointT = Aws::String>
+    void SetMountPoint(MountPointT&& value) { m_mountPointHasBeenSet = true; m_mountPoint = std::forward<MountPointT>(value); }
+    template<typename MountPointT = Aws::String>
+    EfsStorageConfiguration& WithMountPoint(MountPointT&& value) { SetMountPoint(std::forward<MountPointT>(value)); return *this;}
     ///@}
   private:
 

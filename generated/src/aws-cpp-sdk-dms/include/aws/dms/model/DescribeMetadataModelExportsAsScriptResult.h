@@ -29,7 +29,7 @@ namespace Model
   class DescribeMetadataModelExportsAsScriptResult
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API DescribeMetadataModelExportsAsScriptResult();
+    AWS_DATABASEMIGRATIONSERVICE_API DescribeMetadataModelExportsAsScriptResult() = default;
     AWS_DATABASEMIGRATIONSERVICE_API DescribeMetadataModelExportsAsScriptResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATABASEMIGRATIONSERVICE_API DescribeMetadataModelExportsAsScriptResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -45,45 +45,44 @@ namespace Model
      * call again using the returned token and keeping all other arguments
      * unchanged.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeMetadataModelExportsAsScriptResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeMetadataModelExportsAsScriptResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeMetadataModelExportsAsScriptResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeMetadataModelExportsAsScriptResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A paginated list of metadata model exports.</p>
      */
-    inline const Aws::Vector<SchemaConversionRequest>& GetRequests() const{ return m_requests; }
-    inline void SetRequests(const Aws::Vector<SchemaConversionRequest>& value) { m_requests = value; }
-    inline void SetRequests(Aws::Vector<SchemaConversionRequest>&& value) { m_requests = std::move(value); }
-    inline DescribeMetadataModelExportsAsScriptResult& WithRequests(const Aws::Vector<SchemaConversionRequest>& value) { SetRequests(value); return *this;}
-    inline DescribeMetadataModelExportsAsScriptResult& WithRequests(Aws::Vector<SchemaConversionRequest>&& value) { SetRequests(std::move(value)); return *this;}
-    inline DescribeMetadataModelExportsAsScriptResult& AddRequests(const SchemaConversionRequest& value) { m_requests.push_back(value); return *this; }
-    inline DescribeMetadataModelExportsAsScriptResult& AddRequests(SchemaConversionRequest&& value) { m_requests.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SchemaConversionRequest>& GetRequests() const { return m_requests; }
+    template<typename RequestsT = Aws::Vector<SchemaConversionRequest>>
+    void SetRequests(RequestsT&& value) { m_requestsHasBeenSet = true; m_requests = std::forward<RequestsT>(value); }
+    template<typename RequestsT = Aws::Vector<SchemaConversionRequest>>
+    DescribeMetadataModelExportsAsScriptResult& WithRequests(RequestsT&& value) { SetRequests(std::forward<RequestsT>(value)); return *this;}
+    template<typename RequestsT = SchemaConversionRequest>
+    DescribeMetadataModelExportsAsScriptResult& AddRequests(RequestsT&& value) { m_requestsHasBeenSet = true; m_requests.emplace_back(std::forward<RequestsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeMetadataModelExportsAsScriptResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeMetadataModelExportsAsScriptResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeMetadataModelExportsAsScriptResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeMetadataModelExportsAsScriptResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
     Aws::Vector<SchemaConversionRequest> m_requests;
+    bool m_requestsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

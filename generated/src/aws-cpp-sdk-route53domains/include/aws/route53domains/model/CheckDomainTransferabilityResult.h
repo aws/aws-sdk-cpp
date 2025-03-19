@@ -34,7 +34,7 @@ namespace Model
   class CheckDomainTransferabilityResult
   {
   public:
-    AWS_ROUTE53DOMAINS_API CheckDomainTransferabilityResult();
+    AWS_ROUTE53DOMAINS_API CheckDomainTransferabilityResult() = default;
     AWS_ROUTE53DOMAINS_API CheckDomainTransferabilityResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53DOMAINS_API CheckDomainTransferabilityResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,43 +44,42 @@ namespace Model
      * <p>A complex type that contains information about whether the specified domain
      * can be transferred to Route 53.</p>
      */
-    inline const DomainTransferability& GetTransferability() const{ return m_transferability; }
-    inline void SetTransferability(const DomainTransferability& value) { m_transferability = value; }
-    inline void SetTransferability(DomainTransferability&& value) { m_transferability = std::move(value); }
-    inline CheckDomainTransferabilityResult& WithTransferability(const DomainTransferability& value) { SetTransferability(value); return *this;}
-    inline CheckDomainTransferabilityResult& WithTransferability(DomainTransferability&& value) { SetTransferability(std::move(value)); return *this;}
+    inline const DomainTransferability& GetTransferability() const { return m_transferability; }
+    template<typename TransferabilityT = DomainTransferability>
+    void SetTransferability(TransferabilityT&& value) { m_transferabilityHasBeenSet = true; m_transferability = std::forward<TransferabilityT>(value); }
+    template<typename TransferabilityT = DomainTransferability>
+    CheckDomainTransferabilityResult& WithTransferability(TransferabilityT&& value) { SetTransferability(std::forward<TransferabilityT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides an explanation for when a domain can't be transferred.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
-    inline void SetMessage(const Aws::String& value) { m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_message.assign(value); }
-    inline CheckDomainTransferabilityResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline CheckDomainTransferabilityResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline CheckDomainTransferabilityResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+    inline const Aws::String& GetMessage() const { return m_message; }
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    CheckDomainTransferabilityResult& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CheckDomainTransferabilityResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CheckDomainTransferabilityResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CheckDomainTransferabilityResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CheckDomainTransferabilityResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DomainTransferability m_transferability;
+    bool m_transferabilityHasBeenSet = false;
 
     Aws::String m_message;
+    bool m_messageHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

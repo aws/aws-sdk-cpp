@@ -18,14 +18,7 @@ namespace NetworkFirewall
 namespace Model
 {
 
-UniqueSources::UniqueSources() : 
-    m_count(0),
-    m_countHasBeenSet(false)
-{
-}
-
 UniqueSources::UniqueSources(JsonView jsonValue)
-  : UniqueSources()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ UniqueSources& UniqueSources::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Count"))
   {
     m_count = jsonValue.GetInteger("Count");
-
     m_countHasBeenSet = true;
   }
-
   return *this;
 }
 

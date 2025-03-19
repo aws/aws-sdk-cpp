@@ -18,24 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-ServiceSoftwareOptions::ServiceSoftwareOptions() : 
-    m_currentVersionHasBeenSet(false),
-    m_newVersionHasBeenSet(false),
-    m_updateAvailable(false),
-    m_updateAvailableHasBeenSet(false),
-    m_cancellable(false),
-    m_cancellableHasBeenSet(false),
-    m_updateStatus(DeploymentStatus::NOT_SET),
-    m_updateStatusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_automatedUpdateDateHasBeenSet(false),
-    m_optionalDeployment(false),
-    m_optionalDeploymentHasBeenSet(false)
-{
-}
-
 ServiceSoftwareOptions::ServiceSoftwareOptions(JsonView jsonValue)
-  : ServiceSoftwareOptions()
 {
   *this = jsonValue;
 }
@@ -45,59 +28,43 @@ ServiceSoftwareOptions& ServiceSoftwareOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CurrentVersion"))
   {
     m_currentVersion = jsonValue.GetString("CurrentVersion");
-
     m_currentVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NewVersion"))
   {
     m_newVersion = jsonValue.GetString("NewVersion");
-
     m_newVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateAvailable"))
   {
     m_updateAvailable = jsonValue.GetBool("UpdateAvailable");
-
     m_updateAvailableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Cancellable"))
   {
     m_cancellable = jsonValue.GetBool("Cancellable");
-
     m_cancellableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateStatus"))
   {
     m_updateStatus = DeploymentStatusMapper::GetDeploymentStatusForName(jsonValue.GetString("UpdateStatus"));
-
     m_updateStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutomatedUpdateDate"))
   {
     m_automatedUpdateDate = jsonValue.GetDouble("AutomatedUpdateDate");
-
     m_automatedUpdateDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OptionalDeployment"))
   {
     m_optionalDeployment = jsonValue.GetBool("OptionalDeployment");
-
     m_optionalDeploymentHasBeenSet = true;
   }
-
   return *this;
 }
 

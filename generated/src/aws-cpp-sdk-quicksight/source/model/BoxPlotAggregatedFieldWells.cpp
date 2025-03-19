@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-BoxPlotAggregatedFieldWells::BoxPlotAggregatedFieldWells() : 
-    m_groupByHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 BoxPlotAggregatedFieldWells::BoxPlotAggregatedFieldWells(JsonView jsonValue)
-  : BoxPlotAggregatedFieldWells()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ BoxPlotAggregatedFieldWells& BoxPlotAggregatedFieldWells::operator =(JsonView js
     }
     m_groupByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -51,7 +43,6 @@ BoxPlotAggregatedFieldWells& BoxPlotAggregatedFieldWells::operator =(JsonView js
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

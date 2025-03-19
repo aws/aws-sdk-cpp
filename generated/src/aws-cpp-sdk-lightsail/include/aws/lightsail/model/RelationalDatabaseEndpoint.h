@@ -31,7 +31,7 @@ namespace Model
   class RelationalDatabaseEndpoint
   {
   public:
-    AWS_LIGHTSAIL_API RelationalDatabaseEndpoint();
+    AWS_LIGHTSAIL_API RelationalDatabaseEndpoint() = default;
     AWS_LIGHTSAIL_API RelationalDatabaseEndpoint(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API RelationalDatabaseEndpoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,7 +41,7 @@ namespace Model
     /**
      * <p>Specifies the port that the database is listening on.</p>
      */
-    inline int GetPort() const{ return m_port; }
+    inline int GetPort() const { return m_port; }
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
     inline RelationalDatabaseEndpoint& WithPort(int value) { SetPort(value); return *this;}
@@ -51,18 +51,16 @@ namespace Model
     /**
      * <p>Specifies the DNS address of the database.</p>
      */
-    inline const Aws::String& GetAddress() const{ return m_address; }
+    inline const Aws::String& GetAddress() const { return m_address; }
     inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
-    inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
-    inline void SetAddress(Aws::String&& value) { m_addressHasBeenSet = true; m_address = std::move(value); }
-    inline void SetAddress(const char* value) { m_addressHasBeenSet = true; m_address.assign(value); }
-    inline RelationalDatabaseEndpoint& WithAddress(const Aws::String& value) { SetAddress(value); return *this;}
-    inline RelationalDatabaseEndpoint& WithAddress(Aws::String&& value) { SetAddress(std::move(value)); return *this;}
-    inline RelationalDatabaseEndpoint& WithAddress(const char* value) { SetAddress(value); return *this;}
+    template<typename AddressT = Aws::String>
+    void SetAddress(AddressT&& value) { m_addressHasBeenSet = true; m_address = std::forward<AddressT>(value); }
+    template<typename AddressT = Aws::String>
+    RelationalDatabaseEndpoint& WithAddress(AddressT&& value) { SetAddress(std::forward<AddressT>(value)); return *this;}
     ///@}
   private:
 
-    int m_port;
+    int m_port{0};
     bool m_portHasBeenSet = false;
 
     Aws::String m_address;

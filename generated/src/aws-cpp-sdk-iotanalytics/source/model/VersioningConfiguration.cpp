@@ -18,16 +18,7 @@ namespace IoTAnalytics
 namespace Model
 {
 
-VersioningConfiguration::VersioningConfiguration() : 
-    m_unlimited(false),
-    m_unlimitedHasBeenSet(false),
-    m_maxVersions(0),
-    m_maxVersionsHasBeenSet(false)
-{
-}
-
 VersioningConfiguration::VersioningConfiguration(JsonView jsonValue)
-  : VersioningConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ VersioningConfiguration& VersioningConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("unlimited"))
   {
     m_unlimited = jsonValue.GetBool("unlimited");
-
     m_unlimitedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("maxVersions"))
   {
     m_maxVersions = jsonValue.GetInteger("maxVersions");
-
     m_maxVersionsHasBeenSet = true;
   }
-
   return *this;
 }
 

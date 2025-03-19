@@ -12,11 +12,6 @@ using namespace Aws::MediaLive::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeMultiplexRequest::DescribeMultiplexRequest() : 
-    m_multiplexIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeMultiplexRequest::SerializePayload() const
 {
   return {};

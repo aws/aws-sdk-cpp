@@ -18,22 +18,7 @@ namespace Proton
 namespace Model
 {
 
-SyncBlocker::SyncBlocker() : 
-    m_contextsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdReasonHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_resolvedAtHasBeenSet(false),
-    m_resolvedReasonHasBeenSet(false),
-    m_status(BlockerStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(BlockerType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 SyncBlocker::SyncBlocker(JsonView jsonValue)
-  : SyncBlocker()
 {
   *this = jsonValue;
 }
@@ -49,56 +34,41 @@ SyncBlocker& SyncBlocker::operator =(JsonView jsonValue)
     }
     m_contextsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdReason"))
   {
     m_createdReason = jsonValue.GetString("createdReason");
-
     m_createdReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resolvedAt"))
   {
     m_resolvedAt = jsonValue.GetDouble("resolvedAt");
-
     m_resolvedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resolvedReason"))
   {
     m_resolvedReason = jsonValue.GetString("resolvedReason");
-
     m_resolvedReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = BlockerStatusMapper::GetBlockerStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = BlockerTypeMapper::GetBlockerTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

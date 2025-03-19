@@ -37,7 +37,7 @@ namespace Model
   class PriceList
   {
   public:
-    AWS_PRICING_API PriceList();
+    AWS_PRICING_API PriceList() = default;
     AWS_PRICING_API PriceList(Aws::Utils::Json::JsonView jsonValue);
     AWS_PRICING_API PriceList& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PRICING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">
      * <code>ListPriceList</code> </a> response. </p>
      */
-    inline const Aws::String& GetPriceListArn() const{ return m_priceListArn; }
+    inline const Aws::String& GetPriceListArn() const { return m_priceListArn; }
     inline bool PriceListArnHasBeenSet() const { return m_priceListArnHasBeenSet; }
-    inline void SetPriceListArn(const Aws::String& value) { m_priceListArnHasBeenSet = true; m_priceListArn = value; }
-    inline void SetPriceListArn(Aws::String&& value) { m_priceListArnHasBeenSet = true; m_priceListArn = std::move(value); }
-    inline void SetPriceListArn(const char* value) { m_priceListArnHasBeenSet = true; m_priceListArn.assign(value); }
-    inline PriceList& WithPriceListArn(const Aws::String& value) { SetPriceListArn(value); return *this;}
-    inline PriceList& WithPriceListArn(Aws::String&& value) { SetPriceListArn(std::move(value)); return *this;}
-    inline PriceList& WithPriceListArn(const char* value) { SetPriceListArn(value); return *this;}
+    template<typename PriceListArnT = Aws::String>
+    void SetPriceListArn(PriceListArnT&& value) { m_priceListArnHasBeenSet = true; m_priceListArn = std::forward<PriceListArnT>(value); }
+    template<typename PriceListArnT = Aws::String>
+    PriceList& WithPriceListArn(PriceListArnT&& value) { SetPriceListArn(std::forward<PriceListArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,14 +68,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetAttributeValues.html">
      * <code>GetAttributeValues</code> </a> API. </p>
      */
-    inline const Aws::String& GetRegionCode() const{ return m_regionCode; }
+    inline const Aws::String& GetRegionCode() const { return m_regionCode; }
     inline bool RegionCodeHasBeenSet() const { return m_regionCodeHasBeenSet; }
-    inline void SetRegionCode(const Aws::String& value) { m_regionCodeHasBeenSet = true; m_regionCode = value; }
-    inline void SetRegionCode(Aws::String&& value) { m_regionCodeHasBeenSet = true; m_regionCode = std::move(value); }
-    inline void SetRegionCode(const char* value) { m_regionCodeHasBeenSet = true; m_regionCode.assign(value); }
-    inline PriceList& WithRegionCode(const Aws::String& value) { SetRegionCode(value); return *this;}
-    inline PriceList& WithRegionCode(Aws::String&& value) { SetRegionCode(std::move(value)); return *this;}
-    inline PriceList& WithRegionCode(const char* value) { SetRegionCode(value); return *this;}
+    template<typename RegionCodeT = Aws::String>
+    void SetRegionCode(RegionCodeT&& value) { m_regionCodeHasBeenSet = true; m_regionCode = std::forward<RegionCodeT>(value); }
+    template<typename RegionCodeT = Aws::String>
+    PriceList& WithRegionCode(RegionCodeT&& value) { SetRegionCode(std::forward<RegionCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +81,12 @@ namespace Model
      * <p>The three alphabetical character ISO-4217 currency code the Price List files
      * are denominated in. </p>
      */
-    inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
+    inline const Aws::String& GetCurrencyCode() const { return m_currencyCode; }
     inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
-    inline void SetCurrencyCode(const Aws::String& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
-    inline void SetCurrencyCode(Aws::String&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::move(value); }
-    inline void SetCurrencyCode(const char* value) { m_currencyCodeHasBeenSet = true; m_currencyCode.assign(value); }
-    inline PriceList& WithCurrencyCode(const Aws::String& value) { SetCurrencyCode(value); return *this;}
-    inline PriceList& WithCurrencyCode(Aws::String&& value) { SetCurrencyCode(std::move(value)); return *this;}
-    inline PriceList& WithCurrencyCode(const char* value) { SetCurrencyCode(value); return *this;}
+    template<typename CurrencyCodeT = Aws::String>
+    void SetCurrencyCode(CurrencyCodeT&& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = std::forward<CurrencyCodeT>(value); }
+    template<typename CurrencyCodeT = Aws::String>
+    PriceList& WithCurrencyCode(CurrencyCodeT&& value) { SetCurrencyCode(std::forward<CurrencyCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,15 +96,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">
      * <code>ListPriceList</code> </a> response. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetFileFormats() const{ return m_fileFormats; }
+    inline const Aws::Vector<Aws::String>& GetFileFormats() const { return m_fileFormats; }
     inline bool FileFormatsHasBeenSet() const { return m_fileFormatsHasBeenSet; }
-    inline void SetFileFormats(const Aws::Vector<Aws::String>& value) { m_fileFormatsHasBeenSet = true; m_fileFormats = value; }
-    inline void SetFileFormats(Aws::Vector<Aws::String>&& value) { m_fileFormatsHasBeenSet = true; m_fileFormats = std::move(value); }
-    inline PriceList& WithFileFormats(const Aws::Vector<Aws::String>& value) { SetFileFormats(value); return *this;}
-    inline PriceList& WithFileFormats(Aws::Vector<Aws::String>&& value) { SetFileFormats(std::move(value)); return *this;}
-    inline PriceList& AddFileFormats(const Aws::String& value) { m_fileFormatsHasBeenSet = true; m_fileFormats.push_back(value); return *this; }
-    inline PriceList& AddFileFormats(Aws::String&& value) { m_fileFormatsHasBeenSet = true; m_fileFormats.push_back(std::move(value)); return *this; }
-    inline PriceList& AddFileFormats(const char* value) { m_fileFormatsHasBeenSet = true; m_fileFormats.push_back(value); return *this; }
+    template<typename FileFormatsT = Aws::Vector<Aws::String>>
+    void SetFileFormats(FileFormatsT&& value) { m_fileFormatsHasBeenSet = true; m_fileFormats = std::forward<FileFormatsT>(value); }
+    template<typename FileFormatsT = Aws::Vector<Aws::String>>
+    PriceList& WithFileFormats(FileFormatsT&& value) { SetFileFormats(std::forward<FileFormatsT>(value)); return *this;}
+    template<typename FileFormatsT = Aws::String>
+    PriceList& AddFileFormats(FileFormatsT&& value) { m_fileFormatsHasBeenSet = true; m_fileFormats.emplace_back(std::forward<FileFormatsT>(value)); return *this; }
     ///@}
   private:
 

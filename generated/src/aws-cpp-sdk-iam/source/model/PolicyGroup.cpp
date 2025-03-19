@@ -20,14 +20,7 @@ namespace IAM
 namespace Model
 {
 
-PolicyGroup::PolicyGroup() : 
-    m_groupNameHasBeenSet(false),
-    m_groupIdHasBeenSet(false)
-{
-}
-
 PolicyGroup::PolicyGroup(const XmlNode& xmlNode)
-  : PolicyGroup()
 {
   *this = xmlNode;
 }

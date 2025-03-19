@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-UseCase::UseCase() : 
-    m_useCaseIdHasBeenSet(false),
-    m_useCaseArnHasBeenSet(false),
-    m_useCaseType(UseCaseType::NOT_SET),
-    m_useCaseTypeHasBeenSet(false)
-{
-}
-
 UseCase::UseCase(JsonView jsonValue)
-  : UseCase()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ UseCase& UseCase::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("UseCaseId"))
   {
     m_useCaseId = jsonValue.GetString("UseCaseId");
-
     m_useCaseIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UseCaseArn"))
   {
     m_useCaseArn = jsonValue.GetString("UseCaseArn");
-
     m_useCaseArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UseCaseType"))
   {
     m_useCaseType = UseCaseTypeMapper::GetUseCaseTypeForName(jsonValue.GetString("UseCaseType"));
-
     m_useCaseTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

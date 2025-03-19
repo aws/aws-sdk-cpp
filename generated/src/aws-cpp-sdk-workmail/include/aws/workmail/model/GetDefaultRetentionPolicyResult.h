@@ -29,7 +29,7 @@ namespace Model
   class GetDefaultRetentionPolicyResult
   {
   public:
-    AWS_WORKMAIL_API GetDefaultRetentionPolicyResult();
+    AWS_WORKMAIL_API GetDefaultRetentionPolicyResult() = default;
     AWS_WORKMAIL_API GetDefaultRetentionPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WORKMAIL_API GetDefaultRetentionPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,75 +38,72 @@ namespace Model
     /**
      * <p>The retention policy ID.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetDefaultRetentionPolicyResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetDefaultRetentionPolicyResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetDefaultRetentionPolicyResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetDefaultRetentionPolicyResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The retention policy name.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetDefaultRetentionPolicyResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetDefaultRetentionPolicyResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetDefaultRetentionPolicyResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetDefaultRetentionPolicyResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The retention policy description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline GetDefaultRetentionPolicyResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline GetDefaultRetentionPolicyResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline GetDefaultRetentionPolicyResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    GetDefaultRetentionPolicyResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The retention policy folder configurations.</p>
      */
-    inline const Aws::Vector<FolderConfiguration>& GetFolderConfigurations() const{ return m_folderConfigurations; }
-    inline void SetFolderConfigurations(const Aws::Vector<FolderConfiguration>& value) { m_folderConfigurations = value; }
-    inline void SetFolderConfigurations(Aws::Vector<FolderConfiguration>&& value) { m_folderConfigurations = std::move(value); }
-    inline GetDefaultRetentionPolicyResult& WithFolderConfigurations(const Aws::Vector<FolderConfiguration>& value) { SetFolderConfigurations(value); return *this;}
-    inline GetDefaultRetentionPolicyResult& WithFolderConfigurations(Aws::Vector<FolderConfiguration>&& value) { SetFolderConfigurations(std::move(value)); return *this;}
-    inline GetDefaultRetentionPolicyResult& AddFolderConfigurations(const FolderConfiguration& value) { m_folderConfigurations.push_back(value); return *this; }
-    inline GetDefaultRetentionPolicyResult& AddFolderConfigurations(FolderConfiguration&& value) { m_folderConfigurations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FolderConfiguration>& GetFolderConfigurations() const { return m_folderConfigurations; }
+    template<typename FolderConfigurationsT = Aws::Vector<FolderConfiguration>>
+    void SetFolderConfigurations(FolderConfigurationsT&& value) { m_folderConfigurationsHasBeenSet = true; m_folderConfigurations = std::forward<FolderConfigurationsT>(value); }
+    template<typename FolderConfigurationsT = Aws::Vector<FolderConfiguration>>
+    GetDefaultRetentionPolicyResult& WithFolderConfigurations(FolderConfigurationsT&& value) { SetFolderConfigurations(std::forward<FolderConfigurationsT>(value)); return *this;}
+    template<typename FolderConfigurationsT = FolderConfiguration>
+    GetDefaultRetentionPolicyResult& AddFolderConfigurations(FolderConfigurationsT&& value) { m_folderConfigurationsHasBeenSet = true; m_folderConfigurations.emplace_back(std::forward<FolderConfigurationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetDefaultRetentionPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetDefaultRetentionPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetDefaultRetentionPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetDefaultRetentionPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<FolderConfiguration> m_folderConfigurations;
+    bool m_folderConfigurationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,16 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEksClusterResourcesVpcConfigDetails::AwsEksClusterResourcesVpcConfigDetails() : 
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false),
-    m_endpointPublicAccess(false),
-    m_endpointPublicAccessHasBeenSet(false)
-{
-}
-
 AwsEksClusterResourcesVpcConfigDetails::AwsEksClusterResourcesVpcConfigDetails(JsonView jsonValue)
-  : AwsEksClusterResourcesVpcConfigDetails()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ AwsEksClusterResourcesVpcConfigDetails& AwsEksClusterResourcesVpcConfigDetails::
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubnetIds"))
   {
     Aws::Utils::Array<JsonView> subnetIdsJsonList = jsonValue.GetArray("SubnetIds");
@@ -53,14 +43,11 @@ AwsEksClusterResourcesVpcConfigDetails& AwsEksClusterResourcesVpcConfigDetails::
     }
     m_subnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointPublicAccess"))
   {
     m_endpointPublicAccess = jsonValue.GetBool("EndpointPublicAccess");
-
     m_endpointPublicAccessHasBeenSet = true;
   }
-
   return *this;
 }
 

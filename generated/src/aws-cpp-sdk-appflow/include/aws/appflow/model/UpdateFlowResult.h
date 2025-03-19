@@ -28,7 +28,7 @@ namespace Model
   class UpdateFlowResult
   {
   public:
-    AWS_APPFLOW_API UpdateFlowResult();
+    AWS_APPFLOW_API UpdateFlowResult() = default;
     AWS_APPFLOW_API UpdateFlowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPFLOW_API UpdateFlowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,26 @@ namespace Model
     /**
      * <p>Indicates the current status of the flow. </p>
      */
-    inline const FlowStatus& GetFlowStatus() const{ return m_flowStatus; }
-    inline void SetFlowStatus(const FlowStatus& value) { m_flowStatus = value; }
-    inline void SetFlowStatus(FlowStatus&& value) { m_flowStatus = std::move(value); }
-    inline UpdateFlowResult& WithFlowStatus(const FlowStatus& value) { SetFlowStatus(value); return *this;}
-    inline UpdateFlowResult& WithFlowStatus(FlowStatus&& value) { SetFlowStatus(std::move(value)); return *this;}
+    inline FlowStatus GetFlowStatus() const { return m_flowStatus; }
+    inline void SetFlowStatus(FlowStatus value) { m_flowStatusHasBeenSet = true; m_flowStatus = value; }
+    inline UpdateFlowResult& WithFlowStatus(FlowStatus value) { SetFlowStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateFlowResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateFlowResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateFlowResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateFlowResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    FlowStatus m_flowStatus;
+    FlowStatus m_flowStatus{FlowStatus::NOT_SET};
+    bool m_flowStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

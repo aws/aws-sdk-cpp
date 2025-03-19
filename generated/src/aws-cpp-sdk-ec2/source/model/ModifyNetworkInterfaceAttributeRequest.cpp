@@ -10,23 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyNetworkInterfaceAttributeRequest::ModifyNetworkInterfaceAttributeRequest() : 
-    m_enaSrdSpecificationHasBeenSet(false),
-    m_enablePrimaryIpv6(false),
-    m_enablePrimaryIpv6HasBeenSet(false),
-    m_connectionTrackingSpecificationHasBeenSet(false),
-    m_associatePublicIpAddress(false),
-    m_associatePublicIpAddressHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_sourceDestCheckHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_attachmentHasBeenSet(false)
-{
-}
-
 Aws::String ModifyNetworkInterfaceAttributeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

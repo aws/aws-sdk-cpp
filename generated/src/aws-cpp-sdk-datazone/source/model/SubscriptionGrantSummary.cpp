@@ -18,23 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-SubscriptionGrantSummary::SubscriptionGrantSummary() : 
-    m_assetsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_grantedEntityHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_status(SubscriptionGrantOverallStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_subscriptionTargetIdHasBeenSet(false),
-    m_updatedAtHasBeenSet(false),
-    m_updatedByHasBeenSet(false)
-{
-}
-
 SubscriptionGrantSummary::SubscriptionGrantSummary(JsonView jsonValue)
-  : SubscriptionGrantSummary()
 {
   *this = jsonValue;
 }
@@ -50,70 +34,51 @@ SubscriptionGrantSummary& SubscriptionGrantSummary::operator =(JsonView jsonValu
     }
     m_assetsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainId"))
   {
     m_domainId = jsonValue.GetString("domainId");
-
     m_domainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("grantedEntity"))
   {
     m_grantedEntity = jsonValue.GetObject("grantedEntity");
-
     m_grantedEntityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = SubscriptionGrantOverallStatusMapper::GetSubscriptionGrantOverallStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("subscriptionTargetId"))
   {
     m_subscriptionTargetId = jsonValue.GetString("subscriptionTargetId");
-
     m_subscriptionTargetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("updatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedBy"))
   {
     m_updatedBy = jsonValue.GetString("updatedBy");
-
     m_updatedByHasBeenSet = true;
   }
-
   return *this;
 }
 

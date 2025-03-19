@@ -18,22 +18,7 @@ namespace Lightsail
 namespace Model
 {
 
-ContainerServiceHealthCheckConfig::ContainerServiceHealthCheckConfig() : 
-    m_healthyThreshold(0),
-    m_healthyThresholdHasBeenSet(false),
-    m_unhealthyThreshold(0),
-    m_unhealthyThresholdHasBeenSet(false),
-    m_timeoutSeconds(0),
-    m_timeoutSecondsHasBeenSet(false),
-    m_intervalSeconds(0),
-    m_intervalSecondsHasBeenSet(false),
-    m_pathHasBeenSet(false),
-    m_successCodesHasBeenSet(false)
-{
-}
-
 ContainerServiceHealthCheckConfig::ContainerServiceHealthCheckConfig(JsonView jsonValue)
-  : ContainerServiceHealthCheckConfig()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ ContainerServiceHealthCheckConfig& ContainerServiceHealthCheckConfig::operator =
   if(jsonValue.ValueExists("healthyThreshold"))
   {
     m_healthyThreshold = jsonValue.GetInteger("healthyThreshold");
-
     m_healthyThresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unhealthyThreshold"))
   {
     m_unhealthyThreshold = jsonValue.GetInteger("unhealthyThreshold");
-
     m_unhealthyThresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("timeoutSeconds"))
   {
     m_timeoutSeconds = jsonValue.GetInteger("timeoutSeconds");
-
     m_timeoutSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("intervalSeconds"))
   {
     m_intervalSeconds = jsonValue.GetInteger("intervalSeconds");
-
     m_intervalSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("path"))
   {
     m_path = jsonValue.GetString("path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("successCodes"))
   {
     m_successCodes = jsonValue.GetString("successCodes");
-
     m_successCodesHasBeenSet = true;
   }
-
   return *this;
 }
 

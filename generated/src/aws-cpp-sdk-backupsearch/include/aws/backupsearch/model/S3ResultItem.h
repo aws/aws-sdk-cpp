@@ -33,7 +33,7 @@ namespace Model
   class S3ResultItem
   {
   public:
-    AWS_BACKUPSEARCH_API S3ResultItem();
+    AWS_BACKUPSEARCH_API S3ResultItem() = default;
     AWS_BACKUPSEARCH_API S3ResultItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUPSEARCH_API S3ResultItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUPSEARCH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>These are items in the returned results that match recovery point Amazon
      * Resource Names (ARN) input during a search of Amazon S3 backup metadata.</p>
      */
-    inline const Aws::String& GetBackupResourceArn() const{ return m_backupResourceArn; }
+    inline const Aws::String& GetBackupResourceArn() const { return m_backupResourceArn; }
     inline bool BackupResourceArnHasBeenSet() const { return m_backupResourceArnHasBeenSet; }
-    inline void SetBackupResourceArn(const Aws::String& value) { m_backupResourceArnHasBeenSet = true; m_backupResourceArn = value; }
-    inline void SetBackupResourceArn(Aws::String&& value) { m_backupResourceArnHasBeenSet = true; m_backupResourceArn = std::move(value); }
-    inline void SetBackupResourceArn(const char* value) { m_backupResourceArnHasBeenSet = true; m_backupResourceArn.assign(value); }
-    inline S3ResultItem& WithBackupResourceArn(const Aws::String& value) { SetBackupResourceArn(value); return *this;}
-    inline S3ResultItem& WithBackupResourceArn(Aws::String&& value) { SetBackupResourceArn(std::move(value)); return *this;}
-    inline S3ResultItem& WithBackupResourceArn(const char* value) { SetBackupResourceArn(value); return *this;}
+    template<typename BackupResourceArnT = Aws::String>
+    void SetBackupResourceArn(BackupResourceArnT&& value) { m_backupResourceArnHasBeenSet = true; m_backupResourceArn = std::forward<BackupResourceArnT>(value); }
+    template<typename BackupResourceArnT = Aws::String>
+    S3ResultItem& WithBackupResourceArn(BackupResourceArnT&& value) { SetBackupResourceArn(std::forward<BackupResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,28 +57,24 @@ namespace Model
      * <p>These are items in the returned results that match source Amazon Resource
      * Names (ARN) input during a search of Amazon S3 backup metadata.</p>
      */
-    inline const Aws::String& GetSourceResourceArn() const{ return m_sourceResourceArn; }
+    inline const Aws::String& GetSourceResourceArn() const { return m_sourceResourceArn; }
     inline bool SourceResourceArnHasBeenSet() const { return m_sourceResourceArnHasBeenSet; }
-    inline void SetSourceResourceArn(const Aws::String& value) { m_sourceResourceArnHasBeenSet = true; m_sourceResourceArn = value; }
-    inline void SetSourceResourceArn(Aws::String&& value) { m_sourceResourceArnHasBeenSet = true; m_sourceResourceArn = std::move(value); }
-    inline void SetSourceResourceArn(const char* value) { m_sourceResourceArnHasBeenSet = true; m_sourceResourceArn.assign(value); }
-    inline S3ResultItem& WithSourceResourceArn(const Aws::String& value) { SetSourceResourceArn(value); return *this;}
-    inline S3ResultItem& WithSourceResourceArn(Aws::String&& value) { SetSourceResourceArn(std::move(value)); return *this;}
-    inline S3ResultItem& WithSourceResourceArn(const char* value) { SetSourceResourceArn(value); return *this;}
+    template<typename SourceResourceArnT = Aws::String>
+    void SetSourceResourceArn(SourceResourceArnT&& value) { m_sourceResourceArnHasBeenSet = true; m_sourceResourceArn = std::forward<SourceResourceArnT>(value); }
+    template<typename SourceResourceArnT = Aws::String>
+    S3ResultItem& WithSourceResourceArn(SourceResourceArnT&& value) { SetSourceResourceArn(std::forward<SourceResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the backup vault.</p>
      */
-    inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
+    inline const Aws::String& GetBackupVaultName() const { return m_backupVaultName; }
     inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
-    inline void SetBackupVaultName(const Aws::String& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = value; }
-    inline void SetBackupVaultName(Aws::String&& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = std::move(value); }
-    inline void SetBackupVaultName(const char* value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName.assign(value); }
-    inline S3ResultItem& WithBackupVaultName(const Aws::String& value) { SetBackupVaultName(value); return *this;}
-    inline S3ResultItem& WithBackupVaultName(Aws::String&& value) { SetBackupVaultName(std::move(value)); return *this;}
-    inline S3ResultItem& WithBackupVaultName(const char* value) { SetBackupVaultName(value); return *this;}
+    template<typename BackupVaultNameT = Aws::String>
+    void SetBackupVaultName(BackupVaultNameT&& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = std::forward<BackupVaultNameT>(value); }
+    template<typename BackupVaultNameT = Aws::String>
+    S3ResultItem& WithBackupVaultName(BackupVaultNameT&& value) { SetBackupVaultName(std::forward<BackupVaultNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,14 +82,12 @@ namespace Model
      * <p>This is one or more items returned in the results of a search of Amazon S3
      * backup metadata that match the values input for object key.</p>
      */
-    inline const Aws::String& GetObjectKey() const{ return m_objectKey; }
+    inline const Aws::String& GetObjectKey() const { return m_objectKey; }
     inline bool ObjectKeyHasBeenSet() const { return m_objectKeyHasBeenSet; }
-    inline void SetObjectKey(const Aws::String& value) { m_objectKeyHasBeenSet = true; m_objectKey = value; }
-    inline void SetObjectKey(Aws::String&& value) { m_objectKeyHasBeenSet = true; m_objectKey = std::move(value); }
-    inline void SetObjectKey(const char* value) { m_objectKeyHasBeenSet = true; m_objectKey.assign(value); }
-    inline S3ResultItem& WithObjectKey(const Aws::String& value) { SetObjectKey(value); return *this;}
-    inline S3ResultItem& WithObjectKey(Aws::String&& value) { SetObjectKey(std::move(value)); return *this;}
-    inline S3ResultItem& WithObjectKey(const char* value) { SetObjectKey(value); return *this;}
+    template<typename ObjectKeyT = Aws::String>
+    void SetObjectKey(ObjectKeyT&& value) { m_objectKeyHasBeenSet = true; m_objectKey = std::forward<ObjectKeyT>(value); }
+    template<typename ObjectKeyT = Aws::String>
+    S3ResultItem& WithObjectKey(ObjectKeyT&& value) { SetObjectKey(std::forward<ObjectKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,7 +95,7 @@ namespace Model
      * <p>These are items in the returned results that match values for object size(s)
      * input during a search of Amazon S3 backup metadata.</p>
      */
-    inline long long GetObjectSize() const{ return m_objectSize; }
+    inline long long GetObjectSize() const { return m_objectSize; }
     inline bool ObjectSizeHasBeenSet() const { return m_objectSizeHasBeenSet; }
     inline void SetObjectSize(long long value) { m_objectSizeHasBeenSet = true; m_objectSize = value; }
     inline S3ResultItem& WithObjectSize(long long value) { SetObjectSize(value); return *this;}
@@ -114,12 +106,12 @@ namespace Model
      * <p>These are one or more items in the returned results that match values for
      * item creation time input during a search of Amazon S3 backup metadata.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline S3ResultItem& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline S3ResultItem& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    S3ResultItem& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,14 +119,12 @@ namespace Model
      * <p>These are one or more items in the returned results that match values for
      * ETags input during a search of Amazon S3 backup metadata.</p>
      */
-    inline const Aws::String& GetETag() const{ return m_eTag; }
+    inline const Aws::String& GetETag() const { return m_eTag; }
     inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
-    inline void SetETag(const Aws::String& value) { m_eTagHasBeenSet = true; m_eTag = value; }
-    inline void SetETag(Aws::String&& value) { m_eTagHasBeenSet = true; m_eTag = std::move(value); }
-    inline void SetETag(const char* value) { m_eTagHasBeenSet = true; m_eTag.assign(value); }
-    inline S3ResultItem& WithETag(const Aws::String& value) { SetETag(value); return *this;}
-    inline S3ResultItem& WithETag(Aws::String&& value) { SetETag(std::move(value)); return *this;}
-    inline S3ResultItem& WithETag(const char* value) { SetETag(value); return *this;}
+    template<typename ETagT = Aws::String>
+    void SetETag(ETagT&& value) { m_eTagHasBeenSet = true; m_eTag = std::forward<ETagT>(value); }
+    template<typename ETagT = Aws::String>
+    S3ResultItem& WithETag(ETagT&& value) { SetETag(std::forward<ETagT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,14 +132,12 @@ namespace Model
      * <p>These are one or more items in the returned results that match values for
      * version IDs input during a search of Amazon S3 backup metadata.</p>
      */
-    inline const Aws::String& GetVersionId() const{ return m_versionId; }
+    inline const Aws::String& GetVersionId() const { return m_versionId; }
     inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
-    inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
-    inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
-    inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
-    inline S3ResultItem& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
-    inline S3ResultItem& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
-    inline S3ResultItem& WithVersionId(const char* value) { SetVersionId(value); return *this;}
+    template<typename VersionIdT = Aws::String>
+    void SetVersionId(VersionIdT&& value) { m_versionIdHasBeenSet = true; m_versionId = std::forward<VersionIdT>(value); }
+    template<typename VersionIdT = Aws::String>
+    S3ResultItem& WithVersionId(VersionIdT&& value) { SetVersionId(std::forward<VersionIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -165,10 +153,10 @@ namespace Model
     Aws::String m_objectKey;
     bool m_objectKeyHasBeenSet = false;
 
-    long long m_objectSize;
+    long long m_objectSize{0};
     bool m_objectSizeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
     Aws::String m_eTag;

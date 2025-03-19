@@ -18,14 +18,7 @@ namespace MediaPackageVod
 namespace Model
 {
 
-Authorization::Authorization() : 
-    m_cdnIdentifierSecretHasBeenSet(false),
-    m_secretsRoleArnHasBeenSet(false)
-{
-}
-
 Authorization::Authorization(JsonView jsonValue)
-  : Authorization()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ Authorization& Authorization::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cdnIdentifierSecret"))
   {
     m_cdnIdentifierSecret = jsonValue.GetString("cdnIdentifierSecret");
-
     m_cdnIdentifierSecretHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secretsRoleArn"))
   {
     m_secretsRoleArn = jsonValue.GetString("secretsRoleArn");
-
     m_secretsRoleArnHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -36,7 +36,7 @@ namespace Model
   class FormInputCard
   {
   public:
-    AWS_QAPPS_API FormInputCard();
+    AWS_QAPPS_API FormInputCard() = default;
     AWS_QAPPS_API FormInputCard(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API FormInputCard& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QAPPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,67 +46,60 @@ namespace Model
     /**
      * <p>The unique identifier of the form input card.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline FormInputCard& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline FormInputCard& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline FormInputCard& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    FormInputCard& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The title of the form input card.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline FormInputCard& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline FormInputCard& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline FormInputCard& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    FormInputCard& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Any dependencies or requirements for the form input card.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDependencies() const{ return m_dependencies; }
+    inline const Aws::Vector<Aws::String>& GetDependencies() const { return m_dependencies; }
     inline bool DependenciesHasBeenSet() const { return m_dependenciesHasBeenSet; }
-    inline void SetDependencies(const Aws::Vector<Aws::String>& value) { m_dependenciesHasBeenSet = true; m_dependencies = value; }
-    inline void SetDependencies(Aws::Vector<Aws::String>&& value) { m_dependenciesHasBeenSet = true; m_dependencies = std::move(value); }
-    inline FormInputCard& WithDependencies(const Aws::Vector<Aws::String>& value) { SetDependencies(value); return *this;}
-    inline FormInputCard& WithDependencies(Aws::Vector<Aws::String>&& value) { SetDependencies(std::move(value)); return *this;}
-    inline FormInputCard& AddDependencies(const Aws::String& value) { m_dependenciesHasBeenSet = true; m_dependencies.push_back(value); return *this; }
-    inline FormInputCard& AddDependencies(Aws::String&& value) { m_dependenciesHasBeenSet = true; m_dependencies.push_back(std::move(value)); return *this; }
-    inline FormInputCard& AddDependencies(const char* value) { m_dependenciesHasBeenSet = true; m_dependencies.push_back(value); return *this; }
+    template<typename DependenciesT = Aws::Vector<Aws::String>>
+    void SetDependencies(DependenciesT&& value) { m_dependenciesHasBeenSet = true; m_dependencies = std::forward<DependenciesT>(value); }
+    template<typename DependenciesT = Aws::Vector<Aws::String>>
+    FormInputCard& WithDependencies(DependenciesT&& value) { SetDependencies(std::forward<DependenciesT>(value)); return *this;}
+    template<typename DependenciesT = Aws::String>
+    FormInputCard& AddDependencies(DependenciesT&& value) { m_dependenciesHasBeenSet = true; m_dependencies.emplace_back(std::forward<DependenciesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The type of the card.</p>
      */
-    inline const CardType& GetType() const{ return m_type; }
+    inline CardType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const CardType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(CardType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline FormInputCard& WithType(const CardType& value) { SetType(value); return *this;}
-    inline FormInputCard& WithType(CardType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(CardType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline FormInputCard& WithType(CardType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The metadata that defines the form input card data.</p>
      */
-    inline const FormInputCardMetadata& GetMetadata() const{ return m_metadata; }
+    inline const FormInputCardMetadata& GetMetadata() const { return m_metadata; }
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
-    inline void SetMetadata(const FormInputCardMetadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
-    inline void SetMetadata(FormInputCardMetadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
-    inline FormInputCard& WithMetadata(const FormInputCardMetadata& value) { SetMetadata(value); return *this;}
-    inline FormInputCard& WithMetadata(FormInputCardMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+    template<typename MetadataT = FormInputCardMetadata>
+    void SetMetadata(MetadataT&& value) { m_metadataHasBeenSet = true; m_metadata = std::forward<MetadataT>(value); }
+    template<typename MetadataT = FormInputCardMetadata>
+    FormInputCard& WithMetadata(MetadataT&& value) { SetMetadata(std::forward<MetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,12 +111,10 @@ namespace Model
      * compute mode of <code>replace</code>code&gt; shall overwrite the current value
      * for each participant.</p>
      */
-    inline const InputCardComputeMode& GetComputeMode() const{ return m_computeMode; }
+    inline InputCardComputeMode GetComputeMode() const { return m_computeMode; }
     inline bool ComputeModeHasBeenSet() const { return m_computeModeHasBeenSet; }
-    inline void SetComputeMode(const InputCardComputeMode& value) { m_computeModeHasBeenSet = true; m_computeMode = value; }
-    inline void SetComputeMode(InputCardComputeMode&& value) { m_computeModeHasBeenSet = true; m_computeMode = std::move(value); }
-    inline FormInputCard& WithComputeMode(const InputCardComputeMode& value) { SetComputeMode(value); return *this;}
-    inline FormInputCard& WithComputeMode(InputCardComputeMode&& value) { SetComputeMode(std::move(value)); return *this;}
+    inline void SetComputeMode(InputCardComputeMode value) { m_computeModeHasBeenSet = true; m_computeMode = value; }
+    inline FormInputCard& WithComputeMode(InputCardComputeMode value) { SetComputeMode(value); return *this;}
     ///@}
   private:
 
@@ -136,13 +127,13 @@ namespace Model
     Aws::Vector<Aws::String> m_dependencies;
     bool m_dependenciesHasBeenSet = false;
 
-    CardType m_type;
+    CardType m_type{CardType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     FormInputCardMetadata m_metadata;
     bool m_metadataHasBeenSet = false;
 
-    InputCardComputeMode m_computeMode;
+    InputCardComputeMode m_computeMode{InputCardComputeMode::NOT_SET};
     bool m_computeModeHasBeenSet = false;
   };
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListIdentityPoliciesResult::ListIdentityPoliciesResult()
-{
-}
-
 ListIdentityPoliciesResult::ListIdentityPoliciesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ ListIdentityPoliciesResult& ListIdentityPoliciesResult::operator =(const Aws::Am
     if(!policyNamesNode.IsNull())
     {
       XmlNode policyNamesMember = policyNamesNode.FirstChild("member");
+      m_policyNamesHasBeenSet = !policyNamesMember.IsNull();
       while(!policyNamesMember.IsNull())
       {
         m_policyNames.push_back(policyNamesMember.GetText());
         policyNamesMember = policyNamesMember.NextNode("member");
       }
 
+      m_policyNamesHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SES::Model::ListIdentityPoliciesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

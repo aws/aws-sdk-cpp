@@ -18,15 +18,7 @@ namespace PcaConnectorAd
 namespace Model
 {
 
-ApplicationPolicy::ApplicationPolicy() : 
-    m_policyObjectIdentifierHasBeenSet(false),
-    m_policyType(ApplicationPolicyType::NOT_SET),
-    m_policyTypeHasBeenSet(false)
-{
-}
-
 ApplicationPolicy::ApplicationPolicy(JsonView jsonValue)
-  : ApplicationPolicy()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ApplicationPolicy& ApplicationPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PolicyObjectIdentifier"))
   {
     m_policyObjectIdentifier = jsonValue.GetString("PolicyObjectIdentifier");
-
     m_policyObjectIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolicyType"))
   {
     m_policyType = ApplicationPolicyTypeMapper::GetApplicationPolicyTypeForName(jsonValue.GetString("PolicyType"));
-
     m_policyTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

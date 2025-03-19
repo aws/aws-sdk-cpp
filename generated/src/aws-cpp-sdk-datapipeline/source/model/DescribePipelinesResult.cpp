@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribePipelinesResult::DescribePipelinesResult()
-{
-}
-
 DescribePipelinesResult::DescribePipelinesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,14 +32,15 @@ DescribePipelinesResult& DescribePipelinesResult::operator =(const Aws::AmazonWe
     {
       m_pipelineDescriptionList.push_back(pipelineDescriptionListJsonList[pipelineDescriptionListIndex].AsObject());
     }
+    m_pipelineDescriptionListHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

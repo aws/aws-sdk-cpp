@@ -12,11 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeStreamRequest::DescribeStreamRequest() : 
-    m_streamIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeStreamRequest::SerializePayload() const
 {
   return {};

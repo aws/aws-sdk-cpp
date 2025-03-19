@@ -12,11 +12,6 @@ using namespace Aws::ElasticTranscoder::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelJobRequest::CancelJobRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String CancelJobRequest::SerializePayload() const
 {
   return {};

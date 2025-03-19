@@ -33,7 +33,7 @@ namespace Model
   class IdentityProviderSummary
   {
   public:
-    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API IdentityProviderSummary();
+    AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API IdentityProviderSummary() = default;
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API IdentityProviderSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API IdentityProviderSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LICENSEMANAGERUSERSUBSCRIPTIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The failure message associated with an identity provider.</p>
      */
-    inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
+    inline const Aws::String& GetFailureMessage() const { return m_failureMessage; }
     inline bool FailureMessageHasBeenSet() const { return m_failureMessageHasBeenSet; }
-    inline void SetFailureMessage(const Aws::String& value) { m_failureMessageHasBeenSet = true; m_failureMessage = value; }
-    inline void SetFailureMessage(Aws::String&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::move(value); }
-    inline void SetFailureMessage(const char* value) { m_failureMessageHasBeenSet = true; m_failureMessage.assign(value); }
-    inline IdentityProviderSummary& WithFailureMessage(const Aws::String& value) { SetFailureMessage(value); return *this;}
-    inline IdentityProviderSummary& WithFailureMessage(Aws::String&& value) { SetFailureMessage(std::move(value)); return *this;}
-    inline IdentityProviderSummary& WithFailureMessage(const char* value) { SetFailureMessage(value); return *this;}
+    template<typename FailureMessageT = Aws::String>
+    void SetFailureMessage(FailureMessageT&& value) { m_failureMessageHasBeenSet = true; m_failureMessage = std::forward<FailureMessageT>(value); }
+    template<typename FailureMessageT = Aws::String>
+    IdentityProviderSummary& WithFailureMessage(FailureMessageT&& value) { SetFailureMessage(std::forward<FailureMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,40 +56,36 @@ namespace Model
      * <p>The <code>IdentityProvider</code> resource contains information about an
      * identity provider.</p>
      */
-    inline const IdentityProvider& GetIdentityProvider() const{ return m_identityProvider; }
+    inline const IdentityProvider& GetIdentityProvider() const { return m_identityProvider; }
     inline bool IdentityProviderHasBeenSet() const { return m_identityProviderHasBeenSet; }
-    inline void SetIdentityProvider(const IdentityProvider& value) { m_identityProviderHasBeenSet = true; m_identityProvider = value; }
-    inline void SetIdentityProvider(IdentityProvider&& value) { m_identityProviderHasBeenSet = true; m_identityProvider = std::move(value); }
-    inline IdentityProviderSummary& WithIdentityProvider(const IdentityProvider& value) { SetIdentityProvider(value); return *this;}
-    inline IdentityProviderSummary& WithIdentityProvider(IdentityProvider&& value) { SetIdentityProvider(std::move(value)); return *this;}
+    template<typename IdentityProviderT = IdentityProvider>
+    void SetIdentityProvider(IdentityProviderT&& value) { m_identityProviderHasBeenSet = true; m_identityProvider = std::forward<IdentityProviderT>(value); }
+    template<typename IdentityProviderT = IdentityProvider>
+    IdentityProviderSummary& WithIdentityProvider(IdentityProviderT&& value) { SetIdentityProvider(std::forward<IdentityProviderT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the identity provider.</p>
      */
-    inline const Aws::String& GetIdentityProviderArn() const{ return m_identityProviderArn; }
+    inline const Aws::String& GetIdentityProviderArn() const { return m_identityProviderArn; }
     inline bool IdentityProviderArnHasBeenSet() const { return m_identityProviderArnHasBeenSet; }
-    inline void SetIdentityProviderArn(const Aws::String& value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn = value; }
-    inline void SetIdentityProviderArn(Aws::String&& value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn = std::move(value); }
-    inline void SetIdentityProviderArn(const char* value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn.assign(value); }
-    inline IdentityProviderSummary& WithIdentityProviderArn(const Aws::String& value) { SetIdentityProviderArn(value); return *this;}
-    inline IdentityProviderSummary& WithIdentityProviderArn(Aws::String&& value) { SetIdentityProviderArn(std::move(value)); return *this;}
-    inline IdentityProviderSummary& WithIdentityProviderArn(const char* value) { SetIdentityProviderArn(value); return *this;}
+    template<typename IdentityProviderArnT = Aws::String>
+    void SetIdentityProviderArn(IdentityProviderArnT&& value) { m_identityProviderArnHasBeenSet = true; m_identityProviderArn = std::forward<IdentityProviderArnT>(value); }
+    template<typename IdentityProviderArnT = Aws::String>
+    IdentityProviderSummary& WithIdentityProviderArn(IdentityProviderArnT&& value) { SetIdentityProviderArn(std::forward<IdentityProviderArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the user-based subscription product.</p>
      */
-    inline const Aws::String& GetProduct() const{ return m_product; }
+    inline const Aws::String& GetProduct() const { return m_product; }
     inline bool ProductHasBeenSet() const { return m_productHasBeenSet; }
-    inline void SetProduct(const Aws::String& value) { m_productHasBeenSet = true; m_product = value; }
-    inline void SetProduct(Aws::String&& value) { m_productHasBeenSet = true; m_product = std::move(value); }
-    inline void SetProduct(const char* value) { m_productHasBeenSet = true; m_product.assign(value); }
-    inline IdentityProviderSummary& WithProduct(const Aws::String& value) { SetProduct(value); return *this;}
-    inline IdentityProviderSummary& WithProduct(Aws::String&& value) { SetProduct(std::move(value)); return *this;}
-    inline IdentityProviderSummary& WithProduct(const char* value) { SetProduct(value); return *this;}
+    template<typename ProductT = Aws::String>
+    void SetProduct(ProductT&& value) { m_productHasBeenSet = true; m_product = std::forward<ProductT>(value); }
+    template<typename ProductT = Aws::String>
+    IdentityProviderSummary& WithProduct(ProductT&& value) { SetProduct(std::forward<ProductT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,26 +94,24 @@ namespace Model
      * identity provider’s product related configuration settings, such as the subnets
      * to provision VPC endpoints.</p>
      */
-    inline const Settings& GetSettings() const{ return m_settings; }
+    inline const Settings& GetSettings() const { return m_settings; }
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
-    inline void SetSettings(const Settings& value) { m_settingsHasBeenSet = true; m_settings = value; }
-    inline void SetSettings(Settings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
-    inline IdentityProviderSummary& WithSettings(const Settings& value) { SetSettings(value); return *this;}
-    inline IdentityProviderSummary& WithSettings(Settings&& value) { SetSettings(std::move(value)); return *this;}
+    template<typename SettingsT = Settings>
+    void SetSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings = std::forward<SettingsT>(value); }
+    template<typename SettingsT = Settings>
+    IdentityProviderSummary& WithSettings(SettingsT&& value) { SetSettings(std::forward<SettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the identity provider.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline IdentityProviderSummary& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline IdentityProviderSummary& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline IdentityProviderSummary& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    IdentityProviderSummary& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
   private:
 

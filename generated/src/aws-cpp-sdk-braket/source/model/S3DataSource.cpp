@@ -18,13 +18,7 @@ namespace Braket
 namespace Model
 {
 
-S3DataSource::S3DataSource() : 
-    m_s3UriHasBeenSet(false)
-{
-}
-
 S3DataSource::S3DataSource(JsonView jsonValue)
-  : S3DataSource()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ S3DataSource& S3DataSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Uri"))
   {
     m_s3Uri = jsonValue.GetString("s3Uri");
-
     m_s3UriHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -20,10 +20,6 @@ namespace S3Control
 namespace Model
 {
 
-SSES3Encryption::SSES3Encryption()
-{
-}
-
 SSES3Encryption::SSES3Encryption(const XmlNode& xmlNode)
 {
   *this = xmlNode;

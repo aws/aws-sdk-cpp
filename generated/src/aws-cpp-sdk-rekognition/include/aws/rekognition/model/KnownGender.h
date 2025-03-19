@@ -33,7 +33,7 @@ namespace Model
   class KnownGender
   {
   public:
-    AWS_REKOGNITION_API KnownGender();
+    AWS_REKOGNITION_API KnownGender() = default;
     AWS_REKOGNITION_API KnownGender(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API KnownGender& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,16 +43,14 @@ namespace Model
     /**
      * <p>A string value of the KnownGender info about the Celebrity.</p>
      */
-    inline const KnownGenderType& GetType() const{ return m_type; }
+    inline KnownGenderType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const KnownGenderType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(KnownGenderType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline KnownGender& WithType(const KnownGenderType& value) { SetType(value); return *this;}
-    inline KnownGender& WithType(KnownGenderType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(KnownGenderType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline KnownGender& WithType(KnownGenderType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    KnownGenderType m_type;
+    KnownGenderType m_type{KnownGenderType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

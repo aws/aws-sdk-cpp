@@ -18,14 +18,7 @@ namespace LicenseManager
 namespace Model
 {
 
-FailedDependencyException::FailedDependencyException() : 
-    m_messageHasBeenSet(false),
-    m_errorCodeHasBeenSet(false)
-{
-}
-
 FailedDependencyException::FailedDependencyException(JsonView jsonValue)
-  : FailedDependencyException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FailedDependencyException& FailedDependencyException::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

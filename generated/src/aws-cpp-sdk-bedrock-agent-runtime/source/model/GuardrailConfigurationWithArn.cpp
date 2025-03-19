@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-GuardrailConfigurationWithArn::GuardrailConfigurationWithArn() : 
-    m_guardrailIdentifierHasBeenSet(false),
-    m_guardrailVersionHasBeenSet(false)
-{
-}
-
 GuardrailConfigurationWithArn::GuardrailConfigurationWithArn(JsonView jsonValue)
-  : GuardrailConfigurationWithArn()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ GuardrailConfigurationWithArn& GuardrailConfigurationWithArn::operator =(JsonVie
   if(jsonValue.ValueExists("guardrailIdentifier"))
   {
     m_guardrailIdentifier = jsonValue.GetString("guardrailIdentifier");
-
     m_guardrailIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("guardrailVersion"))
   {
     m_guardrailVersion = jsonValue.GetString("guardrailVersion");
-
     m_guardrailVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

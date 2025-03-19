@@ -18,18 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-Task::Task() : 
-    m_connectorOperatorHasBeenSet(false),
-    m_destinationFieldHasBeenSet(false),
-    m_sourceFieldsHasBeenSet(false),
-    m_taskPropertiesHasBeenSet(false),
-    m_taskType(TaskType::NOT_SET),
-    m_taskTypeHasBeenSet(false)
-{
-}
-
 Task::Task(JsonView jsonValue)
-  : Task()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ Task& Task::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ConnectorOperator"))
   {
     m_connectorOperator = jsonValue.GetObject("ConnectorOperator");
-
     m_connectorOperatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DestinationField"))
   {
     m_destinationField = jsonValue.GetString("DestinationField");
-
     m_destinationFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceFields"))
   {
     Aws::Utils::Array<JsonView> sourceFieldsJsonList = jsonValue.GetArray("SourceFields");
@@ -59,7 +44,6 @@ Task& Task::operator =(JsonView jsonValue)
     }
     m_sourceFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskProperties"))
   {
     Aws::Map<Aws::String, JsonView> taskPropertiesJsonMap = jsonValue.GetObject("TaskProperties").GetAllObjects();
@@ -69,14 +53,11 @@ Task& Task::operator =(JsonView jsonValue)
     }
     m_taskPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskType"))
   {
     m_taskType = TaskTypeMapper::GetTaskTypeForName(jsonValue.GetString("TaskType"));
-
     m_taskTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateBillingGroupResult::CreateBillingGroupResult()
-{
-}
-
 CreateBillingGroupResult::CreateBillingGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ CreateBillingGroupResult& CreateBillingGroupResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("billingGroupName"))
   {
     m_billingGroupName = jsonValue.GetString("billingGroupName");
-
+    m_billingGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("billingGroupArn"))
   {
     m_billingGroupArn = jsonValue.GetString("billingGroupArn");
-
+    m_billingGroupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("billingGroupId"))
   {
     m_billingGroupId = jsonValue.GetString("billingGroupId");
-
+    m_billingGroupIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

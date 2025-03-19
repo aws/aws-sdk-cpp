@@ -18,16 +18,7 @@ namespace IoT
 namespace Model
 {
 
-PolicyVersion::PolicyVersion() : 
-    m_versionIdHasBeenSet(false),
-    m_isDefaultVersion(false),
-    m_isDefaultVersionHasBeenSet(false),
-    m_createDateHasBeenSet(false)
-{
-}
-
 PolicyVersion::PolicyVersion(JsonView jsonValue)
-  : PolicyVersion()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ PolicyVersion& PolicyVersion::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("versionId"))
   {
     m_versionId = jsonValue.GetString("versionId");
-
     m_versionIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isDefaultVersion"))
   {
     m_isDefaultVersion = jsonValue.GetBool("isDefaultVersion");
-
     m_isDefaultVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createDate"))
   {
     m_createDate = jsonValue.GetDouble("createDate");
-
     m_createDateHasBeenSet = true;
   }
-
   return *this;
 }
 

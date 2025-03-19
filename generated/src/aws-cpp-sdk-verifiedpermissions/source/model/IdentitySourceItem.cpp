@@ -18,18 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-IdentitySourceItem::IdentitySourceItem() : 
-    m_createdDateHasBeenSet(false),
-    m_identitySourceIdHasBeenSet(false),
-    m_lastUpdatedDateHasBeenSet(false),
-    m_policyStoreIdHasBeenSet(false),
-    m_principalEntityTypeHasBeenSet(false),
-    m_configurationHasBeenSet(false)
-{
-}
-
 IdentitySourceItem::IdentitySourceItem(JsonView jsonValue)
-  : IdentitySourceItem()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ IdentitySourceItem& IdentitySourceItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetString("createdDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("identitySourceId"))
   {
     m_identitySourceId = jsonValue.GetString("identitySourceId");
-
     m_identitySourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDate"))
   {
     m_lastUpdatedDate = jsonValue.GetString("lastUpdatedDate");
-
     m_lastUpdatedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("policyStoreId"))
   {
     m_policyStoreId = jsonValue.GetString("policyStoreId");
-
     m_policyStoreIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("principalEntityType"))
   {
     m_principalEntityType = jsonValue.GetString("principalEntityType");
-
     m_principalEntityTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configuration"))
   {
     m_configuration = jsonValue.GetObject("configuration");
-
     m_configurationHasBeenSet = true;
   }
-
   return *this;
 }
 

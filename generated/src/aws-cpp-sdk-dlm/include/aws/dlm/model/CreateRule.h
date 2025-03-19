@@ -41,7 +41,7 @@ namespace Model
   class CreateRule
   {
   public:
-    AWS_DLM_API CreateRule();
+    AWS_DLM_API CreateRule() = default;
     AWS_DLM_API CreateRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API CreateRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DLM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -64,12 +64,10 @@ namespace Model
      * same Outpost as the source resource, specify <code>OUTPOST_LOCAL</code>.</p>
      * </li> </ul> <p>Default: <code>CLOUD</code> </p>
      */
-    inline const LocationValues& GetLocation() const{ return m_location; }
+    inline LocationValues GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const LocationValues& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(LocationValues&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline CreateRule& WithLocation(const LocationValues& value) { SetLocation(value); return *this;}
-    inline CreateRule& WithLocation(LocationValues&& value) { SetLocation(std::move(value)); return *this;}
+    inline void SetLocation(LocationValues value) { m_locationHasBeenSet = true; m_location = value; }
+    inline CreateRule& WithLocation(LocationValues value) { SetLocation(value); return *this;}
     ///@}
 
     ///@{
@@ -77,7 +75,7 @@ namespace Model
      * <p>The interval between snapshots. The supported values are 1, 2, 3, 4, 6, 8,
      * 12, and 24.</p>
      */
-    inline int GetInterval() const{ return m_interval; }
+    inline int GetInterval() const { return m_interval; }
     inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
     inline void SetInterval(int value) { m_intervalHasBeenSet = true; m_interval = value; }
     inline CreateRule& WithInterval(int value) { SetInterval(value); return *this;}
@@ -87,12 +85,10 @@ namespace Model
     /**
      * <p>The interval unit.</p>
      */
-    inline const IntervalUnitValues& GetIntervalUnit() const{ return m_intervalUnit; }
+    inline IntervalUnitValues GetIntervalUnit() const { return m_intervalUnit; }
     inline bool IntervalUnitHasBeenSet() const { return m_intervalUnitHasBeenSet; }
-    inline void SetIntervalUnit(const IntervalUnitValues& value) { m_intervalUnitHasBeenSet = true; m_intervalUnit = value; }
-    inline void SetIntervalUnit(IntervalUnitValues&& value) { m_intervalUnitHasBeenSet = true; m_intervalUnit = std::move(value); }
-    inline CreateRule& WithIntervalUnit(const IntervalUnitValues& value) { SetIntervalUnit(value); return *this;}
-    inline CreateRule& WithIntervalUnit(IntervalUnitValues&& value) { SetIntervalUnit(std::move(value)); return *this;}
+    inline void SetIntervalUnit(IntervalUnitValues value) { m_intervalUnitHasBeenSet = true; m_intervalUnit = value; }
+    inline CreateRule& WithIntervalUnit(IntervalUnitValues value) { SetIntervalUnit(value); return *this;}
     ///@}
 
     ///@{
@@ -102,15 +98,14 @@ namespace Model
      * If you do not specify a time, Amazon Data Lifecycle Manager selects a time
      * within the next 24 hours.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetTimes() const{ return m_times; }
+    inline const Aws::Vector<Aws::String>& GetTimes() const { return m_times; }
     inline bool TimesHasBeenSet() const { return m_timesHasBeenSet; }
-    inline void SetTimes(const Aws::Vector<Aws::String>& value) { m_timesHasBeenSet = true; m_times = value; }
-    inline void SetTimes(Aws::Vector<Aws::String>&& value) { m_timesHasBeenSet = true; m_times = std::move(value); }
-    inline CreateRule& WithTimes(const Aws::Vector<Aws::String>& value) { SetTimes(value); return *this;}
-    inline CreateRule& WithTimes(Aws::Vector<Aws::String>&& value) { SetTimes(std::move(value)); return *this;}
-    inline CreateRule& AddTimes(const Aws::String& value) { m_timesHasBeenSet = true; m_times.push_back(value); return *this; }
-    inline CreateRule& AddTimes(Aws::String&& value) { m_timesHasBeenSet = true; m_times.push_back(std::move(value)); return *this; }
-    inline CreateRule& AddTimes(const char* value) { m_timesHasBeenSet = true; m_times.push_back(value); return *this; }
+    template<typename TimesT = Aws::Vector<Aws::String>>
+    void SetTimes(TimesT&& value) { m_timesHasBeenSet = true; m_times = std::forward<TimesT>(value); }
+    template<typename TimesT = Aws::Vector<Aws::String>>
+    CreateRule& WithTimes(TimesT&& value) { SetTimes(std::forward<TimesT>(value)); return *this;}
+    template<typename TimesT = Aws::String>
+    CreateRule& AddTimes(TimesT&& value) { m_timesHasBeenSet = true; m_times.emplace_back(std::forward<TimesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -120,14 +115,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-cron-expressions.html">Cron
      * expressions reference</a> in the <i>Amazon EventBridge User Guide</i>.</p>
      */
-    inline const Aws::String& GetCronExpression() const{ return m_cronExpression; }
+    inline const Aws::String& GetCronExpression() const { return m_cronExpression; }
     inline bool CronExpressionHasBeenSet() const { return m_cronExpressionHasBeenSet; }
-    inline void SetCronExpression(const Aws::String& value) { m_cronExpressionHasBeenSet = true; m_cronExpression = value; }
-    inline void SetCronExpression(Aws::String&& value) { m_cronExpressionHasBeenSet = true; m_cronExpression = std::move(value); }
-    inline void SetCronExpression(const char* value) { m_cronExpressionHasBeenSet = true; m_cronExpression.assign(value); }
-    inline CreateRule& WithCronExpression(const Aws::String& value) { SetCronExpression(value); return *this;}
-    inline CreateRule& WithCronExpression(Aws::String&& value) { SetCronExpression(std::move(value)); return *this;}
-    inline CreateRule& WithCronExpression(const char* value) { SetCronExpression(value); return *this;}
+    template<typename CronExpressionT = Aws::String>
+    void SetCronExpression(CronExpressionT&& value) { m_cronExpressionHasBeenSet = true; m_cronExpression = std::forward<CronExpressionT>(value); }
+    template<typename CronExpressionT = Aws::String>
+    CreateRule& WithCronExpression(CronExpressionT&& value) { SetCronExpression(std::forward<CronExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,24 +133,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/automate-app-consistent-backups.html">Automating
      * application-consistent snapshots with pre and post scripts</a>.</p>
      */
-    inline const Aws::Vector<Script>& GetScripts() const{ return m_scripts; }
+    inline const Aws::Vector<Script>& GetScripts() const { return m_scripts; }
     inline bool ScriptsHasBeenSet() const { return m_scriptsHasBeenSet; }
-    inline void SetScripts(const Aws::Vector<Script>& value) { m_scriptsHasBeenSet = true; m_scripts = value; }
-    inline void SetScripts(Aws::Vector<Script>&& value) { m_scriptsHasBeenSet = true; m_scripts = std::move(value); }
-    inline CreateRule& WithScripts(const Aws::Vector<Script>& value) { SetScripts(value); return *this;}
-    inline CreateRule& WithScripts(Aws::Vector<Script>&& value) { SetScripts(std::move(value)); return *this;}
-    inline CreateRule& AddScripts(const Script& value) { m_scriptsHasBeenSet = true; m_scripts.push_back(value); return *this; }
-    inline CreateRule& AddScripts(Script&& value) { m_scriptsHasBeenSet = true; m_scripts.push_back(std::move(value)); return *this; }
+    template<typename ScriptsT = Aws::Vector<Script>>
+    void SetScripts(ScriptsT&& value) { m_scriptsHasBeenSet = true; m_scripts = std::forward<ScriptsT>(value); }
+    template<typename ScriptsT = Aws::Vector<Script>>
+    CreateRule& WithScripts(ScriptsT&& value) { SetScripts(std::forward<ScriptsT>(value)); return *this;}
+    template<typename ScriptsT = Script>
+    CreateRule& AddScripts(ScriptsT&& value) { m_scriptsHasBeenSet = true; m_scripts.emplace_back(std::forward<ScriptsT>(value)); return *this; }
     ///@}
   private:
 
-    LocationValues m_location;
+    LocationValues m_location{LocationValues::NOT_SET};
     bool m_locationHasBeenSet = false;
 
-    int m_interval;
+    int m_interval{0};
     bool m_intervalHasBeenSet = false;
 
-    IntervalUnitValues m_intervalUnit;
+    IntervalUnitValues m_intervalUnit{IntervalUnitValues::NOT_SET};
     bool m_intervalUnitHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_times;

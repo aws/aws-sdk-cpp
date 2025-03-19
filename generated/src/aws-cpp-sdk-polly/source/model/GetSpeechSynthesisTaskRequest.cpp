@@ -12,11 +12,6 @@ using namespace Aws::Polly::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSpeechSynthesisTaskRequest::GetSpeechSynthesisTaskRequest() : 
-    m_taskIdHasBeenSet(false)
-{
-}
-
 Aws::String GetSpeechSynthesisTaskRequest::SerializePayload() const
 {
   return {};

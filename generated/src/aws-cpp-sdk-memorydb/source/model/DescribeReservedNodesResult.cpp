@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeReservedNodesResult::DescribeReservedNodesResult()
-{
-}
-
 DescribeReservedNodesResult::DescribeReservedNodesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeReservedNodesResult& DescribeReservedNodesResult::operator =(const Aws::
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReservedNodes"))
   {
     Aws::Utils::Array<JsonView> reservedNodesJsonList = jsonValue.GetArray("ReservedNodes");
@@ -42,14 +37,15 @@ DescribeReservedNodesResult& DescribeReservedNodesResult::operator =(const Aws::
     {
       m_reservedNodes.push_back(reservedNodesJsonList[reservedNodesIndex].AsObject());
     }
+    m_reservedNodesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

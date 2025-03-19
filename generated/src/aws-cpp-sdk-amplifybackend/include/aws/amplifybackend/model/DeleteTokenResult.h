@@ -27,7 +27,7 @@ namespace Model
   class DeleteTokenResult
   {
   public:
-    AWS_AMPLIFYBACKEND_API DeleteTokenResult();
+    AWS_AMPLIFYBACKEND_API DeleteTokenResult() = default;
     AWS_AMPLIFYBACKEND_API DeleteTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_AMPLIFYBACKEND_API DeleteTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,26 +36,26 @@ namespace Model
     /**
      * <p>Indicates whether the request succeeded or failed.</p>
      */
-    inline bool GetIsSuccess() const{ return m_isSuccess; }
-    inline void SetIsSuccess(bool value) { m_isSuccess = value; }
+    inline bool GetIsSuccess() const { return m_isSuccess; }
+    inline void SetIsSuccess(bool value) { m_isSuccessHasBeenSet = true; m_isSuccess = value; }
     inline DeleteTokenResult& WithIsSuccess(bool value) { SetIsSuccess(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteTokenResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteTokenResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteTokenResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteTokenResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_isSuccess;
+    bool m_isSuccess{false};
+    bool m_isSuccessHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

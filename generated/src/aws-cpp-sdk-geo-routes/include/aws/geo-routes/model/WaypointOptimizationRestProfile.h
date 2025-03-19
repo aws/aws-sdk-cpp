@@ -32,7 +32,7 @@ namespace Model
   class WaypointOptimizationRestProfile
   {
   public:
-    AWS_GEOROUTES_API WaypointOptimizationRestProfile();
+    AWS_GEOROUTES_API WaypointOptimizationRestProfile() = default;
     AWS_GEOROUTES_API WaypointOptimizationRestProfile(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API WaypointOptimizationRestProfile& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>Pre defined rest profiles for a driver schedule. The only currently supported
      * profile is EU.</p>
      */
-    inline const Aws::String& GetProfile() const{ return m_profile; }
+    inline const Aws::String& GetProfile() const { return m_profile; }
     inline bool ProfileHasBeenSet() const { return m_profileHasBeenSet; }
-    inline void SetProfile(const Aws::String& value) { m_profileHasBeenSet = true; m_profile = value; }
-    inline void SetProfile(Aws::String&& value) { m_profileHasBeenSet = true; m_profile = std::move(value); }
-    inline void SetProfile(const char* value) { m_profileHasBeenSet = true; m_profile.assign(value); }
-    inline WaypointOptimizationRestProfile& WithProfile(const Aws::String& value) { SetProfile(value); return *this;}
-    inline WaypointOptimizationRestProfile& WithProfile(Aws::String&& value) { SetProfile(std::move(value)); return *this;}
-    inline WaypointOptimizationRestProfile& WithProfile(const char* value) { SetProfile(value); return *this;}
+    template<typename ProfileT = Aws::String>
+    void SetProfile(ProfileT&& value) { m_profileHasBeenSet = true; m_profile = std::forward<ProfileT>(value); }
+    template<typename ProfileT = Aws::String>
+    WaypointOptimizationRestProfile& WithProfile(ProfileT&& value) { SetProfile(std::forward<ProfileT>(value)); return *this;}
     ///@}
   private:
 

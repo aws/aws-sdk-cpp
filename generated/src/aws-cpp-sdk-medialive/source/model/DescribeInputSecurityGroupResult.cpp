@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeInputSecurityGroupResult::DescribeInputSecurityGroupResult() : 
-    m_state(InputSecurityGroupState::NOT_SET)
-{
-}
-
 DescribeInputSecurityGroupResult::DescribeInputSecurityGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeInputSecurityGroupResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ DescribeInputSecurityGroupResult& DescribeInputSecurityGroupResult::operator =(c
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputs"))
   {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("inputs");
@@ -50,14 +42,13 @@ DescribeInputSecurityGroupResult& DescribeInputSecurityGroupResult::operator =(c
     {
       m_inputs.push_back(inputsJsonList[inputsIndex].AsString());
     }
+    m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = InputSecurityGroupStateMapper::GetInputSecurityGroupStateForName(jsonValue.GetString("state"));
-
+    m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -65,8 +56,8 @@ DescribeInputSecurityGroupResult& DescribeInputSecurityGroupResult::operator =(c
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("whitelistRules"))
   {
     Aws::Utils::Array<JsonView> whitelistRulesJsonList = jsonValue.GetArray("whitelistRules");
@@ -74,14 +65,15 @@ DescribeInputSecurityGroupResult& DescribeInputSecurityGroupResult::operator =(c
     {
       m_whitelistRules.push_back(whitelistRulesJsonList[whitelistRulesIndex].AsObject());
     }
+    m_whitelistRulesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

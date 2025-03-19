@@ -33,7 +33,7 @@ namespace Model
   class InferredState
   {
   public:
-    AWS_LOCATIONSERVICE_API InferredState();
+    AWS_LOCATIONSERVICE_API InferredState() = default;
     AWS_LOCATIONSERVICE_API InferredState(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API InferredState& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOCATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,12 @@ namespace Model
      * <p>The device position inferred by the provided position, IP address, cellular
      * signals, and Wi-Fi- access points.</p>
      */
-    inline const Aws::Vector<double>& GetPosition() const{ return m_position; }
+    inline const Aws::Vector<double>& GetPosition() const { return m_position; }
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    inline void SetPosition(const Aws::Vector<double>& value) { m_positionHasBeenSet = true; m_position = value; }
-    inline void SetPosition(Aws::Vector<double>&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-    inline InferredState& WithPosition(const Aws::Vector<double>& value) { SetPosition(value); return *this;}
-    inline InferredState& WithPosition(Aws::Vector<double>&& value) { SetPosition(std::move(value)); return *this;}
+    template<typename PositionT = Aws::Vector<double>>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Aws::Vector<double>>
+    InferredState& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     inline InferredState& AddPosition(double value) { m_positionHasBeenSet = true; m_position.push_back(value); return *this; }
     ///@}
 
@@ -57,12 +57,12 @@ namespace Model
     /**
      * <p>The level of certainty of the inferred position.</p>
      */
-    inline const PositionalAccuracy& GetAccuracy() const{ return m_accuracy; }
+    inline const PositionalAccuracy& GetAccuracy() const { return m_accuracy; }
     inline bool AccuracyHasBeenSet() const { return m_accuracyHasBeenSet; }
-    inline void SetAccuracy(const PositionalAccuracy& value) { m_accuracyHasBeenSet = true; m_accuracy = value; }
-    inline void SetAccuracy(PositionalAccuracy&& value) { m_accuracyHasBeenSet = true; m_accuracy = std::move(value); }
-    inline InferredState& WithAccuracy(const PositionalAccuracy& value) { SetAccuracy(value); return *this;}
-    inline InferredState& WithAccuracy(PositionalAccuracy&& value) { SetAccuracy(std::move(value)); return *this;}
+    template<typename AccuracyT = PositionalAccuracy>
+    void SetAccuracy(AccuracyT&& value) { m_accuracyHasBeenSet = true; m_accuracy = std::forward<AccuracyT>(value); }
+    template<typename AccuracyT = PositionalAccuracy>
+    InferredState& WithAccuracy(AccuracyT&& value) { SetAccuracy(std::forward<AccuracyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,7 +70,7 @@ namespace Model
      * <p>The distance between the inferred position and the device's self-reported
      * position.</p>
      */
-    inline double GetDeviationDistance() const{ return m_deviationDistance; }
+    inline double GetDeviationDistance() const { return m_deviationDistance; }
     inline bool DeviationDistanceHasBeenSet() const { return m_deviationDistanceHasBeenSet; }
     inline void SetDeviationDistance(double value) { m_deviationDistanceHasBeenSet = true; m_deviationDistance = value; }
     inline InferredState& WithDeviationDistance(double value) { SetDeviationDistance(value); return *this;}
@@ -80,7 +80,7 @@ namespace Model
     /**
      * <p>Indicates if a proxy was used.</p>
      */
-    inline bool GetProxyDetected() const{ return m_proxyDetected; }
+    inline bool GetProxyDetected() const { return m_proxyDetected; }
     inline bool ProxyDetectedHasBeenSet() const { return m_proxyDetectedHasBeenSet; }
     inline void SetProxyDetected(bool value) { m_proxyDetectedHasBeenSet = true; m_proxyDetected = value; }
     inline InferredState& WithProxyDetected(bool value) { SetProxyDetected(value); return *this;}
@@ -93,10 +93,10 @@ namespace Model
     PositionalAccuracy m_accuracy;
     bool m_accuracyHasBeenSet = false;
 
-    double m_deviationDistance;
+    double m_deviationDistance{0.0};
     bool m_deviationDistanceHasBeenSet = false;
 
-    bool m_proxyDetected;
+    bool m_proxyDetected{false};
     bool m_proxyDetectedHasBeenSet = false;
   };
 

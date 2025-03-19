@@ -18,15 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ActionSource::ActionSource() : 
-    m_sourceUriHasBeenSet(false),
-    m_sourceTypeHasBeenSet(false),
-    m_sourceIdHasBeenSet(false)
-{
-}
-
 ActionSource::ActionSource(JsonView jsonValue)
-  : ActionSource()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ActionSource& ActionSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SourceUri"))
   {
     m_sourceUri = jsonValue.GetString("SourceUri");
-
     m_sourceUriHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceType"))
   {
     m_sourceType = jsonValue.GetString("SourceType");
-
     m_sourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceId"))
   {
     m_sourceId = jsonValue.GetString("SourceId");
-
     m_sourceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

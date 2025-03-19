@@ -32,7 +32,7 @@ namespace Model
   class DatabaseConfigDetail
   {
   public:
-    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API DatabaseConfigDetail();
+    AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API DatabaseConfigDetail() = default;
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API DatabaseConfigDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API DatabaseConfigDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p> AWS Secrets Manager key that holds the credentials that you use to connect
      * to a database. </p>
      */
-    inline const Aws::String& GetSecretName() const{ return m_secretName; }
+    inline const Aws::String& GetSecretName() const { return m_secretName; }
     inline bool SecretNameHasBeenSet() const { return m_secretNameHasBeenSet; }
-    inline void SetSecretName(const Aws::String& value) { m_secretNameHasBeenSet = true; m_secretName = value; }
-    inline void SetSecretName(Aws::String&& value) { m_secretNameHasBeenSet = true; m_secretName = std::move(value); }
-    inline void SetSecretName(const char* value) { m_secretNameHasBeenSet = true; m_secretName.assign(value); }
-    inline DatabaseConfigDetail& WithSecretName(const Aws::String& value) { SetSecretName(value); return *this;}
-    inline DatabaseConfigDetail& WithSecretName(Aws::String&& value) { SetSecretName(std::move(value)); return *this;}
-    inline DatabaseConfigDetail& WithSecretName(const char* value) { SetSecretName(value); return *this;}
+    template<typename SecretNameT = Aws::String>
+    void SetSecretName(SecretNameT&& value) { m_secretNameHasBeenSet = true; m_secretName = std::forward<SecretNameT>(value); }
+    template<typename SecretNameT = Aws::String>
+    DatabaseConfigDetail& WithSecretName(SecretNameT&& value) { SetSecretName(std::forward<SecretNameT>(value)); return *this;}
     ///@}
   private:
 

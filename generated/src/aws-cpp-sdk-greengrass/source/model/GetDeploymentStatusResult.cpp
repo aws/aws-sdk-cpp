@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetDeploymentStatusResult::GetDeploymentStatusResult() : 
-    m_deploymentType(DeploymentType::NOT_SET)
-{
-}
-
 GetDeploymentStatusResult::GetDeploymentStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetDeploymentStatusResult()
 {
   *this = result;
 }
@@ -34,15 +28,13 @@ GetDeploymentStatusResult& GetDeploymentStatusResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("DeploymentStatus"))
   {
     m_deploymentStatus = jsonValue.GetString("DeploymentStatus");
-
+    m_deploymentStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DeploymentType"))
   {
     m_deploymentType = DeploymentTypeMapper::GetDeploymentTypeForName(jsonValue.GetString("DeploymentType"));
-
+    m_deploymentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorDetails"))
   {
     Aws::Utils::Array<JsonView> errorDetailsJsonList = jsonValue.GetArray("ErrorDetails");
@@ -50,26 +42,25 @@ GetDeploymentStatusResult& GetDeploymentStatusResult::operator =(const Aws::Amaz
     {
       m_errorDetails.push_back(errorDetailsJsonList[errorDetailsIndex].AsObject());
     }
+    m_errorDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
+    m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetString("UpdatedAt");
-
+    m_updatedAtHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

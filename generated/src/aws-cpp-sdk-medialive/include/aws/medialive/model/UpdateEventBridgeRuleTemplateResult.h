@@ -38,7 +38,7 @@ namespace Model
   class UpdateEventBridgeRuleTemplateResult
   {
   public:
-    AWS_MEDIALIVE_API UpdateEventBridgeRuleTemplateResult();
+    AWS_MEDIALIVE_API UpdateEventBridgeRuleTemplateResult() = default;
     AWS_MEDIALIVE_API UpdateEventBridgeRuleTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIALIVE_API UpdateEventBridgeRuleTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -47,55 +47,49 @@ namespace Model
     /**
      * An eventbridge rule template's ARN (Amazon Resource Name)
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline UpdateEventBridgeRuleTemplateResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateEventBridgeRuleTemplateResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateEventBridgeRuleTemplateResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateEventBridgeRuleTemplateResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
-    inline UpdateEventBridgeRuleTemplateResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline UpdateEventBridgeRuleTemplateResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    UpdateEventBridgeRuleTemplateResult& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * A resource's optional description.
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline UpdateEventBridgeRuleTemplateResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateEventBridgeRuleTemplateResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateEventBridgeRuleTemplateResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateEventBridgeRuleTemplateResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<EventBridgeRuleTemplateTarget>& GetEventTargets() const{ return m_eventTargets; }
-    inline void SetEventTargets(const Aws::Vector<EventBridgeRuleTemplateTarget>& value) { m_eventTargets = value; }
-    inline void SetEventTargets(Aws::Vector<EventBridgeRuleTemplateTarget>&& value) { m_eventTargets = std::move(value); }
-    inline UpdateEventBridgeRuleTemplateResult& WithEventTargets(const Aws::Vector<EventBridgeRuleTemplateTarget>& value) { SetEventTargets(value); return *this;}
-    inline UpdateEventBridgeRuleTemplateResult& WithEventTargets(Aws::Vector<EventBridgeRuleTemplateTarget>&& value) { SetEventTargets(std::move(value)); return *this;}
-    inline UpdateEventBridgeRuleTemplateResult& AddEventTargets(const EventBridgeRuleTemplateTarget& value) { m_eventTargets.push_back(value); return *this; }
-    inline UpdateEventBridgeRuleTemplateResult& AddEventTargets(EventBridgeRuleTemplateTarget&& value) { m_eventTargets.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<EventBridgeRuleTemplateTarget>& GetEventTargets() const { return m_eventTargets; }
+    template<typename EventTargetsT = Aws::Vector<EventBridgeRuleTemplateTarget>>
+    void SetEventTargets(EventTargetsT&& value) { m_eventTargetsHasBeenSet = true; m_eventTargets = std::forward<EventTargetsT>(value); }
+    template<typename EventTargetsT = Aws::Vector<EventBridgeRuleTemplateTarget>>
+    UpdateEventBridgeRuleTemplateResult& WithEventTargets(EventTargetsT&& value) { SetEventTargets(std::forward<EventTargetsT>(value)); return *this;}
+    template<typename EventTargetsT = EventBridgeRuleTemplateTarget>
+    UpdateEventBridgeRuleTemplateResult& AddEventTargets(EventTargetsT&& value) { m_eventTargetsHasBeenSet = true; m_eventTargets.emplace_back(std::forward<EventTargetsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const EventBridgeRuleTemplateEventType& GetEventType() const{ return m_eventType; }
-    inline void SetEventType(const EventBridgeRuleTemplateEventType& value) { m_eventType = value; }
-    inline void SetEventType(EventBridgeRuleTemplateEventType&& value) { m_eventType = std::move(value); }
-    inline UpdateEventBridgeRuleTemplateResult& WithEventType(const EventBridgeRuleTemplateEventType& value) { SetEventType(value); return *this;}
-    inline UpdateEventBridgeRuleTemplateResult& WithEventType(EventBridgeRuleTemplateEventType&& value) { SetEventType(std::move(value)); return *this;}
+    inline EventBridgeRuleTemplateEventType GetEventType() const { return m_eventType; }
+    inline void SetEventType(EventBridgeRuleTemplateEventType value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
+    inline UpdateEventBridgeRuleTemplateResult& WithEventType(EventBridgeRuleTemplateEventType value) { SetEventType(value); return *this;}
     ///@}
 
     ///@{
@@ -103,13 +97,11 @@ namespace Model
      * An eventbridge rule template group's id. AWS provided template groups have ids
      * that start with `aws-`
      */
-    inline const Aws::String& GetGroupId() const{ return m_groupId; }
-    inline void SetGroupId(const Aws::String& value) { m_groupId = value; }
-    inline void SetGroupId(Aws::String&& value) { m_groupId = std::move(value); }
-    inline void SetGroupId(const char* value) { m_groupId.assign(value); }
-    inline UpdateEventBridgeRuleTemplateResult& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
-    inline UpdateEventBridgeRuleTemplateResult& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
-    inline UpdateEventBridgeRuleTemplateResult& WithGroupId(const char* value) { SetGroupId(value); return *this;}
+    inline const Aws::String& GetGroupId() const { return m_groupId; }
+    template<typename GroupIdT = Aws::String>
+    void SetGroupId(GroupIdT&& value) { m_groupIdHasBeenSet = true; m_groupId = std::forward<GroupIdT>(value); }
+    template<typename GroupIdT = Aws::String>
+    UpdateEventBridgeRuleTemplateResult& WithGroupId(GroupIdT&& value) { SetGroupId(std::forward<GroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -117,22 +109,20 @@ namespace Model
      * An eventbridge rule template's id. AWS provided templates have ids that start
      * with `aws-`
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline UpdateEventBridgeRuleTemplateResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline UpdateEventBridgeRuleTemplateResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline UpdateEventBridgeRuleTemplateResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    UpdateEventBridgeRuleTemplateResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetModifiedAt() const{ return m_modifiedAt; }
-    inline void SetModifiedAt(const Aws::Utils::DateTime& value) { m_modifiedAt = value; }
-    inline void SetModifiedAt(Aws::Utils::DateTime&& value) { m_modifiedAt = std::move(value); }
-    inline UpdateEventBridgeRuleTemplateResult& WithModifiedAt(const Aws::Utils::DateTime& value) { SetModifiedAt(value); return *this;}
-    inline UpdateEventBridgeRuleTemplateResult& WithModifiedAt(Aws::Utils::DateTime&& value) { SetModifiedAt(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetModifiedAt() const { return m_modifiedAt; }
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    void SetModifiedAt(ModifiedAtT&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::forward<ModifiedAtT>(value); }
+    template<typename ModifiedAtT = Aws::Utils::DateTime>
+    UpdateEventBridgeRuleTemplateResult& WithModifiedAt(ModifiedAtT&& value) { SetModifiedAt(std::forward<ModifiedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -140,64 +130,68 @@ namespace Model
      * A resource's name. Names must be unique within the scope of a resource type in a
      * specific region.
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline UpdateEventBridgeRuleTemplateResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateEventBridgeRuleTemplateResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateEventBridgeRuleTemplateResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateEventBridgeRuleTemplateResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
-    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
-    inline UpdateEventBridgeRuleTemplateResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
-    inline UpdateEventBridgeRuleTemplateResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
-    inline UpdateEventBridgeRuleTemplateResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
-    inline UpdateEventBridgeRuleTemplateResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline UpdateEventBridgeRuleTemplateResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline UpdateEventBridgeRuleTemplateResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateEventBridgeRuleTemplateResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
-    inline UpdateEventBridgeRuleTemplateResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
-    inline UpdateEventBridgeRuleTemplateResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Map<Aws::String, Aws::String>>
+    UpdateEventBridgeRuleTemplateResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+    UpdateEventBridgeRuleTemplateResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+      m_tagsHasBeenSet = true; m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateEventBridgeRuleTemplateResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateEventBridgeRuleTemplateResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateEventBridgeRuleTemplateResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateEventBridgeRuleTemplateResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
+    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<EventBridgeRuleTemplateTarget> m_eventTargets;
+    bool m_eventTargetsHasBeenSet = false;
 
-    EventBridgeRuleTemplateEventType m_eventType;
+    EventBridgeRuleTemplateEventType m_eventType{EventBridgeRuleTemplateEventType::NOT_SET};
+    bool m_eventTypeHasBeenSet = false;
 
     Aws::String m_groupId;
+    bool m_groupIdHasBeenSet = false;
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
-    Aws::Utils::DateTime m_modifiedAt;
+    Aws::Utils::DateTime m_modifiedAt{};
+    bool m_modifiedAtHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,15 +18,7 @@ namespace IoT
 namespace Model
 {
 
-SigningProfileParameter::SigningProfileParameter() : 
-    m_certificateArnHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_certificatePathOnDeviceHasBeenSet(false)
-{
-}
-
 SigningProfileParameter::SigningProfileParameter(JsonView jsonValue)
-  : SigningProfileParameter()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ SigningProfileParameter& SigningProfileParameter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("certificateArn"))
   {
     m_certificateArn = jsonValue.GetString("certificateArn");
-
     m_certificateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("platform"))
   {
     m_platform = jsonValue.GetString("platform");
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("certificatePathOnDevice"))
   {
     m_certificatePathOnDevice = jsonValue.GetString("certificatePathOnDevice");
-
     m_certificatePathOnDeviceHasBeenSet = true;
   }
-
   return *this;
 }
 

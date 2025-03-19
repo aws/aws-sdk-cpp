@@ -12,14 +12,6 @@ using namespace Aws::IoT::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RemoveThingFromThingGroupRequest::RemoveThingFromThingGroupRequest() : 
-    m_thingGroupNameHasBeenSet(false),
-    m_thingGroupArnHasBeenSet(false),
-    m_thingNameHasBeenSet(false),
-    m_thingArnHasBeenSet(false)
-{
-}
-
 Aws::String RemoveThingFromThingGroupRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -33,7 +33,7 @@ namespace Model
   class ErrorCause
   {
   public:
-    AWS_HEALTHLAKE_API ErrorCause();
+    AWS_HEALTHLAKE_API ErrorCause() = default;
     AWS_HEALTHLAKE_API ErrorCause(Aws::Utils::Json::JsonView jsonValue);
     AWS_HEALTHLAKE_API ErrorCause& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_HEALTHLAKE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The text of the error message.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline ErrorCause& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline ErrorCause& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline ErrorCause& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    ErrorCause& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,19 +56,17 @@ namespace Model
      * <p>The error category of the create/delete data store operation. Possible
      * statuses are RETRYABLE_ERROR or NON_RETRYABLE_ERROR.</p>
      */
-    inline const ErrorCategory& GetErrorCategory() const{ return m_errorCategory; }
+    inline ErrorCategory GetErrorCategory() const { return m_errorCategory; }
     inline bool ErrorCategoryHasBeenSet() const { return m_errorCategoryHasBeenSet; }
-    inline void SetErrorCategory(const ErrorCategory& value) { m_errorCategoryHasBeenSet = true; m_errorCategory = value; }
-    inline void SetErrorCategory(ErrorCategory&& value) { m_errorCategoryHasBeenSet = true; m_errorCategory = std::move(value); }
-    inline ErrorCause& WithErrorCategory(const ErrorCategory& value) { SetErrorCategory(value); return *this;}
-    inline ErrorCause& WithErrorCategory(ErrorCategory&& value) { SetErrorCategory(std::move(value)); return *this;}
+    inline void SetErrorCategory(ErrorCategory value) { m_errorCategoryHasBeenSet = true; m_errorCategory = value; }
+    inline ErrorCause& WithErrorCategory(ErrorCategory value) { SetErrorCategory(value); return *this;}
     ///@}
   private:
 
     Aws::String m_errorMessage;
     bool m_errorMessageHasBeenSet = false;
 
-    ErrorCategory m_errorCategory;
+    ErrorCategory m_errorCategory{ErrorCategory::NOT_SET};
     bool m_errorCategoryHasBeenSet = false;
   };
 

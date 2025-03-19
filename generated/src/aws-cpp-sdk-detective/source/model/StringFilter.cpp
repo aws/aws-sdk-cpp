@@ -18,13 +18,7 @@ namespace Detective
 namespace Model
 {
 
-StringFilter::StringFilter() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 StringFilter::StringFilter(JsonView jsonValue)
-  : StringFilter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ StringFilter& StringFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetString("Value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class RecommendationRelatedAnomalyResource
   {
   public:
-    AWS_DEVOPSGURU_API RecommendationRelatedAnomalyResource();
+    AWS_DEVOPSGURU_API RecommendationRelatedAnomalyResource() = default;
     AWS_DEVOPSGURU_API RecommendationRelatedAnomalyResource(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API RecommendationRelatedAnomalyResource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEVOPSGURU_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p> The name of the resource. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline RecommendationRelatedAnomalyResource& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline RecommendationRelatedAnomalyResource& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline RecommendationRelatedAnomalyResource& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    RecommendationRelatedAnomalyResource& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,14 +60,12 @@ namespace Model
      * Web Services resource and property types reference</a> in the <i>Amazon Web
      * Services CloudFormation User Guide</i>.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::String& GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-    inline RecommendationRelatedAnomalyResource& WithType(const Aws::String& value) { SetType(value); return *this;}
-    inline RecommendationRelatedAnomalyResource& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-    inline RecommendationRelatedAnomalyResource& WithType(const char* value) { SetType(value); return *this;}
+    template<typename TypeT = Aws::String>
+    void SetType(TypeT&& value) { m_typeHasBeenSet = true; m_type = std::forward<TypeT>(value); }
+    template<typename TypeT = Aws::String>
+    RecommendationRelatedAnomalyResource& WithType(TypeT&& value) { SetType(std::forward<TypeT>(value)); return *this;}
     ///@}
   private:
 

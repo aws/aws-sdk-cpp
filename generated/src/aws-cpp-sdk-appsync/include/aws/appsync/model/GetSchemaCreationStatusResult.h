@@ -28,7 +28,7 @@ namespace Model
   class GetSchemaCreationStatusResult
   {
   public:
-    AWS_APPSYNC_API GetSchemaCreationStatusResult();
+    AWS_APPSYNC_API GetSchemaCreationStatusResult() = default;
     AWS_APPSYNC_API GetSchemaCreationStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPSYNC_API GetSchemaCreationStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,43 +38,40 @@ namespace Model
      * <p>The current state of the schema (PROCESSING, FAILED, SUCCESS, or
      * NOT_APPLICABLE). When the schema is in the ACTIVE state, you can add data.</p>
      */
-    inline const SchemaStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const SchemaStatus& value) { m_status = value; }
-    inline void SetStatus(SchemaStatus&& value) { m_status = std::move(value); }
-    inline GetSchemaCreationStatusResult& WithStatus(const SchemaStatus& value) { SetStatus(value); return *this;}
-    inline GetSchemaCreationStatusResult& WithStatus(SchemaStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline SchemaStatus GetStatus() const { return m_status; }
+    inline void SetStatus(SchemaStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetSchemaCreationStatusResult& WithStatus(SchemaStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Detailed information about the status of the schema creation operation.</p>
      */
-    inline const Aws::String& GetDetails() const{ return m_details; }
-    inline void SetDetails(const Aws::String& value) { m_details = value; }
-    inline void SetDetails(Aws::String&& value) { m_details = std::move(value); }
-    inline void SetDetails(const char* value) { m_details.assign(value); }
-    inline GetSchemaCreationStatusResult& WithDetails(const Aws::String& value) { SetDetails(value); return *this;}
-    inline GetSchemaCreationStatusResult& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
-    inline GetSchemaCreationStatusResult& WithDetails(const char* value) { SetDetails(value); return *this;}
+    inline const Aws::String& GetDetails() const { return m_details; }
+    template<typename DetailsT = Aws::String>
+    void SetDetails(DetailsT&& value) { m_detailsHasBeenSet = true; m_details = std::forward<DetailsT>(value); }
+    template<typename DetailsT = Aws::String>
+    GetSchemaCreationStatusResult& WithDetails(DetailsT&& value) { SetDetails(std::forward<DetailsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetSchemaCreationStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetSchemaCreationStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetSchemaCreationStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetSchemaCreationStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    SchemaStatus m_status;
+    SchemaStatus m_status{SchemaStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_details;
+    bool m_detailsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

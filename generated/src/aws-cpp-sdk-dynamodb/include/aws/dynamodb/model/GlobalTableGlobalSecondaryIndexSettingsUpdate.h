@@ -33,7 +33,7 @@ namespace Model
   class GlobalTableGlobalSecondaryIndexSettingsUpdate
   {
   public:
-    AWS_DYNAMODB_API GlobalTableGlobalSecondaryIndexSettingsUpdate();
+    AWS_DYNAMODB_API GlobalTableGlobalSecondaryIndexSettingsUpdate() = default;
     AWS_DYNAMODB_API GlobalTableGlobalSecondaryIndexSettingsUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API GlobalTableGlobalSecondaryIndexSettingsUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The name of the global secondary index. The name must be unique among all
      * other indexes on this table.</p>
      */
-    inline const Aws::String& GetIndexName() const{ return m_indexName; }
+    inline const Aws::String& GetIndexName() const { return m_indexName; }
     inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
-    inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
-    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
-    inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
-    inline GlobalTableGlobalSecondaryIndexSettingsUpdate& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-    inline GlobalTableGlobalSecondaryIndexSettingsUpdate& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-    inline GlobalTableGlobalSecondaryIndexSettingsUpdate& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+    template<typename IndexNameT = Aws::String>
+    void SetIndexName(IndexNameT&& value) { m_indexNameHasBeenSet = true; m_indexName = std::forward<IndexNameT>(value); }
+    template<typename IndexNameT = Aws::String>
+    GlobalTableGlobalSecondaryIndexSettingsUpdate& WithIndexName(IndexNameT&& value) { SetIndexName(std::forward<IndexNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * <p>The maximum number of writes consumed per second before DynamoDB returns a
      * <code>ThrottlingException.</code> </p>
      */
-    inline long long GetProvisionedWriteCapacityUnits() const{ return m_provisionedWriteCapacityUnits; }
+    inline long long GetProvisionedWriteCapacityUnits() const { return m_provisionedWriteCapacityUnits; }
     inline bool ProvisionedWriteCapacityUnitsHasBeenSet() const { return m_provisionedWriteCapacityUnitsHasBeenSet; }
     inline void SetProvisionedWriteCapacityUnits(long long value) { m_provisionedWriteCapacityUnitsHasBeenSet = true; m_provisionedWriteCapacityUnits = value; }
     inline GlobalTableGlobalSecondaryIndexSettingsUpdate& WithProvisionedWriteCapacityUnits(long long value) { SetProvisionedWriteCapacityUnits(value); return *this;}
@@ -70,19 +68,19 @@ namespace Model
      * <p>Auto scaling settings for managing a global secondary index's write capacity
      * units.</p>
      */
-    inline const AutoScalingSettingsUpdate& GetProvisionedWriteCapacityAutoScalingSettingsUpdate() const{ return m_provisionedWriteCapacityAutoScalingSettingsUpdate; }
+    inline const AutoScalingSettingsUpdate& GetProvisionedWriteCapacityAutoScalingSettingsUpdate() const { return m_provisionedWriteCapacityAutoScalingSettingsUpdate; }
     inline bool ProvisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet() const { return m_provisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet; }
-    inline void SetProvisionedWriteCapacityAutoScalingSettingsUpdate(const AutoScalingSettingsUpdate& value) { m_provisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet = true; m_provisionedWriteCapacityAutoScalingSettingsUpdate = value; }
-    inline void SetProvisionedWriteCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdate&& value) { m_provisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet = true; m_provisionedWriteCapacityAutoScalingSettingsUpdate = std::move(value); }
-    inline GlobalTableGlobalSecondaryIndexSettingsUpdate& WithProvisionedWriteCapacityAutoScalingSettingsUpdate(const AutoScalingSettingsUpdate& value) { SetProvisionedWriteCapacityAutoScalingSettingsUpdate(value); return *this;}
-    inline GlobalTableGlobalSecondaryIndexSettingsUpdate& WithProvisionedWriteCapacityAutoScalingSettingsUpdate(AutoScalingSettingsUpdate&& value) { SetProvisionedWriteCapacityAutoScalingSettingsUpdate(std::move(value)); return *this;}
+    template<typename ProvisionedWriteCapacityAutoScalingSettingsUpdateT = AutoScalingSettingsUpdate>
+    void SetProvisionedWriteCapacityAutoScalingSettingsUpdate(ProvisionedWriteCapacityAutoScalingSettingsUpdateT&& value) { m_provisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet = true; m_provisionedWriteCapacityAutoScalingSettingsUpdate = std::forward<ProvisionedWriteCapacityAutoScalingSettingsUpdateT>(value); }
+    template<typename ProvisionedWriteCapacityAutoScalingSettingsUpdateT = AutoScalingSettingsUpdate>
+    GlobalTableGlobalSecondaryIndexSettingsUpdate& WithProvisionedWriteCapacityAutoScalingSettingsUpdate(ProvisionedWriteCapacityAutoScalingSettingsUpdateT&& value) { SetProvisionedWriteCapacityAutoScalingSettingsUpdate(std::forward<ProvisionedWriteCapacityAutoScalingSettingsUpdateT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_indexName;
     bool m_indexNameHasBeenSet = false;
 
-    long long m_provisionedWriteCapacityUnits;
+    long long m_provisionedWriteCapacityUnits{0};
     bool m_provisionedWriteCapacityUnitsHasBeenSet = false;
 
     AutoScalingSettingsUpdate m_provisionedWriteCapacityAutoScalingSettingsUpdate;

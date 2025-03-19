@@ -12,11 +12,6 @@ using namespace Aws::OpsWorks::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterInstanceRequest::DeregisterInstanceRequest() : 
-    m_instanceIdHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterInstanceRequest::SerializePayload() const
 {
   JsonValue payload;

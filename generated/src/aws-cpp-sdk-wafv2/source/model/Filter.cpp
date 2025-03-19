@@ -18,17 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-Filter::Filter() : 
-    m_behavior(FilterBehavior::NOT_SET),
-    m_behaviorHasBeenSet(false),
-    m_requirement(FilterRequirement::NOT_SET),
-    m_requirementHasBeenSet(false),
-    m_conditionsHasBeenSet(false)
-{
-}
-
 Filter::Filter(JsonView jsonValue)
-  : Filter()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ Filter& Filter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Behavior"))
   {
     m_behavior = FilterBehaviorMapper::GetFilterBehaviorForName(jsonValue.GetString("Behavior"));
-
     m_behaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Requirement"))
   {
     m_requirement = FilterRequirementMapper::GetFilterRequirementForName(jsonValue.GetString("Requirement"));
-
     m_requirementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Conditions"))
   {
     Aws::Utils::Array<JsonView> conditionsJsonList = jsonValue.GetArray("Conditions");
@@ -58,7 +44,6 @@ Filter& Filter::operator =(JsonView jsonValue)
     }
     m_conditionsHasBeenSet = true;
   }
-
   return *this;
 }
 

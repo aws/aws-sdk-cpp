@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeActiveReceiptRuleSetResult::DescribeActiveReceiptRuleSetResult()
-{
-}
-
 DescribeActiveReceiptRuleSetResult::DescribeActiveReceiptRuleSetResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeActiveReceiptRuleSetResult& DescribeActiveReceiptRuleSetResult::operator
     if(!metadataNode.IsNull())
     {
       m_metadata = metadataNode;
+      m_metadataHasBeenSet = true;
     }
     XmlNode rulesNode = resultNode.FirstChild("Rules");
     if(!rulesNode.IsNull())
     {
       XmlNode rulesMember = rulesNode.FirstChild("member");
+      m_rulesHasBeenSet = !rulesMember.IsNull();
       while(!rulesMember.IsNull())
       {
         m_rules.push_back(rulesMember);
         rulesMember = rulesMember.NextNode("member");
       }
 
+      m_rulesHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::SES::Model::DescribeActiveReceiptRuleSetResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

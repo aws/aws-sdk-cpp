@@ -36,7 +36,7 @@ namespace Model
   class AwsEc2NetworkInterfaceDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsEc2NetworkInterfaceDetails();
+    AWS_SECURITYHUB_API AwsEc2NetworkInterfaceDetails() = default;
     AWS_SECURITYHUB_API AwsEc2NetworkInterfaceDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsEc2NetworkInterfaceDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,47 +46,45 @@ namespace Model
     /**
      * <p>The network interface attachment.</p>
      */
-    inline const AwsEc2NetworkInterfaceAttachment& GetAttachment() const{ return m_attachment; }
+    inline const AwsEc2NetworkInterfaceAttachment& GetAttachment() const { return m_attachment; }
     inline bool AttachmentHasBeenSet() const { return m_attachmentHasBeenSet; }
-    inline void SetAttachment(const AwsEc2NetworkInterfaceAttachment& value) { m_attachmentHasBeenSet = true; m_attachment = value; }
-    inline void SetAttachment(AwsEc2NetworkInterfaceAttachment&& value) { m_attachmentHasBeenSet = true; m_attachment = std::move(value); }
-    inline AwsEc2NetworkInterfaceDetails& WithAttachment(const AwsEc2NetworkInterfaceAttachment& value) { SetAttachment(value); return *this;}
-    inline AwsEc2NetworkInterfaceDetails& WithAttachment(AwsEc2NetworkInterfaceAttachment&& value) { SetAttachment(std::move(value)); return *this;}
+    template<typename AttachmentT = AwsEc2NetworkInterfaceAttachment>
+    void SetAttachment(AttachmentT&& value) { m_attachmentHasBeenSet = true; m_attachment = std::forward<AttachmentT>(value); }
+    template<typename AttachmentT = AwsEc2NetworkInterfaceAttachment>
+    AwsEc2NetworkInterfaceDetails& WithAttachment(AttachmentT&& value) { SetAttachment(std::forward<AttachmentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the network interface.</p>
      */
-    inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+    inline const Aws::String& GetNetworkInterfaceId() const { return m_networkInterfaceId; }
     inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
-    inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
-    inline void SetNetworkInterfaceId(Aws::String&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::move(value); }
-    inline void SetNetworkInterfaceId(const char* value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId.assign(value); }
-    inline AwsEc2NetworkInterfaceDetails& WithNetworkInterfaceId(const Aws::String& value) { SetNetworkInterfaceId(value); return *this;}
-    inline AwsEc2NetworkInterfaceDetails& WithNetworkInterfaceId(Aws::String&& value) { SetNetworkInterfaceId(std::move(value)); return *this;}
-    inline AwsEc2NetworkInterfaceDetails& WithNetworkInterfaceId(const char* value) { SetNetworkInterfaceId(value); return *this;}
+    template<typename NetworkInterfaceIdT = Aws::String>
+    void SetNetworkInterfaceId(NetworkInterfaceIdT&& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = std::forward<NetworkInterfaceIdT>(value); }
+    template<typename NetworkInterfaceIdT = Aws::String>
+    AwsEc2NetworkInterfaceDetails& WithNetworkInterfaceId(NetworkInterfaceIdT&& value) { SetNetworkInterfaceId(std::forward<NetworkInterfaceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Security groups for the network interface.</p>
      */
-    inline const Aws::Vector<AwsEc2NetworkInterfaceSecurityGroup>& GetSecurityGroups() const{ return m_securityGroups; }
+    inline const Aws::Vector<AwsEc2NetworkInterfaceSecurityGroup>& GetSecurityGroups() const { return m_securityGroups; }
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
-    inline void SetSecurityGroups(const Aws::Vector<AwsEc2NetworkInterfaceSecurityGroup>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
-    inline void SetSecurityGroups(Aws::Vector<AwsEc2NetworkInterfaceSecurityGroup>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
-    inline AwsEc2NetworkInterfaceDetails& WithSecurityGroups(const Aws::Vector<AwsEc2NetworkInterfaceSecurityGroup>& value) { SetSecurityGroups(value); return *this;}
-    inline AwsEc2NetworkInterfaceDetails& WithSecurityGroups(Aws::Vector<AwsEc2NetworkInterfaceSecurityGroup>&& value) { SetSecurityGroups(std::move(value)); return *this;}
-    inline AwsEc2NetworkInterfaceDetails& AddSecurityGroups(const AwsEc2NetworkInterfaceSecurityGroup& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
-    inline AwsEc2NetworkInterfaceDetails& AddSecurityGroups(AwsEc2NetworkInterfaceSecurityGroup&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
+    template<typename SecurityGroupsT = Aws::Vector<AwsEc2NetworkInterfaceSecurityGroup>>
+    void SetSecurityGroups(SecurityGroupsT&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::forward<SecurityGroupsT>(value); }
+    template<typename SecurityGroupsT = Aws::Vector<AwsEc2NetworkInterfaceSecurityGroup>>
+    AwsEc2NetworkInterfaceDetails& WithSecurityGroups(SecurityGroupsT&& value) { SetSecurityGroups(std::forward<SecurityGroupsT>(value)); return *this;}
+    template<typename SecurityGroupsT = AwsEc2NetworkInterfaceSecurityGroup>
+    AwsEc2NetworkInterfaceDetails& AddSecurityGroups(SecurityGroupsT&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.emplace_back(std::forward<SecurityGroupsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether traffic to or from the instance is validated.</p>
      */
-    inline bool GetSourceDestCheck() const{ return m_sourceDestCheck; }
+    inline bool GetSourceDestCheck() const { return m_sourceDestCheck; }
     inline bool SourceDestCheckHasBeenSet() const { return m_sourceDestCheckHasBeenSet; }
     inline void SetSourceDestCheck(bool value) { m_sourceDestCheckHasBeenSet = true; m_sourceDestCheck = value; }
     inline AwsEc2NetworkInterfaceDetails& WithSourceDestCheck(bool value) { SetSourceDestCheck(value); return *this;}
@@ -96,56 +94,52 @@ namespace Model
     /**
      * <p>The IPv6 addresses associated with the network interface.</p>
      */
-    inline const Aws::Vector<AwsEc2NetworkInterfaceIpV6AddressDetail>& GetIpV6Addresses() const{ return m_ipV6Addresses; }
+    inline const Aws::Vector<AwsEc2NetworkInterfaceIpV6AddressDetail>& GetIpV6Addresses() const { return m_ipV6Addresses; }
     inline bool IpV6AddressesHasBeenSet() const { return m_ipV6AddressesHasBeenSet; }
-    inline void SetIpV6Addresses(const Aws::Vector<AwsEc2NetworkInterfaceIpV6AddressDetail>& value) { m_ipV6AddressesHasBeenSet = true; m_ipV6Addresses = value; }
-    inline void SetIpV6Addresses(Aws::Vector<AwsEc2NetworkInterfaceIpV6AddressDetail>&& value) { m_ipV6AddressesHasBeenSet = true; m_ipV6Addresses = std::move(value); }
-    inline AwsEc2NetworkInterfaceDetails& WithIpV6Addresses(const Aws::Vector<AwsEc2NetworkInterfaceIpV6AddressDetail>& value) { SetIpV6Addresses(value); return *this;}
-    inline AwsEc2NetworkInterfaceDetails& WithIpV6Addresses(Aws::Vector<AwsEc2NetworkInterfaceIpV6AddressDetail>&& value) { SetIpV6Addresses(std::move(value)); return *this;}
-    inline AwsEc2NetworkInterfaceDetails& AddIpV6Addresses(const AwsEc2NetworkInterfaceIpV6AddressDetail& value) { m_ipV6AddressesHasBeenSet = true; m_ipV6Addresses.push_back(value); return *this; }
-    inline AwsEc2NetworkInterfaceDetails& AddIpV6Addresses(AwsEc2NetworkInterfaceIpV6AddressDetail&& value) { m_ipV6AddressesHasBeenSet = true; m_ipV6Addresses.push_back(std::move(value)); return *this; }
+    template<typename IpV6AddressesT = Aws::Vector<AwsEc2NetworkInterfaceIpV6AddressDetail>>
+    void SetIpV6Addresses(IpV6AddressesT&& value) { m_ipV6AddressesHasBeenSet = true; m_ipV6Addresses = std::forward<IpV6AddressesT>(value); }
+    template<typename IpV6AddressesT = Aws::Vector<AwsEc2NetworkInterfaceIpV6AddressDetail>>
+    AwsEc2NetworkInterfaceDetails& WithIpV6Addresses(IpV6AddressesT&& value) { SetIpV6Addresses(std::forward<IpV6AddressesT>(value)); return *this;}
+    template<typename IpV6AddressesT = AwsEc2NetworkInterfaceIpV6AddressDetail>
+    AwsEc2NetworkInterfaceDetails& AddIpV6Addresses(IpV6AddressesT&& value) { m_ipV6AddressesHasBeenSet = true; m_ipV6Addresses.emplace_back(std::forward<IpV6AddressesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The private IPv4 addresses associated with the network interface.</p>
      */
-    inline const Aws::Vector<AwsEc2NetworkInterfacePrivateIpAddressDetail>& GetPrivateIpAddresses() const{ return m_privateIpAddresses; }
+    inline const Aws::Vector<AwsEc2NetworkInterfacePrivateIpAddressDetail>& GetPrivateIpAddresses() const { return m_privateIpAddresses; }
     inline bool PrivateIpAddressesHasBeenSet() const { return m_privateIpAddressesHasBeenSet; }
-    inline void SetPrivateIpAddresses(const Aws::Vector<AwsEc2NetworkInterfacePrivateIpAddressDetail>& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = value; }
-    inline void SetPrivateIpAddresses(Aws::Vector<AwsEc2NetworkInterfacePrivateIpAddressDetail>&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = std::move(value); }
-    inline AwsEc2NetworkInterfaceDetails& WithPrivateIpAddresses(const Aws::Vector<AwsEc2NetworkInterfacePrivateIpAddressDetail>& value) { SetPrivateIpAddresses(value); return *this;}
-    inline AwsEc2NetworkInterfaceDetails& WithPrivateIpAddresses(Aws::Vector<AwsEc2NetworkInterfacePrivateIpAddressDetail>&& value) { SetPrivateIpAddresses(std::move(value)); return *this;}
-    inline AwsEc2NetworkInterfaceDetails& AddPrivateIpAddresses(const AwsEc2NetworkInterfacePrivateIpAddressDetail& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(value); return *this; }
-    inline AwsEc2NetworkInterfaceDetails& AddPrivateIpAddresses(AwsEc2NetworkInterfacePrivateIpAddressDetail&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.push_back(std::move(value)); return *this; }
+    template<typename PrivateIpAddressesT = Aws::Vector<AwsEc2NetworkInterfacePrivateIpAddressDetail>>
+    void SetPrivateIpAddresses(PrivateIpAddressesT&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses = std::forward<PrivateIpAddressesT>(value); }
+    template<typename PrivateIpAddressesT = Aws::Vector<AwsEc2NetworkInterfacePrivateIpAddressDetail>>
+    AwsEc2NetworkInterfaceDetails& WithPrivateIpAddresses(PrivateIpAddressesT&& value) { SetPrivateIpAddresses(std::forward<PrivateIpAddressesT>(value)); return *this;}
+    template<typename PrivateIpAddressesT = AwsEc2NetworkInterfacePrivateIpAddressDetail>
+    AwsEc2NetworkInterfaceDetails& AddPrivateIpAddresses(PrivateIpAddressesT&& value) { m_privateIpAddressesHasBeenSet = true; m_privateIpAddresses.emplace_back(std::forward<PrivateIpAddressesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The public DNS name of the network interface.</p>
      */
-    inline const Aws::String& GetPublicDnsName() const{ return m_publicDnsName; }
+    inline const Aws::String& GetPublicDnsName() const { return m_publicDnsName; }
     inline bool PublicDnsNameHasBeenSet() const { return m_publicDnsNameHasBeenSet; }
-    inline void SetPublicDnsName(const Aws::String& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = value; }
-    inline void SetPublicDnsName(Aws::String&& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = std::move(value); }
-    inline void SetPublicDnsName(const char* value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName.assign(value); }
-    inline AwsEc2NetworkInterfaceDetails& WithPublicDnsName(const Aws::String& value) { SetPublicDnsName(value); return *this;}
-    inline AwsEc2NetworkInterfaceDetails& WithPublicDnsName(Aws::String&& value) { SetPublicDnsName(std::move(value)); return *this;}
-    inline AwsEc2NetworkInterfaceDetails& WithPublicDnsName(const char* value) { SetPublicDnsName(value); return *this;}
+    template<typename PublicDnsNameT = Aws::String>
+    void SetPublicDnsName(PublicDnsNameT&& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = std::forward<PublicDnsNameT>(value); }
+    template<typename PublicDnsNameT = Aws::String>
+    AwsEc2NetworkInterfaceDetails& WithPublicDnsName(PublicDnsNameT&& value) { SetPublicDnsName(std::forward<PublicDnsNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The address of the Elastic IP address bound to the network interface.</p>
      */
-    inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
+    inline const Aws::String& GetPublicIp() const { return m_publicIp; }
     inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
-    inline void SetPublicIp(const Aws::String& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
-    inline void SetPublicIp(Aws::String&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::move(value); }
-    inline void SetPublicIp(const char* value) { m_publicIpHasBeenSet = true; m_publicIp.assign(value); }
-    inline AwsEc2NetworkInterfaceDetails& WithPublicIp(const Aws::String& value) { SetPublicIp(value); return *this;}
-    inline AwsEc2NetworkInterfaceDetails& WithPublicIp(Aws::String&& value) { SetPublicIp(std::move(value)); return *this;}
-    inline AwsEc2NetworkInterfaceDetails& WithPublicIp(const char* value) { SetPublicIp(value); return *this;}
+    template<typename PublicIpT = Aws::String>
+    void SetPublicIp(PublicIpT&& value) { m_publicIpHasBeenSet = true; m_publicIp = std::forward<PublicIpT>(value); }
+    template<typename PublicIpT = Aws::String>
+    AwsEc2NetworkInterfaceDetails& WithPublicIp(PublicIpT&& value) { SetPublicIp(std::forward<PublicIpT>(value)); return *this;}
     ///@}
   private:
 
@@ -158,7 +152,7 @@ namespace Model
     Aws::Vector<AwsEc2NetworkInterfaceSecurityGroup> m_securityGroups;
     bool m_securityGroupsHasBeenSet = false;
 
-    bool m_sourceDestCheck;
+    bool m_sourceDestCheck{false};
     bool m_sourceDestCheckHasBeenSet = false;
 
     Aws::Vector<AwsEc2NetworkInterfaceIpV6AddressDetail> m_ipV6Addresses;

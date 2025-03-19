@@ -18,14 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-AuthenticationFailedException::AuthenticationFailedException() : 
-    m_messageHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 AuthenticationFailedException::AuthenticationFailedException(JsonView jsonValue)
-  : AuthenticationFailedException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AuthenticationFailedException& AuthenticationFailedException::operator =(JsonVie
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestId"))
   {
     m_requestId = jsonValue.GetString("RequestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   return *this;
 }
 

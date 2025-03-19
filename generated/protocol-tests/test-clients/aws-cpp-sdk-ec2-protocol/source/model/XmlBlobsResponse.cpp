@@ -18,10 +18,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-XmlBlobsResponse::XmlBlobsResponse()
-{
-}
-
 XmlBlobsResponse::XmlBlobsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -43,6 +39,7 @@ XmlBlobsResponse& XmlBlobsResponse::operator =(const Aws::AmazonWebServiceResult
     if(!dataNode.IsNull())
     {
       m_data = HashingUtils::Base64Decode(Aws::Utils::Xml::DecodeEscapedXmlText(dataNode.GetText()));
+      m_dataHasBeenSet = true;
     }
   }
 
@@ -51,6 +48,7 @@ XmlBlobsResponse& XmlBlobsResponse::operator =(const Aws::AmazonWebServiceResult
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2Protocol::Model::XmlBlobsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

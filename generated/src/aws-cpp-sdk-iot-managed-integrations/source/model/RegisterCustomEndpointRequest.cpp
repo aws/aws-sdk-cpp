@@ -12,10 +12,6 @@ using namespace Aws::IoTManagedIntegrations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RegisterCustomEndpointRequest::RegisterCustomEndpointRequest()
-{
-}
-
 Aws::String RegisterCustomEndpointRequest::SerializePayload() const
 {
   return {};

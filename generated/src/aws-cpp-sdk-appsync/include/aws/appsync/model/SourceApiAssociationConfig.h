@@ -32,7 +32,7 @@ namespace Model
   class SourceApiAssociationConfig
   {
   public:
-    AWS_APPSYNC_API SourceApiAssociationConfig();
+    AWS_APPSYNC_API SourceApiAssociationConfig() = default;
     AWS_APPSYNC_API SourceApiAssociationConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API SourceApiAssociationConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,16 +49,14 @@ namespace Model
      * merges use <code>MergedApiExecutionRoleArn</code> to perform merge
      * operations.</p>
      */
-    inline const MergeType& GetMergeType() const{ return m_mergeType; }
+    inline MergeType GetMergeType() const { return m_mergeType; }
     inline bool MergeTypeHasBeenSet() const { return m_mergeTypeHasBeenSet; }
-    inline void SetMergeType(const MergeType& value) { m_mergeTypeHasBeenSet = true; m_mergeType = value; }
-    inline void SetMergeType(MergeType&& value) { m_mergeTypeHasBeenSet = true; m_mergeType = std::move(value); }
-    inline SourceApiAssociationConfig& WithMergeType(const MergeType& value) { SetMergeType(value); return *this;}
-    inline SourceApiAssociationConfig& WithMergeType(MergeType&& value) { SetMergeType(std::move(value)); return *this;}
+    inline void SetMergeType(MergeType value) { m_mergeTypeHasBeenSet = true; m_mergeType = value; }
+    inline SourceApiAssociationConfig& WithMergeType(MergeType value) { SetMergeType(value); return *this;}
     ///@}
   private:
 
-    MergeType m_mergeType;
+    MergeType m_mergeType{MergeType::NOT_SET};
     bool m_mergeTypeHasBeenSet = false;
   };
 

@@ -18,33 +18,7 @@ namespace LicenseManager
 namespace Model
 {
 
-LicenseConfiguration::LicenseConfiguration() : 
-    m_licenseConfigurationIdHasBeenSet(false),
-    m_licenseConfigurationArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_licenseCountingType(LicenseCountingType::NOT_SET),
-    m_licenseCountingTypeHasBeenSet(false),
-    m_licenseRulesHasBeenSet(false),
-    m_licenseCount(0),
-    m_licenseCountHasBeenSet(false),
-    m_licenseCountHardLimit(false),
-    m_licenseCountHardLimitHasBeenSet(false),
-    m_disassociateWhenNotFound(false),
-    m_disassociateWhenNotFoundHasBeenSet(false),
-    m_consumedLicenses(0),
-    m_consumedLicensesHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_ownerAccountIdHasBeenSet(false),
-    m_consumedLicenseSummaryListHasBeenSet(false),
-    m_managedResourceSummaryListHasBeenSet(false),
-    m_productInformationListHasBeenSet(false),
-    m_automatedDiscoveryInformationHasBeenSet(false)
-{
-}
-
 LicenseConfiguration::LicenseConfiguration(JsonView jsonValue)
-  : LicenseConfiguration()
 {
   *this = jsonValue;
 }
@@ -54,38 +28,28 @@ LicenseConfiguration& LicenseConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LicenseConfigurationId"))
   {
     m_licenseConfigurationId = jsonValue.GetString("LicenseConfigurationId");
-
     m_licenseConfigurationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseConfigurationArn"))
   {
     m_licenseConfigurationArn = jsonValue.GetString("LicenseConfigurationArn");
-
     m_licenseConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseCountingType"))
   {
     m_licenseCountingType = LicenseCountingTypeMapper::GetLicenseCountingTypeForName(jsonValue.GetString("LicenseCountingType"));
-
     m_licenseCountingTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseRules"))
   {
     Aws::Utils::Array<JsonView> licenseRulesJsonList = jsonValue.GetArray("LicenseRules");
@@ -95,49 +59,36 @@ LicenseConfiguration& LicenseConfiguration::operator =(JsonView jsonValue)
     }
     m_licenseRulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseCount"))
   {
     m_licenseCount = jsonValue.GetInt64("LicenseCount");
-
     m_licenseCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseCountHardLimit"))
   {
     m_licenseCountHardLimit = jsonValue.GetBool("LicenseCountHardLimit");
-
     m_licenseCountHardLimitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisassociateWhenNotFound"))
   {
     m_disassociateWhenNotFound = jsonValue.GetBool("DisassociateWhenNotFound");
-
     m_disassociateWhenNotFoundHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConsumedLicenses"))
   {
     m_consumedLicenses = jsonValue.GetInt64("ConsumedLicenses");
-
     m_consumedLicensesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerAccountId"))
   {
     m_ownerAccountId = jsonValue.GetString("OwnerAccountId");
-
     m_ownerAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConsumedLicenseSummaryList"))
   {
     Aws::Utils::Array<JsonView> consumedLicenseSummaryListJsonList = jsonValue.GetArray("ConsumedLicenseSummaryList");
@@ -147,7 +98,6 @@ LicenseConfiguration& LicenseConfiguration::operator =(JsonView jsonValue)
     }
     m_consumedLicenseSummaryListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManagedResourceSummaryList"))
   {
     Aws::Utils::Array<JsonView> managedResourceSummaryListJsonList = jsonValue.GetArray("ManagedResourceSummaryList");
@@ -157,7 +107,6 @@ LicenseConfiguration& LicenseConfiguration::operator =(JsonView jsonValue)
     }
     m_managedResourceSummaryListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductInformationList"))
   {
     Aws::Utils::Array<JsonView> productInformationListJsonList = jsonValue.GetArray("ProductInformationList");
@@ -167,14 +116,11 @@ LicenseConfiguration& LicenseConfiguration::operator =(JsonView jsonValue)
     }
     m_productInformationListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutomatedDiscoveryInformation"))
   {
     m_automatedDiscoveryInformation = jsonValue.GetObject("AutomatedDiscoveryInformation");
-
     m_automatedDiscoveryInformationHasBeenSet = true;
   }
-
   return *this;
 }
 

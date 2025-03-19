@@ -12,14 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateScriptRequest::CreateScriptRequest() : 
-    m_dagNodesHasBeenSet(false),
-    m_dagEdgesHasBeenSet(false),
-    m_language(Language::NOT_SET),
-    m_languageHasBeenSet(false)
-{
-}
-
 Aws::String CreateScriptRequest::SerializePayload() const
 {
   JsonValue payload;

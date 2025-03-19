@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdatePackageGroupRequest::UpdatePackageGroupRequest() : 
-    m_domainHasBeenSet(false),
-    m_domainOwnerHasBeenSet(false),
-    m_packageGroupHasBeenSet(false),
-    m_contactInfoHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdatePackageGroupRequest::SerializePayload() const
 {
   JsonValue payload;

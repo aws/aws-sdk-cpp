@@ -33,7 +33,7 @@ namespace Model
   class DocumentDBEventSourceConfig
   {
   public:
-    AWS_LAMBDA_API DocumentDBEventSourceConfig();
+    AWS_LAMBDA_API DocumentDBEventSourceConfig() = default;
     AWS_LAMBDA_API DocumentDBEventSourceConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API DocumentDBEventSourceConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LAMBDA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p> The name of the database to consume within the DocumentDB cluster. </p>
      */
-    inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+    inline const Aws::String& GetDatabaseName() const { return m_databaseName; }
     inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
-    inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
-    inline void SetDatabaseName(Aws::String&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::move(value); }
-    inline void SetDatabaseName(const char* value) { m_databaseNameHasBeenSet = true; m_databaseName.assign(value); }
-    inline DocumentDBEventSourceConfig& WithDatabaseName(const Aws::String& value) { SetDatabaseName(value); return *this;}
-    inline DocumentDBEventSourceConfig& WithDatabaseName(Aws::String&& value) { SetDatabaseName(std::move(value)); return *this;}
-    inline DocumentDBEventSourceConfig& WithDatabaseName(const char* value) { SetDatabaseName(value); return *this;}
+    template<typename DatabaseNameT = Aws::String>
+    void SetDatabaseName(DatabaseNameT&& value) { m_databaseNameHasBeenSet = true; m_databaseName = std::forward<DatabaseNameT>(value); }
+    template<typename DatabaseNameT = Aws::String>
+    DocumentDBEventSourceConfig& WithDatabaseName(DatabaseNameT&& value) { SetDatabaseName(std::forward<DatabaseNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p> The name of the collection to consume within the database. If you do not
      * specify a collection, Lambda consumes all collections. </p>
      */
-    inline const Aws::String& GetCollectionName() const{ return m_collectionName; }
+    inline const Aws::String& GetCollectionName() const { return m_collectionName; }
     inline bool CollectionNameHasBeenSet() const { return m_collectionNameHasBeenSet; }
-    inline void SetCollectionName(const Aws::String& value) { m_collectionNameHasBeenSet = true; m_collectionName = value; }
-    inline void SetCollectionName(Aws::String&& value) { m_collectionNameHasBeenSet = true; m_collectionName = std::move(value); }
-    inline void SetCollectionName(const char* value) { m_collectionNameHasBeenSet = true; m_collectionName.assign(value); }
-    inline DocumentDBEventSourceConfig& WithCollectionName(const Aws::String& value) { SetCollectionName(value); return *this;}
-    inline DocumentDBEventSourceConfig& WithCollectionName(Aws::String&& value) { SetCollectionName(std::move(value)); return *this;}
-    inline DocumentDBEventSourceConfig& WithCollectionName(const char* value) { SetCollectionName(value); return *this;}
+    template<typename CollectionNameT = Aws::String>
+    void SetCollectionName(CollectionNameT&& value) { m_collectionNameHasBeenSet = true; m_collectionName = std::forward<CollectionNameT>(value); }
+    template<typename CollectionNameT = Aws::String>
+    DocumentDBEventSourceConfig& WithCollectionName(CollectionNameT&& value) { SetCollectionName(std::forward<CollectionNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +71,10 @@ namespace Model
      * changes, along with a copy of the entire document. Otherwise, DocumentDB sends
      * only a partial document that contains the changes. </p>
      */
-    inline const FullDocument& GetFullDocument() const{ return m_fullDocument; }
+    inline FullDocument GetFullDocument() const { return m_fullDocument; }
     inline bool FullDocumentHasBeenSet() const { return m_fullDocumentHasBeenSet; }
-    inline void SetFullDocument(const FullDocument& value) { m_fullDocumentHasBeenSet = true; m_fullDocument = value; }
-    inline void SetFullDocument(FullDocument&& value) { m_fullDocumentHasBeenSet = true; m_fullDocument = std::move(value); }
-    inline DocumentDBEventSourceConfig& WithFullDocument(const FullDocument& value) { SetFullDocument(value); return *this;}
-    inline DocumentDBEventSourceConfig& WithFullDocument(FullDocument&& value) { SetFullDocument(std::move(value)); return *this;}
+    inline void SetFullDocument(FullDocument value) { m_fullDocumentHasBeenSet = true; m_fullDocument = value; }
+    inline DocumentDBEventSourceConfig& WithFullDocument(FullDocument value) { SetFullDocument(value); return *this;}
     ///@}
   private:
 
@@ -90,7 +84,7 @@ namespace Model
     Aws::String m_collectionName;
     bool m_collectionNameHasBeenSet = false;
 
-    FullDocument m_fullDocument;
+    FullDocument m_fullDocument{FullDocument::NOT_SET};
     bool m_fullDocumentHasBeenSet = false;
   };
 

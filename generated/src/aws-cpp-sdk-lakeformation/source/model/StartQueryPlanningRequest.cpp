@@ -12,12 +12,6 @@ using namespace Aws::LakeFormation::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartQueryPlanningRequest::StartQueryPlanningRequest() : 
-    m_queryPlanningContextHasBeenSet(false),
-    m_queryStringHasBeenSet(false)
-{
-}
-
 Aws::String StartQueryPlanningRequest::SerializePayload() const
 {
   JsonValue payload;

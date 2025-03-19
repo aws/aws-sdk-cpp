@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2LaunchTemplateDataIamInstanceProfileDetails::AwsEc2LaunchTemplateDataIamInstanceProfileDetails() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 AwsEc2LaunchTemplateDataIamInstanceProfileDetails::AwsEc2LaunchTemplateDataIamInstanceProfileDetails(JsonView jsonValue)
-  : AwsEc2LaunchTemplateDataIamInstanceProfileDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsEc2LaunchTemplateDataIamInstanceProfileDetails& AwsEc2LaunchTemplateDataIamIn
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

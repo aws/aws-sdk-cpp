@@ -45,7 +45,7 @@ namespace Model
   class FulfillmentActivity
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API FulfillmentActivity();
+    AWS_LEXMODELBUILDINGSERVICE_API FulfillmentActivity() = default;
     AWS_LEXMODELBUILDINGSERVICE_API FulfillmentActivity(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API FulfillmentActivity& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELBUILDINGSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,28 +56,26 @@ namespace Model
      * <p> How the intent should be fulfilled, either by running a Lambda function or
      * by returning the slot data to the client application. </p>
      */
-    inline const FulfillmentActivityType& GetType() const{ return m_type; }
+    inline FulfillmentActivityType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const FulfillmentActivityType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(FulfillmentActivityType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline FulfillmentActivity& WithType(const FulfillmentActivityType& value) { SetType(value); return *this;}
-    inline FulfillmentActivity& WithType(FulfillmentActivityType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(FulfillmentActivityType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline FulfillmentActivity& WithType(FulfillmentActivityType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A description of the Lambda function that is run to fulfill the intent. </p>
      */
-    inline const CodeHook& GetCodeHook() const{ return m_codeHook; }
+    inline const CodeHook& GetCodeHook() const { return m_codeHook; }
     inline bool CodeHookHasBeenSet() const { return m_codeHookHasBeenSet; }
-    inline void SetCodeHook(const CodeHook& value) { m_codeHookHasBeenSet = true; m_codeHook = value; }
-    inline void SetCodeHook(CodeHook&& value) { m_codeHookHasBeenSet = true; m_codeHook = std::move(value); }
-    inline FulfillmentActivity& WithCodeHook(const CodeHook& value) { SetCodeHook(value); return *this;}
-    inline FulfillmentActivity& WithCodeHook(CodeHook&& value) { SetCodeHook(std::move(value)); return *this;}
+    template<typename CodeHookT = CodeHook>
+    void SetCodeHook(CodeHookT&& value) { m_codeHookHasBeenSet = true; m_codeHook = std::forward<CodeHookT>(value); }
+    template<typename CodeHookT = CodeHook>
+    FulfillmentActivity& WithCodeHook(CodeHookT&& value) { SetCodeHook(std::forward<CodeHookT>(value)); return *this;}
     ///@}
   private:
 
-    FulfillmentActivityType m_type;
+    FulfillmentActivityType m_type{FulfillmentActivityType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     CodeHook m_codeHook;

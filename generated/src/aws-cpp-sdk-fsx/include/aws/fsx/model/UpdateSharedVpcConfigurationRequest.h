@@ -22,7 +22,7 @@ namespace Model
   class UpdateSharedVpcConfigurationRequest : public FSxRequest
   {
   public:
-    AWS_FSX_API UpdateSharedVpcConfigurationRequest();
+    AWS_FSX_API UpdateSharedVpcConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,26 +41,22 @@ namespace Model
      * systems in shared subnets. Set to <code>true</code> to enable or
      * <code>false</code> to disable.</p>
      */
-    inline const Aws::String& GetEnableFsxRouteTableUpdatesFromParticipantAccounts() const{ return m_enableFsxRouteTableUpdatesFromParticipantAccounts; }
+    inline const Aws::String& GetEnableFsxRouteTableUpdatesFromParticipantAccounts() const { return m_enableFsxRouteTableUpdatesFromParticipantAccounts; }
     inline bool EnableFsxRouteTableUpdatesFromParticipantAccountsHasBeenSet() const { return m_enableFsxRouteTableUpdatesFromParticipantAccountsHasBeenSet; }
-    inline void SetEnableFsxRouteTableUpdatesFromParticipantAccounts(const Aws::String& value) { m_enableFsxRouteTableUpdatesFromParticipantAccountsHasBeenSet = true; m_enableFsxRouteTableUpdatesFromParticipantAccounts = value; }
-    inline void SetEnableFsxRouteTableUpdatesFromParticipantAccounts(Aws::String&& value) { m_enableFsxRouteTableUpdatesFromParticipantAccountsHasBeenSet = true; m_enableFsxRouteTableUpdatesFromParticipantAccounts = std::move(value); }
-    inline void SetEnableFsxRouteTableUpdatesFromParticipantAccounts(const char* value) { m_enableFsxRouteTableUpdatesFromParticipantAccountsHasBeenSet = true; m_enableFsxRouteTableUpdatesFromParticipantAccounts.assign(value); }
-    inline UpdateSharedVpcConfigurationRequest& WithEnableFsxRouteTableUpdatesFromParticipantAccounts(const Aws::String& value) { SetEnableFsxRouteTableUpdatesFromParticipantAccounts(value); return *this;}
-    inline UpdateSharedVpcConfigurationRequest& WithEnableFsxRouteTableUpdatesFromParticipantAccounts(Aws::String&& value) { SetEnableFsxRouteTableUpdatesFromParticipantAccounts(std::move(value)); return *this;}
-    inline UpdateSharedVpcConfigurationRequest& WithEnableFsxRouteTableUpdatesFromParticipantAccounts(const char* value) { SetEnableFsxRouteTableUpdatesFromParticipantAccounts(value); return *this;}
+    template<typename EnableFsxRouteTableUpdatesFromParticipantAccountsT = Aws::String>
+    void SetEnableFsxRouteTableUpdatesFromParticipantAccounts(EnableFsxRouteTableUpdatesFromParticipantAccountsT&& value) { m_enableFsxRouteTableUpdatesFromParticipantAccountsHasBeenSet = true; m_enableFsxRouteTableUpdatesFromParticipantAccounts = std::forward<EnableFsxRouteTableUpdatesFromParticipantAccountsT>(value); }
+    template<typename EnableFsxRouteTableUpdatesFromParticipantAccountsT = Aws::String>
+    UpdateSharedVpcConfigurationRequest& WithEnableFsxRouteTableUpdatesFromParticipantAccounts(EnableFsxRouteTableUpdatesFromParticipantAccountsT&& value) { SetEnableFsxRouteTableUpdatesFromParticipantAccounts(std::forward<EnableFsxRouteTableUpdatesFromParticipantAccountsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline UpdateSharedVpcConfigurationRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline UpdateSharedVpcConfigurationRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline UpdateSharedVpcConfigurationRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    UpdateSharedVpcConfigurationRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
   private:
 

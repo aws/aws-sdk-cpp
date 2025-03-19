@@ -29,7 +29,7 @@ namespace Model
   class ListMapsResult
   {
   public:
-    AWS_LOCATIONSERVICE_API ListMapsResult();
+    AWS_LOCATIONSERVICE_API ListMapsResult() = default;
     AWS_LOCATIONSERVICE_API ListMapsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LOCATIONSERVICE_API ListMapsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Contains a list of maps in your Amazon Web Services account</p>
      */
-    inline const Aws::Vector<ListMapsResponseEntry>& GetEntries() const{ return m_entries; }
-    inline void SetEntries(const Aws::Vector<ListMapsResponseEntry>& value) { m_entries = value; }
-    inline void SetEntries(Aws::Vector<ListMapsResponseEntry>&& value) { m_entries = std::move(value); }
-    inline ListMapsResult& WithEntries(const Aws::Vector<ListMapsResponseEntry>& value) { SetEntries(value); return *this;}
-    inline ListMapsResult& WithEntries(Aws::Vector<ListMapsResponseEntry>&& value) { SetEntries(std::move(value)); return *this;}
-    inline ListMapsResult& AddEntries(const ListMapsResponseEntry& value) { m_entries.push_back(value); return *this; }
-    inline ListMapsResult& AddEntries(ListMapsResponseEntry&& value) { m_entries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ListMapsResponseEntry>& GetEntries() const { return m_entries; }
+    template<typename EntriesT = Aws::Vector<ListMapsResponseEntry>>
+    void SetEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries = std::forward<EntriesT>(value); }
+    template<typename EntriesT = Aws::Vector<ListMapsResponseEntry>>
+    ListMapsResult& WithEntries(EntriesT&& value) { SetEntries(std::forward<EntriesT>(value)); return *this;}
+    template<typename EntriesT = ListMapsResponseEntry>
+    ListMapsResult& AddEntries(EntriesT&& value) { m_entriesHasBeenSet = true; m_entries.emplace_back(std::forward<EntriesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>A pagination token indicating there are additional pages available. You can
      * use the token in a following request to fetch the next set of results. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListMapsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListMapsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListMapsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListMapsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListMapsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListMapsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListMapsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListMapsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ListMapsResponseEntry> m_entries;
+    bool m_entriesHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

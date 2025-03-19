@@ -18,14 +18,7 @@ namespace Lambda
 namespace Model
 {
 
-SnapStartNotReadyException::SnapStartNotReadyException() : 
-    m_typeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 SnapStartNotReadyException::SnapStartNotReadyException(JsonView jsonValue)
-  : SnapStartNotReadyException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SnapStartNotReadyException& SnapStartNotReadyException::operator =(JsonView json
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

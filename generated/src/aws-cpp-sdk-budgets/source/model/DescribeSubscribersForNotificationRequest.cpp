@@ -12,16 +12,6 @@ using namespace Aws::Budgets::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSubscribersForNotificationRequest::DescribeSubscribersForNotificationRequest() : 
-    m_accountIdHasBeenSet(false),
-    m_budgetNameHasBeenSet(false),
-    m_notificationHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSubscribersForNotificationRequest::SerializePayload() const
 {
   JsonValue payload;

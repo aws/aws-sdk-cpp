@@ -20,13 +20,7 @@ namespace SES
 namespace Model
 {
 
-FromEmailAddressNotVerifiedException::FromEmailAddressNotVerifiedException() : 
-    m_fromEmailAddressHasBeenSet(false)
-{
-}
-
 FromEmailAddressNotVerifiedException::FromEmailAddressNotVerifiedException(const XmlNode& xmlNode)
-  : FromEmailAddressNotVerifiedException()
 {
   *this = xmlNode;
 }

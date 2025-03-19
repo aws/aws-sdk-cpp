@@ -32,7 +32,7 @@ namespace Model
   class RealtimeLogConfigs
   {
   public:
-    AWS_CLOUDFRONT_API RealtimeLogConfigs();
+    AWS_CLOUDFRONT_API RealtimeLogConfigs() = default;
     AWS_CLOUDFRONT_API RealtimeLogConfigs(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API RealtimeLogConfigs& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The maximum number of real-time log configurations requested.</p>
      */
-    inline int GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
     inline RealtimeLogConfigs& WithMaxItems(int value) { SetMaxItems(value); return *this;}
@@ -53,14 +53,14 @@ namespace Model
     /**
      * <p>Contains the list of real-time log configurations.</p>
      */
-    inline const Aws::Vector<RealtimeLogConfig>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<RealtimeLogConfig>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<RealtimeLogConfig>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<RealtimeLogConfig>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline RealtimeLogConfigs& WithItems(const Aws::Vector<RealtimeLogConfig>& value) { SetItems(value); return *this;}
-    inline RealtimeLogConfigs& WithItems(Aws::Vector<RealtimeLogConfig>&& value) { SetItems(std::move(value)); return *this;}
-    inline RealtimeLogConfigs& AddItems(const RealtimeLogConfig& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline RealtimeLogConfigs& AddItems(RealtimeLogConfig&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
+    template<typename ItemsT = Aws::Vector<RealtimeLogConfig>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<RealtimeLogConfig>>
+    RealtimeLogConfigs& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = RealtimeLogConfig>
+    RealtimeLogConfigs& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -68,7 +68,7 @@ namespace Model
      * <p>A flag that indicates whether there are more real-time log configurations
      * than are contained in this list.</p>
      */
-    inline bool GetIsTruncated() const{ return m_isTruncated; }
+    inline bool GetIsTruncated() const { return m_isTruncated; }
     inline bool IsTruncatedHasBeenSet() const { return m_isTruncatedHasBeenSet; }
     inline void SetIsTruncated(bool value) { m_isTruncatedHasBeenSet = true; m_isTruncated = value; }
     inline RealtimeLogConfigs& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
@@ -80,14 +80,12 @@ namespace Model
      * begins. This list includes real-time log configurations that occur after the
      * marker.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline RealtimeLogConfigs& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline RealtimeLogConfigs& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline RealtimeLogConfigs& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    RealtimeLogConfigs& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -97,24 +95,22 @@ namespace Model
      * field of a subsequent request to continue listing real-time log configurations
      * where you left off. </p>
      */
-    inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
+    inline const Aws::String& GetNextMarker() const { return m_nextMarker; }
     inline bool NextMarkerHasBeenSet() const { return m_nextMarkerHasBeenSet; }
-    inline void SetNextMarker(const Aws::String& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = value; }
-    inline void SetNextMarker(Aws::String&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::move(value); }
-    inline void SetNextMarker(const char* value) { m_nextMarkerHasBeenSet = true; m_nextMarker.assign(value); }
-    inline RealtimeLogConfigs& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
-    inline RealtimeLogConfigs& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
-    inline RealtimeLogConfigs& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
+    template<typename NextMarkerT = Aws::String>
+    void SetNextMarker(NextMarkerT&& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = std::forward<NextMarkerT>(value); }
+    template<typename NextMarkerT = Aws::String>
+    RealtimeLogConfigs& WithNextMarker(NextMarkerT&& value) { SetNextMarker(std::forward<NextMarkerT>(value)); return *this;}
     ///@}
   private:
 
-    int m_maxItems;
+    int m_maxItems{0};
     bool m_maxItemsHasBeenSet = false;
 
     Aws::Vector<RealtimeLogConfig> m_items;
     bool m_itemsHasBeenSet = false;
 
-    bool m_isTruncated;
+    bool m_isTruncated{false};
     bool m_isTruncatedHasBeenSet = false;
 
     Aws::String m_marker;

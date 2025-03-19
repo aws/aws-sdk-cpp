@@ -22,7 +22,7 @@ namespace Model
   class UpdateServiceNetworkRequest : public VPCLatticeRequest
   {
   public:
-    AWS_VPCLATTICE_API UpdateServiceNetworkRequest();
+    AWS_VPCLATTICE_API UpdateServiceNetworkRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,30 +40,26 @@ namespace Model
      * <code>AWS_IAM</code>: The resource uses an IAM policy. When this type is used,
      * auth is enabled and an auth policy is required.</p> </li> </ul>
      */
-    inline const AuthType& GetAuthType() const{ return m_authType; }
+    inline AuthType GetAuthType() const { return m_authType; }
     inline bool AuthTypeHasBeenSet() const { return m_authTypeHasBeenSet; }
-    inline void SetAuthType(const AuthType& value) { m_authTypeHasBeenSet = true; m_authType = value; }
-    inline void SetAuthType(AuthType&& value) { m_authTypeHasBeenSet = true; m_authType = std::move(value); }
-    inline UpdateServiceNetworkRequest& WithAuthType(const AuthType& value) { SetAuthType(value); return *this;}
-    inline UpdateServiceNetworkRequest& WithAuthType(AuthType&& value) { SetAuthType(std::move(value)); return *this;}
+    inline void SetAuthType(AuthType value) { m_authTypeHasBeenSet = true; m_authType = value; }
+    inline UpdateServiceNetworkRequest& WithAuthType(AuthType value) { SetAuthType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID or ARN of the service network.</p>
      */
-    inline const Aws::String& GetServiceNetworkIdentifier() const{ return m_serviceNetworkIdentifier; }
+    inline const Aws::String& GetServiceNetworkIdentifier() const { return m_serviceNetworkIdentifier; }
     inline bool ServiceNetworkIdentifierHasBeenSet() const { return m_serviceNetworkIdentifierHasBeenSet; }
-    inline void SetServiceNetworkIdentifier(const Aws::String& value) { m_serviceNetworkIdentifierHasBeenSet = true; m_serviceNetworkIdentifier = value; }
-    inline void SetServiceNetworkIdentifier(Aws::String&& value) { m_serviceNetworkIdentifierHasBeenSet = true; m_serviceNetworkIdentifier = std::move(value); }
-    inline void SetServiceNetworkIdentifier(const char* value) { m_serviceNetworkIdentifierHasBeenSet = true; m_serviceNetworkIdentifier.assign(value); }
-    inline UpdateServiceNetworkRequest& WithServiceNetworkIdentifier(const Aws::String& value) { SetServiceNetworkIdentifier(value); return *this;}
-    inline UpdateServiceNetworkRequest& WithServiceNetworkIdentifier(Aws::String&& value) { SetServiceNetworkIdentifier(std::move(value)); return *this;}
-    inline UpdateServiceNetworkRequest& WithServiceNetworkIdentifier(const char* value) { SetServiceNetworkIdentifier(value); return *this;}
+    template<typename ServiceNetworkIdentifierT = Aws::String>
+    void SetServiceNetworkIdentifier(ServiceNetworkIdentifierT&& value) { m_serviceNetworkIdentifierHasBeenSet = true; m_serviceNetworkIdentifier = std::forward<ServiceNetworkIdentifierT>(value); }
+    template<typename ServiceNetworkIdentifierT = Aws::String>
+    UpdateServiceNetworkRequest& WithServiceNetworkIdentifier(ServiceNetworkIdentifierT&& value) { SetServiceNetworkIdentifier(std::forward<ServiceNetworkIdentifierT>(value)); return *this;}
     ///@}
   private:
 
-    AuthType m_authType;
+    AuthType m_authType{AuthType::NOT_SET};
     bool m_authTypeHasBeenSet = false;
 
     Aws::String m_serviceNetworkIdentifier;

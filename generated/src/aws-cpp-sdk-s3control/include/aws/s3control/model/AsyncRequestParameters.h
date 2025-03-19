@@ -33,7 +33,7 @@ namespace Model
   class AsyncRequestParameters
   {
   public:
-    AWS_S3CONTROL_API AsyncRequestParameters();
+    AWS_S3CONTROL_API AsyncRequestParameters() = default;
     AWS_S3CONTROL_API AsyncRequestParameters(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CONTROL_API AsyncRequestParameters& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -46,12 +46,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateMultiRegionAccessPoint.html">CreateMultiRegionAccessPoint</a>
      * request.</p>
      */
-    inline const CreateMultiRegionAccessPointInput& GetCreateMultiRegionAccessPointRequest() const{ return m_createMultiRegionAccessPointRequest; }
+    inline const CreateMultiRegionAccessPointInput& GetCreateMultiRegionAccessPointRequest() const { return m_createMultiRegionAccessPointRequest; }
     inline bool CreateMultiRegionAccessPointRequestHasBeenSet() const { return m_createMultiRegionAccessPointRequestHasBeenSet; }
-    inline void SetCreateMultiRegionAccessPointRequest(const CreateMultiRegionAccessPointInput& value) { m_createMultiRegionAccessPointRequestHasBeenSet = true; m_createMultiRegionAccessPointRequest = value; }
-    inline void SetCreateMultiRegionAccessPointRequest(CreateMultiRegionAccessPointInput&& value) { m_createMultiRegionAccessPointRequestHasBeenSet = true; m_createMultiRegionAccessPointRequest = std::move(value); }
-    inline AsyncRequestParameters& WithCreateMultiRegionAccessPointRequest(const CreateMultiRegionAccessPointInput& value) { SetCreateMultiRegionAccessPointRequest(value); return *this;}
-    inline AsyncRequestParameters& WithCreateMultiRegionAccessPointRequest(CreateMultiRegionAccessPointInput&& value) { SetCreateMultiRegionAccessPointRequest(std::move(value)); return *this;}
+    template<typename CreateMultiRegionAccessPointRequestT = CreateMultiRegionAccessPointInput>
+    void SetCreateMultiRegionAccessPointRequest(CreateMultiRegionAccessPointRequestT&& value) { m_createMultiRegionAccessPointRequestHasBeenSet = true; m_createMultiRegionAccessPointRequest = std::forward<CreateMultiRegionAccessPointRequestT>(value); }
+    template<typename CreateMultiRegionAccessPointRequestT = CreateMultiRegionAccessPointInput>
+    AsyncRequestParameters& WithCreateMultiRegionAccessPointRequest(CreateMultiRegionAccessPointRequestT&& value) { SetCreateMultiRegionAccessPointRequest(std::forward<CreateMultiRegionAccessPointRequestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,12 +60,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_DeleteMultiRegionAccessPoint.html">DeleteMultiRegionAccessPoint</a>
      * request.</p>
      */
-    inline const DeleteMultiRegionAccessPointInput& GetDeleteMultiRegionAccessPointRequest() const{ return m_deleteMultiRegionAccessPointRequest; }
+    inline const DeleteMultiRegionAccessPointInput& GetDeleteMultiRegionAccessPointRequest() const { return m_deleteMultiRegionAccessPointRequest; }
     inline bool DeleteMultiRegionAccessPointRequestHasBeenSet() const { return m_deleteMultiRegionAccessPointRequestHasBeenSet; }
-    inline void SetDeleteMultiRegionAccessPointRequest(const DeleteMultiRegionAccessPointInput& value) { m_deleteMultiRegionAccessPointRequestHasBeenSet = true; m_deleteMultiRegionAccessPointRequest = value; }
-    inline void SetDeleteMultiRegionAccessPointRequest(DeleteMultiRegionAccessPointInput&& value) { m_deleteMultiRegionAccessPointRequestHasBeenSet = true; m_deleteMultiRegionAccessPointRequest = std::move(value); }
-    inline AsyncRequestParameters& WithDeleteMultiRegionAccessPointRequest(const DeleteMultiRegionAccessPointInput& value) { SetDeleteMultiRegionAccessPointRequest(value); return *this;}
-    inline AsyncRequestParameters& WithDeleteMultiRegionAccessPointRequest(DeleteMultiRegionAccessPointInput&& value) { SetDeleteMultiRegionAccessPointRequest(std::move(value)); return *this;}
+    template<typename DeleteMultiRegionAccessPointRequestT = DeleteMultiRegionAccessPointInput>
+    void SetDeleteMultiRegionAccessPointRequest(DeleteMultiRegionAccessPointRequestT&& value) { m_deleteMultiRegionAccessPointRequestHasBeenSet = true; m_deleteMultiRegionAccessPointRequest = std::forward<DeleteMultiRegionAccessPointRequestT>(value); }
+    template<typename DeleteMultiRegionAccessPointRequestT = DeleteMultiRegionAccessPointInput>
+    AsyncRequestParameters& WithDeleteMultiRegionAccessPointRequest(DeleteMultiRegionAccessPointRequestT&& value) { SetDeleteMultiRegionAccessPointRequest(std::forward<DeleteMultiRegionAccessPointRequestT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +74,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_PutMultiRegionAccessPoint.html">PutMultiRegionAccessPoint</a>
      * request.</p>
      */
-    inline const PutMultiRegionAccessPointPolicyInput& GetPutMultiRegionAccessPointPolicyRequest() const{ return m_putMultiRegionAccessPointPolicyRequest; }
+    inline const PutMultiRegionAccessPointPolicyInput& GetPutMultiRegionAccessPointPolicyRequest() const { return m_putMultiRegionAccessPointPolicyRequest; }
     inline bool PutMultiRegionAccessPointPolicyRequestHasBeenSet() const { return m_putMultiRegionAccessPointPolicyRequestHasBeenSet; }
-    inline void SetPutMultiRegionAccessPointPolicyRequest(const PutMultiRegionAccessPointPolicyInput& value) { m_putMultiRegionAccessPointPolicyRequestHasBeenSet = true; m_putMultiRegionAccessPointPolicyRequest = value; }
-    inline void SetPutMultiRegionAccessPointPolicyRequest(PutMultiRegionAccessPointPolicyInput&& value) { m_putMultiRegionAccessPointPolicyRequestHasBeenSet = true; m_putMultiRegionAccessPointPolicyRequest = std::move(value); }
-    inline AsyncRequestParameters& WithPutMultiRegionAccessPointPolicyRequest(const PutMultiRegionAccessPointPolicyInput& value) { SetPutMultiRegionAccessPointPolicyRequest(value); return *this;}
-    inline AsyncRequestParameters& WithPutMultiRegionAccessPointPolicyRequest(PutMultiRegionAccessPointPolicyInput&& value) { SetPutMultiRegionAccessPointPolicyRequest(std::move(value)); return *this;}
+    template<typename PutMultiRegionAccessPointPolicyRequestT = PutMultiRegionAccessPointPolicyInput>
+    void SetPutMultiRegionAccessPointPolicyRequest(PutMultiRegionAccessPointPolicyRequestT&& value) { m_putMultiRegionAccessPointPolicyRequestHasBeenSet = true; m_putMultiRegionAccessPointPolicyRequest = std::forward<PutMultiRegionAccessPointPolicyRequestT>(value); }
+    template<typename PutMultiRegionAccessPointPolicyRequestT = PutMultiRegionAccessPointPolicyInput>
+    AsyncRequestParameters& WithPutMultiRegionAccessPointPolicyRequest(PutMultiRegionAccessPointPolicyRequestT&& value) { SetPutMultiRegionAccessPointPolicyRequest(std::forward<PutMultiRegionAccessPointPolicyRequestT>(value)); return *this;}
     ///@}
   private:
 

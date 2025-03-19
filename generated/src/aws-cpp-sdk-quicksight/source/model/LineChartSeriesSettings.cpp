@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-LineChartSeriesSettings::LineChartSeriesSettings() : 
-    m_lineStyleSettingsHasBeenSet(false),
-    m_markerStyleSettingsHasBeenSet(false)
-{
-}
-
 LineChartSeriesSettings::LineChartSeriesSettings(JsonView jsonValue)
-  : LineChartSeriesSettings()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LineChartSeriesSettings& LineChartSeriesSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LineStyleSettings"))
   {
     m_lineStyleSettings = jsonValue.GetObject("LineStyleSettings");
-
     m_lineStyleSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MarkerStyleSettings"))
   {
     m_markerStyleSettings = jsonValue.GetObject("MarkerStyleSettings");
-
     m_markerStyleSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

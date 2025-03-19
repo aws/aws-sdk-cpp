@@ -18,36 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsRdsDbClusterSnapshotDetails::AwsRdsDbClusterSnapshotDetails() : 
-    m_availabilityZonesHasBeenSet(false),
-    m_snapshotCreateTimeHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_allocatedStorage(0),
-    m_allocatedStorageHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_clusterCreateTimeHasBeenSet(false),
-    m_masterUsernameHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_licenseModelHasBeenSet(false),
-    m_snapshotTypeHasBeenSet(false),
-    m_percentProgress(0),
-    m_percentProgressHasBeenSet(false),
-    m_storageEncrypted(false),
-    m_storageEncryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_dbClusterIdentifierHasBeenSet(false),
-    m_dbClusterSnapshotIdentifierHasBeenSet(false),
-    m_iamDatabaseAuthenticationEnabled(false),
-    m_iamDatabaseAuthenticationEnabledHasBeenSet(false),
-    m_dbClusterSnapshotAttributesHasBeenSet(false)
-{
-}
-
 AwsRdsDbClusterSnapshotDetails::AwsRdsDbClusterSnapshotDetails(JsonView jsonValue)
-  : AwsRdsDbClusterSnapshotDetails()
 {
   *this = jsonValue;
 }
@@ -63,126 +34,91 @@ AwsRdsDbClusterSnapshotDetails& AwsRdsDbClusterSnapshotDetails::operator =(JsonV
     }
     m_availabilityZonesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnapshotCreateTime"))
   {
     m_snapshotCreateTime = jsonValue.GetString("SnapshotCreateTime");
-
     m_snapshotCreateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Engine"))
   {
     m_engine = jsonValue.GetString("Engine");
-
     m_engineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllocatedStorage"))
   {
     m_allocatedStorage = jsonValue.GetInteger("AllocatedStorage");
-
     m_allocatedStorageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Port"))
   {
     m_port = jsonValue.GetInteger("Port");
-
     m_portHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcId"))
   {
     m_vpcId = jsonValue.GetString("VpcId");
-
     m_vpcIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterCreateTime"))
   {
     m_clusterCreateTime = jsonValue.GetString("ClusterCreateTime");
-
     m_clusterCreateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MasterUsername"))
   {
     m_masterUsername = jsonValue.GetString("MasterUsername");
-
     m_masterUsernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineVersion"))
   {
     m_engineVersion = jsonValue.GetString("EngineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LicenseModel"))
   {
     m_licenseModel = jsonValue.GetString("LicenseModel");
-
     m_licenseModelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SnapshotType"))
   {
     m_snapshotType = jsonValue.GetString("SnapshotType");
-
     m_snapshotTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PercentProgress"))
   {
     m_percentProgress = jsonValue.GetInteger("PercentProgress");
-
     m_percentProgressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageEncrypted"))
   {
     m_storageEncrypted = jsonValue.GetBool("StorageEncrypted");
-
     m_storageEncryptedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DbClusterIdentifier"))
   {
     m_dbClusterIdentifier = jsonValue.GetString("DbClusterIdentifier");
-
     m_dbClusterIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DbClusterSnapshotIdentifier"))
   {
     m_dbClusterSnapshotIdentifier = jsonValue.GetString("DbClusterSnapshotIdentifier");
-
     m_dbClusterSnapshotIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamDatabaseAuthenticationEnabled"))
   {
     m_iamDatabaseAuthenticationEnabled = jsonValue.GetBool("IamDatabaseAuthenticationEnabled");
-
     m_iamDatabaseAuthenticationEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DbClusterSnapshotAttributes"))
   {
     Aws::Utils::Array<JsonView> dbClusterSnapshotAttributesJsonList = jsonValue.GetArray("DbClusterSnapshotAttributes");
@@ -192,7 +128,6 @@ AwsRdsDbClusterSnapshotDetails& AwsRdsDbClusterSnapshotDetails::operator =(JsonV
     }
     m_dbClusterSnapshotAttributesHasBeenSet = true;
   }
-
   return *this;
 }
 

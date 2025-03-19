@@ -33,7 +33,7 @@ namespace Model
   class SpecificToolChoice
   {
   public:
-    AWS_BEDROCKRUNTIME_API SpecificToolChoice();
+    AWS_BEDROCKRUNTIME_API SpecificToolChoice() = default;
     AWS_BEDROCKRUNTIME_API SpecificToolChoice(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API SpecificToolChoice& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the tool that the model must request. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SpecificToolChoice& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SpecificToolChoice& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SpecificToolChoice& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SpecificToolChoice& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

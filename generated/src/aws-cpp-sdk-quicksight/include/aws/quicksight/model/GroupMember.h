@@ -32,7 +32,7 @@ namespace Model
   class GroupMember
   {
   public:
-    AWS_QUICKSIGHT_API GroupMember();
+    AWS_QUICKSIGHT_API GroupMember() = default;
     AWS_QUICKSIGHT_API GroupMember(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API GroupMember& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the group member (user).</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline GroupMember& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GroupMember& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GroupMember& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GroupMember& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the group member (user).</p>
      */
-    inline const Aws::String& GetMemberName() const{ return m_memberName; }
+    inline const Aws::String& GetMemberName() const { return m_memberName; }
     inline bool MemberNameHasBeenSet() const { return m_memberNameHasBeenSet; }
-    inline void SetMemberName(const Aws::String& value) { m_memberNameHasBeenSet = true; m_memberName = value; }
-    inline void SetMemberName(Aws::String&& value) { m_memberNameHasBeenSet = true; m_memberName = std::move(value); }
-    inline void SetMemberName(const char* value) { m_memberNameHasBeenSet = true; m_memberName.assign(value); }
-    inline GroupMember& WithMemberName(const Aws::String& value) { SetMemberName(value); return *this;}
-    inline GroupMember& WithMemberName(Aws::String&& value) { SetMemberName(std::move(value)); return *this;}
-    inline GroupMember& WithMemberName(const char* value) { SetMemberName(value); return *this;}
+    template<typename MemberNameT = Aws::String>
+    void SetMemberName(MemberNameT&& value) { m_memberNameHasBeenSet = true; m_memberName = std::forward<MemberNameT>(value); }
+    template<typename MemberNameT = Aws::String>
+    GroupMember& WithMemberName(MemberNameT&& value) { SetMemberName(std::forward<MemberNameT>(value)); return *this;}
     ///@}
   private:
 

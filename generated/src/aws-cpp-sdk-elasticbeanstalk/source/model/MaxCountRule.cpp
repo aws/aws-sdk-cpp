@@ -20,18 +20,7 @@ namespace ElasticBeanstalk
 namespace Model
 {
 
-MaxCountRule::MaxCountRule() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_maxCount(0),
-    m_maxCountHasBeenSet(false),
-    m_deleteSourceFromS3(false),
-    m_deleteSourceFromS3HasBeenSet(false)
-{
-}
-
 MaxCountRule::MaxCountRule(const XmlNode& xmlNode)
-  : MaxCountRule()
 {
   *this = xmlNode;
 }

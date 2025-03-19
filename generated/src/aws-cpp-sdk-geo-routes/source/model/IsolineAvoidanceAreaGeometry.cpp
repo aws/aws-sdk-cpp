@@ -18,17 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-IsolineAvoidanceAreaGeometry::IsolineAvoidanceAreaGeometry() : 
-    m_boundingBoxHasBeenSet(false),
-    m_corridorHasBeenSet(false),
-    m_polygonHasBeenSet(false),
-    m_polylineCorridorHasBeenSet(false),
-    m_polylinePolygonHasBeenSet(false)
-{
-}
-
 IsolineAvoidanceAreaGeometry::IsolineAvoidanceAreaGeometry(JsonView jsonValue)
-  : IsolineAvoidanceAreaGeometry()
 {
   *this = jsonValue;
 }
@@ -44,14 +34,11 @@ IsolineAvoidanceAreaGeometry& IsolineAvoidanceAreaGeometry::operator =(JsonView 
     }
     m_boundingBoxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Corridor"))
   {
     m_corridor = jsonValue.GetObject("Corridor");
-
     m_corridorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Polygon"))
   {
     Aws::Utils::Array<JsonView> polygonJsonList = jsonValue.GetArray("Polygon");
@@ -75,14 +62,11 @@ IsolineAvoidanceAreaGeometry& IsolineAvoidanceAreaGeometry::operator =(JsonView 
     }
     m_polygonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolylineCorridor"))
   {
     m_polylineCorridor = jsonValue.GetObject("PolylineCorridor");
-
     m_polylineCorridorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PolylinePolygon"))
   {
     Aws::Utils::Array<JsonView> polylinePolygonJsonList = jsonValue.GetArray("PolylinePolygon");
@@ -92,7 +76,6 @@ IsolineAvoidanceAreaGeometry& IsolineAvoidanceAreaGeometry::operator =(JsonView 
     }
     m_polylinePolygonHasBeenSet = true;
   }
-
   return *this;
 }
 

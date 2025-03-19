@@ -12,11 +12,6 @@ using namespace Aws::Personalize::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteFilterRequest::DeleteFilterRequest() : 
-    m_filterArnHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFilterRequest::SerializePayload() const
 {
   JsonValue payload;

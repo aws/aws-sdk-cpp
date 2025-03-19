@@ -31,7 +31,7 @@ namespace Model
   class ElasticChannelConfiguration
   {
   public:
-    AWS_CHIMESDKMESSAGING_API ElasticChannelConfiguration();
+    AWS_CHIMESDKMESSAGING_API ElasticChannelConfiguration() = default;
     AWS_CHIMESDKMESSAGING_API ElasticChannelConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMESSAGING_API ElasticChannelConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMESSAGING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * <p>The maximum number of SubChannels that you want to allow in the elastic
      * channel.</p>
      */
-    inline int GetMaximumSubChannels() const{ return m_maximumSubChannels; }
+    inline int GetMaximumSubChannels() const { return m_maximumSubChannels; }
     inline bool MaximumSubChannelsHasBeenSet() const { return m_maximumSubChannelsHasBeenSet; }
     inline void SetMaximumSubChannels(int value) { m_maximumSubChannelsHasBeenSet = true; m_maximumSubChannels = value; }
     inline ElasticChannelConfiguration& WithMaximumSubChannels(int value) { SetMaximumSubChannels(value); return *this;}
@@ -52,7 +52,7 @@ namespace Model
     /**
      * <p>The maximum number of members allowed in a SubChannel.</p>
      */
-    inline int GetTargetMembershipsPerSubChannel() const{ return m_targetMembershipsPerSubChannel; }
+    inline int GetTargetMembershipsPerSubChannel() const { return m_targetMembershipsPerSubChannel; }
     inline bool TargetMembershipsPerSubChannelHasBeenSet() const { return m_targetMembershipsPerSubChannelHasBeenSet; }
     inline void SetTargetMembershipsPerSubChannel(int value) { m_targetMembershipsPerSubChannelHasBeenSet = true; m_targetMembershipsPerSubChannel = value; }
     inline ElasticChannelConfiguration& WithTargetMembershipsPerSubChannel(int value) { SetTargetMembershipsPerSubChannel(value); return *this;}
@@ -64,20 +64,20 @@ namespace Model
      * of the calculated value is used in balancing members among SubChannels of the
      * elastic channel.</p>
      */
-    inline int GetMinimumMembershipPercentage() const{ return m_minimumMembershipPercentage; }
+    inline int GetMinimumMembershipPercentage() const { return m_minimumMembershipPercentage; }
     inline bool MinimumMembershipPercentageHasBeenSet() const { return m_minimumMembershipPercentageHasBeenSet; }
     inline void SetMinimumMembershipPercentage(int value) { m_minimumMembershipPercentageHasBeenSet = true; m_minimumMembershipPercentage = value; }
     inline ElasticChannelConfiguration& WithMinimumMembershipPercentage(int value) { SetMinimumMembershipPercentage(value); return *this;}
     ///@}
   private:
 
-    int m_maximumSubChannels;
+    int m_maximumSubChannels{0};
     bool m_maximumSubChannelsHasBeenSet = false;
 
-    int m_targetMembershipsPerSubChannel;
+    int m_targetMembershipsPerSubChannel{0};
     bool m_targetMembershipsPerSubChannelHasBeenSet = false;
 
-    int m_minimumMembershipPercentage;
+    int m_minimumMembershipPercentage{0};
     bool m_minimumMembershipPercentageHasBeenSet = false;
   };
 

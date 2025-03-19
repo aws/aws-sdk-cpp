@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeCreateCaseOptionsResult::DescribeCreateCaseOptionsResult()
-{
-}
-
 DescribeCreateCaseOptionsResult::DescribeCreateCaseOptionsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeCreateCaseOptionsResult& DescribeCreateCaseOptionsResult::operator =(con
   if(jsonValue.ValueExists("languageAvailability"))
   {
     m_languageAvailability = jsonValue.GetString("languageAvailability");
-
+    m_languageAvailabilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("communicationTypes"))
   {
     Aws::Utils::Array<JsonView> communicationTypesJsonList = jsonValue.GetArray("communicationTypes");
@@ -42,14 +37,15 @@ DescribeCreateCaseOptionsResult& DescribeCreateCaseOptionsResult::operator =(con
     {
       m_communicationTypes.push_back(communicationTypesJsonList[communicationTypesIndex].AsObject());
     }
+    m_communicationTypesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

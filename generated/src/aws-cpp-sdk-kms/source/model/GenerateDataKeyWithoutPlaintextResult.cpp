@@ -18,10 +18,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GenerateDataKeyWithoutPlaintextResult::GenerateDataKeyWithoutPlaintextResult()
-{
-}
-
 GenerateDataKeyWithoutPlaintextResult::GenerateDataKeyWithoutPlaintextResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -33,20 +29,20 @@ GenerateDataKeyWithoutPlaintextResult& GenerateDataKeyWithoutPlaintextResult::op
   if(jsonValue.ValueExists("CiphertextBlob"))
   {
     m_ciphertextBlob = HashingUtils::Base64Decode(jsonValue.GetString("CiphertextBlob"));
+    m_ciphertextBlobHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyId"))
   {
     m_keyId = jsonValue.GetString("KeyId");
-
+    m_keyIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

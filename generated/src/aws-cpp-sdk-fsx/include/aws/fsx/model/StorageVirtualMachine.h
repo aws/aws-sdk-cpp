@@ -41,7 +41,7 @@ namespace Model
   class StorageVirtualMachine
   {
   public:
-    AWS_FSX_API StorageVirtualMachine();
+    AWS_FSX_API StorageVirtualMachine() = default;
     AWS_FSX_API StorageVirtualMachine(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API StorageVirtualMachine& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FSX_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,22 +52,22 @@ namespace Model
      * <p>Describes the Microsoft Active Directory configuration to which the SVM is
      * joined, if applicable.</p>
      */
-    inline const SvmActiveDirectoryConfiguration& GetActiveDirectoryConfiguration() const{ return m_activeDirectoryConfiguration; }
+    inline const SvmActiveDirectoryConfiguration& GetActiveDirectoryConfiguration() const { return m_activeDirectoryConfiguration; }
     inline bool ActiveDirectoryConfigurationHasBeenSet() const { return m_activeDirectoryConfigurationHasBeenSet; }
-    inline void SetActiveDirectoryConfiguration(const SvmActiveDirectoryConfiguration& value) { m_activeDirectoryConfigurationHasBeenSet = true; m_activeDirectoryConfiguration = value; }
-    inline void SetActiveDirectoryConfiguration(SvmActiveDirectoryConfiguration&& value) { m_activeDirectoryConfigurationHasBeenSet = true; m_activeDirectoryConfiguration = std::move(value); }
-    inline StorageVirtualMachine& WithActiveDirectoryConfiguration(const SvmActiveDirectoryConfiguration& value) { SetActiveDirectoryConfiguration(value); return *this;}
-    inline StorageVirtualMachine& WithActiveDirectoryConfiguration(SvmActiveDirectoryConfiguration&& value) { SetActiveDirectoryConfiguration(std::move(value)); return *this;}
+    template<typename ActiveDirectoryConfigurationT = SvmActiveDirectoryConfiguration>
+    void SetActiveDirectoryConfiguration(ActiveDirectoryConfigurationT&& value) { m_activeDirectoryConfigurationHasBeenSet = true; m_activeDirectoryConfiguration = std::forward<ActiveDirectoryConfigurationT>(value); }
+    template<typename ActiveDirectoryConfigurationT = SvmActiveDirectoryConfiguration>
+    StorageVirtualMachine& WithActiveDirectoryConfiguration(ActiveDirectoryConfigurationT&& value) { SetActiveDirectoryConfiguration(std::forward<ActiveDirectoryConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline StorageVirtualMachine& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline StorageVirtualMachine& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    StorageVirtualMachine& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,24 +77,22 @@ namespace Model
      * <code>Iscsi</code>, <code>Management</code>, <code>Nfs</code>, and
      * <code>Smb</code> endpoints.</p>
      */
-    inline const SvmEndpoints& GetEndpoints() const{ return m_endpoints; }
+    inline const SvmEndpoints& GetEndpoints() const { return m_endpoints; }
     inline bool EndpointsHasBeenSet() const { return m_endpointsHasBeenSet; }
-    inline void SetEndpoints(const SvmEndpoints& value) { m_endpointsHasBeenSet = true; m_endpoints = value; }
-    inline void SetEndpoints(SvmEndpoints&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::move(value); }
-    inline StorageVirtualMachine& WithEndpoints(const SvmEndpoints& value) { SetEndpoints(value); return *this;}
-    inline StorageVirtualMachine& WithEndpoints(SvmEndpoints&& value) { SetEndpoints(std::move(value)); return *this;}
+    template<typename EndpointsT = SvmEndpoints>
+    void SetEndpoints(EndpointsT&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::forward<EndpointsT>(value); }
+    template<typename EndpointsT = SvmEndpoints>
+    StorageVirtualMachine& WithEndpoints(EndpointsT&& value) { SetEndpoints(std::forward<EndpointsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
+    inline const Aws::String& GetFileSystemId() const { return m_fileSystemId; }
     inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
-    inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
-    inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
-    inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
-    inline StorageVirtualMachine& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
-    inline StorageVirtualMachine& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
-    inline StorageVirtualMachine& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
+    template<typename FileSystemIdT = Aws::String>
+    void SetFileSystemId(FileSystemIdT&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::forward<FileSystemIdT>(value); }
+    template<typename FileSystemIdT = Aws::String>
+    StorageVirtualMachine& WithFileSystemId(FileSystemIdT&& value) { SetFileSystemId(std::forward<FileSystemIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,121 +106,107 @@ namespace Model
      * </li> <li> <p> <code>PENDING</code> - Amazon FSx has not started creating the
      * SVM.</p> </li> </ul>
      */
-    inline const StorageVirtualMachineLifecycle& GetLifecycle() const{ return m_lifecycle; }
+    inline StorageVirtualMachineLifecycle GetLifecycle() const { return m_lifecycle; }
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
-    inline void SetLifecycle(const StorageVirtualMachineLifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
-    inline void SetLifecycle(StorageVirtualMachineLifecycle&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
-    inline StorageVirtualMachine& WithLifecycle(const StorageVirtualMachineLifecycle& value) { SetLifecycle(value); return *this;}
-    inline StorageVirtualMachine& WithLifecycle(StorageVirtualMachineLifecycle&& value) { SetLifecycle(std::move(value)); return *this;}
+    inline void SetLifecycle(StorageVirtualMachineLifecycle value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
+    inline StorageVirtualMachine& WithLifecycle(StorageVirtualMachineLifecycle value) { SetLifecycle(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the SVM, if provisioned.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline StorageVirtualMachine& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline StorageVirtualMachine& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline StorageVirtualMachine& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    StorageVirtualMachine& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
+    inline const Aws::String& GetResourceARN() const { return m_resourceARN; }
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
-    inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
-    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
-    inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
-    inline StorageVirtualMachine& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
-    inline StorageVirtualMachine& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
-    inline StorageVirtualMachine& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
+    template<typename ResourceARNT = Aws::String>
+    void SetResourceARN(ResourceARNT&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::forward<ResourceARNT>(value); }
+    template<typename ResourceARNT = Aws::String>
+    StorageVirtualMachine& WithResourceARN(ResourceARNT&& value) { SetResourceARN(std::forward<ResourceARNT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The SVM's system generated unique ID.</p>
      */
-    inline const Aws::String& GetStorageVirtualMachineId() const{ return m_storageVirtualMachineId; }
+    inline const Aws::String& GetStorageVirtualMachineId() const { return m_storageVirtualMachineId; }
     inline bool StorageVirtualMachineIdHasBeenSet() const { return m_storageVirtualMachineIdHasBeenSet; }
-    inline void SetStorageVirtualMachineId(const Aws::String& value) { m_storageVirtualMachineIdHasBeenSet = true; m_storageVirtualMachineId = value; }
-    inline void SetStorageVirtualMachineId(Aws::String&& value) { m_storageVirtualMachineIdHasBeenSet = true; m_storageVirtualMachineId = std::move(value); }
-    inline void SetStorageVirtualMachineId(const char* value) { m_storageVirtualMachineIdHasBeenSet = true; m_storageVirtualMachineId.assign(value); }
-    inline StorageVirtualMachine& WithStorageVirtualMachineId(const Aws::String& value) { SetStorageVirtualMachineId(value); return *this;}
-    inline StorageVirtualMachine& WithStorageVirtualMachineId(Aws::String&& value) { SetStorageVirtualMachineId(std::move(value)); return *this;}
-    inline StorageVirtualMachine& WithStorageVirtualMachineId(const char* value) { SetStorageVirtualMachineId(value); return *this;}
+    template<typename StorageVirtualMachineIdT = Aws::String>
+    void SetStorageVirtualMachineId(StorageVirtualMachineIdT&& value) { m_storageVirtualMachineIdHasBeenSet = true; m_storageVirtualMachineId = std::forward<StorageVirtualMachineIdT>(value); }
+    template<typename StorageVirtualMachineIdT = Aws::String>
+    StorageVirtualMachine& WithStorageVirtualMachineId(StorageVirtualMachineIdT&& value) { SetStorageVirtualMachineId(std::forward<StorageVirtualMachineIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Describes the SVM's subtype.</p>
      */
-    inline const StorageVirtualMachineSubtype& GetSubtype() const{ return m_subtype; }
+    inline StorageVirtualMachineSubtype GetSubtype() const { return m_subtype; }
     inline bool SubtypeHasBeenSet() const { return m_subtypeHasBeenSet; }
-    inline void SetSubtype(const StorageVirtualMachineSubtype& value) { m_subtypeHasBeenSet = true; m_subtype = value; }
-    inline void SetSubtype(StorageVirtualMachineSubtype&& value) { m_subtypeHasBeenSet = true; m_subtype = std::move(value); }
-    inline StorageVirtualMachine& WithSubtype(const StorageVirtualMachineSubtype& value) { SetSubtype(value); return *this;}
-    inline StorageVirtualMachine& WithSubtype(StorageVirtualMachineSubtype&& value) { SetSubtype(std::move(value)); return *this;}
+    inline void SetSubtype(StorageVirtualMachineSubtype value) { m_subtypeHasBeenSet = true; m_subtype = value; }
+    inline StorageVirtualMachine& WithSubtype(StorageVirtualMachineSubtype value) { SetSubtype(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The SVM's UUID (universally unique identifier).</p>
      */
-    inline const Aws::String& GetUUID() const{ return m_uUID; }
+    inline const Aws::String& GetUUID() const { return m_uUID; }
     inline bool UUIDHasBeenSet() const { return m_uUIDHasBeenSet; }
-    inline void SetUUID(const Aws::String& value) { m_uUIDHasBeenSet = true; m_uUID = value; }
-    inline void SetUUID(Aws::String&& value) { m_uUIDHasBeenSet = true; m_uUID = std::move(value); }
-    inline void SetUUID(const char* value) { m_uUIDHasBeenSet = true; m_uUID.assign(value); }
-    inline StorageVirtualMachine& WithUUID(const Aws::String& value) { SetUUID(value); return *this;}
-    inline StorageVirtualMachine& WithUUID(Aws::String&& value) { SetUUID(std::move(value)); return *this;}
-    inline StorageVirtualMachine& WithUUID(const char* value) { SetUUID(value); return *this;}
+    template<typename UUIDT = Aws::String>
+    void SetUUID(UUIDT&& value) { m_uUIDHasBeenSet = true; m_uUID = std::forward<UUIDT>(value); }
+    template<typename UUIDT = Aws::String>
+    StorageVirtualMachine& WithUUID(UUIDT&& value) { SetUUID(std::forward<UUIDT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline StorageVirtualMachine& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline StorageVirtualMachine& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline StorageVirtualMachine& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline StorageVirtualMachine& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    StorageVirtualMachine& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    StorageVirtualMachine& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>Describes why the SVM lifecycle state changed.</p>
      */
-    inline const LifecycleTransitionReason& GetLifecycleTransitionReason() const{ return m_lifecycleTransitionReason; }
+    inline const LifecycleTransitionReason& GetLifecycleTransitionReason() const { return m_lifecycleTransitionReason; }
     inline bool LifecycleTransitionReasonHasBeenSet() const { return m_lifecycleTransitionReasonHasBeenSet; }
-    inline void SetLifecycleTransitionReason(const LifecycleTransitionReason& value) { m_lifecycleTransitionReasonHasBeenSet = true; m_lifecycleTransitionReason = value; }
-    inline void SetLifecycleTransitionReason(LifecycleTransitionReason&& value) { m_lifecycleTransitionReasonHasBeenSet = true; m_lifecycleTransitionReason = std::move(value); }
-    inline StorageVirtualMachine& WithLifecycleTransitionReason(const LifecycleTransitionReason& value) { SetLifecycleTransitionReason(value); return *this;}
-    inline StorageVirtualMachine& WithLifecycleTransitionReason(LifecycleTransitionReason&& value) { SetLifecycleTransitionReason(std::move(value)); return *this;}
+    template<typename LifecycleTransitionReasonT = LifecycleTransitionReason>
+    void SetLifecycleTransitionReason(LifecycleTransitionReasonT&& value) { m_lifecycleTransitionReasonHasBeenSet = true; m_lifecycleTransitionReason = std::forward<LifecycleTransitionReasonT>(value); }
+    template<typename LifecycleTransitionReasonT = LifecycleTransitionReason>
+    StorageVirtualMachine& WithLifecycleTransitionReason(LifecycleTransitionReasonT&& value) { SetLifecycleTransitionReason(std::forward<LifecycleTransitionReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The security style of the root volume of the SVM.</p>
      */
-    inline const StorageVirtualMachineRootVolumeSecurityStyle& GetRootVolumeSecurityStyle() const{ return m_rootVolumeSecurityStyle; }
+    inline StorageVirtualMachineRootVolumeSecurityStyle GetRootVolumeSecurityStyle() const { return m_rootVolumeSecurityStyle; }
     inline bool RootVolumeSecurityStyleHasBeenSet() const { return m_rootVolumeSecurityStyleHasBeenSet; }
-    inline void SetRootVolumeSecurityStyle(const StorageVirtualMachineRootVolumeSecurityStyle& value) { m_rootVolumeSecurityStyleHasBeenSet = true; m_rootVolumeSecurityStyle = value; }
-    inline void SetRootVolumeSecurityStyle(StorageVirtualMachineRootVolumeSecurityStyle&& value) { m_rootVolumeSecurityStyleHasBeenSet = true; m_rootVolumeSecurityStyle = std::move(value); }
-    inline StorageVirtualMachine& WithRootVolumeSecurityStyle(const StorageVirtualMachineRootVolumeSecurityStyle& value) { SetRootVolumeSecurityStyle(value); return *this;}
-    inline StorageVirtualMachine& WithRootVolumeSecurityStyle(StorageVirtualMachineRootVolumeSecurityStyle&& value) { SetRootVolumeSecurityStyle(std::move(value)); return *this;}
+    inline void SetRootVolumeSecurityStyle(StorageVirtualMachineRootVolumeSecurityStyle value) { m_rootVolumeSecurityStyleHasBeenSet = true; m_rootVolumeSecurityStyle = value; }
+    inline StorageVirtualMachine& WithRootVolumeSecurityStyle(StorageVirtualMachineRootVolumeSecurityStyle value) { SetRootVolumeSecurityStyle(value); return *this;}
     ///@}
   private:
 
     SvmActiveDirectoryConfiguration m_activeDirectoryConfiguration;
     bool m_activeDirectoryConfigurationHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
     SvmEndpoints m_endpoints;
@@ -231,7 +215,7 @@ namespace Model
     Aws::String m_fileSystemId;
     bool m_fileSystemIdHasBeenSet = false;
 
-    StorageVirtualMachineLifecycle m_lifecycle;
+    StorageVirtualMachineLifecycle m_lifecycle{StorageVirtualMachineLifecycle::NOT_SET};
     bool m_lifecycleHasBeenSet = false;
 
     Aws::String m_name;
@@ -243,7 +227,7 @@ namespace Model
     Aws::String m_storageVirtualMachineId;
     bool m_storageVirtualMachineIdHasBeenSet = false;
 
-    StorageVirtualMachineSubtype m_subtype;
+    StorageVirtualMachineSubtype m_subtype{StorageVirtualMachineSubtype::NOT_SET};
     bool m_subtypeHasBeenSet = false;
 
     Aws::String m_uUID;
@@ -255,7 +239,7 @@ namespace Model
     LifecycleTransitionReason m_lifecycleTransitionReason;
     bool m_lifecycleTransitionReasonHasBeenSet = false;
 
-    StorageVirtualMachineRootVolumeSecurityStyle m_rootVolumeSecurityStyle;
+    StorageVirtualMachineRootVolumeSecurityStyle m_rootVolumeSecurityStyle{StorageVirtualMachineRootVolumeSecurityStyle::NOT_SET};
     bool m_rootVolumeSecurityStyleHasBeenSet = false;
   };
 

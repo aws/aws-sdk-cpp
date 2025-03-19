@@ -26,7 +26,7 @@ namespace Model
   class ChangeResourceRecordSetsRequest : public Route53Request
   {
   public:
-    AWS_ROUTE53_API ChangeResourceRecordSetsRequest();
+    AWS_ROUTE53_API ChangeResourceRecordSetsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * <p>The ID of the hosted zone that contains the resource record sets that you
      * want to change.</p>
      */
-    inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
+    inline const Aws::String& GetHostedZoneId() const { return m_hostedZoneId; }
     inline bool HostedZoneIdHasBeenSet() const { return m_hostedZoneIdHasBeenSet; }
-    inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
-    inline void SetHostedZoneId(Aws::String&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::move(value); }
-    inline void SetHostedZoneId(const char* value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId.assign(value); }
-    inline ChangeResourceRecordSetsRequest& WithHostedZoneId(const Aws::String& value) { SetHostedZoneId(value); return *this;}
-    inline ChangeResourceRecordSetsRequest& WithHostedZoneId(Aws::String&& value) { SetHostedZoneId(std::move(value)); return *this;}
-    inline ChangeResourceRecordSetsRequest& WithHostedZoneId(const char* value) { SetHostedZoneId(value); return *this;}
+    template<typename HostedZoneIdT = Aws::String>
+    void SetHostedZoneId(HostedZoneIdT&& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = std::forward<HostedZoneIdT>(value); }
+    template<typename HostedZoneIdT = Aws::String>
+    ChangeResourceRecordSetsRequest& WithHostedZoneId(HostedZoneIdT&& value) { SetHostedZoneId(std::forward<HostedZoneIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,12 +55,12 @@ namespace Model
      * <p>A complex type that contains an optional comment and the <code>Changes</code>
      * element.</p>
      */
-    inline const ChangeBatch& GetChangeBatch() const{ return m_changeBatch; }
+    inline const ChangeBatch& GetChangeBatch() const { return m_changeBatch; }
     inline bool ChangeBatchHasBeenSet() const { return m_changeBatchHasBeenSet; }
-    inline void SetChangeBatch(const ChangeBatch& value) { m_changeBatchHasBeenSet = true; m_changeBatch = value; }
-    inline void SetChangeBatch(ChangeBatch&& value) { m_changeBatchHasBeenSet = true; m_changeBatch = std::move(value); }
-    inline ChangeResourceRecordSetsRequest& WithChangeBatch(const ChangeBatch& value) { SetChangeBatch(value); return *this;}
-    inline ChangeResourceRecordSetsRequest& WithChangeBatch(ChangeBatch&& value) { SetChangeBatch(std::move(value)); return *this;}
+    template<typename ChangeBatchT = ChangeBatch>
+    void SetChangeBatch(ChangeBatchT&& value) { m_changeBatchHasBeenSet = true; m_changeBatch = std::forward<ChangeBatchT>(value); }
+    template<typename ChangeBatchT = ChangeBatch>
+    ChangeResourceRecordSetsRequest& WithChangeBatch(ChangeBatchT&& value) { SetChangeBatch(std::forward<ChangeBatchT>(value)); return *this;}
     ///@}
   private:
 

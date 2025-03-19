@@ -20,21 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-StreamingDistributionList::StreamingDistributionList() : 
-    m_markerHasBeenSet(false),
-    m_nextMarkerHasBeenSet(false),
-    m_maxItems(0),
-    m_maxItemsHasBeenSet(false),
-    m_isTruncated(false),
-    m_isTruncatedHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 StreamingDistributionList::StreamingDistributionList(const XmlNode& xmlNode)
-  : StreamingDistributionList()
 {
   *this = xmlNode;
 }
@@ -79,6 +65,7 @@ StreamingDistributionList& StreamingDistributionList::operator =(const XmlNode& 
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("StreamingDistributionSummary");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember);

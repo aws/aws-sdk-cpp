@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteAllowListRequest::DeleteAllowListRequest() : 
-    m_idHasBeenSet(false),
-    m_ignoreJobChecksHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAllowListRequest::SerializePayload() const
 {
   return {};

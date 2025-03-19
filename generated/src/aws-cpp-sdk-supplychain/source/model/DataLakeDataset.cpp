@@ -18,20 +18,7 @@ namespace SupplyChain
 namespace Model
 {
 
-DataLakeDataset::DataLakeDataset() : 
-    m_instanceIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_schemaHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 DataLakeDataset::DataLakeDataset(JsonView jsonValue)
-  : DataLakeDataset()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ DataLakeDataset& DataLakeDataset::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("instanceId"))
   {
     m_instanceId = jsonValue.GetString("instanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("namespace"))
   {
     m_namespace = jsonValue.GetString("namespace");
-
     m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("schema"))
   {
     m_schema = jsonValue.GetObject("schema");
-
     m_schemaHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdTime"))
   {
     m_createdTime = jsonValue.GetDouble("createdTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("lastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

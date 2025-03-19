@@ -32,7 +32,7 @@ namespace Model
   class ApplicationMaintenanceConfigurationDescription
   {
   public:
-    AWS_KINESISANALYTICSV2_API ApplicationMaintenanceConfigurationDescription();
+    AWS_KINESISANALYTICSV2_API ApplicationMaintenanceConfigurationDescription() = default;
     AWS_KINESISANALYTICSV2_API ApplicationMaintenanceConfigurationDescription(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API ApplicationMaintenanceConfigurationDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The start time for the maintenance window.</p>
      */
-    inline const Aws::String& GetApplicationMaintenanceWindowStartTime() const{ return m_applicationMaintenanceWindowStartTime; }
+    inline const Aws::String& GetApplicationMaintenanceWindowStartTime() const { return m_applicationMaintenanceWindowStartTime; }
     inline bool ApplicationMaintenanceWindowStartTimeHasBeenSet() const { return m_applicationMaintenanceWindowStartTimeHasBeenSet; }
-    inline void SetApplicationMaintenanceWindowStartTime(const Aws::String& value) { m_applicationMaintenanceWindowStartTimeHasBeenSet = true; m_applicationMaintenanceWindowStartTime = value; }
-    inline void SetApplicationMaintenanceWindowStartTime(Aws::String&& value) { m_applicationMaintenanceWindowStartTimeHasBeenSet = true; m_applicationMaintenanceWindowStartTime = std::move(value); }
-    inline void SetApplicationMaintenanceWindowStartTime(const char* value) { m_applicationMaintenanceWindowStartTimeHasBeenSet = true; m_applicationMaintenanceWindowStartTime.assign(value); }
-    inline ApplicationMaintenanceConfigurationDescription& WithApplicationMaintenanceWindowStartTime(const Aws::String& value) { SetApplicationMaintenanceWindowStartTime(value); return *this;}
-    inline ApplicationMaintenanceConfigurationDescription& WithApplicationMaintenanceWindowStartTime(Aws::String&& value) { SetApplicationMaintenanceWindowStartTime(std::move(value)); return *this;}
-    inline ApplicationMaintenanceConfigurationDescription& WithApplicationMaintenanceWindowStartTime(const char* value) { SetApplicationMaintenanceWindowStartTime(value); return *this;}
+    template<typename ApplicationMaintenanceWindowStartTimeT = Aws::String>
+    void SetApplicationMaintenanceWindowStartTime(ApplicationMaintenanceWindowStartTimeT&& value) { m_applicationMaintenanceWindowStartTimeHasBeenSet = true; m_applicationMaintenanceWindowStartTime = std::forward<ApplicationMaintenanceWindowStartTimeT>(value); }
+    template<typename ApplicationMaintenanceWindowStartTimeT = Aws::String>
+    ApplicationMaintenanceConfigurationDescription& WithApplicationMaintenanceWindowStartTime(ApplicationMaintenanceWindowStartTimeT&& value) { SetApplicationMaintenanceWindowStartTime(std::forward<ApplicationMaintenanceWindowStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The end time for the maintenance window.</p>
      */
-    inline const Aws::String& GetApplicationMaintenanceWindowEndTime() const{ return m_applicationMaintenanceWindowEndTime; }
+    inline const Aws::String& GetApplicationMaintenanceWindowEndTime() const { return m_applicationMaintenanceWindowEndTime; }
     inline bool ApplicationMaintenanceWindowEndTimeHasBeenSet() const { return m_applicationMaintenanceWindowEndTimeHasBeenSet; }
-    inline void SetApplicationMaintenanceWindowEndTime(const Aws::String& value) { m_applicationMaintenanceWindowEndTimeHasBeenSet = true; m_applicationMaintenanceWindowEndTime = value; }
-    inline void SetApplicationMaintenanceWindowEndTime(Aws::String&& value) { m_applicationMaintenanceWindowEndTimeHasBeenSet = true; m_applicationMaintenanceWindowEndTime = std::move(value); }
-    inline void SetApplicationMaintenanceWindowEndTime(const char* value) { m_applicationMaintenanceWindowEndTimeHasBeenSet = true; m_applicationMaintenanceWindowEndTime.assign(value); }
-    inline ApplicationMaintenanceConfigurationDescription& WithApplicationMaintenanceWindowEndTime(const Aws::String& value) { SetApplicationMaintenanceWindowEndTime(value); return *this;}
-    inline ApplicationMaintenanceConfigurationDescription& WithApplicationMaintenanceWindowEndTime(Aws::String&& value) { SetApplicationMaintenanceWindowEndTime(std::move(value)); return *this;}
-    inline ApplicationMaintenanceConfigurationDescription& WithApplicationMaintenanceWindowEndTime(const char* value) { SetApplicationMaintenanceWindowEndTime(value); return *this;}
+    template<typename ApplicationMaintenanceWindowEndTimeT = Aws::String>
+    void SetApplicationMaintenanceWindowEndTime(ApplicationMaintenanceWindowEndTimeT&& value) { m_applicationMaintenanceWindowEndTimeHasBeenSet = true; m_applicationMaintenanceWindowEndTime = std::forward<ApplicationMaintenanceWindowEndTimeT>(value); }
+    template<typename ApplicationMaintenanceWindowEndTimeT = Aws::String>
+    ApplicationMaintenanceConfigurationDescription& WithApplicationMaintenanceWindowEndTime(ApplicationMaintenanceWindowEndTimeT&& value) { SetApplicationMaintenanceWindowEndTime(std::forward<ApplicationMaintenanceWindowEndTimeT>(value)); return *this;}
     ///@}
   private:
 

@@ -36,7 +36,7 @@ namespace Model
   class AccessPreview
   {
   public:
-    AWS_ACCESSANALYZER_API AccessPreview();
+    AWS_ACCESSANALYZER_API AccessPreview() = default;
     AWS_ACCESSANALYZER_API AccessPreview(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API AccessPreview& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACCESSANALYZER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,58 +46,52 @@ namespace Model
     /**
      * <p>The unique ID for the access preview.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline AccessPreview& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline AccessPreview& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline AccessPreview& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    AccessPreview& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the analyzer used to generate the access preview.</p>
      */
-    inline const Aws::String& GetAnalyzerArn() const{ return m_analyzerArn; }
+    inline const Aws::String& GetAnalyzerArn() const { return m_analyzerArn; }
     inline bool AnalyzerArnHasBeenSet() const { return m_analyzerArnHasBeenSet; }
-    inline void SetAnalyzerArn(const Aws::String& value) { m_analyzerArnHasBeenSet = true; m_analyzerArn = value; }
-    inline void SetAnalyzerArn(Aws::String&& value) { m_analyzerArnHasBeenSet = true; m_analyzerArn = std::move(value); }
-    inline void SetAnalyzerArn(const char* value) { m_analyzerArnHasBeenSet = true; m_analyzerArn.assign(value); }
-    inline AccessPreview& WithAnalyzerArn(const Aws::String& value) { SetAnalyzerArn(value); return *this;}
-    inline AccessPreview& WithAnalyzerArn(Aws::String&& value) { SetAnalyzerArn(std::move(value)); return *this;}
-    inline AccessPreview& WithAnalyzerArn(const char* value) { SetAnalyzerArn(value); return *this;}
+    template<typename AnalyzerArnT = Aws::String>
+    void SetAnalyzerArn(AnalyzerArnT&& value) { m_analyzerArnHasBeenSet = true; m_analyzerArn = std::forward<AnalyzerArnT>(value); }
+    template<typename AnalyzerArnT = Aws::String>
+    AccessPreview& WithAnalyzerArn(AnalyzerArnT&& value) { SetAnalyzerArn(std::forward<AnalyzerArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A map of resource ARNs for the proposed resource configuration.</p>
      */
-    inline const Aws::Map<Aws::String, Configuration>& GetConfigurations() const{ return m_configurations; }
+    inline const Aws::Map<Aws::String, Configuration>& GetConfigurations() const { return m_configurations; }
     inline bool ConfigurationsHasBeenSet() const { return m_configurationsHasBeenSet; }
-    inline void SetConfigurations(const Aws::Map<Aws::String, Configuration>& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
-    inline void SetConfigurations(Aws::Map<Aws::String, Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = std::move(value); }
-    inline AccessPreview& WithConfigurations(const Aws::Map<Aws::String, Configuration>& value) { SetConfigurations(value); return *this;}
-    inline AccessPreview& WithConfigurations(Aws::Map<Aws::String, Configuration>&& value) { SetConfigurations(std::move(value)); return *this;}
-    inline AccessPreview& AddConfigurations(const Aws::String& key, const Configuration& value) { m_configurationsHasBeenSet = true; m_configurations.emplace(key, value); return *this; }
-    inline AccessPreview& AddConfigurations(Aws::String&& key, const Configuration& value) { m_configurationsHasBeenSet = true; m_configurations.emplace(std::move(key), value); return *this; }
-    inline AccessPreview& AddConfigurations(const Aws::String& key, Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.emplace(key, std::move(value)); return *this; }
-    inline AccessPreview& AddConfigurations(Aws::String&& key, Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.emplace(std::move(key), std::move(value)); return *this; }
-    inline AccessPreview& AddConfigurations(const char* key, Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.emplace(key, std::move(value)); return *this; }
-    inline AccessPreview& AddConfigurations(const char* key, const Configuration& value) { m_configurationsHasBeenSet = true; m_configurations.emplace(key, value); return *this; }
+    template<typename ConfigurationsT = Aws::Map<Aws::String, Configuration>>
+    void SetConfigurations(ConfigurationsT&& value) { m_configurationsHasBeenSet = true; m_configurations = std::forward<ConfigurationsT>(value); }
+    template<typename ConfigurationsT = Aws::Map<Aws::String, Configuration>>
+    AccessPreview& WithConfigurations(ConfigurationsT&& value) { SetConfigurations(std::forward<ConfigurationsT>(value)); return *this;}
+    template<typename ConfigurationsKeyT = Aws::String, typename ConfigurationsValueT = Configuration>
+    AccessPreview& AddConfigurations(ConfigurationsKeyT&& key, ConfigurationsValueT&& value) {
+      m_configurationsHasBeenSet = true; m_configurations.emplace(std::forward<ConfigurationsKeyT>(key), std::forward<ConfigurationsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The time at which the access preview was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+    inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-    inline AccessPreview& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-    inline AccessPreview& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    void SetCreatedAt(CreatedAtT&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::forward<CreatedAtT>(value); }
+    template<typename CreatedAtT = Aws::Utils::DateTime>
+    AccessPreview& WithCreatedAt(CreatedAtT&& value) { SetCreatedAt(std::forward<CreatedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -108,12 +102,10 @@ namespace Model
      * findings for external access to the resource.</p> </li> <li> <p>
      * <code>Failed</code> - The access preview creation has failed.</p> </li> </ul>
      */
-    inline const AccessPreviewStatus& GetStatus() const{ return m_status; }
+    inline AccessPreviewStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const AccessPreviewStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(AccessPreviewStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline AccessPreview& WithStatus(const AccessPreviewStatus& value) { SetStatus(value); return *this;}
-    inline AccessPreview& WithStatus(AccessPreviewStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(AccessPreviewStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline AccessPreview& WithStatus(AccessPreviewStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -123,12 +115,12 @@ namespace Model
      * <code>Failed</code> status is returned. This failure can be due to an internal
      * issue with the analysis or due to an invalid resource configuration.</p>
      */
-    inline const AccessPreviewStatusReason& GetStatusReason() const{ return m_statusReason; }
+    inline const AccessPreviewStatusReason& GetStatusReason() const { return m_statusReason; }
     inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
-    inline void SetStatusReason(const AccessPreviewStatusReason& value) { m_statusReasonHasBeenSet = true; m_statusReason = value; }
-    inline void SetStatusReason(AccessPreviewStatusReason&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::move(value); }
-    inline AccessPreview& WithStatusReason(const AccessPreviewStatusReason& value) { SetStatusReason(value); return *this;}
-    inline AccessPreview& WithStatusReason(AccessPreviewStatusReason&& value) { SetStatusReason(std::move(value)); return *this;}
+    template<typename StatusReasonT = AccessPreviewStatusReason>
+    void SetStatusReason(StatusReasonT&& value) { m_statusReasonHasBeenSet = true; m_statusReason = std::forward<StatusReasonT>(value); }
+    template<typename StatusReasonT = AccessPreviewStatusReason>
+    AccessPreview& WithStatusReason(StatusReasonT&& value) { SetStatusReason(std::forward<StatusReasonT>(value)); return *this;}
     ///@}
   private:
 
@@ -141,10 +133,10 @@ namespace Model
     Aws::Map<Aws::String, Configuration> m_configurations;
     bool m_configurationsHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdAt;
+    Aws::Utils::DateTime m_createdAt{};
     bool m_createdAtHasBeenSet = false;
 
-    AccessPreviewStatus m_status;
+    AccessPreviewStatus m_status{AccessPreviewStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     AccessPreviewStatusReason m_statusReason;

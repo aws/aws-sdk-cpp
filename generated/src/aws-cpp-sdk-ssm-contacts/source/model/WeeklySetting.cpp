@@ -18,15 +18,7 @@ namespace SSMContacts
 namespace Model
 {
 
-WeeklySetting::WeeklySetting() : 
-    m_dayOfWeek(DayOfWeek::NOT_SET),
-    m_dayOfWeekHasBeenSet(false),
-    m_handOffTimeHasBeenSet(false)
-{
-}
-
 WeeklySetting::WeeklySetting(JsonView jsonValue)
-  : WeeklySetting()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ WeeklySetting& WeeklySetting::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DayOfWeek"))
   {
     m_dayOfWeek = DayOfWeekMapper::GetDayOfWeekForName(jsonValue.GetString("DayOfWeek"));
-
     m_dayOfWeekHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HandOffTime"))
   {
     m_handOffTime = jsonValue.GetObject("HandOffTime");
-
     m_handOffTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

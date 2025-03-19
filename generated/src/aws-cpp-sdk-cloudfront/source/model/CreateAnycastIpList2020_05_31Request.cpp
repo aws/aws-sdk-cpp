@@ -14,13 +14,6 @@ using namespace Aws::CloudFront::Model;
 using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
-CreateAnycastIpList2020_05_31Request::CreateAnycastIpList2020_05_31Request() : 
-    m_nameHasBeenSet(false),
-    m_ipCount(0),
-    m_ipCountHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
 
 Aws::String CreateAnycastIpList2020_05_31Request::SerializePayload() const
 {

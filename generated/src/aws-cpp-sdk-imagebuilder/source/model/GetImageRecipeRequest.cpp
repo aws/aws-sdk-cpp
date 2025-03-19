@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetImageRecipeRequest::GetImageRecipeRequest() : 
-    m_imageRecipeArnHasBeenSet(false)
-{
-}
-
 Aws::String GetImageRecipeRequest::SerializePayload() const
 {
   return {};

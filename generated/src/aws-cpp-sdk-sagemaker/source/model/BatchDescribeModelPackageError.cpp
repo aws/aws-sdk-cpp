@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-BatchDescribeModelPackageError::BatchDescribeModelPackageError() : 
-    m_errorCodeHasBeenSet(false),
-    m_errorResponseHasBeenSet(false)
-{
-}
-
 BatchDescribeModelPackageError::BatchDescribeModelPackageError(JsonView jsonValue)
-  : BatchDescribeModelPackageError()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ BatchDescribeModelPackageError& BatchDescribeModelPackageError::operator =(JsonV
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = jsonValue.GetString("ErrorCode");
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorResponse"))
   {
     m_errorResponse = jsonValue.GetString("ErrorResponse");
-
     m_errorResponseHasBeenSet = true;
   }
-
   return *this;
 }
 

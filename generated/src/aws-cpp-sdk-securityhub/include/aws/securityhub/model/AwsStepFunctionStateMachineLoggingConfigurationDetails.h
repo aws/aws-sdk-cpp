@@ -34,7 +34,7 @@ namespace Model
   class AwsStepFunctionStateMachineLoggingConfigurationDetails
   {
   public:
-    AWS_SECURITYHUB_API AwsStepFunctionStateMachineLoggingConfigurationDetails();
+    AWS_SECURITYHUB_API AwsStepFunctionStateMachineLoggingConfigurationDetails() = default;
     AWS_SECURITYHUB_API AwsStepFunctionStateMachineLoggingConfigurationDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API AwsStepFunctionStateMachineLoggingConfigurationDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,14 @@ namespace Model
      * <p> An array of objects that describes where your execution history events will
      * be logged. </p>
      */
-    inline const Aws::Vector<AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>& GetDestinations() const{ return m_destinations; }
+    inline const Aws::Vector<AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>& GetDestinations() const { return m_destinations; }
     inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
-    inline void SetDestinations(const Aws::Vector<AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
-    inline void SetDestinations(Aws::Vector<AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>&& value) { m_destinationsHasBeenSet = true; m_destinations = std::move(value); }
-    inline AwsStepFunctionStateMachineLoggingConfigurationDetails& WithDestinations(const Aws::Vector<AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>& value) { SetDestinations(value); return *this;}
-    inline AwsStepFunctionStateMachineLoggingConfigurationDetails& WithDestinations(Aws::Vector<AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>&& value) { SetDestinations(std::move(value)); return *this;}
-    inline AwsStepFunctionStateMachineLoggingConfigurationDetails& AddDestinations(const AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(value); return *this; }
-    inline AwsStepFunctionStateMachineLoggingConfigurationDetails& AddDestinations(AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails&& value) { m_destinationsHasBeenSet = true; m_destinations.push_back(std::move(value)); return *this; }
+    template<typename DestinationsT = Aws::Vector<AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>>
+    void SetDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations = std::forward<DestinationsT>(value); }
+    template<typename DestinationsT = Aws::Vector<AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>>
+    AwsStepFunctionStateMachineLoggingConfigurationDetails& WithDestinations(DestinationsT&& value) { SetDestinations(std::forward<DestinationsT>(value)); return *this;}
+    template<typename DestinationsT = AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails>
+    AwsStepFunctionStateMachineLoggingConfigurationDetails& AddDestinations(DestinationsT&& value) { m_destinationsHasBeenSet = true; m_destinations.emplace_back(std::forward<DestinationsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,7 +60,7 @@ namespace Model
      * <p> Determines whether execution data is included in your log. When set to
      * false, data is excluded. </p>
      */
-    inline bool GetIncludeExecutionData() const{ return m_includeExecutionData; }
+    inline bool GetIncludeExecutionData() const { return m_includeExecutionData; }
     inline bool IncludeExecutionDataHasBeenSet() const { return m_includeExecutionDataHasBeenSet; }
     inline void SetIncludeExecutionData(bool value) { m_includeExecutionDataHasBeenSet = true; m_includeExecutionData = value; }
     inline AwsStepFunctionStateMachineLoggingConfigurationDetails& WithIncludeExecutionData(bool value) { SetIncludeExecutionData(value); return *this;}
@@ -70,21 +70,19 @@ namespace Model
     /**
      * <p> Defines which category of execution history events are logged. </p>
      */
-    inline const Aws::String& GetLevel() const{ return m_level; }
+    inline const Aws::String& GetLevel() const { return m_level; }
     inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
-    inline void SetLevel(const Aws::String& value) { m_levelHasBeenSet = true; m_level = value; }
-    inline void SetLevel(Aws::String&& value) { m_levelHasBeenSet = true; m_level = std::move(value); }
-    inline void SetLevel(const char* value) { m_levelHasBeenSet = true; m_level.assign(value); }
-    inline AwsStepFunctionStateMachineLoggingConfigurationDetails& WithLevel(const Aws::String& value) { SetLevel(value); return *this;}
-    inline AwsStepFunctionStateMachineLoggingConfigurationDetails& WithLevel(Aws::String&& value) { SetLevel(std::move(value)); return *this;}
-    inline AwsStepFunctionStateMachineLoggingConfigurationDetails& WithLevel(const char* value) { SetLevel(value); return *this;}
+    template<typename LevelT = Aws::String>
+    void SetLevel(LevelT&& value) { m_levelHasBeenSet = true; m_level = std::forward<LevelT>(value); }
+    template<typename LevelT = Aws::String>
+    AwsStepFunctionStateMachineLoggingConfigurationDetails& WithLevel(LevelT&& value) { SetLevel(std::forward<LevelT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails> m_destinations;
     bool m_destinationsHasBeenSet = false;
 
-    bool m_includeExecutionData;
+    bool m_includeExecutionData{false};
     bool m_includeExecutionDataHasBeenSet = false;
 
     Aws::String m_level;

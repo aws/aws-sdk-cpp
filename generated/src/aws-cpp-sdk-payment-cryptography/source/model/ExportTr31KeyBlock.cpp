@@ -18,14 +18,7 @@ namespace PaymentCryptography
 namespace Model
 {
 
-ExportTr31KeyBlock::ExportTr31KeyBlock() : 
-    m_wrappingKeyIdentifierHasBeenSet(false),
-    m_keyBlockHeadersHasBeenSet(false)
-{
-}
-
 ExportTr31KeyBlock::ExportTr31KeyBlock(JsonView jsonValue)
-  : ExportTr31KeyBlock()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ExportTr31KeyBlock& ExportTr31KeyBlock::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("WrappingKeyIdentifier"))
   {
     m_wrappingKeyIdentifier = jsonValue.GetString("WrappingKeyIdentifier");
-
     m_wrappingKeyIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyBlockHeaders"))
   {
     m_keyBlockHeaders = jsonValue.GetObject("KeyBlockHeaders");
-
     m_keyBlockHeadersHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-WebCrawlerConfiguration::WebCrawlerConfiguration() : 
-    m_crawlerLimitsHasBeenSet(false),
-    m_exclusionFiltersHasBeenSet(false),
-    m_inclusionFiltersHasBeenSet(false),
-    m_scope(WebScopeType::NOT_SET),
-    m_scopeHasBeenSet(false),
-    m_urlConfigurationHasBeenSet(false)
-{
-}
-
 WebCrawlerConfiguration::WebCrawlerConfiguration(JsonView jsonValue)
-  : WebCrawlerConfiguration()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ WebCrawlerConfiguration& WebCrawlerConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("crawlerLimits"))
   {
     m_crawlerLimits = jsonValue.GetObject("crawlerLimits");
-
     m_crawlerLimitsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exclusionFilters"))
   {
     Aws::Utils::Array<JsonView> exclusionFiltersJsonList = jsonValue.GetArray("exclusionFilters");
@@ -52,7 +39,6 @@ WebCrawlerConfiguration& WebCrawlerConfiguration::operator =(JsonView jsonValue)
     }
     m_exclusionFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inclusionFilters"))
   {
     Aws::Utils::Array<JsonView> inclusionFiltersJsonList = jsonValue.GetArray("inclusionFilters");
@@ -62,21 +48,16 @@ WebCrawlerConfiguration& WebCrawlerConfiguration::operator =(JsonView jsonValue)
     }
     m_inclusionFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scope"))
   {
     m_scope = WebScopeTypeMapper::GetWebScopeTypeForName(jsonValue.GetString("scope"));
-
     m_scopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("urlConfiguration"))
   {
     m_urlConfiguration = jsonValue.GetObject("urlConfiguration");
-
     m_urlConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

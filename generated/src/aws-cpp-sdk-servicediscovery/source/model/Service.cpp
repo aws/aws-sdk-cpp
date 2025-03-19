@@ -18,26 +18,7 @@ namespace ServiceDiscovery
 namespace Model
 {
 
-Service::Service() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_namespaceIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_instanceCount(0),
-    m_instanceCountHasBeenSet(false),
-    m_dnsConfigHasBeenSet(false),
-    m_type(ServiceType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_healthCheckConfigHasBeenSet(false),
-    m_healthCheckCustomConfigHasBeenSet(false),
-    m_createDateHasBeenSet(false),
-    m_creatorRequestIdHasBeenSet(false)
-{
-}
-
 Service::Service(JsonView jsonValue)
-  : Service()
 {
   *this = jsonValue;
 }
@@ -47,87 +28,63 @@ Service& Service::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NamespaceId"))
   {
     m_namespaceId = jsonValue.GetString("NamespaceId");
-
     m_namespaceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceCount"))
   {
     m_instanceCount = jsonValue.GetInteger("InstanceCount");
-
     m_instanceCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DnsConfig"))
   {
     m_dnsConfig = jsonValue.GetObject("DnsConfig");
-
     m_dnsConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ServiceTypeMapper::GetServiceTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HealthCheckConfig"))
   {
     m_healthCheckConfig = jsonValue.GetObject("HealthCheckConfig");
-
     m_healthCheckConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HealthCheckCustomConfig"))
   {
     m_healthCheckCustomConfig = jsonValue.GetObject("HealthCheckCustomConfig");
-
     m_healthCheckCustomConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreateDate"))
   {
     m_createDate = jsonValue.GetDouble("CreateDate");
-
     m_createDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatorRequestId"))
   {
     m_creatorRequestId = jsonValue.GetString("CreatorRequestId");
-
     m_creatorRequestIdHasBeenSet = true;
   }
-
   return *this;
 }
 

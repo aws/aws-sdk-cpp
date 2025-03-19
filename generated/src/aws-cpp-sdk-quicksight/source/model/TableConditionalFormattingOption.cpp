@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TableConditionalFormattingOption::TableConditionalFormattingOption() : 
-    m_cellHasBeenSet(false),
-    m_rowHasBeenSet(false)
-{
-}
-
 TableConditionalFormattingOption::TableConditionalFormattingOption(JsonView jsonValue)
-  : TableConditionalFormattingOption()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TableConditionalFormattingOption& TableConditionalFormattingOption::operator =(J
   if(jsonValue.ValueExists("Cell"))
   {
     m_cell = jsonValue.GetObject("Cell");
-
     m_cellHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Row"))
   {
     m_row = jsonValue.GetObject("Row");
-
     m_rowHasBeenSet = true;
   }
-
   return *this;
 }
 

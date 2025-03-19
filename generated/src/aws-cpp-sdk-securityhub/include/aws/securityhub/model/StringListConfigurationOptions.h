@@ -33,7 +33,7 @@ namespace Model
   class StringListConfigurationOptions
   {
   public:
-    AWS_SECURITYHUB_API StringListConfigurationOptions();
+    AWS_SECURITYHUB_API StringListConfigurationOptions() = default;
     AWS_SECURITYHUB_API StringListConfigurationOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API StringListConfigurationOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,15 +44,14 @@ namespace Model
      * <p> The Security Hub default value for a control parameter that is a list of
      * strings. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetDefaultValue() const{ return m_defaultValue; }
+    inline const Aws::Vector<Aws::String>& GetDefaultValue() const { return m_defaultValue; }
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-    inline void SetDefaultValue(const Aws::Vector<Aws::String>& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-    inline void SetDefaultValue(Aws::Vector<Aws::String>&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-    inline StringListConfigurationOptions& WithDefaultValue(const Aws::Vector<Aws::String>& value) { SetDefaultValue(value); return *this;}
-    inline StringListConfigurationOptions& WithDefaultValue(Aws::Vector<Aws::String>&& value) { SetDefaultValue(std::move(value)); return *this;}
-    inline StringListConfigurationOptions& AddDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue.push_back(value); return *this; }
-    inline StringListConfigurationOptions& AddDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue.push_back(std::move(value)); return *this; }
-    inline StringListConfigurationOptions& AddDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.push_back(value); return *this; }
+    template<typename DefaultValueT = Aws::Vector<Aws::String>>
+    void SetDefaultValue(DefaultValueT&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::forward<DefaultValueT>(value); }
+    template<typename DefaultValueT = Aws::Vector<Aws::String>>
+    StringListConfigurationOptions& WithDefaultValue(DefaultValueT&& value) { SetDefaultValue(std::forward<DefaultValueT>(value)); return *this;}
+    template<typename DefaultValueT = Aws::String>
+    StringListConfigurationOptions& AddDefaultValue(DefaultValueT&& value) { m_defaultValueHasBeenSet = true; m_defaultValue.emplace_back(std::forward<DefaultValueT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -60,14 +59,12 @@ namespace Model
      * <p> An RE2 regular expression that Security Hub uses to validate a user-provided
      * list of strings for a control parameter. </p>
      */
-    inline const Aws::String& GetRe2Expression() const{ return m_re2Expression; }
+    inline const Aws::String& GetRe2Expression() const { return m_re2Expression; }
     inline bool Re2ExpressionHasBeenSet() const { return m_re2ExpressionHasBeenSet; }
-    inline void SetRe2Expression(const Aws::String& value) { m_re2ExpressionHasBeenSet = true; m_re2Expression = value; }
-    inline void SetRe2Expression(Aws::String&& value) { m_re2ExpressionHasBeenSet = true; m_re2Expression = std::move(value); }
-    inline void SetRe2Expression(const char* value) { m_re2ExpressionHasBeenSet = true; m_re2Expression.assign(value); }
-    inline StringListConfigurationOptions& WithRe2Expression(const Aws::String& value) { SetRe2Expression(value); return *this;}
-    inline StringListConfigurationOptions& WithRe2Expression(Aws::String&& value) { SetRe2Expression(std::move(value)); return *this;}
-    inline StringListConfigurationOptions& WithRe2Expression(const char* value) { SetRe2Expression(value); return *this;}
+    template<typename Re2ExpressionT = Aws::String>
+    void SetRe2Expression(Re2ExpressionT&& value) { m_re2ExpressionHasBeenSet = true; m_re2Expression = std::forward<Re2ExpressionT>(value); }
+    template<typename Re2ExpressionT = Aws::String>
+    StringListConfigurationOptions& WithRe2Expression(Re2ExpressionT&& value) { SetRe2Expression(std::forward<Re2ExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,7 +72,7 @@ namespace Model
      * <p> The maximum number of list items that a string list control parameter can
      * accept. </p>
      */
-    inline int GetMaxItems() const{ return m_maxItems; }
+    inline int GetMaxItems() const { return m_maxItems; }
     inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
     inline StringListConfigurationOptions& WithMaxItems(int value) { SetMaxItems(value); return *this;}
@@ -85,14 +82,12 @@ namespace Model
     /**
      * <p> The description of the RE2 regular expression. </p>
      */
-    inline const Aws::String& GetExpressionDescription() const{ return m_expressionDescription; }
+    inline const Aws::String& GetExpressionDescription() const { return m_expressionDescription; }
     inline bool ExpressionDescriptionHasBeenSet() const { return m_expressionDescriptionHasBeenSet; }
-    inline void SetExpressionDescription(const Aws::String& value) { m_expressionDescriptionHasBeenSet = true; m_expressionDescription = value; }
-    inline void SetExpressionDescription(Aws::String&& value) { m_expressionDescriptionHasBeenSet = true; m_expressionDescription = std::move(value); }
-    inline void SetExpressionDescription(const char* value) { m_expressionDescriptionHasBeenSet = true; m_expressionDescription.assign(value); }
-    inline StringListConfigurationOptions& WithExpressionDescription(const Aws::String& value) { SetExpressionDescription(value); return *this;}
-    inline StringListConfigurationOptions& WithExpressionDescription(Aws::String&& value) { SetExpressionDescription(std::move(value)); return *this;}
-    inline StringListConfigurationOptions& WithExpressionDescription(const char* value) { SetExpressionDescription(value); return *this;}
+    template<typename ExpressionDescriptionT = Aws::String>
+    void SetExpressionDescription(ExpressionDescriptionT&& value) { m_expressionDescriptionHasBeenSet = true; m_expressionDescription = std::forward<ExpressionDescriptionT>(value); }
+    template<typename ExpressionDescriptionT = Aws::String>
+    StringListConfigurationOptions& WithExpressionDescription(ExpressionDescriptionT&& value) { SetExpressionDescription(std::forward<ExpressionDescriptionT>(value)); return *this;}
     ///@}
   private:
 
@@ -102,7 +97,7 @@ namespace Model
     Aws::String m_re2Expression;
     bool m_re2ExpressionHasBeenSet = false;
 
-    int m_maxItems;
+    int m_maxItems{0};
     bool m_maxItemsHasBeenSet = false;
 
     Aws::String m_expressionDescription;

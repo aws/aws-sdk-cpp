@@ -13,13 +13,6 @@ using namespace Aws::ChimeSDKMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeChannelModeratorRequest::DescribeChannelModeratorRequest() : 
-    m_channelArnHasBeenSet(false),
-    m_channelModeratorArnHasBeenSet(false),
-    m_chimeBearerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeChannelModeratorRequest::SerializePayload() const
 {
   return {};

@@ -21,7 +21,7 @@ namespace Model
   class DisassociateCustomerGatewayRequest : public NetworkManagerRequest
   {
   public:
-    AWS_NETWORKMANAGER_API DisassociateCustomerGatewayRequest();
+    AWS_NETWORKMANAGER_API DisassociateCustomerGatewayRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The ID of the global network.</p>
      */
-    inline const Aws::String& GetGlobalNetworkId() const{ return m_globalNetworkId; }
+    inline const Aws::String& GetGlobalNetworkId() const { return m_globalNetworkId; }
     inline bool GlobalNetworkIdHasBeenSet() const { return m_globalNetworkIdHasBeenSet; }
-    inline void SetGlobalNetworkId(const Aws::String& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = value; }
-    inline void SetGlobalNetworkId(Aws::String&& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = std::move(value); }
-    inline void SetGlobalNetworkId(const char* value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId.assign(value); }
-    inline DisassociateCustomerGatewayRequest& WithGlobalNetworkId(const Aws::String& value) { SetGlobalNetworkId(value); return *this;}
-    inline DisassociateCustomerGatewayRequest& WithGlobalNetworkId(Aws::String&& value) { SetGlobalNetworkId(std::move(value)); return *this;}
-    inline DisassociateCustomerGatewayRequest& WithGlobalNetworkId(const char* value) { SetGlobalNetworkId(value); return *this;}
+    template<typename GlobalNetworkIdT = Aws::String>
+    void SetGlobalNetworkId(GlobalNetworkIdT&& value) { m_globalNetworkIdHasBeenSet = true; m_globalNetworkId = std::forward<GlobalNetworkIdT>(value); }
+    template<typename GlobalNetworkIdT = Aws::String>
+    DisassociateCustomerGatewayRequest& WithGlobalNetworkId(GlobalNetworkIdT&& value) { SetGlobalNetworkId(std::forward<GlobalNetworkIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the customer gateway.</p>
      */
-    inline const Aws::String& GetCustomerGatewayArn() const{ return m_customerGatewayArn; }
+    inline const Aws::String& GetCustomerGatewayArn() const { return m_customerGatewayArn; }
     inline bool CustomerGatewayArnHasBeenSet() const { return m_customerGatewayArnHasBeenSet; }
-    inline void SetCustomerGatewayArn(const Aws::String& value) { m_customerGatewayArnHasBeenSet = true; m_customerGatewayArn = value; }
-    inline void SetCustomerGatewayArn(Aws::String&& value) { m_customerGatewayArnHasBeenSet = true; m_customerGatewayArn = std::move(value); }
-    inline void SetCustomerGatewayArn(const char* value) { m_customerGatewayArnHasBeenSet = true; m_customerGatewayArn.assign(value); }
-    inline DisassociateCustomerGatewayRequest& WithCustomerGatewayArn(const Aws::String& value) { SetCustomerGatewayArn(value); return *this;}
-    inline DisassociateCustomerGatewayRequest& WithCustomerGatewayArn(Aws::String&& value) { SetCustomerGatewayArn(std::move(value)); return *this;}
-    inline DisassociateCustomerGatewayRequest& WithCustomerGatewayArn(const char* value) { SetCustomerGatewayArn(value); return *this;}
+    template<typename CustomerGatewayArnT = Aws::String>
+    void SetCustomerGatewayArn(CustomerGatewayArnT&& value) { m_customerGatewayArnHasBeenSet = true; m_customerGatewayArn = std::forward<CustomerGatewayArnT>(value); }
+    template<typename CustomerGatewayArnT = Aws::String>
+    DisassociateCustomerGatewayRequest& WithCustomerGatewayArn(CustomerGatewayArnT&& value) { SetCustomerGatewayArn(std::forward<CustomerGatewayArnT>(value)); return *this;}
     ///@}
   private:
 

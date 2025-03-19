@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateDatasetEntriesResult::UpdateDatasetEntriesResult() : 
-    m_status(DatasetStatus::NOT_SET)
-{
-}
-
 UpdateDatasetEntriesResult::UpdateDatasetEntriesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateDatasetEntriesResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ UpdateDatasetEntriesResult& UpdateDatasetEntriesResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("Status"))
   {
     m_status = DatasetStatusMapper::GetDatasetStatusForName(jsonValue.GetString("Status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

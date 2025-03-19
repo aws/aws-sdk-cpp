@@ -22,7 +22,7 @@ namespace Model
   class ListEnabledBaselinesRequest : public ControlTowerRequest
   {
   public:
-    AWS_CONTROLTOWER_API ListEnabledBaselinesRequest();
+    AWS_CONTROLTOWER_API ListEnabledBaselinesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,12 +39,12 @@ namespace Model
      * filters are <code>baselineIdentifiers</code> and <code>targetIdentifiers</code>.
      * The filter can be applied for either, or both.</p>
      */
-    inline const EnabledBaselineFilter& GetFilter() const{ return m_filter; }
+    inline const EnabledBaselineFilter& GetFilter() const { return m_filter; }
     inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-    inline void SetFilter(const EnabledBaselineFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-    inline void SetFilter(EnabledBaselineFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-    inline ListEnabledBaselinesRequest& WithFilter(const EnabledBaselineFilter& value) { SetFilter(value); return *this;}
-    inline ListEnabledBaselinesRequest& WithFilter(EnabledBaselineFilter&& value) { SetFilter(std::move(value)); return *this;}
+    template<typename FilterT = EnabledBaselineFilter>
+    void SetFilter(FilterT&& value) { m_filterHasBeenSet = true; m_filter = std::forward<FilterT>(value); }
+    template<typename FilterT = EnabledBaselineFilter>
+    ListEnabledBaselinesRequest& WithFilter(FilterT&& value) { SetFilter(std::forward<FilterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,7 +52,7 @@ namespace Model
      * <p>A value that can be set to include the child enabled baselines in responses.
      * The default value is false.</p>
      */
-    inline bool GetIncludeChildren() const{ return m_includeChildren; }
+    inline bool GetIncludeChildren() const { return m_includeChildren; }
     inline bool IncludeChildrenHasBeenSet() const { return m_includeChildrenHasBeenSet; }
     inline void SetIncludeChildren(bool value) { m_includeChildrenHasBeenSet = true; m_includeChildren = value; }
     inline ListEnabledBaselinesRequest& WithIncludeChildren(bool value) { SetIncludeChildren(value); return *this;}
@@ -62,7 +62,7 @@ namespace Model
     /**
      * <p>The maximum number of results to be shown.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListEnabledBaselinesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -72,24 +72,22 @@ namespace Model
     /**
      * <p>A pagination token.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListEnabledBaselinesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListEnabledBaselinesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListEnabledBaselinesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListEnabledBaselinesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     EnabledBaselineFilter m_filter;
     bool m_filterHasBeenSet = false;
 
-    bool m_includeChildren;
+    bool m_includeChildren{false};
     bool m_includeChildrenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

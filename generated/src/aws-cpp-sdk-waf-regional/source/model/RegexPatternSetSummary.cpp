@@ -18,14 +18,7 @@ namespace WAFRegional
 namespace Model
 {
 
-RegexPatternSetSummary::RegexPatternSetSummary() : 
-    m_regexPatternSetIdHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 RegexPatternSetSummary::RegexPatternSetSummary(JsonView jsonValue)
-  : RegexPatternSetSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RegexPatternSetSummary& RegexPatternSetSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RegexPatternSetId"))
   {
     m_regexPatternSetId = jsonValue.GetString("RegexPatternSetId");
-
     m_regexPatternSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

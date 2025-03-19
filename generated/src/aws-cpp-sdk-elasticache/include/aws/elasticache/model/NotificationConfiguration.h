@@ -33,7 +33,7 @@ namespace Model
   class NotificationConfiguration
   {
   public:
-    AWS_ELASTICACHE_API NotificationConfiguration();
+    AWS_ELASTICACHE_API NotificationConfiguration() = default;
     AWS_ELASTICACHE_API NotificationConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICACHE_API NotificationConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) that identifies the topic.</p>
      */
-    inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+    inline const Aws::String& GetTopicArn() const { return m_topicArn; }
     inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
-    inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
-    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
-    inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
-    inline NotificationConfiguration& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
-    inline NotificationConfiguration& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
-    inline NotificationConfiguration& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
+    template<typename TopicArnT = Aws::String>
+    void SetTopicArn(TopicArnT&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::forward<TopicArnT>(value); }
+    template<typename TopicArnT = Aws::String>
+    NotificationConfiguration& WithTopicArn(TopicArnT&& value) { SetTopicArn(std::forward<TopicArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The current state of the topic.</p>
      */
-    inline const Aws::String& GetTopicStatus() const{ return m_topicStatus; }
+    inline const Aws::String& GetTopicStatus() const { return m_topicStatus; }
     inline bool TopicStatusHasBeenSet() const { return m_topicStatusHasBeenSet; }
-    inline void SetTopicStatus(const Aws::String& value) { m_topicStatusHasBeenSet = true; m_topicStatus = value; }
-    inline void SetTopicStatus(Aws::String&& value) { m_topicStatusHasBeenSet = true; m_topicStatus = std::move(value); }
-    inline void SetTopicStatus(const char* value) { m_topicStatusHasBeenSet = true; m_topicStatus.assign(value); }
-    inline NotificationConfiguration& WithTopicStatus(const Aws::String& value) { SetTopicStatus(value); return *this;}
-    inline NotificationConfiguration& WithTopicStatus(Aws::String&& value) { SetTopicStatus(std::move(value)); return *this;}
-    inline NotificationConfiguration& WithTopicStatus(const char* value) { SetTopicStatus(value); return *this;}
+    template<typename TopicStatusT = Aws::String>
+    void SetTopicStatus(TopicStatusT&& value) { m_topicStatusHasBeenSet = true; m_topicStatus = std::forward<TopicStatusT>(value); }
+    template<typename TopicStatusT = Aws::String>
+    NotificationConfiguration& WithTopicStatus(TopicStatusT&& value) { SetTopicStatus(std::forward<TopicStatusT>(value)); return *this;}
     ///@}
   private:
 

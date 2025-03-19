@@ -28,7 +28,7 @@ namespace Model
   class ListLensReviewsRequest : public WellArchitectedRequest
   {
   public:
-    AWS_WELLARCHITECTED_API ListLensReviewsRequest();
+    AWS_WELLARCHITECTED_API ListLensReviewsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,19 +43,17 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
+    inline const Aws::String& GetWorkloadId() const { return m_workloadId; }
     inline bool WorkloadIdHasBeenSet() const { return m_workloadIdHasBeenSet; }
-    inline void SetWorkloadId(const Aws::String& value) { m_workloadIdHasBeenSet = true; m_workloadId = value; }
-    inline void SetWorkloadId(Aws::String&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::move(value); }
-    inline void SetWorkloadId(const char* value) { m_workloadIdHasBeenSet = true; m_workloadId.assign(value); }
-    inline ListLensReviewsRequest& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-    inline ListLensReviewsRequest& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-    inline ListLensReviewsRequest& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    template<typename WorkloadIdT = Aws::String>
+    void SetWorkloadId(WorkloadIdT&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::forward<WorkloadIdT>(value); }
+    template<typename WorkloadIdT = Aws::String>
+    ListLensReviewsRequest& WithWorkloadId(WorkloadIdT&& value) { SetWorkloadId(std::forward<WorkloadIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline int GetMilestoneNumber() const{ return m_milestoneNumber; }
+    inline int GetMilestoneNumber() const { return m_milestoneNumber; }
     inline bool MilestoneNumberHasBeenSet() const { return m_milestoneNumberHasBeenSet; }
     inline void SetMilestoneNumber(int value) { m_milestoneNumberHasBeenSet = true; m_milestoneNumber = value; }
     inline ListLensReviewsRequest& WithMilestoneNumber(int value) { SetMilestoneNumber(value); return *this;}
@@ -63,19 +61,17 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListLensReviewsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListLensReviewsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListLensReviewsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListLensReviewsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListLensReviewsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -85,13 +81,13 @@ namespace Model
     Aws::String m_workloadId;
     bool m_workloadIdHasBeenSet = false;
 
-    int m_milestoneNumber;
+    int m_milestoneNumber{0};
     bool m_milestoneNumberHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
   };
 

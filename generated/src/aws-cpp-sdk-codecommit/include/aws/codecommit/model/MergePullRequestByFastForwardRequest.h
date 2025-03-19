@@ -21,7 +21,7 @@ namespace Model
   class MergePullRequestByFastForwardRequest : public CodeCommitRequest
   {
   public:
-    AWS_CODECOMMIT_API MergePullRequestByFastForwardRequest();
+    AWS_CODECOMMIT_API MergePullRequestByFastForwardRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
      * <p>The system-generated ID of the pull request. To get this ID, use
      * <a>ListPullRequests</a>.</p>
      */
-    inline const Aws::String& GetPullRequestId() const{ return m_pullRequestId; }
+    inline const Aws::String& GetPullRequestId() const { return m_pullRequestId; }
     inline bool PullRequestIdHasBeenSet() const { return m_pullRequestIdHasBeenSet; }
-    inline void SetPullRequestId(const Aws::String& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = value; }
-    inline void SetPullRequestId(Aws::String&& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = std::move(value); }
-    inline void SetPullRequestId(const char* value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId.assign(value); }
-    inline MergePullRequestByFastForwardRequest& WithPullRequestId(const Aws::String& value) { SetPullRequestId(value); return *this;}
-    inline MergePullRequestByFastForwardRequest& WithPullRequestId(Aws::String&& value) { SetPullRequestId(std::move(value)); return *this;}
-    inline MergePullRequestByFastForwardRequest& WithPullRequestId(const char* value) { SetPullRequestId(value); return *this;}
+    template<typename PullRequestIdT = Aws::String>
+    void SetPullRequestId(PullRequestIdT&& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = std::forward<PullRequestIdT>(value); }
+    template<typename PullRequestIdT = Aws::String>
+    MergePullRequestByFastForwardRequest& WithPullRequestId(PullRequestIdT&& value) { SetPullRequestId(std::forward<PullRequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the repository where the pull request was created.</p>
      */
-    inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+    inline const Aws::String& GetRepositoryName() const { return m_repositoryName; }
     inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
-    inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
-    inline void SetRepositoryName(Aws::String&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::move(value); }
-    inline void SetRepositoryName(const char* value) { m_repositoryNameHasBeenSet = true; m_repositoryName.assign(value); }
-    inline MergePullRequestByFastForwardRequest& WithRepositoryName(const Aws::String& value) { SetRepositoryName(value); return *this;}
-    inline MergePullRequestByFastForwardRequest& WithRepositoryName(Aws::String&& value) { SetRepositoryName(std::move(value)); return *this;}
-    inline MergePullRequestByFastForwardRequest& WithRepositoryName(const char* value) { SetRepositoryName(value); return *this;}
+    template<typename RepositoryNameT = Aws::String>
+    void SetRepositoryName(RepositoryNameT&& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = std::forward<RepositoryNameT>(value); }
+    template<typename RepositoryNameT = Aws::String>
+    MergePullRequestByFastForwardRequest& WithRepositoryName(RepositoryNameT&& value) { SetRepositoryName(std::forward<RepositoryNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +65,12 @@ namespace Model
      * source branch. Pass this value if you want an exception thrown if the current
      * commit ID of the tip of the source branch does not match this commit ID.</p>
      */
-    inline const Aws::String& GetSourceCommitId() const{ return m_sourceCommitId; }
+    inline const Aws::String& GetSourceCommitId() const { return m_sourceCommitId; }
     inline bool SourceCommitIdHasBeenSet() const { return m_sourceCommitIdHasBeenSet; }
-    inline void SetSourceCommitId(const Aws::String& value) { m_sourceCommitIdHasBeenSet = true; m_sourceCommitId = value; }
-    inline void SetSourceCommitId(Aws::String&& value) { m_sourceCommitIdHasBeenSet = true; m_sourceCommitId = std::move(value); }
-    inline void SetSourceCommitId(const char* value) { m_sourceCommitIdHasBeenSet = true; m_sourceCommitId.assign(value); }
-    inline MergePullRequestByFastForwardRequest& WithSourceCommitId(const Aws::String& value) { SetSourceCommitId(value); return *this;}
-    inline MergePullRequestByFastForwardRequest& WithSourceCommitId(Aws::String&& value) { SetSourceCommitId(std::move(value)); return *this;}
-    inline MergePullRequestByFastForwardRequest& WithSourceCommitId(const char* value) { SetSourceCommitId(value); return *this;}
+    template<typename SourceCommitIdT = Aws::String>
+    void SetSourceCommitId(SourceCommitIdT&& value) { m_sourceCommitIdHasBeenSet = true; m_sourceCommitId = std::forward<SourceCommitIdT>(value); }
+    template<typename SourceCommitIdT = Aws::String>
+    MergePullRequestByFastForwardRequest& WithSourceCommitId(SourceCommitIdT&& value) { SetSourceCommitId(std::forward<SourceCommitIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,47 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-Fleet::Fleet() : 
-    m_arnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_displayNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_imageNameHasBeenSet(false),
-    m_imageArnHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_fleetType(FleetType::NOT_SET),
-    m_fleetTypeHasBeenSet(false),
-    m_computeCapacityStatusHasBeenSet(false),
-    m_maxUserDurationInSeconds(0),
-    m_maxUserDurationInSecondsHasBeenSet(false),
-    m_disconnectTimeoutInSeconds(0),
-    m_disconnectTimeoutInSecondsHasBeenSet(false),
-    m_state(FleetState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_vpcConfigHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_fleetErrorsHasBeenSet(false),
-    m_enableDefaultInternetAccess(false),
-    m_enableDefaultInternetAccessHasBeenSet(false),
-    m_domainJoinInfoHasBeenSet(false),
-    m_idleDisconnectTimeoutInSeconds(0),
-    m_idleDisconnectTimeoutInSecondsHasBeenSet(false),
-    m_iamRoleArnHasBeenSet(false),
-    m_streamView(StreamView::NOT_SET),
-    m_streamViewHasBeenSet(false),
-    m_platform(PlatformType::NOT_SET),
-    m_platformHasBeenSet(false),
-    m_maxConcurrentSessions(0),
-    m_maxConcurrentSessionsHasBeenSet(false),
-    m_usbDeviceFilterStringsHasBeenSet(false),
-    m_sessionScriptS3LocationHasBeenSet(false),
-    m_maxSessionsPerInstance(0),
-    m_maxSessionsPerInstanceHasBeenSet(false)
-{
-}
-
 Fleet::Fleet(JsonView jsonValue)
-  : Fleet()
 {
   *this = jsonValue;
 }
@@ -68,101 +28,73 @@ Fleet& Fleet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageName"))
   {
     m_imageName = jsonValue.GetString("ImageName");
-
     m_imageNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ImageArn"))
   {
     m_imageArn = jsonValue.GetString("ImageArn");
-
     m_imageArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = jsonValue.GetString("InstanceType");
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FleetType"))
   {
     m_fleetType = FleetTypeMapper::GetFleetTypeForName(jsonValue.GetString("FleetType"));
-
     m_fleetTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComputeCapacityStatus"))
   {
     m_computeCapacityStatus = jsonValue.GetObject("ComputeCapacityStatus");
-
     m_computeCapacityStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxUserDurationInSeconds"))
   {
     m_maxUserDurationInSeconds = jsonValue.GetInteger("MaxUserDurationInSeconds");
-
     m_maxUserDurationInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisconnectTimeoutInSeconds"))
   {
     m_disconnectTimeoutInSeconds = jsonValue.GetInteger("DisconnectTimeoutInSeconds");
-
     m_disconnectTimeoutInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = FleetStateMapper::GetFleetStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VpcConfig"))
   {
     m_vpcConfig = jsonValue.GetObject("VpcConfig");
-
     m_vpcConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FleetErrors"))
   {
     Aws::Utils::Array<JsonView> fleetErrorsJsonList = jsonValue.GetArray("FleetErrors");
@@ -172,56 +104,41 @@ Fleet& Fleet::operator =(JsonView jsonValue)
     }
     m_fleetErrorsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableDefaultInternetAccess"))
   {
     m_enableDefaultInternetAccess = jsonValue.GetBool("EnableDefaultInternetAccess");
-
     m_enableDefaultInternetAccessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainJoinInfo"))
   {
     m_domainJoinInfo = jsonValue.GetObject("DomainJoinInfo");
-
     m_domainJoinInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdleDisconnectTimeoutInSeconds"))
   {
     m_idleDisconnectTimeoutInSeconds = jsonValue.GetInteger("IdleDisconnectTimeoutInSeconds");
-
     m_idleDisconnectTimeoutInSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamRoleArn"))
   {
     m_iamRoleArn = jsonValue.GetString("IamRoleArn");
-
     m_iamRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamView"))
   {
     m_streamView = StreamViewMapper::GetStreamViewForName(jsonValue.GetString("StreamView"));
-
     m_streamViewHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Platform"))
   {
     m_platform = PlatformTypeMapper::GetPlatformTypeForName(jsonValue.GetString("Platform"));
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxConcurrentSessions"))
   {
     m_maxConcurrentSessions = jsonValue.GetInteger("MaxConcurrentSessions");
-
     m_maxConcurrentSessionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UsbDeviceFilterStrings"))
   {
     Aws::Utils::Array<JsonView> usbDeviceFilterStringsJsonList = jsonValue.GetArray("UsbDeviceFilterStrings");
@@ -231,21 +148,16 @@ Fleet& Fleet::operator =(JsonView jsonValue)
     }
     m_usbDeviceFilterStringsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SessionScriptS3Location"))
   {
     m_sessionScriptS3Location = jsonValue.GetObject("SessionScriptS3Location");
-
     m_sessionScriptS3LocationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxSessionsPerInstance"))
   {
     m_maxSessionsPerInstance = jsonValue.GetInteger("MaxSessionsPerInstance");
-
     m_maxSessionsPerInstanceHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-UpdateComponentRequest::UpdateComponentRequest() : 
-    m_appIdHasBeenSet(false),
-    m_environmentNameHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_updatedComponentHasBeenSet(false)
-{
-}
-
 Aws::String UpdateComponentRequest::SerializePayload() const
 {
   JsonValue payload;

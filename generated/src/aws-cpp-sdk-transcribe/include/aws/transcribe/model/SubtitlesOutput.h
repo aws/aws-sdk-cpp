@@ -34,7 +34,7 @@ namespace Model
   class SubtitlesOutput
   {
   public:
-    AWS_TRANSCRIBESERVICE_API SubtitlesOutput();
+    AWS_TRANSCRIBESERVICE_API SubtitlesOutput() = default;
     AWS_TRANSCRIBESERVICE_API SubtitlesOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API SubtitlesOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,13 @@ namespace Model
      * WebVTT (<code>vtt</code>) and SubRip (<code>srt</code>) formats, both formats
      * are shown.</p>
      */
-    inline const Aws::Vector<SubtitleFormat>& GetFormats() const{ return m_formats; }
+    inline const Aws::Vector<SubtitleFormat>& GetFormats() const { return m_formats; }
     inline bool FormatsHasBeenSet() const { return m_formatsHasBeenSet; }
-    inline void SetFormats(const Aws::Vector<SubtitleFormat>& value) { m_formatsHasBeenSet = true; m_formats = value; }
-    inline void SetFormats(Aws::Vector<SubtitleFormat>&& value) { m_formatsHasBeenSet = true; m_formats = std::move(value); }
-    inline SubtitlesOutput& WithFormats(const Aws::Vector<SubtitleFormat>& value) { SetFormats(value); return *this;}
-    inline SubtitlesOutput& WithFormats(Aws::Vector<SubtitleFormat>&& value) { SetFormats(std::move(value)); return *this;}
-    inline SubtitlesOutput& AddFormats(const SubtitleFormat& value) { m_formatsHasBeenSet = true; m_formats.push_back(value); return *this; }
-    inline SubtitlesOutput& AddFormats(SubtitleFormat&& value) { m_formatsHasBeenSet = true; m_formats.push_back(std::move(value)); return *this; }
+    template<typename FormatsT = Aws::Vector<SubtitleFormat>>
+    void SetFormats(FormatsT&& value) { m_formatsHasBeenSet = true; m_formats = std::forward<FormatsT>(value); }
+    template<typename FormatsT = Aws::Vector<SubtitleFormat>>
+    SubtitlesOutput& WithFormats(FormatsT&& value) { SetFormats(std::forward<FormatsT>(value)); return *this;}
+    inline SubtitlesOutput& AddFormats(SubtitleFormat value) { m_formatsHasBeenSet = true; m_formats.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -73,15 +72,14 @@ namespace Model
      * get a new temporary URI by running a <code>GetTranscriptionJob</code> or
      * <code>ListTranscriptionJob</code> request.</p> 
      */
-    inline const Aws::Vector<Aws::String>& GetSubtitleFileUris() const{ return m_subtitleFileUris; }
+    inline const Aws::Vector<Aws::String>& GetSubtitleFileUris() const { return m_subtitleFileUris; }
     inline bool SubtitleFileUrisHasBeenSet() const { return m_subtitleFileUrisHasBeenSet; }
-    inline void SetSubtitleFileUris(const Aws::Vector<Aws::String>& value) { m_subtitleFileUrisHasBeenSet = true; m_subtitleFileUris = value; }
-    inline void SetSubtitleFileUris(Aws::Vector<Aws::String>&& value) { m_subtitleFileUrisHasBeenSet = true; m_subtitleFileUris = std::move(value); }
-    inline SubtitlesOutput& WithSubtitleFileUris(const Aws::Vector<Aws::String>& value) { SetSubtitleFileUris(value); return *this;}
-    inline SubtitlesOutput& WithSubtitleFileUris(Aws::Vector<Aws::String>&& value) { SetSubtitleFileUris(std::move(value)); return *this;}
-    inline SubtitlesOutput& AddSubtitleFileUris(const Aws::String& value) { m_subtitleFileUrisHasBeenSet = true; m_subtitleFileUris.push_back(value); return *this; }
-    inline SubtitlesOutput& AddSubtitleFileUris(Aws::String&& value) { m_subtitleFileUrisHasBeenSet = true; m_subtitleFileUris.push_back(std::move(value)); return *this; }
-    inline SubtitlesOutput& AddSubtitleFileUris(const char* value) { m_subtitleFileUrisHasBeenSet = true; m_subtitleFileUris.push_back(value); return *this; }
+    template<typename SubtitleFileUrisT = Aws::Vector<Aws::String>>
+    void SetSubtitleFileUris(SubtitleFileUrisT&& value) { m_subtitleFileUrisHasBeenSet = true; m_subtitleFileUris = std::forward<SubtitleFileUrisT>(value); }
+    template<typename SubtitleFileUrisT = Aws::Vector<Aws::String>>
+    SubtitlesOutput& WithSubtitleFileUris(SubtitleFileUrisT&& value) { SetSubtitleFileUris(std::forward<SubtitleFileUrisT>(value)); return *this;}
+    template<typename SubtitleFileUrisT = Aws::String>
+    SubtitlesOutput& AddSubtitleFileUris(SubtitleFileUrisT&& value) { m_subtitleFileUrisHasBeenSet = true; m_subtitleFileUris.emplace_back(std::forward<SubtitleFileUrisT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -90,7 +88,7 @@ namespace Model
      * specify a value in your request, the default value of <code>0</code> is
      * used.</p>
      */
-    inline int GetOutputStartIndex() const{ return m_outputStartIndex; }
+    inline int GetOutputStartIndex() const { return m_outputStartIndex; }
     inline bool OutputStartIndexHasBeenSet() const { return m_outputStartIndexHasBeenSet; }
     inline void SetOutputStartIndex(int value) { m_outputStartIndexHasBeenSet = true; m_outputStartIndex = value; }
     inline SubtitlesOutput& WithOutputStartIndex(int value) { SetOutputStartIndex(value); return *this;}
@@ -103,7 +101,7 @@ namespace Model
     Aws::Vector<Aws::String> m_subtitleFileUris;
     bool m_subtitleFileUrisHasBeenSet = false;
 
-    int m_outputStartIndex;
+    int m_outputStartIndex{0};
     bool m_outputStartIndexHasBeenSet = false;
   };
 

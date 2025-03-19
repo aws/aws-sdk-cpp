@@ -12,12 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateVTLDeviceTypeRequest::UpdateVTLDeviceTypeRequest() : 
-    m_vTLDeviceARNHasBeenSet(false),
-    m_deviceTypeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateVTLDeviceTypeRequest::SerializePayload() const
 {
   JsonValue payload;

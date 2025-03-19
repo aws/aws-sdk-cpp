@@ -24,7 +24,7 @@ namespace Model
   class UpdateOpsMetadataRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API UpdateOpsMetadataRequest();
+    AWS_SSM_API UpdateOpsMetadataRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,47 +41,42 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the OpsMetadata Object to update.</p>
      */
-    inline const Aws::String& GetOpsMetadataArn() const{ return m_opsMetadataArn; }
+    inline const Aws::String& GetOpsMetadataArn() const { return m_opsMetadataArn; }
     inline bool OpsMetadataArnHasBeenSet() const { return m_opsMetadataArnHasBeenSet; }
-    inline void SetOpsMetadataArn(const Aws::String& value) { m_opsMetadataArnHasBeenSet = true; m_opsMetadataArn = value; }
-    inline void SetOpsMetadataArn(Aws::String&& value) { m_opsMetadataArnHasBeenSet = true; m_opsMetadataArn = std::move(value); }
-    inline void SetOpsMetadataArn(const char* value) { m_opsMetadataArnHasBeenSet = true; m_opsMetadataArn.assign(value); }
-    inline UpdateOpsMetadataRequest& WithOpsMetadataArn(const Aws::String& value) { SetOpsMetadataArn(value); return *this;}
-    inline UpdateOpsMetadataRequest& WithOpsMetadataArn(Aws::String&& value) { SetOpsMetadataArn(std::move(value)); return *this;}
-    inline UpdateOpsMetadataRequest& WithOpsMetadataArn(const char* value) { SetOpsMetadataArn(value); return *this;}
+    template<typename OpsMetadataArnT = Aws::String>
+    void SetOpsMetadataArn(OpsMetadataArnT&& value) { m_opsMetadataArnHasBeenSet = true; m_opsMetadataArn = std::forward<OpsMetadataArnT>(value); }
+    template<typename OpsMetadataArnT = Aws::String>
+    UpdateOpsMetadataRequest& WithOpsMetadataArn(OpsMetadataArnT&& value) { SetOpsMetadataArn(std::forward<OpsMetadataArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Metadata to add to an OpsMetadata object.</p>
      */
-    inline const Aws::Map<Aws::String, MetadataValue>& GetMetadataToUpdate() const{ return m_metadataToUpdate; }
+    inline const Aws::Map<Aws::String, MetadataValue>& GetMetadataToUpdate() const { return m_metadataToUpdate; }
     inline bool MetadataToUpdateHasBeenSet() const { return m_metadataToUpdateHasBeenSet; }
-    inline void SetMetadataToUpdate(const Aws::Map<Aws::String, MetadataValue>& value) { m_metadataToUpdateHasBeenSet = true; m_metadataToUpdate = value; }
-    inline void SetMetadataToUpdate(Aws::Map<Aws::String, MetadataValue>&& value) { m_metadataToUpdateHasBeenSet = true; m_metadataToUpdate = std::move(value); }
-    inline UpdateOpsMetadataRequest& WithMetadataToUpdate(const Aws::Map<Aws::String, MetadataValue>& value) { SetMetadataToUpdate(value); return *this;}
-    inline UpdateOpsMetadataRequest& WithMetadataToUpdate(Aws::Map<Aws::String, MetadataValue>&& value) { SetMetadataToUpdate(std::move(value)); return *this;}
-    inline UpdateOpsMetadataRequest& AddMetadataToUpdate(const Aws::String& key, const MetadataValue& value) { m_metadataToUpdateHasBeenSet = true; m_metadataToUpdate.emplace(key, value); return *this; }
-    inline UpdateOpsMetadataRequest& AddMetadataToUpdate(Aws::String&& key, const MetadataValue& value) { m_metadataToUpdateHasBeenSet = true; m_metadataToUpdate.emplace(std::move(key), value); return *this; }
-    inline UpdateOpsMetadataRequest& AddMetadataToUpdate(const Aws::String& key, MetadataValue&& value) { m_metadataToUpdateHasBeenSet = true; m_metadataToUpdate.emplace(key, std::move(value)); return *this; }
-    inline UpdateOpsMetadataRequest& AddMetadataToUpdate(Aws::String&& key, MetadataValue&& value) { m_metadataToUpdateHasBeenSet = true; m_metadataToUpdate.emplace(std::move(key), std::move(value)); return *this; }
-    inline UpdateOpsMetadataRequest& AddMetadataToUpdate(const char* key, MetadataValue&& value) { m_metadataToUpdateHasBeenSet = true; m_metadataToUpdate.emplace(key, std::move(value)); return *this; }
-    inline UpdateOpsMetadataRequest& AddMetadataToUpdate(const char* key, const MetadataValue& value) { m_metadataToUpdateHasBeenSet = true; m_metadataToUpdate.emplace(key, value); return *this; }
+    template<typename MetadataToUpdateT = Aws::Map<Aws::String, MetadataValue>>
+    void SetMetadataToUpdate(MetadataToUpdateT&& value) { m_metadataToUpdateHasBeenSet = true; m_metadataToUpdate = std::forward<MetadataToUpdateT>(value); }
+    template<typename MetadataToUpdateT = Aws::Map<Aws::String, MetadataValue>>
+    UpdateOpsMetadataRequest& WithMetadataToUpdate(MetadataToUpdateT&& value) { SetMetadataToUpdate(std::forward<MetadataToUpdateT>(value)); return *this;}
+    template<typename MetadataToUpdateKeyT = Aws::String, typename MetadataToUpdateValueT = MetadataValue>
+    UpdateOpsMetadataRequest& AddMetadataToUpdate(MetadataToUpdateKeyT&& key, MetadataToUpdateValueT&& value) {
+      m_metadataToUpdateHasBeenSet = true; m_metadataToUpdate.emplace(std::forward<MetadataToUpdateKeyT>(key), std::forward<MetadataToUpdateValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The metadata keys to delete from the OpsMetadata object. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetKeysToDelete() const{ return m_keysToDelete; }
+    inline const Aws::Vector<Aws::String>& GetKeysToDelete() const { return m_keysToDelete; }
     inline bool KeysToDeleteHasBeenSet() const { return m_keysToDeleteHasBeenSet; }
-    inline void SetKeysToDelete(const Aws::Vector<Aws::String>& value) { m_keysToDeleteHasBeenSet = true; m_keysToDelete = value; }
-    inline void SetKeysToDelete(Aws::Vector<Aws::String>&& value) { m_keysToDeleteHasBeenSet = true; m_keysToDelete = std::move(value); }
-    inline UpdateOpsMetadataRequest& WithKeysToDelete(const Aws::Vector<Aws::String>& value) { SetKeysToDelete(value); return *this;}
-    inline UpdateOpsMetadataRequest& WithKeysToDelete(Aws::Vector<Aws::String>&& value) { SetKeysToDelete(std::move(value)); return *this;}
-    inline UpdateOpsMetadataRequest& AddKeysToDelete(const Aws::String& value) { m_keysToDeleteHasBeenSet = true; m_keysToDelete.push_back(value); return *this; }
-    inline UpdateOpsMetadataRequest& AddKeysToDelete(Aws::String&& value) { m_keysToDeleteHasBeenSet = true; m_keysToDelete.push_back(std::move(value)); return *this; }
-    inline UpdateOpsMetadataRequest& AddKeysToDelete(const char* value) { m_keysToDeleteHasBeenSet = true; m_keysToDelete.push_back(value); return *this; }
+    template<typename KeysToDeleteT = Aws::Vector<Aws::String>>
+    void SetKeysToDelete(KeysToDeleteT&& value) { m_keysToDeleteHasBeenSet = true; m_keysToDelete = std::forward<KeysToDeleteT>(value); }
+    template<typename KeysToDeleteT = Aws::Vector<Aws::String>>
+    UpdateOpsMetadataRequest& WithKeysToDelete(KeysToDeleteT&& value) { SetKeysToDelete(std::forward<KeysToDeleteT>(value)); return *this;}
+    template<typename KeysToDeleteT = Aws::String>
+    UpdateOpsMetadataRequest& AddKeysToDelete(KeysToDeleteT&& value) { m_keysToDeleteHasBeenSet = true; m_keysToDelete.emplace_back(std::forward<KeysToDeleteT>(value)); return *this; }
     ///@}
   private:
 

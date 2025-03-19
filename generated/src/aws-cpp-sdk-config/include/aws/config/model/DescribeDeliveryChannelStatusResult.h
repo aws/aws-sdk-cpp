@@ -35,7 +35,7 @@ namespace Model
   class DescribeDeliveryChannelStatusResult
   {
   public:
-    AWS_CONFIGSERVICE_API DescribeDeliveryChannelStatusResult();
+    AWS_CONFIGSERVICE_API DescribeDeliveryChannelStatusResult() = default;
     AWS_CONFIGSERVICE_API DescribeDeliveryChannelStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API DescribeDeliveryChannelStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,30 +44,30 @@ namespace Model
     /**
      * <p>A list that contains the status of a specified delivery channel.</p>
      */
-    inline const Aws::Vector<DeliveryChannelStatus>& GetDeliveryChannelsStatus() const{ return m_deliveryChannelsStatus; }
-    inline void SetDeliveryChannelsStatus(const Aws::Vector<DeliveryChannelStatus>& value) { m_deliveryChannelsStatus = value; }
-    inline void SetDeliveryChannelsStatus(Aws::Vector<DeliveryChannelStatus>&& value) { m_deliveryChannelsStatus = std::move(value); }
-    inline DescribeDeliveryChannelStatusResult& WithDeliveryChannelsStatus(const Aws::Vector<DeliveryChannelStatus>& value) { SetDeliveryChannelsStatus(value); return *this;}
-    inline DescribeDeliveryChannelStatusResult& WithDeliveryChannelsStatus(Aws::Vector<DeliveryChannelStatus>&& value) { SetDeliveryChannelsStatus(std::move(value)); return *this;}
-    inline DescribeDeliveryChannelStatusResult& AddDeliveryChannelsStatus(const DeliveryChannelStatus& value) { m_deliveryChannelsStatus.push_back(value); return *this; }
-    inline DescribeDeliveryChannelStatusResult& AddDeliveryChannelsStatus(DeliveryChannelStatus&& value) { m_deliveryChannelsStatus.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DeliveryChannelStatus>& GetDeliveryChannelsStatus() const { return m_deliveryChannelsStatus; }
+    template<typename DeliveryChannelsStatusT = Aws::Vector<DeliveryChannelStatus>>
+    void SetDeliveryChannelsStatus(DeliveryChannelsStatusT&& value) { m_deliveryChannelsStatusHasBeenSet = true; m_deliveryChannelsStatus = std::forward<DeliveryChannelsStatusT>(value); }
+    template<typename DeliveryChannelsStatusT = Aws::Vector<DeliveryChannelStatus>>
+    DescribeDeliveryChannelStatusResult& WithDeliveryChannelsStatus(DeliveryChannelsStatusT&& value) { SetDeliveryChannelsStatus(std::forward<DeliveryChannelsStatusT>(value)); return *this;}
+    template<typename DeliveryChannelsStatusT = DeliveryChannelStatus>
+    DescribeDeliveryChannelStatusResult& AddDeliveryChannelsStatus(DeliveryChannelsStatusT&& value) { m_deliveryChannelsStatusHasBeenSet = true; m_deliveryChannelsStatus.emplace_back(std::forward<DeliveryChannelsStatusT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDeliveryChannelStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDeliveryChannelStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDeliveryChannelStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDeliveryChannelStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DeliveryChannelStatus> m_deliveryChannelsStatus;
+    bool m_deliveryChannelsStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

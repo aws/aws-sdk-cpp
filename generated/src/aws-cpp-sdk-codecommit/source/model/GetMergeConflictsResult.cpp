@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetMergeConflictsResult::GetMergeConflictsResult() : 
-    m_mergeable(false)
-{
-}
-
 GetMergeConflictsResult::GetMergeConflictsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetMergeConflictsResult()
 {
   *this = result;
 }
@@ -34,27 +28,23 @@ GetMergeConflictsResult& GetMergeConflictsResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("mergeable"))
   {
     m_mergeable = jsonValue.GetBool("mergeable");
-
+    m_mergeableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destinationCommitId"))
   {
     m_destinationCommitId = jsonValue.GetString("destinationCommitId");
-
+    m_destinationCommitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceCommitId"))
   {
     m_sourceCommitId = jsonValue.GetString("sourceCommitId");
-
+    m_sourceCommitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("baseCommitId"))
   {
     m_baseCommitId = jsonValue.GetString("baseCommitId");
-
+    m_baseCommitIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conflictMetadataList"))
   {
     Aws::Utils::Array<JsonView> conflictMetadataListJsonList = jsonValue.GetArray("conflictMetadataList");
@@ -62,20 +52,20 @@ GetMergeConflictsResult& GetMergeConflictsResult::operator =(const Aws::AmazonWe
     {
       m_conflictMetadataList.push_back(conflictMetadataListJsonList[conflictMetadataListIndex].AsObject());
     }
+    m_conflictMetadataListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

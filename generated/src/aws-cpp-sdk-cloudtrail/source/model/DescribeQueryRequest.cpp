@@ -12,14 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeQueryRequest::DescribeQueryRequest() : 
-    m_queryIdHasBeenSet(false),
-    m_queryAliasHasBeenSet(false),
-    m_refreshIdHasBeenSet(false),
-    m_eventDataStoreOwnerAccountIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeQueryRequest::SerializePayload() const
 {
   JsonValue payload;

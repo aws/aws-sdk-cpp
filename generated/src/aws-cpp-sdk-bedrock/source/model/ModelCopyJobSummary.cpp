@@ -18,24 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-ModelCopyJobSummary::ModelCopyJobSummary() : 
-    m_jobArnHasBeenSet(false),
-    m_status(ModelCopyJobStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_targetModelArnHasBeenSet(false),
-    m_targetModelNameHasBeenSet(false),
-    m_sourceAccountIdHasBeenSet(false),
-    m_sourceModelArnHasBeenSet(false),
-    m_targetModelKmsKeyArnHasBeenSet(false),
-    m_targetModelTagsHasBeenSet(false),
-    m_failureMessageHasBeenSet(false),
-    m_sourceModelNameHasBeenSet(false)
-{
-}
-
 ModelCopyJobSummary::ModelCopyJobSummary(JsonView jsonValue)
-  : ModelCopyJobSummary()
 {
   *this = jsonValue;
 }
@@ -45,59 +28,43 @@ ModelCopyJobSummary& ModelCopyJobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobArn"))
   {
     m_jobArn = jsonValue.GetString("jobArn");
-
     m_jobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ModelCopyJobStatusMapper::GetModelCopyJobStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetModelArn"))
   {
     m_targetModelArn = jsonValue.GetString("targetModelArn");
-
     m_targetModelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetModelName"))
   {
     m_targetModelName = jsonValue.GetString("targetModelName");
-
     m_targetModelNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceAccountId"))
   {
     m_sourceAccountId = jsonValue.GetString("sourceAccountId");
-
     m_sourceAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceModelArn"))
   {
     m_sourceModelArn = jsonValue.GetString("sourceModelArn");
-
     m_sourceModelArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetModelKmsKeyArn"))
   {
     m_targetModelKmsKeyArn = jsonValue.GetString("targetModelKmsKeyArn");
-
     m_targetModelKmsKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetModelTags"))
   {
     Aws::Utils::Array<JsonView> targetModelTagsJsonList = jsonValue.GetArray("targetModelTags");
@@ -107,21 +74,16 @@ ModelCopyJobSummary& ModelCopyJobSummary::operator =(JsonView jsonValue)
     }
     m_targetModelTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("failureMessage"))
   {
     m_failureMessage = jsonValue.GetString("failureMessage");
-
     m_failureMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceModelName"))
   {
     m_sourceModelName = jsonValue.GetString("sourceModelName");
-
     m_sourceModelNameHasBeenSet = true;
   }
-
   return *this;
 }
 

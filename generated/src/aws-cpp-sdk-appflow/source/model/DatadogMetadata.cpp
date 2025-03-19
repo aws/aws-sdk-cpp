@@ -18,10 +18,6 @@ namespace Appflow
 namespace Model
 {
 
-DatadogMetadata::DatadogMetadata()
-{
-}
-
 DatadogMetadata::DatadogMetadata(JsonView jsonValue)
 {
   *this = jsonValue;

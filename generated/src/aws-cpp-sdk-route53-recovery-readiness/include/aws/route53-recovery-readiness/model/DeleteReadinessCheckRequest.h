@@ -21,7 +21,7 @@ namespace Model
   class DeleteReadinessCheckRequest : public Route53RecoveryReadinessRequest
   {
   public:
-    AWS_ROUTE53RECOVERYREADINESS_API DeleteReadinessCheckRequest();
+    AWS_ROUTE53RECOVERYREADINESS_API DeleteReadinessCheckRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>Name of a readiness check.</p>
      */
-    inline const Aws::String& GetReadinessCheckName() const{ return m_readinessCheckName; }
+    inline const Aws::String& GetReadinessCheckName() const { return m_readinessCheckName; }
     inline bool ReadinessCheckNameHasBeenSet() const { return m_readinessCheckNameHasBeenSet; }
-    inline void SetReadinessCheckName(const Aws::String& value) { m_readinessCheckNameHasBeenSet = true; m_readinessCheckName = value; }
-    inline void SetReadinessCheckName(Aws::String&& value) { m_readinessCheckNameHasBeenSet = true; m_readinessCheckName = std::move(value); }
-    inline void SetReadinessCheckName(const char* value) { m_readinessCheckNameHasBeenSet = true; m_readinessCheckName.assign(value); }
-    inline DeleteReadinessCheckRequest& WithReadinessCheckName(const Aws::String& value) { SetReadinessCheckName(value); return *this;}
-    inline DeleteReadinessCheckRequest& WithReadinessCheckName(Aws::String&& value) { SetReadinessCheckName(std::move(value)); return *this;}
-    inline DeleteReadinessCheckRequest& WithReadinessCheckName(const char* value) { SetReadinessCheckName(value); return *this;}
+    template<typename ReadinessCheckNameT = Aws::String>
+    void SetReadinessCheckName(ReadinessCheckNameT&& value) { m_readinessCheckNameHasBeenSet = true; m_readinessCheckName = std::forward<ReadinessCheckNameT>(value); }
+    template<typename ReadinessCheckNameT = Aws::String>
+    DeleteReadinessCheckRequest& WithReadinessCheckName(ReadinessCheckNameT&& value) { SetReadinessCheckName(std::forward<ReadinessCheckNameT>(value)); return *this;}
     ///@}
   private:
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetAutoshiftObserverNotificationStatusResult::GetAutoshiftObserverNotificationStatusResult() : 
-    m_status(AutoshiftObserverNotificationStatus::NOT_SET)
-{
-}
-
 GetAutoshiftObserverNotificationStatusResult::GetAutoshiftObserverNotificationStatusResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetAutoshiftObserverNotificationStatusResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ GetAutoshiftObserverNotificationStatusResult& GetAutoshiftObserverNotificationSt
   if(jsonValue.ValueExists("status"))
   {
     m_status = AutoshiftObserverNotificationStatusMapper::GetAutoshiftObserverNotificationStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,16 +18,7 @@ namespace LookoutMetrics
 namespace Model
 {
 
-AnomalyGroupStatistics::AnomalyGroupStatistics() : 
-    m_evaluationStartDateHasBeenSet(false),
-    m_totalCount(0),
-    m_totalCountHasBeenSet(false),
-    m_itemizedMetricStatsListHasBeenSet(false)
-{
-}
-
 AnomalyGroupStatistics::AnomalyGroupStatistics(JsonView jsonValue)
-  : AnomalyGroupStatistics()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AnomalyGroupStatistics& AnomalyGroupStatistics::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EvaluationStartDate"))
   {
     m_evaluationStartDate = jsonValue.GetString("EvaluationStartDate");
-
     m_evaluationStartDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TotalCount"))
   {
     m_totalCount = jsonValue.GetInteger("TotalCount");
-
     m_totalCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ItemizedMetricStatsList"))
   {
     Aws::Utils::Array<JsonView> itemizedMetricStatsListJsonList = jsonValue.GetArray("ItemizedMetricStatsList");
@@ -57,7 +44,6 @@ AnomalyGroupStatistics& AnomalyGroupStatistics::operator =(JsonView jsonValue)
     }
     m_itemizedMetricStatsListHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-ValidationExceptionField::ValidationExceptionField() : 
-    m_pathHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 ValidationExceptionField::ValidationExceptionField(JsonView jsonValue)
-  : ValidationExceptionField()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ValidationExceptionField& ValidationExceptionField::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("path"))
   {
     m_path = jsonValue.GetString("path");
-
     m_pathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

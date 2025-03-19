@@ -33,7 +33,7 @@ namespace Model
   class FormCTA
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API FormCTA();
+    AWS_AMPLIFYUIBUILDER_API FormCTA() = default;
     AWS_AMPLIFYUIBUILDER_API FormCTA(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API FormCTA& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,52 +43,50 @@ namespace Model
     /**
      * <p>The position of the button.</p>
      */
-    inline const FormButtonsPosition& GetPosition() const{ return m_position; }
+    inline FormButtonsPosition GetPosition() const { return m_position; }
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    inline void SetPosition(const FormButtonsPosition& value) { m_positionHasBeenSet = true; m_position = value; }
-    inline void SetPosition(FormButtonsPosition&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-    inline FormCTA& WithPosition(const FormButtonsPosition& value) { SetPosition(value); return *this;}
-    inline FormCTA& WithPosition(FormButtonsPosition&& value) { SetPosition(std::move(value)); return *this;}
+    inline void SetPosition(FormButtonsPosition value) { m_positionHasBeenSet = true; m_position = value; }
+    inline FormCTA& WithPosition(FormButtonsPosition value) { SetPosition(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Displays a clear button.</p>
      */
-    inline const FormButton& GetClear() const{ return m_clear; }
+    inline const FormButton& GetClear() const { return m_clear; }
     inline bool ClearHasBeenSet() const { return m_clearHasBeenSet; }
-    inline void SetClear(const FormButton& value) { m_clearHasBeenSet = true; m_clear = value; }
-    inline void SetClear(FormButton&& value) { m_clearHasBeenSet = true; m_clear = std::move(value); }
-    inline FormCTA& WithClear(const FormButton& value) { SetClear(value); return *this;}
-    inline FormCTA& WithClear(FormButton&& value) { SetClear(std::move(value)); return *this;}
+    template<typename ClearT = FormButton>
+    void SetClear(ClearT&& value) { m_clearHasBeenSet = true; m_clear = std::forward<ClearT>(value); }
+    template<typename ClearT = FormButton>
+    FormCTA& WithClear(ClearT&& value) { SetClear(std::forward<ClearT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Displays a cancel button.</p>
      */
-    inline const FormButton& GetCancel() const{ return m_cancel; }
+    inline const FormButton& GetCancel() const { return m_cancel; }
     inline bool CancelHasBeenSet() const { return m_cancelHasBeenSet; }
-    inline void SetCancel(const FormButton& value) { m_cancelHasBeenSet = true; m_cancel = value; }
-    inline void SetCancel(FormButton&& value) { m_cancelHasBeenSet = true; m_cancel = std::move(value); }
-    inline FormCTA& WithCancel(const FormButton& value) { SetCancel(value); return *this;}
-    inline FormCTA& WithCancel(FormButton&& value) { SetCancel(std::move(value)); return *this;}
+    template<typename CancelT = FormButton>
+    void SetCancel(CancelT&& value) { m_cancelHasBeenSet = true; m_cancel = std::forward<CancelT>(value); }
+    template<typename CancelT = FormButton>
+    FormCTA& WithCancel(CancelT&& value) { SetCancel(std::forward<CancelT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Displays a submit button.</p>
      */
-    inline const FormButton& GetSubmit() const{ return m_submit; }
+    inline const FormButton& GetSubmit() const { return m_submit; }
     inline bool SubmitHasBeenSet() const { return m_submitHasBeenSet; }
-    inline void SetSubmit(const FormButton& value) { m_submitHasBeenSet = true; m_submit = value; }
-    inline void SetSubmit(FormButton&& value) { m_submitHasBeenSet = true; m_submit = std::move(value); }
-    inline FormCTA& WithSubmit(const FormButton& value) { SetSubmit(value); return *this;}
-    inline FormCTA& WithSubmit(FormButton&& value) { SetSubmit(std::move(value)); return *this;}
+    template<typename SubmitT = FormButton>
+    void SetSubmit(SubmitT&& value) { m_submitHasBeenSet = true; m_submit = std::forward<SubmitT>(value); }
+    template<typename SubmitT = FormButton>
+    FormCTA& WithSubmit(SubmitT&& value) { SetSubmit(std::forward<SubmitT>(value)); return *this;}
     ///@}
   private:
 
-    FormButtonsPosition m_position;
+    FormButtonsPosition m_position{FormButtonsPosition::NOT_SET};
     bool m_positionHasBeenSet = false;
 
     FormButton m_clear;

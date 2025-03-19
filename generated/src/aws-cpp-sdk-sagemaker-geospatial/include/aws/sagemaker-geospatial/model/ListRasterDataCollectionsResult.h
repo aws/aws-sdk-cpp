@@ -29,7 +29,7 @@ namespace Model
   class ListRasterDataCollectionsResult
   {
   public:
-    AWS_SAGEMAKERGEOSPATIAL_API ListRasterDataCollectionsResult();
+    AWS_SAGEMAKERGEOSPATIAL_API ListRasterDataCollectionsResult() = default;
     AWS_SAGEMAKERGEOSPATIAL_API ListRasterDataCollectionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKERGEOSPATIAL_API ListRasterDataCollectionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,45 +39,44 @@ namespace Model
      * <p>If the previous response was truncated, you receive this token. Use it in
      * your next request to receive the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListRasterDataCollectionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListRasterDataCollectionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListRasterDataCollectionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListRasterDataCollectionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains summary information about the raster data collection.</p>
      */
-    inline const Aws::Vector<RasterDataCollectionMetadata>& GetRasterDataCollectionSummaries() const{ return m_rasterDataCollectionSummaries; }
-    inline void SetRasterDataCollectionSummaries(const Aws::Vector<RasterDataCollectionMetadata>& value) { m_rasterDataCollectionSummaries = value; }
-    inline void SetRasterDataCollectionSummaries(Aws::Vector<RasterDataCollectionMetadata>&& value) { m_rasterDataCollectionSummaries = std::move(value); }
-    inline ListRasterDataCollectionsResult& WithRasterDataCollectionSummaries(const Aws::Vector<RasterDataCollectionMetadata>& value) { SetRasterDataCollectionSummaries(value); return *this;}
-    inline ListRasterDataCollectionsResult& WithRasterDataCollectionSummaries(Aws::Vector<RasterDataCollectionMetadata>&& value) { SetRasterDataCollectionSummaries(std::move(value)); return *this;}
-    inline ListRasterDataCollectionsResult& AddRasterDataCollectionSummaries(const RasterDataCollectionMetadata& value) { m_rasterDataCollectionSummaries.push_back(value); return *this; }
-    inline ListRasterDataCollectionsResult& AddRasterDataCollectionSummaries(RasterDataCollectionMetadata&& value) { m_rasterDataCollectionSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<RasterDataCollectionMetadata>& GetRasterDataCollectionSummaries() const { return m_rasterDataCollectionSummaries; }
+    template<typename RasterDataCollectionSummariesT = Aws::Vector<RasterDataCollectionMetadata>>
+    void SetRasterDataCollectionSummaries(RasterDataCollectionSummariesT&& value) { m_rasterDataCollectionSummariesHasBeenSet = true; m_rasterDataCollectionSummaries = std::forward<RasterDataCollectionSummariesT>(value); }
+    template<typename RasterDataCollectionSummariesT = Aws::Vector<RasterDataCollectionMetadata>>
+    ListRasterDataCollectionsResult& WithRasterDataCollectionSummaries(RasterDataCollectionSummariesT&& value) { SetRasterDataCollectionSummaries(std::forward<RasterDataCollectionSummariesT>(value)); return *this;}
+    template<typename RasterDataCollectionSummariesT = RasterDataCollectionMetadata>
+    ListRasterDataCollectionsResult& AddRasterDataCollectionSummaries(RasterDataCollectionSummariesT&& value) { m_rasterDataCollectionSummariesHasBeenSet = true; m_rasterDataCollectionSummaries.emplace_back(std::forward<RasterDataCollectionSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListRasterDataCollectionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListRasterDataCollectionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListRasterDataCollectionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListRasterDataCollectionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<RasterDataCollectionMetadata> m_rasterDataCollectionSummaries;
+    bool m_rasterDataCollectionSummariesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,14 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TableCellImageSizingConfiguration::TableCellImageSizingConfiguration() : 
-    m_tableCellImageScalingConfiguration(TableCellImageScalingConfiguration::NOT_SET),
-    m_tableCellImageScalingConfigurationHasBeenSet(false)
-{
-}
-
 TableCellImageSizingConfiguration::TableCellImageSizingConfiguration(JsonView jsonValue)
-  : TableCellImageSizingConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ TableCellImageSizingConfiguration& TableCellImageSizingConfiguration::operator =
   if(jsonValue.ValueExists("TableCellImageScalingConfiguration"))
   {
     m_tableCellImageScalingConfiguration = TableCellImageScalingConfigurationMapper::GetTableCellImageScalingConfigurationForName(jsonValue.GetString("TableCellImageScalingConfiguration"));
-
     m_tableCellImageScalingConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

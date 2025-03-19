@@ -29,7 +29,7 @@ namespace Model
   class GenerateQueryResult
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API GenerateQueryResult();
+    AWS_BEDROCKAGENTRUNTIME_API GenerateQueryResult() = default;
     AWS_BEDROCKAGENTRUNTIME_API GenerateQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BEDROCKAGENTRUNTIME_API GenerateQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,30 +39,30 @@ namespace Model
      * <p>A list of objects, each of which defines a generated query that can
      * correspond to the natural language queries.</p>
      */
-    inline const Aws::Vector<GeneratedQuery>& GetQueries() const{ return m_queries; }
-    inline void SetQueries(const Aws::Vector<GeneratedQuery>& value) { m_queries = value; }
-    inline void SetQueries(Aws::Vector<GeneratedQuery>&& value) { m_queries = std::move(value); }
-    inline GenerateQueryResult& WithQueries(const Aws::Vector<GeneratedQuery>& value) { SetQueries(value); return *this;}
-    inline GenerateQueryResult& WithQueries(Aws::Vector<GeneratedQuery>&& value) { SetQueries(std::move(value)); return *this;}
-    inline GenerateQueryResult& AddQueries(const GeneratedQuery& value) { m_queries.push_back(value); return *this; }
-    inline GenerateQueryResult& AddQueries(GeneratedQuery&& value) { m_queries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<GeneratedQuery>& GetQueries() const { return m_queries; }
+    template<typename QueriesT = Aws::Vector<GeneratedQuery>>
+    void SetQueries(QueriesT&& value) { m_queriesHasBeenSet = true; m_queries = std::forward<QueriesT>(value); }
+    template<typename QueriesT = Aws::Vector<GeneratedQuery>>
+    GenerateQueryResult& WithQueries(QueriesT&& value) { SetQueries(std::forward<QueriesT>(value)); return *this;}
+    template<typename QueriesT = GeneratedQuery>
+    GenerateQueryResult& AddQueries(QueriesT&& value) { m_queriesHasBeenSet = true; m_queries.emplace_back(std::forward<QueriesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GenerateQueryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GenerateQueryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GenerateQueryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GenerateQueryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<GeneratedQuery> m_queries;
+    bool m_queriesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,7 +33,7 @@ namespace Model
   class GetMigrationResult
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API GetMigrationResult();
+    AWS_LEXMODELBUILDINGSERVICE_API GetMigrationResult() = default;
     AWS_LEXMODELBUILDINGSERVICE_API GetMigrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELBUILDINGSERVICE_API GetMigrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,50 +43,42 @@ namespace Model
      * <p>The unique identifier of the migration. This is the same as the identifier
      * used when calling the <code>GetMigration</code> operation.</p>
      */
-    inline const Aws::String& GetMigrationId() const{ return m_migrationId; }
-    inline void SetMigrationId(const Aws::String& value) { m_migrationId = value; }
-    inline void SetMigrationId(Aws::String&& value) { m_migrationId = std::move(value); }
-    inline void SetMigrationId(const char* value) { m_migrationId.assign(value); }
-    inline GetMigrationResult& WithMigrationId(const Aws::String& value) { SetMigrationId(value); return *this;}
-    inline GetMigrationResult& WithMigrationId(Aws::String&& value) { SetMigrationId(std::move(value)); return *this;}
-    inline GetMigrationResult& WithMigrationId(const char* value) { SetMigrationId(value); return *this;}
+    inline const Aws::String& GetMigrationId() const { return m_migrationId; }
+    template<typename MigrationIdT = Aws::String>
+    void SetMigrationId(MigrationIdT&& value) { m_migrationIdHasBeenSet = true; m_migrationId = std::forward<MigrationIdT>(value); }
+    template<typename MigrationIdT = Aws::String>
+    GetMigrationResult& WithMigrationId(MigrationIdT&& value) { SetMigrationId(std::forward<MigrationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
      */
-    inline const Aws::String& GetV1BotName() const{ return m_v1BotName; }
-    inline void SetV1BotName(const Aws::String& value) { m_v1BotName = value; }
-    inline void SetV1BotName(Aws::String&& value) { m_v1BotName = std::move(value); }
-    inline void SetV1BotName(const char* value) { m_v1BotName.assign(value); }
-    inline GetMigrationResult& WithV1BotName(const Aws::String& value) { SetV1BotName(value); return *this;}
-    inline GetMigrationResult& WithV1BotName(Aws::String&& value) { SetV1BotName(std::move(value)); return *this;}
-    inline GetMigrationResult& WithV1BotName(const char* value) { SetV1BotName(value); return *this;}
+    inline const Aws::String& GetV1BotName() const { return m_v1BotName; }
+    template<typename V1BotNameT = Aws::String>
+    void SetV1BotName(V1BotNameT&& value) { m_v1BotNameHasBeenSet = true; m_v1BotName = std::forward<V1BotNameT>(value); }
+    template<typename V1BotNameT = Aws::String>
+    GetMigrationResult& WithV1BotName(V1BotNameT&& value) { SetV1BotName(std::forward<V1BotNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
      */
-    inline const Aws::String& GetV1BotVersion() const{ return m_v1BotVersion; }
-    inline void SetV1BotVersion(const Aws::String& value) { m_v1BotVersion = value; }
-    inline void SetV1BotVersion(Aws::String&& value) { m_v1BotVersion = std::move(value); }
-    inline void SetV1BotVersion(const char* value) { m_v1BotVersion.assign(value); }
-    inline GetMigrationResult& WithV1BotVersion(const Aws::String& value) { SetV1BotVersion(value); return *this;}
-    inline GetMigrationResult& WithV1BotVersion(Aws::String&& value) { SetV1BotVersion(std::move(value)); return *this;}
-    inline GetMigrationResult& WithV1BotVersion(const char* value) { SetV1BotVersion(value); return *this;}
+    inline const Aws::String& GetV1BotVersion() const { return m_v1BotVersion; }
+    template<typename V1BotVersionT = Aws::String>
+    void SetV1BotVersion(V1BotVersionT&& value) { m_v1BotVersionHasBeenSet = true; m_v1BotVersion = std::forward<V1BotVersionT>(value); }
+    template<typename V1BotVersionT = Aws::String>
+    GetMigrationResult& WithV1BotVersion(V1BotVersionT&& value) { SetV1BotVersion(std::forward<V1BotVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The locale of the Amazon Lex V1 bot migrated to Amazon Lex V2.</p>
      */
-    inline const Locale& GetV1BotLocale() const{ return m_v1BotLocale; }
-    inline void SetV1BotLocale(const Locale& value) { m_v1BotLocale = value; }
-    inline void SetV1BotLocale(Locale&& value) { m_v1BotLocale = std::move(value); }
-    inline GetMigrationResult& WithV1BotLocale(const Locale& value) { SetV1BotLocale(value); return *this;}
-    inline GetMigrationResult& WithV1BotLocale(Locale&& value) { SetV1BotLocale(std::move(value)); return *this;}
+    inline Locale GetV1BotLocale() const { return m_v1BotLocale; }
+    inline void SetV1BotLocale(Locale value) { m_v1BotLocaleHasBeenSet = true; m_v1BotLocale = value; }
+    inline GetMigrationResult& WithV1BotLocale(Locale value) { SetV1BotLocale(value); return *this;}
     ///@}
 
     ///@{
@@ -94,26 +86,22 @@ namespace Model
      * <p>The unique identifier of the Amazon Lex V2 bot that the Amazon Lex V1 is
      * being migrated to.</p>
      */
-    inline const Aws::String& GetV2BotId() const{ return m_v2BotId; }
-    inline void SetV2BotId(const Aws::String& value) { m_v2BotId = value; }
-    inline void SetV2BotId(Aws::String&& value) { m_v2BotId = std::move(value); }
-    inline void SetV2BotId(const char* value) { m_v2BotId.assign(value); }
-    inline GetMigrationResult& WithV2BotId(const Aws::String& value) { SetV2BotId(value); return *this;}
-    inline GetMigrationResult& WithV2BotId(Aws::String&& value) { SetV2BotId(std::move(value)); return *this;}
-    inline GetMigrationResult& WithV2BotId(const char* value) { SetV2BotId(value); return *this;}
+    inline const Aws::String& GetV2BotId() const { return m_v2BotId; }
+    template<typename V2BotIdT = Aws::String>
+    void SetV2BotId(V2BotIdT&& value) { m_v2BotIdHasBeenSet = true; m_v2BotId = std::forward<V2BotIdT>(value); }
+    template<typename V2BotIdT = Aws::String>
+    GetMigrationResult& WithV2BotId(V2BotIdT&& value) { SetV2BotId(std::forward<V2BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.</p>
      */
-    inline const Aws::String& GetV2BotRole() const{ return m_v2BotRole; }
-    inline void SetV2BotRole(const Aws::String& value) { m_v2BotRole = value; }
-    inline void SetV2BotRole(Aws::String&& value) { m_v2BotRole = std::move(value); }
-    inline void SetV2BotRole(const char* value) { m_v2BotRole.assign(value); }
-    inline GetMigrationResult& WithV2BotRole(const Aws::String& value) { SetV2BotRole(value); return *this;}
-    inline GetMigrationResult& WithV2BotRole(Aws::String&& value) { SetV2BotRole(std::move(value)); return *this;}
-    inline GetMigrationResult& WithV2BotRole(const char* value) { SetV2BotRole(value); return *this;}
+    inline const Aws::String& GetV2BotRole() const { return m_v2BotRole; }
+    template<typename V2BotRoleT = Aws::String>
+    void SetV2BotRole(V2BotRoleT&& value) { m_v2BotRoleHasBeenSet = true; m_v2BotRole = std::forward<V2BotRoleT>(value); }
+    template<typename V2BotRoleT = Aws::String>
+    GetMigrationResult& WithV2BotRole(V2BotRoleT&& value) { SetV2BotRole(std::forward<V2BotRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,11 +111,9 @@ namespace Model
      * Amazon Lex V2. There may be alerts and warnings that need to be resolved to
      * complete the migration.</p>
      */
-    inline const MigrationStatus& GetMigrationStatus() const{ return m_migrationStatus; }
-    inline void SetMigrationStatus(const MigrationStatus& value) { m_migrationStatus = value; }
-    inline void SetMigrationStatus(MigrationStatus&& value) { m_migrationStatus = std::move(value); }
-    inline GetMigrationResult& WithMigrationStatus(const MigrationStatus& value) { SetMigrationStatus(value); return *this;}
-    inline GetMigrationResult& WithMigrationStatus(MigrationStatus&& value) { SetMigrationStatus(std::move(value)); return *this;}
+    inline MigrationStatus GetMigrationStatus() const { return m_migrationStatus; }
+    inline void SetMigrationStatus(MigrationStatus value) { m_migrationStatusHasBeenSet = true; m_migrationStatus = value; }
+    inline GetMigrationResult& WithMigrationStatus(MigrationStatus value) { SetMigrationStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -140,22 +126,20 @@ namespace Model
      * the Amazon Lex V2 bot. If the locale doesn't exist, a new locale is created in
      * the Amazon Lex V2 bot.</p> </li> </ul>
      */
-    inline const MigrationStrategy& GetMigrationStrategy() const{ return m_migrationStrategy; }
-    inline void SetMigrationStrategy(const MigrationStrategy& value) { m_migrationStrategy = value; }
-    inline void SetMigrationStrategy(MigrationStrategy&& value) { m_migrationStrategy = std::move(value); }
-    inline GetMigrationResult& WithMigrationStrategy(const MigrationStrategy& value) { SetMigrationStrategy(value); return *this;}
-    inline GetMigrationResult& WithMigrationStrategy(MigrationStrategy&& value) { SetMigrationStrategy(std::move(value)); return *this;}
+    inline MigrationStrategy GetMigrationStrategy() const { return m_migrationStrategy; }
+    inline void SetMigrationStrategy(MigrationStrategy value) { m_migrationStrategyHasBeenSet = true; m_migrationStrategy = value; }
+    inline GetMigrationResult& WithMigrationStrategy(MigrationStrategy value) { SetMigrationStrategy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the migration started.</p>
      */
-    inline const Aws::Utils::DateTime& GetMigrationTimestamp() const{ return m_migrationTimestamp; }
-    inline void SetMigrationTimestamp(const Aws::Utils::DateTime& value) { m_migrationTimestamp = value; }
-    inline void SetMigrationTimestamp(Aws::Utils::DateTime&& value) { m_migrationTimestamp = std::move(value); }
-    inline GetMigrationResult& WithMigrationTimestamp(const Aws::Utils::DateTime& value) { SetMigrationTimestamp(value); return *this;}
-    inline GetMigrationResult& WithMigrationTimestamp(Aws::Utils::DateTime&& value) { SetMigrationTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetMigrationTimestamp() const { return m_migrationTimestamp; }
+    template<typename MigrationTimestampT = Aws::Utils::DateTime>
+    void SetMigrationTimestamp(MigrationTimestampT&& value) { m_migrationTimestampHasBeenSet = true; m_migrationTimestamp = std::forward<MigrationTimestampT>(value); }
+    template<typename MigrationTimestampT = Aws::Utils::DateTime>
+    GetMigrationResult& WithMigrationTimestamp(MigrationTimestampT&& value) { SetMigrationTimestamp(std::forward<MigrationTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -167,48 +151,57 @@ namespace Model
      * href="https://docs.aws.amazon.com/lexv2/latest/dg/migrate.html">Migrating a
      * bot</a> in the <i>Amazon Lex V2 developer guide</i>.</p>
      */
-    inline const Aws::Vector<MigrationAlert>& GetAlerts() const{ return m_alerts; }
-    inline void SetAlerts(const Aws::Vector<MigrationAlert>& value) { m_alerts = value; }
-    inline void SetAlerts(Aws::Vector<MigrationAlert>&& value) { m_alerts = std::move(value); }
-    inline GetMigrationResult& WithAlerts(const Aws::Vector<MigrationAlert>& value) { SetAlerts(value); return *this;}
-    inline GetMigrationResult& WithAlerts(Aws::Vector<MigrationAlert>&& value) { SetAlerts(std::move(value)); return *this;}
-    inline GetMigrationResult& AddAlerts(const MigrationAlert& value) { m_alerts.push_back(value); return *this; }
-    inline GetMigrationResult& AddAlerts(MigrationAlert&& value) { m_alerts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<MigrationAlert>& GetAlerts() const { return m_alerts; }
+    template<typename AlertsT = Aws::Vector<MigrationAlert>>
+    void SetAlerts(AlertsT&& value) { m_alertsHasBeenSet = true; m_alerts = std::forward<AlertsT>(value); }
+    template<typename AlertsT = Aws::Vector<MigrationAlert>>
+    GetMigrationResult& WithAlerts(AlertsT&& value) { SetAlerts(std::forward<AlertsT>(value)); return *this;}
+    template<typename AlertsT = MigrationAlert>
+    GetMigrationResult& AddAlerts(AlertsT&& value) { m_alertsHasBeenSet = true; m_alerts.emplace_back(std::forward<AlertsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetMigrationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetMigrationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetMigrationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetMigrationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_migrationId;
+    bool m_migrationIdHasBeenSet = false;
 
     Aws::String m_v1BotName;
+    bool m_v1BotNameHasBeenSet = false;
 
     Aws::String m_v1BotVersion;
+    bool m_v1BotVersionHasBeenSet = false;
 
-    Locale m_v1BotLocale;
+    Locale m_v1BotLocale{Locale::NOT_SET};
+    bool m_v1BotLocaleHasBeenSet = false;
 
     Aws::String m_v2BotId;
+    bool m_v2BotIdHasBeenSet = false;
 
     Aws::String m_v2BotRole;
+    bool m_v2BotRoleHasBeenSet = false;
 
-    MigrationStatus m_migrationStatus;
+    MigrationStatus m_migrationStatus{MigrationStatus::NOT_SET};
+    bool m_migrationStatusHasBeenSet = false;
 
-    MigrationStrategy m_migrationStrategy;
+    MigrationStrategy m_migrationStrategy{MigrationStrategy::NOT_SET};
+    bool m_migrationStrategyHasBeenSet = false;
 
-    Aws::Utils::DateTime m_migrationTimestamp;
+    Aws::Utils::DateTime m_migrationTimestamp{};
+    bool m_migrationTimestampHasBeenSet = false;
 
     Aws::Vector<MigrationAlert> m_alerts;
+    bool m_alertsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

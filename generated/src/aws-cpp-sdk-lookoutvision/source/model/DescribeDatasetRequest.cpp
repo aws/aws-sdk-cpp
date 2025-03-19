@@ -12,12 +12,6 @@ using namespace Aws::LookoutforVision::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeDatasetRequest::DescribeDatasetRequest() : 
-    m_projectNameHasBeenSet(false),
-    m_datasetTypeHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDatasetRequest::SerializePayload() const
 {
   return {};

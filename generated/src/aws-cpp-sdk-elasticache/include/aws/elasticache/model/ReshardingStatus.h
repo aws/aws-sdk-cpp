@@ -31,7 +31,7 @@ namespace Model
   class ReshardingStatus
   {
   public:
-    AWS_ELASTICACHE_API ReshardingStatus();
+    AWS_ELASTICACHE_API ReshardingStatus() = default;
     AWS_ELASTICACHE_API ReshardingStatus(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICACHE_API ReshardingStatus& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>Represents the progress of an online resharding operation.</p>
      */
-    inline const SlotMigration& GetSlotMigration() const{ return m_slotMigration; }
+    inline const SlotMigration& GetSlotMigration() const { return m_slotMigration; }
     inline bool SlotMigrationHasBeenSet() const { return m_slotMigrationHasBeenSet; }
-    inline void SetSlotMigration(const SlotMigration& value) { m_slotMigrationHasBeenSet = true; m_slotMigration = value; }
-    inline void SetSlotMigration(SlotMigration&& value) { m_slotMigrationHasBeenSet = true; m_slotMigration = std::move(value); }
-    inline ReshardingStatus& WithSlotMigration(const SlotMigration& value) { SetSlotMigration(value); return *this;}
-    inline ReshardingStatus& WithSlotMigration(SlotMigration&& value) { SetSlotMigration(std::move(value)); return *this;}
+    template<typename SlotMigrationT = SlotMigration>
+    void SetSlotMigration(SlotMigrationT&& value) { m_slotMigrationHasBeenSet = true; m_slotMigration = std::forward<SlotMigrationT>(value); }
+    template<typename SlotMigrationT = SlotMigration>
+    ReshardingStatus& WithSlotMigration(SlotMigrationT&& value) { SetSlotMigration(std::forward<SlotMigrationT>(value)); return *this;}
     ///@}
   private:
 

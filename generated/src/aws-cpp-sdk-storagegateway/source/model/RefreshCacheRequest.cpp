@@ -12,14 +12,6 @@ using namespace Aws::StorageGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RefreshCacheRequest::RefreshCacheRequest() : 
-    m_fileShareARNHasBeenSet(false),
-    m_folderListHasBeenSet(false),
-    m_recursive(false),
-    m_recursiveHasBeenSet(false)
-{
-}
-
 Aws::String RefreshCacheRequest::SerializePayload() const
 {
   JsonValue payload;

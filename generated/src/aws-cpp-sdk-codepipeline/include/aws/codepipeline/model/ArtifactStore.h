@@ -37,7 +37,7 @@ namespace Model
   class ArtifactStore
   {
   public:
-    AWS_CODEPIPELINE_API ArtifactStore();
+    AWS_CODEPIPELINE_API ArtifactStore() = default;
     AWS_CODEPIPELINE_API ArtifactStore(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API ArtifactStore& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
     /**
      * <p>The type of the artifact store, such as S3.</p>
      */
-    inline const ArtifactStoreType& GetType() const{ return m_type; }
+    inline ArtifactStoreType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const ArtifactStoreType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(ArtifactStoreType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ArtifactStore& WithType(const ArtifactStoreType& value) { SetType(value); return *this;}
-    inline ArtifactStore& WithType(ArtifactStoreType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(ArtifactStoreType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ArtifactStore& WithType(ArtifactStoreType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -63,14 +61,12 @@ namespace Model
      * use any S3 bucket in the same Amazon Web Services Region as the pipeline to
      * store your pipeline artifacts.</p>
      */
-    inline const Aws::String& GetLocation() const{ return m_location; }
+    inline const Aws::String& GetLocation() const { return m_location; }
     inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
-    inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
-    inline void SetLocation(Aws::String&& value) { m_locationHasBeenSet = true; m_location = std::move(value); }
-    inline void SetLocation(const char* value) { m_locationHasBeenSet = true; m_location.assign(value); }
-    inline ArtifactStore& WithLocation(const Aws::String& value) { SetLocation(value); return *this;}
-    inline ArtifactStore& WithLocation(Aws::String&& value) { SetLocation(std::move(value)); return *this;}
-    inline ArtifactStore& WithLocation(const char* value) { SetLocation(value); return *this;}
+    template<typename LocationT = Aws::String>
+    void SetLocation(LocationT&& value) { m_locationHasBeenSet = true; m_location = std::forward<LocationT>(value); }
+    template<typename LocationT = Aws::String>
+    ArtifactStore& WithLocation(LocationT&& value) { SetLocation(std::forward<LocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,16 +75,16 @@ namespace Model
      * Amazon Web Services Key Management Service key. If this is undefined, the
      * default key for Amazon S3 is used.</p>
      */
-    inline const EncryptionKey& GetEncryptionKey() const{ return m_encryptionKey; }
+    inline const EncryptionKey& GetEncryptionKey() const { return m_encryptionKey; }
     inline bool EncryptionKeyHasBeenSet() const { return m_encryptionKeyHasBeenSet; }
-    inline void SetEncryptionKey(const EncryptionKey& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = value; }
-    inline void SetEncryptionKey(EncryptionKey&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::move(value); }
-    inline ArtifactStore& WithEncryptionKey(const EncryptionKey& value) { SetEncryptionKey(value); return *this;}
-    inline ArtifactStore& WithEncryptionKey(EncryptionKey&& value) { SetEncryptionKey(std::move(value)); return *this;}
+    template<typename EncryptionKeyT = EncryptionKey>
+    void SetEncryptionKey(EncryptionKeyT&& value) { m_encryptionKeyHasBeenSet = true; m_encryptionKey = std::forward<EncryptionKeyT>(value); }
+    template<typename EncryptionKeyT = EncryptionKey>
+    ArtifactStore& WithEncryptionKey(EncryptionKeyT&& value) { SetEncryptionKey(std::forward<EncryptionKeyT>(value)); return *this;}
     ///@}
   private:
 
-    ArtifactStoreType m_type;
+    ArtifactStoreType m_type{ArtifactStoreType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_location;

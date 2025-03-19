@@ -15,19 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListRecommendationResourcesRequest::ListRecommendationResourcesRequest() : 
-    m_exclusionStatus(ExclusionStatus::NOT_SET),
-    m_exclusionStatusHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_recommendationIdentifierHasBeenSet(false),
-    m_regionCodeHasBeenSet(false),
-    m_status(ResourceStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 Aws::String ListRecommendationResourcesRequest::SerializePayload() const
 {
   return {};

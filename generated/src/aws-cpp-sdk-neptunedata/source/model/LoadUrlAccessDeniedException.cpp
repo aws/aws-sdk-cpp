@@ -18,15 +18,7 @@ namespace neptunedata
 namespace Model
 {
 
-LoadUrlAccessDeniedException::LoadUrlAccessDeniedException() : 
-    m_detailedMessageHasBeenSet(false),
-    m_requestIdHasBeenSet(false),
-    m_codeHasBeenSet(false)
-{
-}
-
 LoadUrlAccessDeniedException::LoadUrlAccessDeniedException(JsonView jsonValue)
-  : LoadUrlAccessDeniedException()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ LoadUrlAccessDeniedException& LoadUrlAccessDeniedException::operator =(JsonView 
   if(jsonValue.ValueExists("detailedMessage"))
   {
     m_detailedMessage = jsonValue.GetString("detailedMessage");
-
     m_detailedMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
     m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("code"))
   {
     m_code = jsonValue.GetString("code");
-
     m_codeHasBeenSet = true;
   }
-
   return *this;
 }
 

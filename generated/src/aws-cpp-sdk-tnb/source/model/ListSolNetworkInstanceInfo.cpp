@@ -18,21 +18,7 @@ namespace tnb
 namespace Model
 {
 
-ListSolNetworkInstanceInfo::ListSolNetworkInstanceInfo() : 
-    m_arnHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_nsInstanceDescriptionHasBeenSet(false),
-    m_nsInstanceNameHasBeenSet(false),
-    m_nsState(NsState::NOT_SET),
-    m_nsStateHasBeenSet(false),
-    m_nsdIdHasBeenSet(false),
-    m_nsdInfoIdHasBeenSet(false)
-{
-}
-
 ListSolNetworkInstanceInfo::ListSolNetworkInstanceInfo(JsonView jsonValue)
-  : ListSolNetworkInstanceInfo()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ ListSolNetworkInstanceInfo& ListSolNetworkInstanceInfo::operator =(JsonView json
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata"))
   {
     m_metadata = jsonValue.GetObject("metadata");
-
     m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nsInstanceDescription"))
   {
     m_nsInstanceDescription = jsonValue.GetString("nsInstanceDescription");
-
     m_nsInstanceDescriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nsInstanceName"))
   {
     m_nsInstanceName = jsonValue.GetString("nsInstanceName");
-
     m_nsInstanceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nsState"))
   {
     m_nsState = NsStateMapper::GetNsStateForName(jsonValue.GetString("nsState"));
-
     m_nsStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nsdId"))
   {
     m_nsdId = jsonValue.GetString("nsdId");
-
     m_nsdIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nsdInfoId"))
   {
     m_nsdInfoId = jsonValue.GetString("nsdInfoId");
-
     m_nsdInfoIdHasBeenSet = true;
   }
-
   return *this;
 }
 

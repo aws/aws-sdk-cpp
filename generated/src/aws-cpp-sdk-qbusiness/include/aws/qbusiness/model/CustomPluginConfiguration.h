@@ -34,7 +34,7 @@ namespace Model
   class CustomPluginConfiguration
   {
   public:
-    AWS_QBUSINESS_API CustomPluginConfiguration();
+    AWS_QBUSINESS_API CustomPluginConfiguration() = default;
     AWS_QBUSINESS_API CustomPluginConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API CustomPluginConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,22 @@ namespace Model
     /**
      * <p>A description for your custom plugin configuration.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CustomPluginConfiguration& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CustomPluginConfiguration& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CustomPluginConfiguration& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CustomPluginConfiguration& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of OpenAPI schema to use.</p>
      */
-    inline const APISchemaType& GetApiSchemaType() const{ return m_apiSchemaType; }
+    inline APISchemaType GetApiSchemaType() const { return m_apiSchemaType; }
     inline bool ApiSchemaTypeHasBeenSet() const { return m_apiSchemaTypeHasBeenSet; }
-    inline void SetApiSchemaType(const APISchemaType& value) { m_apiSchemaTypeHasBeenSet = true; m_apiSchemaType = value; }
-    inline void SetApiSchemaType(APISchemaType&& value) { m_apiSchemaTypeHasBeenSet = true; m_apiSchemaType = std::move(value); }
-    inline CustomPluginConfiguration& WithApiSchemaType(const APISchemaType& value) { SetApiSchemaType(value); return *this;}
-    inline CustomPluginConfiguration& WithApiSchemaType(APISchemaType&& value) { SetApiSchemaType(std::move(value)); return *this;}
+    inline void SetApiSchemaType(APISchemaType value) { m_apiSchemaTypeHasBeenSet = true; m_apiSchemaType = value; }
+    inline CustomPluginConfiguration& WithApiSchemaType(APISchemaType value) { SetApiSchemaType(value); return *this;}
     ///@}
 
     ///@{
@@ -71,19 +67,19 @@ namespace Model
      * <p>Contains either details about the S3 object containing the OpenAPI schema for
      * the action group or the JSON or YAML-formatted payload defining the schema.</p>
      */
-    inline const APISchema& GetApiSchema() const{ return m_apiSchema; }
+    inline const APISchema& GetApiSchema() const { return m_apiSchema; }
     inline bool ApiSchemaHasBeenSet() const { return m_apiSchemaHasBeenSet; }
-    inline void SetApiSchema(const APISchema& value) { m_apiSchemaHasBeenSet = true; m_apiSchema = value; }
-    inline void SetApiSchema(APISchema&& value) { m_apiSchemaHasBeenSet = true; m_apiSchema = std::move(value); }
-    inline CustomPluginConfiguration& WithApiSchema(const APISchema& value) { SetApiSchema(value); return *this;}
-    inline CustomPluginConfiguration& WithApiSchema(APISchema&& value) { SetApiSchema(std::move(value)); return *this;}
+    template<typename ApiSchemaT = APISchema>
+    void SetApiSchema(ApiSchemaT&& value) { m_apiSchemaHasBeenSet = true; m_apiSchema = std::forward<ApiSchemaT>(value); }
+    template<typename ApiSchemaT = APISchema>
+    CustomPluginConfiguration& WithApiSchema(ApiSchemaT&& value) { SetApiSchema(std::forward<ApiSchemaT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    APISchemaType m_apiSchemaType;
+    APISchemaType m_apiSchemaType{APISchemaType::NOT_SET};
     bool m_apiSchemaTypeHasBeenSet = false;
 
     APISchema m_apiSchema;

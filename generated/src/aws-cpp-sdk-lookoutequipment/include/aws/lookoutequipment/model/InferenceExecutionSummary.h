@@ -38,7 +38,7 @@ namespace Model
   class InferenceExecutionSummary
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API InferenceExecutionSummary();
+    AWS_LOOKOUTEQUIPMENT_API InferenceExecutionSummary() = default;
     AWS_LOOKOUTEQUIPMENT_API InferenceExecutionSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API InferenceExecutionSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
      * <p>The name of the machine learning model being used for the inference
      * execution. </p>
      */
-    inline const Aws::String& GetModelName() const{ return m_modelName; }
+    inline const Aws::String& GetModelName() const { return m_modelName; }
     inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
-    inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
-    inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
-    inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
-    inline InferenceExecutionSummary& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
-    inline InferenceExecutionSummary& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
-    inline InferenceExecutionSummary& WithModelName(const char* value) { SetModelName(value); return *this;}
+    template<typename ModelNameT = Aws::String>
+    void SetModelName(ModelNameT&& value) { m_modelNameHasBeenSet = true; m_modelName = std::forward<ModelNameT>(value); }
+    template<typename ModelNameT = Aws::String>
+    InferenceExecutionSummary& WithModelName(ModelNameT&& value) { SetModelName(std::forward<ModelNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the machine learning model used for the
      * inference execution. </p>
      */
-    inline const Aws::String& GetModelArn() const{ return m_modelArn; }
+    inline const Aws::String& GetModelArn() const { return m_modelArn; }
     inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }
-    inline void SetModelArn(const Aws::String& value) { m_modelArnHasBeenSet = true; m_modelArn = value; }
-    inline void SetModelArn(Aws::String&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::move(value); }
-    inline void SetModelArn(const char* value) { m_modelArnHasBeenSet = true; m_modelArn.assign(value); }
-    inline InferenceExecutionSummary& WithModelArn(const Aws::String& value) { SetModelArn(value); return *this;}
-    inline InferenceExecutionSummary& WithModelArn(Aws::String&& value) { SetModelArn(std::move(value)); return *this;}
-    inline InferenceExecutionSummary& WithModelArn(const char* value) { SetModelArn(value); return *this;}
+    template<typename ModelArnT = Aws::String>
+    void SetModelArn(ModelArnT&& value) { m_modelArnHasBeenSet = true; m_modelArn = std::forward<ModelArnT>(value); }
+    template<typename ModelArnT = Aws::String>
+    InferenceExecutionSummary& WithModelArn(ModelArnT&& value) { SetModelArn(std::forward<ModelArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -79,14 +75,12 @@ namespace Model
      * <p>The name of the inference scheduler being used for the inference execution.
      * </p>
      */
-    inline const Aws::String& GetInferenceSchedulerName() const{ return m_inferenceSchedulerName; }
+    inline const Aws::String& GetInferenceSchedulerName() const { return m_inferenceSchedulerName; }
     inline bool InferenceSchedulerNameHasBeenSet() const { return m_inferenceSchedulerNameHasBeenSet; }
-    inline void SetInferenceSchedulerName(const Aws::String& value) { m_inferenceSchedulerNameHasBeenSet = true; m_inferenceSchedulerName = value; }
-    inline void SetInferenceSchedulerName(Aws::String&& value) { m_inferenceSchedulerNameHasBeenSet = true; m_inferenceSchedulerName = std::move(value); }
-    inline void SetInferenceSchedulerName(const char* value) { m_inferenceSchedulerNameHasBeenSet = true; m_inferenceSchedulerName.assign(value); }
-    inline InferenceExecutionSummary& WithInferenceSchedulerName(const Aws::String& value) { SetInferenceSchedulerName(value); return *this;}
-    inline InferenceExecutionSummary& WithInferenceSchedulerName(Aws::String&& value) { SetInferenceSchedulerName(std::move(value)); return *this;}
-    inline InferenceExecutionSummary& WithInferenceSchedulerName(const char* value) { SetInferenceSchedulerName(value); return *this;}
+    template<typename InferenceSchedulerNameT = Aws::String>
+    void SetInferenceSchedulerName(InferenceSchedulerNameT&& value) { m_inferenceSchedulerNameHasBeenSet = true; m_inferenceSchedulerName = std::forward<InferenceSchedulerNameT>(value); }
+    template<typename InferenceSchedulerNameT = Aws::String>
+    InferenceExecutionSummary& WithInferenceSchedulerName(InferenceSchedulerNameT&& value) { SetInferenceSchedulerName(std::forward<InferenceSchedulerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,14 +88,12 @@ namespace Model
      * <p> The Amazon Resource Name (ARN) of the inference scheduler being used for the
      * inference execution. </p>
      */
-    inline const Aws::String& GetInferenceSchedulerArn() const{ return m_inferenceSchedulerArn; }
+    inline const Aws::String& GetInferenceSchedulerArn() const { return m_inferenceSchedulerArn; }
     inline bool InferenceSchedulerArnHasBeenSet() const { return m_inferenceSchedulerArnHasBeenSet; }
-    inline void SetInferenceSchedulerArn(const Aws::String& value) { m_inferenceSchedulerArnHasBeenSet = true; m_inferenceSchedulerArn = value; }
-    inline void SetInferenceSchedulerArn(Aws::String&& value) { m_inferenceSchedulerArnHasBeenSet = true; m_inferenceSchedulerArn = std::move(value); }
-    inline void SetInferenceSchedulerArn(const char* value) { m_inferenceSchedulerArnHasBeenSet = true; m_inferenceSchedulerArn.assign(value); }
-    inline InferenceExecutionSummary& WithInferenceSchedulerArn(const Aws::String& value) { SetInferenceSchedulerArn(value); return *this;}
-    inline InferenceExecutionSummary& WithInferenceSchedulerArn(Aws::String&& value) { SetInferenceSchedulerArn(std::move(value)); return *this;}
-    inline InferenceExecutionSummary& WithInferenceSchedulerArn(const char* value) { SetInferenceSchedulerArn(value); return *this;}
+    template<typename InferenceSchedulerArnT = Aws::String>
+    void SetInferenceSchedulerArn(InferenceSchedulerArnT&& value) { m_inferenceSchedulerArnHasBeenSet = true; m_inferenceSchedulerArn = std::forward<InferenceSchedulerArnT>(value); }
+    template<typename InferenceSchedulerArnT = Aws::String>
+    InferenceExecutionSummary& WithInferenceSchedulerArn(InferenceSchedulerArnT&& value) { SetInferenceSchedulerArn(std::forward<InferenceSchedulerArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,12 +101,12 @@ namespace Model
      * <p>Indicates the start time at which the inference scheduler began the specific
      * inference execution. </p>
      */
-    inline const Aws::Utils::DateTime& GetScheduledStartTime() const{ return m_scheduledStartTime; }
+    inline const Aws::Utils::DateTime& GetScheduledStartTime() const { return m_scheduledStartTime; }
     inline bool ScheduledStartTimeHasBeenSet() const { return m_scheduledStartTimeHasBeenSet; }
-    inline void SetScheduledStartTime(const Aws::Utils::DateTime& value) { m_scheduledStartTimeHasBeenSet = true; m_scheduledStartTime = value; }
-    inline void SetScheduledStartTime(Aws::Utils::DateTime&& value) { m_scheduledStartTimeHasBeenSet = true; m_scheduledStartTime = std::move(value); }
-    inline InferenceExecutionSummary& WithScheduledStartTime(const Aws::Utils::DateTime& value) { SetScheduledStartTime(value); return *this;}
-    inline InferenceExecutionSummary& WithScheduledStartTime(Aws::Utils::DateTime&& value) { SetScheduledStartTime(std::move(value)); return *this;}
+    template<typename ScheduledStartTimeT = Aws::Utils::DateTime>
+    void SetScheduledStartTime(ScheduledStartTimeT&& value) { m_scheduledStartTimeHasBeenSet = true; m_scheduledStartTime = std::forward<ScheduledStartTimeT>(value); }
+    template<typename ScheduledStartTimeT = Aws::Utils::DateTime>
+    InferenceExecutionSummary& WithScheduledStartTime(ScheduledStartTimeT&& value) { SetScheduledStartTime(std::forward<ScheduledStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -122,12 +114,12 @@ namespace Model
      * <p>Indicates the time reference in the dataset at which the inference execution
      * began. </p>
      */
-    inline const Aws::Utils::DateTime& GetDataStartTime() const{ return m_dataStartTime; }
+    inline const Aws::Utils::DateTime& GetDataStartTime() const { return m_dataStartTime; }
     inline bool DataStartTimeHasBeenSet() const { return m_dataStartTimeHasBeenSet; }
-    inline void SetDataStartTime(const Aws::Utils::DateTime& value) { m_dataStartTimeHasBeenSet = true; m_dataStartTime = value; }
-    inline void SetDataStartTime(Aws::Utils::DateTime&& value) { m_dataStartTimeHasBeenSet = true; m_dataStartTime = std::move(value); }
-    inline InferenceExecutionSummary& WithDataStartTime(const Aws::Utils::DateTime& value) { SetDataStartTime(value); return *this;}
-    inline InferenceExecutionSummary& WithDataStartTime(Aws::Utils::DateTime&& value) { SetDataStartTime(std::move(value)); return *this;}
+    template<typename DataStartTimeT = Aws::Utils::DateTime>
+    void SetDataStartTime(DataStartTimeT&& value) { m_dataStartTimeHasBeenSet = true; m_dataStartTime = std::forward<DataStartTimeT>(value); }
+    template<typename DataStartTimeT = Aws::Utils::DateTime>
+    InferenceExecutionSummary& WithDataStartTime(DataStartTimeT&& value) { SetDataStartTime(std::forward<DataStartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -135,12 +127,12 @@ namespace Model
      * <p>Indicates the time reference in the dataset at which the inference execution
      * stopped. </p>
      */
-    inline const Aws::Utils::DateTime& GetDataEndTime() const{ return m_dataEndTime; }
+    inline const Aws::Utils::DateTime& GetDataEndTime() const { return m_dataEndTime; }
     inline bool DataEndTimeHasBeenSet() const { return m_dataEndTimeHasBeenSet; }
-    inline void SetDataEndTime(const Aws::Utils::DateTime& value) { m_dataEndTimeHasBeenSet = true; m_dataEndTime = value; }
-    inline void SetDataEndTime(Aws::Utils::DateTime&& value) { m_dataEndTimeHasBeenSet = true; m_dataEndTime = std::move(value); }
-    inline InferenceExecutionSummary& WithDataEndTime(const Aws::Utils::DateTime& value) { SetDataEndTime(value); return *this;}
-    inline InferenceExecutionSummary& WithDataEndTime(Aws::Utils::DateTime&& value) { SetDataEndTime(std::move(value)); return *this;}
+    template<typename DataEndTimeT = Aws::Utils::DateTime>
+    void SetDataEndTime(DataEndTimeT&& value) { m_dataEndTimeHasBeenSet = true; m_dataEndTime = std::forward<DataEndTimeT>(value); }
+    template<typename DataEndTimeT = Aws::Utils::DateTime>
+    InferenceExecutionSummary& WithDataEndTime(DataEndTimeT&& value) { SetDataEndTime(std::forward<DataEndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -148,12 +140,12 @@ namespace Model
      * <p> Specifies configuration information for the input data for the inference
      * scheduler, including delimiter, format, and dataset location. </p>
      */
-    inline const InferenceInputConfiguration& GetDataInputConfiguration() const{ return m_dataInputConfiguration; }
+    inline const InferenceInputConfiguration& GetDataInputConfiguration() const { return m_dataInputConfiguration; }
     inline bool DataInputConfigurationHasBeenSet() const { return m_dataInputConfigurationHasBeenSet; }
-    inline void SetDataInputConfiguration(const InferenceInputConfiguration& value) { m_dataInputConfigurationHasBeenSet = true; m_dataInputConfiguration = value; }
-    inline void SetDataInputConfiguration(InferenceInputConfiguration&& value) { m_dataInputConfigurationHasBeenSet = true; m_dataInputConfiguration = std::move(value); }
-    inline InferenceExecutionSummary& WithDataInputConfiguration(const InferenceInputConfiguration& value) { SetDataInputConfiguration(value); return *this;}
-    inline InferenceExecutionSummary& WithDataInputConfiguration(InferenceInputConfiguration&& value) { SetDataInputConfiguration(std::move(value)); return *this;}
+    template<typename DataInputConfigurationT = InferenceInputConfiguration>
+    void SetDataInputConfiguration(DataInputConfigurationT&& value) { m_dataInputConfigurationHasBeenSet = true; m_dataInputConfiguration = std::forward<DataInputConfigurationT>(value); }
+    template<typename DataInputConfigurationT = InferenceInputConfiguration>
+    InferenceExecutionSummary& WithDataInputConfiguration(DataInputConfigurationT&& value) { SetDataInputConfiguration(std::forward<DataInputConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -161,36 +153,34 @@ namespace Model
      * <p> Specifies configuration information for the output results from for the
      * inference execution, including the output Amazon S3 location. </p>
      */
-    inline const InferenceOutputConfiguration& GetDataOutputConfiguration() const{ return m_dataOutputConfiguration; }
+    inline const InferenceOutputConfiguration& GetDataOutputConfiguration() const { return m_dataOutputConfiguration; }
     inline bool DataOutputConfigurationHasBeenSet() const { return m_dataOutputConfigurationHasBeenSet; }
-    inline void SetDataOutputConfiguration(const InferenceOutputConfiguration& value) { m_dataOutputConfigurationHasBeenSet = true; m_dataOutputConfiguration = value; }
-    inline void SetDataOutputConfiguration(InferenceOutputConfiguration&& value) { m_dataOutputConfigurationHasBeenSet = true; m_dataOutputConfiguration = std::move(value); }
-    inline InferenceExecutionSummary& WithDataOutputConfiguration(const InferenceOutputConfiguration& value) { SetDataOutputConfiguration(value); return *this;}
-    inline InferenceExecutionSummary& WithDataOutputConfiguration(InferenceOutputConfiguration&& value) { SetDataOutputConfiguration(std::move(value)); return *this;}
+    template<typename DataOutputConfigurationT = InferenceOutputConfiguration>
+    void SetDataOutputConfiguration(DataOutputConfigurationT&& value) { m_dataOutputConfigurationHasBeenSet = true; m_dataOutputConfiguration = std::forward<DataOutputConfigurationT>(value); }
+    template<typename DataOutputConfigurationT = InferenceOutputConfiguration>
+    InferenceExecutionSummary& WithDataOutputConfiguration(DataOutputConfigurationT&& value) { SetDataOutputConfiguration(std::forward<DataOutputConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The S3 object that the inference execution results were uploaded to.</p>
      */
-    inline const S3Object& GetCustomerResultObject() const{ return m_customerResultObject; }
+    inline const S3Object& GetCustomerResultObject() const { return m_customerResultObject; }
     inline bool CustomerResultObjectHasBeenSet() const { return m_customerResultObjectHasBeenSet; }
-    inline void SetCustomerResultObject(const S3Object& value) { m_customerResultObjectHasBeenSet = true; m_customerResultObject = value; }
-    inline void SetCustomerResultObject(S3Object&& value) { m_customerResultObjectHasBeenSet = true; m_customerResultObject = std::move(value); }
-    inline InferenceExecutionSummary& WithCustomerResultObject(const S3Object& value) { SetCustomerResultObject(value); return *this;}
-    inline InferenceExecutionSummary& WithCustomerResultObject(S3Object&& value) { SetCustomerResultObject(std::move(value)); return *this;}
+    template<typename CustomerResultObjectT = S3Object>
+    void SetCustomerResultObject(CustomerResultObjectT&& value) { m_customerResultObjectHasBeenSet = true; m_customerResultObject = std::forward<CustomerResultObjectT>(value); }
+    template<typename CustomerResultObjectT = S3Object>
+    InferenceExecutionSummary& WithCustomerResultObject(CustomerResultObjectT&& value) { SetCustomerResultObject(std::forward<CustomerResultObjectT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates the status of the inference execution. </p>
      */
-    inline const InferenceExecutionStatus& GetStatus() const{ return m_status; }
+    inline InferenceExecutionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const InferenceExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(InferenceExecutionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline InferenceExecutionSummary& WithStatus(const InferenceExecutionStatus& value) { SetStatus(value); return *this;}
-    inline InferenceExecutionSummary& WithStatus(InferenceExecutionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(InferenceExecutionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline InferenceExecutionSummary& WithStatus(InferenceExecutionStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -198,21 +188,19 @@ namespace Model
      * <p> Specifies the reason for failure when an inference execution has failed.
      * </p>
      */
-    inline const Aws::String& GetFailedReason() const{ return m_failedReason; }
+    inline const Aws::String& GetFailedReason() const { return m_failedReason; }
     inline bool FailedReasonHasBeenSet() const { return m_failedReasonHasBeenSet; }
-    inline void SetFailedReason(const Aws::String& value) { m_failedReasonHasBeenSet = true; m_failedReason = value; }
-    inline void SetFailedReason(Aws::String&& value) { m_failedReasonHasBeenSet = true; m_failedReason = std::move(value); }
-    inline void SetFailedReason(const char* value) { m_failedReasonHasBeenSet = true; m_failedReason.assign(value); }
-    inline InferenceExecutionSummary& WithFailedReason(const Aws::String& value) { SetFailedReason(value); return *this;}
-    inline InferenceExecutionSummary& WithFailedReason(Aws::String&& value) { SetFailedReason(std::move(value)); return *this;}
-    inline InferenceExecutionSummary& WithFailedReason(const char* value) { SetFailedReason(value); return *this;}
+    template<typename FailedReasonT = Aws::String>
+    void SetFailedReason(FailedReasonT&& value) { m_failedReasonHasBeenSet = true; m_failedReason = std::forward<FailedReasonT>(value); }
+    template<typename FailedReasonT = Aws::String>
+    InferenceExecutionSummary& WithFailedReason(FailedReasonT&& value) { SetFailedReason(std::forward<FailedReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The model version used for the inference execution.</p>
      */
-    inline long long GetModelVersion() const{ return m_modelVersion; }
+    inline long long GetModelVersion() const { return m_modelVersion; }
     inline bool ModelVersionHasBeenSet() const { return m_modelVersionHasBeenSet; }
     inline void SetModelVersion(long long value) { m_modelVersionHasBeenSet = true; m_modelVersion = value; }
     inline InferenceExecutionSummary& WithModelVersion(long long value) { SetModelVersion(value); return *this;}
@@ -223,14 +211,12 @@ namespace Model
      * <p>The Amazon Resource Number (ARN) of the model version used for the inference
      * execution.</p>
      */
-    inline const Aws::String& GetModelVersionArn() const{ return m_modelVersionArn; }
+    inline const Aws::String& GetModelVersionArn() const { return m_modelVersionArn; }
     inline bool ModelVersionArnHasBeenSet() const { return m_modelVersionArnHasBeenSet; }
-    inline void SetModelVersionArn(const Aws::String& value) { m_modelVersionArnHasBeenSet = true; m_modelVersionArn = value; }
-    inline void SetModelVersionArn(Aws::String&& value) { m_modelVersionArnHasBeenSet = true; m_modelVersionArn = std::move(value); }
-    inline void SetModelVersionArn(const char* value) { m_modelVersionArnHasBeenSet = true; m_modelVersionArn.assign(value); }
-    inline InferenceExecutionSummary& WithModelVersionArn(const Aws::String& value) { SetModelVersionArn(value); return *this;}
-    inline InferenceExecutionSummary& WithModelVersionArn(Aws::String&& value) { SetModelVersionArn(std::move(value)); return *this;}
-    inline InferenceExecutionSummary& WithModelVersionArn(const char* value) { SetModelVersionArn(value); return *this;}
+    template<typename ModelVersionArnT = Aws::String>
+    void SetModelVersionArn(ModelVersionArnT&& value) { m_modelVersionArnHasBeenSet = true; m_modelVersionArn = std::forward<ModelVersionArnT>(value); }
+    template<typename ModelVersionArnT = Aws::String>
+    InferenceExecutionSummary& WithModelVersionArn(ModelVersionArnT&& value) { SetModelVersionArn(std::forward<ModelVersionArnT>(value)); return *this;}
     ///@}
   private:
 
@@ -246,13 +232,13 @@ namespace Model
     Aws::String m_inferenceSchedulerArn;
     bool m_inferenceSchedulerArnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_scheduledStartTime;
+    Aws::Utils::DateTime m_scheduledStartTime{};
     bool m_scheduledStartTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_dataStartTime;
+    Aws::Utils::DateTime m_dataStartTime{};
     bool m_dataStartTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_dataEndTime;
+    Aws::Utils::DateTime m_dataEndTime{};
     bool m_dataEndTimeHasBeenSet = false;
 
     InferenceInputConfiguration m_dataInputConfiguration;
@@ -264,13 +250,13 @@ namespace Model
     S3Object m_customerResultObject;
     bool m_customerResultObjectHasBeenSet = false;
 
-    InferenceExecutionStatus m_status;
+    InferenceExecutionStatus m_status{InferenceExecutionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
 
     Aws::String m_failedReason;
     bool m_failedReasonHasBeenSet = false;
 
-    long long m_modelVersion;
+    long long m_modelVersion{0};
     bool m_modelVersionHasBeenSet = false;
 
     Aws::String m_modelVersionArn;

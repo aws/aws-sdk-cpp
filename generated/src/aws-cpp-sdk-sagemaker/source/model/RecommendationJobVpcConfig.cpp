@@ -18,14 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-RecommendationJobVpcConfig::RecommendationJobVpcConfig() : 
-    m_securityGroupIdsHasBeenSet(false),
-    m_subnetsHasBeenSet(false)
-{
-}
-
 RecommendationJobVpcConfig::RecommendationJobVpcConfig(JsonView jsonValue)
-  : RecommendationJobVpcConfig()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ RecommendationJobVpcConfig& RecommendationJobVpcConfig::operator =(JsonView json
     }
     m_securityGroupIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Subnets"))
   {
     Aws::Utils::Array<JsonView> subnetsJsonList = jsonValue.GetArray("Subnets");
@@ -51,7 +43,6 @@ RecommendationJobVpcConfig& RecommendationJobVpcConfig::operator =(JsonView json
     }
     m_subnetsHasBeenSet = true;
   }
-
   return *this;
 }
 

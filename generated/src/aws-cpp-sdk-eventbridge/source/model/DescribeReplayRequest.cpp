@@ -12,11 +12,6 @@ using namespace Aws::EventBridge::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeReplayRequest::DescribeReplayRequest() : 
-    m_replayNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeReplayRequest::SerializePayload() const
 {
   JsonValue payload;

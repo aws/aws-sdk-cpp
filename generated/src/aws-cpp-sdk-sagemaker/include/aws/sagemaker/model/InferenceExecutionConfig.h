@@ -32,7 +32,7 @@ namespace Model
   class InferenceExecutionConfig
   {
   public:
-    AWS_SAGEMAKER_API InferenceExecutionConfig();
+    AWS_SAGEMAKER_API InferenceExecutionConfig() = default;
     AWS_SAGEMAKER_API InferenceExecutionConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API InferenceExecutionConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SAGEMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,16 +45,14 @@ namespace Model
      * pipeline.</p> </li> <li> <p> <code>DIRECT</code> - Only the individual container
      * that you specify is run.</p> </li> </ul>
      */
-    inline const InferenceExecutionMode& GetMode() const{ return m_mode; }
+    inline InferenceExecutionMode GetMode() const { return m_mode; }
     inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
-    inline void SetMode(const InferenceExecutionMode& value) { m_modeHasBeenSet = true; m_mode = value; }
-    inline void SetMode(InferenceExecutionMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
-    inline InferenceExecutionConfig& WithMode(const InferenceExecutionMode& value) { SetMode(value); return *this;}
-    inline InferenceExecutionConfig& WithMode(InferenceExecutionMode&& value) { SetMode(std::move(value)); return *this;}
+    inline void SetMode(InferenceExecutionMode value) { m_modeHasBeenSet = true; m_mode = value; }
+    inline InferenceExecutionConfig& WithMode(InferenceExecutionMode value) { SetMode(value); return *this;}
     ///@}
   private:
 
-    InferenceExecutionMode m_mode;
+    InferenceExecutionMode m_mode{InferenceExecutionMode::NOT_SET};
     bool m_modeHasBeenSet = false;
   };
 

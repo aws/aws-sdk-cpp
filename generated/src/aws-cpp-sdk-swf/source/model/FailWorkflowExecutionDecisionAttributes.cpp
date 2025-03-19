@@ -18,14 +18,7 @@ namespace SWF
 namespace Model
 {
 
-FailWorkflowExecutionDecisionAttributes::FailWorkflowExecutionDecisionAttributes() : 
-    m_reasonHasBeenSet(false),
-    m_detailsHasBeenSet(false)
-{
-}
-
 FailWorkflowExecutionDecisionAttributes::FailWorkflowExecutionDecisionAttributes(JsonView jsonValue)
-  : FailWorkflowExecutionDecisionAttributes()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ FailWorkflowExecutionDecisionAttributes& FailWorkflowExecutionDecisionAttributes
   if(jsonValue.ValueExists("reason"))
   {
     m_reason = jsonValue.GetString("reason");
-
     m_reasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("details"))
   {
     m_details = jsonValue.GetString("details");
-
     m_detailsHasBeenSet = true;
   }
-
   return *this;
 }
 

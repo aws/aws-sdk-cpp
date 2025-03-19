@@ -22,10 +22,9 @@ namespace Model
   class GetMapTileResult
   {
   public:
-    AWS_LOCATIONSERVICE_API GetMapTileResult();
-    //We have to define these because Microsoft doesn't auto generate them
-    AWS_LOCATIONSERVICE_API GetMapTileResult(GetMapTileResult&&);
-    AWS_LOCATIONSERVICE_API GetMapTileResult& operator=(GetMapTileResult&&);
+    AWS_LOCATIONSERVICE_API GetMapTileResult() = default;
+    AWS_LOCATIONSERVICE_API GetMapTileResult(GetMapTileResult&&) = default;
+    AWS_LOCATIONSERVICE_API GetMapTileResult& operator=(GetMapTileResult&&) = default;
     //we delete these because Microsoft doesn't handle move generation correctly
     //and we therefore don't trust them to get it right here either.
     GetMapTileResult(const GetMapTileResult&) = delete;
@@ -51,47 +50,45 @@ namespace Model
      * <p>The map tile's content type. For example,
      * <code>application/vnd.mapbox-vector-tile</code>.</p>
      */
-    inline const Aws::String& GetContentType() const{ return m_contentType; }
-    inline void SetContentType(const Aws::String& value) { m_contentType = value; }
-    inline void SetContentType(Aws::String&& value) { m_contentType = std::move(value); }
-    inline void SetContentType(const char* value) { m_contentType.assign(value); }
-    inline GetMapTileResult& WithContentType(const Aws::String& value) { SetContentType(value); return *this;}
-    inline GetMapTileResult& WithContentType(Aws::String&& value) { SetContentType(std::move(value)); return *this;}
-    inline GetMapTileResult& WithContentType(const char* value) { SetContentType(value); return *this;}
+    inline const Aws::String& GetContentType() const { return m_contentType; }
+    template<typename ContentTypeT = Aws::String>
+    void SetContentType(ContentTypeT&& value) { m_contentTypeHasBeenSet = true; m_contentType = std::forward<ContentTypeT>(value); }
+    template<typename ContentTypeT = Aws::String>
+    GetMapTileResult& WithContentType(ContentTypeT&& value) { SetContentType(std::forward<ContentTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HTTP Cache-Control directive for the value.</p>
      */
-    inline const Aws::String& GetCacheControl() const{ return m_cacheControl; }
-    inline void SetCacheControl(const Aws::String& value) { m_cacheControl = value; }
-    inline void SetCacheControl(Aws::String&& value) { m_cacheControl = std::move(value); }
-    inline void SetCacheControl(const char* value) { m_cacheControl.assign(value); }
-    inline GetMapTileResult& WithCacheControl(const Aws::String& value) { SetCacheControl(value); return *this;}
-    inline GetMapTileResult& WithCacheControl(Aws::String&& value) { SetCacheControl(std::move(value)); return *this;}
-    inline GetMapTileResult& WithCacheControl(const char* value) { SetCacheControl(value); return *this;}
+    inline const Aws::String& GetCacheControl() const { return m_cacheControl; }
+    template<typename CacheControlT = Aws::String>
+    void SetCacheControl(CacheControlT&& value) { m_cacheControlHasBeenSet = true; m_cacheControl = std::forward<CacheControlT>(value); }
+    template<typename CacheControlT = Aws::String>
+    GetMapTileResult& WithCacheControl(CacheControlT&& value) { SetCacheControl(std::forward<CacheControlT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetMapTileResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetMapTileResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetMapTileResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetMapTileResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::Stream::ResponseStream m_blob;
+    Aws::Utils::Stream::ResponseStream m_blob{};
+    bool m_blobHasBeenSet = false;
 
     Aws::String m_contentType;
+    bool m_contentTypeHasBeenSet = false;
 
     Aws::String m_cacheControl;
+    bool m_cacheControlHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

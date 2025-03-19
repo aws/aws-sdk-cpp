@@ -18,14 +18,7 @@ namespace MailManager
 namespace Model
 {
 
-IngressAnalysis::IngressAnalysis() : 
-    m_analyzerHasBeenSet(false),
-    m_resultFieldHasBeenSet(false)
-{
-}
-
 IngressAnalysis::IngressAnalysis(JsonView jsonValue)
-  : IngressAnalysis()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ IngressAnalysis& IngressAnalysis::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Analyzer"))
   {
     m_analyzer = jsonValue.GetString("Analyzer");
-
     m_analyzerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResultField"))
   {
     m_resultField = jsonValue.GetString("ResultField");
-
     m_resultFieldHasBeenSet = true;
   }
-
   return *this;
 }
 

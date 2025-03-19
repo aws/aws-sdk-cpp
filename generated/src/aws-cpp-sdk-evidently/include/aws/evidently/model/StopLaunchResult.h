@@ -28,7 +28,7 @@ namespace Model
   class StopLaunchResult
   {
   public:
-    AWS_CLOUDWATCHEVIDENTLY_API StopLaunchResult();
+    AWS_CLOUDWATCHEVIDENTLY_API StopLaunchResult() = default;
     AWS_CLOUDWATCHEVIDENTLY_API StopLaunchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDWATCHEVIDENTLY_API StopLaunchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The date and time that the launch stopped.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndedTime() const{ return m_endedTime; }
-    inline void SetEndedTime(const Aws::Utils::DateTime& value) { m_endedTime = value; }
-    inline void SetEndedTime(Aws::Utils::DateTime&& value) { m_endedTime = std::move(value); }
-    inline StopLaunchResult& WithEndedTime(const Aws::Utils::DateTime& value) { SetEndedTime(value); return *this;}
-    inline StopLaunchResult& WithEndedTime(Aws::Utils::DateTime&& value) { SetEndedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetEndedTime() const { return m_endedTime; }
+    template<typename EndedTimeT = Aws::Utils::DateTime>
+    void SetEndedTime(EndedTimeT&& value) { m_endedTimeHasBeenSet = true; m_endedTime = std::forward<EndedTimeT>(value); }
+    template<typename EndedTimeT = Aws::Utils::DateTime>
+    StopLaunchResult& WithEndedTime(EndedTimeT&& value) { SetEndedTime(std::forward<EndedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StopLaunchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StopLaunchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StopLaunchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StopLaunchResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_endedTime;
+    Aws::Utils::DateTime m_endedTime{};
+    bool m_endedTimeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

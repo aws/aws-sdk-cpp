@@ -37,7 +37,7 @@ namespace Model
   class ApplicationVersionLifecycleConfig
   {
   public:
-    AWS_ELASTICBEANSTALK_API ApplicationVersionLifecycleConfig();
+    AWS_ELASTICBEANSTALK_API ApplicationVersionLifecycleConfig() = default;
     AWS_ELASTICBEANSTALK_API ApplicationVersionLifecycleConfig(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICBEANSTALK_API ApplicationVersionLifecycleConfig& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -50,12 +50,12 @@ namespace Model
      * <p>Specify a max count rule to restrict the number of application versions that
      * are retained for an application.</p>
      */
-    inline const MaxCountRule& GetMaxCountRule() const{ return m_maxCountRule; }
+    inline const MaxCountRule& GetMaxCountRule() const { return m_maxCountRule; }
     inline bool MaxCountRuleHasBeenSet() const { return m_maxCountRuleHasBeenSet; }
-    inline void SetMaxCountRule(const MaxCountRule& value) { m_maxCountRuleHasBeenSet = true; m_maxCountRule = value; }
-    inline void SetMaxCountRule(MaxCountRule&& value) { m_maxCountRuleHasBeenSet = true; m_maxCountRule = std::move(value); }
-    inline ApplicationVersionLifecycleConfig& WithMaxCountRule(const MaxCountRule& value) { SetMaxCountRule(value); return *this;}
-    inline ApplicationVersionLifecycleConfig& WithMaxCountRule(MaxCountRule&& value) { SetMaxCountRule(std::move(value)); return *this;}
+    template<typename MaxCountRuleT = MaxCountRule>
+    void SetMaxCountRule(MaxCountRuleT&& value) { m_maxCountRuleHasBeenSet = true; m_maxCountRule = std::forward<MaxCountRuleT>(value); }
+    template<typename MaxCountRuleT = MaxCountRule>
+    ApplicationVersionLifecycleConfig& WithMaxCountRule(MaxCountRuleT&& value) { SetMaxCountRule(std::forward<MaxCountRuleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +63,12 @@ namespace Model
      * <p>Specify a max age rule to restrict the length of time that application
      * versions are retained for an application.</p>
      */
-    inline const MaxAgeRule& GetMaxAgeRule() const{ return m_maxAgeRule; }
+    inline const MaxAgeRule& GetMaxAgeRule() const { return m_maxAgeRule; }
     inline bool MaxAgeRuleHasBeenSet() const { return m_maxAgeRuleHasBeenSet; }
-    inline void SetMaxAgeRule(const MaxAgeRule& value) { m_maxAgeRuleHasBeenSet = true; m_maxAgeRule = value; }
-    inline void SetMaxAgeRule(MaxAgeRule&& value) { m_maxAgeRuleHasBeenSet = true; m_maxAgeRule = std::move(value); }
-    inline ApplicationVersionLifecycleConfig& WithMaxAgeRule(const MaxAgeRule& value) { SetMaxAgeRule(value); return *this;}
-    inline ApplicationVersionLifecycleConfig& WithMaxAgeRule(MaxAgeRule&& value) { SetMaxAgeRule(std::move(value)); return *this;}
+    template<typename MaxAgeRuleT = MaxAgeRule>
+    void SetMaxAgeRule(MaxAgeRuleT&& value) { m_maxAgeRuleHasBeenSet = true; m_maxAgeRule = std::forward<MaxAgeRuleT>(value); }
+    template<typename MaxAgeRuleT = MaxAgeRule>
+    ApplicationVersionLifecycleConfig& WithMaxAgeRule(MaxAgeRuleT&& value) { SetMaxAgeRule(std::forward<MaxAgeRuleT>(value)); return *this;}
     ///@}
   private:
 

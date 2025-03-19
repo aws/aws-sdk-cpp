@@ -21,7 +21,7 @@ namespace Model
   class UpdatePrimaryRegionRequest : public KMSRequest
   {
   public:
-    AWS_KMS_API UpdatePrimaryRegionRequest();
+    AWS_KMS_API UpdatePrimaryRegionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,14 +44,12 @@ namespace Model
      * </p> </li> </ul> <p>To get the key ID and key ARN for a KMS key, use
      * <a>ListKeys</a> or <a>DescribeKey</a>.</p>
      */
-    inline const Aws::String& GetKeyId() const{ return m_keyId; }
+    inline const Aws::String& GetKeyId() const { return m_keyId; }
     inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
-    inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
-    inline void SetKeyId(Aws::String&& value) { m_keyIdHasBeenSet = true; m_keyId = std::move(value); }
-    inline void SetKeyId(const char* value) { m_keyIdHasBeenSet = true; m_keyId.assign(value); }
-    inline UpdatePrimaryRegionRequest& WithKeyId(const Aws::String& value) { SetKeyId(value); return *this;}
-    inline UpdatePrimaryRegionRequest& WithKeyId(Aws::String&& value) { SetKeyId(std::move(value)); return *this;}
-    inline UpdatePrimaryRegionRequest& WithKeyId(const char* value) { SetKeyId(value); return *this;}
+    template<typename KeyIdT = Aws::String>
+    void SetKeyId(KeyIdT&& value) { m_keyIdHasBeenSet = true; m_keyId = std::forward<KeyIdT>(value); }
+    template<typename KeyIdT = Aws::String>
+    UpdatePrimaryRegionRequest& WithKeyId(KeyIdT&& value) { SetKeyId(std::forward<KeyIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * existing replica key in this Region. </p> <p>When the operation completes, the
      * multi-Region key in this Region will be the primary key.</p>
      */
-    inline const Aws::String& GetPrimaryRegion() const{ return m_primaryRegion; }
+    inline const Aws::String& GetPrimaryRegion() const { return m_primaryRegion; }
     inline bool PrimaryRegionHasBeenSet() const { return m_primaryRegionHasBeenSet; }
-    inline void SetPrimaryRegion(const Aws::String& value) { m_primaryRegionHasBeenSet = true; m_primaryRegion = value; }
-    inline void SetPrimaryRegion(Aws::String&& value) { m_primaryRegionHasBeenSet = true; m_primaryRegion = std::move(value); }
-    inline void SetPrimaryRegion(const char* value) { m_primaryRegionHasBeenSet = true; m_primaryRegion.assign(value); }
-    inline UpdatePrimaryRegionRequest& WithPrimaryRegion(const Aws::String& value) { SetPrimaryRegion(value); return *this;}
-    inline UpdatePrimaryRegionRequest& WithPrimaryRegion(Aws::String&& value) { SetPrimaryRegion(std::move(value)); return *this;}
-    inline UpdatePrimaryRegionRequest& WithPrimaryRegion(const char* value) { SetPrimaryRegion(value); return *this;}
+    template<typename PrimaryRegionT = Aws::String>
+    void SetPrimaryRegion(PrimaryRegionT&& value) { m_primaryRegionHasBeenSet = true; m_primaryRegion = std::forward<PrimaryRegionT>(value); }
+    template<typename PrimaryRegionT = Aws::String>
+    UpdatePrimaryRegionRequest& WithPrimaryRegion(PrimaryRegionT&& value) { SetPrimaryRegion(std::forward<PrimaryRegionT>(value)); return *this;}
     ///@}
   private:
 

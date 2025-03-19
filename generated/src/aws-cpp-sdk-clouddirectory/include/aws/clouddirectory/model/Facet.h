@@ -37,7 +37,7 @@ namespace Model
   class Facet
   {
   public:
-    AWS_CLOUDDIRECTORY_API Facet();
+    AWS_CLOUDDIRECTORY_API Facet() = default;
     AWS_CLOUDDIRECTORY_API Facet(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Facet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDDIRECTORY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
     /**
      * <p>The name of the <a>Facet</a>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Facet& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Facet& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Facet& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Facet& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,10 @@ namespace Model
      * <p>The object type that is associated with the facet. See
      * <a>CreateFacetRequest$ObjectType</a> for more details.</p>
      */
-    inline const ObjectType& GetObjectType() const{ return m_objectType; }
+    inline ObjectType GetObjectType() const { return m_objectType; }
     inline bool ObjectTypeHasBeenSet() const { return m_objectTypeHasBeenSet; }
-    inline void SetObjectType(const ObjectType& value) { m_objectTypeHasBeenSet = true; m_objectType = value; }
-    inline void SetObjectType(ObjectType&& value) { m_objectTypeHasBeenSet = true; m_objectType = std::move(value); }
-    inline Facet& WithObjectType(const ObjectType& value) { SetObjectType(value); return *this;}
-    inline Facet& WithObjectType(ObjectType&& value) { SetObjectType(std::move(value)); return *this;}
+    inline void SetObjectType(ObjectType value) { m_objectTypeHasBeenSet = true; m_objectType = value; }
+    inline Facet& WithObjectType(ObjectType value) { SetObjectType(value); return *this;}
     ///@}
 
     ///@{
@@ -77,22 +73,20 @@ namespace Model
      * must be defined in the schema. For dynamic facets, attributes can be defined
      * during data plane operations.</p>
      */
-    inline const FacetStyle& GetFacetStyle() const{ return m_facetStyle; }
+    inline FacetStyle GetFacetStyle() const { return m_facetStyle; }
     inline bool FacetStyleHasBeenSet() const { return m_facetStyleHasBeenSet; }
-    inline void SetFacetStyle(const FacetStyle& value) { m_facetStyleHasBeenSet = true; m_facetStyle = value; }
-    inline void SetFacetStyle(FacetStyle&& value) { m_facetStyleHasBeenSet = true; m_facetStyle = std::move(value); }
-    inline Facet& WithFacetStyle(const FacetStyle& value) { SetFacetStyle(value); return *this;}
-    inline Facet& WithFacetStyle(FacetStyle&& value) { SetFacetStyle(std::move(value)); return *this;}
+    inline void SetFacetStyle(FacetStyle value) { m_facetStyleHasBeenSet = true; m_facetStyle = value; }
+    inline Facet& WithFacetStyle(FacetStyle value) { SetFacetStyle(value); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    ObjectType m_objectType;
+    ObjectType m_objectType{ObjectType::NOT_SET};
     bool m_objectTypeHasBeenSet = false;
 
-    FacetStyle m_facetStyle;
+    FacetStyle m_facetStyle{FacetStyle::NOT_SET};
     bool m_facetStyleHasBeenSet = false;
   };
 

@@ -18,15 +18,7 @@ namespace ForecastService
 namespace Model
 {
 
-FeaturizationConfig::FeaturizationConfig() : 
-    m_forecastFrequencyHasBeenSet(false),
-    m_forecastDimensionsHasBeenSet(false),
-    m_featurizationsHasBeenSet(false)
-{
-}
-
 FeaturizationConfig::FeaturizationConfig(JsonView jsonValue)
-  : FeaturizationConfig()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ FeaturizationConfig& FeaturizationConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ForecastFrequency"))
   {
     m_forecastFrequency = jsonValue.GetString("ForecastFrequency");
-
     m_forecastFrequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ForecastDimensions"))
   {
     Aws::Utils::Array<JsonView> forecastDimensionsJsonList = jsonValue.GetArray("ForecastDimensions");
@@ -49,7 +39,6 @@ FeaturizationConfig& FeaturizationConfig::operator =(JsonView jsonValue)
     }
     m_forecastDimensionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Featurizations"))
   {
     Aws::Utils::Array<JsonView> featurizationsJsonList = jsonValue.GetArray("Featurizations");
@@ -59,7 +48,6 @@ FeaturizationConfig& FeaturizationConfig::operator =(JsonView jsonValue)
     }
     m_featurizationsHasBeenSet = true;
   }
-
   return *this;
 }
 

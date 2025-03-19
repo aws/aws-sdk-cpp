@@ -12,16 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListSessionsRequest::ListSessionsRequest() : 
-    m_workGroupHasBeenSet(false),
-    m_stateFilter(SessionState::NOT_SET),
-    m_stateFilterHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListSessionsRequest::SerializePayload() const
 {
   JsonValue payload;

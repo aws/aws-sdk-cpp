@@ -32,7 +32,7 @@ namespace Model
   class CodeHookSpecification
   {
   public:
-    AWS_LEXMODELSV2_API CodeHookSpecification();
+    AWS_LEXMODELSV2_API CodeHookSpecification() = default;
     AWS_LEXMODELSV2_API CodeHookSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API CodeHookSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const LambdaCodeHook& GetLambdaCodeHook() const{ return m_lambdaCodeHook; }
+    inline const LambdaCodeHook& GetLambdaCodeHook() const { return m_lambdaCodeHook; }
     inline bool LambdaCodeHookHasBeenSet() const { return m_lambdaCodeHookHasBeenSet; }
-    inline void SetLambdaCodeHook(const LambdaCodeHook& value) { m_lambdaCodeHookHasBeenSet = true; m_lambdaCodeHook = value; }
-    inline void SetLambdaCodeHook(LambdaCodeHook&& value) { m_lambdaCodeHookHasBeenSet = true; m_lambdaCodeHook = std::move(value); }
-    inline CodeHookSpecification& WithLambdaCodeHook(const LambdaCodeHook& value) { SetLambdaCodeHook(value); return *this;}
-    inline CodeHookSpecification& WithLambdaCodeHook(LambdaCodeHook&& value) { SetLambdaCodeHook(std::move(value)); return *this;}
+    template<typename LambdaCodeHookT = LambdaCodeHook>
+    void SetLambdaCodeHook(LambdaCodeHookT&& value) { m_lambdaCodeHookHasBeenSet = true; m_lambdaCodeHook = std::forward<LambdaCodeHookT>(value); }
+    template<typename LambdaCodeHookT = LambdaCodeHook>
+    CodeHookSpecification& WithLambdaCodeHook(LambdaCodeHookT&& value) { SetLambdaCodeHook(std::forward<LambdaCodeHookT>(value)); return *this;}
     ///@}
   private:
 

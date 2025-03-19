@@ -18,20 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-Entitlement::Entitlement() : 
-    m_nameHasBeenSet(false),
-    m_stackNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_appVisibility(AppVisibility::NOT_SET),
-    m_appVisibilityHasBeenSet(false),
-    m_attributesHasBeenSet(false),
-    m_createdTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false)
-{
-}
-
 Entitlement::Entitlement(JsonView jsonValue)
-  : Entitlement()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ Entitlement& Entitlement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StackName"))
   {
     m_stackName = jsonValue.GetString("StackName");
-
     m_stackNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppVisibility"))
   {
     m_appVisibility = AppVisibilityMapper::GetAppVisibilityForName(jsonValue.GetString("AppVisibility"));
-
     m_appVisibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attributes"))
   {
     Aws::Utils::Array<JsonView> attributesJsonList = jsonValue.GetArray("Attributes");
@@ -75,21 +54,16 @@ Entitlement& Entitlement::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTime"))
   {
     m_createdTime = jsonValue.GetDouble("CreatedTime");
-
     m_createdTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

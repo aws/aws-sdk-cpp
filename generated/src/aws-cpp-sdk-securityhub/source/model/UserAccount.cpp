@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-UserAccount::UserAccount() : 
-    m_uidHasBeenSet(false),
-    m_nameHasBeenSet(false)
-{
-}
-
 UserAccount::UserAccount(JsonView jsonValue)
-  : UserAccount()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ UserAccount& UserAccount::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Uid"))
   {
     m_uid = jsonValue.GetString("Uid");
-
     m_uidHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

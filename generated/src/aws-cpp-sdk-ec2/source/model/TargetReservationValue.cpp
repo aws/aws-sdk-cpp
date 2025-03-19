@@ -20,14 +20,7 @@ namespace EC2
 namespace Model
 {
 
-TargetReservationValue::TargetReservationValue() : 
-    m_reservationValueHasBeenSet(false),
-    m_targetConfigurationHasBeenSet(false)
-{
-}
-
 TargetReservationValue::TargetReservationValue(const XmlNode& xmlNode)
-  : TargetReservationValue()
 {
   *this = xmlNode;
 }

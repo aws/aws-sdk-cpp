@@ -30,7 +30,7 @@ namespace Model
   class GetAddressListImportJobResult
   {
   public:
-    AWS_MAILMANAGER_API GetAddressListImportJobResult();
+    AWS_MAILMANAGER_API GetAddressListImportJobResult() = default;
     AWS_MAILMANAGER_API GetAddressListImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MAILMANAGER_API GetAddressListImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,48 +39,44 @@ namespace Model
     /**
      * <p>The unique identifier of the address list the import job was created for.</p>
      */
-    inline const Aws::String& GetAddressListId() const{ return m_addressListId; }
-    inline void SetAddressListId(const Aws::String& value) { m_addressListId = value; }
-    inline void SetAddressListId(Aws::String&& value) { m_addressListId = std::move(value); }
-    inline void SetAddressListId(const char* value) { m_addressListId.assign(value); }
-    inline GetAddressListImportJobResult& WithAddressListId(const Aws::String& value) { SetAddressListId(value); return *this;}
-    inline GetAddressListImportJobResult& WithAddressListId(Aws::String&& value) { SetAddressListId(std::move(value)); return *this;}
-    inline GetAddressListImportJobResult& WithAddressListId(const char* value) { SetAddressListId(value); return *this;}
+    inline const Aws::String& GetAddressListId() const { return m_addressListId; }
+    template<typename AddressListIdT = Aws::String>
+    void SetAddressListId(AddressListIdT&& value) { m_addressListIdHasBeenSet = true; m_addressListId = std::forward<AddressListIdT>(value); }
+    template<typename AddressListIdT = Aws::String>
+    GetAddressListImportJobResult& WithAddressListId(AddressListIdT&& value) { SetAddressListId(std::forward<AddressListIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the import job was completed.</p>
      */
-    inline const Aws::Utils::DateTime& GetCompletedTimestamp() const{ return m_completedTimestamp; }
-    inline void SetCompletedTimestamp(const Aws::Utils::DateTime& value) { m_completedTimestamp = value; }
-    inline void SetCompletedTimestamp(Aws::Utils::DateTime&& value) { m_completedTimestamp = std::move(value); }
-    inline GetAddressListImportJobResult& WithCompletedTimestamp(const Aws::Utils::DateTime& value) { SetCompletedTimestamp(value); return *this;}
-    inline GetAddressListImportJobResult& WithCompletedTimestamp(Aws::Utils::DateTime&& value) { SetCompletedTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCompletedTimestamp() const { return m_completedTimestamp; }
+    template<typename CompletedTimestampT = Aws::Utils::DateTime>
+    void SetCompletedTimestamp(CompletedTimestampT&& value) { m_completedTimestampHasBeenSet = true; m_completedTimestamp = std::forward<CompletedTimestampT>(value); }
+    template<typename CompletedTimestampT = Aws::Utils::DateTime>
+    GetAddressListImportJobResult& WithCompletedTimestamp(CompletedTimestampT&& value) { SetCompletedTimestamp(std::forward<CompletedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the import job was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
-    inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestamp = value; }
-    inline void SetCreatedTimestamp(Aws::Utils::DateTime&& value) { m_createdTimestamp = std::move(value); }
-    inline GetAddressListImportJobResult& WithCreatedTimestamp(const Aws::Utils::DateTime& value) { SetCreatedTimestamp(value); return *this;}
-    inline GetAddressListImportJobResult& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    void SetCreatedTimestamp(CreatedTimestampT&& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = std::forward<CreatedTimestampT>(value); }
+    template<typename CreatedTimestampT = Aws::Utils::DateTime>
+    GetAddressListImportJobResult& WithCreatedTimestamp(CreatedTimestampT&& value) { SetCreatedTimestamp(std::forward<CreatedTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The reason for failure of an import job.</p>
      */
-    inline const Aws::String& GetError() const{ return m_error; }
-    inline void SetError(const Aws::String& value) { m_error = value; }
-    inline void SetError(Aws::String&& value) { m_error = std::move(value); }
-    inline void SetError(const char* value) { m_error.assign(value); }
-    inline GetAddressListImportJobResult& WithError(const Aws::String& value) { SetError(value); return *this;}
-    inline GetAddressListImportJobResult& WithError(Aws::String&& value) { SetError(std::move(value)); return *this;}
-    inline GetAddressListImportJobResult& WithError(const char* value) { SetError(value); return *this;}
+    inline const Aws::String& GetError() const { return m_error; }
+    template<typename ErrorT = Aws::String>
+    void SetError(ErrorT&& value) { m_errorHasBeenSet = true; m_error = std::forward<ErrorT>(value); }
+    template<typename ErrorT = Aws::String>
+    GetAddressListImportJobResult& WithError(ErrorT&& value) { SetError(std::forward<ErrorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,8 +84,8 @@ namespace Model
      * <p>The number of input addresses that failed to be imported into the address
      * list.</p>
      */
-    inline int GetFailedItemsCount() const{ return m_failedItemsCount; }
-    inline void SetFailedItemsCount(int value) { m_failedItemsCount = value; }
+    inline int GetFailedItemsCount() const { return m_failedItemsCount; }
+    inline void SetFailedItemsCount(int value) { m_failedItemsCountHasBeenSet = true; m_failedItemsCount = value; }
     inline GetAddressListImportJobResult& WithFailedItemsCount(int value) { SetFailedItemsCount(value); return *this;}
     ///@}
 
@@ -97,11 +93,11 @@ namespace Model
     /**
      * <p>The format of the input for an import job.</p>
      */
-    inline const ImportDataFormat& GetImportDataFormat() const{ return m_importDataFormat; }
-    inline void SetImportDataFormat(const ImportDataFormat& value) { m_importDataFormat = value; }
-    inline void SetImportDataFormat(ImportDataFormat&& value) { m_importDataFormat = std::move(value); }
-    inline GetAddressListImportJobResult& WithImportDataFormat(const ImportDataFormat& value) { SetImportDataFormat(value); return *this;}
-    inline GetAddressListImportJobResult& WithImportDataFormat(ImportDataFormat&& value) { SetImportDataFormat(std::move(value)); return *this;}
+    inline const ImportDataFormat& GetImportDataFormat() const { return m_importDataFormat; }
+    template<typename ImportDataFormatT = ImportDataFormat>
+    void SetImportDataFormat(ImportDataFormatT&& value) { m_importDataFormatHasBeenSet = true; m_importDataFormat = std::forward<ImportDataFormatT>(value); }
+    template<typename ImportDataFormatT = ImportDataFormat>
+    GetAddressListImportJobResult& WithImportDataFormat(ImportDataFormatT&& value) { SetImportDataFormat(std::forward<ImportDataFormatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,8 +105,8 @@ namespace Model
      * <p>The number of input addresses successfully imported into the address
      * list.</p>
      */
-    inline int GetImportedItemsCount() const{ return m_importedItemsCount; }
-    inline void SetImportedItemsCount(int value) { m_importedItemsCount = value; }
+    inline int GetImportedItemsCount() const { return m_importedItemsCount; }
+    inline void SetImportedItemsCount(int value) { m_importedItemsCountHasBeenSet = true; m_importedItemsCount = value; }
     inline GetAddressListImportJobResult& WithImportedItemsCount(int value) { SetImportedItemsCount(value); return *this;}
     ///@}
 
@@ -118,100 +114,103 @@ namespace Model
     /**
      * <p>The identifier of the import job.</p>
      */
-    inline const Aws::String& GetJobId() const{ return m_jobId; }
-    inline void SetJobId(const Aws::String& value) { m_jobId = value; }
-    inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
-    inline void SetJobId(const char* value) { m_jobId.assign(value); }
-    inline GetAddressListImportJobResult& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
-    inline GetAddressListImportJobResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
-    inline GetAddressListImportJobResult& WithJobId(const char* value) { SetJobId(value); return *this;}
+    inline const Aws::String& GetJobId() const { return m_jobId; }
+    template<typename JobIdT = Aws::String>
+    void SetJobId(JobIdT&& value) { m_jobIdHasBeenSet = true; m_jobId = std::forward<JobIdT>(value); }
+    template<typename JobIdT = Aws::String>
+    GetAddressListImportJobResult& WithJobId(JobIdT&& value) { SetJobId(std::forward<JobIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A user-friendly name for the import job.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline GetAddressListImportJobResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline GetAddressListImportJobResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline GetAddressListImportJobResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    GetAddressListImportJobResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The pre-signed URL target for uploading the input file.</p>
      */
-    inline const Aws::String& GetPreSignedUrl() const{ return m_preSignedUrl; }
-    inline void SetPreSignedUrl(const Aws::String& value) { m_preSignedUrl = value; }
-    inline void SetPreSignedUrl(Aws::String&& value) { m_preSignedUrl = std::move(value); }
-    inline void SetPreSignedUrl(const char* value) { m_preSignedUrl.assign(value); }
-    inline GetAddressListImportJobResult& WithPreSignedUrl(const Aws::String& value) { SetPreSignedUrl(value); return *this;}
-    inline GetAddressListImportJobResult& WithPreSignedUrl(Aws::String&& value) { SetPreSignedUrl(std::move(value)); return *this;}
-    inline GetAddressListImportJobResult& WithPreSignedUrl(const char* value) { SetPreSignedUrl(value); return *this;}
+    inline const Aws::String& GetPreSignedUrl() const { return m_preSignedUrl; }
+    template<typename PreSignedUrlT = Aws::String>
+    void SetPreSignedUrl(PreSignedUrlT&& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = std::forward<PreSignedUrlT>(value); }
+    template<typename PreSignedUrlT = Aws::String>
+    GetAddressListImportJobResult& WithPreSignedUrl(PreSignedUrlT&& value) { SetPreSignedUrl(std::forward<PreSignedUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of when the import job was started.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTimestamp() const{ return m_startTimestamp; }
-    inline void SetStartTimestamp(const Aws::Utils::DateTime& value) { m_startTimestamp = value; }
-    inline void SetStartTimestamp(Aws::Utils::DateTime&& value) { m_startTimestamp = std::move(value); }
-    inline GetAddressListImportJobResult& WithStartTimestamp(const Aws::Utils::DateTime& value) { SetStartTimestamp(value); return *this;}
-    inline GetAddressListImportJobResult& WithStartTimestamp(Aws::Utils::DateTime&& value) { SetStartTimestamp(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartTimestamp() const { return m_startTimestamp; }
+    template<typename StartTimestampT = Aws::Utils::DateTime>
+    void SetStartTimestamp(StartTimestampT&& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = std::forward<StartTimestampT>(value); }
+    template<typename StartTimestampT = Aws::Utils::DateTime>
+    GetAddressListImportJobResult& WithStartTimestamp(StartTimestampT&& value) { SetStartTimestamp(std::forward<StartTimestampT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the import job.</p>
      */
-    inline const ImportJobStatus& GetStatus() const{ return m_status; }
-    inline void SetStatus(const ImportJobStatus& value) { m_status = value; }
-    inline void SetStatus(ImportJobStatus&& value) { m_status = std::move(value); }
-    inline GetAddressListImportJobResult& WithStatus(const ImportJobStatus& value) { SetStatus(value); return *this;}
-    inline GetAddressListImportJobResult& WithStatus(ImportJobStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ImportJobStatus GetStatus() const { return m_status; }
+    inline void SetStatus(ImportJobStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline GetAddressListImportJobResult& WithStatus(ImportJobStatus value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetAddressListImportJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetAddressListImportJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetAddressListImportJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetAddressListImportJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_addressListId;
+    bool m_addressListIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_completedTimestamp;
+    Aws::Utils::DateTime m_completedTimestamp{};
+    bool m_completedTimestampHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdTimestamp;
+    Aws::Utils::DateTime m_createdTimestamp{};
+    bool m_createdTimestampHasBeenSet = false;
 
     Aws::String m_error;
+    bool m_errorHasBeenSet = false;
 
-    int m_failedItemsCount;
+    int m_failedItemsCount{0};
+    bool m_failedItemsCountHasBeenSet = false;
 
     ImportDataFormat m_importDataFormat;
+    bool m_importDataFormatHasBeenSet = false;
 
-    int m_importedItemsCount;
+    int m_importedItemsCount{0};
+    bool m_importedItemsCountHasBeenSet = false;
 
     Aws::String m_jobId;
+    bool m_jobIdHasBeenSet = false;
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_preSignedUrl;
+    bool m_preSignedUrlHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTimestamp;
+    Aws::Utils::DateTime m_startTimestamp{};
+    bool m_startTimestampHasBeenSet = false;
 
-    ImportJobStatus m_status;
+    ImportJobStatus m_status{ImportJobStatus::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

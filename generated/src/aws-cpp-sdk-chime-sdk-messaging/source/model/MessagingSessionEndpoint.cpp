@@ -18,13 +18,7 @@ namespace ChimeSDKMessaging
 namespace Model
 {
 
-MessagingSessionEndpoint::MessagingSessionEndpoint() : 
-    m_urlHasBeenSet(false)
-{
-}
-
 MessagingSessionEndpoint::MessagingSessionEndpoint(JsonView jsonValue)
-  : MessagingSessionEndpoint()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MessagingSessionEndpoint& MessagingSessionEndpoint::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Url"))
   {
     m_url = jsonValue.GetString("Url");
-
     m_urlHasBeenSet = true;
   }
-
   return *this;
 }
 

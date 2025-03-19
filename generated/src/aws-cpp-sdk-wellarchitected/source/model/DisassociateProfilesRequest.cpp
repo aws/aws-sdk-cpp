@@ -12,12 +12,6 @@ using namespace Aws::WellArchitected::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisassociateProfilesRequest::DisassociateProfilesRequest() : 
-    m_workloadIdHasBeenSet(false),
-    m_profileArnsHasBeenSet(false)
-{
-}
-
 Aws::String DisassociateProfilesRequest::SerializePayload() const
 {
   JsonValue payload;

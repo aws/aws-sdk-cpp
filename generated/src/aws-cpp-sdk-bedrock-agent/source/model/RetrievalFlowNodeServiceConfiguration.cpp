@@ -18,13 +18,7 @@ namespace BedrockAgent
 namespace Model
 {
 
-RetrievalFlowNodeServiceConfiguration::RetrievalFlowNodeServiceConfiguration() : 
-    m_s3HasBeenSet(false)
-{
-}
-
 RetrievalFlowNodeServiceConfiguration::RetrievalFlowNodeServiceConfiguration(JsonView jsonValue)
-  : RetrievalFlowNodeServiceConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ RetrievalFlowNodeServiceConfiguration& RetrievalFlowNodeServiceConfiguration::op
   if(jsonValue.ValueExists("s3"))
   {
     m_s3 = jsonValue.GetObject("s3");
-
     m_s3HasBeenSet = true;
   }
-
   return *this;
 }
 

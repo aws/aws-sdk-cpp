@@ -21,7 +21,7 @@ namespace Model
   class GetComponentRequest : public SsmSapRequest
   {
   public:
-    AWS_SSMSAP_API GetComponentRequest();
+    AWS_SSMSAP_API GetComponentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The ID of the application.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline GetComponentRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline GetComponentRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline GetComponentRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    GetComponentRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the component.</p>
      */
-    inline const Aws::String& GetComponentId() const{ return m_componentId; }
+    inline const Aws::String& GetComponentId() const { return m_componentId; }
     inline bool ComponentIdHasBeenSet() const { return m_componentIdHasBeenSet; }
-    inline void SetComponentId(const Aws::String& value) { m_componentIdHasBeenSet = true; m_componentId = value; }
-    inline void SetComponentId(Aws::String&& value) { m_componentIdHasBeenSet = true; m_componentId = std::move(value); }
-    inline void SetComponentId(const char* value) { m_componentIdHasBeenSet = true; m_componentId.assign(value); }
-    inline GetComponentRequest& WithComponentId(const Aws::String& value) { SetComponentId(value); return *this;}
-    inline GetComponentRequest& WithComponentId(Aws::String&& value) { SetComponentId(std::move(value)); return *this;}
-    inline GetComponentRequest& WithComponentId(const char* value) { SetComponentId(value); return *this;}
+    template<typename ComponentIdT = Aws::String>
+    void SetComponentId(ComponentIdT&& value) { m_componentIdHasBeenSet = true; m_componentId = std::forward<ComponentIdT>(value); }
+    template<typename ComponentIdT = Aws::String>
+    GetComponentRequest& WithComponentId(ComponentIdT&& value) { SetComponentId(std::forward<ComponentIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,10 +12,6 @@ using namespace Aws::MainframeModernization::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSignedBluinsightsUrlRequest::GetSignedBluinsightsUrlRequest()
-{
-}
-
 Aws::String GetSignedBluinsightsUrlRequest::SerializePayload() const
 {
   return {};

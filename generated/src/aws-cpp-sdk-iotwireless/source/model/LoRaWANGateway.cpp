@@ -18,20 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-LoRaWANGateway::LoRaWANGateway() : 
-    m_gatewayEuiHasBeenSet(false),
-    m_rfRegionHasBeenSet(false),
-    m_joinEuiFiltersHasBeenSet(false),
-    m_netIdFiltersHasBeenSet(false),
-    m_subBandsHasBeenSet(false),
-    m_beaconingHasBeenSet(false),
-    m_maxEirp(0.0),
-    m_maxEirpHasBeenSet(false)
-{
-}
-
 LoRaWANGateway::LoRaWANGateway(JsonView jsonValue)
-  : LoRaWANGateway()
 {
   *this = jsonValue;
 }
@@ -41,17 +28,13 @@ LoRaWANGateway& LoRaWANGateway::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GatewayEui"))
   {
     m_gatewayEui = jsonValue.GetString("GatewayEui");
-
     m_gatewayEuiHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RfRegion"))
   {
     m_rfRegion = jsonValue.GetString("RfRegion");
-
     m_rfRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JoinEuiFilters"))
   {
     Aws::Utils::Array<JsonView> joinEuiFiltersJsonList = jsonValue.GetArray("JoinEuiFilters");
@@ -68,7 +51,6 @@ LoRaWANGateway& LoRaWANGateway::operator =(JsonView jsonValue)
     }
     m_joinEuiFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NetIdFilters"))
   {
     Aws::Utils::Array<JsonView> netIdFiltersJsonList = jsonValue.GetArray("NetIdFilters");
@@ -78,7 +60,6 @@ LoRaWANGateway& LoRaWANGateway::operator =(JsonView jsonValue)
     }
     m_netIdFiltersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SubBands"))
   {
     Aws::Utils::Array<JsonView> subBandsJsonList = jsonValue.GetArray("SubBands");
@@ -88,21 +69,16 @@ LoRaWANGateway& LoRaWANGateway::operator =(JsonView jsonValue)
     }
     m_subBandsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Beaconing"))
   {
     m_beaconing = jsonValue.GetObject("Beaconing");
-
     m_beaconingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxEirp"))
   {
     m_maxEirp = jsonValue.GetDouble("MaxEirp");
-
     m_maxEirpHasBeenSet = true;
   }
-
   return *this;
 }
 

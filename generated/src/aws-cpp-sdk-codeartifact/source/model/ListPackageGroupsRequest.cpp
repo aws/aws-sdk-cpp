@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListPackageGroupsRequest::ListPackageGroupsRequest() : 
-    m_domainHasBeenSet(false),
-    m_domainOwnerHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_prefixHasBeenSet(false)
-{
-}
-
 Aws::String ListPackageGroupsRequest::SerializePayload() const
 {
   return {};

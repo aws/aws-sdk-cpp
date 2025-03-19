@@ -18,13 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-SearchVulnerabilitiesFilterCriteria::SearchVulnerabilitiesFilterCriteria() : 
-    m_vulnerabilityIdsHasBeenSet(false)
-{
-}
-
 SearchVulnerabilitiesFilterCriteria::SearchVulnerabilitiesFilterCriteria(JsonView jsonValue)
-  : SearchVulnerabilitiesFilterCriteria()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SearchVulnerabilitiesFilterCriteria& SearchVulnerabilitiesFilterCriteria::operat
     }
     m_vulnerabilityIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

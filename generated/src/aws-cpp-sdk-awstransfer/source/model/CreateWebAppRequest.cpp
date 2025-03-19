@@ -12,14 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWebAppRequest::CreateWebAppRequest() : 
-    m_identityProviderDetailsHasBeenSet(false),
-    m_accessEndpointHasBeenSet(false),
-    m_webAppUnitsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateWebAppRequest::SerializePayload() const
 {
   JsonValue payload;

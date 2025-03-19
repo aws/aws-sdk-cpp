@@ -33,7 +33,7 @@ namespace Model
   class FunctionSummary
   {
   public:
-    AWS_CLOUDFRONT_API FunctionSummary();
+    AWS_CLOUDFRONT_API FunctionSummary() = default;
     AWS_CLOUDFRONT_API FunctionSummary(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API FunctionSummary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,52 +44,48 @@ namespace Model
     /**
      * <p>The name of the CloudFront function.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline FunctionSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline FunctionSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline FunctionSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    FunctionSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the CloudFront function.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline FunctionSummary& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline FunctionSummary& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline FunctionSummary& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    FunctionSummary& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains configuration information about a CloudFront function.</p>
      */
-    inline const FunctionConfig& GetFunctionConfig() const{ return m_functionConfig; }
+    inline const FunctionConfig& GetFunctionConfig() const { return m_functionConfig; }
     inline bool FunctionConfigHasBeenSet() const { return m_functionConfigHasBeenSet; }
-    inline void SetFunctionConfig(const FunctionConfig& value) { m_functionConfigHasBeenSet = true; m_functionConfig = value; }
-    inline void SetFunctionConfig(FunctionConfig&& value) { m_functionConfigHasBeenSet = true; m_functionConfig = std::move(value); }
-    inline FunctionSummary& WithFunctionConfig(const FunctionConfig& value) { SetFunctionConfig(value); return *this;}
-    inline FunctionSummary& WithFunctionConfig(FunctionConfig&& value) { SetFunctionConfig(std::move(value)); return *this;}
+    template<typename FunctionConfigT = FunctionConfig>
+    void SetFunctionConfig(FunctionConfigT&& value) { m_functionConfigHasBeenSet = true; m_functionConfig = std::forward<FunctionConfigT>(value); }
+    template<typename FunctionConfigT = FunctionConfig>
+    FunctionSummary& WithFunctionConfig(FunctionConfigT&& value) { SetFunctionConfig(std::forward<FunctionConfigT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains metadata about a CloudFront function.</p>
      */
-    inline const FunctionMetadata& GetFunctionMetadata() const{ return m_functionMetadata; }
+    inline const FunctionMetadata& GetFunctionMetadata() const { return m_functionMetadata; }
     inline bool FunctionMetadataHasBeenSet() const { return m_functionMetadataHasBeenSet; }
-    inline void SetFunctionMetadata(const FunctionMetadata& value) { m_functionMetadataHasBeenSet = true; m_functionMetadata = value; }
-    inline void SetFunctionMetadata(FunctionMetadata&& value) { m_functionMetadataHasBeenSet = true; m_functionMetadata = std::move(value); }
-    inline FunctionSummary& WithFunctionMetadata(const FunctionMetadata& value) { SetFunctionMetadata(value); return *this;}
-    inline FunctionSummary& WithFunctionMetadata(FunctionMetadata&& value) { SetFunctionMetadata(std::move(value)); return *this;}
+    template<typename FunctionMetadataT = FunctionMetadata>
+    void SetFunctionMetadata(FunctionMetadataT&& value) { m_functionMetadataHasBeenSet = true; m_functionMetadata = std::forward<FunctionMetadataT>(value); }
+    template<typename FunctionMetadataT = FunctionMetadata>
+    FunctionSummary& WithFunctionMetadata(FunctionMetadataT&& value) { SetFunctionMetadata(std::forward<FunctionMetadataT>(value)); return *this;}
     ///@}
   private:
 

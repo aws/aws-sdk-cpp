@@ -18,18 +18,7 @@ namespace TimestreamQuery
 namespace Model
 {
 
-SelectColumn::SelectColumn() : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_aliased(false),
-    m_aliasedHasBeenSet(false)
-{
-}
-
 SelectColumn::SelectColumn(JsonView jsonValue)
-  : SelectColumn()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ SelectColumn& SelectColumn::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetObject("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Aliased"))
   {
     m_aliased = jsonValue.GetBool("Aliased");
-
     m_aliasedHasBeenSet = true;
   }
-
   return *this;
 }
 

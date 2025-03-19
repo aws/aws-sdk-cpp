@@ -18,15 +18,7 @@ namespace ChimeSDKMessaging
 namespace Model
 {
 
-LambdaConfiguration::LambdaConfiguration() : 
-    m_resourceArnHasBeenSet(false),
-    m_invocationType(InvocationType::NOT_SET),
-    m_invocationTypeHasBeenSet(false)
-{
-}
-
 LambdaConfiguration::LambdaConfiguration(JsonView jsonValue)
-  : LambdaConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ LambdaConfiguration& LambdaConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InvocationType"))
   {
     m_invocationType = InvocationTypeMapper::GetInvocationTypeForName(jsonValue.GetString("InvocationType"));
-
     m_invocationTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

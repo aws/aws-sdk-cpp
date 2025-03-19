@@ -29,7 +29,7 @@ namespace Model
   class ListServiceTemplateVersionsResult
   {
   public:
-    AWS_PROTON_API ListServiceTemplateVersionsResult();
+    AWS_PROTON_API ListServiceTemplateVersionsResult() = default;
     AWS_PROTON_API ListServiceTemplateVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PROTON_API ListServiceTemplateVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,11 @@ namespace Model
      * array of major or minor versions of a service template, after the current
      * requested list of service major or minor versions.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListServiceTemplateVersionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListServiceTemplateVersionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListServiceTemplateVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListServiceTemplateVersionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,32 +52,33 @@ namespace Model
      * <p>An array of major or minor versions of a service template with detail
      * data.</p>
      */
-    inline const Aws::Vector<ServiceTemplateVersionSummary>& GetTemplateVersions() const{ return m_templateVersions; }
-    inline void SetTemplateVersions(const Aws::Vector<ServiceTemplateVersionSummary>& value) { m_templateVersions = value; }
-    inline void SetTemplateVersions(Aws::Vector<ServiceTemplateVersionSummary>&& value) { m_templateVersions = std::move(value); }
-    inline ListServiceTemplateVersionsResult& WithTemplateVersions(const Aws::Vector<ServiceTemplateVersionSummary>& value) { SetTemplateVersions(value); return *this;}
-    inline ListServiceTemplateVersionsResult& WithTemplateVersions(Aws::Vector<ServiceTemplateVersionSummary>&& value) { SetTemplateVersions(std::move(value)); return *this;}
-    inline ListServiceTemplateVersionsResult& AddTemplateVersions(const ServiceTemplateVersionSummary& value) { m_templateVersions.push_back(value); return *this; }
-    inline ListServiceTemplateVersionsResult& AddTemplateVersions(ServiceTemplateVersionSummary&& value) { m_templateVersions.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<ServiceTemplateVersionSummary>& GetTemplateVersions() const { return m_templateVersions; }
+    template<typename TemplateVersionsT = Aws::Vector<ServiceTemplateVersionSummary>>
+    void SetTemplateVersions(TemplateVersionsT&& value) { m_templateVersionsHasBeenSet = true; m_templateVersions = std::forward<TemplateVersionsT>(value); }
+    template<typename TemplateVersionsT = Aws::Vector<ServiceTemplateVersionSummary>>
+    ListServiceTemplateVersionsResult& WithTemplateVersions(TemplateVersionsT&& value) { SetTemplateVersions(std::forward<TemplateVersionsT>(value)); return *this;}
+    template<typename TemplateVersionsT = ServiceTemplateVersionSummary>
+    ListServiceTemplateVersionsResult& AddTemplateVersions(TemplateVersionsT&& value) { m_templateVersionsHasBeenSet = true; m_templateVersions.emplace_back(std::forward<TemplateVersionsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListServiceTemplateVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListServiceTemplateVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListServiceTemplateVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListServiceTemplateVersionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<ServiceTemplateVersionSummary> m_templateVersions;
+    bool m_templateVersionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

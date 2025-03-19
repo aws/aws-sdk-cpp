@@ -12,12 +12,6 @@ using namespace Aws::RoboMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetWorldTemplateBodyRequest::GetWorldTemplateBodyRequest() : 
-    m_templateHasBeenSet(false),
-    m_generationJobHasBeenSet(false)
-{
-}
-
 Aws::String GetWorldTemplateBodyRequest::SerializePayload() const
 {
   JsonValue payload;

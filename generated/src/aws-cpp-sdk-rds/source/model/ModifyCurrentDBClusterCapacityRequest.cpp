@@ -10,16 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-ModifyCurrentDBClusterCapacityRequest::ModifyCurrentDBClusterCapacityRequest() : 
-    m_dBClusterIdentifierHasBeenSet(false),
-    m_capacity(0),
-    m_capacityHasBeenSet(false),
-    m_secondsBeforeTimeout(0),
-    m_secondsBeforeTimeoutHasBeenSet(false),
-    m_timeoutActionHasBeenSet(false)
-{
-}
-
 Aws::String ModifyCurrentDBClusterCapacityRequest::SerializePayload() const
 {
   Aws::StringStream ss;

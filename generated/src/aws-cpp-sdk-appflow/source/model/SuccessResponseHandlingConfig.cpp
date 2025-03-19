@@ -18,14 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-SuccessResponseHandlingConfig::SuccessResponseHandlingConfig() : 
-    m_bucketPrefixHasBeenSet(false),
-    m_bucketNameHasBeenSet(false)
-{
-}
-
 SuccessResponseHandlingConfig::SuccessResponseHandlingConfig(JsonView jsonValue)
-  : SuccessResponseHandlingConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ SuccessResponseHandlingConfig& SuccessResponseHandlingConfig::operator =(JsonVie
   if(jsonValue.ValueExists("bucketPrefix"))
   {
     m_bucketPrefix = jsonValue.GetString("bucketPrefix");
-
     m_bucketPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bucketName"))
   {
     m_bucketName = jsonValue.GetString("bucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   return *this;
 }
 

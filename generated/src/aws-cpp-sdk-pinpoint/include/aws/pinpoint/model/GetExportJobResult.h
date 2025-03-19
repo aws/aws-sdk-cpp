@@ -28,35 +28,35 @@ namespace Model
   class GetExportJobResult
   {
   public:
-    AWS_PINPOINT_API GetExportJobResult();
+    AWS_PINPOINT_API GetExportJobResult() = default;
     AWS_PINPOINT_API GetExportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PINPOINT_API GetExportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const ExportJobResponse& GetExportJobResponse() const{ return m_exportJobResponse; }
-    inline void SetExportJobResponse(const ExportJobResponse& value) { m_exportJobResponse = value; }
-    inline void SetExportJobResponse(ExportJobResponse&& value) { m_exportJobResponse = std::move(value); }
-    inline GetExportJobResult& WithExportJobResponse(const ExportJobResponse& value) { SetExportJobResponse(value); return *this;}
-    inline GetExportJobResult& WithExportJobResponse(ExportJobResponse&& value) { SetExportJobResponse(std::move(value)); return *this;}
+    inline const ExportJobResponse& GetExportJobResponse() const { return m_exportJobResponse; }
+    template<typename ExportJobResponseT = ExportJobResponse>
+    void SetExportJobResponse(ExportJobResponseT&& value) { m_exportJobResponseHasBeenSet = true; m_exportJobResponse = std::forward<ExportJobResponseT>(value); }
+    template<typename ExportJobResponseT = ExportJobResponse>
+    GetExportJobResult& WithExportJobResponse(ExportJobResponseT&& value) { SetExportJobResponse(std::forward<ExportJobResponseT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetExportJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetExportJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetExportJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetExportJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ExportJobResponse m_exportJobResponse;
+    bool m_exportJobResponseHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

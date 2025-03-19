@@ -21,7 +21,7 @@ namespace Model
   class GetEvaluationRequest : public MachineLearningRequest
   {
   public:
-    AWS_MACHINELEARNING_API GetEvaluationRequest();
+    AWS_MACHINELEARNING_API GetEvaluationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <code>MLModel</code> is recorded and cataloged. The ID provides the means to
      * access the information. </p>
      */
-    inline const Aws::String& GetEvaluationId() const{ return m_evaluationId; }
+    inline const Aws::String& GetEvaluationId() const { return m_evaluationId; }
     inline bool EvaluationIdHasBeenSet() const { return m_evaluationIdHasBeenSet; }
-    inline void SetEvaluationId(const Aws::String& value) { m_evaluationIdHasBeenSet = true; m_evaluationId = value; }
-    inline void SetEvaluationId(Aws::String&& value) { m_evaluationIdHasBeenSet = true; m_evaluationId = std::move(value); }
-    inline void SetEvaluationId(const char* value) { m_evaluationIdHasBeenSet = true; m_evaluationId.assign(value); }
-    inline GetEvaluationRequest& WithEvaluationId(const Aws::String& value) { SetEvaluationId(value); return *this;}
-    inline GetEvaluationRequest& WithEvaluationId(Aws::String&& value) { SetEvaluationId(std::move(value)); return *this;}
-    inline GetEvaluationRequest& WithEvaluationId(const char* value) { SetEvaluationId(value); return *this;}
+    template<typename EvaluationIdT = Aws::String>
+    void SetEvaluationId(EvaluationIdT&& value) { m_evaluationIdHasBeenSet = true; m_evaluationId = std::forward<EvaluationIdT>(value); }
+    template<typename EvaluationIdT = Aws::String>
+    GetEvaluationRequest& WithEvaluationId(EvaluationIdT&& value) { SetEvaluationId(std::forward<EvaluationIdT>(value)); return *this;}
     ///@}
   private:
 

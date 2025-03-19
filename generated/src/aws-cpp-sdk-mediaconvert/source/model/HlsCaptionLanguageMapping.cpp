@@ -18,18 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-HlsCaptionLanguageMapping::HlsCaptionLanguageMapping() : 
-    m_captionChannel(0),
-    m_captionChannelHasBeenSet(false),
-    m_customLanguageCodeHasBeenSet(false),
-    m_languageCode(LanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_languageDescriptionHasBeenSet(false)
-{
-}
-
 HlsCaptionLanguageMapping::HlsCaptionLanguageMapping(JsonView jsonValue)
-  : HlsCaptionLanguageMapping()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ HlsCaptionLanguageMapping& HlsCaptionLanguageMapping::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("captionChannel"))
   {
     m_captionChannel = jsonValue.GetInteger("captionChannel");
-
     m_captionChannelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customLanguageCode"))
   {
     m_customLanguageCode = jsonValue.GetString("customLanguageCode");
-
     m_customLanguageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("languageCode"))
   {
     m_languageCode = LanguageCodeMapper::GetLanguageCodeForName(jsonValue.GetString("languageCode"));
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("languageDescription"))
   {
     m_languageDescription = jsonValue.GetString("languageDescription");
-
     m_languageDescriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

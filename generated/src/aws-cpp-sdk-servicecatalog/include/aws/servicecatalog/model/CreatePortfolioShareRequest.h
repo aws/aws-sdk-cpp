@@ -22,7 +22,7 @@ namespace Model
   class CreatePortfolioShareRequest : public ServiceCatalogRequest
   {
   public:
-    AWS_SERVICECATALOG_API CreatePortfolioShareRequest();
+    AWS_SERVICECATALOG_API CreatePortfolioShareRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
      * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
      * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
-    inline const Aws::String& GetAcceptLanguage() const{ return m_acceptLanguage; }
+    inline const Aws::String& GetAcceptLanguage() const { return m_acceptLanguage; }
     inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
-    inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
-    inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
-    inline void SetAcceptLanguage(const char* value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage.assign(value); }
-    inline CreatePortfolioShareRequest& WithAcceptLanguage(const Aws::String& value) { SetAcceptLanguage(value); return *this;}
-    inline CreatePortfolioShareRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
-    inline CreatePortfolioShareRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
+    template<typename AcceptLanguageT = Aws::String>
+    void SetAcceptLanguage(AcceptLanguageT&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::forward<AcceptLanguageT>(value); }
+    template<typename AcceptLanguageT = Aws::String>
+    CreatePortfolioShareRequest& WithAcceptLanguage(AcceptLanguageT&& value) { SetAcceptLanguage(std::forward<AcceptLanguageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The portfolio identifier.</p>
      */
-    inline const Aws::String& GetPortfolioId() const{ return m_portfolioId; }
+    inline const Aws::String& GetPortfolioId() const { return m_portfolioId; }
     inline bool PortfolioIdHasBeenSet() const { return m_portfolioIdHasBeenSet; }
-    inline void SetPortfolioId(const Aws::String& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = value; }
-    inline void SetPortfolioId(Aws::String&& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = std::move(value); }
-    inline void SetPortfolioId(const char* value) { m_portfolioIdHasBeenSet = true; m_portfolioId.assign(value); }
-    inline CreatePortfolioShareRequest& WithPortfolioId(const Aws::String& value) { SetPortfolioId(value); return *this;}
-    inline CreatePortfolioShareRequest& WithPortfolioId(Aws::String&& value) { SetPortfolioId(std::move(value)); return *this;}
-    inline CreatePortfolioShareRequest& WithPortfolioId(const char* value) { SetPortfolioId(value); return *this;}
+    template<typename PortfolioIdT = Aws::String>
+    void SetPortfolioId(PortfolioIdT&& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = std::forward<PortfolioIdT>(value); }
+    template<typename PortfolioIdT = Aws::String>
+    CreatePortfolioShareRequest& WithPortfolioId(PortfolioIdT&& value) { SetPortfolioId(std::forward<PortfolioIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +65,12 @@ namespace Model
      * <p>The Amazon Web Services account ID. For example,
      * <code>123456789012</code>.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline CreatePortfolioShareRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline CreatePortfolioShareRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline CreatePortfolioShareRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    CreatePortfolioShareRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -88,12 +82,12 @@ namespace Model
      * <code>PortfolioShareToken</code>, which enables the administrator to monitor the
      * status of the <code>PortfolioShare</code> creation process.</p>
      */
-    inline const OrganizationNode& GetOrganizationNode() const{ return m_organizationNode; }
+    inline const OrganizationNode& GetOrganizationNode() const { return m_organizationNode; }
     inline bool OrganizationNodeHasBeenSet() const { return m_organizationNodeHasBeenSet; }
-    inline void SetOrganizationNode(const OrganizationNode& value) { m_organizationNodeHasBeenSet = true; m_organizationNode = value; }
-    inline void SetOrganizationNode(OrganizationNode&& value) { m_organizationNodeHasBeenSet = true; m_organizationNode = std::move(value); }
-    inline CreatePortfolioShareRequest& WithOrganizationNode(const OrganizationNode& value) { SetOrganizationNode(value); return *this;}
-    inline CreatePortfolioShareRequest& WithOrganizationNode(OrganizationNode&& value) { SetOrganizationNode(std::move(value)); return *this;}
+    template<typename OrganizationNodeT = OrganizationNode>
+    void SetOrganizationNode(OrganizationNodeT&& value) { m_organizationNodeHasBeenSet = true; m_organizationNode = std::forward<OrganizationNodeT>(value); }
+    template<typename OrganizationNodeT = OrganizationNode>
+    CreatePortfolioShareRequest& WithOrganizationNode(OrganizationNodeT&& value) { SetOrganizationNode(std::forward<OrganizationNodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,7 +96,7 @@ namespace Model
      * portfolio share. If this flag is not provided, TagOptions sharing is
      * disabled.</p>
      */
-    inline bool GetShareTagOptions() const{ return m_shareTagOptions; }
+    inline bool GetShareTagOptions() const { return m_shareTagOptions; }
     inline bool ShareTagOptionsHasBeenSet() const { return m_shareTagOptionsHasBeenSet; }
     inline void SetShareTagOptions(bool value) { m_shareTagOptionsHasBeenSet = true; m_shareTagOptions = value; }
     inline CreatePortfolioShareRequest& WithShareTagOptions(bool value) { SetShareTagOptions(value); return *this;}
@@ -122,7 +116,7 @@ namespace Model
      * portfolio. You can create the principals in the recipient account before or
      * after creating the share. </p>
      */
-    inline bool GetSharePrincipals() const{ return m_sharePrincipals; }
+    inline bool GetSharePrincipals() const { return m_sharePrincipals; }
     inline bool SharePrincipalsHasBeenSet() const { return m_sharePrincipalsHasBeenSet; }
     inline void SetSharePrincipals(bool value) { m_sharePrincipalsHasBeenSet = true; m_sharePrincipals = value; }
     inline CreatePortfolioShareRequest& WithSharePrincipals(bool value) { SetSharePrincipals(value); return *this;}
@@ -141,10 +135,10 @@ namespace Model
     OrganizationNode m_organizationNode;
     bool m_organizationNodeHasBeenSet = false;
 
-    bool m_shareTagOptions;
+    bool m_shareTagOptions{false};
     bool m_shareTagOptionsHasBeenSet = false;
 
-    bool m_sharePrincipals;
+    bool m_sharePrincipals{false};
     bool m_sharePrincipalsHasBeenSet = false;
   };
 

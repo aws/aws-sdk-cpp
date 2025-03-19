@@ -32,7 +32,7 @@ namespace Model
   class ProcessDetails
   {
   public:
-    AWS_SECURITYHUB_API ProcessDetails();
+    AWS_SECURITYHUB_API ProcessDetails() = default;
     AWS_SECURITYHUB_API ProcessDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API ProcessDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of the process.</p> <p>Length Constraints: Minimum of 1. Maximum of
      * 64.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline ProcessDetails& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline ProcessDetails& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline ProcessDetails& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    ProcessDetails& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,21 +56,19 @@ namespace Model
      * <p>The path to the process executable.</p> <p>Length Constraints: Minimum of 1.
      * Maximum of 512.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline ProcessDetails& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline ProcessDetails& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline ProcessDetails& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    ProcessDetails& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The process ID.</p>
      */
-    inline int GetPid() const{ return m_pid; }
+    inline int GetPid() const { return m_pid; }
     inline bool PidHasBeenSet() const { return m_pidHasBeenSet; }
     inline void SetPid(int value) { m_pidHasBeenSet = true; m_pid = value; }
     inline ProcessDetails& WithPid(int value) { SetPid(value); return *this;}
@@ -83,7 +79,7 @@ namespace Model
      * <p>The parent process ID. This field accepts positive integers between
      * <code>O</code> and <code>2147483647</code>.</p>
      */
-    inline int GetParentPid() const{ return m_parentPid; }
+    inline int GetParentPid() const { return m_parentPid; }
     inline bool ParentPidHasBeenSet() const { return m_parentPidHasBeenSet; }
     inline void SetParentPid(int value) { m_parentPidHasBeenSet = true; m_parentPid = value; }
     inline ProcessDetails& WithParentPid(int value) { SetParentPid(value); return *this;}
@@ -95,14 +91,12 @@ namespace Model
      * the validation and formatting of timestamp fields in Security Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::String& GetLaunchedAt() const{ return m_launchedAt; }
+    inline const Aws::String& GetLaunchedAt() const { return m_launchedAt; }
     inline bool LaunchedAtHasBeenSet() const { return m_launchedAtHasBeenSet; }
-    inline void SetLaunchedAt(const Aws::String& value) { m_launchedAtHasBeenSet = true; m_launchedAt = value; }
-    inline void SetLaunchedAt(Aws::String&& value) { m_launchedAtHasBeenSet = true; m_launchedAt = std::move(value); }
-    inline void SetLaunchedAt(const char* value) { m_launchedAtHasBeenSet = true; m_launchedAt.assign(value); }
-    inline ProcessDetails& WithLaunchedAt(const Aws::String& value) { SetLaunchedAt(value); return *this;}
-    inline ProcessDetails& WithLaunchedAt(Aws::String&& value) { SetLaunchedAt(std::move(value)); return *this;}
-    inline ProcessDetails& WithLaunchedAt(const char* value) { SetLaunchedAt(value); return *this;}
+    template<typename LaunchedAtT = Aws::String>
+    void SetLaunchedAt(LaunchedAtT&& value) { m_launchedAtHasBeenSet = true; m_launchedAt = std::forward<LaunchedAtT>(value); }
+    template<typename LaunchedAtT = Aws::String>
+    ProcessDetails& WithLaunchedAt(LaunchedAtT&& value) { SetLaunchedAt(std::forward<LaunchedAtT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,14 +105,12 @@ namespace Model
      * the validation and formatting of timestamp fields in Security Hub, see <a
      * href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/Welcome.html#timestamps">Timestamps</a>.</p>
      */
-    inline const Aws::String& GetTerminatedAt() const{ return m_terminatedAt; }
+    inline const Aws::String& GetTerminatedAt() const { return m_terminatedAt; }
     inline bool TerminatedAtHasBeenSet() const { return m_terminatedAtHasBeenSet; }
-    inline void SetTerminatedAt(const Aws::String& value) { m_terminatedAtHasBeenSet = true; m_terminatedAt = value; }
-    inline void SetTerminatedAt(Aws::String&& value) { m_terminatedAtHasBeenSet = true; m_terminatedAt = std::move(value); }
-    inline void SetTerminatedAt(const char* value) { m_terminatedAtHasBeenSet = true; m_terminatedAt.assign(value); }
-    inline ProcessDetails& WithTerminatedAt(const Aws::String& value) { SetTerminatedAt(value); return *this;}
-    inline ProcessDetails& WithTerminatedAt(Aws::String&& value) { SetTerminatedAt(std::move(value)); return *this;}
-    inline ProcessDetails& WithTerminatedAt(const char* value) { SetTerminatedAt(value); return *this;}
+    template<typename TerminatedAtT = Aws::String>
+    void SetTerminatedAt(TerminatedAtT&& value) { m_terminatedAtHasBeenSet = true; m_terminatedAt = std::forward<TerminatedAtT>(value); }
+    template<typename TerminatedAtT = Aws::String>
+    ProcessDetails& WithTerminatedAt(TerminatedAtT&& value) { SetTerminatedAt(std::forward<TerminatedAtT>(value)); return *this;}
     ///@}
   private:
 
@@ -128,10 +120,10 @@ namespace Model
     Aws::String m_path;
     bool m_pathHasBeenSet = false;
 
-    int m_pid;
+    int m_pid{0};
     bool m_pidHasBeenSet = false;
 
-    int m_parentPid;
+    int m_parentPid{0};
     bool m_parentPidHasBeenSet = false;
 
     Aws::String m_launchedAt;

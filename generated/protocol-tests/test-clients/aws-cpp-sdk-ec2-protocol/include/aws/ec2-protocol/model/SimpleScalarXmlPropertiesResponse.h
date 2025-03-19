@@ -28,120 +28,127 @@ namespace Model
   class SimpleScalarXmlPropertiesResponse
   {
   public:
-    AWS_EC2PROTOCOL_API SimpleScalarXmlPropertiesResponse();
+    AWS_EC2PROTOCOL_API SimpleScalarXmlPropertiesResponse() = default;
     AWS_EC2PROTOCOL_API SimpleScalarXmlPropertiesResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2PROTOCOL_API SimpleScalarXmlPropertiesResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetStringValue() const{ return m_stringValue; }
-    inline void SetStringValue(const Aws::String& value) { m_stringValue = value; }
-    inline void SetStringValue(Aws::String&& value) { m_stringValue = std::move(value); }
-    inline void SetStringValue(const char* value) { m_stringValue.assign(value); }
-    inline SimpleScalarXmlPropertiesResponse& WithStringValue(const Aws::String& value) { SetStringValue(value); return *this;}
-    inline SimpleScalarXmlPropertiesResponse& WithStringValue(Aws::String&& value) { SetStringValue(std::move(value)); return *this;}
-    inline SimpleScalarXmlPropertiesResponse& WithStringValue(const char* value) { SetStringValue(value); return *this;}
+    inline const Aws::String& GetStringValue() const { return m_stringValue; }
+    template<typename StringValueT = Aws::String>
+    void SetStringValue(StringValueT&& value) { m_stringValueHasBeenSet = true; m_stringValue = std::forward<StringValueT>(value); }
+    template<typename StringValueT = Aws::String>
+    SimpleScalarXmlPropertiesResponse& WithStringValue(StringValueT&& value) { SetStringValue(std::forward<StringValueT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetEmptyStringValue() const{ return m_emptyStringValue; }
-    inline void SetEmptyStringValue(const Aws::String& value) { m_emptyStringValue = value; }
-    inline void SetEmptyStringValue(Aws::String&& value) { m_emptyStringValue = std::move(value); }
-    inline void SetEmptyStringValue(const char* value) { m_emptyStringValue.assign(value); }
-    inline SimpleScalarXmlPropertiesResponse& WithEmptyStringValue(const Aws::String& value) { SetEmptyStringValue(value); return *this;}
-    inline SimpleScalarXmlPropertiesResponse& WithEmptyStringValue(Aws::String&& value) { SetEmptyStringValue(std::move(value)); return *this;}
-    inline SimpleScalarXmlPropertiesResponse& WithEmptyStringValue(const char* value) { SetEmptyStringValue(value); return *this;}
+    inline const Aws::String& GetEmptyStringValue() const { return m_emptyStringValue; }
+    template<typename EmptyStringValueT = Aws::String>
+    void SetEmptyStringValue(EmptyStringValueT&& value) { m_emptyStringValueHasBeenSet = true; m_emptyStringValue = std::forward<EmptyStringValueT>(value); }
+    template<typename EmptyStringValueT = Aws::String>
+    SimpleScalarXmlPropertiesResponse& WithEmptyStringValue(EmptyStringValueT&& value) { SetEmptyStringValue(std::forward<EmptyStringValueT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline bool GetTrueBooleanValue() const{ return m_trueBooleanValue; }
-    inline void SetTrueBooleanValue(bool value) { m_trueBooleanValue = value; }
+    inline bool GetTrueBooleanValue() const { return m_trueBooleanValue; }
+    inline void SetTrueBooleanValue(bool value) { m_trueBooleanValueHasBeenSet = true; m_trueBooleanValue = value; }
     inline SimpleScalarXmlPropertiesResponse& WithTrueBooleanValue(bool value) { SetTrueBooleanValue(value); return *this;}
     ///@}
 
     ///@{
     
-    inline bool GetFalseBooleanValue() const{ return m_falseBooleanValue; }
-    inline void SetFalseBooleanValue(bool value) { m_falseBooleanValue = value; }
+    inline bool GetFalseBooleanValue() const { return m_falseBooleanValue; }
+    inline void SetFalseBooleanValue(bool value) { m_falseBooleanValueHasBeenSet = true; m_falseBooleanValue = value; }
     inline SimpleScalarXmlPropertiesResponse& WithFalseBooleanValue(bool value) { SetFalseBooleanValue(value); return *this;}
     ///@}
 
     ///@{
     
-    inline int GetByteValue() const{ return m_byteValue; }
-    inline void SetByteValue(int value) { m_byteValue = value; }
+    inline int GetByteValue() const { return m_byteValue; }
+    inline void SetByteValue(int value) { m_byteValueHasBeenSet = true; m_byteValue = value; }
     inline SimpleScalarXmlPropertiesResponse& WithByteValue(int value) { SetByteValue(value); return *this;}
     ///@}
 
     ///@{
     
-    inline int GetShortValue() const{ return m_shortValue; }
-    inline void SetShortValue(int value) { m_shortValue = value; }
+    inline int GetShortValue() const { return m_shortValue; }
+    inline void SetShortValue(int value) { m_shortValueHasBeenSet = true; m_shortValue = value; }
     inline SimpleScalarXmlPropertiesResponse& WithShortValue(int value) { SetShortValue(value); return *this;}
     ///@}
 
     ///@{
     
-    inline int GetIntegerValue() const{ return m_integerValue; }
-    inline void SetIntegerValue(int value) { m_integerValue = value; }
+    inline int GetIntegerValue() const { return m_integerValue; }
+    inline void SetIntegerValue(int value) { m_integerValueHasBeenSet = true; m_integerValue = value; }
     inline SimpleScalarXmlPropertiesResponse& WithIntegerValue(int value) { SetIntegerValue(value); return *this;}
     ///@}
 
     ///@{
     
-    inline long long GetLongValue() const{ return m_longValue; }
-    inline void SetLongValue(long long value) { m_longValue = value; }
+    inline long long GetLongValue() const { return m_longValue; }
+    inline void SetLongValue(long long value) { m_longValueHasBeenSet = true; m_longValue = value; }
     inline SimpleScalarXmlPropertiesResponse& WithLongValue(long long value) { SetLongValue(value); return *this;}
     ///@}
 
     ///@{
     
-    inline double GetFloatValue() const{ return m_floatValue; }
-    inline void SetFloatValue(double value) { m_floatValue = value; }
+    inline double GetFloatValue() const { return m_floatValue; }
+    inline void SetFloatValue(double value) { m_floatValueHasBeenSet = true; m_floatValue = value; }
     inline SimpleScalarXmlPropertiesResponse& WithFloatValue(double value) { SetFloatValue(value); return *this;}
     ///@}
 
     ///@{
     
-    inline double GetDoubleValue() const{ return m_doubleValue; }
-    inline void SetDoubleValue(double value) { m_doubleValue = value; }
+    inline double GetDoubleValue() const { return m_doubleValue; }
+    inline void SetDoubleValue(double value) { m_doubleValueHasBeenSet = true; m_doubleValue = value; }
     inline SimpleScalarXmlPropertiesResponse& WithDoubleValue(double value) { SetDoubleValue(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline SimpleScalarXmlPropertiesResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline SimpleScalarXmlPropertiesResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    SimpleScalarXmlPropertiesResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_stringValue;
+    bool m_stringValueHasBeenSet = false;
 
     Aws::String m_emptyStringValue;
+    bool m_emptyStringValueHasBeenSet = false;
 
-    bool m_trueBooleanValue;
+    bool m_trueBooleanValue{false};
+    bool m_trueBooleanValueHasBeenSet = false;
 
-    bool m_falseBooleanValue;
+    bool m_falseBooleanValue{false};
+    bool m_falseBooleanValueHasBeenSet = false;
 
-    int m_byteValue;
+    int m_byteValue{0};
+    bool m_byteValueHasBeenSet = false;
 
-    int m_shortValue;
+    int m_shortValue{0};
+    bool m_shortValueHasBeenSet = false;
 
-    int m_integerValue;
+    int m_integerValue{0};
+    bool m_integerValueHasBeenSet = false;
 
-    long long m_longValue;
+    long long m_longValue{0};
+    bool m_longValueHasBeenSet = false;
 
-    double m_floatValue;
+    double m_floatValue{0.0};
+    bool m_floatValueHasBeenSet = false;
 
-    double m_doubleValue;
+    double m_doubleValue{0.0};
+    bool m_doubleValueHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

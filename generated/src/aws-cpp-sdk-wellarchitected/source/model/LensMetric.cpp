@@ -18,15 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-LensMetric::LensMetric() : 
-    m_lensArnHasBeenSet(false),
-    m_pillarsHasBeenSet(false),
-    m_riskCountsHasBeenSet(false)
-{
-}
-
 LensMetric::LensMetric(JsonView jsonValue)
-  : LensMetric()
 {
   *this = jsonValue;
 }
@@ -36,10 +28,8 @@ LensMetric& LensMetric::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("LensArn"))
   {
     m_lensArn = jsonValue.GetString("LensArn");
-
     m_lensArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Pillars"))
   {
     Aws::Utils::Array<JsonView> pillarsJsonList = jsonValue.GetArray("Pillars");
@@ -49,7 +39,6 @@ LensMetric& LensMetric::operator =(JsonView jsonValue)
     }
     m_pillarsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RiskCounts"))
   {
     Aws::Map<Aws::String, JsonView> riskCountsJsonMap = jsonValue.GetObject("RiskCounts").GetAllObjects();
@@ -59,7 +48,6 @@ LensMetric& LensMetric::operator =(JsonView jsonValue)
     }
     m_riskCountsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,16 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartContentModerationRequest::StartContentModerationRequest() : 
-    m_videoHasBeenSet(false),
-    m_minConfidence(0.0),
-    m_minConfidenceHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false),
-    m_notificationChannelHasBeenSet(false),
-    m_jobTagHasBeenSet(false)
-{
-}
-
 Aws::String StartContentModerationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,13 +12,6 @@ using namespace Aws::WAF::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRegexMatchSetRequest::UpdateRegexMatchSetRequest() : 
-    m_regexMatchSetIdHasBeenSet(false),
-    m_updatesHasBeenSet(false),
-    m_changeTokenHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRegexMatchSetRequest::SerializePayload() const
 {
   JsonValue payload;

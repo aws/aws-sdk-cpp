@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteWorkspaceApiKeyResult::DeleteWorkspaceApiKeyResult()
-{
-}
-
 DeleteWorkspaceApiKeyResult::DeleteWorkspaceApiKeyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,21 +28,20 @@ DeleteWorkspaceApiKeyResult& DeleteWorkspaceApiKeyResult::operator =(const Aws::
   if(jsonValue.ValueExists("keyName"))
   {
     m_keyName = jsonValue.GetString("keyName");
-
+    m_keyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workspaceId"))
   {
     m_workspaceId = jsonValue.GetString("workspaceId");
-
+    m_workspaceIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

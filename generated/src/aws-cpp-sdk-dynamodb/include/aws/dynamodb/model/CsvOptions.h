@@ -33,7 +33,7 @@ namespace Model
   class CsvOptions
   {
   public:
-    AWS_DYNAMODB_API CsvOptions();
+    AWS_DYNAMODB_API CsvOptions() = default;
     AWS_DYNAMODB_API CsvOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API CsvOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DYNAMODB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p> The delimiter used for separating items in the CSV file being imported. </p>
      */
-    inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
+    inline const Aws::String& GetDelimiter() const { return m_delimiter; }
     inline bool DelimiterHasBeenSet() const { return m_delimiterHasBeenSet; }
-    inline void SetDelimiter(const Aws::String& value) { m_delimiterHasBeenSet = true; m_delimiter = value; }
-    inline void SetDelimiter(Aws::String&& value) { m_delimiterHasBeenSet = true; m_delimiter = std::move(value); }
-    inline void SetDelimiter(const char* value) { m_delimiterHasBeenSet = true; m_delimiter.assign(value); }
-    inline CsvOptions& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
-    inline CsvOptions& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
-    inline CsvOptions& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
+    template<typename DelimiterT = Aws::String>
+    void SetDelimiter(DelimiterT&& value) { m_delimiterHasBeenSet = true; m_delimiter = std::forward<DelimiterT>(value); }
+    template<typename DelimiterT = Aws::String>
+    CsvOptions& WithDelimiter(DelimiterT&& value) { SetDelimiter(std::forward<DelimiterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,15 +58,14 @@ namespace Model
      * is treated as data instead of the header. If this field is not specified the the
      * first line of each CSV file is treated as the header. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetHeaderList() const{ return m_headerList; }
+    inline const Aws::Vector<Aws::String>& GetHeaderList() const { return m_headerList; }
     inline bool HeaderListHasBeenSet() const { return m_headerListHasBeenSet; }
-    inline void SetHeaderList(const Aws::Vector<Aws::String>& value) { m_headerListHasBeenSet = true; m_headerList = value; }
-    inline void SetHeaderList(Aws::Vector<Aws::String>&& value) { m_headerListHasBeenSet = true; m_headerList = std::move(value); }
-    inline CsvOptions& WithHeaderList(const Aws::Vector<Aws::String>& value) { SetHeaderList(value); return *this;}
-    inline CsvOptions& WithHeaderList(Aws::Vector<Aws::String>&& value) { SetHeaderList(std::move(value)); return *this;}
-    inline CsvOptions& AddHeaderList(const Aws::String& value) { m_headerListHasBeenSet = true; m_headerList.push_back(value); return *this; }
-    inline CsvOptions& AddHeaderList(Aws::String&& value) { m_headerListHasBeenSet = true; m_headerList.push_back(std::move(value)); return *this; }
-    inline CsvOptions& AddHeaderList(const char* value) { m_headerListHasBeenSet = true; m_headerList.push_back(value); return *this; }
+    template<typename HeaderListT = Aws::Vector<Aws::String>>
+    void SetHeaderList(HeaderListT&& value) { m_headerListHasBeenSet = true; m_headerList = std::forward<HeaderListT>(value); }
+    template<typename HeaderListT = Aws::Vector<Aws::String>>
+    CsvOptions& WithHeaderList(HeaderListT&& value) { SetHeaderList(std::forward<HeaderListT>(value)); return *this;}
+    template<typename HeaderListT = Aws::String>
+    CsvOptions& AddHeaderList(HeaderListT&& value) { m_headerListHasBeenSet = true; m_headerList.emplace_back(std::forward<HeaderListT>(value)); return *this; }
     ///@}
   private:
 

@@ -28,7 +28,7 @@ namespace Model
   class AssociateInstanceEventWindowResponse
   {
   public:
-    AWS_EC2_API AssociateInstanceEventWindowResponse();
+    AWS_EC2_API AssociateInstanceEventWindowResponse() = default;
     AWS_EC2_API AssociateInstanceEventWindowResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API AssociateInstanceEventWindowResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the event window.</p>
      */
-    inline const InstanceEventWindow& GetInstanceEventWindow() const{ return m_instanceEventWindow; }
-    inline void SetInstanceEventWindow(const InstanceEventWindow& value) { m_instanceEventWindow = value; }
-    inline void SetInstanceEventWindow(InstanceEventWindow&& value) { m_instanceEventWindow = std::move(value); }
-    inline AssociateInstanceEventWindowResponse& WithInstanceEventWindow(const InstanceEventWindow& value) { SetInstanceEventWindow(value); return *this;}
-    inline AssociateInstanceEventWindowResponse& WithInstanceEventWindow(InstanceEventWindow&& value) { SetInstanceEventWindow(std::move(value)); return *this;}
+    inline const InstanceEventWindow& GetInstanceEventWindow() const { return m_instanceEventWindow; }
+    template<typename InstanceEventWindowT = InstanceEventWindow>
+    void SetInstanceEventWindow(InstanceEventWindowT&& value) { m_instanceEventWindowHasBeenSet = true; m_instanceEventWindow = std::forward<InstanceEventWindowT>(value); }
+    template<typename InstanceEventWindowT = InstanceEventWindow>
+    AssociateInstanceEventWindowResponse& WithInstanceEventWindow(InstanceEventWindowT&& value) { SetInstanceEventWindow(std::forward<InstanceEventWindowT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline AssociateInstanceEventWindowResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline AssociateInstanceEventWindowResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    AssociateInstanceEventWindowResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     InstanceEventWindow m_instanceEventWindow;
+    bool m_instanceEventWindowHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

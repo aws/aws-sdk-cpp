@@ -18,13 +18,7 @@ namespace IoTTwinMaker
 namespace Model
 {
 
-Row::Row() : 
-    m_rowDataHasBeenSet(false)
-{
-}
-
 Row::Row(JsonView jsonValue)
-  : Row()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ Row& Row::operator =(JsonView jsonValue)
     }
     m_rowDataHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -28,7 +28,7 @@ namespace Model
   class DescribeDetectMitigationActionsTaskResult
   {
   public:
-    AWS_IOT_API DescribeDetectMitigationActionsTaskResult();
+    AWS_IOT_API DescribeDetectMitigationActionsTaskResult() = default;
     AWS_IOT_API DescribeDetectMitigationActionsTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_IOT_API DescribeDetectMitigationActionsTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p> The description of a task. </p>
      */
-    inline const DetectMitigationActionsTaskSummary& GetTaskSummary() const{ return m_taskSummary; }
-    inline void SetTaskSummary(const DetectMitigationActionsTaskSummary& value) { m_taskSummary = value; }
-    inline void SetTaskSummary(DetectMitigationActionsTaskSummary&& value) { m_taskSummary = std::move(value); }
-    inline DescribeDetectMitigationActionsTaskResult& WithTaskSummary(const DetectMitigationActionsTaskSummary& value) { SetTaskSummary(value); return *this;}
-    inline DescribeDetectMitigationActionsTaskResult& WithTaskSummary(DetectMitigationActionsTaskSummary&& value) { SetTaskSummary(std::move(value)); return *this;}
+    inline const DetectMitigationActionsTaskSummary& GetTaskSummary() const { return m_taskSummary; }
+    template<typename TaskSummaryT = DetectMitigationActionsTaskSummary>
+    void SetTaskSummary(TaskSummaryT&& value) { m_taskSummaryHasBeenSet = true; m_taskSummary = std::forward<TaskSummaryT>(value); }
+    template<typename TaskSummaryT = DetectMitigationActionsTaskSummary>
+    DescribeDetectMitigationActionsTaskResult& WithTaskSummary(TaskSummaryT&& value) { SetTaskSummary(std::forward<TaskSummaryT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeDetectMitigationActionsTaskResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeDetectMitigationActionsTaskResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeDetectMitigationActionsTaskResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeDetectMitigationActionsTaskResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     DetectMitigationActionsTaskSummary m_taskSummary;
+    bool m_taskSummaryHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

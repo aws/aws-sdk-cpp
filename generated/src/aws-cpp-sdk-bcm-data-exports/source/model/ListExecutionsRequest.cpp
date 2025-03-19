@@ -12,14 +12,6 @@ using namespace Aws::BCMDataExports::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListExecutionsRequest::ListExecutionsRequest() : 
-    m_exportArnHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListExecutionsRequest::SerializePayload() const
 {
   JsonValue payload;

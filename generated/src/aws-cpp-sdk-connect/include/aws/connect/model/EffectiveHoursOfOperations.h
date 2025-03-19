@@ -34,7 +34,7 @@ namespace Model
   class EffectiveHoursOfOperations
   {
   public:
-    AWS_CONNECT_API EffectiveHoursOfOperations();
+    AWS_CONNECT_API EffectiveHoursOfOperations() = default;
     AWS_CONNECT_API EffectiveHoursOfOperations(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API EffectiveHoursOfOperations& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
     /**
      * <p>The date that the hours of operation or overrides applies to.</p>
      */
-    inline const Aws::String& GetDate() const{ return m_date; }
+    inline const Aws::String& GetDate() const { return m_date; }
     inline bool DateHasBeenSet() const { return m_dateHasBeenSet; }
-    inline void SetDate(const Aws::String& value) { m_dateHasBeenSet = true; m_date = value; }
-    inline void SetDate(Aws::String&& value) { m_dateHasBeenSet = true; m_date = std::move(value); }
-    inline void SetDate(const char* value) { m_dateHasBeenSet = true; m_date.assign(value); }
-    inline EffectiveHoursOfOperations& WithDate(const Aws::String& value) { SetDate(value); return *this;}
-    inline EffectiveHoursOfOperations& WithDate(Aws::String&& value) { SetDate(std::move(value)); return *this;}
-    inline EffectiveHoursOfOperations& WithDate(const char* value) { SetDate(value); return *this;}
+    template<typename DateT = Aws::String>
+    void SetDate(DateT&& value) { m_dateHasBeenSet = true; m_date = std::forward<DateT>(value); }
+    template<typename DateT = Aws::String>
+    EffectiveHoursOfOperations& WithDate(DateT&& value) { SetDate(std::forward<DateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,14 @@ namespace Model
      * <p>Information about the hours of operations with the effective override
      * applied.</p>
      */
-    inline const Aws::Vector<OperationalHour>& GetOperationalHours() const{ return m_operationalHours; }
+    inline const Aws::Vector<OperationalHour>& GetOperationalHours() const { return m_operationalHours; }
     inline bool OperationalHoursHasBeenSet() const { return m_operationalHoursHasBeenSet; }
-    inline void SetOperationalHours(const Aws::Vector<OperationalHour>& value) { m_operationalHoursHasBeenSet = true; m_operationalHours = value; }
-    inline void SetOperationalHours(Aws::Vector<OperationalHour>&& value) { m_operationalHoursHasBeenSet = true; m_operationalHours = std::move(value); }
-    inline EffectiveHoursOfOperations& WithOperationalHours(const Aws::Vector<OperationalHour>& value) { SetOperationalHours(value); return *this;}
-    inline EffectiveHoursOfOperations& WithOperationalHours(Aws::Vector<OperationalHour>&& value) { SetOperationalHours(std::move(value)); return *this;}
-    inline EffectiveHoursOfOperations& AddOperationalHours(const OperationalHour& value) { m_operationalHoursHasBeenSet = true; m_operationalHours.push_back(value); return *this; }
-    inline EffectiveHoursOfOperations& AddOperationalHours(OperationalHour&& value) { m_operationalHoursHasBeenSet = true; m_operationalHours.push_back(std::move(value)); return *this; }
+    template<typename OperationalHoursT = Aws::Vector<OperationalHour>>
+    void SetOperationalHours(OperationalHoursT&& value) { m_operationalHoursHasBeenSet = true; m_operationalHours = std::forward<OperationalHoursT>(value); }
+    template<typename OperationalHoursT = Aws::Vector<OperationalHour>>
+    EffectiveHoursOfOperations& WithOperationalHours(OperationalHoursT&& value) { SetOperationalHours(std::forward<OperationalHoursT>(value)); return *this;}
+    template<typename OperationalHoursT = OperationalHour>
+    EffectiveHoursOfOperations& AddOperationalHours(OperationalHoursT&& value) { m_operationalHoursHasBeenSet = true; m_operationalHours.emplace_back(std::forward<OperationalHoursT>(value)); return *this; }
     ///@}
   private:
 

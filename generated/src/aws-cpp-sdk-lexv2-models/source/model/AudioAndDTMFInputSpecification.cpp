@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-AudioAndDTMFInputSpecification::AudioAndDTMFInputSpecification() : 
-    m_startTimeoutMs(0),
-    m_startTimeoutMsHasBeenSet(false),
-    m_audioSpecificationHasBeenSet(false),
-    m_dtmfSpecificationHasBeenSet(false)
-{
-}
-
 AudioAndDTMFInputSpecification::AudioAndDTMFInputSpecification(JsonView jsonValue)
-  : AudioAndDTMFInputSpecification()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AudioAndDTMFInputSpecification& AudioAndDTMFInputSpecification::operator =(JsonV
   if(jsonValue.ValueExists("startTimeoutMs"))
   {
     m_startTimeoutMs = jsonValue.GetInteger("startTimeoutMs");
-
     m_startTimeoutMsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("audioSpecification"))
   {
     m_audioSpecification = jsonValue.GetObject("audioSpecification");
-
     m_audioSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dtmfSpecification"))
   {
     m_dtmfSpecification = jsonValue.GetObject("dtmfSpecification");
-
     m_dtmfSpecificationHasBeenSet = true;
   }
-
   return *this;
 }
 

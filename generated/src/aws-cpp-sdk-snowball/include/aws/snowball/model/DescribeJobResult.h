@@ -29,7 +29,7 @@ namespace Model
   class DescribeJobResult
   {
   public:
-    AWS_SNOWBALL_API DescribeJobResult();
+    AWS_SNOWBALL_API DescribeJobResult() = default;
     AWS_SNOWBALL_API DescribeJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SNOWBALL_API DescribeJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,11 +39,11 @@ namespace Model
      * <p>Information about a specific job, including shipping information, job status,
      * and other important metadata.</p>
      */
-    inline const JobMetadata& GetJobMetadata() const{ return m_jobMetadata; }
-    inline void SetJobMetadata(const JobMetadata& value) { m_jobMetadata = value; }
-    inline void SetJobMetadata(JobMetadata&& value) { m_jobMetadata = std::move(value); }
-    inline DescribeJobResult& WithJobMetadata(const JobMetadata& value) { SetJobMetadata(value); return *this;}
-    inline DescribeJobResult& WithJobMetadata(JobMetadata&& value) { SetJobMetadata(std::move(value)); return *this;}
+    inline const JobMetadata& GetJobMetadata() const { return m_jobMetadata; }
+    template<typename JobMetadataT = JobMetadata>
+    void SetJobMetadata(JobMetadataT&& value) { m_jobMetadataHasBeenSet = true; m_jobMetadata = std::forward<JobMetadataT>(value); }
+    template<typename JobMetadataT = JobMetadata>
+    DescribeJobResult& WithJobMetadata(JobMetadataT&& value) { SetJobMetadata(std::forward<JobMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -51,32 +51,33 @@ namespace Model
      * <p>Information about a specific job part (in the case of an export job),
      * including shipping information, job status, and other important metadata.</p>
      */
-    inline const Aws::Vector<JobMetadata>& GetSubJobMetadata() const{ return m_subJobMetadata; }
-    inline void SetSubJobMetadata(const Aws::Vector<JobMetadata>& value) { m_subJobMetadata = value; }
-    inline void SetSubJobMetadata(Aws::Vector<JobMetadata>&& value) { m_subJobMetadata = std::move(value); }
-    inline DescribeJobResult& WithSubJobMetadata(const Aws::Vector<JobMetadata>& value) { SetSubJobMetadata(value); return *this;}
-    inline DescribeJobResult& WithSubJobMetadata(Aws::Vector<JobMetadata>&& value) { SetSubJobMetadata(std::move(value)); return *this;}
-    inline DescribeJobResult& AddSubJobMetadata(const JobMetadata& value) { m_subJobMetadata.push_back(value); return *this; }
-    inline DescribeJobResult& AddSubJobMetadata(JobMetadata&& value) { m_subJobMetadata.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<JobMetadata>& GetSubJobMetadata() const { return m_subJobMetadata; }
+    template<typename SubJobMetadataT = Aws::Vector<JobMetadata>>
+    void SetSubJobMetadata(SubJobMetadataT&& value) { m_subJobMetadataHasBeenSet = true; m_subJobMetadata = std::forward<SubJobMetadataT>(value); }
+    template<typename SubJobMetadataT = Aws::Vector<JobMetadata>>
+    DescribeJobResult& WithSubJobMetadata(SubJobMetadataT&& value) { SetSubJobMetadata(std::forward<SubJobMetadataT>(value)); return *this;}
+    template<typename SubJobMetadataT = JobMetadata>
+    DescribeJobResult& AddSubJobMetadata(SubJobMetadataT&& value) { m_subJobMetadataHasBeenSet = true; m_subJobMetadata.emplace_back(std::forward<SubJobMetadataT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     JobMetadata m_jobMetadata;
+    bool m_jobMetadataHasBeenSet = false;
 
     Aws::Vector<JobMetadata> m_subJobMetadata;
+    bool m_subJobMetadataHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

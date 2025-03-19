@@ -21,7 +21,7 @@ namespace Model
   class UpdateVariableRequest : public FraudDetectorRequest
   {
   public:
-    AWS_FRAUDDETECTOR_API UpdateVariableRequest();
+    AWS_FRAUDDETECTOR_API UpdateVariableRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,42 +38,36 @@ namespace Model
     /**
      * <p>The name of the variable.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateVariableRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateVariableRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateVariableRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateVariableRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new default value of the variable.</p>
      */
-    inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+    inline const Aws::String& GetDefaultValue() const { return m_defaultValue; }
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-    inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-    inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
-    inline UpdateVariableRequest& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
-    inline UpdateVariableRequest& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
-    inline UpdateVariableRequest& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+    template<typename DefaultValueT = Aws::String>
+    void SetDefaultValue(DefaultValueT&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::forward<DefaultValueT>(value); }
+    template<typename DefaultValueT = Aws::String>
+    UpdateVariableRequest& WithDefaultValue(DefaultValueT&& value) { SetDefaultValue(std::forward<DefaultValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new description.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateVariableRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateVariableRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateVariableRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateVariableRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,14 +76,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
      * types</a>.</p>
      */
-    inline const Aws::String& GetVariableType() const{ return m_variableType; }
+    inline const Aws::String& GetVariableType() const { return m_variableType; }
     inline bool VariableTypeHasBeenSet() const { return m_variableTypeHasBeenSet; }
-    inline void SetVariableType(const Aws::String& value) { m_variableTypeHasBeenSet = true; m_variableType = value; }
-    inline void SetVariableType(Aws::String&& value) { m_variableTypeHasBeenSet = true; m_variableType = std::move(value); }
-    inline void SetVariableType(const char* value) { m_variableTypeHasBeenSet = true; m_variableType.assign(value); }
-    inline UpdateVariableRequest& WithVariableType(const Aws::String& value) { SetVariableType(value); return *this;}
-    inline UpdateVariableRequest& WithVariableType(Aws::String&& value) { SetVariableType(std::move(value)); return *this;}
-    inline UpdateVariableRequest& WithVariableType(const char* value) { SetVariableType(value); return *this;}
+    template<typename VariableTypeT = Aws::String>
+    void SetVariableType(VariableTypeT&& value) { m_variableTypeHasBeenSet = true; m_variableType = std::forward<VariableTypeT>(value); }
+    template<typename VariableTypeT = Aws::String>
+    UpdateVariableRequest& WithVariableType(VariableTypeT&& value) { SetVariableType(std::forward<VariableTypeT>(value)); return *this;}
     ///@}
   private:
 

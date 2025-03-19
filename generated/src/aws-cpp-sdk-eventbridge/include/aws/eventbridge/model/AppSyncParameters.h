@@ -32,7 +32,7 @@ namespace Model
   class AppSyncParameters
   {
   public:
-    AWS_EVENTBRIDGE_API AppSyncParameters();
+    AWS_EVENTBRIDGE_API AppSyncParameters() = default;
     AWS_EVENTBRIDGE_API AppSyncParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API AppSyncParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EVENTBRIDGE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/appsync/latest/devguide/graphql-architecture.html#graphql-operations">Operations</a>
      * in the <i>AppSync User Guide</i>.</p>
      */
-    inline const Aws::String& GetGraphQLOperation() const{ return m_graphQLOperation; }
+    inline const Aws::String& GetGraphQLOperation() const { return m_graphQLOperation; }
     inline bool GraphQLOperationHasBeenSet() const { return m_graphQLOperationHasBeenSet; }
-    inline void SetGraphQLOperation(const Aws::String& value) { m_graphQLOperationHasBeenSet = true; m_graphQLOperation = value; }
-    inline void SetGraphQLOperation(Aws::String&& value) { m_graphQLOperationHasBeenSet = true; m_graphQLOperation = std::move(value); }
-    inline void SetGraphQLOperation(const char* value) { m_graphQLOperationHasBeenSet = true; m_graphQLOperation.assign(value); }
-    inline AppSyncParameters& WithGraphQLOperation(const Aws::String& value) { SetGraphQLOperation(value); return *this;}
-    inline AppSyncParameters& WithGraphQLOperation(Aws::String&& value) { SetGraphQLOperation(std::move(value)); return *this;}
-    inline AppSyncParameters& WithGraphQLOperation(const char* value) { SetGraphQLOperation(value); return *this;}
+    template<typename GraphQLOperationT = Aws::String>
+    void SetGraphQLOperation(GraphQLOperationT&& value) { m_graphQLOperationHasBeenSet = true; m_graphQLOperation = std::forward<GraphQLOperationT>(value); }
+    template<typename GraphQLOperationT = Aws::String>
+    AppSyncParameters& WithGraphQLOperation(GraphQLOperationT&& value) { SetGraphQLOperation(std::forward<GraphQLOperationT>(value)); return *this;}
     ///@}
   private:
 

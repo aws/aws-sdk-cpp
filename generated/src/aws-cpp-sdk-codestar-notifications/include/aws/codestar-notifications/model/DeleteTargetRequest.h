@@ -21,7 +21,7 @@ namespace Model
   class DeleteTargetRequest : public CodeStarNotificationsRequest
   {
   public:
-    AWS_CODESTARNOTIFICATIONS_API DeleteTargetRequest();
+    AWS_CODESTARNOTIFICATIONS_API DeleteTargetRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to
      * delete.</p>
      */
-    inline const Aws::String& GetTargetAddress() const{ return m_targetAddress; }
+    inline const Aws::String& GetTargetAddress() const { return m_targetAddress; }
     inline bool TargetAddressHasBeenSet() const { return m_targetAddressHasBeenSet; }
-    inline void SetTargetAddress(const Aws::String& value) { m_targetAddressHasBeenSet = true; m_targetAddress = value; }
-    inline void SetTargetAddress(Aws::String&& value) { m_targetAddressHasBeenSet = true; m_targetAddress = std::move(value); }
-    inline void SetTargetAddress(const char* value) { m_targetAddressHasBeenSet = true; m_targetAddress.assign(value); }
-    inline DeleteTargetRequest& WithTargetAddress(const Aws::String& value) { SetTargetAddress(value); return *this;}
-    inline DeleteTargetRequest& WithTargetAddress(Aws::String&& value) { SetTargetAddress(std::move(value)); return *this;}
-    inline DeleteTargetRequest& WithTargetAddress(const char* value) { SetTargetAddress(value); return *this;}
+    template<typename TargetAddressT = Aws::String>
+    void SetTargetAddress(TargetAddressT&& value) { m_targetAddressHasBeenSet = true; m_targetAddress = std::forward<TargetAddressT>(value); }
+    template<typename TargetAddressT = Aws::String>
+    DeleteTargetRequest& WithTargetAddress(TargetAddressT&& value) { SetTargetAddress(std::forward<TargetAddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,7 +52,7 @@ namespace Model
      * target and every notification rule in your Amazon Web Services account are
      * deleted.</p>
      */
-    inline bool GetForceUnsubscribeAll() const{ return m_forceUnsubscribeAll; }
+    inline bool GetForceUnsubscribeAll() const { return m_forceUnsubscribeAll; }
     inline bool ForceUnsubscribeAllHasBeenSet() const { return m_forceUnsubscribeAllHasBeenSet; }
     inline void SetForceUnsubscribeAll(bool value) { m_forceUnsubscribeAllHasBeenSet = true; m_forceUnsubscribeAll = value; }
     inline DeleteTargetRequest& WithForceUnsubscribeAll(bool value) { SetForceUnsubscribeAll(value); return *this;}
@@ -64,7 +62,7 @@ namespace Model
     Aws::String m_targetAddress;
     bool m_targetAddressHasBeenSet = false;
 
-    bool m_forceUnsubscribeAll;
+    bool m_forceUnsubscribeAll{false};
     bool m_forceUnsubscribeAllHasBeenSet = false;
   };
 

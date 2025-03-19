@@ -12,19 +12,6 @@ using namespace Aws::ResilienceHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateAppRequest::UpdateAppRequest() : 
-    m_appArnHasBeenSet(false),
-    m_assessmentSchedule(AppAssessmentScheduleType::NOT_SET),
-    m_assessmentScheduleHasBeenSet(false),
-    m_clearResiliencyPolicyArn(false),
-    m_clearResiliencyPolicyArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_eventSubscriptionsHasBeenSet(false),
-    m_permissionModelHasBeenSet(false),
-    m_policyArnHasBeenSet(false)
-{
-}
-
 Aws::String UpdateAppRequest::SerializePayload() const
 {
   JsonValue payload;

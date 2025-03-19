@@ -25,7 +25,7 @@ namespace Model
   class PutEmailIdentityDkimAttributesRequest : public PinpointEmailRequest
   {
   public:
-    AWS_PINPOINTEMAIL_API PutEmailIdentityDkimAttributesRequest();
+    AWS_PINPOINTEMAIL_API PutEmailIdentityDkimAttributesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The email identity that you want to change the DKIM settings for.</p>
      */
-    inline const Aws::String& GetEmailIdentity() const{ return m_emailIdentity; }
+    inline const Aws::String& GetEmailIdentity() const { return m_emailIdentity; }
     inline bool EmailIdentityHasBeenSet() const { return m_emailIdentityHasBeenSet; }
-    inline void SetEmailIdentity(const Aws::String& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = value; }
-    inline void SetEmailIdentity(Aws::String&& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = std::move(value); }
-    inline void SetEmailIdentity(const char* value) { m_emailIdentityHasBeenSet = true; m_emailIdentity.assign(value); }
-    inline PutEmailIdentityDkimAttributesRequest& WithEmailIdentity(const Aws::String& value) { SetEmailIdentity(value); return *this;}
-    inline PutEmailIdentityDkimAttributesRequest& WithEmailIdentity(Aws::String&& value) { SetEmailIdentity(std::move(value)); return *this;}
-    inline PutEmailIdentityDkimAttributesRequest& WithEmailIdentity(const char* value) { SetEmailIdentity(value); return *this;}
+    template<typename EmailIdentityT = Aws::String>
+    void SetEmailIdentity(EmailIdentityT&& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = std::forward<EmailIdentityT>(value); }
+    template<typename EmailIdentityT = Aws::String>
+    PutEmailIdentityDkimAttributesRequest& WithEmailIdentity(EmailIdentityT&& value) { SetEmailIdentity(std::forward<EmailIdentityT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * then the messages that Amazon Pinpoint sends from the identity aren't
      * DKIM-signed.</p>
      */
-    inline bool GetSigningEnabled() const{ return m_signingEnabled; }
+    inline bool GetSigningEnabled() const { return m_signingEnabled; }
     inline bool SigningEnabledHasBeenSet() const { return m_signingEnabledHasBeenSet; }
     inline void SetSigningEnabled(bool value) { m_signingEnabledHasBeenSet = true; m_signingEnabled = value; }
     inline PutEmailIdentityDkimAttributesRequest& WithSigningEnabled(bool value) { SetSigningEnabled(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     Aws::String m_emailIdentity;
     bool m_emailIdentityHasBeenSet = false;
 
-    bool m_signingEnabled;
+    bool m_signingEnabled{false};
     bool m_signingEnabledHasBeenSet = false;
   };
 

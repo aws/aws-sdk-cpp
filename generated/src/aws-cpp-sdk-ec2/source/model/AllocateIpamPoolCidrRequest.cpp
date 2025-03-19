@@ -10,23 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-AllocateIpamPoolCidrRequest::AllocateIpamPoolCidrRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_ipamPoolIdHasBeenSet(false),
-    m_cidrHasBeenSet(false),
-    m_netmaskLength(0),
-    m_netmaskLengthHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_descriptionHasBeenSet(false),
-    m_previewNextCidr(false),
-    m_previewNextCidrHasBeenSet(false),
-    m_allowedCidrsHasBeenSet(false),
-    m_disallowedCidrsHasBeenSet(false)
-{
-}
-
 Aws::String AllocateIpamPoolCidrRequest::SerializePayload() const
 {
   Aws::StringStream ss;

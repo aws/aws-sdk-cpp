@@ -12,11 +12,6 @@ using namespace Aws::Outposts::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetCatalogItemRequest::GetCatalogItemRequest() : 
-    m_catalogItemIdHasBeenSet(false)
-{
-}
-
 Aws::String GetCatalogItemRequest::SerializePayload() const
 {
   return {};

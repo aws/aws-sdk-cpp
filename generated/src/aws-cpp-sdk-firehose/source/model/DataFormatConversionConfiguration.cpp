@@ -18,17 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-DataFormatConversionConfiguration::DataFormatConversionConfiguration() : 
-    m_schemaConfigurationHasBeenSet(false),
-    m_inputFormatConfigurationHasBeenSet(false),
-    m_outputFormatConfigurationHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 DataFormatConversionConfiguration::DataFormatConversionConfiguration(JsonView jsonValue)
-  : DataFormatConversionConfiguration()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ DataFormatConversionConfiguration& DataFormatConversionConfiguration::operator =
   if(jsonValue.ValueExists("SchemaConfiguration"))
   {
     m_schemaConfiguration = jsonValue.GetObject("SchemaConfiguration");
-
     m_schemaConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputFormatConfiguration"))
   {
     m_inputFormatConfiguration = jsonValue.GetObject("InputFormatConfiguration");
-
     m_inputFormatConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputFormatConfiguration"))
   {
     m_outputFormatConfiguration = jsonValue.GetObject("OutputFormatConfiguration");
-
     m_outputFormatConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

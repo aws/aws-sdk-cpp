@@ -10,16 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyVerifiedAccessInstanceLoggingConfigurationRequest::ModifyVerifiedAccessInstanceLoggingConfigurationRequest() : 
-    m_verifiedAccessInstanceIdHasBeenSet(false),
-    m_accessLogsHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String ModifyVerifiedAccessInstanceLoggingConfigurationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

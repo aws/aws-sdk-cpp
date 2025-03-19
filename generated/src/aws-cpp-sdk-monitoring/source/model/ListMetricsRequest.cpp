@@ -10,19 +10,6 @@
 using namespace Aws::CloudWatch::Model;
 using namespace Aws::Utils;
 
-ListMetricsRequest::ListMetricsRequest() : 
-    m_namespaceHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_dimensionsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_recentlyActive(RecentlyActive::NOT_SET),
-    m_recentlyActiveHasBeenSet(false),
-    m_includeLinkedAccounts(false),
-    m_includeLinkedAccountsHasBeenSet(false),
-    m_owningAccountHasBeenSet(false)
-{
-}
-
 Aws::String ListMetricsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

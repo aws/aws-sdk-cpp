@@ -33,7 +33,7 @@ namespace Model
   class ResaleAuthorizationStatusFilter
   {
   public:
-    AWS_MARKETPLACECATALOG_API ResaleAuthorizationStatusFilter();
+    AWS_MARKETPLACECATALOG_API ResaleAuthorizationStatusFilter() = default;
     AWS_MARKETPLACECATALOG_API ResaleAuthorizationStatusFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API ResaleAuthorizationStatusFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MARKETPLACECATALOG_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,13 @@ namespace Model
      * <p>Allows filtering on the <code>Status</code> of a ResaleAuthorization with
      * list input.</p>
      */
-    inline const Aws::Vector<ResaleAuthorizationStatusString>& GetValueList() const{ return m_valueList; }
+    inline const Aws::Vector<ResaleAuthorizationStatusString>& GetValueList() const { return m_valueList; }
     inline bool ValueListHasBeenSet() const { return m_valueListHasBeenSet; }
-    inline void SetValueList(const Aws::Vector<ResaleAuthorizationStatusString>& value) { m_valueListHasBeenSet = true; m_valueList = value; }
-    inline void SetValueList(Aws::Vector<ResaleAuthorizationStatusString>&& value) { m_valueListHasBeenSet = true; m_valueList = std::move(value); }
-    inline ResaleAuthorizationStatusFilter& WithValueList(const Aws::Vector<ResaleAuthorizationStatusString>& value) { SetValueList(value); return *this;}
-    inline ResaleAuthorizationStatusFilter& WithValueList(Aws::Vector<ResaleAuthorizationStatusString>&& value) { SetValueList(std::move(value)); return *this;}
-    inline ResaleAuthorizationStatusFilter& AddValueList(const ResaleAuthorizationStatusString& value) { m_valueListHasBeenSet = true; m_valueList.push_back(value); return *this; }
-    inline ResaleAuthorizationStatusFilter& AddValueList(ResaleAuthorizationStatusString&& value) { m_valueListHasBeenSet = true; m_valueList.push_back(std::move(value)); return *this; }
+    template<typename ValueListT = Aws::Vector<ResaleAuthorizationStatusString>>
+    void SetValueList(ValueListT&& value) { m_valueListHasBeenSet = true; m_valueList = std::forward<ValueListT>(value); }
+    template<typename ValueListT = Aws::Vector<ResaleAuthorizationStatusString>>
+    ResaleAuthorizationStatusFilter& WithValueList(ValueListT&& value) { SetValueList(std::forward<ValueListT>(value)); return *this;}
+    inline ResaleAuthorizationStatusFilter& AddValueList(ResaleAuthorizationStatusString value) { m_valueListHasBeenSet = true; m_valueList.push_back(value); return *this; }
     ///@}
   private:
 

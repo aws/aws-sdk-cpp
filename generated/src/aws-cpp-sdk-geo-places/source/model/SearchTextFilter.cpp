@@ -18,15 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-SearchTextFilter::SearchTextFilter() : 
-    m_boundingBoxHasBeenSet(false),
-    m_circleHasBeenSet(false),
-    m_includeCountriesHasBeenSet(false)
-{
-}
-
 SearchTextFilter::SearchTextFilter(JsonView jsonValue)
-  : SearchTextFilter()
 {
   *this = jsonValue;
 }
@@ -42,14 +34,11 @@ SearchTextFilter& SearchTextFilter::operator =(JsonView jsonValue)
     }
     m_boundingBoxHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Circle"))
   {
     m_circle = jsonValue.GetObject("Circle");
-
     m_circleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludeCountries"))
   {
     Aws::Utils::Array<JsonView> includeCountriesJsonList = jsonValue.GetArray("IncludeCountries");
@@ -59,7 +48,6 @@ SearchTextFilter& SearchTextFilter::operator =(JsonView jsonValue)
     }
     m_includeCountriesHasBeenSet = true;
   }
-
   return *this;
 }
 

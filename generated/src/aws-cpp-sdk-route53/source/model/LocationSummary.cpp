@@ -20,13 +20,7 @@ namespace Route53
 namespace Model
 {
 
-LocationSummary::LocationSummary() : 
-    m_locationNameHasBeenSet(false)
-{
-}
-
 LocationSummary::LocationSummary(const XmlNode& xmlNode)
-  : LocationSummary()
 {
   *this = xmlNode;
 }

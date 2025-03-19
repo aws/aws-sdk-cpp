@@ -32,7 +32,7 @@ namespace Model
   class AntennaDemodDecodeDetails
   {
   public:
-    AWS_GROUNDSTATION_API AntennaDemodDecodeDetails();
+    AWS_GROUNDSTATION_API AntennaDemodDecodeDetails() = default;
     AWS_GROUNDSTATION_API AntennaDemodDecodeDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API AntennaDemodDecodeDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>Name of an antenna demod decode output node used in a contact.</p>
      */
-    inline const Aws::String& GetOutputNode() const{ return m_outputNode; }
+    inline const Aws::String& GetOutputNode() const { return m_outputNode; }
     inline bool OutputNodeHasBeenSet() const { return m_outputNodeHasBeenSet; }
-    inline void SetOutputNode(const Aws::String& value) { m_outputNodeHasBeenSet = true; m_outputNode = value; }
-    inline void SetOutputNode(Aws::String&& value) { m_outputNodeHasBeenSet = true; m_outputNode = std::move(value); }
-    inline void SetOutputNode(const char* value) { m_outputNodeHasBeenSet = true; m_outputNode.assign(value); }
-    inline AntennaDemodDecodeDetails& WithOutputNode(const Aws::String& value) { SetOutputNode(value); return *this;}
-    inline AntennaDemodDecodeDetails& WithOutputNode(Aws::String&& value) { SetOutputNode(std::move(value)); return *this;}
-    inline AntennaDemodDecodeDetails& WithOutputNode(const char* value) { SetOutputNode(value); return *this;}
+    template<typename OutputNodeT = Aws::String>
+    void SetOutputNode(OutputNodeT&& value) { m_outputNodeHasBeenSet = true; m_outputNode = std::forward<OutputNodeT>(value); }
+    template<typename OutputNodeT = Aws::String>
+    AntennaDemodDecodeDetails& WithOutputNode(OutputNodeT&& value) { SetOutputNode(std::forward<OutputNodeT>(value)); return *this;}
     ///@}
   private:
 

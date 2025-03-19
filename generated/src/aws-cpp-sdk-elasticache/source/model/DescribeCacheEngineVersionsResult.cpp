@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeCacheEngineVersionsResult::DescribeCacheEngineVersionsResult()
-{
-}
-
 DescribeCacheEngineVersionsResult::DescribeCacheEngineVersionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeCacheEngineVersionsResult& DescribeCacheEngineVersionsResult::operator =
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode cacheEngineVersionsNode = resultNode.FirstChild("CacheEngineVersions");
     if(!cacheEngineVersionsNode.IsNull())
     {
       XmlNode cacheEngineVersionsMember = cacheEngineVersionsNode.FirstChild("CacheEngineVersion");
+      m_cacheEngineVersionsHasBeenSet = !cacheEngineVersionsMember.IsNull();
       while(!cacheEngineVersionsMember.IsNull())
       {
         m_cacheEngineVersions.push_back(cacheEngineVersionsMember);
         cacheEngineVersionsMember = cacheEngineVersionsMember.NextNode("CacheEngineVersion");
       }
 
+      m_cacheEngineVersionsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::DescribeCacheEngineVersionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

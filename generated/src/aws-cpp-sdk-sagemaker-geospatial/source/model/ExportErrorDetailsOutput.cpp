@@ -18,15 +18,7 @@ namespace SageMakerGeospatial
 namespace Model
 {
 
-ExportErrorDetailsOutput::ExportErrorDetailsOutput() : 
-    m_messageHasBeenSet(false),
-    m_type(ExportErrorType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 ExportErrorDetailsOutput::ExportErrorDetailsOutput(JsonView jsonValue)
-  : ExportErrorDetailsOutput()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ExportErrorDetailsOutput& ExportErrorDetailsOutput::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ExportErrorTypeMapper::GetExportErrorTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

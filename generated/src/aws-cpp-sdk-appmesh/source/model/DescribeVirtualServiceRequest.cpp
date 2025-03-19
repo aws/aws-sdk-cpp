@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeVirtualServiceRequest::DescribeVirtualServiceRequest() : 
-    m_meshNameHasBeenSet(false),
-    m_meshOwnerHasBeenSet(false),
-    m_virtualServiceNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeVirtualServiceRequest::SerializePayload() const
 {
   return {};

@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsEc2NetworkInterfacePrivateIpAddressDetail::AwsEc2NetworkInterfacePrivateIpAddressDetail() : 
-    m_privateIpAddressHasBeenSet(false),
-    m_privateDnsNameHasBeenSet(false)
-{
-}
-
 AwsEc2NetworkInterfacePrivateIpAddressDetail::AwsEc2NetworkInterfacePrivateIpAddressDetail(JsonView jsonValue)
-  : AwsEc2NetworkInterfacePrivateIpAddressDetail()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AwsEc2NetworkInterfacePrivateIpAddressDetail& AwsEc2NetworkInterfacePrivateIpAdd
   if(jsonValue.ValueExists("PrivateIpAddress"))
   {
     m_privateIpAddress = jsonValue.GetString("PrivateIpAddress");
-
     m_privateIpAddressHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrivateDnsName"))
   {
     m_privateDnsName = jsonValue.GetString("PrivateDnsName");
-
     m_privateDnsNameHasBeenSet = true;
   }
-
   return *this;
 }
 

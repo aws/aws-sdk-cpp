@@ -12,17 +12,6 @@ using namespace Aws::DevOpsGuru::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeOrganizationResourceCollectionHealthRequest::DescribeOrganizationResourceCollectionHealthRequest() : 
-    m_organizationResourceCollectionType(OrganizationResourceCollectionType::NOT_SET),
-    m_organizationResourceCollectionTypeHasBeenSet(false),
-    m_accountIdsHasBeenSet(false),
-    m_organizationalUnitIdsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String DescribeOrganizationResourceCollectionHealthRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -18,14 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-RuleResult::RuleResult() : 
-    m_ruleIdHasBeenSet(false),
-    m_outcomesHasBeenSet(false)
-{
-}
-
 RuleResult::RuleResult(JsonView jsonValue)
-  : RuleResult()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ RuleResult& RuleResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ruleId"))
   {
     m_ruleId = jsonValue.GetString("ruleId");
-
     m_ruleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outcomes"))
   {
     Aws::Utils::Array<JsonView> outcomesJsonList = jsonValue.GetArray("outcomes");
@@ -48,7 +39,6 @@ RuleResult& RuleResult::operator =(JsonView jsonValue)
     }
     m_outcomesHasBeenSet = true;
   }
-
   return *this;
 }
 

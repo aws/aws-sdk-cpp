@@ -35,7 +35,7 @@ namespace Model
   class SetupRequest
   {
   public:
-    AWS_LIGHTSAIL_API SetupRequest();
+    AWS_LIGHTSAIL_API SetupRequest() = default;
     AWS_LIGHTSAIL_API SetupRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API SetupRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LIGHTSAIL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The name of the Lightsail instance.</p>
      */
-    inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
+    inline const Aws::String& GetInstanceName() const { return m_instanceName; }
     inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
-    inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
-    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::move(value); }
-    inline void SetInstanceName(const char* value) { m_instanceNameHasBeenSet = true; m_instanceName.assign(value); }
-    inline SetupRequest& WithInstanceName(const Aws::String& value) { SetInstanceName(value); return *this;}
-    inline SetupRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(std::move(value)); return *this;}
-    inline SetupRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
+    template<typename InstanceNameT = Aws::String>
+    void SetInstanceName(InstanceNameT&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::forward<InstanceNameT>(value); }
+    template<typename InstanceNameT = Aws::String>
+    SetupRequest& WithInstanceName(InstanceNameT&& value) { SetInstanceName(std::forward<InstanceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,27 +58,24 @@ namespace Model
      * <p>The name of the domain and subdomains that the SSL/TLS certificate
      * secures.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDomainNames() const{ return m_domainNames; }
+    inline const Aws::Vector<Aws::String>& GetDomainNames() const { return m_domainNames; }
     inline bool DomainNamesHasBeenSet() const { return m_domainNamesHasBeenSet; }
-    inline void SetDomainNames(const Aws::Vector<Aws::String>& value) { m_domainNamesHasBeenSet = true; m_domainNames = value; }
-    inline void SetDomainNames(Aws::Vector<Aws::String>&& value) { m_domainNamesHasBeenSet = true; m_domainNames = std::move(value); }
-    inline SetupRequest& WithDomainNames(const Aws::Vector<Aws::String>& value) { SetDomainNames(value); return *this;}
-    inline SetupRequest& WithDomainNames(Aws::Vector<Aws::String>&& value) { SetDomainNames(std::move(value)); return *this;}
-    inline SetupRequest& AddDomainNames(const Aws::String& value) { m_domainNamesHasBeenSet = true; m_domainNames.push_back(value); return *this; }
-    inline SetupRequest& AddDomainNames(Aws::String&& value) { m_domainNamesHasBeenSet = true; m_domainNames.push_back(std::move(value)); return *this; }
-    inline SetupRequest& AddDomainNames(const char* value) { m_domainNamesHasBeenSet = true; m_domainNames.push_back(value); return *this; }
+    template<typename DomainNamesT = Aws::Vector<Aws::String>>
+    void SetDomainNames(DomainNamesT&& value) { m_domainNamesHasBeenSet = true; m_domainNames = std::forward<DomainNamesT>(value); }
+    template<typename DomainNamesT = Aws::Vector<Aws::String>>
+    SetupRequest& WithDomainNames(DomainNamesT&& value) { SetDomainNames(std::forward<DomainNamesT>(value)); return *this;}
+    template<typename DomainNamesT = Aws::String>
+    SetupRequest& AddDomainNames(DomainNamesT&& value) { m_domainNamesHasBeenSet = true; m_domainNames.emplace_back(std::forward<DomainNamesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The Certificate Authority (CA) that issues the SSL/TLS certificate.</p>
      */
-    inline const CertificateProvider& GetCertificateProvider() const{ return m_certificateProvider; }
+    inline CertificateProvider GetCertificateProvider() const { return m_certificateProvider; }
     inline bool CertificateProviderHasBeenSet() const { return m_certificateProviderHasBeenSet; }
-    inline void SetCertificateProvider(const CertificateProvider& value) { m_certificateProviderHasBeenSet = true; m_certificateProvider = value; }
-    inline void SetCertificateProvider(CertificateProvider&& value) { m_certificateProviderHasBeenSet = true; m_certificateProvider = std::move(value); }
-    inline SetupRequest& WithCertificateProvider(const CertificateProvider& value) { SetCertificateProvider(value); return *this;}
-    inline SetupRequest& WithCertificateProvider(CertificateProvider&& value) { SetCertificateProvider(std::move(value)); return *this;}
+    inline void SetCertificateProvider(CertificateProvider value) { m_certificateProviderHasBeenSet = true; m_certificateProvider = value; }
+    inline SetupRequest& WithCertificateProvider(CertificateProvider value) { SetCertificateProvider(value); return *this;}
     ///@}
   private:
 
@@ -90,7 +85,7 @@ namespace Model
     Aws::Vector<Aws::String> m_domainNames;
     bool m_domainNamesHasBeenSet = false;
 
-    CertificateProvider m_certificateProvider;
+    CertificateProvider m_certificateProvider{CertificateProvider::NOT_SET};
     bool m_certificateProviderHasBeenSet = false;
   };
 

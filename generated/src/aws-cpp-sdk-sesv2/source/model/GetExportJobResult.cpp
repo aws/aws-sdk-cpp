@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetExportJobResult::GetExportJobResult() : 
-    m_exportSourceType(ExportSourceType::NOT_SET),
-    m_jobStatus(JobStatus::NOT_SET)
-{
-}
-
 GetExportJobResult::GetExportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetExportJobResult()
 {
   *this = result;
 }
@@ -35,63 +28,55 @@ GetExportJobResult& GetExportJobResult::operator =(const Aws::AmazonWebServiceRe
   if(jsonValue.ValueExists("JobId"))
   {
     m_jobId = jsonValue.GetString("JobId");
-
+    m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportSourceType"))
   {
     m_exportSourceType = ExportSourceTypeMapper::GetExportSourceTypeForName(jsonValue.GetString("ExportSourceType"));
-
+    m_exportSourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JobStatus"))
   {
     m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("JobStatus"));
-
+    m_jobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportDestination"))
   {
     m_exportDestination = jsonValue.GetObject("ExportDestination");
-
+    m_exportDestinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExportDataSource"))
   {
     m_exportDataSource = jsonValue.GetObject("ExportDataSource");
-
+    m_exportDataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
+    m_createdTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletedTimestamp"))
   {
     m_completedTimestamp = jsonValue.GetDouble("CompletedTimestamp");
-
+    m_completedTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureInfo"))
   {
     m_failureInfo = jsonValue.GetObject("FailureInfo");
-
+    m_failureInfoHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Statistics"))
   {
     m_statistics = jsonValue.GetObject("Statistics");
-
+    m_statisticsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

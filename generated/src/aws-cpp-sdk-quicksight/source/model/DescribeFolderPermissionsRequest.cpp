@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeFolderPermissionsRequest::DescribeFolderPermissionsRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_folderIdHasBeenSet(false),
-    m_namespaceHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeFolderPermissionsRequest::SerializePayload() const
 {
   return {};

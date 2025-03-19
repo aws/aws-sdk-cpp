@@ -21,7 +21,7 @@ namespace Model
   class ExecuteGremlinQueryRequest : public NeptunedataRequest
   {
   public:
-    AWS_NEPTUNEDATA_API ExecuteGremlinQueryRequest();
+    AWS_NEPTUNEDATA_API ExecuteGremlinQueryRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * client section</a> to determine which Gremlin releases your engine version
      * supports).</p>
      */
-    inline const Aws::String& GetGremlinQuery() const{ return m_gremlinQuery; }
+    inline const Aws::String& GetGremlinQuery() const { return m_gremlinQuery; }
     inline bool GremlinQueryHasBeenSet() const { return m_gremlinQueryHasBeenSet; }
-    inline void SetGremlinQuery(const Aws::String& value) { m_gremlinQueryHasBeenSet = true; m_gremlinQuery = value; }
-    inline void SetGremlinQuery(Aws::String&& value) { m_gremlinQueryHasBeenSet = true; m_gremlinQuery = std::move(value); }
-    inline void SetGremlinQuery(const char* value) { m_gremlinQueryHasBeenSet = true; m_gremlinQuery.assign(value); }
-    inline ExecuteGremlinQueryRequest& WithGremlinQuery(const Aws::String& value) { SetGremlinQuery(value); return *this;}
-    inline ExecuteGremlinQueryRequest& WithGremlinQuery(Aws::String&& value) { SetGremlinQuery(std::move(value)); return *this;}
-    inline ExecuteGremlinQueryRequest& WithGremlinQuery(const char* value) { SetGremlinQuery(value); return *this;}
+    template<typename GremlinQueryT = Aws::String>
+    void SetGremlinQuery(GremlinQueryT&& value) { m_gremlinQueryHasBeenSet = true; m_gremlinQuery = std::forward<GremlinQueryT>(value); }
+    template<typename GremlinQueryT = Aws::String>
+    ExecuteGremlinQueryRequest& WithGremlinQuery(GremlinQueryT&& value) { SetGremlinQuery(std::forward<GremlinQueryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,14 +59,12 @@ namespace Model
      * section in the TinkerPop documentation for a list of the formats that are
      * currently supported.</p>
      */
-    inline const Aws::String& GetSerializer() const{ return m_serializer; }
+    inline const Aws::String& GetSerializer() const { return m_serializer; }
     inline bool SerializerHasBeenSet() const { return m_serializerHasBeenSet; }
-    inline void SetSerializer(const Aws::String& value) { m_serializerHasBeenSet = true; m_serializer = value; }
-    inline void SetSerializer(Aws::String&& value) { m_serializerHasBeenSet = true; m_serializer = std::move(value); }
-    inline void SetSerializer(const char* value) { m_serializerHasBeenSet = true; m_serializer.assign(value); }
-    inline ExecuteGremlinQueryRequest& WithSerializer(const Aws::String& value) { SetSerializer(value); return *this;}
-    inline ExecuteGremlinQueryRequest& WithSerializer(Aws::String&& value) { SetSerializer(std::move(value)); return *this;}
-    inline ExecuteGremlinQueryRequest& WithSerializer(const char* value) { SetSerializer(value); return *this;}
+    template<typename SerializerT = Aws::String>
+    void SetSerializer(SerializerT&& value) { m_serializerHasBeenSet = true; m_serializer = std::forward<SerializerT>(value); }
+    template<typename SerializerT = Aws::String>
+    ExecuteGremlinQueryRequest& WithSerializer(SerializerT&& value) { SetSerializer(std::forward<SerializerT>(value)); return *this;}
     ///@}
   private:
 

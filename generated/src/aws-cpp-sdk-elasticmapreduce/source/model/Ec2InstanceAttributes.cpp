@@ -18,23 +18,7 @@ namespace EMR
 namespace Model
 {
 
-Ec2InstanceAttributes::Ec2InstanceAttributes() : 
-    m_ec2KeyNameHasBeenSet(false),
-    m_ec2SubnetIdHasBeenSet(false),
-    m_requestedEc2SubnetIdsHasBeenSet(false),
-    m_ec2AvailabilityZoneHasBeenSet(false),
-    m_requestedEc2AvailabilityZonesHasBeenSet(false),
-    m_iamInstanceProfileHasBeenSet(false),
-    m_emrManagedMasterSecurityGroupHasBeenSet(false),
-    m_emrManagedSlaveSecurityGroupHasBeenSet(false),
-    m_serviceAccessSecurityGroupHasBeenSet(false),
-    m_additionalMasterSecurityGroupsHasBeenSet(false),
-    m_additionalSlaveSecurityGroupsHasBeenSet(false)
-{
-}
-
 Ec2InstanceAttributes::Ec2InstanceAttributes(JsonView jsonValue)
-  : Ec2InstanceAttributes()
 {
   *this = jsonValue;
 }
@@ -44,17 +28,13 @@ Ec2InstanceAttributes& Ec2InstanceAttributes::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Ec2KeyName"))
   {
     m_ec2KeyName = jsonValue.GetString("Ec2KeyName");
-
     m_ec2KeyNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ec2SubnetId"))
   {
     m_ec2SubnetId = jsonValue.GetString("Ec2SubnetId");
-
     m_ec2SubnetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestedEc2SubnetIds"))
   {
     Aws::Utils::Array<JsonView> requestedEc2SubnetIdsJsonList = jsonValue.GetArray("RequestedEc2SubnetIds");
@@ -64,14 +44,11 @@ Ec2InstanceAttributes& Ec2InstanceAttributes::operator =(JsonView jsonValue)
     }
     m_requestedEc2SubnetIdsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ec2AvailabilityZone"))
   {
     m_ec2AvailabilityZone = jsonValue.GetString("Ec2AvailabilityZone");
-
     m_ec2AvailabilityZoneHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestedEc2AvailabilityZones"))
   {
     Aws::Utils::Array<JsonView> requestedEc2AvailabilityZonesJsonList = jsonValue.GetArray("RequestedEc2AvailabilityZones");
@@ -81,35 +58,26 @@ Ec2InstanceAttributes& Ec2InstanceAttributes::operator =(JsonView jsonValue)
     }
     m_requestedEc2AvailabilityZonesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IamInstanceProfile"))
   {
     m_iamInstanceProfile = jsonValue.GetString("IamInstanceProfile");
-
     m_iamInstanceProfileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmrManagedMasterSecurityGroup"))
   {
     m_emrManagedMasterSecurityGroup = jsonValue.GetString("EmrManagedMasterSecurityGroup");
-
     m_emrManagedMasterSecurityGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EmrManagedSlaveSecurityGroup"))
   {
     m_emrManagedSlaveSecurityGroup = jsonValue.GetString("EmrManagedSlaveSecurityGroup");
-
     m_emrManagedSlaveSecurityGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceAccessSecurityGroup"))
   {
     m_serviceAccessSecurityGroup = jsonValue.GetString("ServiceAccessSecurityGroup");
-
     m_serviceAccessSecurityGroupHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalMasterSecurityGroups"))
   {
     Aws::Utils::Array<JsonView> additionalMasterSecurityGroupsJsonList = jsonValue.GetArray("AdditionalMasterSecurityGroups");
@@ -119,7 +87,6 @@ Ec2InstanceAttributes& Ec2InstanceAttributes::operator =(JsonView jsonValue)
     }
     m_additionalMasterSecurityGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalSlaveSecurityGroups"))
   {
     Aws::Utils::Array<JsonView> additionalSlaveSecurityGroupsJsonList = jsonValue.GetArray("AdditionalSlaveSecurityGroups");
@@ -129,7 +96,6 @@ Ec2InstanceAttributes& Ec2InstanceAttributes::operator =(JsonView jsonValue)
     }
     m_additionalSlaveSecurityGroupsHasBeenSet = true;
   }
-
   return *this;
 }
 

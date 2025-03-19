@@ -18,15 +18,7 @@ namespace WorkSpacesWeb
 namespace Model
 {
 
-UserAccessLoggingSettings::UserAccessLoggingSettings() : 
-    m_associatedPortalArnsHasBeenSet(false),
-    m_kinesisStreamArnHasBeenSet(false),
-    m_userAccessLoggingSettingsArnHasBeenSet(false)
-{
-}
-
 UserAccessLoggingSettings::UserAccessLoggingSettings(JsonView jsonValue)
-  : UserAccessLoggingSettings()
 {
   *this = jsonValue;
 }
@@ -42,21 +34,16 @@ UserAccessLoggingSettings& UserAccessLoggingSettings::operator =(JsonView jsonVa
     }
     m_associatedPortalArnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kinesisStreamArn"))
   {
     m_kinesisStreamArn = jsonValue.GetString("kinesisStreamArn");
-
     m_kinesisStreamArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("userAccessLoggingSettingsArn"))
   {
     m_userAccessLoggingSettingsArn = jsonValue.GetString("userAccessLoggingSettingsArn");
-
     m_userAccessLoggingSettingsArnHasBeenSet = true;
   }
-
   return *this;
 }
 

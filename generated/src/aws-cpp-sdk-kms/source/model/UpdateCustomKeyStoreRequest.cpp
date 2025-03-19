@@ -12,20 +12,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateCustomKeyStoreRequest::UpdateCustomKeyStoreRequest() : 
-    m_customKeyStoreIdHasBeenSet(false),
-    m_newCustomKeyStoreNameHasBeenSet(false),
-    m_keyStorePasswordHasBeenSet(false),
-    m_cloudHsmClusterIdHasBeenSet(false),
-    m_xksProxyUriEndpointHasBeenSet(false),
-    m_xksProxyUriPathHasBeenSet(false),
-    m_xksProxyVpcEndpointServiceNameHasBeenSet(false),
-    m_xksProxyAuthenticationCredentialHasBeenSet(false),
-    m_xksProxyConnectivity(XksProxyConnectivityType::NOT_SET),
-    m_xksProxyConnectivityHasBeenSet(false)
-{
-}
-
 Aws::String UpdateCustomKeyStoreRequest::SerializePayload() const
 {
   JsonValue payload;

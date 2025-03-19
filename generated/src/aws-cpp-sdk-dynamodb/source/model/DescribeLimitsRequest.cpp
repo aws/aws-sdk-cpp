@@ -12,10 +12,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeLimitsRequest::DescribeLimitsRequest()
-{
-}
-
 Aws::String DescribeLimitsRequest::SerializePayload() const
 {
   return "{}";

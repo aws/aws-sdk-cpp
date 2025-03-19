@@ -34,7 +34,7 @@ namespace Model
   class DescribeObjectsResult
   {
   public:
-    AWS_DATAPIPELINE_API DescribeObjectsResult();
+    AWS_DATAPIPELINE_API DescribeObjectsResult() = default;
     AWS_DATAPIPELINE_API DescribeObjectsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATAPIPELINE_API DescribeObjectsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,13 +43,13 @@ namespace Model
     /**
      * <p>An array of object definitions.</p>
      */
-    inline const Aws::Vector<PipelineObject>& GetPipelineObjects() const{ return m_pipelineObjects; }
-    inline void SetPipelineObjects(const Aws::Vector<PipelineObject>& value) { m_pipelineObjects = value; }
-    inline void SetPipelineObjects(Aws::Vector<PipelineObject>&& value) { m_pipelineObjects = std::move(value); }
-    inline DescribeObjectsResult& WithPipelineObjects(const Aws::Vector<PipelineObject>& value) { SetPipelineObjects(value); return *this;}
-    inline DescribeObjectsResult& WithPipelineObjects(Aws::Vector<PipelineObject>&& value) { SetPipelineObjects(std::move(value)); return *this;}
-    inline DescribeObjectsResult& AddPipelineObjects(const PipelineObject& value) { m_pipelineObjects.push_back(value); return *this; }
-    inline DescribeObjectsResult& AddPipelineObjects(PipelineObject&& value) { m_pipelineObjects.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PipelineObject>& GetPipelineObjects() const { return m_pipelineObjects; }
+    template<typename PipelineObjectsT = Aws::Vector<PipelineObject>>
+    void SetPipelineObjects(PipelineObjectsT&& value) { m_pipelineObjectsHasBeenSet = true; m_pipelineObjects = std::forward<PipelineObjectsT>(value); }
+    template<typename PipelineObjectsT = Aws::Vector<PipelineObject>>
+    DescribeObjectsResult& WithPipelineObjects(PipelineObjectsT&& value) { SetPipelineObjects(std::forward<PipelineObjectsT>(value)); return *this;}
+    template<typename PipelineObjectsT = PipelineObject>
+    DescribeObjectsResult& AddPipelineObjects(PipelineObjectsT&& value) { m_pipelineObjectsHasBeenSet = true; m_pipelineObjects.emplace_back(std::forward<PipelineObjectsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,43 +58,43 @@ namespace Model
      * results, call <code>DescribeObjects</code> again with this marker value. If the
      * value is null, there are no more results.</p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
-    inline void SetMarker(const Aws::String& value) { m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_marker.assign(value); }
-    inline DescribeObjectsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeObjectsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeObjectsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
+    inline const Aws::String& GetMarker() const { return m_marker; }
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeObjectsResult& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates whether there are more results to return.</p>
      */
-    inline bool GetHasMoreResults() const{ return m_hasMoreResults; }
-    inline void SetHasMoreResults(bool value) { m_hasMoreResults = value; }
+    inline bool GetHasMoreResults() const { return m_hasMoreResults; }
+    inline void SetHasMoreResults(bool value) { m_hasMoreResultsHasBeenSet = true; m_hasMoreResults = value; }
     inline DescribeObjectsResult& WithHasMoreResults(bool value) { SetHasMoreResults(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeObjectsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeObjectsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeObjectsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeObjectsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<PipelineObject> m_pipelineObjects;
+    bool m_pipelineObjectsHasBeenSet = false;
 
     Aws::String m_marker;
+    bool m_markerHasBeenSet = false;
 
-    bool m_hasMoreResults;
+    bool m_hasMoreResults{false};
+    bool m_hasMoreResultsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

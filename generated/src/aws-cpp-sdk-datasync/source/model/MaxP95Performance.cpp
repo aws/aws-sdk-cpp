@@ -18,34 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-MaxP95Performance::MaxP95Performance() : 
-    m_iopsRead(0.0),
-    m_iopsReadHasBeenSet(false),
-    m_iopsWrite(0.0),
-    m_iopsWriteHasBeenSet(false),
-    m_iopsOther(0.0),
-    m_iopsOtherHasBeenSet(false),
-    m_iopsTotal(0.0),
-    m_iopsTotalHasBeenSet(false),
-    m_throughputRead(0.0),
-    m_throughputReadHasBeenSet(false),
-    m_throughputWrite(0.0),
-    m_throughputWriteHasBeenSet(false),
-    m_throughputOther(0.0),
-    m_throughputOtherHasBeenSet(false),
-    m_throughputTotal(0.0),
-    m_throughputTotalHasBeenSet(false),
-    m_latencyRead(0.0),
-    m_latencyReadHasBeenSet(false),
-    m_latencyWrite(0.0),
-    m_latencyWriteHasBeenSet(false),
-    m_latencyOther(0.0),
-    m_latencyOtherHasBeenSet(false)
-{
-}
-
 MaxP95Performance::MaxP95Performance(JsonView jsonValue)
-  : MaxP95Performance()
 {
   *this = jsonValue;
 }
@@ -55,80 +28,58 @@ MaxP95Performance& MaxP95Performance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IopsRead"))
   {
     m_iopsRead = jsonValue.GetDouble("IopsRead");
-
     m_iopsReadHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IopsWrite"))
   {
     m_iopsWrite = jsonValue.GetDouble("IopsWrite");
-
     m_iopsWriteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IopsOther"))
   {
     m_iopsOther = jsonValue.GetDouble("IopsOther");
-
     m_iopsOtherHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IopsTotal"))
   {
     m_iopsTotal = jsonValue.GetDouble("IopsTotal");
-
     m_iopsTotalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThroughputRead"))
   {
     m_throughputRead = jsonValue.GetDouble("ThroughputRead");
-
     m_throughputReadHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThroughputWrite"))
   {
     m_throughputWrite = jsonValue.GetDouble("ThroughputWrite");
-
     m_throughputWriteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThroughputOther"))
   {
     m_throughputOther = jsonValue.GetDouble("ThroughputOther");
-
     m_throughputOtherHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThroughputTotal"))
   {
     m_throughputTotal = jsonValue.GetDouble("ThroughputTotal");
-
     m_throughputTotalHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatencyRead"))
   {
     m_latencyRead = jsonValue.GetDouble("LatencyRead");
-
     m_latencyReadHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatencyWrite"))
   {
     m_latencyWrite = jsonValue.GetDouble("LatencyWrite");
-
     m_latencyWriteHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LatencyOther"))
   {
     m_latencyOther = jsonValue.GetDouble("LatencyOther");
-
     m_latencyOtherHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-CustomerProjectsContext::CustomerProjectsContext() : 
-    m_customerHasBeenSet(false),
-    m_projectHasBeenSet(false)
-{
-}
-
 CustomerProjectsContext::CustomerProjectsContext(JsonView jsonValue)
-  : CustomerProjectsContext()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CustomerProjectsContext& CustomerProjectsContext::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Customer"))
   {
     m_customer = jsonValue.GetObject("Customer");
-
     m_customerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Project"))
   {
     m_project = jsonValue.GetObject("Project");
-
     m_projectHasBeenSet = true;
   }
-
   return *this;
 }
 

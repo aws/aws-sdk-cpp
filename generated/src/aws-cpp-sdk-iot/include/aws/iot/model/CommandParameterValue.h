@@ -34,7 +34,7 @@ namespace Model
   class CommandParameterValue
   {
   public:
-    AWS_IOT_API CommandParameterValue();
+    AWS_IOT_API CommandParameterValue() = default;
     AWS_IOT_API CommandParameterValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API CommandParameterValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>An attribute of type String. For example:</p> <p> <code>"S": "Hello"</code>
      * </p>
      */
-    inline const Aws::String& GetS() const{ return m_s; }
+    inline const Aws::String& GetS() const { return m_s; }
     inline bool SHasBeenSet() const { return m_sHasBeenSet; }
-    inline void SetS(const Aws::String& value) { m_sHasBeenSet = true; m_s = value; }
-    inline void SetS(Aws::String&& value) { m_sHasBeenSet = true; m_s = std::move(value); }
-    inline void SetS(const char* value) { m_sHasBeenSet = true; m_s.assign(value); }
-    inline CommandParameterValue& WithS(const Aws::String& value) { SetS(value); return *this;}
-    inline CommandParameterValue& WithS(Aws::String&& value) { SetS(std::move(value)); return *this;}
-    inline CommandParameterValue& WithS(const char* value) { SetS(value); return *this;}
+    template<typename ST = Aws::String>
+    void SetS(ST&& value) { m_sHasBeenSet = true; m_s = std::forward<ST>(value); }
+    template<typename ST = Aws::String>
+    CommandParameterValue& WithS(ST&& value) { SetS(std::forward<ST>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * <p>An attribute of type Boolean. For example:</p> <p> <code>"BOOL": true</code>
      * </p>
      */
-    inline bool GetB() const{ return m_b; }
+    inline bool GetB() const { return m_b; }
     inline bool BHasBeenSet() const { return m_bHasBeenSet; }
     inline void SetB(bool value) { m_bHasBeenSet = true; m_b = value; }
     inline CommandParameterValue& WithB(bool value) { SetB(value); return *this;}
@@ -70,7 +68,7 @@ namespace Model
     /**
      * <p>An attribute of type Integer (Thirty-Two Bits).</p>
      */
-    inline int GetI() const{ return m_i; }
+    inline int GetI() const { return m_i; }
     inline bool IHasBeenSet() const { return m_iHasBeenSet; }
     inline void SetI(int value) { m_iHasBeenSet = true; m_i = value; }
     inline CommandParameterValue& WithI(int value) { SetI(value); return *this;}
@@ -80,7 +78,7 @@ namespace Model
     /**
      * <p>An attribute of type Long.</p>
      */
-    inline long long GetL() const{ return m_l; }
+    inline long long GetL() const { return m_l; }
     inline bool LHasBeenSet() const { return m_lHasBeenSet; }
     inline void SetL(long long value) { m_lHasBeenSet = true; m_l = value; }
     inline CommandParameterValue& WithL(long long value) { SetL(value); return *this;}
@@ -90,7 +88,7 @@ namespace Model
     /**
      * <p>An attribute of type Double (Sixty-Four Bits).</p>
      */
-    inline double GetD() const{ return m_d; }
+    inline double GetD() const { return m_d; }
     inline bool DHasBeenSet() const { return m_dHasBeenSet; }
     inline void SetD(double value) { m_dHasBeenSet = true; m_d = value; }
     inline CommandParameterValue& WithD(double value) { SetD(value); return *this;}
@@ -101,45 +99,43 @@ namespace Model
      * <p>An attribute of type Binary. For example:</p> <p> <code>"B":
      * "dGhpcyB0ZXh0IGlzIGJhc2U2NC1lbmNvZGVk"</code> </p>
      */
-    inline const Aws::Utils::ByteBuffer& GetBIN() const{ return m_bIN; }
+    inline const Aws::Utils::ByteBuffer& GetBIN() const { return m_bIN; }
     inline bool BINHasBeenSet() const { return m_bINHasBeenSet; }
-    inline void SetBIN(const Aws::Utils::ByteBuffer& value) { m_bINHasBeenSet = true; m_bIN = value; }
-    inline void SetBIN(Aws::Utils::ByteBuffer&& value) { m_bINHasBeenSet = true; m_bIN = std::move(value); }
-    inline CommandParameterValue& WithBIN(const Aws::Utils::ByteBuffer& value) { SetBIN(value); return *this;}
-    inline CommandParameterValue& WithBIN(Aws::Utils::ByteBuffer&& value) { SetBIN(std::move(value)); return *this;}
+    template<typename BINT = Aws::Utils::ByteBuffer>
+    void SetBIN(BINT&& value) { m_bINHasBeenSet = true; m_bIN = std::forward<BINT>(value); }
+    template<typename BINT = Aws::Utils::ByteBuffer>
+    CommandParameterValue& WithBIN(BINT&& value) { SetBIN(std::forward<BINT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An attribute of type unsigned long.</p>
      */
-    inline const Aws::String& GetUL() const{ return m_uL; }
+    inline const Aws::String& GetUL() const { return m_uL; }
     inline bool ULHasBeenSet() const { return m_uLHasBeenSet; }
-    inline void SetUL(const Aws::String& value) { m_uLHasBeenSet = true; m_uL = value; }
-    inline void SetUL(Aws::String&& value) { m_uLHasBeenSet = true; m_uL = std::move(value); }
-    inline void SetUL(const char* value) { m_uLHasBeenSet = true; m_uL.assign(value); }
-    inline CommandParameterValue& WithUL(const Aws::String& value) { SetUL(value); return *this;}
-    inline CommandParameterValue& WithUL(Aws::String&& value) { SetUL(std::move(value)); return *this;}
-    inline CommandParameterValue& WithUL(const char* value) { SetUL(value); return *this;}
+    template<typename ULT = Aws::String>
+    void SetUL(ULT&& value) { m_uLHasBeenSet = true; m_uL = std::forward<ULT>(value); }
+    template<typename ULT = Aws::String>
+    CommandParameterValue& WithUL(ULT&& value) { SetUL(std::forward<ULT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_s;
     bool m_sHasBeenSet = false;
 
-    bool m_b;
+    bool m_b{false};
     bool m_bHasBeenSet = false;
 
-    int m_i;
+    int m_i{0};
     bool m_iHasBeenSet = false;
 
-    long long m_l;
+    long long m_l{0};
     bool m_lHasBeenSet = false;
 
-    double m_d;
+    double m_d{0.0};
     bool m_dHasBeenSet = false;
 
-    Aws::Utils::ByteBuffer m_bIN;
+    Aws::Utils::ByteBuffer m_bIN{};
     bool m_bINHasBeenSet = false;
 
     Aws::String m_uL;

@@ -18,21 +18,7 @@ namespace ApplicationDiscoveryService
 namespace Model
 {
 
-Ec2RecommendationsExportPreferences::Ec2RecommendationsExportPreferences() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_cpuPerformanceMetricBasisHasBeenSet(false),
-    m_ramPerformanceMetricBasisHasBeenSet(false),
-    m_tenancy(Tenancy::NOT_SET),
-    m_tenancyHasBeenSet(false),
-    m_excludedInstanceTypesHasBeenSet(false),
-    m_preferredRegionHasBeenSet(false),
-    m_reservedInstanceOptionsHasBeenSet(false)
-{
-}
-
 Ec2RecommendationsExportPreferences::Ec2RecommendationsExportPreferences(JsonView jsonValue)
-  : Ec2RecommendationsExportPreferences()
 {
   *this = jsonValue;
 }
@@ -42,31 +28,23 @@ Ec2RecommendationsExportPreferences& Ec2RecommendationsExportPreferences::operat
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cpuPerformanceMetricBasis"))
   {
     m_cpuPerformanceMetricBasis = jsonValue.GetObject("cpuPerformanceMetricBasis");
-
     m_cpuPerformanceMetricBasisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ramPerformanceMetricBasis"))
   {
     m_ramPerformanceMetricBasis = jsonValue.GetObject("ramPerformanceMetricBasis");
-
     m_ramPerformanceMetricBasisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tenancy"))
   {
     m_tenancy = TenancyMapper::GetTenancyForName(jsonValue.GetString("tenancy"));
-
     m_tenancyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("excludedInstanceTypes"))
   {
     Aws::Utils::Array<JsonView> excludedInstanceTypesJsonList = jsonValue.GetArray("excludedInstanceTypes");
@@ -76,21 +54,16 @@ Ec2RecommendationsExportPreferences& Ec2RecommendationsExportPreferences::operat
     }
     m_excludedInstanceTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("preferredRegion"))
   {
     m_preferredRegion = jsonValue.GetString("preferredRegion");
-
     m_preferredRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reservedInstanceOptions"))
   {
     m_reservedInstanceOptions = jsonValue.GetObject("reservedInstanceOptions");
-
     m_reservedInstanceOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

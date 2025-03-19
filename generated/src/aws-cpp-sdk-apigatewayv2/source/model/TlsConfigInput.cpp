@@ -18,13 +18,7 @@ namespace ApiGatewayV2
 namespace Model
 {
 
-TlsConfigInput::TlsConfigInput() : 
-    m_serverNameToVerifyHasBeenSet(false)
-{
-}
-
 TlsConfigInput::TlsConfigInput(JsonView jsonValue)
-  : TlsConfigInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TlsConfigInput& TlsConfigInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("serverNameToVerify"))
   {
     m_serverNameToVerify = jsonValue.GetString("serverNameToVerify");
-
     m_serverNameToVerifyHasBeenSet = true;
   }
-
   return *this;
 }
 

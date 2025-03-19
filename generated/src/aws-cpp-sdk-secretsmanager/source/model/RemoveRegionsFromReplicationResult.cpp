@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-RemoveRegionsFromReplicationResult::RemoveRegionsFromReplicationResult()
-{
-}
-
 RemoveRegionsFromReplicationResult::RemoveRegionsFromReplicationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ RemoveRegionsFromReplicationResult& RemoveRegionsFromReplicationResult::operator
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
+    m_aRNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReplicationStatus"))
   {
     Aws::Utils::Array<JsonView> replicationStatusJsonList = jsonValue.GetArray("ReplicationStatus");
@@ -42,14 +37,15 @@ RemoveRegionsFromReplicationResult& RemoveRegionsFromReplicationResult::operator
     {
       m_replicationStatus.push_back(replicationStatusJsonList[replicationStatusIndex].AsObject());
     }
+    m_replicationStatusHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

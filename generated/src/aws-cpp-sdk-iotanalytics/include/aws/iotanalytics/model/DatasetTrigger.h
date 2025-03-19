@@ -33,7 +33,7 @@ namespace Model
   class DatasetTrigger
   {
   public:
-    AWS_IOTANALYTICS_API DatasetTrigger();
+    AWS_IOTANALYTICS_API DatasetTrigger() = default;
     AWS_IOTANALYTICS_API DatasetTrigger(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API DatasetTrigger& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTANALYTICS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
     /**
      * <p>The Schedule when the trigger is initiated.</p>
      */
-    inline const Schedule& GetSchedule() const{ return m_schedule; }
+    inline const Schedule& GetSchedule() const { return m_schedule; }
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
-    inline void SetSchedule(const Schedule& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
-    inline void SetSchedule(Schedule&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
-    inline DatasetTrigger& WithSchedule(const Schedule& value) { SetSchedule(value); return *this;}
-    inline DatasetTrigger& WithSchedule(Schedule&& value) { SetSchedule(std::move(value)); return *this;}
+    template<typename ScheduleT = Schedule>
+    void SetSchedule(ScheduleT&& value) { m_scheduleHasBeenSet = true; m_schedule = std::forward<ScheduleT>(value); }
+    template<typename ScheduleT = Schedule>
+    DatasetTrigger& WithSchedule(ScheduleT&& value) { SetSchedule(std::forward<ScheduleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,12 +56,12 @@ namespace Model
      * <p>The dataset whose content creation triggers the creation of this dataset's
      * contents.</p>
      */
-    inline const TriggeringDataset& GetDataset() const{ return m_dataset; }
+    inline const TriggeringDataset& GetDataset() const { return m_dataset; }
     inline bool DatasetHasBeenSet() const { return m_datasetHasBeenSet; }
-    inline void SetDataset(const TriggeringDataset& value) { m_datasetHasBeenSet = true; m_dataset = value; }
-    inline void SetDataset(TriggeringDataset&& value) { m_datasetHasBeenSet = true; m_dataset = std::move(value); }
-    inline DatasetTrigger& WithDataset(const TriggeringDataset& value) { SetDataset(value); return *this;}
-    inline DatasetTrigger& WithDataset(TriggeringDataset&& value) { SetDataset(std::move(value)); return *this;}
+    template<typename DatasetT = TriggeringDataset>
+    void SetDataset(DatasetT&& value) { m_datasetHasBeenSet = true; m_dataset = std::forward<DatasetT>(value); }
+    template<typename DatasetT = TriggeringDataset>
+    DatasetTrigger& WithDataset(DatasetT&& value) { SetDataset(std::forward<DatasetT>(value)); return *this;}
     ///@}
   private:
 

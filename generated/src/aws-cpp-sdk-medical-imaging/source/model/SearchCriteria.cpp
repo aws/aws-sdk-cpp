@@ -18,14 +18,7 @@ namespace MedicalImaging
 namespace Model
 {
 
-SearchCriteria::SearchCriteria() : 
-    m_filtersHasBeenSet(false),
-    m_sortHasBeenSet(false)
-{
-}
-
 SearchCriteria::SearchCriteria(JsonView jsonValue)
-  : SearchCriteria()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ SearchCriteria& SearchCriteria::operator =(JsonView jsonValue)
     }
     m_filtersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sort"))
   {
     m_sort = jsonValue.GetObject("sort");
-
     m_sortHasBeenSet = true;
   }
-
   return *this;
 }
 

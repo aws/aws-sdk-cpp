@@ -20,17 +20,7 @@ namespace EC2
 namespace Model
 {
 
-DeleteFleetSuccessItem::DeleteFleetSuccessItem() : 
-    m_currentFleetState(FleetStateCode::NOT_SET),
-    m_currentFleetStateHasBeenSet(false),
-    m_previousFleetState(FleetStateCode::NOT_SET),
-    m_previousFleetStateHasBeenSet(false),
-    m_fleetIdHasBeenSet(false)
-{
-}
-
 DeleteFleetSuccessItem::DeleteFleetSuccessItem(const XmlNode& xmlNode)
-  : DeleteFleetSuccessItem()
 {
   *this = xmlNode;
 }
@@ -44,13 +34,13 @@ DeleteFleetSuccessItem& DeleteFleetSuccessItem::operator =(const XmlNode& xmlNod
     XmlNode currentFleetStateNode = resultNode.FirstChild("currentFleetState");
     if(!currentFleetStateNode.IsNull())
     {
-      m_currentFleetState = FleetStateCodeMapper::GetFleetStateCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currentFleetStateNode.GetText()).c_str()).c_str());
+      m_currentFleetState = FleetStateCodeMapper::GetFleetStateCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(currentFleetStateNode.GetText()).c_str()));
       m_currentFleetStateHasBeenSet = true;
     }
     XmlNode previousFleetStateNode = resultNode.FirstChild("previousFleetState");
     if(!previousFleetStateNode.IsNull())
     {
-      m_previousFleetState = FleetStateCodeMapper::GetFleetStateCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(previousFleetStateNode.GetText()).c_str()).c_str());
+      m_previousFleetState = FleetStateCodeMapper::GetFleetStateCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(previousFleetStateNode.GetText()).c_str()));
       m_previousFleetStateHasBeenSet = true;
     }
     XmlNode fleetIdNode = resultNode.FirstChild("fleetId");

@@ -18,13 +18,7 @@ namespace Personalize
 namespace Model
 {
 
-BatchSegmentJobInput::BatchSegmentJobInput() : 
-    m_s3DataSourceHasBeenSet(false)
-{
-}
-
 BatchSegmentJobInput::BatchSegmentJobInput(JsonView jsonValue)
-  : BatchSegmentJobInput()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BatchSegmentJobInput& BatchSegmentJobInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3DataSource"))
   {
     m_s3DataSource = jsonValue.GetObject("s3DataSource");
-
     m_s3DataSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

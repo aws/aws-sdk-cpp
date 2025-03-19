@@ -28,7 +28,7 @@ namespace Model
   class DeleteFleetAdvisorDatabasesResult
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API DeleteFleetAdvisorDatabasesResult();
+    AWS_DATABASEMIGRATIONSERVICE_API DeleteFleetAdvisorDatabasesResult() = default;
     AWS_DATABASEMIGRATIONSERVICE_API DeleteFleetAdvisorDatabasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATABASEMIGRATIONSERVICE_API DeleteFleetAdvisorDatabasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,31 +37,30 @@ namespace Model
     /**
      * <p>The IDs of the databases that the operation deleted.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetDatabaseIds() const{ return m_databaseIds; }
-    inline void SetDatabaseIds(const Aws::Vector<Aws::String>& value) { m_databaseIds = value; }
-    inline void SetDatabaseIds(Aws::Vector<Aws::String>&& value) { m_databaseIds = std::move(value); }
-    inline DeleteFleetAdvisorDatabasesResult& WithDatabaseIds(const Aws::Vector<Aws::String>& value) { SetDatabaseIds(value); return *this;}
-    inline DeleteFleetAdvisorDatabasesResult& WithDatabaseIds(Aws::Vector<Aws::String>&& value) { SetDatabaseIds(std::move(value)); return *this;}
-    inline DeleteFleetAdvisorDatabasesResult& AddDatabaseIds(const Aws::String& value) { m_databaseIds.push_back(value); return *this; }
-    inline DeleteFleetAdvisorDatabasesResult& AddDatabaseIds(Aws::String&& value) { m_databaseIds.push_back(std::move(value)); return *this; }
-    inline DeleteFleetAdvisorDatabasesResult& AddDatabaseIds(const char* value) { m_databaseIds.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetDatabaseIds() const { return m_databaseIds; }
+    template<typename DatabaseIdsT = Aws::Vector<Aws::String>>
+    void SetDatabaseIds(DatabaseIdsT&& value) { m_databaseIdsHasBeenSet = true; m_databaseIds = std::forward<DatabaseIdsT>(value); }
+    template<typename DatabaseIdsT = Aws::Vector<Aws::String>>
+    DeleteFleetAdvisorDatabasesResult& WithDatabaseIds(DatabaseIdsT&& value) { SetDatabaseIds(std::forward<DatabaseIdsT>(value)); return *this;}
+    template<typename DatabaseIdsT = Aws::String>
+    DeleteFleetAdvisorDatabasesResult& AddDatabaseIds(DatabaseIdsT&& value) { m_databaseIdsHasBeenSet = true; m_databaseIds.emplace_back(std::forward<DatabaseIdsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DeleteFleetAdvisorDatabasesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DeleteFleetAdvisorDatabasesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DeleteFleetAdvisorDatabasesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DeleteFleetAdvisorDatabasesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_databaseIds;
+    bool m_databaseIdsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

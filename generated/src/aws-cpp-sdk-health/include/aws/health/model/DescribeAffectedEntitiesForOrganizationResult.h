@@ -30,7 +30,7 @@ namespace Model
   class DescribeAffectedEntitiesForOrganizationResult
   {
   public:
-    AWS_HEALTH_API DescribeAffectedEntitiesForOrganizationResult();
+    AWS_HEALTH_API DescribeAffectedEntitiesForOrganizationResult() = default;
     AWS_HEALTH_API DescribeAffectedEntitiesForOrganizationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_HEALTH_API DescribeAffectedEntitiesForOrganizationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -41,13 +41,13 @@ namespace Model
      * <code>entityArn</code>, <code>entityValue</code> and its <code>entityArn</code>,
      * <code>lastUpdatedTime</code>, and <code>statusCode</code>.</p>
      */
-    inline const Aws::Vector<AffectedEntity>& GetEntities() const{ return m_entities; }
-    inline void SetEntities(const Aws::Vector<AffectedEntity>& value) { m_entities = value; }
-    inline void SetEntities(Aws::Vector<AffectedEntity>&& value) { m_entities = std::move(value); }
-    inline DescribeAffectedEntitiesForOrganizationResult& WithEntities(const Aws::Vector<AffectedEntity>& value) { SetEntities(value); return *this;}
-    inline DescribeAffectedEntitiesForOrganizationResult& WithEntities(Aws::Vector<AffectedEntity>&& value) { SetEntities(std::move(value)); return *this;}
-    inline DescribeAffectedEntitiesForOrganizationResult& AddEntities(const AffectedEntity& value) { m_entities.push_back(value); return *this; }
-    inline DescribeAffectedEntitiesForOrganizationResult& AddEntities(AffectedEntity&& value) { m_entities.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AffectedEntity>& GetEntities() const { return m_entities; }
+    template<typename EntitiesT = Aws::Vector<AffectedEntity>>
+    void SetEntities(EntitiesT&& value) { m_entitiesHasBeenSet = true; m_entities = std::forward<EntitiesT>(value); }
+    template<typename EntitiesT = Aws::Vector<AffectedEntity>>
+    DescribeAffectedEntitiesForOrganizationResult& WithEntities(EntitiesT&& value) { SetEntities(std::forward<EntitiesT>(value)); return *this;}
+    template<typename EntitiesT = AffectedEntity>
+    DescribeAffectedEntitiesForOrganizationResult& AddEntities(EntitiesT&& value) { m_entitiesHasBeenSet = true; m_entities.emplace_back(std::forward<EntitiesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -56,13 +56,13 @@ namespace Model
      * <code>awsAccountId</code>, <code>errorMessage</code>, <code>errorName</code>,
      * and <code>eventArn</code>.</p>
      */
-    inline const Aws::Vector<OrganizationAffectedEntitiesErrorItem>& GetFailedSet() const{ return m_failedSet; }
-    inline void SetFailedSet(const Aws::Vector<OrganizationAffectedEntitiesErrorItem>& value) { m_failedSet = value; }
-    inline void SetFailedSet(Aws::Vector<OrganizationAffectedEntitiesErrorItem>&& value) { m_failedSet = std::move(value); }
-    inline DescribeAffectedEntitiesForOrganizationResult& WithFailedSet(const Aws::Vector<OrganizationAffectedEntitiesErrorItem>& value) { SetFailedSet(value); return *this;}
-    inline DescribeAffectedEntitiesForOrganizationResult& WithFailedSet(Aws::Vector<OrganizationAffectedEntitiesErrorItem>&& value) { SetFailedSet(std::move(value)); return *this;}
-    inline DescribeAffectedEntitiesForOrganizationResult& AddFailedSet(const OrganizationAffectedEntitiesErrorItem& value) { m_failedSet.push_back(value); return *this; }
-    inline DescribeAffectedEntitiesForOrganizationResult& AddFailedSet(OrganizationAffectedEntitiesErrorItem&& value) { m_failedSet.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<OrganizationAffectedEntitiesErrorItem>& GetFailedSet() const { return m_failedSet; }
+    template<typename FailedSetT = Aws::Vector<OrganizationAffectedEntitiesErrorItem>>
+    void SetFailedSet(FailedSetT&& value) { m_failedSetHasBeenSet = true; m_failedSet = std::forward<FailedSetT>(value); }
+    template<typename FailedSetT = Aws::Vector<OrganizationAffectedEntitiesErrorItem>>
+    DescribeAffectedEntitiesForOrganizationResult& WithFailedSet(FailedSetT&& value) { SetFailedSet(std::forward<FailedSetT>(value)); return *this;}
+    template<typename FailedSetT = OrganizationAffectedEntitiesErrorItem>
+    DescribeAffectedEntitiesForOrganizationResult& AddFailedSet(FailedSetT&& value) { m_failedSetHasBeenSet = true; m_failedSet.emplace_back(std::forward<FailedSetT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -73,34 +73,34 @@ namespace Model
      * include the returned token. When all results have been returned, the response
      * does not contain a pagination token value.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeAffectedEntitiesForOrganizationResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeAffectedEntitiesForOrganizationResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeAffectedEntitiesForOrganizationResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeAffectedEntitiesForOrganizationResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAffectedEntitiesForOrganizationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAffectedEntitiesForOrganizationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAffectedEntitiesForOrganizationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAffectedEntitiesForOrganizationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AffectedEntity> m_entities;
+    bool m_entitiesHasBeenSet = false;
 
     Aws::Vector<OrganizationAffectedEntitiesErrorItem> m_failedSet;
+    bool m_failedSetHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,7 +25,7 @@ namespace Model
   class ModifyDataMigrationRequest : public DatabaseMigrationServiceRequest
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API ModifyDataMigrationRequest();
+    AWS_DATABASEMIGRATIONSERVICE_API ModifyDataMigrationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,35 +42,31 @@ namespace Model
     /**
      * <p>The identifier (name or ARN) of the data migration to modify.</p>
      */
-    inline const Aws::String& GetDataMigrationIdentifier() const{ return m_dataMigrationIdentifier; }
+    inline const Aws::String& GetDataMigrationIdentifier() const { return m_dataMigrationIdentifier; }
     inline bool DataMigrationIdentifierHasBeenSet() const { return m_dataMigrationIdentifierHasBeenSet; }
-    inline void SetDataMigrationIdentifier(const Aws::String& value) { m_dataMigrationIdentifierHasBeenSet = true; m_dataMigrationIdentifier = value; }
-    inline void SetDataMigrationIdentifier(Aws::String&& value) { m_dataMigrationIdentifierHasBeenSet = true; m_dataMigrationIdentifier = std::move(value); }
-    inline void SetDataMigrationIdentifier(const char* value) { m_dataMigrationIdentifierHasBeenSet = true; m_dataMigrationIdentifier.assign(value); }
-    inline ModifyDataMigrationRequest& WithDataMigrationIdentifier(const Aws::String& value) { SetDataMigrationIdentifier(value); return *this;}
-    inline ModifyDataMigrationRequest& WithDataMigrationIdentifier(Aws::String&& value) { SetDataMigrationIdentifier(std::move(value)); return *this;}
-    inline ModifyDataMigrationRequest& WithDataMigrationIdentifier(const char* value) { SetDataMigrationIdentifier(value); return *this;}
+    template<typename DataMigrationIdentifierT = Aws::String>
+    void SetDataMigrationIdentifier(DataMigrationIdentifierT&& value) { m_dataMigrationIdentifierHasBeenSet = true; m_dataMigrationIdentifier = std::forward<DataMigrationIdentifierT>(value); }
+    template<typename DataMigrationIdentifierT = Aws::String>
+    ModifyDataMigrationRequest& WithDataMigrationIdentifier(DataMigrationIdentifierT&& value) { SetDataMigrationIdentifier(std::forward<DataMigrationIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new name for the data migration.</p>
      */
-    inline const Aws::String& GetDataMigrationName() const{ return m_dataMigrationName; }
+    inline const Aws::String& GetDataMigrationName() const { return m_dataMigrationName; }
     inline bool DataMigrationNameHasBeenSet() const { return m_dataMigrationNameHasBeenSet; }
-    inline void SetDataMigrationName(const Aws::String& value) { m_dataMigrationNameHasBeenSet = true; m_dataMigrationName = value; }
-    inline void SetDataMigrationName(Aws::String&& value) { m_dataMigrationNameHasBeenSet = true; m_dataMigrationName = std::move(value); }
-    inline void SetDataMigrationName(const char* value) { m_dataMigrationNameHasBeenSet = true; m_dataMigrationName.assign(value); }
-    inline ModifyDataMigrationRequest& WithDataMigrationName(const Aws::String& value) { SetDataMigrationName(value); return *this;}
-    inline ModifyDataMigrationRequest& WithDataMigrationName(Aws::String&& value) { SetDataMigrationName(std::move(value)); return *this;}
-    inline ModifyDataMigrationRequest& WithDataMigrationName(const char* value) { SetDataMigrationName(value); return *this;}
+    template<typename DataMigrationNameT = Aws::String>
+    void SetDataMigrationName(DataMigrationNameT&& value) { m_dataMigrationNameHasBeenSet = true; m_dataMigrationName = std::forward<DataMigrationNameT>(value); }
+    template<typename DataMigrationNameT = Aws::String>
+    ModifyDataMigrationRequest& WithDataMigrationName(DataMigrationNameT&& value) { SetDataMigrationName(std::forward<DataMigrationNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Whether to enable Cloudwatch logs for the data migration.</p>
      */
-    inline bool GetEnableCloudwatchLogs() const{ return m_enableCloudwatchLogs; }
+    inline bool GetEnableCloudwatchLogs() const { return m_enableCloudwatchLogs; }
     inline bool EnableCloudwatchLogsHasBeenSet() const { return m_enableCloudwatchLogsHasBeenSet; }
     inline void SetEnableCloudwatchLogs(bool value) { m_enableCloudwatchLogsHasBeenSet = true; m_enableCloudwatchLogs = value; }
     inline ModifyDataMigrationRequest& WithEnableCloudwatchLogs(bool value) { SetEnableCloudwatchLogs(value); return *this;}
@@ -80,26 +76,22 @@ namespace Model
     /**
      * <p>The new service access role ARN for the data migration.</p>
      */
-    inline const Aws::String& GetServiceAccessRoleArn() const{ return m_serviceAccessRoleArn; }
+    inline const Aws::String& GetServiceAccessRoleArn() const { return m_serviceAccessRoleArn; }
     inline bool ServiceAccessRoleArnHasBeenSet() const { return m_serviceAccessRoleArnHasBeenSet; }
-    inline void SetServiceAccessRoleArn(const Aws::String& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = value; }
-    inline void SetServiceAccessRoleArn(Aws::String&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::move(value); }
-    inline void SetServiceAccessRoleArn(const char* value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn.assign(value); }
-    inline ModifyDataMigrationRequest& WithServiceAccessRoleArn(const Aws::String& value) { SetServiceAccessRoleArn(value); return *this;}
-    inline ModifyDataMigrationRequest& WithServiceAccessRoleArn(Aws::String&& value) { SetServiceAccessRoleArn(std::move(value)); return *this;}
-    inline ModifyDataMigrationRequest& WithServiceAccessRoleArn(const char* value) { SetServiceAccessRoleArn(value); return *this;}
+    template<typename ServiceAccessRoleArnT = Aws::String>
+    void SetServiceAccessRoleArn(ServiceAccessRoleArnT&& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = std::forward<ServiceAccessRoleArnT>(value); }
+    template<typename ServiceAccessRoleArnT = Aws::String>
+    ModifyDataMigrationRequest& WithServiceAccessRoleArn(ServiceAccessRoleArnT&& value) { SetServiceAccessRoleArn(std::forward<ServiceAccessRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The new migration type for the data migration.</p>
      */
-    inline const MigrationTypeValue& GetDataMigrationType() const{ return m_dataMigrationType; }
+    inline MigrationTypeValue GetDataMigrationType() const { return m_dataMigrationType; }
     inline bool DataMigrationTypeHasBeenSet() const { return m_dataMigrationTypeHasBeenSet; }
-    inline void SetDataMigrationType(const MigrationTypeValue& value) { m_dataMigrationTypeHasBeenSet = true; m_dataMigrationType = value; }
-    inline void SetDataMigrationType(MigrationTypeValue&& value) { m_dataMigrationTypeHasBeenSet = true; m_dataMigrationType = std::move(value); }
-    inline ModifyDataMigrationRequest& WithDataMigrationType(const MigrationTypeValue& value) { SetDataMigrationType(value); return *this;}
-    inline ModifyDataMigrationRequest& WithDataMigrationType(MigrationTypeValue&& value) { SetDataMigrationType(std::move(value)); return *this;}
+    inline void SetDataMigrationType(MigrationTypeValue value) { m_dataMigrationTypeHasBeenSet = true; m_dataMigrationType = value; }
+    inline ModifyDataMigrationRequest& WithDataMigrationType(MigrationTypeValue value) { SetDataMigrationType(value); return *this;}
     ///@}
 
     ///@{
@@ -107,14 +99,14 @@ namespace Model
      * <p>The new information about the source data provider for the data
      * migration.</p>
      */
-    inline const Aws::Vector<SourceDataSetting>& GetSourceDataSettings() const{ return m_sourceDataSettings; }
+    inline const Aws::Vector<SourceDataSetting>& GetSourceDataSettings() const { return m_sourceDataSettings; }
     inline bool SourceDataSettingsHasBeenSet() const { return m_sourceDataSettingsHasBeenSet; }
-    inline void SetSourceDataSettings(const Aws::Vector<SourceDataSetting>& value) { m_sourceDataSettingsHasBeenSet = true; m_sourceDataSettings = value; }
-    inline void SetSourceDataSettings(Aws::Vector<SourceDataSetting>&& value) { m_sourceDataSettingsHasBeenSet = true; m_sourceDataSettings = std::move(value); }
-    inline ModifyDataMigrationRequest& WithSourceDataSettings(const Aws::Vector<SourceDataSetting>& value) { SetSourceDataSettings(value); return *this;}
-    inline ModifyDataMigrationRequest& WithSourceDataSettings(Aws::Vector<SourceDataSetting>&& value) { SetSourceDataSettings(std::move(value)); return *this;}
-    inline ModifyDataMigrationRequest& AddSourceDataSettings(const SourceDataSetting& value) { m_sourceDataSettingsHasBeenSet = true; m_sourceDataSettings.push_back(value); return *this; }
-    inline ModifyDataMigrationRequest& AddSourceDataSettings(SourceDataSetting&& value) { m_sourceDataSettingsHasBeenSet = true; m_sourceDataSettings.push_back(std::move(value)); return *this; }
+    template<typename SourceDataSettingsT = Aws::Vector<SourceDataSetting>>
+    void SetSourceDataSettings(SourceDataSettingsT&& value) { m_sourceDataSettingsHasBeenSet = true; m_sourceDataSettings = std::forward<SourceDataSettingsT>(value); }
+    template<typename SourceDataSettingsT = Aws::Vector<SourceDataSetting>>
+    ModifyDataMigrationRequest& WithSourceDataSettings(SourceDataSettingsT&& value) { SetSourceDataSettings(std::forward<SourceDataSettingsT>(value)); return *this;}
+    template<typename SourceDataSettingsT = SourceDataSetting>
+    ModifyDataMigrationRequest& AddSourceDataSettings(SourceDataSettingsT&& value) { m_sourceDataSettingsHasBeenSet = true; m_sourceDataSettings.emplace_back(std::forward<SourceDataSettingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -122,14 +114,14 @@ namespace Model
      * <p>The new information about the target data provider for the data
      * migration.</p>
      */
-    inline const Aws::Vector<TargetDataSetting>& GetTargetDataSettings() const{ return m_targetDataSettings; }
+    inline const Aws::Vector<TargetDataSetting>& GetTargetDataSettings() const { return m_targetDataSettings; }
     inline bool TargetDataSettingsHasBeenSet() const { return m_targetDataSettingsHasBeenSet; }
-    inline void SetTargetDataSettings(const Aws::Vector<TargetDataSetting>& value) { m_targetDataSettingsHasBeenSet = true; m_targetDataSettings = value; }
-    inline void SetTargetDataSettings(Aws::Vector<TargetDataSetting>&& value) { m_targetDataSettingsHasBeenSet = true; m_targetDataSettings = std::move(value); }
-    inline ModifyDataMigrationRequest& WithTargetDataSettings(const Aws::Vector<TargetDataSetting>& value) { SetTargetDataSettings(value); return *this;}
-    inline ModifyDataMigrationRequest& WithTargetDataSettings(Aws::Vector<TargetDataSetting>&& value) { SetTargetDataSettings(std::move(value)); return *this;}
-    inline ModifyDataMigrationRequest& AddTargetDataSettings(const TargetDataSetting& value) { m_targetDataSettingsHasBeenSet = true; m_targetDataSettings.push_back(value); return *this; }
-    inline ModifyDataMigrationRequest& AddTargetDataSettings(TargetDataSetting&& value) { m_targetDataSettingsHasBeenSet = true; m_targetDataSettings.push_back(std::move(value)); return *this; }
+    template<typename TargetDataSettingsT = Aws::Vector<TargetDataSetting>>
+    void SetTargetDataSettings(TargetDataSettingsT&& value) { m_targetDataSettingsHasBeenSet = true; m_targetDataSettings = std::forward<TargetDataSettingsT>(value); }
+    template<typename TargetDataSettingsT = Aws::Vector<TargetDataSetting>>
+    ModifyDataMigrationRequest& WithTargetDataSettings(TargetDataSettingsT&& value) { SetTargetDataSettings(std::forward<TargetDataSettingsT>(value)); return *this;}
+    template<typename TargetDataSettingsT = TargetDataSetting>
+    ModifyDataMigrationRequest& AddTargetDataSettings(TargetDataSettingsT&& value) { m_targetDataSettingsHasBeenSet = true; m_targetDataSettings.emplace_back(std::forward<TargetDataSettingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -137,7 +129,7 @@ namespace Model
      * <p>The number of parallel jobs that trigger parallel threads to unload the
      * tables from the source, and then load them to the target.</p>
      */
-    inline int GetNumberOfJobs() const{ return m_numberOfJobs; }
+    inline int GetNumberOfJobs() const { return m_numberOfJobs; }
     inline bool NumberOfJobsHasBeenSet() const { return m_numberOfJobsHasBeenSet; }
     inline void SetNumberOfJobs(int value) { m_numberOfJobsHasBeenSet = true; m_numberOfJobs = value; }
     inline ModifyDataMigrationRequest& WithNumberOfJobs(int value) { SetNumberOfJobs(value); return *this;}
@@ -148,14 +140,12 @@ namespace Model
      * <p>A JSON-formatted string that defines what objects to include and exclude from
      * the migration.</p>
      */
-    inline const Aws::String& GetSelectionRules() const{ return m_selectionRules; }
+    inline const Aws::String& GetSelectionRules() const { return m_selectionRules; }
     inline bool SelectionRulesHasBeenSet() const { return m_selectionRulesHasBeenSet; }
-    inline void SetSelectionRules(const Aws::String& value) { m_selectionRulesHasBeenSet = true; m_selectionRules = value; }
-    inline void SetSelectionRules(Aws::String&& value) { m_selectionRulesHasBeenSet = true; m_selectionRules = std::move(value); }
-    inline void SetSelectionRules(const char* value) { m_selectionRulesHasBeenSet = true; m_selectionRules.assign(value); }
-    inline ModifyDataMigrationRequest& WithSelectionRules(const Aws::String& value) { SetSelectionRules(value); return *this;}
-    inline ModifyDataMigrationRequest& WithSelectionRules(Aws::String&& value) { SetSelectionRules(std::move(value)); return *this;}
-    inline ModifyDataMigrationRequest& WithSelectionRules(const char* value) { SetSelectionRules(value); return *this;}
+    template<typename SelectionRulesT = Aws::String>
+    void SetSelectionRules(SelectionRulesT&& value) { m_selectionRulesHasBeenSet = true; m_selectionRules = std::forward<SelectionRulesT>(value); }
+    template<typename SelectionRulesT = Aws::String>
+    ModifyDataMigrationRequest& WithSelectionRules(SelectionRulesT&& value) { SetSelectionRules(std::forward<SelectionRulesT>(value)); return *this;}
     ///@}
   private:
 
@@ -165,13 +155,13 @@ namespace Model
     Aws::String m_dataMigrationName;
     bool m_dataMigrationNameHasBeenSet = false;
 
-    bool m_enableCloudwatchLogs;
+    bool m_enableCloudwatchLogs{false};
     bool m_enableCloudwatchLogsHasBeenSet = false;
 
     Aws::String m_serviceAccessRoleArn;
     bool m_serviceAccessRoleArnHasBeenSet = false;
 
-    MigrationTypeValue m_dataMigrationType;
+    MigrationTypeValue m_dataMigrationType{MigrationTypeValue::NOT_SET};
     bool m_dataMigrationTypeHasBeenSet = false;
 
     Aws::Vector<SourceDataSetting> m_sourceDataSettings;
@@ -180,7 +170,7 @@ namespace Model
     Aws::Vector<TargetDataSetting> m_targetDataSettings;
     bool m_targetDataSettingsHasBeenSet = false;
 
-    int m_numberOfJobs;
+    int m_numberOfJobs{0};
     bool m_numberOfJobsHasBeenSet = false;
 
     Aws::String m_selectionRules;

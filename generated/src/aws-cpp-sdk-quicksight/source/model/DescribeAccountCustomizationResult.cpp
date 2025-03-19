@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAccountCustomizationResult::DescribeAccountCustomizationResult() : 
-    m_status(0)
-{
-}
-
 DescribeAccountCustomizationResult::DescribeAccountCustomizationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DescribeAccountCustomizationResult()
 {
   *this = result;
 }
@@ -34,37 +28,34 @@ DescribeAccountCustomizationResult& DescribeAccountCustomizationResult::operator
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsAccountId"))
   {
     m_awsAccountId = jsonValue.GetString("AwsAccountId");
-
+    m_awsAccountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Namespace"))
   {
     m_namespace = jsonValue.GetString("Namespace");
-
+    m_namespaceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountCustomization"))
   {
     m_accountCustomization = jsonValue.GetObject("AccountCustomization");
-
+    m_accountCustomizationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 
   m_status = static_cast<int>(result.GetResponseCode());
-
+  m_statusHasBeenSet = true;
   return *this;
 }

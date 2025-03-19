@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeIdentityResult::DescribeIdentityResult()
-{
-}
-
 DescribeIdentityResult::DescribeIdentityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ DescribeIdentityResult& DescribeIdentityResult::operator =(const Aws::AmazonWebS
   if(jsonValue.ValueExists("IdentityId"))
   {
     m_identityId = jsonValue.GetString("IdentityId");
-
+    m_identityIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Logins"))
   {
     Aws::Utils::Array<JsonView> loginsJsonList = jsonValue.GetArray("Logins");
@@ -42,26 +37,25 @@ DescribeIdentityResult& DescribeIdentityResult::operator =(const Aws::AmazonWebS
     {
       m_logins.push_back(loginsJsonList[loginsIndex].AsString());
     }
+    m_loginsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetDouble("CreationDate");
-
+    m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetDouble("LastModifiedDate");
-
+    m_lastModifiedDateHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

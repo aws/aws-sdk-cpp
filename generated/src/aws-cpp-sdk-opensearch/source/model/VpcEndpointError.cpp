@@ -18,16 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-VpcEndpointError::VpcEndpointError() : 
-    m_vpcEndpointIdHasBeenSet(false),
-    m_errorCode(VpcEndpointErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 VpcEndpointError::VpcEndpointError(JsonView jsonValue)
-  : VpcEndpointError()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ VpcEndpointError& VpcEndpointError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("VpcEndpointId"))
   {
     m_vpcEndpointId = jsonValue.GetString("VpcEndpointId");
-
     m_vpcEndpointIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = VpcEndpointErrorCodeMapper::GetVpcEndpointErrorCodeForName(jsonValue.GetString("ErrorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

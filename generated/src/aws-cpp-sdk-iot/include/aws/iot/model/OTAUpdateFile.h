@@ -35,7 +35,7 @@ namespace Model
   class OTAUpdateFile
   {
   public:
-    AWS_IOT_API OTAUpdateFile();
+    AWS_IOT_API OTAUpdateFile() = default;
     AWS_IOT_API OTAUpdateFile(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API OTAUpdateFile& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The name of the file.</p>
      */
-    inline const Aws::String& GetFileName() const{ return m_fileName; }
+    inline const Aws::String& GetFileName() const { return m_fileName; }
     inline bool FileNameHasBeenSet() const { return m_fileNameHasBeenSet; }
-    inline void SetFileName(const Aws::String& value) { m_fileNameHasBeenSet = true; m_fileName = value; }
-    inline void SetFileName(Aws::String&& value) { m_fileNameHasBeenSet = true; m_fileName = std::move(value); }
-    inline void SetFileName(const char* value) { m_fileNameHasBeenSet = true; m_fileName.assign(value); }
-    inline OTAUpdateFile& WithFileName(const Aws::String& value) { SetFileName(value); return *this;}
-    inline OTAUpdateFile& WithFileName(Aws::String&& value) { SetFileName(std::move(value)); return *this;}
-    inline OTAUpdateFile& WithFileName(const char* value) { SetFileName(value); return *this;}
+    template<typename FileNameT = Aws::String>
+    void SetFileName(FileNameT&& value) { m_fileNameHasBeenSet = true; m_fileName = std::forward<FileNameT>(value); }
+    template<typename FileNameT = Aws::String>
+    OTAUpdateFile& WithFileName(FileNameT&& value) { SetFileName(std::forward<FileNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * <p>An integer value you can include in the job document to allow your devices to
      * identify the type of file received from the cloud.</p>
      */
-    inline int GetFileType() const{ return m_fileType; }
+    inline int GetFileType() const { return m_fileType; }
     inline bool FileTypeHasBeenSet() const { return m_fileTypeHasBeenSet; }
     inline void SetFileType(int value) { m_fileTypeHasBeenSet = true; m_fileType = value; }
     inline OTAUpdateFile& WithFileType(int value) { SetFileType(value); return *this;}
@@ -70,38 +68,36 @@ namespace Model
     /**
      * <p>The file version.</p>
      */
-    inline const Aws::String& GetFileVersion() const{ return m_fileVersion; }
+    inline const Aws::String& GetFileVersion() const { return m_fileVersion; }
     inline bool FileVersionHasBeenSet() const { return m_fileVersionHasBeenSet; }
-    inline void SetFileVersion(const Aws::String& value) { m_fileVersionHasBeenSet = true; m_fileVersion = value; }
-    inline void SetFileVersion(Aws::String&& value) { m_fileVersionHasBeenSet = true; m_fileVersion = std::move(value); }
-    inline void SetFileVersion(const char* value) { m_fileVersionHasBeenSet = true; m_fileVersion.assign(value); }
-    inline OTAUpdateFile& WithFileVersion(const Aws::String& value) { SetFileVersion(value); return *this;}
-    inline OTAUpdateFile& WithFileVersion(Aws::String&& value) { SetFileVersion(std::move(value)); return *this;}
-    inline OTAUpdateFile& WithFileVersion(const char* value) { SetFileVersion(value); return *this;}
+    template<typename FileVersionT = Aws::String>
+    void SetFileVersion(FileVersionT&& value) { m_fileVersionHasBeenSet = true; m_fileVersion = std::forward<FileVersionT>(value); }
+    template<typename FileVersionT = Aws::String>
+    OTAUpdateFile& WithFileVersion(FileVersionT&& value) { SetFileVersion(std::forward<FileVersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The location of the updated firmware.</p>
      */
-    inline const FileLocation& GetFileLocation() const{ return m_fileLocation; }
+    inline const FileLocation& GetFileLocation() const { return m_fileLocation; }
     inline bool FileLocationHasBeenSet() const { return m_fileLocationHasBeenSet; }
-    inline void SetFileLocation(const FileLocation& value) { m_fileLocationHasBeenSet = true; m_fileLocation = value; }
-    inline void SetFileLocation(FileLocation&& value) { m_fileLocationHasBeenSet = true; m_fileLocation = std::move(value); }
-    inline OTAUpdateFile& WithFileLocation(const FileLocation& value) { SetFileLocation(value); return *this;}
-    inline OTAUpdateFile& WithFileLocation(FileLocation&& value) { SetFileLocation(std::move(value)); return *this;}
+    template<typename FileLocationT = FileLocation>
+    void SetFileLocation(FileLocationT&& value) { m_fileLocationHasBeenSet = true; m_fileLocation = std::forward<FileLocationT>(value); }
+    template<typename FileLocationT = FileLocation>
+    OTAUpdateFile& WithFileLocation(FileLocationT&& value) { SetFileLocation(std::forward<FileLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The code signing method of the file.</p>
      */
-    inline const CodeSigning& GetCodeSigning() const{ return m_codeSigning; }
+    inline const CodeSigning& GetCodeSigning() const { return m_codeSigning; }
     inline bool CodeSigningHasBeenSet() const { return m_codeSigningHasBeenSet; }
-    inline void SetCodeSigning(const CodeSigning& value) { m_codeSigningHasBeenSet = true; m_codeSigning = value; }
-    inline void SetCodeSigning(CodeSigning&& value) { m_codeSigningHasBeenSet = true; m_codeSigning = std::move(value); }
-    inline OTAUpdateFile& WithCodeSigning(const CodeSigning& value) { SetCodeSigning(value); return *this;}
-    inline OTAUpdateFile& WithCodeSigning(CodeSigning&& value) { SetCodeSigning(std::move(value)); return *this;}
+    template<typename CodeSigningT = CodeSigning>
+    void SetCodeSigning(CodeSigningT&& value) { m_codeSigningHasBeenSet = true; m_codeSigning = std::forward<CodeSigningT>(value); }
+    template<typename CodeSigningT = CodeSigning>
+    OTAUpdateFile& WithCodeSigning(CodeSigningT&& value) { SetCodeSigning(std::forward<CodeSigningT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -109,26 +105,23 @@ namespace Model
      * <p>A list of name-attribute pairs. They won't be sent to devices as a part of
      * the Job document.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline OTAUpdateFile& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
-    inline OTAUpdateFile& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline OTAUpdateFile& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
-    inline OTAUpdateFile& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline OTAUpdateFile& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline OTAUpdateFile& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline OTAUpdateFile& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline OTAUpdateFile& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline OTAUpdateFile& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    OTAUpdateFile& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesKeyT = Aws::String, typename AttributesValueT = Aws::String>
+    OTAUpdateFile& AddAttributes(AttributesKeyT&& key, AttributesValueT&& value) {
+      m_attributesHasBeenSet = true; m_attributes.emplace(std::forward<AttributesKeyT>(key), std::forward<AttributesValueT>(value)); return *this;
+    }
     ///@}
   private:
 
     Aws::String m_fileName;
     bool m_fileNameHasBeenSet = false;
 
-    int m_fileType;
+    int m_fileType{0};
     bool m_fileTypeHasBeenSet = false;
 
     Aws::String m_fileVersion;

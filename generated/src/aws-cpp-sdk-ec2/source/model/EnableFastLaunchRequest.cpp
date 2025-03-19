@@ -10,18 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-EnableFastLaunchRequest::EnableFastLaunchRequest() : 
-    m_imageIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false),
-    m_snapshotConfigurationHasBeenSet(false),
-    m_launchTemplateHasBeenSet(false),
-    m_maxParallelLaunches(0),
-    m_maxParallelLaunchesHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String EnableFastLaunchRequest::SerializePayload() const
 {
   Aws::StringStream ss;

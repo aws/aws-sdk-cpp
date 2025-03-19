@@ -18,20 +18,7 @@ namespace TimestreamWrite
 namespace Model
 {
 
-BatchLoadTask::BatchLoadTask() : 
-    m_taskIdHasBeenSet(false),
-    m_taskStatus(BatchLoadStatus::NOT_SET),
-    m_taskStatusHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_resumableUntilHasBeenSet(false)
-{
-}
-
 BatchLoadTask::BatchLoadTask(JsonView jsonValue)
-  : BatchLoadTask()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ BatchLoadTask& BatchLoadTask::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TaskId"))
   {
     m_taskId = jsonValue.GetString("TaskId");
-
     m_taskIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TaskStatus"))
   {
     m_taskStatus = BatchLoadStatusMapper::GetBatchLoadStatusForName(jsonValue.GetString("TaskStatus"));
-
     m_taskStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResumableUntil"))
   {
     m_resumableUntil = jsonValue.GetDouble("ResumableUntil");
-
     m_resumableUntilHasBeenSet = true;
   }
-
   return *this;
 }
 

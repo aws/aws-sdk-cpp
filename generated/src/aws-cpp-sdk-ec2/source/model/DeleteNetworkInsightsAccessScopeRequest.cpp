@@ -10,13 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DeleteNetworkInsightsAccessScopeRequest::DeleteNetworkInsightsAccessScopeRequest() : 
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_networkInsightsAccessScopeIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteNetworkInsightsAccessScopeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

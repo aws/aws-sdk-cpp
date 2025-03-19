@@ -31,7 +31,7 @@ namespace Model
   class HistogramFieldWells
   {
   public:
-    AWS_QUICKSIGHT_API HistogramFieldWells();
+    AWS_QUICKSIGHT_API HistogramFieldWells() = default;
     AWS_QUICKSIGHT_API HistogramFieldWells(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API HistogramFieldWells& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The field well configuration of a histogram.</p>
      */
-    inline const HistogramAggregatedFieldWells& GetHistogramAggregatedFieldWells() const{ return m_histogramAggregatedFieldWells; }
+    inline const HistogramAggregatedFieldWells& GetHistogramAggregatedFieldWells() const { return m_histogramAggregatedFieldWells; }
     inline bool HistogramAggregatedFieldWellsHasBeenSet() const { return m_histogramAggregatedFieldWellsHasBeenSet; }
-    inline void SetHistogramAggregatedFieldWells(const HistogramAggregatedFieldWells& value) { m_histogramAggregatedFieldWellsHasBeenSet = true; m_histogramAggregatedFieldWells = value; }
-    inline void SetHistogramAggregatedFieldWells(HistogramAggregatedFieldWells&& value) { m_histogramAggregatedFieldWellsHasBeenSet = true; m_histogramAggregatedFieldWells = std::move(value); }
-    inline HistogramFieldWells& WithHistogramAggregatedFieldWells(const HistogramAggregatedFieldWells& value) { SetHistogramAggregatedFieldWells(value); return *this;}
-    inline HistogramFieldWells& WithHistogramAggregatedFieldWells(HistogramAggregatedFieldWells&& value) { SetHistogramAggregatedFieldWells(std::move(value)); return *this;}
+    template<typename HistogramAggregatedFieldWellsT = HistogramAggregatedFieldWells>
+    void SetHistogramAggregatedFieldWells(HistogramAggregatedFieldWellsT&& value) { m_histogramAggregatedFieldWellsHasBeenSet = true; m_histogramAggregatedFieldWells = std::forward<HistogramAggregatedFieldWellsT>(value); }
+    template<typename HistogramAggregatedFieldWellsT = HistogramAggregatedFieldWells>
+    HistogramFieldWells& WithHistogramAggregatedFieldWells(HistogramAggregatedFieldWellsT&& value) { SetHistogramAggregatedFieldWells(std::forward<HistogramAggregatedFieldWellsT>(value)); return *this;}
     ///@}
   private:
 

@@ -25,7 +25,7 @@ namespace Model
   class RegisterOnPremisesInstanceRequest : public CodeDeployRequest
   {
   public:
-    AWS_CODEDEPLOY_API RegisterOnPremisesInstanceRequest();
+    AWS_CODEDEPLOY_API RegisterOnPremisesInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The name of the on-premises instance to register.</p>
      */
-    inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
+    inline const Aws::String& GetInstanceName() const { return m_instanceName; }
     inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
-    inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
-    inline void SetInstanceName(Aws::String&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::move(value); }
-    inline void SetInstanceName(const char* value) { m_instanceNameHasBeenSet = true; m_instanceName.assign(value); }
-    inline RegisterOnPremisesInstanceRequest& WithInstanceName(const Aws::String& value) { SetInstanceName(value); return *this;}
-    inline RegisterOnPremisesInstanceRequest& WithInstanceName(Aws::String&& value) { SetInstanceName(std::move(value)); return *this;}
-    inline RegisterOnPremisesInstanceRequest& WithInstanceName(const char* value) { SetInstanceName(value); return *this;}
+    template<typename InstanceNameT = Aws::String>
+    void SetInstanceName(InstanceNameT&& value) { m_instanceNameHasBeenSet = true; m_instanceName = std::forward<InstanceNameT>(value); }
+    template<typename InstanceNameT = Aws::String>
+    RegisterOnPremisesInstanceRequest& WithInstanceName(InstanceNameT&& value) { SetInstanceName(std::forward<InstanceNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the IAM session to associate with the on-premises instance.</p>
      */
-    inline const Aws::String& GetIamSessionArn() const{ return m_iamSessionArn; }
+    inline const Aws::String& GetIamSessionArn() const { return m_iamSessionArn; }
     inline bool IamSessionArnHasBeenSet() const { return m_iamSessionArnHasBeenSet; }
-    inline void SetIamSessionArn(const Aws::String& value) { m_iamSessionArnHasBeenSet = true; m_iamSessionArn = value; }
-    inline void SetIamSessionArn(Aws::String&& value) { m_iamSessionArnHasBeenSet = true; m_iamSessionArn = std::move(value); }
-    inline void SetIamSessionArn(const char* value) { m_iamSessionArnHasBeenSet = true; m_iamSessionArn.assign(value); }
-    inline RegisterOnPremisesInstanceRequest& WithIamSessionArn(const Aws::String& value) { SetIamSessionArn(value); return *this;}
-    inline RegisterOnPremisesInstanceRequest& WithIamSessionArn(Aws::String&& value) { SetIamSessionArn(std::move(value)); return *this;}
-    inline RegisterOnPremisesInstanceRequest& WithIamSessionArn(const char* value) { SetIamSessionArn(value); return *this;}
+    template<typename IamSessionArnT = Aws::String>
+    void SetIamSessionArn(IamSessionArnT&& value) { m_iamSessionArnHasBeenSet = true; m_iamSessionArn = std::forward<IamSessionArnT>(value); }
+    template<typename IamSessionArnT = Aws::String>
+    RegisterOnPremisesInstanceRequest& WithIamSessionArn(IamSessionArnT&& value) { SetIamSessionArn(std::forward<IamSessionArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the user to associate with the on-premises instance.</p>
      */
-    inline const Aws::String& GetIamUserArn() const{ return m_iamUserArn; }
+    inline const Aws::String& GetIamUserArn() const { return m_iamUserArn; }
     inline bool IamUserArnHasBeenSet() const { return m_iamUserArnHasBeenSet; }
-    inline void SetIamUserArn(const Aws::String& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
-    inline void SetIamUserArn(Aws::String&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = std::move(value); }
-    inline void SetIamUserArn(const char* value) { m_iamUserArnHasBeenSet = true; m_iamUserArn.assign(value); }
-    inline RegisterOnPremisesInstanceRequest& WithIamUserArn(const Aws::String& value) { SetIamUserArn(value); return *this;}
-    inline RegisterOnPremisesInstanceRequest& WithIamUserArn(Aws::String&& value) { SetIamUserArn(std::move(value)); return *this;}
-    inline RegisterOnPremisesInstanceRequest& WithIamUserArn(const char* value) { SetIamUserArn(value); return *this;}
+    template<typename IamUserArnT = Aws::String>
+    void SetIamUserArn(IamUserArnT&& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = std::forward<IamUserArnT>(value); }
+    template<typename IamUserArnT = Aws::String>
+    RegisterOnPremisesInstanceRequest& WithIamUserArn(IamUserArnT&& value) { SetIamUserArn(std::forward<IamUserArnT>(value)); return *this;}
     ///@}
   private:
 

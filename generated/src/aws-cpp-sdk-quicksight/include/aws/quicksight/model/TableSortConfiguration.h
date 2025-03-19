@@ -34,7 +34,7 @@ namespace Model
   class TableSortConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API TableSortConfiguration();
+    AWS_QUICKSIGHT_API TableSortConfiguration() = default;
     AWS_QUICKSIGHT_API TableSortConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API TableSortConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,26 @@ namespace Model
     /**
      * <p>The field sort options for rows in the table.</p>
      */
-    inline const Aws::Vector<FieldSortOptions>& GetRowSort() const{ return m_rowSort; }
+    inline const Aws::Vector<FieldSortOptions>& GetRowSort() const { return m_rowSort; }
     inline bool RowSortHasBeenSet() const { return m_rowSortHasBeenSet; }
-    inline void SetRowSort(const Aws::Vector<FieldSortOptions>& value) { m_rowSortHasBeenSet = true; m_rowSort = value; }
-    inline void SetRowSort(Aws::Vector<FieldSortOptions>&& value) { m_rowSortHasBeenSet = true; m_rowSort = std::move(value); }
-    inline TableSortConfiguration& WithRowSort(const Aws::Vector<FieldSortOptions>& value) { SetRowSort(value); return *this;}
-    inline TableSortConfiguration& WithRowSort(Aws::Vector<FieldSortOptions>&& value) { SetRowSort(std::move(value)); return *this;}
-    inline TableSortConfiguration& AddRowSort(const FieldSortOptions& value) { m_rowSortHasBeenSet = true; m_rowSort.push_back(value); return *this; }
-    inline TableSortConfiguration& AddRowSort(FieldSortOptions&& value) { m_rowSortHasBeenSet = true; m_rowSort.push_back(std::move(value)); return *this; }
+    template<typename RowSortT = Aws::Vector<FieldSortOptions>>
+    void SetRowSort(RowSortT&& value) { m_rowSortHasBeenSet = true; m_rowSort = std::forward<RowSortT>(value); }
+    template<typename RowSortT = Aws::Vector<FieldSortOptions>>
+    TableSortConfiguration& WithRowSort(RowSortT&& value) { SetRowSort(std::forward<RowSortT>(value)); return *this;}
+    template<typename RowSortT = FieldSortOptions>
+    TableSortConfiguration& AddRowSort(RowSortT&& value) { m_rowSortHasBeenSet = true; m_rowSort.emplace_back(std::forward<RowSortT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The pagination configuration (page size, page number) for the table.</p>
      */
-    inline const PaginationConfiguration& GetPaginationConfiguration() const{ return m_paginationConfiguration; }
+    inline const PaginationConfiguration& GetPaginationConfiguration() const { return m_paginationConfiguration; }
     inline bool PaginationConfigurationHasBeenSet() const { return m_paginationConfigurationHasBeenSet; }
-    inline void SetPaginationConfiguration(const PaginationConfiguration& value) { m_paginationConfigurationHasBeenSet = true; m_paginationConfiguration = value; }
-    inline void SetPaginationConfiguration(PaginationConfiguration&& value) { m_paginationConfigurationHasBeenSet = true; m_paginationConfiguration = std::move(value); }
-    inline TableSortConfiguration& WithPaginationConfiguration(const PaginationConfiguration& value) { SetPaginationConfiguration(value); return *this;}
-    inline TableSortConfiguration& WithPaginationConfiguration(PaginationConfiguration&& value) { SetPaginationConfiguration(std::move(value)); return *this;}
+    template<typename PaginationConfigurationT = PaginationConfiguration>
+    void SetPaginationConfiguration(PaginationConfigurationT&& value) { m_paginationConfigurationHasBeenSet = true; m_paginationConfiguration = std::forward<PaginationConfigurationT>(value); }
+    template<typename PaginationConfigurationT = PaginationConfiguration>
+    TableSortConfiguration& WithPaginationConfiguration(PaginationConfigurationT&& value) { SetPaginationConfiguration(std::forward<PaginationConfigurationT>(value)); return *this;}
     ///@}
   private:
 

@@ -31,7 +31,7 @@ namespace Model
   class OutputChannelMapping
   {
   public:
-    AWS_MEDIACONVERT_API OutputChannelMapping();
+    AWS_MEDIACONVERT_API OutputChannelMapping() = default;
     AWS_MEDIACONVERT_API OutputChannelMapping(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API OutputChannelMapping& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
      * Use this setting to specify your remix values when they are integers, such as
      * -10, 0, or 4.
      */
-    inline const Aws::Vector<int>& GetInputChannels() const{ return m_inputChannels; }
+    inline const Aws::Vector<int>& GetInputChannels() const { return m_inputChannels; }
     inline bool InputChannelsHasBeenSet() const { return m_inputChannelsHasBeenSet; }
-    inline void SetInputChannels(const Aws::Vector<int>& value) { m_inputChannelsHasBeenSet = true; m_inputChannels = value; }
-    inline void SetInputChannels(Aws::Vector<int>&& value) { m_inputChannelsHasBeenSet = true; m_inputChannels = std::move(value); }
-    inline OutputChannelMapping& WithInputChannels(const Aws::Vector<int>& value) { SetInputChannels(value); return *this;}
-    inline OutputChannelMapping& WithInputChannels(Aws::Vector<int>&& value) { SetInputChannels(std::move(value)); return *this;}
+    template<typename InputChannelsT = Aws::Vector<int>>
+    void SetInputChannels(InputChannelsT&& value) { m_inputChannelsHasBeenSet = true; m_inputChannels = std::forward<InputChannelsT>(value); }
+    template<typename InputChannelsT = Aws::Vector<int>>
+    OutputChannelMapping& WithInputChannels(InputChannelsT&& value) { SetInputChannels(std::forward<InputChannelsT>(value)); return *this;}
     inline OutputChannelMapping& AddInputChannels(int value) { m_inputChannelsHasBeenSet = true; m_inputChannels.push_back(value); return *this; }
     ///@}
 
@@ -57,12 +57,12 @@ namespace Model
      * component, such as -10.312, 0.08, or 4.9. MediaConvert rounds your remixing
      * values to the nearest thousandth.
      */
-    inline const Aws::Vector<double>& GetInputChannelsFineTune() const{ return m_inputChannelsFineTune; }
+    inline const Aws::Vector<double>& GetInputChannelsFineTune() const { return m_inputChannelsFineTune; }
     inline bool InputChannelsFineTuneHasBeenSet() const { return m_inputChannelsFineTuneHasBeenSet; }
-    inline void SetInputChannelsFineTune(const Aws::Vector<double>& value) { m_inputChannelsFineTuneHasBeenSet = true; m_inputChannelsFineTune = value; }
-    inline void SetInputChannelsFineTune(Aws::Vector<double>&& value) { m_inputChannelsFineTuneHasBeenSet = true; m_inputChannelsFineTune = std::move(value); }
-    inline OutputChannelMapping& WithInputChannelsFineTune(const Aws::Vector<double>& value) { SetInputChannelsFineTune(value); return *this;}
-    inline OutputChannelMapping& WithInputChannelsFineTune(Aws::Vector<double>&& value) { SetInputChannelsFineTune(std::move(value)); return *this;}
+    template<typename InputChannelsFineTuneT = Aws::Vector<double>>
+    void SetInputChannelsFineTune(InputChannelsFineTuneT&& value) { m_inputChannelsFineTuneHasBeenSet = true; m_inputChannelsFineTune = std::forward<InputChannelsFineTuneT>(value); }
+    template<typename InputChannelsFineTuneT = Aws::Vector<double>>
+    OutputChannelMapping& WithInputChannelsFineTune(InputChannelsFineTuneT&& value) { SetInputChannelsFineTune(std::forward<InputChannelsFineTuneT>(value)); return *this;}
     inline OutputChannelMapping& AddInputChannelsFineTune(double value) { m_inputChannelsFineTuneHasBeenSet = true; m_inputChannelsFineTune.push_back(value); return *this; }
     ///@}
   private:

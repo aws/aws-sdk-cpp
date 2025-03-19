@@ -12,17 +12,6 @@ using namespace Aws::CloudControlApi::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateResourceRequest::UpdateResourceRequest() : 
-    m_typeNameHasBeenSet(false),
-    m_typeVersionIdHasBeenSet(false),
-    m_roleArnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true),
-    m_identifierHasBeenSet(false),
-    m_patchDocumentHasBeenSet(false)
-{
-}
-
 Aws::String UpdateResourceRequest::SerializePayload() const
 {
   JsonValue payload;

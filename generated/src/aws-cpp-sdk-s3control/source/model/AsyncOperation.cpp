@@ -20,19 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-AsyncOperation::AsyncOperation() : 
-    m_creationTimeHasBeenSet(false),
-    m_operation(AsyncOperationName::NOT_SET),
-    m_operationHasBeenSet(false),
-    m_requestTokenARNHasBeenSet(false),
-    m_requestParametersHasBeenSet(false),
-    m_requestStatusHasBeenSet(false),
-    m_responseDetailsHasBeenSet(false)
-{
-}
-
 AsyncOperation::AsyncOperation(const XmlNode& xmlNode)
-  : AsyncOperation()
 {
   *this = xmlNode;
 }
@@ -52,7 +40,7 @@ AsyncOperation& AsyncOperation::operator =(const XmlNode& xmlNode)
     XmlNode operationNode = resultNode.FirstChild("Operation");
     if(!operationNode.IsNull())
     {
-      m_operation = AsyncOperationNameMapper::GetAsyncOperationNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(operationNode.GetText()).c_str()).c_str());
+      m_operation = AsyncOperationNameMapper::GetAsyncOperationNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(operationNode.GetText()).c_str()));
       m_operationHasBeenSet = true;
     }
     XmlNode requestTokenARNNode = resultNode.FirstChild("RequestTokenARN");

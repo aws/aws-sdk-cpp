@@ -32,7 +32,7 @@ namespace Model
   class CopyFromSource
   {
   public:
-    AWS_QBUSINESS_API CopyFromSource();
+    AWS_QBUSINESS_API CopyFromSource() = default;
     AWS_QBUSINESS_API CopyFromSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API CopyFromSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
     /**
      * <p>A reference to an attachment in an existing conversation.</p>
      */
-    inline const ConversationSource& GetConversation() const{ return m_conversation; }
+    inline const ConversationSource& GetConversation() const { return m_conversation; }
     inline bool ConversationHasBeenSet() const { return m_conversationHasBeenSet; }
-    inline void SetConversation(const ConversationSource& value) { m_conversationHasBeenSet = true; m_conversation = value; }
-    inline void SetConversation(ConversationSource&& value) { m_conversationHasBeenSet = true; m_conversation = std::move(value); }
-    inline CopyFromSource& WithConversation(const ConversationSource& value) { SetConversation(value); return *this;}
-    inline CopyFromSource& WithConversation(ConversationSource&& value) { SetConversation(std::move(value)); return *this;}
+    template<typename ConversationT = ConversationSource>
+    void SetConversation(ConversationT&& value) { m_conversationHasBeenSet = true; m_conversation = std::forward<ConversationT>(value); }
+    template<typename ConversationT = ConversationSource>
+    CopyFromSource& WithConversation(ConversationT&& value) { SetConversation(std::forward<ConversationT>(value)); return *this;}
     ///@}
   private:
 

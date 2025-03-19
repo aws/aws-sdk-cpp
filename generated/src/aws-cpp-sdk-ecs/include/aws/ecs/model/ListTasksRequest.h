@@ -23,7 +23,7 @@ namespace Model
   class ListTasksRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API ListTasksRequest();
+    AWS_ECS_API ListTasksRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
      * filtering the <code>ListTasks</code> results. If you do not specify a cluster,
      * the default cluster is assumed.</p>
      */
-    inline const Aws::String& GetCluster() const{ return m_cluster; }
+    inline const Aws::String& GetCluster() const { return m_cluster; }
     inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
-    inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
-    inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
-    inline ListTasksRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
-    inline ListTasksRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
-    inline ListTasksRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+    template<typename ClusterT = Aws::String>
+    void SetCluster(ClusterT&& value) { m_clusterHasBeenSet = true; m_cluster = std::forward<ClusterT>(value); }
+    template<typename ClusterT = Aws::String>
+    ListTasksRequest& WithCluster(ClusterT&& value) { SetCluster(std::forward<ClusterT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * <code>containerInstance</code> limits the results to tasks that belong to that
      * container instance.</p>
      */
-    inline const Aws::String& GetContainerInstance() const{ return m_containerInstance; }
+    inline const Aws::String& GetContainerInstance() const { return m_containerInstance; }
     inline bool ContainerInstanceHasBeenSet() const { return m_containerInstanceHasBeenSet; }
-    inline void SetContainerInstance(const Aws::String& value) { m_containerInstanceHasBeenSet = true; m_containerInstance = value; }
-    inline void SetContainerInstance(Aws::String&& value) { m_containerInstanceHasBeenSet = true; m_containerInstance = std::move(value); }
-    inline void SetContainerInstance(const char* value) { m_containerInstanceHasBeenSet = true; m_containerInstance.assign(value); }
-    inline ListTasksRequest& WithContainerInstance(const Aws::String& value) { SetContainerInstance(value); return *this;}
-    inline ListTasksRequest& WithContainerInstance(Aws::String&& value) { SetContainerInstance(std::move(value)); return *this;}
-    inline ListTasksRequest& WithContainerInstance(const char* value) { SetContainerInstance(value); return *this;}
+    template<typename ContainerInstanceT = Aws::String>
+    void SetContainerInstance(ContainerInstanceT&& value) { m_containerInstanceHasBeenSet = true; m_containerInstance = std::forward<ContainerInstanceT>(value); }
+    template<typename ContainerInstanceT = Aws::String>
+    ListTasksRequest& WithContainerInstance(ContainerInstanceT&& value) { SetContainerInstance(std::forward<ContainerInstanceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,14 +71,12 @@ namespace Model
      * <code>ListTasks</code> results. Specifying a <code>family</code> limits the
      * results to tasks that belong to that family.</p>
      */
-    inline const Aws::String& GetFamily() const{ return m_family; }
+    inline const Aws::String& GetFamily() const { return m_family; }
     inline bool FamilyHasBeenSet() const { return m_familyHasBeenSet; }
-    inline void SetFamily(const Aws::String& value) { m_familyHasBeenSet = true; m_family = value; }
-    inline void SetFamily(Aws::String&& value) { m_familyHasBeenSet = true; m_family = std::move(value); }
-    inline void SetFamily(const char* value) { m_familyHasBeenSet = true; m_family.assign(value); }
-    inline ListTasksRequest& WithFamily(const Aws::String& value) { SetFamily(value); return *this;}
-    inline ListTasksRequest& WithFamily(Aws::String&& value) { SetFamily(std::move(value)); return *this;}
-    inline ListTasksRequest& WithFamily(const char* value) { SetFamily(value); return *this;}
+    template<typename FamilyT = Aws::String>
+    void SetFamily(FamilyT&& value) { m_familyHasBeenSet = true; m_family = std::forward<FamilyT>(value); }
+    template<typename FamilyT = Aws::String>
+    ListTasksRequest& WithFamily(FamilyT&& value) { SetFamily(std::forward<FamilyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +89,12 @@ namespace Model
      * to retrieve the next items in a list and not for other programmatic
      * purposes.</p> 
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListTasksRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTasksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTasksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTasksRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,7 +108,7 @@ namespace Model
      * this parameter isn't used, then <code>ListTasks</code> returns up to 100 results
      * and a <code>nextToken</code> value if applicable.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListTasksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -129,14 +121,12 @@ namespace Model
      * with that value.</p> <p>When you specify <code>startedBy</code> as the filter,
      * it must be the only filter that you use.</p>
      */
-    inline const Aws::String& GetStartedBy() const{ return m_startedBy; }
+    inline const Aws::String& GetStartedBy() const { return m_startedBy; }
     inline bool StartedByHasBeenSet() const { return m_startedByHasBeenSet; }
-    inline void SetStartedBy(const Aws::String& value) { m_startedByHasBeenSet = true; m_startedBy = value; }
-    inline void SetStartedBy(Aws::String&& value) { m_startedByHasBeenSet = true; m_startedBy = std::move(value); }
-    inline void SetStartedBy(const char* value) { m_startedByHasBeenSet = true; m_startedBy.assign(value); }
-    inline ListTasksRequest& WithStartedBy(const Aws::String& value) { SetStartedBy(value); return *this;}
-    inline ListTasksRequest& WithStartedBy(Aws::String&& value) { SetStartedBy(std::move(value)); return *this;}
-    inline ListTasksRequest& WithStartedBy(const char* value) { SetStartedBy(value); return *this;}
+    template<typename StartedByT = Aws::String>
+    void SetStartedBy(StartedByT&& value) { m_startedByHasBeenSet = true; m_startedBy = std::forward<StartedByT>(value); }
+    template<typename StartedByT = Aws::String>
+    ListTasksRequest& WithStartedBy(StartedByT&& value) { SetStartedBy(std::forward<StartedByT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,14 +135,12 @@ namespace Model
      * results. Specifying a <code>serviceName</code> limits the results to tasks that
      * belong to that service.</p>
      */
-    inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+    inline const Aws::String& GetServiceName() const { return m_serviceName; }
     inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
-    inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
-    inline void SetServiceName(Aws::String&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::move(value); }
-    inline void SetServiceName(const char* value) { m_serviceNameHasBeenSet = true; m_serviceName.assign(value); }
-    inline ListTasksRequest& WithServiceName(const Aws::String& value) { SetServiceName(value); return *this;}
-    inline ListTasksRequest& WithServiceName(Aws::String&& value) { SetServiceName(std::move(value)); return *this;}
-    inline ListTasksRequest& WithServiceName(const char* value) { SetServiceName(value); return *this;}
+    template<typename ServiceNameT = Aws::String>
+    void SetServiceName(ServiceNameT&& value) { m_serviceNameHasBeenSet = true; m_serviceName = std::forward<ServiceNameT>(value); }
+    template<typename ServiceNameT = Aws::String>
+    ListTasksRequest& WithServiceName(ServiceNameT&& value) { SetServiceName(std::forward<ServiceNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -169,24 +157,20 @@ namespace Model
      * a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p>
      * 
      */
-    inline const DesiredStatus& GetDesiredStatus() const{ return m_desiredStatus; }
+    inline DesiredStatus GetDesiredStatus() const { return m_desiredStatus; }
     inline bool DesiredStatusHasBeenSet() const { return m_desiredStatusHasBeenSet; }
-    inline void SetDesiredStatus(const DesiredStatus& value) { m_desiredStatusHasBeenSet = true; m_desiredStatus = value; }
-    inline void SetDesiredStatus(DesiredStatus&& value) { m_desiredStatusHasBeenSet = true; m_desiredStatus = std::move(value); }
-    inline ListTasksRequest& WithDesiredStatus(const DesiredStatus& value) { SetDesiredStatus(value); return *this;}
-    inline ListTasksRequest& WithDesiredStatus(DesiredStatus&& value) { SetDesiredStatus(std::move(value)); return *this;}
+    inline void SetDesiredStatus(DesiredStatus value) { m_desiredStatusHasBeenSet = true; m_desiredStatus = value; }
+    inline ListTasksRequest& WithDesiredStatus(DesiredStatus value) { SetDesiredStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The launch type to use when filtering the <code>ListTasks</code> results.</p>
      */
-    inline const LaunchType& GetLaunchType() const{ return m_launchType; }
+    inline LaunchType GetLaunchType() const { return m_launchType; }
     inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
-    inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
-    inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
-    inline ListTasksRequest& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
-    inline ListTasksRequest& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
+    inline void SetLaunchType(LaunchType value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
+    inline ListTasksRequest& WithLaunchType(LaunchType value) { SetLaunchType(value); return *this;}
     ///@}
   private:
 
@@ -202,7 +186,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_startedBy;
@@ -211,10 +195,10 @@ namespace Model
     Aws::String m_serviceName;
     bool m_serviceNameHasBeenSet = false;
 
-    DesiredStatus m_desiredStatus;
+    DesiredStatus m_desiredStatus{DesiredStatus::NOT_SET};
     bool m_desiredStatusHasBeenSet = false;
 
-    LaunchType m_launchType;
+    LaunchType m_launchType{LaunchType::NOT_SET};
     bool m_launchTypeHasBeenSet = false;
   };
 

@@ -18,24 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-VideoDescription::VideoDescription() : 
-    m_codecSettingsHasBeenSet(false),
-    m_height(0),
-    m_heightHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_respondToAfd(VideoDescriptionRespondToAfd::NOT_SET),
-    m_respondToAfdHasBeenSet(false),
-    m_scalingBehavior(VideoDescriptionScalingBehavior::NOT_SET),
-    m_scalingBehaviorHasBeenSet(false),
-    m_sharpness(0),
-    m_sharpnessHasBeenSet(false),
-    m_width(0),
-    m_widthHasBeenSet(false)
-{
-}
-
 VideoDescription::VideoDescription(JsonView jsonValue)
-  : VideoDescription()
 {
   *this = jsonValue;
 }
@@ -45,52 +28,38 @@ VideoDescription& VideoDescription::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("codecSettings"))
   {
     m_codecSettings = jsonValue.GetObject("codecSettings");
-
     m_codecSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("height"))
   {
     m_height = jsonValue.GetInteger("height");
-
     m_heightHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("respondToAfd"))
   {
     m_respondToAfd = VideoDescriptionRespondToAfdMapper::GetVideoDescriptionRespondToAfdForName(jsonValue.GetString("respondToAfd"));
-
     m_respondToAfdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scalingBehavior"))
   {
     m_scalingBehavior = VideoDescriptionScalingBehaviorMapper::GetVideoDescriptionScalingBehaviorForName(jsonValue.GetString("scalingBehavior"));
-
     m_scalingBehaviorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sharpness"))
   {
     m_sharpness = jsonValue.GetInteger("sharpness");
-
     m_sharpnessHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("width"))
   {
     m_width = jsonValue.GetInteger("width");
-
     m_widthHasBeenSet = true;
   }
-
   return *this;
 }
 

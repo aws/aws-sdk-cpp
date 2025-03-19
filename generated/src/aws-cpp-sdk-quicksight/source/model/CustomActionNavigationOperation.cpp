@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-CustomActionNavigationOperation::CustomActionNavigationOperation() : 
-    m_localNavigationConfigurationHasBeenSet(false)
-{
-}
-
 CustomActionNavigationOperation::CustomActionNavigationOperation(JsonView jsonValue)
-  : CustomActionNavigationOperation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CustomActionNavigationOperation& CustomActionNavigationOperation::operator =(Jso
   if(jsonValue.ValueExists("LocalNavigationConfiguration"))
   {
     m_localNavigationConfiguration = jsonValue.GetObject("LocalNavigationConfiguration");
-
     m_localNavigationConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

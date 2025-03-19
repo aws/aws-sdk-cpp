@@ -31,7 +31,7 @@ namespace Model
   class RangeConstant
   {
   public:
-    AWS_QUICKSIGHT_API RangeConstant();
+    AWS_QUICKSIGHT_API RangeConstant() = default;
     AWS_QUICKSIGHT_API RangeConstant(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API RangeConstant& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The minimum value for a range constant.</p>
      */
-    inline const Aws::String& GetMinimum() const{ return m_minimum; }
+    inline const Aws::String& GetMinimum() const { return m_minimum; }
     inline bool MinimumHasBeenSet() const { return m_minimumHasBeenSet; }
-    inline void SetMinimum(const Aws::String& value) { m_minimumHasBeenSet = true; m_minimum = value; }
-    inline void SetMinimum(Aws::String&& value) { m_minimumHasBeenSet = true; m_minimum = std::move(value); }
-    inline void SetMinimum(const char* value) { m_minimumHasBeenSet = true; m_minimum.assign(value); }
-    inline RangeConstant& WithMinimum(const Aws::String& value) { SetMinimum(value); return *this;}
-    inline RangeConstant& WithMinimum(Aws::String&& value) { SetMinimum(std::move(value)); return *this;}
-    inline RangeConstant& WithMinimum(const char* value) { SetMinimum(value); return *this;}
+    template<typename MinimumT = Aws::String>
+    void SetMinimum(MinimumT&& value) { m_minimumHasBeenSet = true; m_minimum = std::forward<MinimumT>(value); }
+    template<typename MinimumT = Aws::String>
+    RangeConstant& WithMinimum(MinimumT&& value) { SetMinimum(std::forward<MinimumT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum value for a range constant.</p>
      */
-    inline const Aws::String& GetMaximum() const{ return m_maximum; }
+    inline const Aws::String& GetMaximum() const { return m_maximum; }
     inline bool MaximumHasBeenSet() const { return m_maximumHasBeenSet; }
-    inline void SetMaximum(const Aws::String& value) { m_maximumHasBeenSet = true; m_maximum = value; }
-    inline void SetMaximum(Aws::String&& value) { m_maximumHasBeenSet = true; m_maximum = std::move(value); }
-    inline void SetMaximum(const char* value) { m_maximumHasBeenSet = true; m_maximum.assign(value); }
-    inline RangeConstant& WithMaximum(const Aws::String& value) { SetMaximum(value); return *this;}
-    inline RangeConstant& WithMaximum(Aws::String&& value) { SetMaximum(std::move(value)); return *this;}
-    inline RangeConstant& WithMaximum(const char* value) { SetMaximum(value); return *this;}
+    template<typename MaximumT = Aws::String>
+    void SetMaximum(MaximumT&& value) { m_maximumHasBeenSet = true; m_maximum = std::forward<MaximumT>(value); }
+    template<typename MaximumT = Aws::String>
+    RangeConstant& WithMaximum(MaximumT&& value) { SetMaximum(std::forward<MaximumT>(value)); return *this;}
     ///@}
   private:
 

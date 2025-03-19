@@ -41,7 +41,7 @@ namespace Model
   class ElasticsearchDestinationConfiguration
   {
   public:
-    AWS_FIREHOSE_API ElasticsearchDestinationConfiguration();
+    AWS_FIREHOSE_API ElasticsearchDestinationConfiguration() = default;
     AWS_FIREHOSE_API ElasticsearchDestinationConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API ElasticsearchDestinationConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_FIREHOSE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,14 +57,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      */
-    inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+    inline const Aws::String& GetRoleARN() const { return m_roleARN; }
     inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
-    inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
-    inline void SetRoleARN(Aws::String&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::move(value); }
-    inline void SetRoleARN(const char* value) { m_roleARNHasBeenSet = true; m_roleARN.assign(value); }
-    inline ElasticsearchDestinationConfiguration& WithRoleARN(const Aws::String& value) { SetRoleARN(value); return *this;}
-    inline ElasticsearchDestinationConfiguration& WithRoleARN(Aws::String&& value) { SetRoleARN(std::move(value)); return *this;}
-    inline ElasticsearchDestinationConfiguration& WithRoleARN(const char* value) { SetRoleARN(value); return *this;}
+    template<typename RoleARNT = Aws::String>
+    void SetRoleARN(RoleARNT&& value) { m_roleARNHasBeenSet = true; m_roleARN = std::forward<RoleARNT>(value); }
+    template<typename RoleARNT = Aws::String>
+    ElasticsearchDestinationConfiguration& WithRoleARN(RoleARNT&& value) { SetRoleARN(std::forward<RoleARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +75,12 @@ namespace Model
      * Resource Names (ARNs) and Amazon Web Services Service Namespaces</a>.</p>
      * <p>Specify either <code>ClusterEndpoint</code> or <code>DomainARN</code>.</p>
      */
-    inline const Aws::String& GetDomainARN() const{ return m_domainARN; }
+    inline const Aws::String& GetDomainARN() const { return m_domainARN; }
     inline bool DomainARNHasBeenSet() const { return m_domainARNHasBeenSet; }
-    inline void SetDomainARN(const Aws::String& value) { m_domainARNHasBeenSet = true; m_domainARN = value; }
-    inline void SetDomainARN(Aws::String&& value) { m_domainARNHasBeenSet = true; m_domainARN = std::move(value); }
-    inline void SetDomainARN(const char* value) { m_domainARNHasBeenSet = true; m_domainARN.assign(value); }
-    inline ElasticsearchDestinationConfiguration& WithDomainARN(const Aws::String& value) { SetDomainARN(value); return *this;}
-    inline ElasticsearchDestinationConfiguration& WithDomainARN(Aws::String&& value) { SetDomainARN(std::move(value)); return *this;}
-    inline ElasticsearchDestinationConfiguration& WithDomainARN(const char* value) { SetDomainARN(value); return *this;}
+    template<typename DomainARNT = Aws::String>
+    void SetDomainARN(DomainARNT&& value) { m_domainARNHasBeenSet = true; m_domainARN = std::forward<DomainARNT>(value); }
+    template<typename DomainARNT = Aws::String>
+    ElasticsearchDestinationConfiguration& WithDomainARN(DomainARNT&& value) { SetDomainARN(std::forward<DomainARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -92,28 +88,24 @@ namespace Model
      * <p>The endpoint to use when communicating with the cluster. Specify either this
      * <code>ClusterEndpoint</code> or the <code>DomainARN</code> field.</p>
      */
-    inline const Aws::String& GetClusterEndpoint() const{ return m_clusterEndpoint; }
+    inline const Aws::String& GetClusterEndpoint() const { return m_clusterEndpoint; }
     inline bool ClusterEndpointHasBeenSet() const { return m_clusterEndpointHasBeenSet; }
-    inline void SetClusterEndpoint(const Aws::String& value) { m_clusterEndpointHasBeenSet = true; m_clusterEndpoint = value; }
-    inline void SetClusterEndpoint(Aws::String&& value) { m_clusterEndpointHasBeenSet = true; m_clusterEndpoint = std::move(value); }
-    inline void SetClusterEndpoint(const char* value) { m_clusterEndpointHasBeenSet = true; m_clusterEndpoint.assign(value); }
-    inline ElasticsearchDestinationConfiguration& WithClusterEndpoint(const Aws::String& value) { SetClusterEndpoint(value); return *this;}
-    inline ElasticsearchDestinationConfiguration& WithClusterEndpoint(Aws::String&& value) { SetClusterEndpoint(std::move(value)); return *this;}
-    inline ElasticsearchDestinationConfiguration& WithClusterEndpoint(const char* value) { SetClusterEndpoint(value); return *this;}
+    template<typename ClusterEndpointT = Aws::String>
+    void SetClusterEndpoint(ClusterEndpointT&& value) { m_clusterEndpointHasBeenSet = true; m_clusterEndpoint = std::forward<ClusterEndpointT>(value); }
+    template<typename ClusterEndpointT = Aws::String>
+    ElasticsearchDestinationConfiguration& WithClusterEndpoint(ClusterEndpointT&& value) { SetClusterEndpoint(std::forward<ClusterEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Elasticsearch index name.</p>
      */
-    inline const Aws::String& GetIndexName() const{ return m_indexName; }
+    inline const Aws::String& GetIndexName() const { return m_indexName; }
     inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
-    inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
-    inline void SetIndexName(Aws::String&& value) { m_indexNameHasBeenSet = true; m_indexName = std::move(value); }
-    inline void SetIndexName(const char* value) { m_indexNameHasBeenSet = true; m_indexName.assign(value); }
-    inline ElasticsearchDestinationConfiguration& WithIndexName(const Aws::String& value) { SetIndexName(value); return *this;}
-    inline ElasticsearchDestinationConfiguration& WithIndexName(Aws::String&& value) { SetIndexName(std::move(value)); return *this;}
-    inline ElasticsearchDestinationConfiguration& WithIndexName(const char* value) { SetIndexName(value); return *this;}
+    template<typename IndexNameT = Aws::String>
+    void SetIndexName(IndexNameT&& value) { m_indexNameHasBeenSet = true; m_indexName = std::forward<IndexNameT>(value); }
+    template<typename IndexNameT = Aws::String>
+    ElasticsearchDestinationConfiguration& WithIndexName(IndexNameT&& value) { SetIndexName(std::forward<IndexNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -123,14 +115,12 @@ namespace Model
      * already has another type, Firehose returns an error during run time.</p> <p>For
      * Elasticsearch 7.x, don't specify a <code>TypeName</code>.</p>
      */
-    inline const Aws::String& GetTypeName() const{ return m_typeName; }
+    inline const Aws::String& GetTypeName() const { return m_typeName; }
     inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
-    inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
-    inline void SetTypeName(Aws::String&& value) { m_typeNameHasBeenSet = true; m_typeName = std::move(value); }
-    inline void SetTypeName(const char* value) { m_typeNameHasBeenSet = true; m_typeName.assign(value); }
-    inline ElasticsearchDestinationConfiguration& WithTypeName(const Aws::String& value) { SetTypeName(value); return *this;}
-    inline ElasticsearchDestinationConfiguration& WithTypeName(Aws::String&& value) { SetTypeName(std::move(value)); return *this;}
-    inline ElasticsearchDestinationConfiguration& WithTypeName(const char* value) { SetTypeName(value); return *this;}
+    template<typename TypeNameT = Aws::String>
+    void SetTypeName(TypeNameT&& value) { m_typeNameHasBeenSet = true; m_typeName = std::forward<TypeNameT>(value); }
+    template<typename TypeNameT = Aws::String>
+    ElasticsearchDestinationConfiguration& WithTypeName(TypeNameT&& value) { SetTypeName(std::forward<TypeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -142,12 +132,10 @@ namespace Model
      * Rotation for the Amazon OpenSearch Service Destination</a>. The default value
      * is <code>OneDay</code>.</p>
      */
-    inline const ElasticsearchIndexRotationPeriod& GetIndexRotationPeriod() const{ return m_indexRotationPeriod; }
+    inline ElasticsearchIndexRotationPeriod GetIndexRotationPeriod() const { return m_indexRotationPeriod; }
     inline bool IndexRotationPeriodHasBeenSet() const { return m_indexRotationPeriodHasBeenSet; }
-    inline void SetIndexRotationPeriod(const ElasticsearchIndexRotationPeriod& value) { m_indexRotationPeriodHasBeenSet = true; m_indexRotationPeriod = value; }
-    inline void SetIndexRotationPeriod(ElasticsearchIndexRotationPeriod&& value) { m_indexRotationPeriodHasBeenSet = true; m_indexRotationPeriod = std::move(value); }
-    inline ElasticsearchDestinationConfiguration& WithIndexRotationPeriod(const ElasticsearchIndexRotationPeriod& value) { SetIndexRotationPeriod(value); return *this;}
-    inline ElasticsearchDestinationConfiguration& WithIndexRotationPeriod(ElasticsearchIndexRotationPeriod&& value) { SetIndexRotationPeriod(std::move(value)); return *this;}
+    inline void SetIndexRotationPeriod(ElasticsearchIndexRotationPeriod value) { m_indexRotationPeriodHasBeenSet = true; m_indexRotationPeriod = value; }
+    inline ElasticsearchDestinationConfiguration& WithIndexRotationPeriod(ElasticsearchIndexRotationPeriod value) { SetIndexRotationPeriod(value); return *this;}
     ///@}
 
     ///@{
@@ -155,12 +143,12 @@ namespace Model
      * <p>The buffering options. If no value is specified, the default values for
      * <code>ElasticsearchBufferingHints</code> are used.</p>
      */
-    inline const ElasticsearchBufferingHints& GetBufferingHints() const{ return m_bufferingHints; }
+    inline const ElasticsearchBufferingHints& GetBufferingHints() const { return m_bufferingHints; }
     inline bool BufferingHintsHasBeenSet() const { return m_bufferingHintsHasBeenSet; }
-    inline void SetBufferingHints(const ElasticsearchBufferingHints& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = value; }
-    inline void SetBufferingHints(ElasticsearchBufferingHints&& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = std::move(value); }
-    inline ElasticsearchDestinationConfiguration& WithBufferingHints(const ElasticsearchBufferingHints& value) { SetBufferingHints(value); return *this;}
-    inline ElasticsearchDestinationConfiguration& WithBufferingHints(ElasticsearchBufferingHints&& value) { SetBufferingHints(std::move(value)); return *this;}
+    template<typename BufferingHintsT = ElasticsearchBufferingHints>
+    void SetBufferingHints(BufferingHintsT&& value) { m_bufferingHintsHasBeenSet = true; m_bufferingHints = std::forward<BufferingHintsT>(value); }
+    template<typename BufferingHintsT = ElasticsearchBufferingHints>
+    ElasticsearchDestinationConfiguration& WithBufferingHints(BufferingHintsT&& value) { SetBufferingHints(std::forward<BufferingHintsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -168,12 +156,12 @@ namespace Model
      * <p>The retry behavior in case Firehose is unable to deliver documents to Amazon
      * OpenSearch Service. The default value is 300 (5 minutes).</p>
      */
-    inline const ElasticsearchRetryOptions& GetRetryOptions() const{ return m_retryOptions; }
+    inline const ElasticsearchRetryOptions& GetRetryOptions() const { return m_retryOptions; }
     inline bool RetryOptionsHasBeenSet() const { return m_retryOptionsHasBeenSet; }
-    inline void SetRetryOptions(const ElasticsearchRetryOptions& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = value; }
-    inline void SetRetryOptions(ElasticsearchRetryOptions&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = std::move(value); }
-    inline ElasticsearchDestinationConfiguration& WithRetryOptions(const ElasticsearchRetryOptions& value) { SetRetryOptions(value); return *this;}
-    inline ElasticsearchDestinationConfiguration& WithRetryOptions(ElasticsearchRetryOptions&& value) { SetRetryOptions(std::move(value)); return *this;}
+    template<typename RetryOptionsT = ElasticsearchRetryOptions>
+    void SetRetryOptions(RetryOptionsT&& value) { m_retryOptionsHasBeenSet = true; m_retryOptions = std::forward<RetryOptionsT>(value); }
+    template<typename RetryOptionsT = ElasticsearchRetryOptions>
+    ElasticsearchDestinationConfiguration& WithRetryOptions(RetryOptionsT&& value) { SetRetryOptions(std::forward<RetryOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -191,60 +179,58 @@ namespace Model
      * <code>FailedDocumentsOnly</code>.</p> <p>You can't change this backup mode after
      * you create the Firehose stream. </p>
      */
-    inline const ElasticsearchS3BackupMode& GetS3BackupMode() const{ return m_s3BackupMode; }
+    inline ElasticsearchS3BackupMode GetS3BackupMode() const { return m_s3BackupMode; }
     inline bool S3BackupModeHasBeenSet() const { return m_s3BackupModeHasBeenSet; }
-    inline void SetS3BackupMode(const ElasticsearchS3BackupMode& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = value; }
-    inline void SetS3BackupMode(ElasticsearchS3BackupMode&& value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = std::move(value); }
-    inline ElasticsearchDestinationConfiguration& WithS3BackupMode(const ElasticsearchS3BackupMode& value) { SetS3BackupMode(value); return *this;}
-    inline ElasticsearchDestinationConfiguration& WithS3BackupMode(ElasticsearchS3BackupMode&& value) { SetS3BackupMode(std::move(value)); return *this;}
+    inline void SetS3BackupMode(ElasticsearchS3BackupMode value) { m_s3BackupModeHasBeenSet = true; m_s3BackupMode = value; }
+    inline ElasticsearchDestinationConfiguration& WithS3BackupMode(ElasticsearchS3BackupMode value) { SetS3BackupMode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The configuration for the backup Amazon S3 location.</p>
      */
-    inline const S3DestinationConfiguration& GetS3Configuration() const{ return m_s3Configuration; }
+    inline const S3DestinationConfiguration& GetS3Configuration() const { return m_s3Configuration; }
     inline bool S3ConfigurationHasBeenSet() const { return m_s3ConfigurationHasBeenSet; }
-    inline void SetS3Configuration(const S3DestinationConfiguration& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = value; }
-    inline void SetS3Configuration(S3DestinationConfiguration&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::move(value); }
-    inline ElasticsearchDestinationConfiguration& WithS3Configuration(const S3DestinationConfiguration& value) { SetS3Configuration(value); return *this;}
-    inline ElasticsearchDestinationConfiguration& WithS3Configuration(S3DestinationConfiguration&& value) { SetS3Configuration(std::move(value)); return *this;}
+    template<typename S3ConfigurationT = S3DestinationConfiguration>
+    void SetS3Configuration(S3ConfigurationT&& value) { m_s3ConfigurationHasBeenSet = true; m_s3Configuration = std::forward<S3ConfigurationT>(value); }
+    template<typename S3ConfigurationT = S3DestinationConfiguration>
+    ElasticsearchDestinationConfiguration& WithS3Configuration(S3ConfigurationT&& value) { SetS3Configuration(std::forward<S3ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The data processing configuration.</p>
      */
-    inline const ProcessingConfiguration& GetProcessingConfiguration() const{ return m_processingConfiguration; }
+    inline const ProcessingConfiguration& GetProcessingConfiguration() const { return m_processingConfiguration; }
     inline bool ProcessingConfigurationHasBeenSet() const { return m_processingConfigurationHasBeenSet; }
-    inline void SetProcessingConfiguration(const ProcessingConfiguration& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = value; }
-    inline void SetProcessingConfiguration(ProcessingConfiguration&& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = std::move(value); }
-    inline ElasticsearchDestinationConfiguration& WithProcessingConfiguration(const ProcessingConfiguration& value) { SetProcessingConfiguration(value); return *this;}
-    inline ElasticsearchDestinationConfiguration& WithProcessingConfiguration(ProcessingConfiguration&& value) { SetProcessingConfiguration(std::move(value)); return *this;}
+    template<typename ProcessingConfigurationT = ProcessingConfiguration>
+    void SetProcessingConfiguration(ProcessingConfigurationT&& value) { m_processingConfigurationHasBeenSet = true; m_processingConfiguration = std::forward<ProcessingConfigurationT>(value); }
+    template<typename ProcessingConfigurationT = ProcessingConfiguration>
+    ElasticsearchDestinationConfiguration& WithProcessingConfiguration(ProcessingConfigurationT&& value) { SetProcessingConfiguration(std::forward<ProcessingConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon CloudWatch logging options for your Firehose stream.</p>
      */
-    inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const{ return m_cloudWatchLoggingOptions; }
+    inline const CloudWatchLoggingOptions& GetCloudWatchLoggingOptions() const { return m_cloudWatchLoggingOptions; }
     inline bool CloudWatchLoggingOptionsHasBeenSet() const { return m_cloudWatchLoggingOptionsHasBeenSet; }
-    inline void SetCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
-    inline void SetCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = std::move(value); }
-    inline ElasticsearchDestinationConfiguration& WithCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { SetCloudWatchLoggingOptions(value); return *this;}
-    inline ElasticsearchDestinationConfiguration& WithCloudWatchLoggingOptions(CloudWatchLoggingOptions&& value) { SetCloudWatchLoggingOptions(std::move(value)); return *this;}
+    template<typename CloudWatchLoggingOptionsT = CloudWatchLoggingOptions>
+    void SetCloudWatchLoggingOptions(CloudWatchLoggingOptionsT&& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = std::forward<CloudWatchLoggingOptionsT>(value); }
+    template<typename CloudWatchLoggingOptionsT = CloudWatchLoggingOptions>
+    ElasticsearchDestinationConfiguration& WithCloudWatchLoggingOptions(CloudWatchLoggingOptionsT&& value) { SetCloudWatchLoggingOptions(std::forward<CloudWatchLoggingOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The details of the VPC of the Amazon destination.</p>
      */
-    inline const VpcConfiguration& GetVpcConfiguration() const{ return m_vpcConfiguration; }
+    inline const VpcConfiguration& GetVpcConfiguration() const { return m_vpcConfiguration; }
     inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
-    inline void SetVpcConfiguration(const VpcConfiguration& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = value; }
-    inline void SetVpcConfiguration(VpcConfiguration&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::move(value); }
-    inline ElasticsearchDestinationConfiguration& WithVpcConfiguration(const VpcConfiguration& value) { SetVpcConfiguration(value); return *this;}
-    inline ElasticsearchDestinationConfiguration& WithVpcConfiguration(VpcConfiguration&& value) { SetVpcConfiguration(std::move(value)); return *this;}
+    template<typename VpcConfigurationT = VpcConfiguration>
+    void SetVpcConfiguration(VpcConfigurationT&& value) { m_vpcConfigurationHasBeenSet = true; m_vpcConfiguration = std::forward<VpcConfigurationT>(value); }
+    template<typename VpcConfigurationT = VpcConfiguration>
+    ElasticsearchDestinationConfiguration& WithVpcConfiguration(VpcConfigurationT&& value) { SetVpcConfiguration(std::forward<VpcConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -252,12 +238,12 @@ namespace Model
      * <p>Indicates the method for setting up document ID. The supported methods are
      * Firehose generated document ID and OpenSearch Service generated document ID.</p>
      */
-    inline const DocumentIdOptions& GetDocumentIdOptions() const{ return m_documentIdOptions; }
+    inline const DocumentIdOptions& GetDocumentIdOptions() const { return m_documentIdOptions; }
     inline bool DocumentIdOptionsHasBeenSet() const { return m_documentIdOptionsHasBeenSet; }
-    inline void SetDocumentIdOptions(const DocumentIdOptions& value) { m_documentIdOptionsHasBeenSet = true; m_documentIdOptions = value; }
-    inline void SetDocumentIdOptions(DocumentIdOptions&& value) { m_documentIdOptionsHasBeenSet = true; m_documentIdOptions = std::move(value); }
-    inline ElasticsearchDestinationConfiguration& WithDocumentIdOptions(const DocumentIdOptions& value) { SetDocumentIdOptions(value); return *this;}
-    inline ElasticsearchDestinationConfiguration& WithDocumentIdOptions(DocumentIdOptions&& value) { SetDocumentIdOptions(std::move(value)); return *this;}
+    template<typename DocumentIdOptionsT = DocumentIdOptions>
+    void SetDocumentIdOptions(DocumentIdOptionsT&& value) { m_documentIdOptionsHasBeenSet = true; m_documentIdOptions = std::forward<DocumentIdOptionsT>(value); }
+    template<typename DocumentIdOptionsT = DocumentIdOptions>
+    ElasticsearchDestinationConfiguration& WithDocumentIdOptions(DocumentIdOptionsT&& value) { SetDocumentIdOptions(std::forward<DocumentIdOptionsT>(value)); return *this;}
     ///@}
   private:
 
@@ -276,7 +262,7 @@ namespace Model
     Aws::String m_typeName;
     bool m_typeNameHasBeenSet = false;
 
-    ElasticsearchIndexRotationPeriod m_indexRotationPeriod;
+    ElasticsearchIndexRotationPeriod m_indexRotationPeriod{ElasticsearchIndexRotationPeriod::NOT_SET};
     bool m_indexRotationPeriodHasBeenSet = false;
 
     ElasticsearchBufferingHints m_bufferingHints;
@@ -285,7 +271,7 @@ namespace Model
     ElasticsearchRetryOptions m_retryOptions;
     bool m_retryOptionsHasBeenSet = false;
 
-    ElasticsearchS3BackupMode m_s3BackupMode;
+    ElasticsearchS3BackupMode m_s3BackupMode{ElasticsearchS3BackupMode::NOT_SET};
     bool m_s3BackupModeHasBeenSet = false;
 
     S3DestinationConfiguration m_s3Configuration;

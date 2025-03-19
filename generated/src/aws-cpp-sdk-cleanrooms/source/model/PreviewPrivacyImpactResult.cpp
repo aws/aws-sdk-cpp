@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PreviewPrivacyImpactResult::PreviewPrivacyImpactResult()
-{
-}
-
 PreviewPrivacyImpactResult::PreviewPrivacyImpactResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ PreviewPrivacyImpactResult& PreviewPrivacyImpactResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("privacyImpact"))
   {
     m_privacyImpact = jsonValue.GetObject("privacyImpact");
-
+    m_privacyImpactHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

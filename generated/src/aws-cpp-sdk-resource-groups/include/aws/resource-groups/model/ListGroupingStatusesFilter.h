@@ -34,7 +34,7 @@ namespace Model
   class ListGroupingStatusesFilter
   {
   public:
-    AWS_RESOURCEGROUPS_API ListGroupingStatusesFilter();
+    AWS_RESOURCEGROUPS_API ListGroupingStatusesFilter() = default;
     AWS_RESOURCEGROUPS_API ListGroupingStatusesFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPS_API ListGroupingStatusesFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_RESOURCEGROUPS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,12 +44,10 @@ namespace Model
     /**
      * <p>The name of the filter. Filter names are case-sensitive. </p>
      */
-    inline const ListGroupingStatusesFilterName& GetName() const{ return m_name; }
+    inline ListGroupingStatusesFilterName GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const ListGroupingStatusesFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(ListGroupingStatusesFilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline ListGroupingStatusesFilter& WithName(const ListGroupingStatusesFilterName& value) { SetName(value); return *this;}
-    inline ListGroupingStatusesFilter& WithName(ListGroupingStatusesFilterName&& value) { SetName(std::move(value)); return *this;}
+    inline void SetName(ListGroupingStatusesFilterName value) { m_nameHasBeenSet = true; m_name = value; }
+    inline ListGroupingStatusesFilter& WithName(ListGroupingStatusesFilterName value) { SetName(value); return *this;}
     ///@}
 
     ///@{
@@ -57,19 +55,18 @@ namespace Model
      * <p>One or more filter values. Allowed filter values vary by resource filter
      * name, and are case-sensitive. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline ListGroupingStatusesFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline ListGroupingStatusesFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline ListGroupingStatusesFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline ListGroupingStatusesFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline ListGroupingStatusesFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    ListGroupingStatusesFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    ListGroupingStatusesFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
   private:
 
-    ListGroupingStatusesFilterName m_name;
+    ListGroupingStatusesFilterName m_name{ListGroupingStatusesFilterName::NOT_SET};
     bool m_nameHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_values;

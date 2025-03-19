@@ -15,15 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeregisterPackageVersionRequest::DeregisterPackageVersionRequest() : 
-    m_ownerAccountHasBeenSet(false),
-    m_packageIdHasBeenSet(false),
-    m_packageVersionHasBeenSet(false),
-    m_patchVersionHasBeenSet(false),
-    m_updatedLatestPatchVersionHasBeenSet(false)
-{
-}
-
 Aws::String DeregisterPackageVersionRequest::SerializePayload() const
 {
   return {};

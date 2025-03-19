@@ -18,21 +18,7 @@ namespace mgn
 namespace Model
 {
 
-ImportTask::ImportTask() : 
-    m_creationDateTimeHasBeenSet(false),
-    m_endDateTimeHasBeenSet(false),
-    m_importIDHasBeenSet(false),
-    m_progressPercentage(0.0),
-    m_progressPercentageHasBeenSet(false),
-    m_s3BucketSourceHasBeenSet(false),
-    m_status(ImportStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_summaryHasBeenSet(false)
-{
-}
-
 ImportTask::ImportTask(JsonView jsonValue)
-  : ImportTask()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ ImportTask& ImportTask::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("creationDateTime"))
   {
     m_creationDateTime = jsonValue.GetString("creationDateTime");
-
     m_creationDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endDateTime"))
   {
     m_endDateTime = jsonValue.GetString("endDateTime");
-
     m_endDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("importID"))
   {
     m_importID = jsonValue.GetString("importID");
-
     m_importIDHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("progressPercentage"))
   {
     m_progressPercentage = jsonValue.GetDouble("progressPercentage");
-
     m_progressPercentageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3BucketSource"))
   {
     m_s3BucketSource = jsonValue.GetObject("s3BucketSource");
-
     m_s3BucketSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ImportStatusMapper::GetImportStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("summary"))
   {
     m_summary = jsonValue.GetObject("summary");
-
     m_summaryHasBeenSet = true;
   }
-
   return *this;
 }
 

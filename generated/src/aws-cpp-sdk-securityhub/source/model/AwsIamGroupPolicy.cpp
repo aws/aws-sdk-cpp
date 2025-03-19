@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsIamGroupPolicy::AwsIamGroupPolicy() : 
-    m_policyNameHasBeenSet(false)
-{
-}
-
 AwsIamGroupPolicy::AwsIamGroupPolicy(JsonView jsonValue)
-  : AwsIamGroupPolicy()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsIamGroupPolicy& AwsIamGroupPolicy::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PolicyName"))
   {
     m_policyName = jsonValue.GetString("PolicyName");
-
     m_policyNameHasBeenSet = true;
   }
-
   return *this;
 }
 

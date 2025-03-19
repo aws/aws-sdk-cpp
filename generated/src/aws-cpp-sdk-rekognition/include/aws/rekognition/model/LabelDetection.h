@@ -32,7 +32,7 @@ namespace Model
   class LabelDetection
   {
   public:
-    AWS_REKOGNITION_API LabelDetection();
+    AWS_REKOGNITION_API LabelDetection() = default;
     AWS_REKOGNITION_API LabelDetection(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API LabelDetection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_REKOGNITION_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,7 +44,7 @@ namespace Model
      * detected. Note that <code>Timestamp</code> is not guaranteed to be accurate to
      * the individual frame where the label first appears.</p>
      */
-    inline long long GetTimestamp() const{ return m_timestamp; }
+    inline long long GetTimestamp() const { return m_timestamp; }
     inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
     inline LabelDetection& WithTimestamp(long long value) { SetTimestamp(value); return *this;}
@@ -54,12 +54,12 @@ namespace Model
     /**
      * <p>Details about the detected label.</p>
      */
-    inline const Label& GetLabel() const{ return m_label; }
+    inline const Label& GetLabel() const { return m_label; }
     inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
-    inline void SetLabel(const Label& value) { m_labelHasBeenSet = true; m_label = value; }
-    inline void SetLabel(Label&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
-    inline LabelDetection& WithLabel(const Label& value) { SetLabel(value); return *this;}
-    inline LabelDetection& WithLabel(Label&& value) { SetLabel(std::move(value)); return *this;}
+    template<typename LabelT = Label>
+    void SetLabel(LabelT&& value) { m_labelHasBeenSet = true; m_label = std::forward<LabelT>(value); }
+    template<typename LabelT = Label>
+    LabelDetection& WithLabel(LabelT&& value) { SetLabel(std::forward<LabelT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,7 +67,7 @@ namespace Model
      * <p>The time in milliseconds defining the start of the timeline segment
      * containing a continuously detected label.</p>
      */
-    inline long long GetStartTimestampMillis() const{ return m_startTimestampMillis; }
+    inline long long GetStartTimestampMillis() const { return m_startTimestampMillis; }
     inline bool StartTimestampMillisHasBeenSet() const { return m_startTimestampMillisHasBeenSet; }
     inline void SetStartTimestampMillis(long long value) { m_startTimestampMillisHasBeenSet = true; m_startTimestampMillis = value; }
     inline LabelDetection& WithStartTimestampMillis(long long value) { SetStartTimestampMillis(value); return *this;}
@@ -78,7 +78,7 @@ namespace Model
      * <p>The time in milliseconds defining the end of the timeline segment containing
      * a continuously detected label.</p>
      */
-    inline long long GetEndTimestampMillis() const{ return m_endTimestampMillis; }
+    inline long long GetEndTimestampMillis() const { return m_endTimestampMillis; }
     inline bool EndTimestampMillisHasBeenSet() const { return m_endTimestampMillisHasBeenSet; }
     inline void SetEndTimestampMillis(long long value) { m_endTimestampMillisHasBeenSet = true; m_endTimestampMillis = value; }
     inline LabelDetection& WithEndTimestampMillis(long long value) { SetEndTimestampMillis(value); return *this;}
@@ -89,26 +89,26 @@ namespace Model
      * <p>The time duration of a segment in milliseconds, I.e. time elapsed from
      * StartTimestampMillis to EndTimestampMillis.</p>
      */
-    inline long long GetDurationMillis() const{ return m_durationMillis; }
+    inline long long GetDurationMillis() const { return m_durationMillis; }
     inline bool DurationMillisHasBeenSet() const { return m_durationMillisHasBeenSet; }
     inline void SetDurationMillis(long long value) { m_durationMillisHasBeenSet = true; m_durationMillis = value; }
     inline LabelDetection& WithDurationMillis(long long value) { SetDurationMillis(value); return *this;}
     ///@}
   private:
 
-    long long m_timestamp;
+    long long m_timestamp{0};
     bool m_timestampHasBeenSet = false;
 
     Label m_label;
     bool m_labelHasBeenSet = false;
 
-    long long m_startTimestampMillis;
+    long long m_startTimestampMillis{0};
     bool m_startTimestampMillisHasBeenSet = false;
 
-    long long m_endTimestampMillis;
+    long long m_endTimestampMillis{0};
     bool m_endTimestampMillisHasBeenSet = false;
 
-    long long m_durationMillis;
+    long long m_durationMillis{0};
     bool m_durationMillisHasBeenSet = false;
   };
 

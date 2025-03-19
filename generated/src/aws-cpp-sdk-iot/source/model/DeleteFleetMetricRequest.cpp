@@ -15,13 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteFleetMetricRequest::DeleteFleetMetricRequest() : 
-    m_metricNameHasBeenSet(false),
-    m_expectedVersion(0),
-    m_expectedVersionHasBeenSet(false)
-{
-}
-
 Aws::String DeleteFleetMetricRequest::SerializePayload() const
 {
   return {};

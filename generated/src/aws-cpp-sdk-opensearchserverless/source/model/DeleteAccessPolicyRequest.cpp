@@ -12,15 +12,6 @@ using namespace Aws::OpenSearchServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAccessPolicyRequest::DeleteAccessPolicyRequest() : 
-    m_type(AccessPolicyType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String DeleteAccessPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

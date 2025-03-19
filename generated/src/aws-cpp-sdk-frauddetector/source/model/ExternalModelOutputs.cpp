@@ -18,14 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-ExternalModelOutputs::ExternalModelOutputs() : 
-    m_externalModelHasBeenSet(false),
-    m_outputsHasBeenSet(false)
-{
-}
-
 ExternalModelOutputs::ExternalModelOutputs(JsonView jsonValue)
-  : ExternalModelOutputs()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ExternalModelOutputs& ExternalModelOutputs::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("externalModel"))
   {
     m_externalModel = jsonValue.GetObject("externalModel");
-
     m_externalModelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputs"))
   {
     Aws::Map<Aws::String, JsonView> outputsJsonMap = jsonValue.GetObject("outputs").GetAllObjects();
@@ -48,7 +39,6 @@ ExternalModelOutputs& ExternalModelOutputs::operator =(JsonView jsonValue)
     }
     m_outputsHasBeenSet = true;
   }
-
   return *this;
 }
 

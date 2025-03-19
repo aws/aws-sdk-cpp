@@ -18,14 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsStepFunctionStateMachineTracingConfigurationDetails::AwsStepFunctionStateMachineTracingConfigurationDetails() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false)
-{
-}
-
 AwsStepFunctionStateMachineTracingConfigurationDetails::AwsStepFunctionStateMachineTracingConfigurationDetails(JsonView jsonValue)
-  : AwsStepFunctionStateMachineTracingConfigurationDetails()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ AwsStepFunctionStateMachineTracingConfigurationDetails& AwsStepFunctionStateMach
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   return *this;
 }
 

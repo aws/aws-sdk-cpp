@@ -29,7 +29,7 @@ namespace Model
   class BatchDeleteDocumentResult
   {
   public:
-    AWS_KENDRA_API BatchDeleteDocumentResult();
+    AWS_KENDRA_API BatchDeleteDocumentResult() = default;
     AWS_KENDRA_API BatchDeleteDocumentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_KENDRA_API BatchDeleteDocumentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,30 +40,30 @@ namespace Model
      * contains an error message that indicates why the document couldn't be removed
      * from the index.</p>
      */
-    inline const Aws::Vector<BatchDeleteDocumentResponseFailedDocument>& GetFailedDocuments() const{ return m_failedDocuments; }
-    inline void SetFailedDocuments(const Aws::Vector<BatchDeleteDocumentResponseFailedDocument>& value) { m_failedDocuments = value; }
-    inline void SetFailedDocuments(Aws::Vector<BatchDeleteDocumentResponseFailedDocument>&& value) { m_failedDocuments = std::move(value); }
-    inline BatchDeleteDocumentResult& WithFailedDocuments(const Aws::Vector<BatchDeleteDocumentResponseFailedDocument>& value) { SetFailedDocuments(value); return *this;}
-    inline BatchDeleteDocumentResult& WithFailedDocuments(Aws::Vector<BatchDeleteDocumentResponseFailedDocument>&& value) { SetFailedDocuments(std::move(value)); return *this;}
-    inline BatchDeleteDocumentResult& AddFailedDocuments(const BatchDeleteDocumentResponseFailedDocument& value) { m_failedDocuments.push_back(value); return *this; }
-    inline BatchDeleteDocumentResult& AddFailedDocuments(BatchDeleteDocumentResponseFailedDocument&& value) { m_failedDocuments.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<BatchDeleteDocumentResponseFailedDocument>& GetFailedDocuments() const { return m_failedDocuments; }
+    template<typename FailedDocumentsT = Aws::Vector<BatchDeleteDocumentResponseFailedDocument>>
+    void SetFailedDocuments(FailedDocumentsT&& value) { m_failedDocumentsHasBeenSet = true; m_failedDocuments = std::forward<FailedDocumentsT>(value); }
+    template<typename FailedDocumentsT = Aws::Vector<BatchDeleteDocumentResponseFailedDocument>>
+    BatchDeleteDocumentResult& WithFailedDocuments(FailedDocumentsT&& value) { SetFailedDocuments(std::forward<FailedDocumentsT>(value)); return *this;}
+    template<typename FailedDocumentsT = BatchDeleteDocumentResponseFailedDocument>
+    BatchDeleteDocumentResult& AddFailedDocuments(FailedDocumentsT&& value) { m_failedDocumentsHasBeenSet = true; m_failedDocuments.emplace_back(std::forward<FailedDocumentsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchDeleteDocumentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchDeleteDocumentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchDeleteDocumentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchDeleteDocumentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<BatchDeleteDocumentResponseFailedDocument> m_failedDocuments;
+    bool m_failedDocumentsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

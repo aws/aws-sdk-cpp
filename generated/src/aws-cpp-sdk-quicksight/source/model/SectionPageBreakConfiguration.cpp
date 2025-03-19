@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SectionPageBreakConfiguration::SectionPageBreakConfiguration() : 
-    m_afterHasBeenSet(false)
-{
-}
-
 SectionPageBreakConfiguration::SectionPageBreakConfiguration(JsonView jsonValue)
-  : SectionPageBreakConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SectionPageBreakConfiguration& SectionPageBreakConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("After"))
   {
     m_after = jsonValue.GetObject("After");
-
     m_afterHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,10 +12,6 @@ using namespace Aws::SecurityLake::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeregisterDataLakeDelegatedAdministratorRequest::DeregisterDataLakeDelegatedAdministratorRequest()
-{
-}
-
 Aws::String DeregisterDataLakeDelegatedAdministratorRequest::SerializePayload() const
 {
   return {};

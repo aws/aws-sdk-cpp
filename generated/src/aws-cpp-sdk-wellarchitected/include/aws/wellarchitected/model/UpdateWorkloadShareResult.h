@@ -33,48 +33,47 @@ namespace Model
   class UpdateWorkloadShareResult
   {
   public:
-    AWS_WELLARCHITECTED_API UpdateWorkloadShareResult();
+    AWS_WELLARCHITECTED_API UpdateWorkloadShareResult() = default;
     AWS_WELLARCHITECTED_API UpdateWorkloadShareResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_WELLARCHITECTED_API UpdateWorkloadShareResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
     ///@{
     
-    inline const Aws::String& GetWorkloadId() const{ return m_workloadId; }
-    inline void SetWorkloadId(const Aws::String& value) { m_workloadId = value; }
-    inline void SetWorkloadId(Aws::String&& value) { m_workloadId = std::move(value); }
-    inline void SetWorkloadId(const char* value) { m_workloadId.assign(value); }
-    inline UpdateWorkloadShareResult& WithWorkloadId(const Aws::String& value) { SetWorkloadId(value); return *this;}
-    inline UpdateWorkloadShareResult& WithWorkloadId(Aws::String&& value) { SetWorkloadId(std::move(value)); return *this;}
-    inline UpdateWorkloadShareResult& WithWorkloadId(const char* value) { SetWorkloadId(value); return *this;}
+    inline const Aws::String& GetWorkloadId() const { return m_workloadId; }
+    template<typename WorkloadIdT = Aws::String>
+    void SetWorkloadId(WorkloadIdT&& value) { m_workloadIdHasBeenSet = true; m_workloadId = std::forward<WorkloadIdT>(value); }
+    template<typename WorkloadIdT = Aws::String>
+    UpdateWorkloadShareResult& WithWorkloadId(WorkloadIdT&& value) { SetWorkloadId(std::forward<WorkloadIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const WorkloadShare& GetWorkloadShare() const{ return m_workloadShare; }
-    inline void SetWorkloadShare(const WorkloadShare& value) { m_workloadShare = value; }
-    inline void SetWorkloadShare(WorkloadShare&& value) { m_workloadShare = std::move(value); }
-    inline UpdateWorkloadShareResult& WithWorkloadShare(const WorkloadShare& value) { SetWorkloadShare(value); return *this;}
-    inline UpdateWorkloadShareResult& WithWorkloadShare(WorkloadShare&& value) { SetWorkloadShare(std::move(value)); return *this;}
+    inline const WorkloadShare& GetWorkloadShare() const { return m_workloadShare; }
+    template<typename WorkloadShareT = WorkloadShare>
+    void SetWorkloadShare(WorkloadShareT&& value) { m_workloadShareHasBeenSet = true; m_workloadShare = std::forward<WorkloadShareT>(value); }
+    template<typename WorkloadShareT = WorkloadShare>
+    UpdateWorkloadShareResult& WithWorkloadShare(WorkloadShareT&& value) { SetWorkloadShare(std::forward<WorkloadShareT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateWorkloadShareResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateWorkloadShareResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateWorkloadShareResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateWorkloadShareResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_workloadId;
+    bool m_workloadIdHasBeenSet = false;
 
     WorkloadShare m_workloadShare;
+    bool m_workloadShareHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

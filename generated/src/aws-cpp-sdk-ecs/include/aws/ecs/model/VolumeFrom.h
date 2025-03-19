@@ -32,7 +32,7 @@ namespace Model
   class VolumeFrom
   {
   public:
-    AWS_ECS_API VolumeFrom();
+    AWS_ECS_API VolumeFrom() = default;
     AWS_ECS_API VolumeFrom(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API VolumeFrom& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The name of another container within the same task definition to mount
      * volumes from.</p>
      */
-    inline const Aws::String& GetSourceContainer() const{ return m_sourceContainer; }
+    inline const Aws::String& GetSourceContainer() const { return m_sourceContainer; }
     inline bool SourceContainerHasBeenSet() const { return m_sourceContainerHasBeenSet; }
-    inline void SetSourceContainer(const Aws::String& value) { m_sourceContainerHasBeenSet = true; m_sourceContainer = value; }
-    inline void SetSourceContainer(Aws::String&& value) { m_sourceContainerHasBeenSet = true; m_sourceContainer = std::move(value); }
-    inline void SetSourceContainer(const char* value) { m_sourceContainerHasBeenSet = true; m_sourceContainer.assign(value); }
-    inline VolumeFrom& WithSourceContainer(const Aws::String& value) { SetSourceContainer(value); return *this;}
-    inline VolumeFrom& WithSourceContainer(Aws::String&& value) { SetSourceContainer(std::move(value)); return *this;}
-    inline VolumeFrom& WithSourceContainer(const char* value) { SetSourceContainer(value); return *this;}
+    template<typename SourceContainerT = Aws::String>
+    void SetSourceContainer(SourceContainerT&& value) { m_sourceContainerHasBeenSet = true; m_sourceContainer = std::forward<SourceContainerT>(value); }
+    template<typename SourceContainerT = Aws::String>
+    VolumeFrom& WithSourceContainer(SourceContainerT&& value) { SetSourceContainer(std::forward<SourceContainerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * volume. If this value is <code>false</code>, then the container can write to the
      * volume. The default value is <code>false</code>.</p>
      */
-    inline bool GetReadOnly() const{ return m_readOnly; }
+    inline bool GetReadOnly() const { return m_readOnly; }
     inline bool ReadOnlyHasBeenSet() const { return m_readOnlyHasBeenSet; }
     inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
     inline VolumeFrom& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
     Aws::String m_sourceContainer;
     bool m_sourceContainerHasBeenSet = false;
 
-    bool m_readOnly;
+    bool m_readOnly{false};
     bool m_readOnlyHasBeenSet = false;
   };
 

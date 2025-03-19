@@ -21,7 +21,7 @@ namespace Model
   class CancelMaintenanceWindowExecutionRequest : public SSMRequest
   {
   public:
-    AWS_SSM_API CancelMaintenanceWindowExecutionRequest();
+    AWS_SSM_API CancelMaintenanceWindowExecutionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The ID of the maintenance window execution to stop.</p>
      */
-    inline const Aws::String& GetWindowExecutionId() const{ return m_windowExecutionId; }
+    inline const Aws::String& GetWindowExecutionId() const { return m_windowExecutionId; }
     inline bool WindowExecutionIdHasBeenSet() const { return m_windowExecutionIdHasBeenSet; }
-    inline void SetWindowExecutionId(const Aws::String& value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId = value; }
-    inline void SetWindowExecutionId(Aws::String&& value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId = std::move(value); }
-    inline void SetWindowExecutionId(const char* value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId.assign(value); }
-    inline CancelMaintenanceWindowExecutionRequest& WithWindowExecutionId(const Aws::String& value) { SetWindowExecutionId(value); return *this;}
-    inline CancelMaintenanceWindowExecutionRequest& WithWindowExecutionId(Aws::String&& value) { SetWindowExecutionId(std::move(value)); return *this;}
-    inline CancelMaintenanceWindowExecutionRequest& WithWindowExecutionId(const char* value) { SetWindowExecutionId(value); return *this;}
+    template<typename WindowExecutionIdT = Aws::String>
+    void SetWindowExecutionId(WindowExecutionIdT&& value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId = std::forward<WindowExecutionIdT>(value); }
+    template<typename WindowExecutionIdT = Aws::String>
+    CancelMaintenanceWindowExecutionRequest& WithWindowExecutionId(WindowExecutionIdT&& value) { SetWindowExecutionId(std::forward<WindowExecutionIdT>(value)); return *this;}
     ///@}
   private:
 

@@ -32,7 +32,7 @@ namespace Model
   class StackDefinition
   {
   public:
-    AWS_CLOUDFORMATION_API StackDefinition();
+    AWS_CLOUDFORMATION_API StackDefinition() = default;
     AWS_CLOUDFORMATION_API StackDefinition(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFORMATION_API StackDefinition& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,42 +44,36 @@ namespace Model
     /**
      * <p>The name associated with the stack.</p>
      */
-    inline const Aws::String& GetStackName() const{ return m_stackName; }
+    inline const Aws::String& GetStackName() const { return m_stackName; }
     inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
-    inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
-    inline void SetStackName(Aws::String&& value) { m_stackNameHasBeenSet = true; m_stackName = std::move(value); }
-    inline void SetStackName(const char* value) { m_stackNameHasBeenSet = true; m_stackName.assign(value); }
-    inline StackDefinition& WithStackName(const Aws::String& value) { SetStackName(value); return *this;}
-    inline StackDefinition& WithStackName(Aws::String&& value) { SetStackName(std::move(value)); return *this;}
-    inline StackDefinition& WithStackName(const char* value) { SetStackName(value); return *this;}
+    template<typename StackNameT = Aws::String>
+    void SetStackName(StackNameT&& value) { m_stackNameHasBeenSet = true; m_stackName = std::forward<StackNameT>(value); }
+    template<typename StackNameT = Aws::String>
+    StackDefinition& WithStackName(StackNameT&& value) { SetStackName(std::forward<StackNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The file path for the stack template file.</p>
      */
-    inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
+    inline const Aws::String& GetTemplateBody() const { return m_templateBody; }
     inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
-    inline void SetTemplateBody(const Aws::String& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
-    inline void SetTemplateBody(Aws::String&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::move(value); }
-    inline void SetTemplateBody(const char* value) { m_templateBodyHasBeenSet = true; m_templateBody.assign(value); }
-    inline StackDefinition& WithTemplateBody(const Aws::String& value) { SetTemplateBody(value); return *this;}
-    inline StackDefinition& WithTemplateBody(Aws::String&& value) { SetTemplateBody(std::move(value)); return *this;}
-    inline StackDefinition& WithTemplateBody(const char* value) { SetTemplateBody(value); return *this;}
+    template<typename TemplateBodyT = Aws::String>
+    void SetTemplateBody(TemplateBodyT&& value) { m_templateBodyHasBeenSet = true; m_templateBody = std::forward<TemplateBodyT>(value); }
+    template<typename TemplateBodyT = Aws::String>
+    StackDefinition& WithTemplateBody(TemplateBodyT&& value) { SetTemplateBody(std::forward<TemplateBodyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The desired final state of the stack template.</p>
      */
-    inline const Aws::String& GetTemplateURL() const{ return m_templateURL; }
+    inline const Aws::String& GetTemplateURL() const { return m_templateURL; }
     inline bool TemplateURLHasBeenSet() const { return m_templateURLHasBeenSet; }
-    inline void SetTemplateURL(const Aws::String& value) { m_templateURLHasBeenSet = true; m_templateURL = value; }
-    inline void SetTemplateURL(Aws::String&& value) { m_templateURLHasBeenSet = true; m_templateURL = std::move(value); }
-    inline void SetTemplateURL(const char* value) { m_templateURLHasBeenSet = true; m_templateURL.assign(value); }
-    inline StackDefinition& WithTemplateURL(const Aws::String& value) { SetTemplateURL(value); return *this;}
-    inline StackDefinition& WithTemplateURL(Aws::String&& value) { SetTemplateURL(std::move(value)); return *this;}
-    inline StackDefinition& WithTemplateURL(const char* value) { SetTemplateURL(value); return *this;}
+    template<typename TemplateURLT = Aws::String>
+    void SetTemplateURL(TemplateURLT&& value) { m_templateURLHasBeenSet = true; m_templateURL = std::forward<TemplateURLT>(value); }
+    template<typename TemplateURLT = Aws::String>
+    StackDefinition& WithTemplateURL(TemplateURLT&& value) { SetTemplateURL(std::forward<TemplateURLT>(value)); return *this;}
     ///@}
   private:
 

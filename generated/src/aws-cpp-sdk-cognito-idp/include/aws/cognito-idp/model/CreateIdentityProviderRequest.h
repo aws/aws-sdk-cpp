@@ -24,7 +24,7 @@ namespace Model
   class CreateIdentityProviderRequest : public CognitoIdentityProviderRequest
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API CreateIdentityProviderRequest();
+    AWS_COGNITOIDENTITYPROVIDER_API CreateIdentityProviderRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The Id of the user pool where you want to create an IdP.</p>
      */
-    inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+    inline const Aws::String& GetUserPoolId() const { return m_userPoolId; }
     inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
-    inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
-    inline void SetUserPoolId(Aws::String&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::move(value); }
-    inline void SetUserPoolId(const char* value) { m_userPoolIdHasBeenSet = true; m_userPoolId.assign(value); }
-    inline CreateIdentityProviderRequest& WithUserPoolId(const Aws::String& value) { SetUserPoolId(value); return *this;}
-    inline CreateIdentityProviderRequest& WithUserPoolId(Aws::String&& value) { SetUserPoolId(std::move(value)); return *this;}
-    inline CreateIdentityProviderRequest& WithUserPoolId(const char* value) { SetUserPoolId(value); return *this;}
+    template<typename UserPoolIdT = Aws::String>
+    void SetUserPoolId(UserPoolIdT&& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = std::forward<UserPoolIdT>(value); }
+    template<typename UserPoolIdT = Aws::String>
+    CreateIdentityProviderRequest& WithUserPoolId(UserPoolIdT&& value) { SetUserPoolId(std::forward<UserPoolIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/authorization-endpoint.html">Authorize
      * endpoint</a> to silently redirect to sign-in with the associated IdP.</p>
      */
-    inline const Aws::String& GetProviderName() const{ return m_providerName; }
+    inline const Aws::String& GetProviderName() const { return m_providerName; }
     inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
-    inline void SetProviderName(const Aws::String& value) { m_providerNameHasBeenSet = true; m_providerName = value; }
-    inline void SetProviderName(Aws::String&& value) { m_providerNameHasBeenSet = true; m_providerName = std::move(value); }
-    inline void SetProviderName(const char* value) { m_providerNameHasBeenSet = true; m_providerName.assign(value); }
-    inline CreateIdentityProviderRequest& WithProviderName(const Aws::String& value) { SetProviderName(value); return *this;}
-    inline CreateIdentityProviderRequest& WithProviderName(Aws::String&& value) { SetProviderName(std::move(value)); return *this;}
-    inline CreateIdentityProviderRequest& WithProviderName(const char* value) { SetProviderName(value); return *this;}
+    template<typename ProviderNameT = Aws::String>
+    void SetProviderName(ProviderNameT&& value) { m_providerNameHasBeenSet = true; m_providerName = std::forward<ProviderNameT>(value); }
+    template<typename ProviderNameT = Aws::String>
+    CreateIdentityProviderRequest& WithProviderName(ProviderNameT&& value) { SetProviderName(std::forward<ProviderNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,12 +70,10 @@ namespace Model
      * <p>The type of IdP that you want to add. Amazon Cognito supports OIDC, SAML 2.0,
      * Login With Amazon, Sign In With Apple, Google, and Facebook IdPs.</p>
      */
-    inline const IdentityProviderTypeType& GetProviderType() const{ return m_providerType; }
+    inline IdentityProviderTypeType GetProviderType() const { return m_providerType; }
     inline bool ProviderTypeHasBeenSet() const { return m_providerTypeHasBeenSet; }
-    inline void SetProviderType(const IdentityProviderTypeType& value) { m_providerTypeHasBeenSet = true; m_providerType = value; }
-    inline void SetProviderType(IdentityProviderTypeType&& value) { m_providerTypeHasBeenSet = true; m_providerType = std::move(value); }
-    inline CreateIdentityProviderRequest& WithProviderType(const IdentityProviderTypeType& value) { SetProviderType(value); return *this;}
-    inline CreateIdentityProviderRequest& WithProviderType(IdentityProviderTypeType&& value) { SetProviderType(std::move(value)); return *this;}
+    inline void SetProviderType(IdentityProviderTypeType value) { m_providerTypeHasBeenSet = true; m_providerType = value; }
+    inline CreateIdentityProviderRequest& WithProviderType(IdentityProviderTypeType value) { SetProviderType(value); return *this;}
     ///@}
 
     ///@{
@@ -166,19 +160,16 @@ namespace Model
      * "token_request_method": "GET", "token_url":
      * "https://graph.facebook.com/v17.0/oauth/access_token" }</code> </p> </dd> </dl>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetProviderDetails() const{ return m_providerDetails; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetProviderDetails() const { return m_providerDetails; }
     inline bool ProviderDetailsHasBeenSet() const { return m_providerDetailsHasBeenSet; }
-    inline void SetProviderDetails(const Aws::Map<Aws::String, Aws::String>& value) { m_providerDetailsHasBeenSet = true; m_providerDetails = value; }
-    inline void SetProviderDetails(Aws::Map<Aws::String, Aws::String>&& value) { m_providerDetailsHasBeenSet = true; m_providerDetails = std::move(value); }
-    inline CreateIdentityProviderRequest& WithProviderDetails(const Aws::Map<Aws::String, Aws::String>& value) { SetProviderDetails(value); return *this;}
-    inline CreateIdentityProviderRequest& WithProviderDetails(Aws::Map<Aws::String, Aws::String>&& value) { SetProviderDetails(std::move(value)); return *this;}
-    inline CreateIdentityProviderRequest& AddProviderDetails(const Aws::String& key, const Aws::String& value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(key, value); return *this; }
-    inline CreateIdentityProviderRequest& AddProviderDetails(Aws::String&& key, const Aws::String& value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(std::move(key), value); return *this; }
-    inline CreateIdentityProviderRequest& AddProviderDetails(const Aws::String& key, Aws::String&& value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(key, std::move(value)); return *this; }
-    inline CreateIdentityProviderRequest& AddProviderDetails(Aws::String&& key, Aws::String&& value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateIdentityProviderRequest& AddProviderDetails(const char* key, Aws::String&& value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(key, std::move(value)); return *this; }
-    inline CreateIdentityProviderRequest& AddProviderDetails(Aws::String&& key, const char* value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(std::move(key), value); return *this; }
-    inline CreateIdentityProviderRequest& AddProviderDetails(const char* key, const char* value) { m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(key, value); return *this; }
+    template<typename ProviderDetailsT = Aws::Map<Aws::String, Aws::String>>
+    void SetProviderDetails(ProviderDetailsT&& value) { m_providerDetailsHasBeenSet = true; m_providerDetails = std::forward<ProviderDetailsT>(value); }
+    template<typename ProviderDetailsT = Aws::Map<Aws::String, Aws::String>>
+    CreateIdentityProviderRequest& WithProviderDetails(ProviderDetailsT&& value) { SetProviderDetails(std::forward<ProviderDetailsT>(value)); return *this;}
+    template<typename ProviderDetailsKeyT = Aws::String, typename ProviderDetailsValueT = Aws::String>
+    CreateIdentityProviderRequest& AddProviderDetails(ProviderDetailsKeyT&& key, ProviderDetailsValueT&& value) {
+      m_providerDetailsHasBeenSet = true; m_providerDetails.emplace(std::forward<ProviderDetailsKeyT>(key), std::forward<ProviderDetailsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -187,19 +178,16 @@ namespace Model
      * Specify a user pool attribute as the key of the key-value pair, and the IdP
      * attribute claim name as the value.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAttributeMapping() const{ return m_attributeMapping; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAttributeMapping() const { return m_attributeMapping; }
     inline bool AttributeMappingHasBeenSet() const { return m_attributeMappingHasBeenSet; }
-    inline void SetAttributeMapping(const Aws::Map<Aws::String, Aws::String>& value) { m_attributeMappingHasBeenSet = true; m_attributeMapping = value; }
-    inline void SetAttributeMapping(Aws::Map<Aws::String, Aws::String>&& value) { m_attributeMappingHasBeenSet = true; m_attributeMapping = std::move(value); }
-    inline CreateIdentityProviderRequest& WithAttributeMapping(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributeMapping(value); return *this;}
-    inline CreateIdentityProviderRequest& WithAttributeMapping(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributeMapping(std::move(value)); return *this;}
-    inline CreateIdentityProviderRequest& AddAttributeMapping(const Aws::String& key, const Aws::String& value) { m_attributeMappingHasBeenSet = true; m_attributeMapping.emplace(key, value); return *this; }
-    inline CreateIdentityProviderRequest& AddAttributeMapping(Aws::String&& key, const Aws::String& value) { m_attributeMappingHasBeenSet = true; m_attributeMapping.emplace(std::move(key), value); return *this; }
-    inline CreateIdentityProviderRequest& AddAttributeMapping(const Aws::String& key, Aws::String&& value) { m_attributeMappingHasBeenSet = true; m_attributeMapping.emplace(key, std::move(value)); return *this; }
-    inline CreateIdentityProviderRequest& AddAttributeMapping(Aws::String&& key, Aws::String&& value) { m_attributeMappingHasBeenSet = true; m_attributeMapping.emplace(std::move(key), std::move(value)); return *this; }
-    inline CreateIdentityProviderRequest& AddAttributeMapping(const char* key, Aws::String&& value) { m_attributeMappingHasBeenSet = true; m_attributeMapping.emplace(key, std::move(value)); return *this; }
-    inline CreateIdentityProviderRequest& AddAttributeMapping(Aws::String&& key, const char* value) { m_attributeMappingHasBeenSet = true; m_attributeMapping.emplace(std::move(key), value); return *this; }
-    inline CreateIdentityProviderRequest& AddAttributeMapping(const char* key, const char* value) { m_attributeMappingHasBeenSet = true; m_attributeMapping.emplace(key, value); return *this; }
+    template<typename AttributeMappingT = Aws::Map<Aws::String, Aws::String>>
+    void SetAttributeMapping(AttributeMappingT&& value) { m_attributeMappingHasBeenSet = true; m_attributeMapping = std::forward<AttributeMappingT>(value); }
+    template<typename AttributeMappingT = Aws::Map<Aws::String, Aws::String>>
+    CreateIdentityProviderRequest& WithAttributeMapping(AttributeMappingT&& value) { SetAttributeMapping(std::forward<AttributeMappingT>(value)); return *this;}
+    template<typename AttributeMappingKeyT = Aws::String, typename AttributeMappingValueT = Aws::String>
+    CreateIdentityProviderRequest& AddAttributeMapping(AttributeMappingKeyT&& key, AttributeMappingValueT&& value) {
+      m_attributeMappingHasBeenSet = true; m_attributeMapping.emplace(std::forward<AttributeMappingKeyT>(key), std::forward<AttributeMappingValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -213,15 +201,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-managing-saml-idp-naming.html">email-address
      * matching with SAML providers</a>. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetIdpIdentifiers() const{ return m_idpIdentifiers; }
+    inline const Aws::Vector<Aws::String>& GetIdpIdentifiers() const { return m_idpIdentifiers; }
     inline bool IdpIdentifiersHasBeenSet() const { return m_idpIdentifiersHasBeenSet; }
-    inline void SetIdpIdentifiers(const Aws::Vector<Aws::String>& value) { m_idpIdentifiersHasBeenSet = true; m_idpIdentifiers = value; }
-    inline void SetIdpIdentifiers(Aws::Vector<Aws::String>&& value) { m_idpIdentifiersHasBeenSet = true; m_idpIdentifiers = std::move(value); }
-    inline CreateIdentityProviderRequest& WithIdpIdentifiers(const Aws::Vector<Aws::String>& value) { SetIdpIdentifiers(value); return *this;}
-    inline CreateIdentityProviderRequest& WithIdpIdentifiers(Aws::Vector<Aws::String>&& value) { SetIdpIdentifiers(std::move(value)); return *this;}
-    inline CreateIdentityProviderRequest& AddIdpIdentifiers(const Aws::String& value) { m_idpIdentifiersHasBeenSet = true; m_idpIdentifiers.push_back(value); return *this; }
-    inline CreateIdentityProviderRequest& AddIdpIdentifiers(Aws::String&& value) { m_idpIdentifiersHasBeenSet = true; m_idpIdentifiers.push_back(std::move(value)); return *this; }
-    inline CreateIdentityProviderRequest& AddIdpIdentifiers(const char* value) { m_idpIdentifiersHasBeenSet = true; m_idpIdentifiers.push_back(value); return *this; }
+    template<typename IdpIdentifiersT = Aws::Vector<Aws::String>>
+    void SetIdpIdentifiers(IdpIdentifiersT&& value) { m_idpIdentifiersHasBeenSet = true; m_idpIdentifiers = std::forward<IdpIdentifiersT>(value); }
+    template<typename IdpIdentifiersT = Aws::Vector<Aws::String>>
+    CreateIdentityProviderRequest& WithIdpIdentifiers(IdpIdentifiersT&& value) { SetIdpIdentifiers(std::forward<IdpIdentifiersT>(value)); return *this;}
+    template<typename IdpIdentifiersT = Aws::String>
+    CreateIdentityProviderRequest& AddIdpIdentifiers(IdpIdentifiersT&& value) { m_idpIdentifiersHasBeenSet = true; m_idpIdentifiers.emplace_back(std::forward<IdpIdentifiersT>(value)); return *this; }
     ///@}
   private:
 
@@ -231,7 +218,7 @@ namespace Model
     Aws::String m_providerName;
     bool m_providerNameHasBeenSet = false;
 
-    IdentityProviderTypeType m_providerType;
+    IdentityProviderTypeType m_providerType{IdentityProviderTypeType::NOT_SET};
     bool m_providerTypeHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_providerDetails;

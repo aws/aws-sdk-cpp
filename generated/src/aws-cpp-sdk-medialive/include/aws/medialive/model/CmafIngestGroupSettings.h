@@ -37,7 +37,7 @@ namespace Model
   class CmafIngestGroupSettings
   {
   public:
-    AWS_MEDIALIVE_API CmafIngestGroupSettings();
+    AWS_MEDIALIVE_API CmafIngestGroupSettings() = default;
     AWS_MEDIALIVE_API CmafIngestGroupSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API CmafIngestGroupSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
     /**
      * A HTTP destination for the tracks
      */
-    inline const OutputLocationRef& GetDestination() const{ return m_destination; }
+    inline const OutputLocationRef& GetDestination() const { return m_destination; }
     inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
-    inline void SetDestination(const OutputLocationRef& value) { m_destinationHasBeenSet = true; m_destination = value; }
-    inline void SetDestination(OutputLocationRef&& value) { m_destinationHasBeenSet = true; m_destination = std::move(value); }
-    inline CmafIngestGroupSettings& WithDestination(const OutputLocationRef& value) { SetDestination(value); return *this;}
-    inline CmafIngestGroupSettings& WithDestination(OutputLocationRef&& value) { SetDestination(std::move(value)); return *this;}
+    template<typename DestinationT = OutputLocationRef>
+    void SetDestination(DestinationT&& value) { m_destinationHasBeenSet = true; m_destination = std::forward<DestinationT>(value); }
+    template<typename DestinationT = OutputLocationRef>
+    CmafIngestGroupSettings& WithDestination(DestinationT&& value) { SetDestination(std::forward<DestinationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,24 +61,20 @@ namespace Model
      * detected in the input audio and an equivalent ID3 tag will be inserted in the
      * output.
      */
-    inline const CmafNielsenId3Behavior& GetNielsenId3Behavior() const{ return m_nielsenId3Behavior; }
+    inline CmafNielsenId3Behavior GetNielsenId3Behavior() const { return m_nielsenId3Behavior; }
     inline bool NielsenId3BehaviorHasBeenSet() const { return m_nielsenId3BehaviorHasBeenSet; }
-    inline void SetNielsenId3Behavior(const CmafNielsenId3Behavior& value) { m_nielsenId3BehaviorHasBeenSet = true; m_nielsenId3Behavior = value; }
-    inline void SetNielsenId3Behavior(CmafNielsenId3Behavior&& value) { m_nielsenId3BehaviorHasBeenSet = true; m_nielsenId3Behavior = std::move(value); }
-    inline CmafIngestGroupSettings& WithNielsenId3Behavior(const CmafNielsenId3Behavior& value) { SetNielsenId3Behavior(value); return *this;}
-    inline CmafIngestGroupSettings& WithNielsenId3Behavior(CmafNielsenId3Behavior&& value) { SetNielsenId3Behavior(std::move(value)); return *this;}
+    inline void SetNielsenId3Behavior(CmafNielsenId3Behavior value) { m_nielsenId3BehaviorHasBeenSet = true; m_nielsenId3Behavior = value; }
+    inline CmafIngestGroupSettings& WithNielsenId3Behavior(CmafNielsenId3Behavior value) { SetNielsenId3Behavior(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Type of scte35 track to add. none or scte35WithoutSegmentation
      */
-    inline const Scte35Type& GetScte35Type() const{ return m_scte35Type; }
+    inline Scte35Type GetScte35Type() const { return m_scte35Type; }
     inline bool Scte35TypeHasBeenSet() const { return m_scte35TypeHasBeenSet; }
-    inline void SetScte35Type(const Scte35Type& value) { m_scte35TypeHasBeenSet = true; m_scte35Type = value; }
-    inline void SetScte35Type(Scte35Type&& value) { m_scte35TypeHasBeenSet = true; m_scte35Type = std::move(value); }
-    inline CmafIngestGroupSettings& WithScte35Type(const Scte35Type& value) { SetScte35Type(value); return *this;}
-    inline CmafIngestGroupSettings& WithScte35Type(Scte35Type&& value) { SetScte35Type(std::move(value)); return *this;}
+    inline void SetScte35Type(Scte35Type value) { m_scte35TypeHasBeenSet = true; m_scte35Type = value; }
+    inline CmafIngestGroupSettings& WithScte35Type(Scte35Type value) { SetScte35Type(value); return *this;}
     ///@}
 
     ///@{
@@ -87,7 +83,7 @@ namespace Model
      * The segments will end on the next keyframe after the specified duration, so the
      * actual segment length might be longer, and it might be a fraction of the units.
      */
-    inline int GetSegmentLength() const{ return m_segmentLength; }
+    inline int GetSegmentLength() const { return m_segmentLength; }
     inline bool SegmentLengthHasBeenSet() const { return m_segmentLengthHasBeenSet; }
     inline void SetSegmentLength(int value) { m_segmentLengthHasBeenSet = true; m_segmentLength = value; }
     inline CmafIngestGroupSettings& WithSegmentLength(int value) { SetSegmentLength(value); return *this;}
@@ -97,19 +93,17 @@ namespace Model
     /**
      * Time unit for segment length parameter.
      */
-    inline const CmafIngestSegmentLengthUnits& GetSegmentLengthUnits() const{ return m_segmentLengthUnits; }
+    inline CmafIngestSegmentLengthUnits GetSegmentLengthUnits() const { return m_segmentLengthUnits; }
     inline bool SegmentLengthUnitsHasBeenSet() const { return m_segmentLengthUnitsHasBeenSet; }
-    inline void SetSegmentLengthUnits(const CmafIngestSegmentLengthUnits& value) { m_segmentLengthUnitsHasBeenSet = true; m_segmentLengthUnits = value; }
-    inline void SetSegmentLengthUnits(CmafIngestSegmentLengthUnits&& value) { m_segmentLengthUnitsHasBeenSet = true; m_segmentLengthUnits = std::move(value); }
-    inline CmafIngestGroupSettings& WithSegmentLengthUnits(const CmafIngestSegmentLengthUnits& value) { SetSegmentLengthUnits(value); return *this;}
-    inline CmafIngestGroupSettings& WithSegmentLengthUnits(CmafIngestSegmentLengthUnits&& value) { SetSegmentLengthUnits(std::move(value)); return *this;}
+    inline void SetSegmentLengthUnits(CmafIngestSegmentLengthUnits value) { m_segmentLengthUnitsHasBeenSet = true; m_segmentLengthUnits = value; }
+    inline CmafIngestGroupSettings& WithSegmentLengthUnits(CmafIngestSegmentLengthUnits value) { SetSegmentLengthUnits(value); return *this;}
     ///@}
 
     ///@{
     /**
      * Number of milliseconds to delay the output from the second pipeline.
      */
-    inline int GetSendDelayMs() const{ return m_sendDelayMs; }
+    inline int GetSendDelayMs() const { return m_sendDelayMs; }
     inline bool SendDelayMsHasBeenSet() const { return m_sendDelayMsHasBeenSet; }
     inline void SetSendDelayMs(int value) { m_sendDelayMsHasBeenSet = true; m_sendDelayMs = value; }
     inline CmafIngestGroupSettings& WithSendDelayMs(int value) { SetSendDelayMs(value); return *this;}
@@ -119,12 +113,10 @@ namespace Model
     /**
      * If set to passthrough, passes any KLV data from the input source to this output.
      */
-    inline const CmafKLVBehavior& GetKlvBehavior() const{ return m_klvBehavior; }
+    inline CmafKLVBehavior GetKlvBehavior() const { return m_klvBehavior; }
     inline bool KlvBehaviorHasBeenSet() const { return m_klvBehaviorHasBeenSet; }
-    inline void SetKlvBehavior(const CmafKLVBehavior& value) { m_klvBehaviorHasBeenSet = true; m_klvBehavior = value; }
-    inline void SetKlvBehavior(CmafKLVBehavior&& value) { m_klvBehaviorHasBeenSet = true; m_klvBehavior = std::move(value); }
-    inline CmafIngestGroupSettings& WithKlvBehavior(const CmafKLVBehavior& value) { SetKlvBehavior(value); return *this;}
-    inline CmafIngestGroupSettings& WithKlvBehavior(CmafKLVBehavior&& value) { SetKlvBehavior(std::move(value)); return *this;}
+    inline void SetKlvBehavior(CmafKLVBehavior value) { m_klvBehaviorHasBeenSet = true; m_klvBehavior = value; }
+    inline CmafIngestGroupSettings& WithKlvBehavior(CmafKLVBehavior value) { SetKlvBehavior(value); return *this;}
     ///@}
 
     ///@{
@@ -135,14 +127,12 @@ namespace Model
      * string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-),
      * underscore (_) and period (.) and has a maximum length of 100 characters.
      */
-    inline const Aws::String& GetKlvNameModifier() const{ return m_klvNameModifier; }
+    inline const Aws::String& GetKlvNameModifier() const { return m_klvNameModifier; }
     inline bool KlvNameModifierHasBeenSet() const { return m_klvNameModifierHasBeenSet; }
-    inline void SetKlvNameModifier(const Aws::String& value) { m_klvNameModifierHasBeenSet = true; m_klvNameModifier = value; }
-    inline void SetKlvNameModifier(Aws::String&& value) { m_klvNameModifierHasBeenSet = true; m_klvNameModifier = std::move(value); }
-    inline void SetKlvNameModifier(const char* value) { m_klvNameModifierHasBeenSet = true; m_klvNameModifier.assign(value); }
-    inline CmafIngestGroupSettings& WithKlvNameModifier(const Aws::String& value) { SetKlvNameModifier(value); return *this;}
-    inline CmafIngestGroupSettings& WithKlvNameModifier(Aws::String&& value) { SetKlvNameModifier(std::move(value)); return *this;}
-    inline CmafIngestGroupSettings& WithKlvNameModifier(const char* value) { SetKlvNameModifier(value); return *this;}
+    template<typename KlvNameModifierT = Aws::String>
+    void SetKlvNameModifier(KlvNameModifierT&& value) { m_klvNameModifierHasBeenSet = true; m_klvNameModifier = std::forward<KlvNameModifierT>(value); }
+    template<typename KlvNameModifierT = Aws::String>
+    CmafIngestGroupSettings& WithKlvNameModifier(KlvNameModifierT&& value) { SetKlvNameModifier(std::forward<KlvNameModifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,14 +143,12 @@ namespace Model
      * "nid3" string.\nThe modifier can only contain: numbers, letters, plus (+), minus
      * (-), underscore (_) and period (.) and has a maximum length of 100 characters.
      */
-    inline const Aws::String& GetNielsenId3NameModifier() const{ return m_nielsenId3NameModifier; }
+    inline const Aws::String& GetNielsenId3NameModifier() const { return m_nielsenId3NameModifier; }
     inline bool NielsenId3NameModifierHasBeenSet() const { return m_nielsenId3NameModifierHasBeenSet; }
-    inline void SetNielsenId3NameModifier(const Aws::String& value) { m_nielsenId3NameModifierHasBeenSet = true; m_nielsenId3NameModifier = value; }
-    inline void SetNielsenId3NameModifier(Aws::String&& value) { m_nielsenId3NameModifierHasBeenSet = true; m_nielsenId3NameModifier = std::move(value); }
-    inline void SetNielsenId3NameModifier(const char* value) { m_nielsenId3NameModifierHasBeenSet = true; m_nielsenId3NameModifier.assign(value); }
-    inline CmafIngestGroupSettings& WithNielsenId3NameModifier(const Aws::String& value) { SetNielsenId3NameModifier(value); return *this;}
-    inline CmafIngestGroupSettings& WithNielsenId3NameModifier(Aws::String&& value) { SetNielsenId3NameModifier(std::move(value)); return *this;}
-    inline CmafIngestGroupSettings& WithNielsenId3NameModifier(const char* value) { SetNielsenId3NameModifier(value); return *this;}
+    template<typename NielsenId3NameModifierT = Aws::String>
+    void SetNielsenId3NameModifier(NielsenId3NameModifierT&& value) { m_nielsenId3NameModifierHasBeenSet = true; m_nielsenId3NameModifier = std::forward<NielsenId3NameModifierT>(value); }
+    template<typename NielsenId3NameModifierT = Aws::String>
+    CmafIngestGroupSettings& WithNielsenId3NameModifier(NielsenId3NameModifierT&& value) { SetNielsenId3NameModifier(std::forward<NielsenId3NameModifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -171,14 +159,12 @@ namespace Model
      * string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-),
      * underscore (_) and period (.) and has a maximum length of 100 characters.
      */
-    inline const Aws::String& GetScte35NameModifier() const{ return m_scte35NameModifier; }
+    inline const Aws::String& GetScte35NameModifier() const { return m_scte35NameModifier; }
     inline bool Scte35NameModifierHasBeenSet() const { return m_scte35NameModifierHasBeenSet; }
-    inline void SetScte35NameModifier(const Aws::String& value) { m_scte35NameModifierHasBeenSet = true; m_scte35NameModifier = value; }
-    inline void SetScte35NameModifier(Aws::String&& value) { m_scte35NameModifierHasBeenSet = true; m_scte35NameModifier = std::move(value); }
-    inline void SetScte35NameModifier(const char* value) { m_scte35NameModifierHasBeenSet = true; m_scte35NameModifier.assign(value); }
-    inline CmafIngestGroupSettings& WithScte35NameModifier(const Aws::String& value) { SetScte35NameModifier(value); return *this;}
-    inline CmafIngestGroupSettings& WithScte35NameModifier(Aws::String&& value) { SetScte35NameModifier(std::move(value)); return *this;}
-    inline CmafIngestGroupSettings& WithScte35NameModifier(const char* value) { SetScte35NameModifier(value); return *this;}
+    template<typename Scte35NameModifierT = Aws::String>
+    void SetScte35NameModifier(Scte35NameModifierT&& value) { m_scte35NameModifierHasBeenSet = true; m_scte35NameModifier = std::forward<Scte35NameModifierT>(value); }
+    template<typename Scte35NameModifierT = Aws::String>
+    CmafIngestGroupSettings& WithScte35NameModifier(Scte35NameModifierT&& value) { SetScte35NameModifier(std::forward<Scte35NameModifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -187,12 +173,10 @@ namespace Model
      * configure other parameters in the output group, or you add an ID3 action to the
      * channel schedule.
      */
-    inline const CmafId3Behavior& GetId3Behavior() const{ return m_id3Behavior; }
+    inline CmafId3Behavior GetId3Behavior() const { return m_id3Behavior; }
     inline bool Id3BehaviorHasBeenSet() const { return m_id3BehaviorHasBeenSet; }
-    inline void SetId3Behavior(const CmafId3Behavior& value) { m_id3BehaviorHasBeenSet = true; m_id3Behavior = value; }
-    inline void SetId3Behavior(CmafId3Behavior&& value) { m_id3BehaviorHasBeenSet = true; m_id3Behavior = std::move(value); }
-    inline CmafIngestGroupSettings& WithId3Behavior(const CmafId3Behavior& value) { SetId3Behavior(value); return *this;}
-    inline CmafIngestGroupSettings& WithId3Behavior(CmafId3Behavior&& value) { SetId3Behavior(std::move(value)); return *this;}
+    inline void SetId3Behavior(CmafId3Behavior value) { m_id3BehaviorHasBeenSet = true; m_id3Behavior = value; }
+    inline CmafIngestGroupSettings& WithId3Behavior(CmafId3Behavior value) { SetId3Behavior(value); return *this;}
     ///@}
 
     ///@{
@@ -203,36 +187,34 @@ namespace Model
      * string.\nThe modifier can only contain: numbers, letters, plus (+), minus (-),
      * underscore (_) and period (.) and has a maximum length of 100 characters.
      */
-    inline const Aws::String& GetId3NameModifier() const{ return m_id3NameModifier; }
+    inline const Aws::String& GetId3NameModifier() const { return m_id3NameModifier; }
     inline bool Id3NameModifierHasBeenSet() const { return m_id3NameModifierHasBeenSet; }
-    inline void SetId3NameModifier(const Aws::String& value) { m_id3NameModifierHasBeenSet = true; m_id3NameModifier = value; }
-    inline void SetId3NameModifier(Aws::String&& value) { m_id3NameModifierHasBeenSet = true; m_id3NameModifier = std::move(value); }
-    inline void SetId3NameModifier(const char* value) { m_id3NameModifierHasBeenSet = true; m_id3NameModifier.assign(value); }
-    inline CmafIngestGroupSettings& WithId3NameModifier(const Aws::String& value) { SetId3NameModifier(value); return *this;}
-    inline CmafIngestGroupSettings& WithId3NameModifier(Aws::String&& value) { SetId3NameModifier(std::move(value)); return *this;}
-    inline CmafIngestGroupSettings& WithId3NameModifier(const char* value) { SetId3NameModifier(value); return *this;}
+    template<typename Id3NameModifierT = Aws::String>
+    void SetId3NameModifier(Id3NameModifierT&& value) { m_id3NameModifierHasBeenSet = true; m_id3NameModifier = std::forward<Id3NameModifierT>(value); }
+    template<typename Id3NameModifierT = Aws::String>
+    CmafIngestGroupSettings& WithId3NameModifier(Id3NameModifierT&& value) { SetId3NameModifier(std::forward<Id3NameModifierT>(value)); return *this;}
     ///@}
   private:
 
     OutputLocationRef m_destination;
     bool m_destinationHasBeenSet = false;
 
-    CmafNielsenId3Behavior m_nielsenId3Behavior;
+    CmafNielsenId3Behavior m_nielsenId3Behavior{CmafNielsenId3Behavior::NOT_SET};
     bool m_nielsenId3BehaviorHasBeenSet = false;
 
-    Scte35Type m_scte35Type;
+    Scte35Type m_scte35Type{Scte35Type::NOT_SET};
     bool m_scte35TypeHasBeenSet = false;
 
-    int m_segmentLength;
+    int m_segmentLength{0};
     bool m_segmentLengthHasBeenSet = false;
 
-    CmafIngestSegmentLengthUnits m_segmentLengthUnits;
+    CmafIngestSegmentLengthUnits m_segmentLengthUnits{CmafIngestSegmentLengthUnits::NOT_SET};
     bool m_segmentLengthUnitsHasBeenSet = false;
 
-    int m_sendDelayMs;
+    int m_sendDelayMs{0};
     bool m_sendDelayMsHasBeenSet = false;
 
-    CmafKLVBehavior m_klvBehavior;
+    CmafKLVBehavior m_klvBehavior{CmafKLVBehavior::NOT_SET};
     bool m_klvBehaviorHasBeenSet = false;
 
     Aws::String m_klvNameModifier;
@@ -244,7 +226,7 @@ namespace Model
     Aws::String m_scte35NameModifier;
     bool m_scte35NameModifierHasBeenSet = false;
 
-    CmafId3Behavior m_id3Behavior;
+    CmafId3Behavior m_id3Behavior{CmafId3Behavior::NOT_SET};
     bool m_id3BehaviorHasBeenSet = false;
 
     Aws::String m_id3NameModifier;

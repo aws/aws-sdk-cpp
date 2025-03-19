@@ -18,14 +18,7 @@ namespace Bedrock
 namespace Model
 {
 
-HumanWorkflowConfig::HumanWorkflowConfig() : 
-    m_flowDefinitionArnHasBeenSet(false),
-    m_instructionsHasBeenSet(false)
-{
-}
-
 HumanWorkflowConfig::HumanWorkflowConfig(JsonView jsonValue)
-  : HumanWorkflowConfig()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ HumanWorkflowConfig& HumanWorkflowConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("flowDefinitionArn"))
   {
     m_flowDefinitionArn = jsonValue.GetString("flowDefinitionArn");
-
     m_flowDefinitionArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instructions"))
   {
     m_instructions = jsonValue.GetString("instructions");
-
     m_instructionsHasBeenSet = true;
   }
-
   return *this;
 }
 

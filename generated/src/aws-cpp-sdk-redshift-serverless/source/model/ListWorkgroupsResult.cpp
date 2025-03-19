@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListWorkgroupsResult::ListWorkgroupsResult()
-{
-}
-
 ListWorkgroupsResult::ListWorkgroupsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListWorkgroupsResult& ListWorkgroupsResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("workgroups"))
   {
     Aws::Utils::Array<JsonView> workgroupsJsonList = jsonValue.GetArray("workgroups");
@@ -42,14 +37,15 @@ ListWorkgroupsResult& ListWorkgroupsResult::operator =(const Aws::AmazonWebServi
     {
       m_workgroups.push_back(workgroupsJsonList[workgroupsIndex].AsObject());
     }
+    m_workgroupsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

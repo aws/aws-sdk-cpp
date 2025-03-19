@@ -18,19 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-EntityRecognizerInputDataConfig::EntityRecognizerInputDataConfig() : 
-    m_dataFormat(EntityRecognizerDataFormat::NOT_SET),
-    m_dataFormatHasBeenSet(false),
-    m_entityTypesHasBeenSet(false),
-    m_documentsHasBeenSet(false),
-    m_annotationsHasBeenSet(false),
-    m_entityListHasBeenSet(false),
-    m_augmentedManifestsHasBeenSet(false)
-{
-}
-
 EntityRecognizerInputDataConfig::EntityRecognizerInputDataConfig(JsonView jsonValue)
-  : EntityRecognizerInputDataConfig()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ EntityRecognizerInputDataConfig& EntityRecognizerInputDataConfig::operator =(Jso
   if(jsonValue.ValueExists("DataFormat"))
   {
     m_dataFormat = EntityRecognizerDataFormatMapper::GetEntityRecognizerDataFormatForName(jsonValue.GetString("DataFormat"));
-
     m_dataFormatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntityTypes"))
   {
     Aws::Utils::Array<JsonView> entityTypesJsonList = jsonValue.GetArray("EntityTypes");
@@ -53,28 +39,21 @@ EntityRecognizerInputDataConfig& EntityRecognizerInputDataConfig::operator =(Jso
     }
     m_entityTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Documents"))
   {
     m_documents = jsonValue.GetObject("Documents");
-
     m_documentsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Annotations"))
   {
     m_annotations = jsonValue.GetObject("Annotations");
-
     m_annotationsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EntityList"))
   {
     m_entityList = jsonValue.GetObject("EntityList");
-
     m_entityListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AugmentedManifests"))
   {
     Aws::Utils::Array<JsonView> augmentedManifestsJsonList = jsonValue.GetArray("AugmentedManifests");
@@ -84,7 +63,6 @@ EntityRecognizerInputDataConfig& EntityRecognizerInputDataConfig::operator =(Jso
     }
     m_augmentedManifestsHasBeenSet = true;
   }
-
   return *this;
 }
 

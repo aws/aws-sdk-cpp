@@ -34,7 +34,7 @@ namespace Model
   class UriPathRouteInput
   {
   public:
-    AWS_MIGRATIONHUBREFACTORSPACES_API UriPathRouteInput();
+    AWS_MIGRATIONHUBREFACTORSPACES_API UriPathRouteInput() = default;
     AWS_MIGRATIONHUBREFACTORSPACES_API UriPathRouteInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBREFACTORSPACES_API UriPathRouteInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MIGRATIONHUBREFACTORSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,12 +45,10 @@ namespace Model
      * <p>If set to <code>ACTIVE</code>, traffic is forwarded to this route’s service
      * after the route is created. </p>
      */
-    inline const RouteActivationState& GetActivationState() const{ return m_activationState; }
+    inline RouteActivationState GetActivationState() const { return m_activationState; }
     inline bool ActivationStateHasBeenSet() const { return m_activationStateHasBeenSet; }
-    inline void SetActivationState(const RouteActivationState& value) { m_activationStateHasBeenSet = true; m_activationState = value; }
-    inline void SetActivationState(RouteActivationState&& value) { m_activationStateHasBeenSet = true; m_activationState = std::move(value); }
-    inline UriPathRouteInput& WithActivationState(const RouteActivationState& value) { SetActivationState(value); return *this;}
-    inline UriPathRouteInput& WithActivationState(RouteActivationState&& value) { SetActivationState(std::move(value)); return *this;}
+    inline void SetActivationState(RouteActivationState value) { m_activationStateHasBeenSet = true; m_activationState = value; }
+    inline UriPathRouteInput& WithActivationState(RouteActivationState value) { SetActivationState(value); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * <p>If set to <code>true</code>, this option appends the source path to the
      * service URL endpoint.</p>
      */
-    inline bool GetAppendSourcePath() const{ return m_appendSourcePath; }
+    inline bool GetAppendSourcePath() const { return m_appendSourcePath; }
     inline bool AppendSourcePathHasBeenSet() const { return m_appendSourcePathHasBeenSet; }
     inline void SetAppendSourcePath(bool value) { m_appendSourcePathHasBeenSet = true; m_appendSourcePath = value; }
     inline UriPathRouteInput& WithAppendSourcePath(bool value) { SetAppendSourcePath(value); return *this;}
@@ -70,7 +68,7 @@ namespace Model
      * value is <code>false</code>, requests must match the source path exactly before
      * they are forwarded to this route's service. </p>
      */
-    inline bool GetIncludeChildPaths() const{ return m_includeChildPaths; }
+    inline bool GetIncludeChildPaths() const { return m_includeChildPaths; }
     inline bool IncludeChildPathsHasBeenSet() const { return m_includeChildPathsHasBeenSet; }
     inline void SetIncludeChildPaths(bool value) { m_includeChildPathsHasBeenSet = true; m_includeChildPaths = value; }
     inline UriPathRouteInput& WithIncludeChildPaths(bool value) { SetIncludeChildPaths(value); return *this;}
@@ -82,14 +80,13 @@ namespace Model
      * method is present, only HTTP requests using that method are forwarded to this
      * route’s service. </p>
      */
-    inline const Aws::Vector<HttpMethod>& GetMethods() const{ return m_methods; }
+    inline const Aws::Vector<HttpMethod>& GetMethods() const { return m_methods; }
     inline bool MethodsHasBeenSet() const { return m_methodsHasBeenSet; }
-    inline void SetMethods(const Aws::Vector<HttpMethod>& value) { m_methodsHasBeenSet = true; m_methods = value; }
-    inline void SetMethods(Aws::Vector<HttpMethod>&& value) { m_methodsHasBeenSet = true; m_methods = std::move(value); }
-    inline UriPathRouteInput& WithMethods(const Aws::Vector<HttpMethod>& value) { SetMethods(value); return *this;}
-    inline UriPathRouteInput& WithMethods(Aws::Vector<HttpMethod>&& value) { SetMethods(std::move(value)); return *this;}
-    inline UriPathRouteInput& AddMethods(const HttpMethod& value) { m_methodsHasBeenSet = true; m_methods.push_back(value); return *this; }
-    inline UriPathRouteInput& AddMethods(HttpMethod&& value) { m_methodsHasBeenSet = true; m_methods.push_back(std::move(value)); return *this; }
+    template<typename MethodsT = Aws::Vector<HttpMethod>>
+    void SetMethods(MethodsT&& value) { m_methodsHasBeenSet = true; m_methods = std::forward<MethodsT>(value); }
+    template<typename MethodsT = Aws::Vector<HttpMethod>>
+    UriPathRouteInput& WithMethods(MethodsT&& value) { SetMethods(std::forward<MethodsT>(value)); return *this;}
+    inline UriPathRouteInput& AddMethods(HttpMethod value) { m_methodsHasBeenSet = true; m_methods.push_back(value); return *this; }
     ///@}
 
     ///@{
@@ -99,24 +96,22 @@ namespace Model
      * parameters in the source path, add a variable in curly braces. For example, the
      * resource path {user} represents a path parameter called 'user'.</p>
      */
-    inline const Aws::String& GetSourcePath() const{ return m_sourcePath; }
+    inline const Aws::String& GetSourcePath() const { return m_sourcePath; }
     inline bool SourcePathHasBeenSet() const { return m_sourcePathHasBeenSet; }
-    inline void SetSourcePath(const Aws::String& value) { m_sourcePathHasBeenSet = true; m_sourcePath = value; }
-    inline void SetSourcePath(Aws::String&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = std::move(value); }
-    inline void SetSourcePath(const char* value) { m_sourcePathHasBeenSet = true; m_sourcePath.assign(value); }
-    inline UriPathRouteInput& WithSourcePath(const Aws::String& value) { SetSourcePath(value); return *this;}
-    inline UriPathRouteInput& WithSourcePath(Aws::String&& value) { SetSourcePath(std::move(value)); return *this;}
-    inline UriPathRouteInput& WithSourcePath(const char* value) { SetSourcePath(value); return *this;}
+    template<typename SourcePathT = Aws::String>
+    void SetSourcePath(SourcePathT&& value) { m_sourcePathHasBeenSet = true; m_sourcePath = std::forward<SourcePathT>(value); }
+    template<typename SourcePathT = Aws::String>
+    UriPathRouteInput& WithSourcePath(SourcePathT&& value) { SetSourcePath(std::forward<SourcePathT>(value)); return *this;}
     ///@}
   private:
 
-    RouteActivationState m_activationState;
+    RouteActivationState m_activationState{RouteActivationState::NOT_SET};
     bool m_activationStateHasBeenSet = false;
 
-    bool m_appendSourcePath;
+    bool m_appendSourcePath{false};
     bool m_appendSourcePathHasBeenSet = false;
 
-    bool m_includeChildPaths;
+    bool m_includeChildPaths{false};
     bool m_includeChildPathsHasBeenSet = false;
 
     Aws::Vector<HttpMethod> m_methods;

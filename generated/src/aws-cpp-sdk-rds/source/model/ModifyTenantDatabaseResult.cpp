@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyTenantDatabaseResult::ModifyTenantDatabaseResult()
-{
-}
-
 ModifyTenantDatabaseResult::ModifyTenantDatabaseResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ ModifyTenantDatabaseResult& ModifyTenantDatabaseResult::operator =(const Aws::Am
     if(!tenantDatabaseNode.IsNull())
     {
       m_tenantDatabase = tenantDatabaseNode;
+      m_tenantDatabaseHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::ModifyTenantDatabaseResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

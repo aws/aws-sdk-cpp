@@ -41,7 +41,7 @@ namespace Model
   class RegexMatchSetSummary
   {
   public:
-    AWS_WAF_API RegexMatchSetSummary();
+    AWS_WAF_API RegexMatchSetSummary() = default;
     AWS_WAF_API RegexMatchSetSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API RegexMatchSetSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAF_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,14 +56,12 @@ namespace Model
      * <code>RegexMatchSet</code> from AWS WAF.</p> <p> <code>RegexMatchSetId</code> is
      * returned by <a>CreateRegexMatchSet</a> and by <a>ListRegexMatchSets</a>.</p>
      */
-    inline const Aws::String& GetRegexMatchSetId() const{ return m_regexMatchSetId; }
+    inline const Aws::String& GetRegexMatchSetId() const { return m_regexMatchSetId; }
     inline bool RegexMatchSetIdHasBeenSet() const { return m_regexMatchSetIdHasBeenSet; }
-    inline void SetRegexMatchSetId(const Aws::String& value) { m_regexMatchSetIdHasBeenSet = true; m_regexMatchSetId = value; }
-    inline void SetRegexMatchSetId(Aws::String&& value) { m_regexMatchSetIdHasBeenSet = true; m_regexMatchSetId = std::move(value); }
-    inline void SetRegexMatchSetId(const char* value) { m_regexMatchSetIdHasBeenSet = true; m_regexMatchSetId.assign(value); }
-    inline RegexMatchSetSummary& WithRegexMatchSetId(const Aws::String& value) { SetRegexMatchSetId(value); return *this;}
-    inline RegexMatchSetSummary& WithRegexMatchSetId(Aws::String&& value) { SetRegexMatchSetId(std::move(value)); return *this;}
-    inline RegexMatchSetSummary& WithRegexMatchSetId(const char* value) { SetRegexMatchSetId(value); return *this;}
+    template<typename RegexMatchSetIdT = Aws::String>
+    void SetRegexMatchSetId(RegexMatchSetIdT&& value) { m_regexMatchSetIdHasBeenSet = true; m_regexMatchSetId = std::forward<RegexMatchSetIdT>(value); }
+    template<typename RegexMatchSetIdT = Aws::String>
+    RegexMatchSetSummary& WithRegexMatchSetId(RegexMatchSetIdT&& value) { SetRegexMatchSetId(std::forward<RegexMatchSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,14 +69,12 @@ namespace Model
      * <p>A friendly name or description of the <a>RegexMatchSet</a>. You can't change
      * <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline RegexMatchSetSummary& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline RegexMatchSetSummary& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline RegexMatchSetSummary& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    RegexMatchSetSummary& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

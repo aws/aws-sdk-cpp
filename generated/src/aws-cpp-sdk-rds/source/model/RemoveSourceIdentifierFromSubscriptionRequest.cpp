@@ -10,12 +10,6 @@
 using namespace Aws::RDS::Model;
 using namespace Aws::Utils;
 
-RemoveSourceIdentifierFromSubscriptionRequest::RemoveSourceIdentifierFromSubscriptionRequest() : 
-    m_subscriptionNameHasBeenSet(false),
-    m_sourceIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String RemoveSourceIdentifierFromSubscriptionRequest::SerializePayload() const
 {
   Aws::StringStream ss;

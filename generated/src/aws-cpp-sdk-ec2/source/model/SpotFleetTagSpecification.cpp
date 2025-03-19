@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-SpotFleetTagSpecification::SpotFleetTagSpecification() : 
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 SpotFleetTagSpecification::SpotFleetTagSpecification(const XmlNode& xmlNode)
-  : SpotFleetTagSpecification()
 {
   *this = xmlNode;
 }
@@ -42,13 +34,14 @@ SpotFleetTagSpecification& SpotFleetTagSpecification::operator =(const XmlNode& 
     XmlNode resourceTypeNode = resultNode.FirstChild("resourceType");
     if(!resourceTypeNode.IsNull())
     {
-      m_resourceType = ResourceTypeMapper::GetResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()).c_str());
+      m_resourceType = ResourceTypeMapper::GetResourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(resourceTypeNode.GetText()).c_str()));
       m_resourceTypeHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tag");
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

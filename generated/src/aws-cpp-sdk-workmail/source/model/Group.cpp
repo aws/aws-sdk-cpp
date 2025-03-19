@@ -18,19 +18,7 @@ namespace WorkMail
 namespace Model
 {
 
-Group::Group() : 
-    m_idHasBeenSet(false),
-    m_emailHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_state(EntityState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_enabledDateHasBeenSet(false),
-    m_disabledDateHasBeenSet(false)
-{
-}
-
 Group::Group(JsonView jsonValue)
-  : Group()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ Group& Group::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Email"))
   {
     m_email = jsonValue.GetString("Email");
-
     m_emailHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = EntityStateMapper::GetEntityStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnabledDate"))
   {
     m_enabledDate = jsonValue.GetDouble("EnabledDate");
-
     m_enabledDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisabledDate"))
   {
     m_disabledDate = jsonValue.GetDouble("DisabledDate");
-
     m_disabledDateHasBeenSet = true;
   }
-
   return *this;
 }
 

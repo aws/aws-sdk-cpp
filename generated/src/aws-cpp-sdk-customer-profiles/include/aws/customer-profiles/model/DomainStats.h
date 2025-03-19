@@ -29,7 +29,7 @@ namespace Model
   class DomainStats
   {
   public:
-    AWS_CUSTOMERPROFILES_API DomainStats();
+    AWS_CUSTOMERPROFILES_API DomainStats() = default;
     AWS_CUSTOMERPROFILES_API DomainStats(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API DomainStats& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -39,7 +39,7 @@ namespace Model
     /**
      * <p>The total number of profiles currently in the domain.</p>
      */
-    inline long long GetProfileCount() const{ return m_profileCount; }
+    inline long long GetProfileCount() const { return m_profileCount; }
     inline bool ProfileCountHasBeenSet() const { return m_profileCountHasBeenSet; }
     inline void SetProfileCount(long long value) { m_profileCountHasBeenSet = true; m_profileCount = value; }
     inline DomainStats& WithProfileCount(long long value) { SetProfileCount(value); return *this;}
@@ -52,7 +52,7 @@ namespace Model
      * counts as two profiles. If you have more than 200 objects, that profile counts
      * as three, and so on.</p>
      */
-    inline long long GetMeteringProfileCount() const{ return m_meteringProfileCount; }
+    inline long long GetMeteringProfileCount() const { return m_meteringProfileCount; }
     inline bool MeteringProfileCountHasBeenSet() const { return m_meteringProfileCountHasBeenSet; }
     inline void SetMeteringProfileCount(long long value) { m_meteringProfileCountHasBeenSet = true; m_meteringProfileCount = value; }
     inline DomainStats& WithMeteringProfileCount(long long value) { SetMeteringProfileCount(value); return *this;}
@@ -62,7 +62,7 @@ namespace Model
     /**
      * <p>The total number of objects in domain.</p>
      */
-    inline long long GetObjectCount() const{ return m_objectCount; }
+    inline long long GetObjectCount() const { return m_objectCount; }
     inline bool ObjectCountHasBeenSet() const { return m_objectCountHasBeenSet; }
     inline void SetObjectCount(long long value) { m_objectCountHasBeenSet = true; m_objectCount = value; }
     inline DomainStats& WithObjectCount(long long value) { SetObjectCount(value); return *this;}
@@ -72,23 +72,23 @@ namespace Model
     /**
      * <p>The total size, in bytes, of all objects in the domain.</p>
      */
-    inline long long GetTotalSize() const{ return m_totalSize; }
+    inline long long GetTotalSize() const { return m_totalSize; }
     inline bool TotalSizeHasBeenSet() const { return m_totalSizeHasBeenSet; }
     inline void SetTotalSize(long long value) { m_totalSizeHasBeenSet = true; m_totalSize = value; }
     inline DomainStats& WithTotalSize(long long value) { SetTotalSize(value); return *this;}
     ///@}
   private:
 
-    long long m_profileCount;
+    long long m_profileCount{0};
     bool m_profileCountHasBeenSet = false;
 
-    long long m_meteringProfileCount;
+    long long m_meteringProfileCount{0};
     bool m_meteringProfileCountHasBeenSet = false;
 
-    long long m_objectCount;
+    long long m_objectCount{0};
     bool m_objectCountHasBeenSet = false;
 
-    long long m_totalSize;
+    long long m_totalSize{0};
     bool m_totalSizeHasBeenSet = false;
   };
 

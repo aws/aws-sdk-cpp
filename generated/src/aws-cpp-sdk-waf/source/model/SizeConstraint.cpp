@@ -18,19 +18,7 @@ namespace WAF
 namespace Model
 {
 
-SizeConstraint::SizeConstraint() : 
-    m_fieldToMatchHasBeenSet(false),
-    m_textTransformation(TextTransformation::NOT_SET),
-    m_textTransformationHasBeenSet(false),
-    m_comparisonOperator(ComparisonOperator::NOT_SET),
-    m_comparisonOperatorHasBeenSet(false),
-    m_size(0),
-    m_sizeHasBeenSet(false)
-{
-}
-
 SizeConstraint::SizeConstraint(JsonView jsonValue)
-  : SizeConstraint()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ SizeConstraint& SizeConstraint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldToMatch"))
   {
     m_fieldToMatch = jsonValue.GetObject("FieldToMatch");
-
     m_fieldToMatchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TextTransformation"))
   {
     m_textTransformation = TextTransformationMapper::GetTextTransformationForName(jsonValue.GetString("TextTransformation"));
-
     m_textTransformationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComparisonOperator"))
   {
     m_comparisonOperator = ComparisonOperatorMapper::GetComparisonOperatorForName(jsonValue.GetString("ComparisonOperator"));
-
     m_comparisonOperatorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Size"))
   {
     m_size = jsonValue.GetInt64("Size");
-
     m_sizeHasBeenSet = true;
   }
-
   return *this;
 }
 

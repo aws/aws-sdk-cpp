@@ -18,23 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-AssetFilterSummary::AssetFilterSummary() : 
-    m_assetIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_effectiveColumnNamesHasBeenSet(false),
-    m_effectiveRowFilterHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(FilterStatus::NOT_SET),
-    m_statusHasBeenSet(false)
-{
-}
-
 AssetFilterSummary::AssetFilterSummary(JsonView jsonValue)
-  : AssetFilterSummary()
 {
   *this = jsonValue;
 }
@@ -44,31 +28,23 @@ AssetFilterSummary& AssetFilterSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("assetId"))
   {
     m_assetId = jsonValue.GetString("assetId");
-
     m_assetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainId"))
   {
     m_domainId = jsonValue.GetString("domainId");
-
     m_domainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("effectiveColumnNames"))
   {
     Aws::Utils::Array<JsonView> effectiveColumnNamesJsonList = jsonValue.GetArray("effectiveColumnNames");
@@ -78,42 +54,31 @@ AssetFilterSummary& AssetFilterSummary::operator =(JsonView jsonValue)
     }
     m_effectiveColumnNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("effectiveRowFilter"))
   {
     m_effectiveRowFilter = jsonValue.GetString("effectiveRowFilter");
-
     m_effectiveRowFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = FilterStatusMapper::GetFilterStatusForName(jsonValue.GetString("status"));
-
     m_statusHasBeenSet = true;
   }
-
   return *this;
 }
 

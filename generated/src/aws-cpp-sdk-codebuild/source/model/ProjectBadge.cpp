@@ -18,15 +18,7 @@ namespace CodeBuild
 namespace Model
 {
 
-ProjectBadge::ProjectBadge() : 
-    m_badgeEnabled(false),
-    m_badgeEnabledHasBeenSet(false),
-    m_badgeRequestUrlHasBeenSet(false)
-{
-}
-
 ProjectBadge::ProjectBadge(JsonView jsonValue)
-  : ProjectBadge()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ProjectBadge& ProjectBadge::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("badgeEnabled"))
   {
     m_badgeEnabled = jsonValue.GetBool("badgeEnabled");
-
     m_badgeEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("badgeRequestUrl"))
   {
     m_badgeRequestUrl = jsonValue.GetString("badgeRequestUrl");
-
     m_badgeRequestUrlHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListCommandsRequest::ListCommandsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_namespace(CommandNamespace::NOT_SET),
-    m_namespaceHasBeenSet(false),
-    m_commandParameterNameHasBeenSet(false),
-    m_sortOrder(SortOrder::NOT_SET),
-    m_sortOrderHasBeenSet(false)
-{
-}
-
 Aws::String ListCommandsRequest::SerializePayload() const
 {
   return {};

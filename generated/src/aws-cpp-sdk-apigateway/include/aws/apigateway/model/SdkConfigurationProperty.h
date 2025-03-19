@@ -31,7 +31,7 @@ namespace Model
   class SdkConfigurationProperty
   {
   public:
-    AWS_APIGATEWAY_API SdkConfigurationProperty();
+    AWS_APIGATEWAY_API SdkConfigurationProperty() = default;
     AWS_APIGATEWAY_API SdkConfigurationProperty(Aws::Utils::Json::JsonView jsonValue);
     AWS_APIGATEWAY_API SdkConfigurationProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APIGATEWAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,42 +41,36 @@ namespace Model
     /**
      * <p>The name of a an SdkType configuration property.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline SdkConfigurationProperty& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline SdkConfigurationProperty& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline SdkConfigurationProperty& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    SdkConfigurationProperty& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The user-friendly name of an SdkType configuration property.</p>
      */
-    inline const Aws::String& GetFriendlyName() const{ return m_friendlyName; }
+    inline const Aws::String& GetFriendlyName() const { return m_friendlyName; }
     inline bool FriendlyNameHasBeenSet() const { return m_friendlyNameHasBeenSet; }
-    inline void SetFriendlyName(const Aws::String& value) { m_friendlyNameHasBeenSet = true; m_friendlyName = value; }
-    inline void SetFriendlyName(Aws::String&& value) { m_friendlyNameHasBeenSet = true; m_friendlyName = std::move(value); }
-    inline void SetFriendlyName(const char* value) { m_friendlyNameHasBeenSet = true; m_friendlyName.assign(value); }
-    inline SdkConfigurationProperty& WithFriendlyName(const Aws::String& value) { SetFriendlyName(value); return *this;}
-    inline SdkConfigurationProperty& WithFriendlyName(Aws::String&& value) { SetFriendlyName(std::move(value)); return *this;}
-    inline SdkConfigurationProperty& WithFriendlyName(const char* value) { SetFriendlyName(value); return *this;}
+    template<typename FriendlyNameT = Aws::String>
+    void SetFriendlyName(FriendlyNameT&& value) { m_friendlyNameHasBeenSet = true; m_friendlyName = std::forward<FriendlyNameT>(value); }
+    template<typename FriendlyNameT = Aws::String>
+    SdkConfigurationProperty& WithFriendlyName(FriendlyNameT&& value) { SetFriendlyName(std::forward<FriendlyNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of an SdkType configuration property.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline SdkConfigurationProperty& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline SdkConfigurationProperty& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline SdkConfigurationProperty& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    SdkConfigurationProperty& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,7 +79,7 @@ namespace Model
      * associated SDK configuration property is required (<code>true</code>) or not
      * (<code>false</code>).</p>
      */
-    inline bool GetRequired() const{ return m_required; }
+    inline bool GetRequired() const { return m_required; }
     inline bool RequiredHasBeenSet() const { return m_requiredHasBeenSet; }
     inline void SetRequired(bool value) { m_requiredHasBeenSet = true; m_required = value; }
     inline SdkConfigurationProperty& WithRequired(bool value) { SetRequired(value); return *this;}
@@ -95,14 +89,12 @@ namespace Model
     /**
      * <p>The default value of an SdkType configuration property.</p>
      */
-    inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+    inline const Aws::String& GetDefaultValue() const { return m_defaultValue; }
     inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
-    inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
-    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
-    inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
-    inline SdkConfigurationProperty& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
-    inline SdkConfigurationProperty& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
-    inline SdkConfigurationProperty& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+    template<typename DefaultValueT = Aws::String>
+    void SetDefaultValue(DefaultValueT&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::forward<DefaultValueT>(value); }
+    template<typename DefaultValueT = Aws::String>
+    SdkConfigurationProperty& WithDefaultValue(DefaultValueT&& value) { SetDefaultValue(std::forward<DefaultValueT>(value)); return *this;}
     ///@}
   private:
 
@@ -115,7 +107,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    bool m_required;
+    bool m_required{false};
     bool m_requiredHasBeenSet = false;
 
     Aws::String m_defaultValue;

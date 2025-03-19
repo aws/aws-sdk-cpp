@@ -12,13 +12,6 @@ using namespace Aws::OpsWorksCM::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ExportServerEngineAttributeRequest::ExportServerEngineAttributeRequest() : 
-    m_exportAttributeNameHasBeenSet(false),
-    m_serverNameHasBeenSet(false),
-    m_inputAttributesHasBeenSet(false)
-{
-}
-
 Aws::String ExportServerEngineAttributeRequest::SerializePayload() const
 {
   JsonValue payload;

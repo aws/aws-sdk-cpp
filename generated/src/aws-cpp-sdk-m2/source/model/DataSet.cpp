@@ -18,17 +18,7 @@ namespace MainframeModernization
 namespace Model
 {
 
-DataSet::DataSet() : 
-    m_datasetNameHasBeenSet(false),
-    m_datasetOrgHasBeenSet(false),
-    m_recordLengthHasBeenSet(false),
-    m_relativePathHasBeenSet(false),
-    m_storageTypeHasBeenSet(false)
-{
-}
-
 DataSet::DataSet(JsonView jsonValue)
-  : DataSet()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ DataSet& DataSet::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("datasetName"))
   {
     m_datasetName = jsonValue.GetString("datasetName");
-
     m_datasetNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datasetOrg"))
   {
     m_datasetOrg = jsonValue.GetObject("datasetOrg");
-
     m_datasetOrgHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("recordLength"))
   {
     m_recordLength = jsonValue.GetObject("recordLength");
-
     m_recordLengthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relativePath"))
   {
     m_relativePath = jsonValue.GetString("relativePath");
-
     m_relativePathHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("storageType"))
   {
     m_storageType = jsonValue.GetString("storageType");
-
     m_storageTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

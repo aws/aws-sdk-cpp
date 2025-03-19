@@ -18,21 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-OrganizationManagedRuleMetadata::OrganizationManagedRuleMetadata() : 
-    m_descriptionHasBeenSet(false),
-    m_ruleIdentifierHasBeenSet(false),
-    m_inputParametersHasBeenSet(false),
-    m_maximumExecutionFrequency(MaximumExecutionFrequency::NOT_SET),
-    m_maximumExecutionFrequencyHasBeenSet(false),
-    m_resourceTypesScopeHasBeenSet(false),
-    m_resourceIdScopeHasBeenSet(false),
-    m_tagKeyScopeHasBeenSet(false),
-    m_tagValueScopeHasBeenSet(false)
-{
-}
-
 OrganizationManagedRuleMetadata::OrganizationManagedRuleMetadata(JsonView jsonValue)
-  : OrganizationManagedRuleMetadata()
 {
   *this = jsonValue;
 }
@@ -42,31 +28,23 @@ OrganizationManagedRuleMetadata& OrganizationManagedRuleMetadata::operator =(Jso
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RuleIdentifier"))
   {
     m_ruleIdentifier = jsonValue.GetString("RuleIdentifier");
-
     m_ruleIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InputParameters"))
   {
     m_inputParameters = jsonValue.GetString("InputParameters");
-
     m_inputParametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaximumExecutionFrequency"))
   {
     m_maximumExecutionFrequency = MaximumExecutionFrequencyMapper::GetMaximumExecutionFrequencyForName(jsonValue.GetString("MaximumExecutionFrequency"));
-
     m_maximumExecutionFrequencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceTypesScope"))
   {
     Aws::Utils::Array<JsonView> resourceTypesScopeJsonList = jsonValue.GetArray("ResourceTypesScope");
@@ -76,28 +54,21 @@ OrganizationManagedRuleMetadata& OrganizationManagedRuleMetadata::operator =(Jso
     }
     m_resourceTypesScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceIdScope"))
   {
     m_resourceIdScope = jsonValue.GetString("ResourceIdScope");
-
     m_resourceIdScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagKeyScope"))
   {
     m_tagKeyScope = jsonValue.GetString("TagKeyScope");
-
     m_tagKeyScopeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagValueScope"))
   {
     m_tagValueScope = jsonValue.GetString("TagValueScope");
-
     m_tagValueScopeHasBeenSet = true;
   }
-
   return *this;
 }
 

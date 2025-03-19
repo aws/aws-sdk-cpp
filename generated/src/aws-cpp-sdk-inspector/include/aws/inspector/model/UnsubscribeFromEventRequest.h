@@ -22,7 +22,7 @@ namespace Model
   class UnsubscribeFromEventRequest : public InspectorRequest
   {
   public:
-    AWS_INSPECTOR_API UnsubscribeFromEventRequest();
+    AWS_INSPECTOR_API UnsubscribeFromEventRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,47 +40,41 @@ namespace Model
      * <p>The ARN of the assessment template that is used during the event for which
      * you want to stop receiving SNS notifications.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
-    inline UnsubscribeFromEventRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline UnsubscribeFromEventRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline UnsubscribeFromEventRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    UnsubscribeFromEventRequest& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The event for which you want to stop receiving SNS notifications.</p>
      */
-    inline const InspectorEvent& GetEvent() const{ return m_event; }
+    inline InspectorEvent GetEvent() const { return m_event; }
     inline bool EventHasBeenSet() const { return m_eventHasBeenSet; }
-    inline void SetEvent(const InspectorEvent& value) { m_eventHasBeenSet = true; m_event = value; }
-    inline void SetEvent(InspectorEvent&& value) { m_eventHasBeenSet = true; m_event = std::move(value); }
-    inline UnsubscribeFromEventRequest& WithEvent(const InspectorEvent& value) { SetEvent(value); return *this;}
-    inline UnsubscribeFromEventRequest& WithEvent(InspectorEvent&& value) { SetEvent(std::move(value)); return *this;}
+    inline void SetEvent(InspectorEvent value) { m_eventHasBeenSet = true; m_event = value; }
+    inline UnsubscribeFromEventRequest& WithEvent(InspectorEvent value) { SetEvent(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the SNS topic to which SNS notifications are sent.</p>
      */
-    inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+    inline const Aws::String& GetTopicArn() const { return m_topicArn; }
     inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
-    inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
-    inline void SetTopicArn(Aws::String&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::move(value); }
-    inline void SetTopicArn(const char* value) { m_topicArnHasBeenSet = true; m_topicArn.assign(value); }
-    inline UnsubscribeFromEventRequest& WithTopicArn(const Aws::String& value) { SetTopicArn(value); return *this;}
-    inline UnsubscribeFromEventRequest& WithTopicArn(Aws::String&& value) { SetTopicArn(std::move(value)); return *this;}
-    inline UnsubscribeFromEventRequest& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
+    template<typename TopicArnT = Aws::String>
+    void SetTopicArn(TopicArnT&& value) { m_topicArnHasBeenSet = true; m_topicArn = std::forward<TopicArnT>(value); }
+    template<typename TopicArnT = Aws::String>
+    UnsubscribeFromEventRequest& WithTopicArn(TopicArnT&& value) { SetTopicArn(std::forward<TopicArnT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_resourceArn;
     bool m_resourceArnHasBeenSet = false;
 
-    InspectorEvent m_event;
+    InspectorEvent m_event{InspectorEvent::NOT_SET};
     bool m_eventHasBeenSet = false;
 
     Aws::String m_topicArn;

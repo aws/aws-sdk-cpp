@@ -32,7 +32,7 @@ namespace Model
   class MediaPlacement
   {
   public:
-    AWS_CHIMESDKMEETINGS_API MediaPlacement();
+    AWS_CHIMESDKMEETINGS_API MediaPlacement() = default;
     AWS_CHIMESDKMEETINGS_API MediaPlacement(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEETINGS_API MediaPlacement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CHIMESDKMEETINGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,42 +42,36 @@ namespace Model
     /**
      * <p>The audio host URL.</p>
      */
-    inline const Aws::String& GetAudioHostUrl() const{ return m_audioHostUrl; }
+    inline const Aws::String& GetAudioHostUrl() const { return m_audioHostUrl; }
     inline bool AudioHostUrlHasBeenSet() const { return m_audioHostUrlHasBeenSet; }
-    inline void SetAudioHostUrl(const Aws::String& value) { m_audioHostUrlHasBeenSet = true; m_audioHostUrl = value; }
-    inline void SetAudioHostUrl(Aws::String&& value) { m_audioHostUrlHasBeenSet = true; m_audioHostUrl = std::move(value); }
-    inline void SetAudioHostUrl(const char* value) { m_audioHostUrlHasBeenSet = true; m_audioHostUrl.assign(value); }
-    inline MediaPlacement& WithAudioHostUrl(const Aws::String& value) { SetAudioHostUrl(value); return *this;}
-    inline MediaPlacement& WithAudioHostUrl(Aws::String&& value) { SetAudioHostUrl(std::move(value)); return *this;}
-    inline MediaPlacement& WithAudioHostUrl(const char* value) { SetAudioHostUrl(value); return *this;}
+    template<typename AudioHostUrlT = Aws::String>
+    void SetAudioHostUrl(AudioHostUrlT&& value) { m_audioHostUrlHasBeenSet = true; m_audioHostUrl = std::forward<AudioHostUrlT>(value); }
+    template<typename AudioHostUrlT = Aws::String>
+    MediaPlacement& WithAudioHostUrl(AudioHostUrlT&& value) { SetAudioHostUrl(std::forward<AudioHostUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The audio fallback URL.</p>
      */
-    inline const Aws::String& GetAudioFallbackUrl() const{ return m_audioFallbackUrl; }
+    inline const Aws::String& GetAudioFallbackUrl() const { return m_audioFallbackUrl; }
     inline bool AudioFallbackUrlHasBeenSet() const { return m_audioFallbackUrlHasBeenSet; }
-    inline void SetAudioFallbackUrl(const Aws::String& value) { m_audioFallbackUrlHasBeenSet = true; m_audioFallbackUrl = value; }
-    inline void SetAudioFallbackUrl(Aws::String&& value) { m_audioFallbackUrlHasBeenSet = true; m_audioFallbackUrl = std::move(value); }
-    inline void SetAudioFallbackUrl(const char* value) { m_audioFallbackUrlHasBeenSet = true; m_audioFallbackUrl.assign(value); }
-    inline MediaPlacement& WithAudioFallbackUrl(const Aws::String& value) { SetAudioFallbackUrl(value); return *this;}
-    inline MediaPlacement& WithAudioFallbackUrl(Aws::String&& value) { SetAudioFallbackUrl(std::move(value)); return *this;}
-    inline MediaPlacement& WithAudioFallbackUrl(const char* value) { SetAudioFallbackUrl(value); return *this;}
+    template<typename AudioFallbackUrlT = Aws::String>
+    void SetAudioFallbackUrl(AudioFallbackUrlT&& value) { m_audioFallbackUrlHasBeenSet = true; m_audioFallbackUrl = std::forward<AudioFallbackUrlT>(value); }
+    template<typename AudioFallbackUrlT = Aws::String>
+    MediaPlacement& WithAudioFallbackUrl(AudioFallbackUrlT&& value) { SetAudioFallbackUrl(std::forward<AudioFallbackUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The signaling URL.</p>
      */
-    inline const Aws::String& GetSignalingUrl() const{ return m_signalingUrl; }
+    inline const Aws::String& GetSignalingUrl() const { return m_signalingUrl; }
     inline bool SignalingUrlHasBeenSet() const { return m_signalingUrlHasBeenSet; }
-    inline void SetSignalingUrl(const Aws::String& value) { m_signalingUrlHasBeenSet = true; m_signalingUrl = value; }
-    inline void SetSignalingUrl(Aws::String&& value) { m_signalingUrlHasBeenSet = true; m_signalingUrl = std::move(value); }
-    inline void SetSignalingUrl(const char* value) { m_signalingUrlHasBeenSet = true; m_signalingUrl.assign(value); }
-    inline MediaPlacement& WithSignalingUrl(const Aws::String& value) { SetSignalingUrl(value); return *this;}
-    inline MediaPlacement& WithSignalingUrl(Aws::String&& value) { SetSignalingUrl(std::move(value)); return *this;}
-    inline MediaPlacement& WithSignalingUrl(const char* value) { SetSignalingUrl(value); return *this;}
+    template<typename SignalingUrlT = Aws::String>
+    void SetSignalingUrl(SignalingUrlT&& value) { m_signalingUrlHasBeenSet = true; m_signalingUrl = std::forward<SignalingUrlT>(value); }
+    template<typename SignalingUrlT = Aws::String>
+    MediaPlacement& WithSignalingUrl(SignalingUrlT&& value) { SetSignalingUrl(std::forward<SignalingUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +79,12 @@ namespace Model
      * <p>The turn control URL.</p>  <p> <b>This parameter is deprecated and
      * no longer used by the Amazon Chime SDK.</b> </p> 
      */
-    inline const Aws::String& GetTurnControlUrl() const{ return m_turnControlUrl; }
+    inline const Aws::String& GetTurnControlUrl() const { return m_turnControlUrl; }
     inline bool TurnControlUrlHasBeenSet() const { return m_turnControlUrlHasBeenSet; }
-    inline void SetTurnControlUrl(const Aws::String& value) { m_turnControlUrlHasBeenSet = true; m_turnControlUrl = value; }
-    inline void SetTurnControlUrl(Aws::String&& value) { m_turnControlUrlHasBeenSet = true; m_turnControlUrl = std::move(value); }
-    inline void SetTurnControlUrl(const char* value) { m_turnControlUrlHasBeenSet = true; m_turnControlUrl.assign(value); }
-    inline MediaPlacement& WithTurnControlUrl(const Aws::String& value) { SetTurnControlUrl(value); return *this;}
-    inline MediaPlacement& WithTurnControlUrl(Aws::String&& value) { SetTurnControlUrl(std::move(value)); return *this;}
-    inline MediaPlacement& WithTurnControlUrl(const char* value) { SetTurnControlUrl(value); return *this;}
+    template<typename TurnControlUrlT = Aws::String>
+    void SetTurnControlUrl(TurnControlUrlT&& value) { m_turnControlUrlHasBeenSet = true; m_turnControlUrl = std::forward<TurnControlUrlT>(value); }
+    template<typename TurnControlUrlT = Aws::String>
+    MediaPlacement& WithTurnControlUrl(TurnControlUrlT&& value) { SetTurnControlUrl(std::forward<TurnControlUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,14 +92,12 @@ namespace Model
      * <p>The screen data URL.</p>  <p> <b>This parameter is deprecated and
      * no longer used by the Amazon Chime SDK.</b> </p> 
      */
-    inline const Aws::String& GetScreenDataUrl() const{ return m_screenDataUrl; }
+    inline const Aws::String& GetScreenDataUrl() const { return m_screenDataUrl; }
     inline bool ScreenDataUrlHasBeenSet() const { return m_screenDataUrlHasBeenSet; }
-    inline void SetScreenDataUrl(const Aws::String& value) { m_screenDataUrlHasBeenSet = true; m_screenDataUrl = value; }
-    inline void SetScreenDataUrl(Aws::String&& value) { m_screenDataUrlHasBeenSet = true; m_screenDataUrl = std::move(value); }
-    inline void SetScreenDataUrl(const char* value) { m_screenDataUrlHasBeenSet = true; m_screenDataUrl.assign(value); }
-    inline MediaPlacement& WithScreenDataUrl(const Aws::String& value) { SetScreenDataUrl(value); return *this;}
-    inline MediaPlacement& WithScreenDataUrl(Aws::String&& value) { SetScreenDataUrl(std::move(value)); return *this;}
-    inline MediaPlacement& WithScreenDataUrl(const char* value) { SetScreenDataUrl(value); return *this;}
+    template<typename ScreenDataUrlT = Aws::String>
+    void SetScreenDataUrl(ScreenDataUrlT&& value) { m_screenDataUrlHasBeenSet = true; m_screenDataUrl = std::forward<ScreenDataUrlT>(value); }
+    template<typename ScreenDataUrlT = Aws::String>
+    MediaPlacement& WithScreenDataUrl(ScreenDataUrlT&& value) { SetScreenDataUrl(std::forward<ScreenDataUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,14 +105,12 @@ namespace Model
      * <p>The screen viewing URL.</p>  <p> <b>This parameter is deprecated
      * and no longer used by the Amazon Chime SDK.</b> </p> 
      */
-    inline const Aws::String& GetScreenViewingUrl() const{ return m_screenViewingUrl; }
+    inline const Aws::String& GetScreenViewingUrl() const { return m_screenViewingUrl; }
     inline bool ScreenViewingUrlHasBeenSet() const { return m_screenViewingUrlHasBeenSet; }
-    inline void SetScreenViewingUrl(const Aws::String& value) { m_screenViewingUrlHasBeenSet = true; m_screenViewingUrl = value; }
-    inline void SetScreenViewingUrl(Aws::String&& value) { m_screenViewingUrlHasBeenSet = true; m_screenViewingUrl = std::move(value); }
-    inline void SetScreenViewingUrl(const char* value) { m_screenViewingUrlHasBeenSet = true; m_screenViewingUrl.assign(value); }
-    inline MediaPlacement& WithScreenViewingUrl(const Aws::String& value) { SetScreenViewingUrl(value); return *this;}
-    inline MediaPlacement& WithScreenViewingUrl(Aws::String&& value) { SetScreenViewingUrl(std::move(value)); return *this;}
-    inline MediaPlacement& WithScreenViewingUrl(const char* value) { SetScreenViewingUrl(value); return *this;}
+    template<typename ScreenViewingUrlT = Aws::String>
+    void SetScreenViewingUrl(ScreenViewingUrlT&& value) { m_screenViewingUrlHasBeenSet = true; m_screenViewingUrl = std::forward<ScreenViewingUrlT>(value); }
+    template<typename ScreenViewingUrlT = Aws::String>
+    MediaPlacement& WithScreenViewingUrl(ScreenViewingUrlT&& value) { SetScreenViewingUrl(std::forward<ScreenViewingUrlT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -130,28 +118,24 @@ namespace Model
      * <p>The screen sharing URL.</p>  <p> <b>This parameter is deprecated
      * and no longer used by the Amazon Chime SDK.</b> </p> 
      */
-    inline const Aws::String& GetScreenSharingUrl() const{ return m_screenSharingUrl; }
+    inline const Aws::String& GetScreenSharingUrl() const { return m_screenSharingUrl; }
     inline bool ScreenSharingUrlHasBeenSet() const { return m_screenSharingUrlHasBeenSet; }
-    inline void SetScreenSharingUrl(const Aws::String& value) { m_screenSharingUrlHasBeenSet = true; m_screenSharingUrl = value; }
-    inline void SetScreenSharingUrl(Aws::String&& value) { m_screenSharingUrlHasBeenSet = true; m_screenSharingUrl = std::move(value); }
-    inline void SetScreenSharingUrl(const char* value) { m_screenSharingUrlHasBeenSet = true; m_screenSharingUrl.assign(value); }
-    inline MediaPlacement& WithScreenSharingUrl(const Aws::String& value) { SetScreenSharingUrl(value); return *this;}
-    inline MediaPlacement& WithScreenSharingUrl(Aws::String&& value) { SetScreenSharingUrl(std::move(value)); return *this;}
-    inline MediaPlacement& WithScreenSharingUrl(const char* value) { SetScreenSharingUrl(value); return *this;}
+    template<typename ScreenSharingUrlT = Aws::String>
+    void SetScreenSharingUrl(ScreenSharingUrlT&& value) { m_screenSharingUrlHasBeenSet = true; m_screenSharingUrl = std::forward<ScreenSharingUrlT>(value); }
+    template<typename ScreenSharingUrlT = Aws::String>
+    MediaPlacement& WithScreenSharingUrl(ScreenSharingUrlT&& value) { SetScreenSharingUrl(std::forward<ScreenSharingUrlT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The event ingestion URL.</p>
      */
-    inline const Aws::String& GetEventIngestionUrl() const{ return m_eventIngestionUrl; }
+    inline const Aws::String& GetEventIngestionUrl() const { return m_eventIngestionUrl; }
     inline bool EventIngestionUrlHasBeenSet() const { return m_eventIngestionUrlHasBeenSet; }
-    inline void SetEventIngestionUrl(const Aws::String& value) { m_eventIngestionUrlHasBeenSet = true; m_eventIngestionUrl = value; }
-    inline void SetEventIngestionUrl(Aws::String&& value) { m_eventIngestionUrlHasBeenSet = true; m_eventIngestionUrl = std::move(value); }
-    inline void SetEventIngestionUrl(const char* value) { m_eventIngestionUrlHasBeenSet = true; m_eventIngestionUrl.assign(value); }
-    inline MediaPlacement& WithEventIngestionUrl(const Aws::String& value) { SetEventIngestionUrl(value); return *this;}
-    inline MediaPlacement& WithEventIngestionUrl(Aws::String&& value) { SetEventIngestionUrl(std::move(value)); return *this;}
-    inline MediaPlacement& WithEventIngestionUrl(const char* value) { SetEventIngestionUrl(value); return *this;}
+    template<typename EventIngestionUrlT = Aws::String>
+    void SetEventIngestionUrl(EventIngestionUrlT&& value) { m_eventIngestionUrlHasBeenSet = true; m_eventIngestionUrl = std::forward<EventIngestionUrlT>(value); }
+    template<typename EventIngestionUrlT = Aws::String>
+    MediaPlacement& WithEventIngestionUrl(EventIngestionUrlT&& value) { SetEventIngestionUrl(std::forward<EventIngestionUrlT>(value)); return *this;}
     ///@}
   private:
 

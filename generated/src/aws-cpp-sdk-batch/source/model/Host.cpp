@@ -18,13 +18,7 @@ namespace Batch
 namespace Model
 {
 
-Host::Host() : 
-    m_sourcePathHasBeenSet(false)
-{
-}
-
 Host::Host(JsonView jsonValue)
-  : Host()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Host& Host::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sourcePath"))
   {
     m_sourcePath = jsonValue.GetString("sourcePath");
-
     m_sourcePathHasBeenSet = true;
   }
-
   return *this;
 }
 

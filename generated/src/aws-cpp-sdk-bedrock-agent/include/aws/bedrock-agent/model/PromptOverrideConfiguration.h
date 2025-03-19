@@ -36,7 +36,7 @@ namespace Model
   class PromptOverrideConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API PromptOverrideConfiguration();
+    AWS_BEDROCKAGENT_API PromptOverrideConfiguration() = default;
     AWS_BEDROCKAGENT_API PromptOverrideConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API PromptOverrideConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -51,14 +51,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/lambda-parser.html">Parser
      * Lambda function in Amazon Bedrock Agents</a>.</p>
      */
-    inline const Aws::String& GetOverrideLambda() const{ return m_overrideLambda; }
+    inline const Aws::String& GetOverrideLambda() const { return m_overrideLambda; }
     inline bool OverrideLambdaHasBeenSet() const { return m_overrideLambdaHasBeenSet; }
-    inline void SetOverrideLambda(const Aws::String& value) { m_overrideLambdaHasBeenSet = true; m_overrideLambda = value; }
-    inline void SetOverrideLambda(Aws::String&& value) { m_overrideLambdaHasBeenSet = true; m_overrideLambda = std::move(value); }
-    inline void SetOverrideLambda(const char* value) { m_overrideLambdaHasBeenSet = true; m_overrideLambda.assign(value); }
-    inline PromptOverrideConfiguration& WithOverrideLambda(const Aws::String& value) { SetOverrideLambda(value); return *this;}
-    inline PromptOverrideConfiguration& WithOverrideLambda(Aws::String&& value) { SetOverrideLambda(std::move(value)); return *this;}
-    inline PromptOverrideConfiguration& WithOverrideLambda(const char* value) { SetOverrideLambda(value); return *this;}
+    template<typename OverrideLambdaT = Aws::String>
+    void SetOverrideLambda(OverrideLambdaT&& value) { m_overrideLambdaHasBeenSet = true; m_overrideLambda = std::forward<OverrideLambdaT>(value); }
+    template<typename OverrideLambdaT = Aws::String>
+    PromptOverrideConfiguration& WithOverrideLambda(OverrideLambdaT&& value) { SetOverrideLambda(std::forward<OverrideLambdaT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +66,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/bedrock/latest/userguide/advanced-prompts.html">Advanced
      * prompts</a>.</p>
      */
-    inline const Aws::Vector<PromptConfiguration>& GetPromptConfigurations() const{ return m_promptConfigurations; }
+    inline const Aws::Vector<PromptConfiguration>& GetPromptConfigurations() const { return m_promptConfigurations; }
     inline bool PromptConfigurationsHasBeenSet() const { return m_promptConfigurationsHasBeenSet; }
-    inline void SetPromptConfigurations(const Aws::Vector<PromptConfiguration>& value) { m_promptConfigurationsHasBeenSet = true; m_promptConfigurations = value; }
-    inline void SetPromptConfigurations(Aws::Vector<PromptConfiguration>&& value) { m_promptConfigurationsHasBeenSet = true; m_promptConfigurations = std::move(value); }
-    inline PromptOverrideConfiguration& WithPromptConfigurations(const Aws::Vector<PromptConfiguration>& value) { SetPromptConfigurations(value); return *this;}
-    inline PromptOverrideConfiguration& WithPromptConfigurations(Aws::Vector<PromptConfiguration>&& value) { SetPromptConfigurations(std::move(value)); return *this;}
-    inline PromptOverrideConfiguration& AddPromptConfigurations(const PromptConfiguration& value) { m_promptConfigurationsHasBeenSet = true; m_promptConfigurations.push_back(value); return *this; }
-    inline PromptOverrideConfiguration& AddPromptConfigurations(PromptConfiguration&& value) { m_promptConfigurationsHasBeenSet = true; m_promptConfigurations.push_back(std::move(value)); return *this; }
+    template<typename PromptConfigurationsT = Aws::Vector<PromptConfiguration>>
+    void SetPromptConfigurations(PromptConfigurationsT&& value) { m_promptConfigurationsHasBeenSet = true; m_promptConfigurations = std::forward<PromptConfigurationsT>(value); }
+    template<typename PromptConfigurationsT = Aws::Vector<PromptConfiguration>>
+    PromptOverrideConfiguration& WithPromptConfigurations(PromptConfigurationsT&& value) { SetPromptConfigurations(std::forward<PromptConfigurationsT>(value)); return *this;}
+    template<typename PromptConfigurationsT = PromptConfiguration>
+    PromptOverrideConfiguration& AddPromptConfigurations(PromptConfigurationsT&& value) { m_promptConfigurationsHasBeenSet = true; m_promptConfigurations.emplace_back(std::forward<PromptConfigurationsT>(value)); return *this; }
     ///@}
   private:
 

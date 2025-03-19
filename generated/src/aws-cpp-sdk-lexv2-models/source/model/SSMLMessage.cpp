@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-SSMLMessage::SSMLMessage() : 
-    m_valueHasBeenSet(false)
-{
-}
-
 SSMLMessage::SSMLMessage(JsonView jsonValue)
-  : SSMLMessage()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SSMLMessage& SSMLMessage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetString("value");
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

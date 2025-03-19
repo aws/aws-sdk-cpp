@@ -12,15 +12,6 @@ using namespace Aws::DirectConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateLagRequest::UpdateLagRequest() : 
-    m_lagIdHasBeenSet(false),
-    m_lagNameHasBeenSet(false),
-    m_minimumLinks(0),
-    m_minimumLinksHasBeenSet(false),
-    m_encryptionModeHasBeenSet(false)
-{
-}
-
 Aws::String UpdateLagRequest::SerializePayload() const
 {
   JsonValue payload;

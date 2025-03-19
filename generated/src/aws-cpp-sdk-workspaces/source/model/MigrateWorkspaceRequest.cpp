@@ -12,12 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-MigrateWorkspaceRequest::MigrateWorkspaceRequest() : 
-    m_sourceWorkspaceIdHasBeenSet(false),
-    m_bundleIdHasBeenSet(false)
-{
-}
-
 Aws::String MigrateWorkspaceRequest::SerializePayload() const
 {
   JsonValue payload;

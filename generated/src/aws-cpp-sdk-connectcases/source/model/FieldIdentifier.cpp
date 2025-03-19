@@ -18,13 +18,7 @@ namespace ConnectCases
 namespace Model
 {
 
-FieldIdentifier::FieldIdentifier() : 
-    m_idHasBeenSet(false)
-{
-}
-
 FieldIdentifier::FieldIdentifier(JsonView jsonValue)
-  : FieldIdentifier()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ FieldIdentifier& FieldIdentifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   return *this;
 }
 

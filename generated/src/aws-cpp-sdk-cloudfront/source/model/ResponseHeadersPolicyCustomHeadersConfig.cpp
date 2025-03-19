@@ -20,15 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-ResponseHeadersPolicyCustomHeadersConfig::ResponseHeadersPolicyCustomHeadersConfig() : 
-    m_quantity(0),
-    m_quantityHasBeenSet(false),
-    m_itemsHasBeenSet(false)
-{
-}
-
 ResponseHeadersPolicyCustomHeadersConfig::ResponseHeadersPolicyCustomHeadersConfig(const XmlNode& xmlNode)
-  : ResponseHeadersPolicyCustomHeadersConfig()
 {
   *this = xmlNode;
 }
@@ -49,6 +41,7 @@ ResponseHeadersPolicyCustomHeadersConfig& ResponseHeadersPolicyCustomHeadersConf
     if(!itemsNode.IsNull())
     {
       XmlNode itemsMember = itemsNode.FirstChild("ResponseHeadersPolicyCustomHeader");
+      m_itemsHasBeenSet = !itemsMember.IsNull();
       while(!itemsMember.IsNull())
       {
         m_items.push_back(itemsMember);

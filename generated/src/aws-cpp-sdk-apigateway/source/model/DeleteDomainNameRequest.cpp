@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DeleteDomainNameRequest::DeleteDomainNameRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_domainNameIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteDomainNameRequest::SerializePayload() const
 {
   return {};

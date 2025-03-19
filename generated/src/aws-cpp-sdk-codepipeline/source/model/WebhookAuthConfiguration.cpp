@@ -18,14 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-WebhookAuthConfiguration::WebhookAuthConfiguration() : 
-    m_allowedIPRangeHasBeenSet(false),
-    m_secretTokenHasBeenSet(false)
-{
-}
-
 WebhookAuthConfiguration::WebhookAuthConfiguration(JsonView jsonValue)
-  : WebhookAuthConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ WebhookAuthConfiguration& WebhookAuthConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("AllowedIPRange"))
   {
     m_allowedIPRange = jsonValue.GetString("AllowedIPRange");
-
     m_allowedIPRangeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SecretToken"))
   {
     m_secretToken = jsonValue.GetString("SecretToken");
-
     m_secretTokenHasBeenSet = true;
   }
-
   return *this;
 }
 

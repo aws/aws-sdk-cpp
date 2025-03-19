@@ -12,14 +12,6 @@ using namespace Aws::ConfigService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeConformancePacksRequest::DescribeConformancePacksRequest() : 
-    m_conformancePackNamesHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeConformancePacksRequest::SerializePayload() const
 {
   JsonValue payload;

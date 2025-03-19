@@ -33,7 +33,7 @@ namespace Model
   class ForwardAction
   {
   public:
-    AWS_VPCLATTICE_API ForwardAction();
+    AWS_VPCLATTICE_API ForwardAction() = default;
     AWS_VPCLATTICE_API ForwardAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API ForwardAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VPCLATTICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,14 +50,14 @@ namespace Model
      * is provided, there is no need to set the weight; 100% of the traffic goes to
      * that target group.</p>
      */
-    inline const Aws::Vector<WeightedTargetGroup>& GetTargetGroups() const{ return m_targetGroups; }
+    inline const Aws::Vector<WeightedTargetGroup>& GetTargetGroups() const { return m_targetGroups; }
     inline bool TargetGroupsHasBeenSet() const { return m_targetGroupsHasBeenSet; }
-    inline void SetTargetGroups(const Aws::Vector<WeightedTargetGroup>& value) { m_targetGroupsHasBeenSet = true; m_targetGroups = value; }
-    inline void SetTargetGroups(Aws::Vector<WeightedTargetGroup>&& value) { m_targetGroupsHasBeenSet = true; m_targetGroups = std::move(value); }
-    inline ForwardAction& WithTargetGroups(const Aws::Vector<WeightedTargetGroup>& value) { SetTargetGroups(value); return *this;}
-    inline ForwardAction& WithTargetGroups(Aws::Vector<WeightedTargetGroup>&& value) { SetTargetGroups(std::move(value)); return *this;}
-    inline ForwardAction& AddTargetGroups(const WeightedTargetGroup& value) { m_targetGroupsHasBeenSet = true; m_targetGroups.push_back(value); return *this; }
-    inline ForwardAction& AddTargetGroups(WeightedTargetGroup&& value) { m_targetGroupsHasBeenSet = true; m_targetGroups.push_back(std::move(value)); return *this; }
+    template<typename TargetGroupsT = Aws::Vector<WeightedTargetGroup>>
+    void SetTargetGroups(TargetGroupsT&& value) { m_targetGroupsHasBeenSet = true; m_targetGroups = std::forward<TargetGroupsT>(value); }
+    template<typename TargetGroupsT = Aws::Vector<WeightedTargetGroup>>
+    ForwardAction& WithTargetGroups(TargetGroupsT&& value) { SetTargetGroups(std::forward<TargetGroupsT>(value)); return *this;}
+    template<typename TargetGroupsT = WeightedTargetGroup>
+    ForwardAction& AddTargetGroups(TargetGroupsT&& value) { m_targetGroupsHasBeenSet = true; m_targetGroups.emplace_back(std::forward<TargetGroupsT>(value)); return *this; }
     ///@}
   private:
 

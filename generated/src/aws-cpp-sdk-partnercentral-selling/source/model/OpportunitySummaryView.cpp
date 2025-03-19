@@ -18,20 +18,7 @@ namespace PartnerCentralSelling
 namespace Model
 {
 
-OpportunitySummaryView::OpportunitySummaryView() : 
-    m_customerHasBeenSet(false),
-    m_lifecycleHasBeenSet(false),
-    m_opportunityTeamHasBeenSet(false),
-    m_opportunityType(OpportunityType::NOT_SET),
-    m_opportunityTypeHasBeenSet(false),
-    m_primaryNeedsFromAwsHasBeenSet(false),
-    m_projectHasBeenSet(false),
-    m_relatedEntityIdentifiersHasBeenSet(false)
-{
-}
-
 OpportunitySummaryView::OpportunitySummaryView(JsonView jsonValue)
-  : OpportunitySummaryView()
 {
   *this = jsonValue;
 }
@@ -41,17 +28,13 @@ OpportunitySummaryView& OpportunitySummaryView::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Customer"))
   {
     m_customer = jsonValue.GetObject("Customer");
-
     m_customerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Lifecycle"))
   {
     m_lifecycle = jsonValue.GetObject("Lifecycle");
-
     m_lifecycleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OpportunityTeam"))
   {
     Aws::Utils::Array<JsonView> opportunityTeamJsonList = jsonValue.GetArray("OpportunityTeam");
@@ -61,14 +44,11 @@ OpportunitySummaryView& OpportunitySummaryView::operator =(JsonView jsonValue)
     }
     m_opportunityTeamHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OpportunityType"))
   {
     m_opportunityType = OpportunityTypeMapper::GetOpportunityTypeForName(jsonValue.GetString("OpportunityType"));
-
     m_opportunityTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrimaryNeedsFromAws"))
   {
     Aws::Utils::Array<JsonView> primaryNeedsFromAwsJsonList = jsonValue.GetArray("PrimaryNeedsFromAws");
@@ -78,21 +58,16 @@ OpportunitySummaryView& OpportunitySummaryView::operator =(JsonView jsonValue)
     }
     m_primaryNeedsFromAwsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Project"))
   {
     m_project = jsonValue.GetObject("Project");
-
     m_projectHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RelatedEntityIdentifiers"))
   {
     m_relatedEntityIdentifiers = jsonValue.GetObject("RelatedEntityIdentifiers");
-
     m_relatedEntityIdentifiersHasBeenSet = true;
   }
-
   return *this;
 }
 

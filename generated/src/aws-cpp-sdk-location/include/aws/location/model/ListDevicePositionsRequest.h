@@ -22,7 +22,7 @@ namespace Model
   class ListDevicePositionsRequest : public LocationServiceRequest
   {
   public:
-    AWS_LOCATIONSERVICE_API ListDevicePositionsRequest();
+    AWS_LOCATIONSERVICE_API ListDevicePositionsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
     /**
      * <p>The tracker resource containing the requested devices.</p>
      */
-    inline const Aws::String& GetTrackerName() const{ return m_trackerName; }
+    inline const Aws::String& GetTrackerName() const { return m_trackerName; }
     inline bool TrackerNameHasBeenSet() const { return m_trackerNameHasBeenSet; }
-    inline void SetTrackerName(const Aws::String& value) { m_trackerNameHasBeenSet = true; m_trackerName = value; }
-    inline void SetTrackerName(Aws::String&& value) { m_trackerNameHasBeenSet = true; m_trackerName = std::move(value); }
-    inline void SetTrackerName(const char* value) { m_trackerNameHasBeenSet = true; m_trackerName.assign(value); }
-    inline ListDevicePositionsRequest& WithTrackerName(const Aws::String& value) { SetTrackerName(value); return *this;}
-    inline ListDevicePositionsRequest& WithTrackerName(Aws::String&& value) { SetTrackerName(std::move(value)); return *this;}
-    inline ListDevicePositionsRequest& WithTrackerName(const char* value) { SetTrackerName(value); return *this;}
+    template<typename TrackerNameT = Aws::String>
+    void SetTrackerName(TrackerNameT&& value) { m_trackerNameHasBeenSet = true; m_trackerName = std::forward<TrackerNameT>(value); }
+    template<typename TrackerNameT = Aws::String>
+    ListDevicePositionsRequest& WithTrackerName(TrackerNameT&& value) { SetTrackerName(std::forward<TrackerNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,7 +50,7 @@ namespace Model
      * <p>An optional limit for the number of entries returned in a single call.</p>
      * <p>Default value: <code>100</code> </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListDevicePositionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -64,33 +62,31 @@ namespace Model
      * response. If no token is provided, the default page is the first page.</p>
      * <p>Default value: <code>null</code> </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListDevicePositionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListDevicePositionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListDevicePositionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListDevicePositionsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The geometry used to filter device positions.</p>
      */
-    inline const TrackingFilterGeometry& GetFilterGeometry() const{ return m_filterGeometry; }
+    inline const TrackingFilterGeometry& GetFilterGeometry() const { return m_filterGeometry; }
     inline bool FilterGeometryHasBeenSet() const { return m_filterGeometryHasBeenSet; }
-    inline void SetFilterGeometry(const TrackingFilterGeometry& value) { m_filterGeometryHasBeenSet = true; m_filterGeometry = value; }
-    inline void SetFilterGeometry(TrackingFilterGeometry&& value) { m_filterGeometryHasBeenSet = true; m_filterGeometry = std::move(value); }
-    inline ListDevicePositionsRequest& WithFilterGeometry(const TrackingFilterGeometry& value) { SetFilterGeometry(value); return *this;}
-    inline ListDevicePositionsRequest& WithFilterGeometry(TrackingFilterGeometry&& value) { SetFilterGeometry(std::move(value)); return *this;}
+    template<typename FilterGeometryT = TrackingFilterGeometry>
+    void SetFilterGeometry(FilterGeometryT&& value) { m_filterGeometryHasBeenSet = true; m_filterGeometry = std::forward<FilterGeometryT>(value); }
+    template<typename FilterGeometryT = TrackingFilterGeometry>
+    ListDevicePositionsRequest& WithFilterGeometry(FilterGeometryT&& value) { SetFilterGeometry(std::forward<FilterGeometryT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_trackerName;
     bool m_trackerNameHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

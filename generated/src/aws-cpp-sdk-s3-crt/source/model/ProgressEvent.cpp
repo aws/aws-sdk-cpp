@@ -20,13 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-ProgressEvent::ProgressEvent() : 
-    m_detailsHasBeenSet(false)
-{
-}
-
 ProgressEvent::ProgressEvent(const XmlNode& xmlNode)
-  : ProgressEvent()
 {
   *this = xmlNode;
 }

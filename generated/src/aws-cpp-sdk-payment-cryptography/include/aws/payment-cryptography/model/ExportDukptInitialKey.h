@@ -32,7 +32,7 @@ namespace Model
   class ExportDukptInitialKey
   {
   public:
-    AWS_PAYMENTCRYPTOGRAPHY_API ExportDukptInitialKey();
+    AWS_PAYMENTCRYPTOGRAPHY_API ExportDukptInitialKey() = default;
     AWS_PAYMENTCRYPTOGRAPHY_API ExportDukptInitialKey(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API ExportDukptInitialKey& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PAYMENTCRYPTOGRAPHY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * sending to Amazon Web Services Payment Cryptography. KSN hex length should be 20
      * for a TDES_2KEY key or 24 for an AES key.</p>
      */
-    inline const Aws::String& GetKeySerialNumber() const{ return m_keySerialNumber; }
+    inline const Aws::String& GetKeySerialNumber() const { return m_keySerialNumber; }
     inline bool KeySerialNumberHasBeenSet() const { return m_keySerialNumberHasBeenSet; }
-    inline void SetKeySerialNumber(const Aws::String& value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber = value; }
-    inline void SetKeySerialNumber(Aws::String&& value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber = std::move(value); }
-    inline void SetKeySerialNumber(const char* value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber.assign(value); }
-    inline ExportDukptInitialKey& WithKeySerialNumber(const Aws::String& value) { SetKeySerialNumber(value); return *this;}
-    inline ExportDukptInitialKey& WithKeySerialNumber(Aws::String&& value) { SetKeySerialNumber(std::move(value)); return *this;}
-    inline ExportDukptInitialKey& WithKeySerialNumber(const char* value) { SetKeySerialNumber(value); return *this;}
+    template<typename KeySerialNumberT = Aws::String>
+    void SetKeySerialNumber(KeySerialNumberT&& value) { m_keySerialNumberHasBeenSet = true; m_keySerialNumber = std::forward<KeySerialNumberT>(value); }
+    template<typename KeySerialNumberT = Aws::String>
+    ExportDukptInitialKey& WithKeySerialNumber(KeySerialNumberT&& value) { SetKeySerialNumber(std::forward<KeySerialNumberT>(value)); return *this;}
     ///@}
   private:
 

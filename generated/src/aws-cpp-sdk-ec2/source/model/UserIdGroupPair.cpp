@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-UserIdGroupPair::UserIdGroupPair() : 
-    m_descriptionHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_groupNameHasBeenSet(false),
-    m_groupIdHasBeenSet(false),
-    m_vpcIdHasBeenSet(false),
-    m_vpcPeeringConnectionIdHasBeenSet(false),
-    m_peeringStatusHasBeenSet(false)
-{
-}
-
 UserIdGroupPair::UserIdGroupPair(const XmlNode& xmlNode)
-  : UserIdGroupPair()
 {
   *this = xmlNode;
 }

@@ -36,7 +36,7 @@ namespace Model
   class ValueMappings
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API ValueMappings();
+    AWS_AMPLIFYUIBUILDER_API ValueMappings() = default;
     AWS_AMPLIFYUIBUILDER_API ValueMappings(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API ValueMappings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,32 +46,30 @@ namespace Model
     /**
      * <p>The value and display value pairs.</p>
      */
-    inline const Aws::Vector<ValueMapping>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<ValueMapping>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<ValueMapping>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<ValueMapping>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline ValueMappings& WithValues(const Aws::Vector<ValueMapping>& value) { SetValues(value); return *this;}
-    inline ValueMappings& WithValues(Aws::Vector<ValueMapping>&& value) { SetValues(std::move(value)); return *this;}
-    inline ValueMappings& AddValues(const ValueMapping& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline ValueMappings& AddValues(ValueMapping&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
+    template<typename ValuesT = Aws::Vector<ValueMapping>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<ValueMapping>>
+    ValueMappings& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = ValueMapping>
+    ValueMappings& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The information to bind fields to data at runtime.</p>
      */
-    inline const Aws::Map<Aws::String, FormInputBindingPropertiesValue>& GetBindingProperties() const{ return m_bindingProperties; }
+    inline const Aws::Map<Aws::String, FormInputBindingPropertiesValue>& GetBindingProperties() const { return m_bindingProperties; }
     inline bool BindingPropertiesHasBeenSet() const { return m_bindingPropertiesHasBeenSet; }
-    inline void SetBindingProperties(const Aws::Map<Aws::String, FormInputBindingPropertiesValue>& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties = value; }
-    inline void SetBindingProperties(Aws::Map<Aws::String, FormInputBindingPropertiesValue>&& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties = std::move(value); }
-    inline ValueMappings& WithBindingProperties(const Aws::Map<Aws::String, FormInputBindingPropertiesValue>& value) { SetBindingProperties(value); return *this;}
-    inline ValueMappings& WithBindingProperties(Aws::Map<Aws::String, FormInputBindingPropertiesValue>&& value) { SetBindingProperties(std::move(value)); return *this;}
-    inline ValueMappings& AddBindingProperties(const Aws::String& key, const FormInputBindingPropertiesValue& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties.emplace(key, value); return *this; }
-    inline ValueMappings& AddBindingProperties(Aws::String&& key, const FormInputBindingPropertiesValue& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties.emplace(std::move(key), value); return *this; }
-    inline ValueMappings& AddBindingProperties(const Aws::String& key, FormInputBindingPropertiesValue&& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties.emplace(key, std::move(value)); return *this; }
-    inline ValueMappings& AddBindingProperties(Aws::String&& key, FormInputBindingPropertiesValue&& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties.emplace(std::move(key), std::move(value)); return *this; }
-    inline ValueMappings& AddBindingProperties(const char* key, FormInputBindingPropertiesValue&& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties.emplace(key, std::move(value)); return *this; }
-    inline ValueMappings& AddBindingProperties(const char* key, const FormInputBindingPropertiesValue& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties.emplace(key, value); return *this; }
+    template<typename BindingPropertiesT = Aws::Map<Aws::String, FormInputBindingPropertiesValue>>
+    void SetBindingProperties(BindingPropertiesT&& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties = std::forward<BindingPropertiesT>(value); }
+    template<typename BindingPropertiesT = Aws::Map<Aws::String, FormInputBindingPropertiesValue>>
+    ValueMappings& WithBindingProperties(BindingPropertiesT&& value) { SetBindingProperties(std::forward<BindingPropertiesT>(value)); return *this;}
+    template<typename BindingPropertiesKeyT = Aws::String, typename BindingPropertiesValueT = FormInputBindingPropertiesValue>
+    ValueMappings& AddBindingProperties(BindingPropertiesKeyT&& key, BindingPropertiesValueT&& value) {
+      m_bindingPropertiesHasBeenSet = true; m_bindingProperties.emplace(std::forward<BindingPropertiesKeyT>(key), std::forward<BindingPropertiesValueT>(value)); return *this;
+    }
     ///@}
   private:
 

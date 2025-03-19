@@ -36,7 +36,7 @@ namespace Model
   class SamplingTargetDocument
   {
   public:
-    AWS_XRAY_API SamplingTargetDocument();
+    AWS_XRAY_API SamplingTargetDocument() = default;
     AWS_XRAY_API SamplingTargetDocument(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API SamplingTargetDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_XRAY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>The name of the sampling rule.</p>
      */
-    inline const Aws::String& GetRuleName() const{ return m_ruleName; }
+    inline const Aws::String& GetRuleName() const { return m_ruleName; }
     inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
-    inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
-    inline void SetRuleName(Aws::String&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::move(value); }
-    inline void SetRuleName(const char* value) { m_ruleNameHasBeenSet = true; m_ruleName.assign(value); }
-    inline SamplingTargetDocument& WithRuleName(const Aws::String& value) { SetRuleName(value); return *this;}
-    inline SamplingTargetDocument& WithRuleName(Aws::String&& value) { SetRuleName(std::move(value)); return *this;}
-    inline SamplingTargetDocument& WithRuleName(const char* value) { SetRuleName(value); return *this;}
+    template<typename RuleNameT = Aws::String>
+    void SetRuleName(RuleNameT&& value) { m_ruleNameHasBeenSet = true; m_ruleName = std::forward<RuleNameT>(value); }
+    template<typename RuleNameT = Aws::String>
+    SamplingTargetDocument& WithRuleName(RuleNameT&& value) { SetRuleName(std::forward<RuleNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * <p>The percentage of matching requests to instrument, after the reservoir is
      * exhausted.</p>
      */
-    inline double GetFixedRate() const{ return m_fixedRate; }
+    inline double GetFixedRate() const { return m_fixedRate; }
     inline bool FixedRateHasBeenSet() const { return m_fixedRateHasBeenSet; }
     inline void SetFixedRate(double value) { m_fixedRateHasBeenSet = true; m_fixedRate = value; }
     inline SamplingTargetDocument& WithFixedRate(double value) { SetFixedRate(value); return *this;}
@@ -71,7 +69,7 @@ namespace Model
     /**
      * <p>The number of requests per second that X-Ray allocated for this service.</p>
      */
-    inline int GetReservoirQuota() const{ return m_reservoirQuota; }
+    inline int GetReservoirQuota() const { return m_reservoirQuota; }
     inline bool ReservoirQuotaHasBeenSet() const { return m_reservoirQuotaHasBeenSet; }
     inline void SetReservoirQuota(int value) { m_reservoirQuotaHasBeenSet = true; m_reservoirQuota = value; }
     inline SamplingTargetDocument& WithReservoirQuota(int value) { SetReservoirQuota(value); return *this;}
@@ -81,12 +79,12 @@ namespace Model
     /**
      * <p>When the reservoir quota expires.</p>
      */
-    inline const Aws::Utils::DateTime& GetReservoirQuotaTTL() const{ return m_reservoirQuotaTTL; }
+    inline const Aws::Utils::DateTime& GetReservoirQuotaTTL() const { return m_reservoirQuotaTTL; }
     inline bool ReservoirQuotaTTLHasBeenSet() const { return m_reservoirQuotaTTLHasBeenSet; }
-    inline void SetReservoirQuotaTTL(const Aws::Utils::DateTime& value) { m_reservoirQuotaTTLHasBeenSet = true; m_reservoirQuotaTTL = value; }
-    inline void SetReservoirQuotaTTL(Aws::Utils::DateTime&& value) { m_reservoirQuotaTTLHasBeenSet = true; m_reservoirQuotaTTL = std::move(value); }
-    inline SamplingTargetDocument& WithReservoirQuotaTTL(const Aws::Utils::DateTime& value) { SetReservoirQuotaTTL(value); return *this;}
-    inline SamplingTargetDocument& WithReservoirQuotaTTL(Aws::Utils::DateTime&& value) { SetReservoirQuotaTTL(std::move(value)); return *this;}
+    template<typename ReservoirQuotaTTLT = Aws::Utils::DateTime>
+    void SetReservoirQuotaTTL(ReservoirQuotaTTLT&& value) { m_reservoirQuotaTTLHasBeenSet = true; m_reservoirQuotaTTL = std::forward<ReservoirQuotaTTLT>(value); }
+    template<typename ReservoirQuotaTTLT = Aws::Utils::DateTime>
+    SamplingTargetDocument& WithReservoirQuotaTTL(ReservoirQuotaTTLT&& value) { SetReservoirQuotaTTL(std::forward<ReservoirQuotaTTLT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -94,7 +92,7 @@ namespace Model
      * <p>The number of seconds for the service to wait before getting sampling targets
      * again.</p>
      */
-    inline int GetInterval() const{ return m_interval; }
+    inline int GetInterval() const { return m_interval; }
     inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
     inline void SetInterval(int value) { m_intervalHasBeenSet = true; m_interval = value; }
     inline SamplingTargetDocument& WithInterval(int value) { SetInterval(value); return *this;}
@@ -104,16 +102,16 @@ namespace Model
     Aws::String m_ruleName;
     bool m_ruleNameHasBeenSet = false;
 
-    double m_fixedRate;
+    double m_fixedRate{0.0};
     bool m_fixedRateHasBeenSet = false;
 
-    int m_reservoirQuota;
+    int m_reservoirQuota{0};
     bool m_reservoirQuotaHasBeenSet = false;
 
-    Aws::Utils::DateTime m_reservoirQuotaTTL;
+    Aws::Utils::DateTime m_reservoirQuotaTTL{};
     bool m_reservoirQuotaTTLHasBeenSet = false;
 
-    int m_interval;
+    int m_interval{0};
     bool m_intervalHasBeenSet = false;
   };
 

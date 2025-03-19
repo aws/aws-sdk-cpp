@@ -18,13 +18,7 @@ namespace BedrockRuntime
 namespace Model
 {
 
-ToolUseBlockDelta::ToolUseBlockDelta() : 
-    m_inputHasBeenSet(false)
-{
-}
-
 ToolUseBlockDelta::ToolUseBlockDelta(JsonView jsonValue)
-  : ToolUseBlockDelta()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ToolUseBlockDelta& ToolUseBlockDelta::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("input"))
   {
     m_input = jsonValue.GetString("input");
-
     m_inputHasBeenSet = true;
   }
-
   return *this;
 }
 

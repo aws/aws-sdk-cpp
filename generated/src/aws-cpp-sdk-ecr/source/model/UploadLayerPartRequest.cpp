@@ -13,18 +13,6 @@ using namespace Aws::ECR::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UploadLayerPartRequest::UploadLayerPartRequest() : 
-    m_registryIdHasBeenSet(false),
-    m_repositoryNameHasBeenSet(false),
-    m_uploadIdHasBeenSet(false),
-    m_partFirstByte(0),
-    m_partFirstByteHasBeenSet(false),
-    m_partLastByte(0),
-    m_partLastByteHasBeenSet(false),
-    m_layerPartBlobHasBeenSet(false)
-{
-}
-
 Aws::String UploadLayerPartRequest::SerializePayload() const
 {
   JsonValue payload;

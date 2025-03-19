@@ -34,7 +34,7 @@ namespace Model
   class FlowConnection
   {
   public:
-    AWS_BEDROCKAGENT_API FlowConnection();
+    AWS_BEDROCKAGENT_API FlowConnection() = default;
     AWS_BEDROCKAGENT_API FlowConnection(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API FlowConnection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,54 +44,48 @@ namespace Model
     /**
      * <p>The configuration of the connection.</p>
      */
-    inline const FlowConnectionConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const FlowConnectionConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const FlowConnectionConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(FlowConnectionConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline FlowConnection& WithConfiguration(const FlowConnectionConfiguration& value) { SetConfiguration(value); return *this;}
-    inline FlowConnection& WithConfiguration(FlowConnectionConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = FlowConnectionConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = FlowConnectionConfiguration>
+    FlowConnection& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A name for the connection that you can reference.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline FlowConnection& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline FlowConnection& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline FlowConnection& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    FlowConnection& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The node that the connection starts at.</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline FlowConnection& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline FlowConnection& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline FlowConnection& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    FlowConnection& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The node that the connection ends at.</p>
      */
-    inline const Aws::String& GetTarget() const{ return m_target; }
+    inline const Aws::String& GetTarget() const { return m_target; }
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
-    inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
-    inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
-    inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
-    inline FlowConnection& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
-    inline FlowConnection& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
-    inline FlowConnection& WithTarget(const char* value) { SetTarget(value); return *this;}
+    template<typename TargetT = Aws::String>
+    void SetTarget(TargetT&& value) { m_targetHasBeenSet = true; m_target = std::forward<TargetT>(value); }
+    template<typename TargetT = Aws::String>
+    FlowConnection& WithTarget(TargetT&& value) { SetTarget(std::forward<TargetT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,12 +93,10 @@ namespace Model
      * <p>Whether the source node that the connection begins from is a condition node
      * (<code>Conditional</code>) or not (<code>Data</code>).</p>
      */
-    inline const FlowConnectionType& GetType() const{ return m_type; }
+    inline FlowConnectionType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const FlowConnectionType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(FlowConnectionType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline FlowConnection& WithType(const FlowConnectionType& value) { SetType(value); return *this;}
-    inline FlowConnection& WithType(FlowConnectionType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(FlowConnectionType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline FlowConnection& WithType(FlowConnectionType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -120,7 +112,7 @@ namespace Model
     Aws::String m_target;
     bool m_targetHasBeenSet = false;
 
-    FlowConnectionType m_type;
+    FlowConnectionType m_type{FlowConnectionType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

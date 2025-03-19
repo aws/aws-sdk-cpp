@@ -18,14 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-ImplicitFilterConfiguration::ImplicitFilterConfiguration() : 
-    m_metadataAttributesHasBeenSet(false),
-    m_modelArnHasBeenSet(false)
-{
-}
-
 ImplicitFilterConfiguration::ImplicitFilterConfiguration(JsonView jsonValue)
-  : ImplicitFilterConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ ImplicitFilterConfiguration& ImplicitFilterConfiguration::operator =(JsonView js
     }
     m_metadataAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("modelArn"))
   {
     m_modelArn = jsonValue.GetString("modelArn");
-
     m_modelArnHasBeenSet = true;
   }
-
   return *this;
 }
 

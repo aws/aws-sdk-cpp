@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeTransitGatewayMulticastDomainsResponse::DescribeTransitGatewayMulticastDomainsResponse()
-{
-}
-
 DescribeTransitGatewayMulticastDomainsResponse::DescribeTransitGatewayMulticastDomainsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ DescribeTransitGatewayMulticastDomainsResponse& DescribeTransitGatewayMulticastD
     if(!transitGatewayMulticastDomainsNode.IsNull())
     {
       XmlNode transitGatewayMulticastDomainsMember = transitGatewayMulticastDomainsNode.FirstChild("item");
+      m_transitGatewayMulticastDomainsHasBeenSet = !transitGatewayMulticastDomainsMember.IsNull();
       while(!transitGatewayMulticastDomainsMember.IsNull())
       {
         m_transitGatewayMulticastDomains.push_back(transitGatewayMulticastDomainsMember);
         transitGatewayMulticastDomainsMember = transitGatewayMulticastDomainsMember.NextNode("item");
       }
 
+      m_transitGatewayMulticastDomainsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ DescribeTransitGatewayMulticastDomainsResponse& DescribeTransitGatewayMulticastD
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::DescribeTransitGatewayMulticastDomainsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

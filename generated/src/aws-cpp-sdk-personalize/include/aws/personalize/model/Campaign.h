@@ -37,7 +37,7 @@ namespace Model
   class Campaign
   {
   public:
-    AWS_PERSONALIZE_API Campaign();
+    AWS_PERSONALIZE_API Campaign() = default;
     AWS_PERSONALIZE_API Campaign(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API Campaign& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,42 +47,36 @@ namespace Model
     /**
      * <p>The name of the campaign.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Campaign& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Campaign& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Campaign& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Campaign& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the campaign. </p>
      */
-    inline const Aws::String& GetCampaignArn() const{ return m_campaignArn; }
+    inline const Aws::String& GetCampaignArn() const { return m_campaignArn; }
     inline bool CampaignArnHasBeenSet() const { return m_campaignArnHasBeenSet; }
-    inline void SetCampaignArn(const Aws::String& value) { m_campaignArnHasBeenSet = true; m_campaignArn = value; }
-    inline void SetCampaignArn(Aws::String&& value) { m_campaignArnHasBeenSet = true; m_campaignArn = std::move(value); }
-    inline void SetCampaignArn(const char* value) { m_campaignArnHasBeenSet = true; m_campaignArn.assign(value); }
-    inline Campaign& WithCampaignArn(const Aws::String& value) { SetCampaignArn(value); return *this;}
-    inline Campaign& WithCampaignArn(Aws::String&& value) { SetCampaignArn(std::move(value)); return *this;}
-    inline Campaign& WithCampaignArn(const char* value) { SetCampaignArn(value); return *this;}
+    template<typename CampaignArnT = Aws::String>
+    void SetCampaignArn(CampaignArnT&& value) { m_campaignArnHasBeenSet = true; m_campaignArn = std::forward<CampaignArnT>(value); }
+    template<typename CampaignArnT = Aws::String>
+    Campaign& WithCampaignArn(CampaignArnT&& value) { SetCampaignArn(std::forward<CampaignArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the solution version the campaign uses.</p>
      */
-    inline const Aws::String& GetSolutionVersionArn() const{ return m_solutionVersionArn; }
+    inline const Aws::String& GetSolutionVersionArn() const { return m_solutionVersionArn; }
     inline bool SolutionVersionArnHasBeenSet() const { return m_solutionVersionArnHasBeenSet; }
-    inline void SetSolutionVersionArn(const Aws::String& value) { m_solutionVersionArnHasBeenSet = true; m_solutionVersionArn = value; }
-    inline void SetSolutionVersionArn(Aws::String&& value) { m_solutionVersionArnHasBeenSet = true; m_solutionVersionArn = std::move(value); }
-    inline void SetSolutionVersionArn(const char* value) { m_solutionVersionArnHasBeenSet = true; m_solutionVersionArn.assign(value); }
-    inline Campaign& WithSolutionVersionArn(const Aws::String& value) { SetSolutionVersionArn(value); return *this;}
-    inline Campaign& WithSolutionVersionArn(Aws::String&& value) { SetSolutionVersionArn(std::move(value)); return *this;}
-    inline Campaign& WithSolutionVersionArn(const char* value) { SetSolutionVersionArn(value); return *this;}
+    template<typename SolutionVersionArnT = Aws::String>
+    void SetSolutionVersionArn(SolutionVersionArnT&& value) { m_solutionVersionArnHasBeenSet = true; m_solutionVersionArn = std::forward<SolutionVersionArnT>(value); }
+    template<typename SolutionVersionArnT = Aws::String>
+    Campaign& WithSolutionVersionArn(SolutionVersionArnT&& value) { SetSolutionVersionArn(std::forward<SolutionVersionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,7 +87,7 @@ namespace Model
      * Track your usage using Amazon CloudWatch metrics, and increase the
      * <code>minProvisionedTPS</code> as necessary.</p>
      */
-    inline int GetMinProvisionedTPS() const{ return m_minProvisionedTPS; }
+    inline int GetMinProvisionedTPS() const { return m_minProvisionedTPS; }
     inline bool MinProvisionedTPSHasBeenSet() const { return m_minProvisionedTPSHasBeenSet; }
     inline void SetMinProvisionedTPS(int value) { m_minProvisionedTPSHasBeenSet = true; m_minProvisionedTPS = value; }
     inline Campaign& WithMinProvisionedTPS(int value) { SetMinProvisionedTPS(value); return *this;}
@@ -103,12 +97,12 @@ namespace Model
     /**
      * <p>The configuration details of a campaign.</p>
      */
-    inline const CampaignConfig& GetCampaignConfig() const{ return m_campaignConfig; }
+    inline const CampaignConfig& GetCampaignConfig() const { return m_campaignConfig; }
     inline bool CampaignConfigHasBeenSet() const { return m_campaignConfigHasBeenSet; }
-    inline void SetCampaignConfig(const CampaignConfig& value) { m_campaignConfigHasBeenSet = true; m_campaignConfig = value; }
-    inline void SetCampaignConfig(CampaignConfig&& value) { m_campaignConfigHasBeenSet = true; m_campaignConfig = std::move(value); }
-    inline Campaign& WithCampaignConfig(const CampaignConfig& value) { SetCampaignConfig(value); return *this;}
-    inline Campaign& WithCampaignConfig(CampaignConfig&& value) { SetCampaignConfig(std::move(value)); return *this;}
+    template<typename CampaignConfigT = CampaignConfig>
+    void SetCampaignConfig(CampaignConfigT&& value) { m_campaignConfigHasBeenSet = true; m_campaignConfig = std::forward<CampaignConfigT>(value); }
+    template<typename CampaignConfigT = CampaignConfig>
+    Campaign& WithCampaignConfig(CampaignConfigT&& value) { SetCampaignConfig(std::forward<CampaignConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -118,62 +112,58 @@ namespace Model
      * CREATE FAILED</p> </li> <li> <p>DELETE PENDING &gt; DELETE IN_PROGRESS</p> </li>
      * </ul>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
+    inline const Aws::String& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_statusHasBeenSet = true; m_status.assign(value); }
-    inline Campaign& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline Campaign& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline Campaign& WithStatus(const char* value) { SetStatus(value); return *this;}
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    Campaign& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If a campaign fails, the reason behind the failure.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
-    inline Campaign& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline Campaign& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline Campaign& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    Campaign& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time (in Unix format) that the campaign was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationDateTime() const{ return m_creationDateTime; }
+    inline const Aws::Utils::DateTime& GetCreationDateTime() const { return m_creationDateTime; }
     inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
-    inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
-    inline void SetCreationDateTime(Aws::Utils::DateTime&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::move(value); }
-    inline Campaign& WithCreationDateTime(const Aws::Utils::DateTime& value) { SetCreationDateTime(value); return *this;}
-    inline Campaign& WithCreationDateTime(Aws::Utils::DateTime&& value) { SetCreationDateTime(std::move(value)); return *this;}
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    void SetCreationDateTime(CreationDateTimeT&& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = std::forward<CreationDateTimeT>(value); }
+    template<typename CreationDateTimeT = Aws::Utils::DateTime>
+    Campaign& WithCreationDateTime(CreationDateTimeT&& value) { SetCreationDateTime(std::forward<CreationDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time (in Unix format) that the campaign was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const{ return m_lastUpdatedDateTime; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedDateTime() const { return m_lastUpdatedDateTime; }
     inline bool LastUpdatedDateTimeHasBeenSet() const { return m_lastUpdatedDateTimeHasBeenSet; }
-    inline void SetLastUpdatedDateTime(const Aws::Utils::DateTime& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = value; }
-    inline void SetLastUpdatedDateTime(Aws::Utils::DateTime&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::move(value); }
-    inline Campaign& WithLastUpdatedDateTime(const Aws::Utils::DateTime& value) { SetLastUpdatedDateTime(value); return *this;}
-    inline Campaign& WithLastUpdatedDateTime(Aws::Utils::DateTime&& value) { SetLastUpdatedDateTime(std::move(value)); return *this;}
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    void SetLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { m_lastUpdatedDateTimeHasBeenSet = true; m_lastUpdatedDateTime = std::forward<LastUpdatedDateTimeT>(value); }
+    template<typename LastUpdatedDateTimeT = Aws::Utils::DateTime>
+    Campaign& WithLastUpdatedDateTime(LastUpdatedDateTimeT&& value) { SetLastUpdatedDateTime(std::forward<LastUpdatedDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CampaignUpdateSummary& GetLatestCampaignUpdate() const{ return m_latestCampaignUpdate; }
+    inline const CampaignUpdateSummary& GetLatestCampaignUpdate() const { return m_latestCampaignUpdate; }
     inline bool LatestCampaignUpdateHasBeenSet() const { return m_latestCampaignUpdateHasBeenSet; }
-    inline void SetLatestCampaignUpdate(const CampaignUpdateSummary& value) { m_latestCampaignUpdateHasBeenSet = true; m_latestCampaignUpdate = value; }
-    inline void SetLatestCampaignUpdate(CampaignUpdateSummary&& value) { m_latestCampaignUpdateHasBeenSet = true; m_latestCampaignUpdate = std::move(value); }
-    inline Campaign& WithLatestCampaignUpdate(const CampaignUpdateSummary& value) { SetLatestCampaignUpdate(value); return *this;}
-    inline Campaign& WithLatestCampaignUpdate(CampaignUpdateSummary&& value) { SetLatestCampaignUpdate(std::move(value)); return *this;}
+    template<typename LatestCampaignUpdateT = CampaignUpdateSummary>
+    void SetLatestCampaignUpdate(LatestCampaignUpdateT&& value) { m_latestCampaignUpdateHasBeenSet = true; m_latestCampaignUpdate = std::forward<LatestCampaignUpdateT>(value); }
+    template<typename LatestCampaignUpdateT = CampaignUpdateSummary>
+    Campaign& WithLatestCampaignUpdate(LatestCampaignUpdateT&& value) { SetLatestCampaignUpdate(std::forward<LatestCampaignUpdateT>(value)); return *this;}
     ///@}
   private:
 
@@ -186,7 +176,7 @@ namespace Model
     Aws::String m_solutionVersionArn;
     bool m_solutionVersionArnHasBeenSet = false;
 
-    int m_minProvisionedTPS;
+    int m_minProvisionedTPS{0};
     bool m_minProvisionedTPSHasBeenSet = false;
 
     CampaignConfig m_campaignConfig;
@@ -198,10 +188,10 @@ namespace Model
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationDateTime;
+    Aws::Utils::DateTime m_creationDateTime{};
     bool m_creationDateTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedDateTime;
+    Aws::Utils::DateTime m_lastUpdatedDateTime{};
     bool m_lastUpdatedDateTimeHasBeenSet = false;
 
     CampaignUpdateSummary m_latestCampaignUpdate;

@@ -18,17 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-BatchDetectSentimentItemResult::BatchDetectSentimentItemResult() : 
-    m_index(0),
-    m_indexHasBeenSet(false),
-    m_sentiment(SentimentType::NOT_SET),
-    m_sentimentHasBeenSet(false),
-    m_sentimentScoreHasBeenSet(false)
-{
-}
-
 BatchDetectSentimentItemResult::BatchDetectSentimentItemResult(JsonView jsonValue)
-  : BatchDetectSentimentItemResult()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ BatchDetectSentimentItemResult& BatchDetectSentimentItemResult::operator =(JsonV
   if(jsonValue.ValueExists("Index"))
   {
     m_index = jsonValue.GetInteger("Index");
-
     m_indexHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Sentiment"))
   {
     m_sentiment = SentimentTypeMapper::GetSentimentTypeForName(jsonValue.GetString("Sentiment"));
-
     m_sentimentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SentimentScore"))
   {
     m_sentimentScore = jsonValue.GetObject("SentimentScore");
-
     m_sentimentScoreHasBeenSet = true;
   }
-
   return *this;
 }
 

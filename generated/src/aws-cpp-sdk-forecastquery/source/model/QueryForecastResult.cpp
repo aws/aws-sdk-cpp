@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-QueryForecastResult::QueryForecastResult()
-{
-}
-
 QueryForecastResult::QueryForecastResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ QueryForecastResult& QueryForecastResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("Forecast"))
   {
     m_forecast = jsonValue.GetObject("Forecast");
-
+    m_forecastHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

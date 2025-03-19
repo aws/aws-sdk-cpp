@@ -34,7 +34,7 @@ namespace Model
   class CurrentMetricResult
   {
   public:
-    AWS_CONNECT_API CurrentMetricResult();
+    AWS_CONNECT_API CurrentMetricResult() = default;
     AWS_CONNECT_API CurrentMetricResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API CurrentMetricResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,26 @@ namespace Model
     /**
      * <p>The dimensions for the metrics.</p>
      */
-    inline const Dimensions& GetDimensions() const{ return m_dimensions; }
+    inline const Dimensions& GetDimensions() const { return m_dimensions; }
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-    inline void SetDimensions(const Dimensions& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-    inline void SetDimensions(Dimensions&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-    inline CurrentMetricResult& WithDimensions(const Dimensions& value) { SetDimensions(value); return *this;}
-    inline CurrentMetricResult& WithDimensions(Dimensions&& value) { SetDimensions(std::move(value)); return *this;}
+    template<typename DimensionsT = Dimensions>
+    void SetDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::forward<DimensionsT>(value); }
+    template<typename DimensionsT = Dimensions>
+    CurrentMetricResult& WithDimensions(DimensionsT&& value) { SetDimensions(std::forward<DimensionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The set of metrics.</p>
      */
-    inline const Aws::Vector<CurrentMetricData>& GetCollections() const{ return m_collections; }
+    inline const Aws::Vector<CurrentMetricData>& GetCollections() const { return m_collections; }
     inline bool CollectionsHasBeenSet() const { return m_collectionsHasBeenSet; }
-    inline void SetCollections(const Aws::Vector<CurrentMetricData>& value) { m_collectionsHasBeenSet = true; m_collections = value; }
-    inline void SetCollections(Aws::Vector<CurrentMetricData>&& value) { m_collectionsHasBeenSet = true; m_collections = std::move(value); }
-    inline CurrentMetricResult& WithCollections(const Aws::Vector<CurrentMetricData>& value) { SetCollections(value); return *this;}
-    inline CurrentMetricResult& WithCollections(Aws::Vector<CurrentMetricData>&& value) { SetCollections(std::move(value)); return *this;}
-    inline CurrentMetricResult& AddCollections(const CurrentMetricData& value) { m_collectionsHasBeenSet = true; m_collections.push_back(value); return *this; }
-    inline CurrentMetricResult& AddCollections(CurrentMetricData&& value) { m_collectionsHasBeenSet = true; m_collections.push_back(std::move(value)); return *this; }
+    template<typename CollectionsT = Aws::Vector<CurrentMetricData>>
+    void SetCollections(CollectionsT&& value) { m_collectionsHasBeenSet = true; m_collections = std::forward<CollectionsT>(value); }
+    template<typename CollectionsT = Aws::Vector<CurrentMetricData>>
+    CurrentMetricResult& WithCollections(CollectionsT&& value) { SetCollections(std::forward<CollectionsT>(value)); return *this;}
+    template<typename CollectionsT = CurrentMetricData>
+    CurrentMetricResult& AddCollections(CollectionsT&& value) { m_collectionsHasBeenSet = true; m_collections.emplace_back(std::forward<CollectionsT>(value)); return *this; }
     ///@}
   private:
 

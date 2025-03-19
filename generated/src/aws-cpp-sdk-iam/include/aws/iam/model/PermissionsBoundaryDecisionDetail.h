@@ -31,7 +31,7 @@ namespace Model
   class PermissionsBoundaryDecisionDetail
   {
   public:
-    AWS_IAM_API PermissionsBoundaryDecisionDetail();
+    AWS_IAM_API PermissionsBoundaryDecisionDetail() = default;
     AWS_IAM_API PermissionsBoundaryDecisionDetail(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_IAM_API PermissionsBoundaryDecisionDetail& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -51,14 +51,14 @@ namespace Model
      * permissions boundary. In both of these cases, the action is not allowed,
      * regardless of the identity-based policy.</p>
      */
-    inline bool GetAllowedByPermissionsBoundary() const{ return m_allowedByPermissionsBoundary; }
+    inline bool GetAllowedByPermissionsBoundary() const { return m_allowedByPermissionsBoundary; }
     inline bool AllowedByPermissionsBoundaryHasBeenSet() const { return m_allowedByPermissionsBoundaryHasBeenSet; }
     inline void SetAllowedByPermissionsBoundary(bool value) { m_allowedByPermissionsBoundaryHasBeenSet = true; m_allowedByPermissionsBoundary = value; }
     inline PermissionsBoundaryDecisionDetail& WithAllowedByPermissionsBoundary(bool value) { SetAllowedByPermissionsBoundary(value); return *this;}
     ///@}
   private:
 
-    bool m_allowedByPermissionsBoundary;
+    bool m_allowedByPermissionsBoundary{false};
     bool m_allowedByPermissionsBoundaryHasBeenSet = false;
   };
 

@@ -18,14 +18,7 @@ namespace TimestreamQuery
 namespace Model
 {
 
-S3ReportLocation::S3ReportLocation() : 
-    m_bucketNameHasBeenSet(false),
-    m_objectKeyHasBeenSet(false)
-{
-}
-
 S3ReportLocation::S3ReportLocation(JsonView jsonValue)
-  : S3ReportLocation()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ S3ReportLocation& S3ReportLocation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BucketName"))
   {
     m_bucketName = jsonValue.GetString("BucketName");
-
     m_bucketNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ObjectKey"))
   {
     m_objectKey = jsonValue.GetString("ObjectKey");
-
     m_objectKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

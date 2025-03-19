@@ -18,15 +18,7 @@ namespace mgn
 namespace Model
 {
 
-S3BucketSource::S3BucketSource() : 
-    m_s3BucketHasBeenSet(false),
-    m_s3BucketOwnerHasBeenSet(false),
-    m_s3KeyHasBeenSet(false)
-{
-}
-
 S3BucketSource::S3BucketSource(JsonView jsonValue)
-  : S3BucketSource()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ S3BucketSource& S3BucketSource::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("s3Bucket"))
   {
     m_s3Bucket = jsonValue.GetString("s3Bucket");
-
     m_s3BucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3BucketOwner"))
   {
     m_s3BucketOwner = jsonValue.GetString("s3BucketOwner");
-
     m_s3BucketOwnerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("s3Key"))
   {
     m_s3Key = jsonValue.GetString("s3Key");
-
     m_s3KeyHasBeenSet = true;
   }
-
   return *this;
 }
 

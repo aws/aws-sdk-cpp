@@ -29,7 +29,7 @@ namespace Model
   class ListAggregateDiscoveredResourcesResult
   {
   public:
-    AWS_CONFIGSERVICE_API ListAggregateDiscoveredResourcesResult();
+    AWS_CONFIGSERVICE_API ListAggregateDiscoveredResourcesResult() = default;
     AWS_CONFIGSERVICE_API ListAggregateDiscoveredResourcesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CONFIGSERVICE_API ListAggregateDiscoveredResourcesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,13 @@ namespace Model
     /**
      * <p>Returns a list of <code>ResourceIdentifiers</code> objects.</p>
      */
-    inline const Aws::Vector<AggregateResourceIdentifier>& GetResourceIdentifiers() const{ return m_resourceIdentifiers; }
-    inline void SetResourceIdentifiers(const Aws::Vector<AggregateResourceIdentifier>& value) { m_resourceIdentifiers = value; }
-    inline void SetResourceIdentifiers(Aws::Vector<AggregateResourceIdentifier>&& value) { m_resourceIdentifiers = std::move(value); }
-    inline ListAggregateDiscoveredResourcesResult& WithResourceIdentifiers(const Aws::Vector<AggregateResourceIdentifier>& value) { SetResourceIdentifiers(value); return *this;}
-    inline ListAggregateDiscoveredResourcesResult& WithResourceIdentifiers(Aws::Vector<AggregateResourceIdentifier>&& value) { SetResourceIdentifiers(std::move(value)); return *this;}
-    inline ListAggregateDiscoveredResourcesResult& AddResourceIdentifiers(const AggregateResourceIdentifier& value) { m_resourceIdentifiers.push_back(value); return *this; }
-    inline ListAggregateDiscoveredResourcesResult& AddResourceIdentifiers(AggregateResourceIdentifier&& value) { m_resourceIdentifiers.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AggregateResourceIdentifier>& GetResourceIdentifiers() const { return m_resourceIdentifiers; }
+    template<typename ResourceIdentifiersT = Aws::Vector<AggregateResourceIdentifier>>
+    void SetResourceIdentifiers(ResourceIdentifiersT&& value) { m_resourceIdentifiersHasBeenSet = true; m_resourceIdentifiers = std::forward<ResourceIdentifiersT>(value); }
+    template<typename ResourceIdentifiersT = Aws::Vector<AggregateResourceIdentifier>>
+    ListAggregateDiscoveredResourcesResult& WithResourceIdentifiers(ResourceIdentifiersT&& value) { SetResourceIdentifiers(std::forward<ResourceIdentifiersT>(value)); return *this;}
+    template<typename ResourceIdentifiersT = AggregateResourceIdentifier>
+    ListAggregateDiscoveredResourcesResult& AddResourceIdentifiers(ResourceIdentifiersT&& value) { m_resourceIdentifiersHasBeenSet = true; m_resourceIdentifiers.emplace_back(std::forward<ResourceIdentifiersT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -52,32 +52,31 @@ namespace Model
      * <p>The <code>nextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAggregateDiscoveredResourcesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAggregateDiscoveredResourcesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAggregateDiscoveredResourcesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAggregateDiscoveredResourcesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAggregateDiscoveredResourcesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAggregateDiscoveredResourcesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAggregateDiscoveredResourcesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAggregateDiscoveredResourcesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AggregateResourceIdentifier> m_resourceIdentifiers;
+    bool m_resourceIdentifiersHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

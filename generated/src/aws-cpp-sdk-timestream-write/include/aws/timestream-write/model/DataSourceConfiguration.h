@@ -34,7 +34,7 @@ namespace Model
   class DataSourceConfiguration
   {
   public:
-    AWS_TIMESTREAMWRITE_API DataSourceConfiguration();
+    AWS_TIMESTREAMWRITE_API DataSourceConfiguration() = default;
     AWS_TIMESTREAMWRITE_API DataSourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMWRITE_API DataSourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,34 +44,32 @@ namespace Model
     /**
      * <p>Configuration of an S3 location for a file which contains data to load.</p>
      */
-    inline const DataSourceS3Configuration& GetDataSourceS3Configuration() const{ return m_dataSourceS3Configuration; }
+    inline const DataSourceS3Configuration& GetDataSourceS3Configuration() const { return m_dataSourceS3Configuration; }
     inline bool DataSourceS3ConfigurationHasBeenSet() const { return m_dataSourceS3ConfigurationHasBeenSet; }
-    inline void SetDataSourceS3Configuration(const DataSourceS3Configuration& value) { m_dataSourceS3ConfigurationHasBeenSet = true; m_dataSourceS3Configuration = value; }
-    inline void SetDataSourceS3Configuration(DataSourceS3Configuration&& value) { m_dataSourceS3ConfigurationHasBeenSet = true; m_dataSourceS3Configuration = std::move(value); }
-    inline DataSourceConfiguration& WithDataSourceS3Configuration(const DataSourceS3Configuration& value) { SetDataSourceS3Configuration(value); return *this;}
-    inline DataSourceConfiguration& WithDataSourceS3Configuration(DataSourceS3Configuration&& value) { SetDataSourceS3Configuration(std::move(value)); return *this;}
+    template<typename DataSourceS3ConfigurationT = DataSourceS3Configuration>
+    void SetDataSourceS3Configuration(DataSourceS3ConfigurationT&& value) { m_dataSourceS3ConfigurationHasBeenSet = true; m_dataSourceS3Configuration = std::forward<DataSourceS3ConfigurationT>(value); }
+    template<typename DataSourceS3ConfigurationT = DataSourceS3Configuration>
+    DataSourceConfiguration& WithDataSourceS3Configuration(DataSourceS3ConfigurationT&& value) { SetDataSourceS3Configuration(std::forward<DataSourceS3ConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CsvConfiguration& GetCsvConfiguration() const{ return m_csvConfiguration; }
+    inline const CsvConfiguration& GetCsvConfiguration() const { return m_csvConfiguration; }
     inline bool CsvConfigurationHasBeenSet() const { return m_csvConfigurationHasBeenSet; }
-    inline void SetCsvConfiguration(const CsvConfiguration& value) { m_csvConfigurationHasBeenSet = true; m_csvConfiguration = value; }
-    inline void SetCsvConfiguration(CsvConfiguration&& value) { m_csvConfigurationHasBeenSet = true; m_csvConfiguration = std::move(value); }
-    inline DataSourceConfiguration& WithCsvConfiguration(const CsvConfiguration& value) { SetCsvConfiguration(value); return *this;}
-    inline DataSourceConfiguration& WithCsvConfiguration(CsvConfiguration&& value) { SetCsvConfiguration(std::move(value)); return *this;}
+    template<typename CsvConfigurationT = CsvConfiguration>
+    void SetCsvConfiguration(CsvConfigurationT&& value) { m_csvConfigurationHasBeenSet = true; m_csvConfiguration = std::forward<CsvConfigurationT>(value); }
+    template<typename CsvConfigurationT = CsvConfiguration>
+    DataSourceConfiguration& WithCsvConfiguration(CsvConfigurationT&& value) { SetCsvConfiguration(std::forward<CsvConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This is currently CSV.</p>
      */
-    inline const BatchLoadDataFormat& GetDataFormat() const{ return m_dataFormat; }
+    inline BatchLoadDataFormat GetDataFormat() const { return m_dataFormat; }
     inline bool DataFormatHasBeenSet() const { return m_dataFormatHasBeenSet; }
-    inline void SetDataFormat(const BatchLoadDataFormat& value) { m_dataFormatHasBeenSet = true; m_dataFormat = value; }
-    inline void SetDataFormat(BatchLoadDataFormat&& value) { m_dataFormatHasBeenSet = true; m_dataFormat = std::move(value); }
-    inline DataSourceConfiguration& WithDataFormat(const BatchLoadDataFormat& value) { SetDataFormat(value); return *this;}
-    inline DataSourceConfiguration& WithDataFormat(BatchLoadDataFormat&& value) { SetDataFormat(std::move(value)); return *this;}
+    inline void SetDataFormat(BatchLoadDataFormat value) { m_dataFormatHasBeenSet = true; m_dataFormat = value; }
+    inline DataSourceConfiguration& WithDataFormat(BatchLoadDataFormat value) { SetDataFormat(value); return *this;}
     ///@}
   private:
 
@@ -81,7 +79,7 @@ namespace Model
     CsvConfiguration m_csvConfiguration;
     bool m_csvConfigurationHasBeenSet = false;
 
-    BatchLoadDataFormat m_dataFormat;
+    BatchLoadDataFormat m_dataFormat{BatchLoadDataFormat::NOT_SET};
     bool m_dataFormatHasBeenSet = false;
   };
 

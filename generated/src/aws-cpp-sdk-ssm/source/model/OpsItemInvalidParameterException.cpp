@@ -18,14 +18,7 @@ namespace SSM
 namespace Model
 {
 
-OpsItemInvalidParameterException::OpsItemInvalidParameterException() : 
-    m_parameterNamesHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 OpsItemInvalidParameterException::OpsItemInvalidParameterException(JsonView jsonValue)
-  : OpsItemInvalidParameterException()
 {
   *this = jsonValue;
 }
@@ -41,14 +34,11 @@ OpsItemInvalidParameterException& OpsItemInvalidParameterException::operator =(J
     }
     m_parameterNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

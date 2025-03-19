@@ -18,13 +18,7 @@ namespace XRay
 namespace Model
 {
 
-AvailabilityZoneDetail::AvailabilityZoneDetail() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 AvailabilityZoneDetail::AvailabilityZoneDetail(JsonView jsonValue)
-  : AvailabilityZoneDetail()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AvailabilityZoneDetail& AvailabilityZoneDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

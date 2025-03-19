@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-VideoBlackFailoverSettings::VideoBlackFailoverSettings() : 
-    m_blackDetectThreshold(0.0),
-    m_blackDetectThresholdHasBeenSet(false),
-    m_videoBlackThresholdMsec(0),
-    m_videoBlackThresholdMsecHasBeenSet(false)
-{
-}
-
 VideoBlackFailoverSettings::VideoBlackFailoverSettings(JsonView jsonValue)
-  : VideoBlackFailoverSettings()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ VideoBlackFailoverSettings& VideoBlackFailoverSettings::operator =(JsonView json
   if(jsonValue.ValueExists("blackDetectThreshold"))
   {
     m_blackDetectThreshold = jsonValue.GetDouble("blackDetectThreshold");
-
     m_blackDetectThresholdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("videoBlackThresholdMsec"))
   {
     m_videoBlackThresholdMsec = jsonValue.GetInteger("videoBlackThresholdMsec");
-
     m_videoBlackThresholdMsecHasBeenSet = true;
   }
-
   return *this;
 }
 

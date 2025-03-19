@@ -17,16 +17,7 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeAccountLimitsResult::DescribeAccountLimitsResult() : 
-    m_maxNumberOfAutoScalingGroups(0),
-    m_maxNumberOfLaunchConfigurations(0),
-    m_numberOfAutoScalingGroups(0),
-    m_numberOfLaunchConfigurations(0)
-{
-}
-
 DescribeAccountLimitsResult::DescribeAccountLimitsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
-  : DescribeAccountLimitsResult()
 {
   *this = result;
 }
@@ -47,27 +38,32 @@ DescribeAccountLimitsResult& DescribeAccountLimitsResult::operator =(const Aws::
     if(!maxNumberOfAutoScalingGroupsNode.IsNull())
     {
       m_maxNumberOfAutoScalingGroups = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxNumberOfAutoScalingGroupsNode.GetText()).c_str()).c_str());
+      m_maxNumberOfAutoScalingGroupsHasBeenSet = true;
     }
     XmlNode maxNumberOfLaunchConfigurationsNode = resultNode.FirstChild("MaxNumberOfLaunchConfigurations");
     if(!maxNumberOfLaunchConfigurationsNode.IsNull())
     {
       m_maxNumberOfLaunchConfigurations = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maxNumberOfLaunchConfigurationsNode.GetText()).c_str()).c_str());
+      m_maxNumberOfLaunchConfigurationsHasBeenSet = true;
     }
     XmlNode numberOfAutoScalingGroupsNode = resultNode.FirstChild("NumberOfAutoScalingGroups");
     if(!numberOfAutoScalingGroupsNode.IsNull())
     {
       m_numberOfAutoScalingGroups = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(numberOfAutoScalingGroupsNode.GetText()).c_str()).c_str());
+      m_numberOfAutoScalingGroupsHasBeenSet = true;
     }
     XmlNode numberOfLaunchConfigurationsNode = resultNode.FirstChild("NumberOfLaunchConfigurations");
     if(!numberOfLaunchConfigurationsNode.IsNull())
     {
       m_numberOfLaunchConfigurations = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(numberOfLaunchConfigurationsNode.GetText()).c_str()).c_str());
+      m_numberOfLaunchConfigurationsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::AutoScaling::Model::DescribeAccountLimitsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

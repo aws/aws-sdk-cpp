@@ -33,7 +33,7 @@ namespace Model
   class ListResourcesAssociatedToCustomLineItemResponseElement
   {
   public:
-    AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemResponseElement();
+    AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemResponseElement() = default;
     AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemResponseElement(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API ListResourcesAssociatedToCustomLineItemResponseElement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BILLINGCONDUCTOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p> The ARN of the associated resource. </p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline ListResourcesAssociatedToCustomLineItemResponseElement& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline ListResourcesAssociatedToCustomLineItemResponseElement& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline ListResourcesAssociatedToCustomLineItemResponseElement& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    ListResourcesAssociatedToCustomLineItemResponseElement& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,33 +56,29 @@ namespace Model
      * <p> The type of relationship between the custom line item and the associated
      * resource. </p>
      */
-    inline const CustomLineItemRelationship& GetRelationship() const{ return m_relationship; }
+    inline CustomLineItemRelationship GetRelationship() const { return m_relationship; }
     inline bool RelationshipHasBeenSet() const { return m_relationshipHasBeenSet; }
-    inline void SetRelationship(const CustomLineItemRelationship& value) { m_relationshipHasBeenSet = true; m_relationship = value; }
-    inline void SetRelationship(CustomLineItemRelationship&& value) { m_relationshipHasBeenSet = true; m_relationship = std::move(value); }
-    inline ListResourcesAssociatedToCustomLineItemResponseElement& WithRelationship(const CustomLineItemRelationship& value) { SetRelationship(value); return *this;}
-    inline ListResourcesAssociatedToCustomLineItemResponseElement& WithRelationship(CustomLineItemRelationship&& value) { SetRelationship(std::move(value)); return *this;}
+    inline void SetRelationship(CustomLineItemRelationship value) { m_relationshipHasBeenSet = true; m_relationship = value; }
+    inline ListResourcesAssociatedToCustomLineItemResponseElement& WithRelationship(CustomLineItemRelationship value) { SetRelationship(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The end billing period of the associated resource.</p>
      */
-    inline const Aws::String& GetEndBillingPeriod() const{ return m_endBillingPeriod; }
+    inline const Aws::String& GetEndBillingPeriod() const { return m_endBillingPeriod; }
     inline bool EndBillingPeriodHasBeenSet() const { return m_endBillingPeriodHasBeenSet; }
-    inline void SetEndBillingPeriod(const Aws::String& value) { m_endBillingPeriodHasBeenSet = true; m_endBillingPeriod = value; }
-    inline void SetEndBillingPeriod(Aws::String&& value) { m_endBillingPeriodHasBeenSet = true; m_endBillingPeriod = std::move(value); }
-    inline void SetEndBillingPeriod(const char* value) { m_endBillingPeriodHasBeenSet = true; m_endBillingPeriod.assign(value); }
-    inline ListResourcesAssociatedToCustomLineItemResponseElement& WithEndBillingPeriod(const Aws::String& value) { SetEndBillingPeriod(value); return *this;}
-    inline ListResourcesAssociatedToCustomLineItemResponseElement& WithEndBillingPeriod(Aws::String&& value) { SetEndBillingPeriod(std::move(value)); return *this;}
-    inline ListResourcesAssociatedToCustomLineItemResponseElement& WithEndBillingPeriod(const char* value) { SetEndBillingPeriod(value); return *this;}
+    template<typename EndBillingPeriodT = Aws::String>
+    void SetEndBillingPeriod(EndBillingPeriodT&& value) { m_endBillingPeriodHasBeenSet = true; m_endBillingPeriod = std::forward<EndBillingPeriodT>(value); }
+    template<typename EndBillingPeriodT = Aws::String>
+    ListResourcesAssociatedToCustomLineItemResponseElement& WithEndBillingPeriod(EndBillingPeriodT&& value) { SetEndBillingPeriod(std::forward<EndBillingPeriodT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    CustomLineItemRelationship m_relationship;
+    CustomLineItemRelationship m_relationship{CustomLineItemRelationship::NOT_SET};
     bool m_relationshipHasBeenSet = false;
 
     Aws::String m_endBillingPeriod;

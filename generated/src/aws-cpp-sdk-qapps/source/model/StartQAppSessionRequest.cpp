@@ -13,17 +13,6 @@ using namespace Aws::QApps::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartQAppSessionRequest::StartQAppSessionRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_appIdHasBeenSet(false),
-    m_appVersion(0),
-    m_appVersionHasBeenSet(false),
-    m_initialValuesHasBeenSet(false),
-    m_sessionIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String StartQAppSessionRequest::SerializePayload() const
 {
   JsonValue payload;

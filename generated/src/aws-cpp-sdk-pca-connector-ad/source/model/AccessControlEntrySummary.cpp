@@ -18,18 +18,7 @@ namespace PcaConnectorAd
 namespace Model
 {
 
-AccessControlEntrySummary::AccessControlEntrySummary() : 
-    m_accessRightsHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_groupDisplayNameHasBeenSet(false),
-    m_groupSecurityIdentifierHasBeenSet(false),
-    m_templateArnHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
-{
-}
-
 AccessControlEntrySummary::AccessControlEntrySummary(JsonView jsonValue)
-  : AccessControlEntrySummary()
 {
   *this = jsonValue;
 }
@@ -39,45 +28,33 @@ AccessControlEntrySummary& AccessControlEntrySummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("AccessRights"))
   {
     m_accessRights = jsonValue.GetObject("AccessRights");
-
     m_accessRightsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupDisplayName"))
   {
     m_groupDisplayName = jsonValue.GetString("GroupDisplayName");
-
     m_groupDisplayNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupSecurityIdentifier"))
   {
     m_groupSecurityIdentifier = jsonValue.GetString("GroupSecurityIdentifier");
-
     m_groupSecurityIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TemplateArn"))
   {
     m_templateArn = jsonValue.GetString("TemplateArn");
-
     m_templateArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetDouble("UpdatedAt");
-
     m_updatedAtHasBeenSet = true;
   }
-
   return *this;
 }
 

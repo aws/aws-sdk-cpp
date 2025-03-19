@@ -18,13 +18,7 @@ namespace CostOptimizationHub
 namespace Model
 {
 
-ReservedInstancesCostCalculation::ReservedInstancesCostCalculation() : 
-    m_pricingHasBeenSet(false)
-{
-}
-
 ReservedInstancesCostCalculation::ReservedInstancesCostCalculation(JsonView jsonValue)
-  : ReservedInstancesCostCalculation()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ReservedInstancesCostCalculation& ReservedInstancesCostCalculation::operator =(J
   if(jsonValue.ValueExists("pricing"))
   {
     m_pricing = jsonValue.GetObject("pricing");
-
     m_pricingHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-StartReadSetExportJobResult::StartReadSetExportJobResult() : 
-    m_status(ReadSetExportJobStatus::NOT_SET)
-{
-}
-
 StartReadSetExportJobResult::StartReadSetExportJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : StartReadSetExportJobResult()
 {
   *this = result;
 }
@@ -34,39 +28,35 @@ StartReadSetExportJobResult& StartReadSetExportJobResult::operator =(const Aws::
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sequenceStoreId"))
   {
     m_sequenceStoreId = jsonValue.GetString("sequenceStoreId");
-
+    m_sequenceStoreIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("destination"))
   {
     m_destination = jsonValue.GetString("destination");
-
+    m_destinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ReadSetExportJobStatusMapper::GetReadSetExportJobStatusForName(jsonValue.GetString("status"));
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
+    m_creationTimeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

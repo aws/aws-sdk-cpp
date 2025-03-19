@@ -20,26 +20,7 @@ namespace AutoScaling
 namespace Model
 {
 
-Activity::Activity() : 
-    m_activityIdHasBeenSet(false),
-    m_autoScalingGroupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_causeHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_statusCode(ScalingActivityStatusCode::NOT_SET),
-    m_statusCodeHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_progress(0),
-    m_progressHasBeenSet(false),
-    m_detailsHasBeenSet(false),
-    m_autoScalingGroupStateHasBeenSet(false),
-    m_autoScalingGroupARNHasBeenSet(false)
-{
-}
-
 Activity::Activity(const XmlNode& xmlNode)
-  : Activity()
 {
   *this = xmlNode;
 }
@@ -89,7 +70,7 @@ Activity& Activity::operator =(const XmlNode& xmlNode)
     XmlNode statusCodeNode = resultNode.FirstChild("StatusCode");
     if(!statusCodeNode.IsNull())
     {
-      m_statusCode = ScalingActivityStatusCodeMapper::GetScalingActivityStatusCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusCodeNode.GetText()).c_str()).c_str());
+      m_statusCode = ScalingActivityStatusCodeMapper::GetScalingActivityStatusCodeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusCodeNode.GetText()).c_str()));
       m_statusCodeHasBeenSet = true;
     }
     XmlNode statusMessageNode = resultNode.FirstChild("StatusMessage");

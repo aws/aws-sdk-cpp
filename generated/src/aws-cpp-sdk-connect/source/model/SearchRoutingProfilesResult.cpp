@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-SearchRoutingProfilesResult::SearchRoutingProfilesResult() : 
-    m_approximateTotalCount(0)
-{
-}
-
 SearchRoutingProfilesResult::SearchRoutingProfilesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : SearchRoutingProfilesResult()
 {
   *this = result;
 }
@@ -38,26 +32,25 @@ SearchRoutingProfilesResult& SearchRoutingProfilesResult::operator =(const Aws::
     {
       m_routingProfiles.push_back(routingProfilesJsonList[routingProfilesIndex].AsObject());
     }
+    m_routingProfilesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ApproximateTotalCount"))
   {
     m_approximateTotalCount = jsonValue.GetInt64("ApproximateTotalCount");
-
+    m_approximateTotalCountHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

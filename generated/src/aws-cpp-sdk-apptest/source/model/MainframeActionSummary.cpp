@@ -18,14 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-MainframeActionSummary::MainframeActionSummary() : 
-    m_batchHasBeenSet(false),
-    m_tn3270HasBeenSet(false)
-{
-}
-
 MainframeActionSummary::MainframeActionSummary(JsonView jsonValue)
-  : MainframeActionSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ MainframeActionSummary& MainframeActionSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("batch"))
   {
     m_batch = jsonValue.GetObject("batch");
-
     m_batchHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tn3270"))
   {
     m_tn3270 = jsonValue.GetObject("tn3270");
-
     m_tn3270HasBeenSet = true;
   }
-
   return *this;
 }
 

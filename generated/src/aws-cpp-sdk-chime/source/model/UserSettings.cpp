@@ -18,13 +18,7 @@ namespace Chime
 namespace Model
 {
 
-UserSettings::UserSettings() : 
-    m_telephonyHasBeenSet(false)
-{
-}
-
 UserSettings::UserSettings(JsonView jsonValue)
-  : UserSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UserSettings& UserSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Telephony"))
   {
     m_telephony = jsonValue.GetObject("Telephony");
-
     m_telephonyHasBeenSet = true;
   }
-
   return *this;
 }
 

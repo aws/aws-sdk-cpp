@@ -12,11 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetSecurityConfigurationRequest::GetSecurityConfigurationRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetSecurityConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

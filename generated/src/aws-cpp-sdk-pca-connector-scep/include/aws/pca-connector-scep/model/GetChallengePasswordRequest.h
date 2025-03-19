@@ -21,7 +21,7 @@ namespace Model
   class GetChallengePasswordRequest : public PcaConnectorScepRequest
   {
   public:
-    AWS_PCACONNECTORSCEP_API GetChallengePasswordRequest();
+    AWS_PCACONNECTORSCEP_API GetChallengePasswordRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the challenge.</p>
      */
-    inline const Aws::String& GetChallengeArn() const{ return m_challengeArn; }
+    inline const Aws::String& GetChallengeArn() const { return m_challengeArn; }
     inline bool ChallengeArnHasBeenSet() const { return m_challengeArnHasBeenSet; }
-    inline void SetChallengeArn(const Aws::String& value) { m_challengeArnHasBeenSet = true; m_challengeArn = value; }
-    inline void SetChallengeArn(Aws::String&& value) { m_challengeArnHasBeenSet = true; m_challengeArn = std::move(value); }
-    inline void SetChallengeArn(const char* value) { m_challengeArnHasBeenSet = true; m_challengeArn.assign(value); }
-    inline GetChallengePasswordRequest& WithChallengeArn(const Aws::String& value) { SetChallengeArn(value); return *this;}
-    inline GetChallengePasswordRequest& WithChallengeArn(Aws::String&& value) { SetChallengeArn(std::move(value)); return *this;}
-    inline GetChallengePasswordRequest& WithChallengeArn(const char* value) { SetChallengeArn(value); return *this;}
+    template<typename ChallengeArnT = Aws::String>
+    void SetChallengeArn(ChallengeArnT&& value) { m_challengeArnHasBeenSet = true; m_challengeArn = std::forward<ChallengeArnT>(value); }
+    template<typename ChallengeArnT = Aws::String>
+    GetChallengePasswordRequest& WithChallengeArn(ChallengeArnT&& value) { SetChallengeArn(std::forward<ChallengeArnT>(value)); return *this;}
     ///@}
   private:
 

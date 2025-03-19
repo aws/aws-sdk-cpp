@@ -12,15 +12,6 @@ using namespace Aws::CodePipeline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RetryStageExecutionRequest::RetryStageExecutionRequest() : 
-    m_pipelineNameHasBeenSet(false),
-    m_stageNameHasBeenSet(false),
-    m_pipelineExecutionIdHasBeenSet(false),
-    m_retryMode(StageRetryMode::NOT_SET),
-    m_retryModeHasBeenSet(false)
-{
-}
-
 Aws::String RetryStageExecutionRequest::SerializePayload() const
 {
   JsonValue payload;

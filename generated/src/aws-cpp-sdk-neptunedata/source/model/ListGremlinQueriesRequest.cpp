@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListGremlinQueriesRequest::ListGremlinQueriesRequest() : 
-    m_includeWaiting(false),
-    m_includeWaitingHasBeenSet(false)
-{
-}
-
 Aws::String ListGremlinQueriesRequest::SerializePayload() const
 {
   return {};

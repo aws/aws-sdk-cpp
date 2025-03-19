@@ -31,7 +31,7 @@ namespace Model
   class S3BucketInfo
   {
   public:
-    AWS_AMPLIFYBACKEND_API S3BucketInfo();
+    AWS_AMPLIFYBACKEND_API S3BucketInfo() = default;
     AWS_AMPLIFYBACKEND_API S3BucketInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API S3BucketInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYBACKEND_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>The creation date of the S3 bucket.</p>
      */
-    inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
+    inline const Aws::String& GetCreationDate() const { return m_creationDate; }
     inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
-    inline void SetCreationDate(const Aws::String& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
-    inline void SetCreationDate(Aws::String&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::move(value); }
-    inline void SetCreationDate(const char* value) { m_creationDateHasBeenSet = true; m_creationDate.assign(value); }
-    inline S3BucketInfo& WithCreationDate(const Aws::String& value) { SetCreationDate(value); return *this;}
-    inline S3BucketInfo& WithCreationDate(Aws::String&& value) { SetCreationDate(std::move(value)); return *this;}
-    inline S3BucketInfo& WithCreationDate(const char* value) { SetCreationDate(value); return *this;}
+    template<typename CreationDateT = Aws::String>
+    void SetCreationDate(CreationDateT&& value) { m_creationDateHasBeenSet = true; m_creationDate = std::forward<CreationDateT>(value); }
+    template<typename CreationDateT = Aws::String>
+    S3BucketInfo& WithCreationDate(CreationDateT&& value) { SetCreationDate(std::forward<CreationDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the S3 bucket.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline S3BucketInfo& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline S3BucketInfo& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline S3BucketInfo& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    S3BucketInfo& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
   private:
 

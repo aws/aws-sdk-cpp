@@ -38,7 +38,7 @@ namespace Model
   class RenewalSummary
   {
   public:
-    AWS_ACM_API RenewalSummary();
+    AWS_ACM_API RenewalSummary() = default;
     AWS_ACM_API RenewalSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACM_API RenewalSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ACM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,12 +50,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      * renewal</a> of the certificate.</p>
      */
-    inline const RenewalStatus& GetRenewalStatus() const{ return m_renewalStatus; }
+    inline RenewalStatus GetRenewalStatus() const { return m_renewalStatus; }
     inline bool RenewalStatusHasBeenSet() const { return m_renewalStatusHasBeenSet; }
-    inline void SetRenewalStatus(const RenewalStatus& value) { m_renewalStatusHasBeenSet = true; m_renewalStatus = value; }
-    inline void SetRenewalStatus(RenewalStatus&& value) { m_renewalStatusHasBeenSet = true; m_renewalStatus = std::move(value); }
-    inline RenewalSummary& WithRenewalStatus(const RenewalStatus& value) { SetRenewalStatus(value); return *this;}
-    inline RenewalSummary& WithRenewalStatus(RenewalStatus&& value) { SetRenewalStatus(std::move(value)); return *this;}
+    inline void SetRenewalStatus(RenewalStatus value) { m_renewalStatusHasBeenSet = true; m_renewalStatus = value; }
+    inline RenewalSummary& WithRenewalStatus(RenewalStatus value) { SetRenewalStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -67,51 +65,49 @@ namespace Model
      * result of the <a>RequestCertificate</a> request. This field exists only when the
      * certificate type is <code>AMAZON_ISSUED</code>.</p>
      */
-    inline const Aws::Vector<DomainValidation>& GetDomainValidationOptions() const{ return m_domainValidationOptions; }
+    inline const Aws::Vector<DomainValidation>& GetDomainValidationOptions() const { return m_domainValidationOptions; }
     inline bool DomainValidationOptionsHasBeenSet() const { return m_domainValidationOptionsHasBeenSet; }
-    inline void SetDomainValidationOptions(const Aws::Vector<DomainValidation>& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = value; }
-    inline void SetDomainValidationOptions(Aws::Vector<DomainValidation>&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = std::move(value); }
-    inline RenewalSummary& WithDomainValidationOptions(const Aws::Vector<DomainValidation>& value) { SetDomainValidationOptions(value); return *this;}
-    inline RenewalSummary& WithDomainValidationOptions(Aws::Vector<DomainValidation>&& value) { SetDomainValidationOptions(std::move(value)); return *this;}
-    inline RenewalSummary& AddDomainValidationOptions(const DomainValidation& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(value); return *this; }
-    inline RenewalSummary& AddDomainValidationOptions(DomainValidation&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.push_back(std::move(value)); return *this; }
+    template<typename DomainValidationOptionsT = Aws::Vector<DomainValidation>>
+    void SetDomainValidationOptions(DomainValidationOptionsT&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = std::forward<DomainValidationOptionsT>(value); }
+    template<typename DomainValidationOptionsT = Aws::Vector<DomainValidation>>
+    RenewalSummary& WithDomainValidationOptions(DomainValidationOptionsT&& value) { SetDomainValidationOptions(std::forward<DomainValidationOptionsT>(value)); return *this;}
+    template<typename DomainValidationOptionsT = DomainValidation>
+    RenewalSummary& AddDomainValidationOptions(DomainValidationOptionsT&& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions.emplace_back(std::forward<DomainValidationOptionsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The reason that a renewal request was unsuccessful.</p>
      */
-    inline const FailureReason& GetRenewalStatusReason() const{ return m_renewalStatusReason; }
+    inline FailureReason GetRenewalStatusReason() const { return m_renewalStatusReason; }
     inline bool RenewalStatusReasonHasBeenSet() const { return m_renewalStatusReasonHasBeenSet; }
-    inline void SetRenewalStatusReason(const FailureReason& value) { m_renewalStatusReasonHasBeenSet = true; m_renewalStatusReason = value; }
-    inline void SetRenewalStatusReason(FailureReason&& value) { m_renewalStatusReasonHasBeenSet = true; m_renewalStatusReason = std::move(value); }
-    inline RenewalSummary& WithRenewalStatusReason(const FailureReason& value) { SetRenewalStatusReason(value); return *this;}
-    inline RenewalSummary& WithRenewalStatusReason(FailureReason&& value) { SetRenewalStatusReason(std::move(value)); return *this;}
+    inline void SetRenewalStatusReason(FailureReason value) { m_renewalStatusReasonHasBeenSet = true; m_renewalStatusReason = value; }
+    inline RenewalSummary& WithRenewalStatusReason(FailureReason value) { SetRenewalStatusReason(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The time at which the renewal summary was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+    inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
-    inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
-    inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
-    inline RenewalSummary& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
-    inline RenewalSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    void SetUpdatedAt(UpdatedAtT&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::forward<UpdatedAtT>(value); }
+    template<typename UpdatedAtT = Aws::Utils::DateTime>
+    RenewalSummary& WithUpdatedAt(UpdatedAtT&& value) { SetUpdatedAt(std::forward<UpdatedAtT>(value)); return *this;}
     ///@}
   private:
 
-    RenewalStatus m_renewalStatus;
+    RenewalStatus m_renewalStatus{RenewalStatus::NOT_SET};
     bool m_renewalStatusHasBeenSet = false;
 
     Aws::Vector<DomainValidation> m_domainValidationOptions;
     bool m_domainValidationOptionsHasBeenSet = false;
 
-    FailureReason m_renewalStatusReason;
+    FailureReason m_renewalStatusReason{FailureReason::NOT_SET};
     bool m_renewalStatusReasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_updatedAt;
+    Aws::Utils::DateTime m_updatedAt{};
     bool m_updatedAtHasBeenSet = false;
   };
 

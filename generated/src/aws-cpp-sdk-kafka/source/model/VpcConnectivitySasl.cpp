@@ -18,14 +18,7 @@ namespace Kafka
 namespace Model
 {
 
-VpcConnectivitySasl::VpcConnectivitySasl() : 
-    m_scramHasBeenSet(false),
-    m_iamHasBeenSet(false)
-{
-}
-
 VpcConnectivitySasl::VpcConnectivitySasl(JsonView jsonValue)
-  : VpcConnectivitySasl()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ VpcConnectivitySasl& VpcConnectivitySasl::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("scram"))
   {
     m_scram = jsonValue.GetObject("scram");
-
     m_scramHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("iam"))
   {
     m_iam = jsonValue.GetObject("iam");
-
     m_iamHasBeenSet = true;
   }
-
   return *this;
 }
 

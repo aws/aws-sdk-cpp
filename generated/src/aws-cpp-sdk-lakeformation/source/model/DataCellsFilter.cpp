@@ -18,20 +18,7 @@ namespace LakeFormation
 namespace Model
 {
 
-DataCellsFilter::DataCellsFilter() : 
-    m_tableCatalogIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_tableNameHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_rowFilterHasBeenSet(false),
-    m_columnNamesHasBeenSet(false),
-    m_columnWildcardHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
-{
-}
-
 DataCellsFilter::DataCellsFilter(JsonView jsonValue)
-  : DataCellsFilter()
 {
   *this = jsonValue;
 }
@@ -41,38 +28,28 @@ DataCellsFilter& DataCellsFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TableCatalogId"))
   {
     m_tableCatalogId = jsonValue.GetString("TableCatalogId");
-
     m_tableCatalogIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TableName"))
   {
     m_tableName = jsonValue.GetString("TableName");
-
     m_tableNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RowFilter"))
   {
     m_rowFilter = jsonValue.GetObject("RowFilter");
-
     m_rowFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnNames"))
   {
     Aws::Utils::Array<JsonView> columnNamesJsonList = jsonValue.GetArray("ColumnNames");
@@ -82,21 +59,16 @@ DataCellsFilter& DataCellsFilter::operator =(JsonView jsonValue)
     }
     m_columnNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ColumnWildcard"))
   {
     m_columnWildcard = jsonValue.GetObject("ColumnWildcard");
-
     m_columnWildcardHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VersionId"))
   {
     m_versionId = jsonValue.GetString("VersionId");
-
     m_versionIdHasBeenSet = true;
   }
-
   return *this;
 }
 

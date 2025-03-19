@@ -18,16 +18,7 @@ namespace IoT1ClickProjects
 namespace Model
 {
 
-PlacementSummary::PlacementSummary() : 
-    m_projectNameHasBeenSet(false),
-    m_placementNameHasBeenSet(false),
-    m_createdDateHasBeenSet(false),
-    m_updatedDateHasBeenSet(false)
-{
-}
-
 PlacementSummary::PlacementSummary(JsonView jsonValue)
-  : PlacementSummary()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ PlacementSummary& PlacementSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("projectName"))
   {
     m_projectName = jsonValue.GetString("projectName");
-
     m_projectNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("placementName"))
   {
     m_placementName = jsonValue.GetString("placementName");
-
     m_placementNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdDate"))
   {
     m_createdDate = jsonValue.GetDouble("createdDate");
-
     m_createdDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updatedDate"))
   {
     m_updatedDate = jsonValue.GetDouble("updatedDate");
-
     m_updatedDateHasBeenSet = true;
   }
-
   return *this;
 }
 

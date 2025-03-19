@@ -18,16 +18,7 @@ namespace QConnect
 namespace Model
 {
 
-AssociationConfiguration::AssociationConfiguration() : 
-    m_associationConfigurationDataHasBeenSet(false),
-    m_associationIdHasBeenSet(false),
-    m_associationType(AIAgentAssociationConfigurationType::NOT_SET),
-    m_associationTypeHasBeenSet(false)
-{
-}
-
 AssociationConfiguration::AssociationConfiguration(JsonView jsonValue)
-  : AssociationConfiguration()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ AssociationConfiguration& AssociationConfiguration::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("associationConfigurationData"))
   {
     m_associationConfigurationData = jsonValue.GetObject("associationConfigurationData");
-
     m_associationConfigurationDataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associationId"))
   {
     m_associationId = jsonValue.GetString("associationId");
-
     m_associationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("associationType"))
   {
     m_associationType = AIAgentAssociationConfigurationTypeMapper::GetAIAgentAssociationConfigurationTypeForName(jsonValue.GetString("associationType"));
-
     m_associationTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -22,7 +22,7 @@ namespace Model
   class UpdateSMBSecurityStrategyRequest : public StorageGatewayRequest
   {
   public:
-    AWS_STORAGEGATEWAY_API UpdateSMBSecurityStrategyRequest();
+    AWS_STORAGEGATEWAY_API UpdateSMBSecurityStrategyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,14 +37,12 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
+    inline const Aws::String& GetGatewayARN() const { return m_gatewayARN; }
     inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
-    inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
-    inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
-    inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
-    inline UpdateSMBSecurityStrategyRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
-    inline UpdateSMBSecurityStrategyRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
-    inline UpdateSMBSecurityStrategyRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
+    template<typename GatewayARNT = Aws::String>
+    void SetGatewayARN(GatewayARNT&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::forward<GatewayARNT>(value); }
+    template<typename GatewayARNT = Aws::String>
+    UpdateSMBSecurityStrategyRequest& WithGatewayARN(GatewayARNT&& value) { SetGatewayARN(std::forward<GatewayARNT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,19 +65,17 @@ namespace Model
      * recommended for environments that handle sensitive data. It works with SMB
      * clients on Microsoft Windows 8, Windows Server 2012, or later.</p>
      */
-    inline const SMBSecurityStrategy& GetSMBSecurityStrategy() const{ return m_sMBSecurityStrategy; }
+    inline SMBSecurityStrategy GetSMBSecurityStrategy() const { return m_sMBSecurityStrategy; }
     inline bool SMBSecurityStrategyHasBeenSet() const { return m_sMBSecurityStrategyHasBeenSet; }
-    inline void SetSMBSecurityStrategy(const SMBSecurityStrategy& value) { m_sMBSecurityStrategyHasBeenSet = true; m_sMBSecurityStrategy = value; }
-    inline void SetSMBSecurityStrategy(SMBSecurityStrategy&& value) { m_sMBSecurityStrategyHasBeenSet = true; m_sMBSecurityStrategy = std::move(value); }
-    inline UpdateSMBSecurityStrategyRequest& WithSMBSecurityStrategy(const SMBSecurityStrategy& value) { SetSMBSecurityStrategy(value); return *this;}
-    inline UpdateSMBSecurityStrategyRequest& WithSMBSecurityStrategy(SMBSecurityStrategy&& value) { SetSMBSecurityStrategy(std::move(value)); return *this;}
+    inline void SetSMBSecurityStrategy(SMBSecurityStrategy value) { m_sMBSecurityStrategyHasBeenSet = true; m_sMBSecurityStrategy = value; }
+    inline UpdateSMBSecurityStrategyRequest& WithSMBSecurityStrategy(SMBSecurityStrategy value) { SetSMBSecurityStrategy(value); return *this;}
     ///@}
   private:
 
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet = false;
 
-    SMBSecurityStrategy m_sMBSecurityStrategy;
+    SMBSecurityStrategy m_sMBSecurityStrategy{SMBSecurityStrategy::NOT_SET};
     bool m_sMBSecurityStrategyHasBeenSet = false;
   };
 

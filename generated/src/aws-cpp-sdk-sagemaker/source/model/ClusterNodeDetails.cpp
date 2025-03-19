@@ -18,27 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ClusterNodeDetails::ClusterNodeDetails() : 
-    m_instanceGroupNameHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceStatusHasBeenSet(false),
-    m_instanceType(ClusterInstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_launchTimeHasBeenSet(false),
-    m_lifeCycleConfigHasBeenSet(false),
-    m_overrideVpcConfigHasBeenSet(false),
-    m_threadsPerCore(0),
-    m_threadsPerCoreHasBeenSet(false),
-    m_instanceStorageConfigsHasBeenSet(false),
-    m_privatePrimaryIpHasBeenSet(false),
-    m_privatePrimaryIpv6HasBeenSet(false),
-    m_privateDnsHostnameHasBeenSet(false),
-    m_placementHasBeenSet(false)
-{
-}
-
 ClusterNodeDetails::ClusterNodeDetails(JsonView jsonValue)
-  : ClusterNodeDetails()
 {
   *this = jsonValue;
 }
@@ -48,59 +28,43 @@ ClusterNodeDetails& ClusterNodeDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InstanceGroupName"))
   {
     m_instanceGroupName = jsonValue.GetString("InstanceGroupName");
-
     m_instanceGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceId"))
   {
     m_instanceId = jsonValue.GetString("InstanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceStatus"))
   {
     m_instanceStatus = jsonValue.GetObject("InstanceStatus");
-
     m_instanceStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceType"))
   {
     m_instanceType = ClusterInstanceTypeMapper::GetClusterInstanceTypeForName(jsonValue.GetString("InstanceType"));
-
     m_instanceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LaunchTime"))
   {
     m_launchTime = jsonValue.GetDouble("LaunchTime");
-
     m_launchTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LifeCycleConfig"))
   {
     m_lifeCycleConfig = jsonValue.GetObject("LifeCycleConfig");
-
     m_lifeCycleConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OverrideVpcConfig"))
   {
     m_overrideVpcConfig = jsonValue.GetObject("OverrideVpcConfig");
-
     m_overrideVpcConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ThreadsPerCore"))
   {
     m_threadsPerCore = jsonValue.GetInteger("ThreadsPerCore");
-
     m_threadsPerCoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("InstanceStorageConfigs"))
   {
     Aws::Utils::Array<JsonView> instanceStorageConfigsJsonList = jsonValue.GetArray("InstanceStorageConfigs");
@@ -110,35 +74,26 @@ ClusterNodeDetails& ClusterNodeDetails::operator =(JsonView jsonValue)
     }
     m_instanceStorageConfigsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrivatePrimaryIp"))
   {
     m_privatePrimaryIp = jsonValue.GetString("PrivatePrimaryIp");
-
     m_privatePrimaryIpHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrivatePrimaryIpv6"))
   {
     m_privatePrimaryIpv6 = jsonValue.GetString("PrivatePrimaryIpv6");
-
     m_privatePrimaryIpv6HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PrivateDnsHostname"))
   {
     m_privateDnsHostname = jsonValue.GetString("PrivateDnsHostname");
-
     m_privateDnsHostnameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Placement"))
   {
     m_placement = jsonValue.GetObject("Placement");
-
     m_placementHasBeenSet = true;
   }
-
   return *this;
 }
 

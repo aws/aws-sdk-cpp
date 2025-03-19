@@ -52,7 +52,7 @@ namespace Model
   class CallAnalyticsJob
   {
   public:
-    AWS_TRANSCRIBESERVICE_API CallAnalyticsJob();
+    AWS_TRANSCRIBESERVICE_API CallAnalyticsJob() = default;
     AWS_TRANSCRIBESERVICE_API CallAnalyticsJob(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API CallAnalyticsJob& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TRANSCRIBESERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -63,14 +63,12 @@ namespace Model
      * <p>The name of the Call Analytics job. Job names are case sensitive and must be
      * unique within an Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetCallAnalyticsJobName() const{ return m_callAnalyticsJobName; }
+    inline const Aws::String& GetCallAnalyticsJobName() const { return m_callAnalyticsJobName; }
     inline bool CallAnalyticsJobNameHasBeenSet() const { return m_callAnalyticsJobNameHasBeenSet; }
-    inline void SetCallAnalyticsJobName(const Aws::String& value) { m_callAnalyticsJobNameHasBeenSet = true; m_callAnalyticsJobName = value; }
-    inline void SetCallAnalyticsJobName(Aws::String&& value) { m_callAnalyticsJobNameHasBeenSet = true; m_callAnalyticsJobName = std::move(value); }
-    inline void SetCallAnalyticsJobName(const char* value) { m_callAnalyticsJobNameHasBeenSet = true; m_callAnalyticsJobName.assign(value); }
-    inline CallAnalyticsJob& WithCallAnalyticsJobName(const Aws::String& value) { SetCallAnalyticsJobName(value); return *this;}
-    inline CallAnalyticsJob& WithCallAnalyticsJobName(Aws::String&& value) { SetCallAnalyticsJobName(std::move(value)); return *this;}
-    inline CallAnalyticsJob& WithCallAnalyticsJobName(const char* value) { SetCallAnalyticsJobName(value); return *this;}
+    template<typename CallAnalyticsJobNameT = Aws::String>
+    void SetCallAnalyticsJobName(CallAnalyticsJobNameT&& value) { m_callAnalyticsJobNameHasBeenSet = true; m_callAnalyticsJobName = std::forward<CallAnalyticsJobNameT>(value); }
+    template<typename CallAnalyticsJobNameT = Aws::String>
+    CallAnalyticsJob& WithCallAnalyticsJobName(CallAnalyticsJobNameT&& value) { SetCallAnalyticsJobName(std::forward<CallAnalyticsJobNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,12 +80,10 @@ namespace Model
      * If the status is <code>FAILED</code>, <code>FailureReason</code> provides
      * details on why your transcription job failed.</p>
      */
-    inline const CallAnalyticsJobStatus& GetCallAnalyticsJobStatus() const{ return m_callAnalyticsJobStatus; }
+    inline CallAnalyticsJobStatus GetCallAnalyticsJobStatus() const { return m_callAnalyticsJobStatus; }
     inline bool CallAnalyticsJobStatusHasBeenSet() const { return m_callAnalyticsJobStatusHasBeenSet; }
-    inline void SetCallAnalyticsJobStatus(const CallAnalyticsJobStatus& value) { m_callAnalyticsJobStatusHasBeenSet = true; m_callAnalyticsJobStatus = value; }
-    inline void SetCallAnalyticsJobStatus(CallAnalyticsJobStatus&& value) { m_callAnalyticsJobStatusHasBeenSet = true; m_callAnalyticsJobStatus = std::move(value); }
-    inline CallAnalyticsJob& WithCallAnalyticsJobStatus(const CallAnalyticsJobStatus& value) { SetCallAnalyticsJobStatus(value); return *this;}
-    inline CallAnalyticsJob& WithCallAnalyticsJobStatus(CallAnalyticsJobStatus&& value) { SetCallAnalyticsJobStatus(std::move(value)); return *this;}
+    inline void SetCallAnalyticsJobStatus(CallAnalyticsJobStatus value) { m_callAnalyticsJobStatusHasBeenSet = true; m_callAnalyticsJobStatus = value; }
+    inline CallAnalyticsJob& WithCallAnalyticsJobStatus(CallAnalyticsJobStatus value) { SetCallAnalyticsJobStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -95,12 +91,12 @@ namespace Model
      * <p>Provides detailed information about a call analytics job, including
      * information about skipped analytics features.</p>
      */
-    inline const CallAnalyticsJobDetails& GetCallAnalyticsJobDetails() const{ return m_callAnalyticsJobDetails; }
+    inline const CallAnalyticsJobDetails& GetCallAnalyticsJobDetails() const { return m_callAnalyticsJobDetails; }
     inline bool CallAnalyticsJobDetailsHasBeenSet() const { return m_callAnalyticsJobDetailsHasBeenSet; }
-    inline void SetCallAnalyticsJobDetails(const CallAnalyticsJobDetails& value) { m_callAnalyticsJobDetailsHasBeenSet = true; m_callAnalyticsJobDetails = value; }
-    inline void SetCallAnalyticsJobDetails(CallAnalyticsJobDetails&& value) { m_callAnalyticsJobDetailsHasBeenSet = true; m_callAnalyticsJobDetails = std::move(value); }
-    inline CallAnalyticsJob& WithCallAnalyticsJobDetails(const CallAnalyticsJobDetails& value) { SetCallAnalyticsJobDetails(value); return *this;}
-    inline CallAnalyticsJob& WithCallAnalyticsJobDetails(CallAnalyticsJobDetails&& value) { SetCallAnalyticsJobDetails(std::move(value)); return *this;}
+    template<typename CallAnalyticsJobDetailsT = CallAnalyticsJobDetails>
+    void SetCallAnalyticsJobDetails(CallAnalyticsJobDetailsT&& value) { m_callAnalyticsJobDetailsHasBeenSet = true; m_callAnalyticsJobDetails = std::forward<CallAnalyticsJobDetailsT>(value); }
+    template<typename CallAnalyticsJobDetailsT = CallAnalyticsJobDetails>
+    CallAnalyticsJob& WithCallAnalyticsJobDetails(CallAnalyticsJobDetailsT&& value) { SetCallAnalyticsJobDetails(std::forward<CallAnalyticsJobDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,19 +110,17 @@ namespace Model
      * you can include several language codes and Amazon Transcribe chooses the closest
      * match for your transcription.</p>
      */
-    inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
+    inline LanguageCode GetLanguageCode() const { return m_languageCode; }
     inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
-    inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
-    inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
-    inline CallAnalyticsJob& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
-    inline CallAnalyticsJob& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
+    inline void SetLanguageCode(LanguageCode value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
+    inline CallAnalyticsJob& WithLanguageCode(LanguageCode value) { SetLanguageCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The sample rate, in hertz, of the audio track in your input media file.</p>
      */
-    inline int GetMediaSampleRateHertz() const{ return m_mediaSampleRateHertz; }
+    inline int GetMediaSampleRateHertz() const { return m_mediaSampleRateHertz; }
     inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
     inline CallAnalyticsJob& WithMediaSampleRateHertz(int value) { SetMediaSampleRateHertz(value); return *this;}
@@ -136,12 +130,10 @@ namespace Model
     /**
      * <p>The format of the input media file.</p>
      */
-    inline const MediaFormat& GetMediaFormat() const{ return m_mediaFormat; }
+    inline MediaFormat GetMediaFormat() const { return m_mediaFormat; }
     inline bool MediaFormatHasBeenSet() const { return m_mediaFormatHasBeenSet; }
-    inline void SetMediaFormat(const MediaFormat& value) { m_mediaFormatHasBeenSet = true; m_mediaFormat = value; }
-    inline void SetMediaFormat(MediaFormat&& value) { m_mediaFormatHasBeenSet = true; m_mediaFormat = std::move(value); }
-    inline CallAnalyticsJob& WithMediaFormat(const MediaFormat& value) { SetMediaFormat(value); return *this;}
-    inline CallAnalyticsJob& WithMediaFormat(MediaFormat&& value) { SetMediaFormat(std::move(value)); return *this;}
+    inline void SetMediaFormat(MediaFormat value) { m_mediaFormatHasBeenSet = true; m_mediaFormat = value; }
+    inline CallAnalyticsJob& WithMediaFormat(MediaFormat value) { SetMediaFormat(value); return *this;}
     ///@}
 
     ///@{
@@ -149,22 +141,22 @@ namespace Model
      * <p>Provides the Amazon S3 location of the media file you used in your Call
      * Analytics request.</p>
      */
-    inline const Media& GetMedia() const{ return m_media; }
+    inline const Media& GetMedia() const { return m_media; }
     inline bool MediaHasBeenSet() const { return m_mediaHasBeenSet; }
-    inline void SetMedia(const Media& value) { m_mediaHasBeenSet = true; m_media = value; }
-    inline void SetMedia(Media&& value) { m_mediaHasBeenSet = true; m_media = std::move(value); }
-    inline CallAnalyticsJob& WithMedia(const Media& value) { SetMedia(value); return *this;}
-    inline CallAnalyticsJob& WithMedia(Media&& value) { SetMedia(std::move(value)); return *this;}
+    template<typename MediaT = Media>
+    void SetMedia(MediaT&& value) { m_mediaHasBeenSet = true; m_media = std::forward<MediaT>(value); }
+    template<typename MediaT = Media>
+    CallAnalyticsJob& WithMedia(MediaT&& value) { SetMedia(std::forward<MediaT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Transcript& GetTranscript() const{ return m_transcript; }
+    inline const Transcript& GetTranscript() const { return m_transcript; }
     inline bool TranscriptHasBeenSet() const { return m_transcriptHasBeenSet; }
-    inline void SetTranscript(const Transcript& value) { m_transcriptHasBeenSet = true; m_transcript = value; }
-    inline void SetTranscript(Transcript&& value) { m_transcriptHasBeenSet = true; m_transcript = std::move(value); }
-    inline CallAnalyticsJob& WithTranscript(const Transcript& value) { SetTranscript(value); return *this;}
-    inline CallAnalyticsJob& WithTranscript(Transcript&& value) { SetTranscript(std::move(value)); return *this;}
+    template<typename TranscriptT = Transcript>
+    void SetTranscript(TranscriptT&& value) { m_transcriptHasBeenSet = true; m_transcript = std::forward<TranscriptT>(value); }
+    template<typename TranscriptT = Transcript>
+    CallAnalyticsJob& WithTranscript(TranscriptT&& value) { SetTranscript(std::forward<TranscriptT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -174,12 +166,12 @@ namespace Model
      * For example, <code>2022-05-04T12:32:58.789000-07:00</code> represents a
      * transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline CallAnalyticsJob& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline CallAnalyticsJob& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    CallAnalyticsJob& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -189,12 +181,12 @@ namespace Model
      * For example, <code>2022-05-04T12:32:58.761000-07:00</code> represents a
      * transcription job that started processing at 12:32 PM UTC-7 on May 4, 2022.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
     inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-    inline CallAnalyticsJob& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline CallAnalyticsJob& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    CallAnalyticsJob& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -204,12 +196,12 @@ namespace Model
      * For example, <code>2022-05-04T12:33:13.922000-07:00</code> represents a
      * transcription job that started processing at 12:33 PM UTC-7 on May 4, 2022.</p>
      */
-    inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
+    inline const Aws::Utils::DateTime& GetCompletionTime() const { return m_completionTime; }
     inline bool CompletionTimeHasBeenSet() const { return m_completionTimeHasBeenSet; }
-    inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
-    inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTimeHasBeenSet = true; m_completionTime = std::move(value); }
-    inline CallAnalyticsJob& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
-    inline CallAnalyticsJob& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
+    template<typename CompletionTimeT = Aws::Utils::DateTime>
+    void SetCompletionTime(CompletionTimeT&& value) { m_completionTimeHasBeenSet = true; m_completionTime = std::forward<CompletionTimeT>(value); }
+    template<typename CompletionTimeT = Aws::Utils::DateTime>
+    CallAnalyticsJob& WithCompletionTime(CompletionTimeT&& value) { SetCompletionTime(std::forward<CompletionTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -240,28 +232,24 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/transcribe.html#limits-amazon-transcribe">Service
      * quotas</a>.</p> </li> </ul>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
     inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
-    inline CallAnalyticsJob& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline CallAnalyticsJob& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline CallAnalyticsJob& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    CallAnalyticsJob& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) you included in your request.</p>
      */
-    inline const Aws::String& GetDataAccessRoleArn() const{ return m_dataAccessRoleArn; }
+    inline const Aws::String& GetDataAccessRoleArn() const { return m_dataAccessRoleArn; }
     inline bool DataAccessRoleArnHasBeenSet() const { return m_dataAccessRoleArnHasBeenSet; }
-    inline void SetDataAccessRoleArn(const Aws::String& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = value; }
-    inline void SetDataAccessRoleArn(Aws::String&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::move(value); }
-    inline void SetDataAccessRoleArn(const char* value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn.assign(value); }
-    inline CallAnalyticsJob& WithDataAccessRoleArn(const Aws::String& value) { SetDataAccessRoleArn(value); return *this;}
-    inline CallAnalyticsJob& WithDataAccessRoleArn(Aws::String&& value) { SetDataAccessRoleArn(std::move(value)); return *this;}
-    inline CallAnalyticsJob& WithDataAccessRoleArn(const char* value) { SetDataAccessRoleArn(value); return *this;}
+    template<typename DataAccessRoleArnT = Aws::String>
+    void SetDataAccessRoleArn(DataAccessRoleArnT&& value) { m_dataAccessRoleArnHasBeenSet = true; m_dataAccessRoleArn = std::forward<DataAccessRoleArnT>(value); }
+    template<typename DataAccessRoleArnT = Aws::String>
+    CallAnalyticsJob& WithDataAccessRoleArn(DataAccessRoleArnT&& value) { SetDataAccessRoleArn(std::forward<DataAccessRoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -271,7 +259,7 @@ namespace Model
      * indicates a higher probability that the identified language correctly matches
      * the language spoken in your media.</p>
      */
-    inline double GetIdentifiedLanguageScore() const{ return m_identifiedLanguageScore; }
+    inline double GetIdentifiedLanguageScore() const { return m_identifiedLanguageScore; }
     inline bool IdentifiedLanguageScoreHasBeenSet() const { return m_identifiedLanguageScoreHasBeenSet; }
     inline void SetIdentifiedLanguageScore(double value) { m_identifiedLanguageScoreHasBeenSet = true; m_identifiedLanguageScore = value; }
     inline CallAnalyticsJob& WithIdentifiedLanguageScore(double value) { SetIdentifiedLanguageScore(value); return *this;}
@@ -283,26 +271,26 @@ namespace Model
      * request. Additional settings include content redaction and language
      * identification settings.</p>
      */
-    inline const CallAnalyticsJobSettings& GetSettings() const{ return m_settings; }
+    inline const CallAnalyticsJobSettings& GetSettings() const { return m_settings; }
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
-    inline void SetSettings(const CallAnalyticsJobSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
-    inline void SetSettings(CallAnalyticsJobSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
-    inline CallAnalyticsJob& WithSettings(const CallAnalyticsJobSettings& value) { SetSettings(value); return *this;}
-    inline CallAnalyticsJob& WithSettings(CallAnalyticsJobSettings&& value) { SetSettings(std::move(value)); return *this;}
+    template<typename SettingsT = CallAnalyticsJobSettings>
+    void SetSettings(SettingsT&& value) { m_settingsHasBeenSet = true; m_settings = std::forward<SettingsT>(value); }
+    template<typename SettingsT = CallAnalyticsJobSettings>
+    CallAnalyticsJob& WithSettings(SettingsT&& value) { SetSettings(std::forward<SettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Indicates which speaker is on which channel.</p>
      */
-    inline const Aws::Vector<ChannelDefinition>& GetChannelDefinitions() const{ return m_channelDefinitions; }
+    inline const Aws::Vector<ChannelDefinition>& GetChannelDefinitions() const { return m_channelDefinitions; }
     inline bool ChannelDefinitionsHasBeenSet() const { return m_channelDefinitionsHasBeenSet; }
-    inline void SetChannelDefinitions(const Aws::Vector<ChannelDefinition>& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions = value; }
-    inline void SetChannelDefinitions(Aws::Vector<ChannelDefinition>&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions = std::move(value); }
-    inline CallAnalyticsJob& WithChannelDefinitions(const Aws::Vector<ChannelDefinition>& value) { SetChannelDefinitions(value); return *this;}
-    inline CallAnalyticsJob& WithChannelDefinitions(Aws::Vector<ChannelDefinition>&& value) { SetChannelDefinitions(std::move(value)); return *this;}
-    inline CallAnalyticsJob& AddChannelDefinitions(const ChannelDefinition& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions.push_back(value); return *this; }
-    inline CallAnalyticsJob& AddChannelDefinitions(ChannelDefinition&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions.push_back(std::move(value)); return *this; }
+    template<typename ChannelDefinitionsT = Aws::Vector<ChannelDefinition>>
+    void SetChannelDefinitions(ChannelDefinitionsT&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions = std::forward<ChannelDefinitionsT>(value); }
+    template<typename ChannelDefinitionsT = Aws::Vector<ChannelDefinition>>
+    CallAnalyticsJob& WithChannelDefinitions(ChannelDefinitionsT&& value) { SetChannelDefinitions(std::forward<ChannelDefinitionsT>(value)); return *this;}
+    template<typename ChannelDefinitionsT = ChannelDefinition>
+    CallAnalyticsJob& AddChannelDefinitions(ChannelDefinitionsT&& value) { m_channelDefinitionsHasBeenSet = true; m_channelDefinitions.emplace_back(std::forward<ChannelDefinitionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -310,33 +298,33 @@ namespace Model
      * <p>The tags, each in the form of a key:value pair, assigned to the specified
      * call analytics job.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CallAnalyticsJob& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CallAnalyticsJob& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CallAnalyticsJob& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CallAnalyticsJob& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CallAnalyticsJob& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CallAnalyticsJob& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_callAnalyticsJobName;
     bool m_callAnalyticsJobNameHasBeenSet = false;
 
-    CallAnalyticsJobStatus m_callAnalyticsJobStatus;
+    CallAnalyticsJobStatus m_callAnalyticsJobStatus{CallAnalyticsJobStatus::NOT_SET};
     bool m_callAnalyticsJobStatusHasBeenSet = false;
 
     CallAnalyticsJobDetails m_callAnalyticsJobDetails;
     bool m_callAnalyticsJobDetailsHasBeenSet = false;
 
-    LanguageCode m_languageCode;
+    LanguageCode m_languageCode{LanguageCode::NOT_SET};
     bool m_languageCodeHasBeenSet = false;
 
-    int m_mediaSampleRateHertz;
+    int m_mediaSampleRateHertz{0};
     bool m_mediaSampleRateHertzHasBeenSet = false;
 
-    MediaFormat m_mediaFormat;
+    MediaFormat m_mediaFormat{MediaFormat::NOT_SET};
     bool m_mediaFormatHasBeenSet = false;
 
     Media m_media;
@@ -345,13 +333,13 @@ namespace Model
     Transcript m_transcript;
     bool m_transcriptHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
     bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_completionTime;
+    Aws::Utils::DateTime m_completionTime{};
     bool m_completionTimeHasBeenSet = false;
 
     Aws::String m_failureReason;
@@ -360,7 +348,7 @@ namespace Model
     Aws::String m_dataAccessRoleArn;
     bool m_dataAccessRoleArnHasBeenSet = false;
 
-    double m_identifiedLanguageScore;
+    double m_identifiedLanguageScore{0.0};
     bool m_identifiedLanguageScoreHasBeenSet = false;
 
     CallAnalyticsJobSettings m_settings;

@@ -18,19 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-AuthenticationConfigurationInput::AuthenticationConfigurationInput() : 
-    m_authenticationType(AuthenticationType::NOT_SET),
-    m_authenticationTypeHasBeenSet(false),
-    m_basicAuthenticationCredentialsHasBeenSet(false),
-    m_customAuthenticationCredentialsHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_oAuth2PropertiesHasBeenSet(false),
-    m_secretArnHasBeenSet(false)
-{
-}
-
 AuthenticationConfigurationInput::AuthenticationConfigurationInput(JsonView jsonValue)
-  : AuthenticationConfigurationInput()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ AuthenticationConfigurationInput& AuthenticationConfigurationInput::operator =(J
   if(jsonValue.ValueExists("authenticationType"))
   {
     m_authenticationType = AuthenticationTypeMapper::GetAuthenticationTypeForName(jsonValue.GetString("authenticationType"));
-
     m_authenticationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("basicAuthenticationCredentials"))
   {
     m_basicAuthenticationCredentials = jsonValue.GetObject("basicAuthenticationCredentials");
-
     m_basicAuthenticationCredentialsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("customAuthenticationCredentials"))
   {
     Aws::Map<Aws::String, JsonView> customAuthenticationCredentialsJsonMap = jsonValue.GetObject("customAuthenticationCredentials").GetAllObjects();
@@ -60,28 +44,21 @@ AuthenticationConfigurationInput& AuthenticationConfigurationInput::operator =(J
     }
     m_customAuthenticationCredentialsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyArn"))
   {
     m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
-
     m_kmsKeyArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("oAuth2Properties"))
   {
     m_oAuth2Properties = jsonValue.GetObject("oAuth2Properties");
-
     m_oAuth2PropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secretArn"))
   {
     m_secretArn = jsonValue.GetString("secretArn");
-
     m_secretArnHasBeenSet = true;
   }
-
   return *this;
 }
 

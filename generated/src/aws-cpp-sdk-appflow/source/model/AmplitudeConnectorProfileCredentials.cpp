@@ -18,14 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-AmplitudeConnectorProfileCredentials::AmplitudeConnectorProfileCredentials() : 
-    m_apiKeyHasBeenSet(false),
-    m_secretKeyHasBeenSet(false)
-{
-}
-
 AmplitudeConnectorProfileCredentials::AmplitudeConnectorProfileCredentials(JsonView jsonValue)
-  : AmplitudeConnectorProfileCredentials()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ AmplitudeConnectorProfileCredentials& AmplitudeConnectorProfileCredentials::oper
   if(jsonValue.ValueExists("apiKey"))
   {
     m_apiKey = jsonValue.GetString("apiKey");
-
     m_apiKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("secretKey"))
   {
     m_secretKey = jsonValue.GetString("secretKey");
-
     m_secretKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

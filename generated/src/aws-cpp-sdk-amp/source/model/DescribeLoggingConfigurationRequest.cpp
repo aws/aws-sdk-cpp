@@ -12,11 +12,6 @@ using namespace Aws::PrometheusService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeLoggingConfigurationRequest::DescribeLoggingConfigurationRequest() : 
-    m_workspaceIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeLoggingConfigurationRequest::SerializePayload() const
 {
   return {};

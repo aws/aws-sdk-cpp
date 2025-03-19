@@ -22,7 +22,7 @@ namespace Model
   class ListAnomalyGroupRelatedMetricsRequest : public LookoutMetricsRequest
   {
   public:
-    AWS_LOOKOUTMETRICS_API ListAnomalyGroupRelatedMetricsRequest();
+    AWS_LOOKOUTMETRICS_API ListAnomalyGroupRelatedMetricsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,28 +37,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the anomaly detector.</p>
      */
-    inline const Aws::String& GetAnomalyDetectorArn() const{ return m_anomalyDetectorArn; }
+    inline const Aws::String& GetAnomalyDetectorArn() const { return m_anomalyDetectorArn; }
     inline bool AnomalyDetectorArnHasBeenSet() const { return m_anomalyDetectorArnHasBeenSet; }
-    inline void SetAnomalyDetectorArn(const Aws::String& value) { m_anomalyDetectorArnHasBeenSet = true; m_anomalyDetectorArn = value; }
-    inline void SetAnomalyDetectorArn(Aws::String&& value) { m_anomalyDetectorArnHasBeenSet = true; m_anomalyDetectorArn = std::move(value); }
-    inline void SetAnomalyDetectorArn(const char* value) { m_anomalyDetectorArnHasBeenSet = true; m_anomalyDetectorArn.assign(value); }
-    inline ListAnomalyGroupRelatedMetricsRequest& WithAnomalyDetectorArn(const Aws::String& value) { SetAnomalyDetectorArn(value); return *this;}
-    inline ListAnomalyGroupRelatedMetricsRequest& WithAnomalyDetectorArn(Aws::String&& value) { SetAnomalyDetectorArn(std::move(value)); return *this;}
-    inline ListAnomalyGroupRelatedMetricsRequest& WithAnomalyDetectorArn(const char* value) { SetAnomalyDetectorArn(value); return *this;}
+    template<typename AnomalyDetectorArnT = Aws::String>
+    void SetAnomalyDetectorArn(AnomalyDetectorArnT&& value) { m_anomalyDetectorArnHasBeenSet = true; m_anomalyDetectorArn = std::forward<AnomalyDetectorArnT>(value); }
+    template<typename AnomalyDetectorArnT = Aws::String>
+    ListAnomalyGroupRelatedMetricsRequest& WithAnomalyDetectorArn(AnomalyDetectorArnT&& value) { SetAnomalyDetectorArn(std::forward<AnomalyDetectorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the anomaly group.</p>
      */
-    inline const Aws::String& GetAnomalyGroupId() const{ return m_anomalyGroupId; }
+    inline const Aws::String& GetAnomalyGroupId() const { return m_anomalyGroupId; }
     inline bool AnomalyGroupIdHasBeenSet() const { return m_anomalyGroupIdHasBeenSet; }
-    inline void SetAnomalyGroupId(const Aws::String& value) { m_anomalyGroupIdHasBeenSet = true; m_anomalyGroupId = value; }
-    inline void SetAnomalyGroupId(Aws::String&& value) { m_anomalyGroupIdHasBeenSet = true; m_anomalyGroupId = std::move(value); }
-    inline void SetAnomalyGroupId(const char* value) { m_anomalyGroupIdHasBeenSet = true; m_anomalyGroupId.assign(value); }
-    inline ListAnomalyGroupRelatedMetricsRequest& WithAnomalyGroupId(const Aws::String& value) { SetAnomalyGroupId(value); return *this;}
-    inline ListAnomalyGroupRelatedMetricsRequest& WithAnomalyGroupId(Aws::String&& value) { SetAnomalyGroupId(std::move(value)); return *this;}
-    inline ListAnomalyGroupRelatedMetricsRequest& WithAnomalyGroupId(const char* value) { SetAnomalyGroupId(value); return *this;}
+    template<typename AnomalyGroupIdT = Aws::String>
+    void SetAnomalyGroupId(AnomalyGroupIdT&& value) { m_anomalyGroupIdHasBeenSet = true; m_anomalyGroupId = std::forward<AnomalyGroupIdT>(value); }
+    template<typename AnomalyGroupIdT = Aws::String>
+    ListAnomalyGroupRelatedMetricsRequest& WithAnomalyGroupId(AnomalyGroupIdT&& value) { SetAnomalyGroupId(std::forward<AnomalyGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,19 +63,17 @@ namespace Model
      * downstream effects (<code>EFFECT_OF_INPUT_ANOMALY_GROUP</code>) of the anomaly
      * group.</p>
      */
-    inline const RelationshipType& GetRelationshipTypeFilter() const{ return m_relationshipTypeFilter; }
+    inline RelationshipType GetRelationshipTypeFilter() const { return m_relationshipTypeFilter; }
     inline bool RelationshipTypeFilterHasBeenSet() const { return m_relationshipTypeFilterHasBeenSet; }
-    inline void SetRelationshipTypeFilter(const RelationshipType& value) { m_relationshipTypeFilterHasBeenSet = true; m_relationshipTypeFilter = value; }
-    inline void SetRelationshipTypeFilter(RelationshipType&& value) { m_relationshipTypeFilterHasBeenSet = true; m_relationshipTypeFilter = std::move(value); }
-    inline ListAnomalyGroupRelatedMetricsRequest& WithRelationshipTypeFilter(const RelationshipType& value) { SetRelationshipTypeFilter(value); return *this;}
-    inline ListAnomalyGroupRelatedMetricsRequest& WithRelationshipTypeFilter(RelationshipType&& value) { SetRelationshipTypeFilter(std::move(value)); return *this;}
+    inline void SetRelationshipTypeFilter(RelationshipType value) { m_relationshipTypeFilterHasBeenSet = true; m_relationshipTypeFilter = value; }
+    inline ListAnomalyGroupRelatedMetricsRequest& WithRelationshipTypeFilter(RelationshipType value) { SetRelationshipTypeFilter(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to return.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListAnomalyGroupRelatedMetricsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -90,14 +84,12 @@ namespace Model
      * <p>Specify the pagination token that's returned by a previous request to
      * retrieve the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAnomalyGroupRelatedMetricsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAnomalyGroupRelatedMetricsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAnomalyGroupRelatedMetricsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAnomalyGroupRelatedMetricsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
@@ -107,10 +99,10 @@ namespace Model
     Aws::String m_anomalyGroupId;
     bool m_anomalyGroupIdHasBeenSet = false;
 
-    RelationshipType m_relationshipTypeFilter;
+    RelationshipType m_relationshipTypeFilter{RelationshipType::NOT_SET};
     bool m_relationshipTypeFilterHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

@@ -25,7 +25,7 @@ namespace Model
   class GetLatestConfigurationRequest : public AppConfigDataRequest
   {
   public:
-    AWS_APPCONFIGDATA_API GetLatestConfigurationRequest();
+    AWS_APPCONFIGDATA_API GetLatestConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,14 +50,12 @@ namespace Model
      * up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired
      * token, the system returns <code>BadRequestException</code>.</p> 
      */
-    inline const Aws::String& GetConfigurationToken() const{ return m_configurationToken; }
+    inline const Aws::String& GetConfigurationToken() const { return m_configurationToken; }
     inline bool ConfigurationTokenHasBeenSet() const { return m_configurationTokenHasBeenSet; }
-    inline void SetConfigurationToken(const Aws::String& value) { m_configurationTokenHasBeenSet = true; m_configurationToken = value; }
-    inline void SetConfigurationToken(Aws::String&& value) { m_configurationTokenHasBeenSet = true; m_configurationToken = std::move(value); }
-    inline void SetConfigurationToken(const char* value) { m_configurationTokenHasBeenSet = true; m_configurationToken.assign(value); }
-    inline GetLatestConfigurationRequest& WithConfigurationToken(const Aws::String& value) { SetConfigurationToken(value); return *this;}
-    inline GetLatestConfigurationRequest& WithConfigurationToken(Aws::String&& value) { SetConfigurationToken(std::move(value)); return *this;}
-    inline GetLatestConfigurationRequest& WithConfigurationToken(const char* value) { SetConfigurationToken(value); return *this;}
+    template<typename ConfigurationTokenT = Aws::String>
+    void SetConfigurationToken(ConfigurationTokenT&& value) { m_configurationTokenHasBeenSet = true; m_configurationToken = std::forward<ConfigurationTokenT>(value); }
+    template<typename ConfigurationTokenT = Aws::String>
+    GetLatestConfigurationRequest& WithConfigurationToken(ConfigurationTokenT&& value) { SetConfigurationToken(std::forward<ConfigurationTokenT>(value)); return *this;}
     ///@}
   private:
 

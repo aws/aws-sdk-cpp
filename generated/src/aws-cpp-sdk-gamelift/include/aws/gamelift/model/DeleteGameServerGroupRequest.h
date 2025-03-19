@@ -22,7 +22,7 @@ namespace Model
   class DeleteGameServerGroupRequest : public GameLiftRequest
   {
   public:
-    AWS_GAMELIFT_API DeleteGameServerGroupRequest();
+    AWS_GAMELIFT_API DeleteGameServerGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <p>A unique identifier for the game server group. Use either the name or ARN
      * value.</p>
      */
-    inline const Aws::String& GetGameServerGroupName() const{ return m_gameServerGroupName; }
+    inline const Aws::String& GetGameServerGroupName() const { return m_gameServerGroupName; }
     inline bool GameServerGroupNameHasBeenSet() const { return m_gameServerGroupNameHasBeenSet; }
-    inline void SetGameServerGroupName(const Aws::String& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = value; }
-    inline void SetGameServerGroupName(Aws::String&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::move(value); }
-    inline void SetGameServerGroupName(const char* value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName.assign(value); }
-    inline DeleteGameServerGroupRequest& WithGameServerGroupName(const Aws::String& value) { SetGameServerGroupName(value); return *this;}
-    inline DeleteGameServerGroupRequest& WithGameServerGroupName(Aws::String&& value) { SetGameServerGroupName(std::move(value)); return *this;}
-    inline DeleteGameServerGroupRequest& WithGameServerGroupName(const char* value) { SetGameServerGroupName(value); return *this;}
+    template<typename GameServerGroupNameT = Aws::String>
+    void SetGameServerGroupName(GameServerGroupNameT&& value) { m_gameServerGroupNameHasBeenSet = true; m_gameServerGroupName = std::forward<GameServerGroupNameT>(value); }
+    template<typename GameServerGroupNameT = Aws::String>
+    DeleteGameServerGroupRequest& WithGameServerGroupName(GameServerGroupNameT&& value) { SetGameServerGroupName(std::forward<GameServerGroupNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,19 +59,17 @@ namespace Model
      * <li> <p> <code>RETAIN</code> – Does a safe delete of the game server group but
      * retains the Amazon EC2 Auto Scaling group as is.</p> </li> </ul>
      */
-    inline const GameServerGroupDeleteOption& GetDeleteOption() const{ return m_deleteOption; }
+    inline GameServerGroupDeleteOption GetDeleteOption() const { return m_deleteOption; }
     inline bool DeleteOptionHasBeenSet() const { return m_deleteOptionHasBeenSet; }
-    inline void SetDeleteOption(const GameServerGroupDeleteOption& value) { m_deleteOptionHasBeenSet = true; m_deleteOption = value; }
-    inline void SetDeleteOption(GameServerGroupDeleteOption&& value) { m_deleteOptionHasBeenSet = true; m_deleteOption = std::move(value); }
-    inline DeleteGameServerGroupRequest& WithDeleteOption(const GameServerGroupDeleteOption& value) { SetDeleteOption(value); return *this;}
-    inline DeleteGameServerGroupRequest& WithDeleteOption(GameServerGroupDeleteOption&& value) { SetDeleteOption(std::move(value)); return *this;}
+    inline void SetDeleteOption(GameServerGroupDeleteOption value) { m_deleteOptionHasBeenSet = true; m_deleteOption = value; }
+    inline DeleteGameServerGroupRequest& WithDeleteOption(GameServerGroupDeleteOption value) { SetDeleteOption(value); return *this;}
     ///@}
   private:
 
     Aws::String m_gameServerGroupName;
     bool m_gameServerGroupNameHasBeenSet = false;
 
-    GameServerGroupDeleteOption m_deleteOption;
+    GameServerGroupDeleteOption m_deleteOption{GameServerGroupDeleteOption::NOT_SET};
     bool m_deleteOptionHasBeenSet = false;
   };
 

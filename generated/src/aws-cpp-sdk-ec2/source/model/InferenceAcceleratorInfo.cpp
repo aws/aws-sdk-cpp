@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InferenceAcceleratorInfo::InferenceAcceleratorInfo() : 
-    m_acceleratorsHasBeenSet(false),
-    m_totalInferenceMemoryInMiB(0),
-    m_totalInferenceMemoryInMiBHasBeenSet(false)
-{
-}
-
 InferenceAcceleratorInfo::InferenceAcceleratorInfo(const XmlNode& xmlNode)
-  : InferenceAcceleratorInfo()
 {
   *this = xmlNode;
 }
@@ -43,6 +35,7 @@ InferenceAcceleratorInfo& InferenceAcceleratorInfo::operator =(const XmlNode& xm
     if(!acceleratorsNode.IsNull())
     {
       XmlNode acceleratorsMember = acceleratorsNode.FirstChild("member");
+      m_acceleratorsHasBeenSet = !acceleratorsMember.IsNull();
       while(!acceleratorsMember.IsNull())
       {
         m_accelerators.push_back(acceleratorsMember);

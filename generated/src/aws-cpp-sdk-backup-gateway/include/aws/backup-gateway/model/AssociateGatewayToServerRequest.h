@@ -21,7 +21,7 @@ namespace Model
   class AssociateGatewayToServerRequest : public BackupGatewayRequest
   {
   public:
-    AWS_BACKUPGATEWAY_API AssociateGatewayToServerRequest();
+    AWS_BACKUPGATEWAY_API AssociateGatewayToServerRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
      * <code>ListGateways</code> operation to return a list of gateways for your
      * account and Amazon Web Services Region.</p>
      */
-    inline const Aws::String& GetGatewayArn() const{ return m_gatewayArn; }
+    inline const Aws::String& GetGatewayArn() const { return m_gatewayArn; }
     inline bool GatewayArnHasBeenSet() const { return m_gatewayArnHasBeenSet; }
-    inline void SetGatewayArn(const Aws::String& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = value; }
-    inline void SetGatewayArn(Aws::String&& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = std::move(value); }
-    inline void SetGatewayArn(const char* value) { m_gatewayArnHasBeenSet = true; m_gatewayArn.assign(value); }
-    inline AssociateGatewayToServerRequest& WithGatewayArn(const Aws::String& value) { SetGatewayArn(value); return *this;}
-    inline AssociateGatewayToServerRequest& WithGatewayArn(Aws::String&& value) { SetGatewayArn(std::move(value)); return *this;}
-    inline AssociateGatewayToServerRequest& WithGatewayArn(const char* value) { SetGatewayArn(value); return *this;}
+    template<typename GatewayArnT = Aws::String>
+    void SetGatewayArn(GatewayArnT&& value) { m_gatewayArnHasBeenSet = true; m_gatewayArn = std::forward<GatewayArnT>(value); }
+    template<typename GatewayArnT = Aws::String>
+    AssociateGatewayToServerRequest& WithGatewayArn(GatewayArnT&& value) { SetGatewayArn(std::forward<GatewayArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the server that hosts your virtual
      * machines.</p>
      */
-    inline const Aws::String& GetServerArn() const{ return m_serverArn; }
+    inline const Aws::String& GetServerArn() const { return m_serverArn; }
     inline bool ServerArnHasBeenSet() const { return m_serverArnHasBeenSet; }
-    inline void SetServerArn(const Aws::String& value) { m_serverArnHasBeenSet = true; m_serverArn = value; }
-    inline void SetServerArn(Aws::String&& value) { m_serverArnHasBeenSet = true; m_serverArn = std::move(value); }
-    inline void SetServerArn(const char* value) { m_serverArnHasBeenSet = true; m_serverArn.assign(value); }
-    inline AssociateGatewayToServerRequest& WithServerArn(const Aws::String& value) { SetServerArn(value); return *this;}
-    inline AssociateGatewayToServerRequest& WithServerArn(Aws::String&& value) { SetServerArn(std::move(value)); return *this;}
-    inline AssociateGatewayToServerRequest& WithServerArn(const char* value) { SetServerArn(value); return *this;}
+    template<typename ServerArnT = Aws::String>
+    void SetServerArn(ServerArnT&& value) { m_serverArnHasBeenSet = true; m_serverArn = std::forward<ServerArnT>(value); }
+    template<typename ServerArnT = Aws::String>
+    AssociateGatewayToServerRequest& WithServerArn(ServerArnT&& value) { SetServerArn(std::forward<ServerArnT>(value)); return *this;}
     ///@}
   private:
 

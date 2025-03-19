@@ -18,16 +18,7 @@ namespace Connect
 namespace Model
 {
 
-AnswerMachineDetectionConfig::AnswerMachineDetectionConfig() : 
-    m_enableAnswerMachineDetection(false),
-    m_enableAnswerMachineDetectionHasBeenSet(false),
-    m_awaitAnswerMachinePrompt(false),
-    m_awaitAnswerMachinePromptHasBeenSet(false)
-{
-}
-
 AnswerMachineDetectionConfig::AnswerMachineDetectionConfig(JsonView jsonValue)
-  : AnswerMachineDetectionConfig()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ AnswerMachineDetectionConfig& AnswerMachineDetectionConfig::operator =(JsonView 
   if(jsonValue.ValueExists("EnableAnswerMachineDetection"))
   {
     m_enableAnswerMachineDetection = jsonValue.GetBool("EnableAnswerMachineDetection");
-
     m_enableAnswerMachineDetectionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwaitAnswerMachinePrompt"))
   {
     m_awaitAnswerMachinePrompt = jsonValue.GetBool("AwaitAnswerMachinePrompt");
-
     m_awaitAnswerMachinePromptHasBeenSet = true;
   }
-
   return *this;
 }
 

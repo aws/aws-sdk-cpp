@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetIpamDiscoveredAccountsResponse::GetIpamDiscoveredAccountsResponse()
-{
-}
-
 GetIpamDiscoveredAccountsResponse::GetIpamDiscoveredAccountsResponse(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,17 +38,20 @@ GetIpamDiscoveredAccountsResponse& GetIpamDiscoveredAccountsResponse::operator =
     if(!ipamDiscoveredAccountsNode.IsNull())
     {
       XmlNode ipamDiscoveredAccountsMember = ipamDiscoveredAccountsNode.FirstChild("item");
+      m_ipamDiscoveredAccountsHasBeenSet = !ipamDiscoveredAccountsMember.IsNull();
       while(!ipamDiscoveredAccountsMember.IsNull())
       {
         m_ipamDiscoveredAccounts.push_back(ipamDiscoveredAccountsMember);
         ipamDiscoveredAccountsMember = ipamDiscoveredAccountsMember.NextNode("item");
       }
 
+      m_ipamDiscoveredAccountsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
@@ -61,6 +60,7 @@ GetIpamDiscoveredAccountsResponse& GetIpamDiscoveredAccountsResponse::operator =
     if (!requestIdNode.IsNull())
     {
       m_responseMetadata.SetRequestId(StringUtils::Trim(requestIdNode.GetText().c_str()));
+      m_responseMetadataHasBeenSet = true;
     }
     AWS_LOGSTREAM_DEBUG("Aws::EC2::Model::GetIpamDiscoveredAccountsResponse", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }

@@ -12,12 +12,6 @@ using namespace Aws::ApiGatewayV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAuthorizerRequest::DeleteAuthorizerRequest() : 
-    m_apiIdHasBeenSet(false),
-    m_authorizerIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAuthorizerRequest::SerializePayload() const
 {
   return {};

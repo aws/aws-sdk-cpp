@@ -20,23 +20,7 @@ namespace RDS
 namespace Model
 {
 
-OptionSetting::OptionSetting() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_applyTypeHasBeenSet(false),
-    m_dataTypeHasBeenSet(false),
-    m_allowedValuesHasBeenSet(false),
-    m_isModifiable(false),
-    m_isModifiableHasBeenSet(false),
-    m_isCollection(false),
-    m_isCollectionHasBeenSet(false)
-{
-}
-
 OptionSetting::OptionSetting(const XmlNode& xmlNode)
-  : OptionSetting()
 {
   *this = xmlNode;
 }

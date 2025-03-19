@@ -18,18 +18,7 @@ namespace AppIntegrationsService
 namespace Model
 {
 
-EventIntegration::EventIntegration() : 
-    m_eventIntegrationArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_eventFilterHasBeenSet(false),
-    m_eventBridgeBusHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 EventIntegration::EventIntegration(JsonView jsonValue)
-  : EventIntegration()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ EventIntegration& EventIntegration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EventIntegrationArn"))
   {
     m_eventIntegrationArn = jsonValue.GetString("EventIntegrationArn");
-
     m_eventIntegrationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventFilter"))
   {
     m_eventFilter = jsonValue.GetObject("EventFilter");
-
     m_eventFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventBridgeBus"))
   {
     m_eventBridgeBus = jsonValue.GetString("EventBridgeBus");
-
     m_eventBridgeBusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -80,7 +59,6 @@ EventIntegration& EventIntegration::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

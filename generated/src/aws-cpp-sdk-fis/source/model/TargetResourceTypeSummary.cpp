@@ -18,14 +18,7 @@ namespace FIS
 namespace Model
 {
 
-TargetResourceTypeSummary::TargetResourceTypeSummary() : 
-    m_resourceTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
-{
-}
-
 TargetResourceTypeSummary::TargetResourceTypeSummary(JsonView jsonValue)
-  : TargetResourceTypeSummary()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ TargetResourceTypeSummary& TargetResourceTypeSummary::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("resourceType"))
   {
     m_resourceType = jsonValue.GetString("resourceType");
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   return *this;
 }
 

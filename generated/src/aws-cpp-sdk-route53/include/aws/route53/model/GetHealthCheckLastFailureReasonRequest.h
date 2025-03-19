@@ -25,7 +25,7 @@ namespace Model
   class GetHealthCheckLastFailureReasonRequest : public Route53Request
   {
   public:
-    AWS_ROUTE53_API GetHealthCheckLastFailureReasonRequest();
+    AWS_ROUTE53_API GetHealthCheckLastFailureReasonRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,14 +46,12 @@ namespace Model
      * <code>GetHealthCheckLastFailureReason</code> for a calculated health check.</p>
      * 
      */
-    inline const Aws::String& GetHealthCheckId() const{ return m_healthCheckId; }
+    inline const Aws::String& GetHealthCheckId() const { return m_healthCheckId; }
     inline bool HealthCheckIdHasBeenSet() const { return m_healthCheckIdHasBeenSet; }
-    inline void SetHealthCheckId(const Aws::String& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = value; }
-    inline void SetHealthCheckId(Aws::String&& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = std::move(value); }
-    inline void SetHealthCheckId(const char* value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId.assign(value); }
-    inline GetHealthCheckLastFailureReasonRequest& WithHealthCheckId(const Aws::String& value) { SetHealthCheckId(value); return *this;}
-    inline GetHealthCheckLastFailureReasonRequest& WithHealthCheckId(Aws::String&& value) { SetHealthCheckId(std::move(value)); return *this;}
-    inline GetHealthCheckLastFailureReasonRequest& WithHealthCheckId(const char* value) { SetHealthCheckId(value); return *this;}
+    template<typename HealthCheckIdT = Aws::String>
+    void SetHealthCheckId(HealthCheckIdT&& value) { m_healthCheckIdHasBeenSet = true; m_healthCheckId = std::forward<HealthCheckIdT>(value); }
+    template<typename HealthCheckIdT = Aws::String>
+    GetHealthCheckLastFailureReasonRequest& WithHealthCheckId(HealthCheckIdT&& value) { SetHealthCheckId(std::forward<HealthCheckIdT>(value)); return *this;}
     ///@}
   private:
 

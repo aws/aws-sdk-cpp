@@ -34,7 +34,7 @@ namespace Model
   class DataIntegrationAssociationSummary
   {
   public:
-    AWS_APPINTEGRATIONSSERVICE_API DataIntegrationAssociationSummary();
+    AWS_APPINTEGRATIONSSERVICE_API DataIntegrationAssociationSummary() = default;
     AWS_APPINTEGRATIONSSERVICE_API DataIntegrationAssociationSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPINTEGRATIONSSERVICE_API DataIntegrationAssociationSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPINTEGRATIONSSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,28 +44,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the DataIntegration association.</p>
      */
-    inline const Aws::String& GetDataIntegrationAssociationArn() const{ return m_dataIntegrationAssociationArn; }
+    inline const Aws::String& GetDataIntegrationAssociationArn() const { return m_dataIntegrationAssociationArn; }
     inline bool DataIntegrationAssociationArnHasBeenSet() const { return m_dataIntegrationAssociationArnHasBeenSet; }
-    inline void SetDataIntegrationAssociationArn(const Aws::String& value) { m_dataIntegrationAssociationArnHasBeenSet = true; m_dataIntegrationAssociationArn = value; }
-    inline void SetDataIntegrationAssociationArn(Aws::String&& value) { m_dataIntegrationAssociationArnHasBeenSet = true; m_dataIntegrationAssociationArn = std::move(value); }
-    inline void SetDataIntegrationAssociationArn(const char* value) { m_dataIntegrationAssociationArnHasBeenSet = true; m_dataIntegrationAssociationArn.assign(value); }
-    inline DataIntegrationAssociationSummary& WithDataIntegrationAssociationArn(const Aws::String& value) { SetDataIntegrationAssociationArn(value); return *this;}
-    inline DataIntegrationAssociationSummary& WithDataIntegrationAssociationArn(Aws::String&& value) { SetDataIntegrationAssociationArn(std::move(value)); return *this;}
-    inline DataIntegrationAssociationSummary& WithDataIntegrationAssociationArn(const char* value) { SetDataIntegrationAssociationArn(value); return *this;}
+    template<typename DataIntegrationAssociationArnT = Aws::String>
+    void SetDataIntegrationAssociationArn(DataIntegrationAssociationArnT&& value) { m_dataIntegrationAssociationArnHasBeenSet = true; m_dataIntegrationAssociationArn = std::forward<DataIntegrationAssociationArnT>(value); }
+    template<typename DataIntegrationAssociationArnT = Aws::String>
+    DataIntegrationAssociationSummary& WithDataIntegrationAssociationArn(DataIntegrationAssociationArnT&& value) { SetDataIntegrationAssociationArn(std::forward<DataIntegrationAssociationArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the DataIntegration.</p>
      */
-    inline const Aws::String& GetDataIntegrationArn() const{ return m_dataIntegrationArn; }
+    inline const Aws::String& GetDataIntegrationArn() const { return m_dataIntegrationArn; }
     inline bool DataIntegrationArnHasBeenSet() const { return m_dataIntegrationArnHasBeenSet; }
-    inline void SetDataIntegrationArn(const Aws::String& value) { m_dataIntegrationArnHasBeenSet = true; m_dataIntegrationArn = value; }
-    inline void SetDataIntegrationArn(Aws::String&& value) { m_dataIntegrationArnHasBeenSet = true; m_dataIntegrationArn = std::move(value); }
-    inline void SetDataIntegrationArn(const char* value) { m_dataIntegrationArnHasBeenSet = true; m_dataIntegrationArn.assign(value); }
-    inline DataIntegrationAssociationSummary& WithDataIntegrationArn(const Aws::String& value) { SetDataIntegrationArn(value); return *this;}
-    inline DataIntegrationAssociationSummary& WithDataIntegrationArn(Aws::String&& value) { SetDataIntegrationArn(std::move(value)); return *this;}
-    inline DataIntegrationAssociationSummary& WithDataIntegrationArn(const char* value) { SetDataIntegrationArn(value); return *this;}
+    template<typename DataIntegrationArnT = Aws::String>
+    void SetDataIntegrationArn(DataIntegrationArnT&& value) { m_dataIntegrationArnHasBeenSet = true; m_dataIntegrationArn = std::forward<DataIntegrationArnT>(value); }
+    template<typename DataIntegrationArnT = Aws::String>
+    DataIntegrationAssociationSummary& WithDataIntegrationArn(DataIntegrationArnT&& value) { SetDataIntegrationArn(std::forward<DataIntegrationArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,50 +69,46 @@ namespace Model
      * <p>The identifier for the client that is associated with the DataIntegration
      * association.</p>
      */
-    inline const Aws::String& GetClientId() const{ return m_clientId; }
+    inline const Aws::String& GetClientId() const { return m_clientId; }
     inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
-    inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
-    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
-    inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
-    inline DataIntegrationAssociationSummary& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
-    inline DataIntegrationAssociationSummary& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
-    inline DataIntegrationAssociationSummary& WithClientId(const char* value) { SetClientId(value); return *this;}
+    template<typename ClientIdT = Aws::String>
+    void SetClientId(ClientIdT&& value) { m_clientIdHasBeenSet = true; m_clientId = std::forward<ClientIdT>(value); }
+    template<typename ClientIdT = Aws::String>
+    DataIntegrationAssociationSummary& WithClientId(ClientIdT&& value) { SetClientId(std::forward<ClientIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The URI of the data destination.</p>
      */
-    inline const Aws::String& GetDestinationURI() const{ return m_destinationURI; }
+    inline const Aws::String& GetDestinationURI() const { return m_destinationURI; }
     inline bool DestinationURIHasBeenSet() const { return m_destinationURIHasBeenSet; }
-    inline void SetDestinationURI(const Aws::String& value) { m_destinationURIHasBeenSet = true; m_destinationURI = value; }
-    inline void SetDestinationURI(Aws::String&& value) { m_destinationURIHasBeenSet = true; m_destinationURI = std::move(value); }
-    inline void SetDestinationURI(const char* value) { m_destinationURIHasBeenSet = true; m_destinationURI.assign(value); }
-    inline DataIntegrationAssociationSummary& WithDestinationURI(const Aws::String& value) { SetDestinationURI(value); return *this;}
-    inline DataIntegrationAssociationSummary& WithDestinationURI(Aws::String&& value) { SetDestinationURI(std::move(value)); return *this;}
-    inline DataIntegrationAssociationSummary& WithDestinationURI(const char* value) { SetDestinationURI(value); return *this;}
+    template<typename DestinationURIT = Aws::String>
+    void SetDestinationURI(DestinationURIT&& value) { m_destinationURIHasBeenSet = true; m_destinationURI = std::forward<DestinationURIT>(value); }
+    template<typename DestinationURIT = Aws::String>
+    DataIntegrationAssociationSummary& WithDestinationURI(DestinationURIT&& value) { SetDestinationURI(std::forward<DestinationURIT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The execution status of the last job.</p>
      */
-    inline const LastExecutionStatus& GetLastExecutionStatus() const{ return m_lastExecutionStatus; }
+    inline const LastExecutionStatus& GetLastExecutionStatus() const { return m_lastExecutionStatus; }
     inline bool LastExecutionStatusHasBeenSet() const { return m_lastExecutionStatusHasBeenSet; }
-    inline void SetLastExecutionStatus(const LastExecutionStatus& value) { m_lastExecutionStatusHasBeenSet = true; m_lastExecutionStatus = value; }
-    inline void SetLastExecutionStatus(LastExecutionStatus&& value) { m_lastExecutionStatusHasBeenSet = true; m_lastExecutionStatus = std::move(value); }
-    inline DataIntegrationAssociationSummary& WithLastExecutionStatus(const LastExecutionStatus& value) { SetLastExecutionStatus(value); return *this;}
-    inline DataIntegrationAssociationSummary& WithLastExecutionStatus(LastExecutionStatus&& value) { SetLastExecutionStatus(std::move(value)); return *this;}
+    template<typename LastExecutionStatusT = LastExecutionStatus>
+    void SetLastExecutionStatus(LastExecutionStatusT&& value) { m_lastExecutionStatusHasBeenSet = true; m_lastExecutionStatus = std::forward<LastExecutionStatusT>(value); }
+    template<typename LastExecutionStatusT = LastExecutionStatus>
+    DataIntegrationAssociationSummary& WithLastExecutionStatus(LastExecutionStatusT&& value) { SetLastExecutionStatus(std::forward<LastExecutionStatusT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ExecutionConfiguration& GetExecutionConfiguration() const{ return m_executionConfiguration; }
+    inline const ExecutionConfiguration& GetExecutionConfiguration() const { return m_executionConfiguration; }
     inline bool ExecutionConfigurationHasBeenSet() const { return m_executionConfigurationHasBeenSet; }
-    inline void SetExecutionConfiguration(const ExecutionConfiguration& value) { m_executionConfigurationHasBeenSet = true; m_executionConfiguration = value; }
-    inline void SetExecutionConfiguration(ExecutionConfiguration&& value) { m_executionConfigurationHasBeenSet = true; m_executionConfiguration = std::move(value); }
-    inline DataIntegrationAssociationSummary& WithExecutionConfiguration(const ExecutionConfiguration& value) { SetExecutionConfiguration(value); return *this;}
-    inline DataIntegrationAssociationSummary& WithExecutionConfiguration(ExecutionConfiguration&& value) { SetExecutionConfiguration(std::move(value)); return *this;}
+    template<typename ExecutionConfigurationT = ExecutionConfiguration>
+    void SetExecutionConfiguration(ExecutionConfigurationT&& value) { m_executionConfigurationHasBeenSet = true; m_executionConfiguration = std::forward<ExecutionConfigurationT>(value); }
+    template<typename ExecutionConfigurationT = ExecutionConfiguration>
+    DataIntegrationAssociationSummary& WithExecutionConfiguration(ExecutionConfigurationT&& value) { SetExecutionConfiguration(std::forward<ExecutionConfigurationT>(value)); return *this;}
     ///@}
   private:
 

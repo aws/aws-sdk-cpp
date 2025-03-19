@@ -20,16 +20,7 @@ namespace EC2
 namespace Model
 {
 
-AnalysisLoadBalancerListener::AnalysisLoadBalancerListener() : 
-    m_loadBalancerPort(0),
-    m_loadBalancerPortHasBeenSet(false),
-    m_instancePort(0),
-    m_instancePortHasBeenSet(false)
-{
-}
-
 AnalysisLoadBalancerListener::AnalysisLoadBalancerListener(const XmlNode& xmlNode)
-  : AnalysisLoadBalancerListener()
 {
   *this = xmlNode;
 }

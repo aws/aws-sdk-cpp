@@ -20,17 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-LifecycleExpiration::LifecycleExpiration() : 
-    m_dateHasBeenSet(false),
-    m_days(0),
-    m_daysHasBeenSet(false),
-    m_expiredObjectDeleteMarker(false),
-    m_expiredObjectDeleteMarkerHasBeenSet(false)
-{
-}
-
 LifecycleExpiration::LifecycleExpiration(const XmlNode& xmlNode)
-  : LifecycleExpiration()
 {
   *this = xmlNode;
 }

@@ -46,7 +46,7 @@ namespace Model
   class ClusterServiceConnectDefaultsRequest
   {
   public:
-    AWS_ECS_API ClusterServiceConnectDefaultsRequest();
+    AWS_ECS_API ClusterServiceConnectDefaultsRequest() = default;
     AWS_ECS_API ClusterServiceConnectDefaultsRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API ClusterServiceConnectDefaultsRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -72,14 +72,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/cloud-map/latest/dg/working-with-services.html">Working
      * with Services</a> in the <i>Cloud Map Developer Guide</i>.</p>
      */
-    inline const Aws::String& GetNamespace() const{ return m_namespace; }
+    inline const Aws::String& GetNamespace() const { return m_namespace; }
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
-    inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
-    inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
-    inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
-    inline ClusterServiceConnectDefaultsRequest& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
-    inline ClusterServiceConnectDefaultsRequest& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
-    inline ClusterServiceConnectDefaultsRequest& WithNamespace(const char* value) { SetNamespace(value); return *this;}
+    template<typename NamespaceT = Aws::String>
+    void SetNamespace(NamespaceT&& value) { m_namespaceHasBeenSet = true; m_namespace = std::forward<NamespaceT>(value); }
+    template<typename NamespaceT = Aws::String>
+    ClusterServiceConnectDefaultsRequest& WithNamespace(NamespaceT&& value) { SetNamespace(std::forward<NamespaceT>(value)); return *this;}
     ///@}
   private:
 

@@ -10,17 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-CreateLocalGatewayRouteRequest::CreateLocalGatewayRouteRequest() : 
-    m_destinationCidrBlockHasBeenSet(false),
-    m_localGatewayRouteTableIdHasBeenSet(false),
-    m_localGatewayVirtualInterfaceGroupIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_networkInterfaceIdHasBeenSet(false),
-    m_destinationPrefixListIdHasBeenSet(false)
-{
-}
-
 Aws::String CreateLocalGatewayRouteRequest::SerializePayload() const
 {
   Aws::StringStream ss;

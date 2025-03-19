@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribePodIdentityAssociationResult::DescribePodIdentityAssociationResult()
-{
-}
-
 DescribePodIdentityAssociationResult::DescribePodIdentityAssociationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribePodIdentityAssociationResult& DescribePodIdentityAssociationResult::oper
   if(jsonValue.ValueExists("association"))
   {
     m_association = jsonValue.GetObject("association");
-
+    m_associationHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

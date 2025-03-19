@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-DataProcessing::DataProcessing() : 
-    m_inputFilterHasBeenSet(false),
-    m_outputFilterHasBeenSet(false),
-    m_joinSource(JoinSource::NOT_SET),
-    m_joinSourceHasBeenSet(false)
-{
-}
-
 DataProcessing::DataProcessing(JsonView jsonValue)
-  : DataProcessing()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DataProcessing& DataProcessing::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InputFilter"))
   {
     m_inputFilter = jsonValue.GetString("InputFilter");
-
     m_inputFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputFilter"))
   {
     m_outputFilter = jsonValue.GetString("OutputFilter");
-
     m_outputFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("JoinSource"))
   {
     m_joinSource = JoinSourceMapper::GetJoinSourceForName(jsonValue.GetString("JoinSource"));
-
     m_joinSourceHasBeenSet = true;
   }
-
   return *this;
 }
 

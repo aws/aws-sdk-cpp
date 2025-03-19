@@ -18,16 +18,7 @@ namespace OpsWorks
 namespace Model
 {
 
-SelfUserProfile::SelfUserProfile() : 
-    m_iamUserArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_sshUsernameHasBeenSet(false),
-    m_sshPublicKeyHasBeenSet(false)
-{
-}
-
 SelfUserProfile::SelfUserProfile(JsonView jsonValue)
-  : SelfUserProfile()
 {
   *this = jsonValue;
 }
@@ -37,31 +28,23 @@ SelfUserProfile& SelfUserProfile::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IamUserArn"))
   {
     m_iamUserArn = jsonValue.GetString("IamUserArn");
-
     m_iamUserArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SshUsername"))
   {
     m_sshUsername = jsonValue.GetString("SshUsername");
-
     m_sshUsernameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SshPublicKey"))
   {
     m_sshPublicKey = jsonValue.GetString("SshPublicKey");
-
     m_sshPublicKeyHasBeenSet = true;
   }
-
   return *this;
 }
 

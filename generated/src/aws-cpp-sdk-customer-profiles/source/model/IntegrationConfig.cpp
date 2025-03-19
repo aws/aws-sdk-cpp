@@ -18,13 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-IntegrationConfig::IntegrationConfig() : 
-    m_appflowIntegrationHasBeenSet(false)
-{
-}
-
 IntegrationConfig::IntegrationConfig(JsonView jsonValue)
-  : IntegrationConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ IntegrationConfig& IntegrationConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AppflowIntegration"))
   {
     m_appflowIntegration = jsonValue.GetObject("AppflowIntegration");
-
     m_appflowIntegrationHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -32,7 +32,7 @@ namespace Model
   class INDTaxDocuments
   {
   public:
-    AWS_SNOWBALL_API INDTaxDocuments();
+    AWS_SNOWBALL_API INDTaxDocuments() = default;
     AWS_SNOWBALL_API INDTaxDocuments(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API INDTaxDocuments& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SNOWBALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The Goods and Services Tax (GST) documents required in Amazon Web Services
      * Region in India.</p>
      */
-    inline const Aws::String& GetGSTIN() const{ return m_gSTIN; }
+    inline const Aws::String& GetGSTIN() const { return m_gSTIN; }
     inline bool GSTINHasBeenSet() const { return m_gSTINHasBeenSet; }
-    inline void SetGSTIN(const Aws::String& value) { m_gSTINHasBeenSet = true; m_gSTIN = value; }
-    inline void SetGSTIN(Aws::String&& value) { m_gSTINHasBeenSet = true; m_gSTIN = std::move(value); }
-    inline void SetGSTIN(const char* value) { m_gSTINHasBeenSet = true; m_gSTIN.assign(value); }
-    inline INDTaxDocuments& WithGSTIN(const Aws::String& value) { SetGSTIN(value); return *this;}
-    inline INDTaxDocuments& WithGSTIN(Aws::String&& value) { SetGSTIN(std::move(value)); return *this;}
-    inline INDTaxDocuments& WithGSTIN(const char* value) { SetGSTIN(value); return *this;}
+    template<typename GSTINT = Aws::String>
+    void SetGSTIN(GSTINT&& value) { m_gSTINHasBeenSet = true; m_gSTIN = std::forward<GSTINT>(value); }
+    template<typename GSTINT = Aws::String>
+    INDTaxDocuments& WithGSTIN(GSTINT&& value) { SetGSTIN(std::forward<GSTINT>(value)); return *this;}
     ///@}
   private:
 

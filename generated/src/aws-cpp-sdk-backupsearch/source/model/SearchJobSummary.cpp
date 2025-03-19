@@ -18,21 +18,7 @@ namespace BackupSearch
 namespace Model
 {
 
-SearchJobSummary::SearchJobSummary() : 
-    m_searchJobIdentifierHasBeenSet(false),
-    m_searchJobArnHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_status(SearchJobState::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_completionTimeHasBeenSet(false),
-    m_searchScopeSummaryHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 SearchJobSummary::SearchJobSummary(JsonView jsonValue)
-  : SearchJobSummary()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ SearchJobSummary& SearchJobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SearchJobIdentifier"))
   {
     m_searchJobIdentifier = jsonValue.GetString("SearchJobIdentifier");
-
     m_searchJobIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SearchJobArn"))
   {
     m_searchJobArn = jsonValue.GetString("SearchJobArn");
-
     m_searchJobArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = SearchJobStateMapper::GetSearchJobStateForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompletionTime"))
   {
     m_completionTime = jsonValue.GetDouble("CompletionTime");
-
     m_completionTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SearchScopeSummary"))
   {
     m_searchScopeSummary = jsonValue.GetObject("SearchScopeSummary");
-
     m_searchScopeSummaryHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

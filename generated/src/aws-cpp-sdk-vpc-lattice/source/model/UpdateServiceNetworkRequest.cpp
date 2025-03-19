@@ -12,13 +12,6 @@ using namespace Aws::VPCLattice::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateServiceNetworkRequest::UpdateServiceNetworkRequest() : 
-    m_authType(AuthType::NOT_SET),
-    m_authTypeHasBeenSet(false),
-    m_serviceNetworkIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String UpdateServiceNetworkRequest::SerializePayload() const
 {
   JsonValue payload;

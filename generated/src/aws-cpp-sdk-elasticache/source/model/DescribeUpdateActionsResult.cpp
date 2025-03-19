@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeUpdateActionsResult::DescribeUpdateActionsResult()
-{
-}
-
 DescribeUpdateActionsResult::DescribeUpdateActionsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeUpdateActionsResult& DescribeUpdateActionsResult::operator =(const Aws::
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode updateActionsNode = resultNode.FirstChild("UpdateActions");
     if(!updateActionsNode.IsNull())
     {
       XmlNode updateActionsMember = updateActionsNode.FirstChild("UpdateAction");
+      m_updateActionsHasBeenSet = !updateActionsMember.IsNull();
       while(!updateActionsMember.IsNull())
       {
         m_updateActions.push_back(updateActionsMember);
         updateActionsMember = updateActionsMember.NextNode("UpdateAction");
       }
 
+      m_updateActionsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::DescribeUpdateActionsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

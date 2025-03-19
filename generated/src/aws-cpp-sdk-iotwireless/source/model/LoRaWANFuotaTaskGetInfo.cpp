@@ -18,14 +18,7 @@ namespace IoTWireless
 namespace Model
 {
 
-LoRaWANFuotaTaskGetInfo::LoRaWANFuotaTaskGetInfo() : 
-    m_rfRegionHasBeenSet(false),
-    m_startTimeHasBeenSet(false)
-{
-}
-
 LoRaWANFuotaTaskGetInfo::LoRaWANFuotaTaskGetInfo(JsonView jsonValue)
-  : LoRaWANFuotaTaskGetInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ LoRaWANFuotaTaskGetInfo& LoRaWANFuotaTaskGetInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RfRegion"))
   {
     m_rfRegion = jsonValue.GetString("RfRegion");
-
     m_rfRegionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StartTime"))
   {
     m_startTime = jsonValue.GetString("StartTime");
-
     m_startTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

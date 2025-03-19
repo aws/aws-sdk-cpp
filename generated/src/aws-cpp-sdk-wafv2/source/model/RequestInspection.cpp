@@ -18,16 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-RequestInspection::RequestInspection() : 
-    m_payloadType(PayloadType::NOT_SET),
-    m_payloadTypeHasBeenSet(false),
-    m_usernameFieldHasBeenSet(false),
-    m_passwordFieldHasBeenSet(false)
-{
-}
-
 RequestInspection::RequestInspection(JsonView jsonValue)
-  : RequestInspection()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ RequestInspection& RequestInspection::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PayloadType"))
   {
     m_payloadType = PayloadTypeMapper::GetPayloadTypeForName(jsonValue.GetString("PayloadType"));
-
     m_payloadTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UsernameField"))
   {
     m_usernameField = jsonValue.GetObject("UsernameField");
-
     m_usernameFieldHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PasswordField"))
   {
     m_passwordField = jsonValue.GetObject("PasswordField");
-
     m_passwordFieldHasBeenSet = true;
   }
-
   return *this;
 }
 

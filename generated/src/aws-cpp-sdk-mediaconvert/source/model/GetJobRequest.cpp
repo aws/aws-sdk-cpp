@@ -12,11 +12,6 @@ using namespace Aws::MediaConvert::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetJobRequest::GetJobRequest() : 
-    m_idHasBeenSet(false)
-{
-}
-
 Aws::String GetJobRequest::SerializePayload() const
 {
   return {};

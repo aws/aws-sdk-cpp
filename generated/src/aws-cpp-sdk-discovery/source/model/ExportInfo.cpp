@@ -18,22 +18,7 @@ namespace ApplicationDiscoveryService
 namespace Model
 {
 
-ExportInfo::ExportInfo() : 
-    m_exportIdHasBeenSet(false),
-    m_exportStatus(ExportStatus::NOT_SET),
-    m_exportStatusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_configurationsDownloadUrlHasBeenSet(false),
-    m_exportRequestTimeHasBeenSet(false),
-    m_isTruncated(false),
-    m_isTruncatedHasBeenSet(false),
-    m_requestedStartTimeHasBeenSet(false),
-    m_requestedEndTimeHasBeenSet(false)
-{
-}
-
 ExportInfo::ExportInfo(JsonView jsonValue)
-  : ExportInfo()
 {
   *this = jsonValue;
 }
@@ -43,59 +28,43 @@ ExportInfo& ExportInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("exportId"))
   {
     m_exportId = jsonValue.GetString("exportId");
-
     m_exportIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exportStatus"))
   {
     m_exportStatus = ExportStatusMapper::GetExportStatusForName(jsonValue.GetString("exportStatus"));
-
     m_exportStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("configurationsDownloadUrl"))
   {
     m_configurationsDownloadUrl = jsonValue.GetString("configurationsDownloadUrl");
-
     m_configurationsDownloadUrlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("exportRequestTime"))
   {
     m_exportRequestTime = jsonValue.GetDouble("exportRequestTime");
-
     m_exportRequestTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("isTruncated"))
   {
     m_isTruncated = jsonValue.GetBool("isTruncated");
-
     m_isTruncatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestedStartTime"))
   {
     m_requestedStartTime = jsonValue.GetDouble("requestedStartTime");
-
     m_requestedStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("requestedEndTime"))
   {
     m_requestedEndTime = jsonValue.GetDouble("requestedEndTime");
-
     m_requestedEndTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

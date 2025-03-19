@@ -18,21 +18,7 @@ namespace FSx
 namespace Model
 {
 
-DataRepositoryTaskStatus::DataRepositoryTaskStatus() : 
-    m_totalCount(0),
-    m_totalCountHasBeenSet(false),
-    m_succeededCount(0),
-    m_succeededCountHasBeenSet(false),
-    m_failedCount(0),
-    m_failedCountHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_releasedCapacity(0),
-    m_releasedCapacityHasBeenSet(false)
-{
-}
-
 DataRepositoryTaskStatus::DataRepositoryTaskStatus(JsonView jsonValue)
-  : DataRepositoryTaskStatus()
 {
   *this = jsonValue;
 }
@@ -42,38 +28,28 @@ DataRepositoryTaskStatus& DataRepositoryTaskStatus::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("TotalCount"))
   {
     m_totalCount = jsonValue.GetInt64("TotalCount");
-
     m_totalCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SucceededCount"))
   {
     m_succeededCount = jsonValue.GetInt64("SucceededCount");
-
     m_succeededCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailedCount"))
   {
     m_failedCount = jsonValue.GetInt64("FailedCount");
-
     m_failedCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReleasedCapacity"))
   {
     m_releasedCapacity = jsonValue.GetInt64("ReleasedCapacity");
-
     m_releasedCapacityHasBeenSet = true;
   }
-
   return *this;
 }
 

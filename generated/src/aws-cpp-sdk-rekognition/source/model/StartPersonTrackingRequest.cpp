@@ -12,14 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartPersonTrackingRequest::StartPersonTrackingRequest() : 
-    m_videoHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false),
-    m_notificationChannelHasBeenSet(false),
-    m_jobTagHasBeenSet(false)
-{
-}
-
 Aws::String StartPersonTrackingRequest::SerializePayload() const
 {
   JsonValue payload;

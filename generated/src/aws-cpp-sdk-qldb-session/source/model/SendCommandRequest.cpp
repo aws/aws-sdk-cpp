@@ -12,18 +12,6 @@ using namespace Aws::QLDBSession::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendCommandRequest::SendCommandRequest() : 
-    m_sessionTokenHasBeenSet(false),
-    m_startSessionHasBeenSet(false),
-    m_startTransactionHasBeenSet(false),
-    m_endSessionHasBeenSet(false),
-    m_commitTransactionHasBeenSet(false),
-    m_abortTransactionHasBeenSet(false),
-    m_executeStatementHasBeenSet(false),
-    m_fetchPageHasBeenSet(false)
-{
-}
-
 Aws::String SendCommandRequest::SerializePayload() const
 {
   JsonValue payload;

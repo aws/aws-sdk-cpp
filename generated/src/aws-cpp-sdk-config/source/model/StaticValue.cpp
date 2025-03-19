@@ -18,13 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-StaticValue::StaticValue() : 
-    m_valuesHasBeenSet(false)
-{
-}
-
 StaticValue::StaticValue(JsonView jsonValue)
-  : StaticValue()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ StaticValue& StaticValue::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   return *this;
 }
 

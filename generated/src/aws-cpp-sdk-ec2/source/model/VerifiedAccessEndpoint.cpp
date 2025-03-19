@@ -20,35 +20,7 @@ namespace EC2
 namespace Model
 {
 
-VerifiedAccessEndpoint::VerifiedAccessEndpoint() : 
-    m_verifiedAccessInstanceIdHasBeenSet(false),
-    m_verifiedAccessGroupIdHasBeenSet(false),
-    m_verifiedAccessEndpointIdHasBeenSet(false),
-    m_applicationDomainHasBeenSet(false),
-    m_endpointType(VerifiedAccessEndpointType::NOT_SET),
-    m_endpointTypeHasBeenSet(false),
-    m_attachmentType(VerifiedAccessEndpointAttachmentType::NOT_SET),
-    m_attachmentTypeHasBeenSet(false),
-    m_domainCertificateArnHasBeenSet(false),
-    m_endpointDomainHasBeenSet(false),
-    m_deviceValidationDomainHasBeenSet(false),
-    m_securityGroupIdsHasBeenSet(false),
-    m_loadBalancerOptionsHasBeenSet(false),
-    m_networkInterfaceOptionsHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false),
-    m_deletionTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_sseSpecificationHasBeenSet(false),
-    m_rdsOptionsHasBeenSet(false),
-    m_cidrOptionsHasBeenSet(false)
-{
-}
-
 VerifiedAccessEndpoint::VerifiedAccessEndpoint(const XmlNode& xmlNode)
-  : VerifiedAccessEndpoint()
 {
   *this = xmlNode;
 }
@@ -86,13 +58,13 @@ VerifiedAccessEndpoint& VerifiedAccessEndpoint::operator =(const XmlNode& xmlNod
     XmlNode endpointTypeNode = resultNode.FirstChild("endpointType");
     if(!endpointTypeNode.IsNull())
     {
-      m_endpointType = VerifiedAccessEndpointTypeMapper::GetVerifiedAccessEndpointTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endpointTypeNode.GetText()).c_str()).c_str());
+      m_endpointType = VerifiedAccessEndpointTypeMapper::GetVerifiedAccessEndpointTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(endpointTypeNode.GetText()).c_str()));
       m_endpointTypeHasBeenSet = true;
     }
     XmlNode attachmentTypeNode = resultNode.FirstChild("attachmentType");
     if(!attachmentTypeNode.IsNull())
     {
-      m_attachmentType = VerifiedAccessEndpointAttachmentTypeMapper::GetVerifiedAccessEndpointAttachmentTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attachmentTypeNode.GetText()).c_str()).c_str());
+      m_attachmentType = VerifiedAccessEndpointAttachmentTypeMapper::GetVerifiedAccessEndpointAttachmentTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(attachmentTypeNode.GetText()).c_str()));
       m_attachmentTypeHasBeenSet = true;
     }
     XmlNode domainCertificateArnNode = resultNode.FirstChild("domainCertificateArn");
@@ -117,6 +89,7 @@ VerifiedAccessEndpoint& VerifiedAccessEndpoint::operator =(const XmlNode& xmlNod
     if(!securityGroupIdsNode.IsNull())
     {
       XmlNode securityGroupIdsMember = securityGroupIdsNode.FirstChild("item");
+      m_securityGroupIdsHasBeenSet = !securityGroupIdsMember.IsNull();
       while(!securityGroupIdsMember.IsNull())
       {
         m_securityGroupIds.push_back(securityGroupIdsMember.GetText());
@@ -171,6 +144,7 @@ VerifiedAccessEndpoint& VerifiedAccessEndpoint::operator =(const XmlNode& xmlNod
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

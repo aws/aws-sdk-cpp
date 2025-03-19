@@ -35,7 +35,7 @@ namespace Model
   class BadRequestException
   {
   public:
-    AWS_APPSYNC_API BadRequestException();
+    AWS_APPSYNC_API BadRequestException() = default;
     AWS_APPSYNC_API BadRequestException(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API BadRequestException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPSYNC_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,41 +43,37 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline BadRequestException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline BadRequestException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline BadRequestException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    BadRequestException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const BadRequestReason& GetReason() const{ return m_reason; }
+    inline BadRequestReason GetReason() const { return m_reason; }
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
-    inline void SetReason(const BadRequestReason& value) { m_reasonHasBeenSet = true; m_reason = value; }
-    inline void SetReason(BadRequestReason&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
-    inline BadRequestException& WithReason(const BadRequestReason& value) { SetReason(value); return *this;}
-    inline BadRequestException& WithReason(BadRequestReason&& value) { SetReason(std::move(value)); return *this;}
+    inline void SetReason(BadRequestReason value) { m_reasonHasBeenSet = true; m_reason = value; }
+    inline BadRequestException& WithReason(BadRequestReason value) { SetReason(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const BadRequestDetail& GetDetail() const{ return m_detail; }
+    inline const BadRequestDetail& GetDetail() const { return m_detail; }
     inline bool DetailHasBeenSet() const { return m_detailHasBeenSet; }
-    inline void SetDetail(const BadRequestDetail& value) { m_detailHasBeenSet = true; m_detail = value; }
-    inline void SetDetail(BadRequestDetail&& value) { m_detailHasBeenSet = true; m_detail = std::move(value); }
-    inline BadRequestException& WithDetail(const BadRequestDetail& value) { SetDetail(value); return *this;}
-    inline BadRequestException& WithDetail(BadRequestDetail&& value) { SetDetail(std::move(value)); return *this;}
+    template<typename DetailT = BadRequestDetail>
+    void SetDetail(DetailT&& value) { m_detailHasBeenSet = true; m_detail = std::forward<DetailT>(value); }
+    template<typename DetailT = BadRequestDetail>
+    BadRequestException& WithDetail(DetailT&& value) { SetDetail(std::forward<DetailT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    BadRequestReason m_reason;
+    BadRequestReason m_reason{BadRequestReason::NOT_SET};
     bool m_reasonHasBeenSet = false;
 
     BadRequestDetail m_detail;

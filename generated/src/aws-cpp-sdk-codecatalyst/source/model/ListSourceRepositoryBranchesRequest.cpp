@@ -12,16 +12,6 @@ using namespace Aws::CodeCatalyst::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListSourceRepositoryBranchesRequest::ListSourceRepositoryBranchesRequest() : 
-    m_spaceNameHasBeenSet(false),
-    m_projectNameHasBeenSet(false),
-    m_sourceRepositoryNameHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListSourceRepositoryBranchesRequest::SerializePayload() const
 {
   JsonValue payload;

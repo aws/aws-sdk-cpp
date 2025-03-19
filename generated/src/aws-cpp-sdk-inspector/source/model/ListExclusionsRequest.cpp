@@ -12,14 +12,6 @@ using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListExclusionsRequest::ListExclusionsRequest() : 
-    m_assessmentRunArnHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListExclusionsRequest::SerializePayload() const
 {
   JsonValue payload;

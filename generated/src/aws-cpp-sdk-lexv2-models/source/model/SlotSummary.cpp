@@ -18,20 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-SlotSummary::SlotSummary() : 
-    m_slotIdHasBeenSet(false),
-    m_slotNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_slotConstraint(SlotConstraint::NOT_SET),
-    m_slotConstraintHasBeenSet(false),
-    m_slotTypeIdHasBeenSet(false),
-    m_valueElicitationPromptSpecificationHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false)
-{
-}
-
 SlotSummary::SlotSummary(JsonView jsonValue)
-  : SlotSummary()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ SlotSummary& SlotSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("slotId"))
   {
     m_slotId = jsonValue.GetString("slotId");
-
     m_slotIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slotName"))
   {
     m_slotName = jsonValue.GetString("slotName");
-
     m_slotNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slotConstraint"))
   {
     m_slotConstraint = SlotConstraintMapper::GetSlotConstraintForName(jsonValue.GetString("slotConstraint"));
-
     m_slotConstraintHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("slotTypeId"))
   {
     m_slotTypeId = jsonValue.GetString("slotTypeId");
-
     m_slotTypeIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("valueElicitationPromptSpecification"))
   {
     m_valueElicitationPromptSpecification = jsonValue.GetObject("valueElicitationPromptSpecification");
-
     m_valueElicitationPromptSpecificationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("lastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

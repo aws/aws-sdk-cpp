@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PromoteResourceShareCreatedFromPolicyResult::PromoteResourceShareCreatedFromPolicyResult() : 
-    m_returnValue(false)
-{
-}
-
 PromoteResourceShareCreatedFromPolicyResult::PromoteResourceShareCreatedFromPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PromoteResourceShareCreatedFromPolicyResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ PromoteResourceShareCreatedFromPolicyResult& PromoteResourceShareCreatedFromPoli
   if(jsonValue.ValueExists("returnValue"))
   {
     m_returnValue = jsonValue.GetBool("returnValue");
-
+    m_returnValueHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

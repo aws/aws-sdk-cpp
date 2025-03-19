@@ -25,7 +25,7 @@ namespace Model
   class UpdateControlPanelRequest : public Route53RecoveryControlConfigRequest
   {
   public:
-    AWS_ROUTE53RECOVERYCONTROLCONFIG_API UpdateControlPanelRequest();
+    AWS_ROUTE53RECOVERYCONTROLCONFIG_API UpdateControlPanelRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,28 +40,24 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the control panel.</p>
      */
-    inline const Aws::String& GetControlPanelArn() const{ return m_controlPanelArn; }
+    inline const Aws::String& GetControlPanelArn() const { return m_controlPanelArn; }
     inline bool ControlPanelArnHasBeenSet() const { return m_controlPanelArnHasBeenSet; }
-    inline void SetControlPanelArn(const Aws::String& value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn = value; }
-    inline void SetControlPanelArn(Aws::String&& value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn = std::move(value); }
-    inline void SetControlPanelArn(const char* value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn.assign(value); }
-    inline UpdateControlPanelRequest& WithControlPanelArn(const Aws::String& value) { SetControlPanelArn(value); return *this;}
-    inline UpdateControlPanelRequest& WithControlPanelArn(Aws::String&& value) { SetControlPanelArn(std::move(value)); return *this;}
-    inline UpdateControlPanelRequest& WithControlPanelArn(const char* value) { SetControlPanelArn(value); return *this;}
+    template<typename ControlPanelArnT = Aws::String>
+    void SetControlPanelArn(ControlPanelArnT&& value) { m_controlPanelArnHasBeenSet = true; m_controlPanelArn = std::forward<ControlPanelArnT>(value); }
+    template<typename ControlPanelArnT = Aws::String>
+    UpdateControlPanelRequest& WithControlPanelArn(ControlPanelArnT&& value) { SetControlPanelArn(std::forward<ControlPanelArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the control panel.</p>
      */
-    inline const Aws::String& GetControlPanelName() const{ return m_controlPanelName; }
+    inline const Aws::String& GetControlPanelName() const { return m_controlPanelName; }
     inline bool ControlPanelNameHasBeenSet() const { return m_controlPanelNameHasBeenSet; }
-    inline void SetControlPanelName(const Aws::String& value) { m_controlPanelNameHasBeenSet = true; m_controlPanelName = value; }
-    inline void SetControlPanelName(Aws::String&& value) { m_controlPanelNameHasBeenSet = true; m_controlPanelName = std::move(value); }
-    inline void SetControlPanelName(const char* value) { m_controlPanelNameHasBeenSet = true; m_controlPanelName.assign(value); }
-    inline UpdateControlPanelRequest& WithControlPanelName(const Aws::String& value) { SetControlPanelName(value); return *this;}
-    inline UpdateControlPanelRequest& WithControlPanelName(Aws::String&& value) { SetControlPanelName(std::move(value)); return *this;}
-    inline UpdateControlPanelRequest& WithControlPanelName(const char* value) { SetControlPanelName(value); return *this;}
+    template<typename ControlPanelNameT = Aws::String>
+    void SetControlPanelName(ControlPanelNameT&& value) { m_controlPanelNameHasBeenSet = true; m_controlPanelName = std::forward<ControlPanelNameT>(value); }
+    template<typename ControlPanelNameT = Aws::String>
+    UpdateControlPanelRequest& WithControlPanelName(ControlPanelNameT&& value) { SetControlPanelName(std::forward<ControlPanelNameT>(value)); return *this;}
     ///@}
   private:
 

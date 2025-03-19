@@ -24,7 +24,7 @@ namespace Model
   class DescribeDefaultClusterParametersRequest : public RedshiftRequest
   {
   public:
-    AWS_REDSHIFT_API DescribeDefaultClusterParametersRequest();
+    AWS_REDSHIFT_API DescribeDefaultClusterParametersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The name of the cluster parameter group family.</p>
      */
-    inline const Aws::String& GetParameterGroupFamily() const{ return m_parameterGroupFamily; }
+    inline const Aws::String& GetParameterGroupFamily() const { return m_parameterGroupFamily; }
     inline bool ParameterGroupFamilyHasBeenSet() const { return m_parameterGroupFamilyHasBeenSet; }
-    inline void SetParameterGroupFamily(const Aws::String& value) { m_parameterGroupFamilyHasBeenSet = true; m_parameterGroupFamily = value; }
-    inline void SetParameterGroupFamily(Aws::String&& value) { m_parameterGroupFamilyHasBeenSet = true; m_parameterGroupFamily = std::move(value); }
-    inline void SetParameterGroupFamily(const char* value) { m_parameterGroupFamilyHasBeenSet = true; m_parameterGroupFamily.assign(value); }
-    inline DescribeDefaultClusterParametersRequest& WithParameterGroupFamily(const Aws::String& value) { SetParameterGroupFamily(value); return *this;}
-    inline DescribeDefaultClusterParametersRequest& WithParameterGroupFamily(Aws::String&& value) { SetParameterGroupFamily(std::move(value)); return *this;}
-    inline DescribeDefaultClusterParametersRequest& WithParameterGroupFamily(const char* value) { SetParameterGroupFamily(value); return *this;}
+    template<typename ParameterGroupFamilyT = Aws::String>
+    void SetParameterGroupFamily(ParameterGroupFamilyT&& value) { m_parameterGroupFamilyHasBeenSet = true; m_parameterGroupFamily = std::forward<ParameterGroupFamilyT>(value); }
+    template<typename ParameterGroupFamilyT = Aws::String>
+    DescribeDefaultClusterParametersRequest& WithParameterGroupFamily(ParameterGroupFamilyT&& value) { SetParameterGroupFamily(std::forward<ParameterGroupFamilyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -62,7 +60,7 @@ namespace Model
      * marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20,
      * maximum 100.</p>
      */
-    inline int GetMaxRecords() const{ return m_maxRecords; }
+    inline int GetMaxRecords() const { return m_maxRecords; }
     inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
     inline DescribeDefaultClusterParametersRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
@@ -77,21 +75,19 @@ namespace Model
      * can retrieve the next set of response records by providing the returned marker
      * value in the <code>Marker</code> parameter and retrying the request. </p>
      */
-    inline const Aws::String& GetMarker() const{ return m_marker; }
+    inline const Aws::String& GetMarker() const { return m_marker; }
     inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
-    inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
-    inline void SetMarker(Aws::String&& value) { m_markerHasBeenSet = true; m_marker = std::move(value); }
-    inline void SetMarker(const char* value) { m_markerHasBeenSet = true; m_marker.assign(value); }
-    inline DescribeDefaultClusterParametersRequest& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
-    inline DescribeDefaultClusterParametersRequest& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
-    inline DescribeDefaultClusterParametersRequest& WithMarker(const char* value) { SetMarker(value); return *this;}
+    template<typename MarkerT = Aws::String>
+    void SetMarker(MarkerT&& value) { m_markerHasBeenSet = true; m_marker = std::forward<MarkerT>(value); }
+    template<typename MarkerT = Aws::String>
+    DescribeDefaultClusterParametersRequest& WithMarker(MarkerT&& value) { SetMarker(std::forward<MarkerT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_parameterGroupFamily;
     bool m_parameterGroupFamilyHasBeenSet = false;
 
-    int m_maxRecords;
+    int m_maxRecords{0};
     bool m_maxRecordsHasBeenSet = false;
 
     Aws::String m_marker;

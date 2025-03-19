@@ -32,7 +32,7 @@ namespace Model
   class Redirect
   {
   public:
-    AWS_S3CRT_API Redirect();
+    AWS_S3CRT_API Redirect() = default;
     AWS_S3CRT_API Redirect(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API Redirect& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The host name to use in the redirect request.</p>
      */
-    inline const Aws::String& GetHostName() const{ return m_hostName; }
+    inline const Aws::String& GetHostName() const { return m_hostName; }
     inline bool HostNameHasBeenSet() const { return m_hostNameHasBeenSet; }
-    inline void SetHostName(const Aws::String& value) { m_hostNameHasBeenSet = true; m_hostName = value; }
-    inline void SetHostName(Aws::String&& value) { m_hostNameHasBeenSet = true; m_hostName = std::move(value); }
-    inline void SetHostName(const char* value) { m_hostNameHasBeenSet = true; m_hostName.assign(value); }
-    inline Redirect& WithHostName(const Aws::String& value) { SetHostName(value); return *this;}
-    inline Redirect& WithHostName(Aws::String&& value) { SetHostName(std::move(value)); return *this;}
-    inline Redirect& WithHostName(const char* value) { SetHostName(value); return *this;}
+    template<typename HostNameT = Aws::String>
+    void SetHostName(HostNameT&& value) { m_hostNameHasBeenSet = true; m_hostName = std::forward<HostNameT>(value); }
+    template<typename HostNameT = Aws::String>
+    Redirect& WithHostName(HostNameT&& value) { SetHostName(std::forward<HostNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The HTTP redirect code to use on the response. Not required if one of the
      * siblings is present.</p>
      */
-    inline const Aws::String& GetHttpRedirectCode() const{ return m_httpRedirectCode; }
+    inline const Aws::String& GetHttpRedirectCode() const { return m_httpRedirectCode; }
     inline bool HttpRedirectCodeHasBeenSet() const { return m_httpRedirectCodeHasBeenSet; }
-    inline void SetHttpRedirectCode(const Aws::String& value) { m_httpRedirectCodeHasBeenSet = true; m_httpRedirectCode = value; }
-    inline void SetHttpRedirectCode(Aws::String&& value) { m_httpRedirectCodeHasBeenSet = true; m_httpRedirectCode = std::move(value); }
-    inline void SetHttpRedirectCode(const char* value) { m_httpRedirectCodeHasBeenSet = true; m_httpRedirectCode.assign(value); }
-    inline Redirect& WithHttpRedirectCode(const Aws::String& value) { SetHttpRedirectCode(value); return *this;}
-    inline Redirect& WithHttpRedirectCode(Aws::String&& value) { SetHttpRedirectCode(std::move(value)); return *this;}
-    inline Redirect& WithHttpRedirectCode(const char* value) { SetHttpRedirectCode(value); return *this;}
+    template<typename HttpRedirectCodeT = Aws::String>
+    void SetHttpRedirectCode(HttpRedirectCodeT&& value) { m_httpRedirectCodeHasBeenSet = true; m_httpRedirectCode = std::forward<HttpRedirectCodeT>(value); }
+    template<typename HttpRedirectCodeT = Aws::String>
+    Redirect& WithHttpRedirectCode(HttpRedirectCodeT&& value) { SetHttpRedirectCode(std::forward<HttpRedirectCodeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +69,10 @@ namespace Model
      * <p>Protocol to use when redirecting requests. The default is the protocol that
      * is used in the original request.</p>
      */
-    inline const Protocol& GetProtocol() const{ return m_protocol; }
+    inline Protocol GetProtocol() const { return m_protocol; }
     inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
-    inline void SetProtocol(const Protocol& value) { m_protocolHasBeenSet = true; m_protocol = value; }
-    inline void SetProtocol(Protocol&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
-    inline Redirect& WithProtocol(const Protocol& value) { SetProtocol(value); return *this;}
-    inline Redirect& WithProtocol(Protocol&& value) { SetProtocol(std::move(value)); return *this;}
+    inline void SetProtocol(Protocol value) { m_protocolHasBeenSet = true; m_protocol = value; }
+    inline Redirect& WithProtocol(Protocol value) { SetProtocol(value); return *this;}
     ///@}
 
     ///@{
@@ -95,14 +89,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
      * XML related object key constraints</a>.</p> 
      */
-    inline const Aws::String& GetReplaceKeyPrefixWith() const{ return m_replaceKeyPrefixWith; }
+    inline const Aws::String& GetReplaceKeyPrefixWith() const { return m_replaceKeyPrefixWith; }
     inline bool ReplaceKeyPrefixWithHasBeenSet() const { return m_replaceKeyPrefixWithHasBeenSet; }
-    inline void SetReplaceKeyPrefixWith(const Aws::String& value) { m_replaceKeyPrefixWithHasBeenSet = true; m_replaceKeyPrefixWith = value; }
-    inline void SetReplaceKeyPrefixWith(Aws::String&& value) { m_replaceKeyPrefixWithHasBeenSet = true; m_replaceKeyPrefixWith = std::move(value); }
-    inline void SetReplaceKeyPrefixWith(const char* value) { m_replaceKeyPrefixWithHasBeenSet = true; m_replaceKeyPrefixWith.assign(value); }
-    inline Redirect& WithReplaceKeyPrefixWith(const Aws::String& value) { SetReplaceKeyPrefixWith(value); return *this;}
-    inline Redirect& WithReplaceKeyPrefixWith(Aws::String&& value) { SetReplaceKeyPrefixWith(std::move(value)); return *this;}
-    inline Redirect& WithReplaceKeyPrefixWith(const char* value) { SetReplaceKeyPrefixWith(value); return *this;}
+    template<typename ReplaceKeyPrefixWithT = Aws::String>
+    void SetReplaceKeyPrefixWith(ReplaceKeyPrefixWithT&& value) { m_replaceKeyPrefixWithHasBeenSet = true; m_replaceKeyPrefixWith = std::forward<ReplaceKeyPrefixWithT>(value); }
+    template<typename ReplaceKeyPrefixWithT = Aws::String>
+    Redirect& WithReplaceKeyPrefixWith(ReplaceKeyPrefixWithT&& value) { SetReplaceKeyPrefixWith(std::forward<ReplaceKeyPrefixWithT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -116,14 +108,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-keys.html#object-key-xml-related-constraints">
      * XML related object key constraints</a>.</p> 
      */
-    inline const Aws::String& GetReplaceKeyWith() const{ return m_replaceKeyWith; }
+    inline const Aws::String& GetReplaceKeyWith() const { return m_replaceKeyWith; }
     inline bool ReplaceKeyWithHasBeenSet() const { return m_replaceKeyWithHasBeenSet; }
-    inline void SetReplaceKeyWith(const Aws::String& value) { m_replaceKeyWithHasBeenSet = true; m_replaceKeyWith = value; }
-    inline void SetReplaceKeyWith(Aws::String&& value) { m_replaceKeyWithHasBeenSet = true; m_replaceKeyWith = std::move(value); }
-    inline void SetReplaceKeyWith(const char* value) { m_replaceKeyWithHasBeenSet = true; m_replaceKeyWith.assign(value); }
-    inline Redirect& WithReplaceKeyWith(const Aws::String& value) { SetReplaceKeyWith(value); return *this;}
-    inline Redirect& WithReplaceKeyWith(Aws::String&& value) { SetReplaceKeyWith(std::move(value)); return *this;}
-    inline Redirect& WithReplaceKeyWith(const char* value) { SetReplaceKeyWith(value); return *this;}
+    template<typename ReplaceKeyWithT = Aws::String>
+    void SetReplaceKeyWith(ReplaceKeyWithT&& value) { m_replaceKeyWithHasBeenSet = true; m_replaceKeyWith = std::forward<ReplaceKeyWithT>(value); }
+    template<typename ReplaceKeyWithT = Aws::String>
+    Redirect& WithReplaceKeyWith(ReplaceKeyWithT&& value) { SetReplaceKeyWith(std::forward<ReplaceKeyWithT>(value)); return *this;}
     ///@}
   private:
 
@@ -133,7 +123,7 @@ namespace Model
     Aws::String m_httpRedirectCode;
     bool m_httpRedirectCodeHasBeenSet = false;
 
-    Protocol m_protocol;
+    Protocol m_protocol{Protocol::NOT_SET};
     bool m_protocolHasBeenSet = false;
 
     Aws::String m_replaceKeyPrefixWith;

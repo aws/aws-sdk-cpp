@@ -12,11 +12,6 @@ using namespace Aws::SecurityHub::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeclineInvitationsRequest::DeclineInvitationsRequest() : 
-    m_accountIdsHasBeenSet(false)
-{
-}
-
 Aws::String DeclineInvitationsRequest::SerializePayload() const
 {
   JsonValue payload;

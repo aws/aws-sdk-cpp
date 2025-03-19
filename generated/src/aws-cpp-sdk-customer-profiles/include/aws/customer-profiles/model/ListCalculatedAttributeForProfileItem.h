@@ -32,7 +32,7 @@ namespace Model
   class ListCalculatedAttributeForProfileItem
   {
   public:
-    AWS_CUSTOMERPROFILES_API ListCalculatedAttributeForProfileItem();
+    AWS_CUSTOMERPROFILES_API ListCalculatedAttributeForProfileItem() = default;
     AWS_CUSTOMERPROFILES_API ListCalculatedAttributeForProfileItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API ListCalculatedAttributeForProfileItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CUSTOMERPROFILES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,28 +42,24 @@ namespace Model
     /**
      * <p>The unique name of the calculated attribute.</p>
      */
-    inline const Aws::String& GetCalculatedAttributeName() const{ return m_calculatedAttributeName; }
+    inline const Aws::String& GetCalculatedAttributeName() const { return m_calculatedAttributeName; }
     inline bool CalculatedAttributeNameHasBeenSet() const { return m_calculatedAttributeNameHasBeenSet; }
-    inline void SetCalculatedAttributeName(const Aws::String& value) { m_calculatedAttributeNameHasBeenSet = true; m_calculatedAttributeName = value; }
-    inline void SetCalculatedAttributeName(Aws::String&& value) { m_calculatedAttributeNameHasBeenSet = true; m_calculatedAttributeName = std::move(value); }
-    inline void SetCalculatedAttributeName(const char* value) { m_calculatedAttributeNameHasBeenSet = true; m_calculatedAttributeName.assign(value); }
-    inline ListCalculatedAttributeForProfileItem& WithCalculatedAttributeName(const Aws::String& value) { SetCalculatedAttributeName(value); return *this;}
-    inline ListCalculatedAttributeForProfileItem& WithCalculatedAttributeName(Aws::String&& value) { SetCalculatedAttributeName(std::move(value)); return *this;}
-    inline ListCalculatedAttributeForProfileItem& WithCalculatedAttributeName(const char* value) { SetCalculatedAttributeName(value); return *this;}
+    template<typename CalculatedAttributeNameT = Aws::String>
+    void SetCalculatedAttributeName(CalculatedAttributeNameT&& value) { m_calculatedAttributeNameHasBeenSet = true; m_calculatedAttributeName = std::forward<CalculatedAttributeNameT>(value); }
+    template<typename CalculatedAttributeNameT = Aws::String>
+    ListCalculatedAttributeForProfileItem& WithCalculatedAttributeName(CalculatedAttributeNameT&& value) { SetCalculatedAttributeName(std::forward<CalculatedAttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The display name of the calculated attribute.</p>
      */
-    inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+    inline const Aws::String& GetDisplayName() const { return m_displayName; }
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
-    inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
-    inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
-    inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
-    inline ListCalculatedAttributeForProfileItem& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
-    inline ListCalculatedAttributeForProfileItem& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
-    inline ListCalculatedAttributeForProfileItem& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
+    template<typename DisplayNameT = Aws::String>
+    void SetDisplayName(DisplayNameT&& value) { m_displayNameHasBeenSet = true; m_displayName = std::forward<DisplayNameT>(value); }
+    template<typename DisplayNameT = Aws::String>
+    ListCalculatedAttributeForProfileItem& WithDisplayName(DisplayNameT&& value) { SetDisplayName(std::forward<DisplayNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,28 +67,24 @@ namespace Model
      * <p>Indicates whether the calculated attribute’s value is based on partial data.
      * If data is partial, it is set to true.</p>
      */
-    inline const Aws::String& GetIsDataPartial() const{ return m_isDataPartial; }
+    inline const Aws::String& GetIsDataPartial() const { return m_isDataPartial; }
     inline bool IsDataPartialHasBeenSet() const { return m_isDataPartialHasBeenSet; }
-    inline void SetIsDataPartial(const Aws::String& value) { m_isDataPartialHasBeenSet = true; m_isDataPartial = value; }
-    inline void SetIsDataPartial(Aws::String&& value) { m_isDataPartialHasBeenSet = true; m_isDataPartial = std::move(value); }
-    inline void SetIsDataPartial(const char* value) { m_isDataPartialHasBeenSet = true; m_isDataPartial.assign(value); }
-    inline ListCalculatedAttributeForProfileItem& WithIsDataPartial(const Aws::String& value) { SetIsDataPartial(value); return *this;}
-    inline ListCalculatedAttributeForProfileItem& WithIsDataPartial(Aws::String&& value) { SetIsDataPartial(std::move(value)); return *this;}
-    inline ListCalculatedAttributeForProfileItem& WithIsDataPartial(const char* value) { SetIsDataPartial(value); return *this;}
+    template<typename IsDataPartialT = Aws::String>
+    void SetIsDataPartial(IsDataPartialT&& value) { m_isDataPartialHasBeenSet = true; m_isDataPartial = std::forward<IsDataPartialT>(value); }
+    template<typename IsDataPartialT = Aws::String>
+    ListCalculatedAttributeForProfileItem& WithIsDataPartial(IsDataPartialT&& value) { SetIsDataPartial(std::forward<IsDataPartialT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value of the calculated attribute.</p>
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline ListCalculatedAttributeForProfileItem& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline ListCalculatedAttributeForProfileItem& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline ListCalculatedAttributeForProfileItem& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    ListCalculatedAttributeForProfileItem& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 

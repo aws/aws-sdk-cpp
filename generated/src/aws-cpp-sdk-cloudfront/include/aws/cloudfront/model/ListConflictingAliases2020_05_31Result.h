@@ -28,7 +28,7 @@ namespace Model
   class ListConflictingAliases2020_05_31Result
   {
   public:
-    AWS_CLOUDFRONT_API ListConflictingAliases2020_05_31Result();
+    AWS_CLOUDFRONT_API ListConflictingAliases2020_05_31Result() = default;
     AWS_CLOUDFRONT_API ListConflictingAliases2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFRONT_API ListConflictingAliases2020_05_31Result& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>A list of conflicting aliases.</p>
      */
-    inline const ConflictingAliasesList& GetConflictingAliasesList() const{ return m_conflictingAliasesList; }
-    inline void SetConflictingAliasesList(const ConflictingAliasesList& value) { m_conflictingAliasesList = value; }
-    inline void SetConflictingAliasesList(ConflictingAliasesList&& value) { m_conflictingAliasesList = std::move(value); }
-    inline ListConflictingAliases2020_05_31Result& WithConflictingAliasesList(const ConflictingAliasesList& value) { SetConflictingAliasesList(value); return *this;}
-    inline ListConflictingAliases2020_05_31Result& WithConflictingAliasesList(ConflictingAliasesList&& value) { SetConflictingAliasesList(std::move(value)); return *this;}
+    inline const ConflictingAliasesList& GetConflictingAliasesList() const { return m_conflictingAliasesList; }
+    template<typename ConflictingAliasesListT = ConflictingAliasesList>
+    void SetConflictingAliasesList(ConflictingAliasesListT&& value) { m_conflictingAliasesListHasBeenSet = true; m_conflictingAliasesList = std::forward<ConflictingAliasesListT>(value); }
+    template<typename ConflictingAliasesListT = ConflictingAliasesList>
+    ListConflictingAliases2020_05_31Result& WithConflictingAliasesList(ConflictingAliasesListT&& value) { SetConflictingAliasesList(std::forward<ConflictingAliasesListT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListConflictingAliases2020_05_31Result& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListConflictingAliases2020_05_31Result& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListConflictingAliases2020_05_31Result& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListConflictingAliases2020_05_31Result& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ConflictingAliasesList m_conflictingAliasesList;
+    bool m_conflictingAliasesListHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

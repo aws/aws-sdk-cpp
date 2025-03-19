@@ -12,21 +12,6 @@ using namespace Aws::CleanRoomsML::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateTrainedModelRequest::CreateTrainedModelRequest() : 
-    m_membershipIdentifierHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_configuredModelAlgorithmAssociationArnHasBeenSet(false),
-    m_hyperparametersHasBeenSet(false),
-    m_environmentHasBeenSet(false),
-    m_resourceConfigHasBeenSet(false),
-    m_stoppingConditionHasBeenSet(false),
-    m_dataChannelsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_kmsKeyArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateTrainedModelRequest::SerializePayload() const
 {
   JsonValue payload;

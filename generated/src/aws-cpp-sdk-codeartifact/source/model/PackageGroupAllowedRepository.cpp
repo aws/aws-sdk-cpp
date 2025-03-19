@@ -18,15 +18,7 @@ namespace CodeArtifact
 namespace Model
 {
 
-PackageGroupAllowedRepository::PackageGroupAllowedRepository() : 
-    m_repositoryNameHasBeenSet(false),
-    m_originRestrictionType(PackageGroupOriginRestrictionType::NOT_SET),
-    m_originRestrictionTypeHasBeenSet(false)
-{
-}
-
 PackageGroupAllowedRepository::PackageGroupAllowedRepository(JsonView jsonValue)
-  : PackageGroupAllowedRepository()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ PackageGroupAllowedRepository& PackageGroupAllowedRepository::operator =(JsonVie
   if(jsonValue.ValueExists("repositoryName"))
   {
     m_repositoryName = jsonValue.GetString("repositoryName");
-
     m_repositoryNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("originRestrictionType"))
   {
     m_originRestrictionType = PackageGroupOriginRestrictionTypeMapper::GetPackageGroupOriginRestrictionTypeForName(jsonValue.GetString("originRestrictionType"));
-
     m_originRestrictionTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -30,7 +30,7 @@ namespace Model
   class OrganizationS3LogsConfiguration
   {
   public:
-    AWS_GUARDDUTY_API OrganizationS3LogsConfiguration();
+    AWS_GUARDDUTY_API OrganizationS3LogsConfiguration() = default;
     AWS_GUARDDUTY_API OrganizationS3LogsConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API OrganizationS3LogsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GUARDDUTY_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,14 @@ namespace Model
      * <p>A value that contains information on whether S3 data event logs will be
      * enabled automatically as a data source for the organization.</p>
      */
-    inline bool GetAutoEnable() const{ return m_autoEnable; }
+    inline bool GetAutoEnable() const { return m_autoEnable; }
     inline bool AutoEnableHasBeenSet() const { return m_autoEnableHasBeenSet; }
     inline void SetAutoEnable(bool value) { m_autoEnableHasBeenSet = true; m_autoEnable = value; }
     inline OrganizationS3LogsConfiguration& WithAutoEnable(bool value) { SetAutoEnable(value); return *this;}
     ///@}
   private:
 
-    bool m_autoEnable;
+    bool m_autoEnable{false};
     bool m_autoEnableHasBeenSet = false;
   };
 

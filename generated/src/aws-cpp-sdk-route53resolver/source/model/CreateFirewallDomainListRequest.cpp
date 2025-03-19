@@ -12,14 +12,6 @@ using namespace Aws::Route53Resolver::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateFirewallDomainListRequest::CreateFirewallDomainListRequest() : 
-    m_creatorRequestId(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_creatorRequestIdHasBeenSet(true),
-    m_nameHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateFirewallDomainListRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -30,7 +30,7 @@ namespace Model
   class BatchGetAccountStatusResult
   {
   public:
-    AWS_INSPECTOR2_API BatchGetAccountStatusResult();
+    AWS_INSPECTOR2_API BatchGetAccountStatusResult() = default;
     AWS_INSPECTOR2_API BatchGetAccountStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INSPECTOR2_API BatchGetAccountStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>An array of objects that provide details on the status of Amazon Inspector
      * for each of the requested accounts.</p>
      */
-    inline const Aws::Vector<AccountState>& GetAccounts() const{ return m_accounts; }
-    inline void SetAccounts(const Aws::Vector<AccountState>& value) { m_accounts = value; }
-    inline void SetAccounts(Aws::Vector<AccountState>&& value) { m_accounts = std::move(value); }
-    inline BatchGetAccountStatusResult& WithAccounts(const Aws::Vector<AccountState>& value) { SetAccounts(value); return *this;}
-    inline BatchGetAccountStatusResult& WithAccounts(Aws::Vector<AccountState>&& value) { SetAccounts(std::move(value)); return *this;}
-    inline BatchGetAccountStatusResult& AddAccounts(const AccountState& value) { m_accounts.push_back(value); return *this; }
-    inline BatchGetAccountStatusResult& AddAccounts(AccountState&& value) { m_accounts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AccountState>& GetAccounts() const { return m_accounts; }
+    template<typename AccountsT = Aws::Vector<AccountState>>
+    void SetAccounts(AccountsT&& value) { m_accountsHasBeenSet = true; m_accounts = std::forward<AccountsT>(value); }
+    template<typename AccountsT = Aws::Vector<AccountState>>
+    BatchGetAccountStatusResult& WithAccounts(AccountsT&& value) { SetAccounts(std::forward<AccountsT>(value)); return *this;}
+    template<typename AccountsT = AccountState>
+    BatchGetAccountStatusResult& AddAccounts(AccountsT&& value) { m_accountsHasBeenSet = true; m_accounts.emplace_back(std::forward<AccountsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -54,32 +54,33 @@ namespace Model
      * <p>An array of objects detailing any accounts that failed to enable Amazon
      * Inspector and why.</p>
      */
-    inline const Aws::Vector<FailedAccount>& GetFailedAccounts() const{ return m_failedAccounts; }
-    inline void SetFailedAccounts(const Aws::Vector<FailedAccount>& value) { m_failedAccounts = value; }
-    inline void SetFailedAccounts(Aws::Vector<FailedAccount>&& value) { m_failedAccounts = std::move(value); }
-    inline BatchGetAccountStatusResult& WithFailedAccounts(const Aws::Vector<FailedAccount>& value) { SetFailedAccounts(value); return *this;}
-    inline BatchGetAccountStatusResult& WithFailedAccounts(Aws::Vector<FailedAccount>&& value) { SetFailedAccounts(std::move(value)); return *this;}
-    inline BatchGetAccountStatusResult& AddFailedAccounts(const FailedAccount& value) { m_failedAccounts.push_back(value); return *this; }
-    inline BatchGetAccountStatusResult& AddFailedAccounts(FailedAccount&& value) { m_failedAccounts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<FailedAccount>& GetFailedAccounts() const { return m_failedAccounts; }
+    template<typename FailedAccountsT = Aws::Vector<FailedAccount>>
+    void SetFailedAccounts(FailedAccountsT&& value) { m_failedAccountsHasBeenSet = true; m_failedAccounts = std::forward<FailedAccountsT>(value); }
+    template<typename FailedAccountsT = Aws::Vector<FailedAccount>>
+    BatchGetAccountStatusResult& WithFailedAccounts(FailedAccountsT&& value) { SetFailedAccounts(std::forward<FailedAccountsT>(value)); return *this;}
+    template<typename FailedAccountsT = FailedAccount>
+    BatchGetAccountStatusResult& AddFailedAccounts(FailedAccountsT&& value) { m_failedAccountsHasBeenSet = true; m_failedAccounts.emplace_back(std::forward<FailedAccountsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetAccountStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetAccountStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetAccountStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetAccountStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AccountState> m_accounts;
+    bool m_accountsHasBeenSet = false;
 
     Aws::Vector<FailedAccount> m_failedAccounts;
+    bool m_failedAccountsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

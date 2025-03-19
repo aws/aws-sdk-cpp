@@ -36,7 +36,7 @@ namespace Model
   class AccountAggregation
   {
   public:
-    AWS_IMAGEBUILDER_API AccountAggregation();
+    AWS_IMAGEBUILDER_API AccountAggregation() = default;
     AWS_IMAGEBUILDER_API AccountAggregation(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API AccountAggregation& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,14 +46,12 @@ namespace Model
     /**
      * <p>Identifies the account that owns the aggregated resource findings.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline AccountAggregation& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline AccountAggregation& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline AccountAggregation& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    AccountAggregation& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,12 @@ namespace Model
      * <p>Counts by severity level for medium severity and higher level findings, plus
      * a total for all of the findings.</p>
      */
-    inline const SeverityCounts& GetSeverityCounts() const{ return m_severityCounts; }
+    inline const SeverityCounts& GetSeverityCounts() const { return m_severityCounts; }
     inline bool SeverityCountsHasBeenSet() const { return m_severityCountsHasBeenSet; }
-    inline void SetSeverityCounts(const SeverityCounts& value) { m_severityCountsHasBeenSet = true; m_severityCounts = value; }
-    inline void SetSeverityCounts(SeverityCounts&& value) { m_severityCountsHasBeenSet = true; m_severityCounts = std::move(value); }
-    inline AccountAggregation& WithSeverityCounts(const SeverityCounts& value) { SetSeverityCounts(value); return *this;}
-    inline AccountAggregation& WithSeverityCounts(SeverityCounts&& value) { SetSeverityCounts(std::move(value)); return *this;}
+    template<typename SeverityCountsT = SeverityCounts>
+    void SetSeverityCounts(SeverityCountsT&& value) { m_severityCountsHasBeenSet = true; m_severityCounts = std::forward<SeverityCountsT>(value); }
+    template<typename SeverityCountsT = SeverityCounts>
+    AccountAggregation& WithSeverityCounts(SeverityCountsT&& value) { SetSeverityCounts(std::forward<SeverityCountsT>(value)); return *this;}
     ///@}
   private:
 

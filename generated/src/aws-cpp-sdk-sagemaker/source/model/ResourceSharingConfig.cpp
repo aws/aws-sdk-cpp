@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ResourceSharingConfig::ResourceSharingConfig() : 
-    m_strategy(ResourceSharingStrategy::NOT_SET),
-    m_strategyHasBeenSet(false),
-    m_borrowLimit(0),
-    m_borrowLimitHasBeenSet(false)
-{
-}
-
 ResourceSharingConfig::ResourceSharingConfig(JsonView jsonValue)
-  : ResourceSharingConfig()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ResourceSharingConfig& ResourceSharingConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Strategy"))
   {
     m_strategy = ResourceSharingStrategyMapper::GetResourceSharingStrategyForName(jsonValue.GetString("Strategy"));
-
     m_strategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BorrowLimit"))
   {
     m_borrowLimit = jsonValue.GetInteger("BorrowLimit");
-
     m_borrowLimitHasBeenSet = true;
   }
-
   return *this;
 }
 

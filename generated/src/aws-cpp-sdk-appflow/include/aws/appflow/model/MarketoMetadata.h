@@ -29,7 +29,7 @@ namespace Model
   class MarketoMetadata
   {
   public:
-    AWS_APPFLOW_API MarketoMetadata();
+    AWS_APPFLOW_API MarketoMetadata() = default;
     AWS_APPFLOW_API MarketoMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API MarketoMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;

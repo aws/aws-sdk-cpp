@@ -29,7 +29,7 @@ namespace Model
   class ListPrincipalsForPortfolioResult
   {
   public:
-    AWS_SERVICECATALOG_API ListPrincipalsForPortfolioResult();
+    AWS_SERVICECATALOG_API ListPrincipalsForPortfolioResult() = default;
     AWS_SERVICECATALOG_API ListPrincipalsForPortfolioResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SERVICECATALOG_API ListPrincipalsForPortfolioResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>The <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s
      * associated with the portfolio.</p>
      */
-    inline const Aws::Vector<Principal>& GetPrincipals() const{ return m_principals; }
-    inline void SetPrincipals(const Aws::Vector<Principal>& value) { m_principals = value; }
-    inline void SetPrincipals(Aws::Vector<Principal>&& value) { m_principals = std::move(value); }
-    inline ListPrincipalsForPortfolioResult& WithPrincipals(const Aws::Vector<Principal>& value) { SetPrincipals(value); return *this;}
-    inline ListPrincipalsForPortfolioResult& WithPrincipals(Aws::Vector<Principal>&& value) { SetPrincipals(std::move(value)); return *this;}
-    inline ListPrincipalsForPortfolioResult& AddPrincipals(const Principal& value) { m_principals.push_back(value); return *this; }
-    inline ListPrincipalsForPortfolioResult& AddPrincipals(Principal&& value) { m_principals.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Principal>& GetPrincipals() const { return m_principals; }
+    template<typename PrincipalsT = Aws::Vector<Principal>>
+    void SetPrincipals(PrincipalsT&& value) { m_principalsHasBeenSet = true; m_principals = std::forward<PrincipalsT>(value); }
+    template<typename PrincipalsT = Aws::Vector<Principal>>
+    ListPrincipalsForPortfolioResult& WithPrincipals(PrincipalsT&& value) { SetPrincipals(std::forward<PrincipalsT>(value)); return *this;}
+    template<typename PrincipalsT = Principal>
+    ListPrincipalsForPortfolioResult& AddPrincipals(PrincipalsT&& value) { m_principalsHasBeenSet = true; m_principals.emplace_back(std::forward<PrincipalsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,32 +53,31 @@ namespace Model
      * <p>The page token to use to retrieve the next set of results. If there are no
      * additional results, this value is null.</p>
      */
-    inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
-    inline void SetNextPageToken(const Aws::String& value) { m_nextPageToken = value; }
-    inline void SetNextPageToken(Aws::String&& value) { m_nextPageToken = std::move(value); }
-    inline void SetNextPageToken(const char* value) { m_nextPageToken.assign(value); }
-    inline ListPrincipalsForPortfolioResult& WithNextPageToken(const Aws::String& value) { SetNextPageToken(value); return *this;}
-    inline ListPrincipalsForPortfolioResult& WithNextPageToken(Aws::String&& value) { SetNextPageToken(std::move(value)); return *this;}
-    inline ListPrincipalsForPortfolioResult& WithNextPageToken(const char* value) { SetNextPageToken(value); return *this;}
+    inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+    template<typename NextPageTokenT = Aws::String>
+    void SetNextPageToken(NextPageTokenT&& value) { m_nextPageTokenHasBeenSet = true; m_nextPageToken = std::forward<NextPageTokenT>(value); }
+    template<typename NextPageTokenT = Aws::String>
+    ListPrincipalsForPortfolioResult& WithNextPageToken(NextPageTokenT&& value) { SetNextPageToken(std::forward<NextPageTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListPrincipalsForPortfolioResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListPrincipalsForPortfolioResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListPrincipalsForPortfolioResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListPrincipalsForPortfolioResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Principal> m_principals;
+    bool m_principalsHasBeenSet = false;
 
     Aws::String m_nextPageToken;
+    bool m_nextPageTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

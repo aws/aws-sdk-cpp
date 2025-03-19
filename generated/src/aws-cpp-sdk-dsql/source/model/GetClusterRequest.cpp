@@ -12,11 +12,6 @@ using namespace Aws::DSQL::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetClusterRequest::GetClusterRequest() : 
-    m_identifierHasBeenSet(false)
-{
-}
-
 Aws::String GetClusterRequest::SerializePayload() const
 {
   return {};

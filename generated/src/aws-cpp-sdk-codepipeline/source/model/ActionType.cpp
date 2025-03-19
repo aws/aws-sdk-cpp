@@ -18,17 +18,7 @@ namespace CodePipeline
 namespace Model
 {
 
-ActionType::ActionType() : 
-    m_idHasBeenSet(false),
-    m_settingsHasBeenSet(false),
-    m_actionConfigurationPropertiesHasBeenSet(false),
-    m_inputArtifactDetailsHasBeenSet(false),
-    m_outputArtifactDetailsHasBeenSet(false)
-{
-}
-
 ActionType::ActionType(JsonView jsonValue)
-  : ActionType()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ ActionType& ActionType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetObject("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("settings"))
   {
     m_settings = jsonValue.GetObject("settings");
-
     m_settingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionConfigurationProperties"))
   {
     Aws::Utils::Array<JsonView> actionConfigurationPropertiesJsonList = jsonValue.GetArray("actionConfigurationProperties");
@@ -58,21 +44,16 @@ ActionType& ActionType::operator =(JsonView jsonValue)
     }
     m_actionConfigurationPropertiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("inputArtifactDetails"))
   {
     m_inputArtifactDetails = jsonValue.GetObject("inputArtifactDetails");
-
     m_inputArtifactDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outputArtifactDetails"))
   {
     m_outputArtifactDetails = jsonValue.GetObject("outputArtifactDetails");
-
     m_outputArtifactDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -29,7 +29,7 @@ namespace Model
   class DisassociateSubnetsResult
   {
   public:
-    AWS_NETWORKFIREWALL_API DisassociateSubnetsResult();
+    AWS_NETWORKFIREWALL_API DisassociateSubnetsResult() = default;
     AWS_NETWORKFIREWALL_API DisassociateSubnetsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NETWORKFIREWALL_API DisassociateSubnetsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the firewall.</p>
      */
-    inline const Aws::String& GetFirewallArn() const{ return m_firewallArn; }
-    inline void SetFirewallArn(const Aws::String& value) { m_firewallArn = value; }
-    inline void SetFirewallArn(Aws::String&& value) { m_firewallArn = std::move(value); }
-    inline void SetFirewallArn(const char* value) { m_firewallArn.assign(value); }
-    inline DisassociateSubnetsResult& WithFirewallArn(const Aws::String& value) { SetFirewallArn(value); return *this;}
-    inline DisassociateSubnetsResult& WithFirewallArn(Aws::String&& value) { SetFirewallArn(std::move(value)); return *this;}
-    inline DisassociateSubnetsResult& WithFirewallArn(const char* value) { SetFirewallArn(value); return *this;}
+    inline const Aws::String& GetFirewallArn() const { return m_firewallArn; }
+    template<typename FirewallArnT = Aws::String>
+    void SetFirewallArn(FirewallArnT&& value) { m_firewallArnHasBeenSet = true; m_firewallArn = std::forward<FirewallArnT>(value); }
+    template<typename FirewallArnT = Aws::String>
+    DisassociateSubnetsResult& WithFirewallArn(FirewallArnT&& value) { SetFirewallArn(std::forward<FirewallArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,26 +50,24 @@ namespace Model
      * <p>The descriptive name of the firewall. You can't change the name of a firewall
      * after you create it.</p>
      */
-    inline const Aws::String& GetFirewallName() const{ return m_firewallName; }
-    inline void SetFirewallName(const Aws::String& value) { m_firewallName = value; }
-    inline void SetFirewallName(Aws::String&& value) { m_firewallName = std::move(value); }
-    inline void SetFirewallName(const char* value) { m_firewallName.assign(value); }
-    inline DisassociateSubnetsResult& WithFirewallName(const Aws::String& value) { SetFirewallName(value); return *this;}
-    inline DisassociateSubnetsResult& WithFirewallName(Aws::String&& value) { SetFirewallName(std::move(value)); return *this;}
-    inline DisassociateSubnetsResult& WithFirewallName(const char* value) { SetFirewallName(value); return *this;}
+    inline const Aws::String& GetFirewallName() const { return m_firewallName; }
+    template<typename FirewallNameT = Aws::String>
+    void SetFirewallName(FirewallNameT&& value) { m_firewallNameHasBeenSet = true; m_firewallName = std::forward<FirewallNameT>(value); }
+    template<typename FirewallNameT = Aws::String>
+    DisassociateSubnetsResult& WithFirewallName(FirewallNameT&& value) { SetFirewallName(std::forward<FirewallNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The IDs of the subnets that are associated with the firewall. </p>
      */
-    inline const Aws::Vector<SubnetMapping>& GetSubnetMappings() const{ return m_subnetMappings; }
-    inline void SetSubnetMappings(const Aws::Vector<SubnetMapping>& value) { m_subnetMappings = value; }
-    inline void SetSubnetMappings(Aws::Vector<SubnetMapping>&& value) { m_subnetMappings = std::move(value); }
-    inline DisassociateSubnetsResult& WithSubnetMappings(const Aws::Vector<SubnetMapping>& value) { SetSubnetMappings(value); return *this;}
-    inline DisassociateSubnetsResult& WithSubnetMappings(Aws::Vector<SubnetMapping>&& value) { SetSubnetMappings(std::move(value)); return *this;}
-    inline DisassociateSubnetsResult& AddSubnetMappings(const SubnetMapping& value) { m_subnetMappings.push_back(value); return *this; }
-    inline DisassociateSubnetsResult& AddSubnetMappings(SubnetMapping&& value) { m_subnetMappings.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<SubnetMapping>& GetSubnetMappings() const { return m_subnetMappings; }
+    template<typename SubnetMappingsT = Aws::Vector<SubnetMapping>>
+    void SetSubnetMappings(SubnetMappingsT&& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings = std::forward<SubnetMappingsT>(value); }
+    template<typename SubnetMappingsT = Aws::Vector<SubnetMapping>>
+    DisassociateSubnetsResult& WithSubnetMappings(SubnetMappingsT&& value) { SetSubnetMappings(std::forward<SubnetMappingsT>(value)); return *this;}
+    template<typename SubnetMappingsT = SubnetMapping>
+    DisassociateSubnetsResult& AddSubnetMappings(SubnetMappingsT&& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings.emplace_back(std::forward<SubnetMappingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -89,36 +85,37 @@ namespace Model
      * to get a current copy of it with a new token. Reapply your changes as needed,
      * then try the operation again using the new token. </p>
      */
-    inline const Aws::String& GetUpdateToken() const{ return m_updateToken; }
-    inline void SetUpdateToken(const Aws::String& value) { m_updateToken = value; }
-    inline void SetUpdateToken(Aws::String&& value) { m_updateToken = std::move(value); }
-    inline void SetUpdateToken(const char* value) { m_updateToken.assign(value); }
-    inline DisassociateSubnetsResult& WithUpdateToken(const Aws::String& value) { SetUpdateToken(value); return *this;}
-    inline DisassociateSubnetsResult& WithUpdateToken(Aws::String&& value) { SetUpdateToken(std::move(value)); return *this;}
-    inline DisassociateSubnetsResult& WithUpdateToken(const char* value) { SetUpdateToken(value); return *this;}
+    inline const Aws::String& GetUpdateToken() const { return m_updateToken; }
+    template<typename UpdateTokenT = Aws::String>
+    void SetUpdateToken(UpdateTokenT&& value) { m_updateTokenHasBeenSet = true; m_updateToken = std::forward<UpdateTokenT>(value); }
+    template<typename UpdateTokenT = Aws::String>
+    DisassociateSubnetsResult& WithUpdateToken(UpdateTokenT&& value) { SetUpdateToken(std::forward<UpdateTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DisassociateSubnetsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DisassociateSubnetsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DisassociateSubnetsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DisassociateSubnetsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_firewallArn;
+    bool m_firewallArnHasBeenSet = false;
 
     Aws::String m_firewallName;
+    bool m_firewallNameHasBeenSet = false;
 
     Aws::Vector<SubnetMapping> m_subnetMappings;
+    bool m_subnetMappingsHasBeenSet = false;
 
     Aws::String m_updateToken;
+    bool m_updateTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

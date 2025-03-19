@@ -30,7 +30,7 @@ namespace Model
   class BatchGetStandardsControlAssociationsResult
   {
   public:
-    AWS_SECURITYHUB_API BatchGetStandardsControlAssociationsResult();
+    AWS_SECURITYHUB_API BatchGetStandardsControlAssociationsResult() = default;
     AWS_SECURITYHUB_API BatchGetStandardsControlAssociationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECURITYHUB_API BatchGetStandardsControlAssociationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -40,13 +40,13 @@ namespace Model
      * <p>Provides the enablement status of a security control in a specified standard
      * and other details for the control in relation to the specified standard. </p>
      */
-    inline const Aws::Vector<StandardsControlAssociationDetail>& GetStandardsControlAssociationDetails() const{ return m_standardsControlAssociationDetails; }
-    inline void SetStandardsControlAssociationDetails(const Aws::Vector<StandardsControlAssociationDetail>& value) { m_standardsControlAssociationDetails = value; }
-    inline void SetStandardsControlAssociationDetails(Aws::Vector<StandardsControlAssociationDetail>&& value) { m_standardsControlAssociationDetails = std::move(value); }
-    inline BatchGetStandardsControlAssociationsResult& WithStandardsControlAssociationDetails(const Aws::Vector<StandardsControlAssociationDetail>& value) { SetStandardsControlAssociationDetails(value); return *this;}
-    inline BatchGetStandardsControlAssociationsResult& WithStandardsControlAssociationDetails(Aws::Vector<StandardsControlAssociationDetail>&& value) { SetStandardsControlAssociationDetails(std::move(value)); return *this;}
-    inline BatchGetStandardsControlAssociationsResult& AddStandardsControlAssociationDetails(const StandardsControlAssociationDetail& value) { m_standardsControlAssociationDetails.push_back(value); return *this; }
-    inline BatchGetStandardsControlAssociationsResult& AddStandardsControlAssociationDetails(StandardsControlAssociationDetail&& value) { m_standardsControlAssociationDetails.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<StandardsControlAssociationDetail>& GetStandardsControlAssociationDetails() const { return m_standardsControlAssociationDetails; }
+    template<typename StandardsControlAssociationDetailsT = Aws::Vector<StandardsControlAssociationDetail>>
+    void SetStandardsControlAssociationDetails(StandardsControlAssociationDetailsT&& value) { m_standardsControlAssociationDetailsHasBeenSet = true; m_standardsControlAssociationDetails = std::forward<StandardsControlAssociationDetailsT>(value); }
+    template<typename StandardsControlAssociationDetailsT = Aws::Vector<StandardsControlAssociationDetail>>
+    BatchGetStandardsControlAssociationsResult& WithStandardsControlAssociationDetails(StandardsControlAssociationDetailsT&& value) { SetStandardsControlAssociationDetails(std::forward<StandardsControlAssociationDetailsT>(value)); return *this;}
+    template<typename StandardsControlAssociationDetailsT = StandardsControlAssociationDetail>
+    BatchGetStandardsControlAssociationsResult& AddStandardsControlAssociationDetails(StandardsControlAssociationDetailsT&& value) { m_standardsControlAssociationDetailsHasBeenSet = true; m_standardsControlAssociationDetails.emplace_back(std::forward<StandardsControlAssociationDetailsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +55,33 @@ namespace Model
      * <code>SecurityControlArn</code>, or a mix of both parameters) whose enablement
      * status in a specified standard cannot be returned. </p>
      */
-    inline const Aws::Vector<UnprocessedStandardsControlAssociation>& GetUnprocessedAssociations() const{ return m_unprocessedAssociations; }
-    inline void SetUnprocessedAssociations(const Aws::Vector<UnprocessedStandardsControlAssociation>& value) { m_unprocessedAssociations = value; }
-    inline void SetUnprocessedAssociations(Aws::Vector<UnprocessedStandardsControlAssociation>&& value) { m_unprocessedAssociations = std::move(value); }
-    inline BatchGetStandardsControlAssociationsResult& WithUnprocessedAssociations(const Aws::Vector<UnprocessedStandardsControlAssociation>& value) { SetUnprocessedAssociations(value); return *this;}
-    inline BatchGetStandardsControlAssociationsResult& WithUnprocessedAssociations(Aws::Vector<UnprocessedStandardsControlAssociation>&& value) { SetUnprocessedAssociations(std::move(value)); return *this;}
-    inline BatchGetStandardsControlAssociationsResult& AddUnprocessedAssociations(const UnprocessedStandardsControlAssociation& value) { m_unprocessedAssociations.push_back(value); return *this; }
-    inline BatchGetStandardsControlAssociationsResult& AddUnprocessedAssociations(UnprocessedStandardsControlAssociation&& value) { m_unprocessedAssociations.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<UnprocessedStandardsControlAssociation>& GetUnprocessedAssociations() const { return m_unprocessedAssociations; }
+    template<typename UnprocessedAssociationsT = Aws::Vector<UnprocessedStandardsControlAssociation>>
+    void SetUnprocessedAssociations(UnprocessedAssociationsT&& value) { m_unprocessedAssociationsHasBeenSet = true; m_unprocessedAssociations = std::forward<UnprocessedAssociationsT>(value); }
+    template<typename UnprocessedAssociationsT = Aws::Vector<UnprocessedStandardsControlAssociation>>
+    BatchGetStandardsControlAssociationsResult& WithUnprocessedAssociations(UnprocessedAssociationsT&& value) { SetUnprocessedAssociations(std::forward<UnprocessedAssociationsT>(value)); return *this;}
+    template<typename UnprocessedAssociationsT = UnprocessedStandardsControlAssociation>
+    BatchGetStandardsControlAssociationsResult& AddUnprocessedAssociations(UnprocessedAssociationsT&& value) { m_unprocessedAssociationsHasBeenSet = true; m_unprocessedAssociations.emplace_back(std::forward<UnprocessedAssociationsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline BatchGetStandardsControlAssociationsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline BatchGetStandardsControlAssociationsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline BatchGetStandardsControlAssociationsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    BatchGetStandardsControlAssociationsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<StandardsControlAssociationDetail> m_standardsControlAssociationDetails;
+    bool m_standardsControlAssociationDetailsHasBeenSet = false;
 
     Aws::Vector<UnprocessedStandardsControlAssociation> m_unprocessedAssociations;
+    bool m_unprocessedAssociationsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

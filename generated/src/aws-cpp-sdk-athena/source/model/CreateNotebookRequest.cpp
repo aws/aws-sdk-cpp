@@ -12,13 +12,6 @@ using namespace Aws::Athena::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateNotebookRequest::CreateNotebookRequest() : 
-    m_workGroupHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false)
-{
-}
-
 Aws::String CreateNotebookRequest::SerializePayload() const
 {
   JsonValue payload;

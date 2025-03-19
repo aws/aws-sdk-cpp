@@ -18,20 +18,7 @@ namespace ObservabilityAdmin
 namespace Model
 {
 
-TelemetryConfiguration::TelemetryConfiguration() : 
-    m_accountIdentifierHasBeenSet(false),
-    m_telemetryConfigurationStateHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceIdentifierHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false),
-    m_lastUpdateTimeStamp(0),
-    m_lastUpdateTimeStampHasBeenSet(false)
-{
-}
-
 TelemetryConfiguration::TelemetryConfiguration(JsonView jsonValue)
-  : TelemetryConfiguration()
 {
   *this = jsonValue;
 }
@@ -41,10 +28,8 @@ TelemetryConfiguration& TelemetryConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AccountIdentifier"))
   {
     m_accountIdentifier = jsonValue.GetString("AccountIdentifier");
-
     m_accountIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TelemetryConfigurationState"))
   {
     Aws::Map<Aws::String, JsonView> telemetryConfigurationStateJsonMap = jsonValue.GetObject("TelemetryConfigurationState").GetAllObjects();
@@ -54,21 +39,16 @@ TelemetryConfiguration& TelemetryConfiguration::operator =(JsonView jsonValue)
     }
     m_telemetryConfigurationStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = ResourceTypeMapper::GetResourceTypeForName(jsonValue.GetString("ResourceType"));
-
     m_resourceTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceIdentifier"))
   {
     m_resourceIdentifier = jsonValue.GetString("ResourceIdentifier");
-
     m_resourceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceTags"))
   {
     Aws::Map<Aws::String, JsonView> resourceTagsJsonMap = jsonValue.GetObject("ResourceTags").GetAllObjects();
@@ -78,14 +58,11 @@ TelemetryConfiguration& TelemetryConfiguration::operator =(JsonView jsonValue)
     }
     m_resourceTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdateTimeStamp"))
   {
     m_lastUpdateTimeStamp = jsonValue.GetInt64("LastUpdateTimeStamp");
-
     m_lastUpdateTimeStampHasBeenSet = true;
   }
-
   return *this;
 }
 

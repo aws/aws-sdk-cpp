@@ -26,7 +26,7 @@ namespace Model
   class BlobAttributeValue
   {
   public:
-    AWS_EC2_API BlobAttributeValue();
+    AWS_EC2_API BlobAttributeValue() = default;
     AWS_EC2_API BlobAttributeValue(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API BlobAttributeValue& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -36,16 +36,16 @@ namespace Model
 
     ///@{
     
-    inline const Aws::Utils::ByteBuffer& GetValue() const{ return m_value; }
+    inline const Aws::Utils::ByteBuffer& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::Utils::ByteBuffer& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::Utils::ByteBuffer&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline BlobAttributeValue& WithValue(const Aws::Utils::ByteBuffer& value) { SetValue(value); return *this;}
-    inline BlobAttributeValue& WithValue(Aws::Utils::ByteBuffer&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = Aws::Utils::ByteBuffer>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::Utils::ByteBuffer>
+    BlobAttributeValue& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    Aws::Utils::ByteBuffer m_value;
+    Aws::Utils::ByteBuffer m_value{};
     bool m_valueHasBeenSet = false;
   };
 

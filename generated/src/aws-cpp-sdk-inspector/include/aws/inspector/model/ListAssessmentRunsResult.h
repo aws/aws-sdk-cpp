@@ -28,7 +28,7 @@ namespace Model
   class ListAssessmentRunsResult
   {
   public:
-    AWS_INSPECTOR_API ListAssessmentRunsResult();
+    AWS_INSPECTOR_API ListAssessmentRunsResult() = default;
     AWS_INSPECTOR_API ListAssessmentRunsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_INSPECTOR_API ListAssessmentRunsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,14 +38,13 @@ namespace Model
      * <p>A list of ARNs that specifies the assessment runs that are returned by the
      * action.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetAssessmentRunArns() const{ return m_assessmentRunArns; }
-    inline void SetAssessmentRunArns(const Aws::Vector<Aws::String>& value) { m_assessmentRunArns = value; }
-    inline void SetAssessmentRunArns(Aws::Vector<Aws::String>&& value) { m_assessmentRunArns = std::move(value); }
-    inline ListAssessmentRunsResult& WithAssessmentRunArns(const Aws::Vector<Aws::String>& value) { SetAssessmentRunArns(value); return *this;}
-    inline ListAssessmentRunsResult& WithAssessmentRunArns(Aws::Vector<Aws::String>&& value) { SetAssessmentRunArns(std::move(value)); return *this;}
-    inline ListAssessmentRunsResult& AddAssessmentRunArns(const Aws::String& value) { m_assessmentRunArns.push_back(value); return *this; }
-    inline ListAssessmentRunsResult& AddAssessmentRunArns(Aws::String&& value) { m_assessmentRunArns.push_back(std::move(value)); return *this; }
-    inline ListAssessmentRunsResult& AddAssessmentRunArns(const char* value) { m_assessmentRunArns.push_back(value); return *this; }
+    inline const Aws::Vector<Aws::String>& GetAssessmentRunArns() const { return m_assessmentRunArns; }
+    template<typename AssessmentRunArnsT = Aws::Vector<Aws::String>>
+    void SetAssessmentRunArns(AssessmentRunArnsT&& value) { m_assessmentRunArnsHasBeenSet = true; m_assessmentRunArns = std::forward<AssessmentRunArnsT>(value); }
+    template<typename AssessmentRunArnsT = Aws::Vector<Aws::String>>
+    ListAssessmentRunsResult& WithAssessmentRunArns(AssessmentRunArnsT&& value) { SetAssessmentRunArns(std::forward<AssessmentRunArnsT>(value)); return *this;}
+    template<typename AssessmentRunArnsT = Aws::String>
+    ListAssessmentRunsResult& AddAssessmentRunArns(AssessmentRunArnsT&& value) { m_assessmentRunArnsHasBeenSet = true; m_assessmentRunArns.emplace_back(std::forward<AssessmentRunArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -55,32 +54,31 @@ namespace Model
      * <b>nextToken</b> parameter in a subsequent pagination request. If there is no
      * more data to be listed, this parameter is set to null.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListAssessmentRunsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAssessmentRunsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAssessmentRunsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAssessmentRunsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListAssessmentRunsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListAssessmentRunsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListAssessmentRunsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListAssessmentRunsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<Aws::String> m_assessmentRunArns;
+    bool m_assessmentRunArnsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

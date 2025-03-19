@@ -18,14 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-PipeEnrichmentParameters::PipeEnrichmentParameters() : 
-    m_inputTemplateHasBeenSet(false),
-    m_httpParametersHasBeenSet(false)
-{
-}
-
 PipeEnrichmentParameters::PipeEnrichmentParameters(JsonView jsonValue)
-  : PipeEnrichmentParameters()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ PipeEnrichmentParameters& PipeEnrichmentParameters::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("InputTemplate"))
   {
     m_inputTemplate = jsonValue.GetString("InputTemplate");
-
     m_inputTemplateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HttpParameters"))
   {
     m_httpParameters = jsonValue.GetObject("HttpParameters");
-
     m_httpParametersHasBeenSet = true;
   }
-
   return *this;
 }
 

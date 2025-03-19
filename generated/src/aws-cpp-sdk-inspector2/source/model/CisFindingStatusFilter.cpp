@@ -18,16 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-CisFindingStatusFilter::CisFindingStatusFilter() : 
-    m_comparison(CisFindingStatusComparison::NOT_SET),
-    m_comparisonHasBeenSet(false),
-    m_value(CisFindingStatus::NOT_SET),
-    m_valueHasBeenSet(false)
-{
-}
-
 CisFindingStatusFilter::CisFindingStatusFilter(JsonView jsonValue)
-  : CisFindingStatusFilter()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ CisFindingStatusFilter& CisFindingStatusFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("comparison"))
   {
     m_comparison = CisFindingStatusComparisonMapper::GetCisFindingStatusComparisonForName(jsonValue.GetString("comparison"));
-
     m_comparisonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = CisFindingStatusMapper::GetCisFindingStatusForName(jsonValue.GetString("value"));
-
     m_valueHasBeenSet = true;
   }
-
   return *this;
 }
 

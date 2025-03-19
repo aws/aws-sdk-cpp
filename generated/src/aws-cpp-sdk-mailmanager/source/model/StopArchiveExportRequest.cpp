@@ -12,11 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopArchiveExportRequest::StopArchiveExportRequest() : 
-    m_exportIdHasBeenSet(false)
-{
-}
-
 Aws::String StopArchiveExportRequest::SerializePayload() const
 {
   JsonValue payload;

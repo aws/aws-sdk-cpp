@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ComposeEnvironmentsResult::ComposeEnvironmentsResult()
-{
-}
-
 ComposeEnvironmentsResult::ComposeEnvironmentsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ ComposeEnvironmentsResult& ComposeEnvironmentsResult::operator =(const Aws::Amaz
     if(!environmentsNode.IsNull())
     {
       XmlNode environmentsMember = environmentsNode.FirstChild("member");
+      m_environmentsHasBeenSet = !environmentsMember.IsNull();
       while(!environmentsMember.IsNull())
       {
         m_environments.push_back(environmentsMember);
         environmentsMember = environmentsMember.NextNode("member");
       }
 
+      m_environmentsHasBeenSet = true;
     }
     XmlNode nextTokenNode = resultNode.FirstChild("NextToken");
     if(!nextTokenNode.IsNull())
     {
       m_nextToken = Aws::Utils::Xml::DecodeEscapedXmlText(nextTokenNode.GetText());
+      m_nextTokenHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::ElasticBeanstalk::Model::ComposeEnvironmentsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

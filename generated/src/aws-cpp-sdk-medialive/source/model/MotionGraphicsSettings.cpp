@@ -18,13 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-MotionGraphicsSettings::MotionGraphicsSettings() : 
-    m_htmlMotionGraphicsSettingsHasBeenSet(false)
-{
-}
-
 MotionGraphicsSettings::MotionGraphicsSettings(JsonView jsonValue)
-  : MotionGraphicsSettings()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MotionGraphicsSettings& MotionGraphicsSettings::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("htmlMotionGraphicsSettings"))
   {
     m_htmlMotionGraphicsSettings = jsonValue.GetObject("htmlMotionGraphicsSettings");
-
     m_htmlMotionGraphicsSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,13 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-BotVersionLocaleDetails::BotVersionLocaleDetails() : 
-    m_sourceBotVersionHasBeenSet(false)
-{
-}
-
 BotVersionLocaleDetails::BotVersionLocaleDetails(JsonView jsonValue)
-  : BotVersionLocaleDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ BotVersionLocaleDetails& BotVersionLocaleDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("sourceBotVersion"))
   {
     m_sourceBotVersion = jsonValue.GetString("sourceBotVersion");
-
     m_sourceBotVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

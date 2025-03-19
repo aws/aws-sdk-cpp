@@ -33,7 +33,7 @@ namespace Model
   class BatchCreateWorkloadEstimateUsageError
   {
   public:
-    AWS_BCMPRICINGCALCULATOR_API BatchCreateWorkloadEstimateUsageError();
+    AWS_BCMPRICINGCALCULATOR_API BatchCreateWorkloadEstimateUsageError() = default;
     AWS_BCMPRICINGCALCULATOR_API BatchCreateWorkloadEstimateUsageError(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API BatchCreateWorkloadEstimateUsageError& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BCMPRICINGCALCULATOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,47 +43,41 @@ namespace Model
     /**
      * <p> The key of the entry that caused the error. </p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline BatchCreateWorkloadEstimateUsageError& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline BatchCreateWorkloadEstimateUsageError& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline BatchCreateWorkloadEstimateUsageError& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    BatchCreateWorkloadEstimateUsageError& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The error code associated with the failed operation. </p>
      */
-    inline const BatchCreateWorkloadEstimateUsageCode& GetErrorCode() const{ return m_errorCode; }
+    inline BatchCreateWorkloadEstimateUsageCode GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const BatchCreateWorkloadEstimateUsageCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(BatchCreateWorkloadEstimateUsageCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline BatchCreateWorkloadEstimateUsageError& WithErrorCode(const BatchCreateWorkloadEstimateUsageCode& value) { SetErrorCode(value); return *this;}
-    inline BatchCreateWorkloadEstimateUsageError& WithErrorCode(BatchCreateWorkloadEstimateUsageCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline void SetErrorCode(BatchCreateWorkloadEstimateUsageCode value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline BatchCreateWorkloadEstimateUsageError& WithErrorCode(BatchCreateWorkloadEstimateUsageCode value) { SetErrorCode(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> A descriptive message for the error that occurred. </p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline BatchCreateWorkloadEstimateUsageError& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline BatchCreateWorkloadEstimateUsageError& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline BatchCreateWorkloadEstimateUsageError& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    BatchCreateWorkloadEstimateUsageError& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_key;
     bool m_keyHasBeenSet = false;
 
-    BatchCreateWorkloadEstimateUsageCode m_errorCode;
+    BatchCreateWorkloadEstimateUsageCode m_errorCode{BatchCreateWorkloadEstimateUsageCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;

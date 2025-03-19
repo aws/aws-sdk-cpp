@@ -16,10 +16,6 @@ using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetBucketTaggingResult::GetBucketTaggingResult()
-{
-}
-
 GetBucketTaggingResult::GetBucketTaggingResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -36,12 +32,14 @@ GetBucketTaggingResult& GetBucketTaggingResult::operator =(const Aws::AmazonWebS
     if(!tagSetNode.IsNull())
     {
       XmlNode tagSetMember = tagSetNode.FirstChild("Tag");
+      m_tagSetHasBeenSet = !tagSetMember.IsNull();
       while(!tagSetMember.IsNull())
       {
         m_tagSet.push_back(tagSetMember);
         tagSetMember = tagSetMember.NextNode("Tag");
       }
 
+      m_tagSetHasBeenSet = true;
     }
   }
 
@@ -50,6 +48,7 @@ GetBucketTaggingResult& GetBucketTaggingResult::operator =(const Aws::AmazonWebS
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
   return *this;

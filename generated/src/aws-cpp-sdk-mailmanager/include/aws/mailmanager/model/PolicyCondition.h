@@ -35,7 +35,7 @@ namespace Model
   class PolicyCondition
   {
   public:
-    AWS_MAILMANAGER_API PolicyCondition();
+    AWS_MAILMANAGER_API PolicyCondition() = default;
     AWS_MAILMANAGER_API PolicyCondition(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API PolicyCondition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MAILMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,12 @@ namespace Model
      * performs the boolean operation configured in 'Operator' and evaluates the
      * 'Protocol' object against the 'Value'.</p>
      */
-    inline const IngressBooleanExpression& GetBooleanExpression() const{ return m_booleanExpression; }
+    inline const IngressBooleanExpression& GetBooleanExpression() const { return m_booleanExpression; }
     inline bool BooleanExpressionHasBeenSet() const { return m_booleanExpressionHasBeenSet; }
-    inline void SetBooleanExpression(const IngressBooleanExpression& value) { m_booleanExpressionHasBeenSet = true; m_booleanExpression = value; }
-    inline void SetBooleanExpression(IngressBooleanExpression&& value) { m_booleanExpressionHasBeenSet = true; m_booleanExpression = std::move(value); }
-    inline PolicyCondition& WithBooleanExpression(const IngressBooleanExpression& value) { SetBooleanExpression(value); return *this;}
-    inline PolicyCondition& WithBooleanExpression(IngressBooleanExpression&& value) { SetBooleanExpression(std::move(value)); return *this;}
+    template<typename BooleanExpressionT = IngressBooleanExpression>
+    void SetBooleanExpression(BooleanExpressionT&& value) { m_booleanExpressionHasBeenSet = true; m_booleanExpression = std::forward<BooleanExpressionT>(value); }
+    template<typename BooleanExpressionT = IngressBooleanExpression>
+    PolicyCondition& WithBooleanExpression(BooleanExpressionT&& value) { SetBooleanExpression(std::forward<BooleanExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +61,12 @@ namespace Model
      * performs the operation configured in 'Operator' and evaluates the 'Protocol'
      * object against the 'Value'.</p>
      */
-    inline const IngressIpv4Expression& GetIpExpression() const{ return m_ipExpression; }
+    inline const IngressIpv4Expression& GetIpExpression() const { return m_ipExpression; }
     inline bool IpExpressionHasBeenSet() const { return m_ipExpressionHasBeenSet; }
-    inline void SetIpExpression(const IngressIpv4Expression& value) { m_ipExpressionHasBeenSet = true; m_ipExpression = value; }
-    inline void SetIpExpression(IngressIpv4Expression&& value) { m_ipExpressionHasBeenSet = true; m_ipExpression = std::move(value); }
-    inline PolicyCondition& WithIpExpression(const IngressIpv4Expression& value) { SetIpExpression(value); return *this;}
-    inline PolicyCondition& WithIpExpression(IngressIpv4Expression&& value) { SetIpExpression(std::move(value)); return *this;}
+    template<typename IpExpressionT = IngressIpv4Expression>
+    void SetIpExpression(IpExpressionT&& value) { m_ipExpressionHasBeenSet = true; m_ipExpression = std::forward<IpExpressionT>(value); }
+    template<typename IpExpressionT = IngressIpv4Expression>
+    PolicyCondition& WithIpExpression(IpExpressionT&& value) { SetIpExpression(std::forward<IpExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,12 +75,12 @@ namespace Model
      * performs the string operation configured in 'Operator' and evaluates the
      * 'Protocol' object against the 'Value'.</p>
      */
-    inline const IngressStringExpression& GetStringExpression() const{ return m_stringExpression; }
+    inline const IngressStringExpression& GetStringExpression() const { return m_stringExpression; }
     inline bool StringExpressionHasBeenSet() const { return m_stringExpressionHasBeenSet; }
-    inline void SetStringExpression(const IngressStringExpression& value) { m_stringExpressionHasBeenSet = true; m_stringExpression = value; }
-    inline void SetStringExpression(IngressStringExpression&& value) { m_stringExpressionHasBeenSet = true; m_stringExpression = std::move(value); }
-    inline PolicyCondition& WithStringExpression(const IngressStringExpression& value) { SetStringExpression(value); return *this;}
-    inline PolicyCondition& WithStringExpression(IngressStringExpression&& value) { SetStringExpression(std::move(value)); return *this;}
+    template<typename StringExpressionT = IngressStringExpression>
+    void SetStringExpression(StringExpressionT&& value) { m_stringExpressionHasBeenSet = true; m_stringExpression = std::forward<StringExpressionT>(value); }
+    template<typename StringExpressionT = IngressStringExpression>
+    PolicyCondition& WithStringExpression(StringExpressionT&& value) { SetStringExpression(std::forward<StringExpressionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,12 +89,12 @@ namespace Model
      * performs the operation configured in 'Operator' and evaluates the 'Protocol'
      * object against the 'Value'.</p>
      */
-    inline const IngressTlsProtocolExpression& GetTlsExpression() const{ return m_tlsExpression; }
+    inline const IngressTlsProtocolExpression& GetTlsExpression() const { return m_tlsExpression; }
     inline bool TlsExpressionHasBeenSet() const { return m_tlsExpressionHasBeenSet; }
-    inline void SetTlsExpression(const IngressTlsProtocolExpression& value) { m_tlsExpressionHasBeenSet = true; m_tlsExpression = value; }
-    inline void SetTlsExpression(IngressTlsProtocolExpression&& value) { m_tlsExpressionHasBeenSet = true; m_tlsExpression = std::move(value); }
-    inline PolicyCondition& WithTlsExpression(const IngressTlsProtocolExpression& value) { SetTlsExpression(value); return *this;}
-    inline PolicyCondition& WithTlsExpression(IngressTlsProtocolExpression&& value) { SetTlsExpression(std::move(value)); return *this;}
+    template<typename TlsExpressionT = IngressTlsProtocolExpression>
+    void SetTlsExpression(TlsExpressionT&& value) { m_tlsExpressionHasBeenSet = true; m_tlsExpression = std::forward<TlsExpressionT>(value); }
+    template<typename TlsExpressionT = IngressTlsProtocolExpression>
+    PolicyCondition& WithTlsExpression(TlsExpressionT&& value) { SetTlsExpression(std::forward<TlsExpressionT>(value)); return *this;}
     ///@}
   private:
 

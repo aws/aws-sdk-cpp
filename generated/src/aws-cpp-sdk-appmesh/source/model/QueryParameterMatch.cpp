@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-QueryParameterMatch::QueryParameterMatch() : 
-    m_exactHasBeenSet(false)
-{
-}
-
 QueryParameterMatch::QueryParameterMatch(JsonView jsonValue)
-  : QueryParameterMatch()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ QueryParameterMatch& QueryParameterMatch::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("exact"))
   {
     m_exact = jsonValue.GetString("exact");
-
     m_exactHasBeenSet = true;
   }
-
   return *this;
 }
 

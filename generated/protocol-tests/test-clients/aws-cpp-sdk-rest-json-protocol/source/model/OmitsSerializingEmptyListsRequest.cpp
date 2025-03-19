@@ -15,17 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-OmitsSerializingEmptyListsRequest::OmitsSerializingEmptyListsRequest() : 
-    m_queryStringListHasBeenSet(false),
-    m_queryIntegerListHasBeenSet(false),
-    m_queryDoubleListHasBeenSet(false),
-    m_queryBooleanListHasBeenSet(false),
-    m_queryTimestampListHasBeenSet(false),
-    m_queryEnumListHasBeenSet(false),
-    m_queryIntegerEnumListHasBeenSet(false)
-{
-}
-
 Aws::String OmitsSerializingEmptyListsRequest::SerializePayload() const
 {
   return {};

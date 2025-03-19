@@ -18,17 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-TelephonyChannelSubtypeConfig::TelephonyChannelSubtypeConfig() : 
-    m_capacity(0.0),
-    m_capacityHasBeenSet(false),
-    m_connectQueueIdHasBeenSet(false),
-    m_outboundModeHasBeenSet(false),
-    m_defaultOutboundConfigHasBeenSet(false)
-{
-}
-
 TelephonyChannelSubtypeConfig::TelephonyChannelSubtypeConfig(JsonView jsonValue)
-  : TelephonyChannelSubtypeConfig()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ TelephonyChannelSubtypeConfig& TelephonyChannelSubtypeConfig::operator =(JsonVie
   if(jsonValue.ValueExists("capacity"))
   {
     m_capacity = jsonValue.GetDouble("capacity");
-
     m_capacityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("connectQueueId"))
   {
     m_connectQueueId = jsonValue.GetString("connectQueueId");
-
     m_connectQueueIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("outboundMode"))
   {
     m_outboundMode = jsonValue.GetObject("outboundMode");
-
     m_outboundModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("defaultOutboundConfig"))
   {
     m_defaultOutboundConfig = jsonValue.GetObject("defaultOutboundConfig");
-
     m_defaultOutboundConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

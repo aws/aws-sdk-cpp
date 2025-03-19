@@ -18,15 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-CoverageEcsClusterDetails::CoverageEcsClusterDetails() : 
-    m_clusterNameHasBeenSet(false),
-    m_fargateDetailsHasBeenSet(false),
-    m_containerInstanceDetailsHasBeenSet(false)
-{
-}
-
 CoverageEcsClusterDetails::CoverageEcsClusterDetails(JsonView jsonValue)
-  : CoverageEcsClusterDetails()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CoverageEcsClusterDetails& CoverageEcsClusterDetails::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("clusterName"))
   {
     m_clusterName = jsonValue.GetString("clusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fargateDetails"))
   {
     m_fargateDetails = jsonValue.GetObject("fargateDetails");
-
     m_fargateDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("containerInstanceDetails"))
   {
     m_containerInstanceDetails = jsonValue.GetObject("containerInstanceDetails");
-
     m_containerInstanceDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

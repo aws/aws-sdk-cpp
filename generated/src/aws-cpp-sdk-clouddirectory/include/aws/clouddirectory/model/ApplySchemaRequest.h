@@ -21,7 +21,7 @@ namespace Model
   class ApplySchemaRequest : public CloudDirectoryRequest
   {
   public:
-    AWS_CLOUDDIRECTORY_API ApplySchemaRequest();
+    AWS_CLOUDDIRECTORY_API ApplySchemaRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>Published schema Amazon Resource Name (ARN) that needs to be copied. For more
      * information, see <a>arns</a>.</p>
      */
-    inline const Aws::String& GetPublishedSchemaArn() const{ return m_publishedSchemaArn; }
+    inline const Aws::String& GetPublishedSchemaArn() const { return m_publishedSchemaArn; }
     inline bool PublishedSchemaArnHasBeenSet() const { return m_publishedSchemaArnHasBeenSet; }
-    inline void SetPublishedSchemaArn(const Aws::String& value) { m_publishedSchemaArnHasBeenSet = true; m_publishedSchemaArn = value; }
-    inline void SetPublishedSchemaArn(Aws::String&& value) { m_publishedSchemaArnHasBeenSet = true; m_publishedSchemaArn = std::move(value); }
-    inline void SetPublishedSchemaArn(const char* value) { m_publishedSchemaArnHasBeenSet = true; m_publishedSchemaArn.assign(value); }
-    inline ApplySchemaRequest& WithPublishedSchemaArn(const Aws::String& value) { SetPublishedSchemaArn(value); return *this;}
-    inline ApplySchemaRequest& WithPublishedSchemaArn(Aws::String&& value) { SetPublishedSchemaArn(std::move(value)); return *this;}
-    inline ApplySchemaRequest& WithPublishedSchemaArn(const char* value) { SetPublishedSchemaArn(value); return *this;}
+    template<typename PublishedSchemaArnT = Aws::String>
+    void SetPublishedSchemaArn(PublishedSchemaArnT&& value) { m_publishedSchemaArnHasBeenSet = true; m_publishedSchemaArn = std::forward<PublishedSchemaArnT>(value); }
+    template<typename PublishedSchemaArnT = Aws::String>
+    ApplySchemaRequest& WithPublishedSchemaArn(PublishedSchemaArnT&& value) { SetPublishedSchemaArn(std::forward<PublishedSchemaArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -54,14 +52,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
      * into which the schema is copied. For more information, see <a>arns</a>.</p>
      */
-    inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
+    inline const Aws::String& GetDirectoryArn() const { return m_directoryArn; }
     inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
-    inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
-    inline void SetDirectoryArn(Aws::String&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::move(value); }
-    inline void SetDirectoryArn(const char* value) { m_directoryArnHasBeenSet = true; m_directoryArn.assign(value); }
-    inline ApplySchemaRequest& WithDirectoryArn(const Aws::String& value) { SetDirectoryArn(value); return *this;}
-    inline ApplySchemaRequest& WithDirectoryArn(Aws::String&& value) { SetDirectoryArn(std::move(value)); return *this;}
-    inline ApplySchemaRequest& WithDirectoryArn(const char* value) { SetDirectoryArn(value); return *this;}
+    template<typename DirectoryArnT = Aws::String>
+    void SetDirectoryArn(DirectoryArnT&& value) { m_directoryArnHasBeenSet = true; m_directoryArn = std::forward<DirectoryArnT>(value); }
+    template<typename DirectoryArnT = Aws::String>
+    ApplySchemaRequest& WithDirectoryArn(DirectoryArnT&& value) { SetDirectoryArn(std::forward<DirectoryArnT>(value)); return *this;}
     ///@}
   private:
 

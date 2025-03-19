@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-AddTagsResult::AddTagsResult() : 
-    m_resourceType(TaggableResourceType::NOT_SET)
-{
-}
-
 AddTagsResult::AddTagsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : AddTagsResult()
 {
   *this = result;
 }
@@ -34,21 +28,20 @@ AddTagsResult& AddTagsResult::operator =(const Aws::AmazonWebServiceResult<JsonV
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
+    m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceType"))
   {
     m_resourceType = TaggableResourceTypeMapper::GetTaggableResourceTypeForName(jsonValue.GetString("ResourceType"));
-
+    m_resourceTypeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

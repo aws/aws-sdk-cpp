@@ -18,15 +18,7 @@ namespace GuardDuty
 namespace Model
 {
 
-UsageFeatureResult::UsageFeatureResult() : 
-    m_feature(UsageFeature::NOT_SET),
-    m_featureHasBeenSet(false),
-    m_totalHasBeenSet(false)
-{
-}
-
 UsageFeatureResult::UsageFeatureResult(JsonView jsonValue)
-  : UsageFeatureResult()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ UsageFeatureResult& UsageFeatureResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("feature"))
   {
     m_feature = UsageFeatureMapper::GetUsageFeatureForName(jsonValue.GetString("feature"));
-
     m_featureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("total"))
   {
     m_total = jsonValue.GetObject("total");
-
     m_totalHasBeenSet = true;
   }
-
   return *this;
 }
 

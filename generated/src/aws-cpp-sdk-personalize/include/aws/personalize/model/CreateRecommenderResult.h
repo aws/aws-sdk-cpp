@@ -27,7 +27,7 @@ namespace Model
   class CreateRecommenderResult
   {
   public:
-    AWS_PERSONALIZE_API CreateRecommenderResult();
+    AWS_PERSONALIZE_API CreateRecommenderResult() = default;
     AWS_PERSONALIZE_API CreateRecommenderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PERSONALIZE_API CreateRecommenderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,30 +36,28 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the recommender.</p>
      */
-    inline const Aws::String& GetRecommenderArn() const{ return m_recommenderArn; }
-    inline void SetRecommenderArn(const Aws::String& value) { m_recommenderArn = value; }
-    inline void SetRecommenderArn(Aws::String&& value) { m_recommenderArn = std::move(value); }
-    inline void SetRecommenderArn(const char* value) { m_recommenderArn.assign(value); }
-    inline CreateRecommenderResult& WithRecommenderArn(const Aws::String& value) { SetRecommenderArn(value); return *this;}
-    inline CreateRecommenderResult& WithRecommenderArn(Aws::String&& value) { SetRecommenderArn(std::move(value)); return *this;}
-    inline CreateRecommenderResult& WithRecommenderArn(const char* value) { SetRecommenderArn(value); return *this;}
+    inline const Aws::String& GetRecommenderArn() const { return m_recommenderArn; }
+    template<typename RecommenderArnT = Aws::String>
+    void SetRecommenderArn(RecommenderArnT&& value) { m_recommenderArnHasBeenSet = true; m_recommenderArn = std::forward<RecommenderArnT>(value); }
+    template<typename RecommenderArnT = Aws::String>
+    CreateRecommenderResult& WithRecommenderArn(RecommenderArnT&& value) { SetRecommenderArn(std::forward<RecommenderArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateRecommenderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateRecommenderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateRecommenderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateRecommenderResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_recommenderArn;
+    bool m_recommenderArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

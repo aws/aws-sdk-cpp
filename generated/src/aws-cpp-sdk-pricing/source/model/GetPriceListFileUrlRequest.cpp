@@ -12,12 +12,6 @@ using namespace Aws::Pricing::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetPriceListFileUrlRequest::GetPriceListFileUrlRequest() : 
-    m_priceListArnHasBeenSet(false),
-    m_fileFormatHasBeenSet(false)
-{
-}
-
 Aws::String GetPriceListFileUrlRequest::SerializePayload() const
 {
   JsonValue payload;

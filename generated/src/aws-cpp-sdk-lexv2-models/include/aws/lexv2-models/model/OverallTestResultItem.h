@@ -33,7 +33,7 @@ namespace Model
   class OverallTestResultItem
   {
   public:
-    AWS_LEXMODELSV2_API OverallTestResultItem();
+    AWS_LEXMODELSV2_API OverallTestResultItem() = default;
     AWS_LEXMODELSV2_API OverallTestResultItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API OverallTestResultItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>Indicates whether the conversation contains multiple turns or not.</p>
      */
-    inline bool GetMultiTurnConversation() const{ return m_multiTurnConversation; }
+    inline bool GetMultiTurnConversation() const { return m_multiTurnConversation; }
     inline bool MultiTurnConversationHasBeenSet() const { return m_multiTurnConversationHasBeenSet; }
     inline void SetMultiTurnConversation(bool value) { m_multiTurnConversationHasBeenSet = true; m_multiTurnConversation = value; }
     inline OverallTestResultItem& WithMultiTurnConversation(bool value) { SetMultiTurnConversation(value); return *this;}
@@ -53,7 +53,7 @@ namespace Model
     /**
      * <p>The total number of overall results in the result of the test execution.</p>
      */
-    inline int GetTotalResultCount() const{ return m_totalResultCount; }
+    inline int GetTotalResultCount() const { return m_totalResultCount; }
     inline bool TotalResultCountHasBeenSet() const { return m_totalResultCountHasBeenSet; }
     inline void SetTotalResultCount(int value) { m_totalResultCountHasBeenSet = true; m_totalResultCount = value; }
     inline OverallTestResultItem& WithTotalResultCount(int value) { SetTotalResultCount(value); return *this;}
@@ -63,35 +63,37 @@ namespace Model
     /**
      * <p>The number of speech transcription results in the overall test.</p>
      */
-    inline const Aws::Map<TestResultMatchStatus, int>& GetSpeechTranscriptionResultCounts() const{ return m_speechTranscriptionResultCounts; }
+    inline const Aws::Map<TestResultMatchStatus, int>& GetSpeechTranscriptionResultCounts() const { return m_speechTranscriptionResultCounts; }
     inline bool SpeechTranscriptionResultCountsHasBeenSet() const { return m_speechTranscriptionResultCountsHasBeenSet; }
-    inline void SetSpeechTranscriptionResultCounts(const Aws::Map<TestResultMatchStatus, int>& value) { m_speechTranscriptionResultCountsHasBeenSet = true; m_speechTranscriptionResultCounts = value; }
-    inline void SetSpeechTranscriptionResultCounts(Aws::Map<TestResultMatchStatus, int>&& value) { m_speechTranscriptionResultCountsHasBeenSet = true; m_speechTranscriptionResultCounts = std::move(value); }
-    inline OverallTestResultItem& WithSpeechTranscriptionResultCounts(const Aws::Map<TestResultMatchStatus, int>& value) { SetSpeechTranscriptionResultCounts(value); return *this;}
-    inline OverallTestResultItem& WithSpeechTranscriptionResultCounts(Aws::Map<TestResultMatchStatus, int>&& value) { SetSpeechTranscriptionResultCounts(std::move(value)); return *this;}
-    inline OverallTestResultItem& AddSpeechTranscriptionResultCounts(const TestResultMatchStatus& key, int value) { m_speechTranscriptionResultCountsHasBeenSet = true; m_speechTranscriptionResultCounts.emplace(key, value); return *this; }
-    inline OverallTestResultItem& AddSpeechTranscriptionResultCounts(TestResultMatchStatus&& key, int value) { m_speechTranscriptionResultCountsHasBeenSet = true; m_speechTranscriptionResultCounts.emplace(std::move(key), value); return *this; }
+    template<typename SpeechTranscriptionResultCountsT = Aws::Map<TestResultMatchStatus, int>>
+    void SetSpeechTranscriptionResultCounts(SpeechTranscriptionResultCountsT&& value) { m_speechTranscriptionResultCountsHasBeenSet = true; m_speechTranscriptionResultCounts = std::forward<SpeechTranscriptionResultCountsT>(value); }
+    template<typename SpeechTranscriptionResultCountsT = Aws::Map<TestResultMatchStatus, int>>
+    OverallTestResultItem& WithSpeechTranscriptionResultCounts(SpeechTranscriptionResultCountsT&& value) { SetSpeechTranscriptionResultCounts(std::forward<SpeechTranscriptionResultCountsT>(value)); return *this;}
+    inline OverallTestResultItem& AddSpeechTranscriptionResultCounts(TestResultMatchStatus key, int value) {
+      m_speechTranscriptionResultCountsHasBeenSet = true; m_speechTranscriptionResultCounts.emplace(key, value); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The number of results that succeeded.</p>
      */
-    inline const Aws::Map<TestResultMatchStatus, int>& GetEndToEndResultCounts() const{ return m_endToEndResultCounts; }
+    inline const Aws::Map<TestResultMatchStatus, int>& GetEndToEndResultCounts() const { return m_endToEndResultCounts; }
     inline bool EndToEndResultCountsHasBeenSet() const { return m_endToEndResultCountsHasBeenSet; }
-    inline void SetEndToEndResultCounts(const Aws::Map<TestResultMatchStatus, int>& value) { m_endToEndResultCountsHasBeenSet = true; m_endToEndResultCounts = value; }
-    inline void SetEndToEndResultCounts(Aws::Map<TestResultMatchStatus, int>&& value) { m_endToEndResultCountsHasBeenSet = true; m_endToEndResultCounts = std::move(value); }
-    inline OverallTestResultItem& WithEndToEndResultCounts(const Aws::Map<TestResultMatchStatus, int>& value) { SetEndToEndResultCounts(value); return *this;}
-    inline OverallTestResultItem& WithEndToEndResultCounts(Aws::Map<TestResultMatchStatus, int>&& value) { SetEndToEndResultCounts(std::move(value)); return *this;}
-    inline OverallTestResultItem& AddEndToEndResultCounts(const TestResultMatchStatus& key, int value) { m_endToEndResultCountsHasBeenSet = true; m_endToEndResultCounts.emplace(key, value); return *this; }
-    inline OverallTestResultItem& AddEndToEndResultCounts(TestResultMatchStatus&& key, int value) { m_endToEndResultCountsHasBeenSet = true; m_endToEndResultCounts.emplace(std::move(key), value); return *this; }
+    template<typename EndToEndResultCountsT = Aws::Map<TestResultMatchStatus, int>>
+    void SetEndToEndResultCounts(EndToEndResultCountsT&& value) { m_endToEndResultCountsHasBeenSet = true; m_endToEndResultCounts = std::forward<EndToEndResultCountsT>(value); }
+    template<typename EndToEndResultCountsT = Aws::Map<TestResultMatchStatus, int>>
+    OverallTestResultItem& WithEndToEndResultCounts(EndToEndResultCountsT&& value) { SetEndToEndResultCounts(std::forward<EndToEndResultCountsT>(value)); return *this;}
+    inline OverallTestResultItem& AddEndToEndResultCounts(TestResultMatchStatus key, int value) {
+      m_endToEndResultCountsHasBeenSet = true; m_endToEndResultCounts.emplace(key, value); return *this;
+    }
     ///@}
   private:
 
-    bool m_multiTurnConversation;
+    bool m_multiTurnConversation{false};
     bool m_multiTurnConversationHasBeenSet = false;
 
-    int m_totalResultCount;
+    int m_totalResultCount{0};
     bool m_totalResultCountHasBeenSet = false;
 
     Aws::Map<TestResultMatchStatus, int> m_speechTranscriptionResultCounts;

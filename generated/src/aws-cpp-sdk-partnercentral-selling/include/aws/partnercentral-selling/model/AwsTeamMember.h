@@ -34,7 +34,7 @@ namespace Model
   class AwsTeamMember
   {
   public:
-    AWS_PARTNERCENTRALSELLING_API AwsTeamMember();
+    AWS_PARTNERCENTRALSELLING_API AwsTeamMember() = default;
     AWS_PARTNERCENTRALSELLING_API AwsTeamMember(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API AwsTeamMember& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PARTNERCENTRALSELLING_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,58 +45,50 @@ namespace Model
      * <p>Specifies the Amazon Web Services team member's business title and indicates
      * their organizational role.</p>
      */
-    inline const AwsMemberBusinessTitle& GetBusinessTitle() const{ return m_businessTitle; }
+    inline AwsMemberBusinessTitle GetBusinessTitle() const { return m_businessTitle; }
     inline bool BusinessTitleHasBeenSet() const { return m_businessTitleHasBeenSet; }
-    inline void SetBusinessTitle(const AwsMemberBusinessTitle& value) { m_businessTitleHasBeenSet = true; m_businessTitle = value; }
-    inline void SetBusinessTitle(AwsMemberBusinessTitle&& value) { m_businessTitleHasBeenSet = true; m_businessTitle = std::move(value); }
-    inline AwsTeamMember& WithBusinessTitle(const AwsMemberBusinessTitle& value) { SetBusinessTitle(value); return *this;}
-    inline AwsTeamMember& WithBusinessTitle(AwsMemberBusinessTitle&& value) { SetBusinessTitle(std::move(value)); return *this;}
+    inline void SetBusinessTitle(AwsMemberBusinessTitle value) { m_businessTitleHasBeenSet = true; m_businessTitle = value; }
+    inline AwsTeamMember& WithBusinessTitle(AwsMemberBusinessTitle value) { SetBusinessTitle(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides the Amazon Web Services team member's email address.</p>
      */
-    inline const Aws::String& GetEmail() const{ return m_email; }
+    inline const Aws::String& GetEmail() const { return m_email; }
     inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
-    inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
-    inline void SetEmail(Aws::String&& value) { m_emailHasBeenSet = true; m_email = std::move(value); }
-    inline void SetEmail(const char* value) { m_emailHasBeenSet = true; m_email.assign(value); }
-    inline AwsTeamMember& WithEmail(const Aws::String& value) { SetEmail(value); return *this;}
-    inline AwsTeamMember& WithEmail(Aws::String&& value) { SetEmail(std::move(value)); return *this;}
-    inline AwsTeamMember& WithEmail(const char* value) { SetEmail(value); return *this;}
+    template<typename EmailT = Aws::String>
+    void SetEmail(EmailT&& value) { m_emailHasBeenSet = true; m_email = std::forward<EmailT>(value); }
+    template<typename EmailT = Aws::String>
+    AwsTeamMember& WithEmail(EmailT&& value) { SetEmail(std::forward<EmailT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides the Amazon Web Services team member's first name.</p>
      */
-    inline const Aws::String& GetFirstName() const{ return m_firstName; }
+    inline const Aws::String& GetFirstName() const { return m_firstName; }
     inline bool FirstNameHasBeenSet() const { return m_firstNameHasBeenSet; }
-    inline void SetFirstName(const Aws::String& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
-    inline void SetFirstName(Aws::String&& value) { m_firstNameHasBeenSet = true; m_firstName = std::move(value); }
-    inline void SetFirstName(const char* value) { m_firstNameHasBeenSet = true; m_firstName.assign(value); }
-    inline AwsTeamMember& WithFirstName(const Aws::String& value) { SetFirstName(value); return *this;}
-    inline AwsTeamMember& WithFirstName(Aws::String&& value) { SetFirstName(std::move(value)); return *this;}
-    inline AwsTeamMember& WithFirstName(const char* value) { SetFirstName(value); return *this;}
+    template<typename FirstNameT = Aws::String>
+    void SetFirstName(FirstNameT&& value) { m_firstNameHasBeenSet = true; m_firstName = std::forward<FirstNameT>(value); }
+    template<typename FirstNameT = Aws::String>
+    AwsTeamMember& WithFirstName(FirstNameT&& value) { SetFirstName(std::forward<FirstNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides the Amazon Web Services team member's last name.</p>
      */
-    inline const Aws::String& GetLastName() const{ return m_lastName; }
+    inline const Aws::String& GetLastName() const { return m_lastName; }
     inline bool LastNameHasBeenSet() const { return m_lastNameHasBeenSet; }
-    inline void SetLastName(const Aws::String& value) { m_lastNameHasBeenSet = true; m_lastName = value; }
-    inline void SetLastName(Aws::String&& value) { m_lastNameHasBeenSet = true; m_lastName = std::move(value); }
-    inline void SetLastName(const char* value) { m_lastNameHasBeenSet = true; m_lastName.assign(value); }
-    inline AwsTeamMember& WithLastName(const Aws::String& value) { SetLastName(value); return *this;}
-    inline AwsTeamMember& WithLastName(Aws::String&& value) { SetLastName(std::move(value)); return *this;}
-    inline AwsTeamMember& WithLastName(const char* value) { SetLastName(value); return *this;}
+    template<typename LastNameT = Aws::String>
+    void SetLastName(LastNameT&& value) { m_lastNameHasBeenSet = true; m_lastName = std::forward<LastNameT>(value); }
+    template<typename LastNameT = Aws::String>
+    AwsTeamMember& WithLastName(LastNameT&& value) { SetLastName(std::forward<LastNameT>(value)); return *this;}
     ///@}
   private:
 
-    AwsMemberBusinessTitle m_businessTitle;
+    AwsMemberBusinessTitle m_businessTitle{AwsMemberBusinessTitle::NOT_SET};
     bool m_businessTitleHasBeenSet = false;
 
     Aws::String m_email;

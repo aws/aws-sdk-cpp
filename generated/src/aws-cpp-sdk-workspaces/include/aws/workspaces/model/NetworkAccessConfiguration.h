@@ -32,7 +32,7 @@ namespace Model
   class NetworkAccessConfiguration
   {
   public:
-    AWS_WORKSPACES_API NetworkAccessConfiguration();
+    AWS_WORKSPACES_API NetworkAccessConfiguration() = default;
     AWS_WORKSPACES_API NetworkAccessConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API NetworkAccessConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKSPACES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>The private IP address of the elastic network interface that is attached to
      * instances in your VPC.</p>
      */
-    inline const Aws::String& GetEniPrivateIpAddress() const{ return m_eniPrivateIpAddress; }
+    inline const Aws::String& GetEniPrivateIpAddress() const { return m_eniPrivateIpAddress; }
     inline bool EniPrivateIpAddressHasBeenSet() const { return m_eniPrivateIpAddressHasBeenSet; }
-    inline void SetEniPrivateIpAddress(const Aws::String& value) { m_eniPrivateIpAddressHasBeenSet = true; m_eniPrivateIpAddress = value; }
-    inline void SetEniPrivateIpAddress(Aws::String&& value) { m_eniPrivateIpAddressHasBeenSet = true; m_eniPrivateIpAddress = std::move(value); }
-    inline void SetEniPrivateIpAddress(const char* value) { m_eniPrivateIpAddressHasBeenSet = true; m_eniPrivateIpAddress.assign(value); }
-    inline NetworkAccessConfiguration& WithEniPrivateIpAddress(const Aws::String& value) { SetEniPrivateIpAddress(value); return *this;}
-    inline NetworkAccessConfiguration& WithEniPrivateIpAddress(Aws::String&& value) { SetEniPrivateIpAddress(std::move(value)); return *this;}
-    inline NetworkAccessConfiguration& WithEniPrivateIpAddress(const char* value) { SetEniPrivateIpAddress(value); return *this;}
+    template<typename EniPrivateIpAddressT = Aws::String>
+    void SetEniPrivateIpAddress(EniPrivateIpAddressT&& value) { m_eniPrivateIpAddressHasBeenSet = true; m_eniPrivateIpAddress = std::forward<EniPrivateIpAddressT>(value); }
+    template<typename EniPrivateIpAddressT = Aws::String>
+    NetworkAccessConfiguration& WithEniPrivateIpAddress(EniPrivateIpAddressT&& value) { SetEniPrivateIpAddress(std::forward<EniPrivateIpAddressT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * instances in your VPC. All network interfaces have the eni-xxxxxxxx resource
      * identifier.</p>
      */
-    inline const Aws::String& GetEniId() const{ return m_eniId; }
+    inline const Aws::String& GetEniId() const { return m_eniId; }
     inline bool EniIdHasBeenSet() const { return m_eniIdHasBeenSet; }
-    inline void SetEniId(const Aws::String& value) { m_eniIdHasBeenSet = true; m_eniId = value; }
-    inline void SetEniId(Aws::String&& value) { m_eniIdHasBeenSet = true; m_eniId = std::move(value); }
-    inline void SetEniId(const char* value) { m_eniIdHasBeenSet = true; m_eniId.assign(value); }
-    inline NetworkAccessConfiguration& WithEniId(const Aws::String& value) { SetEniId(value); return *this;}
-    inline NetworkAccessConfiguration& WithEniId(Aws::String&& value) { SetEniId(std::move(value)); return *this;}
-    inline NetworkAccessConfiguration& WithEniId(const char* value) { SetEniId(value); return *this;}
+    template<typename EniIdT = Aws::String>
+    void SetEniId(EniIdT&& value) { m_eniIdHasBeenSet = true; m_eniId = std::forward<EniIdT>(value); }
+    template<typename EniIdT = Aws::String>
+    NetworkAccessConfiguration& WithEniId(EniIdT&& value) { SetEniId(std::forward<EniIdT>(value)); return *this;}
     ///@}
   private:
 

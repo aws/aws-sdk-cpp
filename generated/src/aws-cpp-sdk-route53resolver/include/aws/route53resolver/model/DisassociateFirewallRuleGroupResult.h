@@ -28,7 +28,7 @@ namespace Model
   class DisassociateFirewallRuleGroupResult
   {
   public:
-    AWS_ROUTE53RESOLVER_API DisassociateFirewallRuleGroupResult();
+    AWS_ROUTE53RESOLVER_API DisassociateFirewallRuleGroupResult() = default;
     AWS_ROUTE53RESOLVER_API DisassociateFirewallRuleGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ROUTE53RESOLVER_API DisassociateFirewallRuleGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The firewall rule group association that you just removed. </p>
      */
-    inline const FirewallRuleGroupAssociation& GetFirewallRuleGroupAssociation() const{ return m_firewallRuleGroupAssociation; }
-    inline void SetFirewallRuleGroupAssociation(const FirewallRuleGroupAssociation& value) { m_firewallRuleGroupAssociation = value; }
-    inline void SetFirewallRuleGroupAssociation(FirewallRuleGroupAssociation&& value) { m_firewallRuleGroupAssociation = std::move(value); }
-    inline DisassociateFirewallRuleGroupResult& WithFirewallRuleGroupAssociation(const FirewallRuleGroupAssociation& value) { SetFirewallRuleGroupAssociation(value); return *this;}
-    inline DisassociateFirewallRuleGroupResult& WithFirewallRuleGroupAssociation(FirewallRuleGroupAssociation&& value) { SetFirewallRuleGroupAssociation(std::move(value)); return *this;}
+    inline const FirewallRuleGroupAssociation& GetFirewallRuleGroupAssociation() const { return m_firewallRuleGroupAssociation; }
+    template<typename FirewallRuleGroupAssociationT = FirewallRuleGroupAssociation>
+    void SetFirewallRuleGroupAssociation(FirewallRuleGroupAssociationT&& value) { m_firewallRuleGroupAssociationHasBeenSet = true; m_firewallRuleGroupAssociation = std::forward<FirewallRuleGroupAssociationT>(value); }
+    template<typename FirewallRuleGroupAssociationT = FirewallRuleGroupAssociation>
+    DisassociateFirewallRuleGroupResult& WithFirewallRuleGroupAssociation(FirewallRuleGroupAssociationT&& value) { SetFirewallRuleGroupAssociation(std::forward<FirewallRuleGroupAssociationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DisassociateFirewallRuleGroupResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DisassociateFirewallRuleGroupResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DisassociateFirewallRuleGroupResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DisassociateFirewallRuleGroupResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     FirewallRuleGroupAssociation m_firewallRuleGroupAssociation;
+    bool m_firewallRuleGroupAssociationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

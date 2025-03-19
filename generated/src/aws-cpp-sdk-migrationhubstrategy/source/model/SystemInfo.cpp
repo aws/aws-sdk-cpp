@@ -18,16 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-SystemInfo::SystemInfo() : 
-    m_cpuArchitectureHasBeenSet(false),
-    m_fileSystemTypeHasBeenSet(false),
-    m_networkInfoListHasBeenSet(false),
-    m_osInfoHasBeenSet(false)
-{
-}
-
 SystemInfo::SystemInfo(JsonView jsonValue)
-  : SystemInfo()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ SystemInfo& SystemInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("cpuArchitecture"))
   {
     m_cpuArchitecture = jsonValue.GetString("cpuArchitecture");
-
     m_cpuArchitectureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("fileSystemType"))
   {
     m_fileSystemType = jsonValue.GetString("fileSystemType");
-
     m_fileSystemTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkInfoList"))
   {
     Aws::Utils::Array<JsonView> networkInfoListJsonList = jsonValue.GetArray("networkInfoList");
@@ -57,14 +44,11 @@ SystemInfo& SystemInfo::operator =(JsonView jsonValue)
     }
     m_networkInfoListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("osInfo"))
   {
     m_osInfo = jsonValue.GetObject("osInfo");
-
     m_osInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

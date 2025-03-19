@@ -28,7 +28,7 @@ namespace Model
   class GetDevicePoolCompatibilityRequest : public DeviceFarmRequest
   {
   public:
-    AWS_DEVICEFARM_API GetDevicePoolCompatibilityRequest();
+    AWS_DEVICEFARM_API GetDevicePoolCompatibilityRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The device pool's ARN.</p>
      */
-    inline const Aws::String& GetDevicePoolArn() const{ return m_devicePoolArn; }
+    inline const Aws::String& GetDevicePoolArn() const { return m_devicePoolArn; }
     inline bool DevicePoolArnHasBeenSet() const { return m_devicePoolArnHasBeenSet; }
-    inline void SetDevicePoolArn(const Aws::String& value) { m_devicePoolArnHasBeenSet = true; m_devicePoolArn = value; }
-    inline void SetDevicePoolArn(Aws::String&& value) { m_devicePoolArnHasBeenSet = true; m_devicePoolArn = std::move(value); }
-    inline void SetDevicePoolArn(const char* value) { m_devicePoolArnHasBeenSet = true; m_devicePoolArn.assign(value); }
-    inline GetDevicePoolCompatibilityRequest& WithDevicePoolArn(const Aws::String& value) { SetDevicePoolArn(value); return *this;}
-    inline GetDevicePoolCompatibilityRequest& WithDevicePoolArn(Aws::String&& value) { SetDevicePoolArn(std::move(value)); return *this;}
-    inline GetDevicePoolCompatibilityRequest& WithDevicePoolArn(const char* value) { SetDevicePoolArn(value); return *this;}
+    template<typename DevicePoolArnT = Aws::String>
+    void SetDevicePoolArn(DevicePoolArnT&& value) { m_devicePoolArnHasBeenSet = true; m_devicePoolArn = std::forward<DevicePoolArnT>(value); }
+    template<typename DevicePoolArnT = Aws::String>
+    GetDevicePoolCompatibilityRequest& WithDevicePoolArn(DevicePoolArnT&& value) { SetDevicePoolArn(std::forward<DevicePoolArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the app that is associated with the specified device pool.</p>
      */
-    inline const Aws::String& GetAppArn() const{ return m_appArn; }
+    inline const Aws::String& GetAppArn() const { return m_appArn; }
     inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
-    inline void SetAppArn(const Aws::String& value) { m_appArnHasBeenSet = true; m_appArn = value; }
-    inline void SetAppArn(Aws::String&& value) { m_appArnHasBeenSet = true; m_appArn = std::move(value); }
-    inline void SetAppArn(const char* value) { m_appArnHasBeenSet = true; m_appArn.assign(value); }
-    inline GetDevicePoolCompatibilityRequest& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
-    inline GetDevicePoolCompatibilityRequest& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
-    inline GetDevicePoolCompatibilityRequest& WithAppArn(const char* value) { SetAppArn(value); return *this;}
+    template<typename AppArnT = Aws::String>
+    void SetAppArn(AppArnT&& value) { m_appArnHasBeenSet = true; m_appArn = std::forward<AppArnT>(value); }
+    template<typename AppArnT = Aws::String>
+    GetDevicePoolCompatibilityRequest& WithAppArn(AppArnT&& value) { SetAppArn(std::forward<AppArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -81,36 +77,34 @@ namespace Model
      * <p>INSTRUMENTATION.</p> </li> <li> <p>XCTEST.</p> </li> <li> <p>XCTEST_UI.</p>
      * </li> </ul>
      */
-    inline const TestType& GetTestType() const{ return m_testType; }
+    inline TestType GetTestType() const { return m_testType; }
     inline bool TestTypeHasBeenSet() const { return m_testTypeHasBeenSet; }
-    inline void SetTestType(const TestType& value) { m_testTypeHasBeenSet = true; m_testType = value; }
-    inline void SetTestType(TestType&& value) { m_testTypeHasBeenSet = true; m_testType = std::move(value); }
-    inline GetDevicePoolCompatibilityRequest& WithTestType(const TestType& value) { SetTestType(value); return *this;}
-    inline GetDevicePoolCompatibilityRequest& WithTestType(TestType&& value) { SetTestType(std::move(value)); return *this;}
+    inline void SetTestType(TestType value) { m_testTypeHasBeenSet = true; m_testType = value; }
+    inline GetDevicePoolCompatibilityRequest& WithTestType(TestType value) { SetTestType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Information about the uploaded test to be run against the device pool.</p>
      */
-    inline const ScheduleRunTest& GetTest() const{ return m_test; }
+    inline const ScheduleRunTest& GetTest() const { return m_test; }
     inline bool TestHasBeenSet() const { return m_testHasBeenSet; }
-    inline void SetTest(const ScheduleRunTest& value) { m_testHasBeenSet = true; m_test = value; }
-    inline void SetTest(ScheduleRunTest&& value) { m_testHasBeenSet = true; m_test = std::move(value); }
-    inline GetDevicePoolCompatibilityRequest& WithTest(const ScheduleRunTest& value) { SetTest(value); return *this;}
-    inline GetDevicePoolCompatibilityRequest& WithTest(ScheduleRunTest&& value) { SetTest(std::move(value)); return *this;}
+    template<typename TestT = ScheduleRunTest>
+    void SetTest(TestT&& value) { m_testHasBeenSet = true; m_test = std::forward<TestT>(value); }
+    template<typename TestT = ScheduleRunTest>
+    GetDevicePoolCompatibilityRequest& WithTest(TestT&& value) { SetTest(std::forward<TestT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An object that contains information about the settings for a run.</p>
      */
-    inline const ScheduleRunConfiguration& GetConfiguration() const{ return m_configuration; }
+    inline const ScheduleRunConfiguration& GetConfiguration() const { return m_configuration; }
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
-    inline void SetConfiguration(const ScheduleRunConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
-    inline void SetConfiguration(ScheduleRunConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
-    inline GetDevicePoolCompatibilityRequest& WithConfiguration(const ScheduleRunConfiguration& value) { SetConfiguration(value); return *this;}
-    inline GetDevicePoolCompatibilityRequest& WithConfiguration(ScheduleRunConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
+    template<typename ConfigurationT = ScheduleRunConfiguration>
+    void SetConfiguration(ConfigurationT&& value) { m_configurationHasBeenSet = true; m_configuration = std::forward<ConfigurationT>(value); }
+    template<typename ConfigurationT = ScheduleRunConfiguration>
+    GetDevicePoolCompatibilityRequest& WithConfiguration(ConfigurationT&& value) { SetConfiguration(std::forward<ConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -120,7 +114,7 @@ namespace Model
     Aws::String m_appArn;
     bool m_appArnHasBeenSet = false;
 
-    TestType m_testType;
+    TestType m_testType{TestType::NOT_SET};
     bool m_testTypeHasBeenSet = false;
 
     ScheduleRunTest m_test;

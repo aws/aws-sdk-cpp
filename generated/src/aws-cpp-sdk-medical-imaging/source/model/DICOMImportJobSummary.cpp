@@ -18,21 +18,7 @@ namespace MedicalImaging
 namespace Model
 {
 
-DICOMImportJobSummary::DICOMImportJobSummary() : 
-    m_jobIdHasBeenSet(false),
-    m_jobNameHasBeenSet(false),
-    m_jobStatus(JobStatus::NOT_SET),
-    m_jobStatusHasBeenSet(false),
-    m_datastoreIdHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false),
-    m_endedAtHasBeenSet(false),
-    m_submittedAtHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 DICOMImportJobSummary::DICOMImportJobSummary(JsonView jsonValue)
-  : DICOMImportJobSummary()
 {
   *this = jsonValue;
 }
@@ -42,59 +28,43 @@ DICOMImportJobSummary& DICOMImportJobSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("jobId"))
   {
     m_jobId = jsonValue.GetString("jobId");
-
     m_jobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobName"))
   {
     m_jobName = jsonValue.GetString("jobName");
-
     m_jobNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jobStatus"))
   {
     m_jobStatus = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("jobStatus"));
-
     m_jobStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("datastoreId"))
   {
     m_datastoreId = jsonValue.GetString("datastoreId");
-
     m_datastoreIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataAccessRoleArn"))
   {
     m_dataAccessRoleArn = jsonValue.GetString("dataAccessRoleArn");
-
     m_dataAccessRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("endedAt"))
   {
     m_endedAt = jsonValue.GetDouble("endedAt");
-
     m_endedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("submittedAt"))
   {
     m_submittedAt = jsonValue.GetDouble("submittedAt");
-
     m_submittedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

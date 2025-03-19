@@ -18,14 +18,7 @@ namespace CodeGuruSecurity
 namespace Model
 {
 
-InternalServerException::InternalServerException() : 
-    m_errorHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 InternalServerException::InternalServerException(JsonView jsonValue)
-  : InternalServerException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ InternalServerException& InternalServerException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("error"))
   {
     m_error = jsonValue.GetString("error");
-
     m_errorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

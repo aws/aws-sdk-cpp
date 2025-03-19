@@ -12,13 +12,6 @@ using namespace Aws::SSOOIDC::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartDeviceAuthorizationRequest::StartDeviceAuthorizationRequest() : 
-    m_clientIdHasBeenSet(false),
-    m_clientSecretHasBeenSet(false),
-    m_startUrlHasBeenSet(false)
-{
-}
-
 Aws::String StartDeviceAuthorizationRequest::SerializePayload() const
 {
   JsonValue payload;

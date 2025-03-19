@@ -18,13 +18,7 @@ namespace AccessAnalyzer
 namespace Model
 {
 
-EfsFileSystemConfiguration::EfsFileSystemConfiguration() : 
-    m_fileSystemPolicyHasBeenSet(false)
-{
-}
-
 EfsFileSystemConfiguration::EfsFileSystemConfiguration(JsonView jsonValue)
-  : EfsFileSystemConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ EfsFileSystemConfiguration& EfsFileSystemConfiguration::operator =(JsonView json
   if(jsonValue.ValueExists("fileSystemPolicy"))
   {
     m_fileSystemPolicy = jsonValue.GetString("fileSystemPolicy");
-
     m_fileSystemPolicyHasBeenSet = true;
   }
-
   return *this;
 }
 

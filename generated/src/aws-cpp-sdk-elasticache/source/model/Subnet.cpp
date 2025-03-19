@@ -20,16 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-Subnet::Subnet() : 
-    m_subnetIdentifierHasBeenSet(false),
-    m_subnetAvailabilityZoneHasBeenSet(false),
-    m_subnetOutpostHasBeenSet(false),
-    m_supportedNetworkTypesHasBeenSet(false)
-{
-}
-
 Subnet::Subnet(const XmlNode& xmlNode)
-  : Subnet()
 {
   *this = xmlNode;
 }
@@ -62,6 +53,7 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
     if(!supportedNetworkTypesNode.IsNull())
     {
       XmlNode supportedNetworkTypesMember = supportedNetworkTypesNode.FirstChild("member");
+      m_supportedNetworkTypesHasBeenSet = !supportedNetworkTypesMember.IsNull();
       while(!supportedNetworkTypesMember.IsNull())
       {
         m_supportedNetworkTypes.push_back(NetworkTypeMapper::GetNetworkTypeForName(StringUtils::Trim(supportedNetworkTypesMember.GetText().c_str())));

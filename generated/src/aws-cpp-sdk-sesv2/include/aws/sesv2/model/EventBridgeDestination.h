@@ -33,7 +33,7 @@ namespace Model
   class EventBridgeDestination
   {
   public:
-    AWS_SESV2_API EventBridgeDestination();
+    AWS_SESV2_API EventBridgeDestination() = default;
     AWS_SESV2_API EventBridgeDestination(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API EventBridgeDestination& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SESV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Amazon EventBridge bus to publish email
      * events to. Only the default bus is supported. </p>
      */
-    inline const Aws::String& GetEventBusArn() const{ return m_eventBusArn; }
+    inline const Aws::String& GetEventBusArn() const { return m_eventBusArn; }
     inline bool EventBusArnHasBeenSet() const { return m_eventBusArnHasBeenSet; }
-    inline void SetEventBusArn(const Aws::String& value) { m_eventBusArnHasBeenSet = true; m_eventBusArn = value; }
-    inline void SetEventBusArn(Aws::String&& value) { m_eventBusArnHasBeenSet = true; m_eventBusArn = std::move(value); }
-    inline void SetEventBusArn(const char* value) { m_eventBusArnHasBeenSet = true; m_eventBusArn.assign(value); }
-    inline EventBridgeDestination& WithEventBusArn(const Aws::String& value) { SetEventBusArn(value); return *this;}
-    inline EventBridgeDestination& WithEventBusArn(Aws::String&& value) { SetEventBusArn(std::move(value)); return *this;}
-    inline EventBridgeDestination& WithEventBusArn(const char* value) { SetEventBusArn(value); return *this;}
+    template<typename EventBusArnT = Aws::String>
+    void SetEventBusArn(EventBusArnT&& value) { m_eventBusArnHasBeenSet = true; m_eventBusArn = std::forward<EventBusArnT>(value); }
+    template<typename EventBusArnT = Aws::String>
+    EventBridgeDestination& WithEventBusArn(EventBusArnT&& value) { SetEventBusArn(std::forward<EventBusArnT>(value)); return *this;}
     ///@}
   private:
 

@@ -35,7 +35,7 @@ namespace Model
   class PutBotResult
   {
   public:
-    AWS_LEXMODELBUILDINGSERVICE_API PutBotResult();
+    AWS_LEXMODELBUILDINGSERVICE_API PutBotResult() = default;
     AWS_LEXMODELBUILDINGSERVICE_API PutBotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_LEXMODELBUILDINGSERVICE_API PutBotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,26 +44,22 @@ namespace Model
     /**
      * <p>The name of the bot.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
-    inline void SetName(const Aws::String& value) { m_name = value; }
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-    inline void SetName(const char* value) { m_name.assign(value); }
-    inline PutBotResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline PutBotResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline PutBotResult& WithName(const char* value) { SetName(value); return *this;}
+    inline const Aws::String& GetName() const { return m_name; }
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    PutBotResult& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description of the bot.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-    inline PutBotResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline PutBotResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline PutBotResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline const Aws::String& GetDescription() const { return m_description; }
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    PutBotResult& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,13 +67,13 @@ namespace Model
      * <p>An array of <code>Intent</code> objects. For more information, see
      * <a>PutBot</a>.</p>
      */
-    inline const Aws::Vector<Intent>& GetIntents() const{ return m_intents; }
-    inline void SetIntents(const Aws::Vector<Intent>& value) { m_intents = value; }
-    inline void SetIntents(Aws::Vector<Intent>&& value) { m_intents = std::move(value); }
-    inline PutBotResult& WithIntents(const Aws::Vector<Intent>& value) { SetIntents(value); return *this;}
-    inline PutBotResult& WithIntents(Aws::Vector<Intent>&& value) { SetIntents(std::move(value)); return *this;}
-    inline PutBotResult& AddIntents(const Intent& value) { m_intents.push_back(value); return *this; }
-    inline PutBotResult& AddIntents(Intent&& value) { m_intents.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Intent>& GetIntents() const { return m_intents; }
+    template<typename IntentsT = Aws::Vector<Intent>>
+    void SetIntents(IntentsT&& value) { m_intentsHasBeenSet = true; m_intents = std::forward<IntentsT>(value); }
+    template<typename IntentsT = Aws::Vector<Intent>>
+    PutBotResult& WithIntents(IntentsT&& value) { SetIntents(std::forward<IntentsT>(value)); return *this;}
+    template<typename IntentsT = Intent>
+    PutBotResult& AddIntents(IntentsT&& value) { m_intentsHasBeenSet = true; m_intents.emplace_back(std::forward<IntentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -86,8 +82,8 @@ namespace Model
      * indicates that the bot is using the improvements, otherwise,
      * <code>false</code>.</p>
      */
-    inline bool GetEnableModelImprovements() const{ return m_enableModelImprovements; }
-    inline void SetEnableModelImprovements(bool value) { m_enableModelImprovements = value; }
+    inline bool GetEnableModelImprovements() const { return m_enableModelImprovements; }
+    inline void SetEnableModelImprovements(bool value) { m_enableModelImprovementsHasBeenSet = true; m_enableModelImprovements = value; }
     inline PutBotResult& WithEnableModelImprovements(bool value) { SetEnableModelImprovements(value); return *this;}
     ///@}
 
@@ -103,8 +99,8 @@ namespace Model
      * for all intents is below this value. <code>AMAZON.KendraSearchIntent</code> is
      * only inserted if it is configured for the bot.</p>
      */
-    inline double GetNluIntentConfidenceThreshold() const{ return m_nluIntentConfidenceThreshold; }
-    inline void SetNluIntentConfidenceThreshold(double value) { m_nluIntentConfidenceThreshold = value; }
+    inline double GetNluIntentConfidenceThreshold() const { return m_nluIntentConfidenceThreshold; }
+    inline void SetNluIntentConfidenceThreshold(double value) { m_nluIntentConfidenceThresholdHasBeenSet = true; m_nluIntentConfidenceThreshold = value; }
     inline PutBotResult& WithNluIntentConfidenceThreshold(double value) { SetNluIntentConfidenceThreshold(value); return *this;}
     ///@}
 
@@ -113,11 +109,11 @@ namespace Model
      * <p> The prompts that Amazon Lex uses when it doesn't understand the user's
      * intent. For more information, see <a>PutBot</a>. </p>
      */
-    inline const Prompt& GetClarificationPrompt() const{ return m_clarificationPrompt; }
-    inline void SetClarificationPrompt(const Prompt& value) { m_clarificationPrompt = value; }
-    inline void SetClarificationPrompt(Prompt&& value) { m_clarificationPrompt = std::move(value); }
-    inline PutBotResult& WithClarificationPrompt(const Prompt& value) { SetClarificationPrompt(value); return *this;}
-    inline PutBotResult& WithClarificationPrompt(Prompt&& value) { SetClarificationPrompt(std::move(value)); return *this;}
+    inline const Prompt& GetClarificationPrompt() const { return m_clarificationPrompt; }
+    template<typename ClarificationPromptT = Prompt>
+    void SetClarificationPrompt(ClarificationPromptT&& value) { m_clarificationPromptHasBeenSet = true; m_clarificationPrompt = std::forward<ClarificationPromptT>(value); }
+    template<typename ClarificationPromptT = Prompt>
+    PutBotResult& WithClarificationPrompt(ClarificationPromptT&& value) { SetClarificationPrompt(std::forward<ClarificationPromptT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -125,11 +121,11 @@ namespace Model
      * <p>The message that Amazon Lex uses to cancel a conversation. For more
      * information, see <a>PutBot</a>.</p>
      */
-    inline const Statement& GetAbortStatement() const{ return m_abortStatement; }
-    inline void SetAbortStatement(const Statement& value) { m_abortStatement = value; }
-    inline void SetAbortStatement(Statement&& value) { m_abortStatement = std::move(value); }
-    inline PutBotResult& WithAbortStatement(const Statement& value) { SetAbortStatement(value); return *this;}
-    inline PutBotResult& WithAbortStatement(Statement&& value) { SetAbortStatement(std::move(value)); return *this;}
+    inline const Statement& GetAbortStatement() const { return m_abortStatement; }
+    template<typename AbortStatementT = Statement>
+    void SetAbortStatement(AbortStatementT&& value) { m_abortStatementHasBeenSet = true; m_abortStatement = std::forward<AbortStatementT>(value); }
+    template<typename AbortStatementT = Statement>
+    PutBotResult& WithAbortStatement(AbortStatementT&& value) { SetAbortStatement(std::forward<AbortStatementT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -146,11 +142,9 @@ namespace Model
      * code to <code>NOT BUILT</code>.</p> <p>When the bot is in the <code>READY</code>
      * state you can test and publish the bot.</p>
      */
-    inline const Status& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Status& value) { m_status = value; }
-    inline void SetStatus(Status&& value) { m_status = std::move(value); }
-    inline PutBotResult& WithStatus(const Status& value) { SetStatus(value); return *this;}
-    inline PutBotResult& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
+    inline Status GetStatus() const { return m_status; }
+    inline void SetStatus(Status value) { m_statusHasBeenSet = true; m_status = value; }
+    inline PutBotResult& WithStatus(Status value) { SetStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -158,13 +152,11 @@ namespace Model
      * <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason
      * that it failed to build the bot.</p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
-    inline PutBotResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline PutBotResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline PutBotResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    PutBotResult& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -172,22 +164,22 @@ namespace Model
      * <p>The date that the bot was updated. When you create a resource, the creation
      * date and last updated date are the same.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedDate() const{ return m_lastUpdatedDate; }
-    inline void SetLastUpdatedDate(const Aws::Utils::DateTime& value) { m_lastUpdatedDate = value; }
-    inline void SetLastUpdatedDate(Aws::Utils::DateTime&& value) { m_lastUpdatedDate = std::move(value); }
-    inline PutBotResult& WithLastUpdatedDate(const Aws::Utils::DateTime& value) { SetLastUpdatedDate(value); return *this;}
-    inline PutBotResult& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastUpdatedDate() const { return m_lastUpdatedDate; }
+    template<typename LastUpdatedDateT = Aws::Utils::DateTime>
+    void SetLastUpdatedDate(LastUpdatedDateT&& value) { m_lastUpdatedDateHasBeenSet = true; m_lastUpdatedDate = std::forward<LastUpdatedDateT>(value); }
+    template<typename LastUpdatedDateT = Aws::Utils::DateTime>
+    PutBotResult& WithLastUpdatedDate(LastUpdatedDateT&& value) { SetLastUpdatedDate(std::forward<LastUpdatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date that the bot was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
-    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDate = value; }
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDate = std::move(value); }
-    inline PutBotResult& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
-    inline PutBotResult& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    PutBotResult& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -195,8 +187,8 @@ namespace Model
      * <p>The maximum length of time that Amazon Lex retains the data gathered in a
      * conversation. For more information, see <a>PutBot</a>.</p>
      */
-    inline int GetIdleSessionTTLInSeconds() const{ return m_idleSessionTTLInSeconds; }
-    inline void SetIdleSessionTTLInSeconds(int value) { m_idleSessionTTLInSeconds = value; }
+    inline int GetIdleSessionTTLInSeconds() const { return m_idleSessionTTLInSeconds; }
+    inline void SetIdleSessionTTLInSeconds(int value) { m_idleSessionTTLInSecondsHasBeenSet = true; m_idleSessionTTLInSeconds = value; }
     inline PutBotResult& WithIdleSessionTTLInSeconds(int value) { SetIdleSessionTTLInSeconds(value); return *this;}
     ///@}
 
@@ -205,26 +197,22 @@ namespace Model
      * <p>The Amazon Polly voice ID that Amazon Lex uses for voice interaction with the
      * user. For more information, see <a>PutBot</a>.</p>
      */
-    inline const Aws::String& GetVoiceId() const{ return m_voiceId; }
-    inline void SetVoiceId(const Aws::String& value) { m_voiceId = value; }
-    inline void SetVoiceId(Aws::String&& value) { m_voiceId = std::move(value); }
-    inline void SetVoiceId(const char* value) { m_voiceId.assign(value); }
-    inline PutBotResult& WithVoiceId(const Aws::String& value) { SetVoiceId(value); return *this;}
-    inline PutBotResult& WithVoiceId(Aws::String&& value) { SetVoiceId(std::move(value)); return *this;}
-    inline PutBotResult& WithVoiceId(const char* value) { SetVoiceId(value); return *this;}
+    inline const Aws::String& GetVoiceId() const { return m_voiceId; }
+    template<typename VoiceIdT = Aws::String>
+    void SetVoiceId(VoiceIdT&& value) { m_voiceIdHasBeenSet = true; m_voiceId = std::forward<VoiceIdT>(value); }
+    template<typename VoiceIdT = Aws::String>
+    PutBotResult& WithVoiceId(VoiceIdT&& value) { SetVoiceId(std::forward<VoiceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Checksum of the bot that you created.</p>
      */
-    inline const Aws::String& GetChecksum() const{ return m_checksum; }
-    inline void SetChecksum(const Aws::String& value) { m_checksum = value; }
-    inline void SetChecksum(Aws::String&& value) { m_checksum = std::move(value); }
-    inline void SetChecksum(const char* value) { m_checksum.assign(value); }
-    inline PutBotResult& WithChecksum(const Aws::String& value) { SetChecksum(value); return *this;}
-    inline PutBotResult& WithChecksum(Aws::String&& value) { SetChecksum(std::move(value)); return *this;}
-    inline PutBotResult& WithChecksum(const char* value) { SetChecksum(value); return *this;}
+    inline const Aws::String& GetChecksum() const { return m_checksum; }
+    template<typename ChecksumT = Aws::String>
+    void SetChecksum(ChecksumT&& value) { m_checksumHasBeenSet = true; m_checksum = std::forward<ChecksumT>(value); }
+    template<typename ChecksumT = Aws::String>
+    PutBotResult& WithChecksum(ChecksumT&& value) { SetChecksum(std::forward<ChecksumT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -232,24 +220,20 @@ namespace Model
      * <p>The version of the bot. For a new bot, the version is always
      * <code>$LATEST</code>.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
-    inline void SetVersion(const Aws::String& value) { m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_version.assign(value); }
-    inline PutBotResult& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline PutBotResult& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline PutBotResult& WithVersion(const char* value) { SetVersion(value); return *this;}
+    inline const Aws::String& GetVersion() const { return m_version; }
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    PutBotResult& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The target locale for the bot. </p>
      */
-    inline const Locale& GetLocale() const{ return m_locale; }
-    inline void SetLocale(const Locale& value) { m_locale = value; }
-    inline void SetLocale(Locale&& value) { m_locale = std::move(value); }
-    inline PutBotResult& WithLocale(const Locale& value) { SetLocale(value); return *this;}
-    inline PutBotResult& WithLocale(Locale&& value) { SetLocale(std::move(value)); return *this;}
+    inline Locale GetLocale() const { return m_locale; }
+    inline void SetLocale(Locale value) { m_localeHasBeenSet = true; m_locale = value; }
+    inline PutBotResult& WithLocale(Locale value) { SetLocale(value); return *this;}
     ///@}
 
     ///@{
@@ -278,8 +262,8 @@ namespace Model
      * whole or in part, to children under age 13, see the <a
      * href="https://aws.amazon.com/lex/faqs#data-security">Amazon Lex FAQ.</a> </p>
      */
-    inline bool GetChildDirected() const{ return m_childDirected; }
-    inline void SetChildDirected(bool value) { m_childDirected = value; }
+    inline bool GetChildDirected() const { return m_childDirected; }
+    inline void SetChildDirected(bool value) { m_childDirectedHasBeenSet = true; m_childDirected = value; }
     inline PutBotResult& WithChildDirected(bool value) { SetChildDirected(value); return *this;}
     ///@}
 
@@ -289,8 +273,8 @@ namespace Model
      * <code>createVersion</code> field was not specified in the request, the
      * <code>createVersion</code> field is set to false in the response.</p>
      */
-    inline bool GetCreateVersion() const{ return m_createVersion; }
-    inline void SetCreateVersion(bool value) { m_createVersion = value; }
+    inline bool GetCreateVersion() const { return m_createVersion; }
+    inline void SetCreateVersion(bool value) { m_createVersionHasBeenSet = true; m_createVersion = value; }
     inline PutBotResult& WithCreateVersion(bool value) { SetCreateVersion(value); return *this;}
     ///@}
 
@@ -301,8 +285,8 @@ namespace Model
      * not specified in the request, the <code>detectSentiment</code> field is
      * <code>false</code> in the response.</p>
      */
-    inline bool GetDetectSentiment() const{ return m_detectSentiment; }
-    inline void SetDetectSentiment(bool value) { m_detectSentiment = value; }
+    inline bool GetDetectSentiment() const { return m_detectSentiment; }
+    inline void SetDetectSentiment(bool value) { m_detectSentimentHasBeenSet = true; m_detectSentiment = value; }
     inline PutBotResult& WithDetectSentiment(bool value) { SetDetectSentiment(value); return *this;}
     ///@}
 
@@ -310,68 +294,87 @@ namespace Model
     /**
      * <p>A list of tags associated with the bot.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
-    inline PutBotResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline PutBotResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline PutBotResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
-    inline PutBotResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    PutBotResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    PutBotResult& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutBotResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutBotResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutBotResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutBotResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Vector<Intent> m_intents;
+    bool m_intentsHasBeenSet = false;
 
-    bool m_enableModelImprovements;
+    bool m_enableModelImprovements{false};
+    bool m_enableModelImprovementsHasBeenSet = false;
 
-    double m_nluIntentConfidenceThreshold;
+    double m_nluIntentConfidenceThreshold{0.0};
+    bool m_nluIntentConfidenceThresholdHasBeenSet = false;
 
     Prompt m_clarificationPrompt;
+    bool m_clarificationPromptHasBeenSet = false;
 
     Statement m_abortStatement;
+    bool m_abortStatementHasBeenSet = false;
 
-    Status m_status;
+    Status m_status{Status::NOT_SET};
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_failureReason;
+    bool m_failureReasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedDate;
+    Aws::Utils::DateTime m_lastUpdatedDate{};
+    bool m_lastUpdatedDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdDate;
+    Aws::Utils::DateTime m_createdDate{};
+    bool m_createdDateHasBeenSet = false;
 
-    int m_idleSessionTTLInSeconds;
+    int m_idleSessionTTLInSeconds{0};
+    bool m_idleSessionTTLInSecondsHasBeenSet = false;
 
     Aws::String m_voiceId;
+    bool m_voiceIdHasBeenSet = false;
 
     Aws::String m_checksum;
+    bool m_checksumHasBeenSet = false;
 
     Aws::String m_version;
+    bool m_versionHasBeenSet = false;
 
-    Locale m_locale;
+    Locale m_locale{Locale::NOT_SET};
+    bool m_localeHasBeenSet = false;
 
-    bool m_childDirected;
+    bool m_childDirected{false};
+    bool m_childDirectedHasBeenSet = false;
 
-    bool m_createVersion;
+    bool m_createVersion{false};
+    bool m_createVersionHasBeenSet = false;
 
-    bool m_detectSentiment;
+    bool m_detectSentiment{false};
+    bool m_detectSentimentHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

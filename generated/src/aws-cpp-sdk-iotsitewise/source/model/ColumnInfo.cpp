@@ -18,14 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-ColumnInfo::ColumnInfo() : 
-    m_nameHasBeenSet(false),
-    m_typeHasBeenSet(false)
-{
-}
-
 ColumnInfo::ColumnInfo(JsonView jsonValue)
-  : ColumnInfo()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ColumnInfo& ColumnInfo::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = jsonValue.GetObject("type");
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

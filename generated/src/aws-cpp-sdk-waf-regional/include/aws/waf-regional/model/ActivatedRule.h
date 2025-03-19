@@ -51,7 +51,7 @@ namespace Model
   class ActivatedRule
   {
   public:
-    AWS_WAFREGIONAL_API ActivatedRule();
+    AWS_WAFREGIONAL_API ActivatedRule() = default;
     AWS_WAFREGIONAL_API ActivatedRule(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API ActivatedRule& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFREGIONAL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -65,7 +65,7 @@ namespace Model
      * integer. If you add multiple <code>Rules</code> to a <code>WebACL</code>, the
      * values don't need to be consecutive.</p>
      */
-    inline int GetPriority() const{ return m_priority; }
+    inline int GetPriority() const { return m_priority; }
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
     inline ActivatedRule& WithPriority(int value) { SetPriority(value); return *this;}
@@ -81,14 +81,12 @@ namespace Model
      * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
      * and by <a>ListRules</a>.</p>
      */
-    inline const Aws::String& GetRuleId() const{ return m_ruleId; }
+    inline const Aws::String& GetRuleId() const { return m_ruleId; }
     inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
-    inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
-    inline void SetRuleId(Aws::String&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::move(value); }
-    inline void SetRuleId(const char* value) { m_ruleIdHasBeenSet = true; m_ruleId.assign(value); }
-    inline ActivatedRule& WithRuleId(const Aws::String& value) { SetRuleId(value); return *this;}
-    inline ActivatedRule& WithRuleId(Aws::String&& value) { SetRuleId(std::move(value)); return *this;}
-    inline ActivatedRule& WithRuleId(const char* value) { SetRuleId(value); return *this;}
+    template<typename RuleIdT = Aws::String>
+    void SetRuleId(RuleIdT&& value) { m_ruleIdHasBeenSet = true; m_ruleId = std::forward<RuleIdT>(value); }
+    template<typename RuleIdT = Aws::String>
+    ActivatedRule& WithRuleId(RuleIdT&& value) { SetRuleId(std::forward<RuleIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -107,12 +105,12 @@ namespace Model
      * <code>ActivatedRule|Action</code> is used instead of
      * <code>ActivatedRule|OverrideAction</code>.</p>
      */
-    inline const WafAction& GetAction() const{ return m_action; }
+    inline const WafAction& GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const WafAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(WafAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline ActivatedRule& WithAction(const WafAction& value) { SetAction(value); return *this;}
-    inline ActivatedRule& WithAction(WafAction&& value) { SetAction(std::move(value)); return *this;}
+    template<typename ActionT = WafAction>
+    void SetAction(ActionT&& value) { m_actionHasBeenSet = true; m_action = std::forward<ActionT>(value); }
+    template<typename ActionT = WafAction>
+    ActivatedRule& WithAction(ActionT&& value) { SetAction(std::forward<ActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -134,12 +132,12 @@ namespace Model
      * <code>ActivatedRule|Action</code> is used instead of
      * <code>ActivatedRule|OverrideAction</code>.</p>
      */
-    inline const WafOverrideAction& GetOverrideAction() const{ return m_overrideAction; }
+    inline const WafOverrideAction& GetOverrideAction() const { return m_overrideAction; }
     inline bool OverrideActionHasBeenSet() const { return m_overrideActionHasBeenSet; }
-    inline void SetOverrideAction(const WafOverrideAction& value) { m_overrideActionHasBeenSet = true; m_overrideAction = value; }
-    inline void SetOverrideAction(WafOverrideAction&& value) { m_overrideActionHasBeenSet = true; m_overrideAction = std::move(value); }
-    inline ActivatedRule& WithOverrideAction(const WafOverrideAction& value) { SetOverrideAction(value); return *this;}
-    inline ActivatedRule& WithOverrideAction(WafOverrideAction&& value) { SetOverrideAction(std::move(value)); return *this;}
+    template<typename OverrideActionT = WafOverrideAction>
+    void SetOverrideAction(OverrideActionT&& value) { m_overrideActionHasBeenSet = true; m_overrideAction = std::forward<OverrideActionT>(value); }
+    template<typename OverrideActionT = WafOverrideAction>
+    ActivatedRule& WithOverrideAction(OverrideActionT&& value) { SetOverrideAction(std::forward<OverrideActionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -152,12 +150,10 @@ namespace Model
      * fail because the request tries to add a REGULAR rule with the specified ID,
      * which does not exist. </p>
      */
-    inline const WafRuleType& GetType() const{ return m_type; }
+    inline WafRuleType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const WafRuleType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(WafRuleType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline ActivatedRule& WithType(const WafRuleType& value) { SetType(value); return *this;}
-    inline ActivatedRule& WithType(WafRuleType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(WafRuleType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline ActivatedRule& WithType(WafRuleType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -191,18 +187,18 @@ namespace Model
      * removed, and <code>ExcludedRules</code> should contain the rules that you want
      * to exclude.</p> </li> </ul> </li> </ol>
      */
-    inline const Aws::Vector<ExcludedRule>& GetExcludedRules() const{ return m_excludedRules; }
+    inline const Aws::Vector<ExcludedRule>& GetExcludedRules() const { return m_excludedRules; }
     inline bool ExcludedRulesHasBeenSet() const { return m_excludedRulesHasBeenSet; }
-    inline void SetExcludedRules(const Aws::Vector<ExcludedRule>& value) { m_excludedRulesHasBeenSet = true; m_excludedRules = value; }
-    inline void SetExcludedRules(Aws::Vector<ExcludedRule>&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules = std::move(value); }
-    inline ActivatedRule& WithExcludedRules(const Aws::Vector<ExcludedRule>& value) { SetExcludedRules(value); return *this;}
-    inline ActivatedRule& WithExcludedRules(Aws::Vector<ExcludedRule>&& value) { SetExcludedRules(std::move(value)); return *this;}
-    inline ActivatedRule& AddExcludedRules(const ExcludedRule& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.push_back(value); return *this; }
-    inline ActivatedRule& AddExcludedRules(ExcludedRule&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.push_back(std::move(value)); return *this; }
+    template<typename ExcludedRulesT = Aws::Vector<ExcludedRule>>
+    void SetExcludedRules(ExcludedRulesT&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules = std::forward<ExcludedRulesT>(value); }
+    template<typename ExcludedRulesT = Aws::Vector<ExcludedRule>>
+    ActivatedRule& WithExcludedRules(ExcludedRulesT&& value) { SetExcludedRules(std::forward<ExcludedRulesT>(value)); return *this;}
+    template<typename ExcludedRulesT = ExcludedRule>
+    ActivatedRule& AddExcludedRules(ExcludedRulesT&& value) { m_excludedRulesHasBeenSet = true; m_excludedRules.emplace_back(std::forward<ExcludedRulesT>(value)); return *this; }
     ///@}
   private:
 
-    int m_priority;
+    int m_priority{0};
     bool m_priorityHasBeenSet = false;
 
     Aws::String m_ruleId;
@@ -214,7 +210,7 @@ namespace Model
     WafOverrideAction m_overrideAction;
     bool m_overrideActionHasBeenSet = false;
 
-    WafRuleType m_type;
+    WafRuleType m_type{WafRuleType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::Vector<ExcludedRule> m_excludedRules;

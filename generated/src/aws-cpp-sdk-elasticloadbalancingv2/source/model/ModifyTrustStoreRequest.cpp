@@ -10,14 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-ModifyTrustStoreRequest::ModifyTrustStoreRequest() : 
-    m_trustStoreArnHasBeenSet(false),
-    m_caCertificatesBundleS3BucketHasBeenSet(false),
-    m_caCertificatesBundleS3KeyHasBeenSet(false),
-    m_caCertificatesBundleS3ObjectVersionHasBeenSet(false)
-{
-}
-
 Aws::String ModifyTrustStoreRequest::SerializePayload() const
 {
   Aws::StringStream ss;

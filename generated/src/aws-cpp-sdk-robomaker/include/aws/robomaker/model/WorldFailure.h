@@ -32,7 +32,7 @@ namespace Model
   class WorldFailure
   {
   public:
-    AWS_ROBOMAKER_API WorldFailure();
+    AWS_ROBOMAKER_API WorldFailure() = default;
     AWS_ROBOMAKER_API WorldFailure(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API WorldFailure& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ROBOMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,12 +49,10 @@ namespace Model
      * throttled.</p> </dd> <dt>InvalidInput</dt> <dd> <p>An input parameter in the
      * request is not valid.</p> </dd> </dl>
      */
-    inline const WorldGenerationJobErrorCode& GetFailureCode() const{ return m_failureCode; }
+    inline WorldGenerationJobErrorCode GetFailureCode() const { return m_failureCode; }
     inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
-    inline void SetFailureCode(const WorldGenerationJobErrorCode& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
-    inline void SetFailureCode(WorldGenerationJobErrorCode&& value) { m_failureCodeHasBeenSet = true; m_failureCode = std::move(value); }
-    inline WorldFailure& WithFailureCode(const WorldGenerationJobErrorCode& value) { SetFailureCode(value); return *this;}
-    inline WorldFailure& WithFailureCode(WorldGenerationJobErrorCode&& value) { SetFailureCode(std::move(value)); return *this;}
+    inline void SetFailureCode(WorldGenerationJobErrorCode value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
+    inline WorldFailure& WithFailureCode(WorldGenerationJobErrorCode value) { SetFailureCode(value); return *this;}
     ///@}
 
     ///@{
@@ -62,34 +60,32 @@ namespace Model
      * <p>The sample reason why the world failed. World errors are aggregated. A sample
      * is used as the <code>sampleFailureReason</code>. </p>
      */
-    inline const Aws::String& GetSampleFailureReason() const{ return m_sampleFailureReason; }
+    inline const Aws::String& GetSampleFailureReason() const { return m_sampleFailureReason; }
     inline bool SampleFailureReasonHasBeenSet() const { return m_sampleFailureReasonHasBeenSet; }
-    inline void SetSampleFailureReason(const Aws::String& value) { m_sampleFailureReasonHasBeenSet = true; m_sampleFailureReason = value; }
-    inline void SetSampleFailureReason(Aws::String&& value) { m_sampleFailureReasonHasBeenSet = true; m_sampleFailureReason = std::move(value); }
-    inline void SetSampleFailureReason(const char* value) { m_sampleFailureReasonHasBeenSet = true; m_sampleFailureReason.assign(value); }
-    inline WorldFailure& WithSampleFailureReason(const Aws::String& value) { SetSampleFailureReason(value); return *this;}
-    inline WorldFailure& WithSampleFailureReason(Aws::String&& value) { SetSampleFailureReason(std::move(value)); return *this;}
-    inline WorldFailure& WithSampleFailureReason(const char* value) { SetSampleFailureReason(value); return *this;}
+    template<typename SampleFailureReasonT = Aws::String>
+    void SetSampleFailureReason(SampleFailureReasonT&& value) { m_sampleFailureReasonHasBeenSet = true; m_sampleFailureReason = std::forward<SampleFailureReasonT>(value); }
+    template<typename SampleFailureReasonT = Aws::String>
+    WorldFailure& WithSampleFailureReason(SampleFailureReasonT&& value) { SetSampleFailureReason(std::forward<SampleFailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The number of failed worlds.</p>
      */
-    inline int GetFailureCount() const{ return m_failureCount; }
+    inline int GetFailureCount() const { return m_failureCount; }
     inline bool FailureCountHasBeenSet() const { return m_failureCountHasBeenSet; }
     inline void SetFailureCount(int value) { m_failureCountHasBeenSet = true; m_failureCount = value; }
     inline WorldFailure& WithFailureCount(int value) { SetFailureCount(value); return *this;}
     ///@}
   private:
 
-    WorldGenerationJobErrorCode m_failureCode;
+    WorldGenerationJobErrorCode m_failureCode{WorldGenerationJobErrorCode::NOT_SET};
     bool m_failureCodeHasBeenSet = false;
 
     Aws::String m_sampleFailureReason;
     bool m_sampleFailureReasonHasBeenSet = false;
 
-    int m_failureCount;
+    int m_failureCount{0};
     bool m_failureCountHasBeenSet = false;
   };
 

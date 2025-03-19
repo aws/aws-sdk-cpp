@@ -28,7 +28,7 @@ namespace Model
   class GetNotebookMetadataResult
   {
   public:
-    AWS_ATHENA_API GetNotebookMetadataResult();
+    AWS_ATHENA_API GetNotebookMetadataResult() = default;
     AWS_ATHENA_API GetNotebookMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ATHENA_API GetNotebookMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>The metadata that is returned for the specified notebook ID.</p>
      */
-    inline const NotebookMetadata& GetNotebookMetadata() const{ return m_notebookMetadata; }
-    inline void SetNotebookMetadata(const NotebookMetadata& value) { m_notebookMetadata = value; }
-    inline void SetNotebookMetadata(NotebookMetadata&& value) { m_notebookMetadata = std::move(value); }
-    inline GetNotebookMetadataResult& WithNotebookMetadata(const NotebookMetadata& value) { SetNotebookMetadata(value); return *this;}
-    inline GetNotebookMetadataResult& WithNotebookMetadata(NotebookMetadata&& value) { SetNotebookMetadata(std::move(value)); return *this;}
+    inline const NotebookMetadata& GetNotebookMetadata() const { return m_notebookMetadata; }
+    template<typename NotebookMetadataT = NotebookMetadata>
+    void SetNotebookMetadata(NotebookMetadataT&& value) { m_notebookMetadataHasBeenSet = true; m_notebookMetadata = std::forward<NotebookMetadataT>(value); }
+    template<typename NotebookMetadataT = NotebookMetadata>
+    GetNotebookMetadataResult& WithNotebookMetadata(NotebookMetadataT&& value) { SetNotebookMetadata(std::forward<NotebookMetadataT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetNotebookMetadataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetNotebookMetadataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetNotebookMetadataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetNotebookMetadataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     NotebookMetadata m_notebookMetadata;
+    bool m_notebookMetadataHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -12,14 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListModelMetadataRequest::ListModelMetadataRequest() : 
-    m_searchExpressionHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListModelMetadataRequest::SerializePayload() const
 {
   JsonValue payload;

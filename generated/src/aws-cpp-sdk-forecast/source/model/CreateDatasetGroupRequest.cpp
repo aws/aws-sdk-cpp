@@ -12,15 +12,6 @@ using namespace Aws::ForecastService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateDatasetGroupRequest::CreateDatasetGroupRequest() : 
-    m_datasetGroupNameHasBeenSet(false),
-    m_domain(Domain::NOT_SET),
-    m_domainHasBeenSet(false),
-    m_datasetArnsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateDatasetGroupRequest::SerializePayload() const
 {
   JsonValue payload;

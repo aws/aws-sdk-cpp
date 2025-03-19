@@ -29,7 +29,7 @@ namespace Model
   class DescribeMonitorResult
   {
   public:
-    AWS_FORECASTSERVICE_API DescribeMonitorResult();
+    AWS_FORECASTSERVICE_API DescribeMonitorResult() = default;
     AWS_FORECASTSERVICE_API DescribeMonitorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_FORECASTSERVICE_API DescribeMonitorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,76 +38,66 @@ namespace Model
     /**
      * <p>The name of the monitor.</p>
      */
-    inline const Aws::String& GetMonitorName() const{ return m_monitorName; }
-    inline void SetMonitorName(const Aws::String& value) { m_monitorName = value; }
-    inline void SetMonitorName(Aws::String&& value) { m_monitorName = std::move(value); }
-    inline void SetMonitorName(const char* value) { m_monitorName.assign(value); }
-    inline DescribeMonitorResult& WithMonitorName(const Aws::String& value) { SetMonitorName(value); return *this;}
-    inline DescribeMonitorResult& WithMonitorName(Aws::String&& value) { SetMonitorName(std::move(value)); return *this;}
-    inline DescribeMonitorResult& WithMonitorName(const char* value) { SetMonitorName(value); return *this;}
+    inline const Aws::String& GetMonitorName() const { return m_monitorName; }
+    template<typename MonitorNameT = Aws::String>
+    void SetMonitorName(MonitorNameT&& value) { m_monitorNameHasBeenSet = true; m_monitorName = std::forward<MonitorNameT>(value); }
+    template<typename MonitorNameT = Aws::String>
+    DescribeMonitorResult& WithMonitorName(MonitorNameT&& value) { SetMonitorName(std::forward<MonitorNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the monitor resource described.</p>
      */
-    inline const Aws::String& GetMonitorArn() const{ return m_monitorArn; }
-    inline void SetMonitorArn(const Aws::String& value) { m_monitorArn = value; }
-    inline void SetMonitorArn(Aws::String&& value) { m_monitorArn = std::move(value); }
-    inline void SetMonitorArn(const char* value) { m_monitorArn.assign(value); }
-    inline DescribeMonitorResult& WithMonitorArn(const Aws::String& value) { SetMonitorArn(value); return *this;}
-    inline DescribeMonitorResult& WithMonitorArn(Aws::String&& value) { SetMonitorArn(std::move(value)); return *this;}
-    inline DescribeMonitorResult& WithMonitorArn(const char* value) { SetMonitorArn(value); return *this;}
+    inline const Aws::String& GetMonitorArn() const { return m_monitorArn; }
+    template<typename MonitorArnT = Aws::String>
+    void SetMonitorArn(MonitorArnT&& value) { m_monitorArnHasBeenSet = true; m_monitorArn = std::forward<MonitorArnT>(value); }
+    template<typename MonitorArnT = Aws::String>
+    DescribeMonitorResult& WithMonitorArn(MonitorArnT&& value) { SetMonitorArn(std::forward<MonitorArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the auto predictor being monitored.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArn.assign(value); }
-    inline DescribeMonitorResult& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline DescribeMonitorResult& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline DescribeMonitorResult& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    DescribeMonitorResult& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The status of the monitor resource.</p>
      */
-    inline const Aws::String& GetStatus() const{ return m_status; }
-    inline void SetStatus(const Aws::String& value) { m_status = value; }
-    inline void SetStatus(Aws::String&& value) { m_status = std::move(value); }
-    inline void SetStatus(const char* value) { m_status.assign(value); }
-    inline DescribeMonitorResult& WithStatus(const Aws::String& value) { SetStatus(value); return *this;}
-    inline DescribeMonitorResult& WithStatus(Aws::String&& value) { SetStatus(std::move(value)); return *this;}
-    inline DescribeMonitorResult& WithStatus(const char* value) { SetStatus(value); return *this;}
+    inline const Aws::String& GetStatus() const { return m_status; }
+    template<typename StatusT = Aws::String>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = Aws::String>
+    DescribeMonitorResult& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of the latest evaluation completed by the monitor.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastEvaluationTime() const{ return m_lastEvaluationTime; }
-    inline void SetLastEvaluationTime(const Aws::Utils::DateTime& value) { m_lastEvaluationTime = value; }
-    inline void SetLastEvaluationTime(Aws::Utils::DateTime&& value) { m_lastEvaluationTime = std::move(value); }
-    inline DescribeMonitorResult& WithLastEvaluationTime(const Aws::Utils::DateTime& value) { SetLastEvaluationTime(value); return *this;}
-    inline DescribeMonitorResult& WithLastEvaluationTime(Aws::Utils::DateTime&& value) { SetLastEvaluationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastEvaluationTime() const { return m_lastEvaluationTime; }
+    template<typename LastEvaluationTimeT = Aws::Utils::DateTime>
+    void SetLastEvaluationTime(LastEvaluationTimeT&& value) { m_lastEvaluationTimeHasBeenSet = true; m_lastEvaluationTime = std::forward<LastEvaluationTimeT>(value); }
+    template<typename LastEvaluationTimeT = Aws::Utils::DateTime>
+    DescribeMonitorResult& WithLastEvaluationTime(LastEvaluationTimeT&& value) { SetLastEvaluationTime(std::forward<LastEvaluationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The state of the monitor's latest evaluation.</p>
      */
-    inline const Aws::String& GetLastEvaluationState() const{ return m_lastEvaluationState; }
-    inline void SetLastEvaluationState(const Aws::String& value) { m_lastEvaluationState = value; }
-    inline void SetLastEvaluationState(Aws::String&& value) { m_lastEvaluationState = std::move(value); }
-    inline void SetLastEvaluationState(const char* value) { m_lastEvaluationState.assign(value); }
-    inline DescribeMonitorResult& WithLastEvaluationState(const Aws::String& value) { SetLastEvaluationState(value); return *this;}
-    inline DescribeMonitorResult& WithLastEvaluationState(Aws::String&& value) { SetLastEvaluationState(std::move(value)); return *this;}
-    inline DescribeMonitorResult& WithLastEvaluationState(const char* value) { SetLastEvaluationState(value); return *this;}
+    inline const Aws::String& GetLastEvaluationState() const { return m_lastEvaluationState; }
+    template<typename LastEvaluationStateT = Aws::String>
+    void SetLastEvaluationState(LastEvaluationStateT&& value) { m_lastEvaluationStateHasBeenSet = true; m_lastEvaluationState = std::forward<LastEvaluationStateT>(value); }
+    template<typename LastEvaluationStateT = Aws::String>
+    DescribeMonitorResult& WithLastEvaluationState(LastEvaluationStateT&& value) { SetLastEvaluationState(std::forward<LastEvaluationStateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,46 +105,44 @@ namespace Model
      * <p>Metrics you can use as a baseline for comparison purposes. Use these values
      * you interpret monitoring results for an auto predictor.</p>
      */
-    inline const Baseline& GetBaseline() const{ return m_baseline; }
-    inline void SetBaseline(const Baseline& value) { m_baseline = value; }
-    inline void SetBaseline(Baseline&& value) { m_baseline = std::move(value); }
-    inline DescribeMonitorResult& WithBaseline(const Baseline& value) { SetBaseline(value); return *this;}
-    inline DescribeMonitorResult& WithBaseline(Baseline&& value) { SetBaseline(std::move(value)); return *this;}
+    inline const Baseline& GetBaseline() const { return m_baseline; }
+    template<typename BaselineT = Baseline>
+    void SetBaseline(BaselineT&& value) { m_baselineHasBeenSet = true; m_baseline = std::forward<BaselineT>(value); }
+    template<typename BaselineT = Baseline>
+    DescribeMonitorResult& WithBaseline(BaselineT&& value) { SetBaseline(std::forward<BaselineT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An error message, if any, for the monitor.</p>
      */
-    inline const Aws::String& GetMessage() const{ return m_message; }
-    inline void SetMessage(const Aws::String& value) { m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_message.assign(value); }
-    inline DescribeMonitorResult& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline DescribeMonitorResult& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline DescribeMonitorResult& WithMessage(const char* value) { SetMessage(value); return *this;}
+    inline const Aws::String& GetMessage() const { return m_message; }
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    DescribeMonitorResult& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp for when the monitor resource was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeMonitorResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeMonitorResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeMonitorResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The timestamp of the latest modification to the monitor.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModificationTime() const{ return m_lastModificationTime; }
-    inline void SetLastModificationTime(const Aws::Utils::DateTime& value) { m_lastModificationTime = value; }
-    inline void SetLastModificationTime(Aws::Utils::DateTime&& value) { m_lastModificationTime = std::move(value); }
-    inline DescribeMonitorResult& WithLastModificationTime(const Aws::Utils::DateTime& value) { SetLastModificationTime(value); return *this;}
-    inline DescribeMonitorResult& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModificationTime() const { return m_lastModificationTime; }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    void SetLastModificationTime(LastModificationTimeT&& value) { m_lastModificationTimeHasBeenSet = true; m_lastModificationTime = std::forward<LastModificationTimeT>(value); }
+    template<typename LastModificationTimeT = Aws::Utils::DateTime>
+    DescribeMonitorResult& WithLastModificationTime(LastModificationTimeT&& value) { SetLastModificationTime(std::forward<LastModificationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -162,46 +150,56 @@ namespace Model
      * <p>The estimated number of minutes remaining before the monitor resource
      * finishes its current evaluation.</p>
      */
-    inline long long GetEstimatedEvaluationTimeRemainingInMinutes() const{ return m_estimatedEvaluationTimeRemainingInMinutes; }
-    inline void SetEstimatedEvaluationTimeRemainingInMinutes(long long value) { m_estimatedEvaluationTimeRemainingInMinutes = value; }
+    inline long long GetEstimatedEvaluationTimeRemainingInMinutes() const { return m_estimatedEvaluationTimeRemainingInMinutes; }
+    inline void SetEstimatedEvaluationTimeRemainingInMinutes(long long value) { m_estimatedEvaluationTimeRemainingInMinutesHasBeenSet = true; m_estimatedEvaluationTimeRemainingInMinutes = value; }
     inline DescribeMonitorResult& WithEstimatedEvaluationTimeRemainingInMinutes(long long value) { SetEstimatedEvaluationTimeRemainingInMinutes(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeMonitorResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeMonitorResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeMonitorResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeMonitorResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_monitorName;
+    bool m_monitorNameHasBeenSet = false;
 
     Aws::String m_monitorArn;
+    bool m_monitorArnHasBeenSet = false;
 
     Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_status;
+    bool m_statusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastEvaluationTime;
+    Aws::Utils::DateTime m_lastEvaluationTime{};
+    bool m_lastEvaluationTimeHasBeenSet = false;
 
     Aws::String m_lastEvaluationState;
+    bool m_lastEvaluationStateHasBeenSet = false;
 
     Baseline m_baseline;
+    bool m_baselineHasBeenSet = false;
 
     Aws::String m_message;
+    bool m_messageHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModificationTime;
+    Aws::Utils::DateTime m_lastModificationTime{};
+    bool m_lastModificationTimeHasBeenSet = false;
 
-    long long m_estimatedEvaluationTimeRemainingInMinutes;
+    long long m_estimatedEvaluationTimeRemainingInMinutes{0};
+    bool m_estimatedEvaluationTimeRemainingInMinutesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

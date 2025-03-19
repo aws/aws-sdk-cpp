@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CancelMetadataTransferJobResult::CancelMetadataTransferJobResult()
-{
-}
-
 CancelMetadataTransferJobResult::CancelMetadataTransferJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,39 +28,35 @@ CancelMetadataTransferJobResult& CancelMetadataTransferJobResult::operator =(con
   if(jsonValue.ValueExists("metadataTransferJobId"))
   {
     m_metadataTransferJobId = jsonValue.GetString("metadataTransferJobId");
-
+    m_metadataTransferJobIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("updateDateTime"))
   {
     m_updateDateTime = jsonValue.GetDouble("updateDateTime");
-
+    m_updateDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = jsonValue.GetObject("status");
-
+    m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("progress"))
   {
     m_progress = jsonValue.GetObject("progress");
-
+    m_progressHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

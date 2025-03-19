@@ -18,14 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-WaypointOptimizationTrafficOptions::WaypointOptimizationTrafficOptions() : 
-    m_usage(TrafficUsage::NOT_SET),
-    m_usageHasBeenSet(false)
-{
-}
-
 WaypointOptimizationTrafficOptions::WaypointOptimizationTrafficOptions(JsonView jsonValue)
-  : WaypointOptimizationTrafficOptions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ WaypointOptimizationTrafficOptions& WaypointOptimizationTrafficOptions::operator
   if(jsonValue.ValueExists("Usage"))
   {
     m_usage = TrafficUsageMapper::GetTrafficUsageForName(jsonValue.GetString("Usage"));
-
     m_usageHasBeenSet = true;
   }
-
   return *this;
 }
 

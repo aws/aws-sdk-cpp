@@ -18,17 +18,7 @@ namespace TranscribeService
 namespace Model
 {
 
-CallAnalyticsSkippedFeature::CallAnalyticsSkippedFeature() : 
-    m_feature(CallAnalyticsFeature::NOT_SET),
-    m_featureHasBeenSet(false),
-    m_reasonCode(CallAnalyticsSkippedReasonCode::NOT_SET),
-    m_reasonCodeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 CallAnalyticsSkippedFeature::CallAnalyticsSkippedFeature(JsonView jsonValue)
-  : CallAnalyticsSkippedFeature()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ CallAnalyticsSkippedFeature& CallAnalyticsSkippedFeature::operator =(JsonView js
   if(jsonValue.ValueExists("Feature"))
   {
     m_feature = CallAnalyticsFeatureMapper::GetCallAnalyticsFeatureForName(jsonValue.GetString("Feature"));
-
     m_featureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReasonCode"))
   {
     m_reasonCode = CallAnalyticsSkippedReasonCodeMapper::GetCallAnalyticsSkippedReasonCodeForName(jsonValue.GetString("ReasonCode"));
-
     m_reasonCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

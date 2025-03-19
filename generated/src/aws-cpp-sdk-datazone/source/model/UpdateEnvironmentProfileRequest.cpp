@@ -12,17 +12,6 @@ using namespace Aws::DataZone::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateEnvironmentProfileRequest::UpdateEnvironmentProfileRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_awsAccountRegionHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_domainIdentifierHasBeenSet(false),
-    m_identifierHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_userParametersHasBeenSet(false)
-{
-}
-
 Aws::String UpdateEnvironmentProfileRequest::SerializePayload() const
 {
   JsonValue payload;

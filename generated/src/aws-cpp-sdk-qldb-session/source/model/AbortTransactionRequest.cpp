@@ -18,10 +18,6 @@ namespace QLDBSession
 namespace Model
 {
 
-AbortTransactionRequest::AbortTransactionRequest()
-{
-}
-
 AbortTransactionRequest::AbortTransactionRequest(JsonView jsonValue)
 {
   *this = jsonValue;

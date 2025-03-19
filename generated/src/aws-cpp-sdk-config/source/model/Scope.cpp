@@ -18,16 +18,7 @@ namespace ConfigService
 namespace Model
 {
 
-Scope::Scope() : 
-    m_complianceResourceTypesHasBeenSet(false),
-    m_tagKeyHasBeenSet(false),
-    m_tagValueHasBeenSet(false),
-    m_complianceResourceIdHasBeenSet(false)
-{
-}
-
 Scope::Scope(JsonView jsonValue)
-  : Scope()
 {
   *this = jsonValue;
 }
@@ -43,28 +34,21 @@ Scope& Scope::operator =(JsonView jsonValue)
     }
     m_complianceResourceTypesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagKey"))
   {
     m_tagKey = jsonValue.GetString("TagKey");
-
     m_tagKeyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TagValue"))
   {
     m_tagValue = jsonValue.GetString("TagValue");
-
     m_tagValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ComplianceResourceId"))
   {
     m_complianceResourceId = jsonValue.GetString("ComplianceResourceId");
-
     m_complianceResourceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

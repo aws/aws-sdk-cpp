@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetContextKeysForCustomPolicyResult::GetContextKeysForCustomPolicyResult()
-{
-}
-
 GetContextKeysForCustomPolicyResult::GetContextKeysForCustomPolicyResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,18 +38,21 @@ GetContextKeysForCustomPolicyResult& GetContextKeysForCustomPolicyResult::operat
     if(!contextKeyNamesNode.IsNull())
     {
       XmlNode contextKeyNamesMember = contextKeyNamesNode.FirstChild("member");
+      m_contextKeyNamesHasBeenSet = !contextKeyNamesMember.IsNull();
       while(!contextKeyNamesMember.IsNull())
       {
         m_contextKeyNames.push_back(contextKeyNamesMember.GetText());
         contextKeyNamesMember = contextKeyNamesMember.NextNode("member");
       }
 
+      m_contextKeyNamesHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::GetContextKeysForCustomPolicyResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

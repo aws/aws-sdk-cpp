@@ -33,7 +33,7 @@ namespace Model
   class LiveTailSessionMetadata
   {
   public:
-    AWS_CLOUDWATCHLOGS_API LiveTailSessionMetadata();
+    AWS_CLOUDWATCHLOGS_API LiveTailSessionMetadata() = default;
     AWS_CLOUDWATCHLOGS_API LiveTailSessionMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API LiveTailSessionMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLOUDWATCHLOGS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,14 @@ namespace Model
      * this case, the <code>sessionResults</code> array includes all log events that
      * matched your request during this time.</p>
      */
-    inline bool GetSampled() const{ return m_sampled; }
+    inline bool GetSampled() const { return m_sampled; }
     inline bool SampledHasBeenSet() const { return m_sampledHasBeenSet; }
     inline void SetSampled(bool value) { m_sampledHasBeenSet = true; m_sampled = value; }
     inline LiveTailSessionMetadata& WithSampled(bool value) { SetSampled(value); return *this;}
     ///@}
   private:
 
-    bool m_sampled;
+    bool m_sampled{false};
     bool m_sampledHasBeenSet = false;
   };
 

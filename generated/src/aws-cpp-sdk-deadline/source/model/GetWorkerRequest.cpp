@@ -12,13 +12,6 @@ using namespace Aws::deadline::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetWorkerRequest::GetWorkerRequest() : 
-    m_farmIdHasBeenSet(false),
-    m_fleetIdHasBeenSet(false),
-    m_workerIdHasBeenSet(false)
-{
-}
-
 Aws::String GetWorkerRequest::SerializePayload() const
 {
   return {};

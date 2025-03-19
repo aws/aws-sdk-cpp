@@ -32,7 +32,7 @@ namespace Model
   class ResultData
   {
   public:
-    AWS_CONNECTWISDOMSERVICE_API ResultData();
+    AWS_CONNECTWISDOMSERVICE_API ResultData() = default;
     AWS_CONNECTWISDOMSERVICE_API ResultData(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTWISDOMSERVICE_API ResultData& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTWISDOMSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,19 +42,19 @@ namespace Model
     /**
      * <p>The document.</p>
      */
-    inline const Document& GetDocument() const{ return m_document; }
+    inline const Document& GetDocument() const { return m_document; }
     inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
-    inline void SetDocument(const Document& value) { m_documentHasBeenSet = true; m_document = value; }
-    inline void SetDocument(Document&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
-    inline ResultData& WithDocument(const Document& value) { SetDocument(value); return *this;}
-    inline ResultData& WithDocument(Document&& value) { SetDocument(std::move(value)); return *this;}
+    template<typename DocumentT = Document>
+    void SetDocument(DocumentT&& value) { m_documentHasBeenSet = true; m_document = std::forward<DocumentT>(value); }
+    template<typename DocumentT = Document>
+    ResultData& WithDocument(DocumentT&& value) { SetDocument(std::forward<DocumentT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The relevance score of the results.</p>
      */
-    inline double GetRelevanceScore() const{ return m_relevanceScore; }
+    inline double GetRelevanceScore() const { return m_relevanceScore; }
     inline bool RelevanceScoreHasBeenSet() const { return m_relevanceScoreHasBeenSet; }
     inline void SetRelevanceScore(double value) { m_relevanceScoreHasBeenSet = true; m_relevanceScore = value; }
     inline ResultData& WithRelevanceScore(double value) { SetRelevanceScore(value); return *this;}
@@ -64,21 +64,19 @@ namespace Model
     /**
      * <p>The identifier of the result data.</p>
      */
-    inline const Aws::String& GetResultId() const{ return m_resultId; }
+    inline const Aws::String& GetResultId() const { return m_resultId; }
     inline bool ResultIdHasBeenSet() const { return m_resultIdHasBeenSet; }
-    inline void SetResultId(const Aws::String& value) { m_resultIdHasBeenSet = true; m_resultId = value; }
-    inline void SetResultId(Aws::String&& value) { m_resultIdHasBeenSet = true; m_resultId = std::move(value); }
-    inline void SetResultId(const char* value) { m_resultIdHasBeenSet = true; m_resultId.assign(value); }
-    inline ResultData& WithResultId(const Aws::String& value) { SetResultId(value); return *this;}
-    inline ResultData& WithResultId(Aws::String&& value) { SetResultId(std::move(value)); return *this;}
-    inline ResultData& WithResultId(const char* value) { SetResultId(value); return *this;}
+    template<typename ResultIdT = Aws::String>
+    void SetResultId(ResultIdT&& value) { m_resultIdHasBeenSet = true; m_resultId = std::forward<ResultIdT>(value); }
+    template<typename ResultIdT = Aws::String>
+    ResultData& WithResultId(ResultIdT&& value) { SetResultId(std::forward<ResultIdT>(value)); return *this;}
     ///@}
   private:
 
     Document m_document;
     bool m_documentHasBeenSet = false;
 
-    double m_relevanceScore;
+    double m_relevanceScore{0.0};
     bool m_relevanceScoreHasBeenSet = false;
 
     Aws::String m_resultId;

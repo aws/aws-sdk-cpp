@@ -18,15 +18,7 @@ namespace EntityResolution
 namespace Model
 {
 
-ProviderProperties::ProviderProperties() : 
-    m_intermediateSourceConfigurationHasBeenSet(false),
-    m_providerConfigurationHasBeenSet(false),
-    m_providerServiceArnHasBeenSet(false)
-{
-}
-
 ProviderProperties::ProviderProperties(JsonView jsonValue)
-  : ProviderProperties()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ProviderProperties& ProviderProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("intermediateSourceConfiguration"))
   {
     m_intermediateSourceConfiguration = jsonValue.GetObject("intermediateSourceConfiguration");
-
     m_intermediateSourceConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("providerConfiguration"))
   {
     m_providerConfiguration = jsonValue.GetObject("providerConfiguration");
-
     m_providerConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("providerServiceArn"))
   {
     m_providerServiceArn = jsonValue.GetString("providerServiceArn");
-
     m_providerServiceArnHasBeenSet = true;
   }
-
   return *this;
 }
 

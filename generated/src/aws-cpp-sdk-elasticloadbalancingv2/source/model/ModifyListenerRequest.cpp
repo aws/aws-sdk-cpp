@@ -10,20 +10,6 @@
 using namespace Aws::ElasticLoadBalancingv2::Model;
 using namespace Aws::Utils;
 
-ModifyListenerRequest::ModifyListenerRequest() : 
-    m_listenerArnHasBeenSet(false),
-    m_port(0),
-    m_portHasBeenSet(false),
-    m_protocol(ProtocolEnum::NOT_SET),
-    m_protocolHasBeenSet(false),
-    m_sslPolicyHasBeenSet(false),
-    m_certificatesHasBeenSet(false),
-    m_defaultActionsHasBeenSet(false),
-    m_alpnPolicyHasBeenSet(false),
-    m_mutualAuthenticationHasBeenSet(false)
-{
-}
-
 Aws::String ModifyListenerRequest::SerializePayload() const
 {
   Aws::StringStream ss;

@@ -12,11 +12,6 @@ using namespace Aws::ECRPublic::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutRegistryCatalogDataRequest::PutRegistryCatalogDataRequest() : 
-    m_displayNameHasBeenSet(false)
-{
-}
-
 Aws::String PutRegistryCatalogDataRequest::SerializePayload() const
 {
   JsonValue payload;

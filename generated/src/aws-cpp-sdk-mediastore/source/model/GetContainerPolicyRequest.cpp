@@ -12,11 +12,6 @@ using namespace Aws::MediaStore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetContainerPolicyRequest::GetContainerPolicyRequest() : 
-    m_containerNameHasBeenSet(false)
-{
-}
-
 Aws::String GetContainerPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

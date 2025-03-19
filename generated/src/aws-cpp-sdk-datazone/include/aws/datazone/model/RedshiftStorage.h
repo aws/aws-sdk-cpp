@@ -33,7 +33,7 @@ namespace Model
   class RedshiftStorage
   {
   public:
-    AWS_DATAZONE_API RedshiftStorage();
+    AWS_DATAZONE_API RedshiftStorage() = default;
     AWS_DATAZONE_API RedshiftStorage(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API RedshiftStorage& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,24 +43,24 @@ namespace Model
     /**
      * <p>The details of the Amazon Redshift cluster source.</p>
      */
-    inline const RedshiftClusterStorage& GetRedshiftClusterSource() const{ return m_redshiftClusterSource; }
+    inline const RedshiftClusterStorage& GetRedshiftClusterSource() const { return m_redshiftClusterSource; }
     inline bool RedshiftClusterSourceHasBeenSet() const { return m_redshiftClusterSourceHasBeenSet; }
-    inline void SetRedshiftClusterSource(const RedshiftClusterStorage& value) { m_redshiftClusterSourceHasBeenSet = true; m_redshiftClusterSource = value; }
-    inline void SetRedshiftClusterSource(RedshiftClusterStorage&& value) { m_redshiftClusterSourceHasBeenSet = true; m_redshiftClusterSource = std::move(value); }
-    inline RedshiftStorage& WithRedshiftClusterSource(const RedshiftClusterStorage& value) { SetRedshiftClusterSource(value); return *this;}
-    inline RedshiftStorage& WithRedshiftClusterSource(RedshiftClusterStorage&& value) { SetRedshiftClusterSource(std::move(value)); return *this;}
+    template<typename RedshiftClusterSourceT = RedshiftClusterStorage>
+    void SetRedshiftClusterSource(RedshiftClusterSourceT&& value) { m_redshiftClusterSourceHasBeenSet = true; m_redshiftClusterSource = std::forward<RedshiftClusterSourceT>(value); }
+    template<typename RedshiftClusterSourceT = RedshiftClusterStorage>
+    RedshiftStorage& WithRedshiftClusterSource(RedshiftClusterSourceT&& value) { SetRedshiftClusterSource(std::forward<RedshiftClusterSourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The details of the Amazon Redshift Serverless workgroup source.</p>
      */
-    inline const RedshiftServerlessStorage& GetRedshiftServerlessSource() const{ return m_redshiftServerlessSource; }
+    inline const RedshiftServerlessStorage& GetRedshiftServerlessSource() const { return m_redshiftServerlessSource; }
     inline bool RedshiftServerlessSourceHasBeenSet() const { return m_redshiftServerlessSourceHasBeenSet; }
-    inline void SetRedshiftServerlessSource(const RedshiftServerlessStorage& value) { m_redshiftServerlessSourceHasBeenSet = true; m_redshiftServerlessSource = value; }
-    inline void SetRedshiftServerlessSource(RedshiftServerlessStorage&& value) { m_redshiftServerlessSourceHasBeenSet = true; m_redshiftServerlessSource = std::move(value); }
-    inline RedshiftStorage& WithRedshiftServerlessSource(const RedshiftServerlessStorage& value) { SetRedshiftServerlessSource(value); return *this;}
-    inline RedshiftStorage& WithRedshiftServerlessSource(RedshiftServerlessStorage&& value) { SetRedshiftServerlessSource(std::move(value)); return *this;}
+    template<typename RedshiftServerlessSourceT = RedshiftServerlessStorage>
+    void SetRedshiftServerlessSource(RedshiftServerlessSourceT&& value) { m_redshiftServerlessSourceHasBeenSet = true; m_redshiftServerlessSource = std::forward<RedshiftServerlessSourceT>(value); }
+    template<typename RedshiftServerlessSourceT = RedshiftServerlessStorage>
+    RedshiftStorage& WithRedshiftServerlessSource(RedshiftServerlessSourceT&& value) { SetRedshiftServerlessSource(std::forward<RedshiftServerlessSourceT>(value)); return *this;}
     ///@}
   private:
 

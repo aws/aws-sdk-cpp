@@ -29,7 +29,7 @@ namespace Model
   class UpdateDataAutomationProjectRequest : public BedrockDataAutomationRequest
   {
   public:
-    AWS_BEDROCKDATAAUTOMATION_API UpdateDataAutomationProjectRequest();
+    AWS_BEDROCKDATAAUTOMATION_API UpdateDataAutomationProjectRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -44,83 +44,77 @@ namespace Model
     /**
      * <p>ARN generated at the server side when a DataAutomationProject is created</p>
      */
-    inline const Aws::String& GetProjectArn() const{ return m_projectArn; }
+    inline const Aws::String& GetProjectArn() const { return m_projectArn; }
     inline bool ProjectArnHasBeenSet() const { return m_projectArnHasBeenSet; }
-    inline void SetProjectArn(const Aws::String& value) { m_projectArnHasBeenSet = true; m_projectArn = value; }
-    inline void SetProjectArn(Aws::String&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::move(value); }
-    inline void SetProjectArn(const char* value) { m_projectArnHasBeenSet = true; m_projectArn.assign(value); }
-    inline UpdateDataAutomationProjectRequest& WithProjectArn(const Aws::String& value) { SetProjectArn(value); return *this;}
-    inline UpdateDataAutomationProjectRequest& WithProjectArn(Aws::String&& value) { SetProjectArn(std::move(value)); return *this;}
-    inline UpdateDataAutomationProjectRequest& WithProjectArn(const char* value) { SetProjectArn(value); return *this;}
+    template<typename ProjectArnT = Aws::String>
+    void SetProjectArn(ProjectArnT&& value) { m_projectArnHasBeenSet = true; m_projectArn = std::forward<ProjectArnT>(value); }
+    template<typename ProjectArnT = Aws::String>
+    UpdateDataAutomationProjectRequest& WithProjectArn(ProjectArnT&& value) { SetProjectArn(std::forward<ProjectArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DataAutomationProjectStage& GetProjectStage() const{ return m_projectStage; }
+    inline DataAutomationProjectStage GetProjectStage() const { return m_projectStage; }
     inline bool ProjectStageHasBeenSet() const { return m_projectStageHasBeenSet; }
-    inline void SetProjectStage(const DataAutomationProjectStage& value) { m_projectStageHasBeenSet = true; m_projectStage = value; }
-    inline void SetProjectStage(DataAutomationProjectStage&& value) { m_projectStageHasBeenSet = true; m_projectStage = std::move(value); }
-    inline UpdateDataAutomationProjectRequest& WithProjectStage(const DataAutomationProjectStage& value) { SetProjectStage(value); return *this;}
-    inline UpdateDataAutomationProjectRequest& WithProjectStage(DataAutomationProjectStage&& value) { SetProjectStage(std::move(value)); return *this;}
+    inline void SetProjectStage(DataAutomationProjectStage value) { m_projectStageHasBeenSet = true; m_projectStage = value; }
+    inline UpdateDataAutomationProjectRequest& WithProjectStage(DataAutomationProjectStage value) { SetProjectStage(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetProjectDescription() const{ return m_projectDescription; }
+    inline const Aws::String& GetProjectDescription() const { return m_projectDescription; }
     inline bool ProjectDescriptionHasBeenSet() const { return m_projectDescriptionHasBeenSet; }
-    inline void SetProjectDescription(const Aws::String& value) { m_projectDescriptionHasBeenSet = true; m_projectDescription = value; }
-    inline void SetProjectDescription(Aws::String&& value) { m_projectDescriptionHasBeenSet = true; m_projectDescription = std::move(value); }
-    inline void SetProjectDescription(const char* value) { m_projectDescriptionHasBeenSet = true; m_projectDescription.assign(value); }
-    inline UpdateDataAutomationProjectRequest& WithProjectDescription(const Aws::String& value) { SetProjectDescription(value); return *this;}
-    inline UpdateDataAutomationProjectRequest& WithProjectDescription(Aws::String&& value) { SetProjectDescription(std::move(value)); return *this;}
-    inline UpdateDataAutomationProjectRequest& WithProjectDescription(const char* value) { SetProjectDescription(value); return *this;}
+    template<typename ProjectDescriptionT = Aws::String>
+    void SetProjectDescription(ProjectDescriptionT&& value) { m_projectDescriptionHasBeenSet = true; m_projectDescription = std::forward<ProjectDescriptionT>(value); }
+    template<typename ProjectDescriptionT = Aws::String>
+    UpdateDataAutomationProjectRequest& WithProjectDescription(ProjectDescriptionT&& value) { SetProjectDescription(std::forward<ProjectDescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const StandardOutputConfiguration& GetStandardOutputConfiguration() const{ return m_standardOutputConfiguration; }
+    inline const StandardOutputConfiguration& GetStandardOutputConfiguration() const { return m_standardOutputConfiguration; }
     inline bool StandardOutputConfigurationHasBeenSet() const { return m_standardOutputConfigurationHasBeenSet; }
-    inline void SetStandardOutputConfiguration(const StandardOutputConfiguration& value) { m_standardOutputConfigurationHasBeenSet = true; m_standardOutputConfiguration = value; }
-    inline void SetStandardOutputConfiguration(StandardOutputConfiguration&& value) { m_standardOutputConfigurationHasBeenSet = true; m_standardOutputConfiguration = std::move(value); }
-    inline UpdateDataAutomationProjectRequest& WithStandardOutputConfiguration(const StandardOutputConfiguration& value) { SetStandardOutputConfiguration(value); return *this;}
-    inline UpdateDataAutomationProjectRequest& WithStandardOutputConfiguration(StandardOutputConfiguration&& value) { SetStandardOutputConfiguration(std::move(value)); return *this;}
+    template<typename StandardOutputConfigurationT = StandardOutputConfiguration>
+    void SetStandardOutputConfiguration(StandardOutputConfigurationT&& value) { m_standardOutputConfigurationHasBeenSet = true; m_standardOutputConfiguration = std::forward<StandardOutputConfigurationT>(value); }
+    template<typename StandardOutputConfigurationT = StandardOutputConfiguration>
+    UpdateDataAutomationProjectRequest& WithStandardOutputConfiguration(StandardOutputConfigurationT&& value) { SetStandardOutputConfiguration(std::forward<StandardOutputConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const CustomOutputConfiguration& GetCustomOutputConfiguration() const{ return m_customOutputConfiguration; }
+    inline const CustomOutputConfiguration& GetCustomOutputConfiguration() const { return m_customOutputConfiguration; }
     inline bool CustomOutputConfigurationHasBeenSet() const { return m_customOutputConfigurationHasBeenSet; }
-    inline void SetCustomOutputConfiguration(const CustomOutputConfiguration& value) { m_customOutputConfigurationHasBeenSet = true; m_customOutputConfiguration = value; }
-    inline void SetCustomOutputConfiguration(CustomOutputConfiguration&& value) { m_customOutputConfigurationHasBeenSet = true; m_customOutputConfiguration = std::move(value); }
-    inline UpdateDataAutomationProjectRequest& WithCustomOutputConfiguration(const CustomOutputConfiguration& value) { SetCustomOutputConfiguration(value); return *this;}
-    inline UpdateDataAutomationProjectRequest& WithCustomOutputConfiguration(CustomOutputConfiguration&& value) { SetCustomOutputConfiguration(std::move(value)); return *this;}
+    template<typename CustomOutputConfigurationT = CustomOutputConfiguration>
+    void SetCustomOutputConfiguration(CustomOutputConfigurationT&& value) { m_customOutputConfigurationHasBeenSet = true; m_customOutputConfiguration = std::forward<CustomOutputConfigurationT>(value); }
+    template<typename CustomOutputConfigurationT = CustomOutputConfiguration>
+    UpdateDataAutomationProjectRequest& WithCustomOutputConfiguration(CustomOutputConfigurationT&& value) { SetCustomOutputConfiguration(std::forward<CustomOutputConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const OverrideConfiguration& GetOverrideConfiguration() const{ return m_overrideConfiguration; }
+    inline const OverrideConfiguration& GetOverrideConfiguration() const { return m_overrideConfiguration; }
     inline bool OverrideConfigurationHasBeenSet() const { return m_overrideConfigurationHasBeenSet; }
-    inline void SetOverrideConfiguration(const OverrideConfiguration& value) { m_overrideConfigurationHasBeenSet = true; m_overrideConfiguration = value; }
-    inline void SetOverrideConfiguration(OverrideConfiguration&& value) { m_overrideConfigurationHasBeenSet = true; m_overrideConfiguration = std::move(value); }
-    inline UpdateDataAutomationProjectRequest& WithOverrideConfiguration(const OverrideConfiguration& value) { SetOverrideConfiguration(value); return *this;}
-    inline UpdateDataAutomationProjectRequest& WithOverrideConfiguration(OverrideConfiguration&& value) { SetOverrideConfiguration(std::move(value)); return *this;}
+    template<typename OverrideConfigurationT = OverrideConfiguration>
+    void SetOverrideConfiguration(OverrideConfigurationT&& value) { m_overrideConfigurationHasBeenSet = true; m_overrideConfiguration = std::forward<OverrideConfigurationT>(value); }
+    template<typename OverrideConfigurationT = OverrideConfiguration>
+    UpdateDataAutomationProjectRequest& WithOverrideConfiguration(OverrideConfigurationT&& value) { SetOverrideConfiguration(std::forward<OverrideConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+    inline const EncryptionConfiguration& GetEncryptionConfiguration() const { return m_encryptionConfiguration; }
     inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
-    inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
-    inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
-    inline UpdateDataAutomationProjectRequest& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
-    inline UpdateDataAutomationProjectRequest& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    void SetEncryptionConfiguration(EncryptionConfigurationT&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::forward<EncryptionConfigurationT>(value); }
+    template<typename EncryptionConfigurationT = EncryptionConfiguration>
+    UpdateDataAutomationProjectRequest& WithEncryptionConfiguration(EncryptionConfigurationT&& value) { SetEncryptionConfiguration(std::forward<EncryptionConfigurationT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_projectArn;
     bool m_projectArnHasBeenSet = false;
 
-    DataAutomationProjectStage m_projectStage;
+    DataAutomationProjectStage m_projectStage{DataAutomationProjectStage::NOT_SET};
     bool m_projectStageHasBeenSet = false;
 
     Aws::String m_projectDescription;

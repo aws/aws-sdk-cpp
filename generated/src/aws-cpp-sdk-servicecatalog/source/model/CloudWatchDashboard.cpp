@@ -18,13 +18,7 @@ namespace ServiceCatalog
 namespace Model
 {
 
-CloudWatchDashboard::CloudWatchDashboard() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 CloudWatchDashboard::CloudWatchDashboard(JsonView jsonValue)
-  : CloudWatchDashboard()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ CloudWatchDashboard& CloudWatchDashboard::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -34,7 +34,7 @@ namespace Model
   class ClusterSlurmConfiguration
   {
   public:
-    AWS_PCS_API ClusterSlurmConfiguration();
+    AWS_PCS_API ClusterSlurmConfiguration() = default;
     AWS_PCS_API ClusterSlurmConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_PCS_API ClusterSlurmConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PCS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * <p>The time (in seconds) before an idle node is scaled down.</p> <p>Default:
      * <code>600</code> </p>
      */
-    inline int GetScaleDownIdleTimeInSeconds() const{ return m_scaleDownIdleTimeInSeconds; }
+    inline int GetScaleDownIdleTimeInSeconds() const { return m_scaleDownIdleTimeInSeconds; }
     inline bool ScaleDownIdleTimeInSecondsHasBeenSet() const { return m_scaleDownIdleTimeInSecondsHasBeenSet; }
     inline void SetScaleDownIdleTimeInSeconds(int value) { m_scaleDownIdleTimeInSecondsHasBeenSet = true; m_scaleDownIdleTimeInSeconds = value; }
     inline ClusterSlurmConfiguration& WithScaleDownIdleTimeInSeconds(int value) { SetScaleDownIdleTimeInSeconds(value); return *this;}
@@ -56,14 +56,14 @@ namespace Model
      * <p>Additional Slurm-specific configuration that directly maps to Slurm
      * settings.</p>
      */
-    inline const Aws::Vector<SlurmCustomSetting>& GetSlurmCustomSettings() const{ return m_slurmCustomSettings; }
+    inline const Aws::Vector<SlurmCustomSetting>& GetSlurmCustomSettings() const { return m_slurmCustomSettings; }
     inline bool SlurmCustomSettingsHasBeenSet() const { return m_slurmCustomSettingsHasBeenSet; }
-    inline void SetSlurmCustomSettings(const Aws::Vector<SlurmCustomSetting>& value) { m_slurmCustomSettingsHasBeenSet = true; m_slurmCustomSettings = value; }
-    inline void SetSlurmCustomSettings(Aws::Vector<SlurmCustomSetting>&& value) { m_slurmCustomSettingsHasBeenSet = true; m_slurmCustomSettings = std::move(value); }
-    inline ClusterSlurmConfiguration& WithSlurmCustomSettings(const Aws::Vector<SlurmCustomSetting>& value) { SetSlurmCustomSettings(value); return *this;}
-    inline ClusterSlurmConfiguration& WithSlurmCustomSettings(Aws::Vector<SlurmCustomSetting>&& value) { SetSlurmCustomSettings(std::move(value)); return *this;}
-    inline ClusterSlurmConfiguration& AddSlurmCustomSettings(const SlurmCustomSetting& value) { m_slurmCustomSettingsHasBeenSet = true; m_slurmCustomSettings.push_back(value); return *this; }
-    inline ClusterSlurmConfiguration& AddSlurmCustomSettings(SlurmCustomSetting&& value) { m_slurmCustomSettingsHasBeenSet = true; m_slurmCustomSettings.push_back(std::move(value)); return *this; }
+    template<typename SlurmCustomSettingsT = Aws::Vector<SlurmCustomSetting>>
+    void SetSlurmCustomSettings(SlurmCustomSettingsT&& value) { m_slurmCustomSettingsHasBeenSet = true; m_slurmCustomSettings = std::forward<SlurmCustomSettingsT>(value); }
+    template<typename SlurmCustomSettingsT = Aws::Vector<SlurmCustomSetting>>
+    ClusterSlurmConfiguration& WithSlurmCustomSettings(SlurmCustomSettingsT&& value) { SetSlurmCustomSettings(std::forward<SlurmCustomSettingsT>(value)); return *this;}
+    template<typename SlurmCustomSettingsT = SlurmCustomSetting>
+    ClusterSlurmConfiguration& AddSlurmCustomSettings(SlurmCustomSettingsT&& value) { m_slurmCustomSettingsHasBeenSet = true; m_slurmCustomSettings.emplace_back(std::forward<SlurmCustomSettingsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -71,16 +71,16 @@ namespace Model
      * <p>The shared Slurm key for authentication, also known as the <b>cluster
      * secret</b>.</p>
      */
-    inline const SlurmAuthKey& GetAuthKey() const{ return m_authKey; }
+    inline const SlurmAuthKey& GetAuthKey() const { return m_authKey; }
     inline bool AuthKeyHasBeenSet() const { return m_authKeyHasBeenSet; }
-    inline void SetAuthKey(const SlurmAuthKey& value) { m_authKeyHasBeenSet = true; m_authKey = value; }
-    inline void SetAuthKey(SlurmAuthKey&& value) { m_authKeyHasBeenSet = true; m_authKey = std::move(value); }
-    inline ClusterSlurmConfiguration& WithAuthKey(const SlurmAuthKey& value) { SetAuthKey(value); return *this;}
-    inline ClusterSlurmConfiguration& WithAuthKey(SlurmAuthKey&& value) { SetAuthKey(std::move(value)); return *this;}
+    template<typename AuthKeyT = SlurmAuthKey>
+    void SetAuthKey(AuthKeyT&& value) { m_authKeyHasBeenSet = true; m_authKey = std::forward<AuthKeyT>(value); }
+    template<typename AuthKeyT = SlurmAuthKey>
+    ClusterSlurmConfiguration& WithAuthKey(AuthKeyT&& value) { SetAuthKey(std::forward<AuthKeyT>(value)); return *this;}
     ///@}
   private:
 
-    int m_scaleDownIdleTimeInSeconds;
+    int m_scaleDownIdleTimeInSeconds{0};
     bool m_scaleDownIdleTimeInSecondsHasBeenSet = false;
 
     Aws::Vector<SlurmCustomSetting> m_slurmCustomSettings;

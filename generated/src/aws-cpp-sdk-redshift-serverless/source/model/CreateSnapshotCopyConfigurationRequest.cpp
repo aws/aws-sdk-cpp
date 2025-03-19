@@ -12,15 +12,6 @@ using namespace Aws::RedshiftServerless::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSnapshotCopyConfigurationRequest::CreateSnapshotCopyConfigurationRequest() : 
-    m_destinationKmsKeyIdHasBeenSet(false),
-    m_destinationRegionHasBeenSet(false),
-    m_namespaceNameHasBeenSet(false),
-    m_snapshotRetentionPeriod(0),
-    m_snapshotRetentionPeriodHasBeenSet(false)
-{
-}
-
 Aws::String CreateSnapshotCopyConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

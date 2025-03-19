@@ -23,7 +23,7 @@ namespace Model
   class ListFiltersRequest : public Inspector2Request
   {
   public:
-    AWS_INSPECTOR2_API ListFiltersRequest();
+    AWS_INSPECTOR2_API ListFiltersRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,27 +38,24 @@ namespace Model
     /**
      * <p>The action the filter applies to matched findings.</p>
      */
-    inline const FilterAction& GetAction() const{ return m_action; }
+    inline FilterAction GetAction() const { return m_action; }
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
-    inline void SetAction(const FilterAction& value) { m_actionHasBeenSet = true; m_action = value; }
-    inline void SetAction(FilterAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
-    inline ListFiltersRequest& WithAction(const FilterAction& value) { SetAction(value); return *this;}
-    inline ListFiltersRequest& WithAction(FilterAction&& value) { SetAction(std::move(value)); return *this;}
+    inline void SetAction(FilterAction value) { m_actionHasBeenSet = true; m_action = value; }
+    inline ListFiltersRequest& WithAction(FilterAction value) { SetAction(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon resource number (ARN) of the filter.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetArns() const{ return m_arns; }
+    inline const Aws::Vector<Aws::String>& GetArns() const { return m_arns; }
     inline bool ArnsHasBeenSet() const { return m_arnsHasBeenSet; }
-    inline void SetArns(const Aws::Vector<Aws::String>& value) { m_arnsHasBeenSet = true; m_arns = value; }
-    inline void SetArns(Aws::Vector<Aws::String>&& value) { m_arnsHasBeenSet = true; m_arns = std::move(value); }
-    inline ListFiltersRequest& WithArns(const Aws::Vector<Aws::String>& value) { SetArns(value); return *this;}
-    inline ListFiltersRequest& WithArns(Aws::Vector<Aws::String>&& value) { SetArns(std::move(value)); return *this;}
-    inline ListFiltersRequest& AddArns(const Aws::String& value) { m_arnsHasBeenSet = true; m_arns.push_back(value); return *this; }
-    inline ListFiltersRequest& AddArns(Aws::String&& value) { m_arnsHasBeenSet = true; m_arns.push_back(std::move(value)); return *this; }
-    inline ListFiltersRequest& AddArns(const char* value) { m_arnsHasBeenSet = true; m_arns.push_back(value); return *this; }
+    template<typename ArnsT = Aws::Vector<Aws::String>>
+    void SetArns(ArnsT&& value) { m_arnsHasBeenSet = true; m_arns = std::forward<ArnsT>(value); }
+    template<typename ArnsT = Aws::Vector<Aws::String>>
+    ListFiltersRequest& WithArns(ArnsT&& value) { SetArns(std::forward<ArnsT>(value)); return *this;}
+    template<typename ArnsT = Aws::String>
+    ListFiltersRequest& AddArns(ArnsT&& value) { m_arnsHasBeenSet = true; m_arns.emplace_back(std::forward<ArnsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -68,7 +65,7 @@ namespace Model
      * value, use this value when you call the action again to get the remaining
      * results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListFiltersRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -83,24 +80,22 @@ namespace Model
      * <code>nextToken</code> value returned from the previous request to continue
      * listing results after the first page.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListFiltersRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListFiltersRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListFiltersRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListFiltersRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
-    FilterAction m_action;
+    FilterAction m_action{FilterAction::NOT_SET};
     bool m_actionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_arns;
     bool m_arnsHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

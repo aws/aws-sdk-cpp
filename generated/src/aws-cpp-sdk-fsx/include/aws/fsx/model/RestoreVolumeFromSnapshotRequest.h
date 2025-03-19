@@ -24,7 +24,7 @@ namespace Model
   class RestoreVolumeFromSnapshotRequest : public FSxRequest
   {
   public:
-    AWS_FSX_API RestoreVolumeFromSnapshotRequest();
+    AWS_FSX_API RestoreVolumeFromSnapshotRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,28 +39,24 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+    inline const Aws::String& GetClientRequestToken() const { return m_clientRequestToken; }
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
-    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
-    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
-    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
-    inline RestoreVolumeFromSnapshotRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
-    inline RestoreVolumeFromSnapshotRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
-    inline RestoreVolumeFromSnapshotRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
+    template<typename ClientRequestTokenT = Aws::String>
+    void SetClientRequestToken(ClientRequestTokenT&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::forward<ClientRequestTokenT>(value); }
+    template<typename ClientRequestTokenT = Aws::String>
+    RestoreVolumeFromSnapshotRequest& WithClientRequestToken(ClientRequestTokenT&& value) { SetClientRequestToken(std::forward<ClientRequestTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the volume that you are restoring.</p>
      */
-    inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
+    inline const Aws::String& GetVolumeId() const { return m_volumeId; }
     inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
-    inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
-    inline void SetVolumeId(Aws::String&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::move(value); }
-    inline void SetVolumeId(const char* value) { m_volumeIdHasBeenSet = true; m_volumeId.assign(value); }
-    inline RestoreVolumeFromSnapshotRequest& WithVolumeId(const Aws::String& value) { SetVolumeId(value); return *this;}
-    inline RestoreVolumeFromSnapshotRequest& WithVolumeId(Aws::String&& value) { SetVolumeId(std::move(value)); return *this;}
-    inline RestoreVolumeFromSnapshotRequest& WithVolumeId(const char* value) { SetVolumeId(value); return *this;}
+    template<typename VolumeIdT = Aws::String>
+    void SetVolumeId(VolumeIdT&& value) { m_volumeIdHasBeenSet = true; m_volumeId = std::forward<VolumeIdT>(value); }
+    template<typename VolumeIdT = Aws::String>
+    RestoreVolumeFromSnapshotRequest& WithVolumeId(VolumeIdT&& value) { SetVolumeId(std::forward<VolumeIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -68,14 +64,12 @@ namespace Model
      * <p>The ID of the source snapshot. Specifies the snapshot that you are restoring
      * from.</p>
      */
-    inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+    inline const Aws::String& GetSnapshotId() const { return m_snapshotId; }
     inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
-    inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
-    inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
-    inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
-    inline RestoreVolumeFromSnapshotRequest& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
-    inline RestoreVolumeFromSnapshotRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
-    inline RestoreVolumeFromSnapshotRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
+    template<typename SnapshotIdT = Aws::String>
+    void SetSnapshotId(SnapshotIdT&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::forward<SnapshotIdT>(value); }
+    template<typename SnapshotIdT = Aws::String>
+    RestoreVolumeFromSnapshotRequest& WithSnapshotId(SnapshotIdT&& value) { SetSnapshotId(std::forward<SnapshotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +83,13 @@ namespace Model
      * dependent clone volumes and this option isn't used,
      * <code>RestoreVolumeFromSnapshot</code> fails.</p> </li> </ul>
      */
-    inline const Aws::Vector<RestoreOpenZFSVolumeOption>& GetOptions() const{ return m_options; }
+    inline const Aws::Vector<RestoreOpenZFSVolumeOption>& GetOptions() const { return m_options; }
     inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
-    inline void SetOptions(const Aws::Vector<RestoreOpenZFSVolumeOption>& value) { m_optionsHasBeenSet = true; m_options = value; }
-    inline void SetOptions(Aws::Vector<RestoreOpenZFSVolumeOption>&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
-    inline RestoreVolumeFromSnapshotRequest& WithOptions(const Aws::Vector<RestoreOpenZFSVolumeOption>& value) { SetOptions(value); return *this;}
-    inline RestoreVolumeFromSnapshotRequest& WithOptions(Aws::Vector<RestoreOpenZFSVolumeOption>&& value) { SetOptions(std::move(value)); return *this;}
-    inline RestoreVolumeFromSnapshotRequest& AddOptions(const RestoreOpenZFSVolumeOption& value) { m_optionsHasBeenSet = true; m_options.push_back(value); return *this; }
-    inline RestoreVolumeFromSnapshotRequest& AddOptions(RestoreOpenZFSVolumeOption&& value) { m_optionsHasBeenSet = true; m_options.push_back(std::move(value)); return *this; }
+    template<typename OptionsT = Aws::Vector<RestoreOpenZFSVolumeOption>>
+    void SetOptions(OptionsT&& value) { m_optionsHasBeenSet = true; m_options = std::forward<OptionsT>(value); }
+    template<typename OptionsT = Aws::Vector<RestoreOpenZFSVolumeOption>>
+    RestoreVolumeFromSnapshotRequest& WithOptions(OptionsT&& value) { SetOptions(std::forward<OptionsT>(value)); return *this;}
+    inline RestoreVolumeFromSnapshotRequest& AddOptions(RestoreOpenZFSVolumeOption value) { m_optionsHasBeenSet = true; m_options.push_back(value); return *this; }
     ///@}
   private:
 

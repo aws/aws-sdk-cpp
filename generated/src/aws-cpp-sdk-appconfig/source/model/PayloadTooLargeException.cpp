@@ -18,19 +18,7 @@ namespace AppConfig
 namespace Model
 {
 
-PayloadTooLargeException::PayloadTooLargeException() : 
-    m_messageHasBeenSet(false),
-    m_measure(BytesMeasure::NOT_SET),
-    m_measureHasBeenSet(false),
-    m_limit(0.0),
-    m_limitHasBeenSet(false),
-    m_size(0.0),
-    m_sizeHasBeenSet(false)
-{
-}
-
 PayloadTooLargeException::PayloadTooLargeException(JsonView jsonValue)
-  : PayloadTooLargeException()
 {
   *this = jsonValue;
 }
@@ -40,31 +28,23 @@ PayloadTooLargeException& PayloadTooLargeException::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Measure"))
   {
     m_measure = BytesMeasureMapper::GetBytesMeasureForName(jsonValue.GetString("Measure"));
-
     m_measureHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Limit"))
   {
     m_limit = jsonValue.GetDouble("Limit");
-
     m_limitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Size"))
   {
     m_size = jsonValue.GetDouble("Size");
-
     m_sizeHasBeenSet = true;
   }
-
   return *this;
 }
 

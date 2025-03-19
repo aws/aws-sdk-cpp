@@ -20,19 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ScheduledInstanceRecurrence::ScheduledInstanceRecurrence() : 
-    m_frequencyHasBeenSet(false),
-    m_interval(0),
-    m_intervalHasBeenSet(false),
-    m_occurrenceDaySetHasBeenSet(false),
-    m_occurrenceRelativeToEnd(false),
-    m_occurrenceRelativeToEndHasBeenSet(false),
-    m_occurrenceUnitHasBeenSet(false)
-{
-}
-
 ScheduledInstanceRecurrence::ScheduledInstanceRecurrence(const XmlNode& xmlNode)
-  : ScheduledInstanceRecurrence()
 {
   *this = xmlNode;
 }
@@ -59,6 +47,7 @@ ScheduledInstanceRecurrence& ScheduledInstanceRecurrence::operator =(const XmlNo
     if(!occurrenceDaySetNode.IsNull())
     {
       XmlNode occurrenceDaySetMember = occurrenceDaySetNode.FirstChild("item");
+      m_occurrenceDaySetHasBeenSet = !occurrenceDaySetMember.IsNull();
       while(!occurrenceDaySetMember.IsNull())
       {
         m_occurrenceDaySet.push_back(StringUtils::ConvertToInt32(StringUtils::Trim(occurrenceDaySetMember.GetText().c_str()).c_str()));

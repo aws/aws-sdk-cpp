@@ -35,7 +35,7 @@ namespace Model
   class ComponentRequest
   {
   public:
-    AWS_IOTTWINMAKER_API ComponentRequest();
+    AWS_IOTTWINMAKER_API ComponentRequest() = default;
     AWS_IOTTWINMAKER_API ComponentRequest(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API ComponentRequest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTTWINMAKER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,28 +45,24 @@ namespace Model
     /**
      * <p>The description of the component request.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline ComponentRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline ComponentRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline ComponentRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    ComponentRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the component type.</p>
      */
-    inline const Aws::String& GetComponentTypeId() const{ return m_componentTypeId; }
+    inline const Aws::String& GetComponentTypeId() const { return m_componentTypeId; }
     inline bool ComponentTypeIdHasBeenSet() const { return m_componentTypeIdHasBeenSet; }
-    inline void SetComponentTypeId(const Aws::String& value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId = value; }
-    inline void SetComponentTypeId(Aws::String&& value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId = std::move(value); }
-    inline void SetComponentTypeId(const char* value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId.assign(value); }
-    inline ComponentRequest& WithComponentTypeId(const Aws::String& value) { SetComponentTypeId(value); return *this;}
-    inline ComponentRequest& WithComponentTypeId(Aws::String&& value) { SetComponentTypeId(std::move(value)); return *this;}
-    inline ComponentRequest& WithComponentTypeId(const char* value) { SetComponentTypeId(value); return *this;}
+    template<typename ComponentTypeIdT = Aws::String>
+    void SetComponentTypeId(ComponentTypeIdT&& value) { m_componentTypeIdHasBeenSet = true; m_componentTypeId = std::forward<ComponentTypeIdT>(value); }
+    template<typename ComponentTypeIdT = Aws::String>
+    ComponentRequest& WithComponentTypeId(ComponentTypeIdT&& value) { SetComponentTypeId(std::forward<ComponentTypeIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,36 +70,32 @@ namespace Model
      * <p>An object that maps strings to the properties to set in the component type.
      * Each string in the mapping must be unique to this object.</p>
      */
-    inline const Aws::Map<Aws::String, PropertyRequest>& GetProperties() const{ return m_properties; }
+    inline const Aws::Map<Aws::String, PropertyRequest>& GetProperties() const { return m_properties; }
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
-    inline void SetProperties(const Aws::Map<Aws::String, PropertyRequest>& value) { m_propertiesHasBeenSet = true; m_properties = value; }
-    inline void SetProperties(Aws::Map<Aws::String, PropertyRequest>&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
-    inline ComponentRequest& WithProperties(const Aws::Map<Aws::String, PropertyRequest>& value) { SetProperties(value); return *this;}
-    inline ComponentRequest& WithProperties(Aws::Map<Aws::String, PropertyRequest>&& value) { SetProperties(std::move(value)); return *this;}
-    inline ComponentRequest& AddProperties(const Aws::String& key, const PropertyRequest& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
-    inline ComponentRequest& AddProperties(Aws::String&& key, const PropertyRequest& value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), value); return *this; }
-    inline ComponentRequest& AddProperties(const Aws::String& key, PropertyRequest&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, std::move(value)); return *this; }
-    inline ComponentRequest& AddProperties(Aws::String&& key, PropertyRequest&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(std::move(key), std::move(value)); return *this; }
-    inline ComponentRequest& AddProperties(const char* key, PropertyRequest&& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, std::move(value)); return *this; }
-    inline ComponentRequest& AddProperties(const char* key, const PropertyRequest& value) { m_propertiesHasBeenSet = true; m_properties.emplace(key, value); return *this; }
+    template<typename PropertiesT = Aws::Map<Aws::String, PropertyRequest>>
+    void SetProperties(PropertiesT&& value) { m_propertiesHasBeenSet = true; m_properties = std::forward<PropertiesT>(value); }
+    template<typename PropertiesT = Aws::Map<Aws::String, PropertyRequest>>
+    ComponentRequest& WithProperties(PropertiesT&& value) { SetProperties(std::forward<PropertiesT>(value)); return *this;}
+    template<typename PropertiesKeyT = Aws::String, typename PropertiesValueT = PropertyRequest>
+    ComponentRequest& AddProperties(PropertiesKeyT&& key, PropertiesValueT&& value) {
+      m_propertiesHasBeenSet = true; m_properties.emplace(std::forward<PropertiesKeyT>(key), std::forward<PropertiesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The property groups.</p>
      */
-    inline const Aws::Map<Aws::String, ComponentPropertyGroupRequest>& GetPropertyGroups() const{ return m_propertyGroups; }
+    inline const Aws::Map<Aws::String, ComponentPropertyGroupRequest>& GetPropertyGroups() const { return m_propertyGroups; }
     inline bool PropertyGroupsHasBeenSet() const { return m_propertyGroupsHasBeenSet; }
-    inline void SetPropertyGroups(const Aws::Map<Aws::String, ComponentPropertyGroupRequest>& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups = value; }
-    inline void SetPropertyGroups(Aws::Map<Aws::String, ComponentPropertyGroupRequest>&& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups = std::move(value); }
-    inline ComponentRequest& WithPropertyGroups(const Aws::Map<Aws::String, ComponentPropertyGroupRequest>& value) { SetPropertyGroups(value); return *this;}
-    inline ComponentRequest& WithPropertyGroups(Aws::Map<Aws::String, ComponentPropertyGroupRequest>&& value) { SetPropertyGroups(std::move(value)); return *this;}
-    inline ComponentRequest& AddPropertyGroups(const Aws::String& key, const ComponentPropertyGroupRequest& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(key, value); return *this; }
-    inline ComponentRequest& AddPropertyGroups(Aws::String&& key, const ComponentPropertyGroupRequest& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(std::move(key), value); return *this; }
-    inline ComponentRequest& AddPropertyGroups(const Aws::String& key, ComponentPropertyGroupRequest&& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(key, std::move(value)); return *this; }
-    inline ComponentRequest& AddPropertyGroups(Aws::String&& key, ComponentPropertyGroupRequest&& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(std::move(key), std::move(value)); return *this; }
-    inline ComponentRequest& AddPropertyGroups(const char* key, ComponentPropertyGroupRequest&& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(key, std::move(value)); return *this; }
-    inline ComponentRequest& AddPropertyGroups(const char* key, const ComponentPropertyGroupRequest& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(key, value); return *this; }
+    template<typename PropertyGroupsT = Aws::Map<Aws::String, ComponentPropertyGroupRequest>>
+    void SetPropertyGroups(PropertyGroupsT&& value) { m_propertyGroupsHasBeenSet = true; m_propertyGroups = std::forward<PropertyGroupsT>(value); }
+    template<typename PropertyGroupsT = Aws::Map<Aws::String, ComponentPropertyGroupRequest>>
+    ComponentRequest& WithPropertyGroups(PropertyGroupsT&& value) { SetPropertyGroups(std::forward<PropertyGroupsT>(value)); return *this;}
+    template<typename PropertyGroupsKeyT = Aws::String, typename PropertyGroupsValueT = ComponentPropertyGroupRequest>
+    ComponentRequest& AddPropertyGroups(PropertyGroupsKeyT&& key, PropertyGroupsValueT&& value) {
+      m_propertyGroupsHasBeenSet = true; m_propertyGroups.emplace(std::forward<PropertyGroupsKeyT>(key), std::forward<PropertyGroupsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

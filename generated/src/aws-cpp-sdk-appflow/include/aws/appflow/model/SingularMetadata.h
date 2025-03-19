@@ -29,7 +29,7 @@ namespace Model
   class SingularMetadata
   {
   public:
-    AWS_APPFLOW_API SingularMetadata();
+    AWS_APPFLOW_API SingularMetadata() = default;
     AWS_APPFLOW_API SingularMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API SingularMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;

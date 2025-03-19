@@ -12,15 +12,6 @@ using namespace Aws::Inspector2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAccountPermissionsRequest::ListAccountPermissionsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_service(Service::NOT_SET),
-    m_serviceHasBeenSet(false)
-{
-}
-
 Aws::String ListAccountPermissionsRequest::SerializePayload() const
 {
   JsonValue payload;

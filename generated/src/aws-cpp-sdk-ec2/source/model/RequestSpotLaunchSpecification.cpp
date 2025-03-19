@@ -20,30 +20,7 @@ namespace EC2
 namespace Model
 {
 
-RequestSpotLaunchSpecification::RequestSpotLaunchSpecification() : 
-    m_securityGroupIdsHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false),
-    m_addressingTypeHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_ebsOptimized(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_iamInstanceProfileHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
-    m_instanceType(InstanceType::NOT_SET),
-    m_instanceTypeHasBeenSet(false),
-    m_kernelIdHasBeenSet(false),
-    m_keyNameHasBeenSet(false),
-    m_monitoringHasBeenSet(false),
-    m_networkInterfacesHasBeenSet(false),
-    m_placementHasBeenSet(false),
-    m_ramdiskIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false),
-    m_userDataHasBeenSet(false)
-{
-}
-
 RequestSpotLaunchSpecification::RequestSpotLaunchSpecification(const XmlNode& xmlNode)
-  : RequestSpotLaunchSpecification()
 {
   *this = xmlNode;
 }
@@ -58,6 +35,7 @@ RequestSpotLaunchSpecification& RequestSpotLaunchSpecification::operator =(const
     if(!securityGroupIdsNode.IsNull())
     {
       XmlNode securityGroupIdsMember = securityGroupIdsNode.FirstChild("item");
+      m_securityGroupIdsHasBeenSet = !securityGroupIdsMember.IsNull();
       while(!securityGroupIdsMember.IsNull())
       {
         m_securityGroupIds.push_back(securityGroupIdsMember.GetText());
@@ -70,6 +48,7 @@ RequestSpotLaunchSpecification& RequestSpotLaunchSpecification::operator =(const
     if(!securityGroupsNode.IsNull())
     {
       XmlNode securityGroupsMember = securityGroupsNode.FirstChild("item");
+      m_securityGroupsHasBeenSet = !securityGroupsMember.IsNull();
       while(!securityGroupsMember.IsNull())
       {
         m_securityGroups.push_back(securityGroupsMember.GetText());
@@ -88,6 +67,7 @@ RequestSpotLaunchSpecification& RequestSpotLaunchSpecification::operator =(const
     if(!blockDeviceMappingsNode.IsNull())
     {
       XmlNode blockDeviceMappingsMember = blockDeviceMappingsNode.FirstChild("item");
+      m_blockDeviceMappingsHasBeenSet = !blockDeviceMappingsMember.IsNull();
       while(!blockDeviceMappingsMember.IsNull())
       {
         m_blockDeviceMappings.push_back(blockDeviceMappingsMember);
@@ -117,7 +97,7 @@ RequestSpotLaunchSpecification& RequestSpotLaunchSpecification::operator =(const
     XmlNode instanceTypeNode = resultNode.FirstChild("instanceType");
     if(!instanceTypeNode.IsNull())
     {
-      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()).c_str());
+      m_instanceType = InstanceTypeMapper::GetInstanceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(instanceTypeNode.GetText()).c_str()));
       m_instanceTypeHasBeenSet = true;
     }
     XmlNode kernelIdNode = resultNode.FirstChild("kernelId");
@@ -142,6 +122,7 @@ RequestSpotLaunchSpecification& RequestSpotLaunchSpecification::operator =(const
     if(!networkInterfacesNode.IsNull())
     {
       XmlNode networkInterfacesMember = networkInterfacesNode.FirstChild("item");
+      m_networkInterfacesHasBeenSet = !networkInterfacesMember.IsNull();
       while(!networkInterfacesMember.IsNull())
       {
         m_networkInterfaces.push_back(networkInterfacesMember);

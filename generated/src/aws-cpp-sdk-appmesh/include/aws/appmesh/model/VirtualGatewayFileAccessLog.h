@@ -32,7 +32,7 @@ namespace Model
   class VirtualGatewayFileAccessLog
   {
   public:
-    AWS_APPMESH_API VirtualGatewayFileAccessLog();
+    AWS_APPMESH_API VirtualGatewayFileAccessLog() = default;
     AWS_APPMESH_API VirtualGatewayFileAccessLog(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API VirtualGatewayFileAccessLog& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPMESH_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,12 +43,12 @@ namespace Model
      * <p>The specified format for the virtual gateway access logs. It can be either
      * <code>json_format</code> or <code>text_format</code>.</p>
      */
-    inline const LoggingFormat& GetFormat() const{ return m_format; }
+    inline const LoggingFormat& GetFormat() const { return m_format; }
     inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
-    inline void SetFormat(const LoggingFormat& value) { m_formatHasBeenSet = true; m_format = value; }
-    inline void SetFormat(LoggingFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
-    inline VirtualGatewayFileAccessLog& WithFormat(const LoggingFormat& value) { SetFormat(value); return *this;}
-    inline VirtualGatewayFileAccessLog& WithFormat(LoggingFormat&& value) { SetFormat(std::move(value)); return *this;}
+    template<typename FormatT = LoggingFormat>
+    void SetFormat(FormatT&& value) { m_formatHasBeenSet = true; m_format = std::forward<FormatT>(value); }
+    template<typename FormatT = LoggingFormat>
+    VirtualGatewayFileAccessLog& WithFormat(FormatT&& value) { SetFormat(std::forward<FormatT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +59,12 @@ namespace Model
      * storage service such as Amazon CloudWatch Logs. You can also specify a path in
      * the Envoy container's file system to write the files to disk.</p>
      */
-    inline const Aws::String& GetPath() const{ return m_path; }
+    inline const Aws::String& GetPath() const { return m_path; }
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
-    inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
-    inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
-    inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
-    inline VirtualGatewayFileAccessLog& WithPath(const Aws::String& value) { SetPath(value); return *this;}
-    inline VirtualGatewayFileAccessLog& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
-    inline VirtualGatewayFileAccessLog& WithPath(const char* value) { SetPath(value); return *this;}
+    template<typename PathT = Aws::String>
+    void SetPath(PathT&& value) { m_pathHasBeenSet = true; m_path = std::forward<PathT>(value); }
+    template<typename PathT = Aws::String>
+    VirtualGatewayFileAccessLog& WithPath(PathT&& value) { SetPath(std::forward<PathT>(value)); return *this;}
     ///@}
   private:
 

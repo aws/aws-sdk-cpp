@@ -10,15 +10,6 @@
 using namespace Aws::SimpleDB::Model;
 using namespace Aws::Utils;
 
-GetAttributesRequest::GetAttributesRequest() : 
-    m_domainNameHasBeenSet(false),
-    m_itemNameHasBeenSet(false),
-    m_attributeNamesHasBeenSet(false),
-    m_consistentRead(false),
-    m_consistentReadHasBeenSet(false)
-{
-}
-
 Aws::String GetAttributesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

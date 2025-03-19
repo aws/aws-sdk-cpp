@@ -15,12 +15,6 @@ using namespace Aws::Utils::Stream;
 using namespace Aws::Utils;
 using namespace Aws;
 
-HttpPayloadTraitsRequest::HttpPayloadTraitsRequest() : 
-    m_fooHasBeenSet(false),
-    m_requestIdHasBeenSet(false)
-{
-}
-
 
 
 Aws::Http::HeaderValueCollection HttpPayloadTraitsRequest::GetRequestSpecificHeaders() const

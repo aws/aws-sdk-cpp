@@ -18,15 +18,7 @@ namespace WellArchitected
 namespace Model
 {
 
-NotificationSummary::NotificationSummary() : 
-    m_type(NotificationType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_lensUpgradeSummaryHasBeenSet(false)
-{
-}
-
 NotificationSummary::NotificationSummary(JsonView jsonValue)
-  : NotificationSummary()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ NotificationSummary& NotificationSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = NotificationTypeMapper::GetNotificationTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LensUpgradeSummary"))
   {
     m_lensUpgradeSummary = jsonValue.GetObject("LensUpgradeSummary");
-
     m_lensUpgradeSummaryHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -23,7 +23,7 @@ namespace Model
   class UpdateWebAppRequest : public TransferRequest
   {
   public:
-    AWS_TRANSFER_API UpdateWebAppRequest();
+    AWS_TRANSFER_API UpdateWebAppRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>Provide the identifier of the web app that you are updating.</p>
      */
-    inline const Aws::String& GetWebAppId() const{ return m_webAppId; }
+    inline const Aws::String& GetWebAppId() const { return m_webAppId; }
     inline bool WebAppIdHasBeenSet() const { return m_webAppIdHasBeenSet; }
-    inline void SetWebAppId(const Aws::String& value) { m_webAppIdHasBeenSet = true; m_webAppId = value; }
-    inline void SetWebAppId(Aws::String&& value) { m_webAppIdHasBeenSet = true; m_webAppId = std::move(value); }
-    inline void SetWebAppId(const char* value) { m_webAppIdHasBeenSet = true; m_webAppId.assign(value); }
-    inline UpdateWebAppRequest& WithWebAppId(const Aws::String& value) { SetWebAppId(value); return *this;}
-    inline UpdateWebAppRequest& WithWebAppId(Aws::String&& value) { SetWebAppId(std::move(value)); return *this;}
-    inline UpdateWebAppRequest& WithWebAppId(const char* value) { SetWebAppId(value); return *this;}
+    template<typename WebAppIdT = Aws::String>
+    void SetWebAppId(WebAppIdT&& value) { m_webAppIdHasBeenSet = true; m_webAppId = std::forward<WebAppIdT>(value); }
+    template<typename WebAppIdT = Aws::String>
+    UpdateWebAppRequest& WithWebAppId(WebAppIdT&& value) { SetWebAppId(std::forward<WebAppIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,12 +53,12 @@ namespace Model
      * <p>Provide updated identity provider values in a
      * <code>WebAppIdentityProviderDetails</code> object.</p>
      */
-    inline const UpdateWebAppIdentityProviderDetails& GetIdentityProviderDetails() const{ return m_identityProviderDetails; }
+    inline const UpdateWebAppIdentityProviderDetails& GetIdentityProviderDetails() const { return m_identityProviderDetails; }
     inline bool IdentityProviderDetailsHasBeenSet() const { return m_identityProviderDetailsHasBeenSet; }
-    inline void SetIdentityProviderDetails(const UpdateWebAppIdentityProviderDetails& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails = value; }
-    inline void SetIdentityProviderDetails(UpdateWebAppIdentityProviderDetails&& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails = std::move(value); }
-    inline UpdateWebAppRequest& WithIdentityProviderDetails(const UpdateWebAppIdentityProviderDetails& value) { SetIdentityProviderDetails(value); return *this;}
-    inline UpdateWebAppRequest& WithIdentityProviderDetails(UpdateWebAppIdentityProviderDetails&& value) { SetIdentityProviderDetails(std::move(value)); return *this;}
+    template<typename IdentityProviderDetailsT = UpdateWebAppIdentityProviderDetails>
+    void SetIdentityProviderDetails(IdentityProviderDetailsT&& value) { m_identityProviderDetailsHasBeenSet = true; m_identityProviderDetails = std::forward<IdentityProviderDetailsT>(value); }
+    template<typename IdentityProviderDetailsT = UpdateWebAppIdentityProviderDetails>
+    UpdateWebAppRequest& WithIdentityProviderDetails(IdentityProviderDetailsT&& value) { SetIdentityProviderDetails(std::forward<IdentityProviderDetailsT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,14 +67,12 @@ namespace Model
      * them to interact with the Transfer Family web app. You can specify a custom URL
      * or use the default value.</p>
      */
-    inline const Aws::String& GetAccessEndpoint() const{ return m_accessEndpoint; }
+    inline const Aws::String& GetAccessEndpoint() const { return m_accessEndpoint; }
     inline bool AccessEndpointHasBeenSet() const { return m_accessEndpointHasBeenSet; }
-    inline void SetAccessEndpoint(const Aws::String& value) { m_accessEndpointHasBeenSet = true; m_accessEndpoint = value; }
-    inline void SetAccessEndpoint(Aws::String&& value) { m_accessEndpointHasBeenSet = true; m_accessEndpoint = std::move(value); }
-    inline void SetAccessEndpoint(const char* value) { m_accessEndpointHasBeenSet = true; m_accessEndpoint.assign(value); }
-    inline UpdateWebAppRequest& WithAccessEndpoint(const Aws::String& value) { SetAccessEndpoint(value); return *this;}
-    inline UpdateWebAppRequest& WithAccessEndpoint(Aws::String&& value) { SetAccessEndpoint(std::move(value)); return *this;}
-    inline UpdateWebAppRequest& WithAccessEndpoint(const char* value) { SetAccessEndpoint(value); return *this;}
+    template<typename AccessEndpointT = Aws::String>
+    void SetAccessEndpoint(AccessEndpointT&& value) { m_accessEndpointHasBeenSet = true; m_accessEndpoint = std::forward<AccessEndpointT>(value); }
+    template<typename AccessEndpointT = Aws::String>
+    UpdateWebAppRequest& WithAccessEndpoint(AccessEndpointT&& value) { SetAccessEndpoint(std::forward<AccessEndpointT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,12 +80,12 @@ namespace Model
      * <p>A union that contains the value for number of concurrent connections or the
      * user sessions on your web app.</p>
      */
-    inline const WebAppUnits& GetWebAppUnits() const{ return m_webAppUnits; }
+    inline const WebAppUnits& GetWebAppUnits() const { return m_webAppUnits; }
     inline bool WebAppUnitsHasBeenSet() const { return m_webAppUnitsHasBeenSet; }
-    inline void SetWebAppUnits(const WebAppUnits& value) { m_webAppUnitsHasBeenSet = true; m_webAppUnits = value; }
-    inline void SetWebAppUnits(WebAppUnits&& value) { m_webAppUnitsHasBeenSet = true; m_webAppUnits = std::move(value); }
-    inline UpdateWebAppRequest& WithWebAppUnits(const WebAppUnits& value) { SetWebAppUnits(value); return *this;}
-    inline UpdateWebAppRequest& WithWebAppUnits(WebAppUnits&& value) { SetWebAppUnits(std::move(value)); return *this;}
+    template<typename WebAppUnitsT = WebAppUnits>
+    void SetWebAppUnits(WebAppUnitsT&& value) { m_webAppUnitsHasBeenSet = true; m_webAppUnits = std::forward<WebAppUnitsT>(value); }
+    template<typename WebAppUnitsT = WebAppUnits>
+    UpdateWebAppRequest& WithWebAppUnits(WebAppUnitsT&& value) { SetWebAppUnits(std::forward<WebAppUnitsT>(value)); return *this;}
     ///@}
   private:
 

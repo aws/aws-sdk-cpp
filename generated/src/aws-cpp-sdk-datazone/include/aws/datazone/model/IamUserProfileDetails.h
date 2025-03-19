@@ -32,7 +32,7 @@ namespace Model
   class IamUserProfileDetails
   {
   public:
-    AWS_DATAZONE_API IamUserProfileDetails();
+    AWS_DATAZONE_API IamUserProfileDetails() = default;
     AWS_DATAZONE_API IamUserProfileDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API IamUserProfileDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The ARN of an IAM user profile in Amazon DataZone.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline IamUserProfileDetails& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline IamUserProfileDetails& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline IamUserProfileDetails& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    IamUserProfileDetails& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
   private:
 

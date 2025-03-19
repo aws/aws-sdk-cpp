@@ -31,7 +31,7 @@ namespace Model
   class QAppsConfiguration
   {
   public:
-    AWS_QBUSINESS_API QAppsConfiguration();
+    AWS_QBUSINESS_API QAppsConfiguration() = default;
     AWS_QBUSINESS_API QAppsConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API QAppsConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QBUSINESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
      * <p>Status information about whether end users can create and use Amazon Q Apps
      * in the web experience.</p>
      */
-    inline const QAppsControlMode& GetQAppsControlMode() const{ return m_qAppsControlMode; }
+    inline QAppsControlMode GetQAppsControlMode() const { return m_qAppsControlMode; }
     inline bool QAppsControlModeHasBeenSet() const { return m_qAppsControlModeHasBeenSet; }
-    inline void SetQAppsControlMode(const QAppsControlMode& value) { m_qAppsControlModeHasBeenSet = true; m_qAppsControlMode = value; }
-    inline void SetQAppsControlMode(QAppsControlMode&& value) { m_qAppsControlModeHasBeenSet = true; m_qAppsControlMode = std::move(value); }
-    inline QAppsConfiguration& WithQAppsControlMode(const QAppsControlMode& value) { SetQAppsControlMode(value); return *this;}
-    inline QAppsConfiguration& WithQAppsControlMode(QAppsControlMode&& value) { SetQAppsControlMode(std::move(value)); return *this;}
+    inline void SetQAppsControlMode(QAppsControlMode value) { m_qAppsControlModeHasBeenSet = true; m_qAppsControlMode = value; }
+    inline QAppsConfiguration& WithQAppsControlMode(QAppsControlMode value) { SetQAppsControlMode(value); return *this;}
     ///@}
   private:
 
-    QAppsControlMode m_qAppsControlMode;
+    QAppsControlMode m_qAppsControlMode{QAppsControlMode::NOT_SET};
     bool m_qAppsControlModeHasBeenSet = false;
   };
 

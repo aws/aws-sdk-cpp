@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetFolderPathRequest::GetFolderPathRequest() : 
-    m_authenticationTokenHasBeenSet(false),
-    m_folderIdHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_fieldsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String GetFolderPathRequest::SerializePayload() const
 {
   return {};

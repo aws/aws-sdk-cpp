@@ -20,13 +20,7 @@ namespace EC2
 namespace Model
 {
 
-Ipv6CidrBlock::Ipv6CidrBlock() : 
-    m_ipv6CidrBlockHasBeenSet(false)
-{
-}
-
 Ipv6CidrBlock::Ipv6CidrBlock(const XmlNode& xmlNode)
-  : Ipv6CidrBlock()
 {
   *this = xmlNode;
 }

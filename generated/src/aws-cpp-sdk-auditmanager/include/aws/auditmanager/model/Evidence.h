@@ -38,7 +38,7 @@ namespace Model
   class Evidence
   {
   public:
-    AWS_AUDITMANAGER_API Evidence();
+    AWS_AUDITMANAGER_API Evidence() = default;
     AWS_AUDITMANAGER_API Evidence(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API Evidence& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,96 +48,86 @@ namespace Model
     /**
      * <p> The data source where the evidence was collected from. </p>
      */
-    inline const Aws::String& GetDataSource() const{ return m_dataSource; }
+    inline const Aws::String& GetDataSource() const { return m_dataSource; }
     inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
-    inline void SetDataSource(const Aws::String& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
-    inline void SetDataSource(Aws::String&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
-    inline void SetDataSource(const char* value) { m_dataSourceHasBeenSet = true; m_dataSource.assign(value); }
-    inline Evidence& WithDataSource(const Aws::String& value) { SetDataSource(value); return *this;}
-    inline Evidence& WithDataSource(Aws::String&& value) { SetDataSource(std::move(value)); return *this;}
-    inline Evidence& WithDataSource(const char* value) { SetDataSource(value); return *this;}
+    template<typename DataSourceT = Aws::String>
+    void SetDataSource(DataSourceT&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::forward<DataSourceT>(value); }
+    template<typename DataSourceT = Aws::String>
+    Evidence& WithDataSource(DataSourceT&& value) { SetDataSource(std::forward<DataSourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The identifier for the Amazon Web Services account. </p>
      */
-    inline const Aws::String& GetEvidenceAwsAccountId() const{ return m_evidenceAwsAccountId; }
+    inline const Aws::String& GetEvidenceAwsAccountId() const { return m_evidenceAwsAccountId; }
     inline bool EvidenceAwsAccountIdHasBeenSet() const { return m_evidenceAwsAccountIdHasBeenSet; }
-    inline void SetEvidenceAwsAccountId(const Aws::String& value) { m_evidenceAwsAccountIdHasBeenSet = true; m_evidenceAwsAccountId = value; }
-    inline void SetEvidenceAwsAccountId(Aws::String&& value) { m_evidenceAwsAccountIdHasBeenSet = true; m_evidenceAwsAccountId = std::move(value); }
-    inline void SetEvidenceAwsAccountId(const char* value) { m_evidenceAwsAccountIdHasBeenSet = true; m_evidenceAwsAccountId.assign(value); }
-    inline Evidence& WithEvidenceAwsAccountId(const Aws::String& value) { SetEvidenceAwsAccountId(value); return *this;}
-    inline Evidence& WithEvidenceAwsAccountId(Aws::String&& value) { SetEvidenceAwsAccountId(std::move(value)); return *this;}
-    inline Evidence& WithEvidenceAwsAccountId(const char* value) { SetEvidenceAwsAccountId(value); return *this;}
+    template<typename EvidenceAwsAccountIdT = Aws::String>
+    void SetEvidenceAwsAccountId(EvidenceAwsAccountIdT&& value) { m_evidenceAwsAccountIdHasBeenSet = true; m_evidenceAwsAccountId = std::forward<EvidenceAwsAccountIdT>(value); }
+    template<typename EvidenceAwsAccountIdT = Aws::String>
+    Evidence& WithEvidenceAwsAccountId(EvidenceAwsAccountIdT&& value) { SetEvidenceAwsAccountId(std::forward<EvidenceAwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The timestamp that represents when the evidence was collected. </p>
      */
-    inline const Aws::Utils::DateTime& GetTime() const{ return m_time; }
+    inline const Aws::Utils::DateTime& GetTime() const { return m_time; }
     inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
-    inline void SetTime(const Aws::Utils::DateTime& value) { m_timeHasBeenSet = true; m_time = value; }
-    inline void SetTime(Aws::Utils::DateTime&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
-    inline Evidence& WithTime(const Aws::Utils::DateTime& value) { SetTime(value); return *this;}
-    inline Evidence& WithTime(Aws::Utils::DateTime&& value) { SetTime(std::move(value)); return *this;}
+    template<typename TimeT = Aws::Utils::DateTime>
+    void SetTime(TimeT&& value) { m_timeHasBeenSet = true; m_time = std::forward<TimeT>(value); }
+    template<typename TimeT = Aws::Utils::DateTime>
+    Evidence& WithTime(TimeT&& value) { SetTime(std::forward<TimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The Amazon Web Service that the evidence is collected from. </p>
      */
-    inline const Aws::String& GetEventSource() const{ return m_eventSource; }
+    inline const Aws::String& GetEventSource() const { return m_eventSource; }
     inline bool EventSourceHasBeenSet() const { return m_eventSourceHasBeenSet; }
-    inline void SetEventSource(const Aws::String& value) { m_eventSourceHasBeenSet = true; m_eventSource = value; }
-    inline void SetEventSource(Aws::String&& value) { m_eventSourceHasBeenSet = true; m_eventSource = std::move(value); }
-    inline void SetEventSource(const char* value) { m_eventSourceHasBeenSet = true; m_eventSource.assign(value); }
-    inline Evidence& WithEventSource(const Aws::String& value) { SetEventSource(value); return *this;}
-    inline Evidence& WithEventSource(Aws::String&& value) { SetEventSource(std::move(value)); return *this;}
-    inline Evidence& WithEventSource(const char* value) { SetEventSource(value); return *this;}
+    template<typename EventSourceT = Aws::String>
+    void SetEventSource(EventSourceT&& value) { m_eventSourceHasBeenSet = true; m_eventSource = std::forward<EventSourceT>(value); }
+    template<typename EventSourceT = Aws::String>
+    Evidence& WithEventSource(EventSourceT&& value) { SetEventSource(std::forward<EventSourceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The name of the evidence event. </p>
      */
-    inline const Aws::String& GetEventName() const{ return m_eventName; }
+    inline const Aws::String& GetEventName() const { return m_eventName; }
     inline bool EventNameHasBeenSet() const { return m_eventNameHasBeenSet; }
-    inline void SetEventName(const Aws::String& value) { m_eventNameHasBeenSet = true; m_eventName = value; }
-    inline void SetEventName(Aws::String&& value) { m_eventNameHasBeenSet = true; m_eventName = std::move(value); }
-    inline void SetEventName(const char* value) { m_eventNameHasBeenSet = true; m_eventName.assign(value); }
-    inline Evidence& WithEventName(const Aws::String& value) { SetEventName(value); return *this;}
-    inline Evidence& WithEventName(Aws::String&& value) { SetEventName(std::move(value)); return *this;}
-    inline Evidence& WithEventName(const char* value) { SetEventName(value); return *this;}
+    template<typename EventNameT = Aws::String>
+    void SetEventName(EventNameT&& value) { m_eventNameHasBeenSet = true; m_eventName = std::forward<EventNameT>(value); }
+    template<typename EventNameT = Aws::String>
+    Evidence& WithEventName(EventNameT&& value) { SetEventName(std::forward<EventNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The type of automated evidence. </p>
      */
-    inline const Aws::String& GetEvidenceByType() const{ return m_evidenceByType; }
+    inline const Aws::String& GetEvidenceByType() const { return m_evidenceByType; }
     inline bool EvidenceByTypeHasBeenSet() const { return m_evidenceByTypeHasBeenSet; }
-    inline void SetEvidenceByType(const Aws::String& value) { m_evidenceByTypeHasBeenSet = true; m_evidenceByType = value; }
-    inline void SetEvidenceByType(Aws::String&& value) { m_evidenceByTypeHasBeenSet = true; m_evidenceByType = std::move(value); }
-    inline void SetEvidenceByType(const char* value) { m_evidenceByTypeHasBeenSet = true; m_evidenceByType.assign(value); }
-    inline Evidence& WithEvidenceByType(const Aws::String& value) { SetEvidenceByType(value); return *this;}
-    inline Evidence& WithEvidenceByType(Aws::String&& value) { SetEvidenceByType(std::move(value)); return *this;}
-    inline Evidence& WithEvidenceByType(const char* value) { SetEvidenceByType(value); return *this;}
+    template<typename EvidenceByTypeT = Aws::String>
+    void SetEvidenceByType(EvidenceByTypeT&& value) { m_evidenceByTypeHasBeenSet = true; m_evidenceByType = std::forward<EvidenceByTypeT>(value); }
+    template<typename EvidenceByTypeT = Aws::String>
+    Evidence& WithEvidenceByType(EvidenceByTypeT&& value) { SetEvidenceByType(std::forward<EvidenceByTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The list of resources that are assessed to generate the evidence. </p>
      */
-    inline const Aws::Vector<Resource>& GetResourcesIncluded() const{ return m_resourcesIncluded; }
+    inline const Aws::Vector<Resource>& GetResourcesIncluded() const { return m_resourcesIncluded; }
     inline bool ResourcesIncludedHasBeenSet() const { return m_resourcesIncludedHasBeenSet; }
-    inline void SetResourcesIncluded(const Aws::Vector<Resource>& value) { m_resourcesIncludedHasBeenSet = true; m_resourcesIncluded = value; }
-    inline void SetResourcesIncluded(Aws::Vector<Resource>&& value) { m_resourcesIncludedHasBeenSet = true; m_resourcesIncluded = std::move(value); }
-    inline Evidence& WithResourcesIncluded(const Aws::Vector<Resource>& value) { SetResourcesIncluded(value); return *this;}
-    inline Evidence& WithResourcesIncluded(Aws::Vector<Resource>&& value) { SetResourcesIncluded(std::move(value)); return *this;}
-    inline Evidence& AddResourcesIncluded(const Resource& value) { m_resourcesIncludedHasBeenSet = true; m_resourcesIncluded.push_back(value); return *this; }
-    inline Evidence& AddResourcesIncluded(Resource&& value) { m_resourcesIncludedHasBeenSet = true; m_resourcesIncluded.push_back(std::move(value)); return *this; }
+    template<typename ResourcesIncludedT = Aws::Vector<Resource>>
+    void SetResourcesIncluded(ResourcesIncludedT&& value) { m_resourcesIncludedHasBeenSet = true; m_resourcesIncluded = std::forward<ResourcesIncludedT>(value); }
+    template<typename ResourcesIncludedT = Aws::Vector<Resource>>
+    Evidence& WithResourcesIncluded(ResourcesIncludedT&& value) { SetResourcesIncluded(std::forward<ResourcesIncludedT>(value)); return *this;}
+    template<typename ResourcesIncludedT = Resource>
+    Evidence& AddResourcesIncluded(ResourcesIncludedT&& value) { m_resourcesIncludedHasBeenSet = true; m_resourcesIncluded.emplace_back(std::forward<ResourcesIncludedT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -146,19 +136,16 @@ namespace Model
      * attribute name (such as <code>allowUsersToChangePassword</code>) and value (such
      * as <code>true</code> or <code>false</code>). </p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const { return m_attributes; }
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
-    inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
-    inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
-    inline Evidence& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
-    inline Evidence& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
-    inline Evidence& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
-    inline Evidence& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline Evidence& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline Evidence& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
-    inline Evidence& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
-    inline Evidence& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
-    inline Evidence& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    void SetAttributes(AttributesT&& value) { m_attributesHasBeenSet = true; m_attributes = std::forward<AttributesT>(value); }
+    template<typename AttributesT = Aws::Map<Aws::String, Aws::String>>
+    Evidence& WithAttributes(AttributesT&& value) { SetAttributes(std::forward<AttributesT>(value)); return *this;}
+    template<typename AttributesKeyT = Aws::String, typename AttributesValueT = Aws::String>
+    Evidence& AddAttributes(AttributesKeyT&& key, AttributesValueT&& value) {
+      m_attributesHasBeenSet = true; m_attributes.emplace(std::forward<AttributesKeyT>(key), std::forward<AttributesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -166,14 +153,12 @@ namespace Model
      * <p> The unique identifier for the user or role that's associated with the
      * evidence. </p>
      */
-    inline const Aws::String& GetIamId() const{ return m_iamId; }
+    inline const Aws::String& GetIamId() const { return m_iamId; }
     inline bool IamIdHasBeenSet() const { return m_iamIdHasBeenSet; }
-    inline void SetIamId(const Aws::String& value) { m_iamIdHasBeenSet = true; m_iamId = value; }
-    inline void SetIamId(Aws::String&& value) { m_iamIdHasBeenSet = true; m_iamId = std::move(value); }
-    inline void SetIamId(const char* value) { m_iamIdHasBeenSet = true; m_iamId.assign(value); }
-    inline Evidence& WithIamId(const Aws::String& value) { SetIamId(value); return *this;}
-    inline Evidence& WithIamId(Aws::String&& value) { SetIamId(std::move(value)); return *this;}
-    inline Evidence& WithIamId(const char* value) { SetIamId(value); return *this;}
+    template<typename IamIdT = Aws::String>
+    void SetIamId(IamIdT&& value) { m_iamIdHasBeenSet = true; m_iamId = std::forward<IamIdT>(value); }
+    template<typename IamIdT = Aws::String>
+    Evidence& WithIamId(IamIdT&& value) { SetIamId(std::forward<IamIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -191,14 +176,12 @@ namespace Model
      * checks (such as manual evidence, Amazon Web Services API calls, or CloudTrail).
      * </p> </li> </ul>
      */
-    inline const Aws::String& GetComplianceCheck() const{ return m_complianceCheck; }
+    inline const Aws::String& GetComplianceCheck() const { return m_complianceCheck; }
     inline bool ComplianceCheckHasBeenSet() const { return m_complianceCheckHasBeenSet; }
-    inline void SetComplianceCheck(const Aws::String& value) { m_complianceCheckHasBeenSet = true; m_complianceCheck = value; }
-    inline void SetComplianceCheck(Aws::String&& value) { m_complianceCheckHasBeenSet = true; m_complianceCheck = std::move(value); }
-    inline void SetComplianceCheck(const char* value) { m_complianceCheckHasBeenSet = true; m_complianceCheck.assign(value); }
-    inline Evidence& WithComplianceCheck(const Aws::String& value) { SetComplianceCheck(value); return *this;}
-    inline Evidence& WithComplianceCheck(Aws::String&& value) { SetComplianceCheck(std::move(value)); return *this;}
-    inline Evidence& WithComplianceCheck(const char* value) { SetComplianceCheck(value); return *this;}
+    template<typename ComplianceCheckT = Aws::String>
+    void SetComplianceCheck(ComplianceCheckT&& value) { m_complianceCheckHasBeenSet = true; m_complianceCheck = std::forward<ComplianceCheckT>(value); }
+    template<typename ComplianceCheckT = Aws::String>
+    Evidence& WithComplianceCheck(ComplianceCheckT&& value) { SetComplianceCheck(std::forward<ComplianceCheckT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -206,70 +189,60 @@ namespace Model
      * <p> The Amazon Web Services account that the evidence is collected from, and its
      * organization path. </p>
      */
-    inline const Aws::String& GetAwsOrganization() const{ return m_awsOrganization; }
+    inline const Aws::String& GetAwsOrganization() const { return m_awsOrganization; }
     inline bool AwsOrganizationHasBeenSet() const { return m_awsOrganizationHasBeenSet; }
-    inline void SetAwsOrganization(const Aws::String& value) { m_awsOrganizationHasBeenSet = true; m_awsOrganization = value; }
-    inline void SetAwsOrganization(Aws::String&& value) { m_awsOrganizationHasBeenSet = true; m_awsOrganization = std::move(value); }
-    inline void SetAwsOrganization(const char* value) { m_awsOrganizationHasBeenSet = true; m_awsOrganization.assign(value); }
-    inline Evidence& WithAwsOrganization(const Aws::String& value) { SetAwsOrganization(value); return *this;}
-    inline Evidence& WithAwsOrganization(Aws::String&& value) { SetAwsOrganization(std::move(value)); return *this;}
-    inline Evidence& WithAwsOrganization(const char* value) { SetAwsOrganization(value); return *this;}
+    template<typename AwsOrganizationT = Aws::String>
+    void SetAwsOrganization(AwsOrganizationT&& value) { m_awsOrganizationHasBeenSet = true; m_awsOrganization = std::forward<AwsOrganizationT>(value); }
+    template<typename AwsOrganizationT = Aws::String>
+    Evidence& WithAwsOrganization(AwsOrganizationT&& value) { SetAwsOrganization(std::forward<AwsOrganizationT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The identifier for the Amazon Web Services account. </p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline Evidence& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline Evidence& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline Evidence& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    Evidence& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The identifier for the folder that the evidence is stored in. </p>
      */
-    inline const Aws::String& GetEvidenceFolderId() const{ return m_evidenceFolderId; }
+    inline const Aws::String& GetEvidenceFolderId() const { return m_evidenceFolderId; }
     inline bool EvidenceFolderIdHasBeenSet() const { return m_evidenceFolderIdHasBeenSet; }
-    inline void SetEvidenceFolderId(const Aws::String& value) { m_evidenceFolderIdHasBeenSet = true; m_evidenceFolderId = value; }
-    inline void SetEvidenceFolderId(Aws::String&& value) { m_evidenceFolderIdHasBeenSet = true; m_evidenceFolderId = std::move(value); }
-    inline void SetEvidenceFolderId(const char* value) { m_evidenceFolderIdHasBeenSet = true; m_evidenceFolderId.assign(value); }
-    inline Evidence& WithEvidenceFolderId(const Aws::String& value) { SetEvidenceFolderId(value); return *this;}
-    inline Evidence& WithEvidenceFolderId(Aws::String&& value) { SetEvidenceFolderId(std::move(value)); return *this;}
-    inline Evidence& WithEvidenceFolderId(const char* value) { SetEvidenceFolderId(value); return *this;}
+    template<typename EvidenceFolderIdT = Aws::String>
+    void SetEvidenceFolderId(EvidenceFolderIdT&& value) { m_evidenceFolderIdHasBeenSet = true; m_evidenceFolderId = std::forward<EvidenceFolderIdT>(value); }
+    template<typename EvidenceFolderIdT = Aws::String>
+    Evidence& WithEvidenceFolderId(EvidenceFolderIdT&& value) { SetEvidenceFolderId(std::forward<EvidenceFolderIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The identifier for the evidence. </p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline Evidence& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline Evidence& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline Evidence& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    Evidence& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> Specifies whether the evidence is included in the assessment report. </p>
      */
-    inline const Aws::String& GetAssessmentReportSelection() const{ return m_assessmentReportSelection; }
+    inline const Aws::String& GetAssessmentReportSelection() const { return m_assessmentReportSelection; }
     inline bool AssessmentReportSelectionHasBeenSet() const { return m_assessmentReportSelectionHasBeenSet; }
-    inline void SetAssessmentReportSelection(const Aws::String& value) { m_assessmentReportSelectionHasBeenSet = true; m_assessmentReportSelection = value; }
-    inline void SetAssessmentReportSelection(Aws::String&& value) { m_assessmentReportSelectionHasBeenSet = true; m_assessmentReportSelection = std::move(value); }
-    inline void SetAssessmentReportSelection(const char* value) { m_assessmentReportSelectionHasBeenSet = true; m_assessmentReportSelection.assign(value); }
-    inline Evidence& WithAssessmentReportSelection(const Aws::String& value) { SetAssessmentReportSelection(value); return *this;}
-    inline Evidence& WithAssessmentReportSelection(Aws::String&& value) { SetAssessmentReportSelection(std::move(value)); return *this;}
-    inline Evidence& WithAssessmentReportSelection(const char* value) { SetAssessmentReportSelection(value); return *this;}
+    template<typename AssessmentReportSelectionT = Aws::String>
+    void SetAssessmentReportSelection(AssessmentReportSelectionT&& value) { m_assessmentReportSelectionHasBeenSet = true; m_assessmentReportSelection = std::forward<AssessmentReportSelectionT>(value); }
+    template<typename AssessmentReportSelectionT = Aws::String>
+    Evidence& WithAssessmentReportSelection(AssessmentReportSelectionT&& value) { SetAssessmentReportSelection(std::forward<AssessmentReportSelectionT>(value)); return *this;}
     ///@}
   private:
 
@@ -279,7 +252,7 @@ namespace Model
     Aws::String m_evidenceAwsAccountId;
     bool m_evidenceAwsAccountIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_time;
+    Aws::Utils::DateTime m_time{};
     bool m_timeHasBeenSet = false;
 
     Aws::String m_eventSource;

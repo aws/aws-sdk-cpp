@@ -34,7 +34,7 @@ namespace Model
   class ConditionParameter
   {
   public:
-    AWS_BACKUP_API ConditionParameter();
+    AWS_BACKUP_API ConditionParameter() = default;
     AWS_BACKUP_API ConditionParameter(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API ConditionParameter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BACKUP_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The key in a key-value pair. For example, in the tag <code>Department:
      * Accounting</code>, <code>Department</code> is the key.</p>
      */
-    inline const Aws::String& GetConditionKey() const{ return m_conditionKey; }
+    inline const Aws::String& GetConditionKey() const { return m_conditionKey; }
     inline bool ConditionKeyHasBeenSet() const { return m_conditionKeyHasBeenSet; }
-    inline void SetConditionKey(const Aws::String& value) { m_conditionKeyHasBeenSet = true; m_conditionKey = value; }
-    inline void SetConditionKey(Aws::String&& value) { m_conditionKeyHasBeenSet = true; m_conditionKey = std::move(value); }
-    inline void SetConditionKey(const char* value) { m_conditionKeyHasBeenSet = true; m_conditionKey.assign(value); }
-    inline ConditionParameter& WithConditionKey(const Aws::String& value) { SetConditionKey(value); return *this;}
-    inline ConditionParameter& WithConditionKey(Aws::String&& value) { SetConditionKey(std::move(value)); return *this;}
-    inline ConditionParameter& WithConditionKey(const char* value) { SetConditionKey(value); return *this;}
+    template<typename ConditionKeyT = Aws::String>
+    void SetConditionKey(ConditionKeyT&& value) { m_conditionKeyHasBeenSet = true; m_conditionKey = std::forward<ConditionKeyT>(value); }
+    template<typename ConditionKeyT = Aws::String>
+    ConditionParameter& WithConditionKey(ConditionKeyT&& value) { SetConditionKey(std::forward<ConditionKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,12 @@ namespace Model
      * <p>The value in a key-value pair. For example, in the tag <code>Department:
      * Accounting</code>, <code>Accounting</code> is the value.</p>
      */
-    inline const Aws::String& GetConditionValue() const{ return m_conditionValue; }
+    inline const Aws::String& GetConditionValue() const { return m_conditionValue; }
     inline bool ConditionValueHasBeenSet() const { return m_conditionValueHasBeenSet; }
-    inline void SetConditionValue(const Aws::String& value) { m_conditionValueHasBeenSet = true; m_conditionValue = value; }
-    inline void SetConditionValue(Aws::String&& value) { m_conditionValueHasBeenSet = true; m_conditionValue = std::move(value); }
-    inline void SetConditionValue(const char* value) { m_conditionValueHasBeenSet = true; m_conditionValue.assign(value); }
-    inline ConditionParameter& WithConditionValue(const Aws::String& value) { SetConditionValue(value); return *this;}
-    inline ConditionParameter& WithConditionValue(Aws::String&& value) { SetConditionValue(std::move(value)); return *this;}
-    inline ConditionParameter& WithConditionValue(const char* value) { SetConditionValue(value); return *this;}
+    template<typename ConditionValueT = Aws::String>
+    void SetConditionValue(ConditionValueT&& value) { m_conditionValueHasBeenSet = true; m_conditionValue = std::forward<ConditionValueT>(value); }
+    template<typename ConditionValueT = Aws::String>
+    ConditionParameter& WithConditionValue(ConditionValueT&& value) { SetConditionValue(std::forward<ConditionValueT>(value)); return *this;}
     ///@}
   private:
 

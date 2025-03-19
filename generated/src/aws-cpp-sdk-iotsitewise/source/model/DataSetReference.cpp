@@ -18,14 +18,7 @@ namespace IoTSiteWise
 namespace Model
 {
 
-DataSetReference::DataSetReference() : 
-    m_datasetArnHasBeenSet(false),
-    m_sourceHasBeenSet(false)
-{
-}
-
 DataSetReference::DataSetReference(JsonView jsonValue)
-  : DataSetReference()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DataSetReference& DataSetReference::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("datasetArn"))
   {
     m_datasetArn = jsonValue.GetString("datasetArn");
-
     m_datasetArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("source"))
   {
     m_source = jsonValue.GetObject("source");
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

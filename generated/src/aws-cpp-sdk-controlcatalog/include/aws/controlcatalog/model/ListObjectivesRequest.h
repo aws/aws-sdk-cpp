@@ -26,7 +26,7 @@ namespace Model
   class ListObjectivesRequest : public ControlCatalogRequest
   {
   public:
-    AWS_CONTROLCATALOG_API ListObjectivesRequest();
+    AWS_CONTROLCATALOG_API ListObjectivesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>The maximum number of results on a page or for an API request call.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListObjectivesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -53,14 +53,12 @@ namespace Model
     /**
      * <p>The pagination token that's used to fetch the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListObjectivesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListObjectivesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListObjectivesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListObjectivesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -69,16 +67,16 @@ namespace Model
      * filter allows you to specify one domain ARN at a time. Passing multiple ARNs in
      * the <code>ObjectiveFilter</code> isn’t currently supported.</p>
      */
-    inline const ObjectiveFilter& GetObjectiveFilter() const{ return m_objectiveFilter; }
+    inline const ObjectiveFilter& GetObjectiveFilter() const { return m_objectiveFilter; }
     inline bool ObjectiveFilterHasBeenSet() const { return m_objectiveFilterHasBeenSet; }
-    inline void SetObjectiveFilter(const ObjectiveFilter& value) { m_objectiveFilterHasBeenSet = true; m_objectiveFilter = value; }
-    inline void SetObjectiveFilter(ObjectiveFilter&& value) { m_objectiveFilterHasBeenSet = true; m_objectiveFilter = std::move(value); }
-    inline ListObjectivesRequest& WithObjectiveFilter(const ObjectiveFilter& value) { SetObjectiveFilter(value); return *this;}
-    inline ListObjectivesRequest& WithObjectiveFilter(ObjectiveFilter&& value) { SetObjectiveFilter(std::move(value)); return *this;}
+    template<typename ObjectiveFilterT = ObjectiveFilter>
+    void SetObjectiveFilter(ObjectiveFilterT&& value) { m_objectiveFilterHasBeenSet = true; m_objectiveFilter = std::forward<ObjectiveFilterT>(value); }
+    template<typename ObjectiveFilterT = ObjectiveFilter>
+    ListObjectivesRequest& WithObjectiveFilter(ObjectiveFilterT&& value) { SetObjectiveFilter(std::forward<ObjectiveFilterT>(value)); return *this;}
     ///@}
   private:
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

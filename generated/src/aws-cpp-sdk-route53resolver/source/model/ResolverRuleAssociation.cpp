@@ -18,19 +18,7 @@ namespace Route53Resolver
 namespace Model
 {
 
-ResolverRuleAssociation::ResolverRuleAssociation() : 
-    m_idHasBeenSet(false),
-    m_resolverRuleIdHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_vPCIdHasBeenSet(false),
-    m_status(ResolverRuleAssociationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_statusMessageHasBeenSet(false)
-{
-}
-
 ResolverRuleAssociation::ResolverRuleAssociation(JsonView jsonValue)
-  : ResolverRuleAssociation()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ ResolverRuleAssociation& ResolverRuleAssociation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResolverRuleId"))
   {
     m_resolverRuleId = jsonValue.GetString("ResolverRuleId");
-
     m_resolverRuleIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VPCId"))
   {
     m_vPCId = jsonValue.GetString("VPCId");
-
     m_vPCIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ResolverRuleAssociationStatusMapper::GetResolverRuleAssociationStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StatusMessage"))
   {
     m_statusMessage = jsonValue.GetString("StatusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -25,7 +25,7 @@ namespace Model
   class UpdateGatewayInstanceRequest : public MediaConnectRequest
   {
   public:
-    AWS_MEDIACONNECT_API UpdateGatewayInstanceRequest();
+    AWS_MEDIACONNECT_API UpdateGatewayInstanceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,30 +43,26 @@ namespace Model
      * deployed to this instance. If it is AVAILABLE, new bridges can be added to this
      * instance.
      */
-    inline const BridgePlacement& GetBridgePlacement() const{ return m_bridgePlacement; }
+    inline BridgePlacement GetBridgePlacement() const { return m_bridgePlacement; }
     inline bool BridgePlacementHasBeenSet() const { return m_bridgePlacementHasBeenSet; }
-    inline void SetBridgePlacement(const BridgePlacement& value) { m_bridgePlacementHasBeenSet = true; m_bridgePlacement = value; }
-    inline void SetBridgePlacement(BridgePlacement&& value) { m_bridgePlacementHasBeenSet = true; m_bridgePlacement = std::move(value); }
-    inline UpdateGatewayInstanceRequest& WithBridgePlacement(const BridgePlacement& value) { SetBridgePlacement(value); return *this;}
-    inline UpdateGatewayInstanceRequest& WithBridgePlacement(BridgePlacement&& value) { SetBridgePlacement(std::move(value)); return *this;}
+    inline void SetBridgePlacement(BridgePlacement value) { m_bridgePlacementHasBeenSet = true; m_bridgePlacement = value; }
+    inline UpdateGatewayInstanceRequest& WithBridgePlacement(BridgePlacement value) { SetBridgePlacement(value); return *this;}
     ///@}
 
     ///@{
     /**
      * The Amazon Resource Name (ARN) of the instance that you want to update.
      */
-    inline const Aws::String& GetGatewayInstanceArn() const{ return m_gatewayInstanceArn; }
+    inline const Aws::String& GetGatewayInstanceArn() const { return m_gatewayInstanceArn; }
     inline bool GatewayInstanceArnHasBeenSet() const { return m_gatewayInstanceArnHasBeenSet; }
-    inline void SetGatewayInstanceArn(const Aws::String& value) { m_gatewayInstanceArnHasBeenSet = true; m_gatewayInstanceArn = value; }
-    inline void SetGatewayInstanceArn(Aws::String&& value) { m_gatewayInstanceArnHasBeenSet = true; m_gatewayInstanceArn = std::move(value); }
-    inline void SetGatewayInstanceArn(const char* value) { m_gatewayInstanceArnHasBeenSet = true; m_gatewayInstanceArn.assign(value); }
-    inline UpdateGatewayInstanceRequest& WithGatewayInstanceArn(const Aws::String& value) { SetGatewayInstanceArn(value); return *this;}
-    inline UpdateGatewayInstanceRequest& WithGatewayInstanceArn(Aws::String&& value) { SetGatewayInstanceArn(std::move(value)); return *this;}
-    inline UpdateGatewayInstanceRequest& WithGatewayInstanceArn(const char* value) { SetGatewayInstanceArn(value); return *this;}
+    template<typename GatewayInstanceArnT = Aws::String>
+    void SetGatewayInstanceArn(GatewayInstanceArnT&& value) { m_gatewayInstanceArnHasBeenSet = true; m_gatewayInstanceArn = std::forward<GatewayInstanceArnT>(value); }
+    template<typename GatewayInstanceArnT = Aws::String>
+    UpdateGatewayInstanceRequest& WithGatewayInstanceArn(GatewayInstanceArnT&& value) { SetGatewayInstanceArn(std::forward<GatewayInstanceArnT>(value)); return *this;}
     ///@}
   private:
 
-    BridgePlacement m_bridgePlacement;
+    BridgePlacement m_bridgePlacement{BridgePlacement::NOT_SET};
     bool m_bridgePlacementHasBeenSet = false;
 
     Aws::String m_gatewayInstanceArn;

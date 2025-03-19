@@ -12,26 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateEventDataStoreRequest::CreateEventDataStoreRequest() : 
-    m_nameHasBeenSet(false),
-    m_advancedEventSelectorsHasBeenSet(false),
-    m_multiRegionEnabled(false),
-    m_multiRegionEnabledHasBeenSet(false),
-    m_organizationEnabled(false),
-    m_organizationEnabledHasBeenSet(false),
-    m_retentionPeriod(0),
-    m_retentionPeriodHasBeenSet(false),
-    m_terminationProtectionEnabled(false),
-    m_terminationProtectionEnabledHasBeenSet(false),
-    m_tagsListHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false),
-    m_startIngestion(false),
-    m_startIngestionHasBeenSet(false),
-    m_billingMode(BillingMode::NOT_SET),
-    m_billingModeHasBeenSet(false)
-{
-}
-
 Aws::String CreateEventDataStoreRequest::SerializePayload() const
 {
   JsonValue payload;

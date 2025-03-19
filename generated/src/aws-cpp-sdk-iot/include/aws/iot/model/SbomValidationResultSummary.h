@@ -34,7 +34,7 @@ namespace Model
   class SbomValidationResultSummary
   {
   public:
-    AWS_IOT_API SbomValidationResultSummary();
+    AWS_IOT_API SbomValidationResultSummary() = default;
     AWS_IOT_API SbomValidationResultSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API SbomValidationResultSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,26 +44,22 @@ namespace Model
     /**
      * <p>The name of the SBOM file.</p>
      */
-    inline const Aws::String& GetFileName() const{ return m_fileName; }
+    inline const Aws::String& GetFileName() const { return m_fileName; }
     inline bool FileNameHasBeenSet() const { return m_fileNameHasBeenSet; }
-    inline void SetFileName(const Aws::String& value) { m_fileNameHasBeenSet = true; m_fileName = value; }
-    inline void SetFileName(Aws::String&& value) { m_fileNameHasBeenSet = true; m_fileName = std::move(value); }
-    inline void SetFileName(const char* value) { m_fileNameHasBeenSet = true; m_fileName.assign(value); }
-    inline SbomValidationResultSummary& WithFileName(const Aws::String& value) { SetFileName(value); return *this;}
-    inline SbomValidationResultSummary& WithFileName(Aws::String&& value) { SetFileName(std::move(value)); return *this;}
-    inline SbomValidationResultSummary& WithFileName(const char* value) { SetFileName(value); return *this;}
+    template<typename FileNameT = Aws::String>
+    void SetFileName(FileNameT&& value) { m_fileNameHasBeenSet = true; m_fileName = std::forward<FileNameT>(value); }
+    template<typename FileNameT = Aws::String>
+    SbomValidationResultSummary& WithFileName(FileNameT&& value) { SetFileName(std::forward<FileNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The end result of the SBOM validation.</p>
      */
-    inline const SbomValidationResult& GetValidationResult() const{ return m_validationResult; }
+    inline SbomValidationResult GetValidationResult() const { return m_validationResult; }
     inline bool ValidationResultHasBeenSet() const { return m_validationResultHasBeenSet; }
-    inline void SetValidationResult(const SbomValidationResult& value) { m_validationResultHasBeenSet = true; m_validationResult = value; }
-    inline void SetValidationResult(SbomValidationResult&& value) { m_validationResultHasBeenSet = true; m_validationResult = std::move(value); }
-    inline SbomValidationResultSummary& WithValidationResult(const SbomValidationResult& value) { SetValidationResult(value); return *this;}
-    inline SbomValidationResultSummary& WithValidationResult(SbomValidationResult&& value) { SetValidationResult(std::move(value)); return *this;}
+    inline void SetValidationResult(SbomValidationResult value) { m_validationResultHasBeenSet = true; m_validationResult = value; }
+    inline SbomValidationResultSummary& WithValidationResult(SbomValidationResult value) { SetValidationResult(value); return *this;}
     ///@}
 
     ///@{
@@ -71,12 +67,10 @@ namespace Model
      * <p>The <code>errorCode</code> representing the validation failure error if the
      * SBOM validation failed.</p>
      */
-    inline const SbomValidationErrorCode& GetErrorCode() const{ return m_errorCode; }
+    inline SbomValidationErrorCode GetErrorCode() const { return m_errorCode; }
     inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
-    inline void SetErrorCode(const SbomValidationErrorCode& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
-    inline void SetErrorCode(SbomValidationErrorCode&& value) { m_errorCodeHasBeenSet = true; m_errorCode = std::move(value); }
-    inline SbomValidationResultSummary& WithErrorCode(const SbomValidationErrorCode& value) { SetErrorCode(value); return *this;}
-    inline SbomValidationResultSummary& WithErrorCode(SbomValidationErrorCode&& value) { SetErrorCode(std::move(value)); return *this;}
+    inline void SetErrorCode(SbomValidationErrorCode value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
+    inline SbomValidationResultSummary& WithErrorCode(SbomValidationErrorCode value) { SetErrorCode(value); return *this;}
     ///@}
 
     ///@{
@@ -84,24 +78,22 @@ namespace Model
      * <p>The <code>errorMessage</code> representing the validation failure error if
      * the SBOM validation failed.</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline SbomValidationResultSummary& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline SbomValidationResultSummary& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline SbomValidationResultSummary& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    SbomValidationResultSummary& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_fileName;
     bool m_fileNameHasBeenSet = false;
 
-    SbomValidationResult m_validationResult;
+    SbomValidationResult m_validationResult{SbomValidationResult::NOT_SET};
     bool m_validationResultHasBeenSet = false;
 
-    SbomValidationErrorCode m_errorCode;
+    SbomValidationErrorCode m_errorCode{SbomValidationErrorCode::NOT_SET};
     bool m_errorCodeHasBeenSet = false;
 
     Aws::String m_errorMessage;

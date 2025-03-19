@@ -12,15 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateVPCEConfigurationRequest::UpdateVPCEConfigurationRequest() : 
-    m_arnHasBeenSet(false),
-    m_vpceConfigurationNameHasBeenSet(false),
-    m_vpceServiceNameHasBeenSet(false),
-    m_serviceDnsNameHasBeenSet(false),
-    m_vpceConfigurationDescriptionHasBeenSet(false)
-{
-}
-
 Aws::String UpdateVPCEConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

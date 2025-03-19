@@ -18,20 +18,7 @@ namespace MediaPackageVod
 namespace Model
 {
 
-AssetShallow::AssetShallow() : 
-    m_arnHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_packagingGroupIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
-    m_sourceArnHasBeenSet(false),
-    m_sourceRoleArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 AssetShallow::AssetShallow(JsonView jsonValue)
-  : AssetShallow()
 {
   *this = jsonValue;
 }
@@ -41,52 +28,38 @@ AssetShallow& AssetShallow::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("packagingGroupId"))
   {
     m_packagingGroupId = jsonValue.GetString("packagingGroupId");
-
     m_packagingGroupIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceArn"))
   {
     m_sourceArn = jsonValue.GetString("sourceArn");
-
     m_sourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sourceRoleArn"))
   {
     m_sourceRoleArn = jsonValue.GetString("sourceRoleArn");
-
     m_sourceRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -96,7 +69,6 @@ AssetShallow& AssetShallow::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

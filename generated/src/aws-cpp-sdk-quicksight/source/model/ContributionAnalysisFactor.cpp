@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-ContributionAnalysisFactor::ContributionAnalysisFactor() : 
-    m_fieldNameHasBeenSet(false)
-{
-}
-
 ContributionAnalysisFactor::ContributionAnalysisFactor(JsonView jsonValue)
-  : ContributionAnalysisFactor()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ContributionAnalysisFactor& ContributionAnalysisFactor::operator =(JsonView json
   if(jsonValue.ValueExists("FieldName"))
   {
     m_fieldName = jsonValue.GetString("FieldName");
-
     m_fieldNameHasBeenSet = true;
   }
-
   return *this;
 }
 

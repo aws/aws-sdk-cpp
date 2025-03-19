@@ -18,14 +18,7 @@ namespace Outposts
 namespace Model
 {
 
-LineItemAssetInformation::LineItemAssetInformation() : 
-    m_assetIdHasBeenSet(false),
-    m_macAddressListHasBeenSet(false)
-{
-}
-
 LineItemAssetInformation::LineItemAssetInformation(JsonView jsonValue)
-  : LineItemAssetInformation()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ LineItemAssetInformation& LineItemAssetInformation::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("AssetId"))
   {
     m_assetId = jsonValue.GetString("AssetId");
-
     m_assetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MacAddressList"))
   {
     Aws::Utils::Array<JsonView> macAddressListJsonList = jsonValue.GetArray("MacAddressList");
@@ -48,7 +39,6 @@ LineItemAssetInformation& LineItemAssetInformation::operator =(JsonView jsonValu
     }
     m_macAddressListHasBeenSet = true;
   }
-
   return *this;
 }
 

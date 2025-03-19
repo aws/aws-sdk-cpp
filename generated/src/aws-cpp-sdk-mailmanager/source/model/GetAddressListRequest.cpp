@@ -12,11 +12,6 @@ using namespace Aws::MailManager::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetAddressListRequest::GetAddressListRequest() : 
-    m_addressListIdHasBeenSet(false)
-{
-}
-
 Aws::String GetAddressListRequest::SerializePayload() const
 {
   JsonValue payload;

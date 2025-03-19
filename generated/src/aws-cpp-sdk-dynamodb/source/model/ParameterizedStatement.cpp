@@ -18,16 +18,7 @@ namespace DynamoDB
 namespace Model
 {
 
-ParameterizedStatement::ParameterizedStatement() : 
-    m_statementHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_returnValuesOnConditionCheckFailure(ReturnValuesOnConditionCheckFailure::NOT_SET),
-    m_returnValuesOnConditionCheckFailureHasBeenSet(false)
-{
-}
-
 ParameterizedStatement::ParameterizedStatement(JsonView jsonValue)
-  : ParameterizedStatement()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ ParameterizedStatement& ParameterizedStatement::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Statement"))
   {
     m_statement = jsonValue.GetString("Statement");
-
     m_statementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Parameters"))
   {
     Aws::Utils::Array<JsonView> parametersJsonList = jsonValue.GetArray("Parameters");
@@ -50,14 +39,11 @@ ParameterizedStatement& ParameterizedStatement::operator =(JsonView jsonValue)
     }
     m_parametersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReturnValuesOnConditionCheckFailure"))
   {
     m_returnValuesOnConditionCheckFailure = ReturnValuesOnConditionCheckFailureMapper::GetReturnValuesOnConditionCheckFailureForName(jsonValue.GetString("ReturnValuesOnConditionCheckFailure"));
-
     m_returnValuesOnConditionCheckFailureHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -12,17 +12,6 @@ using namespace Aws::Rekognition::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CopyProjectVersionRequest::CopyProjectVersionRequest() : 
-    m_sourceProjectArnHasBeenSet(false),
-    m_sourceProjectVersionArnHasBeenSet(false),
-    m_destinationProjectArnHasBeenSet(false),
-    m_versionNameHasBeenSet(false),
-    m_outputConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 Aws::String CopyProjectVersionRequest::SerializePayload() const
 {
   JsonValue payload;

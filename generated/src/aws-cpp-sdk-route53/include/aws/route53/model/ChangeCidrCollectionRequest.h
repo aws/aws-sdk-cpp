@@ -23,7 +23,7 @@ namespace Model
   class ChangeCidrCollectionRequest : public Route53Request
   {
   public:
-    AWS_ROUTE53_API ChangeCidrCollectionRequest();
+    AWS_ROUTE53_API ChangeCidrCollectionRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
     /**
      * <p>The UUID of the CIDR collection to update.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline ChangeCidrCollectionRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline ChangeCidrCollectionRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline ChangeCidrCollectionRequest& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    ChangeCidrCollectionRequest& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,7 +61,7 @@ namespace Model
      * Route 53 does not update the collection, and it returns a
      * <code>CidrCollectionVersionMismatch</code> error. </p> </li> </ul>
      */
-    inline long long GetCollectionVersion() const{ return m_collectionVersion; }
+    inline long long GetCollectionVersion() const { return m_collectionVersion; }
     inline bool CollectionVersionHasBeenSet() const { return m_collectionVersionHasBeenSet; }
     inline void SetCollectionVersion(long long value) { m_collectionVersionHasBeenSet = true; m_collectionVersion = value; }
     inline ChangeCidrCollectionRequest& WithCollectionVersion(long long value) { SetCollectionVersion(value); return *this;}
@@ -73,21 +71,21 @@ namespace Model
     /**
      * <p> Information about changes to a CIDR collection.</p>
      */
-    inline const Aws::Vector<CidrCollectionChange>& GetChanges() const{ return m_changes; }
+    inline const Aws::Vector<CidrCollectionChange>& GetChanges() const { return m_changes; }
     inline bool ChangesHasBeenSet() const { return m_changesHasBeenSet; }
-    inline void SetChanges(const Aws::Vector<CidrCollectionChange>& value) { m_changesHasBeenSet = true; m_changes = value; }
-    inline void SetChanges(Aws::Vector<CidrCollectionChange>&& value) { m_changesHasBeenSet = true; m_changes = std::move(value); }
-    inline ChangeCidrCollectionRequest& WithChanges(const Aws::Vector<CidrCollectionChange>& value) { SetChanges(value); return *this;}
-    inline ChangeCidrCollectionRequest& WithChanges(Aws::Vector<CidrCollectionChange>&& value) { SetChanges(std::move(value)); return *this;}
-    inline ChangeCidrCollectionRequest& AddChanges(const CidrCollectionChange& value) { m_changesHasBeenSet = true; m_changes.push_back(value); return *this; }
-    inline ChangeCidrCollectionRequest& AddChanges(CidrCollectionChange&& value) { m_changesHasBeenSet = true; m_changes.push_back(std::move(value)); return *this; }
+    template<typename ChangesT = Aws::Vector<CidrCollectionChange>>
+    void SetChanges(ChangesT&& value) { m_changesHasBeenSet = true; m_changes = std::forward<ChangesT>(value); }
+    template<typename ChangesT = Aws::Vector<CidrCollectionChange>>
+    ChangeCidrCollectionRequest& WithChanges(ChangesT&& value) { SetChanges(std::forward<ChangesT>(value)); return *this;}
+    template<typename ChangesT = CidrCollectionChange>
+    ChangeCidrCollectionRequest& AddChanges(ChangesT&& value) { m_changesHasBeenSet = true; m_changes.emplace_back(std::forward<ChangesT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    long long m_collectionVersion;
+    long long m_collectionVersion{0};
     bool m_collectionVersionHasBeenSet = false;
 
     Aws::Vector<CidrCollectionChange> m_changes;

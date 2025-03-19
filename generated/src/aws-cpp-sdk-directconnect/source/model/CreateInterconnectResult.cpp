@@ -17,15 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateInterconnectResult::CreateInterconnectResult() : 
-    m_interconnectState(InterconnectState::NOT_SET),
-    m_jumboFrameCapable(false),
-    m_hasLogicalRedundancy(HasLogicalRedundancy::NOT_SET)
-{
-}
-
 CreateInterconnectResult::CreateInterconnectResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateInterconnectResult()
 {
   *this = result;
 }
@@ -36,81 +28,68 @@ CreateInterconnectResult& CreateInterconnectResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("interconnectId"))
   {
     m_interconnectId = jsonValue.GetString("interconnectId");
-
+    m_interconnectIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("interconnectName"))
   {
     m_interconnectName = jsonValue.GetString("interconnectName");
-
+    m_interconnectNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("interconnectState"))
   {
     m_interconnectState = InterconnectStateMapper::GetInterconnectStateForName(jsonValue.GetString("interconnectState"));
-
+    m_interconnectStateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("region"))
   {
     m_region = jsonValue.GetString("region");
-
+    m_regionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("location"))
   {
     m_location = jsonValue.GetString("location");
-
+    m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bandwidth"))
   {
     m_bandwidth = jsonValue.GetString("bandwidth");
-
+    m_bandwidthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("loaIssueTime"))
   {
     m_loaIssueTime = jsonValue.GetDouble("loaIssueTime");
-
+    m_loaIssueTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lagId"))
   {
     m_lagId = jsonValue.GetString("lagId");
-
+    m_lagIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsDevice"))
   {
     m_awsDevice = jsonValue.GetString("awsDevice");
-
+    m_awsDeviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("jumboFrameCapable"))
   {
     m_jumboFrameCapable = jsonValue.GetBool("jumboFrameCapable");
-
+    m_jumboFrameCapableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsDeviceV2"))
   {
     m_awsDeviceV2 = jsonValue.GetString("awsDeviceV2");
-
+    m_awsDeviceV2HasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("awsLogicalDeviceId"))
   {
     m_awsLogicalDeviceId = jsonValue.GetString("awsLogicalDeviceId");
-
+    m_awsLogicalDeviceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hasLogicalRedundancy"))
   {
     m_hasLogicalRedundancy = HasLogicalRedundancyMapper::GetHasLogicalRedundancyForName(jsonValue.GetString("hasLogicalRedundancy"));
-
+    m_hasLogicalRedundancyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -118,20 +97,20 @@ CreateInterconnectResult& CreateInterconnectResult::operator =(const Aws::Amazon
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
+    m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("providerName"))
   {
     m_providerName = jsonValue.GetString("providerName");
-
+    m_providerNameHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

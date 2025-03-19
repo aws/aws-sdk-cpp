@@ -22,7 +22,7 @@ namespace Model
   class SearchResourcesRequest : public ResourceGroupsRequest
   {
   public:
-    AWS_RESOURCEGROUPS_API SearchResourcesRequest();
+    AWS_RESOURCEGROUPS_API SearchResourcesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,12 +38,12 @@ namespace Model
      * <p>The search query, using the same formats that are supported for resource
      * group definition. For more information, see <a>CreateGroup</a>.</p>
      */
-    inline const ResourceQuery& GetResourceQuery() const{ return m_resourceQuery; }
+    inline const ResourceQuery& GetResourceQuery() const { return m_resourceQuery; }
     inline bool ResourceQueryHasBeenSet() const { return m_resourceQueryHasBeenSet; }
-    inline void SetResourceQuery(const ResourceQuery& value) { m_resourceQueryHasBeenSet = true; m_resourceQuery = value; }
-    inline void SetResourceQuery(ResourceQuery&& value) { m_resourceQueryHasBeenSet = true; m_resourceQuery = std::move(value); }
-    inline SearchResourcesRequest& WithResourceQuery(const ResourceQuery& value) { SetResourceQuery(value); return *this;}
-    inline SearchResourcesRequest& WithResourceQuery(ResourceQuery&& value) { SetResourceQuery(std::move(value)); return *this;}
+    template<typename ResourceQueryT = ResourceQuery>
+    void SetResourceQuery(ResourceQueryT&& value) { m_resourceQueryHasBeenSet = true; m_resourceQuery = std::forward<ResourceQueryT>(value); }
+    template<typename ResourceQueryT = ResourceQuery>
+    SearchResourcesRequest& WithResourceQuery(ResourceQueryT&& value) { SetResourceQuery(std::forward<ResourceQueryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +58,7 @@ namespace Model
      * there are more results available. You should check <code>NextToken</code> after
      * every operation to ensure that you receive all of the results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline SearchResourcesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -72,21 +72,19 @@ namespace Model
      * value provided by a previous call's <code>NextToken</code> response to indicate
      * where the output should continue from.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline SearchResourcesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline SearchResourcesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline SearchResourcesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    SearchResourcesRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     ResourceQuery m_resourceQuery;
     bool m_resourceQueryHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

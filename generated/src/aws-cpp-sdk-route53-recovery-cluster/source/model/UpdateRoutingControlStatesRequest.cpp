@@ -12,12 +12,6 @@ using namespace Aws::Route53RecoveryCluster::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateRoutingControlStatesRequest::UpdateRoutingControlStatesRequest() : 
-    m_updateRoutingControlStateEntriesHasBeenSet(false),
-    m_safetyRulesToOverrideHasBeenSet(false)
-{
-}
-
 Aws::String UpdateRoutingControlStatesRequest::SerializePayload() const
 {
   JsonValue payload;

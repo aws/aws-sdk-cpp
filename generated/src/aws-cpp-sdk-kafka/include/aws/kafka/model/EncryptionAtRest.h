@@ -34,7 +34,7 @@ namespace Model
   class EncryptionAtRest
   {
   public:
-    AWS_KAFKA_API EncryptionAtRest();
+    AWS_KAFKA_API EncryptionAtRest() = default;
     AWS_KAFKA_API EncryptionAtRest(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API EncryptionAtRest& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,12 @@ namespace Model
      * don't specify a KMS key, MSK creates one for you and uses it.</p>
          
      */
-    inline const Aws::String& GetDataVolumeKMSKeyId() const{ return m_dataVolumeKMSKeyId; }
+    inline const Aws::String& GetDataVolumeKMSKeyId() const { return m_dataVolumeKMSKeyId; }
     inline bool DataVolumeKMSKeyIdHasBeenSet() const { return m_dataVolumeKMSKeyIdHasBeenSet; }
-    inline void SetDataVolumeKMSKeyId(const Aws::String& value) { m_dataVolumeKMSKeyIdHasBeenSet = true; m_dataVolumeKMSKeyId = value; }
-    inline void SetDataVolumeKMSKeyId(Aws::String&& value) { m_dataVolumeKMSKeyIdHasBeenSet = true; m_dataVolumeKMSKeyId = std::move(value); }
-    inline void SetDataVolumeKMSKeyId(const char* value) { m_dataVolumeKMSKeyIdHasBeenSet = true; m_dataVolumeKMSKeyId.assign(value); }
-    inline EncryptionAtRest& WithDataVolumeKMSKeyId(const Aws::String& value) { SetDataVolumeKMSKeyId(value); return *this;}
-    inline EncryptionAtRest& WithDataVolumeKMSKeyId(Aws::String&& value) { SetDataVolumeKMSKeyId(std::move(value)); return *this;}
-    inline EncryptionAtRest& WithDataVolumeKMSKeyId(const char* value) { SetDataVolumeKMSKeyId(value); return *this;}
+    template<typename DataVolumeKMSKeyIdT = Aws::String>
+    void SetDataVolumeKMSKeyId(DataVolumeKMSKeyIdT&& value) { m_dataVolumeKMSKeyIdHasBeenSet = true; m_dataVolumeKMSKeyId = std::forward<DataVolumeKMSKeyIdT>(value); }
+    template<typename DataVolumeKMSKeyIdT = Aws::String>
+    EncryptionAtRest& WithDataVolumeKMSKeyId(DataVolumeKMSKeyIdT&& value) { SetDataVolumeKMSKeyId(std::forward<DataVolumeKMSKeyIdT>(value)); return *this;}
     ///@}
   private:
 

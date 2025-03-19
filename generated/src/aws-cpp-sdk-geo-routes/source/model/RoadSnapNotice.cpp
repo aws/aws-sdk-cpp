@@ -18,16 +18,7 @@ namespace GeoRoutes
 namespace Model
 {
 
-RoadSnapNotice::RoadSnapNotice() : 
-    m_code(RoadSnapNoticeCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_titleHasBeenSet(false),
-    m_tracePointIndexesHasBeenSet(false)
-{
-}
-
 RoadSnapNotice::RoadSnapNotice(JsonView jsonValue)
-  : RoadSnapNotice()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ RoadSnapNotice& RoadSnapNotice::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Code"))
   {
     m_code = RoadSnapNoticeCodeMapper::GetRoadSnapNoticeCodeForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Title"))
   {
     m_title = jsonValue.GetString("Title");
-
     m_titleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TracePointIndexes"))
   {
     Aws::Utils::Array<JsonView> tracePointIndexesJsonList = jsonValue.GetArray("TracePointIndexes");
@@ -57,7 +44,6 @@ RoadSnapNotice& RoadSnapNotice::operator =(JsonView jsonValue)
     }
     m_tracePointIndexesHasBeenSet = true;
   }
-
   return *this;
 }
 

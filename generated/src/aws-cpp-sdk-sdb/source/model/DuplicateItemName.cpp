@@ -20,14 +20,7 @@ namespace SimpleDB
 namespace Model
 {
 
-DuplicateItemName::DuplicateItemName() : 
-    m_boxUsage(0.0),
-    m_boxUsageHasBeenSet(false)
-{
-}
-
 DuplicateItemName::DuplicateItemName(const XmlNode& xmlNode)
-  : DuplicateItemName()
 {
   *this = xmlNode;
 }

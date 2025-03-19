@@ -21,7 +21,7 @@ namespace Model
   class DescribeLoggingConfigurationRequest : public NetworkFirewallRequest
   {
   public:
-    AWS_NETWORKFIREWALL_API DescribeLoggingConfigurationRequest();
+    AWS_NETWORKFIREWALL_API DescribeLoggingConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the firewall.</p> <p>You must specify the
      * ARN or the name, and you can specify both. </p>
      */
-    inline const Aws::String& GetFirewallArn() const{ return m_firewallArn; }
+    inline const Aws::String& GetFirewallArn() const { return m_firewallArn; }
     inline bool FirewallArnHasBeenSet() const { return m_firewallArnHasBeenSet; }
-    inline void SetFirewallArn(const Aws::String& value) { m_firewallArnHasBeenSet = true; m_firewallArn = value; }
-    inline void SetFirewallArn(Aws::String&& value) { m_firewallArnHasBeenSet = true; m_firewallArn = std::move(value); }
-    inline void SetFirewallArn(const char* value) { m_firewallArnHasBeenSet = true; m_firewallArn.assign(value); }
-    inline DescribeLoggingConfigurationRequest& WithFirewallArn(const Aws::String& value) { SetFirewallArn(value); return *this;}
-    inline DescribeLoggingConfigurationRequest& WithFirewallArn(Aws::String&& value) { SetFirewallArn(std::move(value)); return *this;}
-    inline DescribeLoggingConfigurationRequest& WithFirewallArn(const char* value) { SetFirewallArn(value); return *this;}
+    template<typename FirewallArnT = Aws::String>
+    void SetFirewallArn(FirewallArnT&& value) { m_firewallArnHasBeenSet = true; m_firewallArn = std::forward<FirewallArnT>(value); }
+    template<typename FirewallArnT = Aws::String>
+    DescribeLoggingConfigurationRequest& WithFirewallArn(FirewallArnT&& value) { SetFirewallArn(std::forward<FirewallArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -55,14 +53,12 @@ namespace Model
      * after you create it.</p> <p>You must specify the ARN or the name, and you can
      * specify both. </p>
      */
-    inline const Aws::String& GetFirewallName() const{ return m_firewallName; }
+    inline const Aws::String& GetFirewallName() const { return m_firewallName; }
     inline bool FirewallNameHasBeenSet() const { return m_firewallNameHasBeenSet; }
-    inline void SetFirewallName(const Aws::String& value) { m_firewallNameHasBeenSet = true; m_firewallName = value; }
-    inline void SetFirewallName(Aws::String&& value) { m_firewallNameHasBeenSet = true; m_firewallName = std::move(value); }
-    inline void SetFirewallName(const char* value) { m_firewallNameHasBeenSet = true; m_firewallName.assign(value); }
-    inline DescribeLoggingConfigurationRequest& WithFirewallName(const Aws::String& value) { SetFirewallName(value); return *this;}
-    inline DescribeLoggingConfigurationRequest& WithFirewallName(Aws::String&& value) { SetFirewallName(std::move(value)); return *this;}
-    inline DescribeLoggingConfigurationRequest& WithFirewallName(const char* value) { SetFirewallName(value); return *this;}
+    template<typename FirewallNameT = Aws::String>
+    void SetFirewallName(FirewallNameT&& value) { m_firewallNameHasBeenSet = true; m_firewallName = std::forward<FirewallNameT>(value); }
+    template<typename FirewallNameT = Aws::String>
+    DescribeLoggingConfigurationRequest& WithFirewallName(FirewallNameT&& value) { SetFirewallName(std::forward<FirewallNameT>(value)); return *this;}
     ///@}
   private:
 

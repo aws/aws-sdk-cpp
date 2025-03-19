@@ -30,7 +30,7 @@ namespace Model
   class ClipLimits
   {
   public:
-    AWS_MEDIACONVERT_API ClipLimits();
+    AWS_MEDIACONVERT_API ClipLimits() = default;
     AWS_MEDIACONVERT_API ClipLimits(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API ClipLimits& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,7 +45,7 @@ namespace Model
      * default value 100. When you specify a value for Maximum RGB tolerance, you must
      * set Sample range conversion to Limited range clip.
      */
-    inline int GetMaximumRGBTolerance() const{ return m_maximumRGBTolerance; }
+    inline int GetMaximumRGBTolerance() const { return m_maximumRGBTolerance; }
     inline bool MaximumRGBToleranceHasBeenSet() const { return m_maximumRGBToleranceHasBeenSet; }
     inline void SetMaximumRGBTolerance(int value) { m_maximumRGBToleranceHasBeenSet = true; m_maximumRGBTolerance = value; }
     inline ClipLimits& WithMaximumRGBTolerance(int value) { SetMaximumRGBTolerance(value); return *this;}
@@ -60,7 +60,7 @@ namespace Model
      * automatically scales this value down. When you specify a value for Maximum YUV,
      * you must set Sample range conversion to Limited range clip.
      */
-    inline int GetMaximumYUV() const{ return m_maximumYUV; }
+    inline int GetMaximumYUV() const { return m_maximumYUV; }
     inline bool MaximumYUVHasBeenSet() const { return m_maximumYUVHasBeenSet; }
     inline void SetMaximumYUV(int value) { m_maximumYUVHasBeenSet = true; m_maximumYUV = value; }
     inline ClipLimits& WithMaximumYUV(int value) { SetMaximumYUV(value); return *this;}
@@ -75,7 +75,7 @@ namespace Model
      * default value 0. When you specify a value for Minimum RGB tolerance, you must
      * set Sample range conversion to Limited range clip.
      */
-    inline int GetMinimumRGBTolerance() const{ return m_minimumRGBTolerance; }
+    inline int GetMinimumRGBTolerance() const { return m_minimumRGBTolerance; }
     inline bool MinimumRGBToleranceHasBeenSet() const { return m_minimumRGBToleranceHasBeenSet; }
     inline void SetMinimumRGBTolerance(int value) { m_minimumRGBToleranceHasBeenSet = true; m_minimumRGBTolerance = value; }
     inline ClipLimits& WithMinimumRGBTolerance(int value) { SetMinimumRGBTolerance(value); return *this;}
@@ -90,23 +90,23 @@ namespace Model
      * automatically scales this value down. When you specify a value for Minumum YUV,
      * you must set Sample range conversion to Limited range clip.
      */
-    inline int GetMinimumYUV() const{ return m_minimumYUV; }
+    inline int GetMinimumYUV() const { return m_minimumYUV; }
     inline bool MinimumYUVHasBeenSet() const { return m_minimumYUVHasBeenSet; }
     inline void SetMinimumYUV(int value) { m_minimumYUVHasBeenSet = true; m_minimumYUV = value; }
     inline ClipLimits& WithMinimumYUV(int value) { SetMinimumYUV(value); return *this;}
     ///@}
   private:
 
-    int m_maximumRGBTolerance;
+    int m_maximumRGBTolerance{0};
     bool m_maximumRGBToleranceHasBeenSet = false;
 
-    int m_maximumYUV;
+    int m_maximumYUV{0};
     bool m_maximumYUVHasBeenSet = false;
 
-    int m_minimumRGBTolerance;
+    int m_minimumRGBTolerance{0};
     bool m_minimumRGBToleranceHasBeenSet = false;
 
-    int m_minimumYUV;
+    int m_minimumYUV{0};
     bool m_minimumYUVHasBeenSet = false;
   };
 

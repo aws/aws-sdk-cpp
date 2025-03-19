@@ -12,12 +12,6 @@ using namespace Aws::Inspector::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SetTagsForResourceRequest::SetTagsForResourceRequest() : 
-    m_resourceArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String SetTagsForResourceRequest::SerializePayload() const
 {
   JsonValue payload;

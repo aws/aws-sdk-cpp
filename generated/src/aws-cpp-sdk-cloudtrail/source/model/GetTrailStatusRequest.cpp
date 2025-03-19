@@ -12,11 +12,6 @@ using namespace Aws::CloudTrail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetTrailStatusRequest::GetTrailStatusRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String GetTrailStatusRequest::SerializePayload() const
 {
   JsonValue payload;

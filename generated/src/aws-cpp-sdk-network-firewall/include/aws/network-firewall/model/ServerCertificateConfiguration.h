@@ -46,7 +46,7 @@ namespace Model
   class ServerCertificateConfiguration
   {
   public:
-    AWS_NETWORKFIREWALL_API ServerCertificateConfiguration();
+    AWS_NETWORKFIREWALL_API ServerCertificateConfiguration() = default;
     AWS_NETWORKFIREWALL_API ServerCertificateConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API ServerCertificateConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,28 +56,28 @@ namespace Model
     /**
      * <p>The list of server certificates to use for inbound SSL/TLS inspection.</p>
      */
-    inline const Aws::Vector<ServerCertificate>& GetServerCertificates() const{ return m_serverCertificates; }
+    inline const Aws::Vector<ServerCertificate>& GetServerCertificates() const { return m_serverCertificates; }
     inline bool ServerCertificatesHasBeenSet() const { return m_serverCertificatesHasBeenSet; }
-    inline void SetServerCertificates(const Aws::Vector<ServerCertificate>& value) { m_serverCertificatesHasBeenSet = true; m_serverCertificates = value; }
-    inline void SetServerCertificates(Aws::Vector<ServerCertificate>&& value) { m_serverCertificatesHasBeenSet = true; m_serverCertificates = std::move(value); }
-    inline ServerCertificateConfiguration& WithServerCertificates(const Aws::Vector<ServerCertificate>& value) { SetServerCertificates(value); return *this;}
-    inline ServerCertificateConfiguration& WithServerCertificates(Aws::Vector<ServerCertificate>&& value) { SetServerCertificates(std::move(value)); return *this;}
-    inline ServerCertificateConfiguration& AddServerCertificates(const ServerCertificate& value) { m_serverCertificatesHasBeenSet = true; m_serverCertificates.push_back(value); return *this; }
-    inline ServerCertificateConfiguration& AddServerCertificates(ServerCertificate&& value) { m_serverCertificatesHasBeenSet = true; m_serverCertificates.push_back(std::move(value)); return *this; }
+    template<typename ServerCertificatesT = Aws::Vector<ServerCertificate>>
+    void SetServerCertificates(ServerCertificatesT&& value) { m_serverCertificatesHasBeenSet = true; m_serverCertificates = std::forward<ServerCertificatesT>(value); }
+    template<typename ServerCertificatesT = Aws::Vector<ServerCertificate>>
+    ServerCertificateConfiguration& WithServerCertificates(ServerCertificatesT&& value) { SetServerCertificates(std::forward<ServerCertificatesT>(value)); return *this;}
+    template<typename ServerCertificatesT = ServerCertificate>
+    ServerCertificateConfiguration& AddServerCertificates(ServerCertificatesT&& value) { m_serverCertificatesHasBeenSet = true; m_serverCertificates.emplace_back(std::forward<ServerCertificatesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>A list of scopes.</p>
      */
-    inline const Aws::Vector<ServerCertificateScope>& GetScopes() const{ return m_scopes; }
+    inline const Aws::Vector<ServerCertificateScope>& GetScopes() const { return m_scopes; }
     inline bool ScopesHasBeenSet() const { return m_scopesHasBeenSet; }
-    inline void SetScopes(const Aws::Vector<ServerCertificateScope>& value) { m_scopesHasBeenSet = true; m_scopes = value; }
-    inline void SetScopes(Aws::Vector<ServerCertificateScope>&& value) { m_scopesHasBeenSet = true; m_scopes = std::move(value); }
-    inline ServerCertificateConfiguration& WithScopes(const Aws::Vector<ServerCertificateScope>& value) { SetScopes(value); return *this;}
-    inline ServerCertificateConfiguration& WithScopes(Aws::Vector<ServerCertificateScope>&& value) { SetScopes(std::move(value)); return *this;}
-    inline ServerCertificateConfiguration& AddScopes(const ServerCertificateScope& value) { m_scopesHasBeenSet = true; m_scopes.push_back(value); return *this; }
-    inline ServerCertificateConfiguration& AddScopes(ServerCertificateScope&& value) { m_scopesHasBeenSet = true; m_scopes.push_back(std::move(value)); return *this; }
+    template<typename ScopesT = Aws::Vector<ServerCertificateScope>>
+    void SetScopes(ScopesT&& value) { m_scopesHasBeenSet = true; m_scopes = std::forward<ScopesT>(value); }
+    template<typename ScopesT = Aws::Vector<ServerCertificateScope>>
+    ServerCertificateConfiguration& WithScopes(ScopesT&& value) { SetScopes(std::forward<ScopesT>(value)); return *this;}
+    template<typename ScopesT = ServerCertificateScope>
+    ServerCertificateConfiguration& AddScopes(ScopesT&& value) { m_scopesHasBeenSet = true; m_scopes.emplace_back(std::forward<ScopesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -96,14 +96,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
      * certificates</a> in the <i>Certificate Manager User Guide</i>.</p>
      */
-    inline const Aws::String& GetCertificateAuthorityArn() const{ return m_certificateAuthorityArn; }
+    inline const Aws::String& GetCertificateAuthorityArn() const { return m_certificateAuthorityArn; }
     inline bool CertificateAuthorityArnHasBeenSet() const { return m_certificateAuthorityArnHasBeenSet; }
-    inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
-    inline void SetCertificateAuthorityArn(Aws::String&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::move(value); }
-    inline void SetCertificateAuthorityArn(const char* value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn.assign(value); }
-    inline ServerCertificateConfiguration& WithCertificateAuthorityArn(const Aws::String& value) { SetCertificateAuthorityArn(value); return *this;}
-    inline ServerCertificateConfiguration& WithCertificateAuthorityArn(Aws::String&& value) { SetCertificateAuthorityArn(std::move(value)); return *this;}
-    inline ServerCertificateConfiguration& WithCertificateAuthorityArn(const char* value) { SetCertificateAuthorityArn(value); return *this;}
+    template<typename CertificateAuthorityArnT = Aws::String>
+    void SetCertificateAuthorityArn(CertificateAuthorityArnT&& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = std::forward<CertificateAuthorityArnT>(value); }
+    template<typename CertificateAuthorityArnT = Aws::String>
+    ServerCertificateConfiguration& WithCertificateAuthorityArn(CertificateAuthorityArnT&& value) { SetCertificateAuthorityArn(std::forward<CertificateAuthorityArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,12 +113,12 @@ namespace Model
      * status, you must also specify a <code>CertificateAuthorityArn</code> in
      * <a>ServerCertificateConfiguration</a>.</p>
      */
-    inline const CheckCertificateRevocationStatusActions& GetCheckCertificateRevocationStatus() const{ return m_checkCertificateRevocationStatus; }
+    inline const CheckCertificateRevocationStatusActions& GetCheckCertificateRevocationStatus() const { return m_checkCertificateRevocationStatus; }
     inline bool CheckCertificateRevocationStatusHasBeenSet() const { return m_checkCertificateRevocationStatusHasBeenSet; }
-    inline void SetCheckCertificateRevocationStatus(const CheckCertificateRevocationStatusActions& value) { m_checkCertificateRevocationStatusHasBeenSet = true; m_checkCertificateRevocationStatus = value; }
-    inline void SetCheckCertificateRevocationStatus(CheckCertificateRevocationStatusActions&& value) { m_checkCertificateRevocationStatusHasBeenSet = true; m_checkCertificateRevocationStatus = std::move(value); }
-    inline ServerCertificateConfiguration& WithCheckCertificateRevocationStatus(const CheckCertificateRevocationStatusActions& value) { SetCheckCertificateRevocationStatus(value); return *this;}
-    inline ServerCertificateConfiguration& WithCheckCertificateRevocationStatus(CheckCertificateRevocationStatusActions&& value) { SetCheckCertificateRevocationStatus(std::move(value)); return *this;}
+    template<typename CheckCertificateRevocationStatusT = CheckCertificateRevocationStatusActions>
+    void SetCheckCertificateRevocationStatus(CheckCertificateRevocationStatusT&& value) { m_checkCertificateRevocationStatusHasBeenSet = true; m_checkCertificateRevocationStatus = std::forward<CheckCertificateRevocationStatusT>(value); }
+    template<typename CheckCertificateRevocationStatusT = CheckCertificateRevocationStatusActions>
+    ServerCertificateConfiguration& WithCheckCertificateRevocationStatus(CheckCertificateRevocationStatusT&& value) { SetCheckCertificateRevocationStatus(std::forward<CheckCertificateRevocationStatusT>(value)); return *this;}
     ///@}
   private:
 

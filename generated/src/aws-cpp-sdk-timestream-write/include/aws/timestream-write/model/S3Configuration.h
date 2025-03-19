@@ -33,7 +33,7 @@ namespace Model
   class S3Configuration
   {
   public:
-    AWS_TIMESTREAMWRITE_API S3Configuration();
+    AWS_TIMESTREAMWRITE_API S3Configuration() = default;
     AWS_TIMESTREAMWRITE_API S3Configuration(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMWRITE_API S3Configuration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_TIMESTREAMWRITE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The bucket name of the customer S3 bucket.</p>
      */
-    inline const Aws::String& GetBucketName() const{ return m_bucketName; }
+    inline const Aws::String& GetBucketName() const { return m_bucketName; }
     inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
-    inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
-    inline void SetBucketName(Aws::String&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::move(value); }
-    inline void SetBucketName(const char* value) { m_bucketNameHasBeenSet = true; m_bucketName.assign(value); }
-    inline S3Configuration& WithBucketName(const Aws::String& value) { SetBucketName(value); return *this;}
-    inline S3Configuration& WithBucketName(Aws::String&& value) { SetBucketName(std::move(value)); return *this;}
-    inline S3Configuration& WithBucketName(const char* value) { SetBucketName(value); return *this;}
+    template<typename BucketNameT = Aws::String>
+    void SetBucketName(BucketNameT&& value) { m_bucketNameHasBeenSet = true; m_bucketName = std::forward<BucketNameT>(value); }
+    template<typename BucketNameT = Aws::String>
+    S3Configuration& WithBucketName(BucketNameT&& value) { SetBucketName(std::forward<BucketNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The object key preview for the customer S3 location.</p>
      */
-    inline const Aws::String& GetObjectKeyPrefix() const{ return m_objectKeyPrefix; }
+    inline const Aws::String& GetObjectKeyPrefix() const { return m_objectKeyPrefix; }
     inline bool ObjectKeyPrefixHasBeenSet() const { return m_objectKeyPrefixHasBeenSet; }
-    inline void SetObjectKeyPrefix(const Aws::String& value) { m_objectKeyPrefixHasBeenSet = true; m_objectKeyPrefix = value; }
-    inline void SetObjectKeyPrefix(Aws::String&& value) { m_objectKeyPrefixHasBeenSet = true; m_objectKeyPrefix = std::move(value); }
-    inline void SetObjectKeyPrefix(const char* value) { m_objectKeyPrefixHasBeenSet = true; m_objectKeyPrefix.assign(value); }
-    inline S3Configuration& WithObjectKeyPrefix(const Aws::String& value) { SetObjectKeyPrefix(value); return *this;}
-    inline S3Configuration& WithObjectKeyPrefix(Aws::String&& value) { SetObjectKeyPrefix(std::move(value)); return *this;}
-    inline S3Configuration& WithObjectKeyPrefix(const char* value) { SetObjectKeyPrefix(value); return *this;}
+    template<typename ObjectKeyPrefixT = Aws::String>
+    void SetObjectKeyPrefix(ObjectKeyPrefixT&& value) { m_objectKeyPrefixHasBeenSet = true; m_objectKeyPrefix = std::forward<ObjectKeyPrefixT>(value); }
+    template<typename ObjectKeyPrefixT = Aws::String>
+    S3Configuration& WithObjectKeyPrefix(ObjectKeyPrefixT&& value) { SetObjectKeyPrefix(std::forward<ObjectKeyPrefixT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,12 +69,10 @@ namespace Model
      * server-side encryption with an S3 managed key or Amazon Web Services managed
      * key.</p>
      */
-    inline const S3EncryptionOption& GetEncryptionOption() const{ return m_encryptionOption; }
+    inline S3EncryptionOption GetEncryptionOption() const { return m_encryptionOption; }
     inline bool EncryptionOptionHasBeenSet() const { return m_encryptionOptionHasBeenSet; }
-    inline void SetEncryptionOption(const S3EncryptionOption& value) { m_encryptionOptionHasBeenSet = true; m_encryptionOption = value; }
-    inline void SetEncryptionOption(S3EncryptionOption&& value) { m_encryptionOptionHasBeenSet = true; m_encryptionOption = std::move(value); }
-    inline S3Configuration& WithEncryptionOption(const S3EncryptionOption& value) { SetEncryptionOption(value); return *this;}
-    inline S3Configuration& WithEncryptionOption(S3EncryptionOption&& value) { SetEncryptionOption(std::move(value)); return *this;}
+    inline void SetEncryptionOption(S3EncryptionOption value) { m_encryptionOptionHasBeenSet = true; m_encryptionOption = value; }
+    inline S3Configuration& WithEncryptionOption(S3EncryptionOption value) { SetEncryptionOption(value); return *this;}
     ///@}
 
     ///@{
@@ -86,14 +80,12 @@ namespace Model
      * <p>The KMS key ID for the customer S3 location when encrypting with an Amazon
      * Web Services managed key.</p>
      */
-    inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+    inline const Aws::String& GetKmsKeyId() const { return m_kmsKeyId; }
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
-    inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
-    inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
-    inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
-    inline S3Configuration& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
-    inline S3Configuration& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
-    inline S3Configuration& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
+    template<typename KmsKeyIdT = Aws::String>
+    void SetKmsKeyId(KmsKeyIdT&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::forward<KmsKeyIdT>(value); }
+    template<typename KmsKeyIdT = Aws::String>
+    S3Configuration& WithKmsKeyId(KmsKeyIdT&& value) { SetKmsKeyId(std::forward<KmsKeyIdT>(value)); return *this;}
     ///@}
   private:
 
@@ -103,7 +95,7 @@ namespace Model
     Aws::String m_objectKeyPrefix;
     bool m_objectKeyPrefixHasBeenSet = false;
 
-    S3EncryptionOption m_encryptionOption;
+    S3EncryptionOption m_encryptionOption{S3EncryptionOption::NOT_SET};
     bool m_encryptionOptionHasBeenSet = false;
 
     Aws::String m_kmsKeyId;

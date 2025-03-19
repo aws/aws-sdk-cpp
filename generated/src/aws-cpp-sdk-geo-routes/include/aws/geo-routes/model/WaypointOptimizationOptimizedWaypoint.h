@@ -32,7 +32,7 @@ namespace Model
   class WaypointOptimizationOptimizedWaypoint
   {
   public:
-    AWS_GEOROUTES_API WaypointOptimizationOptimizedWaypoint();
+    AWS_GEOROUTES_API WaypointOptimizationOptimizedWaypoint() = default;
     AWS_GEOROUTES_API WaypointOptimizationOptimizedWaypoint(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API WaypointOptimizationOptimizedWaypoint& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * </p> <p>Examples:</p> <p> <code>2020-04-22T17:57:24Z</code> </p> <p>
      * <code>2020-04-22T17:57:24+02:00</code> </p>
      */
-    inline const Aws::String& GetArrivalTime() const{ return m_arrivalTime; }
+    inline const Aws::String& GetArrivalTime() const { return m_arrivalTime; }
     inline bool ArrivalTimeHasBeenSet() const { return m_arrivalTimeHasBeenSet; }
-    inline void SetArrivalTime(const Aws::String& value) { m_arrivalTimeHasBeenSet = true; m_arrivalTime = value; }
-    inline void SetArrivalTime(Aws::String&& value) { m_arrivalTimeHasBeenSet = true; m_arrivalTime = std::move(value); }
-    inline void SetArrivalTime(const char* value) { m_arrivalTimeHasBeenSet = true; m_arrivalTime.assign(value); }
-    inline WaypointOptimizationOptimizedWaypoint& WithArrivalTime(const Aws::String& value) { SetArrivalTime(value); return *this;}
-    inline WaypointOptimizationOptimizedWaypoint& WithArrivalTime(Aws::String&& value) { SetArrivalTime(std::move(value)); return *this;}
-    inline WaypointOptimizationOptimizedWaypoint& WithArrivalTime(const char* value) { SetArrivalTime(value); return *this;}
+    template<typename ArrivalTimeT = Aws::String>
+    void SetArrivalTime(ArrivalTimeT&& value) { m_arrivalTimeHasBeenSet = true; m_arrivalTime = std::forward<ArrivalTimeT>(value); }
+    template<typename ArrivalTimeT = Aws::String>
+    WaypointOptimizationOptimizedWaypoint& WithArrivalTime(ArrivalTimeT&& value) { SetArrivalTime(std::forward<ArrivalTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -61,7 +59,7 @@ namespace Model
      * in the response only if clustering was performed while processing the
      * request.</p>
      */
-    inline int GetClusterIndex() const{ return m_clusterIndex; }
+    inline int GetClusterIndex() const { return m_clusterIndex; }
     inline bool ClusterIndexHasBeenSet() const { return m_clusterIndexHasBeenSet; }
     inline void SetClusterIndex(int value) { m_clusterIndexHasBeenSet = true; m_clusterIndex = value; }
     inline WaypointOptimizationOptimizedWaypoint& WithClusterIndex(int value) { SetClusterIndex(value); return *this;}
@@ -74,40 +72,36 @@ namespace Model
      * </p> <p>Examples:</p> <p> <code>2020-04-22T17:57:24Z</code> </p> <p>
      * <code>2020-04-22T17:57:24+02:00</code> </p>
      */
-    inline const Aws::String& GetDepartureTime() const{ return m_departureTime; }
+    inline const Aws::String& GetDepartureTime() const { return m_departureTime; }
     inline bool DepartureTimeHasBeenSet() const { return m_departureTimeHasBeenSet; }
-    inline void SetDepartureTime(const Aws::String& value) { m_departureTimeHasBeenSet = true; m_departureTime = value; }
-    inline void SetDepartureTime(Aws::String&& value) { m_departureTimeHasBeenSet = true; m_departureTime = std::move(value); }
-    inline void SetDepartureTime(const char* value) { m_departureTimeHasBeenSet = true; m_departureTime.assign(value); }
-    inline WaypointOptimizationOptimizedWaypoint& WithDepartureTime(const Aws::String& value) { SetDepartureTime(value); return *this;}
-    inline WaypointOptimizationOptimizedWaypoint& WithDepartureTime(Aws::String&& value) { SetDepartureTime(std::move(value)); return *this;}
-    inline WaypointOptimizationOptimizedWaypoint& WithDepartureTime(const char* value) { SetDepartureTime(value); return *this;}
+    template<typename DepartureTimeT = Aws::String>
+    void SetDepartureTime(DepartureTimeT&& value) { m_departureTimeHasBeenSet = true; m_departureTime = std::forward<DepartureTimeT>(value); }
+    template<typename DepartureTimeT = Aws::String>
+    WaypointOptimizationOptimizedWaypoint& WithDepartureTime(DepartureTimeT&& value) { SetDepartureTime(std::forward<DepartureTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The waypoint Id.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetId() const { return m_id; }
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
-    inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
-    inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
-    inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
-    inline WaypointOptimizationOptimizedWaypoint& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline WaypointOptimizationOptimizedWaypoint& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline WaypointOptimizationOptimizedWaypoint& WithId(const char* value) { SetId(value); return *this;}
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    WaypointOptimizationOptimizedWaypoint& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Position defined as <code>[longitude, latitude]</code>.</p>
      */
-    inline const Aws::Vector<double>& GetPosition() const{ return m_position; }
+    inline const Aws::Vector<double>& GetPosition() const { return m_position; }
     inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
-    inline void SetPosition(const Aws::Vector<double>& value) { m_positionHasBeenSet = true; m_position = value; }
-    inline void SetPosition(Aws::Vector<double>&& value) { m_positionHasBeenSet = true; m_position = std::move(value); }
-    inline WaypointOptimizationOptimizedWaypoint& WithPosition(const Aws::Vector<double>& value) { SetPosition(value); return *this;}
-    inline WaypointOptimizationOptimizedWaypoint& WithPosition(Aws::Vector<double>&& value) { SetPosition(std::move(value)); return *this;}
+    template<typename PositionT = Aws::Vector<double>>
+    void SetPosition(PositionT&& value) { m_positionHasBeenSet = true; m_position = std::forward<PositionT>(value); }
+    template<typename PositionT = Aws::Vector<double>>
+    WaypointOptimizationOptimizedWaypoint& WithPosition(PositionT&& value) { SetPosition(std::forward<PositionT>(value)); return *this;}
     inline WaypointOptimizationOptimizedWaypoint& AddPosition(double value) { m_positionHasBeenSet = true; m_position.push_back(value); return *this; }
     ///@}
   private:
@@ -115,7 +109,7 @@ namespace Model
     Aws::String m_arrivalTime;
     bool m_arrivalTimeHasBeenSet = false;
 
-    int m_clusterIndex;
+    int m_clusterIndex{0};
     bool m_clusterIndexHasBeenSet = false;
 
     Aws::String m_departureTime;

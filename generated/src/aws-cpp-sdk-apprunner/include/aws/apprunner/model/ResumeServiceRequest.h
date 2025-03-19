@@ -21,7 +21,7 @@ namespace Model
   class ResumeServiceRequest : public AppRunnerRequest
   {
   public:
-    AWS_APPRUNNER_API ResumeServiceRequest();
+    AWS_APPRUNNER_API ResumeServiceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the App Runner service that you want to
      * resume.</p>
      */
-    inline const Aws::String& GetServiceArn() const{ return m_serviceArn; }
+    inline const Aws::String& GetServiceArn() const { return m_serviceArn; }
     inline bool ServiceArnHasBeenSet() const { return m_serviceArnHasBeenSet; }
-    inline void SetServiceArn(const Aws::String& value) { m_serviceArnHasBeenSet = true; m_serviceArn = value; }
-    inline void SetServiceArn(Aws::String&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::move(value); }
-    inline void SetServiceArn(const char* value) { m_serviceArnHasBeenSet = true; m_serviceArn.assign(value); }
-    inline ResumeServiceRequest& WithServiceArn(const Aws::String& value) { SetServiceArn(value); return *this;}
-    inline ResumeServiceRequest& WithServiceArn(Aws::String&& value) { SetServiceArn(std::move(value)); return *this;}
-    inline ResumeServiceRequest& WithServiceArn(const char* value) { SetServiceArn(value); return *this;}
+    template<typename ServiceArnT = Aws::String>
+    void SetServiceArn(ServiceArnT&& value) { m_serviceArnHasBeenSet = true; m_serviceArn = std::forward<ServiceArnT>(value); }
+    template<typename ServiceArnT = Aws::String>
+    ResumeServiceRequest& WithServiceArn(ServiceArnT&& value) { SetServiceArn(std::forward<ServiceArnT>(value)); return *this;}
     ///@}
   private:
 

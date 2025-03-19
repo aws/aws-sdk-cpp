@@ -18,19 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-AddressConfiguration::AddressConfiguration() : 
-    m_bodyOverrideHasBeenSet(false),
-    m_channelType(ChannelType::NOT_SET),
-    m_channelTypeHasBeenSet(false),
-    m_contextHasBeenSet(false),
-    m_rawContentHasBeenSet(false),
-    m_substitutionsHasBeenSet(false),
-    m_titleOverrideHasBeenSet(false)
-{
-}
-
 AddressConfiguration::AddressConfiguration(JsonView jsonValue)
-  : AddressConfiguration()
 {
   *this = jsonValue;
 }
@@ -40,17 +28,13 @@ AddressConfiguration& AddressConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BodyOverride"))
   {
     m_bodyOverride = jsonValue.GetString("BodyOverride");
-
     m_bodyOverrideHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChannelType"))
   {
     m_channelType = ChannelTypeMapper::GetChannelTypeForName(jsonValue.GetString("ChannelType"));
-
     m_channelTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Context"))
   {
     Aws::Map<Aws::String, JsonView> contextJsonMap = jsonValue.GetObject("Context").GetAllObjects();
@@ -60,14 +44,11 @@ AddressConfiguration& AddressConfiguration::operator =(JsonView jsonValue)
     }
     m_contextHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RawContent"))
   {
     m_rawContent = jsonValue.GetString("RawContent");
-
     m_rawContentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Substitutions"))
   {
     Aws::Map<Aws::String, JsonView> substitutionsJsonMap = jsonValue.GetObject("Substitutions").GetAllObjects();
@@ -84,14 +65,11 @@ AddressConfiguration& AddressConfiguration::operator =(JsonView jsonValue)
     }
     m_substitutionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TitleOverride"))
   {
     m_titleOverride = jsonValue.GetString("TitleOverride");
-
     m_titleOverrideHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,16 +18,7 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
-PhoneNumberError::PhoneNumberError() : 
-    m_phoneNumberIdHasBeenSet(false),
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false)
-{
-}
-
 PhoneNumberError::PhoneNumberError(JsonView jsonValue)
-  : PhoneNumberError()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ PhoneNumberError& PhoneNumberError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("PhoneNumberId"))
   {
     m_phoneNumberId = jsonValue.GetString("PhoneNumberId");
-
     m_phoneNumberIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("ErrorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   return *this;
 }
 

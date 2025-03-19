@@ -32,7 +32,7 @@ namespace Model
   class OutputSampleFileSource
   {
   public:
-    AWS_B2BI_API OutputSampleFileSource();
+    AWS_B2BI_API OutputSampleFileSource() = default;
     AWS_B2BI_API OutputSampleFileSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API OutputSampleFileSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_B2BI_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,12 +40,12 @@ namespace Model
 
     ///@{
     
-    inline const S3Location& GetFileLocation() const{ return m_fileLocation; }
+    inline const S3Location& GetFileLocation() const { return m_fileLocation; }
     inline bool FileLocationHasBeenSet() const { return m_fileLocationHasBeenSet; }
-    inline void SetFileLocation(const S3Location& value) { m_fileLocationHasBeenSet = true; m_fileLocation = value; }
-    inline void SetFileLocation(S3Location&& value) { m_fileLocationHasBeenSet = true; m_fileLocation = std::move(value); }
-    inline OutputSampleFileSource& WithFileLocation(const S3Location& value) { SetFileLocation(value); return *this;}
-    inline OutputSampleFileSource& WithFileLocation(S3Location&& value) { SetFileLocation(std::move(value)); return *this;}
+    template<typename FileLocationT = S3Location>
+    void SetFileLocation(FileLocationT&& value) { m_fileLocationHasBeenSet = true; m_fileLocation = std::forward<FileLocationT>(value); }
+    template<typename FileLocationT = S3Location>
+    OutputSampleFileSource& WithFileLocation(FileLocationT&& value) { SetFileLocation(std::forward<FileLocationT>(value)); return *this;}
     ///@}
   private:
 

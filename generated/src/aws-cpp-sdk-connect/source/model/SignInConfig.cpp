@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-SignInConfig::SignInConfig() : 
-    m_distributionsHasBeenSet(false)
-{
-}
-
 SignInConfig::SignInConfig(JsonView jsonValue)
-  : SignInConfig()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ SignInConfig& SignInConfig::operator =(JsonView jsonValue)
     }
     m_distributionsHasBeenSet = true;
   }
-
   return *this;
 }
 

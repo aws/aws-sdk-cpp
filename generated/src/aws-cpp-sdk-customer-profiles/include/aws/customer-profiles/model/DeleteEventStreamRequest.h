@@ -21,7 +21,7 @@ namespace Model
   class DeleteEventStreamRequest : public CustomerProfilesRequest
   {
   public:
-    AWS_CUSTOMERPROFILES_API DeleteEventStreamRequest();
+    AWS_CUSTOMERPROFILES_API DeleteEventStreamRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,28 +36,24 @@ namespace Model
     /**
      * <p>The unique name of the domain.</p>
      */
-    inline const Aws::String& GetDomainName() const{ return m_domainName; }
+    inline const Aws::String& GetDomainName() const { return m_domainName; }
     inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
-    inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
-    inline void SetDomainName(Aws::String&& value) { m_domainNameHasBeenSet = true; m_domainName = std::move(value); }
-    inline void SetDomainName(const char* value) { m_domainNameHasBeenSet = true; m_domainName.assign(value); }
-    inline DeleteEventStreamRequest& WithDomainName(const Aws::String& value) { SetDomainName(value); return *this;}
-    inline DeleteEventStreamRequest& WithDomainName(Aws::String&& value) { SetDomainName(std::move(value)); return *this;}
-    inline DeleteEventStreamRequest& WithDomainName(const char* value) { SetDomainName(value); return *this;}
+    template<typename DomainNameT = Aws::String>
+    void SetDomainName(DomainNameT&& value) { m_domainNameHasBeenSet = true; m_domainName = std::forward<DomainNameT>(value); }
+    template<typename DomainNameT = Aws::String>
+    DeleteEventStreamRequest& WithDomainName(DomainNameT&& value) { SetDomainName(std::forward<DomainNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the event stream</p>
      */
-    inline const Aws::String& GetEventStreamName() const{ return m_eventStreamName; }
+    inline const Aws::String& GetEventStreamName() const { return m_eventStreamName; }
     inline bool EventStreamNameHasBeenSet() const { return m_eventStreamNameHasBeenSet; }
-    inline void SetEventStreamName(const Aws::String& value) { m_eventStreamNameHasBeenSet = true; m_eventStreamName = value; }
-    inline void SetEventStreamName(Aws::String&& value) { m_eventStreamNameHasBeenSet = true; m_eventStreamName = std::move(value); }
-    inline void SetEventStreamName(const char* value) { m_eventStreamNameHasBeenSet = true; m_eventStreamName.assign(value); }
-    inline DeleteEventStreamRequest& WithEventStreamName(const Aws::String& value) { SetEventStreamName(value); return *this;}
-    inline DeleteEventStreamRequest& WithEventStreamName(Aws::String&& value) { SetEventStreamName(std::move(value)); return *this;}
-    inline DeleteEventStreamRequest& WithEventStreamName(const char* value) { SetEventStreamName(value); return *this;}
+    template<typename EventStreamNameT = Aws::String>
+    void SetEventStreamName(EventStreamNameT&& value) { m_eventStreamNameHasBeenSet = true; m_eventStreamName = std::forward<EventStreamNameT>(value); }
+    template<typename EventStreamNameT = Aws::String>
+    DeleteEventStreamRequest& WithEventStreamName(EventStreamNameT&& value) { SetEventStreamName(std::forward<EventStreamNameT>(value)); return *this;}
     ///@}
   private:
 

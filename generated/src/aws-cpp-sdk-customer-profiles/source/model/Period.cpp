@@ -18,20 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-Period::Period() : 
-    m_unit(PeriodUnit::NOT_SET),
-    m_unitHasBeenSet(false),
-    m_value(0),
-    m_valueHasBeenSet(false),
-    m_maxInvocationsPerProfile(0),
-    m_maxInvocationsPerProfileHasBeenSet(false),
-    m_unlimited(false),
-    m_unlimitedHasBeenSet(false)
-{
-}
-
 Period::Period(JsonView jsonValue)
-  : Period()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ Period& Period::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Unit"))
   {
     m_unit = PeriodUnitMapper::GetPeriodUnitForName(jsonValue.GetString("Unit"));
-
     m_unitHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Value"))
   {
     m_value = jsonValue.GetInteger("Value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxInvocationsPerProfile"))
   {
     m_maxInvocationsPerProfile = jsonValue.GetInteger("MaxInvocationsPerProfile");
-
     m_maxInvocationsPerProfileHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unlimited"))
   {
     m_unlimited = jsonValue.GetBool("Unlimited");
-
     m_unlimitedHasBeenSet = true;
   }
-
   return *this;
 }
 

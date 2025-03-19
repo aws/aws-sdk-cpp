@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutModelPackageGroupPolicyResult::PutModelPackageGroupPolicyResult()
-{
-}
-
 PutModelPackageGroupPolicyResult::PutModelPackageGroupPolicyResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ PutModelPackageGroupPolicyResult& PutModelPackageGroupPolicyResult::operator =(c
   if(jsonValue.ValueExists("ModelPackageGroupArn"))
   {
     m_modelPackageGroupArn = jsonValue.GetString("ModelPackageGroupArn");
-
+    m_modelPackageGroupArnHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

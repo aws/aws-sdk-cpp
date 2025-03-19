@@ -12,15 +12,6 @@ using namespace Aws::finspace::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateKxChangesetRequest::CreateKxChangesetRequest() : 
-    m_environmentIdHasBeenSet(false),
-    m_databaseNameHasBeenSet(false),
-    m_changeRequestsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateKxChangesetRequest::SerializePayload() const
 {
   JsonValue payload;

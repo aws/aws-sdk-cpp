@@ -12,20 +12,6 @@ using namespace Aws::LookoutEquipment::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateLabelRequest::CreateLabelRequest() : 
-    m_labelGroupNameHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
-    m_rating(LabelRating::NOT_SET),
-    m_ratingHasBeenSet(false),
-    m_faultCodeHasBeenSet(false),
-    m_notesHasBeenSet(false),
-    m_equipmentHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientTokenHasBeenSet(true)
-{
-}
-
 Aws::String CreateLabelRequest::SerializePayload() const
 {
   JsonValue payload;

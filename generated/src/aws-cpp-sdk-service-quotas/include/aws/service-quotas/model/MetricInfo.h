@@ -33,7 +33,7 @@ namespace Model
   class MetricInfo
   {
   public:
-    AWS_SERVICEQUOTAS_API MetricInfo();
+    AWS_SERVICEQUOTAS_API MetricInfo() = default;
     AWS_SERVICEQUOTAS_API MetricInfo(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEQUOTAS_API MetricInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SERVICEQUOTAS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
     /**
      * <p>The namespace of the metric.</p>
      */
-    inline const Aws::String& GetMetricNamespace() const{ return m_metricNamespace; }
+    inline const Aws::String& GetMetricNamespace() const { return m_metricNamespace; }
     inline bool MetricNamespaceHasBeenSet() const { return m_metricNamespaceHasBeenSet; }
-    inline void SetMetricNamespace(const Aws::String& value) { m_metricNamespaceHasBeenSet = true; m_metricNamespace = value; }
-    inline void SetMetricNamespace(Aws::String&& value) { m_metricNamespaceHasBeenSet = true; m_metricNamespace = std::move(value); }
-    inline void SetMetricNamespace(const char* value) { m_metricNamespaceHasBeenSet = true; m_metricNamespace.assign(value); }
-    inline MetricInfo& WithMetricNamespace(const Aws::String& value) { SetMetricNamespace(value); return *this;}
-    inline MetricInfo& WithMetricNamespace(Aws::String&& value) { SetMetricNamespace(std::move(value)); return *this;}
-    inline MetricInfo& WithMetricNamespace(const char* value) { SetMetricNamespace(value); return *this;}
+    template<typename MetricNamespaceT = Aws::String>
+    void SetMetricNamespace(MetricNamespaceT&& value) { m_metricNamespaceHasBeenSet = true; m_metricNamespace = std::forward<MetricNamespaceT>(value); }
+    template<typename MetricNamespaceT = Aws::String>
+    MetricInfo& WithMetricNamespace(MetricNamespaceT&& value) { SetMetricNamespace(std::forward<MetricNamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the metric.</p>
      */
-    inline const Aws::String& GetMetricName() const{ return m_metricName; }
+    inline const Aws::String& GetMetricName() const { return m_metricName; }
     inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
-    inline void SetMetricName(const Aws::String& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
-    inline void SetMetricName(Aws::String&& value) { m_metricNameHasBeenSet = true; m_metricName = std::move(value); }
-    inline void SetMetricName(const char* value) { m_metricNameHasBeenSet = true; m_metricName.assign(value); }
-    inline MetricInfo& WithMetricName(const Aws::String& value) { SetMetricName(value); return *this;}
-    inline MetricInfo& WithMetricName(Aws::String&& value) { SetMetricName(std::move(value)); return *this;}
-    inline MetricInfo& WithMetricName(const char* value) { SetMetricName(value); return *this;}
+    template<typename MetricNameT = Aws::String>
+    void SetMetricName(MetricNameT&& value) { m_metricNameHasBeenSet = true; m_metricName = std::forward<MetricNameT>(value); }
+    template<typename MetricNameT = Aws::String>
+    MetricInfo& WithMetricName(MetricNameT&& value) { SetMetricName(std::forward<MetricNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,19 +68,16 @@ namespace Model
      * <p>The metric dimension. This is a name/value pair that is part of the identity
      * of a metric.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetMetricDimensions() const{ return m_metricDimensions; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetMetricDimensions() const { return m_metricDimensions; }
     inline bool MetricDimensionsHasBeenSet() const { return m_metricDimensionsHasBeenSet; }
-    inline void SetMetricDimensions(const Aws::Map<Aws::String, Aws::String>& value) { m_metricDimensionsHasBeenSet = true; m_metricDimensions = value; }
-    inline void SetMetricDimensions(Aws::Map<Aws::String, Aws::String>&& value) { m_metricDimensionsHasBeenSet = true; m_metricDimensions = std::move(value); }
-    inline MetricInfo& WithMetricDimensions(const Aws::Map<Aws::String, Aws::String>& value) { SetMetricDimensions(value); return *this;}
-    inline MetricInfo& WithMetricDimensions(Aws::Map<Aws::String, Aws::String>&& value) { SetMetricDimensions(std::move(value)); return *this;}
-    inline MetricInfo& AddMetricDimensions(const Aws::String& key, const Aws::String& value) { m_metricDimensionsHasBeenSet = true; m_metricDimensions.emplace(key, value); return *this; }
-    inline MetricInfo& AddMetricDimensions(Aws::String&& key, const Aws::String& value) { m_metricDimensionsHasBeenSet = true; m_metricDimensions.emplace(std::move(key), value); return *this; }
-    inline MetricInfo& AddMetricDimensions(const Aws::String& key, Aws::String&& value) { m_metricDimensionsHasBeenSet = true; m_metricDimensions.emplace(key, std::move(value)); return *this; }
-    inline MetricInfo& AddMetricDimensions(Aws::String&& key, Aws::String&& value) { m_metricDimensionsHasBeenSet = true; m_metricDimensions.emplace(std::move(key), std::move(value)); return *this; }
-    inline MetricInfo& AddMetricDimensions(const char* key, Aws::String&& value) { m_metricDimensionsHasBeenSet = true; m_metricDimensions.emplace(key, std::move(value)); return *this; }
-    inline MetricInfo& AddMetricDimensions(Aws::String&& key, const char* value) { m_metricDimensionsHasBeenSet = true; m_metricDimensions.emplace(std::move(key), value); return *this; }
-    inline MetricInfo& AddMetricDimensions(const char* key, const char* value) { m_metricDimensionsHasBeenSet = true; m_metricDimensions.emplace(key, value); return *this; }
+    template<typename MetricDimensionsT = Aws::Map<Aws::String, Aws::String>>
+    void SetMetricDimensions(MetricDimensionsT&& value) { m_metricDimensionsHasBeenSet = true; m_metricDimensions = std::forward<MetricDimensionsT>(value); }
+    template<typename MetricDimensionsT = Aws::Map<Aws::String, Aws::String>>
+    MetricInfo& WithMetricDimensions(MetricDimensionsT&& value) { SetMetricDimensions(std::forward<MetricDimensionsT>(value)); return *this;}
+    template<typename MetricDimensionsKeyT = Aws::String, typename MetricDimensionsValueT = Aws::String>
+    MetricInfo& AddMetricDimensions(MetricDimensionsKeyT&& key, MetricDimensionsValueT&& value) {
+      m_metricDimensionsHasBeenSet = true; m_metricDimensions.emplace(std::forward<MetricDimensionsKeyT>(key), std::forward<MetricDimensionsValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -92,14 +85,12 @@ namespace Model
      * <p>The metric statistic that we recommend you use when determining quota
      * usage.</p>
      */
-    inline const Aws::String& GetMetricStatisticRecommendation() const{ return m_metricStatisticRecommendation; }
+    inline const Aws::String& GetMetricStatisticRecommendation() const { return m_metricStatisticRecommendation; }
     inline bool MetricStatisticRecommendationHasBeenSet() const { return m_metricStatisticRecommendationHasBeenSet; }
-    inline void SetMetricStatisticRecommendation(const Aws::String& value) { m_metricStatisticRecommendationHasBeenSet = true; m_metricStatisticRecommendation = value; }
-    inline void SetMetricStatisticRecommendation(Aws::String&& value) { m_metricStatisticRecommendationHasBeenSet = true; m_metricStatisticRecommendation = std::move(value); }
-    inline void SetMetricStatisticRecommendation(const char* value) { m_metricStatisticRecommendationHasBeenSet = true; m_metricStatisticRecommendation.assign(value); }
-    inline MetricInfo& WithMetricStatisticRecommendation(const Aws::String& value) { SetMetricStatisticRecommendation(value); return *this;}
-    inline MetricInfo& WithMetricStatisticRecommendation(Aws::String&& value) { SetMetricStatisticRecommendation(std::move(value)); return *this;}
-    inline MetricInfo& WithMetricStatisticRecommendation(const char* value) { SetMetricStatisticRecommendation(value); return *this;}
+    template<typename MetricStatisticRecommendationT = Aws::String>
+    void SetMetricStatisticRecommendation(MetricStatisticRecommendationT&& value) { m_metricStatisticRecommendationHasBeenSet = true; m_metricStatisticRecommendation = std::forward<MetricStatisticRecommendationT>(value); }
+    template<typename MetricStatisticRecommendationT = Aws::String>
+    MetricInfo& WithMetricStatisticRecommendation(MetricStatisticRecommendationT&& value) { SetMetricStatisticRecommendation(std::forward<MetricStatisticRecommendationT>(value)); return *this;}
     ///@}
   private:
 

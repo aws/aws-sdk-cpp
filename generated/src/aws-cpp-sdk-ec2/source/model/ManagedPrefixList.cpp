@@ -20,25 +20,7 @@ namespace EC2
 namespace Model
 {
 
-ManagedPrefixList::ManagedPrefixList() : 
-    m_prefixListIdHasBeenSet(false),
-    m_addressFamilyHasBeenSet(false),
-    m_state(PrefixListState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_stateMessageHasBeenSet(false),
-    m_prefixListArnHasBeenSet(false),
-    m_prefixListNameHasBeenSet(false),
-    m_maxEntries(0),
-    m_maxEntriesHasBeenSet(false),
-    m_version(0),
-    m_versionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_ownerIdHasBeenSet(false)
-{
-}
-
 ManagedPrefixList::ManagedPrefixList(const XmlNode& xmlNode)
-  : ManagedPrefixList()
 {
   *this = xmlNode;
 }
@@ -64,7 +46,7 @@ ManagedPrefixList& ManagedPrefixList::operator =(const XmlNode& xmlNode)
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = PrefixListStateMapper::GetPrefixListStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = PrefixListStateMapper::GetPrefixListStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
     XmlNode stateMessageNode = resultNode.FirstChild("stateMessage");
@@ -101,6 +83,7 @@ ManagedPrefixList& ManagedPrefixList::operator =(const XmlNode& xmlNode)
     if(!tagsNode.IsNull())
     {
       XmlNode tagsMember = tagsNode.FirstChild("item");
+      m_tagsHasBeenSet = !tagsMember.IsNull();
       while(!tagsMember.IsNull())
       {
         m_tags.push_back(tagsMember);

@@ -12,19 +12,6 @@ using namespace Aws::Transfer::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateUserRequest::UpdateUserRequest() : 
-    m_homeDirectoryHasBeenSet(false),
-    m_homeDirectoryType(HomeDirectoryType::NOT_SET),
-    m_homeDirectoryTypeHasBeenSet(false),
-    m_homeDirectoryMappingsHasBeenSet(false),
-    m_policyHasBeenSet(false),
-    m_posixProfileHasBeenSet(false),
-    m_roleHasBeenSet(false),
-    m_serverIdHasBeenSet(false),
-    m_userNameHasBeenSet(false)
-{
-}
-
 Aws::String UpdateUserRequest::SerializePayload() const
 {
   JsonValue payload;

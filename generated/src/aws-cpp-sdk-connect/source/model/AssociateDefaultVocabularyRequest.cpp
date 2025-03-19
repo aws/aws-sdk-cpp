@@ -12,14 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateDefaultVocabularyRequest::AssociateDefaultVocabularyRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_languageCode(VocabularyLanguageCode::NOT_SET),
-    m_languageCodeHasBeenSet(false),
-    m_vocabularyIdHasBeenSet(false)
-{
-}
-
 Aws::String AssociateDefaultVocabularyRequest::SerializePayload() const
 {
   JsonValue payload;

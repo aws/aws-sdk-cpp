@@ -18,16 +18,7 @@ namespace SocialMessaging
 namespace Model
 {
 
-WhatsAppSetupFinalization::WhatsAppSetupFinalization() : 
-    m_associateInProgressTokenHasBeenSet(false),
-    m_phoneNumbersHasBeenSet(false),
-    m_phoneNumberParentHasBeenSet(false),
-    m_wabaHasBeenSet(false)
-{
-}
-
 WhatsAppSetupFinalization::WhatsAppSetupFinalization(JsonView jsonValue)
-  : WhatsAppSetupFinalization()
 {
   *this = jsonValue;
 }
@@ -37,10 +28,8 @@ WhatsAppSetupFinalization& WhatsAppSetupFinalization::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("associateInProgressToken"))
   {
     m_associateInProgressToken = jsonValue.GetString("associateInProgressToken");
-
     m_associateInProgressTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("phoneNumbers"))
   {
     Aws::Utils::Array<JsonView> phoneNumbersJsonList = jsonValue.GetArray("phoneNumbers");
@@ -50,21 +39,16 @@ WhatsAppSetupFinalization& WhatsAppSetupFinalization::operator =(JsonView jsonVa
     }
     m_phoneNumbersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("phoneNumberParent"))
   {
     m_phoneNumberParent = jsonValue.GetString("phoneNumberParent");
-
     m_phoneNumberParentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("waba"))
   {
     m_waba = jsonValue.GetObject("waba");
-
     m_wabaHasBeenSet = true;
   }
-
   return *this;
 }
 

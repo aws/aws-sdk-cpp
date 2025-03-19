@@ -28,7 +28,7 @@ namespace Model
   class GetRDFGraphSummaryResult
   {
   public:
-    AWS_NEPTUNEDATA_API GetRDFGraphSummaryResult();
+    AWS_NEPTUNEDATA_API GetRDFGraphSummaryResult() = default;
     AWS_NEPTUNEDATA_API GetRDFGraphSummaryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_NEPTUNEDATA_API GetRDFGraphSummaryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,8 +38,8 @@ namespace Model
      * <p>The HTTP return code of the request. If the request succeeded, the code is
      * 200.</p>
      */
-    inline int GetStatusCode() const{ return m_statusCode; }
-    inline void SetStatusCode(int value) { m_statusCode = value; }
+    inline int GetStatusCode() const { return m_statusCode; }
+    inline void SetStatusCode(int value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
     inline GetRDFGraphSummaryResult& WithStatusCode(int value) { SetStatusCode(value); return *this;}
     ///@}
 
@@ -47,30 +47,31 @@ namespace Model
     /**
      * <p>Payload for an RDF graph summary response</p>
      */
-    inline const RDFGraphSummaryValueMap& GetPayload() const{ return m_payload; }
-    inline void SetPayload(const RDFGraphSummaryValueMap& value) { m_payload = value; }
-    inline void SetPayload(RDFGraphSummaryValueMap&& value) { m_payload = std::move(value); }
-    inline GetRDFGraphSummaryResult& WithPayload(const RDFGraphSummaryValueMap& value) { SetPayload(value); return *this;}
-    inline GetRDFGraphSummaryResult& WithPayload(RDFGraphSummaryValueMap&& value) { SetPayload(std::move(value)); return *this;}
+    inline const RDFGraphSummaryValueMap& GetPayload() const { return m_payload; }
+    template<typename PayloadT = RDFGraphSummaryValueMap>
+    void SetPayload(PayloadT&& value) { m_payloadHasBeenSet = true; m_payload = std::forward<PayloadT>(value); }
+    template<typename PayloadT = RDFGraphSummaryValueMap>
+    GetRDFGraphSummaryResult& WithPayload(PayloadT&& value) { SetPayload(std::forward<PayloadT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRDFGraphSummaryResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRDFGraphSummaryResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRDFGraphSummaryResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRDFGraphSummaryResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    int m_statusCode;
+    int m_statusCode{0};
+    bool m_statusCodeHasBeenSet = false;
 
     RDFGraphSummaryValueMap m_payload;
+    bool m_payloadHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

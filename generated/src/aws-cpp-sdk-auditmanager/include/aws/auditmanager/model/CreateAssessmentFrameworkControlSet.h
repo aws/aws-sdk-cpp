@@ -35,7 +35,7 @@ namespace Model
   class CreateAssessmentFrameworkControlSet
   {
   public:
-    AWS_AUDITMANAGER_API CreateAssessmentFrameworkControlSet();
+    AWS_AUDITMANAGER_API CreateAssessmentFrameworkControlSet() = default;
     AWS_AUDITMANAGER_API CreateAssessmentFrameworkControlSet(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API CreateAssessmentFrameworkControlSet& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AUDITMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p> The name of the control set. </p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateAssessmentFrameworkControlSet& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateAssessmentFrameworkControlSet& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateAssessmentFrameworkControlSet& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateAssessmentFrameworkControlSet& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,14 +58,14 @@ namespace Model
      * <p> The list of controls within the control set. This doesn't contain the
      * control set ID. </p>
      */
-    inline const Aws::Vector<CreateAssessmentFrameworkControl>& GetControls() const{ return m_controls; }
+    inline const Aws::Vector<CreateAssessmentFrameworkControl>& GetControls() const { return m_controls; }
     inline bool ControlsHasBeenSet() const { return m_controlsHasBeenSet; }
-    inline void SetControls(const Aws::Vector<CreateAssessmentFrameworkControl>& value) { m_controlsHasBeenSet = true; m_controls = value; }
-    inline void SetControls(Aws::Vector<CreateAssessmentFrameworkControl>&& value) { m_controlsHasBeenSet = true; m_controls = std::move(value); }
-    inline CreateAssessmentFrameworkControlSet& WithControls(const Aws::Vector<CreateAssessmentFrameworkControl>& value) { SetControls(value); return *this;}
-    inline CreateAssessmentFrameworkControlSet& WithControls(Aws::Vector<CreateAssessmentFrameworkControl>&& value) { SetControls(std::move(value)); return *this;}
-    inline CreateAssessmentFrameworkControlSet& AddControls(const CreateAssessmentFrameworkControl& value) { m_controlsHasBeenSet = true; m_controls.push_back(value); return *this; }
-    inline CreateAssessmentFrameworkControlSet& AddControls(CreateAssessmentFrameworkControl&& value) { m_controlsHasBeenSet = true; m_controls.push_back(std::move(value)); return *this; }
+    template<typename ControlsT = Aws::Vector<CreateAssessmentFrameworkControl>>
+    void SetControls(ControlsT&& value) { m_controlsHasBeenSet = true; m_controls = std::forward<ControlsT>(value); }
+    template<typename ControlsT = Aws::Vector<CreateAssessmentFrameworkControl>>
+    CreateAssessmentFrameworkControlSet& WithControls(ControlsT&& value) { SetControls(std::forward<ControlsT>(value)); return *this;}
+    template<typename ControlsT = CreateAssessmentFrameworkControl>
+    CreateAssessmentFrameworkControlSet& AddControls(ControlsT&& value) { m_controlsHasBeenSet = true; m_controls.emplace_back(std::forward<ControlsT>(value)); return *this; }
     ///@}
   private:
 

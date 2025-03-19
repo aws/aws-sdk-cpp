@@ -18,25 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-Endpoint::Endpoint() : 
-    m_endpointNameHasBeenSet(false),
-    m_endpointArnHasBeenSet(false),
-    m_endpointConfigNameHasBeenSet(false),
-    m_productionVariantsHasBeenSet(false),
-    m_dataCaptureConfigHasBeenSet(false),
-    m_endpointStatus(EndpointStatus::NOT_SET),
-    m_endpointStatusHasBeenSet(false),
-    m_failureReasonHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_monitoringSchedulesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_shadowProductionVariantsHasBeenSet(false)
-{
-}
-
 Endpoint::Endpoint(JsonView jsonValue)
-  : Endpoint()
 {
   *this = jsonValue;
 }
@@ -46,24 +28,18 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("EndpointName"))
   {
     m_endpointName = jsonValue.GetString("EndpointName");
-
     m_endpointNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointArn"))
   {
     m_endpointArn = jsonValue.GetString("EndpointArn");
-
     m_endpointArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointConfigName"))
   {
     m_endpointConfigName = jsonValue.GetString("EndpointConfigName");
-
     m_endpointConfigNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProductionVariants"))
   {
     Aws::Utils::Array<JsonView> productionVariantsJsonList = jsonValue.GetArray("ProductionVariants");
@@ -73,42 +49,31 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
     }
     m_productionVariantsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataCaptureConfig"))
   {
     m_dataCaptureConfig = jsonValue.GetObject("DataCaptureConfig");
-
     m_dataCaptureConfigHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EndpointStatus"))
   {
     m_endpointStatus = EndpointStatusMapper::GetEndpointStatusForName(jsonValue.GetString("EndpointStatus"));
-
     m_endpointStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FailureReason"))
   {
     m_failureReason = jsonValue.GetString("FailureReason");
-
     m_failureReasonHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationTime"))
   {
     m_creationTime = jsonValue.GetDouble("CreationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetDouble("LastModifiedTime");
-
     m_lastModifiedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MonitoringSchedules"))
   {
     Aws::Utils::Array<JsonView> monitoringSchedulesJsonList = jsonValue.GetArray("MonitoringSchedules");
@@ -118,7 +83,6 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
     }
     m_monitoringSchedulesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -128,7 +92,6 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ShadowProductionVariants"))
   {
     Aws::Utils::Array<JsonView> shadowProductionVariantsJsonList = jsonValue.GetArray("ShadowProductionVariants");
@@ -138,7 +101,6 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
     }
     m_shadowProductionVariantsHasBeenSet = true;
   }
-
   return *this;
 }
 

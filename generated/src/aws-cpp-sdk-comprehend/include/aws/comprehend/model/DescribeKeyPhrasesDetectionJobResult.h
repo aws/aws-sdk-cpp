@@ -28,7 +28,7 @@ namespace Model
   class DescribeKeyPhrasesDetectionJobResult
   {
   public:
-    AWS_COMPREHEND_API DescribeKeyPhrasesDetectionJobResult();
+    AWS_COMPREHEND_API DescribeKeyPhrasesDetectionJobResult() = default;
     AWS_COMPREHEND_API DescribeKeyPhrasesDetectionJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHEND_API DescribeKeyPhrasesDetectionJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>An object that contains the properties associated with a key phrases
      * detection job. </p>
      */
-    inline const KeyPhrasesDetectionJobProperties& GetKeyPhrasesDetectionJobProperties() const{ return m_keyPhrasesDetectionJobProperties; }
-    inline void SetKeyPhrasesDetectionJobProperties(const KeyPhrasesDetectionJobProperties& value) { m_keyPhrasesDetectionJobProperties = value; }
-    inline void SetKeyPhrasesDetectionJobProperties(KeyPhrasesDetectionJobProperties&& value) { m_keyPhrasesDetectionJobProperties = std::move(value); }
-    inline DescribeKeyPhrasesDetectionJobResult& WithKeyPhrasesDetectionJobProperties(const KeyPhrasesDetectionJobProperties& value) { SetKeyPhrasesDetectionJobProperties(value); return *this;}
-    inline DescribeKeyPhrasesDetectionJobResult& WithKeyPhrasesDetectionJobProperties(KeyPhrasesDetectionJobProperties&& value) { SetKeyPhrasesDetectionJobProperties(std::move(value)); return *this;}
+    inline const KeyPhrasesDetectionJobProperties& GetKeyPhrasesDetectionJobProperties() const { return m_keyPhrasesDetectionJobProperties; }
+    template<typename KeyPhrasesDetectionJobPropertiesT = KeyPhrasesDetectionJobProperties>
+    void SetKeyPhrasesDetectionJobProperties(KeyPhrasesDetectionJobPropertiesT&& value) { m_keyPhrasesDetectionJobPropertiesHasBeenSet = true; m_keyPhrasesDetectionJobProperties = std::forward<KeyPhrasesDetectionJobPropertiesT>(value); }
+    template<typename KeyPhrasesDetectionJobPropertiesT = KeyPhrasesDetectionJobProperties>
+    DescribeKeyPhrasesDetectionJobResult& WithKeyPhrasesDetectionJobProperties(KeyPhrasesDetectionJobPropertiesT&& value) { SetKeyPhrasesDetectionJobProperties(std::forward<KeyPhrasesDetectionJobPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeKeyPhrasesDetectionJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeKeyPhrasesDetectionJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeKeyPhrasesDetectionJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeKeyPhrasesDetectionJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     KeyPhrasesDetectionJobProperties m_keyPhrasesDetectionJobProperties;
+    bool m_keyPhrasesDetectionJobPropertiesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,17 +18,7 @@ namespace ConnectCampaignsV2
 namespace Model
 {
 
-EncryptionConfig::EncryptionConfig() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_encryptionType(EncryptionType::NOT_SET),
-    m_encryptionTypeHasBeenSet(false),
-    m_keyArnHasBeenSet(false)
-{
-}
-
 EncryptionConfig::EncryptionConfig(JsonView jsonValue)
-  : EncryptionConfig()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ EncryptionConfig& EncryptionConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("enabled"))
   {
     m_enabled = jsonValue.GetBool("enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encryptionType"))
   {
     m_encryptionType = EncryptionTypeMapper::GetEncryptionTypeForName(jsonValue.GetString("encryptionType"));
-
     m_encryptionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("keyArn"))
   {
     m_keyArn = jsonValue.GetString("keyArn");
-
     m_keyArnHasBeenSet = true;
   }
-
   return *this;
 }
 

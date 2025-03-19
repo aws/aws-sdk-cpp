@@ -12,12 +12,6 @@ using namespace Aws::APIGateway::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateApiKeyRequest::UpdateApiKeyRequest() : 
-    m_apiKeyHasBeenSet(false),
-    m_patchOperationsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateApiKeyRequest::SerializePayload() const
 {
   JsonValue payload;

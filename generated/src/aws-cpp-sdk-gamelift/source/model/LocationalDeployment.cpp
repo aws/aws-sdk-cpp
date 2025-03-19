@@ -18,14 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-LocationalDeployment::LocationalDeployment() : 
-    m_deploymentStatus(DeploymentStatus::NOT_SET),
-    m_deploymentStatusHasBeenSet(false)
-{
-}
-
 LocationalDeployment::LocationalDeployment(JsonView jsonValue)
-  : LocationalDeployment()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ LocationalDeployment& LocationalDeployment::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DeploymentStatus"))
   {
     m_deploymentStatus = DeploymentStatusMapper::GetDeploymentStatusForName(jsonValue.GetString("DeploymentStatus"));
-
     m_deploymentStatusHasBeenSet = true;
   }
-
   return *this;
 }
 

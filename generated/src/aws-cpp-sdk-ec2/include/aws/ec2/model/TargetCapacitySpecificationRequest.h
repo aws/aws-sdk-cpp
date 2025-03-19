@@ -48,7 +48,7 @@ namespace Model
   class TargetCapacitySpecificationRequest
   {
   public:
-    AWS_EC2_API TargetCapacitySpecificationRequest();
+    AWS_EC2_API TargetCapacitySpecificationRequest() = default;
     AWS_EC2_API TargetCapacitySpecificationRequest(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_EC2_API TargetCapacitySpecificationRequest& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -61,7 +61,7 @@ namespace Model
      * <p>The number of units to request, filled using the default target capacity
      * type.</p>
      */
-    inline int GetTotalTargetCapacity() const{ return m_totalTargetCapacity; }
+    inline int GetTotalTargetCapacity() const { return m_totalTargetCapacity; }
     inline bool TotalTargetCapacityHasBeenSet() const { return m_totalTargetCapacityHasBeenSet; }
     inline void SetTotalTargetCapacity(int value) { m_totalTargetCapacityHasBeenSet = true; m_totalTargetCapacity = value; }
     inline TargetCapacitySpecificationRequest& WithTotalTargetCapacity(int value) { SetTotalTargetCapacity(value); return *this;}
@@ -71,7 +71,7 @@ namespace Model
     /**
      * <p>The number of On-Demand units to request.</p>
      */
-    inline int GetOnDemandTargetCapacity() const{ return m_onDemandTargetCapacity; }
+    inline int GetOnDemandTargetCapacity() const { return m_onDemandTargetCapacity; }
     inline bool OnDemandTargetCapacityHasBeenSet() const { return m_onDemandTargetCapacityHasBeenSet; }
     inline void SetOnDemandTargetCapacity(int value) { m_onDemandTargetCapacityHasBeenSet = true; m_onDemandTargetCapacity = value; }
     inline TargetCapacitySpecificationRequest& WithOnDemandTargetCapacity(int value) { SetOnDemandTargetCapacity(value); return *this;}
@@ -81,7 +81,7 @@ namespace Model
     /**
      * <p>The number of Spot units to request.</p>
      */
-    inline int GetSpotTargetCapacity() const{ return m_spotTargetCapacity; }
+    inline int GetSpotTargetCapacity() const { return m_spotTargetCapacity; }
     inline bool SpotTargetCapacityHasBeenSet() const { return m_spotTargetCapacityHasBeenSet; }
     inline void SetSpotTargetCapacity(int value) { m_spotTargetCapacityHasBeenSet = true; m_spotTargetCapacity = value; }
     inline TargetCapacitySpecificationRequest& WithSpotTargetCapacity(int value) { SetSpotTargetCapacity(value); return *this;}
@@ -91,12 +91,10 @@ namespace Model
     /**
      * <p>The default target capacity type.</p>
      */
-    inline const DefaultTargetCapacityType& GetDefaultTargetCapacityType() const{ return m_defaultTargetCapacityType; }
+    inline DefaultTargetCapacityType GetDefaultTargetCapacityType() const { return m_defaultTargetCapacityType; }
     inline bool DefaultTargetCapacityTypeHasBeenSet() const { return m_defaultTargetCapacityTypeHasBeenSet; }
-    inline void SetDefaultTargetCapacityType(const DefaultTargetCapacityType& value) { m_defaultTargetCapacityTypeHasBeenSet = true; m_defaultTargetCapacityType = value; }
-    inline void SetDefaultTargetCapacityType(DefaultTargetCapacityType&& value) { m_defaultTargetCapacityTypeHasBeenSet = true; m_defaultTargetCapacityType = std::move(value); }
-    inline TargetCapacitySpecificationRequest& WithDefaultTargetCapacityType(const DefaultTargetCapacityType& value) { SetDefaultTargetCapacityType(value); return *this;}
-    inline TargetCapacitySpecificationRequest& WithDefaultTargetCapacityType(DefaultTargetCapacityType&& value) { SetDefaultTargetCapacityType(std::move(value)); return *this;}
+    inline void SetDefaultTargetCapacityType(DefaultTargetCapacityType value) { m_defaultTargetCapacityTypeHasBeenSet = true; m_defaultTargetCapacityType = value; }
+    inline TargetCapacitySpecificationRequest& WithDefaultTargetCapacityType(DefaultTargetCapacityType value) { SetDefaultTargetCapacityType(value); return *this;}
     ///@}
 
     ///@{
@@ -105,28 +103,26 @@ namespace Model
      * using attributed-based instance type selection.</p> <p>Default:
      * <code>units</code> (the number of instances)</p>
      */
-    inline const TargetCapacityUnitType& GetTargetCapacityUnitType() const{ return m_targetCapacityUnitType; }
+    inline TargetCapacityUnitType GetTargetCapacityUnitType() const { return m_targetCapacityUnitType; }
     inline bool TargetCapacityUnitTypeHasBeenSet() const { return m_targetCapacityUnitTypeHasBeenSet; }
-    inline void SetTargetCapacityUnitType(const TargetCapacityUnitType& value) { m_targetCapacityUnitTypeHasBeenSet = true; m_targetCapacityUnitType = value; }
-    inline void SetTargetCapacityUnitType(TargetCapacityUnitType&& value) { m_targetCapacityUnitTypeHasBeenSet = true; m_targetCapacityUnitType = std::move(value); }
-    inline TargetCapacitySpecificationRequest& WithTargetCapacityUnitType(const TargetCapacityUnitType& value) { SetTargetCapacityUnitType(value); return *this;}
-    inline TargetCapacitySpecificationRequest& WithTargetCapacityUnitType(TargetCapacityUnitType&& value) { SetTargetCapacityUnitType(std::move(value)); return *this;}
+    inline void SetTargetCapacityUnitType(TargetCapacityUnitType value) { m_targetCapacityUnitTypeHasBeenSet = true; m_targetCapacityUnitType = value; }
+    inline TargetCapacitySpecificationRequest& WithTargetCapacityUnitType(TargetCapacityUnitType value) { SetTargetCapacityUnitType(value); return *this;}
     ///@}
   private:
 
-    int m_totalTargetCapacity;
+    int m_totalTargetCapacity{0};
     bool m_totalTargetCapacityHasBeenSet = false;
 
-    int m_onDemandTargetCapacity;
+    int m_onDemandTargetCapacity{0};
     bool m_onDemandTargetCapacityHasBeenSet = false;
 
-    int m_spotTargetCapacity;
+    int m_spotTargetCapacity{0};
     bool m_spotTargetCapacityHasBeenSet = false;
 
-    DefaultTargetCapacityType m_defaultTargetCapacityType;
+    DefaultTargetCapacityType m_defaultTargetCapacityType{DefaultTargetCapacityType::NOT_SET};
     bool m_defaultTargetCapacityTypeHasBeenSet = false;
 
-    TargetCapacityUnitType m_targetCapacityUnitType;
+    TargetCapacityUnitType m_targetCapacityUnitType{TargetCapacityUnitType::NOT_SET};
     bool m_targetCapacityUnitTypeHasBeenSet = false;
   };
 

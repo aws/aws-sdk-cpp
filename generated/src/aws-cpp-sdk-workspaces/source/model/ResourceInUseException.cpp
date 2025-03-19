@@ -18,14 +18,7 @@ namespace WorkSpaces
 namespace Model
 {
 
-ResourceInUseException::ResourceInUseException() : 
-    m_messageHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
-{
-}
-
 ResourceInUseException::ResourceInUseException(JsonView jsonValue)
-  : ResourceInUseException()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ResourceInUseException& ResourceInUseException::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceId"))
   {
     m_resourceId = jsonValue.GetString("ResourceId");
-
     m_resourceIdHasBeenSet = true;
   }
-
   return *this;
 }
 

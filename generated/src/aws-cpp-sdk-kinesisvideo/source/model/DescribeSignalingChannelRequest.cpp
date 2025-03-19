@@ -12,12 +12,6 @@ using namespace Aws::KinesisVideo::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeSignalingChannelRequest::DescribeSignalingChannelRequest() : 
-    m_channelNameHasBeenSet(false),
-    m_channelARNHasBeenSet(false)
-{
-}
-
 Aws::String DescribeSignalingChannelRequest::SerializePayload() const
 {
   JsonValue payload;

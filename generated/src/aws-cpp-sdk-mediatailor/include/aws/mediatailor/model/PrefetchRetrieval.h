@@ -35,7 +35,7 @@ namespace Model
   class PrefetchRetrieval
   {
   public:
-    AWS_MEDIATAILOR_API PrefetchRetrieval();
+    AWS_MEDIATAILOR_API PrefetchRetrieval() = default;
     AWS_MEDIATAILOR_API PrefetchRetrieval(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API PrefetchRetrieval& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIATAILOR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,19 +50,16 @@ namespace Model
      * you specify <code>DynamicVariables</code> for prefetch retrieval, MediaTailor
      * includes the dynamic variables in the request to the ADS.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetDynamicVariables() const{ return m_dynamicVariables; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetDynamicVariables() const { return m_dynamicVariables; }
     inline bool DynamicVariablesHasBeenSet() const { return m_dynamicVariablesHasBeenSet; }
-    inline void SetDynamicVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_dynamicVariablesHasBeenSet = true; m_dynamicVariables = value; }
-    inline void SetDynamicVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_dynamicVariablesHasBeenSet = true; m_dynamicVariables = std::move(value); }
-    inline PrefetchRetrieval& WithDynamicVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetDynamicVariables(value); return *this;}
-    inline PrefetchRetrieval& WithDynamicVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetDynamicVariables(std::move(value)); return *this;}
-    inline PrefetchRetrieval& AddDynamicVariables(const Aws::String& key, const Aws::String& value) { m_dynamicVariablesHasBeenSet = true; m_dynamicVariables.emplace(key, value); return *this; }
-    inline PrefetchRetrieval& AddDynamicVariables(Aws::String&& key, const Aws::String& value) { m_dynamicVariablesHasBeenSet = true; m_dynamicVariables.emplace(std::move(key), value); return *this; }
-    inline PrefetchRetrieval& AddDynamicVariables(const Aws::String& key, Aws::String&& value) { m_dynamicVariablesHasBeenSet = true; m_dynamicVariables.emplace(key, std::move(value)); return *this; }
-    inline PrefetchRetrieval& AddDynamicVariables(Aws::String&& key, Aws::String&& value) { m_dynamicVariablesHasBeenSet = true; m_dynamicVariables.emplace(std::move(key), std::move(value)); return *this; }
-    inline PrefetchRetrieval& AddDynamicVariables(const char* key, Aws::String&& value) { m_dynamicVariablesHasBeenSet = true; m_dynamicVariables.emplace(key, std::move(value)); return *this; }
-    inline PrefetchRetrieval& AddDynamicVariables(Aws::String&& key, const char* value) { m_dynamicVariablesHasBeenSet = true; m_dynamicVariables.emplace(std::move(key), value); return *this; }
-    inline PrefetchRetrieval& AddDynamicVariables(const char* key, const char* value) { m_dynamicVariablesHasBeenSet = true; m_dynamicVariables.emplace(key, value); return *this; }
+    template<typename DynamicVariablesT = Aws::Map<Aws::String, Aws::String>>
+    void SetDynamicVariables(DynamicVariablesT&& value) { m_dynamicVariablesHasBeenSet = true; m_dynamicVariables = std::forward<DynamicVariablesT>(value); }
+    template<typename DynamicVariablesT = Aws::Map<Aws::String, Aws::String>>
+    PrefetchRetrieval& WithDynamicVariables(DynamicVariablesT&& value) { SetDynamicVariables(std::forward<DynamicVariablesT>(value)); return *this;}
+    template<typename DynamicVariablesKeyT = Aws::String, typename DynamicVariablesValueT = Aws::String>
+    PrefetchRetrieval& AddDynamicVariables(DynamicVariablesKeyT&& key, DynamicVariablesValueT&& value) {
+      m_dynamicVariablesHasBeenSet = true; m_dynamicVariables.emplace(std::forward<DynamicVariablesKeyT>(key), std::forward<DynamicVariablesValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
@@ -70,12 +67,12 @@ namespace Model
      * <p>The time when prefetch retrieval ends for the ad break. Prefetching will be
      * attempted for manifest requests that occur at or before this time.</p>
      */
-    inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+    inline const Aws::Utils::DateTime& GetEndTime() const { return m_endTime; }
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
-    inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
-    inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
-    inline PrefetchRetrieval& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
-    inline PrefetchRetrieval& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    void SetEndTime(EndTimeT&& value) { m_endTimeHasBeenSet = true; m_endTime = std::forward<EndTimeT>(value); }
+    template<typename EndTimeT = Aws::Utils::DateTime>
+    PrefetchRetrieval& WithEndTime(EndTimeT&& value) { SetEndTime(std::forward<EndTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,22 +82,22 @@ namespace Model
      * Defaults to the current time. If not specified, the prefetch retrieval starts as
      * soon as possible.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+    inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-    inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
-    inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
-    inline PrefetchRetrieval& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
-    inline PrefetchRetrieval& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    void SetStartTime(StartTimeT&& value) { m_startTimeHasBeenSet = true; m_startTime = std::forward<StartTimeT>(value); }
+    template<typename StartTimeT = Aws::Utils::DateTime>
+    PrefetchRetrieval& WithStartTime(StartTimeT&& value) { SetStartTime(std::forward<StartTimeT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Map<Aws::String, Aws::String> m_dynamicVariables;
     bool m_dynamicVariablesHasBeenSet = false;
 
-    Aws::Utils::DateTime m_endTime;
+    Aws::Utils::DateTime m_endTime{};
     bool m_endTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startTime;
+    Aws::Utils::DateTime m_startTime{};
     bool m_startTimeHasBeenSet = false;
   };
 

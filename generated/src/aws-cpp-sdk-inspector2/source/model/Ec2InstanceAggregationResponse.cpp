@@ -18,20 +18,7 @@ namespace Inspector2
 namespace Model
 {
 
-Ec2InstanceAggregationResponse::Ec2InstanceAggregationResponse() : 
-    m_accountIdHasBeenSet(false),
-    m_amiHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_instanceTagsHasBeenSet(false),
-    m_networkFindings(0),
-    m_networkFindingsHasBeenSet(false),
-    m_operatingSystemHasBeenSet(false),
-    m_severityCountsHasBeenSet(false)
-{
-}
-
 Ec2InstanceAggregationResponse::Ec2InstanceAggregationResponse(JsonView jsonValue)
-  : Ec2InstanceAggregationResponse()
 {
   *this = jsonValue;
 }
@@ -41,24 +28,18 @@ Ec2InstanceAggregationResponse& Ec2InstanceAggregationResponse::operator =(JsonV
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ami"))
   {
     m_ami = jsonValue.GetString("ami");
-
     m_amiHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceId"))
   {
     m_instanceId = jsonValue.GetString("instanceId");
-
     m_instanceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("instanceTags"))
   {
     Aws::Map<Aws::String, JsonView> instanceTagsJsonMap = jsonValue.GetObject("instanceTags").GetAllObjects();
@@ -68,28 +49,21 @@ Ec2InstanceAggregationResponse& Ec2InstanceAggregationResponse::operator =(JsonV
     }
     m_instanceTagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkFindings"))
   {
     m_networkFindings = jsonValue.GetInt64("networkFindings");
-
     m_networkFindingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("operatingSystem"))
   {
     m_operatingSystem = jsonValue.GetString("operatingSystem");
-
     m_operatingSystemHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("severityCounts"))
   {
     m_severityCounts = jsonValue.GetObject("severityCounts");
-
     m_severityCountsHasBeenSet = true;
   }
-
   return *this;
 }
 

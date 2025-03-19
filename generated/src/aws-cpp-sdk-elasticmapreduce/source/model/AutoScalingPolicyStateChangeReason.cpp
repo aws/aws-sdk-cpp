@@ -18,15 +18,7 @@ namespace EMR
 namespace Model
 {
 
-AutoScalingPolicyStateChangeReason::AutoScalingPolicyStateChangeReason() : 
-    m_code(AutoScalingPolicyStateChangeReasonCode::NOT_SET),
-    m_codeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 AutoScalingPolicyStateChangeReason::AutoScalingPolicyStateChangeReason(JsonView jsonValue)
-  : AutoScalingPolicyStateChangeReason()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ AutoScalingPolicyStateChangeReason& AutoScalingPolicyStateChangeReason::operator
   if(jsonValue.ValueExists("Code"))
   {
     m_code = AutoScalingPolicyStateChangeReasonCodeMapper::GetAutoScalingPolicyStateChangeReasonCodeForName(jsonValue.GetString("Code"));
-
     m_codeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

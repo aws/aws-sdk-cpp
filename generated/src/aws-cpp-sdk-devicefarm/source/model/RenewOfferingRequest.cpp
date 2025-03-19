@@ -12,13 +12,6 @@ using namespace Aws::DeviceFarm::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-RenewOfferingRequest::RenewOfferingRequest() : 
-    m_offeringIdHasBeenSet(false),
-    m_quantity(0),
-    m_quantityHasBeenSet(false)
-{
-}
-
 Aws::String RenewOfferingRequest::SerializePayload() const
 {
   JsonValue payload;

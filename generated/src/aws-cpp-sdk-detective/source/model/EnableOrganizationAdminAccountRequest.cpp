@@ -12,11 +12,6 @@ using namespace Aws::Detective::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EnableOrganizationAdminAccountRequest::EnableOrganizationAdminAccountRequest() : 
-    m_accountIdHasBeenSet(false)
-{
-}
-
 Aws::String EnableOrganizationAdminAccountRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,11 +12,6 @@ using namespace Aws::ApplicationDiscoveryService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartDataCollectionByAgentIdsRequest::StartDataCollectionByAgentIdsRequest() : 
-    m_agentIdsHasBeenSet(false)
-{
-}
-
 Aws::String StartDataCollectionByAgentIdsRequest::SerializePayload() const
 {
   JsonValue payload;

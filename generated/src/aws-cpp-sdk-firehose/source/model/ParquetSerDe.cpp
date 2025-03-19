@@ -18,24 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-ParquetSerDe::ParquetSerDe() : 
-    m_blockSizeBytes(0),
-    m_blockSizeBytesHasBeenSet(false),
-    m_pageSizeBytes(0),
-    m_pageSizeBytesHasBeenSet(false),
-    m_compression(ParquetCompression::NOT_SET),
-    m_compressionHasBeenSet(false),
-    m_enableDictionaryCompression(false),
-    m_enableDictionaryCompressionHasBeenSet(false),
-    m_maxPaddingBytes(0),
-    m_maxPaddingBytesHasBeenSet(false),
-    m_writerVersion(ParquetWriterVersion::NOT_SET),
-    m_writerVersionHasBeenSet(false)
-{
-}
-
 ParquetSerDe::ParquetSerDe(JsonView jsonValue)
-  : ParquetSerDe()
 {
   *this = jsonValue;
 }
@@ -45,45 +28,33 @@ ParquetSerDe& ParquetSerDe::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("BlockSizeBytes"))
   {
     m_blockSizeBytes = jsonValue.GetInteger("BlockSizeBytes");
-
     m_blockSizeBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PageSizeBytes"))
   {
     m_pageSizeBytes = jsonValue.GetInteger("PageSizeBytes");
-
     m_pageSizeBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Compression"))
   {
     m_compression = ParquetCompressionMapper::GetParquetCompressionForName(jsonValue.GetString("Compression"));
-
     m_compressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableDictionaryCompression"))
   {
     m_enableDictionaryCompression = jsonValue.GetBool("EnableDictionaryCompression");
-
     m_enableDictionaryCompressionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxPaddingBytes"))
   {
     m_maxPaddingBytes = jsonValue.GetInteger("MaxPaddingBytes");
-
     m_maxPaddingBytesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("WriterVersion"))
   {
     m_writerVersion = ParquetWriterVersionMapper::GetParquetWriterVersionForName(jsonValue.GetString("WriterVersion"));
-
     m_writerVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

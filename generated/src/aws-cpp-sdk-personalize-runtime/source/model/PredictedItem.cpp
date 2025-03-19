@@ -18,18 +18,7 @@ namespace PersonalizeRuntime
 namespace Model
 {
 
-PredictedItem::PredictedItem() : 
-    m_itemIdHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false),
-    m_promotionNameHasBeenSet(false),
-    m_metadataHasBeenSet(false),
-    m_reasonHasBeenSet(false)
-{
-}
-
 PredictedItem::PredictedItem(JsonView jsonValue)
-  : PredictedItem()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ PredictedItem& PredictedItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("itemId"))
   {
     m_itemId = jsonValue.GetString("itemId");
-
     m_itemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("score"))
   {
     m_score = jsonValue.GetDouble("score");
-
     m_scoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("promotionName"))
   {
     m_promotionName = jsonValue.GetString("promotionName");
-
     m_promotionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("metadata"))
   {
     Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
@@ -66,7 +49,6 @@ PredictedItem& PredictedItem::operator =(JsonView jsonValue)
     }
     m_metadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reason"))
   {
     Aws::Utils::Array<JsonView> reasonJsonList = jsonValue.GetArray("reason");
@@ -76,7 +58,6 @@ PredictedItem& PredictedItem::operator =(JsonView jsonValue)
     }
     m_reasonHasBeenSet = true;
   }
-
   return *this;
 }
 

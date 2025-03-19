@@ -18,16 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-LineChartDefaultSeriesSettings::LineChartDefaultSeriesSettings() : 
-    m_axisBinding(AxisBinding::NOT_SET),
-    m_axisBindingHasBeenSet(false),
-    m_lineStyleSettingsHasBeenSet(false),
-    m_markerStyleSettingsHasBeenSet(false)
-{
-}
-
 LineChartDefaultSeriesSettings::LineChartDefaultSeriesSettings(JsonView jsonValue)
-  : LineChartDefaultSeriesSettings()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ LineChartDefaultSeriesSettings& LineChartDefaultSeriesSettings::operator =(JsonV
   if(jsonValue.ValueExists("AxisBinding"))
   {
     m_axisBinding = AxisBindingMapper::GetAxisBindingForName(jsonValue.GetString("AxisBinding"));
-
     m_axisBindingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LineStyleSettings"))
   {
     m_lineStyleSettings = jsonValue.GetObject("LineStyleSettings");
-
     m_lineStyleSettingsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MarkerStyleSettings"))
   {
     m_markerStyleSettings = jsonValue.GetObject("MarkerStyleSettings");
-
     m_markerStyleSettingsHasBeenSet = true;
   }
-
   return *this;
 }
 

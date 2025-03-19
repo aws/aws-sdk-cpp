@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-UpdateCaseActionDefinition::UpdateCaseActionDefinition() : 
-    m_fieldsHasBeenSet(false)
-{
-}
-
 UpdateCaseActionDefinition::UpdateCaseActionDefinition(JsonView jsonValue)
-  : UpdateCaseActionDefinition()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ UpdateCaseActionDefinition& UpdateCaseActionDefinition::operator =(JsonView json
     }
     m_fieldsHasBeenSet = true;
   }
-
   return *this;
 }
 

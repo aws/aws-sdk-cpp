@@ -22,7 +22,7 @@ namespace Model
   class UpdateNotificationConfigurationRequest : public NotificationsRequest
   {
   public:
-    AWS_NOTIFICATIONS_API UpdateNotificationConfigurationRequest();
+    AWS_NOTIFICATIONS_API UpdateNotificationConfigurationRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,42 +38,36 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) used to update the
      * <code>NotificationConfiguration</code>.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
+    inline const Aws::String& GetArn() const { return m_arn; }
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-    inline UpdateNotificationConfigurationRequest& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline UpdateNotificationConfigurationRequest& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline UpdateNotificationConfigurationRequest& WithArn(const char* value) { SetArn(value); return *this;}
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    UpdateNotificationConfigurationRequest& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the <code>NotificationConfiguration</code>.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline UpdateNotificationConfigurationRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline UpdateNotificationConfigurationRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline UpdateNotificationConfigurationRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    UpdateNotificationConfigurationRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The description of the <code>NotificationConfiguration</code>.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline UpdateNotificationConfigurationRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline UpdateNotificationConfigurationRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline UpdateNotificationConfigurationRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    UpdateNotificationConfigurationRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,12 +80,10 @@ namespace Model
      * <code>NONE</code> </p> <ul> <li> <p>Don't aggregate notifications.</p> </li>
      * </ul> </li> </ul> </li> </ul>
      */
-    inline const AggregationDuration& GetAggregationDuration() const{ return m_aggregationDuration; }
+    inline AggregationDuration GetAggregationDuration() const { return m_aggregationDuration; }
     inline bool AggregationDurationHasBeenSet() const { return m_aggregationDurationHasBeenSet; }
-    inline void SetAggregationDuration(const AggregationDuration& value) { m_aggregationDurationHasBeenSet = true; m_aggregationDuration = value; }
-    inline void SetAggregationDuration(AggregationDuration&& value) { m_aggregationDurationHasBeenSet = true; m_aggregationDuration = std::move(value); }
-    inline UpdateNotificationConfigurationRequest& WithAggregationDuration(const AggregationDuration& value) { SetAggregationDuration(value); return *this;}
-    inline UpdateNotificationConfigurationRequest& WithAggregationDuration(AggregationDuration&& value) { SetAggregationDuration(std::move(value)); return *this;}
+    inline void SetAggregationDuration(AggregationDuration value) { m_aggregationDurationHasBeenSet = true; m_aggregationDuration = value; }
+    inline UpdateNotificationConfigurationRequest& WithAggregationDuration(AggregationDuration value) { SetAggregationDuration(value); return *this;}
     ///@}
   private:
 
@@ -104,7 +96,7 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
 
-    AggregationDuration m_aggregationDuration;
+    AggregationDuration m_aggregationDuration{AggregationDuration::NOT_SET};
     bool m_aggregationDurationHasBeenSet = false;
   };
 

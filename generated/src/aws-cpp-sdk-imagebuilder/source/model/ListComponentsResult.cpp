@@ -16,10 +16,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListComponentsResult::ListComponentsResult()
-{
-}
-
 ListComponentsResult::ListComponentsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -31,9 +27,8 @@ ListComponentsResult& ListComponentsResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("requestId"))
   {
     m_requestId = jsonValue.GetString("requestId");
-
+    m_requestIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("componentVersionList"))
   {
     Aws::Utils::Array<JsonView> componentVersionListJsonList = jsonValue.GetArray("componentVersionList");
@@ -41,14 +36,13 @@ ListComponentsResult& ListComponentsResult::operator =(const Aws::AmazonWebServi
     {
       m_componentVersionList.push_back(componentVersionListJsonList[componentVersionListIndex].AsObject());
     }
+    m_componentVersionListHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("nextToken"))
   {
     m_nextToken = jsonValue.GetString("nextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
 
 
   return *this;

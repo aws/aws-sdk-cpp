@@ -12,14 +12,6 @@ using namespace Aws::EC2InstanceConnect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-SendSerialConsoleSSHPublicKeyRequest::SendSerialConsoleSSHPublicKeyRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_serialPort(0),
-    m_serialPortHasBeenSet(false),
-    m_sSHPublicKeyHasBeenSet(false)
-{
-}
-
 Aws::String SendSerialConsoleSSHPublicKeyRequest::SerializePayload() const
 {
   JsonValue payload;

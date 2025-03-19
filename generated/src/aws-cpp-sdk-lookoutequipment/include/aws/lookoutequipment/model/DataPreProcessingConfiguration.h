@@ -39,7 +39,7 @@ namespace Model
   class DataPreProcessingConfiguration
   {
   public:
-    AWS_LOOKOUTEQUIPMENT_API DataPreProcessingConfiguration();
+    AWS_LOOKOUTEQUIPMENT_API DataPreProcessingConfiguration() = default;
     AWS_LOOKOUTEQUIPMENT_API DataPreProcessingConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API DataPreProcessingConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LOOKOUTEQUIPMENT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,16 +56,14 @@ namespace Model
      * <i>PT1S</i>, the value for a 15 minute rate is <i>PT15M</i>, and the value for a
      * 1 hour rate is <i>PT1H</i> </p>
      */
-    inline const TargetSamplingRate& GetTargetSamplingRate() const{ return m_targetSamplingRate; }
+    inline TargetSamplingRate GetTargetSamplingRate() const { return m_targetSamplingRate; }
     inline bool TargetSamplingRateHasBeenSet() const { return m_targetSamplingRateHasBeenSet; }
-    inline void SetTargetSamplingRate(const TargetSamplingRate& value) { m_targetSamplingRateHasBeenSet = true; m_targetSamplingRate = value; }
-    inline void SetTargetSamplingRate(TargetSamplingRate&& value) { m_targetSamplingRateHasBeenSet = true; m_targetSamplingRate = std::move(value); }
-    inline DataPreProcessingConfiguration& WithTargetSamplingRate(const TargetSamplingRate& value) { SetTargetSamplingRate(value); return *this;}
-    inline DataPreProcessingConfiguration& WithTargetSamplingRate(TargetSamplingRate&& value) { SetTargetSamplingRate(std::move(value)); return *this;}
+    inline void SetTargetSamplingRate(TargetSamplingRate value) { m_targetSamplingRateHasBeenSet = true; m_targetSamplingRate = value; }
+    inline DataPreProcessingConfiguration& WithTargetSamplingRate(TargetSamplingRate value) { SetTargetSamplingRate(value); return *this;}
     ///@}
   private:
 
-    TargetSamplingRate m_targetSamplingRate;
+    TargetSamplingRate m_targetSamplingRate{TargetSamplingRate::NOT_SET};
     bool m_targetSamplingRateHasBeenSet = false;
   };
 

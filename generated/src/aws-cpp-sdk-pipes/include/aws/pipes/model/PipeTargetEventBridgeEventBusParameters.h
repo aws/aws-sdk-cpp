@@ -33,7 +33,7 @@ namespace Model
   class PipeTargetEventBridgeEventBusParameters
   {
   public:
-    AWS_PIPES_API PipeTargetEventBridgeEventBusParameters();
+    AWS_PIPES_API PipeTargetEventBridgeEventBusParameters() = default;
     AWS_PIPES_API PipeTargetEventBridgeEventBusParameters(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API PipeTargetEventBridgeEventBusParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PIPES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * https://abcde.veo.endpoints.event.amazonaws.com, then the EndpointId is
      * <code>abcde.veo</code>.</p>
      */
-    inline const Aws::String& GetEndpointId() const{ return m_endpointId; }
+    inline const Aws::String& GetEndpointId() const { return m_endpointId; }
     inline bool EndpointIdHasBeenSet() const { return m_endpointIdHasBeenSet; }
-    inline void SetEndpointId(const Aws::String& value) { m_endpointIdHasBeenSet = true; m_endpointId = value; }
-    inline void SetEndpointId(Aws::String&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::move(value); }
-    inline void SetEndpointId(const char* value) { m_endpointIdHasBeenSet = true; m_endpointId.assign(value); }
-    inline PipeTargetEventBridgeEventBusParameters& WithEndpointId(const Aws::String& value) { SetEndpointId(value); return *this;}
-    inline PipeTargetEventBridgeEventBusParameters& WithEndpointId(Aws::String&& value) { SetEndpointId(std::move(value)); return *this;}
-    inline PipeTargetEventBridgeEventBusParameters& WithEndpointId(const char* value) { SetEndpointId(value); return *this;}
+    template<typename EndpointIdT = Aws::String>
+    void SetEndpointId(EndpointIdT&& value) { m_endpointIdHasBeenSet = true; m_endpointId = std::forward<EndpointIdT>(value); }
+    template<typename EndpointIdT = Aws::String>
+    PipeTargetEventBridgeEventBusParameters& WithEndpointId(EndpointIdT&& value) { SetEndpointId(std::forward<EndpointIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,28 +58,24 @@ namespace Model
      * <p>A free-form string, with a maximum of 128 characters, used to decide what
      * fields to expect in the event detail.</p>
      */
-    inline const Aws::String& GetDetailType() const{ return m_detailType; }
+    inline const Aws::String& GetDetailType() const { return m_detailType; }
     inline bool DetailTypeHasBeenSet() const { return m_detailTypeHasBeenSet; }
-    inline void SetDetailType(const Aws::String& value) { m_detailTypeHasBeenSet = true; m_detailType = value; }
-    inline void SetDetailType(Aws::String&& value) { m_detailTypeHasBeenSet = true; m_detailType = std::move(value); }
-    inline void SetDetailType(const char* value) { m_detailTypeHasBeenSet = true; m_detailType.assign(value); }
-    inline PipeTargetEventBridgeEventBusParameters& WithDetailType(const Aws::String& value) { SetDetailType(value); return *this;}
-    inline PipeTargetEventBridgeEventBusParameters& WithDetailType(Aws::String&& value) { SetDetailType(std::move(value)); return *this;}
-    inline PipeTargetEventBridgeEventBusParameters& WithDetailType(const char* value) { SetDetailType(value); return *this;}
+    template<typename DetailTypeT = Aws::String>
+    void SetDetailType(DetailTypeT&& value) { m_detailTypeHasBeenSet = true; m_detailType = std::forward<DetailTypeT>(value); }
+    template<typename DetailTypeT = Aws::String>
+    PipeTargetEventBridgeEventBusParameters& WithDetailType(DetailTypeT&& value) { SetDetailType(std::forward<DetailTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The source of the event.</p>
      */
-    inline const Aws::String& GetSource() const{ return m_source; }
+    inline const Aws::String& GetSource() const { return m_source; }
     inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
-    inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
-    inline void SetSource(Aws::String&& value) { m_sourceHasBeenSet = true; m_source = std::move(value); }
-    inline void SetSource(const char* value) { m_sourceHasBeenSet = true; m_source.assign(value); }
-    inline PipeTargetEventBridgeEventBusParameters& WithSource(const Aws::String& value) { SetSource(value); return *this;}
-    inline PipeTargetEventBridgeEventBusParameters& WithSource(Aws::String&& value) { SetSource(std::move(value)); return *this;}
-    inline PipeTargetEventBridgeEventBusParameters& WithSource(const char* value) { SetSource(value); return *this;}
+    template<typename SourceT = Aws::String>
+    void SetSource(SourceT&& value) { m_sourceHasBeenSet = true; m_source = std::forward<SourceT>(value); }
+    template<typename SourceT = Aws::String>
+    PipeTargetEventBridgeEventBusParameters& WithSource(SourceT&& value) { SetSource(std::forward<SourceT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -90,15 +84,14 @@ namespace Model
      * which the event primarily concerns. Any number, including zero, may be
      * present.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
+    inline const Aws::Vector<Aws::String>& GetResources() const { return m_resources; }
     inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
-    inline void SetResources(const Aws::Vector<Aws::String>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
-    inline void SetResources(Aws::Vector<Aws::String>&& value) { m_resourcesHasBeenSet = true; m_resources = std::move(value); }
-    inline PipeTargetEventBridgeEventBusParameters& WithResources(const Aws::Vector<Aws::String>& value) { SetResources(value); return *this;}
-    inline PipeTargetEventBridgeEventBusParameters& WithResources(Aws::Vector<Aws::String>&& value) { SetResources(std::move(value)); return *this;}
-    inline PipeTargetEventBridgeEventBusParameters& AddResources(const Aws::String& value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
-    inline PipeTargetEventBridgeEventBusParameters& AddResources(Aws::String&& value) { m_resourcesHasBeenSet = true; m_resources.push_back(std::move(value)); return *this; }
-    inline PipeTargetEventBridgeEventBusParameters& AddResources(const char* value) { m_resourcesHasBeenSet = true; m_resources.push_back(value); return *this; }
+    template<typename ResourcesT = Aws::Vector<Aws::String>>
+    void SetResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources = std::forward<ResourcesT>(value); }
+    template<typename ResourcesT = Aws::Vector<Aws::String>>
+    PipeTargetEventBridgeEventBusParameters& WithResources(ResourcesT&& value) { SetResources(std::forward<ResourcesT>(value)); return *this;}
+    template<typename ResourcesT = Aws::String>
+    PipeTargetEventBridgeEventBusParameters& AddResources(ResourcesT&& value) { m_resourcesHasBeenSet = true; m_resources.emplace_back(std::forward<ResourcesT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -109,14 +102,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_PutEvents.html">PutEvents</a>
      * call is used.</p>
      */
-    inline const Aws::String& GetTime() const{ return m_time; }
+    inline const Aws::String& GetTime() const { return m_time; }
     inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
-    inline void SetTime(const Aws::String& value) { m_timeHasBeenSet = true; m_time = value; }
-    inline void SetTime(Aws::String&& value) { m_timeHasBeenSet = true; m_time = std::move(value); }
-    inline void SetTime(const char* value) { m_timeHasBeenSet = true; m_time.assign(value); }
-    inline PipeTargetEventBridgeEventBusParameters& WithTime(const Aws::String& value) { SetTime(value); return *this;}
-    inline PipeTargetEventBridgeEventBusParameters& WithTime(Aws::String&& value) { SetTime(std::move(value)); return *this;}
-    inline PipeTargetEventBridgeEventBusParameters& WithTime(const char* value) { SetTime(value); return *this;}
+    template<typename TimeT = Aws::String>
+    void SetTime(TimeT&& value) { m_timeHasBeenSet = true; m_time = std::forward<TimeT>(value); }
+    template<typename TimeT = Aws::String>
+    PipeTargetEventBridgeEventBusParameters& WithTime(TimeT&& value) { SetTime(std::forward<TimeT>(value)); return *this;}
     ///@}
   private:
 

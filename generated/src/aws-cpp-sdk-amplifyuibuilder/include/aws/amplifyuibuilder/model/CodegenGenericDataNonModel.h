@@ -33,7 +33,7 @@ namespace Model
   class CodegenGenericDataNonModel
   {
   public:
-    AWS_AMPLIFYUIBUILDER_API CodegenGenericDataNonModel();
+    AWS_AMPLIFYUIBUILDER_API CodegenGenericDataNonModel() = default;
     AWS_AMPLIFYUIBUILDER_API CodegenGenericDataNonModel(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API CodegenGenericDataNonModel& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,18 +43,16 @@ namespace Model
     /**
      * <p>The fields in a generic data schema non model.</p>
      */
-    inline const Aws::Map<Aws::String, CodegenGenericDataField>& GetFields() const{ return m_fields; }
+    inline const Aws::Map<Aws::String, CodegenGenericDataField>& GetFields() const { return m_fields; }
     inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
-    inline void SetFields(const Aws::Map<Aws::String, CodegenGenericDataField>& value) { m_fieldsHasBeenSet = true; m_fields = value; }
-    inline void SetFields(Aws::Map<Aws::String, CodegenGenericDataField>&& value) { m_fieldsHasBeenSet = true; m_fields = std::move(value); }
-    inline CodegenGenericDataNonModel& WithFields(const Aws::Map<Aws::String, CodegenGenericDataField>& value) { SetFields(value); return *this;}
-    inline CodegenGenericDataNonModel& WithFields(Aws::Map<Aws::String, CodegenGenericDataField>&& value) { SetFields(std::move(value)); return *this;}
-    inline CodegenGenericDataNonModel& AddFields(const Aws::String& key, const CodegenGenericDataField& value) { m_fieldsHasBeenSet = true; m_fields.emplace(key, value); return *this; }
-    inline CodegenGenericDataNonModel& AddFields(Aws::String&& key, const CodegenGenericDataField& value) { m_fieldsHasBeenSet = true; m_fields.emplace(std::move(key), value); return *this; }
-    inline CodegenGenericDataNonModel& AddFields(const Aws::String& key, CodegenGenericDataField&& value) { m_fieldsHasBeenSet = true; m_fields.emplace(key, std::move(value)); return *this; }
-    inline CodegenGenericDataNonModel& AddFields(Aws::String&& key, CodegenGenericDataField&& value) { m_fieldsHasBeenSet = true; m_fields.emplace(std::move(key), std::move(value)); return *this; }
-    inline CodegenGenericDataNonModel& AddFields(const char* key, CodegenGenericDataField&& value) { m_fieldsHasBeenSet = true; m_fields.emplace(key, std::move(value)); return *this; }
-    inline CodegenGenericDataNonModel& AddFields(const char* key, const CodegenGenericDataField& value) { m_fieldsHasBeenSet = true; m_fields.emplace(key, value); return *this; }
+    template<typename FieldsT = Aws::Map<Aws::String, CodegenGenericDataField>>
+    void SetFields(FieldsT&& value) { m_fieldsHasBeenSet = true; m_fields = std::forward<FieldsT>(value); }
+    template<typename FieldsT = Aws::Map<Aws::String, CodegenGenericDataField>>
+    CodegenGenericDataNonModel& WithFields(FieldsT&& value) { SetFields(std::forward<FieldsT>(value)); return *this;}
+    template<typename FieldsKeyT = Aws::String, typename FieldsValueT = CodegenGenericDataField>
+    CodegenGenericDataNonModel& AddFields(FieldsKeyT&& key, FieldsValueT&& value) {
+      m_fieldsHasBeenSet = true; m_fields.emplace(std::forward<FieldsKeyT>(key), std::forward<FieldsValueT>(value)); return *this;
+    }
     ///@}
   private:
 

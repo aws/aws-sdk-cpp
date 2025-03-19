@@ -22,7 +22,7 @@ namespace Model
   class UpdateUserIdentityInfoRequest : public ConnectRequest
   {
   public:
-    AWS_CONNECT_API UpdateUserIdentityInfoRequest();
+    AWS_CONNECT_API UpdateUserIdentityInfoRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,26 +37,24 @@ namespace Model
     /**
      * <p>The identity information for the user.</p>
      */
-    inline const UserIdentityInfo& GetIdentityInfo() const{ return m_identityInfo; }
+    inline const UserIdentityInfo& GetIdentityInfo() const { return m_identityInfo; }
     inline bool IdentityInfoHasBeenSet() const { return m_identityInfoHasBeenSet; }
-    inline void SetIdentityInfo(const UserIdentityInfo& value) { m_identityInfoHasBeenSet = true; m_identityInfo = value; }
-    inline void SetIdentityInfo(UserIdentityInfo&& value) { m_identityInfoHasBeenSet = true; m_identityInfo = std::move(value); }
-    inline UpdateUserIdentityInfoRequest& WithIdentityInfo(const UserIdentityInfo& value) { SetIdentityInfo(value); return *this;}
-    inline UpdateUserIdentityInfoRequest& WithIdentityInfo(UserIdentityInfo&& value) { SetIdentityInfo(std::move(value)); return *this;}
+    template<typename IdentityInfoT = UserIdentityInfo>
+    void SetIdentityInfo(IdentityInfoT&& value) { m_identityInfoHasBeenSet = true; m_identityInfo = std::forward<IdentityInfoT>(value); }
+    template<typename IdentityInfoT = UserIdentityInfo>
+    UpdateUserIdentityInfoRequest& WithIdentityInfo(IdentityInfoT&& value) { SetIdentityInfo(std::forward<IdentityInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the user account.</p>
      */
-    inline const Aws::String& GetUserId() const{ return m_userId; }
+    inline const Aws::String& GetUserId() const { return m_userId; }
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
-    inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
-    inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
-    inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
-    inline UpdateUserIdentityInfoRequest& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
-    inline UpdateUserIdentityInfoRequest& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
-    inline UpdateUserIdentityInfoRequest& WithUserId(const char* value) { SetUserId(value); return *this;}
+    template<typename UserIdT = Aws::String>
+    void SetUserId(UserIdT&& value) { m_userIdHasBeenSet = true; m_userId = std::forward<UserIdT>(value); }
+    template<typename UserIdT = Aws::String>
+    UpdateUserIdentityInfoRequest& WithUserId(UserIdT&& value) { SetUserId(std::forward<UserIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -65,14 +63,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
      * the instance ID</a> in the Amazon Resource Name (ARN) of the instance.</p>
      */
-    inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+    inline const Aws::String& GetInstanceId() const { return m_instanceId; }
     inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
-    inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
-    inline void SetInstanceId(Aws::String&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::move(value); }
-    inline void SetInstanceId(const char* value) { m_instanceIdHasBeenSet = true; m_instanceId.assign(value); }
-    inline UpdateUserIdentityInfoRequest& WithInstanceId(const Aws::String& value) { SetInstanceId(value); return *this;}
-    inline UpdateUserIdentityInfoRequest& WithInstanceId(Aws::String&& value) { SetInstanceId(std::move(value)); return *this;}
-    inline UpdateUserIdentityInfoRequest& WithInstanceId(const char* value) { SetInstanceId(value); return *this;}
+    template<typename InstanceIdT = Aws::String>
+    void SetInstanceId(InstanceIdT&& value) { m_instanceIdHasBeenSet = true; m_instanceId = std::forward<InstanceIdT>(value); }
+    template<typename InstanceIdT = Aws::String>
+    UpdateUserIdentityInfoRequest& WithInstanceId(InstanceIdT&& value) { SetInstanceId(std::forward<InstanceIdT>(value)); return *this;}
     ///@}
   private:
 

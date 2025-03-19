@@ -35,7 +35,7 @@ namespace Model
   class SourceFlowConfig
   {
   public:
-    AWS_APPFLOW_API SourceFlowConfig();
+    AWS_APPFLOW_API SourceFlowConfig() = default;
     AWS_APPFLOW_API SourceFlowConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API SourceFlowConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,26 +45,22 @@ namespace Model
     /**
      * <p> The type of connector, such as Salesforce, Amplitude, and so on. </p>
      */
-    inline const ConnectorType& GetConnectorType() const{ return m_connectorType; }
+    inline ConnectorType GetConnectorType() const { return m_connectorType; }
     inline bool ConnectorTypeHasBeenSet() const { return m_connectorTypeHasBeenSet; }
-    inline void SetConnectorType(const ConnectorType& value) { m_connectorTypeHasBeenSet = true; m_connectorType = value; }
-    inline void SetConnectorType(ConnectorType&& value) { m_connectorTypeHasBeenSet = true; m_connectorType = std::move(value); }
-    inline SourceFlowConfig& WithConnectorType(const ConnectorType& value) { SetConnectorType(value); return *this;}
-    inline SourceFlowConfig& WithConnectorType(ConnectorType&& value) { SetConnectorType(std::move(value)); return *this;}
+    inline void SetConnectorType(ConnectorType value) { m_connectorTypeHasBeenSet = true; m_connectorType = value; }
+    inline SourceFlowConfig& WithConnectorType(ConnectorType value) { SetConnectorType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The API version of the connector when it's used as a source in the flow.</p>
      */
-    inline const Aws::String& GetApiVersion() const{ return m_apiVersion; }
+    inline const Aws::String& GetApiVersion() const { return m_apiVersion; }
     inline bool ApiVersionHasBeenSet() const { return m_apiVersionHasBeenSet; }
-    inline void SetApiVersion(const Aws::String& value) { m_apiVersionHasBeenSet = true; m_apiVersion = value; }
-    inline void SetApiVersion(Aws::String&& value) { m_apiVersionHasBeenSet = true; m_apiVersion = std::move(value); }
-    inline void SetApiVersion(const char* value) { m_apiVersionHasBeenSet = true; m_apiVersion.assign(value); }
-    inline SourceFlowConfig& WithApiVersion(const Aws::String& value) { SetApiVersion(value); return *this;}
-    inline SourceFlowConfig& WithApiVersion(Aws::String&& value) { SetApiVersion(std::move(value)); return *this;}
-    inline SourceFlowConfig& WithApiVersion(const char* value) { SetApiVersion(value); return *this;}
+    template<typename ApiVersionT = Aws::String>
+    void SetApiVersion(ApiVersionT&& value) { m_apiVersionHasBeenSet = true; m_apiVersion = std::forward<ApiVersionT>(value); }
+    template<typename ApiVersionT = Aws::String>
+    SourceFlowConfig& WithApiVersion(ApiVersionT&& value) { SetApiVersion(std::forward<ApiVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,14 +68,12 @@ namespace Model
      * <p> The name of the connector profile. This name must be unique for each
      * connector profile in the Amazon Web Services account. </p>
      */
-    inline const Aws::String& GetConnectorProfileName() const{ return m_connectorProfileName; }
+    inline const Aws::String& GetConnectorProfileName() const { return m_connectorProfileName; }
     inline bool ConnectorProfileNameHasBeenSet() const { return m_connectorProfileNameHasBeenSet; }
-    inline void SetConnectorProfileName(const Aws::String& value) { m_connectorProfileNameHasBeenSet = true; m_connectorProfileName = value; }
-    inline void SetConnectorProfileName(Aws::String&& value) { m_connectorProfileNameHasBeenSet = true; m_connectorProfileName = std::move(value); }
-    inline void SetConnectorProfileName(const char* value) { m_connectorProfileNameHasBeenSet = true; m_connectorProfileName.assign(value); }
-    inline SourceFlowConfig& WithConnectorProfileName(const Aws::String& value) { SetConnectorProfileName(value); return *this;}
-    inline SourceFlowConfig& WithConnectorProfileName(Aws::String&& value) { SetConnectorProfileName(std::move(value)); return *this;}
-    inline SourceFlowConfig& WithConnectorProfileName(const char* value) { SetConnectorProfileName(value); return *this;}
+    template<typename ConnectorProfileNameT = Aws::String>
+    void SetConnectorProfileName(ConnectorProfileNameT&& value) { m_connectorProfileNameHasBeenSet = true; m_connectorProfileName = std::forward<ConnectorProfileNameT>(value); }
+    template<typename ConnectorProfileNameT = Aws::String>
+    SourceFlowConfig& WithConnectorProfileName(ConnectorProfileNameT&& value) { SetConnectorProfileName(std::forward<ConnectorProfileNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -87,12 +81,12 @@ namespace Model
      * <p> Specifies the information that is required to query a particular source
      * connector. </p>
      */
-    inline const SourceConnectorProperties& GetSourceConnectorProperties() const{ return m_sourceConnectorProperties; }
+    inline const SourceConnectorProperties& GetSourceConnectorProperties() const { return m_sourceConnectorProperties; }
     inline bool SourceConnectorPropertiesHasBeenSet() const { return m_sourceConnectorPropertiesHasBeenSet; }
-    inline void SetSourceConnectorProperties(const SourceConnectorProperties& value) { m_sourceConnectorPropertiesHasBeenSet = true; m_sourceConnectorProperties = value; }
-    inline void SetSourceConnectorProperties(SourceConnectorProperties&& value) { m_sourceConnectorPropertiesHasBeenSet = true; m_sourceConnectorProperties = std::move(value); }
-    inline SourceFlowConfig& WithSourceConnectorProperties(const SourceConnectorProperties& value) { SetSourceConnectorProperties(value); return *this;}
-    inline SourceFlowConfig& WithSourceConnectorProperties(SourceConnectorProperties&& value) { SetSourceConnectorProperties(std::move(value)); return *this;}
+    template<typename SourceConnectorPropertiesT = SourceConnectorProperties>
+    void SetSourceConnectorProperties(SourceConnectorPropertiesT&& value) { m_sourceConnectorPropertiesHasBeenSet = true; m_sourceConnectorProperties = std::forward<SourceConnectorPropertiesT>(value); }
+    template<typename SourceConnectorPropertiesT = SourceConnectorProperties>
+    SourceFlowConfig& WithSourceConnectorProperties(SourceConnectorPropertiesT&& value) { SetSourceConnectorProperties(std::forward<SourceConnectorPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -101,16 +95,16 @@ namespace Model
      * configuration is provided, the fields specified in the configuration are used
      * when querying for the incremental data pull. </p>
      */
-    inline const IncrementalPullConfig& GetIncrementalPullConfig() const{ return m_incrementalPullConfig; }
+    inline const IncrementalPullConfig& GetIncrementalPullConfig() const { return m_incrementalPullConfig; }
     inline bool IncrementalPullConfigHasBeenSet() const { return m_incrementalPullConfigHasBeenSet; }
-    inline void SetIncrementalPullConfig(const IncrementalPullConfig& value) { m_incrementalPullConfigHasBeenSet = true; m_incrementalPullConfig = value; }
-    inline void SetIncrementalPullConfig(IncrementalPullConfig&& value) { m_incrementalPullConfigHasBeenSet = true; m_incrementalPullConfig = std::move(value); }
-    inline SourceFlowConfig& WithIncrementalPullConfig(const IncrementalPullConfig& value) { SetIncrementalPullConfig(value); return *this;}
-    inline SourceFlowConfig& WithIncrementalPullConfig(IncrementalPullConfig&& value) { SetIncrementalPullConfig(std::move(value)); return *this;}
+    template<typename IncrementalPullConfigT = IncrementalPullConfig>
+    void SetIncrementalPullConfig(IncrementalPullConfigT&& value) { m_incrementalPullConfigHasBeenSet = true; m_incrementalPullConfig = std::forward<IncrementalPullConfigT>(value); }
+    template<typename IncrementalPullConfigT = IncrementalPullConfig>
+    SourceFlowConfig& WithIncrementalPullConfig(IncrementalPullConfigT&& value) { SetIncrementalPullConfig(std::forward<IncrementalPullConfigT>(value)); return *this;}
     ///@}
   private:
 
-    ConnectorType m_connectorType;
+    ConnectorType m_connectorType{ConnectorType::NOT_SET};
     bool m_connectorTypeHasBeenSet = false;
 
     Aws::String m_apiVersion;

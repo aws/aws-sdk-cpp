@@ -32,7 +32,7 @@ namespace Model
   class HostPropertiesResponse
   {
   public:
-    AWS_DEADLINE_API HostPropertiesResponse();
+    AWS_DEADLINE_API HostPropertiesResponse() = default;
     AWS_DEADLINE_API HostPropertiesResponse(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API HostPropertiesResponse& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,54 +42,48 @@ namespace Model
     /**
      * <p>The IP address of the host.</p>
      */
-    inline const IpAddresses& GetIpAddresses() const{ return m_ipAddresses; }
+    inline const IpAddresses& GetIpAddresses() const { return m_ipAddresses; }
     inline bool IpAddressesHasBeenSet() const { return m_ipAddressesHasBeenSet; }
-    inline void SetIpAddresses(const IpAddresses& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = value; }
-    inline void SetIpAddresses(IpAddresses&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = std::move(value); }
-    inline HostPropertiesResponse& WithIpAddresses(const IpAddresses& value) { SetIpAddresses(value); return *this;}
-    inline HostPropertiesResponse& WithIpAddresses(IpAddresses&& value) { SetIpAddresses(std::move(value)); return *this;}
+    template<typename IpAddressesT = IpAddresses>
+    void SetIpAddresses(IpAddressesT&& value) { m_ipAddressesHasBeenSet = true; m_ipAddresses = std::forward<IpAddressesT>(value); }
+    template<typename IpAddressesT = IpAddresses>
+    HostPropertiesResponse& WithIpAddresses(IpAddressesT&& value) { SetIpAddresses(std::forward<IpAddressesT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The host name.</p>
      */
-    inline const Aws::String& GetHostName() const{ return m_hostName; }
+    inline const Aws::String& GetHostName() const { return m_hostName; }
     inline bool HostNameHasBeenSet() const { return m_hostNameHasBeenSet; }
-    inline void SetHostName(const Aws::String& value) { m_hostNameHasBeenSet = true; m_hostName = value; }
-    inline void SetHostName(Aws::String&& value) { m_hostNameHasBeenSet = true; m_hostName = std::move(value); }
-    inline void SetHostName(const char* value) { m_hostNameHasBeenSet = true; m_hostName.assign(value); }
-    inline HostPropertiesResponse& WithHostName(const Aws::String& value) { SetHostName(value); return *this;}
-    inline HostPropertiesResponse& WithHostName(Aws::String&& value) { SetHostName(std::move(value)); return *this;}
-    inline HostPropertiesResponse& WithHostName(const char* value) { SetHostName(value); return *this;}
+    template<typename HostNameT = Aws::String>
+    void SetHostName(HostNameT&& value) { m_hostNameHasBeenSet = true; m_hostName = std::forward<HostNameT>(value); }
+    template<typename HostNameT = Aws::String>
+    HostPropertiesResponse& WithHostName(HostNameT&& value) { SetHostName(std::forward<HostNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the host EC2 instance.</p>
      */
-    inline const Aws::String& GetEc2InstanceArn() const{ return m_ec2InstanceArn; }
+    inline const Aws::String& GetEc2InstanceArn() const { return m_ec2InstanceArn; }
     inline bool Ec2InstanceArnHasBeenSet() const { return m_ec2InstanceArnHasBeenSet; }
-    inline void SetEc2InstanceArn(const Aws::String& value) { m_ec2InstanceArnHasBeenSet = true; m_ec2InstanceArn = value; }
-    inline void SetEc2InstanceArn(Aws::String&& value) { m_ec2InstanceArnHasBeenSet = true; m_ec2InstanceArn = std::move(value); }
-    inline void SetEc2InstanceArn(const char* value) { m_ec2InstanceArnHasBeenSet = true; m_ec2InstanceArn.assign(value); }
-    inline HostPropertiesResponse& WithEc2InstanceArn(const Aws::String& value) { SetEc2InstanceArn(value); return *this;}
-    inline HostPropertiesResponse& WithEc2InstanceArn(Aws::String&& value) { SetEc2InstanceArn(std::move(value)); return *this;}
-    inline HostPropertiesResponse& WithEc2InstanceArn(const char* value) { SetEc2InstanceArn(value); return *this;}
+    template<typename Ec2InstanceArnT = Aws::String>
+    void SetEc2InstanceArn(Ec2InstanceArnT&& value) { m_ec2InstanceArnHasBeenSet = true; m_ec2InstanceArn = std::forward<Ec2InstanceArnT>(value); }
+    template<typename Ec2InstanceArnT = Aws::String>
+    HostPropertiesResponse& WithEc2InstanceArn(Ec2InstanceArnT&& value) { SetEc2InstanceArn(std::forward<Ec2InstanceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance type of the host EC2 instance.</p>
      */
-    inline const Aws::String& GetEc2InstanceType() const{ return m_ec2InstanceType; }
+    inline const Aws::String& GetEc2InstanceType() const { return m_ec2InstanceType; }
     inline bool Ec2InstanceTypeHasBeenSet() const { return m_ec2InstanceTypeHasBeenSet; }
-    inline void SetEc2InstanceType(const Aws::String& value) { m_ec2InstanceTypeHasBeenSet = true; m_ec2InstanceType = value; }
-    inline void SetEc2InstanceType(Aws::String&& value) { m_ec2InstanceTypeHasBeenSet = true; m_ec2InstanceType = std::move(value); }
-    inline void SetEc2InstanceType(const char* value) { m_ec2InstanceTypeHasBeenSet = true; m_ec2InstanceType.assign(value); }
-    inline HostPropertiesResponse& WithEc2InstanceType(const Aws::String& value) { SetEc2InstanceType(value); return *this;}
-    inline HostPropertiesResponse& WithEc2InstanceType(Aws::String&& value) { SetEc2InstanceType(std::move(value)); return *this;}
-    inline HostPropertiesResponse& WithEc2InstanceType(const char* value) { SetEc2InstanceType(value); return *this;}
+    template<typename Ec2InstanceTypeT = Aws::String>
+    void SetEc2InstanceType(Ec2InstanceTypeT&& value) { m_ec2InstanceTypeHasBeenSet = true; m_ec2InstanceType = std::forward<Ec2InstanceTypeT>(value); }
+    template<typename Ec2InstanceTypeT = Aws::String>
+    HostPropertiesResponse& WithEc2InstanceType(Ec2InstanceTypeT&& value) { SetEc2InstanceType(std::forward<Ec2InstanceTypeT>(value)); return *this;}
     ///@}
   private:
 

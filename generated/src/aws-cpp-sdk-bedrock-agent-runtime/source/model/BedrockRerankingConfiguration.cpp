@@ -18,15 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-BedrockRerankingConfiguration::BedrockRerankingConfiguration() : 
-    m_modelConfigurationHasBeenSet(false),
-    m_numberOfResults(0),
-    m_numberOfResultsHasBeenSet(false)
-{
-}
-
 BedrockRerankingConfiguration::BedrockRerankingConfiguration(JsonView jsonValue)
-  : BedrockRerankingConfiguration()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ BedrockRerankingConfiguration& BedrockRerankingConfiguration::operator =(JsonVie
   if(jsonValue.ValueExists("modelConfiguration"))
   {
     m_modelConfiguration = jsonValue.GetObject("modelConfiguration");
-
     m_modelConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("numberOfResults"))
   {
     m_numberOfResults = jsonValue.GetInteger("numberOfResults");
-
     m_numberOfResultsHasBeenSet = true;
   }
-
   return *this;
 }
 

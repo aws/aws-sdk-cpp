@@ -10,15 +10,6 @@
 using namespace Aws::AutoScaling::Model;
 using namespace Aws::Utils;
 
-DescribeAutoScalingGroupsRequest::DescribeAutoScalingGroupsRequest() : 
-    m_autoScalingGroupNamesHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_filtersHasBeenSet(false)
-{
-}
-
 Aws::String DescribeAutoScalingGroupsRequest::SerializePayload() const
 {
   Aws::StringStream ss;

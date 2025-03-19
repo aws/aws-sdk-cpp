@@ -12,11 +12,6 @@ using namespace Aws::DataSync::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeLocationAzureBlobRequest::DescribeLocationAzureBlobRequest() : 
-    m_locationArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeLocationAzureBlobRequest::SerializePayload() const
 {
   JsonValue payload;

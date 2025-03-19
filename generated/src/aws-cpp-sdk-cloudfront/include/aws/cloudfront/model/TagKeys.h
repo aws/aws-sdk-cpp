@@ -32,7 +32,7 @@ namespace Model
   class TagKeys
   {
   public:
-    AWS_CLOUDFRONT_API TagKeys();
+    AWS_CLOUDFRONT_API TagKeys() = default;
     AWS_CLOUDFRONT_API TagKeys(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_CLOUDFRONT_API TagKeys& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,15 +43,14 @@ namespace Model
     /**
      * <p>A complex type that contains <code>Tag</code> key elements.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetItems() const{ return m_items; }
+    inline const Aws::Vector<Aws::String>& GetItems() const { return m_items; }
     inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
-    inline void SetItems(const Aws::Vector<Aws::String>& value) { m_itemsHasBeenSet = true; m_items = value; }
-    inline void SetItems(Aws::Vector<Aws::String>&& value) { m_itemsHasBeenSet = true; m_items = std::move(value); }
-    inline TagKeys& WithItems(const Aws::Vector<Aws::String>& value) { SetItems(value); return *this;}
-    inline TagKeys& WithItems(Aws::Vector<Aws::String>&& value) { SetItems(std::move(value)); return *this;}
-    inline TagKeys& AddItems(const Aws::String& value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
-    inline TagKeys& AddItems(Aws::String&& value) { m_itemsHasBeenSet = true; m_items.push_back(std::move(value)); return *this; }
-    inline TagKeys& AddItems(const char* value) { m_itemsHasBeenSet = true; m_items.push_back(value); return *this; }
+    template<typename ItemsT = Aws::Vector<Aws::String>>
+    void SetItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items = std::forward<ItemsT>(value); }
+    template<typename ItemsT = Aws::Vector<Aws::String>>
+    TagKeys& WithItems(ItemsT&& value) { SetItems(std::forward<ItemsT>(value)); return *this;}
+    template<typename ItemsT = Aws::String>
+    TagKeys& AddItems(ItemsT&& value) { m_itemsHasBeenSet = true; m_items.emplace_back(std::forward<ItemsT>(value)); return *this; }
     ///@}
   private:
 

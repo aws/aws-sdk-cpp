@@ -18,13 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-Endpoint::Endpoint() : 
-    m_urlHasBeenSet(false)
-{
-}
-
 Endpoint::Endpoint(JsonView jsonValue)
-  : Endpoint()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Endpoint& Endpoint::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("url"))
   {
     m_url = jsonValue.GetString("url");
-
     m_urlHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-PipeTargetStateMachineParameters::PipeTargetStateMachineParameters() : 
-    m_invocationType(PipeTargetInvocationType::NOT_SET),
-    m_invocationTypeHasBeenSet(false)
-{
-}
-
 PipeTargetStateMachineParameters::PipeTargetStateMachineParameters(JsonView jsonValue)
-  : PipeTargetStateMachineParameters()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ PipeTargetStateMachineParameters& PipeTargetStateMachineParameters::operator =(J
   if(jsonValue.ValueExists("InvocationType"))
   {
     m_invocationType = PipeTargetInvocationTypeMapper::GetPipeTargetInvocationTypeForName(jsonValue.GetString("InvocationType"));
-
     m_invocationTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

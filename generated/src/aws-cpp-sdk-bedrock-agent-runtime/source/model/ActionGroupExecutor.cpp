@@ -18,15 +18,7 @@ namespace BedrockAgentRuntime
 namespace Model
 {
 
-ActionGroupExecutor::ActionGroupExecutor() : 
-    m_customControl(CustomControlMethod::NOT_SET),
-    m_customControlHasBeenSet(false),
-    m_lambdaHasBeenSet(false)
-{
-}
-
 ActionGroupExecutor::ActionGroupExecutor(JsonView jsonValue)
-  : ActionGroupExecutor()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ActionGroupExecutor& ActionGroupExecutor::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("customControl"))
   {
     m_customControl = CustomControlMethodMapper::GetCustomControlMethodForName(jsonValue.GetString("customControl"));
-
     m_customControlHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lambda"))
   {
     m_lambda = jsonValue.GetString("lambda");
-
     m_lambdaHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class GetManagedViewRequest : public ResourceExplorer2Request
   {
   public:
-    AWS_RESOURCEEXPLORER2_API GetManagedViewRequest();
+    AWS_RESOURCEEXPLORER2_API GetManagedViewRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -36,14 +36,12 @@ namespace Model
     /**
      * <p>The Amazon resource name (ARN) of the managed view.</p>
      */
-    inline const Aws::String& GetManagedViewArn() const{ return m_managedViewArn; }
+    inline const Aws::String& GetManagedViewArn() const { return m_managedViewArn; }
     inline bool ManagedViewArnHasBeenSet() const { return m_managedViewArnHasBeenSet; }
-    inline void SetManagedViewArn(const Aws::String& value) { m_managedViewArnHasBeenSet = true; m_managedViewArn = value; }
-    inline void SetManagedViewArn(Aws::String&& value) { m_managedViewArnHasBeenSet = true; m_managedViewArn = std::move(value); }
-    inline void SetManagedViewArn(const char* value) { m_managedViewArnHasBeenSet = true; m_managedViewArn.assign(value); }
-    inline GetManagedViewRequest& WithManagedViewArn(const Aws::String& value) { SetManagedViewArn(value); return *this;}
-    inline GetManagedViewRequest& WithManagedViewArn(Aws::String&& value) { SetManagedViewArn(std::move(value)); return *this;}
-    inline GetManagedViewRequest& WithManagedViewArn(const char* value) { SetManagedViewArn(value); return *this;}
+    template<typename ManagedViewArnT = Aws::String>
+    void SetManagedViewArn(ManagedViewArnT&& value) { m_managedViewArnHasBeenSet = true; m_managedViewArn = std::forward<ManagedViewArnT>(value); }
+    template<typename ManagedViewArnT = Aws::String>
+    GetManagedViewRequest& WithManagedViewArn(ManagedViewArnT&& value) { SetManagedViewArn(std::forward<ManagedViewArnT>(value)); return *this;}
     ///@}
   private:
 

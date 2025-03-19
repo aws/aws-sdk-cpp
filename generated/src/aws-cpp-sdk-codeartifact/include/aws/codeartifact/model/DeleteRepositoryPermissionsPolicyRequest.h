@@ -25,7 +25,7 @@ namespace Model
   class DeleteRepositoryPermissionsPolicyRequest : public CodeArtifactRequest
   {
   public:
-    AWS_CODEARTIFACT_API DeleteRepositoryPermissionsPolicyRequest();
+    AWS_CODEARTIFACT_API DeleteRepositoryPermissionsPolicyRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,12 @@ namespace Model
      * <p> The name of the domain that contains the repository associated with the
      * resource policy to be deleted. </p>
      */
-    inline const Aws::String& GetDomain() const{ return m_domain; }
+    inline const Aws::String& GetDomain() const { return m_domain; }
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
-    inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
-    inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
-    inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
-    inline DeleteRepositoryPermissionsPolicyRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
-    inline DeleteRepositoryPermissionsPolicyRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
-    inline DeleteRepositoryPermissionsPolicyRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
+    template<typename DomainT = Aws::String>
+    void SetDomain(DomainT&& value) { m_domainHasBeenSet = true; m_domain = std::forward<DomainT>(value); }
+    template<typename DomainT = Aws::String>
+    DeleteRepositoryPermissionsPolicyRequest& WithDomain(DomainT&& value) { SetDomain(std::forward<DomainT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p> The 12-digit account number of the Amazon Web Services account that owns the
      * domain. It does not include dashes or spaces. </p>
      */
-    inline const Aws::String& GetDomainOwner() const{ return m_domainOwner; }
+    inline const Aws::String& GetDomainOwner() const { return m_domainOwner; }
     inline bool DomainOwnerHasBeenSet() const { return m_domainOwnerHasBeenSet; }
-    inline void SetDomainOwner(const Aws::String& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = value; }
-    inline void SetDomainOwner(Aws::String&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::move(value); }
-    inline void SetDomainOwner(const char* value) { m_domainOwnerHasBeenSet = true; m_domainOwner.assign(value); }
-    inline DeleteRepositoryPermissionsPolicyRequest& WithDomainOwner(const Aws::String& value) { SetDomainOwner(value); return *this;}
-    inline DeleteRepositoryPermissionsPolicyRequest& WithDomainOwner(Aws::String&& value) { SetDomainOwner(std::move(value)); return *this;}
-    inline DeleteRepositoryPermissionsPolicyRequest& WithDomainOwner(const char* value) { SetDomainOwner(value); return *this;}
+    template<typename DomainOwnerT = Aws::String>
+    void SetDomainOwner(DomainOwnerT&& value) { m_domainOwnerHasBeenSet = true; m_domainOwner = std::forward<DomainOwnerT>(value); }
+    template<typename DomainOwnerT = Aws::String>
+    DeleteRepositoryPermissionsPolicyRequest& WithDomainOwner(DomainOwnerT&& value) { SetDomainOwner(std::forward<DomainOwnerT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -73,14 +69,12 @@ namespace Model
      * <p> The name of the repository that is associated with the resource policy to be
      * deleted </p>
      */
-    inline const Aws::String& GetRepository() const{ return m_repository; }
+    inline const Aws::String& GetRepository() const { return m_repository; }
     inline bool RepositoryHasBeenSet() const { return m_repositoryHasBeenSet; }
-    inline void SetRepository(const Aws::String& value) { m_repositoryHasBeenSet = true; m_repository = value; }
-    inline void SetRepository(Aws::String&& value) { m_repositoryHasBeenSet = true; m_repository = std::move(value); }
-    inline void SetRepository(const char* value) { m_repositoryHasBeenSet = true; m_repository.assign(value); }
-    inline DeleteRepositoryPermissionsPolicyRequest& WithRepository(const Aws::String& value) { SetRepository(value); return *this;}
-    inline DeleteRepositoryPermissionsPolicyRequest& WithRepository(Aws::String&& value) { SetRepository(std::move(value)); return *this;}
-    inline DeleteRepositoryPermissionsPolicyRequest& WithRepository(const char* value) { SetRepository(value); return *this;}
+    template<typename RepositoryT = Aws::String>
+    void SetRepository(RepositoryT&& value) { m_repositoryHasBeenSet = true; m_repository = std::forward<RepositoryT>(value); }
+    template<typename RepositoryT = Aws::String>
+    DeleteRepositoryPermissionsPolicyRequest& WithRepository(RepositoryT&& value) { SetRepository(std::forward<RepositoryT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -89,14 +83,12 @@ namespace Model
      * revision is used for optimistic locking, which prevents others from accidentally
      * overwriting your changes to the repository's resource policy. </p>
      */
-    inline const Aws::String& GetPolicyRevision() const{ return m_policyRevision; }
+    inline const Aws::String& GetPolicyRevision() const { return m_policyRevision; }
     inline bool PolicyRevisionHasBeenSet() const { return m_policyRevisionHasBeenSet; }
-    inline void SetPolicyRevision(const Aws::String& value) { m_policyRevisionHasBeenSet = true; m_policyRevision = value; }
-    inline void SetPolicyRevision(Aws::String&& value) { m_policyRevisionHasBeenSet = true; m_policyRevision = std::move(value); }
-    inline void SetPolicyRevision(const char* value) { m_policyRevisionHasBeenSet = true; m_policyRevision.assign(value); }
-    inline DeleteRepositoryPermissionsPolicyRequest& WithPolicyRevision(const Aws::String& value) { SetPolicyRevision(value); return *this;}
-    inline DeleteRepositoryPermissionsPolicyRequest& WithPolicyRevision(Aws::String&& value) { SetPolicyRevision(std::move(value)); return *this;}
-    inline DeleteRepositoryPermissionsPolicyRequest& WithPolicyRevision(const char* value) { SetPolicyRevision(value); return *this;}
+    template<typename PolicyRevisionT = Aws::String>
+    void SetPolicyRevision(PolicyRevisionT&& value) { m_policyRevisionHasBeenSet = true; m_policyRevision = std::forward<PolicyRevisionT>(value); }
+    template<typename PolicyRevisionT = Aws::String>
+    DeleteRepositoryPermissionsPolicyRequest& WithPolicyRevision(PolicyRevisionT&& value) { SetPolicyRevision(std::forward<PolicyRevisionT>(value)); return *this;}
     ///@}
   private:
 

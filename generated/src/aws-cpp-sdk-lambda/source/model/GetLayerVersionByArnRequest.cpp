@@ -15,11 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-GetLayerVersionByArnRequest::GetLayerVersionByArnRequest() : 
-    m_arnHasBeenSet(false)
-{
-}
-
 Aws::String GetLayerVersionByArnRequest::SerializePayload() const
 {
   return {};

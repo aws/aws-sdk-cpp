@@ -12,12 +12,6 @@ using namespace Aws::CognitoIdentityProvider::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ForgetDeviceRequest::ForgetDeviceRequest() : 
-    m_accessTokenHasBeenSet(false),
-    m_deviceKeyHasBeenSet(false)
-{
-}
-
 Aws::String ForgetDeviceRequest::SerializePayload() const
 {
   JsonValue payload;

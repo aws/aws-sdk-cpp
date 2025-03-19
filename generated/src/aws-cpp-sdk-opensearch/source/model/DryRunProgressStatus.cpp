@@ -18,17 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-DryRunProgressStatus::DryRunProgressStatus() : 
-    m_dryRunIdHasBeenSet(false),
-    m_dryRunStatusHasBeenSet(false),
-    m_creationDateHasBeenSet(false),
-    m_updateDateHasBeenSet(false),
-    m_validationFailuresHasBeenSet(false)
-{
-}
-
 DryRunProgressStatus::DryRunProgressStatus(JsonView jsonValue)
-  : DryRunProgressStatus()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ DryRunProgressStatus& DryRunProgressStatus::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DryRunId"))
   {
     m_dryRunId = jsonValue.GetString("DryRunId");
-
     m_dryRunIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DryRunStatus"))
   {
     m_dryRunStatus = jsonValue.GetString("DryRunStatus");
-
     m_dryRunStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreationDate"))
   {
     m_creationDate = jsonValue.GetString("CreationDate");
-
     m_creationDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdateDate"))
   {
     m_updateDate = jsonValue.GetString("UpdateDate");
-
     m_updateDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ValidationFailures"))
   {
     Aws::Utils::Array<JsonView> validationFailuresJsonList = jsonValue.GetArray("ValidationFailures");
@@ -72,7 +54,6 @@ DryRunProgressStatus& DryRunProgressStatus::operator =(JsonView jsonValue)
     }
     m_validationFailuresHasBeenSet = true;
   }
-
   return *this;
 }
 

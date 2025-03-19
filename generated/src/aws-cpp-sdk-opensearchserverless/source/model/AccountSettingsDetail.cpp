@@ -18,13 +18,7 @@ namespace OpenSearchServerless
 namespace Model
 {
 
-AccountSettingsDetail::AccountSettingsDetail() : 
-    m_capacityLimitsHasBeenSet(false)
-{
-}
-
 AccountSettingsDetail::AccountSettingsDetail(JsonView jsonValue)
-  : AccountSettingsDetail()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AccountSettingsDetail& AccountSettingsDetail::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("capacityLimits"))
   {
     m_capacityLimits = jsonValue.GetObject("capacityLimits");
-
     m_capacityLimitsHasBeenSet = true;
   }
-
   return *this;
 }
 

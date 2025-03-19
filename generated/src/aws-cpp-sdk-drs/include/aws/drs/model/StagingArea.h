@@ -32,7 +32,7 @@ namespace Model
   class StagingArea
   {
   public:
-    AWS_DRS_API StagingArea();
+    AWS_DRS_API StagingArea() = default;
     AWS_DRS_API StagingArea(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API StagingArea& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DRS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,14 +44,12 @@ namespace Model
      * source server. In this case StagingArea$status will have value
      * EXTENSION_ERROR</p>
      */
-    inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+    inline const Aws::String& GetErrorMessage() const { return m_errorMessage; }
     inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
-    inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
-    inline void SetErrorMessage(Aws::String&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::move(value); }
-    inline void SetErrorMessage(const char* value) { m_errorMessageHasBeenSet = true; m_errorMessage.assign(value); }
-    inline StagingArea& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
-    inline StagingArea& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
-    inline StagingArea& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
+    template<typename ErrorMessageT = Aws::String>
+    void SetErrorMessage(ErrorMessageT&& value) { m_errorMessageHasBeenSet = true; m_errorMessage = std::forward<ErrorMessageT>(value); }
+    template<typename ErrorMessageT = Aws::String>
+    StagingArea& WithErrorMessage(ErrorMessageT&& value) { SetErrorMessage(std::forward<ErrorMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,28 +57,24 @@ namespace Model
      * <p>Account ID of the account to which source server belongs. If this source
      * server is extended - shows Account ID of staging source server.</p>
      */
-    inline const Aws::String& GetStagingAccountID() const{ return m_stagingAccountID; }
+    inline const Aws::String& GetStagingAccountID() const { return m_stagingAccountID; }
     inline bool StagingAccountIDHasBeenSet() const { return m_stagingAccountIDHasBeenSet; }
-    inline void SetStagingAccountID(const Aws::String& value) { m_stagingAccountIDHasBeenSet = true; m_stagingAccountID = value; }
-    inline void SetStagingAccountID(Aws::String&& value) { m_stagingAccountIDHasBeenSet = true; m_stagingAccountID = std::move(value); }
-    inline void SetStagingAccountID(const char* value) { m_stagingAccountIDHasBeenSet = true; m_stagingAccountID.assign(value); }
-    inline StagingArea& WithStagingAccountID(const Aws::String& value) { SetStagingAccountID(value); return *this;}
-    inline StagingArea& WithStagingAccountID(Aws::String&& value) { SetStagingAccountID(std::move(value)); return *this;}
-    inline StagingArea& WithStagingAccountID(const char* value) { SetStagingAccountID(value); return *this;}
+    template<typename StagingAccountIDT = Aws::String>
+    void SetStagingAccountID(StagingAccountIDT&& value) { m_stagingAccountIDHasBeenSet = true; m_stagingAccountID = std::forward<StagingAccountIDT>(value); }
+    template<typename StagingAccountIDT = Aws::String>
+    StagingArea& WithStagingAccountID(StagingAccountIDT&& value) { SetStagingAccountID(std::forward<StagingAccountIDT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Arn of the staging source server if this source server is extended</p>
      */
-    inline const Aws::String& GetStagingSourceServerArn() const{ return m_stagingSourceServerArn; }
+    inline const Aws::String& GetStagingSourceServerArn() const { return m_stagingSourceServerArn; }
     inline bool StagingSourceServerArnHasBeenSet() const { return m_stagingSourceServerArnHasBeenSet; }
-    inline void SetStagingSourceServerArn(const Aws::String& value) { m_stagingSourceServerArnHasBeenSet = true; m_stagingSourceServerArn = value; }
-    inline void SetStagingSourceServerArn(Aws::String&& value) { m_stagingSourceServerArnHasBeenSet = true; m_stagingSourceServerArn = std::move(value); }
-    inline void SetStagingSourceServerArn(const char* value) { m_stagingSourceServerArnHasBeenSet = true; m_stagingSourceServerArn.assign(value); }
-    inline StagingArea& WithStagingSourceServerArn(const Aws::String& value) { SetStagingSourceServerArn(value); return *this;}
-    inline StagingArea& WithStagingSourceServerArn(Aws::String&& value) { SetStagingSourceServerArn(std::move(value)); return *this;}
-    inline StagingArea& WithStagingSourceServerArn(const char* value) { SetStagingSourceServerArn(value); return *this;}
+    template<typename StagingSourceServerArnT = Aws::String>
+    void SetStagingSourceServerArn(StagingSourceServerArnT&& value) { m_stagingSourceServerArnHasBeenSet = true; m_stagingSourceServerArn = std::forward<StagingSourceServerArnT>(value); }
+    template<typename StagingSourceServerArnT = Aws::String>
+    StagingArea& WithStagingSourceServerArn(StagingSourceServerArnT&& value) { SetStagingSourceServerArn(std::forward<StagingSourceServerArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -93,12 +87,10 @@ namespace Model
      * staging source server. In this case, errorMessage field will contain an error
      * message that explains what happened.</p>
      */
-    inline const ExtensionStatus& GetStatus() const{ return m_status; }
+    inline ExtensionStatus GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const ExtensionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(ExtensionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline StagingArea& WithStatus(const ExtensionStatus& value) { SetStatus(value); return *this;}
-    inline StagingArea& WithStatus(ExtensionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetStatus(ExtensionStatus value) { m_statusHasBeenSet = true; m_status = value; }
+    inline StagingArea& WithStatus(ExtensionStatus value) { SetStatus(value); return *this;}
     ///@}
   private:
 
@@ -111,7 +103,7 @@ namespace Model
     Aws::String m_stagingSourceServerArn;
     bool m_stagingSourceServerArnHasBeenSet = false;
 
-    ExtensionStatus m_status;
+    ExtensionStatus m_status{ExtensionStatus::NOT_SET};
     bool m_statusHasBeenSet = false;
   };
 

@@ -31,7 +31,7 @@ namespace Model
   class SourceCampaign
   {
   public:
-    AWS_CONNECT_API SourceCampaign();
+    AWS_CONNECT_API SourceCampaign() = default;
     AWS_CONNECT_API SourceCampaign(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API SourceCampaign& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,28 +41,24 @@ namespace Model
     /**
      * <p>A unique identifier for a campaign.</p>
      */
-    inline const Aws::String& GetCampaignId() const{ return m_campaignId; }
+    inline const Aws::String& GetCampaignId() const { return m_campaignId; }
     inline bool CampaignIdHasBeenSet() const { return m_campaignIdHasBeenSet; }
-    inline void SetCampaignId(const Aws::String& value) { m_campaignIdHasBeenSet = true; m_campaignId = value; }
-    inline void SetCampaignId(Aws::String&& value) { m_campaignIdHasBeenSet = true; m_campaignId = std::move(value); }
-    inline void SetCampaignId(const char* value) { m_campaignIdHasBeenSet = true; m_campaignId.assign(value); }
-    inline SourceCampaign& WithCampaignId(const Aws::String& value) { SetCampaignId(value); return *this;}
-    inline SourceCampaign& WithCampaignId(Aws::String&& value) { SetCampaignId(std::move(value)); return *this;}
-    inline SourceCampaign& WithCampaignId(const char* value) { SetCampaignId(value); return *this;}
+    template<typename CampaignIdT = Aws::String>
+    void SetCampaignId(CampaignIdT&& value) { m_campaignIdHasBeenSet = true; m_campaignId = std::forward<CampaignIdT>(value); }
+    template<typename CampaignIdT = Aws::String>
+    SourceCampaign& WithCampaignId(CampaignIdT&& value) { SetCampaignId(std::forward<CampaignIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for a each request part of same campaign.</p>
      */
-    inline const Aws::String& GetOutboundRequestId() const{ return m_outboundRequestId; }
+    inline const Aws::String& GetOutboundRequestId() const { return m_outboundRequestId; }
     inline bool OutboundRequestIdHasBeenSet() const { return m_outboundRequestIdHasBeenSet; }
-    inline void SetOutboundRequestId(const Aws::String& value) { m_outboundRequestIdHasBeenSet = true; m_outboundRequestId = value; }
-    inline void SetOutboundRequestId(Aws::String&& value) { m_outboundRequestIdHasBeenSet = true; m_outboundRequestId = std::move(value); }
-    inline void SetOutboundRequestId(const char* value) { m_outboundRequestIdHasBeenSet = true; m_outboundRequestId.assign(value); }
-    inline SourceCampaign& WithOutboundRequestId(const Aws::String& value) { SetOutboundRequestId(value); return *this;}
-    inline SourceCampaign& WithOutboundRequestId(Aws::String&& value) { SetOutboundRequestId(std::move(value)); return *this;}
-    inline SourceCampaign& WithOutboundRequestId(const char* value) { SetOutboundRequestId(value); return *this;}
+    template<typename OutboundRequestIdT = Aws::String>
+    void SetOutboundRequestId(OutboundRequestIdT&& value) { m_outboundRequestIdHasBeenSet = true; m_outboundRequestId = std::forward<OutboundRequestIdT>(value); }
+    template<typename OutboundRequestIdT = Aws::String>
+    SourceCampaign& WithOutboundRequestId(OutboundRequestIdT&& value) { SetOutboundRequestId(std::forward<OutboundRequestIdT>(value)); return *this;}
     ///@}
   private:
 

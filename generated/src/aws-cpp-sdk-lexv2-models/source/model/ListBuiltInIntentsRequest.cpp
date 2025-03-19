@@ -12,15 +12,6 @@ using namespace Aws::LexModelsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListBuiltInIntentsRequest::ListBuiltInIntentsRequest() : 
-    m_localeIdHasBeenSet(false),
-    m_sortByHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListBuiltInIntentsRequest::SerializePayload() const
 {
   JsonValue payload;

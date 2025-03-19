@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-PutRecordBatchResult::PutRecordBatchResult() : 
-    m_failedPutCount(0),
-    m_encrypted(false)
-{
-}
-
 PutRecordBatchResult::PutRecordBatchResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : PutRecordBatchResult()
 {
   *this = result;
 }
@@ -35,15 +28,13 @@ PutRecordBatchResult& PutRecordBatchResult::operator =(const Aws::AmazonWebServi
   if(jsonValue.ValueExists("FailedPutCount"))
   {
     m_failedPutCount = jsonValue.GetInteger("FailedPutCount");
-
+    m_failedPutCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Encrypted"))
   {
     m_encrypted = jsonValue.GetBool("Encrypted");
-
+    m_encryptedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestResponses"))
   {
     Aws::Utils::Array<JsonView> requestResponsesJsonList = jsonValue.GetArray("RequestResponses");
@@ -51,14 +42,15 @@ PutRecordBatchResult& PutRecordBatchResult::operator =(const Aws::AmazonWebServi
     {
       m_requestResponses.push_back(requestResponsesJsonList[requestResponsesIndex].AsObject());
     }
+    m_requestResponsesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

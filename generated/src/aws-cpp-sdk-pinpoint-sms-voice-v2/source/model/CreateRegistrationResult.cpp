@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateRegistrationResult::CreateRegistrationResult() : 
-    m_registrationStatus(RegistrationStatus::NOT_SET),
-    m_currentVersionNumber(0)
-{
-}
-
 CreateRegistrationResult::CreateRegistrationResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : CreateRegistrationResult()
 {
   *this = result;
 }
@@ -35,33 +28,28 @@ CreateRegistrationResult& CreateRegistrationResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("RegistrationArn"))
   {
     m_registrationArn = jsonValue.GetString("RegistrationArn");
-
+    m_registrationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationId"))
   {
     m_registrationId = jsonValue.GetString("RegistrationId");
-
+    m_registrationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationType"))
   {
     m_registrationType = jsonValue.GetString("RegistrationType");
-
+    m_registrationTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RegistrationStatus"))
   {
     m_registrationStatus = RegistrationStatusMapper::GetRegistrationStatusForName(jsonValue.GetString("RegistrationStatus"));
-
+    m_registrationStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CurrentVersionNumber"))
   {
     m_currentVersionNumber = jsonValue.GetInt64("CurrentVersionNumber");
-
+    m_currentVersionNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AdditionalAttributes"))
   {
     Aws::Map<Aws::String, JsonView> additionalAttributesJsonMap = jsonValue.GetObject("AdditionalAttributes").GetAllObjects();
@@ -69,8 +57,8 @@ CreateRegistrationResult& CreateRegistrationResult::operator =(const Aws::Amazon
     {
       m_additionalAttributes[additionalAttributesItem.first] = additionalAttributesItem.second.AsString();
     }
+    m_additionalAttributesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -78,20 +66,20 @@ CreateRegistrationResult& CreateRegistrationResult::operator =(const Aws::Amazon
     {
       m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
     }
+    m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimestamp"))
   {
     m_createdTimestamp = jsonValue.GetDouble("CreatedTimestamp");
-
+    m_createdTimestampHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

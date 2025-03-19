@@ -18,24 +18,7 @@ namespace CloudWatchRUM
 namespace Model
 {
 
-AppMonitorConfiguration::AppMonitorConfiguration() : 
-    m_allowCookies(false),
-    m_allowCookiesHasBeenSet(false),
-    m_enableXRay(false),
-    m_enableXRayHasBeenSet(false),
-    m_excludedPagesHasBeenSet(false),
-    m_favoritePagesHasBeenSet(false),
-    m_guestRoleArnHasBeenSet(false),
-    m_identityPoolIdHasBeenSet(false),
-    m_includedPagesHasBeenSet(false),
-    m_sessionSampleRate(0.0),
-    m_sessionSampleRateHasBeenSet(false),
-    m_telemetriesHasBeenSet(false)
-{
-}
-
 AppMonitorConfiguration::AppMonitorConfiguration(JsonView jsonValue)
-  : AppMonitorConfiguration()
 {
   *this = jsonValue;
 }
@@ -45,17 +28,13 @@ AppMonitorConfiguration& AppMonitorConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AllowCookies"))
   {
     m_allowCookies = jsonValue.GetBool("AllowCookies");
-
     m_allowCookiesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EnableXRay"))
   {
     m_enableXRay = jsonValue.GetBool("EnableXRay");
-
     m_enableXRayHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ExcludedPages"))
   {
     Aws::Utils::Array<JsonView> excludedPagesJsonList = jsonValue.GetArray("ExcludedPages");
@@ -65,7 +44,6 @@ AppMonitorConfiguration& AppMonitorConfiguration::operator =(JsonView jsonValue)
     }
     m_excludedPagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("FavoritePages"))
   {
     Aws::Utils::Array<JsonView> favoritePagesJsonList = jsonValue.GetArray("FavoritePages");
@@ -75,21 +53,16 @@ AppMonitorConfiguration& AppMonitorConfiguration::operator =(JsonView jsonValue)
     }
     m_favoritePagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GuestRoleArn"))
   {
     m_guestRoleArn = jsonValue.GetString("GuestRoleArn");
-
     m_guestRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IdentityPoolId"))
   {
     m_identityPoolId = jsonValue.GetString("IdentityPoolId");
-
     m_identityPoolIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IncludedPages"))
   {
     Aws::Utils::Array<JsonView> includedPagesJsonList = jsonValue.GetArray("IncludedPages");
@@ -99,14 +72,11 @@ AppMonitorConfiguration& AppMonitorConfiguration::operator =(JsonView jsonValue)
     }
     m_includedPagesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SessionSampleRate"))
   {
     m_sessionSampleRate = jsonValue.GetDouble("SessionSampleRate");
-
     m_sessionSampleRateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Telemetries"))
   {
     Aws::Utils::Array<JsonView> telemetriesJsonList = jsonValue.GetArray("Telemetries");
@@ -116,7 +86,6 @@ AppMonitorConfiguration& AppMonitorConfiguration::operator =(JsonView jsonValue)
     }
     m_telemetriesHasBeenSet = true;
   }
-
   return *this;
 }
 

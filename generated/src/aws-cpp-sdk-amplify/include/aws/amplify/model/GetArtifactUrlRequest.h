@@ -25,7 +25,7 @@ namespace Model
   class GetArtifactUrlRequest : public AmplifyRequest
   {
   public:
-    AWS_AMPLIFY_API GetArtifactUrlRequest();
+    AWS_AMPLIFY_API GetArtifactUrlRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The unique ID for an artifact. </p>
      */
-    inline const Aws::String& GetArtifactId() const{ return m_artifactId; }
+    inline const Aws::String& GetArtifactId() const { return m_artifactId; }
     inline bool ArtifactIdHasBeenSet() const { return m_artifactIdHasBeenSet; }
-    inline void SetArtifactId(const Aws::String& value) { m_artifactIdHasBeenSet = true; m_artifactId = value; }
-    inline void SetArtifactId(Aws::String&& value) { m_artifactIdHasBeenSet = true; m_artifactId = std::move(value); }
-    inline void SetArtifactId(const char* value) { m_artifactIdHasBeenSet = true; m_artifactId.assign(value); }
-    inline GetArtifactUrlRequest& WithArtifactId(const Aws::String& value) { SetArtifactId(value); return *this;}
-    inline GetArtifactUrlRequest& WithArtifactId(Aws::String&& value) { SetArtifactId(std::move(value)); return *this;}
-    inline GetArtifactUrlRequest& WithArtifactId(const char* value) { SetArtifactId(value); return *this;}
+    template<typename ArtifactIdT = Aws::String>
+    void SetArtifactId(ArtifactIdT&& value) { m_artifactIdHasBeenSet = true; m_artifactId = std::forward<ArtifactIdT>(value); }
+    template<typename ArtifactIdT = Aws::String>
+    GetArtifactUrlRequest& WithArtifactId(ArtifactIdT&& value) { SetArtifactId(std::forward<ArtifactIdT>(value)); return *this;}
     ///@}
   private:
 

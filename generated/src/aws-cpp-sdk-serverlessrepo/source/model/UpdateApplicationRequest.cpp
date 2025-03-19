@@ -12,17 +12,6 @@ using namespace Aws::ServerlessApplicationRepository::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateApplicationRequest::UpdateApplicationRequest() : 
-    m_applicationIdHasBeenSet(false),
-    m_authorHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_homePageUrlHasBeenSet(false),
-    m_labelsHasBeenSet(false),
-    m_readmeBodyHasBeenSet(false),
-    m_readmeUrlHasBeenSet(false)
-{
-}
-
 Aws::String UpdateApplicationRequest::SerializePayload() const
 {
   JsonValue payload;

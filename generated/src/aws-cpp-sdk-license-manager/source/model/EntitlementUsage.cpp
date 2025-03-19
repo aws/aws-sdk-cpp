@@ -18,17 +18,7 @@ namespace LicenseManager
 namespace Model
 {
 
-EntitlementUsage::EntitlementUsage() : 
-    m_nameHasBeenSet(false),
-    m_consumedValueHasBeenSet(false),
-    m_maxCountHasBeenSet(false),
-    m_unit(EntitlementDataUnit::NOT_SET),
-    m_unitHasBeenSet(false)
-{
-}
-
 EntitlementUsage::EntitlementUsage(JsonView jsonValue)
-  : EntitlementUsage()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ EntitlementUsage& EntitlementUsage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConsumedValue"))
   {
     m_consumedValue = jsonValue.GetString("ConsumedValue");
-
     m_consumedValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MaxCount"))
   {
     m_maxCount = jsonValue.GetString("MaxCount");
-
     m_maxCountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Unit"))
   {
     m_unit = EntitlementDataUnitMapper::GetEntitlementDataUnitForName(jsonValue.GetString("Unit"));
-
     m_unitHasBeenSet = true;
   }
-
   return *this;
 }
 

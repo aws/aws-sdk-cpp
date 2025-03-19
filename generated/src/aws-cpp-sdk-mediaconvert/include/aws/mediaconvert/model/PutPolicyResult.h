@@ -28,7 +28,7 @@ namespace Model
   class PutPolicyResult
   {
   public:
-    AWS_MEDIACONVERT_API PutPolicyResult();
+    AWS_MEDIACONVERT_API PutPolicyResult() = default;
     AWS_MEDIACONVERT_API PutPolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MEDIACONVERT_API PutPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,28 +39,28 @@ namespace Model
      * information about MediaConvert policies, see the user guide at
      * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
-    inline const Policy& GetPolicy() const{ return m_policy; }
-    inline void SetPolicy(const Policy& value) { m_policy = value; }
-    inline void SetPolicy(Policy&& value) { m_policy = std::move(value); }
-    inline PutPolicyResult& WithPolicy(const Policy& value) { SetPolicy(value); return *this;}
-    inline PutPolicyResult& WithPolicy(Policy&& value) { SetPolicy(std::move(value)); return *this;}
+    inline const Policy& GetPolicy() const { return m_policy; }
+    template<typename PolicyT = Policy>
+    void SetPolicy(PolicyT&& value) { m_policyHasBeenSet = true; m_policy = std::forward<PolicyT>(value); }
+    template<typename PolicyT = Policy>
+    PutPolicyResult& WithPolicy(PolicyT&& value) { SetPolicy(std::forward<PolicyT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline PutPolicyResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline PutPolicyResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline PutPolicyResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    PutPolicyResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Policy m_policy;
+    bool m_policyHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

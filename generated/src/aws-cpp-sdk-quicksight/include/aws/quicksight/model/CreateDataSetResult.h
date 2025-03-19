@@ -27,7 +27,7 @@ namespace Model
   class CreateDataSetResult
   {
   public:
-    AWS_QUICKSIGHT_API CreateDataSetResult();
+    AWS_QUICKSIGHT_API CreateDataSetResult() = default;
     AWS_QUICKSIGHT_API CreateDataSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_QUICKSIGHT_API CreateDataSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,13 +36,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the dataset.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline CreateDataSetResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline CreateDataSetResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline CreateDataSetResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    CreateDataSetResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -50,13 +48,11 @@ namespace Model
      * <p>The ID for the dataset that you want to create. This ID is unique per Amazon
      * Web Services Region for each Amazon Web Services account.</p>
      */
-    inline const Aws::String& GetDataSetId() const{ return m_dataSetId; }
-    inline void SetDataSetId(const Aws::String& value) { m_dataSetId = value; }
-    inline void SetDataSetId(Aws::String&& value) { m_dataSetId = std::move(value); }
-    inline void SetDataSetId(const char* value) { m_dataSetId.assign(value); }
-    inline CreateDataSetResult& WithDataSetId(const Aws::String& value) { SetDataSetId(value); return *this;}
-    inline CreateDataSetResult& WithDataSetId(Aws::String&& value) { SetDataSetId(std::move(value)); return *this;}
-    inline CreateDataSetResult& WithDataSetId(const char* value) { SetDataSetId(value); return *this;}
+    inline const Aws::String& GetDataSetId() const { return m_dataSetId; }
+    template<typename DataSetIdT = Aws::String>
+    void SetDataSetId(DataSetIdT&& value) { m_dataSetIdHasBeenSet = true; m_dataSetId = std::forward<DataSetIdT>(value); }
+    template<typename DataSetIdT = Aws::String>
+    CreateDataSetResult& WithDataSetId(DataSetIdT&& value) { SetDataSetId(std::forward<DataSetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,13 +60,11 @@ namespace Model
      * <p>The ARN for the ingestion, which is triggered as a result of dataset creation
      * if the import mode is SPICE.</p>
      */
-    inline const Aws::String& GetIngestionArn() const{ return m_ingestionArn; }
-    inline void SetIngestionArn(const Aws::String& value) { m_ingestionArn = value; }
-    inline void SetIngestionArn(Aws::String&& value) { m_ingestionArn = std::move(value); }
-    inline void SetIngestionArn(const char* value) { m_ingestionArn.assign(value); }
-    inline CreateDataSetResult& WithIngestionArn(const Aws::String& value) { SetIngestionArn(value); return *this;}
-    inline CreateDataSetResult& WithIngestionArn(Aws::String&& value) { SetIngestionArn(std::move(value)); return *this;}
-    inline CreateDataSetResult& WithIngestionArn(const char* value) { SetIngestionArn(value); return *this;}
+    inline const Aws::String& GetIngestionArn() const { return m_ingestionArn; }
+    template<typename IngestionArnT = Aws::String>
+    void SetIngestionArn(IngestionArnT&& value) { m_ingestionArnHasBeenSet = true; m_ingestionArn = std::forward<IngestionArnT>(value); }
+    template<typename IngestionArnT = Aws::String>
+    CreateDataSetResult& WithIngestionArn(IngestionArnT&& value) { SetIngestionArn(std::forward<IngestionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -78,47 +72,49 @@ namespace Model
      * <p>The ID of the ingestion, which is triggered as a result of dataset creation
      * if the import mode is SPICE.</p>
      */
-    inline const Aws::String& GetIngestionId() const{ return m_ingestionId; }
-    inline void SetIngestionId(const Aws::String& value) { m_ingestionId = value; }
-    inline void SetIngestionId(Aws::String&& value) { m_ingestionId = std::move(value); }
-    inline void SetIngestionId(const char* value) { m_ingestionId.assign(value); }
-    inline CreateDataSetResult& WithIngestionId(const Aws::String& value) { SetIngestionId(value); return *this;}
-    inline CreateDataSetResult& WithIngestionId(Aws::String&& value) { SetIngestionId(std::move(value)); return *this;}
-    inline CreateDataSetResult& WithIngestionId(const char* value) { SetIngestionId(value); return *this;}
+    inline const Aws::String& GetIngestionId() const { return m_ingestionId; }
+    template<typename IngestionIdT = Aws::String>
+    void SetIngestionId(IngestionIdT&& value) { m_ingestionIdHasBeenSet = true; m_ingestionId = std::forward<IngestionIdT>(value); }
+    template<typename IngestionIdT = Aws::String>
+    CreateDataSetResult& WithIngestionId(IngestionIdT&& value) { SetIngestionId(std::forward<IngestionIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateDataSetResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateDataSetResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateDataSetResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateDataSetResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The HTTP status of the request.</p>
      */
-    inline int GetStatus() const{ return m_status; }
-    inline void SetStatus(int value) { m_status = value; }
+    inline int GetStatus() const { return m_status; }
+    inline void SetStatus(int value) { m_statusHasBeenSet = true; m_status = value; }
     inline CreateDataSetResult& WithStatus(int value) { SetStatus(value); return *this;}
     ///@}
   private:
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_dataSetId;
+    bool m_dataSetIdHasBeenSet = false;
 
     Aws::String m_ingestionArn;
+    bool m_ingestionArnHasBeenSet = false;
 
     Aws::String m_ingestionId;
+    bool m_ingestionIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
 
-    int m_status;
+    int m_status{0};
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

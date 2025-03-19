@@ -41,7 +41,7 @@ namespace Model
   class LabelMatchStatement
   {
   public:
-    AWS_WAFV2_API LabelMatchStatement();
+    AWS_WAFV2_API LabelMatchStatement() = default;
     AWS_WAFV2_API LabelMatchStatement(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API LabelMatchStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,12 +52,10 @@ namespace Model
      * <p>Specify whether you want to match using the label name or just the namespace.
      * </p>
      */
-    inline const LabelMatchScope& GetScope() const{ return m_scope; }
+    inline LabelMatchScope GetScope() const { return m_scope; }
     inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
-    inline void SetScope(const LabelMatchScope& value) { m_scopeHasBeenSet = true; m_scope = value; }
-    inline void SetScope(LabelMatchScope&& value) { m_scopeHasBeenSet = true; m_scope = std::move(value); }
-    inline LabelMatchStatement& WithScope(const LabelMatchScope& value) { SetScope(value); return *this;}
-    inline LabelMatchStatement& WithScope(LabelMatchScope&& value) { SetScope(std::move(value)); return *this;}
+    inline void SetScope(LabelMatchScope value) { m_scopeHasBeenSet = true; m_scope = value; }
+    inline LabelMatchStatement& WithScope(LabelMatchScope value) { SetScope(value); return *this;}
     ///@}
 
     ///@{
@@ -74,18 +72,16 @@ namespace Model
      * components of a label must be separated by colon, for example
      * <code>NS1:NS2:name</code>.</p>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline LabelMatchStatement& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline LabelMatchStatement& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline LabelMatchStatement& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    LabelMatchStatement& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
   private:
 
-    LabelMatchScope m_scope;
+    LabelMatchScope m_scope{LabelMatchScope::NOT_SET};
     bool m_scopeHasBeenSet = false;
 
     Aws::String m_key;

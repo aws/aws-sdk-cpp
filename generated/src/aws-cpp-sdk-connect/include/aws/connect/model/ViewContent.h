@@ -33,7 +33,7 @@ namespace Model
   class ViewContent
   {
   public:
-    AWS_CONNECT_API ViewContent();
+    AWS_CONNECT_API ViewContent() = default;
     AWS_CONNECT_API ViewContent(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API ViewContent& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,43 +44,38 @@ namespace Model
      * <p>The data schema matching data that the view template must be provided to
      * render.</p>
      */
-    inline const Aws::String& GetInputSchema() const{ return m_inputSchema; }
+    inline const Aws::String& GetInputSchema() const { return m_inputSchema; }
     inline bool InputSchemaHasBeenSet() const { return m_inputSchemaHasBeenSet; }
-    inline void SetInputSchema(const Aws::String& value) { m_inputSchemaHasBeenSet = true; m_inputSchema = value; }
-    inline void SetInputSchema(Aws::String&& value) { m_inputSchemaHasBeenSet = true; m_inputSchema = std::move(value); }
-    inline void SetInputSchema(const char* value) { m_inputSchemaHasBeenSet = true; m_inputSchema.assign(value); }
-    inline ViewContent& WithInputSchema(const Aws::String& value) { SetInputSchema(value); return *this;}
-    inline ViewContent& WithInputSchema(Aws::String&& value) { SetInputSchema(std::move(value)); return *this;}
-    inline ViewContent& WithInputSchema(const char* value) { SetInputSchema(value); return *this;}
+    template<typename InputSchemaT = Aws::String>
+    void SetInputSchema(InputSchemaT&& value) { m_inputSchemaHasBeenSet = true; m_inputSchema = std::forward<InputSchemaT>(value); }
+    template<typename InputSchemaT = Aws::String>
+    ViewContent& WithInputSchema(InputSchemaT&& value) { SetInputSchema(std::forward<InputSchemaT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The view template representing the structure of the view.</p>
      */
-    inline const Aws::String& GetTemplate() const{ return m_template; }
+    inline const Aws::String& GetTemplate() const { return m_template; }
     inline bool TemplateHasBeenSet() const { return m_templateHasBeenSet; }
-    inline void SetTemplate(const Aws::String& value) { m_templateHasBeenSet = true; m_template = value; }
-    inline void SetTemplate(Aws::String&& value) { m_templateHasBeenSet = true; m_template = std::move(value); }
-    inline void SetTemplate(const char* value) { m_templateHasBeenSet = true; m_template.assign(value); }
-    inline ViewContent& WithTemplate(const Aws::String& value) { SetTemplate(value); return *this;}
-    inline ViewContent& WithTemplate(Aws::String&& value) { SetTemplate(std::move(value)); return *this;}
-    inline ViewContent& WithTemplate(const char* value) { SetTemplate(value); return *this;}
+    template<typename TemplateT = Aws::String>
+    void SetTemplate(TemplateT&& value) { m_templateHasBeenSet = true; m_template = std::forward<TemplateT>(value); }
+    template<typename TemplateT = Aws::String>
+    ViewContent& WithTemplate(TemplateT&& value) { SetTemplate(std::forward<TemplateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A list of possible actions from the view.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<Aws::String>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<Aws::String>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<Aws::String>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline ViewContent& WithActions(const Aws::Vector<Aws::String>& value) { SetActions(value); return *this;}
-    inline ViewContent& WithActions(Aws::Vector<Aws::String>&& value) { SetActions(std::move(value)); return *this;}
-    inline ViewContent& AddActions(const Aws::String& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline ViewContent& AddActions(Aws::String&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
-    inline ViewContent& AddActions(const char* value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
+    template<typename ActionsT = Aws::Vector<Aws::String>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<Aws::String>>
+    ViewContent& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = Aws::String>
+    ViewContent& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
   private:
 

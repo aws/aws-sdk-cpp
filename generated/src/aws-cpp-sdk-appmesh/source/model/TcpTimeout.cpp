@@ -18,13 +18,7 @@ namespace AppMesh
 namespace Model
 {
 
-TcpTimeout::TcpTimeout() : 
-    m_idleHasBeenSet(false)
-{
-}
-
 TcpTimeout::TcpTimeout(JsonView jsonValue)
-  : TcpTimeout()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ TcpTimeout& TcpTimeout::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("idle"))
   {
     m_idle = jsonValue.GetObject("idle");
-
     m_idleHasBeenSet = true;
   }
-
   return *this;
 }
 

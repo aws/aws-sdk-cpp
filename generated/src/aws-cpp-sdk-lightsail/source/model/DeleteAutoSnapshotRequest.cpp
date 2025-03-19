@@ -12,12 +12,6 @@ using namespace Aws::Lightsail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAutoSnapshotRequest::DeleteAutoSnapshotRequest() : 
-    m_resourceNameHasBeenSet(false),
-    m_dateHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAutoSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

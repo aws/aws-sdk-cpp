@@ -22,7 +22,7 @@ namespace Model
   class DisableAddOnRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API DisableAddOnRequest();
+    AWS_LIGHTSAIL_API DisableAddOnRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,30 +39,26 @@ namespace Model
     /**
      * <p>The add-on type to disable.</p>
      */
-    inline const AddOnType& GetAddOnType() const{ return m_addOnType; }
+    inline AddOnType GetAddOnType() const { return m_addOnType; }
     inline bool AddOnTypeHasBeenSet() const { return m_addOnTypeHasBeenSet; }
-    inline void SetAddOnType(const AddOnType& value) { m_addOnTypeHasBeenSet = true; m_addOnType = value; }
-    inline void SetAddOnType(AddOnType&& value) { m_addOnTypeHasBeenSet = true; m_addOnType = std::move(value); }
-    inline DisableAddOnRequest& WithAddOnType(const AddOnType& value) { SetAddOnType(value); return *this;}
-    inline DisableAddOnRequest& WithAddOnType(AddOnType&& value) { SetAddOnType(std::move(value)); return *this;}
+    inline void SetAddOnType(AddOnType value) { m_addOnTypeHasBeenSet = true; m_addOnType = value; }
+    inline DisableAddOnRequest& WithAddOnType(AddOnType value) { SetAddOnType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name of the source resource for which to disable the add-on.</p>
      */
-    inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+    inline const Aws::String& GetResourceName() const { return m_resourceName; }
     inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
-    inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
-    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
-    inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
-    inline DisableAddOnRequest& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
-    inline DisableAddOnRequest& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
-    inline DisableAddOnRequest& WithResourceName(const char* value) { SetResourceName(value); return *this;}
+    template<typename ResourceNameT = Aws::String>
+    void SetResourceName(ResourceNameT&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::forward<ResourceNameT>(value); }
+    template<typename ResourceNameT = Aws::String>
+    DisableAddOnRequest& WithResourceName(ResourceNameT&& value) { SetResourceName(std::forward<ResourceNameT>(value)); return *this;}
     ///@}
   private:
 
-    AddOnType m_addOnType;
+    AddOnType m_addOnType{AddOnType::NOT_SET};
     bool m_addOnTypeHasBeenSet = false;
 
     Aws::String m_resourceName;

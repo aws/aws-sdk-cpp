@@ -25,7 +25,7 @@ namespace Model
   class DeleteAgentRequest : public BedrockAgentRequest
   {
   public:
-    AWS_BEDROCKAGENT_API DeleteAgentRequest();
+    AWS_BEDROCKAGENT_API DeleteAgentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The unique identifier of the agent to delete.</p>
      */
-    inline const Aws::String& GetAgentId() const{ return m_agentId; }
+    inline const Aws::String& GetAgentId() const { return m_agentId; }
     inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
-    inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
-    inline void SetAgentId(Aws::String&& value) { m_agentIdHasBeenSet = true; m_agentId = std::move(value); }
-    inline void SetAgentId(const char* value) { m_agentIdHasBeenSet = true; m_agentId.assign(value); }
-    inline DeleteAgentRequest& WithAgentId(const Aws::String& value) { SetAgentId(value); return *this;}
-    inline DeleteAgentRequest& WithAgentId(Aws::String&& value) { SetAgentId(std::move(value)); return *this;}
-    inline DeleteAgentRequest& WithAgentId(const char* value) { SetAgentId(value); return *this;}
+    template<typename AgentIdT = Aws::String>
+    void SetAgentId(AgentIdT&& value) { m_agentIdHasBeenSet = true; m_agentId = std::forward<AgentIdT>(value); }
+    template<typename AgentIdT = Aws::String>
+    DeleteAgentRequest& WithAgentId(AgentIdT&& value) { SetAgentId(std::forward<AgentIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,7 +56,7 @@ namespace Model
      * resource is in use. If you set it to <code>true</code>, the resource will be
      * deleted even if the resource is in use.</p>
      */
-    inline bool GetSkipResourceInUseCheck() const{ return m_skipResourceInUseCheck; }
+    inline bool GetSkipResourceInUseCheck() const { return m_skipResourceInUseCheck; }
     inline bool SkipResourceInUseCheckHasBeenSet() const { return m_skipResourceInUseCheckHasBeenSet; }
     inline void SetSkipResourceInUseCheck(bool value) { m_skipResourceInUseCheckHasBeenSet = true; m_skipResourceInUseCheck = value; }
     inline DeleteAgentRequest& WithSkipResourceInUseCheck(bool value) { SetSkipResourceInUseCheck(value); return *this;}
@@ -68,7 +66,7 @@ namespace Model
     Aws::String m_agentId;
     bool m_agentIdHasBeenSet = false;
 
-    bool m_skipResourceInUseCheck;
+    bool m_skipResourceInUseCheck{false};
     bool m_skipResourceInUseCheckHasBeenSet = false;
   };
 

@@ -22,7 +22,7 @@ namespace Model
   class StartDashboardRefreshRequest : public CloudTrailRequest
   {
   public:
-    AWS_CLOUDTRAIL_API StartDashboardRefreshRequest();
+    AWS_CLOUDTRAIL_API StartDashboardRefreshRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,14 +39,12 @@ namespace Model
     /**
      * <p> The name or ARN of the dashboard. </p>
      */
-    inline const Aws::String& GetDashboardId() const{ return m_dashboardId; }
+    inline const Aws::String& GetDashboardId() const { return m_dashboardId; }
     inline bool DashboardIdHasBeenSet() const { return m_dashboardIdHasBeenSet; }
-    inline void SetDashboardId(const Aws::String& value) { m_dashboardIdHasBeenSet = true; m_dashboardId = value; }
-    inline void SetDashboardId(Aws::String&& value) { m_dashboardIdHasBeenSet = true; m_dashboardId = std::move(value); }
-    inline void SetDashboardId(const char* value) { m_dashboardIdHasBeenSet = true; m_dashboardId.assign(value); }
-    inline StartDashboardRefreshRequest& WithDashboardId(const Aws::String& value) { SetDashboardId(value); return *this;}
-    inline StartDashboardRefreshRequest& WithDashboardId(Aws::String&& value) { SetDashboardId(std::move(value)); return *this;}
-    inline StartDashboardRefreshRequest& WithDashboardId(const char* value) { SetDashboardId(value); return *this;}
+    template<typename DashboardIdT = Aws::String>
+    void SetDashboardId(DashboardIdT&& value) { m_dashboardIdHasBeenSet = true; m_dashboardId = std::forward<DashboardIdT>(value); }
+    template<typename DashboardIdT = Aws::String>
+    StartDashboardRefreshRequest& WithDashboardId(DashboardIdT&& value) { SetDashboardId(std::forward<DashboardIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,19 +57,16 @@ namespace Model
      * <code>$EventDataStoreId$</code>. The <code>$EventDataStoreId$</code> query
      * parameter is required.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetQueryParameterValues() const{ return m_queryParameterValues; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetQueryParameterValues() const { return m_queryParameterValues; }
     inline bool QueryParameterValuesHasBeenSet() const { return m_queryParameterValuesHasBeenSet; }
-    inline void SetQueryParameterValues(const Aws::Map<Aws::String, Aws::String>& value) { m_queryParameterValuesHasBeenSet = true; m_queryParameterValues = value; }
-    inline void SetQueryParameterValues(Aws::Map<Aws::String, Aws::String>&& value) { m_queryParameterValuesHasBeenSet = true; m_queryParameterValues = std::move(value); }
-    inline StartDashboardRefreshRequest& WithQueryParameterValues(const Aws::Map<Aws::String, Aws::String>& value) { SetQueryParameterValues(value); return *this;}
-    inline StartDashboardRefreshRequest& WithQueryParameterValues(Aws::Map<Aws::String, Aws::String>&& value) { SetQueryParameterValues(std::move(value)); return *this;}
-    inline StartDashboardRefreshRequest& AddQueryParameterValues(const Aws::String& key, const Aws::String& value) { m_queryParameterValuesHasBeenSet = true; m_queryParameterValues.emplace(key, value); return *this; }
-    inline StartDashboardRefreshRequest& AddQueryParameterValues(Aws::String&& key, const Aws::String& value) { m_queryParameterValuesHasBeenSet = true; m_queryParameterValues.emplace(std::move(key), value); return *this; }
-    inline StartDashboardRefreshRequest& AddQueryParameterValues(const Aws::String& key, Aws::String&& value) { m_queryParameterValuesHasBeenSet = true; m_queryParameterValues.emplace(key, std::move(value)); return *this; }
-    inline StartDashboardRefreshRequest& AddQueryParameterValues(Aws::String&& key, Aws::String&& value) { m_queryParameterValuesHasBeenSet = true; m_queryParameterValues.emplace(std::move(key), std::move(value)); return *this; }
-    inline StartDashboardRefreshRequest& AddQueryParameterValues(const char* key, Aws::String&& value) { m_queryParameterValuesHasBeenSet = true; m_queryParameterValues.emplace(key, std::move(value)); return *this; }
-    inline StartDashboardRefreshRequest& AddQueryParameterValues(Aws::String&& key, const char* value) { m_queryParameterValuesHasBeenSet = true; m_queryParameterValues.emplace(std::move(key), value); return *this; }
-    inline StartDashboardRefreshRequest& AddQueryParameterValues(const char* key, const char* value) { m_queryParameterValuesHasBeenSet = true; m_queryParameterValues.emplace(key, value); return *this; }
+    template<typename QueryParameterValuesT = Aws::Map<Aws::String, Aws::String>>
+    void SetQueryParameterValues(QueryParameterValuesT&& value) { m_queryParameterValuesHasBeenSet = true; m_queryParameterValues = std::forward<QueryParameterValuesT>(value); }
+    template<typename QueryParameterValuesT = Aws::Map<Aws::String, Aws::String>>
+    StartDashboardRefreshRequest& WithQueryParameterValues(QueryParameterValuesT&& value) { SetQueryParameterValues(std::forward<QueryParameterValuesT>(value)); return *this;}
+    template<typename QueryParameterValuesKeyT = Aws::String, typename QueryParameterValuesValueT = Aws::String>
+    StartDashboardRefreshRequest& AddQueryParameterValues(QueryParameterValuesKeyT&& key, QueryParameterValuesValueT&& value) {
+      m_queryParameterValuesHasBeenSet = true; m_queryParameterValues.emplace(std::forward<QueryParameterValuesKeyT>(key), std::forward<QueryParameterValuesValueT>(value)); return *this;
+    }
     ///@}
   private:
 

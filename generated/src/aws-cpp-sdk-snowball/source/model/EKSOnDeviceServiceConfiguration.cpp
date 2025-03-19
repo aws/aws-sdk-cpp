@@ -18,14 +18,7 @@ namespace Snowball
 namespace Model
 {
 
-EKSOnDeviceServiceConfiguration::EKSOnDeviceServiceConfiguration() : 
-    m_kubernetesVersionHasBeenSet(false),
-    m_eKSAnywhereVersionHasBeenSet(false)
-{
-}
-
 EKSOnDeviceServiceConfiguration::EKSOnDeviceServiceConfiguration(JsonView jsonValue)
-  : EKSOnDeviceServiceConfiguration()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ EKSOnDeviceServiceConfiguration& EKSOnDeviceServiceConfiguration::operator =(Jso
   if(jsonValue.ValueExists("KubernetesVersion"))
   {
     m_kubernetesVersion = jsonValue.GetString("KubernetesVersion");
-
     m_kubernetesVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EKSAnywhereVersion"))
   {
     m_eKSAnywhereVersion = jsonValue.GetString("EKSAnywhereVersion");
-
     m_eKSAnywhereVersionHasBeenSet = true;
   }
-
   return *this;
 }
 

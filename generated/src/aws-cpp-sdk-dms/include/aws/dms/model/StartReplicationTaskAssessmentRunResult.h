@@ -33,7 +33,7 @@ namespace Model
   class StartReplicationTaskAssessmentRunResult
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API StartReplicationTaskAssessmentRunResult();
+    AWS_DATABASEMIGRATIONSERVICE_API StartReplicationTaskAssessmentRunResult() = default;
     AWS_DATABASEMIGRATIONSERVICE_API StartReplicationTaskAssessmentRunResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DATABASEMIGRATIONSERVICE_API StartReplicationTaskAssessmentRunResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -42,28 +42,28 @@ namespace Model
     /**
      * <p>The premigration assessment run that was started.</p>
      */
-    inline const ReplicationTaskAssessmentRun& GetReplicationTaskAssessmentRun() const{ return m_replicationTaskAssessmentRun; }
-    inline void SetReplicationTaskAssessmentRun(const ReplicationTaskAssessmentRun& value) { m_replicationTaskAssessmentRun = value; }
-    inline void SetReplicationTaskAssessmentRun(ReplicationTaskAssessmentRun&& value) { m_replicationTaskAssessmentRun = std::move(value); }
-    inline StartReplicationTaskAssessmentRunResult& WithReplicationTaskAssessmentRun(const ReplicationTaskAssessmentRun& value) { SetReplicationTaskAssessmentRun(value); return *this;}
-    inline StartReplicationTaskAssessmentRunResult& WithReplicationTaskAssessmentRun(ReplicationTaskAssessmentRun&& value) { SetReplicationTaskAssessmentRun(std::move(value)); return *this;}
+    inline const ReplicationTaskAssessmentRun& GetReplicationTaskAssessmentRun() const { return m_replicationTaskAssessmentRun; }
+    template<typename ReplicationTaskAssessmentRunT = ReplicationTaskAssessmentRun>
+    void SetReplicationTaskAssessmentRun(ReplicationTaskAssessmentRunT&& value) { m_replicationTaskAssessmentRunHasBeenSet = true; m_replicationTaskAssessmentRun = std::forward<ReplicationTaskAssessmentRunT>(value); }
+    template<typename ReplicationTaskAssessmentRunT = ReplicationTaskAssessmentRun>
+    StartReplicationTaskAssessmentRunResult& WithReplicationTaskAssessmentRun(ReplicationTaskAssessmentRunT&& value) { SetReplicationTaskAssessmentRun(std::forward<ReplicationTaskAssessmentRunT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartReplicationTaskAssessmentRunResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartReplicationTaskAssessmentRunResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartReplicationTaskAssessmentRunResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartReplicationTaskAssessmentRunResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ReplicationTaskAssessmentRun m_replicationTaskAssessmentRun;
+    bool m_replicationTaskAssessmentRunHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

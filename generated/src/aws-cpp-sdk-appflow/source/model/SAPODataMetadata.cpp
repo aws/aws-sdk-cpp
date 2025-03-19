@@ -18,10 +18,6 @@ namespace Appflow
 namespace Model
 {
 
-SAPODataMetadata::SAPODataMetadata()
-{
-}
-
 SAPODataMetadata::SAPODataMetadata(JsonView jsonValue)
 {
   *this = jsonValue;

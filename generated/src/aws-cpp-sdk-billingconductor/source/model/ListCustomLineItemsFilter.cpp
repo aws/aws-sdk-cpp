@@ -18,16 +18,7 @@ namespace BillingConductor
 namespace Model
 {
 
-ListCustomLineItemsFilter::ListCustomLineItemsFilter() : 
-    m_namesHasBeenSet(false),
-    m_billingGroupsHasBeenSet(false),
-    m_arnsHasBeenSet(false),
-    m_accountIdsHasBeenSet(false)
-{
-}
-
 ListCustomLineItemsFilter::ListCustomLineItemsFilter(JsonView jsonValue)
-  : ListCustomLineItemsFilter()
 {
   *this = jsonValue;
 }
@@ -43,7 +34,6 @@ ListCustomLineItemsFilter& ListCustomLineItemsFilter::operator =(JsonView jsonVa
     }
     m_namesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BillingGroups"))
   {
     Aws::Utils::Array<JsonView> billingGroupsJsonList = jsonValue.GetArray("BillingGroups");
@@ -53,7 +43,6 @@ ListCustomLineItemsFilter& ListCustomLineItemsFilter::operator =(JsonView jsonVa
     }
     m_billingGroupsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arns"))
   {
     Aws::Utils::Array<JsonView> arnsJsonList = jsonValue.GetArray("Arns");
@@ -63,7 +52,6 @@ ListCustomLineItemsFilter& ListCustomLineItemsFilter::operator =(JsonView jsonVa
     }
     m_arnsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AccountIds"))
   {
     Aws::Utils::Array<JsonView> accountIdsJsonList = jsonValue.GetArray("AccountIds");
@@ -73,7 +61,6 @@ ListCustomLineItemsFilter& ListCustomLineItemsFilter::operator =(JsonView jsonVa
     }
     m_accountIdsHasBeenSet = true;
   }
-
   return *this;
 }
 

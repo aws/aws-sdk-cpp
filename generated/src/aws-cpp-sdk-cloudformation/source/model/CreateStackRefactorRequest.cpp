@@ -10,15 +10,6 @@
 using namespace Aws::CloudFormation::Model;
 using namespace Aws::Utils;
 
-CreateStackRefactorRequest::CreateStackRefactorRequest() : 
-    m_descriptionHasBeenSet(false),
-    m_enableStackCreation(false),
-    m_enableStackCreationHasBeenSet(false),
-    m_resourceMappingsHasBeenSet(false),
-    m_stackDefinitionsHasBeenSet(false)
-{
-}
-
 Aws::String CreateStackRefactorRequest::SerializePayload() const
 {
   Aws::StringStream ss;

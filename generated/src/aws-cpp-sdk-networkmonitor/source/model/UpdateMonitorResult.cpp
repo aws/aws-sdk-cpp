@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-UpdateMonitorResult::UpdateMonitorResult() : 
-    m_state(MonitorState::NOT_SET),
-    m_aggregationPeriod(0)
-{
-}
-
 UpdateMonitorResult::UpdateMonitorResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : UpdateMonitorResult()
 {
   *this = result;
 }
@@ -35,27 +28,23 @@ UpdateMonitorResult& UpdateMonitorResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("monitorArn"))
   {
     m_monitorArn = jsonValue.GetString("monitorArn");
-
+    m_monitorArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("monitorName"))
   {
     m_monitorName = jsonValue.GetString("monitorName");
-
+    m_monitorNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = MonitorStateMapper::GetMonitorStateForName(jsonValue.GetString("state"));
-
+    m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("aggregationPeriod"))
   {
     m_aggregationPeriod = jsonValue.GetInt64("aggregationPeriod");
-
+    m_aggregationPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -63,14 +52,15 @@ UpdateMonitorResult& UpdateMonitorResult::operator =(const Aws::AmazonWebService
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

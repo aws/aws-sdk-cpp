@@ -12,12 +12,6 @@ using namespace Aws::Connect::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeQueueRequest::DescribeQueueRequest() : 
-    m_instanceIdHasBeenSet(false),
-    m_queueIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeQueueRequest::SerializePayload() const
 {
   return {};

@@ -31,7 +31,7 @@ namespace Model
   class LoRaWANGatewayCurrentVersion
   {
   public:
-    AWS_IOTWIRELESS_API LoRaWANGatewayCurrentVersion();
+    AWS_IOTWIRELESS_API LoRaWANGatewayCurrentVersion() = default;
     AWS_IOTWIRELESS_API LoRaWANGatewayCurrentVersion(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API LoRaWANGatewayCurrentVersion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOTWIRELESS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The version of the gateways that should receive the update.</p>
      */
-    inline const LoRaWANGatewayVersion& GetCurrentVersion() const{ return m_currentVersion; }
+    inline const LoRaWANGatewayVersion& GetCurrentVersion() const { return m_currentVersion; }
     inline bool CurrentVersionHasBeenSet() const { return m_currentVersionHasBeenSet; }
-    inline void SetCurrentVersion(const LoRaWANGatewayVersion& value) { m_currentVersionHasBeenSet = true; m_currentVersion = value; }
-    inline void SetCurrentVersion(LoRaWANGatewayVersion&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::move(value); }
-    inline LoRaWANGatewayCurrentVersion& WithCurrentVersion(const LoRaWANGatewayVersion& value) { SetCurrentVersion(value); return *this;}
-    inline LoRaWANGatewayCurrentVersion& WithCurrentVersion(LoRaWANGatewayVersion&& value) { SetCurrentVersion(std::move(value)); return *this;}
+    template<typename CurrentVersionT = LoRaWANGatewayVersion>
+    void SetCurrentVersion(CurrentVersionT&& value) { m_currentVersionHasBeenSet = true; m_currentVersion = std::forward<CurrentVersionT>(value); }
+    template<typename CurrentVersionT = LoRaWANGatewayVersion>
+    LoRaWANGatewayCurrentVersion& WithCurrentVersion(CurrentVersionT&& value) { SetCurrentVersion(std::forward<CurrentVersionT>(value)); return *this;}
     ///@}
   private:
 

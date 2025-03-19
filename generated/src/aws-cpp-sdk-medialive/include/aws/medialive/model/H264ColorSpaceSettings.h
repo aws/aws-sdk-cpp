@@ -33,7 +33,7 @@ namespace Model
   class H264ColorSpaceSettings
   {
   public:
-    AWS_MEDIALIVE_API H264ColorSpaceSettings();
+    AWS_MEDIALIVE_API H264ColorSpaceSettings() = default;
     AWS_MEDIALIVE_API H264ColorSpaceSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API H264ColorSpaceSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIALIVE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,32 +41,32 @@ namespace Model
 
     ///@{
     
-    inline const ColorSpacePassthroughSettings& GetColorSpacePassthroughSettings() const{ return m_colorSpacePassthroughSettings; }
+    inline const ColorSpacePassthroughSettings& GetColorSpacePassthroughSettings() const { return m_colorSpacePassthroughSettings; }
     inline bool ColorSpacePassthroughSettingsHasBeenSet() const { return m_colorSpacePassthroughSettingsHasBeenSet; }
-    inline void SetColorSpacePassthroughSettings(const ColorSpacePassthroughSettings& value) { m_colorSpacePassthroughSettingsHasBeenSet = true; m_colorSpacePassthroughSettings = value; }
-    inline void SetColorSpacePassthroughSettings(ColorSpacePassthroughSettings&& value) { m_colorSpacePassthroughSettingsHasBeenSet = true; m_colorSpacePassthroughSettings = std::move(value); }
-    inline H264ColorSpaceSettings& WithColorSpacePassthroughSettings(const ColorSpacePassthroughSettings& value) { SetColorSpacePassthroughSettings(value); return *this;}
-    inline H264ColorSpaceSettings& WithColorSpacePassthroughSettings(ColorSpacePassthroughSettings&& value) { SetColorSpacePassthroughSettings(std::move(value)); return *this;}
+    template<typename ColorSpacePassthroughSettingsT = ColorSpacePassthroughSettings>
+    void SetColorSpacePassthroughSettings(ColorSpacePassthroughSettingsT&& value) { m_colorSpacePassthroughSettingsHasBeenSet = true; m_colorSpacePassthroughSettings = std::forward<ColorSpacePassthroughSettingsT>(value); }
+    template<typename ColorSpacePassthroughSettingsT = ColorSpacePassthroughSettings>
+    H264ColorSpaceSettings& WithColorSpacePassthroughSettings(ColorSpacePassthroughSettingsT&& value) { SetColorSpacePassthroughSettings(std::forward<ColorSpacePassthroughSettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Rec601Settings& GetRec601Settings() const{ return m_rec601Settings; }
+    inline const Rec601Settings& GetRec601Settings() const { return m_rec601Settings; }
     inline bool Rec601SettingsHasBeenSet() const { return m_rec601SettingsHasBeenSet; }
-    inline void SetRec601Settings(const Rec601Settings& value) { m_rec601SettingsHasBeenSet = true; m_rec601Settings = value; }
-    inline void SetRec601Settings(Rec601Settings&& value) { m_rec601SettingsHasBeenSet = true; m_rec601Settings = std::move(value); }
-    inline H264ColorSpaceSettings& WithRec601Settings(const Rec601Settings& value) { SetRec601Settings(value); return *this;}
-    inline H264ColorSpaceSettings& WithRec601Settings(Rec601Settings&& value) { SetRec601Settings(std::move(value)); return *this;}
+    template<typename Rec601SettingsT = Rec601Settings>
+    void SetRec601Settings(Rec601SettingsT&& value) { m_rec601SettingsHasBeenSet = true; m_rec601Settings = std::forward<Rec601SettingsT>(value); }
+    template<typename Rec601SettingsT = Rec601Settings>
+    H264ColorSpaceSettings& WithRec601Settings(Rec601SettingsT&& value) { SetRec601Settings(std::forward<Rec601SettingsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Rec709Settings& GetRec709Settings() const{ return m_rec709Settings; }
+    inline const Rec709Settings& GetRec709Settings() const { return m_rec709Settings; }
     inline bool Rec709SettingsHasBeenSet() const { return m_rec709SettingsHasBeenSet; }
-    inline void SetRec709Settings(const Rec709Settings& value) { m_rec709SettingsHasBeenSet = true; m_rec709Settings = value; }
-    inline void SetRec709Settings(Rec709Settings&& value) { m_rec709SettingsHasBeenSet = true; m_rec709Settings = std::move(value); }
-    inline H264ColorSpaceSettings& WithRec709Settings(const Rec709Settings& value) { SetRec709Settings(value); return *this;}
-    inline H264ColorSpaceSettings& WithRec709Settings(Rec709Settings&& value) { SetRec709Settings(std::move(value)); return *this;}
+    template<typename Rec709SettingsT = Rec709Settings>
+    void SetRec709Settings(Rec709SettingsT&& value) { m_rec709SettingsHasBeenSet = true; m_rec709Settings = std::forward<Rec709SettingsT>(value); }
+    template<typename Rec709SettingsT = Rec709Settings>
+    H264ColorSpaceSettings& WithRec709Settings(Rec709SettingsT&& value) { SetRec709Settings(std::forward<Rec709SettingsT>(value)); return *this;}
     ///@}
   private:
 

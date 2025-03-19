@@ -18,17 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails() : 
-    m_deviceNameHasBeenSet(false),
-    m_ebsHasBeenSet(false),
-    m_noDevice(false),
-    m_noDeviceHasBeenSet(false),
-    m_virtualNameHasBeenSet(false)
-{
-}
-
 AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails::AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails(JsonView jsonValue)
-  : AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails()
 {
   *this = jsonValue;
 }
@@ -38,31 +28,23 @@ AwsAutoScalingLaunchConfigurationBlockDeviceMappingsDetails& AwsAutoScalingLaunc
   if(jsonValue.ValueExists("DeviceName"))
   {
     m_deviceName = jsonValue.GetString("DeviceName");
-
     m_deviceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Ebs"))
   {
     m_ebs = jsonValue.GetObject("Ebs");
-
     m_ebsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NoDevice"))
   {
     m_noDevice = jsonValue.GetBool("NoDevice");
-
     m_noDeviceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VirtualName"))
   {
     m_virtualName = jsonValue.GetString("VirtualName");
-
     m_virtualNameHasBeenSet = true;
   }
-
   return *this;
 }
 

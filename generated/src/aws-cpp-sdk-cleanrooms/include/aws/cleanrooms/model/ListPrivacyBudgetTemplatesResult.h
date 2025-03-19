@@ -29,7 +29,7 @@ namespace Model
   class ListPrivacyBudgetTemplatesResult
   {
   public:
-    AWS_CLEANROOMS_API ListPrivacyBudgetTemplatesResult();
+    AWS_CLEANROOMS_API ListPrivacyBudgetTemplatesResult() = default;
     AWS_CLEANROOMS_API ListPrivacyBudgetTemplatesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLEANROOMS_API ListPrivacyBudgetTemplatesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
     /**
      * <p>The pagination token that's used to fetch the next set of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline ListPrivacyBudgetTemplatesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListPrivacyBudgetTemplatesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListPrivacyBudgetTemplatesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListPrivacyBudgetTemplatesResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,32 +50,33 @@ namespace Model
      * <p>An array that summarizes the privacy budget templates. The summary includes
      * collaboration information, creation information, and privacy budget type.</p>
      */
-    inline const Aws::Vector<PrivacyBudgetTemplateSummary>& GetPrivacyBudgetTemplateSummaries() const{ return m_privacyBudgetTemplateSummaries; }
-    inline void SetPrivacyBudgetTemplateSummaries(const Aws::Vector<PrivacyBudgetTemplateSummary>& value) { m_privacyBudgetTemplateSummaries = value; }
-    inline void SetPrivacyBudgetTemplateSummaries(Aws::Vector<PrivacyBudgetTemplateSummary>&& value) { m_privacyBudgetTemplateSummaries = std::move(value); }
-    inline ListPrivacyBudgetTemplatesResult& WithPrivacyBudgetTemplateSummaries(const Aws::Vector<PrivacyBudgetTemplateSummary>& value) { SetPrivacyBudgetTemplateSummaries(value); return *this;}
-    inline ListPrivacyBudgetTemplatesResult& WithPrivacyBudgetTemplateSummaries(Aws::Vector<PrivacyBudgetTemplateSummary>&& value) { SetPrivacyBudgetTemplateSummaries(std::move(value)); return *this;}
-    inline ListPrivacyBudgetTemplatesResult& AddPrivacyBudgetTemplateSummaries(const PrivacyBudgetTemplateSummary& value) { m_privacyBudgetTemplateSummaries.push_back(value); return *this; }
-    inline ListPrivacyBudgetTemplatesResult& AddPrivacyBudgetTemplateSummaries(PrivacyBudgetTemplateSummary&& value) { m_privacyBudgetTemplateSummaries.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<PrivacyBudgetTemplateSummary>& GetPrivacyBudgetTemplateSummaries() const { return m_privacyBudgetTemplateSummaries; }
+    template<typename PrivacyBudgetTemplateSummariesT = Aws::Vector<PrivacyBudgetTemplateSummary>>
+    void SetPrivacyBudgetTemplateSummaries(PrivacyBudgetTemplateSummariesT&& value) { m_privacyBudgetTemplateSummariesHasBeenSet = true; m_privacyBudgetTemplateSummaries = std::forward<PrivacyBudgetTemplateSummariesT>(value); }
+    template<typename PrivacyBudgetTemplateSummariesT = Aws::Vector<PrivacyBudgetTemplateSummary>>
+    ListPrivacyBudgetTemplatesResult& WithPrivacyBudgetTemplateSummaries(PrivacyBudgetTemplateSummariesT&& value) { SetPrivacyBudgetTemplateSummaries(std::forward<PrivacyBudgetTemplateSummariesT>(value)); return *this;}
+    template<typename PrivacyBudgetTemplateSummariesT = PrivacyBudgetTemplateSummary>
+    ListPrivacyBudgetTemplatesResult& AddPrivacyBudgetTemplateSummaries(PrivacyBudgetTemplateSummariesT&& value) { m_privacyBudgetTemplateSummariesHasBeenSet = true; m_privacyBudgetTemplateSummaries.emplace_back(std::forward<PrivacyBudgetTemplateSummariesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline ListPrivacyBudgetTemplatesResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline ListPrivacyBudgetTemplatesResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline ListPrivacyBudgetTemplatesResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    ListPrivacyBudgetTemplatesResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::Vector<PrivacyBudgetTemplateSummary> m_privacyBudgetTemplateSummaries;
+    bool m_privacyBudgetTemplateSummariesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

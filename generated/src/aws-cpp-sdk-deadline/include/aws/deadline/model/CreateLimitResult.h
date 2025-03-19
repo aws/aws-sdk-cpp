@@ -27,7 +27,7 @@ namespace Model
   class CreateLimitResult
   {
   public:
-    AWS_DEADLINE_API CreateLimitResult();
+    AWS_DEADLINE_API CreateLimitResult() = default;
     AWS_DEADLINE_API CreateLimitResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_DEADLINE_API CreateLimitResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,30 +38,28 @@ namespace Model
      * such as <code>CreateQueueLimitAssociation</code> and
      * <code>DeleteLimit</code>.</p>
      */
-    inline const Aws::String& GetLimitId() const{ return m_limitId; }
-    inline void SetLimitId(const Aws::String& value) { m_limitId = value; }
-    inline void SetLimitId(Aws::String&& value) { m_limitId = std::move(value); }
-    inline void SetLimitId(const char* value) { m_limitId.assign(value); }
-    inline CreateLimitResult& WithLimitId(const Aws::String& value) { SetLimitId(value); return *this;}
-    inline CreateLimitResult& WithLimitId(Aws::String&& value) { SetLimitId(std::move(value)); return *this;}
-    inline CreateLimitResult& WithLimitId(const char* value) { SetLimitId(value); return *this;}
+    inline const Aws::String& GetLimitId() const { return m_limitId; }
+    template<typename LimitIdT = Aws::String>
+    void SetLimitId(LimitIdT&& value) { m_limitIdHasBeenSet = true; m_limitId = std::forward<LimitIdT>(value); }
+    template<typename LimitIdT = Aws::String>
+    CreateLimitResult& WithLimitId(LimitIdT&& value) { SetLimitId(std::forward<LimitIdT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateLimitResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateLimitResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateLimitResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateLimitResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_limitId;
+    bool m_limitIdHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

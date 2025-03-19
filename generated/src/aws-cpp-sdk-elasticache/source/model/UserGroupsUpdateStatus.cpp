@@ -20,14 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-UserGroupsUpdateStatus::UserGroupsUpdateStatus() : 
-    m_userGroupIdsToAddHasBeenSet(false),
-    m_userGroupIdsToRemoveHasBeenSet(false)
-{
-}
-
 UserGroupsUpdateStatus::UserGroupsUpdateStatus(const XmlNode& xmlNode)
-  : UserGroupsUpdateStatus()
 {
   *this = xmlNode;
 }
@@ -42,6 +35,7 @@ UserGroupsUpdateStatus& UserGroupsUpdateStatus::operator =(const XmlNode& xmlNod
     if(!userGroupIdsToAddNode.IsNull())
     {
       XmlNode userGroupIdsToAddMember = userGroupIdsToAddNode.FirstChild("member");
+      m_userGroupIdsToAddHasBeenSet = !userGroupIdsToAddMember.IsNull();
       while(!userGroupIdsToAddMember.IsNull())
       {
         m_userGroupIdsToAdd.push_back(userGroupIdsToAddMember.GetText());
@@ -54,6 +48,7 @@ UserGroupsUpdateStatus& UserGroupsUpdateStatus::operator =(const XmlNode& xmlNod
     if(!userGroupIdsToRemoveNode.IsNull())
     {
       XmlNode userGroupIdsToRemoveMember = userGroupIdsToRemoveNode.FirstChild("member");
+      m_userGroupIdsToRemoveHasBeenSet = !userGroupIdsToRemoveMember.IsNull();
       while(!userGroupIdsToRemoveMember.IsNull())
       {
         m_userGroupIdsToRemove.push_back(userGroupIdsToRemoveMember.GetText());

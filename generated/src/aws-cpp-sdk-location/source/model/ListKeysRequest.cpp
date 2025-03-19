@@ -12,14 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListKeysRequest::ListKeysRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_filterHasBeenSet(false)
-{
-}
-
 Aws::String ListKeysRequest::SerializePayload() const
 {
   JsonValue payload;

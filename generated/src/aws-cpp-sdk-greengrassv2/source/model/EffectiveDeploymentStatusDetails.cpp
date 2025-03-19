@@ -18,14 +18,7 @@ namespace GreengrassV2
 namespace Model
 {
 
-EffectiveDeploymentStatusDetails::EffectiveDeploymentStatusDetails() : 
-    m_errorStackHasBeenSet(false),
-    m_errorTypesHasBeenSet(false)
-{
-}
-
 EffectiveDeploymentStatusDetails::EffectiveDeploymentStatusDetails(JsonView jsonValue)
-  : EffectiveDeploymentStatusDetails()
 {
   *this = jsonValue;
 }
@@ -41,7 +34,6 @@ EffectiveDeploymentStatusDetails& EffectiveDeploymentStatusDetails::operator =(J
     }
     m_errorStackHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorTypes"))
   {
     Aws::Utils::Array<JsonView> errorTypesJsonList = jsonValue.GetArray("errorTypes");
@@ -51,7 +43,6 @@ EffectiveDeploymentStatusDetails& EffectiveDeploymentStatusDetails::operator =(J
     }
     m_errorTypesHasBeenSet = true;
   }
-
   return *this;
 }
 

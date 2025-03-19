@@ -36,7 +36,7 @@ namespace Model
   class ListCasesItem
   {
   public:
-    AWS_SECURITYIR_API ListCasesItem();
+    AWS_SECURITYIR_API ListCasesItem() = default;
     AWS_SECURITYIR_API ListCasesItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYIR_API ListCasesItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYIR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,133 +46,119 @@ namespace Model
     /**
      * <p/>
      */
-    inline const Aws::String& GetCaseId() const{ return m_caseId; }
+    inline const Aws::String& GetCaseId() const { return m_caseId; }
     inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }
-    inline void SetCaseId(const Aws::String& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
-    inline void SetCaseId(Aws::String&& value) { m_caseIdHasBeenSet = true; m_caseId = std::move(value); }
-    inline void SetCaseId(const char* value) { m_caseIdHasBeenSet = true; m_caseId.assign(value); }
-    inline ListCasesItem& WithCaseId(const Aws::String& value) { SetCaseId(value); return *this;}
-    inline ListCasesItem& WithCaseId(Aws::String&& value) { SetCaseId(std::move(value)); return *this;}
-    inline ListCasesItem& WithCaseId(const char* value) { SetCaseId(value); return *this;}
+    template<typename CaseIdT = Aws::String>
+    void SetCaseId(CaseIdT&& value) { m_caseIdHasBeenSet = true; m_caseId = std::forward<CaseIdT>(value); }
+    template<typename CaseIdT = Aws::String>
+    ListCasesItem& WithCaseId(CaseIdT&& value) { SetCaseId(std::forward<CaseIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::Utils::DateTime& GetLastUpdatedDate() const{ return m_lastUpdatedDate; }
+    inline const Aws::Utils::DateTime& GetLastUpdatedDate() const { return m_lastUpdatedDate; }
     inline bool LastUpdatedDateHasBeenSet() const { return m_lastUpdatedDateHasBeenSet; }
-    inline void SetLastUpdatedDate(const Aws::Utils::DateTime& value) { m_lastUpdatedDateHasBeenSet = true; m_lastUpdatedDate = value; }
-    inline void SetLastUpdatedDate(Aws::Utils::DateTime&& value) { m_lastUpdatedDateHasBeenSet = true; m_lastUpdatedDate = std::move(value); }
-    inline ListCasesItem& WithLastUpdatedDate(const Aws::Utils::DateTime& value) { SetLastUpdatedDate(value); return *this;}
-    inline ListCasesItem& WithLastUpdatedDate(Aws::Utils::DateTime&& value) { SetLastUpdatedDate(std::move(value)); return *this;}
+    template<typename LastUpdatedDateT = Aws::Utils::DateTime>
+    void SetLastUpdatedDate(LastUpdatedDateT&& value) { m_lastUpdatedDateHasBeenSet = true; m_lastUpdatedDate = std::forward<LastUpdatedDateT>(value); }
+    template<typename LastUpdatedDateT = Aws::Utils::DateTime>
+    ListCasesItem& WithLastUpdatedDate(LastUpdatedDateT&& value) { SetLastUpdatedDate(std::forward<LastUpdatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline ListCasesItem& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline ListCasesItem& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline ListCasesItem& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    ListCasesItem& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetCaseArn() const{ return m_caseArn; }
+    inline const Aws::String& GetCaseArn() const { return m_caseArn; }
     inline bool CaseArnHasBeenSet() const { return m_caseArnHasBeenSet; }
-    inline void SetCaseArn(const Aws::String& value) { m_caseArnHasBeenSet = true; m_caseArn = value; }
-    inline void SetCaseArn(Aws::String&& value) { m_caseArnHasBeenSet = true; m_caseArn = std::move(value); }
-    inline void SetCaseArn(const char* value) { m_caseArnHasBeenSet = true; m_caseArn.assign(value); }
-    inline ListCasesItem& WithCaseArn(const Aws::String& value) { SetCaseArn(value); return *this;}
-    inline ListCasesItem& WithCaseArn(Aws::String&& value) { SetCaseArn(std::move(value)); return *this;}
-    inline ListCasesItem& WithCaseArn(const char* value) { SetCaseArn(value); return *this;}
+    template<typename CaseArnT = Aws::String>
+    void SetCaseArn(CaseArnT&& value) { m_caseArnHasBeenSet = true; m_caseArn = std::forward<CaseArnT>(value); }
+    template<typename CaseArnT = Aws::String>
+    ListCasesItem& WithCaseArn(CaseArnT&& value) { SetCaseArn(std::forward<CaseArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const EngagementType& GetEngagementType() const{ return m_engagementType; }
+    inline EngagementType GetEngagementType() const { return m_engagementType; }
     inline bool EngagementTypeHasBeenSet() const { return m_engagementTypeHasBeenSet; }
-    inline void SetEngagementType(const EngagementType& value) { m_engagementTypeHasBeenSet = true; m_engagementType = value; }
-    inline void SetEngagementType(EngagementType&& value) { m_engagementTypeHasBeenSet = true; m_engagementType = std::move(value); }
-    inline ListCasesItem& WithEngagementType(const EngagementType& value) { SetEngagementType(value); return *this;}
-    inline ListCasesItem& WithEngagementType(EngagementType&& value) { SetEngagementType(std::move(value)); return *this;}
+    inline void SetEngagementType(EngagementType value) { m_engagementTypeHasBeenSet = true; m_engagementType = value; }
+    inline ListCasesItem& WithEngagementType(EngagementType value) { SetEngagementType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const CaseStatus& GetCaseStatus() const{ return m_caseStatus; }
+    inline CaseStatus GetCaseStatus() const { return m_caseStatus; }
     inline bool CaseStatusHasBeenSet() const { return m_caseStatusHasBeenSet; }
-    inline void SetCaseStatus(const CaseStatus& value) { m_caseStatusHasBeenSet = true; m_caseStatus = value; }
-    inline void SetCaseStatus(CaseStatus&& value) { m_caseStatusHasBeenSet = true; m_caseStatus = std::move(value); }
-    inline ListCasesItem& WithCaseStatus(const CaseStatus& value) { SetCaseStatus(value); return *this;}
-    inline ListCasesItem& WithCaseStatus(CaseStatus&& value) { SetCaseStatus(std::move(value)); return *this;}
+    inline void SetCaseStatus(CaseStatus value) { m_caseStatusHasBeenSet = true; m_caseStatus = value; }
+    inline ListCasesItem& WithCaseStatus(CaseStatus value) { SetCaseStatus(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
+    inline const Aws::Utils::DateTime& GetCreatedDate() const { return m_createdDate; }
     inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
-    inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
-    inline void SetCreatedDate(Aws::Utils::DateTime&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::move(value); }
-    inline ListCasesItem& WithCreatedDate(const Aws::Utils::DateTime& value) { SetCreatedDate(value); return *this;}
-    inline ListCasesItem& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    void SetCreatedDate(CreatedDateT&& value) { m_createdDateHasBeenSet = true; m_createdDate = std::forward<CreatedDateT>(value); }
+    template<typename CreatedDateT = Aws::Utils::DateTime>
+    ListCasesItem& WithCreatedDate(CreatedDateT&& value) { SetCreatedDate(std::forward<CreatedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::Utils::DateTime& GetClosedDate() const{ return m_closedDate; }
+    inline const Aws::Utils::DateTime& GetClosedDate() const { return m_closedDate; }
     inline bool ClosedDateHasBeenSet() const { return m_closedDateHasBeenSet; }
-    inline void SetClosedDate(const Aws::Utils::DateTime& value) { m_closedDateHasBeenSet = true; m_closedDate = value; }
-    inline void SetClosedDate(Aws::Utils::DateTime&& value) { m_closedDateHasBeenSet = true; m_closedDate = std::move(value); }
-    inline ListCasesItem& WithClosedDate(const Aws::Utils::DateTime& value) { SetClosedDate(value); return *this;}
-    inline ListCasesItem& WithClosedDate(Aws::Utils::DateTime&& value) { SetClosedDate(std::move(value)); return *this;}
+    template<typename ClosedDateT = Aws::Utils::DateTime>
+    void SetClosedDate(ClosedDateT&& value) { m_closedDateHasBeenSet = true; m_closedDate = std::forward<ClosedDateT>(value); }
+    template<typename ClosedDateT = Aws::Utils::DateTime>
+    ListCasesItem& WithClosedDate(ClosedDateT&& value) { SetClosedDate(std::forward<ClosedDateT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const ResolverType& GetResolverType() const{ return m_resolverType; }
+    inline ResolverType GetResolverType() const { return m_resolverType; }
     inline bool ResolverTypeHasBeenSet() const { return m_resolverTypeHasBeenSet; }
-    inline void SetResolverType(const ResolverType& value) { m_resolverTypeHasBeenSet = true; m_resolverType = value; }
-    inline void SetResolverType(ResolverType&& value) { m_resolverTypeHasBeenSet = true; m_resolverType = std::move(value); }
-    inline ListCasesItem& WithResolverType(const ResolverType& value) { SetResolverType(value); return *this;}
-    inline ListCasesItem& WithResolverType(ResolverType&& value) { SetResolverType(std::move(value)); return *this;}
+    inline void SetResolverType(ResolverType value) { m_resolverTypeHasBeenSet = true; m_resolverType = value; }
+    inline ListCasesItem& WithResolverType(ResolverType value) { SetResolverType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const PendingAction& GetPendingAction() const{ return m_pendingAction; }
+    inline PendingAction GetPendingAction() const { return m_pendingAction; }
     inline bool PendingActionHasBeenSet() const { return m_pendingActionHasBeenSet; }
-    inline void SetPendingAction(const PendingAction& value) { m_pendingActionHasBeenSet = true; m_pendingAction = value; }
-    inline void SetPendingAction(PendingAction&& value) { m_pendingActionHasBeenSet = true; m_pendingAction = std::move(value); }
-    inline ListCasesItem& WithPendingAction(const PendingAction& value) { SetPendingAction(value); return *this;}
-    inline ListCasesItem& WithPendingAction(PendingAction&& value) { SetPendingAction(std::move(value)); return *this;}
+    inline void SetPendingAction(PendingAction value) { m_pendingActionHasBeenSet = true; m_pendingAction = value; }
+    inline ListCasesItem& WithPendingAction(PendingAction value) { SetPendingAction(value); return *this;}
     ///@}
   private:
 
     Aws::String m_caseId;
     bool m_caseIdHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastUpdatedDate;
+    Aws::Utils::DateTime m_lastUpdatedDate{};
     bool m_lastUpdatedDateHasBeenSet = false;
 
     Aws::String m_title;
@@ -181,22 +167,22 @@ namespace Model
     Aws::String m_caseArn;
     bool m_caseArnHasBeenSet = false;
 
-    EngagementType m_engagementType;
+    EngagementType m_engagementType{EngagementType::NOT_SET};
     bool m_engagementTypeHasBeenSet = false;
 
-    CaseStatus m_caseStatus;
+    CaseStatus m_caseStatus{CaseStatus::NOT_SET};
     bool m_caseStatusHasBeenSet = false;
 
-    Aws::Utils::DateTime m_createdDate;
+    Aws::Utils::DateTime m_createdDate{};
     bool m_createdDateHasBeenSet = false;
 
-    Aws::Utils::DateTime m_closedDate;
+    Aws::Utils::DateTime m_closedDate{};
     bool m_closedDateHasBeenSet = false;
 
-    ResolverType m_resolverType;
+    ResolverType m_resolverType{ResolverType::NOT_SET};
     bool m_resolverTypeHasBeenSet = false;
 
-    PendingAction m_pendingAction;
+    PendingAction m_pendingAction{PendingAction::NOT_SET};
     bool m_pendingActionHasBeenSet = false;
   };
 

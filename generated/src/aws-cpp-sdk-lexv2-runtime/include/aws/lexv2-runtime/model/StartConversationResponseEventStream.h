@@ -45,7 +45,7 @@ namespace Model
   class StartConversationResponseEventStream
   {
   public:
-    AWS_LEXRUNTIMEV2_API StartConversationResponseEventStream();
+    AWS_LEXRUNTIMEV2_API StartConversationResponseEventStream() = default;
     AWS_LEXRUNTIMEV2_API StartConversationResponseEventStream(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API StartConversationResponseEventStream& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXRUNTIMEV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -53,22 +53,22 @@ namespace Model
 
     ///@{
     
-    inline const PlaybackInterruptionEvent& GetPlaybackInterruptionEvent() const{ return m_playbackInterruptionEvent; }
+    inline const PlaybackInterruptionEvent& GetPlaybackInterruptionEvent() const { return m_playbackInterruptionEvent; }
     inline bool PlaybackInterruptionEventHasBeenSet() const { return m_playbackInterruptionEventHasBeenSet; }
-    inline void SetPlaybackInterruptionEvent(const PlaybackInterruptionEvent& value) { m_playbackInterruptionEventHasBeenSet = true; m_playbackInterruptionEvent = value; }
-    inline void SetPlaybackInterruptionEvent(PlaybackInterruptionEvent&& value) { m_playbackInterruptionEventHasBeenSet = true; m_playbackInterruptionEvent = std::move(value); }
-    inline StartConversationResponseEventStream& WithPlaybackInterruptionEvent(const PlaybackInterruptionEvent& value) { SetPlaybackInterruptionEvent(value); return *this;}
-    inline StartConversationResponseEventStream& WithPlaybackInterruptionEvent(PlaybackInterruptionEvent&& value) { SetPlaybackInterruptionEvent(std::move(value)); return *this;}
+    template<typename PlaybackInterruptionEventT = PlaybackInterruptionEvent>
+    void SetPlaybackInterruptionEvent(PlaybackInterruptionEventT&& value) { m_playbackInterruptionEventHasBeenSet = true; m_playbackInterruptionEvent = std::forward<PlaybackInterruptionEventT>(value); }
+    template<typename PlaybackInterruptionEventT = PlaybackInterruptionEvent>
+    StartConversationResponseEventStream& WithPlaybackInterruptionEvent(PlaybackInterruptionEventT&& value) { SetPlaybackInterruptionEvent(std::forward<PlaybackInterruptionEventT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TranscriptEvent& GetTranscriptEvent() const{ return m_transcriptEvent; }
+    inline const TranscriptEvent& GetTranscriptEvent() const { return m_transcriptEvent; }
     inline bool TranscriptEventHasBeenSet() const { return m_transcriptEventHasBeenSet; }
-    inline void SetTranscriptEvent(const TranscriptEvent& value) { m_transcriptEventHasBeenSet = true; m_transcriptEvent = value; }
-    inline void SetTranscriptEvent(TranscriptEvent&& value) { m_transcriptEventHasBeenSet = true; m_transcriptEvent = std::move(value); }
-    inline StartConversationResponseEventStream& WithTranscriptEvent(const TranscriptEvent& value) { SetTranscriptEvent(value); return *this;}
-    inline StartConversationResponseEventStream& WithTranscriptEvent(TranscriptEvent&& value) { SetTranscriptEvent(std::move(value)); return *this;}
+    template<typename TranscriptEventT = TranscriptEvent>
+    void SetTranscriptEvent(TranscriptEventT&& value) { m_transcriptEventHasBeenSet = true; m_transcriptEvent = std::forward<TranscriptEventT>(value); }
+    template<typename TranscriptEventT = TranscriptEvent>
+    StartConversationResponseEventStream& WithTranscriptEvent(TranscriptEventT&& value) { SetTranscriptEvent(std::forward<TranscriptEventT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -76,42 +76,42 @@ namespace Model
      * <p>Event sent from Amazon Lex V2 to the client application containing the
      * current state of the conversation between the user and Amazon Lex V2.</p>
      */
-    inline const IntentResultEvent& GetIntentResultEvent() const{ return m_intentResultEvent; }
+    inline const IntentResultEvent& GetIntentResultEvent() const { return m_intentResultEvent; }
     inline bool IntentResultEventHasBeenSet() const { return m_intentResultEventHasBeenSet; }
-    inline void SetIntentResultEvent(const IntentResultEvent& value) { m_intentResultEventHasBeenSet = true; m_intentResultEvent = value; }
-    inline void SetIntentResultEvent(IntentResultEvent&& value) { m_intentResultEventHasBeenSet = true; m_intentResultEvent = std::move(value); }
-    inline StartConversationResponseEventStream& WithIntentResultEvent(const IntentResultEvent& value) { SetIntentResultEvent(value); return *this;}
-    inline StartConversationResponseEventStream& WithIntentResultEvent(IntentResultEvent&& value) { SetIntentResultEvent(std::move(value)); return *this;}
+    template<typename IntentResultEventT = IntentResultEvent>
+    void SetIntentResultEvent(IntentResultEventT&& value) { m_intentResultEventHasBeenSet = true; m_intentResultEvent = std::forward<IntentResultEventT>(value); }
+    template<typename IntentResultEventT = IntentResultEvent>
+    StartConversationResponseEventStream& WithIntentResultEvent(IntentResultEventT&& value) { SetIntentResultEvent(std::forward<IntentResultEventT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TextResponseEvent& GetTextResponseEvent() const{ return m_textResponseEvent; }
+    inline const TextResponseEvent& GetTextResponseEvent() const { return m_textResponseEvent; }
     inline bool TextResponseEventHasBeenSet() const { return m_textResponseEventHasBeenSet; }
-    inline void SetTextResponseEvent(const TextResponseEvent& value) { m_textResponseEventHasBeenSet = true; m_textResponseEvent = value; }
-    inline void SetTextResponseEvent(TextResponseEvent&& value) { m_textResponseEventHasBeenSet = true; m_textResponseEvent = std::move(value); }
-    inline StartConversationResponseEventStream& WithTextResponseEvent(const TextResponseEvent& value) { SetTextResponseEvent(value); return *this;}
-    inline StartConversationResponseEventStream& WithTextResponseEvent(TextResponseEvent&& value) { SetTextResponseEvent(std::move(value)); return *this;}
+    template<typename TextResponseEventT = TextResponseEvent>
+    void SetTextResponseEvent(TextResponseEventT&& value) { m_textResponseEventHasBeenSet = true; m_textResponseEvent = std::forward<TextResponseEventT>(value); }
+    template<typename TextResponseEventT = TextResponseEvent>
+    StartConversationResponseEventStream& WithTextResponseEvent(TextResponseEventT&& value) { SetTextResponseEvent(std::forward<TextResponseEventT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const AudioResponseEvent& GetAudioResponseEvent() const{ return m_audioResponseEvent; }
+    inline const AudioResponseEvent& GetAudioResponseEvent() const { return m_audioResponseEvent; }
     inline bool AudioResponseEventHasBeenSet() const { return m_audioResponseEventHasBeenSet; }
-    inline void SetAudioResponseEvent(const AudioResponseEvent& value) { m_audioResponseEventHasBeenSet = true; m_audioResponseEvent = value; }
-    inline void SetAudioResponseEvent(AudioResponseEvent&& value) { m_audioResponseEventHasBeenSet = true; m_audioResponseEvent = std::move(value); }
-    inline StartConversationResponseEventStream& WithAudioResponseEvent(const AudioResponseEvent& value) { SetAudioResponseEvent(value); return *this;}
-    inline StartConversationResponseEventStream& WithAudioResponseEvent(AudioResponseEvent&& value) { SetAudioResponseEvent(std::move(value)); return *this;}
+    template<typename AudioResponseEventT = AudioResponseEvent>
+    void SetAudioResponseEvent(AudioResponseEventT&& value) { m_audioResponseEventHasBeenSet = true; m_audioResponseEvent = std::forward<AudioResponseEventT>(value); }
+    template<typename AudioResponseEventT = AudioResponseEvent>
+    StartConversationResponseEventStream& WithAudioResponseEvent(AudioResponseEventT&& value) { SetAudioResponseEvent(std::forward<AudioResponseEventT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const HeartbeatEvent& GetHeartbeatEvent() const{ return m_heartbeatEvent; }
+    inline const HeartbeatEvent& GetHeartbeatEvent() const { return m_heartbeatEvent; }
     inline bool HeartbeatEventHasBeenSet() const { return m_heartbeatEventHasBeenSet; }
-    inline void SetHeartbeatEvent(const HeartbeatEvent& value) { m_heartbeatEventHasBeenSet = true; m_heartbeatEvent = value; }
-    inline void SetHeartbeatEvent(HeartbeatEvent&& value) { m_heartbeatEventHasBeenSet = true; m_heartbeatEvent = std::move(value); }
-    inline StartConversationResponseEventStream& WithHeartbeatEvent(const HeartbeatEvent& value) { SetHeartbeatEvent(value); return *this;}
-    inline StartConversationResponseEventStream& WithHeartbeatEvent(HeartbeatEvent&& value) { SetHeartbeatEvent(std::move(value)); return *this;}
+    template<typename HeartbeatEventT = HeartbeatEvent>
+    void SetHeartbeatEvent(HeartbeatEventT&& value) { m_heartbeatEventHasBeenSet = true; m_heartbeatEvent = std::forward<HeartbeatEventT>(value); }
+    template<typename HeartbeatEventT = HeartbeatEvent>
+    StartConversationResponseEventStream& WithHeartbeatEvent(HeartbeatEventT&& value) { SetHeartbeatEvent(std::forward<HeartbeatEventT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,12 +120,12 @@ namespace Model
      * expired. Also thrown when the credentials in the request do not have permission
      * to access the <code>StartConversation</code> operation.</p>
      */
-    inline const AccessDeniedException& GetAccessDeniedException() const{ return m_accessDeniedException; }
+    inline const AccessDeniedException& GetAccessDeniedException() const { return m_accessDeniedException; }
     inline bool AccessDeniedExceptionHasBeenSet() const { return m_accessDeniedExceptionHasBeenSet; }
-    inline void SetAccessDeniedException(const AccessDeniedException& value) { m_accessDeniedExceptionHasBeenSet = true; m_accessDeniedException = value; }
-    inline void SetAccessDeniedException(AccessDeniedException&& value) { m_accessDeniedExceptionHasBeenSet = true; m_accessDeniedException = std::move(value); }
-    inline StartConversationResponseEventStream& WithAccessDeniedException(const AccessDeniedException& value) { SetAccessDeniedException(value); return *this;}
-    inline StartConversationResponseEventStream& WithAccessDeniedException(AccessDeniedException&& value) { SetAccessDeniedException(std::move(value)); return *this;}
+    template<typename AccessDeniedExceptionT = AccessDeniedException>
+    void SetAccessDeniedException(AccessDeniedExceptionT&& value) { m_accessDeniedExceptionHasBeenSet = true; m_accessDeniedException = std::forward<AccessDeniedExceptionT>(value); }
+    template<typename AccessDeniedExceptionT = AccessDeniedException>
+    StartConversationResponseEventStream& WithAccessDeniedException(AccessDeniedExceptionT&& value) { SetAccessDeniedException(std::forward<AccessDeniedExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -133,12 +133,12 @@ namespace Model
      * <p>Exception thrown if one of the input parameters points to a resource that
      * does not exist. For example, if the bot ID specified does not exist.</p>
      */
-    inline const ResourceNotFoundException& GetResourceNotFoundException() const{ return m_resourceNotFoundException; }
+    inline const ResourceNotFoundException& GetResourceNotFoundException() const { return m_resourceNotFoundException; }
     inline bool ResourceNotFoundExceptionHasBeenSet() const { return m_resourceNotFoundExceptionHasBeenSet; }
-    inline void SetResourceNotFoundException(const ResourceNotFoundException& value) { m_resourceNotFoundExceptionHasBeenSet = true; m_resourceNotFoundException = value; }
-    inline void SetResourceNotFoundException(ResourceNotFoundException&& value) { m_resourceNotFoundExceptionHasBeenSet = true; m_resourceNotFoundException = std::move(value); }
-    inline StartConversationResponseEventStream& WithResourceNotFoundException(const ResourceNotFoundException& value) { SetResourceNotFoundException(value); return *this;}
-    inline StartConversationResponseEventStream& WithResourceNotFoundException(ResourceNotFoundException&& value) { SetResourceNotFoundException(std::move(value)); return *this;}
+    template<typename ResourceNotFoundExceptionT = ResourceNotFoundException>
+    void SetResourceNotFoundException(ResourceNotFoundExceptionT&& value) { m_resourceNotFoundExceptionHasBeenSet = true; m_resourceNotFoundException = std::forward<ResourceNotFoundExceptionT>(value); }
+    template<typename ResourceNotFoundExceptionT = ResourceNotFoundException>
+    StartConversationResponseEventStream& WithResourceNotFoundException(ResourceNotFoundExceptionT&& value) { SetResourceNotFoundException(std::forward<ResourceNotFoundExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -146,12 +146,12 @@ namespace Model
      * <p>Exception thrown when one or more parameters could not be validated. The
      * <code>message</code> contains the name of the field that isn't valid.</p>
      */
-    inline const ValidationException& GetValidationException() const{ return m_validationException; }
+    inline const ValidationException& GetValidationException() const { return m_validationException; }
     inline bool ValidationExceptionHasBeenSet() const { return m_validationExceptionHasBeenSet; }
-    inline void SetValidationException(const ValidationException& value) { m_validationExceptionHasBeenSet = true; m_validationException = value; }
-    inline void SetValidationException(ValidationException&& value) { m_validationExceptionHasBeenSet = true; m_validationException = std::move(value); }
-    inline StartConversationResponseEventStream& WithValidationException(const ValidationException& value) { SetValidationException(value); return *this;}
-    inline StartConversationResponseEventStream& WithValidationException(ValidationException&& value) { SetValidationException(std::move(value)); return *this;}
+    template<typename ValidationExceptionT = ValidationException>
+    void SetValidationException(ValidationExceptionT&& value) { m_validationExceptionHasBeenSet = true; m_validationException = std::forward<ValidationExceptionT>(value); }
+    template<typename ValidationExceptionT = ValidationException>
+    StartConversationResponseEventStream& WithValidationException(ValidationExceptionT&& value) { SetValidationException(std::forward<ValidationExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -159,24 +159,24 @@ namespace Model
      * <p>Exception thrown when your application exceeds the maximum number of
      * concurrent requests. </p>
      */
-    inline const ThrottlingException& GetThrottlingException() const{ return m_throttlingException; }
+    inline const ThrottlingException& GetThrottlingException() const { return m_throttlingException; }
     inline bool ThrottlingExceptionHasBeenSet() const { return m_throttlingExceptionHasBeenSet; }
-    inline void SetThrottlingException(const ThrottlingException& value) { m_throttlingExceptionHasBeenSet = true; m_throttlingException = value; }
-    inline void SetThrottlingException(ThrottlingException&& value) { m_throttlingExceptionHasBeenSet = true; m_throttlingException = std::move(value); }
-    inline StartConversationResponseEventStream& WithThrottlingException(const ThrottlingException& value) { SetThrottlingException(value); return *this;}
-    inline StartConversationResponseEventStream& WithThrottlingException(ThrottlingException&& value) { SetThrottlingException(std::move(value)); return *this;}
+    template<typename ThrottlingExceptionT = ThrottlingException>
+    void SetThrottlingException(ThrottlingExceptionT&& value) { m_throttlingExceptionHasBeenSet = true; m_throttlingException = std::forward<ThrottlingExceptionT>(value); }
+    template<typename ThrottlingExceptionT = ThrottlingException>
+    StartConversationResponseEventStream& WithThrottlingException(ThrottlingExceptionT&& value) { SetThrottlingException(std::forward<ThrottlingExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>An error occurred with Amazon Lex V2.</p>
      */
-    inline const InternalServerException& GetInternalServerException() const{ return m_internalServerException; }
+    inline const InternalServerException& GetInternalServerException() const { return m_internalServerException; }
     inline bool InternalServerExceptionHasBeenSet() const { return m_internalServerExceptionHasBeenSet; }
-    inline void SetInternalServerException(const InternalServerException& value) { m_internalServerExceptionHasBeenSet = true; m_internalServerException = value; }
-    inline void SetInternalServerException(InternalServerException&& value) { m_internalServerExceptionHasBeenSet = true; m_internalServerException = std::move(value); }
-    inline StartConversationResponseEventStream& WithInternalServerException(const InternalServerException& value) { SetInternalServerException(value); return *this;}
-    inline StartConversationResponseEventStream& WithInternalServerException(InternalServerException&& value) { SetInternalServerException(std::move(value)); return *this;}
+    template<typename InternalServerExceptionT = InternalServerException>
+    void SetInternalServerException(InternalServerExceptionT&& value) { m_internalServerExceptionHasBeenSet = true; m_internalServerException = std::forward<InternalServerExceptionT>(value); }
+    template<typename InternalServerExceptionT = InternalServerException>
+    StartConversationResponseEventStream& WithInternalServerException(InternalServerExceptionT&& value) { SetInternalServerException(std::forward<InternalServerExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -184,32 +184,32 @@ namespace Model
      * <p>Exception thrown when two clients are using the same AWS account, Amazon Lex
      * V2 bot, and session ID.</p>
      */
-    inline const ConflictException& GetConflictException() const{ return m_conflictException; }
+    inline const ConflictException& GetConflictException() const { return m_conflictException; }
     inline bool ConflictExceptionHasBeenSet() const { return m_conflictExceptionHasBeenSet; }
-    inline void SetConflictException(const ConflictException& value) { m_conflictExceptionHasBeenSet = true; m_conflictException = value; }
-    inline void SetConflictException(ConflictException&& value) { m_conflictExceptionHasBeenSet = true; m_conflictException = std::move(value); }
-    inline StartConversationResponseEventStream& WithConflictException(const ConflictException& value) { SetConflictException(value); return *this;}
-    inline StartConversationResponseEventStream& WithConflictException(ConflictException&& value) { SetConflictException(std::move(value)); return *this;}
+    template<typename ConflictExceptionT = ConflictException>
+    void SetConflictException(ConflictExceptionT&& value) { m_conflictExceptionHasBeenSet = true; m_conflictException = std::forward<ConflictExceptionT>(value); }
+    template<typename ConflictExceptionT = ConflictException>
+    StartConversationResponseEventStream& WithConflictException(ConflictExceptionT&& value) { SetConflictException(std::forward<ConflictExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const DependencyFailedException& GetDependencyFailedException() const{ return m_dependencyFailedException; }
+    inline const DependencyFailedException& GetDependencyFailedException() const { return m_dependencyFailedException; }
     inline bool DependencyFailedExceptionHasBeenSet() const { return m_dependencyFailedExceptionHasBeenSet; }
-    inline void SetDependencyFailedException(const DependencyFailedException& value) { m_dependencyFailedExceptionHasBeenSet = true; m_dependencyFailedException = value; }
-    inline void SetDependencyFailedException(DependencyFailedException&& value) { m_dependencyFailedExceptionHasBeenSet = true; m_dependencyFailedException = std::move(value); }
-    inline StartConversationResponseEventStream& WithDependencyFailedException(const DependencyFailedException& value) { SetDependencyFailedException(value); return *this;}
-    inline StartConversationResponseEventStream& WithDependencyFailedException(DependencyFailedException&& value) { SetDependencyFailedException(std::move(value)); return *this;}
+    template<typename DependencyFailedExceptionT = DependencyFailedException>
+    void SetDependencyFailedException(DependencyFailedExceptionT&& value) { m_dependencyFailedExceptionHasBeenSet = true; m_dependencyFailedException = std::forward<DependencyFailedExceptionT>(value); }
+    template<typename DependencyFailedExceptionT = DependencyFailedException>
+    StartConversationResponseEventStream& WithDependencyFailedException(DependencyFailedExceptionT&& value) { SetDependencyFailedException(std::forward<DependencyFailedExceptionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const BadGatewayException& GetBadGatewayException() const{ return m_badGatewayException; }
+    inline const BadGatewayException& GetBadGatewayException() const { return m_badGatewayException; }
     inline bool BadGatewayExceptionHasBeenSet() const { return m_badGatewayExceptionHasBeenSet; }
-    inline void SetBadGatewayException(const BadGatewayException& value) { m_badGatewayExceptionHasBeenSet = true; m_badGatewayException = value; }
-    inline void SetBadGatewayException(BadGatewayException&& value) { m_badGatewayExceptionHasBeenSet = true; m_badGatewayException = std::move(value); }
-    inline StartConversationResponseEventStream& WithBadGatewayException(const BadGatewayException& value) { SetBadGatewayException(value); return *this;}
-    inline StartConversationResponseEventStream& WithBadGatewayException(BadGatewayException&& value) { SetBadGatewayException(std::move(value)); return *this;}
+    template<typename BadGatewayExceptionT = BadGatewayException>
+    void SetBadGatewayException(BadGatewayExceptionT&& value) { m_badGatewayExceptionHasBeenSet = true; m_badGatewayException = std::forward<BadGatewayExceptionT>(value); }
+    template<typename BadGatewayExceptionT = BadGatewayException>
+    StartConversationResponseEventStream& WithBadGatewayException(BadGatewayExceptionT&& value) { SetBadGatewayException(std::forward<BadGatewayExceptionT>(value)); return *this;}
     ///@}
   private:
 

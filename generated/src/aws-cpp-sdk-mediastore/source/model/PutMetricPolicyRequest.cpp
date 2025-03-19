@@ -12,12 +12,6 @@ using namespace Aws::MediaStore::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutMetricPolicyRequest::PutMetricPolicyRequest() : 
-    m_containerNameHasBeenSet(false),
-    m_metricPolicyHasBeenSet(false)
-{
-}
-
 Aws::String PutMetricPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

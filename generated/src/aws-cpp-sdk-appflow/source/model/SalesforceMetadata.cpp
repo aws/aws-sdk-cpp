@@ -18,15 +18,7 @@ namespace Appflow
 namespace Model
 {
 
-SalesforceMetadata::SalesforceMetadata() : 
-    m_oAuthScopesHasBeenSet(false),
-    m_dataTransferApisHasBeenSet(false),
-    m_oauth2GrantTypesSupportedHasBeenSet(false)
-{
-}
-
 SalesforceMetadata::SalesforceMetadata(JsonView jsonValue)
-  : SalesforceMetadata()
 {
   *this = jsonValue;
 }
@@ -42,7 +34,6 @@ SalesforceMetadata& SalesforceMetadata::operator =(JsonView jsonValue)
     }
     m_oAuthScopesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("dataTransferApis"))
   {
     Aws::Utils::Array<JsonView> dataTransferApisJsonList = jsonValue.GetArray("dataTransferApis");
@@ -52,7 +43,6 @@ SalesforceMetadata& SalesforceMetadata::operator =(JsonView jsonValue)
     }
     m_dataTransferApisHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("oauth2GrantTypesSupported"))
   {
     Aws::Utils::Array<JsonView> oauth2GrantTypesSupportedJsonList = jsonValue.GetArray("oauth2GrantTypesSupported");
@@ -62,7 +52,6 @@ SalesforceMetadata& SalesforceMetadata::operator =(JsonView jsonValue)
     }
     m_oauth2GrantTypesSupportedHasBeenSet = true;
   }
-
   return *this;
 }
 

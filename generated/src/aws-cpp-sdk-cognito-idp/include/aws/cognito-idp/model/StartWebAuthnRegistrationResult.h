@@ -28,7 +28,7 @@ namespace Model
   class StartWebAuthnRegistrationResult
   {
   public:
-    AWS_COGNITOIDENTITYPROVIDER_API StartWebAuthnRegistrationResult();
+    AWS_COGNITOIDENTITYPROVIDER_API StartWebAuthnRegistrationResult() = default;
     AWS_COGNITOIDENTITYPROVIDER_API StartWebAuthnRegistrationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COGNITOIDENTITYPROVIDER_API StartWebAuthnRegistrationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>The information that a user can provide in their request to register with
      * their passkey provider.</p>
      */
-    inline Aws::Utils::DocumentView GetCredentialCreationOptions() const{ return m_credentialCreationOptions; }
-    inline void SetCredentialCreationOptions(const Aws::Utils::Document& value) { m_credentialCreationOptions = value; }
-    inline void SetCredentialCreationOptions(Aws::Utils::Document&& value) { m_credentialCreationOptions = std::move(value); }
-    inline StartWebAuthnRegistrationResult& WithCredentialCreationOptions(const Aws::Utils::Document& value) { SetCredentialCreationOptions(value); return *this;}
-    inline StartWebAuthnRegistrationResult& WithCredentialCreationOptions(Aws::Utils::Document&& value) { SetCredentialCreationOptions(std::move(value)); return *this;}
+    inline Aws::Utils::DocumentView GetCredentialCreationOptions() const { return m_credentialCreationOptions; }
+    template<typename CredentialCreationOptionsT = Aws::Utils::Document>
+    void SetCredentialCreationOptions(CredentialCreationOptionsT&& value) { m_credentialCreationOptionsHasBeenSet = true; m_credentialCreationOptions = std::forward<CredentialCreationOptionsT>(value); }
+    template<typename CredentialCreationOptionsT = Aws::Utils::Document>
+    StartWebAuthnRegistrationResult& WithCredentialCreationOptions(CredentialCreationOptionsT&& value) { SetCredentialCreationOptions(std::forward<CredentialCreationOptionsT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartWebAuthnRegistrationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartWebAuthnRegistrationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartWebAuthnRegistrationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartWebAuthnRegistrationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Utils::Document m_credentialCreationOptions;
+    bool m_credentialCreationOptionsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

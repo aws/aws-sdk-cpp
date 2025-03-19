@@ -21,7 +21,7 @@ namespace Model
   class DeleteScopeRequest : public NetworkFlowMonitorRequest
   {
   public:
-    AWS_NETWORKFLOWMONITOR_API DeleteScopeRequest();
+    AWS_NETWORKFLOWMONITOR_API DeleteScopeRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,14 +38,12 @@ namespace Model
      * results for. A scope ID is an internally-generated identifier that includes all
      * the resources for a specific root account.</p>
      */
-    inline const Aws::String& GetScopeId() const{ return m_scopeId; }
+    inline const Aws::String& GetScopeId() const { return m_scopeId; }
     inline bool ScopeIdHasBeenSet() const { return m_scopeIdHasBeenSet; }
-    inline void SetScopeId(const Aws::String& value) { m_scopeIdHasBeenSet = true; m_scopeId = value; }
-    inline void SetScopeId(Aws::String&& value) { m_scopeIdHasBeenSet = true; m_scopeId = std::move(value); }
-    inline void SetScopeId(const char* value) { m_scopeIdHasBeenSet = true; m_scopeId.assign(value); }
-    inline DeleteScopeRequest& WithScopeId(const Aws::String& value) { SetScopeId(value); return *this;}
-    inline DeleteScopeRequest& WithScopeId(Aws::String&& value) { SetScopeId(std::move(value)); return *this;}
-    inline DeleteScopeRequest& WithScopeId(const char* value) { SetScopeId(value); return *this;}
+    template<typename ScopeIdT = Aws::String>
+    void SetScopeId(ScopeIdT&& value) { m_scopeIdHasBeenSet = true; m_scopeId = std::forward<ScopeIdT>(value); }
+    template<typename ScopeIdT = Aws::String>
+    DeleteScopeRequest& WithScopeId(ScopeIdT&& value) { SetScopeId(std::forward<ScopeIdT>(value)); return *this;}
     ///@}
   private:
 

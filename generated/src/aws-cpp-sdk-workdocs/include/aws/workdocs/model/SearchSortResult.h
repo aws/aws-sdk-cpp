@@ -32,7 +32,7 @@ namespace Model
   class SearchSortResult
   {
   public:
-    AWS_WORKDOCS_API SearchSortResult();
+    AWS_WORKDOCS_API SearchSortResult() = default;
     AWS_WORKDOCS_API SearchSortResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKDOCS_API SearchSortResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WORKDOCS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,31 +42,27 @@ namespace Model
     /**
      * <p>Sort search results based on this field name.</p>
      */
-    inline const OrderByFieldType& GetField() const{ return m_field; }
+    inline OrderByFieldType GetField() const { return m_field; }
     inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
-    inline void SetField(const OrderByFieldType& value) { m_fieldHasBeenSet = true; m_field = value; }
-    inline void SetField(OrderByFieldType&& value) { m_fieldHasBeenSet = true; m_field = std::move(value); }
-    inline SearchSortResult& WithField(const OrderByFieldType& value) { SetField(value); return *this;}
-    inline SearchSortResult& WithField(OrderByFieldType&& value) { SetField(std::move(value)); return *this;}
+    inline void SetField(OrderByFieldType value) { m_fieldHasBeenSet = true; m_field = value; }
+    inline SearchSortResult& WithField(OrderByFieldType value) { SetField(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Sort direction.</p>
      */
-    inline const SortOrder& GetOrder() const{ return m_order; }
+    inline SortOrder GetOrder() const { return m_order; }
     inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
-    inline void SetOrder(const SortOrder& value) { m_orderHasBeenSet = true; m_order = value; }
-    inline void SetOrder(SortOrder&& value) { m_orderHasBeenSet = true; m_order = std::move(value); }
-    inline SearchSortResult& WithOrder(const SortOrder& value) { SetOrder(value); return *this;}
-    inline SearchSortResult& WithOrder(SortOrder&& value) { SetOrder(std::move(value)); return *this;}
+    inline void SetOrder(SortOrder value) { m_orderHasBeenSet = true; m_order = value; }
+    inline SearchSortResult& WithOrder(SortOrder value) { SetOrder(value); return *this;}
     ///@}
   private:
 
-    OrderByFieldType m_field;
+    OrderByFieldType m_field{OrderByFieldType::NOT_SET};
     bool m_fieldHasBeenSet = false;
 
-    SortOrder m_order;
+    SortOrder m_order{SortOrder::NOT_SET};
     bool m_orderHasBeenSet = false;
   };
 

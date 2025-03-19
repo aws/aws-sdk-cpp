@@ -20,14 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-CloudWatchMetrics::CloudWatchMetrics() : 
-    m_isEnabled(false),
-    m_isEnabledHasBeenSet(false)
-{
-}
-
 CloudWatchMetrics::CloudWatchMetrics(const XmlNode& xmlNode)
-  : CloudWatchMetrics()
 {
   *this = xmlNode;
 }

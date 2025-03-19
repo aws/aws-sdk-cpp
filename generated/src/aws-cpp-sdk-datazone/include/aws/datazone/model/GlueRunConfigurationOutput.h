@@ -34,7 +34,7 @@ namespace Model
   class GlueRunConfigurationOutput
   {
   public:
-    AWS_DATAZONE_API GlueRunConfigurationOutput();
+    AWS_DATAZONE_API GlueRunConfigurationOutput() = default;
     AWS_DATAZONE_API GlueRunConfigurationOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API GlueRunConfigurationOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -45,14 +45,12 @@ namespace Model
      * <p>The Amazon Web Services account ID included in the configuration details of
      * the Amazon Web Services Glue data source. </p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline GlueRunConfigurationOutput& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline GlueRunConfigurationOutput& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline GlueRunConfigurationOutput& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    GlueRunConfigurationOutput& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -60,7 +58,7 @@ namespace Model
      * <p>Specifies whether to automatically import data quality metrics as part of the
      * data source run.</p>
      */
-    inline bool GetAutoImportDataQualityResult() const{ return m_autoImportDataQualityResult; }
+    inline bool GetAutoImportDataQualityResult() const { return m_autoImportDataQualityResult; }
     inline bool AutoImportDataQualityResultHasBeenSet() const { return m_autoImportDataQualityResultHasBeenSet; }
     inline void SetAutoImportDataQualityResult(bool value) { m_autoImportDataQualityResultHasBeenSet = true; m_autoImportDataQualityResult = value; }
     inline GlueRunConfigurationOutput& WithAutoImportDataQualityResult(bool value) { SetAutoImportDataQualityResult(value); return *this;}
@@ -70,14 +68,12 @@ namespace Model
     /**
      * <p>The catalog name in the Amazon Web Services Glue run configuration.</p>
      */
-    inline const Aws::String& GetCatalogName() const{ return m_catalogName; }
+    inline const Aws::String& GetCatalogName() const { return m_catalogName; }
     inline bool CatalogNameHasBeenSet() const { return m_catalogNameHasBeenSet; }
-    inline void SetCatalogName(const Aws::String& value) { m_catalogNameHasBeenSet = true; m_catalogName = value; }
-    inline void SetCatalogName(Aws::String&& value) { m_catalogNameHasBeenSet = true; m_catalogName = std::move(value); }
-    inline void SetCatalogName(const char* value) { m_catalogNameHasBeenSet = true; m_catalogName.assign(value); }
-    inline GlueRunConfigurationOutput& WithCatalogName(const Aws::String& value) { SetCatalogName(value); return *this;}
-    inline GlueRunConfigurationOutput& WithCatalogName(Aws::String&& value) { SetCatalogName(std::move(value)); return *this;}
-    inline GlueRunConfigurationOutput& WithCatalogName(const char* value) { SetCatalogName(value); return *this;}
+    template<typename CatalogNameT = Aws::String>
+    void SetCatalogName(CatalogNameT&& value) { m_catalogNameHasBeenSet = true; m_catalogName = std::forward<CatalogNameT>(value); }
+    template<typename CatalogNameT = Aws::String>
+    GlueRunConfigurationOutput& WithCatalogName(CatalogNameT&& value) { SetCatalogName(std::forward<CatalogNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -85,14 +81,12 @@ namespace Model
      * <p>The data access role included in the configuration details of the Amazon Web
      * Services Glue data source. </p>
      */
-    inline const Aws::String& GetDataAccessRole() const{ return m_dataAccessRole; }
+    inline const Aws::String& GetDataAccessRole() const { return m_dataAccessRole; }
     inline bool DataAccessRoleHasBeenSet() const { return m_dataAccessRoleHasBeenSet; }
-    inline void SetDataAccessRole(const Aws::String& value) { m_dataAccessRoleHasBeenSet = true; m_dataAccessRole = value; }
-    inline void SetDataAccessRole(Aws::String&& value) { m_dataAccessRoleHasBeenSet = true; m_dataAccessRole = std::move(value); }
-    inline void SetDataAccessRole(const char* value) { m_dataAccessRoleHasBeenSet = true; m_dataAccessRole.assign(value); }
-    inline GlueRunConfigurationOutput& WithDataAccessRole(const Aws::String& value) { SetDataAccessRole(value); return *this;}
-    inline GlueRunConfigurationOutput& WithDataAccessRole(Aws::String&& value) { SetDataAccessRole(std::move(value)); return *this;}
-    inline GlueRunConfigurationOutput& WithDataAccessRole(const char* value) { SetDataAccessRole(value); return *this;}
+    template<typename DataAccessRoleT = Aws::String>
+    void SetDataAccessRole(DataAccessRoleT&& value) { m_dataAccessRoleHasBeenSet = true; m_dataAccessRole = std::forward<DataAccessRoleT>(value); }
+    template<typename DataAccessRoleT = Aws::String>
+    GlueRunConfigurationOutput& WithDataAccessRole(DataAccessRoleT&& value) { SetDataAccessRole(std::forward<DataAccessRoleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -100,14 +94,12 @@ namespace Model
      * <p>The Amazon Web Services region included in the configuration details of the
      * Amazon Web Services Glue data source. </p>
      */
-    inline const Aws::String& GetRegion() const{ return m_region; }
+    inline const Aws::String& GetRegion() const { return m_region; }
     inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
-    inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
-    inline void SetRegion(Aws::String&& value) { m_regionHasBeenSet = true; m_region = std::move(value); }
-    inline void SetRegion(const char* value) { m_regionHasBeenSet = true; m_region.assign(value); }
-    inline GlueRunConfigurationOutput& WithRegion(const Aws::String& value) { SetRegion(value); return *this;}
-    inline GlueRunConfigurationOutput& WithRegion(Aws::String&& value) { SetRegion(std::move(value)); return *this;}
-    inline GlueRunConfigurationOutput& WithRegion(const char* value) { SetRegion(value); return *this;}
+    template<typename RegionT = Aws::String>
+    void SetRegion(RegionT&& value) { m_regionHasBeenSet = true; m_region = std::forward<RegionT>(value); }
+    template<typename RegionT = Aws::String>
+    GlueRunConfigurationOutput& WithRegion(RegionT&& value) { SetRegion(std::forward<RegionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,21 +107,21 @@ namespace Model
      * <p>The relational filter configurations included in the configuration details of
      * the Amazon Web Services Glue data source.</p>
      */
-    inline const Aws::Vector<RelationalFilterConfiguration>& GetRelationalFilterConfigurations() const{ return m_relationalFilterConfigurations; }
+    inline const Aws::Vector<RelationalFilterConfiguration>& GetRelationalFilterConfigurations() const { return m_relationalFilterConfigurations; }
     inline bool RelationalFilterConfigurationsHasBeenSet() const { return m_relationalFilterConfigurationsHasBeenSet; }
-    inline void SetRelationalFilterConfigurations(const Aws::Vector<RelationalFilterConfiguration>& value) { m_relationalFilterConfigurationsHasBeenSet = true; m_relationalFilterConfigurations = value; }
-    inline void SetRelationalFilterConfigurations(Aws::Vector<RelationalFilterConfiguration>&& value) { m_relationalFilterConfigurationsHasBeenSet = true; m_relationalFilterConfigurations = std::move(value); }
-    inline GlueRunConfigurationOutput& WithRelationalFilterConfigurations(const Aws::Vector<RelationalFilterConfiguration>& value) { SetRelationalFilterConfigurations(value); return *this;}
-    inline GlueRunConfigurationOutput& WithRelationalFilterConfigurations(Aws::Vector<RelationalFilterConfiguration>&& value) { SetRelationalFilterConfigurations(std::move(value)); return *this;}
-    inline GlueRunConfigurationOutput& AddRelationalFilterConfigurations(const RelationalFilterConfiguration& value) { m_relationalFilterConfigurationsHasBeenSet = true; m_relationalFilterConfigurations.push_back(value); return *this; }
-    inline GlueRunConfigurationOutput& AddRelationalFilterConfigurations(RelationalFilterConfiguration&& value) { m_relationalFilterConfigurationsHasBeenSet = true; m_relationalFilterConfigurations.push_back(std::move(value)); return *this; }
+    template<typename RelationalFilterConfigurationsT = Aws::Vector<RelationalFilterConfiguration>>
+    void SetRelationalFilterConfigurations(RelationalFilterConfigurationsT&& value) { m_relationalFilterConfigurationsHasBeenSet = true; m_relationalFilterConfigurations = std::forward<RelationalFilterConfigurationsT>(value); }
+    template<typename RelationalFilterConfigurationsT = Aws::Vector<RelationalFilterConfiguration>>
+    GlueRunConfigurationOutput& WithRelationalFilterConfigurations(RelationalFilterConfigurationsT&& value) { SetRelationalFilterConfigurations(std::forward<RelationalFilterConfigurationsT>(value)); return *this;}
+    template<typename RelationalFilterConfigurationsT = RelationalFilterConfiguration>
+    GlueRunConfigurationOutput& AddRelationalFilterConfigurations(RelationalFilterConfigurationsT&& value) { m_relationalFilterConfigurationsHasBeenSet = true; m_relationalFilterConfigurations.emplace_back(std::forward<RelationalFilterConfigurationsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_accountId;
     bool m_accountIdHasBeenSet = false;
 
-    bool m_autoImportDataQualityResult;
+    bool m_autoImportDataQualityResult{false};
     bool m_autoImportDataQualityResultHasBeenSet = false;
 
     Aws::String m_catalogName;

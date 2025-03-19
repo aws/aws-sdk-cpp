@@ -28,7 +28,7 @@ namespace Model
   class StartBuildResult
   {
   public:
-    AWS_CODEBUILD_API StartBuildResult();
+    AWS_CODEBUILD_API StartBuildResult() = default;
     AWS_CODEBUILD_API StartBuildResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CODEBUILD_API StartBuildResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,28 +37,28 @@ namespace Model
     /**
      * <p>Information about the build to be run.</p>
      */
-    inline const Build& GetBuild() const{ return m_build; }
-    inline void SetBuild(const Build& value) { m_build = value; }
-    inline void SetBuild(Build&& value) { m_build = std::move(value); }
-    inline StartBuildResult& WithBuild(const Build& value) { SetBuild(value); return *this;}
-    inline StartBuildResult& WithBuild(Build&& value) { SetBuild(std::move(value)); return *this;}
+    inline const Build& GetBuild() const { return m_build; }
+    template<typename BuildT = Build>
+    void SetBuild(BuildT&& value) { m_buildHasBeenSet = true; m_build = std::forward<BuildT>(value); }
+    template<typename BuildT = Build>
+    StartBuildResult& WithBuild(BuildT&& value) { SetBuild(std::forward<BuildT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline StartBuildResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline StartBuildResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline StartBuildResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    StartBuildResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Build m_build;
+    bool m_buildHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

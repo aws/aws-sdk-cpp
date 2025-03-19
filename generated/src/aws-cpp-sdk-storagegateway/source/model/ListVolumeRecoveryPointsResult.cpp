@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListVolumeRecoveryPointsResult::ListVolumeRecoveryPointsResult()
-{
-}
-
 ListVolumeRecoveryPointsResult::ListVolumeRecoveryPointsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ ListVolumeRecoveryPointsResult& ListVolumeRecoveryPointsResult::operator =(const
   if(jsonValue.ValueExists("GatewayARN"))
   {
     m_gatewayARN = jsonValue.GetString("GatewayARN");
-
+    m_gatewayARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("VolumeRecoveryPointInfos"))
   {
     Aws::Utils::Array<JsonView> volumeRecoveryPointInfosJsonList = jsonValue.GetArray("VolumeRecoveryPointInfos");
@@ -42,14 +37,15 @@ ListVolumeRecoveryPointsResult& ListVolumeRecoveryPointsResult::operator =(const
     {
       m_volumeRecoveryPointInfos.push_back(volumeRecoveryPointInfosJsonList[volumeRecoveryPointInfosIndex].AsObject());
     }
+    m_volumeRecoveryPointInfosHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -25,7 +25,7 @@ namespace Model
   class StartCapacityTaskRequest : public OutpostsRequest
   {
   public:
-    AWS_OUTPOSTS_API StartCapacityTaskRequest();
+    AWS_OUTPOSTS_API StartCapacityTaskRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,12 @@ namespace Model
      * <p>The ID or ARN of the Outposts associated with the specified capacity
      * task.</p>
      */
-    inline const Aws::String& GetOutpostIdentifier() const{ return m_outpostIdentifier; }
+    inline const Aws::String& GetOutpostIdentifier() const { return m_outpostIdentifier; }
     inline bool OutpostIdentifierHasBeenSet() const { return m_outpostIdentifierHasBeenSet; }
-    inline void SetOutpostIdentifier(const Aws::String& value) { m_outpostIdentifierHasBeenSet = true; m_outpostIdentifier = value; }
-    inline void SetOutpostIdentifier(Aws::String&& value) { m_outpostIdentifierHasBeenSet = true; m_outpostIdentifier = std::move(value); }
-    inline void SetOutpostIdentifier(const char* value) { m_outpostIdentifierHasBeenSet = true; m_outpostIdentifier.assign(value); }
-    inline StartCapacityTaskRequest& WithOutpostIdentifier(const Aws::String& value) { SetOutpostIdentifier(value); return *this;}
-    inline StartCapacityTaskRequest& WithOutpostIdentifier(Aws::String&& value) { SetOutpostIdentifier(std::move(value)); return *this;}
-    inline StartCapacityTaskRequest& WithOutpostIdentifier(const char* value) { SetOutpostIdentifier(value); return *this;}
+    template<typename OutpostIdentifierT = Aws::String>
+    void SetOutpostIdentifier(OutpostIdentifierT&& value) { m_outpostIdentifierHasBeenSet = true; m_outpostIdentifier = std::forward<OutpostIdentifierT>(value); }
+    template<typename OutpostIdentifierT = Aws::String>
+    StartCapacityTaskRequest& WithOutpostIdentifier(OutpostIdentifierT&& value) { SetOutpostIdentifier(std::forward<OutpostIdentifierT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -56,28 +54,26 @@ namespace Model
      * <p>The ID of the Amazon Web Services Outposts order associated with the
      * specified capacity task.</p>
      */
-    inline const Aws::String& GetOrderId() const{ return m_orderId; }
+    inline const Aws::String& GetOrderId() const { return m_orderId; }
     inline bool OrderIdHasBeenSet() const { return m_orderIdHasBeenSet; }
-    inline void SetOrderId(const Aws::String& value) { m_orderIdHasBeenSet = true; m_orderId = value; }
-    inline void SetOrderId(Aws::String&& value) { m_orderIdHasBeenSet = true; m_orderId = std::move(value); }
-    inline void SetOrderId(const char* value) { m_orderIdHasBeenSet = true; m_orderId.assign(value); }
-    inline StartCapacityTaskRequest& WithOrderId(const Aws::String& value) { SetOrderId(value); return *this;}
-    inline StartCapacityTaskRequest& WithOrderId(Aws::String&& value) { SetOrderId(std::move(value)); return *this;}
-    inline StartCapacityTaskRequest& WithOrderId(const char* value) { SetOrderId(value); return *this;}
+    template<typename OrderIdT = Aws::String>
+    void SetOrderId(OrderIdT&& value) { m_orderIdHasBeenSet = true; m_orderId = std::forward<OrderIdT>(value); }
+    template<typename OrderIdT = Aws::String>
+    StartCapacityTaskRequest& WithOrderId(OrderIdT&& value) { SetOrderId(std::forward<OrderIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The instance pools specified in the capacity task.</p>
      */
-    inline const Aws::Vector<InstanceTypeCapacity>& GetInstancePools() const{ return m_instancePools; }
+    inline const Aws::Vector<InstanceTypeCapacity>& GetInstancePools() const { return m_instancePools; }
     inline bool InstancePoolsHasBeenSet() const { return m_instancePoolsHasBeenSet; }
-    inline void SetInstancePools(const Aws::Vector<InstanceTypeCapacity>& value) { m_instancePoolsHasBeenSet = true; m_instancePools = value; }
-    inline void SetInstancePools(Aws::Vector<InstanceTypeCapacity>&& value) { m_instancePoolsHasBeenSet = true; m_instancePools = std::move(value); }
-    inline StartCapacityTaskRequest& WithInstancePools(const Aws::Vector<InstanceTypeCapacity>& value) { SetInstancePools(value); return *this;}
-    inline StartCapacityTaskRequest& WithInstancePools(Aws::Vector<InstanceTypeCapacity>&& value) { SetInstancePools(std::move(value)); return *this;}
-    inline StartCapacityTaskRequest& AddInstancePools(const InstanceTypeCapacity& value) { m_instancePoolsHasBeenSet = true; m_instancePools.push_back(value); return *this; }
-    inline StartCapacityTaskRequest& AddInstancePools(InstanceTypeCapacity&& value) { m_instancePoolsHasBeenSet = true; m_instancePools.push_back(std::move(value)); return *this; }
+    template<typename InstancePoolsT = Aws::Vector<InstanceTypeCapacity>>
+    void SetInstancePools(InstancePoolsT&& value) { m_instancePoolsHasBeenSet = true; m_instancePools = std::forward<InstancePoolsT>(value); }
+    template<typename InstancePoolsT = Aws::Vector<InstanceTypeCapacity>>
+    StartCapacityTaskRequest& WithInstancePools(InstancePoolsT&& value) { SetInstancePools(std::forward<InstancePoolsT>(value)); return *this;}
+    template<typename InstancePoolsT = InstanceTypeCapacity>
+    StartCapacityTaskRequest& AddInstancePools(InstancePoolsT&& value) { m_instancePoolsHasBeenSet = true; m_instancePools.emplace_back(std::forward<InstancePoolsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -85,12 +81,12 @@ namespace Model
      * <p>List of user-specified running instances that must not be stopped in order to
      * free up the capacity needed to run the capacity task.</p>
      */
-    inline const InstancesToExclude& GetInstancesToExclude() const{ return m_instancesToExclude; }
+    inline const InstancesToExclude& GetInstancesToExclude() const { return m_instancesToExclude; }
     inline bool InstancesToExcludeHasBeenSet() const { return m_instancesToExcludeHasBeenSet; }
-    inline void SetInstancesToExclude(const InstancesToExclude& value) { m_instancesToExcludeHasBeenSet = true; m_instancesToExclude = value; }
-    inline void SetInstancesToExclude(InstancesToExclude&& value) { m_instancesToExcludeHasBeenSet = true; m_instancesToExclude = std::move(value); }
-    inline StartCapacityTaskRequest& WithInstancesToExclude(const InstancesToExclude& value) { SetInstancesToExclude(value); return *this;}
-    inline StartCapacityTaskRequest& WithInstancesToExclude(InstancesToExclude&& value) { SetInstancesToExclude(std::move(value)); return *this;}
+    template<typename InstancesToExcludeT = InstancesToExclude>
+    void SetInstancesToExclude(InstancesToExcludeT&& value) { m_instancesToExcludeHasBeenSet = true; m_instancesToExclude = std::forward<InstancesToExcludeT>(value); }
+    template<typename InstancesToExcludeT = InstancesToExclude>
+    StartCapacityTaskRequest& WithInstancesToExclude(InstancesToExcludeT&& value) { SetInstancesToExclude(std::forward<InstancesToExcludeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -99,7 +95,7 @@ namespace Model
      * changes is above or below available instance capacity. Requesting a dry run does
      * not make any changes to your plan.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline StartCapacityTaskRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -113,12 +109,10 @@ namespace Model
      * capacity is available to complete the task.</p> </li> <li> <p>
      * <code>FAIL_TASK</code> - The capacity task fails.</p> </li> </ul>
      */
-    inline const TaskActionOnBlockingInstances& GetTaskActionOnBlockingInstances() const{ return m_taskActionOnBlockingInstances; }
+    inline TaskActionOnBlockingInstances GetTaskActionOnBlockingInstances() const { return m_taskActionOnBlockingInstances; }
     inline bool TaskActionOnBlockingInstancesHasBeenSet() const { return m_taskActionOnBlockingInstancesHasBeenSet; }
-    inline void SetTaskActionOnBlockingInstances(const TaskActionOnBlockingInstances& value) { m_taskActionOnBlockingInstancesHasBeenSet = true; m_taskActionOnBlockingInstances = value; }
-    inline void SetTaskActionOnBlockingInstances(TaskActionOnBlockingInstances&& value) { m_taskActionOnBlockingInstancesHasBeenSet = true; m_taskActionOnBlockingInstances = std::move(value); }
-    inline StartCapacityTaskRequest& WithTaskActionOnBlockingInstances(const TaskActionOnBlockingInstances& value) { SetTaskActionOnBlockingInstances(value); return *this;}
-    inline StartCapacityTaskRequest& WithTaskActionOnBlockingInstances(TaskActionOnBlockingInstances&& value) { SetTaskActionOnBlockingInstances(std::move(value)); return *this;}
+    inline void SetTaskActionOnBlockingInstances(TaskActionOnBlockingInstances value) { m_taskActionOnBlockingInstancesHasBeenSet = true; m_taskActionOnBlockingInstances = value; }
+    inline StartCapacityTaskRequest& WithTaskActionOnBlockingInstances(TaskActionOnBlockingInstances value) { SetTaskActionOnBlockingInstances(value); return *this;}
     ///@}
   private:
 
@@ -134,10 +128,10 @@ namespace Model
     InstancesToExclude m_instancesToExclude;
     bool m_instancesToExcludeHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
-    TaskActionOnBlockingInstances m_taskActionOnBlockingInstances;
+    TaskActionOnBlockingInstances m_taskActionOnBlockingInstances{TaskActionOnBlockingInstances::NOT_SET};
     bool m_taskActionOnBlockingInstancesHasBeenSet = false;
   };
 

@@ -10,11 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-CancelResizeRequest::CancelResizeRequest() : 
-    m_clusterIdentifierHasBeenSet(false)
-{
-}
-
 Aws::String CancelResizeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

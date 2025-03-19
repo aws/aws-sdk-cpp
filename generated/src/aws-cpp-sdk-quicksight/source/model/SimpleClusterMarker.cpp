@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-SimpleClusterMarker::SimpleClusterMarker() : 
-    m_colorHasBeenSet(false)
-{
-}
-
 SimpleClusterMarker::SimpleClusterMarker(JsonView jsonValue)
-  : SimpleClusterMarker()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SimpleClusterMarker& SimpleClusterMarker::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Color"))
   {
     m_color = jsonValue.GetString("Color");
-
     m_colorHasBeenSet = true;
   }
-
   return *this;
 }
 

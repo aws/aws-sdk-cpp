@@ -30,7 +30,7 @@ namespace Model
   class RegisterTaskDefinitionResult
   {
   public:
-    AWS_ECS_API RegisterTaskDefinitionResult();
+    AWS_ECS_API RegisterTaskDefinitionResult() = default;
     AWS_ECS_API RegisterTaskDefinitionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_ECS_API RegisterTaskDefinitionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,43 +39,44 @@ namespace Model
     /**
      * <p>The full description of the registered task definition.</p>
      */
-    inline const TaskDefinition& GetTaskDefinition() const{ return m_taskDefinition; }
-    inline void SetTaskDefinition(const TaskDefinition& value) { m_taskDefinition = value; }
-    inline void SetTaskDefinition(TaskDefinition&& value) { m_taskDefinition = std::move(value); }
-    inline RegisterTaskDefinitionResult& WithTaskDefinition(const TaskDefinition& value) { SetTaskDefinition(value); return *this;}
-    inline RegisterTaskDefinitionResult& WithTaskDefinition(TaskDefinition&& value) { SetTaskDefinition(std::move(value)); return *this;}
+    inline const TaskDefinition& GetTaskDefinition() const { return m_taskDefinition; }
+    template<typename TaskDefinitionT = TaskDefinition>
+    void SetTaskDefinition(TaskDefinitionT&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::forward<TaskDefinitionT>(value); }
+    template<typename TaskDefinitionT = TaskDefinition>
+    RegisterTaskDefinitionResult& WithTaskDefinition(TaskDefinitionT&& value) { SetTaskDefinition(std::forward<TaskDefinitionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The list of tags associated with the task definition.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
-    inline RegisterTaskDefinitionResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline RegisterTaskDefinitionResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline RegisterTaskDefinitionResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
-    inline RegisterTaskDefinitionResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    RegisterTaskDefinitionResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    RegisterTaskDefinitionResult& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline RegisterTaskDefinitionResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline RegisterTaskDefinitionResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline RegisterTaskDefinitionResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    RegisterTaskDefinitionResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     TaskDefinition m_taskDefinition;
+    bool m_taskDefinitionHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

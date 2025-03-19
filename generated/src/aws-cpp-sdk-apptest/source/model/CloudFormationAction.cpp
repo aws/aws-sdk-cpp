@@ -18,15 +18,7 @@ namespace AppTest
 namespace Model
 {
 
-CloudFormationAction::CloudFormationAction() : 
-    m_resourceHasBeenSet(false),
-    m_actionType(CloudFormationActionType::NOT_SET),
-    m_actionTypeHasBeenSet(false)
-{
-}
-
 CloudFormationAction::CloudFormationAction(JsonView jsonValue)
-  : CloudFormationAction()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ CloudFormationAction& CloudFormationAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("resource"))
   {
     m_resource = jsonValue.GetString("resource");
-
     m_resourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("actionType"))
   {
     m_actionType = CloudFormationActionTypeMapper::GetCloudFormationActionTypeForName(jsonValue.GetString("actionType"));
-
     m_actionTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

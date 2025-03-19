@@ -32,7 +32,7 @@ namespace Model
   class IdNamespaceAssociationInputReferencePropertiesSummary
   {
   public:
-    AWS_CLEANROOMS_API IdNamespaceAssociationInputReferencePropertiesSummary();
+    AWS_CLEANROOMS_API IdNamespaceAssociationInputReferencePropertiesSummary() = default;
     AWS_CLEANROOMS_API IdNamespaceAssociationInputReferencePropertiesSummary(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API IdNamespaceAssociationInputReferencePropertiesSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,16 +42,14 @@ namespace Model
     /**
      * <p>The ID namespace type for this ID namespace association.</p>
      */
-    inline const IdNamespaceType& GetIdNamespaceType() const{ return m_idNamespaceType; }
+    inline IdNamespaceType GetIdNamespaceType() const { return m_idNamespaceType; }
     inline bool IdNamespaceTypeHasBeenSet() const { return m_idNamespaceTypeHasBeenSet; }
-    inline void SetIdNamespaceType(const IdNamespaceType& value) { m_idNamespaceTypeHasBeenSet = true; m_idNamespaceType = value; }
-    inline void SetIdNamespaceType(IdNamespaceType&& value) { m_idNamespaceTypeHasBeenSet = true; m_idNamespaceType = std::move(value); }
-    inline IdNamespaceAssociationInputReferencePropertiesSummary& WithIdNamespaceType(const IdNamespaceType& value) { SetIdNamespaceType(value); return *this;}
-    inline IdNamespaceAssociationInputReferencePropertiesSummary& WithIdNamespaceType(IdNamespaceType&& value) { SetIdNamespaceType(std::move(value)); return *this;}
+    inline void SetIdNamespaceType(IdNamespaceType value) { m_idNamespaceTypeHasBeenSet = true; m_idNamespaceType = value; }
+    inline IdNamespaceAssociationInputReferencePropertiesSummary& WithIdNamespaceType(IdNamespaceType value) { SetIdNamespaceType(value); return *this;}
     ///@}
   private:
 
-    IdNamespaceType m_idNamespaceType;
+    IdNamespaceType m_idNamespaceType{IdNamespaceType::NOT_SET};
     bool m_idNamespaceTypeHasBeenSet = false;
   };
 

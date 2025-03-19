@@ -36,7 +36,7 @@ namespace Model
   class ActionExecutionOutput
   {
   public:
-    AWS_CODEPIPELINE_API ActionExecutionOutput();
+    AWS_CODEPIPELINE_API ActionExecutionOutput() = default;
     AWS_CODEPIPELINE_API ActionExecutionOutput(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API ActionExecutionOutput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CODEPIPELINE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,14 @@ namespace Model
      * <p>Details of output artifacts of the action that correspond to the action
      * execution.</p>
      */
-    inline const Aws::Vector<ArtifactDetail>& GetOutputArtifacts() const{ return m_outputArtifacts; }
+    inline const Aws::Vector<ArtifactDetail>& GetOutputArtifacts() const { return m_outputArtifacts; }
     inline bool OutputArtifactsHasBeenSet() const { return m_outputArtifactsHasBeenSet; }
-    inline void SetOutputArtifacts(const Aws::Vector<ArtifactDetail>& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts = value; }
-    inline void SetOutputArtifacts(Aws::Vector<ArtifactDetail>&& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts = std::move(value); }
-    inline ActionExecutionOutput& WithOutputArtifacts(const Aws::Vector<ArtifactDetail>& value) { SetOutputArtifacts(value); return *this;}
-    inline ActionExecutionOutput& WithOutputArtifacts(Aws::Vector<ArtifactDetail>&& value) { SetOutputArtifacts(std::move(value)); return *this;}
-    inline ActionExecutionOutput& AddOutputArtifacts(const ArtifactDetail& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts.push_back(value); return *this; }
-    inline ActionExecutionOutput& AddOutputArtifacts(ArtifactDetail&& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts.push_back(std::move(value)); return *this; }
+    template<typename OutputArtifactsT = Aws::Vector<ArtifactDetail>>
+    void SetOutputArtifacts(OutputArtifactsT&& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts = std::forward<OutputArtifactsT>(value); }
+    template<typename OutputArtifactsT = Aws::Vector<ArtifactDetail>>
+    ActionExecutionOutput& WithOutputArtifacts(OutputArtifactsT&& value) { SetOutputArtifacts(std::forward<OutputArtifactsT>(value)); return *this;}
+    template<typename OutputArtifactsT = ArtifactDetail>
+    ActionExecutionOutput& AddOutputArtifacts(OutputArtifactsT&& value) { m_outputArtifactsHasBeenSet = true; m_outputArtifacts.emplace_back(std::forward<OutputArtifactsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -62,12 +62,12 @@ namespace Model
      * <p>Execution result information listed in the output details for an action
      * execution.</p>
      */
-    inline const ActionExecutionResult& GetExecutionResult() const{ return m_executionResult; }
+    inline const ActionExecutionResult& GetExecutionResult() const { return m_executionResult; }
     inline bool ExecutionResultHasBeenSet() const { return m_executionResultHasBeenSet; }
-    inline void SetExecutionResult(const ActionExecutionResult& value) { m_executionResultHasBeenSet = true; m_executionResult = value; }
-    inline void SetExecutionResult(ActionExecutionResult&& value) { m_executionResultHasBeenSet = true; m_executionResult = std::move(value); }
-    inline ActionExecutionOutput& WithExecutionResult(const ActionExecutionResult& value) { SetExecutionResult(value); return *this;}
-    inline ActionExecutionOutput& WithExecutionResult(ActionExecutionResult&& value) { SetExecutionResult(std::move(value)); return *this;}
+    template<typename ExecutionResultT = ActionExecutionResult>
+    void SetExecutionResult(ExecutionResultT&& value) { m_executionResultHasBeenSet = true; m_executionResult = std::forward<ExecutionResultT>(value); }
+    template<typename ExecutionResultT = ActionExecutionResult>
+    ActionExecutionOutput& WithExecutionResult(ExecutionResultT&& value) { SetExecutionResult(std::forward<ExecutionResultT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -75,19 +75,16 @@ namespace Model
      * <p>The outputVariables field shows the key-value pairs that were output as part
      * of that execution.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetOutputVariables() const{ return m_outputVariables; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetOutputVariables() const { return m_outputVariables; }
     inline bool OutputVariablesHasBeenSet() const { return m_outputVariablesHasBeenSet; }
-    inline void SetOutputVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_outputVariablesHasBeenSet = true; m_outputVariables = value; }
-    inline void SetOutputVariables(Aws::Map<Aws::String, Aws::String>&& value) { m_outputVariablesHasBeenSet = true; m_outputVariables = std::move(value); }
-    inline ActionExecutionOutput& WithOutputVariables(const Aws::Map<Aws::String, Aws::String>& value) { SetOutputVariables(value); return *this;}
-    inline ActionExecutionOutput& WithOutputVariables(Aws::Map<Aws::String, Aws::String>&& value) { SetOutputVariables(std::move(value)); return *this;}
-    inline ActionExecutionOutput& AddOutputVariables(const Aws::String& key, const Aws::String& value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(key, value); return *this; }
-    inline ActionExecutionOutput& AddOutputVariables(Aws::String&& key, const Aws::String& value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(std::move(key), value); return *this; }
-    inline ActionExecutionOutput& AddOutputVariables(const Aws::String& key, Aws::String&& value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(key, std::move(value)); return *this; }
-    inline ActionExecutionOutput& AddOutputVariables(Aws::String&& key, Aws::String&& value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(std::move(key), std::move(value)); return *this; }
-    inline ActionExecutionOutput& AddOutputVariables(const char* key, Aws::String&& value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(key, std::move(value)); return *this; }
-    inline ActionExecutionOutput& AddOutputVariables(Aws::String&& key, const char* value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(std::move(key), value); return *this; }
-    inline ActionExecutionOutput& AddOutputVariables(const char* key, const char* value) { m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(key, value); return *this; }
+    template<typename OutputVariablesT = Aws::Map<Aws::String, Aws::String>>
+    void SetOutputVariables(OutputVariablesT&& value) { m_outputVariablesHasBeenSet = true; m_outputVariables = std::forward<OutputVariablesT>(value); }
+    template<typename OutputVariablesT = Aws::Map<Aws::String, Aws::String>>
+    ActionExecutionOutput& WithOutputVariables(OutputVariablesT&& value) { SetOutputVariables(std::forward<OutputVariablesT>(value)); return *this;}
+    template<typename OutputVariablesKeyT = Aws::String, typename OutputVariablesValueT = Aws::String>
+    ActionExecutionOutput& AddOutputVariables(OutputVariablesKeyT&& key, OutputVariablesValueT&& value) {
+      m_outputVariablesHasBeenSet = true; m_outputVariables.emplace(std::forward<OutputVariablesKeyT>(key), std::forward<OutputVariablesValueT>(value)); return *this;
+    }
     ///@}
   private:
 

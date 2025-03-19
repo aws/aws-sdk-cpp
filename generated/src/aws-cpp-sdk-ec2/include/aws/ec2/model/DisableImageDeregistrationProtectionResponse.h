@@ -28,7 +28,7 @@ namespace Model
   class DisableImageDeregistrationProtectionResponse
   {
   public:
-    AWS_EC2_API DisableImageDeregistrationProtectionResponse();
+    AWS_EC2_API DisableImageDeregistrationProtectionResponse() = default;
     AWS_EC2_API DisableImageDeregistrationProtectionResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DisableImageDeregistrationProtectionResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -38,28 +38,28 @@ namespace Model
      * <p>Returns <code>true</code> if the request succeeds; otherwise, it returns an
      * error.</p>
      */
-    inline const Aws::String& GetReturn() const{ return m_return; }
-    inline void SetReturn(const Aws::String& value) { m_return = value; }
-    inline void SetReturn(Aws::String&& value) { m_return = std::move(value); }
-    inline void SetReturn(const char* value) { m_return.assign(value); }
-    inline DisableImageDeregistrationProtectionResponse& WithReturn(const Aws::String& value) { SetReturn(value); return *this;}
-    inline DisableImageDeregistrationProtectionResponse& WithReturn(Aws::String&& value) { SetReturn(std::move(value)); return *this;}
-    inline DisableImageDeregistrationProtectionResponse& WithReturn(const char* value) { SetReturn(value); return *this;}
+    inline const Aws::String& GetReturn() const { return m_return; }
+    template<typename ReturnT = Aws::String>
+    void SetReturn(ReturnT&& value) { m_returnHasBeenSet = true; m_return = std::forward<ReturnT>(value); }
+    template<typename ReturnT = Aws::String>
+    DisableImageDeregistrationProtectionResponse& WithReturn(ReturnT&& value) { SetReturn(std::forward<ReturnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DisableImageDeregistrationProtectionResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DisableImageDeregistrationProtectionResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DisableImageDeregistrationProtectionResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_return;
+    bool m_returnHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

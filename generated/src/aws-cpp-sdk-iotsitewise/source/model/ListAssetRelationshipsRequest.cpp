@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListAssetRelationshipsRequest::ListAssetRelationshipsRequest() : 
-    m_assetIdHasBeenSet(false),
-    m_traversalType(TraversalType::NOT_SET),
-    m_traversalTypeHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
-{
-}
-
 Aws::String ListAssetRelationshipsRequest::SerializePayload() const
 {
   return {};

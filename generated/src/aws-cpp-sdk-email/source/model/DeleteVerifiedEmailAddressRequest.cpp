@@ -10,11 +10,6 @@
 using namespace Aws::SES::Model;
 using namespace Aws::Utils;
 
-DeleteVerifiedEmailAddressRequest::DeleteVerifiedEmailAddressRequest() : 
-    m_emailAddressHasBeenSet(false)
-{
-}
-
 Aws::String DeleteVerifiedEmailAddressRequest::SerializePayload() const
 {
   Aws::StringStream ss;

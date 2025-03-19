@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DeleteQueryDefinitionResult::DeleteQueryDefinitionResult() : 
-    m_success(false)
-{
-}
-
 DeleteQueryDefinitionResult::DeleteQueryDefinitionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : DeleteQueryDefinitionResult()
 {
   *this = result;
 }
@@ -34,15 +28,15 @@ DeleteQueryDefinitionResult& DeleteQueryDefinitionResult::operator =(const Aws::
   if(jsonValue.ValueExists("success"))
   {
     m_success = jsonValue.GetBool("success");
-
+    m_successHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

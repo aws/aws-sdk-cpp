@@ -18,17 +18,7 @@ namespace IoTEvents
 namespace Model
 {
 
-IotSiteWiseAction::IotSiteWiseAction() : 
-    m_entryIdHasBeenSet(false),
-    m_assetIdHasBeenSet(false),
-    m_propertyIdHasBeenSet(false),
-    m_propertyAliasHasBeenSet(false),
-    m_propertyValueHasBeenSet(false)
-{
-}
-
 IotSiteWiseAction::IotSiteWiseAction(JsonView jsonValue)
-  : IotSiteWiseAction()
 {
   *this = jsonValue;
 }
@@ -38,38 +28,28 @@ IotSiteWiseAction& IotSiteWiseAction::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("entryId"))
   {
     m_entryId = jsonValue.GetString("entryId");
-
     m_entryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("assetId"))
   {
     m_assetId = jsonValue.GetString("assetId");
-
     m_assetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("propertyId"))
   {
     m_propertyId = jsonValue.GetString("propertyId");
-
     m_propertyIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("propertyAlias"))
   {
     m_propertyAlias = jsonValue.GetString("propertyAlias");
-
     m_propertyAliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("propertyValue"))
   {
     m_propertyValue = jsonValue.GetObject("propertyValue");
-
     m_propertyValueHasBeenSet = true;
   }
-
   return *this;
 }
 

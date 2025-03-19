@@ -34,7 +34,7 @@ namespace Model
   class Promotion
   {
   public:
-    AWS_PERSONALIZERUNTIME_API Promotion();
+    AWS_PERSONALIZERUNTIME_API Promotion() = default;
     AWS_PERSONALIZERUNTIME_API Promotion(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZERUNTIME_API Promotion& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PERSONALIZERUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -44,21 +44,19 @@ namespace Model
     /**
      * <p>The name of the promotion.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Promotion& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Promotion& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Promotion& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Promotion& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The percentage of recommended items to apply the promotion to.</p>
      */
-    inline int GetPercentPromotedItems() const{ return m_percentPromotedItems; }
+    inline int GetPercentPromotedItems() const { return m_percentPromotedItems; }
     inline bool PercentPromotedItemsHasBeenSet() const { return m_percentPromotedItemsHasBeenSet; }
     inline void SetPercentPromotedItems(int value) { m_percentPromotedItemsHasBeenSet = true; m_percentPromotedItems = value; }
     inline Promotion& WithPercentPromotedItems(int value) { SetPercentPromotedItems(value); return *this;}
@@ -71,14 +69,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/personalize/latest/dg/promoting-items.html#promotion-filters">Promotion
      * filters</a>.</p>
      */
-    inline const Aws::String& GetFilterArn() const{ return m_filterArn; }
+    inline const Aws::String& GetFilterArn() const { return m_filterArn; }
     inline bool FilterArnHasBeenSet() const { return m_filterArnHasBeenSet; }
-    inline void SetFilterArn(const Aws::String& value) { m_filterArnHasBeenSet = true; m_filterArn = value; }
-    inline void SetFilterArn(Aws::String&& value) { m_filterArnHasBeenSet = true; m_filterArn = std::move(value); }
-    inline void SetFilterArn(const char* value) { m_filterArnHasBeenSet = true; m_filterArn.assign(value); }
-    inline Promotion& WithFilterArn(const Aws::String& value) { SetFilterArn(value); return *this;}
-    inline Promotion& WithFilterArn(Aws::String&& value) { SetFilterArn(std::move(value)); return *this;}
-    inline Promotion& WithFilterArn(const char* value) { SetFilterArn(value); return *this;}
+    template<typename FilterArnT = Aws::String>
+    void SetFilterArn(FilterArnT&& value) { m_filterArnHasBeenSet = true; m_filterArn = std::forward<FilterArnT>(value); }
+    template<typename FilterArnT = Aws::String>
+    Promotion& WithFilterArn(FilterArnT&& value) { SetFilterArn(std::forward<FilterArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,26 +92,23 @@ namespace Model
      * href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering
      * recommendations and user segments</a>.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetFilterValues() const{ return m_filterValues; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetFilterValues() const { return m_filterValues; }
     inline bool FilterValuesHasBeenSet() const { return m_filterValuesHasBeenSet; }
-    inline void SetFilterValues(const Aws::Map<Aws::String, Aws::String>& value) { m_filterValuesHasBeenSet = true; m_filterValues = value; }
-    inline void SetFilterValues(Aws::Map<Aws::String, Aws::String>&& value) { m_filterValuesHasBeenSet = true; m_filterValues = std::move(value); }
-    inline Promotion& WithFilterValues(const Aws::Map<Aws::String, Aws::String>& value) { SetFilterValues(value); return *this;}
-    inline Promotion& WithFilterValues(Aws::Map<Aws::String, Aws::String>&& value) { SetFilterValues(std::move(value)); return *this;}
-    inline Promotion& AddFilterValues(const Aws::String& key, const Aws::String& value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(key, value); return *this; }
-    inline Promotion& AddFilterValues(Aws::String&& key, const Aws::String& value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(std::move(key), value); return *this; }
-    inline Promotion& AddFilterValues(const Aws::String& key, Aws::String&& value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(key, std::move(value)); return *this; }
-    inline Promotion& AddFilterValues(Aws::String&& key, Aws::String&& value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(std::move(key), std::move(value)); return *this; }
-    inline Promotion& AddFilterValues(const char* key, Aws::String&& value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(key, std::move(value)); return *this; }
-    inline Promotion& AddFilterValues(Aws::String&& key, const char* value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(std::move(key), value); return *this; }
-    inline Promotion& AddFilterValues(const char* key, const char* value) { m_filterValuesHasBeenSet = true; m_filterValues.emplace(key, value); return *this; }
+    template<typename FilterValuesT = Aws::Map<Aws::String, Aws::String>>
+    void SetFilterValues(FilterValuesT&& value) { m_filterValuesHasBeenSet = true; m_filterValues = std::forward<FilterValuesT>(value); }
+    template<typename FilterValuesT = Aws::Map<Aws::String, Aws::String>>
+    Promotion& WithFilterValues(FilterValuesT&& value) { SetFilterValues(std::forward<FilterValuesT>(value)); return *this;}
+    template<typename FilterValuesKeyT = Aws::String, typename FilterValuesValueT = Aws::String>
+    Promotion& AddFilterValues(FilterValuesKeyT&& key, FilterValuesValueT&& value) {
+      m_filterValuesHasBeenSet = true; m_filterValues.emplace(std::forward<FilterValuesKeyT>(key), std::forward<FilterValuesValueT>(value)); return *this;
+    }
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    int m_percentPromotedItems;
+    int m_percentPromotedItems{0};
     bool m_percentPromotedItemsHasBeenSet = false;
 
     Aws::String m_filterArn;

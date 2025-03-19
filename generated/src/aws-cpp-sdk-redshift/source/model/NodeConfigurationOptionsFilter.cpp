@@ -20,17 +20,7 @@ namespace Redshift
 namespace Model
 {
 
-NodeConfigurationOptionsFilter::NodeConfigurationOptionsFilter() : 
-    m_name(NodeConfigurationOptionsFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_operator(OperatorType::NOT_SET),
-    m_operatorHasBeenSet(false),
-    m_valuesHasBeenSet(false)
-{
-}
-
 NodeConfigurationOptionsFilter::NodeConfigurationOptionsFilter(const XmlNode& xmlNode)
-  : NodeConfigurationOptionsFilter()
 {
   *this = xmlNode;
 }
@@ -44,19 +34,20 @@ NodeConfigurationOptionsFilter& NodeConfigurationOptionsFilter::operator =(const
     XmlNode nameNode = resultNode.FirstChild("Name");
     if(!nameNode.IsNull())
     {
-      m_name = NodeConfigurationOptionsFilterNameMapper::GetNodeConfigurationOptionsFilterNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText()).c_str()).c_str());
+      m_name = NodeConfigurationOptionsFilterNameMapper::GetNodeConfigurationOptionsFilterNameForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nameNode.GetText()).c_str()));
       m_nameHasBeenSet = true;
     }
     XmlNode operatorNode = resultNode.FirstChild("Operator");
     if(!operatorNode.IsNull())
     {
-      m_operator = OperatorTypeMapper::GetOperatorTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(operatorNode.GetText()).c_str()).c_str());
+      m_operator = OperatorTypeMapper::GetOperatorTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(operatorNode.GetText()).c_str()));
       m_operatorHasBeenSet = true;
     }
     XmlNode valuesNode = resultNode.FirstChild("Value");
     if(!valuesNode.IsNull())
     {
       XmlNode valuesMember = valuesNode.FirstChild("item");
+      m_valuesHasBeenSet = !valuesMember.IsNull();
       while(!valuesMember.IsNull())
       {
         m_values.push_back(valuesMember.GetText());

@@ -12,10 +12,6 @@ using namespace Aws::PinpointSMSVoiceV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteVoiceMessageSpendLimitOverrideRequest::DeleteVoiceMessageSpendLimitOverrideRequest()
-{
-}
-
 Aws::String DeleteVoiceMessageSpendLimitOverrideRequest::SerializePayload() const
 {
   return "{}";

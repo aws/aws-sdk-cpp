@@ -18,19 +18,7 @@ namespace chatbot
 namespace Model
 {
 
-TeamsUserIdentity::TeamsUserIdentity() : 
-    m_iamRoleArnHasBeenSet(false),
-    m_chatConfigurationArnHasBeenSet(false),
-    m_teamIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_awsUserIdentityHasBeenSet(false),
-    m_teamsChannelIdHasBeenSet(false),
-    m_teamsTenantIdHasBeenSet(false)
-{
-}
-
 TeamsUserIdentity::TeamsUserIdentity(JsonView jsonValue)
-  : TeamsUserIdentity()
 {
   *this = jsonValue;
 }
@@ -40,52 +28,38 @@ TeamsUserIdentity& TeamsUserIdentity::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("IamRoleArn"))
   {
     m_iamRoleArn = jsonValue.GetString("IamRoleArn");
-
     m_iamRoleArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ChatConfigurationArn"))
   {
     m_chatConfigurationArn = jsonValue.GetString("ChatConfigurationArn");
-
     m_chatConfigurationArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TeamId"))
   {
     m_teamId = jsonValue.GetString("TeamId");
-
     m_teamIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserId"))
   {
     m_userId = jsonValue.GetString("UserId");
-
     m_userIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AwsUserIdentity"))
   {
     m_awsUserIdentity = jsonValue.GetString("AwsUserIdentity");
-
     m_awsUserIdentityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TeamsChannelId"))
   {
     m_teamsChannelId = jsonValue.GetString("TeamsChannelId");
-
     m_teamsChannelIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TeamsTenantId"))
   {
     m_teamsTenantId = jsonValue.GetString("TeamsTenantId");
-
     m_teamsTenantIdHasBeenSet = true;
   }
-
   return *this;
 }
 

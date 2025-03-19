@@ -18,18 +18,7 @@ namespace Glue
 namespace Model
 {
 
-UserDefinedFunctionInput::UserDefinedFunctionInput() : 
-    m_functionNameHasBeenSet(false),
-    m_classNameHasBeenSet(false),
-    m_ownerNameHasBeenSet(false),
-    m_ownerType(PrincipalType::NOT_SET),
-    m_ownerTypeHasBeenSet(false),
-    m_resourceUrisHasBeenSet(false)
-{
-}
-
 UserDefinedFunctionInput::UserDefinedFunctionInput(JsonView jsonValue)
-  : UserDefinedFunctionInput()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ UserDefinedFunctionInput& UserDefinedFunctionInput::operator =(JsonView jsonValu
   if(jsonValue.ValueExists("FunctionName"))
   {
     m_functionName = jsonValue.GetString("FunctionName");
-
     m_functionNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClassName"))
   {
     m_className = jsonValue.GetString("ClassName");
-
     m_classNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerName"))
   {
     m_ownerName = jsonValue.GetString("OwnerName");
-
     m_ownerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OwnerType"))
   {
     m_ownerType = PrincipalTypeMapper::GetPrincipalTypeForName(jsonValue.GetString("OwnerType"));
-
     m_ownerTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResourceUris"))
   {
     Aws::Utils::Array<JsonView> resourceUrisJsonList = jsonValue.GetArray("ResourceUris");
@@ -73,7 +54,6 @@ UserDefinedFunctionInput& UserDefinedFunctionInput::operator =(JsonView jsonValu
     }
     m_resourceUrisHasBeenSet = true;
   }
-
   return *this;
 }
 

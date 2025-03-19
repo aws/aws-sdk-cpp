@@ -10,29 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-ModifyInstanceAttributeRequest::ModifyInstanceAttributeRequest() : 
-    m_sourceDestCheckHasBeenSet(false),
-    m_disableApiStopHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
-    m_attribute(InstanceAttributeName::NOT_SET),
-    m_attributeHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_blockDeviceMappingsHasBeenSet(false),
-    m_disableApiTerminationHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false),
-    m_kernelHasBeenSet(false),
-    m_ramdiskHasBeenSet(false),
-    m_userDataHasBeenSet(false),
-    m_instanceInitiatedShutdownBehaviorHasBeenSet(false),
-    m_groupsHasBeenSet(false),
-    m_ebsOptimizedHasBeenSet(false),
-    m_sriovNetSupportHasBeenSet(false),
-    m_enaSupportHasBeenSet(false)
-{
-}
-
 Aws::String ModifyInstanceAttributeRequest::SerializePayload() const
 {
   Aws::StringStream ss;

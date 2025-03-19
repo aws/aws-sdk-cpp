@@ -20,39 +20,7 @@ namespace CloudFront
 namespace Model
 {
 
-DistributionSummary::DistributionSummary() : 
-    m_idHasBeenSet(false),
-    m_aRNHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_lastModifiedTimeHasBeenSet(false),
-    m_domainNameHasBeenSet(false),
-    m_aliasesHasBeenSet(false),
-    m_originsHasBeenSet(false),
-    m_originGroupsHasBeenSet(false),
-    m_defaultCacheBehaviorHasBeenSet(false),
-    m_cacheBehaviorsHasBeenSet(false),
-    m_customErrorResponsesHasBeenSet(false),
-    m_commentHasBeenSet(false),
-    m_priceClass(PriceClass::NOT_SET),
-    m_priceClassHasBeenSet(false),
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_viewerCertificateHasBeenSet(false),
-    m_restrictionsHasBeenSet(false),
-    m_webACLIdHasBeenSet(false),
-    m_httpVersion(HttpVersion::NOT_SET),
-    m_httpVersionHasBeenSet(false),
-    m_isIPV6Enabled(false),
-    m_isIPV6EnabledHasBeenSet(false),
-    m_aliasICPRecordalsHasBeenSet(false),
-    m_staging(false),
-    m_stagingHasBeenSet(false),
-    m_anycastIpListIdHasBeenSet(false)
-{
-}
-
 DistributionSummary::DistributionSummary(const XmlNode& xmlNode)
-  : DistributionSummary()
 {
   *this = xmlNode;
 }
@@ -138,7 +106,7 @@ DistributionSummary& DistributionSummary::operator =(const XmlNode& xmlNode)
     XmlNode priceClassNode = resultNode.FirstChild("PriceClass");
     if(!priceClassNode.IsNull())
     {
-      m_priceClass = PriceClassMapper::GetPriceClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priceClassNode.GetText()).c_str()).c_str());
+      m_priceClass = PriceClassMapper::GetPriceClassForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(priceClassNode.GetText()).c_str()));
       m_priceClassHasBeenSet = true;
     }
     XmlNode enabledNode = resultNode.FirstChild("Enabled");
@@ -168,7 +136,7 @@ DistributionSummary& DistributionSummary::operator =(const XmlNode& xmlNode)
     XmlNode httpVersionNode = resultNode.FirstChild("HttpVersion");
     if(!httpVersionNode.IsNull())
     {
-      m_httpVersion = HttpVersionMapper::GetHttpVersionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpVersionNode.GetText()).c_str()).c_str());
+      m_httpVersion = HttpVersionMapper::GetHttpVersionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(httpVersionNode.GetText()).c_str()));
       m_httpVersionHasBeenSet = true;
     }
     XmlNode isIPV6EnabledNode = resultNode.FirstChild("IsIPV6Enabled");
@@ -181,6 +149,7 @@ DistributionSummary& DistributionSummary::operator =(const XmlNode& xmlNode)
     if(!aliasICPRecordalsNode.IsNull())
     {
       XmlNode aliasICPRecordalsMember = aliasICPRecordalsNode.FirstChild("AliasICPRecordal");
+      m_aliasICPRecordalsHasBeenSet = !aliasICPRecordalsMember.IsNull();
       while(!aliasICPRecordalsMember.IsNull())
       {
         m_aliasICPRecordals.push_back(aliasICPRecordalsMember);

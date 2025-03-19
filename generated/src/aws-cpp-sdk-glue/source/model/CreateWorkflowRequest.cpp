@@ -12,16 +12,6 @@ using namespace Aws::Glue::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateWorkflowRequest::CreateWorkflowRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_defaultRunPropertiesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_maxConcurrentRuns(0),
-    m_maxConcurrentRunsHasBeenSet(false)
-{
-}
-
 Aws::String CreateWorkflowRequest::SerializePayload() const
 {
   JsonValue payload;

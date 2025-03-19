@@ -18,17 +18,7 @@ namespace Connect
 namespace Model
 {
 
-MediaConcurrency::MediaConcurrency() : 
-    m_channel(Channel::NOT_SET),
-    m_channelHasBeenSet(false),
-    m_concurrency(0),
-    m_concurrencyHasBeenSet(false),
-    m_crossChannelBehaviorHasBeenSet(false)
-{
-}
-
 MediaConcurrency::MediaConcurrency(JsonView jsonValue)
-  : MediaConcurrency()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ MediaConcurrency& MediaConcurrency::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Channel"))
   {
     m_channel = ChannelMapper::GetChannelForName(jsonValue.GetString("Channel"));
-
     m_channelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Concurrency"))
   {
     m_concurrency = jsonValue.GetInteger("Concurrency");
-
     m_concurrencyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CrossChannelBehavior"))
   {
     m_crossChannelBehavior = jsonValue.GetObject("CrossChannelBehavior");
-
     m_crossChannelBehaviorHasBeenSet = true;
   }
-
   return *this;
 }
 

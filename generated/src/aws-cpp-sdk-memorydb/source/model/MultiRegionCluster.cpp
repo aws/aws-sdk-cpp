@@ -18,25 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-MultiRegionCluster::MultiRegionCluster() : 
-    m_multiRegionClusterNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_nodeTypeHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_engineVersionHasBeenSet(false),
-    m_numberOfShards(0),
-    m_numberOfShardsHasBeenSet(false),
-    m_clustersHasBeenSet(false),
-    m_multiRegionParameterGroupNameHasBeenSet(false),
-    m_tLSEnabled(false),
-    m_tLSEnabledHasBeenSet(false),
-    m_aRNHasBeenSet(false)
-{
-}
-
 MultiRegionCluster::MultiRegionCluster(JsonView jsonValue)
-  : MultiRegionCluster()
 {
   *this = jsonValue;
 }
@@ -46,52 +28,38 @@ MultiRegionCluster& MultiRegionCluster::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("MultiRegionClusterName"))
   {
     m_multiRegionClusterName = jsonValue.GetString("MultiRegionClusterName");
-
     m_multiRegionClusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodeType"))
   {
     m_nodeType = jsonValue.GetString("NodeType");
-
     m_nodeTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Engine"))
   {
     m_engine = jsonValue.GetString("Engine");
-
     m_engineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EngineVersion"))
   {
     m_engineVersion = jsonValue.GetString("EngineVersion");
-
     m_engineVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NumberOfShards"))
   {
     m_numberOfShards = jsonValue.GetInteger("NumberOfShards");
-
     m_numberOfShardsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Clusters"))
   {
     Aws::Utils::Array<JsonView> clustersJsonList = jsonValue.GetArray("Clusters");
@@ -101,28 +69,21 @@ MultiRegionCluster& MultiRegionCluster::operator =(JsonView jsonValue)
     }
     m_clustersHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MultiRegionParameterGroupName"))
   {
     m_multiRegionParameterGroupName = jsonValue.GetString("MultiRegionParameterGroupName");
-
     m_multiRegionParameterGroupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TLSEnabled"))
   {
     m_tLSEnabled = jsonValue.GetBool("TLSEnabled");
-
     m_tLSEnabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ARN"))
   {
     m_aRN = jsonValue.GetString("ARN");
-
     m_aRNHasBeenSet = true;
   }
-
   return *this;
 }
 

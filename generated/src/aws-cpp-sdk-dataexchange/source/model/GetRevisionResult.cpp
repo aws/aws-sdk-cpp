@@ -17,14 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetRevisionResult::GetRevisionResult() : 
-    m_finalized(false),
-    m_revoked(false)
-{
-}
-
 GetRevisionResult::GetRevisionResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : GetRevisionResult()
 {
   *this = result;
 }
@@ -35,45 +28,38 @@ GetRevisionResult& GetRevisionResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
+    m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Comment"))
   {
     m_comment = jsonValue.GetString("Comment");
-
+    m_commentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetString("CreatedAt");
-
+    m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataSetId"))
   {
     m_dataSetId = jsonValue.GetString("DataSetId");
-
+    m_dataSetIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Finalized"))
   {
     m_finalized = jsonValue.GetBool("Finalized");
-
+    m_finalizedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceId"))
   {
     m_sourceId = jsonValue.GetString("SourceId");
-
+    m_sourceIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -81,38 +67,35 @@ GetRevisionResult& GetRevisionResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+    m_tagsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpdatedAt"))
   {
     m_updatedAt = jsonValue.GetString("UpdatedAt");
-
+    m_updatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RevocationComment"))
   {
     m_revocationComment = jsonValue.GetString("RevocationComment");
-
+    m_revocationCommentHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Revoked"))
   {
     m_revoked = jsonValue.GetBool("Revoked");
-
+    m_revokedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RevokedAt"))
   {
     m_revokedAt = jsonValue.GetString("RevokedAt");
-
+    m_revokedAtHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

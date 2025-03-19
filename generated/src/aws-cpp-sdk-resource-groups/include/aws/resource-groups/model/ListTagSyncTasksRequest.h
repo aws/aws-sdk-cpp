@@ -23,7 +23,7 @@ namespace Model
   class ListTagSyncTasksRequest : public ResourceGroupsRequest
   {
   public:
-    AWS_RESOURCEGROUPS_API ListTagSyncTasksRequest();
+    AWS_RESOURCEGROUPS_API ListTagSyncTasksRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -39,21 +39,21 @@ namespace Model
      * <p>The Amazon resource name (ARN) or name of the application group for which you
      * want to return a list of tag-sync tasks. </p>
      */
-    inline const Aws::Vector<ListTagSyncTasksFilter>& GetFilters() const{ return m_filters; }
+    inline const Aws::Vector<ListTagSyncTasksFilter>& GetFilters() const { return m_filters; }
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
-    inline void SetFilters(const Aws::Vector<ListTagSyncTasksFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
-    inline void SetFilters(Aws::Vector<ListTagSyncTasksFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
-    inline ListTagSyncTasksRequest& WithFilters(const Aws::Vector<ListTagSyncTasksFilter>& value) { SetFilters(value); return *this;}
-    inline ListTagSyncTasksRequest& WithFilters(Aws::Vector<ListTagSyncTasksFilter>&& value) { SetFilters(std::move(value)); return *this;}
-    inline ListTagSyncTasksRequest& AddFilters(const ListTagSyncTasksFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
-    inline ListTagSyncTasksRequest& AddFilters(ListTagSyncTasksFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
+    template<typename FiltersT = Aws::Vector<ListTagSyncTasksFilter>>
+    void SetFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters = std::forward<FiltersT>(value); }
+    template<typename FiltersT = Aws::Vector<ListTagSyncTasksFilter>>
+    ListTagSyncTasksRequest& WithFilters(FiltersT&& value) { SetFilters(std::forward<FiltersT>(value)); return *this;}
+    template<typename FiltersT = ListTagSyncTasksFilter>
+    ListTagSyncTasksRequest& AddFilters(FiltersT&& value) { m_filtersHasBeenSet = true; m_filters.emplace_back(std::forward<FiltersT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The maximum number of results to be included in the response. </p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListTagSyncTasksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -67,21 +67,19 @@ namespace Model
      * value provided by a previous call's <code>NextToken</code> response to indicate
      * where the output should continue from. </p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListTagSyncTasksRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListTagSyncTasksRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListTagSyncTasksRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListTagSyncTasksRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<ListTagSyncTasksFilter> m_filters;
     bool m_filtersHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;

@@ -12,11 +12,6 @@ using namespace Aws::SMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAppReplicationConfigurationRequest::DeleteAppReplicationConfigurationRequest() : 
-    m_appIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAppReplicationConfigurationRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -25,7 +25,7 @@ namespace Model
   class DeleteSecurityProfileRequest : public IoTRequest
   {
   public:
-    AWS_IOT_API DeleteSecurityProfileRequest();
+    AWS_IOT_API DeleteSecurityProfileRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,14 +42,12 @@ namespace Model
     /**
      * <p>The name of the security profile to be deleted.</p>
      */
-    inline const Aws::String& GetSecurityProfileName() const{ return m_securityProfileName; }
+    inline const Aws::String& GetSecurityProfileName() const { return m_securityProfileName; }
     inline bool SecurityProfileNameHasBeenSet() const { return m_securityProfileNameHasBeenSet; }
-    inline void SetSecurityProfileName(const Aws::String& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = value; }
-    inline void SetSecurityProfileName(Aws::String&& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = std::move(value); }
-    inline void SetSecurityProfileName(const char* value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName.assign(value); }
-    inline DeleteSecurityProfileRequest& WithSecurityProfileName(const Aws::String& value) { SetSecurityProfileName(value); return *this;}
-    inline DeleteSecurityProfileRequest& WithSecurityProfileName(Aws::String&& value) { SetSecurityProfileName(std::move(value)); return *this;}
-    inline DeleteSecurityProfileRequest& WithSecurityProfileName(const char* value) { SetSecurityProfileName(value); return *this;}
+    template<typename SecurityProfileNameT = Aws::String>
+    void SetSecurityProfileName(SecurityProfileNameT&& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = std::forward<SecurityProfileNameT>(value); }
+    template<typename SecurityProfileNameT = Aws::String>
+    DeleteSecurityProfileRequest& WithSecurityProfileName(SecurityProfileNameT&& value) { SetSecurityProfileName(std::forward<SecurityProfileNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,7 +57,7 @@ namespace Model
      * different from the actual version, a <code>VersionConflictException</code> is
      * thrown.</p>
      */
-    inline long long GetExpectedVersion() const{ return m_expectedVersion; }
+    inline long long GetExpectedVersion() const { return m_expectedVersion; }
     inline bool ExpectedVersionHasBeenSet() const { return m_expectedVersionHasBeenSet; }
     inline void SetExpectedVersion(long long value) { m_expectedVersionHasBeenSet = true; m_expectedVersion = value; }
     inline DeleteSecurityProfileRequest& WithExpectedVersion(long long value) { SetExpectedVersion(value); return *this;}
@@ -69,7 +67,7 @@ namespace Model
     Aws::String m_securityProfileName;
     bool m_securityProfileNameHasBeenSet = false;
 
-    long long m_expectedVersion;
+    long long m_expectedVersion{0};
     bool m_expectedVersionHasBeenSet = false;
   };
 

@@ -35,7 +35,7 @@ namespace Model
   class WAFLimitsExceededException
   {
   public:
-    AWS_WAFV2_API WAFLimitsExceededException();
+    AWS_WAFV2_API WAFLimitsExceededException() = default;
     AWS_WAFV2_API WAFLimitsExceededException(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API WAFLimitsExceededException& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,28 +43,24 @@ namespace Model
 
     ///@{
     
-    inline const Aws::String& GetMessage() const{ return m_message; }
+    inline const Aws::String& GetMessage() const { return m_message; }
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-    inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
-    inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
-    inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
-    inline WAFLimitsExceededException& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
-    inline WAFLimitsExceededException& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
-    inline WAFLimitsExceededException& WithMessage(const char* value) { SetMessage(value); return *this;}
+    template<typename MessageT = Aws::String>
+    void SetMessage(MessageT&& value) { m_messageHasBeenSet = true; m_message = std::forward<MessageT>(value); }
+    template<typename MessageT = Aws::String>
+    WAFLimitsExceededException& WithMessage(MessageT&& value) { SetMessage(std::forward<MessageT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Source type for the exception. </p>
      */
-    inline const Aws::String& GetSourceType() const{ return m_sourceType; }
+    inline const Aws::String& GetSourceType() const { return m_sourceType; }
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-    inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-    inline void SetSourceType(Aws::String&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
-    inline void SetSourceType(const char* value) { m_sourceTypeHasBeenSet = true; m_sourceType.assign(value); }
-    inline WAFLimitsExceededException& WithSourceType(const Aws::String& value) { SetSourceType(value); return *this;}
-    inline WAFLimitsExceededException& WithSourceType(Aws::String&& value) { SetSourceType(std::move(value)); return *this;}
-    inline WAFLimitsExceededException& WithSourceType(const char* value) { SetSourceType(value); return *this;}
+    template<typename SourceTypeT = Aws::String>
+    void SetSourceType(SourceTypeT&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::forward<SourceTypeT>(value); }
+    template<typename SourceTypeT = Aws::String>
+    WAFLimitsExceededException& WithSourceType(SourceTypeT&& value) { SetSourceType(std::forward<SourceTypeT>(value)); return *this;}
     ///@}
   private:
 

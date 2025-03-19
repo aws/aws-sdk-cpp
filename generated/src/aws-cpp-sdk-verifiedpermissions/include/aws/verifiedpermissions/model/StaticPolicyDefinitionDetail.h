@@ -36,7 +36,7 @@ namespace Model
   class StaticPolicyDefinitionDetail
   {
   public:
-    AWS_VERIFIEDPERMISSIONS_API StaticPolicyDefinitionDetail();
+    AWS_VERIFIEDPERMISSIONS_API StaticPolicyDefinitionDetail() = default;
     AWS_VERIFIEDPERMISSIONS_API StaticPolicyDefinitionDetail(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API StaticPolicyDefinitionDetail& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_VERIFIEDPERMISSIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,28 +46,24 @@ namespace Model
     /**
      * <p>A description of the static policy.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline StaticPolicyDefinitionDetail& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline StaticPolicyDefinitionDetail& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline StaticPolicyDefinitionDetail& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    StaticPolicyDefinitionDetail& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The content of the static policy written in the Cedar policy language.</p>
      */
-    inline const Aws::String& GetStatement() const{ return m_statement; }
+    inline const Aws::String& GetStatement() const { return m_statement; }
     inline bool StatementHasBeenSet() const { return m_statementHasBeenSet; }
-    inline void SetStatement(const Aws::String& value) { m_statementHasBeenSet = true; m_statement = value; }
-    inline void SetStatement(Aws::String&& value) { m_statementHasBeenSet = true; m_statement = std::move(value); }
-    inline void SetStatement(const char* value) { m_statementHasBeenSet = true; m_statement.assign(value); }
-    inline StaticPolicyDefinitionDetail& WithStatement(const Aws::String& value) { SetStatement(value); return *this;}
-    inline StaticPolicyDefinitionDetail& WithStatement(Aws::String&& value) { SetStatement(std::move(value)); return *this;}
-    inline StaticPolicyDefinitionDetail& WithStatement(const char* value) { SetStatement(value); return *this;}
+    template<typename StatementT = Aws::String>
+    void SetStatement(StatementT&& value) { m_statementHasBeenSet = true; m_statement = std::forward<StatementT>(value); }
+    template<typename StatementT = Aws::String>
+    StaticPolicyDefinitionDetail& WithStatement(StatementT&& value) { SetStatement(std::forward<StatementT>(value)); return *this;}
     ///@}
   private:
 

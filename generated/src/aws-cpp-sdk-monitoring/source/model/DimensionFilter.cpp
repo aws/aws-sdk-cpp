@@ -20,14 +20,7 @@ namespace CloudWatch
 namespace Model
 {
 
-DimensionFilter::DimensionFilter() : 
-    m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
-{
-}
-
 DimensionFilter::DimensionFilter(const XmlNode& xmlNode)
-  : DimensionFilter()
 {
   *this = xmlNode;
 }

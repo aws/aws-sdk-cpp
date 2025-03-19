@@ -12,11 +12,6 @@ using namespace Aws::drs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisconnectSourceServerRequest::DisconnectSourceServerRequest() : 
-    m_sourceServerIDHasBeenSet(false)
-{
-}
-
 Aws::String DisconnectSourceServerRequest::SerializePayload() const
 {
   JsonValue payload;

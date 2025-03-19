@@ -12,12 +12,6 @@ using namespace Aws::Proton::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CancelServiceInstanceDeploymentRequest::CancelServiceInstanceDeploymentRequest() : 
-    m_serviceInstanceNameHasBeenSet(false),
-    m_serviceNameHasBeenSet(false)
-{
-}
-
 Aws::String CancelServiceInstanceDeploymentRequest::SerializePayload() const
 {
   JsonValue payload;

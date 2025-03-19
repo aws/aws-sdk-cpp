@@ -18,15 +18,7 @@ namespace TimestreamQuery
 namespace Model
 {
 
-ProvisionedCapacityRequest::ProvisionedCapacityRequest() : 
-    m_targetQueryTCU(0),
-    m_targetQueryTCUHasBeenSet(false),
-    m_notificationConfigurationHasBeenSet(false)
-{
-}
-
 ProvisionedCapacityRequest::ProvisionedCapacityRequest(JsonView jsonValue)
-  : ProvisionedCapacityRequest()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ ProvisionedCapacityRequest& ProvisionedCapacityRequest::operator =(JsonView json
   if(jsonValue.ValueExists("TargetQueryTCU"))
   {
     m_targetQueryTCU = jsonValue.GetInteger("TargetQueryTCU");
-
     m_targetQueryTCUHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NotificationConfiguration"))
   {
     m_notificationConfiguration = jsonValue.GetObject("NotificationConfiguration");
-
     m_notificationConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

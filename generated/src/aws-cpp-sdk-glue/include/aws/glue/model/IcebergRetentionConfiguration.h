@@ -30,7 +30,7 @@ namespace Model
   class IcebergRetentionConfiguration
   {
   public:
-    AWS_GLUE_API IcebergRetentionConfiguration();
+    AWS_GLUE_API IcebergRetentionConfiguration() = default;
     AWS_GLUE_API IcebergRetentionConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API IcebergRetentionConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GLUE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,7 +42,7 @@ namespace Model
      * provided, the corresponding Iceberg table configuration field will be used or if
      * not present, the default value 5 will be used.</p>
      */
-    inline int GetSnapshotRetentionPeriodInDays() const{ return m_snapshotRetentionPeriodInDays; }
+    inline int GetSnapshotRetentionPeriodInDays() const { return m_snapshotRetentionPeriodInDays; }
     inline bool SnapshotRetentionPeriodInDaysHasBeenSet() const { return m_snapshotRetentionPeriodInDaysHasBeenSet; }
     inline void SetSnapshotRetentionPeriodInDays(int value) { m_snapshotRetentionPeriodInDaysHasBeenSet = true; m_snapshotRetentionPeriodInDays = value; }
     inline IcebergRetentionConfiguration& WithSnapshotRetentionPeriodInDays(int value) { SetSnapshotRetentionPeriodInDays(value); return *this;}
@@ -54,7 +54,7 @@ namespace Model
      * input is not provided, the corresponding Iceberg table configuration field will
      * be used or if not present, the default value 1 will be used.</p>
      */
-    inline int GetNumberOfSnapshotsToRetain() const{ return m_numberOfSnapshotsToRetain; }
+    inline int GetNumberOfSnapshotsToRetain() const { return m_numberOfSnapshotsToRetain; }
     inline bool NumberOfSnapshotsToRetainHasBeenSet() const { return m_numberOfSnapshotsToRetainHasBeenSet; }
     inline void SetNumberOfSnapshotsToRetain(int value) { m_numberOfSnapshotsToRetainHasBeenSet = true; m_numberOfSnapshotsToRetain = value; }
     inline IcebergRetentionConfiguration& WithNumberOfSnapshotsToRetain(int value) { SetNumberOfSnapshotsToRetain(value); return *this;}
@@ -65,20 +65,20 @@ namespace Model
      * <p>If set to false, snapshots are only deleted from table metadata, and the
      * underlying data and metadata files are not deleted.</p>
      */
-    inline bool GetCleanExpiredFiles() const{ return m_cleanExpiredFiles; }
+    inline bool GetCleanExpiredFiles() const { return m_cleanExpiredFiles; }
     inline bool CleanExpiredFilesHasBeenSet() const { return m_cleanExpiredFilesHasBeenSet; }
     inline void SetCleanExpiredFiles(bool value) { m_cleanExpiredFilesHasBeenSet = true; m_cleanExpiredFiles = value; }
     inline IcebergRetentionConfiguration& WithCleanExpiredFiles(bool value) { SetCleanExpiredFiles(value); return *this;}
     ///@}
   private:
 
-    int m_snapshotRetentionPeriodInDays;
+    int m_snapshotRetentionPeriodInDays{0};
     bool m_snapshotRetentionPeriodInDaysHasBeenSet = false;
 
-    int m_numberOfSnapshotsToRetain;
+    int m_numberOfSnapshotsToRetain{0};
     bool m_numberOfSnapshotsToRetainHasBeenSet = false;
 
-    bool m_cleanExpiredFiles;
+    bool m_cleanExpiredFiles{false};
     bool m_cleanExpiredFilesHasBeenSet = false;
   };
 

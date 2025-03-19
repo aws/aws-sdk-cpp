@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-KinesisFirehoseConfig::KinesisFirehoseConfig() : 
-    m_firehoseArnHasBeenSet(false)
-{
-}
-
 KinesisFirehoseConfig::KinesisFirehoseConfig(JsonView jsonValue)
-  : KinesisFirehoseConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ KinesisFirehoseConfig& KinesisFirehoseConfig::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FirehoseArn"))
   {
     m_firehoseArn = jsonValue.GetString("FirehoseArn");
-
     m_firehoseArnHasBeenSet = true;
   }
-
   return *this;
 }
 

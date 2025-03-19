@@ -18,22 +18,7 @@ namespace WAFV2
 namespace Model
 {
 
-LoggingConfiguration::LoggingConfiguration() : 
-    m_resourceArnHasBeenSet(false),
-    m_logDestinationConfigsHasBeenSet(false),
-    m_redactedFieldsHasBeenSet(false),
-    m_managedByFirewallManager(false),
-    m_managedByFirewallManagerHasBeenSet(false),
-    m_loggingFilterHasBeenSet(false),
-    m_logType(LogType::NOT_SET),
-    m_logTypeHasBeenSet(false),
-    m_logScope(LogScope::NOT_SET),
-    m_logScopeHasBeenSet(false)
-{
-}
-
 LoggingConfiguration::LoggingConfiguration(JsonView jsonValue)
-  : LoggingConfiguration()
 {
   *this = jsonValue;
 }
@@ -43,10 +28,8 @@ LoggingConfiguration& LoggingConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResourceArn"))
   {
     m_resourceArn = jsonValue.GetString("ResourceArn");
-
     m_resourceArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogDestinationConfigs"))
   {
     Aws::Utils::Array<JsonView> logDestinationConfigsJsonList = jsonValue.GetArray("LogDestinationConfigs");
@@ -56,7 +39,6 @@ LoggingConfiguration& LoggingConfiguration::operator =(JsonView jsonValue)
     }
     m_logDestinationConfigsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RedactedFields"))
   {
     Aws::Utils::Array<JsonView> redactedFieldsJsonList = jsonValue.GetArray("RedactedFields");
@@ -66,35 +48,26 @@ LoggingConfiguration& LoggingConfiguration::operator =(JsonView jsonValue)
     }
     m_redactedFieldsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ManagedByFirewallManager"))
   {
     m_managedByFirewallManager = jsonValue.GetBool("ManagedByFirewallManager");
-
     m_managedByFirewallManagerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LoggingFilter"))
   {
     m_loggingFilter = jsonValue.GetObject("LoggingFilter");
-
     m_loggingFilterHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogType"))
   {
     m_logType = LogTypeMapper::GetLogTypeForName(jsonValue.GetString("LogType"));
-
     m_logTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LogScope"))
   {
     m_logScope = LogScopeMapper::GetLogScopeForName(jsonValue.GetString("LogScope"));
-
     m_logScopeHasBeenSet = true;
   }
-
   return *this;
 }
 

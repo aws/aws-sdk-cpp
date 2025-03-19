@@ -18,18 +18,7 @@ namespace CloudSearchDomain
 namespace Model
 {
 
-Hits::Hits() : 
-    m_found(0),
-    m_foundHasBeenSet(false),
-    m_start(0),
-    m_startHasBeenSet(false),
-    m_cursorHasBeenSet(false),
-    m_hitHasBeenSet(false)
-{
-}
-
 Hits::Hits(JsonView jsonValue)
-  : Hits()
 {
   *this = jsonValue;
 }
@@ -39,24 +28,18 @@ Hits& Hits::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("found"))
   {
     m_found = jsonValue.GetInt64("found");
-
     m_foundHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("start"))
   {
     m_start = jsonValue.GetInt64("start");
-
     m_startHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("cursor"))
   {
     m_cursor = jsonValue.GetString("cursor");
-
     m_cursorHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hit"))
   {
     Aws::Utils::Array<JsonView> hitJsonList = jsonValue.GetArray("hit");
@@ -66,7 +49,6 @@ Hits& Hits::operator =(JsonView jsonValue)
     }
     m_hitHasBeenSet = true;
   }
-
   return *this;
 }
 

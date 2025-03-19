@@ -20,19 +20,7 @@ namespace RDS
 namespace Model
 {
 
-Event::Event() : 
-    m_sourceIdentifierHasBeenSet(false),
-    m_sourceType(SourceType::NOT_SET),
-    m_sourceTypeHasBeenSet(false),
-    m_messageHasBeenSet(false),
-    m_eventCategoriesHasBeenSet(false),
-    m_dateHasBeenSet(false),
-    m_sourceArnHasBeenSet(false)
-{
-}
-
 Event::Event(const XmlNode& xmlNode)
-  : Event()
 {
   *this = xmlNode;
 }
@@ -52,7 +40,7 @@ Event& Event::operator =(const XmlNode& xmlNode)
     XmlNode sourceTypeNode = resultNode.FirstChild("SourceType");
     if(!sourceTypeNode.IsNull())
     {
-      m_sourceType = SourceTypeMapper::GetSourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sourceTypeNode.GetText()).c_str()).c_str());
+      m_sourceType = SourceTypeMapper::GetSourceTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(sourceTypeNode.GetText()).c_str()));
       m_sourceTypeHasBeenSet = true;
     }
     XmlNode messageNode = resultNode.FirstChild("Message");
@@ -65,6 +53,7 @@ Event& Event::operator =(const XmlNode& xmlNode)
     if(!eventCategoriesNode.IsNull())
     {
       XmlNode eventCategoriesMember = eventCategoriesNode.FirstChild("EventCategory");
+      m_eventCategoriesHasBeenSet = !eventCategoriesMember.IsNull();
       while(!eventCategoriesMember.IsNull())
       {
         m_eventCategories.push_back(eventCategoriesMember.GetText());

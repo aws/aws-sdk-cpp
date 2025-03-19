@@ -18,13 +18,7 @@ namespace Snowball
 namespace Model
 {
 
-SnowconeDeviceConfiguration::SnowconeDeviceConfiguration() : 
-    m_wirelessConnectionHasBeenSet(false)
-{
-}
-
 SnowconeDeviceConfiguration::SnowconeDeviceConfiguration(JsonView jsonValue)
-  : SnowconeDeviceConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SnowconeDeviceConfiguration& SnowconeDeviceConfiguration::operator =(JsonView js
   if(jsonValue.ValueExists("WirelessConnection"))
   {
     m_wirelessConnection = jsonValue.GetObject("WirelessConnection");
-
     m_wirelessConnectionHasBeenSet = true;
   }
-
   return *this;
 }
 

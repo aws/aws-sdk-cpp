@@ -28,7 +28,7 @@ namespace Model
   class CreateInferenceExperimentRequest : public SageMakerRequest
   {
   public:
-    AWS_SAGEMAKER_API CreateInferenceExperimentRequest();
+    AWS_SAGEMAKER_API CreateInferenceExperimentRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -45,14 +45,12 @@ namespace Model
     /**
      * <p>The name for the inference experiment.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline CreateInferenceExperimentRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline CreateInferenceExperimentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline CreateInferenceExperimentRequest& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    CreateInferenceExperimentRequest& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -63,12 +61,10 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/shadow-tests.html">Shadow
      * tests</a>. </p> </li> </ul>
      */
-    inline const InferenceExperimentType& GetType() const{ return m_type; }
+    inline InferenceExperimentType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const InferenceExperimentType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(InferenceExperimentType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline CreateInferenceExperimentRequest& WithType(const InferenceExperimentType& value) { SetType(value); return *this;}
-    inline CreateInferenceExperimentRequest& WithType(InferenceExperimentType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(InferenceExperimentType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline CreateInferenceExperimentRequest& WithType(InferenceExperimentType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
@@ -77,26 +73,24 @@ namespace Model
      * don't specify this field, the experiment automatically starts immediately upon
      * creation and concludes after 7 days. </p>
      */
-    inline const InferenceExperimentSchedule& GetSchedule() const{ return m_schedule; }
+    inline const InferenceExperimentSchedule& GetSchedule() const { return m_schedule; }
     inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
-    inline void SetSchedule(const InferenceExperimentSchedule& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
-    inline void SetSchedule(InferenceExperimentSchedule&& value) { m_scheduleHasBeenSet = true; m_schedule = std::move(value); }
-    inline CreateInferenceExperimentRequest& WithSchedule(const InferenceExperimentSchedule& value) { SetSchedule(value); return *this;}
-    inline CreateInferenceExperimentRequest& WithSchedule(InferenceExperimentSchedule&& value) { SetSchedule(std::move(value)); return *this;}
+    template<typename ScheduleT = InferenceExperimentSchedule>
+    void SetSchedule(ScheduleT&& value) { m_scheduleHasBeenSet = true; m_schedule = std::forward<ScheduleT>(value); }
+    template<typename ScheduleT = InferenceExperimentSchedule>
+    CreateInferenceExperimentRequest& WithSchedule(ScheduleT&& value) { SetSchedule(std::forward<ScheduleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A description for the inference experiment.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const Aws::String& GetDescription() const { return m_description; }
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-    inline CreateInferenceExperimentRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-    inline CreateInferenceExperimentRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-    inline CreateInferenceExperimentRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    template<typename DescriptionT = Aws::String>
+    void SetDescription(DescriptionT&& value) { m_descriptionHasBeenSet = true; m_description = std::forward<DescriptionT>(value); }
+    template<typename DescriptionT = Aws::String>
+    CreateInferenceExperimentRequest& WithDescription(DescriptionT&& value) { SetDescription(std::forward<DescriptionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -105,14 +99,12 @@ namespace Model
      * artifacts and container images, and manage Amazon SageMaker Inference endpoints
      * for model deployment. </p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline CreateInferenceExperimentRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline CreateInferenceExperimentRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline CreateInferenceExperimentRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    CreateInferenceExperimentRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -120,14 +112,12 @@ namespace Model
      * <p> The name of the Amazon SageMaker endpoint on which you want to run the
      * inference experiment. </p>
      */
-    inline const Aws::String& GetEndpointName() const{ return m_endpointName; }
+    inline const Aws::String& GetEndpointName() const { return m_endpointName; }
     inline bool EndpointNameHasBeenSet() const { return m_endpointNameHasBeenSet; }
-    inline void SetEndpointName(const Aws::String& value) { m_endpointNameHasBeenSet = true; m_endpointName = value; }
-    inline void SetEndpointName(Aws::String&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::move(value); }
-    inline void SetEndpointName(const char* value) { m_endpointNameHasBeenSet = true; m_endpointName.assign(value); }
-    inline CreateInferenceExperimentRequest& WithEndpointName(const Aws::String& value) { SetEndpointName(value); return *this;}
-    inline CreateInferenceExperimentRequest& WithEndpointName(Aws::String&& value) { SetEndpointName(std::move(value)); return *this;}
-    inline CreateInferenceExperimentRequest& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
+    template<typename EndpointNameT = Aws::String>
+    void SetEndpointName(EndpointNameT&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::forward<EndpointNameT>(value); }
+    template<typename EndpointNameT = Aws::String>
+    CreateInferenceExperimentRequest& WithEndpointName(EndpointNameT&& value) { SetEndpointName(std::forward<EndpointNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -137,14 +127,14 @@ namespace Model
      * in the array describes the infrastructure configuration for the corresponding
      * variant. </p>
      */
-    inline const Aws::Vector<ModelVariantConfig>& GetModelVariants() const{ return m_modelVariants; }
+    inline const Aws::Vector<ModelVariantConfig>& GetModelVariants() const { return m_modelVariants; }
     inline bool ModelVariantsHasBeenSet() const { return m_modelVariantsHasBeenSet; }
-    inline void SetModelVariants(const Aws::Vector<ModelVariantConfig>& value) { m_modelVariantsHasBeenSet = true; m_modelVariants = value; }
-    inline void SetModelVariants(Aws::Vector<ModelVariantConfig>&& value) { m_modelVariantsHasBeenSet = true; m_modelVariants = std::move(value); }
-    inline CreateInferenceExperimentRequest& WithModelVariants(const Aws::Vector<ModelVariantConfig>& value) { SetModelVariants(value); return *this;}
-    inline CreateInferenceExperimentRequest& WithModelVariants(Aws::Vector<ModelVariantConfig>&& value) { SetModelVariants(std::move(value)); return *this;}
-    inline CreateInferenceExperimentRequest& AddModelVariants(const ModelVariantConfig& value) { m_modelVariantsHasBeenSet = true; m_modelVariants.push_back(value); return *this; }
-    inline CreateInferenceExperimentRequest& AddModelVariants(ModelVariantConfig&& value) { m_modelVariantsHasBeenSet = true; m_modelVariants.push_back(std::move(value)); return *this; }
+    template<typename ModelVariantsT = Aws::Vector<ModelVariantConfig>>
+    void SetModelVariants(ModelVariantsT&& value) { m_modelVariantsHasBeenSet = true; m_modelVariants = std::forward<ModelVariantsT>(value); }
+    template<typename ModelVariantsT = Aws::Vector<ModelVariantConfig>>
+    CreateInferenceExperimentRequest& WithModelVariants(ModelVariantsT&& value) { SetModelVariants(std::forward<ModelVariantsT>(value)); return *this;}
+    template<typename ModelVariantsT = ModelVariantConfig>
+    CreateInferenceExperimentRequest& AddModelVariants(ModelVariantsT&& value) { m_modelVariantsHasBeenSet = true; m_modelVariants.emplace_back(std::forward<ModelVariantsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -155,12 +145,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-data-capture.html">Capture
      * data</a>. </p>
      */
-    inline const InferenceExperimentDataStorageConfig& GetDataStorageConfig() const{ return m_dataStorageConfig; }
+    inline const InferenceExperimentDataStorageConfig& GetDataStorageConfig() const { return m_dataStorageConfig; }
     inline bool DataStorageConfigHasBeenSet() const { return m_dataStorageConfigHasBeenSet; }
-    inline void SetDataStorageConfig(const InferenceExperimentDataStorageConfig& value) { m_dataStorageConfigHasBeenSet = true; m_dataStorageConfig = value; }
-    inline void SetDataStorageConfig(InferenceExperimentDataStorageConfig&& value) { m_dataStorageConfigHasBeenSet = true; m_dataStorageConfig = std::move(value); }
-    inline CreateInferenceExperimentRequest& WithDataStorageConfig(const InferenceExperimentDataStorageConfig& value) { SetDataStorageConfig(value); return *this;}
-    inline CreateInferenceExperimentRequest& WithDataStorageConfig(InferenceExperimentDataStorageConfig&& value) { SetDataStorageConfig(std::move(value)); return *this;}
+    template<typename DataStorageConfigT = InferenceExperimentDataStorageConfig>
+    void SetDataStorageConfig(DataStorageConfigT&& value) { m_dataStorageConfigHasBeenSet = true; m_dataStorageConfig = std::forward<DataStorageConfigT>(value); }
+    template<typename DataStorageConfigT = InferenceExperimentDataStorageConfig>
+    CreateInferenceExperimentRequest& WithDataStorageConfig(DataStorageConfigT&& value) { SetDataStorageConfig(std::forward<DataStorageConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -171,12 +161,12 @@ namespace Model
      * of the inference requests. For the shadow variant also specify the percentage of
      * requests that Amazon SageMaker replicates. </p>
      */
-    inline const ShadowModeConfig& GetShadowModeConfig() const{ return m_shadowModeConfig; }
+    inline const ShadowModeConfig& GetShadowModeConfig() const { return m_shadowModeConfig; }
     inline bool ShadowModeConfigHasBeenSet() const { return m_shadowModeConfigHasBeenSet; }
-    inline void SetShadowModeConfig(const ShadowModeConfig& value) { m_shadowModeConfigHasBeenSet = true; m_shadowModeConfig = value; }
-    inline void SetShadowModeConfig(ShadowModeConfig&& value) { m_shadowModeConfigHasBeenSet = true; m_shadowModeConfig = std::move(value); }
-    inline CreateInferenceExperimentRequest& WithShadowModeConfig(const ShadowModeConfig& value) { SetShadowModeConfig(value); return *this;}
-    inline CreateInferenceExperimentRequest& WithShadowModeConfig(ShadowModeConfig&& value) { SetShadowModeConfig(std::move(value)); return *this;}
+    template<typename ShadowModeConfigT = ShadowModeConfig>
+    void SetShadowModeConfig(ShadowModeConfigT&& value) { m_shadowModeConfigHasBeenSet = true; m_shadowModeConfig = std::forward<ShadowModeConfigT>(value); }
+    template<typename ShadowModeConfigT = ShadowModeConfig>
+    CreateInferenceExperimentRequest& WithShadowModeConfig(ShadowModeConfigT&& value) { SetShadowModeConfig(std::forward<ShadowModeConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -210,14 +200,12 @@ namespace Model
      * Key Policies in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key
      * Management Service Developer Guide</i>. </p>
      */
-    inline const Aws::String& GetKmsKey() const{ return m_kmsKey; }
+    inline const Aws::String& GetKmsKey() const { return m_kmsKey; }
     inline bool KmsKeyHasBeenSet() const { return m_kmsKeyHasBeenSet; }
-    inline void SetKmsKey(const Aws::String& value) { m_kmsKeyHasBeenSet = true; m_kmsKey = value; }
-    inline void SetKmsKey(Aws::String&& value) { m_kmsKeyHasBeenSet = true; m_kmsKey = std::move(value); }
-    inline void SetKmsKey(const char* value) { m_kmsKeyHasBeenSet = true; m_kmsKey.assign(value); }
-    inline CreateInferenceExperimentRequest& WithKmsKey(const Aws::String& value) { SetKmsKey(value); return *this;}
-    inline CreateInferenceExperimentRequest& WithKmsKey(Aws::String&& value) { SetKmsKey(std::move(value)); return *this;}
-    inline CreateInferenceExperimentRequest& WithKmsKey(const char* value) { SetKmsKey(value); return *this;}
+    template<typename KmsKeyT = Aws::String>
+    void SetKmsKey(KmsKeyT&& value) { m_kmsKeyHasBeenSet = true; m_kmsKey = std::forward<KmsKeyT>(value); }
+    template<typename KmsKeyT = Aws::String>
+    CreateInferenceExperimentRequest& WithKmsKey(KmsKeyT&& value) { SetKmsKey(std::forward<KmsKeyT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -228,21 +216,21 @@ namespace Model
      * href="https://docs.aws.amazon.com/ARG/latest/userguide/tagging.html">Tagging
      * your Amazon Web Services Resources</a>. </p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-    inline CreateInferenceExperimentRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline CreateInferenceExperimentRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline CreateInferenceExperimentRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-    inline CreateInferenceExperimentRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    CreateInferenceExperimentRequest& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    CreateInferenceExperimentRequest& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    InferenceExperimentType m_type;
+    InferenceExperimentType m_type{InferenceExperimentType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     InferenceExperimentSchedule m_schedule;

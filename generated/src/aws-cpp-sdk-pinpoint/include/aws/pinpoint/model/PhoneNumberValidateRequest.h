@@ -21,7 +21,7 @@ namespace Model
   class PhoneNumberValidateRequest : public PinpointRequest
   {
   public:
-    AWS_PINPOINT_API PhoneNumberValidateRequest();
+    AWS_PINPOINT_API PhoneNumberValidateRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,12 +34,12 @@ namespace Model
 
     ///@{
     
-    inline const NumberValidateRequest& GetNumberValidateRequest() const{ return m_numberValidateRequest; }
+    inline const NumberValidateRequest& GetNumberValidateRequest() const { return m_numberValidateRequest; }
     inline bool NumberValidateRequestHasBeenSet() const { return m_numberValidateRequestHasBeenSet; }
-    inline void SetNumberValidateRequest(const NumberValidateRequest& value) { m_numberValidateRequestHasBeenSet = true; m_numberValidateRequest = value; }
-    inline void SetNumberValidateRequest(NumberValidateRequest&& value) { m_numberValidateRequestHasBeenSet = true; m_numberValidateRequest = std::move(value); }
-    inline PhoneNumberValidateRequest& WithNumberValidateRequest(const NumberValidateRequest& value) { SetNumberValidateRequest(value); return *this;}
-    inline PhoneNumberValidateRequest& WithNumberValidateRequest(NumberValidateRequest&& value) { SetNumberValidateRequest(std::move(value)); return *this;}
+    template<typename NumberValidateRequestT = NumberValidateRequest>
+    void SetNumberValidateRequest(NumberValidateRequestT&& value) { m_numberValidateRequestHasBeenSet = true; m_numberValidateRequest = std::forward<NumberValidateRequestT>(value); }
+    template<typename NumberValidateRequestT = NumberValidateRequest>
+    PhoneNumberValidateRequest& WithNumberValidateRequest(NumberValidateRequestT&& value) { SetNumberValidateRequest(std::forward<NumberValidateRequestT>(value)); return *this;}
     ///@}
   private:
 

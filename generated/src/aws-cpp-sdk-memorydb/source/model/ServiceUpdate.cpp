@@ -18,23 +18,7 @@ namespace MemoryDB
 namespace Model
 {
 
-ServiceUpdate::ServiceUpdate() : 
-    m_clusterNameHasBeenSet(false),
-    m_serviceUpdateNameHasBeenSet(false),
-    m_releaseDateHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_status(ServiceUpdateStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_type(ServiceUpdateType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_engineHasBeenSet(false),
-    m_nodesUpdatedHasBeenSet(false),
-    m_autoUpdateStartDateHasBeenSet(false)
-{
-}
-
 ServiceUpdate::ServiceUpdate(JsonView jsonValue)
-  : ServiceUpdate()
 {
   *this = jsonValue;
 }
@@ -44,66 +28,48 @@ ServiceUpdate& ServiceUpdate::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ClusterName"))
   {
     m_clusterName = jsonValue.GetString("ClusterName");
-
     m_clusterNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ServiceUpdateName"))
   {
     m_serviceUpdateName = jsonValue.GetString("ServiceUpdateName");
-
     m_serviceUpdateNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ReleaseDate"))
   {
     m_releaseDate = jsonValue.GetDouble("ReleaseDate");
-
     m_releaseDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = ServiceUpdateStatusMapper::GetServiceUpdateStatusForName(jsonValue.GetString("Status"));
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Type"))
   {
     m_type = ServiceUpdateTypeMapper::GetServiceUpdateTypeForName(jsonValue.GetString("Type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Engine"))
   {
     m_engine = jsonValue.GetString("Engine");
-
     m_engineHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NodesUpdated"))
   {
     m_nodesUpdated = jsonValue.GetString("NodesUpdated");
-
     m_nodesUpdatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AutoUpdateStartDate"))
   {
     m_autoUpdateStartDate = jsonValue.GetDouble("AutoUpdateStartDate");
-
     m_autoUpdateStartDateHasBeenSet = true;
   }
-
   return *this;
 }
 

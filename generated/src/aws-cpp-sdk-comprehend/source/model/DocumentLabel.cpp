@@ -18,17 +18,7 @@ namespace Comprehend
 namespace Model
 {
 
-DocumentLabel::DocumentLabel() : 
-    m_nameHasBeenSet(false),
-    m_score(0.0),
-    m_scoreHasBeenSet(false),
-    m_page(0),
-    m_pageHasBeenSet(false)
-{
-}
-
 DocumentLabel::DocumentLabel(JsonView jsonValue)
-  : DocumentLabel()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ DocumentLabel& DocumentLabel::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Score"))
   {
     m_score = jsonValue.GetDouble("Score");
-
     m_scoreHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Page"))
   {
     m_page = jsonValue.GetInteger("Page");
-
     m_pageHasBeenSet = true;
   }
-
   return *this;
 }
 

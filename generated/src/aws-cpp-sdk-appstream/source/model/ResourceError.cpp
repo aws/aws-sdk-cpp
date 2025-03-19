@@ -18,16 +18,7 @@ namespace AppStream
 namespace Model
 {
 
-ResourceError::ResourceError() : 
-    m_errorCode(FleetErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_errorTimestampHasBeenSet(false)
-{
-}
-
 ResourceError::ResourceError(JsonView jsonValue)
-  : ResourceError()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ ResourceError& ResourceError::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ErrorCode"))
   {
     m_errorCode = FleetErrorCodeMapper::GetFleetErrorCodeForName(jsonValue.GetString("ErrorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorMessage"))
   {
     m_errorMessage = jsonValue.GetString("ErrorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorTimestamp"))
   {
     m_errorTimestamp = jsonValue.GetDouble("ErrorTimestamp");
-
     m_errorTimestampHasBeenSet = true;
   }
-
   return *this;
 }
 

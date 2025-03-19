@@ -12,12 +12,6 @@ using namespace Aws::WorkSpaces::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeImageAssociationsRequest::DescribeImageAssociationsRequest() : 
-    m_imageIdHasBeenSet(false),
-    m_associatedResourceTypesHasBeenSet(false)
-{
-}
-
 Aws::String DescribeImageAssociationsRequest::SerializePayload() const
 {
   JsonValue payload;

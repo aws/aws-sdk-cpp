@@ -23,7 +23,7 @@ namespace Model
   class ListProjectsRequest : public CodeBuildRequest
   {
   public:
-    AWS_CODEBUILD_API ListProjectsRequest();
+    AWS_CODEBUILD_API ListProjectsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,12 +46,10 @@ namespace Model
      * </li> </ul> <p>Use <code>sortOrder</code> to specify in what order to list the
      * build project names based on the preceding criteria.</p>
      */
-    inline const ProjectSortByType& GetSortBy() const{ return m_sortBy; }
+    inline ProjectSortByType GetSortBy() const { return m_sortBy; }
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
-    inline void SetSortBy(const ProjectSortByType& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
-    inline void SetSortBy(ProjectSortByType&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
-    inline ListProjectsRequest& WithSortBy(const ProjectSortByType& value) { SetSortBy(value); return *this;}
-    inline ListProjectsRequest& WithSortBy(ProjectSortByType&& value) { SetSortBy(std::move(value)); return *this;}
+    inline void SetSortBy(ProjectSortByType value) { m_sortByHasBeenSet = true; m_sortBy = value; }
+    inline ListProjectsRequest& WithSortBy(ProjectSortByType value) { SetSortBy(value); return *this;}
     ///@}
 
     ///@{
@@ -62,12 +60,10 @@ namespace Model
      * <code>sortBy</code> to specify the criterion to be used to list build project
      * names.</p>
      */
-    inline const SortOrderType& GetSortOrder() const{ return m_sortOrder; }
+    inline SortOrderType GetSortOrder() const { return m_sortOrder; }
     inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
-    inline void SetSortOrder(const SortOrderType& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
-    inline void SetSortOrder(SortOrderType&& value) { m_sortOrderHasBeenSet = true; m_sortOrder = std::move(value); }
-    inline ListProjectsRequest& WithSortOrder(const SortOrderType& value) { SetSortOrder(value); return *this;}
-    inline ListProjectsRequest& WithSortOrder(SortOrderType&& value) { SetSortOrder(std::move(value)); return *this;}
+    inline void SetSortOrder(SortOrderType value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
+    inline ListProjectsRequest& WithSortOrder(SortOrderType value) { SetSortOrder(value); return *this;}
     ///@}
 
     ///@{
@@ -79,21 +75,19 @@ namespace Model
      * the list, keep calling this operation with each subsequent next token that is
      * returned, until no more next tokens are returned.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListProjectsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListProjectsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListProjectsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListProjectsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
   private:
 
-    ProjectSortByType m_sortBy;
+    ProjectSortByType m_sortBy{ProjectSortByType::NOT_SET};
     bool m_sortByHasBeenSet = false;
 
-    SortOrderType m_sortOrder;
+    SortOrderType m_sortOrder{SortOrderType::NOT_SET};
     bool m_sortOrderHasBeenSet = false;
 
     Aws::String m_nextToken;

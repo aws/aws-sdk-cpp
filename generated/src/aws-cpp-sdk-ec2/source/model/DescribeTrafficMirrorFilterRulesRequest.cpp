@@ -10,18 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-DescribeTrafficMirrorFilterRulesRequest::DescribeTrafficMirrorFilterRulesRequest() : 
-    m_trafficMirrorFilterRuleIdsHasBeenSet(false),
-    m_trafficMirrorFilterIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTrafficMirrorFilterRulesRequest::SerializePayload() const
 {
   Aws::StringStream ss;

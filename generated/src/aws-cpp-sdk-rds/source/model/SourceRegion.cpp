@@ -20,17 +20,7 @@ namespace RDS
 namespace Model
 {
 
-SourceRegion::SourceRegion() : 
-    m_regionNameHasBeenSet(false),
-    m_endpointHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_supportsDBInstanceAutomatedBackupsReplication(false),
-    m_supportsDBInstanceAutomatedBackupsReplicationHasBeenSet(false)
-{
-}
-
 SourceRegion::SourceRegion(const XmlNode& xmlNode)
-  : SourceRegion()
 {
   *this = xmlNode;
 }

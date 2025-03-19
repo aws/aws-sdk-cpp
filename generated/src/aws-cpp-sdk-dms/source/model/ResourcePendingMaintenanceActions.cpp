@@ -18,14 +18,7 @@ namespace DatabaseMigrationService
 namespace Model
 {
 
-ResourcePendingMaintenanceActions::ResourcePendingMaintenanceActions() : 
-    m_resourceIdentifierHasBeenSet(false),
-    m_pendingMaintenanceActionDetailsHasBeenSet(false)
-{
-}
-
 ResourcePendingMaintenanceActions::ResourcePendingMaintenanceActions(JsonView jsonValue)
-  : ResourcePendingMaintenanceActions()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ResourcePendingMaintenanceActions& ResourcePendingMaintenanceActions::operator =
   if(jsonValue.ValueExists("ResourceIdentifier"))
   {
     m_resourceIdentifier = jsonValue.GetString("ResourceIdentifier");
-
     m_resourceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PendingMaintenanceActionDetails"))
   {
     Aws::Utils::Array<JsonView> pendingMaintenanceActionDetailsJsonList = jsonValue.GetArray("PendingMaintenanceActionDetails");
@@ -48,7 +39,6 @@ ResourcePendingMaintenanceActions& ResourcePendingMaintenanceActions::operator =
     }
     m_pendingMaintenanceActionDetailsHasBeenSet = true;
   }
-
   return *this;
 }
 

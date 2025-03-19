@@ -18,13 +18,7 @@ namespace GameLift
 namespace Model
 {
 
-LocationConfiguration::LocationConfiguration() : 
-    m_locationHasBeenSet(false)
-{
-}
-
 LocationConfiguration::LocationConfiguration(JsonView jsonValue)
-  : LocationConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ LocationConfiguration& LocationConfiguration::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Location"))
   {
     m_location = jsonValue.GetString("Location");
-
     m_locationHasBeenSet = true;
   }
-
   return *this;
 }
 

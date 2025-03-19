@@ -37,7 +37,7 @@ namespace Model
   class VpcPeeringConnection
   {
   public:
-    AWS_GAMELIFT_API VpcPeeringConnection();
+    AWS_GAMELIFT_API VpcPeeringConnection() = default;
     AWS_GAMELIFT_API VpcPeeringConnection(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API VpcPeeringConnection& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,14 +48,12 @@ namespace Model
      * <p>A unique identifier for the fleet. This ID determines the ID of the Amazon
      * GameLift VPC for your fleet.</p>
      */
-    inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+    inline const Aws::String& GetFleetId() const { return m_fleetId; }
     inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
-    inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
-    inline void SetFleetId(Aws::String&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::move(value); }
-    inline void SetFleetId(const char* value) { m_fleetIdHasBeenSet = true; m_fleetId.assign(value); }
-    inline VpcPeeringConnection& WithFleetId(const Aws::String& value) { SetFleetId(value); return *this;}
-    inline VpcPeeringConnection& WithFleetId(Aws::String&& value) { SetFleetId(std::move(value)); return *this;}
-    inline VpcPeeringConnection& WithFleetId(const char* value) { SetFleetId(value); return *this;}
+    template<typename FleetIdT = Aws::String>
+    void SetFleetId(FleetIdT&& value) { m_fleetIdHasBeenSet = true; m_fleetId = std::forward<FleetIdT>(value); }
+    template<typename FleetIdT = Aws::String>
+    VpcPeeringConnection& WithFleetId(FleetIdT&& value) { SetFleetId(std::forward<FleetIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,14 +62,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
      * associated with the GameLift fleet resource for this connection. </p>
      */
-    inline const Aws::String& GetFleetArn() const{ return m_fleetArn; }
+    inline const Aws::String& GetFleetArn() const { return m_fleetArn; }
     inline bool FleetArnHasBeenSet() const { return m_fleetArnHasBeenSet; }
-    inline void SetFleetArn(const Aws::String& value) { m_fleetArnHasBeenSet = true; m_fleetArn = value; }
-    inline void SetFleetArn(Aws::String&& value) { m_fleetArnHasBeenSet = true; m_fleetArn = std::move(value); }
-    inline void SetFleetArn(const char* value) { m_fleetArnHasBeenSet = true; m_fleetArn.assign(value); }
-    inline VpcPeeringConnection& WithFleetArn(const Aws::String& value) { SetFleetArn(value); return *this;}
-    inline VpcPeeringConnection& WithFleetArn(Aws::String&& value) { SetFleetArn(std::move(value)); return *this;}
-    inline VpcPeeringConnection& WithFleetArn(const char* value) { SetFleetArn(value); return *this;}
+    template<typename FleetArnT = Aws::String>
+    void SetFleetArn(FleetArnT&& value) { m_fleetArnHasBeenSet = true; m_fleetArn = std::forward<FleetArnT>(value); }
+    template<typename FleetArnT = Aws::String>
+    VpcPeeringConnection& WithFleetArn(FleetArnT&& value) { SetFleetArn(std::forward<FleetArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -80,14 +76,12 @@ namespace Model
      * GameLift VPC. The peered VPC also has an IPv4 CIDR block associated with it;
      * these blocks cannot overlap or the peering connection cannot be created. </p>
      */
-    inline const Aws::String& GetIpV4CidrBlock() const{ return m_ipV4CidrBlock; }
+    inline const Aws::String& GetIpV4CidrBlock() const { return m_ipV4CidrBlock; }
     inline bool IpV4CidrBlockHasBeenSet() const { return m_ipV4CidrBlockHasBeenSet; }
-    inline void SetIpV4CidrBlock(const Aws::String& value) { m_ipV4CidrBlockHasBeenSet = true; m_ipV4CidrBlock = value; }
-    inline void SetIpV4CidrBlock(Aws::String&& value) { m_ipV4CidrBlockHasBeenSet = true; m_ipV4CidrBlock = std::move(value); }
-    inline void SetIpV4CidrBlock(const char* value) { m_ipV4CidrBlockHasBeenSet = true; m_ipV4CidrBlock.assign(value); }
-    inline VpcPeeringConnection& WithIpV4CidrBlock(const Aws::String& value) { SetIpV4CidrBlock(value); return *this;}
-    inline VpcPeeringConnection& WithIpV4CidrBlock(Aws::String&& value) { SetIpV4CidrBlock(std::move(value)); return *this;}
-    inline VpcPeeringConnection& WithIpV4CidrBlock(const char* value) { SetIpV4CidrBlock(value); return *this;}
+    template<typename IpV4CidrBlockT = Aws::String>
+    void SetIpV4CidrBlock(IpV4CidrBlockT&& value) { m_ipV4CidrBlockHasBeenSet = true; m_ipV4CidrBlock = std::forward<IpV4CidrBlockT>(value); }
+    template<typename IpV4CidrBlockT = Aws::String>
+    VpcPeeringConnection& WithIpV4CidrBlock(IpV4CidrBlockT&& value) { SetIpV4CidrBlock(std::forward<IpV4CidrBlockT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -96,14 +90,12 @@ namespace Model
      * This ID is referenced in VPC peering connection events, and is used when
      * deleting a connection.</p>
      */
-    inline const Aws::String& GetVpcPeeringConnectionId() const{ return m_vpcPeeringConnectionId; }
+    inline const Aws::String& GetVpcPeeringConnectionId() const { return m_vpcPeeringConnectionId; }
     inline bool VpcPeeringConnectionIdHasBeenSet() const { return m_vpcPeeringConnectionIdHasBeenSet; }
-    inline void SetVpcPeeringConnectionId(const Aws::String& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = value; }
-    inline void SetVpcPeeringConnectionId(Aws::String&& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = std::move(value); }
-    inline void SetVpcPeeringConnectionId(const char* value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId.assign(value); }
-    inline VpcPeeringConnection& WithVpcPeeringConnectionId(const Aws::String& value) { SetVpcPeeringConnectionId(value); return *this;}
-    inline VpcPeeringConnection& WithVpcPeeringConnectionId(Aws::String&& value) { SetVpcPeeringConnectionId(std::move(value)); return *this;}
-    inline VpcPeeringConnection& WithVpcPeeringConnectionId(const char* value) { SetVpcPeeringConnectionId(value); return *this;}
+    template<typename VpcPeeringConnectionIdT = Aws::String>
+    void SetVpcPeeringConnectionId(VpcPeeringConnectionIdT&& value) { m_vpcPeeringConnectionIdHasBeenSet = true; m_vpcPeeringConnectionId = std::forward<VpcPeeringConnectionIdT>(value); }
+    template<typename VpcPeeringConnectionIdT = Aws::String>
+    VpcPeeringConnection& WithVpcPeeringConnectionId(VpcPeeringConnectionIdT&& value) { SetVpcPeeringConnectionId(std::forward<VpcPeeringConnectionIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -111,12 +103,12 @@ namespace Model
      * <p>The status information about the connection. Status indicates if a connection
      * is pending, successful, or failed.</p>
      */
-    inline const VpcPeeringConnectionStatus& GetStatus() const{ return m_status; }
+    inline const VpcPeeringConnectionStatus& GetStatus() const { return m_status; }
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-    inline void SetStatus(const VpcPeeringConnectionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-    inline void SetStatus(VpcPeeringConnectionStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-    inline VpcPeeringConnection& WithStatus(const VpcPeeringConnectionStatus& value) { SetStatus(value); return *this;}
-    inline VpcPeeringConnection& WithStatus(VpcPeeringConnectionStatus&& value) { SetStatus(std::move(value)); return *this;}
+    template<typename StatusT = VpcPeeringConnectionStatus>
+    void SetStatus(StatusT&& value) { m_statusHasBeenSet = true; m_status = std::forward<StatusT>(value); }
+    template<typename StatusT = VpcPeeringConnectionStatus>
+    VpcPeeringConnection& WithStatus(StatusT&& value) { SetStatus(std::forward<StatusT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,14 +121,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
      * Peering with Amazon GameLift Fleets</a>.</p>
      */
-    inline const Aws::String& GetPeerVpcId() const{ return m_peerVpcId; }
+    inline const Aws::String& GetPeerVpcId() const { return m_peerVpcId; }
     inline bool PeerVpcIdHasBeenSet() const { return m_peerVpcIdHasBeenSet; }
-    inline void SetPeerVpcId(const Aws::String& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = value; }
-    inline void SetPeerVpcId(Aws::String&& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = std::move(value); }
-    inline void SetPeerVpcId(const char* value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId.assign(value); }
-    inline VpcPeeringConnection& WithPeerVpcId(const Aws::String& value) { SetPeerVpcId(value); return *this;}
-    inline VpcPeeringConnection& WithPeerVpcId(Aws::String&& value) { SetPeerVpcId(std::move(value)); return *this;}
-    inline VpcPeeringConnection& WithPeerVpcId(const char* value) { SetPeerVpcId(value); return *this;}
+    template<typename PeerVpcIdT = Aws::String>
+    void SetPeerVpcId(PeerVpcIdT&& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = std::forward<PeerVpcIdT>(value); }
+    template<typename PeerVpcIdT = Aws::String>
+    VpcPeeringConnection& WithPeerVpcId(PeerVpcIdT&& value) { SetPeerVpcId(std::forward<PeerVpcIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -145,14 +135,12 @@ namespace Model
      * this connection. This VPC is managed by Amazon GameLift and does not appear in
      * your Amazon Web Services account. </p>
      */
-    inline const Aws::String& GetGameLiftVpcId() const{ return m_gameLiftVpcId; }
+    inline const Aws::String& GetGameLiftVpcId() const { return m_gameLiftVpcId; }
     inline bool GameLiftVpcIdHasBeenSet() const { return m_gameLiftVpcIdHasBeenSet; }
-    inline void SetGameLiftVpcId(const Aws::String& value) { m_gameLiftVpcIdHasBeenSet = true; m_gameLiftVpcId = value; }
-    inline void SetGameLiftVpcId(Aws::String&& value) { m_gameLiftVpcIdHasBeenSet = true; m_gameLiftVpcId = std::move(value); }
-    inline void SetGameLiftVpcId(const char* value) { m_gameLiftVpcIdHasBeenSet = true; m_gameLiftVpcId.assign(value); }
-    inline VpcPeeringConnection& WithGameLiftVpcId(const Aws::String& value) { SetGameLiftVpcId(value); return *this;}
-    inline VpcPeeringConnection& WithGameLiftVpcId(Aws::String&& value) { SetGameLiftVpcId(std::move(value)); return *this;}
-    inline VpcPeeringConnection& WithGameLiftVpcId(const char* value) { SetGameLiftVpcId(value); return *this;}
+    template<typename GameLiftVpcIdT = Aws::String>
+    void SetGameLiftVpcId(GameLiftVpcIdT&& value) { m_gameLiftVpcIdHasBeenSet = true; m_gameLiftVpcId = std::forward<GameLiftVpcIdT>(value); }
+    template<typename GameLiftVpcIdT = Aws::String>
+    VpcPeeringConnection& WithGameLiftVpcId(GameLiftVpcIdT&& value) { SetGameLiftVpcId(std::forward<GameLiftVpcIdT>(value)); return *this;}
     ///@}
   private:
 

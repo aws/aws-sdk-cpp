@@ -26,7 +26,7 @@ namespace Model
   class UpdateWebExperienceRequest : public QBusinessRequest
   {
   public:
-    AWS_QBUSINESS_API UpdateWebExperienceRequest();
+    AWS_QBUSINESS_API UpdateWebExperienceRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,28 +42,24 @@ namespace Model
      * <p>The identifier of the Amazon Q Business application attached to the web
      * experience.</p>
      */
-    inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+    inline const Aws::String& GetApplicationId() const { return m_applicationId; }
     inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
-    inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
-    inline void SetApplicationId(Aws::String&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::move(value); }
-    inline void SetApplicationId(const char* value) { m_applicationIdHasBeenSet = true; m_applicationId.assign(value); }
-    inline UpdateWebExperienceRequest& WithApplicationId(const Aws::String& value) { SetApplicationId(value); return *this;}
-    inline UpdateWebExperienceRequest& WithApplicationId(Aws::String&& value) { SetApplicationId(std::move(value)); return *this;}
-    inline UpdateWebExperienceRequest& WithApplicationId(const char* value) { SetApplicationId(value); return *this;}
+    template<typename ApplicationIdT = Aws::String>
+    void SetApplicationId(ApplicationIdT&& value) { m_applicationIdHasBeenSet = true; m_applicationId = std::forward<ApplicationIdT>(value); }
+    template<typename ApplicationIdT = Aws::String>
+    UpdateWebExperienceRequest& WithApplicationId(ApplicationIdT&& value) { SetApplicationId(std::forward<ApplicationIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The identifier of the Amazon Q Business web experience.</p>
      */
-    inline const Aws::String& GetWebExperienceId() const{ return m_webExperienceId; }
+    inline const Aws::String& GetWebExperienceId() const { return m_webExperienceId; }
     inline bool WebExperienceIdHasBeenSet() const { return m_webExperienceIdHasBeenSet; }
-    inline void SetWebExperienceId(const Aws::String& value) { m_webExperienceIdHasBeenSet = true; m_webExperienceId = value; }
-    inline void SetWebExperienceId(Aws::String&& value) { m_webExperienceIdHasBeenSet = true; m_webExperienceId = std::move(value); }
-    inline void SetWebExperienceId(const char* value) { m_webExperienceIdHasBeenSet = true; m_webExperienceId.assign(value); }
-    inline UpdateWebExperienceRequest& WithWebExperienceId(const Aws::String& value) { SetWebExperienceId(value); return *this;}
-    inline UpdateWebExperienceRequest& WithWebExperienceId(Aws::String&& value) { SetWebExperienceId(std::move(value)); return *this;}
-    inline UpdateWebExperienceRequest& WithWebExperienceId(const char* value) { SetWebExperienceId(value); return *this;}
+    template<typename WebExperienceIdT = Aws::String>
+    void SetWebExperienceId(WebExperienceIdT&& value) { m_webExperienceIdHasBeenSet = true; m_webExperienceId = std::forward<WebExperienceIdT>(value); }
+    template<typename WebExperienceIdT = Aws::String>
+    UpdateWebExperienceRequest& WithWebExperienceId(WebExperienceIdT&& value) { SetWebExperienceId(std::forward<WebExperienceIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -71,42 +67,36 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the role with permission to access the
      * Amazon Q Business web experience and required resources.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
-    inline UpdateWebExperienceRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline UpdateWebExperienceRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline UpdateWebExperienceRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    UpdateWebExperienceRequest& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The title of the Amazon Q Business web experience.</p>
      */
-    inline const Aws::String& GetTitle() const{ return m_title; }
+    inline const Aws::String& GetTitle() const { return m_title; }
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-    inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
-    inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
-    inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
-    inline UpdateWebExperienceRequest& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
-    inline UpdateWebExperienceRequest& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
-    inline UpdateWebExperienceRequest& WithTitle(const char* value) { SetTitle(value); return *this;}
+    template<typename TitleT = Aws::String>
+    void SetTitle(TitleT&& value) { m_titleHasBeenSet = true; m_title = std::forward<TitleT>(value); }
+    template<typename TitleT = Aws::String>
+    UpdateWebExperienceRequest& WithTitle(TitleT&& value) { SetTitle(std::forward<TitleT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The subtitle of the Amazon Q Business web experience.</p>
      */
-    inline const Aws::String& GetSubtitle() const{ return m_subtitle; }
+    inline const Aws::String& GetSubtitle() const { return m_subtitle; }
     inline bool SubtitleHasBeenSet() const { return m_subtitleHasBeenSet; }
-    inline void SetSubtitle(const Aws::String& value) { m_subtitleHasBeenSet = true; m_subtitle = value; }
-    inline void SetSubtitle(Aws::String&& value) { m_subtitleHasBeenSet = true; m_subtitle = std::move(value); }
-    inline void SetSubtitle(const char* value) { m_subtitleHasBeenSet = true; m_subtitle.assign(value); }
-    inline UpdateWebExperienceRequest& WithSubtitle(const Aws::String& value) { SetSubtitle(value); return *this;}
-    inline UpdateWebExperienceRequest& WithSubtitle(Aws::String&& value) { SetSubtitle(std::move(value)); return *this;}
-    inline UpdateWebExperienceRequest& WithSubtitle(const char* value) { SetSubtitle(value); return *this;}
+    template<typename SubtitleT = Aws::String>
+    void SetSubtitle(SubtitleT&& value) { m_subtitleHasBeenSet = true; m_subtitle = std::forward<SubtitleT>(value); }
+    template<typename SubtitleT = Aws::String>
+    UpdateWebExperienceRequest& WithSubtitle(SubtitleT&& value) { SetSubtitle(std::forward<SubtitleT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -114,14 +104,12 @@ namespace Model
      * <p>A customized welcome message for an end user in an Amazon Q Business web
      * experience.</p>
      */
-    inline const Aws::String& GetWelcomeMessage() const{ return m_welcomeMessage; }
+    inline const Aws::String& GetWelcomeMessage() const { return m_welcomeMessage; }
     inline bool WelcomeMessageHasBeenSet() const { return m_welcomeMessageHasBeenSet; }
-    inline void SetWelcomeMessage(const Aws::String& value) { m_welcomeMessageHasBeenSet = true; m_welcomeMessage = value; }
-    inline void SetWelcomeMessage(Aws::String&& value) { m_welcomeMessageHasBeenSet = true; m_welcomeMessage = std::move(value); }
-    inline void SetWelcomeMessage(const char* value) { m_welcomeMessageHasBeenSet = true; m_welcomeMessage.assign(value); }
-    inline UpdateWebExperienceRequest& WithWelcomeMessage(const Aws::String& value) { SetWelcomeMessage(value); return *this;}
-    inline UpdateWebExperienceRequest& WithWelcomeMessage(Aws::String&& value) { SetWelcomeMessage(std::move(value)); return *this;}
-    inline UpdateWebExperienceRequest& WithWelcomeMessage(const char* value) { SetWelcomeMessage(value); return *this;}
+    template<typename WelcomeMessageT = Aws::String>
+    void SetWelcomeMessage(WelcomeMessageT&& value) { m_welcomeMessageHasBeenSet = true; m_welcomeMessage = std::forward<WelcomeMessageT>(value); }
+    template<typename WelcomeMessageT = Aws::String>
+    UpdateWebExperienceRequest& WithWelcomeMessage(WelcomeMessageT&& value) { SetWelcomeMessage(std::forward<WelcomeMessageT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -129,12 +117,10 @@ namespace Model
      * <p>Determines whether sample prompts are enabled in the web experience for an
      * end user.</p>
      */
-    inline const WebExperienceSamplePromptsControlMode& GetSamplePromptsControlMode() const{ return m_samplePromptsControlMode; }
+    inline WebExperienceSamplePromptsControlMode GetSamplePromptsControlMode() const { return m_samplePromptsControlMode; }
     inline bool SamplePromptsControlModeHasBeenSet() const { return m_samplePromptsControlModeHasBeenSet; }
-    inline void SetSamplePromptsControlMode(const WebExperienceSamplePromptsControlMode& value) { m_samplePromptsControlModeHasBeenSet = true; m_samplePromptsControlMode = value; }
-    inline void SetSamplePromptsControlMode(WebExperienceSamplePromptsControlMode&& value) { m_samplePromptsControlModeHasBeenSet = true; m_samplePromptsControlMode = std::move(value); }
-    inline UpdateWebExperienceRequest& WithSamplePromptsControlMode(const WebExperienceSamplePromptsControlMode& value) { SetSamplePromptsControlMode(value); return *this;}
-    inline UpdateWebExperienceRequest& WithSamplePromptsControlMode(WebExperienceSamplePromptsControlMode&& value) { SetSamplePromptsControlMode(std::move(value)); return *this;}
+    inline void SetSamplePromptsControlMode(WebExperienceSamplePromptsControlMode value) { m_samplePromptsControlModeHasBeenSet = true; m_samplePromptsControlMode = value; }
+    inline UpdateWebExperienceRequest& WithSamplePromptsControlMode(WebExperienceSamplePromptsControlMode value) { SetSamplePromptsControlMode(value); return *this;}
     ///@}
 
     ///@{
@@ -142,12 +128,12 @@ namespace Model
      * <p>Information about the identity provider (IdP) used to authenticate end users
      * of an Amazon Q Business web experience.</p>
      */
-    inline const IdentityProviderConfiguration& GetIdentityProviderConfiguration() const{ return m_identityProviderConfiguration; }
+    inline const IdentityProviderConfiguration& GetIdentityProviderConfiguration() const { return m_identityProviderConfiguration; }
     inline bool IdentityProviderConfigurationHasBeenSet() const { return m_identityProviderConfigurationHasBeenSet; }
-    inline void SetIdentityProviderConfiguration(const IdentityProviderConfiguration& value) { m_identityProviderConfigurationHasBeenSet = true; m_identityProviderConfiguration = value; }
-    inline void SetIdentityProviderConfiguration(IdentityProviderConfiguration&& value) { m_identityProviderConfigurationHasBeenSet = true; m_identityProviderConfiguration = std::move(value); }
-    inline UpdateWebExperienceRequest& WithIdentityProviderConfiguration(const IdentityProviderConfiguration& value) { SetIdentityProviderConfiguration(value); return *this;}
-    inline UpdateWebExperienceRequest& WithIdentityProviderConfiguration(IdentityProviderConfiguration&& value) { SetIdentityProviderConfiguration(std::move(value)); return *this;}
+    template<typename IdentityProviderConfigurationT = IdentityProviderConfiguration>
+    void SetIdentityProviderConfiguration(IdentityProviderConfigurationT&& value) { m_identityProviderConfigurationHasBeenSet = true; m_identityProviderConfiguration = std::forward<IdentityProviderConfigurationT>(value); }
+    template<typename IdentityProviderConfigurationT = IdentityProviderConfiguration>
+    UpdateWebExperienceRequest& WithIdentityProviderConfiguration(IdentityProviderConfigurationT&& value) { SetIdentityProviderConfiguration(std::forward<IdentityProviderConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -163,15 +149,14 @@ namespace Model
      * &lt;code&gt;https://docs.aws.amazon.com&lt;/code&gt;.&lt;/p&gt; &lt;/li&gt;
      * &lt;/ul&gt; &lt;/note&gt; </code></pre>
      */
-    inline const Aws::Vector<Aws::String>& GetOrigins() const{ return m_origins; }
+    inline const Aws::Vector<Aws::String>& GetOrigins() const { return m_origins; }
     inline bool OriginsHasBeenSet() const { return m_originsHasBeenSet; }
-    inline void SetOrigins(const Aws::Vector<Aws::String>& value) { m_originsHasBeenSet = true; m_origins = value; }
-    inline void SetOrigins(Aws::Vector<Aws::String>&& value) { m_originsHasBeenSet = true; m_origins = std::move(value); }
-    inline UpdateWebExperienceRequest& WithOrigins(const Aws::Vector<Aws::String>& value) { SetOrigins(value); return *this;}
-    inline UpdateWebExperienceRequest& WithOrigins(Aws::Vector<Aws::String>&& value) { SetOrigins(std::move(value)); return *this;}
-    inline UpdateWebExperienceRequest& AddOrigins(const Aws::String& value) { m_originsHasBeenSet = true; m_origins.push_back(value); return *this; }
-    inline UpdateWebExperienceRequest& AddOrigins(Aws::String&& value) { m_originsHasBeenSet = true; m_origins.push_back(std::move(value)); return *this; }
-    inline UpdateWebExperienceRequest& AddOrigins(const char* value) { m_originsHasBeenSet = true; m_origins.push_back(value); return *this; }
+    template<typename OriginsT = Aws::Vector<Aws::String>>
+    void SetOrigins(OriginsT&& value) { m_originsHasBeenSet = true; m_origins = std::forward<OriginsT>(value); }
+    template<typename OriginsT = Aws::Vector<Aws::String>>
+    UpdateWebExperienceRequest& WithOrigins(OriginsT&& value) { SetOrigins(std::forward<OriginsT>(value)); return *this;}
+    template<typename OriginsT = Aws::String>
+    UpdateWebExperienceRequest& AddOrigins(OriginsT&& value) { m_originsHasBeenSet = true; m_origins.emplace_back(std::forward<OriginsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -184,12 +169,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/amazonq/latest/qbusiness-ug/browser-extensions.html">Configure
      * external OIDC identity provider for your browser extensions.</a>. </p> 
      */
-    inline const BrowserExtensionConfiguration& GetBrowserExtensionConfiguration() const{ return m_browserExtensionConfiguration; }
+    inline const BrowserExtensionConfiguration& GetBrowserExtensionConfiguration() const { return m_browserExtensionConfiguration; }
     inline bool BrowserExtensionConfigurationHasBeenSet() const { return m_browserExtensionConfigurationHasBeenSet; }
-    inline void SetBrowserExtensionConfiguration(const BrowserExtensionConfiguration& value) { m_browserExtensionConfigurationHasBeenSet = true; m_browserExtensionConfiguration = value; }
-    inline void SetBrowserExtensionConfiguration(BrowserExtensionConfiguration&& value) { m_browserExtensionConfigurationHasBeenSet = true; m_browserExtensionConfiguration = std::move(value); }
-    inline UpdateWebExperienceRequest& WithBrowserExtensionConfiguration(const BrowserExtensionConfiguration& value) { SetBrowserExtensionConfiguration(value); return *this;}
-    inline UpdateWebExperienceRequest& WithBrowserExtensionConfiguration(BrowserExtensionConfiguration&& value) { SetBrowserExtensionConfiguration(std::move(value)); return *this;}
+    template<typename BrowserExtensionConfigurationT = BrowserExtensionConfiguration>
+    void SetBrowserExtensionConfiguration(BrowserExtensionConfigurationT&& value) { m_browserExtensionConfigurationHasBeenSet = true; m_browserExtensionConfiguration = std::forward<BrowserExtensionConfigurationT>(value); }
+    template<typename BrowserExtensionConfigurationT = BrowserExtensionConfiguration>
+    UpdateWebExperienceRequest& WithBrowserExtensionConfiguration(BrowserExtensionConfigurationT&& value) { SetBrowserExtensionConfiguration(std::forward<BrowserExtensionConfigurationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -197,12 +182,12 @@ namespace Model
      * <p>Updates the custom logo, favicon, font, and color used in the Amazon Q web
      * experience. </p>
      */
-    inline const CustomizationConfiguration& GetCustomizationConfiguration() const{ return m_customizationConfiguration; }
+    inline const CustomizationConfiguration& GetCustomizationConfiguration() const { return m_customizationConfiguration; }
     inline bool CustomizationConfigurationHasBeenSet() const { return m_customizationConfigurationHasBeenSet; }
-    inline void SetCustomizationConfiguration(const CustomizationConfiguration& value) { m_customizationConfigurationHasBeenSet = true; m_customizationConfiguration = value; }
-    inline void SetCustomizationConfiguration(CustomizationConfiguration&& value) { m_customizationConfigurationHasBeenSet = true; m_customizationConfiguration = std::move(value); }
-    inline UpdateWebExperienceRequest& WithCustomizationConfiguration(const CustomizationConfiguration& value) { SetCustomizationConfiguration(value); return *this;}
-    inline UpdateWebExperienceRequest& WithCustomizationConfiguration(CustomizationConfiguration&& value) { SetCustomizationConfiguration(std::move(value)); return *this;}
+    template<typename CustomizationConfigurationT = CustomizationConfiguration>
+    void SetCustomizationConfiguration(CustomizationConfigurationT&& value) { m_customizationConfigurationHasBeenSet = true; m_customizationConfiguration = std::forward<CustomizationConfigurationT>(value); }
+    template<typename CustomizationConfigurationT = CustomizationConfiguration>
+    UpdateWebExperienceRequest& WithCustomizationConfiguration(CustomizationConfigurationT&& value) { SetCustomizationConfiguration(std::forward<CustomizationConfigurationT>(value)); return *this;}
     ///@}
   private:
 
@@ -224,7 +209,7 @@ namespace Model
     Aws::String m_welcomeMessage;
     bool m_welcomeMessageHasBeenSet = false;
 
-    WebExperienceSamplePromptsControlMode m_samplePromptsControlMode;
+    WebExperienceSamplePromptsControlMode m_samplePromptsControlMode{WebExperienceSamplePromptsControlMode::NOT_SET};
     bool m_samplePromptsControlModeHasBeenSet = false;
 
     IdentityProviderConfiguration m_identityProviderConfiguration;

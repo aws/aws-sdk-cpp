@@ -18,26 +18,7 @@ namespace SMS
 namespace Model
 {
 
-ReplicationRun::ReplicationRun() : 
-    m_replicationRunIdHasBeenSet(false),
-    m_state(ReplicationRunState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_type(ReplicationRunType::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_stageDetailsHasBeenSet(false),
-    m_statusMessageHasBeenSet(false),
-    m_amiIdHasBeenSet(false),
-    m_scheduledStartTimeHasBeenSet(false),
-    m_completedTimeHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_encrypted(false),
-    m_encryptedHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 ReplicationRun::ReplicationRun(JsonView jsonValue)
-  : ReplicationRun()
 {
   *this = jsonValue;
 }
@@ -47,80 +28,58 @@ ReplicationRun& ReplicationRun::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("replicationRunId"))
   {
     m_replicationRunId = jsonValue.GetString("replicationRunId");
-
     m_replicationRunIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("state"))
   {
     m_state = ReplicationRunStateMapper::GetReplicationRunStateForName(jsonValue.GetString("state"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = ReplicationRunTypeMapper::GetReplicationRunTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("stageDetails"))
   {
     m_stageDetails = jsonValue.GetObject("stageDetails");
-
     m_stageDetailsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
     m_statusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("amiId"))
   {
     m_amiId = jsonValue.GetString("amiId");
-
     m_amiIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("scheduledStartTime"))
   {
     m_scheduledStartTime = jsonValue.GetDouble("scheduledStartTime");
-
     m_scheduledStartTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("completedTime"))
   {
     m_completedTime = jsonValue.GetDouble("completedTime");
-
     m_completedTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("encrypted"))
   {
     m_encrypted = jsonValue.GetBool("encrypted");
-
     m_encryptedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("kmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("kmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

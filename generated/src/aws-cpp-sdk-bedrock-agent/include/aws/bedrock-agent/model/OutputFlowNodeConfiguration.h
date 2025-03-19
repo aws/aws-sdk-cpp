@@ -32,7 +32,7 @@ namespace Model
   class OutputFlowNodeConfiguration
   {
   public:
-    AWS_BEDROCKAGENT_API OutputFlowNodeConfiguration();
+    AWS_BEDROCKAGENT_API OutputFlowNodeConfiguration() = default;
     AWS_BEDROCKAGENT_API OutputFlowNodeConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API OutputFlowNodeConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENT_API Aws::Utils::Json::JsonValue Jsonize() const;

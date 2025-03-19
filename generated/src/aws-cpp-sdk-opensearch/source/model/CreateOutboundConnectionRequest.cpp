@@ -12,16 +12,6 @@ using namespace Aws::OpenSearchService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateOutboundConnectionRequest::CreateOutboundConnectionRequest() : 
-    m_localDomainInfoHasBeenSet(false),
-    m_remoteDomainInfoHasBeenSet(false),
-    m_connectionAliasHasBeenSet(false),
-    m_connectionMode(ConnectionMode::NOT_SET),
-    m_connectionModeHasBeenSet(false),
-    m_connectionPropertiesHasBeenSet(false)
-{
-}
-
 Aws::String CreateOutboundConnectionRequest::SerializePayload() const
 {
   JsonValue payload;

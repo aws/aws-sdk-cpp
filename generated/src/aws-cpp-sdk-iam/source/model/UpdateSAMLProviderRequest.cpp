@@ -10,16 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-UpdateSAMLProviderRequest::UpdateSAMLProviderRequest() : 
-    m_sAMLMetadataDocumentHasBeenSet(false),
-    m_sAMLProviderArnHasBeenSet(false),
-    m_assertionEncryptionMode(AssertionEncryptionModeType::NOT_SET),
-    m_assertionEncryptionModeHasBeenSet(false),
-    m_addPrivateKeyHasBeenSet(false),
-    m_removePrivateKeyHasBeenSet(false)
-{
-}
-
 Aws::String UpdateSAMLProviderRequest::SerializePayload() const
 {
   Aws::StringStream ss;

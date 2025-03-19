@@ -17,13 +17,6 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 using namespace Aws;
 
-UpdateResourcePositionRequest::UpdateResourcePositionRequest() : 
-    m_resourceIdentifierHasBeenSet(false),
-    m_resourceType(PositionResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false)
-{
-}
-
 
 void UpdateResourcePositionRequest::AddQueryStringParameters(URI& uri) const
 {

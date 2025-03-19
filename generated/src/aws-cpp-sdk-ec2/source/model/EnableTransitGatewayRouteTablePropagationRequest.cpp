@@ -10,15 +10,6 @@
 using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
-EnableTransitGatewayRouteTablePropagationRequest::EnableTransitGatewayRouteTablePropagationRequest() : 
-    m_transitGatewayRouteTableIdHasBeenSet(false),
-    m_transitGatewayAttachmentIdHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false),
-    m_transitGatewayRouteTableAnnouncementIdHasBeenSet(false)
-{
-}
-
 Aws::String EnableTransitGatewayRouteTablePropagationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

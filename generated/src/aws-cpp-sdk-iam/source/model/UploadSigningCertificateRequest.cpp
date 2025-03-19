@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-UploadSigningCertificateRequest::UploadSigningCertificateRequest() : 
-    m_userNameHasBeenSet(false),
-    m_certificateBodyHasBeenSet(false)
-{
-}
-
 Aws::String UploadSigningCertificateRequest::SerializePayload() const
 {
   Aws::StringStream ss;

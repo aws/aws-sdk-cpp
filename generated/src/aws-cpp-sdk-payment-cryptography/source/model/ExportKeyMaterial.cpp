@@ -18,15 +18,7 @@ namespace PaymentCryptography
 namespace Model
 {
 
-ExportKeyMaterial::ExportKeyMaterial() : 
-    m_tr31KeyBlockHasBeenSet(false),
-    m_tr34KeyBlockHasBeenSet(false),
-    m_keyCryptogramHasBeenSet(false)
-{
-}
-
 ExportKeyMaterial::ExportKeyMaterial(JsonView jsonValue)
-  : ExportKeyMaterial()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ ExportKeyMaterial& ExportKeyMaterial::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Tr31KeyBlock"))
   {
     m_tr31KeyBlock = jsonValue.GetObject("Tr31KeyBlock");
-
     m_tr31KeyBlockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tr34KeyBlock"))
   {
     m_tr34KeyBlock = jsonValue.GetObject("Tr34KeyBlock");
-
     m_tr34KeyBlockHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyCryptogram"))
   {
     m_keyCryptogram = jsonValue.GetObject("KeyCryptogram");
-
     m_keyCryptogramHasBeenSet = true;
   }
-
   return *this;
 }
 

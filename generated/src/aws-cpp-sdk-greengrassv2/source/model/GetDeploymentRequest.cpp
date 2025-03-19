@@ -12,11 +12,6 @@ using namespace Aws::GreengrassV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-GetDeploymentRequest::GetDeploymentRequest() : 
-    m_deploymentIdHasBeenSet(false)
-{
-}
-
 Aws::String GetDeploymentRequest::SerializePayload() const
 {
   return {};

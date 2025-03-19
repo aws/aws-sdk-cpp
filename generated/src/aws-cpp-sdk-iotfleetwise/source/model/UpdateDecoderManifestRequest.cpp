@@ -12,22 +12,6 @@ using namespace Aws::IoTFleetWise::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateDecoderManifestRequest::UpdateDecoderManifestRequest() : 
-    m_nameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_signalDecodersToAddHasBeenSet(false),
-    m_signalDecodersToUpdateHasBeenSet(false),
-    m_signalDecodersToRemoveHasBeenSet(false),
-    m_networkInterfacesToAddHasBeenSet(false),
-    m_networkInterfacesToUpdateHasBeenSet(false),
-    m_networkInterfacesToRemoveHasBeenSet(false),
-    m_status(ManifestStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_defaultForUnmappedSignals(DefaultForUnmappedSignalsType::NOT_SET),
-    m_defaultForUnmappedSignalsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateDecoderManifestRequest::SerializePayload() const
 {
   JsonValue payload;

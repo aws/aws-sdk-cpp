@@ -17,13 +17,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ListStreamsResult::ListStreamsResult() : 
-    m_hasMoreStreams(false)
-{
-}
-
 ListStreamsResult::ListStreamsResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
-  : ListStreamsResult()
 {
   *this = result;
 }
@@ -38,20 +32,18 @@ ListStreamsResult& ListStreamsResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_streamNames.push_back(streamNamesJsonList[streamNamesIndex].AsString());
     }
+    m_streamNamesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("HasMoreStreams"))
   {
     m_hasMoreStreams = jsonValue.GetBool("HasMoreStreams");
-
+    m_hasMoreStreamsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("NextToken"))
   {
     m_nextToken = jsonValue.GetString("NextToken");
-
+    m_nextTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StreamSummaries"))
   {
     Aws::Utils::Array<JsonView> streamSummariesJsonList = jsonValue.GetArray("StreamSummaries");
@@ -59,14 +51,15 @@ ListStreamsResult& ListStreamsResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_streamSummaries.push_back(streamSummariesJsonList[streamSummariesIndex].AsObject());
     }
+    m_streamSummariesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

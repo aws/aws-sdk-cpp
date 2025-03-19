@@ -18,17 +18,7 @@ namespace SecurityIR
 namespace Model
 {
 
-GetMembershipAccountDetailItem::GetMembershipAccountDetailItem() : 
-    m_accountIdHasBeenSet(false),
-    m_relationshipStatus(MembershipAccountRelationshipStatus::NOT_SET),
-    m_relationshipStatusHasBeenSet(false),
-    m_relationshipType(MembershipAccountRelationshipType::NOT_SET),
-    m_relationshipTypeHasBeenSet(false)
-{
-}
-
 GetMembershipAccountDetailItem::GetMembershipAccountDetailItem(JsonView jsonValue)
-  : GetMembershipAccountDetailItem()
 {
   *this = jsonValue;
 }
@@ -38,24 +28,18 @@ GetMembershipAccountDetailItem& GetMembershipAccountDetailItem::operator =(JsonV
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relationshipStatus"))
   {
     m_relationshipStatus = MembershipAccountRelationshipStatusMapper::GetMembershipAccountRelationshipStatusForName(jsonValue.GetString("relationshipStatus"));
-
     m_relationshipStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("relationshipType"))
   {
     m_relationshipType = MembershipAccountRelationshipTypeMapper::GetMembershipAccountRelationshipTypeForName(jsonValue.GetString("relationshipType"));
-
     m_relationshipTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

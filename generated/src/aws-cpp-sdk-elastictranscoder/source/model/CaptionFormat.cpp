@@ -18,15 +18,7 @@ namespace ElasticTranscoder
 namespace Model
 {
 
-CaptionFormat::CaptionFormat() : 
-    m_formatHasBeenSet(false),
-    m_patternHasBeenSet(false),
-    m_encryptionHasBeenSet(false)
-{
-}
-
 CaptionFormat::CaptionFormat(JsonView jsonValue)
-  : CaptionFormat()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ CaptionFormat& CaptionFormat::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Format"))
   {
     m_format = jsonValue.GetString("Format");
-
     m_formatHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Pattern"))
   {
     m_pattern = jsonValue.GetString("Pattern");
-
     m_patternHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Encryption"))
   {
     m_encryption = jsonValue.GetObject("Encryption");
-
     m_encryptionHasBeenSet = true;
   }
-
   return *this;
 }
 

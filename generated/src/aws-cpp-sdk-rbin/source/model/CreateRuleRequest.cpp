@@ -12,18 +12,6 @@ using namespace Aws::RecycleBin::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateRuleRequest::CreateRuleRequest() : 
-    m_retentionPeriodHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_resourceType(ResourceType::NOT_SET),
-    m_resourceTypeHasBeenSet(false),
-    m_resourceTagsHasBeenSet(false),
-    m_lockConfigurationHasBeenSet(false),
-    m_excludeResourceTagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateRuleRequest::SerializePayload() const
 {
   JsonValue payload;

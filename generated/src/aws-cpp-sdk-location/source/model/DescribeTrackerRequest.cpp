@@ -12,11 +12,6 @@ using namespace Aws::LocationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeTrackerRequest::DescribeTrackerRequest() : 
-    m_trackerNameHasBeenSet(false)
-{
-}
-
 Aws::String DescribeTrackerRequest::SerializePayload() const
 {
   return {};

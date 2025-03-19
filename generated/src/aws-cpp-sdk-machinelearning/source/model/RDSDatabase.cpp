@@ -18,14 +18,7 @@ namespace MachineLearning
 namespace Model
 {
 
-RDSDatabase::RDSDatabase() : 
-    m_instanceIdentifierHasBeenSet(false),
-    m_databaseNameHasBeenSet(false)
-{
-}
-
 RDSDatabase::RDSDatabase(JsonView jsonValue)
-  : RDSDatabase()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RDSDatabase& RDSDatabase::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("InstanceIdentifier"))
   {
     m_instanceIdentifier = jsonValue.GetString("InstanceIdentifier");
-
     m_instanceIdentifierHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DatabaseName"))
   {
     m_databaseName = jsonValue.GetString("DatabaseName");
-
     m_databaseNameHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetPlaceResult::GetPlaceResult()
-{
-}
-
 GetPlaceResult::GetPlaceResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ GetPlaceResult& GetPlaceResult::operator =(const Aws::AmazonWebServiceResult<Jso
   if(jsonValue.ValueExists("Place"))
   {
     m_place = jsonValue.GetObject("Place");
-
+    m_placeHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

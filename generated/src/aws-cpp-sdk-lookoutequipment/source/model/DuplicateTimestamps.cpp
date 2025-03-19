@@ -18,14 +18,7 @@ namespace LookoutEquipment
 namespace Model
 {
 
-DuplicateTimestamps::DuplicateTimestamps() : 
-    m_totalNumberOfDuplicateTimestamps(0),
-    m_totalNumberOfDuplicateTimestampsHasBeenSet(false)
-{
-}
-
 DuplicateTimestamps::DuplicateTimestamps(JsonView jsonValue)
-  : DuplicateTimestamps()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ DuplicateTimestamps& DuplicateTimestamps::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("TotalNumberOfDuplicateTimestamps"))
   {
     m_totalNumberOfDuplicateTimestamps = jsonValue.GetInteger("TotalNumberOfDuplicateTimestamps");
-
     m_totalNumberOfDuplicateTimestampsHasBeenSet = true;
   }
-
   return *this;
 }
 

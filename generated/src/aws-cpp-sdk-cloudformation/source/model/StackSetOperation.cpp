@@ -20,29 +20,7 @@ namespace CloudFormation
 namespace Model
 {
 
-StackSetOperation::StackSetOperation() : 
-    m_operationIdHasBeenSet(false),
-    m_stackSetIdHasBeenSet(false),
-    m_action(StackSetOperationAction::NOT_SET),
-    m_actionHasBeenSet(false),
-    m_status(StackSetOperationStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_operationPreferencesHasBeenSet(false),
-    m_retainStacks(false),
-    m_retainStacksHasBeenSet(false),
-    m_administrationRoleARNHasBeenSet(false),
-    m_executionRoleNameHasBeenSet(false),
-    m_creationTimestampHasBeenSet(false),
-    m_endTimestampHasBeenSet(false),
-    m_deploymentTargetsHasBeenSet(false),
-    m_stackSetDriftDetectionDetailsHasBeenSet(false),
-    m_statusReasonHasBeenSet(false),
-    m_statusDetailsHasBeenSet(false)
-{
-}
-
 StackSetOperation::StackSetOperation(const XmlNode& xmlNode)
-  : StackSetOperation()
 {
   *this = xmlNode;
 }
@@ -68,13 +46,13 @@ StackSetOperation& StackSetOperation::operator =(const XmlNode& xmlNode)
     XmlNode actionNode = resultNode.FirstChild("Action");
     if(!actionNode.IsNull())
     {
-      m_action = StackSetOperationActionMapper::GetStackSetOperationActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionNode.GetText()).c_str()).c_str());
+      m_action = StackSetOperationActionMapper::GetStackSetOperationActionForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(actionNode.GetText()).c_str()));
       m_actionHasBeenSet = true;
     }
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = StackSetOperationStatusMapper::GetStackSetOperationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = StackSetOperationStatusMapper::GetStackSetOperationStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode operationPreferencesNode = resultNode.FirstChild("OperationPreferences");

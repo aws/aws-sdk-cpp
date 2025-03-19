@@ -12,11 +12,6 @@ using namespace Aws::CloudDirectory::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSchemaRequest::CreateSchemaRequest() : 
-    m_nameHasBeenSet(false)
-{
-}
-
 Aws::String CreateSchemaRequest::SerializePayload() const
 {
   JsonValue payload;

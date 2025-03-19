@@ -36,7 +36,7 @@ namespace Model
   class AuthResult
   {
   public:
-    AWS_IOT_API AuthResult();
+    AWS_IOT_API AuthResult() = default;
     AWS_IOT_API AuthResult(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API AuthResult& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IOT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -46,36 +46,36 @@ namespace Model
     /**
      * <p>Authorization information.</p>
      */
-    inline const AuthInfo& GetAuthInfo() const{ return m_authInfo; }
+    inline const AuthInfo& GetAuthInfo() const { return m_authInfo; }
     inline bool AuthInfoHasBeenSet() const { return m_authInfoHasBeenSet; }
-    inline void SetAuthInfo(const AuthInfo& value) { m_authInfoHasBeenSet = true; m_authInfo = value; }
-    inline void SetAuthInfo(AuthInfo&& value) { m_authInfoHasBeenSet = true; m_authInfo = std::move(value); }
-    inline AuthResult& WithAuthInfo(const AuthInfo& value) { SetAuthInfo(value); return *this;}
-    inline AuthResult& WithAuthInfo(AuthInfo&& value) { SetAuthInfo(std::move(value)); return *this;}
+    template<typename AuthInfoT = AuthInfo>
+    void SetAuthInfo(AuthInfoT&& value) { m_authInfoHasBeenSet = true; m_authInfo = std::forward<AuthInfoT>(value); }
+    template<typename AuthInfoT = AuthInfo>
+    AuthResult& WithAuthInfo(AuthInfoT&& value) { SetAuthInfo(std::forward<AuthInfoT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The policies and statements that allowed the specified action.</p>
      */
-    inline const Allowed& GetAllowed() const{ return m_allowed; }
+    inline const Allowed& GetAllowed() const { return m_allowed; }
     inline bool AllowedHasBeenSet() const { return m_allowedHasBeenSet; }
-    inline void SetAllowed(const Allowed& value) { m_allowedHasBeenSet = true; m_allowed = value; }
-    inline void SetAllowed(Allowed&& value) { m_allowedHasBeenSet = true; m_allowed = std::move(value); }
-    inline AuthResult& WithAllowed(const Allowed& value) { SetAllowed(value); return *this;}
-    inline AuthResult& WithAllowed(Allowed&& value) { SetAllowed(std::move(value)); return *this;}
+    template<typename AllowedT = Allowed>
+    void SetAllowed(AllowedT&& value) { m_allowedHasBeenSet = true; m_allowed = std::forward<AllowedT>(value); }
+    template<typename AllowedT = Allowed>
+    AuthResult& WithAllowed(AllowedT&& value) { SetAllowed(std::forward<AllowedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The policies and statements that denied the specified action.</p>
      */
-    inline const Denied& GetDenied() const{ return m_denied; }
+    inline const Denied& GetDenied() const { return m_denied; }
     inline bool DeniedHasBeenSet() const { return m_deniedHasBeenSet; }
-    inline void SetDenied(const Denied& value) { m_deniedHasBeenSet = true; m_denied = value; }
-    inline void SetDenied(Denied&& value) { m_deniedHasBeenSet = true; m_denied = std::move(value); }
-    inline AuthResult& WithDenied(const Denied& value) { SetDenied(value); return *this;}
-    inline AuthResult& WithDenied(Denied&& value) { SetDenied(std::move(value)); return *this;}
+    template<typename DeniedT = Denied>
+    void SetDenied(DeniedT&& value) { m_deniedHasBeenSet = true; m_denied = std::forward<DeniedT>(value); }
+    template<typename DeniedT = Denied>
+    AuthResult& WithDenied(DeniedT&& value) { SetDenied(std::forward<DeniedT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,27 +84,24 @@ namespace Model
      * taken into account when determining the authorization decision. An explicit deny
      * statement can override multiple allow statements.</p>
      */
-    inline const AuthDecision& GetAuthDecision() const{ return m_authDecision; }
+    inline AuthDecision GetAuthDecision() const { return m_authDecision; }
     inline bool AuthDecisionHasBeenSet() const { return m_authDecisionHasBeenSet; }
-    inline void SetAuthDecision(const AuthDecision& value) { m_authDecisionHasBeenSet = true; m_authDecision = value; }
-    inline void SetAuthDecision(AuthDecision&& value) { m_authDecisionHasBeenSet = true; m_authDecision = std::move(value); }
-    inline AuthResult& WithAuthDecision(const AuthDecision& value) { SetAuthDecision(value); return *this;}
-    inline AuthResult& WithAuthDecision(AuthDecision&& value) { SetAuthDecision(std::move(value)); return *this;}
+    inline void SetAuthDecision(AuthDecision value) { m_authDecisionHasBeenSet = true; m_authDecision = value; }
+    inline AuthResult& WithAuthDecision(AuthDecision value) { SetAuthDecision(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Contains any missing context values found while evaluating policy.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetMissingContextValues() const{ return m_missingContextValues; }
+    inline const Aws::Vector<Aws::String>& GetMissingContextValues() const { return m_missingContextValues; }
     inline bool MissingContextValuesHasBeenSet() const { return m_missingContextValuesHasBeenSet; }
-    inline void SetMissingContextValues(const Aws::Vector<Aws::String>& value) { m_missingContextValuesHasBeenSet = true; m_missingContextValues = value; }
-    inline void SetMissingContextValues(Aws::Vector<Aws::String>&& value) { m_missingContextValuesHasBeenSet = true; m_missingContextValues = std::move(value); }
-    inline AuthResult& WithMissingContextValues(const Aws::Vector<Aws::String>& value) { SetMissingContextValues(value); return *this;}
-    inline AuthResult& WithMissingContextValues(Aws::Vector<Aws::String>&& value) { SetMissingContextValues(std::move(value)); return *this;}
-    inline AuthResult& AddMissingContextValues(const Aws::String& value) { m_missingContextValuesHasBeenSet = true; m_missingContextValues.push_back(value); return *this; }
-    inline AuthResult& AddMissingContextValues(Aws::String&& value) { m_missingContextValuesHasBeenSet = true; m_missingContextValues.push_back(std::move(value)); return *this; }
-    inline AuthResult& AddMissingContextValues(const char* value) { m_missingContextValuesHasBeenSet = true; m_missingContextValues.push_back(value); return *this; }
+    template<typename MissingContextValuesT = Aws::Vector<Aws::String>>
+    void SetMissingContextValues(MissingContextValuesT&& value) { m_missingContextValuesHasBeenSet = true; m_missingContextValues = std::forward<MissingContextValuesT>(value); }
+    template<typename MissingContextValuesT = Aws::Vector<Aws::String>>
+    AuthResult& WithMissingContextValues(MissingContextValuesT&& value) { SetMissingContextValues(std::forward<MissingContextValuesT>(value)); return *this;}
+    template<typename MissingContextValuesT = Aws::String>
+    AuthResult& AddMissingContextValues(MissingContextValuesT&& value) { m_missingContextValuesHasBeenSet = true; m_missingContextValues.emplace_back(std::forward<MissingContextValuesT>(value)); return *this; }
     ///@}
   private:
 
@@ -117,7 +114,7 @@ namespace Model
     Denied m_denied;
     bool m_deniedHasBeenSet = false;
 
-    AuthDecision m_authDecision;
+    AuthDecision m_authDecision{AuthDecision::NOT_SET};
     bool m_authDecisionHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_missingContextValues;

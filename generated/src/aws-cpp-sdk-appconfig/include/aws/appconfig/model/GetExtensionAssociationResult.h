@@ -28,7 +28,7 @@ namespace Model
   class GetExtensionAssociationResult
   {
   public:
-    AWS_APPCONFIG_API GetExtensionAssociationResult();
+    AWS_APPCONFIG_API GetExtensionAssociationResult() = default;
     AWS_APPCONFIG_API GetExtensionAssociationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_APPCONFIG_API GetExtensionAssociationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -37,26 +37,22 @@ namespace Model
     /**
      * <p>The system-generated ID for the association.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
-    inline void SetId(const Aws::String& value) { m_id = value; }
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
-    inline void SetId(const char* value) { m_id.assign(value); }
-    inline GetExtensionAssociationResult& WithId(const Aws::String& value) { SetId(value); return *this;}
-    inline GetExtensionAssociationResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
-    inline GetExtensionAssociationResult& WithId(const char* value) { SetId(value); return *this;}
+    inline const Aws::String& GetId() const { return m_id; }
+    template<typename IdT = Aws::String>
+    void SetId(IdT&& value) { m_idHasBeenSet = true; m_id = std::forward<IdT>(value); }
+    template<typename IdT = Aws::String>
+    GetExtensionAssociationResult& WithId(IdT&& value) { SetId(std::forward<IdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ARN of the extension defined in the association.</p>
      */
-    inline const Aws::String& GetExtensionArn() const{ return m_extensionArn; }
-    inline void SetExtensionArn(const Aws::String& value) { m_extensionArn = value; }
-    inline void SetExtensionArn(Aws::String&& value) { m_extensionArn = std::move(value); }
-    inline void SetExtensionArn(const char* value) { m_extensionArn.assign(value); }
-    inline GetExtensionAssociationResult& WithExtensionArn(const Aws::String& value) { SetExtensionArn(value); return *this;}
-    inline GetExtensionAssociationResult& WithExtensionArn(Aws::String&& value) { SetExtensionArn(std::move(value)); return *this;}
-    inline GetExtensionAssociationResult& WithExtensionArn(const char* value) { SetExtensionArn(value); return *this;}
+    inline const Aws::String& GetExtensionArn() const { return m_extensionArn; }
+    template<typename ExtensionArnT = Aws::String>
+    void SetExtensionArn(ExtensionArnT&& value) { m_extensionArnHasBeenSet = true; m_extensionArn = std::forward<ExtensionArnT>(value); }
+    template<typename ExtensionArnT = Aws::String>
+    GetExtensionAssociationResult& WithExtensionArn(ExtensionArnT&& value) { SetExtensionArn(std::forward<ExtensionArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -64,80 +60,78 @@ namespace Model
      * <p>The ARNs of applications, configuration profiles, or environments defined in
      * the association.</p>
      */
-    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
-    inline void SetResourceArn(const Aws::String& value) { m_resourceArn = value; }
-    inline void SetResourceArn(Aws::String&& value) { m_resourceArn = std::move(value); }
-    inline void SetResourceArn(const char* value) { m_resourceArn.assign(value); }
-    inline GetExtensionAssociationResult& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
-    inline GetExtensionAssociationResult& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
-    inline GetExtensionAssociationResult& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+    inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
+    template<typename ResourceArnT = Aws::String>
+    void SetResourceArn(ResourceArnT&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::forward<ResourceArnT>(value); }
+    template<typename ResourceArnT = Aws::String>
+    GetExtensionAssociationResult& WithResourceArn(ResourceArnT&& value) { SetResourceArn(std::forward<ResourceArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The system-generated Amazon Resource Name (ARN) for the extension.</p>
      */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-    inline GetExtensionAssociationResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-    inline GetExtensionAssociationResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-    inline GetExtensionAssociationResult& WithArn(const char* value) { SetArn(value); return *this;}
+    inline const Aws::String& GetArn() const { return m_arn; }
+    template<typename ArnT = Aws::String>
+    void SetArn(ArnT&& value) { m_arnHasBeenSet = true; m_arn = std::forward<ArnT>(value); }
+    template<typename ArnT = Aws::String>
+    GetExtensionAssociationResult& WithArn(ArnT&& value) { SetArn(std::forward<ArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The parameter names and values defined in the association.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
-    inline void SetParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_parameters = value; }
-    inline void SetParameters(Aws::Map<Aws::String, Aws::String>&& value) { m_parameters = std::move(value); }
-    inline GetExtensionAssociationResult& WithParameters(const Aws::Map<Aws::String, Aws::String>& value) { SetParameters(value); return *this;}
-    inline GetExtensionAssociationResult& WithParameters(Aws::Map<Aws::String, Aws::String>&& value) { SetParameters(std::move(value)); return *this;}
-    inline GetExtensionAssociationResult& AddParameters(const Aws::String& key, const Aws::String& value) { m_parameters.emplace(key, value); return *this; }
-    inline GetExtensionAssociationResult& AddParameters(Aws::String&& key, const Aws::String& value) { m_parameters.emplace(std::move(key), value); return *this; }
-    inline GetExtensionAssociationResult& AddParameters(const Aws::String& key, Aws::String&& value) { m_parameters.emplace(key, std::move(value)); return *this; }
-    inline GetExtensionAssociationResult& AddParameters(Aws::String&& key, Aws::String&& value) { m_parameters.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetExtensionAssociationResult& AddParameters(const char* key, Aws::String&& value) { m_parameters.emplace(key, std::move(value)); return *this; }
-    inline GetExtensionAssociationResult& AddParameters(Aws::String&& key, const char* value) { m_parameters.emplace(std::move(key), value); return *this; }
-    inline GetExtensionAssociationResult& AddParameters(const char* key, const char* value) { m_parameters.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const { return m_parameters; }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    void SetParameters(ParametersT&& value) { m_parametersHasBeenSet = true; m_parameters = std::forward<ParametersT>(value); }
+    template<typename ParametersT = Aws::Map<Aws::String, Aws::String>>
+    GetExtensionAssociationResult& WithParameters(ParametersT&& value) { SetParameters(std::forward<ParametersT>(value)); return *this;}
+    template<typename ParametersKeyT = Aws::String, typename ParametersValueT = Aws::String>
+    GetExtensionAssociationResult& AddParameters(ParametersKeyT&& key, ParametersValueT&& value) {
+      m_parametersHasBeenSet = true; m_parameters.emplace(std::forward<ParametersKeyT>(key), std::forward<ParametersValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The version number for the extension defined in the association.</p>
      */
-    inline int GetExtensionVersionNumber() const{ return m_extensionVersionNumber; }
-    inline void SetExtensionVersionNumber(int value) { m_extensionVersionNumber = value; }
+    inline int GetExtensionVersionNumber() const { return m_extensionVersionNumber; }
+    inline void SetExtensionVersionNumber(int value) { m_extensionVersionNumberHasBeenSet = true; m_extensionVersionNumber = value; }
     inline GetExtensionAssociationResult& WithExtensionVersionNumber(int value) { SetExtensionVersionNumber(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetExtensionAssociationResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetExtensionAssociationResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetExtensionAssociationResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetExtensionAssociationResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_id;
+    bool m_idHasBeenSet = false;
 
     Aws::String m_extensionArn;
+    bool m_extensionArnHasBeenSet = false;
 
     Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet = false;
 
     Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_parameters;
+    bool m_parametersHasBeenSet = false;
 
-    int m_extensionVersionNumber;
+    int m_extensionVersionNumber{0};
+    bool m_extensionVersionNumberHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

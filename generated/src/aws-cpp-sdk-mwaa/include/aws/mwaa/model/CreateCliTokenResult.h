@@ -27,7 +27,7 @@ namespace Model
   class CreateCliTokenResult
   {
   public:
-    AWS_MWAA_API CreateCliTokenResult();
+    AWS_MWAA_API CreateCliTokenResult() = default;
     AWS_MWAA_API CreateCliTokenResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_MWAA_API CreateCliTokenResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -36,45 +36,42 @@ namespace Model
     /**
      * <p>An Airflow CLI login token.</p>
      */
-    inline const Aws::String& GetCliToken() const{ return m_cliToken; }
-    inline void SetCliToken(const Aws::String& value) { m_cliToken = value; }
-    inline void SetCliToken(Aws::String&& value) { m_cliToken = std::move(value); }
-    inline void SetCliToken(const char* value) { m_cliToken.assign(value); }
-    inline CreateCliTokenResult& WithCliToken(const Aws::String& value) { SetCliToken(value); return *this;}
-    inline CreateCliTokenResult& WithCliToken(Aws::String&& value) { SetCliToken(std::move(value)); return *this;}
-    inline CreateCliTokenResult& WithCliToken(const char* value) { SetCliToken(value); return *this;}
+    inline const Aws::String& GetCliToken() const { return m_cliToken; }
+    template<typename CliTokenT = Aws::String>
+    void SetCliToken(CliTokenT&& value) { m_cliTokenHasBeenSet = true; m_cliToken = std::forward<CliTokenT>(value); }
+    template<typename CliTokenT = Aws::String>
+    CreateCliTokenResult& WithCliToken(CliTokenT&& value) { SetCliToken(std::forward<CliTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Airflow web server hostname for the environment.</p>
      */
-    inline const Aws::String& GetWebServerHostname() const{ return m_webServerHostname; }
-    inline void SetWebServerHostname(const Aws::String& value) { m_webServerHostname = value; }
-    inline void SetWebServerHostname(Aws::String&& value) { m_webServerHostname = std::move(value); }
-    inline void SetWebServerHostname(const char* value) { m_webServerHostname.assign(value); }
-    inline CreateCliTokenResult& WithWebServerHostname(const Aws::String& value) { SetWebServerHostname(value); return *this;}
-    inline CreateCliTokenResult& WithWebServerHostname(Aws::String&& value) { SetWebServerHostname(std::move(value)); return *this;}
-    inline CreateCliTokenResult& WithWebServerHostname(const char* value) { SetWebServerHostname(value); return *this;}
+    inline const Aws::String& GetWebServerHostname() const { return m_webServerHostname; }
+    template<typename WebServerHostnameT = Aws::String>
+    void SetWebServerHostname(WebServerHostnameT&& value) { m_webServerHostnameHasBeenSet = true; m_webServerHostname = std::forward<WebServerHostnameT>(value); }
+    template<typename WebServerHostnameT = Aws::String>
+    CreateCliTokenResult& WithWebServerHostname(WebServerHostnameT&& value) { SetWebServerHostname(std::forward<WebServerHostnameT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline CreateCliTokenResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline CreateCliTokenResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline CreateCliTokenResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    CreateCliTokenResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_cliToken;
+    bool m_cliTokenHasBeenSet = false;
 
     Aws::String m_webServerHostname;
+    bool m_webServerHostnameHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

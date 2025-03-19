@@ -18,25 +18,7 @@ namespace Firehose
 namespace Model
 {
 
-ElasticsearchDestinationUpdate::ElasticsearchDestinationUpdate() : 
-    m_roleARNHasBeenSet(false),
-    m_domainARNHasBeenSet(false),
-    m_clusterEndpointHasBeenSet(false),
-    m_indexNameHasBeenSet(false),
-    m_typeNameHasBeenSet(false),
-    m_indexRotationPeriod(ElasticsearchIndexRotationPeriod::NOT_SET),
-    m_indexRotationPeriodHasBeenSet(false),
-    m_bufferingHintsHasBeenSet(false),
-    m_retryOptionsHasBeenSet(false),
-    m_s3UpdateHasBeenSet(false),
-    m_processingConfigurationHasBeenSet(false),
-    m_cloudWatchLoggingOptionsHasBeenSet(false),
-    m_documentIdOptionsHasBeenSet(false)
-{
-}
-
 ElasticsearchDestinationUpdate::ElasticsearchDestinationUpdate(JsonView jsonValue)
-  : ElasticsearchDestinationUpdate()
 {
   *this = jsonValue;
 }
@@ -46,87 +28,63 @@ ElasticsearchDestinationUpdate& ElasticsearchDestinationUpdate::operator =(JsonV
   if(jsonValue.ValueExists("RoleARN"))
   {
     m_roleARN = jsonValue.GetString("RoleARN");
-
     m_roleARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DomainARN"))
   {
     m_domainARN = jsonValue.GetString("DomainARN");
-
     m_domainARNHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClusterEndpoint"))
   {
     m_clusterEndpoint = jsonValue.GetString("ClusterEndpoint");
-
     m_clusterEndpointHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexName"))
   {
     m_indexName = jsonValue.GetString("IndexName");
-
     m_indexNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TypeName"))
   {
     m_typeName = jsonValue.GetString("TypeName");
-
     m_typeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("IndexRotationPeriod"))
   {
     m_indexRotationPeriod = ElasticsearchIndexRotationPeriodMapper::GetElasticsearchIndexRotationPeriodForName(jsonValue.GetString("IndexRotationPeriod"));
-
     m_indexRotationPeriodHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BufferingHints"))
   {
     m_bufferingHints = jsonValue.GetObject("BufferingHints");
-
     m_bufferingHintsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RetryOptions"))
   {
     m_retryOptions = jsonValue.GetObject("RetryOptions");
-
     m_retryOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3Update"))
   {
     m_s3Update = jsonValue.GetObject("S3Update");
-
     m_s3UpdateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ProcessingConfiguration"))
   {
     m_processingConfiguration = jsonValue.GetObject("ProcessingConfiguration");
-
     m_processingConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CloudWatchLoggingOptions"))
   {
     m_cloudWatchLoggingOptions = jsonValue.GetObject("CloudWatchLoggingOptions");
-
     m_cloudWatchLoggingOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DocumentIdOptions"))
   {
     m_documentIdOptions = jsonValue.GetObject("DocumentIdOptions");
-
     m_documentIdOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

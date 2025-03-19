@@ -40,7 +40,7 @@ namespace Model
   class InstancePatchStateFilter
   {
   public:
-    AWS_SSM_API InstancePatchStateFilter();
+    AWS_SSM_API InstancePatchStateFilter() = default;
     AWS_SSM_API InstancePatchStateFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API InstancePatchStateFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SSM_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,41 +57,36 @@ namespace Model
      * </li> <li> <p> <code>UnreportedNotApplicableCount</code> </p> </li> <li> <p>
      * <code>NotApplicableCount</code> </p> </li> </ul>
      */
-    inline const Aws::String& GetKey() const{ return m_key; }
+    inline const Aws::String& GetKey() const { return m_key; }
     inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
-    inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
-    inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
-    inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
-    inline InstancePatchStateFilter& WithKey(const Aws::String& value) { SetKey(value); return *this;}
-    inline InstancePatchStateFilter& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
-    inline InstancePatchStateFilter& WithKey(const char* value) { SetKey(value); return *this;}
+    template<typename KeyT = Aws::String>
+    void SetKey(KeyT&& value) { m_keyHasBeenSet = true; m_key = std::forward<KeyT>(value); }
+    template<typename KeyT = Aws::String>
+    InstancePatchStateFilter& WithKey(KeyT&& value) { SetKey(std::forward<KeyT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The value for the filter. Must be an integer greater than or equal to 0.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+    inline const Aws::Vector<Aws::String>& GetValues() const { return m_values; }
     inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-    inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
-    inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-    inline InstancePatchStateFilter& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
-    inline InstancePatchStateFilter& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
-    inline InstancePatchStateFilter& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-    inline InstancePatchStateFilter& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-    inline InstancePatchStateFilter& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    void SetValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values = std::forward<ValuesT>(value); }
+    template<typename ValuesT = Aws::Vector<Aws::String>>
+    InstancePatchStateFilter& WithValues(ValuesT&& value) { SetValues(std::forward<ValuesT>(value)); return *this;}
+    template<typename ValuesT = Aws::String>
+    InstancePatchStateFilter& AddValues(ValuesT&& value) { m_valuesHasBeenSet = true; m_values.emplace_back(std::forward<ValuesT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The type of comparison that should be performed for the value.</p>
      */
-    inline const InstancePatchStateOperatorType& GetType() const{ return m_type; }
+    inline InstancePatchStateOperatorType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const InstancePatchStateOperatorType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(InstancePatchStateOperatorType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline InstancePatchStateFilter& WithType(const InstancePatchStateOperatorType& value) { SetType(value); return *this;}
-    inline InstancePatchStateFilter& WithType(InstancePatchStateOperatorType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(InstancePatchStateOperatorType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline InstancePatchStateFilter& WithType(InstancePatchStateOperatorType value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -101,7 +96,7 @@ namespace Model
     Aws::Vector<Aws::String> m_values;
     bool m_valuesHasBeenSet = false;
 
-    InstancePatchStateOperatorType m_type;
+    InstancePatchStateOperatorType m_type{InstancePatchStateOperatorType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

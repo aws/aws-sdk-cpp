@@ -12,11 +12,6 @@ using namespace Aws::DynamoDB::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeBackupRequest::DescribeBackupRequest() : 
-    m_backupArnHasBeenSet(false)
-{
-}
-
 Aws::String DescribeBackupRequest::SerializePayload() const
 {
   JsonValue payload;

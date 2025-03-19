@@ -18,13 +18,7 @@ namespace Transfer
 namespace Model
 {
 
-UpdateWebAppIdentityProviderDetails::UpdateWebAppIdentityProviderDetails() : 
-    m_identityCenterConfigHasBeenSet(false)
-{
-}
-
 UpdateWebAppIdentityProviderDetails::UpdateWebAppIdentityProviderDetails(JsonView jsonValue)
-  : UpdateWebAppIdentityProviderDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ UpdateWebAppIdentityProviderDetails& UpdateWebAppIdentityProviderDetails::operat
   if(jsonValue.ValueExists("IdentityCenterConfig"))
   {
     m_identityCenterConfig = jsonValue.GetObject("IdentityCenterConfig");
-
     m_identityCenterConfigHasBeenSet = true;
   }
-
   return *this;
 }
 

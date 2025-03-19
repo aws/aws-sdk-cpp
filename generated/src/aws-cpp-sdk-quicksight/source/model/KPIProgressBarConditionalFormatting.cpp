@@ -18,13 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-KPIProgressBarConditionalFormatting::KPIProgressBarConditionalFormatting() : 
-    m_foregroundColorHasBeenSet(false)
-{
-}
-
 KPIProgressBarConditionalFormatting::KPIProgressBarConditionalFormatting(JsonView jsonValue)
-  : KPIProgressBarConditionalFormatting()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ KPIProgressBarConditionalFormatting& KPIProgressBarConditionalFormatting::operat
   if(jsonValue.ValueExists("ForegroundColor"))
   {
     m_foregroundColor = jsonValue.GetObject("ForegroundColor");
-
     m_foregroundColorHasBeenSet = true;
   }
-
   return *this;
 }
 

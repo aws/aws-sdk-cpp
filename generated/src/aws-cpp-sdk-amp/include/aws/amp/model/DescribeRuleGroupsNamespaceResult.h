@@ -34,7 +34,7 @@ namespace Model
   class DescribeRuleGroupsNamespaceResult
   {
   public:
-    AWS_PROMETHEUSSERVICE_API DescribeRuleGroupsNamespaceResult();
+    AWS_PROMETHEUSSERVICE_API DescribeRuleGroupsNamespaceResult() = default;
     AWS_PROMETHEUSSERVICE_API DescribeRuleGroupsNamespaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_PROMETHEUSSERVICE_API DescribeRuleGroupsNamespaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -43,28 +43,28 @@ namespace Model
     /**
      * <p>The information about the rule groups namespace.</p>
      */
-    inline const RuleGroupsNamespaceDescription& GetRuleGroupsNamespace() const{ return m_ruleGroupsNamespace; }
-    inline void SetRuleGroupsNamespace(const RuleGroupsNamespaceDescription& value) { m_ruleGroupsNamespace = value; }
-    inline void SetRuleGroupsNamespace(RuleGroupsNamespaceDescription&& value) { m_ruleGroupsNamespace = std::move(value); }
-    inline DescribeRuleGroupsNamespaceResult& WithRuleGroupsNamespace(const RuleGroupsNamespaceDescription& value) { SetRuleGroupsNamespace(value); return *this;}
-    inline DescribeRuleGroupsNamespaceResult& WithRuleGroupsNamespace(RuleGroupsNamespaceDescription&& value) { SetRuleGroupsNamespace(std::move(value)); return *this;}
+    inline const RuleGroupsNamespaceDescription& GetRuleGroupsNamespace() const { return m_ruleGroupsNamespace; }
+    template<typename RuleGroupsNamespaceT = RuleGroupsNamespaceDescription>
+    void SetRuleGroupsNamespace(RuleGroupsNamespaceT&& value) { m_ruleGroupsNamespaceHasBeenSet = true; m_ruleGroupsNamespace = std::forward<RuleGroupsNamespaceT>(value); }
+    template<typename RuleGroupsNamespaceT = RuleGroupsNamespaceDescription>
+    DescribeRuleGroupsNamespaceResult& WithRuleGroupsNamespace(RuleGroupsNamespaceT&& value) { SetRuleGroupsNamespace(std::forward<RuleGroupsNamespaceT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeRuleGroupsNamespaceResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeRuleGroupsNamespaceResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeRuleGroupsNamespaceResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeRuleGroupsNamespaceResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     RuleGroupsNamespaceDescription m_ruleGroupsNamespace;
+    bool m_ruleGroupsNamespaceHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

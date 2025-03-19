@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GetCostAndUsageResult::GetCostAndUsageResult()
-{
-}
-
 GetCostAndUsageResult::GetCostAndUsageResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,9 +28,8 @@ GetCostAndUsageResult& GetCostAndUsageResult::operator =(const Aws::AmazonWebSer
   if(jsonValue.ValueExists("NextPageToken"))
   {
     m_nextPageToken = jsonValue.GetString("NextPageToken");
-
+    m_nextPageTokenHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupDefinitions"))
   {
     Aws::Utils::Array<JsonView> groupDefinitionsJsonList = jsonValue.GetArray("GroupDefinitions");
@@ -42,8 +37,8 @@ GetCostAndUsageResult& GetCostAndUsageResult::operator =(const Aws::AmazonWebSer
     {
       m_groupDefinitions.push_back(groupDefinitionsJsonList[groupDefinitionsIndex].AsObject());
     }
+    m_groupDefinitionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ResultsByTime"))
   {
     Aws::Utils::Array<JsonView> resultsByTimeJsonList = jsonValue.GetArray("ResultsByTime");
@@ -51,8 +46,8 @@ GetCostAndUsageResult& GetCostAndUsageResult::operator =(const Aws::AmazonWebSer
     {
       m_resultsByTime.push_back(resultsByTimeJsonList[resultsByTimeIndex].AsObject());
     }
+    m_resultsByTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DimensionValueAttributes"))
   {
     Aws::Utils::Array<JsonView> dimensionValueAttributesJsonList = jsonValue.GetArray("DimensionValueAttributes");
@@ -60,14 +55,15 @@ GetCostAndUsageResult& GetCostAndUsageResult::operator =(const Aws::AmazonWebSer
     {
       m_dimensionValueAttributes.push_back(dimensionValueAttributesJsonList[dimensionValueAttributesIndex].AsObject());
     }
+    m_dimensionValueAttributesHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

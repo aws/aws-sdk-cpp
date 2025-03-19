@@ -20,19 +20,7 @@ namespace RDS
 namespace Model
 {
 
-DomainMembership::DomainMembership() : 
-    m_domainHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_fQDNHasBeenSet(false),
-    m_iAMRoleNameHasBeenSet(false),
-    m_oUHasBeenSet(false),
-    m_authSecretArnHasBeenSet(false),
-    m_dnsIpsHasBeenSet(false)
-{
-}
-
 DomainMembership::DomainMembership(const XmlNode& xmlNode)
-  : DomainMembership()
 {
   *this = xmlNode;
 }
@@ -83,6 +71,7 @@ DomainMembership& DomainMembership::operator =(const XmlNode& xmlNode)
     if(!dnsIpsNode.IsNull())
     {
       XmlNode dnsIpsMember = dnsIpsNode.FirstChild("member");
+      m_dnsIpsHasBeenSet = !dnsIpsMember.IsNull();
       while(!dnsIpsMember.IsNull())
       {
         m_dnsIps.push_back(dnsIpsMember.GetText());

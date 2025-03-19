@@ -18,17 +18,7 @@ namespace VerifiedPermissions
 namespace Model
 {
 
-BatchIsAuthorizedOutputItem::BatchIsAuthorizedOutputItem() : 
-    m_requestHasBeenSet(false),
-    m_decision(Decision::NOT_SET),
-    m_decisionHasBeenSet(false),
-    m_determiningPoliciesHasBeenSet(false),
-    m_errorsHasBeenSet(false)
-{
-}
-
 BatchIsAuthorizedOutputItem::BatchIsAuthorizedOutputItem(JsonView jsonValue)
-  : BatchIsAuthorizedOutputItem()
 {
   *this = jsonValue;
 }
@@ -38,17 +28,13 @@ BatchIsAuthorizedOutputItem& BatchIsAuthorizedOutputItem::operator =(JsonView js
   if(jsonValue.ValueExists("request"))
   {
     m_request = jsonValue.GetObject("request");
-
     m_requestHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("decision"))
   {
     m_decision = DecisionMapper::GetDecisionForName(jsonValue.GetString("decision"));
-
     m_decisionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("determiningPolicies"))
   {
     Aws::Utils::Array<JsonView> determiningPoliciesJsonList = jsonValue.GetArray("determiningPolicies");
@@ -58,7 +44,6 @@ BatchIsAuthorizedOutputItem& BatchIsAuthorizedOutputItem::operator =(JsonView js
     }
     m_determiningPoliciesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errors"))
   {
     Aws::Utils::Array<JsonView> errorsJsonList = jsonValue.GetArray("errors");
@@ -68,7 +53,6 @@ BatchIsAuthorizedOutputItem& BatchIsAuthorizedOutputItem::operator =(JsonView js
     }
     m_errorsHasBeenSet = true;
   }
-
   return *this;
 }
 

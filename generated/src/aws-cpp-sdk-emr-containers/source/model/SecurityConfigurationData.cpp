@@ -18,13 +18,7 @@ namespace EMRContainers
 namespace Model
 {
 
-SecurityConfigurationData::SecurityConfigurationData() : 
-    m_authorizationConfigurationHasBeenSet(false)
-{
-}
-
 SecurityConfigurationData::SecurityConfigurationData(JsonView jsonValue)
-  : SecurityConfigurationData()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ SecurityConfigurationData& SecurityConfigurationData::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("authorizationConfiguration"))
   {
     m_authorizationConfiguration = jsonValue.GetObject("authorizationConfiguration");
-
     m_authorizationConfigurationHasBeenSet = true;
   }
-
   return *this;
 }
 

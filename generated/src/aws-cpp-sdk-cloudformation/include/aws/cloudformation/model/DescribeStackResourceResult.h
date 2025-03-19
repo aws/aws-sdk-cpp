@@ -34,7 +34,7 @@ namespace Model
   class DescribeStackResourceResult
   {
   public:
-    AWS_CLOUDFORMATION_API DescribeStackResourceResult();
+    AWS_CLOUDFORMATION_API DescribeStackResourceResult() = default;
     AWS_CLOUDFORMATION_API DescribeStackResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_CLOUDFORMATION_API DescribeStackResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -44,26 +44,28 @@ namespace Model
      * <p>A <code>StackResourceDetail</code> structure containing the description of
      * the specified resource in the specified stack.</p>
      */
-    inline const StackResourceDetail& GetStackResourceDetail() const{ return m_stackResourceDetail; }
-    inline void SetStackResourceDetail(const StackResourceDetail& value) { m_stackResourceDetail = value; }
-    inline void SetStackResourceDetail(StackResourceDetail&& value) { m_stackResourceDetail = std::move(value); }
-    inline DescribeStackResourceResult& WithStackResourceDetail(const StackResourceDetail& value) { SetStackResourceDetail(value); return *this;}
-    inline DescribeStackResourceResult& WithStackResourceDetail(StackResourceDetail&& value) { SetStackResourceDetail(std::move(value)); return *this;}
+    inline const StackResourceDetail& GetStackResourceDetail() const { return m_stackResourceDetail; }
+    template<typename StackResourceDetailT = StackResourceDetail>
+    void SetStackResourceDetail(StackResourceDetailT&& value) { m_stackResourceDetailHasBeenSet = true; m_stackResourceDetail = std::forward<StackResourceDetailT>(value); }
+    template<typename StackResourceDetailT = StackResourceDetail>
+    DescribeStackResourceResult& WithStackResourceDetail(StackResourceDetailT&& value) { SetStackResourceDetail(std::forward<StackResourceDetailT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DescribeStackResourceResult& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DescribeStackResourceResult& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DescribeStackResourceResult& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     StackResourceDetail m_stackResourceDetail;
+    bool m_stackResourceDetailHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

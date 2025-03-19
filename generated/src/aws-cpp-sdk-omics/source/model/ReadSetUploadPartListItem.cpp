@@ -18,21 +18,7 @@ namespace Omics
 namespace Model
 {
 
-ReadSetUploadPartListItem::ReadSetUploadPartListItem() : 
-    m_partNumber(0),
-    m_partNumberHasBeenSet(false),
-    m_partSize(0),
-    m_partSizeHasBeenSet(false),
-    m_partSource(ReadSetPartSource::NOT_SET),
-    m_partSourceHasBeenSet(false),
-    m_checksumHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_lastUpdatedTimeHasBeenSet(false)
-{
-}
-
 ReadSetUploadPartListItem::ReadSetUploadPartListItem(JsonView jsonValue)
-  : ReadSetUploadPartListItem()
 {
   *this = jsonValue;
 }
@@ -42,45 +28,33 @@ ReadSetUploadPartListItem& ReadSetUploadPartListItem::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("partNumber"))
   {
     m_partNumber = jsonValue.GetInteger("partNumber");
-
     m_partNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("partSize"))
   {
     m_partSize = jsonValue.GetInt64("partSize");
-
     m_partSizeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("partSource"))
   {
     m_partSource = ReadSetPartSourceMapper::GetReadSetPartSourceForName(jsonValue.GetString("partSource"));
-
     m_partSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("checksum"))
   {
     m_checksum = jsonValue.GetString("checksum");
-
     m_checksumHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("creationTime"))
   {
     m_creationTime = jsonValue.GetString("creationTime");
-
     m_creationTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastUpdatedTime"))
   {
     m_lastUpdatedTime = jsonValue.GetString("lastUpdatedTime");
-
     m_lastUpdatedTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

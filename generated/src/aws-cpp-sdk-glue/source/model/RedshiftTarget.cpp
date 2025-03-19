@@ -18,19 +18,7 @@ namespace Glue
 namespace Model
 {
 
-RedshiftTarget::RedshiftTarget() : 
-    m_nameHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_databaseHasBeenSet(false),
-    m_tableHasBeenSet(false),
-    m_redshiftTmpDirHasBeenSet(false),
-    m_tmpDirIAMRoleHasBeenSet(false),
-    m_upsertRedshiftOptionsHasBeenSet(false)
-{
-}
-
 RedshiftTarget::RedshiftTarget(JsonView jsonValue)
-  : RedshiftTarget()
 {
   *this = jsonValue;
 }
@@ -40,10 +28,8 @@ RedshiftTarget& RedshiftTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Inputs"))
   {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
@@ -53,42 +39,31 @@ RedshiftTarget& RedshiftTarget::operator =(JsonView jsonValue)
     }
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Database"))
   {
     m_database = jsonValue.GetString("Database");
-
     m_databaseHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Table"))
   {
     m_table = jsonValue.GetString("Table");
-
     m_tableHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RedshiftTmpDir"))
   {
     m_redshiftTmpDir = jsonValue.GetString("RedshiftTmpDir");
-
     m_redshiftTmpDirHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("TmpDirIAMRole"))
   {
     m_tmpDirIAMRole = jsonValue.GetString("TmpDirIAMRole");
-
     m_tmpDirIAMRoleHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UpsertRedshiftOptions"))
   {
     m_upsertRedshiftOptions = jsonValue.GetObject("UpsertRedshiftOptions");
-
     m_upsertRedshiftOptionsHasBeenSet = true;
   }
-
   return *this;
 }
 

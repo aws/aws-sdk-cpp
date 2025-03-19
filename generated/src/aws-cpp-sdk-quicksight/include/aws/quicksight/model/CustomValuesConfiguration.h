@@ -33,7 +33,7 @@ namespace Model
   class CustomValuesConfiguration
   {
   public:
-    AWS_QUICKSIGHT_API CustomValuesConfiguration();
+    AWS_QUICKSIGHT_API CustomValuesConfiguration() = default;
     AWS_QUICKSIGHT_API CustomValuesConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API CustomValuesConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,7 +43,7 @@ namespace Model
     /**
      * <p>Includes the null value in custom action parameter values.</p>
      */
-    inline bool GetIncludeNullValue() const{ return m_includeNullValue; }
+    inline bool GetIncludeNullValue() const { return m_includeNullValue; }
     inline bool IncludeNullValueHasBeenSet() const { return m_includeNullValueHasBeenSet; }
     inline void SetIncludeNullValue(bool value) { m_includeNullValueHasBeenSet = true; m_includeNullValue = value; }
     inline CustomValuesConfiguration& WithIncludeNullValue(bool value) { SetIncludeNullValue(value); return *this;}
@@ -51,16 +51,16 @@ namespace Model
 
     ///@{
     
-    inline const CustomParameterValues& GetCustomValues() const{ return m_customValues; }
+    inline const CustomParameterValues& GetCustomValues() const { return m_customValues; }
     inline bool CustomValuesHasBeenSet() const { return m_customValuesHasBeenSet; }
-    inline void SetCustomValues(const CustomParameterValues& value) { m_customValuesHasBeenSet = true; m_customValues = value; }
-    inline void SetCustomValues(CustomParameterValues&& value) { m_customValuesHasBeenSet = true; m_customValues = std::move(value); }
-    inline CustomValuesConfiguration& WithCustomValues(const CustomParameterValues& value) { SetCustomValues(value); return *this;}
-    inline CustomValuesConfiguration& WithCustomValues(CustomParameterValues&& value) { SetCustomValues(std::move(value)); return *this;}
+    template<typename CustomValuesT = CustomParameterValues>
+    void SetCustomValues(CustomValuesT&& value) { m_customValuesHasBeenSet = true; m_customValues = std::forward<CustomValuesT>(value); }
+    template<typename CustomValuesT = CustomParameterValues>
+    CustomValuesConfiguration& WithCustomValues(CustomValuesT&& value) { SetCustomValues(std::forward<CustomValuesT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_includeNullValue;
+    bool m_includeNullValue{false};
     bool m_includeNullValueHasBeenSet = false;
 
     CustomParameterValues m_customValues;

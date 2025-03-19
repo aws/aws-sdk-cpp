@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeChangeSetRequest::DescribeChangeSetRequest() : 
-    m_catalogHasBeenSet(false),
-    m_changeSetIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeChangeSetRequest::SerializePayload() const
 {
   return {};

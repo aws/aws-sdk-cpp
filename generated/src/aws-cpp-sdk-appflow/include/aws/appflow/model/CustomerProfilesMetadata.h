@@ -30,7 +30,7 @@ namespace Model
   class CustomerProfilesMetadata
   {
   public:
-    AWS_APPFLOW_API CustomerProfilesMetadata();
+    AWS_APPFLOW_API CustomerProfilesMetadata() = default;
     AWS_APPFLOW_API CustomerProfilesMetadata(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API CustomerProfilesMetadata& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_APPFLOW_API Aws::Utils::Json::JsonValue Jsonize() const;

@@ -20,14 +20,7 @@ namespace SES
 namespace Model
 {
 
-Message::Message() : 
-    m_subjectHasBeenSet(false),
-    m_bodyHasBeenSet(false)
-{
-}
-
 Message::Message(const XmlNode& xmlNode)
-  : Message()
 {
   *this = xmlNode;
 }

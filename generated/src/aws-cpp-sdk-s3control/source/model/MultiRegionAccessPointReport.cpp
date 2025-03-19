@@ -20,19 +20,7 @@ namespace S3Control
 namespace Model
 {
 
-MultiRegionAccessPointReport::MultiRegionAccessPointReport() : 
-    m_nameHasBeenSet(false),
-    m_aliasHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_publicAccessBlockHasBeenSet(false),
-    m_status(MultiRegionAccessPointStatus::NOT_SET),
-    m_statusHasBeenSet(false),
-    m_regionsHasBeenSet(false)
-{
-}
-
 MultiRegionAccessPointReport::MultiRegionAccessPointReport(const XmlNode& xmlNode)
-  : MultiRegionAccessPointReport()
 {
   *this = xmlNode;
 }
@@ -70,13 +58,14 @@ MultiRegionAccessPointReport& MultiRegionAccessPointReport::operator =(const Xml
     XmlNode statusNode = resultNode.FirstChild("Status");
     if(!statusNode.IsNull())
     {
-      m_status = MultiRegionAccessPointStatusMapper::GetMultiRegionAccessPointStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()).c_str());
+      m_status = MultiRegionAccessPointStatusMapper::GetMultiRegionAccessPointStatusForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(statusNode.GetText()).c_str()));
       m_statusHasBeenSet = true;
     }
     XmlNode regionsNode = resultNode.FirstChild("Regions");
     if(!regionsNode.IsNull())
     {
       XmlNode regionsMember = regionsNode.FirstChild("Region");
+      m_regionsHasBeenSet = !regionsMember.IsNull();
       while(!regionsMember.IsNull())
       {
         m_regions.push_back(regionsMember);

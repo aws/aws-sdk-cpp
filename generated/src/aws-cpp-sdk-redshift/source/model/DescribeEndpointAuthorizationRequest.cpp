@@ -10,17 +10,6 @@
 using namespace Aws::Redshift::Model;
 using namespace Aws::Utils;
 
-DescribeEndpointAuthorizationRequest::DescribeEndpointAuthorizationRequest() : 
-    m_clusterIdentifierHasBeenSet(false),
-    m_accountHasBeenSet(false),
-    m_grantee(false),
-    m_granteeHasBeenSet(false),
-    m_maxRecords(0),
-    m_maxRecordsHasBeenSet(false),
-    m_markerHasBeenSet(false)
-{
-}
-
 Aws::String DescribeEndpointAuthorizationRequest::SerializePayload() const
 {
   Aws::StringStream ss;

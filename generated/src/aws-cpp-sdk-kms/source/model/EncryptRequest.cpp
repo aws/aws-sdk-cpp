@@ -13,18 +13,6 @@ using namespace Aws::KMS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-EncryptRequest::EncryptRequest() : 
-    m_keyIdHasBeenSet(false),
-    m_plaintextHasBeenSet(false),
-    m_encryptionContextHasBeenSet(false),
-    m_grantTokensHasBeenSet(false),
-    m_encryptionAlgorithm(EncryptionAlgorithmSpec::NOT_SET),
-    m_encryptionAlgorithmHasBeenSet(false),
-    m_dryRun(false),
-    m_dryRunHasBeenSet(false)
-{
-}
-
 Aws::String EncryptRequest::SerializePayload() const
 {
   JsonValue payload;

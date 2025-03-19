@@ -22,7 +22,7 @@ namespace Model
   class GetContactMethodsRequest : public LightsailRequest
   {
   public:
-    AWS_LIGHTSAIL_API GetContactMethodsRequest();
+    AWS_LIGHTSAIL_API GetContactMethodsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,14 +41,13 @@ namespace Model
      * <code>SMS</code> (text messaging).</p> <p>Specify a protocol in your request to
      * return information about a specific contact method protocol.</p>
      */
-    inline const Aws::Vector<ContactProtocol>& GetProtocols() const{ return m_protocols; }
+    inline const Aws::Vector<ContactProtocol>& GetProtocols() const { return m_protocols; }
     inline bool ProtocolsHasBeenSet() const { return m_protocolsHasBeenSet; }
-    inline void SetProtocols(const Aws::Vector<ContactProtocol>& value) { m_protocolsHasBeenSet = true; m_protocols = value; }
-    inline void SetProtocols(Aws::Vector<ContactProtocol>&& value) { m_protocolsHasBeenSet = true; m_protocols = std::move(value); }
-    inline GetContactMethodsRequest& WithProtocols(const Aws::Vector<ContactProtocol>& value) { SetProtocols(value); return *this;}
-    inline GetContactMethodsRequest& WithProtocols(Aws::Vector<ContactProtocol>&& value) { SetProtocols(std::move(value)); return *this;}
-    inline GetContactMethodsRequest& AddProtocols(const ContactProtocol& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
-    inline GetContactMethodsRequest& AddProtocols(ContactProtocol&& value) { m_protocolsHasBeenSet = true; m_protocols.push_back(std::move(value)); return *this; }
+    template<typename ProtocolsT = Aws::Vector<ContactProtocol>>
+    void SetProtocols(ProtocolsT&& value) { m_protocolsHasBeenSet = true; m_protocols = std::forward<ProtocolsT>(value); }
+    template<typename ProtocolsT = Aws::Vector<ContactProtocol>>
+    GetContactMethodsRequest& WithProtocols(ProtocolsT&& value) { SetProtocols(std::forward<ProtocolsT>(value)); return *this;}
+    inline GetContactMethodsRequest& AddProtocols(ContactProtocol value) { m_protocolsHasBeenSet = true; m_protocols.push_back(value); return *this; }
     ///@}
   private:
 

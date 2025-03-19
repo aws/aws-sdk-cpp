@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeUserPoolClientResult::DescribeUserPoolClientResult()
-{
-}
-
 DescribeUserPoolClientResult::DescribeUserPoolClientResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ DescribeUserPoolClientResult& DescribeUserPoolClientResult::operator =(const Aws
   if(jsonValue.ValueExists("UserPoolClient"))
   {
     m_userPoolClient = jsonValue.GetObject("UserPoolClient");
-
+    m_userPoolClientHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

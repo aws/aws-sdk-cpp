@@ -18,13 +18,7 @@ namespace Pipes
 namespace Model
 {
 
-Filter::Filter() : 
-    m_patternHasBeenSet(false)
-{
-}
-
 Filter::Filter(JsonView jsonValue)
-  : Filter()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ Filter& Filter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Pattern"))
   {
     m_pattern = jsonValue.GetString("Pattern");
-
     m_patternHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -35,7 +35,7 @@ namespace Model
   class BucketInfo
   {
   public:
-    AWS_S3CRT_API BucketInfo();
+    AWS_S3CRT_API BucketInfo() = default;
     AWS_S3CRT_API BucketInfo(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API BucketInfo& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,31 +47,27 @@ namespace Model
      * <p>The number of Zone (Availability Zone or Local Zone) that's used for
      * redundancy for the bucket.</p>
      */
-    inline const DataRedundancy& GetDataRedundancy() const{ return m_dataRedundancy; }
+    inline DataRedundancy GetDataRedundancy() const { return m_dataRedundancy; }
     inline bool DataRedundancyHasBeenSet() const { return m_dataRedundancyHasBeenSet; }
-    inline void SetDataRedundancy(const DataRedundancy& value) { m_dataRedundancyHasBeenSet = true; m_dataRedundancy = value; }
-    inline void SetDataRedundancy(DataRedundancy&& value) { m_dataRedundancyHasBeenSet = true; m_dataRedundancy = std::move(value); }
-    inline BucketInfo& WithDataRedundancy(const DataRedundancy& value) { SetDataRedundancy(value); return *this;}
-    inline BucketInfo& WithDataRedundancy(DataRedundancy&& value) { SetDataRedundancy(std::move(value)); return *this;}
+    inline void SetDataRedundancy(DataRedundancy value) { m_dataRedundancyHasBeenSet = true; m_dataRedundancy = value; }
+    inline BucketInfo& WithDataRedundancy(DataRedundancy value) { SetDataRedundancy(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The type of bucket.</p>
      */
-    inline const BucketType& GetType() const{ return m_type; }
+    inline BucketType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const BucketType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(BucketType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline BucketInfo& WithType(const BucketType& value) { SetType(value); return *this;}
-    inline BucketInfo& WithType(BucketType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(BucketType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline BucketInfo& WithType(BucketType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    DataRedundancy m_dataRedundancy;
+    DataRedundancy m_dataRedundancy{DataRedundancy::NOT_SET};
     bool m_dataRedundancyHasBeenSet = false;
 
-    BucketType m_type;
+    BucketType m_type{BucketType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

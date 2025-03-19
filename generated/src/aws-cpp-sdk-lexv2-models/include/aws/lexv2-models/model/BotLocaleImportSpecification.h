@@ -33,7 +33,7 @@ namespace Model
   class BotLocaleImportSpecification
   {
   public:
-    AWS_LEXMODELSV2_API BotLocaleImportSpecification();
+    AWS_LEXMODELSV2_API BotLocaleImportSpecification() = default;
     AWS_LEXMODELSV2_API BotLocaleImportSpecification(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API BotLocaleImportSpecification& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_LEXMODELSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
     /**
      * <p>The identifier of the bot to import the locale to.</p>
      */
-    inline const Aws::String& GetBotId() const{ return m_botId; }
+    inline const Aws::String& GetBotId() const { return m_botId; }
     inline bool BotIdHasBeenSet() const { return m_botIdHasBeenSet; }
-    inline void SetBotId(const Aws::String& value) { m_botIdHasBeenSet = true; m_botId = value; }
-    inline void SetBotId(Aws::String&& value) { m_botIdHasBeenSet = true; m_botId = std::move(value); }
-    inline void SetBotId(const char* value) { m_botIdHasBeenSet = true; m_botId.assign(value); }
-    inline BotLocaleImportSpecification& WithBotId(const Aws::String& value) { SetBotId(value); return *this;}
-    inline BotLocaleImportSpecification& WithBotId(Aws::String&& value) { SetBotId(std::move(value)); return *this;}
-    inline BotLocaleImportSpecification& WithBotId(const char* value) { SetBotId(value); return *this;}
+    template<typename BotIdT = Aws::String>
+    void SetBotId(BotIdT&& value) { m_botIdHasBeenSet = true; m_botId = std::forward<BotIdT>(value); }
+    template<typename BotIdT = Aws::String>
+    BotLocaleImportSpecification& WithBotId(BotIdT&& value) { SetBotId(std::forward<BotIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,14 +56,12 @@ namespace Model
      * <p>The version of the bot to import the locale to. This can only be the
      * <code>DRAFT</code> version of the bot.</p>
      */
-    inline const Aws::String& GetBotVersion() const{ return m_botVersion; }
+    inline const Aws::String& GetBotVersion() const { return m_botVersion; }
     inline bool BotVersionHasBeenSet() const { return m_botVersionHasBeenSet; }
-    inline void SetBotVersion(const Aws::String& value) { m_botVersionHasBeenSet = true; m_botVersion = value; }
-    inline void SetBotVersion(Aws::String&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::move(value); }
-    inline void SetBotVersion(const char* value) { m_botVersionHasBeenSet = true; m_botVersion.assign(value); }
-    inline BotLocaleImportSpecification& WithBotVersion(const Aws::String& value) { SetBotVersion(value); return *this;}
-    inline BotLocaleImportSpecification& WithBotVersion(Aws::String&& value) { SetBotVersion(std::move(value)); return *this;}
-    inline BotLocaleImportSpecification& WithBotVersion(const char* value) { SetBotVersion(value); return *this;}
+    template<typename BotVersionT = Aws::String>
+    void SetBotVersion(BotVersionT&& value) { m_botVersionHasBeenSet = true; m_botVersion = std::forward<BotVersionT>(value); }
+    template<typename BotVersionT = Aws::String>
+    BotLocaleImportSpecification& WithBotVersion(BotVersionT&& value) { SetBotVersion(std::forward<BotVersionT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,14 +73,12 @@ namespace Model
      * href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported
      * languages</a>.</p>
      */
-    inline const Aws::String& GetLocaleId() const{ return m_localeId; }
+    inline const Aws::String& GetLocaleId() const { return m_localeId; }
     inline bool LocaleIdHasBeenSet() const { return m_localeIdHasBeenSet; }
-    inline void SetLocaleId(const Aws::String& value) { m_localeIdHasBeenSet = true; m_localeId = value; }
-    inline void SetLocaleId(Aws::String&& value) { m_localeIdHasBeenSet = true; m_localeId = std::move(value); }
-    inline void SetLocaleId(const char* value) { m_localeIdHasBeenSet = true; m_localeId.assign(value); }
-    inline BotLocaleImportSpecification& WithLocaleId(const Aws::String& value) { SetLocaleId(value); return *this;}
-    inline BotLocaleImportSpecification& WithLocaleId(Aws::String&& value) { SetLocaleId(std::move(value)); return *this;}
-    inline BotLocaleImportSpecification& WithLocaleId(const char* value) { SetLocaleId(value); return *this;}
+    template<typename LocaleIdT = Aws::String>
+    void SetLocaleId(LocaleIdT&& value) { m_localeIdHasBeenSet = true; m_localeId = std::forward<LocaleIdT>(value); }
+    template<typename LocaleIdT = Aws::String>
+    BotLocaleImportSpecification& WithLocaleId(LocaleIdT&& value) { SetLocaleId(std::forward<LocaleIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -102,7 +96,7 @@ namespace Model
      * </li> <li> <p> <code>IntentB</code> </p> </li> <li> <p> <code>IntentC</code>
      * </p> </li> </ul>
      */
-    inline double GetNluIntentConfidenceThreshold() const{ return m_nluIntentConfidenceThreshold; }
+    inline double GetNluIntentConfidenceThreshold() const { return m_nluIntentConfidenceThreshold; }
     inline bool NluIntentConfidenceThresholdHasBeenSet() const { return m_nluIntentConfidenceThresholdHasBeenSet; }
     inline void SetNluIntentConfidenceThreshold(double value) { m_nluIntentConfidenceThresholdHasBeenSet = true; m_nluIntentConfidenceThreshold = value; }
     inline BotLocaleImportSpecification& WithNluIntentConfidenceThreshold(double value) { SetNluIntentConfidenceThreshold(value); return *this;}
@@ -110,12 +104,12 @@ namespace Model
 
     ///@{
     
-    inline const VoiceSettings& GetVoiceSettings() const{ return m_voiceSettings; }
+    inline const VoiceSettings& GetVoiceSettings() const { return m_voiceSettings; }
     inline bool VoiceSettingsHasBeenSet() const { return m_voiceSettingsHasBeenSet; }
-    inline void SetVoiceSettings(const VoiceSettings& value) { m_voiceSettingsHasBeenSet = true; m_voiceSettings = value; }
-    inline void SetVoiceSettings(VoiceSettings&& value) { m_voiceSettingsHasBeenSet = true; m_voiceSettings = std::move(value); }
-    inline BotLocaleImportSpecification& WithVoiceSettings(const VoiceSettings& value) { SetVoiceSettings(value); return *this;}
-    inline BotLocaleImportSpecification& WithVoiceSettings(VoiceSettings&& value) { SetVoiceSettings(std::move(value)); return *this;}
+    template<typename VoiceSettingsT = VoiceSettings>
+    void SetVoiceSettings(VoiceSettingsT&& value) { m_voiceSettingsHasBeenSet = true; m_voiceSettings = std::forward<VoiceSettingsT>(value); }
+    template<typename VoiceSettingsT = VoiceSettings>
+    BotLocaleImportSpecification& WithVoiceSettings(VoiceSettingsT&& value) { SetVoiceSettings(std::forward<VoiceSettingsT>(value)); return *this;}
     ///@}
   private:
 
@@ -128,7 +122,7 @@ namespace Model
     Aws::String m_localeId;
     bool m_localeIdHasBeenSet = false;
 
-    double m_nluIntentConfidenceThreshold;
+    double m_nluIntentConfidenceThreshold{0.0};
     bool m_nluIntentConfidenceThresholdHasBeenSet = false;
 
     VoiceSettings m_voiceSettings;

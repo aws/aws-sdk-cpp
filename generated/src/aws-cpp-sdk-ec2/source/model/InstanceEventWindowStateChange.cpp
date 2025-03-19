@@ -20,15 +20,7 @@ namespace EC2
 namespace Model
 {
 
-InstanceEventWindowStateChange::InstanceEventWindowStateChange() : 
-    m_instanceEventWindowIdHasBeenSet(false),
-    m_state(InstanceEventWindowState::NOT_SET),
-    m_stateHasBeenSet(false)
-{
-}
-
 InstanceEventWindowStateChange::InstanceEventWindowStateChange(const XmlNode& xmlNode)
-  : InstanceEventWindowStateChange()
 {
   *this = xmlNode;
 }
@@ -48,7 +40,7 @@ InstanceEventWindowStateChange& InstanceEventWindowStateChange::operator =(const
     XmlNode stateNode = resultNode.FirstChild("state");
     if(!stateNode.IsNull())
     {
-      m_state = InstanceEventWindowStateMapper::GetInstanceEventWindowStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()).c_str());
+      m_state = InstanceEventWindowStateMapper::GetInstanceEventWindowStateForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stateNode.GetText()).c_str()));
       m_stateHasBeenSet = true;
     }
   }

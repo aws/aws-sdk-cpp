@@ -38,7 +38,7 @@ namespace Model
   class AttachedPermissionsBoundary
   {
   public:
-    AWS_IAM_API AttachedPermissionsBoundary();
+    AWS_IAM_API AttachedPermissionsBoundary() = default;
     AWS_IAM_API AttachedPermissionsBoundary(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_IAM_API AttachedPermissionsBoundary& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -52,12 +52,10 @@ namespace Model
      * is used as the permissions boundary for an entity. This data type can only have
      * a value of <code>Policy</code>.</p>
      */
-    inline const PermissionsBoundaryAttachmentType& GetPermissionsBoundaryType() const{ return m_permissionsBoundaryType; }
+    inline PermissionsBoundaryAttachmentType GetPermissionsBoundaryType() const { return m_permissionsBoundaryType; }
     inline bool PermissionsBoundaryTypeHasBeenSet() const { return m_permissionsBoundaryTypeHasBeenSet; }
-    inline void SetPermissionsBoundaryType(const PermissionsBoundaryAttachmentType& value) { m_permissionsBoundaryTypeHasBeenSet = true; m_permissionsBoundaryType = value; }
-    inline void SetPermissionsBoundaryType(PermissionsBoundaryAttachmentType&& value) { m_permissionsBoundaryTypeHasBeenSet = true; m_permissionsBoundaryType = std::move(value); }
-    inline AttachedPermissionsBoundary& WithPermissionsBoundaryType(const PermissionsBoundaryAttachmentType& value) { SetPermissionsBoundaryType(value); return *this;}
-    inline AttachedPermissionsBoundary& WithPermissionsBoundaryType(PermissionsBoundaryAttachmentType&& value) { SetPermissionsBoundaryType(std::move(value)); return *this;}
+    inline void SetPermissionsBoundaryType(PermissionsBoundaryAttachmentType value) { m_permissionsBoundaryTypeHasBeenSet = true; m_permissionsBoundaryType = value; }
+    inline AttachedPermissionsBoundary& WithPermissionsBoundaryType(PermissionsBoundaryAttachmentType value) { SetPermissionsBoundaryType(value); return *this;}
     ///@}
 
     ///@{
@@ -65,18 +63,16 @@ namespace Model
      * <p> The ARN of the policy used to set the permissions boundary for the user or
      * role.</p>
      */
-    inline const Aws::String& GetPermissionsBoundaryArn() const{ return m_permissionsBoundaryArn; }
+    inline const Aws::String& GetPermissionsBoundaryArn() const { return m_permissionsBoundaryArn; }
     inline bool PermissionsBoundaryArnHasBeenSet() const { return m_permissionsBoundaryArnHasBeenSet; }
-    inline void SetPermissionsBoundaryArn(const Aws::String& value) { m_permissionsBoundaryArnHasBeenSet = true; m_permissionsBoundaryArn = value; }
-    inline void SetPermissionsBoundaryArn(Aws::String&& value) { m_permissionsBoundaryArnHasBeenSet = true; m_permissionsBoundaryArn = std::move(value); }
-    inline void SetPermissionsBoundaryArn(const char* value) { m_permissionsBoundaryArnHasBeenSet = true; m_permissionsBoundaryArn.assign(value); }
-    inline AttachedPermissionsBoundary& WithPermissionsBoundaryArn(const Aws::String& value) { SetPermissionsBoundaryArn(value); return *this;}
-    inline AttachedPermissionsBoundary& WithPermissionsBoundaryArn(Aws::String&& value) { SetPermissionsBoundaryArn(std::move(value)); return *this;}
-    inline AttachedPermissionsBoundary& WithPermissionsBoundaryArn(const char* value) { SetPermissionsBoundaryArn(value); return *this;}
+    template<typename PermissionsBoundaryArnT = Aws::String>
+    void SetPermissionsBoundaryArn(PermissionsBoundaryArnT&& value) { m_permissionsBoundaryArnHasBeenSet = true; m_permissionsBoundaryArn = std::forward<PermissionsBoundaryArnT>(value); }
+    template<typename PermissionsBoundaryArnT = Aws::String>
+    AttachedPermissionsBoundary& WithPermissionsBoundaryArn(PermissionsBoundaryArnT&& value) { SetPermissionsBoundaryArn(std::forward<PermissionsBoundaryArnT>(value)); return *this;}
     ///@}
   private:
 
-    PermissionsBoundaryAttachmentType m_permissionsBoundaryType;
+    PermissionsBoundaryAttachmentType m_permissionsBoundaryType{PermissionsBoundaryAttachmentType::NOT_SET};
     bool m_permissionsBoundaryTypeHasBeenSet = false;
 
     Aws::String m_permissionsBoundaryArn;

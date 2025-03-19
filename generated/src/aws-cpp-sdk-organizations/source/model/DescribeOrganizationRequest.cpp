@@ -12,10 +12,6 @@ using namespace Aws::Organizations::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeOrganizationRequest::DescribeOrganizationRequest()
-{
-}
-
 Aws::String DescribeOrganizationRequest::SerializePayload() const
 {
   return "{}";

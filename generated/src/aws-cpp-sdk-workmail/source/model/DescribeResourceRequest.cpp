@@ -12,12 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DescribeResourceRequest::DescribeResourceRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_resourceIdHasBeenSet(false)
-{
-}
-
 Aws::String DescribeResourceRequest::SerializePayload() const
 {
   JsonValue payload;

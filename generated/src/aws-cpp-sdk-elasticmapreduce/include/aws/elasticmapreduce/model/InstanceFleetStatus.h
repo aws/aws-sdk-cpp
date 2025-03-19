@@ -35,7 +35,7 @@ namespace Model
   class InstanceFleetStatus
   {
   public:
-    AWS_EMR_API InstanceFleetStatus();
+    AWS_EMR_API InstanceFleetStatus() = default;
     AWS_EMR_API InstanceFleetStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API InstanceFleetStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_EMR_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -59,24 +59,22 @@ namespace Model
      * longer active, and all Amazon EC2 instances have been terminated.</p> </li>
      * </ul>
      */
-    inline const InstanceFleetState& GetState() const{ return m_state; }
+    inline InstanceFleetState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const InstanceFleetState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(InstanceFleetState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline InstanceFleetStatus& WithState(const InstanceFleetState& value) { SetState(value); return *this;}
-    inline InstanceFleetStatus& WithState(InstanceFleetState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(InstanceFleetState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline InstanceFleetStatus& WithState(InstanceFleetState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides status change reason details for the instance fleet.</p>
      */
-    inline const InstanceFleetStateChangeReason& GetStateChangeReason() const{ return m_stateChangeReason; }
+    inline const InstanceFleetStateChangeReason& GetStateChangeReason() const { return m_stateChangeReason; }
     inline bool StateChangeReasonHasBeenSet() const { return m_stateChangeReasonHasBeenSet; }
-    inline void SetStateChangeReason(const InstanceFleetStateChangeReason& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = value; }
-    inline void SetStateChangeReason(InstanceFleetStateChangeReason&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = std::move(value); }
-    inline InstanceFleetStatus& WithStateChangeReason(const InstanceFleetStateChangeReason& value) { SetStateChangeReason(value); return *this;}
-    inline InstanceFleetStatus& WithStateChangeReason(InstanceFleetStateChangeReason&& value) { SetStateChangeReason(std::move(value)); return *this;}
+    template<typename StateChangeReasonT = InstanceFleetStateChangeReason>
+    void SetStateChangeReason(StateChangeReasonT&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = std::forward<StateChangeReasonT>(value); }
+    template<typename StateChangeReasonT = InstanceFleetStateChangeReason>
+    InstanceFleetStatus& WithStateChangeReason(StateChangeReasonT&& value) { SetStateChangeReason(std::forward<StateChangeReasonT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -84,16 +82,16 @@ namespace Model
      * <p>Provides historical timestamps for the instance fleet, including the time of
      * creation, the time it became ready to run jobs, and the time of termination.</p>
      */
-    inline const InstanceFleetTimeline& GetTimeline() const{ return m_timeline; }
+    inline const InstanceFleetTimeline& GetTimeline() const { return m_timeline; }
     inline bool TimelineHasBeenSet() const { return m_timelineHasBeenSet; }
-    inline void SetTimeline(const InstanceFleetTimeline& value) { m_timelineHasBeenSet = true; m_timeline = value; }
-    inline void SetTimeline(InstanceFleetTimeline&& value) { m_timelineHasBeenSet = true; m_timeline = std::move(value); }
-    inline InstanceFleetStatus& WithTimeline(const InstanceFleetTimeline& value) { SetTimeline(value); return *this;}
-    inline InstanceFleetStatus& WithTimeline(InstanceFleetTimeline&& value) { SetTimeline(std::move(value)); return *this;}
+    template<typename TimelineT = InstanceFleetTimeline>
+    void SetTimeline(TimelineT&& value) { m_timelineHasBeenSet = true; m_timeline = std::forward<TimelineT>(value); }
+    template<typename TimelineT = InstanceFleetTimeline>
+    InstanceFleetStatus& WithTimeline(TimelineT&& value) { SetTimeline(std::forward<TimelineT>(value)); return *this;}
     ///@}
   private:
 
-    InstanceFleetState m_state;
+    InstanceFleetState m_state{InstanceFleetState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     InstanceFleetStateChangeReason m_stateChangeReason;

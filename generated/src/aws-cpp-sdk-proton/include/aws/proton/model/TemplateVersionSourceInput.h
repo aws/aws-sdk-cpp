@@ -31,7 +31,7 @@ namespace Model
   class TemplateVersionSourceInput
   {
   public:
-    AWS_PROTON_API TemplateVersionSourceInput();
+    AWS_PROTON_API TemplateVersionSourceInput() = default;
     AWS_PROTON_API TemplateVersionSourceInput(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROTON_API TemplateVersionSourceInput& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PROTON_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,12 +42,12 @@ namespace Model
      * <p>An S3 source object that includes the template bundle S3 path and name for a
      * template minor version.</p>
      */
-    inline const S3ObjectSource& GetS3() const{ return m_s3; }
+    inline const S3ObjectSource& GetS3() const { return m_s3; }
     inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
-    inline void SetS3(const S3ObjectSource& value) { m_s3HasBeenSet = true; m_s3 = value; }
-    inline void SetS3(S3ObjectSource&& value) { m_s3HasBeenSet = true; m_s3 = std::move(value); }
-    inline TemplateVersionSourceInput& WithS3(const S3ObjectSource& value) { SetS3(value); return *this;}
-    inline TemplateVersionSourceInput& WithS3(S3ObjectSource&& value) { SetS3(std::move(value)); return *this;}
+    template<typename S3T = S3ObjectSource>
+    void SetS3(S3T&& value) { m_s3HasBeenSet = true; m_s3 = std::forward<S3T>(value); }
+    template<typename S3T = S3ObjectSource>
+    TemplateVersionSourceInput& WithS3(S3T&& value) { SetS3(std::forward<S3T>(value)); return *this;}
     ///@}
   private:
 

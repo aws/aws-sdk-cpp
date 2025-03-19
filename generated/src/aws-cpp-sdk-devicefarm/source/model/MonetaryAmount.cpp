@@ -18,16 +18,7 @@ namespace DeviceFarm
 namespace Model
 {
 
-MonetaryAmount::MonetaryAmount() : 
-    m_amount(0.0),
-    m_amountHasBeenSet(false),
-    m_currencyCode(CurrencyCode::NOT_SET),
-    m_currencyCodeHasBeenSet(false)
-{
-}
-
 MonetaryAmount::MonetaryAmount(JsonView jsonValue)
-  : MonetaryAmount()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ MonetaryAmount& MonetaryAmount::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("amount"))
   {
     m_amount = jsonValue.GetDouble("amount");
-
     m_amountHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currencyCode"))
   {
     m_currencyCode = CurrencyCodeMapper::GetCurrencyCodeForName(jsonValue.GetString("currencyCode"));
-
     m_currencyCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

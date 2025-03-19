@@ -18,16 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TuningJobCompletionCriteria::TuningJobCompletionCriteria() : 
-    m_targetObjectiveMetricValue(0.0),
-    m_targetObjectiveMetricValueHasBeenSet(false),
-    m_bestObjectiveNotImprovingHasBeenSet(false),
-    m_convergenceDetectedHasBeenSet(false)
-{
-}
-
 TuningJobCompletionCriteria::TuningJobCompletionCriteria(JsonView jsonValue)
-  : TuningJobCompletionCriteria()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ TuningJobCompletionCriteria& TuningJobCompletionCriteria::operator =(JsonView js
   if(jsonValue.ValueExists("TargetObjectiveMetricValue"))
   {
     m_targetObjectiveMetricValue = jsonValue.GetDouble("TargetObjectiveMetricValue");
-
     m_targetObjectiveMetricValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("BestObjectiveNotImproving"))
   {
     m_bestObjectiveNotImproving = jsonValue.GetObject("BestObjectiveNotImproving");
-
     m_bestObjectiveNotImprovingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ConvergenceDetected"))
   {
     m_convergenceDetected = jsonValue.GetObject("ConvergenceDetected");
-
     m_convergenceDetectedHasBeenSet = true;
   }
-
   return *this;
 }
 

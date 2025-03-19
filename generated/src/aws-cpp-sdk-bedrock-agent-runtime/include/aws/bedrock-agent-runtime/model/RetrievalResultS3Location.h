@@ -39,7 +39,7 @@ namespace Model
   class RetrievalResultS3Location
   {
   public:
-    AWS_BEDROCKAGENTRUNTIME_API RetrievalResultS3Location();
+    AWS_BEDROCKAGENTRUNTIME_API RetrievalResultS3Location() = default;
     AWS_BEDROCKAGENTRUNTIME_API RetrievalResultS3Location(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API RetrievalResultS3Location& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCKAGENTRUNTIME_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,12 @@ namespace Model
     /**
      * <p>The S3 URI for the data source location.</p>
      */
-    inline const Aws::String& GetUri() const{ return m_uri; }
+    inline const Aws::String& GetUri() const { return m_uri; }
     inline bool UriHasBeenSet() const { return m_uriHasBeenSet; }
-    inline void SetUri(const Aws::String& value) { m_uriHasBeenSet = true; m_uri = value; }
-    inline void SetUri(Aws::String&& value) { m_uriHasBeenSet = true; m_uri = std::move(value); }
-    inline void SetUri(const char* value) { m_uriHasBeenSet = true; m_uri.assign(value); }
-    inline RetrievalResultS3Location& WithUri(const Aws::String& value) { SetUri(value); return *this;}
-    inline RetrievalResultS3Location& WithUri(Aws::String&& value) { SetUri(std::move(value)); return *this;}
-    inline RetrievalResultS3Location& WithUri(const char* value) { SetUri(value); return *this;}
+    template<typename UriT = Aws::String>
+    void SetUri(UriT&& value) { m_uriHasBeenSet = true; m_uri = std::forward<UriT>(value); }
+    template<typename UriT = Aws::String>
+    RetrievalResultS3Location& WithUri(UriT&& value) { SetUri(std::forward<UriT>(value)); return *this;}
     ///@}
   private:
 

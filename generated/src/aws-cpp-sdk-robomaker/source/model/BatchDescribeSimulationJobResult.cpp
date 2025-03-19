@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-BatchDescribeSimulationJobResult::BatchDescribeSimulationJobResult()
-{
-}
-
 BatchDescribeSimulationJobResult::BatchDescribeSimulationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -36,8 +32,8 @@ BatchDescribeSimulationJobResult& BatchDescribeSimulationJobResult::operator =(c
     {
       m_jobs.push_back(jobsJsonList[jobsIndex].AsObject());
     }
+    m_jobsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("unprocessedJobs"))
   {
     Aws::Utils::Array<JsonView> unprocessedJobsJsonList = jsonValue.GetArray("unprocessedJobs");
@@ -45,14 +41,15 @@ BatchDescribeSimulationJobResult& BatchDescribeSimulationJobResult::operator =(c
     {
       m_unprocessedJobs.push_back(unprocessedJobsJsonList[unprocessedJobsIndex].AsString());
     }
+    m_unprocessedJobsHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

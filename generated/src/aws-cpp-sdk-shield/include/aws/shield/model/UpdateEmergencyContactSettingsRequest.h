@@ -22,7 +22,7 @@ namespace Model
   class UpdateEmergencyContactSettingsRequest : public ShieldRequest
   {
   public:
-    AWS_SHIELD_API UpdateEmergencyContactSettingsRequest();
+    AWS_SHIELD_API UpdateEmergencyContactSettingsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -43,14 +43,14 @@ namespace Model
      * have proactive engagement enabled, the contact list must include at least one
      * phone number.</p>
      */
-    inline const Aws::Vector<EmergencyContact>& GetEmergencyContactList() const{ return m_emergencyContactList; }
+    inline const Aws::Vector<EmergencyContact>& GetEmergencyContactList() const { return m_emergencyContactList; }
     inline bool EmergencyContactListHasBeenSet() const { return m_emergencyContactListHasBeenSet; }
-    inline void SetEmergencyContactList(const Aws::Vector<EmergencyContact>& value) { m_emergencyContactListHasBeenSet = true; m_emergencyContactList = value; }
-    inline void SetEmergencyContactList(Aws::Vector<EmergencyContact>&& value) { m_emergencyContactListHasBeenSet = true; m_emergencyContactList = std::move(value); }
-    inline UpdateEmergencyContactSettingsRequest& WithEmergencyContactList(const Aws::Vector<EmergencyContact>& value) { SetEmergencyContactList(value); return *this;}
-    inline UpdateEmergencyContactSettingsRequest& WithEmergencyContactList(Aws::Vector<EmergencyContact>&& value) { SetEmergencyContactList(std::move(value)); return *this;}
-    inline UpdateEmergencyContactSettingsRequest& AddEmergencyContactList(const EmergencyContact& value) { m_emergencyContactListHasBeenSet = true; m_emergencyContactList.push_back(value); return *this; }
-    inline UpdateEmergencyContactSettingsRequest& AddEmergencyContactList(EmergencyContact&& value) { m_emergencyContactListHasBeenSet = true; m_emergencyContactList.push_back(std::move(value)); return *this; }
+    template<typename EmergencyContactListT = Aws::Vector<EmergencyContact>>
+    void SetEmergencyContactList(EmergencyContactListT&& value) { m_emergencyContactListHasBeenSet = true; m_emergencyContactList = std::forward<EmergencyContactListT>(value); }
+    template<typename EmergencyContactListT = Aws::Vector<EmergencyContact>>
+    UpdateEmergencyContactSettingsRequest& WithEmergencyContactList(EmergencyContactListT&& value) { SetEmergencyContactList(std::forward<EmergencyContactListT>(value)); return *this;}
+    template<typename EmergencyContactListT = EmergencyContact>
+    UpdateEmergencyContactSettingsRequest& AddEmergencyContactList(EmergencyContactListT&& value) { m_emergencyContactListHasBeenSet = true; m_emergencyContactList.emplace_back(std::forward<EmergencyContactListT>(value)); return *this; }
     ///@}
   private:
 

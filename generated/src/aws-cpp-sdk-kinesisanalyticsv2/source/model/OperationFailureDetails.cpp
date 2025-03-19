@@ -18,14 +18,7 @@ namespace KinesisAnalyticsV2
 namespace Model
 {
 
-OperationFailureDetails::OperationFailureDetails() : 
-    m_rollbackOperationIdHasBeenSet(false),
-    m_errorInfoHasBeenSet(false)
-{
-}
-
 OperationFailureDetails::OperationFailureDetails(JsonView jsonValue)
-  : OperationFailureDetails()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ OperationFailureDetails& OperationFailureDetails::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RollbackOperationId"))
   {
     m_rollbackOperationId = jsonValue.GetString("RollbackOperationId");
-
     m_rollbackOperationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ErrorInfo"))
   {
     m_errorInfo = jsonValue.GetObject("ErrorInfo");
-
     m_errorInfoHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,18 +18,7 @@ namespace CodeGuruReviewer
 namespace Model
 {
 
-RecommendationFeedback::RecommendationFeedback() : 
-    m_codeReviewArnHasBeenSet(false),
-    m_recommendationIdHasBeenSet(false),
-    m_reactionsHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_createdTimeStampHasBeenSet(false),
-    m_lastUpdatedTimeStampHasBeenSet(false)
-{
-}
-
 RecommendationFeedback::RecommendationFeedback(JsonView jsonValue)
-  : RecommendationFeedback()
 {
   *this = jsonValue;
 }
@@ -39,17 +28,13 @@ RecommendationFeedback& RecommendationFeedback::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("CodeReviewArn"))
   {
     m_codeReviewArn = jsonValue.GetString("CodeReviewArn");
-
     m_codeReviewArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RecommendationId"))
   {
     m_recommendationId = jsonValue.GetString("RecommendationId");
-
     m_recommendationIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Reactions"))
   {
     Aws::Utils::Array<JsonView> reactionsJsonList = jsonValue.GetArray("Reactions");
@@ -59,28 +44,21 @@ RecommendationFeedback& RecommendationFeedback::operator =(JsonView jsonValue)
     }
     m_reactionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserId"))
   {
     m_userId = jsonValue.GetString("UserId");
-
     m_userIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedTimeStamp"))
   {
     m_createdTimeStamp = jsonValue.GetDouble("CreatedTimeStamp");
-
     m_createdTimeStampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedTimeStamp"))
   {
     m_lastUpdatedTimeStamp = jsonValue.GetDouble("LastUpdatedTimeStamp");
-
     m_lastUpdatedTimeStampHasBeenSet = true;
   }
-
   return *this;
 }
 

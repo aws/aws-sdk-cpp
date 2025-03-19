@@ -18,17 +18,7 @@ namespace PrivateNetworks
 namespace Model
 {
 
-NetworkResourceDefinition::NetworkResourceDefinition() : 
-    m_count(0),
-    m_countHasBeenSet(false),
-    m_optionsHasBeenSet(false),
-    m_type(NetworkResourceDefinitionType::NOT_SET),
-    m_typeHasBeenSet(false)
-{
-}
-
 NetworkResourceDefinition::NetworkResourceDefinition(JsonView jsonValue)
-  : NetworkResourceDefinition()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ NetworkResourceDefinition& NetworkResourceDefinition::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetInteger("count");
-
     m_countHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("options"))
   {
     Aws::Utils::Array<JsonView> optionsJsonList = jsonValue.GetArray("options");
@@ -51,14 +39,11 @@ NetworkResourceDefinition& NetworkResourceDefinition::operator =(JsonView jsonVa
     }
     m_optionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("type"))
   {
     m_type = NetworkResourceDefinitionTypeMapper::GetNetworkResourceDefinitionTypeForName(jsonValue.GetString("type"));
-
     m_typeHasBeenSet = true;
   }
-
   return *this;
 }
 

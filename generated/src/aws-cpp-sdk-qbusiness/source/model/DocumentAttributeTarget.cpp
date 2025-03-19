@@ -18,16 +18,7 @@ namespace QBusiness
 namespace Model
 {
 
-DocumentAttributeTarget::DocumentAttributeTarget() : 
-    m_keyHasBeenSet(false),
-    m_valueHasBeenSet(false),
-    m_attributeValueOperator(AttributeValueOperator::NOT_SET),
-    m_attributeValueOperatorHasBeenSet(false)
-{
-}
-
 DocumentAttributeTarget::DocumentAttributeTarget(JsonView jsonValue)
-  : DocumentAttributeTarget()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ DocumentAttributeTarget& DocumentAttributeTarget::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("key"))
   {
     m_key = jsonValue.GetString("key");
-
     m_keyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("value"))
   {
     m_value = jsonValue.GetObject("value");
-
     m_valueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("attributeValueOperator"))
   {
     m_attributeValueOperator = AttributeValueOperatorMapper::GetAttributeValueOperatorForName(jsonValue.GetString("attributeValueOperator"));
-
     m_attributeValueOperatorHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -21,7 +21,7 @@ namespace Model
   class CreateAppRequest : public PinpointRequest
   {
   public:
-    AWS_PINPOINT_API CreateAppRequest();
+    AWS_PINPOINT_API CreateAppRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -34,12 +34,12 @@ namespace Model
 
     ///@{
     
-    inline const CreateApplicationRequest& GetCreateApplicationRequest() const{ return m_createApplicationRequest; }
+    inline const CreateApplicationRequest& GetCreateApplicationRequest() const { return m_createApplicationRequest; }
     inline bool CreateApplicationRequestHasBeenSet() const { return m_createApplicationRequestHasBeenSet; }
-    inline void SetCreateApplicationRequest(const CreateApplicationRequest& value) { m_createApplicationRequestHasBeenSet = true; m_createApplicationRequest = value; }
-    inline void SetCreateApplicationRequest(CreateApplicationRequest&& value) { m_createApplicationRequestHasBeenSet = true; m_createApplicationRequest = std::move(value); }
-    inline CreateAppRequest& WithCreateApplicationRequest(const CreateApplicationRequest& value) { SetCreateApplicationRequest(value); return *this;}
-    inline CreateAppRequest& WithCreateApplicationRequest(CreateApplicationRequest&& value) { SetCreateApplicationRequest(std::move(value)); return *this;}
+    template<typename CreateApplicationRequestT = CreateApplicationRequest>
+    void SetCreateApplicationRequest(CreateApplicationRequestT&& value) { m_createApplicationRequestHasBeenSet = true; m_createApplicationRequest = std::forward<CreateApplicationRequestT>(value); }
+    template<typename CreateApplicationRequestT = CreateApplicationRequest>
+    CreateAppRequest& WithCreateApplicationRequest(CreateApplicationRequestT&& value) { SetCreateApplicationRequest(std::forward<CreateApplicationRequestT>(value)); return *this;}
     ///@}
   private:
 

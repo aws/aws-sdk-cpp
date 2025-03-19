@@ -25,7 +25,7 @@ namespace Model
   class GetAccountLimitRequest : public Route53Request
   {
   public:
-    AWS_ROUTE53_API GetAccountLimitRequest();
+    AWS_ROUTE53_API GetAccountLimitRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -52,16 +52,14 @@ namespace Model
      * instances are referred to as traffic flow policy records in the Amazon Route 53
      * console.)</p> </li> </ul>
      */
-    inline const AccountLimitType& GetType() const{ return m_type; }
+    inline AccountLimitType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const AccountLimitType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(AccountLimitType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline GetAccountLimitRequest& WithType(const AccountLimitType& value) { SetType(value); return *this;}
-    inline GetAccountLimitRequest& WithType(AccountLimitType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(AccountLimitType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline GetAccountLimitRequest& WithType(AccountLimitType value) { SetType(value); return *this;}
     ///@}
   private:
 
-    AccountLimitType m_type;
+    AccountLimitType m_type{AccountLimitType::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

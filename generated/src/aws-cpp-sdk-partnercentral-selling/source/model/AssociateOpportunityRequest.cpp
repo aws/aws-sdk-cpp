@@ -12,15 +12,6 @@ using namespace Aws::PartnerCentralSelling::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-AssociateOpportunityRequest::AssociateOpportunityRequest() : 
-    m_catalogHasBeenSet(false),
-    m_opportunityIdentifierHasBeenSet(false),
-    m_relatedEntityIdentifierHasBeenSet(false),
-    m_relatedEntityType(RelatedEntityType::NOT_SET),
-    m_relatedEntityTypeHasBeenSet(false)
-{
-}
-
 Aws::String AssociateOpportunityRequest::SerializePayload() const
 {
   JsonValue payload;

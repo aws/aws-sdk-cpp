@@ -21,7 +21,7 @@ namespace Model
   class RebalanceSlotsInGlobalReplicationGroupRequest : public ElastiCacheRequest
   {
   public:
-    AWS_ELASTICACHE_API RebalanceSlotsInGlobalReplicationGroupRequest();
+    AWS_ELASTICACHE_API RebalanceSlotsInGlobalReplicationGroupRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,21 +40,19 @@ namespace Model
     /**
      * <p>The name of the Global datastore</p>
      */
-    inline const Aws::String& GetGlobalReplicationGroupId() const{ return m_globalReplicationGroupId; }
+    inline const Aws::String& GetGlobalReplicationGroupId() const { return m_globalReplicationGroupId; }
     inline bool GlobalReplicationGroupIdHasBeenSet() const { return m_globalReplicationGroupIdHasBeenSet; }
-    inline void SetGlobalReplicationGroupId(const Aws::String& value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId = value; }
-    inline void SetGlobalReplicationGroupId(Aws::String&& value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId = std::move(value); }
-    inline void SetGlobalReplicationGroupId(const char* value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId.assign(value); }
-    inline RebalanceSlotsInGlobalReplicationGroupRequest& WithGlobalReplicationGroupId(const Aws::String& value) { SetGlobalReplicationGroupId(value); return *this;}
-    inline RebalanceSlotsInGlobalReplicationGroupRequest& WithGlobalReplicationGroupId(Aws::String&& value) { SetGlobalReplicationGroupId(std::move(value)); return *this;}
-    inline RebalanceSlotsInGlobalReplicationGroupRequest& WithGlobalReplicationGroupId(const char* value) { SetGlobalReplicationGroupId(value); return *this;}
+    template<typename GlobalReplicationGroupIdT = Aws::String>
+    void SetGlobalReplicationGroupId(GlobalReplicationGroupIdT&& value) { m_globalReplicationGroupIdHasBeenSet = true; m_globalReplicationGroupId = std::forward<GlobalReplicationGroupIdT>(value); }
+    template<typename GlobalReplicationGroupIdT = Aws::String>
+    RebalanceSlotsInGlobalReplicationGroupRequest& WithGlobalReplicationGroupId(GlobalReplicationGroupIdT&& value) { SetGlobalReplicationGroupId(std::forward<GlobalReplicationGroupIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If <code>True</code>, redistribution is applied immediately.</p>
      */
-    inline bool GetApplyImmediately() const{ return m_applyImmediately; }
+    inline bool GetApplyImmediately() const { return m_applyImmediately; }
     inline bool ApplyImmediatelyHasBeenSet() const { return m_applyImmediatelyHasBeenSet; }
     inline void SetApplyImmediately(bool value) { m_applyImmediatelyHasBeenSet = true; m_applyImmediately = value; }
     inline RebalanceSlotsInGlobalReplicationGroupRequest& WithApplyImmediately(bool value) { SetApplyImmediately(value); return *this;}
@@ -64,7 +62,7 @@ namespace Model
     Aws::String m_globalReplicationGroupId;
     bool m_globalReplicationGroupIdHasBeenSet = false;
 
-    bool m_applyImmediately;
+    bool m_applyImmediately{false};
     bool m_applyImmediatelyHasBeenSet = false;
   };
 

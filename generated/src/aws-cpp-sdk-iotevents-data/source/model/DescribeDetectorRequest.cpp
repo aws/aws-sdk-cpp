@@ -15,12 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-DescribeDetectorRequest::DescribeDetectorRequest() : 
-    m_detectorModelNameHasBeenSet(false),
-    m_keyValueHasBeenSet(false)
-{
-}
-
 Aws::String DescribeDetectorRequest::SerializePayload() const
 {
   return {};

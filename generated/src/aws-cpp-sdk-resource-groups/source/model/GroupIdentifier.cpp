@@ -18,19 +18,7 @@ namespace ResourceGroups
 namespace Model
 {
 
-GroupIdentifier::GroupIdentifier() : 
-    m_groupNameHasBeenSet(false),
-    m_groupArnHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_criticality(0),
-    m_criticalityHasBeenSet(false),
-    m_ownerHasBeenSet(false),
-    m_displayNameHasBeenSet(false)
-{
-}
-
 GroupIdentifier::GroupIdentifier(JsonView jsonValue)
-  : GroupIdentifier()
 {
   *this = jsonValue;
 }
@@ -40,45 +28,33 @@ GroupIdentifier& GroupIdentifier::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("GroupName"))
   {
     m_groupName = jsonValue.GetString("GroupName");
-
     m_groupNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GroupArn"))
   {
     m_groupArn = jsonValue.GetString("GroupArn");
-
     m_groupArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Criticality"))
   {
     m_criticality = jsonValue.GetInteger("Criticality");
-
     m_criticalityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Owner"))
   {
     m_owner = jsonValue.GetString("Owner");
-
     m_ownerHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DisplayName"))
   {
     m_displayName = jsonValue.GetString("DisplayName");
-
     m_displayNameHasBeenSet = true;
   }
-
   return *this;
 }
 

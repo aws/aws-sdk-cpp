@@ -30,7 +30,7 @@ namespace Model
   class GetIpamDiscoveredAccountsResponse
   {
   public:
-    AWS_EC2_API GetIpamDiscoveredAccountsResponse();
+    AWS_EC2_API GetIpamDiscoveredAccountsResponse() = default;
     AWS_EC2_API GetIpamDiscoveredAccountsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API GetIpamDiscoveredAccountsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -39,13 +39,13 @@ namespace Model
     /**
      * <p>Discovered accounts.</p>
      */
-    inline const Aws::Vector<IpamDiscoveredAccount>& GetIpamDiscoveredAccounts() const{ return m_ipamDiscoveredAccounts; }
-    inline void SetIpamDiscoveredAccounts(const Aws::Vector<IpamDiscoveredAccount>& value) { m_ipamDiscoveredAccounts = value; }
-    inline void SetIpamDiscoveredAccounts(Aws::Vector<IpamDiscoveredAccount>&& value) { m_ipamDiscoveredAccounts = std::move(value); }
-    inline GetIpamDiscoveredAccountsResponse& WithIpamDiscoveredAccounts(const Aws::Vector<IpamDiscoveredAccount>& value) { SetIpamDiscoveredAccounts(value); return *this;}
-    inline GetIpamDiscoveredAccountsResponse& WithIpamDiscoveredAccounts(Aws::Vector<IpamDiscoveredAccount>&& value) { SetIpamDiscoveredAccounts(std::move(value)); return *this;}
-    inline GetIpamDiscoveredAccountsResponse& AddIpamDiscoveredAccounts(const IpamDiscoveredAccount& value) { m_ipamDiscoveredAccounts.push_back(value); return *this; }
-    inline GetIpamDiscoveredAccountsResponse& AddIpamDiscoveredAccounts(IpamDiscoveredAccount&& value) { m_ipamDiscoveredAccounts.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<IpamDiscoveredAccount>& GetIpamDiscoveredAccounts() const { return m_ipamDiscoveredAccounts; }
+    template<typename IpamDiscoveredAccountsT = Aws::Vector<IpamDiscoveredAccount>>
+    void SetIpamDiscoveredAccounts(IpamDiscoveredAccountsT&& value) { m_ipamDiscoveredAccountsHasBeenSet = true; m_ipamDiscoveredAccounts = std::forward<IpamDiscoveredAccountsT>(value); }
+    template<typename IpamDiscoveredAccountsT = Aws::Vector<IpamDiscoveredAccount>>
+    GetIpamDiscoveredAccountsResponse& WithIpamDiscoveredAccounts(IpamDiscoveredAccountsT&& value) { SetIpamDiscoveredAccounts(std::forward<IpamDiscoveredAccountsT>(value)); return *this;}
+    template<typename IpamDiscoveredAccountsT = IpamDiscoveredAccount>
+    GetIpamDiscoveredAccountsResponse& AddIpamDiscoveredAccounts(IpamDiscoveredAccountsT&& value) { m_ipamDiscoveredAccountsHasBeenSet = true; m_ipamDiscoveredAccounts.emplace_back(std::forward<IpamDiscoveredAccountsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -53,30 +53,31 @@ namespace Model
      * <p>Specify the pagination token from a previous request to retrieve the next
      * page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline GetIpamDiscoveredAccountsResponse& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline GetIpamDiscoveredAccountsResponse& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline GetIpamDiscoveredAccountsResponse& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    GetIpamDiscoveredAccountsResponse& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline GetIpamDiscoveredAccountsResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline GetIpamDiscoveredAccountsResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    GetIpamDiscoveredAccountsResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<IpamDiscoveredAccount> m_ipamDiscoveredAccounts;
+    bool m_ipamDiscoveredAccountsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

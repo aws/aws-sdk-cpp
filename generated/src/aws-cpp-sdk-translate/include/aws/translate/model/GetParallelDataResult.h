@@ -29,7 +29,7 @@ namespace Model
   class GetParallelDataResult
   {
   public:
-    AWS_TRANSLATE_API GetParallelDataResult();
+    AWS_TRANSLATE_API GetParallelDataResult() = default;
     AWS_TRANSLATE_API GetParallelDataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_TRANSLATE_API GetParallelDataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,11 +38,11 @@ namespace Model
     /**
      * <p>The properties of the parallel data resource that is being retrieved.</p>
      */
-    inline const ParallelDataProperties& GetParallelDataProperties() const{ return m_parallelDataProperties; }
-    inline void SetParallelDataProperties(const ParallelDataProperties& value) { m_parallelDataProperties = value; }
-    inline void SetParallelDataProperties(ParallelDataProperties&& value) { m_parallelDataProperties = std::move(value); }
-    inline GetParallelDataResult& WithParallelDataProperties(const ParallelDataProperties& value) { SetParallelDataProperties(value); return *this;}
-    inline GetParallelDataResult& WithParallelDataProperties(ParallelDataProperties&& value) { SetParallelDataProperties(std::move(value)); return *this;}
+    inline const ParallelDataProperties& GetParallelDataProperties() const { return m_parallelDataProperties; }
+    template<typename ParallelDataPropertiesT = ParallelDataProperties>
+    void SetParallelDataProperties(ParallelDataPropertiesT&& value) { m_parallelDataPropertiesHasBeenSet = true; m_parallelDataProperties = std::forward<ParallelDataPropertiesT>(value); }
+    template<typename ParallelDataPropertiesT = ParallelDataProperties>
+    GetParallelDataResult& WithParallelDataProperties(ParallelDataPropertiesT&& value) { SetParallelDataProperties(std::forward<ParallelDataPropertiesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -58,11 +58,11 @@ namespace Model
      * <p>Before you download an input file from Amazon S3, ensure that you recognize
      * the file and trust its creator.</p> 
      */
-    inline const ParallelDataDataLocation& GetDataLocation() const{ return m_dataLocation; }
-    inline void SetDataLocation(const ParallelDataDataLocation& value) { m_dataLocation = value; }
-    inline void SetDataLocation(ParallelDataDataLocation&& value) { m_dataLocation = std::move(value); }
-    inline GetParallelDataResult& WithDataLocation(const ParallelDataDataLocation& value) { SetDataLocation(value); return *this;}
-    inline GetParallelDataResult& WithDataLocation(ParallelDataDataLocation&& value) { SetDataLocation(std::move(value)); return *this;}
+    inline const ParallelDataDataLocation& GetDataLocation() const { return m_dataLocation; }
+    template<typename DataLocationT = ParallelDataDataLocation>
+    void SetDataLocation(DataLocationT&& value) { m_dataLocationHasBeenSet = true; m_dataLocation = std::forward<DataLocationT>(value); }
+    template<typename DataLocationT = ParallelDataDataLocation>
+    GetParallelDataResult& WithDataLocation(DataLocationT&& value) { SetDataLocation(std::forward<DataLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,11 +72,11 @@ namespace Model
      * attempted to create a parallel data resource. The location is returned as a
      * presigned URL to that has a 30-minute expiration.</p>
      */
-    inline const ParallelDataDataLocation& GetAuxiliaryDataLocation() const{ return m_auxiliaryDataLocation; }
-    inline void SetAuxiliaryDataLocation(const ParallelDataDataLocation& value) { m_auxiliaryDataLocation = value; }
-    inline void SetAuxiliaryDataLocation(ParallelDataDataLocation&& value) { m_auxiliaryDataLocation = std::move(value); }
-    inline GetParallelDataResult& WithAuxiliaryDataLocation(const ParallelDataDataLocation& value) { SetAuxiliaryDataLocation(value); return *this;}
-    inline GetParallelDataResult& WithAuxiliaryDataLocation(ParallelDataDataLocation&& value) { SetAuxiliaryDataLocation(std::move(value)); return *this;}
+    inline const ParallelDataDataLocation& GetAuxiliaryDataLocation() const { return m_auxiliaryDataLocation; }
+    template<typename AuxiliaryDataLocationT = ParallelDataDataLocation>
+    void SetAuxiliaryDataLocation(AuxiliaryDataLocationT&& value) { m_auxiliaryDataLocationHasBeenSet = true; m_auxiliaryDataLocation = std::forward<AuxiliaryDataLocationT>(value); }
+    template<typename AuxiliaryDataLocationT = ParallelDataDataLocation>
+    GetParallelDataResult& WithAuxiliaryDataLocation(AuxiliaryDataLocationT&& value) { SetAuxiliaryDataLocation(std::forward<AuxiliaryDataLocationT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -86,34 +86,37 @@ namespace Model
      * attempted to update a parallel data resource. The location is returned as a
      * presigned URL to that has a 30-minute expiration.</p>
      */
-    inline const ParallelDataDataLocation& GetLatestUpdateAttemptAuxiliaryDataLocation() const{ return m_latestUpdateAttemptAuxiliaryDataLocation; }
-    inline void SetLatestUpdateAttemptAuxiliaryDataLocation(const ParallelDataDataLocation& value) { m_latestUpdateAttemptAuxiliaryDataLocation = value; }
-    inline void SetLatestUpdateAttemptAuxiliaryDataLocation(ParallelDataDataLocation&& value) { m_latestUpdateAttemptAuxiliaryDataLocation = std::move(value); }
-    inline GetParallelDataResult& WithLatestUpdateAttemptAuxiliaryDataLocation(const ParallelDataDataLocation& value) { SetLatestUpdateAttemptAuxiliaryDataLocation(value); return *this;}
-    inline GetParallelDataResult& WithLatestUpdateAttemptAuxiliaryDataLocation(ParallelDataDataLocation&& value) { SetLatestUpdateAttemptAuxiliaryDataLocation(std::move(value)); return *this;}
+    inline const ParallelDataDataLocation& GetLatestUpdateAttemptAuxiliaryDataLocation() const { return m_latestUpdateAttemptAuxiliaryDataLocation; }
+    template<typename LatestUpdateAttemptAuxiliaryDataLocationT = ParallelDataDataLocation>
+    void SetLatestUpdateAttemptAuxiliaryDataLocation(LatestUpdateAttemptAuxiliaryDataLocationT&& value) { m_latestUpdateAttemptAuxiliaryDataLocationHasBeenSet = true; m_latestUpdateAttemptAuxiliaryDataLocation = std::forward<LatestUpdateAttemptAuxiliaryDataLocationT>(value); }
+    template<typename LatestUpdateAttemptAuxiliaryDataLocationT = ParallelDataDataLocation>
+    GetParallelDataResult& WithLatestUpdateAttemptAuxiliaryDataLocation(LatestUpdateAttemptAuxiliaryDataLocationT&& value) { SetLatestUpdateAttemptAuxiliaryDataLocation(std::forward<LatestUpdateAttemptAuxiliaryDataLocationT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetParallelDataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetParallelDataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetParallelDataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetParallelDataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     ParallelDataProperties m_parallelDataProperties;
+    bool m_parallelDataPropertiesHasBeenSet = false;
 
     ParallelDataDataLocation m_dataLocation;
+    bool m_dataLocationHasBeenSet = false;
 
     ParallelDataDataLocation m_auxiliaryDataLocation;
+    bool m_auxiliaryDataLocationHasBeenSet = false;
 
     ParallelDataDataLocation m_latestUpdateAttemptAuxiliaryDataLocation;
+    bool m_latestUpdateAttemptAuxiliaryDataLocationHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

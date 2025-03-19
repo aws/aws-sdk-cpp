@@ -26,7 +26,7 @@ namespace Model
   class DescribeLoadBalancerPolicyTypesRequest : public ElasticLoadBalancingRequest
   {
   public:
-    AWS_ELASTICLOADBALANCING_API DescribeLoadBalancerPolicyTypesRequest();
+    AWS_ELASTICLOADBALANCING_API DescribeLoadBalancerPolicyTypesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -46,15 +46,14 @@ namespace Model
      * <p>The names of the policy types. If no names are specified, describes all
      * policy types defined by Elastic Load Balancing.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetPolicyTypeNames() const{ return m_policyTypeNames; }
+    inline const Aws::Vector<Aws::String>& GetPolicyTypeNames() const { return m_policyTypeNames; }
     inline bool PolicyTypeNamesHasBeenSet() const { return m_policyTypeNamesHasBeenSet; }
-    inline void SetPolicyTypeNames(const Aws::Vector<Aws::String>& value) { m_policyTypeNamesHasBeenSet = true; m_policyTypeNames = value; }
-    inline void SetPolicyTypeNames(Aws::Vector<Aws::String>&& value) { m_policyTypeNamesHasBeenSet = true; m_policyTypeNames = std::move(value); }
-    inline DescribeLoadBalancerPolicyTypesRequest& WithPolicyTypeNames(const Aws::Vector<Aws::String>& value) { SetPolicyTypeNames(value); return *this;}
-    inline DescribeLoadBalancerPolicyTypesRequest& WithPolicyTypeNames(Aws::Vector<Aws::String>&& value) { SetPolicyTypeNames(std::move(value)); return *this;}
-    inline DescribeLoadBalancerPolicyTypesRequest& AddPolicyTypeNames(const Aws::String& value) { m_policyTypeNamesHasBeenSet = true; m_policyTypeNames.push_back(value); return *this; }
-    inline DescribeLoadBalancerPolicyTypesRequest& AddPolicyTypeNames(Aws::String&& value) { m_policyTypeNamesHasBeenSet = true; m_policyTypeNames.push_back(std::move(value)); return *this; }
-    inline DescribeLoadBalancerPolicyTypesRequest& AddPolicyTypeNames(const char* value) { m_policyTypeNamesHasBeenSet = true; m_policyTypeNames.push_back(value); return *this; }
+    template<typename PolicyTypeNamesT = Aws::Vector<Aws::String>>
+    void SetPolicyTypeNames(PolicyTypeNamesT&& value) { m_policyTypeNamesHasBeenSet = true; m_policyTypeNames = std::forward<PolicyTypeNamesT>(value); }
+    template<typename PolicyTypeNamesT = Aws::Vector<Aws::String>>
+    DescribeLoadBalancerPolicyTypesRequest& WithPolicyTypeNames(PolicyTypeNamesT&& value) { SetPolicyTypeNames(std::forward<PolicyTypeNamesT>(value)); return *this;}
+    template<typename PolicyTypeNamesT = Aws::String>
+    DescribeLoadBalancerPolicyTypesRequest& AddPolicyTypeNames(PolicyTypeNamesT&& value) { m_policyTypeNamesHasBeenSet = true; m_policyTypeNames.emplace_back(std::forward<PolicyTypeNamesT>(value)); return *this; }
     ///@}
   private:
 

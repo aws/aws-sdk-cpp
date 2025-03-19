@@ -31,7 +31,7 @@ namespace Model
   class Attribute
   {
   public:
-    AWS_SIMPLEDB_API Attribute();
+    AWS_SIMPLEDB_API Attribute() = default;
     AWS_SIMPLEDB_API Attribute(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_SIMPLEDB_API Attribute& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -43,56 +43,48 @@ namespace Model
     /**
      * The name of the attribute.
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetName() const { return m_name; }
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-    inline Attribute& WithName(const Aws::String& value) { SetName(value); return *this;}
-    inline Attribute& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-    inline Attribute& WithName(const char* value) { SetName(value); return *this;}
+    template<typename NameT = Aws::String>
+    void SetName(NameT&& value) { m_nameHasBeenSet = true; m_name = std::forward<NameT>(value); }
+    template<typename NameT = Aws::String>
+    Attribute& WithName(NameT&& value) { SetName(std::forward<NameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p></p>
      */
-    inline const Aws::String& GetAlternateNameEncoding() const{ return m_alternateNameEncoding; }
+    inline const Aws::String& GetAlternateNameEncoding() const { return m_alternateNameEncoding; }
     inline bool AlternateNameEncodingHasBeenSet() const { return m_alternateNameEncodingHasBeenSet; }
-    inline void SetAlternateNameEncoding(const Aws::String& value) { m_alternateNameEncodingHasBeenSet = true; m_alternateNameEncoding = value; }
-    inline void SetAlternateNameEncoding(Aws::String&& value) { m_alternateNameEncodingHasBeenSet = true; m_alternateNameEncoding = std::move(value); }
-    inline void SetAlternateNameEncoding(const char* value) { m_alternateNameEncodingHasBeenSet = true; m_alternateNameEncoding.assign(value); }
-    inline Attribute& WithAlternateNameEncoding(const Aws::String& value) { SetAlternateNameEncoding(value); return *this;}
-    inline Attribute& WithAlternateNameEncoding(Aws::String&& value) { SetAlternateNameEncoding(std::move(value)); return *this;}
-    inline Attribute& WithAlternateNameEncoding(const char* value) { SetAlternateNameEncoding(value); return *this;}
+    template<typename AlternateNameEncodingT = Aws::String>
+    void SetAlternateNameEncoding(AlternateNameEncodingT&& value) { m_alternateNameEncodingHasBeenSet = true; m_alternateNameEncoding = std::forward<AlternateNameEncodingT>(value); }
+    template<typename AlternateNameEncodingT = Aws::String>
+    Attribute& WithAlternateNameEncoding(AlternateNameEncodingT&& value) { SetAlternateNameEncoding(std::forward<AlternateNameEncodingT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * The value of the attribute.
      */
-    inline const Aws::String& GetValue() const{ return m_value; }
+    inline const Aws::String& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-    inline Attribute& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-    inline Attribute& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-    inline Attribute& WithValue(const char* value) { SetValue(value); return *this;}
+    template<typename ValueT = Aws::String>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = Aws::String>
+    Attribute& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p></p>
      */
-    inline const Aws::String& GetAlternateValueEncoding() const{ return m_alternateValueEncoding; }
+    inline const Aws::String& GetAlternateValueEncoding() const { return m_alternateValueEncoding; }
     inline bool AlternateValueEncodingHasBeenSet() const { return m_alternateValueEncodingHasBeenSet; }
-    inline void SetAlternateValueEncoding(const Aws::String& value) { m_alternateValueEncodingHasBeenSet = true; m_alternateValueEncoding = value; }
-    inline void SetAlternateValueEncoding(Aws::String&& value) { m_alternateValueEncodingHasBeenSet = true; m_alternateValueEncoding = std::move(value); }
-    inline void SetAlternateValueEncoding(const char* value) { m_alternateValueEncodingHasBeenSet = true; m_alternateValueEncoding.assign(value); }
-    inline Attribute& WithAlternateValueEncoding(const Aws::String& value) { SetAlternateValueEncoding(value); return *this;}
-    inline Attribute& WithAlternateValueEncoding(Aws::String&& value) { SetAlternateValueEncoding(std::move(value)); return *this;}
-    inline Attribute& WithAlternateValueEncoding(const char* value) { SetAlternateValueEncoding(value); return *this;}
+    template<typename AlternateValueEncodingT = Aws::String>
+    void SetAlternateValueEncoding(AlternateValueEncodingT&& value) { m_alternateValueEncodingHasBeenSet = true; m_alternateValueEncoding = std::forward<AlternateValueEncodingT>(value); }
+    template<typename AlternateValueEncodingT = Aws::String>
+    Attribute& WithAlternateValueEncoding(AlternateValueEncodingT&& value) { SetAlternateValueEncoding(std::forward<AlternateValueEncodingT>(value)); return *this;}
     ///@}
   private:
 

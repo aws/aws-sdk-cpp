@@ -18,13 +18,7 @@ namespace CleanRooms
 namespace Model
 {
 
-AnalysisTemplateValidationStatusReason::AnalysisTemplateValidationStatusReason() : 
-    m_messageHasBeenSet(false)
-{
-}
-
 AnalysisTemplateValidationStatusReason::AnalysisTemplateValidationStatusReason(JsonView jsonValue)
-  : AnalysisTemplateValidationStatusReason()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AnalysisTemplateValidationStatusReason& AnalysisTemplateValidationStatusReason::
   if(jsonValue.ValueExists("message"))
   {
     m_message = jsonValue.GetString("message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

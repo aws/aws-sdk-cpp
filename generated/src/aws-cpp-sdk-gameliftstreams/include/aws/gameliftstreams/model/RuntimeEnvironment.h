@@ -41,7 +41,7 @@ namespace Model
   class RuntimeEnvironment
   {
   public:
-    AWS_GAMELIFTSTREAMS_API RuntimeEnvironment();
+    AWS_GAMELIFTSTREAMS_API RuntimeEnvironment() = default;
     AWS_GAMELIFTSTREAMS_API RuntimeEnvironment(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFTSTREAMS_API RuntimeEnvironment& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GAMELIFTSTREAMS_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -52,30 +52,26 @@ namespace Model
      * <p>The operating system and other drivers. For Proton, this also includes the
      * Proton compatibility layer.</p>
      */
-    inline const RuntimeEnvironmentType& GetType() const{ return m_type; }
+    inline RuntimeEnvironmentType GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const RuntimeEnvironmentType& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(RuntimeEnvironmentType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline RuntimeEnvironment& WithType(const RuntimeEnvironmentType& value) { SetType(value); return *this;}
-    inline RuntimeEnvironment& WithType(RuntimeEnvironmentType&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(RuntimeEnvironmentType value) { m_typeHasBeenSet = true; m_type = value; }
+    inline RuntimeEnvironment& WithType(RuntimeEnvironmentType value) { SetType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Versioned container environment for the application operating system.</p>
      */
-    inline const Aws::String& GetVersion() const{ return m_version; }
+    inline const Aws::String& GetVersion() const { return m_version; }
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
-    inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
-    inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
-    inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
-    inline RuntimeEnvironment& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
-    inline RuntimeEnvironment& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
-    inline RuntimeEnvironment& WithVersion(const char* value) { SetVersion(value); return *this;}
+    template<typename VersionT = Aws::String>
+    void SetVersion(VersionT&& value) { m_versionHasBeenSet = true; m_version = std::forward<VersionT>(value); }
+    template<typename VersionT = Aws::String>
+    RuntimeEnvironment& WithVersion(VersionT&& value) { SetVersion(std::forward<VersionT>(value)); return *this;}
     ///@}
   private:
 
-    RuntimeEnvironmentType m_type;
+    RuntimeEnvironmentType m_type{RuntimeEnvironmentType::NOT_SET};
     bool m_typeHasBeenSet = false;
 
     Aws::String m_version;

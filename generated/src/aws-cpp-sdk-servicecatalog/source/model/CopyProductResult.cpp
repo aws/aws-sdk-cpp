@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CopyProductResult::CopyProductResult()
-{
-}
-
 CopyProductResult::CopyProductResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CopyProductResult& CopyProductResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("CopyProductToken"))
   {
     m_copyProductToken = jsonValue.GetString("CopyProductToken");
-
+    m_copyProductTokenHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

@@ -18,14 +18,7 @@ namespace ServiceDiscovery
 namespace Model
 {
 
-InstanceSummary::InstanceSummary() : 
-    m_idHasBeenSet(false),
-    m_attributesHasBeenSet(false)
-{
-}
-
 InstanceSummary::InstanceSummary(JsonView jsonValue)
-  : InstanceSummary()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ InstanceSummary& InstanceSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Attributes"))
   {
     Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
@@ -48,7 +39,6 @@ InstanceSummary& InstanceSummary::operator =(JsonView jsonValue)
     }
     m_attributesHasBeenSet = true;
   }
-
   return *this;
 }
 

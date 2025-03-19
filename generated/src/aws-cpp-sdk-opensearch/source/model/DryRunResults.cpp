@@ -18,14 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-DryRunResults::DryRunResults() : 
-    m_deploymentTypeHasBeenSet(false),
-    m_messageHasBeenSet(false)
-{
-}
-
 DryRunResults::DryRunResults(JsonView jsonValue)
-  : DryRunResults()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ DryRunResults& DryRunResults::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DeploymentType"))
   {
     m_deploymentType = jsonValue.GetString("DeploymentType");
-
     m_deploymentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Message"))
   {
     m_message = jsonValue.GetString("Message");
-
     m_messageHasBeenSet = true;
   }
-
   return *this;
 }
 

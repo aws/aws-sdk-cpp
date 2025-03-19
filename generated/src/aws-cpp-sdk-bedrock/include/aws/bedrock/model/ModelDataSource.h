@@ -31,7 +31,7 @@ namespace Model
   class ModelDataSource
   {
   public:
-    AWS_BEDROCK_API ModelDataSource();
+    AWS_BEDROCK_API ModelDataSource() = default;
     AWS_BEDROCK_API ModelDataSource(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API ModelDataSource& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_BEDROCK_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,12 +41,12 @@ namespace Model
     /**
      * <p>The Amazon S3 data source of the imported model.</p>
      */
-    inline const S3DataSource& GetS3DataSource() const{ return m_s3DataSource; }
+    inline const S3DataSource& GetS3DataSource() const { return m_s3DataSource; }
     inline bool S3DataSourceHasBeenSet() const { return m_s3DataSourceHasBeenSet; }
-    inline void SetS3DataSource(const S3DataSource& value) { m_s3DataSourceHasBeenSet = true; m_s3DataSource = value; }
-    inline void SetS3DataSource(S3DataSource&& value) { m_s3DataSourceHasBeenSet = true; m_s3DataSource = std::move(value); }
-    inline ModelDataSource& WithS3DataSource(const S3DataSource& value) { SetS3DataSource(value); return *this;}
-    inline ModelDataSource& WithS3DataSource(S3DataSource&& value) { SetS3DataSource(std::move(value)); return *this;}
+    template<typename S3DataSourceT = S3DataSource>
+    void SetS3DataSource(S3DataSourceT&& value) { m_s3DataSourceHasBeenSet = true; m_s3DataSource = std::forward<S3DataSourceT>(value); }
+    template<typename S3DataSourceT = S3DataSource>
+    ModelDataSource& WithS3DataSource(S3DataSourceT&& value) { SetS3DataSource(std::forward<S3DataSourceT>(value)); return *this;}
     ///@}
   private:
 

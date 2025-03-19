@@ -37,7 +37,7 @@ namespace Model
   class SegmentGroup
   {
   public:
-    AWS_PINPOINT_API SegmentGroup();
+    AWS_PINPOINT_API SegmentGroup() = default;
     AWS_PINPOINT_API SegmentGroup(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API SegmentGroup& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_PINPOINT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,14 +47,14 @@ namespace Model
     /**
      * <p>An array that defines the dimensions for the segment.</p>
      */
-    inline const Aws::Vector<SegmentDimensions>& GetDimensions() const{ return m_dimensions; }
+    inline const Aws::Vector<SegmentDimensions>& GetDimensions() const { return m_dimensions; }
     inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
-    inline void SetDimensions(const Aws::Vector<SegmentDimensions>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
-    inline void SetDimensions(Aws::Vector<SegmentDimensions>&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::move(value); }
-    inline SegmentGroup& WithDimensions(const Aws::Vector<SegmentDimensions>& value) { SetDimensions(value); return *this;}
-    inline SegmentGroup& WithDimensions(Aws::Vector<SegmentDimensions>&& value) { SetDimensions(std::move(value)); return *this;}
-    inline SegmentGroup& AddDimensions(const SegmentDimensions& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(value); return *this; }
-    inline SegmentGroup& AddDimensions(SegmentDimensions&& value) { m_dimensionsHasBeenSet = true; m_dimensions.push_back(std::move(value)); return *this; }
+    template<typename DimensionsT = Aws::Vector<SegmentDimensions>>
+    void SetDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions = std::forward<DimensionsT>(value); }
+    template<typename DimensionsT = Aws::Vector<SegmentDimensions>>
+    SegmentGroup& WithDimensions(DimensionsT&& value) { SetDimensions(std::forward<DimensionsT>(value)); return *this;}
+    template<typename DimensionsT = SegmentDimensions>
+    SegmentGroup& AddDimensions(DimensionsT&& value) { m_dimensionsHasBeenSet = true; m_dimensions.emplace_back(std::forward<DimensionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -68,14 +68,14 @@ namespace Model
      * that indicates the size of the imported segment without any filters applied to
      * it.</p>
      */
-    inline const Aws::Vector<SegmentReference>& GetSourceSegments() const{ return m_sourceSegments; }
+    inline const Aws::Vector<SegmentReference>& GetSourceSegments() const { return m_sourceSegments; }
     inline bool SourceSegmentsHasBeenSet() const { return m_sourceSegmentsHasBeenSet; }
-    inline void SetSourceSegments(const Aws::Vector<SegmentReference>& value) { m_sourceSegmentsHasBeenSet = true; m_sourceSegments = value; }
-    inline void SetSourceSegments(Aws::Vector<SegmentReference>&& value) { m_sourceSegmentsHasBeenSet = true; m_sourceSegments = std::move(value); }
-    inline SegmentGroup& WithSourceSegments(const Aws::Vector<SegmentReference>& value) { SetSourceSegments(value); return *this;}
-    inline SegmentGroup& WithSourceSegments(Aws::Vector<SegmentReference>&& value) { SetSourceSegments(std::move(value)); return *this;}
-    inline SegmentGroup& AddSourceSegments(const SegmentReference& value) { m_sourceSegmentsHasBeenSet = true; m_sourceSegments.push_back(value); return *this; }
-    inline SegmentGroup& AddSourceSegments(SegmentReference&& value) { m_sourceSegmentsHasBeenSet = true; m_sourceSegments.push_back(std::move(value)); return *this; }
+    template<typename SourceSegmentsT = Aws::Vector<SegmentReference>>
+    void SetSourceSegments(SourceSegmentsT&& value) { m_sourceSegmentsHasBeenSet = true; m_sourceSegments = std::forward<SourceSegmentsT>(value); }
+    template<typename SourceSegmentsT = Aws::Vector<SegmentReference>>
+    SegmentGroup& WithSourceSegments(SourceSegmentsT&& value) { SetSourceSegments(std::forward<SourceSegmentsT>(value)); return *this;}
+    template<typename SourceSegmentsT = SegmentReference>
+    SegmentGroup& AddSourceSegments(SourceSegmentsT&& value) { m_sourceSegmentsHasBeenSet = true; m_sourceSegments.emplace_back(std::forward<SourceSegmentsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -84,12 +84,10 @@ namespace Model
      * if you specify three base segments for the segment, whether the resulting
      * segment is based on all, any, or none of the base segments.</p>
      */
-    inline const SourceType& GetSourceType() const{ return m_sourceType; }
+    inline SourceType GetSourceType() const { return m_sourceType; }
     inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
-    inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
-    inline void SetSourceType(SourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
-    inline SegmentGroup& WithSourceType(const SourceType& value) { SetSourceType(value); return *this;}
-    inline SegmentGroup& WithSourceType(SourceType&& value) { SetSourceType(std::move(value)); return *this;}
+    inline void SetSourceType(SourceType value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+    inline SegmentGroup& WithSourceType(SourceType value) { SetSourceType(value); return *this;}
     ///@}
 
     ///@{
@@ -98,12 +96,10 @@ namespace Model
      * you specify three dimensions for the segment, whether the resulting segment
      * includes endpoints that match all, any, or none of the dimensions.</p>
      */
-    inline const Type& GetType() const{ return m_type; }
+    inline Type GetType() const { return m_type; }
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-    inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
-    inline void SetType(Type&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-    inline SegmentGroup& WithType(const Type& value) { SetType(value); return *this;}
-    inline SegmentGroup& WithType(Type&& value) { SetType(std::move(value)); return *this;}
+    inline void SetType(Type value) { m_typeHasBeenSet = true; m_type = value; }
+    inline SegmentGroup& WithType(Type value) { SetType(value); return *this;}
     ///@}
   private:
 
@@ -113,10 +109,10 @@ namespace Model
     Aws::Vector<SegmentReference> m_sourceSegments;
     bool m_sourceSegmentsHasBeenSet = false;
 
-    SourceType m_sourceType;
+    SourceType m_sourceType{SourceType::NOT_SET};
     bool m_sourceTypeHasBeenSet = false;
 
-    Type m_type;
+    Type m_type{Type::NOT_SET};
     bool m_typeHasBeenSet = false;
   };
 

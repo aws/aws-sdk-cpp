@@ -18,15 +18,7 @@ namespace ElasticsearchService
 namespace Model
 {
 
-EncryptionAtRestOptions::EncryptionAtRestOptions() : 
-    m_enabled(false),
-    m_enabledHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
-{
-}
-
 EncryptionAtRestOptions::EncryptionAtRestOptions(JsonView jsonValue)
-  : EncryptionAtRestOptions()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ EncryptionAtRestOptions& EncryptionAtRestOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Enabled"))
   {
     m_enabled = jsonValue.GetBool("Enabled");
-
     m_enabledHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
-
     m_kmsKeyIdHasBeenSet = true;
   }
-
   return *this;
 }
 

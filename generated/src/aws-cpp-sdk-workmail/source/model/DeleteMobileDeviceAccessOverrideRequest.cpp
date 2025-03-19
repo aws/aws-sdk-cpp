@@ -12,13 +12,6 @@ using namespace Aws::WorkMail::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteMobileDeviceAccessOverrideRequest::DeleteMobileDeviceAccessOverrideRequest() : 
-    m_organizationIdHasBeenSet(false),
-    m_userIdHasBeenSet(false),
-    m_deviceIdHasBeenSet(false)
-{
-}
-
 Aws::String DeleteMobileDeviceAccessOverrideRequest::SerializePayload() const
 {
   JsonValue payload;

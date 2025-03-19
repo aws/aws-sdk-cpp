@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-ModifyCertificatesResult::ModifyCertificatesResult()
-{
-}
-
 ModifyCertificatesResult::ModifyCertificatesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,12 +38,14 @@ ModifyCertificatesResult& ModifyCertificatesResult::operator =(const Aws::Amazon
     if(!certificateNode.IsNull())
     {
       m_certificate = certificateNode;
+      m_certificateHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::RDS::Model::ModifyCertificatesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -39,7 +39,7 @@ namespace Model
   class InstanceMetadataOptions
   {
   public:
-    AWS_IMAGEBUILDER_API InstanceMetadataOptions();
+    AWS_IMAGEBUILDER_API InstanceMetadataOptions() = default;
     AWS_IMAGEBUILDER_API InstanceMetadataOptions(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API InstanceMetadataOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_IMAGEBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -56,14 +56,12 @@ namespace Model
      * for the IAM role. Otherwise, version 1.0 credentials are returned.</p> </li>
      * </ul> <p>The default setting is <b>optional</b>.</p>
      */
-    inline const Aws::String& GetHttpTokens() const{ return m_httpTokens; }
+    inline const Aws::String& GetHttpTokens() const { return m_httpTokens; }
     inline bool HttpTokensHasBeenSet() const { return m_httpTokensHasBeenSet; }
-    inline void SetHttpTokens(const Aws::String& value) { m_httpTokensHasBeenSet = true; m_httpTokens = value; }
-    inline void SetHttpTokens(Aws::String&& value) { m_httpTokensHasBeenSet = true; m_httpTokens = std::move(value); }
-    inline void SetHttpTokens(const char* value) { m_httpTokensHasBeenSet = true; m_httpTokens.assign(value); }
-    inline InstanceMetadataOptions& WithHttpTokens(const Aws::String& value) { SetHttpTokens(value); return *this;}
-    inline InstanceMetadataOptions& WithHttpTokens(Aws::String&& value) { SetHttpTokens(std::move(value)); return *this;}
-    inline InstanceMetadataOptions& WithHttpTokens(const char* value) { SetHttpTokens(value); return *this;}
+    template<typename HttpTokensT = Aws::String>
+    void SetHttpTokens(HttpTokensT&& value) { m_httpTokensHasBeenSet = true; m_httpTokens = std::forward<HttpTokensT>(value); }
+    template<typename HttpTokensT = Aws::String>
+    InstanceMetadataOptions& WithHttpTokens(HttpTokensT&& value) { SetHttpTokens(std::forward<HttpTokensT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -72,7 +70,7 @@ namespace Model
      * reach its destination. The default is one hop. However, if HTTP tokens are
      * required, container image builds need a minimum of two hops.</p>
      */
-    inline int GetHttpPutResponseHopLimit() const{ return m_httpPutResponseHopLimit; }
+    inline int GetHttpPutResponseHopLimit() const { return m_httpPutResponseHopLimit; }
     inline bool HttpPutResponseHopLimitHasBeenSet() const { return m_httpPutResponseHopLimitHasBeenSet; }
     inline void SetHttpPutResponseHopLimit(int value) { m_httpPutResponseHopLimitHasBeenSet = true; m_httpPutResponseHopLimit = value; }
     inline InstanceMetadataOptions& WithHttpPutResponseHopLimit(int value) { SetHttpPutResponseHopLimit(value); return *this;}
@@ -82,7 +80,7 @@ namespace Model
     Aws::String m_httpTokens;
     bool m_httpTokensHasBeenSet = false;
 
-    int m_httpPutResponseHopLimit;
+    int m_httpPutResponseHopLimit{0};
     bool m_httpPutResponseHopLimitHasBeenSet = false;
   };
 

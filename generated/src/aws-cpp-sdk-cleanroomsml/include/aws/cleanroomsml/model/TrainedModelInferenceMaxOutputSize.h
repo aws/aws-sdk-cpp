@@ -32,7 +32,7 @@ namespace Model
   class TrainedModelInferenceMaxOutputSize
   {
   public:
-    AWS_CLEANROOMSML_API TrainedModelInferenceMaxOutputSize();
+    AWS_CLEANROOMSML_API TrainedModelInferenceMaxOutputSize() = default;
     AWS_CLEANROOMSML_API TrainedModelInferenceMaxOutputSize(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API TrainedModelInferenceMaxOutputSize& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CLEANROOMSML_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -42,29 +42,27 @@ namespace Model
     /**
      * <p>The measurement unit to use.</p>
      */
-    inline const TrainedModelInferenceMaxOutputSizeUnitType& GetUnit() const{ return m_unit; }
+    inline TrainedModelInferenceMaxOutputSizeUnitType GetUnit() const { return m_unit; }
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
-    inline void SetUnit(const TrainedModelInferenceMaxOutputSizeUnitType& value) { m_unitHasBeenSet = true; m_unit = value; }
-    inline void SetUnit(TrainedModelInferenceMaxOutputSizeUnitType&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
-    inline TrainedModelInferenceMaxOutputSize& WithUnit(const TrainedModelInferenceMaxOutputSizeUnitType& value) { SetUnit(value); return *this;}
-    inline TrainedModelInferenceMaxOutputSize& WithUnit(TrainedModelInferenceMaxOutputSizeUnitType&& value) { SetUnit(std::move(value)); return *this;}
+    inline void SetUnit(TrainedModelInferenceMaxOutputSizeUnitType value) { m_unitHasBeenSet = true; m_unit = value; }
+    inline TrainedModelInferenceMaxOutputSize& WithUnit(TrainedModelInferenceMaxOutputSizeUnitType value) { SetUnit(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The maximum output size value.</p>
      */
-    inline double GetValue() const{ return m_value; }
+    inline double GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
     inline TrainedModelInferenceMaxOutputSize& WithValue(double value) { SetValue(value); return *this;}
     ///@}
   private:
 
-    TrainedModelInferenceMaxOutputSizeUnitType m_unit;
+    TrainedModelInferenceMaxOutputSizeUnitType m_unit{TrainedModelInferenceMaxOutputSizeUnitType::NOT_SET};
     bool m_unitHasBeenSet = false;
 
-    double m_value;
+    double m_value{0.0};
     bool m_valueHasBeenSet = false;
   };
 

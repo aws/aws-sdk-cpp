@@ -15,16 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListCACertificatesRequest::ListCACertificatesRequest() : 
-    m_pageSize(0),
-    m_pageSizeHasBeenSet(false),
-    m_markerHasBeenSet(false),
-    m_ascendingOrder(false),
-    m_ascendingOrderHasBeenSet(false),
-    m_templateNameHasBeenSet(false)
-{
-}
-
 Aws::String ListCACertificatesRequest::SerializePayload() const
 {
   return {};

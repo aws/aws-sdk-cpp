@@ -28,7 +28,7 @@ namespace Model
   class UpdateCaseStatusResult
   {
   public:
-    AWS_SECURITYIR_API UpdateCaseStatusResult();
+    AWS_SECURITYIR_API UpdateCaseStatusResult() = default;
     AWS_SECURITYIR_API UpdateCaseStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SECURITYIR_API UpdateCaseStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,28 +38,26 @@ namespace Model
      * <p>Response element for UpdateCaseStatus showing the newly configured
      * status.</p>
      */
-    inline const SelfManagedCaseStatus& GetCaseStatus() const{ return m_caseStatus; }
-    inline void SetCaseStatus(const SelfManagedCaseStatus& value) { m_caseStatus = value; }
-    inline void SetCaseStatus(SelfManagedCaseStatus&& value) { m_caseStatus = std::move(value); }
-    inline UpdateCaseStatusResult& WithCaseStatus(const SelfManagedCaseStatus& value) { SetCaseStatus(value); return *this;}
-    inline UpdateCaseStatusResult& WithCaseStatus(SelfManagedCaseStatus&& value) { SetCaseStatus(std::move(value)); return *this;}
+    inline SelfManagedCaseStatus GetCaseStatus() const { return m_caseStatus; }
+    inline void SetCaseStatus(SelfManagedCaseStatus value) { m_caseStatusHasBeenSet = true; m_caseStatus = value; }
+    inline UpdateCaseStatusResult& WithCaseStatus(SelfManagedCaseStatus value) { SetCaseStatus(value); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateCaseStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateCaseStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateCaseStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateCaseStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    SelfManagedCaseStatus m_caseStatus;
+    SelfManagedCaseStatus m_caseStatus{SelfManagedCaseStatus::NOT_SET};
+    bool m_caseStatusHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

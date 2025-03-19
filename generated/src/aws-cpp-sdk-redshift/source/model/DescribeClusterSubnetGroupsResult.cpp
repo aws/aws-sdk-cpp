@@ -17,10 +17,6 @@ using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
-DescribeClusterSubnetGroupsResult::DescribeClusterSubnetGroupsResult()
-{
-}
-
 DescribeClusterSubnetGroupsResult::DescribeClusterSubnetGroupsResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
@@ -42,23 +38,27 @@ DescribeClusterSubnetGroupsResult& DescribeClusterSubnetGroupsResult::operator =
     if(!markerNode.IsNull())
     {
       m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
     }
     XmlNode clusterSubnetGroupsNode = resultNode.FirstChild("ClusterSubnetGroups");
     if(!clusterSubnetGroupsNode.IsNull())
     {
       XmlNode clusterSubnetGroupsMember = clusterSubnetGroupsNode.FirstChild("ClusterSubnetGroup");
+      m_clusterSubnetGroupsHasBeenSet = !clusterSubnetGroupsMember.IsNull();
       while(!clusterSubnetGroupsMember.IsNull())
       {
         m_clusterSubnetGroups.push_back(clusterSubnetGroupsMember);
         clusterSubnetGroupsMember = clusterSubnetGroupsMember.NextNode("ClusterSubnetGroup");
       }
 
+      m_clusterSubnetGroupsHasBeenSet = true;
     }
   }
 
   if (!rootNode.IsNull()) {
     XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
     m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
     AWS_LOGSTREAM_DEBUG("Aws::Redshift::Model::DescribeClusterSubnetGroupsResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
   return *this;

@@ -12,16 +12,6 @@ using namespace Aws::BackupSearch::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StartSearchJobRequest::StartSearchJobRequest() : 
-    m_tagsHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_encryptionKeyArnHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_searchScopeHasBeenSet(false),
-    m_itemFiltersHasBeenSet(false)
-{
-}
-
 Aws::String StartSearchJobRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -25,7 +25,7 @@ namespace Model
   class GetTestSuiteRequest : public AppTestRequest
   {
   public:
-    AWS_APPTEST_API GetTestSuiteRequest();
+    AWS_APPTEST_API GetTestSuiteRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -42,21 +42,19 @@ namespace Model
     /**
      * <p>The ID of the test suite.</p>
      */
-    inline const Aws::String& GetTestSuiteId() const{ return m_testSuiteId; }
+    inline const Aws::String& GetTestSuiteId() const { return m_testSuiteId; }
     inline bool TestSuiteIdHasBeenSet() const { return m_testSuiteIdHasBeenSet; }
-    inline void SetTestSuiteId(const Aws::String& value) { m_testSuiteIdHasBeenSet = true; m_testSuiteId = value; }
-    inline void SetTestSuiteId(Aws::String&& value) { m_testSuiteIdHasBeenSet = true; m_testSuiteId = std::move(value); }
-    inline void SetTestSuiteId(const char* value) { m_testSuiteIdHasBeenSet = true; m_testSuiteId.assign(value); }
-    inline GetTestSuiteRequest& WithTestSuiteId(const Aws::String& value) { SetTestSuiteId(value); return *this;}
-    inline GetTestSuiteRequest& WithTestSuiteId(Aws::String&& value) { SetTestSuiteId(std::move(value)); return *this;}
-    inline GetTestSuiteRequest& WithTestSuiteId(const char* value) { SetTestSuiteId(value); return *this;}
+    template<typename TestSuiteIdT = Aws::String>
+    void SetTestSuiteId(TestSuiteIdT&& value) { m_testSuiteIdHasBeenSet = true; m_testSuiteId = std::forward<TestSuiteIdT>(value); }
+    template<typename TestSuiteIdT = Aws::String>
+    GetTestSuiteRequest& WithTestSuiteId(TestSuiteIdT&& value) { SetTestSuiteId(std::forward<TestSuiteIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The version of the test suite.</p>
      */
-    inline int GetTestSuiteVersion() const{ return m_testSuiteVersion; }
+    inline int GetTestSuiteVersion() const { return m_testSuiteVersion; }
     inline bool TestSuiteVersionHasBeenSet() const { return m_testSuiteVersionHasBeenSet; }
     inline void SetTestSuiteVersion(int value) { m_testSuiteVersionHasBeenSet = true; m_testSuiteVersion = value; }
     inline GetTestSuiteRequest& WithTestSuiteVersion(int value) { SetTestSuiteVersion(value); return *this;}
@@ -66,7 +64,7 @@ namespace Model
     Aws::String m_testSuiteId;
     bool m_testSuiteIdHasBeenSet = false;
 
-    int m_testSuiteVersion;
+    int m_testSuiteVersion{0};
     bool m_testSuiteVersionHasBeenSet = false;
   };
 

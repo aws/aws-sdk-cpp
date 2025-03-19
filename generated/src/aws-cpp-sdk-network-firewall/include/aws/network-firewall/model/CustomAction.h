@@ -46,7 +46,7 @@ namespace Model
   class CustomAction
   {
   public:
-    AWS_NETWORKFIREWALL_API CustomAction();
+    AWS_NETWORKFIREWALL_API CustomAction() = default;
     AWS_NETWORKFIREWALL_API CustomAction(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API CustomAction& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -57,26 +57,24 @@ namespace Model
      * <p>The descriptive name of the custom action. You can't change the name of a
      * custom action after you create it.</p>
      */
-    inline const Aws::String& GetActionName() const{ return m_actionName; }
+    inline const Aws::String& GetActionName() const { return m_actionName; }
     inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
-    inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
-    inline void SetActionName(Aws::String&& value) { m_actionNameHasBeenSet = true; m_actionName = std::move(value); }
-    inline void SetActionName(const char* value) { m_actionNameHasBeenSet = true; m_actionName.assign(value); }
-    inline CustomAction& WithActionName(const Aws::String& value) { SetActionName(value); return *this;}
-    inline CustomAction& WithActionName(Aws::String&& value) { SetActionName(std::move(value)); return *this;}
-    inline CustomAction& WithActionName(const char* value) { SetActionName(value); return *this;}
+    template<typename ActionNameT = Aws::String>
+    void SetActionName(ActionNameT&& value) { m_actionNameHasBeenSet = true; m_actionName = std::forward<ActionNameT>(value); }
+    template<typename ActionNameT = Aws::String>
+    CustomAction& WithActionName(ActionNameT&& value) { SetActionName(std::forward<ActionNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The custom action associated with the action name.</p>
      */
-    inline const ActionDefinition& GetActionDefinition() const{ return m_actionDefinition; }
+    inline const ActionDefinition& GetActionDefinition() const { return m_actionDefinition; }
     inline bool ActionDefinitionHasBeenSet() const { return m_actionDefinitionHasBeenSet; }
-    inline void SetActionDefinition(const ActionDefinition& value) { m_actionDefinitionHasBeenSet = true; m_actionDefinition = value; }
-    inline void SetActionDefinition(ActionDefinition&& value) { m_actionDefinitionHasBeenSet = true; m_actionDefinition = std::move(value); }
-    inline CustomAction& WithActionDefinition(const ActionDefinition& value) { SetActionDefinition(value); return *this;}
-    inline CustomAction& WithActionDefinition(ActionDefinition&& value) { SetActionDefinition(std::move(value)); return *this;}
+    template<typename ActionDefinitionT = ActionDefinition>
+    void SetActionDefinition(ActionDefinitionT&& value) { m_actionDefinitionHasBeenSet = true; m_actionDefinition = std::forward<ActionDefinitionT>(value); }
+    template<typename ActionDefinitionT = ActionDefinition>
+    CustomAction& WithActionDefinition(ActionDefinitionT&& value) { SetActionDefinition(std::forward<ActionDefinitionT>(value)); return *this;}
     ///@}
   private:
 

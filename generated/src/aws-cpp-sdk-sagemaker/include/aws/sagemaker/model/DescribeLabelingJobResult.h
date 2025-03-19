@@ -38,7 +38,7 @@ namespace Model
   class DescribeLabelingJobResult
   {
   public:
-    AWS_SAGEMAKER_API DescribeLabelingJobResult();
+    AWS_SAGEMAKER_API DescribeLabelingJobResult() = default;
     AWS_SAGEMAKER_API DescribeLabelingJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_SAGEMAKER_API DescribeLabelingJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -47,11 +47,9 @@ namespace Model
     /**
      * <p>The processing status of the labeling job. </p>
      */
-    inline const LabelingJobStatus& GetLabelingJobStatus() const{ return m_labelingJobStatus; }
-    inline void SetLabelingJobStatus(const LabelingJobStatus& value) { m_labelingJobStatus = value; }
-    inline void SetLabelingJobStatus(LabelingJobStatus&& value) { m_labelingJobStatus = std::move(value); }
-    inline DescribeLabelingJobResult& WithLabelingJobStatus(const LabelingJobStatus& value) { SetLabelingJobStatus(value); return *this;}
-    inline DescribeLabelingJobResult& WithLabelingJobStatus(LabelingJobStatus&& value) { SetLabelingJobStatus(std::move(value)); return *this;}
+    inline LabelingJobStatus GetLabelingJobStatus() const { return m_labelingJobStatus; }
+    inline void SetLabelingJobStatus(LabelingJobStatus value) { m_labelingJobStatusHasBeenSet = true; m_labelingJobStatus = value; }
+    inline DescribeLabelingJobResult& WithLabelingJobStatus(LabelingJobStatus value) { SetLabelingJobStatus(value); return *this;}
     ///@}
 
     ///@{
@@ -60,98 +58,88 @@ namespace Model
      * number of objects labeled by machine, the number of objects than couldn't be
      * labeled, and the total number of objects labeled. </p>
      */
-    inline const LabelCounters& GetLabelCounters() const{ return m_labelCounters; }
-    inline void SetLabelCounters(const LabelCounters& value) { m_labelCounters = value; }
-    inline void SetLabelCounters(LabelCounters&& value) { m_labelCounters = std::move(value); }
-    inline DescribeLabelingJobResult& WithLabelCounters(const LabelCounters& value) { SetLabelCounters(value); return *this;}
-    inline DescribeLabelingJobResult& WithLabelCounters(LabelCounters&& value) { SetLabelCounters(std::move(value)); return *this;}
+    inline const LabelCounters& GetLabelCounters() const { return m_labelCounters; }
+    template<typename LabelCountersT = LabelCounters>
+    void SetLabelCounters(LabelCountersT&& value) { m_labelCountersHasBeenSet = true; m_labelCounters = std::forward<LabelCountersT>(value); }
+    template<typename LabelCountersT = LabelCounters>
+    DescribeLabelingJobResult& WithLabelCounters(LabelCountersT&& value) { SetLabelCounters(std::forward<LabelCountersT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>If the job failed, the reason that it failed. </p>
      */
-    inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
-    inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
-    inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
-    inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
-    inline DescribeLabelingJobResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
-    inline DescribeLabelingJobResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
-    inline DescribeLabelingJobResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
+    inline const Aws::String& GetFailureReason() const { return m_failureReason; }
+    template<typename FailureReasonT = Aws::String>
+    void SetFailureReason(FailureReasonT&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::forward<FailureReasonT>(value); }
+    template<typename FailureReasonT = Aws::String>
+    DescribeLabelingJobResult& WithFailureReason(FailureReasonT&& value) { SetFailureReason(std::forward<FailureReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the labeling job was created.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-    inline DescribeLabelingJobResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-    inline DescribeLabelingJobResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    void SetCreationTime(CreationTimeT&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::forward<CreationTimeT>(value); }
+    template<typename CreationTimeT = Aws::Utils::DateTime>
+    DescribeLabelingJobResult& WithCreationTime(CreationTimeT&& value) { SetCreationTime(std::forward<CreationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the labeling job was last updated.</p>
      */
-    inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
-    inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTime = value; }
-    inline void SetLastModifiedTime(Aws::Utils::DateTime&& value) { m_lastModifiedTime = std::move(value); }
-    inline DescribeLabelingJobResult& WithLastModifiedTime(const Aws::Utils::DateTime& value) { SetLastModifiedTime(value); return *this;}
-    inline DescribeLabelingJobResult& WithLastModifiedTime(Aws::Utils::DateTime&& value) { SetLastModifiedTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLastModifiedTime() const { return m_lastModifiedTime; }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    void SetLastModifiedTime(LastModifiedTimeT&& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = std::forward<LastModifiedTimeT>(value); }
+    template<typename LastModifiedTimeT = Aws::Utils::DateTime>
+    DescribeLabelingJobResult& WithLastModifiedTime(LastModifiedTimeT&& value) { SetLastModifiedTime(std::forward<LastModifiedTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>A unique identifier for work done as part of a labeling job.</p>
      */
-    inline const Aws::String& GetJobReferenceCode() const{ return m_jobReferenceCode; }
-    inline void SetJobReferenceCode(const Aws::String& value) { m_jobReferenceCode = value; }
-    inline void SetJobReferenceCode(Aws::String&& value) { m_jobReferenceCode = std::move(value); }
-    inline void SetJobReferenceCode(const char* value) { m_jobReferenceCode.assign(value); }
-    inline DescribeLabelingJobResult& WithJobReferenceCode(const Aws::String& value) { SetJobReferenceCode(value); return *this;}
-    inline DescribeLabelingJobResult& WithJobReferenceCode(Aws::String&& value) { SetJobReferenceCode(std::move(value)); return *this;}
-    inline DescribeLabelingJobResult& WithJobReferenceCode(const char* value) { SetJobReferenceCode(value); return *this;}
+    inline const Aws::String& GetJobReferenceCode() const { return m_jobReferenceCode; }
+    template<typename JobReferenceCodeT = Aws::String>
+    void SetJobReferenceCode(JobReferenceCodeT&& value) { m_jobReferenceCodeHasBeenSet = true; m_jobReferenceCode = std::forward<JobReferenceCodeT>(value); }
+    template<typename JobReferenceCodeT = Aws::String>
+    DescribeLabelingJobResult& WithJobReferenceCode(JobReferenceCodeT&& value) { SetJobReferenceCode(std::forward<JobReferenceCodeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The name assigned to the labeling job when it was created.</p>
      */
-    inline const Aws::String& GetLabelingJobName() const{ return m_labelingJobName; }
-    inline void SetLabelingJobName(const Aws::String& value) { m_labelingJobName = value; }
-    inline void SetLabelingJobName(Aws::String&& value) { m_labelingJobName = std::move(value); }
-    inline void SetLabelingJobName(const char* value) { m_labelingJobName.assign(value); }
-    inline DescribeLabelingJobResult& WithLabelingJobName(const Aws::String& value) { SetLabelingJobName(value); return *this;}
-    inline DescribeLabelingJobResult& WithLabelingJobName(Aws::String&& value) { SetLabelingJobName(std::move(value)); return *this;}
-    inline DescribeLabelingJobResult& WithLabelingJobName(const char* value) { SetLabelingJobName(value); return *this;}
+    inline const Aws::String& GetLabelingJobName() const { return m_labelingJobName; }
+    template<typename LabelingJobNameT = Aws::String>
+    void SetLabelingJobName(LabelingJobNameT&& value) { m_labelingJobNameHasBeenSet = true; m_labelingJobName = std::forward<LabelingJobNameT>(value); }
+    template<typename LabelingJobNameT = Aws::String>
+    DescribeLabelingJobResult& WithLabelingJobName(LabelingJobNameT&& value) { SetLabelingJobName(std::forward<LabelingJobNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the labeling job.</p>
      */
-    inline const Aws::String& GetLabelingJobArn() const{ return m_labelingJobArn; }
-    inline void SetLabelingJobArn(const Aws::String& value) { m_labelingJobArn = value; }
-    inline void SetLabelingJobArn(Aws::String&& value) { m_labelingJobArn = std::move(value); }
-    inline void SetLabelingJobArn(const char* value) { m_labelingJobArn.assign(value); }
-    inline DescribeLabelingJobResult& WithLabelingJobArn(const Aws::String& value) { SetLabelingJobArn(value); return *this;}
-    inline DescribeLabelingJobResult& WithLabelingJobArn(Aws::String&& value) { SetLabelingJobArn(std::move(value)); return *this;}
-    inline DescribeLabelingJobResult& WithLabelingJobArn(const char* value) { SetLabelingJobArn(value); return *this;}
+    inline const Aws::String& GetLabelingJobArn() const { return m_labelingJobArn; }
+    template<typename LabelingJobArnT = Aws::String>
+    void SetLabelingJobArn(LabelingJobArnT&& value) { m_labelingJobArnHasBeenSet = true; m_labelingJobArn = std::forward<LabelingJobArnT>(value); }
+    template<typename LabelingJobArnT = Aws::String>
+    DescribeLabelingJobResult& WithLabelingJobArn(LabelingJobArnT&& value) { SetLabelingJobArn(std::forward<LabelingJobArnT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The attribute used as the label in the output manifest file.</p>
      */
-    inline const Aws::String& GetLabelAttributeName() const{ return m_labelAttributeName; }
-    inline void SetLabelAttributeName(const Aws::String& value) { m_labelAttributeName = value; }
-    inline void SetLabelAttributeName(Aws::String&& value) { m_labelAttributeName = std::move(value); }
-    inline void SetLabelAttributeName(const char* value) { m_labelAttributeName.assign(value); }
-    inline DescribeLabelingJobResult& WithLabelAttributeName(const Aws::String& value) { SetLabelAttributeName(value); return *this;}
-    inline DescribeLabelingJobResult& WithLabelAttributeName(Aws::String&& value) { SetLabelAttributeName(std::move(value)); return *this;}
-    inline DescribeLabelingJobResult& WithLabelAttributeName(const char* value) { SetLabelAttributeName(value); return *this;}
+    inline const Aws::String& GetLabelAttributeName() const { return m_labelAttributeName; }
+    template<typename LabelAttributeNameT = Aws::String>
+    void SetLabelAttributeName(LabelAttributeNameT&& value) { m_labelAttributeNameHasBeenSet = true; m_labelAttributeName = std::forward<LabelAttributeNameT>(value); }
+    template<typename LabelAttributeNameT = Aws::String>
+    DescribeLabelingJobResult& WithLabelAttributeName(LabelAttributeNameT&& value) { SetLabelAttributeName(std::forward<LabelAttributeNameT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -160,11 +148,11 @@ namespace Model
      * location of the data objects and the location of the manifest file that
      * describes the data objects.</p>
      */
-    inline const LabelingJobInputConfig& GetInputConfig() const{ return m_inputConfig; }
-    inline void SetInputConfig(const LabelingJobInputConfig& value) { m_inputConfig = value; }
-    inline void SetInputConfig(LabelingJobInputConfig&& value) { m_inputConfig = std::move(value); }
-    inline DescribeLabelingJobResult& WithInputConfig(const LabelingJobInputConfig& value) { SetInputConfig(value); return *this;}
-    inline DescribeLabelingJobResult& WithInputConfig(LabelingJobInputConfig&& value) { SetInputConfig(std::move(value)); return *this;}
+    inline const LabelingJobInputConfig& GetInputConfig() const { return m_inputConfig; }
+    template<typename InputConfigT = LabelingJobInputConfig>
+    void SetInputConfig(InputConfigT&& value) { m_inputConfigHasBeenSet = true; m_inputConfig = std::forward<InputConfigT>(value); }
+    template<typename InputConfigT = LabelingJobInputConfig>
+    DescribeLabelingJobResult& WithInputConfig(InputConfigT&& value) { SetInputConfig(std::forward<InputConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -173,11 +161,11 @@ namespace Model
      * Management Service key ID for the key used to encrypt the output data, if
      * any.</p>
      */
-    inline const LabelingJobOutputConfig& GetOutputConfig() const{ return m_outputConfig; }
-    inline void SetOutputConfig(const LabelingJobOutputConfig& value) { m_outputConfig = value; }
-    inline void SetOutputConfig(LabelingJobOutputConfig&& value) { m_outputConfig = std::move(value); }
-    inline DescribeLabelingJobResult& WithOutputConfig(const LabelingJobOutputConfig& value) { SetOutputConfig(value); return *this;}
-    inline DescribeLabelingJobResult& WithOutputConfig(LabelingJobOutputConfig&& value) { SetOutputConfig(std::move(value)); return *this;}
+    inline const LabelingJobOutputConfig& GetOutputConfig() const { return m_outputConfig; }
+    template<typename OutputConfigT = LabelingJobOutputConfig>
+    void SetOutputConfig(OutputConfigT&& value) { m_outputConfigHasBeenSet = true; m_outputConfig = std::forward<OutputConfigT>(value); }
+    template<typename OutputConfigT = LabelingJobOutputConfig>
+    DescribeLabelingJobResult& WithOutputConfig(OutputConfigT&& value) { SetOutputConfig(std::forward<OutputConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -185,13 +173,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that SageMaker assumes to perform tasks on
      * your behalf during data labeling.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-    inline DescribeLabelingJobResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-    inline DescribeLabelingJobResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-    inline DescribeLabelingJobResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline const Aws::String& GetRoleArn() const { return m_roleArn; }
+    template<typename RoleArnT = Aws::String>
+    void SetRoleArn(RoleArnT&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::forward<RoleArnT>(value); }
+    template<typename RoleArnT = Aws::String>
+    DescribeLabelingJobResult& WithRoleArn(RoleArnT&& value) { SetRoleArn(std::forward<RoleArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -209,13 +195,11 @@ namespace Model
      * n</i>"</code> </p> <p> <code> }</code> </p> <p> <code> ]</code> </p> <p>
      * <code>}</code> </p>
      */
-    inline const Aws::String& GetLabelCategoryConfigS3Uri() const{ return m_labelCategoryConfigS3Uri; }
-    inline void SetLabelCategoryConfigS3Uri(const Aws::String& value) { m_labelCategoryConfigS3Uri = value; }
-    inline void SetLabelCategoryConfigS3Uri(Aws::String&& value) { m_labelCategoryConfigS3Uri = std::move(value); }
-    inline void SetLabelCategoryConfigS3Uri(const char* value) { m_labelCategoryConfigS3Uri.assign(value); }
-    inline DescribeLabelingJobResult& WithLabelCategoryConfigS3Uri(const Aws::String& value) { SetLabelCategoryConfigS3Uri(value); return *this;}
-    inline DescribeLabelingJobResult& WithLabelCategoryConfigS3Uri(Aws::String&& value) { SetLabelCategoryConfigS3Uri(std::move(value)); return *this;}
-    inline DescribeLabelingJobResult& WithLabelCategoryConfigS3Uri(const char* value) { SetLabelCategoryConfigS3Uri(value); return *this;}
+    inline const Aws::String& GetLabelCategoryConfigS3Uri() const { return m_labelCategoryConfigS3Uri; }
+    template<typename LabelCategoryConfigS3UriT = Aws::String>
+    void SetLabelCategoryConfigS3Uri(LabelCategoryConfigS3UriT&& value) { m_labelCategoryConfigS3UriHasBeenSet = true; m_labelCategoryConfigS3Uri = std::forward<LabelCategoryConfigS3UriT>(value); }
+    template<typename LabelCategoryConfigS3UriT = Aws::String>
+    DescribeLabelingJobResult& WithLabelCategoryConfigS3Uri(LabelCategoryConfigS3UriT&& value) { SetLabelCategoryConfigS3Uri(std::forward<LabelCategoryConfigS3UriT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -223,22 +207,22 @@ namespace Model
      * <p>A set of conditions for stopping a labeling job. If any of the conditions are
      * met, the job is automatically stopped.</p>
      */
-    inline const LabelingJobStoppingConditions& GetStoppingConditions() const{ return m_stoppingConditions; }
-    inline void SetStoppingConditions(const LabelingJobStoppingConditions& value) { m_stoppingConditions = value; }
-    inline void SetStoppingConditions(LabelingJobStoppingConditions&& value) { m_stoppingConditions = std::move(value); }
-    inline DescribeLabelingJobResult& WithStoppingConditions(const LabelingJobStoppingConditions& value) { SetStoppingConditions(value); return *this;}
-    inline DescribeLabelingJobResult& WithStoppingConditions(LabelingJobStoppingConditions&& value) { SetStoppingConditions(std::move(value)); return *this;}
+    inline const LabelingJobStoppingConditions& GetStoppingConditions() const { return m_stoppingConditions; }
+    template<typename StoppingConditionsT = LabelingJobStoppingConditions>
+    void SetStoppingConditions(StoppingConditionsT&& value) { m_stoppingConditionsHasBeenSet = true; m_stoppingConditions = std::forward<StoppingConditionsT>(value); }
+    template<typename StoppingConditionsT = LabelingJobStoppingConditions>
+    DescribeLabelingJobResult& WithStoppingConditions(StoppingConditionsT&& value) { SetStoppingConditions(std::forward<StoppingConditionsT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Configuration information for automated data labeling.</p>
      */
-    inline const LabelingJobAlgorithmsConfig& GetLabelingJobAlgorithmsConfig() const{ return m_labelingJobAlgorithmsConfig; }
-    inline void SetLabelingJobAlgorithmsConfig(const LabelingJobAlgorithmsConfig& value) { m_labelingJobAlgorithmsConfig = value; }
-    inline void SetLabelingJobAlgorithmsConfig(LabelingJobAlgorithmsConfig&& value) { m_labelingJobAlgorithmsConfig = std::move(value); }
-    inline DescribeLabelingJobResult& WithLabelingJobAlgorithmsConfig(const LabelingJobAlgorithmsConfig& value) { SetLabelingJobAlgorithmsConfig(value); return *this;}
-    inline DescribeLabelingJobResult& WithLabelingJobAlgorithmsConfig(LabelingJobAlgorithmsConfig&& value) { SetLabelingJobAlgorithmsConfig(std::move(value)); return *this;}
+    inline const LabelingJobAlgorithmsConfig& GetLabelingJobAlgorithmsConfig() const { return m_labelingJobAlgorithmsConfig; }
+    template<typename LabelingJobAlgorithmsConfigT = LabelingJobAlgorithmsConfig>
+    void SetLabelingJobAlgorithmsConfig(LabelingJobAlgorithmsConfigT&& value) { m_labelingJobAlgorithmsConfigHasBeenSet = true; m_labelingJobAlgorithmsConfig = std::forward<LabelingJobAlgorithmsConfigT>(value); }
+    template<typename LabelingJobAlgorithmsConfigT = LabelingJobAlgorithmsConfig>
+    DescribeLabelingJobResult& WithLabelingJobAlgorithmsConfig(LabelingJobAlgorithmsConfigT&& value) { SetLabelingJobAlgorithmsConfig(std::forward<LabelingJobAlgorithmsConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -246,11 +230,11 @@ namespace Model
      * <p>Configuration information required for human workers to complete a labeling
      * task.</p>
      */
-    inline const HumanTaskConfig& GetHumanTaskConfig() const{ return m_humanTaskConfig; }
-    inline void SetHumanTaskConfig(const HumanTaskConfig& value) { m_humanTaskConfig = value; }
-    inline void SetHumanTaskConfig(HumanTaskConfig&& value) { m_humanTaskConfig = std::move(value); }
-    inline DescribeLabelingJobResult& WithHumanTaskConfig(const HumanTaskConfig& value) { SetHumanTaskConfig(value); return *this;}
-    inline DescribeLabelingJobResult& WithHumanTaskConfig(HumanTaskConfig&& value) { SetHumanTaskConfig(std::move(value)); return *this;}
+    inline const HumanTaskConfig& GetHumanTaskConfig() const { return m_humanTaskConfig; }
+    template<typename HumanTaskConfigT = HumanTaskConfig>
+    void SetHumanTaskConfig(HumanTaskConfigT&& value) { m_humanTaskConfigHasBeenSet = true; m_humanTaskConfig = std::forward<HumanTaskConfigT>(value); }
+    template<typename HumanTaskConfigT = HumanTaskConfig>
+    DescribeLabelingJobResult& WithHumanTaskConfig(HumanTaskConfigT&& value) { SetHumanTaskConfig(std::forward<HumanTaskConfigT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -261,75 +245,92 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
      * Amazon Web Services Resources</a>.</p>
      */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
-    inline DescribeLabelingJobResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-    inline DescribeLabelingJobResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-    inline DescribeLabelingJobResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
-    inline DescribeLabelingJobResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+    template<typename TagsT = Aws::Vector<Tag>>
+    void SetTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags = std::forward<TagsT>(value); }
+    template<typename TagsT = Aws::Vector<Tag>>
+    DescribeLabelingJobResult& WithTags(TagsT&& value) { SetTags(std::forward<TagsT>(value)); return *this;}
+    template<typename TagsT = Tag>
+    DescribeLabelingJobResult& AddTags(TagsT&& value) { m_tagsHasBeenSet = true; m_tags.emplace_back(std::forward<TagsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The location of the output produced by the labeling job.</p>
      */
-    inline const LabelingJobOutput& GetLabelingJobOutput() const{ return m_labelingJobOutput; }
-    inline void SetLabelingJobOutput(const LabelingJobOutput& value) { m_labelingJobOutput = value; }
-    inline void SetLabelingJobOutput(LabelingJobOutput&& value) { m_labelingJobOutput = std::move(value); }
-    inline DescribeLabelingJobResult& WithLabelingJobOutput(const LabelingJobOutput& value) { SetLabelingJobOutput(value); return *this;}
-    inline DescribeLabelingJobResult& WithLabelingJobOutput(LabelingJobOutput&& value) { SetLabelingJobOutput(std::move(value)); return *this;}
+    inline const LabelingJobOutput& GetLabelingJobOutput() const { return m_labelingJobOutput; }
+    template<typename LabelingJobOutputT = LabelingJobOutput>
+    void SetLabelingJobOutput(LabelingJobOutputT&& value) { m_labelingJobOutputHasBeenSet = true; m_labelingJobOutput = std::forward<LabelingJobOutputT>(value); }
+    template<typename LabelingJobOutputT = LabelingJobOutput>
+    DescribeLabelingJobResult& WithLabelingJobOutput(LabelingJobOutputT&& value) { SetLabelingJobOutput(std::forward<LabelingJobOutputT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeLabelingJobResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeLabelingJobResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeLabelingJobResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeLabelingJobResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    LabelingJobStatus m_labelingJobStatus;
+    LabelingJobStatus m_labelingJobStatus{LabelingJobStatus::NOT_SET};
+    bool m_labelingJobStatusHasBeenSet = false;
 
     LabelCounters m_labelCounters;
+    bool m_labelCountersHasBeenSet = false;
 
     Aws::String m_failureReason;
+    bool m_failureReasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
+    Aws::Utils::DateTime m_creationTime{};
+    bool m_creationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_lastModifiedTime;
+    Aws::Utils::DateTime m_lastModifiedTime{};
+    bool m_lastModifiedTimeHasBeenSet = false;
 
     Aws::String m_jobReferenceCode;
+    bool m_jobReferenceCodeHasBeenSet = false;
 
     Aws::String m_labelingJobName;
+    bool m_labelingJobNameHasBeenSet = false;
 
     Aws::String m_labelingJobArn;
+    bool m_labelingJobArnHasBeenSet = false;
 
     Aws::String m_labelAttributeName;
+    bool m_labelAttributeNameHasBeenSet = false;
 
     LabelingJobInputConfig m_inputConfig;
+    bool m_inputConfigHasBeenSet = false;
 
     LabelingJobOutputConfig m_outputConfig;
+    bool m_outputConfigHasBeenSet = false;
 
     Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::String m_labelCategoryConfigS3Uri;
+    bool m_labelCategoryConfigS3UriHasBeenSet = false;
 
     LabelingJobStoppingConditions m_stoppingConditions;
+    bool m_stoppingConditionsHasBeenSet = false;
 
     LabelingJobAlgorithmsConfig m_labelingJobAlgorithmsConfig;
+    bool m_labelingJobAlgorithmsConfigHasBeenSet = false;
 
     HumanTaskConfig m_humanTaskConfig;
+    bool m_humanTaskConfigHasBeenSet = false;
 
     Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
 
     LabelingJobOutput m_labelingJobOutput;
+    bool m_labelingJobOutputHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

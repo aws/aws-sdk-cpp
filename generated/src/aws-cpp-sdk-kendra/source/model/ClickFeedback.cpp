@@ -18,14 +18,7 @@ namespace kendra
 namespace Model
 {
 
-ClickFeedback::ClickFeedback() : 
-    m_resultIdHasBeenSet(false),
-    m_clickTimeHasBeenSet(false)
-{
-}
-
 ClickFeedback::ClickFeedback(JsonView jsonValue)
-  : ClickFeedback()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ ClickFeedback& ClickFeedback::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ResultId"))
   {
     m_resultId = jsonValue.GetString("ResultId");
-
     m_resultIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ClickTime"))
   {
     m_clickTime = jsonValue.GetDouble("ClickTime");
-
     m_clickTimeHasBeenSet = true;
   }
-
   return *this;
 }
 

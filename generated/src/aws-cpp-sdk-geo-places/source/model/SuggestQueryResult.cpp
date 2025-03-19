@@ -18,15 +18,7 @@ namespace GeoPlaces
 namespace Model
 {
 
-SuggestQueryResult::SuggestQueryResult() : 
-    m_queryIdHasBeenSet(false),
-    m_queryType(QueryType::NOT_SET),
-    m_queryTypeHasBeenSet(false)
-{
-}
-
 SuggestQueryResult::SuggestQueryResult(JsonView jsonValue)
-  : SuggestQueryResult()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ SuggestQueryResult& SuggestQueryResult::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("QueryId"))
   {
     m_queryId = jsonValue.GetString("QueryId");
-
     m_queryIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryType"))
   {
     m_queryType = QueryTypeMapper::GetQueryTypeForName(jsonValue.GetString("QueryType"));
-
     m_queryTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

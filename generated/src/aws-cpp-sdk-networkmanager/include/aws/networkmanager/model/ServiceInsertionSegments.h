@@ -33,7 +33,7 @@ namespace Model
   class ServiceInsertionSegments
   {
   public:
-    AWS_NETWORKMANAGER_API ServiceInsertionSegments();
+    AWS_NETWORKMANAGER_API ServiceInsertionSegments() = default;
     AWS_NETWORKMANAGER_API ServiceInsertionSegments(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API ServiceInsertionSegments& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKMANAGER_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,30 +43,28 @@ namespace Model
     /**
      * <p>The list of segments associated with the <code>send-via</code> action.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSendVia() const{ return m_sendVia; }
+    inline const Aws::Vector<Aws::String>& GetSendVia() const { return m_sendVia; }
     inline bool SendViaHasBeenSet() const { return m_sendViaHasBeenSet; }
-    inline void SetSendVia(const Aws::Vector<Aws::String>& value) { m_sendViaHasBeenSet = true; m_sendVia = value; }
-    inline void SetSendVia(Aws::Vector<Aws::String>&& value) { m_sendViaHasBeenSet = true; m_sendVia = std::move(value); }
-    inline ServiceInsertionSegments& WithSendVia(const Aws::Vector<Aws::String>& value) { SetSendVia(value); return *this;}
-    inline ServiceInsertionSegments& WithSendVia(Aws::Vector<Aws::String>&& value) { SetSendVia(std::move(value)); return *this;}
-    inline ServiceInsertionSegments& AddSendVia(const Aws::String& value) { m_sendViaHasBeenSet = true; m_sendVia.push_back(value); return *this; }
-    inline ServiceInsertionSegments& AddSendVia(Aws::String&& value) { m_sendViaHasBeenSet = true; m_sendVia.push_back(std::move(value)); return *this; }
-    inline ServiceInsertionSegments& AddSendVia(const char* value) { m_sendViaHasBeenSet = true; m_sendVia.push_back(value); return *this; }
+    template<typename SendViaT = Aws::Vector<Aws::String>>
+    void SetSendVia(SendViaT&& value) { m_sendViaHasBeenSet = true; m_sendVia = std::forward<SendViaT>(value); }
+    template<typename SendViaT = Aws::Vector<Aws::String>>
+    ServiceInsertionSegments& WithSendVia(SendViaT&& value) { SetSendVia(std::forward<SendViaT>(value)); return *this;}
+    template<typename SendViaT = Aws::String>
+    ServiceInsertionSegments& AddSendVia(SendViaT&& value) { m_sendViaHasBeenSet = true; m_sendVia.emplace_back(std::forward<SendViaT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p>The list of segments associated with the <code>send-to</code> action.</p>
      */
-    inline const Aws::Vector<Aws::String>& GetSendTo() const{ return m_sendTo; }
+    inline const Aws::Vector<Aws::String>& GetSendTo() const { return m_sendTo; }
     inline bool SendToHasBeenSet() const { return m_sendToHasBeenSet; }
-    inline void SetSendTo(const Aws::Vector<Aws::String>& value) { m_sendToHasBeenSet = true; m_sendTo = value; }
-    inline void SetSendTo(Aws::Vector<Aws::String>&& value) { m_sendToHasBeenSet = true; m_sendTo = std::move(value); }
-    inline ServiceInsertionSegments& WithSendTo(const Aws::Vector<Aws::String>& value) { SetSendTo(value); return *this;}
-    inline ServiceInsertionSegments& WithSendTo(Aws::Vector<Aws::String>&& value) { SetSendTo(std::move(value)); return *this;}
-    inline ServiceInsertionSegments& AddSendTo(const Aws::String& value) { m_sendToHasBeenSet = true; m_sendTo.push_back(value); return *this; }
-    inline ServiceInsertionSegments& AddSendTo(Aws::String&& value) { m_sendToHasBeenSet = true; m_sendTo.push_back(std::move(value)); return *this; }
-    inline ServiceInsertionSegments& AddSendTo(const char* value) { m_sendToHasBeenSet = true; m_sendTo.push_back(value); return *this; }
+    template<typename SendToT = Aws::Vector<Aws::String>>
+    void SetSendTo(SendToT&& value) { m_sendToHasBeenSet = true; m_sendTo = std::forward<SendToT>(value); }
+    template<typename SendToT = Aws::Vector<Aws::String>>
+    ServiceInsertionSegments& WithSendTo(SendToT&& value) { SetSendTo(std::forward<SendToT>(value)); return *this;}
+    template<typename SendToT = Aws::String>
+    ServiceInsertionSegments& AddSendTo(SendToT&& value) { m_sendToHasBeenSet = true; m_sendTo.emplace_back(std::forward<SendToT>(value)); return *this; }
     ///@}
   private:
 

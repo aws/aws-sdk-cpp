@@ -18,16 +18,7 @@ namespace MediaLive
 namespace Model
 {
 
-NodeInterfaceMapping::NodeInterfaceMapping() : 
-    m_logicalInterfaceNameHasBeenSet(false),
-    m_networkInterfaceMode(NetworkInterfaceMode::NOT_SET),
-    m_networkInterfaceModeHasBeenSet(false),
-    m_physicalInterfaceNameHasBeenSet(false)
-{
-}
-
 NodeInterfaceMapping::NodeInterfaceMapping(JsonView jsonValue)
-  : NodeInterfaceMapping()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ NodeInterfaceMapping& NodeInterfaceMapping::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("logicalInterfaceName"))
   {
     m_logicalInterfaceName = jsonValue.GetString("logicalInterfaceName");
-
     m_logicalInterfaceNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("networkInterfaceMode"))
   {
     m_networkInterfaceMode = NetworkInterfaceModeMapper::GetNetworkInterfaceModeForName(jsonValue.GetString("networkInterfaceMode"));
-
     m_networkInterfaceModeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("physicalInterfaceName"))
   {
     m_physicalInterfaceName = jsonValue.GetString("physicalInterfaceName");
-
     m_physicalInterfaceNameHasBeenSet = true;
   }
-
   return *this;
 }
 

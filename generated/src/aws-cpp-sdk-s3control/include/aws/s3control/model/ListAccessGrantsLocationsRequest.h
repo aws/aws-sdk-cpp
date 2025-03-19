@@ -25,7 +25,7 @@ namespace Model
   class ListAccessGrantsLocationsRequest : public S3ControlRequest
   {
   public:
-    AWS_S3CONTROL_API ListAccessGrantsLocationsRequest();
+    AWS_S3CONTROL_API ListAccessGrantsLocationsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -50,14 +50,12 @@ namespace Model
     /**
      * <p>The Amazon Web Services account ID of the S3 Access Grants instance.</p>
      */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
+    inline const Aws::String& GetAccountId() const { return m_accountId; }
     inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-    inline ListAccessGrantsLocationsRequest& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-    inline ListAccessGrantsLocationsRequest& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-    inline ListAccessGrantsLocationsRequest& WithAccountId(const char* value) { SetAccountId(value); return *this;}
+    template<typename AccountIdT = Aws::String>
+    void SetAccountId(AccountIdT&& value) { m_accountIdHasBeenSet = true; m_accountId = std::forward<AccountIdT>(value); }
+    template<typename AccountIdT = Aws::String>
+    ListAccessGrantsLocationsRequest& WithAccountId(AccountIdT&& value) { SetAccountId(std::forward<AccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -66,14 +64,12 @@ namespace Model
      * a subsequent <code>List Access Grants Locations</code> request in order to
      * retrieve the next page of results.</p>
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
-    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
-    inline ListAccessGrantsLocationsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline ListAccessGrantsLocationsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline ListAccessGrantsLocationsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    ListAccessGrantsLocationsRequest& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -83,7 +79,7 @@ namespace Model
      * token <code>NextToken</code>, make another call using the <code>NextToken</code>
      * to determine if there are more results.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline int GetMaxResults() const { return m_maxResults; }
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
     inline ListAccessGrantsLocationsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -100,14 +96,12 @@ namespace Model
      * the <code>engineering/</code> prefix or object key names that start with the
      * <code>marketing/campaigns/</code> prefix.</p>
      */
-    inline const Aws::String& GetLocationScope() const{ return m_locationScope; }
+    inline const Aws::String& GetLocationScope() const { return m_locationScope; }
     inline bool LocationScopeHasBeenSet() const { return m_locationScopeHasBeenSet; }
-    inline void SetLocationScope(const Aws::String& value) { m_locationScopeHasBeenSet = true; m_locationScope = value; }
-    inline void SetLocationScope(Aws::String&& value) { m_locationScopeHasBeenSet = true; m_locationScope = std::move(value); }
-    inline void SetLocationScope(const char* value) { m_locationScopeHasBeenSet = true; m_locationScope.assign(value); }
-    inline ListAccessGrantsLocationsRequest& WithLocationScope(const Aws::String& value) { SetLocationScope(value); return *this;}
-    inline ListAccessGrantsLocationsRequest& WithLocationScope(Aws::String&& value) { SetLocationScope(std::move(value)); return *this;}
-    inline ListAccessGrantsLocationsRequest& WithLocationScope(const char* value) { SetLocationScope(value); return *this;}
+    template<typename LocationScopeT = Aws::String>
+    void SetLocationScope(LocationScopeT&& value) { m_locationScopeHasBeenSet = true; m_locationScope = std::forward<LocationScopeT>(value); }
+    template<typename LocationScopeT = Aws::String>
+    ListAccessGrantsLocationsRequest& WithLocationScope(LocationScopeT&& value) { SetLocationScope(std::forward<LocationScopeT>(value)); return *this;}
     ///@}
   private:
 
@@ -117,7 +111,7 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    int m_maxResults;
+    int m_maxResults{0};
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_locationScope;

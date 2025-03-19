@@ -28,7 +28,7 @@ namespace Model
   class GetRecoveryPointRestoreMetadataResult
   {
   public:
-    AWS_BACKUP_API GetRecoveryPointRestoreMetadataResult();
+    AWS_BACKUP_API GetRecoveryPointRestoreMetadataResult() = default;
     AWS_BACKUP_API GetRecoveryPointRestoreMetadataResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BACKUP_API GetRecoveryPointRestoreMetadataResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,13 +38,11 @@ namespace Model
      * <p>An ARN that uniquely identifies a backup vault; for example,
      * <code>arn:aws:backup:us-east-1:123456789012:backup-vault:aBackupVault</code>.</p>
      */
-    inline const Aws::String& GetBackupVaultArn() const{ return m_backupVaultArn; }
-    inline void SetBackupVaultArn(const Aws::String& value) { m_backupVaultArn = value; }
-    inline void SetBackupVaultArn(Aws::String&& value) { m_backupVaultArn = std::move(value); }
-    inline void SetBackupVaultArn(const char* value) { m_backupVaultArn.assign(value); }
-    inline GetRecoveryPointRestoreMetadataResult& WithBackupVaultArn(const Aws::String& value) { SetBackupVaultArn(value); return *this;}
-    inline GetRecoveryPointRestoreMetadataResult& WithBackupVaultArn(Aws::String&& value) { SetBackupVaultArn(std::move(value)); return *this;}
-    inline GetRecoveryPointRestoreMetadataResult& WithBackupVaultArn(const char* value) { SetBackupVaultArn(value); return *this;}
+    inline const Aws::String& GetBackupVaultArn() const { return m_backupVaultArn; }
+    template<typename BackupVaultArnT = Aws::String>
+    void SetBackupVaultArn(BackupVaultArnT&& value) { m_backupVaultArnHasBeenSet = true; m_backupVaultArn = std::forward<BackupVaultArnT>(value); }
+    template<typename BackupVaultArnT = Aws::String>
+    GetRecoveryPointRestoreMetadataResult& WithBackupVaultArn(BackupVaultArnT&& value) { SetBackupVaultArn(std::forward<BackupVaultArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -52,13 +50,11 @@ namespace Model
      * <p>An ARN that uniquely identifies a recovery point; for example,
      * <code>arn:aws:backup:us-east-1:123456789012:recovery-point:1EB3B5E7-9EB0-435A-A80B-108B488B0D45</code>.</p>
      */
-    inline const Aws::String& GetRecoveryPointArn() const{ return m_recoveryPointArn; }
-    inline void SetRecoveryPointArn(const Aws::String& value) { m_recoveryPointArn = value; }
-    inline void SetRecoveryPointArn(Aws::String&& value) { m_recoveryPointArn = std::move(value); }
-    inline void SetRecoveryPointArn(const char* value) { m_recoveryPointArn.assign(value); }
-    inline GetRecoveryPointRestoreMetadataResult& WithRecoveryPointArn(const Aws::String& value) { SetRecoveryPointArn(value); return *this;}
-    inline GetRecoveryPointRestoreMetadataResult& WithRecoveryPointArn(Aws::String&& value) { SetRecoveryPointArn(std::move(value)); return *this;}
-    inline GetRecoveryPointRestoreMetadataResult& WithRecoveryPointArn(const char* value) { SetRecoveryPointArn(value); return *this;}
+    inline const Aws::String& GetRecoveryPointArn() const { return m_recoveryPointArn; }
+    template<typename RecoveryPointArnT = Aws::String>
+    void SetRecoveryPointArn(RecoveryPointArnT&& value) { m_recoveryPointArnHasBeenSet = true; m_recoveryPointArn = std::forward<RecoveryPointArnT>(value); }
+    template<typename RecoveryPointArnT = Aws::String>
+    GetRecoveryPointRestoreMetadataResult& WithRecoveryPointArn(RecoveryPointArnT&& value) { SetRecoveryPointArn(std::forward<RecoveryPointArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -67,54 +63,52 @@ namespace Model
      * of the backed-up resource. These values vary depending on the service that is
      * being restored.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::String>& GetRestoreMetadata() const{ return m_restoreMetadata; }
-    inline void SetRestoreMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_restoreMetadata = value; }
-    inline void SetRestoreMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_restoreMetadata = std::move(value); }
-    inline GetRecoveryPointRestoreMetadataResult& WithRestoreMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetRestoreMetadata(value); return *this;}
-    inline GetRecoveryPointRestoreMetadataResult& WithRestoreMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetRestoreMetadata(std::move(value)); return *this;}
-    inline GetRecoveryPointRestoreMetadataResult& AddRestoreMetadata(const Aws::String& key, const Aws::String& value) { m_restoreMetadata.emplace(key, value); return *this; }
-    inline GetRecoveryPointRestoreMetadataResult& AddRestoreMetadata(Aws::String&& key, const Aws::String& value) { m_restoreMetadata.emplace(std::move(key), value); return *this; }
-    inline GetRecoveryPointRestoreMetadataResult& AddRestoreMetadata(const Aws::String& key, Aws::String&& value) { m_restoreMetadata.emplace(key, std::move(value)); return *this; }
-    inline GetRecoveryPointRestoreMetadataResult& AddRestoreMetadata(Aws::String&& key, Aws::String&& value) { m_restoreMetadata.emplace(std::move(key), std::move(value)); return *this; }
-    inline GetRecoveryPointRestoreMetadataResult& AddRestoreMetadata(const char* key, Aws::String&& value) { m_restoreMetadata.emplace(key, std::move(value)); return *this; }
-    inline GetRecoveryPointRestoreMetadataResult& AddRestoreMetadata(Aws::String&& key, const char* value) { m_restoreMetadata.emplace(std::move(key), value); return *this; }
-    inline GetRecoveryPointRestoreMetadataResult& AddRestoreMetadata(const char* key, const char* value) { m_restoreMetadata.emplace(key, value); return *this; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetRestoreMetadata() const { return m_restoreMetadata; }
+    template<typename RestoreMetadataT = Aws::Map<Aws::String, Aws::String>>
+    void SetRestoreMetadata(RestoreMetadataT&& value) { m_restoreMetadataHasBeenSet = true; m_restoreMetadata = std::forward<RestoreMetadataT>(value); }
+    template<typename RestoreMetadataT = Aws::Map<Aws::String, Aws::String>>
+    GetRecoveryPointRestoreMetadataResult& WithRestoreMetadata(RestoreMetadataT&& value) { SetRestoreMetadata(std::forward<RestoreMetadataT>(value)); return *this;}
+    template<typename RestoreMetadataKeyT = Aws::String, typename RestoreMetadataValueT = Aws::String>
+    GetRecoveryPointRestoreMetadataResult& AddRestoreMetadata(RestoreMetadataKeyT&& key, RestoreMetadataValueT&& value) {
+      m_restoreMetadataHasBeenSet = true; m_restoreMetadata.emplace(std::forward<RestoreMetadataKeyT>(key), std::forward<RestoreMetadataValueT>(value)); return *this;
+    }
     ///@}
 
     ///@{
     /**
      * <p>The resource type of the recovery point.</p>
      */
-    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
-    inline void SetResourceType(const Aws::String& value) { m_resourceType = value; }
-    inline void SetResourceType(Aws::String&& value) { m_resourceType = std::move(value); }
-    inline void SetResourceType(const char* value) { m_resourceType.assign(value); }
-    inline GetRecoveryPointRestoreMetadataResult& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
-    inline GetRecoveryPointRestoreMetadataResult& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
-    inline GetRecoveryPointRestoreMetadataResult& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+    inline const Aws::String& GetResourceType() const { return m_resourceType; }
+    template<typename ResourceTypeT = Aws::String>
+    void SetResourceType(ResourceTypeT&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::forward<ResourceTypeT>(value); }
+    template<typename ResourceTypeT = Aws::String>
+    GetRecoveryPointRestoreMetadataResult& WithResourceType(ResourceTypeT&& value) { SetResourceType(std::forward<ResourceTypeT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetRecoveryPointRestoreMetadataResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetRecoveryPointRestoreMetadataResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetRecoveryPointRestoreMetadataResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetRecoveryPointRestoreMetadataResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_backupVaultArn;
+    bool m_backupVaultArnHasBeenSet = false;
 
     Aws::String m_recoveryPointArn;
+    bool m_recoveryPointArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_restoreMetadata;
+    bool m_restoreMetadataHasBeenSet = false;
 
     Aws::String m_resourceType;
+    bool m_resourceTypeHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

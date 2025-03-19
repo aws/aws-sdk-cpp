@@ -12,14 +12,6 @@ using namespace Aws::QuickSight::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-UpdateTemplatePermissionsRequest::UpdateTemplatePermissionsRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_templateIdHasBeenSet(false),
-    m_grantPermissionsHasBeenSet(false),
-    m_revokePermissionsHasBeenSet(false)
-{
-}
-
 Aws::String UpdateTemplatePermissionsRequest::SerializePayload() const
 {
   JsonValue payload;

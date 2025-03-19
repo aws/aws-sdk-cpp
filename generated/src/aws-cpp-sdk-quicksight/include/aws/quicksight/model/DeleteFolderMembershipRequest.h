@@ -22,7 +22,7 @@ namespace Model
   class DeleteFolderMembershipRequest : public QuickSightRequest
   {
   public:
-    AWS_QUICKSIGHT_API DeleteFolderMembershipRequest();
+    AWS_QUICKSIGHT_API DeleteFolderMembershipRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -37,54 +37,46 @@ namespace Model
     /**
      * <p>The ID for the Amazon Web Services account that contains the folder.</p>
      */
-    inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+    inline const Aws::String& GetAwsAccountId() const { return m_awsAccountId; }
     inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
-    inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
-    inline void SetAwsAccountId(Aws::String&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::move(value); }
-    inline void SetAwsAccountId(const char* value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId.assign(value); }
-    inline DeleteFolderMembershipRequest& WithAwsAccountId(const Aws::String& value) { SetAwsAccountId(value); return *this;}
-    inline DeleteFolderMembershipRequest& WithAwsAccountId(Aws::String&& value) { SetAwsAccountId(std::move(value)); return *this;}
-    inline DeleteFolderMembershipRequest& WithAwsAccountId(const char* value) { SetAwsAccountId(value); return *this;}
+    template<typename AwsAccountIdT = Aws::String>
+    void SetAwsAccountId(AwsAccountIdT&& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = std::forward<AwsAccountIdT>(value); }
+    template<typename AwsAccountIdT = Aws::String>
+    DeleteFolderMembershipRequest& WithAwsAccountId(AwsAccountIdT&& value) { SetAwsAccountId(std::forward<AwsAccountIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Folder ID.</p>
      */
-    inline const Aws::String& GetFolderId() const{ return m_folderId; }
+    inline const Aws::String& GetFolderId() const { return m_folderId; }
     inline bool FolderIdHasBeenSet() const { return m_folderIdHasBeenSet; }
-    inline void SetFolderId(const Aws::String& value) { m_folderIdHasBeenSet = true; m_folderId = value; }
-    inline void SetFolderId(Aws::String&& value) { m_folderIdHasBeenSet = true; m_folderId = std::move(value); }
-    inline void SetFolderId(const char* value) { m_folderIdHasBeenSet = true; m_folderId.assign(value); }
-    inline DeleteFolderMembershipRequest& WithFolderId(const Aws::String& value) { SetFolderId(value); return *this;}
-    inline DeleteFolderMembershipRequest& WithFolderId(Aws::String&& value) { SetFolderId(std::move(value)); return *this;}
-    inline DeleteFolderMembershipRequest& WithFolderId(const char* value) { SetFolderId(value); return *this;}
+    template<typename FolderIdT = Aws::String>
+    void SetFolderId(FolderIdT&& value) { m_folderIdHasBeenSet = true; m_folderId = std::forward<FolderIdT>(value); }
+    template<typename FolderIdT = Aws::String>
+    DeleteFolderMembershipRequest& WithFolderId(FolderIdT&& value) { SetFolderId(std::forward<FolderIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the asset that you want to delete.</p>
      */
-    inline const Aws::String& GetMemberId() const{ return m_memberId; }
+    inline const Aws::String& GetMemberId() const { return m_memberId; }
     inline bool MemberIdHasBeenSet() const { return m_memberIdHasBeenSet; }
-    inline void SetMemberId(const Aws::String& value) { m_memberIdHasBeenSet = true; m_memberId = value; }
-    inline void SetMemberId(Aws::String&& value) { m_memberIdHasBeenSet = true; m_memberId = std::move(value); }
-    inline void SetMemberId(const char* value) { m_memberIdHasBeenSet = true; m_memberId.assign(value); }
-    inline DeleteFolderMembershipRequest& WithMemberId(const Aws::String& value) { SetMemberId(value); return *this;}
-    inline DeleteFolderMembershipRequest& WithMemberId(Aws::String&& value) { SetMemberId(std::move(value)); return *this;}
-    inline DeleteFolderMembershipRequest& WithMemberId(const char* value) { SetMemberId(value); return *this;}
+    template<typename MemberIdT = Aws::String>
+    void SetMemberId(MemberIdT&& value) { m_memberIdHasBeenSet = true; m_memberId = std::forward<MemberIdT>(value); }
+    template<typename MemberIdT = Aws::String>
+    DeleteFolderMembershipRequest& WithMemberId(MemberIdT&& value) { SetMemberId(std::forward<MemberIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The member type of the asset that you want to delete from a folder.</p>
      */
-    inline const MemberType& GetMemberType() const{ return m_memberType; }
+    inline MemberType GetMemberType() const { return m_memberType; }
     inline bool MemberTypeHasBeenSet() const { return m_memberTypeHasBeenSet; }
-    inline void SetMemberType(const MemberType& value) { m_memberTypeHasBeenSet = true; m_memberType = value; }
-    inline void SetMemberType(MemberType&& value) { m_memberTypeHasBeenSet = true; m_memberType = std::move(value); }
-    inline DeleteFolderMembershipRequest& WithMemberType(const MemberType& value) { SetMemberType(value); return *this;}
-    inline DeleteFolderMembershipRequest& WithMemberType(MemberType&& value) { SetMemberType(std::move(value)); return *this;}
+    inline void SetMemberType(MemberType value) { m_memberTypeHasBeenSet = true; m_memberType = value; }
+    inline DeleteFolderMembershipRequest& WithMemberType(MemberType value) { SetMemberType(value); return *this;}
     ///@}
   private:
 
@@ -97,7 +89,7 @@ namespace Model
     Aws::String m_memberId;
     bool m_memberIdHasBeenSet = false;
 
-    MemberType m_memberType;
+    MemberType m_memberType{MemberType::NOT_SET};
     bool m_memberTypeHasBeenSet = false;
   };
 

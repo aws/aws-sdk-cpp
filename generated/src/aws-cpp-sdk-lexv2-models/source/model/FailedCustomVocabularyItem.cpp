@@ -18,16 +18,7 @@ namespace LexModelsV2
 namespace Model
 {
 
-FailedCustomVocabularyItem::FailedCustomVocabularyItem() : 
-    m_itemIdHasBeenSet(false),
-    m_errorMessageHasBeenSet(false),
-    m_errorCode(ErrorCode::NOT_SET),
-    m_errorCodeHasBeenSet(false)
-{
-}
-
 FailedCustomVocabularyItem::FailedCustomVocabularyItem(JsonView jsonValue)
-  : FailedCustomVocabularyItem()
 {
   *this = jsonValue;
 }
@@ -37,24 +28,18 @@ FailedCustomVocabularyItem& FailedCustomVocabularyItem::operator =(JsonView json
   if(jsonValue.ValueExists("itemId"))
   {
     m_itemId = jsonValue.GetString("itemId");
-
     m_itemIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorMessage"))
   {
     m_errorMessage = jsonValue.GetString("errorMessage");
-
     m_errorMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("errorCode"))
   {
     m_errorCode = ErrorCodeMapper::GetErrorCodeForName(jsonValue.GetString("errorCode"));
-
     m_errorCodeHasBeenSet = true;
   }
-
   return *this;
 }
 

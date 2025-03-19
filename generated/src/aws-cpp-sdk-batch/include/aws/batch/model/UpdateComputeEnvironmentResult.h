@@ -27,7 +27,7 @@ namespace Model
   class UpdateComputeEnvironmentResult
   {
   public:
-    AWS_BATCH_API UpdateComputeEnvironmentResult();
+    AWS_BATCH_API UpdateComputeEnvironmentResult() = default;
     AWS_BATCH_API UpdateComputeEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_BATCH_API UpdateComputeEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -38,45 +38,42 @@ namespace Model
      * can contain uppercase and lowercase letters, numbers, hyphens (-), and
      * underscores (_).</p>
      */
-    inline const Aws::String& GetComputeEnvironmentName() const{ return m_computeEnvironmentName; }
-    inline void SetComputeEnvironmentName(const Aws::String& value) { m_computeEnvironmentName = value; }
-    inline void SetComputeEnvironmentName(Aws::String&& value) { m_computeEnvironmentName = std::move(value); }
-    inline void SetComputeEnvironmentName(const char* value) { m_computeEnvironmentName.assign(value); }
-    inline UpdateComputeEnvironmentResult& WithComputeEnvironmentName(const Aws::String& value) { SetComputeEnvironmentName(value); return *this;}
-    inline UpdateComputeEnvironmentResult& WithComputeEnvironmentName(Aws::String&& value) { SetComputeEnvironmentName(std::move(value)); return *this;}
-    inline UpdateComputeEnvironmentResult& WithComputeEnvironmentName(const char* value) { SetComputeEnvironmentName(value); return *this;}
+    inline const Aws::String& GetComputeEnvironmentName() const { return m_computeEnvironmentName; }
+    template<typename ComputeEnvironmentNameT = Aws::String>
+    void SetComputeEnvironmentName(ComputeEnvironmentNameT&& value) { m_computeEnvironmentNameHasBeenSet = true; m_computeEnvironmentName = std::forward<ComputeEnvironmentNameT>(value); }
+    template<typename ComputeEnvironmentNameT = Aws::String>
+    UpdateComputeEnvironmentResult& WithComputeEnvironmentName(ComputeEnvironmentNameT&& value) { SetComputeEnvironmentName(std::forward<ComputeEnvironmentNameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The Amazon Resource Name (ARN) of the compute environment.</p>
      */
-    inline const Aws::String& GetComputeEnvironmentArn() const{ return m_computeEnvironmentArn; }
-    inline void SetComputeEnvironmentArn(const Aws::String& value) { m_computeEnvironmentArn = value; }
-    inline void SetComputeEnvironmentArn(Aws::String&& value) { m_computeEnvironmentArn = std::move(value); }
-    inline void SetComputeEnvironmentArn(const char* value) { m_computeEnvironmentArn.assign(value); }
-    inline UpdateComputeEnvironmentResult& WithComputeEnvironmentArn(const Aws::String& value) { SetComputeEnvironmentArn(value); return *this;}
-    inline UpdateComputeEnvironmentResult& WithComputeEnvironmentArn(Aws::String&& value) { SetComputeEnvironmentArn(std::move(value)); return *this;}
-    inline UpdateComputeEnvironmentResult& WithComputeEnvironmentArn(const char* value) { SetComputeEnvironmentArn(value); return *this;}
+    inline const Aws::String& GetComputeEnvironmentArn() const { return m_computeEnvironmentArn; }
+    template<typename ComputeEnvironmentArnT = Aws::String>
+    void SetComputeEnvironmentArn(ComputeEnvironmentArnT&& value) { m_computeEnvironmentArnHasBeenSet = true; m_computeEnvironmentArn = std::forward<ComputeEnvironmentArnT>(value); }
+    template<typename ComputeEnvironmentArnT = Aws::String>
+    UpdateComputeEnvironmentResult& WithComputeEnvironmentArn(ComputeEnvironmentArnT&& value) { SetComputeEnvironmentArn(std::forward<ComputeEnvironmentArnT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline UpdateComputeEnvironmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline UpdateComputeEnvironmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline UpdateComputeEnvironmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    UpdateComputeEnvironmentResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_computeEnvironmentName;
+    bool m_computeEnvironmentNameHasBeenSet = false;
 
     Aws::String m_computeEnvironmentArn;
+    bool m_computeEnvironmentArnHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

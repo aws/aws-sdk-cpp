@@ -12,11 +12,6 @@ using namespace Aws::Shield::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DisableApplicationLayerAutomaticResponseRequest::DisableApplicationLayerAutomaticResponseRequest() : 
-    m_resourceArnHasBeenSet(false)
-{
-}
-
 Aws::String DisableApplicationLayerAutomaticResponseRequest::SerializePayload() const
 {
   JsonValue payload;

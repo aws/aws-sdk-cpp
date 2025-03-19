@@ -36,7 +36,7 @@ namespace Model
   class RuleDefinition
   {
   public:
-    AWS_NETWORKFIREWALL_API RuleDefinition();
+    AWS_NETWORKFIREWALL_API RuleDefinition() = default;
     AWS_NETWORKFIREWALL_API RuleDefinition(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API RuleDefinition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_NETWORKFIREWALL_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -48,12 +48,12 @@ namespace Model
      * stateless rule inspection. Each match attributes set can include one or more
      * items such as IP address, CIDR range, port number, protocol, and TCP flags. </p>
      */
-    inline const MatchAttributes& GetMatchAttributes() const{ return m_matchAttributes; }
+    inline const MatchAttributes& GetMatchAttributes() const { return m_matchAttributes; }
     inline bool MatchAttributesHasBeenSet() const { return m_matchAttributesHasBeenSet; }
-    inline void SetMatchAttributes(const MatchAttributes& value) { m_matchAttributesHasBeenSet = true; m_matchAttributes = value; }
-    inline void SetMatchAttributes(MatchAttributes&& value) { m_matchAttributesHasBeenSet = true; m_matchAttributes = std::move(value); }
-    inline RuleDefinition& WithMatchAttributes(const MatchAttributes& value) { SetMatchAttributes(value); return *this;}
-    inline RuleDefinition& WithMatchAttributes(MatchAttributes&& value) { SetMatchAttributes(std::move(value)); return *this;}
+    template<typename MatchAttributesT = MatchAttributes>
+    void SetMatchAttributes(MatchAttributesT&& value) { m_matchAttributesHasBeenSet = true; m_matchAttributes = std::forward<MatchAttributesT>(value); }
+    template<typename MatchAttributesT = MatchAttributes>
+    RuleDefinition& WithMatchAttributes(MatchAttributesT&& value) { SetMatchAttributes(std::forward<MatchAttributesT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -82,15 +82,14 @@ namespace Model
      * <code>aws:pass</code> and the custom action with <code>[“aws:pass”,
      * “MyMetricsAction”]</code>. </p>
      */
-    inline const Aws::Vector<Aws::String>& GetActions() const{ return m_actions; }
+    inline const Aws::Vector<Aws::String>& GetActions() const { return m_actions; }
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
-    inline void SetActions(const Aws::Vector<Aws::String>& value) { m_actionsHasBeenSet = true; m_actions = value; }
-    inline void SetActions(Aws::Vector<Aws::String>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
-    inline RuleDefinition& WithActions(const Aws::Vector<Aws::String>& value) { SetActions(value); return *this;}
-    inline RuleDefinition& WithActions(Aws::Vector<Aws::String>&& value) { SetActions(std::move(value)); return *this;}
-    inline RuleDefinition& AddActions(const Aws::String& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
-    inline RuleDefinition& AddActions(Aws::String&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
-    inline RuleDefinition& AddActions(const char* value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
+    template<typename ActionsT = Aws::Vector<Aws::String>>
+    void SetActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions = std::forward<ActionsT>(value); }
+    template<typename ActionsT = Aws::Vector<Aws::String>>
+    RuleDefinition& WithActions(ActionsT&& value) { SetActions(std::forward<ActionsT>(value)); return *this;}
+    template<typename ActionsT = Aws::String>
+    RuleDefinition& AddActions(ActionsT&& value) { m_actionsHasBeenSet = true; m_actions.emplace_back(std::forward<ActionsT>(value)); return *this; }
     ///@}
   private:
 

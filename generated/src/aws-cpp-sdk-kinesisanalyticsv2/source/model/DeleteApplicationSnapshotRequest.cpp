@@ -12,13 +12,6 @@ using namespace Aws::KinesisAnalyticsV2::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteApplicationSnapshotRequest::DeleteApplicationSnapshotRequest() : 
-    m_applicationNameHasBeenSet(false),
-    m_snapshotNameHasBeenSet(false),
-    m_snapshotCreationTimestampHasBeenSet(false)
-{
-}
-
 Aws::String DeleteApplicationSnapshotRequest::SerializePayload() const
 {
   JsonValue payload;

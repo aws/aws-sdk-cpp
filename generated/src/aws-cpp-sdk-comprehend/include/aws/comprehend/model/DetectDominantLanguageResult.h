@@ -29,7 +29,7 @@ namespace Model
   class DetectDominantLanguageResult
   {
   public:
-    AWS_COMPREHEND_API DetectDominantLanguageResult();
+    AWS_COMPREHEND_API DetectDominantLanguageResult() = default;
     AWS_COMPREHEND_API DetectDominantLanguageResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_COMPREHEND_API DetectDominantLanguageResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,30 +44,30 @@ namespace Model
      * 5646, see <a href="https://tools.ietf.org/html/rfc5646">Tags for Identifying
      * Languages</a> on the <i>IETF Tools</i> web site.</p>
      */
-    inline const Aws::Vector<DominantLanguage>& GetLanguages() const{ return m_languages; }
-    inline void SetLanguages(const Aws::Vector<DominantLanguage>& value) { m_languages = value; }
-    inline void SetLanguages(Aws::Vector<DominantLanguage>&& value) { m_languages = std::move(value); }
-    inline DetectDominantLanguageResult& WithLanguages(const Aws::Vector<DominantLanguage>& value) { SetLanguages(value); return *this;}
-    inline DetectDominantLanguageResult& WithLanguages(Aws::Vector<DominantLanguage>&& value) { SetLanguages(std::move(value)); return *this;}
-    inline DetectDominantLanguageResult& AddLanguages(const DominantLanguage& value) { m_languages.push_back(value); return *this; }
-    inline DetectDominantLanguageResult& AddLanguages(DominantLanguage&& value) { m_languages.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<DominantLanguage>& GetLanguages() const { return m_languages; }
+    template<typename LanguagesT = Aws::Vector<DominantLanguage>>
+    void SetLanguages(LanguagesT&& value) { m_languagesHasBeenSet = true; m_languages = std::forward<LanguagesT>(value); }
+    template<typename LanguagesT = Aws::Vector<DominantLanguage>>
+    DetectDominantLanguageResult& WithLanguages(LanguagesT&& value) { SetLanguages(std::forward<LanguagesT>(value)); return *this;}
+    template<typename LanguagesT = DominantLanguage>
+    DetectDominantLanguageResult& AddLanguages(LanguagesT&& value) { m_languagesHasBeenSet = true; m_languages.emplace_back(std::forward<LanguagesT>(value)); return *this; }
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DetectDominantLanguageResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DetectDominantLanguageResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DetectDominantLanguageResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DetectDominantLanguageResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<DominantLanguage> m_languages;
+    bool m_languagesHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

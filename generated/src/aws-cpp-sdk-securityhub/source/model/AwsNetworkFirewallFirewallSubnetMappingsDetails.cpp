@@ -18,13 +18,7 @@ namespace SecurityHub
 namespace Model
 {
 
-AwsNetworkFirewallFirewallSubnetMappingsDetails::AwsNetworkFirewallFirewallSubnetMappingsDetails() : 
-    m_subnetIdHasBeenSet(false)
-{
-}
-
 AwsNetworkFirewallFirewallSubnetMappingsDetails::AwsNetworkFirewallFirewallSubnetMappingsDetails(JsonView jsonValue)
-  : AwsNetworkFirewallFirewallSubnetMappingsDetails()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ AwsNetworkFirewallFirewallSubnetMappingsDetails& AwsNetworkFirewallFirewallSubne
   if(jsonValue.ValueExists("SubnetId"))
   {
     m_subnetId = jsonValue.GetString("SubnetId");
-
     m_subnetIdHasBeenSet = true;
   }
-
   return *this;
 }
 

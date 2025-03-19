@@ -18,18 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-TransformInput::TransformInput() : 
-    m_dataSourceHasBeenSet(false),
-    m_contentTypeHasBeenSet(false),
-    m_compressionType(CompressionType::NOT_SET),
-    m_compressionTypeHasBeenSet(false),
-    m_splitType(SplitType::NOT_SET),
-    m_splitTypeHasBeenSet(false)
-{
-}
-
 TransformInput::TransformInput(JsonView jsonValue)
-  : TransformInput()
 {
   *this = jsonValue;
 }
@@ -39,31 +28,23 @@ TransformInput& TransformInput::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("DataSource"))
   {
     m_dataSource = jsonValue.GetObject("DataSource");
-
     m_dataSourceHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ContentType"))
   {
     m_contentType = jsonValue.GetString("ContentType");
-
     m_contentTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CompressionType"))
   {
     m_compressionType = CompressionTypeMapper::GetCompressionTypeForName(jsonValue.GetString("CompressionType"));
-
     m_compressionTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SplitType"))
   {
     m_splitType = SplitTypeMapper::GetSplitTypeForName(jsonValue.GetString("SplitType"));
-
     m_splitTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

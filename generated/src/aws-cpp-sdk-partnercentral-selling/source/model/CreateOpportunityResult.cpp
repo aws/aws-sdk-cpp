@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreateOpportunityResult::CreateOpportunityResult()
-{
-}
-
 CreateOpportunityResult::CreateOpportunityResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ CreateOpportunityResult& CreateOpportunityResult::operator =(const Aws::AmazonWe
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
+    m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastModifiedDate"))
   {
     m_lastModifiedDate = jsonValue.GetString("LastModifiedDate");
-
+    m_lastModifiedDateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PartnerOpportunityIdentifier"))
   {
     m_partnerOpportunityIdentifier = jsonValue.GetString("PartnerOpportunityIdentifier");
-
+    m_partnerOpportunityIdentifierHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

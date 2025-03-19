@@ -18,14 +18,7 @@ namespace SWF
 namespace Model
 {
 
-LambdaFunctionStartedEventAttributes::LambdaFunctionStartedEventAttributes() : 
-    m_scheduledEventId(0),
-    m_scheduledEventIdHasBeenSet(false)
-{
-}
-
 LambdaFunctionStartedEventAttributes::LambdaFunctionStartedEventAttributes(JsonView jsonValue)
-  : LambdaFunctionStartedEventAttributes()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ LambdaFunctionStartedEventAttributes& LambdaFunctionStartedEventAttributes::oper
   if(jsonValue.ValueExists("scheduledEventId"))
   {
     m_scheduledEventId = jsonValue.GetInt64("scheduledEventId");
-
     m_scheduledEventIdHasBeenSet = true;
   }
-
   return *this;
 }
 

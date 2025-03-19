@@ -18,18 +18,7 @@ namespace DataExchange
 namespace Model
 {
 
-S3DataAccessAsset::S3DataAccessAsset() : 
-    m_bucketHasBeenSet(false),
-    m_keyPrefixesHasBeenSet(false),
-    m_keysHasBeenSet(false),
-    m_s3AccessPointAliasHasBeenSet(false),
-    m_s3AccessPointArnHasBeenSet(false),
-    m_kmsKeysToGrantHasBeenSet(false)
-{
-}
-
 S3DataAccessAsset::S3DataAccessAsset(JsonView jsonValue)
-  : S3DataAccessAsset()
 {
   *this = jsonValue;
 }
@@ -39,10 +28,8 @@ S3DataAccessAsset& S3DataAccessAsset::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Bucket"))
   {
     m_bucket = jsonValue.GetString("Bucket");
-
     m_bucketHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KeyPrefixes"))
   {
     Aws::Utils::Array<JsonView> keyPrefixesJsonList = jsonValue.GetArray("KeyPrefixes");
@@ -52,7 +39,6 @@ S3DataAccessAsset& S3DataAccessAsset::operator =(JsonView jsonValue)
     }
     m_keyPrefixesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Keys"))
   {
     Aws::Utils::Array<JsonView> keysJsonList = jsonValue.GetArray("Keys");
@@ -62,21 +48,16 @@ S3DataAccessAsset& S3DataAccessAsset::operator =(JsonView jsonValue)
     }
     m_keysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3AccessPointAlias"))
   {
     m_s3AccessPointAlias = jsonValue.GetString("S3AccessPointAlias");
-
     m_s3AccessPointAliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("S3AccessPointArn"))
   {
     m_s3AccessPointArn = jsonValue.GetString("S3AccessPointArn");
-
     m_s3AccessPointArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("KmsKeysToGrant"))
   {
     Aws::Utils::Array<JsonView> kmsKeysToGrantJsonList = jsonValue.GetArray("KmsKeysToGrant");
@@ -86,7 +67,6 @@ S3DataAccessAsset& S3DataAccessAsset::operator =(JsonView jsonValue)
     }
     m_kmsKeysToGrantHasBeenSet = true;
   }
-
   return *this;
 }
 

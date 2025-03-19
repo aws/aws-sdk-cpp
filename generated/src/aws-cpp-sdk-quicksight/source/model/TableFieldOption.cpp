@@ -18,18 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-TableFieldOption::TableFieldOption() : 
-    m_fieldIdHasBeenSet(false),
-    m_widthHasBeenSet(false),
-    m_customLabelHasBeenSet(false),
-    m_visibility(Visibility::NOT_SET),
-    m_visibilityHasBeenSet(false),
-    m_uRLStylingHasBeenSet(false)
-{
-}
-
 TableFieldOption::TableFieldOption(JsonView jsonValue)
-  : TableFieldOption()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ TableFieldOption& TableFieldOption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("FieldId"))
   {
     m_fieldId = jsonValue.GetString("FieldId");
-
     m_fieldIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Width"))
   {
     m_width = jsonValue.GetString("Width");
-
     m_widthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CustomLabel"))
   {
     m_customLabel = jsonValue.GetString("CustomLabel");
-
     m_customLabelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Visibility"))
   {
     m_visibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("Visibility"));
-
     m_visibilityHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("URLStyling"))
   {
     m_uRLStyling = jsonValue.GetObject("URLStyling");
-
     m_uRLStylingHasBeenSet = true;
   }
-
   return *this;
 }
 

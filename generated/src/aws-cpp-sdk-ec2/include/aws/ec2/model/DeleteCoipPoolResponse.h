@@ -28,7 +28,7 @@ namespace Model
   class DeleteCoipPoolResponse
   {
   public:
-    AWS_EC2_API DeleteCoipPoolResponse();
+    AWS_EC2_API DeleteCoipPoolResponse() = default;
     AWS_EC2_API DeleteCoipPoolResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
     AWS_EC2_API DeleteCoipPoolResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
@@ -37,26 +37,28 @@ namespace Model
     /**
      * <p>Information about the CoIP address pool.</p>
      */
-    inline const CoipPool& GetCoipPool() const{ return m_coipPool; }
-    inline void SetCoipPool(const CoipPool& value) { m_coipPool = value; }
-    inline void SetCoipPool(CoipPool&& value) { m_coipPool = std::move(value); }
-    inline DeleteCoipPoolResponse& WithCoipPool(const CoipPool& value) { SetCoipPool(value); return *this;}
-    inline DeleteCoipPoolResponse& WithCoipPool(CoipPool&& value) { SetCoipPool(std::move(value)); return *this;}
+    inline const CoipPool& GetCoipPool() const { return m_coipPool; }
+    template<typename CoipPoolT = CoipPool>
+    void SetCoipPool(CoipPoolT&& value) { m_coipPoolHasBeenSet = true; m_coipPool = std::forward<CoipPoolT>(value); }
+    template<typename CoipPoolT = CoipPool>
+    DeleteCoipPoolResponse& WithCoipPool(CoipPoolT&& value) { SetCoipPool(std::forward<CoipPoolT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
-    inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadata = value; }
-    inline void SetResponseMetadata(ResponseMetadata&& value) { m_responseMetadata = std::move(value); }
-    inline DeleteCoipPoolResponse& WithResponseMetadata(const ResponseMetadata& value) { SetResponseMetadata(value); return *this;}
-    inline DeleteCoipPoolResponse& WithResponseMetadata(ResponseMetadata&& value) { SetResponseMetadata(std::move(value)); return *this;}
+    inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    void SetResponseMetadata(ResponseMetadataT&& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = std::forward<ResponseMetadataT>(value); }
+    template<typename ResponseMetadataT = ResponseMetadata>
+    DeleteCoipPoolResponse& WithResponseMetadata(ResponseMetadataT&& value) { SetResponseMetadata(std::forward<ResponseMetadataT>(value)); return *this;}
     ///@}
   private:
 
     CoipPool m_coipPool;
+    bool m_coipPoolHasBeenSet = false;
 
     ResponseMetadata m_responseMetadata;
+    bool m_responseMetadataHasBeenSet = false;
   };
 
 } // namespace Model

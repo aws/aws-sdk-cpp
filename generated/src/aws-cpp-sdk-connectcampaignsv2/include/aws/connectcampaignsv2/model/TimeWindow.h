@@ -32,7 +32,7 @@ namespace Model
   class TimeWindow
   {
   public:
-    AWS_CONNECTCAMPAIGNSV2_API TimeWindow();
+    AWS_CONNECTCAMPAIGNSV2_API TimeWindow() = default;
     AWS_CONNECTCAMPAIGNSV2_API TimeWindow(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API TimeWindow& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECTCAMPAIGNSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -40,22 +40,22 @@ namespace Model
 
     ///@{
     
-    inline const OpenHours& GetOpenHours() const{ return m_openHours; }
+    inline const OpenHours& GetOpenHours() const { return m_openHours; }
     inline bool OpenHoursHasBeenSet() const { return m_openHoursHasBeenSet; }
-    inline void SetOpenHours(const OpenHours& value) { m_openHoursHasBeenSet = true; m_openHours = value; }
-    inline void SetOpenHours(OpenHours&& value) { m_openHoursHasBeenSet = true; m_openHours = std::move(value); }
-    inline TimeWindow& WithOpenHours(const OpenHours& value) { SetOpenHours(value); return *this;}
-    inline TimeWindow& WithOpenHours(OpenHours&& value) { SetOpenHours(std::move(value)); return *this;}
+    template<typename OpenHoursT = OpenHours>
+    void SetOpenHours(OpenHoursT&& value) { m_openHoursHasBeenSet = true; m_openHours = std::forward<OpenHoursT>(value); }
+    template<typename OpenHoursT = OpenHours>
+    TimeWindow& WithOpenHours(OpenHoursT&& value) { SetOpenHours(std::forward<OpenHoursT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const RestrictedPeriods& GetRestrictedPeriods() const{ return m_restrictedPeriods; }
+    inline const RestrictedPeriods& GetRestrictedPeriods() const { return m_restrictedPeriods; }
     inline bool RestrictedPeriodsHasBeenSet() const { return m_restrictedPeriodsHasBeenSet; }
-    inline void SetRestrictedPeriods(const RestrictedPeriods& value) { m_restrictedPeriodsHasBeenSet = true; m_restrictedPeriods = value; }
-    inline void SetRestrictedPeriods(RestrictedPeriods&& value) { m_restrictedPeriodsHasBeenSet = true; m_restrictedPeriods = std::move(value); }
-    inline TimeWindow& WithRestrictedPeriods(const RestrictedPeriods& value) { SetRestrictedPeriods(value); return *this;}
-    inline TimeWindow& WithRestrictedPeriods(RestrictedPeriods&& value) { SetRestrictedPeriods(std::move(value)); return *this;}
+    template<typename RestrictedPeriodsT = RestrictedPeriods>
+    void SetRestrictedPeriods(RestrictedPeriodsT&& value) { m_restrictedPeriodsHasBeenSet = true; m_restrictedPeriods = std::forward<RestrictedPeriodsT>(value); }
+    template<typename RestrictedPeriodsT = RestrictedPeriods>
+    TimeWindow& WithRestrictedPeriods(RestrictedPeriodsT&& value) { SetRestrictedPeriods(std::forward<RestrictedPeriodsT>(value)); return *this;}
     ///@}
   private:
 

@@ -12,12 +12,6 @@ using namespace Aws::EFS::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-PutBackupPolicyRequest::PutBackupPolicyRequest() : 
-    m_fileSystemIdHasBeenSet(false),
-    m_backupPolicyHasBeenSet(false)
-{
-}
-
 Aws::String PutBackupPolicyRequest::SerializePayload() const
 {
   JsonValue payload;

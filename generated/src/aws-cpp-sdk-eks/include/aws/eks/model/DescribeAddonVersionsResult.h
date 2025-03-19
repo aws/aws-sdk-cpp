@@ -29,7 +29,7 @@ namespace Model
   class DescribeAddonVersionsResult
   {
   public:
-    AWS_EKS_API DescribeAddonVersionsResult();
+    AWS_EKS_API DescribeAddonVersionsResult() = default;
     AWS_EKS_API DescribeAddonVersionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_EKS_API DescribeAddonVersionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -39,13 +39,13 @@ namespace Model
      * <p>The list of available versions with Kubernetes version compatibility and
      * other properties.</p>
      */
-    inline const Aws::Vector<AddonInfo>& GetAddons() const{ return m_addons; }
-    inline void SetAddons(const Aws::Vector<AddonInfo>& value) { m_addons = value; }
-    inline void SetAddons(Aws::Vector<AddonInfo>&& value) { m_addons = std::move(value); }
-    inline DescribeAddonVersionsResult& WithAddons(const Aws::Vector<AddonInfo>& value) { SetAddons(value); return *this;}
-    inline DescribeAddonVersionsResult& WithAddons(Aws::Vector<AddonInfo>&& value) { SetAddons(std::move(value)); return *this;}
-    inline DescribeAddonVersionsResult& AddAddons(const AddonInfo& value) { m_addons.push_back(value); return *this; }
-    inline DescribeAddonVersionsResult& AddAddons(AddonInfo&& value) { m_addons.push_back(std::move(value)); return *this; }
+    inline const Aws::Vector<AddonInfo>& GetAddons() const { return m_addons; }
+    template<typename AddonsT = Aws::Vector<AddonInfo>>
+    void SetAddons(AddonsT&& value) { m_addonsHasBeenSet = true; m_addons = std::forward<AddonsT>(value); }
+    template<typename AddonsT = Aws::Vector<AddonInfo>>
+    DescribeAddonVersionsResult& WithAddons(AddonsT&& value) { SetAddons(std::forward<AddonsT>(value)); return *this;}
+    template<typename AddonsT = AddonInfo>
+    DescribeAddonVersionsResult& AddAddons(AddonsT&& value) { m_addonsHasBeenSet = true; m_addons.emplace_back(std::forward<AddonsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -58,32 +58,31 @@ namespace Model
      * token should be treated as an opaque identifier that is used only to retrieve
      * the next items in a list and not for other programmatic purposes.</p> 
      */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-    inline DescribeAddonVersionsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-    inline DescribeAddonVersionsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-    inline DescribeAddonVersionsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+    inline const Aws::String& GetNextToken() const { return m_nextToken; }
+    template<typename NextTokenT = Aws::String>
+    void SetNextToken(NextTokenT&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::forward<NextTokenT>(value); }
+    template<typename NextTokenT = Aws::String>
+    DescribeAddonVersionsResult& WithNextToken(NextTokenT&& value) { SetNextToken(std::forward<NextTokenT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline DescribeAddonVersionsResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline DescribeAddonVersionsResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline DescribeAddonVersionsResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    DescribeAddonVersionsResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::Vector<AddonInfo> m_addons;
+    bool m_addonsHasBeenSet = false;
 
     Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

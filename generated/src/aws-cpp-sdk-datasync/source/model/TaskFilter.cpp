@@ -18,17 +18,7 @@ namespace DataSync
 namespace Model
 {
 
-TaskFilter::TaskFilter() : 
-    m_name(TaskFilterName::NOT_SET),
-    m_nameHasBeenSet(false),
-    m_valuesHasBeenSet(false),
-    m_operator(Operator::NOT_SET),
-    m_operatorHasBeenSet(false)
-{
-}
-
 TaskFilter::TaskFilter(JsonView jsonValue)
-  : TaskFilter()
 {
   *this = jsonValue;
 }
@@ -38,10 +28,8 @@ TaskFilter& TaskFilter::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Name"))
   {
     m_name = TaskFilterNameMapper::GetTaskFilterNameForName(jsonValue.GetString("Name"));
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("Values");
@@ -51,14 +39,11 @@ TaskFilter& TaskFilter::operator =(JsonView jsonValue)
     }
     m_valuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Operator"))
   {
     m_operator = OperatorMapper::GetOperatorForName(jsonValue.GetString("Operator"));
-
     m_operatorHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -18,14 +18,7 @@ namespace CodeGuruReviewer
 namespace Model
 {
 
-RepositoryAnalysis::RepositoryAnalysis() : 
-    m_repositoryHeadHasBeenSet(false),
-    m_sourceCodeTypeHasBeenSet(false)
-{
-}
-
 RepositoryAnalysis::RepositoryAnalysis(JsonView jsonValue)
-  : RepositoryAnalysis()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ RepositoryAnalysis& RepositoryAnalysis::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("RepositoryHead"))
   {
     m_repositoryHead = jsonValue.GetObject("RepositoryHead");
-
     m_repositoryHeadHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SourceCodeType"))
   {
     m_sourceCodeType = jsonValue.GetObject("SourceCodeType");
-
     m_sourceCodeTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

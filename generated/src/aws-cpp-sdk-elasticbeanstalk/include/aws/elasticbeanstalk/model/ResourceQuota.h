@@ -31,7 +31,7 @@ namespace Model
   class ResourceQuota
   {
   public:
-    AWS_ELASTICBEANSTALK_API ResourceQuota();
+    AWS_ELASTICBEANSTALK_API ResourceQuota() = default;
     AWS_ELASTICBEANSTALK_API ResourceQuota(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_ELASTICBEANSTALK_API ResourceQuota& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -44,14 +44,14 @@ namespace Model
      * <p>The maximum number of instances of this Elastic Beanstalk resource type that
      * an AWS account can use.</p>
      */
-    inline int GetMaximum() const{ return m_maximum; }
+    inline int GetMaximum() const { return m_maximum; }
     inline bool MaximumHasBeenSet() const { return m_maximumHasBeenSet; }
     inline void SetMaximum(int value) { m_maximumHasBeenSet = true; m_maximum = value; }
     inline ResourceQuota& WithMaximum(int value) { SetMaximum(value); return *this;}
     ///@}
   private:
 
-    int m_maximum;
+    int m_maximum{0};
     bool m_maximumHasBeenSet = false;
   };
 

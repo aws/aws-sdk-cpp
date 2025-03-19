@@ -12,15 +12,6 @@ using namespace Aws::SageMaker::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreatePartnerAppPresignedUrlRequest::CreatePartnerAppPresignedUrlRequest() : 
-    m_arnHasBeenSet(false),
-    m_expiresInSeconds(0),
-    m_expiresInSecondsHasBeenSet(false),
-    m_sessionExpirationDurationInSeconds(0),
-    m_sessionExpirationDurationInSecondsHasBeenSet(false)
-{
-}
-
 Aws::String CreatePartnerAppPresignedUrlRequest::SerializePayload() const
 {
   JsonValue payload;

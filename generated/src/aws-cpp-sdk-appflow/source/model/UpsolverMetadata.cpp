@@ -18,10 +18,6 @@ namespace Appflow
 namespace Model
 {
 
-UpsolverMetadata::UpsolverMetadata()
-{
-}
-
 UpsolverMetadata::UpsolverMetadata(JsonView jsonValue)
 {
   *this = jsonValue;

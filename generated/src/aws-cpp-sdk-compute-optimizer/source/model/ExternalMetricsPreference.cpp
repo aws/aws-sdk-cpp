@@ -18,14 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-ExternalMetricsPreference::ExternalMetricsPreference() : 
-    m_source(ExternalMetricsSource::NOT_SET),
-    m_sourceHasBeenSet(false)
-{
-}
-
 ExternalMetricsPreference::ExternalMetricsPreference(JsonView jsonValue)
-  : ExternalMetricsPreference()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ExternalMetricsPreference& ExternalMetricsPreference::operator =(JsonView jsonVa
   if(jsonValue.ValueExists("source"))
   {
     m_source = ExternalMetricsSourceMapper::GetExternalMetricsSourceForName(jsonValue.GetString("source"));
-
     m_sourceHasBeenSet = true;
   }
-
   return *this;
 }
 

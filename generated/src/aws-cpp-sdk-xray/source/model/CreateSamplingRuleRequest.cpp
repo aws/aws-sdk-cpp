@@ -12,12 +12,6 @@ using namespace Aws::XRay::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateSamplingRuleRequest::CreateSamplingRuleRequest() : 
-    m_samplingRuleHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String CreateSamplingRuleRequest::SerializePayload() const
 {
   JsonValue payload;

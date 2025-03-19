@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-CreatePresignedDomainUrlResult::CreatePresignedDomainUrlResult()
-{
-}
-
 CreatePresignedDomainUrlResult::CreatePresignedDomainUrlResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,15 +28,15 @@ CreatePresignedDomainUrlResult& CreatePresignedDomainUrlResult::operator =(const
   if(jsonValue.ValueExists("AuthorizedUrl"))
   {
     m_authorizedUrl = jsonValue.GetString("AuthorizedUrl");
-
+    m_authorizedUrlHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

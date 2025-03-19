@@ -38,7 +38,7 @@ namespace Model
   class ControlPlaneAttributeFilter
   {
   public:
-    AWS_CONNECT_API ControlPlaneAttributeFilter();
+    AWS_CONNECT_API ControlPlaneAttributeFilter() = default;
     AWS_CONNECT_API ControlPlaneAttributeFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API ControlPlaneAttributeFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -49,14 +49,14 @@ namespace Model
      * <p>A list of conditions which would be applied together with an <code>OR</code>
      * condition.</p>
      */
-    inline const Aws::Vector<CommonAttributeAndCondition>& GetOrConditions() const{ return m_orConditions; }
+    inline const Aws::Vector<CommonAttributeAndCondition>& GetOrConditions() const { return m_orConditions; }
     inline bool OrConditionsHasBeenSet() const { return m_orConditionsHasBeenSet; }
-    inline void SetOrConditions(const Aws::Vector<CommonAttributeAndCondition>& value) { m_orConditionsHasBeenSet = true; m_orConditions = value; }
-    inline void SetOrConditions(Aws::Vector<CommonAttributeAndCondition>&& value) { m_orConditionsHasBeenSet = true; m_orConditions = std::move(value); }
-    inline ControlPlaneAttributeFilter& WithOrConditions(const Aws::Vector<CommonAttributeAndCondition>& value) { SetOrConditions(value); return *this;}
-    inline ControlPlaneAttributeFilter& WithOrConditions(Aws::Vector<CommonAttributeAndCondition>&& value) { SetOrConditions(std::move(value)); return *this;}
-    inline ControlPlaneAttributeFilter& AddOrConditions(const CommonAttributeAndCondition& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(value); return *this; }
-    inline ControlPlaneAttributeFilter& AddOrConditions(CommonAttributeAndCondition&& value) { m_orConditionsHasBeenSet = true; m_orConditions.push_back(std::move(value)); return *this; }
+    template<typename OrConditionsT = Aws::Vector<CommonAttributeAndCondition>>
+    void SetOrConditions(OrConditionsT&& value) { m_orConditionsHasBeenSet = true; m_orConditions = std::forward<OrConditionsT>(value); }
+    template<typename OrConditionsT = Aws::Vector<CommonAttributeAndCondition>>
+    ControlPlaneAttributeFilter& WithOrConditions(OrConditionsT&& value) { SetOrConditions(std::forward<OrConditionsT>(value)); return *this;}
+    template<typename OrConditionsT = CommonAttributeAndCondition>
+    ControlPlaneAttributeFilter& AddOrConditions(OrConditionsT&& value) { m_orConditionsHasBeenSet = true; m_orConditions.emplace_back(std::forward<OrConditionsT>(value)); return *this; }
     ///@}
 
     ///@{
@@ -64,22 +64,22 @@ namespace Model
      * <p>A list of conditions which would be applied together with an <code>AND</code>
      * condition.</p>
      */
-    inline const CommonAttributeAndCondition& GetAndCondition() const{ return m_andCondition; }
+    inline const CommonAttributeAndCondition& GetAndCondition() const { return m_andCondition; }
     inline bool AndConditionHasBeenSet() const { return m_andConditionHasBeenSet; }
-    inline void SetAndCondition(const CommonAttributeAndCondition& value) { m_andConditionHasBeenSet = true; m_andCondition = value; }
-    inline void SetAndCondition(CommonAttributeAndCondition&& value) { m_andConditionHasBeenSet = true; m_andCondition = std::move(value); }
-    inline ControlPlaneAttributeFilter& WithAndCondition(const CommonAttributeAndCondition& value) { SetAndCondition(value); return *this;}
-    inline ControlPlaneAttributeFilter& WithAndCondition(CommonAttributeAndCondition&& value) { SetAndCondition(std::move(value)); return *this;}
+    template<typename AndConditionT = CommonAttributeAndCondition>
+    void SetAndCondition(AndConditionT&& value) { m_andConditionHasBeenSet = true; m_andCondition = std::forward<AndConditionT>(value); }
+    template<typename AndConditionT = CommonAttributeAndCondition>
+    ControlPlaneAttributeFilter& WithAndCondition(AndConditionT&& value) { SetAndCondition(std::forward<AndConditionT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const TagCondition& GetTagCondition() const{ return m_tagCondition; }
+    inline const TagCondition& GetTagCondition() const { return m_tagCondition; }
     inline bool TagConditionHasBeenSet() const { return m_tagConditionHasBeenSet; }
-    inline void SetTagCondition(const TagCondition& value) { m_tagConditionHasBeenSet = true; m_tagCondition = value; }
-    inline void SetTagCondition(TagCondition&& value) { m_tagConditionHasBeenSet = true; m_tagCondition = std::move(value); }
-    inline ControlPlaneAttributeFilter& WithTagCondition(const TagCondition& value) { SetTagCondition(value); return *this;}
-    inline ControlPlaneAttributeFilter& WithTagCondition(TagCondition&& value) { SetTagCondition(std::move(value)); return *this;}
+    template<typename TagConditionT = TagCondition>
+    void SetTagCondition(TagConditionT&& value) { m_tagConditionHasBeenSet = true; m_tagCondition = std::forward<TagConditionT>(value); }
+    template<typename TagConditionT = TagCondition>
+    ControlPlaneAttributeFilter& WithTagCondition(TagConditionT&& value) { SetTagCondition(std::forward<TagConditionT>(value)); return *this;}
     ///@}
   private:
 

@@ -18,13 +18,7 @@ namespace IoT
 namespace Model
 {
 
-AbortConfig::AbortConfig() : 
-    m_criteriaListHasBeenSet(false)
-{
-}
-
 AbortConfig::AbortConfig(JsonView jsonValue)
-  : AbortConfig()
 {
   *this = jsonValue;
 }
@@ -40,7 +34,6 @@ AbortConfig& AbortConfig::operator =(JsonView jsonValue)
     }
     m_criteriaListHasBeenSet = true;
   }
-
   return *this;
 }
 

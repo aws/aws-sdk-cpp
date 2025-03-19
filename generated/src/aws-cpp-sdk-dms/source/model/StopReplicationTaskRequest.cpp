@@ -12,11 +12,6 @@ using namespace Aws::DatabaseMigrationService::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopReplicationTaskRequest::StopReplicationTaskRequest() : 
-    m_replicationTaskArnHasBeenSet(false)
-{
-}
-
 Aws::String StopReplicationTaskRequest::SerializePayload() const
 {
   JsonValue payload;

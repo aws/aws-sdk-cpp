@@ -31,7 +31,7 @@ namespace Model
   class RouteMatrixVehicleLicensePlate
   {
   public:
-    AWS_GEOROUTES_API RouteMatrixVehicleLicensePlate();
+    AWS_GEOROUTES_API RouteMatrixVehicleLicensePlate() = default;
     AWS_GEOROUTES_API RouteMatrixVehicleLicensePlate(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API RouteMatrixVehicleLicensePlate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -41,14 +41,12 @@ namespace Model
     /**
      * <p>The last character of the License Plate.</p>
      */
-    inline const Aws::String& GetLastCharacter() const{ return m_lastCharacter; }
+    inline const Aws::String& GetLastCharacter() const { return m_lastCharacter; }
     inline bool LastCharacterHasBeenSet() const { return m_lastCharacterHasBeenSet; }
-    inline void SetLastCharacter(const Aws::String& value) { m_lastCharacterHasBeenSet = true; m_lastCharacter = value; }
-    inline void SetLastCharacter(Aws::String&& value) { m_lastCharacterHasBeenSet = true; m_lastCharacter = std::move(value); }
-    inline void SetLastCharacter(const char* value) { m_lastCharacterHasBeenSet = true; m_lastCharacter.assign(value); }
-    inline RouteMatrixVehicleLicensePlate& WithLastCharacter(const Aws::String& value) { SetLastCharacter(value); return *this;}
-    inline RouteMatrixVehicleLicensePlate& WithLastCharacter(Aws::String&& value) { SetLastCharacter(std::move(value)); return *this;}
-    inline RouteMatrixVehicleLicensePlate& WithLastCharacter(const char* value) { SetLastCharacter(value); return *this;}
+    template<typename LastCharacterT = Aws::String>
+    void SetLastCharacter(LastCharacterT&& value) { m_lastCharacterHasBeenSet = true; m_lastCharacter = std::forward<LastCharacterT>(value); }
+    template<typename LastCharacterT = Aws::String>
+    RouteMatrixVehicleLicensePlate& WithLastCharacter(LastCharacterT&& value) { SetLastCharacter(std::forward<LastCharacterT>(value)); return *this;}
     ///@}
   private:
 

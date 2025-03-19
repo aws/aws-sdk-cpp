@@ -18,26 +18,7 @@ namespace ComputeOptimizer
 namespace Model
 {
 
-VolumeRecommendation::VolumeRecommendation() : 
-    m_volumeArnHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
-    m_currentConfigurationHasBeenSet(false),
-    m_finding(EBSFinding::NOT_SET),
-    m_findingHasBeenSet(false),
-    m_utilizationMetricsHasBeenSet(false),
-    m_lookBackPeriodInDays(0.0),
-    m_lookBackPeriodInDaysHasBeenSet(false),
-    m_volumeRecommendationOptionsHasBeenSet(false),
-    m_lastRefreshTimestampHasBeenSet(false),
-    m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
-    m_currentPerformanceRiskHasBeenSet(false),
-    m_effectiveRecommendationPreferencesHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 VolumeRecommendation::VolumeRecommendation(JsonView jsonValue)
-  : VolumeRecommendation()
 {
   *this = jsonValue;
 }
@@ -47,31 +28,23 @@ VolumeRecommendation& VolumeRecommendation::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("volumeArn"))
   {
     m_volumeArn = jsonValue.GetString("volumeArn");
-
     m_volumeArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("accountId"))
   {
     m_accountId = jsonValue.GetString("accountId");
-
     m_accountIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentConfiguration"))
   {
     m_currentConfiguration = jsonValue.GetObject("currentConfiguration");
-
     m_currentConfigurationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("finding"))
   {
     m_finding = EBSFindingMapper::GetEBSFindingForName(jsonValue.GetString("finding"));
-
     m_findingHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("utilizationMetrics"))
   {
     Aws::Utils::Array<JsonView> utilizationMetricsJsonList = jsonValue.GetArray("utilizationMetrics");
@@ -81,14 +54,11 @@ VolumeRecommendation& VolumeRecommendation::operator =(JsonView jsonValue)
     }
     m_utilizationMetricsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lookBackPeriodInDays"))
   {
     m_lookBackPeriodInDays = jsonValue.GetDouble("lookBackPeriodInDays");
-
     m_lookBackPeriodInDaysHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("volumeRecommendationOptions"))
   {
     Aws::Utils::Array<JsonView> volumeRecommendationOptionsJsonList = jsonValue.GetArray("volumeRecommendationOptions");
@@ -98,28 +68,21 @@ VolumeRecommendation& VolumeRecommendation::operator =(JsonView jsonValue)
     }
     m_volumeRecommendationOptionsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("lastRefreshTimestamp"))
   {
     m_lastRefreshTimestamp = jsonValue.GetDouble("lastRefreshTimestamp");
-
     m_lastRefreshTimestampHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("currentPerformanceRisk"))
   {
     m_currentPerformanceRisk = CurrentPerformanceRiskMapper::GetCurrentPerformanceRiskForName(jsonValue.GetString("currentPerformanceRisk"));
-
     m_currentPerformanceRiskHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("effectiveRecommendationPreferences"))
   {
     m_effectiveRecommendationPreferences = jsonValue.GetObject("effectiveRecommendationPreferences");
-
     m_effectiveRecommendationPreferencesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
@@ -129,7 +92,6 @@ VolumeRecommendation& VolumeRecommendation::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

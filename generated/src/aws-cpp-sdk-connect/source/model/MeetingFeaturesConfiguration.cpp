@@ -18,13 +18,7 @@ namespace Connect
 namespace Model
 {
 
-MeetingFeaturesConfiguration::MeetingFeaturesConfiguration() : 
-    m_audioHasBeenSet(false)
-{
-}
-
 MeetingFeaturesConfiguration::MeetingFeaturesConfiguration(JsonView jsonValue)
-  : MeetingFeaturesConfiguration()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ MeetingFeaturesConfiguration& MeetingFeaturesConfiguration::operator =(JsonView 
   if(jsonValue.ValueExists("Audio"))
   {
     m_audio = jsonValue.GetObject("Audio");
-
     m_audioHasBeenSet = true;
   }
-
   return *this;
 }
 

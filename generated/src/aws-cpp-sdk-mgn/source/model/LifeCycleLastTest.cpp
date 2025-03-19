@@ -18,15 +18,7 @@ namespace mgn
 namespace Model
 {
 
-LifeCycleLastTest::LifeCycleLastTest() : 
-    m_finalizedHasBeenSet(false),
-    m_initiatedHasBeenSet(false),
-    m_revertedHasBeenSet(false)
-{
-}
-
 LifeCycleLastTest::LifeCycleLastTest(JsonView jsonValue)
-  : LifeCycleLastTest()
 {
   *this = jsonValue;
 }
@@ -36,24 +28,18 @@ LifeCycleLastTest& LifeCycleLastTest::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("finalized"))
   {
     m_finalized = jsonValue.GetObject("finalized");
-
     m_finalizedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("initiated"))
   {
     m_initiated = jsonValue.GetObject("initiated");
-
     m_initiatedHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("reverted"))
   {
     m_reverted = jsonValue.GetObject("reverted");
-
     m_revertedHasBeenSet = true;
   }
-
   return *this;
 }
 

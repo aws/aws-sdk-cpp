@@ -21,7 +21,7 @@ namespace Model
   class AssociateRouteTableRequest : public EC2Request
   {
   public:
-    AWS_EC2_API AssociateRouteTableRequest();
+    AWS_EC2_API AssociateRouteTableRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -40,14 +40,12 @@ namespace Model
     /**
      * <p>The ID of the internet gateway or virtual private gateway.</p>
      */
-    inline const Aws::String& GetGatewayId() const{ return m_gatewayId; }
+    inline const Aws::String& GetGatewayId() const { return m_gatewayId; }
     inline bool GatewayIdHasBeenSet() const { return m_gatewayIdHasBeenSet; }
-    inline void SetGatewayId(const Aws::String& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
-    inline void SetGatewayId(Aws::String&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::move(value); }
-    inline void SetGatewayId(const char* value) { m_gatewayIdHasBeenSet = true; m_gatewayId.assign(value); }
-    inline AssociateRouteTableRequest& WithGatewayId(const Aws::String& value) { SetGatewayId(value); return *this;}
-    inline AssociateRouteTableRequest& WithGatewayId(Aws::String&& value) { SetGatewayId(std::move(value)); return *this;}
-    inline AssociateRouteTableRequest& WithGatewayId(const char* value) { SetGatewayId(value); return *this;}
+    template<typename GatewayIdT = Aws::String>
+    void SetGatewayId(GatewayIdT&& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = std::forward<GatewayIdT>(value); }
+    template<typename GatewayIdT = Aws::String>
+    AssociateRouteTableRequest& WithGatewayId(GatewayIdT&& value) { SetGatewayId(std::forward<GatewayIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -57,7 +55,7 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
-    inline bool GetDryRun() const{ return m_dryRun; }
+    inline bool GetDryRun() const { return m_dryRun; }
     inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
     inline AssociateRouteTableRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
@@ -67,35 +65,31 @@ namespace Model
     /**
      * <p>The ID of the subnet.</p>
      */
-    inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+    inline const Aws::String& GetSubnetId() const { return m_subnetId; }
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
-    inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
-    inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
-    inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
-    inline AssociateRouteTableRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
-    inline AssociateRouteTableRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
-    inline AssociateRouteTableRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
+    template<typename SubnetIdT = Aws::String>
+    void SetSubnetId(SubnetIdT&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::forward<SubnetIdT>(value); }
+    template<typename SubnetIdT = Aws::String>
+    AssociateRouteTableRequest& WithSubnetId(SubnetIdT&& value) { SetSubnetId(std::forward<SubnetIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The ID of the route table.</p>
      */
-    inline const Aws::String& GetRouteTableId() const{ return m_routeTableId; }
+    inline const Aws::String& GetRouteTableId() const { return m_routeTableId; }
     inline bool RouteTableIdHasBeenSet() const { return m_routeTableIdHasBeenSet; }
-    inline void SetRouteTableId(const Aws::String& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
-    inline void SetRouteTableId(Aws::String&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::move(value); }
-    inline void SetRouteTableId(const char* value) { m_routeTableIdHasBeenSet = true; m_routeTableId.assign(value); }
-    inline AssociateRouteTableRequest& WithRouteTableId(const Aws::String& value) { SetRouteTableId(value); return *this;}
-    inline AssociateRouteTableRequest& WithRouteTableId(Aws::String&& value) { SetRouteTableId(std::move(value)); return *this;}
-    inline AssociateRouteTableRequest& WithRouteTableId(const char* value) { SetRouteTableId(value); return *this;}
+    template<typename RouteTableIdT = Aws::String>
+    void SetRouteTableId(RouteTableIdT&& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = std::forward<RouteTableIdT>(value); }
+    template<typename RouteTableIdT = Aws::String>
+    AssociateRouteTableRequest& WithRouteTableId(RouteTableIdT&& value) { SetRouteTableId(std::forward<RouteTableIdT>(value)); return *this;}
     ///@}
   private:
 
     Aws::String m_gatewayId;
     bool m_gatewayIdHasBeenSet = false;
 
-    bool m_dryRun;
+    bool m_dryRun{false};
     bool m_dryRunHasBeenSet = false;
 
     Aws::String m_subnetId;

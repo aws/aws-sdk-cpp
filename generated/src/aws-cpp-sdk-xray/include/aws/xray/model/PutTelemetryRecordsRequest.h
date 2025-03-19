@@ -23,7 +23,7 @@ namespace Model
   class PutTelemetryRecordsRequest : public XRayRequest
   {
   public:
-    AWS_XRAY_API PutTelemetryRecordsRequest();
+    AWS_XRAY_API PutTelemetryRecordsRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -38,56 +38,50 @@ namespace Model
     /**
      * <p/>
      */
-    inline const Aws::Vector<TelemetryRecord>& GetTelemetryRecords() const{ return m_telemetryRecords; }
+    inline const Aws::Vector<TelemetryRecord>& GetTelemetryRecords() const { return m_telemetryRecords; }
     inline bool TelemetryRecordsHasBeenSet() const { return m_telemetryRecordsHasBeenSet; }
-    inline void SetTelemetryRecords(const Aws::Vector<TelemetryRecord>& value) { m_telemetryRecordsHasBeenSet = true; m_telemetryRecords = value; }
-    inline void SetTelemetryRecords(Aws::Vector<TelemetryRecord>&& value) { m_telemetryRecordsHasBeenSet = true; m_telemetryRecords = std::move(value); }
-    inline PutTelemetryRecordsRequest& WithTelemetryRecords(const Aws::Vector<TelemetryRecord>& value) { SetTelemetryRecords(value); return *this;}
-    inline PutTelemetryRecordsRequest& WithTelemetryRecords(Aws::Vector<TelemetryRecord>&& value) { SetTelemetryRecords(std::move(value)); return *this;}
-    inline PutTelemetryRecordsRequest& AddTelemetryRecords(const TelemetryRecord& value) { m_telemetryRecordsHasBeenSet = true; m_telemetryRecords.push_back(value); return *this; }
-    inline PutTelemetryRecordsRequest& AddTelemetryRecords(TelemetryRecord&& value) { m_telemetryRecordsHasBeenSet = true; m_telemetryRecords.push_back(std::move(value)); return *this; }
+    template<typename TelemetryRecordsT = Aws::Vector<TelemetryRecord>>
+    void SetTelemetryRecords(TelemetryRecordsT&& value) { m_telemetryRecordsHasBeenSet = true; m_telemetryRecords = std::forward<TelemetryRecordsT>(value); }
+    template<typename TelemetryRecordsT = Aws::Vector<TelemetryRecord>>
+    PutTelemetryRecordsRequest& WithTelemetryRecords(TelemetryRecordsT&& value) { SetTelemetryRecords(std::forward<TelemetryRecordsT>(value)); return *this;}
+    template<typename TelemetryRecordsT = TelemetryRecord>
+    PutTelemetryRecordsRequest& AddTelemetryRecords(TelemetryRecordsT&& value) { m_telemetryRecordsHasBeenSet = true; m_telemetryRecords.emplace_back(std::forward<TelemetryRecordsT>(value)); return *this; }
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetEC2InstanceId() const{ return m_eC2InstanceId; }
+    inline const Aws::String& GetEC2InstanceId() const { return m_eC2InstanceId; }
     inline bool EC2InstanceIdHasBeenSet() const { return m_eC2InstanceIdHasBeenSet; }
-    inline void SetEC2InstanceId(const Aws::String& value) { m_eC2InstanceIdHasBeenSet = true; m_eC2InstanceId = value; }
-    inline void SetEC2InstanceId(Aws::String&& value) { m_eC2InstanceIdHasBeenSet = true; m_eC2InstanceId = std::move(value); }
-    inline void SetEC2InstanceId(const char* value) { m_eC2InstanceIdHasBeenSet = true; m_eC2InstanceId.assign(value); }
-    inline PutTelemetryRecordsRequest& WithEC2InstanceId(const Aws::String& value) { SetEC2InstanceId(value); return *this;}
-    inline PutTelemetryRecordsRequest& WithEC2InstanceId(Aws::String&& value) { SetEC2InstanceId(std::move(value)); return *this;}
-    inline PutTelemetryRecordsRequest& WithEC2InstanceId(const char* value) { SetEC2InstanceId(value); return *this;}
+    template<typename EC2InstanceIdT = Aws::String>
+    void SetEC2InstanceId(EC2InstanceIdT&& value) { m_eC2InstanceIdHasBeenSet = true; m_eC2InstanceId = std::forward<EC2InstanceIdT>(value); }
+    template<typename EC2InstanceIdT = Aws::String>
+    PutTelemetryRecordsRequest& WithEC2InstanceId(EC2InstanceIdT&& value) { SetEC2InstanceId(std::forward<EC2InstanceIdT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetHostname() const{ return m_hostname; }
+    inline const Aws::String& GetHostname() const { return m_hostname; }
     inline bool HostnameHasBeenSet() const { return m_hostnameHasBeenSet; }
-    inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
-    inline void SetHostname(Aws::String&& value) { m_hostnameHasBeenSet = true; m_hostname = std::move(value); }
-    inline void SetHostname(const char* value) { m_hostnameHasBeenSet = true; m_hostname.assign(value); }
-    inline PutTelemetryRecordsRequest& WithHostname(const Aws::String& value) { SetHostname(value); return *this;}
-    inline PutTelemetryRecordsRequest& WithHostname(Aws::String&& value) { SetHostname(std::move(value)); return *this;}
-    inline PutTelemetryRecordsRequest& WithHostname(const char* value) { SetHostname(value); return *this;}
+    template<typename HostnameT = Aws::String>
+    void SetHostname(HostnameT&& value) { m_hostnameHasBeenSet = true; m_hostname = std::forward<HostnameT>(value); }
+    template<typename HostnameT = Aws::String>
+    PutTelemetryRecordsRequest& WithHostname(HostnameT&& value) { SetHostname(std::forward<HostnameT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p/>
      */
-    inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
+    inline const Aws::String& GetResourceARN() const { return m_resourceARN; }
     inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
-    inline void SetResourceARN(const Aws::String& value) { m_resourceARNHasBeenSet = true; m_resourceARN = value; }
-    inline void SetResourceARN(Aws::String&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::move(value); }
-    inline void SetResourceARN(const char* value) { m_resourceARNHasBeenSet = true; m_resourceARN.assign(value); }
-    inline PutTelemetryRecordsRequest& WithResourceARN(const Aws::String& value) { SetResourceARN(value); return *this;}
-    inline PutTelemetryRecordsRequest& WithResourceARN(Aws::String&& value) { SetResourceARN(std::move(value)); return *this;}
-    inline PutTelemetryRecordsRequest& WithResourceARN(const char* value) { SetResourceARN(value); return *this;}
+    template<typename ResourceARNT = Aws::String>
+    void SetResourceARN(ResourceARNT&& value) { m_resourceARNHasBeenSet = true; m_resourceARN = std::forward<ResourceARNT>(value); }
+    template<typename ResourceARNT = Aws::String>
+    PutTelemetryRecordsRequest& WithResourceARN(ResourceARNT&& value) { SetResourceARN(std::forward<ResourceARNT>(value)); return *this;}
     ///@}
   private:
 

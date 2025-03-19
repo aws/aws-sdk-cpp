@@ -18,15 +18,7 @@ namespace QuickSight
 namespace Model
 {
 
-GeospatialWindowOptions::GeospatialWindowOptions() : 
-    m_boundsHasBeenSet(false),
-    m_mapZoomMode(MapZoomMode::NOT_SET),
-    m_mapZoomModeHasBeenSet(false)
-{
-}
-
 GeospatialWindowOptions::GeospatialWindowOptions(JsonView jsonValue)
-  : GeospatialWindowOptions()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ GeospatialWindowOptions& GeospatialWindowOptions::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Bounds"))
   {
     m_bounds = jsonValue.GetObject("Bounds");
-
     m_boundsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("MapZoomMode"))
   {
     m_mapZoomMode = MapZoomModeMapper::GetMapZoomModeForName(jsonValue.GetString("MapZoomMode"));
-
     m_mapZoomModeHasBeenSet = true;
   }
-
   return *this;
 }
 

@@ -15,14 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListIdentityPropagationConfigsRequest::ListIdentityPropagationConfigsRequest() : 
-    m_awsAccountIdHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListIdentityPropagationConfigsRequest::SerializePayload() const
 {
   return {};

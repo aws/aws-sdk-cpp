@@ -18,14 +18,7 @@ namespace IoTFleetWise
 namespace Model
 {
 
-CollectionScheme::CollectionScheme() : 
-    m_timeBasedCollectionSchemeHasBeenSet(false),
-    m_conditionBasedCollectionSchemeHasBeenSet(false)
-{
-}
-
 CollectionScheme::CollectionScheme(JsonView jsonValue)
-  : CollectionScheme()
 {
   *this = jsonValue;
 }
@@ -35,17 +28,13 @@ CollectionScheme& CollectionScheme::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("timeBasedCollectionScheme"))
   {
     m_timeBasedCollectionScheme = jsonValue.GetObject("timeBasedCollectionScheme");
-
     m_timeBasedCollectionSchemeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("conditionBasedCollectionScheme"))
   {
     m_conditionBasedCollectionScheme = jsonValue.GetObject("conditionBasedCollectionScheme");
-
     m_conditionBasedCollectionSchemeHasBeenSet = true;
   }
-
   return *this;
 }
 

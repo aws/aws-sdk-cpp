@@ -20,10 +20,6 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-StartLiveTailInitialResponse::StartLiveTailInitialResponse()
-{
-}
-
 StartLiveTailInitialResponse::StartLiveTailInitialResponse(JsonView jsonValue)
 {
   *this = jsonValue;

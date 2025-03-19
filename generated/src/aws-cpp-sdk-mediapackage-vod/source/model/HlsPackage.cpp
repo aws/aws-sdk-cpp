@@ -18,20 +18,7 @@ namespace MediaPackageVod
 namespace Model
 {
 
-HlsPackage::HlsPackage() : 
-    m_encryptionHasBeenSet(false),
-    m_hlsManifestsHasBeenSet(false),
-    m_includeDvbSubtitles(false),
-    m_includeDvbSubtitlesHasBeenSet(false),
-    m_segmentDurationSeconds(0),
-    m_segmentDurationSecondsHasBeenSet(false),
-    m_useAudioRenditionGroup(false),
-    m_useAudioRenditionGroupHasBeenSet(false)
-{
-}
-
 HlsPackage::HlsPackage(JsonView jsonValue)
-  : HlsPackage()
 {
   *this = jsonValue;
 }
@@ -41,10 +28,8 @@ HlsPackage& HlsPackage::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("encryption"))
   {
     m_encryption = jsonValue.GetObject("encryption");
-
     m_encryptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("hlsManifests"))
   {
     Aws::Utils::Array<JsonView> hlsManifestsJsonList = jsonValue.GetArray("hlsManifests");
@@ -54,28 +39,21 @@ HlsPackage& HlsPackage::operator =(JsonView jsonValue)
     }
     m_hlsManifestsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("includeDvbSubtitles"))
   {
     m_includeDvbSubtitles = jsonValue.GetBool("includeDvbSubtitles");
-
     m_includeDvbSubtitlesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("segmentDurationSeconds"))
   {
     m_segmentDurationSeconds = jsonValue.GetInteger("segmentDurationSeconds");
-
     m_segmentDurationSecondsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("useAudioRenditionGroup"))
   {
     m_useAudioRenditionGroup = jsonValue.GetBool("useAudioRenditionGroup");
-
     m_useAudioRenditionGroupHasBeenSet = true;
   }
-
   return *this;
 }
 

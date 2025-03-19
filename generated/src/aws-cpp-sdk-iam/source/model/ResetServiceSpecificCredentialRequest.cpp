@@ -10,12 +10,6 @@
 using namespace Aws::IAM::Model;
 using namespace Aws::Utils;
 
-ResetServiceSpecificCredentialRequest::ResetServiceSpecificCredentialRequest() : 
-    m_userNameHasBeenSet(false),
-    m_serviceSpecificCredentialIdHasBeenSet(false)
-{
-}
-
 Aws::String ResetServiceSpecificCredentialRequest::SerializePayload() const
 {
   Aws::StringStream ss;

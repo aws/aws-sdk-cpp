@@ -18,16 +18,7 @@ namespace CloudWatchLogs
 namespace Model
 {
 
-MetricFilterMatchRecord::MetricFilterMatchRecord() : 
-    m_eventNumber(0),
-    m_eventNumberHasBeenSet(false),
-    m_eventMessageHasBeenSet(false),
-    m_extractedValuesHasBeenSet(false)
-{
-}
-
 MetricFilterMatchRecord::MetricFilterMatchRecord(JsonView jsonValue)
-  : MetricFilterMatchRecord()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ MetricFilterMatchRecord& MetricFilterMatchRecord::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("eventNumber"))
   {
     m_eventNumber = jsonValue.GetInt64("eventNumber");
-
     m_eventNumberHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("eventMessage"))
   {
     m_eventMessage = jsonValue.GetString("eventMessage");
-
     m_eventMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("extractedValues"))
   {
     Aws::Map<Aws::String, JsonView> extractedValuesJsonMap = jsonValue.GetObject("extractedValues").GetAllObjects();
@@ -57,7 +44,6 @@ MetricFilterMatchRecord& MetricFilterMatchRecord::operator =(JsonView jsonValue)
     }
     m_extractedValuesHasBeenSet = true;
   }
-
   return *this;
 }
 

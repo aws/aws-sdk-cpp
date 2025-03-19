@@ -18,18 +18,7 @@ namespace CustomerProfiles
 namespace Model
 {
 
-EventTriggerSummaryItem::EventTriggerSummaryItem() : 
-    m_objectTypeNameHasBeenSet(false),
-    m_eventTriggerNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_lastUpdatedAtHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 EventTriggerSummaryItem::EventTriggerSummaryItem(JsonView jsonValue)
-  : EventTriggerSummaryItem()
 {
   *this = jsonValue;
 }
@@ -39,38 +28,28 @@ EventTriggerSummaryItem& EventTriggerSummaryItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ObjectTypeName"))
   {
     m_objectTypeName = jsonValue.GetString("ObjectTypeName");
-
     m_objectTypeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventTriggerName"))
   {
     m_eventTriggerName = jsonValue.GetString("EventTriggerName");
-
     m_eventTriggerNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedAt"))
   {
     m_lastUpdatedAt = jsonValue.GetDouble("LastUpdatedAt");
-
     m_lastUpdatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("Tags").GetAllObjects();
@@ -80,7 +59,6 @@ EventTriggerSummaryItem& EventTriggerSummaryItem::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

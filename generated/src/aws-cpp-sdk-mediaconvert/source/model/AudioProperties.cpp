@@ -18,22 +18,7 @@ namespace MediaConvert
 namespace Model
 {
 
-AudioProperties::AudioProperties() : 
-    m_bitDepth(0),
-    m_bitDepthHasBeenSet(false),
-    m_bitRate(0),
-    m_bitRateHasBeenSet(false),
-    m_channels(0),
-    m_channelsHasBeenSet(false),
-    m_frameRateHasBeenSet(false),
-    m_languageCodeHasBeenSet(false),
-    m_sampleRate(0),
-    m_sampleRateHasBeenSet(false)
-{
-}
-
 AudioProperties::AudioProperties(JsonView jsonValue)
-  : AudioProperties()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ AudioProperties& AudioProperties::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("bitDepth"))
   {
     m_bitDepth = jsonValue.GetInteger("bitDepth");
-
     m_bitDepthHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("bitRate"))
   {
     m_bitRate = jsonValue.GetInteger("bitRate");
-
     m_bitRateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("channels"))
   {
     m_channels = jsonValue.GetInteger("channels");
-
     m_channelsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("frameRate"))
   {
     m_frameRate = jsonValue.GetObject("frameRate");
-
     m_frameRateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("languageCode"))
   {
     m_languageCode = jsonValue.GetString("languageCode");
-
     m_languageCodeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("sampleRate"))
   {
     m_sampleRate = jsonValue.GetInteger("sampleRate");
-
     m_sampleRateHasBeenSet = true;
   }
-
   return *this;
 }
 

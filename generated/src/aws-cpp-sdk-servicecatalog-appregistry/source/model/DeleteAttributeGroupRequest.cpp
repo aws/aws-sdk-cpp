@@ -12,11 +12,6 @@ using namespace Aws::AppRegistry::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-DeleteAttributeGroupRequest::DeleteAttributeGroupRequest() : 
-    m_attributeGroupHasBeenSet(false)
-{
-}
-
 Aws::String DeleteAttributeGroupRequest::SerializePayload() const
 {
   return {};

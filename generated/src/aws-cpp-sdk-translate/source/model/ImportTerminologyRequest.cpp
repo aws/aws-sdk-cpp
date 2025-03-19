@@ -12,17 +12,6 @@ using namespace Aws::Translate::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ImportTerminologyRequest::ImportTerminologyRequest() : 
-    m_nameHasBeenSet(false),
-    m_mergeStrategy(MergeStrategy::NOT_SET),
-    m_mergeStrategyHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_terminologyDataHasBeenSet(false),
-    m_encryptionKeyHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Aws::String ImportTerminologyRequest::SerializePayload() const
 {
   JsonValue payload;

@@ -12,14 +12,6 @@ using namespace Aws::Kafka::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-CreateClusterV2Request::CreateClusterV2Request() : 
-    m_clusterNameHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_provisionedHasBeenSet(false),
-    m_serverlessHasBeenSet(false)
-{
-}
-
 Aws::String CreateClusterV2Request::SerializePayload() const
 {
   JsonValue payload;

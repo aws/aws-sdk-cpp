@@ -33,7 +33,7 @@ namespace Model
   class ParameterConfiguration
   {
   public:
-    AWS_SECURITYHUB_API ParameterConfiguration();
+    AWS_SECURITYHUB_API ParameterConfiguration() = default;
     AWS_SECURITYHUB_API ParameterConfiguration(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API ParameterConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_SECURITYHUB_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -50,28 +50,26 @@ namespace Model
      * <code>Value</code> field.</p> <p>When <code>ValueType</code> is set equal to
      * <code>CUSTOM</code>, the <code>Value</code> field can't be empty.</p>
      */
-    inline const ParameterValueType& GetValueType() const{ return m_valueType; }
+    inline ParameterValueType GetValueType() const { return m_valueType; }
     inline bool ValueTypeHasBeenSet() const { return m_valueTypeHasBeenSet; }
-    inline void SetValueType(const ParameterValueType& value) { m_valueTypeHasBeenSet = true; m_valueType = value; }
-    inline void SetValueType(ParameterValueType&& value) { m_valueTypeHasBeenSet = true; m_valueType = std::move(value); }
-    inline ParameterConfiguration& WithValueType(const ParameterValueType& value) { SetValueType(value); return *this;}
-    inline ParameterConfiguration& WithValueType(ParameterValueType&& value) { SetValueType(std::move(value)); return *this;}
+    inline void SetValueType(ParameterValueType value) { m_valueTypeHasBeenSet = true; m_valueType = value; }
+    inline ParameterConfiguration& WithValueType(ParameterValueType value) { SetValueType(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p> The current value of a control parameter. </p>
      */
-    inline const ParameterValue& GetValue() const{ return m_value; }
+    inline const ParameterValue& GetValue() const { return m_value; }
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-    inline void SetValue(const ParameterValue& value) { m_valueHasBeenSet = true; m_value = value; }
-    inline void SetValue(ParameterValue&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-    inline ParameterConfiguration& WithValue(const ParameterValue& value) { SetValue(value); return *this;}
-    inline ParameterConfiguration& WithValue(ParameterValue&& value) { SetValue(std::move(value)); return *this;}
+    template<typename ValueT = ParameterValue>
+    void SetValue(ValueT&& value) { m_valueHasBeenSet = true; m_value = std::forward<ValueT>(value); }
+    template<typename ValueT = ParameterValue>
+    ParameterConfiguration& WithValue(ValueT&& value) { SetValue(std::forward<ValueT>(value)); return *this;}
     ///@}
   private:
 
-    ParameterValueType m_valueType;
+    ParameterValueType m_valueType{ParameterValueType::NOT_SET};
     bool m_valueTypeHasBeenSet = false;
 
     ParameterValue m_value;

@@ -12,24 +12,6 @@ using namespace Aws::CloudWatchLogs::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-FilterLogEventsRequest::FilterLogEventsRequest() : 
-    m_logGroupNameHasBeenSet(false),
-    m_logGroupIdentifierHasBeenSet(false),
-    m_logStreamNamesHasBeenSet(false),
-    m_logStreamNamePrefixHasBeenSet(false),
-    m_startTime(0),
-    m_startTimeHasBeenSet(false),
-    m_endTime(0),
-    m_endTimeHasBeenSet(false),
-    m_filterPatternHasBeenSet(false),
-    m_nextTokenHasBeenSet(false),
-    m_limit(0),
-    m_limitHasBeenSet(false),
-    m_unmask(false),
-    m_unmaskHasBeenSet(false)
-{
-}
-
 Aws::String FilterLogEventsRequest::SerializePayload() const
 {
   JsonValue payload;

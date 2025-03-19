@@ -20,18 +20,7 @@ namespace S3Crt
 namespace Model
 {
 
-Grantee::Grantee() : 
-    m_displayNameHasBeenSet(false),
-    m_emailAddressHasBeenSet(false),
-    m_iDHasBeenSet(false),
-    m_type(Type::NOT_SET),
-    m_typeHasBeenSet(false),
-    m_uRIHasBeenSet(false)
-{
-}
-
 Grantee::Grantee(const XmlNode& xmlNode)
-  : Grantee()
 {
   *this = xmlNode;
 }
@@ -63,7 +52,7 @@ Grantee& Grantee::operator =(const XmlNode& xmlNode)
     auto type = resultNode.GetAttributeValue("xsi:type");
     if(!type.empty())
     {
-      m_type = TypeMapper::GetTypeForName(StringUtils::Trim(type.c_str()).c_str());
+      m_type = TypeMapper::GetTypeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(type).c_str()));
       m_typeHasBeenSet = true;
     }
     XmlNode uRINode = resultNode.FirstChild("URI");

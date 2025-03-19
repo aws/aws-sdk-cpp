@@ -10,12 +10,6 @@
 using namespace Aws::ElasticLoadBalancing::Model;
 using namespace Aws::Utils;
 
-RegisterInstancesWithLoadBalancerRequest::RegisterInstancesWithLoadBalancerRequest() : 
-    m_loadBalancerNameHasBeenSet(false),
-    m_instancesHasBeenSet(false)
-{
-}
-
 Aws::String RegisterInstancesWithLoadBalancerRequest::SerializePayload() const
 {
   Aws::StringStream ss;

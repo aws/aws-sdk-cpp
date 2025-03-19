@@ -18,22 +18,7 @@ namespace DataZone
 namespace Model
 {
 
-DataProductResultItem::DataProductResultItem() : 
-    m_createdAtHasBeenSet(false),
-    m_createdByHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_domainIdHasBeenSet(false),
-    m_firstRevisionCreatedAtHasBeenSet(false),
-    m_firstRevisionCreatedByHasBeenSet(false),
-    m_glossaryTermsHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_owningProjectIdHasBeenSet(false)
-{
-}
-
 DataProductResultItem::DataProductResultItem(JsonView jsonValue)
-  : DataProductResultItem()
 {
   *this = jsonValue;
 }
@@ -43,45 +28,33 @@ DataProductResultItem& DataProductResultItem::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetDouble("createdAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("createdBy"))
   {
     m_createdBy = jsonValue.GetString("createdBy");
-
     m_createdByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("description"))
   {
     m_description = jsonValue.GetString("description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("domainId"))
   {
     m_domainId = jsonValue.GetString("domainId");
-
     m_domainIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("firstRevisionCreatedAt"))
   {
     m_firstRevisionCreatedAt = jsonValue.GetDouble("firstRevisionCreatedAt");
-
     m_firstRevisionCreatedAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("firstRevisionCreatedBy"))
   {
     m_firstRevisionCreatedBy = jsonValue.GetString("firstRevisionCreatedBy");
-
     m_firstRevisionCreatedByHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("glossaryTerms"))
   {
     Aws::Utils::Array<JsonView> glossaryTermsJsonList = jsonValue.GetArray("glossaryTerms");
@@ -91,28 +64,21 @@ DataProductResultItem& DataProductResultItem::operator =(JsonView jsonValue)
     }
     m_glossaryTermsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("owningProjectId"))
   {
     m_owningProjectId = jsonValue.GetString("owningProjectId");
-
     m_owningProjectIdHasBeenSet = true;
   }
-
   return *this;
 }
 

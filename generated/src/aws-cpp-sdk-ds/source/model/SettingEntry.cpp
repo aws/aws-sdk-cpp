@@ -18,24 +18,7 @@ namespace DirectoryService
 namespace Model
 {
 
-SettingEntry::SettingEntry() : 
-    m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_allowedValuesHasBeenSet(false),
-    m_appliedValueHasBeenSet(false),
-    m_requestedValueHasBeenSet(false),
-    m_requestStatus(DirectoryConfigurationStatus::NOT_SET),
-    m_requestStatusHasBeenSet(false),
-    m_requestDetailedStatusHasBeenSet(false),
-    m_requestStatusMessageHasBeenSet(false),
-    m_lastUpdatedDateTimeHasBeenSet(false),
-    m_lastRequestedDateTimeHasBeenSet(false),
-    m_dataTypeHasBeenSet(false)
-{
-}
-
 SettingEntry::SettingEntry(JsonView jsonValue)
-  : SettingEntry()
 {
   *this = jsonValue;
 }
@@ -45,45 +28,33 @@ SettingEntry& SettingEntry::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Type"))
   {
     m_type = jsonValue.GetString("Type");
-
     m_typeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
-
     m_nameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AllowedValues"))
   {
     m_allowedValues = jsonValue.GetString("AllowedValues");
-
     m_allowedValuesHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("AppliedValue"))
   {
     m_appliedValue = jsonValue.GetString("AppliedValue");
-
     m_appliedValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestedValue"))
   {
     m_requestedValue = jsonValue.GetString("RequestedValue");
-
     m_requestedValueHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestStatus"))
   {
     m_requestStatus = DirectoryConfigurationStatusMapper::GetDirectoryConfigurationStatusForName(jsonValue.GetString("RequestStatus"));
-
     m_requestStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestDetailedStatus"))
   {
     Aws::Map<Aws::String, JsonView> requestDetailedStatusJsonMap = jsonValue.GetObject("RequestDetailedStatus").GetAllObjects();
@@ -93,35 +64,26 @@ SettingEntry& SettingEntry::operator =(JsonView jsonValue)
     }
     m_requestDetailedStatusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("RequestStatusMessage"))
   {
     m_requestStatusMessage = jsonValue.GetString("RequestStatusMessage");
-
     m_requestStatusMessageHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastUpdatedDateTime"))
   {
     m_lastUpdatedDateTime = jsonValue.GetDouble("LastUpdatedDateTime");
-
     m_lastUpdatedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("LastRequestedDateTime"))
   {
     m_lastRequestedDateTime = jsonValue.GetDouble("LastRequestedDateTime");
-
     m_lastRequestedDateTimeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("DataType"))
   {
     m_dataType = jsonValue.GetString("DataType");
-
     m_dataTypeHasBeenSet = true;
   }
-
   return *this;
 }
 

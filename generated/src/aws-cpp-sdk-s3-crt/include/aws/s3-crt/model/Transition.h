@@ -35,7 +35,7 @@ namespace Model
   class Transition
   {
   public:
-    AWS_S3CRT_API Transition();
+    AWS_S3CRT_API Transition() = default;
     AWS_S3CRT_API Transition(const Aws::Utils::Xml::XmlNode& xmlNode);
     AWS_S3CRT_API Transition& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
 
@@ -47,12 +47,12 @@ namespace Model
      * <p>Indicates when objects are transitioned to the specified storage class. The
      * date value must be in ISO 8601 format. The time is always midnight UTC.</p>
      */
-    inline const Aws::Utils::DateTime& GetDate() const{ return m_date; }
+    inline const Aws::Utils::DateTime& GetDate() const { return m_date; }
     inline bool DateHasBeenSet() const { return m_dateHasBeenSet; }
-    inline void SetDate(const Aws::Utils::DateTime& value) { m_dateHasBeenSet = true; m_date = value; }
-    inline void SetDate(Aws::Utils::DateTime&& value) { m_dateHasBeenSet = true; m_date = std::move(value); }
-    inline Transition& WithDate(const Aws::Utils::DateTime& value) { SetDate(value); return *this;}
-    inline Transition& WithDate(Aws::Utils::DateTime&& value) { SetDate(std::move(value)); return *this;}
+    template<typename DateT = Aws::Utils::DateTime>
+    void SetDate(DateT&& value) { m_dateHasBeenSet = true; m_date = std::forward<DateT>(value); }
+    template<typename DateT = Aws::Utils::DateTime>
+    Transition& WithDate(DateT&& value) { SetDate(std::forward<DateT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -70,7 +70,7 @@ namespace Model
      * Constraints and considerations for transitions</a> in the <i>Amazon S3 User
      * Guide</i>.</p>
      */
-    inline int GetDays() const{ return m_days; }
+    inline int GetDays() const { return m_days; }
     inline bool DaysHasBeenSet() const { return m_daysHasBeenSet; }
     inline void SetDays(int value) { m_daysHasBeenSet = true; m_days = value; }
     inline Transition& WithDays(int value) { SetDays(value); return *this;}
@@ -80,22 +80,20 @@ namespace Model
     /**
      * <p>The storage class to which you want the object to transition.</p>
      */
-    inline const TransitionStorageClass& GetStorageClass() const{ return m_storageClass; }
+    inline TransitionStorageClass GetStorageClass() const { return m_storageClass; }
     inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
-    inline void SetStorageClass(const TransitionStorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
-    inline void SetStorageClass(TransitionStorageClass&& value) { m_storageClassHasBeenSet = true; m_storageClass = std::move(value); }
-    inline Transition& WithStorageClass(const TransitionStorageClass& value) { SetStorageClass(value); return *this;}
-    inline Transition& WithStorageClass(TransitionStorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
+    inline void SetStorageClass(TransitionStorageClass value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
+    inline Transition& WithStorageClass(TransitionStorageClass value) { SetStorageClass(value); return *this;}
     ///@}
   private:
 
-    Aws::Utils::DateTime m_date;
+    Aws::Utils::DateTime m_date{};
     bool m_dateHasBeenSet = false;
 
-    int m_days;
+    int m_days{0};
     bool m_daysHasBeenSet = false;
 
-    TransitionStorageClass m_storageClass;
+    TransitionStorageClass m_storageClass{TransitionStorageClass::NOT_SET};
     bool m_storageClassHasBeenSet = false;
   };
 

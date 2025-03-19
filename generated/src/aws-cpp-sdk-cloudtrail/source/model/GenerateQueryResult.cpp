@@ -17,10 +17,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws;
 
-GenerateQueryResult::GenerateQueryResult()
-{
-}
-
 GenerateQueryResult::GenerateQueryResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   *this = result;
@@ -32,27 +28,25 @@ GenerateQueryResult& GenerateQueryResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("QueryStatement"))
   {
     m_queryStatement = jsonValue.GetString("QueryStatement");
-
+    m_queryStatementHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("QueryAlias"))
   {
     m_queryAlias = jsonValue.GetString("QueryAlias");
-
+    m_queryAliasHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("EventDataStoreOwnerAccountId"))
   {
     m_eventDataStoreOwnerAccountId = jsonValue.GetString("EventDataStoreOwnerAccountId");
-
+    m_eventDataStoreOwnerAccountIdHasBeenSet = true;
   }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {
     m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
   }
 
 

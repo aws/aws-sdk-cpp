@@ -34,7 +34,7 @@ namespace Model
   class MonitoringConfigurationUpdate
   {
   public:
-    AWS_KINESISANALYTICSV2_API MonitoringConfigurationUpdate();
+    AWS_KINESISANALYTICSV2_API MonitoringConfigurationUpdate() = default;
     AWS_KINESISANALYTICSV2_API MonitoringConfigurationUpdate(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API MonitoringConfigurationUpdate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_KINESISANALYTICSV2_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -47,12 +47,10 @@ namespace Model
      * <code>CUSTOM</code> in order to set the <code>LogLevel</code> or
      * <code>MetricsLevel</code> parameters.</p>
      */
-    inline const ConfigurationType& GetConfigurationTypeUpdate() const{ return m_configurationTypeUpdate; }
+    inline ConfigurationType GetConfigurationTypeUpdate() const { return m_configurationTypeUpdate; }
     inline bool ConfigurationTypeUpdateHasBeenSet() const { return m_configurationTypeUpdateHasBeenSet; }
-    inline void SetConfigurationTypeUpdate(const ConfigurationType& value) { m_configurationTypeUpdateHasBeenSet = true; m_configurationTypeUpdate = value; }
-    inline void SetConfigurationTypeUpdate(ConfigurationType&& value) { m_configurationTypeUpdateHasBeenSet = true; m_configurationTypeUpdate = std::move(value); }
-    inline MonitoringConfigurationUpdate& WithConfigurationTypeUpdate(const ConfigurationType& value) { SetConfigurationTypeUpdate(value); return *this;}
-    inline MonitoringConfigurationUpdate& WithConfigurationTypeUpdate(ConfigurationType&& value) { SetConfigurationTypeUpdate(std::move(value)); return *this;}
+    inline void SetConfigurationTypeUpdate(ConfigurationType value) { m_configurationTypeUpdateHasBeenSet = true; m_configurationTypeUpdate = value; }
+    inline MonitoringConfigurationUpdate& WithConfigurationTypeUpdate(ConfigurationType value) { SetConfigurationTypeUpdate(value); return *this;}
     ///@}
 
     ///@{
@@ -61,12 +59,10 @@ namespace Model
      * application. The <code>Parallelism</code> level is not recommended for
      * applications with a Parallelism over 64 due to excessive costs.</p>
      */
-    inline const MetricsLevel& GetMetricsLevelUpdate() const{ return m_metricsLevelUpdate; }
+    inline MetricsLevel GetMetricsLevelUpdate() const { return m_metricsLevelUpdate; }
     inline bool MetricsLevelUpdateHasBeenSet() const { return m_metricsLevelUpdateHasBeenSet; }
-    inline void SetMetricsLevelUpdate(const MetricsLevel& value) { m_metricsLevelUpdateHasBeenSet = true; m_metricsLevelUpdate = value; }
-    inline void SetMetricsLevelUpdate(MetricsLevel&& value) { m_metricsLevelUpdateHasBeenSet = true; m_metricsLevelUpdate = std::move(value); }
-    inline MonitoringConfigurationUpdate& WithMetricsLevelUpdate(const MetricsLevel& value) { SetMetricsLevelUpdate(value); return *this;}
-    inline MonitoringConfigurationUpdate& WithMetricsLevelUpdate(MetricsLevel&& value) { SetMetricsLevelUpdate(std::move(value)); return *this;}
+    inline void SetMetricsLevelUpdate(MetricsLevel value) { m_metricsLevelUpdateHasBeenSet = true; m_metricsLevelUpdate = value; }
+    inline MonitoringConfigurationUpdate& WithMetricsLevelUpdate(MetricsLevel value) { SetMetricsLevelUpdate(value); return *this;}
     ///@}
 
     ///@{
@@ -74,22 +70,20 @@ namespace Model
      * <p>Describes updates to the verbosity of the CloudWatch Logs for an
      * application.</p>
      */
-    inline const LogLevel& GetLogLevelUpdate() const{ return m_logLevelUpdate; }
+    inline LogLevel GetLogLevelUpdate() const { return m_logLevelUpdate; }
     inline bool LogLevelUpdateHasBeenSet() const { return m_logLevelUpdateHasBeenSet; }
-    inline void SetLogLevelUpdate(const LogLevel& value) { m_logLevelUpdateHasBeenSet = true; m_logLevelUpdate = value; }
-    inline void SetLogLevelUpdate(LogLevel&& value) { m_logLevelUpdateHasBeenSet = true; m_logLevelUpdate = std::move(value); }
-    inline MonitoringConfigurationUpdate& WithLogLevelUpdate(const LogLevel& value) { SetLogLevelUpdate(value); return *this;}
-    inline MonitoringConfigurationUpdate& WithLogLevelUpdate(LogLevel&& value) { SetLogLevelUpdate(std::move(value)); return *this;}
+    inline void SetLogLevelUpdate(LogLevel value) { m_logLevelUpdateHasBeenSet = true; m_logLevelUpdate = value; }
+    inline MonitoringConfigurationUpdate& WithLogLevelUpdate(LogLevel value) { SetLogLevelUpdate(value); return *this;}
     ///@}
   private:
 
-    ConfigurationType m_configurationTypeUpdate;
+    ConfigurationType m_configurationTypeUpdate{ConfigurationType::NOT_SET};
     bool m_configurationTypeUpdateHasBeenSet = false;
 
-    MetricsLevel m_metricsLevelUpdate;
+    MetricsLevel m_metricsLevelUpdate{MetricsLevel::NOT_SET};
     bool m_metricsLevelUpdateHasBeenSet = false;
 
-    LogLevel m_logLevelUpdate;
+    LogLevel m_logLevelUpdate{LogLevel::NOT_SET};
     bool m_logLevelUpdateHasBeenSet = false;
   };
 

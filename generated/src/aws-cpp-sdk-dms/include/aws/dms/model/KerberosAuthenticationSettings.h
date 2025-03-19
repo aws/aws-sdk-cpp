@@ -32,7 +32,7 @@ namespace Model
   class KerberosAuthenticationSettings
   {
   public:
-    AWS_DATABASEMIGRATIONSERVICE_API KerberosAuthenticationSettings();
+    AWS_DATABASEMIGRATIONSERVICE_API KerberosAuthenticationSettings() = default;
     AWS_DATABASEMIGRATIONSERVICE_API KerberosAuthenticationSettings(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API KerberosAuthenticationSettings& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_DATABASEMIGRATIONSERVICE_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -43,14 +43,12 @@ namespace Model
      * <p>Specifies the ID of the secret that stores the key cache file required for
      * kerberos authentication.</p>
      */
-    inline const Aws::String& GetKeyCacheSecretId() const{ return m_keyCacheSecretId; }
+    inline const Aws::String& GetKeyCacheSecretId() const { return m_keyCacheSecretId; }
     inline bool KeyCacheSecretIdHasBeenSet() const { return m_keyCacheSecretIdHasBeenSet; }
-    inline void SetKeyCacheSecretId(const Aws::String& value) { m_keyCacheSecretIdHasBeenSet = true; m_keyCacheSecretId = value; }
-    inline void SetKeyCacheSecretId(Aws::String&& value) { m_keyCacheSecretIdHasBeenSet = true; m_keyCacheSecretId = std::move(value); }
-    inline void SetKeyCacheSecretId(const char* value) { m_keyCacheSecretIdHasBeenSet = true; m_keyCacheSecretId.assign(value); }
-    inline KerberosAuthenticationSettings& WithKeyCacheSecretId(const Aws::String& value) { SetKeyCacheSecretId(value); return *this;}
-    inline KerberosAuthenticationSettings& WithKeyCacheSecretId(Aws::String&& value) { SetKeyCacheSecretId(std::move(value)); return *this;}
-    inline KerberosAuthenticationSettings& WithKeyCacheSecretId(const char* value) { SetKeyCacheSecretId(value); return *this;}
+    template<typename KeyCacheSecretIdT = Aws::String>
+    void SetKeyCacheSecretId(KeyCacheSecretIdT&& value) { m_keyCacheSecretIdHasBeenSet = true; m_keyCacheSecretId = std::forward<KeyCacheSecretIdT>(value); }
+    template<typename KeyCacheSecretIdT = Aws::String>
+    KerberosAuthenticationSettings& WithKeyCacheSecretId(KeyCacheSecretIdT&& value) { SetKeyCacheSecretId(std::forward<KeyCacheSecretIdT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -59,14 +57,12 @@ namespace Model
      * Web Services DMS access to the secret containing key cache file for the kerberos
      * authentication.</p>
      */
-    inline const Aws::String& GetKeyCacheSecretIamArn() const{ return m_keyCacheSecretIamArn; }
+    inline const Aws::String& GetKeyCacheSecretIamArn() const { return m_keyCacheSecretIamArn; }
     inline bool KeyCacheSecretIamArnHasBeenSet() const { return m_keyCacheSecretIamArnHasBeenSet; }
-    inline void SetKeyCacheSecretIamArn(const Aws::String& value) { m_keyCacheSecretIamArnHasBeenSet = true; m_keyCacheSecretIamArn = value; }
-    inline void SetKeyCacheSecretIamArn(Aws::String&& value) { m_keyCacheSecretIamArnHasBeenSet = true; m_keyCacheSecretIamArn = std::move(value); }
-    inline void SetKeyCacheSecretIamArn(const char* value) { m_keyCacheSecretIamArnHasBeenSet = true; m_keyCacheSecretIamArn.assign(value); }
-    inline KerberosAuthenticationSettings& WithKeyCacheSecretIamArn(const Aws::String& value) { SetKeyCacheSecretIamArn(value); return *this;}
-    inline KerberosAuthenticationSettings& WithKeyCacheSecretIamArn(Aws::String&& value) { SetKeyCacheSecretIamArn(std::move(value)); return *this;}
-    inline KerberosAuthenticationSettings& WithKeyCacheSecretIamArn(const char* value) { SetKeyCacheSecretIamArn(value); return *this;}
+    template<typename KeyCacheSecretIamArnT = Aws::String>
+    void SetKeyCacheSecretIamArn(KeyCacheSecretIamArnT&& value) { m_keyCacheSecretIamArnHasBeenSet = true; m_keyCacheSecretIamArn = std::forward<KeyCacheSecretIamArnT>(value); }
+    template<typename KeyCacheSecretIamArnT = Aws::String>
+    KerberosAuthenticationSettings& WithKeyCacheSecretIamArn(KeyCacheSecretIamArnT&& value) { SetKeyCacheSecretIamArn(std::forward<KeyCacheSecretIamArnT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -74,14 +70,12 @@ namespace Model
      * <p>Specifies the contents of krb5 configuration file required for kerberos
      * authentication.</p>
      */
-    inline const Aws::String& GetKrb5FileContents() const{ return m_krb5FileContents; }
+    inline const Aws::String& GetKrb5FileContents() const { return m_krb5FileContents; }
     inline bool Krb5FileContentsHasBeenSet() const { return m_krb5FileContentsHasBeenSet; }
-    inline void SetKrb5FileContents(const Aws::String& value) { m_krb5FileContentsHasBeenSet = true; m_krb5FileContents = value; }
-    inline void SetKrb5FileContents(Aws::String&& value) { m_krb5FileContentsHasBeenSet = true; m_krb5FileContents = std::move(value); }
-    inline void SetKrb5FileContents(const char* value) { m_krb5FileContentsHasBeenSet = true; m_krb5FileContents.assign(value); }
-    inline KerberosAuthenticationSettings& WithKrb5FileContents(const Aws::String& value) { SetKrb5FileContents(value); return *this;}
-    inline KerberosAuthenticationSettings& WithKrb5FileContents(Aws::String&& value) { SetKrb5FileContents(std::move(value)); return *this;}
-    inline KerberosAuthenticationSettings& WithKrb5FileContents(const char* value) { SetKrb5FileContents(value); return *this;}
+    template<typename Krb5FileContentsT = Aws::String>
+    void SetKrb5FileContents(Krb5FileContentsT&& value) { m_krb5FileContentsHasBeenSet = true; m_krb5FileContents = std::forward<Krb5FileContentsT>(value); }
+    template<typename Krb5FileContentsT = Aws::String>
+    KerberosAuthenticationSettings& WithKrb5FileContents(Krb5FileContentsT&& value) { SetKrb5FileContents(std::forward<Krb5FileContentsT>(value)); return *this;}
     ///@}
   private:
 

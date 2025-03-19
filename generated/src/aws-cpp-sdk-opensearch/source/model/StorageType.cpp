@@ -18,15 +18,7 @@ namespace OpenSearchService
 namespace Model
 {
 
-StorageType::StorageType() : 
-    m_storageTypeNameHasBeenSet(false),
-    m_storageSubTypeNameHasBeenSet(false),
-    m_storageTypeLimitsHasBeenSet(false)
-{
-}
-
 StorageType::StorageType(JsonView jsonValue)
-  : StorageType()
 {
   *this = jsonValue;
 }
@@ -36,17 +28,13 @@ StorageType& StorageType::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("StorageTypeName"))
   {
     m_storageTypeName = jsonValue.GetString("StorageTypeName");
-
     m_storageTypeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageSubTypeName"))
   {
     m_storageSubTypeName = jsonValue.GetString("StorageSubTypeName");
-
     m_storageSubTypeNameHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("StorageTypeLimits"))
   {
     Aws::Utils::Array<JsonView> storageTypeLimitsJsonList = jsonValue.GetArray("StorageTypeLimits");
@@ -56,7 +44,6 @@ StorageType& StorageType::operator =(JsonView jsonValue)
     }
     m_storageTypeLimitsHasBeenSet = true;
   }
-
   return *this;
 }
 

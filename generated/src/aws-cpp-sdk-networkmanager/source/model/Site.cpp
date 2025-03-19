@@ -18,21 +18,7 @@ namespace NetworkManager
 namespace Model
 {
 
-Site::Site() : 
-    m_siteIdHasBeenSet(false),
-    m_siteArnHasBeenSet(false),
-    m_globalNetworkIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_locationHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
-    m_state(SiteState::NOT_SET),
-    m_stateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
-{
-}
-
 Site::Site(JsonView jsonValue)
-  : Site()
 {
   *this = jsonValue;
 }
@@ -42,52 +28,38 @@ Site& Site::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("SiteId"))
   {
     m_siteId = jsonValue.GetString("SiteId");
-
     m_siteIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("SiteArn"))
   {
     m_siteArn = jsonValue.GetString("SiteArn");
-
     m_siteArnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("GlobalNetworkId"))
   {
     m_globalNetworkId = jsonValue.GetString("GlobalNetworkId");
-
     m_globalNetworkIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Description"))
   {
     m_description = jsonValue.GetString("Description");
-
     m_descriptionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Location"))
   {
     m_location = jsonValue.GetObject("Location");
-
     m_locationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("CreatedAt"))
   {
     m_createdAt = jsonValue.GetDouble("CreatedAt");
-
     m_createdAtHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("State"))
   {
     m_state = SiteStateMapper::GetSiteStateForName(jsonValue.GetString("State"));
-
     m_stateHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Tags"))
   {
     Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
@@ -97,7 +69,6 @@ Site& Site::operator =(JsonView jsonValue)
     }
     m_tagsHasBeenSet = true;
   }
-
   return *this;
 }
 

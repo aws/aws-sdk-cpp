@@ -18,20 +18,7 @@ namespace Pinpoint
 namespace Model
 {
 
-EndpointDemographic::EndpointDemographic() : 
-    m_appVersionHasBeenSet(false),
-    m_localeHasBeenSet(false),
-    m_makeHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_modelVersionHasBeenSet(false),
-    m_platformHasBeenSet(false),
-    m_platformVersionHasBeenSet(false),
-    m_timezoneHasBeenSet(false)
-{
-}
-
 EndpointDemographic::EndpointDemographic(JsonView jsonValue)
-  : EndpointDemographic()
 {
   *this = jsonValue;
 }
@@ -41,59 +28,43 @@ EndpointDemographic& EndpointDemographic::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("AppVersion"))
   {
     m_appVersion = jsonValue.GetString("AppVersion");
-
     m_appVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Locale"))
   {
     m_locale = jsonValue.GetString("Locale");
-
     m_localeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Make"))
   {
     m_make = jsonValue.GetString("Make");
-
     m_makeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Model"))
   {
     m_model = jsonValue.GetString("Model");
-
     m_modelHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("ModelVersion"))
   {
     m_modelVersion = jsonValue.GetString("ModelVersion");
-
     m_modelVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Platform"))
   {
     m_platform = jsonValue.GetString("Platform");
-
     m_platformHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PlatformVersion"))
   {
     m_platformVersion = jsonValue.GetString("PlatformVersion");
-
     m_platformVersionHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timezone"))
   {
     m_timezone = jsonValue.GetString("Timezone");
-
     m_timezoneHasBeenSet = true;
   }
-
   return *this;
 }
 

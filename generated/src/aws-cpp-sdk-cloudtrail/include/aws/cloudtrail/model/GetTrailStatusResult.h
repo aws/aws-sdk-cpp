@@ -34,7 +34,7 @@ namespace Model
   class GetTrailStatusResult
   {
   public:
-    AWS_CLOUDTRAIL_API GetTrailStatusResult();
+    AWS_CLOUDTRAIL_API GetTrailStatusResult() = default;
     AWS_CLOUDTRAIL_API GetTrailStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_CLOUDTRAIL_API GetTrailStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
@@ -44,8 +44,8 @@ namespace Model
      * <p>Whether the CloudTrail trail is currently logging Amazon Web Services API
      * calls.</p>
      */
-    inline bool GetIsLogging() const{ return m_isLogging; }
-    inline void SetIsLogging(bool value) { m_isLogging = value; }
+    inline bool GetIsLogging() const { return m_isLogging; }
+    inline void SetIsLogging(bool value) { m_isLoggingHasBeenSet = true; m_isLogging = value; }
     inline GetTrailStatusResult& WithIsLogging(bool value) { SetIsLogging(value); return *this;}
     ///@}
 
@@ -61,13 +61,11 @@ namespace Model
      * policy</a> so that CloudTrail can write to the bucket; or create a new bucket
      * and call <code>UpdateTrail</code> to specify the new bucket.</p> 
      */
-    inline const Aws::String& GetLatestDeliveryError() const{ return m_latestDeliveryError; }
-    inline void SetLatestDeliveryError(const Aws::String& value) { m_latestDeliveryError = value; }
-    inline void SetLatestDeliveryError(Aws::String&& value) { m_latestDeliveryError = std::move(value); }
-    inline void SetLatestDeliveryError(const char* value) { m_latestDeliveryError.assign(value); }
-    inline GetTrailStatusResult& WithLatestDeliveryError(const Aws::String& value) { SetLatestDeliveryError(value); return *this;}
-    inline GetTrailStatusResult& WithLatestDeliveryError(Aws::String&& value) { SetLatestDeliveryError(std::move(value)); return *this;}
-    inline GetTrailStatusResult& WithLatestDeliveryError(const char* value) { SetLatestDeliveryError(value); return *this;}
+    inline const Aws::String& GetLatestDeliveryError() const { return m_latestDeliveryError; }
+    template<typename LatestDeliveryErrorT = Aws::String>
+    void SetLatestDeliveryError(LatestDeliveryErrorT&& value) { m_latestDeliveryErrorHasBeenSet = true; m_latestDeliveryError = std::forward<LatestDeliveryErrorT>(value); }
+    template<typename LatestDeliveryErrorT = Aws::String>
+    GetTrailStatusResult& WithLatestDeliveryError(LatestDeliveryErrorT&& value) { SetLatestDeliveryError(std::forward<LatestDeliveryErrorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -77,13 +75,11 @@ namespace Model
      * href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon SNS
      * Developer Guide</a>. </p>
      */
-    inline const Aws::String& GetLatestNotificationError() const{ return m_latestNotificationError; }
-    inline void SetLatestNotificationError(const Aws::String& value) { m_latestNotificationError = value; }
-    inline void SetLatestNotificationError(Aws::String&& value) { m_latestNotificationError = std::move(value); }
-    inline void SetLatestNotificationError(const char* value) { m_latestNotificationError.assign(value); }
-    inline GetTrailStatusResult& WithLatestNotificationError(const Aws::String& value) { SetLatestNotificationError(value); return *this;}
-    inline GetTrailStatusResult& WithLatestNotificationError(Aws::String&& value) { SetLatestNotificationError(std::move(value)); return *this;}
-    inline GetTrailStatusResult& WithLatestNotificationError(const char* value) { SetLatestNotificationError(value); return *this;}
+    inline const Aws::String& GetLatestNotificationError() const { return m_latestNotificationError; }
+    template<typename LatestNotificationErrorT = Aws::String>
+    void SetLatestNotificationError(LatestNotificationErrorT&& value) { m_latestNotificationErrorHasBeenSet = true; m_latestNotificationError = std::forward<LatestNotificationErrorT>(value); }
+    template<typename LatestNotificationErrorT = Aws::String>
+    GetTrailStatusResult& WithLatestNotificationError(LatestNotificationErrorT&& value) { SetLatestNotificationError(std::forward<LatestNotificationErrorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -91,11 +87,11 @@ namespace Model
      * <p>Specifies the date and time that CloudTrail last delivered log files to an
      * account's Amazon S3 bucket.</p>
      */
-    inline const Aws::Utils::DateTime& GetLatestDeliveryTime() const{ return m_latestDeliveryTime; }
-    inline void SetLatestDeliveryTime(const Aws::Utils::DateTime& value) { m_latestDeliveryTime = value; }
-    inline void SetLatestDeliveryTime(Aws::Utils::DateTime&& value) { m_latestDeliveryTime = std::move(value); }
-    inline GetTrailStatusResult& WithLatestDeliveryTime(const Aws::Utils::DateTime& value) { SetLatestDeliveryTime(value); return *this;}
-    inline GetTrailStatusResult& WithLatestDeliveryTime(Aws::Utils::DateTime&& value) { SetLatestDeliveryTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLatestDeliveryTime() const { return m_latestDeliveryTime; }
+    template<typename LatestDeliveryTimeT = Aws::Utils::DateTime>
+    void SetLatestDeliveryTime(LatestDeliveryTimeT&& value) { m_latestDeliveryTimeHasBeenSet = true; m_latestDeliveryTime = std::forward<LatestDeliveryTimeT>(value); }
+    template<typename LatestDeliveryTimeT = Aws::Utils::DateTime>
+    GetTrailStatusResult& WithLatestDeliveryTime(LatestDeliveryTimeT&& value) { SetLatestDeliveryTime(std::forward<LatestDeliveryTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -103,11 +99,11 @@ namespace Model
      * <p>Specifies the date and time of the most recent Amazon SNS notification that
      * CloudTrail has written a new log file to an account's Amazon S3 bucket.</p>
      */
-    inline const Aws::Utils::DateTime& GetLatestNotificationTime() const{ return m_latestNotificationTime; }
-    inline void SetLatestNotificationTime(const Aws::Utils::DateTime& value) { m_latestNotificationTime = value; }
-    inline void SetLatestNotificationTime(Aws::Utils::DateTime&& value) { m_latestNotificationTime = std::move(value); }
-    inline GetTrailStatusResult& WithLatestNotificationTime(const Aws::Utils::DateTime& value) { SetLatestNotificationTime(value); return *this;}
-    inline GetTrailStatusResult& WithLatestNotificationTime(Aws::Utils::DateTime&& value) { SetLatestNotificationTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLatestNotificationTime() const { return m_latestNotificationTime; }
+    template<typename LatestNotificationTimeT = Aws::Utils::DateTime>
+    void SetLatestNotificationTime(LatestNotificationTimeT&& value) { m_latestNotificationTimeHasBeenSet = true; m_latestNotificationTime = std::forward<LatestNotificationTimeT>(value); }
+    template<typename LatestNotificationTimeT = Aws::Utils::DateTime>
+    GetTrailStatusResult& WithLatestNotificationTime(LatestNotificationTimeT&& value) { SetLatestNotificationTime(std::forward<LatestNotificationTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -115,11 +111,11 @@ namespace Model
      * <p>Specifies the most recent date and time when CloudTrail started recording API
      * calls for an Amazon Web Services account.</p>
      */
-    inline const Aws::Utils::DateTime& GetStartLoggingTime() const{ return m_startLoggingTime; }
-    inline void SetStartLoggingTime(const Aws::Utils::DateTime& value) { m_startLoggingTime = value; }
-    inline void SetStartLoggingTime(Aws::Utils::DateTime&& value) { m_startLoggingTime = std::move(value); }
-    inline GetTrailStatusResult& WithStartLoggingTime(const Aws::Utils::DateTime& value) { SetStartLoggingTime(value); return *this;}
-    inline GetTrailStatusResult& WithStartLoggingTime(Aws::Utils::DateTime&& value) { SetStartLoggingTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStartLoggingTime() const { return m_startLoggingTime; }
+    template<typename StartLoggingTimeT = Aws::Utils::DateTime>
+    void SetStartLoggingTime(StartLoggingTimeT&& value) { m_startLoggingTimeHasBeenSet = true; m_startLoggingTime = std::forward<StartLoggingTimeT>(value); }
+    template<typename StartLoggingTimeT = Aws::Utils::DateTime>
+    GetTrailStatusResult& WithStartLoggingTime(StartLoggingTimeT&& value) { SetStartLoggingTime(std::forward<StartLoggingTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -127,11 +123,11 @@ namespace Model
      * <p>Specifies the most recent date and time when CloudTrail stopped recording API
      * calls for an Amazon Web Services account.</p>
      */
-    inline const Aws::Utils::DateTime& GetStopLoggingTime() const{ return m_stopLoggingTime; }
-    inline void SetStopLoggingTime(const Aws::Utils::DateTime& value) { m_stopLoggingTime = value; }
-    inline void SetStopLoggingTime(Aws::Utils::DateTime&& value) { m_stopLoggingTime = std::move(value); }
-    inline GetTrailStatusResult& WithStopLoggingTime(const Aws::Utils::DateTime& value) { SetStopLoggingTime(value); return *this;}
-    inline GetTrailStatusResult& WithStopLoggingTime(Aws::Utils::DateTime&& value) { SetStopLoggingTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetStopLoggingTime() const { return m_stopLoggingTime; }
+    template<typename StopLoggingTimeT = Aws::Utils::DateTime>
+    void SetStopLoggingTime(StopLoggingTimeT&& value) { m_stopLoggingTimeHasBeenSet = true; m_stopLoggingTime = std::forward<StopLoggingTimeT>(value); }
+    template<typename StopLoggingTimeT = Aws::Utils::DateTime>
+    GetTrailStatusResult& WithStopLoggingTime(StopLoggingTimeT&& value) { SetStopLoggingTime(std::forward<StopLoggingTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -139,13 +135,11 @@ namespace Model
      * <p>Displays any CloudWatch Logs error that CloudTrail encountered when
      * attempting to deliver logs to CloudWatch Logs.</p>
      */
-    inline const Aws::String& GetLatestCloudWatchLogsDeliveryError() const{ return m_latestCloudWatchLogsDeliveryError; }
-    inline void SetLatestCloudWatchLogsDeliveryError(const Aws::String& value) { m_latestCloudWatchLogsDeliveryError = value; }
-    inline void SetLatestCloudWatchLogsDeliveryError(Aws::String&& value) { m_latestCloudWatchLogsDeliveryError = std::move(value); }
-    inline void SetLatestCloudWatchLogsDeliveryError(const char* value) { m_latestCloudWatchLogsDeliveryError.assign(value); }
-    inline GetTrailStatusResult& WithLatestCloudWatchLogsDeliveryError(const Aws::String& value) { SetLatestCloudWatchLogsDeliveryError(value); return *this;}
-    inline GetTrailStatusResult& WithLatestCloudWatchLogsDeliveryError(Aws::String&& value) { SetLatestCloudWatchLogsDeliveryError(std::move(value)); return *this;}
-    inline GetTrailStatusResult& WithLatestCloudWatchLogsDeliveryError(const char* value) { SetLatestCloudWatchLogsDeliveryError(value); return *this;}
+    inline const Aws::String& GetLatestCloudWatchLogsDeliveryError() const { return m_latestCloudWatchLogsDeliveryError; }
+    template<typename LatestCloudWatchLogsDeliveryErrorT = Aws::String>
+    void SetLatestCloudWatchLogsDeliveryError(LatestCloudWatchLogsDeliveryErrorT&& value) { m_latestCloudWatchLogsDeliveryErrorHasBeenSet = true; m_latestCloudWatchLogsDeliveryError = std::forward<LatestCloudWatchLogsDeliveryErrorT>(value); }
+    template<typename LatestCloudWatchLogsDeliveryErrorT = Aws::String>
+    GetTrailStatusResult& WithLatestCloudWatchLogsDeliveryError(LatestCloudWatchLogsDeliveryErrorT&& value) { SetLatestCloudWatchLogsDeliveryError(std::forward<LatestCloudWatchLogsDeliveryErrorT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -153,11 +147,11 @@ namespace Model
      * <p>Displays the most recent date and time when CloudTrail delivered logs to
      * CloudWatch Logs.</p>
      */
-    inline const Aws::Utils::DateTime& GetLatestCloudWatchLogsDeliveryTime() const{ return m_latestCloudWatchLogsDeliveryTime; }
-    inline void SetLatestCloudWatchLogsDeliveryTime(const Aws::Utils::DateTime& value) { m_latestCloudWatchLogsDeliveryTime = value; }
-    inline void SetLatestCloudWatchLogsDeliveryTime(Aws::Utils::DateTime&& value) { m_latestCloudWatchLogsDeliveryTime = std::move(value); }
-    inline GetTrailStatusResult& WithLatestCloudWatchLogsDeliveryTime(const Aws::Utils::DateTime& value) { SetLatestCloudWatchLogsDeliveryTime(value); return *this;}
-    inline GetTrailStatusResult& WithLatestCloudWatchLogsDeliveryTime(Aws::Utils::DateTime&& value) { SetLatestCloudWatchLogsDeliveryTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLatestCloudWatchLogsDeliveryTime() const { return m_latestCloudWatchLogsDeliveryTime; }
+    template<typename LatestCloudWatchLogsDeliveryTimeT = Aws::Utils::DateTime>
+    void SetLatestCloudWatchLogsDeliveryTime(LatestCloudWatchLogsDeliveryTimeT&& value) { m_latestCloudWatchLogsDeliveryTimeHasBeenSet = true; m_latestCloudWatchLogsDeliveryTime = std::forward<LatestCloudWatchLogsDeliveryTimeT>(value); }
+    template<typename LatestCloudWatchLogsDeliveryTimeT = Aws::Utils::DateTime>
+    GetTrailStatusResult& WithLatestCloudWatchLogsDeliveryTime(LatestCloudWatchLogsDeliveryTimeT&& value) { SetLatestCloudWatchLogsDeliveryTime(std::forward<LatestCloudWatchLogsDeliveryTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -165,11 +159,11 @@ namespace Model
      * <p>Specifies the date and time that CloudTrail last delivered a digest file to
      * an account's Amazon S3 bucket.</p>
      */
-    inline const Aws::Utils::DateTime& GetLatestDigestDeliveryTime() const{ return m_latestDigestDeliveryTime; }
-    inline void SetLatestDigestDeliveryTime(const Aws::Utils::DateTime& value) { m_latestDigestDeliveryTime = value; }
-    inline void SetLatestDigestDeliveryTime(Aws::Utils::DateTime&& value) { m_latestDigestDeliveryTime = std::move(value); }
-    inline GetTrailStatusResult& WithLatestDigestDeliveryTime(const Aws::Utils::DateTime& value) { SetLatestDigestDeliveryTime(value); return *this;}
-    inline GetTrailStatusResult& WithLatestDigestDeliveryTime(Aws::Utils::DateTime&& value) { SetLatestDigestDeliveryTime(std::move(value)); return *this;}
+    inline const Aws::Utils::DateTime& GetLatestDigestDeliveryTime() const { return m_latestDigestDeliveryTime; }
+    template<typename LatestDigestDeliveryTimeT = Aws::Utils::DateTime>
+    void SetLatestDigestDeliveryTime(LatestDigestDeliveryTimeT&& value) { m_latestDigestDeliveryTimeHasBeenSet = true; m_latestDigestDeliveryTime = std::forward<LatestDigestDeliveryTimeT>(value); }
+    template<typename LatestDigestDeliveryTimeT = Aws::Utils::DateTime>
+    GetTrailStatusResult& WithLatestDigestDeliveryTime(LatestDigestDeliveryTimeT&& value) { SetLatestDigestDeliveryTime(std::forward<LatestDigestDeliveryTimeT>(value)); return *this;}
     ///@}
 
     ///@{
@@ -184,140 +178,142 @@ namespace Model
      * policy</a> so that CloudTrail can write to the bucket; or create a new bucket
      * and call <code>UpdateTrail</code> to specify the new bucket.</p> 
      */
-    inline const Aws::String& GetLatestDigestDeliveryError() const{ return m_latestDigestDeliveryError; }
-    inline void SetLatestDigestDeliveryError(const Aws::String& value) { m_latestDigestDeliveryError = value; }
-    inline void SetLatestDigestDeliveryError(Aws::String&& value) { m_latestDigestDeliveryError = std::move(value); }
-    inline void SetLatestDigestDeliveryError(const char* value) { m_latestDigestDeliveryError.assign(value); }
-    inline GetTrailStatusResult& WithLatestDigestDeliveryError(const Aws::String& value) { SetLatestDigestDeliveryError(value); return *this;}
-    inline GetTrailStatusResult& WithLatestDigestDeliveryError(Aws::String&& value) { SetLatestDigestDeliveryError(std::move(value)); return *this;}
-    inline GetTrailStatusResult& WithLatestDigestDeliveryError(const char* value) { SetLatestDigestDeliveryError(value); return *this;}
+    inline const Aws::String& GetLatestDigestDeliveryError() const { return m_latestDigestDeliveryError; }
+    template<typename LatestDigestDeliveryErrorT = Aws::String>
+    void SetLatestDigestDeliveryError(LatestDigestDeliveryErrorT&& value) { m_latestDigestDeliveryErrorHasBeenSet = true; m_latestDigestDeliveryError = std::forward<LatestDigestDeliveryErrorT>(value); }
+    template<typename LatestDigestDeliveryErrorT = Aws::String>
+    GetTrailStatusResult& WithLatestDigestDeliveryError(LatestDigestDeliveryErrorT&& value) { SetLatestDigestDeliveryError(std::forward<LatestDigestDeliveryErrorT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This field is no longer in use.</p>
      */
-    inline const Aws::String& GetLatestDeliveryAttemptTime() const{ return m_latestDeliveryAttemptTime; }
-    inline void SetLatestDeliveryAttemptTime(const Aws::String& value) { m_latestDeliveryAttemptTime = value; }
-    inline void SetLatestDeliveryAttemptTime(Aws::String&& value) { m_latestDeliveryAttemptTime = std::move(value); }
-    inline void SetLatestDeliveryAttemptTime(const char* value) { m_latestDeliveryAttemptTime.assign(value); }
-    inline GetTrailStatusResult& WithLatestDeliveryAttemptTime(const Aws::String& value) { SetLatestDeliveryAttemptTime(value); return *this;}
-    inline GetTrailStatusResult& WithLatestDeliveryAttemptTime(Aws::String&& value) { SetLatestDeliveryAttemptTime(std::move(value)); return *this;}
-    inline GetTrailStatusResult& WithLatestDeliveryAttemptTime(const char* value) { SetLatestDeliveryAttemptTime(value); return *this;}
+    inline const Aws::String& GetLatestDeliveryAttemptTime() const { return m_latestDeliveryAttemptTime; }
+    template<typename LatestDeliveryAttemptTimeT = Aws::String>
+    void SetLatestDeliveryAttemptTime(LatestDeliveryAttemptTimeT&& value) { m_latestDeliveryAttemptTimeHasBeenSet = true; m_latestDeliveryAttemptTime = std::forward<LatestDeliveryAttemptTimeT>(value); }
+    template<typename LatestDeliveryAttemptTimeT = Aws::String>
+    GetTrailStatusResult& WithLatestDeliveryAttemptTime(LatestDeliveryAttemptTimeT&& value) { SetLatestDeliveryAttemptTime(std::forward<LatestDeliveryAttemptTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This field is no longer in use.</p>
      */
-    inline const Aws::String& GetLatestNotificationAttemptTime() const{ return m_latestNotificationAttemptTime; }
-    inline void SetLatestNotificationAttemptTime(const Aws::String& value) { m_latestNotificationAttemptTime = value; }
-    inline void SetLatestNotificationAttemptTime(Aws::String&& value) { m_latestNotificationAttemptTime = std::move(value); }
-    inline void SetLatestNotificationAttemptTime(const char* value) { m_latestNotificationAttemptTime.assign(value); }
-    inline GetTrailStatusResult& WithLatestNotificationAttemptTime(const Aws::String& value) { SetLatestNotificationAttemptTime(value); return *this;}
-    inline GetTrailStatusResult& WithLatestNotificationAttemptTime(Aws::String&& value) { SetLatestNotificationAttemptTime(std::move(value)); return *this;}
-    inline GetTrailStatusResult& WithLatestNotificationAttemptTime(const char* value) { SetLatestNotificationAttemptTime(value); return *this;}
+    inline const Aws::String& GetLatestNotificationAttemptTime() const { return m_latestNotificationAttemptTime; }
+    template<typename LatestNotificationAttemptTimeT = Aws::String>
+    void SetLatestNotificationAttemptTime(LatestNotificationAttemptTimeT&& value) { m_latestNotificationAttemptTimeHasBeenSet = true; m_latestNotificationAttemptTime = std::forward<LatestNotificationAttemptTimeT>(value); }
+    template<typename LatestNotificationAttemptTimeT = Aws::String>
+    GetTrailStatusResult& WithLatestNotificationAttemptTime(LatestNotificationAttemptTimeT&& value) { SetLatestNotificationAttemptTime(std::forward<LatestNotificationAttemptTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This field is no longer in use.</p>
      */
-    inline const Aws::String& GetLatestNotificationAttemptSucceeded() const{ return m_latestNotificationAttemptSucceeded; }
-    inline void SetLatestNotificationAttemptSucceeded(const Aws::String& value) { m_latestNotificationAttemptSucceeded = value; }
-    inline void SetLatestNotificationAttemptSucceeded(Aws::String&& value) { m_latestNotificationAttemptSucceeded = std::move(value); }
-    inline void SetLatestNotificationAttemptSucceeded(const char* value) { m_latestNotificationAttemptSucceeded.assign(value); }
-    inline GetTrailStatusResult& WithLatestNotificationAttemptSucceeded(const Aws::String& value) { SetLatestNotificationAttemptSucceeded(value); return *this;}
-    inline GetTrailStatusResult& WithLatestNotificationAttemptSucceeded(Aws::String&& value) { SetLatestNotificationAttemptSucceeded(std::move(value)); return *this;}
-    inline GetTrailStatusResult& WithLatestNotificationAttemptSucceeded(const char* value) { SetLatestNotificationAttemptSucceeded(value); return *this;}
+    inline const Aws::String& GetLatestNotificationAttemptSucceeded() const { return m_latestNotificationAttemptSucceeded; }
+    template<typename LatestNotificationAttemptSucceededT = Aws::String>
+    void SetLatestNotificationAttemptSucceeded(LatestNotificationAttemptSucceededT&& value) { m_latestNotificationAttemptSucceededHasBeenSet = true; m_latestNotificationAttemptSucceeded = std::forward<LatestNotificationAttemptSucceededT>(value); }
+    template<typename LatestNotificationAttemptSucceededT = Aws::String>
+    GetTrailStatusResult& WithLatestNotificationAttemptSucceeded(LatestNotificationAttemptSucceededT&& value) { SetLatestNotificationAttemptSucceeded(std::forward<LatestNotificationAttemptSucceededT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This field is no longer in use.</p>
      */
-    inline const Aws::String& GetLatestDeliveryAttemptSucceeded() const{ return m_latestDeliveryAttemptSucceeded; }
-    inline void SetLatestDeliveryAttemptSucceeded(const Aws::String& value) { m_latestDeliveryAttemptSucceeded = value; }
-    inline void SetLatestDeliveryAttemptSucceeded(Aws::String&& value) { m_latestDeliveryAttemptSucceeded = std::move(value); }
-    inline void SetLatestDeliveryAttemptSucceeded(const char* value) { m_latestDeliveryAttemptSucceeded.assign(value); }
-    inline GetTrailStatusResult& WithLatestDeliveryAttemptSucceeded(const Aws::String& value) { SetLatestDeliveryAttemptSucceeded(value); return *this;}
-    inline GetTrailStatusResult& WithLatestDeliveryAttemptSucceeded(Aws::String&& value) { SetLatestDeliveryAttemptSucceeded(std::move(value)); return *this;}
-    inline GetTrailStatusResult& WithLatestDeliveryAttemptSucceeded(const char* value) { SetLatestDeliveryAttemptSucceeded(value); return *this;}
+    inline const Aws::String& GetLatestDeliveryAttemptSucceeded() const { return m_latestDeliveryAttemptSucceeded; }
+    template<typename LatestDeliveryAttemptSucceededT = Aws::String>
+    void SetLatestDeliveryAttemptSucceeded(LatestDeliveryAttemptSucceededT&& value) { m_latestDeliveryAttemptSucceededHasBeenSet = true; m_latestDeliveryAttemptSucceeded = std::forward<LatestDeliveryAttemptSucceededT>(value); }
+    template<typename LatestDeliveryAttemptSucceededT = Aws::String>
+    GetTrailStatusResult& WithLatestDeliveryAttemptSucceeded(LatestDeliveryAttemptSucceededT&& value) { SetLatestDeliveryAttemptSucceeded(std::forward<LatestDeliveryAttemptSucceededT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This field is no longer in use.</p>
      */
-    inline const Aws::String& GetTimeLoggingStarted() const{ return m_timeLoggingStarted; }
-    inline void SetTimeLoggingStarted(const Aws::String& value) { m_timeLoggingStarted = value; }
-    inline void SetTimeLoggingStarted(Aws::String&& value) { m_timeLoggingStarted = std::move(value); }
-    inline void SetTimeLoggingStarted(const char* value) { m_timeLoggingStarted.assign(value); }
-    inline GetTrailStatusResult& WithTimeLoggingStarted(const Aws::String& value) { SetTimeLoggingStarted(value); return *this;}
-    inline GetTrailStatusResult& WithTimeLoggingStarted(Aws::String&& value) { SetTimeLoggingStarted(std::move(value)); return *this;}
-    inline GetTrailStatusResult& WithTimeLoggingStarted(const char* value) { SetTimeLoggingStarted(value); return *this;}
+    inline const Aws::String& GetTimeLoggingStarted() const { return m_timeLoggingStarted; }
+    template<typename TimeLoggingStartedT = Aws::String>
+    void SetTimeLoggingStarted(TimeLoggingStartedT&& value) { m_timeLoggingStartedHasBeenSet = true; m_timeLoggingStarted = std::forward<TimeLoggingStartedT>(value); }
+    template<typename TimeLoggingStartedT = Aws::String>
+    GetTrailStatusResult& WithTimeLoggingStarted(TimeLoggingStartedT&& value) { SetTimeLoggingStarted(std::forward<TimeLoggingStartedT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>This field is no longer in use.</p>
      */
-    inline const Aws::String& GetTimeLoggingStopped() const{ return m_timeLoggingStopped; }
-    inline void SetTimeLoggingStopped(const Aws::String& value) { m_timeLoggingStopped = value; }
-    inline void SetTimeLoggingStopped(Aws::String&& value) { m_timeLoggingStopped = std::move(value); }
-    inline void SetTimeLoggingStopped(const char* value) { m_timeLoggingStopped.assign(value); }
-    inline GetTrailStatusResult& WithTimeLoggingStopped(const Aws::String& value) { SetTimeLoggingStopped(value); return *this;}
-    inline GetTrailStatusResult& WithTimeLoggingStopped(Aws::String&& value) { SetTimeLoggingStopped(std::move(value)); return *this;}
-    inline GetTrailStatusResult& WithTimeLoggingStopped(const char* value) { SetTimeLoggingStopped(value); return *this;}
+    inline const Aws::String& GetTimeLoggingStopped() const { return m_timeLoggingStopped; }
+    template<typename TimeLoggingStoppedT = Aws::String>
+    void SetTimeLoggingStopped(TimeLoggingStoppedT&& value) { m_timeLoggingStoppedHasBeenSet = true; m_timeLoggingStopped = std::forward<TimeLoggingStoppedT>(value); }
+    template<typename TimeLoggingStoppedT = Aws::String>
+    GetTrailStatusResult& WithTimeLoggingStopped(TimeLoggingStoppedT&& value) { SetTimeLoggingStopped(std::forward<TimeLoggingStoppedT>(value)); return *this;}
     ///@}
 
     ///@{
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-    inline GetTrailStatusResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-    inline GetTrailStatusResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-    inline GetTrailStatusResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+    inline const Aws::String& GetRequestId() const { return m_requestId; }
+    template<typename RequestIdT = Aws::String>
+    void SetRequestId(RequestIdT&& value) { m_requestIdHasBeenSet = true; m_requestId = std::forward<RequestIdT>(value); }
+    template<typename RequestIdT = Aws::String>
+    GetTrailStatusResult& WithRequestId(RequestIdT&& value) { SetRequestId(std::forward<RequestIdT>(value)); return *this;}
     ///@}
   private:
 
-    bool m_isLogging;
+    bool m_isLogging{false};
+    bool m_isLoggingHasBeenSet = false;
 
     Aws::String m_latestDeliveryError;
+    bool m_latestDeliveryErrorHasBeenSet = false;
 
     Aws::String m_latestNotificationError;
+    bool m_latestNotificationErrorHasBeenSet = false;
 
-    Aws::Utils::DateTime m_latestDeliveryTime;
+    Aws::Utils::DateTime m_latestDeliveryTime{};
+    bool m_latestDeliveryTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_latestNotificationTime;
+    Aws::Utils::DateTime m_latestNotificationTime{};
+    bool m_latestNotificationTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_startLoggingTime;
+    Aws::Utils::DateTime m_startLoggingTime{};
+    bool m_startLoggingTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_stopLoggingTime;
+    Aws::Utils::DateTime m_stopLoggingTime{};
+    bool m_stopLoggingTimeHasBeenSet = false;
 
     Aws::String m_latestCloudWatchLogsDeliveryError;
+    bool m_latestCloudWatchLogsDeliveryErrorHasBeenSet = false;
 
-    Aws::Utils::DateTime m_latestCloudWatchLogsDeliveryTime;
+    Aws::Utils::DateTime m_latestCloudWatchLogsDeliveryTime{};
+    bool m_latestCloudWatchLogsDeliveryTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_latestDigestDeliveryTime;
+    Aws::Utils::DateTime m_latestDigestDeliveryTime{};
+    bool m_latestDigestDeliveryTimeHasBeenSet = false;
 
     Aws::String m_latestDigestDeliveryError;
+    bool m_latestDigestDeliveryErrorHasBeenSet = false;
 
     Aws::String m_latestDeliveryAttemptTime;
+    bool m_latestDeliveryAttemptTimeHasBeenSet = false;
 
     Aws::String m_latestNotificationAttemptTime;
+    bool m_latestNotificationAttemptTimeHasBeenSet = false;
 
     Aws::String m_latestNotificationAttemptSucceeded;
+    bool m_latestNotificationAttemptSucceededHasBeenSet = false;
 
     Aws::String m_latestDeliveryAttemptSucceeded;
+    bool m_latestDeliveryAttemptSucceededHasBeenSet = false;
 
     Aws::String m_timeLoggingStarted;
+    bool m_timeLoggingStartedHasBeenSet = false;
 
     Aws::String m_timeLoggingStopped;
+    bool m_timeLoggingStoppedHasBeenSet = false;
 
     Aws::String m_requestId;
+    bool m_requestIdHasBeenSet = false;
   };
 
 } // namespace Model

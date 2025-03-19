@@ -15,18 +15,6 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 using namespace Aws::Http;
 
-ListJobRunsRequest::ListJobRunsRequest() : 
-    m_virtualClusterIdHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false),
-    m_createdAfterHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_statesHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListJobRunsRequest::SerializePayload() const
 {
   return {};

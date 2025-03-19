@@ -20,17 +20,7 @@ namespace ElastiCache
 namespace Model
 {
 
-CacheSecurityGroup::CacheSecurityGroup() : 
-    m_ownerIdHasBeenSet(false),
-    m_cacheSecurityGroupNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
-    m_eC2SecurityGroupsHasBeenSet(false),
-    m_aRNHasBeenSet(false)
-{
-}
-
 CacheSecurityGroup::CacheSecurityGroup(const XmlNode& xmlNode)
-  : CacheSecurityGroup()
 {
   *this = xmlNode;
 }
@@ -63,6 +53,7 @@ CacheSecurityGroup& CacheSecurityGroup::operator =(const XmlNode& xmlNode)
     if(!eC2SecurityGroupsNode.IsNull())
     {
       XmlNode eC2SecurityGroupsMember = eC2SecurityGroupsNode.FirstChild("EC2SecurityGroup");
+      m_eC2SecurityGroupsHasBeenSet = !eC2SecurityGroupsMember.IsNull();
       while(!eC2SecurityGroupsMember.IsNull())
       {
         m_eC2SecurityGroups.push_back(eC2SecurityGroupsMember);

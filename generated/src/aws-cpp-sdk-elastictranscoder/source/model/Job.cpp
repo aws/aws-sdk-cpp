@@ -18,24 +18,7 @@ namespace ElasticTranscoder
 namespace Model
 {
 
-Job::Job() : 
-    m_idHasBeenSet(false),
-    m_arnHasBeenSet(false),
-    m_pipelineIdHasBeenSet(false),
-    m_inputHasBeenSet(false),
-    m_inputsHasBeenSet(false),
-    m_outputHasBeenSet(false),
-    m_outputsHasBeenSet(false),
-    m_outputKeyPrefixHasBeenSet(false),
-    m_playlistsHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_userMetadataHasBeenSet(false),
-    m_timingHasBeenSet(false)
-{
-}
-
 Job::Job(JsonView jsonValue)
-  : Job()
 {
   *this = jsonValue;
 }
@@ -45,31 +28,23 @@ Job& Job::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("Id"))
   {
     m_id = jsonValue.GetString("Id");
-
     m_idHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Arn"))
   {
     m_arn = jsonValue.GetString("Arn");
-
     m_arnHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("PipelineId"))
   {
     m_pipelineId = jsonValue.GetString("PipelineId");
-
     m_pipelineIdHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Input"))
   {
     m_input = jsonValue.GetObject("Input");
-
     m_inputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Inputs"))
   {
     Aws::Utils::Array<JsonView> inputsJsonList = jsonValue.GetArray("Inputs");
@@ -79,14 +54,11 @@ Job& Job::operator =(JsonView jsonValue)
     }
     m_inputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Output"))
   {
     m_output = jsonValue.GetObject("Output");
-
     m_outputHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Outputs"))
   {
     Aws::Utils::Array<JsonView> outputsJsonList = jsonValue.GetArray("Outputs");
@@ -96,14 +68,11 @@ Job& Job::operator =(JsonView jsonValue)
     }
     m_outputsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("OutputKeyPrefix"))
   {
     m_outputKeyPrefix = jsonValue.GetString("OutputKeyPrefix");
-
     m_outputKeyPrefixHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Playlists"))
   {
     Aws::Utils::Array<JsonView> playlistsJsonList = jsonValue.GetArray("Playlists");
@@ -113,14 +82,11 @@ Job& Job::operator =(JsonView jsonValue)
     }
     m_playlistsHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Status"))
   {
     m_status = jsonValue.GetString("Status");
-
     m_statusHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("UserMetadata"))
   {
     Aws::Map<Aws::String, JsonView> userMetadataJsonMap = jsonValue.GetObject("UserMetadata").GetAllObjects();
@@ -130,14 +96,11 @@ Job& Job::operator =(JsonView jsonValue)
     }
     m_userMetadataHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("Timing"))
   {
     m_timing = jsonValue.GetObject("Timing");
-
     m_timingHasBeenSet = true;
   }
-
   return *this;
 }
 

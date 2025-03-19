@@ -12,16 +12,6 @@ using namespace Aws::LookoutMetrics::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-ListAnomalyGroupTimeSeriesRequest::ListAnomalyGroupTimeSeriesRequest() : 
-    m_anomalyDetectorArnHasBeenSet(false),
-    m_anomalyGroupIdHasBeenSet(false),
-    m_metricNameHasBeenSet(false),
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
-{
-}
-
 Aws::String ListAnomalyGroupTimeSeriesRequest::SerializePayload() const
 {
   JsonValue payload;

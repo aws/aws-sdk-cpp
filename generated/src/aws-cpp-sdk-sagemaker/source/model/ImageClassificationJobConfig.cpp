@@ -18,13 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ImageClassificationJobConfig::ImageClassificationJobConfig() : 
-    m_completionCriteriaHasBeenSet(false)
-{
-}
-
 ImageClassificationJobConfig::ImageClassificationJobConfig(JsonView jsonValue)
-  : ImageClassificationJobConfig()
 {
   *this = jsonValue;
 }
@@ -34,10 +28,8 @@ ImageClassificationJobConfig& ImageClassificationJobConfig::operator =(JsonView 
   if(jsonValue.ValueExists("CompletionCriteria"))
   {
     m_completionCriteria = jsonValue.GetObject("CompletionCriteria");
-
     m_completionCriteriaHasBeenSet = true;
   }
-
   return *this;
 }
 

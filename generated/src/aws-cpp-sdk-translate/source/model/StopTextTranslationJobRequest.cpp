@@ -12,11 +12,6 @@ using namespace Aws::Translate::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
-StopTextTranslationJobRequest::StopTextTranslationJobRequest() : 
-    m_jobIdHasBeenSet(false)
-{
-}
-
 Aws::String StopTextTranslationJobRequest::SerializePayload() const
 {
   JsonValue payload;

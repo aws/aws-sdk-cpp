@@ -18,16 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-ServerSummary::ServerSummary() : 
-    m_serverOsType(ServerOsType::NOT_SET),
-    m_serverOsTypeHasBeenSet(false),
-    m_count(0),
-    m_countHasBeenSet(false)
-{
-}
-
 ServerSummary::ServerSummary(JsonView jsonValue)
-  : ServerSummary()
 {
   *this = jsonValue;
 }
@@ -37,17 +28,13 @@ ServerSummary& ServerSummary::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("ServerOsType"))
   {
     m_serverOsType = ServerOsTypeMapper::GetServerOsTypeForName(jsonValue.GetString("ServerOsType"));
-
     m_serverOsTypeHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("count"))
   {
     m_count = jsonValue.GetInteger("count");
-
     m_countHasBeenSet = true;
   }
-
   return *this;
 }
 

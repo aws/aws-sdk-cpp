@@ -23,7 +23,7 @@ namespace Model
   class SubmitAttachmentStateChangesRequest : public ECSRequest
   {
   public:
-    AWS_ECS_API SubmitAttachmentStateChangesRequest();
+    AWS_ECS_API SubmitAttachmentStateChangesRequest() = default;
 
     // Service request name is the Operation name which will send this request out,
     // each operation should has unique request name, so that we can get operation's name from this request.
@@ -41,28 +41,26 @@ namespace Model
      * <p>The short name or full ARN of the cluster that hosts the container instance
      * the attachment belongs to.</p>
      */
-    inline const Aws::String& GetCluster() const{ return m_cluster; }
+    inline const Aws::String& GetCluster() const { return m_cluster; }
     inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
-    inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
-    inline void SetCluster(Aws::String&& value) { m_clusterHasBeenSet = true; m_cluster = std::move(value); }
-    inline void SetCluster(const char* value) { m_clusterHasBeenSet = true; m_cluster.assign(value); }
-    inline SubmitAttachmentStateChangesRequest& WithCluster(const Aws::String& value) { SetCluster(value); return *this;}
-    inline SubmitAttachmentStateChangesRequest& WithCluster(Aws::String&& value) { SetCluster(std::move(value)); return *this;}
-    inline SubmitAttachmentStateChangesRequest& WithCluster(const char* value) { SetCluster(value); return *this;}
+    template<typename ClusterT = Aws::String>
+    void SetCluster(ClusterT&& value) { m_clusterHasBeenSet = true; m_cluster = std::forward<ClusterT>(value); }
+    template<typename ClusterT = Aws::String>
+    SubmitAttachmentStateChangesRequest& WithCluster(ClusterT&& value) { SetCluster(std::forward<ClusterT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Any attachments associated with the state change request.</p>
      */
-    inline const Aws::Vector<AttachmentStateChange>& GetAttachments() const{ return m_attachments; }
+    inline const Aws::Vector<AttachmentStateChange>& GetAttachments() const { return m_attachments; }
     inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
-    inline void SetAttachments(const Aws::Vector<AttachmentStateChange>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
-    inline void SetAttachments(Aws::Vector<AttachmentStateChange>&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::move(value); }
-    inline SubmitAttachmentStateChangesRequest& WithAttachments(const Aws::Vector<AttachmentStateChange>& value) { SetAttachments(value); return *this;}
-    inline SubmitAttachmentStateChangesRequest& WithAttachments(Aws::Vector<AttachmentStateChange>&& value) { SetAttachments(std::move(value)); return *this;}
-    inline SubmitAttachmentStateChangesRequest& AddAttachments(const AttachmentStateChange& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(value); return *this; }
-    inline SubmitAttachmentStateChangesRequest& AddAttachments(AttachmentStateChange&& value) { m_attachmentsHasBeenSet = true; m_attachments.push_back(std::move(value)); return *this; }
+    template<typename AttachmentsT = Aws::Vector<AttachmentStateChange>>
+    void SetAttachments(AttachmentsT&& value) { m_attachmentsHasBeenSet = true; m_attachments = std::forward<AttachmentsT>(value); }
+    template<typename AttachmentsT = Aws::Vector<AttachmentStateChange>>
+    SubmitAttachmentStateChangesRequest& WithAttachments(AttachmentsT&& value) { SetAttachments(std::forward<AttachmentsT>(value)); return *this;}
+    template<typename AttachmentsT = AttachmentStateChange>
+    SubmitAttachmentStateChangesRequest& AddAttachments(AttachmentsT&& value) { m_attachmentsHasBeenSet = true; m_attachments.emplace_back(std::forward<AttachmentsT>(value)); return *this; }
     ///@}
   private:
 

@@ -18,14 +18,7 @@ namespace FraudDetector
 namespace Model
 {
 
-ATIModelPerformance::ATIModelPerformance() : 
-    m_asi(0.0),
-    m_asiHasBeenSet(false)
-{
-}
-
 ATIModelPerformance::ATIModelPerformance(JsonView jsonValue)
-  : ATIModelPerformance()
 {
   *this = jsonValue;
 }
@@ -35,10 +28,8 @@ ATIModelPerformance& ATIModelPerformance::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("asi"))
   {
     m_asi = jsonValue.GetDouble("asi");
-
     m_asiHasBeenSet = true;
   }
-
   return *this;
 }
 

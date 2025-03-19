@@ -18,20 +18,7 @@ namespace MigrationHubStrategyRecommendations
 namespace Model
 {
 
-StrategyOption::StrategyOption() : 
-    m_isPreferred(false),
-    m_isPreferredHasBeenSet(false),
-    m_strategy(Strategy::NOT_SET),
-    m_strategyHasBeenSet(false),
-    m_targetDestination(TargetDestination::NOT_SET),
-    m_targetDestinationHasBeenSet(false),
-    m_toolName(TransformationToolName::NOT_SET),
-    m_toolNameHasBeenSet(false)
-{
-}
-
 StrategyOption::StrategyOption(JsonView jsonValue)
-  : StrategyOption()
 {
   *this = jsonValue;
 }
@@ -41,31 +28,23 @@ StrategyOption& StrategyOption::operator =(JsonView jsonValue)
   if(jsonValue.ValueExists("isPreferred"))
   {
     m_isPreferred = jsonValue.GetBool("isPreferred");
-
     m_isPreferredHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("strategy"))
   {
     m_strategy = StrategyMapper::GetStrategyForName(jsonValue.GetString("strategy"));
-
     m_strategyHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("targetDestination"))
   {
     m_targetDestination = TargetDestinationMapper::GetTargetDestinationForName(jsonValue.GetString("targetDestination"));
-
     m_targetDestinationHasBeenSet = true;
   }
-
   if(jsonValue.ValueExists("toolName"))
   {
     m_toolName = TransformationToolNameMapper::GetTransformationToolNameForName(jsonValue.GetString("toolName"));
-
     m_toolNameHasBeenSet = true;
   }
-
   return *this;
 }
 

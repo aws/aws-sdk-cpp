@@ -35,7 +35,7 @@ namespace Model
   class QueryExecutionStatus
   {
   public:
-    AWS_ATHENA_API QueryExecutionStatus();
+    AWS_ATHENA_API QueryExecutionStatus() = default;
     AWS_ATHENA_API QueryExecutionStatus(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API QueryExecutionStatus& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_ATHENA_API Aws::Utils::Json::JsonValue Jsonize() const;
@@ -54,75 +54,71 @@ namespace Model
      * see the query state transition from <code>RUNNING</code> or <code>FAILED</code>
      * to <code>QUEUED</code>. </p> 
      */
-    inline const QueryExecutionState& GetState() const{ return m_state; }
+    inline QueryExecutionState GetState() const { return m_state; }
     inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
-    inline void SetState(const QueryExecutionState& value) { m_stateHasBeenSet = true; m_state = value; }
-    inline void SetState(QueryExecutionState&& value) { m_stateHasBeenSet = true; m_state = std::move(value); }
-    inline QueryExecutionStatus& WithState(const QueryExecutionState& value) { SetState(value); return *this;}
-    inline QueryExecutionStatus& WithState(QueryExecutionState&& value) { SetState(std::move(value)); return *this;}
+    inline void SetState(QueryExecutionState value) { m_stateHasBeenSet = true; m_state = value; }
+    inline QueryExecutionStatus& WithState(QueryExecutionState value) { SetState(value); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Further detail about the status of the query.</p>
      */
-    inline const Aws::String& GetStateChangeReason() const{ return m_stateChangeReason; }
+    inline const Aws::String& GetStateChangeReason() const { return m_stateChangeReason; }
     inline bool StateChangeReasonHasBeenSet() const { return m_stateChangeReasonHasBeenSet; }
-    inline void SetStateChangeReason(const Aws::String& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = value; }
-    inline void SetStateChangeReason(Aws::String&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = std::move(value); }
-    inline void SetStateChangeReason(const char* value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason.assign(value); }
-    inline QueryExecutionStatus& WithStateChangeReason(const Aws::String& value) { SetStateChangeReason(value); return *this;}
-    inline QueryExecutionStatus& WithStateChangeReason(Aws::String&& value) { SetStateChangeReason(std::move(value)); return *this;}
-    inline QueryExecutionStatus& WithStateChangeReason(const char* value) { SetStateChangeReason(value); return *this;}
+    template<typename StateChangeReasonT = Aws::String>
+    void SetStateChangeReason(StateChangeReasonT&& value) { m_stateChangeReasonHasBeenSet = true; m_stateChangeReason = std::forward<StateChangeReasonT>(value); }
+    template<typename StateChangeReasonT = Aws::String>
+    QueryExecutionStatus& WithStateChangeReason(StateChangeReasonT&& value) { SetStateChangeReason(std::forward<StateChangeReasonT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the query was submitted.</p>
      */
-    inline const Aws::Utils::DateTime& GetSubmissionDateTime() const{ return m_submissionDateTime; }
+    inline const Aws::Utils::DateTime& GetSubmissionDateTime() const { return m_submissionDateTime; }
     inline bool SubmissionDateTimeHasBeenSet() const { return m_submissionDateTimeHasBeenSet; }
-    inline void SetSubmissionDateTime(const Aws::Utils::DateTime& value) { m_submissionDateTimeHasBeenSet = true; m_submissionDateTime = value; }
-    inline void SetSubmissionDateTime(Aws::Utils::DateTime&& value) { m_submissionDateTimeHasBeenSet = true; m_submissionDateTime = std::move(value); }
-    inline QueryExecutionStatus& WithSubmissionDateTime(const Aws::Utils::DateTime& value) { SetSubmissionDateTime(value); return *this;}
-    inline QueryExecutionStatus& WithSubmissionDateTime(Aws::Utils::DateTime&& value) { SetSubmissionDateTime(std::move(value)); return *this;}
+    template<typename SubmissionDateTimeT = Aws::Utils::DateTime>
+    void SetSubmissionDateTime(SubmissionDateTimeT&& value) { m_submissionDateTimeHasBeenSet = true; m_submissionDateTime = std::forward<SubmissionDateTimeT>(value); }
+    template<typename SubmissionDateTimeT = Aws::Utils::DateTime>
+    QueryExecutionStatus& WithSubmissionDateTime(SubmissionDateTimeT&& value) { SetSubmissionDateTime(std::forward<SubmissionDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>The date and time that the query completed.</p>
      */
-    inline const Aws::Utils::DateTime& GetCompletionDateTime() const{ return m_completionDateTime; }
+    inline const Aws::Utils::DateTime& GetCompletionDateTime() const { return m_completionDateTime; }
     inline bool CompletionDateTimeHasBeenSet() const { return m_completionDateTimeHasBeenSet; }
-    inline void SetCompletionDateTime(const Aws::Utils::DateTime& value) { m_completionDateTimeHasBeenSet = true; m_completionDateTime = value; }
-    inline void SetCompletionDateTime(Aws::Utils::DateTime&& value) { m_completionDateTimeHasBeenSet = true; m_completionDateTime = std::move(value); }
-    inline QueryExecutionStatus& WithCompletionDateTime(const Aws::Utils::DateTime& value) { SetCompletionDateTime(value); return *this;}
-    inline QueryExecutionStatus& WithCompletionDateTime(Aws::Utils::DateTime&& value) { SetCompletionDateTime(std::move(value)); return *this;}
+    template<typename CompletionDateTimeT = Aws::Utils::DateTime>
+    void SetCompletionDateTime(CompletionDateTimeT&& value) { m_completionDateTimeHasBeenSet = true; m_completionDateTime = std::forward<CompletionDateTimeT>(value); }
+    template<typename CompletionDateTimeT = Aws::Utils::DateTime>
+    QueryExecutionStatus& WithCompletionDateTime(CompletionDateTimeT&& value) { SetCompletionDateTime(std::forward<CompletionDateTimeT>(value)); return *this;}
     ///@}
 
     ///@{
     /**
      * <p>Provides information about an Athena query error.</p>
      */
-    inline const AthenaError& GetAthenaError() const{ return m_athenaError; }
+    inline const AthenaError& GetAthenaError() const { return m_athenaError; }
     inline bool AthenaErrorHasBeenSet() const { return m_athenaErrorHasBeenSet; }
-    inline void SetAthenaError(const AthenaError& value) { m_athenaErrorHasBeenSet = true; m_athenaError = value; }
-    inline void SetAthenaError(AthenaError&& value) { m_athenaErrorHasBeenSet = true; m_athenaError = std::move(value); }
-    inline QueryExecutionStatus& WithAthenaError(const AthenaError& value) { SetAthenaError(value); return *this;}
-    inline QueryExecutionStatus& WithAthenaError(AthenaError&& value) { SetAthenaError(std::move(value)); return *this;}
+    template<typename AthenaErrorT = AthenaError>
+    void SetAthenaError(AthenaErrorT&& value) { m_athenaErrorHasBeenSet = true; m_athenaError = std::forward<AthenaErrorT>(value); }
+    template<typename AthenaErrorT = AthenaError>
+    QueryExecutionStatus& WithAthenaError(AthenaErrorT&& value) { SetAthenaError(std::forward<AthenaErrorT>(value)); return *this;}
     ///@}
   private:
 
-    QueryExecutionState m_state;
+    QueryExecutionState m_state{QueryExecutionState::NOT_SET};
     bool m_stateHasBeenSet = false;
 
     Aws::String m_stateChangeReason;
     bool m_stateChangeReasonHasBeenSet = false;
 
-    Aws::Utils::DateTime m_submissionDateTime;
+    Aws::Utils::DateTime m_submissionDateTime{};
     bool m_submissionDateTimeHasBeenSet = false;
 
-    Aws::Utils::DateTime m_completionDateTime;
+    Aws::Utils::DateTime m_completionDateTime{};
     bool m_completionDateTimeHasBeenSet = false;
 
     AthenaError m_athenaError;
